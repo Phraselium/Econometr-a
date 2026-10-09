@@ -619,7 +619,7 @@ sec("5. Registro de busqueda y correccion para b2 (cuota extranjera)",
 g = lambda n, c: r_cl.params[n] if c == "b" else r_cl.std_errors[n]
 head = [
     "# F5: panel de CCAA (P4) - resumen\n",
-    f"Generado por `src/f5_panel.py` (semilla {SEED}; {time.time() - T0:.0f} s).\n",
+    f"Generado por `src/f5_panel.py` (semilla {SEED}).\n",
     "## Respuesta a P4\n",
     "**Pregunta**: ¿difieren entre CCAA (y en la C. Valenciana) las asociaciones del precio de la vivienda con empleo y poblacion extranjera?\n",
     "- Nivel de evidencia: **asociacion condicional** (panel observacional, FE de CCAA y anio, CCE). Sin identificacion causal en "

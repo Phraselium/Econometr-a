@@ -123,3 +123,25 @@ F6 no cita literatura ni contrasta signos con ella. No hay referencias en F6 que
 5. **Texto y etiquetas (menores).** (a) En `tabla_N_series`, «elegible N≥40» frente a «usada en estimación». (b) Rentabilidad bruta: añadir el retraso del stock SERPAVI, la posible diferencia de superficie y la trayectoria (pico de 2017, caída desde 2020) en lugar de solo los extremos. Notariado provincial: dar el máximo de 2023. (c) Advertencia de parte-todo en las betas (València ⊂ provincia/CV/España) y, en compraventas, beta frente a «CV sin València». (d) Notas del registro: `rmse_oos` de las betas es condicional. (e) Aclarar la contradicción sobre la tabla INE 79544 (nacionalidad municipal desde 2021) entre `fuentes_fallidas.md` y `fallidas/ine_ccaa.md`. (f) Quitar la línea duplicada `A["ln_vut_val"]` en `f6_valencia.py`.
 
 Con los cambios 1-3 hechos (y 4-5 en lo posible), la fase puede aprobarse sin otra ronda completa: basta con que el revisor compruebe esos puntos.
+
+---
+
+## Re-revisión (iteración 2 de 2) — 2026-10-09
+
+**Veredicto final: APROBAR.**
+
+**Reproducibilidad.** Ejecuté dos veces `python3 src/f6_valencia.py`, sin red: los md5 de los 70 ficheros (output/f6 y `registro_busqueda_f6.csv`) son idénticos. El registro tiene 28 modelos.
+
+Cambios 1-5 comprobados uno a uno frente a mis cálculos de la primera ronda:
+
+1. **Betas por tramos (interacciones, N=82, HAC8).** Coinciden con las mías: frente a España 1,67 / 2,80 / 1,20; frente a la CV 1,58 / 3,38 / 1,02. El Wald de igualdad entre tramos rechaza. El diferencial de nivel 2020-26 es +5,6 pp/año (EE 1,0) frente a España y +4,2 frente a la CV. El diferencial medio de toda la muestra ya no se presenta como resultado.
+2. **Contraste con el IPV.** CV +61,8 % frente a España +59,5 %. Se incluye la sensibilidad a la base y la advertencia de que el +100 % de la ciudad puede reflejar en parte la composición de las tasaciones.
+3. **Cuota de extranjeros.** Las tendencias salen de Holm y se presentan sin p-valor; se añaden 77/77 trimestres, HAC4/8/12 y el aviso del salto de cobertura 2008-09.
+4. **Quiebres y robustez.** Wald HAC sustituye al Chow; beta en Δ1 = 1,73; nota sobre BIC en Bai-Perron.
+5. **Etiquetas.** «Elegible» y «usada» separadas en la tabla N; rentabilidad con su trayectoria y advertencias; aviso parte-todo; nota sobre `rmse_oos`; contradicción sobre la tabla 79544 anotada como pendiente; eliminada la línea duplicada.
+
+La **beta de compraventas frente a «CV sin València»** (β=1,04; p(β=1)=0,51) no sobra: responde al problema de parte-todo y confirma que la ciudad no amplifica las compraventas.
+
+**Menores, no bloqueantes (para F7):**
+- `cuota_ext_dif_CV_ES` sigue en la lista Holm con p≈4e-20, a pesar de que el propio texto dice que ese p-valor no es fiable. En F7 conviene citar solo el hecho 77/77.
+- Los EE por tramo se basan en 24-26 trimestres efectivos: deben leerse como inferencia aproximada.

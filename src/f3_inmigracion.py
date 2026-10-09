@@ -416,7 +416,7 @@ def principal(P):
             res = fit_iv(s3, y, ["x", "x_l1"], ["z", "z_l1"], ols_only=(est == "OLS"))
             for j, nm in enumerate(["x", "x_l1"]):
                 r = summarize(f"{key}|FE+rezago|{est}|{nm}", res, which=j)
-                r.update(resultado=lab, spec="FE, x_t y x_t-1", est=est, muestra=f"{s3.anio.min()}-{s3.anio.max()}")
+                r.update(resultado=lab, spec=f"FE, x_t y x_t-1 [{nm}]", est=est, muestra=f"{s3.anio.min()}-{s3.anio.max()}")
                 rows.append(r)
             log_panel(f"PAN_{key}_FElag_{est}", f"{y} ~ x + x_l1 | FE ccaa + anio", s3, res,
                       notas="robustez dinamica; coef de x_t")
@@ -528,14 +528,14 @@ def pretendencias(P):
         cs = pre.groupby("ccaa")[col].mean().to_frame("y")
         cs["zbar"] = zbar
         r = smf.ols("y ~ zbar", cs).fit(cov_type="HC3")
-        rows.append(dict(resultado=nm, test="seccion cruzada: media dln 2003-07 ~ zbar(2008-25), HC3", n=len(cs),
+        rows.append(dict(resultado=nm, test="seccion cruzada (primeros anos de la muestra, NO pre salvo IPV): media dln 2003-07 ~ zbar(2008-25), HC3", n=len(cs),
                          coef=r.params["zbar"], EE=r.bse["zbar"], p=r.pvalues["zbar"]))
         reglog(f"PRE_{nm}_cs", f"mean {col} 2003-07 ~ zbar", 2003, 2007, len(cs), r.rsquared_adj, r.aic, r.bic,
                r.params["zbar"], r.pvalues["zbar"], "pretendencias, HC3, N=17")
         pp = pre.dropna(subset=[col]).copy()
         pp["zbar"] = pp["ccaa"].map(zbar)
         r2 = smf.ols(f"{col} ~ zbar + C(anio)", pp).fit(cov_type="cluster", cov_kwds={"groups": pp["ccaa"].astype("category").cat.codes})
-        rows.append(dict(resultado=nm, test="panel 2003-07 con FE anio, cluster CCAA", n=len(pp),
+        rows.append(dict(resultado=nm, test="panel 2003-07 (primeros anos de la muestra) con FE anio, cluster CCAA; coincide con la seccion cruzada", n=len(pp),
                          coef=r2.params["zbar"], EE=r2.bse["zbar"], p=r2.pvalues["zbar"]))
         reglog(f"PRE_{nm}_panel", f"{col} ~ zbar + FE anio (2003-07)", 2003, 2007, len(pp), r2.rsquared_adj, r2.aic,
                r2.bic, r2.params["zbar"], r2.pvalues["zbar"], "pretendencias, cluster")
@@ -680,7 +680,7 @@ def resumen(P):
     L.append("Todo se reproduce con `python3 src/f3_inmigracion.py` (semilla 20261009, sin red). Tablas CSV/MD en "
              "`output/f3/`; registro de busqueda en `output/registro_busqueda_f3.csv`.\n")
     L.append("## Diseno\n- x_ct = (pob_extranj_ct - pob_extranj_c,t-1)/pob_total_c,t-1. Coeficiente = variacion % del precio "
-             "(Delta ln x 100) por cada 1 punto porcentual de poblacion que llega en el ano (flujo del 1 % de la poblacion).\n"
+             "(Delta ln x 100) por cada 1 punto porcentual de poblacion de flujo neto (1 % de la poblacion total del ano anterior). Calendario: los stocks son a 1 de enero, asi que x del ano t es el cambio neto del stock durante el ano t-1 (no 'en el ano t'), adelantado ~medio ano frente a la media anual de precios.\n"
              "- Instrumento (Card 2001): z_ct = sum_g s_cg,2002 * (dP_g,t)_{-c} / pob_total_c,t-1, cuotas fijas 2002, "
              "flujo nacional del grupo sin la CCAA c (leave-one-out). Grupos (coherentes en el tiempo; Europa = "
              "`pob_europa_sin_espana`, no UE28/UE27): europa (sin Espana), africa, america (sud+centro/Caribe+norte), "
@@ -695,7 +695,7 @@ def resumen(P):
     L.append("\n## Primera etapa (2SLS FE, instrumento unico z)\n")
     L.append(eu.df_md(RES["fs"], ".4g", index=False))
     L.append("\nF = Wald cluster-robusto (con un instrumento y un regresor endogeno equivale a Kleibergen-Paap rk F). "
-             "No se implemento el F efectivo de Montiel Olea-Pflueger.\n")
+             "Con un instrumento y un regresor endogeno, el F efectivo de Montiel Olea-Pflueger coincide con este F robusto (la comparacion con sus valores criticos depende de la varianza usada, no calculados aqui). La forma reducida (RF_p_cluster) equivale a la prueba Anderson-Rubin y es robusta a instrumentos debiles: no rechaza en ningun resultado. EE y F usan correccion de muestra pequena con K que cuenta los FE de CCAA anidados en el cluster (algo mas conservadora, ~6 % en EE y ~16 % en F frente a linearmodels).\n")
     L.append("## Pesos de Rotemberg (Delta ln valor tasado) y 2SLS con cada grupo como instrumento unico\n")
     L.append(eu.df_md(RES["rot_p_tasado"], ".3g", index=False))
     L.append("\n(Mismo ejercicio para IPV, SERPAVI e IPC alquiler en `rotemberg_*.csv`.) Suma alpha_g * beta_g = 2SLS "
@@ -742,13 +742,36 @@ def resumen(P):
         L.append(f"\n- {lab_}: OLS {fmt(o.coef)} (EE {fmt(o.EE_cluster)}), 2SLS {fmt(m.coef)} (EE {fmt(m.EE_cluster)}; "
                  f"p cluster {fmt(m.p_cluster)}, p WCB {fmt(m.p_WCB_restr)}; F {fmt(m.F_1a_etapa, 1)}) "
                  f"= variacion % del precio por flujo del 1 % de la poblacion total.")
+    ic = []
+    for lab_ in main.index:
+        m = main.loc[lab_]
+        tc = stats.t.ppf(0.975, 16)
+        ic.append(dict(resultado=lab_, coef_2SLS=m.coef, IC95_lo=m.coef - tc * m.EE_cluster, IC95_hi=m.coef + tc * m.EE_cluster))
+    ICd = pd.DataFrame(ic)
+    save(ICd, "ic95_2sls_principal", index=False)
+    jk = RES["jk"].set_index("excluida")
+    bal = jk.loc[[i_ for i_ in jk.index if "Balears" in i_], "coef"]
+    ipv = ICd[ICd.resultado == "IPV (precio)"].iloc[0]
+    sub = RES["sub0307"]
+    L.append("\n### Intervalos de confianza 95 % del 2SLS (t(16), cluster)\n")
+    L.append(eu.df_md(ICd, ".3g", index=False))
     L.append("\n\nComparabilidad (docs/literatura.md): Saiz (2007, EE. UU.): entrada = 1 % de la poblacion -> alquileres y "
              "valores ~ +1 %. Sa (2015, RU, version de trabajo IZA DP 5893): -1,6 % por 1 % de poblacion. Gonzalez y Ortega "
              "(2013, Espana 1998-2008): flujo medio del 17 % de la poblacion en edad de trabajar -> precios ~ +52 % "
-             "(cociente simple ~ 3 puntos % por punto de flujo; derivado aqui, denominador distinto: poblacion en edad de "
-             "trabajar, no comparable 1 a 1). Nuestras elasticidades (variacion % del precio por 1 % de la poblacion total "
-             "que llega en el ano) son de corto plazo (anual, contemporaneas) y con intervalos que incluyen tanto +1 como "
-             "valores negativos en precio; en alquiler (IPC) las estimaciones son positivas y del orden de 0,4-0,7.\n")
+             "(cociente simple ~ 3 puntos % por punto de flujo; derivado aqui, denominador distinto). "
+             f"El IC95 % del 2SLS del IPV es [{ipv.IC95_lo:.2f}; {ipv.IC95_hi:.2f}]: EXCLUYE +1 (Saiz) y ~3 (Gonzalez-Ortega); "
+             "es compatible con el signo negativo de Sa (2015). Para el valor tasado y el SERPAVI los IC si incluyen +1 y "
+             "valores negativos. La discrepancia se explica por diseno y periodo, no se presenta como error de calculo: "
+             "(i) la muestra del IPV es 2008+ (crisis y recuperacion), no el auge 1998-2008 de Gonzalez-Ortega; (ii) la "
+             "estimacion es en diferencias anuales con flujo neto del padron (resta nacionalizaciones); (iii) el peso de "
+             "Rotemberg recae en la cuota europea de 2002 (Europa alpha 0,31 en IPV, 0,43 en valor tasado; beta_g de Europa "
+             "negativo y significativo), muy ligada a costa e islas con demanda de residentes y turistica; el jackknife sin "
+             f"Baleares da {', '.join(f'{v:.2f}' for v in bal)} para el valor tasado (frente a {main.loc['valor tasado'].coef:.2f}). "
+             f"En el auge 2003-07 el 2SLS del valor tasado es {sub['coef']:.2f} (EE {sub['se']:.2f}, F {sub['F']:.1f}; instrumento debil, "
+             "especificacion registrada como PAN_p_tasado_2003_07). En nacional, la comparacion en la misma unidad es la "
+             "variante x_flow (Delta4 extranjeros / pob. total) de `nacional_lp.csv`; el coeficiente anual nacional de "
+             "flujo (~10) es covariacion ciclica auge-crisis con N=17, no un efecto. En alquiler (IPC) las estimaciones son "
+             "positivas (~0,4-0,5) pero fragiles (ver Problemas abiertos).\n")
     L.append(f"\n## Busqueda de especificaciones\nEspecificaciones registradas en F3: **{len(reg)}** "
              f"({len(reg_p)} con p de interes). Correccion de Holm/Bonferroni sobre TODAS ellas en `correccion_busqueda.csv`. "
              "Para las 4 estimaciones 2SLS principales (FE) el p-valor del wild bootstrap y el ajustado:\n")
@@ -763,13 +786,25 @@ def resumen(P):
     L.append("\nLa mayoria de filas son robusteces/diagnosticos no independientes; la correccion sobre todas es muy conservadora. "
              "RMSE fuera de muestra no aplica en F3 (columna vacia).\n")
     L.append("## Problemas abiertos\n"
-             "- Canal comprador: el coeficiente sobre compras de extranjeros es NEGATIVO y muy grande (OLS y 2SLS, "
-             "tambien en compras totales); implausible como efecto causal. Probable artefacto de la cobertura/serie de "
-             "`trans_extranjeros` (2007 como nivel de partida y caida posterior) y de la correlacion entre ciclo local y "
-             "variacion de poblacion; leer solo como asociacion y revisar la serie antes de usar.\n"
-             "- El IPV por CCAA no da efecto distinguible de cero ni en OLS ni en 2SLS; el unico resultado robusto es la "
-             "asociacion positiva con el IPC de alquiler (OLS y 2SLS similares), pero las pretendencias por cuotas del IPC "
-             "alquiler 2003-07 son significativas (America, Asia, otros), lo que impide leerlo como causal.\n"
+             "- Canal comprador: el coeficiente sobre compras de extranjeros es NEGATIVO y muy grande (OLS -19, 2SLS -42). "
+             "`trans_extranjeros` = compradores extranjeros RESIDENTES (MIVAU 340101i0), con salto 2008->2009 en la serie. "
+             "Pero sin 2008-09 (2010+) sigue en -24,7 (EE 6,4) y en compras totales en -16,5 (EE 5,2): no es solo un artefacto "
+             "de la serie. Es una senal de posible VIOLACION DE LA EXCLUSION (z correlacionado con el ciclo inmobiliario "
+             "local; la inmigracion no puede explicar un desplome de transacciones de esa magnitud) y refuerza leer todo P2 "
+             "como asociacion. (Cifras sin 2008-09 de la revision independiente, docs/revision_f3.md; no son salida de este script.)\n"
+             "- IPV: sin efecto distinguible de cero en OLS; el 2SLS es negativo y su IC95 % excluye +1. En compraventas "
+             "(IPV, valor tasado) no hay ni asociacion significativa: formulacion correcta = 'sin evidencia de efecto "
+             "positivo'. Alquiler IPC: asociacion positiva en OLS (0,53; WCB p = 0,004) que NO sobrevive a Holm sobre las "
+             "149 especificaciones (Holm 0,59); 2SLS 0,44 no significativo (WCB p = 0,12); el IPC alquiler no estaba en el "
+             "diseno prefijado (se anade despues, ver docs/decisiones.md); el resultado lo mueve America, cuya cuota 2002 "
+             "tiene pretendencia significativa.\n"
+             "- Pretendencias: la ventana 2003-07 esta DENTRO de la muestra de estimacion del valor tasado y del IPC alquiler "
+             "(2003+), asi que es 'correlacion en los primeros anos de la muestra', no una prueba pre; solo es pre para el IPV (2008+). "
+             "La seccion cruzada y el panel con FE de anio dan el mismo coeficiente (no son pruebas independientes). La "
+             "pretendencia 1996-2001 (anterior al ano base) NO se puede computar aqui: `data/processed` no contiene precios por "
+             "CCAA antes de 2002 (el valor tasado por CCAA desde 1995 solo esta en data/raw/mivau_valor_tasado_nacional_ccaa_prov.csv, "
+             "y la regla es leer solo de processed). La revision independiente con raw obtuvo 9,46 (EE HC3 6,26; p = 0,13) sobre zbar "
+             "y p entre 0,43 y 0,996 sobre las cuotas una a una: no rechaza pero es imprecisa. Pendiente de incorporar a processed.\n"
              "- 17 clusters: inferencia cluster y J de Hansen poco fiables; el wild bootstrap lo mitiga solo en parte.\n"
              "- Exclusion del instrumento: la historia de asentamiento (cuotas 2002) puede correlacionarse con demanda local "
              "(burbuja inmobiliaria 2002-07, turismo/retirados en la costa) y los flujos de grupo se mueven por el ciclo "
@@ -779,10 +814,10 @@ def resumen(P):
              "no es flujo migratorio bruto. Las nacionalizaciones mueven personas de 'extranjero' a 'espanol'.\n"
              "- IPV por CCAA solo desde 2007 (resultados 2008+), SERPAVI 2011-2024 con huecos (Navarra, Pais Vasco: "
              "N desequilibrado), valor tasado de Navarra falta 2015-18.\n"
-             "- El efecto sobre el precio en un ano contemporaneo no recoge ajustes de oferta a medio plazo; el rezago de x se "
+             "- El efecto sobre el precio en la diferencia anual (con x adelantada ~medio ano) no recoge ajustes de oferta a medio plazo; el rezago de x se "
              "incluye solo como robustez.\n"
              "- Sin variable de paro por CCAA: las correlaciones de cuotas usan tasa de ocupados/poblacion 2002.\n"
-             "- No se implemento F efectivo de Montiel Olea-Pflueger.\n"
+             "- Referencias metodologicas citadas (Webb; Davidson-MacKinnon WRE; Driscoll-Kraay; Montiel Olea-Pflueger; Sanderson-Windmeijer; Kleibergen-Paap; Hansen) NO estan en docs/literatura.md: NO VERIFICADAS.\n"
              "- Panel nacionalidad: 2SLS con 4 endogenas y 4 instrumentos muy correlacionados, F condicional "
              "(Sanderson-Windmeijer) no implementado; se muestra F conjunta.\n")
     (OUT / "resumen_f3.md").write_text("\n".join(L), encoding="utf-8")

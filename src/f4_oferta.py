@@ -99,8 +99,6 @@ pk = pk[pk["serie"] == "parque_total_viviendas_nacional"].set_index("periodo")["
 dpk = pk.diff()
 
 # ECP
-dq_e = W["hogares_ecp"].diff()
-
 
 def fila(nombre, periodo, dh, ter, nota):
     d = dh - ter
@@ -115,19 +113,15 @@ for lab, dq_, nota in [("(a) EPA corregida (PRINCIPAL)", dq_a,
                         ("(a'') EPA sin corregir (solo referencia)", dq_raw, "incluye el salto metodológico de 2021T1 (nivel)")]:
     rows.append(fila(lab, "2021T1-2025T4", ysum(dq_, 2021, 2025), ysum(TER, 2021, 2025), nota))
     rows.append(fila(lab, "2021T1-2026T2", ysum(dq_, 2021, 2026), ysum(TER, 2021, 2026), nota + " (extensión)"))
-# (b) ECP
-qs = [p for p in W.index if Pd("2021Q2", "Q") <= p <= Pd("2025Q4", "Q")]
-qs26 = [p for p in W.index if Pd("2021Q2", "Q") <= p <= Pd("2026Q2", "Q")]
-rows.append(fila("(b) ECP 60131, periodo consistente", "2021T2-2025T4", float(dq_e.loc[qs].sum()), float(TER.loc[qs].sum()),
-                 "Δ ECP solo desde 2021T2 (sin dato 2020T4); terminadas de los mismos trimestres (sin 2021T1)"))
-rows.append(fila("(b) ECP 60131, periodo consistente", "2021T2-2026T2", float(dq_e.loc[qs26].sum()), float(TER.loc[qs26].sum()),
-                 "extensión"))
-imp = float(dq_e.loc[[Pd("2021Q2", "Q"), Pd("2021Q3", "Q"), Pd("2021Q4", "Q")]].mean())
-rows.append(fila("(b') ECP anualizada (Δ2021T1 imputado)", "2021T1-2025T4", float(dq_e.loc[qs].sum()) + imp,
-                 ysum(TER, 2021, 2025),
-                 f"Δ2021T1 imputado = media Δ ECP 2021T2-T4 = {imp:,.0f}; es una imputación, no un dato"))
-rows.append(fila("(b') ECP anualizada (Δ2021T1 imputado)", "2021T1-2026T2", float(dq_e.loc[qs26].sum()) + imp,
-                 ysum(TER, 2021, 2026), "extensión"))
+# (b) ECP 60131: STOCK a día 1 del trimestre (fecha 2021-01-01 = 2021T1) -> hogares del periodo = H(t_fin+1) - H(2021T1)
+He = W["hogares_ecp"]
+rows.append(fila("(b) ECP 60131 (stock a 1 de enero)", "2021T1-2025T4 (H 1-ene-2026 − H 1-ene-2021)",
+                 float(He.loc[Pd("2026Q1", "Q")] - He.loc[Pd("2021Q1", "Q")]), ysum(TER, 2021, 2025),
+                 "ECP es stock a día 1 del trimestre: no hay trimestre perdido ni imputación"))
+rows.append(fila("(b) ECP 60131 (stock a 1 de enero)", "2021T1-2026T2 (H 1-jul-2026 − H 1-ene-2021)",
+                 float(He.loc[Pd("2026Q3", "Q")] - He.loc[Pd("2021Q1", "Q")]), ysum(TER, 2021, 2026), "extensión"))
+ecp_2025 = float(He.loc[Pd("2026Q1", "Q")] - He.loc[Pd("2025Q1", "Q")])
+ecp_m2124 = float((He.loc[Pd("2025Q1", "Q")] - He.loc[Pd("2021Q1", "Q")]) / 4)
 # (c) parque
 dh_a = anual(dq_a, yrs)
 dpk_a = pd.Series({y: float(dpk.loc[y]) for y in yrs})
@@ -150,11 +144,22 @@ bde = pd.DataFrame([
     ["Déficit acumulado 2021-2025", 750000, a_["deficit"], "BdE IA 2025 p. 157: terminadas − creación neta de hogares (signo cambiado)"],
     ["Creación neta de hogares 2025", 240000, float(t25["delta_hogares"]), "BdE: fuente de hogares no verificada aquí (¿ECP?); nosotros EPA"],
     ["Viviendas terminadas 2025", 92000, float(t25["terminadas"]), "Nosotros: SOLO viviendas libres MIVAU (sin protegidas)"],
+    ["Creación neta de hogares 2025 (ECP a 1 de enero)", 240000, ecp_2025, "INFERENCIA: ECP 60131 H(1-ene-2026) − H(1-ene-2025); el BdE no nombra la operación estadística"],
+    ["Media anual de hogares 2021-2024 (ECP a 1 de enero)", 245000, ecp_m2124, "INFERENCIA, idem; BdE p. 157: 'promedio anual de 245.000 entre 2021 y 2024'"],
     ["Déficit en % de hogares", 3.7, a_["pct_hogares_2025T4"], "% sobre hogares EPA 2025T4"],
     ["Déficit 2021-2025 (IEF otoño 2025)", 700000, a_["deficit"], "IEF con datos del 1S 2025; periodo y fuente distintos"]],
     columns=["concepto", "BdE", "este_trabajo_principal", "nota"])
 bde["diferencia"] = bde["este_trabajo_principal"] - bde["BdE"]
 save(bde, "comparacion_bde_deficit", ",.4g", index=False)
+ecp_row = dfv.iloc[6]
+dec = pd.DataFrame([
+    ["Δhogares 2021-2025", a_["sum_delta_hogares"], ecp_row["sum_delta_hogares"], a_["sum_delta_hogares"] - ecp_row["sum_delta_hogares"],
+     "fuente de hogares: EPA corregida frente a ECP a 1 de enero (implícita en el BdE: inferencia)"],
+    ["Terminadas 2021-2025", a_["sum_terminadas"], ecp_row["sum_delta_hogares"] - 750000, (ecp_row["sum_delta_hogares"] - 750000) - a_["sum_terminadas"],
+     "implícito BdE = ΔECP − 750.000; diferencia ≈ viviendas protegidas no incluidas (y redondeo de '750.000')"]],
+    columns=["componente", "este_trabajo", "BdE_implicito", "diferencia_BdE_menos_nuestro", "nota"])
+dec["contribucion_a_la_diferencia_de_deficit"] = [dec.iloc[0, 3] * -1, dec.iloc[1, 3]]
+save(dec, "descomposicion_diferencia_bde", ",.0f", index=False)
 
 # serie larga anual
 yl = list(range(2003, 2026))

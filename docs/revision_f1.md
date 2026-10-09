@@ -275,3 +275,46 @@ Fuentes web consultadas:
 - https://www.ine.es/inebaseDYN/epa30308/docs/epa_cambios2021.pdf
 - https://www.ine.es/inebaseDYN/epa30308/docs/medida_efecto_epa_cambios2021.pdf
 - https://ine.es/dyngs/Prensa/cbEPA2021.htm
+
+---
+
+## Re-revisión (2026-10-09, commit f4bc62d)
+
+### Veredicto final: **APROBAR**
+
+He repetido las comprobaciones:
+- `make all` sin red (`HTTPS_PROXY=HTTP_PROXY=http://127.0.0.1:9`): exit 0.
+- `data/processed` sale idéntico byte a byte entre dos ejecuciones, y `data/raw` queda sin cambios (sha256 de los 195 ficheros).
+
+| # | Cambio | Estado | Comprobación propia |
+|---|---|---|---|
+| 1 | Deflactor SA | ✓ | Ahora usa CNTR6597/CNTR6652, documentado en el diccionario. Media de Δln deflactor por trimestre (2008+): T1 0,55 %, T2 0,00 %, T3 0,21 %, T4 0,80 %; el patrón anterior era −1,22 % en T3 y +2,43 % en T4. Media de Δln de `renta_hog_real` (2008+, sin 2020-21): T1 −0,01 %, T2 0,58 %, T3 0,46 %, T4 0,11 %. Las desviaciones típicas (1,2-1,6 %) son mucho mayores que las diferencias entre medias, así que no queda estacionalidad sistemática; es coherente con el p=0,185 del orquestador. |
+| 2 | Quiebre EPA 2021T1 | ✓ | Existe `quiebre_epa_2021` (=1 desde 2021Q1) en `nacional_q` y `nacional_a`. El diccionario explica la nueva definición de hogar y la base del Censo 2021, y anota `ocupados` como "no corregido ni medido". |
+| 3 | `_metodo` / `_interp` | ✓ | Columnas `_metodo` en los 5 ficheros (`valencia.csv` usa la columna `metodo`). `_interp` = TRUE solo en `interpolado_loglineal`: `pob_total` 52, `pob_extranj` 38, `pob_extranj_ccaa_sum` 69 y `pob_*` del panel trimestral 1.173. Todas las demás `_interp` dan 0. Las desviaciones declaradas son aceptables: `desestacionalizado_stl` es una categoría más informativa, y llamar `anual_asignado` a las semestrales queda documentado en la tabla de métodos. |
+| 4 | Inmigración Eurostat 1998-2024 | ✓ | Hay `inmig_anual_eurostat` (27 años, rol principal, asignada a T4) y `quiebre_emcr_2021`. `inmig_anual` (EMCR) pasa a robustez. 2021 = 887.960 en las dos fuentes. Nuevo `nacional_a.csv` (28 años). |
+| 5 | `panel_ccaa_a` ampliado | ✓ | Añadidas `trans_extranjeros` (17×19 años), `visados`, `terminadas` (16 CCAA), `ipc_alquiler` y `pob_europa_sin_espana`. Esta última es igual a UE28+no-UE28 (2002-2020) y a UE27+no-UE27 (2021+) con error 0. Cotejo: CV 2019 `trans_extranjeros` = 3203+3335+2673+3361 = 12.572 ✓ (agregado_suma). |
+| 6 | Advertencia sobre `pob_*` del panel trimestral | ✓ | Recuadro "ADVERTENCIA (población en el panel trimestral)" en el diccionario: anual, Δ4 o `panel_ccaa_a`, hasta 2025Q1. |
+| 7 | Calendario VUT y unidades de Registradores | ✓ | Calendario documentado: feb/ago→T1/T3 hasta 2024-08; may/nov→T2/T4 desde 2024-11. Las series `pm2` e `imp` se documentan como medias o ratios, no sumas. La etiqueta del raw no se toca, lo que es correcto porque raw no se edita a mano. |
+| 8 | `validacion_gva.csv` | ✓ (con matiz) | Está en `data/processed/`, no en `data/raw`. Lo acepto porque es una salida de `build_dataset.py`. Cuadres CV = Σ municipios y provincia 46 = Σ municipios: error 0. Cada fila declara si el contraste es independiente. |
+| 9 | Notariado municipal `validado=sí` | ✓ | `notariado_viv_extranj`: validado=sí, rol=robustez. |
+| 10 | Literatura NO VERIFICADA | ✓ | Caldera y Johansson (2013) y Cavalleri et al. (2019) están en la lista de NO VERIFICADAS. |
+| — | 69691 | ✓ | Se documenta en `fuentes_fallidas.md` como "NO descargada". |
+
+**El "baja < alta (56)" del VUT**
+- Esa cifra no era mía: viene de `revision_f1_fuentes.md`.
+- La he vuelto a comprobar: en `gva_orig/vut_historico_2025.csv` (182.893 registros, latin-1) hay exactamente **56 registros individuales con `Fecha baja` < `Fecha alta`** y otros 1.357 con baja = alta.
+- El cleaner midió otra cosa: **bajas implícitas mensuales** (altas − Δstock), que efectivamente nunca son negativas (0 de 179 meses).
+- Las dos cifras son correctas y no se contradicen.
+- No bloquea. Recomiendo añadir a `validacion_gva.csv` una fila a nivel de registro (56 con baja < alta; 1.357 con baja = alta) y aclarar cómo trata cada caso la reconstrucción del stock. Esa fila solo se puede generar cuando existe `gva_orig/`, que está en `.gitignore`.
+
+**Pendientes no bloqueantes**, aceptados por el orquestador:
+- comprimir o pasar a LFS los ficheros de más de 50 MB;
+- el orden de ediciones de los actos del Notariado (no entran en el modelo);
+- la fila de `validacion_gva` a nivel de registro;
+- medir el efecto del cambio de base de 2021 en `ocupados` (dejarlo como robustez en F2).
+
+**Avisos para F2-F5** (no son defectos de datos):
+- Usar `quiebre_epa_2021` en cualquier especificación con `hogares_epa`.
+- `inmig_anual_eurostat` solo en análisis anual (`nacional_a`), con `quiebre_emcr_2021`, y teniendo en cuenta 2020 (COVID).
+- En el panel por CCAA, la población va en `panel_ccaa_a` o en Δ4.
+- El shift-share tiene solo 7 grupos de origen y 17 CCAA: identificar por cuotas e inferir según Adão et al. (2019).

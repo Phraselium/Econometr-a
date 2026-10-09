@@ -1,7 +1,9 @@
-| concepto                           |     BdE |   este_trabajo_principal | nota                                                                       |   diferencia |
-|:-----------------------------------|--------:|-------------------------:|:---------------------------------------------------------------------------|-------------:|
-| Déficit acumulado 2021-2025        | 7.5e+05 |                8.661e+05 | BdE IA 2025 p. 157: terminadas − creación neta de hogares (signo cambiado) |    1.161e+05 |
-| Creación neta de hogares 2025      | 2.4e+05 |                2.582e+05 | BdE: fuente de hogares no verificada aquí (¿ECP?); nosotros EPA            |    1.82e+04  |
-| Viviendas terminadas 2025          | 9.2e+04 |                8.079e+04 | Nosotros: SOLO viviendas libres MIVAU (sin protegidas)                     |   -1.121e+04 |
-| Déficit en % de hogares            | 3.7     |                4.362     | % sobre hogares EPA 2025T4                                                 |    0.6625    |
-| Déficit 2021-2025 (IEF otoño 2025) | 7e+05   |                8.661e+05 | IEF con datos del 1S 2025; periodo y fuente distintos                      |    1.661e+05 |
+| concepto                                            |      BdE |   este_trabajo_principal | nota                                                                                           |    diferencia |
+|:----------------------------------------------------|---------:|-------------------------:|:-----------------------------------------------------------------------------------------------|--------------:|
+| Déficit acumulado 2021-2025                         | 7.5e+05  |                8.661e+05 | BdE IA 2025 p. 157: terminadas − creación neta de hogares (signo cambiado)                     |     1.161e+05 |
+| Creación neta de hogares 2025                       | 2.4e+05  |                2.582e+05 | BdE: fuente de hogares no verificada aquí (¿ECP?); nosotros EPA                                |     1.82e+04  |
+| Viviendas terminadas 2025                           | 9.2e+04  |                8.079e+04 | Nosotros: SOLO viviendas libres MIVAU (sin protegidas)                                         |    -1.121e+04 |
+| Creación neta de hogares 2025 (ECP a 1 de enero)    | 2.4e+05  |                2.41e+05  | INFERENCIA: ECP 60131 H(1-ene-2026) − H(1-ene-2025); el BdE no nombra la operación estadística | 1,013         |
+| Media anual de hogares 2021-2024 (ECP a 1 de enero) | 2.45e+05 |                2.455e+05 | INFERENCIA, idem; BdE p. 157: 'promedio anual de 245.000 entre 2021 y 2024'                    |   455.8       |
+| Déficit en % de hogares                             | 3.7      |                4.362     | % sobre hogares EPA 2025T4                                                                     |     0.6625    |
+| Déficit 2021-2025 (IEF otoño 2025)                  | 7e+05    |                8.661e+05 | IEF con datos del 1S 2025; periodo y fuente distintos                                          |     1.661e+05 |

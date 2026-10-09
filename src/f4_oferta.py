@@ -157,8 +157,7 @@ dec = pd.DataFrame([
      "fuente de hogares: EPA corregida frente a ECP a 1 de enero (implícita en el BdE: inferencia)"],
     ["Terminadas 2021-2025", a_["sum_terminadas"], ecp_row["sum_delta_hogares"] - 750000, (ecp_row["sum_delta_hogares"] - 750000) - a_["sum_terminadas"],
      "implícito BdE = ΔECP − 750.000; diferencia ≈ viviendas protegidas no incluidas (y redondeo de '750.000')"]],
-    columns=["componente", "este_trabajo", "BdE_implicito", "diferencia_BdE_menos_nuestro", "nota"])
-dec["contribucion_a_la_diferencia_de_deficit"] = [dec.iloc[0, 3] * -1, dec.iloc[1, 3]]
+    columns=["componente", "este_trabajo", "BdE_implicito", "contribucion_a_deficit_nuestro_menos_BdE", "nota"])
 save(dec, "descomposicion_diferencia_bde", ",.0f", index=False)
 
 # serie larga anual
@@ -484,37 +483,6 @@ long_tab = pd.DataFrame(long_rows)
 save(long_tab, "muestra_larga_tasado_permisos", ".4g", index=False)
 
 # ====================================================================== 4. PANEL CCAA
-from linearmodels.panel import PanelOLS  # noqa: E402
-
-pn = pd.read_csv(ROOT / "data" / "processed" / "panel_ccaa_q.csv")
-pn["per"] = pd.PeriodIndex(pn["trimestre"], freq="Q")
-full = pd.period_range(pn["per"].min(), pn["per"].max(), freq="Q")
-wide_p = pn.pivot(index="per", columns="ccaa", values="d4_ln_ipv").reindex(full)
-panel_rows = []
-LAGS = (0, 4, 8)
-for dep in ("terminadas", "visados"):
-    wy = pn.pivot(index="per", columns="ccaa", values=f"d4_ln_{dep}").reindex(full)
-    st = {"y": wy.stack()}
-    for L in LAGS:
-        st[f"p{L}"] = wide_p.shift(L).stack()
-    dfp = pd.DataFrame(st).dropna()
-    dfp = dfp[dfp.index.get_level_values(0) >= Pd("2008Q1", "Q")]
-    dfp.index = pd.MultiIndex.from_arrays([dfp.index.get_level_values(1), dfp.index.get_level_values(0).map(lambda p: p.ordinal)])
-    for L in LAGS:
-        for te, lab in ((True, "FE CCAA+tiempo"), (False, "FE CCAA")):
-            mod = PanelOLS(dfp["y"], dfp[[f"p{L}"]], entity_effects=True, time_effects=te)
-            rc = mod.fit(cov_type="clustered", cluster_entity=True)
-            rk = mod.fit(cov_type="kernel", kernel="bartlett", bandwidth=4)
-            b = float(rc.params[f"p{L}"])
-            mid = f"panel_{dep}_L{L}_{'te' if te else 'noTE'}"
-            REG.log("F4", mid, f"d4 ln {dep}_ct ~ d4 ln ipv_c,t-{L} [{lab}; cluster CCAA]", dfp.index.get_level_values(1).min(),
-                    dfp.index.get_level_values(1).max(), int(rc.nobs), np.nan, np.nan, np.nan, np.nan, b,
-                    float(rc.pvalues[f"p{L}"]), "familia=elasticidad panel (robustez); Extremadura sin terminadas")
-            ent_ = dfp.index.get_level_values(0).to_numpy(); tim_ = dfp.index.get_level_values(1).to_numpy()
-            _, t_w, p_w = wcb_webb(dfp["y"].to_numpy(float), dfp[f"p{L}"].to_numpy(float), ent_, tim_, te)
-            panel_rows.append(dict(modelo=mid, dep=dep, lag_trim=L, efectos=lab, beta=b, p_WCB_webb=p_w, EE_cluster=float(rc.std_errors[f"p{L}"]),
-                                   p_cluster=float(rc.pvalues[f"p{L}"]), EE_DK=float(rk.std_errors[f"p{L}"]), p_DK=float(rk.pvalues[f"p{L}"]),
-                                   n=int(rc.nobs), CCAA=int(dfp.index.get_level_values(0).nunique()), r2_within=float(rc.rsquared_within)))
 # Wild cluster bootstrap (Webb 6 puntos, 9.999 réplicas, WCR bajo H0: beta=0), pre-registrado en decisiones.md
 def wcb_webb(y, x, ent, tim, te, B=9999, seed=SEED):
     ent_c = pd.factorize(ent)[0]; Gn = ent_c.max() + 1
@@ -548,6 +516,37 @@ def wcb_webb(y, x, ent, tim, te, B=9999, seed=SEED):
     return b0, t0, float((np.abs(tb) >= abs(t0)).mean())
 
 
+from linearmodels.panel import PanelOLS  # noqa: E402
+
+pn = pd.read_csv(ROOT / "data" / "processed" / "panel_ccaa_q.csv")
+pn["per"] = pd.PeriodIndex(pn["trimestre"], freq="Q")
+full = pd.period_range(pn["per"].min(), pn["per"].max(), freq="Q")
+wide_p = pn.pivot(index="per", columns="ccaa", values="d4_ln_ipv").reindex(full)
+panel_rows = []
+LAGS = (0, 4, 8)
+for dep in ("terminadas", "visados"):
+    wy = pn.pivot(index="per", columns="ccaa", values=f"d4_ln_{dep}").reindex(full)
+    st = {"y": wy.stack()}
+    for L in LAGS:
+        st[f"p{L}"] = wide_p.shift(L).stack()
+    dfp = pd.DataFrame(st).dropna()
+    dfp = dfp[dfp.index.get_level_values(0) >= Pd("2008Q1", "Q")]
+    dfp.index = pd.MultiIndex.from_arrays([dfp.index.get_level_values(1), dfp.index.get_level_values(0).map(lambda p: p.ordinal)])
+    for L in LAGS:
+        for te, lab in ((True, "FE CCAA+tiempo"), (False, "FE CCAA")):
+            mod = PanelOLS(dfp["y"], dfp[[f"p{L}"]], entity_effects=True, time_effects=te)
+            rc = mod.fit(cov_type="clustered", cluster_entity=True)
+            rk = mod.fit(cov_type="kernel", kernel="bartlett", bandwidth=4)
+            b = float(rc.params[f"p{L}"])
+            mid = f"panel_{dep}_L{L}_{'te' if te else 'noTE'}"
+            REG.log("F4", mid, f"d4 ln {dep}_ct ~ d4 ln ipv_c,t-{L} [{lab}; cluster CCAA]", dfp.index.get_level_values(1).min(),
+                    dfp.index.get_level_values(1).max(), int(rc.nobs), np.nan, np.nan, np.nan, np.nan, b,
+                    float(rc.pvalues[f"p{L}"]), "familia=elasticidad panel (robustez); Extremadura sin terminadas")
+            ent_ = dfp.index.get_level_values(0).to_numpy(); tim_ = dfp.index.get_level_values(1).to_numpy()
+            _, t_w, p_w = wcb_webb(dfp["y"].to_numpy(float), dfp[f"p{L}"].to_numpy(float), ent_, tim_, te)
+            panel_rows.append(dict(modelo=mid, dep=dep, lag_trim=L, efectos=lab, beta=b, p_WCB_webb=p_w, EE_cluster=float(rc.std_errors[f"p{L}"]),
+                                   p_cluster=float(rc.pvalues[f"p{L}"]), EE_DK=float(rk.std_errors[f"p{L}"]), p_DK=float(rk.pvalues[f"p{L}"]),
+                                   n=int(rc.nobs), CCAA=int(dfp.index.get_level_values(0).nunique()), r2_within=float(rc.rsquared_within)))
 pan_tab = pd.DataFrame(panel_rows)
 save(pan_tab, "panel_ccaa", ".4g", index=False)
 

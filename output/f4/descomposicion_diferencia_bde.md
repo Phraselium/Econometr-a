@@ -1,0 +1,4 @@
+| componente           |   este_trabajo |   BdE_implicito |   contribucion_a_deficit_nuestro_menos_BdE | nota                                                                                                     |
+|:---------------------|---------------:|----------------:|-------------------------------------------:|:---------------------------------------------------------------------------------------------------------|
+| Δhogares 2021-2025   |      1,278,000 |       1,222,836 |                                     55,164 | fuente de hogares: EPA corregida frente a ECP a 1 de enero (implícita en el BdE: inferencia)             |
+| Terminadas 2021-2025 |        411,900 |         472,836 |                                     60,936 | implícito BdE = ΔECP − 750.000; diferencia ≈ viviendas protegidas no incluidas (y redondeo de '750.000') |

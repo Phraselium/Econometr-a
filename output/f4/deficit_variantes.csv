@@ -5,8 +5,6 @@ variante,periodo,sum_delta_hogares,sum_terminadas,deficit,pct_hogares_2025T4,not
 (a') EPA con Δ2021T1 = 0,2021T1-2026T2,1388000.0,452036.0,935964.0,4.7,Δ2021T1 = 0 (extensión)
 (a'') EPA sin corregir (solo referencia),2021T1-2025T4,1035600.0,411900.0,623700.0,3.1,incluye el salto metodológico de 2021T1 (nivel)
 (a'') EPA sin corregir (solo referencia),2021T1-2026T2,1180200.0,452036.0,728164.0,3.7,incluye el salto metodológico de 2021T1 (nivel) (extensión)
-"(b) ECP 60131, periodo consistente",2021T2-2025T4,1169157.0,393277.0,775880.0,3.9,Δ ECP solo desde 2021T2 (sin dato 2020T4); terminadas de los mismos trimestres (sin 2021T1)
-"(b) ECP 60131, periodo consistente",2021T2-2026T2,1276843.0,433413.0,843430.0,4.2,extensión
-(b') ECP anualizada (Δ2021T1 imputado),2021T1-2025T4,1239309.0,411900.0,827409.0,4.2,"Δ2021T1 imputado = media Δ ECP 2021T2-T4 = 70,152; es una imputación, no un dato"
-(b') ECP anualizada (Δ2021T1 imputado),2021T1-2026T2,1346995.0,452036.0,894959.0,4.5,extensión
+(b) ECP 60131 (stock a 1 de enero),2021T1-2025T4 (H 1-ene-2026 − H 1-ene-2021),1222836.0,411900.0,810936.0,4.1,ECP es stock a día 1 del trimestre: no hay trimestre perdido ni imputación
+(b) ECP 60131 (stock a 1 de enero),2021T1-2026T2 (H 1-jul-2026 − H 1-ene-2021),1335637.0,452036.0,883601.0,4.5,extensión
 (c) Δparque MIVAU anual − Δhogares EPA corregida,2021-2025,1278000.0,475848.0,802152.0,4.0,parque = estimación MIVAU de viviendas totales (incl. secundarias y vacías); sin dato 2026

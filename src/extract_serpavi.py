@@ -24,7 +24,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from utils_fetch import RAW, download  # noqa: E402
+from utils_fetch import FORCE, RAW, download  # noqa: E402
 
 XLSX_URL = ("https://cdn.mivau.gob.es/portal-web-mivau/vivienda/serpavi/"
             "2026-03-09_bd_SERPAVI_2011-2024%20-%20DEFINITIVO%20WEB.xlsx")

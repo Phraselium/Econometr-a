@@ -137,8 +137,8 @@ Entre corchetes, fuente de verificación.
 - Borusyak, K., Hull, P. y Jaravel, X. (2022). Quasi-experimental shift-share research designs. *Review of Economic Studies*, 89(1), 181-213. DOI 10.1093/restud/rdab030. [Crossref; LSE Research Online]
 - Bover, O. y Jimeno, J. F. (2007). House prices and employment reallocation: International evidence. Banco de España, Documentos de Trabajo nº 0705 (7/03/2007). [bde.es; no se verificó DOI propio]
 - Card, D. (2001). Immigrant inflows, native outflows, and the local labor market impacts of higher immigration. *Journal of Labor Economics*, 19(1), 22-64. DOI 10.1086/209979. [Crossref; IDEAS]
-- Caldera, A. y Johansson, Å. (2013). The price responsiveness of housing supply in OECD countries. *Journal of Housing Economics*, 22(3), 231-249. DOI 10.1016/j.jhe.2013.05.002. [citada en bibliografía del IA 2025 del BdE; no verificada de forma independiente]
-- Cavalleri, M. C., Cournède, B. y Özsöğüt, E. (2019). How responsive are housing markets in the OECD? OECD Economics Department Working Papers 1589. DOI 10.1787/4777e29a-en. [citada en bibliografía del IA 2025 del BdE; no verificada de forma independiente]
+- Caldera, A. y Johansson, Å. (2013). The price responsiveness of housing supply in OECD countries. *Journal of Housing Economics*, 22(3), 231-249. DOI 10.1016/j.jhe.2013.05.002. **NO VERIFICADA** [citada en la bibliografía del IA 2025 del BdE; no comprobada de forma independiente]
+- Cavalleri, M. C., Cournède, B. y Özsöğüt, E. (2019). How responsive are housing markets in the OECD? OECD Economics Department Working Papers 1589. DOI 10.1787/4777e29a-en. **NO VERIFICADA** [citada en la bibliografía del IA 2025 del BdE; no comprobada de forma independiente]
 - DiPasquale, D. y Wheaton, W. C. (1994). Housing market dynamics and the future of housing prices. *Journal of Urban Economics*, 35(1), 1-27. DOI 10.1006/juec.1994.1001. [Crossref; IDEAS]
 - Engle, R. F. y Granger, C. W. J. (1987). Co-integration and error correction: Representation, estimation, and testing. *Econometrica*, 55(2), 251-276. DOI 10.2307/1913236. [Crossref; Econometric Society]
 - Funcas: García Montalvo, J. (2026). ¿Existe una nueva burbuja en el mercado inmobiliario español? *Investigaciones de Funcas* 26/2026. [PDF funcas.es; no académico]
@@ -174,5 +174,6 @@ Entre corchetes, fuente de verificación.
 - Accetturo et al.: las magnitudes proceden del DT BdI 866 (2012).
 - DOIs no verificados: Martínez Pagés y Maza (2003), Bover y Jimeno (2007), IEF otoño 2025.
 - Informe Anual 2024 del Banco de España y artículos analíticos del Boletín Económico 2023-2026: **no consultados** (el boletín 2/2023, "El desajuste entre la oferta y la demanda de vivienda", apareció en búsquedas pero no se abrió). La elasticidad 0,45 y el déficit 750.000 se citan del Informe Anual 2025, verificado en el PDF.
+- Caldera y Johansson (2013) y Cavalleri, Cournède y Özsöğüt (2019): **NO VERIFICADAS** de forma independiente; solo constan como fuente citada por el Banco de España para la elasticidad de 0,45.
 - Funcas, Cuadernos de Información Económica nº 311 (marzo 2026): solo la página de prensa; sin cifras de déficit o inmigración verificadas.
 - BBVA Research: cifras de 747.000 y 794.000 (informes 2026) solo vistas en prensa; no se citan. La estimación de 625.000 hogares proviene del PDF oficial de noviembre de 2025.

@@ -15,3 +15,6 @@ Idioma de salida: español. Reproducible con `make all` (data → clean → mode
 - Comparar modelos en la misma muestra; HAC(4); registrar cada especificación probada.
 - "Asociación" salvo identificación explícita.
 - Subagentes: data-fetcher, data-cleaner (haiku); lit-researcher, econometrician (sonnet); reviewer (opus, solo en puertas).
+- pdf-extractor (sonnet): fuentes en PDF/visor → data/raw/pdf/, con validación (cuadres, serie solapada, revisión visual).
+- Datos de PDF/OCR no validados: solo robustez, nunca en el modelo principal.
+- Dependencias de sistema para OCR: tesseract-ocr (+spa), ghostscript, qpdf, java (tabula).

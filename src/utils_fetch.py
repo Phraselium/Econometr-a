@@ -6,6 +6,7 @@ Si el CSV de destino existe, no se vuelve a descargar salvo FORCE=1.
 from __future__ import annotations
 
 import datetime as dt
+import fcntl
 import os
 import time
 from pathlib import Path
@@ -93,11 +94,14 @@ def save(df: pd.DataFrame, name: str, fuente: str) -> Path:
         "n_obs": len(df), "n_nan": int(df["valor"].isna().sum()),
         "descargado_utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }])
-    if MANIFEST.exists():
-        man = pd.read_csv(MANIFEST)
-        man = pd.concat([man[man["archivo"] != name], row], ignore_index=True)
-    else:
-        man = row
-    man.sort_values("archivo").to_csv(MANIFEST, index=False)
+    # Bloqueo de archivo: varios fetchers pueden escribir el manifiesto en paralelo.
+    with open(RAW / ".manifest.lock", "w") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        if MANIFEST.exists():
+            man = pd.read_csv(MANIFEST)
+            man = pd.concat([man[man["archivo"] != name], row], ignore_index=True)
+        else:
+            man = row
+        man.sort_values("archivo").to_csv(MANIFEST, index=False)
     print(f"[ok] {name}: {len(df)} obs, {df['serie'].nunique()} series, {row.primera_fecha[0]} → {row.ultima_fecha[0]}")
     return path

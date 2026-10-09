@@ -142,6 +142,16 @@ JOBS = [
     ("ine_cnt_demanda_corrientes.csv", [("tabla", "67823", None)]),
     ("ine_cnt_demanda_volumen.csv", [("tabla", "67824", None)]),
     ("ine_cnt_renta_disponible.csv", [("tabla", "80333", None)]),
+    # ECP por CCAA (77019, desde 2002T1). Filtro sobre el Nombre de serie:
+    # "<CCAA>. Todas las edades. <nacionalidad>. Total. Población. Número."
+    # ine_ecp_ccaa_nacionalidad: nacionalidad Total / Española / Extranjera, sexo Total.
+    # ine_ecp_ccaa_paises: agrupación de países (incluye Total, Española y Extranjera), sexo Total.
+    ("ine_ecp_ccaa_nacionalidad.csv", [("tabla", "77019", r"^(?:Andalucía|Aragón|Asturias, Principado de|Balears, Illes|Canarias|Cantabria|Castilla y León|Castilla - La Mancha|Cataluña|Comunitat Valenciana|Extremadura|Galicia|Madrid, Comunidad de|Murcia, Región de|Navarra, Comunidad Foral de|País Vasco|Rioja, La|Ceuta|Melilla)\. Todas las edades\. (?:Total|Española|Extranjera)\. Total\. Población\. Número\.\s*$")]),
+    ("ine_ecp_ccaa_paises.csv", [("tabla", "77019", r"^(?:Andalucía|Aragón|Asturias, Principado de|Balears, Illes|Canarias|Cantabria|Castilla y León|Castilla - La Mancha|Cataluña|Comunitat Valenciana|Extremadura|Galicia|Madrid, Comunidad de|Murcia, Región de|Navarra, Comunidad Foral de|País Vasco|Rioja, La|Ceuta|Melilla)\. Todas las edades\. [^.]+\. Total\. Población\. Número\.\s*$")]),
+    # EPA hogares (65269, trimestral desde 2002T1; sólo existe a nivel nacional)
+    ("ine_epa_hogares.csv", [("tabla", "65269", None)]),
+    # EPA población por CCAA (65285). Filtro: "Ambos sexos. <CCAA>. <grupo de edad>. Valor absoluto."
+    ("ine_epa_poblacion_ccaa.csv", [("tabla", "65285", r"^Ambos sexos\. (?:Andalucía|Aragón|Asturias, Principado de|Balears, Illes|Canarias|Cantabria|Castilla y León|Castilla - La Mancha|Cataluña|Comunitat Valenciana|Extremadura|Galicia|Madrid, Comunidad de|Murcia, Región de|Navarra, Comunidad Foral de|País Vasco|Rioja, La|Ceuta|Melilla)\. [^.]+\. Valor absoluto\.\s*$")]),
 ]
 
 

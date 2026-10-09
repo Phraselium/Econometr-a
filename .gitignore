@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 data/raw/.manifest.lock
+# Originales voluminosos (>50 MB): se re-descargan con FORCE=1; los CSV extraídos sí se versionan
+data/raw/pdf/originales/serpavi_bd_*.xlsx

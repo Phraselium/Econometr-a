@@ -2,7 +2,7 @@
 # make all = data -> clean -> models -> report.  Las descargas se cachean en data/raw
 # (FORCE=1 make data para volver a descargar).
 PY ?= python3
-FETCH  := $(sort $(wildcard src/fetch_*.py))
+FETCH  := $(sort $(wildcard src/fetch_*.py)) $(sort $(wildcard src/extract_*.py))
 MODELS := $(sort $(wildcard src/f[2-6]_*.py))
 
 .PHONY: all data clean models report distclean

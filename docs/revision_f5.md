@@ -223,3 +223,38 @@ No hacen falta otros cambios. El CCE, el wild bootstrap Webb, el registro de bú
 ## Anexo: comprobaciones del revisor
 
 Scripts en el scratchpad de la sesión (no forman parte del repositorio): `fe_check.py` (re-estimación con statsmodels, AR(1) de residuos, modelo con y_{t−1}), `fe_alt.py` (timing y 17 CCAA con terminadas de Extremadura desde el raw, wild Webb B=999) y `ri.py` (aleatorización por CCAA y wild bootstrap del F de poolability, B=999). Los resultados se transcriben en las tablas de arriba.
+
+---
+
+## Re-revisión (iteración 2, commit `cb60e61`)
+
+**Veredicto final: APROBAR.**
+
+### Comprobaciones
+
+- **Reproducibilidad.** En una copia aislada (`git archive HEAD`, sin red y sin `FORCE`), `make data clean` y dos ejecuciones de `f5_panel.py` terminan con exit 0.
+  - Los md5 de `output/f5/*` y de `registro_busqueda_f5.csv` son idénticos entre las dos ejecuciones e idénticos a HEAD.
+  - `panel_ccaa_a.csv` coincide con el del repositorio. Las salidas ya no incluyen el tiempo de ejecución.
+- **Cambios C1-C5 de la primera revisión.** Están aplicados:
+  - El parser incorpora Extremadura (`extremadura_1` → CCAA). El FE con 17 CCAA da b1 = −0,028 y b2 = 0,0011, igual que mi re-estimación de la primera ronda.
+  - Las tres alineaciones temporales de b2 están registradas (23 modelos).
+  - El CD se declara no interpretable (Juodis y Reese 2022).
+  - La poolability se acompaña del p wild (0,363) y del límite 1/17.
+  - Hay discusión de b4, de CIPS y de b1 frente a F2. Las referencias se han añadido a `literatura.md`.
+- **Familia de Holm para b2 (15 p-valores).** Es correcta: incluye inferencias, tendencias, CCE, muestras, alineaciones y los b2 trimestrales.
+  - **Las interacciones regionales no deben entrar.** Contrastan otra hipótesis (diferencias entre regiones, no b2 = 0) y ya se corrigen en su propia familia (Holm sobre 12).
+  - Meter en la misma familia inferencias distintas del mismo modelo hace la corrección conservadora, y eso está declarado.
+  - El menor p ajustado es 0,151 (T_flow_t y R_ptasado_main): nada es significativo tras la corrección.
+
+### Pendientes menores (no bloquean)
+
+1. La sección 1a dice todavía «16 clusters»; deben ser 17.
+2. No se calculó la inferencia por aleatorización de las interacciones (solo se declara su límite, 1/17). Es aceptable porque la conclusión ya es «no se detecta heterogeneidad».
+3. No se calcula el CDw.
+
+### Qué queda establecido para P4
+
+- No se detecta heterogeneidad entre CCAA, lo que no equivale a demostrar homogeneidad.
+- b2 está entre 0,1 y 1,9 %/pp según la alineación temporal, y ningún valor sobrevive a la corrección por búsqueda.
+- La diferencia de la C. Valenciana con España es solo descriptiva y su signo depende de la medida de precio.
+- Todo ello con nivel de asociación, sin lectura causal.

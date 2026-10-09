@@ -31,3 +31,10 @@ Problemas que persisten tras las iteraciones de revisión, o restricciones de da
 - Elasticidad de la oferta: los DOLS en niveles son descriptivos (cointegración 1/3, ECM no significativo, BG y RESET fallan, quiebre 2014). En Δ4, iniciadas β=1,39 (EE 0,63): no se rechaza β=0,45 (p Holm 0,27). El 0,45 del BdE (Caldera-Johansson 2013; Cavalleri et al. 2019, NO VERIFICADAS) mide previsiblemente otro concepto (inversión residencial / stock); la traducción flujo→stock no se ha hecho.
 - Instrumentos del precio: solo la renta es defendible como desplazador de demanda excluido; ocupados y población pueden afectar a la oferta (exclusión dudosa).
 - Pendientes menores trasladados a F7: fila antigua «¿ECP?» en comparacion_bde_deficit; signo de costes en la ecuación de permisos; «inversión residencial» como inferencia.
+
+## F5 (aprobada en re-revisión)
+- Panel anual de 17 CCAA (2009-2025): el efecto de la cuota extranjera depende de la alineación temporal (0,1 a 1,9 % por pp) y ninguno sobrevive a Holm (mínimo 0,151); asociación.
+- No se detecta heterogeneidad entre CCAA (poolability p wild 0,363; límite de aleatorización 1/17), lo que no prueba homogeneidad; la C. Valenciana solo difiere en lo descriptivo y el signo depende de la medida de precio (IPV vs valor tasado).
+- El test CD de Pesaran no es interpretable sobre residuos de FE bidireccional/CCE (Juodis y Reese 2022); no se calculó el CDw.
+- 17 clusters: inferencia apoyada en wild cluster bootstrap; terminadas retardadas con signo positivo (contrario a lo esperado, p wild 0,075).
+- Errata menor pendiente: la sección 1a de resumen_f5.md dice «16 clusters» (son 17).

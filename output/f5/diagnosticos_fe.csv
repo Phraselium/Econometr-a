@@ -1,0 +1,5 @@
+,estadistico,p
+Durbin-Watson (apilado),1.3913407681341377,
+AR(1) medio residuos FE,0.33087218147648484,
+Jarque-Bera,37.36014978998695,7.715188681410422e-09
+Breusch-Pagan (sobre X demeaned),2.521697759806008,0.6407547333477526

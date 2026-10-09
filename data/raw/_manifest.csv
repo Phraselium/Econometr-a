@@ -1,0 +1,14 @@
+archivo,fuente,n_series,primera_fecha,ultima_fecha,n_obs,n_nan,descargado_utc
+ecb_euribor1y.csv,BCE,1,1994-01-01,2026-09-01,393,0,2026-10-09T18:41:42Z
+ecb_hicp_es.csv,BCE,1,1996-01-01,2025-12-01,360,0,2026-10-09T18:41:50Z
+ecb_nuevo_credito_vivienda_es.csv,BCE,1,2003-01-01,2026-08-01,284,0,2026-10-09T18:41:44Z
+ecb_stock_credito_vivienda_es.csv,BCE,1,2003-01-01,2026-08-01,284,0,2026-10-09T18:41:46Z
+ecb_tipo_hipotecario_es.csv,BCE,1,2003-01-01,2026-08-01,284,0,2026-10-09T18:41:41Z
+ecb_tipo_oficial.csv,BCE,1,1999-01-01,2026-09-16,48,0,2026-10-09T18:41:48Z
+eurostat_costes.csv,Eurostat,1,1980-01-01,2026-04-01,186,0,2026-10-09T18:43:32Z
+eurostat_empleo_nuts2.csv,Eurostat,19,2008-01-01,2025-01-01,342,0,2026-10-09T18:43:37Z
+eurostat_hpi.csv,Eurostat,6,2005-10-01,2026-04-01,486,0,2026-10-09T18:43:34Z
+eurostat_inmigracion_anual.csv,Eurostat,283,1998-01-01,2024-01-01,4036,394,2026-10-09T18:43:36Z
+eurostat_permisos.csv,Eurostat,1,2000-01-01,2026-04-01,106,0,2026-10-09T18:43:31Z
+eurostat_produccion_construccion.csv,Eurostat,1,2005-01-01,2026-04-01,86,0,2026-10-09T18:43:38Z
+eurostat_renta_hogares.csv,Eurostat,1,1999-01-01,2026-04-01,110,0,2026-10-09T18:43:30Z

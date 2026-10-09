@@ -14,6 +14,8 @@ eurostat_inmigracion_anual.csv,Eurostat,283,1998-01-01,2024-01-01,4036,394,2026-
 eurostat_permisos.csv,Eurostat,1,2000-01-01,2026-04-01,106,0,2026-10-09T18:43:31Z
 eurostat_produccion_construccion.csv,Eurostat,1,2005-01-01,2026-04-01,86,0,2026-10-09T18:43:38Z
 eurostat_renta_hogares.csv,Eurostat,1,1999-01-01,2026-04-01,110,0,2026-10-09T18:43:30Z
+gva_padron_extranjeros_municipio.csv,IVE - Padron municipal continuo: explotacion estadistica por distritos y secciones (datos abiertos CKAN),13032,2005-01-01,2022-01-01,31494,26,2026-10-09T19:31:27Z
+gva_vut_municipio.csv,Generalitat Valenciana - Registre de Turisme CV (datos abiertos CKAN),1451,2010-01-01,2026-10-09,173053,0,2026-10-09T19:28:17Z
 ine_cnt_demanda_corrientes.csv,INE,218,1995-01-01,2026-04-01,27118,0,2026-10-09T18:50:43Z
 ine_cnt_demanda_volumen.csv,INE,358,1995-01-01,2026-04-01,43574,0,2026-10-09T18:50:56Z
 ine_cnt_pib_oferta_corrientes.csv,INE,96,1995-01-01,2026-04-01,11936,0,2026-10-09T18:50:32Z

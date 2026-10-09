@@ -10,16 +10,16 @@ Generado por `src/f5_panel.py` (semilla 20261009).
 - Nivel de evidencia: **asociacion condicional y fragil** (panel observacional con FE de CCAA y anio / CCE). Sin identificacion causal en esta fase; para la lectura causal remite al IV de F3 (no se repite aqui).
 - C. Valenciana: ninguna interaccion distinguible del resto (p wild de b1 y b2 en tabla 4a). La unica diferencia solida es **descriptiva** y depende de la medida de precio (tabla 4c): 2014Q1-2026Q2 el IPV de la CV crece menos que el de Espana pero su valor tasado mas; desde 2021Q1 crece mas con ambas.
 - FE bidireccional (17 CCAA, 2009-2025): b1 (elasticidad al empleo) = -0.028 (EE cluster 0.104, p wild=0.812); b2 = 0.0011 (EE 0.0040; 0.11 %/pp; p cluster=0.777, DK bw2=0.913, wild=0.774). R2 within ajustado = -0.040: los regresores explican poco de las desviaciones regionales respecto del ciclo comun.
-- **b2 depende del timing** (2009-2024, misma muestra): flujo t-1 0.09 %/pp (p wild 0.857); cuota a mitad de anio 1.18 %/pp (p wild 0.068); flujo contemporaneo 1.89 %/pp (p wild 0.010). Tras la correccion por busqueda (Holm sobre 15 p-valores de b2) el menor p ajustado es 0.026: ninguna alineacion es robusta a la multiplicidad, asi que b2 queda **entre ~0 y ~+1,5 %/pp segun la alineacion, sin significacion corregida**. No se afirma b2 = 0.
+- **b2 depende del timing** (2009-2024, misma muestra): flujo t-1 0.09 %/pp (p wild 0.857); cuota a mitad de anio 1.18 %/pp (p wild 0.068); flujo contemporaneo 1.89 %/pp (p wild 0.010). Tras la correccion por busqueda (Holm sobre 15 p-valores de b2, incluidos los trimestrales con el mayor de p cluster y DK) el menor p ajustado es 0.151: ninguna alineacion es significativa tras la correccion; b2 queda **entre 0.1 y 1.9 %/pp segun la alineacion**. No se afirma b2 = 0.
 - CCE-MG: b1=0.056 (0.101), b2=0.025 (0.014); CCE-P: b1=-0.053 (0.097), b2=0.022 (0.011).
 - Poolability: F=3.38, p clasico=5.8e-11 (sobredimensionado), **p wild Webb=0.363**; F conjunto de las 12 interacciones regionales: p clasico=3e-07, p wild=0.107.
 - Dependencia transversal: el CD sobre residuos de FE y CCE **no es interpretable** (Juodis y Reese 2022; seccion 3a) y no se usa como diagnostico.
 
 ## Discusion de signos y magnitudes
 
-- **b2 frente a la literatura** (docs/literatura.md): Saiz (2007) encuentra ~+1 % en alquileres y valores por una entrada igual al 1 % de la poblacion, y Gonzalez y Ortega (2013) efectos positivos de la inmigracion sobre el precio en Espana. Un b2 ~ 0 (flujo t-1) discrepa; el flujo contemporaneo (~+1,5 %/pp) y la cuota a mitad de anio se acercan al orden de magnitud, pero con causalidad inversa posible. F3 (FE/2SLS, ver output/f3) da estimaciones tampoco distinguibles de 0; la comparacion directa exige expresar F5 en %/pp (hecho arriba).
+- **b2 frente a la literatura** (docs/literatura.md): Saiz (2007) encuentra ~+1 % en alquileres y valores por una entrada igual al 1 % de la poblacion, y Gonzalez y Ortega (2013) efectos positivos de la inmigracion sobre el precio en Espana. Un b2 ~ 0 (flujo t-1) discrepa; el flujo contemporaneo (~+1,9 %/pp) y la cuota a mitad de anio se acercan al orden de magnitud, pero con causalidad inversa posible. F3 (FE/2SLS, ver output/f3) da estimaciones tampoco distinguibles de 0; la comparacion directa exige expresar F5 en %/pp (hecho arriba).
 - **b4 (terminadas por 1.000 hab., t-1) > 0** (0.0026, EE 0.0011, p wild 0.075) frente al signo negativo esperado de la oferta (Saiz 2010; Hilber y Vermeulen 2016; tabla de signos de literatura.md). No debe leerse como efecto de oferta: es compatible con simultaneidad/inercia (se termina mas donde los precios ya subian) y con dinamica omitida (AR(1) residual ~0,3); en CCE el signo se invierte y deja de ser significativo. Se deja como discrepancia abierta.
-- **b1 y F2**: b1 es una elasticidad de corto plazo (-0.03, es decir -3 % por cada 100 % de empleo ~ -0.03 %/1 %), no comparable con la elasticidad de largo plazo de F2 (DOLS, 1,95 con EE HAC 0,48, evidencia mixta/inestable segun F2): F5 usa desviaciones regionales anuales respecto del ciclo comun (los efectos de anio absorben lo nacional) y probable atenuacion por el error muestral de la EPA regional en diferencias. Con valor tasado como dependiente b1 es mayor (tabla 1f), asi que b1 ~ 0 no es robusto a la medida de precio.
+- **b1 y F2**: b1 es una elasticidad de corto plazo (-0.03 %/1 % de empleo), no comparable con la elasticidad de largo plazo de F2 (DOLS, 1,95 con EE HAC 0,48, evidencia mixta/inestable segun F2): F5 usa desviaciones regionales anuales respecto del ciclo comun (los efectos de anio absorben lo nacional) y probable atenuacion por el error muestral de la EPA regional en diferencias. Con valor tasado como dependiente b1 es mayor (tabla 1f), asi que b1 ~ 0 no es robusto a la medida de precio.
 - **CIPS** (tabla 3b): no rechaza raiz unitaria en la primera diferencia de la cuota extranjera (CIPS* -1.53, p sim 0.75) ni de ln poblacion espanola (p sim 0.41). Puede ser falta de potencia con T=17, o persistencia migratoria; si d_share fuese casi I(1), la regresion de un y I(0) estaria desequilibrada y b2, b3 tenderian a 0 con inferencia no estandar. Es una limitacion de b2 y b3.
 
 ## 0. Datos y muestra
@@ -266,21 +266,21 @@ Especificaciones registradas en `output/registro_busqueda_f5.csv`: **23**. Famil
 
 |                   |   p_sin_corregir |   p_Holm |   p_Bonferroni |
 |:------------------|-----------------:|---------:|---------------:|
-| A_FE_cl           |         0.7772   |  1       |        1       |
-| A_FE_dk           |         0.9127   |  1       |        1       |
-| A_FE_dk3          |         0.899    |  1       |        1       |
-| A_FE_wild         |         0.774    |  1       |        1       |
-| A_FE_trend        |         0.2883   |  1       |        1       |
-| A_CCE_MG          |         0.07202  |  0.675   |        1       |
-| A_CCE_P           |         0.04025  |  0.4428  |        0.6038  |
-| T_flow_tm1        |         0.8565   |  1       |        1       |
-| T_mid             |         0.0675   |  0.675   |        1       |
-| T_flow_t          |         0.0101   |  0.1408  |        0.1515  |
-| R_sin_term        |         0.3102   |  1       |        1       |
-| R_ptasado_main    |         0.01006  |  0.1408  |        0.1509  |
-| R_ptasado_2003    |         0.5724   |  1       |        1       |
-| Q_Q2_con_pob_d4   |         0.001727 |  0.02591 |        0.02591 |
-| Q_Q3_term_por_hab |         0.01682  |  0.2018  |        0.2523  |
+| A_FE_cl           |          0.7772  |   1      |         1      |
+| A_FE_dk           |          0.9127  |   1      |         1      |
+| A_FE_dk3          |          0.899   |   1      |         1      |
+| A_FE_wild         |          0.774   |   1      |         1      |
+| A_FE_trend        |          0.2883  |   1      |         1      |
+| A_CCE_MG          |          0.07202 |   0.81   |         1      |
+| A_CCE_P           |          0.04025 |   0.5233 |         0.6038 |
+| T_flow_tm1        |          0.8565  |   1      |         1      |
+| T_mid             |          0.0675  |   0.81   |         1      |
+| T_flow_t          |          0.0101  |   0.1509 |         0.1515 |
+| R_sin_term        |          0.3102  |   1      |         1      |
+| R_ptasado_main    |          0.01006 |   0.1509 |         0.1509 |
+| R_ptasado_2003    |          0.5724  |   1      |         1      |
+| Q_Q2_con_pob_d4   |          0.1537  |   1      |         1      |
+| Q_Q3_term_por_hab |          0.2708  |   1      |         1      |
 
 
 ## Problemas abiertos

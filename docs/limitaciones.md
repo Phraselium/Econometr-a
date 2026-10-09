@@ -12,12 +12,12 @@ Problemas que persisten tras las iteraciones de revisión, o restricciones de da
 - Deflactor: implícito del PIB (CNTR SA), no un deflactor de consumo.
 - València: padrón por nacionalidad solo hasta 2022; varias series municipales con N corto (≤ 14 años).
 
-## F2 (aprobada en re-revisión; pendientes trasladados)
+## F2 (aprobada en re-revisión; pendientes trasladados) — ecuación NOMINAL (réplica) salvo que se indique
 - Cointegración con precio nominal: evidencia mixta (1/3: EG no rechaza, Johansen rechaza, ARDL no concluyente). Solo el precio real cointegra en los tres contrastes; la relación es estadística, no estructural (costes y tipo con signos no esperados en el DOLS real de control del revisor; inestable por subperiodos).
-- Desde 2014Q1 el término de corrección del error deja de ser significativo (−0,068, EE 0,045; N=50) y el crédito desaparece: la dinámica de ajuste no es estable.
+- [Nominal] Desde 2014Q1 el término de corrección del error del ECM nominal deja de ser significativo (−0,068, EE 0,045; N=50) y el crédito desaparece.
 - El crédito nuevo contemporáneo es simultáneo con el precio (en t−1 cambia de signo); la variante con crédito en t−1 rechaza Breusch-Godfrey.
-- Selección: el modelo preferido gana en solo el 1,5 % de las réplicas bootstrap; tras Bonferroni (K=1.728) ningún regresor es significativo al 5 %; fuera de muestra no mejora al AR(4) (selección hecha con la muestra completa).
-- RESET rechaza en la ecuación preferida; quiebre en 2014Q1 (Chow p=0,012); Bai-Perron detecta 3 quiebres en el largo plazo.
+- [Nominal] Selección: el modelo preferido nominal gana en solo el 1,5 % de las réplicas bootstrap; tras Bonferroni (K=1.728) ningún regresor es significativo al 5 %; fuera de muestra no mejora al AR(4) (selección hecha con la muestra completa).
+- [Nominal] RESET rechaza en la ecuación preferida nominal; quiebre en 2014Q1 (Chow p=0,012); Bai-Perron detecta 3 quiebres en el largo plazo.
 
 ## F3 (aprobada en re-revisión)
 - Inmigración y precios: con el IV shift-share (Card, cuotas 2002), ningún efecto sobrevive al wild cluster bootstrap ni a Holm (150 especificaciones; p Holm mínimo 0,051). El IC95 % del IPV [−3,90; 0,67] excluye las magnitudes de Saiz (2007) y González-Ortega (2013); la diferencia se atribuye a diseño y periodo (2008+, peso de la cuota europea 2002 y de Baleares), no a un error.
@@ -38,7 +38,7 @@ Problemas que persisten tras las iteraciones de revisión, o restricciones de da
 - 17 clusters: inferencia apoyada en wild cluster bootstrap; terminadas retardadas con signo positivo (contrario a lo esperado, p wild 0,075).
 
 ## F2 — bloque de precio real (condición de la re-revisión, cumplida)
-- Ecuación real: el término de corrección del error es significativo en toda la muestra (−0,106, EE 0,035) pero cambia de signo antes de 2020 (+0,010, p=0,72) y no es significativo desde 2014: la corrección hacia el equilibrio no es estable.
+- Ecuación real: el término de corrección del error es significativo en toda la muestra (−0,106, EE 0,035) pero cambia de signo en la muestra pre-COVID (hasta 2019Q4: +0,010, p=0,72); en la submuestra 2014Q1+ con el ect de la muestra completa sigue siendo significativo (−0,112, p<0,001). La corrección hacia el equilibrio depende del periodo: no es estable. (Corrección: una versión anterior de este documento atribuía al ECM real el −0,068 del nominal; detectado en docs/revision_f7.md.)
 - Costes reales con signo negativo en el largo plazo (−0,66) y tipo real ≈0: relación estadística, no estructural. DOLS real con BG, RESET y VIF (17) que fallan.
 - Ningún término del corto plazo real sobrevive a Bonferroni (K=576-1.728); el preferido rara vez gana en el bootstrap de la selección; no mejora al AR(4) fuera de muestra.
 

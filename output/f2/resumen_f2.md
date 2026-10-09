@@ -1,6 +1,6 @@
 # Resumen F2 (nacional)
 
-Lenguaje: asociaciones, sin identificación causal. Semilla 20261009. Filas del registro de la fase: 1748 (de ellas 1728 de la búsqueda de corto plazo).
+Lenguaje: asociaciones, sin identificación causal. Semilla 20261009. Filas del registro de la fase: 3483 (de ellas 1728 de la búsqueda de corto plazo).
 
 ## P1. Ecuación final
 
@@ -125,21 +125,21 @@ EG (statsmodels.coint, MacKinnon, AIC), Johansen (det_order=0, k_ar_diff por AIC
 
 DOLS ±2 con HAC(4) (estimador preferido, vector base con dummies trimestrales en la relación). Celdas: coef (EE HAC). Signos esperados de docs/literatura.md.
 
-| var               | DOLS +pob_extranj   | DOLS +renta     | DOLS base (+q)   | DOLS base + epa21 + tipo22   | EG estático (+q)   | EG estático (const)   | UECM implícito (delta, EE clásicos)   | signo_esperado   |
-|:------------------|:--------------------|:----------------|:-----------------|:-----------------------------|:-------------------|:----------------------|:--------------------------------------|:-----------------|
-| const             | -29.789 (2.257)     | -23.131 (4.271) | -16.469 (3.870)  | -19.316 (4.262)              | -7.010 (2.527)     | -7.038 (2.416)        | nan                                   | nan              |
-| ln_costes         | -0.913 (0.169)      | 0.005 (0.169)   | 0.266 (0.165)    | 0.320 (0.199)                | 0.513 (0.147)      | 0.511 (0.141)         | 1.244 (0.611)                         | +                |
-| ln_ocupados       | 2.672 (0.294)       | 0.939 (0.478)   | 1.951 (0.480)    | 2.235 (0.481)                | 0.837 (0.327)      | 0.840 (0.312)         | 0.253 (1.098)                         | +                |
-| ln_permisos_l4    | -0.005 (0.022)      | 0.068 (0.044)   | 0.059 (0.045)    | 0.011 (0.048)                | 0.163 (0.023)      | 0.163 (0.022)         | 0.223 (0.084)                         | -                |
-| ln_pob_extranj    | 0.768 (0.146)       | nan             | nan              | nan                          | nan                | nan                   | nan                                   | +                |
-| ln_renta_hog_real | nan                 | 1.457 (0.388)   | nan              | nan                          | nan                | nan                   | nan                                   | +                |
-| tipo_hip          | -0.006 (0.009)      | 0.011 (0.020)   | -0.017 (0.017)   | -0.006 (0.019)               | -0.044 (0.009)     | -0.044 (0.009)        | -0.123 (0.057)                        | -                |
+| var               | DOLS +pob_extranj   | DOLS +renta     | DOLS base (+q)   | DOLS base + epa21 + tipo22   | EG estático (+q)   | EG estático (const)   | UECM implícito (delta, HAC)   | signo_esperado   |
+|:------------------|:--------------------|:----------------|:-----------------|:-----------------------------|:-------------------|:----------------------|:------------------------------|:-----------------|
+| const             | -29.789 (2.257)     | -23.131 (4.271) | -16.469 (3.870)  | -19.316 (4.262)              | -7.010 (2.527)     | -7.038 (2.416)        | nan                           | nan              |
+| ln_costes         | -0.913 (0.169)      | 0.005 (0.169)   | 0.266 (0.165)    | 0.320 (0.199)                | 0.513 (0.147)      | 0.511 (0.141)         | 1.244 (0.434)                 | +                |
+| ln_ocupados       | 2.672 (0.294)       | 0.939 (0.478)   | 1.951 (0.480)    | 2.235 (0.481)                | 0.837 (0.327)      | 0.840 (0.312)         | 0.253 (0.906)                 | +                |
+| ln_permisos_l4    | -0.005 (0.022)      | 0.068 (0.044)   | 0.059 (0.045)    | 0.011 (0.048)                | 0.163 (0.023)      | 0.163 (0.022)         | 0.223 (0.081)                 | -                |
+| ln_pob_extranj    | 0.768 (0.146)       | nan             | nan              | nan                          | nan                | nan                   | nan                           | +                |
+| ln_renta_hog_real | nan                 | 1.457 (0.388)   | nan              | nan                          | nan                | nan                   | nan                           | +                |
+| tipo_hip          | -0.006 (0.009)      | 0.011 (0.020)   | -0.017 (0.017)   | -0.006 (0.019)               | -0.044 (0.009)     | -0.044 (0.009)        | -0.123 (0.037)                | -                |
 
 
 
 ## 5. Búsqueda de corto plazo (conjunto CERRADO, declarado antes de resultados)
 
-**Siempre**: ect(t−1) del DOLS preferido (vector base con dummies trimestrales) + q2,q3,q4. **Candidatos** (cada variable con a lo sumo uno de sus retardos): d_ln_ocupados {0,1}; d_tipo_hip {0,1}; d_ln_permisos {t−4}; d_ln_costes {0}; d_ln_renta_hog_real {0}; inmigración {ninguna, d_ln_pob_extranj, d4_ln_pob_extranj/4, d_ln_pob_total} (alternativas excluyentes: nunca stock extranjero y población total a la vez); d_ln_ipv {1, 4}; d_ln_credito_nuevo {0}. Total de modelos enumerados: **1728** (más los modelos de réplica/LR/robustez del registro: 1737 filas en total al terminar la fase). Muestra común: 2008Q2-2026Q2, **N=73** (límite: d_ln_ipv(t−4)). Criterio principal: R² ajustado (como el punto de partida), corregido por la búsqueda (Bonferroni con K = modelos que contienen el término y bootstrap de la selección). También se reportan AIC y BIC. Asociaciones, no causalidad.
+**Siempre**: ect(t−1) del DOLS preferido (vector base con dummies trimestrales) + q2,q3,q4. **Candidatos** (cada variable con a lo sumo uno de sus retardos): d_ln_ocupados {0,1}; d_tipo_hip {0,1}; d_ln_permisos {t−4}; d_ln_costes {0}; d_ln_renta_hog_real {0}; inmigración {ninguna, d_ln_pob_extranj, d4_ln_pob_extranj/4, d_ln_pob_total} (alternativas excluyentes: nunca stock extranjero y población total a la vez); d_ln_ipv {1, 4}; d_ln_credito_nuevo {0}. Total de modelos enumerados: **1728** (más los modelos de réplica/LR/robustez/precio real del registro; el total final está en la cabecera). Muestra común: 2008Q2-2026Q2, **N=73** (límite: d_ln_ipv(t−4)). Criterio principal: R² ajustado (como el punto de partida), corregido por la búsqueda (Bonferroni con K = modelos que contienen el término y bootstrap de la selección). También se reportan AIC y BIC. Asociaciones, no causalidad.
 
 **Ganadores (misma muestra)**
 
@@ -342,10 +342,10 @@ Las otras variables cambian como muestra la tabla (compárese ect, ocupados y d_
 
 | variable                 | esperado   | DOLS             | EG_q             | UECM             | discrepancia                                                                                                      |
 |:-------------------------|:-----------|:-----------------|:-----------------|:-----------------|:------------------------------------------------------------------------------------------------------------------|
-| Empleo (LP)              | +          | 1.9510 (0.4801)  | 0.8366 (0.3271)  | 0.2529 (1.0978)  | signo OK; magnitud NO robusta: rango 0.84-2.67 según estimador/vector; literatura.md no da magnitud de referencia |
-| Tipo hipotecario (LP)    | -          | -0.0172 (0.0171) | -0.0443 (0.0093) | -0.1235 (0.0568) |                                                                                                                   |
-| Permisos t−4 (LP)        | -          | 0.0595 (0.0454)  | 0.1629 (0.0229)  | 0.2227 (0.0844)  | DISCREPANCIA de signo en algún estimador                                                                          |
-| Costes construcción (LP) | +          | 0.2659 (0.1646)  | 0.5133 (0.1466)  | 1.2435 (0.6106)  |                                                                                                                   |
+| Empleo (LP)              | +          | 1.9510 (0.4801)  | 0.8366 (0.3271)  | 0.2529 (0.9062)  | signo OK; magnitud NO robusta: rango 0.84-2.67 según estimador/vector; literatura.md no da magnitud de referencia |
+| Tipo hipotecario (LP)    | -          | -0.0172 (0.0171) | -0.0443 (0.0093) | -0.1235 (0.0367) |                                                                                                                   |
+| Permisos t−4 (LP)        | -          | 0.0595 (0.0454)  | 0.1629 (0.0229)  | 0.2227 (0.0812)  | DISCREPANCIA de signo en algún estimador                                                                          |
+| Costes construcción (LP) | +          | 0.2659 (0.1646)  | 0.5133 (0.1466)  | 1.2435 (0.4344)  |                                                                                                                   |
 | Renta real (LP)          | +          | 1.4566 (0.3884)  |                  |                  |                                                                                                                   |
 | Pob. extranjera (LP)     | +          | 0.7681 (0.1458)  |                  |                  |                                                                                                                   |
 
@@ -363,6 +363,147 @@ Las otras variables cambian como muestra la tabla (compárese ect, ocupados y d_
 | ect (entre −1 y 0)         | -          | -0.0968 (p=0.002) | 0%                      | 100%          |                                                          |
 
 La elasticidad del precio al empleo no tiene magnitud de referencia en literatura.md. Los signos contrarios de permisos (+) y de costes/renta en el CP son compatibles con causalidad inversa o colinealidad y no se interpretan como efecto de oferta.
+
+
+
+## 8. Ecuación en PRECIO REAL (única con cointegración 3/3)
+
+**Definición.** y = ln_ipv_real = ln_ipv − ln_deflactor (deflactor del PIB). Vector exactamente igual al del test 3/3: ln_ocupados, tipo_hip_real (= tipo_hip − inflación del deflactor), ln_permisos_l4 y ln_costes_real (= ln_costes − ln_deflactor): SÍ, los costes van en términos reales. DOLS ±2 con dummies trimestrales, HAC(4). CP: d(ln_ipv_real) con ect(t−1) del DOLS real, el MISMO conjunto cerrado de candidatos (el retardo de la dependiente es d_ln_ipv_real_l1/l4; el resto de candidatos son los mismos d_ ya definidos), 1728 modelos, muestra común 2008Q2-2026Q2, N=73. Selección por R² aj con Bonferroni (K = modelos con el término) y bootstrap de bloques (B=999, bloque 8, semilla 20261009; ect fijo). Asociaciones, no causalidad.
+
+**Ecuación real final (coef, EE HAC, IC 95 %, p, p Bonferroni)**
+
+| bloque                   | termino             |        coef |   EE_HAC |   IC95_inf |   IC95_sup |         p |   p_bonf_K |    K |   N |
+|:-------------------------|:--------------------|------------:|---------:|-----------:|-----------:|----------:|-----------:|-----:|----:|
+| LR (DOLS ±2, HAC)        | const               | -15.18      | 3.136    | -21.33     |  -9.038    | 1.286e-06 |        nan |  nan |  72 |
+| LR (DOLS ±2, HAC)        | ln_ocupados         |   1.482     | 0.3301   |   0.8353   |   2.129    | 7.117e-06 |        nan |  nan |  72 |
+| LR (DOLS ±2, HAC)        | tipo_hip_real       |   0.002231  | 0.008067 |  -0.01358  |   0.01804  | 0.7821    |        nan |  nan |  72 |
+| LR (DOLS ±2, HAC)        | ln_permisos_l4      |   0.03209   | 0.02923  |  -0.0252   |   0.08938  | 0.2723    |        nan |  nan |  72 |
+| LR (DOLS ±2, HAC)        | ln_costes_real      |  -0.6598    | 0.2512   |  -1.152    |  -0.1675   | 0.008618  |        nan |  nan |  72 |
+| CP (ECM, preferido R2aj) | Intercept           |   0.003159  | 0.003292 |  -0.003294 |   0.009612 | 0.3373    |        nan |  nan |  73 |
+| CP (ECM, preferido R2aj) | ect_l1              |  -0.1064    | 0.03478  |  -0.1746   |  -0.03821  | 0.002224  |          1 | 1728 |  73 |
+| CP (ECM, preferido R2aj) | q2                  |   0.005702  | 0.00505  |  -0.004196 |   0.0156   | 0.2588    |        nan |  nan |  73 |
+| CP (ECM, preferido R2aj) | q3                  |   0.0003292 | 0.005649 |  -0.01074  |   0.0114   | 0.9535    |        nan |  nan |  73 |
+| CP (ECM, preferido R2aj) | q4                  |  -0.02015   | 0.005809 |  -0.03153  |  -0.008764 | 0.0005232 |        nan |  nan |  73 |
+| CP (ECM, preferido R2aj) | d_ln_ocupados_l1    |   0.4665    | 0.1795   |   0.1146   |   0.8184   | 0.009365  |          1 |  576 |  73 |
+| CP (ECM, preferido R2aj) | d_tipo_hip_l1       |  -0.01204   | 0.003989 |  -0.01986  |  -0.004219 | 0.002548  |          1 |  576 |  73 |
+| CP (ECM, preferido R2aj) | d_ln_renta_hog_real |   0.1463    | 0.07923  |  -0.008974 |   0.3016   | 0.06479   |          1 |  864 |  73 |
+| CP (ECM, preferido R2aj) | d_ln_ipv_real_l4    |   0.2996    | 0.09699  |   0.1095   |   0.4897   | 0.002009  |          1 |  576 |  73 |
+| CP (ECM, preferido R2aj) | d_ln_credito_nuevo  |   0.03829   | 0.01471  |   0.009453 |   0.06712  | 0.009252  |          1 |  864 |  73 |
+
+El preferido real gana en 9.6% de las réplicas bootstrap. **Ganadores (misma muestra)**
+
+| criterio                | id             | terminos                                                                                       |   N |   R2_aj |     AIC |     BIC |   RMSE_OOS |
+|:------------------------|:---------------|:-----------------------------------------------------------------------------------------------|----:|--------:|--------:|--------:|-----------:|
+| R2 ajustado (principal) | real_busq_1566 | d_ln_ocupados_l1 + d_tipo_hip_l1 + d_ln_renta_hog_real + d_ln_ipv_real_l4 + d_ln_credito_nuevo |  73 | 0.67637 | -414.99 | -392.08 |   0.024441 |
+| AIC                     | real_busq_1566 | d_ln_ocupados_l1 + d_tipo_hip_l1 + d_ln_renta_hog_real + d_ln_ipv_real_l4 + d_ln_credito_nuevo |  73 | 0.67637 | -414.99 | -392.08 |   0.024441 |
+| BIC                     | real_busq_0582 | d_ln_ocupados + d_ln_ipv_real_l4 + d_ln_credito_nuevo                                          |  73 | 0.65272 | -411.56 | -393.23 |   0.021317 |
+| RMSE OOS (ex post)      | real_busq_0006 | d_ln_ipv_real_l4 + d_ln_credito_nuevo                                                          |  73 | 0.63238 | -408.29 | -392.26 |   0.011568 |
+| vacío                   | real_busq_0001 | (vacío)                                                                                        |  73 | 0.44692 | -380.29 | -368.84 |   0.017423 |
+
+**EBA / Bonferroni**
+
+| termino             |   K_modelos |   frac_signif_5pct |   signo_pos |   coef_min |   coef_max |   Leamer_inf |   Leamer_sup |   coef_pref |   EE_pref |    p_pref |   p_bonf_K |
+|:--------------------|------------:|-------------------:|------------:|-----------:|-----------:|-------------:|-------------:|------------:|----------:|----------:|-----------:|
+| ect_l1              |        1728 |            1       |       0     |    -0.205  |   -0.0933  |    -0.3      |      -0.0184 |     -0.106  |   0.0348  |   0.00222 |          1 |
+| d_ln_ocupados       |         576 |            0.724   |       1     |     0.275  |    0.818   |    -0.13     |       1.53   |    nan      | nan       | nan       |        nan |
+| d_ln_ocupados_l1    |         576 |            0.462   |       1     |     0.155  |    0.632   |    -0.401    |       1.23   |      0.467  |   0.18    |   0.00936 |          1 |
+| d_tipo_hip          |         576 |            0       |       0.238 |    -0.0113 |    0.00679 |    -0.0249   |       0.0207 |    nan      | nan       | nan       |        nan |
+| d_tipo_hip_l1       |         576 |            0.785   |       0     |    -0.0152 |   -0.00173 |    -0.0244   |       0.0059 |     -0.012  |   0.00399 |   0.00255 |          1 |
+| d_ln_permisos_l4    |         864 |            0       |       0.538 |    -0.0184 |    0.0217  |    -0.0425   |       0.0586 |    nan      | nan       | nan       |        nan |
+| d_ln_costes         |         864 |            0.0683  |       0.236 |    -0.207  |    0.052   |    -0.39     |       0.234  |    nan      | nan       | nan       |        nan |
+| d_ln_renta_hog_real |         864 |            0.223   |       0.667 |    -0.141  |    0.26    |    -0.463    |       0.425  |      0.146  |   0.0792  |   0.0648  |          1 |
+| d_ln_pob_extranj    |         432 |            0       |       0.667 |    -0.244  |    0.272   |    -0.556    |       0.611  |    nan      | nan       | nan       |        nan |
+| d_ln_pob_extranj4   |         432 |            0.00231 |       0.627 |    -0.285  |    0.216   |    -0.585    |       0.559  |    nan      | nan       | nan       |        nan |
+| d_ln_pob_total      |         432 |            0       |       0.699 |    -1.67   |    2.49    |    -4.7      |       5.99   |    nan      | nan       | nan       |        nan |
+| d_ln_ipv_real_l1    |         576 |            0.806   |       1     |     0.0715 |    0.339   |    -0.128    |       0.552  |    nan      | nan       | nan       |        nan |
+| d_ln_ipv_real_l4    |         576 |            1       |       1     |     0.283  |    0.486   |     0.0746   |       0.784  |      0.3    |   0.097   |   0.00201 |          1 |
+| d_ln_credito_nuevo  |         864 |            1       |       1     |     0.0296 |    0.0534  |     0.000558 |       0.0926 |      0.0383 |   0.0147  |   0.00925 |          1 |
+
+**Bootstrap de la selección**
+
+| termino             |   frec_en_ganador |   coef_post_med |   IC95_inf |   IC95_sup |
+|:--------------------|------------------:|----------------:|-----------:|-----------:|
+| ect_l1              |             1     |         -0.102  |    -0.255  |    -0.0144 |
+| d_ln_ocupados       |             0.398 |          0.739  |     0.178  |     2.04   |
+| d_ln_ocupados_l1    |             0.595 |          0.413  |     0.166  |     1.84   |
+| d_tipo_hip          |             0.302 |         -0.0161 |    -0.038  |     0.0372 |
+| d_tipo_hip_l1       |             0.546 |         -0.0132 |    -0.0408 |     0.0187 |
+| d_ln_permisos_l4    |             0.323 |         -0.0204 |    -0.0487 |     0.0324 |
+| d_ln_costes         |             0.392 |         -0.11   |    -0.302  |     0.462  |
+| d_ln_renta_hog_real |             0.652 |          0.128  |    -0.3    |     0.352  |
+| d_ln_pob_extranj    |             0.114 |          0.216  |    -0.378  |     0.493  |
+| d_ln_pob_extranj4   |             0.136 |         -0.202  |    -0.647  |     0.612  |
+| d_ln_pob_total      |             0.29  |          2.16   |    -2.66   |     7.94   |
+| d_ln_ipv_real_l1    |             0.204 |          0.192  |    -0.456  |     0.413  |
+| d_ln_ipv_real_l4    |             0.748 |          0.273  |     0.119  |     0.499  |
+| d_ln_credito_nuevo  |             0.911 |          0.038  |     0.0101 |     0.0778 |
+
+**OOS** (ventana expansiva desde 2018Q1; LR re-estimado hasta t−1; selección con muestra completa → pseudo-OOS)
+
+| modelo                       |    RMSE |   n_oos |   DM vs AR4+q |   p vs AR4+q |   DM vs media historica |   p vs media historica |   DM vs paseo con deriva (20T) |   p vs paseo con deriva (20T) |
+|:-----------------------------|--------:|--------:|--------------:|-------------:|------------------------:|-----------------------:|-------------------------------:|------------------------------:|
+| Preferido (R2aj)             | 0.02444 |      34 |        0.667  |      0.5094  |                  0.1502 |              0.8815    |                         0.4515 |                       0.6546  |
+| Ganador BIC                  | 0.02132 |      34 |        0.6431 |      0.5246  |                 -0.2328 |              0.8174    |                         0.2737 |                       0.786   |
+| Ganador AIC                  | 0.02444 |      34 |        0.667  |      0.5094  |                  0.1502 |              0.8815    |                         0.4515 |                       0.6546  |
+| Mejor RMSE OOS (ex post)     | 0.01157 |      34 |       -2.626  |      0.01301 |                 -5.499  |              4.225e-06 |                        -3.141  |                       0.00354 |
+| Vacío (ect+q)                | 0.01742 |      34 |        0.3968 |      0.6941  |                 -2.456  |              0.01947   |                        -0.7332 |                       0.4686  |
+| [ref] AR4+q                  | 0.0165  |      34 |      nan      |    nan       |                nan      |            nan         |                       nan      |                     nan       |
+| [ref] media historica        | 0.02288 |      34 |      nan      |    nan       |                nan      |            nan         |                       nan      |                     nan       |
+| [ref] paseo con deriva (20T) | 0.01935 |      34 |      nan      |    nan       |                nan      |            nan         |                       nan      |                     nan       |
+
+**Diagnósticos** (BG-aumentado: preferido p=0.480)
+
+|                       |   n |   k |    DW |    BG4_p |   BP_p |   JB_p |   RESET_p |   CUSUM_p |   VIF_max |
+|:----------------------|----:|----:|------:|---------:|-------:|-------:|----------:|----------:|----------:|
+| Preferido real (R2aj) |  73 |  10 | 1.99  | 0.48     |  0.148 |  0.531 |  0.184    |     0.896 |      1.22 |
+| Ganador BIC real      |  73 |   8 | 1.74  | 0.17     |  0.032 |  0.809 |  0.498    |     0.828 |      1.31 |
+| Ganador AIC real      |  73 |  10 | 1.99  | 0.48     |  0.148 |  0.531 |  0.184    |     0.896 |      1.22 |
+| DOLS real (LR)        |  72 |  28 | 0.613 | 1.36e-07 |  0.584 |  0.347 |  0.000284 |     0.217 |     17.4  |
+
+**Chow**
+
+| fecha   |     F |        p |   n1 |   n2 |   k |
+|:--------|------:|---------:|-----:|-----:|----:|
+| 2014Q1  | 3.09  | 0.003633 |   23 |   50 |  10 |
+| 2020Q1  | 1.62  | 0.1264   |   47 |   26 |  10 |
+| 2022Q3  | 0.814 | 0.6164   |   57 |   16 |  10 |
+
+**Bai-Perron**
+
+| ecuacion           |   N |   n_quiebres | fechas                 |
+|:-------------------|----:|-------------:|:-----------------------|
+| ECM real preferido |  73 |            0 |                        |
+| LR real (niveles)  |  74 |            3 | 2011Q4, 2019Q2, 2023Q2 |
+
+**Robustez (dummies epa21/tipo22, escalones, 2014+, pre-COVID)**
+
+| modelo                                               |   N | ect              |     p_ect |   R2_aj |   BG4_p |   BP_p |   JB_p |   RESET_p | extras                                                                                             |
+|:-----------------------------------------------------|----:|:-----------------|----------:|--------:|--------:|-------:|-------:|----------:|:---------------------------------------------------------------------------------------------------|
+| Preferido real                                       |  73 | -0.1064 (0.0348) | 0.002224  |  0.6764 |  0.4796 | 0.1478 | 0.5312 |    0.1839 |                                                                                                    |
+| + epa21 (quiebre_epa_2021) + tipo22 (escalón 2022Q3) |  73 | -0.1022 (0.0393) | 0.009317  |  0.6708 |  0.5414 | 0.1517 | 0.6037 |    0.2903 | epa21=0.0032 (0.0037); tipo22=0.0007 (0.0045)                                                      |
+| 2014Q1-2026Q2                                        |  50 | -0.1117 (0.0291) | 0.0001209 |  0.6518 |  0.7447 | 0.7817 | 0.2517 |    0.1335 |                                                                                                    |
+| + escalones Bai-Perron                               |  73 | -0.1163 (0.0528) | 0.02754   |  0.676  |  0.602  | 0.3252 | 0.6306 |    0.0772 | esc_2011Q4=-0.0060 (0.0092); esc_2019Q2=0.0015 (0.0031); esc_2023Q2=0.0047 (0.0044)                |
+| Pre-COVID (≤2019Q4; ect re-estimado)                 |  47 | 0.0098 (0.0274)  | 0.7198    |  0.6268 |  0.3289 | 0.3849 | 0.5454 |    0.0365 | LR pre-COVID: ln_ocupados=3.527; tipo_hip_real=0.053; ln_permisos_l4=-0.115; ln_costes_real=-0.104 |
+
+**Comparación nominal vs real**
+
+|                               | nominal                                                                              | real                                                                                           |
+|:------------------------------|:-------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------|
+| LR ocupados                   | 1.9510 (0.4801)                                                                      | 1.4824 (0.3301)                                                                                |
+| LR tipo (nominal / real)      | -0.0172 (0.0171)                                                                     | 0.0022 (0.0081)                                                                                |
+| LR permisos t−4               | 0.0595 (0.0454)                                                                      | 0.0321 (0.0292)                                                                                |
+| LR costes (nominal / reales)  | 0.2659 (0.1646)                                                                      | -0.6598 (0.2512)                                                                               |
+| ect(t−1)                      | -0.0968 (0.0309)                                                                     | -0.1064 (0.0348)                                                                               |
+| R2_aj CP                      | 0.7485329458772253                                                                   | 0.6763687147947238                                                                             |
+| N CP                          | 73                                                                                   | 73                                                                                             |
+| términos CP                   | d_ln_ocupados + d_ln_costes + d_ln_renta_hog_real + d_ln_ipv_l1 + d_ln_credito_nuevo | d_ln_ocupados_l1 + d_tipo_hip_l1 + d_ln_renta_hog_real + d_ln_ipv_real_l4 + d_ln_credito_nuevo |
+| frec. bootstrap del preferido | 0.015015015015015015                                                                 | 0.0960960960960961                                                                             |
+| BG(4) p                       | 0.11334895131150367                                                                  | 0.4795804133938152                                                                             |
+| RESET p                       | 0.028055516327387026                                                                 | 0.18394791121519222                                                                            |
+| Chow 2014Q1 p                 | 0.012136930665500876                                                                 | 0.003633190915815467                                                                           |
+| cointegración (≥2/3)          | evidencia mixta (1/3)                                                                | cointegración (3/3)                                                                            |
+
+El precio real y el nominal difieren por el deflactor (tendencia común de precios generales); la relación de nivel es estadísticamente más sostenible en términos reales (3/3 frente a 1/3), pero comparte la inestabilidad de los quiebres.
 
 
 

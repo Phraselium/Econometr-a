@@ -1,0 +1,14 @@
+,nominal,real
+LR ocupados,1.9510 (0.4801),1.4824 (0.3301)
+LR tipo (nominal / real),-0.0172 (0.0171),0.0022 (0.0081)
+LR permisos t−4,0.0595 (0.0454),0.0321 (0.0292)
+LR costes (nominal / reales),0.2659 (0.1646),-0.6598 (0.2512)
+ect(t−1),-0.0968 (0.0309),-0.1064 (0.0348)
+R2_aj CP,0.7485329458772253,0.6763687147947238
+N CP,73,73
+términos CP,d_ln_ocupados + d_ln_costes + d_ln_renta_hog_real + d_ln_ipv_l1 + d_ln_credito_nuevo,d_ln_ocupados_l1 + d_tipo_hip_l1 + d_ln_renta_hog_real + d_ln_ipv_real_l4 + d_ln_credito_nuevo
+frec. bootstrap del preferido,0.015015015015015015,0.0960960960960961
+BG(4) p,0.11334895131150367,0.4795804133938152
+RESET p,0.028055516327387026,0.18394791121519222
+Chow 2014Q1 p,0.012136930665500876,0.003633190915815467
+cointegración (≥2/3),evidencia mixta (1/3),cointegración (3/3)

@@ -100,3 +100,22 @@ Sí. Ningún 2SLS principal sobrevive al wild bootstrap, nada sobrevive a Holm, 
    - Comentar los quiebres de las LP (2013-14 en IPV, 2020 en alquiler) y que el flujo anual nacional (10,65) es cíclico.
    - Añadir las referencias metodológicas a `literatura.md` o marcarlas NO VERIFICADA.
    - Corregir los marcadores sin sustituir del diccionario (`build_dataset.py`, líneas 1521 y 1558).
+
+---
+
+## Re-revisión (iteración 2) — commit 3a6e3ef
+
+**Veredicto final: APROBAR.**
+
+- **Determinismo.** Copia aislada (`git archive HEAD`, sin red, FORCE sin definir), dos ejecuciones: md5 idénticos en todo `output/f3/` y en el registro. Los ficheros coinciden byte a byte con los de HEAD. Registro: 150 especificaciones, sin ids duplicados. Holm mínimo 0,051: nada sobrevive.
+- **Cambios 1-5 aplicados y comprobados en `resumen_f3.md`:**
+  - IC95 por resultado; el del IPV, [−3,90; 0,67], excluye +1 y ≈3, con la explicación de diseño y periodo (Rotemberg de Europa, Baleares).
+  - 2SLS 2003-07 del valor tasado = 5,39, registrado. Su EE es 4,56 frente a mis 3,83 y su F 5,8 frente a 8,3, por la corrección conservadora con FE anidados. Es coherente.
+  - Eliminado «único resultado robusto»; el IPC alquiler queda anotado como posterior al diseño en `decisiones.md`.
+  - Pretendencias renombradas. La 1996-2001 se cita como cálculo externo de la revisión, lo cual es aceptable por la regla de leer solo de `processed`.
+  - Canal comprador presentado como posible violación de la exclusión, y x_t descrito como flujo durante t−1. Las filas de rezago están etiquetadas y la F efectiva está explicada.
+- **Pendientes no bloqueantes:**
+  - El texto dice «Holm sobre las 149 especificaciones»; ahora son 150.
+  - Llevar el valor tasado por CCAA de 1995-2001 a `data/processed` y calcular la pretendencia en el script.
+  - Verificación de las referencias metodológicas (lit-researcher en curso).
+  - Marcadores sin sustituir en el diccionario (`build_dataset.py`).

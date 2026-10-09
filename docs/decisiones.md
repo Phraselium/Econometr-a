@@ -44,3 +44,8 @@ Formato: fecha · fase · decisión · alternativa descartada · motivo.
 ## F6 (València) — fijado antes de estimar
 - Series municipales con N ≥ 40 trimestres (valor tasado, compraventas MIVAU): comparación con C. Valenciana y España (tasas, diferenciales, beta de València frente a España con HAC). Series con N < 40 (padrón por nacionalidad, SERPAVI, VUT, Notariado municipal): análisis DESCRIPTIVO, dicho explícitamente; sin inferencia causal.
 - VUT: serie GVA 2010-2024 sin encadenar con la lista vigente de 2026 (renumeración y purga).
+
+## Hallazgos durante F2
+- 2026-10-09 · F2 · `p_bde` (BdE be2507, precio de la vivienda libre) es idéntica a `p_tasado` (MIVAU valor tasado) en los 126 trimestres (|dif| máx 2e-13): el BdE republica la serie del Ministerio. Solo hay UNA serie larga de precio desde 1995; las robusteces con ambas no son independientes. Se usa `p_tasado` y se cita así.
+- 2026-10-09 · F2 · Con ventana expansiva, el paseo aleatorio con deriva coincide con la media histórica; se usa deriva de los últimos 20 trimestres para diferenciarlos (documentado en output/f2).
+- 2026-10-09 · F3-F6 · Se lanzan en paralelo a la puerta de F2. No modifican `src/econ_utils.py` (API congelada; F2 solo puede añadir funciones compatibles).

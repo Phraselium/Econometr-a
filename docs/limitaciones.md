@@ -8,5 +8,6 @@ Problemas que persisten tras las iteraciones de revisión, o restricciones de da
 - No hay flujos de inmigración trimestrales útiles (INE EMCR desde 2023T2, muy dispersos); flujo anual nacional de Eurostat 1998-2024 con quiebre en 2021; sin flujos anuales por CCAA (tabla INE 69691 no descargada).
 - Oferta: permisos (Eurostat) y viviendas libres iniciadas/terminadas (MIVAU) son proxies; no hay visados CSCAE ni certificados de fin de obra.
 - Hogares: EPA trimestral 2002+ con quiebre metodológico en 2021T1 (−1,1 %); solo nacional.
+- Precio largo: `p_bde` (BdE) = `p_tasado` (MIVAU); una única serie larga desde 1995.
 - Deflactor: implícito del PIB (CNTR SA), no un deflactor de consumo.
 - València: padrón por nacionalidad solo hasta 2022; varias series municipales con N corto (≤ 14 años).

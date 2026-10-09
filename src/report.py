@@ -331,6 +331,8 @@ REGLA_ROBUSTEZ = (
     f"su p >= {ALPHA} (cuando hay p). Resultado: 'no' si B no es significativa (p >= {ALPHA}), o si fallan más de la mitad de A, o si el signo "
     "cambia en 2 o más alternativas; 'parcial' si hay al menos un fallo (pero no se cumple 'no'), si hay menos de 2 alternativas disponibles, "
     f"o si la razón entre la mayor y la menor magnitud |coef - referencia| entre columnas con el mismo signo supera {RATIO_MAG:g}; 'sí' en otro caso. "
+    "Además, un resultado 'sí' se degrada a 'parcial' si el término no sobrevive a la corrección por búsqueda de su fase (Bonferroni con K o Holm; columna p_corregido): como máximo 'parcial'. "
+    "Cada columna usa el mismo concepto de precio y el mismo regresor que la base; si la estimación comparable no existe se marca 'n/d' (las comparaciones nominal/real solo van en las columnas 'nominal' y 'real'). "
     "Para la beta de València la referencia es 1 (H0: beta = 1); para el resto es 0. p aproximado con la normal (coef/EE) si la tabla de origen no trae p (marcado '~')."
 )
 
@@ -366,7 +368,7 @@ def parse_ce(s):
 def evalua(row, ref):
     b = row["completa"]
     alts = [row[k] for k in ALT_COLS if row.get(k) is not None and k != "completa" and k in row["_alt"]]
-    out = dict(n_alt=len(alts), n_fallos=0, n_cambios_signo=0, razon_magnitud=NAN)
+    out = dict(n_alt=len(alts), n_fallos=NAN, n_cambios_signo=NAN, razon_magnitud=NAN)
     if b is None or isn(b["p"]):
         return "parcial", out, "estimación base sin p"
     if b["p"] >= ALPHA:
@@ -387,8 +389,9 @@ def evalua(row, ref):
     out["razon_magnitud"] = ratio
     if len(alts) and (fallos > len(alts) / 2 or flips >= 2):
         return "no", out, f"fallan {fallos} de {len(alts)} alternativas ({flips} con cambio de signo)"
-    if len(alts) < 2:
-        return "parcial", out, f"menos de 2 alternativas disponibles ({len(alts)})"
+    n_p = sum(1 for a in alts if not isn(a["p"]))
+    if n_p < 2:
+        return "parcial", out, f"menos de 2 alternativas con p disponibles ({n_p} de {len(alts)})"
     if fallos >= 1:
         return "parcial", out, f"fallan {fallos} de {len(alts)} alternativas ({flips} con cambio de signo)"
     if not isn(ratio) and ratio > RATIO_MAG:
@@ -424,11 +427,14 @@ def comp_nom(var):
 ROB = []
 
 
-def add_rob(nombre, base_price, ref, completa, alt_cols, cells, advert="", fuente=""):
+def add_rob(nombre, base_price, ref, completa, alt_cols, cells, advert="", fuente="", p_corr=NAN):
     row = dict(coeficiente=nombre, precio_base=base_price, completa=completa, _alt=alt_cols)
     for k in ALT_COLS:
         row[k] = cells.get(k)
     res, info, why = evalua(row, ref)
+    row["_pcorr"] = p_corr
+    if res == "sí" and not isn(p_corr) and p_corr >= ALPHA:
+        res, why = "parcial", why + f"; degradado: no sobrevive a la corrección por búsqueda (p corregido = {fp(p_corr)})"
     row["_res"] = (res, info, why, advert, fuente, ref)
     ROB.append(row)
 
@@ -437,33 +443,25 @@ def add_rob(nombre, base_price, ref, completa, alt_cols, cells, advert="", fuent
 r_real = LPR.loc["ln_ocupados"]
 add_rob("Empleo LP (ln ocupados)", "real", 0.0, cell(r_real.coef, r_real.EE_HAC, r_real.p, "real"),
         ["pre_COVID", "desde_2014", "dummies_EPA21_tipos22", "nominal"],
-        dict(pre_COVID=precovid_real("ln_ocupados"), desde_2014=lp_cell_from_ce(dsp14, "ln_ocupados", "nominal DOLS k=1"),
-             dummies_EPA21_tipos22=cell(lp_dum.loc["ln_ocupados", "coef"], lp_dum.loc["ln_ocupados", "EE_HAC"], lp_dum.loc["ln_ocupados", "p"], "nominal"),
-             nominal=comp_nom("ln_ocupados"), real=cell(r_real.coef, r_real.EE_HAC, r_real.p, "real")),
-        "valor tasado no estimado en el DOLS de F2; pre-COVID real sin EE; el LP real no es estable por subperiodos",
-        "f2/ecuacion_real.csv; f2/real_robustez.csv; f2/dols_subperiodos.csv; f2/largo_plazo.csv")
+        dict(pre_COVID=precovid_real("ln_ocupados"),              nominal=comp_nom("ln_ocupados"), real=cell(r_real.coef, r_real.EE_HAC, r_real.p, "real")),
+        "valor tasado no estimado en el DOLS de F2; pre-COVID real sin EE; las columnas desde 2014 y con dummies solo existen en nominal (DOLS), por eso n/d; la magnitud no es robusta",
+        "f2/ecuacion_real.csv; f2/real_robustez.csv; f2/dols_subperiodos.csv; f2/largo_plazo.csv", p_corr=HOLM_LP[("real", "ln_ocupados")])
 r_ = LPR.loc["tipo_hip_real"]
 add_rob("Tipo hipotecario LP (real)", "real", 0.0, cell(r_.coef, r_.EE_HAC, r_.p, "real"),
         ["pre_COVID", "desde_2014", "dummies_EPA21_tipos22", "nominal"],
-        dict(pre_COVID=precovid_real("tipo_hip_real"), desde_2014=lp_cell_from_ce(dsp14, "tipo_hip", "nominal DOLS k=1"),
-             dummies_EPA21_tipos22=cell(lp_dum.loc["tipo_hip", "coef"], lp_dum.loc["tipo_hip", "EE_HAC"], lp_dum.loc["tipo_hip", "p"], "nominal"),
-             nominal=comp_nom("tipo_hip"), real=cell(r_.coef, r_.EE_HAC, r_.p, "real")),
-        "tipo real ≈ 0 en la ecuación final", "f2/ecuacion_real.csv; f2/real_robustez.csv; f2/dols_subperiodos.csv; f2/largo_plazo.csv")
+        dict(pre_COVID=precovid_real("tipo_hip_real"),              nominal=comp_nom("tipo_hip"), real=cell(r_.coef, r_.EE_HAC, r_.p, "real")),
+        "tipo real ≈ 0 en la ecuación final", "f2/ecuacion_real.csv; f2/real_robustez.csv; f2/dols_subperiodos.csv; f2/largo_plazo.csv", p_corr=HOLM_LP[("real", "tipo_hip_real")])
 r_ = LPR.loc["ln_permisos_l4"]
 add_rob("Permisos t-4 LP (proxy de oferta)", "real", 0.0, cell(r_.coef, r_.EE_HAC, r_.p, "real"),
         ["pre_COVID", "desde_2014", "dummies_EPA21_tipos22", "nominal"],
-        dict(pre_COVID=precovid_real("ln_permisos_l4"), desde_2014=lp_cell_from_ce(dsp14, "ln_permisos_l4", "nominal DOLS k=1"),
-             dummies_EPA21_tipos22=cell(lp_dum.loc["ln_permisos_l4", "coef"], lp_dum.loc["ln_permisos_l4", "EE_HAC"], lp_dum.loc["ln_permisos_l4", "p"], "nominal"),
-             nominal=comp_nom("ln_permisos_l4"), real=cell(r_.coef, r_.EE_HAC, r_.p, "real")),
-        "", "f2/ecuacion_real.csv; f2/real_robustez.csv; f2/dols_subperiodos.csv; f2/largo_plazo.csv")
+        dict(pre_COVID=precovid_real("ln_permisos_l4"),              nominal=comp_nom("ln_permisos_l4"), real=cell(r_.coef, r_.EE_HAC, r_.p, "real")),
+        "", "f2/ecuacion_real.csv; f2/real_robustez.csv; f2/dols_subperiodos.csv; f2/largo_plazo.csv", p_corr=HOLM_LP[("real", "ln_permisos_l4")])
 r_ = LPR.loc["ln_costes_real"]
 add_rob("Costes LP (reales / nominales)", "real", 0.0, cell(r_.coef, r_.EE_HAC, r_.p, "real"),
         ["pre_COVID", "desde_2014", "dummies_EPA21_tipos22", "nominal"],
-        dict(pre_COVID=precovid_real("ln_costes_real"), desde_2014=lp_cell_from_ce(dsp14, "ln_costes", "nominal DOLS k=1"),
-             dummies_EPA21_tipos22=cell(lp_dum.loc["ln_costes", "coef"], lp_dum.loc["ln_costes", "EE_HAC"], lp_dum.loc["ln_costes", "p"], "nominal"),
-             nominal=comp_nom("ln_costes"), real=cell(r_.coef, r_.EE_HAC, r_.p, "real")),
+        dict(pre_COVID=precovid_real("ln_costes_real"),              nominal=comp_nom("ln_costes"), real=cell(r_.coef, r_.EE_HAC, r_.p, "real")),
         "el signo negativo del coste real contradice el signo esperado: relación estadística, no estructural",
-        "f2/ecuacion_real.csv; f2/real_robustez.csv; f2/dols_subperiodos.csv; f2/largo_plazo.csv")
+        "f2/ecuacion_real.csv; f2/real_robustez.csv; f2/dols_subperiodos.csv; f2/largo_plazo.csv", p_corr=HOLM_LP[("real", "ln_costes_real")])
 # --- ect
 rr = {k: v for k, v in rrob.iterrows()}
 r_ = CPR.loc["ect_l1"]
@@ -480,8 +478,8 @@ add_rob("Corrección de error ect(t-1)", "real", 0.0, cell(r_.coef, r_.EE_HAC, r
         dict(pre_COVID=ect_cell(rr["Pre-COVID (≤2019Q4; ect re-estimado)"], "real"), desde_2014=ect_cell(rr["2014Q1-2026Q2"], "real"),
              dummies_EPA21_tipos22=ect_cell(rr["+ epa21 (quiebre_epa_2021) + tipo22 (escalón 2022Q3)"], "real"),
              nominal=cell(rn.coef, rn.EE_HAC, rn.p, "nominal"), real=cell(r_.coef, r_.EE_HAC, r_.p, "real")),
-        "valor tasado no estimado en el ECM; el p del ect NO contrasta cointegración (distribución no estándar)",
-        "f2/ecuacion_real.csv; f2/real_robustez.csv; f2/ecm_preferido.csv")
+        "valor tasado no estimado en el ECM; el p del ect NO contrasta cointegración (distribución no estándar); la fila 2014+ real usa el ect de la muestra completa (no re-estimado), el pre-COVID sí lo re-estima",
+        "f2/ecuacion_real.csv; f2/real_robustez.csv; f2/ecm_preferido.csv", p_corr=CPR.loc["ect_l1", "p_bonf_K"])
 # --- empleo CP
 r_ = CPR.loc["d_ln_ocupados_l1"]
 est = estab.set_index("muestra")
@@ -494,13 +492,10 @@ def est_cell(idx, col, tag):
 
 i14 = [i for i in est.index if i.startswith("2014Q1")][0]
 ipc = [i for i in est.index if "pre-COVID" in i][0]
-add_rob("Empleo CP (Δ ln ocupados)", "real", 0.0, cell(r_.coef, r_.EE_HAC, r_.p, "real (t-1)"),
-        ["pre_COVID", "desde_2014", "nominal"],
-        dict(pre_COVID=est_cell(ipc, "d_ln_ocupados", "nominal (t)"), desde_2014=est_cell(i14, "d_ln_ocupados", "nominal (t)"),
-             nominal=cell(ecm_nom.loc["d_ln_ocupados", "coef"], ecm_nom.loc["d_ln_ocupados", "EE_HAC"], ecm_nom.loc["d_ln_ocupados", "p"], "nominal (t)"),
-             real=cell(r_.coef, r_.EE_HAC, r_.p, "real (t-1)")),
-        "el término es Δ ocupados en t (nominal) y en t-1 (real): la búsqueda elige uno u otro; no sobrevive a Bonferroni (K=%s)" % fi(r_.K),
-        "f2/ecuacion_real.csv; f2/estabilidad_muestras.csv; f2/ecm_preferido.csv")
+add_rob("Empleo CP (Δ ln ocupados, t-1)", "real", 0.0, cell(r_.coef, r_.EE_HAC, r_.p, "real (t-1)"), [],
+        dict(real=cell(r_.coef, r_.EE_HAC, r_.p, "real (t-1)")),
+        "los ECM reales pre-COVID y 2014+ no guardan este coeficiente y el ECM nominal usa Δocupados(t) (otro retardo): no comparables, n/d; no sobrevive a Bonferroni (K=%s)" % fi(r_.K),
+        "f2/ecuacion_real.csv", p_corr=r_.p_bonf_K)
 # --- inmigración (panel F3 y F5, stock F2)
 ppf = rd("f3/panel_principal.csv")
 
@@ -515,16 +510,16 @@ add_rob("Flujo neto extranjeros → IPV (panel F3, OLS FE)", "IPV (nominal)", 0.
         dict(pre_COVID=f3c("IPV (precio)", "FE sin 2020-2021", "OLS", "sin 2020-21"), valor_tasado=f3c("valor tasado", "FE", "OLS", "valor tasado"),
              otra_1=f3c("IPV (precio)", "FE", "2SLS", "2SLS")),
         "columna 'pre_COVID' = muestra sin 2020-2021 (no hay muestra pre-COVID en el panel anual); p = wild cluster bootstrap",
-        "f3/panel_principal.csv")
+        "f3/panel_principal.csv", p_corr=c3.loc["PAN_ipv_FE_OLS", "p_holm"])
 add_rob("Flujo neto extranjeros → alquiler IPC (panel F3, OLS FE)", "IPC alquiler", 0.0, f3c("IPC alquiler", "FE", "OLS"),
         ["pre_COVID", "otra_1"],
         dict(pre_COVID=f3c("IPC alquiler", "FE sin 2020-2021", "OLS", "sin 2020-21"), otra_1=f3c("IPC alquiler", "FE", "2SLS", "2SLS")),
         "pretendencia significativa (grupo América); resultado posterior al diseño prefijado; p = WCB",
-        "f3/panel_principal.csv; f3/pretendencias.csv")
+        "f3/panel_principal.csv; f3/pretendencias.csv", p_corr=c3.loc["PAN_ipc_alq_FE_OLS", "p_holm"])
 add_rob("Flujo neto extranjeros → alquiler SERPAVI (panel F3, OLS FE)", "SERPAVI", 0.0, f3c("alquiler SERPAVI", "FE", "OLS"),
         ["pre_COVID", "otra_1"],
         dict(pre_COVID=f3c("alquiler SERPAVI", "FE sin 2020-2021", "OLS", "sin 2020-21"), otra_1=f3c("alquiler SERPAVI", "FE", "2SLS", "2SLS")),
-        "p = WCB", "f3/panel_principal.csv")
+        "p = WCB", "f3/panel_principal.csv", p_corr=c3.loc["PAN_serpavi_FE_OLS", "p_holm"])
 tf = rd("f5/robustez_muestras_anual.csv")
 tf_b2 = tf[(tf["muestra/dependiente"] == "Valor tasado, 2009-2025") & tf.variable.str.startswith("b2")].iloc[0]
 tcce = rd("f5/tabla_cce.csv")
@@ -536,9 +531,9 @@ add_rob("Cuota extranjera (pp) → Δln IPV (panel F5, FE CCAA+año)", "IPV (nom
              otra_2=cell(rd("f5/tabla_fe_tendencias.csv").set_index("Unnamed: 0").loc["b2 d(extr/total, pp)", "coef"],
                          rd("f5/tabla_fe_tendencias.csv").set_index("Unnamed: 0").loc["b2 d(extr/total, pp)", "EE_cluster"],
                          rd("f5/tabla_fe_tendencias.csv").set_index("Unnamed: 0").loc["b2 d(extr/total, pp)", "p_cluster"], "FE+tendencias")),
-        "el efecto depende de la alineación temporal (f5/timing_b2.csv) y ninguna variante sobrevive a Holm", "f5/tabla_fe_principal.csv; f5/robustez_muestras_anual.csv; f5/tabla_cce.csv")
+        "el efecto depende de la alineación temporal (f5/timing_b2.csv) y ninguna variante sobrevive a Holm", "f5/tabla_fe_principal.csv; f5/robustez_muestras_anual.csv; f5/tabla_cce.csv", p_corr=cb5.loc["A_FE_wild", "p_Holm"])
 add_rob("Stock de extranjeros LP (ln pob. extranjera, DOLS)", "nominal", 0.0, cell(rpe.coef, rpe.EE_HAC, rpe.p, "nominal"), [], {},
-        "solo un DOLS con pob_extranj; sin contraste en otras muestras ni con precio real", "f2/largo_plazo.csv")
+        "solo un DOLS con pob_extranj; sin contraste en otras muestras ni con precio real", "f2/largo_plazo.csv", p_corr=min(1.0, rpe.p * K_LP_REG))
 # --- oferta
 d4v = dols4.loc["dols_visados_k4_ipv"]
 d4t = dols4.loc["dols_visados_k4_tasado"]
@@ -552,7 +547,7 @@ add_rob("Elasticidad de la oferta (iniciadas libres, DOLS k=4)", "real (IPV defl
              otra_1=cell(ols4.beta, ols4.EE_HAC8, ols4.p, "OLS Δ4"),
              otra_2=cell(cb_v.loc["IV 2SLS Δ4", "beta"], cb_v.loc["IV 2SLS Δ4", "EE"], cb_v.loc["IV 2SLS Δ4", "p"], "IV Δ4")),
         "los p de niveles no son válidos (cointegración 1/3); el IV en Δ4 no es significativo; no se rechaza beta = 0,45 en Δ4 (f4/contraste_H0_045_principales.csv)",
-        "f4/dols_resultados.csv; f4/contraste_bde.csv; f4/ols_delta4.csv")
+        "f4/dols_resultados.csv; f4/contraste_bde.csv; f4/ols_delta4.csv", p_corr=c4.loc["dols_visados_k4_ipv", "p_holm_familia"])
 # --- beta València
 bt = rd("f6/beta_todos.csv")
 bte = bt[(bt.modelo == "beta_València_vs_España") & (bt.maxlags == MAXLAGS)].iloc[0]
@@ -571,7 +566,7 @@ add_rob("Beta de València frente a España (Δ4 valor tasado, H0: beta = 1)", "
         dict(pre_COVID=bcell(btr.loc[tr[0]], f"tramo {tr[0]}"), otra_1=bcell(btr.loc[tr[1]], f"tramo {tr[1]}"), otra_2=bcell(btr.loc[tr[2]], f"tramo {tr[2]}"),
              valor_tasado=dict(coef=bte.beta, se=bte.EE_HAC, p=bte.p_beta_igual_1, approx=False, tag="es la base")),
         "el p es de H0: beta = 1; EE por tramo aproximados (24-26 trimestres); València forma parte de CV y España (componente parte-todo); el IPV no existe para el municipio",
-        "f6/beta_todos.csv; f6/beta_por_tramos.csv")
+        "f6/beta_todos.csv; f6/beta_por_tramos.csv", p_corr=rd("f6/correccion_holm.csv").set_index("Unnamed: 0").loc["beta=1_beta_València_vs_España", "p_Holm"])
 
 rob_rows = []
 for r in ROB:
@@ -585,7 +580,7 @@ for r in ROB:
         "dummies_EPA21_tipos22": ctext(r["dummies_EPA21_tipos22"]),
         "nominal": ctext(r["nominal"]), "real": ctext(r["real"]), "precio_valor_tasado": ctext(r["valor_tasado"]),
         "otra_especificacion_1": ctext(r["otra_1"]), "otra_especificacion_2": ctext(r["otra_2"]),
-        "coef_min": min(coefs), "coef_max": max(coefs),
+        "coef_min": min(coefs), "coef_max": max(coefs), "p_corregido": r["_pcorr"],
         "n_alternativas": info["n_alt"], "n_fallos": info["n_fallos"], "n_cambios_signo": info["n_cambios_signo"],
         "razon_magnitud": info["razon_magnitud"], "¿sobrevive?": res, "motivo_regla": why, "advertencia": advert, "fuente": fuente})
 ROBDF = pd.DataFrame(rob_rows)
@@ -920,7 +915,7 @@ P(f"- **P4 (asociación; València descriptiva).** Panel de {n_ccaa} CCAA: b2 = 
   f"València: beta frente a España {ce(bte.beta, bte.EE_HAC, 2)}, inestable por tramos.")
 _rej0 = [f for f in rchow.index if rchow.loc[f, "p"] < ALPHA]
 _nrej0 = [f for f in rchow.index if rchow.loc[f, "p"] >= ALPHA]
-P(f"- **P5 (descriptivo).** Chow (ECM real) rechaza en {', '.join(_rej0)} (2014Q1: p = {fp(rchow.loc['2014Q1', 'p'])}) y no rechaza en {', '.join(_nrej0)}; Bai-Perron en niveles: {rbp.loc['LR real (niveles)', 'fechas']}. El modelo **no es estable**.")
+P(f"- **P5 (descriptivo).** Chow (ECM real) rechaza en {', '.join(_rej0)} (p = {fp(rchow.loc['2014Q1', 'p'])}) y no rechaza en {', '.join(_nrej0)}; Bai-Perron en niveles: {rbp.loc['LR real (niveles)', 'fechas']}. El modelo **no es estable**.")
 P(f"- **Robustez** ({len(ROBDF)} coeficientes clave; regla en la sección 8): sobreviven ('sí') {int(sv_si.get('sí', 0))}; parcialmente {int(sv_si.get('parcial', 0))}; no {int(sv_si.get('no', 0))} (`tablas/robustez.csv`).")
 fuente("registro_busqueda.csv", "tablas/ecuacion_final_lp.csv", "tablas/ecuacion_final_cp.csv", "tablas/robustez.csv", "tablas/cointegracion.csv", "tablas/deficit.csv", "tablas/inmigracion_iv.csv", "tablas/panel_ccaa.csv", "tablas/valencia.csv")
 
@@ -1015,7 +1010,12 @@ ct = COINT[COINT.bloque.str.startswith("F2") & COINT.sistema.str.endswith("/ bas
 P(mdt(pd.DataFrame(dict(precio=ct.precio, N=ct.N.map(fi), EG_p=ct.EG_p.map(fp), Johansen_traza=[f"{fm(a, 1)} (cv {fm(b, 1)})" for a, b in zip(ct.J_traza0, ct.J_cv95)],
                         ARDL_F=[f"{fm(a, 2)} (I1 {fm(b, 2)}; {z})" for a, b, z in zip(ct.ARDL_F, ct.ARDL_I1_5, ct.ARDL_zona)], rechazos=ct.n_rechazos.map(fi), decisión=ct.decision))))
 P(f"\nRegla: se exige concordancia de al menos 2 de 3 contrastes. El t del ect NO contrasta cointegración (distribución no estándar; Banerjee-Dolado-Mestre 1998). "
-  "Con valor tasado y BdE (la misma serie) el vector base da: {cdf2.loc[[x for x in cdf2.index if x.startswith('ln_p_tasado') and x.endswith('/ base')][0], 'decision']} (`tablas/cointegracion.csv`).")
+  f"Con valor tasado y BdE (la misma serie) el vector base da: {cdf2.loc[[x for x in cdf2.index if x.startswith('ln_p_tasado') and x.endswith('/ base')][0], 'decision']} (`tablas/cointegracion.csv`).")
+ru = rd("f2/raices_unitarias.csv")
+ru_r = ru[(ru.serie == "ln_ipv_real") & (ru.muestra == "2008Q1-2026Q2")].iloc[0]
+ru_n = ru[(ru.serie == "ln_ipv") & (ru.muestra == "2008Q1-2026Q2")].iloc[0]
+P(f"**Orden de integración (`f2/raices_unitarias.csv`).** En la muestra 2008Q1-2026Q2, ln IPV es «{ru_n.conclusion}» y ln IPV real es «{ru_r.conclusion}» (ADF con constante p = {fp(ru_r.adf_c_p)}; Zivot-Andrews p = {fp(ru_r.za_p)} con quiebre en {ru_r.za_quiebre}). "
+  "La ambigüedad se debe a los quiebres: el contraste de límites ARDL es válido con regresores I(0) o I(1), pero no con I(2), y la cointegración real descansa en una serie de orden de integración no resuelto.")
 P("\n### 3.5 Diagnósticos de la ecuación final\n")
 dg = rdiag.copy()
 dg_rows = []
@@ -1055,7 +1055,7 @@ mainiv["IC95"] = [f"[{fm(c - 1.96 * e, 2)}; {fm(c + 1.96 * e, 2)}]" for c, e in 
 P(mdt(pd.DataFrame(dict(resultado=mainiv.resultado, estimador=mainiv.est, N=mainiv.n.map(fi), coef=mainiv.coef.map(lambda x: fm(x, 3)), EE_cluster=mainiv.EE_cluster.map(lambda x: fm(x, 3)),
                         IC95_normal=mainiv.IC95, p_WCB=mainiv.p_WCB_restr.map(fp), F_1ª_etapa=mainiv.F_1a_etapa.map(lambda x: fm(x, 1))))))
 ic = rd("f3/ic95_2sls_principal.csv")
-P(f"\nIC95 % del 2SLS sobre IPV: [{fm(ic.IC95_lo[0], 2)}; {fm(ic.IC95_hi[0], 2)}] (según `f3/ic95_2sls_principal.csv`). Coeficiente = variación % del precio por cada punto porcentual de flujo neto de extranjeros sobre la población total.")
+P(f"\nIC95 % del 2SLS sobre IPV: [{fm(ic.IC95_lo[0], 2)}; {fm(ic.IC95_hi[0], 2)}] (según `f3/ic95_2sls_principal.csv`, que usa la t con {n_ccaa - 1} gl; el IC de la tabla anterior es normal, coef ± 1,96 EE, y por eso es más estrecho). Coeficiente = variación % del precio por cada punto porcentual de flujo neto de extranjeros sobre la población total.")
 P("\n### 4.2 Nivel de evidencia por resultado (F3)\n")
 P(mdt(nivel3.assign(p_pretend_min=nivel3.p_pretend_min.map(fp)).rename(columns={"F_ge10": "F≥10", "pretend_no_signif": "pretendencias no signif.", "J_no_rechaza": "J no rechaza", "sobrevive_WCB": "sobrevive WCB"})))
 P("\n### 4.3 Series temporales nacionales (proyecciones locales, HAC)\n")
@@ -1090,7 +1090,8 @@ P(mdt(pd.DataFrame(dict(variante=dshow.variante, periodo=dshow.periodo, Δhogare
                         pct_hogares_2025T4=dshow.pct_hogares_2025T4.map(lambda x: fm(x, 1))))))
 P(f"\nExtensión de la variante principal a 2026T2: {fi(dv_main26.deficit)}. BdE (IA 2025): ≈ {fi(bde_def)}; IEF otoño 2025: ≈ {fi(bde_ief)}. "
   f"Diferencia con el BdE: {fi(dv_main.deficit - bde_def)}, de la cual {fi(dsc_i.loc['Δhogares 2021-2025', 'contribucion_a_deficit_nuestro_menos_BdE'])} por la fuente de hogares (EPA corregida frente a ECP a 1 de enero) y "
-  f"{fi(dsc_i.loc['Terminadas 2021-2025', 'contribucion_a_deficit_nuestro_menos_BdE'])} por la vivienda protegida no incluida (inferencia nuestra; el BdE no nombra la operación estadística). "
+  f"{fi(dsc_i.loc['Terminadas 2021-2025', 'contribucion_a_deficit_nuestro_menos_BdE'])} por un residuo atribuido a la vivienda protegida no incluida (BdE implícito menos nuestras terminadas; incluye el redondeo de «750.000»; inferencia nuestra, el BdE no nombra la operación estadística). "
+  f"Frente al IEF de otoño 2025 la diferencia es {fi(dv_main.deficit - bde_ief)} (periodo y fuente distintos: datos hasta el primer semestre de 2025). "
   f"La corrección del salto de 2021T1 pesa {fi(dv_main.deficit - dv_raw.deficit)} viviendas: sin ella el déficit sería {fi(dv_raw.deficit)}. "
   "Es un flujo acumulado, no un déficit en niveles (requeriría un equilibrio inicial). La cifra de ~100.980 terminadas en 2024 citada en prensa es NO VERIFICADA.")
 P("\n### 5.2 Elasticidad de la oferta (iniciadas libres, DOLS ±2, precio real retardado)\n")
@@ -1140,6 +1141,7 @@ P(f"\nDiagnósticos de los {fi(len(dc6))} modelos beta (Δ4): p máximos entre m
 fuente("f5/tabla_fe_principal.csv", "f5/timing_b2.csv", "f5/poolability.csv", "f5/correccion_busqueda_beta2.csv", "f5/valencia_vs_espana.csv", "f6/beta_todos.csv", "f6/beta_por_tramos.csv", "f6/diferencial_nivel_por_tramos.csv",
        "f6/crecimiento_acumulado_p_tasado.csv", "f6/ipv_vs_tasado_acumulado.csv", "f6/cuota_extranjeros_inferencia.csv", "f6/diagnosticos_beta.csv", "tablas/panel_ccaa.csv", "tablas/valencia.csv")
 
+rbp_ini = c2.ini.min()
 # ---------------------------------------------------------------------------- P5
 H("7. P5 - Quiebres (2008, 2014, 2020, 2022) y estabilidad del modelo")
 _rej = [f for f in rchow.index if rchow.loc[f, "p"] < ALPHA]
@@ -1156,8 +1158,12 @@ for lab, key in [("Muestra completa", "Preferido real"), ("Con dummies EPA2021 y
     r = rrob.loc[key]
     rows_e.append(dict(muestra=lab, N=fi(r.N), ect=ce(*parse_ce(r.ect), 4), p=fp(r.p_ect), R2_aj=fm(r.R2_aj, 3), BG4_p=fp(r.BG4_p), RESET_p=fp(r.RESET_p)))
 P(mdt(pd.DataFrame(rows_e)))
-P(f"\nEl ect recursivo pasa de {fm(ectrec.loc['2019Q4', 'coef_ect'], 3)} (hasta 2019Q4) a {fm(ectrec.iloc[-1].coef_ect, 3)} (hasta {ectrec.index[-1]}). Por subperiodos, el DOLS cambia de signo en costes y permisos antes de 2020 (`f2/dols_subperiodos.csv`). "
+_pv = {v: precovid_real(v)["coef"] for v in ["tipo_hip_real", "ln_permisos_l4", "ln_costes_real", "ln_ocupados"]}
+P(f"\nLa fila «Desde 2014Q1» usa el ect de la muestra completa (no lo re-estima); la fila pre-COVID sí lo re-estima. El ect recursivo de `f2/ect_recursivo.csv` es el del ECM **nominal**: pasa de {fm(ectrec.loc['2019Q4', 'coef_ect'], 3)} (hasta 2019Q4) a {fm(ectrec.iloc[-1].coef_ect, 3)} (hasta {ectrec.index[-1]}). "
+  f"En el largo plazo real re-estimado hasta 2019Q4 cambian de signo el tipo real ({fm(LPR.loc['tipo_hip_real', 'coef'], 3)} → {fm(_pv['tipo_hip_real'], 3)}) y los permisos ({fm(LPR.loc['ln_permisos_l4', 'coef'], 3)} → {fm(_pv['ln_permisos_l4'], 3)}); los costes mantienen el signo ({fm(LPR.loc['ln_costes_real', 'coef'], 3)} → {fm(_pv['ln_costes_real'], 3)}). "
+  "En el LP nominal (`f2/robustez_quiebres.csv`, k = 2) también cambian costes y permisos. "
   "Los escalones de 2021 (EPA) y de 2022 (tipos) no son significativos en el ECM real.")
+P(f"**Limitaciones de P5.** El quiebre de 2008 no es contrastable: la muestra principal empieza en {rbp_ini}, de modo que 2008 queda en el arranque. La potencia en 2022Q3 es baja (el segundo tramo tiene n2 = {fi(rchow.loc['2022Q3', 'n2'])} observaciones), así que que Chow no rechace en 2022Q3 no prueba estabilidad; con n2 = {fi(rchow.loc['2020Q1', 'n2'])} en 2020Q1 ocurre algo parecido.")
 fuente("f2/real_chow.csv", "f2/chow.csv", "f2/real_bai_perron.csv", "f2/real_robustez.csv", "f2/ect_recursivo.csv", "f2/dols_subperiodos.csv", "f4/chow.csv", "f4/bai_perron.csv", "f6/quiebres_wald_hac.csv")
 
 # ---------------------------------------------------------------------------- robustez
@@ -1196,6 +1202,13 @@ P(f"6. Que cualquier coeficiente individual del corto plazo sea la «verdadera»
 P(f"7. Que la **heterogeneidad entre CCAA sea nula**: solo que no se detecta (p wild de poolability = {fp(pool.p_wild_Webb)}; límite de aleatorización 1/{n_ccaa}).")
 P(f"8. Que el **déficit sea exactamente** {fi(bde_def)} o {fi(dv_main.deficit)}: depende de la fuente de hogares (rango {fi(min(dv_ecp.deficit, dv_pk.deficit, dv_a0.deficit, dv_main.deficit))}-{fi(max(dv_ecp.deficit, dv_pk.deficit, dv_a0.deficit, dv_main.deficit))} entre variantes con corrección) y de la ausencia de protegidas.")
 P("9. Que las referencias Caldera-Johansson (2013) y Cavalleri et al. (2019) respalden el 0,45 del BdE: NO VERIFICADAS de forma independiente.")
+P(f"10. Que el **crédito cause** el precio: es un comovimiento simultáneo (con crédito en t-1 el coeficiente cambia de signo y la variante rechaza Breusch-Godfrey, `f2/robustez_credito.csv`).")
+_vals = [r_real.coef, lp_nom.loc["ln_ocupados", "coef"], precovid_real("ln_ocupados")["coef"], lp_cell_from_ce(dsp14, "ln_ocupados", "")["coef"]]
+P(f"11. Una **magnitud precisa del efecto del empleo** a largo plazo: el coeficiente va de {fm(min(_vals), 2)} a {fm(max(_vals), 2)} según muestra (completa, pre-COVID, desde 2014) y precio (real, nominal).")
+P("12. Que **los tipos de interés no importen** a largo plazo porque el tipo real sea ≈ 0 en el DOLS: es una relación estadística no identificada, y en el corto plazo el Δ tipo sí entra en el modelo.")
+_v = vcv.set_index(["periodo", "serie"])
+P(f"13. Que la **Comunitat Valenciana se encarezca más o menos que España**: el signo depende de la medida de precio (desde 2014: IPV {fm(_v.loc[('2014Q1-2026Q2', 'ipv'), 'dif_pp'], 1)} pp frente a valor tasado {fm(_v.loc[('2014Q1-2026Q2', 'p_tasado'), 'dif_pp'], 1)} pp).")
+P(f"14. Un **déficit en niveles** de {fi(dv_main.deficit)} viviendas: es un flujo acumulado desde 2021 y un déficit en niveles requiere suponer un equilibrio inicial.")
 
 # ---------------------------------------------------------------------------- búsqueda
 H("11. Número total de especificaciones probadas y corrección por búsqueda")
@@ -1245,7 +1258,7 @@ for e in LITENT:
         refs.append(dict(referencia=e["clave"], marca=e["marca"], origen_en_literatura=e["origen"], citada_en="; ".join(hits[:8]) + (" ..." if len(hits) > 8 else ""), detalle=e["detalle"]))
 # citas "Autor (año)" que no figuran en literatura.md
 known = {(_norm(a), y) for e in LITENT for a in e["apellidos"] for y in e["años"]}
-found = set(re.findall(r"([A-ZÁÉÍÓÚ][a-záéíóúñü\-]+(?:[ -][A-Z][a-záéíóúñü]+)?(?: et al\.)?) \((\d{4})[ab]?\)", alltext))
+found = set(re.findall(r"(?<![\wáéíóúñü])([A-ZÁÉÍÓÚ][a-záéíóúñü\-]+(?:[ -][A-Z][a-záéíóúñü]+)?(?: et al\.)?) \((\d{4})[ab]?\)", alltext))
 missing = []
 for a, y in sorted(found):
     toks = [t for t in re.split(r"[- ]| y ", _norm(a.replace(" et al.", ""))) if t]

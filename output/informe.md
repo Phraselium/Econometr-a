@@ -14,9 +14,9 @@ Documento generado por `src/report.py` a partir de las tablas de `output/` (ning
 
 - **P4 (asociación; València descriptiva).** Panel de 17 CCAA: b2 = 0,0011 (0,0040) (p wild = 0,774); no se detecta heterogeneidad (p wild de poolability = 0,363), lo que no prueba homogeneidad. València: beta frente a España 1,73 (0,11), inestable por tramos.
 
-- **P5 (descriptivo).** Chow (ECM real) rechaza en 2014Q1 (2014Q1: p = 0,004) y no rechaza en 2020Q1, 2022Q3; Bai-Perron en niveles: 2011Q4, 2019Q2, 2023Q2. El modelo **no es estable**.
+- **P5 (descriptivo).** Chow (ECM real) rechaza en 2014Q1 (p = 0,004) y no rechaza en 2020Q1, 2022Q3; Bai-Perron en niveles: 2011Q4, 2019Q2, 2023Q2. El modelo **no es estable**.
 
-- **Robustez** (13 coeficientes clave; regla en la sección 8): sobreviven ('sí') 1; parcialmente 7; no 5 (`tablas/robustez.csv`).
+- **Robustez** (13 coeficientes clave; regla en la sección 8): sobreviven ('sí') 0; parcialmente 9; no 4 (`tablas/robustez.csv`).
 
 *Fuentes: `output/registro_busqueda.csv`; `output/tablas/ecuacion_final_lp.csv`; `output/tablas/ecuacion_final_cp.csv`; `output/tablas/robustez.csv`; `output/tablas/cointegracion.csv`; `output/tablas/deficit.csv`; `output/tablas/inmigracion_iv.csv`; `output/tablas/panel_ccaa.csv`; `output/tablas/valencia.csv`.*
 
@@ -120,7 +120,9 @@ CP nominal: término de corrección -0,0968 (0,0309), R² ajustado 0,749. La ré
 | nominal | 74 | 0,398 | 117,3 (cv 69,8) | 3,25 (I1 4,01; no concluyente) | 1 | evidencia mixta (1/3) |
 | real | 74 | 0,023 | 133,1 (cv 69,8) | 7,20 (I1 4,01; rechaza (F>I1)) | 3 | cointegración (3/3) |
 
-Regla: se exige concordancia de al menos 2 de 3 contrastes. El t del ect NO contrasta cointegración (distribución no estándar; Banerjee-Dolado-Mestre 1998). Con valor tasado y BdE (la misma serie) el vector base da: {cdf2.loc[[x for x in cdf2.index if x.startswith('ln_p_tasado') and x.endswith('/ base')][0], 'decision']} (`tablas/cointegracion.csv`).
+Regla: se exige concordancia de al menos 2 de 3 contrastes. El t del ect NO contrasta cointegración (distribución no estándar; Banerjee-Dolado-Mestre 1998). Con valor tasado y BdE (la misma serie) el vector base da: evidencia mixta (1/3) (`tablas/cointegracion.csv`).
+
+**Orden de integración (`f2/raices_unitarias.csv`).** En la muestra 2008Q1-2026Q2, ln IPV es «ambigua» y ln IPV real es «ambigua» (ADF con constante p = 0,477; Zivot-Andrews p = 0,010 con quiebre en 2015Q1). La ambigüedad se debe a los quiebres: el contraste de límites ARDL es válido con regresores I(0) o I(1), pero no con I(2), y la cointegración real descansa en una serie de orden de integración no resuelto.
 
 ### 3.5 Diagnósticos de la ecuación final
 
@@ -196,7 +198,7 @@ Análisis de signos: el empleo y la persistencia del precio son las asociaciones
 | IPC alquiler | OLS | 391 | 0,534 | 0,167 | [0,21; 0,86] | 0,004 | n/d |
 | IPC alquiler | 2SLS | 391 | 0,437 | 0,293 | [-0,14; 1,01] | 0,119 | 54,4 |
 
-IC95 % del 2SLS sobre IPV: [-3,90; 0,67] (según `f3/ic95_2sls_principal.csv`). Coeficiente = variación % del precio por cada punto porcentual de flujo neto de extranjeros sobre la población total.
+IC95 % del 2SLS sobre IPV: [-3,90; 0,67] (según `f3/ic95_2sls_principal.csv`, que usa la t con 16 gl; el IC de la tabla anterior es normal, coef ± 1,96 EE, y por eso es más estrecho). Coeficiente = variación % del precio por cada punto porcentual de flujo neto de extranjeros sobre la población total.
 
 ### 4.2 Nivel de evidencia por resultado (F3)
 
@@ -248,7 +250,7 @@ El coeficiente 2SLS del canal comprador (compras de extranjeros residentes) es m
 | (b) ECP 60131 (stock a 1 de enero) | 2021T1-2025T4 (H 1-ene-2026 − H 1-ene-2021) | 1.222.836 | 411.900 | 810.936 | 4,1 |
 | (c) Δparque MIVAU anual − Δhogares EPA corregida | 2021-2025 | 1.278.000 | 475.848 | 802.152 | 4,0 |
 
-Extensión de la variante principal a 2026T2: 970.564. BdE (IA 2025): ≈ 750.000; IEF otoño 2025: ≈ 700.000. Diferencia con el BdE: 116.100, de la cual 55.164 por la fuente de hogares (EPA corregida frente a ECP a 1 de enero) y 60.936 por la vivienda protegida no incluida (inferencia nuestra; el BdE no nombra la operación estadística). La corrección del salto de 2021T1 pesa 242.400 viviendas: sin ella el déficit sería 623.700. Es un flujo acumulado, no un déficit en niveles (requeriría un equilibrio inicial). La cifra de ~100.980 terminadas en 2024 citada en prensa es NO VERIFICADA.
+Extensión de la variante principal a 2026T2: 970.564. BdE (IA 2025): ≈ 750.000; IEF otoño 2025: ≈ 700.000. Diferencia con el BdE: 116.100, de la cual 55.164 por la fuente de hogares (EPA corregida frente a ECP a 1 de enero) y 60.936 por un residuo atribuido a la vivienda protegida no incluida (BdE implícito menos nuestras terminadas; incluye el redondeo de «750.000»; inferencia nuestra, el BdE no nombra la operación estadística). Frente al IEF de otoño 2025 la diferencia es 166.100 (periodo y fuente distintos: datos hasta el primer semestre de 2025). La corrección del salto de 2021T1 pesa 242.400 viviendas: sin ella el déficit sería 623.700. Es un flujo acumulado, no un déficit en niveles (requeriría un equilibrio inicial). La cifra de ~100.980 terminadas en 2024 citada en prensa es NO VERIFICADA.
 
 ### 5.2 Elasticidad de la oferta (iniciadas libres, DOLS ±2, precio real retardado)
 
@@ -375,22 +377,24 @@ Bai-Perron (ruptures): ECM real preferido: 0 quiebres; largo plazo real en nivel
 | Desde 2014Q1 | 50 | -0,1117 (0,0291) | <0,001 | 0,652 | 0,745 | 0,133 |
 | Pre-COVID (≤2019Q4) | 47 | 0,0098 (0,0274) | 0,720 | 0,627 | 0,329 | 0,037 |
 
-El ect recursivo pasa de -0,086 (hasta 2019Q4) a -0,097 (hasta 2026Q2). Por subperiodos, el DOLS cambia de signo en costes y permisos antes de 2020 (`f2/dols_subperiodos.csv`). Los escalones de 2021 (EPA) y de 2022 (tipos) no son significativos en el ECM real.
+La fila «Desde 2014Q1» usa el ect de la muestra completa (no lo re-estima); la fila pre-COVID sí lo re-estima. El ect recursivo de `f2/ect_recursivo.csv` es el del ECM **nominal**: pasa de -0,086 (hasta 2019Q4) a -0,097 (hasta 2026Q2). En el largo plazo real re-estimado hasta 2019Q4 cambian de signo el tipo real (0,002 → 0,053) y los permisos (0,032 → -0,115); los costes mantienen el signo (-0,660 → -0,104). En el LP nominal (`f2/robustez_quiebres.csv`, k = 2) también cambian costes y permisos. Los escalones de 2021 (EPA) y de 2022 (tipos) no son significativos en el ECM real.
+
+**Limitaciones de P5.** El quiebre de 2008 no es contrastable: la muestra principal empieza en 2003Q1, de modo que 2008 queda en el arranque. La potencia en 2022Q3 es baja (el segundo tramo tiene n2 = 16 observaciones), así que que Chow no rechace en 2022Q3 no prueba estabilidad; con n2 = 26 en 2020Q1 ocurre algo parecido.
 
 *Fuentes: `output/f2/real_chow.csv`; `output/f2/chow.csv`; `output/f2/real_bai_perron.csv`; `output/f2/real_robustez.csv`; `output/f2/ect_recursivo.csv`; `output/f2/dols_subperiodos.csv`; `output/f4/chow.csv`; `output/f4/bai_perron.csv`; `output/f6/quiebres_wald_hac.csv`.*
 
 ## 8. Robustez de los coeficientes clave
 
-Regla (explícita, mecánica): sea B la estimación de la columna 'muestra completa' y A el conjunto de columnas alternativas con estimación disponible (pre-COVID, desde 2014, con dummies EPA2021/tipos2022, el precio nominal o real distinto del base, valor tasado y otras especificaciones; 'n/d' = no estimado, no cuenta). Una alternativa FALLA si cambia el signo de (coef - referencia) respecto de B o si su p >= 0.05 (cuando hay p). Resultado: 'no' si B no es significativa (p >= 0.05), o si fallan más de la mitad de A, o si el signo cambia en 2 o más alternativas; 'parcial' si hay al menos un fallo (pero no se cumple 'no'), si hay menos de 2 alternativas disponibles, o si la razón entre la mayor y la menor magnitud |coef - referencia| entre columnas con el mismo signo supera 3; 'sí' en otro caso. Para la beta de València la referencia es 1 (H0: beta = 1); para el resto es 0. p aproximado con la normal (coef/EE) si la tabla de origen no trae p (marcado '~').
+Regla (explícita, mecánica): sea B la estimación de la columna 'muestra completa' y A el conjunto de columnas alternativas con estimación disponible (pre-COVID, desde 2014, con dummies EPA2021/tipos2022, el precio nominal o real distinto del base, valor tasado y otras especificaciones; 'n/d' = no estimado, no cuenta). Una alternativa FALLA si cambia el signo de (coef - referencia) respecto de B o si su p >= 0.05 (cuando hay p). Resultado: 'no' si B no es significativa (p >= 0.05), o si fallan más de la mitad de A, o si el signo cambia en 2 o más alternativas; 'parcial' si hay al menos un fallo (pero no se cumple 'no'), si hay menos de 2 alternativas disponibles, o si la razón entre la mayor y la menor magnitud |coef - referencia| entre columnas con el mismo signo supera 3; 'sí' en otro caso. Además, un resultado 'sí' se degrada a 'parcial' si el término no sobrevive a la corrección por búsqueda de su fase (Bonferroni con K o Holm; columna p_corregido): como máximo 'parcial'. Cada columna usa el mismo concepto de precio y el mismo regresor que la base; si la estimación comparable no existe se marca 'n/d' (las comparaciones nominal/real solo van en las columnas 'nominal' y 'real'). Para la beta de València la referencia es 1 (H0: beta = 1); para el resto es 0. p aproximado con la normal (coef/EE) si la tabla de origen no trae p (marcado '~').
 
 | coeficiente | muestra_completa | pre_COVID | desde_2014 | dummies_EPA21_tipos22 | nominal | real | precio_valor_tasado | otra_especificacion_1 | otra_especificacion_2 | ¿sobrevive? |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Empleo LP (ln ocupados) | 1,482 (0,330) [p<0,001] {real} | 3,527 [sin p] {real; sin EE en la tabla} | 0,826 (0,161) [p~<0,001] {nominal DOLS k=1} | 2,235 (0,481) [p<0,001] {nominal} | 1,951 (0,480) [p<0,001] {nominal} | 1,482 (0,330) [p<0,001] {real} | n/d | n/d | n/d | parcial |
-| Tipo hipotecario LP (real) | 0,002 (0,008) [p=0,782] {real} | 0,053 [sin p] {real; sin EE en la tabla} | -0,072 (0,009) [p~<0,001] {nominal DOLS k=1} | -0,006 (0,019) [p=0,743] {nominal} | -0,017 (0,017) [p=0,315] {nominal} | 0,002 (0,008) [p=0,782] {real} | n/d | n/d | n/d | no |
-| Permisos t-4 LP (proxy de oferta) | 0,032 (0,029) [p=0,272] {real} | -0,115 [sin p] {real; sin EE en la tabla} | 0,106 (0,014) [p~<0,001] {nominal DOLS k=1} | 0,011 (0,048) [p=0,814] {nominal} | 0,059 (0,045) [p=0,190] {nominal} | 0,032 (0,029) [p=0,272] {real} | n/d | n/d | n/d | no |
-| Costes LP (reales / nominales) | -0,660 (0,251) [p=0,009] {real} | -0,104 [sin p] {real; sin EE en la tabla} | 0,918 (0,089) [p~<0,001] {nominal DOLS k=1} | 0,320 (0,199) [p=0,108] {nominal} | 0,266 (0,165) [p=0,106] {nominal} | -0,660 (0,251) [p=0,009] {real} | n/d | n/d | n/d | no |
+| Empleo LP (ln ocupados) | 1,482 (0,330) [p<0,001] {real} | 3,527 [sin p] {real; sin EE en la tabla} | n/d | n/d | 1,951 (0,480) [p<0,001] {nominal} | 1,482 (0,330) [p<0,001] {real} | n/d | n/d | n/d | parcial |
+| Tipo hipotecario LP (real) | 0,002 (0,008) [p=0,782] {real} | 0,053 [sin p] {real; sin EE en la tabla} | n/d | n/d | -0,017 (0,017) [p=0,315] {nominal} | 0,002 (0,008) [p=0,782] {real} | n/d | n/d | n/d | no |
+| Permisos t-4 LP (proxy de oferta) | 0,032 (0,029) [p=0,272] {real} | -0,115 [sin p] {real; sin EE en la tabla} | n/d | n/d | 0,059 (0,045) [p=0,190] {nominal} | 0,032 (0,029) [p=0,272] {real} | n/d | n/d | n/d | no |
+| Costes LP (reales / nominales) | -0,660 (0,251) [p=0,009] {real} | -0,104 [sin p] {real; sin EE en la tabla} | n/d | n/d | 0,266 (0,165) [p=0,106] {nominal} | -0,660 (0,251) [p=0,009] {real} | n/d | n/d | n/d | parcial |
 | Corrección de error ect(t-1) | -0,106 (0,035) [p=0,002] {real} | 0,010 (0,027) [p=0,720] {real} | -0,112 (0,029) [p<0,001] {real} | -0,102 (0,039) [p=0,009] {real} | -0,097 (0,031) [p=0,002] {nominal} | -0,106 (0,035) [p=0,002] {real} | n/d | n/d | n/d | parcial |
-| Empleo CP (Δ ln ocupados) | 0,467 (0,180) [p=0,009] {real (t-1)} | 0,744 (0,379) [p~=0,049] {nominal (t)} | 0,359 (0,129) [p~=0,005] {nominal (t)} | n/d | 0,474 (0,174) [p=0,006] {nominal (t)} | 0,467 (0,180) [p=0,009] {real (t-1)} | n/d | n/d | n/d | sí |
+| Empleo CP (Δ ln ocupados, t-1) | 0,467 (0,180) [p=0,009] {real (t-1)} | n/d | n/d | n/d | n/d | 0,467 (0,180) [p=0,009] {real (t-1)} | n/d | n/d | n/d | parcial |
 | Flujo neto extranjeros → IPV (panel F3, OLS FE) | -0,454 (0,503) [p=0,385] | -0,484 (0,530) [p=0,365] {sin 2020-21} | n/d | n/d | n/d | n/d | 0,361 (0,716) [p=0,622] {valor tasado} | -1,615 (1,078) [p=0,210] {2SLS} | n/d | no |
 | Flujo neto extranjeros → alquiler IPC (panel F3, OLS FE) | 0,534 (0,167) [p=0,004] | 0,533 (0,172) [p=0,006] {sin 2020-21} | n/d | n/d | n/d | n/d | n/d | 0,437 (0,293) [p=0,119] {2SLS} | n/d | parcial |
 | Flujo neto extranjeros → alquiler SERPAVI (panel F3, OLS FE) | 1,217 (0,337) [p=0,007] | 1,358 (0,351) [p=0,005] {sin 2020-21} | n/d | n/d | n/d | n/d | n/d | 0,554 (0,813) [p=0,498] {2SLS} | n/d | parcial |
@@ -401,17 +405,17 @@ Regla (explícita, mecánica): sea B la estimación de la columna 'muestra compl
 
 Leyenda: cada celda es coef (EE) [p]; '{..}' indica la especificación de origen; '~' = p aproximado por la normal; 'n/d' = no estimado. Motivo de la clasificación y advertencias en `tablas/robustez.csv`.
 
-- **Empleo LP (ln ocupados):** parcial (signo y significatividad estables pero magnitud inestable (razón 4,3)). valor tasado no estimado en el DOLS de F2; pre-COVID real sin EE; el LP real no es estable por subperiodos
+- **Empleo LP (ln ocupados):** parcial (menos de 2 alternativas con p disponibles (1 de 2)). valor tasado no estimado en el DOLS de F2; pre-COVID real sin EE; las columnas desde 2014 y con dummies solo existen en nominal (DOLS), por eso n/d; la magnitud no es robusta
 - **Tipo hipotecario LP (real):** no (la estimación base no es significativa (p = 0,782)). tipo real ≈ 0 en la ecuación final
 - **Permisos t-4 LP (proxy de oferta):** no (la estimación base no es significativa (p = 0,272)). 
-- **Costes LP (reales / nominales):** no (fallan 3 de 4 alternativas (3 con cambio de signo)). el signo negativo del coste real contradice el signo esperado: relación estadística, no estructural
-- **Corrección de error ect(t-1):** parcial (fallan 1 de 4 alternativas (1 con cambio de signo)). valor tasado no estimado en el ECM; el p del ect NO contrasta cointegración (distribución no estándar)
-- **Empleo CP (Δ ln ocupados):** sí (0 fallos en 3 alternativas). el término es Δ ocupados en t (nominal) y en t-1 (real): la búsqueda elige uno u otro; no sobrevive a Bonferroni (K=576)
+- **Costes LP (reales / nominales):** parcial (menos de 2 alternativas con p disponibles (1 de 2)). el signo negativo del coste real contradice el signo esperado: relación estadística, no estructural
+- **Corrección de error ect(t-1):** parcial (fallan 1 de 4 alternativas (1 con cambio de signo)). valor tasado no estimado en el ECM; el p del ect NO contrasta cointegración (distribución no estándar); la fila 2014+ real usa el ect de la muestra completa (no re-estimado), el pre-COVID sí lo re-estima
+- **Empleo CP (Δ ln ocupados, t-1):** parcial (menos de 2 alternativas con p disponibles (0 de 0)). los ECM reales pre-COVID y 2014+ no guardan este coeficiente y el ECM nominal usa Δocupados(t) (otro retardo): no comparables, n/d; no sobrevive a Bonferroni (K=576)
 - **Flujo neto extranjeros → IPV (panel F3, OLS FE):** no (la estimación base no es significativa (p = 0,385)). columna 'pre_COVID' = muestra sin 2020-2021 (no hay muestra pre-COVID en el panel anual); p = wild cluster bootstrap
 - **Flujo neto extranjeros → alquiler IPC (panel F3, OLS FE):** parcial (fallan 1 de 2 alternativas (0 con cambio de signo)). pretendencia significativa (grupo América); resultado posterior al diseño prefijado; p = WCB
 - **Flujo neto extranjeros → alquiler SERPAVI (panel F3, OLS FE):** parcial (fallan 1 de 2 alternativas (0 con cambio de signo)). p = WCB
 - **Cuota extranjera (pp) → Δln IPV (panel F5, FE CCAA+año):** no (la estimación base no es significativa (p = 0,774)). el efecto depende de la alineación temporal (f5/timing_b2.csv) y ninguna variante sobrevive a Holm
-- **Stock de extranjeros LP (ln pob. extranjera, DOLS):** parcial (menos de 2 alternativas disponibles (0)). solo un DOLS con pob_extranj; sin contraste en otras muestras ni con precio real
+- **Stock de extranjeros LP (ln pob. extranjera, DOLS):** parcial (menos de 2 alternativas con p disponibles (0 de 0)). solo un DOLS con pob_extranj; sin contraste en otras muestras ni con precio real
 - **Elasticidad de la oferta (iniciadas libres, DOLS k=4):** parcial (fallan 1 de 4 alternativas (0 con cambio de signo)). los p de niveles no son válidos (cointegración 1/3); el IV en Δ4 no es significativo; no se rechaza beta = 0,45 en Δ4 (f4/contraste_H0_045_principales.csv)
 - **Beta de València frente a España (Δ4 valor tasado, H0: beta = 1):** parcial (fallan 1 de 3 alternativas (0 con cambio de signo)). el p es de H0: beta = 1; EE por tramo aproximados (24-26 trimestres); València forma parte de CV y España (componente parte-todo); el IPV no existe para el municipio
 
@@ -421,17 +425,17 @@ Leyenda: cada celda es coef (EE) [p]; '{..}' indica la especificación de origen
 
 Prioridad según su efecto sobre la inferencia de P1-P5 (1 = invalida lecturas causales o la estabilidad; 2 = condiciona magnitudes; 3 = datos). Texto de `docs/limitaciones.md`.
 
-**Prioridad 1 (estabilidad y selección de P1/P5) · F2 (aprobada en re-revisión; pendientes trasladados)**
+**Prioridad 1 (estabilidad y selección de P1/P5) · F2 (aprobada en re-revisión; pendientes trasladados) — ecuación NOMINAL (réplica) salvo que se indique**
 
 - Cointegración con precio nominal: evidencia mixta (1/3: EG no rechaza, Johansen rechaza, ARDL no concluyente). Solo el precio real cointegra en los tres contrastes; la relación es estadística, no estructural (costes y tipo con signos no esperados en el DOLS real de control del revisor; inestable por subperiodos).
-- Desde 2014Q1 el término de corrección del error deja de ser significativo (−0,068, EE 0,045; N=50) y el crédito desaparece: la dinámica de ajuste no es estable.
+- [Nominal] Desde 2014Q1 el término de corrección del error del ECM nominal deja de ser significativo (−0,068, EE 0,045; N=50) y el crédito desaparece.
 - El crédito nuevo contemporáneo es simultáneo con el precio (en t−1 cambia de signo); la variante con crédito en t−1 rechaza Breusch-Godfrey.
-- Selección: el modelo preferido gana en solo el 1,5 % de las réplicas bootstrap; tras Bonferroni (K=1.728) ningún regresor es significativo al 5 %; fuera de muestra no mejora al AR(4) (selección hecha con la muestra completa).
-- RESET rechaza en la ecuación preferida; quiebre en 2014Q1 (Chow p=0,012); Bai-Perron detecta 3 quiebres en el largo plazo.
+- [Nominal] Selección: el modelo preferido nominal gana en solo el 1,5 % de las réplicas bootstrap; tras Bonferroni (K=1.728) ningún regresor es significativo al 5 %; fuera de muestra no mejora al AR(4) (selección hecha con la muestra completa).
+- [Nominal] RESET rechaza en la ecuación preferida nominal; quiebre en 2014Q1 (Chow p=0,012); Bai-Perron detecta 3 quiebres en el largo plazo.
 
 **Prioridad 1 (estabilidad y selección de P1/P5; precio real) · F2 — bloque de precio real (condición de la re-revisión, cumplida)**
 
-- Ecuación real: el término de corrección del error es significativo en toda la muestra (−0,106, EE 0,035) pero cambia de signo antes de 2020 (+0,010, p=0,72) y no es significativo desde 2014: la corrección hacia el equilibrio no es estable.
+- Ecuación real: el término de corrección del error es significativo en toda la muestra (−0,106, EE 0,035) pero cambia de signo en la muestra pre-COVID (hasta 2019Q4: +0,010, p=0,72); en la submuestra 2014Q1+ con el ect de la muestra completa sigue siendo significativo (−0,112, p<0,001). La corrección hacia el equilibrio depende del periodo: no es estable. (Corrección: una versión anterior de este documento atribuía al ECM real el −0,068 del nominal; detectado en docs/revision_f7.md.)
 - Costes reales con signo negativo en el largo plazo (−0,66) y tipo real ≈0: relación estadística, no estructural. DOLS real con BG, RESET y VIF (17) que fallan.
 - Ningún término del corto plazo real sobrevive a Bonferroni (K=576-1.728); el preferido rara vez gana en el bootstrap de la selección; no mejora al AR(4) fuera de muestra.
 
@@ -489,6 +493,16 @@ Prioridad según su efecto sobre la inferencia de P1-P5 (1 = invalida lecturas c
 
 9. Que las referencias Caldera-Johansson (2013) y Cavalleri et al. (2019) respalden el 0,45 del BdE: NO VERIFICADAS de forma independiente.
 
+10. Que el **crédito cause** el precio: es un comovimiento simultáneo (con crédito en t-1 el coeficiente cambia de signo y la variante rechaza Breusch-Godfrey, `f2/robustez_credito.csv`).
+
+11. Una **magnitud precisa del efecto del empleo** a largo plazo: el coeficiente va de 0,83 a 3,53 según muestra (completa, pre-COVID, desde 2014) y precio (real, nominal).
+
+12. Que **los tipos de interés no importen** a largo plazo porque el tipo real sea ≈ 0 en el DOLS: es una relación estadística no identificada, y en el corto plazo el Δ tipo sí entra en el modelo.
+
+13. Que la **Comunitat Valenciana se encarezca más o menos que España**: el signo depende de la medida de precio (desde 2014: IPV -14,1 pp frente a valor tasado 12,2 pp).
+
+14. Un **déficit en niveles** de 866.100 viviendas: es un flujo acumulado desde 2021 y un déficit en niveles requiere suponer un equilibrio inicial.
+
 ## 11. Número total de especificaciones probadas y corrección por búsqueda
 
 **Total: 3.812 especificaciones registradas** en `output/registro_busqueda.csv` (concatenación de las fases F2-F6, con columnas `fase`, `n_total_fase` y `n_total_registro`).
@@ -509,7 +523,7 @@ De las 3.483 de F2, 1.728 son la búsqueda de corto plazo nominal y 1.728 la rea
 
 Marca según `docs/literatura.md`: VERIFICADA (comprobada contra Crossref/IDEAS/PDF oficial), PARCIAL (DOI, páginas o versión sin comprobar) y NO VERIFICADA. Se listan solo las referencias citadas en este informe o en los resúmenes de `output/`.
 
-Total: 56 (VERIFICADA: 42; PARCIAL: 11; NO VERIFICADA: 3).
+Total: 55 (VERIFICADA: 42; PARCIAL: 11; NO VERIFICADA: 2).
 
 - [VERIFICADA] Accetturo et al. (2014). Don't stand so close to me: The urban impact of immigration
 - [VERIFICADA] Bai y Perron (1998). Estimating and testing linear models with multiple structural changes
@@ -545,7 +559,6 @@ Total: 56 (VERIFICADA: 42; PARCIAL: 11; NO VERIFICADA: 3).
 - [VERIFICADA] Johansen (1991). Estimation and hypothesis testing of cointegration vectors in Gaussian vector autoregressive models
 - [VERIFICADA] Jordà (2005). Estimation and inference of impulse responses by local projections
 - [VERIFICADA] Juodis y Reese (2022)
-- [NO VERIFICADA] Kinnon (1996)
 - [VERIFICADA] Kwiatkowski, Phillips, Schmidt y Shin (1992)
 - [VERIFICADA] Leamer (1983)
 - [PARCIAL] MacKinnon (1996)

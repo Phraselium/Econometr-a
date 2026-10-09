@@ -1,6 +1,6 @@
 archivo,fuente,n_series,primera_fecha,ultima_fecha,n_obs,n_nan,descargado_utc
-bde_precio_vivienda_libre.csv,BdE,3,1995-03-01,2026-06-01,234,0,2026-10-09T18:46:15Z
-bde_tipo_hipotecario_referencia.csv,BdE,1,1990-11-01,2026-08-01,430,0,2026-10-09T18:46:16Z
+bde_precio_vivienda_libre.csv,BdE,3,1995-03-01,2026-06-01,378,144,2026-10-09T18:46:33Z
+bde_tipo_hipotecario_referencia.csv,BdE,1,1973-01-01,2026-09-01,645,215,2026-10-09T18:46:34Z
 ecb_euribor1y.csv,BCE,1,1994-01-01,2026-09-01,393,0,2026-10-09T18:41:42Z
 ecb_hicp_es.csv,BCE,1,1996-01-01,2025-12-01,360,0,2026-10-09T18:41:50Z
 ecb_nuevo_credito_vivienda_es.csv,BCE,1,2003-01-01,2026-08-01,284,0,2026-10-09T18:41:44Z
@@ -14,5 +14,7 @@ eurostat_inmigracion_anual.csv,Eurostat,283,1998-01-01,2024-01-01,4036,394,2026-
 eurostat_permisos.csv,Eurostat,1,2000-01-01,2026-04-01,106,0,2026-10-09T18:43:31Z
 eurostat_produccion_construccion.csv,Eurostat,1,2005-01-01,2026-04-01,86,0,2026-10-09T18:43:38Z
 eurostat_renta_hogares.csv,Eurostat,1,1999-01-01,2026-04-01,110,0,2026-10-09T18:43:30Z
+ine_ecp_nacional.csv,INE,2,1971-01-01,2026-07-01,184,0,2026-10-09T18:46:33Z
 ine_epa_ocupados.csv,INE,1,2002-01-01,2026-04-01,98,0,2026-10-09T18:46:22Z
+ine_epa_ocupados_ccaa.csv,INE,420,2002-01-01,2026-04-01,41160,303,2026-10-09T18:46:30Z
 ine_ipv_25171.csv,INE,224,2007-01-01,2025-10-01,17024,0,2026-10-09T18:46:20Z

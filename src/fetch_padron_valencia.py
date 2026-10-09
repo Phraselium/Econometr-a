@@ -264,11 +264,10 @@ def _canon_cat(raw: str) -> str:
         return "Total Europa"
     if low == "rep. dominicana":
         return "República Dominicana"
-    # Grupos de 33946 (2020+) equivalentes a los de los ficheros anuales (valores idénticos en 2019).
-    # Las agrupaciones UE27_2020 / Europa menos UE27_2020 no tienen equivalente anual y se dejan tal cual.
-    grupos = {"de africa": "Total África", "de américa": "Total América", "de asia": "Total Asia",
-              "europa (sin españa)": "Total Europa", "país de la ue28 sin españa": "Total Unión Europea",
-              "país de europa menos ue28": "Total Europa No Comunitaria"}
+    # Equivalencias de grupos 33946 (2020+) <-> ficheros anuales: solo África y América, que coinciden
+    # valor a valor en todos los años solapados (2003-2019). UE, Europa y Asia tienen composiciones
+    # que difieren entre tablas en algunos años: se dejan con su etiqueta original.
+    grupos = {"de africa": "Total África", "de américa": "Total América"}
     return grupos.get(low, s)
 
 
@@ -421,10 +420,17 @@ def fetch_nacionalidad_pcaxis() -> Path:
         t3 = t3[(t3.muni == MUNI_VLC) & t3.anio.between(2003, 2019)]
         ann = todas[(todas.muni == MUNI_VLC) & todas.anio.between(2003, 2019) & (todas.papel != "t3")]
         m_ = ann.merge(t3, on=["anio", "sexo", "nac"], suffixes=("", "_t3"))
-        dd = (m_["valor"] - m_["valor_t3"]).abs()
-        msgs.append(f"(d) cruce anual 2003-2019 vs tabla 33946 (todas las categorías comunes): "
-                    f"máx |dif| = {dd.max():.1f} personas ({'OK' if dd.max() <= TOL_NAT else 'REVISAR'}; "
-                    f"{int(dd.notna().sum())} celdas; {int(dd.isna().sum())} con vacío)")
+        m_["dd"] = (m_["valor"] - m_["valor_t3"]).abs()
+        # Países y Total/Española/Extranjera: misma definición en ambas tablas.
+        grupo = m_["nac"].str.match(r"^(Total |Total$|Europa|País|Unión|De |Resto|Oceanía)") & ~m_["nac"].isin(
+            ["Total", "Española", "Extranjera"])
+        paises = m_[~grupo]
+        dd = paises["dd"].max()
+        msgs.append(f"(d) cruce anual 2003-2019 vs tabla 33946, países y totales: máx |dif| = {dd:.1f} "
+                    f"personas ({'OK' if dd <= TOL_NAT else 'REVISAR'}; {len(paises)} celdas)")
+        dg = m_.loc[grupo, "dd"].max()
+        msgs.append(f"(d) grupos (UE, Europa, Asia, etc.): máx |dif| = {dg:.0f} personas; definiciones "
+                    f"distintas entre tablas, informativo, no se usa para corregir")
     for m_txt in msgs:
         print("[val]", m_txt)
 

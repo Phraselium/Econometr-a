@@ -61,6 +61,9 @@ def prep_annual():
     a["d_ln_pob_esp"] = a.d_ln_pob_espanola
     a["term_pc"] = 1000 * a.terminadas / a.pob_total
     a["term_l1"] = a.groupby("ccaa").term_pc.shift(1)
+    a["share_mid"] = (a.share_extr + a.groupby("ccaa").share_extr.shift(-1)) / 2   # cuota a mitad de anio t
+    a["d_share_mid"] = a.groupby("ccaa").share_mid.diff()
+    a["d_share_flow_t"] = a.groupby("ccaa").d_share_extr.shift(-1)                  # flujo durante el anio t
     a["y"] = a.d_ln_ipv
     a["y_pt"] = a.d_ln_p_tasado
     return a
@@ -274,11 +277,12 @@ def cips_sim(N, T, p, R=1000):
 # ================================================================ 1. Principal
 sec("0. Datos y muestra",
     f"Panel anual `panel_ccaa_a`: dependiente d_ln_ipv (IPV media anual, base 2025). Muestra principal "
-    f"{N_MAIN} CCAA x {T_MAIN} anios (2009-2025; N={len(MAIN)}, balanceado). **Extremadura queda fuera de la muestra "
-    f"principal** porque `terminadas` (MIVAU) no tiene datos para esa CCAA (0 observaciones); el requisito de "
-    f"misma muestra obliga a recortar a {N_MAIN} CCAA. Robusteces con 17 CCAA sin `terminadas` y con valor tasado desde 2003. "
-    f"b2 se mide en puntos porcentuales de cuota extranjera (pob_extranj/pob_total a 1 de enero); la poblacion es stock a "
-    f"1 de enero y IPV/ocupados medias anuales (desfase de timing). `term_l1` = terminadas por 1.000 hab. de t-1.")
+    f"{N_MAIN} CCAA x {T_MAIN} anios (2009-2025; N={len(MAIN)}, balanceado; `terminadas` de Extremadura ya incorporada en data/processed). "
+    f"**Timing de b2**: la poblacion es el stock a 1 de enero del anio t, de modo que d_share_t = cuota(1-1-t) - cuota(1-1-(t-1)) mide la "
+    f"entrada neta ocurrida durante el anio t-1, mientras el IPV es la media del anio t (b2 principal = flujo retardado un anio). "
+    f"Alternativas registradas (seccion 1g): cuota a mitad de anio t (media de 1-1-t y 1-1-t+1) y flujo del anio t (cuota(1-1-t+1) - cuota(1-1-t)); "
+    f"ambas necesitan la cuota de 1-1-2026, por lo que se comparan en 2009-2024. b2 se mide en puntos porcentuales de cuota "
+    f"(pob_extranj/pob_total); el coeficiente es Delta ln IPV por pp (x100 = %/pp). `term_l1` = terminadas por 1.000 hab. de t-1.")
 
 r_cl = fe_fit(MAIN, "y", XN)
 r_dk = fe_fit(MAIN, "y", XN, cov="kernel", bw=2)
@@ -339,6 +343,28 @@ comp = pd.DataFrame({
 save(comp, "tabla_comparacion_estimadores")
 sec(f"1d. Comparacion de estimadores (misma muestra: {N_MAIN} CCAA x 2009-2025)", tm(comp))
 
+# ---- timing de b2 (misma muestra 2009-2024 para las tres alineaciones)
+M24 = MAIN[MAIN.anio <= 2024].dropna(subset=["d_share_mid", "d_share_flow_t"]).copy()
+trows = []
+for tid, col, desc in (("T_flow_tm1", "d_share_extr", "flujo del anio t-1 (principal)"),
+                       ("T_mid", "d_share_mid", "cuota a mitad de anio t"),
+                       ("T_flow_t", "d_share_flow_t", "flujo del anio t (contemporaneo)")):
+    xs = [col if x == "d_share_extr" else x for x in XN]
+    rt = fe_fit(M24, "y", xs)
+    Y_, X_ = arr(M24, "y", xs, CCAAS)
+    pwt = wild_boot(Y_, X_, 1)
+    mid = tid
+    n_, r2a_, aic_, bic_ = stats_fe(rt)
+    REG.log("F5", mid, "d_ln_ipv ~ " + " + ".join(xs) + " | CCAA + anio [2009-2024] [cluster; p = wild Webb]", 2009, 2024, n_, r2a_, aic_,
+            bic_, np.nan, rt.params[col], pwt, "timing de b2 | rmse_oos no aplica")
+    BETA2_P[mid] = pwt
+    trows.append((desc, rt.params[col], rt.std_errors[col], rt.pvalues[col], pwt, 100 * rt.params[col], int(rt.nobs)))
+ttab = pd.DataFrame(trows, columns=["alineacion de la cuota", "b2", "EE_cluster", "p_cluster", "p_wild_Webb", "b2 en %/pp", "N"])
+save(ttab, "timing_b2", index=False)
+sec("1g. Timing de b2 (FE bidireccional, 2009-2024, misma muestra)",
+    "La cuota es un stock a 1 de enero; las tres alineaciones se comparan en la misma muestra. El flujo contemporaneo es el mas expuesto "
+    "a causalidad inversa (precio -> llegadas en el mismo anio).\n\n" + tm(ttab, index=False))
+
 # ---- diagnósticos del FE
 Xd_all = dd(Xn).reshape(-1, 4)
 vif = pd.Series([variance_inflation_factor(Xd_all, i) for i in range(4)], index=[LAB[i] for i in XN], name="VIF (X demeaned)")
@@ -371,11 +397,32 @@ rss_u = ((Yt.reshape(-1) - Wfull @ cf) ** 2).sum()
 df1, df2 = (N - 1) * k, N * T - N - (T - 1) - N * k
 Fp = ((rss_r - rss_u) / df1) / (rss_u / df2)
 pF = stats.f.sf(Fp, df1, df2)
-pool = pd.DataFrame({"F": [Fp], "gl1": [df1], "gl2": [df2], "p": [pF]}, index=["H0: pendientes iguales entre CCAA"])
+# wild cluster bootstrap (Webb) restringido del F de poolability: H0 = pendientes comunes
+Pu = Wfull @ np.linalg.pinv(Wfull)
+fit_r = Xdm @ b_pool
+u_r = ydm - fit_r
+XtXi_p = np.linalg.inv(np.einsum("ntk,ntl->kl", Xdm, Xdm))
+cntp, totp = 0, 0
+while totp < NBOOT:
+    m = min(1000, NBOOT - totp)
+    w = RNG.choice(WEBB, size=(m, N))
+    ys = fit_r[None] + w[:, :, None] * u_r[None]
+    ys = ys - ys.mean(1, keepdims=True) - ys.mean(2, keepdims=True) + ys.mean((1, 2), keepdims=True)
+    bs_ = np.einsum("kl,ntl,mnt->mk", XtXi_p, Xdm, ys)
+    rr_ = ((ys - np.einsum("ntk,mk->mnt", Xdm, bs_)) ** 2).sum((1, 2))
+    yf = ys.reshape(m, -1)
+    ru_ = ((yf - yf @ Pu.T) ** 2).sum(1)
+    cntp += ((((rr_ - ru_) / df1) / (ru_ / df2)) >= Fp).sum()
+    totp += m
+pF_wild = (cntp + 1) / (NBOOT + 1)
+pool = pd.DataFrame({"F": [Fp], "gl1": [df1], "gl2": [df2], "p_clasico": [pF], "p_wild_Webb": [pF_wild]},
+                    index=["H0: pendientes iguales entre CCAA"])
 save(pool, "poolability")
 sec("1e. Diagnosticos del FE principal", tm(diag) + "\n" + tm(vif.to_frame()) +
     "\nPoolability (F de igualdad de pendientes; efectos de CCAA y anio comunes):\n\n" + tm(pool) +
-    "\nNota: con N*k=64 pendientes y T=17 el F tiene poca potencia y distorsion de tamano con heterocedasticidad; orientativo.")
+    "\nNota: el p clasico supone errores iid y esta sobredimensionado (heterocedasticidad, AR(1) residual ~0.3-0.4); la referencia es el p wild. "
+    f"Con N*k={N*k} pendientes y T={T} la potencia es minima. Limite de aleatorizacion: con {N} unidades, un contraste de una region por "
+    f"permutacion/placebo no puede dar p < 1/{N} = {1/N:.3f}.")
 
 # ---- CD
 r_noyr = PanelOLS(MAIN.set_index(["ccaa", "anio"])["y"], MAIN.set_index(["ccaa", "anio"])[XN], entity_effects=True).fit()
@@ -386,8 +433,14 @@ cd_rows = {"FE bidireccional (residuos)": cd_test(ee),
            "d_ln_ipv (variable)": cd_test(pd.DataFrame(Yn.T, columns=CCAAS))}
 cdt = pd.DataFrame(cd_rows).T
 save(cdt, "cd_pesaran")
-sec("3a. Dependencia transversal: test CD de Pesaran (2004; la version 2015 de dependencia debil usa el mismo estadistico)",
-    "CD = sqrt(2/(N(N-1))) sum sqrt(T_ij) rho_ij ~ N(0,1) bajo H0 de independencia transversal (debil).\n\n" + tm(cdt))
+sec("3a. Dependencia transversal: CD de Pesaran (2004/2015) - NO CONCLUYENTE sobre residuos de FE y CCE",
+    "CD = sqrt(2/(N(N-1))) sum sqrt(T_ij) rho_ij. **Advertencia**: sobre residuos de FE bidireccional y de CCE el CD no sigue una N(0,1) "
+    "(problema de parametros incidentales; Juodis y Reese 2022, verificada en docs/literatura.md): la correlacion media de residuos de un FE "
+    f"con efectos de anio es mecanicamente ~ -1/(N-1) = {-1/(N_MAIN-1):.3f}, de modo que un CD negativo 'significativo' o un CCE-MG que 'pasa' el "
+    "test no son interpretables y NO se usan como diagnostico. Solo el CD de la variable d_ln_ipv (sin ajustar) es informativo: dependencia "
+    f"transversal fuerte (factor nacional). Para T={T_MAIN} el |rho| medio esperado bajo independencia es ~ sqrt(2/(pi T)) = "
+    f"{np.sqrt(2/(np.pi*T_MAIN)):.2f}; el observado en residuos (0.3) es mayor, indicio (no prueba) de dependencia heterogenea remanente. "
+    "No se implementa el CD ponderado de Juodis-Reese.\n\n" + tm(cdt))
 
 # ---- CIPS
 cips_rows = []
@@ -408,16 +461,12 @@ sec("3b. Raiz unitaria de panel CIPS (Pesaran 2007), con constante, truncado",
     "H0: raiz unitaria en todas las unidades. Con T=17-18 es orientativo.\n\n" + tm(cipsd))
 
 # ---- robustez de muestras
-S17 = A[(A.anio >= 2008) & (A.anio <= 2025)].dropna(subset=["y", "d_ln_ocup", "d_share_extr", "d_ln_pob_esp"])
 X3 = XN[:3]
-r17 = fe_fit(S17, "y", X3)
-log_fe("R_17CCAA_sin_term", "d_ln_ipv ~ " + " + ".join(X3) + " | CCAA + anio [17 CCAA, 2008-2025]", r17, "d_share_extr", 2008, 2025,
-       "robustez (sin terminadas)")
 r16_3 = fe_fit(MAIN, "y", X3)
-log_fe("R_16CCAA_sin_term", "d_ln_ipv ~ " + " + ".join(X3) + " | CCAA + anio [16 CCAA, 2009-2025]", r16_3, "d_share_extr", ini, fin,
+log_fe("R_sin_term", "d_ln_ipv ~ " + " + ".join(X3) + f" | CCAA + anio [{N_MAIN} CCAA, 2009-2025]", r16_3, "d_share_extr", ini, fin,
        "robustez (muestra principal sin terminadas)")
 rpt = fe_fit(MAIN.dropna(subset=["y_pt"]), "y_pt", XN)
-log_fe("R_ptasado_main", "d_ln_p_tasado ~ " + " + ".join(XN) + " | CCAA + anio [16 CCAA, 2009-2025]", rpt, "d_share_extr", ini, fin,
+log_fe("R_ptasado_main", "d_ln_p_tasado ~ " + " + ".join(XN) + " | CCAA + anio [2009-2025]", rpt, "d_share_extr", ini, fin,
        "robustez: dependiente valor tasado")
 SL = A[(A.anio >= 2003) & (A.anio <= 2025)].dropna(subset=["y_pt", "d_ln_ocup", "d_share_extr", "d_ln_pob_esp"])
 rl = fe_fit(SL, "y_pt", X3)
@@ -425,8 +474,8 @@ log_fe("R_ptasado_2003", "d_ln_p_tasado ~ " + " + ".join(X3) + " | CCAA + anio [
        "d_share_extr", 2003, 2025, "robustez larga (sin terminadas; no balanceado)")
 rl_dk = fe_fit(SL, "y_pt", X3, cov="kernel", bw=3)
 rows = []
-for nm, rr_ in (("IPV, 17 CCAA 2008-2025, sin term.", r17), ("IPV, 16 CCAA 2009-2025, sin term.", r16_3),
-                ("Valor tasado, 16 CCAA 2009-2025", rpt), ("Valor tasado 2003-2025, 17 CCAA, sin term.", rl)):
+for nm, rr_ in (("IPV, 2009-2025, sin term.", r16_3),
+                ("Valor tasado, 2009-2025", rpt), ("Valor tasado 2003-2025, 17 CCAA, sin term.", rl)):
     for n in XN:
         if n in rr_.params.index:
             rows.append((nm, LAB[n], rr_.params[n], rr_.std_errors[n], rr_.pvalues[n], int(rr_.nobs)))
@@ -452,7 +501,7 @@ q_models = {
 }
 allq = sorted(set(sum(q_models.values(), [])))
 QS = Q.dropna(subset=["d4_ln_ipv"] + allq)
-QS = QS[(QS.ccaa != "Extremadura") & (QS.per <= pd.Period("2025Q1", "Q"))]
+QS = QS[QS.per <= pd.Period("2025Q1", "Q")]
 qi, qf = str(QS.per.min()), str(QS.per.max())
 
 
@@ -470,6 +519,8 @@ for mid, cols in q_models.items():
     n, r2a, aic, bic = stats_fe(rc)
     REG.log("F5", mid, "d4_ln_ipv ~ " + " + ".join(cols) + " | CCAA + trimestre [trimestral, cluster]", qi, qf, n, r2a, aic, bic,
             np.nan, np.nan, np.nan, "robustez trimestral; poblacion interpolada hasta 2025Q1 | rmse_oos no aplica")
+    if "d4_share_extr" in cols:
+        BETA2_P["Q_" + mid] = max(rc.pvalues["d4_share_extr"], rd4.pvalues["d4_share_extr"])   # el mayor entre cluster y DK(bw4)
     for c in cols:
         qrows.append((mid, c, rc.params[c], rc.std_errors[c], rc.pvalues[c], rd4.std_errors[c], rd4.pvalues[c],
                       rd8.std_errors[c], rd8.pvalues[c], n))
@@ -480,7 +531,7 @@ for mid in ("Q2_con_pob_d4", "Q3_term_por_hab"):
     s_ = qtab[(qtab.modelo == mid) & (qtab.variable == "d4_share_extr")].iloc[0]
 cdq = cd_test(resid_wide(qfit(q_models["Q1_sin_pob"], "cl")))
 sec("2. Panel trimestral (robustez): Delta4 ln IPV",
-    f"Muestra comun a los tres modelos: {QS.ccaa.nunique()} CCAA (sin Extremadura), {qi}-{qf} (N={len(QS)}), FE CCAA + FE trimestre. "
+    f"Muestra comun a los tres modelos: {QS.ccaa.nunique()} CCAA, {qi}-{qf} (N={len(QS)}), FE CCAA + FE trimestre. "
     "Delta4 solapa 4 trimestres (MA(3)): EE Driscoll-Kraay con ancho 4 y 8 ademas de cluster por CCAA. "
     "**Advertencia**: la poblacion es anual (1 de enero) interpolada log-linealmente y acaba en 2025Q1; solo entra en Delta4 (Q2, Q3) "
     "y recorta la muestra a 2025Q1. Q1 usa d4 ln terminadas retardada 1 trimestre (sin poblacion); Q3 usa terminadas por 1.000 hab. "
@@ -552,14 +603,16 @@ while tot < NBOOT:
     cntF += (((er - eu) / nr) / (eu / dfu) >= Fh).sum()
     tot += m
 pFw = (cntF + 1) / (NBOOT + 1)
+for kk_ in [k_ for k_ in BETA2_P if k_.startswith("H_")]:
+    del BETA2_P[kk_]   # no son b2 de la misma hipotesis (b2 del grupo de referencia / F conjunto)
 sec("4a. Heterogeneidad: interacciones de b1 (ocupados) y b2 (cuota extranjera) con dummies regionales",
     "Cada fila es el diferencial respecto al resto de CCAA (efectos de anio y CCAA incluidos). Modelos individuales (una dummy) "
-    "y conjunto (6 dummies; referencia = 10 CCAA restantes). EE cluster y p-valor wild cluster bootstrap restringido (Webb). "
+    "y conjunto (6 dummies; referencia = resto de CCAA). EE cluster y p-valor wild cluster bootstrap restringido (Webb). "
     "Holm dentro de cada familia (12 interacciones). **Aviso**: cada dummy regional marca UN solo cluster; el EE cluster (CRVE) es "
-    "poco fiable (p_cluster muy bajos con p_wild altos): la referencia es p_wild_Webb.\n\n" + tm(het, index=False) +
+    "poco fiable (p_cluster muy bajos con p_wild altos), y el wild bootstrap con un solo cluster tratado tampoco es valido (MacKinnon y Webb 2018): "
+    "los p_wild agrupados en 0.3-0.5 reflejan esa degeneracion y NO evidencia de homogeneidad. Referencia: p_wild_Webb, con cautela.\n\n" + tm(het, index=False) +
     f"\nTest conjunto de las 12 interacciones = 0 (F de sumas de cuadrados, no robusto): F={Fh:.2f}, p={pF if False else pFh:.3g}; "
     f"p del F por wild bootstrap = {pFw:.3g}.")
-BETA2_P["H_F_wild"] = pFw
 
 # CCE individual
 tc = stats.t.ppf(0.975, cc["dfres"])
@@ -612,38 +665,68 @@ srch = pd.DataFrame({"p_sin_corregir": pv, "p_Holm": hp, "p_Bonferroni": {k: min
 save(srch, "correccion_busqueda_beta2")
 sec("5. Registro de busqueda y correccion para b2 (cuota extranjera)",
     f"Especificaciones registradas en `output/registro_busqueda_f5.csv`: **{nreg}**. Familia de {len(pv)} p-valores de b2 "
-    "(distintas inferencias, tendencias, CCE, muestras, F conjunto de heterogeneidad) corregida por Holm y Bonferroni. "
+    "(distintas inferencias, tendencias, CCE, muestras, alineaciones temporales y b2 trimestrales; excluidas las interacciones de heterogeneidad, que son otra hipotesis) corregida por Holm y Bonferroni. "
     "Muy correlacionadas entre si, asi que ambas correcciones son conservadoras.\n\n" + tm(srch))
 
 # ================================================================ resumen
 g = lambda n, c: r_cl.params[n] if c == "b" else r_cl.std_errors[n]
+cdr = lambda k: f"{cdt.loc[k, 'abs_rho_medio']:.2f}"
+srch_min = srch.drop(index=[i for i in srch.index if i.startswith("A_FE_dk")], errors="ignore")
+tl = ttab.set_index("alineacion de la cuota")
+cip = cipsd.set_index(["serie", "transformacion", "retardos"])
 head = [
     "# F5: panel de CCAA (P4) - resumen\n",
     f"Generado por `src/f5_panel.py` (semilla {SEED}).\n",
     "## Respuesta a P4\n",
     "**Pregunta**: ¿difieren entre CCAA (y en la C. Valenciana) las asociaciones del precio de la vivienda con empleo y poblacion extranjera?\n",
-    "- Nivel de evidencia: **asociacion condicional** (panel observacional, FE de CCAA y anio, CCE). Sin identificacion causal en "
+    "- **Respuesta**: *no se detecta heterogeneidad* de pendientes entre CCAA. Esto es ausencia de evidencia, **no evidencia de homogeneidad**: "
+    f"con N={N_MAIN} y T={T_MAIN} la potencia es minima (el p minimo de un contraste por aleatorizacion de una region es 1/{N_MAIN}={1/N_MAIN:.3f}; "
+    "el CCE individual tiene 7 gl por CCAA).",
+    "- Nivel de evidencia: **asociacion condicional y fragil** (panel observacional con FE de CCAA y anio / CCE). Sin identificacion causal en "
     "esta fase; para la lectura causal remite al IV de F3 (no se repite aqui).",
-    f"- FE bidireccional ({N_MAIN} CCAA, 2009-2025): b1 (empleo) = {g('d_ln_ocup','b'):.3f} (EE cluster {g('d_ln_ocup','s'):.3f}, "
-    f"p={r_cl.pvalues['d_ln_ocup']:.3f}, p wild={pw[0]:.3f}); b2 (+1 pp cuota extranjera) = {g('d_share_extr','b'):.3f} "
-    f"(EE {g('d_share_extr','s'):.3f}, p cluster={r_cl.pvalues['d_share_extr']:.3f}, p DK bw2={r_dk.pvalues['d_share_extr']:.3f}, "
-    f"p wild={pw[1]:.3f}).",
+    f"- C. Valenciana: ninguna interaccion distinguible del resto (p wild de b1 y b2 en tabla 4a). La unica diferencia solida es **descriptiva** y depende de la "
+    "medida de precio (tabla 4c): 2014Q1-2026Q2 el IPV de la CV crece menos que el de Espana pero su valor tasado mas; desde 2021Q1 crece mas con ambas.",
+    f"- FE bidireccional ({N_MAIN} CCAA, 2009-2025): b1 (elasticidad al empleo) = {g('d_ln_ocup','b'):.3f} (EE cluster {g('d_ln_ocup','s'):.3f}, "
+    f"p wild={pw[0]:.3f}); b2 = {g('d_share_extr','b'):.4f} (EE {g('d_share_extr','s'):.4f}; {100*g('d_share_extr','b'):.2f} %/pp; "
+    f"p cluster={r_cl.pvalues['d_share_extr']:.3f}, DK bw2={r_dk.pvalues['d_share_extr']:.3f}, wild={pw[1]:.3f}). R2 within ajustado = "
+    f"{stats_fe(r_cl)[1]:.3f}: los regresores explican poco de las desviaciones regionales respecto del ciclo comun.",
+    f"- **b2 depende del timing** (2009-2024, misma muestra): flujo t-1 {tl.iloc[0]['b2 en %/pp']:.2f} %/pp (p wild {tl.iloc[0]['p_wild_Webb']:.3f}); "
+    f"cuota a mitad de anio {tl.iloc[1]['b2 en %/pp']:.2f} %/pp (p wild {tl.iloc[1]['p_wild_Webb']:.3f}); "
+    f"flujo contemporaneo {tl.iloc[2]['b2 en %/pp']:.2f} %/pp (p wild {tl.iloc[2]['p_wild_Webb']:.3f}). "
+    f"Tras la correccion por busqueda (Holm sobre {len(pv)} p-valores de b2, incluidos los trimestrales con el mayor de p cluster y DK) el menor p ajustado es {min(hp.values()):.3f}: "
+    f"{'ninguna alineacion es significativa' if min(hp.values()) > 0.05 else 'alguna especificacion sigue siendo significativa'} tras la correccion; b2 queda **entre {ttab['b2 en %/pp'].min():.1f} y {ttab['b2 en %/pp'].max():.1f} %/pp segun la alineacion**. "
+    "No se afirma b2 = 0.",
     f"- CCE-MG: b1={cc['b_mg'][0]:.3f} ({cc['se_mg'][0]:.3f}), b2={cc['b_mg'][1]:.3f} ({cc['se_mg'][1]:.3f}); "
     f"CCE-P: b1={cc['b_p'][0]:.3f} ({cc['se_p'][0]:.3f}), b2={cc['b_p'][1]:.3f} ({cc['se_p'][1]:.3f}).",
-    f"- Lectura: b1 y b2 medios no distinguibles de 0 en FE (CCE-P b2 ~ 0.02, p~0.05, no robusto a la correccion por busqueda). Heterogeneidad: poolability F={Fp:.2f} (p={pF:.3g}); F conjunto de las 12 interacciones regionales={Fh:.2f} "
-    f"(p={pFh:.3g}; p wild={pFw:.3g}). Interacciones de la C. Valenciana: tabla 4a.",
-    f"- Dependencia transversal: CD FE={cdt.loc['FE bidireccional (residuos)', 'CD']:.2f} (p={cdt.loc['FE bidireccional (residuos)', 'p']:.3g}); "
-    f"CCE-MG={cdt.loc['CCE-MG (residuos)', 'CD']:.2f} (p={cdt.loc['CCE-MG (residuos)', 'p']:.3g}); "
-    f"CCE-P={cdt.loc['CCE-P (residuos)', 'CD']:.2f} (p={cdt.loc['CCE-P (residuos)', 'p']:.3g}).\n",
+    f"- Poolability: F={Fp:.2f}, p clasico={pF:.2g} (sobredimensionado), **p wild Webb={pF_wild:.3f}**; F conjunto de las 12 interacciones regionales: "
+    f"p clasico={pFh:.2g}, p wild={pFw:.3f}.",
+    f"- Dependencia transversal: el CD sobre residuos de FE y CCE **no es interpretable** (Juodis y Reese 2022; seccion 3a) y no se usa como diagnostico.\n",
+    "## Discusion de signos y magnitudes\n",
+    f"- **b2 frente a la literatura** (docs/literatura.md): Saiz (2007) encuentra ~+1 % en alquileres y valores por una entrada igual al 1 % de la poblacion, "
+    "y Gonzalez y Ortega (2013) efectos positivos de la inmigracion sobre el precio en Espana. Un b2 ~ 0 (flujo t-1) discrepa; el flujo contemporaneo "
+    "(~+1,9 %/pp) y la cuota a mitad de anio se acercan al orden de magnitud, pero con causalidad inversa posible. F3 (FE/2SLS, ver output/f3) da "
+    "estimaciones tampoco distinguibles de 0; la comparacion directa exige expresar F5 en %/pp (hecho arriba).",
+    f"- **b4 (terminadas por 1.000 hab., t-1) > 0** ({g('term_l1','b'):.4f}, EE {g('term_l1','s'):.4f}, p wild {pw[3]:.3f}) frente al signo negativo "
+    "esperado de la oferta (Saiz 2010; Hilber y Vermeulen 2016; tabla de signos de literatura.md). No debe leerse como efecto de oferta: es compatible con "
+    "simultaneidad/inercia (se termina mas donde los precios ya subian) y con dinamica omitida (AR(1) residual ~0,3); en CCE el signo se invierte y deja de "
+    "ser significativo. Se deja como discrepancia abierta.",
+    f"- **b1 y F2**: b1 es una elasticidad de corto plazo ({g('d_ln_ocup','b'):.2f} %/1 % de empleo), no comparable con la elasticidad de largo plazo de F2 (DOLS, 1,95 con EE HAC 0,48, evidencia mixta/inestable segun F2): "
+    "F5 usa desviaciones regionales anuales respecto del ciclo comun (los efectos de anio absorben lo nacional) y probable atenuacion por el error muestral "
+    "de la EPA regional en diferencias. Con valor tasado como dependiente b1 es mayor (tabla 1f), asi que b1 ~ 0 no es robusto a la medida de precio.",
+    f"- **CIPS** (tabla 3b): no rechaza raiz unitaria en la primera diferencia de la cuota extranjera (CIPS* {cip.loc[('cuota extranjera (pp)','1a diferencia',0),'CIPS*']:.2f}, "
+    f"p sim {cip.loc[('cuota extranjera (pp)','1a diferencia',0),'p_sim']:.2f}) ni de ln poblacion espanola (p sim "
+    f"{cip.loc[('ln pob espanola','1a diferencia',0),'p_sim']:.2f}). Puede ser falta de potencia con T=17, o persistencia migratoria; si d_share fuese casi "
+    "I(1), la regresion de un y I(0) estaria desequilibrada y b2, b3 tenderian a 0 con inferencia no estandar. Es una limitacion de b2 y b3.\n",
 ]
 tail = ("\n## Problemas abiertos\n\n"
-        "- Extremadura sin `terminadas`: muestra principal de 16 CCAA; el robusto de 17 CCAA omite ese regresor.\n"
-        "- T=17, N=16: pocos clusters (el wild bootstrap es la referencia), Driscoll-Kraay y CCE por unidad con muy pocos grados de "
-        "libertad; CIPS y poolability con potencia/tamano dudosos.\n"
-        "- Cuota extranjera a 1 de enero frente a IPV de media anual; poblacion trimestral interpolada y hasta 2025Q1.\n"
-        "- Endogeneidad (migracion y empleo responden al precio; terminadas retardadas no resuelve simultaneidad): todo es asociacion; "
-        "ver IV de F3.\n"
-        "- Valor tasado y `p_bde` son la misma serie (decisiones.md): robusteces con ambas no independientes.\n"
+        "- Timing de b2 (stock a 1 de enero frente a IPV de media anual) decide el resultado; sin instrumento no se distingue entre efecto y causalidad inversa (F3).\n"
+        "- T=17, N=17: pocos clusters (wild bootstrap como referencia); Driscoll-Kraay y CCE por unidad con pocos grados de libertad; CIPS y poolability con "
+        "potencia dudosa; wild bootstrap invalido con un solo cluster tratado (interacciones regionales).\n"
+        "- CD sobre residuos de FE/CCE no interpretable; no se implementa el CD ponderado de Juodis-Reese (CDw).\n"
+        "- b4 > 0 sin explicacion estructural; falta probar dinamica (y retardada) en una fase posterior.\n"
+        "- Nota (1) de Extremadura en MIVAU 32101000 sin resolver (revision F5).\n"
+        "- Poblacion trimestral interpolada y hasta 2025Q1.\n"
+        "- Valor tasado y `p_bde` son la misma serie (decisiones.md): robusteces no independientes.\n"
         "- rmse_oos no se calcula en el registro: los efectos de anio no son predecibles fuera de muestra.\n")
 (OUT / "resumen_f5.md").write_text("\n".join(head) + "".join(MD) + tail)
 print("F5 OK:", nreg, "modelos registrados;", f"{time.time() - T0:.0f}s")

@@ -1038,6 +1038,7 @@ for x in ["Intercept", "ect_l1", "q2", "q3", "q4"] + tR:
 ECR = pd.DataFrame(rowsF)
 save(ECR, "ecuacion_real", ".4g", index=False)
 # comparación nominal-real
+real = cdf[cdf.sistema.str.startswith("ln_ipv_real")].iloc[0]
 cmp = pd.DataFrame({
     "nominal": [fmt(dol['DOLS base (+q)']['beta'][a], dol['DOLS base (+q)']['res'].bse[a]) for a in BASE] + [
         fmt(res_pref.params["ect_l1"], res_pref.bse["ect_l1"]), res_pref.rsquared_adj, int(res_pref.nobs), S.terminos[PREF],

@@ -25,3 +25,9 @@ Problemas que persisten tras las iteraciones de revisión, o restricciones de da
 - 17 clusters: J de Hansen con baja potencia; AKM solo simplificado (5 grupos); BHJ inviable con 5 grupos.
 - Canal comprador (compras de extranjeros residentes): coeficiente 2SLS muy negativo incluso sin 2008-09 → posible violación de la exclusión; no se interpreta.
 - Sin flujos de inmigración trimestrales; el flujo anual nacional (N≈17-27) no permite inferencia HAC fiable.
+
+## F4 (aprobada en re-revisión)
+- Déficit 2021-2025: 866.100 (EPA corregida, principal), 810.936 (ECP a 1 de enero), frente a ~750.000 del BdE. La diferencia (≈116.100) se descompone en +55.164 por la fuente de hogares y +60.936 por la vivienda protegida, ausente de nuestras terminadas (solo vivienda libre MIVAU). Que el BdE use la ECP es una inferencia; la cifra de 100.980 terminadas en 2024 (prensa) está NO VERIFICADA.
+- Elasticidad de la oferta: los DOLS en niveles son descriptivos (cointegración 1/3, ECM no significativo, BG y RESET fallan, quiebre 2014). En Δ4, iniciadas β=1,39 (EE 0,63): no se rechaza β=0,45 (p Holm 0,27). El 0,45 del BdE (Caldera-Johansson 2013; Cavalleri et al. 2019, NO VERIFICADAS) mide previsiblemente otro concepto (inversión residencial / stock); la traducción flujo→stock no se ha hecho.
+- Instrumentos del precio: solo la renta es defendible como desplazador de demanda excluido; ocupados y población pueden afectar a la oferta (exclusión dudosa).
+- Pendientes menores trasladados a F7: fila antigua «¿ECP?» en comparacion_bde_deficit; signo de costes en la ecuación de permisos; «inversión residencial» como inferencia.

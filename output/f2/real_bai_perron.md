@@ -1,0 +1,4 @@
+| ecuacion           |   N |   n_quiebres | fechas                 |
+|:-------------------|----:|-------------:|:-----------------------|
+| ECM real preferido |  73 |            0 |                        |
+| LR real (niveles)  |  74 |            3 | 2011Q4, 2019Q2, 2023Q2 |

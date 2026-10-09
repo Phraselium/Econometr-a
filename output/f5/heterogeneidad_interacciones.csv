@@ -1,25 +1,25 @@
 modelo,grupo,interaccion,coef,EE_cluster,p_cluster,p_wild_Webb,p_wild_Holm
-H_C. Valenciana,C. Valenciana,dln_ocup_x_C. Valenciana,-0.026519620117924567,0.06944410932379785,0.7028937001962339,0.7286,1.0
-H_C. Valenciana,C. Valenciana,dshare_x_C. Valenciana,-0.004913612805130757,0.003676136350778379,0.18264346520479413,0.4762,1.0
-H_Madrid,Madrid,dln_ocup_x_Madrid,0.4723485939831195,0.10910863005206423,2.219911048717549e-05,0.3967,1.0
-H_Madrid,Madrid,dshare_x_Madrid,-0.018732880423069736,0.0038340206138615398,1.909787995968415e-06,0.3294,1.0
-H_Cataluna,Cataluna,dln_ocup_x_Cataluna,0.5215690521116519,0.05582751134028217,0.0,0.4224,1.0
-H_Cataluna,Cataluna,dshare_x_Cataluna,-0.01085984599126885,0.003884652133336703,0.005610864656475645,0.4832,1.0
-H_Baleares,Baleares,dln_ocup_x_Baleares,0.050071711135681554,0.06377690413211369,0.43318483485869863,0.5542,1.0
-H_Baleares,Baleares,dshare_x_Baleares,-0.01623389736934853,0.0042477431555812215,0.00016986639958371796,0.4556,1.0
-H_Canarias,Canarias,dln_ocup_x_Canarias,-0.0015166090837132645,0.0647303904677291,0.9813275374669699,0.9805,1.0
-H_Canarias,Canarias,dshare_x_Canarias,-0.004187234423735426,0.004670806997318706,0.37092356971568563,0.524,1.0
-H_Andalucia,Andalucia,dln_ocup_x_Andalucia,-0.20144906947512112,0.05971561415729979,0.0008685888431170241,0.4158,1.0
-H_Andalucia,Andalucia,dshare_x_Andalucia,-0.002303860286155968,0.006874460511003976,0.7378248107164513,0.742,1.0
-H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dln_ocup_x_C. Valenciana,0.020070030508497233,0.0848874995096478,0.8133143533929572,0.8098,1.0
-H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dshare_x_C. Valenciana,-0.01612709755439646,0.0033442936624630466,2.620841320633005e-06,0.1312,1.0
-H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dln_ocup_x_Madrid,0.5152705732804556,0.12448058817635606,4.9320751994264e-05,0.3898,1.0
-H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dshare_x_Madrid,-0.02991571620528697,0.003880290652631149,4.0811798385220754e-13,0.0803,0.9636
-H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dln_ocup_x_Cataluna,0.5533101900670646,0.08489536956878824,4.667495279164768e-10,0.3363,1.0
-H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dshare_x_Cataluna,-0.023074715903589164,0.003768327382524084,4.065451975066026e-09,0.1271,1.0
-H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dln_ocup_x_Baleares,0.12266544639687425,0.10023432536379878,0.2223183493397345,0.4778,1.0
-H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dshare_x_Baleares,-0.026778690986421144,0.0036154674355456467,2.609246152474043e-12,0.1538,1.0
-H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dln_ocup_x_Canarias,0.07035121238862045,0.08366339179923679,0.4013096090796324,0.4744,1.0
-H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dshare_x_Canarias,-0.011991151698123606,0.0037113227898989184,0.0014193201543191147,0.4514,1.0
-H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dln_ocup_x_Andalucia,-0.10323735864305668,0.08292982956647371,0.2144781243974343,0.4563,1.0
-H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dshare_x_Andalucia,-0.0030098918008084935,0.007333647481315278,0.6818885536193968,0.6955,1.0
+H_C. Valenciana,C. Valenciana,dln_ocup_x_C. Valenciana,0.02240539652941067,0.08174328499840856,0.7842382276565847,0.7935,1.0
+H_C. Valenciana,C. Valenciana,dshare_x_C. Valenciana,-0.006435520701005792,0.0039035728316253408,0.10048091007699833,0.4438,1.0
+H_Madrid,Madrid,dln_ocup_x_Madrid,0.5530819267720879,0.12868204978337786,2.4704211184500835e-05,0.386,1.0
+H_Madrid,Madrid,dshare_x_Madrid,-0.01831165736949721,0.003960001024014897,6.0362971474603455e-06,0.3338,1.0
+H_Cataluna,Cataluna,dln_ocup_x_Cataluna,0.5743466313181661,0.07500561971950018,4.147793219999585e-13,0.467,1.0
+H_Cataluna,Cataluna,dshare_x_Cataluna,-0.010899477245584549,0.003898787583251617,0.005582356795560406,0.4849,1.0
+H_Baleares,Baleares,dln_ocup_x_Baleares,0.12367260100953638,0.09226422395844523,0.18132641039953223,0.4827,1.0
+H_Baleares,Baleares,dshare_x_Baleares,-0.01614077215549027,0.004107985274198045,0.00011038010600517012,0.437,1.0
+H_Canarias,Canarias,dln_ocup_x_Canarias,0.0743546288050804,0.09097177063111242,0.4145138874927734,0.5301,1.0
+H_Canarias,Canarias,dshare_x_Canarias,-0.003415642371522153,0.004379053038062781,0.4361312561484758,0.5599,1.0
+H_Andalucia,Andalucia,dln_ocup_x_Andalucia,-0.13245135273325534,0.08736691779633533,0.1307737420202777,0.4776,1.0
+H_Andalucia,Andalucia,dshare_x_Andalucia,-0.0015754296436173631,0.0061229161539093045,0.7971584230151225,0.7965,1.0
+H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dln_ocup_x_C. Valenciana,0.11300793293921929,0.1075050050803102,0.2942296886385032,0.466,1.0
+H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dshare_x_C. Valenciana,-0.017099759543479833,0.003661281521499399,5.0065751964201155e-06,0.1831,1.0
+H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dln_ocup_x_Madrid,0.641636308261623,0.16261058689284721,0.00010446376179018557,0.4073,1.0
+H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dshare_x_Madrid,-0.028902914389583003,0.00453387502464624,9.300937797718234e-10,0.1258,1.0
+H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dln_ocup_x_Cataluna,0.6481632159164238,0.11245157063658519,2.51243563731407e-08,0.4112,1.0
+H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dshare_x_Cataluna,-0.022474009262621945,0.004281113730107713,3.355303836993784e-07,0.1719,1.0
+H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dln_ocup_x_Baleares,0.24106750192644635,0.13689079268866242,0.07950839408453092,0.4547,1.0
+H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dshare_x_Baleares,-0.026156213385134897,0.004382200327174966,8.53616222151743e-09,0.2246,1.0
+H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dln_ocup_x_Canarias,0.18363683448678753,0.12125705198748585,0.13122947993341905,0.3944,1.0
+H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dshare_x_Canarias,-0.011505816166988233,0.0038136558412712983,0.002827735431078171,0.4724,1.0
+H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dln_ocup_x_Andalucia,0.0016650469790336897,0.118096726334892,0.9887627030572028,0.9922,1.0
+H_conjunto,C. Valenciana+Madrid+Cataluna+Baleares+Canarias+Andalucia,dshare_x_Andalucia,-0.003960411237452258,0.005945337191090971,0.5059630881296115,0.5722,1.0

@@ -260,3 +260,35 @@ Lo que dice el **IA 2025**, verificado en el PDF:
    - En el IV, señalar expresamente qué instrumento es defendible (la renta) y por qué fallan ocupados y población extranjera.
 
 Ninguno de estos cambios exige descargar datos nuevos ni alterar la especificación principal pre-registrada.
+
+---
+
+## Re-revisión (iteración 2 de 2), 2026-10-09 — commit 9be1b66
+
+**Veredicto final: APROBAR.**
+
+**Cómo lo he verificado**
+- Clon aislado del repositorio, con la red bloqueada.
+- `make data clean` y luego dos ejecuciones de `src/f4_oferta.py`.
+- Resultado: md5 de `output/f4/*` y de `registro_busqueda_f4.csv` **idénticos** entre las dos ejecuciones e idénticos a lo versionado (`git status` limpio).
+- El registro tiene 128 modelos (114 en la familia de elasticidad).
+
+**Cambios 1-5: aplicados correctamente**
+
+| Cambio | Comprobación |
+|---|---|
+| 1. Variante ECP | Stock a 1 de enero: 1.222.836 hogares y déficit 810.936. La variante (b') ya no existe. |
+| 2. Contraste con el BdE | Descomposición +55.164 / +60.936. La fuente del BdE está marcada como INFERENCIA y la cifra de 100.980 como NO VERIFICADA. |
+| 3. Estatus del DOLS | Declarado descriptivo. Δ4: 1,39 (EE 0,63). La contradicción sobre 2014 está corregida. |
+| 4. Panel | Wild cluster bootstrap (Webb) añadido. La frase del «ciclo común» está reformulada. Con 17 CCAA, terminadas L0 con efectos de tiempo da 2,42 (p WCB 0,020). |
+| 5. Corrección por búsqueda | Bonferroni se lee solo para el signo. Holm sobre H0: β=0,45 en 15 especificaciones; el rango es 1,04-6,66. |
+
+**Lectura nueva y relevante.** En diferencias (Δ4), que es la especificación válida sea cual sea el orden de integración, **no se rechaza β=0,45 para las iniciadas** (p Holm = 0,27; IV Δ4 p = 0,49). Esto debería figurar en las conclusiones de P3.
+
+**Pendientes menores (para F7; no bloquean)**
+- En `comparacion_bde_deficit` sigue la fila antigua «fuente no verificada (¿ECP?)».
+- No se ha añadido ninguno de los cambios menores del punto 6 de la primera revisión:
+  - presentar «inversión residencial» como una inferencia;
+  - señalar el signo positivo de los costes en la ecuación de permisos;
+  - incluir la traducción de flujo a stock;
+  - indicar que la renta es el único instrumento defendible.

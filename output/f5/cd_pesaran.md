@@ -1,7 +1,7 @@
 |                                   |      CD |          p |   rho_medio |   abs_rho_medio |
 |:----------------------------------|--------:|-----------:|------------:|----------------:|
-| FE bidireccional (residuos)       | -2.467  | 0.01362    |    -0.05462 |          0.33   |
-| CCE-MG (residuos)                 | -0.5766 | 0.5642     |    -0.01277 |          0.308  |
-| CCE-P (residuos)                  | -2.207  | 0.0273     |    -0.04887 |          0.3459 |
-| FE solo CCAA, sin anio (residuos) | 24.52   | 9.025e-133 |     0.5429  |          0.5429 |
-| d_ln_ipv (variable)               | 42.66   | 0          |     0.9445  |          0.9445 |
+| FE bidireccional (residuos)       | -2.539  | 0.0111     |    -0.05281 |          0.3507 |
+| CCE-MG (residuos)                 | -0.8021 | 0.4225     |    -0.01668 |          0.3079 |
+| CCE-P (residuos)                  | -2.316  | 0.02057    |    -0.04816 |          0.3417 |
+| FE solo CCAA, sin anio (residuos) | 25.29   | 3.779e-141 |     0.526   |          0.5276 |
+| d_ln_ipv (variable)               | 45.05   | 0          |     0.9369  |          0.9369 |

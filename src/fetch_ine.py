@@ -122,6 +122,8 @@ def registrar_fallo(nombre: str, url: str, error: str) -> None:
 # (archivo, [(tipo, id, filtro)])
 JOBS = [
     ("ine_ipv_25171.csv", [("tabla", "25171", None)]),
+    # IPV base 2025 (tabla nueva, publicada 2026); se enlaza con base 2015 en build_dataset.py
+    ("ine_ipv_80270.csv", [("tabla", "80270", None)]),
     ("ine_epa_ocupados.csv", [("serie", "EPA387796", None)]),
     ("ine_epa_ocupados_ccaa.csv", [("tabla", "65302", None)]),
     ("ine_ecp_nacional.csv", [("serie", "ECP320", None), ("serie", "ECP701", None)]),

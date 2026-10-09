@@ -21,3 +21,14 @@ Series BdE descargadas (ver `src/fetch_bde.py`):
 |---|---|---|
 | `ICP/M.ES.N.000000.4.ANR` (IAPC España, tasa anual) | La serie termina en 2025-12 (estado `E`, estimada). El BCE indica en la metainformación que deja de publicar el índice actual tras el cambio metodológico de 2026. | Eurostat `prc_hicp_manr` (geo=ES, coicop=CP00), fuera del alcance de este script. |
 | `FM/B.U2.EUR.4F.KR.MRR_FR.LEV` (tipo BCE operaciones principales) | Serie de fechas de cambio: 48 observaciones (la última 2026-09-16), no mensual. | Expandir a mensual con el tipo vigente a cierre de mes en la capa de limpieza (data-cleaner). |
+
+## INE (src/fetch_ine.py)
+
+Descargas con fallo de endpoint: ninguna. Las siguientes búsquedas no encontraron la serie pedida (3 intentos o más por búsqueda, sobre `OPERACIONES_DISPONIBLES` y `TABLAS_OPERACION/{id}`):
+
+| Dato pedido | Estado | Búsqueda probada | Alternativa propuesta |
+|---|---|---|---|
+| Encuesta Continua de Hogares (ECH, anual) | No encontrada | Ninguna operación de INE con nombre "Encuesta Continua de Hogares" en `OPERACIONES_DISPONIBLES`; búsqueda de "Hogares" y "ECH" en las 129 operaciones | 60131 (hogares ECP, trimestral desde 2021) es la fuente disponible. Para renta de hogares, ADRH (op. 353, atlas de renta) o Encuesta de Condiciones de Vida fuera de este script. |
+| Renta disponible bruta de los hogares (trimestral) | No encontrada a nivel hogares | `CTNFSI` (op. 246), tablas 62265, 80330, 67203 y 80333: solo aparece renta disponible de la economía total | Se descarga 80333 (renta disponible bruta, total de la economía, CTNFSI, trimestral). No es renta de hogares: usar con cautela. |
+| Inmigración total trimestral (suma de todas las nacionalidades) | No publicada como serie única en las tablas de ECP (59011, 59013, 59020, 59012) | Búsqueda de nombres con "Total. Flujo" o "Total Nacional. Total" en las tablas de flujo trimestral | Se descarga 69687 (total anual EMCR). Para el total trimestral hay que sumar las nacionalidades de 59011 en la capa de limpieza y declararlo. |
+| Inmigración trimestral por CCAA con total (sin nacionalidad) | No localizada | Tablas de la operación ECP (op. 450) y EMCR (op. 455) | 59013 (CCAA × nacionalidad, trimestral desde 2023T2). Para CCAA anual sin nacionalidad: 69691 (EMCR). |

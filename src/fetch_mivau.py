@@ -38,6 +38,8 @@ CCAA = {
     "Cantabria", "Castilla y León", "Castilla-La Mancha", "Cataluña", "Comunitat Valenciana",
     "Extremadura", "Galicia", "Madrid (Comunidad de)", "Murcia (Región de)",
     "Navarra (Comunidad Foral de)", "País Vasco", "Rioja (La)",
+    # variantes de etiqueta que aparecen en otras hojas/tablas del mismo MIVAU
+    "Comunidad Valenciana", "Asturias (Principado de)", "Navarra (C. Foral de)", "Navarra (Com. Foral de)",
 }
 CIUDADES = {"Ceuta y Melilla", "Ceuta", "Melilla"}
 MESES = {"ene": 1, "feb": 2, "mar": 3, "abr": 4, "may": 5, "jun": 6,
@@ -372,6 +374,14 @@ def ine_long(data: list, url: str, filtro=None) -> pd.DataFrame:
     return df
 
 
+def _sin_duplicados(df: pd.DataFrame) -> pd.DataFrame:
+    """Quita filas repetidas idénticas (INE 39364 y 39365 solapan series); falla si hay valores distintos."""
+    df = df.drop_duplicates(subset=["serie", "fecha", "valor"])
+    if df.duplicated(["serie", "fecha"]).any():
+        raise ValueError("series con valores distintos para la misma fecha")
+    return df
+
+
 def main() -> None:
     XLS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -420,7 +430,7 @@ def main() -> None:
         for code in ["39364", "39365"]:
             data = get(INE_API.format(code=code), as_json=True)
             frames.append(ine_long(data, INE_API.format(code=code)))
-        save(pd.concat(frames, ignore_index=True), "ine_vut_nacional_ccaa_prov.csv", FUENTE_INE)
+        save(_sin_duplicados(pd.concat(frames, ignore_index=True)), "ine_vut_nacional_ccaa_prov.csv", FUENTE_INE)
     if not cached("ine_vut_valencia_municipio.csv"):
         frames = []
         for code in ["39363", "39366"]:

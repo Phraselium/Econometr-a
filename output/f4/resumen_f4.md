@@ -210,7 +210,7 @@ Por qué no son directamente comparables: (i) el BdE habla de la elasticidad de 
 
 ### Corrección por búsqueda
 
-Se registraron **128 modelos** en `output/registro_busqueda_f4.csv` (114 en la familia 'elasticidad'). Con H0: β=0, 100 de 114 siguen significativos tras Holm y 95 tras Bonferroni (N total=128). **Qué informa esto:** solo que, *si los p-valores fueran válidos*, el signo positivo no se debe a haber probado muchos modelos. Los p-valores de los modelos en niveles **no son válidos** sin cointegración (los t crecen con la muestra) y β=0 no es la hipótesis relevante. Lo informativo es la dispersión: las 102 estimaciones nacionales van de **1.04 a 6.66**; las del panel con efectos de tiempo van de -1.63 a 2.49. Tablas: `correccion_busqueda.csv`, `contraste_H0_045_principales.csv`.
+Se registraron **128 modelos** en `output/registro_busqueda_f4.csv` (114 en la familia 'elasticidad'). Con H0: β=0, 100 de 114 siguen significativos tras Holm y 95 tras Bonferroni (N total=128). **Qué informa esto:** solo que, *si los p-valores fueran válidos*, el signo positivo no se debe a haber probado muchos modelos. Los p-valores de los modelos en niveles **no son válidos** sin cointegración (los t crecen con la muestra) y β=0 no es la hipótesis relevante. Lo informativo es la dispersión: las 102 estimaciones nacionales van de **1.04 a 6.66**; las del panel con efectos de tiempo van de -1.63 a 2.42. Tablas: `correccion_busqueda.csv`, `contraste_H0_045_principales.csv`.
 
 Contraste de H0: β=0,45 en las especificaciones principales (Holm entre las 15):
 
@@ -236,21 +236,21 @@ No se calculó Romano-Wolf.
 
 ## 4. Panel CCAA (robustez)
 
-Δ4 ln (terminadas / iniciadas) por CCAA sobre Δ4 ln IPV CCAA retardado (0, 4, 8 trimestres); EE cluster por CCAA y Driscoll-Kraay (bandwidth 4); Extremadura sin terminadas (16 CCAA).
-| dep        |   lag_trim | efectos        |   beta |   EE_cluster |   p_cluster |   EE_DK |     p_DK |    n |   CCAA |
-|:-----------|-----------:|:---------------|-------:|-------------:|------------:|--------:|---------:|-----:|-------:|
-| terminadas |          0 | FE CCAA+tiempo |  2.49  |        1.2   |    0.0382   |   1.37  | 0.0703   | 1056 |     16 |
-| terminadas |          0 | FE CCAA        |  2.74  |        0.295 |    0        |   0.598 | 5.44e-06 | 1056 |     16 |
-| terminadas |          4 | FE CCAA+tiempo |  0.261 |        0.964 |    0.787    |   1.05  | 0.803    | 1056 |     16 |
-| terminadas |          4 | FE CCAA        |  2.63  |        0.235 |    0        |   0.497 | 1.44e-07 | 1056 |     16 |
-| terminadas |          8 | FE CCAA+tiempo | -0.477 |        0.829 |    0.565    |   1.13  | 0.673    | 1056 |     16 |
-| terminadas |          8 | FE CCAA        |  2.05  |        0.188 |    0        |   0.737 | 0.00548  | 1056 |     16 |
-| visados    |          0 | FE CCAA+tiempo |  1.59  |        0.864 |    0.0663   |   1.38  | 0.249    | 1071 |     17 |
-| visados    |          0 | FE CCAA        |  2.07  |        0.2   |    0        |   0.432 | 1.89e-06 | 1071 |     17 |
-| visados    |          4 | FE CCAA+tiempo | -1.63  |        0.729 |    0.0253   |   0.654 | 0.0127   | 1071 |     17 |
-| visados    |          4 | FE CCAA        |  1.18  |        0.215 |    5.04e-08 |   0.52  | 0.0233   | 1071 |     17 |
-| visados    |          8 | FE CCAA+tiempo | -0.921 |        0.633 |    0.146    |   0.632 | 0.146    | 1071 |     17 |
-| visados    |          8 | FE CCAA        |  0.123 |        0.236 |    0.603    |   0.597 | 0.837    | 1071 |     17 |
+Δ4 ln (terminadas / iniciadas) por CCAA sobre Δ4 ln IPV CCAA retardado (0, 4, 8 trimestres); EE cluster por CCAA y Driscoll-Kraay (bandwidth 4) (17 CCAA).
+| dep        |   lag_trim | efectos        |    beta |   EE_cluster |   p_cluster |   EE_DK |     p_DK |    n |   CCAA |
+|:-----------|-----------:|:---------------|--------:|-------------:|------------:|--------:|---------:|-----:|-------:|
+| terminadas |          0 | FE CCAA+tiempo |  2.42   |        1.03  |    0.019    |   1.45  | 0.0956   | 1122 |     17 |
+| terminadas |          0 | FE CCAA        |  2.71   |        0.282 |    0        |   0.588 | 4.4e-06  | 1122 |     17 |
+| terminadas |          4 | FE CCAA+tiempo |  0.432  |        0.846 |    0.61     |   1.1   | 0.693    | 1122 |     17 |
+| terminadas |          4 | FE CCAA        |  2.57   |        0.235 |    0        |   0.495 | 2.58e-07 | 1122 |     17 |
+| terminadas |          8 | FE CCAA+tiempo | -0.0818 |        0.807 |    0.919    |   1.16  | 0.944    | 1122 |     17 |
+| terminadas |          8 | FE CCAA        |  2      |        0.187 |    0        |   0.734 | 0.00647  | 1122 |     17 |
+| visados    |          0 | FE CCAA+tiempo |  1.59   |        0.864 |    0.0663   |   1.38  | 0.249    | 1071 |     17 |
+| visados    |          0 | FE CCAA        |  2.07   |        0.2   |    0        |   0.432 | 1.89e-06 | 1071 |     17 |
+| visados    |          4 | FE CCAA+tiempo | -1.63   |        0.729 |    0.0253   |   0.654 | 0.0127   | 1071 |     17 |
+| visados    |          4 | FE CCAA        |  1.18   |        0.215 |    5.04e-08 |   0.52  | 0.0233   | 1071 |     17 |
+| visados    |          8 | FE CCAA+tiempo | -0.921  |        0.633 |    0.146    |   0.632 | 0.146    | 1071 |     17 |
+| visados    |          8 | FE CCAA        |  0.123  |        0.236 |    0.603    |   0.597 | 0.837    | 1071 |     17 |
 
 `p_WCB_webb`: wild cluster bootstrap (Webb, 9.999 réplicas, semilla 20261009, restringido bajo H0: β=0, cluster por CCAA), pre-registrado en decisiones.md.
 Con efectos de tiempo la asociación desaparece (L4, L8 en terminadas; L8 en iniciadas) o cambia de signo (iniciadas L4: -1.63, p cluster 0.025, p WCB 0.032); con solo FE de CCAA es positiva y significativa salvo en iniciadas L8. **Lo estimado:** no hay evidencia de que las CCAA con mayor subida relativa de precios construyan relativamente más; no se puede atribuir la asociación nacional al 'ciclo común' (la identificación con efectos de tiempo viene de desviaciones regionales más ruidosas, hay atenuación, derrames entre CCAA y Δ4 solapadas).
@@ -267,6 +267,6 @@ Con efectos de tiempo la asociación desaparece (L4, L8 en terminadas; L8 en ini
 2. La fuente de hogares (ECP a 1 de enero) y la cobertura de terminadas del BdE son inferencias nuestras (el BdE no nombra la operación); la cifra de 100.980 terminadas en 2024 es NO VERIFICADA.
 3. Caldera-Johansson (2013) y Cavalleri et al. (2019): NO VERIFICADAS; la cifra 0,45 solo está respaldada por la cita literal del IA 2025.
 4. Elasticidades de niveles muy altas, sin cointegración robusta y sensibles al periodo (en terminadas cae desde 2014, en iniciadas sube): interpretar con cautela; falta una especificación con stock de vivienda/suelo y restricciones regulatorias.
-5. Instrumentos de la misma familia (J con poca potencia); wild cluster bootstrap con 16-17 clusters puede ser todavía poco fiable.
+5. Instrumentos de la misma familia (J con poca potencia); wild cluster bootstrap con 17 clusters puede ser todavía poco fiable.
 6. Johansen sin dummies estacionales; 2 huecos de iniciadas interpolados solo en los contrastes de cointegración.
 7. Parque MIVAU: estimación derivada, parcialmente mecánica con las terminadas; sin dato de 2026.

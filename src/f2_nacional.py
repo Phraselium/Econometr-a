@@ -208,19 +208,31 @@ def coint_system(frame, y, xs, label):
                    J_rech=rt >= 1)
     except Exception:
         out.update(J_rech=False)
-    # ARDL bounds (caso 3), dummies trimestrales fijas
+    # ARDL bounds (caso 3), dummies trimestrales fijas EN el contraste (F de Wald propio sobre niveles
+    # retardados; bounds_test de statsmodels descarta `fixed`), k = nº de regresores x (sin la dependiente)
     try:
+        from statsmodels.tsa.ardl import pss_critical_values as pss
         ex = d[xs]
         sel = ardl_select_order(d[y], 4, ex, 2, trend="c", fixed=Qdf(d), ic="aic")
-        o = sel.model.ardl_order
-        order = {c: max(k_, 1) for c, k_ in zip(xs, o[1:])}
-        u = UECM(d[y], max(o[0], 1), ex, order, trend="c", fixed=Qdf(d))
-        r = u.fit(cov_type="HAC", cov_kwds={"maxlags": 4})
-        b = r.bounds_test(case=3)
-        up = float(b.critical_values.loc[95.0, "upper"])
-        lo = float(b.critical_values.loc[95.0, "lower"])
-        out.update(ARDL_orden=str(tuple(o)), ARDL_N=int(r.nobs), ARDL_F=float(b.statistic), ARDL_I0_5=lo,
-                   ARDL_I1_5=up, ARDL_rech=b.statistic > up)
+        dl = sel.model.dl_lags
+        order = {c: max(max(dl[c]), 1) if c in dl and len(dl[c]) else 1 for c in xs}  # por NOMBRE
+        plag = max(max(sel.model.ar_lags), 1)
+        u = UECM(d[y], plag, ex, order, trend="c", fixed=Qdf(d))
+        r = u.fit()
+        names = list(r.params.index)
+        lv = [names.index(f"{y}.L1")] + [names.index(f"{x}.L1") for x in xs]
+        R = np.zeros((len(lv), len(names)))
+        for i_, j_ in enumerate(lv):
+            R[i_, j_] = 1
+        cov = r.cov_params().values
+        coef = R @ r.params.values
+        F = float(coef @ np.linalg.inv(R @ cov @ R.T) @ coef / len(lv))
+        kx = len(xs)
+        lo, up = pss.crit_vals[(kx, 3, False)][1], pss.crit_vals[(kx, 3, True)][1]
+        tY = float(r.tvalues[f"{y}.L1"])
+        out.update(ARDL_p=plag, ARDL_ordenes_x=str(order), ARDL_N=int(r.nobs), ARDL_k=kx, ARDL_F=F, ARDL_I0_5=lo,
+                   ARDL_I1_5=up, ARDL_t_yL1=tY, ARDL_rech=F > up,
+                   ARDL_zona="rechaza (F>I1)" if F > up else "no concluyente" if F > lo else "no rechaza (F<I0)")
         out["_uecm"] = r
     except Exception as e:
         out.update(ARDL_rech=False, ARDL_err=str(e)[:60])
@@ -252,7 +264,7 @@ sec("3. Cointegración (se reportan SIEMPRE los tres contrastes)",
     "no admite dummies estacionales), ARDL bounds (caso 3, ardl_select_order AIC maxlag 4/orden de regresores ≤2, "
     "dummies trimestrales fijas; los regresores se fuerzan a orden ≥1 para el UECM). Decisión: ≥2 de 3 (docs/decisiones.md).\n\n"
     + tm(cdf[["sistema", "N", "EG_p", "J_kardiff", "J_traza0", "J_cv95", "J_rango_traza", "J_rango_maxeig",
-              "ARDL_orden", "ARDL_N", "ARDL_F", "ARDL_I1_5", "n_rechazos", "decision"]], ".3g", False))
+              "ARDL_p", "ARDL_ordenes_x", "ARDL_N", "ARDL_k", "ARDL_F", "ARDL_I0_5", "ARDL_I1_5", "ARDL_t_yL1", "ARDL_zona", "n_rechazos", "decision"]], ".3g", False))
 
 # =============================================================== 4. largo plazo preferido
 dol = {}

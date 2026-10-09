@@ -379,7 +379,7 @@ Bai-Perron (ruptures): ECM real preferido: 0 quiebres; largo plazo real en nivel
 
 La fila «Desde 2014Q1» usa el ect de la muestra completa (no lo re-estima); la fila pre-COVID sí lo re-estima. El ect recursivo de `f2/ect_recursivo.csv` es el del ECM **nominal**: pasa de -0,086 (hasta 2019Q4) a -0,097 (hasta 2026Q2). En el largo plazo real re-estimado hasta 2019Q4 cambian de signo el tipo real (0,002 → 0,053) y los permisos (0,032 → -0,115); los costes mantienen el signo (-0,660 → -0,104). En el LP nominal (`f2/robustez_quiebres.csv`, k = 2) también cambian costes y permisos. Los escalones de 2021 (EPA) y de 2022 (tipos) no son significativos en el ECM real.
 
-**Limitaciones de P5.** El quiebre de 2008 no es contrastable: la muestra principal empieza en 2003Q1, de modo que 2008 queda en el arranque. La potencia en 2022Q3 es baja (el segundo tramo tiene n2 = 16 observaciones), así que que Chow no rechace en 2022Q3 no prueba estabilidad; con n2 = 26 en 2020Q1 ocurre algo parecido.
+**Limitaciones de P5.** El quiebre de 2008 no es contrastable: la muestra principal empieza en 2008Q1, de modo que 2008 queda en el arranque. Sería contrastable con la serie larga de valor tasado (desde 2003Q1), pero ese contraste no se ha hecho. La potencia en 2022Q3 es baja (el segundo tramo tiene n2 = 16 observaciones), así que que Chow no rechace en 2022Q3 no prueba estabilidad; con n2 = 26 en 2020Q1 ocurre algo parecido.
 
 *Fuentes: `output/f2/real_chow.csv`; `output/f2/chow.csv`; `output/f2/real_bai_perron.csv`; `output/f2/real_robustez.csv`; `output/f2/ect_recursivo.csv`; `output/f2/dols_subperiodos.csv`; `output/f4/chow.csv`; `output/f4/bai_perron.csv`; `output/f6/quiebres_wald_hac.csv`.*
 

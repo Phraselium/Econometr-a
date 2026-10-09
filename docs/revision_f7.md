@@ -153,3 +153,42 @@ Menores, no bloqueantes:
 - Añadir junto a 1,482 «magnitud no robusta».
 
 Tras aplicar 1-5, basta con repetir `make all` y comprobar el diff de `informe.md`/`robustez.csv`. No hace falta una revisión econométrica nueva.
+
+---
+
+## Re-revisión (iteración 2 de 2) — commits `f53cb90` y `4398a10`
+
+### Veredicto final: **APROBAR**, con una errata obligatoria de una línea (E1). Basta con verificar el diff; no hace falta otra revisión.
+
+**Reproducibilidad.**
+- Repetí la prueba en un clon local aislado de `4398a10`, sin red y sin `FORCE`.
+- `make all` termina con exit 0 en las dos ejecuciones.
+- Los md5 de `informe.md`, `tablas/*.csv` y `registro_busqueda.csv` son idénticos entre las dos ejecuciones e iguales a lo versionado, y el clon queda limpio.
+
+**Cambios 1-5, verificados en el informe:**
+1. Ect 2014+.
+   - En limitaciones.md y §9: bloques `[Nominal]` etiquetados; el real 2014+ figura como −0,112 (p<0,001) con el ect de la muestra completa, junto con el cambio de signo antes de la COVID y una nota de corrección.
+   - En §7.2 se indica que el ect no se re-estima.
+   - Correcto.
+2. Prefijo `f`: §3.4 ya muestra «evidencia mixta (1/3)». «Kinnon» eliminado; el recuento queda en 42/11/2. Correcto.
+3. Robustez.
+   - Las columnas usan el mismo precio y el mismo regresor que la base, con n/d donde no hay comparable.
+   - Regla: «sí» exige superar la corrección por búsqueda.
+   - Resultado: 0 sí / 9 parcial / 4 no.
+   - Correcto. Matiz no bloqueante: «Costes LP» queda en «parcial» con signo contrario al esperado y cambio de signo frente al nominal. La advertencia de la fila lo dice.
+4. Cambios en P1/P5. Correctos:
+   - ect recursivo marcado como nominal;
+   - signos por subperiodo corregidos (LP real pre-COVID: tipo y permisos; nominal k=2: costes y permisos);
+   - raíces unitarias (ln IPV real «ambigua», ZA 2015Q1);
+   - baja potencia en 2022Q3 (n2=16) y 2020Q1 (n2=26).
+5. Correctos:
+   - §10 tiene 14 puntos (crédito, magnitud del empleo, tipos, CV frente a España, déficit en niveles);
+   - IEF 166.100;
+   - «residuo» 60.936;
+   - IC normal frente a t con 16 gl.
+
+**E1 (obligatoria).**
+- §7, «Limitaciones de P5», dice: «la muestra principal empieza en **2003Q1**». Es falso: empieza en 2008Q1 (2008Q2 para el ECM).
+- Causa: `src/report.py` l. 1144, `rbp_ini = c2.ini.min()`, toma el mínimo de todos los sistemas, incluido el de valor tasado desde 2003Q1.
+- Corrección: usar el inicio del sistema real.
+- Añadir además que 2008 sería contrastable con la serie larga de valor tasado (2003+), pero no se contrastó.

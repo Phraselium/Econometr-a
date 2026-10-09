@@ -1141,7 +1141,9 @@ P(f"\nDiagnósticos de los {fi(len(dc6))} modelos beta (Δ4): p máximos entre m
 fuente("f5/tabla_fe_principal.csv", "f5/timing_b2.csv", "f5/poolability.csv", "f5/correccion_busqueda_beta2.csv", "f5/valencia_vs_espana.csv", "f6/beta_todos.csv", "f6/beta_por_tramos.csv", "f6/diferencial_nivel_por_tramos.csv",
        "f6/crecimiento_acumulado_p_tasado.csv", "f6/ipv_vs_tasado_acumulado.csv", "f6/cuota_extranjeros_inferencia.csv", "f6/diagnosticos_beta.csv", "tablas/panel_ccaa.csv", "tablas/valencia.csv")
 
-rbp_ini = c2.ini.min()
+# Inicio del sistema REAL principal (no el mínimo de todos los sistemas, que incluye el valor tasado desde 2003Q1)
+rbp_ini = c2.loc[(c2.precio == 'real') & c2.bloque.str.startswith('F2'), 'ini'].min()
+rbp_ini_largo = c2.loc[c2.precio.str.startswith('valor tasado'), 'ini'].min()
 # ---------------------------------------------------------------------------- P5
 H("7. P5 - Quiebres (2008, 2014, 2020, 2022) y estabilidad del modelo")
 _rej = [f for f in rchow.index if rchow.loc[f, "p"] < ALPHA]
@@ -1163,7 +1165,7 @@ P(f"\nLa fila «Desde 2014Q1» usa el ect de la muestra completa (no lo re-estim
   f"En el largo plazo real re-estimado hasta 2019Q4 cambian de signo el tipo real ({fm(LPR.loc['tipo_hip_real', 'coef'], 3)} → {fm(_pv['tipo_hip_real'], 3)}) y los permisos ({fm(LPR.loc['ln_permisos_l4', 'coef'], 3)} → {fm(_pv['ln_permisos_l4'], 3)}); los costes mantienen el signo ({fm(LPR.loc['ln_costes_real', 'coef'], 3)} → {fm(_pv['ln_costes_real'], 3)}). "
   "En el LP nominal (`f2/robustez_quiebres.csv`, k = 2) también cambian costes y permisos. "
   "Los escalones de 2021 (EPA) y de 2022 (tipos) no son significativos en el ECM real.")
-P(f"**Limitaciones de P5.** El quiebre de 2008 no es contrastable: la muestra principal empieza en {rbp_ini}, de modo que 2008 queda en el arranque. La potencia en 2022Q3 es baja (el segundo tramo tiene n2 = {fi(rchow.loc['2022Q3', 'n2'])} observaciones), así que que Chow no rechace en 2022Q3 no prueba estabilidad; con n2 = {fi(rchow.loc['2020Q1', 'n2'])} en 2020Q1 ocurre algo parecido.")
+P(f"**Limitaciones de P5.** El quiebre de 2008 no es contrastable: la muestra principal empieza en {rbp_ini}, de modo que 2008 queda en el arranque. Sería contrastable con la serie larga de valor tasado (desde {rbp_ini_largo}), pero ese contraste no se ha hecho. La potencia en 2022Q3 es baja (el segundo tramo tiene n2 = {fi(rchow.loc['2022Q3', 'n2'])} observaciones), así que que Chow no rechace en 2022Q3 no prueba estabilidad; con n2 = {fi(rchow.loc['2020Q1', 'n2'])} en 2020Q1 ocurre algo parecido.")
 fuente("f2/real_chow.csv", "f2/chow.csv", "f2/real_bai_perron.csv", "f2/real_robustez.csv", "f2/ect_recursivo.csv", "f2/dols_subperiodos.csv", "f4/chow.csv", "f4/bai_perron.csv", "f6/quiebres_wald_hac.csv")
 
 # ---------------------------------------------------------------------------- robustez

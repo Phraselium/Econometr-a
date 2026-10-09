@@ -68,3 +68,4 @@ Formato: fecha · fase · decisión · alternativa descartada · motivo.
 - P4: asociación; «no se detecta heterogeneidad» (no homogeneidad). València: comparativa con HAC para valor tasado (N≥40); el resto descriptivo.
 - P5: quiebres detectados (2014 Chow; Bai-Perron 2011Q4, 2019Q2, 2023Q2 en niveles); 2020 y 2022 no rechazados por Chow en el ECM real; corrección de error inestable → el modelo no es estable.
 - Las cifras del informe se leen de output/ por src/report.py (ninguna escrita a mano en el texto).
+- 2026-10-09 · F7 · APROBADA (re-revisión final). Errata obligatoria E1 corregida por el orquestador (inicio de la muestra en Limitaciones de P5: 2008Q1, no 2003Q1) y revisada por diff; make all sin red exit 0 y determinista.

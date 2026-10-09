@@ -59,3 +59,4 @@ Formato: fecha · fase · decisión · alternativa descartada · motivo.
 ## Revisión F3 (iteración 1)
 - 2026-10-09 · F3 · `ipc_alquiler` (IPC alquiler por CCAA) se añadió como resultado DESPUÉS del diseño prefijado (que solo fijaba SERPAVI para alquiler); no es resultado principal prefijado y no sobrevive a Holm. · — · transparencia sobre búsqueda.
 - 2026-10-09 · F3 · Pretendencia 1996-2001 no computable en el script: `data/processed` no tiene precios por CCAA antes de 2002 (solo en data/raw). Se reporta la cifra de la revisión (raw) como externa y se deja pendiente su incorporación a processed. · Leer raw desde el script · regla de leer solo de processed.
+2026-10-09 · F1 (corrección) · Parser MIVAU: Extremadura (1) mal clasificada como provincia; corregido; solo afecta a terminadas/visados por CCAA.

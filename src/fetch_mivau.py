@@ -6,7 +6,9 @@ Salidas (formato largo, data/raw):
   mivau_visados.csv                           tabla 32100500 (viviendas libres iniciadas, mensual, 2008-)
   mivau_fin_obra.csv                          tabla 32101000 (viviendas libres terminadas, mensual, 2008-)
   mivau_parque.csv                            tabla 33100500 (total viviendas, anual, 2001-)
-  mivau_transacciones_*.csv                   tablas 34010110 (total) y 340101i0/j0/k0 (extranjeros)
+  mivau_transacciones_*.csv                   tablas 34010110 (total), 340101i0/j0/k0 (extranjeros residentes),
+                                              340101d0 (residencia del comprador: residentes / no residentes),
+                                              34010210 (todos los municipios publicados)
   ine_vut_*.csv                               INE tablas 39363-39366 (experimental, VUT)
 
 Los XLS originales se guardan sin editar en data/raw/mivau_xls/ (algunos llevan extension .XLS
@@ -18,6 +20,7 @@ from __future__ import annotations
 import datetime as dt
 import re
 import sys
+import unicodedata
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -71,6 +74,11 @@ def _slug(s: str) -> str:
         s = s.replace(a, b)
     s = re.sub(r"\(.*?\)", lambda m: " " + m.group(0)[1:-1] + " ", s)
     return re.sub(r"[^a-z0-9]+", "_", s).strip("_")
+
+
+def _sufijo(niv: str, nombre: str) -> str:
+    """Parte territorial del nombre de serie: 'nacional' o '<nivel>_<territorio>'."""
+    return "nacional" if nombre == "TOTAL NACIONAL" else f"{niv}_{_slug(nombre)}"
 
 
 def nivel_de(nombre: str) -> str:
@@ -143,7 +151,7 @@ def parse_trimestral_ancho(sheets: dict, code: str, prefijo: str, unidad: str) -
                     continue
                 out.append({
                     "fecha": f"{y}-{3 * q - 2:02d}-01", "periodo": f"{y}T{q}",
-                    "serie": f"{prefijo}_{niv}_{_slug(nombre)}", "valor": v, "unidad": unidad,
+                    "serie": f"{prefijo}_{_sufijo(niv, nombre)}", "valor": v, "unidad": unidad,
                     "fuente": FUENTE_MIVAU, "url": url, "territorio": nombre, "nivel": niv,
                     "tabla_codigo": code, "tabla_titulo": tit,
                 })
@@ -192,7 +200,7 @@ def parse_mensual_por_meses(sheets: dict, code: str, prefijo: str, unidad: str) 
                     continue
                 out.append({
                     "fecha": f"{y}-{mes:02d}-01", "periodo": f"{y}-{mes:02d}",
-                    "serie": f"{prefijo}_{niv}_{_slug(nombre)}", "valor": v, "unidad": unidad,
+                    "serie": f"{prefijo}_{_sufijo(niv, nombre)}", "valor": v, "unidad": unidad,
                     "fuente": FUENTE_MIVAU, "url": url, "territorio": nombre, "nivel": niv,
                     "tabla_codigo": code, "tabla_titulo": tit,
                 })
@@ -229,7 +237,7 @@ def parse_anual_parque(sheets: dict, code: str, prefijo: str, unidad: str) -> pd
                     continue
                 out.append({
                     "fecha": f"{y}-12-31", "periodo": str(y),
-                    "serie": f"{prefijo}_{niv}_{_slug(nombre)}", "valor": v, "unidad": unidad,
+                    "serie": f"{prefijo}_{_sufijo(niv, nombre)}", "valor": v, "unidad": unidad,
                     "fuente": FUENTE_MIVAU, "url": url, "territorio": nombre, "nivel": niv,
                     "tabla_codigo": code, "tabla_titulo": tit,
                 })
@@ -299,6 +307,157 @@ def parse_municipios(sheets: dict, code: str) -> pd.DataFrame:
     return pd.DataFrame(out)
 
 
+def parse_residencia(sheets: dict, code: str) -> pd.DataFrame:
+    """Transacciones por residencia del comprador (Tabla 1.6): cabecera de dos filas
+    (grupo: TOTAL / Residentes en España / No residentes en España / No consta; subgrupo: Total / Españoles / Extranjeros / No consta)."""
+    out = []
+    url = f"{BASE}/{code}.XLS"
+    grp_map = {"TOTAL": "total", "Residentes en España": "residentes", "No residentes en España": "no_residentes",
+               "No consta": "no_consta"}
+    sub_map = {"Total": "total", "Españoles": "espanoles", "Extranjeros": "extranjeros", "No consta": "no_consta"}
+    for sname, sh in sheets.items():
+        m = re.match(r"^\s*(\d)t (\d{4})", str(sname))
+        if not m:
+            continue
+        q, y = int(m.group(1)), int(m.group(2))
+        hr = next((r for r in range(min(25, sh.shape[0])) if "TOTAL" in [_s(v) for v in sh.iloc[r]]), None)
+        if hr is None:
+            print(f"  [aviso] {code} hoja '{sname}': sin cabecera TOTAL")
+            continue
+        claves, last = {}, ""
+        for c in range(sh.shape[1]):
+            g = _s(sh.iat[hr, c])
+            last = g if g else last
+            sub = _s(sh.iat[hr + 1, c]) if hr + 1 < sh.shape[0] else ""
+            if last in grp_map:
+                clave = grp_map[last] + ("_" + sub_map[sub] if sub in sub_map and last != "TOTAL" else "")
+                if last == "TOTAL" and sub in sub_map:
+                    clave = "total_" + sub_map[sub]
+                claves[c] = clave
+        lc = _label_col(sh)
+        tit = titulo(sh)
+        for r in range(hr + 2, sh.shape[0]):
+            nombre = _s(sh.iat[r, lc])
+            if not nombre or NO_TERRITORIO.match(nombre):
+                continue
+            niv = nivel_de(nombre)
+            for c, clave in claves.items():
+                v = _num(sh.iat[r, c])
+                if np.isnan(v):
+                    continue
+                out.append({
+                    "fecha": f"{y}-{3 * q - 2:02d}-01", "periodo": f"{y}T{q}",
+                    "serie": f"tx_residencia_{clave}_{_sufijo(niv, nombre)}", "valor": v,
+                    "unidad": "transacciones", "fuente": FUENTE_MIVAU, "url": url,
+                    "territorio": nombre, "nivel": niv, "tabla_codigo": code, "tabla_titulo": tit,
+                })
+    return pd.DataFrame(out)
+
+
+def parse_tx_municipios(sheets: dict, code: str) -> pd.DataFrame:
+    """Transacciones de vivienda por municipio (Tabla 2 del Boletin, trimestral, todos los municipios publicados).
+    Filas: CCAA (mayusculas, sin valores), provincia (sin valores) y municipio (con valores).
+    No se filtra por poblacion: la tabla no la incluye (el filtro >25.000 requiere padron INE)."""
+    out, vistos = [], {}
+    url = f"{BASE}/{code}.XLS"
+    sh = list(sheets.values())[0]
+    year_row = q_row = None
+    for r in range(min(25, sh.shape[0])):
+        vals = [_s(v) for v in sh.iloc[r]]
+        if year_row is None and any(re.fullmatch(r"Año \d{4}", v) for v in vals):
+            year_row = r
+        if q_row is None and sum(bool(re.fullmatch(r"[1-4]º", v)) for v in vals) >= 2:
+            q_row = r
+    ycol, cur = {}, None
+    for c in range(sh.shape[1]):
+        m = re.fullmatch(r"Año (\d{4})", _s(sh.iat[year_row, c]))
+        if m:
+            cur = int(m.group(1))
+        ycol[c] = cur
+    qcol = {c: int(_s(sh.iat[q_row, c])[0]) for c in range(sh.shape[1]) if re.fullmatch(r"[1-4]º", _s(sh.iat[q_row, c]))}
+    tit = titulo(sh)
+    ccaa = prov = ""
+    for r in range(q_row + 1, sh.shape[0]):
+        nombre = _s(sh.iat[r, 1])
+        if not nombre or NO_TERRITORIO.match(nombre):
+            continue
+        valores = {c: _num(sh.iat[r, c]) for c in qcol}
+        if all(np.isnan(v) for v in valores.values()):
+            if nombre.isupper():
+                ccaa, prov = nombre.title(), ""
+            else:
+                prov = nombre
+            continue
+        for c, q in qcol.items():
+            y, v = ycol.get(c), valores[c]
+            if y is None or np.isnan(v):
+                continue
+            serie = f"tx_municipio_{_slug(nombre)}"
+            if vistos.get(serie, prov) != prov:  # mismo nombre en otra provincia
+                serie = f"{serie}_{_slug(prov)}"
+            vistos.setdefault(serie, prov)
+            out.append({
+                "fecha": f"{y}-{3 * q - 2:02d}-01", "periodo": f"{y}T{q}", "serie": serie, "valor": v,
+                "unidad": "transacciones", "fuente": FUENTE_MIVAU, "url": url,
+                "territorio": nombre, "nivel": "municipio", "ccaa": ccaa, "provincia": prov,
+                "tabla_codigo": code, "tabla_titulo": tit,
+            })
+    return pd.DataFrame(out)
+
+
+_STOP = {"de", "la", "el", "del", "los", "las", "y", "en", "do", "da"}
+
+
+def clave_municipio(nombre: str) -> str:
+    """Clave para emparejar nombres de municipio entre tablas MIVAU (acentos, articulos, barras)."""
+    s = unicodedata.normalize("NFKD", str(nombre)).encode("ascii", "ignore").decode().lower()
+    s = s.split("/")[0]
+    s = re.sub(r"\(.*?\)|,", " ", s)
+    toks = [t for t in re.split(r"[^a-z]+", s) if t and t not in _STOP]
+    return " ".join(sorted(toks))
+
+
+# Nombres de la tabla 35103500 que en la tabla 34010210 aparecen con otra grafia (valenciano, euskera...)
+ALIAS_MUNICIPIO = {
+    "Burriana": "Borriana/Burriana", "Mahón": "Maó", "Calpe/Calp": "Calp",
+    "San Sebastián/Donostia": "Donostia-San Sebastián", "Vitoria": "Vitoria-Gasteiz",
+    "Santa Coloma Gramanet": "Santa Coloma de Gramenet", "Santa Cruz deTenerife": "Santa Cruz de Tenerife",
+}
+
+
+def filtrar_municipios_grandes(tx: pd.DataFrame) -> pd.DataFrame:
+    """Conserva los municipios de la lista >25.000 hab. (tabla 35103500), emparejados por nombre.
+    Si un nombre aparece en varias secciones (p. ej. Cieza en Murcia y en Cantabria), se elige la
+    sección cuya provincia coincide con la de la lista; si la sección no trae provincia, la CCAA."""
+    val = pd.read_csv(RAW / "mivau_valor_tasado_municipios.csv", usecols=["territorio", "provincia"]).drop_duplicates()
+    val["k"] = val["territorio"].map(lambda t: clave_municipio(ALIAS_MUNICIPIO.get(t, t)))
+    prov_de = val.groupby("k")["provincia"].agg(lambda x: {clave_municipio(p) for p in x.dropna()})
+    tx = tx.copy()
+    tx["k"] = tx["territorio"].map(clave_municipio)
+    tx = tx[tx["k"].isin(prov_de.index)]
+    ok = []
+    for k, prov, ccaa in zip(tx["k"], tx["provincia"].fillna(""), tx["ccaa"].fillna("")):
+        provs = prov_de[k]
+        if prov:
+            ok.append(clave_municipio(prov) in provs)
+        else:
+            ok.append(any(pp and pp in clave_municipio(ccaa) for pp in provs))
+    tx["_ok"] = ok
+    partes = []
+    for k, g in tx.groupby("k", sort=False):
+        if g["ccaa"].fillna("").nunique() <= 1:
+            partes.append(g)  # un solo municipio con ese nombre: se mantiene
+            continue
+        cuadra = g[g["_ok"]]
+        if cuadra.empty:
+            raise ValueError(f"municipio ambiguo sin resolver: {k}")
+        partes.append(cuadra)  # varios: solo la seccion cuya provincia coincide
+    out = pd.concat(partes).drop(columns=["k", "_ok"])
+    if out.duplicated(["serie", "fecha"]).any():
+        raise ValueError("duplicados serie/fecha en transacciones municipales tras el filtro")
+    return out
+
+
 def parse_extranjeros(sheets: dict, code: str, prefijo: str) -> pd.DataFrame:
     """Transacciones de extranjeros: una hoja por trimestre ('1t 2019'); columnas TOTAL / libre / protegida."""
     out = []
@@ -333,7 +492,7 @@ def parse_extranjeros(sheets: dict, code: str, prefijo: str) -> pd.DataFrame:
                     continue
                 out.append({
                     "fecha": f"{y}-{3 * q - 2:02d}-01", "periodo": f"{y}T{q}",
-                    "serie": f"{prefijo}_{tipo}_{niv}_{_slug(nombre)}", "valor": v, "unidad": "transacciones",
+                    "serie": f"{prefijo}_{tipo}_{_sufijo(niv, nombre)}", "valor": v, "unidad": "transacciones",
                     "fuente": FUENTE_MIVAU, "url": url, "territorio": nombre, "nivel": niv,
                     "tabla_codigo": code, "tabla_titulo": tit,
                 })
@@ -418,11 +577,23 @@ def main() -> None:
              "mivau_transacciones_total.csv", FUENTE_MIVAU)
     if not cached("mivau_transacciones_extranjeros.csv"):
         partes = []
-        for code, pref in [("340101i0", "tx_extranj_1_6_5"), ("340101j0", "tx_extranj_1_6_5_1"),
-                           ("340101k0", "tx_extranj_1_6_5_2")]:
+        # 1.6.5 total, 1.6.5.1 vivienda nueva, 1.6.5.2 segunda mano (compradores extranjeros residentes)
+        for code, pref in [("340101i0", "tx_extranj_residentes"),
+                           ("340101j0", "tx_extranj_residentes_nuevas"),
+                           ("340101k0", "tx_extranj_residentes_segunda_mano")]:
             p = ensure_xls(code)
             partes.append(parse_extranjeros(read_excel_any(p), code, pref))
         save(pd.concat(partes, ignore_index=True), "mivau_transacciones_extranjeros.csv", FUENTE_MIVAU)
+
+    if not cached("mivau_transacciones_municipios.csv"):
+        p = ensure_xls("34010210")
+        tx = parse_tx_municipios(read_excel_any(p), "34010210")
+        # Solo municipios >25.000 hab. (lista de la tabla 35103500); el resto del Boletin pesa ~240 MB
+        tx = filtrar_municipios_grandes(tx)
+        save(tx, "mivau_transacciones_municipios.csv", FUENTE_MIVAU)
+    if not cached("mivau_transacciones_residencia.csv"):
+        p = ensure_xls("340101d0")
+        save(parse_residencia(read_excel_any(p), "340101d0"), "mivau_transacciones_residencia.csv", FUENTE_MIVAU)
 
     # 6. INE viviendas turisticas (experimental)
     if not cached("ine_vut_nacional_ccaa_prov.csv"):

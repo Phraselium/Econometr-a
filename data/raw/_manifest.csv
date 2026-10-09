@@ -35,11 +35,14 @@ ine_migraciones_ccaa_nacionalidad.csv,INE,1159,2023-04-01,2026-07-01,16226,15428
 ine_migraciones_nacionalidad.csv,INE,61,2023-04-01,2026-07-01,854,714,2026-10-09T18:47:25Z
 ine_migraciones_total_anual.csv,INE,276,2021-01-01,2024-01-01,1104,0,2026-10-09T18:47:35Z
 ine_vut_nacional_ccaa_prov.csv,INE - Estadistica experimental viviendas turisticas,268,2020-08-01,2026-05-01,3484,0,2026-10-09T18:51:20Z
-ine_vut_valencia_municipio.csv,INE - Estadistica experimental viviendas turisticas,4,2020-08-01,2026-05-01,52,0,2026-10-09T18:50:46Z
-mivau_fin_obra.csv,MIVAU - Boletin Online Fomento (sedal),63,2008-01-01,2026-06-01,13986,0,2026-10-09T18:51:15Z
-mivau_parque.csv,MIVAU - Boletin Online Fomento (sedal),62,2001-12-31,2025-12-31,1550,0,2026-10-09T18:51:15Z
-mivau_transacciones_extranjeros.csv,MIVAU - Boletin Online Fomento (sedal),576,2007-01-01,2026-04-01,26486,0,2026-10-09T18:51:17Z
-mivau_transacciones_total.csv,MIVAU - Boletin Online Fomento (sedal),65,2004-01-01,2026-01-01,5696,0,2026-10-09T18:51:15Z
-mivau_valor_tasado_municipios.csv,MIVAU - Boletin Online Fomento (sedal),309,2005-01-01,2026-04-01,24861,0,2026-10-09T18:51:14Z
-mivau_valor_tasado_nacional_ccaa_prov.csv,MIVAU - Boletin Online Fomento (sedal),65,1995-01-01,2026-04-01,7939,0,2026-10-09T18:51:12Z
-mivau_visados.csv,MIVAU - Boletin Online Fomento (sedal),63,2008-01-01,2026-06-01,13605,0,2026-10-09T18:51:15Z
+ine_vut_valencia_municipio.csv,INE - Estadistica experimental viviendas turisticas,4,2020-08-01,2026-05-01,52,0,2026-10-09T18:52:24Z
+mivau_fin_obra.csv,MIVAU - Boletin Online Fomento (sedal),63,2008-01-01,2026-06-01,13986,0,2026-10-09T18:53:41Z
+mivau_parque.csv,MIVAU - Boletin Online Fomento (sedal),62,2001-12-31,2025-12-31,1550,0,2026-10-09T18:53:41Z
+mivau_transacciones_extranjeros.csv,MIVAU - Boletin Online Fomento (sedal),576,2007-01-01,2026-04-01,26486,0,2026-10-09T18:53:43Z
+mivau_transacciones_municipios.csv,MIVAU - Boletin Online Fomento (sedal),305,2004-01-01,2026-01-01,27145,0,2026-10-09T18:59:23Z
+mivau_transacciones_residencia.csv,MIVAU - Boletin Online Fomento (sedal),640,2007-01-01,2026-04-01,49920,0,2026-10-09T18:53:45Z
+mivau_transacciones_total.csv,MIVAU - Boletin Online Fomento (sedal),65,2004-01-01,2026-01-01,5696,0,2026-10-09T18:53:41Z
+mivau_valor_tasado_municipios.csv,MIVAU - Boletin Online Fomento (sedal),309,2005-01-01,2026-04-01,24861,0,2026-10-09T18:53:40Z
+mivau_valor_tasado_nacional_ccaa_prov.csv,MIVAU - Boletin Online Fomento (sedal),65,1995-01-01,2026-04-01,7939,0,2026-10-09T18:53:37Z
+mivau_visados.csv,MIVAU - Boletin Online Fomento (sedal),63,2008-01-01,2026-06-01,13605,0,2026-10-09T18:53:40Z
+vlc_precio_vivienda_libre.csv,Ajuntament de València - Opendata (CKAN); fuente primaria no indicada en el recurso,24,2021-04-01,2022-04-01,120,0,2026-10-09T18:54:14Z

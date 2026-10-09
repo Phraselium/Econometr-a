@@ -10,6 +10,9 @@ Idioma de salida: español. Reproducible con `make all` (data → clean → mode
 - `output/` tablas, figuras, `registro_busqueda.csv`, `informe.md`.
 - `docs/` literatura, diccionario de variables, fuentes fallidas, revisiones.
 
+## Preguntas
+- P1-P5 en `docs/preguntas.md`.
+
 ## Reglas
 - No inventar cifras ni referencias; fuentes fallidas → `docs/fuentes_fallidas.md`.
 - Comparar modelos en la misma muestra; HAC(4); registrar cada especificación probada.

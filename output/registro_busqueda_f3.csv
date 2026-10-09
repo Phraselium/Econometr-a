@@ -97,6 +97,7 @@ F3,PAN_ipc_alq_FElag_OLS,d_ln_ipc_alquiler ~ x + x_l1 | FE ccaa + anio,2004,2025
 F3,PAN_ipc_alq_FElag_2SLS,d_ln_ipc_alquiler ~ x + x_l1 | FE ccaa + anio,2004,2025,374,-0.04046427032231881,,,,0.9532319221278616,0.02499024620258585,robustez dinamica; coef de x_t | p=cluster t(G-1)
 F3,PAN_ipc_alq_FEsinCOVID_OLS,"d_ln_ipc_alquiler ~ x | FE, sin 2020-21",2003,2025,357,0.006131330670000823,-3633.889178662894,-3486.5352189552677,,0.5333734977470238,0.0056005600560056, | p=wild bootstrap restringido
 F3,PAN_ipc_alq_FEsinCOVID_2SLS,"d_ln_ipc_alquiler ~ x | FE, sin 2020-21",2003,2025,357,0.0003537066568181091,,,,0.41735831676847385,0.1476147614761476, | p=wild bootstrap restringido
+F3,PAN_p_tasado_2003_07,"d_ln_p_tasado ~ x | FE, 2003-2007",2003,2007,85,-0.4751814211150842,,,,5.38834591321233,0.2547129114300759,submuestra auge; comparabilidad | p=cluster t(G-1)
 F3,PAN_p_tasado_sin_Andalucía,"d_ln_p_tasado ~ x | FE, sin Andalucía",2003,2025,363,-0.1522321502309194,,,,-0.7135804611062213,0.4671741162129408,jackknife CCAA 2SLS | p=cluster t(G-1)
 F3,PAN_p_tasado_sin_Aragón,"d_ln_p_tasado ~ x | FE, sin Aragón",2003,2025,363,-0.15459965042567925,,,,-0.8628924785150774,0.36495922785511997,jackknife CCAA 2SLS | p=cluster t(G-1)
 F3,PAN_p_tasado_sin_Asturias,"d_ln_p_tasado ~ x | FE, sin Asturias",2003,2025,363,-0.15516311251974613,,,,-0.9128960800866028,0.39685032493494515,jackknife CCAA 2SLS | p=cluster t(G-1)

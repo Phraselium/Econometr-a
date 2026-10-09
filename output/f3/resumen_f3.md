@@ -3,7 +3,7 @@
 Todo se reproduce con `python3 src/f3_inmigracion.py` (semilla 20261009, sin red). Tablas CSV/MD en `output/f3/`; registro de busqueda en `output/registro_busqueda_f3.csv`.
 
 ## Diseno
-- x_ct = (pob_extranj_ct - pob_extranj_c,t-1)/pob_total_c,t-1. Coeficiente = variacion % del precio (Delta ln x 100) por cada 1 punto porcentual de poblacion que llega en el ano (flujo del 1 % de la poblacion).
+- x_ct = (pob_extranj_ct - pob_extranj_c,t-1)/pob_total_c,t-1. Coeficiente = variacion % del precio (Delta ln x 100) por cada 1 punto porcentual de poblacion de flujo neto (1 % de la poblacion total del ano anterior). Calendario: los stocks son a 1 de enero, asi que x del ano t es el cambio neto del stock durante el ano t-1 (no 'en el ano t'), adelantado ~medio ano frente a la media anual de precios.
 - Instrumento (Card 2001): z_ct = sum_g s_cg,2002 * (dP_g,t)_{-c} / pob_total_c,t-1, cuotas fijas 2002, flujo nacional del grupo sin la CCAA c (leave-one-out). Grupos (coherentes en el tiempo; Europa = `pob_europa_sin_espana`, no UE28/UE27): europa (sin Espana), africa, america (sud+centro/Caribe+norte), asia, otros (oceania+apatridas). Suman `pob_extranj` (dif. max 0,02 %).
 - FE CCAA + FE anio (principal) y + tendencias lineales por CCAA (robustez). EE cluster CCAA (17), p con t(16); wild cluster bootstrap restringido (Webb, 9.999; para 2SLS version WRE de Davidson-MacKinnon); EE Driscoll-Kraay (L=2) como robustez.
 
@@ -22,48 +22,48 @@ Todo se reproduce con `python3 src/f3_inmigracion.py` (semilla 20261009, sin red
 
 ### Robustez (tendencias por CCAA, control ocupados, rezago, sin COVID)
 
-| resultado        | spec                  | est   |   n |     coef |   EE_cluster |   p_cluster |   p_WCB_restr |   EE_DK |   F_1a_etapa |
-|:-----------------|:----------------------|:------|----:|---------:|-------------:|------------:|--------------:|--------:|-------------:|
-| IPV (precio)     | FE+tend               | OLS   | 306 | -1.001   |       0.6331 |   0.1334    |      0.1365   | 0.6102  |      nan     |
-| IPV (precio)     | FE+tend               | 2SLS  | 306 | -2.59    |       1.249  |   0.05462   |      0.07221  | 0.6087  |       21.78  |
-| IPV (precio)     | FE+ctrl d_ln_ocupados | OLS   | 306 | -0.447   |       0.5174 |   0.4004    |      0.4118   | 0.7762  |      nan     |
-| IPV (precio)     | FE+ctrl d_ln_ocupados | 2SLS  | 306 | -1.723   |       1.052  |   0.121     |      0.1887   | 0.8274  |       19.72  |
-| IPV (precio)     | FE, x_t y x_t-1       | OLS   | 306 |  1.183   |       0.4755 |   0.02426   |    nan        | 0.9404  |      nan     |
-| IPV (precio)     | FE, x_t y x_t-1       | OLS   | 306 | -2.157   |       0.8923 |   0.02797   |    nan        | 0.6991  |      nan     |
-| IPV (precio)     | FE, x_t y x_t-1       | 2SLS  | 306 |  1.804   |       1.003  |   0.09085   |    nan        | 0.9788  |        8.902 |
-| IPV (precio)     | FE, x_t y x_t-1       | 2SLS  | 306 | -3.459   |       1.342  |   0.02029   |    nan        | 1.199   |       12.01  |
-| IPV (precio)     | FE sin 2020-2021      | OLS   | 272 | -0.4838  |       0.5305 |   0.3753    |      0.3652   | 0.8496  |      nan     |
-| IPV (precio)     | FE sin 2020-2021      | 2SLS  | 272 | -1.773   |       1.111  |   0.1302    |      0.1804   | 0.8177  |       16.93  |
-| valor tasado     | FE+tend               | OLS   | 386 |  1.034   |       0.5353 |   0.07132   |      0.08221  | 0.6376  |      nan     |
-| valor tasado     | FE+tend               | 2SLS  | 386 |  0.2221  |       0.9258 |   0.8134    |      0.8065   | 0.9799  |       39.05  |
-| valor tasado     | FE+ctrl d_ln_ocupados | OLS   | 386 |  0.2716  |       0.6823 |   0.6959    |      0.7049   | 0.5348  |      nan     |
-| valor tasado     | FE+ctrl d_ln_ocupados | 2SLS  | 386 | -0.733   |       0.8969 |   0.4258    |      0.5328   | 0.7544  |       61.03  |
-| valor tasado     | FE, x_t y x_t-1       | OLS   | 369 |  1.628   |       0.6223 |   0.01873   |    nan        | 1.032   |      nan     |
-| valor tasado     | FE, x_t y x_t-1       | OLS   | 369 | -1.491   |       0.7889 |   0.07711   |    nan        | 0.7456  |      nan     |
-| valor tasado     | FE, x_t y x_t-1       | 2SLS  | 369 |  3.518   |       0.8494 |   0.0007661 |    nan        | 2.068   |       29.97  |
-| valor tasado     | FE, x_t y x_t-1       | 2SLS  | 369 | -4.347   |       1.107  |   0.001199  |    nan        | 1.557   |       26.03  |
-| valor tasado     | FE sin 2020-2021      | OLS   | 352 |  0.4012  |       0.7422 |   0.5963    |      0.6083   | 0.5474  |      nan     |
-| valor tasado     | FE sin 2020-2021      | 2SLS  | 352 | -0.8564  |       0.9838 |   0.3969    |      0.5048   | 0.7822  |       51.96  |
-| alquiler SERPAVI | FE+tend               | OLS   | 198 |  0.9046  |       0.3384 |   0.01737   |      0.0197   | 0.5752  |      nan     |
-| alquiler SERPAVI | FE+tend               | 2SLS  | 198 | -0.6967  |       0.5588 |   0.2316    |      0.2559   | 1.169   |       14.02  |
-| alquiler SERPAVI | FE+ctrl d_ln_ocupados | OLS   | 198 |  1.208   |       0.3347 |   0.002577  |      0.006501 | 0.4473  |      nan     |
-| alquiler SERPAVI | FE+ctrl d_ln_ocupados | 2SLS  | 198 |  0.593   |       0.7734 |   0.4552    |      0.434    | 0.5775  |       10.74  |
-| alquiler SERPAVI | FE, x_t y x_t-1       | OLS   | 198 |  1.563   |       0.3597 |   0.0005768 |    nan        | 0.5459  |      nan     |
-| alquiler SERPAVI | FE, x_t y x_t-1       | OLS   | 198 | -0.4874  |       0.3445 |   0.1776    |    nan        | 0.4409  |      nan     |
-| alquiler SERPAVI | FE, x_t y x_t-1       | 2SLS  | 198 |  1.596   |       0.7431 |   0.04849   |    nan        | 0.885   |       11.64  |
-| alquiler SERPAVI | FE, x_t y x_t-1       | 2SLS  | 198 | -1.221   |       0.3652 |   0.00444   |    nan        | 0.662   |        7.197 |
-| alquiler SERPAVI | FE sin 2020-2021      | OLS   | 168 |  1.358   |       0.351  |   0.001513  |      0.005101 | 0.5022  |      nan     |
-| alquiler SERPAVI | FE sin 2020-2021      | 2SLS  | 168 |  0.8142  |       0.7929 |   0.3208    |      0.2721   | 0.7076  |        8.854 |
-| IPC alquiler     | FE+tend               | OLS   | 391 |  0.6431  |       0.1781 |   0.002345  |      0.0027   | 0.0731  |      nan     |
-| IPC alquiler     | FE+tend               | 2SLS  | 391 |  0.6832  |       0.3022 |   0.03805   |      0.0128   | 0.1527  |       39.63  |
-| IPC alquiler     | FE+ctrl d_ln_ocupados | OLS   | 391 |  0.533   |       0.1691 |   0.006172  |      0.006201 | 0.05942 |      nan     |
-| IPC alquiler     | FE+ctrl d_ln_ocupados | 2SLS  | 391 |  0.4392  |       0.2868 |   0.1452    |      0.1137   | 0.2074  |       62.01  |
-| IPC alquiler     | FE, x_t y x_t-1       | OLS   | 374 |  0.6087  |       0.1636 |   0.001859  |    nan        | 0.1067  |      nan     |
-| IPC alquiler     | FE, x_t y x_t-1       | OLS   | 374 | -0.08968 |       0.1259 |   0.4864    |    nan        | 0.1361  |      nan     |
-| IPC alquiler     | FE, x_t y x_t-1       | 2SLS  | 374 |  0.9532  |       0.3854 |   0.02499   |    nan        | 0.3854  |       28.52  |
-| IPC alquiler     | FE, x_t y x_t-1       | 2SLS  | 374 | -0.5387  |       0.3096 |   0.1011    |    nan        | 0.2794  |       26.89  |
-| IPC alquiler     | FE sin 2020-2021      | OLS   | 357 |  0.5334  |       0.172  |   0.006861  |      0.005601 | 0.05834 |      nan     |
-| IPC alquiler     | FE sin 2020-2021      | 2SLS  | 357 |  0.4174  |       0.2934 |   0.1741    |      0.1476   | 0.2068  |       53.17  |
+| resultado        | spec                   | est   |   n |     coef |   EE_cluster |   p_cluster |   p_WCB_restr |   EE_DK |   F_1a_etapa |
+|:-----------------|:-----------------------|:------|----:|---------:|-------------:|------------:|--------------:|--------:|-------------:|
+| IPV (precio)     | FE+tend                | OLS   | 306 | -1.001   |       0.6331 |   0.1334    |      0.1365   | 0.6102  |      nan     |
+| IPV (precio)     | FE+tend                | 2SLS  | 306 | -2.59    |       1.249  |   0.05462   |      0.07221  | 0.6087  |       21.78  |
+| IPV (precio)     | FE+ctrl d_ln_ocupados  | OLS   | 306 | -0.447   |       0.5174 |   0.4004    |      0.4118   | 0.7762  |      nan     |
+| IPV (precio)     | FE+ctrl d_ln_ocupados  | 2SLS  | 306 | -1.723   |       1.052  |   0.121     |      0.1887   | 0.8274  |       19.72  |
+| IPV (precio)     | FE, x_t y x_t-1 [x]    | OLS   | 306 |  1.183   |       0.4755 |   0.02426   |    nan        | 0.9404  |      nan     |
+| IPV (precio)     | FE, x_t y x_t-1 [x_l1] | OLS   | 306 | -2.157   |       0.8923 |   0.02797   |    nan        | 0.6991  |      nan     |
+| IPV (precio)     | FE, x_t y x_t-1 [x]    | 2SLS  | 306 |  1.804   |       1.003  |   0.09085   |    nan        | 0.9788  |        8.902 |
+| IPV (precio)     | FE, x_t y x_t-1 [x_l1] | 2SLS  | 306 | -3.459   |       1.342  |   0.02029   |    nan        | 1.199   |       12.01  |
+| IPV (precio)     | FE sin 2020-2021       | OLS   | 272 | -0.4838  |       0.5305 |   0.3753    |      0.3652   | 0.8496  |      nan     |
+| IPV (precio)     | FE sin 2020-2021       | 2SLS  | 272 | -1.773   |       1.111  |   0.1302    |      0.1804   | 0.8177  |       16.93  |
+| valor tasado     | FE+tend                | OLS   | 386 |  1.034   |       0.5353 |   0.07132   |      0.08221  | 0.6376  |      nan     |
+| valor tasado     | FE+tend                | 2SLS  | 386 |  0.2221  |       0.9258 |   0.8134    |      0.8065   | 0.9799  |       39.05  |
+| valor tasado     | FE+ctrl d_ln_ocupados  | OLS   | 386 |  0.2716  |       0.6823 |   0.6959    |      0.7049   | 0.5348  |      nan     |
+| valor tasado     | FE+ctrl d_ln_ocupados  | 2SLS  | 386 | -0.733   |       0.8969 |   0.4258    |      0.5328   | 0.7544  |       61.03  |
+| valor tasado     | FE, x_t y x_t-1 [x]    | OLS   | 369 |  1.628   |       0.6223 |   0.01873   |    nan        | 1.032   |      nan     |
+| valor tasado     | FE, x_t y x_t-1 [x_l1] | OLS   | 369 | -1.491   |       0.7889 |   0.07711   |    nan        | 0.7456  |      nan     |
+| valor tasado     | FE, x_t y x_t-1 [x]    | 2SLS  | 369 |  3.518   |       0.8494 |   0.0007661 |    nan        | 2.068   |       29.97  |
+| valor tasado     | FE, x_t y x_t-1 [x_l1] | 2SLS  | 369 | -4.347   |       1.107  |   0.001199  |    nan        | 1.557   |       26.03  |
+| valor tasado     | FE sin 2020-2021       | OLS   | 352 |  0.4012  |       0.7422 |   0.5963    |      0.6083   | 0.5474  |      nan     |
+| valor tasado     | FE sin 2020-2021       | 2SLS  | 352 | -0.8564  |       0.9838 |   0.3969    |      0.5048   | 0.7822  |       51.96  |
+| alquiler SERPAVI | FE+tend                | OLS   | 198 |  0.9046  |       0.3384 |   0.01737   |      0.0197   | 0.5752  |      nan     |
+| alquiler SERPAVI | FE+tend                | 2SLS  | 198 | -0.6967  |       0.5588 |   0.2316    |      0.2559   | 1.169   |       14.02  |
+| alquiler SERPAVI | FE+ctrl d_ln_ocupados  | OLS   | 198 |  1.208   |       0.3347 |   0.002577  |      0.006501 | 0.4473  |      nan     |
+| alquiler SERPAVI | FE+ctrl d_ln_ocupados  | 2SLS  | 198 |  0.593   |       0.7734 |   0.4552    |      0.434    | 0.5775  |       10.74  |
+| alquiler SERPAVI | FE, x_t y x_t-1 [x]    | OLS   | 198 |  1.563   |       0.3597 |   0.0005768 |    nan        | 0.5459  |      nan     |
+| alquiler SERPAVI | FE, x_t y x_t-1 [x_l1] | OLS   | 198 | -0.4874  |       0.3445 |   0.1776    |    nan        | 0.4409  |      nan     |
+| alquiler SERPAVI | FE, x_t y x_t-1 [x]    | 2SLS  | 198 |  1.596   |       0.7431 |   0.04849   |    nan        | 0.885   |       11.64  |
+| alquiler SERPAVI | FE, x_t y x_t-1 [x_l1] | 2SLS  | 198 | -1.221   |       0.3652 |   0.00444   |    nan        | 0.662   |        7.197 |
+| alquiler SERPAVI | FE sin 2020-2021       | OLS   | 168 |  1.358   |       0.351  |   0.001513  |      0.005101 | 0.5022  |      nan     |
+| alquiler SERPAVI | FE sin 2020-2021       | 2SLS  | 168 |  0.8142  |       0.7929 |   0.3208    |      0.2721   | 0.7076  |        8.854 |
+| IPC alquiler     | FE+tend                | OLS   | 391 |  0.6431  |       0.1781 |   0.002345  |      0.0027   | 0.0731  |      nan     |
+| IPC alquiler     | FE+tend                | 2SLS  | 391 |  0.6832  |       0.3022 |   0.03805   |      0.0128   | 0.1527  |       39.63  |
+| IPC alquiler     | FE+ctrl d_ln_ocupados  | OLS   | 391 |  0.533   |       0.1691 |   0.006172  |      0.006201 | 0.05942 |      nan     |
+| IPC alquiler     | FE+ctrl d_ln_ocupados  | 2SLS  | 391 |  0.4392  |       0.2868 |   0.1452    |      0.1137   | 0.2074  |       62.01  |
+| IPC alquiler     | FE, x_t y x_t-1 [x]    | OLS   | 374 |  0.6087  |       0.1636 |   0.001859  |    nan        | 0.1067  |      nan     |
+| IPC alquiler     | FE, x_t y x_t-1 [x_l1] | OLS   | 374 | -0.08968 |       0.1259 |   0.4864    |    nan        | 0.1361  |      nan     |
+| IPC alquiler     | FE, x_t y x_t-1 [x]    | 2SLS  | 374 |  0.9532  |       0.3854 |   0.02499   |    nan        | 0.3854  |       28.52  |
+| IPC alquiler     | FE, x_t y x_t-1 [x_l1] | 2SLS  | 374 | -0.5387  |       0.3096 |   0.1011    |    nan        | 0.2794  |       26.89  |
+| IPC alquiler     | FE sin 2020-2021       | OLS   | 357 |  0.5334  |       0.172  |   0.006861  |      0.005601 | 0.05834 |      nan     |
+| IPC alquiler     | FE sin 2020-2021       | 2SLS  | 357 |  0.4174  |       0.2934 |   0.1741    |      0.1476   | 0.2068  |       53.17  |
 
 ## Primera etapa (2SLS FE, instrumento unico z)
 
@@ -74,7 +74,7 @@ Todo se reproduce con `python3 src/f3_inmigracion.py` (semilla 20261009, sin red
 | alquiler SERPAVI | 198 |       10.63 | 0.5966 |  0.183  |       0.3323 |    0.3302 |         0.5129 |
 | IPC alquiler     | 391 |       54.36 | 0.7621 |  0.1034 |       0.4784 |    0.3327 |         0.1873 |
 
-F = Wald cluster-robusto (con un instrumento y un regresor endogeno equivale a Kleibergen-Paap rk F). No se implemento el F efectivo de Montiel Olea-Pflueger.
+F = Wald cluster-robusto (con un instrumento y un regresor endogeno equivale a Kleibergen-Paap rk F). Con un instrumento y un regresor endogeno, el F efectivo de Montiel Olea-Pflueger coincide con este F robusto (la comparacion con sus valores criticos depende de la varianza usada, no calculados aqui). La forma reducida (RF_p_cluster) equivale a la prueba Anderson-Rubin y es robusta a instrumentos debiles: no rechaza en ningun resultado. EE y F usan correccion de muestra pequena con K que cuenta los FE de CCAA anidados en el cluster (algo mas conservadora, ~6 % en EE y ~16 % en F frente a linearmodels).
 
 ## Pesos de Rotemberg (Delta ln valor tasado) y 2SLS con cada grupo como instrumento unico
 
@@ -90,22 +90,22 @@ F = Wald cluster-robusto (con un instrumento y un regresor endogeno equivale a K
 
 ## Pretendencias
 
-| resultado    | test                                                    |   n |     coef |      EE |        p |   p_Holm_cuotas |
-|:-------------|:--------------------------------------------------------|----:|---------:|--------:|---------:|----------------:|
-| p_tasado     | seccion cruzada: media dln 2003-07 ~ zbar(2008-25), HC3 |  17 | -1.404   | 3.586   | 0.6953   |      nan        |
-| p_tasado     | panel 2003-07 con FE anio, cluster CCAA                 |  85 | -1.404   | 3.331   | 0.6733   |      nan        |
-| p_tasado     | cuota 2002 grupo europa (una a una), HC3                |  17 |  0.08713 | 0.05357 | 0.1039   |        0.5193   |
-| p_tasado     | cuota 2002 grupo africa (una a una), HC3                |  17 |  0.08895 | 0.1142  | 0.4362   |        0.8725   |
-| p_tasado     | cuota 2002 grupo america (una a una), HC3               |  17 |  0.05488 | 0.09425 | 0.5604   |        0.8725   |
-| p_tasado     | cuota 2002 grupo asia (una a una), HC3                  |  17 |  0.03851 | 0.02747 | 0.1609   |        0.6436   |
-| p_tasado     | cuota 2002 grupo otros (una a una), HC3                 |  17 |  0.09396 | 0.07212 | 0.1926   |        0.6436   |
-| ipc_alquiler | seccion cruzada: media dln 2003-07 ~ zbar(2008-25), HC3 |  17 |  1.537   | 1.161   | 0.1854   |      nan        |
-| ipc_alquiler | panel 2003-07 con FE anio, cluster CCAA                 |  85 |  1.537   | 1.067   | 0.1498   |      nan        |
-| ipc_alquiler | cuota 2002 grupo europa (una a una), HC3                |  17 |  0.03616 | 0.02397 | 0.1314   |        0.2628   |
-| ipc_alquiler | cuota 2002 grupo africa (una a una), HC3                |  17 |  0.04477 | 0.03104 | 0.1492   |        0.2628   |
-| ipc_alquiler | cuota 2002 grupo america (una a una), HC3               |  17 |  0.04364 | 0.01546 | 0.004759 |        0.01428  |
-| ipc_alquiler | cuota 2002 grupo asia (una a una), HC3                  |  17 |  0.03543 | 0.01197 | 0.003071 |        0.01228  |
-| ipc_alquiler | cuota 2002 grupo otros (una a una), HC3                 |  17 |  0.05078 | 0.01557 | 0.001112 |        0.005559 |
+| resultado    | test                                                                                                    |   n |     coef |      EE |        p |   p_Holm_cuotas |
+|:-------------|:--------------------------------------------------------------------------------------------------------|----:|---------:|--------:|---------:|----------------:|
+| p_tasado     | seccion cruzada (primeros anos de la muestra, NO pre salvo IPV): media dln 2003-07 ~ zbar(2008-25), HC3 |  17 | -1.404   | 3.586   | 0.6953   |      nan        |
+| p_tasado     | panel 2003-07 (primeros anos de la muestra) con FE anio, cluster CCAA; coincide con la seccion cruzada  |  85 | -1.404   | 3.331   | 0.6733   |      nan        |
+| p_tasado     | cuota 2002 grupo europa (una a una), HC3                                                                |  17 |  0.08713 | 0.05357 | 0.1039   |        0.5193   |
+| p_tasado     | cuota 2002 grupo africa (una a una), HC3                                                                |  17 |  0.08895 | 0.1142  | 0.4362   |        0.8725   |
+| p_tasado     | cuota 2002 grupo america (una a una), HC3                                                               |  17 |  0.05488 | 0.09425 | 0.5604   |        0.8725   |
+| p_tasado     | cuota 2002 grupo asia (una a una), HC3                                                                  |  17 |  0.03851 | 0.02747 | 0.1609   |        0.6436   |
+| p_tasado     | cuota 2002 grupo otros (una a una), HC3                                                                 |  17 |  0.09396 | 0.07212 | 0.1926   |        0.6436   |
+| ipc_alquiler | seccion cruzada (primeros anos de la muestra, NO pre salvo IPV): media dln 2003-07 ~ zbar(2008-25), HC3 |  17 |  1.537   | 1.161   | 0.1854   |      nan        |
+| ipc_alquiler | panel 2003-07 (primeros anos de la muestra) con FE anio, cluster CCAA; coincide con la seccion cruzada  |  85 |  1.537   | 1.067   | 0.1498   |      nan        |
+| ipc_alquiler | cuota 2002 grupo europa (una a una), HC3                                                                |  17 |  0.03616 | 0.02397 | 0.1314   |        0.2628   |
+| ipc_alquiler | cuota 2002 grupo africa (una a una), HC3                                                                |  17 |  0.04477 | 0.03104 | 0.1492   |        0.2628   |
+| ipc_alquiler | cuota 2002 grupo america (una a una), HC3                                                               |  17 |  0.04364 | 0.01546 | 0.004759 |        0.01428  |
+| ipc_alquiler | cuota 2002 grupo asia (una a una), HC3                                                                  |  17 |  0.03543 | 0.01197 | 0.003071 |        0.01228  |
+| ipc_alquiler | cuota 2002 grupo otros (una a una), HC3                                                                 |  17 |  0.05078 | 0.01557 | 0.001112 |        0.005559 |
 
 ## Sobreidentificacion (J de Hansen con 5 instrumentos por grupo) y AKM simplificado
 
@@ -253,12 +253,21 @@ Regla: 'causal' solo si F>=10 Y pretendencias no significativas Y J no rechaza Y
 
 - IPC alquiler: OLS 0.534 (EE 0.167), 2SLS 0.437 (EE 0.293; p cluster 0.156, p WCB 0.119; F 54.4) = variacion % del precio por flujo del 1 % de la poblacion total.
 
+### Intervalos de confianza 95 % del 2SLS (t(16), cluster)
 
-Comparabilidad (docs/literatura.md): Saiz (2007, EE. UU.): entrada = 1 % de la poblacion -> alquileres y valores ~ +1 %. Sa (2015, RU, version de trabajo IZA DP 5893): -1,6 % por 1 % de poblacion. Gonzalez y Ortega (2013, Espana 1998-2008): flujo medio del 17 % de la poblacion en edad de trabajar -> precios ~ +52 % (cociente simple ~ 3 puntos % por punto de flujo; derivado aqui, denominador distinto: poblacion en edad de trabajar, no comparable 1 a 1). Nuestras elasticidades (variacion % del precio por 1 % de la poblacion total que llega en el ano) son de corto plazo (anual, contemporaneas) y con intervalos que incluyen tanto +1 como valores negativos en precio; en alquiler (IPC) las estimaciones son positivas y del orden de 0,4-0,7.
+| resultado        |   coef_2SLS |   IC95_lo |   IC95_hi |
+|:-----------------|------------:|----------:|----------:|
+| IPV (precio)     |      -1.61  |    -3.9   |     0.671 |
+| valor tasado     |      -0.875 |    -2.89  |     1.14  |
+| alquiler SERPAVI |       0.554 |    -1.17  |     2.28  |
+| IPC alquiler     |       0.437 |    -0.186 |     1.06  |
+
+
+Comparabilidad (docs/literatura.md): Saiz (2007, EE. UU.): entrada = 1 % de la poblacion -> alquileres y valores ~ +1 %. Sa (2015, RU, version de trabajo IZA DP 5893): -1,6 % por 1 % de poblacion. Gonzalez y Ortega (2013, Espana 1998-2008): flujo medio del 17 % de la poblacion en edad de trabajar -> precios ~ +52 % (cociente simple ~ 3 puntos % por punto de flujo; derivado aqui, denominador distinto). El IC95 % del 2SLS del IPV es [-3.90; 0.67]: EXCLUYE +1 (Saiz) y ~3 (Gonzalez-Ortega); es compatible con el signo negativo de Sa (2015). Para el valor tasado y el SERPAVI los IC si incluyen +1 y valores negativos. La discrepancia se explica por diseno y periodo, no se presenta como error de calculo: (i) la muestra del IPV es 2008+ (crisis y recuperacion), no el auge 1998-2008 de Gonzalez-Ortega; (ii) la estimacion es en diferencias anuales con flujo neto del padron (resta nacionalizaciones); (iii) el peso de Rotemberg recae en la cuota europea de 2002 (Europa alpha 0,31 en IPV, 0,43 en valor tasado; beta_g de Europa negativo y significativo), muy ligada a costa e islas con demanda de residentes y turistica; el jackknife sin Baleares da -0.06 para el valor tasado (frente a -0.88). En el auge 2003-07 el 2SLS del valor tasado es 5.39 (EE 4.56, F 5.8; instrumento debil, especificacion registrada como PAN_p_tasado_2003_07). En nacional, la comparacion en la misma unidad es la variante x_flow (Delta4 extranjeros / pob. total) de `nacional_lp.csv`; el coeficiente anual nacional de flujo (~10) es covariacion ciclica auge-crisis con N=17, no un efecto. En alquiler (IPC) las estimaciones son positivas (~0,4-0,5) pero fragiles (ver Problemas abiertos).
 
 
 ## Busqueda de especificaciones
-Especificaciones registradas en F3: **149** (149 con p de interes). Correccion de Holm/Bonferroni sobre TODAS ellas en `correccion_busqueda.csv`. Para las 4 estimaciones 2SLS principales (FE) el p-valor del wild bootstrap y el ajustado:
+Especificaciones registradas en F3: **150** (150 con p de interes). Correccion de Holm/Bonferroni sobre TODAS ellas en `correccion_busqueda.csv`. Para las 4 estimaciones 2SLS principales (FE) el p-valor del wild bootstrap y el ajustado:
 
 | modelo               |    coef |      p |   p_holm |   p_bonferroni |
 |:---------------------|--------:|-------:|---------:|---------------:|
@@ -270,14 +279,15 @@ Especificaciones registradas en F3: **149** (149 con p de interes). Correccion d
 La mayoria de filas son robusteces/diagnosticos no independientes; la correccion sobre todas es muy conservadora. RMSE fuera de muestra no aplica en F3 (columna vacia).
 
 ## Problemas abiertos
-- Canal comprador: el coeficiente sobre compras de extranjeros es NEGATIVO y muy grande (OLS y 2SLS, tambien en compras totales); implausible como efecto causal. Probable artefacto de la cobertura/serie de `trans_extranjeros` (2007 como nivel de partida y caida posterior) y de la correlacion entre ciclo local y variacion de poblacion; leer solo como asociacion y revisar la serie antes de usar.
-- El IPV por CCAA no da efecto distinguible de cero ni en OLS ni en 2SLS; el unico resultado robusto es la asociacion positiva con el IPC de alquiler (OLS y 2SLS similares), pero las pretendencias por cuotas del IPC alquiler 2003-07 son significativas (America, Asia, otros), lo que impide leerlo como causal.
+- Canal comprador: el coeficiente sobre compras de extranjeros es NEGATIVO y muy grande (OLS -19, 2SLS -42). `trans_extranjeros` = compradores extranjeros RESIDENTES (MIVAU 340101i0), con salto 2008->2009 en la serie. Pero sin 2008-09 (2010+) sigue en -24,7 (EE 6,4) y en compras totales en -16,5 (EE 5,2): no es solo un artefacto de la serie. Es una senal de posible VIOLACION DE LA EXCLUSION (z correlacionado con el ciclo inmobiliario local; la inmigracion no puede explicar un desplome de transacciones de esa magnitud) y refuerza leer todo P2 como asociacion. (Cifras sin 2008-09 de la revision independiente, docs/revision_f3.md; no son salida de este script.)
+- IPV: sin efecto distinguible de cero en OLS; el 2SLS es negativo y su IC95 % excluye +1. En compraventas (IPV, valor tasado) no hay ni asociacion significativa: formulacion correcta = 'sin evidencia de efecto positivo'. Alquiler IPC: asociacion positiva en OLS (0,53; WCB p = 0,004) que NO sobrevive a Holm sobre las 149 especificaciones (Holm 0,59); 2SLS 0,44 no significativo (WCB p = 0,12); el IPC alquiler no estaba en el diseno prefijado (se anade despues, ver docs/decisiones.md); el resultado lo mueve America, cuya cuota 2002 tiene pretendencia significativa.
+- Pretendencias: la ventana 2003-07 esta DENTRO de la muestra de estimacion del valor tasado y del IPC alquiler (2003+), asi que es 'correlacion en los primeros anos de la muestra', no una prueba pre; solo es pre para el IPV (2008+). La seccion cruzada y el panel con FE de anio dan el mismo coeficiente (no son pruebas independientes). La pretendencia 1996-2001 (anterior al ano base) NO se puede computar aqui: `data/processed` no contiene precios por CCAA antes de 2002 (el valor tasado por CCAA desde 1995 solo esta en data/raw/mivau_valor_tasado_nacional_ccaa_prov.csv, y la regla es leer solo de processed). La revision independiente con raw obtuvo 9,46 (EE HC3 6,26; p = 0,13) sobre zbar y p entre 0,43 y 0,996 sobre las cuotas una a una: no rechaza pero es imprecisa. Pendiente de incorporar a processed.
 - 17 clusters: inferencia cluster y J de Hansen poco fiables; el wild bootstrap lo mitiga solo en parte.
 - Exclusion del instrumento: la historia de asentamiento (cuotas 2002) puede correlacionarse con demanda local (burbuja inmobiliaria 2002-07, turismo/retirados en la costa) y los flujos de grupo se mueven por el ciclo nacional comun; los FE de anio absorben lo comun, no lo heterogeneo. Ver pretendencias y Rotemberg.
 - Solo 5 grupos (de hecho 4 relevantes): imposible aplicar BHJ; AKM solo simplificado.
 - x_ct mide variacion del stock padronal (incluye nacionalizaciones, cambios de padron y regularizaciones); no es flujo migratorio bruto. Las nacionalizaciones mueven personas de 'extranjero' a 'espanol'.
 - IPV por CCAA solo desde 2007 (resultados 2008+), SERPAVI 2011-2024 con huecos (Navarra, Pais Vasco: N desequilibrado), valor tasado de Navarra falta 2015-18.
-- El efecto sobre el precio en un ano contemporaneo no recoge ajustes de oferta a medio plazo; el rezago de x se incluye solo como robustez.
+- El efecto sobre el precio en la diferencia anual (con x adelantada ~medio ano) no recoge ajustes de oferta a medio plazo; el rezago de x se incluye solo como robustez.
 - Sin variable de paro por CCAA: las correlaciones de cuotas usan tasa de ocupados/poblacion 2002.
-- No se implemento F efectivo de Montiel Olea-Pflueger.
+- Referencias metodologicas citadas (Webb; Davidson-MacKinnon WRE; Driscoll-Kraay; Montiel Olea-Pflueger; Sanderson-Windmeijer; Kleibergen-Paap; Hansen) NO estan en docs/literatura.md: NO VERIFICADAS.
 - Panel nacionalidad: 2SLS con 4 endogenas y 4 instrumentos muy correlacionados, F condicional (Sanderson-Windmeijer) no implementado; se muestra F conjunta.

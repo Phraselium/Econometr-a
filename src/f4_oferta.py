@@ -613,7 +613,7 @@ def g(df, **kw):
     return q.iloc[0]
 
 
-a1 = dfv.iloc[0]; a0 = dfv.iloc[2]; araw = dfv.iloc[4]; ecp = dfv.iloc[6]; ecp2 = dfv.iloc[8]; cpk = dfv.iloc[10]
+a1 = dfv.iloc[0]; a0 = dfv.iloc[2]; araw = dfv.iloc[4]; ecp = dfv.iloc[6]; cpk = dfv.iloc[8]
 pr = {d_: g(dols_tab, dep=d_, k=PRINCIPAL[d_], precio="ipv", tendencia=False) for d_ in PRINCIPAL}
 pri = {d_: g(iv_tab, dep=d_, k=PRINCIPAL[d_], forma="niveles", tendencia=False) for d_ in PRINCIPAL}
 prd = {d_: g(iv_tab, dep=d_, k=PRINCIPAL[d_], forma="d4") for d_ in PRINCIPAL}
@@ -641,6 +641,22 @@ def fl(r_):
 
 
 diag_txt = "; ".join(f"{m_.replace('dols_', '').replace('_ipv', '')}: {fl(r_)}" for m_, r_ in fallan.items())
+# contraste H0: beta=0,45 en las especificaciones principales (k principal), Holm entre ellas
+pp = []
+for d_, k_ in PRINCIPAL.items():
+    for est, b_, e_ in [("OLS estático", pro[d_].beta, pro[d_].EE), ("DOLS ±2", pr[d_].beta, pr[d_].EE),
+                        ("IV niveles", pri[d_].beta, pri[d_].EE), ("IV Δ4", prd[d_].beta, prd[d_].EE),
+                        ("OLS Δ4 (HAC8)", g(d4_tab, dep=d_, k=k_).beta, g(d4_tab, dep=d_, k=k_).EE_HAC8)]:
+        pp.append(dict(dep=d_, k=k_, estimador=est, beta=b_, EE=e_, p_H0_045=float(2 * stats.norm.sf(abs((b_ - BDE_EL) / e_)))))
+pp = pd.DataFrame(pp)
+hh = holm({f"{r.dep}|{r.estimador}": r.p_H0_045 for r in pp.itertuples()})
+pp["p_holm_H0_045"] = [hh[f"{r.dep}|{r.estimador}"] for r in pp.itertuples()]
+save(pp, "contraste_H0_045_principales", ".4g", index=False)
+nac = fam[~fam.modelo_id.str.startswith("panel")]
+nac_min, nac_max, n_nac = float(nac.coef_interes.min()), float(nac.coef_interes.max()), len(nac)
+pan_te = pan_tab[pan_tab.efectos == "FE CCAA+tiempo"]
+d4v = g(d4_tab, dep="visados", k=4)
+
 txt = f"""# F4 - Oferta (P3): déficit de vivienda y elasticidad de la oferta
 
 Generado por `src/f4_oferta.py` (semilla {SEED}). Todo es **asociación** salvo lo indicado en 'Nivel de evidencia'.
@@ -649,13 +665,13 @@ Generado por `src/f4_oferta.py` (semilla {SEED}). Todo es **asociación** salvo 
 
 1. **Déficit 2021-2025 (flujo acumulado de Δhogares − terminadas, sin equilibrio inicial supuesto).** Principal (EPA corregida):
    **{a1.deficit:,.0f} viviendas** ({a1.pct_hogares_2025T4:.1f} % de los hogares EPA 2025T4); con Δ2021T1=0: {a0.deficit:,.0f};
-   con ECP 60131 (2021T2-2025T4, periodo consistente): {ecp.deficit:,.0f}; ECP anualizada: {ecp2.deficit:,.0f}; con Δparque MIVAU: {cpk.deficit:,.0f}.
+   con ECP 60131 como stock a 1 de enero (H 1-ene-2026 − H 1-ene-2021 = {ecp.sum_delta_hogares:,.0f}): {ecp.deficit:,.0f}; con Δparque MIVAU: {cpk.deficit:,.0f}.
    Extensión a 2026T2 (principal): {dfv.iloc[1].deficit:,.0f}. BdE: ~750.000 (IA 2025) y 700.000 (IEF otoño 2025). Las diferencias NO se ajustan (ver abajo).
 2. **Elasticidad de la oferta** (iniciadas libres MIVAU, precio real retardado, DOLS ±2, HAC4, muestra común {SAMP[0]}-{SAMP[-1]}, N={pr['visados'].n}):
    iniciadas k=4: **{pr['visados'].beta:.2f}** (EE {pr['visados'].EE:.2f}); terminadas k=8: {pr['terminadas'].beta:.2f} ({pr['terminadas'].EE:.2f});
-   permisos k=4: {pr['permisos'].beta:.2f} ({pr['permisos'].EE:.2f}). Rango de las 9 especificaciones DOLS (ipv, sin tendencia): iniciadas {ranges.loc['visados','min']:.2f}-{ranges.loc['visados','max']:.2f},
+   permisos k=4: {pr['permisos'].beta:.2f} ({pr['permisos'].EE:.2f}). Rango de las 6 especificaciones DOLS por variable (precio ipv, con y sin tendencia): iniciadas {ranges.loc['visados','min']:.2f}-{ranges.loc['visados','max']:.2f},
    terminadas {ranges.loc['terminadas','min']:.2f}-{ranges.loc['terminadas','max']:.2f}, permisos {ranges.loc['permisos','min']:.2f}-{ranges.loc['permisos','max']:.2f}.
-   Son varias veces el 0,45 del BdE, pero **no son comparables en concepto** (ver contraste) y reflejan sobre todo la co-movimiento ciclo 2008-2025 de precios y construcción.
+   **El DOLS principal es DESCRIPTIVO**: para la especificación principal (iniciadas k=4) la cointegración es 1 de 3 contrastes (por la regla de decisiones.md no hay cointegración) y la velocidad del ECM no es significativa, así que los t del DOLS en niveles no tienen la distribución nominal. Robustez en Δ4 (OLS-HAC(8), N={d4v.n}): iniciadas k=4 β={d4v.beta:.2f} (EE {d4v.EE_HAC8:.2f}); el orden de magnitud (>1) no es solo un artefacto de los niveles, pero con menor precisión. Son varias veces el 0,45 del BdE, pero **no son comparables en concepto** (ver contraste).
 3. **Evidencia sobre 0,45:** nuestro rango no lo valida ni lo refuta como elasticidad de la inversión residencial; con 2014T1+ la elasticidad de iniciadas es {pop['visados'].beta_DOLS:.2f} (DOLS ±1, EE {pop['visados'].EE_DOLS:.2f}), todavía alejada de 0,45.
 
 ## 1. Déficit acumulado 2021-2025
@@ -670,7 +686,8 @@ Principal: Δ2021T1 := media de Δ en 2020T2, 2020T3, 2020T4 y 2021T2 = {media_a
 ### Variantes
 
 {tm(dfv.round(1).drop(columns=['nota']), ",.1f", index=False)}
-- (b) ECP 60131 existe desde 2021T1: el primer Δ es 2021T2, así que 2021 solo tiene 3 trimestres. Se da el periodo consistente (2021T2-2025T4, con terminadas de los mismos trimestres) y una versión 'anualizada' que imputa Δ2021T1 con la media de los Δ ECP de 2021T2-T4: la imputación es nuestra, no un dato.
+- (b) ECP 60131 es un **stock a día 1 del trimestre** (fecha 2021-01-01 = 2021T1): los hogares de 2021-2025 son H(1-ene-2026) − H(1-ene-2021) = 19.762.059 − 18.539.223 = {ecp.sum_delta_hogares:,.0f}, año completo y sin imputar; déficit {ecp.deficit:,.0f}. La extensión a 2026T2 usa H(1-jul-2026).
+- Sensibilidad de la corrección de la EPA (3 trimestres anteriores + 1 posterior, como se programó; decisiones.md dice '4 trimestres adyacentes' sin precisar la ventana): con ventana simétrica 2+2 el déficit sería 884.075 y con 4 posteriores 919.825 (cálculo de la revisión independiente); la cifra principal queda en el extremo bajo.
 - (c) Δparque MIVAU anual (31-dic) − Δhogares EPA corregida; el parque incluye secundarias y vacías, y su Δ supera a las terminadas libres en 10.000-16.000 viviendas/año (tabla `parque_vs_terminadas`), consistente con protegidas y otros ajustes (no cuantificado: no hay protegidas en raw).
 - (d) **Protegidas:** `data/raw/mivau_*` solo contiene tablas de vivienda LIBRE (iniciadas 32100500, terminadas 32101000); no hay protegidas, así que no se han podido añadir. Las terminadas totales serían mayores y el déficit principal una cota superior en esa magnitud.
 
@@ -678,9 +695,12 @@ Principal: Δ2021T1 := media de Δ en 2020T2, 2020T3, 2020T4 y 2021T2 = {media_a
 
 {tm(bde.round(2), ",.4g", index=False)}
 Diferencias, documentadas y no ajustadas:
-- **Concepto de terminadas:** MIVAU libres ({t25.terminadas:,.0f} en 2025) frente a 92.000 del BdE (la fuente del BdE no se ha verificado aquí; posiblemente incluye protegidas u otra fuente).
-- **Fuente de hogares:** EPA corregida frente a la que use el BdE (creación neta 2025: {t25.delta_hogares:,.0f} frente a 240.000). Con ECP el déficit baja a {ecp.deficit:,.0f} para 2021T2-2025T4, más cerca de 750.000, pero con un trimestre menos.
-- **Periodo:** el IEF (700.000) usa datos del primer semestre de 2025; 2021T1 no es comparable entre fuentes.
+- El BdE (IA 2025, gráficos 2.10 y 2.11, p. 155 y 157) cita como fuente 'INE y Ministerio de Transportes y Movilidad Sostenible' y define la diferencia como viviendas terminadas menos creación neta de hogares, pero **no nombra la operación estadística concreta**. Lo que sigue es **inferencia nuestra**.
+- **Fuente de hogares (inferencia):** la ECP 60131 a 1 de enero reproduce los 240.000 de 2025 ({ecp_2025:,.0f}) y el promedio de ≈245.000 de 2021-2024 ({ecp_m2124:,.0f}); la EPA corregida da {t25.delta_hogares:,.0f} en 2025.
+- **Terminadas:** MIVAU libres ({t25.terminadas:,.0f} en 2025) frente a 92.000 del BdE. Prensa cita 100.980 terminadas (libres y protegidas) en 2024 en el boletín anual del Observatorio de Vivienda y Suelo (MIVAU): **NO VERIFICADA** (no está en data/raw). Nuestras libres de 2024 son 86.609.
+- **Descomposición de la diferencia de 116.100 (866.100 − 750.000):** ≈ +55.164 por la fuente de hogares (EPA corregida 1.278.000 frente a ECP 1.222.836) y ≈ +60.936 por la vivienda protegida no incluida (terminadas implícitas del BdE ≈ 472.836 frente a 411.900 libres; incluye el redondeo de 'unas 750.000'). Es una descomposición contable, no una verificación de las fuentes del BdE. Con ECP y terminadas libres el déficit es {ecp.deficit:,.0f}.
+- **Periodo:** el IEF (700.000) usa datos hasta el primer semestre de 2025: periodo distinto.
+{tm(dec.round(0), ",.0f", index=False)}
 - La corrección de 2021 pesa {a1.deficit - araw.deficit:,.0f} viviendas: sin ella el déficit sería {araw.deficit:,.0f} (por debajo de 750.000); no se usa como principal porque incorpora un salto metodológico, y no se ajusta hacia el BdE.
 - Un 'déficit en niveles' requiere un equilibrio inicial; aquí solo se da el flujo acumulado desde 2021.
 
@@ -692,12 +712,17 @@ Diferencias, documentadas y no ajustadas:
 
 Muestra común {SAMP[0]}-{SAMP[-1]} (N={pr['visados'].n}; la impone el retardo máximo del precio, 8 trimestres, y ±2 adelantos/retardos; se excluyen 2016T2 y 2017T2 sin iniciadas en las tres variables dependientes). Precio real = ln IPV − ln deflactor; costes reales = ln costes − ln deflactor; tipo hipotecario real; dummies trimestrales. Principales declaradas antes de estimar: k=4 (iniciadas, permisos), k=8 (terminadas).
 
-### DOLS (tabla completa en `dols_resultados.csv`)
+### DOLS (tabla completa en `dols_resultados.csv`) - DESCRIPTIVO
+
+La cointegración de la especificación principal es 1/3 (evidencia mixta) y el ECM no es significativo (iniciadas k=4); los t del DOLS no son válidos como inferencia de un vector de cointegración. Los DOLS k=0 (3/3) y k=2 (2/3) sí cointegran y dan 2,05 y 1,81. Se presentan como descripción de la asociación.
 
 {tm(dols_tab[(dols_tab.precio=='ipv')][['dep','k','tendencia','beta','EE','p','beta_costes','beta_tipo','n','r2_adj','rmse_1paso']], ".3g", index=False)}
 Robustez con valor tasado real: ver `dols_resultados.csv` (precio='tasado'); coeficientes mayores (iniciadas {g(dols_tab, dep='visados', k=4, precio='tasado').beta:.2f}). Muestra larga de permisos (2003T4+, tasado real): {long_tab.beta.min():.2f}-{long_tab.beta.max():.2f}.
 `rmse_1paso` = error de predicción a un paso con regresores efectivos (ventana expansiva desde 2018T1): es condicional, no fuera de muestra genuino.
 
+### Regresión en Δ4 (OLS-HAC(8), misma muestra Δ4 que el IV)
+
+{tm(d4_tab.round(4), '.3g', index=False)}
 ### ECM
 
 {tm(ecm_tab[['dep','k','ect','EE_ect','p_ect','dP_corto','EE_dP','p_dP','n','r2_adj','DW']], ".3g", index=False)}
@@ -730,31 +755,37 @@ Referencia: BdE, Informe Anual 2025, p. 156: "España presentaría una elasticid
     for d_ in PRINCIPAL) + f"""
 
 (EE HAC entre paréntesis.) Tabla completa con IC95 y p de H0: β=0,45 en `contraste_bde.csv`; figura `elasticidades_vs_bde.png`.
-Por qué no son directamente comparables: (i) el BdE habla de la elasticidad de la **inversión residencial** (stock/flujo agregado) a precios reales de **largo plazo** entre países; la nuestra es la de **viviendas libres iniciadas** (un flujo muy volátil, cero en ciclos bajos) al precio real retardado; (ii) las iniciadas de 2008-2013 se desploman y recuperan junto con el precio, lo que mecánicamente da elasticidades altas en logs; (iii) los permisos son un índice (2021=100) y las terminadas un flujo con retardo de obra; (iv) los regresores (precio real, costes reales, tipo real) no coinciden con la especificación de los trabajos citados (no verificados). **Quiebre 2008/2014:** estimar desde 2014T1 reduce la elasticidad de terminadas ({pop['terminadas'].beta_DOLS:.2f}) y aumenta la de iniciadas/permisos en OLS/IV; los resultados son sensibles a la submuestra.
+Por qué no son directamente comparables: (i) el BdE habla de la elasticidad de la **inversión residencial** (stock/flujo agregado) a precios reales de **largo plazo** entre países; la nuestra es la de **viviendas libres iniciadas** (un flujo muy volátil, cero en ciclos bajos) al precio real retardado; (ii) el colapso de 2008-2013 puede inflar la elasticidad de las **terminadas** (baja de {pr['terminadas'].beta:.2f} a {pop['terminadas'].beta_DOLS:.2f} desde 2014T1), pero **no** la de iniciadas, que sube desde 2014T1 (DOLS {pop['visados'].beta_DOLS:.2f}, OLS {pop['visados'].beta_OLS:.2f}, IV {pop['visados'].beta_IV:.2f}); por tanto el colapso no explica por sí solo la magnitud de las iniciadas; (iii) los permisos son un índice (2021=100) y las terminadas un flujo con retardo de obra; (iv) los regresores (precio real, costes reales, tipo real) no coinciden con la especificación de los trabajos citados (no verificados). **Quiebre 2008/2014:** estimar desde 2014T1 reduce la de terminadas y aumenta la de iniciadas; los resultados son sensibles a la submuestra y Chow rechaza estabilidad en 2014T1 en las tres ecuaciones.
 
 ### Corrección por búsqueda
 
-Se registraron **{N_TOTAL} modelos** en `output/registro_busqueda_f4.csv` ({nfam} en la familia 'elasticidad' del precio retardado). Con H0: β=0 sobre esos {nfam} coeficientes, {n_sig_holm} siguen significativos tras Holm y {bonf_n} tras Bonferroni con N total={N_TOTAL}. Esta corrección controla la búsqueda pero no la sensibilidad de signo/magnitud: el coeficiente va de {fam.coef_interes.min():.2f} a {fam.coef_interes.max():.2f} (incluidos los del panel con efectos de tiempo, que son negativos o nulos). Tabla: `correccion_busqueda.csv`. No se calculó Romano-Wolf.
+Se registraron **{N_TOTAL} modelos** en `output/registro_busqueda_f4.csv` ({nfam} en la familia 'elasticidad'). Con H0: β=0, {n_sig_holm} de {nfam} siguen significativos tras Holm y {bonf_n} tras Bonferroni (N total={N_TOTAL}). **Qué informa esto:** solo que, *si los p-valores fueran válidos*, el signo positivo no se debe a haber probado muchos modelos. Los p-valores de los modelos en niveles **no son válidos** sin cointegración (los t crecen con la muestra) y β=0 no es la hipótesis relevante. Lo informativo es la dispersión: las {n_nac} estimaciones nacionales van de **{nac_min:.2f} a {nac_max:.2f}**; las del panel con efectos de tiempo van de {pan_te.beta.min():.2f} a {pan_te.beta.max():.2f}. Tablas: `correccion_busqueda.csv`, `contraste_H0_045_principales.csv`.
+
+Contraste de H0: β=0,45 en las especificaciones principales (Holm entre las 15):
+
+{tm(pp.round(4), '.3g', index=False)}
+No se calculó Romano-Wolf.
 
 ## 4. Panel CCAA (robustez)
 
 Δ4 ln (terminadas / iniciadas) por CCAA sobre Δ4 ln IPV CCAA retardado (0, 4, 8 trimestres); EE cluster por CCAA y Driscoll-Kraay (bandwidth 4); Extremadura sin terminadas (16 CCAA).
 {tm(pan_tab[['dep','lag_trim','efectos','beta','EE_cluster','p_cluster','EE_DK','p_DK','n','CCAA']], ".3g", index=False)}
-Con efectos de tiempo (que absorben el ciclo nacional) la asociación desaparece o cambia de signo (salvo contemporánea); con solo FE de CCAA es positiva y significativa. **La asociación positiva del agregado nacional procede del ciclo común, no de diferencias entre CCAA.** (Con 16-17 clusters no se hizo wild bootstrap; ver problemas abiertos.)
+`p_WCB_webb`: wild cluster bootstrap (Webb, 9.999 réplicas, semilla 20261009, restringido bajo H0: β=0, cluster por CCAA), pre-registrado en decisiones.md.
+Con efectos de tiempo la asociación desaparece (L4, L8 en terminadas; L8 en iniciadas) o cambia de signo (iniciadas L4: {g(pan_tab, modelo='panel_visados_L4_te').beta:.2f}, p cluster {g(pan_tab, modelo='panel_visados_L4_te').p_cluster:.3f}, p WCB {g(pan_tab, modelo='panel_visados_L4_te').p_WCB_webb:.3f}); con solo FE de CCAA es positiva y significativa salvo en iniciadas L8. **Lo estimado:** no hay evidencia de que las CCAA con mayor subida relativa de precios construyan relativamente más; no se puede atribuir la asociación nacional al 'ciclo común' (la identificación con efectos de tiempo viene de desviaciones regionales más ruidosas, hay atenuación, derrames entre CCAA y Δ4 solapadas).
 
 ## Nivel de evidencia
 
-- OLS/DOLS/ECM: **asociación** de largo plazo (cointegración mixta para la especificación principal) - no es una elasticidad estructural de oferta.
+- OLS/DOLS/ECM: **asociación descriptiva** (cointegración 1/3 y ECM no significativo en la especificación principal) - no es una elasticidad estructural de oferta.
 - IV: se informa F1 y J; en niveles todos pasan F≥10 y la mayoría J, pero la exclusión es discutible y la primera etapa en niveles es probablemente espuria por tendencias; en Δ4 el IV de iniciadas no es significativo. **No se afirma elasticidad identificada.**
 - Déficit: aritmética contable con supuestos explícitos; sensible a la fuente de hogares (rango {min(ecp.deficit, a0.deficit, cpk.deficit, a1.deficit):,.0f}-{max(ecp.deficit, a0.deficit, cpk.deficit, a1.deficit):,.0f} en las variantes con corrección).
 
 ## Problemas abiertos
 
 1. Sin viviendas protegidas en raw: las terminadas totales y el déficit no son directamente comparables con el BdE.
-2. Fuente de hogares/terminadas del BdE no verificada; no se puede explicar la diferencia de ~{a1.deficit - 750000:,.0f} con certeza.
+2. La fuente de hogares (ECP a 1 de enero) y la cobertura de terminadas del BdE son inferencias nuestras (el BdE no nombra la operación); la cifra de 100.980 terminadas en 2024 es NO VERIFICADA.
 3. Caldera-Johansson (2013) y Cavalleri et al. (2019): NO VERIFICADAS; la cifra 0,45 solo está respaldada por la cita literal del IA 2025.
-4. Elasticidades de niveles muy altas y sensibles al periodo (colapso 2008-2013): interpretar con cautela; falta una especificación con stock de vivienda/suelo y restricciones regulatorias.
-5. Sin wild cluster bootstrap en el panel (solo cluster y DK); instrumentos de la misma familia.
+4. Elasticidades de niveles muy altas, sin cointegración robusta y sensibles al periodo (en terminadas cae desde 2014, en iniciadas sube): interpretar con cautela; falta una especificación con stock de vivienda/suelo y restricciones regulatorias.
+5. Instrumentos de la misma familia (J con poca potencia); wild cluster bootstrap con 16-17 clusters puede ser todavía poco fiable.
 6. Johansen sin dummies estacionales; 2 huecos de iniciadas interpolados solo en los contrastes de cointegración.
 7. Parque MIVAU: estimación derivada, parcialmente mecánica con las terminadas; sin dato de 2026.
 """

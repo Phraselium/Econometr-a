@@ -1,0 +1,7 @@
+variable,esperado,DOLS,EG_q,UECM,discrepancia
+Empleo (LP),+,1.9510 (0.4801),0.8366 (0.3271),0.2529 (1.0978),signo OK; magnitud NO robusta: rango 0.84-2.67 según estimador/vector; literatura.md no da magnitud de referencia
+Tipo hipotecario (LP),-,-0.0172 (0.0171),-0.0443 (0.0093),-0.1235 (0.0568),
+Permisos t−4 (LP),-,0.0595 (0.0454),0.1629 (0.0229),0.2227 (0.0844),DISCREPANCIA de signo en algún estimador
+Costes construcción (LP),+,0.2659 (0.1646),0.5133 (0.1466),1.2435 (0.6106),
+Renta real (LP),+,1.4566 (0.3884),,,
+Pob. extranjera (LP),+,0.7681 (0.1458),,,

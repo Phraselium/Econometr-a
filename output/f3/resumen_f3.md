@@ -258,12 +258,14 @@ Comparabilidad (docs/literatura.md): Saiz (2007, EE. UU.): entrada = 1 % de la p
 
 
 ## Busqueda de especificaciones
-Especificaciones registradas en F3: **126** (126 con p de interes). Correccion de Holm/Bonferroni sobre TODAS ellas en `correccion_busqueda.csv`. Para las 4 estimaciones 2SLS principales (FE) el p-valor del wild bootstrap y el ajustado:
+Especificaciones registradas en F3: **149** (149 con p de interes). Correccion de Holm/Bonferroni sobre TODAS ellas en `correccion_busqueda.csv`. Para las 4 estimaciones 2SLS principales (FE) el p-valor del wild bootstrap y el ajustado:
 
 | modelo               |    coef |      p |   p_holm |   p_bonferroni |
 |:---------------------|--------:|-------:|---------:|---------------:|
 | PAN_ipv_FE_2SLS      | -1.615  | 0.2097 |        1 |              1 |
 | PAN_p_tasado_FE_2SLS | -0.8753 | 0.4885 |        1 |              1 |
+| PAN_serpavi_FE_2SLS  |  0.5536 | 0.498  |        1 |              1 |
+| PAN_ipc_alq_FE_2SLS  |  0.4366 | 0.1194 |        1 |              1 |
 
 La mayoria de filas son robusteces/diagnosticos no independientes; la correccion sobre todas es muy conservadora. RMSE fuera de muestra no aplica en F3 (columna vacia).
 

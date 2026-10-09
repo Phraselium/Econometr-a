@@ -541,7 +541,7 @@ for dep in ("terminadas", "visados"):
             mid = f"panel_{dep}_L{L}_{'te' if te else 'noTE'}"
             REG.log("F4", mid, f"d4 ln {dep}_ct ~ d4 ln ipv_c,t-{L} [{lab}; cluster CCAA]", dfp.index.get_level_values(1).min(),
                     dfp.index.get_level_values(1).max(), int(rc.nobs), np.nan, np.nan, np.nan, np.nan, b,
-                    float(rc.pvalues[f"p{L}"]), "familia=elasticidad panel (robustez); Extremadura sin terminadas")
+                    float(rc.pvalues[f"p{L}"]), "familia=elasticidad panel (robustez)")
             ent_ = dfp.index.get_level_values(0).to_numpy(); tim_ = dfp.index.get_level_values(1).to_numpy()
             _, t_w, p_w = wcb_webb(dfp["y"].to_numpy(float), dfp[f"p{L}"].to_numpy(float), ent_, tim_, te)
             panel_rows.append(dict(modelo=mid, dep=dep, lag_trim=L, efectos=lab, beta=b, p_WCB_webb=p_w, EE_cluster=float(rc.std_errors[f"p{L}"]),
@@ -768,7 +768,7 @@ No se calculó Romano-Wolf.
 
 ## 4. Panel CCAA (robustez)
 
-Δ4 ln (terminadas / iniciadas) por CCAA sobre Δ4 ln IPV CCAA retardado (0, 4, 8 trimestres); EE cluster por CCAA y Driscoll-Kraay (bandwidth 4); Extremadura sin terminadas (16 CCAA).
+Δ4 ln (terminadas / iniciadas) por CCAA sobre Δ4 ln IPV CCAA retardado (0, 4, 8 trimestres); EE cluster por CCAA y Driscoll-Kraay (bandwidth 4) (17 CCAA).
 {tm(pan_tab[['dep','lag_trim','efectos','beta','EE_cluster','p_cluster','EE_DK','p_DK','n','CCAA']], ".3g", index=False)}
 `p_WCB_webb`: wild cluster bootstrap (Webb, 9.999 réplicas, semilla 20261009, restringido bajo H0: β=0, cluster por CCAA), pre-registrado en decisiones.md.
 Con efectos de tiempo la asociación desaparece (L4, L8 en terminadas; L8 en iniciadas) o cambia de signo (iniciadas L4: {g(pan_tab, modelo='panel_visados_L4_te').beta:.2f}, p cluster {g(pan_tab, modelo='panel_visados_L4_te').p_cluster:.3f}, p WCB {g(pan_tab, modelo='panel_visados_L4_te').p_WCB_webb:.3f}); con solo FE de CCAA es positiva y significativa salvo en iniciadas L8. **Lo estimado:** no hay evidencia de que las CCAA con mayor subida relativa de precios construyan relativamente más; no se puede atribuir la asociación nacional al 'ciclo común' (la identificación con efectos de tiempo viene de desviaciones regionales más ruidosas, hay atenuación, derrames entre CCAA y Δ4 solapadas).
@@ -785,7 +785,7 @@ Con efectos de tiempo la asociación desaparece (L4, L8 en terminadas; L8 en ini
 2. La fuente de hogares (ECP a 1 de enero) y la cobertura de terminadas del BdE son inferencias nuestras (el BdE no nombra la operación); la cifra de 100.980 terminadas en 2024 es NO VERIFICADA.
 3. Caldera-Johansson (2013) y Cavalleri et al. (2019): NO VERIFICADAS; la cifra 0,45 solo está respaldada por la cita literal del IA 2025.
 4. Elasticidades de niveles muy altas, sin cointegración robusta y sensibles al periodo (en terminadas cae desde 2014, en iniciadas sube): interpretar con cautela; falta una especificación con stock de vivienda/suelo y restricciones regulatorias.
-5. Instrumentos de la misma familia (J con poca potencia); wild cluster bootstrap con 16-17 clusters puede ser todavía poco fiable.
+5. Instrumentos de la misma familia (J con poca potencia); wild cluster bootstrap con 17 clusters puede ser todavía poco fiable.
 6. Johansen sin dummies estacionales; 2 huecos de iniciadas interpolados solo en los contrastes de cointegración.
 7. Parque MIVAU: estimación derivada, parcialmente mecánica con las terminadas; sin dato de 2026.
 """

@@ -18,3 +18,10 @@ Problemas que persisten tras las iteraciones de revisión, o restricciones de da
 - El crédito nuevo contemporáneo es simultáneo con el precio (en t−1 cambia de signo); la variante con crédito en t−1 rechaza Breusch-Godfrey.
 - Selección: el modelo preferido gana en solo el 1,5 % de las réplicas bootstrap; tras Bonferroni (K=1.728) ningún regresor es significativo al 5 %; fuera de muestra no mejora al AR(4) (selección hecha con la muestra completa).
 - RESET rechaza en la ecuación preferida; quiebre en 2014Q1 (Chow p=0,012); Bai-Perron detecta 3 quiebres en el largo plazo.
+
+## F3 (aprobada en re-revisión)
+- Inmigración y precios: con el IV shift-share (Card, cuotas 2002), ningún efecto sobrevive al wild cluster bootstrap ni a Holm (150 especificaciones; p Holm mínimo 0,051). El IC95 % del IPV [−3,90; 0,67] excluye las magnitudes de Saiz (2007) y González-Ortega (2013); la diferencia se atribuye a diseño y periodo (2008+, peso de la cuota europea 2002 y de Baleares), no a un error.
+- Pretendencias: significativas para el IPC alquiler (grupo América); la prueba 1996-2001 no es computable con data/processed (sin precios por CCAA antes de 2002; cálculo externo del revisor p=0,13).
+- 17 clusters: J de Hansen con baja potencia; AKM solo simplificado (5 grupos); BHJ inviable con 5 grupos.
+- Canal comprador (compras de extranjeros residentes): coeficiente 2SLS muy negativo incluso sin 2008-09 → posible violación de la exclusión; no se interpreta.
+- Sin flujos de inmigración trimestrales; el flujo anual nacional (N≈17-27) no permite inferencia HAC fiable.

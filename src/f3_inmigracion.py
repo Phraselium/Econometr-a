@@ -801,7 +801,7 @@ def resumen(P):
              "- IPV: sin efecto distinguible de cero en OLS; el 2SLS es negativo y su IC95 % excluye +1. En compraventas "
              "(IPV, valor tasado) no hay ni asociacion significativa: formulacion correcta = 'sin evidencia de efecto "
              "positivo'. Alquiler IPC: asociacion positiva en OLS (0,53; WCB p = 0,004) que NO sobrevive a Holm sobre las "
-             "149 especificaciones (Holm 0,59); 2SLS 0,44 no significativo (WCB p = 0,12); el IPC alquiler no estaba en el "
+             "150 especificaciones (Holm 0,59); 2SLS 0,44 no significativo (WCB p = 0,12); el IPC alquiler no estaba en el "
              "diseno prefijado (se anade despues, ver docs/decisiones.md); el resultado lo mueve America, cuya cuota 2002 "
              "tiene pretendencia significativa.\n"
              "- Pretendencias: la ventana 2003-07 esta DENTRO de la muestra de estimacion del valor tasado y del IPC alquiler "

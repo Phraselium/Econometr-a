@@ -305,7 +305,7 @@ tab_fe = pd.DataFrame(rows, columns=["variable", "coef", "EE_cluster", "p_cluste
                                      "EE_DK_bw3", "p_DK_bw3", "p_wild_Webb"]).set_index("variable")
 save(tab_fe, "tabla_fe_principal")
 sec("1a. FE bidireccional (CCAA + anio), muestra principal",
-    f"N={len(MAIN)}, {N_MAIN} CCAA, T={T_MAIN}. EE cluster por CCAA (16 clusters), Driscoll-Kraay (Bartlett; con T=17 ancho 2-3, "
+    f"N={len(MAIN)}, {N_MAIN} CCAA, T={T_MAIN}. EE cluster por CCAA (17 clusters), Driscoll-Kraay (Bartlett; con T=17 ancho 2-3, "
     f"poco fiable) y p-valor del wild cluster bootstrap restringido (Webb, {NBOOT} replicas, semilla {SEED}) para H0: coef=0.\n\n"
     + tm(tab_fe))
 

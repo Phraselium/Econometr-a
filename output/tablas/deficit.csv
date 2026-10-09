@@ -1,0 +1,25 @@
+tipo,variante,periodo,sum_delta_hogares,sum_terminadas,deficit,pct_hogares_2025T4,nota,bde,diferencia,BdE_implicito,contribucion_a_deficit_nuestro_menos_BdE,delta_hogares,terminadas,deficit_acum_desde_2021,delta_hogares_sin_correccion
+variante,(a) EPA corregida (PRINCIPAL),2021T1-2025T4,1.278e+06,411900,866100,4.4,"Δ2021T1 sustituido por la media de Δ 2020T2-T4 y 2021T2 = 34,600 hogares",,,,,,,,
+variante,(a) EPA corregida (PRINCIPAL),2021T1-2026T2,1.4226e+06,452036,970564,4.9,"Δ2021T1 sustituido por la media de Δ 2020T2-T4 y 2021T2 = 34,600 hogares (extensión)",,,,,,,,
+variante,(a') EPA con Δ2021T1 = 0,2021T1-2025T4,1.2434e+06,411900,831500,4.2,Δ2021T1 = 0,,,,,,,,
+variante,(a') EPA con Δ2021T1 = 0,2021T1-2026T2,1.388e+06,452036,935964,4.7,Δ2021T1 = 0 (extensión),,,,,,,,
+variante,(a'') EPA sin corregir (solo referencia),2021T1-2025T4,1.0356e+06,411900,623700,3.1,incluye el salto metodológico de 2021T1 (nivel),,,,,,,,
+variante,(a'') EPA sin corregir (solo referencia),2021T1-2026T2,1.1802e+06,452036,728164,3.7,incluye el salto metodológico de 2021T1 (nivel) (extensión),,,,,,,,
+variante,(b) ECP 60131 (stock a 1 de enero),2021T1-2025T4 (H 1-ene-2026 − H 1-ene-2021),1.22284e+06,411900,810936,4.1,ECP es stock a día 1 del trimestre: no hay trimestre perdido ni imputación,,,,,,,,
+variante,(b) ECP 60131 (stock a 1 de enero),2021T1-2026T2 (H 1-jul-2026 − H 1-ene-2021),1.33564e+06,452036,883601,4.5,extensión,,,,,,,,
+variante,(c) Δparque MIVAU anual − Δhogares EPA corregida,2021-2025,1.278e+06,475848,802152,4,parque = estimación MIVAU de viviendas totales (incl. secundarias y vacías); sin dato 2026,,,,,,,,
+comparación BdE (concepto),Déficit acumulado 2021-2025,,,,866100,,BdE IA 2025 p. 157: terminadas − creación neta de hogares (signo cambiado),750000,116100,,,,,,
+comparación BdE (concepto),Creación neta de hogares 2025,,,,258200,,"Nosotros: EPA corregida; la fuente de hogares del BdE es una inferencia (ECP a 1 de enero, ver filas siguientes)",240000,18200,,,,,,
+comparación BdE (concepto),Viviendas terminadas 2025,,,,80792,,Nosotros: SOLO viviendas libres MIVAU (sin protegidas),92000,-11208,,,,,,
+comparación BdE (concepto),Creación neta de hogares 2025 (ECP a 1 de enero),,,,241013,,INFERENCIA: ECP 60131 H(1-ene-2026) − H(1-ene-2025); el BdE no nombra la operación estadística,240000,1013,,,,,,
+comparación BdE (concepto),Media anual de hogares 2021-2024 (ECP a 1 de enero),,,,245456,,"INFERENCIA, idem; BdE p. 157: 'promedio anual de 245.000 entre 2021 y 2024'",245000,455.75,,,,,,
+comparación BdE (concepto),Déficit en % de hogares,,,,4.36248,,% sobre hogares EPA 2025T4,3.7,0.662477,,,,,,
+comparación BdE (concepto),Déficit 2021-2025 (IEF otoño 2025),,,,866100,,IEF con datos del 1S 2025; periodo y fuente distintos,700000,166100,,,,,,
+descomposición de la diferencia con el BdE,Δhogares 2021-2025,,,,1.278e+06,,fuente de hogares: EPA corregida frente a ECP a 1 de enero (implícita en el BdE: inferencia),,,1.22284e+06,55164,,,,
+descomposición de la diferencia con el BdE,Terminadas 2021-2025,,,,411900,,implícito BdE = ΔECP − 750.000; diferencia ≈ viviendas protegidas no incluidas (y redondeo de '750.000'),,,472836,60936,,,,
+principal por año,2021,,,,223709,,,,,,,307800,84091,223709,65400
+principal por año,2022,,,,231165,,,,,,,311100,79935,454874,311100
+principal por año,2023,,,,184927,,,,,,,265400,80473,639801,265400
+principal por año,2024,,,,48891,,,,,,,135500,86609,688692,135500
+principal por año,2025,,,,177408,,,,,,,258200,80792,866100,258200
+principal por año,2026T1-T2,,,,104464,,,,,,,144600,40136,970564,144600

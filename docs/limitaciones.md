@@ -30,16 +30,19 @@ Problemas que persisten tras las iteraciones de revisión, o restricciones de da
 - Déficit 2021-2025: 866.100 (EPA corregida, principal), 810.936 (ECP a 1 de enero), frente a ~750.000 del BdE. La diferencia (≈116.100) se descompone en +55.164 por la fuente de hogares y +60.936 por la vivienda protegida, ausente de nuestras terminadas (solo vivienda libre MIVAU). Que el BdE use la ECP es una inferencia; la cifra de 100.980 terminadas en 2024 (prensa) está NO VERIFICADA.
 - Elasticidad de la oferta: los DOLS en niveles son descriptivos (cointegración 1/3, ECM no significativo, BG y RESET fallan, quiebre 2014). En Δ4, iniciadas β=1,39 (EE 0,63): no se rechaza β=0,45 (p Holm 0,27). El 0,45 del BdE (Caldera-Johansson 2013; Cavalleri et al. 2019, NO VERIFICADAS) mide previsiblemente otro concepto (inversión residencial / stock); la traducción flujo→stock no se ha hecho.
 - Instrumentos del precio: solo la renta es defendible como desplazador de demanda excluido; ocupados y población pueden afectar a la oferta (exclusión dudosa).
-- Pendientes menores trasladados a F7: fila antigua «¿ECP?» en comparacion_bde_deficit; signo de costes en la ecuación de permisos; «inversión residencial» como inferencia.
 
 ## F5 (aprobada en re-revisión)
 - Panel anual de 17 CCAA (2009-2025): el efecto de la cuota extranjera depende de la alineación temporal (0,1 a 1,9 % por pp) y ninguno sobrevive a Holm (mínimo 0,151); asociación.
 - No se detecta heterogeneidad entre CCAA (poolability p wild 0,363; límite de aleatorización 1/17), lo que no prueba homogeneidad; la C. Valenciana solo difiere en lo descriptivo y el signo depende de la medida de precio (IPV vs valor tasado).
 - El test CD de Pesaran no es interpretable sobre residuos de FE bidireccional/CCE (Juodis y Reese 2022); no se calculó el CDw.
 - 17 clusters: inferencia apoyada en wild cluster bootstrap; terminadas retardadas con signo positivo (contrario a lo esperado, p wild 0,075).
-- Errata menor pendiente: la sección 1a de resumen_f5.md dice «16 clusters» (son 17).
 
 ## F2 — bloque de precio real (condición de la re-revisión, cumplida)
 - Ecuación real: el término de corrección del error es significativo en toda la muestra (−0,106, EE 0,035) pero cambia de signo antes de 2020 (+0,010, p=0,72) y no es significativo desde 2014: la corrección hacia el equilibrio no es estable.
 - Costes reales con signo negativo en el largo plazo (−0,66) y tipo real ≈0: relación estadística, no estructural. DOLS real con BG, RESET y VIF (17) que fallan.
 - Ningún término del corto plazo real sobrevive a Bonferroni (K=576-1.728); el preferido rara vez gana en el bootstrap de la selección; no mejora al AR(4) fuera de muestra.
+
+## Resueltos en F7 (solo texto de salida; las estimaciones no cambian)
+- F3: el texto decía «Holm sobre las 149 especificaciones»; son 150 (src/f3_inmigracion.py, resumen_f3.md).
+- F5: la sección 1a de resumen_f5.md decía «16 clusters»; son 17 (src/f5_panel.py).
+- F4: la fila antigua «¿ECP?» de comparacion_bde_deficit ya no existe (nota actualizada); resumen_f4.md añade ahora «inversión residencial» como inferencia, el signo positivo de los costes en la ecuación de permisos, la traducción flujo→stock (aritmética) y que solo la renta es un instrumento defendible.

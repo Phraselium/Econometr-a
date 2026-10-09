@@ -28,7 +28,7 @@ Panel anual `panel_ccaa_a`: dependiente d_ln_ipv (IPV media anual, base 2025). M
 
 ## 1a. FE bidireccional (CCAA + anio), muestra principal
 
-N=289, 17 CCAA, T=17. EE cluster por CCAA (16 clusters), Driscoll-Kraay (Bartlett; con T=17 ancho 2-3, poco fiable) y p-valor del wild cluster bootstrap restringido (Webb, 9999 replicas, semilla 20261009) para H0: coef=0.
+N=289, 17 CCAA, T=17. EE cluster por CCAA (17 clusters), Driscoll-Kraay (Bartlett; con T=17 ancho 2-3, poco fiable) y p-valor del wild cluster bootstrap restringido (Webb, 9999 replicas, semilla 20261009) para H0: coef=0.
 
 | variable                     |      coef |   EE_cluster |   p_cluster |   EE_DK_bw2 |   p_DK_bw2 |   EE_DK_bw3 |   p_DK_bw3 |   p_wild_Webb |
 |:-----------------------------|----------:|-------------:|------------:|------------:|-----------:|------------:|-----------:|--------------:|

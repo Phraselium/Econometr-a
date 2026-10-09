@@ -1,0 +1,44 @@
+bloque,especificacion,tramo,maxlags,N,estimacion,EE_HAC,p,hipotesis,fuente
+Beta Δ4 (HAC),beta_València_vs_Provincia,muestra completa,4,82,1.39482,0.0943586,2.86127e-05,beta = 1,f6/beta_todos.csv
+Beta Δ4 (HAC),beta_València_vs_Provincia,muestra completa,6,82,1.39482,0.0922117,1.85508e-05,beta = 1,f6/beta_todos.csv
+Beta Δ4 (HAC),beta_València_vs_C. Valenciana,muestra completa,4,82,1.51491,0.101918,4.36682e-07,beta = 1,f6/beta_todos.csv
+Beta Δ4 (HAC),beta_València_vs_C. Valenciana,muestra completa,6,82,1.51491,0.0996001,2.34322e-07,beta = 1,f6/beta_todos.csv
+Beta Δ4 (HAC),beta_València_vs_España,muestra completa,4,82,1.72887,0.105419,4.7119e-12,beta = 1,f6/beta_todos.csv
+Beta Δ4 (HAC),beta_València_vs_España,muestra completa,6,82,1.72887,0.102695,1.27146e-12,beta = 1,f6/beta_todos.csv
+Beta Δ4 (HAC),beta_compraventas_València_vs_C. Valenciana,muestra completa,4,73,1.06093,0.0515989,0.23766,beta = 1,f6/beta_todos.csv
+Beta Δ4 (HAC),beta_compraventas_València_vs_España,muestra completa,4,73,1.14027,0.0558101,0.0119575,beta = 1,f6/beta_todos.csv
+Beta Δ4 (HAC),beta_compraventas_València_vs_CV sin València (parte-todo),muestra completa,4,73,1.03562,0.0535099,0.50566,beta = 1,f6/beta_todos.csv
+Beta por tramos,València_vs_Provincia,2006Q1-2013Q4,,32,1.32738,0.0889112,0.000231308,beta = 1,f6/beta_por_tramos.csv
+Beta por tramos,València_vs_Provincia,2014Q1-2019Q4,,24,2.61745,0.294323,3.89622e-08,beta = 1,f6/beta_por_tramos.csv
+Beta por tramos,València_vs_Provincia,2020Q1-2026Q2,,26,1.01571,0.130095,0.903878,beta = 1,f6/beta_por_tramos.csv
+Beta por tramos,València_vs_C. Valenciana,2006Q1-2013Q4,,32,1.57858,0.115444,5.39417e-07,beta = 1,f6/beta_por_tramos.csv
+Beta por tramos,València_vs_C. Valenciana,2014Q1-2019Q4,,24,3.37643,0.702659,0.000719449,beta = 1,f6/beta_por_tramos.csv
+Beta por tramos,València_vs_C. Valenciana,2020Q1-2026Q2,,26,1.02021,0.111948,0.85673,beta = 1,f6/beta_por_tramos.csv
+Beta por tramos,València_vs_España,2006Q1-2013Q4,,32,1.671,0.113706,3.60778e-09,beta = 1,f6/beta_por_tramos.csv
+Beta por tramos,València_vs_España,2014Q1-2019Q4,,24,2.80012,0.627553,0.00412465,beta = 1,f6/beta_por_tramos.csv
+Beta por tramos,València_vs_España,2020Q1-2026Q2,,26,1.20372,0.133881,0.128103,beta = 1,f6/beta_por_tramos.csv
+Diferencial de crecimiento por tramo (pp/año),València_vs_Provincia,2006Q1-2013Q4,,32,-1.61567,1.31043,0.2176,dif = 0,f6/diferencial_nivel_por_tramos.csv
+Diferencial de crecimiento por tramo (pp/año),València_vs_Provincia,2014Q1-2019Q4,,24,0.547899,2.35567,0.816081,dif = 0,f6/diferencial_nivel_por_tramos.csv
+Diferencial de crecimiento por tramo (pp/año),València_vs_Provincia,2020Q1-2026Q2,,26,3.42747,0.63733,7.53755e-08,dif = 0,f6/diferencial_nivel_por_tramos.csv
+Diferencial de crecimiento por tramo (pp/año),València_vs_C. Valenciana,2006Q1-2013Q4,,32,-0.961242,1.86271,0.605823,dif = 0,f6/diferencial_nivel_por_tramos.csv
+Diferencial de crecimiento por tramo (pp/año),València_vs_C. Valenciana,2014Q1-2019Q4,,24,0.699904,2.62573,0.789811,dif = 0,f6/diferencial_nivel_por_tramos.csv
+Diferencial de crecimiento por tramo (pp/año),València_vs_C. Valenciana,2020Q1-2026Q2,,26,4.24001,0.670702,2.58614e-10,dif = 0,f6/diferencial_nivel_por_tramos.csv
+Diferencial de crecimiento por tramo (pp/año),València_vs_España,2006Q1-2013Q4,,32,-1.72837,2.0171,0.391522,dif = 0,f6/diferencial_nivel_por_tramos.csv
+Diferencial de crecimiento por tramo (pp/año),València_vs_España,2014Q1-2019Q4,,24,0.313738,2.54268,0.901799,dif = 0,f6/diferencial_nivel_por_tramos.csv
+Diferencial de crecimiento por tramo (pp/año),València_vs_España,2020Q1-2026Q2,,26,5.57155,0.968031,8.63619e-09,dif = 0,f6/diferencial_nivel_por_tramos.csv
+Quiebres (Wald HAC8),València_vs_Provincia,2014Q1,,82,0.0705433,0.234604,0.480747,sin cambio de beta,f6/quiebres_wald_hac.csv
+Quiebres (Wald HAC8),València_vs_Provincia,2020Q1,,82,-0.428626,0.185205,0.00399307,sin cambio de beta,f6/quiebres_wald_hac.csv
+Quiebres (Wald HAC8),València_vs_Provincia,2022Q3,,82,-0.597231,0.227414,0.0226327,sin cambio de beta,f6/quiebres_wald_hac.csv
+Quiebres (Wald HAC8),València_vs_C. Valenciana,2014Q1,,82,-0.163122,0.262464,0.809397,sin cambio de beta,f6/quiebres_wald_hac.csv
+Quiebres (Wald HAC8),València_vs_C. Valenciana,2020Q1,,82,-0.629826,0.189633,1.35556e-05,sin cambio de beta,f6/quiebres_wald_hac.csv
+Quiebres (Wald HAC8),València_vs_C. Valenciana,2022Q3,,82,-0.731909,0.230108,0.0049972,sin cambio de beta,f6/quiebres_wald_hac.csv
+Quiebres (Wald HAC8),València_vs_España,2014Q1,,82,0.0398658,0.302494,0.792766,sin cambio de beta,f6/quiebres_wald_hac.csv
+Quiebres (Wald HAC8),València_vs_España,2020Q1,,82,-0.527806,0.180582,7.41555e-07,sin cambio de beta,f6/quiebres_wald_hac.csv
+Quiebres (Wald HAC8),València_vs_España,2022Q3,,82,-0.702193,0.267017,0.015281,sin cambio de beta,f6/quiebres_wald_hac.csv
+Bai-Perron sobre la beta,beta_València_vs_Provincia,2018Q2,,,1,,,nº de quiebres,f6/bai_perron_beta.csv
+Bai-Perron sobre la beta,beta_València_vs_C. Valenciana,2013Q2;2016Q2;2020Q1,,,3,,,nº de quiebres,f6/bai_perron_beta.csv
+Bai-Perron sobre la beta,beta_València_vs_España,2009Q1;2018Q2,,,2,,,nº de quiebres,f6/bai_perron_beta.csv
+Diagnósticos (p),beta_València_vs_Provincia,BG4/RESET/CUSUM,,82,,,2.02933e-06,"BG4 p=<0,001; RESET p=<0,001; CUSUM p=0,015",f6/diagnosticos_beta.csv
+Diagnósticos (p),beta_València_vs_C. Valenciana,BG4/RESET/CUSUM,,82,,,4.84766e-07,"BG4 p=<0,001; RESET p=0,001; CUSUM p=0,043",f6/diagnosticos_beta.csv
+Diagnósticos (p),beta_València_vs_España,BG4/RESET/CUSUM,,82,,,1.89638e-06,"BG4 p=<0,001; RESET p=0,022; CUSUM p=0,001",f6/diagnosticos_beta.csv
+Cuota de compradores extranjeros CV - España (descriptivo),trimestres con CV > España,2007Q1-,,77,77,,,hecho descriptivo (el p numérico no es fiable),f6/cuota_extranjeros_inferencia.csv

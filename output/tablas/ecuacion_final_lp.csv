@@ -1,0 +1,6 @@
+termino,coef,EE_HAC,IC95_inf,IC95_sup,p,K,p_bonf_K,p_holm_K,N,muestra,precio,EE_tipo,regla_correccion
+const,-15.1839,3.13593,-21.3302,-9.03756,1.28601e-06,,,,72,2008Q1-2025Q4,real,HAC Newey-West (4 retardos),familia de 8 pendientes de largo plazo (4 x nominal/real); NO cubre la elección de regresores
+ln_ocupados,1.48236,0.330136,0.835305,2.12941,7.11719e-06,8,5.69375e-05,5.69375e-05,72,2008Q1-2025Q4,real,HAC Newey-West (4 retardos),familia de 8 pendientes de largo plazo (4 x nominal/real); NO cubre la elección de regresores
+tipo_hip_real,0.00223133,0.00806697,-0.0135796,0.0180423,0.782087,8,1,0.816908,72,2008Q1-2025Q4,real,HAC Newey-West (4 retardos),familia de 8 pendientes de largo plazo (4 x nominal/real); NO cubre la elección de regresores
+ln_permisos_l4,0.0320873,0.0292294,-0.0252013,0.0893759,0.272303,8,1,0.816908,72,2008Q1-2025Q4,real,HAC Newey-West (4 retardos),familia de 8 pendientes de largo plazo (4 x nominal/real); NO cubre la elección de regresores
+ln_costes_real,-0.659766,0.251164,-1.15204,-0.167492,0.0086185,8,0.068948,0.051711,72,2008Q1-2025Q4,real,HAC Newey-West (4 retardos),familia de 8 pendientes de largo plazo (4 x nominal/real); NO cubre la elección de regresores

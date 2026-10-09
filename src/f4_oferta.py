@@ -142,7 +142,7 @@ t25 = tab.loc[2025] if 2025 in tab.index else tab.loc["2025"]
 a_ = dfv.iloc[0]
 bde = pd.DataFrame([
     ["Déficit acumulado 2021-2025", 750000, a_["deficit"], "BdE IA 2025 p. 157: terminadas − creación neta de hogares (signo cambiado)"],
-    ["Creación neta de hogares 2025", 240000, float(t25["delta_hogares"]), "BdE: fuente de hogares no verificada aquí (¿ECP?); nosotros EPA"],
+    ["Creación neta de hogares 2025", 240000, float(t25["delta_hogares"]), "Nosotros: EPA corregida; la fuente de hogares del BdE es una inferencia (ECP a 1 de enero, ver filas siguientes)"],
     ["Viviendas terminadas 2025", 92000, float(t25["terminadas"]), "Nosotros: SOLO viviendas libres MIVAU (sin protegidas)"],
     ["Creación neta de hogares 2025 (ECP a 1 de enero)", 240000, ecp_2025, "INFERENCIA: ECP 60131 H(1-ene-2026) − H(1-ene-2025); el BdE no nombra la operación estadística"],
     ["Media anual de hogares 2021-2024 (ECP a 1 de enero)", 245000, ecp_m2124, "INFERENCIA, idem; BdE p. 157: 'promedio anual de 245.000 entre 2021 y 2024'"],
@@ -657,6 +657,8 @@ nac_min, nac_max, n_nac = float(nac.coef_interes.min()), float(nac.coef_interes.
 pan_te = pan_tab[pan_tab.efectos == "FE CCAA+tiempo"]
 d4v = g(d4_tab, dep="visados", k=4)
 
+ini25 = float(anual(np.exp(W["ln_visados"]), [2025]).iloc[0])
+pk25 = float(pk.loc[[i for i in pk.index if str(i).startswith("2025")][-1]])
 txt = f"""# F4 - Oferta (P3): déficit de vivienda y elasticidad de la oferta
 
 Generado por `src/f4_oferta.py` (semilla {SEED}). Todo es **asociación** salvo lo indicado en 'Nivel de evidencia'.
@@ -735,6 +737,8 @@ Instrumentos: ln ocupados, ln pob_extranj, ln renta real del hogar, retardados m
 Lectura: en niveles, la F es alta (≥28), pero las tres variables están tendenciales (probable regresión espuria de primera etapa) y con tendencia el J rechaza en iniciadas. En Δ4, la elasticidad de iniciadas cae a {prd['visados'].beta:.2f} (EE {prd['visados'].EE:.2f}, no significativa) con F1={prd['visados'].F1:.1f}-{iv_tab[(iv_tab.forma=='d4')&(iv_tab.dep=='visados')].F1.max():.1f}.
 **Exclusión (argumentación):** ocupados, población extranjera y renta desplazan la demanda de vivienda, pero también afectan directamente a la construcción (empleo y mano de obra del sector, crédito, costes). Por eso, aunque F≥10 y J no rechace, la identificación es **solo condicional a una exclusión discutible** y los instrumentos son de la misma familia (J con poca potencia). No se afirma causalidad.
 
+**Instrumento defendible:** solo la renta real del hogar es defendible como desplazador de demanda excluido de la ecuación de oferta; ocupados y población extranjera pueden afectar directamente a la construcción (mano de obra del sector, demanda de obra), así que su exclusión es dudosa y el IV con los tres instrumentos no identifica. Con la renta como único instrumento no se ha reestimado aquí (no se añaden modelos); queda como línea futura.
+
 ### Cointegración de la ecuación de iniciadas (los tres contrastes)
 
 {tm(cdf[['sistema','N','EG_t','EG_p','J_traza0','J_cv95','J_rango_traza','ARDL_F','ARDL_I0_5','ARDL_I1_5','n_rechazos','decision']], ".3g", index=False)}
@@ -755,7 +759,11 @@ Referencia: BdE, Informe Anual 2025, p. 156: "España presentaría una elasticid
     for d_ in PRINCIPAL) + f"""
 
 (EE HAC entre paréntesis.) Tabla completa con IC95 y p de H0: β=0,45 en `contraste_bde.csv`; figura `elasticidades_vs_bde.png`.
-Por qué no son directamente comparables: (i) el BdE habla de la elasticidad de la **inversión residencial** (stock/flujo agregado) a precios reales de **largo plazo** entre países; la nuestra es la de **viviendas libres iniciadas** (un flujo muy volátil, cero en ciclos bajos) al precio real retardado; (ii) el colapso de 2008-2013 puede inflar la elasticidad de las **terminadas** (baja de {pr['terminadas'].beta:.2f} a {pop['terminadas'].beta_DOLS:.2f} desde 2014T1), pero **no** la de iniciadas, que sube desde 2014T1 (DOLS {pop['visados'].beta_DOLS:.2f}, OLS {pop['visados'].beta_OLS:.2f}, IV {pop['visados'].beta_IV:.2f}); por tanto el colapso no explica por sí solo la magnitud de las iniciadas; (iii) los permisos son un índice (2021=100) y las terminadas un flujo con retardo de obra; (iv) los regresores (precio real, costes reales, tipo real) no coinciden con la especificación de los trabajos citados (no verificados). **Quiebre 2008/2014:** estimar desde 2014T1 reduce la de terminadas y aumenta la de iniciadas; los resultados son sensibles a la submuestra y Chow rechaza estabilidad en 2014T1 en las tres ecuaciones.
+Por qué no son directamente comparables: (i) el BdE habla de una «elasticidad de la oferta a largo plazo» estimada con modelos macroeconómicos entre países (IA 2025, p. 156); que sea la elasticidad de la **inversión residencial** es una **inferencia nuestra** a partir del contexto del texto y de las fuentes citadas (NO VERIFICADAS), no algo que el BdE afirme (stock/flujo agregado) a precios reales de **largo plazo** entre países; la nuestra es la de **viviendas libres iniciadas** (un flujo muy volátil, cero en ciclos bajos) al precio real retardado; (ii) el colapso de 2008-2013 puede inflar la elasticidad de las **terminadas** (baja de {pr['terminadas'].beta:.2f} a {pop['terminadas'].beta_DOLS:.2f} desde 2014T1), pero **no** la de iniciadas, que sube desde 2014T1 (DOLS {pop['visados'].beta_DOLS:.2f}, OLS {pop['visados'].beta_OLS:.2f}, IV {pop['visados'].beta_IV:.2f}); por tanto el colapso no explica por sí solo la magnitud de las iniciadas; (iii) los permisos son un índice (2021=100) y las terminadas un flujo con retardo de obra; (iv) los regresores (precio real, costes reales, tipo real) no coinciden con la especificación de los trabajos citados (no verificados). **Quiebre 2008/2014:** estimar desde 2014T1 reduce la de terminadas y aumenta la de iniciadas; los resultados son sensibles a la submuestra y Chow rechaza estabilidad en 2014T1 en las tres ecuaciones.
+
+**Flujo frente a stock (aritmética, sin estimar):** una elasticidad de flujo β de iniciadas implica que un +10 % de precio real se asocia con un +{10*pr['visados'].beta:.1f} % de iniciadas anuales (iniciadas libres 2025: {ini25:,.0f}, es decir, +{ini25*pr['visados'].beta*0.10:,.0f} viviendas/año). Sobre el parque MIVAU a 31-dic-2025 ({pk25:,.0f} viviendas) eso es {100*ini25*pr['visados'].beta*0.10/pk25:.2f} % del parque: una elasticidad de flujo alta es compatible con una oferta de stock muy inelástica, y la elasticidad de flujo no es comparable con una elasticidad de stock.
+
+**Signo de los costes en permisos:** en el DOLS de permisos el coeficiente de los costes reales es POSITIVO (principal k=4: {pr['permisos'].beta_costes:.2f}), contrario al signo esperado (costes más altos deberían reducir la oferta): se interpreta como comovimiento de tendencias, no como efecto de costes (en iniciadas y terminadas es negativo).
 
 ### Corrección por búsqueda
 

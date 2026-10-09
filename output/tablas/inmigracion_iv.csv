@@ -1,0 +1,49 @@
+n,clusters,coef,EE_cluster,p_cluster,EE_DK,p_WCB_restr,resultado,spec,est,muestra,F_1a_etapa,pi,EE_pi,RF_coef,RF_p,id_correccion,p_holm_150,p_bonf_150,nivel_evidencia_resultado,F_efectivo_ge10_resultado,sobrevive_WCB_resultado,pretendencias_no_signif_resultado
+306,17,-0.453796,0.502658,0.380027,0.767655,0.384738,IPV (precio),FE,OLS,2008-2025,,,,,,PAN_ipv_FE_OLS,1,1,asociacion,True,False,True
+306,17,-1.61494,1.07848,0.153751,0.815721,0.209721,IPV (precio),FE,2SLS,2008-2025,17.8689,0.564654,0.133578,-0.911881,0.190248,PAN_ipv_FE_2SLS,1,1,asociacion,True,False,True
+306,17,-1.00113,0.633067,0.133352,0.610153,0.136514,IPV (precio),FE+tend,OLS,2008-2025,,,,,,PAN_ipv_FE+tend_OLS,1,1,asociacion,True,False,True
+306,17,-2.59024,1.24915,0.0546208,0.608682,0.0722072,IPV (precio),FE+tend,2SLS,2008-2025,21.7836,0.61424,0.131605,-1.59103,0.0884352,PAN_ipv_FE+tend_2SLS,1,1,asociacion,True,False,True
+306,17,-0.447007,0.517386,0.400371,0.776151,0.411841,IPV (precio),FE+ctrl d_ln_ocupados,OLS,2008-2025,,,,,,PAN_ipv_FEocu_OLS,1,1,asociacion,True,False,True
+306,17,-1.72301,1.05195,0.120953,0.827407,0.188719,IPV (precio),FE+ctrl d_ln_ocupados,2SLS,2008-2025,19.7155,0.581897,0.131052,-1.00261,0.153473,PAN_ipv_FEocu_2SLS,1,1,asociacion,True,False,True
+306,17,1.18305,0.475547,0.0242637,0.940398,,IPV (precio),"FE, x_t y x_t-1 [x]",OLS,2008-2025,,,,,,PAN_ipv_FElag_OLS,1,1,asociacion,True,False,True
+306,17,-2.15657,0.892327,0.0279678,0.699128,,IPV (precio),"FE, x_t y x_t-1 [x_l1]",OLS,2008-2025,,,,,,,,,asociacion,True,False,True
+306,17,1.80423,1.00273,0.0908537,0.978789,,IPV (precio),"FE, x_t y x_t-1 [x]",2SLS,2008-2025,8.90218,,,,,PAN_ipv_FElag_2SLS,1,1,asociacion,True,False,True
+306,17,-3.45864,1.34242,0.0202888,1.19949,,IPV (precio),"FE, x_t y x_t-1 [x_l1]",2SLS,2008-2025,12.0135,,,,,,,,asociacion,True,False,True
+272,17,-0.483772,0.5305,0.375347,0.849648,0.365237,IPV (precio),FE sin 2020-2021,OLS,2008-2025,,,,,,PAN_ipv_FEsinCOVID_OLS,1,1,asociacion,True,False,True
+272,17,-1.77297,1.11129,0.130181,0.817685,0.180418,IPV (precio),FE sin 2020-2021,2SLS,2008-2025,16.9324,0.55305,0.134402,-0.980539,0.165979,PAN_ipv_FEsinCOVID_2SLS,1,1,asociacion,True,False,True
+386,17,0.360816,0.716328,0.621335,0.533478,0.622462,valor tasado,FE,OLS,2003-2025,,,,,,PAN_p_tasado_FE_OLS,1,1,asociacion,True,False,True
+386,17,-0.87533,0.951913,0.371465,0.765734,0.488549,valor tasado,FE,2SLS,2003-2025,53.2211,0.764883,0.104846,-0.669525,0.350191,PAN_p_tasado_FE_2SLS,1,1,asociacion,True,False,True
+386,17,1.03396,0.53529,0.0713212,0.63764,0.0822082,valor tasado,FE+tend,OLS,2003-2025,,,,,,PAN_p_tasado_FE+tend_OLS,1,1,asociacion,True,False,True
+386,17,0.222134,0.925795,0.813425,0.979903,0.806481,valor tasado,FE+tend,2SLS,2003-2025,39.0508,0.726595,0.116273,0.161402,0.815186,PAN_p_tasado_FE+tend_2SLS,1,1,asociacion,True,False,True
+386,17,0.27155,0.682253,0.695876,0.534782,0.70487,valor tasado,FE+ctrl d_ln_ocupados,OLS,2003-2025,,,,,,PAN_p_tasado_FEocu_OLS,1,1,asociacion,True,False,True
+386,17,-0.732972,0.896885,0.425792,0.754438,0.532753,valor tasado,FE+ctrl d_ln_ocupados,2SLS,2003-2025,61.0306,0.780059,0.0998512,-0.571761,0.412976,PAN_p_tasado_FEocu_2SLS,1,1,asociacion,True,False,True
+369,17,1.62772,0.622253,0.0187275,1.03234,,valor tasado,"FE, x_t y x_t-1 [x]",OLS,2004-2025,,,,,,PAN_p_tasado_FElag_OLS,1,1,asociacion,True,False,True
+369,17,-1.49055,0.788945,0.0771149,0.745576,,valor tasado,"FE, x_t y x_t-1 [x_l1]",OLS,2004-2025,,,,,,,,,asociacion,True,False,True
+369,17,3.51809,0.849369,0.000766054,2.06827,,valor tasado,"FE, x_t y x_t-1 [x]",2SLS,2004-2025,29.9715,,,,,PAN_p_tasado_FElag_2SLS,0.11261,0.114908,asociacion,True,False,True
+369,17,-4.3474,1.10658,0.00119915,1.55727,,valor tasado,"FE, x_t y x_t-1 [x_l1]",2SLS,2004-2025,26.032,,,,,,,,asociacion,True,False,True
+352,17,0.40119,0.742195,0.596266,0.547374,0.608261,valor tasado,FE sin 2020-2021,OLS,2003-2025,,,,,,PAN_p_tasado_FEsinCOVID_OLS,1,1,asociacion,True,False,True
+352,17,-0.85642,0.98376,0.396869,0.782242,0.50475,valor tasado,FE sin 2020-2021,2SLS,2003-2025,51.962,0.763774,0.105955,-0.654112,0.375221,PAN_p_tasado_FEsinCOVID_2SLS,1,1,asociacion,True,False,True
+198,16,1.21685,0.336792,0.00255625,0.445054,0.00660066,alquiler SERPAVI,FE,OLS,2012-2024,,,,,,PAN_serpavi_FE_OLS,0.851485,0.990099,asociacion,True,False,False
+198,16,0.553564,0.812573,0.506096,0.563085,0.49805,alquiler SERPAVI,FE,2SLS,2012-2024,10.6277,0.596568,0.182995,0.330239,0.512916,PAN_serpavi_FE_2SLS,1,1,asociacion,True,False,False
+198,16,0.904575,0.338393,0.0173684,0.575241,0.019702,alquiler SERPAVI,FE+tend,OLS,2012-2024,,,,,,PAN_serpavi_FE+tend_OLS,1,1,asociacion,True,False,False
+198,16,-0.696686,0.558847,0.231644,1.16934,0.255926,alquiler SERPAVI,FE+tend,2SLS,2012-2024,14.0242,0.603692,0.161204,-0.420584,0.18296,PAN_serpavi_FE+tend_2SLS,1,1,asociacion,True,False,False
+198,16,1.20802,0.334715,0.00257708,0.44728,0.00650065,alquiler SERPAVI,FE+ctrl d_ln_ocupados,OLS,2012-2024,,,,,,PAN_serpavi_FEocu_OLS,0.845085,0.975098,asociacion,True,False,False
+198,16,0.592977,0.77341,0.455156,0.577527,0.434043,alquiler SERPAVI,FE+ctrl d_ln_ocupados,2SLS,2012-2024,10.735,0.601512,0.183587,0.356683,0.461098,PAN_serpavi_FEocu_2SLS,1,1,asociacion,True,False,False
+198,16,1.5629,0.359673,0.000576775,0.545875,,alquiler SERPAVI,"FE, x_t y x_t-1 [x]",OLS,2012-2024,,,,,,PAN_serpavi_FElag_OLS,0.0859395,0.0865163,asociacion,True,False,False
+198,16,-0.487356,0.344508,0.177595,0.440859,,alquiler SERPAVI,"FE, x_t y x_t-1 [x_l1]",OLS,2012-2024,,,,,,,,,asociacion,True,False,False
+198,16,1.59598,0.74313,0.0484907,0.884993,,alquiler SERPAVI,"FE, x_t y x_t-1 [x]",2SLS,2012-2024,11.6374,,,,,PAN_serpavi_FElag_2SLS,1,1,asociacion,True,False,False
+198,16,-1.22116,0.365188,0.00444048,0.661986,,alquiler SERPAVI,"FE, x_t y x_t-1 [x_l1]",2SLS,2012-2024,7.19673,,,,,,,,asociacion,True,False,False
+168,16,1.35795,0.350959,0.00151323,0.502224,0.00510051,alquiler SERPAVI,FE sin 2020-2021,OLS,2012-2024,,,,,,PAN_serpavi_FEsinCOVID_OLS,0.678368,0.765077,asociacion,True,False,False
+168,16,0.814192,0.792882,0.320754,0.70761,0.272127,alquiler SERPAVI,FE sin 2020-2021,2SLS,2012-2024,8.85432,0.569104,0.191256,0.46336,0.320872,PAN_serpavi_FEsinCOVID_2SLS,1,1,asociacion,True,False,False
+391,17,0.534099,0.167368,0.00568228,0.0572446,0.00440044,IPC alquiler,FE,OLS,2003-2025,,,,,,PAN_ipc_alq_FE_OLS,0.594059,0.660066,asociacion,True,False,False
+391,17,0.436562,0.293495,0.156335,0.211035,0.119412,IPC alquiler,FE,2SLS,2003-2025,54.3592,0.762079,0.103363,0.332695,0.187322,PAN_ipc_alq_FE_2SLS,1,1,asociacion,True,False,False
+391,17,0.643075,0.178095,0.00234479,0.0731036,0.00270027,IPC alquiler,FE+tend,OLS,2003-2025,,,,,,PAN_ipc_alq_FE+tend_OLS,0.375338,0.405041,asociacion,True,False,False
+391,17,0.683153,0.302154,0.0380508,0.152677,0.0128013,IPC alquiler,FE+tend,2SLS,2003-2025,39.634,0.72293,0.114832,0.493872,0.0604491,PAN_ipc_alq_FE+tend_2SLS,1,1,asociacion,True,False,False
+391,17,0.532975,0.169104,0.00617233,0.0594199,0.00620062,IPC alquiler,FE+ctrl d_ln_ocupados,OLS,2003-2025,,,,,,PAN_ipc_alq_FEocu_OLS,0.812281,0.930093,asociacion,True,False,False
+391,17,0.439217,0.286773,0.145156,0.207443,0.113711,IPC alquiler,FE+ctrl d_ln_ocupados,2SLS,2003-2025,62.0081,0.776144,0.0985639,0.340896,0.170435,PAN_ipc_alq_FEocu_2SLS,1,1,asociacion,True,False,False
+374,17,0.608745,0.163609,0.00185913,0.106682,,IPC alquiler,"FE, x_t y x_t-1 [x]",OLS,2004-2025,,,,,,PAN_ipc_alq_FElag_OLS,0.262138,0.27887,asociacion,True,False,False
+374,17,-0.0896762,0.125857,0.486403,0.136147,,IPC alquiler,"FE, x_t y x_t-1 [x_l1]",OLS,2004-2025,,,,,,,,,asociacion,True,False,False
+374,17,0.953232,0.385444,0.0249902,0.385356,,IPC alquiler,"FE, x_t y x_t-1 [x]",2SLS,2004-2025,28.5227,,,,,PAN_ipc_alq_FElag_2SLS,1,1,asociacion,True,False,False
+374,17,-0.538697,0.3096,0.101059,0.27939,,IPC alquiler,"FE, x_t y x_t-1 [x_l1]",2SLS,2004-2025,26.8869,,,,,,,,asociacion,True,False,False
+357,17,0.533373,0.171982,0.00686077,0.058337,0.00560056,IPC alquiler,FE sin 2020-2021,OLS,2003-2025,,,,,,PAN_ipc_alq_FEsinCOVID_OLS,0.739274,0.840084,asociacion,True,False,False
+357,17,0.417358,0.293411,0.174102,0.206801,0.147615,IPC alquiler,FE sin 2020-2021,2SLS,2003-2025,53.1662,0.761183,0.104393,0.317686,0.207226,PAN_ipc_alq_FEsinCOVID_2SLS,1,1,asociacion,True,False,False

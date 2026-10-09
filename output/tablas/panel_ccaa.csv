@@ -1,0 +1,52 @@
+bloque,especificacion,variable,coef,EE,p,p_alternativo,tipo_p_alternativo,N,fuente
+"F5 FE CCAA+año, Δln IPV","FE principal (cluster CCAA, DK, wild Webb)",b1 dln ocupados,-0.0280092,0.103702,0.78731,0.8124,wild cluster bootstrap (Webb),289,f5/tabla_fe_principal.csv
+"F5 FE CCAA+año, Δln IPV","FE principal (cluster CCAA, DK, wild Webb)","b2 d(extr/total, pp)",0.00113937,0.00402232,0.777208,0.774,wild cluster bootstrap (Webb),289,f5/tabla_fe_principal.csv
+"F5 FE CCAA+año, Δln IPV","FE principal (cluster CCAA, DK, wild Webb)",b3 dln pob espanola,2.17013,1.02084,0.0344903,0.0784,wild cluster bootstrap (Webb),289,f5/tabla_fe_principal.csv
+"F5 FE CCAA+año, Δln IPV","FE principal (cluster CCAA, DK, wild Webb)",b4 terminadas/1000 hab (t-1),0.00264503,0.00113667,0.020759,0.075,wild cluster bootstrap (Webb),289,f5/tabla_fe_principal.csv
+F5 CCE,CCE-MG,b1 dln ocupados,0.0561671,0.100724,0.577094,,,289,f5/tabla_cce.csv
+F5 CCE,CCE-MG,"b2 d(extr/total, pp)",0.025151,0.0139806,0.0720208,,,289,f5/tabla_cce.csv
+F5 CCE,CCE-MG,b3 dln pob espanola,0.401351,1.26013,0.750106,,,289,f5/tabla_cce.csv
+F5 CCE,CCE-MG,b4 terminadas/1000 hab (t-1),-0.00120153,0.00248089,0.628163,,,289,f5/tabla_cce.csv
+F5 CCE,CCE-P,b1 dln ocupados,-0.0528837,0.0969512,0.585432,,,289,f5/tabla_cce.csv
+F5 CCE,CCE-P,"b2 d(extr/total, pp)",0.0217673,0.0106124,0.0402546,,,289,f5/tabla_cce.csv
+F5 CCE,CCE-P,b3 dln pob espanola,1.99091,1.38803,0.151475,,,289,f5/tabla_cce.csv
+F5 CCE,CCE-P,b4 terminadas/1000 hab (t-1),-0.00115016,0.00215377,0.593327,,,289,f5/tabla_cce.csv
+F5 FE + tendencias CCAA,FE+tendencias,b1 dln ocupados,-0.00387386,0.103429,0.970154,,,289,f5/tabla_fe_tendencias.csv
+F5 FE + tendencias CCAA,FE+tendencias,"b2 d(extr/total, pp)",-0.00738197,0.00693649,0.288307,,,289,f5/tabla_fe_tendencias.csv
+F5 FE + tendencias CCAA,FE+tendencias,b3 dln pob espanola,1.6808,0.863132,0.0526717,,,289,f5/tabla_fe_tendencias.csv
+F5 FE + tendencias CCAA,FE+tendencias,b4 terminadas/1000 hab (t-1),0.00328927,0.00133373,0.014361,,,289,f5/tabla_fe_tendencias.csv
+F5 alineación temporal de b2,flujo del anio t-1 (principal),"b2 d(extr/total, pp)",0.000852841,0.00468645,0.855754,0.8565,wild cluster bootstrap (Webb),272,f5/timing_b2.csv
+F5 alineación temporal de b2,cuota a mitad de anio t,"b2 d(extr/total, pp)",0.0118291,0.00562609,0.0365652,0.0675,wild cluster bootstrap (Webb),272,f5/timing_b2.csv
+F5 alineación temporal de b2,flujo del anio t (contemporaneo),"b2 d(extr/total, pp)",0.0189433,0.00587087,0.00142995,0.0101,wild cluster bootstrap (Webb),272,f5/timing_b2.csv
+F5 corrección por búsqueda (b2),A_FE_cl,b2,,,0.777208,1,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),A_FE_dk,b2,,,0.912715,1,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),A_FE_dk3,b2,,,0.899035,1,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),A_FE_wild,b2,,,0.774,1,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),A_FE_trend,b2,,,0.288307,1,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),A_CCE_MG,b2,,,0.0720208,0.81,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),A_CCE_P,b2,,,0.0402546,0.523309,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),T_flow_tm1,b2,,,0.8565,1,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),T_mid,b2,,,0.0675,0.81,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),T_flow_t,b2,,,0.0101,0.150854,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),R_sin_term,b2,,,0.310158,1,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),R_ptasado_main,b2,,,0.0100569,0.150854,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),R_ptasado_2003,b2,,,0.572444,1,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),Q_Q2_con_pob_d4,b2,,,0.153724,1,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 corrección por búsqueda (b2),Q_Q3_term_por_hab,b2,,,0.27078,1,Holm sobre 15,,f5/correccion_busqueda_beta2.csv
+F5 poolability,H0: pendientes iguales entre CCAA,pendientes iguales entre CCAA,3.38455,,5.78759e-11,0.3627,wild cluster bootstrap (Webb); límite de aleatorización 1/17,,f5/poolability.csv
+F5 C. Valenciana vs España (descriptivo),2014Q1-2026Q2 ipv,crecimiento acumulado CV-España (pp),-14.0507,,,,,,f5/valencia_vs_espana.csv
+F5 C. Valenciana vs España (descriptivo),2014Q1-2026Q2 p_tasado,crecimiento acumulado CV-España (pp),12.1905,,,,,,f5/valencia_vs_espana.csv
+F5 C. Valenciana vs España (descriptivo),2021Q1-2026Q2 ipv,crecimiento acumulado CV-España (pp),2.81935,,,,,,f5/valencia_vs_espana.csv
+F5 C. Valenciana vs España (descriptivo),2021Q1-2026Q2 p_tasado,crecimiento acumulado CV-España (pp),13.6412,,,,,,f5/valencia_vs_espana.csv
+F4 panel oferta (robustez),panel_terminadas_L0_te,"beta (terminadas, retardo 0 trim.)",2.41559,1.02851,0.0190287,0.020402,wild cluster bootstrap (Webb),1122,f4/panel_ccaa.csv
+F4 panel oferta (robustez),panel_terminadas_L0_noTE,"beta (terminadas, retardo 0 trim.)",2.71221,0.281547,0,0,wild cluster bootstrap (Webb),1122,f4/panel_ccaa.csv
+F4 panel oferta (robustez),panel_terminadas_L4_te,"beta (terminadas, retardo 4 trim.)",0.432256,0.84616,0.609568,0.613661,wild cluster bootstrap (Webb),1122,f4/panel_ccaa.csv
+F4 panel oferta (robustez),panel_terminadas_L4_noTE,"beta (terminadas, retardo 4 trim.)",2.56702,0.234837,0,0,wild cluster bootstrap (Webb),1122,f4/panel_ccaa.csv
+F4 panel oferta (robustez),panel_terminadas_L8_te,"beta (terminadas, retardo 8 trim.)",-0.0817626,0.806885,0.919307,0.924392,wild cluster bootstrap (Webb),1122,f4/panel_ccaa.csv
+F4 panel oferta (robustez),panel_terminadas_L8_noTE,"beta (terminadas, retardo 8 trim.)",2.00169,0.186621,0,0,wild cluster bootstrap (Webb),1122,f4/panel_ccaa.csv
+F4 panel oferta (robustez),panel_visados_L0_te,"beta (visados, retardo 0 trim.)",1.58811,0.863852,0.0663013,0.0926093,wild cluster bootstrap (Webb),1071,f4/panel_ccaa.csv
+F4 panel oferta (robustez),panel_visados_L0_noTE,"beta (visados, retardo 0 trim.)",2.06988,0.200335,0,0,wild cluster bootstrap (Webb),1071,f4/panel_ccaa.csv
+F4 panel oferta (robustez),panel_visados_L4_te,"beta (visados, retardo 4 trim.)",-1.63318,0.729165,0.0253256,0.0324032,wild cluster bootstrap (Webb),1071,f4/panel_ccaa.csv
+F4 panel oferta (robustez),panel_visados_L4_noTE,"beta (visados, retardo 4 trim.)",1.18043,0.215014,5.03601e-08,0.00010001,wild cluster bootstrap (Webb),1071,f4/panel_ccaa.csv
+F4 panel oferta (robustez),panel_visados_L8_te,"beta (visados, retardo 8 trim.)",-0.920842,0.632854,0.145969,0.222122,wild cluster bootstrap (Webb),1071,f4/panel_ccaa.csv
+F4 panel oferta (robustez),panel_visados_L8_noTE,"beta (visados, retardo 8 trim.)",0.122851,0.236126,0.602981,0.628963,wild cluster bootstrap (Webb),1071,f4/panel_ccaa.csv

@@ -53,15 +53,15 @@ Principal: Δ2021T1 := media de Δ en 2020T2, 2020T3, 2020T4 y 2021T2 = 34,600. 
 
 ### Contraste con el Banco de España (sin ajustar)
 
-| concepto                                            |      BdE |   este_trabajo_principal | nota                                                                                           |    diferencia |
-|:----------------------------------------------------|---------:|-------------------------:|:-----------------------------------------------------------------------------------------------|--------------:|
-| Déficit acumulado 2021-2025                         | 7.5e+05  |                8.661e+05 | BdE IA 2025 p. 157: terminadas − creación neta de hogares (signo cambiado)                     |     1.161e+05 |
-| Creación neta de hogares 2025                       | 2.4e+05  |                2.582e+05 | BdE: fuente de hogares no verificada aquí (¿ECP?); nosotros EPA                                |     1.82e+04  |
-| Viviendas terminadas 2025                           | 9.2e+04  |                8.079e+04 | Nosotros: SOLO viviendas libres MIVAU (sin protegidas)                                         |    -1.121e+04 |
-| Creación neta de hogares 2025 (ECP a 1 de enero)    | 2.4e+05  |                2.41e+05  | INFERENCIA: ECP 60131 H(1-ene-2026) − H(1-ene-2025); el BdE no nombra la operación estadística | 1,013         |
-| Media anual de hogares 2021-2024 (ECP a 1 de enero) | 2.45e+05 |                2.455e+05 | INFERENCIA, idem; BdE p. 157: 'promedio anual de 245.000 entre 2021 y 2024'                    |   455.8       |
-| Déficit en % de hogares                             | 3.7      |                4.36      | % sobre hogares EPA 2025T4                                                                     |     0.66      |
-| Déficit 2021-2025 (IEF otoño 2025)                  | 7e+05    |                8.661e+05 | IEF con datos del 1S 2025; periodo y fuente distintos                                          |     1.661e+05 |
+| concepto                                            |      BdE |   este_trabajo_principal | nota                                                                                                             |    diferencia |
+|:----------------------------------------------------|---------:|-------------------------:|:-----------------------------------------------------------------------------------------------------------------|--------------:|
+| Déficit acumulado 2021-2025                         | 7.5e+05  |                8.661e+05 | BdE IA 2025 p. 157: terminadas − creación neta de hogares (signo cambiado)                                       |     1.161e+05 |
+| Creación neta de hogares 2025                       | 2.4e+05  |                2.582e+05 | Nosotros: EPA corregida; la fuente de hogares del BdE es una inferencia (ECP a 1 de enero, ver filas siguientes) |     1.82e+04  |
+| Viviendas terminadas 2025                           | 9.2e+04  |                8.079e+04 | Nosotros: SOLO viviendas libres MIVAU (sin protegidas)                                                           |    -1.121e+04 |
+| Creación neta de hogares 2025 (ECP a 1 de enero)    | 2.4e+05  |                2.41e+05  | INFERENCIA: ECP 60131 H(1-ene-2026) − H(1-ene-2025); el BdE no nombra la operación estadística                   | 1,013         |
+| Media anual de hogares 2021-2024 (ECP a 1 de enero) | 2.45e+05 |                2.455e+05 | INFERENCIA, idem; BdE p. 157: 'promedio anual de 245.000 entre 2021 y 2024'                                      |   455.8       |
+| Déficit en % de hogares                             | 3.7      |                4.36      | % sobre hogares EPA 2025T4                                                                                       |     0.66      |
+| Déficit 2021-2025 (IEF otoño 2025)                  | 7e+05    |                8.661e+05 | IEF con datos del 1S 2025; periodo y fuente distintos                                                            |     1.661e+05 |
 
 Diferencias, documentadas y no ajustadas:
 - El BdE (IA 2025, gráficos 2.10 y 2.11, p. 155 y 157) cita como fuente 'INE y Ministerio de Transportes y Movilidad Sostenible' y define la diferencia como viviendas terminadas menos creación neta de hogares, pero **no nombra la operación estadística concreta**. Lo que sigue es **inferencia nuestra**.
@@ -179,6 +179,8 @@ Instrumentos: ln ocupados, ln pob_extranj, ln renta real del hogar, retardados m
 Lectura: en niveles, la F es alta (≥28), pero las tres variables están tendenciales (probable regresión espuria de primera etapa) y con tendencia el J rechaza en iniciadas. En Δ4, la elasticidad de iniciadas cae a 1.06 (EE 0.89, no significativa) con F1=31.6-31.6.
 **Exclusión (argumentación):** ocupados, población extranjera y renta desplazan la demanda de vivienda, pero también afectan directamente a la construcción (empleo y mano de obra del sector, crédito, costes). Por eso, aunque F≥10 y J no rechace, la identificación es **solo condicional a una exclusión discutible** y los instrumentos son de la misma familia (J con poca potencia). No se afirma causalidad.
 
+**Instrumento defendible:** solo la renta real del hogar es defendible como desplazador de demanda excluido de la ecuación de oferta; ocupados y población extranjera pueden afectar directamente a la construcción (mano de obra del sector, demanda de obra), así que su exclusión es dudosa y el IV con los tres instrumentos no identifica. Con la renta como único instrumento no se ha reestimado aquí (no se añaden modelos); queda como línea futura.
+
 ### Cointegración de la ecuación de iniciadas (los tres contrastes)
 
 | sistema                                         |   N |   EG_t |   EG_p |   J_traza0 |   J_cv95 |   J_rango_traza |   ARDL_F |   ARDL_I0_5 |   ARDL_I1_5 |   n_rechazos | decision                          |
@@ -206,7 +208,11 @@ Referencia: BdE, Informe Anual 2025, p. 156: "España presentaría una elasticid
 | permisos k=4 | 2.58 (0.42) | 3.11 (0.41) | 4.07 (1.05; 29; 0.16) | 3.61 (1.12) | 3.18 (0.91) |
 
 (EE HAC entre paréntesis.) Tabla completa con IC95 y p de H0: β=0,45 en `contraste_bde.csv`; figura `elasticidades_vs_bde.png`.
-Por qué no son directamente comparables: (i) el BdE habla de la elasticidad de la **inversión residencial** (stock/flujo agregado) a precios reales de **largo plazo** entre países; la nuestra es la de **viviendas libres iniciadas** (un flujo muy volátil, cero en ciclos bajos) al precio real retardado; (ii) el colapso de 2008-2013 puede inflar la elasticidad de las **terminadas** (baja de 4.26 a 2.86 desde 2014T1), pero **no** la de iniciadas, que sube desde 2014T1 (DOLS 2.36, OLS 3.22, IV 3.47); por tanto el colapso no explica por sí solo la magnitud de las iniciadas; (iii) los permisos son un índice (2021=100) y las terminadas un flujo con retardo de obra; (iv) los regresores (precio real, costes reales, tipo real) no coinciden con la especificación de los trabajos citados (no verificados). **Quiebre 2008/2014:** estimar desde 2014T1 reduce la de terminadas y aumenta la de iniciadas; los resultados son sensibles a la submuestra y Chow rechaza estabilidad en 2014T1 en las tres ecuaciones.
+Por qué no son directamente comparables: (i) el BdE habla de una «elasticidad de la oferta a largo plazo» estimada con modelos macroeconómicos entre países (IA 2025, p. 156); que sea la elasticidad de la **inversión residencial** es una **inferencia nuestra** a partir del contexto del texto y de las fuentes citadas (NO VERIFICADAS), no algo que el BdE afirme (stock/flujo agregado) a precios reales de **largo plazo** entre países; la nuestra es la de **viviendas libres iniciadas** (un flujo muy volátil, cero en ciclos bajos) al precio real retardado; (ii) el colapso de 2008-2013 puede inflar la elasticidad de las **terminadas** (baja de 4.26 a 2.86 desde 2014T1), pero **no** la de iniciadas, que sube desde 2014T1 (DOLS 2.36, OLS 3.22, IV 3.47); por tanto el colapso no explica por sí solo la magnitud de las iniciadas; (iii) los permisos son un índice (2021=100) y las terminadas un flujo con retardo de obra; (iv) los regresores (precio real, costes reales, tipo real) no coinciden con la especificación de los trabajos citados (no verificados). **Quiebre 2008/2014:** estimar desde 2014T1 reduce la de terminadas y aumenta la de iniciadas; los resultados son sensibles a la submuestra y Chow rechaza estabilidad en 2014T1 en las tres ecuaciones.
+
+**Flujo frente a stock (aritmética, sin estimar):** una elasticidad de flujo β de iniciadas implica que un +10 % de precio real se asocia con un +14.4 % de iniciadas anuales (iniciadas libres 2025: 121,827, es decir, +17,594 viviendas/año). Sobre el parque MIVAU a 31-dic-2025 (27,099,556 viviendas) eso es 0.06 % del parque: una elasticidad de flujo alta es compatible con una oferta de stock muy inelástica, y la elasticidad de flujo no es comparable con una elasticidad de stock.
+
+**Signo de los costes en permisos:** en el DOLS de permisos el coeficiente de los costes reales es POSITIVO (principal k=4: 4.73), contrario al signo esperado (costes más altos deberían reducir la oferta): se interpreta como comovimiento de tendencias, no como efecto de costes (en iniciadas y terminadas es negativo).
 
 ### Corrección por búsqueda
 

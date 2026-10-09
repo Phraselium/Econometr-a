@@ -12,6 +12,10 @@ Fuentes (API JSON wstempus del INE):
 Limitaciones (ver docs/fallidas/padron_valencia.md): la API no ofrece población por nacionalidad
 a nivel municipal anual, así que el desglose por nacionalidad es solo a nivel Comunitat Valenciana.
 
+Ampliación: fetch_nacionalidad_pcaxis() baja los ficheros CSV PC-Axis del INE (explotación del
+Padrón continuo por municipios) y da València (46250) por sexo y nacionalidad, 1998-2022, en
+data/raw/ine_padron_vlc_nacionalidad.csv. 2023-2025 quedan como hueco (no publicados en estas fuentes).
+
 Idempotente: si data/raw/ine_padron_valencia.csv existe no se vuelve a bajar (salvo FORCE=1).
 Formato largo estándar (utils_fetch.save). Series = código INE; nombre = Nombre del INE.
 """
@@ -264,10 +268,11 @@ def _canon_cat(raw: str) -> str:
         return "Total Europa"
     if low == "rep. dominicana":
         return "República Dominicana"
-    # Equivalencias de grupos 33946 (2020+) <-> ficheros anuales: solo África y América, que coinciden
-    # valor a valor en todos los años solapados (2003-2019). UE, Europa y Asia tienen composiciones
-    # que difieren entre tablas en algunos años: se dejan con su etiqueta original.
-    grupos = {"de africa": "Total África", "de américa": "Total América"}
+    # Equivalencias de grupos 33946 (2020+) <-> ficheros anuales. En 2019 coinciden valor a valor;
+    # en 2003-2019 difieren como mucho en decenas de personas (revisiones entre tablas). Las UE
+    # (composición distinta: UE15/UE25/UE28/UE27_2020) se dejan con su etiqueta original.
+    grupos = {"de africa": "Total África", "de américa": "Total América", "de asia": "Total Asia",
+              "europa (sin españa)": "Total Europa"}
     return grupos.get(low, s)
 
 
@@ -335,7 +340,7 @@ def fetch_nacionalidad_pcaxis() -> Path:
     """Padrón de València (46250) por sexo y nacionalidad, 1998-2022, desde ficheros PC-Axis/CSV.
 
     Salida: data/raw/ine_padron_vlc_nacionalidad.csv (formato largo; utils_fetch.save).
-    Series: vlc_46250|<sexo>|<nacionalidad> y prov_46|<sexo>|<nacionalidad> (fila 'Total' provincial).
+    Series: vlc_46250|<sexo>|<nacionalidad> (todas) y prov_46|<sexo>|Total (fila Total provincial).
     Huecos: años sin fichero (2023-2025) o sin el dato (1998-2001 sin principales nacionalidades).
     Sin imputación: los valores secretos o vacíos quedan como NaN.
     """
@@ -387,10 +392,12 @@ def fetch_nacionalidad_pcaxis() -> Path:
         strict = dif_c[nv == 0]
         mx_c = float(strict.max()) if len(strict) else 0.0
         peor = strict.idxmax() if len(strict) else None
+        n_vac = int((nv > 0).sum())
+        dif_vac = float(dif_c[nv > 0].max()) if (nv > 0).any() else 0.0
         msgs.append(f"(c) provincia 46: |suma municipios - Total| máx = {mx_c:.1f} personas en combinaciones "
                     f"completas ({'OK' if mx_c <= TOL_MUNI_SUM else 'REVISAR'}; {len(strict)} de "
-                    f"peor={peor}; {len(dif_c)} año×sexo×nac; {int((nv > 0).sum())} con celdas municipales vacías, "
-                    f"dif. máx {float(dif_c[nv > 0].max()) if (nv > 0).any() else 0:.0f} atribuible a secreto)")
+                    f"{len(dif_c)} año×sexo×nac; peor combinación {peor}); {n_vac} combinaciones con celdas "
+                    f"municipales vacías (dif. máx {dif_vac:.0f}, atribuible a secreto)")
 
     vlc = df[df.muni == MUNI_VLC].copy()
     # (a) total = españoles + extranjeros, València, por año y sexo
@@ -428,14 +435,27 @@ def fetch_nacionalidad_pcaxis() -> Path:
         dd = paises["dd"].max()
         msgs.append(f"(d) cruce anual 2003-2019 vs tabla 33946, países y totales: máx |dif| = {dd:.1f} "
                     f"personas ({'OK' if dd <= TOL_NAT else 'REVISAR'}; {len(paises)} celdas)")
+        n_g = int(m_.loc[grupo, "dd"].notna().sum())
         dg = m_.loc[grupo, "dd"].max()
-        msgs.append(f"(d) grupos (UE, Europa, Asia, etc.): máx |dif| = {dg:.0f} personas; definiciones "
-                    f"distintas entre tablas, informativo, no se usa para corregir")
+        msgs.append(f"(d) grupos con etiqueta común (Europa, Asia, África, América, Oceanía, Resto): {n_g} pares; "
+                    f"máx |dif| = {0 if n_g == 0 else dg:.0f} personas (revisiones entre tablas). "
+                    f"UE no se cruza: su composición difiere entre tablas")
+    # (f) partición: Total Europa + África + América + Asia + Resto + Oceanía y Apátridas = Extranjera
+    grp_f = ["Total Europa", "Total África", "Total América", "Total Asia", "Resto", "Oceanía y Apátridas"]
+    pf = vlc[(vlc.sexo == "Ambos sexos") & vlc.nac.isin(grp_f + ["Extranjera"])]
+    pf = pf.pivot_table(index="anio", columns="nac", values="valor", aggfunc="first")
+    if "Extranjera" in pf.columns:
+        cols_f = [c for c in grp_f if c in pf.columns]
+        res_f = (pf["Extranjera"] - pf[cols_f].sum(axis=1)).dropna()  # grupos ausentes no suman
+        if len(res_f):
+            msgs.append(f"(f) València: Extranjera - (continentes+Oceanía) máx |dif| = {res_f.abs().max():.0f} "
+                        f"personas en {len(res_f)} años (años con dif. > {TOL_NAT:g}: "
+                        f"{int((res_f.abs() > TOL_NAT).sum())}; peor año {int(res_f.abs().idxmax())})")
     for m_txt in msgs:
         print("[val]", m_txt)
 
     # ---- Salida larga: València y fila Total provincial ----
-    out = df[df.muni.isin([MUNI_VLC, "PROV"])].copy()
+    out = df[(df.muni == MUNI_VLC) | ((df.muni == "PROV") & (df.nac == "Total"))].copy()
     out["serie"] = np.where(out.muni == MUNI_VLC, "vlc_46250", "prov_46") + "|" + out.sexo + "|" + out.nac
     out["fecha"] = out["anio"].map(lambda a: f"{a}-01-01")
     out["periodo"] = out["anio"].astype(str)

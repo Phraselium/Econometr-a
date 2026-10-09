@@ -60,7 +60,7 @@ def serie(var, terr):
 
 # ------------------------------------------------------------------ tabla de N
 rows = []
-for (v, t), g in raw.groupby(["variable", "territorio"]):
+for (v, t), g in raw[~raw.territorio.str.contains("distrito")].groupby(["variable", "territorio"]):
     n = int(g["valor"].count())
     rows.append(dict(variable=v, territorio=t, frecuencia=g["frecuencia"].iloc[0][:28], n=n,
                      inicio=g.dropna(subset=["valor"]).periodo.min(), fin=g.dropna(subset=["valor"]).periodo.max(),
@@ -377,6 +377,35 @@ save(pd.DataFrame(cr), "correlaciones_anuales", f"{TXT_DESC} Correlaciones de Pe
      "con tendencia, las correlaciones en niveles son espurias en gran medida (tendencia común); las de primeras diferencias de ln son más informativas, pero siguen siendo "
      "descriptivas. No implican causalidad.", index=False)
 
+# SERPAVI por distrito (descriptivo; el raw no trae nombres: se usa el código 4625NNN)
+dd = raw[raw.variable == "serpavi_dist_vc_mediana"].copy()
+dd["distrito"] = dd.territorio.str.extract(r"(\d{7})")[0]
+W = dd.pivot(index="periodo", columns="distrito", values="valor")
+W.index = W.index.astype(int)
+nc = raw[raw.variable == "serpavi_dist_vc_n_contratos"].copy()
+nc["distrito"] = nc.territorio.str.extract(r"(\d{7})")[0]
+NC = nc.pivot(index="periodo", columns="distrito", values="valor"); NC.index = NC.index.astype(int)
+rk = pd.DataFrame({"mediana_VC_2024": W.loc[2024], "mediana_VC_2015": W.loc[2015], "n_contratos_2024": NC.loc[2024]})
+rk["crec_2015_2024_%"] = (rk.mediana_VC_2024 / rk.mediana_VC_2015 - 1) * 100
+rk["ranking_2024"] = rk.mediana_VC_2024.rank(ascending=False, method="min")
+rk["ranking_crecimiento"] = rk["crec_2015_2024_%"].rank(ascending=False, method="min")
+rk = rk.sort_values("ranking_2024"); rk.index.name = "distrito_cod"
+save(rk, "serpavi_distritos_ranking", f"{TXT_DESC} SERPAVI alquiler (mediana VC, €/m²/mes) por distrito de València, N=14 años (2011-2024), 19 distritos. "
+     "El origen no trae nombres de distrito: se identifican por código 4625NNN. Distritos con pocos contratos (mín. 10 viviendas) son ruidosos.", fl=".2f")
+cvd = pd.DataFrame({"media": W.mean(axis=1), "sd": W.std(axis=1), "n_distritos": W.count(axis=1)})
+cvd["coef_variacion"] = cvd.sd / cvd.media
+cvd["max/min"] = W.max(axis=1) / W.min(axis=1)
+cvd.index.name = "anio"
+save(cvd, "serpavi_distritos_dispersion", f"{TXT_DESC} Dispersión entre distritos por año (media simple de medianas, desviación típica, coeficiente de variación). N=14 años.", fl=".3f")
+fig, ax = plt.subplots(1, 2, figsize=(11, 4.6))
+o = rk.sort_values("mediana_VC_2024")
+ax[0].barh(o.index, o.mediana_VC_2024); ax[0].set_xlabel("Mediana alquiler VC 2024 (€/m²/mes)"); ax[0].set_ylabel("Distrito (código 4625NNN)")
+ax[0].set_title("Ranking por distrito, 2024"); ax[0].tick_params(axis="y", labelsize=6)
+ax[1].plot(cvd.index, cvd.coef_variacion, marker="o"); ax[1].set_xlabel("Año"); ax[1].set_ylabel("Coeficiente de variación entre distritos")
+ax[1].set_title("Dispersión del alquiler entre distritos")
+fig.text(0.01, 0.005, FUENTE + " SERPAVI por distrito (descriptivo, N=14).", fontsize=7)
+fig_save(fig, "fig_serpavi_distritos")
+
 # ================================================================== registro y resumen
 Hl = eu.holm(holm_p)
 hol = pd.DataFrame({"p_bruto": pd.Series(holm_p), "p_Holm": pd.Series(Hl)}).sort_values("p_bruto")
@@ -422,6 +451,7 @@ Muestra común precios: 2005Q1-2026Q2 (N={NP} niveles; N={N4} en Δ4). Compraven
 - **Padrón** (1998-2022, N={Npad}; DPOP 1996-2025): extranjeros {f(pad.pct_extranjeros.dropna().iloc[0],1)} % en 1998, máximo {f(pad.pct_extranjeros.max(),1)} % en {int(pad.pct_extranjeros.idxmax())}, {f(pad.pct_extranjeros.dropna().iloc[-1],1)} % en 2022 (`padron_valencia_nacionalidad.md`).
 - **Alquiler SERPAVI València** (2011-2024, N=14): mediana {f(alq.serpavi_val_mediana.iloc[0])} a {f(alq.serpavi_val_mediana.iloc[-1])} €/m²/mes; índice 2015=100 a 2024: València {f(idx_a['Alquiler València'].iloc[-1],0)}, CV {f(idx_a['Alquiler C. Valenciana'].iloc[-1],0)}, valor tasado València {f(idx_a['Valor tasado València'].iloc[-1],0)}. Rentabilidad bruta aproximada València {f(alq['rent_bruta_val_%'].iloc[0],1)} % (2011) a {f(alq['rent_bruta_val_%'].iloc[-1],1)} % (2024); mezcla fuentes y conceptos.
 - **VUT GVA** (registradas, 2010-2024, N=15 años): València {int(vut['València'].iloc[0])} a {int(vut['València'].iloc[-1])}; por 1.000 hab. {f(vut['VUT_por_1000hab_València'].iloc[-1],1)} frente a {f(vut['VUT_por_1000hab_CV'].iloc[-1],1)} en la CV (2024). VUT INE: N=13 cortes irregulares, no comparable en niveles con GVA.
+- **SERPAVI por distrito** (19 distritos, N=14 años): mayor mediana 2024 {rk.index[0]} ({f(rk.mediana_VC_2024.iloc[0])} €/m²), menor {rk.index[-1]} ({f(rk.mediana_VC_2024.iloc[-1])}); crecimiento 2015-2024 entre {f(rk['crec_2015_2024_%'].min(),0)} % y {f(rk['crec_2015_2024_%'].max(),0)} %; coeficiente de variación {f(cvd.coef_variacion.iloc[0],3)} (2011) a {f(cvd.coef_variacion.iloc[-1],3)} (2024) (`serpavi_distritos_*.md`; por código).
 - **Notariado (robustez)**: municipio 'Total general' 2021-2025 (N=5); provincia trimestral 2018-2025 (N=32), % con comprador extranjero {f(nprov.pct_ext.iloc[0],1)} % (2018T1) a {f(nprov.pct_ext.iloc[-1],1)} % (2025T4).
 - **Correlaciones anuales** (`correlaciones_anuales.md`): solo descripción, sin p-valores.
 
@@ -431,7 +461,7 @@ Ver `tabla_N_series.md` (todas las series de `valencia.csv`).
 {eu.df_md(tabN[['variable','territorio','n','inicio','fin','uso']], index=False)}
 
 ## Problemas abiertos
-- **Ranking y crecimiento 2015-2024 por distrito (SERPAVI)**: el desglose por distrito no está en `data/processed` (solo `serpavi_vc_dist_agg`, agregado ponderado); la regla de leer solo de processed impide hacerlo. Hace falta que `build_dataset.py` exporte `serpavi_valencia_distritos`.
+- Distritos SERPAVI: el origen no trae nombres, solo código 4625NNN; mediana por distrito ruidosa (mín. 10 viviendas).
 - Trans_extranjeros no existe para València municipio en MIVAU.
 - El valor tasado municipal es de tasaciones (composición cambiante de inmuebles tasados); el padrón por nacionalidad acaba en 2022 (no hay 2023-2025 por municipio).
 - Δ4 solapa: los EE HAC(4) pueden quedarse cortos con N={N4}; se reporta HAC(6) como robustez.

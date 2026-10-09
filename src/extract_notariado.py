@@ -18,10 +18,20 @@ Salidas (data/raw/pdf/):
   notariado_validacion.csv                  cuadres y contraste con INE / MIVAU
 Originales sin editar en data/raw/pdf/originales/. Renders PNG para revision visual en data/raw/pdf/validacion/.
 Idempotente (descargas con cache). No se corrige ningun valor: lo que no cuadra se marca.
+
+Cache a nivel de salida: si los 5 CSV de salida existen y no hay FORCE=1, el script termina sin red ni extraccion
+(find_doc hace peticiones HTTP; con FORCE=1 se rehace todo).
+
+Municipios (parse_muni): las columnas de cada pagina se detectan con la geometria real de las palabras (x0 de la
+primera palabra tras la cabecera '... - hasta 4T AAAA' de la columna derecha), no con un corte fijo por la mitad de la
+pagina (que dejaba fuera a Valencia ciudad y otros 5 municipios en 4T2022 y 4T2025). CONTROL DE COMPLETITUD: el
+conjunto esperado de municipios (union de todas las ediciones + nombres de cabecera del texto completo de cada pagina)
+debe coincidir con el extraido en cada edicion; cualquier faltante pone validado=no y se lista en 'detalle'.
 """
 from __future__ import annotations
 
 import html
+import os
 import re
 import subprocess
 import sys
@@ -55,7 +65,7 @@ NEWS = CNV + "/portal/noticias/-/asset_publisher/V3kCUm4K8nMX/content/id/{id}"
 PAGINAS_REVISADAS = {
     "notariado_cv_prov_trimestral": "notariado_cv_val_extranjeros_4T2025.pdf p2,p10(zoom); notariado_cv_cas_extranjeros_4T2025.pdf p2; notariado_cv_ali_extranjeros_4T2025.pdf p10 (solo estructura, baja resolucion)",
     "notariado_cv_actos_mensual": "notariado_cv_actos_2024-2025.pdf p3; notariado_cv_actos_1T2026.pdf p1",
-    "notariado_cv_municipios_anual": "notariado_cv_val_municipios_extranjeros_4T2025.pdf p2",
+    "notariado_cv_municipios_anual": "notariado_cv_val_municipios_extranjeros_4T2025.pdf p2; notariado_cv_val_municipios_extranjeros_4T2022.pdf p2 (Valencia ciudad, columna izquierda y derecha)",
 }
 
 # ediciones de actos mensuales: (clave, id noticia Colegio Notarial)
@@ -280,15 +290,50 @@ def parse_actos(path: Path, edicion: str, url: str) -> tuple[pd.DataFrame, pd.Da
 
 
 # ------------------------------------------------------------------ 4) PDF municipios
-def parse_muni(path: Path, edicion: str, url: str) -> tuple[pd.DataFrame, pd.DataFrame]:
+HDR_RX = re.compile(r"\s*- hasta \dT \d{4}\s*")
+
+
+def mkey(name: str) -> str:
+    """clave de comparacion de nombres de municipio (sin acentos/apostrofes/espacios)"""
+    n = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]", "", n)
+
+
+def text_headers(pg) -> list[str]:
+    """Nombres de municipio segun el TEXTO COMPLETO de la pagina (independiente de la geometria de columnas)."""
+    out = []
+    for line in (pg.extract_text() or "").splitlines():
+        if "- hasta" in line:
+            out += [x.strip() for x in HDR_RX.split(line) if x.strip()]
+    return out
+
+
+def column_bounds(pg) -> list[tuple[float, float]]:
+    """Columnas a partir de la geometria: tras cada cabecera '- hasta 4T AAAA' la palabra siguiente de la misma linea
+    es el inicio (x0) de la columna derecha. Devuelve [(x_ini, x_fin)] de izquierda a derecha."""
+    words = pg.extract_words()
+    starts = []
+    for k, w in enumerate(words[:-1]):
+        if re.fullmatch(r"\d{4}", w["text"]) and k >= 3 and words[k - 2]["text"] == "-" and words[k - 1]["text"] == "hasta":
+            nxt = words[k + 1]
+            if abs(nxt["top"] - w["top"]) < 3:
+                starts.append(nxt["x0"])
+    if not starts:
+        return [(0, pg.width)]
+    xr = min(starts)
+    return [(0, xr - 5), (xr - 5, pg.width)]
+
+
+def parse_muni(path: Path, edicion: str, url: str) -> tuple[pd.DataFrame, pd.DataFrame, list[str]]:
     rows, tots = [], []
+    expected = []   # nombres de cabecera vistos en el texto completo de las paginas
     with pdfplumber.open(path) as pdf:
         for pno, pg in enumerate(pdf.pages, 1):
             if pno == 1:
                 continue
-            w = pg.width
-            for half, box in (("izq", (0, 0, w / 2, pg.height)), ("der", (w / 2, 0, w, pg.height))):
-                txt = pg.crop(box).extract_text() or ""
+            expected += text_headers(pg)
+            for x0, x1 in column_bounds(pg):
+                txt = pg.crop((x0, 0, x1, pg.height)).extract_text() or ""
                 cur = None
                 for line in txt.splitlines():
                     line = line.strip()
@@ -311,7 +356,7 @@ def parse_muni(path: Path, edicion: str, url: str) -> tuple[pd.DataFrame, pd.Dat
                                          nacionalidad=m.group(1).strip(), origen="pdf", pagina=pno, edicion=edicion))
     df = pd.DataFrame(rows)
     df["fuente"], df["url"] = FUENTE_CNV, url
-    return df, pd.DataFrame(tots)
+    return df, pd.DataFrame(tots), expected
 
 
 # ------------------------------------------------------------------ validacion
@@ -343,7 +388,14 @@ def to_sem(q: pd.Series) -> pd.Series:
     return s[s["count"] == 2]["sum"]
 
 
+OUTPUTS = ["notariado_cgn_extranjeros_semestral.csv", "notariado_cv_prov_trimestral.csv", "notariado_cv_actos_mensual.csv",
+           "notariado_cv_municipios_anual.csv", "notariado_validacion.csv"]
+
+
 def main() -> None:
+    if all((PDF_DIR / f).exists() for f in OUTPUTS) and os.environ.get("FORCE") != "1":
+        print("[cache] salidas de notariado ya existen; sin red (FORCE=1 para rehacer)")
+        return
     ORIG.mkdir(parents=True, exist_ok=True)
     VALID_DIR.mkdir(parents=True, exist_ok=True)
     val = []   # filas de validacion
@@ -515,29 +567,64 @@ def main() -> None:
           PAGINAS_REVISADAS["notariado_cv_actos_mensual"], "conceptos distintos (inmuebles vs viviendas; escritura vs inscripcion): solo orden de magnitud, no cuadra", er)
 
     # ---------- 4) municipios
-    mu_frames, mu_tots = [], []
+    mu_frames, mu_tots, mu_exp = [], [], {}
     for ed, nid in MUNI:
         u = find_doc(nid, [r"extranjeros", r"valencia", r"municip"], [r"brit", r"alicante", r"castell"])
         path = download(u, ORIG / f"notariado_cv_val_municipios_extranjeros_{ed}.pdf")
-        a, t = parse_muni(path, ed, u)
+        a, t, ex = parse_muni(path, ed, u)
         mu_frames.append(a)
         mu_tots.append(t)
+        mu_exp[ed] = ex
     mu = pd.concat(mu_frames, ignore_index=True)
     mt = pd.concat(mu_tots, ignore_index=True)
     mu.to_csv(PDF_DIR / "notariado_cv_municipios_anual.csv", index=False)
     print("[ok] notariado_cv_municipios_anual.csv", len(mu))
+    PM = PAGINAS_REVISADAS["notariado_cv_municipios_anual"]
     s = mu.groupby(["edicion", "territorio"])["valor"].sum().reset_index().merge(mt, left_on=["edicion", "territorio"], right_on=["edicion", "municipio"])
     e = (s["valor"] - s["total_pdf"]).abs()
-    V("municipios_nacionalidades_vs_Total_general", e.max() == 0, e.max(),
-      f"suma de nacionalidades = 'Total general' de cada municipio ({len(s)} bloques, 5 ediciones)", PAGINAS_REVISADAS["notariado_cv_municipios_anual"])
-    # valencia municipio <= extranjeros provincia (anual)
+    V("municipios_nacionalidades_vs_Total_general", e.max() == 0 and len(s) == len(mt), e.max(),
+      f"suma de nacionalidades = 'Total general' de cada municipio ({len(s)} bloques de {len(mt)} totales, {len(MUNI)} ediciones)", PM)
+    # CONTROL DE COMPLETITUD: esperado = union de ediciones (texto completo) ; cada edicion debe tenerlos todos
+    names = {}
+    for ed, ex in mu_exp.items():
+        for n in ex:
+            names.setdefault(mkey(n), n)
+    exp_all = set(names)
+    falt, partes, hdr_ok = [], [], True
+    for ed, _ in MUNI:
+        got = set(mt[mt.edicion == ed].municipio.map(mkey))
+        got_rows = set(mu[mu.edicion == ed].territorio.map(mkey))
+        txt_ed = {mkey(n) for n in mu_exp[ed]}
+        miss = (exp_all | txt_ed) - got
+        miss_rows = (exp_all | txt_ed) - got_rows
+        n_hdr = len(mu_exp[ed])
+        if miss or miss_rows or n_hdr != len(mt[mt.edicion == ed]):
+            hdr_ok = False
+        falt += [f"{ed}:{names[k]}" for k in sorted(miss | miss_rows)]
+        partes.append(f"{ed}: {len(got)}/{len(exp_all | txt_ed)} municipios ({n_hdr} cabeceras en texto, {len(mt[mt.edicion == ed])} totales)")
+    V("municipios_completitud", hdr_ok and not falt, float(len(falt)),
+      "municipios esperados (union de ediciones + cabeceras '- hasta' del texto completo de cada pagina) = extraidos en cada edicion",
+      PM, "; ".join(partes) + ("" if not falt else " | FALTAN: " + ", ".join(falt)))
+    # ciudad de Valencia <= provincia; falla si falta algun ano
     ann = prov_df[(prov_df.territorio == "Valencia") & (prov_df.serie == "viv_vendidas_ext")].assign(anio=lambda x: x.periodo.str[:4]).groupby("anio")["valor"].sum()
-    vm = mt[mt.municipio == "Valencia"].assign(anio=lambda x: x.edicion.str[2:]).set_index("anio")["total_pdf"]
-    j = pd.concat([vm, ann], axis=1, join="inner")
-    ok = bool((j.iloc[:, 0] <= j.iloc[:, 1]).all())
-    V("municipios_Valencia_ciudad_le_provincia", ok, 0 if ok else float((j.iloc[:, 0] - j.iloc[:, 1]).max()),
-      "ciudad de Valencia <= provincia (extranjeros, anual): " + "; ".join(f"{k}: {a:.0f}<={b:.0f}" for k, (a, b) in j.iterrows()),
-      PAGINAS_REVISADAS["notariado_cv_municipios_anual"])
+    vm = mt[mt.municipio.map(mkey) == "valencia"].assign(anio=lambda x: x.edicion.str[2:]).set_index("anio")["total_pdf"]
+    anios = [ed[2:] for ed, _ in MUNI]
+    j = pd.concat([vm.rename("ciudad"), ann.rename("prov")], axis=1).reindex(anios)
+    ok = bool(j.notna().all().all() and (j.ciudad <= j.prov).all())
+    V("municipios_Valencia_ciudad_le_provincia", ok, 0 if ok else float("nan"),
+      "ciudad de Valencia <= provincia (extranjeros, anual), falla si falta algun ano: " + "; ".join(
+          f"{k}: {a:.0f}<={b:.0f}" if pd.notna(a) else f"{k}: FALTA" for k, (a, b) in j.iterrows()), PM)
+    # suma de municipios vs total provincial (no hay total provincial publicado en el PDF de municipios: se usa p2 del PDF de provincia)
+    cov = []
+    okc = True
+    for ed, _ in MUNI:
+        sm = mt[mt.edicion == ed].total_pdf.sum()
+        pv = ann.get(ed[2:], np.nan)
+        okc &= bool(pd.notna(pv) and sm <= pv)
+        cov.append(f"{ed[2:]}: municipios {sm:.0f} / provincia {pv:.0f} = {sm / pv:.1%}")
+    V("municipios_suma_vs_total_provincial", okc, 0 if okc else np.nan,
+      "suma de 'Total general' de los 19 municipios <= extranjeros provincia Valencia (PDF provincia, anual); el PDF de municipios no publica total provincial (cobertura, no cuadre)",
+      PM, "; ".join(cov))
 
     vdf = pd.DataFrame(val)
     vdf.to_csv(PDF_DIR / "notariado_validacion.csv", index=False)
@@ -548,7 +635,8 @@ def main() -> None:
     for fn, pages in (("notariado_cv_val_extranjeros_4T2025.pdf", [2, 3, 10]), ("notariado_cv_ali_extranjeros_4T2025.pdf", [10]),
                       ("notariado_cv_cas_extranjeros_4T2025.pdf", [2]), ("notariado_cv_actos_2024-2025.pdf", [3]),
                       ("notariado_cv_actos_1T2026.pdf", [1]),
-                      ("notariado_cv_val_municipios_extranjeros_4T2025.pdf", [2])):
+                      ("notariado_cv_val_municipios_extranjeros_4T2025.pdf", [2]),
+                      ("notariado_cv_val_municipios_extranjeros_4T2022.pdf", [2])):
         pdf = pdfium.PdfDocument(str(ORIG / fn))
         for p in pages:
             out = VALID_DIR / f"{Path(fn).stem}_p{p}.png"

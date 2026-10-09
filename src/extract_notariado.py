@@ -299,6 +299,23 @@ def mkey(name: str) -> str:
     return re.sub(r"[^a-z0-9]", "", n)
 
 
+# nombre canonico y codigo INE (5 digitos; verificados con SERPAVI hoja Municipios) por clave normalizada
+MUNI_CANON = {"valencia": ("Valencia", "46250"), "oliva": ("Oliva", "46181"), "lliria": ("Llíria", "46147"),
+              "gandia": ("Gandia", "46131"), "ontinyent": ("Ontinyent", "46184"), "villalonga": ("Villalonga", "46255"),
+              "barx": ("Barx", "46046"), "palmadegandia": ("Palma de Gandía", "46187"), "saguntosagunt": ("Sagunto/Sagunt", "46220"),
+              "xativa": ("Xàtiva", "46145"), "canetdenberenguer": ("Canet d'En Berenguer", "46082"), "pucol": ("Puçol", "46205"),
+              "cullera": ("Cullera", "46105"), "tavernesdelavalldigna": ("Tavernes de la Valldigna", "46238"),
+              "xeraco": ("Xeraco", "46143"), "xeresa": ("Xeresa", "46146"), "bellreguard": ("Bellreguard", "46048"),
+              "miramar": ("Miramar", "46168"), "daimus": ("Daimús", "46113")}
+
+
+def canon(name: str) -> str:
+    k = mkey(name)
+    if k not in MUNI_CANON:
+        raise RuntimeError(f"municipio sin forma canonica ni codigo INE: {name!r}")
+    return MUNI_CANON[k][0]
+
+
 def text_headers(pg) -> list[str]:
     """Nombres de municipio segun el TEXTO COMPLETO de la pagina (independiente de la geometria de columnas)."""
     out = []
@@ -354,9 +371,22 @@ def parse_muni(path: Path, edicion: str, url: str) -> tuple[pd.DataFrame, pd.Dat
                         rows.append(dict(fecha=f"{year}-01-01", periodo=str(year), serie="viv_compradas_extranjeros_nacionalidad",
                                          valor=num_es(m.group(2)), unidad="viviendas", territorio=cur,
                                          nacionalidad=m.group(1).strip(), origen="pdf", pagina=pno, edicion=edicion))
+    # fila 'Total general' publicada (cifra oficial) como nacionalidad='Total general'
+    for t in tots:
+        rows.append(dict(fecha=f"{year}-01-01", periodo=str(year), serie="viv_compradas_extranjeros_nacionalidad",
+                         valor=t["total_pdf"], unidad="viviendas", territorio=t["municipio"], nacionalidad="Total general",
+                         origen="pdf", pagina=t["pagina"], edicion=edicion))
     df = pd.DataFrame(rows)
+    df["territorio"] = df["territorio"].map(canon)
+    df["cod_ine"] = df["territorio"].map(lambda n: MUNI_CANON[mkey(n)][1])
+    tots = pd.DataFrame(tots)
+    tots["municipio"] = tots["municipio"].map(canon)
+    # aditiva: suma de nacionalidades == Total general (por municipio x edicion)
+    sm = df[df.nacionalidad != "Total general"].groupby("territorio")["valor"].sum()
+    tt = tots.set_index("municipio")["total_pdf"]
+    df["aditiva"] = df["territorio"].map(lambda m: bool(sm.get(m, np.nan) == tt.get(m, np.nan)))
     df["fuente"], df["url"] = FUENTE_CNV, url
-    return df, pd.DataFrame(tots), expected
+    return df, tots, expected
 
 
 # ------------------------------------------------------------------ validacion
@@ -580,8 +610,16 @@ def main() -> None:
     mu.to_csv(PDF_DIR / "notariado_cv_municipios_anual.csv", index=False)
     print("[ok] notariado_cv_municipios_anual.csv", len(mu))
     PM = PAGINAS_REVISADAS["notariado_cv_municipios_anual"]
-    s = mu.groupby(["edicion", "territorio"])["valor"].sum().reset_index().merge(mt, left_on=["edicion", "territorio"], right_on=["edicion", "municipio"])
+    s = mu[mu.nacionalidad != "Total general"].groupby(["edicion", "territorio"])["valor"].sum().reset_index().merge(mt, left_on=["edicion", "territorio"], right_on=["edicion", "municipio"])
     e = (s["valor"] - s["total_pdf"]).abs()
+    nad = mu[["edicion", "territorio", "aditiva"]].drop_duplicates()
+    nad = nad[~nad.aditiva]
+    V("municipios_no_aditivos_lista", nad.empty, float(len(nad)),
+      "combinaciones municipio x edicion con suma de nacionalidades != Total general (columna 'aditiva' del CSV)", PM,
+      "ninguna" if nad.empty else "; ".join(f"{r.edicion} {r.territorio}" for r in nad.itertuples()) +
+      " (usar la fila nacionalidad='Total general', que es la cifra oficial)")
+    V("municipios_19_territorios", mu.territorio.nunique() == 19 and mu.groupby("edicion").territorio.nunique().eq(19).all(),
+      float(mu.territorio.nunique()), "19 territorios canonicos con cod_ine en cada edicion (nombres normalizados por mapeo explicito)", PM)
     V("municipios_nacionalidades_vs_Total_general", e.max() == 0 and len(s) == len(mt), e.max(),
       f"suma de nacionalidades = 'Total general' de cada municipio ({len(s)} bloques de {len(mt)} totales, {len(MUNI)} ediciones)", PM,
       "" if e.max() == 0 else "NO CUADRA EN ORIGEN: " + "; ".join(

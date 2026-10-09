@@ -57,14 +57,18 @@ def _parse_wide(text: str, url: str, wanted: list[tuple[str, str]]) -> pd.DataFr
         c = col[0]
         sub = data[[0, c]].copy()
         sub.columns = ["etiqueta", "valor_raw"]
-        sub = sub[~sub["valor_raw"].str.strip().isin(["", "_"])]
         partes = sub["etiqueta"].str.split(" ", n=1, expand=True)
         periodo = partes[1] + "-" + partes[0].map(lambda m: f"{MESES[m]:02d}")
+        if frec[c].strip().upper() == "TRIMESTRAL":
+            # En series trimestrales el BdE rellena todos los meses con '_'; solo cierres de trimestre.
+            keep = periodo.str[-2:].isin(["03", "06", "09", "12"])
+            sub, periodo = sub[keep], periodo[keep]
+        valor = sub["valor_raw"].str.strip().replace({"_": None, "": None})
         frames.append(pd.DataFrame({
             "fecha": periodo + "-01",
             "periodo": periodo,
             "serie": code,
-            "valor": pd.to_numeric(sub["valor_raw"].str.replace(",", ".", regex=False), errors="coerce"),
+            "valor": pd.to_numeric(valor.str.replace(",", ".", regex=False), errors="coerce"),
             "unidad": unidades[c],
             "fuente": FUENTE,
             "url": url,

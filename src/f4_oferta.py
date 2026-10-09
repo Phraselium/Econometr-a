@@ -377,6 +377,22 @@ iv_tab = pd.DataFrame(iv_rows)
 # la muestra Δ4 es la misma entre dependientes sólo si coincide: se informa n
 save(iv_tab, "iv_resultados", ".4g", index=False)
 
+# --- Regresión en Δ4 (OLS-HAC(8), misma muestra que el IV en Δ4): robustez ante la no-cointegración
+d4_rows = []
+Wd = pd.DataFrame(index=W.index)
+Wd["dC"] = W[COSTE].diff(4); Wd["dR"] = W[TIPO].diff(4)
+for dep, k in GRID:
+    Wd["dy"] = W[f"y_{dep}"].diff(4); Wd["dP"] = W[f"P_l{k}"].diff(4)
+    de = Wd.loc[IDX_D4].dropna()
+    fm = "dy ~ dP + dC + dR"
+    res = ols_hac(fm, de, maxlags=8)
+    REG.log_res("F4", f"ols_d4_{dep}_k{k}", f"Δ4 {dep} ~ Δ4 P_l{k} + Δ4 costes_real + Δ4 tipo_real [OLS HAC8]", res, interes="dP",
+                notas=f"familia=elasticidad; robustez en Δ4, misma muestra {IDX_D4[0]}-{IDX_D4[-1]}")
+    d4_rows.append(dict(modelo=f"ols_d4_{dep}_k{k}", dep=dep, k=k, beta=res.params["dP"], EE_HAC8=res.bse["dP"], p=res.pvalues["dP"],
+                        n=int(res.nobs), r2_adj=res.rsquared_adj))
+d4_tab = pd.DataFrame(d4_rows)
+save(d4_tab, "ols_delta4", ".4g", index=False)
+
 # --- Cointegración (EG + Johansen + ARDL bounds), ecuación de iniciadas y alternativas
 Wc = W.copy()
 for c in ("ln_visados",):
@@ -494,9 +510,44 @@ for dep in ("terminadas", "visados"):
             REG.log("F4", mid, f"d4 ln {dep}_ct ~ d4 ln ipv_c,t-{L} [{lab}; cluster CCAA]", dfp.index.get_level_values(1).min(),
                     dfp.index.get_level_values(1).max(), int(rc.nobs), np.nan, np.nan, np.nan, np.nan, b,
                     float(rc.pvalues[f"p{L}"]), "familia=elasticidad panel (robustez); Extremadura sin terminadas")
-            panel_rows.append(dict(modelo=mid, dep=dep, lag_trim=L, efectos=lab, beta=b, EE_cluster=float(rc.std_errors[f"p{L}"]),
+            ent_ = dfp.index.get_level_values(0).to_numpy(); tim_ = dfp.index.get_level_values(1).to_numpy()
+            _, t_w, p_w = wcb_webb(dfp["y"].to_numpy(float), dfp[f"p{L}"].to_numpy(float), ent_, tim_, te)
+            panel_rows.append(dict(modelo=mid, dep=dep, lag_trim=L, efectos=lab, beta=b, p_WCB_webb=p_w, EE_cluster=float(rc.std_errors[f"p{L}"]),
                                    p_cluster=float(rc.pvalues[f"p{L}"]), EE_DK=float(rk.std_errors[f"p{L}"]), p_DK=float(rk.pvalues[f"p{L}"]),
                                    n=int(rc.nobs), CCAA=int(dfp.index.get_level_values(0).nunique()), r2_within=float(rc.rsquared_within)))
+# Wild cluster bootstrap (Webb 6 puntos, 9.999 réplicas, WCR bajo H0: beta=0), pre-registrado en decisiones.md
+def wcb_webb(y, x, ent, tim, te, B=9999, seed=SEED):
+    ent_c = pd.factorize(ent)[0]; Gn = ent_c.max() + 1
+    D = [np.eye(Gn)[ent_c]]
+    if te:
+        tc = pd.factorize(tim)[0]; D.append(np.eye(tc.max() + 1)[tc][:, 1:])
+    D = np.column_stack(D)
+    M = lambda v: v - D @ np.linalg.lstsq(D, v, rcond=None)[0]
+    xt, e0 = M(x), M(y)           # e0 = residuo restringido (H0: beta=0) tras absorber efectos
+    Sxx = float(xt @ xt)
+    order = np.argsort(ent_c, kind="stable"); starts = np.r_[0, np.flatnonzero(np.diff(ent_c[order])) + 1]
+
+    yt0 = M(y)
+    b0 = float(xt @ yt0 / Sxx)
+    u0 = (yt0 - b0 * xt)
+    g0 = np.add.reduceat((xt * u0)[order], starts)
+    t0 = b0 / (np.sqrt(float(g0 @ g0)) / Sxx)
+    rng = np.random.default_rng(seed)
+    vals = np.array([-np.sqrt(1.5), -1.0, -np.sqrt(0.5), np.sqrt(0.5), 1.0, np.sqrt(1.5)])
+    S2 = np.add.reduceat((xt * xt)[order], starts)
+    tb = np.empty(B)
+    ch = 1000
+    for a in range(0, B, ch):
+        bb = min(ch, B - a)
+        w = vals[rng.integers(0, 6, size=(Gn, bb))]
+        ys = w[ent_c] * e0[:, None]                         # y* tras absorber efectos (M y* = w e0)
+        bs = (xt @ ys) / Sxx
+        S1 = np.add.reduceat((xt[:, None] * ys)[order], starts, axis=0)
+        sg = S1 - S2[:, None] * bs[None, :]
+        tb[a:a + bb] = bs / (np.sqrt((sg ** 2).sum(axis=0)) / Sxx)
+    return b0, t0, float((np.abs(tb) >= abs(t0)).mean())
+
+
 pan_tab = pd.DataFrame(panel_rows)
 save(pan_tab, "panel_ccaa", ".4g", index=False)
 

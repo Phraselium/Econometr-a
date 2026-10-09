@@ -446,6 +446,12 @@ def principal(P):
             fs_rows.append(dict(resultado=lab, n=rs["n"], F_cluster=rs["fs"][0]["F"], pi=rs["fs"][0]["pi"][0],
                                 EE_pi=rs["fs"][0]["se_pi"][0], R2_parcial=rs["fs"][0]["r2_parcial"],
                                 RF_coef=rs["rf"]["coef"][0], RF_p_cluster=rs["rf"]["p"][0]))
+    # submuestra auge 2003-07 (valor tasado): comparabilidad con Gonzalez-Ortega
+    s07 = sample_for(P, "d_ln_p_tasado", 2003)
+    s07 = s07[s07.anio <= 2007]
+    r07 = fit_iv(s07, "d_ln_p_tasado", ["x"], ["z"])
+    RES["sub0307"] = dict(coef=r07["beta"][0], se=r07["se"][0], F=r07["fs"][0]["F"])
+    log_panel("PAN_p_tasado_2003_07", "d_ln_p_tasado ~ x | FE, 2003-2007", s07, r07, notas="submuestra auge; comparabilidad")
     # jackknife por CCAA (valor tasado, 2SLS FE)
     y, start, lab = OUTCOMES["p_tasado"][0], OUTCOMES["p_tasado"][1], "valor tasado"
     s = sample_for(P, y, start)

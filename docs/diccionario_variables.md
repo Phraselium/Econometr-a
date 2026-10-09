@@ -65,7 +65,7 @@ Conteo de filas por valor de `_metodo` (filas con dato) en cada fichero:
 - **nacional_a** `inmig_anual_metodo`: `observado` 4 (`inmig_anual_interp` = 0 TRUE).
 - **panel_ccaa_q** `compraventas_metodo`: `agregado_suma` 1326 (`compraventas_interp` = 0 TRUE).
 - **panel_ccaa_q** `visados_metodo`: `agregado_suma` 1224 (`visados_interp` = 0 TRUE).
-- **panel_ccaa_q** `terminadas_metodo`: `agregado_suma` 1184 (`terminadas_interp` = 0 TRUE).
+- **panel_ccaa_q** `terminadas_metodo`: `agregado_suma` 1258 (`terminadas_interp` = 0 TRUE).
 - **panel_ccaa_q** `ipc_alquiler_metodo`: `agregado_media` 1666 (`ipc_alquiler_interp` = 0 TRUE).
 - **panel_ccaa_q** `pob_total_metodo`: `interpolado_loglineal` 1173; `anual_asignado` 408 (`pob_total_interp` = 1173 TRUE).
 - **panel_ccaa_q** `pob_extranj_metodo`: `interpolado_loglineal` 1173; `anual_asignado` 408 (`pob_extranj_interp` = 1173 TRUE).
@@ -77,7 +77,7 @@ Conteo de filas por valor de `_metodo` (filas con dato) en cada fichero:
 - **panel_ccaa_a** `trans_total_metodo`: `agregado_suma` 369 (`trans_total_interp` = 0 TRUE).
 - **panel_ccaa_a** `trans_extranjeros_metodo`: `agregado_suma` 323 (`trans_extranjeros_interp` = 0 TRUE).
 - **panel_ccaa_a** `visados_metodo`: `agregado_suma` 272 (`visados_interp` = 0 TRUE).
-- **panel_ccaa_a** `terminadas_metodo`: `agregado_suma` 288 (`terminadas_interp` = 0 TRUE).
+- **panel_ccaa_a** `terminadas_metodo`: `agregado_suma` 306 (`terminadas_interp` = 0 TRUE).
 - **panel_ccaa_a** `ipc_alquiler_metodo`: `agregado_media` 408 (`ipc_alquiler_interp` = 0 TRUE).
 - **panel_ccaa_a** `notariado_cgn_extranj_metodo`: `agregado_suma` 323 (`notariado_cgn_extranj_interp` = 0 TRUE).
 - **valencia.csv** (columna `metodo`): `observado` 3326; `fin_periodo` 180; `anual_asignado` 104.
@@ -190,18 +190,20 @@ Códigos INE de CCAA: 01 Andalucía, 02 Aragón, 03 Asturias (Principado de), 04
 | `trans_total` | MIVAU, tabla 34010110 | `mivau_transacciones_total.csv` | tx_total_ccaa_<slug> | transacciones | trimestral | nativo | ln_, d_ln_, d4_ln_ (dentro de cada CCAA) | — (17/17 CCAA) | xls | sí | — | principal | 2004Q1 | 2026Q1 |
 | `trans_extranjeros` | MIVAU, tabla 340101i0 (total) | `mivau_transacciones_extranjeros.csv` | tx_extranj_residentes_total_ccaa_<slug> | transacciones | trimestral | nativo | ln_, d_ln_, d4_ln_ (dentro de cada CCAA) | — (17/17 CCAA) | xls | sí | — | principal | 2007Q1 | 2026Q2 |
 | `visados` | MIVAU, tabla 32100500 (PROXY) | `mivau_visados.csv` | viv_libres_iniciadas_ccaa_<slug> | viviendas | mensual | suma de 3 meses | ln_, d_ln_, d4_ln_ (dentro de cada CCAA) | agregado_suma 1224 (`visados_interp` 0) (17/17 CCAA) | xls | plausibilidad | proxy MIVAU | principal | 2008Q1 | 2026Q2 |
-| `terminadas` | MIVAU, tabla 32101000 (PROXY) | `mivau_fin_obra.csv` | viv_libres_terminadas_ccaa_<slug> | viviendas | mensual | suma de 3 meses | ln_, d_ln_, d4_ln_ (dentro de cada CCAA) | agregado_suma 1184 (`terminadas_interp` 0) (16/17 CCAA) | xls | plausibilidad | proxy MIVAU; sin Extremadura | principal | 2008Q1 | 2026Q2 |
+| `terminadas` | MIVAU, tabla 32101000 (PROXY) | `mivau_fin_obra.csv` | viv_libres_terminadas_ccaa_<slug> | viviendas | mensual | suma de 3 meses | ln_, d_ln_, d4_ln_ (dentro de cada CCAA) | agregado_suma 1258 (`terminadas_interp` 0) (17/17 CCAA) | xls | plausibilidad | proxy MIVAU | principal | 2008Q1 | 2026Q2 |
 | `ipc_alquiler` | INE IPC, alquiler de vivienda | `ine_ipc_alquiler.csv` | '<CCAA>. Alquiler de vivienda. Índice.' | índice | mensual | media de 3 meses | ln_, d_ln_, d4_ln_ (dentro de cada CCAA) | agregado_media 1666 (`ipc_alquiler_interp` 0) (17/17 CCAA) | api | sí | — | principal | 2002Q1 | 2026Q2 |
 | `pob_total` | INE 77019 (ECP, CCAA x nacionalidad) | `ine_ecp_ccaa_paises.csv` | '<CCAA>. Todas las edades. Total. Total. Población.' | personas (stock 1 ene) | anual (T1 en el CSV) | stock a 1 de enero en T1; T2-T4 interpolados log-lineal entre observaciones | ln_, d_ln_, d4_ln_ (dentro de cada CCAA) | interpolado_loglineal 1173; anual_asignado 408 (`pob_total_interp` 1173) (17/17 CCAA) | api | plausibilidad | stock 1 ene; T2-T4 interpolados (error de interpolación, ver nacional_q) | principal | 2002Q1 | 2025Q1 |
 | `pob_extranj` | INE 77019 (ECP) | `ine_ecp_ccaa_paises.csv` | '<CCAA>. Todas las edades. Extranjera. Total.' | personas (stock 1 ene) | anual | como pob_total | ln_, d_ln_, d4_ln_ (dentro de cada CCAA) | interpolado_loglineal 1173; anual_asignado 408 (`pob_extranj_interp` 1173) (17/17 CCAA) | api | plausibilidad | suma 17 CCAA frente a nacional: -2,1 % a +1,3 % (interpolación anual; ver nacional_q) | principal | 2002Q1 | 2025Q1 |
 | `pob_espanola` | INE 77019 (ECP) | `ine_ecp_ccaa_paises.csv` | '<CCAA>. Todas las edades. Española. Total.' | personas (stock 1 ene) | anual | como pob_total | ln_, d_ln_, d4_ln_ (dentro de cada CCAA) | interpolado_loglineal 1173; anual_asignado 408 (`pob_espanola_interp` 1173) (17/17 CCAA) | api | plausibilidad | stock 1 ene; T2-T4 interpolados | principal | 2002Q1 | 2025Q1 |
 | `epa_pob_total` | INE EPA, tabla 65285 | `ine_epa_poblacion_ccaa.csv` | 'Ambos sexos. <CCAA>. Total. Valor absoluto.' | miles (todas las edades) | trimestral | nativo; incluye menores de 16 (no es población de 16+) | ln_, d_ln_, d4_ln_ (dentro de cada CCAA) | — (17/17 CCAA) | api | sí | — | robustez | 2002Q1 | 2026Q2 |
 
-**Huecos de origen**: `terminadas` (MIVAU 32101000) no tiene Extremadura en el Boletín. `p_tasado` de Navarra tiene solo los trimestres en que MIVAU publica esa CCAA (ver `DUP_NOTES`).
+**Extremadura en MIVAU 32101000**: la serie aparece como «Extremadura (1)» con nivel provincia en el raw; se asigna a la CCAA porque coincide exactamente con Badajoz + Cáceres en los 222 meses (2008-01 a 2026-06). El significado de la nota (1) no está verificado.
+
+**Huecos de origen**: `p_tasado` de Navarra tiene solo los trimestres en que MIVAU publica esa CCAA (ver `DUP_NOTES`).
 
 **Población por CCAA**: 77019 (tabla de población por CCAA y grupo de países) publica **un dato anual a 1 de enero**; el CSV lo etiqueta como T1 (`anual_asignado`). Los trimestres T2-T4 entre dos observaciones se interpolan en logaritmos (`interp_loglin`, `interpolado_loglineal`). No se extrapola. `epa_pob_total` (65285) es población EPA de **todas las edades** (incluye menores de 16); se usa como contraste, no como sustituto.
 
-**Validación**: suma de las 17 CCAA de `pob_extranj` frente a ECP701 nacional: ver `pob_extranj_ccaa_sum` en nacional_q (diferencia por Ceuta y Melilla). `pob_total` de CCAA = suma de CCAA + Ceuta y Melilla = total nacional. La suma de 17 CCAA de `pob_extranj` en el trimestral termina en {last_pob_e}.
+**Validación**: suma de las 17 CCAA de `pob_extranj` frente a ECP701 nacional: ver `pob_extranj_ccaa_sum` en nacional_q (diferencia por Ceuta y Melilla). `pob_total` de CCAA = suma de CCAA + Ceuta y Melilla = total nacional. La suma de 17 CCAA de `pob_extranj` en el trimestral termina en 2025Q1.
 
 **Inmigración por CCAA**: la tabla 59013 (flujos CCAA × nacionalidad) no tiene total por CCAA y sus celdas están casi vacías; el flujo anual por CCAA no está en `data/raw` (la tabla 69691 **no se ha descargado**; ver `docs/fuentes_fallidas.md`). Por eso `panel_ccaa_a` **no** incluye inmigración anual por CCAA.
 
@@ -224,7 +226,7 @@ Clave: `codigo_ine_ccaa` × `anio`. Años 2002-2025 (rellenos NaN donde no hay d
 | trans_total | MIVAU 34010110 (de panel_ccaa_q) | mivau_transacciones_total.csv | tx_total_ccaa_<slug> | transacciones | suma de 4 trimestres (`agregado_suma`) | xls | sí | — | principal |
 | trans_extranjeros | MIVAU 340101i0 (de panel_ccaa_q) | mivau_transacciones_extranjeros.csv | tx_extranj_residentes_total_ccaa_<slug> | transacciones | suma de 4 trimestres (`agregado_suma`); resultado directo de demanda extranjera | xls | sí | — | principal |
 | visados | MIVAU 32100500 PROXY (de panel_ccaa_q) | mivau_visados.csv | viv_libres_iniciadas_ccaa_<slug> | viviendas | suma de 4 trimestres (`agregado_suma`) | xls | plausibilidad | proxy MIVAU, no visados CSCAE | principal (control de oferta) |
-| terminadas | MIVAU 32101000 PROXY (de panel_ccaa_q) | mivau_fin_obra.csv | viv_libres_terminadas_ccaa_<slug> | viviendas | suma de 4 trimestres (`agregado_suma`); NaN en Extremadura | xls | plausibilidad | proxy MIVAU, no certificados CSCAE | principal (control de oferta) |
+| terminadas | MIVAU 32101000 PROXY (de panel_ccaa_q) | mivau_fin_obra.csv | viv_libres_terminadas_ccaa_<slug> | viviendas | suma de 4 trimestres (`agregado_suma`) | xls | plausibilidad | proxy MIVAU, no certificados CSCAE | principal (control de oferta) |
 | ipc_alquiler | INE IPC, alquiler de vivienda (de panel_ccaa_q) | ine_ipc_alquiler.csv | '<CCAA>. Alquiler de vivienda. Índice.' | índice | media de 4 trimestres (`agregado_media`) | api | sí | — | principal |
 | serpavi_vc_mediana | MIVAU-SERPAVI (XLSX) | pdf/serpavi_ccaa.csv | alquiler_m2 mediana VC por CCAA | €/m²/mes | nativo anual (`observado`) | xls | plausibilidad | 6,43 pp frente al IPVA València (no independiente) | principal |
 | notariado_cgn_extranj | Consejo General del Notariado (CIEN) | pdf/notariado_cgn_extranjeros_semestral.csv | T2 op_viv_libre_extranjeros, 'Extranjero', por CCAA | operaciones | suma S1+S2 (`agregado_suma`; solo si ambos existen) | xls | sí | 0 (suma interna) | principal |

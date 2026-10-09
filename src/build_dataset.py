@@ -479,7 +479,17 @@ def build_panel(pob77: pd.DataFrame) -> pd.DataFrame:
     tx_e = read_raw("mivau_transacciones_extranjeros.csv", ["fecha", "serie", "valor"])
     vis = read_raw("mivau_visados.csv", ["fecha", "serie", "valor"])
     fin = read_raw("mivau_fin_obra.csv", ["fecha", "serie", "valor"])
-    epa_p = ser_por_ccaa(epa_pob_long(read_raw("ine_epa_poblacion_ccaa.csv", ["fecha", "serie", "valor", "nombre"])),
+    # MIVAU etiqueta "Extremadura (1)" con nivel provincia en el raw (la nota (1) no se ha verificado).
+    # Se reasigna a su CCAA tras comprobar que cuadra exactamente con Badajoz + Cáceres.
+    NOTA_CCAA = {"viv_libres_terminadas_provincia_extremadura_1": "viv_libres_terminadas_ccaa_extremadura"}
+    _ext = by_serie(fin, "viv_libres_terminadas_provincia_extremadura_1")
+    _ext_prov = (by_serie(fin, "viv_libres_terminadas_provincia_badajoz")
+                 + by_serie(fin, "viv_libres_terminadas_provincia_caceres"))
+    _cmp = pd.concat([_ext, _ext_prov], axis=1, keys=["ext1", "suma_prov"]).dropna()
+    assert len(_cmp) > 0 and np.allclose(_cmp["ext1"], _cmp["suma_prov"], rtol=0, atol=0), \
+        "MIVAU terminadas: 'Extremadura (1)' no cuadra con Badajoz + Cáceres"
+    fin = fin.assign(serie=fin["serie"].replace(NOTA_CCAA))
+    epa_p =ser_por_ccaa(epa_pob_long(read_raw("ine_epa_poblacion_ccaa.csv", ["fecha", "serie", "valor", "nombre"])),
                          "valor")
     pob_g = {g: ser_por_ccaa(x, "pob_stock") for g, x in pob77.groupby("grupo")}
 
@@ -1278,7 +1288,7 @@ PANEL_META = {
     "ipv_usada": ("api", "sí", "—", "principal"), "p_tasado": ("xls", "sí", "—", "principal"),
     "ocupados": ("api", "sí", "—", "principal"), "compraventas": ("api", "sí", "—", "principal"),
     "trans_total": ("xls", "sí", "—", "principal"), "trans_extranjeros": ("xls", "sí", "—", "principal"),
-    "visados": ("xls", "plausibilidad", "proxy MIVAU", "principal"), "terminadas": ("xls", "plausibilidad", "proxy MIVAU; sin Extremadura", "principal"),
+    "visados": ("xls", "plausibilidad", "proxy MIVAU", "principal"), "terminadas": ("xls", "plausibilidad", "proxy MIVAU", "principal"),
     "ipc_alquiler": ("api", "sí", "—", "principal"),
     "pob_total": ("api", "plausibilidad", "stock 1 ene; T2-T4 interpolados (error de interpolación, ver nacional_q)", "principal"),
     "pob_extranj": ("api", "plausibilidad", "suma 17 CCAA frente a nacional: -2,1 % a +1,3 % (interpolación anual; ver nacional_q)", "principal"),
@@ -1516,9 +1526,10 @@ def write_dictionary(nac: pd.DataFrame, panel: pd.DataFrame, panel_a: pd.DataFra
         o, v_, e_, r_ = PANEL_META[v]
         A(f"| `{v}` | {nm} | `{arch}` | {_esc(cod)} | {uni} | {fr} | {ag} | {tr} | {_esc(fl)} ({ncc}/17 CCAA) | {o} | {v_} | {_esc(e_)} | {r_} | {fmin} | {fmax} |")
     A("")
-    A("**Huecos de origen**: `terminadas` (MIVAU 32101000) no tiene Extremadura en el Boletín. `p_tasado` de Navarra tiene solo los trimestres en que MIVAU publica esa CCAA (ver `DUP_NOTES`).\n")
+    A("**Extremadura en MIVAU 32101000**: la serie aparece como «Extremadura (1)» con nivel provincia en el raw; se asigna a la CCAA porque coincide exactamente con Badajoz + Cáceres en los 222 meses (2008-01 a 2026-06). El significado de la nota (1) no está verificado.\n")
+    A("**Huecos de origen**: `p_tasado` de Navarra tiene solo los trimestres en que MIVAU publica esa CCAA (ver `DUP_NOTES`).\n")
     A("**Población por CCAA**: 77019 (tabla de población por CCAA y grupo de países) publica **un dato anual a 1 de enero**; el CSV lo etiqueta como T1 (`anual_asignado`). Los trimestres T2-T4 entre dos observaciones se interpolan en logaritmos (`interp_loglin`, `interpolado_loglineal`). No se extrapola. `epa_pob_total` (65285) es población EPA de **todas las edades** (incluye menores de 16); se usa como contraste, no como sustituto.\n")
-    A("**Validación**: suma de las 17 CCAA de `pob_extranj` frente a ECP701 nacional: ver `pob_extranj_ccaa_sum` en nacional_q (diferencia por Ceuta y Melilla). `pob_total` de CCAA = suma de CCAA + Ceuta y Melilla = total nacional. La suma de 17 CCAA de `pob_extranj` en el trimestral termina en {last_pob_e}.\n")
+    A(f"**Validación**: suma de las 17 CCAA de `pob_extranj` frente a ECP701 nacional: ver `pob_extranj_ccaa_sum` en nacional_q (diferencia por Ceuta y Melilla). `pob_total` de CCAA = suma de CCAA + Ceuta y Melilla = total nacional. La suma de 17 CCAA de `pob_extranj` en el trimestral termina en {last_pob_e}.\n")
     A("**Inmigración por CCAA**: la tabla 59013 (flujos CCAA × nacionalidad) no tiene total por CCAA y sus celdas están casi vacías; el flujo anual por CCAA no está en `data/raw` (la tabla 69691 **no se ha descargado**; ver `docs/fuentes_fallidas.md`). Por eso `panel_ccaa_a` **no** incluye inmigración anual por CCAA.\n")
 
     A("## B2. `data/processed/panel_ccaa_nacionalidad.csv` (flujos 59013 y stocks 77019)\n")
@@ -1540,7 +1551,7 @@ def write_dictionary(nac: pd.DataFrame, panel: pd.DataFrame, panel_a: pd.DataFra
         ("trans_total", "MIVAU 34010110 (de panel_ccaa_q)", "mivau_transacciones_total.csv", "tx_total_ccaa_<slug>", "transacciones", "suma de 4 trimestres (`agregado_suma`)", "xls", "sí", "—", "principal"),
         ("trans_extranjeros", "MIVAU 340101i0 (de panel_ccaa_q)", "mivau_transacciones_extranjeros.csv", "tx_extranj_residentes_total_ccaa_<slug>", "transacciones", "suma de 4 trimestres (`agregado_suma`); resultado directo de demanda extranjera", "xls", "sí", "—", "principal"),
         ("visados", "MIVAU 32100500 PROXY (de panel_ccaa_q)", "mivau_visados.csv", "viv_libres_iniciadas_ccaa_<slug>", "viviendas", "suma de 4 trimestres (`agregado_suma`)", "xls", "plausibilidad", "proxy MIVAU, no visados CSCAE", "principal (control de oferta)"),
-        ("terminadas", "MIVAU 32101000 PROXY (de panel_ccaa_q)", "mivau_fin_obra.csv", "viv_libres_terminadas_ccaa_<slug>", "viviendas", "suma de 4 trimestres (`agregado_suma`); NaN en Extremadura", "xls", "plausibilidad", "proxy MIVAU, no certificados CSCAE", "principal (control de oferta)"),
+        ("terminadas", "MIVAU 32101000 PROXY (de panel_ccaa_q)", "mivau_fin_obra.csv", "viv_libres_terminadas_ccaa_<slug>", "viviendas", "suma de 4 trimestres (`agregado_suma`)", "xls", "plausibilidad", "proxy MIVAU, no certificados CSCAE", "principal (control de oferta)"),
         ("ipc_alquiler", "INE IPC, alquiler de vivienda (de panel_ccaa_q)", "ine_ipc_alquiler.csv", "'<CCAA>. Alquiler de vivienda. Índice.'", "índice", "media de 4 trimestres (`agregado_media`)", "api", "sí", "—", "principal"),
         ("serpavi_vc_mediana", "MIVAU-SERPAVI (XLSX)", "pdf/serpavi_ccaa.csv", "alquiler_m2 mediana VC por CCAA", "€/m²/mes", "nativo anual (`observado`)", "xls", "plausibilidad", "6,43 pp frente al IPVA València (no independiente)", "principal"),
         ("notariado_cgn_extranj", "Consejo General del Notariado (CIEN)", "pdf/notariado_cgn_extranjeros_semestral.csv", "T2 op_viv_libre_extranjeros, 'Extranjero', por CCAA", "operaciones", "suma S1+S2 (`agregado_suma`; solo si ambos existen)", "xls", "sí", "0 (suma interna)", "principal"),

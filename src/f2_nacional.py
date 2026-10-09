@@ -233,7 +233,7 @@ def coint_system(frame, y, xs, label):
         out.update(ARDL_p=plag, ARDL_ordenes_x=str(order), ARDL_N=int(r.nobs), ARDL_k=kx, ARDL_F=F, ARDL_I0_5=lo,
                    ARDL_I1_5=up, ARDL_t_yL1=tY, ARDL_rech=F > up,
                    ARDL_zona="rechaza (F>I1)" if F > up else "no concluyente" if F > lo else "no rechaza (F<I0)")
-        out["_uecm"] = r
+        out["_uecm"] = u.fit(cov_type="HAC", cov_kwds={"maxlags": 4})
     except Exception as e:
         out.update(ARDL_rech=False, ARDL_err=str(e)[:60])
     n_rech = int(bool(out.get("EG_rech"))) + int(bool(out.get("J_rech"))) + int(bool(out.get("ARDL_rech")))
@@ -304,7 +304,7 @@ if uecm_base is not None:
             g[a] = pr[nm] / pr[a] ** 2
             se = float(np.sqrt(g.values @ cv.loc[pr.index, pr.index].values @ g.values))
             from scipy import stats as _st
-            lr_rows.append(dict(metodo="UECM implícito (delta, EE clásicos)", N=int(uecm_base.nobs), var=x, coef=b,
+            lr_rows.append(dict(metodo="UECM implícito (delta, HAC)", N=int(uecm_base.nobs), var=x, coef=b,
                                 EE_HAC=se, p=2 * _st.norm.sf(abs(b / se))))
 lr_tab = pd.DataFrame(lr_rows)
 save(lr_tab, "largo_plazo", ".4g", index=False)
@@ -517,7 +517,7 @@ sec("5. Búsqueda de corto plazo (conjunto CERRADO, declarado antes de resultado
     "d_ln_permisos {t−4}; d_ln_costes {0}; d_ln_renta_hog_real {0}; inmigración {ninguna, d_ln_pob_extranj, "
     "d4_ln_pob_extranj/4, d_ln_pob_total} (alternativas excluyentes: nunca stock extranjero y población total a la vez); "
     "d_ln_ipv {1, 4}; d_ln_credito_nuevo {0}. Total de modelos enumerados: **" + str(Ntot_search) +
-    f"** (más los modelos de réplica/LR/robustez del registro: {len(REG.read())} filas en total al terminar la fase). "
+    f"** (más los modelos de réplica/LR/robustez/precio real del registro; el total final está en la cabecera). "
     f"Muestra común: {C.index[0]}-{C.index[-1]}, **N={N}** (límite: d_ln_ipv(t−4)). "
     "Criterio principal: R² ajustado (como el punto de partida), corregido por la búsqueda (Bonferroni con K = "
     "modelos que contienen el término y bootstrap de la selección). También se reportan AIC y BIC. "
@@ -759,7 +759,7 @@ ocup_lr = lrt[(lrt["var"] == "ln_ocupados") & (~lrt.metodo.str.startswith("UECM"
 sg = []
 for var, esp, etiqueta in [("ln_ocupados", "+", "Empleo (LP)"), ("tipo_hip", "-", "Tipo hipotecario (LP)"),
                            ("ln_permisos_l4", "-", "Permisos t−4 (LP)"), ("ln_costes", "+", "Costes construcción (LP)")]:
-    d1, d2, d3 = lrv("DOLS base (+q)", var), lrv("EG estático (+q)", var), lrv("UECM implícito (delta, EE clásicos)", var)
+    d1, d2, d3 = lrv("DOLS base (+q)", var), lrv("EG estático (+q)", var), lrv("UECM implícito (delta, HAC)", var)
     vals = [d1[0], d2[0], d3[0]]
     disc = "" if all(sgn(v) == esp for v in vals if v == v) else "DISCREPANCIA de signo en algún estimador"
     if var == "ln_ocupados":
@@ -829,6 +829,242 @@ sec("6d. Signos y magnitudes frente a docs/literatura.md",
     "**Largo plazo**\n\n" + tm(SGL, ".4g", False) + "\n**Corto plazo (preferido y búsqueda)**\n\n" + tm(SGC, ".4g", False) +
     "\nLa elasticidad del precio al empleo no tiene magnitud de referencia en literatura.md. Los signos contrarios de "
     "permisos (+) y de costes/renta en el CP son compatibles con causalidad inversa o colinealidad y no se interpretan como efecto de oferta.\n")
+
+# =============================================================== 8. ECUACIÓN EN PRECIO REAL (condición de la re-revisión)
+# Vector real = el MISMO que dio 3/3 en el test de cointegración: y = ln_ipv_real (= ln_ipv − ln_deflactor);
+# X = ln_ocupados, tipo_hip_real (= tipo_hip − inflación del deflactor), ln_permisos_l4, ln_costes_real (= ln_costes − ln_deflactor).
+BASE_R = ["ln_ocupados", "tipo_hip_real", "ln_permisos_l4", "ln_costes_real"]
+FwR = Fw.copy()
+for k_ in range(1, 5):
+    FwR[f"d_ln_ipv_real_l{k_}"] = FwR["d_ln_ipv_real"].shift(k_)
+dolR = dols(FwR.loc[:S1], "ln_ipv_real", BASE_R, Q, k=2, desde=S0)
+ciR = dolR["res"].conf_int()
+FwR["ect_l1"] = dolR["ect"].shift(1)
+REG.log("F2", "real_DOLS", "DOLS±2: ln_ipv_real ~ " + "+".join(BASE_R), dolR["res"].model.data.row_labels[0],
+        dolR["res"].model.data.row_labels[-1], dolR["n"], dolR["res"].rsquared_adj, dolR["res"].aic, dolR["res"].bic,
+        coef_interes=dolR["res"].params["ln_ocupados"], p_interes=dolR["res"].pvalues["ln_ocupados"], notas="LR precio real")
+GR = {k_: list(v) for k_, v in GROUPS.items()}
+GR["ipv"] = [None, "d_ln_ipv_real_l1", "d_ln_ipv_real_l4"]
+CAND_R = [c for g in GR.values() for c in g if c]
+COLS_R = ["const"] + Q + ["ect_l1"] + CAND_R
+needR = ["d_ln_ipv_real", "ect_l1"] + CAND_R + Q
+CR_ = common_sample(FwR.loc[S0:S1], needR)
+NR = len(CR_)
+yR = CR_["d_ln_ipv_real"].values
+MR = np.column_stack([np.ones(NR)] + [CR_[c].values for c in COLS_R[1:]])
+cixR = {c: i for i, c in enumerate(COLS_R)}
+MODR = [tuple(t for t in m if t) for m in itertools.product(*GR.values())]
+mixR = [[0, 1, 2, 3, 4] + [cixR[t] for t in m] for m in MODR]
+NMR = len(MODR)
+origR = [p_ for p_ in CR_.index if p_ >= P("2018Q1", "Q")]
+ER = {T: build_ect(FwR, str(T - 1), BASE_R, Q, "ln_ipv_real")["ect"].reindex(FwR.index).shift(1).reindex(CR_.index).values
+      for T in origR}
+errR = np.full((NMR, len(origR)), np.nan)
+benchR = {k_: np.full(len(origR), np.nan) for k_ in ["AR4+q", "media historica", "paseo con deriva (20T)"]}
+XarR = np.column_stack([np.ones(NR)] + [CR_[c].values for c in Q] + [CR_[f"d_ln_ipv_real_l{k_}"].values for k_ in range(1, 5)])
+for j, T in enumerate(origR):
+    Mo = MR.copy()
+    Mo[:, 4] = ER[T]
+    tr = np.where(CR_.index < T)[0]
+    te = int(np.where(CR_.index == T)[0][0])
+    G, g = Mo[tr].T @ Mo[tr], Mo[tr].T @ yR[tr]
+    for i, ix in enumerate(mixR):
+        errR[i, j] = yR[te] - Mo[te, ix] @ np.linalg.solve(G[np.ix_(ix, ix)], g[ix])
+    b = np.linalg.lstsq(XarR[tr], yR[tr], rcond=None)[0]
+    benchR["AR4+q"][j] = yR[te] - XarR[te] @ b
+    benchR["media historica"][j] = yR[te] - yR[tr].mean()
+    benchR["paseo con deriva (20T)"][j] = yR[te] - yR[tr][-20:].mean()
+rmseR = np.sqrt(np.nanmean(errR ** 2, axis=1))
+srR, cfR = [], []
+for i, m in enumerate(MODR):
+    cols = ["ect_l1"] + Q + list(m)
+    Xd = sm.add_constant(CR_[cols])
+    r = sm.OLS(CR_["d_ln_ipv_real"], Xd).fit(cov_type="HAC", cov_kwds={"maxlags": 4})
+    r0 = sm.OLS(CR_["d_ln_ipv_real"], Xd).fit()
+    mid = f"real_busq_{i + 1:04d}"
+    srR.append(dict(id=mid, terminos=" + ".join(m) if m else "(vacío)", N=int(r.nobs), r2_adj=r0.rsquared_adj, aic=r0.aic,
+                    bic=r0.bic, rmse_oos=rmseR[i], ect=r.params["ect_l1"], ect_p=r.pvalues["ect_l1"]))
+    for c in ["ect_l1"] + list(m):
+        cfR.append(dict(id=mid, term=c, coef=r.params[c], se=r.bse[c], p=r.pvalues[c]))
+    REG.log("F2", mid, "d_ln_ipv_real ~ ect_l1 + q2+q3+q4" + "".join(" + " + t for t in m), CR_.index[0], CR_.index[-1],
+            int(r.nobs), r0.rsquared_adj, r0.aic, r0.bic, rmseR[i], r.params["ect_l1"], r.pvalues["ect_l1"],
+            "búsqueda CP precio real; coef de interés = ect(t-1)")
+SR, CFR = pd.DataFrame(srR), pd.DataFrame(cfR)
+SR.to_csv(OUT / "real_busqueda_modelos.csv", index=False)
+CFR.to_csv(OUT / "real_busqueda_coefs.csv", index=False)
+jr2, jaic, jbic, jrm = int(SR.r2_adj.idxmax()), int(SR.aic.idxmin()), int(SR.bic.idxmin()), int(SR.rmse_oos.idxmin())
+jemp = int(SR.index[SR.terminos == "(vacío)"][0])
+PR = jr2
+ebaR = []
+termsR = ["ect_l1"] + CAND_R
+for t in termsR:
+    sub = CFR[CFR.term == t]
+    pr_ = CFR[(CFR.id == SR.id[PR]) & (CFR.term == t)]
+    ip_ = len(pr_) > 0
+    ebaR.append(dict(termino=t, K_modelos=len(sub), frac_signif_5pct=(sub.p < .05).mean(), signo_pos=(sub.coef > 0).mean(),
+                     coef_min=sub.coef.min(), coef_max=sub.coef.max(), Leamer_inf=(sub.coef - 2 * sub.se).min(),
+                     Leamer_sup=(sub.coef + 2 * sub.se).max(), en_preferido=ip_,
+                     coef_pref=pr_.coef.iloc[0] if ip_ else np.nan, EE_pref=pr_.se.iloc[0] if ip_ else np.nan,
+                     p_pref=pr_.p.iloc[0] if ip_ else np.nan))
+EBAR = pd.DataFrame(ebaR)
+EBAR["p_bonf_K"] = np.minimum(1, EBAR.p_pref * EBAR.K_modelos)
+save(EBAR, "real_busqueda_eba", ".4g", index=False)
+# bootstrap de la selección
+rngR = np.random.default_rng(SEED)
+winR = np.zeros(NMR)
+tcR = {t: 0 for t in termsR}
+tcoR = {t: [] for t in termsR}
+for _ in range(999):
+    st = rngR.integers(0, NR - 8 + 1, int(np.ceil(NR / 8)))
+    idx = np.concatenate([np.arange(s_, s_ + 8) for s_ in st])[:NR]
+    Mb, yb = MR[idx], yR[idx]
+    Gb, gb = Mb.T @ Mb, Mb.T @ yb
+    tss, yy = ((yb - yb.mean()) ** 2).sum(), yb @ yb
+    best, bi, bb = -np.inf, -1, None
+    for i, ix in enumerate(mixR):
+        try:
+            b = np.linalg.solve(Gb[np.ix_(ix, ix)], gb[ix])
+        except np.linalg.LinAlgError:
+            continue
+        r2a = 1 - ((yy - b @ gb[ix]) / (NR - len(ix))) / (tss / (NR - 1))
+        if r2a > best:
+            best, bi, bb = r2a, i, b
+    winR[bi] += 1
+    for nme, cf in zip([COLS_R[j] for j in mixR[bi]], bb):
+        if nme in tcR:
+            tcR[nme] += 1
+            tcoR[nme].append(cf)
+BOOTR = pd.DataFrame([dict(termino=t, frec_en_ganador=tcR[t] / 999, coef_post_med=np.median(tcoR[t]) if tcoR[t] else np.nan,
+                           IC95_inf=np.percentile(tcoR[t], 2.5) if len(tcoR[t]) > 20 else np.nan,
+                           IC95_sup=np.percentile(tcoR[t], 97.5) if len(tcoR[t]) > 20 else np.nan) for t in termsR])
+save(BOOTR, "real_busqueda_bootstrap", ".4g", index=False)
+freqR = winR[PR] / 999
+winTR = pd.DataFrame({"criterio": ["R2 ajustado (principal)", "AIC", "BIC", "RMSE OOS (ex post)", "vacío"],
+                      "id": [SR.id[i] for i in (jr2, jaic, jbic, jrm, jemp)],
+                      "terminos": [SR.terminos[i] for i in (jr2, jaic, jbic, jrm, jemp)],
+                      "N": [SR.N[i] for i in (jr2, jaic, jbic, jrm, jemp)],
+                      "R2_aj": [SR.r2_adj[i] for i in (jr2, jaic, jbic, jrm, jemp)],
+                      "AIC": [SR.aic[i] for i in (jr2, jaic, jbic, jrm, jemp)],
+                      "BIC": [SR.bic[i] for i in (jr2, jaic, jbic, jrm, jemp)],
+                      "RMSE_OOS": [SR.rmse_oos[i] for i in (jr2, jaic, jbic, jrm, jemp)]})
+save(winTR, "real_busqueda_ganadores", ".5g", index=False)
+orR = []
+for nme, i in [("Preferido (R2aj)", jr2), ("Ganador BIC", jbic), ("Ganador AIC", jaic), ("Mejor RMSE OOS (ex post)", jrm),
+               ("Vacío (ect+q)", jemp)]:
+    r = {"modelo": nme, "RMSE": rm(errR[i]), "n_oos": errR.shape[1]}
+    for bn, be in benchR.items():
+        dd_ = dm_test(errR[i], be, 1)
+        r[f"DM vs {bn}"], r[f"p vs {bn}"] = dd_["DM"], dd_["p"]
+    orR.append(r)
+for bn, be in benchR.items():
+    orR.append({"modelo": "[ref] " + bn, "RMSE": rm(be), "n_oos": len(be)})
+OOSR = pd.DataFrame(orR)
+save(OOSR, "real_oos_dm", ".4g", index=False)
+# diagnósticos, quiebres, robustez
+tR = [t for t in SR.terminos[PR].split(" + ") if t != "(vacío)"]
+fR = "d_ln_ipv_real ~ ect_l1 + q2 + q3 + q4" + "".join(" + " + t for t in tR)
+resR = ols_hac(fR, CR_)
+REG.log_res("F2", "real_preferido_refit", fR, resR, "ect_l1", notas="refit del preferido real (no cuenta como modelo nuevo)")
+diagR = {"Preferido real (R2aj)": diagnostics(resR)}
+for lab, i in [("Ganador BIC real", jbic), ("Ganador AIC real", jaic)]:
+    tt = [t for t in SR.terminos[i].split(" + ") if t != "(vacío)"]
+    diagR[lab] = diagnostics(ols_hac("d_ln_ipv_real ~ ect_l1 + q2 + q3 + q4" + "".join(" + " + t for t in tt), CR_))
+diagR["DOLS real (LR)"] = diagnostics(dolR["res"])
+augR, curR, resA = [dict(paso="preferido", BG4_p=diagR["Preferido real (R2aj)"]["BG4_p"])], list(tR), resR
+if augR[0]["BG4_p"] < .05:
+    for k_ in range(1, 5):
+        nm = f"d_ln_ipv_real_l{k_}"
+        if nm in curR:
+            continue
+        curR.append(nm)
+        f_ = "d_ln_ipv_real ~ ect_l1 + q2 + q3 + q4" + "".join(" + " + t for t in curR)
+        resA = ols_hac(f_, CR_)
+        augR.append(dict(paso="+" + nm, BG4_p=diagnostics(resA)["BG4_p"]))
+        REG.log_res("F2", f"real_aug_BG_{k_}", f_, resA, "ect_l1", notas="añade retardos por BG")
+        if augR[-1]["BG4_p"] >= .05:
+            break
+chR = pd.DataFrame([chow(CR_, fR, f_) for f_ in ["2014Q1", "2020Q1", "2022Q3"]])
+save(chR, "real_chow", ".4g", index=False)
+PpR = partial(CR_, ["ect_l1"] + tR, "d_ln_ipv_real")
+bpR = bai_perron(PpR["d_ln_ipv_real"], sm.add_constant(PpR.drop(columns="d_ln_ipv_real")), 3, 12)
+DlR = common_sample(FwR.loc[S0:S1], ["ln_ipv_real"] + BASE_R)
+PlR = partial(DlR, BASE_R, "ln_ipv_real")
+bpRl = bai_perron(PlR["ln_ipv_real"], sm.add_constant(PlR.drop(columns="ln_ipv_real")), 3, 12)
+BPR = pd.DataFrame([dict(ecuacion="ECM real preferido", N=len(PpR), n_quiebres=bpR["n_bkps"], fechas=", ".join(bpR["fechas"])),
+                    dict(ecuacion="LR real (niveles)", N=len(PlR), n_quiebres=bpRl["n_bkps"], fechas=", ".join(bpRl["fechas"]))])
+save(BPR, "real_bai_perron", ".4g", index=False)
+rbR = []
+CxR = CR_.copy()
+bpa = sorted(set(bpR["fechas"]) | set(bpRl["fechas"]))
+for f_ in bpa:
+    CxR[f"esc_{f_}"] = (CR_.index >= P(f_, "Q")).astype(float)
+forms = {"Preferido real": (fR, CxR), "+ epa21 (quiebre_epa_2021) + tipo22 (escalón 2022Q3)": (fR + " + epa21 + tipo22", CxR),
+         "2014Q1-2026Q2": (fR, CxR.loc["2014Q1":])}
+if bpa:
+    forms["+ escalones Bai-Perron"] = (fR + "".join(f" + esc_{f_}" for f_ in bpa), CxR)
+for lab, (f_, d_) in forms.items():
+    r_ = ols_hac(f_, d_)
+    dg_ = diagnostics(r_)
+    REG.log_res("F2", "real_rob_" + str(len(rbR) + 1), f_, r_, "ect_l1", notas="robustez real: " + lab)
+    ex_ = "; ".join(f"{k}={fmt(r_.params[k], r_.bse[k])}" for k in r_.params.index if k in ["epa21", "tipo22"] or k.startswith("esc_"))
+    rbR.append(dict(modelo=lab, N=int(r_.nobs), ect=fmt(r_.params["ect_l1"], r_.bse["ect_l1"]), p_ect=r_.pvalues["ect_l1"],
+                    R2_aj=r_.rsquared_adj, BG4_p=dg_["BG4_p"], BP_p=dg_["BP_p"], JB_p=dg_["JB_p"], RESET_p=dg_["RESET_p"], extras=ex_))
+dpcR = build_ect(FwR, "2019Q4", BASE_R, Q, "ln_ipv_real")
+Fpc2 = FwR.loc[:"2019Q4"].copy()
+Fpc2["ect_l1"] = dpcR["ect"].shift(1)
+Cpc2 = common_sample(Fpc2.loc[S0:"2019Q4"], needR)
+rpcR = ols_hac(fR, Cpc2)
+dgp = diagnostics(rpcR)
+REG.log_res("F2", "real_rob_preCOVID", fR, rpcR, "ect_l1", notas="real, muestra hasta 2019Q4 (ect re-estimado)")
+rbR.append(dict(modelo="Pre-COVID (≤2019Q4; ect re-estimado)", N=int(rpcR.nobs), ect=fmt(rpcR.params["ect_l1"], rpcR.bse["ect_l1"]),
+                p_ect=rpcR.pvalues["ect_l1"], R2_aj=rpcR.rsquared_adj, BG4_p=dgp["BG4_p"], BP_p=dgp["BP_p"], JB_p=dgp["JB_p"],
+                RESET_p=dgp["RESET_p"], extras="LR pre-COVID: " + "; ".join(f"{k}={dpcR['beta'][k]:.3f}" for k in BASE_R)))
+ROBR = pd.DataFrame(rbR)
+save(ROBR, "real_robustez", ".4g", index=False)
+DGR = pd.DataFrame(diagR).T
+save(DGR, "real_diagnosticos", ".3g")
+# tabla final
+rowsF = []
+rs = dolR["res"]
+for x in ["const"] + BASE_R:
+    rowsF.append(dict(bloque="LR (DOLS ±2, HAC)", termino=x, coef=rs.params[x], EE_HAC=rs.bse[x], IC95_inf=ciR.loc[x, 0],
+                      IC95_sup=ciR.loc[x, 1], p=rs.pvalues[x], p_bonf_K=np.nan, K=np.nan, N=dolR["n"]))
+cip = resR.conf_int()
+ebR = EBAR.set_index("termino")
+for x in ["Intercept", "ect_l1", "q2", "q3", "q4"] + tR:
+    rowsF.append(dict(bloque="CP (ECM, preferido R2aj)", termino=x, coef=resR.params[x], EE_HAC=resR.bse[x], IC95_inf=cip.loc[x, 0],
+                      IC95_sup=cip.loc[x, 1], p=resR.pvalues[x], p_bonf_K=ebR.p_bonf_K.get(x, np.nan),
+                      K=ebR.K_modelos.get(x, np.nan), N=int(resR.nobs)))
+ECR = pd.DataFrame(rowsF)
+save(ECR, "ecuacion_real", ".4g", index=False)
+# comparación nominal-real
+cmp = pd.DataFrame({
+    "nominal": [fmt(dol['DOLS base (+q)']['beta'][a], dol['DOLS base (+q)']['res'].bse[a]) for a in BASE] + [
+        fmt(res_pref.params["ect_l1"], res_pref.bse["ect_l1"]), res_pref.rsquared_adj, int(res_pref.nobs), S.terminos[PREF],
+        freq_pref, diag["Preferido (R2aj)"]["BG4_p"], diag["Preferido (R2aj)"]["RESET_p"], ch.iloc[0].p, cdf.iloc[0].decision],
+    "real": [fmt(rs.params[a], rs.bse[a]) for a in BASE_R] + [
+        fmt(resR.params["ect_l1"], resR.bse["ect_l1"]), resR.rsquared_adj, int(resR.nobs), SR.terminos[PR], freqR,
+        diagR["Preferido real (R2aj)"]["BG4_p"], diagR["Preferido real (R2aj)"]["RESET_p"], chR.iloc[0].p, real.decision]},
+    index=["LR ocupados", "LR tipo (nominal / real)", "LR permisos t−4", "LR costes (nominal / reales)", "ect(t−1)", "R2_aj CP", "N CP",
+           "términos CP", "frec. bootstrap del preferido", "BG(4) p", "RESET p", "Chow 2014Q1 p", "cointegración (≥2/3)"])
+save(cmp.astype(str), "comparacion_nominal_real", index=True)
+sec("8. Ecuación en PRECIO REAL (única con cointegración 3/3)",
+    "**Definición.** y = ln_ipv_real = ln_ipv − ln_deflactor (deflactor del PIB). Vector exactamente igual al del test 3/3: "
+    "ln_ocupados, tipo_hip_real (= tipo_hip − inflación del deflactor), ln_permisos_l4 y ln_costes_real (= ln_costes − ln_deflactor): "
+    "SÍ, los costes van en términos reales. DOLS ±2 con dummies trimestrales, HAC(4). CP: d(ln_ipv_real) con ect(t−1) del DOLS real, "
+    f"el MISMO conjunto cerrado de candidatos (el retardo de la dependiente es d_ln_ipv_real_l1/l4; el resto de candidatos son los mismos "
+    f"d_ ya definidos), {NMR} modelos, muestra común {CR_.index[0]}-{CR_.index[-1]}, N={NR}. Selección por R² aj con Bonferroni "
+    f"(K = modelos con el término) y bootstrap de bloques (B=999, bloque 8, semilla {SEED}; ect fijo). Asociaciones, no causalidad.\n\n"
+    "**Ecuación real final (coef, EE HAC, IC 95 %, p, p Bonferroni)**\n\n" + tm(ECR, ".4g", False) +
+    f"\nEl preferido real gana en {freqR:.1%} de las réplicas bootstrap. **Ganadores (misma muestra)**\n\n" + tm(winTR, ".5g", False) +
+    "\n**EBA / Bonferroni**\n\n" + tm(EBAR.drop(columns=["en_preferido"]), ".3g", False) + "\n**Bootstrap de la selección**\n\n" + tm(BOOTR, ".3g", False) +
+    "\n**OOS** (ventana expansiva desde 2018Q1; LR re-estimado hasta t−1; selección con muestra completa → pseudo-OOS)\n\n" + tm(OOSR, ".4g", False) +
+    "\n**Diagnósticos** (BG-aumentado: " + "; ".join(f"{a['paso']} p={a['BG4_p']:.3f}" for a in augR) + ")\n\n" + tm(DGR, ".3g") +
+    "\n**Chow**\n\n" + tm(chR, ".4g", False) + "\n**Bai-Perron**\n\n" + tm(BPR, ".4g", False) +
+    "\n**Robustez (dummies epa21/tipo22, escalones, 2014+, pre-COVID)**\n\n" + tm(ROBR, ".4g", False) +
+    "\n**Comparación nominal vs real**\n\n" + tm(cmp.astype(str), ".4g") +
+    "\nEl precio real y el nominal difieren por el deflactor (tendencia común de precios generales); la relación de nivel es "
+    "estadísticamente más sostenible en términos reales (3/3 frente a 1/3), pero comparte la inestabilidad de los quiebres.\n")
 
 # estado de cointegración
 nom, real = cdf.iloc[0], cdf[cdf.sistema.str.startswith("ln_ipv_real")].iloc[0]

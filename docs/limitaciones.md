@@ -38,3 +38,8 @@ Problemas que persisten tras las iteraciones de revisión, o restricciones de da
 - El test CD de Pesaran no es interpretable sobre residuos de FE bidireccional/CCE (Juodis y Reese 2022); no se calculó el CDw.
 - 17 clusters: inferencia apoyada en wild cluster bootstrap; terminadas retardadas con signo positivo (contrario a lo esperado, p wild 0,075).
 - Errata menor pendiente: la sección 1a de resumen_f5.md dice «16 clusters» (son 17).
+
+## F2 — bloque de precio real (condición de la re-revisión, cumplida)
+- Ecuación real: el término de corrección del error es significativo en toda la muestra (−0,106, EE 0,035) pero cambia de signo antes de 2020 (+0,010, p=0,72) y no es significativo desde 2014: la corrección hacia el equilibrio no es estable.
+- Costes reales con signo negativo en el largo plazo (−0,66) y tipo real ≈0: relación estadística, no estructural. DOLS real con BG, RESET y VIF (17) que fallan.
+- Ningún término del corto plazo real sobrevive a Bonferroni (K=576-1.728); el preferido rara vez gana en el bootstrap de la selección; no mejora al AR(4) fuera de muestra.

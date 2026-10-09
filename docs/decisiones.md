@@ -60,3 +60,11 @@ Formato: fecha · fase · decisión · alternativa descartada · motivo.
 - 2026-10-09 · F3 · `ipc_alquiler` (IPC alquiler por CCAA) se añadió como resultado DESPUÉS del diseño prefijado (que solo fijaba SERPAVI para alquiler); no es resultado principal prefijado y no sobrevive a Holm. · — · transparencia sobre búsqueda.
 - 2026-10-09 · F3 · Pretendencia 1996-2001 no computable en el script: `data/processed` no tiene precios por CCAA antes de 2002 (solo en data/raw). Se reporta la cifra de la revisión (raw) como externa y se deja pendiente su incorporación a processed. · Leer raw desde el script · regla de leer solo de processed.
 2026-10-09 · F1 (corrección) · Parser MIVAU: Extremadura (1) mal clasificada como provincia; corregido; solo afecta a terminadas/visados por CCAA.
+
+## F7 (síntesis) — niveles de evidencia fijados por el orquestador a partir de las fases aprobadas
+- P1: asociación. Ecuación final = LR real (DOLS) + ECM real preferido por R² aj, con p Bonferroni y bootstrap de la selección; la nominal como réplica. Cointegración: real 3/3, nominal 1/3 (se reportan ambos).
+- P2: asociación (IV no supera bootstrap, pretendencias y Holm). Asociación positiva con alquiler; nula/no robusta con precio de compra.
+- P3: déficit = aritmética contable (descriptivo, fuentes oficiales); elasticidad de oferta = asociación débil/descriptiva; 0,45 del BdE NO VERIFICADA y no rechazada en Δ4.
+- P4: asociación; «no se detecta heterogeneidad» (no homogeneidad). València: comparativa con HAC para valor tasado (N≥40); el resto descriptivo.
+- P5: quiebres detectados (2014 Chow; Bai-Perron 2011Q4, 2019Q2, 2023Q2 en niveles); 2020 y 2022 no rechazados por Chow en el ECM real; corrección de error inestable → el modelo no es estable.
+- Las cifras del informe se leen de output/ por src/report.py (ninguna escrita a mano en el texto).

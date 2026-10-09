@@ -221,3 +221,70 @@ P5 no está definida en el repositorio. La interpreto como la pregunta sobre la 
 - **Sostenible:** la especificación concreta no está identificada (el preferido gana en el 1,5 % de las réplicas). Solo los términos de empleo, persistencia, crédito contemporáneo y ect aparecen de forma sistemática.
 - **Sostenible:** en el OOS 2018-2026, la ecuación no mejora a un AR(4) estacional y solo bate a la media histórica.
 - **No sostenible:** que el modelo preferido tenga ventaja predictiva o que su R² ajustado (0,749) refleje capacidad explicativa no sobreajustada.
+
+---
+
+# Re-revisión (iteración 2 de 2) — commit 625cb59
+
+## Veredicto final: **APROBAR**, con una condición obligatoria antes de F7 (punto R4)
+
+## R1. Cambios bloqueantes 1-3 y no bloqueantes 4-5: aplicados correctamente
+
+**1. ARDL.**
+- Ahora los órdenes se asignan por nombre de variable, el contraste es un F de Wald propio con las dummies trimestrales y el valor crítico usa k = número de regresores x (`crit_percentiles` = (90, 95, 99), así que el índice 1 corresponde al 95 %, que es lo correcto).
+- Los F coinciden con los míos: nominal base 3,246, +renta 2,645, +pob_extranj 6,518, +pob_total 5,121, real base 7,199, tasado base 3,295.
+- Resultado: nominal **1/3 (evidencia mixta)** y real **3/3**.
+
+**2.** El estado del largo plazo y del ECM está bien redactado: el p del ect no se usa como contraste de cointegración y se reconoce la inestabilidad del largo plazo.
+
+**3.** Hay tabla de crédito (`robustez_credito.md`): en t−1 el coeficiente es −0,029 (0,011); sin crédito, el R² ajustado es 0,652 y el ect −0,120. Se presenta como comovimiento. Es correcto.
+
+**4.** Las tablas `signos_LP` y `signos_CP` marcan las discrepancias de signo.
+
+**5.** El OOS lleva las salvedades (pseudo-OOS, óptimo ex post) y dice que el preferido no bate al AR(4).
+
+**Además:** se discute el Chow de 2014Q1 y se añaden la tabla de estabilidad por muestras y el DOLS por subperíodos.
+
+## R2. Determinismo: OK
+
+- Hice dos ejecuciones aisladas y **simultáneas** de `src/f2_nacional.py`, en copias separadas (`git archive` de HEAD más `data/processed`), sin red. Las dos terminaron con exit 0.
+- Las 54 salidas de `output/f2` y el registro (1.748 filas) dan **md5 idénticos** entre sí **y con lo versionado en HEAD**.
+- El registro atómico (`os.replace` al salir) y el `flock` de make eliminan el intercalado de filas. Un matiz: si el script falla a mitad, `atexit` escribe un registro parcial. Es aceptable, porque make se detiene.
+
+## R3. Problemas residuales, no bloqueantes (pasan a docs/limitaciones.md)
+
+- Desde 2014Q1 (N = 50), el ect vale −0,068 (0,045) y **deja de ser significativo**, y el crédito contemporáneo desaparece (−0,001). El mecanismo de corrección y el comovimiento con el crédito se apoyan sobre todo en 2008-2013. P1 debe decirlo.
+- La variante con crédito en t−1 rechaza BG(4) (p = 0,03), igual que la de sin crédito (p = 0,02).
+- Erratas de texto:
+  - La sección 5 del resumen sigue diciendo «1737 filas»; la cabecera dice 1.748.
+  - El UECM implícito ahora usa EE clásicos, y la columna se sigue llamando `EE_HAC`.
+
+## R4. Valoración de la decisión del orquestador: interpretar en F7 el largo plazo REAL
+
+**Es defendible.**
+- La versión real estaba prerregistrada como robustez.
+- La regla 2/3 se aplica tal cual.
+- Ese 3/3 sobrevive aunque se descarte Johansen, que no es fiable: EG p = 0,023 y ARDL F = 7,2 con t = −5,2 bastan para 2/3.
+- Queda documentada como desviación del prerregistro motivada por los contrastes y no por el ajuste.
+
+**Condiciones.**
+- **(a) Obligatoria.** `output/f2` no contiene todavía **ninguna estimación de la ecuación real**: ni DOLS real ni ECM con ect real. Hay que añadirla a `src/f2_nacional.py` antes de F7, con su tabla de signos. Sin ella, F7 no puede citar cifras.
+- **(b) Hay que avisar de que la relación real es estadística, no estructural.** Mi DOLS real de control (±2, HAC(4), N = 72; no son cifras de output y no deben citarse) da:
+
+| Variable | Coeficiente (EE) | Comentario |
+|---|---|---|
+| ln_ocupados | 1,48 (0,33) | |
+| tipo_hip_real | 0,002 (0,008) | ≈ 0 |
+| ln_permisos_l4 | 0,03 (0,03) | |
+| ln_costes_real | **−0,66 (0,25)** | signo contrario al esperado |
+
+  En pre-COVID, ocupados sube a 3,5 y el tipo real pasa a ser +0,053, también con signo contrario. Es decir, la relación cointegrada está dominada por el empleo, y los signos de costes y tipo no coinciden con `literatura.md`.
+- **(c)** `ln_ipv_real` sale «ambigua» en raíces unitarias (Zivot-Andrews rechaza con quiebre en 2015Q1). El bounds test es válido con I(0) o I(1), pero hay que mencionarlo.
+
+## Lo que queda sostenible (actualiza la sección anterior)
+
+- **P1.** Asociación positiva y robusta con el empleo y persistencia del precio; nivel de evidencia moderado.
+- **Relación de largo plazo.** Existe estadísticamente en términos reales (fuerte, 3/3), con signos de costes y tipo no interpretables. En términos nominales la evidencia es mixta.
+- **Corrección de error.** Es significativa en la muestra completa, pero no desde 2014; evidencia débil.
+- **Crédito.** Es comovimiento.
+- **P5.** La especificación concreta no está identificada y no hay ganancia predictiva frente al AR(4).

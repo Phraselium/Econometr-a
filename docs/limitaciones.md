@@ -11,3 +11,10 @@ Problemas que persisten tras las iteraciones de revisión, o restricciones de da
 - Precio largo: `p_bde` (BdE) = `p_tasado` (MIVAU); una única serie larga desde 1995.
 - Deflactor: implícito del PIB (CNTR SA), no un deflactor de consumo.
 - València: padrón por nacionalidad solo hasta 2022; varias series municipales con N corto (≤ 14 años).
+
+## F2 (aprobada en re-revisión; pendientes trasladados)
+- Cointegración con precio nominal: evidencia mixta (1/3: EG no rechaza, Johansen rechaza, ARDL no concluyente). Solo el precio real cointegra en los tres contrastes; la relación es estadística, no estructural (costes y tipo con signos no esperados en el DOLS real de control del revisor; inestable por subperiodos).
+- Desde 2014Q1 el término de corrección del error deja de ser significativo (−0,068, EE 0,045; N=50) y el crédito desaparece: la dinámica de ajuste no es estable.
+- El crédito nuevo contemporáneo es simultáneo con el precio (en t−1 cambia de signo); la variante con crédito en t−1 rechaza Breusch-Godfrey.
+- Selección: el modelo preferido gana en solo el 1,5 % de las réplicas bootstrap; tras Bonferroni (K=1.728) ningún regresor es significativo al 5 %; fuera de muestra no mejora al AR(4) (selección hecha con la muestra completa).
+- RESET rechaza en la ecuación preferida; quiebre en 2014Q1 (Chow p=0,012); Bai-Perron detecta 3 quiebres en el largo plazo.

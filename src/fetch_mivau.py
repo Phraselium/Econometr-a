@@ -602,13 +602,17 @@ def main() -> None:
             data = get(INE_API.format(code=code), as_json=True)
             frames.append(ine_long(data, INE_API.format(code=code)))
         save(_sin_duplicados(pd.concat(frames, ignore_index=True)), "ine_vut_nacional_ccaa_prov.csv", FUENTE_INE)
-    if not cached("ine_vut_valencia_municipio.csv"):
-        frames = []
-        for code in ["39363", "39366"]:
-            data = get(INE_API.format(code=code), as_json=True)
-            frames.append(ine_long(data, INE_API.format(code=code),
-                                   filtro=lambda t: t == "Valencia/València"))
-        save(pd.concat(frames, ignore_index=True), "ine_vut_valencia_municipio.csv", FUENTE_INE)
+    # Las tablas 39363/39366 (municipios) incluyen ademas las provincias con su nombre INE; en ellas
+    # "Valencia/València" es la PROVINCIA (VTE15, VTE231) y el MUNICIPIO 46250 se llama "València"
+    # (tilde en la i). Antes se filtraba "Valencia/València" y se guardaba la provincia como municipio.
+    for fichero, nombre_ine in [("ine_vut_valencia_municipio.csv", "València"),
+                                ("ine_vut_valencia_provincia.csv", "Valencia/València")]:
+        if not cached(fichero):
+            frames = []
+            for code in ["39363", "39366"]:
+                data = get(INE_API.format(code=code), as_json=True)
+                frames.append(ine_long(data, INE_API.format(code=code), filtro=lambda t, n=nombre_ine: t == n))
+            save(pd.concat(frames, ignore_index=True), fichero, FUENTE_INE)
 
 
 if __name__ == "__main__":

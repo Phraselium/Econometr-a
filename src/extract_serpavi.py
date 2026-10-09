@@ -12,6 +12,20 @@ codigo, nombre, tipologia, variable, estadistico):
   serpavi_municipios_46.csv (todos los municipios de la provincia de Valencia, CPRO 46),
   serpavi_valencia_distritos.csv, serpavi_valencia_secciones.csv (CUMUN 46250).
 Tambien genera serpavi_validacion.csv (contraste con IPVA INE e IPC alquiler).
+
+Agregado Espana (serpavi_esp_agregado.csv), tres series DERIVADAS (no oficiales; una media ponderada de medianas
+de CCAA no es una mediana nacional):
+  * _composicion_variable: media de medianas CCAA ponderada por contratos de cada anyo, con las CCAA disponibles
+    ese anyo. La composicion cambia (Navarra desde 2021, Pais Vasco desde 2024; Gipuzkoa 2022 solo existe a nivel
+    provincial), lo que infla el crecimiento de 2024 en ~0,7 pp. Solo para robustez.
+  * _composicion_constante (PRINCIPAL): solo las CCAA presentes en los 14 anyos 2011-2024 (17: todas salvo Navarra y
+    Pais Vasco; incluye Ceuta y Melilla), con pesos FIJOS = contratos medios 2011-2024 de cada CCAA.
+  * _encadenada: indice base 2011=100 (nivel inicial = nivel de la constante en 2011) encadenado con la variacion
+    anual t-1 -> t calculada con las CCAA comunes a ambos anyos, ponderadas por los contratos medios de ese par.
+    Incorpora Navarra/Pais Vasco cuando ya hay dos anyos consecutivos, sin saltos de composicion.
+AVISO de validacion: el contraste con el IPVA del INE NO es independiente, pues ambos proceden de datos tributarios
+de la AEAT (IRPF). La validacion externa independiente (encuesta) es el IPC alquiler del INE (IPC290887 nacional,
+IPC296644 CV), que se contrasta ademas con la serie de composicion constante.
 Idempotente: usa cache de descarga (FORCE=1 para rehacer). No toca data/processed.
 """
 from __future__ import annotations
@@ -102,19 +116,7 @@ def main():
     prov = to_long(r, h, 0, 1, "PROV", "hoja Provincias")
     prov.to_csv(OUT / "serpavi_provincias.csv", index=False)
 
-    # Agregado Espana = media de medianas de CCAA ponderada por n de contratos (VC). DERIVADO, no oficial.
-    c = ccaa[(ccaa.tipologia == "VC")]
-    a = c[(c.variable == "alquiler_m2") & (c.estadistico == "mediana")][["periodo", "codigo", "valor"]]
-    n = c[(c.variable == "n_contratos")][["periodo", "codigo", "valor"]].rename(columns={"valor": "n"})
-    m = a.merge(n, on=["periodo", "codigo"])
-    agg = m.groupby("periodo").apply(lambda g: pd.Series({
-        "valor": np.average(g.valor, weights=g.n), "n_ccaa": len(g), "n": g.n.sum()}), include_groups=False).reset_index()
-    esp = pd.DataFrame({"fecha": agg.periodo.astype(str) + "-01-01", "periodo": agg.periodo,
-                        "serie": "SERPAVI_ESP_VC_alquiler_m2_mediana_pond", "valor": agg.valor, "unidad": "EUR/m2/mes",
-                        "fuente": "MIVAU-SERPAVI (AEAT IRPF); agregado propio", "url": XLSX_URL, "origen": "xls",
-                        "pagina": "hoja CCAA", "nivel": "ESP", "codigo": "00", "nombre": "Espana (agregado ponderado CCAA)",
-                        "tipologia": "VC", "variable": "alquiler_m2", "estadistico": "mediana_ponderada",
-                        "n_ccaa": agg.n_ccaa, "n_contratos": agg.n})
+    esp = agregados_esp(ccaa)
     esp.to_csv(OUT / "serpavi_esp_agregado.csv", index=False)
 
     h, r = read_sheet(wb, "Municipios", lambda r: str(r[0]).zfill(2) == "46")
@@ -131,6 +133,52 @@ def main():
     validar()
 
 
+def agregados_esp(ccaa):
+    """Tres agregados DERIVADOS de Espana desde la hoja CCAA (ver docstring del modulo)."""
+    c = ccaa[ccaa.tipologia == "VC"]
+    a = c[(c.variable == "alquiler_m2") & (c.estadistico == "mediana")].pivot(index="periodo", columns="codigo", values="valor")
+    n = c[c.variable == "n_contratos"].pivot(index="periodo", columns="codigo", values="valor").reindex_like(a)
+    ok = a.notna() & n.notna()
+    a, n = a.where(ok), n.where(ok)
+    comunes = list(a.columns[a.notna().all()])           # CCAA presentes todos los anyos (17)
+    w_fijo = n[comunes].mean()                            # pesos fijos: contratos medios del periodo
+    base = dict(tipologia="VC", variable="alquiler_m2", nivel="ESP", codigo="00", unidad="EUR/m2/mes",
+                fuente="MIVAU-SERPAVI (AEAT IRPF); agregado propio", url=XLSX_URL, origen="xls", pagina="hoja CCAA")
+    filas = []
+
+    def fila(y, serie, valor, nombre, est, unidad=None, n_ccaa=None, n_contr=None):
+        filas.append({**base, "fecha": f"{y}-01-01", "periodo": y, "serie": serie, "valor": valor, "nombre": nombre,
+                      "estadistico": est, "n_ccaa": n_ccaa, "n_contratos": n_contr,
+                      **({"unidad": unidad} if unidad else {})})
+
+    nom_v = "Espana (agregado ponderado CCAA, composicion variable)"
+    nom_c = f"Espana (agregado CCAA, composicion constante {len(comunes)} CCAA, pesos fijos)"
+    nom_e = "Espana (indice encadenado CCAA comunes a pares de anyos; base 2011=nivel constante)"
+    prev = None
+    for y in a.index:
+        g = a.loc[y].dropna()
+        fila(y, "SERPAVI_ESP_VC_alquiler_m2_mediana_pond_composicion_variable",
+             np.average(g, weights=n.loc[y, g.index]), nom_v, "mediana_ponderada", n_ccaa=len(g), n_contr=n.loc[y, g.index].sum())
+        vc = np.average(a.loc[y, comunes], weights=w_fijo)
+        fila(y, "SERPAVI_ESP_VC_alquiler_m2_mediana_pond_composicion_constante", vc, nom_c, "mediana_ponderada_const",
+             n_ccaa=len(comunes), n_contr=n.loc[y, comunes].sum())
+        if prev is None:
+            enc = vc
+            fila(y, "SERPAVI_ESP_VC_alquiler_m2_mediana_pond_encadenada", enc, nom_e, "mediana_ponderada_encadenada",
+                 n_ccaa=len(comunes), n_contr=n.loc[y, comunes].sum())
+        else:
+            par = list(a.loc[[prev, y]].dropna(axis=1).columns)
+            w = n.loc[[prev, y], par].mean()
+            var = np.average(a.loc[y, par], weights=w) / np.average(a.loc[prev, par], weights=w)
+            enc *= var
+            fila(y, "SERPAVI_ESP_VC_alquiler_m2_mediana_pond_encadenada", enc, nom_e, "mediana_ponderada_encadenada",
+                 n_ccaa=len(par), n_contr=n.loc[y, par].sum())
+        prev = y
+    cols = ["fecha", "periodo", "serie", "valor", "unidad", "fuente", "url", "origen", "pagina", "nivel", "codigo",
+            "nombre", "tipologia", "variable", "estadistico", "n_ccaa", "n_contratos"]
+    return pd.DataFrame(filas)[cols]
+
+
 def _tasa(s):
     return s.sort_index().pct_change() * 100
 
@@ -139,7 +187,10 @@ def validar():
     """Contraste con IPVA INE (Valencia municipio IPVA8471; CV IPVA4932; Total nacional IPVA4962) e IPC alquiler."""
     mun = pd.read_csv(OUT / "serpavi_municipios_46.csv", dtype={"codigo": str})
     ccaa = pd.read_csv(OUT / "serpavi_ccaa.csv", dtype={"codigo": str})
-    esp = pd.read_csv(OUT / "serpavi_esp_agregado.csv")
+    espl = pd.read_csv(OUT / "serpavi_esp_agregado.csv")
+    esp_var = espl[espl.serie.str.endswith("composicion_variable")]
+    esp_con = espl[espl.serie.str.endswith("composicion_constante")]
+    esp_enc = espl[espl.serie.str.endswith("encadenada")]
     ipva_m = pd.read_csv(RAW / "ine_ipva_municipal.csv")
     ipva_n = pd.read_csv(RAW / "ine_ipva_nacional_ccaa.csv")
     ipc = pd.read_csv(RAW / "ine_ipc_alquiler.csv")
@@ -163,29 +214,41 @@ def validar():
 
     pares = [
         ("Valencia municipio (mediana VC EUR/m2) vs IPVA INE Valencia municipio (IPVA8471 indice)",
-         sp(mun, codigo="46250", tipologia="VC", variable="alquiler_m2", estadistico="mediana"), ser(ipva_m, "IPVA8471")),
+         sp(mun, codigo="46250", tipologia="VC", variable="alquiler_m2", estadistico="mediana"), ser(ipva_m, "IPVA8471"),
+         "NO independiente (ambos AEAT)"),
         ("Comunitat Valenciana (mediana VC) vs IPVA INE CV total (IPVA4932)",
-         sp(ccaa, codigo="10", tipologia="VC", variable="alquiler_m2", estadistico="mediana"), ser(ipva_n, "IPVA4932")),
-        ("Espana agregado (mediana VC pond.) vs IPVA INE Total Nacional (IPVA4962)",
-         esp.set_index("periodo")["valor"], ser(ipva_n, "IPVA4962")),
-        ("Espana agregado (mediana VC pond.) vs IPC alquiler nacional (IPC290887, media anual)",
-         esp.set_index("periodo")["valor"], ipc_anual("IPC290887")),
+         sp(ccaa, codigo="10", tipologia="VC", variable="alquiler_m2", estadistico="mediana"), ser(ipva_n, "IPVA4932"),
+         "NO independiente (ambos AEAT)"),
+        ("Espana composicion CONSTANTE vs IPVA INE Total Nacional (IPVA4962)",
+         esp_con.set_index("periodo")["valor"], ser(ipva_n, "IPVA4962"), "NO independiente (ambos AEAT)"),
+        ("Espana composicion VARIABLE vs IPVA INE Total Nacional (IPVA4962)",
+         esp_var.set_index("periodo")["valor"], ser(ipva_n, "IPVA4962"), "NO independiente (ambos AEAT)"),
+        ("Espana encadenada vs IPVA INE Total Nacional (IPVA4962)",
+         esp_enc.set_index("periodo")["valor"], ser(ipva_n, "IPVA4962"), "NO independiente (ambos AEAT)"),
+        ("Espana composicion CONSTANTE vs IPC alquiler nacional (IPC290887, media anual)",
+         esp_con.set_index("periodo")["valor"], ipc_anual("IPC290887"), "validacion externa (encuesta IPC)"),
+        ("Espana composicion VARIABLE vs IPC alquiler nacional (IPC290887, media anual)",
+         esp_var.set_index("periodo")["valor"], ipc_anual("IPC290887"), "validacion externa (encuesta IPC)"),
+        ("Espana encadenada vs IPC alquiler nacional (IPC290887, media anual)",
+         esp_enc.set_index("periodo")["valor"], ipc_anual("IPC290887"), "validacion externa (encuesta IPC)"),
         ("Comunitat Valenciana (mediana VC) vs IPC alquiler CV (IPC296644, media anual)",
-         sp(ccaa, codigo="10", tipologia="VC", variable="alquiler_m2", estadistico="mediana"), ipc_anual("IPC296644")),
+         sp(ccaa, codigo="10", tipologia="VC", variable="alquiler_m2", estadistico="mediana"), ipc_anual("IPC296644"),
+         "validacion externa (encuesta IPC)"),
     ]
     out = []
-    for nombre, a, b in pares:
+    for nombre, a, b, indep in pares:
         ta, tb = _tasa(a), _tasa(b)
         j = pd.concat([ta, tb], axis=1, keys=["serpavi", "ref"]).dropna()
         j = j[j.index >= 2012]
         dif = (j.serpavi - j.ref).abs()
         out.append({"tabla": nombre, "validado": "si" if len(j) >= 5 and j.serpavi.corr(j.ref) > 0.5 else "no",
+                    "independencia_fuente": indep,
                     "n_anos": len(j), "anos": f"{j.index.min()}-{j.index.max()}",
                     "corr_tasas_anuales": round(j.serpavi.corr(j.ref), 3),
                     "dif_max_pp": round(dif.max(), 2), "ano_dif_max": int(dif.idxmax()),
                     "dif_media_pp": round(dif.mean(), 2),
                     "error_max": round(dif.max(), 2),
-                    "metodo": "origen xls (no PDF/OCR): contraste de tasas de variacion anual con serie INE solapada",
+                    "metodo": "origen xls (no PDF/OCR): contraste de tasas de variacion anual con serie INE solapada; IPVA = AEAT/IRPF igual que SERPAVI, no es contraste independiente",
                     "paginas_revisadas": "n/a (xls)"})
     pd.DataFrame(out).to_csv(OUT / "serpavi_validacion.csv", index=False)
     print(pd.DataFrame(out).drop(columns=["metodo", "paginas_revisadas"]).to_string())

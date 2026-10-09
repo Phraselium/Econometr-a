@@ -17,3 +17,10 @@ Notas de calidad
 - Ceuta y Melilla: el Anuario las incluye en Cádiz y Almería (y en Andalucía); el CSV las lista aparte. La conciliación (CSV + Ceuta/Melilla) da error 0 frente al PDF; sin ella la diferencia es 1.347 en Andalucía.
 - CSV opendata y Anuario son series de 4 trimestres móviles / año natural, no flujo trimestral.
 - Las series % extranjeros CCAA de los tres Anuarios coinciden entre ediciones (sin revisiones).
+
+Corrección tras la revisión F1 (2026-10-09)
+- El CSV opendata es una **suma móvil de 4 trimestres** (p. ej. España 2025T1-T4 = 667.058 / 691.863 / 699.638 / 705.357). La serie trimestral se renombra con sufijo `_4T_movil` (`compraventas_viv_num_4T_movil`, etc.), `fecha` = inicio del último trimestre de la ventana y columna `ventana` = `AAAAQq-AAAAQq`. No usar como flujo trimestral (MA(3) mecánico y solapamiento).
+- Serie anual para el modelo: `registradores_opendata_anual.csv` (solo T4 = año natural; fecha AAAA-01-01, periodo AAAA, series sin sufijo).
+- **No recuperable**: los trimestres individuales por diferencias, Q_t = S_t − S_{t−1} + Q_{t−4}, exigen cuatro valores iniciales Q no observados (el CSV solo publica sumas móviles). No se calcula ni se imputa.
+- Las filas `*_extranjeros_implicitos_vs_notarios_CGN` pasan de `validado=si/no` a `validado=plausibilidad` (contraste entre fuentes y fechas distintas, sin umbral de cuadre).
+- Reproducibilidad: caché a nivel de salida (sin FORCE=1 y con los 4 CSV presentes, el script termina sin red; probado con HTTPS_PROXY inválido, exit 0).

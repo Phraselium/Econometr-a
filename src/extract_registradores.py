@@ -2,9 +2,16 @@
 
 Escalera (ver docs/fallidas/registradores.md):
   1. Formato abierto: portal de datos abiertos opendata.registradores.org, dataset "Compraventas de inmuebles,
-     uso residencial, por provincia" (CSV trimestral, 2007T1-2026T2, nacional/CCAA/provincia). Dato de 4 trimestres
-     moviles ("anualizado"); el 4T es el ano natural. Cubre compraventas de vivienda, importe medio y precio EUR/m2
-     (origen = csv). NO incluye extranjeros ni hipotecas.
+     uso residencial, por provincia" (CSV trimestral, 2007T1-2026T2, nacional/CCAA/provincia). Cubre compraventas
+     de vivienda, importe medio y precio EUR/m2 (origen = csv). NO incluye extranjeros ni hipotecas.
+     ATENCION: cada dato es una SUMA MOVIL DE 4 TRIMESTRES (ano terminado en el trimestre): el valor de 2025T2 es
+     2024T3+2024T4+2025T1+2025T2. Por eso la serie trimestral se exporta con sufijo '_4T_movil' (p.ej.
+     compraventas_viv_num_4T_movil), con fecha = inicio del ULTIMO trimestre de la ventana y columna
+     'ventana' = 'AAAAQq-AAAAQq' (primer y ultimo trimestre). Usada como serie trimestral introduce un MA(3) mecanico
+     y solapamiento: NO usar como flujo trimestral. Para modelizar se exporta registradores_opendata_anual.csv con
+     solo el dato de T4 (ano natural; fecha AAAA-01-01, periodo AAAA, series sin sufijo).
+     NO RECUPERABLE el flujo trimestral individual: Q_t = S_t - S_{t-1} + Q_{t-4} exige un valor inicial Q_{t-4}
+     no observado (cuatro semillas), asi que no se calcula ni se imputa.
   2. PDF con texto (pdfplumber): Anuarios ERI 2023, 2024 y 2025 (los tres ultimos), solo las tablas pedidas:
        - compraventas de vivienda y precio medio EUR/m2 (CCAA, provincias, capitales: incluye Valencia/Valencia capital)
        - % de compras de vivienda por extranjeros (CCAA anual y serie 8 anos; provincias)
@@ -12,14 +19,17 @@ Escalera (ver docs/fallidas/registradores.md):
      (origen = pdf)  Los PDF tienen texto: no hizo falta OCR.
 
 Salidas (data/raw/pdf/):
-  registradores_opendata_compraventas.csv   csv   largo, trimestral (4T moviles)
+  registradores_opendata_compraventas.csv   csv   largo, trimestral, SUMA MOVIL 4T (series *_4T_movil, col. ventana)
+  registradores_opendata_anual.csv          csv   largo, anual (solo T4 = ano natural)
   registradores_eri_anuario.csv             pdf   largo, anual (columna edicion = Anuario de origen)
   registradores_validacion.csv              cuadres + contraste con INE / opendata / MIVAU / notarios
 Originales sin editar en data/raw/pdf/originales/. Renders PNG para revision visual en data/raw/pdf/validacion/.
 Idempotente (descargas con cache). No se corrige ningun valor: lo que no cuadra se marca.
+Cache a nivel de salida: si los CSV de salida existen y no hay FORCE=1, termina sin red ni extraccion.
 """
 from __future__ import annotations
 
+import os
 import re
 import sys
 import unicodedata
@@ -89,17 +99,32 @@ def parse_opendata(path: Path) -> pd.DataFrame:
     for col, un in unidades.items():
         x = d[["ano", "trim", "geo", "ca", "prv", "terr", col]].copy()
         x = x.rename(columns={col: "valor"})
-        x["serie"] = "compraventas_" + col.replace("-", "_")
+        x["serie"] = "compraventas_" + col.replace("-", "_") + "_4T_movil"
         x["unidad"] = un if "imp" not in col else "EUR (importe medio por operacion)"
         rows.append(x)
     o = pd.concat(rows, ignore_index=True)
     o["periodo"] = o["ano"].astype(str) + "T" + o["trim"].astype(str)
+    # fecha = inicio del ultimo trimestre de la ventana; ventana = primer y ultimo trimestre de los 4 sumados
     o["fecha"] = o["ano"].astype(str) + "-" + ((o["trim"] - 1) * 3 + 1).astype(str).str.zfill(2) + "-01"
+    ini = o["ano"] * 4 + o["trim"] - 1 - 3
+    o["ventana"] = (ini // 4).astype(str) + "Q" + (ini % 4 + 1).astype(str) + "-" + o["ano"].astype(str) + "Q" + o["trim"].astype(str)
     o["nivel"] = o["geo"].map({"Nacional": "nacional", "Comunidad": "ccaa", "Provincia": "provincia"})
     o["fuente"], o["url"], o["origen"], o["pagina"] = FUENTE + " (OpenData)", URL_CSV, "csv", ""
-    o["nota"] = "4 trimestres moviles (ano terminado en el trimestre); el 4T es el ano natural"
-    return o.rename(columns={"terr": "territorio"})[["fecha", "periodo", "serie", "valor", "unidad", "fuente", "url", "origen",
+    o["unidad"] = o["unidad"] + " (suma movil 4 trimestres)"
+    o["nota"] = "suma movil de 4 trimestres (ventana); fecha = inicio del ultimo trimestre; NO es flujo trimestral; el 4T es el ano natural"
+    return o.rename(columns={"terr": "territorio"})[["fecha", "periodo", "ventana", "serie", "valor", "unidad", "fuente", "url", "origen",
                                                       "pagina", "territorio", "nivel", "nota"]]
+
+
+def anual_opendata(od: pd.DataFrame) -> pd.DataFrame:
+    """Solo el dato de T4 (ventana = ano natural): serie anual limpia, sin solapamiento."""
+    a = od[od["periodo"].str.endswith("T4")].copy()
+    a["serie"] = a["serie"].str.replace("_4T_movil", "", regex=False)
+    a["unidad"] = a["unidad"].str.replace(" (suma movil 4 trimestres)", "", regex=False)
+    a["periodo"] = a["periodo"].str[:4]
+    a["fecha"] = a["periodo"] + "-01-01"
+    a["nota"] = "ano natural (T4 de la suma movil 4 trimestres)"
+    return a.drop(columns=["ventana"]).reset_index(drop=True)
 
 
 # ------------------------------------------------------------------ 2) PDF Anuarios
@@ -307,13 +332,20 @@ def ine_year(kind_prefix: str) -> pd.Series:
     return g.set_index(["terr", "anio"])["sum"]
 
 
+OUTPUTS = ["registradores_opendata_compraventas.csv", "registradores_opendata_anual.csv", "registradores_eri_anuario.csv",
+           "registradores_validacion.csv"]
+
+
 def main() -> None:
+    if all((PDF_DIR / f).exists() for f in OUTPUTS) and os.environ.get("FORCE") != "1":
+        print("[cache] salidas de registradores ya existen; sin red (FORCE=1 para rehacer)")
+        return
     ORIG.mkdir(parents=True, exist_ok=True)
     VALID_DIR.mkdir(parents=True, exist_ok=True)
     val = []
 
     def V(tabla, ok, err, metodo, pags, detalle="", err_rel=np.nan):
-        val.append(dict(tabla=tabla, validado="si" if ok else "no", error_max=err, error_max_rel=err_rel, metodo=metodo,
+        val.append(dict(tabla=tabla, validado=ok if isinstance(ok, str) else ("si" if ok else "no"), error_max=err, error_max_rel=err_rel, metodo=metodo,
                         paginas_revisadas=pags, detalle=detalle))
 
     # ---------- 1) opendata CSV
@@ -321,6 +353,9 @@ def main() -> None:
     od = parse_opendata(csvp)
     od.to_csv(PDF_DIR / "registradores_opendata_compraventas.csv", index=False)
     print("[ok] registradores_opendata_compraventas.csv", len(od))
+    od_anual = anual_opendata(od)
+    od_anual.to_csv(PDF_DIR / "registradores_opendata_anual.csv", index=False)
+    print("[ok] registradores_opendata_anual.csv", len(od_anual))
 
     # ---------- 2) PDF anuarios
     frames, allpages = [], {}
@@ -382,8 +417,8 @@ def main() -> None:
         V(f"anuarios_{a_}_vs_{b_}_pct_extranjeros_CCAA_solape", (x[a_] - x[b_]).abs().max() <= 0.01, (x[a_] - x[b_]).abs().max(),
           f"serie % extranjeros CCAA {len(x)} celdas solapadas entre ediciones (revision)", PR)
     # (d) contraste con opendata CSV (4T = ano natural): compraventas y precio
-    o = od[(od.periodo.str.endswith("T4"))].copy()
-    o["anio"] = o.periodo.str[:4].astype(int)
+    o = od_anual.copy()
+    o["anio"] = o.periodo.astype(int)
     for y in ANUARIOS:
         for serie_pdf, serie_od, nm in (("compraventas_viv_general", "compraventas_viv_num", "compraventas"), ("precio_m2_viv_general", "compraventas_viv_pm2", "precio_m2")):
             pdf_ = an[(an.edicion == y) & (an.serie == serie_pdf) & (an.nivel.isin(["nacional", "ccaa", "provincia"]))].copy()
@@ -446,7 +481,7 @@ def main() -> None:
                     rel.append(abs(imp[terr] - cc[(m, y)]) / cc[(m, y)])
                     det.append(f"{terr}: registral {imp[terr]:.0f} vs notarial {cc[(m, y)]:.0f}")
             if rel:
-                V(f"anuario{y}_extranjeros_implicitos_vs_notarios_CGN", max(rel) < 0.30, np.nan,
+                V(f"anuario{y}_extranjeros_implicitos_vs_notarios_CGN", "plausibilidad", np.nan,
                   "compras de extranjeros implicitas (pct x compraventas) vs CGN xls (vivienda libre) en 5 CCAA; " + "; ".join(det), PR,
                   "fuentes distintas (registro vs notarios; fechas de escritura vs inscripcion): plausibilidad, no cuadre", max(rel))
     vdf = pd.DataFrame(val)

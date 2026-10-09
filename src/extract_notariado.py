@@ -314,7 +314,7 @@ def column_bounds(pg) -> list[tuple[float, float]]:
     words = pg.extract_words()
     starts = []
     for k, w in enumerate(words[:-1]):
-        if re.fullmatch(r"\d{4}", w["text"]) and k >= 3 and words[k - 2]["text"] == "-" and words[k - 1]["text"] == "hasta":
+        if re.fullmatch(r"\d{4}", w["text"]) and k >= 3 and words[k - 2]["text"] == "hasta" and words[k - 1]["text"].endswith("T"):
             nxt = words[k + 1]
             if abs(nxt["top"] - w["top"]) < 3:
                 starts.append(nxt["x0"])
@@ -583,7 +583,11 @@ def main() -> None:
     s = mu.groupby(["edicion", "territorio"])["valor"].sum().reset_index().merge(mt, left_on=["edicion", "territorio"], right_on=["edicion", "municipio"])
     e = (s["valor"] - s["total_pdf"]).abs()
     V("municipios_nacionalidades_vs_Total_general", e.max() == 0 and len(s) == len(mt), e.max(),
-      f"suma de nacionalidades = 'Total general' de cada municipio ({len(s)} bloques de {len(mt)} totales, {len(MUNI)} ediciones)", PM)
+      f"suma de nacionalidades = 'Total general' de cada municipio ({len(s)} bloques de {len(mt)} totales, {len(MUNI)} ediciones)", PM,
+      "" if e.max() == 0 else "NO CUADRA EN ORIGEN: " + "; ".join(
+          f"{r.edicion} {r.territorio}: suma {r.valor:.0f} vs Total general {r.total_pdf:.0f}" for r in s[e > 0].itertuples())
+      + ". En Valencia 4T2022 la fila 'Otras nacionalidades' (995) no es aditiva: las demas nacionalidades suman exactamente 2.171 = Total "
+        "(comprobado en el PNG de p2); se marca, no se corrige")
     # CONTROL DE COMPLETITUD: esperado = union de ediciones (texto completo) ; cada edicion debe tenerlos todos
     names = {}
     for ed, ex in mu_exp.items():

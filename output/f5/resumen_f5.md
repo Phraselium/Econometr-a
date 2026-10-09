@@ -1,6 +1,6 @@
 # F5: panel de CCAA (P4) - resumen
 
-Generado por `src/f5_panel.py` (semilla 20261009; 32 s).
+Generado por `src/f5_panel.py` (semilla 20261009; 30 s).
 
 ## Respuesta a P4
 

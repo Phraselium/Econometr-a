@@ -65,11 +65,14 @@ for (v, t), g in raw[~raw.territorio.str.contains("distrito")].groupby(["variabl
     rows.append(dict(variable=v, territorio=t, frecuencia=g["frecuencia"].iloc[0][:28], n=n,
                      inicio=g.dropna(subset=["valor"]).periodo.min(), fin=g.dropna(subset=["valor"]).periodo.max(),
                      rol=g["rol"].iloc[0], validado=g["validado"].iloc[0],
-                     uso="estimación (N>=40)" if n >= 40 else "descriptivo (N<40)"))
+                     uso="elegible (N>=40)" if n >= 40 else "descriptivo (N<40)"))
 tabN = pd.DataFrame(rows)
+USADAS = {("p_tasado", VAL), ("p_tasado", PROV), ("p_tasado", CV), ("p_tasado", ES), ("trans_total", VAL), ("trans_total", CV),
+          ("trans_total", ES), ("trans_extranjeros", CV), ("trans_extranjeros", ES), ("ipv", CV), ("ipv", ES)}
+tabN["usada_en_estimacion"] = ["sí" if (v_, t_) in USADAS else "no" for v_, t_ in zip(tabN.variable, tabN.territorio)]
 save(tabN, "tabla_N_series", "Nº de observaciones por serie en valencia.csv. El umbral N>=40 decide estimación vs descriptivo "
-     "(decisiones.md, F6). Nota: vut_stock_gva (N=60) es un registro administrativo con quiebres regulatorios y en este script "
-     "solo se describe; p_tasado y trans_total sí entran en la parte de estimación.", index=False)
+     "(decisiones.md, F6). 'elegible' = N>=40; 'usada_en_estimacion' = entra de verdad en una regresión de este script. "
+     "vut_stock_gva (N=60) es elegible pero solo se describe (registro administrativo con quiebres regulatorios).", index=False)
 
 # ================================================================== 1. COMPARATIVO (N>=40)
 P = pd.DataFrame({"València": serie("p_tasado", VAL), "Provincia": serie("p_tasado", PROV),
@@ -168,7 +171,7 @@ def beta_model(df, y, x, label, maxlags=4, extra=""):
     if maxlags == 4:
         holm_p[f"beta=1_{label}"] = p1
     REG.log(FASE, mid, f, df.index[0], df.index[-1], int(r.nobs), r.rsquared_adj, r.aic, r.bic, oos_rmse(df, y, x), b, p1,
-            f"coef=beta; p_interes = H0 beta=1 (HAC{maxlags}); {extra}")
+            f"coef=beta; p_interes = H0 beta=1 (HAC{maxlags}); rmse_oos CONDICIONAL al x contemporáneo (no es pronóstico); {extra}")
     betarows.append(dict(modelo=label, maxlags=maxlags, N=int(r.nobs), beta=b, EE_HAC=ee, IC95_inf=ci[0], IC95_sup=ci[1],
                          p_beta0=r.pvalues[x], p_beta_igual_1=p1, R2_aj=r.rsquared_adj, const=r.params["Intercept"]))
     return r, f
@@ -191,6 +194,108 @@ save(pd.DataFrame(diagrows).set_index("modelo"), "diagnosticos_beta", f"{TXT_EST
 save(pd.DataFrame(chowrows), "chow_beta", f"{TXT_EST} Chow en fechas candidatas (2014Q1, 2020Q1, 2022Q3).", index=False)
 save(pd.DataFrame(bprows), "bai_perron_beta", f"{TXT_EST} Bai-Perron (ruptures, máx. 3 quiebres, tramo mínimo 12) sobre el modelo beta; nº por BIC.", index=False)
 
+
+# ---- cambio 1: beta y diferencial de nivel por subperíodos (interacciones en la muestra completa)
+TRAMOS = ["2006Q1-2013Q4", "2014Q1-2019Q4", "2020Q1-2026Q2"]
+
+
+def tramo_models(df, y, x, label, maxlags=8, en_holm=True):
+    d = df.copy()
+    tr = np.where(d.index < pd.Period("2014Q1", "Q"), 0, np.where(d.index < pd.Period("2020Q1", "Q"), 1, 2))
+    for k in range(3):
+        d[f"a{k}"] = (tr == k) * 1.0
+        d[f"b{k}"] = (tr == k) * d[x]
+    f1 = f"{y} ~ 0 + a0 + a1 + a2 + b0 + b1 + b2"
+    r = eu.ols_hac(f1, d, maxlags)
+    wp = float(np.squeeze(r.wald_test("b0 = b1, b1 = b2", use_f=False).pvalue))
+    d["difnivel"] = d[y] - d[x]
+    f2 = "difnivel ~ 0 + a0 + a1 + a2"
+    r2 = eu.ols_hac(f2, d, maxlags)
+    rows_b, rows_d = [], []
+    for k in range(3):
+        rows_b.append(dict(modelo=label, tramo=TRAMOS[k], N_tramo=int((tr == k).sum()), beta=r.params[f"b{k}"], EE_HAC=r.bse[f"b{k}"],
+                           p_beta_igual_1=float(r.t_test(f"b{k} = 1").pvalue), const=r.params[f"a{k}"], EE_const=r.bse[f"a{k}"]))
+        rows_d.append(dict(modelo=label, tramo=TRAMOS[k], N_tramo=int((tr == k).sum()), dif_media_pp=r2.params[f"a{k}"], EE_HAC=r2.bse[f"a{k}"],
+                           p_dif_igual_0=r2.pvalues[f"a{k}"]))
+    pd2 = float(r2.pvalues["a2"])
+    REG.log(FASE, f"tramos_beta_{label}", f1, d.index[0], d.index[-1], int(r.nobs), r.rsquared_adj, r.aic, r.bic, np.nan, r.params["b2"], wp,
+            f"interacciones por tramo, HAC{maxlags}; p_interes = Wald H0 beta igual en los 3 tramos; N por tramo <40 (inferencia sobre N total)")
+    REG.log(FASE, f"tramos_difnivel_{label}", f2, d.index[0], d.index[-1], int(r2.nobs), r2.rsquared_adj, r2.aic, r2.bic, np.nan, r2.params["a2"], pd2,
+            f"diferencial medio (y-x) por tramo, HAC{maxlags}; p_interes = H0 dif 2020-26 = 0")
+    if en_holm:
+        holm_p[f"wald_betas_iguales_{label}"] = wp
+        holm_p[f"dif_nivel_2020-26_{label}"] = pd2
+    return pd.DataFrame(rows_b), pd.DataFrame(rows_d), wp
+
+
+def wald_break(df, y, x, fecha, label, maxlags=8):
+    d = df.copy()
+    d["post"] = (d.index >= pd.Period(fecha, "Q")) * 1.0
+    r = eu.ols_hac(f"{y} ~ {x}*post", d, maxlags)
+    p = float(np.squeeze(r.wald_test(f"post = 0, {x}:post = 0", use_f=False).pvalue))
+    return dict(modelo=label, fecha=fecha, n=int(r.nobs), dif_beta_post=r.params[f"{x}:post"], EE_dif_beta=r.bse[f"{x}:post"],
+                dif_const_post=r.params["post"], EE_dif_const=r.bse["post"], p_Wald_HAC8=p)
+
+
+TB, TD_, WALL, WB = [], [], {}, []
+for nm, c in comps.items():
+    tb, td, wp = tramo_models(D4, "dV", c, f"València_vs_{nm}")
+    TB.append(tb); TD_.append(td); WALL[nm] = wp
+    for fch in ("2014Q1", "2020Q1", "2022Q3"):
+        WB.append(wald_break(D4, "dV", c, fch, f"València_vs_{nm}"))
+TB, TD_ = pd.concat(TB), pd.concat(TD_)
+save(TB, "beta_por_tramos", f"{TXT_EST} Modelo de interacciones en la muestra completa (N={N4}): Δ4 ln p_tasado València sobre Δ4 ln comparador con pendiente e "
+     "intercepto propios por tramo; EE HAC(8) (Δ4 induce MA(3) y la persistencia es mayor). Cada tramo tiene N<40 (24-32 trimestres): su cifra es descriptiva dentro de un "
+     "modelo con N total >= 40. 'const' es el intercepto del tramo (pp/año). Asociación, no causa. ADVERTENCIA parte-todo: València forma parte de provincia, CV y España, "
+     "lo que induce un componente mecánico de co-movimiento (sobre todo frente a la provincia).", index=False)
+save(TD_, "diferencial_nivel_por_tramos", f"{TXT_EST} Diferencial medio de crecimiento interanual (València menos comparador, pp, 100·Δ4 ln) con constante por tramo, N={N4}, HAC(8). "
+     "El diferencial medio de toda la muestra (diferencial_crecimiento_media) promedia tramos de signo contrario y no resume bien. N por tramo <40.", index=False)
+WBd = pd.DataFrame(WB)
+save(WBd, "quiebres_wald_hac", f"{TXT_EST} Contraste de quiebre en fechas candidatas: Wald HAC(8) conjunto de (intercepto, pendiente) post-fecha, N={N4}. Sustituye al Chow F clásico "
+     "(que supone errores no autocorrelacionados y sobrerrechaza); el Chow se conserva como complemento en chow_beta.", index=False)
+
+# robustez: beta en Δ1 (sin solapamiento) con dummies trimestrales
+D1 = np.log(P).diff().dropna() * 100
+D1.columns = ["dV", "dProv", "dCV", "dES"]
+for q in (2, 3, 4):
+    D1[f"q{q}"] = (D1.index.quarter == q) * 1.0
+d1rows = []
+for nm, c in comps.items():
+    f_ = f"dV ~ {c} + q2 + q3 + q4"
+    r = eu.ols_hac(f_, D1, 4)
+    p1 = float(r.t_test(f"{c} = 1").pvalue)
+    REG.log(FASE, f"beta_d1_{nm}", f_, D1.index[0], D1.index[-1], int(r.nobs), r.rsquared_adj, r.aic, r.bic, np.nan, r.params[c], p1,
+            "robustez Δ1 sin solapamiento, dummies trimestrales, HAC4; p_interes = H0 beta=1; fuera de la familia Holm")
+    d1rows.append(dict(comparador=nm, N=int(r.nobs), beta=r.params[c], EE_HAC4=r.bse[c], p_beta_igual_1=p1))
+D1T = pd.DataFrame(d1rows)
+save(D1T, "beta_delta1_robustez", f"{TXT_EST} Robustez sin solapamiento: Δ1 ln p_tasado València sobre Δ1 ln del comparador con dummies trimestrales, HAC(4).", index=False)
+
+# ---- cambio 2: contraste con el IPV del INE (CV vs España)
+IP = pd.DataFrame({"ipv_CV": serie("ipv", CV), "ipv_ES": serie("ipv", ES), "pt_CV": P["C. Valenciana"], "pt_ES": P["España"], "pt_V": P["València"],
+                   "pt_Prov": P["Provincia"]})
+IP = eu.common_sample(IP, IP.columns).loc["2007Q1":"2026Q2"]
+sens = []
+for med in ["pt_V", "pt_Prov", "pt_CV", "pt_ES", "ipv_CV", "ipv_ES"]:
+    s_ = IP[med]
+    ya = s_.groupby(s_.index.year).mean()
+    sens.append(dict(medida=med, **{"2019Q4->2026Q2_%": (s_["2026Q2"] / s_["2019Q4"] - 1) * 100, "2020Q1->2026Q2_%": (s_["2026Q2"] / s_["2020Q1"] - 1) * 100,
+                                    "media2019->media2025_%": (ya[2025] / ya[2019] - 1) * 100}))
+SENS = pd.DataFrame(sens).set_index("medida")
+save(SENS, "ipv_vs_tasado_acumulado", f"{TXT_EST} Variación acumulada (%) del valor tasado (pt_*) y del IPV del INE (ipv_*) con tres bases (2019Q4, 2020Q1, medias anuales 2019->2025). "
+     f"Muestra común 2007Q1-2026Q2 (N={len(IP)}). Para València solo existe valor tasado: NO hay contraste independiente para el municipio. El exceso CV-España es sobre todo del valor tasado "
+     "(composición de lo tasado, mezcla nueva/usada); con el IPV la diferencia casi desaparece.", fl=".1f")
+ID4 = np.log(IP[["ipv_CV", "ipv_ES", "pt_CV", "pt_ES"]]).diff(4).dropna() * 100
+ipvrows, ipvt = [], []
+for med, (y_, x_) in {"IPV": ("ipv_CV", "ipv_ES"), "valor_tasado": ("pt_CV", "pt_ES")}.items():
+    dd_ = ID4[[y_, x_]].copy(); dd_.columns = ["dV", "dES"]
+    tb, td, wp = tramo_models(dd_, "dV", "dES", f"CV_vs_España_{med}", en_holm=False)
+    tb["medida"] = med; td["medida"] = med
+    ipvrows.append(tb); ipvt.append(td)
+IPB, IPD = pd.concat(ipvrows), pd.concat(ipvt)
+save(IPB, "ipv_vs_tasado_beta_cv_es", f"{TXT_EST} Beta de Δ4 ln CV sobre Δ4 ln España por tramos, con IPV y con valor tasado, MISMA muestra (Δ4 desde 2008Q1, N={len(ID4)}), HAC(8). "
+     "Primer tramo parcial (2008Q1-2013Q4). Fuera de la familia Holm (contraste de medida).", index=False)
+save(IPD, "ipv_vs_tasado_difnivel_cv_es", f"{TXT_EST} Diferencial medio CV-España por tramo (pp, 100·Δ4 ln) con IPV y con valor tasado, misma muestra, HAC(8).", index=False)
+
 # compraventas MIVAU
 T = pd.DataFrame({"tot_V": serie("trans_total", VAL), "tot_CV": serie("trans_total", CV), "tot_ES": serie("trans_total", ES),
                   "ext_CV": serie("trans_extranjeros", CV), "ext_ES": serie("trans_extranjeros", ES)})
@@ -200,22 +305,25 @@ T["cuota_CV"] = T.ext_CV / T.tot_CV * 100
 T["cuota_ES"] = T.ext_ES / T.tot_ES * 100
 T["peso_V_en_CV"] = T.tot_V / T.tot_CV * 100
 T["cuota_dif_CV_ES"] = T.cuota_CV - T.cuota_ES
-rc = eu.ols_hac("cuota_dif_CV_ES ~ 1", T, 4)
+rc = eu.ols_hac("cuota_dif_CV_ES ~ 1", T, 8)
+rc4 = eu.ols_hac("cuota_dif_CV_ES ~ 1", T, 4); rc12 = eu.ols_hac("cuota_dif_CV_ES ~ 1", T, 12)
 REG.log(FASE, "cuota_ext_dif_CV_ES", "cuota_ext_CV - cuota_ext_ES ~ 1", T.index[0], T.index[-1], int(rc.nobs), rc.rsquared_adj,
-        rc.aic, rc.bic, oos_rmse(T, "cuota_dif_CV_ES"), rc.params["Intercept"], rc.pvalues["Intercept"], "pp; HAC4")
+        rc.aic, rc.bic, oos_rmse(T, "cuota_dif_CV_ES"), rc.params["Intercept"], rc.pvalues["Intercept"],
+        "pp; HAC8 (HAC4 y HAC12 en cuota_extranjeros_inferencia); la diferencia es muy persistente (acf1~0,9): p numérico poco fiable")
 holm_p["cuota_ext_dif_CV_ES"] = float(rc.pvalues["Intercept"])
-# tendencia lineal de la cuota (asociación temporal)
+NPOS = int((T.cuota_dif_CV_ES > 0).sum()); DMIN = float(T.cuota_dif_CV_ES.min())
+# tendencia lineal: series I(1) -> se reportan SIN p-valor y fuera de Holm
 T["t"] = np.arange(NT) / 4.0
 rt = {}
 for k in ("cuota_CV", "cuota_ES"):
     r = eu.ols_hac(f"{k} ~ t", T, 4); rt[k] = r
     REG.log(FASE, f"tendencia_{k}", f"{k} ~ t(años)", T.index[0], T.index[-1], int(r.nobs), r.rsquared_adj, r.aic, r.bic,
-            oos_rmse(T, k, "t"), r.params["t"], r.pvalues["t"], "pp/año; HAC4; tendencia lineal descriptiva de la cuota")
-    holm_p[f"tendencia_{k}"] = float(r.pvalues["t"])
+            oos_rmse(T, k, "t"), r.params["t"], np.nan, "pp/año; DESCRIPTIVA: serie I(1), t de tendencia espurio; sin p-valor; fuera de Holm")
 # beta compraventas
 TD = np.log(T[["tot_V", "tot_CV", "tot_ES"]]).diff(4).dropna() * 100
 TD.columns = ["tV", "tCV", "tES"]
-for c, nm in (("tCV", "C. Valenciana"), ("tES", "España")):
+TD["tRest"] = np.log(T.tot_CV - T.tot_V).diff(4).dropna() * 100
+for c, nm in (("tCV", "C. Valenciana"), ("tES", "España"), ("tRest", "CV sin València (parte-todo)")):
     beta_model(TD, "tV", c, f"beta_compraventas_València_vs_{nm}", 4, "Δ4 ln trans_total; MIVAU")
 BET2 = pd.DataFrame(betarows)
 save(BET2, "beta_todos", f"{TXT_EST} Todos los modelos beta (precios y compraventas), HAC.", index=False)
@@ -229,10 +337,12 @@ anual.index.name = "anio"
 save(anual, "compraventas_cuota_extranjeros", f"{TXT_EST} Compraventas MIVAU (trans_total, trans_extranjeros), sumas de años completos; "
      f"muestra común trimestral 2007Q1-2026Q1 (N={NT}). La serie MIVAU NO tiene trans_extranjeros para el municipio de València: "
      "la cuota de extranjeros solo existe para la C. Valenciana y España (València municipio: solo Notariado, ver descriptivo).", fl=".2f")
-save(pd.DataFrame({"concepto": ["media cuota CV - ES (pp)", "EE HAC4", "p", "tendencia cuota CV (pp/año)", "EE", "p", "tendencia cuota ES (pp/año)", "EE", "p"],
-                   "valor": [rc.params["Intercept"], rc.bse["Intercept"], rc.pvalues["Intercept"], rt["cuota_CV"].params["t"], rt["cuota_CV"].bse["t"],
-                             rt["cuota_CV"].pvalues["t"], rt["cuota_ES"].params["t"], rt["cuota_ES"].bse["t"], rt["cuota_ES"].pvalues["t"]]}),
-     "cuota_extranjeros_inferencia", f"{TXT_EST} N={NT}. Diferencia media de cuota y tendencia lineal (HAC4); la tendencia es descriptiva (series no estacionarias).",
+save(pd.DataFrame({"concepto": ["media cuota CV - ES (pp)", "EE HAC4", "EE HAC8", "EE HAC12", "p (HAC8; poco fiable)", "trimestres con CV > ES", "N", "mínimo diferencia (pp)",
+                                "pendiente lineal cuota CV (pp/año; sin p-valor)", "pendiente lineal cuota ES (pp/año; sin p-valor)"],
+                   "valor": [rc.params["Intercept"], rc4.bse["Intercept"], rc.bse["Intercept"], rc12.bse["Intercept"], rc.pvalues["Intercept"], NPOS, NT, DMIN,
+                             rt["cuota_CV"].params["t"], rt["cuota_ES"].params["t"]]}),
+     "cuota_extranjeros_inferencia", f"{TXT_EST} N={NT}. Hecho descriptivo: la cuota de la CV supera a la de España en {NPOS}/{NT} trimestres. La diferencia es persistente (acf1~0,9) y el EE crece con los retardos HAC; "
+     "las pendientes lineales se reportan SIN p-valor porque las cuotas son I(1) (t de tendencia espurio). AVISO: trans_extranjeros tiene un salto de cobertura entre 2008 y 2009 (decisiones.md, F3).",
      index=False)
 
 fig, ax = plt.subplots(1, 2, figsize=(11, 4.4))
@@ -285,7 +395,8 @@ alq.index.name = "anio"
 save(alq, "alquiler_serpavi_vs_precio", f"{TXT_DESC} N=14 años (2011-2024). Mediana SERPAVI del alquiler (€/m²/mes, stock de contratos declarados en IRPF) "
      "frente al valor tasado medio anual (€/m², MIVAU). ADVERTENCIA: rentabilidad bruta aproximada = 12·alquiler/precio; mezcla fuentes (AEAT vs tasaciones), "
      "conceptos (mediana de contratos vigentes vs media de valor tasado) y no descuenta vacíos ni costes; solo ilustra la evolución. serpavi_esp_constante: "
-     "agregado propio de composición constante (robustez).", fl=".2f")
+     "agregado propio de composición constante (robustez). Matices: SERPAVI es el stock de contratos vigentes (va por detrás de la renta de mercado, la infravalora en fases alcistas); "
+     "la superficie de SERPAVI y la de la tasación pueden no coincidir (no verificado); lo informativo es la trayectoria (pico y caída), no los extremos.", fl=".2f")
 base_a = alq.loc[2015]
 idx_a = pd.DataFrame({"Alquiler València": alq.serpavi_val_mediana / base_a.serpavi_val_mediana * 100,
                       "Alquiler C. Valenciana": alq.serpavi_cv_mediana / base_a.serpavi_cv_mediana * 100,
@@ -362,7 +473,6 @@ A = pd.DataFrame({"pct_extranj_padron": pad.pct_extranjeros, "ln_extranj": np.lo
 A["ln_p_tasado_val"] = np.log(pt_anual["València"])
 A["ln_alquiler_val"] = np.log(alq.serpavi_val_mediana)
 A["ln_vut_val"] = np.log(vut["València"])
-A["ln_vut_val"] = np.log(vut["València"])
 dA = A.drop(columns=["pct_extranj_padron"]).diff()
 dA.columns = ["d" + c for c in dA.columns]
 dA["d_pct_extranj"] = A.pct_extranj_padron.diff()
@@ -411,7 +521,7 @@ Hl = eu.holm(holm_p)
 hol = pd.DataFrame({"p_bruto": pd.Series(holm_p), "p_Holm": pd.Series(Hl)}).sort_values("p_bruto")
 hol["p_Bonferroni"] = (hol.p_bruto * len(hol)).clip(upper=1)
 save(hol, "correccion_holm", f"{TXT_EST} Corrección por búsqueda sobre la familia de {len(hol)} contrastes de interés (diferenciales medios, β=1, "
-     "diferencia de cuota, tendencias) registrados en output/registro_busqueda_f6.csv.", fl=".4g")
+     "diferencia de cuota, Wald de igualdad de betas, diferencial de nivel 2020-26; las tendencias lineales de las cuotas (I(1)) quedan fuera) registrados en output/registro_busqueda_f6.csv.", fl=".4g")
 reg = REG.read()
 NREG = len(reg)
 
@@ -424,7 +534,18 @@ for m, r in dgt.iterrows():
         if r[k] < 0.05:
             fallos.append(f"{m}:{k}={r[k]:.3f}")
 chw = pd.DataFrame(chowrows)
-chfail = [f"{r.modelo}@{r.fecha}(p={r.p:.3f})" for r in chw.itertuples() if r.p < 0.05]
+chfail = [f"{r.modelo}@{r.fecha}(p={r.p_Wald_HAC8:.3f})" for r in WBd.itertuples() if r.p_Wald_HAC8 < 0.05]
+tbs = TB.set_index(["modelo", "tramo"]); tds = TD_.set_index(["modelo", "tramo"])
+def tr_txt(nm):
+    m_ = f"València_vs_{nm}"
+    return "; ".join(f"{t_[:4]}-{t_[7:11]}: β={f(tbs.loc[(m_,t_),'beta'])} (EE {f(tbs.loc[(m_,t_),'EE_HAC'])})" for t_ in TRAMOS)
+def td_txt(nm):
+    m_ = f"València_vs_{nm}"
+    return "; ".join(f"{t_[:4]}-{t_[7:11]}: {f(tds.loc[(m_,t_),'dif_media_pp'],1)} (EE {f(tds.loc[(m_,t_),'EE_HAC'],1)})" for t_ in TRAMOS)
+ipvs = SENS.round(1)
+ipb = IPB.set_index(["medida", "tramo"]); ipd = IPD.set_index(["medida", "tramo"])
+rb = alq["rent_bruta_val_%"]
+nmax = nprov.pct_ext.max(); nmax_q = nprov.pct_ext.idxmax()
 dif_txt = "; ".join(f"vs {r.comparador}: {f(r.media_pp)} pp (IC95 % {f(r.IC95_inf)} a {f(r.IC95_sup)}; EE HAC {f(r.EE_HAC)}; p={f(r.p,3)})" for r in DIF.itertuples())
 bt_txt = "; ".join(f"vs {nm}: β={f(b.loc[(f'beta_València_vs_{nm}',4),'beta'])} (EE HAC {f(b.loc[(f'beta_València_vs_{nm}',4),'EE_HAC'])}; p(β=1)={f(b.loc[(f'beta_València_vs_{nm}',4),'p_beta_igual_1'],3)})" for nm in comps)
 cu = cum.round(1)
@@ -432,7 +553,7 @@ md = f"""# Resumen F6: València (precios, alquiler, población extranjera, VUT)
 
 Todo lo que sigue es **asociación** o descripción; no hay identificación causal en esta fase. Reproducible con `python3 src/f6_valencia.py`.
 
-## A. Estimación (N >= 40 trimestres; HAC Newey-West, maxlags=4)
+## A. Estimación (N >= 40 trimestres; HAC Newey-West, maxlags=4 salvo indicación)
 
 Muestra común precios: 2005Q1-2026Q2 (N={NP} niveles; N={N4} en Δ4). Compraventas: 2007Q1-2026Q1 (N={NT}).
 
@@ -440,31 +561,37 @@ Muestra común precios: 2005Q1-2026Q2 (N={NP} niveles; N={N4} en Δ4). Compraven
   2008-2013: València {cu.loc['2008-2013 (caída)','València']}, provincia {cu.loc['2008-2013 (caída)','Provincia']}, CV {cu.loc['2008-2013 (caída)','C. Valenciana']}, España {cu.loc['2008-2013 (caída)','España']};
   2014-2019: València {cu.loc['2014-2019','València']}, provincia {cu.loc['2014-2019','Provincia']}, CV {cu.loc['2014-2019','C. Valenciana']}, España {cu.loc['2014-2019','España']};
   2020-2026Q2: València {cu.loc['2020-2026Q2','València']}, provincia {cu.loc['2020-2026Q2','Provincia']}, CV {cu.loc['2020-2026Q2','C. Valenciana']}, España {cu.loc['2020-2026Q2','España']}.
-- **Diferencial medio de crecimiento interanual** (València menos comparador, pp, 100·Δ4 ln): {dif_txt}.
-- **Beta de Δ4 ln p_tasado València sobre España** (y otros comparadores): {bt_txt}. Con maxlags=6 los EE cambian poco (ver `beta_valencia_vs_comparadores.md`).
-- **Compraventas MIVAU**: cuota de extranjeros CV (media {f(T.cuota_CV.mean(),1)} %) frente a España ({f(T.cuota_ES.mean(),1)} %); diferencia media CV-España {f(rc.params['Intercept'])} pp (EE HAC {f(rc.bse['Intercept'])}; p={f(rc.pvalues['Intercept'],3)}). Tendencia lineal (descriptiva): CV {f(rt['cuota_CV'].params['t'])} pp/año (EE {f(rt['cuota_CV'].bse['t'])}), España {f(rt['cuota_ES'].params['t'])} pp/año (EE {f(rt['cuota_ES'].bse['t'])}). La serie MIVAU de extranjeros **no existe a nivel de municipio**: no hay cuota de extranjeros de València en la parte estimada.
-- **Diagnósticos que fallan (p<0,05)** en los modelos beta: {', '.join(fallos) if fallos else 'ninguno'}. Chow significativos: {', '.join(chfail) if chfail else 'ninguno'}. Quiebres Bai-Perron: {'; '.join(f"{r['modelo']}: {r['n_quiebres']} ({r['fechas']})" for r in bprows)}. Ver `diagnosticos_beta.md`, `chow_beta.md`, `bai_perron_beta.md`.
+- **Sensibilidad a la base (variación acumulada %, `ipv_vs_tasado_acumulado.md`)**: 2019Q4->2026Q2 València {f(ipvs.loc['pt_V','2019Q4->2026Q2_%'],1)}, CV {f(ipvs.loc['pt_CV','2019Q4->2026Q2_%'],1)}, España {f(ipvs.loc['pt_ES','2019Q4->2026Q2_%'],1)} (valor tasado); con base 2020Q1 València {f(ipvs.loc['pt_V','2020Q1->2026Q2_%'],1)}; medias anuales 2019->2025 València {f(ipvs.loc['pt_V','media2019->media2025_%'],1)}, España {f(ipvs.loc['pt_ES','media2019->media2025_%'],1)}. El orden se mantiene.
+- **Contraste con el IPV del INE (CV frente a España)**: 2019Q4->2026Q2 el IPV da CV {f(ipvs.loc['ipv_CV','2019Q4->2026Q2_%'],1)} % frente a España {f(ipvs.loc['ipv_ES','2019Q4->2026Q2_%'],1)} % (diferencia {f(ipvs.loc['ipv_CV','2019Q4->2026Q2_%']-ipvs.loc['ipv_ES','2019Q4->2026Q2_%'],1)} pp), mientras que con valor tasado es {f(ipvs.loc['pt_CV','2019Q4->2026Q2_%'],1)} % frente a {f(ipvs.loc['pt_ES','2019Q4->2026Q2_%'],1)} % ({f(ipvs.loc['pt_CV','2019Q4->2026Q2_%']-ipvs.loc['pt_ES','2019Q4->2026Q2_%'],1)} pp). El exceso CV-España es sobre todo del valor tasado (composición de lo tasado). Diferencial medio CV-España 2020-26 (Δ4, pp): IPV {f(ipd.loc[('IPV',TRAMOS[2]),'dif_media_pp'],1)} (EE {f(ipd.loc[('IPV',TRAMOS[2]),'EE_HAC'],1)}) frente a valor tasado {f(ipd.loc[('valor_tasado',TRAMOS[2]),'dif_media_pp'],1)} (EE {f(ipd.loc[('valor_tasado',TRAMOS[2]),'EE_HAC'],1)}). **Para el municipio de València no hay un contraste independiente** (solo valor tasado), así que el +100 % puede reflejar en parte composición de tasaciones.
+- **Beta de Δ4 ln p_tasado València (muestra completa, HAC4)**: {bt_txt}. Esta beta es un **promedio inestable** (CUSUM, Wald de quiebre, Bai-Perron). Robusta a Δ1 sin solapamiento (`beta_delta1_robustez.md`): {'; '.join(f"{r.comparador} β={f(r.beta)} (EE {f(r.EE_HAC4)})" for r in D1T.itertuples())}.
+- **Beta por tramos (interacciones, N={N4}, HAC8; `beta_por_tramos.md`; cada tramo N<40, descriptivo dentro del modelo)**: vs España {tr_txt('España')}; vs CV {tr_txt('C. Valenciana')}; vs provincia {tr_txt('Provincia')}. Wald de igualdad de betas entre tramos: España p={f(WALL['España'],3)}, CV p={f(WALL['C. Valenciana'],3)}, provincia p={f(WALL['Provincia'],3)}.
+- **Diferencial medio de crecimiento por tramo (pp/año, `diferencial_nivel_por_tramos.md`, HAC8)**: vs España {td_txt('España')}; vs CV {td_txt('C. Valenciana')}. El diferencial medio de toda la muestra ({dif_txt}) **promedia tramos de signo contrario y no resume bien**; no se presenta como resultado.
+- **Conclusión de precios**: la beta de la muestra completa (>1) no es un parámetro estable. Desde 2020 el mayor crecimiento de València respecto a la CV y España se asocia con un **diferencial de nivel** (constante positiva del tramo) más que con una mayor sensibilidad (amplificación) al ciclo: ver las betas del último tramo. Es una asociación y, al ser València parte de provincia, CV y España, hay un componente mecánico parte-todo.
+- **Compraventas MIVAU**: cuota de extranjeros CV (media {f(T.cuota_CV.mean(),1)} %) frente a España ({f(T.cuota_ES.mean(),1)} %). Hecho descriptivo: la cuota CV supera a la de España en **{NPOS}/{NT} trimestres** (mínimo {f(DMIN)} pp; diferencia media {f(rc.params['Intercept'])} pp, EE HAC4 {f(rc4.bse['Intercept'])}, HAC8 {f(rc.bse['Intercept'])}, HAC12 {f(rc12.bse['Intercept'])}; la diferencia es muy persistente y el p-valor numérico no es fiable). Pendientes lineales descriptivas (series I(1), sin p-valor): CV {f(rt['cuota_CV'].params['t'])} y España {f(rt['cuota_ES'].params['t'])} pp/año. Aviso: salto de cobertura de `trans_extranjeros` entre 2008 y 2009. La serie MIVAU de extranjeros **no existe a nivel de municipio**.
+- **Diagnósticos que fallan (p<0,05)** en los modelos beta (Δ4): {', '.join(fallos) if fallos else 'ninguno'}. Quiebres con Wald HAC(8) significativos (sustituye al Chow clásico, que sobrerrechaza con residuos autocorrelacionados; `quiebres_wald_hac.md`): {', '.join(chfail) if chfail else 'ninguno'}. Bai-Perron (BIC, sin corregir autocorrelación, tiende a sobreestimar el nº de quiebres): {'; '.join(f"{r['modelo']}: {r['n_quiebres']} ({r['fechas']})" for r in bprows)}.
 - **Búsqueda**: {NREG} modelos registrados en `output/registro_busqueda_f6.csv`; corrección Holm/Bonferroni sobre {len(hol)} contrastes en `correccion_holm.md`. Con Holm, contrastes con p_Holm<0,05: {', '.join(hol[hol.p_Holm<0.05].index) or 'ninguno'}.
 
 ## B. Descriptivo (N insuficiente, N < 40; **sin inferencia**)
 
 - **Padrón** (1998-2022, N={Npad}; DPOP 1996-2025): extranjeros {f(pad.pct_extranjeros.dropna().iloc[0],1)} % en 1998, máximo {f(pad.pct_extranjeros.max(),1)} % en {int(pad.pct_extranjeros.idxmax())}, {f(pad.pct_extranjeros.dropna().iloc[-1],1)} % en 2022 (`padron_valencia_nacionalidad.md`).
-- **Alquiler SERPAVI València** (2011-2024, N=14): mediana {f(alq.serpavi_val_mediana.iloc[0])} a {f(alq.serpavi_val_mediana.iloc[-1])} €/m²/mes; índice 2015=100 a 2024: València {f(idx_a['Alquiler València'].iloc[-1],0)}, CV {f(idx_a['Alquiler C. Valenciana'].iloc[-1],0)}, valor tasado València {f(idx_a['Valor tasado València'].iloc[-1],0)}. Rentabilidad bruta aproximada València {f(alq['rent_bruta_val_%'].iloc[0],1)} % (2011) a {f(alq['rent_bruta_val_%'].iloc[-1],1)} % (2024); mezcla fuentes y conceptos.
+- **Alquiler SERPAVI València** (2011-2024, N=14): mediana {f(alq.serpavi_val_mediana.iloc[0])} a {f(alq.serpavi_val_mediana.iloc[-1])} €/m²/mes; índice 2015=100 a 2024: València {f(idx_a['Alquiler València'].iloc[-1],0)}, CV {f(idx_a['Alquiler C. Valenciana'].iloc[-1],0)}, valor tasado València {f(idx_a['Valor tasado València'].iloc[-1],0)}. Rentabilidad bruta aproximada València: {f(rb.iloc[0],1)} % (2011), **pico {f(rb.max(),1)} % en {int(rb.idxmax())}**, {f(rb.loc[2020],1)} % (2020) y {f(rb.iloc[-1],1)} % (2024): caída desde 2020 porque el valor tasado sube más que la renta SERPAVI. Advertencias: mezcla fuentes y conceptos; SERPAVI es stock de contratos vigentes (retrasa la renta de mercado); la superficie de SERPAVI y la de la tasación pueden no coincidir (no verificado).
 - **VUT GVA** (registradas, 2010-2024, N=15 años): València {int(vut['València'].iloc[0])} a {int(vut['València'].iloc[-1])}; por 1.000 hab. {f(vut['VUT_por_1000hab_València'].iloc[-1],1)} frente a {f(vut['VUT_por_1000hab_CV'].iloc[-1],1)} en la CV (2024). VUT INE: N=13 cortes irregulares, no comparable en niveles con GVA.
 - **SERPAVI por distrito** (19 distritos, N=14 años): mayor mediana 2024 {rk.index[0]} ({f(rk.mediana_VC_2024.iloc[0])} €/m²), menor {rk.index[-1]} ({f(rk.mediana_VC_2024.iloc[-1])}); crecimiento 2015-2024 entre {f(rk['crec_2015_2024_%'].min(),0)} % y {f(rk['crec_2015_2024_%'].max(),0)} %; coeficiente de variación {f(cvd.coef_variacion.iloc[0],3)} (2011) a {f(cvd.coef_variacion.iloc[-1],3)} (2024) (`serpavi_distritos_*.md`; por código).
-- **Notariado (robustez)**: municipio 'Total general' 2021-2025 (N=5); provincia trimestral 2018-2025 (N=32), % con comprador extranjero {f(nprov.pct_ext.iloc[0],1)} % (2018T1) a {f(nprov.pct_ext.iloc[-1],1)} % (2025T4).
+- **Notariado (robustez)**: municipio 'Total general' 2021-2025 (N=5); provincia trimestral 2018-2025 (N=32), % con comprador extranjero {f(nprov.pct_ext.iloc[0],1)} % (2018T1), máximo {f(nmax,1)} % ({nmax_q}), {f(nprov.pct_ext.iloc[-1],1)} % (2025T4).
 - **Correlaciones anuales** (`correlaciones_anuales.md`): solo descripción, sin p-valores.
 
 ### Tabla de N por serie
 Ver `tabla_N_series.md` (todas las series de `valencia.csv`).
 
-{eu.df_md(tabN[['variable','territorio','n','inicio','fin','uso']], index=False)}
+{eu.df_md(tabN[['variable','territorio','n','inicio','fin','uso','usada_en_estimacion']], index=False)}
 
 ## Problemas abiertos
 - Distritos SERPAVI: el origen no trae nombres, solo código 4625NNN; mediana por distrito ruidosa (mín. 10 viviendas).
 - Trans_extranjeros no existe para València municipio en MIVAU.
 - El valor tasado municipal es de tasaciones (composición cambiante de inmuebles tasados); el padrón por nacionalidad acaba en 2022 (no hay 2023-2025 por municipio).
-- Δ4 solapa: los EE HAC(4) pueden quedarse cortos con N={N4}; se reporta HAC(6) como robustez.
+- Δ4 solapa: EE HAC(4) en la beta completa, HAC(8) en tramos y quiebres; el EE del diferencial medio crece con los retardos.
+- Contradicción documental pendiente: `fuentes_fallidas.md` dice que la nacionalidad 2023-2025 no está publicada a nivel municipal, mientras `docs/fallidas/ine_ccaa.md` anota que la tabla 79544 es municipal desde 2021 (no se ha resuelto aquí).
+- `rmse_oos` del registro en las betas es condicional al x contemporáneo (no es pronóstico).
 - La VUT GVA es un registro con quiebres regulatorios; la serie 2026 no se encadena.
 
 ## Qué NO se puede afirmar

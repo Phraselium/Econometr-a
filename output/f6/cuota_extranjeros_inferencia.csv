@@ -1,10 +1,11 @@
 concepto,valor
 media cuota CV - ES (pp),3.9344090404662095
 EE HAC4,0.33497290289665177
-p,7.452063670491618e-32
-tendencia cuota CV (pp/año),0.5402295508631179
-EE,0.0746437243664856
-p,4.572295548251394e-13
-tendencia cuota ES (pp/año),0.33755118495213404
-EE,0.04692435860651482
-p,6.314315254918637e-13
+EE HAC8,0.42813563558888323
+EE HAC12,0.4864580600880175
+p (HAC8; poco fiable),3.941866892885668e-20
+trimestres con CV > ES,77.0
+N,77.0
+mínimo diferencia (pp),0.06918858649257675
+pendiente lineal cuota CV (pp/año; sin p-valor),0.5402295508631179
+pendiente lineal cuota ES (pp/año; sin p-valor),0.33755118495213404

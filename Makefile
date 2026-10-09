@@ -13,10 +13,10 @@ data:
 	@for s in $(FETCH); do echo ">> $$s"; $(PY) $$s || exit 1; done
 
 clean:
-	$(PY) src/build_dataset.py
+	flock data/processed/.clean.lock $(PY) src/build_dataset.py
 
 models:
-	@for s in $(MODELS); do echo ">> $$s"; $(PY) $$s || exit 1; done
+	@mkdir -p output; for s in $(MODELS); do echo ">> $$s"; flock output/.models.lock $(PY) $$s || exit 1; done
 
 report:
 	@if [ -f src/report.py ]; then $(PY) src/report.py; else echo "report: src/report.py aún no existe"; fi

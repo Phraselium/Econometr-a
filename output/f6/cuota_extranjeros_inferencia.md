@@ -1,15 +1,16 @@
-ESTIMACIÓN: N >= 40 trimestres; EE HAC Newey-West (maxlags=4) salvo indicación. N=77. Diferencia media de cuota y tendencia lineal (HAC4); la tendencia es descriptiva (series no estacionarias).
+ESTIMACIÓN: N >= 40 trimestres; EE HAC Newey-West (maxlags=4) salvo indicación. N=77. Hecho descriptivo: la cuota de la CV supera a la de España en 77/77 trimestres. La diferencia es persistente (acf1~0,9) y el EE crece con los retardos HAC; las pendientes lineales se reportan SIN p-valor porque las cuotas son I(1) (t de tendencia espurio). AVISO: trans_extranjeros tiene un salto de cobertura entre 2008 y 2009 (decisiones.md, F3).
 
-| concepto                    |     valor |
-|:----------------------------|----------:|
-| media cuota CV - ES (pp)    | 3.934     |
-| EE HAC4                     | 0.335     |
-| p                           | 7.452e-32 |
-| tendencia cuota CV (pp/año) | 0.5402    |
-| EE                          | 0.07464   |
-| p                           | 4.572e-13 |
-| tendencia cuota ES (pp/año) | 0.3376    |
-| EE                          | 0.04692   |
-| p                           | 6.314e-13 |
+| concepto                                        |      valor |
+|:------------------------------------------------|-----------:|
+| media cuota CV - ES (pp)                        |  3.934     |
+| EE HAC4                                         |  0.335     |
+| EE HAC8                                         |  0.4281    |
+| EE HAC12                                        |  0.4865    |
+| p (HAC8; poco fiable)                           |  3.942e-20 |
+| trimestres con CV > ES                          | 77         |
+| N                                               | 77         |
+| mínimo diferencia (pp)                          |  0.06919   |
+| pendiente lineal cuota CV (pp/año; sin p-valor) |  0.5402    |
+| pendiente lineal cuota ES (pp/año; sin p-valor) |  0.3376    |
 
 Fuente: elaboración propia con data/processed/valencia.csv (INE, MIVAU, GVA, SERPAVI, Notariado).

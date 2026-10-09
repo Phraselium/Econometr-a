@@ -214,26 +214,39 @@ def dm_test(e1, e2, h: int = 1) -> dict:
 
 # ---------------------------------------------------------------- registro
 class Registry:
-    """Registro de búsqueda en CSV (append). `reset=True` reescribe desde cero."""
+    """Registro de búsqueda en CSV.
+
+    Las filas se acumulan en memoria y el fichero se escribe ENTERO de forma atómica
+    (fichero temporal + os.replace) al final del proceso o con `flush()`. Así, varias
+    ejecuciones concurrentes nunca intercalan filas: el fichero siempre corresponde a una
+    ejecución completa (la última en terminar). `reset` se conserva por compatibilidad.
+    """
     COLS = ["fase", "modelo_id", "formula", "muestra_ini", "muestra_fin", "n", "r2_adj", "aic", "bic",
             "rmse_oos", "coef_interes", "p_interes", "notas"]
 
-    def __init__(self, path, reset: bool = False):
+    def __init__(self, path, reset: bool = True):
+        import atexit
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        if reset and self.path.exists():
-            self.path.unlink()
-        if not self.path.exists():
-            pd.DataFrame(columns=self.COLS).to_csv(self.path, index=False)
+        self.rows: list = []
+        atexit.register(self.flush)
 
     def log(self, fase, modelo_id, formula, muestra_ini, muestra_fin, n, r2_adj, aic, bic,
             rmse_oos=np.nan, coef_interes=np.nan, p_interes=np.nan, notas=""):
-        row = pd.DataFrame([[fase, modelo_id, formula, str(muestra_ini), str(muestra_fin), n, r2_adj,
-                             aic, bic, rmse_oos, coef_interes, p_interes, notas]], columns=self.COLS)
-        row.to_csv(self.path, mode="a", header=False, index=False)
+        self.rows.append([fase, modelo_id, formula, str(muestra_ini), str(muestra_fin), n, r2_adj,
+                          aic, bic, rmse_oos, coef_interes, p_interes, notas])
+
+    def frame(self) -> pd.DataFrame:
+        return pd.DataFrame(self.rows, columns=self.COLS)
+
+    def flush(self):
+        import os
+        tmp = self.path.with_name(f".{self.path.name}.{os.getpid()}.tmp")
+        self.frame().to_csv(tmp, index=False)
+        os.replace(tmp, self.path)
 
     def read(self) -> pd.DataFrame:
-        return pd.read_csv(self.path)
+        return self.frame()
 
     def log_res(self, fase, modelo_id, formula, res, interes=None, rmse_oos=np.nan, notas=""):
         """Atajo: registra un resultado de statsmodels (coef de interés = `interes` si existe)."""

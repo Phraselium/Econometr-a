@@ -1,46 +1,46 @@
-Nº de observaciones por serie en valencia.csv. El umbral N>=40 decide estimación vs descriptivo (decisiones.md, F6). Nota: vut_stock_gva (N=60) es un registro administrativo con quiebres regulatorios y en este script solo se describe; p_tasado y trans_total sí entran en la parte de estimación.
+Nº de observaciones por serie en valencia.csv. El umbral N>=40 decide estimación vs descriptivo (decisiones.md, F6). 'elegible' = N>=40; 'usada_en_estimacion' = entra de verdad en una regresión de este script. vut_stock_gva (N=60) es elegible pero solo se describe (registro administrativo con quiebres regulatorios).
 
-| variable                   | territorio            | frecuencia                   |   n | inicio   | fin    | rol       | validado      | uso                |
-|:---------------------------|:----------------------|:-----------------------------|----:|:---------|:-------|:----------|:--------------|:-------------------|
-| ipv                        | Comunitat Valenciana  | trimestral                   |  78 | 2007Q1   | 2026Q2 | principal | sí            | estimación (N>=40) |
-| ipv                        | España                | trimestral                   |  78 | 2007Q1   | 2026Q2 | principal | sí            | estimación (N>=40) |
-| ipva                       | València (municipio)  | anual                        |  14 | 2011     | 2024   | principal | sí            | descriptivo (N<40) |
-| notariado_cuantia_esp_prov | Provincia de València | trimestral                   |  32 | 2018Q1   | 2025Q4 | principal | sí            | descriptivo (N<40) |
-| notariado_cuantia_ext_prov | Provincia de València | trimestral                   |  32 | 2018Q1   | 2025Q4 | principal | sí            | descriptivo (N<40) |
-| notariado_viv_esp_prov     | Provincia de València | trimestral                   |  32 | 2018Q1   | 2025Q4 | principal | sí            | descriptivo (N<40) |
-| notariado_viv_ext_prov     | Provincia de València | trimestral                   |  32 | 2018Q1   | 2025Q4 | principal | sí            | descriptivo (N<40) |
-| notariado_viv_extranj      | València (municipio)  | anual (edición 4T del año)   |   5 | 2021     | 2025   | robustez  | sí            | descriptivo (N<40) |
-| p_tasado                   | Comunitat Valenciana  | trimestral                   | 126 | 1995Q1   | 2026Q2 | principal | sí            | estimación (N>=40) |
-| p_tasado                   | España                | trimestral                   | 126 | 1995Q1   | 2026Q2 | principal | sí            | estimación (N>=40) |
-| p_tasado                   | Provincia de València | trimestral                   | 126 | 1995Q1   | 2026Q2 | principal | sí            | estimación (N>=40) |
-| p_tasado                   | València (municipio)  | trimestral                   |  86 | 2005Q1   | 2026Q2 | principal | sí            | estimación (N>=40) |
-| pob_espanola               | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | principal | sí            | descriptivo (N<40) |
-| pob_extranjera             | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | principal | sí            | descriptivo (N<40) |
-| pob_extranjera_gva         | València (municipio)  | anual (1 ene)                |  18 | 2005     | 2022   | robustez  | sí            | descriptivo (N<40) |
-| pob_total                  | València (municipio)  | anual (1 ene)                |  29 | 1996     | 2025   | principal | sí            | descriptivo (N<40) |
-| pob_vlc_africa             | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | robustez  | sí            | descriptivo (N<40) |
-| pob_vlc_alemania           | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | robustez  | sí            | descriptivo (N<40) |
-| pob_vlc_america            | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | robustez  | sí            | descriptivo (N<40) |
-| pob_vlc_asia               | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | robustez  | sí            | descriptivo (N<40) |
-| pob_vlc_europa             | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | robustez  | sí            | descriptivo (N<40) |
-| pob_vlc_reino_unido        | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | robustez  | sí            | descriptivo (N<40) |
-| serpavi_vc_dist_agg        | València (municipio)  | anual                        |  14 | 2011     | 2024   | robustez  | plausibilidad | descriptivo (N<40) |
-| serpavi_vc_mediana         | València (municipio)  | anual                        |  14 | 2011     | 2024   | principal | plausibilidad | descriptivo (N<40) |
-| trans_extranjeros          | Comunitat Valenciana  | trimestral                   |  78 | 2007Q1   | 2026Q2 | principal | sí            | estimación (N>=40) |
-| trans_extranjeros          | España                | trimestral                   |  78 | 2007Q1   | 2026Q2 | principal | sí            | estimación (N>=40) |
-| trans_total                | Comunitat Valenciana  | trimestral                   |  89 | 2004Q1   | 2026Q1 | principal | sí            | estimación (N>=40) |
-| trans_total                | España                | trimestral                   |  89 | 2004Q1   | 2026Q1 | principal | sí            | estimación (N>=40) |
-| trans_total                | València (municipio)  | trimestral                   |  89 | 2004Q1   | 2026Q1 | principal | sí            | estimación (N>=40) |
-| vut_pct_sobre_total        | Provincia de València | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) |
-| vut_pct_sobre_total        | València (municipio)  | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) |
-| vut_plazas                 | Provincia de València | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) |
-| vut_plazas                 | València (municipio)  | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) |
-| vut_plazas_por_vivienda    | Provincia de València | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) |
-| vut_plazas_por_vivienda    | València (municipio)  | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) |
-| vut_stock_gva              | Comunitat Valenciana  | trimestral (fin de trimestre |  60 | 2010Q1   | 2024Q4 | principal | sí            | estimación (N>=40) |
-| vut_stock_gva              | Provincia de València | trimestral (fin de trimestre |  60 | 2010Q1   | 2024Q4 | principal | sí            | estimación (N>=40) |
-| vut_stock_gva              | València (municipio)  | trimestral (fin de trimestre |  60 | 2010Q1   | 2024Q4 | robustez  | sí            | estimación (N>=40) |
-| vut_viviendas_turisticas   | Provincia de València | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) |
-| vut_viviendas_turisticas   | València (municipio)  | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) |
+| variable                   | territorio            | frecuencia                   |   n | inicio   | fin    | rol       | validado      | uso                | usada_en_estimacion   |
+|:---------------------------|:----------------------|:-----------------------------|----:|:---------|:-------|:----------|:--------------|:-------------------|:----------------------|
+| ipv                        | Comunitat Valenciana  | trimestral                   |  78 | 2007Q1   | 2026Q2 | principal | sí            | elegible (N>=40)   | sí                    |
+| ipv                        | España                | trimestral                   |  78 | 2007Q1   | 2026Q2 | principal | sí            | elegible (N>=40)   | sí                    |
+| ipva                       | València (municipio)  | anual                        |  14 | 2011     | 2024   | principal | sí            | descriptivo (N<40) | no                    |
+| notariado_cuantia_esp_prov | Provincia de València | trimestral                   |  32 | 2018Q1   | 2025Q4 | principal | sí            | descriptivo (N<40) | no                    |
+| notariado_cuantia_ext_prov | Provincia de València | trimestral                   |  32 | 2018Q1   | 2025Q4 | principal | sí            | descriptivo (N<40) | no                    |
+| notariado_viv_esp_prov     | Provincia de València | trimestral                   |  32 | 2018Q1   | 2025Q4 | principal | sí            | descriptivo (N<40) | no                    |
+| notariado_viv_ext_prov     | Provincia de València | trimestral                   |  32 | 2018Q1   | 2025Q4 | principal | sí            | descriptivo (N<40) | no                    |
+| notariado_viv_extranj      | València (municipio)  | anual (edición 4T del año)   |   5 | 2021     | 2025   | robustez  | sí            | descriptivo (N<40) | no                    |
+| p_tasado                   | Comunitat Valenciana  | trimestral                   | 126 | 1995Q1   | 2026Q2 | principal | sí            | elegible (N>=40)   | sí                    |
+| p_tasado                   | España                | trimestral                   | 126 | 1995Q1   | 2026Q2 | principal | sí            | elegible (N>=40)   | sí                    |
+| p_tasado                   | Provincia de València | trimestral                   | 126 | 1995Q1   | 2026Q2 | principal | sí            | elegible (N>=40)   | sí                    |
+| p_tasado                   | València (municipio)  | trimestral                   |  86 | 2005Q1   | 2026Q2 | principal | sí            | elegible (N>=40)   | sí                    |
+| pob_espanola               | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | principal | sí            | descriptivo (N<40) | no                    |
+| pob_extranjera             | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | principal | sí            | descriptivo (N<40) | no                    |
+| pob_extranjera_gva         | València (municipio)  | anual (1 ene)                |  18 | 2005     | 2022   | robustez  | sí            | descriptivo (N<40) | no                    |
+| pob_total                  | València (municipio)  | anual (1 ene)                |  29 | 1996     | 2025   | principal | sí            | descriptivo (N<40) | no                    |
+| pob_vlc_africa             | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | robustez  | sí            | descriptivo (N<40) | no                    |
+| pob_vlc_alemania           | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | robustez  | sí            | descriptivo (N<40) | no                    |
+| pob_vlc_america            | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | robustez  | sí            | descriptivo (N<40) | no                    |
+| pob_vlc_asia               | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | robustez  | sí            | descriptivo (N<40) | no                    |
+| pob_vlc_europa             | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | robustez  | sí            | descriptivo (N<40) | no                    |
+| pob_vlc_reino_unido        | València (municipio)  | anual (1 ene)                |  25 | 1998     | 2022   | robustez  | sí            | descriptivo (N<40) | no                    |
+| serpavi_vc_dist_agg        | València (municipio)  | anual                        |  14 | 2011     | 2024   | robustez  | plausibilidad | descriptivo (N<40) | no                    |
+| serpavi_vc_mediana         | València (municipio)  | anual                        |  14 | 2011     | 2024   | principal | plausibilidad | descriptivo (N<40) | no                    |
+| trans_extranjeros          | Comunitat Valenciana  | trimestral                   |  78 | 2007Q1   | 2026Q2 | principal | sí            | elegible (N>=40)   | sí                    |
+| trans_extranjeros          | España                | trimestral                   |  78 | 2007Q1   | 2026Q2 | principal | sí            | elegible (N>=40)   | sí                    |
+| trans_total                | Comunitat Valenciana  | trimestral                   |  89 | 2004Q1   | 2026Q1 | principal | sí            | elegible (N>=40)   | sí                    |
+| trans_total                | España                | trimestral                   |  89 | 2004Q1   | 2026Q1 | principal | sí            | elegible (N>=40)   | sí                    |
+| trans_total                | València (municipio)  | trimestral                   |  89 | 2004Q1   | 2026Q1 | principal | sí            | elegible (N>=40)   | sí                    |
+| vut_pct_sobre_total        | Provincia de València | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) | no                    |
+| vut_pct_sobre_total        | València (municipio)  | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) | no                    |
+| vut_plazas                 | Provincia de València | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) | no                    |
+| vut_plazas                 | València (municipio)  | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) | no                    |
+| vut_plazas_por_vivienda    | Provincia de València | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) | no                    |
+| vut_plazas_por_vivienda    | València (municipio)  | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) | no                    |
+| vut_stock_gva              | Comunitat Valenciana  | trimestral (fin de trimestre |  60 | 2010Q1   | 2024Q4 | principal | sí            | elegible (N>=40)   | no                    |
+| vut_stock_gva              | Provincia de València | trimestral (fin de trimestre |  60 | 2010Q1   | 2024Q4 | principal | sí            | elegible (N>=40)   | no                    |
+| vut_stock_gva              | València (municipio)  | trimestral (fin de trimestre |  60 | 2010Q1   | 2024Q4 | robustez  | sí            | elegible (N>=40)   | no                    |
+| vut_viviendas_turisticas   | Provincia de València | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) | no                    |
+| vut_viviendas_turisticas   | València (municipio)  | semestral irregular (feb/ago |  13 | 2020Q3   | 2026Q2 | robustez  | plausibilidad | descriptivo (N<40) | no                    |
 
 Fuente: elaboración propia con data/processed/valencia.csv (INE, MIVAU, GVA, SERPAVI, Notariado).

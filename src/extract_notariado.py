@@ -53,8 +53,8 @@ NEWS = CNV + "/portal/noticias/-/asset_publisher/V3kCUm4K8nMX/content/id/{id}"
 
 # --- Revision visual realizada (paginas PNG leidas y comparadas con las tablas extraidas) ---
 PAGINAS_REVISADAS = {
-    "notariado_cv_prov_trimestral": "notariado_cv_val_extranjeros_4T2025.pdf p2,p3,p10; notariado_cv_ali_extranjeros_4T2025.pdf p10; notariado_cv_cas_extranjeros_4T2025.pdf p2",
-    "notariado_cv_actos_mensual": "notariado_cv_actos_2024-2025.pdf p3; notariado_cv_actos_1T2026.pdf p1; notariado_cv_actos_2019-2020.pdf p1",
+    "notariado_cv_prov_trimestral": "notariado_cv_val_extranjeros_4T2025.pdf p2,p10(zoom); notariado_cv_cas_extranjeros_4T2025.pdf p2; notariado_cv_ali_extranjeros_4T2025.pdf p10 (solo estructura, baja resolucion)",
+    "notariado_cv_actos_mensual": "notariado_cv_actos_2024-2025.pdf p3; notariado_cv_actos_1T2026.pdf p1",
     "notariado_cv_municipios_anual": "notariado_cv_val_municipios_extranjeros_4T2025.pdf p2",
 }
 
@@ -547,7 +547,7 @@ def main() -> None:
     import pypdfium2 as pdfium
     for fn, pages in (("notariado_cv_val_extranjeros_4T2025.pdf", [2, 3, 10]), ("notariado_cv_ali_extranjeros_4T2025.pdf", [10]),
                       ("notariado_cv_cas_extranjeros_4T2025.pdf", [2]), ("notariado_cv_actos_2024-2025.pdf", [3]),
-                      ("notariado_cv_actos_1T2026.pdf", [1]), ("notariado_cv_actos_2019-2020.pdf", [1]),
+                      ("notariado_cv_actos_1T2026.pdf", [1]),
                       ("notariado_cv_val_municipios_extranjeros_4T2025.pdf", [2])):
         pdf = pdfium.PdfDocument(str(ORIG / fn))
         for p in pages:

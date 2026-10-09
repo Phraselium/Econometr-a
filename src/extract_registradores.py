@@ -74,7 +74,7 @@ def num(s: str) -> float:
 
 def pnum(s: str) -> float:
     """porcentaje '13,82 %' -> 13.82 (los puntos de millar no existen en %)"""
-    return float(s.replace("%", "").strip().replace(",", "."))
+    return float(s.replace("%", "").strip().replace(".", "").replace(",", "."))
 
 
 # ------------------------------------------------------------------ 1) opendata CSV
@@ -128,8 +128,8 @@ def parse_levels(pdf, page: int, year: int, edicion: int, serie_base: str, unida
                 nivel = v
     if nivel is None:
         raise RuntimeError(f"nivel no detectado p{page}")
-    rx3 = re.compile(r"^(.+?) (-?[\d.]+) (-?[\d,]+) ?% (-?[\d.]+) (-?[\d,]+) ?% (-?[\d.]+) (-?[\d,]+) ?%$")
-    rx1 = re.compile(r"^(.+?) (-?[\d.]+) (-?[\d,]+) ?%$")
+    rx3 = re.compile(r"^(.+?) (-?[\d.]+) (-?[\d.,]+) ?% (-?[\d.]+) (-?[\d.,]+) ?% (-?[\d.]+) (-?[\d.,]+) ?%$")
+    rx1 = re.compile(r"^(.+?) (-?[\d.]+) (-?[\d.,]+) ?%$")
     rows = []
     for ln in txt:
         ln = ln.strip()
@@ -178,11 +178,11 @@ def parse_pct_series(pdf, page: int, edicion: int, url: str) -> list[dict]:
             years = [2000 + int(y) for y in re.findall(r"(\d\d) T4", ln)]
             continue
         if years:
-            m = re.match(r"^(.+?) ((?:\d+,\d+ ?% ?){%d})$" % len(years), ln.strip())
+            m = re.match(r"^(.+?) ((?:\d+,\d+ ?% ?){" + str(len(years)) + r"})$", ln.strip())
             if m:
                 vals = re.findall(r"(\d+,\d+) ?%", m.group(2))
                 for y, v in zip(years, vals):
-                    rows.append(dict(fecha=f"{y}-01-01", periodo=str(y), serie="viv_pct_compras_extranjeros", valor=pnum(v), unidad="%",
+                    rows.append(dict(fecha=f"{y}-01-01", periodo=str(y), serie="viv_pct_compras_extranjeros_serie8a", valor=pnum(v), unidad="%",
                                      fuente=FUENTE, url=url, origen="pdf", pagina=page, territorio=m.group(1), nivel="ccaa",
                                      nacionalidad="", edicion=edicion))
     return rows
@@ -261,7 +261,7 @@ def parse_anuario(year: int, path: Path, url: str) -> tuple[pd.DataFrame, dict]:
         rows += parse_levels(pdf, p, year, year, "compraventas_viv", "viviendas", url); pages["compras_cap"] = p
         for nm, title, hdr in (("precio_ccaa", "Precio medio de Vivienda (€/m²). Resultados anuales y variación", "CC.AA. General"),
                                ("precio_prov", "Precio medio de Vivienda (€/m²). Resultados anuales y variación", "PROVINCIAS General"),
-                               ("precio_cap", "Precio medio de Vivienda (€/m²). Resultados anuales y variación. Capitales", "Capitales de provincia")):
+                               ("precio_cap", "Precio medio de Vivienda (€/m²). Resultados anuales y variación anual. Capitales", "Capitales de provincia")):
             p = find_page(pdf, title, hdr)
             rows += parse_levels(pdf, p, year, year, "precio_m2_viv", "EUR/m2", url); pages[nm] = p
         p = find_page(pdf, "Compras de vivienda por extranjeros en CC.AA.", "Nacionales Extranjeros")
@@ -286,7 +286,7 @@ def norm(s: str) -> str:
     return " ".join(s.split())
 
 
-ALIAS = {"balears": "balears", "balears illes": "balears", "illes balears": "balears", "baleares": "balears", "asturias": "asturias",
+ALIAS = {"palmas las": "las palmas", "coruna a": "a coruna", "rioja la": "rioja", "balears": "balears", "balears illes": "balears", "illes balears": "balears", "baleares": "balears", "asturias": "asturias",
          "rioja": "rioja", "madrid": "madrid", "murcia": "murcia", "navarra": "navarra", "valenciana": "valenciana",
          "valencia valencia": "valencia", "valencia": "valencia", "alicante alacant": "alicante", "alicante": "alicante",
          "castellon castello": "castellon", "castellon": "castellon", "castilla la mancha": "castilla mancha"}
@@ -362,10 +362,21 @@ def main() -> None:
         V(f"anuario{y}_pct_nacionales_mas_extranjeros", e <= 0.0101, e, f"nacionales + extranjeros = 100 en {len(a)} territorios (redondeo 0.01)", PR)
         nsum = p[(p.serie == "viv_pct_sobre_extranjeros") & (p.territorio == "Espana") & (~p.nacionalidad.isin(["Extranjeros"]))]["valor"].sum()
         V(f"anuario{y}_nacionalidades_suman_100_sobre_extranjeros", abs(nsum - 100) <= 0.05, abs(nsum - 100),
-          "suma de nacionalidades (+Resto) = 100 % de extranjeros (redondeo)", PR)
+          "suma de nacionalidades listadas + Resto = 100 % de extranjeros (p78)", PR,
+          "NO CUADRA EN ORIGEN: la tabla publicada suma %.2f%%; los valores extraidos coinciden con el render PNG (p78 revisada), el defecto es del PDF; no se corrige" % nsum
+          if abs(nsum - 100) > 0.05 else "")
     # (c) coherencia entre ediciones solapadas: serie % extranjeros CCAA (8 anos) y valores anuales
-    ser = an[an.serie == "viv_pct_compras_extranjeros"]
+    ser = an[an.serie == "viv_pct_compras_extranjeros_serie8a"]
     s2 = ser[ser.nivel == "ccaa"].pivot_table(index=["territorio", "periodo"], columns="edicion", values="valor")
+    for y in ANUARIOS:
+        a73 = an[(an.edicion == y) & (an.serie == "viv_pct_compras_extranjeros") & (an.nivel == "ccaa")].set_index("territorio")["valor"]
+        a75 = an[(an.edicion == y) & (an.serie == "viv_pct_compras_extranjeros_serie8a") & (an.nivel == "ccaa") & (an.periodo == str(y))].set_index("territorio")["valor"]
+        a75.index = [k.replace("  ", " ") for k in a75.index]
+        k73 = {key(t): v for t, v in a73.items()}
+        k75 = {key(t): v for t, v in a75.items()}
+        d_ = max(abs(k73[k] - k75[k]) for k in k73 if k in k75)
+        V(f"anuario{y}_pct_extranjeros_CCAA_p73_vs_serie_p75", d_ <= 0.0051 and len(set(k73) & set(k75)) == 17, d_,
+          f"% extranjeros del ano {y} en dos tablas del mismo PDF (17 CCAA)", PR)
     for a_, b_ in ((2025, 2024), (2024, 2023)):
         x = s2[[a_, b_]].dropna()
         V(f"anuarios_{a_}_vs_{b_}_pct_extranjeros_CCAA_solape", (x[a_] - x[b_]).abs().max() <= 0.01, (x[a_] - x[b_]).abs().max(),
@@ -379,14 +390,22 @@ def main() -> None:
             od_ = o[(o.anio == y) & (o.serie == serie_od)].copy()
             pdf_["k"] = pdf_.territorio.map(key)
             od_["k"] = od_.territorio.map(key)
-            j = pdf_.merge(od_, on="k", suffixes=("_pdf", "_od"))
-            j = j[j.nivel_pdf == j.nivel_od] if False else j
+            adj_note = ""
+            if nm == "compraventas":
+                # El Anuario asigna Ceuta a Cadiz y Melilla a Almeria (y ambas a Andalucia); el CSV las lista aparte.
+                # Se concilia SUMANDO a la cifra del CSV (el PDF no se toca) y se documenta.
+                ce = float(od_[(od_.k == "ceuta")]["valor"].iloc[0]); me = float(od_[(od_.k == "melilla")]["valor"].iloc[0])
+                for kk, add in (("andalucia", ce + me), ("cadiz", ce), ("almeria", me)):
+                    od_.loc[od_.k == kk, "valor"] += add
+                adj_note = (f"conciliacion documentada: CSV Andalucia += Ceuta+Melilla ({ce + me:.0f}), Cadiz += Ceuta ({ce:.0f}), "
+                            f"Almeria += Melilla ({me:.0f}) (criterio registral del Anuario); sin conciliar el error maximo seria {ce + me:.0f}")
+            j = pdf_.merge(od_, on=["k", "nivel"], suffixes=("_pdf", "_od"))
             ad = (j.valor_pdf - j.valor_od).abs()
             rel = (ad / j.valor_od.abs()).max()
             bad = j.loc[ad.sort_values(ascending=False).index[:1], ["territorio_pdf", "valor_pdf", "valor_od"]].values.tolist()
             tol = 0 if nm == "compraventas" else 1.0
             V(f"anuario{y}_{nm}_vs_opendata_CSV", ad.max() <= tol, float(ad.max()),
-              f"{len(j)} territorios (nacional+CCAA+provincia) PDF vs CSV opendata 4T; peor: {bad}", PR, "", float(rel))
+              f"{len(j)} territorios (nacional+CCAA+provincia) PDF vs CSV opendata 4T; peor: {bad}", PR, adj_note, float(rel))
     # (e) contraste con INE ETDP (anual, 12 meses) y MIVAU
     ine = ine_year("")
     pairs = {"Espana": "Total Nacional", "Comunitat Valenciana": "Comunitat Valenciana", "Valencia/València": "Valencia/València",

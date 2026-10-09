@@ -18,14 +18,17 @@ Formato largo estándar (utils_fetch.save). Series = código INE; nombre = Nombr
 from __future__ import annotations
 
 import datetime as dt
+import io
 import re
 import sys
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
+import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from utils_fetch import cached, get, save  # noqa: E402
+from utils_fetch import RAW, cached, download, get, save  # noqa: E402
 
 BASE = "https://servicios.ine.es/wstempus/js/ES"
 NAME = "ine_padron_valencia.csv"
@@ -261,7 +264,12 @@ def _canon_cat(raw: str) -> str:
         return "Total Europa"
     if low == "rep. dominicana":
         return "República Dominicana"
-    return s
+    # Grupos de 33946 (2020+) equivalentes a los de los ficheros anuales (valores idénticos en 2019).
+    # Las agrupaciones UE27_2020 / Europa menos UE27_2020 no tienen equivalente anual y se dejan tal cual.
+    grupos = {"de africa": "Total África", "de américa": "Total América", "de asia": "Total Asia",
+              "europa (sin españa)": "Total Europa", "país de la ue28 sin españa": "Total Unión Europea",
+              "país de europa menos ue28": "Total Europa No Comunitaria"}
+    return grupos.get(low, s)
 
 
 def _probe(url: str) -> str:
@@ -283,7 +291,7 @@ def _read_px(path: Path, year_hint: int | None) -> pd.DataFrame:
     df = pd.read_csv(io.StringIO(txt), sep=";", dtype=str, keep_default_na=False)
     cols = list(df.columns)
     sex_c, mun_c, val_c = cols[0], "Municipios", cols[-1]
-    nat_c = next(c for c in cols if c.startswith("Nacionalidad"))
+    nat_c = cols[cols.index(mun_c) + 1]  # Nacionalidad / País de nacionalidad (siempre tras Municipios)
     if "Provincias" in cols:
         df = df[df["Provincias"].str.strip().str.startswith(PROV + " ")]
     for c in cols:
@@ -297,12 +305,12 @@ def _read_px(path: Path, year_hint: int | None) -> pd.DataFrame:
         "nac": df[nat_c].map(_canon_cat),
         "valor": df[val_c].map(_num),
     })
-    m = out["muni_raw"].str.extract(r"^(\d{1,5})\s*[- ]?\s*(.*)$")
-    code = m[0].fillna("")
-    out["muni"] = code.map(lambda c: "" if c == "" else (PROV + c.zfill(3) if len(c) <= 3 else c))
-    out["muni"] = out["muni"].where(out["muni"] != "", "PROV")  # fila 'Total' provincial
+    # Código municipal: '46250 València', '46250-Valencia', '250  Valencia' (1998-2001) -> '46250'.
+    # Fila provincial: 'Total' (ficheros anuales) o vacío (tabla 33946) -> 'PROV'.
+    code = out["muni_raw"].str.extract(r"^(\d{1,5})\b", expand=False).fillna("")
+    muni = code.map(lambda c: PROV + c.zfill(3) if len(c) <= 3 else c)
+    out["muni"] = muni.where(code != "", "PROV")
     out.loc[out["muni_raw"].isin(["Total", ""]), "muni"] = "PROV"
-    out = out[out["muni"].isin(["PROV"]) | out["muni"].str.startswith(PROV)]
     return out.reset_index(drop=True)
 
 
@@ -324,18 +332,18 @@ def _load_year(year: int, cache: dict) -> tuple[pd.DataFrame, list[str]]:
     return pd.concat(parts, ignore_index=True), urls
 
 
-def fetch_nacionalidad_pcaxis() -> Path | None:
+def fetch_nacionalidad_pcaxis() -> Path:
     """Padrón de València (46250) por sexo y nacionalidad, 1998-2022, desde ficheros PC-Axis/CSV.
 
     Salida: data/raw/ine_padron_vlc_nacionalidad.csv (formato largo; utils_fetch.save).
     Series: vlc_46250|<sexo>|<nacionalidad> y prov_46|<sexo>|<nacionalidad> (fila 'Total' provincial).
     Huecos: años sin fichero (2023-2025) o sin el dato (1998-2001 sin principales nacionalidades).
-    Sin imputación: los valores secretos/vacíos quedan como NaN.
+    Sin imputación: los valores secretos o vacíos quedan como NaN.
     """
     if cached(NAT_NAME):
         return RAW / NAT_NAME
     cache: dict[str, pd.DataFrame] = {}
-    full, huecos, val_rows = [], [], []
+    partes, huecos = [], []
     for year in range(1998, 2026):
         if year not in PX_MAP:
             huecos.append(year)
@@ -347,90 +355,90 @@ def fetch_nacionalidad_pcaxis() -> Path | None:
             huecos.append(year)
             print(f"[hueco] {year}: {e}")
             continue
-        # Duplicados entre ficheros del mismo año: prevalece el primero (papel 'nac');
-        # se registra la diferencia máxima entre fuentes para validar.
-        d = d.drop_duplicates(["anio", "sexo", "muni", "nac", "papel"])
-        full.append(d)
-    if not full:
+        partes.append(d)
+    if not partes:
         raise RuntimeError("ningún año descargado para el padrón por nacionalidad")
-    df = pd.concat(full, ignore_index=True)
-    df["prio"] = df["papel"].map({"nac": 0, "t3": 0, "esp_ext": 1})
-    df = df.sort_values("prio").drop_duplicates(["anio", "sexo", "muni", "nac"], keep="first")
+    df = pd.concat(partes, ignore_index=True)
+    todas = df.copy()  # todas las fuentes sin deduplicar (para validaciones)
+    key = ["anio", "sexo", "muni", "nac"]
 
-    # ---- Validaciones ----
+    # (e) duplicados entre ficheros del mismo año (p. ej. 00046004 y 00046002 comparten Total)
+    g = df.groupby(key)["valor"].agg(["count", "max", "min"])
+    g = g[g["count"] > 1]
+    dif_e = float((g["max"] - g["min"]).abs().max()) if len(g) else 0.0
+    print(f"[val] (e) duplicados entre ficheros del mismo año: {len(g)} claves, "
+          f"máx |dif| = {dif_e:.1f} personas ({'OK' if dif_e <= TOL_NAT else 'REVISAR'})")
+    # Prevalece el fichero de nacionalidad ('nac'/'t3') sobre el de español/extranjero ('esp_ext').
+    df["prio"] = df["papel"].map({"nac": 0, "t3": 0, "esp_ext": 1})
+    df = df.sort_values("prio", kind="mergesort").drop_duplicates(key, keep="first")
+
     msgs = []
-    # (c) suma de municipios = total provincial, por año, sexo y nacionalidad
-    cs = df.groupby(["anio", "sexo", "nac"]).apply(
-        lambda g: pd.Series({
-            "prov": g.loc[g.muni == "PROV", "valor"].sum(),
-            "suma": g.loc[g.muni != "PROV", "valor"].sum(),
-            "n_prov": int((g.muni == "PROV").sum()),
-            "n_mun": int((g.muni != "PROV").sum()),
-        }), include_groups=False).reset_index()
-    cs = cs[cs.n_prov > 0]
-    cs["diff"] = (cs["suma"] - cs["prov"]).abs()
-    ok_c = cs.loc[cs.n_mun > 0, "diff"].max()
-    msgs.append(f"(c) provincia 46: |suma municipios - total| máx = {ok_c:.1f} personas "
-                f"({'OK' if ok_c <= TOL_MUNI_SUM else 'REVISAR'}; {len(cs)} combinaciones año×sexo×nac)")
+    # (c) suma de municipios = fila Total provincial, por año, sexo y nacionalidad.
+    # Si algún municipio tiene la celda vacía (secreto), la suma queda por debajo y la diferencia
+    # se reporta aparte: no es un error de cuadre sino un dato no publicado.
+    es_prov = df.assign(prov=df.muni.eq("PROV"))
+    s_ = es_prov.groupby(["anio", "sexo", "nac", "prov"])["valor"].sum().unstack("prov")
+    n_ = es_prov.groupby(["anio", "sexo", "nac", "prov"])["valor"].count().unstack("prov")
+    vacias = (df[df.muni != "PROV"].assign(v=lambda x: x.valor.isna())
+              .groupby(["anio", "sexo", "nac"])["v"].sum())
+    if True in s_.columns and False in s_.columns:
+        ok = n_[True].reindex(s_.index).fillna(0) > 0  # combinaciones con fila Total
+        dif_c = (s_[False] - s_[True]).abs()[ok]
+        nv = vacias.reindex(dif_c.index).fillna(0)
+        strict = dif_c[nv == 0]
+        mx_c = float(strict.max()) if len(strict) else 0.0
+        peor = strict.idxmax() if len(strict) else None
+        msgs.append(f"(c) provincia 46: |suma municipios - Total| máx = {mx_c:.1f} personas en combinaciones "
+                    f"completas ({'OK' if mx_c <= TOL_MUNI_SUM else 'REVISAR'}; {len(strict)} de "
+                    f"peor={peor}; {len(dif_c)} año×sexo×nac; {int((nv > 0).sum())} con celdas municipales vacías, "
+                    f"dif. máx {float(dif_c[nv > 0].max()) if (nv > 0).any() else 0:.0f} atribuible a secreto)")
 
     vlc = df[df.muni == MUNI_VLC].copy()
-    # (a) españoles + extranjeros = total (València), por año y sexo
+    # (a) total = españoles + extranjeros, València, por año y sexo
     p = vlc.pivot_table(index=["anio", "sexo"], columns="nac", values="valor", aggfunc="first")
-    comp = p.dropna(subset=[c for c in ("Total", "Española", "Extranjera") if c in p.columns])
-    comp = comp[["Total", "Española", "Extranjera"]].dropna()
-    err_a = (comp["Total"] - comp["Española"] - comp["Extranjera"]).abs()
-    msgs.append(f"(a) València: |total - (españoles+extranjeros)| máx = {err_a.max():.1f} personas "
-                f"({'OK' if err_a.max() <= TOL_NAT else 'FALLA'}; {len(comp)} filas año×sexo)")
-    # (b) total València vs DPOP21796 en data/raw/ine_padron_valencia.csv
+    if {"Total", "Española", "Extranjera"} <= set(p.columns):
+        comp = p[["Total", "Española", "Extranjera"]].dropna()
+        err_a = (comp["Total"] - comp["Española"] - comp["Extranjera"]).abs()
+        msgs.append(f"(a) València: |total - (españoles+extranjeros)| máx = {err_a.max():.1f} personas "
+                    f"({'OK' if err_a.max() <= TOL_NAT else 'FALLA'}; {len(comp)} filas año×sexo)")
+    # (b) total València vs DPOP21796/97/98 en data/raw/ine_padron_valencia.csv
     ref_path = RAW / "ine_padron_valencia.csv"
     if ref_path.exists():
         ref = pd.read_csv(ref_path, usecols=["fecha", "serie", "valor"])
-        ref = ref[ref.serie.isin(["DPOP21796", "DPOP21797", "DPOP21798"])].copy()
         ref["anio"] = ref["fecha"].str.slice(0, 4).astype(int)
-        mp = {"DPOP21796": "Ambos sexos", "DPOP21797": "Hombres", "DPOP21798": "Mujeres"}
-        errs_b = []
-        tot_vlc = vlc[vlc.nac == "Total"].set_index(["anio", "sexo"])["valor"]
-        for serie, sexo in mp.items():
+        for serie, sexo in {"DPOP21796": "Ambos sexos", "DPOP21797": "Hombres", "DPOP21798": "Mujeres"}.items():
             r = ref[ref.serie == serie].set_index("anio")["valor"]
-            idx = [a for a in r.index if (a, sexo) in tot_vlc.index]
-            e = (tot_vlc.loc[[(a, sexo) for a in idx]].values - r.loc[idx].values)
-            if len(e):
-                errs_b.append((sexo, len(e), float(abs(e).max())))
-        for sexo, n, mx in errs_b:
-            msgs.append(f"(b) València total {sexo} vs DPOP: máx = {mx:.1f} personas en {n} años "
-                        f"({'OK' if mx <= TOL_NAT else 'FALLA'})")
+            t = vlc[(vlc.nac == "Total") & (vlc.sexo == sexo)].set_index("anio")["valor"]
+            j = pd.concat([t.rename("nat"), r.rename("dpop")], axis=1, join="inner").dropna()
+            e = (j["nat"] - j["dpop"]).abs()
+            msgs.append(f"(b) València total {sexo} vs {serie}: máx |dif| = {e.max():.1f} personas en "
+                        f"{len(e)} años ({'OK' if e.max() <= TOL_NAT else 'FALLA'})")
     else:
         msgs.append("(b) omitida: falta data/raw/ine_padron_valencia.csv")
-    # Validación cruzada: 2003-2019 (ficheros anuales) vs tabla 33946 (2003-2022)
-    try:
-        t3, _ = _load_year(2020, cache)  # mismo CSV 33946, años 2003-2022 completos
-        t3 = cache[PX_T3]
-        t3 = t3[(t3.muni == MUNI_VLC) & (t3.anio.between(2003, 2019))]
-        ann = vlc[vlc.anio.between(2003, 2019) & vlc.nac.isin(["Total", "Española", "Extranjera"])]
-        m_ = ann.merge(t3[t3.nac.isin(["Total", "Española", "Extranjera"])], on=["anio", "sexo", "nac"],
-                       suffixes=("", "_t3"))
-        dd = (m_["valor"] - m_["valor_t3"]).abs().max()
-        msgs.append(f"(d) cruce anual 2003-2019 vs tabla 33946: máx |dif| = {dd:.1f} personas "
-                    f"({'OK' if dd <= TOL_NAT else 'REVISAR'}; {len(m_)} celdas)")
-    except Exception as e:  # noqa: BLE001
-        msgs.append(f"(d) cruce no disponible: {e}")
-
+    # (d) cruce de fuentes: ficheros anuales vs tabla 33946 en 2003-2019 (València)
+    t3 = cache.get(PX_T3)
+    if t3 is not None:
+        t3 = t3[(t3.muni == MUNI_VLC) & t3.anio.between(2003, 2019)]
+        ann = todas[(todas.muni == MUNI_VLC) & todas.anio.between(2003, 2019) & (todas.papel != "t3")]
+        m_ = ann.merge(t3, on=["anio", "sexo", "nac"], suffixes=("", "_t3"))
+        dd = (m_["valor"] - m_["valor_t3"]).abs()
+        msgs.append(f"(d) cruce anual 2003-2019 vs tabla 33946 (todas las categorías comunes): "
+                    f"máx |dif| = {dd.max():.1f} personas ({'OK' if dd.max() <= TOL_NAT else 'REVISAR'}; "
+                    f"{int(dd.notna().sum())} celdas; {int(dd.isna().sum())} con vacío)")
     for m_txt in msgs:
         print("[val]", m_txt)
 
-    # ---- Salida larga (solo se guardan València y la fila Total provincial) ----
+    # ---- Salida larga: València y fila Total provincial ----
     out = df[df.muni.isin([MUNI_VLC, "PROV"])].copy()
-    out["serie"] = out.apply(lambda r: ("vlc_46250" if r.muni == MUNI_VLC else "prov_46")
-                             + f"|{r.sexo}|{r.nac}", axis=1)
+    out["serie"] = np.where(out.muni == MUNI_VLC, "vlc_46250", "prov_46") + "|" + out.sexo + "|" + out.nac
     out["fecha"] = out["anio"].map(lambda a: f"{a}-01-01")
     out["periodo"] = out["anio"].astype(str)
     out["unidad"] = NAT_UNIDAD
     out["fuente"] = NAT_FUENTE
     out = out[["fecha", "periodo", "serie", "valor", "unidad", "fuente", "url"]]
     out = out.sort_values(["serie", "fecha"]).reset_index(drop=True)
-    n_nan = int(out["valor"].isna().sum())
-    print(f"[nac] {out['serie'].nunique()} series, {len(out)} obs, NaN={n_nan}; "
-          f"años con datos={sorted(out['periodo'].unique())}; huecos={huecos}")
+    print(f"[nac] {out['serie'].nunique()} series, {len(out)} obs, NaN={int(out['valor'].isna().sum())}; "
+          f"años={sorted(out['periodo'].unique())}; huecos={huecos}")
     return save(out, NAT_NAME, NAT_FUENTE)
 
 

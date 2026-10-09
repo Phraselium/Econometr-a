@@ -261,8 +261,9 @@ cdf = pd.DataFrame([{k: v for k, v in s.items() if not k.startswith("_")} for s 
 save(cdf, "cointegracion", ".4g", index=False)
 sec("3. Cointegración (se reportan SIEMPRE los tres contrastes)",
     "EG (statsmodels.coint, MacKinnon, AIC), Johansen (det_order=0, k_ar_diff por AIC del VAR/VECM ≤4, traza al 5 %; "
-    "no admite dummies estacionales), ARDL bounds (caso 3, ardl_select_order AIC maxlag 4/orden de regresores ≤2, "
-    "dummies trimestrales fijas; los regresores se fuerzan a orden ≥1 para el UECM). Decisión: ≥2 de 3 (docs/decisiones.md).\n\n"
+    "no admite dummies estacionales), ARDL bounds (caso 3; ardl_select_order AIC maxlag 4/orden ≤2 con dummies trimestrales fijas; órdenes asignados por NOMBRE "
+    "de variable y regresores excluidos forzados a orden 1; F de Wald propio sobre y.L1 y x.L1 en el UECM CON dummies "
+    "(bounds_test de statsmodels las descarta) y valores críticos PSS caso III con k = nº de regresores x, sin la dependiente). Decisión: ≥2 de 3 (docs/decisiones.md).\n\n"
     + tm(cdf[["sistema", "N", "EG_p", "J_kardiff", "J_traza0", "J_cv95", "J_rango_traza", "J_rango_maxeig",
               "ARDL_p", "ARDL_ordenes_x", "ARDL_N", "ARDL_k", "ARDL_F", "ARDL_I0_5", "ARDL_I1_5", "ARDL_t_yL1", "ARDL_zona", "n_rechazos", "decision"]], ".3g", False))
 
@@ -303,7 +304,7 @@ if uecm_base is not None:
             g[a] = pr[nm] / pr[a] ** 2
             se = float(np.sqrt(g.values @ cv.loc[pr.index, pr.index].values @ g.values))
             from scipy import stats as _st
-            lr_rows.append(dict(metodo="UECM implícito (delta, HAC)", N=int(uecm_base.nobs), var=x, coef=b,
+            lr_rows.append(dict(metodo="UECM implícito (delta, EE clásicos)", N=int(uecm_base.nobs), var=x, coef=b,
                                 EE_HAC=se, p=2 * _st.norm.sf(abs(b / se))))
 lr_tab = pd.DataFrame(lr_rows)
 save(lr_tab, "largo_plazo", ".4g", index=False)
@@ -534,6 +535,11 @@ sec("5b. Fuera de muestra",
     "los regresores contemporáneos del ECM se toman observados (predicción condicional). Referencias: AR(4)+dummies, "
     "media histórica expansiva de d_ln_ipv y paseo con deriva (deriva = media de los últimos 20 trimestres; con deriva "
     "estimada en ventana expansiva coincidiría con la media histórica). DM: HAC(h−1=0) con corrección HLN; DM<0 favorece al modelo.\n\n"
+    "**Salvedades.** (i) La especificación preferida (y los ganadores AIC/BIC) se eligió con la muestra COMPLETA, "
+    "incluidos 2018-2026: la selección no es en tiempo real y el OOS es pseudo-OOS (favorece al modelo). "
+    "(ii) La fila «Mejor RMSE OOS» se elige con los propios errores fuera de muestra: es un óptimo ex post, no evidencia "
+    "predictiva. (iii) Crédito y empleo contemporáneos entran observados (predicción condicional sobre regresores simultáneos). "
+    "(iv) Resultado: el preferido NO mejora al AR(4)+dummies ni al paseo con deriva (DM no significativos); solo bate a la media histórica.\n\n"
     + tm(OOS, ".4g", False))
 
 # =============================================================== 6. diagnósticos
@@ -686,60 +692,195 @@ diag["Preferido pre-COVID"] = diagnostics(r_pc)
 DG = pd.DataFrame(diag).T
 save(DG, "diagnosticos", ".3g")
 
+# =============================================================== extras de la puerta F2 (iteración 1)
+# (a) DOLS por subperíodos (k=1 por escasez de grados de libertad) y EG estático por subperíodos
+sub_rows = []
+for lab, a_, b_ in [("2008Q1-2025Q4", "2008Q1", "2025Q4"), ("2008Q1-2019Q4 (pre-COVID)", "2008Q1", "2019Q4"),
+                    ("2012Q1-2025Q4 (tras quiebre BP 2012Q1)", "2012Q1", "2025Q4"),
+                    ("2014Q1-2025Q4", "2014Q1", "2025Q4")]:
+    dd_ = dols(Fw.loc[:b_], "ln_ipv", BASE, Q, k=1, desde=a_)
+    es_ = ols_hac("ln_ipv ~ " + " + ".join(BASE) + " + q2+q3+q4", common_sample(Fw.loc[a_:b_], ["ln_ipv"] + BASE))
+    for x in BASE:
+        sub_rows.append(dict(subperiodo=lab, var=x, DOLS_k1=fmt(dd_["beta"][x], dd_["res"].bse[x]), N_DOLS=dd_["n"],
+                             EG_q=fmt(es_.params[x], es_.bse[x]), N_EG=int(es_.nobs)))
+SUB = pd.DataFrame(sub_rows)
+save(SUB, "dols_subperiodos", ".4g", index=False)
+
+# (b) crédito: comovimiento/simultaneidad (fuera de la K de búsqueda)
+Cr = C.copy()
+Cr["d_ln_credito_nuevo_l1"] = Fw["d_ln_credito_nuevo"].shift(1).reindex(C.index)
+cr_rows = []
+for lab, i in [("Preferido R2aj", PREF), ("Ganador BIC/AIC", i_bic)]:
+    tt = [t for t in S.terminos[i].split(" + ") if t != "(vacío)"]
+    variants = {"base (crédito t)": tt,
+                "crédito en t−1": [("d_ln_credito_nuevo_l1" if t == "d_ln_credito_nuevo" else t) for t in tt],
+                "sin crédito": [t for t in tt if t != "d_ln_credito_nuevo"]}
+    for vl, tv in variants.items():
+        f_ = "d_ln_ipv ~ ect_l1 + q2 + q3 + q4" + "".join(" + " + t for t in tv)
+        r_ = ols_hac(f_, Cr)
+        d_ = diagnostics(r_)
+        REG.log_res("F2", f"rob_cred_{lab.split()[0]}_{vl.split()[0]}_{vl[-3:].strip()}", f_, r_, "ect_l1",
+                    notas="robustez simultaneidad del crédito (fuera de la K de búsqueda)")
+        row = dict(modelo=lab, variante=vl, N=int(r_.nobs), R2_aj=r_.rsquared_adj, BG4_p=d_["BG4_p"])
+        for t in ["ect_l1", "d_ln_ocupados", "d_ln_ipv_l1", "d_ln_credito_nuevo", "d_ln_credito_nuevo_l1", "d_ln_costes",
+                  "d_ln_renta_hog_real"]:
+            if t in r_.params.index:
+                row[t] = f"{fmt(r_.params[t], r_.bse[t])} p={r_.pvalues[t]:.3f}"
+        cr_rows.append(row)
+CR = pd.DataFrame(cr_rows).fillna("")
+save(CR, "robustez_credito", ".4g", index=False)
+
+# (c) estabilidad del ECM preferido por muestra: completa, desde 2014Q1, pre-COVID
+C14 = C.loc["2014Q1":]
+r14 = ols_hac(form_pref, C14)
+REG.log_res("F2", "rob_2014+", form_pref, r14, "ect_l1", notas="ECM preferido 2014Q1-2026Q2 (ect de la muestra completa)")
+st_rows = []
+for lab, r_ in [("2008Q2-2026Q2 (completa)", res_pref), ("2014Q1-2026Q2", r14), ("2008Q2-2019Q4 (pre-COVID, ect reest.)", r_pc)]:
+    st_rows.append(dict(muestra=lab, N=int(r_.nobs), R2_aj=r_.rsquared_adj,
+                        **{t: f"{fmt(r_.params[t], r_.bse[t])}" for t in ["ect_l1"] + terms_pref}))
+STB = pd.DataFrame(st_rows)
+save(STB, "estabilidad_muestras", ".4g", index=False)
+
+# (d) tabla de signos frente a literatura
+lrt = lr_tab.copy()
+eb = EBA.set_index("termino")
+
+
+def lrv(met, var):
+    r = lrt[(lrt.metodo == met) & (lrt["var"] == var)]
+    return (r.coef.iloc[0], r.EE_HAC.iloc[0], r.p.iloc[0]) if len(r) else (np.nan,) * 3
+
+
+def sgn(v):
+    return "+" if v > 0 else "-"
+
+
+ocup_lr = lrt[(lrt["var"] == "ln_ocupados") & (~lrt.metodo.str.startswith("UECM"))]
+sg = []
+for var, esp, etiqueta in [("ln_ocupados", "+", "Empleo (LP)"), ("tipo_hip", "-", "Tipo hipotecario (LP)"),
+                           ("ln_permisos_l4", "-", "Permisos t−4 (LP)"), ("ln_costes", "+", "Costes construcción (LP)")]:
+    d1, d2, d3 = lrv("DOLS base (+q)", var), lrv("EG estático (+q)", var), lrv("UECM implícito (delta, EE clásicos)", var)
+    vals = [d1[0], d2[0], d3[0]]
+    disc = "" if all(sgn(v) == esp for v in vals if v == v) else "DISCREPANCIA de signo en algún estimador"
+    if var == "ln_ocupados":
+        disc = (f"signo OK; magnitud NO robusta: rango {ocup_lr.coef.min():.2f}-{ocup_lr.coef.max():.2f} según estimador/vector; "
+                "literatura.md no da magnitud de referencia")
+    sg.append(dict(variable=etiqueta, esperado=esp, DOLS=fmt(d1[0], d1[1]), EG_q=fmt(d2[0], d2[1]),
+                   UECM=fmt(d3[0], d3[1]) if d3[0] == d3[0] else "n.d.", discrepancia=disc))
+for var, esp, etiqueta, met in [("ln_renta_hog_real", "+", "Renta real (LP)", "DOLS +renta"),
+                                ("ln_pob_extranj", "+", "Pob. extranjera (LP)", "DOLS +pob_extranj")]:
+    d1 = lrv(met, var)
+    sg.append(dict(variable=etiqueta, esperado=esp, DOLS=fmt(d1[0], d1[1]), EG_q="", UECM="",
+                   discrepancia="" if sgn(d1[0]) == esp else "DISCREPANCIA de signo"))
+SGL = pd.DataFrame(sg)
+cp = []
+for t, esp, etiqueta in [("d_ln_ocupados", "+", "Empleo (CP)"), ("d_tipo_hip", "-", "Tipo (CP)"),
+                         ("d_ln_permisos_l4", "-", "Permisos t−4 (CP)"), ("d_ln_costes", "+", "Costes (CP)"),
+                         ("d_ln_renta_hog_real", "+", "Renta (CP)"), ("d_ln_credito_nuevo", "+", "Crédito (CP, comovimiento)"),
+                         ("d_ln_pob_extranj", "+", "Pob. extranjera (CP)"), ("ect_l1", "-", "ect (entre −1 y 0)")]:
+    e = eb.loc[t]
+    inpref = bool(e.en_preferido)
+    pos = e.signo_pos
+    maj = "+" if pos >= .5 else "-"
+    c_ = f"{e.coef_pref:.4f} (p={e.p_pref:.3f})" if inpref else "no incluido"
+    disc = ""
+    if inpref and sgn(e.coef_pref) != esp:
+        disc = "DISCREPANCIA de signo en el preferido"
+    elif not inpref and maj != esp:
+        disc = "DISCREPANCIA: signo mayoritario en la búsqueda contrario"
+    cp.append(dict(variable=etiqueta, esperado=esp, preferido=c_, pct_modelos_signo_pos=f"{pos:.0%}",
+                   frac_signif=f"{e.frac_signif_5pct:.0%}", discrepancia=disc))
+SGC = pd.DataFrame(cp)
+save(SGL, "signos_LP", ".4g", index=False)
+save(SGC, "signos_CP", ".4g", index=False)
+
 # =============================================================== resumen
 pref_tab = res_pref_tab.copy()
-pref_tab["p_Bonf(K)"] = [EBA.set_index("termino").p_bonf_K.get(i, np.nan) for i in pref_tab.index]
-pref_tab["K"] = [EBA.set_index("termino").K_modelos.get(i, np.nan) for i in pref_tab.index]
+pref_tab["p_Bonf(K)"] = [eb.p_bonf_K.get(i, np.nan) for i in pref_tab.index]
+pref_tab["K"] = [eb.K_modelos.get(i, np.nan) for i in pref_tab.index]
 sec("6. Diagnósticos", "Contrastes sobre MCO clásico (los EE de los coeficientes son HAC). DW, BG(4) p, BP p, JB p, "
     "RESET p (potencias 2-3), CUSUM p, VIF máx (sin dummies q).\n\n" + tm(DG, ".3g") +
-    "\n**Breusch-Godfrey: añadir retardos de d_ln_ipv**\n\n" + tm(AUG, ".4g", False) +
-    "\n**Chow (ECM preferido)**\n\n" + tm(ch, ".4g", False) + "\n**Bai-Perron (min 12, máx 3, BIC; dummies q partialled out)**\n\n"
-    + tm(BP, ".4g", False) + "\nFiguras: output/f2/cusum.png, output/f2/ect_recursivo.png.\n\n**Robustez: escalones y pre-COVID**\n\n"
-    + tm(ROB, ".4g", False) +
-    "\nLos escalones se usan solo como robustez: en una ecuación en diferencias un escalón equivale a un cambio de "
-    "deriva, y con tramos de 12-16 trimestres la potencia del Chow es baja.\n")
+    "\n**Breusch-Godfrey: añadir retardos de d_ln_ipv (preferido)**\n\n" + tm(AUG, ".4g", False) +
+    "\n(La versión pre-COVID sí rechaza BG(4), p=%.3f; no se ha aplicado el aumento de retardos allí.)\n" % d_pc["BG4_p"])
 
-ndec = cdf.iloc[0]
-res_txt = []
-res_txt.append("# Resumen F2 (nacional)\n\nLenguaje: asociaciones, sin identificación causal. Semilla "
-               f"{SEED}. Total de especificaciones registradas: {len(REG.read())} (de ellas {NM} de la búsqueda de corto plazo).\n")
+chow_txt = "; ".join(f"{r.fecha}: F={r.F:.2f}, p={r.p:.3f}" for r in ch.itertuples())
+sec("6b. Quiebres y estabilidad (P5: 2008, 2014, 2020, 2022)",
+    "**Chow (ECM preferido)**\n\n" + tm(ch, ".4g", False) + "\n**Bai-Perron (min 12, máx 3, BIC; dummies q eliminadas por partialling)**\n\n"
+    + tm(BP, ".4g", False) +
+    "\n**Estabilidad del ECM preferido por muestras**\n\n" + tm(STB, ".4g", False) +
+    "\n**Robustez: escalones y pre-COVID**\n\n" + tm(ROB, ".4g", False) +
+    "\n**DOLS / EG por subperíodos** (DOLS ±1 por grados de libertad)\n\n" + tm(SUB, ".4g", False) +
+    "\nFiguras: output/f2/cusum.png (CUSUM, p=%.3f) y output/f2/ect_recursivo.png (ect recursivo).\n\n" % diag["Preferido (R2aj)"]["CUSUM_p"] +
+    "**Lectura por fecha (asociaciones, no causalidad):**\n"
+    "- **2008:** la muestra del IPV empieza en 2007Q1 y la del modelo en 2008Q1/Q2, de modo que el quiebre de la crisis financiera no es contrastable con un Chow dentro de la muestra; no hay conclusión.\n"
+    f"- **2014Q1:** el Chow rechaza la estabilidad del ECM preferido ({ch.iloc[0].F:.2f}, p={ch.iloc[0].p:.3f}); Bai-Perron por BIC no encuentra quiebres en el ECM (el BIC es conservador). "
+    "La estimación desde 2014Q1 (tabla de estabilidad) permite ver cuánto cambian ect y coeficientes. Es evidencia de inestabilidad moderada, con tramo previo de solo 23 observaciones.\n"
+    f"- **2020Q1:** Chow p={ch.iloc[1].p:.3f} (no rechaza). Sin embargo, el LR cambia mucho al excluir 2020-2026 (pre-COVID: costes y permisos cambian de signo) y Bai-Perron en niveles fecha un quiebre en 2020Q2.\n"
+    f"- **2022Q3 (subida de tipos):** Chow p={ch.iloc[2].p:.3f} (no rechaza, 16 obs. en el segundo tramo: baja potencia); el escalón tipo22 en el ECM no es significativo (ver robustez).\n"
+    "- **Estabilidad global:** CUSUM no rechaza en el ECM; el LR (niveles) no es estable (Bai-Perron: 2012Q1, 2020Q2, 2023Q2; CUSUM del DOLS p=%.3f; DW=0,71). El coeficiente del ect cae a −0,05 en pre-COVID.\n\n" % diag["DOLS base (LR)"]["CUSUM_p"] +
+    "Los escalones se usan solo como robustez (en una ecuación en diferencias un escalón es un cambio de deriva; "
+    "`epa21`=0,0078 en el ECM debe leerse como «cambio de deriva desde 2021», no como corrección del salto de la EPA; un impulso en 2021Q1 no cambia nada según la revisión).\n")
+sec("6c. Crédito nuevo: comovimiento y simultaneidad (robustez, fuera de la K de búsqueda)",
+    "El volumen de crédito nuevo es operaciones × importe medio, y el importe depende del precio: la asociación contemporánea "
+    "con el IPV es un comovimiento/simultaneidad, no un determinante predeterminado. Se reestima el preferido y el ganador "
+    "AIC/BIC con crédito en t−1 y sin crédito (misma muestra N=73).\n\n" + tm(CR, ".4g", False) +
+    "\nLas otras variables cambian como muestra la tabla (compárese ect, ocupados y d_ln_ipv_l1 entre variantes).\n")
+sec("6d. Signos y magnitudes frente a docs/literatura.md",
+    "**Largo plazo**\n\n" + tm(SGL, ".4g", False) + "\n**Corto plazo (preferido y búsqueda)**\n\n" + tm(SGC, ".4g", False) +
+    "\nLa elasticidad del precio al empleo no tiene magnitud de referencia en literatura.md. Los signos contrarios de "
+    "permisos (+) y de costes/renta en el CP son compatibles con causalidad inversa o colinealidad y no se interpretan como efecto de oferta.\n")
+
+# estado de cointegración
+nom, real = cdf.iloc[0], cdf[cdf.sistema.str.startswith("ln_ipv_real")].iloc[0]
+txt_coint = (f"**Estado de la relación de largo plazo.** Vector nominal principal: EG p={nom.EG_p:.3f}, Johansen traza (r≥1: {bool(nom.J_rech)}), "
+             f"ARDL bounds F={nom.ARDL_F:.2f} (I0/I1 5 % = {nom.ARDL_I0_5:.2f}/{nom.ARDL_I1_5:.2f}, k={int(nom.ARDL_k)}; {nom.ARDL_zona}) → "
+             f"{int(nom.n_rechazos)}/3: **{nom.decision}**. Vector en precio real: EG p={real.EG_p:.3f}, ARDL F={real.ARDL_F:.2f} "
+             f"(I1 5 % = {real.ARDL_I1_5:.2f}) → {int(real.n_rechazos)}/3: **{real.decision}**. "
+             "La significatividad del coeficiente del ect (t≈−3,1) NO contrasta cointegración: bajo la nula de no cointegración su "
+             "distribución no es normal ni t, y los valores críticos son más negativos que −1,96 (contrastes de tipo Banerjee-Dolado-Mestre, "
+             "referencia propuesta por el revisor, aún sin añadir a la literatura verificada). El ECM se presenta por tanto como un modelo condicional con "
+             "término de desequilibrio respecto a una relación de nivel NO confirmada, e inestable (Bai-Perron en niveles: 3 quiebres; "
+             "pre-COVID: costes y permisos cambian de signo). Se interpreta como reversión parcial hacia una tendencia común inestable.")
+
 dcoef = beta_pref["res"]
-res_txt.append("## P1. Ecuación final\n\n**Largo plazo (DOLS ±2, HAC(4), "
-               f"N={beta_pref['n']}):** ln_ipv = {beta_pref['const']:.3f} " +
-               " ".join(f"{'+' if beta_pref['beta'][x] >= 0 else '-'} {abs(beta_pref['beta'][x]):.3f}[{dcoef.bse[x]:.3f}]·{x}" for x in BASE) +
-               " (EE HAC entre corchetes; dummies trimestrales incluidas).\n\n**Corto plazo (preferido por R² ajustado, "
-               f"N={int(res_pref.nobs)}):**\n\n" + tm(pref_tab, ".4g"))
-res_txt.extend(MD)
-# problemas abiertos automáticos
+top = BOOT.set_index("termino").frec_en_ganador
+res_txt = [f"# Resumen F2 (nacional)\n\nLenguaje: asociaciones, sin identificación causal. Semilla {SEED}. "
+           f"Filas del registro de la fase: {len(REG.read())} (de ellas {NM} de la búsqueda de corto plazo).\n",
+           "## P1. Ecuación final\n\n" + txt_coint + "\n\n**Largo plazo (DOLS ±2, HAC(4), "
+           f"N={beta_pref['n']}; estado: evidencia mixta/inestable, no usar como estimación puntual fiable):** ln_ipv = {beta_pref['const']:.3f} " +
+           " ".join(f"{'+' if beta_pref['beta'][x] >= 0 else '-'} {abs(beta_pref['beta'][x]):.3f}[{dcoef.bse[x]:.3f}]·{x}" for x in BASE) +
+           " (EE HAC entre corchetes; dummies trimestrales incluidas).\n\n**Corto plazo (preferido por R² ajustado, "
+           f"N={int(res_pref.nobs)}; ecuación condicional, selección inestable):**\n\n" + tm(pref_tab, ".4g") +
+           f"\nLa especificación concreta no está identificada (gana en {freq_pref:.1%} de las réplicas bootstrap). Términos sostenibles como "
+           f"asociación: empleo (en t o t−1: {top['d_ln_ocupados'] + top['d_ln_ocupados_l1']:.0%} de las réplicas), persistencia de Δprecio "
+           f"({top['d_ln_ipv_l1'] + top['d_ln_ipv_l4']:.0%}) y crédito contemporáneo ({top['d_ln_credito_nuevo']:.0%}), este último solo como comovimiento "
+           "(ver 6c). El ect está forzado en todos los modelos, así que su frecuencia no es informativa.\n"] + MD
 prob = []
 d_ = diag["Preferido (R2aj)"]
-for k_, lim in [("BG4_p", .05), ("BP_p", .05), ("JB_p", .05), ("RESET_p", .05), ("CUSUM_p", .05)]:
-    if d_[k_] < lim:
+for k_ in ["BG4_p", "BP_p", "JB_p", "RESET_p", "CUSUM_p"]:
+    if d_[k_] < .05:
         prob.append(f"El ECM preferido rechaza {k_} (p={d_[k_]:.3f}).")
+    if diag["Réplica ECM con q"][k_] < .05:
+        prob.append(f"La réplica ECM (con q) rechaza {k_} (p={diag['Réplica ECM con q'][k_]:.3g}).")
 if d_["VIF_max"] > 10:
     prob.append(f"VIF máximo {d_['VIF_max']:.1f} (>10) en el preferido.")
-for k_, lim in [("BG4_p", .05), ("BP_p", .05), ("JB_p", .05), ("RESET_p", .05), ("CUSUM_p", .05)]:
-    if diag["Réplica ECM con q"][k_] < lim:
-        prob.append(f"La réplica ECM (con q) rechaza {k_} (p={diag['Réplica ECM con q'][k_]:.3f}).")
-if cdf.iloc[0].n_rechazos < 3:
-    prob.append(f"Cointegración del vector base: {cdf.iloc[0].decision}; los tres contrastes no concuerdan.")
-if not ((EBA[EBA.termino == 'ect_l1']['p_bonf_K'].iloc[0]) < .05):
-    prob.append("El coeficiente del ect no sobrevive a Bonferroni con K=nº total de modelos.")
-if freq_pref < .2:
-    prob.append(f"Inestabilidad de la selección: el preferido gana solo en {freq_pref:.1%} de las réplicas bootstrap.")
+prob.append(f"Cointegración nominal: {nom.decision} (EG/Johansen/ARDL: {bool(nom.EG_rech)}/{bool(nom.J_rech)}/{bool(nom.ARDL_rech)}); "
+            f"precio real: {real.decision}. La regla ≥2/3 se aplica tal cual; no se cambia la especificación principal ex post.")
 prob += [
+    "El p-valor del ect no es un contraste de cointegración (ver P1).",
+    "LR inestable: Bai-Perron en niveles (2012Q1, 2020Q2, 2023Q2), cambios de signo pre-COVID; Chow 2014Q1 rechaza en el ECM (p=%.3f)." % ch.iloc[0].p,
+    "Crédito contemporáneo simultáneo con el precio (6c).",
     "ln_p_tasado y ln_p_bde son idénticas en nacional_q (diferencia máx. 0): los dos sistemas de robustez no son independientes.",
-    "Johansen rechaza rangos altos en todos los sistemas (traza con 5-6 variables y N≈74): probable sobre-rechazo en muestra pequeña; EG y ARDL discrepan.",
-    "Bonferroni con K=1728 deja casi todo no significativo (solo d_ln_ipv_l1 se acerca); la significación del ECM preferido es en gran parte fruto de la búsqueda.",
-    "El preferido por R² aj gana en <2 % de réplicas bootstrap: la selección es inestable; solo ect y d_ln_credito_nuevo/d_ln_ocupados entran de forma estable.",
-    "El ect del ECM es un regresor generado (DOLS estimado en la misma muestra); no se corrige su incertidumbre. En el bootstrap se mantiene fijo.",
-    "Johansen sin dummies estacionales (limitación de coint_johansen); EG/ARDL sí las admiten en ARDL.",
-    "Población extranjera interpolada log-lineal antes de 2021 (MA mecánica en Δ1); d4/4 como contraste.",
-    "Chow 2022Q3 y Bai-Perron con tramos cortos: baja potencia; los escalones son solo robustez.",
-    "OOS con regresores contemporáneos observados (predicción condicional); el LR sí se re-estima sin ver el futuro.",
+    "Johansen rechaza rangos altos (2-4) en sistemas de 5-6 variables I(1) con N≈74: probable sobre-rechazo; no puede ser el único apoyo.",
+    "Bonferroni con K=nº de modelos que contienen el término es una cota muy conservadora (los modelos están anidados, no son hipótesis independientes) y no aplica al ect forzado; se da prioridad al bootstrap de la selección.",
+    "OOS: el preferido no mejora al AR(4)+dummies ni al paseo con deriva; selección con muestra completa (pseudo-OOS).",
+    "El ect del ECM es un regresor generado; no se corrige su incertidumbre; en el bootstrap se mantiene fijo.",
+    "Johansen sin dummies estacionales (limitación de coint_johansen); ARDL sí las incluye.",
+    "Población extranjera y población total interpoladas log-lineal antes de 2021 (MA mecánica en Δ1); d4/4 como contraste.",
     "IPV no desestacionalizado; las dummies absorben solo estacionalidad determinista.",
 ]
 res_txt.append("\n## 7. Problemas abiertos\n\n" + "\n".join("- " + p for p in prob) + "\n")
 (OUT / "resumen_f2.md").write_text("\n".join(res_txt))
 print(f"F2 OK en {time.time() - T0:.0f}s; N_modelos={NM}; registro={len(REG.read())} filas; N búsqueda={N}")
 print("Preferido R2aj:", S.terminos[PREF], "| BIC:", S.terminos[i_bic], "| AIC:", S.terminos[i_aic])
+print(cdf[["sistema", "EG_p", "J_rech", "ARDL_F", "ARDL_I1_5", "ARDL_zona", "n_rechazos", "decision"]].to_string())

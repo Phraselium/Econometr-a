@@ -1595,6 +1595,8 @@ def write_dictionary(nac: pd.DataFrame, panel: pd.DataFrame, panel_a: pd.DataFra
              "serpavi_vc_dist_agg": "€/m²/mes", "notariado_viv_extranj": "viviendas", "notariado_viv_esp_prov": "viviendas",
              "notariado_viv_ext_prov": "viviendas", "notariado_cuantia_esp_prov": "€", "notariado_cuantia_ext_prov": "€",
              "vut_stock_gva": "viviendas (stock)"}
+    units.update({f"serpavi_dist_{t}_{e}": ("viviendas (contratos)" if e == "n_contratos" else "€/m²/mes")
+                  for t in ("vc", "vu") for e in ("mediana", "p25", "p75", "n_contratos")})
     vt = valencia.copy()
     for (terr, var), m in VAL_META.items():
         ss = vt[(vt["territorio"] == terr) & (vt["variable"] == var)]

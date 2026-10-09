@@ -33,6 +33,9 @@ Descargas con fallo de endpoint: ninguna. Las siguientes búsquedas no encontrar
 | Inmigración total trimestral (suma de todas las nacionalidades) | No publicada como serie única en las tablas de ECP (59011, 59013, 59020, 59012) | Búsqueda de nombres con "Total. Flujo" o "Total Nacional. Total" en las tablas de flujo trimestral | Se descarga 69687 (total anual EMCR). Para el total trimestral hay que sumar las nacionalidades de 59011 en la capa de limpieza y declararlo. |
 | Inmigración trimestral por CCAA con total (sin nacionalidad) | No localizada | Tablas de la operación ECP (op. 450) y EMCR (op. 455) | 59013 (CCAA × nacionalidad, trimestral desde 2023T2). Para CCAA anual sin nacionalidad: 69691 (EMCR). |
 
+- **Tabla 69691 (EMCR, inmigración anual por CCAA, sin nacionalidad): NO descargada.** Sigue pendiente como alternativa para el flujo anual por CCAA; hoy no hay flujo anual por CCAA en `data/raw`. Mientras tanto F3 usa Δ de los stocks 77019 (`panel_ccaa_a`).
+- **Calendario de la estadística VUT (INE, tabla 39366) cambió**: hasta 2024-08 se publicaba en febrero y agosto; desde 2024-11 se publica en **mayo y noviembre** (2024-11, 2025-05, 2025-11, 2026-05). `valencia.csv` asigna may→T2 y nov→T4 desde 2024-11.
+
 ## MIVAU, Ajuntament de València, IVE/PEGV y Notariado/Registradores (src/fetch_mivau.py, src/fetch_valencia.py)
 
 Última comprobación: 2026-10-09.

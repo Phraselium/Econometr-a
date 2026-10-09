@@ -165,6 +165,55 @@ Entre corchetes, fuente de verificación.
 - Zivot, E. y Andrews, D. W. K. (1992). Further evidence on the Great Crash, the oil-price shock, and the unit-root hypothesis. *Journal of Business & Economic Statistics*, 10(3), 251-270. DOI 10.1080/07350015.1992.10509904. [Crossref; IDEAS]
 - Documentos no académicos (solo contraste): BBVA Research (2025), *Observatorio Inmobiliario*, noviembre [PDF bbvaresearch.com]; CaixaBank Research (2025), *Resumen ejecutivo. El mercado inmobiliario español consolida su fase expansiva en 2025*, 5/09/2025 [caixabankresearch.com].
 
+## ANEXO. Referencias metodológicas de inferencia y diagnóstico
+
+Verificación (2026-10-09) contra la API de Crossref consultando por DOI (campos título, autores, revista, volumen, número, páginas), salvo indicación. Las referencias ya incluidas arriba (Newey-West 1987, Johansen 1988/1991, Bai-Perron, Zivot-Andrews, Pesaran 2006) no se repiten; Newey-West (HAC) y Johansen están en la bibliografía principal. Solo se indica el uso en el proyecto (f2-f6); no se resumen resultados.
+
+| Referencia | Datos verificados | DOI | Fuente | Uso en el proyecto |
+|---|---|---|---|---|
+| Stock y Watson (1993) | A simple estimator of cointegrating vectors in higher order integrated systems. *Econometrica* 61(4), 783-820 (Crossref da solo p. inicial 783; p. final no verificada en Crossref) | 10.2307/2951763 | Crossref | DOLS: relación de largo plazo con adelantos y retardos de Δx |
+| Dickey y Fuller (1979) | Distribution of the estimators for autoregressive time series with a unit root. *JASA* 74(366), 427-431 (Crossref: número "366a", parte 1) | 10.1080/01621459.1979.10482531 | Crossref | Contraste ADF de raíz unitaria |
+| Kwiatkowski, Phillips, Schmidt y Shin (1992) | Testing the null hypothesis of stationarity against the alternative of a unit root. *Journal of Econometrics* 54(1-3), 159-178 | 10.1016/0304-4076(92)90104-Y | Crossref | KPSS (H0 estacionariedad), complemento del ADF |
+| MacKinnon (1996) | Numerical distribution functions for unit root and cointegration tests. *Journal of Applied Econometrics* 11(6), 601-618 (nov. 1996) | 10.1002/(SICI)1099-1255(199611)11:6<601::AID-JAE417>3.0.CO;2-T | Crossref (la fecha del DOI con "199606" no existe: 404) | p-valores/valores críticos de ADF y de Engle-Granger. El WP de 2010 (Queen's WP 1227) **NO VERIFICADO**, no se cita |
+| Kremers, Ericsson y Dolado (1992) | The power of cointegration tests. *Oxford Bulletin of Economics and Statistics* 54(3), 325-348 | 10.1111/j.1468-0084.1992.tb00005.x | Crossref | Contraste t del coeficiente de corrección de error (ECM) |
+| Banerjee, Dolado y Mestre (1998) | Error-correction mechanism tests for cointegration in a single-equation framework. *Journal of Time Series Analysis* 19(3), 267-283 | 10.1111/1467-9892.00091 | Crossref | Contraste ECM de cointegración (valores críticos no estándar) |
+| Diebold y Mariano (1995) | Comparing predictive accuracy. *JBES* 13(3), 253-263 | 10.1080/07350015.1995.10524599 | Crossref | Comparación de precisión predictiva fuera de muestra entre modelos |
+| Leamer (1983) | Let's take the con out of econometrics. *American Economic Review* 73(1), 31-43 (marzo 1983) | sin DOI en IDEAS | IDEAS/RePEc (handle RePEc:aea:aecrev:v:73:y:1983:i:1:p:31-43); Crossref no lo devolvió | Cotas extremas (EBA, `Leamer_inf/sup` = coef ± 2 EE) y análisis de sensibilidad |
+| Leamer (1985) | Sensitivity analyses would help. *American Economic Review* 75(3), 308-313 (junio 1985) | sin DOI localizado | Solo listados de búsqueda (IDEAS según la búsqueda, Wikipedia); la página IDEAS directa dio 404; Crossref no lo devolvió. Verificación **parcial** | Ídem; alternativa a Leamer (1983) |
+| Holm (1979) | A simple sequentially rejective multiple test procedure. *Scandinavian Journal of Statistics* 6(2), 65-70 | 10.2307/4615733 (JSTOR 4615733) | Registros bibliográficos en la búsqueda web; Crossref por DOI dio 404. Verificación **parcial** del DOI | Corrección de p-valores (Holm) sobre las familias de contrastes |
+| Durbin y Watson (1950) | Testing for serial correlation in least squares regression. I. *Biometrika* 37(3-4), 409-428 | 10.1093/biomet/37.3-4.409 | Crossref | Estadístico DW (autocorrelación de residuos) |
+| Durbin y Watson (1951) | Testing for serial correlation in least squares regression. II. *Biometrika* 38(1-2), 159-178 | 10.1093/biomet/38.1-2.159 | Crossref | Ídem (cotas del contraste) |
+| Breusch (1978) | Testing for autocorrelation in dynamic linear models. *Australian Economic Papers* 17(31), 334-355 | 10.1111/j.1467-8454.1978.tb00635.x | Crossref | LM de autocorrelación (Breusch-Godfrey) |
+| Godfrey (1978a) | Testing against general autoregressive and moving average error models when the regressors include lagged dependent variables. *Econometrica* 46(6), 1293-(p. final no verificada) | 10.2307/1913829 | Crossref | Base del LM de Breusch-Godfrey |
+| Godfrey (1978b) | Testing for higher order serial correlation in regression equations when the regressors include lagged dependent variables. *Econometrica* 46(6), 1303-1310 | 10.2307/1913830 | Crossref; IDEAS | LM de autocorrelación de orden superior |
+| Breusch y Pagan (1979) | A simple test for heteroscedasticity and random coefficient variation. *Econometrica* 47(5), 1287-1294 (Crossref da p. inicial 1287; p. final no verificada) | 10.2307/1911963 | Crossref | Contraste de heterocedasticidad |
+| Jarque y Bera (1980) | Efficient tests for normality, homoscedasticity and serial independence of regression residuals. *Economics Letters* 6(3), 255-259 | 10.1016/0165-1765(80)90024-5 | Crossref | Normalidad de residuos |
+| Jarque y Bera (1987) | A test for normality of observations and regression residuals. *International Statistical Review* 55(2), 163-172 (Crossref da p. inicial 163; p. final no verificada) | 10.2307/1403192 | Crossref | Ídem (versión de referencia habitual) |
+| Ramsey (1969) | Tests for specification errors in classical linear least-squares regression analysis. *JRSS-B* 31(2), 350-371 | 10.1111/j.2517-6161.1969.tb00796.x | Crossref | RESET (forma funcional) |
+| Brown, Durbin y Evans (1975) | Techniques for testing the constancy of regression relationships over time. *JRSS-B* 37(2), 149-163 | 10.1111/j.2517-6161.1975.tb01532.x | Crossref | CUSUM / estabilidad de parámetros |
+| Chow (1960) | Tests of equality between sets of coefficients in two linear regressions. *Econometrica* 28(3), 591-605 (Crossref da p. inicial 591; p. final no verificada) | 10.2307/1910133 | Crossref | Contraste de cambio estructural con fecha conocida |
+| Driscoll y Kraay (1998) | Consistent covariance matrix estimation with spatially dependent panel data. *Review of Economics and Statistics* 80(4), 549-560 | 10.1162/003465398557825 | Crossref | EE robustos a dependencia transversal en paneles |
+| Webb (2023; WP Queen's 2014) | Reworking wild bootstrap-based inference for clustered errors. *Canadian Journal of Economics* 56(3), 839-858 (publ. en línea 19/05/2023) | 10.1111/caje.12661 | Crossref (consulta bibliográfica). WP Queen's nº 1315 (2014) según `docs/revision_f5.md`, no re-verificado aquí | Distribución de pesos de 6 puntos del wild cluster bootstrap (pocos clusters) |
+| MacKinnon y Webb (2018) | The wild bootstrap for few (treated) clusters. *Econometrics Journal* 21(2), 114-135 | 10.1111/ectj.12107 | Crossref | Límite del wild bootstrap con pocos clusters tratados (revisión f5) |
+| Cameron, Gelbach y Miller (2008) | Bootstrap-based improvements for inference with clustered errors. *Review of Economics and Statistics* 90(3), 414-427 | 10.1162/rest.90.3.414 | Crossref | Wild cluster bootstrap |
+| Davidson y MacKinnon (2010) | Wild bootstrap tests for IV regression. *JBES* 28(1), 128-144 | 10.1198/jbes.2009.07221 | Crossref | Wild restricted efficient bootstrap en IV |
+| Montiel Olea y Pflueger (2013) | A robust test for weak instruments. *JBES* 31(3), 358-369 | 10.1080/00401706.2013.806694 | Crossref (revista JBES; el prefijo del DOI es de Taylor & Francis y puede parecer de otra revista) | F efectivo de instrumentos débiles |
+| Kleibergen y Paap (2006) | Generalized reduced rank tests using the singular value decomposition. *Journal of Econometrics* 133(1), 97-126 | 10.1016/j.jeconom.2005.02.011 | Crossref | rk Wald/LM y F de primera etapa con errores robustos |
+| Sanderson y Windmeijer (2016) | A weak instrument F-test in linear IV models with multiple endogenous variables. *Journal of Econometrics* 190(2), 212-221 | 10.1016/j.jeconom.2015.06.004 | Crossref | F condicional con varios endógenos |
+| Hansen (1982) | Large sample properties of generalized method of moments estimators. *Econometrica* 50(4), 1029-1054 (Crossref da p. inicial 1029; p. final no verificada) | 10.2307/1912775 | Crossref | Contraste J de sobreidentificación |
+| Stock y Yogo (2005) | Testing for weak instruments in linear IV regression. En Andrews, D. W. K. y Stock, J. H. (eds.), *Identification and Inference for Econometric Models*, Cambridge University Press, 80-108 | 10.1017/CBO9780511614491.006 | Crossref | Valores críticos de instrumentos débiles |
+| Pesaran (2004) | General diagnostic tests for cross section dependence in panels. CESifo Working Paper 1229 | no verificado | IDEAS/RePEc (ces/ceswps/_1229) | Test CD (versión de trabajo) |
+| Pesaran (2015) | Testing weak cross-sectional dependence in large panels. *Econometric Reviews* 34(6-10), 1089-1117 (en línea dic. 2014) | 10.1080/07474938.2014.956623 | Crossref | Test de dependencia transversal débil en paneles grandes (artículo distinto del WP de 2004; no se comprobó si es su versión publicada) |
+| Pesaran (2007) | A simple panel unit root test in the presence of cross-section dependence. *Journal of Applied Econometrics* 22(2), 265-312 | 10.1002/jae.951 | Crossref | CIPS (raíz unitaria en panel con dependencia transversal) |
+| Juodis y Reese (2022) | The incidental parameters problem in testing for remaining cross-section correlation. *JBES* 40(3), 1191-1203 (en línea 4/05/2021) | 10.1080/07350015.2021.1906687 | Crossref; arXiv 1810.03715 | CD sobre residuos de FE bidireccional/CCE no es N(0,1); CD ponderado (revisión f5) |
+
+Notas de discrepancia respecto a la lista de partida:
+- Webb: el DOI correcto es **10.1111/caje.12661** (no 12664, que corresponde a "Issue Information" del vol. 57); año publicado 2023, WP 2014.
+- MacKinnon: se verificó la versión de 1996 (JAE 11(6)); la fecha del DOI refleja noviembre 1996.
+- Godfrey (1978): son dos artículos consecutivos de Econometrica 46(6); el DOI 10.2307/1914036 que se barajó corresponde a otro artículo y se descartó.
+- Pesaran (2004, CESifo WP 1229) y Pesaran (2015, Econometric Reviews) son trabajos distintos; no se verificó que el segundo sea la versión publicada del primero. El estadístico CD se cita al WP 2004.
+- Chudik y Pesaran (CCE dinámico/no estacionario): no aparecen citados en el repositorio (`src/`, `docs/`), por lo que no se incluyen. Rotemberg (1983): tampoco aparece citado; los pesos de Rotemberg se atribuyen a Goldsmith-Pinkham et al. (2020), ya verificados.
+
 ## NO VERIFICADAS / lagunas
 
 - Resultado cuantitativo y abstract de DiPasquale y Wheaton (1994): solo la referencia bibliográfica está verificada.
@@ -177,3 +226,6 @@ Entre corchetes, fuente de verificación.
 - Caldera y Johansson (2013) y Cavalleri, Cournède y Özsöğüt (2019): **NO VERIFICADAS** de forma independiente; solo constan como fuente citada por el Banco de España para la elasticidad de 0,45.
 - Funcas, Cuadernos de Información Económica nº 311 (marzo 2026): solo la página de prensa; sin cifras de déficit o inmigración verificadas.
 - BBVA Research: cifras de 747.000 y 794.000 (informes 2026) solo vistas en prensa; no se citan. La estimación de 625.000 hogares proviene del PDF oficial de noviembre de 2025.
+- Anexo metodológico: verificación **parcial** de Leamer (1985, AER 75(3), 308-313; solo listados de búsqueda, sin DOI) y de Holm (1979; DOI 10.2307/4615733 solo por registros de búsqueda, Crossref por DOI dio 404). Leamer (1983) verificado en IDEAS (sin DOI).
+- Anexo: páginas finales no confirmadas en Crossref (solo p. inicial) para Stock-Watson 1993, Breusch-Pagan 1979, Jarque-Bera 1987, Chow 1960, Hansen 1982 y Godfrey 1978a; DOI de Pesaran (2004, WP) no localizado.
+- Anexo: MacKinnon (2010, WP Queen's) **NO VERIFICADA** (no buscada; no se cita). Chudik-Pesaran y Rotemberg (1983): no citados en el repositorio, no incluidos.

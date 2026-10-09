@@ -858,6 +858,28 @@ def build_valencia() -> pd.DataFrame:
             transf="derivado: media de medianas de distritos ponderada por nº contratos VC (no es una mediana)",
             nota="19 distritos; unidades pequeñas (mínimo 10 viviendas): descriptivo")
 
+    # --- SERPAVI por distrito de València (19 distritos, 2011-2024, xls): rol descriptivo ---
+    # El raw no trae nombres de distrito (la columna 'nombre' es 'Valencia' en todas las filas): se usa el código.
+    # serpavi_validacion.csv no tiene fila de contraste por distrito: validado = plausibilidad.
+    SP_DIST_NOTA = ("SERPAVI por distrito (xls, 2011-2024): descriptivo, no entra en los modelos. Sin fila de contraste "
+                    "por distrito en serpavi_validacion.csv (validado = plausibilidad). VU sin dato en algunos distritos-años (no se rellena)")
+    SP_DIST_VAR = {"alquiler_m2_mediana": ("mediana", "€/m²/mes"), "alquiler_m2_p25": ("p25", "€/m²/mes"),
+                   "alquiler_m2_p75": ("p75", "€/m²/mes"), "n_contratos_recuento": ("n_contratos", "viviendas (contratos)")}
+    sp_dd = read_raw("pdf/serpavi_valencia_distritos.csv", ["fecha", "serie", "valor"])
+    sp_dd = sp_dd[sp_dd["serie"].str.match(r"^SERPAVI_DIST_\d+_V[CU]_(alquiler_m2_mediana|alquiler_m2_p25|alquiler_m2_p75|n_contratos_recuento)$")].copy()
+    sp_dd["cod"] = sp_dd["serie"].str.extract(r"SERPAVI_DIST_(\d+)_")[0]
+    sp_dd["tip"] = sp_dd["serie"].str.extract(r"_(VC|VU)_")[0].str.lower()
+    sp_dd["est"] = sp_dd["serie"].str.extract(r"_V[CU]_(\w+)$")[0]
+    for (cod, tip, est), g in sp_dd.groupby(["cod", "tip", "est"]):
+        estad, _ = SP_DIST_VAR[est]
+        serie_txt = g["serie"].iloc[0]
+        val_add(f"València distrito {cod}", f"serpavi_dist_{tip}_{estad}",
+                ser_anual(g["valor"].set_axis(pd.DatetimeIndex(g["fecha"]))),
+                "anual", "xls", "plausibilidad", "descriptivo",
+                f"serpavi_valencia_distritos.csv | {serie_txt}",
+                transf="nativo (tipología " + ("vivienda colectiva" if tip == "vc" else "vivienda unifamiliar") + ")",
+                nota=SP_DIST_NOTA)
+
     # --- Notariado: València ciudad, Total general (NO sumar nacionalidades: 4T2022 no es aditiva) ---
     nmun = read_raw("pdf/notariado_cv_municipios_anual.csv", ["fecha", "serie", "valor", "territorio", "nacionalidad"])
     nv = nmun[(nmun["territorio"] == "Valencia") & (nmun["nacionalidad"] == "Total general")]

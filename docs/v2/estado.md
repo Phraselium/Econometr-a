@@ -14,12 +14,13 @@
 | BO oferta y suelo | APROBADA y fusionada | APROBAR (it.2) | H4 EXPLORATORIO (2005-2023; inestable, placebo futuro) | 148.153 + rev. 140.152 |
 | Datos: iniciadas/terminadas anuales | hecho | — | 2005-2023 sin huecos | 70.985 |
 | BM modelos | APROBADA y fusionada; H7 sellada evaluada | APROBAR (it.2) | H7 NO confirmada; LSTM negativo | 274.876 + rev. 148.438 |
-| BD descomposición | REHACER it.1 (no corría) | REHACER | EXPLORATORIO | 193.220 + rev. 129.687 |
+| BD descomposición | APROBADA y fusionada | APROBAR (it.2 + C1) | EXPLORATORIO; atribuciones de compra no robustas | 240.745 + rev. 171.515 |
+| BS síntesis | en curso (wt-BS) | | | |
 | Holm-7 (orquestador) | hecho | — | ninguna confirmatoria sobrevive | 0 |
 | BP política | APROBADA y fusionada; H6 sellada evaluada | APROBAR (verif. final) | H5 EXPLORATORIO; H6 SDiD −0,0117 (p 0,014) cumple regla, con discrepancias | 162.854 + rev. 175.026 |
 | Literatura anexo v2-C | hecho | — | Roodman 2019 verificada; JRS 2018 WP | 19.903 |
 | Literatura métodos (anexo v2-B) | hecho | — | 5 nuevas; 2 NO VERIFICADAS (actas NeurIPS) | 55.684 |
 
 **Hecho:** rama r2/main; requirements.lock; data/sealed ignorado; CLAUDE.md v2; .claude/settings.json (permisos + hook ruff); subagentes v2 (data-fetcher haiku, econometrician/ml-engineer/lit-researcher sonnet, reviewer opus); comandos /rama y /estado; checksums de ficheros >50 MB.
-**Siguiente:** BD re-revisión → BS (síntesis, informe_v2.md) → revisión final → make all ×2 sin red → cierre. Selladas: H1 mejora predictiva sí (conjunta no), H2 no, H6 cumple regla nominal, H7 no. Holm-7: ninguna.
-**Tokens de subagentes v2 acumulados:** 4.320.587.
+**Siguiente:** BS → revisión final → make all ×2 sin red → cierre. Selladas: H1 mejora predictiva sí (conjunta no), H2 no, H6 cumple regla nominal, H7 no. Holm-7: ninguna.
+**Tokens de subagentes v2 acumulados:** 4.432.645.

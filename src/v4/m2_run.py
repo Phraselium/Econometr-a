@@ -358,7 +358,7 @@ def escribe_json(nac, lat, fl, calib, dif_panel, corr, tops, tc, sens, kq):
          "limites": ["Ajuste anual (≈263 mil hogares en el total) frente a 242.400 de v1: v1 usa media de Δ trimestrales; aquí media anual de Δ en 2019-20 y 2021-22, por lo que no es idéntico. k del tramo 0-19 (≈1,19) se aplica a tasas ~0,002 (menores de 20 años); su peso en ΔH es despreciable.", comun_s, "Censos 2011/2021 por edad de la persona de referencia: no localizados en Tempus (ver fuentes_fallidas); descomposición censal no posible.", "Periodo 2002-2007 no disponible: EPA 65944 empieza en 2006; se informa 2006-2007.",
                      f"Diferencia relativa padrón CSV frente a panel_prov_a (2022): {dif_panel:.4%}"]},
         {"id": "M2-H2", "enunciado_neutro": "Inmigración bruta desde el extranjero frente a la variación de población extranjera (dos fuentes).",
-         "capa": "C1", "magnitud": fl.round(0).to_dict("records"), "unidad": "personas", "intervalo": "INE frente a Eurostat",
+         "capa": "C4 (fuente única: INE; Eurostat no es independiente del INE)", "magnitud": fl.round(0).to_dict("records"), "unidad": "personas", "intervalo": "INE frente a Eurostat",
          "fuentes": ["INE EM 24421 (semestral, 2008-2022S1)", "Eurostat migr_imm1ctz"],
          "supuestos": ["Flujo bruto, no neto"],
          "limites": ["No hay emigración ni migración interior en data/raw: no se separa migración interior ni neta; no es un término de la descomposición.",

@@ -1,0 +1,66 @@
+{
+ "rama": "M7",
+ "pregunta": "¿Hay exuberancia de precios? Triangulación de precio de compra y alquiler y GSADF.",
+ "capa": "C1 (triangulación) / C4 (GSADF)",
+ "datos": "INE IPV, MIVAU valor tasado, Registradores, Notariado, IPC alquiler, SERPAVI, Incasòl; panel_ccaa_q; nacional_q_v2",
+ "N": 78,
+ "metodo": "GSADF (Phillips, Shi y Yu 2015), ADF(1), r0=0,01+1,8/sqrt(T), wild bootstrap 499 réplicas, SEED 20261010",
+ "estimacion": {
+  "precio/alquiler: IPV / IPC alquiler | Nacional": 3.097,
+  "precio/alquiler: valor tasado / IPC alquiler | Nacional": 4.344,
+  "precio/renta: IPV / renta del hogar | Nacional": 3.416,
+  "precio/renta: valor tasado / renta del hogar | Nacional": 0.224,
+  "nivel: IPV | Nacional": 3.227,
+  "nivel: valor tasado | Nacional": 4.815
+ },
+ "ic95": {
+  "precio/alquiler: IPV / IPC alquiler | Nacional": 2.773,
+  "precio/alquiler: valor tasado / IPC alquiler | Nacional": 2.934,
+  "precio/renta: IPV / renta del hogar | Nacional": 3.447,
+  "precio/renta: valor tasado / renta del hogar | Nacional": 2.799,
+  "nivel: IPV | Nacional": 2.844,
+  "nivel: valor tasado | Nacional": 3.301
+ },
+ "p_ajustado": {
+  "precio/alquiler: IPV / IPC alquiler | Nacional": 0.6,
+  "precio/alquiler: valor tasado / IPC alquiler | Nacional": 0.156,
+  "precio/renta: IPV / renta del hogar | Nacional": 0.624,
+  "precio/renta: valor tasado / renta del hogar | Nacional": 0.82,
+  "nivel: IPV | Nacional": 0.6,
+  "nivel: valor tasado | Nacional": 0.288
+ },
+ "nivel_evidencia": "EXPLORATORIO (GSADF); DESCRIPTIVO/C1 (triangulación)",
+ "diagnosticos": {
+  "verificacion_simulada": {
+   "nula": {
+    "gsadf": 1.7970639529673749,
+    "cv95": 2.4277313823694713,
+    "p": 0.144
+   },
+   "burbuja": {
+    "gsadf": 5.034529620932796,
+    "cv95": 5.6288449035945805,
+    "p": 0.11
+   },
+   "episodios_burbuja": [],
+   "episodios_nula": [
+    [
+     54,
+     62
+    ]
+   ],
+   "verdadero": [
+    45,
+    65
+   ],
+   "ok": false
+  },
+  "holm_sobre": 40
+ },
+ "fuera_muestra": {
+  "modelo": "no aplica (test de exuberancia, sin predicción)",
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Un test de exuberancia no identifica burbujas. INE e IPV de Notariado comparten fuente; BdE=MIVAU. SERPAVI es un stock y acaba en 2024."
+}

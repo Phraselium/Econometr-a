@@ -76,7 +76,7 @@ def revisar_ficha(f: dict, nombre: str) -> list[str]:
         err.append(f"{nombre}: capa inválida {capa!r}")
     if ver not in VEREDICTOS:
         err.append(f"{nombre}: veredicto inválido {ver!r}")
-    if capa == "C4" and ver in {"RESPALDADA", "CONTRADICHA"}:
+    if capa == "C4" and ver in {"RESPALDADA", "CONTRADICHA", "PARCIALMENTE", "NO RESPALDADA"}:   # regla B4 (v4)
         err.append(f"{nombre}: capa C4 no puede sostener el veredicto {ver} (promoción de capa)")
     texto = " ".join(str(f.get(k, "")) for k in ("magnitud", "limites", "resumen"))
     if capa != "C3" and re.search(CAUSAL, texto, re.I) and not NEGACION.search(texto):

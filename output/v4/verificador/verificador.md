@@ -11,17 +11,17 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | V05 | Faltan cientos de miles de viviendas en España. | PARCIALMENTE | C1 |
 | V06 | Los topes al precio del alquiler bajan los alquileres. | ANALIZADA, NO CONCLUYENTE | C4 |
 | V07 | Los topes al precio del alquiler reducen la oferta de vivienda en alquiler. | ANALIZADA, NO CONCLUYENTE | C4 |
-| V08 | Hay millones de viviendas vacías que se podrían movilizar para resolver el problema. | PARCIALMENTE | C1 |
+| V08 | Hay millones de viviendas vacías que se podrían movilizar para resolver el problema. | ANALIZADA, NO CONCLUYENTE | C4 |
 | V09 | La ocupación ilegal de viviendas y la inseguridad jurídica retraen la oferta de alquiler. | NO ANALIZADA: FALTAN DATOS | C4 |
 | V10 | Bajar el ITP o el IVA de la vivienda la abarataría para los compradores. | NO ANALIZADA: FALTAN DATOS | C4 |
 | V11 | Construir vivienda pública resolvería el problema de la vivienda. | PARCIALMENTE | C2 |
 | V12 | Los tipos de interés son la causa principal de la subida de los precios de la vivienda (≥50 % de la subida). | ANALIZADA, NO CONCLUYENTE | C4 |
 | V13 | Hay una burbuja en el precio de la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
-| V14 | Los compradores extranjeros encarecen la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C1 |
-| M3-V1 | Hay suelo de sobra para construir. | PARCIALMENTE | C4 |
+| M3-V1 | Hay suelo de sobra para construir. | ANALIZADA, NO CONCLUYENTE | C4 |
 | M4-V1 | Los compradores extranjeros encarecen la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C1 |
 | M4-V2 | Las empresas dominan el mercado del alquiler. | NO ANALIZADA: FALTAN DATOS | C4 |
 | M4-V3 | Hay muchas viviendas vacías o de uso esporádico frente a las turísticas. | ANALIZADA, NO CONCLUYENTE | C4 |
+| M7-V1 | Hay una burbuja en el precio de la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
 
 ## V01 · Viviendas turísticas
 
@@ -145,13 +145,13 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 
 | Campo | Contenido |
 |---|---|
-| Veredicto | **PARCIALMENTE** |
-| Capa de la evidencia | C1 |
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
 | Magnitud | Censo 2021: 3,83 millones de viviendas vacías (estimación por consumo eléctrico, fuente única, C4). En las muestras municipales con dato (277 a 1.806 municipios según la definición), el 27,5-40,3 % de las vacías está en el tercil alto de presión de precios y el 20,7-28,3 % en el tercil bajo (C1, dos medidas). |
 | Intervalo | 27,5-40,3 % en el tercil alto de presión (277 a 1.806 municipios) |
 | Cota | — |
 | Literatura | — |
-| Regla del veredicto | La cifra de millones es de fuente única (C4); el reparto por presión (C1) sitúa en el tercil alto entre el 27,5 % y el 40,3 %; la fracción movilizable es un supuesto (P-D). PARCIALMENTE: hay muchas vacías, pero su movilización para «resolver» no está evaluada. |
+| Regla del veredicto | La cifra de millones es de fuente única (C4); el reparto por presión (C1) sitúa en el tercil alto entre el 27,5 % y el 40,3 %; la fracción movilizable es un supuesto (P-D). PARCIALMENTE: hay muchas vacías, pero su movilización para «resolver» no está evaluada. v4: La cifra de vacías y su reparto proceden del Censo 2021 (consumo eléctrico); Catastro − hogares no es independiente del Censo, que se construye sobre el Catastro (revisión B, B10/B8). |
 | Límites | Vacía por consumo eléctrico incluye viviendas en venta, en obras o en herencias; independencia parcial de las dos medidas. |
 | Evidencia | output/v3/PA/hechos.json#A3, output/v3/PD/resultados.json |
 
@@ -239,29 +239,13 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Límites | El test GSADF por CCAA estaba previsto en P-E (exploratorio) y no se ejecutó. |
 | Evidencia | output/v3/PA/hechos.json#A4, output/v3/PA/hechos.json#A6 |
 
-## V14 · Compradores extranjeros
-
-**Afirmación:** Los compradores extranjeros encarecen la vivienda en España.
-
-| Campo | Contenido |
-|---|---|
-| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
-| Capa de la evidencia | C1 |
-| Magnitud | Cuota de compraventas por personas de nacionalidad extranjera 2023-2025: [9,6; 15,0] % (MIVAU 9,6-11,0 %; Registradores 13,8-15,0 %). Su efecto sobre el precio no se ha estimado. |
-| Intervalo | [9,6; 15,0] % de las compraventas |
-| Cota | — |
-| Literatura | v2 (BV): sin efecto identificado. |
-| Regla del veredicto | Hay un hecho C1 sobre su peso, pero ningún diseño sobre su efecto en el precio. v4: Hay un hecho C1 sobre su peso en las compraventas (M4 lo amplía) y ningún diseño sobre el precio. |
-| Límites | La cuota incluye residentes extranjeros; la de no residentes es menor y se concentra en zonas costeras. |
-| Evidencia | data/processed (nacional_q_v2 vía holdout.load_full) |
-
 ## M3-V1 · Suelo disponible
 
 **Afirmación:** Hay suelo de sobra para construir.
 
 | Campo | Contenido |
 |---|---|
-| Veredicto | **PARCIALMENTE** |
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C4 |
 | Magnitud | Solares catastrales (uso «solar») 2026: 3.092.393 unidades urbanas; con 5/10/20 viviendas por solar cubren el déficit 2021-2025 (mediana M1) en 92 %/92 %/92 % de las 52 provincias con déficit positivo. La brecha precio-coste no se usa en esta ficha: el coste en nivel es un supuesto. |
 | Intervalo | cobertura provincial [92 %; 92 %] según viviendas por solar (5 a 20) |
@@ -318,3 +302,19 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Regla del veredicto | Hecho descriptivo: las vacías y esporádicas suman un orden de magnitud más que las turísticas. «Muchas» no tiene umbral y la fuente de vacías es única (capa C4), por lo que no cabe veredicto de respaldo. |
 | Límites | Vacía y esporádica se infieren del consumo eléctrico (INE, experimental); las turísticas son de otra fecha y pertenecen al parque principal o no principal (no suman). El registro de la Generalitat Valenciana y el INE difieren en turísticas (ver vut_ine_frente_registro_gva.csv). No se estima ningún efecto. |
 | Evidencia | output/v4/M4/tablas/stock_uso_nacional.csv, output/v4/M4/tablas/stock_uso_provincia.csv, output/v4/M4/tablas/stock_uso_ciudades.csv, output/v4/M4/tablas/vut_ine_frente_registro_gva.csv |
+
+## M7-V1 · Burbuja de precios
+
+**Afirmación:** Hay una burbuja en el precio de la vivienda en España.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | Precio de compra 2015-2025: +44 % a +80 % según la fuente (4 fuentes); 2021-2025: +24 % a +36 %. GSADF nacional precio/alquiler: exuberancia (Holm 5 %) en 0 de 2 medidas; CCAA con exuberancia en ambas medidas: 0. |
+| Intervalo | [44; 80] % de variación 2015-2025 |
+| Cota | — |
+| Literatura | Phillips, Shi y Yu (2015), GSADF: NO VERIFICADA (DOI y cuartil no comprobados sin red). |
+| Regla del veredicto | El test de exuberancia no rechaza la raíz unitaria en las series nacionales de precio/alquiler y no identifica una burbuja; la ausencia de rechazo tampoco la descarta. C4. |
+| Límites | El test detecta comportamiento explosivo de la serie, no una burbuja: no identifica si el precio se separa de los fundamentos. Ratios con índices rebasados (nivel de la ratio arbitrario); ADF con un rezago; bootstrap wild de 499 réplicas; muestra 2007-2026 corta para el ciclo. Precio/renta solo nacional; sin renta trimestral por CCAA. Verificación con series simuladas: NO superada. |
+| Evidencia | output/v4/M7/tablas/gsadf_resultados.csv, output/v4/M7/tablas/variacion_precio.csv, data/processed (nacional_q_v2 vía holdout.load_full) |

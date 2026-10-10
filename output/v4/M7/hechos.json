@@ -1,0 +1,217 @@
+{
+ "precio_2015_2025": {
+  "cum": {
+   "INE_IPV": 0.7990465053521634,
+   "MIVAU_tasado": 0.4422281724511927,
+   "Registradores": 0.5612210713431098,
+   "Notariado": 0.47205438066465266
+  },
+  "ann": {
+   "INE_IPV": 0.06048428934723704,
+   "MIVAU_tasado": 0.03729765830944198,
+   "Registradores": 0.045553933953632164,
+   "Notariado": 0.039423150511396665
+  },
+  "n_fuentes": 4,
+  "rango_cum": [
+   0.4422281724511927,
+   0.7990465053521634
+  ],
+  "c1": true,
+  "pares_ok": [
+   "INE_IPV/MIVAU_tasado",
+   "INE_IPV/Registradores",
+   "MIVAU_tasado/Registradores",
+   "MIVAU_tasado/Notariado",
+   "Notariado/Registradores"
+  ],
+  "mejor_par": "MIVAU_tasado/Notariado (0.2 pp)"
+ },
+ "precio_2021_2025": {
+  "cum": {
+   "INE_IPV": 0.3636565085620582,
+   "MIVAU_tasado": 0.2835467475076541,
+   "Registradores": 0.2526646662241556,
+   "Notariado": 0.23549920760697307
+  },
+  "ann": {
+   "INE_IPV": 0.08062807744028633,
+   "MIVAU_tasado": 0.06439523737399222,
+   "Registradores": 0.057934321829864466,
+   "Notariado": 0.05429128800958116
+  },
+  "n_fuentes": 4,
+  "rango_cum": [
+   0.23549920760697307,
+   0.3636565085620582
+  ],
+  "c1": true,
+  "pares_ok": [
+   "INE_IPV/MIVAU_tasado",
+   "INE_IPV/Registradores",
+   "MIVAU_tasado/Registradores",
+   "MIVAU_tasado/Notariado",
+   "Notariado/Registradores"
+  ],
+  "mejor_par": "Notariado/Registradores (0.4 pp)"
+ },
+ "n_ccaa_precio_c1": {
+  "2015": 17,
+  "2021": 17
+ },
+ "n_ccaa_alquiler_c1_2015_2024": 15,
+ "alquiler": {
+  "alq_España_2015_2024": {
+   "cum": {
+    "IPC_alquiler": 0.10930506007020946,
+    "SERPAVI": 0.4303165651106142
+   },
+   "ann": {
+    "IPC_alquiler": 0.0115926518685332,
+    "SERPAVI": 0.040567460381236486
+   },
+   "n_fuentes": 2,
+   "rango_cum": [
+    0.10930506007020946,
+    0.4303165651106142
+   ],
+   "c1": true,
+   "pares_ok": [
+    "IPC_alquiler/SERPAVI"
+   ],
+   "mejor_par": "IPC_alquiler/SERPAVI (2.9 pp)"
+  },
+  "alq_España_2021_2024": {
+   "cum": {
+    "IPC_alquiler": 0.056933868033793855,
+    "SERPAVI": 0.14682791677893747
+   },
+   "ann": {
+    "IPC_alquiler": 0.01862877001819485,
+    "SERPAVI": 0.04672537381310393
+   },
+   "n_fuentes": 2,
+   "rango_cum": [
+    0.056933868033793855,
+    0.14682791677893747
+   ],
+   "c1": true,
+   "pares_ok": [
+    "IPC_alquiler/SERPAVI"
+   ],
+   "mejor_par": "IPC_alquiler/SERPAVI (2.8 pp)"
+  },
+  "alq_Cataluña_2015_2025": {
+   "cum": {
+    "IPC_alquiler": 0.1246442144132407,
+    "Incasol": 0.5451397397535489
+   },
+   "ann": {
+    "IPC_alquiler": 0.011815936281641015,
+    "Incasol": 0.04447193806257488
+   },
+   "n_fuentes": 2,
+   "rango_cum": [
+    0.1246442144132407,
+    0.5451397397535489
+   ],
+   "c1": true,
+   "pares_ok": [
+    "IPC_alquiler/Incasol"
+   ],
+   "mejor_par": "IPC_alquiler/Incasol (3.3 pp)"
+  },
+  "alq_Cataluña_2021_2025": {
+   "cum": {
+    "IPC_alquiler": 0.06300891509400541,
+    "Incasol": 0.18947989977833846
+   },
+   "ann": {
+    "IPC_alquiler": 0.015393144024583805,
+    "Incasol": 0.04433366213331036
+   },
+   "n_fuentes": 2,
+   "rango_cum": [
+    0.06300891509400541,
+    0.18947989977833846
+   ],
+   "c1": true,
+   "pares_ok": [
+    "IPC_alquiler/Incasol"
+   ],
+   "mejor_par": "IPC_alquiler/Incasol (2.9 pp)"
+  },
+  "alq_Cataluña_2015_2024": {
+   "cum": {
+    "IPC_alquiler": 0.10863866617307316,
+    "SERPAVI": 0.4295081967213117,
+    "Incasol": 0.5151582139430964
+   },
+   "ann": {
+    "IPC_alquiler": 0.011525112164213702,
+    "SERPAVI": 0.04050210008693034,
+    "Incasol": 0.047251249433909015
+   },
+   "n_fuentes": 3,
+   "rango_cum": [
+    0.10863866617307316,
+    0.5151582139430964
+   ],
+   "c1": true,
+   "pares_ok": [
+    "IPC_alquiler/SERPAVI",
+    "IPC_alquiler/Incasol",
+    "Incasol/SERPAVI"
+   ],
+   "mejor_par": "Incasol/SERPAVI (0.7 pp)"
+  },
+  "alq_Cataluña_2021_2024": {
+   "cum": {
+    "IPC_alquiler": 0.04788053915767243,
+    "SERPAVI": 0.1314415137340499,
+    "Incasol": 0.16639951332610248
+   },
+   "ann": {
+    "IPC_alquiler": 0.015712019241358455,
+    "SERPAVI": 0.042023155448745575,
+    "Incasol": 0.05264623935299939
+   },
+   "n_fuentes": 3,
+   "rango_cum": [
+    0.04788053915767243,
+    0.16639951332610248
+   ],
+   "c1": true,
+   "pares_ok": [
+    "IPC_alquiler/SERPAVI",
+    "IPC_alquiler/Incasol",
+    "Incasol/SERPAVI"
+   ],
+   "mejor_par": "Incasol/SERPAVI (1.1 pp)"
+  }
+ },
+ "verificacion_gsadf": {
+  "nula": {
+   "gsadf": 1.7970639529673749,
+   "cv95": 2.4277313823694713,
+   "p": 0.144
+  },
+  "burbuja": {
+   "gsadf": 5.034529620932796,
+   "cv95": 5.6288449035945805,
+   "p": 0.11
+  },
+  "episodios_burbuja": [],
+  "episodios_nula": [
+   [
+    54,
+    62
+   ]
+  ],
+  "verdadero": [
+   45,
+   65
+  ],
+  "ok": false
+ }
+}

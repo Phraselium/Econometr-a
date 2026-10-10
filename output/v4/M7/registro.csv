@@ -1,0 +1,53 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+triang,precio_nac_2015_2025,var acumulada de índices 2015=100,2015,2025,4,,,,,0.5166377260038812,,rango [44.2; 79.9] %; C1=True
+triang,precio_nac_2021_2025,var acumulada de índices 2015=100,2021,2025,4,,,,,0.26810570686590485,,rango [23.5; 36.4] %; C1=True
+triang,precio_ccaa_c1,n CCAA con >=2 fuentes independientes a <=5 pp anuales,,,17,,,,,,,"{2015: 17, 2021: 17}"
+triang,alq_España_2015_2024,var acumulada de índices 2015=100,2015,2024,2,,,,,0.26981081259041184,,rango [10.9; 43.0] %; C1=True
+triang,alq_España_2021_2024,var acumulada de índices 2015=100,2021,2024,2,,,,,0.10188089240636566,,rango [5.7; 14.7] %; C1=True
+triang,alq_Cataluña_2015_2025,var acumulada de índices 2015=100,2015,2025,2,,,,,0.3348919770833948,,rango [12.5; 54.5] %; C1=True
+triang,alq_Cataluña_2021_2025,var acumulada de índices 2015=100,2021,2025,2,,,,,0.12624440743617193,,rango [6.3; 18.9] %; C1=True
+triang,alq_Cataluña_2015_2024,var acumulada de índices 2015=100,2015,2024,3,,,,,0.4295081967213117,,rango [10.9; 51.5] %; C1=True
+triang,alq_Cataluña_2021_2024,var acumulada de índices 2015=100,2021,2024,3,,,,,0.1314415137340499,,rango [4.8; 16.6] %; C1=True
+triang,alq_ccaa_c1,IPC frente a SERPAVI 2015-2024 <=5 pp anuales,,,17,,,,,,,15 de 17 CCAA
+verif,gsadf_sim_nula,GSADF sobre paseo aleatorio simulado T=120,,,120,,,,,,0.144,"GSADF 1.80, cv95 2.43, p 0.144"
+verif,gsadf_sim_burbuja,GSADF sobre serie con episodio explosivo 45-65,,,120,,,,,,0.11,"GSADF 5.03, cv95 5.63, p 0.110; episodios []"
+gsadf,gsadf_Nacional_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.096505893586672,0.032,cv95 2.77; episodios: 2017Q1-2019Q3;2024Q4-2026Q2; Holm 0.600
+gsadf,gsadf_Nacional_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,4.344184087506517,0.004,cv95 2.93; episodios: 2017Q3-2019Q2;2024Q3-2026Q2; Holm 0.156
+gsadf,gsadf_Nacional_precio/renta: IPV / renta del hogar,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.415608064707624,0.056,cv95 3.45; episodios: 2012Q2-2013Q3; Holm 0.624
+gsadf,gsadf_Nacional_precio/renta: valor tasado / renta del hogar,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,0.2240624794521846,0.82,cv95 2.80; episodios: ninguno; Holm 0.820
+gsadf,gsadf_Nacional_nivel: IPV,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.2271900765626227,0.034,cv95 2.84; episodios: 2012Q1-2014Q1;2017Q1-2020Q3;2024Q2-2026Q2; Holm 0.600
+gsadf,gsadf_Nacional_nivel: valor tasado,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,4.815412458344669,0.008,cv95 3.30; episodios: 2017Q4-2020Q1;2023Q3-2026Q2; Holm 0.288
+gsadf,gsadf_Andalucía_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,2.681328658488422,0.052,cv95 2.68; episodios: 2012Q1-2013Q2;2018Q2-2019Q3;2024Q2-2026Q2; Holm 0.624
+gsadf,gsadf_Andalucía_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,5.284944476232478,0.002,cv95 3.22; episodios: 2023Q3-2026Q2; Holm 0.080
+gsadf,gsadf_Aragón_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.763341652041892,0.026,cv95 3.05; episodios: 2013Q1-2014Q1;2018Q1-2023Q3;2024Q3-2026Q2; Holm 0.572
+gsadf,gsadf_Aragón_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.532404529344019,0.012,cv95 2.66; episodios: 2013Q1-2014Q2;2025Q2-2026Q2; Holm 0.396
+gsadf,gsadf_Asturias_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,4.37025972584733,0.012,cv95 3.27; episodios: 2011Q3-2015Q1;2019Q3-2023Q3;2024Q1-2026Q2; Holm 0.396
+gsadf,gsadf_Asturias_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.014353619017088,0.028,cv95 2.71; episodios: 2013Q2-2015Q3;2025Q2-2026Q2; Holm 0.588
+gsadf,gsadf_Canarias_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,2.9541839943862738,0.074,cv95 3.25; episodios: 2013Q1-2014Q1;2017Q2-2020Q1;2022Q2-2026Q2; Holm 0.624
+gsadf,gsadf_Canarias_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.513197196457276,0.034,cv95 2.95; episodios: 2017Q2-2019Q4;2024Q2-2026Q2; Holm 0.600
+gsadf,gsadf_Cantabria_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,2.7122062755190144,0.084,cv95 3.00; episodios: 2011Q3-2013Q3;2018Q1-2019Q1;2019Q4-2021Q1;2022Q2-2023Q3;2024Q2-2026Q2; Holm 0.624
+gsadf,gsadf_Cantabria_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.331764310176572,0.012,cv95 2.41; episodios: 2025Q1-2026Q2; Holm 0.396
+gsadf,gsadf_Castilla y León_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.909104322221378,0.01,cv95 3.05; episodios: 2011Q3-2014Q3;2018Q2-2020Q4;2021Q2-2022Q3;2024Q3-2026Q2; Holm 0.350
+gsadf,gsadf_Castilla y León_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.733460589481416,0.03,cv95 3.48; episodios: 2013Q1-2015Q1; Holm 0.600
+gsadf,gsadf_Castilla-La Mancha_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,4.173967640426743,0.012,cv95 3.00; episodios: 2011Q3-2014Q3;2025Q1-2026Q2; Holm 0.396
+gsadf,gsadf_Castilla-La Mancha_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.126432227632139,0.058,cv95 3.21; episodios: 2013Q1-2014Q4;2025Q2-2026Q2; Holm 0.624
+gsadf,gsadf_Cataluña_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.1883974867638107,0.032,cv95 2.88; episodios: 2017Q1-2019Q3;2025Q1-2026Q2; Holm 0.600
+gsadf,gsadf_Cataluña_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.1793700263320908,0.02,cv95 2.48; episodios: 2012Q1-2013Q4;2017Q3-2019Q4; Holm 0.520
+gsadf,gsadf_Comunidad Foral de Navarra_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2014Q4,32,,,,,2.396458618174264,0.04,cv95 2.26; episodios: 2011Q4-2013Q1; Holm 0.600
+gsadf,gsadf_Comunidad Foral de Navarra_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2014Q4,32,,,,,0.9973283763353917,0.25,cv95 2.37; episodios: ninguno; Holm 0.810
+gsadf,gsadf_Comunidad de Madrid_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.086927267004236,0.02,cv95 2.50; episodios: 2017Q1-2019Q1;2024Q3-2026Q2; Holm 0.520
+gsadf,gsadf_Comunidad de Madrid_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.171449834752208,0.03,cv95 2.77; episodios: 2017Q2-2019Q2;2024Q3-2026Q2; Holm 0.600
+gsadf,gsadf_Comunitat Valenciana_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.2611973187771137,0.034,cv95 2.86; episodios: 2011Q4-2013Q2;2024Q4-2026Q2; Holm 0.600
+gsadf,gsadf_Comunitat Valenciana_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.592157393094747,0.012,cv95 2.63; episodios: 2024Q3-2026Q2; Holm 0.396
+gsadf,gsadf_Extremadura_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.2534872952237,0.018,cv95 2.67; episodios: 2012Q3-2014Q4;2025Q1-2026Q2; Holm 0.486
+gsadf,gsadf_Extremadura_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,1.5251651583558063,0.302,cv95 2.80; episodios: ninguno; Holm 0.810
+gsadf,gsadf_Galicia_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,4.9645249180292526,0.006,cv95 3.30; episodios: 2011Q2-2015Q1;2018Q2-2023Q3;2024Q2-2026Q2; Holm 0.228
+gsadf,gsadf_Galicia_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,5.461073415339652,0.006,cv95 3.02; episodios: 2012Q3-2013Q3;2024Q3-2026Q2; Holm 0.228
+gsadf,gsadf_Illes Balears_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,1.9309746891522062,0.12,cv95 2.38; episodios: ninguno; Holm 0.720
+gsadf,gsadf_Illes Balears_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.4705085535774876,0.01,cv95 2.41; episodios: 2023Q1-2026Q2; Holm 0.350
+gsadf,gsadf_La Rioja_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.426860753421335,0.016,cv95 2.75; episodios: 2011Q3-2014Q1;2017Q4-2022Q3;2024Q3-2026Q2; Holm 0.448
+gsadf,gsadf_La Rioja_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,2.5032413376752114,0.054,cv95 2.52; episodios: 2012Q4-2014Q1; Holm 0.624
+gsadf,gsadf_País Vasco_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.333765312595933,0.024,cv95 2.80; episodios: 2017Q3-2019Q3;2024Q2-2026Q2; Holm 0.552
+gsadf,gsadf_País Vasco_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,2.144641703336644,0.162,cv95 2.92; episodios: ninguno; Holm 0.810
+gsadf,gsadf_Región de Murcia_precio/alquiler: IPV / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,3.3406922214984913,0.02,cv95 2.98; episodios: 2012Q1-2013Q4;2020Q3-2026Q2; Holm 0.520
+gsadf,gsadf_Región de Murcia_precio/alquiler: valor tasado / IPC alquiler,"GSADF ADF(1) con intercepto, wild bootstrap",2007Q1,2026Q2,78,,,,,2.016778491608399,0.196,cv95 2.82; episodios: ninguno; Holm 0.810

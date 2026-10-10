@@ -1,0 +1,18 @@
+{
+ "id": "M7-V1",
+ "tema": "Burbuja de precios",
+ "enunciado": "Hay una burbuja en el precio de la vivienda en España.",
+ "capa": "C4",
+ "magnitud": "Precio de compra 2015-2025: +44 % a +80 % según la fuente (4 fuentes); 2021-2025: +24 % a +36 %. GSADF nacional precio/alquiler: exuberancia (Holm 5 %) en 0 de 2 medidas; CCAA con exuberancia en ambas medidas: 0.",
+ "intervalo": "[44; 80] % de variación 2015-2025",
+ "cota": "—",
+ "literatura": "Phillips, Shi y Yu (2015), GSADF: NO VERIFICADA (DOI y cuartil no comprobados sin red).",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "El test de exuberancia no rechaza la raíz unitaria en las series nacionales de precio/alquiler y no identifica una burbuja; la ausencia de rechazo tampoco la descarta. C4.",
+ "limites": "El test detecta comportamiento explosivo de la serie, no una burbuja: no identifica si el precio se separa de los fundamentos. Ratios con índices rebasados (nivel de la ratio arbitrario); ADF con un rezago; bootstrap wild de 499 réplicas; muestra 2007-2026 corta para el ciclo. Precio/renta solo nacional; sin renta trimestral por CCAA. Verificación con series simuladas: NO superada.",
+ "evidencia": [
+  "output/v4/M7/tablas/gsadf_resultados.csv",
+  "output/v4/M7/tablas/variacion_precio.csv",
+  "data/processed (nacional_q_v2 vía holdout.load_full)"
+ ]
+}

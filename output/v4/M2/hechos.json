@@ -230,7 +230,7 @@
  {
   "id": "M2-H2",
   "enunciado_neutro": "Inmigración bruta desde el extranjero frente a la variación de población extranjera (dos fuentes).",
-  "capa": "C1",
+  "capa": "C4 (fuente única: INE; Eurostat no es independiente del INE)",
   "magnitud": [
    {
     "periodo": "2006-2007",

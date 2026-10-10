@@ -195,9 +195,9 @@ def resumen_prov(t: pd.DataFrame) -> pd.DataFrame:
         res.append({"cod_prov": cod, "provincia": g.provincia.iloc[0], "periodo": per, "min": g.deficit.min(),
                     "mediana": g.deficit.median(), "max": g.deficit.max(), "n_rutas_hogares": g.ruta_hogares.nunique(),
                     "n_fuentes_altas": g.fuente_altas.nunique(), "dif_rel_altas_catastro_vs_mivau": dif,
-                    "altas_triangulan_15pct": tri, "capa": "C2" if tri else "C4",
-                    "motivo_capa": ("altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2"
-                                    if tri else "altas sin triangular en ±15 % (o sin Catastro: foral) -> C4")})
+                    "altas_triangulan_15pct": tri, "capa": "C4",
+                    "motivo_capa": ("C4 por regla común B5 (capa = la menor de los componentes; hogares de fuente única ECP no admiten C2). "
+                                    + ("Altas triangulan en ±15 %." if tri else "Altas sin triangular en ±15 % o sin Catastro."))})
     return pd.DataFrame(res)
 
 
@@ -423,14 +423,14 @@ def escribir_json(t, pr, mun, conc, exc, lat, lat_info, figs) -> None:
 
     for per in nac:
         n = nac[per]
-        capa = "C2" if per == "2021-2025" and n["signo_unico"] else "C4"
+        capa = "C4"
         hechos.append({
             "id": f"M1-H-nacional-{per}",
             "enunciado_neutro": f"Suma provincial del déficit contable (Δ hogares − altas) {per}, muestra común de {n['n_prov_comun']} provincias",
             "capa": capa, "magnitud": n["mediana"], "unidad": "viviendas", "intervalo": [n["min"], n["max"]],
             "fuentes": ["ECP INE" if per == "2021-2025" else "Censos 2011/2021 + ECP", "MIVAU fin de obra", "Catastro"],
             "supuestos": ["bajas del parque 0/0,1/0,2 % anual (supuesto: la cifra con bajas es C2)"],
-            "limites": ["Hogares de una sola fuente (ECP, 2021T1-2025T4 = 4,75 años) frente a 5 años de altas: ventana ≈5 % más corta en hogares", "Catastro no cubre territorios forales (Álava, Bizkaia, Gipuzkoa, Navarra): el rango usa 48 provincias",
+            "limites": ["Capa C4 por regla B5: hogares de fuente única (ECP) impiden C2; altas triangulables (componente C2)", "Hogares de una sola fuente (ECP, 2021T1-2025T4 = 4,75 años) frente a 5 años de altas: ventana ≈5 % más corta en hogares", "Catastro no cubre territorios forales (Álava, Bizkaia, Gipuzkoa, Navarra): el rango usa 48 provincias",
                         "Déficit contable no equivale a demanda insatisfecha a cualquier precio"] +
                        ([] if capa == "C1" else ["Tramo de hogares 2011-2021 de fuente única"])})
         hechos.append({
@@ -473,7 +473,7 @@ def escribir_json(t, pr, mun, conc, exc, lat, lat_info, figs) -> None:
     n21c = nac["2021-2025"]
     hechos.append({
         "id": "M1-H-conciliacion-M0", "enunciado_neutro": "Conciliación del déficit nacional 2021-2025 con M0/v3 (701 mil; 560-969 mil)",
-        "capa": "C2", "magnitud": n21c["min_fin_obra_todas"], "unidad": "viviendas (52 provincias, MIVAU, bajas 0 %)",
+        "capa": "C4", "magnitud": n21c["min_fin_obra_todas"], "unidad": "viviendas (52 provincias, MIVAU, bajas 0 %)",
         "intervalo": [n21c["min_fin_obra_todas"], n21c["max_fin_obra_todas"]],
         "fuentes": ["ECP", "MIVAU fin de obra", "Catastro"],
         "supuestos": ["mismos Δ hogares ECP 2021T1-2025T4 y terminadas 2021-2025 que M0"],
@@ -492,7 +492,7 @@ def escribir_json(t, pr, mun, conc, exc, lat, lat_info, figs) -> None:
     cm = conc.set_index(["nivel", "periodo", "escenario"])
     res = {
         "rama": "M1", "pregunta": "¿Dónde se concentra el déficit contable de vivienda (hogares frente a viviendas nuevas)?",
-        "capa": "C2 (déficit nacional 2021-2025 y provincias con altas triangulables en ±15 %) / C4 (resto, municipios, 2012-2025) / C2 (latente)",
+        "capa": "C4 (déficit: hogares de fuente única, regla B5) / C2 (latente)",
         "datos": ["ine_v2_hogares_prov", "ine_v3_gis_seccion (Censo anual)", "censo 2011/2021", "mivau_v2_iniciadas_terminadas_prov",
                   "mivau_v2_protegida", "catastro_urbana_municipios", "ine_v2_padron_prov_edad_nac"],
         "N": {"provincias": int(pr.cod_prov.nunique()), "municipios_2021_2025": int(mun[(mun.periodo == "2021-2025") & mun.deficit_valido].shape[0]),

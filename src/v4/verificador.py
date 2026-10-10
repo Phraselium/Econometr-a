@@ -66,8 +66,20 @@ def _nuevas() -> list[dict]:
     return out
 
 
+RETIRADAS = {"V14": "sustituida por M4-V1 (una sola definición de comprador extranjero; revisión B, B1)"}
+CAPA_V4 = {"V08": ("C4", "La cifra de vacías y su reparto proceden del Censo 2021 (consumo eléctrico); Catastro − hogares no es "
+                   "independiente del Censo, que se construye sobre el Catastro (revisión B, B10/B8).")}
+VEREDICTOS_C4 = {"ANALIZADA, NO CONCLUYENTE", "NO ANALIZADA: FALTAN DATOS", "SIN EVIDENCIA SUFICIENTE"}
+
+
 def transformar(f: dict) -> dict:
     f = dict(f)
+    if f["id"] in CAPA_V4:
+        f["capa"], motivo = CAPA_V4[f["id"]]
+        f["regla"] = f["regla"] + " v4: " + motivo
+    if f["capa"] == "C4" and f["veredicto"] not in VEREDICTOS_C4:   # regla B4: con C4, como máximo «no concluyente»
+        f["veredicto_previo"] = f["veredicto"]
+        f["veredicto"] = "ANALIZADA, NO CONCLUYENTE"
     if f["veredicto"] == "SIN EVIDENCIA SUFICIENTE" and f["id"] in SPLIT:
         f["veredicto_v3"] = f["veredicto"]
         f["veredicto"], motivo = SPLIT[f["id"]]
@@ -89,7 +101,7 @@ def ficha_md(f: dict) -> str:
 
 
 def main() -> list[dict]:
-    fs = [transformar(f) for f in _cargar_v3()] + _nuevas()
+    fs = [transformar(f) for f in _cargar_v3() if f["id"] not in RETIRADAS] + [transformar(f) for f in _nuevas()]
     (DEST / "fichas").mkdir(parents=True, exist_ok=True)
     for f in fs:
         (DEST / "fichas" / f"{f['id']}.json").write_text(json.dumps(f, ensure_ascii=False, indent=1))

@@ -41,3 +41,17 @@
 - Costa e islas: lista de provincias con litoral más Balears y Canarias (Ceuta y Melilla fuera). Supuesto del analista.
 - Vacías y esporádicas (consumo eléctrico, INE) son fuente única → C4; turísticas (INE y registro GVA, que discrepan) → C1. Ficha M4-V3 ANALIZADA, NO CONCLUYENTE en C4 (RESPALDADA exigiría C1).
 - Airbnb solo robustez: anuncios no son viviendas.
+
+## Revisión de la oleada B: REHACER (docs/v4/revision_oleadaB.md)
+- **Reglas comunes nuevas**, aplicadas en `check_texto` y en el verificador v4:
+  - (B5) la capa de un hecho es la MENOR de las de sus componentes; un componente de fuente única impide la C2 y la C1;
+  - (B4) con capa C4, el veredicto es como máximo «ANALIZADA, NO CONCLUYENTE».
+- **Verificador, cambios del orquestador:**
+  - V14 se retira porque la sustituye M4-V1, con una sola definición (B1);
+  - V08 pasa a C4: las vacías vienen del Censo, que no es independiente del Catastro (B10).
+- **Devueltos a los subagentes:**
+  - M4: B1, B2, B3 y B9;
+  - M3: B4, B6 y B7;
+  - M1: B5, las provincias de C2 pasan a C4;
+  - M0: déficit 2021-2024 con todos los componentes en C1;
+  - M2: A3, M2-H2 pasa a C4.

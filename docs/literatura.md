@@ -420,3 +420,25 @@ Método del cuartil: scimagojr.com no es accesible (403); el cuartil procede de 
 | Ke et al. (2017), NeurIPS 30 (LightGBM), «LightGBM: A Highly Efficient Gradient Boosting Decision Tree» | sin DOI Crossref localizado (consulta devolvió HTTP 429, no repetida) | Advances in Neural Information Processing Systems 30 (actas) | sin cuartil de revista (actas) | **NO VERIFICADA** (sin DOI comprobado) |
 
 Notas: (1) Todos los cuartiles de este anexo salvo los remitidos a la tabla v2 son de agregadores, no de scimagojr.com; Webb (CJE) es Q2 según agregador y JCR Q3 según otra fuente (métrica distinta). (2) Lundberg-Lee y Ke et al. se citan solo como referencia de software (SHAP, LightGBM) hasta localizar DOI/identificador (existe versión arXiv, no comprobada aquí). (3) No se extrajeron resultados numéricos: son referencias metodológicas.
+
+## Anexo v2-C. Referencias citadas por la revisión de la rama BI (comprobación 2026-10-10)
+
+Método: DOI consultado en api.crossref.org/works/<DOI> (2026-10-10). Scimago (scimagojr.com) devuelve 403, por lo que los cuartiles figuran como «cuartil no verificado». Los resultados clave proceden de resúmenes/fichas, no de lectura del texto completo; no se extrajeron magnitudes.
+
+### C-1. Jaeger, Ruist y Stuhler (2018)
+- Referencia: Jaeger, D. A., Ruist, J. y Stuhler, J. (2018), «Shift-Share Instruments and the Impact of Immigration», NBER Working Paper 24285. DOI 10.3386/w24285 (Crossref: tipo *report*; autores y año coinciden; sin volumen/páginas).
+- Versión en revista: **no localizada**. Crossref no registra relación «is-preprint-of» y la búsqueda web solo devuelve versiones de documento de trabajo (NBER 24285, IZA DP 11307, CEPR DP 12701). Se cita como documento de trabajo; no hay cuartil aplicable (cuartil no verificado / no aplica).
+- Estado: VERIFICADA como documento de trabajo (DOI comprobado); publicación en revista NO VERIFICADA.
+- Pregunta: ¿identifica el instrumento shift-share clásico (cuotas históricas de asentamiento por origen × flujos nacionales) el efecto de la inmigración sobre resultados locales?
+- Datos y diseño: instrumento shift-share con cuotas retardadas de inmigrantes por origen, aplicado a datos de EE. UU.; propone instrumentación múltiple (varios retardos de cuotas) para separar respuesta de corto y largo plazo.
+- Resultado clave (cualitativo): el instrumento mezcla ajuste de corto y largo plazo porque las cuotas retardadas están correlacionadas con shocks de demanda persistentes; las estimaciones pueden quedar sesgadas y su signo/magnitud, no ser interpretables como efecto de un shock de oferta. Magnitudes: no extraídas.
+- Relevancia para el proyecto: con cuotas de nacionalidad por municipio/provincia en la C. Valenciana, la exogeneidad depende de la persistencia de los shocks de demanda de vivienda; hay que contrastar con varios retardos de cuotas, informar la sensibilidad y hablar de «asociación» salvo que se supere ese contraste.
+
+### C-2. Roodman, Nielsen, MacKinnon y Webb (2019)
+- Referencia: Roodman, D., Nielsen, M. Ø., MacKinnon, J. G. y Webb, M. D. (2019), «Fast and wild: Bootstrap inference in Stata using boottest», The Stata Journal 19(1), 4-60. DOI 10.1177/1536867X19830877 (Crossref: autores, año, título, volumen, número y páginas coinciden).
+- Cuartil Scimago: cuartil no verificado.
+- Estado: VERIFICADA (DOI en Crossref); cuartil no verificado.
+- Pregunta: ¿cómo hacer inferencia fiable con pocos clústeres o clústeres heterogéneos, y hacerlo de forma rápida?
+- Diseño: wild (cluster) bootstrap con restricción de la nula (WCR), algoritmo rápido que reduce el coste computacional, extensiones a IV/ k-clases (wild restricted efficient), multiway clustering y test de hipótesis múltiples; implementado en `boottest`.
+- Resultado clave (cualitativo): los errores estándar clusterizados convencionales sobrerrechazan con pocos clústeres; el wild bootstrap con nula restringida corrige el tamaño del test y es muy rápido. Magnitudes de ganancia de velocidad: no extraídas.
+- Relevancia para el proyecto: con pocas provincias (C. Valenciana: 3) o pocos clústeres, la inferencia HAC/clúster asintótica es poco fiable; justifica el wild bootstrap como robustez junto al HAC(4) y para el IV shift-share. Nota: el proyecto trabaja en Python; `boottest` es Stata (existe implementación en Python, no comprobada aquí), por lo que la réplica debe documentarse en el registro de especificaciones.

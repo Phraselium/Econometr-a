@@ -1,0 +1,1081 @@
+cod_prov,periodo,hogares_fuente,delta_hogares,neta_fuente,protegida,bajas_pct,neta,deficit,provincia
+01,2012-2021,Censo,5111.0000,MIVAU fin de obra (bruto),con,0.0000,6886.0000,-1775.0000,Araba/Álava
+01,2012-2021,Censo,5111.0000,MIVAU fin de obra (bruto),con,0.1000,5327.1700,-216.1700,Araba/Álava
+01,2012-2021,Censo,5111.0000,MIVAU fin de obra (bruto),con,0.2000,3768.3400,1342.6600,Araba/Álava
+01,2012-2021,Censo,5111.0000,MIVAU fin de obra (bruto),sin,0.0000,3660.0000,1451.0000,Araba/Álava
+01,2012-2021,Censo,5111.0000,MIVAU fin de obra (bruto),sin,0.1000,2101.1700,3009.8300,Araba/Álava
+01,2012-2021,Censo,5111.0000,MIVAU fin de obra (bruto),sin,0.2000,542.3400,4568.6600,Araba/Álava
+01,2022-2025,ECP,6136.0000,MIVAU fin de obra (bruto),con,0.0000,3334.0000,2802.0000,Araba/Álava
+01,2022-2025,ECP,6136.0000,MIVAU fin de obra (bruto),con,0.1000,2661.6560,3474.3440,Araba/Álava
+01,2022-2025,ECP,6136.0000,MIVAU fin de obra (bruto),con,0.2000,1989.3120,4146.6880,Araba/Álava
+01,2022-2025,ECP,6136.0000,MIVAU fin de obra (bruto),sin,0.0000,1918.0000,4218.0000,Araba/Álava
+01,2022-2025,ECP,6136.0000,MIVAU fin de obra (bruto),sin,0.1000,1245.6560,4890.3440,Araba/Álava
+01,2022-2025,ECP,6136.0000,MIVAU fin de obra (bruto),sin,0.2000,573.3120,5562.6880,Araba/Álava
+01,2012-2025,Censo+ECP,11247.0000,MIVAU fin de obra (bruto),con,0.0000,10220.0000,1027.0000,Araba/Álava
+01,2012-2025,Censo+ECP,11247.0000,MIVAU fin de obra (bruto),con,0.1000,8037.6380,3209.3620,Araba/Álava
+01,2012-2025,Censo+ECP,11247.0000,MIVAU fin de obra (bruto),con,0.2000,5855.2760,5391.7240,Araba/Álava
+01,2012-2025,Censo+ECP,11247.0000,MIVAU fin de obra (bruto),sin,0.0000,5578.0000,5669.0000,Araba/Álava
+01,2012-2025,Censo+ECP,11247.0000,MIVAU fin de obra (bruto),sin,0.1000,3395.6380,7851.3620,Araba/Álava
+01,2012-2025,Censo+ECP,11247.0000,MIVAU fin de obra (bruto),sin,0.2000,1213.2760,10033.7240,Araba/Álava
+02,2012-2021,Censo,1861.0000,MIVAU fin de obra (bruto),con,0.0000,6648.0000,-4787.0000,Albacete
+02,2012-2021,Censo,1861.0000,MIVAU fin de obra (bruto),con,0.1000,4487.5000,-2626.5000,Albacete
+02,2012-2021,Censo,1861.0000,MIVAU fin de obra (bruto),con,0.2000,2327.0000,-466.0000,Albacete
+02,2012-2021,Censo,1861.0000,MIVAU fin de obra (bruto),sin,0.0000,5764.0000,-3903.0000,Albacete
+02,2012-2021,Censo,1861.0000,MIVAU fin de obra (bruto),sin,0.1000,3603.5000,-1742.5000,Albacete
+02,2012-2021,Censo,1861.0000,MIVAU fin de obra (bruto),sin,0.2000,1443.0000,418.0000,Albacete
+02,2012-2021,Censo,1861.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,10461.0000,-8600.0000,Albacete
+02,2022-2025,ECP,5755.0000,MIVAU fin de obra (bruto),con,0.0000,2998.0000,2757.0000,Albacete
+02,2022-2025,ECP,5755.0000,MIVAU fin de obra (bruto),con,0.1000,2032.7480,3722.2520,Albacete
+02,2022-2025,ECP,5755.0000,MIVAU fin de obra (bruto),con,0.2000,1067.4960,4687.5040,Albacete
+02,2022-2025,ECP,5755.0000,MIVAU fin de obra (bruto),sin,0.0000,2793.0000,2962.0000,Albacete
+02,2022-2025,ECP,5755.0000,MIVAU fin de obra (bruto),sin,0.1000,1827.7480,3927.2520,Albacete
+02,2022-2025,ECP,5755.0000,MIVAU fin de obra (bruto),sin,0.2000,862.4960,4892.5040,Albacete
+02,2022-2025,ECP,5755.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,2066.0000,3689.0000,Albacete
+02,2012-2025,Censo+ECP,7616.0000,MIVAU fin de obra (bruto),con,0.0000,9646.0000,-2030.0000,Albacete
+02,2012-2025,Censo+ECP,7616.0000,MIVAU fin de obra (bruto),con,0.1000,6621.3000,994.7000,Albacete
+02,2012-2025,Censo+ECP,7616.0000,MIVAU fin de obra (bruto),con,0.2000,3596.6000,4019.4000,Albacete
+02,2012-2025,Censo+ECP,7616.0000,MIVAU fin de obra (bruto),sin,0.0000,8557.0000,-941.0000,Albacete
+02,2012-2025,Censo+ECP,7616.0000,MIVAU fin de obra (bruto),sin,0.1000,5532.3000,2083.7000,Albacete
+02,2012-2025,Censo+ECP,7616.0000,MIVAU fin de obra (bruto),sin,0.2000,2507.6000,5108.4000,Albacete
+02,2012-2025,Censo+ECP,7616.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,12527.0000,-4911.0000,Albacete
+03,2012-2021,Censo,15732.0000,MIVAU fin de obra (bruto),con,0.0000,41283.0000,-25551.0000,Alicante/Alacant
+03,2012-2021,Censo,15732.0000,MIVAU fin de obra (bruto),con,0.1000,28539.7500,-12807.7500,Alicante/Alacant
+03,2012-2021,Censo,15732.0000,MIVAU fin de obra (bruto),con,0.2000,15796.5000,-64.5000,Alicante/Alacant
+03,2012-2021,Censo,15732.0000,MIVAU fin de obra (bruto),sin,0.0000,39711.0000,-23979.0000,Alicante/Alacant
+03,2012-2021,Censo,15732.0000,MIVAU fin de obra (bruto),sin,0.1000,26967.7500,-11235.7500,Alicante/Alacant
+03,2012-2021,Censo,15732.0000,MIVAU fin de obra (bruto),sin,0.2000,14224.5000,1507.5000,Alicante/Alacant
+03,2012-2021,Censo,15732.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,54814.0000,-39082.0000,Alicante/Alacant
+03,2022-2025,ECP,63773.0000,MIVAU fin de obra (bruto),con,0.0000,18473.0000,45300.0000,Alicante/Alacant
+03,2022-2025,ECP,63773.0000,MIVAU fin de obra (bruto),con,0.1000,13072.9760,50700.0240,Alicante/Alacant
+03,2022-2025,ECP,63773.0000,MIVAU fin de obra (bruto),con,0.2000,7672.9520,56100.0480,Alicante/Alacant
+03,2022-2025,ECP,63773.0000,MIVAU fin de obra (bruto),sin,0.0000,17863.0000,45910.0000,Alicante/Alacant
+03,2022-2025,ECP,63773.0000,MIVAU fin de obra (bruto),sin,0.1000,12462.9760,51310.0240,Alicante/Alacant
+03,2022-2025,ECP,63773.0000,MIVAU fin de obra (bruto),sin,0.2000,7062.9520,56710.0480,Alicante/Alacant
+03,2022-2025,ECP,63773.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,22584.0000,41189.0000,Alicante/Alacant
+03,2012-2025,Censo+ECP,79505.0000,MIVAU fin de obra (bruto),con,0.0000,59756.0000,19749.0000,Alicante/Alacant
+03,2012-2025,Censo+ECP,79505.0000,MIVAU fin de obra (bruto),con,0.1000,41915.4500,37589.5500,Alicante/Alacant
+03,2012-2025,Censo+ECP,79505.0000,MIVAU fin de obra (bruto),con,0.2000,24074.9000,55430.1000,Alicante/Alacant
+03,2012-2025,Censo+ECP,79505.0000,MIVAU fin de obra (bruto),sin,0.0000,57574.0000,21931.0000,Alicante/Alacant
+03,2012-2025,Censo+ECP,79505.0000,MIVAU fin de obra (bruto),sin,0.1000,39733.4500,39771.5500,Alicante/Alacant
+03,2012-2025,Censo+ECP,79505.0000,MIVAU fin de obra (bruto),sin,0.2000,21892.9000,57612.1000,Alicante/Alacant
+03,2012-2025,Censo+ECP,79505.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,77398.0000,2107.0000,Alicante/Alacant
+04,2012-2021,Censo,25634.0000,MIVAU fin de obra (bruto),con,0.0000,7038.0000,18596.0000,Almería
+04,2012-2021,Censo,25634.0000,MIVAU fin de obra (bruto),con,0.1000,3086.4500,22547.5500,Almería
+04,2012-2021,Censo,25634.0000,MIVAU fin de obra (bruto),con,0.2000,-865.1000,26499.1000,Almería
+04,2012-2021,Censo,25634.0000,MIVAU fin de obra (bruto),sin,0.0000,6257.0000,19377.0000,Almería
+04,2012-2021,Censo,25634.0000,MIVAU fin de obra (bruto),sin,0.1000,2305.4500,23328.5500,Almería
+04,2012-2021,Censo,25634.0000,MIVAU fin de obra (bruto),sin,0.2000,-1646.1000,27280.1000,Almería
+04,2012-2021,Censo,25634.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,26422.0000,-788.0000,Almería
+04,2022-2025,ECP,19900.0000,MIVAU fin de obra (bruto),con,0.0000,4756.0000,15144.0000,Almería
+04,2022-2025,ECP,19900.0000,MIVAU fin de obra (bruto),con,0.1000,3020.9480,16879.0520,Almería
+04,2022-2025,ECP,19900.0000,MIVAU fin de obra (bruto),con,0.2000,1285.8960,18614.1040,Almería
+04,2022-2025,ECP,19900.0000,MIVAU fin de obra (bruto),sin,0.0000,4616.0000,15284.0000,Almería
+04,2022-2025,ECP,19900.0000,MIVAU fin de obra (bruto),sin,0.1000,2880.9480,17019.0520,Almería
+04,2022-2025,ECP,19900.0000,MIVAU fin de obra (bruto),sin,0.2000,1145.8960,18754.1040,Almería
+04,2022-2025,ECP,19900.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,6067.0000,13833.0000,Almería
+04,2012-2025,Censo+ECP,45534.0000,MIVAU fin de obra (bruto),con,0.0000,11794.0000,33740.0000,Almería
+04,2012-2025,Censo+ECP,45534.0000,MIVAU fin de obra (bruto),con,0.1000,6261.8300,39272.1700,Almería
+04,2012-2025,Censo+ECP,45534.0000,MIVAU fin de obra (bruto),con,0.2000,729.6600,44804.3400,Almería
+04,2012-2025,Censo+ECP,45534.0000,MIVAU fin de obra (bruto),sin,0.0000,10873.0000,34661.0000,Almería
+04,2012-2025,Censo+ECP,45534.0000,MIVAU fin de obra (bruto),sin,0.1000,5340.8300,40193.1700,Almería
+04,2012-2025,Censo+ECP,45534.0000,MIVAU fin de obra (bruto),sin,0.2000,-191.3400,45725.3400,Almería
+04,2012-2025,Censo+ECP,45534.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,32489.0000,13045.0000,Almería
+05,2012-2021,Censo,452.0000,MIVAU fin de obra (bruto),con,0.0000,3842.0000,-3390.0000,Ávila
+05,2012-2021,Censo,452.0000,MIVAU fin de obra (bruto),con,0.1000,2205.8100,-1753.8100,Ávila
+05,2012-2021,Censo,452.0000,MIVAU fin de obra (bruto),con,0.2000,569.6200,-117.6200,Ávila
+05,2012-2021,Censo,452.0000,MIVAU fin de obra (bruto),sin,0.0000,3712.0000,-3260.0000,Ávila
+05,2012-2021,Censo,452.0000,MIVAU fin de obra (bruto),sin,0.1000,2075.8100,-1623.8100,Ávila
+05,2012-2021,Censo,452.0000,MIVAU fin de obra (bruto),sin,0.2000,439.6200,12.3800,Ávila
+05,2012-2021,Censo,452.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,9678.0000,-9226.0000,Ávila
+05,2022-2025,ECP,1892.0000,MIVAU fin de obra (bruto),con,0.0000,1071.0000,821.0000,Ávila
+05,2022-2025,ECP,1892.0000,MIVAU fin de obra (bruto),con,0.1000,383.2120,1508.7880,Ávila
+05,2022-2025,ECP,1892.0000,MIVAU fin de obra (bruto),con,0.2000,-304.5760,2196.5760,Ávila
+05,2022-2025,ECP,1892.0000,MIVAU fin de obra (bruto),sin,0.0000,1070.0000,822.0000,Ávila
+05,2022-2025,ECP,1892.0000,MIVAU fin de obra (bruto),sin,0.1000,382.2120,1509.7880,Ávila
+05,2022-2025,ECP,1892.0000,MIVAU fin de obra (bruto),sin,0.2000,-305.5760,2197.5760,Ávila
+05,2022-2025,ECP,1892.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,1281.0000,611.0000,Ávila
+05,2012-2025,Censo+ECP,2344.0000,MIVAU fin de obra (bruto),con,0.0000,4913.0000,-2569.0000,Ávila
+05,2012-2025,Censo+ECP,2344.0000,MIVAU fin de obra (bruto),con,0.1000,2622.3340,-278.3340,Ávila
+05,2012-2025,Censo+ECP,2344.0000,MIVAU fin de obra (bruto),con,0.2000,331.6680,2012.3320,Ávila
+05,2012-2025,Censo+ECP,2344.0000,MIVAU fin de obra (bruto),sin,0.0000,4782.0000,-2438.0000,Ávila
+05,2012-2025,Censo+ECP,2344.0000,MIVAU fin de obra (bruto),sin,0.1000,2491.3340,-147.3340,Ávila
+05,2012-2025,Censo+ECP,2344.0000,MIVAU fin de obra (bruto),sin,0.2000,200.6680,2143.3320,Ávila
+05,2012-2025,Censo+ECP,2344.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,10959.0000,-8615.0000,Ávila
+06,2012-2021,Censo,6202.0000,MIVAU fin de obra (bruto),con,0.0000,10335.0000,-4133.0000,Badajoz
+06,2012-2021,Censo,6202.0000,MIVAU fin de obra (bruto),con,0.1000,6608.9000,-406.9000,Badajoz
+06,2012-2021,Censo,6202.0000,MIVAU fin de obra (bruto),con,0.2000,2882.8000,3319.2000,Badajoz
+06,2012-2021,Censo,6202.0000,MIVAU fin de obra (bruto),sin,0.0000,8061.0000,-1859.0000,Badajoz
+06,2012-2021,Censo,6202.0000,MIVAU fin de obra (bruto),sin,0.1000,4334.9000,1867.1000,Badajoz
+06,2012-2021,Censo,6202.0000,MIVAU fin de obra (bruto),sin,0.2000,608.8000,5593.2000,Badajoz
+06,2012-2021,Censo,6202.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,23696.0000,-17494.0000,Badajoz
+06,2022-2025,ECP,7583.0000,MIVAU fin de obra (bruto),con,0.0000,2299.0000,5284.0000,Badajoz
+06,2022-2025,ECP,7583.0000,MIVAU fin de obra (bruto),con,0.1000,705.6080,6877.3920,Badajoz
+06,2022-2025,ECP,7583.0000,MIVAU fin de obra (bruto),con,0.2000,-887.7840,8470.7840,Badajoz
+06,2022-2025,ECP,7583.0000,MIVAU fin de obra (bruto),sin,0.0000,1927.0000,5656.0000,Badajoz
+06,2022-2025,ECP,7583.0000,MIVAU fin de obra (bruto),sin,0.1000,333.6080,7249.3920,Badajoz
+06,2022-2025,ECP,7583.0000,MIVAU fin de obra (bruto),sin,0.2000,-1259.7840,8842.7840,Badajoz
+06,2022-2025,ECP,7583.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,5367.0000,2216.0000,Badajoz
+06,2012-2025,Censo+ECP,13785.0000,MIVAU fin de obra (bruto),con,0.0000,12634.0000,1151.0000,Badajoz
+06,2012-2025,Censo+ECP,13785.0000,MIVAU fin de obra (bruto),con,0.1000,7417.4600,6367.5400,Badajoz
+06,2012-2025,Censo+ECP,13785.0000,MIVAU fin de obra (bruto),con,0.2000,2200.9200,11584.0800,Badajoz
+06,2012-2025,Censo+ECP,13785.0000,MIVAU fin de obra (bruto),sin,0.0000,9988.0000,3797.0000,Badajoz
+06,2012-2025,Censo+ECP,13785.0000,MIVAU fin de obra (bruto),sin,0.1000,4771.4600,9013.5400,Badajoz
+06,2012-2025,Censo+ECP,13785.0000,MIVAU fin de obra (bruto),sin,0.2000,-445.0800,14230.0800,Badajoz
+06,2012-2025,Censo+ECP,13785.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,29063.0000,-15278.0000,Badajoz
+07,2012-2021,Censo,11799.0000,MIVAU fin de obra (bruto),con,0.0000,19294.0000,-7495.0000,"Balears, Illes"
+07,2012-2021,Censo,11799.0000,MIVAU fin de obra (bruto),con,0.1000,13425.1700,-1626.1700,"Balears, Illes"
+07,2012-2021,Censo,11799.0000,MIVAU fin de obra (bruto),con,0.2000,7556.3400,4242.6600,"Balears, Illes"
+07,2012-2021,Censo,11799.0000,MIVAU fin de obra (bruto),sin,0.0000,18984.0000,-7185.0000,"Balears, Illes"
+07,2012-2021,Censo,11799.0000,MIVAU fin de obra (bruto),sin,0.1000,13115.1700,-1316.1700,"Balears, Illes"
+07,2012-2021,Censo,11799.0000,MIVAU fin de obra (bruto),sin,0.2000,7246.3400,4552.6600,"Balears, Illes"
+07,2012-2021,Censo,11799.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,9304.0000,2495.0000,"Balears, Illes"
+07,2022-2025,ECP,23129.0000,MIVAU fin de obra (bruto),con,0.0000,11752.0000,11377.0000,"Balears, Illes"
+07,2022-2025,ECP,23129.0000,MIVAU fin de obra (bruto),con,0.1000,9143.5080,13985.4920,"Balears, Illes"
+07,2022-2025,ECP,23129.0000,MIVAU fin de obra (bruto),con,0.2000,6535.0160,16593.9840,"Balears, Illes"
+07,2022-2025,ECP,23129.0000,MIVAU fin de obra (bruto),sin,0.0000,10965.0000,12164.0000,"Balears, Illes"
+07,2022-2025,ECP,23129.0000,MIVAU fin de obra (bruto),sin,0.1000,8356.5080,14772.4920,"Balears, Illes"
+07,2022-2025,ECP,23129.0000,MIVAU fin de obra (bruto),sin,0.2000,5748.0160,17380.9840,"Balears, Illes"
+07,2022-2025,ECP,23129.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,11266.0000,11863.0000,"Balears, Illes"
+07,2012-2025,Censo+ECP,34928.0000,MIVAU fin de obra (bruto),con,0.0000,31046.0000,3882.0000,"Balears, Illes"
+07,2012-2025,Censo+ECP,34928.0000,MIVAU fin de obra (bruto),con,0.1000,22829.6380,12098.3620,"Balears, Illes"
+07,2012-2025,Censo+ECP,34928.0000,MIVAU fin de obra (bruto),con,0.2000,14613.2760,20314.7240,"Balears, Illes"
+07,2012-2025,Censo+ECP,34928.0000,MIVAU fin de obra (bruto),sin,0.0000,29949.0000,4979.0000,"Balears, Illes"
+07,2012-2025,Censo+ECP,34928.0000,MIVAU fin de obra (bruto),sin,0.1000,21732.6380,13195.3620,"Balears, Illes"
+07,2012-2025,Censo+ECP,34928.0000,MIVAU fin de obra (bruto),sin,0.2000,13516.2760,21411.7240,"Balears, Illes"
+07,2012-2025,Censo+ECP,34928.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,20570.0000,14358.0000,"Balears, Illes"
+08,2012-2021,Censo,29219.0000,MIVAU fin de obra (bruto),con,0.0000,62296.0000,-33077.0000,Barcelona
+08,2012-2021,Censo,29219.0000,MIVAU fin de obra (bruto),con,0.1000,36252.3200,-7033.3200,Barcelona
+08,2012-2021,Censo,29219.0000,MIVAU fin de obra (bruto),con,0.2000,10208.6400,19010.3600,Barcelona
+08,2012-2021,Censo,29219.0000,MIVAU fin de obra (bruto),sin,0.0000,49988.0000,-20769.0000,Barcelona
+08,2012-2021,Censo,29219.0000,MIVAU fin de obra (bruto),sin,0.1000,23944.3200,5274.6800,Barcelona
+08,2012-2021,Censo,29219.0000,MIVAU fin de obra (bruto),sin,0.2000,-2099.3600,31318.3600,Barcelona
+08,2012-2021,Censo,29219.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,84689.0000,-55470.0000,Barcelona
+08,2022-2025,ECP,108527.0000,MIVAU fin de obra (bruto),con,0.0000,38854.0000,69673.0000,Barcelona
+08,2022-2025,ECP,108527.0000,MIVAU fin de obra (bruto),con,0.1000,28465.8160,80061.1840,Barcelona
+08,2022-2025,ECP,108527.0000,MIVAU fin de obra (bruto),con,0.2000,18077.6320,90449.3680,Barcelona
+08,2022-2025,ECP,108527.0000,MIVAU fin de obra (bruto),sin,0.0000,30638.0000,77889.0000,Barcelona
+08,2022-2025,ECP,108527.0000,MIVAU fin de obra (bruto),sin,0.1000,20249.8160,88277.1840,Barcelona
+08,2022-2025,ECP,108527.0000,MIVAU fin de obra (bruto),sin,0.2000,9861.6320,98665.3680,Barcelona
+08,2022-2025,ECP,108527.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,44260.0000,64267.0000,Barcelona
+08,2012-2025,Censo+ECP,137746.0000,MIVAU fin de obra (bruto),con,0.0000,101150.0000,36596.0000,Barcelona
+08,2012-2025,Censo+ECP,137746.0000,MIVAU fin de obra (bruto),con,0.1000,64688.8480,73057.1520,Barcelona
+08,2012-2025,Censo+ECP,137746.0000,MIVAU fin de obra (bruto),con,0.2000,28227.6960,109518.3040,Barcelona
+08,2012-2025,Censo+ECP,137746.0000,MIVAU fin de obra (bruto),sin,0.0000,80626.0000,57120.0000,Barcelona
+08,2012-2025,Censo+ECP,137746.0000,MIVAU fin de obra (bruto),sin,0.1000,44164.8480,93581.1520,Barcelona
+08,2012-2025,Censo+ECP,137746.0000,MIVAU fin de obra (bruto),sin,0.2000,7703.6960,130042.3040,Barcelona
+08,2012-2025,Censo+ECP,137746.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,128949.0000,8797.0000,Barcelona
+09,2012-2021,Censo,468.0000,MIVAU fin de obra (bruto),con,0.0000,7063.0000,-6595.0000,Burgos
+09,2012-2021,Censo,468.0000,MIVAU fin de obra (bruto),con,0.1000,4526.2700,-4058.2700,Burgos
+09,2012-2021,Censo,468.0000,MIVAU fin de obra (bruto),con,0.2000,1989.5400,-1521.5400,Burgos
+09,2012-2021,Censo,468.0000,MIVAU fin de obra (bruto),sin,0.0000,5958.0000,-5490.0000,Burgos
+09,2012-2021,Censo,468.0000,MIVAU fin de obra (bruto),sin,0.1000,3421.2700,-2953.2700,Burgos
+09,2012-2021,Censo,468.0000,MIVAU fin de obra (bruto),sin,0.2000,884.5400,-416.5400,Burgos
+09,2012-2021,Censo,468.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,7625.0000,-7157.0000,Burgos
+09,2022-2025,ECP,6867.0000,MIVAU fin de obra (bruto),con,0.0000,3398.0000,3469.0000,Burgos
+09,2022-2025,ECP,6867.0000,MIVAU fin de obra (bruto),con,0.1000,2295.4440,4571.5560,Burgos
+09,2022-2025,ECP,6867.0000,MIVAU fin de obra (bruto),con,0.2000,1192.8880,5674.1120,Burgos
+09,2022-2025,ECP,6867.0000,MIVAU fin de obra (bruto),sin,0.0000,3162.0000,3705.0000,Burgos
+09,2022-2025,ECP,6867.0000,MIVAU fin de obra (bruto),sin,0.1000,2059.4440,4807.5560,Burgos
+09,2022-2025,ECP,6867.0000,MIVAU fin de obra (bruto),sin,0.2000,956.8880,5910.1120,Burgos
+09,2022-2025,ECP,6867.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,3617.0000,3250.0000,Burgos
+09,2012-2025,Censo+ECP,7335.0000,MIVAU fin de obra (bruto),con,0.0000,10461.0000,-3126.0000,Burgos
+09,2012-2025,Censo+ECP,7335.0000,MIVAU fin de obra (bruto),con,0.1000,6909.5780,425.4220,Burgos
+09,2012-2025,Censo+ECP,7335.0000,MIVAU fin de obra (bruto),con,0.2000,3358.1560,3976.8440,Burgos
+09,2012-2025,Censo+ECP,7335.0000,MIVAU fin de obra (bruto),sin,0.0000,9120.0000,-1785.0000,Burgos
+09,2012-2025,Censo+ECP,7335.0000,MIVAU fin de obra (bruto),sin,0.1000,5568.5780,1766.4220,Burgos
+09,2012-2025,Censo+ECP,7335.0000,MIVAU fin de obra (bruto),sin,0.2000,2017.1560,5317.8440,Burgos
+09,2012-2025,Censo+ECP,7335.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,11242.0000,-3907.0000,Burgos
+10,2012-2021,Censo,3182.0000,MIVAU fin de obra (bruto),con,0.0000,7876.0000,-4694.0000,Cáceres
+10,2012-2021,Censo,3182.0000,MIVAU fin de obra (bruto),con,0.1000,5116.0700,-1934.0700,Cáceres
+10,2012-2021,Censo,3182.0000,MIVAU fin de obra (bruto),con,0.2000,2356.1400,825.8600,Cáceres
+10,2012-2021,Censo,3182.0000,MIVAU fin de obra (bruto),sin,0.0000,5975.0000,-2793.0000,Cáceres
+10,2012-2021,Censo,3182.0000,MIVAU fin de obra (bruto),sin,0.1000,3215.0700,-33.0700,Cáceres
+10,2012-2021,Censo,3182.0000,MIVAU fin de obra (bruto),sin,0.2000,455.1400,2726.8600,Cáceres
+10,2012-2021,Censo,3182.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,17598.0000,-14416.0000,Cáceres
+10,2022-2025,ECP,3626.0000,MIVAU fin de obra (bruto),con,0.0000,4078.0000,-452.0000,Cáceres
+10,2022-2025,ECP,3626.0000,MIVAU fin de obra (bruto),con,0.1000,2877.3720,748.6280,Cáceres
+10,2022-2025,ECP,3626.0000,MIVAU fin de obra (bruto),con,0.2000,1676.7440,1949.2560,Cáceres
+10,2022-2025,ECP,3626.0000,MIVAU fin de obra (bruto),sin,0.0000,3706.0000,-80.0000,Cáceres
+10,2022-2025,ECP,3626.0000,MIVAU fin de obra (bruto),sin,0.1000,2505.3720,1120.6280,Cáceres
+10,2022-2025,ECP,3626.0000,MIVAU fin de obra (bruto),sin,0.2000,1304.7440,2321.2560,Cáceres
+10,2022-2025,ECP,3626.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,3461.0000,165.0000,Cáceres
+10,2012-2025,Censo+ECP,6808.0000,MIVAU fin de obra (bruto),con,0.0000,11954.0000,-5146.0000,Cáceres
+10,2012-2025,Censo+ECP,6808.0000,MIVAU fin de obra (bruto),con,0.1000,8090.0980,-1282.0980,Cáceres
+10,2012-2025,Censo+ECP,6808.0000,MIVAU fin de obra (bruto),con,0.2000,4226.1960,2581.8040,Cáceres
+10,2012-2025,Censo+ECP,6808.0000,MIVAU fin de obra (bruto),sin,0.0000,9681.0000,-2873.0000,Cáceres
+10,2012-2025,Censo+ECP,6808.0000,MIVAU fin de obra (bruto),sin,0.1000,5817.0980,990.9020,Cáceres
+10,2012-2025,Censo+ECP,6808.0000,MIVAU fin de obra (bruto),sin,0.2000,1953.1960,4854.8040,Cáceres
+10,2012-2025,Censo+ECP,6808.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,21059.0000,-14251.0000,Cáceres
+11,2012-2021,Censo,20503.0000,MIVAU fin de obra (bruto),con,0.0000,14088.0000,6415.0000,Cádiz
+11,2012-2021,Censo,20503.0000,MIVAU fin de obra (bruto),con,0.1000,7900.7900,12602.2100,Cádiz
+11,2012-2021,Censo,20503.0000,MIVAU fin de obra (bruto),con,0.2000,1713.5800,18789.4200,Cádiz
+11,2012-2021,Censo,20503.0000,MIVAU fin de obra (bruto),sin,0.0000,10757.0000,9746.0000,Cádiz
+11,2012-2021,Censo,20503.0000,MIVAU fin de obra (bruto),sin,0.1000,4569.7900,15933.2100,Cádiz
+11,2012-2021,Censo,20503.0000,MIVAU fin de obra (bruto),sin,0.2000,-1617.4200,22120.4200,Cádiz
+11,2012-2021,Censo,20503.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,32380.0000,-11877.0000,Cádiz
+11,2022-2025,ECP,20802.0000,MIVAU fin de obra (bruto),con,0.0000,8863.0000,11939.0000,Cádiz
+11,2022-2025,ECP,20802.0000,MIVAU fin de obra (bruto),con,0.1000,6269.7760,14532.2240,Cádiz
+11,2022-2025,ECP,20802.0000,MIVAU fin de obra (bruto),con,0.2000,3676.5520,17125.4480,Cádiz
+11,2022-2025,ECP,20802.0000,MIVAU fin de obra (bruto),sin,0.0000,8495.0000,12307.0000,Cádiz
+11,2022-2025,ECP,20802.0000,MIVAU fin de obra (bruto),sin,0.1000,5901.7760,14900.2240,Cádiz
+11,2022-2025,ECP,20802.0000,MIVAU fin de obra (bruto),sin,0.2000,3308.5520,17493.4480,Cádiz
+11,2022-2025,ECP,20802.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,11305.0000,9497.0000,Cádiz
+11,2012-2025,Censo+ECP,41305.0000,MIVAU fin de obra (bruto),con,0.0000,22951.0000,18354.0000,Cádiz
+11,2012-2025,Censo+ECP,41305.0000,MIVAU fin de obra (bruto),con,0.1000,14288.9060,27016.0940,Cádiz
+11,2012-2025,Censo+ECP,41305.0000,MIVAU fin de obra (bruto),con,0.2000,5626.8120,35678.1880,Cádiz
+11,2012-2025,Censo+ECP,41305.0000,MIVAU fin de obra (bruto),sin,0.0000,19252.0000,22053.0000,Cádiz
+11,2012-2025,Censo+ECP,41305.0000,MIVAU fin de obra (bruto),sin,0.1000,10589.9060,30715.0940,Cádiz
+11,2012-2025,Censo+ECP,41305.0000,MIVAU fin de obra (bruto),sin,0.2000,1927.8120,39377.1880,Cádiz
+11,2012-2025,Censo+ECP,41305.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,43685.0000,-2380.0000,Cádiz
+12,2012-2021,Censo,4460.0000,MIVAU fin de obra (bruto),con,0.0000,4565.0000,-105.0000,Castellón/Castelló
+12,2012-2021,Censo,4460.0000,MIVAU fin de obra (bruto),con,0.1000,359.8400,4100.1600,Castellón/Castelló
+12,2012-2021,Censo,4460.0000,MIVAU fin de obra (bruto),con,0.2000,-3845.3200,8305.3200,Castellón/Castelló
+12,2012-2021,Censo,4460.0000,MIVAU fin de obra (bruto),sin,0.0000,4199.0000,261.0000,Castellón/Castelló
+12,2012-2021,Censo,4460.0000,MIVAU fin de obra (bruto),sin,0.1000,-6.1600,4466.1600,Castellón/Castelló
+12,2012-2021,Censo,4460.0000,MIVAU fin de obra (bruto),sin,0.2000,-4211.3200,8671.3200,Castellón/Castelló
+12,2012-2021,Censo,4460.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,13405.0000,-8945.0000,Castellón/Castelló
+12,2022-2025,ECP,18755.0000,MIVAU fin de obra (bruto),con,0.0000,2767.0000,15988.0000,Castellón/Castelló
+12,2022-2025,ECP,18755.0000,MIVAU fin de obra (bruto),con,0.1000,979.5120,17775.4880,Castellón/Castelló
+12,2022-2025,ECP,18755.0000,MIVAU fin de obra (bruto),con,0.2000,-807.9760,19562.9760,Castellón/Castelló
+12,2022-2025,ECP,18755.0000,MIVAU fin de obra (bruto),sin,0.0000,2763.0000,15992.0000,Castellón/Castelló
+12,2022-2025,ECP,18755.0000,MIVAU fin de obra (bruto),sin,0.1000,975.5120,17779.4880,Castellón/Castelló
+12,2022-2025,ECP,18755.0000,MIVAU fin de obra (bruto),sin,0.2000,-811.9760,19566.9760,Castellón/Castelló
+12,2022-2025,ECP,18755.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,4503.0000,14252.0000,Castellón/Castelló
+12,2012-2025,Censo+ECP,23215.0000,MIVAU fin de obra (bruto),con,0.0000,7332.0000,15883.0000,Castellón/Castelló
+12,2012-2025,Censo+ECP,23215.0000,MIVAU fin de obra (bruto),con,0.1000,1444.7760,21770.2240,Castellón/Castelló
+12,2012-2025,Censo+ECP,23215.0000,MIVAU fin de obra (bruto),con,0.2000,-4442.4480,27657.4480,Castellón/Castelló
+12,2012-2025,Censo+ECP,23215.0000,MIVAU fin de obra (bruto),sin,0.0000,6962.0000,16253.0000,Castellón/Castelló
+12,2012-2025,Censo+ECP,23215.0000,MIVAU fin de obra (bruto),sin,0.1000,1074.7760,22140.2240,Castellón/Castelló
+12,2012-2025,Censo+ECP,23215.0000,MIVAU fin de obra (bruto),sin,0.2000,-4812.4480,28027.4480,Castellón/Castelló
+12,2012-2025,Censo+ECP,23215.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,17908.0000,5307.0000,Castellón/Castelló
+13,2012-2021,Censo,-4135.0000,MIVAU fin de obra (bruto),con,0.0000,8124.0000,-12259.0000,Ciudad Real
+13,2012-2021,Censo,-4135.0000,MIVAU fin de obra (bruto),con,0.1000,5262.5700,-9397.5700,Ciudad Real
+13,2012-2021,Censo,-4135.0000,MIVAU fin de obra (bruto),con,0.2000,2401.1400,-6536.1400,Ciudad Real
+13,2012-2021,Censo,-4135.0000,MIVAU fin de obra (bruto),sin,0.0000,7003.0000,-11138.0000,Ciudad Real
+13,2012-2021,Censo,-4135.0000,MIVAU fin de obra (bruto),sin,0.1000,4141.5700,-8276.5700,Ciudad Real
+13,2012-2021,Censo,-4135.0000,MIVAU fin de obra (bruto),sin,0.2000,1280.1400,-5415.1400,Ciudad Real
+13,2012-2021,Censo,-4135.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,18550.0000,-22685.0000,Ciudad Real
+13,2022-2025,ECP,6981.0000,MIVAU fin de obra (bruto),con,0.0000,3562.0000,3419.0000,Ciudad Real
+13,2022-2025,ECP,6981.0000,MIVAU fin de obra (bruto),con,0.1000,2309.2800,4671.7200,Ciudad Real
+13,2022-2025,ECP,6981.0000,MIVAU fin de obra (bruto),con,0.2000,1056.5600,5924.4400,Ciudad Real
+13,2022-2025,ECP,6981.0000,MIVAU fin de obra (bruto),sin,0.0000,3463.0000,3518.0000,Ciudad Real
+13,2022-2025,ECP,6981.0000,MIVAU fin de obra (bruto),sin,0.1000,2210.2800,4770.7200,Ciudad Real
+13,2022-2025,ECP,6981.0000,MIVAU fin de obra (bruto),sin,0.2000,957.5600,6023.4400,Ciudad Real
+13,2022-2025,ECP,6981.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,1753.0000,5228.0000,Ciudad Real
+13,2012-2025,Censo+ECP,2846.0000,MIVAU fin de obra (bruto),con,0.0000,11686.0000,-8840.0000,Ciudad Real
+13,2012-2025,Censo+ECP,2846.0000,MIVAU fin de obra (bruto),con,0.1000,7679.9980,-4833.9980,Ciudad Real
+13,2012-2025,Censo+ECP,2846.0000,MIVAU fin de obra (bruto),con,0.2000,3673.9960,-827.9960,Ciudad Real
+13,2012-2025,Censo+ECP,2846.0000,MIVAU fin de obra (bruto),sin,0.0000,10466.0000,-7620.0000,Ciudad Real
+13,2012-2025,Censo+ECP,2846.0000,MIVAU fin de obra (bruto),sin,0.1000,6459.9980,-3613.9980,Ciudad Real
+13,2012-2025,Censo+ECP,2846.0000,MIVAU fin de obra (bruto),sin,0.2000,2453.9960,392.0040,Ciudad Real
+13,2012-2025,Censo+ECP,2846.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,20303.0000,-17457.0000,Ciudad Real
+14,2012-2021,Censo,2658.0000,MIVAU fin de obra (bruto),con,0.0000,10035.0000,-7377.0000,Córdoba
+14,2012-2021,Censo,2658.0000,MIVAU fin de obra (bruto),con,0.1000,6072.5600,-3414.5600,Córdoba
+14,2012-2021,Censo,2658.0000,MIVAU fin de obra (bruto),con,0.2000,2110.1200,547.8800,Córdoba
+14,2012-2021,Censo,2658.0000,MIVAU fin de obra (bruto),sin,0.0000,7245.0000,-4587.0000,Córdoba
+14,2012-2021,Censo,2658.0000,MIVAU fin de obra (bruto),sin,0.1000,3282.5600,-624.5600,Córdoba
+14,2012-2021,Censo,2658.0000,MIVAU fin de obra (bruto),sin,0.2000,-679.8800,3337.8800,Córdoba
+14,2012-2021,Censo,2658.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,27807.0000,-25149.0000,Córdoba
+14,2022-2025,ECP,8508.0000,MIVAU fin de obra (bruto),con,0.0000,4887.0000,3621.0000,Córdoba
+14,2022-2025,ECP,8508.0000,MIVAU fin de obra (bruto),con,0.1000,3230.9000,5277.1000,Córdoba
+14,2022-2025,ECP,8508.0000,MIVAU fin de obra (bruto),con,0.2000,1574.8000,6933.2000,Córdoba
+14,2022-2025,ECP,8508.0000,MIVAU fin de obra (bruto),sin,0.0000,3778.0000,4730.0000,Córdoba
+14,2022-2025,ECP,8508.0000,MIVAU fin de obra (bruto),sin,0.1000,2121.9000,6386.1000,Córdoba
+14,2022-2025,ECP,8508.0000,MIVAU fin de obra (bruto),sin,0.2000,465.8000,8042.2000,Córdoba
+14,2022-2025,ECP,8508.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,7870.0000,638.0000,Córdoba
+14,2012-2025,Censo+ECP,11166.0000,MIVAU fin de obra (bruto),con,0.0000,14922.0000,-3756.0000,Córdoba
+14,2012-2025,Censo+ECP,11166.0000,MIVAU fin de obra (bruto),con,0.1000,9374.5840,1791.4160,Córdoba
+14,2012-2025,Censo+ECP,11166.0000,MIVAU fin de obra (bruto),con,0.2000,3827.1680,7338.8320,Córdoba
+14,2012-2025,Censo+ECP,11166.0000,MIVAU fin de obra (bruto),sin,0.0000,11023.0000,143.0000,Córdoba
+14,2012-2025,Censo+ECP,11166.0000,MIVAU fin de obra (bruto),sin,0.1000,5475.5840,5690.4160,Córdoba
+14,2012-2025,Censo+ECP,11166.0000,MIVAU fin de obra (bruto),sin,0.2000,-71.8320,11237.8320,Córdoba
+14,2012-2025,Censo+ECP,11166.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,35677.0000,-24511.0000,Córdoba
+15,2012-2021,Censo,12998.0000,MIVAU fin de obra (bruto),con,0.0000,11904.0000,1094.0000,"Coruña, A"
+15,2012-2021,Censo,12998.0000,MIVAU fin de obra (bruto),con,0.1000,5436.0400,7561.9600,"Coruña, A"
+15,2012-2021,Censo,12998.0000,MIVAU fin de obra (bruto),con,0.2000,-1031.9200,14029.9200,"Coruña, A"
+15,2012-2021,Censo,12998.0000,MIVAU fin de obra (bruto),sin,0.0000,11049.0000,1949.0000,"Coruña, A"
+15,2012-2021,Censo,12998.0000,MIVAU fin de obra (bruto),sin,0.1000,4581.0400,8416.9600,"Coruña, A"
+15,2012-2021,Censo,12998.0000,MIVAU fin de obra (bruto),sin,0.2000,-1886.9200,14884.9200,"Coruña, A"
+15,2012-2021,Censo,12998.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,16279.0000,-3281.0000,"Coruña, A"
+15,2022-2025,ECP,17972.0000,MIVAU fin de obra (bruto),con,0.0000,4919.0000,13053.0000,"Coruña, A"
+15,2022-2025,ECP,17972.0000,MIVAU fin de obra (bruto),con,0.1000,2171.1560,15800.8440,"Coruña, A"
+15,2022-2025,ECP,17972.0000,MIVAU fin de obra (bruto),con,0.2000,-576.6880,18548.6880,"Coruña, A"
+15,2022-2025,ECP,17972.0000,MIVAU fin de obra (bruto),sin,0.0000,4725.0000,13247.0000,"Coruña, A"
+15,2022-2025,ECP,17972.0000,MIVAU fin de obra (bruto),sin,0.1000,1977.1560,15994.8440,"Coruña, A"
+15,2022-2025,ECP,17972.0000,MIVAU fin de obra (bruto),sin,0.2000,-770.6880,18742.6880,"Coruña, A"
+15,2022-2025,ECP,17972.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,10242.0000,7730.0000,"Coruña, A"
+15,2012-2025,Censo+ECP,30970.0000,MIVAU fin de obra (bruto),con,0.0000,16823.0000,14147.0000,"Coruña, A"
+15,2012-2025,Censo+ECP,30970.0000,MIVAU fin de obra (bruto),con,0.1000,7767.8560,23202.1440,"Coruña, A"
+15,2012-2025,Censo+ECP,30970.0000,MIVAU fin de obra (bruto),con,0.2000,-1287.2880,32257.2880,"Coruña, A"
+15,2012-2025,Censo+ECP,30970.0000,MIVAU fin de obra (bruto),sin,0.0000,15774.0000,15196.0000,"Coruña, A"
+15,2012-2025,Censo+ECP,30970.0000,MIVAU fin de obra (bruto),sin,0.1000,6718.8560,24251.1440,"Coruña, A"
+15,2012-2025,Censo+ECP,30970.0000,MIVAU fin de obra (bruto),sin,0.2000,-2336.2880,33306.2880,"Coruña, A"
+15,2012-2025,Censo+ECP,30970.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,26521.0000,4449.0000,"Coruña, A"
+16,2012-2021,Censo,-2444.0000,MIVAU fin de obra (bruto),con,0.0000,4323.0000,-6767.0000,Cuenca
+16,2012-2021,Censo,-2444.0000,MIVAU fin de obra (bruto),con,0.1000,2756.8000,-5200.8000,Cuenca
+16,2012-2021,Censo,-2444.0000,MIVAU fin de obra (bruto),con,0.2000,1190.6000,-3634.6000,Cuenca
+16,2012-2021,Censo,-2444.0000,MIVAU fin de obra (bruto),sin,0.0000,3982.0000,-6426.0000,Cuenca
+16,2012-2021,Censo,-2444.0000,MIVAU fin de obra (bruto),sin,0.1000,2415.8000,-4859.8000,Cuenca
+16,2012-2021,Censo,-2444.0000,MIVAU fin de obra (bruto),sin,0.2000,849.6000,-3293.6000,Cuenca
+16,2012-2021,Censo,-2444.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,11376.0000,-13820.0000,Cuenca
+16,2022-2025,ECP,2752.0000,MIVAU fin de obra (bruto),con,0.0000,1382.0000,1370.0000,Cuenca
+16,2022-2025,ECP,2752.0000,MIVAU fin de obra (bruto),con,0.1000,719.5360,2032.4640,Cuenca
+16,2022-2025,ECP,2752.0000,MIVAU fin de obra (bruto),con,0.2000,57.0720,2694.9280,Cuenca
+16,2022-2025,ECP,2752.0000,MIVAU fin de obra (bruto),sin,0.0000,1375.0000,1377.0000,Cuenca
+16,2022-2025,ECP,2752.0000,MIVAU fin de obra (bruto),sin,0.1000,712.5360,2039.4640,Cuenca
+16,2022-2025,ECP,2752.0000,MIVAU fin de obra (bruto),sin,0.2000,50.0720,2701.9280,Cuenca
+16,2022-2025,ECP,2752.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,908.0000,1844.0000,Cuenca
+16,2012-2025,Censo+ECP,308.0000,MIVAU fin de obra (bruto),con,0.0000,5705.0000,-5397.0000,Cuenca
+16,2012-2025,Censo+ECP,308.0000,MIVAU fin de obra (bruto),con,0.1000,3512.3200,-3204.3200,Cuenca
+16,2012-2025,Censo+ECP,308.0000,MIVAU fin de obra (bruto),con,0.2000,1319.6400,-1011.6400,Cuenca
+16,2012-2025,Censo+ECP,308.0000,MIVAU fin de obra (bruto),sin,0.0000,5357.0000,-5049.0000,Cuenca
+16,2012-2025,Censo+ECP,308.0000,MIVAU fin de obra (bruto),sin,0.1000,3164.3200,-2856.3200,Cuenca
+16,2012-2025,Censo+ECP,308.0000,MIVAU fin de obra (bruto),sin,0.2000,971.6400,-663.6400,Cuenca
+16,2012-2025,Censo+ECP,308.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,12284.0000,-11976.0000,Cuenca
+17,2012-2021,Censo,6870.0000,MIVAU fin de obra (bruto),con,0.0000,10567.0000,-3697.0000,Girona
+17,2012-2021,Censo,6870.0000,MIVAU fin de obra (bruto),con,0.1000,5671.8400,1198.1600,Girona
+17,2012-2021,Censo,6870.0000,MIVAU fin de obra (bruto),con,0.2000,776.6800,6093.3200,Girona
+17,2012-2021,Censo,6870.0000,MIVAU fin de obra (bruto),sin,0.0000,9885.0000,-3015.0000,Girona
+17,2012-2021,Censo,6870.0000,MIVAU fin de obra (bruto),sin,0.1000,4989.8400,1880.1600,Girona
+17,2012-2021,Censo,6870.0000,MIVAU fin de obra (bruto),sin,0.2000,94.6800,6775.3200,Girona
+17,2012-2021,Censo,6870.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,11688.0000,-4818.0000,Girona
+17,2022-2025,ECP,18787.0000,MIVAU fin de obra (bruto),con,0.0000,6285.0000,12502.0000,Girona
+17,2022-2025,ECP,18787.0000,MIVAU fin de obra (bruto),con,0.1000,4255.3160,14531.6840,Girona
+17,2022-2025,ECP,18787.0000,MIVAU fin de obra (bruto),con,0.2000,2225.6320,16561.3680,Girona
+17,2022-2025,ECP,18787.0000,MIVAU fin de obra (bruto),sin,0.0000,5678.0000,13109.0000,Girona
+17,2022-2025,ECP,18787.0000,MIVAU fin de obra (bruto),sin,0.1000,3648.3160,15138.6840,Girona
+17,2022-2025,ECP,18787.0000,MIVAU fin de obra (bruto),sin,0.2000,1618.6320,17168.3680,Girona
+17,2022-2025,ECP,18787.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,3460.0000,15327.0000,Girona
+17,2012-2025,Censo+ECP,25657.0000,MIVAU fin de obra (bruto),con,0.0000,16852.0000,8805.0000,Girona
+17,2012-2025,Censo+ECP,25657.0000,MIVAU fin de obra (bruto),con,0.1000,9998.7760,15658.2240,Girona
+17,2012-2025,Censo+ECP,25657.0000,MIVAU fin de obra (bruto),con,0.2000,3145.5520,22511.4480,Girona
+17,2012-2025,Censo+ECP,25657.0000,MIVAU fin de obra (bruto),sin,0.0000,15563.0000,10094.0000,Girona
+17,2012-2025,Censo+ECP,25657.0000,MIVAU fin de obra (bruto),sin,0.1000,8709.7760,16947.2240,Girona
+17,2012-2025,Censo+ECP,25657.0000,MIVAU fin de obra (bruto),sin,0.2000,1856.5520,23800.4480,Girona
+17,2012-2025,Censo+ECP,25657.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,15148.0000,10509.0000,Girona
+18,2012-2021,Censo,17800.0000,MIVAU fin de obra (bruto),con,0.0000,10808.0000,6992.0000,Granada
+18,2012-2021,Censo,17800.0000,MIVAU fin de obra (bruto),con,0.1000,5485.3300,12314.6700,Granada
+18,2012-2021,Censo,17800.0000,MIVAU fin de obra (bruto),con,0.2000,162.6600,17637.3400,Granada
+18,2012-2021,Censo,17800.0000,MIVAU fin de obra (bruto),sin,0.0000,9270.0000,8530.0000,Granada
+18,2012-2021,Censo,17800.0000,MIVAU fin de obra (bruto),sin,0.1000,3947.3300,13852.6700,Granada
+18,2012-2021,Censo,17800.0000,MIVAU fin de obra (bruto),sin,0.2000,-1375.3400,19175.3400,Granada
+18,2012-2021,Censo,17800.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,30049.0000,-12249.0000,Granada
+18,2022-2025,ECP,21050.0000,MIVAU fin de obra (bruto),con,0.0000,6464.0000,14586.0000,Granada
+18,2022-2025,ECP,21050.0000,MIVAU fin de obra (bruto),con,0.1000,4169.2320,16880.7680,Granada
+18,2022-2025,ECP,21050.0000,MIVAU fin de obra (bruto),con,0.2000,1874.4640,19175.5360,Granada
+18,2022-2025,ECP,21050.0000,MIVAU fin de obra (bruto),sin,0.0000,5822.0000,15228.0000,Granada
+18,2022-2025,ECP,21050.0000,MIVAU fin de obra (bruto),sin,0.1000,3527.2320,17522.7680,Granada
+18,2022-2025,ECP,21050.0000,MIVAU fin de obra (bruto),sin,0.2000,1232.4640,19817.5360,Granada
+18,2022-2025,ECP,21050.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,7567.0000,13483.0000,Granada
+18,2012-2025,Censo+ECP,38850.0000,MIVAU fin de obra (bruto),con,0.0000,17272.0000,21578.0000,Granada
+18,2012-2025,Censo+ECP,38850.0000,MIVAU fin de obra (bruto),con,0.1000,9820.2620,29029.7380,Granada
+18,2012-2025,Censo+ECP,38850.0000,MIVAU fin de obra (bruto),con,0.2000,2368.5240,36481.4760,Granada
+18,2012-2025,Censo+ECP,38850.0000,MIVAU fin de obra (bruto),sin,0.0000,15092.0000,23758.0000,Granada
+18,2012-2025,Censo+ECP,38850.0000,MIVAU fin de obra (bruto),sin,0.1000,7640.2620,31209.7380,Granada
+18,2012-2025,Censo+ECP,38850.0000,MIVAU fin de obra (bruto),sin,0.2000,188.5240,38661.4760,Granada
+18,2012-2025,Censo+ECP,38850.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,37616.0000,1234.0000,Granada
+19,2012-2021,Censo,5380.0000,MIVAU fin de obra (bruto),con,0.0000,6698.0000,-1318.0000,Guadalajara
+19,2012-2021,Censo,5380.0000,MIVAU fin de obra (bruto),con,0.1000,4966.2500,413.7500,Guadalajara
+19,2012-2021,Censo,5380.0000,MIVAU fin de obra (bruto),con,0.2000,3234.5000,2145.5000,Guadalajara
+19,2012-2021,Censo,5380.0000,MIVAU fin de obra (bruto),sin,0.0000,5444.0000,-64.0000,Guadalajara
+19,2012-2021,Censo,5380.0000,MIVAU fin de obra (bruto),sin,0.1000,3712.2500,1667.7500,Guadalajara
+19,2012-2021,Censo,5380.0000,MIVAU fin de obra (bruto),sin,0.2000,1980.5000,3399.5000,Guadalajara
+19,2012-2021,Censo,5380.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,10429.0000,-5049.0000,Guadalajara
+19,2022-2025,ECP,8413.0000,MIVAU fin de obra (bruto),con,0.0000,4040.0000,4373.0000,Guadalajara
+19,2022-2025,ECP,8413.0000,MIVAU fin de obra (bruto),con,0.1000,3288.8840,5124.1160,Guadalajara
+19,2022-2025,ECP,8413.0000,MIVAU fin de obra (bruto),con,0.2000,2537.7680,5875.2320,Guadalajara
+19,2022-2025,ECP,8413.0000,MIVAU fin de obra (bruto),sin,0.0000,3311.0000,5102.0000,Guadalajara
+19,2022-2025,ECP,8413.0000,MIVAU fin de obra (bruto),sin,0.1000,2559.8840,5853.1160,Guadalajara
+19,2022-2025,ECP,8413.0000,MIVAU fin de obra (bruto),sin,0.2000,1808.7680,6604.2320,Guadalajara
+19,2022-2025,ECP,8413.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,3366.0000,5047.0000,Guadalajara
+19,2012-2025,Censo+ECP,13793.0000,MIVAU fin de obra (bruto),con,0.0000,10738.0000,3055.0000,Guadalajara
+19,2012-2025,Censo+ECP,13793.0000,MIVAU fin de obra (bruto),con,0.1000,8313.5500,5479.4500,Guadalajara
+19,2012-2025,Censo+ECP,13793.0000,MIVAU fin de obra (bruto),con,0.2000,5889.1000,7903.9000,Guadalajara
+19,2012-2025,Censo+ECP,13793.0000,MIVAU fin de obra (bruto),sin,0.0000,8755.0000,5038.0000,Guadalajara
+19,2012-2025,Censo+ECP,13793.0000,MIVAU fin de obra (bruto),sin,0.1000,6330.5500,7462.4500,Guadalajara
+19,2012-2025,Censo+ECP,13793.0000,MIVAU fin de obra (bruto),sin,0.2000,3906.1000,9886.9000,Guadalajara
+19,2012-2025,Censo+ECP,13793.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,13795.0000,-2.0000,Guadalajara
+20,2012-2021,Censo,11872.0000,MIVAU fin de obra (bruto),con,0.0000,19209.0000,-7337.0000,Gipuzkoa
+20,2012-2021,Censo,11872.0000,MIVAU fin de obra (bruto),con,0.1000,15927.6100,-4055.6100,Gipuzkoa
+20,2012-2021,Censo,11872.0000,MIVAU fin de obra (bruto),con,0.2000,12646.2200,-774.2200,Gipuzkoa
+20,2012-2021,Censo,11872.0000,MIVAU fin de obra (bruto),sin,0.0000,14918.0000,-3046.0000,Gipuzkoa
+20,2012-2021,Censo,11872.0000,MIVAU fin de obra (bruto),sin,0.1000,11636.6100,235.3900,Gipuzkoa
+20,2012-2021,Censo,11872.0000,MIVAU fin de obra (bruto),sin,0.2000,8355.2200,3516.7800,Gipuzkoa
+20,2022-2025,ECP,8532.0000,MIVAU fin de obra (bruto),con,0.0000,6205.0000,2327.0000,Gipuzkoa
+20,2022-2025,ECP,8532.0000,MIVAU fin de obra (bruto),con,0.1000,4803.8560,3728.1440,Gipuzkoa
+20,2022-2025,ECP,8532.0000,MIVAU fin de obra (bruto),con,0.2000,3402.7120,5129.2880,Gipuzkoa
+20,2022-2025,ECP,8532.0000,MIVAU fin de obra (bruto),sin,0.0000,4612.0000,3920.0000,Gipuzkoa
+20,2022-2025,ECP,8532.0000,MIVAU fin de obra (bruto),sin,0.1000,3210.8560,5321.1440,Gipuzkoa
+20,2022-2025,ECP,8532.0000,MIVAU fin de obra (bruto),sin,0.2000,1809.7120,6722.2880,Gipuzkoa
+20,2012-2025,Censo+ECP,20404.0000,MIVAU fin de obra (bruto),con,0.0000,25414.0000,-5010.0000,Gipuzkoa
+20,2012-2025,Censo+ECP,20404.0000,MIVAU fin de obra (bruto),con,0.1000,20820.0540,-416.0540,Gipuzkoa
+20,2012-2025,Censo+ECP,20404.0000,MIVAU fin de obra (bruto),con,0.2000,16226.1080,4177.8920,Gipuzkoa
+20,2012-2025,Censo+ECP,20404.0000,MIVAU fin de obra (bruto),sin,0.0000,19530.0000,874.0000,Gipuzkoa
+20,2012-2025,Censo+ECP,20404.0000,MIVAU fin de obra (bruto),sin,0.1000,14936.0540,5467.9460,Gipuzkoa
+20,2012-2025,Censo+ECP,20404.0000,MIVAU fin de obra (bruto),sin,0.2000,10342.1080,10061.8920,Gipuzkoa
+21,2012-2021,Censo,10928.0000,MIVAU fin de obra (bruto),con,0.0000,6514.0000,4414.0000,Huelva
+21,2012-2021,Censo,10928.0000,MIVAU fin de obra (bruto),con,0.1000,3635.3400,7292.6600,Huelva
+21,2012-2021,Censo,10928.0000,MIVAU fin de obra (bruto),con,0.2000,756.6800,10171.3200,Huelva
+21,2012-2021,Censo,10928.0000,MIVAU fin de obra (bruto),sin,0.0000,5284.0000,5644.0000,Huelva
+21,2012-2021,Censo,10928.0000,MIVAU fin de obra (bruto),sin,0.1000,2405.3400,8522.6600,Huelva
+21,2012-2021,Censo,10928.0000,MIVAU fin de obra (bruto),sin,0.2000,-473.3200,11401.3200,Huelva
+21,2012-2021,Censo,10928.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,11435.0000,-507.0000,Huelva
+21,2022-2025,ECP,7920.0000,MIVAU fin de obra (bruto),con,0.0000,3067.0000,4853.0000,Huelva
+21,2022-2025,ECP,7920.0000,MIVAU fin de obra (bruto),con,0.1000,1786.8200,6133.1800,Huelva
+21,2022-2025,ECP,7920.0000,MIVAU fin de obra (bruto),con,0.2000,506.6400,7413.3600,Huelva
+21,2022-2025,ECP,7920.0000,MIVAU fin de obra (bruto),sin,0.0000,2805.0000,5115.0000,Huelva
+21,2022-2025,ECP,7920.0000,MIVAU fin de obra (bruto),sin,0.1000,1524.8200,6395.1800,Huelva
+21,2022-2025,ECP,7920.0000,MIVAU fin de obra (bruto),sin,0.2000,244.6400,7675.3600,Huelva
+21,2022-2025,ECP,7920.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,3985.0000,3935.0000,Huelva
+21,2012-2025,Censo+ECP,18848.0000,MIVAU fin de obra (bruto),con,0.0000,9581.0000,9267.0000,Huelva
+21,2012-2025,Censo+ECP,18848.0000,MIVAU fin de obra (bruto),con,0.1000,5550.8760,13297.1240,Huelva
+21,2012-2025,Censo+ECP,18848.0000,MIVAU fin de obra (bruto),con,0.2000,1520.7520,17327.2480,Huelva
+21,2012-2025,Censo+ECP,18848.0000,MIVAU fin de obra (bruto),sin,0.0000,8089.0000,10759.0000,Huelva
+21,2012-2025,Censo+ECP,18848.0000,MIVAU fin de obra (bruto),sin,0.1000,4058.8760,14789.1240,Huelva
+21,2012-2025,Censo+ECP,18848.0000,MIVAU fin de obra (bruto),sin,0.2000,28.7520,18819.2480,Huelva
+21,2012-2025,Censo+ECP,18848.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,15420.0000,3428.0000,Huelva
+22,2012-2021,Censo,1064.0000,MIVAU fin de obra (bruto),con,0.0000,4272.0000,-3208.0000,Huesca
+22,2012-2021,Censo,1064.0000,MIVAU fin de obra (bruto),con,0.1000,2710.2400,-1646.2400,Huesca
+22,2012-2021,Censo,1064.0000,MIVAU fin de obra (bruto),con,0.2000,1148.4800,-84.4800,Huesca
+22,2012-2021,Censo,1064.0000,MIVAU fin de obra (bruto),sin,0.0000,3673.0000,-2609.0000,Huesca
+22,2012-2021,Censo,1064.0000,MIVAU fin de obra (bruto),sin,0.1000,2111.2400,-1047.2400,Huesca
+22,2012-2021,Censo,1064.0000,MIVAU fin de obra (bruto),sin,0.2000,549.4800,514.5200,Huesca
+22,2012-2021,Censo,1064.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,4308.0000,-3244.0000,Huesca
+22,2022-2025,ECP,3881.0000,MIVAU fin de obra (bruto),con,0.0000,1977.0000,1904.0000,Huesca
+22,2022-2025,ECP,3881.0000,MIVAU fin de obra (bruto),con,0.1000,1289.6280,2591.3720,Huesca
+22,2022-2025,ECP,3881.0000,MIVAU fin de obra (bruto),con,0.2000,602.2560,3278.7440,Huesca
+22,2022-2025,ECP,3881.0000,MIVAU fin de obra (bruto),sin,0.0000,1935.0000,1946.0000,Huesca
+22,2022-2025,ECP,3881.0000,MIVAU fin de obra (bruto),sin,0.1000,1247.6280,2633.3720,Huesca
+22,2022-2025,ECP,3881.0000,MIVAU fin de obra (bruto),sin,0.2000,560.2560,3320.7440,Huesca
+22,2022-2025,ECP,3881.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,1871.0000,2010.0000,Huesca
+22,2012-2025,Censo+ECP,4945.0000,MIVAU fin de obra (bruto),con,0.0000,6249.0000,-1304.0000,Huesca
+22,2012-2025,Censo+ECP,4945.0000,MIVAU fin de obra (bruto),con,0.1000,4062.5360,882.4640,Huesca
+22,2012-2025,Censo+ECP,4945.0000,MIVAU fin de obra (bruto),con,0.2000,1876.0720,3068.9280,Huesca
+22,2012-2025,Censo+ECP,4945.0000,MIVAU fin de obra (bruto),sin,0.0000,5608.0000,-663.0000,Huesca
+22,2012-2025,Censo+ECP,4945.0000,MIVAU fin de obra (bruto),sin,0.1000,3421.5360,1523.4640,Huesca
+22,2012-2025,Censo+ECP,4945.0000,MIVAU fin de obra (bruto),sin,0.2000,1235.0720,3709.9280,Huesca
+22,2012-2025,Censo+ECP,4945.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,6179.0000,-1234.0000,Huesca
+23,2012-2021,Censo,-1824.0000,MIVAU fin de obra (bruto),con,0.0000,8595.0000,-10419.0000,Jaén
+23,2012-2021,Censo,-1824.0000,MIVAU fin de obra (bruto),con,0.1000,5154.7500,-6978.7500,Jaén
+23,2012-2021,Censo,-1824.0000,MIVAU fin de obra (bruto),con,0.2000,1714.5000,-3538.5000,Jaén
+23,2012-2021,Censo,-1824.0000,MIVAU fin de obra (bruto),sin,0.0000,8207.0000,-10031.0000,Jaén
+23,2012-2021,Censo,-1824.0000,MIVAU fin de obra (bruto),sin,0.1000,4766.7500,-6590.7500,Jaén
+23,2012-2021,Censo,-1824.0000,MIVAU fin de obra (bruto),sin,0.2000,1326.5000,-3150.5000,Jaén
+23,2012-2021,Censo,-1824.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,21712.0000,-23536.0000,Jaén
+23,2022-2025,ECP,5819.0000,MIVAU fin de obra (bruto),con,0.0000,2396.0000,3423.0000,Jaén
+23,2022-2025,ECP,5819.0000,MIVAU fin de obra (bruto),con,0.1000,901.1200,4917.8800,Jaén
+23,2022-2025,ECP,5819.0000,MIVAU fin de obra (bruto),con,0.2000,-593.7600,6412.7600,Jaén
+23,2022-2025,ECP,5819.0000,MIVAU fin de obra (bruto),sin,0.0000,2386.0000,3433.0000,Jaén
+23,2022-2025,ECP,5819.0000,MIVAU fin de obra (bruto),sin,0.1000,891.1200,4927.8800,Jaén
+23,2022-2025,ECP,5819.0000,MIVAU fin de obra (bruto),sin,0.2000,-603.7600,6422.7600,Jaén
+23,2022-2025,ECP,5819.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,2173.0000,3646.0000,Jaén
+23,2012-2025,Censo+ECP,3995.0000,MIVAU fin de obra (bruto),con,0.0000,10991.0000,-6996.0000,Jaén
+23,2012-2025,Censo+ECP,3995.0000,MIVAU fin de obra (bruto),con,0.1000,6174.6500,-2179.6500,Jaén
+23,2012-2025,Censo+ECP,3995.0000,MIVAU fin de obra (bruto),con,0.2000,1358.3000,2636.7000,Jaén
+23,2012-2025,Censo+ECP,3995.0000,MIVAU fin de obra (bruto),sin,0.0000,10593.0000,-6598.0000,Jaén
+23,2012-2025,Censo+ECP,3995.0000,MIVAU fin de obra (bruto),sin,0.1000,5776.6500,-1781.6500,Jaén
+23,2012-2025,Censo+ECP,3995.0000,MIVAU fin de obra (bruto),sin,0.2000,960.3000,3034.7000,Jaén
+23,2012-2025,Censo+ECP,3995.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,23885.0000,-19890.0000,Jaén
+24,2012-2021,Censo,-7510.0000,MIVAU fin de obra (bruto),con,0.0000,5173.0000,-12683.0000,León
+24,2012-2021,Censo,-7510.0000,MIVAU fin de obra (bruto),con,0.1000,1920.0000,-9430.0000,León
+24,2012-2021,Censo,-7510.0000,MIVAU fin de obra (bruto),con,0.2000,-1333.0000,-6177.0000,León
+24,2012-2021,Censo,-7510.0000,MIVAU fin de obra (bruto),sin,0.0000,4844.0000,-12354.0000,León
+24,2012-2021,Censo,-7510.0000,MIVAU fin de obra (bruto),sin,0.1000,1591.0000,-9101.0000,León
+24,2012-2021,Censo,-7510.0000,MIVAU fin de obra (bruto),sin,0.2000,-1662.0000,-5848.0000,León
+24,2012-2021,Censo,-7510.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,13673.0000,-21183.0000,León
+24,2022-2025,ECP,4594.0000,MIVAU fin de obra (bruto),con,0.0000,1718.0000,2876.0000,León
+24,2022-2025,ECP,4594.0000,MIVAU fin de obra (bruto),con,0.1000,299.1000,4294.9000,León
+24,2022-2025,ECP,4594.0000,MIVAU fin de obra (bruto),con,0.2000,-1119.8000,5713.8000,León
+24,2022-2025,ECP,4594.0000,MIVAU fin de obra (bruto),sin,0.0000,1686.0000,2908.0000,León
+24,2022-2025,ECP,4594.0000,MIVAU fin de obra (bruto),sin,0.1000,267.1000,4326.9000,León
+24,2022-2025,ECP,4594.0000,MIVAU fin de obra (bruto),sin,0.2000,-1151.8000,5745.8000,León
+24,2022-2025,ECP,4594.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,2711.0000,1883.0000,León
+24,2012-2025,Censo+ECP,-2916.0000,MIVAU fin de obra (bruto),con,0.0000,6891.0000,-9807.0000,León
+24,2012-2025,Censo+ECP,-2916.0000,MIVAU fin de obra (bruto),con,0.1000,2336.8000,-5252.8000,León
+24,2012-2025,Censo+ECP,-2916.0000,MIVAU fin de obra (bruto),con,0.2000,-2217.4000,-698.6000,León
+24,2012-2025,Censo+ECP,-2916.0000,MIVAU fin de obra (bruto),sin,0.0000,6530.0000,-9446.0000,León
+24,2012-2025,Censo+ECP,-2916.0000,MIVAU fin de obra (bruto),sin,0.1000,1975.8000,-4891.8000,León
+24,2012-2025,Censo+ECP,-2916.0000,MIVAU fin de obra (bruto),sin,0.2000,-2578.4000,-337.6000,León
+24,2012-2025,Censo+ECP,-2916.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,16384.0000,-19300.0000,León
+25,2012-2021,Censo,-1417.0000,MIVAU fin de obra (bruto),con,0.0000,5950.0000,-7367.0000,Lleida
+25,2012-2021,Censo,-1417.0000,MIVAU fin de obra (bruto),con,0.1000,3498.9100,-4915.9100,Lleida
+25,2012-2021,Censo,-1417.0000,MIVAU fin de obra (bruto),con,0.2000,1047.8200,-2464.8200,Lleida
+25,2012-2021,Censo,-1417.0000,MIVAU fin de obra (bruto),sin,0.0000,5457.0000,-6874.0000,Lleida
+25,2012-2021,Censo,-1417.0000,MIVAU fin de obra (bruto),sin,0.1000,3005.9100,-4422.9100,Lleida
+25,2012-2021,Censo,-1417.0000,MIVAU fin de obra (bruto),sin,0.2000,554.8200,-1971.8200,Lleida
+25,2012-2021,Censo,-1417.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,9698.0000,-11115.0000,Lleida
+25,2022-2025,ECP,9072.0000,MIVAU fin de obra (bruto),con,0.0000,2182.0000,6890.0000,Lleida
+25,2022-2025,ECP,9072.0000,MIVAU fin de obra (bruto),con,0.1000,1157.6760,7914.3240,Lleida
+25,2022-2025,ECP,9072.0000,MIVAU fin de obra (bruto),con,0.2000,133.3520,8938.6480,Lleida
+25,2022-2025,ECP,9072.0000,MIVAU fin de obra (bruto),sin,0.0000,1942.0000,7130.0000,Lleida
+25,2022-2025,ECP,9072.0000,MIVAU fin de obra (bruto),sin,0.1000,917.6760,8154.3240,Lleida
+25,2022-2025,ECP,9072.0000,MIVAU fin de obra (bruto),sin,0.2000,-106.6480,9178.6480,Lleida
+25,2022-2025,ECP,9072.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,3087.0000,5985.0000,Lleida
+25,2012-2025,Censo+ECP,7655.0000,MIVAU fin de obra (bruto),con,0.0000,8132.0000,-477.0000,Lleida
+25,2012-2025,Censo+ECP,7655.0000,MIVAU fin de obra (bruto),con,0.1000,4700.4740,2954.5260,Lleida
+25,2012-2025,Censo+ECP,7655.0000,MIVAU fin de obra (bruto),con,0.2000,1268.9480,6386.0520,Lleida
+25,2012-2025,Censo+ECP,7655.0000,MIVAU fin de obra (bruto),sin,0.0000,7399.0000,256.0000,Lleida
+25,2012-2025,Censo+ECP,7655.0000,MIVAU fin de obra (bruto),sin,0.1000,3967.4740,3687.5260,Lleida
+25,2012-2025,Censo+ECP,7655.0000,MIVAU fin de obra (bruto),sin,0.2000,535.9480,7119.0520,Lleida
+25,2012-2025,Censo+ECP,7655.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,12785.0000,-5130.0000,Lleida
+26,2012-2021,Censo,2257.0000,MIVAU fin de obra (bruto),con,0.0000,6509.0000,-4252.0000,"Rioja, La"
+26,2012-2021,Censo,2257.0000,MIVAU fin de obra (bruto),con,0.1000,4521.4100,-2264.4100,"Rioja, La"
+26,2012-2021,Censo,2257.0000,MIVAU fin de obra (bruto),con,0.2000,2533.8200,-276.8200,"Rioja, La"
+26,2012-2021,Censo,2257.0000,MIVAU fin de obra (bruto),sin,0.0000,5683.0000,-3426.0000,"Rioja, La"
+26,2012-2021,Censo,2257.0000,MIVAU fin de obra (bruto),sin,0.1000,3695.4100,-1438.4100,"Rioja, La"
+26,2012-2021,Censo,2257.0000,MIVAU fin de obra (bruto),sin,0.2000,1707.8200,549.1800,"Rioja, La"
+26,2012-2021,Censo,2257.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,7634.0000,-5377.0000,"Rioja, La"
+26,2022-2025,ECP,6071.0000,MIVAU fin de obra (bruto),con,0.0000,3178.0000,2893.0000,"Rioja, La"
+26,2022-2025,ECP,6071.0000,MIVAU fin de obra (bruto),con,0.1000,2332.6680,3738.3320,"Rioja, La"
+26,2022-2025,ECP,6071.0000,MIVAU fin de obra (bruto),con,0.2000,1487.3360,4583.6640,"Rioja, La"
+26,2022-2025,ECP,6071.0000,MIVAU fin de obra (bruto),sin,0.0000,3154.0000,2917.0000,"Rioja, La"
+26,2022-2025,ECP,6071.0000,MIVAU fin de obra (bruto),sin,0.1000,2308.6680,3762.3320,"Rioja, La"
+26,2022-2025,ECP,6071.0000,MIVAU fin de obra (bruto),sin,0.2000,1463.3360,4607.6640,"Rioja, La"
+26,2022-2025,ECP,6071.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,2111.0000,3960.0000,"Rioja, La"
+26,2012-2025,Censo+ECP,8328.0000,MIVAU fin de obra (bruto),con,0.0000,9687.0000,-1359.0000,"Rioja, La"
+26,2012-2025,Censo+ECP,8328.0000,MIVAU fin de obra (bruto),con,0.1000,6904.3740,1423.6260,"Rioja, La"
+26,2012-2025,Censo+ECP,8328.0000,MIVAU fin de obra (bruto),con,0.2000,4121.7480,4206.2520,"Rioja, La"
+26,2012-2025,Censo+ECP,8328.0000,MIVAU fin de obra (bruto),sin,0.0000,8837.0000,-509.0000,"Rioja, La"
+26,2012-2025,Censo+ECP,8328.0000,MIVAU fin de obra (bruto),sin,0.1000,6054.3740,2273.6260,"Rioja, La"
+26,2012-2025,Censo+ECP,8328.0000,MIVAU fin de obra (bruto),sin,0.2000,3271.7480,5056.2520,"Rioja, La"
+26,2012-2025,Censo+ECP,8328.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,9745.0000,-1417.0000,"Rioja, La"
+27,2012-2021,Censo,1664.0000,MIVAU fin de obra (bruto),con,0.0000,3651.0000,-1987.0000,Lugo
+27,2012-2021,Censo,1664.0000,MIVAU fin de obra (bruto),con,0.1000,1409.4800,254.5200,Lugo
+27,2012-2021,Censo,1664.0000,MIVAU fin de obra (bruto),con,0.2000,-832.0400,2496.0400,Lugo
+27,2012-2021,Censo,1664.0000,MIVAU fin de obra (bruto),sin,0.0000,3203.0000,-1539.0000,Lugo
+27,2012-2021,Censo,1664.0000,MIVAU fin de obra (bruto),sin,0.1000,961.4800,702.5200,Lugo
+27,2012-2021,Censo,1664.0000,MIVAU fin de obra (bruto),sin,0.2000,-1280.0400,2944.0400,Lugo
+27,2012-2021,Censo,1664.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,21155.0000,-19491.0000,Lugo
+27,2022-2025,ECP,3650.0000,MIVAU fin de obra (bruto),con,0.0000,827.0000,2823.0000,Lugo
+27,2022-2025,ECP,3650.0000,MIVAU fin de obra (bruto),con,0.1000,-249.2680,3899.2680,Lugo
+27,2022-2025,ECP,3650.0000,MIVAU fin de obra (bruto),con,0.2000,-1325.5360,4975.5360,Lugo
+27,2022-2025,ECP,3650.0000,MIVAU fin de obra (bruto),sin,0.0000,783.0000,2867.0000,Lugo
+27,2022-2025,ECP,3650.0000,MIVAU fin de obra (bruto),sin,0.1000,-293.2680,3943.2680,Lugo
+27,2022-2025,ECP,3650.0000,MIVAU fin de obra (bruto),sin,0.2000,-1369.5360,5019.5360,Lugo
+27,2022-2025,ECP,3650.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,-575.0000,4225.0000,Lugo
+27,2012-2025,Censo+ECP,5314.0000,MIVAU fin de obra (bruto),con,0.0000,4478.0000,836.0000,Lugo
+27,2012-2025,Censo+ECP,5314.0000,MIVAU fin de obra (bruto),con,0.1000,1339.8720,3974.1280,Lugo
+27,2012-2025,Censo+ECP,5314.0000,MIVAU fin de obra (bruto),con,0.2000,-1798.2560,7112.2560,Lugo
+27,2012-2025,Censo+ECP,5314.0000,MIVAU fin de obra (bruto),sin,0.0000,3986.0000,1328.0000,Lugo
+27,2012-2025,Censo+ECP,5314.0000,MIVAU fin de obra (bruto),sin,0.1000,847.8720,4466.1280,Lugo
+27,2012-2025,Censo+ECP,5314.0000,MIVAU fin de obra (bruto),sin,0.2000,-2290.2560,7604.2560,Lugo
+27,2012-2025,Censo+ECP,5314.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,20580.0000,-15266.0000,Lugo
+28,2012-2021,Censo,77111.0000,MIVAU fin de obra (bruto),con,0.0000,146923.0000,-69812.0000,Madrid
+28,2012-2021,Censo,77111.0000,MIVAU fin de obra (bruto),con,0.1000,117966.4000,-40855.4000,Madrid
+28,2012-2021,Censo,77111.0000,MIVAU fin de obra (bruto),con,0.2000,89009.8000,-11898.8000,Madrid
+28,2012-2021,Censo,77111.0000,MIVAU fin de obra (bruto),sin,0.0000,96944.0000,-19833.0000,Madrid
+28,2012-2021,Censo,77111.0000,MIVAU fin de obra (bruto),sin,0.1000,67987.4000,9123.6000,Madrid
+28,2012-2021,Censo,77111.0000,MIVAU fin de obra (bruto),sin,0.2000,39030.8000,38080.2000,Madrid
+28,2012-2021,Censo,77111.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,165930.0000,-88819.0000,Madrid
+28,2022-2025,ECP,160280.0000,MIVAU fin de obra (bruto),con,0.0000,74657.0000,85623.0000,Madrid
+28,2022-2025,ECP,160280.0000,MIVAU fin de obra (bruto),con,0.1000,62829.2360,97450.7640,Madrid
+28,2022-2025,ECP,160280.0000,MIVAU fin de obra (bruto),con,0.2000,51001.4720,109278.5280,Madrid
+28,2022-2025,ECP,160280.0000,MIVAU fin de obra (bruto),sin,0.0000,58409.0000,101871.0000,Madrid
+28,2022-2025,ECP,160280.0000,MIVAU fin de obra (bruto),sin,0.1000,46581.2360,113698.7640,Madrid
+28,2022-2025,ECP,160280.0000,MIVAU fin de obra (bruto),sin,0.2000,34753.4720,125526.5280,Madrid
+28,2022-2025,ECP,160280.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,67007.0000,93273.0000,Madrid
+28,2012-2025,Censo+ECP,237391.0000,MIVAU fin de obra (bruto),con,0.0000,221580.0000,15811.0000,Madrid
+28,2012-2025,Censo+ECP,237391.0000,MIVAU fin de obra (bruto),con,0.1000,181040.7600,56350.2400,Madrid
+28,2012-2025,Censo+ECP,237391.0000,MIVAU fin de obra (bruto),con,0.2000,140501.5200,96889.4800,Madrid
+28,2012-2025,Censo+ECP,237391.0000,MIVAU fin de obra (bruto),sin,0.0000,155353.0000,82038.0000,Madrid
+28,2012-2025,Censo+ECP,237391.0000,MIVAU fin de obra (bruto),sin,0.1000,114813.7600,122577.2400,Madrid
+28,2012-2025,Censo+ECP,237391.0000,MIVAU fin de obra (bruto),sin,0.2000,74274.5200,163116.4800,Madrid
+28,2012-2025,Censo+ECP,237391.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,232937.0000,4454.0000,Madrid
+29,2012-2021,Censo,53984.0000,MIVAU fin de obra (bruto),con,0.0000,30531.0000,23453.0000,Málaga
+29,2012-2021,Censo,53984.0000,MIVAU fin de obra (bruto),con,0.1000,21554.5300,32429.4700,Málaga
+29,2012-2021,Censo,53984.0000,MIVAU fin de obra (bruto),con,0.2000,12578.0600,41405.9400,Málaga
+29,2012-2021,Censo,53984.0000,MIVAU fin de obra (bruto),sin,0.0000,29100.0000,24884.0000,Málaga
+29,2012-2021,Censo,53984.0000,MIVAU fin de obra (bruto),sin,0.1000,20123.5300,33860.4700,Málaga
+29,2012-2021,Censo,53984.0000,MIVAU fin de obra (bruto),sin,0.2000,11147.0600,42836.9400,Málaga
+29,2012-2021,Censo,53984.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,40124.0000,13860.0000,Málaga
+29,2022-2025,ECP,42341.0000,MIVAU fin de obra (bruto),con,0.0000,23006.0000,19335.0000,Málaga
+29,2022-2025,ECP,42341.0000,MIVAU fin de obra (bruto),con,0.1000,19019.7720,23321.2280,Málaga
+29,2022-2025,ECP,42341.0000,MIVAU fin de obra (bruto),con,0.2000,15033.5440,27307.4560,Málaga
+29,2022-2025,ECP,42341.0000,MIVAU fin de obra (bruto),sin,0.0000,22594.0000,19747.0000,Málaga
+29,2022-2025,ECP,42341.0000,MIVAU fin de obra (bruto),sin,0.1000,18607.7720,23733.2280,Málaga
+29,2022-2025,ECP,42341.0000,MIVAU fin de obra (bruto),sin,0.2000,14621.5440,27719.4560,Málaga
+29,2022-2025,ECP,42341.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,22213.0000,20128.0000,Málaga
+29,2012-2025,Censo+ECP,96325.0000,MIVAU fin de obra (bruto),con,0.0000,53537.0000,42788.0000,Málaga
+29,2012-2025,Censo+ECP,96325.0000,MIVAU fin de obra (bruto),con,0.1000,40969.9420,55355.0580,Málaga
+29,2012-2025,Censo+ECP,96325.0000,MIVAU fin de obra (bruto),con,0.2000,28402.8840,67922.1160,Málaga
+29,2012-2025,Censo+ECP,96325.0000,MIVAU fin de obra (bruto),sin,0.0000,51694.0000,44631.0000,Málaga
+29,2012-2025,Censo+ECP,96325.0000,MIVAU fin de obra (bruto),sin,0.1000,39126.9420,57198.0580,Málaga
+29,2012-2025,Censo+ECP,96325.0000,MIVAU fin de obra (bruto),sin,0.2000,26559.8840,69765.1160,Málaga
+29,2012-2025,Censo+ECP,96325.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,62337.0000,33988.0000,Málaga
+30,2012-2021,Censo,25130.0000,MIVAU fin de obra (bruto),con,0.0000,13243.0000,11887.0000,Murcia
+30,2012-2021,Censo,25130.0000,MIVAU fin de obra (bruto),con,0.1000,5474.4700,19655.5300,Murcia
+30,2012-2021,Censo,25130.0000,MIVAU fin de obra (bruto),con,0.2000,-2294.0600,27424.0600,Murcia
+30,2012-2021,Censo,25130.0000,MIVAU fin de obra (bruto),sin,0.0000,12349.0000,12781.0000,Murcia
+30,2012-2021,Censo,25130.0000,MIVAU fin de obra (bruto),sin,0.1000,4580.4700,20549.5300,Murcia
+30,2012-2021,Censo,25130.0000,MIVAU fin de obra (bruto),sin,0.2000,-3188.0600,28318.0600,Murcia
+30,2012-2021,Censo,25130.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,19862.0000,5268.0000,Murcia
+30,2022-2025,ECP,38788.0000,MIVAU fin de obra (bruto),con,0.0000,10308.0000,28480.0000,Murcia
+30,2022-2025,ECP,38788.0000,MIVAU fin de obra (bruto),con,0.1000,6931.6000,31856.4000,Murcia
+30,2022-2025,ECP,38788.0000,MIVAU fin de obra (bruto),con,0.2000,3555.2000,35232.8000,Murcia
+30,2022-2025,ECP,38788.0000,MIVAU fin de obra (bruto),sin,0.0000,10225.0000,28563.0000,Murcia
+30,2022-2025,ECP,38788.0000,MIVAU fin de obra (bruto),sin,0.1000,6848.6000,31939.4000,Murcia
+30,2022-2025,ECP,38788.0000,MIVAU fin de obra (bruto),sin,0.2000,3472.2000,35315.8000,Murcia
+30,2022-2025,ECP,38788.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,7680.0000,31108.0000,Murcia
+30,2012-2025,Censo+ECP,63918.0000,MIVAU fin de obra (bruto),con,0.0000,23551.0000,40367.0000,Murcia
+30,2012-2025,Censo+ECP,63918.0000,MIVAU fin de obra (bruto),con,0.1000,12675.0580,51242.9420,Murcia
+30,2012-2025,Censo+ECP,63918.0000,MIVAU fin de obra (bruto),con,0.2000,1799.1160,62118.8840,Murcia
+30,2012-2025,Censo+ECP,63918.0000,MIVAU fin de obra (bruto),sin,0.0000,22574.0000,41344.0000,Murcia
+30,2012-2025,Censo+ECP,63918.0000,MIVAU fin de obra (bruto),sin,0.1000,11698.0580,52219.9420,Murcia
+30,2012-2025,Censo+ECP,63918.0000,MIVAU fin de obra (bruto),sin,0.2000,822.1160,63095.8840,Murcia
+30,2012-2025,Censo+ECP,63918.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,27542.0000,36376.0000,Murcia
+31,2012-2021,Censo,7734.0000,MIVAU fin de obra (bruto),con,0.0000,18080.0000,-10346.0000,Navarra
+31,2012-2021,Censo,7734.0000,MIVAU fin de obra (bruto),con,0.1000,14992.0000,-7258.0000,Navarra
+31,2012-2021,Censo,7734.0000,MIVAU fin de obra (bruto),con,0.2000,11904.0000,-4170.0000,Navarra
+31,2012-2021,Censo,7734.0000,MIVAU fin de obra (bruto),sin,0.0000,11274.0000,-3540.0000,Navarra
+31,2012-2021,Censo,7734.0000,MIVAU fin de obra (bruto),sin,0.1000,8186.0000,-452.0000,Navarra
+31,2012-2021,Censo,7734.0000,MIVAU fin de obra (bruto),sin,0.2000,5098.0000,2636.0000,Navarra
+31,2022-2025,ECP,12421.0000,MIVAU fin de obra (bruto),con,0.0000,8861.0000,3560.0000,Navarra
+31,2022-2025,ECP,12421.0000,MIVAU fin de obra (bruto),con,0.1000,7536.5840,4884.4160,Navarra
+31,2022-2025,ECP,12421.0000,MIVAU fin de obra (bruto),con,0.2000,6212.1680,6208.8320,Navarra
+31,2022-2025,ECP,12421.0000,MIVAU fin de obra (bruto),sin,0.0000,7618.0000,4803.0000,Navarra
+31,2022-2025,ECP,12421.0000,MIVAU fin de obra (bruto),sin,0.1000,6293.5840,6127.4160,Navarra
+31,2022-2025,ECP,12421.0000,MIVAU fin de obra (bruto),sin,0.2000,4969.1680,7451.8320,Navarra
+31,2012-2025,Censo+ECP,20155.0000,MIVAU fin de obra (bruto),con,0.0000,26941.0000,-6786.0000,Navarra
+31,2012-2025,Censo+ECP,20155.0000,MIVAU fin de obra (bruto),con,0.1000,22617.8000,-2462.8000,Navarra
+31,2012-2025,Censo+ECP,20155.0000,MIVAU fin de obra (bruto),con,0.2000,18294.6000,1860.4000,Navarra
+31,2012-2025,Censo+ECP,20155.0000,MIVAU fin de obra (bruto),sin,0.0000,18892.0000,1263.0000,Navarra
+31,2012-2025,Censo+ECP,20155.0000,MIVAU fin de obra (bruto),sin,0.1000,14568.8000,5586.2000,Navarra
+31,2012-2025,Censo+ECP,20155.0000,MIVAU fin de obra (bruto),sin,0.2000,10245.6000,9909.4000,Navarra
+32,2012-2021,Censo,-354.0000,MIVAU fin de obra (bruto),con,0.0000,2670.0000,-3024.0000,Ourense
+32,2012-2021,Censo,-354.0000,MIVAU fin de obra (bruto),con,0.1000,209.2500,-563.2500,Ourense
+32,2012-2021,Censo,-354.0000,MIVAU fin de obra (bruto),con,0.2000,-2251.5000,1897.5000,Ourense
+32,2012-2021,Censo,-354.0000,MIVAU fin de obra (bruto),sin,0.0000,2625.0000,-2979.0000,Ourense
+32,2012-2021,Censo,-354.0000,MIVAU fin de obra (bruto),sin,0.1000,164.2500,-518.2500,Ourense
+32,2012-2021,Censo,-354.0000,MIVAU fin de obra (bruto),sin,0.2000,-2296.5000,1942.5000,Ourense
+32,2012-2021,Censo,-354.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,19234.0000,-19588.0000,Ourense
+32,2022-2025,ECP,3113.0000,MIVAU fin de obra (bruto),con,0.0000,937.0000,2176.0000,Ourense
+32,2022-2025,ECP,3113.0000,MIVAU fin de obra (bruto),con,0.1000,-154.5320,3267.5320,Ourense
+32,2022-2025,ECP,3113.0000,MIVAU fin de obra (bruto),con,0.2000,-1246.0640,4359.0640,Ourense
+32,2022-2025,ECP,3113.0000,MIVAU fin de obra (bruto),sin,0.0000,918.0000,2195.0000,Ourense
+32,2022-2025,ECP,3113.0000,MIVAU fin de obra (bruto),sin,0.1000,-173.5320,3286.5320,Ourense
+32,2022-2025,ECP,3113.0000,MIVAU fin de obra (bruto),sin,0.2000,-1265.0640,4378.0640,Ourense
+32,2022-2025,ECP,3113.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,278.0000,2835.0000,Ourense
+32,2012-2025,Censo+ECP,2759.0000,MIVAU fin de obra (bruto),con,0.0000,3607.0000,-848.0000,Ourense
+32,2012-2025,Censo+ECP,2759.0000,MIVAU fin de obra (bruto),con,0.1000,161.9500,2597.0500,Ourense
+32,2012-2025,Censo+ECP,2759.0000,MIVAU fin de obra (bruto),con,0.2000,-3283.1000,6042.1000,Ourense
+32,2012-2025,Censo+ECP,2759.0000,MIVAU fin de obra (bruto),sin,0.0000,3543.0000,-784.0000,Ourense
+32,2012-2025,Censo+ECP,2759.0000,MIVAU fin de obra (bruto),sin,0.1000,97.9500,2661.0500,Ourense
+32,2012-2025,Censo+ECP,2759.0000,MIVAU fin de obra (bruto),sin,0.2000,-3347.1000,6106.1000,Ourense
+32,2012-2025,Censo+ECP,2759.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,19512.0000,-16753.0000,Ourense
+33,2012-2021,Censo,-11229.0000,MIVAU fin de obra (bruto),con,0.0000,13294.0000,-24523.0000,Asturias
+33,2012-2021,Censo,-11229.0000,MIVAU fin de obra (bruto),con,0.1000,7152.3000,-18381.3000,Asturias
+33,2012-2021,Censo,-11229.0000,MIVAU fin de obra (bruto),con,0.2000,1010.6000,-12239.6000,Asturias
+33,2012-2021,Censo,-11229.0000,MIVAU fin de obra (bruto),sin,0.0000,11284.0000,-22513.0000,Asturias
+33,2012-2021,Censo,-11229.0000,MIVAU fin de obra (bruto),sin,0.1000,5142.3000,-16371.3000,Asturias
+33,2012-2021,Censo,-11229.0000,MIVAU fin de obra (bruto),sin,0.2000,-999.4000,-10229.6000,Asturias
+33,2012-2021,Censo,-11229.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,19283.0000,-30512.0000,Asturias
+33,2022-2025,ECP,11924.0000,MIVAU fin de obra (bruto),con,0.0000,7867.0000,4057.0000,Asturias
+33,2022-2025,ECP,11924.0000,MIVAU fin de obra (bruto),con,0.1000,5169.6320,6754.3680,Asturias
+33,2022-2025,ECP,11924.0000,MIVAU fin de obra (bruto),con,0.2000,2472.2640,9451.7360,Asturias
+33,2022-2025,ECP,11924.0000,MIVAU fin de obra (bruto),sin,0.0000,7179.0000,4745.0000,Asturias
+33,2022-2025,ECP,11924.0000,MIVAU fin de obra (bruto),sin,0.1000,4481.6320,7442.3680,Asturias
+33,2022-2025,ECP,11924.0000,MIVAU fin de obra (bruto),sin,0.2000,1784.2640,10139.7360,Asturias
+33,2022-2025,ECP,11924.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,8374.0000,3550.0000,Asturias
+33,2012-2025,Censo+ECP,695.0000,MIVAU fin de obra (bruto),con,0.0000,21161.0000,-20466.0000,Asturias
+33,2012-2025,Censo+ECP,695.0000,MIVAU fin de obra (bruto),con,0.1000,12562.6200,-11867.6200,Asturias
+33,2012-2025,Censo+ECP,695.0000,MIVAU fin de obra (bruto),con,0.2000,3964.2400,-3269.2400,Asturias
+33,2012-2025,Censo+ECP,695.0000,MIVAU fin de obra (bruto),sin,0.0000,18463.0000,-17768.0000,Asturias
+33,2012-2025,Censo+ECP,695.0000,MIVAU fin de obra (bruto),sin,0.1000,9864.6200,-9169.6200,Asturias
+33,2012-2025,Censo+ECP,695.0000,MIVAU fin de obra (bruto),sin,0.2000,1266.2400,-571.2400,Asturias
+33,2012-2025,Censo+ECP,695.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,27657.0000,-26962.0000,Asturias
+34,2012-2021,Censo,-843.0000,MIVAU fin de obra (bruto),con,0.0000,2657.0000,-3500.0000,Palencia
+34,2012-2021,Censo,-843.0000,MIVAU fin de obra (bruto),con,0.1000,1533.8800,-2376.8800,Palencia
+34,2012-2021,Censo,-843.0000,MIVAU fin de obra (bruto),con,0.2000,410.7600,-1253.7600,Palencia
+34,2012-2021,Censo,-843.0000,MIVAU fin de obra (bruto),sin,0.0000,2460.0000,-3303.0000,Palencia
+34,2012-2021,Censo,-843.0000,MIVAU fin de obra (bruto),sin,0.1000,1336.8800,-2179.8800,Palencia
+34,2012-2021,Censo,-843.0000,MIVAU fin de obra (bruto),sin,0.2000,213.7600,-1056.7600,Palencia
+34,2012-2021,Censo,-843.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,3025.0000,-3868.0000,Palencia
+34,2022-2025,ECP,1479.0000,MIVAU fin de obra (bruto),con,0.0000,1083.0000,396.0000,Palencia
+34,2022-2025,ECP,1479.0000,MIVAU fin de obra (bruto),con,0.1000,617.2760,861.7240,Palencia
+34,2022-2025,ECP,1479.0000,MIVAU fin de obra (bruto),con,0.2000,151.5520,1327.4480,Palencia
+34,2022-2025,ECP,1479.0000,MIVAU fin de obra (bruto),sin,0.0000,1000.0000,479.0000,Palencia
+34,2022-2025,ECP,1479.0000,MIVAU fin de obra (bruto),sin,0.1000,534.2760,944.7240,Palencia
+34,2022-2025,ECP,1479.0000,MIVAU fin de obra (bruto),sin,0.2000,68.5520,1410.4480,Palencia
+34,2022-2025,ECP,1479.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,229.0000,1250.0000,Palencia
+34,2012-2025,Censo+ECP,636.0000,MIVAU fin de obra (bruto),con,0.0000,3740.0000,-3104.0000,Palencia
+34,2012-2025,Censo+ECP,636.0000,MIVAU fin de obra (bruto),con,0.1000,2167.6320,-1531.6320,Palencia
+34,2012-2025,Censo+ECP,636.0000,MIVAU fin de obra (bruto),con,0.2000,595.2640,40.7360,Palencia
+34,2012-2025,Censo+ECP,636.0000,MIVAU fin de obra (bruto),sin,0.0000,3460.0000,-2824.0000,Palencia
+34,2012-2025,Censo+ECP,636.0000,MIVAU fin de obra (bruto),sin,0.1000,1887.6320,-1251.6320,Palencia
+34,2012-2025,Censo+ECP,636.0000,MIVAU fin de obra (bruto),sin,0.2000,315.2640,320.7360,Palencia
+34,2012-2025,Censo+ECP,636.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,3254.0000,-2618.0000,Palencia
+35,2012-2021,Censo,13560.0000,MIVAU fin de obra (bruto),con,0.0000,6276.0000,7284.0000,"Palmas, Las"
+35,2012-2021,Censo,13560.0000,MIVAU fin de obra (bruto),con,0.1000,954.1300,12605.8700,"Palmas, Las"
+35,2012-2021,Censo,13560.0000,MIVAU fin de obra (bruto),con,0.2000,-4367.7400,17927.7400,"Palmas, Las"
+35,2012-2021,Censo,13560.0000,MIVAU fin de obra (bruto),sin,0.0000,5713.0000,7847.0000,"Palmas, Las"
+35,2012-2021,Censo,13560.0000,MIVAU fin de obra (bruto),sin,0.1000,391.1300,13168.8700,"Palmas, Las"
+35,2012-2021,Censo,13560.0000,MIVAU fin de obra (bruto),sin,0.2000,-4930.7400,18490.7400,"Palmas, Las"
+35,2012-2021,Censo,13560.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,30601.0000,-17041.0000,"Palmas, Las"
+35,2022-2025,ECP,21934.0000,MIVAU fin de obra (bruto),con,0.0000,6152.0000,15782.0000,"Palmas, Las"
+35,2022-2025,ECP,21934.0000,MIVAU fin de obra (bruto),con,0.1000,3947.0520,17986.9480,"Palmas, Las"
+35,2022-2025,ECP,21934.0000,MIVAU fin de obra (bruto),con,0.2000,1742.1040,20191.8960,"Palmas, Las"
+35,2022-2025,ECP,21934.0000,MIVAU fin de obra (bruto),sin,0.0000,5956.0000,15978.0000,"Palmas, Las"
+35,2022-2025,ECP,21934.0000,MIVAU fin de obra (bruto),sin,0.1000,3751.0520,18182.9480,"Palmas, Las"
+35,2022-2025,ECP,21934.0000,MIVAU fin de obra (bruto),sin,0.2000,1546.1040,20387.8960,"Palmas, Las"
+35,2022-2025,ECP,21934.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,12337.0000,9597.0000,"Palmas, Las"
+35,2012-2025,Censo+ECP,35494.0000,MIVAU fin de obra (bruto),con,0.0000,12428.0000,23066.0000,"Palmas, Las"
+35,2012-2025,Censo+ECP,35494.0000,MIVAU fin de obra (bruto),con,0.1000,4977.3820,30516.6180,"Palmas, Las"
+35,2012-2025,Censo+ECP,35494.0000,MIVAU fin de obra (bruto),con,0.2000,-2473.2360,37967.2360,"Palmas, Las"
+35,2012-2025,Censo+ECP,35494.0000,MIVAU fin de obra (bruto),sin,0.0000,11669.0000,23825.0000,"Palmas, Las"
+35,2012-2025,Censo+ECP,35494.0000,MIVAU fin de obra (bruto),sin,0.1000,4218.3820,31275.6180,"Palmas, Las"
+35,2012-2025,Censo+ECP,35494.0000,MIVAU fin de obra (bruto),sin,0.2000,-3232.2360,38726.2360,"Palmas, Las"
+35,2012-2025,Censo+ECP,35494.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,42938.0000,-7444.0000,"Palmas, Las"
+36,2012-2021,Censo,17501.0000,MIVAU fin de obra (bruto),con,0.0000,8159.0000,9342.0000,Pontevedra
+36,2012-2021,Censo,17501.0000,MIVAU fin de obra (bruto),con,0.1000,3269.2200,14231.7800,Pontevedra
+36,2012-2021,Censo,17501.0000,MIVAU fin de obra (bruto),con,0.2000,-1620.5600,19121.5600,Pontevedra
+36,2012-2021,Censo,17501.0000,MIVAU fin de obra (bruto),sin,0.0000,7733.0000,9768.0000,Pontevedra
+36,2012-2021,Censo,17501.0000,MIVAU fin de obra (bruto),sin,0.1000,2843.2200,14657.7800,Pontevedra
+36,2012-2021,Censo,17501.0000,MIVAU fin de obra (bruto),sin,0.2000,-2046.5600,19547.5600,Pontevedra
+36,2012-2021,Censo,17501.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,20805.0000,-3304.0000,Pontevedra
+36,2022-2025,ECP,10001.0000,MIVAU fin de obra (bruto),con,0.0000,4354.0000,5647.0000,Pontevedra
+36,2022-2025,ECP,10001.0000,MIVAU fin de obra (bruto),con,0.1000,2238.6880,7762.3120,Pontevedra
+36,2022-2025,ECP,10001.0000,MIVAU fin de obra (bruto),con,0.2000,123.3760,9877.6240,Pontevedra
+36,2022-2025,ECP,10001.0000,MIVAU fin de obra (bruto),sin,0.0000,4319.0000,5682.0000,Pontevedra
+36,2022-2025,ECP,10001.0000,MIVAU fin de obra (bruto),sin,0.1000,2203.6880,7797.3120,Pontevedra
+36,2022-2025,ECP,10001.0000,MIVAU fin de obra (bruto),sin,0.2000,88.3760,9912.6240,Pontevedra
+36,2022-2025,ECP,10001.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,7650.0000,2351.0000,Pontevedra
+36,2012-2025,Censo+ECP,27502.0000,MIVAU fin de obra (bruto),con,0.0000,12513.0000,14989.0000,Pontevedra
+36,2012-2025,Censo+ECP,27502.0000,MIVAU fin de obra (bruto),con,0.1000,5667.3080,21834.6920,Pontevedra
+36,2012-2025,Censo+ECP,27502.0000,MIVAU fin de obra (bruto),con,0.2000,-1178.3840,28680.3840,Pontevedra
+36,2012-2025,Censo+ECP,27502.0000,MIVAU fin de obra (bruto),sin,0.0000,12052.0000,15450.0000,Pontevedra
+36,2012-2025,Censo+ECP,27502.0000,MIVAU fin de obra (bruto),sin,0.1000,5206.3080,22295.6920,Pontevedra
+36,2012-2025,Censo+ECP,27502.0000,MIVAU fin de obra (bruto),sin,0.2000,-1639.3840,29141.3840,Pontevedra
+36,2012-2025,Censo+ECP,27502.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,28455.0000,-953.0000,Pontevedra
+37,2012-2021,Censo,-481.0000,MIVAU fin de obra (bruto),con,0.0000,4892.0000,-5373.0000,Salamanca
+37,2012-2021,Censo,-481.0000,MIVAU fin de obra (bruto),con,0.1000,2521.7600,-3002.7600,Salamanca
+37,2012-2021,Censo,-481.0000,MIVAU fin de obra (bruto),con,0.2000,151.5200,-632.5200,Salamanca
+37,2012-2021,Censo,-481.0000,MIVAU fin de obra (bruto),sin,0.0000,4209.0000,-4690.0000,Salamanca
+37,2012-2021,Censo,-481.0000,MIVAU fin de obra (bruto),sin,0.1000,1838.7600,-2319.7600,Salamanca
+37,2012-2021,Censo,-481.0000,MIVAU fin de obra (bruto),sin,0.2000,-531.4800,50.4800,Salamanca
+37,2012-2021,Censo,-481.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,3951.0000,-4432.0000,Salamanca
+37,2022-2025,ECP,4948.0000,MIVAU fin de obra (bruto),con,0.0000,1702.0000,3246.0000,Salamanca
+37,2022-2025,ECP,4948.0000,MIVAU fin de obra (bruto),con,0.1000,717.5080,4230.4920,Salamanca
+37,2022-2025,ECP,4948.0000,MIVAU fin de obra (bruto),con,0.2000,-266.9840,5214.9840,Salamanca
+37,2022-2025,ECP,4948.0000,MIVAU fin de obra (bruto),sin,0.0000,1562.0000,3386.0000,Salamanca
+37,2022-2025,ECP,4948.0000,MIVAU fin de obra (bruto),sin,0.1000,577.5080,4370.4920,Salamanca
+37,2022-2025,ECP,4948.0000,MIVAU fin de obra (bruto),sin,0.2000,-406.9840,5354.9840,Salamanca
+37,2022-2025,ECP,4948.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,2121.0000,2827.0000,Salamanca
+37,2012-2025,Censo+ECP,4467.0000,MIVAU fin de obra (bruto),con,0.0000,6594.0000,-2127.0000,Salamanca
+37,2012-2025,Censo+ECP,4467.0000,MIVAU fin de obra (bruto),con,0.1000,3275.6640,1191.3360,Salamanca
+37,2012-2025,Censo+ECP,4467.0000,MIVAU fin de obra (bruto),con,0.2000,-42.6720,4509.6720,Salamanca
+37,2012-2025,Censo+ECP,4467.0000,MIVAU fin de obra (bruto),sin,0.0000,5771.0000,-1304.0000,Salamanca
+37,2012-2025,Censo+ECP,4467.0000,MIVAU fin de obra (bruto),sin,0.1000,2452.6640,2014.3360,Salamanca
+37,2012-2025,Censo+ECP,4467.0000,MIVAU fin de obra (bruto),sin,0.2000,-865.6720,5332.6720,Salamanca
+37,2012-2025,Censo+ECP,4467.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,6072.0000,-1605.0000,Salamanca
+38,2012-2021,Censo,16802.0000,MIVAU fin de obra (bruto),con,0.0000,10621.0000,6181.0000,Santa Cruz de Tenerife
+38,2012-2021,Censo,16802.0000,MIVAU fin de obra (bruto),con,0.1000,5530.8000,11271.2000,Santa Cruz de Tenerife
+38,2012-2021,Censo,16802.0000,MIVAU fin de obra (bruto),con,0.2000,440.6000,16361.4000,Santa Cruz de Tenerife
+38,2012-2021,Censo,16802.0000,MIVAU fin de obra (bruto),sin,0.0000,9648.0000,7154.0000,Santa Cruz de Tenerife
+38,2012-2021,Censo,16802.0000,MIVAU fin de obra (bruto),sin,0.1000,4557.8000,12244.2000,Santa Cruz de Tenerife
+38,2012-2021,Censo,16802.0000,MIVAU fin de obra (bruto),sin,0.2000,-532.4000,17334.4000,Santa Cruz de Tenerife
+38,2012-2021,Censo,16802.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,29852.0000,-13050.0000,Santa Cruz de Tenerife
+38,2022-2025,ECP,18247.0000,MIVAU fin de obra (bruto),con,0.0000,4778.0000,13469.0000,Santa Cruz de Tenerife
+38,2022-2025,ECP,18247.0000,MIVAU fin de obra (bruto),con,0.1000,2628.1480,15618.8520,Santa Cruz de Tenerife
+38,2022-2025,ECP,18247.0000,MIVAU fin de obra (bruto),con,0.2000,478.2960,17768.7040,Santa Cruz de Tenerife
+38,2022-2025,ECP,18247.0000,MIVAU fin de obra (bruto),sin,0.0000,4766.0000,13481.0000,Santa Cruz de Tenerife
+38,2022-2025,ECP,18247.0000,MIVAU fin de obra (bruto),sin,0.1000,2616.1480,15630.8520,Santa Cruz de Tenerife
+38,2022-2025,ECP,18247.0000,MIVAU fin de obra (bruto),sin,0.2000,466.2960,17780.7040,Santa Cruz de Tenerife
+38,2022-2025,ECP,18247.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,7974.0000,10273.0000,Santa Cruz de Tenerife
+38,2012-2025,Censo+ECP,35049.0000,MIVAU fin de obra (bruto),con,0.0000,15399.0000,19650.0000,Santa Cruz de Tenerife
+38,2012-2025,Censo+ECP,35049.0000,MIVAU fin de obra (bruto),con,0.1000,8272.7200,26776.2800,Santa Cruz de Tenerife
+38,2012-2025,Censo+ECP,35049.0000,MIVAU fin de obra (bruto),con,0.2000,1146.4400,33902.5600,Santa Cruz de Tenerife
+38,2012-2025,Censo+ECP,35049.0000,MIVAU fin de obra (bruto),sin,0.0000,14414.0000,20635.0000,Santa Cruz de Tenerife
+38,2012-2025,Censo+ECP,35049.0000,MIVAU fin de obra (bruto),sin,0.1000,7287.7200,27761.2800,Santa Cruz de Tenerife
+38,2012-2025,Censo+ECP,35049.0000,MIVAU fin de obra (bruto),sin,0.2000,161.4400,34887.5600,Santa Cruz de Tenerife
+38,2012-2025,Censo+ECP,35049.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,37826.0000,-2777.0000,Santa Cruz de Tenerife
+39,2012-2021,Censo,1487.0000,MIVAU fin de obra (bruto),con,0.0000,8238.0000,-6751.0000,Cantabria
+39,2012-2021,Censo,1487.0000,MIVAU fin de obra (bruto),con,0.1000,4651.8200,-3164.8200,Cantabria
+39,2012-2021,Censo,1487.0000,MIVAU fin de obra (bruto),con,0.2000,1065.6400,421.3600,Cantabria
+39,2012-2021,Censo,1487.0000,MIVAU fin de obra (bruto),sin,0.0000,7070.0000,-5583.0000,Cantabria
+39,2012-2021,Censo,1487.0000,MIVAU fin de obra (bruto),sin,0.1000,3483.8200,-1996.8200,Cantabria
+39,2012-2021,Censo,1487.0000,MIVAU fin de obra (bruto),sin,0.2000,-102.3600,1589.3600,Cantabria
+39,2012-2021,Censo,1487.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,5725.0000,-4238.0000,Cantabria
+39,2022-2025,ECP,8423.0000,MIVAU fin de obra (bruto),con,0.0000,4056.0000,4367.0000,Cantabria
+39,2022-2025,ECP,8423.0000,MIVAU fin de obra (bruto),con,0.1000,2521.4320,5901.5680,Cantabria
+39,2022-2025,ECP,8423.0000,MIVAU fin de obra (bruto),con,0.2000,986.8640,7436.1360,Cantabria
+39,2022-2025,ECP,8423.0000,MIVAU fin de obra (bruto),sin,0.0000,4056.0000,4367.0000,Cantabria
+39,2022-2025,ECP,8423.0000,MIVAU fin de obra (bruto),sin,0.1000,2521.4320,5901.5680,Cantabria
+39,2022-2025,ECP,8423.0000,MIVAU fin de obra (bruto),sin,0.2000,986.8640,7436.1360,Cantabria
+39,2022-2025,ECP,8423.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,2961.0000,5462.0000,Cantabria
+39,2012-2025,Censo+ECP,9910.0000,MIVAU fin de obra (bruto),con,0.0000,12294.0000,-2384.0000,Cantabria
+39,2012-2025,Censo+ECP,9910.0000,MIVAU fin de obra (bruto),con,0.1000,7273.3480,2636.6520,Cantabria
+39,2012-2025,Censo+ECP,9910.0000,MIVAU fin de obra (bruto),con,0.2000,2252.6960,7657.3040,Cantabria
+39,2012-2025,Censo+ECP,9910.0000,MIVAU fin de obra (bruto),sin,0.0000,11126.0000,-1216.0000,Cantabria
+39,2012-2025,Censo+ECP,9910.0000,MIVAU fin de obra (bruto),sin,0.1000,6105.3480,3804.6520,Cantabria
+39,2012-2025,Censo+ECP,9910.0000,MIVAU fin de obra (bruto),sin,0.2000,1084.6960,8825.3040,Cantabria
+39,2012-2025,Censo+ECP,9910.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,8686.0000,1224.0000,Cantabria
+40,2012-2021,Censo,-904.0000,MIVAU fin de obra (bruto),con,0.0000,4598.0000,-5502.0000,Segovia
+40,2012-2021,Censo,-904.0000,MIVAU fin de obra (bruto),con,0.1000,3356.5200,-4260.5200,Segovia
+40,2012-2021,Censo,-904.0000,MIVAU fin de obra (bruto),con,0.2000,2115.0400,-3019.0400,Segovia
+40,2012-2021,Censo,-904.0000,MIVAU fin de obra (bruto),sin,0.0000,4222.0000,-5126.0000,Segovia
+40,2012-2021,Censo,-904.0000,MIVAU fin de obra (bruto),sin,0.1000,2980.5200,-3884.5200,Segovia
+40,2012-2021,Censo,-904.0000,MIVAU fin de obra (bruto),sin,0.2000,1739.0400,-2643.0400,Segovia
+40,2012-2021,Censo,-904.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,5927.0000,-6831.0000,Segovia
+40,2022-2025,ECP,3042.0000,MIVAU fin de obra (bruto),con,0.0000,1114.0000,1928.0000,Segovia
+40,2022-2025,ECP,3042.0000,MIVAU fin de obra (bruto),con,0.1000,600.9800,2441.0200,Segovia
+40,2022-2025,ECP,3042.0000,MIVAU fin de obra (bruto),con,0.2000,87.9600,2954.0400,Segovia
+40,2022-2025,ECP,3042.0000,MIVAU fin de obra (bruto),sin,0.0000,1066.0000,1976.0000,Segovia
+40,2022-2025,ECP,3042.0000,MIVAU fin de obra (bruto),sin,0.1000,552.9800,2489.0200,Segovia
+40,2022-2025,ECP,3042.0000,MIVAU fin de obra (bruto),sin,0.2000,39.9600,3002.0400,Segovia
+40,2022-2025,ECP,3042.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,1603.0000,1439.0000,Segovia
+40,2012-2025,Censo+ECP,2138.0000,MIVAU fin de obra (bruto),con,0.0000,5712.0000,-3574.0000,Segovia
+40,2012-2025,Censo+ECP,2138.0000,MIVAU fin de obra (bruto),con,0.1000,3973.9280,-1835.9280,Segovia
+40,2012-2025,Censo+ECP,2138.0000,MIVAU fin de obra (bruto),con,0.2000,2235.8560,-97.8560,Segovia
+40,2012-2025,Censo+ECP,2138.0000,MIVAU fin de obra (bruto),sin,0.0000,5288.0000,-3150.0000,Segovia
+40,2012-2025,Censo+ECP,2138.0000,MIVAU fin de obra (bruto),sin,0.1000,3549.9280,-1411.9280,Segovia
+40,2012-2025,Censo+ECP,2138.0000,MIVAU fin de obra (bruto),sin,0.2000,1811.8560,326.1440,Segovia
+40,2012-2025,Censo+ECP,2138.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,7530.0000,-5392.0000,Segovia
+41,2012-2021,Censo,24225.0000,MIVAU fin de obra (bruto),con,0.0000,29300.0000,-5075.0000,Sevilla
+41,2012-2021,Censo,24225.0000,MIVAU fin de obra (bruto),con,0.1000,20475.6600,3749.3400,Sevilla
+41,2012-2021,Censo,24225.0000,MIVAU fin de obra (bruto),con,0.2000,11651.3200,12573.6800,Sevilla
+41,2012-2021,Censo,24225.0000,MIVAU fin de obra (bruto),sin,0.0000,21830.0000,2395.0000,Sevilla
+41,2012-2021,Censo,24225.0000,MIVAU fin de obra (bruto),sin,0.1000,13005.6600,11219.3400,Sevilla
+41,2012-2021,Censo,24225.0000,MIVAU fin de obra (bruto),sin,0.2000,4181.3200,20043.6800,Sevilla
+41,2012-2021,Censo,24225.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,45903.0000,-21678.0000,Sevilla
+41,2022-2025,ECP,32055.0000,MIVAU fin de obra (bruto),con,0.0000,20153.0000,11902.0000,Sevilla
+41,2022-2025,ECP,32055.0000,MIVAU fin de obra (bruto),con,0.1000,16501.4040,15553.5960,Sevilla
+41,2022-2025,ECP,32055.0000,MIVAU fin de obra (bruto),con,0.2000,12849.8080,19205.1920,Sevilla
+41,2022-2025,ECP,32055.0000,MIVAU fin de obra (bruto),sin,0.0000,18088.0000,13967.0000,Sevilla
+41,2022-2025,ECP,32055.0000,MIVAU fin de obra (bruto),sin,0.1000,14436.4040,17618.5960,Sevilla
+41,2022-2025,ECP,32055.0000,MIVAU fin de obra (bruto),sin,0.2000,10784.8080,21270.1920,Sevilla
+41,2022-2025,ECP,32055.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,18663.0000,13392.0000,Sevilla
+41,2012-2025,Censo+ECP,56280.0000,MIVAU fin de obra (bruto),con,0.0000,49453.0000,6827.0000,Sevilla
+41,2012-2025,Censo+ECP,56280.0000,MIVAU fin de obra (bruto),con,0.1000,37098.9240,19181.0760,Sevilla
+41,2012-2025,Censo+ECP,56280.0000,MIVAU fin de obra (bruto),con,0.2000,24744.8480,31535.1520,Sevilla
+41,2012-2025,Censo+ECP,56280.0000,MIVAU fin de obra (bruto),sin,0.0000,39918.0000,16362.0000,Sevilla
+41,2012-2025,Censo+ECP,56280.0000,MIVAU fin de obra (bruto),sin,0.1000,27563.9240,28716.0760,Sevilla
+41,2012-2025,Censo+ECP,56280.0000,MIVAU fin de obra (bruto),sin,0.2000,15209.8480,41070.1520,Sevilla
+41,2012-2025,Censo+ECP,56280.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,64566.0000,-8286.0000,Sevilla
+42,2012-2021,Censo,-302.0000,MIVAU fin de obra (bruto),con,0.0000,3741.0000,-4043.0000,Soria
+42,2012-2021,Censo,-302.0000,MIVAU fin de obra (bruto),con,0.1000,2973.8600,-3275.8600,Soria
+42,2012-2021,Censo,-302.0000,MIVAU fin de obra (bruto),con,0.2000,2206.7200,-2508.7200,Soria
+42,2012-2021,Censo,-302.0000,MIVAU fin de obra (bruto),sin,0.0000,3400.0000,-3702.0000,Soria
+42,2012-2021,Censo,-302.0000,MIVAU fin de obra (bruto),sin,0.1000,2632.8600,-2934.8600,Soria
+42,2012-2021,Censo,-302.0000,MIVAU fin de obra (bruto),sin,0.2000,1865.7200,-2167.7200,Soria
+42,2012-2021,Censo,-302.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,3521.0000,-3823.0000,Soria
+42,2022-2025,ECP,1370.0000,MIVAU fin de obra (bruto),con,0.0000,1728.0000,-358.0000,Soria
+42,2022-2025,ECP,1370.0000,MIVAU fin de obra (bruto),con,0.1000,1390.9800,-20.9800,Soria
+42,2022-2025,ECP,1370.0000,MIVAU fin de obra (bruto),con,0.2000,1053.9600,316.0400,Soria
+42,2022-2025,ECP,1370.0000,MIVAU fin de obra (bruto),sin,0.0000,1695.0000,-325.0000,Soria
+42,2022-2025,ECP,1370.0000,MIVAU fin de obra (bruto),sin,0.1000,1357.9800,12.0200,Soria
+42,2022-2025,ECP,1370.0000,MIVAU fin de obra (bruto),sin,0.2000,1020.9600,349.0400,Soria
+42,2022-2025,ECP,1370.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,943.0000,427.0000,Soria
+42,2012-2025,Censo+ECP,1068.0000,MIVAU fin de obra (bruto),con,0.0000,5469.0000,-4401.0000,Soria
+42,2012-2025,Censo+ECP,1068.0000,MIVAU fin de obra (bruto),con,0.1000,4395.0040,-3327.0040,Soria
+42,2012-2025,Censo+ECP,1068.0000,MIVAU fin de obra (bruto),con,0.2000,3321.0080,-2253.0080,Soria
+42,2012-2025,Censo+ECP,1068.0000,MIVAU fin de obra (bruto),sin,0.0000,5095.0000,-4027.0000,Soria
+42,2012-2025,Censo+ECP,1068.0000,MIVAU fin de obra (bruto),sin,0.1000,4021.0040,-2953.0040,Soria
+42,2012-2025,Censo+ECP,1068.0000,MIVAU fin de obra (bruto),sin,0.2000,2947.0080,-1879.0080,Soria
+42,2012-2025,Censo+ECP,1068.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,4464.0000,-3396.0000,Soria
+43,2012-2021,Censo,9741.0000,MIVAU fin de obra (bruto),con,0.0000,7393.0000,2348.0000,Tarragona
+43,2012-2021,Censo,9741.0000,MIVAU fin de obra (bruto),con,0.1000,2129.0100,7611.9900,Tarragona
+43,2012-2021,Censo,9741.0000,MIVAU fin de obra (bruto),con,0.2000,-3134.9800,12875.9800,Tarragona
+43,2012-2021,Censo,9741.0000,MIVAU fin de obra (bruto),sin,0.0000,6839.0000,2902.0000,Tarragona
+43,2012-2021,Censo,9741.0000,MIVAU fin de obra (bruto),sin,0.1000,1575.0100,8165.9900,Tarragona
+43,2012-2021,Censo,9741.0000,MIVAU fin de obra (bruto),sin,0.2000,-3688.9800,13429.9800,Tarragona
+43,2012-2021,Censo,9741.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,22351.0000,-12610.0000,Tarragona
+43,2022-2025,ECP,26411.0000,MIVAU fin de obra (bruto),con,0.0000,3872.0000,22539.0000,Tarragona
+43,2022-2025,ECP,26411.0000,MIVAU fin de obra (bruto),con,0.1000,1653.6840,24757.3160,Tarragona
+43,2022-2025,ECP,26411.0000,MIVAU fin de obra (bruto),con,0.2000,-564.6320,26975.6320,Tarragona
+43,2022-2025,ECP,26411.0000,MIVAU fin de obra (bruto),sin,0.0000,3559.0000,22852.0000,Tarragona
+43,2022-2025,ECP,26411.0000,MIVAU fin de obra (bruto),sin,0.1000,1340.6840,25070.3160,Tarragona
+43,2022-2025,ECP,26411.0000,MIVAU fin de obra (bruto),sin,0.2000,-877.6320,27288.6320,Tarragona
+43,2022-2025,ECP,26411.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,5501.0000,20910.0000,Tarragona
+43,2012-2025,Censo+ECP,36152.0000,MIVAU fin de obra (bruto),con,0.0000,11265.0000,24887.0000,Tarragona
+43,2012-2025,Censo+ECP,36152.0000,MIVAU fin de obra (bruto),con,0.1000,3895.4140,32256.5860,Tarragona
+43,2012-2025,Censo+ECP,36152.0000,MIVAU fin de obra (bruto),con,0.2000,-3474.1720,39626.1720,Tarragona
+43,2012-2025,Censo+ECP,36152.0000,MIVAU fin de obra (bruto),sin,0.0000,10398.0000,25754.0000,Tarragona
+43,2012-2025,Censo+ECP,36152.0000,MIVAU fin de obra (bruto),sin,0.1000,3028.4140,33123.5860,Tarragona
+43,2012-2025,Censo+ECP,36152.0000,MIVAU fin de obra (bruto),sin,0.2000,-4341.1720,40493.1720,Tarragona
+43,2012-2025,Censo+ECP,36152.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,27852.0000,8300.0000,Tarragona
+44,2012-2021,Censo,-1484.0000,MIVAU fin de obra (bruto),con,0.0000,3908.0000,-5392.0000,Teruel
+44,2012-2021,Censo,-1484.0000,MIVAU fin de obra (bruto),con,0.1000,2785.6000,-4269.6000,Teruel
+44,2012-2021,Censo,-1484.0000,MIVAU fin de obra (bruto),con,0.2000,1663.2000,-3147.2000,Teruel
+44,2012-2021,Censo,-1484.0000,MIVAU fin de obra (bruto),sin,0.0000,3283.0000,-4767.0000,Teruel
+44,2012-2021,Censo,-1484.0000,MIVAU fin de obra (bruto),sin,0.1000,2160.6000,-3644.6000,Teruel
+44,2012-2021,Censo,-1484.0000,MIVAU fin de obra (bruto),sin,0.2000,1038.2000,-2522.2000,Teruel
+44,2012-2021,Censo,-1484.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,6571.0000,-8055.0000,Teruel
+44,2022-2025,ECP,1761.0000,MIVAU fin de obra (bruto),con,0.0000,1186.0000,575.0000,Teruel
+44,2022-2025,ECP,1761.0000,MIVAU fin de obra (bruto),con,0.1000,683.1560,1077.8440,Teruel
+44,2022-2025,ECP,1761.0000,MIVAU fin de obra (bruto),con,0.2000,180.3120,1580.6880,Teruel
+44,2022-2025,ECP,1761.0000,MIVAU fin de obra (bruto),sin,0.0000,1186.0000,575.0000,Teruel
+44,2022-2025,ECP,1761.0000,MIVAU fin de obra (bruto),sin,0.1000,683.1560,1077.8440,Teruel
+44,2022-2025,ECP,1761.0000,MIVAU fin de obra (bruto),sin,0.2000,180.3120,1580.6880,Teruel
+44,2022-2025,ECP,1761.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,484.0000,1277.0000,Teruel
+44,2012-2025,Censo+ECP,277.0000,MIVAU fin de obra (bruto),con,0.0000,5094.0000,-4817.0000,Teruel
+44,2012-2025,Censo+ECP,277.0000,MIVAU fin de obra (bruto),con,0.1000,3522.6400,-3245.6400,Teruel
+44,2012-2025,Censo+ECP,277.0000,MIVAU fin de obra (bruto),con,0.2000,1951.2800,-1674.2800,Teruel
+44,2012-2025,Censo+ECP,277.0000,MIVAU fin de obra (bruto),sin,0.0000,4469.0000,-4192.0000,Teruel
+44,2012-2025,Censo+ECP,277.0000,MIVAU fin de obra (bruto),sin,0.1000,2897.6400,-2620.6400,Teruel
+44,2012-2025,Censo+ECP,277.0000,MIVAU fin de obra (bruto),sin,0.2000,1326.2800,-1049.2800,Teruel
+44,2012-2025,Censo+ECP,277.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,7055.0000,-6778.0000,Teruel
+45,2012-2021,Censo,11517.0000,MIVAU fin de obra (bruto),con,0.0000,13132.0000,-1615.0000,Toledo
+45,2012-2021,Censo,11517.0000,MIVAU fin de obra (bruto),con,0.1000,8994.6400,2522.3600,Toledo
+45,2012-2021,Censo,11517.0000,MIVAU fin de obra (bruto),con,0.2000,4857.2800,6659.7200,Toledo
+45,2012-2021,Censo,11517.0000,MIVAU fin de obra (bruto),sin,0.0000,11697.0000,-180.0000,Toledo
+45,2012-2021,Censo,11517.0000,MIVAU fin de obra (bruto),sin,0.1000,7559.6400,3957.3600,Toledo
+45,2012-2021,Censo,11517.0000,MIVAU fin de obra (bruto),sin,0.2000,3422.2800,8094.7200,Toledo
+45,2012-2021,Censo,11517.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,26807.0000,-15290.0000,Toledo
+45,2022-2025,ECP,21304.0000,MIVAU fin de obra (bruto),con,0.0000,5781.0000,15523.0000,Toledo
+45,2022-2025,ECP,21304.0000,MIVAU fin de obra (bruto),con,0.1000,4023.4600,17280.5400,Toledo
+45,2022-2025,ECP,21304.0000,MIVAU fin de obra (bruto),con,0.2000,2265.9200,19038.0800,Toledo
+45,2022-2025,ECP,21304.0000,MIVAU fin de obra (bruto),sin,0.0000,5504.0000,15800.0000,Toledo
+45,2022-2025,ECP,21304.0000,MIVAU fin de obra (bruto),sin,0.1000,3746.4600,17557.5400,Toledo
+45,2022-2025,ECP,21304.0000,MIVAU fin de obra (bruto),sin,0.2000,1988.9200,19315.0800,Toledo
+45,2022-2025,ECP,21304.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,4890.0000,16414.0000,Toledo
+45,2012-2025,Censo+ECP,32821.0000,MIVAU fin de obra (bruto),con,0.0000,18913.0000,13908.0000,Toledo
+45,2012-2025,Censo+ECP,32821.0000,MIVAU fin de obra (bruto),con,0.1000,13120.6960,19700.3040,Toledo
+45,2012-2025,Censo+ECP,32821.0000,MIVAU fin de obra (bruto),con,0.2000,7328.3920,25492.6080,Toledo
+45,2012-2025,Censo+ECP,32821.0000,MIVAU fin de obra (bruto),sin,0.0000,17201.0000,15620.0000,Toledo
+45,2012-2025,Censo+ECP,32821.0000,MIVAU fin de obra (bruto),sin,0.1000,11408.6960,21412.3040,Toledo
+45,2012-2025,Censo+ECP,32821.0000,MIVAU fin de obra (bruto),sin,0.2000,5616.3920,27204.6080,Toledo
+45,2012-2025,Censo+ECP,32821.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,31697.0000,1124.0000,Toledo
+46,2012-2021,Censo,15413.0000,MIVAU fin de obra (bruto),con,0.0000,21918.0000,-6505.0000,Valencia/València
+46,2012-2021,Censo,15413.0000,MIVAU fin de obra (bruto),con,0.1000,7389.6200,8023.3800,Valencia/València
+46,2012-2021,Censo,15413.0000,MIVAU fin de obra (bruto),con,0.2000,-7138.7600,22551.7600,Valencia/València
+46,2012-2021,Censo,15413.0000,MIVAU fin de obra (bruto),sin,0.0000,18720.0000,-3307.0000,Valencia/València
+46,2012-2021,Censo,15413.0000,MIVAU fin de obra (bruto),sin,0.1000,4191.6200,11221.3800,Valencia/València
+46,2012-2021,Censo,15413.0000,MIVAU fin de obra (bruto),sin,0.2000,-10336.7600,25749.7600,Valencia/València
+46,2012-2021,Censo,15413.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,30343.0000,-14930.0000,Valencia/València
+46,2022-2025,ECP,71759.0000,MIVAU fin de obra (bruto),con,0.0000,14562.0000,57197.0000,Valencia/València
+46,2022-2025,ECP,71759.0000,MIVAU fin de obra (bruto),con,0.1000,8606.3680,63152.6320,Valencia/València
+46,2022-2025,ECP,71759.0000,MIVAU fin de obra (bruto),con,0.2000,2650.7360,69108.2640,Valencia/València
+46,2022-2025,ECP,71759.0000,MIVAU fin de obra (bruto),sin,0.0000,13117.0000,58642.0000,Valencia/València
+46,2022-2025,ECP,71759.0000,MIVAU fin de obra (bruto),sin,0.1000,7161.3680,64597.6320,Valencia/València
+46,2022-2025,ECP,71759.0000,MIVAU fin de obra (bruto),sin,0.2000,1205.7360,70553.2640,Valencia/València
+46,2022-2025,ECP,71759.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,20013.0000,51746.0000,Valencia/València
+46,2012-2025,Censo+ECP,87172.0000,MIVAU fin de obra (bruto),con,0.0000,36480.0000,50692.0000,Valencia/València
+46,2012-2025,Censo+ECP,87172.0000,MIVAU fin de obra (bruto),con,0.1000,16140.2680,71031.7320,Valencia/València
+46,2012-2025,Censo+ECP,87172.0000,MIVAU fin de obra (bruto),con,0.2000,-4199.4640,91371.4640,Valencia/València
+46,2012-2025,Censo+ECP,87172.0000,MIVAU fin de obra (bruto),sin,0.0000,31837.0000,55335.0000,Valencia/València
+46,2012-2025,Censo+ECP,87172.0000,MIVAU fin de obra (bruto),sin,0.1000,11497.2680,75674.7320,Valencia/València
+46,2012-2025,Censo+ECP,87172.0000,MIVAU fin de obra (bruto),sin,0.2000,-8842.4640,96014.4640,Valencia/València
+46,2012-2025,Censo+ECP,87172.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,50356.0000,36816.0000,Valencia/València
+47,2012-2021,Censo,279.0000,MIVAU fin de obra (bruto),con,0.0000,6216.0000,-5937.0000,Valladolid
+47,2012-2021,Censo,279.0000,MIVAU fin de obra (bruto),con,0.1000,3334.7600,-3055.7600,Valladolid
+47,2012-2021,Censo,279.0000,MIVAU fin de obra (bruto),con,0.2000,453.5200,-174.5200,Valladolid
+47,2012-2021,Censo,279.0000,MIVAU fin de obra (bruto),sin,0.0000,5572.0000,-5293.0000,Valladolid
+47,2012-2021,Censo,279.0000,MIVAU fin de obra (bruto),sin,0.1000,2690.7600,-2411.7600,Valladolid
+47,2012-2021,Censo,279.0000,MIVAU fin de obra (bruto),sin,0.2000,-190.4800,469.4800,Valladolid
+47,2012-2021,Censo,279.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,7413.0000,-7134.0000,Valladolid
+47,2022-2025,ECP,9878.0000,MIVAU fin de obra (bruto),con,0.0000,5155.0000,4723.0000,Valladolid
+47,2022-2025,ECP,9878.0000,MIVAU fin de obra (bruto),con,0.1000,3967.3600,5910.6400,Valladolid
+47,2022-2025,ECP,9878.0000,MIVAU fin de obra (bruto),con,0.2000,2779.7200,7098.2800,Valladolid
+47,2022-2025,ECP,9878.0000,MIVAU fin de obra (bruto),sin,0.0000,4818.0000,5060.0000,Valladolid
+47,2022-2025,ECP,9878.0000,MIVAU fin de obra (bruto),sin,0.1000,3630.3600,6247.6400,Valladolid
+47,2022-2025,ECP,9878.0000,MIVAU fin de obra (bruto),sin,0.2000,2442.7200,7435.2800,Valladolid
+47,2022-2025,ECP,9878.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,5973.0000,3905.0000,Valladolid
+47,2012-2025,Censo+ECP,10157.0000,MIVAU fin de obra (bruto),con,0.0000,11371.0000,-1214.0000,Valladolid
+47,2012-2025,Censo+ECP,10157.0000,MIVAU fin de obra (bruto),con,0.1000,7337.2640,2819.7360,Valladolid
+47,2012-2025,Censo+ECP,10157.0000,MIVAU fin de obra (bruto),con,0.2000,3303.5280,6853.4720,Valladolid
+47,2012-2025,Censo+ECP,10157.0000,MIVAU fin de obra (bruto),sin,0.0000,10390.0000,-233.0000,Valladolid
+47,2012-2025,Censo+ECP,10157.0000,MIVAU fin de obra (bruto),sin,0.1000,6356.2640,3800.7360,Valladolid
+47,2012-2025,Censo+ECP,10157.0000,MIVAU fin de obra (bruto),sin,0.2000,2322.5280,7834.4720,Valladolid
+47,2012-2025,Censo+ECP,10157.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,13386.0000,-3229.0000,Valladolid
+48,2012-2021,Censo,13581.0000,MIVAU fin de obra (bruto),con,0.0000,23571.0000,-9990.0000,Bizkaia
+48,2012-2021,Censo,13581.0000,MIVAU fin de obra (bruto),con,0.1000,18229.4000,-4648.4000,Bizkaia
+48,2012-2021,Censo,13581.0000,MIVAU fin de obra (bruto),con,0.2000,12887.8000,693.2000,Bizkaia
+48,2012-2021,Censo,13581.0000,MIVAU fin de obra (bruto),sin,0.0000,15472.0000,-1891.0000,Bizkaia
+48,2012-2021,Censo,13581.0000,MIVAU fin de obra (bruto),sin,0.1000,10130.4000,3450.6000,Bizkaia
+48,2012-2021,Censo,13581.0000,MIVAU fin de obra (bruto),sin,0.2000,4788.8000,8792.2000,Bizkaia
+48,2022-2025,ECP,16226.0000,MIVAU fin de obra (bruto),con,0.0000,8071.0000,8155.0000,Bizkaia
+48,2022-2025,ECP,16226.0000,MIVAU fin de obra (bruto),con,0.1000,5844.1840,10381.8160,Bizkaia
+48,2022-2025,ECP,16226.0000,MIVAU fin de obra (bruto),con,0.2000,3617.3680,12608.6320,Bizkaia
+48,2022-2025,ECP,16226.0000,MIVAU fin de obra (bruto),sin,0.0000,5453.0000,10773.0000,Bizkaia
+48,2022-2025,ECP,16226.0000,MIVAU fin de obra (bruto),sin,0.1000,3226.1840,12999.8160,Bizkaia
+48,2022-2025,ECP,16226.0000,MIVAU fin de obra (bruto),sin,0.2000,999.3680,15226.6320,Bizkaia
+48,2012-2025,Censo+ECP,29807.0000,MIVAU fin de obra (bruto),con,0.0000,31642.0000,-1835.0000,Bizkaia
+48,2012-2025,Censo+ECP,29807.0000,MIVAU fin de obra (bruto),con,0.1000,24163.7600,5643.2400,Bizkaia
+48,2012-2025,Censo+ECP,29807.0000,MIVAU fin de obra (bruto),con,0.2000,16685.5200,13121.4800,Bizkaia
+48,2012-2025,Censo+ECP,29807.0000,MIVAU fin de obra (bruto),sin,0.0000,20925.0000,8882.0000,Bizkaia
+48,2012-2025,Censo+ECP,29807.0000,MIVAU fin de obra (bruto),sin,0.1000,13446.7600,16360.2400,Bizkaia
+48,2012-2025,Censo+ECP,29807.0000,MIVAU fin de obra (bruto),sin,0.2000,5968.5200,23838.4800,Bizkaia
+49,2012-2021,Censo,-3446.0000,MIVAU fin de obra (bruto),con,0.0000,2907.0000,-6353.0000,Zamora
+49,2012-2021,Censo,-3446.0000,MIVAU fin de obra (bruto),con,0.1000,1518.2500,-4964.2500,Zamora
+49,2012-2021,Censo,-3446.0000,MIVAU fin de obra (bruto),con,0.2000,129.5000,-3575.5000,Zamora
+49,2012-2021,Censo,-3446.0000,MIVAU fin de obra (bruto),sin,0.0000,2817.0000,-6263.0000,Zamora
+49,2012-2021,Censo,-3446.0000,MIVAU fin de obra (bruto),sin,0.1000,1428.2500,-4874.2500,Zamora
+49,2012-2021,Censo,-3446.0000,MIVAU fin de obra (bruto),sin,0.2000,39.5000,-3485.5000,Zamora
+49,2012-2021,Censo,-3446.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,-88.0000,-3358.0000,Zamora
+49,2022-2025,ECP,975.0000,MIVAU fin de obra (bruto),con,0.0000,598.0000,377.0000,Zamora
+49,2022-2025,ECP,975.0000,MIVAU fin de obra (bruto),con,0.1000,-24.4400,999.4400,Zamora
+49,2022-2025,ECP,975.0000,MIVAU fin de obra (bruto),con,0.2000,-646.8800,1621.8800,Zamora
+49,2022-2025,ECP,975.0000,MIVAU fin de obra (bruto),sin,0.0000,598.0000,377.0000,Zamora
+49,2022-2025,ECP,975.0000,MIVAU fin de obra (bruto),sin,0.1000,-24.4400,999.4400,Zamora
+49,2022-2025,ECP,975.0000,MIVAU fin de obra (bruto),sin,0.2000,-646.8800,1621.8800,Zamora
+49,2022-2025,ECP,975.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,24.0000,951.0000,Zamora
+49,2012-2025,Censo+ECP,-2471.0000,MIVAU fin de obra (bruto),con,0.0000,3505.0000,-5976.0000,Zamora
+49,2012-2025,Censo+ECP,-2471.0000,MIVAU fin de obra (bruto),con,0.1000,1560.7500,-4031.7500,Zamora
+49,2012-2025,Censo+ECP,-2471.0000,MIVAU fin de obra (bruto),con,0.2000,-383.5000,-2087.5000,Zamora
+49,2012-2025,Censo+ECP,-2471.0000,MIVAU fin de obra (bruto),sin,0.0000,3415.0000,-5886.0000,Zamora
+49,2012-2025,Censo+ECP,-2471.0000,MIVAU fin de obra (bruto),sin,0.1000,1470.7500,-3941.7500,Zamora
+49,2012-2025,Censo+ECP,-2471.0000,MIVAU fin de obra (bruto),sin,0.2000,-473.5000,-1997.5000,Zamora
+49,2012-2025,Censo+ECP,-2471.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,-64.0000,-2407.0000,Zamora
+50,2012-2021,Censo,1774.0000,MIVAU fin de obra (bruto),con,0.0000,18612.0000,-16838.0000,Zaragoza
+50,2012-2021,Censo,1774.0000,MIVAU fin de obra (bruto),con,0.1000,13506.7000,-11732.7000,Zaragoza
+50,2012-2021,Censo,1774.0000,MIVAU fin de obra (bruto),con,0.2000,8401.4000,-6627.4000,Zaragoza
+50,2012-2021,Censo,1774.0000,MIVAU fin de obra (bruto),sin,0.0000,13780.0000,-12006.0000,Zaragoza
+50,2012-2021,Censo,1774.0000,MIVAU fin de obra (bruto),sin,0.1000,8674.7000,-6900.7000,Zaragoza
+50,2012-2021,Censo,1774.0000,MIVAU fin de obra (bruto),sin,0.2000,3569.4000,-1795.4000,Zaragoza
+50,2012-2021,Censo,1774.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,18145.0000,-16371.0000,Zaragoza
+50,2022-2025,ECP,16690.0000,MIVAU fin de obra (bruto),con,0.0000,7115.0000,9575.0000,Zaragoza
+50,2022-2025,ECP,16690.0000,MIVAU fin de obra (bruto),con,0.1000,4939.8040,11750.1960,Zaragoza
+50,2022-2025,ECP,16690.0000,MIVAU fin de obra (bruto),con,0.2000,2764.6080,13925.3920,Zaragoza
+50,2022-2025,ECP,16690.0000,MIVAU fin de obra (bruto),sin,0.0000,6085.0000,10605.0000,Zaragoza
+50,2022-2025,ECP,16690.0000,MIVAU fin de obra (bruto),sin,0.1000,3909.8040,12780.1960,Zaragoza
+50,2022-2025,ECP,16690.0000,MIVAU fin de obra (bruto),sin,0.2000,1734.6080,14955.3920,Zaragoza
+50,2022-2025,ECP,16690.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,5919.0000,10771.0000,Zaragoza
+50,2012-2025,Censo+ECP,18464.0000,MIVAU fin de obra (bruto),con,0.0000,25727.0000,-7263.0000,Zaragoza
+50,2012-2025,Censo+ECP,18464.0000,MIVAU fin de obra (bruto),con,0.1000,18579.5800,-115.5800,Zaragoza
+50,2012-2025,Censo+ECP,18464.0000,MIVAU fin de obra (bruto),con,0.2000,11432.1600,7031.8400,Zaragoza
+50,2012-2025,Censo+ECP,18464.0000,MIVAU fin de obra (bruto),sin,0.0000,19865.0000,-1401.0000,Zaragoza
+50,2012-2025,Censo+ECP,18464.0000,MIVAU fin de obra (bruto),sin,0.1000,12717.5800,5746.4200,Zaragoza
+50,2012-2025,Censo+ECP,18464.0000,MIVAU fin de obra (bruto),sin,0.2000,5570.1600,12893.8400,Zaragoza
+50,2012-2025,Censo+ECP,18464.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,24064.0000,-5600.0000,Zaragoza
+51,2012-2021,Censo,476.0000,MIVAU fin de obra (bruto),con,0.0000,558.0000,-82.0000,Ceuta
+51,2012-2021,Censo,476.0000,MIVAU fin de obra (bruto),con,0.1000,291.3600,184.6400,Ceuta
+51,2012-2021,Censo,476.0000,MIVAU fin de obra (bruto),con,0.2000,24.7200,451.2800,Ceuta
+51,2012-2021,Censo,476.0000,MIVAU fin de obra (bruto),sin,0.0000,558.0000,-82.0000,Ceuta
+51,2012-2021,Censo,476.0000,MIVAU fin de obra (bruto),sin,0.1000,291.3600,184.6400,Ceuta
+51,2012-2021,Censo,476.0000,MIVAU fin de obra (bruto),sin,0.2000,24.7200,451.2800,Ceuta
+51,2012-2021,Censo,476.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,1783.0000,-1307.0000,Ceuta
+51,2022-2025,ECP,1184.0000,MIVAU fin de obra (bruto),con,0.0000,157.0000,1027.0000,Ceuta
+51,2022-2025,ECP,1184.0000,MIVAU fin de obra (bruto),con,0.1000,43.7400,1140.2600,Ceuta
+51,2022-2025,ECP,1184.0000,MIVAU fin de obra (bruto),con,0.2000,-69.5200,1253.5200,Ceuta
+51,2022-2025,ECP,1184.0000,MIVAU fin de obra (bruto),sin,0.0000,157.0000,1027.0000,Ceuta
+51,2022-2025,ECP,1184.0000,MIVAU fin de obra (bruto),sin,0.1000,43.7400,1140.2600,Ceuta
+51,2022-2025,ECP,1184.0000,MIVAU fin de obra (bruto),sin,0.2000,-69.5200,1253.5200,Ceuta
+51,2022-2025,ECP,1184.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,822.0000,362.0000,Ceuta
+51,2012-2025,Censo+ECP,1660.0000,MIVAU fin de obra (bruto),con,0.0000,715.0000,945.0000,Ceuta
+51,2012-2025,Censo+ECP,1660.0000,MIVAU fin de obra (bruto),con,0.1000,341.7040,1318.2960,Ceuta
+51,2012-2025,Censo+ECP,1660.0000,MIVAU fin de obra (bruto),con,0.2000,-31.5920,1691.5920,Ceuta
+51,2012-2025,Censo+ECP,1660.0000,MIVAU fin de obra (bruto),sin,0.0000,715.0000,945.0000,Ceuta
+51,2012-2025,Censo+ECP,1660.0000,MIVAU fin de obra (bruto),sin,0.1000,341.7040,1318.2960,Ceuta
+51,2012-2025,Censo+ECP,1660.0000,MIVAU fin de obra (bruto),sin,0.2000,-31.5920,1691.5920,Ceuta
+51,2012-2025,Censo+ECP,1660.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,2605.0000,-945.0000,Ceuta
+52,2012-2021,Censo,868.0000,MIVAU fin de obra (bruto),con,0.0000,2349.0000,-1481.0000,Melilla
+52,2012-2021,Censo,868.0000,MIVAU fin de obra (bruto),con,0.1000,2086.5400,-1218.5400,Melilla
+52,2012-2021,Censo,868.0000,MIVAU fin de obra (bruto),con,0.2000,1824.0800,-956.0800,Melilla
+52,2012-2021,Censo,868.0000,MIVAU fin de obra (bruto),sin,0.0000,2349.0000,-1481.0000,Melilla
+52,2012-2021,Censo,868.0000,MIVAU fin de obra (bruto),sin,0.1000,2086.5400,-1218.5400,Melilla
+52,2012-2021,Censo,868.0000,MIVAU fin de obra (bruto),sin,0.2000,1824.0800,-956.0800,Melilla
+52,2012-2021,Censo,868.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,2676.0000,-1808.0000,Melilla
+52,2022-2025,ECP,1400.0000,MIVAU fin de obra (bruto),con,0.0000,510.0000,890.0000,Melilla
+52,2022-2025,ECP,1400.0000,MIVAU fin de obra (bruto),con,0.1000,392.6120,1007.3880,Melilla
+52,2022-2025,ECP,1400.0000,MIVAU fin de obra (bruto),con,0.2000,275.2240,1124.7760,Melilla
+52,2022-2025,ECP,1400.0000,MIVAU fin de obra (bruto),sin,0.0000,510.0000,890.0000,Melilla
+52,2022-2025,ECP,1400.0000,MIVAU fin de obra (bruto),sin,0.1000,392.6120,1007.3880,Melilla
+52,2022-2025,ECP,1400.0000,MIVAU fin de obra (bruto),sin,0.2000,275.2240,1124.7760,Melilla
+52,2022-2025,ECP,1400.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,1473.0000,-73.0000,Melilla
+52,2012-2025,Censo+ECP,2268.0000,MIVAU fin de obra (bruto),con,0.0000,2859.0000,-591.0000,Melilla
+52,2012-2025,Censo+ECP,2268.0000,MIVAU fin de obra (bruto),con,0.1000,2491.5560,-223.5560,Melilla
+52,2012-2025,Censo+ECP,2268.0000,MIVAU fin de obra (bruto),con,0.2000,2124.1120,143.8880,Melilla
+52,2012-2025,Censo+ECP,2268.0000,MIVAU fin de obra (bruto),sin,0.0000,2859.0000,-591.0000,Melilla
+52,2012-2025,Censo+ECP,2268.0000,MIVAU fin de obra (bruto),sin,0.1000,2491.5560,-223.5560,Melilla
+52,2012-2025,Censo+ECP,2268.0000,MIVAU fin de obra (bruto),sin,0.2000,2124.1120,143.8880,Melilla
+52,2012-2025,Censo+ECP,2268.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,4149.0000,-1881.0000,Melilla

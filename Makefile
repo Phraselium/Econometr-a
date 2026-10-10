@@ -2,7 +2,7 @@
 # make all = data -> clean -> models -> report.  Las descargas se cachean en data/raw
 # (FORCE=1 make data para volver a descargar).
 PY ?= python3
-V3_ORDEN :=
+V3_ORDEN := pa_run pb_run pot_run gl_run
 FETCH  := $(sort $(wildcard src/fetch_*.py)) $(sort $(wildcard src/extract_*.py))
 MODELS := $(sort $(wildcard src/f[2-6]_*.py)) $(foreach r,ba_run bv_main bi_run bo_run bp_main bm_run bd_run bs_run,$(wildcard src/v2/$(r).py))
 # v3: puntos de entrada en orden (se añaden al aprobarse cada diseño); el verificador y los informes al final

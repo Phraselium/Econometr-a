@@ -1,4 +1,4 @@
-"""P-A (C1): lectura de insumos. Sin red: lee data/ y output/v3/PA/datos_aux/ (cache de la API del INE)."""
+"""P-A (C1): lectura de insumos. Sin red: lee data/ y data/raw/v3/pa_aux/ (cache de la API del INE)."""
 from __future__ import annotations
 
 import json
@@ -16,7 +16,7 @@ import holdout  # noqa: E402
 
 RAW = RAIZ / "data" / "raw"
 V3 = RAW / "v3"
-AUX = RAIZ / "output" / "v3" / "PA" / "datos_aux"
+AUX = RAIZ / "data" / "raw" / "v3" / "pa_aux"
 SEED = 20261010
 
 

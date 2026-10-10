@@ -1,0 +1,61 @@
+presion,muestra,medida_vacia,tercil,n_municipios,vacias,pct_vacias_de_la_muestra,pct_vacias_del_pais,vacias_por_100_viviendas,vacias_por_100_hogares_nuevos_11_21,n_con_hogares_nuevos
+Δ ln valor tasado 2015-2021,todos con dato,Censo 2021: vacías,bajo,93,347019.0000,24.9458,9.0646,10.3969,1077.5816,74
+Δ ln valor tasado 2015-2021,todos con dato,Censo 2021: vacías,medio,92,542649.0000,39.0089,14.1746,11.0291,671.6094,78
+Δ ln valor tasado 2015-2021,todos con dato,Censo 2021: vacías,alto,92,501422.0000,36.0453,13.0977,8.1885,598.6172,73
+Δ ln valor tasado 2015-2021,todos con dato,Censo 2021: vacías + uso esporádico,bajo,93,652698.0000,25.5778,10.2853,19.5552,1870.8537,74
+Δ ln valor tasado 2015-2021,todos con dato,Censo 2021: vacías + uso esporádico,medio,92,984784.0000,38.5916,15.5183,20.0153,1183.5255,78
+Δ ln valor tasado 2015-2021,todos con dato,Censo 2021: vacías + uso esporádico,alto,92,914329.0000,35.8306,14.4081,14.9316,1064.5897,73
+Δ ln valor tasado 2015-2021,todos con dato,Catastro − hogares − VUT,bajo,86,698667.0000,28.3103,,22.7233,2186.8812,69
+Δ ln valor tasado 2015-2021,todos con dato,Catastro − hogares − VUT,medio,84,1091150.0000,44.2139,,23.4743,1393.9278,74
+Δ ln valor tasado 2015-2021,todos con dato,Catastro − hogares − VUT,alto,91,678072.0000,27.4758,,11.2474,780.6614,72
+Δ ln valor tasado 2015-2021,>50.000 hab.,Censo 2021: vacías,bajo,48,288671.0000,26.9044,7.5404,9.5926,975.8979,35
+Δ ln valor tasado 2015-2021,>50.000 hab.,Censo 2021: vacías,medio,48,377606.0000,35.1932,9.8635,10.2629,656.2572,40
+Δ ln valor tasado 2015-2021,>50.000 hab.,Censo 2021: vacías,alto,48,406675.0000,37.9024,10.6228,7.8868,738.6557,34
+Δ ln valor tasado 2015-2021,>50.000 hab.,Censo 2021: vacías + uso esporádico,bajo,48,563300.0000,28.2244,8.8765,18.7186,1731.3440,35
+Δ ln valor tasado 2015-2021,>50.000 hab.,Censo 2021: vacías + uso esporádico,medio,48,682115.0000,34.1777,10.7488,18.5390,1158.4612,40
+Δ ln valor tasado 2015-2021,>50.000 hab.,Censo 2021: vacías + uso esporádico,alto,48,750374.0000,37.5979,11.8245,14.5523,1324.7672,34
+Δ ln valor tasado 2015-2021,>50.000 hab.,Catastro − hogares − VUT,bajo,46,594667.0000,31.7140,,21.1682,1955.0149,33
+Δ ln valor tasado 2015-2021,>50.000 hab.,Catastro − hogares − VUT,medio,44,726395.0000,38.7391,,21.2698,1309.1786,37
+Δ ln valor tasado 2015-2021,>50.000 hab.,Catastro − hogares − VUT,alto,48,554033.0000,29.5469,,10.7446,975.8920,34
+Δ ln valor tasado 2021-2025,todos con dato,Censo 2021: vacías,bajo,100,301914.0000,20.9561,7.8864,9.9613,675.2859,82
+Δ ln valor tasado 2021-2025,todos con dato,Censo 2021: vacías,medio,99,558249.0000,38.7485,14.5821,9.7178,1013.2331,86
+Δ ln valor tasado 2021-2025,todos con dato,Censo 2021: vacías,alto,100,580536.0000,40.2954,15.1643,9.7127,493.1248,74
+Δ ln valor tasado 2021-2025,todos con dato,Censo 2021: vacías + uso esporádico,bajo,100,547962.0000,20.7100,8.6349,18.0794,1142.2118,82
+Δ ln valor tasado 2021-2025,todos con dato,Censo 2021: vacías + uso esporádico,medio,99,1025754.0000,38.7680,16.1640,17.8560,1820.9395,86
+Δ ln valor tasado 2021-2025,todos con dato,Censo 2021: vacías + uso esporádico,alto,100,1072159.0000,40.5219,16.8952,17.9379,877.5612,74
+Δ ln valor tasado 2021-2025,todos con dato,Catastro − hogares − VUT,bajo,89,557289.0000,21.6296,,20.3145,1215.6452,75
+Δ ln valor tasado 2021-2025,todos con dato,Catastro − hogares − VUT,medio,94,866422.0000,33.6278,,16.0375,1677.5834,83
+Δ ln valor tasado 2021-2025,todos con dato,Catastro − hogares − VUT,alto,100,1152794.0000,44.7425,,19.2870,945.2490,74
+Δ ln valor tasado 2021-2025,>50.000 hab.,Censo 2021: vacías,bajo,48,266307.0000,24.8200,6.9563,8.9107,580.5368,39
+Δ ln valor tasado 2021-2025,>50.000 hab.,Censo 2021: vacías,medio,48,366323.0000,34.1416,9.5688,9.1814,1584.7126,40
+Δ ln valor tasado 2021-2025,>50.000 hab.,Censo 2021: vacías,alto,48,440322.0000,41.0384,11.5017,9.0478,576.4602,30
+Δ ln valor tasado 2021-2025,>50.000 hab.,Censo 2021: vacías + uso esporádico,bajo,48,494660.0000,24.7852,7.7949,16.5515,1014.8133,39
+Δ ln valor tasado 2021-2025,>50.000 hab.,Censo 2021: vacías + uso esporádico,medio,48,674675.0000,33.8049,10.6316,16.9099,2835.2203,40
+Δ ln valor tasado 2021-2025,>50.000 hab.,Censo 2021: vacías + uso esporádico,alto,48,826454.0000,41.4099,13.0234,16.9821,1030.9043,30
+Δ ln valor tasado 2021-2025,>50.000 hab.,Catastro − hogares − VUT,bajo,43,478571.0000,25.5225,,18.2721,1043.6187,35
+Δ ln valor tasado 2021-2025,>50.000 hab.,Catastro − hogares − VUT,medio,47,511582.0000,27.2830,,13.1341,2369.0615,39
+Δ ln valor tasado 2021-2025,>50.000 hab.,Catastro − hogares − VUT,alto,48,884942.0000,47.1945,,18.1839,1109.5819,30
+Δ ln alquiler SERPAVI 2015-2021,todos con dato,Censo 2021: vacías,bajo,602,687647.0000,25.2491,17.9622,17.1533,1783.2890,451
+Δ ln alquiler SERPAVI 2015-2021,todos con dato,Censo 2021: vacías,medio,602,1208815.0000,44.3855,31.5757,11.3371,727.9008,484
+Δ ln alquiler SERPAVI 2015-2021,todos con dato,Censo 2021: vacías,alto,602,826985.0000,30.3654,21.6018,11.5032,420.4307,474
+Δ ln alquiler SERPAVI 2015-2021,todos con dato,Censo 2021: vacías + uso esporádico,bajo,602,1110201.0000,23.7343,17.4947,27.6939,2756.7569,451
+Δ ln alquiler SERPAVI 2015-2021,todos con dato,Censo 2021: vacías + uso esporádico,medio,602,2158593.0000,46.1472,34.0154,20.2448,1259.4004,484
+Δ ln alquiler SERPAVI 2015-2021,todos con dato,Censo 2021: vacías + uso esporádico,alto,602,1408829.0000,30.1185,22.2005,19.5966,701.8847,474
+Δ ln alquiler SERPAVI 2015-2021,todos con dato,Catastro − hogares − VUT,bajo,602,1122529.0000,23.4039,,28.0014,2756.1465,451
+Δ ln alquiler SERPAVI 2015-2021,todos con dato,Catastro − hogares − VUT,medio,602,2295323.0000,47.8558,,21.5272,1327.9302,484
+Δ ln alquiler SERPAVI 2015-2021,todos con dato,Catastro − hogares − VUT,alto,601,1378477.0000,28.7403,,19.1847,658.6983,474
+Δ ln alquiler SERPAVI 2015-2021,>50.000 hab.,Censo 2021: vacías,bajo,48,298558.0000,27.4631,7.7987,9.1763,1561.9524,34
+Δ ln alquiler SERPAVI 2015-2021,>50.000 hab.,Censo 2021: vacías,medio,47,410372.0000,37.7484,10.7194,9.1181,716.5591,35
+Δ ln alquiler SERPAVI 2015-2021,>50.000 hab.,Censo 2021: vacías,alto,47,378193.0000,34.7884,9.8789,9.3786,668.8847,39
+Δ ln alquiler SERPAVI 2015-2021,>50.000 hab.,Censo 2021: vacías + uso esporádico,bajo,48,593226.0000,29.7464,9.3481,18.2330,2812.4872,34
+Δ ln alquiler SERPAVI 2015-2021,>50.000 hab.,Censo 2021: vacías + uso esporádico,medio,47,728267.0000,36.5179,11.4761,16.1814,1249.5062,35
+Δ ln alquiler SERPAVI 2015-2021,>50.000 hab.,Censo 2021: vacías + uso esporádico,alto,47,672783.0000,33.7357,10.6018,16.6840,1153.7257,39
+Δ ln alquiler SERPAVI 2015-2021,>50.000 hab.,Catastro − hogares − VUT,bajo,48,624886.0000,32.6278,,19.2061,2929.6478,34
+Δ ln alquiler SERPAVI 2015-2021,>50.000 hab.,Catastro − hogares − VUT,medio,47,707169.0000,36.9241,,15.7127,1231.0239,35
+Δ ln alquiler SERPAVI 2015-2021,>50.000 hab.,Catastro − hogares − VUT,alto,47,583140.0000,30.4481,,14.4610,897.3989,39
+Zona tensionada (2024),todos con dato,Censo 2021: vacías,parcial,271,331338.0000,10.4494,8.6549,9.6623,,0
+Zona tensionada (2024),todos con dato,Censo 2021: vacías,sin zona,2579,2839553.0000,89.5506,74.1726,13.4132,,0
+Zona tensionada (2024),todos con dato,Censo 2021: vacías + uso esporádico,parcial,271,604252.0000,11.1995,9.5219,17.6208,,0
+Zona tensionada (2024),todos con dato,Censo 2021: vacías + uso esporádico,sin zona,2579,4791082.0000,88.8005,75.4984,22.6316,,0
+Zona tensionada (2024),todos con dato,Catastro − hogares − VUT,parcial,271,500303.0000,9.5390,,14.5895,,0
+Zona tensionada (2024),todos con dato,Catastro − hogares − VUT,sin zona,2579,4744486.0000,90.4610,,22.4115,,0

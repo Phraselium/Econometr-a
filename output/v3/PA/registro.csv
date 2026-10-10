@@ -1,0 +1,544 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+A1_nacional,A1_2002_2007_EPA_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2002,2007,6,,,,,-992213.0,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2002_2007_EPA_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2002,2007,6,,,,,-858926.4210000001,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2002_2007_EPA_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2002,2007,6,,,,,-725639.8420000002,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2002_2007_EPA_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2002,2007,6,,,,,-667803.0,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2002_2007_EPA_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2002,2007,6,,,,,-534516.4210000001,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2002_2007_EPA_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2002,2007,6,,,,,-401229.8420000002,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2002_2007_EPA_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2002,2007,6,,,,,-510207.0,,"EPA; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2008_2013_EPA_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2008,2013,6,,,,,-286115.0,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2008_2013_EPA_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2008,2013,6,,,,,-136776.89500000002,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2008_2013_EPA_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2008,2013,6,,,,,12561.209999999963,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2008_2013_EPA_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2008,2013,6,,,,,37386.0,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2008_2013_EPA_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2008,2013,6,,,,,186724.10499999998,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2008_2013_EPA_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2008,2013,6,,,,,336062.20999999996,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2008_2013_EPA_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2008,2013,6,,,,,-165203.0,,"EPA; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2014_2019_EPA_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2014,2019,6,,,,,160142.0,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2014_2019_EPA_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2014,2019,6,,,,,315951.751,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2014_2019_EPA_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2014,2019,6,,,,,471761.502,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2014_2019_EPA_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2014,2019,6,,,,,207614.0,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2014_2019_EPA_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2014,2019,6,,,,,363423.751,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2014_2019_EPA_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2014,2019,6,,,,,519233.502,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2014_2019_EPA_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2014,2019,6,,,,,-340601.0,,"EPA; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2020_2025_EPA_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2020,2025,6,,,,,550773.0,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2020_2025_EPA_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2020,2025,6,,,,,711298.7239999999,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2020_2025_EPA_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2020,2025,6,,,,,871824.448,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2020_2025_EPA_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2020,2025,6,,,,,617069.0,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2020_2025_EPA_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2020,2025,6,,,,,777594.7239999999,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2020_2025_EPA_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2020,2025,6,,,,,938120.448,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2020_2025_EPA_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2020,2025,6,,,,,470014.0,,"EPA; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2014_2025_EPA_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2014,2025,12,,,,,710915.0,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2014_2025_EPA_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2014,2025,12,,,,,1027250.475,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2014_2025_EPA_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2014,2025,12,,,,,1343585.95,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2014_2025_EPA_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2014,2025,12,,,,,824683.0,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2014_2025_EPA_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2014,2025,12,,,,,1141018.475,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2014_2025_EPA_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2014,2025,12,,,,,1457353.95,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2014_2025_EPA_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2014,2025,12,,,,,129413.0,,"EPA; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2012_2021_EPA_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,169806.0,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2012_2021_EPA_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,429421.576,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2012_2021_EPA_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,689037.152,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2012_2021_EPA_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,308279.0,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2012_2021_EPA_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,567894.576,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2012_2021_EPA_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,827510.152,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2012_2021_EPA_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,-583452.0,,"EPA; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2012_2021_EPA_Censo (Δ sto_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,-527685.0,,"EPA; Censo (Δ stock total, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2012_2021_Censo+ECP_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,-262063.0,,Censo+ECP; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2012_2021_Censo+ECP_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,-2447.423999999999,,Censo+ECP; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2012_2021_Censo+ECP_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,257168.152,,Censo+ECP; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2012_2021_Censo+ECP_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,-123590.0,,Censo+ECP; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2012_2021_Censo+ECP_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,136025.576,,Censo+ECP; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2012_2021_Censo+ECP_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,395641.152,,Censo+ECP; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2012_2021_Censo+ECP_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,-1015321.0,,"Censo+ECP; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2012_2021_Censo+ECP_Censo (Δ sto_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2012,2021,10,,,,,-959554.0,,"Censo+ECP; Censo (Δ stock total, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2022_2025_EPA_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,596705.0,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2022_2025_EPA_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,704143.946,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2022_2025_EPA_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,811582.892,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2022_2025_EPA_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,642391.0,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2022_2025_EPA_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,749829.946,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2022_2025_EPA_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,857268.892,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2022_2025_EPA_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,590549.0,,"EPA; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2022_2025_Censo+ECP_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,585206.0,,Censo+ECP; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2022_2025_Censo+ECP_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,692644.946,,Censo+ECP; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2022_2025_Censo+ECP_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,800083.892,,Censo+ECP; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2022_2025_Censo+ECP_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,630892.0,,Censo+ECP; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2022_2025_Censo+ECP_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,738330.946,,Censo+ECP; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2022_2025_Censo+ECP_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,845769.892,,Censo+ECP; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2022_2025_Censo+ECP_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2022,2025,4,,,,,579050.0,,"Censo+ECP; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2012_2025_EPA_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,766511.0,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2012_2025_EPA_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,1133565.5219999999,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2012_2025_EPA_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,1500620.044,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2012_2025_EPA_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,950670.0,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2012_2025_EPA_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,1317724.5219999999,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2012_2025_EPA_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,1684779.044,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2012_2025_EPA_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,7097.0,,"EPA; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2012_2025_EPA_Censo (Δ sto_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,62864.0,,EPA; Censo (Δ stock 2011-21) + Δ parque MIVAU 2021-25; protegida incluida; bajas nan
+A1_nacional,A1_2012_2025_Censo+ECP_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,323143.0,,Censo+ECP; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2012_2025_Censo+ECP_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,690197.522,,Censo+ECP; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2012_2025_Censo+ECP_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,1057252.044,,Censo+ECP; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2012_2025_Censo+ECP_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,507302.0,,Censo+ECP; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2012_2025_Censo+ECP_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,874356.522,,Censo+ECP; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2012_2025_Censo+ECP_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,1241411.044,,Censo+ECP; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2012_2025_Censo+ECP_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,-436271.0,,"Censo+ECP; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2012_2025_Censo+ECP_Censo (Δ sto_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2012,2025,14,,,,,-380504.0,,Censo+ECP; Censo (Δ stock 2011-21) + Δ parque MIVAU 2021-25; protegida incluida; bajas nan
+A1_nacional,A1_2021_2025_EPA_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,567377.0,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2021_2025_EPA_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,701439.654,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2021_2025_EPA_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,835502.308,,EPA; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2021_2025_EPA_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,623700.0,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2021_2025_EPA_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,757762.654,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2021_2025_EPA_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,891825.308,,EPA; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2021_2025_EPA_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,559752.0,,"EPA; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_nacional,A1_2021_2025_Censo+ECP_MIVAU fin de_con_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,700934.0,,Censo+ECP; MIVAU fin de obra (bruto); protegida con; bajas 0.0
+A1_nacional,A1_2021_2025_Censo+ECP_MIVAU fin de_con_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,834996.654,,Censo+ECP; MIVAU fin de obra (bruto); protegida con; bajas 0.1
+A1_nacional,A1_2021_2025_Censo+ECP_MIVAU fin de_con_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,969059.308,,Censo+ECP; MIVAU fin de obra (bruto); protegida con; bajas 0.2
+A1_nacional,A1_2021_2025_Censo+ECP_MIVAU fin de_sin_0.0,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,757257.0,,Censo+ECP; MIVAU fin de obra (bruto); protegida sin; bajas 0.0
+A1_nacional,A1_2021_2025_Censo+ECP_MIVAU fin de_sin_0.1,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,891319.654,,Censo+ECP; MIVAU fin de obra (bruto); protegida sin; bajas 0.1
+A1_nacional,A1_2021_2025_Censo+ECP_MIVAU fin de_sin_0.2,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,1025382.308,,Censo+ECP; MIVAU fin de obra (bruto); protegida sin; bajas 0.2
+A1_nacional,A1_2021_2025_Censo+ECP_MIVAU parque_incluida_nan,D = Σ Δhogares − Σ(terminadas − bajas),2021,2025,5,,,,,693309.0,,"Censo+ECP; MIVAU parque (Δ, neto); protegida incluida; bajas nan"
+A1_provincial,A1prov_01_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_01_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_01_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_02_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_02_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_02_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_03_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_03_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_03_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_04_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_04_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_04_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_05_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_05_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_05_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_06_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_06_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_06_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_07_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_07_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_07_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_08_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_08_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_08_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_09_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_09_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_09_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_10_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_10_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_10_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_11_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_11_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_11_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_12_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_12_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_12_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_13_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_13_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_13_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_14_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_14_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_14_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_15_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_15_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_15_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_16_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_16_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_16_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_17_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_17_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_17_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_18_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_18_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_18_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_19_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_19_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_19_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_20_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_20_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_20_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_21_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_21_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_21_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_22_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_22_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_22_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_23_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_23_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_23_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_24_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_24_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_24_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_25_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_25_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_25_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_26_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_26_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_26_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_27_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_27_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_27_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_28_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_28_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_28_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_29_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_29_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_29_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_30_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_30_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_30_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_31_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_31_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_31_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_32_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_32_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_32_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_33_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_33_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_33_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_34_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_34_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_34_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_35_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_35_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_35_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_36_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_36_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_36_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_37_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_37_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_37_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_38_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_38_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_38_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_39_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_39_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_39_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_40_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_40_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_40_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_41_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_41_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_41_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_42_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_42_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_42_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_43_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_43_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_43_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_44_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_44_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_44_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_45_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_45_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_45_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_46_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_46_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_46_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_47_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_47_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_47_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_48_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_48_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_48_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_49_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_49_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_49_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_50_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_50_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_50_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_51_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_51_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_51_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_52_2012-2021,"D provincial, hogares fuente única",2012,2021,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_52_2022-2025,"D provincial, hogares fuente única",2022,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A1_provincial,A1prov_52_2012-2025,"D provincial, hogares fuente única",2012,2025,1,,,,,,,capa C4: hogares de una sola fuente
+A2,A2_Eurostat_España 2008_1.5,(tasa − ref) × pob25-34 / tamaño,2025,2025,1,,,,,505901.86666666664,,Eurostat ilc_lvps08 (ECV); ref España 2008; tamaño 1.5
+A2,A2_Eurostat_España 2008_1.75,(tasa − ref) × pob25-34 / tamaño,2025,2025,1,,,,,433630.1714285714,,Eurostat ilc_lvps08 (ECV); ref España 2008; tamaño 1.75
+A2,A2_Eurostat_España 2008_2.0,(tasa − ref) × pob25-34 / tamaño,2025,2025,1,,,,,379426.39999999997,,Eurostat ilc_lvps08 (ECV); ref España 2008; tamaño 2.0
+A2,A2_Eurostat_UE-27 2025_1.5,(tasa − ref) × pob25-34 / tamaño,2025,2025,1,,,,,747693.1999999998,,Eurostat ilc_lvps08 (ECV); ref UE-27 2025; tamaño 1.5
+A2,A2_Eurostat_UE-27 2025_1.75,(tasa − ref) × pob25-34 / tamaño,2025,2025,1,,,,,640879.8857142857,,Eurostat ilc_lvps08 (ECV); ref UE-27 2025; tamaño 1.75
+A2,A2_Eurostat_UE-27 2025_2.0,(tasa − ref) × pob25-34 / tamaño,2025,2025,1,,,,,560769.8999999999,,Eurostat ilc_lvps08 (ECV); ref UE-27 2025; tamaño 2.0
+A2,A2_EPA 6594_España 2008_1.5,(tasa − ref) × pob25-34 / tamaño,2025,2025,1,,,,,250607.6173191603,,EPA 65944 (hijo/a de la persona de referencia); ref España 2008; tamaño 1.5
+A2,A2_EPA 6594_España 2008_1.75,(tasa − ref) × pob25-34 / tamaño,2025,2025,1,,,,,214806.52913070883,,EPA 65944 (hijo/a de la persona de referencia); ref España 2008; tamaño 1.75
+A2,A2_EPA 6594_España 2008_2.0,(tasa − ref) × pob25-34 / tamaño,2025,2025,1,,,,,187955.71298937022,,EPA 65944 (hijo/a de la persona de referencia); ref España 2008; tamaño 2.0
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_bajo_0,reparto de vacías por tercil de presión,2015,2021,93,,,,,347019.0,,Censo 2021: vacías
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_medio_0,reparto de vacías por tercil de presión,2015,2021,92,,,,,542649.0,,Censo 2021: vacías
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_alto_0,reparto de vacías por tercil de presión,2015,2021,92,,,,,501422.0,,Censo 2021: vacías
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_bajo_0,reparto de vacías por tercil de presión,2015,2021,93,,,,,652698.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_medio_0,reparto de vacías por tercil de presión,2015,2021,92,,,,,984784.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_alto_0,reparto de vacías por tercil de presión,2015,2021,92,,,,,914329.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln valor tasado 20_Catastro − hog_bajo_0,reparto de vacías por tercil de presión,2015,2021,86,,,,,698667.0,,Catastro − hogares − VUT
+A3,A3_Δ ln valor tasado 20_Catastro − hog_medio_0,reparto de vacías por tercil de presión,2015,2021,84,,,,,1091150.0,,Catastro − hogares − VUT
+A3,A3_Δ ln valor tasado 20_Catastro − hog_alto_0,reparto de vacías por tercil de presión,2015,2021,91,,,,,678072.0,,Catastro − hogares − VUT
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_bajo_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,288671.0,,Censo 2021: vacías
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_medio_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,377606.0,,Censo 2021: vacías
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_alto_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,406675.0,,Censo 2021: vacías
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_bajo_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,563300.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_medio_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,682115.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_alto_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,750374.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln valor tasado 20_Catastro − hog_bajo_1,reparto de vacías por tercil de presión,2015,2021,46,,,,,594667.0,,Catastro − hogares − VUT
+A3,A3_Δ ln valor tasado 20_Catastro − hog_medio_1,reparto de vacías por tercil de presión,2015,2021,44,,,,,726395.0,,Catastro − hogares − VUT
+A3,A3_Δ ln valor tasado 20_Catastro − hog_alto_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,554033.0,,Catastro − hogares − VUT
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_bajo_0,reparto de vacías por tercil de presión,2015,2021,100,,,,,301914.0,,Censo 2021: vacías
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_medio_0,reparto de vacías por tercil de presión,2015,2021,99,,,,,558249.0,,Censo 2021: vacías
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_alto_0,reparto de vacías por tercil de presión,2015,2021,100,,,,,580536.0,,Censo 2021: vacías
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_bajo_0,reparto de vacías por tercil de presión,2015,2021,100,,,,,547962.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_medio_0,reparto de vacías por tercil de presión,2015,2021,99,,,,,1025754.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_alto_0,reparto de vacías por tercil de presión,2015,2021,100,,,,,1072159.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln valor tasado 20_Catastro − hog_bajo_0,reparto de vacías por tercil de presión,2015,2021,89,,,,,557289.0,,Catastro − hogares − VUT
+A3,A3_Δ ln valor tasado 20_Catastro − hog_medio_0,reparto de vacías por tercil de presión,2015,2021,94,,,,,866422.0,,Catastro − hogares − VUT
+A3,A3_Δ ln valor tasado 20_Catastro − hog_alto_0,reparto de vacías por tercil de presión,2015,2021,100,,,,,1152794.0,,Catastro − hogares − VUT
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_bajo_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,266307.0,,Censo 2021: vacías
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_medio_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,366323.0,,Censo 2021: vacías
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_alto_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,440322.0,,Censo 2021: vacías
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_bajo_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,494660.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_medio_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,674675.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln valor tasado 20_Censo 2021: va_alto_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,826454.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln valor tasado 20_Catastro − hog_bajo_1,reparto de vacías por tercil de presión,2015,2021,43,,,,,478571.0,,Catastro − hogares − VUT
+A3,A3_Δ ln valor tasado 20_Catastro − hog_medio_1,reparto de vacías por tercil de presión,2015,2021,47,,,,,511582.0,,Catastro − hogares − VUT
+A3,A3_Δ ln valor tasado 20_Catastro − hog_alto_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,884942.0,,Catastro − hogares − VUT
+A3,A3_Δ ln alquiler SERPAV_Censo 2021: va_bajo_0,reparto de vacías por tercil de presión,2015,2021,602,,,,,687647.0,,Censo 2021: vacías
+A3,A3_Δ ln alquiler SERPAV_Censo 2021: va_medio_0,reparto de vacías por tercil de presión,2015,2021,602,,,,,1208815.0,,Censo 2021: vacías
+A3,A3_Δ ln alquiler SERPAV_Censo 2021: va_alto_0,reparto de vacías por tercil de presión,2015,2021,602,,,,,826985.0,,Censo 2021: vacías
+A3,A3_Δ ln alquiler SERPAV_Censo 2021: va_bajo_0,reparto de vacías por tercil de presión,2015,2021,602,,,,,1110201.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln alquiler SERPAV_Censo 2021: va_medio_0,reparto de vacías por tercil de presión,2015,2021,602,,,,,2158593.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln alquiler SERPAV_Censo 2021: va_alto_0,reparto de vacías por tercil de presión,2015,2021,602,,,,,1408829.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln alquiler SERPAV_Catastro − hog_bajo_0,reparto de vacías por tercil de presión,2015,2021,602,,,,,1122529.0,,Catastro − hogares − VUT
+A3,A3_Δ ln alquiler SERPAV_Catastro − hog_medio_0,reparto de vacías por tercil de presión,2015,2021,602,,,,,2295323.0,,Catastro − hogares − VUT
+A3,A3_Δ ln alquiler SERPAV_Catastro − hog_alto_0,reparto de vacías por tercil de presión,2015,2021,601,,,,,1378477.0,,Catastro − hogares − VUT
+A3,A3_Δ ln alquiler SERPAV_Censo 2021: va_bajo_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,298558.0,,Censo 2021: vacías
+A3,A3_Δ ln alquiler SERPAV_Censo 2021: va_medio_1,reparto de vacías por tercil de presión,2015,2021,47,,,,,410372.0,,Censo 2021: vacías
+A3,A3_Δ ln alquiler SERPAV_Censo 2021: va_alto_1,reparto de vacías por tercil de presión,2015,2021,47,,,,,378193.0,,Censo 2021: vacías
+A3,A3_Δ ln alquiler SERPAV_Censo 2021: va_bajo_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,593226.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln alquiler SERPAV_Censo 2021: va_medio_1,reparto de vacías por tercil de presión,2015,2021,47,,,,,728267.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln alquiler SERPAV_Censo 2021: va_alto_1,reparto de vacías por tercil de presión,2015,2021,47,,,,,672783.0,,Censo 2021: vacías + uso esporádico
+A3,A3_Δ ln alquiler SERPAV_Catastro − hog_bajo_1,reparto de vacías por tercil de presión,2015,2021,48,,,,,624886.0,,Catastro − hogares − VUT
+A3,A3_Δ ln alquiler SERPAV_Catastro − hog_medio_1,reparto de vacías por tercil de presión,2015,2021,47,,,,,707169.0,,Catastro − hogares − VUT
+A3,A3_Δ ln alquiler SERPAV_Catastro − hog_alto_1,reparto de vacías por tercil de presión,2015,2021,47,,,,,583140.0,,Catastro − hogares − VUT
+A4_provincia,A4_01_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,4.009982116133473,,Araba/Álava
+A4_provincia,A4_02_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.373849054977578,,Albacete
+A4_provincia,A4_03_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.8006784468947497,,Alicante/Alacant
+A4_provincia,A4_04_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.0642155333561982,,Almería
+A4_provincia,A4_05_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.3067967015316664,,Ávila
+A4_provincia,A4_06_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.4632604926683803,,Badajoz
+A4_provincia,A4_07_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,5.142883653264317,,"Balears, Illes"
+A4_provincia,A4_08_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,4.677208496810158,,Barcelona
+A4_provincia,A4_09_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.509356393132679,,Burgos
+A4_provincia,A4_10_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.361463417303111,,Cáceres
+A4_provincia,A4_11_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.7974204612646028,,Cádiz
+A4_provincia,A4_12_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.58431211853586,,Castellón/Castelló
+A4_provincia,A4_13_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,1.845446075768326,,Ciudad Real
+A4_provincia,A4_14_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.874974294645018,,Córdoba
+A4_provincia,A4_15_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.917407726102868,,"Coruña, A"
+A4_provincia,A4_16_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.0047172638034727,,Cuenca
+A4_provincia,A4_17_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.5075662815245736,,Girona
+A4_provincia,A4_18_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.21032975998281,,Granada
+A4_provincia,A4_19_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.6726768959204366,,Guadalajara
+A4_provincia,A4_20_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,4.975424319386929,,Gipuzkoa
+A4_provincia,A4_21_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.12184000866508,,Huelva
+A4_provincia,A4_22_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.5456958664504192,,Huesca
+A4_provincia,A4_23_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.1873625088485564,,Jaén
+A4_provincia,A4_24_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.113223759368388,,León
+A4_provincia,A4_25_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.280891311715256,,Lleida
+A4_provincia,A4_26_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.6780745295340522,,"Rioja, La"
+A4_provincia,A4_27_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.2881628712192565,,Lugo
+A4_provincia,A4_28_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,5.034071483559621,,Madrid
+A4_provincia,A4_29_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,5.2410204822290245,,Málaga
+A4_provincia,A4_30_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.422662637369044,,Murcia
+A4_provincia,A4_31_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.9782247950896936,,Navarra
+A4_provincia,A4_32_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.437714730873183,,Ourense
+A4_provincia,A4_33_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.0693321458439575,,Asturias
+A4_provincia,A4_34_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.2298445645008846,,Palencia
+A4_provincia,A4_35_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.8275099588838444,,"Palmas, Las"
+A4_provincia,A4_36_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.1466827447435857,,Pontevedra
+A4_provincia,A4_37_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.9572967745555676,,Salamanca
+A4_provincia,A4_38_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.720228141582383,,Santa Cruz de Tenerife
+A4_provincia,A4_39_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.401737667145819,,Cantabria
+A4_provincia,A4_40_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.4795711434130294,,Segovia
+A4_provincia,A4_41_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.4907095565632353,,Sevilla
+A4_provincia,A4_42_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.071817738874814,,Soria
+A4_provincia,A4_43_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.0279436515769063,,Tarragona
+A4_provincia,A4_44_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,1.8083566510969942,,Teruel
+A4_provincia,A4_45_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.2755886774888667,,Toledo
+A4_provincia,A4_46_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.025079711172134,,Valencia/València
+A4_provincia,A4_47_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.8066272640560896,,Valladolid
+A4_provincia,A4_48_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,4.476563444114944,,Bizkaia
+A4_provincia,A4_49_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.1736984976559244,,Zamora
+A4_provincia,A4_50_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,2.9869197282365505,,Zaragoza
+A4_provincia,A4_51_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.235863111624858,,Ceuta
+A4_provincia,A4_52_2023,precio·80m²/renta; cuota 25a LTV80; alquiler·12/renta,2023,2023,1,,,,,3.1981388709761127,,Melilla
+A4_nacional,A4nac_2019_ADRH (,esfuerzo nacional,2019,2019,1,,,,,4.032034735943381,,ADRH (renta neta media por hogar)
+A4_nacional,A4nac_2019_Cuenta,esfuerzo nacional,2019,2019,1,,,,,3.1050631930723758,,Cuentas nacionales (renta disponible hogares/hogares EPA)
+A4_nacional,A4nac_2020_ADRH (,esfuerzo nacional,2020,2020,1,,,,,3.998822637164981,,ADRH (renta neta media por hogar)
+A4_nacional,A4nac_2020_Cuenta,esfuerzo nacional,2020,2020,1,,,,,3.1570146663872336,,Cuentas nacionales (renta disponible hogares/hogares EPA)
+A4_nacional,A4nac_2021_ADRH (,esfuerzo nacional,2021,2021,1,,,,,3.9330821462055883,,ADRH (renta neta media por hogar)
+A4_nacional,A4nac_2021_Cuenta,esfuerzo nacional,2021,2021,1,,,,,3.0644925064628157,,Cuentas nacionales (renta disponible hogares/hogares EPA)
+A4_nacional,A4nac_2022_ADRH (,esfuerzo nacional,2022,2022,1,,,,,3.9089567398590597,,ADRH (renta neta media por hogar)
+A4_nacional,A4nac_2022_Cuenta,esfuerzo nacional,2022,2022,1,,,,,3.1094213336352428,,Cuentas nacionales (renta disponible hogares/hogares EPA)
+A4_nacional,A4nac_2023_ADRH (,esfuerzo nacional,2023,2023,1,,,,,3.789711744786831,,ADRH (renta neta media por hogar)
+A4_nacional,A4nac_2023_Cuenta,esfuerzo nacional,2023,2023,1,,,,,2.9883303031191404,,Cuentas nacionales (renta disponible hogares/hogares EPA)
+A5,A5_EFF (t_2008_35-44_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,78.1,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2008_45-54_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,86.0,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2008_55-64_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,89.3,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2008_65-74_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,88.5,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2008_75+_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,87.8,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2008_<35_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,65.8,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2008_total_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,82.7,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2014_35-44_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,74.9,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2014_45-54_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,82.2,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2014_55-64_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,86.9,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2014_65-74_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,88.7,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2014_75+_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,87.6,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2014_<35_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,49.5,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2014_total_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,80.4,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2020_35-44_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,64.9,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2020_45-54_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,73.9,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2020_55-64_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,81.7,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2020_65-74_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,83.2,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2020_75+_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,83.4,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2020_<35_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,36.1,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2020_total_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,73.9,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2022_35-44_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,61.8,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2022_45-54_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,71.8,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2022_55-64_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,78.8,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2022_65-74_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,83.0,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2022_75+_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,84.0,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2022_<35_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,31.8,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_EFF (t_2022_total_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,72.1,,EFF (tablas del BdE; mín-máx entre ediciones)
+A5,A5_INE EC_2008_65 y más años_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,87.3,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_65 y más años_propieda,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_65 y más años_alquiler,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,3.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_65 y más años_alquiler,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,3.5,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_65 y más años_cesión,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,5.5,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 16 a 29 años_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,54.9,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 16 a 29 años_propieda,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 16 a 29 años_alquiler,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,32.3,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 16 a 29 años_alquiler,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,4.2,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 16 a 29 años_cesión,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,8.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 30 a 44 años_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,73.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 30 a 44 años_propieda,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 30 a 44 años_alquiler,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,16.2,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 30 a 44 años_alquiler,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,2.8,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 30 a 44 años_cesión,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,7.3,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 45 a 64 años_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,83.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 45 a 64 años_propieda,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 45 a 64 años_alquiler,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,8.0,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 45 a 64 años_alquiler,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,3.3,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_De 45 a 64 años_cesión,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,5.1,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_Total_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,79.6,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_Total_propieda,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_Total_alquiler,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,11.0,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_Total_alquiler,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,3.2,,INE ECV (tabla 9994)
+A5,A5_INE EC_2008_Total_cesión,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,6.1,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_65 y más años_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,89.8,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_65 y más años_propieda,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,4.5,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_65 y más años_alquiler,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,2.9,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_65 y más años_alquiler,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,2.8,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_65 y más años_cesión,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,4.5,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 16 a 29 años_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,34.2,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 16 a 29 años_propieda,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,22.4,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 16 a 29 años_alquiler,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,47.4,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 16 a 29 años_alquiler,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,2.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 16 a 29 años_cesión,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,15.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 30 a 44 años_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,68.6,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 30 a 44 años_propieda,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,52.1,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 30 a 44 años_alquiler,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,19.8,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 30 a 44 años_alquiler,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,2.0,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 30 a 44 años_cesión,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,9.6,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 45 a 64 años_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,82.0,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 45 a 64 años_propieda,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,28.6,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 45 a 64 años_alquiler,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,9.5,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 45 a 64 años_alquiler,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,2.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_De 45 a 64 años_cesión,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,5.8,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_Total_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,78.0,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_Total_propieda,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,28.4,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_Total_alquiler,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,12.4,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_Total_alquiler,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,2.5,,INE ECV (tabla 9994)
+A5,A5_INE EC_2014_Total_cesión,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,7.0,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_65 y más años_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,89.1,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_65 y más años_propieda,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,5.2,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_65 y más años_alquiler,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,5.0,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_65 y más años_alquiler,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,2.5,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_65 y más años_cesión,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,3.4,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 16 a 29 años_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,31.8,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 16 a 29 años_propieda,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,19.6,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 16 a 29 años_alquiler,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,45.4,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 16 a 29 años_alquiler,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,3.9,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 16 a 29 años_cesión,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,18.9,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 30 a 44 años_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,59.3,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 30 a 44 años_propieda,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,46.0,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 30 a 44 años_alquiler,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,26.9,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 30 a 44 años_alquiler,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,4.1,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 30 a 44 años_cesión,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,9.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 45 a 64 años_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,78.0,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 45 a 64 años_propieda,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,30.8,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 45 a 64 años_alquiler,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,12.1,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 45 a 64 años_alquiler,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,3.3,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_De 45 a 64 años_cesión,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,6.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_Total_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,75.2,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_Total_propieda,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,26.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_Total_alquiler,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,14.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_Total_alquiler,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,3.3,,INE ECV (tabla 9994)
+A5,A5_INE EC_2020_Total_cesión,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,6.8,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_65 y más años_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,89.4,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_65 y más años_propieda,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,6.1,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_65 y más años_alquiler,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,5.0,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_65 y más años_alquiler,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,2.3,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_65 y más años_cesión,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,3.3,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 16 a 29 años_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,30.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 16 a 29 años_propieda,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,17.2,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 16 a 29 años_alquiler,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,47.6,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 16 a 29 años_alquiler,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,5.8,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 16 a 29 años_cesión,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,15.9,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 30 a 44 años_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,56.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 30 a 44 años_propieda,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,41.1,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 30 a 44 años_alquiler,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,28.9,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 30 a 44 años_alquiler,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,4.0,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 30 a 44 años_cesión,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,10.4,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 45 a 64 años_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,79.3,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 45 a 64 años_propieda,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,34.2,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 45 a 64 años_alquiler,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,12.9,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 45 a 64 años_alquiler,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,2.7,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_De 45 a 64 años_cesión,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,5.1,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_Total_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,75.9,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_Total_propieda,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,26.5,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_Total_alquiler,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,15.1,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_Total_alquiler,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,3.0,,INE ECV (tabla 9994)
+A5,A5_INE EC_2022_Total_cesión,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,6.1,,INE ECV (tabla 9994)
+A5,A5_Eurost_2008_65+_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,83.78378378378378,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2008_65+_alquiler,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,16.216216216216214,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2008_<65_propieta,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,66.66666666666667,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2008_<65_alquiler,porcentaje de hogares por tenencia y edad,2008,2008,1,,,,,35.55555555555556,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2014_65+_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,85.3658536585366,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2014_65+_alquiler,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,14.634146341463415,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2014_<65_propieta,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,61.40350877192982,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2014_<65_alquiler,porcentaje de hogares por tenencia y edad,2014,2014,1,,,,,36.84210526315789,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2020_65+_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,84.44444444444444,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2020_65+_alquiler,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,15.555555555555555,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2020_<65_propieta,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,60.0,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2020_<65_alquiler,porcentaje de hogares por tenencia y edad,2020,2020,1,,,,,40.0,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2022_65+_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,85.71428571428571,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2022_65+_alquiler,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,14.285714285714285,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2022_<65_propieta,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,60.0,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A5,A5_Eurost_2022_<65_alquiler,porcentaje de hogares por tenencia y edad,2022,2022,1,,,,,40.0,,"Eurostat ilc_lvho02 (adulto solo, % del grupo)"
+A6,A6_uc_2003,uc = i + τ + δ − g,2003,2003,12,,,,,4.111383770250001,,rango 1.11 a 7.11
+A6,A6_uc_2004,uc = i + τ + δ − g,2004,2004,12,,,,,3.813956330791666,,rango 0.86 a 6.77
+A6,A6_uc_2005,uc = i + τ + δ − g,2005,2005,12,,,,,3.6516935577083327,,rango 0.55 a 6.76
+A6,A6_uc_2006,uc = i + τ + δ − g,2006,2006,12,,,,,4.520279366333334,,rango 1.48 a 7.56
+A6,A6_uc_2007,uc = i + τ + δ − g,2007,2007,12,,,,,5.805277612041666,,rango 3.02 a 8.59
+A6,A6_uc_2008,uc = i + τ + δ − g,2008,2008,12,,,,,6.938236519,,rango 4.71 a 9.17
+A6,A6_uc_2009,uc = i + τ + δ − g,2009,2009,12,,,,,5.630761198870833,,rango 4.51 a 6.75
+A6,A6_uc_2010,uc = i + τ + δ − g,2010,2010,12,,,,,4.865931590639168,,rango 3.72 a 6.01
+A6,A6_uc_2011,uc = i + τ + δ − g,2011,2011,18,,,,,6.8375,,rango 4.84 a 11.36
+A6,A6_uc_2012,uc = i + τ + δ − g,2012,2012,18,,,,,6.770833333291667,,rango 4.77 a 14.61
+A6,A6_uc_2013,uc = i + τ + δ − g,2013,2013,18,,,,,6.050749412025,,rango 4.05 a 15.40
+A6,A6_uc_2014,uc = i + τ + δ − g,2014,2014,18,,,,,6.431666666708333,,rango 4.43 a 14.76
+A6,A6_uc_2015,uc = i + τ + δ − g,2015,2015,18,,,,,5.180201387825,,rango 3.18 a 11.28
+A6,A6_uc_2016,uc = i + τ + δ − g,2016,2016,18,,,,,4.4399999999999995,,rango 3.07 a 6.15
+A6,A6_uc_2017,uc = i + τ + δ − g,2017,2017,18,,,,,3.1481817134500005,,rango -0.19 a 5.41
+A6,A6_uc_2018,uc = i + τ + δ − g,2018,2018,18,,,,,3.2531599509250007,,rango -1.70 a 5.44
+A6,A6_uc_2019,uc = i + τ + δ − g,2019,2019,18,,,,,3.046506174,,rango -2.02 a 5.48
+A6,A6_uc_2020,uc = i + τ + δ − g,2020,2020,18,,,,,3.1102319278250006,,rango -1.65 a 5.23
+A6,A6_uc_2021,uc = i + τ + δ − g,2021,2021,18,,,,,1.4381353177083338,,rango -1.31 a 4.98
+A6,A6_uc_2022,uc = i + τ + δ − g,2022,2022,18,,,,,0.7698903440000002,,rango -1.23 a 5.47
+A6,A6_uc_2023,uc = i + τ + δ − g,2023,2023,18,,,,,2.095101791108714,,rango -0.99 a 7.28
+A6,A6_uc_2024,uc = i + τ + δ − g,2024,2024,18,,,,,2.838367094625,,rango -0.78 a 6.90
+A6,A6_uc_2025,uc = i + τ + δ − g,2025,2025,18,,,,,2.1866393068750005,,rango -3.53 a 6.23

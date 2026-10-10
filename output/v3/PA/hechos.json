@@ -1,0 +1,419 @@
+[
+ {
+  "id": "A1_nacional_2002-2007",
+  "enunciado_neutro": "Déficit contable acumulado (variación de hogares menos altas netas de vivienda) entre 2002 y 2007, con vivienda protegida: mediana de las combinaciones -792,283; rango entre fuentes con bajas del 0,1 %: -858,926 a -510,207. Las bajas del 0 % al 0,2 % anual mueven la cifra entre 0 y 266,573 viviendas. Una sola fuente de hogares: hecho de fuente única (C4).",
+  "capa": "C4",
+  "magnitud": -792283.132,
+  "unidad": "viviendas",
+  "intervalo": [
+   -992213.0,
+   -510207.0
+  ],
+  "fuentes": [
+   "INE EPA (hogares, tabla 65269/65944; media trimestral) (única fuente de hogares en este periodo)",
+   "MIVAU certificados de fin de obra (libres) y calificaciones definitivas (protegida)",
+   "MIVAU estimación del parque de viviendas"
+  ],
+  "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (se aplican solo a la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas.",
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un déficit contable no equivale a demanda insatisfecha a cualquier precio. Quiebre de la EPA en 2021; la ECP está anclada al Censo 2021 (no es independiente de él); el fin de obra del MIVAU cubre menos que la variación del parque y del Censo."
+ },
+ {
+  "id": "A1_nacional_2008-2013",
+  "enunciado_neutro": "Déficit contable acumulado (variación de hogares menos altas netas de vivienda) entre 2008 y 2013, con vivienda protegida: mediana de las combinaciones -150,990; rango entre fuentes con bajas del 0,1 %: -165,203 a -136,777. Las bajas del 0 % al 0,2 % anual mueven la cifra entre 0 y 298,676 viviendas. Una sola fuente de hogares: hecho de fuente única (C4).",
+  "capa": "C4",
+  "magnitud": -150989.948,
+  "unidad": "viviendas",
+  "intervalo": [
+   -286115.0,
+   12561.21
+  ],
+  "fuentes": [
+   "INE EPA (hogares, tabla 65269/65944; media trimestral) (única fuente de hogares en este periodo)",
+   "MIVAU certificados de fin de obra (libres) y calificaciones definitivas (protegida)",
+   "MIVAU estimación del parque de viviendas"
+  ],
+  "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (se aplican solo a la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas.",
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un déficit contable no equivale a demanda insatisfecha a cualquier precio. Quiebre de la EPA en 2021; la ECP está anclada al Censo 2021 (no es independiente de él); el fin de obra del MIVAU cubre menos que la variación del parque y del Censo."
+ },
+ {
+  "id": "A1_nacional_2014-2019",
+  "enunciado_neutro": "Déficit contable acumulado (variación de hogares menos altas netas de vivienda) entre 2014 y 2019, con vivienda protegida: mediana de las combinaciones 238,047; rango entre fuentes con bajas del 0,1 %: -340,601 a 315,952. Las bajas del 0 % al 0,2 % anual mueven la cifra entre 0 y 311,620 viviendas. Una sola fuente de hogares: hecho de fuente única (C4).",
+  "capa": "C4",
+  "magnitud": 238046.875,
+  "unidad": "viviendas",
+  "intervalo": [
+   -340601.0,
+   471761.502
+  ],
+  "fuentes": [
+   "INE EPA (hogares, tabla 65269/65944; media trimestral) (única fuente de hogares en este periodo)",
+   "MIVAU certificados de fin de obra (libres) y calificaciones definitivas (protegida)",
+   "MIVAU estimación del parque de viviendas"
+  ],
+  "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (se aplican solo a la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas.",
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un déficit contable no equivale a demanda insatisfecha a cualquier precio. Quiebre de la EPA en 2021; la ECP está anclada al Censo 2021 (no es independiente de él); el fin de obra del MIVAU cubre menos que la variación del parque y del Censo."
+ },
+ {
+  "id": "A1_nacional_2020-2025",
+  "enunciado_neutro": "Déficit contable acumulado (variación de hogares menos altas netas de vivienda) entre 2020 y 2025, con vivienda protegida: mediana de las combinaciones 631,036; rango entre fuentes con bajas del 0,1 %: 470,014 a 711,299. Las bajas del 0 % al 0,2 % anual mueven la cifra entre 0 y 321,051 viviendas. Una sola fuente de hogares: hecho de fuente única (C4).",
+  "capa": "C4",
+  "magnitud": 631035.862,
+  "unidad": "viviendas",
+  "intervalo": [
+   470014.0,
+   871824.448
+  ],
+  "fuentes": [
+   "INE EPA (hogares, tabla 65269/65944; media trimestral) (única fuente de hogares en este periodo)",
+   "MIVAU certificados de fin de obra (libres) y calificaciones definitivas (protegida)",
+   "MIVAU estimación del parque de viviendas"
+  ],
+  "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (se aplican solo a la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas.",
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un déficit contable no equivale a demanda insatisfecha a cualquier precio. Quiebre de la EPA en 2021; la ECP está anclada al Censo 2021 (no es independiente de él); el fin de obra del MIVAU cubre menos que la variación del parque y del Censo."
+ },
+ {
+  "id": "A1_nacional_2014-2025",
+  "enunciado_neutro": "Déficit contable acumulado (variación de hogares menos altas netas de vivienda) entre 2014 y 2025, con vivienda protegida: mediana de las combinaciones 869,083; rango entre fuentes con bajas del 0,1 %: 129,413 a 1,027,250. Las bajas del 0 % al 0,2 % anual mueven la cifra entre 0 y 632,671 viviendas. Una sola fuente de hogares: hecho de fuente única (C4).",
+  "capa": "C4",
+  "magnitud": 869082.738,
+  "unidad": "viviendas",
+  "intervalo": [
+   129413.0,
+   1343585.95
+  ],
+  "fuentes": [
+   "INE EPA (hogares, tabla 65269/65944; media trimestral) (única fuente de hogares en este periodo)",
+   "MIVAU certificados de fin de obra (libres) y calificaciones definitivas (protegida)",
+   "MIVAU estimación del parque de viviendas"
+  ],
+  "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (se aplican solo a la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas.",
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un déficit contable no equivale a demanda insatisfecha a cualquier precio. Quiebre de la EPA en 2021; la ECP está anclada al Censo 2021 (no es independiente de él); el fin de obra del MIVAU cubre menos que la variación del parque y del Censo."
+ },
+ {
+  "id": "A1_nacional_2012-2021",
+  "enunciado_neutro": "Déficit contable acumulado (variación de hogares menos altas netas de vivienda) entre 2012 y 2021, con vivienda protegida: mediana de las combinaciones -132,255; rango entre fuentes con bajas del 0,1 %: -1,015,321 a 429,422. Las bajas del 0 % al 0,2 % anual mueven la cifra entre 0 y 519,231 viviendas.",
+  "capa": "C1",
+  "magnitud": -132255.212,
+  "unidad": "viviendas",
+  "intervalo": [
+   -1015321.0,
+   689037.152
+  ],
+  "fuentes": [
+   "INE EPA (hogares, tabla 65269/65944; media trimestral)",
+   "INE Censos 2011 y 2021 y ECP (tabla 60131)",
+   "MIVAU certificados de fin de obra (libres) y calificaciones definitivas (protegida)",
+   "MIVAU estimación del parque de viviendas",
+   "INE Censos 2011 y 2021 (stock de viviendas)"
+  ],
+  "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (se aplican solo a la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas.",
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un déficit contable no equivale a demanda insatisfecha a cualquier precio. Quiebre de la EPA en 2021; la ECP está anclada al Censo 2021 (no es independiente de él); el fin de obra del MIVAU cubre menos que la variación del parque y del Censo."
+ },
+ {
+  "id": "A1_nacional_2022-2025",
+  "enunciado_neutro": "Déficit contable acumulado (variación de hogares menos altas netas de vivienda) entre 2022 y 2025, con vivienda protegida: mediana de las combinaciones 644,675; rango entre fuentes con bajas del 0,1 %: 579,050 a 704,144. Las bajas del 0 % al 0,2 % anual mueven la cifra entre 0 y 214,878 viviendas.",
+  "capa": "C1",
+  "magnitud": 644674.973,
+  "unidad": "viviendas",
+  "intervalo": [
+   579050.0,
+   811582.892
+  ],
+  "fuentes": [
+   "INE EPA (hogares, tabla 65269/65944; media trimestral)",
+   "INE Censos 2011 y 2021 y ECP (tabla 60131)",
+   "MIVAU certificados de fin de obra (libres) y calificaciones definitivas (protegida)",
+   "MIVAU estimación del parque de viviendas"
+  ],
+  "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (se aplican solo a la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas.",
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un déficit contable no equivale a demanda insatisfecha a cualquier precio. Quiebre de la EPA en 2021; la ECP está anclada al Censo 2021 (no es independiente de él); el fin de obra del MIVAU cubre menos que la variación del parque y del Censo."
+ },
+ {
+  "id": "A1_nacional_2012-2025",
+  "enunciado_neutro": "Déficit contable acumulado (variación de hogares menos altas netas de vivienda) entre 2012 y 2025, con vivienda protegida: mediana de las combinaciones 506,670; rango entre fuentes con bajas del 0,1 %: -436,271 a 1,133,566. Las bajas del 0 % al 0,2 % anual mueven la cifra entre 0 y 734,109 viviendas.",
+  "capa": "C1",
+  "magnitud": 506670.261,
+  "unidad": "viviendas",
+  "intervalo": [
+   -436271.0,
+   1500620.044
+  ],
+  "fuentes": [
+   "INE EPA (hogares, tabla 65269/65944; media trimestral)",
+   "INE Censos 2011 y 2021 y ECP (tabla 60131)",
+   "MIVAU certificados de fin de obra (libres) y calificaciones definitivas (protegida)",
+   "MIVAU estimación del parque de viviendas",
+   "INE Censos 2011 y 2021 (stock de viviendas)"
+  ],
+  "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (se aplican solo a la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas.",
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un déficit contable no equivale a demanda insatisfecha a cualquier precio. Quiebre de la EPA en 2021; la ECP está anclada al Censo 2021 (no es independiente de él); el fin de obra del MIVAU cubre menos que la variación del parque y del Censo."
+ },
+ {
+  "id": "A1_nacional_2021-2025",
+  "enunciado_neutro": "Déficit contable acumulado (variación de hogares menos altas netas de vivienda) entre 2021 y 2025, con vivienda protegida: mediana de las combinaciones 701,187; rango entre fuentes con bajas del 0,1 %: 559,752 a 834,997. Las bajas del 0 % al 0,2 % anual mueven la cifra entre 0 y 268,125 viviendas.",
+  "capa": "C1",
+  "magnitud": 701186.827,
+  "unidad": "viviendas",
+  "intervalo": [
+   559752.0,
+   969059.308
+  ],
+  "fuentes": [
+   "INE EPA (hogares, tabla 65269/65944; media trimestral)",
+   "INE Censos 2011 y 2021 y ECP (tabla 60131)",
+   "MIVAU certificados de fin de obra (libres) y calificaciones definitivas (protegida)",
+   "MIVAU estimación del parque de viviendas"
+  ],
+  "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (se aplican solo a la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas.",
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un déficit contable no equivale a demanda insatisfecha a cualquier precio. Quiebre de la EPA en 2021; la ECP está anclada al Censo 2021 (no es independiente de él); el fin de obra del MIVAU cubre menos que la variación del parque y del Censo."
+ },
+ {
+  "id": "A1_provincial_2022-2025",
+  "enunciado_neutro": "Déficit contable provincial 2022-2025 (ECP y dos fuentes de altas): suma de provincias 530,860 a 798,307; mayores valores centrales: Madrid 97,451, Barcelona 77,358, Valencia/València 60,427, Alicante/Alacant 48,645, Murcia 31,856.",
+  "capa": "C4",
+  "magnitud": 664583.312,
+  "unidad": "viviendas",
+  "intervalo": [
+   530860.0,
+   798306.624
+  ],
+  "fuentes": [
+   "INE ECP provincial (tabla 60133)",
+   "MIVAU fin de obra provincial",
+   "Catastro unidades urbanas residenciales (sin País Vasco ni Navarra)"
+  ],
+  "supuestos": "Hogares provinciales de una sola fuente por periodo; bajas 0-0,2 % sobre el stock censal.",
+  "limites": "Hecho de fuente única en hogares (C4). El Catastro no cubre territorios forales. Los 4 territorios forales usan solo fin de obra."
+ },
+ {
+  "id": "A2_hogares_implicitos",
+  "enunciado_neutro": "Hogares implícitos de 25-34 años (diferencia entre la tasa observada de convivencia con progenitores en 2025 y la tasa de referencia): 187,956 a 747,693. Con la referencia España 2008: 187,956 a 505,902; con la media UE-27: 560,770 a 747,693 (solo ECV).",
+  "capa": "C1",
+  "magnitud": 433630.171,
+  "unidad": "hogares (= viviendas)",
+  "intervalo": [
+   187955.713,
+   747693.2
+  ],
+  "fuentes": [
+   "Eurostat ilc_lvps08 (ECV)",
+   "INE EPA tabla 65944 (hijo/a de la persona de referencia)"
+  ],
+  "supuestos": "Personas por hogar joven entre 1,5 y 2,0; una vivienda por hogar; referencias: España 2008 (cada fuente con su propia tasa) y UE-27 del último año (solo ECV).",
+  "limites": "El Censo 2021 no publica la relación con la persona de referencia por tramo de edad accesible; sin desagregación por CCAA; sin error muestral publicado en los ficheros (no se inventa). Las dos tasas miden conceptos distintos (convivencia con progenitores frente a hijo/a de la persona de referencia)."
+ },
+ {
+  "id": "A3_vacias_tercil_alto_vs_bajo",
+  "enunciado_neutro": "Porcentaje de las viviendas vacías (de los municipios con dato de presión) situado en el tercil alto de presión: 27.5 a 44.7 %; en el tercil bajo: 20.7 a 28.3 %. Rango entre tres medidas de vacancia y tres medidas de presión.",
+  "capa": "C1",
+  "magnitud": 35.831,
+  "unidad": "% de las vacías de la muestra",
+  "intervalo": [
+   27.476,
+   44.743
+  ],
+  "fuentes": [
+   "INE Censo 2021, tabla 59531 (vacías y uso esporádico por consumo eléctrico)",
+   "Catastro (unidades urbanas residenciales) − Censo 2021 (principales) − INE VUT",
+   "MIVAU valor tasado y SERPAVI (presión)"
+  ],
+  "supuestos": "Terciles por rango dentro de los municipios con dato; presión = Δ ln valor tasado 2015-21 y 2021-25 y Δ ln alquiler SERPAVI 2015-21; segunda medida = Catastro 2021 − viviendas principales − VUT (VUT ausente = 0).",
+  "limites": "Muestra con valor tasado: 277 municipios; con SERPAVI: 1.806. Los municipios de menos de ~375 viviendas se agrupan en «resto» en el INE y quedan fuera. La segunda medida incluye segundas residencias. El Catastro no cubre País Vasco ni Navarra (la segunda medida excluye esos municipios)."
+ },
+ {
+  "id": "A3_vacias_mayores_50000",
+  "enunciado_neutro": "En municipios de más de 50.000 habitantes: tercil alto 29.5 a 47.2 % de las vacías de la muestra; tercil bajo 24.8 a 32.6 %.",
+  "capa": "C1",
+  "magnitud": 37.598,
+  "unidad": "% de las vacías de la muestra",
+  "intervalo": [
+   29.547,
+   47.195
+  ],
+  "fuentes": [
+   "INE Censo 2021, tabla 59531 (vacías y uso esporádico por consumo eléctrico)",
+   "Catastro (unidades urbanas residenciales) − Censo 2021 (principales) − INE VUT",
+   "MIVAU valor tasado y SERPAVI (presión)"
+  ],
+  "supuestos": "Población = suma de personas de las secciones censales 2021.",
+  "limites": "Entre 43 y 48 municipios por tercil."
+ },
+ {
+  "id": "A3_vacias_por_100_hogares_nuevos",
+  "enunciado_neutro": "Vacías por cada 100 hogares nuevos 2011-2021 en municipios con nombre único en el Censo 2011: tercil alto 420 a 1,065; tercil bajo 675 a 2,757.",
+  "capa": "C1",
+  "magnitud": 701.885,
+  "unidad": "vacías por 100 hogares nuevos",
+  "intervalo": [
+   420.431,
+   1064.59
+  ],
+  "fuentes": [
+   "INE Censo 2021, tabla 59531 (vacías y uso esporádico por consumo eléctrico)",
+   "Catastro (unidades urbanas residenciales) − Censo 2021 (principales) − INE VUT",
+   "MIVAU valor tasado y SERPAVI (presión)"
+  ],
+  "supuestos": "Hogares nuevos = viviendas principales Censo 2021 − Censo 2011, emparejando por nombre de municipio (solo nombres únicos).",
+  "limites": "El emparejamiento por nombre es aproximado; el denominador es pequeño en municipios con poco crecimiento. Las vacías del Censo 2011 (declaradas) y 2021 (consumo eléctrico) no son comparables: total 3,443,365 frente a 3,828,307."
+ },
+ {
+  "id": "A4_precio_renta_nacional_2023",
+  "enunciado_neutro": "Precio de una vivienda de 80 m² (valor tasado) en veces la renta anual del hogar, 2023: 2.99 a 3.79; cuota hipotecaria (80 % del precio, 25 años, tipo 3.78 %) de 597 €/mes, 14.8 a 18.8 % de la renta mensual del hogar.",
+  "capa": "C1",
+  "magnitud": 3.389,
+  "unidad": "veces la renta anual",
+  "intervalo": [
+   2.988,
+   3.79
+  ],
+  "fuentes": [
+   "INE ADRH (renta neta media por hogar por sección, ponderada por hogares del Censo 2021)",
+   "Contabilidad nacional (renta disponible de los hogares, Eurostat) / hogares EPA",
+   "MIVAU valor tasado",
+   "BCE tipo de interés de nuevos préstamos de vivienda"
+  ],
+  "supuestos": "80 m²; LTV 80 %; 25 años; tipo medio anual; sin gastos ni impuestos de compra.",
+  "limites": "Los dos denominadores miden conceptos distintos (renta neta ADRH frente a renta disponible por hogar de la contabilidad nacional); sin cuota por edad (no hay fuente cargada de renta por edad)."
+ },
+ {
+  "id": "A4_precio_renta_provincias_2023",
+  "enunciado_neutro": "Precio/renta provincial 2023 (80 m²): de 1.69 a 5.90 veces entre provincias y entre dos fuentes de precio (valor tasado y Registradores); cuota hipotecaria de 8.3 a 29.2 % de la renta mensual del hogar.",
+  "capa": "C4",
+  "magnitud": 2.981,
+  "unidad": "veces la renta anual",
+  "intervalo": [
+   1.686,
+   5.9
+  ],
+  "fuentes": [
+   "MIVAU valor tasado",
+   "Registradores (precio m², datos abiertos)",
+   "INE ADRH (única fuente de renta provincial)"
+  ],
+  "supuestos": "Renta provincial = media ponderada por hogares censales de las secciones con dato.",
+  "limites": "Renta provincial de fuente única (ADRH): hecho de fuente única en el denominador."
+ },
+ {
+  "id": "A4_alquiler_renta_provincias_2023",
+  "enunciado_neutro": "Alquiler anual (80 m², mediana SERPAVI) en % de la renta del hogar: 11.8 a 24.0 % entre provincias; en las 4 provincias catalanas, con las fianzas de Incasòl: 15.4 a 25.0 % (SERPAVI en las mismas: 13.9 a 23.0 %).",
+  "capa": "C4",
+  "magnitud": 16.476,
+  "unidad": "% de la renta anual",
+  "intervalo": [
+   11.755,
+   24.973
+  ],
+  "fuentes": [
+   "MIVAU SERPAVI (contratos declarados en el IRPF; stock)",
+   "Incasòl fianzas (flujo, solo Cataluña)",
+   "INE ADRH (única fuente de renta)"
+  ],
+  "supuestos": "SERPAVI en €/m² por mes × 80; Incasòl = media ponderada de las bandas por contratos, año natural 2023.",
+  "limites": "SERPAVI es stock de contratos y las fianzas son flujo; renta de fuente única (C4)."
+ },
+ {
+  "id": "A5_propiedad_jovenes_2022",
+  "enunciado_neutro": "Hogares propietarios de su vivienda principal en 2022: EFF, persona de referencia de menos de 35 años: 31.8 %; ECV, de 16 a 29 años: 30.7 %; ECV, de 30 a 44 años: 56.7 %. Rango entre las dos fuentes para el tramo más joven: 30.7 a 31.8 %.",
+  "capa": "C1",
+  "magnitud": 31.25,
+  "unidad": "% de hogares",
+  "intervalo": [
+   30.7,
+   31.8
+  ],
+  "fuentes": [
+   "Banco de España, EFF (tablas publicadas, EFF2022)",
+   "INE ECV, tabla 9994"
+  ],
+  "supuestos": "Edad de la persona de referencia; los tramos de las fuentes no coinciden (EFF <35; ECV 16-29).",
+  "limites": "Sin error muestral en los ficheros extraídos (el campo error_max es de validación de la extracción, no muestral)."
+ },
+ {
+  "id": "A5_propiedad_65_mas_2022",
+  "enunciado_neutro": "Hogares propietarios cuya persona de referencia tiene 65 años o más (2022): EFF 65-74 83.0 %, EFF 75+ 84.0 %, ECV 89.4 %, Eurostat (adultos solos de 65+) 85.7 %.",
+  "capa": "C1",
+  "magnitud": 85.529,
+  "unidad": "% de hogares",
+  "intervalo": [
+   83.0,
+   89.4
+  ],
+  "fuentes": [
+   "Banco de España, EFF",
+   "INE ECV, tabla 9994",
+   "Eurostat ilc_lvho02"
+  ],
+  "supuestos": "Tramos y unidades de los tres no coinciden; Eurostat solo adultos que viven solos.",
+  "limites": "Eurostat no desagrega por edad de la persona de referencia de otros tipos de hogar."
+ },
+ {
+  "id": "A5_propiedad_total",
+  "enunciado_neutro": "Hogares propietarios, todas las edades: EFF 2022 72.1 %, ECV 2022 75.9 %, ECV 2021 75.8 %, Censo 2021 75.5 %.",
+  "capa": "C1",
+  "magnitud": 74.819,
+  "unidad": "% de hogares",
+  "intervalo": [
+   72.1,
+   75.9
+  ],
+  "fuentes": [
+   "Banco de España, EFF",
+   "INE ECV",
+   "INE Censo 2021"
+  ],
+  "supuestos": "Censo 2021: viviendas principales en propiedad sobre principales (secciones).",
+  "limites": "Fechas de referencia distintas (2021 y 2022)."
+ },
+ {
+  "id": "A5_cambio_propiedad_jovenes_2008_2022",
+  "enunciado_neutro": "Variación 2008-2022 de la proporción de hogares jóvenes propietarios: EFF <35 de 65.8 a 31.8 % (-34.0 puntos); ECV 16-29 de 54.9 a 30.7 % (-24.2 puntos).",
+  "capa": "C1",
+  "magnitud": -29.1,
+  "unidad": "puntos porcentuales",
+  "intervalo": [
+   -34.0,
+   -24.2
+  ],
+  "fuentes": [
+   "Banco de España, EFF",
+   "INE ECV, tabla 9994"
+  ],
+  "supuestos": "Tramos de edad distintos entre fuentes.",
+  "limites": "Efecto de composición del tramo de edad no separado."
+ },
+ {
+  "id": "A6_ratio_precio_alquiler_2015_2024",
+  "enunciado_neutro": "Variación 2015-2024 de la razón precio/alquiler: +43.9 % con el cociente de índices IPV/IPC de alquiler; -9.3 % con el cociente de niveles valor tasado/(SERPAVI×12) (de 20.3 a 18.4 años de alquiler). Las dos medidas difieren en el signo.",
+  "capa": "C1",
+  "magnitud": 17.312,
+  "unidad": "% de variación",
+  "intervalo": [
+   -9.307,
+   43.931
+  ],
+  "fuentes": [
+   "INE IPV e IPC alquiler (cociente de índices)",
+   "MIVAU valor tasado y SERPAVI (niveles)"
+  ],
+  "supuestos": "Medias anuales; SERPAVI nacional asignado por año.",
+  "limites": "El IPC de alquiler mide el stock completo de alquileres; SERPAVI es el stock declarado en el IRPF; ambos amortiguan los cambios de contratos nuevos. Si dos métodos discrepan se informan los dos."
+ },
+ {
+  "id": "A6_coste_uso_poterba_2023",
+  "enunciado_neutro": "Coste de uso anual de la vivienda propia en 2023 (Poterba, sin deducción fiscal): -1.0 a 7.3 % del precio (depreciación 1-3 %, impuesto 0,5 %, ganancia esperada = 0, inflación o IPV medio de 4 años); equivale a -0.18 a 1.33 veces el alquiler mensual SERPAVI de 80 m².",
+  "capa": "C4",
+  "magnitud": 2.095,
+  "unidad": "% del precio por año",
+  "intervalo": [
+   -0.992,
+   7.277
+  ],
+  "fuentes": [
+   "BCE tipo de nuevos préstamos de vivienda (v2)",
+   "MIVAU valor tasado y SERPAVI",
+   "INE IPV"
+  ],
+  "supuestos": "Depreciación 1, 2 y 3 %; impuesto sobre el inmueble 0,5 %; ganancia esperada igual a 0, a la inflación del deflactor o al crecimiento medio del IPV en 4 años.",
+  "limites": "El rango se debe a los supuestos, no a error de medida; el tipo procede de una sola serie (C4)."
+ }
+]

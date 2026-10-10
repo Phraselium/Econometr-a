@@ -128,12 +128,15 @@ def a5(reg) -> pd.DataFrame:
                           "pct_min": val, "pct_max": val})
     e = pd.read_csv(pdat.V3 / "eurostat_emancipacion_tenencia_v3.csv")
     e = e[e.fuente.str.contains("lvho02") & (e.codigo == "ES")]
-    e = e[e.serie.str.contains(r"_A1_(LT65|GE65)_(OWN|RENT)$")]
-    for r in e.itertuples():
-        g = r.serie.split("_A1_")[1]
-        filas.append({"fuente": "Eurostat ilc_lvho02 (adulto solo)", "anio": int(r.periodo),
-                      "edad": "<65" if g.startswith("LT65") else "65+",
-                      "categoria": "propietario" if g.endswith("OWN") else "alquiler", "pct_min": r.valor, "pct_max": r.valor})
+    e = e[e.serie.str.contains(r"_A1_(?:LT65|GE65)_(?:OWN|RENT|TOTAL)$")].copy()
+    e["grupo"] = e.serie.str.extract(r"_A1_(LT65|GE65)_")[0]
+    e["cat"] = e.serie.str.extract(r"_(OWN|RENT|TOTAL)$")[0]
+    pe = e.pivot_table(index=["periodo", "grupo"], columns="cat", values="valor").reset_index()
+    for r in pe.itertuples():
+        for cat, num in (("propietario", r.OWN), ("alquiler", r.RENT)):
+            v_ = 100 * num / r.TOTAL
+            filas.append({"fuente": "Eurostat ilc_lvho02 (adulto solo, % del grupo)", "anio": int(r.periodo),
+                          "edad": "<65" if r.grupo == "LT65" else "65+", "categoria": cat, "pct_min": v_, "pct_max": v_})
     # Censo 2021: total (todas las edades), a partir de los indicadores por sección
     sec = pd.read_csv(pdat.V3 / "ine_v3_censo2021_seccion_indicadores.csv.gz", dtype={"codigo": str}, usecols=["codigo", "serie", "valor"])
     s = sec[sec.serie.isin(["t19_1", "t20_1", "t20_2", "t20_3"])].pivot(index="codigo", columns="serie", values="valor").dropna()
@@ -151,6 +154,7 @@ def a5(reg) -> pd.DataFrame:
 
 def a6(reg) -> dict[str, pd.DataFrame]:
     nq = pdat.nacional_q()
+    nq = nq.copy()
     nq["anio"] = [int(i[:4]) for i in nq.index]
     ann = nq.groupby("anio").agg(ipv=("ipv", "mean"), ipc_alq=("ipc_alquiler", "mean"), p_tasado=("p_tasado", "mean"),
                                  tipo_hip=("tipo_hip", "mean"), infl=("inflacion_deflactor", "mean"),
@@ -160,8 +164,7 @@ def a6(reg) -> dict[str, pd.DataFrame]:
     ecb = pd.read_csv(pdat.RAW / "ecb_tipo_hipotecario_es.csv")
     ecb["anio"] = ecb.periodo.str[:4].astype(int)
     ann["tipo_hip_bce"] = ecb.groupby("anio").valor.mean()
-    base = ann.loc[2015, "ratio_idx"] if 2015 in ann.index else np.nan
-    ann["ratio_ipv_ipc_base2015"] = 100 * ann.ratio_idx / base
+    ann["ratio_ipv_ipc_base2015"] = 100 * (ann.ipv / ann.ipc_alq) / (ann.loc[2015, "ipv"] / ann.loc[2015, "ipc_alq"])
     sp = nq.groupby("anio").serpavi_esp_constante.mean()
     ann["serpavi_eur_m2_mes"] = sp
     ann["ratio_niveles_tasado_serpavi"] = ann.p_tasado / (ann.serpavi_eur_m2_mes * 12)

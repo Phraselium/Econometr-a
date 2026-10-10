@@ -1,0 +1,33 @@
+{
+ "m": 4,
+ "filas": [
+  {
+   "hipotesis": "H3-1",
+   "p_sellado": null,
+   "p_usado": 1.0,
+   "p_holm": 1.0,
+   "nota": "no evaluada: p=1"
+  },
+  {
+   "hipotesis": "H3-2",
+   "p_sellado": null,
+   "p_usado": 1.0,
+   "p_holm": 1.0,
+   "nota": "no evaluada: p=1"
+  },
+  {
+   "hipotesis": "H3-3a",
+   "p_sellado": 0.01615610463556489,
+   "p_usado": 0.01615610463556489,
+   "p_holm": 0.04846831390669467,
+   "nota": ""
+  },
+  {
+   "hipotesis": "H3-3b",
+   "p_sellado": 5.5210740454896164e-05,
+   "p_usado": 5.5210740454896164e-05,
+   "p_holm": 0.00022084296181958465,
+   "nota": ""
+  }
+ ]
+}

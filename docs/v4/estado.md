@@ -16,6 +16,11 @@
 | M5a medidas por instrumento y literatura | C | parcial (pasada 2: 1 programa añadido por copia no oficial; 2 no accesibles) | — | 89 medidas (71 + 18), 27+2 instrumentos (I28, I29 nuevos), 5 VERIFICADA / 7 NO VERIFICADA; recuentos de tabla A pendientes | 245.499 + ~45.000 (pasada 2) |
 | M6 preguntas abiertas y solicitudes | C | hecho | — | 10 preguntas; S3-S10 redactadas | 0 (orquestador) |
 
-**Hecho:** M0, M1, M2, M3, M4, M6, M7; revisiones A y B.
-**Siguiente:** completar los 2 programas no accesibles (fuentes_fallidas M5a-2) y recalcular recuentos de instrumentos.md → M5b evaluación de instrumentos → entregables → revisión C → cierre.
-**Tokens de subagentes v4:** 1.120.317 / 2.500.000 (cierre al 80 %: 2.000.000).
+| M5a pasada 2 (programas adicionales) | C | hecho | — | 88 medidas, 9 documentos; 2 no accesibles | 86.270 |
+| M5b matriz de instrumentos y fichas | C | hecho | C2/C4 | signo estable: construcción y vacías; débil: vivienda pública; no estable: topes, VUT y ayudas a la demanda (13-88 % al precio) | 0 (orquestador; M5 al 83 % del límite) |
+| Entregables (WP, informe técnico, brief, lo_que_sabemos, README) | C | hecho (borrador) | — | — | 0 (orquestador) |
+| Revisión oleada C | C | en curso | — | — | — |
+
+**Hecho:** M0-M7; revisiones A y B; entregables en borrador.
+**Siguiente:** revisión C → correcciones → make all ×2 en clon limpio → cierre.
+**Tokens de subagentes v4:** 1.206.587 / 2.500.000 (cierre al 80 %: 2.000.000).

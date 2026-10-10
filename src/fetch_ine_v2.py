@@ -263,22 +263,15 @@ def sel_ipva_factory(tid):
     def sel(n, _t):
         p = partes(n)
         idx = [i for i, x in enumerate(p) if x in IPVA_MED]
-        if len(idx) != 1 or idx[0] == 0 and len(p) < 2:
+        if len(idx) != 1:
             return None
         i = idx[0]
         med, uni = IPVA_MED[p[i]]
-        desg = " | ".join(p[j] for j in range(1, len(p)) if j != i) if i == 0 else \
-            " | ".join(p[j] for j in range(1, len(p)) if j != i)
-        if tid in ("59060",):
-            if p[0] in NAC:
-                g = ("nacional", "00", "España")
-            else:
-                g = ("municipio", "", p[0])
+        desg = " | ".join(p[j] for j in range(1, len(p)) if j != i)
+        if tid == "59060":
+            g = ("nacional", "00", "España") if p[0] in NAC else ("municipio", "", p[0])
         elif tid == "59061":
-            if p[0] in NAC:
-                g = ("nacional", "00", "España")
-            else:
-                g = ("distrito", "", p[0])
+            g = ("nacional", "00", "España") if p[0] in NAC else ("distrito", "", p[0])
         else:
             g = geo(p[0])
             if not g:
@@ -321,7 +314,8 @@ def sel_ecp(n, _t):
     if tipo is None:
         return None
     return dict(nivel=g[0], codigo=g[1], territorio=g[2], nacionalidad=p[1], edad=p[2],
-                edad_ini=ini, edad_tipo=tipo)
+                edad_ini=ini, edad_tipo=tipo, medida="poblacion_residente_1_enero",
+                desglose=f"nacionalidad={p[1]}; edad={p[2]}", unidad="personas")
 
 
 def sel_epa(n, _t):
@@ -399,22 +393,23 @@ def construir(tid, seleccion, modo, fk_keep=None, extra=None):
 
 
 def dedup_identicas(df: pd.DataFrame, claves: list[str]) -> pd.DataFrame:
-    """Elimina series duplicadas con valores idénticos (mismo territorio+desglose). Falla si difieren."""
-    g = df.groupby(claves + ["fecha"])["valor"].agg(["nunique", "size"]).reset_index()
-    pares = df.drop_duplicates(subset=claves + ["serie"])
-    dup = pares.groupby(claves).size()
-    dup = dup[dup > 1].index
-    if len(dup) == 0:
-        return df
-    sub = df[df.set_index(claves).index.isin(dup)]
-    for k, grp in sub.groupby(claves):
-        vals = grp.pivot_table(index="fecha", columns="serie", values="valor", aggfunc="first")
-        if vals.nunique(axis=1, dropna=False).max() > 1:
-            raise RuntimeError(f"duplicados con valores distintos en {k}")
-    keep = pares.groupby(claves).head(1)["serie"]
-    n_drop = len(dup)
-    print(f"  [dedup] {n_drop} grupos con series duplicadas idénticas; se conserva una")
-    return df[~df["serie"].isin(set(sub["serie"]) - set(keep))]
+    """Para un mismo (territorio, desglose) con varias series INE: conserva una si son idénticas.
+
+    Si dos series del mismo grupo difieren en algún periodo, se aborta (no se elige a ciegas).
+    """
+    out = []
+    for k, grp in df.groupby(claves, sort=False):
+        ids = sorted(grp["serie"].unique())
+        primera = grp[grp["serie"] == ids[0]]
+        for otra_id in ids[1:]:
+            a = primera.set_index("fecha")["valor"].sort_index()
+            b = grp[grp["serie"] == otra_id].set_index("fecha")["valor"].sort_index()
+            igual = a.index.equals(b.index) and bool(((a == b) | (a.isna() & b.isna())).all())
+            if not igual:
+                raise RuntimeError(f"series duplicadas con valores distintos en {k}: {ids}")
+            print(f"  [dedup] {k}: {otra_id} idéntica a {ids[0]}; descartada")
+        out.append(primera)
+    return pd.concat(out, ignore_index=True)
 
 
 def actualizar_manifiesto_series(df: pd.DataFrame, fuente: str):
@@ -540,7 +535,6 @@ def job_padron_edad_nac(L=None):
             sel.append((cod, m))
     print(f"  seleccionadas {len(sel)} series")
     df = construir("77023", sel, "serie", fk_keep={19})  # T1 = 1 de enero
-    df = df.rename(columns={"desglose": "_d"})
     # Mapear metadatos de edad desde el nombre INE (edad y nacionalidad en el 2º y 3er campo)
     meta = {cod: m for cod, m in sel}
     df["edad_txt"] = df["cod_serie"].map(lambda c: meta[c]["edad"])
@@ -569,7 +563,6 @@ def job_padron_edad_nac(L=None):
     base["unidad"] = "personas"
     base["fuente"] = FUENTE
     base["url"] = f"{BASE}/DATOS_SERIE/<COD>?nult={NULT}"
-    base["valor"] = base["valor"]
     base["cod_serie"] = ""
     base["tabla"] = "77023"
     base["nombre_ine"] = ""

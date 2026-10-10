@@ -126,7 +126,7 @@ Cifras generadas por `src/v2/bd_run.py` (B={B}, semilla {vc.SEED}); dos ejecucio
   **Cautela de lectura de M1**: el coeficiente se identifica con diferencias entre provincias y se aplica a la media nacional de la variable; el «común» es el resto
   (en alquiler supera el 100 % desde 2014 porque la demografía aporta en negativo).
 - Estimación MCO SIN ponderar; solo la agregación (medias por trimestre y contribuciones) pondera por población total (con ffill).
-- `cu_x_expo` (coste de uso × exposición) es una variable en NIVEL: su contribución se mide respecto a la media muestral (como BA/BV), no respecto al origen del coste de uso.
+- `cu_x_expo` (coste de uso × exposición) es una variable en NIVEL: su contribución se mide como (coste de uso − media muestral del coste de uso) × exposición, no respecto al origen del coste de uso.
   Los canales por exposición en M1 dependen de la media ponderada de la exposición (estandarizada sin ponderar): existen solo por la ponderación por población.
 - Efecto de borde: Σ Δ4/4 no es el cambio en niveles y difieren de forma apreciable (alquiler P2: {fmt(obsn['alquiler']['P2'])} en niveles frente a {fmt(c[(c.mercado=='alquiler')&(c.modelo=='M1')&(c.periodo=='P2')&(c.componente=='observado')].contrib_pp.iloc[0])} aquí;
   compra P2: {fmt(obsn['compra']['P2'])} frente a {fmt(c[(c.mercado=='compra')&(c.modelo=='M1')&(c.periodo=='P2')&(c.componente=='observado')].contrib_pp.iloc[0])}; `observado_niveles_referencia.csv`).
@@ -159,7 +159,7 @@ Cifras generadas por `src/v2/bd_run.py` (B={B}, semilla {vc.SEED}); dos ejecucio
 - Ninguna familia explica de forma robusta la evolución desde 2020: en M1 las familias suman {cell(c, 'compra', 'M1', 'P3-P4 (desde 2020)', 'explicado_familias')} pp y el común {cell(c, 'compra', 'M1', 'P3-P4 (desde 2020)', 'comun_efectos_tiempo')} pp.
   En M2 la demografía (sobre todo extranjera: {cell(c, 'compra', 'M2', 'P3-P4 (desde 2020)', 'demografia_extranj')} pp) sale con signo negativo en P3-P4 porque los coeficientes por periodo de la población cambian de signo
   (`coeficientes_por_periodo.csv`); no se interpreta, la inestabilidad entre M1 y M2 indica que no hay una atribución estable.
-- Crédito/coste de uso en P1 (con `cu_x_expo` respecto a la media muestral): {cell(c, 'compra', 'M1', 'P1', 'credito_tipos_cu')} pp en M1; desde 2014 {cell(c, 'compra', 'M1', 'P2-P4 (desde 2014)', 'credito_tipos_cu')} pp.
+- Crédito/coste de uso en P1 (con (coste de uso − media muestral) × exposición; la estimación no se centra): {cell(c, 'compra', 'M1', 'P1', 'credito_tipos_cu')} pp en M1; desde 2014 {cell(c, 'compra', 'M1', 'P2-P4 (desde 2014)', 'credito_tipos_cu')} pp.
 - En compra M2 el coeficiente de Δ4 coste de uso nacional es {fmt(ctx['coef'][(ctx['coef'].mercado=='compra')&(ctx['coef'].modelo=='M2')&(ctx['coef'].col=='x_cu')].coef.iloc[0], 4)} (signo contrario al esperado si es positivo; IC por bloques de tiempo en `coeficientes_por_periodo.csv`).
 
 ## Contrafactuales (EXPLORATORIOS y PARCIALES)

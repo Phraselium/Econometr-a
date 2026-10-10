@@ -15,8 +15,8 @@
     "alquiler_M1_P3P4_demografia_20_34": 0.34090351805910746,
     "alquiler_M1_P3P4_comun_efectos_tiempo": 5.7897221573501705,
     "compra_M1_P3P4_observado": -4.499081865974274,
-    "compra_M1_P3P4_comun_efectos_tiempo": -5.783767102968366,
-    "compra_M1_P3P4_explicado_familias": 1.9960069558440254
+    "compra_M1_P3P4_comun_efectos_tiempo": -7.337656849773667,
+    "compra_M1_P3P4_explicado_familias": 3.549896702649317
   },
   "ic95": {
     "alquiler_M1_P3P4_observado": [
@@ -36,12 +36,12 @@
       -2.5637097583028985
     ],
     "compra_M1_P3P4_comun_efectos_tiempo": [
-      -12.07794221428131,
-      -2.0216290423610928
+      -13.476138915401497,
+      -4.2668950213393195
     ],
     "compra_M1_P3P4_explicado_familias": [
-      -1.494926736324299,
-      4.7826935709331115
+      -0.2294016995681989,
+      6.2843829715285535
     ]
   },
   "p_ajustado": {

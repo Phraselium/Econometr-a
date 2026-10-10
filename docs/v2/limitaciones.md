@@ -40,3 +40,4 @@
 - Compra M2: coeficiente de Δ4 coste de uso nacional positivo (signo contrario al esperado).
 - Contribuciones de M1 = b·media nacional; el «común» recoge el resto. Los canales por exposición en M1 existen solo por la ponderación. 20-34 EXPLORATORIO (Holm-7 ya ejecutado).
 - ECM nacional: IC de CP por bootstrap de residuos con regresores fijos (subestima); IC de LP por simulación con covarianza HAC(4).
+- BD (corrección C1): la contribución de `cu_x_expo` se mide como (coste de uso − media muestral del coste de uso) × exposición; la estimación usa la variable sin centrar (centrar por periodo no es neutro). Cambian solo las cifras de compra (M1 P2-P4 crédito/coste de uso: +2,27 pp, antes +0,13).

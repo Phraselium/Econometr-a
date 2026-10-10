@@ -29,7 +29,7 @@ Cifras generadas por `src/v2/bd_run.py` (B=49, semilla 20261010); dos ejecucione
   **Cautela de lectura de M1**: el coeficiente se identifica con diferencias entre provincias y se aplica a la media nacional de la variable; el «común» es el resto
   (en alquiler supera el 100 % desde 2014 porque la demografía aporta en negativo).
 - Estimación MCO SIN ponderar; solo la agregación (medias por trimestre y contribuciones) pondera por población total (con ffill).
-- `cu_x_expo` (coste de uso × exposición) es una variable en NIVEL: su contribución se mide respecto a la media muestral (como BA/BV), no respecto al origen del coste de uso.
+- `cu_x_expo` (coste de uso × exposición) es una variable en NIVEL: su contribución se mide como (coste de uso − media muestral del coste de uso) × exposición, no respecto al origen del coste de uso.
   Los canales por exposición en M1 dependen de la media ponderada de la exposición (estandarizada sin ponderar): existen solo por la ponderación por población.
 - Efecto de borde: Σ Δ4/4 no es el cambio en niveles y difieren de forma apreciable (alquiler P2: 1,94 en niveles frente a 1,32 aquí;
   compra P2: −2,95 frente a −4,49; `observado_niveles_referencia.csv`).
@@ -82,37 +82,37 @@ Cifras generadas por `src/v2/bd_run.py` (B=49, semilla 20261010); dos ejecucione
 | Componente | M1 pp [IC95 %] | % obs. M1 | M2 pp [IC95 %] | % obs. M2 | Evidencia heredada |
 |---|---|---|---|---|---|
 | **Observado** (crecimiento acumulado, pp de ln) | −9,53 [−22,26; −3,33] | 100 % | −9,53 [−18,41; −3,29] | 100 % | DESCRIPTIVO |
-| Suma de familias | −21,79 [−41,93; 13,33] | 229 % | −15,07 [−47,40; 0,98] | 158 % | DESCRIPTIVO |
+| Suma de familias | −19,21 [−39,83; 4,08] | 202 % | −14,35 [−47,99; 2,14] | 151 % | DESCRIPTIVO |
 | Demografía (20-34 + extranjera) | −17,98 [−30,20; 4,49] | 189 % | −15,45 [−44,10; −2,74] | 162 % | EXPLORATORIO (H2 no confirmada en el sellado) |
 |   · pob 20-34 | −17,54 [−34,96; −3,94] | 184 % | −3,81 [−30,30; 9,08] | 40 % | EXPLORATORIO (H2 no confirmada en el sellado) |
 |   · pob extranjera | −0,43 [−7,38; 13,29] | 5 % | −11,64 [−18,99; −5,26] | 122 % | EXPLORATORIO (H2 no confirmada en el sellado) |
 | Empleo (ocupados) | 0,23 [−1,60; 2,44] | −2 % | 1,12 [−0,01; 3,29] | −12 % | EXPLORATORIO (H2 no confirmada en el sellado) |
-| Crédito / coste de uso | −4,09 [−15,36; 12,34] | 43 % | −0,76 [−8,20; 5,64] | 8 % | EXPLORATORIO (H2 no confirmada en el sellado) |
+| Crédito / coste de uso | −1,52 [−15,45; 5,13] | 16 % | −0,04 [−6,16; 6,24] | 0 % | EXPLORATORIO (H2 no confirmada en el sellado) |
 | Oferta (terminadas) | 0,06 [−0,69; 0,41] | −1 % | 0,02 [−0,54; 0,44] | −0 % | EXPLORATORIO (H2 no confirmada en el sellado) |
-| Común: efectos de tiempo + FE | 12,66 [−29,29; 31,17] | −133 % | 6,15 [−18,36; 36,39] | −65 % | DESCRIPTIVO |
+| Común: efectos de tiempo + FE | 10,08 [−22,17; 32,53] | −106 % | 5,43 [−18,89; 36,21] | −57 % | DESCRIPTIVO |
 | Residuo | −0,40 [−1,17; 1,31] | 4 % | −0,60 [−1,75; 1,40] | 6 % | DESCRIPTIVO |
 
 ## Compra - desde 2020 (P3+P4)
 | Componente | M1 pp [IC95 %] | % obs. M1 | M2 pp [IC95 %] | % obs. M2 | Evidencia heredada |
 |---|---|---|---|---|---|
 | **Observado** (crecimiento acumulado, pp de ln) | −5,03 [−11,87; −2,31] | 100 % | −5,03 [−9,76; −2,27] | 100 % | DESCRIPTIVO |
-| Suma de familias | −5,78 [−15,00; 9,61] | 115 % | −10,64 [−19,86; −0,96] | 211 % | DESCRIPTIVO |
+| Suma de familias | −3,14 [−10,57; 8,08] | 62 % | −10,09 [−17,39; −0,33] | 200 % | DESCRIPTIVO |
 | Demografía (20-34 + extranjera) | −1,98 [−8,47; 11,72] | 39 % | −9,56 [−14,59; −3,64] | 190 % | EXPLORATORIO (H2 no confirmada en el sellado) |
 |   · pob 20-34 | −1,10 [−3,83; 1,55] | 22 % | 1,76 [−1,16; 4,67] | −35 % | EXPLORATORIO (H2 no confirmada en el sellado) |
 |   · pob extranjera | −0,88 [−8,07; 13,36] | 18 % | −11,31 [−16,96; −4,59] | 225 % | EXPLORATORIO (H2 no confirmada en el sellado) |
 | Empleo (ocupados) | 0,85 [−0,24; 2,57] | −17 % | 0,48 [−0,20; 2,18] | −10 % | EXPLORATORIO (H2 no confirmada en el sellado) |
-| Crédito / coste de uso | −4,68 [−15,58; 1,38] | 93 % | −1,57 [−6,39; 3,98] | 31 % | EXPLORATORIO (H2 no confirmada en el sellado) |
+| Crédito / coste de uso | −2,03 [−15,24; 3,66] | 40 % | −1,02 [−4,83; 4,71] | 20 % | EXPLORATORIO (H2 no confirmada en el sellado) |
 | Oferta (terminadas) | 0,03 [−0,16; 0,26] | −0 % | 0,01 [−0,18; 0,25] | −0 % | EXPLORATORIO (H2 no confirmada en el sellado) |
-| Común: efectos de tiempo + FE | 1,31 [−19,46; 9,05] | −26 % | 5,65 [−5,61; 15,87] | −112 % | DESCRIPTIVO |
+| Común: efectos de tiempo + FE | −1,33 [−17,68; 6,21] | 26 % | 5,09 [−5,91; 14,23] | −101 % | DESCRIPTIVO |
 | Residuo | −0,57 [−1,07; 0,32] | 11 % | −0,04 [−1,14; 0,74] | 1 % | DESCRIPTIVO |
 
 **Lectura (asociación, no causalidad).**
 - En términos REALES el valor tasado no «sube» en el conjunto 2014-2024Q1: observado −9,53 [−22,26; −3,33] pp (recuperación en P2, caída real en P3-P4: −5,03 [−11,87; −2,31] pp desde 2020 por la inflación del deflactor).
   Por eso la pregunta «qué explica la subida» se refiere al nominal solo de forma indirecta; aquí se descompone el real.
-- Ninguna familia explica de forma robusta la evolución desde 2020: en M1 las familias suman −5,78 [−15,00; 9,61] pp y el común 1,31 [−19,46; 9,05] pp.
+- Ninguna familia explica de forma robusta la evolución desde 2020: en M1 las familias suman −3,14 [−10,57; 8,08] pp y el común −1,33 [−17,68; 6,21] pp.
   En M2 la demografía (sobre todo extranjera: −11,31 [−16,96; −4,59] pp) sale con signo negativo en P3-P4 porque los coeficientes por periodo de la población cambian de signo
   (`coeficientes_por_periodo.csv`); no se interpreta, la inestabilidad entre M1 y M2 indica que no hay una atribución estable.
-- Crédito/coste de uso en P1 (con `cu_x_expo` respecto a la media muestral): −5,68 [−10,74; 19,55] pp en M1; desde 2014 −4,09 [−15,36; 12,34] pp.
+- Crédito/coste de uso en P1 (con (coste de uso − media muestral) × exposición; la estimación no se centra): −4,33 [−9,99; 13,83] pp en M1; desde 2014 −1,52 [−15,45; 5,13] pp.
 - En compra M2 el coeficiente de Δ4 coste de uso nacional es 0,0058 (signo contrario al esperado si es positivo; IC por bloques de tiempo en `coeficientes_por_periodo.csv`).
 
 ## Contrafactuales (EXPLORATORIOS y PARCIALES)

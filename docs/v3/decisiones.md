@@ -85,3 +85,11 @@ La decisión queda condicionada a la revisión de la oleada 1.
   - `prereg-v3` declara (ii) y (iii), y en P-C1 solo la evaluación sellada es confirmatoria.
   - **P-C3 no tiene ya una muestra sellada espacial limpia.** Su validación sellada se hace **por fuente**: la misma especificación con el alquiler SERPAVI (IRPF) municipal de Cataluña, 2018-2023, que no se ha estimado nunca para P-C3, evaluada una vez vía `holdout.evaluate`. Es una desviación del sellado espacial y se declara como tal. Las zonas tensionadas de 2024 ya vistas quedan en C4.
   - Ventana de los topes: 2020Q4-2022Q1 (vigencia efectiva hasta la STC 37/2022, BOE 08/04/2022), con sensibilidad de fin en 2021Q3.
+
+## Pre-registro v3 (2026-10-10)
+- La oleada 1 se aprobó en la iteración 2 (docs/v3/revision_oleada1.md). Lo que persiste está en docs/v3/limitaciones.md.
+- `prereg-v3`: tag local en el commit 204c073. El push del tag lo rechaza el proxy, igual que en v2. **El ancla del pre-registro es el SHA 204c073 en la rama remota.** Cualquier cambio posterior de docs/v3/hipotesis.md es una desviación y se anota aquí.
+- Sellado v3 operativo:
+  - `holdout.sellar_v3`: separa las unidades selladas al construir el panel, y la rama solo recibe el entrenamiento.
+  - `holdout.sellar_fuente_v3`: validación por fuente de P-C3; la rama guarda el panel sin mirarlo.
+  - `holdout.evaluate_v3`: una apertura por hipótesis, registrada antes de leer.

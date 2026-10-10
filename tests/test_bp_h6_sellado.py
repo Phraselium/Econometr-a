@@ -70,6 +70,64 @@ def test_aborta_con_dato_ausente():
     raise AssertionError("debía abortar")
 
 
+def pseudo_real(efecto=0.0):
+    """Sellado falso para CFG_REAL EXACTO: entrenamiento real; sellado = 2022Q3-2024Q2 re-etiquetado como 2024Q3-2026Q2
+    (encadenado en nivel) + 3 provincias selladas falsas (11, 16, 45) copiadas de otras tres, todos los periodos."""
+    import pandas as pd
+    pan = vc.load("panel_prov_q")
+    pan["trimestre"] = pan["trimestre"].astype(str)
+    pan["cod_prov"] = pan["cod_prov"].astype(str)
+    old, new = bh.qrange("2022Q3", "2024Q2"), bh.qrange("2024Q3", "2026Q2")
+    base = pan[pan.trimestre == "2022Q2"].set_index("cod_prov")["ipc_alquiler"]
+    fin = pan[pan.trimestre == "2024Q2"].set_index("cod_prov")["ipc_alquiler"]
+    f = pan[pan.trimestre.isin(old)].copy()
+    f["ipc_alquiler"] = f["ipc_alquiler"] * f["cod_prov"].map(fin / base)
+    f["trimestre"] = f["trimestre"].map(dict(zip(old, new)))
+    f.loc[f.cod_prov.isin(CAT), "ipc_alquiler"] *= np.exp(efecto)
+    falsas = []
+    for nuevo, orig in zip(["11", "16", "45"], ["02", "05", "07"]):
+        g = pan[pan.cod_prov == orig].copy()
+        g["cod_prov"] = nuevo
+        falsas.append(g)
+    return {"panel_prov_q": pd.concat([f] + falsas)}, {"panel_prov_q": pan}
+
+
+def test_cfg_real_exacta():
+    import time
+    out = {}
+    for efecto in (0.0, -0.03):
+        s, t = pseudo_real(efecto)
+        cfg = dict(bh.CFG_REAL, B=100)
+        t0 = time.time()
+        r = bh._evaluar(s, t, cfg)
+        out[efecto] = r
+        assert r["n_donantes"] == 40 and not {"11", "16", "45"} & set(r["donantes"])
+        assert r["pre_nivel"][2] == 26 and r["post"][2] == 8
+        assert "sec_sin_2023Q3_Q4_en_pre" in r and r["DECISION"]["tau"] == r["PRINCIPAL_ln_ipc_alquiler"]["sdid"]["tau"]
+        print("CFG_REAL exacto, efecto", efecto, r["DECISION"], "t=%.1fs (B=100)" % (time.time() - t0))
+    assert out[-0.03]["DECISION"]["cumple_regla"]
+    return out
+
+
+def test_secundario_falla_no_aborta():
+    """Si un secundario lanza error, la decisión principal se devuelve igualmente."""
+    s, t, cfg, ps, tr = pseudo()
+    orig = bh.bl.run_design
+    n = {"k": 0}
+
+    def roto(*a, **k):
+        n["k"] += 1
+        if n["k"] > 1:          # la primera llamada es la PRINCIPAL
+            raise ValueError("fallo simulado")
+        return orig(*a, **k)
+    bh.bl.run_design = roto
+    try:
+        r = bh._evaluar(s, t, dict(cfg, B=50))
+    finally:
+        bh.bl.run_design = orig
+    assert "DECISION" in r and str(r["sec_delta4"]).startswith("error")
+
+
 def test_no_abre_muestra_sellada():
     import ast
     for f in ("bp_h6_sellado.py", "bp_lib.py", "bp_main.py"):
@@ -86,9 +144,12 @@ def test_no_abre_muestra_sellada():
 if __name__ == "__main__":
     test_no_abre_muestra_sellada()
     test_aborta_con_dato_ausente()
+    test_secundario_falla_no_aborta()
+    rr = test_cfg_real_exacta()
     r0, r1 = test_sin_efecto(), test_efecto_inyectado()
     out = ROOT / "output" / "v2" / "BP" / "dryrun_h6_sellado.json"
-    out.write_text(json.dumps({"sin_efecto_(tratamiento_falso)": r0, "con_efecto_inyectado_-0,03": r1},
+    out.write_text(json.dumps({"sin_efecto_(tratamiento_falso)": r0, "con_efecto_inyectado_-0,03": r1,
+                               "CFG_REAL_exacto_sin_efecto_B100": rr[0.0], "CFG_REAL_exacto_efecto_-0,03_B100": rr[-0.03]},
                               indent=1, ensure_ascii=False, default=str))
     for k, r in (("sin efecto", r0), ("efecto -0,03", r1)):
         print(k, json.dumps(r["DECISION"]), r["sec_tratadas_solas"])

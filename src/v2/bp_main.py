@@ -303,10 +303,10 @@ pl_l = pl[(pl.resultado == "ln_ipc_alquiler") & (pl.metodo == "sdid")].iloc[0]
 pretrend_ok = bool(ev_l.p_rms > 0.05 and ev_l.p_pendiente > 0.05)
 placebo_ok = bool(pl_l.p_perm_dos > 0.05)
 main_ok = bool(p1.tau < 0 and p1.p_perm_dos < 0.05)
-if main_ok and pretrend_ok and placebo_ok:
-    nivel = "CAUSAL"          # sujeto a Holm-7 en BS (criterio uniforme (c)); se anota en notas
-else:
-    nivel = "EXPLORATORIO"
+# Escala: CAUSAL exige además Holm-7 y submuestras (BS); aquí, con tests superados, solo "candidata".
+nivel_texto = ("candidata a CAUSAL (pendiente de Holm-7 y submuestras en BS)" if (main_ok and pretrend_ok and placebo_ok)
+               else "EXPLORATORIO")
+nivel = "EXPLORATORIO"        # nivel válido de la escala hasta que BS aplique Holm-7
 diag = dict(pretendencias_sdid_p_rms=float(ev_l.p_rms), pretendencias_sdid_p_pendiente=float(ev_l.p_pendiente),
             pretendencias_did_uniforme_p_rms=float(ev_d.p_rms), pretendencias_did_uniforme_p_pendiente=float(ev_d.p_pendiente),
             placebo_tiempo_2018Q4_tau=float(pl_l.tau), placebo_tiempo_2018Q4_p=float(pl_l.p_perm_dos),
@@ -318,7 +318,7 @@ diag = dict(pretendencias_sdid_p_rms=float(ev_l.p_rms), pretendencias_sdid_p_pen
             tau_d4_sdid_post1=float(e("d4_ln_ipc_alquiler", "post1_2020Q4_2022Q1", "sdid").tau),
             p_d4_sdid_post1=float(e("d4_ln_ipc_alquiler", "post1_2020Q4_2022Q1", "sdid").p_perm_dos),
             jackknife_se_post1=float(p1.get("se_jackknife", np.nan)), B=B,
-            h6="preparación solo; evaluar_H6 NO ejecutada (muestra sellada intacta)")
+            qp_no_convergidos=int(bl.NO_CONV[0]), h6="preparación solo; evaluar_H6 NO ejecutada (muestra sellada intacta)")
 vc.resultado_json(
     OUT / "resultado.json", rama="BP",
     pregunta="H5: ¿redujo el tope de rentas catalán (Ley 11/2020, vigente 2020Q4-2022Q1) el IPC de alquiler provincial?",
@@ -337,5 +337,8 @@ vc.resultado_json(
                    "rmse": float(ajuste.rmse_sintetico_sdid.iloc[0]), "dm_vs_ar4": float(dm["DM"])},
     notas="Tratamiento a nivel provincial diluido (el tope solo regía en municipios de alta demanda y en contratos nuevos); "
           "el IPC mide rentas de todo el parque (stock). Sin lenguaje causal salvo que se cumplan los criterios de CAUSAL. "
-          f"Nivel asignado por regla: {nivel}.")
+          f"Nivel asignado por regla: {nivel_texto}. MDE (80 %, bilateral) H5 ≈ 0,56 % y H6 ≈ 1,7 % en ln. El IPC de alquiler mide todos los "
+          "contratos vigentes mientras el tope afecta sobre todo a contratos nuevos (Jofre-Monseny, Martínez-Mazza y Segú 2023, RSUE 101, "
+          "103916): un nulo no prueba ausencia de efecto. Inferencia placebo: supone unidades intercambiables; jackknife poco fiable con "
+          "4 tratadas. SC sin penalización: depende de los hilos BLAS (OMP_NUM_THREADS=1).")
 print("nivel:", nivel, "| tau1=%.4f p=%.3f | tau2=%.4f p=%.3f" % (p1.tau, p1.p_perm_dos, p2.tau, p2.p_perm_dos))

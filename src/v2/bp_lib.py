@@ -26,6 +26,7 @@ from scipy.optimize import minimize
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 SEED = 20261010
+NO_CONV = [0]   # nº de QP que SLSQP no declaró convergidos (diagnóstico)
 
 
 # ------------------------------------------------------------------ QP sobre el símplex
@@ -45,6 +46,8 @@ def simplex_qp(A, b, pen, x0=None):
                  bounds=[(0, 1)] * n, constraints=[{"type": "eq", "fun": lambda x: x.sum() - 1,
                                                     "jac": lambda x: np.ones(n)}],
                  options={"ftol": 1e-13, "maxiter": 500})
+    if not r.success:
+        NO_CONV[0] += 1
     x = np.clip(r.x, 0, None)
     return x / x.sum()
 

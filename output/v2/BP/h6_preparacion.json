@@ -58,14 +58,14 @@
   "excluidos_del_ajuste": "2020Q4-2022Q1 (tope catalán) y 2024Q1-2024Q2 (140 municipios tratados desde 2024-03-16)",
   "ajuste_prueba_pesos": {
     "pre_ajuste": 18,
-    "rmse_brecha_centrada": 0.0011837412076927563,
-    "peso_max": 0.14596744126768052,
+    "rmse_brecha_centrada": 0.0011837412076929157,
+    "peso_max": 0.14596744126766625,
     "n_pesos_gt_1pct": 17
   },
   "potencia": {
     "ventana_pseudo_post": "2022Q3-2023Q4",
-    "sd_efecto_placebo": 0.006225049678620096,
-    "mde_aprox_80pct_dos_colas": 0.017430139100136268,
+    "sd_efecto_placebo": 0.006225049678628653,
+    "mde_aprox_80pct_dos_colas": 0.017430139100160228,
     "B": 1000,
     "lectura": "orden de magnitud del efecto mínimo detectable (en ln IPC de alquiler) con ventana post de 6 trimestres; la real tiene 8"
   }

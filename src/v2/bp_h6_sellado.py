@@ -20,6 +20,24 @@ DISEÑO FIJADO ANTES DE LA LLAMADA (fiel a docs/v2/hipotesis.md, H6)
   p bilateral = (1+#{|τ_b| >= |τ|})/(B+1) (la una cola, solo informativa).
 * REGLA DE DECISIÓN (confirmatoria): H6 se CONFIRMA si τ_SDiD(ln IPC alquiler) < 0 Y p_permutación_bilateral < 0,05.
   Entra después en el Holm de las 7 confirmatorias (lo aplica el orquestador).
+* DECLARACIÓN EX ANTE DE POTENCIA Y LECTURA (antes de abrir): efecto mínimo detectable (80 %, bilateral) ≈ 2,8 x DE
+  placebo ≈ 1,7 % en ln IPC de alquiler (H6; output/v2/BP/h6_preparacion.json) y ≈ 0,56 % en H5 (2,8 x 0,0020).
+  El IPC de alquiler del INE mide las rentas de TODOS los contratos vigentes (el parque), mientras que la regulación
+  actúa sobre todo en contratos nuevos y solo en los municipios declarados (referencia de magnitud en contratos nuevos:
+  Jofre-Monseny, Martínez-Mazza y Segú 2023, Regional Science and Urban Economics 101, 103916, rentas de contratos
+  nuevos de orden 4-6 % en municipios regulados, según el resumen publicado; cuartil no verificado). Un no rechazo de H6
+  se leerá como "no detectable en el IPC provincial", NO como "sin efecto".
+* RIESGOS DECLARADOS ex ante: (a) anticipación: la Resolución TER/2940/2023 (agosto de 2023) precede a 2024 y λ
+  probablemente se concentre en 2023Q4, de modo que un efecto anticipado en 2023Q3-Q4 sesga τ hacia 0; (b) paquete
+  catalán: DL 3/2023 de viviendas de uso turístico (en vigor 2023-11-09) y 2.ª ronda (efecto 2024-10-10) entran en el
+  mismo contraste: H6 mide "Cataluña 2024-2026", no la zona tensionada aislada; (c) el pre 2022Q2-2023Q4 incluye
+  contratos firmados bajo el tope que siguen en el parque; (d) choques nacionales (tope del 3 % en 2024, IRAV desde 2025)
+  se absorben solo si su incidencia no difiere entre Cataluña y los donantes; (e) la inferencia placebo supone unidades
+  intercambiables (la media de 4 provincias con Barcelona puede ser menos ruidosa que 4 donantes al azar: prueba
+  conservadora); (f) zona_tensionada_share usa pesos catastrales del año de stock más cercano, que puede ser sellado
+  (solo afecta al secundario ponderado). Secundario informativo fijado ahora: SDiD sin 2023Q3-Q4 en el pre.
+* Orden de cálculo: PRINCIPAL y DECISION se fijan primero; cada secundario va en try/except (el error queda como texto).
+* Ejecutar con OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 y timeout amplio (~1 min esperado): si se corta, H6 queda quemada.
 * Secundarios (informativos, no deciden): SC de Abadie y DiD; Δ4; agregado ponderado por zona_tensionada_share de
   2024Q2 (del entrenamiento); cada tratada sola con permutación exacta sobre los donantes.
 """
@@ -112,21 +130,35 @@ def _evaluar(sellado, train, cfg):
     res["PRINCIPAL_ln_ipc_alquiler"]["sdid"]["rmse_brecha_pre"] = float(np.sqrt(np.mean((gap[pn] - s["lam"] @ gap[pn]) ** 2)))
     tau, p = res["PRINCIPAL_ln_ipc_alquiler"]["sdid"]["tau"], res["PRINCIPAL_ln_ipc_alquiler"]["sdid"]["p_perm_bilateral"]
     res["DECISION"] = dict(tau=tau, p_perm_bilateral=p, cumple_regla=bool(tau < 0 and p < 0.05))
-    res["sec_delta4"] = resumen(bl.run_design(Y4, tr_idx, co_idx, p4, po, subsets, metodos=("sdid", "sc", "did")))
-    # agregado ponderado por zona_tensionada_share (2024Q2, entrenamiento)
-    sh = pt[pt["trimestre"] == cfg["share_q"]].set_index("cod_prov")[cfg["share_col"]].reindex(trat)
-    if sh.notna().all() and (sh > 0).all():
-        res["sec_ponderado_share"] = dict(pesos=[float(x) for x in sh.values],
-                                          **resumen(bl.run_design(Yn, tr_idx, co_idx, pn, po, subsets,
-                                                                  w_tr=sh.values, metodos=("sdid",))))
-    else:
-        res["sec_ponderado_share"] = "no disponible (share ausente en el entrenamiento)"
-    # cada tratada sola, permutación exacta con cada donante como único tratado
-    uno = {}
-    for i, u in enumerate(trat):
-        r = bl.run_design(Yn, [i], co_idx, pn, po, subsets1, metodos=("sdid",))["sdid"]
-        uno[u] = dict(tau=float(r["tau"]), p_perm_bilateral=float(r["p_dos"]), n_placebos=int(r["B"]))
-    res["sec_tratadas_solas"] = uno
+    def sec(nombre, fn):
+        try:
+            res[nombre] = fn()
+        except Exception as e:  # noqa: BLE001  (un secundario no puede impedir devolver la decisión)
+            res[nombre] = f"error: {type(e).__name__}: {e}"
+
+    sec("sec_delta4", lambda: resumen(bl.run_design(Y4, tr_idx, co_idx, p4, po, subsets, metodos=("sdid", "sc", "did"))))
+
+    def _pond():
+        sh = pt[pt["trimestre"] == cfg["share_q"]].set_index("cod_prov")[cfg["share_col"]].reindex(trat)
+        if sh.notna().all() and (sh > 0).all():
+            return dict(pesos=[float(x) for x in sh.values],
+                        **resumen(bl.run_design(Yn, tr_idx, co_idx, pn, po, subsets, w_tr=sh.values, metodos=("sdid",))))
+        return "no disponible (share ausente en el entrenamiento)"
+    sec("sec_ponderado_share", _pond)
+
+    def _solas():
+        uno = {}
+        for i, u in enumerate(trat):
+            r = bl.run_design(Yn, [i], co_idx, pn, po, subsets1, metodos=("sdid",))["sdid"]
+            uno[u] = dict(tau=float(r["tau"]), p_perm_bilateral=float(r["p_dos"]), n_placebos=int(r["B"]))
+        return uno
+    sec("sec_tratadas_solas", _solas)
+
+    def _sin2023():
+        pn2 = [pos[q] for q in pre_n if q not in ("2023Q3", "2023Q4")]
+        return resumen(bl.run_design(Yn, tr_idx, co_idx, pn2, po, subsets, metodos=("sdid",)))
+    sec("sec_sin_2023Q3_Q4_en_pre", _sin2023)
+    res["optimizador_no_convergidos"] = int(bl.NO_CONV[0])
     return res
 
 

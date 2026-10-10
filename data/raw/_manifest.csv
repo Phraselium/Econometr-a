@@ -69,4 +69,5 @@ mivau_valor_tasado_nacional_ccaa_prov.csv,MIVAU - Boletin Online Fomento (sedal)
 mivau_visados.csv,MIVAU - Boletin Online Fomento (sedal),63,2008-01-01,2026-06-01,13605,0,2026-10-09T18:53:40Z
 oecd_house_prices.csv,OCDE,332,2000-01-01,2026-07-01,20581,0,2026-10-10T06:06:59Z
 pdf/serpavi_v2_municipios.csv,MIVAU-SERPAVI (AEAT IRPF),32402,2011-01-01,2024-01-01,351686,0,2026-10-10T06:04:08Z
+pdf/serpavi_v2_municipios.csv.gz,MIVAU-SERPAVI (AEAT IRPF),32402,2011-01-01,2024-01-01,351686,0,2026-10-10T06:07:19Z
 vlc_precio_vivienda_libre.csv,Ajuntament de València - Opendata (CKAN); fuente primaria no indicada en el recurso,24,2021-04-01,2022-04-01,120,0,2026-10-09T18:54:14Z

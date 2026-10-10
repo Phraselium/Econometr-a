@@ -1,0 +1,5 @@
+resultado,metodo,rms_pre,pendiente_pre_anual,p_rms,p_pendiente,B,nota
+ln_ipc_alquiler,sdid,0.0011195086,0.00030897189,0.14085914,0.03996004,1000,ajuste dentro de muestra
+ln_ipc_alquiler,did,0.0076475309,0.0053225275,0.00999001,0.00999001,1000,"pesos uniformes, sin ajuste"
+d4_ln_ipc_alquiler,sdid,0.0015288727,0.00078266701,0.17982018,0.021978022,1000,ajuste dentro de muestra
+d4_ln_ipc_alquiler,did,0.0035129751,0.002376434,0.0999001,0.011988012,1000,"pesos uniformes, sin ajuste"

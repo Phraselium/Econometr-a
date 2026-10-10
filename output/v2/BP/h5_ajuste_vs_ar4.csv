@@ -1,0 +1,5 @@
+diagnostico,rmse_sintetico_sdid,rmse_AR4_panel,dm_hln_AR4_menos_sint,p,n,nota
+"pseudo-OOS (pesos <=2018Q3, objetivos 2018Q4-2020Q3), Δ4 ln IPC alquiler, media de las 4 tratadas",0.0062587199,0.0043444102,-0.70868532,0.50143224,8,el sintético usa donantes contemporáneos (nowcast); el AR(4) solo información pasada: no es un duelo de predicción
+en muestra 2016Q1-2020Q3: RMSE de la brecha de nivel (centrada) SDiD,0.0011195086,,,,19,ajuste de ω dentro de muestra
+en muestra 2016Q1-2020Q3: RMSE de la brecha de nivel SC (Abadie),0.00089274679,,,,19,ajuste de ω dentro de muestra
+en muestra 2017Q1-2020Q3: RMSE de la brecha Δ4 SDiD,0.0016518916,,,,15,ajuste de ω dentro de muestra

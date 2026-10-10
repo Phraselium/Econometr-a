@@ -1,0 +1,60 @@
+{
+  "rama": "BP",
+  "pregunta": "H5: ¿redujo el tope de rentas catalán (Ley 11/2020, vigente 2020Q4-2022Q1) el IPC de alquiler provincial?",
+  "datos": "panel_prov_q (entrenamiento), ipc_alquiler provincial (agregado_media, sin interpolación); 4 tratadas (08,17,25,43) y 45 donantes no catalanas no selladas; 2016Q1-2023Q4",
+  "N": {
+    "tratadas": 4,
+    "donantes": 10,
+    "trimestres": 32
+  },
+  "metodo": "Synthetic DiD (implementación propia, Arkhangelsky et al. 2021); EE y p por permutación espacial (4 donantes aleatorios como placebo-tratadas, B=50); robustez SC, DiD, DiD-FE cluster",
+  "estimacion": {
+    "efecto_medio_ln_2020Q4_2022Q1": 0.006081035415064798,
+    "efecto_medio_ln_2022Q2_2023Q4": 0.013208464672603728
+  },
+  "ic95": {
+    "efecto_2020Q4_2022Q1": [
+      -0.0007863975373680167,
+      0.012948468367497613
+    ],
+    "efecto_2022Q2_2023Q4": [
+      -0.0014981929778083974,
+      0.02791512232301585
+    ]
+  },
+  "p_ajustado": {
+    "p_perm_dos_post1": 0.0784313725490196,
+    "holm_m6_post1": 0.23529411764705882,
+    "bh_m6_post1": 0.11764705882352941,
+    "holm_7_confirmatorias": "pendiente (BS)"
+  },
+  "nivel_evidencia": "EXPLORATORIO",
+  "diagnosticos": {
+    "pretendencias_sdid_p_rms": 0.0196078431372549,
+    "pretendencias_sdid_p_pendiente": 0.0196078431372549,
+    "pretendencias_did_uniforme_p_rms": 0.0196078431372549,
+    "pretendencias_did_uniforme_p_pendiente": 0.0196078431372549,
+    "placebo_tiempo_2018Q4_tau": 0.009198248202277437,
+    "placebo_tiempo_2018Q4_p": 0.0196078431372549,
+    "p_permutacion_dos_colas_post1": 0.0784313725490196,
+    "p_permutacion_una_cola_post1": 1.0,
+    "pretendencias_ok": false,
+    "placebo_tiempo_ok": false,
+    "efecto_negativo_y_p_menor_005": false,
+    "tau_post2_anulacion": 0.013208464672603728,
+    "p_permutacion_post2": 0.11764705882352941,
+    "sc_tau_post1": 0.01237221801409305,
+    "did_tau_post1": 0.021308583144574664,
+    "tau_d4_sdid_post1": 0.0008189261176769743,
+    "p_d4_sdid_post1": 0.8235294117647058,
+    "jackknife_se_post1": 0.003213808244553569,
+    "B": 50,
+    "h6": "preparación solo; evaluar_H6 NO ejecutada (muestra sellada intacta)"
+  },
+  "fuera_muestra": {
+    "modelo": "no aplica a estimadores de efecto de política; diagnóstico pseudo-OOS del sintético",
+    "rmse": 0.008037949111966824,
+    "dm_vs_ar4": -2.0062071505642405
+  },
+  "notas": "Tratamiento a nivel provincial diluido (el tope solo regía en municipios de alta demanda y en contratos nuevos); el IPC mide rentas de todo el parque (stock). Sin lenguaje causal salvo que se cumplan los criterios de CAUSAL. Nivel asignado por regla: EXPLORATORIO."
+}

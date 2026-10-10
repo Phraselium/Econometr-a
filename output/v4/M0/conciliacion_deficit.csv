@@ -1,0 +1,10 @@
+id,origen,fuente_hogares,medida_hogares,oferta,bajas_parque,periodo_inicio,periodo_fin,delta_hogares,oferta_viviendas,cifra,nota
+v1_epa,v1,EPA,"media trimestral, EPA corregida del quiebre 2021T1",fin de obra libres MIVAU (sin protegida),no (0),2021T1,2025T4,1278000,411900,866100,principal v1
+v1_ecp,v1,ECP,stock a 1 de enero (1-ene-2026 menos 1-ene-2021),fin de obra libres MIVAU (sin protegida),no (0),2021-01-01,2026-01-01,1222836,411900,810936,variante v1
+v1_parque,v1,EPA,"media trimestral, EPA corregida",variación del parque MIVAU (neta),implícitas en el parque (netas),2021,2025,1278000,475848,802152,variante v1
+v3_ecp_ref,v3,Censo 2021 + ECP,media trimestral 2021T1-2025T4 (sin quiebre: anclada al censo),fin de obra libres + protegida (calif. definitivas),no (0),2021T1,2025T4,1169157,468223,700934,combinación v3 cercana a la mediana
+v3_mediana,v3,EPA sin corregir y Censo+ECP,media trimestral,"las 14 combinaciones (con/sin protegida, bajas 0/0,1/0,2 %, Δparque)","0 a 0,2 % anual del parque",2021T1,2025T4,,,701187,mediana de combinaciones: no es una especificación
+v3_min,v3,EPA sin corregir,"media trimestral, sin corregir quiebre",variación del parque MIVAU (neta),implícitas en el parque,2021T1,2025T4,1035600,475848,559752,cota inferior de v3
+v3_max,v3,Censo 2021 + ECP,media trimestral,fin de obra libres + protegida,"0,2 % anual del parque",2021T1,2025T4,1169157,200098,969059,"cota superior de v3 (bajas del 0,2 % anual)"
+bde_ia,BdE,no nombrada (inferencia: ECP),no declarada,terminadas (no declara si incluye protegida),no declaradas,2021,2025,,,750000,"Informe Anual 2025, p. 157; aproximada"
+bde_ief,BdE,no nombrada,no declarada,terminadas,no declaradas,2021,1S 2025 (inferencia),,,700000,IEF otoño 2025; periodo y fuente distintos

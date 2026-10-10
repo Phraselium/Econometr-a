@@ -1,0 +1,13 @@
+paso,delta_deficit,nivel_resultante,componente
+"v1 principal (EPA corregida, libres)",866100,866100,
+fuente de hogares: EPA corregida -> ECP (ambas con stock 1 de enero),-55164,810936,hogares
+medida de hogares: stock 1 de enero -> media trimestral 2021T1-2025T4,-53679,757257,hogares/fechas
+protegida: añadir calificaciones definitivas (no incluidas en v1),-56323,700934,protegida
+bajas del parque (v1 y referencia v3: 0),0,700934,bajas
+periodo (ambos 2021-2025),0,700934,periodo
+v1 principal -> v1 ECP,-55164,810936,hogares
+v1 principal -> v1 Δparque (protegida 56.323 + residual neto de bajas −7.625),-63948,802152,protegida y bajas
+quiebre EPA 2021T1 (corregida -> sin corregir),-242400,623700,hogares (corrección)
+referencia v3 -> BdE IA (residuo no atribuible),49066,750000,residuo/redondeo/no declarado
+BdE IA -> BdE IEF (periodo hasta 1S 2025: inferencia),-50000,700000,periodo (no verificable)
+"sensibilidad: bajas +0,1 % anual del parque",134063,,bajas

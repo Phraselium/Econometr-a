@@ -1,0 +1,10 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+M0,conc_cadena,d_v1 + pasos aditivos = ref_v3,2021,2025,1,,,,,700934.0,,cierre exacto de la cadena
+M0,terminadas_2012_2025,catastro dUU vs MIVAU bruto (territorio comun),2012,2025,14,,,,,0.3942973621488015,,dif relativa acumulada
+M0,terminadas_2021_2025,catastro dUU vs MIVAU bruto (territorio comun),2021,2025,5,,,,,0.054585810725334305,,dif relativa acumulada
+M0,terminadas_2012_2020,catastro dUU vs MIVAU bruto (territorio comun),2012,2020,9,,,,,0.6570492806529717,,dif relativa acumulada
+M0,gl_atenuacion,dlog SERPAVI ~ dlog Incasol (BCN),2012,2016,5,,,,,0.4446827193645114,,2012-2016 (periodo GL)
+M0,gl_atenuacion,dlog SERPAVI ~ dlog Incasol (BCN),2015,2020,6,,,,,0.15697362696924932,,2015-2020
+M0,gl_atenuacion,dlog SERPAVI ~ dlog Incasol (BCN),2022,2024,3,,,,,,,"2022-2024 (periodo propio, sin salto 2021)"
+M0,gl_atenuacion,dlog SERPAVI ~ dlog Incasol (BCN),2015,2024,9,,,,,0.07066473556389563,,2015-2024 sin 2021
+M0,gl_atenuacion,dlog SERPAVI ~ dlog Incasol (BCN),2012,2024,12,,,,,0.4566609539447727,,2012-2024 sin 2021

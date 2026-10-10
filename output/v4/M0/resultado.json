@@ -1,0 +1,45 @@
+{
+ "rama": "M0",
+ "pregunta": "¿Por qué difieren las cifras de déficit 2021-2025 (v1, v3, BdE), cuántas viviendas se terminan al año y por qué no se replica García-López?",
+ "capa": "C1/C2 (conciliación y terminadas); C4 (GL)",
+ "datos": "output v1/v3 (A1), MIVAU fin de obra, protegida y parque, Catastro urbana municipios, Incasòl, SERPAVI, IPC alquiler INE",
+ "N": 14,
+ "metodo": "Descomposición aditiva; triangulación MIVAU-Catastro (±15 %); razones de variación stock/flujo",
+ "estimacion": 700934.0,
+ "ic95": [
+  559752.0,
+  969059.308
+ ],
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO (conciliación) / ASOCIACIÓN no evaluada",
+ "diagnosticos": {
+  "cadena_v1_a_ref_v3_cierra": true,
+  "anios_c1_terminadas": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "n_anios_c1": 8,
+  "mivau_mensual_vs_anual_dif_max": 0.0,
+  "dparque_dependiente_mediana_rel": 0.013543037164894323,
+  "gl": {
+   "coef": -0.004166504610531,
+   "ee": 0.0015328928219397,
+   "lambda_2022_2024": 0.5505420241126829,
+   "lambda_2015_2020": 0.7491258541938841,
+   "coef_esperado_stock": 0.006688325939489464
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "no aplica: conciliación y triangulación contable"
+ },
+ "notas": "Sin BdE terminadas en data/raw; cifra BdE NO VERIFICADA en método. Catastro solo régimen común."
+}

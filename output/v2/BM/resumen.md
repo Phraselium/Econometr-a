@@ -9,7 +9,7 @@ Configuraciones de hiperparámetros evaluadas: 59 (presupuesto declarado 63, de 
 | Objetivo | N | RMSE AR(4) | RMSE ECM v1 | Mejor candidato por RMSE medio en bloques | RMSE | DM vs AR4 (p) | DM vs ECM v1 (p) | p_BH AR4 / ECM |
 |---|---|---|---|---|---|---|---|---|
 | A nacional (ln IPV real) | 38 | 0.0699 | 0.1094 | TVPVAR_k0.95 | 0.0726 | -0.31 (0.760) | 0.93 (0.359) | 0.760 / 0.482 |
-| B panel provincial (IPC alquiler) | 2254 | 0.0154 | 0.0168 | LGBM_nl4_n400 | 0.0124 | 0.94 (0.353) | 1.48 (0.146) | 0.989 / 0.419 |
+| B panel provincial (IPC alquiler) | 2254 | 0.0154 | 0.0168 | LGBM_nl4_n400 | 0.0124 | 0.94 (0.353) | 1.48 (0.146) | 0.989 / 0.410 |
 | C panel provincial (p_tasado real) | 2209 | 0.0418 | 0.0809 | EN_l10.7_a0.4 | 0.0528 | -1.32 (0.194) | 1.34 (0.187) | 0.194 / 0.420 |
 
 DM > 0 = el modelo es mejor que la base. El «mejor candidato» es el ELEGIDO para H7 por la regla fijada antes (output/v2/BM/regla_H7.md): menor RMSE medio en bloques, empate (<1 %) → el más simple.
@@ -42,9 +42,9 @@ AVISO DE COLINEALIDAD: dentro de familias (tipo hipotecario real y coste de uso 
 
 **B panel provincial (IPC alquiler) — RF_d8_l40 (permutación agrupada; Δ ECM relativo al ECM del modelo)** — el modelo NO mejora significativamente al AR(4): se publica por transparencia, NO como explicación
 - P1_ajuste (n=392): credito_tipos +0.002; empleo_renta +0.001
-- P2_recuperacion (n=1176): demografia +0.013; precio_cruzado +0.004
-- P3_covid (n=392): oferta_suelo +0.041; demografia +0.019
-- P4_tipos (n=294): empleo_renta +0.032; demografia +0.021
+- P2_recuperacion (n=1176): demografia +0.012; precio_cruzado +0.004
+- P3_covid (n=392): oferta_suelo +0.040; demografia +0.018
+- P4_tipos (n=294): empleo_renta +0.031; demografia +0.021
 
 **C panel provincial (p_tasado real) — LGBM_nl4_n150 (permutación agrupada; Δ ECM relativo al ECM del modelo)** — el modelo NO mejora significativamente al AR(4): se publica por transparencia, NO como explicación
 - P1_ajuste (n=350): credito_tipos +0.004; oferta_suelo +0.001
@@ -87,7 +87,7 @@ Proyecciones locales por periodo (familias principales; output/v2/BM/proyeccione
 ## 4. Parámetros cambiantes y no linealidad (nacional, A)
 
 - ECM de umbral (ECT>0 vs ≤0; crédito en expansión vs no): ver tabla; ninguno supera al AR(4).
-- Markov-switching (2 regímenes, ECT con coeficiente cambiante; DESCRIPTIVO en muestra, N=69): estado ok; duraciones esperadas [1.8210319837581985, 3.4553399776331535]. No se usa como predictor.
+- Markov-switching (2 regímenes, ECT con coeficiente cambiante; DESCRIPTIVO en muestra, N=69): estado ok; duraciones esperadas [1.8210319837581626, 3.4553399776332197]. No se usa como predictor.
 - BVAR Minnesota (VAR(2), 4 variables: Δ ln IPV real, Δ ln ocupados, Δ tipo hipotecario real, Δ ln crédito nuevo): SIMPLIFICACIÓN de Giannone-Lenza-Primiceri (2015): sin hiperprior ni suma de coeficientes; λ fijo por configuración (5) y verosimilitud marginal (fórmula cerrada con observaciones ficticias) informada por split en sel['bvar_logml_medio'] (seleccion_H7.json). Prior de media cero (variables en diferencias).
 - TVP-VAR: SIMPLIFICACIÓN de Primiceri (2005) con olvido exponencial (Koop-Korobilis): coeficientes paseo aleatorio con factor κ, varianza de medida EWMA (0,98), sin volatilidad estocástica; los coeficientes se filtran hasta L (fin de entrenamiento del split) y se mantienen fijos en el bloque de test (misma información que el resto de modelos).
 

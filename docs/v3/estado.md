@@ -28,8 +28,10 @@
 | Entregables: lo_que_sabemos, articulo, informe_politica (València), verificador | 3 | hecho | — | 14 fichas: 0 RESPALDADA, 3 PARCIALMENTE, 11 SIN EVIDENCIA SUFICIENTE | 0 (orquestador) |
 | Revisión oleada 3 (REHACER Z1-Z8 → APROBAR it. 2) | 3 | APROBAR | — | limitaciones v3 completadas | 126.108 |
 
+| Cierre: make all sin red ×2 en clon limpio | 3 | hecho | — | rc=0 ×2; md5 idénticos salvo tiempos.json | 0 |
+
 **Hecho:** setup; literatura v3; D2 (scripts src/v3/fetch_*_v3.py, build_zonas_eventos_v3.py).
 **Pendiente de datos:** D1 INE (en curso); Barcelona por barrio (bloqueado, anti-bot); Madrid por distrito; GVA fianzas; SIU (solicitud); obligatoriedad RD 1312/2024 sin verificar.
-**Siguiente:** cierre: make all sin red ×2 en clon limpio sobre el HEAD final; resumen final.
+**Siguiente:** v3 cerrada. Pendiente externo: presentar las solicitudes de transparencia (docs/v3/solicitudes_transparencia.md).
 **Tokens de subagentes v3:** 2.106.329 / 3.500.000 (cierre al 80 %: 2.800.000).
 - 2026-10-10: cataluna_contencion_rentas_v3.csv generado (61 Ley 11/2020; 140 + 131 Ley 12/2023; 0 en 2025). Pendiente: DOGC no accesible; prórroga 2026 no verificada. Ver decisiones.md.

@@ -153,3 +153,8 @@ La decisión queda condicionada a la revisión de la oleada 1.
   - B4 pasa de C2 a C4. Es una bajada de capa, no una promoción.
   - V12 pasa a SIN EVIDENCIA SUFICIENTE.
   - La convención y su alternativa constan en docs/v3/limitaciones.md (L-v3-W3).
+
+## Cierre v3
+- Reproducción: `make all` sin red (proxy apuntado a 127.0.0.1:9, un solo hilo), dos veces, en un clon limpio de 7607040. Las dos ejecuciones terminan con rc=0 (unos 1.220 s cada una). Comparación de los md5 de output/ y data/processed: idénticos salvo `output/v2/BM/tiempos.json`, que guarda tiempos de reloj. Frente a lo versionado solo cambian ese fichero y la marca de tiempo de `docs/v2/fallidas/ine.md`.
+- Corrección previa al cierre: `pa_data` leía el CSV del Catastro sin comprimir, que no está versionado. Ahora lee el `.csv.gz` versionado.
+- Revisiones: oleada 1 APROBAR (it. 2), oleada 2 APROBAR (it. 2), oleada 3 APROBAR (it. 2). Lo pendiente está en docs/v3/limitaciones.md.

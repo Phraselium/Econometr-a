@@ -54,12 +54,17 @@ ine_migraciones_nacionalidad.csv,INE,61,2023-04-01,2026-07-01,854,714,2026-10-09
 ine_migraciones_total_anual.csv,INE,276,2021-01-01,2024-01-01,1104,0,2026-10-09T18:47:35Z
 ine_padron_valencia.csv,INE,23,1996-01-01,2026-07-01,1163,32,2026-10-09T19:18:51Z
 ine_padron_vlc_nacionalidad.csv,INE Padrón continuo,174,1998-01-01,2022-01-01,2442,22,2026-10-09T19:55:16Z
+ine_v2_cre.csv,"INE CRE - PIB a precios de mercado, precios corrientes, por CCAA y provincias (tabla 80109)",53,2000-01-01,2025-01-01,1335,0,2026-10-10T06:53:21Z
+ine_v2_epa_prov.csv,"INE EPA - Ocupados y parados por provincia, trimestral (tabla 65345)",106,2002-01-01,2026-04-01,10388,0,2026-10-10T06:16:28Z
 ine_v2_etdp_prov.csv,"INE ETDP - Compraventa de viviendas según régimen y estado (tabla 6150, mensual)",265,2007-01-01,2026-07-01,62275,0,2026-10-10T06:13:42Z
 ine_v2_hipotecas_prov.csv,"INE HPT - Hipotecas constituidas sobre el total de fincas, viviendas (tabla 76317, base nueva)",106,2003-01-01,2026-07-01,29998,0,2026-10-10T06:13:23Z
+ine_v2_hogares_prov.csv,"INE ECP - Hogares de personas residentes en viviendas familiares por tamaño, trimestral (tabla 60133)",265,2021-01-01,2026-07-01,6095,0,2026-10-10T06:52:21Z
 ine_v2_ipc_alquiler_prov.csv,"INE IPC - Índices provinciales de subgrupos ECOICOP v2, Alquiler de vivienda (tabla 76142)",106,2002-01-01,2026-08-01,31376,0,2026-10-10T06:14:04Z
-ine_v2_ipva.csv,"INE IPVA - Índice de Precios de Vivienda en Alquiler (tablas 59058, 59005, 59059, 59060, 59061)",3420,2011-01-01,2024-01-01,47348,2954,2026-10-10T06:14:22Z
+ine_v2_ipva.csv,"INE IPVA - Índice de Precios de Vivienda en Alquiler (tablas 59058, 59005, 59059, 59060, 59061)",3420,2011-01-01,2024-01-01,45528,2903,2026-10-10T06:53:17Z
 ine_v2_migraciones_prov.csv,"INE EM/EMCR - Flujo de inmigración procedente del extranjero por provincia, semestre (tablas 24420, 24421)",3922,2008-01-01,2022-01-01,102392,18,2026-10-10T06:15:15Z
-ine_v2_padron_prov_edad_nac.csv,"INE ECP - Población residente por fecha, sexo, grupo de edad y nacionalidad (tabla 77023; 1 de enero)",15,2002-01-01,2026-01-01,375,0,2026-10-10T06:15:46Z
+ine_v2_padron_prov_edad_nac.csv,"INE ECP - Población residente por fecha, sexo, grupo de edad y nacionalidad (tabla 77023; 1 de enero)",795,2002-01-01,2026-01-01,19875,0,2026-10-10T06:39:38Z
+ine_v2_padron_prov_pais.csv,"INE ECP - Población residente por provincia y agrupación de países de nacionalidad, 1 de enero (tabla 77023)",742,2002-01-01,2026-01-01,16271,848,2026-10-10T06:41:00Z
+ine_v2_vut.csv,"INE VTE - Viviendas turísticas, plazas: provincias (39364) y municipios (39363), mensual",8310,2020-08-01,2026-05-01,107863,0,2026-10-10T06:52:15Z
 ine_vut_nacional_ccaa_prov.csv,INE - Estadistica experimental viviendas turisticas,268,2020-08-01,2026-05-01,3484,0,2026-10-09T18:51:20Z
 ine_vut_valencia_municipio.csv,INE - Estadistica experimental viviendas turisticas,4,2020-08-01,2026-05-01,52,0,2026-10-09T19:58:28Z
 ine_vut_valencia_provincia.csv,INE - Estadistica experimental viviendas turisticas,4,2020-08-01,2026-05-01,52,0,2026-10-09T19:59:33Z

@@ -39,7 +39,7 @@ import datetime as dt
 import re
 import sys
 import unicodedata
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -52,7 +52,7 @@ BASE = "https://servicios.ine.es/wstempus/js/ES"
 FUENTE = "INE"
 MAD = ZoneInfo("Europe/Madrid")
 NULT = 400  # periodos máximos pedidos (cubre desde 2002 en mensual)
-THREADS = 8
+THREADS = 12
 MANIFEST_SER = RAW / "_manifest_series_ine_v2.csv"
 FALLIDAS_MD = ROOT / "docs" / "v2" / "fallidas" / "ine.md"
 
@@ -166,9 +166,14 @@ def descargar(tid: str, cods: list[str], modo: str) -> dict[str, dict]:
     if modo == "tabla":
         full = tabla_completa(tid)
         return {c: full[c] for c in cods}
+    res: dict[str, dict] = {}
     with ThreadPoolExecutor(THREADS) as ex:
-        res = list(ex.map(serie_individual, cods))
-    return dict(zip(cods, res))
+        futs = {ex.submit(serie_individual, c): c for c in cods}
+        for i, f in enumerate(as_completed(futs), 1):
+            res[futs[f]] = f.result()
+            if i % 500 == 0 or i == len(cods):
+                print(f"    ... {i}/{len(cods)} series ({tid})", flush=True)
+    return res
 
 
 # ----------------------------------------------------------------- filas
@@ -303,19 +308,27 @@ def sel_mig421(n, _t):
 
 
 def sel_ecp(n, _t):
-    """ECP 77023: [geo, nacionalidad, edad, sexo, Población, Número]."""
+    """ECP 77023: [geo, X, Y, sexo, Población, Número]. El orden de X/Y cambia entre
+    'Total Nacional' (nacionalidad, edad) y provincias (edad, nacionalidad): se detecta por contenido."""
     p = partes(n)
     if len(p) != 6 or p[3] != "Total" or p[4] != "Población":
         return None
     g = geo(p[0])
     if not g:
         return None
-    tipo, ini = edad_inicio(p[2])
+    patron_edad = re.compile(r"(De \d+ a \d+ años|\d+ y más años|Todas las edades)$")
+    if patron_edad.match(p[1]):
+        edad, nac = p[1], p[2]
+    elif patron_edad.match(p[2]):
+        edad, nac = p[2], p[1]
+    else:
+        return None
+    tipo, ini = edad_inicio(edad)
     if tipo is None:
         return None
-    return dict(nivel=g[0], codigo=g[1], territorio=g[2], nacionalidad=p[1], edad=p[2],
+    return dict(nivel=g[0], codigo=g[1], territorio=g[2], nacionalidad=nac, edad=edad,
                 edad_ini=ini, edad_tipo=tipo, medida="poblacion_residente_1_enero",
-                desglose=f"nacionalidad={p[1]}; edad={p[2]}", unidad="personas")
+                desglose=f"nacionalidad={nac}; edad={edad}", unidad="personas")
 
 
 def sel_epa(n, _t):
@@ -336,12 +349,20 @@ def sel_epa(n, _t):
                 desglose="ambos sexos; total", unidad="miles de personas (valor absoluto EPA)")
 
 
+CCAA_UNIPROVINCIAL = {"Madrid, Comunidad de": "28", "Murcia, Región de": "30",
+                      "Navarra, Comunidad Foral de": "31"}
+
+
 def sel_cre(n, _t):
     p = partes(n)
     if len(p) < 4 or p[1] != "Dato base" or p[2] != "Producto interior bruto a precios de mercado" \
             or p[3] != "Precios corrientes":
         return None
     g = geo(p[0])
+    if not g and p[0] in CCAA_UNIPROVINCIAL:
+        # CCAA uniprovincial: la serie de la comunidad es la de su única provincia
+        c = CCAA_UNIPROVINCIAL[p[0]]
+        g = ("provincia", c, PROV[c])
     if not g:
         return None
     return dict(nivel=g[0], codigo=g[1], territorio=g[2], medida="PIB_precios_corrientes",
@@ -498,6 +519,13 @@ def job_ipva():
         d = construir(tid, sel, "tabla")
         partes_df.append(d)
     df = pd.concat(partes_df, ignore_index=True)
+    # Un mismo COD puede aparecer en varias tablas (p. ej. nacional): deben ser idénticos
+    g = df.groupby(["serie", "fecha"])["valor"].agg(lambda v: v.nunique(dropna=False))
+    if (g > 1).any():
+        raise RuntimeError(f"IPVA: {int((g > 1).sum())} claves serie-fecha con valores distintos entre tablas")
+    n_antes = len(df)
+    df = df.drop_duplicates(subset=["serie", "fecha"], keep="first").reset_index(drop=True)
+    print(f"  [dedup] IPVA: {n_antes - len(df)} filas repetidas entre tablas (valores idénticos) eliminadas")
     guardar(df, arch, "INE IPVA - Índice de Precios de Vivienda en Alquiler (tablas 59058, 59005, 59059, 59060, 59061)")
 
 
@@ -634,6 +662,8 @@ def job_vut():
     L2 = listado("39363")
     s2 = []
     for cod, m in seleccionar(L2, sel_vut):
+        if m["medida"] != "viviendas_turisticas":  # plazas no se piden; 24.6k series -> solo viviendas
+            continue
         nom = m["nombre"]
         if nom in NAC or nom in CCAA:
             continue
@@ -711,10 +741,14 @@ def escribir_fallidas():
           "| Hipotecas (base antigua) | Series 1994–2003; solo nacional y provincia con 'Total fincas' | tablas 3232, 3233, 3241 | No usadas: la base nueva (76317) cubre 2003–2026 solo para viviendas |",
           "| Hipotecas: unidad del importe | Confirmar en metadatos INE | tabla 76317 | Unidad inferida por magnitud (miles de euros); FK_Unidad=7 |",
           "| Código INE de municipio | La API no lo incluye en el nombre de serie | tablas 59060, 59061, 39363 | Unir por nombre con el catálogo de municipios (no descargado) |",
+          "| IPVA: Álava, Gipuzkoa, Bizkaia y Navarra | La tabla provincial no publica estas provincias (49 nombres = nacional + 48 provincias) | tablas 59058, 59005, 59059 | Sin alternativa en la API; no imputar |",
+          "| Inmigración desde el extranjero después de 2022S1 | La serie semestral (24420/24421) termina en 2022S1 | tablas 24420, 24421 | Continuación trimestral desde 2023 en tablas 59011/59020 (3 principales países, flujos); no descargada |",
+          "| Viviendas turísticas: plazas | No descargadas (fuera de la petición: solo viviendas) | tablas 39364, 39363 | Descargar si se necesitan (8.186 series municipales) |",
           "| IPVA en euros | No existe: solo índices y variación anual | tablas de ponderaciones 50015, 50016, 50083, 59062–59067 (solo pesos) | Ninguna |",
           "| Población por país de nacionalidad concreto y provincia (stock) | Solo agrupaciones de países en 77023 | 77023; 77099 (lugar de nacimiento) | Flujos por 3 países principales desde 2023 (59020); país de nacimiento (79278) |",
           "| ECP por provincia en tabla completa (56947) | 'No puede mostrarse por restricciones de volumen' | 56947 con nult=4 y 40 | Descarga serie a serie con DATOS_SERIE (77023) |",
           "| PIB provincial, unidad | Etiqueta de FK_Unidad=7 no verificada | 80109 | Unidad inferida (miles de euros) |",
+          "| PIB: Madrid, Murcia y Navarra | En 80109 solo aparecen con nombre de CCAA (uniprovinciales); se asignan a su única provincia | 80109 | Ninguna necesaria |",
           "| Duplicados INE | Balears, Illes aparece dos veces con valores idénticos (ETDP3633/ETDP4170; 6150) | 6150 | Se conserva una serie |",
           "| Municipios homónimos de provincia (VUT) | En 39363 un nombre puede ser provincia o municipio | 39363 vs 39364 | Se descarta la serie si su último valor coincide con la provincia de 39364 |",
           "| Serie IPC alquiler con ECOICOP v1 | Cambio de clasificación | 76137 (v1) vs 76142 (ECOICOP v2) | Empalme no hecho; usar con cuidado |",

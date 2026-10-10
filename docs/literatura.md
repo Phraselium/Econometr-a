@@ -396,3 +396,27 @@ Signos como hipótesis derivadas de la literatura, no resultados propios. «?» 
 - Magnitudes no extraídas: Mense et al. 2023, Barron et al. 2021, Helfer et al. 2023, Kürschner Rauck-Kvasnicka 2025, Gimeno-Martínez-Carrascal (coeficientes), Foremny et al. 2025, Baiardi-Naghi 2024.
 - No se encontró estudio revisado por pares sobre Ley 12/2023 con identificación causal ni sobre Airbnb en España con DOI comprobado (salvo García-López et al. 2020 para Barcelona).
 - Sin evidencia verificada de DML/bosques causales o BVAR/TVP-VAR aplicados a inmigración y vivienda en España.
+
+## Anexo v2-B. Referencias metodológicas de las ramas v2 (comprobación 2026-10-10)
+
+Comprobación: ya constaban con DOI y cuartil en la tabla v2 (no se repiten): Harvey-Leybourne-Newbold 1997, Chernozhukov et al. 2018, Wager-Athey 2018, Athey-Tibshirani-Wager 2019, Arkhangelsky et al. 2021, Abadie-Diamond-Hainmueller 2010, Callaway-Sant'Anna 2021, Sun-Abraham 2021, Goldsmith-Pinkham et al. 2020, Borusyak-Hull-Jaravel 2022, Lim et al. 2021. Constaban con DOI (v1) pero sin cuartil: Diebold-Mariano 1995, Montiel Olea-Pflueger 2013, Webb 2023, Adão et al. 2019, Jordà 2005, Poterba 1984; el cuartil se añade aquí. Faltaban por completo: Apley-Zhu, Belloni et al., Zou-Hastie, Chen-Guestrin, Hochreiter-Schmidhuber, Lundberg-Lee, Ke et al.
+
+Método del cuartil: scimagojr.com no es accesible (403); el cuartil procede de agregadores que replican datos de Scimago (resurchify, researchbite, paperguide, etc.), sin año de publicación comprobado: se anota «Q1 (agregador de Scimago; año publ. no comprobado)». Las actas de congreso no tienen cuartil de revista. DOI de Apley-Zhu, Belloni et al., Zou-Hastie, Chen-Guestrin y Hochreiter-Schmidhuber comprobados por consulta a api.crossref.org/works/<DOI> (2026-10-10).
+
+| Referencia | DOI | Revista | Cuartil | Estado |
+|---|---|---|---|---|
+| Diebold y Mariano (1995), 13(3), 253-263 | 10.1080/07350015.1995.10524599 | J. Business & Economic Statistics | Q1 (agregador de Scimago; año publ. no comprobado) | VERIFICADA (DOI en v1; cuartil añadido) |
+| Montiel Olea y Pflueger (2013), 31(3), 358-369 | 10.1080/00401706.2013.806694 | J. Business & Economic Statistics | Q1 (agregador de Scimago; año publ. no comprobado) | VERIFICADA (DOI en v1; cuartil añadido) |
+| Webb (2023), 56(3), 839-858 | 10.1111/caje.12661 | Canadian Journal of Economics | Q2 (agregador de Scimago, datos hasta 2022-2023; año publ. no comprobado) | VERIFICADA (DOI en v1; cuartil añadido) |
+| Adão, Kolesár y Morales (2019), 134(4), 1949-2010 | 10.1093/qje/qjz025 | Quarterly Journal of Economics | Q1 (agregador de Scimago; año publ. no comprobado) | VERIFICADA (DOI en v1; cuartil añadido) |
+| Jordà (2005), 95(1), 161-182 | 10.1257/0002828053828518 | American Economic Review | Q1 (1999-2025, ver Diamond et al. 2019 en la tabla v2) | VERIFICADA (DOI en v1; cuartil añadido) |
+| Poterba (1984), 99(4), 729-752 | 10.2307/1883123 | Quarterly Journal of Economics | Q1 (agregador de Scimago; año publ. no comprobado) | VERIFICADA (DOI en v1; cuartil añadido) |
+| Belloni, Chernozhukov y Hansen (2014), 81(2), 608-650 | 10.1093/restud/rdt044 | Review of Economic Studies | Q1 (1999-2025, ver tabla v2) | VERIFICADA (Crossref 2026-10-10) |
+| Zou y Hastie (2005), 67(2), 301-320 | 10.1111/j.1467-9868.2005.00503.x | JRSS Series B | Q1 (agregador de Scimago; año publ. no comprobado) | VERIFICADA (Crossref 2026-10-10) |
+| Apley y Zhu (2020), 82(4), 1059-1086 | 10.1111/rssb.12377 | JRSS Series B | Q1 (agregador de Scimago; año publ. no comprobado) | VERIFICADA (Crossref 2026-10-10) |
+| Hochreiter y Schmidhuber (1997), 9(8), 1735-1780 | 10.1162/neco.1997.9.8.1735 | Neural Computation | Q1 (agregador de Scimago, categoría Cognitive Neuroscience; año publ. no comprobado) | VERIFICADA (Crossref 2026-10-10) |
+| Chen y Guestrin (2016), 785-794 | 10.1145/2939672.2939785 | Proc. 22nd ACM SIGKDD (KDD) | sin cuartil de revista (actas) | VERIFICADA (Crossref 2026-10-10) |
+| Lundberg y Lee (2017), NeurIPS 30 (SHAP), «A Unified Approach to Interpreting Model Predictions» | sin DOI Crossref (la consulta bibliográfica no lo devolvió) | Advances in Neural Information Processing Systems 30 (actas) | sin cuartil de revista (actas) | **NO VERIFICADA** (sin DOI comprobado en Crossref) |
+| Ke et al. (2017), NeurIPS 30 (LightGBM), «LightGBM: A Highly Efficient Gradient Boosting Decision Tree» | sin DOI Crossref localizado (consulta devolvió HTTP 429, no repetida) | Advances in Neural Information Processing Systems 30 (actas) | sin cuartil de revista (actas) | **NO VERIFICADA** (sin DOI comprobado) |
+
+Notas: (1) Todos los cuartiles de este anexo salvo los remitidos a la tabla v2 son de agregadores, no de scimagojr.com; Webb (CJE) es Q2 según agregador y JCR Q3 según otra fuente (métrica distinta). (2) Lundberg-Lee y Ke et al. se citan solo como referencia de software (SHAP, LightGBM) hasta localizar DOI/identificador (existe versión arXiv, no comprobada aquí). (3) No se extrajeron resultados numéricos: son referencias metodológicas.

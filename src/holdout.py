@@ -201,6 +201,31 @@ def evaluate(hipotesis: str, fn, rama: str, paneles: list[str]):
     return res
 
 
+HIPOTESIS_V2_SELLADAS = ("H1", "H2", "H6", "H7")   # las cuatro con evaluación sellada en v2
+
+
+def load_full(nombre: str, uso: str) -> pd.DataFrame:
+    """v3: panel COMPLETO (entrenamiento + sellado v2) para hechos (C1) y cotas (C2).
+
+    Solo se permite cuando todas las evaluaciones selladas de v2 ya se hicieron: el sellado v2 ya no
+    protege ninguna hipótesis pendiente. Cada lectura se registra (evento «v3_completo»).
+    El sellado v3 propio (secciones censales) es otro y no pasa por aquí.
+    """
+    hechas = {a["hipotesis"] for a in _accesos() if a.get("evento") == "evaluacion"}
+    faltan = [h for h in HIPOTESIS_V2_SELLADAS if h not in hechas]
+    if faltan:
+        raise PermissionError(f"Evaluaciones selladas v2 pendientes: {faltan}")
+    _freq, _col_t, col_geo = CATALOGO[nombre]
+    src = SRC_V2 / f"{nombre}.csv"
+    df = pd.read_csv(src, dtype={col_geo: str} if col_geo else None)
+    df = _rebase_indices_2015(df, nombre, _col_t, col_geo)
+    reg = {"utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "evento": "v3_completo",
+           "hipotesis": "-", "rama": uso, "paneles": [nombre]}
+    with open(LOG, "a") as f:
+        f.write(json.dumps(reg, ensure_ascii=False) + "\n")
+    return df
+
+
 def _log_md(utc, hipotesis, rama, paneles, texto):
     LOG_MD.parent.mkdir(parents=True, exist_ok=True)
     nuevo = not LOG_MD.exists()

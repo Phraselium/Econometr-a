@@ -1,0 +1,13 @@
+nivel,clase,etiqueta,n,n_estables_80,estabilidad_mediana_pct
+provincias,1,1 falta y hay suelo rentable,0,0,
+provincias,2,2 falta y brecha regulatoria,18,5,57.9
+provincias,3,3 falta pero no rentable,28,3,55.6
+provincias,4,4 no falta,4,0,50.0
+provincias,5,"5 falta, brecha moderada, solares insuficientes (clase añadida)",0,0,
+provincias,9,9 indeterminada (sin dato de solares),0,0,
+municipios,1,1 falta y hay suelo rentable,0,0,
+municipios,2,2 falta y brecha regulatoria,246,101,72.2
+municipios,3,3 falta pero no rentable,129,31,66.7
+municipios,4,4 no falta,326,193,100.0
+municipios,5,"5 falta, brecha moderada, solares insuficientes (clase añadida)",0,0,
+municipios,9,9 indeterminada (sin dato de solares),0,0,

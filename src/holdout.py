@@ -148,8 +148,14 @@ def evaluate(hipotesis: str, fn, rama: str, paneles: list[str]):
 
     fn(dict nombre->DataFrame sellado, dict nombre->DataFrame train) -> dict serializable.
     """
-    if any(a["hipotesis"] == hipotesis and a["evento"] == "evaluacion" for a in _accesos()):
-        raise PermissionError(f"La hipótesis {hipotesis} ya se evaluó en la muestra sellada (una sola vez).")
+    # Cualquier acceso previo (apertura o evaluación) cuenta: una sola apertura por hipótesis, aunque falle.
+    if any(a["hipotesis"] == hipotesis for a in _accesos()):
+        raise PermissionError(f"La hipótesis {hipotesis} ya abrió la muestra sellada (una sola vez).")
+    SEALED.mkdir(parents=True, exist_ok=True)
+    apertura = {"utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "evento": "apertura",
+                "hipotesis": hipotesis, "rama": rama, "paneles": paneles}
+    with open(LOG, "a") as f:   # se registra ANTES de leer nada sellado
+        f.write(json.dumps(apertura, ensure_ascii=False) + "\n")
     sellado = {}
     for p in paneles:
         _freq, _col_t, col_geo = CATALOGO[p]

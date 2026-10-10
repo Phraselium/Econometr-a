@@ -1,0 +1,5 @@
+mercado,modelo,col,var,familia,periodo,coef,se_boot_cluster,ic95_cluster_inf,ic95_cluster_sup,ic95_tiempo_inf,ic95_tiempo_sup
+alquiler_turismo,M1,d4_ln_pob_20_34,d4_ln_pob_20_34,demografia_20_34,global,-0.1009654,0.1756306,-0.5532429,0.1406178,-0.1009654,-0.0433648
+alquiler_turismo,M1,d4_ln_pob_extranj,d4_ln_pob_extranj,demografia_extranj,global,0.0179582,0.1340695,-0.1517246,0.3089073,-0.0251284,0.0179582
+alquiler_turismo,M1,d4_ln_ocupados,d4_ln_ocupados,empleo_renta,global,0.0597459,0.0291443,-0.0108352,0.0885462,0.0559098,0.0733063
+alquiler_turismo,M1,d4_ln_vut_viviendas,d4_ln_vut_viviendas,turismo,global,-0.0138093,0.0160239,-0.0282994,0.0330196,-0.0163543,-0.010171

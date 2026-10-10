@@ -32,3 +32,12 @@
 - El código del BVAR no sigue exactamente lo declarado (verosimilitud marginal) sin efecto en la elección; algunas constantes fijas no declaradas.
 - Bloque 5 (factor dinámico, spillovers espaciales) no ejecutado: sin coordenadas en los paneles. Deep learning solo probado en el panel de alquiler (LSTM; resultado negativo frente a LightGBM).
 - El umbral de continuidad (0,05) se fijó después del acceso de comprobación declarado por el orquestador (docs/v2/decisiones.md).
+
+## BD (descomposición por periodos) — iteración 2
+- Efecto de borde: Σ Δ4/4 no equivale al cambio en niveles (alquiler P2 1,58 frente a 2,30; compra P2 3,39 frente a 4,76; `observado_niveles_referencia.csv`).
+- IC temporal con 2 bloques en P3 (8 trimestres) y P4 (9): poco fiable. Sin corrección por multiplicidad en ningún IC.
+- Estimación MCO sin ponderar y agregación ponderada por población; población intra-anual interpolada (heredada de BA).
+- Compra M2: coeficiente de Δ4 coste de uso nacional positivo (signo contrario al esperado).
+- Contribuciones de M1 = b·media nacional; el «común» recoge el resto. Los canales por exposición en M1 existen solo por la ponderación. 20-34 EXPLORATORIO (Holm-7 ya ejecutado).
+- ECM nacional: IC de CP por bootstrap de residuos con regresores fijos (subestima); IC de LP por simulación con covarianza HAC(4).
+- BD (corrección C1): la contribución de `cu_x_expo` se mide como (coste de uso − media muestral del coste de uso) × exposición; la estimación usa la variable sin centrar (centrar por periodo no es neutro). Cambian solo las cifras de compra (M1 P2-P4 crédito/coste de uso: +2,27 pp, antes +0,13).

@@ -28,7 +28,7 @@ def escribir(h3, het, oos, OUT):
     dml = {f"{d['modelo']}_{d['learner']}": d for d in het["dml"]}
     cf = het["causal_forest"]
     DESV = ("Elecciones NO fijadas en el pre-registro (desviación/interpretación declarada): (i) 'flujo/población t-1' se lee como flujo del año t (INE EM) "
-            "dividido por la población a 1 de enero del año t (= final de t-1); la lectura alternativa flujo_{t-1}/pob_{t-2} se muestra aparte; "
+            "dividido por la población a 1 de enero del año t−1; la lectura alternativa flujo_{t-1}/pob_{t-2} se muestra aparte; "
             "(ii) momento del shock: el principal usa ΔS_t = S(1-ene t) − S(1-ene t-1), que cubre el año t-1 (desalineado con el flujo del año t); "
             "la versión alineada ΔS_{t+1} se muestra aparte y cambia el signo del contraste; (iii) el valor tasado se deflacta con el deflactor nacional "
             "(inocuo con FE de año); (iv) Europa = UE+resto de Europa (ruptura UE28/UE27 de 2021); cuotas y shock sobre las 49 provincias de entrenamiento.")

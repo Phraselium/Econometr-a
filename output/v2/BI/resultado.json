@@ -54,7 +54,7 @@
   },
   "nivel_evidencia": "EXPLORATORIO",
   "diagnosticos": {
-    "nivel_beta_alq_signo": "ASOCIACIÓN ROBUSTA (solo signo; magnitud NO identificada)",
+    "nivel_beta_alq_signo": "EXPLORATORIO (signo positivo estable con el instrumento completo, pero falla submuestras 2015-2021 p=0,073, controles GPSS de extranjeros 2002 p=0,115 y los placebos de resultado pasado rechazan también en precio: patrón transversal persistente; magnitud NO identificada)",
     "F_cluster": 14.436690131943168,
     "criterios": {
       "F_ge_10_principal": true,
@@ -1002,5 +1002,5 @@
     "ecm_v1": "NO COMPARABLE: el ECM v1 (DOLS sobre ocupados, tipo hipotecario y costes) solo está definido en frecuencia trimestral y no existe un análogo anual en la misma muestra; se retira del cuadro en vez de comparar muestras distintas.",
     "nota": "No es posible extender a la tasa de inmigración instrumentada/observada en panel_ar4 del alquiler: los flujos terminan en 2021-22 (antes de la muestra de test completa) y el ECM v1 solo existe en trimestres (retirado, no comparable); aviso: el flujo del año t se publica a mitad de t+1 (pseudo-pronóstico con pequeña anticipación); se compara AR(4) panel anual con AR(4)+flujo observado, bloques expansivos con embargo, orígenes hasta 2020."
   },
-  "notas": "Elecciones NO fijadas en el pre-registro (desviación/interpretación declarada): (i) 'flujo/población t-1' se lee como flujo del año t (INE EM) dividido por la población a 1 de enero del año t (= final de t-1); la lectura alternativa flujo_{t-1}/pob_{t-2} se muestra aparte; (ii) momento del shock: el principal usa ΔS_t = S(1-ene t) − S(1-ene t-1), que cubre el año t-1 (desalineado con el flujo del año t); la versión alineada ΔS_{t+1} se muestra aparte y cambia el signo del contraste; (iii) el valor tasado se deflacta con el deflactor nacional (inocuo con FE de año); (iv) Europa = UE+resto de Europa (ruptura UE28/UE27 de 2021); cuotas y shock sobre las 49 provincias de entrenamiento. H3 sin muestra sellada. Heterogeneidad (DML, causal forest) EXPLORATORIA. CAUSAL descartado."
+  "notas": "Elecciones NO fijadas en el pre-registro (desviación/interpretación declarada): (i) 'flujo/población t-1' se lee como flujo del año t (INE EM) dividido por la población a 1 de enero del año t−1; la lectura alternativa flujo_{t-1}/pob_{t-2} se muestra aparte; (ii) momento del shock: el principal usa ΔS_t = S(1-ene t) − S(1-ene t-1), que cubre el año t-1 (desalineado con el flujo del año t); la versión alineada ΔS_{t+1} se muestra aparte y cambia el signo del contraste; (iii) el valor tasado se deflacta con el deflactor nacional (inocuo con FE de año); (iv) Europa = UE+resto de Europa (ruptura UE28/UE27 de 2021); cuotas y shock sobre las 49 provincias de entrenamiento. H3 sin muestra sellada. Heterogeneidad (DML, causal forest) EXPLORATORIA. CAUSAL descartado."
 }

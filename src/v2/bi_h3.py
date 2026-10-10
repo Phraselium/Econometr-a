@@ -293,7 +293,7 @@ def run(reg, smoke=False, B=9999):
         componentes=comp)
     h3_ar = min(1, 7 * p_iut) < 0.05 and bool(res["criterios_identificacion"]["signo_contraste_estable"])
     res["nivel_evidencia"] = "ASOCIACIÓN ROBUSTA" if h3_ar else "EXPLORATORIO"
-    res["nivel_beta_alq_signo"] = "ASOCIACIÓN ROBUSTA (solo signo; magnitud NO identificada)" if min(1, 7 * p1) < 0.05 and sig_pos else "EXPLORATORIO"
+    res["nivel_beta_alq_signo"] = "EXPLORATORIO (signo positivo estable con el instrumento completo, pero falla submuestras 2015-2021 p=0,073, controles GPSS de extranjeros 2002 p=0,115 y los placebos de resultado pasado rechazan también en precio: patrón transversal persistente; magnitud NO identificada)"
     res["tabla_principal"] = T.round(4).to_dict("records")
     (OUT / f"{'smoke_' if smoke else ''}h3_resultados.json").write_text(json.dumps(res, indent=2, ensure_ascii=False, default=float))
     return res

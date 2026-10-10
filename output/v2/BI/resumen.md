@@ -6,7 +6,7 @@ Muestra: 621 observaciones provincia-año (49 provincias, 2009-2021), idéntica 
 
 ## Desviaciones/interpretaciones no fijadas en el pre-registro
 
-Elecciones NO fijadas en el pre-registro (desviación/interpretación declarada): (i) 'flujo/población t-1' se lee como flujo del año t (INE EM) dividido por la población a 1 de enero del año t (= final de t-1); la lectura alternativa flujo_{t-1}/pob_{t-2} se muestra aparte; (ii) momento del shock: el principal usa ΔS_t = S(1-ene t) − S(1-ene t-1), que cubre el año t-1 (desalineado con el flujo del año t); la versión alineada ΔS_{t+1} se muestra aparte y cambia el signo del contraste; (iii) el valor tasado se deflacta con el deflactor nacional (inocuo con FE de año); (iv) Europa = UE+resto de Europa (ruptura UE28/UE27 de 2021); cuotas y shock sobre las 49 provincias de entrenamiento. Si la versión desalineada se eligió antes o después de ver resultados no es auditable: se declara como grado de libertad.
+Elecciones NO fijadas en el pre-registro (desviación/interpretación declarada): (i) 'flujo/población t-1' se lee como flujo del año t (INE EM) dividido por la población a 1 de enero del año t−1; la lectura alternativa flujo_{t-1}/pob_{t-2} se muestra aparte; (ii) momento del shock: el principal usa ΔS_t = S(1-ene t) − S(1-ene t-1), que cubre el año t-1 (desalineado con el flujo del año t); la versión alineada ΔS_{t+1} se muestra aparte y cambia el signo del contraste; (iii) el valor tasado se deflacta con el deflactor nacional (inocuo con FE de año); (iv) Europa = UE+resto de Europa (ruptura UE28/UE27 de 2021); cuotas y shock sobre las 49 provincias de entrenamiento. Si la versión desalineada se eligió antes o después de ver resultados no es auditable: se declara como grado de libertad.
 
 ## H3 (especificación pre-registrada)
 
@@ -20,7 +20,7 @@ Unidades: % de variación anual por cada 1 p.p. de población. Conjunto AR del c
 
 Intersección-unión (p WCB una cola): coef. alquiler>0 p=0.0010; contraste>0 p=0.0294; **p_IUT de H3 = 0.0294**, cota Holm-7 0.206 (la corrección final de la familia la aplica el orquestador).
 
-**Nivel de evidencia de H3: EXPLORATORIO.** Componente alquiler>0 (no pre-registrado por separado, informativo): ASOCIACIÓN ROBUSTA (solo signo; magnitud NO identificada); cota Holm-7 0.007. Compra: no informativa (IC [-6.1; 4.0], signo inestable). **CAUSAL descartado.**
+**Nivel de evidencia de H3: EXPLORATORIO.** Componente alquiler>0 (no pre-registrado por separado, informativo): EXPLORATORIO (signo positivo estable con el instrumento completo, pero falla submuestras 2015-2021 p=0,073, controles GPSS de extranjeros 2002 p=0,115 y los placebos de resultado pasado rechazan también en precio: patrón transversal persistente; magnitud NO identificada); cota Holm-7 0.007. Compra: no informativa (IC [-6.1; 4.0], signo inestable). **CAUSAL descartado.**
 
 ## Diagnósticos de identificación (EXPLORATORIOS, con p WCB una cola; con F<10 el bootstrap no es fiable)
 

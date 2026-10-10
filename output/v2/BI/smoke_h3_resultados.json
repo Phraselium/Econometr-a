@@ -840,7 +840,7 @@
     }
   },
   "nivel_evidencia": "EXPLORATORIO",
-  "nivel_beta_alq_signo": "EXPLORATORIO",
+  "nivel_beta_alq_signo": "EXPLORATORIO (signo positivo estable con el instrumento completo, pero falla submuestras 2015-2021 p=0,073, controles GPSS de extranjeros 2002 p=0,115 y los placebos de resultado pasado rechazan también en precio: patrón transversal persistente; magnitud NO identificada)",
   "tabla_principal": [
     {
       "resultado": "alq",

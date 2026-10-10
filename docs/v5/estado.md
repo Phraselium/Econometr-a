@@ -22,8 +22,9 @@
 | C-a Europa (C4), crédito a promotores (C1), contado (C3) | C | hecho | C4 | España: precio real +42,6 % vs mediana UE +37,4 % (P65); alquiler real −10,3 %; emancipación fuera del IQR; crédito a promotores 470 → 98 mm €; contado 30-58 % | 139.510 |
 | C-b seguridad jurídica (C5), fiscalidad (C6), empresas (C8) | C | hecho | C4 | usurpación y cuota de alquiler: rho +0,57/+0,66 (signo contrario a la afirmación; urbanización); AEAT no publica por número de inmuebles (sin dato); PJ: 11,3 % de compradores; residual de stock no persona física 16,9-38,1 % | 130.684 |
 | C-c desigualdad (C7), descalificación de protegida (C2) | C | hecho | C4 / C2 (cota de salidas) | sobrecarga quintil 1: 40,9 % → 27,7 % (2015-2025); EFF sin herencia (sin dato); salidas del régimen protegido 2026-2035: 532-669 mil (3,3-7,6 veces las calificaciones nuevas) | 86.797 |
+| Revisión módulo C | C | REHACER (B1-B2) → corregido; APROBADO | — | docs/v5/revision_C.md; CC-V2 pasa a C4 | 59.146 |
 | D1-lit literatura de instrumentos | D | hecho | — | 19 referencias VERIFICADAS nuevas; ayudas a la demanda: el traslado sube con la oferta rígida (Eriksen-Ross; Hilber-Turner); 11 instrumentos siguen sin referencia verificada | 126.832 |
 
-**Hecho:** módulos R, A y B aprobados; C-a; check_v5 en make check.
-**Siguiente:** revisión C; D1-lit (en curso) → D1, D2, D3 → revisión D → E.
-**Tokens de subagentes v5:** 2.080.162 / 4.200.000 (R: 601.209 / 900.000; A: 471.653 / 700.000; B: 523.477 / 1.000.000; C: 356.991 / 700.000; D: 126.832 / 600.000) (corte global al 80 %: 3.360.000; reserva 420.000).
+**Hecho:** módulos R, A, B y C aprobados; D1-lit; E9-E12 parciales (solicitudes, licencias, CITATION, zenodo, CHANGELOG, tareas del autor, correo, calendario).
+**Siguiente:** D1-D2 y D3 (en curso) → revisión D → E (plantillas y entregables).
+**Tokens de subagentes v5:** 2.139.308 / 4.200.000 (R: 601.209 / 900.000; A: 471.653 / 700.000; B: 523.477 / 1.000.000; C: 416.137 / 700.000; D: 126.832 / 600.000) (corte global al 80 %: 3.360.000; reserva 420.000).

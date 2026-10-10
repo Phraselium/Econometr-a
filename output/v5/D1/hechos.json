@@ -1,0 +1,67 @@
+[
+ {
+  "id": "D1-H01",
+  "indicador": "Instrumentos evaluados con la rúbrica (I01-I29 sin I17 ni I23, N1-N9)",
+  "valor": 36,
+  "min": null,
+  "max": null,
+  "unidad": "instrumentos",
+  "periodo": "2026-10",
+  "cobertura": "matriz D1",
+  "fuentes": "docs/v4/instrumentos.md; output/v5/A5",
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "D1-H02",
+  "indicador": "Instrumentos con 'No evaluable' en el signo",
+  "valor": 18,
+  "min": null,
+  "max": null,
+  "unidad": "instrumentos",
+  "periodo": "2026-10",
+  "cobertura": "matriz D1",
+  "fuentes": "output/v5/D1/matriz_instrumentos.csv",
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "D1-H11",
+  "indicador": "Parte de una ayuda general que se traslada al precio, clase A4 1 (método A)",
+  "valor": 58.4,
+  "min": 27.8,
+  "max": 81.8,
+  "unidad": "%",
+  "periodo": "rejilla εd 0,3-1,5",
+  "cobertura": "37 provincias de clase 1",
+  "fuentes": "output/v5/A4; output/v3/PD; literatura verificada",
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "D1-H12",
+  "indicador": "Parte de una ayuda general que se traslada al precio, clase A4 2 (método A)",
+  "valor": 100.0,
+  "min": 88.1,
+  "max": 100.0,
+  "unidad": "%",
+  "periodo": "rejilla εd 0,3-1,5",
+  "cobertura": "11 provincias de clase 2",
+  "fuentes": "output/v5/A4; output/v3/PD; literatura verificada",
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "D1-H13",
+  "indicador": "Parte de una ayuda general que se traslada al precio, clase A4 3 (método A)",
+  "valor": 76.4,
+  "min": 50.1,
+  "max": 89.8,
+  "unidad": "%",
+  "periodo": "rejilla εd 0,3-1,5",
+  "cobertura": "2 provincias de clase 3",
+  "fuentes": "output/v5/A4; output/v3/PD; literatura verificada",
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ }
+]

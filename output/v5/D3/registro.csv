@@ -1,0 +1,2 @@
+especificacion,descripcion,n,p,p_ajustado,nota
+D3-regla-15,coincide si solape o |dif| <= 0.15,22,,,"comparación contable; sin contraste de hipótesis, Holm/BH no aplica"

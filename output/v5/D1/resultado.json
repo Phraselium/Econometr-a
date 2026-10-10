@@ -1,0 +1,68 @@
+{
+ "rama": "D1",
+ "pregunta": "¿Qué evidencia hay por instrumento, con la misma rúbrica, y cuánto de las ayudas se traslada al precio por clase territorial?",
+ "capa": "C4 (signos estables de P-D: C2; clases A4: C4)",
+ "datos": [
+  "output/v4/M5",
+  "output/v3/PD",
+  "output/v5/A4",
+  "output/v5/A5",
+  "output/v5/D1/literatura_instrumentos.csv"
+ ],
+ "N": {
+  "instrumentos": 36,
+  "provincias": 52
+ },
+ "metodo": "rúbrica idéntica; incidencia |εd|/(εs+|εd|) con εs por clase (A: respuesta de oferta A4; B: rejilla P-D)",
+ "estimacion": {
+  "traslado_precio_clase_A_min_central_max": {
+   "1": [
+    0.27777777777777773,
+    0.5843214578325184,
+    0.8178844056706652
+   ],
+   "2": [
+    0.881057268722467,
+    1.0,
+    1.0
+   ],
+   "3": [
+    0.5008347245409015,
+    0.7641397367208902,
+    0.8976660682226212
+   ]
+  },
+  "sin_signo_evaluable": [
+   "I03",
+   "I04",
+   "I05",
+   "I09",
+   "I11",
+   "I13",
+   "I14",
+   "I15",
+   "I19",
+   "I20",
+   "I22",
+   "I24",
+   "I25",
+   "I26",
+   "N1",
+   "N3",
+   "N5",
+   "N6"
+  ]
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO (C4); signos P-D en C2",
+ "diagnosticos": {
+  "metodos_discrepan": "A y B se reportan ambos"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Sin especificaciones econométricas nuevas (determinista; registro.csv vacío por diseño). I17 e I23 sin definición en v4."
+}

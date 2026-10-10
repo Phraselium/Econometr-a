@@ -174,3 +174,14 @@
   - El método de B1 se amplía en el informe técnico (E1).
   - Queda abierto, por impacto bajo, separar B2-H6 en tres hechos.
 - Son las correcciones que propuso el revisor y no cambian ninguna estimación: el módulo B queda APROBADO.
+
+## Revisión del módulo C: REHACER (B1-B2) → corregido por el orquestador
+- **B1.** CC-V2 (descalificación de protegida) pasa a C4 y ANALIZADA, NO CONCLUYENTE.
+  - Los escenarios no recorren el supuesto de 15-30 años y la cota inferior lógica es 0.
+  - Las cifras de salidas se rotulan como escenarios ilustrativos y van en C4.
+  - La fecha del dato es la última de la serie.
+- **B2.** CA ya no dice que el valor de España sea C1: Eurostat toma el dato del INE (coherencia, no independencia).
+- **No bloqueantes.**
+  - CB-V1: p de Holm con 4 decimales; se citan las especificaciones nulas.
+  - CB-V3: se nombran los dos métodos (Censo frente a ECV).
+- Tras estas correcciones (las que propuso el revisor), el módulo C queda APROBADO.

@@ -395,7 +395,7 @@ def main():
     rr = {
         "rama": "CA",
         "pregunta": "(C4) ¿Qué es específico de España frente a la UE-27? (C1) ¿El crédito a promotores se asocia a las iniciadas? (C3) ¿Se compra al contado o con hipoteca?",
-        "capa": "C4 (Europa; el valor de España es C1 donde coincide con el INE) · C4 (crédito, descriptivo) · C4 (contado: cota con supuesto)",
+        "capa": "C4 (Europa; Eurostat toma el dato de España del INE: coherencia, no independencia) · C4 (crédito, descriptivo) · C4 (contado: cota con supuesto)",
         "datos": "Eurostat (prc_hpi_a, prc_hicp_aind, ilc_lvho07a, ilc_lvho05a, yth_demo_030, ilc_lvho02, sts_cobp_a, demo_pjan, demo_gind); BdE be0418; BCE BLS (EPB) España; MIVAU iniciadas; INE H 76317, ETDP 6150; Registradores ERI",
         "N": {"europa_indicadores": int(te.id.nunique()), "credito_trimestres": int(len(d)), "contado_anios": int(len(t3))},
         "metodo": "Posición en la UE-27 (percentil, desviación frente a la mediana, rango intercuartílico); regresiones descriptivas con HAC(8) y Holm sobre 36 pruebas; razón hipotecas/compraventas con cota 1-phi*razón",

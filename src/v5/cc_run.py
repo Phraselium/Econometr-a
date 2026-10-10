@@ -149,16 +149,17 @@ def c2():
     ]
     pd.DataFrame(plazos, columns=["plan", "norma", "boe", "fecha_publicacion", "plazo_en_el_texto", "L_usado_anios"]).to_csv(
         OUT / "tablas" / "plazos_planes.csv", index=False)
-    f = "2026-10-10"
+    # revisión C (B1): los escenarios no recorren el supuesto 15-30 años y la cota inferior lógica es 0 -> C4, escenarios ilustrativos
+    f = str(ult)
     for e in ("bajo", "base", "alto"):
-        hecho(f"CC-C2-salidas-{e}", f"Viviendas protegidas que salen del régimen 2026-2035 (escenario {e})", float(tot[e]),
-              float(tot["bajo"]), float(tot["alto"]), "viviendas", "2026-2035", "España (calificaciones definitivas, planes estatales y autonómicos)",
-              "MIVAU Boletín Online tabla 1.6 + BOE (RD de los planes)", "C2", f)
+        hecho(f"CC-C2-salidas-{e}", f"Viviendas protegidas que saldrían del régimen 2026-2035 (escenario ilustrativo {e}; cota inferior lógica 0)", float(tot[e]),
+              None, None, "viviendas", "2026-2035", "España (calificaciones definitivas, planes estatales y autonómicos)",
+              "MIVAU Boletín Online tabla 1.6 + BOE (RD de los planes)", "C4", f)
     hecho("CC-C2-nuevas5a", "Calificaciones definitivas de vivienda protegida, media anual", round(nuevas5), None, None, "viviendas/año",
           f"{ult-4}-{ult}", "España", "MIVAU Boletín Online tabla 1.6", "C1" if False else "C4", f"{ult}")
     hecho("CC-C2-ratio", "Salidas anuales medias 2026-2035 (base) / calificaciones nuevas anuales medias 5 años",
           round(float(tot["base"]) / 10 / nuevas5, 2), round(float(tot["bajo"]) / 10 / nuevas5, 2), round(float(tot["alto"]) / 10 / nuevas5, 2),
-          "ratio", "2026-2035", "España", "MIVAU + BOE", "C2", f)
+          "ratio", "2026-2035", "España", "MIVAU + BOE", "C4", f)
     return tab, tot, nuevas5, cuadre, ult, ccaa_tot
 
 
@@ -191,11 +192,11 @@ def main():
              veredicto="ANALIZADA, NO CONCLUYENTE", regla="Con capa C4 el máximo es «ANALIZADA, NO CONCLUYENTE»; la afirmación exige un contrafactual (compra sin ayuda) que ningún dato accesible identifica.",
              limites="Propiedad sin hipoteca no equivale a herencia o donación. Sin cuadro EFF de ayuda familiar. ECV y Eurostat no son fuentes independientes.",
              evidencia=["output/v5/CC/tablas/ecv_tenencia_16_29.csv", "output/v5/CC/tablas/sobrecarga_quintil_tenencia_2015_ultimo.csv"], convenciones={}),
-        dict(id="CC-V2", tema="Vivienda protegida", enunciado="Las viviendas protegidas se pierden por descalificación y el parque protegido se erosiona.", capa="C2",
-             magnitud=f"Salidas 2026-2035: {tot['bajo']:.0f} (bajo) a {tot['alto']:.0f} (alto) viviendas, base {tot['base']:.0f}, frente a {nuevas5:.0f} calificaciones nuevas al año de media en los últimos 5 años ({ultp-4}-{ultp}).",
-             intervalo=f"{tot['bajo']:.0f}-{tot['alto']:.0f} viviendas", cota="C2: plazos como supuesto; sin descalificación anticipada; el stock real y las descalificaciones efectivas no se observan",
+        dict(id="CC-V2", tema="Vivienda protegida", enunciado="Las viviendas protegidas se pierden por descalificación y el parque protegido se erosiona.", capa="C4",
+             magnitud=f"Escenarios ilustrativos (plazo de 30 años salvo excepciones; no recorren el supuesto de 15-30 años): salidas 2026-2035 de {tot['bajo']:.0f} (bajo) a {tot['alto']:.0f} (alto) viviendas, base {tot['base']:.0f}, frente a {nuevas5:.0f} calificaciones nuevas al año de media en los últimos 5 años ({ultp-4}-{ultp}).",
+             intervalo=f"0-{tot['alto']:.0f} viviendas (cota inferior lógica 0 si el régimen fuese permanente)", cota="Sin cota C2: los escenarios no recorren todo el supuesto de plazos (15-30 años) y las descalificaciones efectivas no se observan",
              literatura="NO VERIFICADA (el texto introductorio del RD 326/2026 afirma la dinámica de descalificación; no hay contraste independiente)",
-             veredicto="PARCIALMENTE", regla="Cota C2 de la salida por fin de plazo; la descalificación efectiva no se observa.",
+             veredicto="ANALIZADA, NO CONCLUYENTE", regla="Regla B4: con capa C4 el máximo es ANALIZADA, NO CONCLUYENTE. Los escenarios ilustran la salida por fin de plazo con supuestos; la descalificación efectiva no se observa.",
              limites="Los plazos autonómicos no se han recogido; las salidas son por fin de plazo, no descalificaciones observadas.",
              evidencia=["output/v5/CC/tablas/salidas_nacional_2026_2035.csv", "output/v5/CC/tablas/plazos_planes.csv"], convenciones={}),
     ]

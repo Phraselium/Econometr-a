@@ -1,0 +1,42 @@
+{
+  "rama": "D3",
+  "pregunta": "¿Coinciden las cifras clave del proyecto con las publicadas por BdE, Ministerio, INE, OCDE y Eurostat?",
+  "capa": "C4 (comparación descriptiva; no altera la capa de cada cifra)",
+  "datos": "output/v5/cifras_clave.csv; data/raw/v5/d3_referencias.csv",
+  "N": 22,
+  "metodo": "comparación de rangos; coincide si solape o diferencia <= 15 %",
+  "estimacion": {
+    "coincide": 10,
+    "difiere": 3,
+    "no comparable": 9
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "DESCRIPTIVO",
+  "diagnosticos": {
+    "referencias_no_localizadas": 4,
+    "cifras_proyecto": [
+      "A23-A2",
+      "A23-A3",
+      "A23-P1",
+      "A23-P2",
+      "B1-H1",
+      "B2-H1",
+      "B2-H2",
+      "CA-EU-emancipacion-nivel",
+      "CA-EU-sobrecarga-nivel",
+      "R1C-001",
+      "R1C-021",
+      "compradores_extranjeros",
+      "deficit_2124_c1",
+      "dh_2125",
+      "terminadas_1924"
+    ]
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": "Las coincidencias con Eurostat en sobrecarga, emancipación, IPV y alquiler comparten fuente primaria con el proyecto."
+}

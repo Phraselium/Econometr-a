@@ -109,3 +109,10 @@ Prueba del 2026-10-10 contra la API Tempus del INE (https://servicios.ine.es/wst
 | Eurostat, sobrecarga por quintil x tenencia | ilc_lvho07b, ilc_lvho07c, ilc_lvho28 (prueba 2026-10-10) | No existe el cruce quintil x tenencia | Tablas marginales por separado |
 | BdE EFF, herencia/donación de la vivienda principal y ayuda para la entrada | bde.es/webbde/es/estadis/eff/ (devuelve portada genérica sin enlaces EFF); rutas /wbe/... y /f/webbde/SES/... : 404; PDF locales EFF 2007-2022 (data/raw/v3/originales): 0 coincidencias de herencia/donación | SIN DATO | Proxy ECV: propiedad sin hipoteca y cesión en hogares de 16-29 años (no es medida de herencia) |
 | BOE, texto de RD 1932/1991, 2190/1995, 1186/1998, 1/2002, 801/2005, 233/2013 | eli y buscar/doc.php (OK); la API de legislación consolidada solo trae 2008, 2013, 2018, 2022, 2026 | Texto accesible, pero los RD de 1992-1998, 2013-2022 no fijan plazo de régimen de venta | Supuesto 15-30 años; el régimen autonómico no recogido |
+
+## D3 (convergencia) · prueba 2026-10-10
+- Ministerio de Vivienda: cifra oficial de necesidad anual 2026-2035 no localizada (mivau.gob.es, búsqueda web).
+- Banco de España: proyección de déficit a 2030 no localizada en documento primario (búsqueda restringida a bde.es); la prensa atribuye «1,2 millones hasta 2030», no usada.
+- Eurostat/OCDE: sin índice nacional de alquiler de contratos nuevos (prc_hicp_aind solo stock; OECD Affordable Housing Database).
+- INE ETDP: sin desagregación por nacionalidad del comprador.
+- BdE Informe de Estabilidad Financiera otoño 2025: URL exacta no reconsultada (cita tomada de docs/literatura.md).

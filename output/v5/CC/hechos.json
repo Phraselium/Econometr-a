@@ -105,42 +105,42 @@
  },
  {
   "id": "CC-C2-salidas-bajo",
-  "indicador": "Viviendas protegidas que salen del régimen 2026-2035 (escenario bajo)",
+  "indicador": "Viviendas protegidas que saldrían del régimen 2026-2035 (escenario ilustrativo bajo; cota inferior lógica 0)",
   "valor": 532040.0,
-  "min": 532040.0,
-  "max": 669394.0,
+  "min": null,
+  "max": null,
   "unidad": "viviendas",
   "periodo": "2026-2035",
   "cobertura": "España (calificaciones definitivas, planes estatales y autonómicos)",
   "fuentes": "MIVAU Boletín Online tabla 1.6 + BOE (RD de los planes)",
-  "capa": "C2",
-  "fecha_dato": "2026-10-10"
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "CC-C2-salidas-base",
-  "indicador": "Viviendas protegidas que salen del régimen 2026-2035 (escenario base)",
+  "indicador": "Viviendas protegidas que saldrían del régimen 2026-2035 (escenario ilustrativo base; cota inferior lógica 0)",
   "valor": 594890.0,
-  "min": 532040.0,
-  "max": 669394.0,
+  "min": null,
+  "max": null,
   "unidad": "viviendas",
   "periodo": "2026-2035",
   "cobertura": "España (calificaciones definitivas, planes estatales y autonómicos)",
   "fuentes": "MIVAU Boletín Online tabla 1.6 + BOE (RD de los planes)",
-  "capa": "C2",
-  "fecha_dato": "2026-10-10"
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "CC-C2-salidas-alto",
-  "indicador": "Viviendas protegidas que salen del régimen 2026-2035 (escenario alto)",
+  "indicador": "Viviendas protegidas que saldrían del régimen 2026-2035 (escenario ilustrativo alto; cota inferior lógica 0)",
   "valor": 669394.0,
-  "min": 532040.0,
-  "max": 669394.0,
+  "min": null,
+  "max": null,
   "unidad": "viviendas",
   "periodo": "2026-2035",
   "cobertura": "España (calificaciones definitivas, planes estatales y autonómicos)",
   "fuentes": "MIVAU Boletín Online tabla 1.6 + BOE (RD de los planes)",
-  "capa": "C2",
-  "fecha_dato": "2026-10-10"
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "CC-C2-nuevas5a",
@@ -165,7 +165,7 @@
   "periodo": "2026-2035",
   "cobertura": "España",
   "fuentes": "MIVAU + BOE",
-  "capa": "C2",
-  "fecha_dato": "2026-10-10"
+  "capa": "C4",
+  "fecha_dato": "2025"
  }
 ]

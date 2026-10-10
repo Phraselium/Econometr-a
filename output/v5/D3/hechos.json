@@ -1,0 +1,41 @@
+[
+  {
+    "id": "D3-coincide",
+    "indicador": "Referencias de organismos: coincide",
+    "valor": 10,
+    "min": null,
+    "max": null,
+    "unidad": "referencias",
+    "periodo": "2026-10-10",
+    "cobertura": "España",
+    "fuentes": "BdE; OCDE; Eurostat; INE; Ministerio",
+    "capa": "C4",
+    "fecha_dato": "2026-10-10"
+  },
+  {
+    "id": "D3-difiere",
+    "indicador": "Referencias de organismos: difiere",
+    "valor": 3,
+    "min": null,
+    "max": null,
+    "unidad": "referencias",
+    "periodo": "2026-10-10",
+    "cobertura": "España",
+    "fuentes": "BdE; OCDE; Eurostat; INE; Ministerio",
+    "capa": "C4",
+    "fecha_dato": "2026-10-10"
+  },
+  {
+    "id": "D3-no_comparable",
+    "indicador": "Referencias de organismos: no comparable",
+    "valor": 9,
+    "min": null,
+    "max": null,
+    "unidad": "referencias",
+    "periodo": "2026-10-10",
+    "cobertura": "España",
+    "fuentes": "BdE; OCDE; Eurostat; INE; Ministerio",
+    "capa": "C4",
+    "fecha_dato": "2026-10-10"
+  }
+]

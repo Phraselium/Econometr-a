@@ -39,7 +39,7 @@
 - «6 grandes ciudades + València» = Madrid, Barcelona, València, Sevilla, Zaragoza, Málaga y Bilbao (siete municipios).
 - Comprador persona jurídica (ETDP) = física→jurídica + jurídica→jurídica. Fuente única → C4. Sin dato de stock por titular → la comparación stock/flujos no se puede hacer; M4-V2 queda NO ANALIZADA: FALTAN DATOS.
 - Costa e islas: lista de provincias con litoral más Balears y Canarias (Ceuta y Melilla fuera). Supuesto del analista.
-- Vacías y esporádicas (consumo eléctrico, INE) son fuente única → C4; turísticas (INE y registro GVA, que discrepan) → C1. Ficha M4-V3 ANALIZADA, NO CONCLUYENTE en C4 (RESPALDADA exigiría C1).
+- Vacías y esporádicas (consumo eléctrico, INE) son fuente única → C4; turísticas (INE y GVA discrepan 1,5-2,2 veces; GVA solo 3 provincias) → C4; tenencia (fuente única) → C4; extranjeros → C4 (MIVAU y Notariado no independientes, Registradores difiere más de 15 %). Ficha M4-V3 ANALIZADA, NO CONCLUYENTE en C4 (RESPALDADA exigiría C1).
 - Airbnb solo robustez: anuncios no son viviendas.
 
 ## Revisión de la oleada B: REHACER (docs/v4/revision_oleadaB.md)

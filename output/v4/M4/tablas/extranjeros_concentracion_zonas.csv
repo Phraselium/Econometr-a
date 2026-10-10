@@ -1,58 +1,58 @@
-anyo,zona,ext,tx_residencia_total,pct_compras_ext_en_zona,pct_compraventas_total_en_zona,pct_ext_en_la_zona,pct_no_res_ext_en_zona
-2007,costa,42934.0,469612.0,72.08,56.25,9.14,83.85
-2007,interior,8488.0,303572.0,14.25,36.36,2.8,1.19
-2007,islas,8145.0,61641.0,13.67,7.38,13.21,14.96
-2008,costa,25103.0,305553.0,69.89,54.25,8.22,85.52
-2008,interior,6018.0,219784.0,16.75,39.02,2.74,2.11
-2008,islas,4799.0,37876.0,13.36,6.72,12.67,12.36
-2009,costa,24169.0,248632.0,59.09,53.75,9.72,80.25
-2009,interior,11661.0,186262.0,28.51,40.27,6.26,2.87
-2009,islas,5073.0,27665.0,12.4,5.98,18.34,16.88
-2010,costa,25955.0,263877.0,65.63,53.86,9.84,79.91
-2010,interior,7606.0,195575.0,19.23,39.92,3.89,1.76
-2010,islas,5986.0,30495.0,15.14,6.22,19.63,18.33
-2011,costa,27077.0,188726.0,67.79,54.18,14.35,78.9
-2011,interior,5748.0,136459.0,14.39,39.18,4.21,1.53
-2011,islas,7116.0,23117.0,17.82,6.64,30.78,19.58
-2012,costa,34770.0,197308.0,69.15,54.38,17.62,78.59
-2012,interior,7033.0,140809.0,13.99,38.81,4.99,3.05
-2012,islas,8482.0,24746.0,16.87,6.82,34.28,18.36
-2013,costa,38988.0,169397.0,72.01,56.47,23.02,79.8
-2013,interior,5600.0,106829.0,10.34,35.62,5.24,1.52
-2013,islas,9553.0,23727.0,17.64,7.91,40.26,18.68
-2014,costa,48015.0,202077.0,70.31,55.41,23.76,79.73
-2014,interior,8715.0,133749.0,12.76,36.67,6.52,1.93
-2014,islas,11560.0,28887.0,16.93,7.92,40.02,18.34
-2015,costa,52885.0,225128.0,68.11,56.18,23.49,78.12
-2015,interior,11368.0,142815.0,14.64,35.64,7.96,2.21
-2015,islas,13388.0,32798.0,17.24,8.18,40.82,19.66
-2016,costa,58748.0,256051.0,66.5,56.07,22.94,76.13
-2016,interior,13645.0,162478.0,15.45,35.58,8.4,2.04
-2016,islas,15948.0,38165.0,18.05,8.36,41.79,21.83
-2017,costa,66428.0,295050.0,65.86,55.55,22.51,76.0
-2017,interior,16976.0,191865.0,16.83,36.12,8.85,2.23
-2017,islas,17464.0,44258.0,17.31,8.33,39.46,21.76
-2018,costa,68750.0,325440.0,68.09,55.96,21.13,78.35
-2018,interior,17033.0,213356.0,16.87,36.69,7.98,2.36
-2018,islas,15185.0,42735.0,15.04,7.35,35.53,19.29
-2019,costa,66920.0,320527.0,69.56,56.35,20.88,79.74
-2019,interior,16213.0,207926.0,16.85,36.56,7.8,2.56
-2019,islas,13065.0,40322.0,13.58,7.09,32.4,17.7
-2020,costa,49847.0,272349.0,69.63,56.02,18.3,79.82
-2020,interior,12779.0,185199.0,17.85,38.09,6.9,2.44
-2020,islas,8963.0,28634.0,12.52,5.89,31.3,17.74
-2021,costa,71182.0,381786.0,69.14,56.74,18.64,77.08
-2021,interior,17236.0,248917.0,16.74,36.99,6.92,2.08
-2021,islas,14531.0,42188.0,14.11,6.27,34.44,20.84
-2022,costa,95023.0,411936.0,70.64,57.5,23.07,78.12
-2022,interior,20173.0,254401.0,15.0,35.51,7.93,2.42
-2022,islas,19329.0,50131.0,14.37,7.0,38.56,19.46
-2023,costa,88834.0,368678.0,72.2,57.83,24.1,80.33
-2023,interior,18843.0,227481.0,15.31,35.68,8.28,2.98
-2023,islas,15368.0,41407.0,12.49,6.49,37.11,16.69
-2024,costa,93073.0,410060.0,71.99,57.4,22.7,81.13
-2024,interior,21686.0,262133.0,16.77,36.7,8.27,3.29
-2024,islas,14524.0,42149.0,11.23,5.9,34.46,15.58
-2025,costa,91241.0,432059.0,71.88,57.57,21.12,81.53
-2025,interior,22530.0,276665.0,17.75,36.87,8.14,3.05
-2025,islas,13163.0,41716.0,10.37,5.56,31.55,15.42
+anyo,zona,ext,tx_residencia_total,pct_compras_ext_en_zona,pct_compraventas_total_en_zona,pct_ext_en_la_zona,pct_no_res_ext_en_zona,supuesto
+2007,costa,42934.0,469612.0,72.08,56.25,9.14,83.85,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2007,interior,8488.0,303572.0,14.25,36.36,2.8,1.19,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2007,islas,8145.0,61641.0,13.67,7.38,13.21,14.96,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2008,costa,25103.0,305553.0,69.89,54.25,8.22,85.52,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2008,interior,6018.0,219784.0,16.75,39.02,2.74,2.11,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2008,islas,4799.0,37876.0,13.36,6.72,12.67,12.36,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2009,costa,24169.0,248632.0,59.09,53.75,9.72,80.25,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2009,interior,11661.0,186262.0,28.51,40.27,6.26,2.87,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2009,islas,5073.0,27665.0,12.4,5.98,18.34,16.88,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2010,costa,25955.0,263877.0,65.63,53.86,9.84,79.91,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2010,interior,7606.0,195575.0,19.23,39.92,3.89,1.76,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2010,islas,5986.0,30495.0,15.14,6.22,19.63,18.33,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2011,costa,27077.0,188726.0,67.79,54.18,14.35,78.9,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2011,interior,5748.0,136459.0,14.39,39.18,4.21,1.53,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2011,islas,7116.0,23117.0,17.82,6.64,30.78,19.58,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2012,costa,34770.0,197308.0,69.15,54.38,17.62,78.59,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2012,interior,7033.0,140809.0,13.99,38.81,4.99,3.05,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2012,islas,8482.0,24746.0,16.87,6.82,34.28,18.36,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2013,costa,38988.0,169397.0,72.01,56.47,23.02,79.8,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2013,interior,5600.0,106829.0,10.34,35.62,5.24,1.52,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2013,islas,9553.0,23727.0,17.64,7.91,40.26,18.68,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2014,costa,48015.0,202077.0,70.31,55.41,23.76,79.73,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2014,interior,8715.0,133749.0,12.76,36.67,6.52,1.93,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2014,islas,11560.0,28887.0,16.93,7.92,40.02,18.34,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2015,costa,52885.0,225128.0,68.11,56.18,23.49,78.12,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2015,interior,11368.0,142815.0,14.64,35.64,7.96,2.21,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2015,islas,13388.0,32798.0,17.24,8.18,40.82,19.66,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2016,costa,58748.0,256051.0,66.5,56.07,22.94,76.13,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2016,interior,13645.0,162478.0,15.45,35.58,8.4,2.04,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2016,islas,15948.0,38165.0,18.05,8.36,41.79,21.83,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2017,costa,66428.0,295050.0,65.86,55.55,22.51,76.0,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2017,interior,16976.0,191865.0,16.83,36.12,8.85,2.23,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2017,islas,17464.0,44258.0,17.31,8.33,39.46,21.76,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2018,costa,68750.0,325440.0,68.09,55.96,21.13,78.35,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2018,interior,17033.0,213356.0,16.87,36.69,7.98,2.36,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2018,islas,15185.0,42735.0,15.04,7.35,35.53,19.29,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2019,costa,66920.0,320527.0,69.56,56.35,20.88,79.74,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2019,interior,16213.0,207926.0,16.85,36.56,7.8,2.56,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2019,islas,13065.0,40322.0,13.58,7.09,32.4,17.7,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2020,costa,49847.0,272349.0,69.63,56.02,18.3,79.82,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2020,interior,12779.0,185199.0,17.85,38.09,6.9,2.44,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2020,islas,8963.0,28634.0,12.52,5.89,31.3,17.74,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2021,costa,71182.0,381786.0,69.14,56.74,18.64,77.08,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2021,interior,17236.0,248917.0,16.74,36.99,6.92,2.08,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2021,islas,14531.0,42188.0,14.11,6.27,34.44,20.84,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2022,costa,95023.0,411936.0,70.64,57.5,23.07,78.12,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2022,interior,20173.0,254401.0,15.0,35.51,7.93,2.42,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2022,islas,19329.0,50131.0,14.37,7.0,38.56,19.46,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2023,costa,88834.0,368678.0,72.2,57.83,24.1,80.33,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2023,interior,18843.0,227481.0,15.31,35.68,8.28,2.98,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2023,islas,15368.0,41407.0,12.49,6.49,37.11,16.69,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2024,costa,93073.0,410060.0,71.99,57.4,22.7,81.13,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2024,interior,21686.0,262133.0,16.77,36.7,8.27,3.29,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2024,islas,14524.0,42149.0,11.23,5.9,34.46,15.58,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2025,costa,91241.0,432059.0,71.88,57.57,21.12,81.53,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2025,interior,22530.0,276665.0,17.75,36.87,8.14,3.05,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"
+2025,islas,13163.0,41716.0,10.37,5.56,31.55,15.42,"COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera"

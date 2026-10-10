@@ -22,7 +22,7 @@
    "viviendas por solar 5/10/20"
   ],
   "limites": [
-   "PROVISIONAL: déficit de M1 en corrección",
+   "Umbrales fijados en el código antes de clasificar; prerregistro no verificable; clase 5 añadida después del diseño",
    "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
    "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
    "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",
@@ -31,9 +31,9 @@
  },
  {
   "id": "M3-H-clases-prov",
-  "enunciado_neutro": "Clase modal por provincia: {'1 falta y hay suelo rentable': 0, '2 falta y brecha regulatoria': 18, '3 falta pero no rentable': 28, '4 no falta': 4, '5 falta, brecha moderada, solares insuficientes (clase añadida)': 0, '9 indeterminada (sin dato de solares)': 0}; estables (>=80 %): 8 de 52",
+  "enunciado_neutro": "Clase modal por provincia: {'1 falta y brecha positiva moderada con coste supuesto, hay solares': 0, '2 falta y precio > r*(coste + suelo), coste supuesto (brecha precio-coste elevada)': 16, '3 falta y brecha <= 0 con coste supuesto': 30, '4 no falta': 0, '5 falta, brecha positiva moderada, solares insuficientes (clase añadida)': 0, '9 falta y brecha positiva, sin dato de solares (forales)': 4}; estables (>=80 %): 22 de 52",
   "capa": "C4",
-  "magnitud": 8,
+  "magnitud": 22,
   "unidad": "provincias estables",
   "intervalo": [
    0,
@@ -52,7 +52,7 @@
    "viviendas por solar 5/10/20"
   ],
   "limites": [
-   "PROVISIONAL: déficit de M1 en corrección",
+   "Umbrales fijados en el código antes de clasificar; prerregistro no verificable; clase 5 añadida después del diseño",
    "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
    "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
    "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",
@@ -62,9 +62,9 @@
  },
  {
   "id": "M3-H-clases-mun",
-  "enunciado_neutro": "Clase modal por municipio: {'1 falta y hay suelo rentable': 0, '2 falta y brecha regulatoria': 246, '3 falta pero no rentable': 129, '4 no falta': 326, '5 falta, brecha moderada, solares insuficientes (clase añadida)': 0, '9 indeterminada (sin dato de solares)': 0}; estables (>=80 %): 325 de 703",
+  "enunciado_neutro": "Clase modal por municipio: {'1 falta y brecha positiva moderada con coste supuesto, hay solares': 0, '2 falta y precio > r*(coste + suelo), coste supuesto (brecha precio-coste elevada)': 298, '3 falta y brecha <= 0 con coste supuesto': 156, '4 no falta': 247, '5 falta, brecha positiva moderada, solares insuficientes (clase añadida)': 0, '9 falta y brecha positiva, sin dato de solares (forales)': 0}; estables (>=80 %): 447 de 703",
   "capa": "C4",
-  "magnitud": 325,
+  "magnitud": 447,
   "unidad": "municipios estables",
   "intervalo": [
    0,
@@ -83,7 +83,7 @@
    "viviendas por solar 5/10/20"
   ],
   "limites": [
-   "PROVISIONAL: déficit de M1 en corrección",
+   "Umbrales fijados en el código antes de clasificar; prerregistro no verificable; clase 5 añadida después del diseño",
    "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
    "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
    "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",
@@ -107,7 +107,7 @@
   ],
   "supuestos": [],
   "limites": [
-   "PROVISIONAL: déficit de M1 en corrección",
+   "Umbrales fijados en el código antes de clasificar; prerregistro no verificable; clase 5 añadida después del diseño",
    "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
    "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
    "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",

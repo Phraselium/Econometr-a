@@ -11,13 +11,14 @@
   "pct_vut": 1.2808170822786968,
   "ratio_vacias_esporadico_sobre_vut": 18.609725484675998,
   "fuentes": "INE Censo 2021 (59525, 59531 consumo electrico); INE VUT (experimental)",
-  "capa": "C1 turisticas (INE y registro GVA); C4 vacias y esporadicas (fuente unica INE)"
+  "capa": "C4: turisticas (INE y GVA discrepan 1,5-2,2 veces; GVA solo 3 provincias) y vacias/esporadicas (fuente unica)"
  },
  "tenencia_nacional": {
   "pct_alquiler": 16.095812741656836,
   "pct_propiedad": 75.46483673179614,
   "pct_otro_cesion": 8.439350526547024,
-  "fuente": "Censo 2021, 59523"
+  "fuente": "Censo 2021, 59523",
+  "capa": "C4 (fuente unica)"
  },
  "eff_otras_propiedades_total": 46.8,
  "pj_comprador_etdp": {
@@ -42,7 +43,7 @@
    "2024": 14.6,
    "2025": 13.82
   },
-  "capa": "C1 (3 fuentes; definiciones y coberturas distintas)"
+  "capa": "C4 (MIVAU y Notariado no se tratan como independientes; Registradores difiere mas de 15 %). Definicion unica: MIVAU, residentes + no residentes. V14 (9,6-11,0 %) contaba solo residentes."
  },
  "extranjeros_concentracion_ultimo_anyo_mivau": {
   "costa": {
@@ -61,5 +62,8 @@
    "pct_ext_en_zona": 31.553840253140283
   }
  },
+ "supuesto_costa_islas": "COSTA = 22 provincias con litoral incl. Balears y Canarias; incluye Barcelona, Valencia y Malaga (metropolitanas); sensibilidad en tablas/extranjeros_concentracion_sensibilidad.csv",
+ "nota_pj_vendedoras": "Las ventas de personas juridicas incluyen promotores (obra nueva) y entidades financieras: el 24,7 % no es 'empresas propietarias de stock'. ETDP procede del Registro de la Propiedad.",
+ "estado_referencias": "Las cifras proceden de fuentes oficiales (INE, MIVAU, CGN, Registradores, BdE); ninguna referencia bibliografica de esta rama esta VERIFICADA (DOI Crossref + cuartil Scimago): NO VERIFICADA, cuartil no verificado",
  "airbnb_robustez": "solo robustez; ver tablas/oferta_anunciada_airbnb_robustez.csv"
 }

@@ -1,7 +1,7 @@
 {
   "rama": "M1",
   "pregunta": "¿Dónde se concentra el déficit contable de vivienda (hogares frente a viviendas nuevas)?",
-  "capa": "C2 (déficit nacional 2021-2025 y provincias con altas triangulables en ±15 %) / C4 (resto, municipios, 2012-2025) / C2 (latente)",
+  "capa": "C4 (déficit: hogares de fuente única, regla B5) / C2 (latente)",
   "datos": [
     "ine_v2_hogares_prov",
     "ine_v3_gis_seccion (Censo anual)",
@@ -146,8 +146,7 @@
       }
     ],
     "capas_provincia_2021_2025": {
-      "C4": 39,
-      "C2": 13
+      "C4": 52
     },
     "mapa": "sin geopandas: gráficos de barras ordenados (no coropleta)"
   },

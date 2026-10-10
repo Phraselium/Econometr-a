@@ -1,17 +1,19 @@
 """M3 ¿Se puede construir donde hace falta? Determinista y sin red (SEED=20261010).
 
 Entradas: data/raw/v4/catastro_solares_municipios.csv.gz (de m3_fetch.py), mivau_valor_tasado_*, mivau_v2_suelo,
-mivau_v2_iniciadas_terminadas_prov, eurostat_costes, eurostat_produccion_construccion y output/v4/M1/tablas.
-Salidas: output/v4/M3/.   SMOKE=1 usa una submuestra (10 provincias, 60 municipios) y escribe en output/v4/M3/_smoke.
+mivau_v2_iniciadas_terminadas_prov, eurostat_costes, eurostat_produccion_construccion y output/v4/M1/tablas (leídas en
+ejecución). SMOKE=1 usa una submuestra y escribe en output/v4/M3/_smoke.
 
-UMBRALES Y SUPUESTOS DECLARADOS ANTES DE CLASIFICAR (docs/v4/decisiones.md, M3):
-  clases: 4 si déficit <= 0; 3 si brecha <= 0; 2 si precio > r*(coste + suelo repercutido); 1 si brecha > 0, no 2 y solares
-  suficientes; 5 (clase añadida) si brecha moderada pero solares insuficientes; 9 si falta el dato de solares.
-  multiverso: margen {15,20,25} %; edificabilidad {0,8; 1,2; 1,6} m2/m2; coste {900; 1.200; 1.500} EUR/m2 construido
-  (supuesto externo NO verificado: ninguna fuente de coste en nivel accesible); suelo {todos los municipios; >50.000 hab.};
-  r {1,25; 1,5}; viviendas por solar {5; 10; 20}; variante de déficit M1 (periodo y, en provincias, min/mediana/max).
-  Central: margen 20 %, edif. 1,2, coste 1.200, suelo todos, r 1,25, 10 viviendas/solar, 2021-2025, mediana.
-  C2 solo si la clase modal aparece en >= 80 % de las especificaciones válidas; si no, C4.
+DISEÑO (declarado en el código antes de ver las salidas; el prerregistro NO es verificable en git y la clase 5 se añadió
+después del diseño inicial; tiene recuento 0):
+  clases: 4 si déficit <= 0; 3 si brecha <= 0 (con coste supuesto); 9 si falta el dato de solares y hay brecha positiva;
+  2 si precio > r*(coste + suelo repercutido) (brecha precio-coste elevada, con coste supuesto); 1 si brecha > 0, no 2 y
+  solares suficientes; 5 si brecha positiva moderada y solares insuficientes.
+  multiverso: margen {15,20,25} %; edificabilidad {0,8; 1,2; 1,6}; coste {900; 1.200; 1.500} EUR/m2 (supuesto externo NO
+  verificado); suelo {todos; >50.000 hab.}; r {1,25; 1,5}; viviendas por solar {5; 10; 20}; variante de déficit M1.
+  Periodos: la clase y la estabilidad se calculan por separado para 2021-2025 (principal) y 2012-2025 (secundario).
+  Capa: C4 siempre (el coste en nivel no tiene fuente verificable); la estabilidad (% de especificaciones en la clase
+  modal; umbral de referencia 80 %) se reporta pero no promueve de capa.
 """
 from __future__ import annotations
 
@@ -51,9 +53,11 @@ CENTRAL = dict(m=0.20, e=1.2, c=1200.0, s=0, r=1.25, v=10)
 UMBRAL_C2 = 0.80
 # Sin fuente verificable de coste en nivel (PEM/m2, licencias, MBC; Catastro sin superficie construida): todo es C4.
 COSTE_VERIFICADO = False
-ETIQ = {1: "1 falta y hay suelo rentable", 2: "2 falta y brecha regulatoria", 3: "3 falta pero no rentable",
-        4: "4 no falta", 5: "5 falta, brecha moderada, solares insuficientes (clase añadida)",
-        9: "9 indeterminada (sin dato de solares)"}
+ETIQ = {1: "1 falta y brecha positiva moderada con coste supuesto, hay solares",
+        2: "2 falta y precio > r*(coste + suelo), coste supuesto (brecha precio-coste elevada)",
+        3: "3 falta y brecha <= 0 con coste supuesto",
+        4: "4 no falta", 5: "5 falta, brecha positiva moderada, solares insuficientes (clase añadida)",
+        9: "9 falta y brecha positiva, sin dato de solares (forales)"}
 CODIGOS = [1, 2, 3, 4, 5, 9]
 UNI_PROV = {"07": "balears illes", "28": "madrid comunidad de", "30": "murcia region de",
             "31": "navarra comunidad foral de", "33": "asturias principado de", "39": "cantabria",
@@ -187,10 +191,10 @@ def clasificar(P, S0, S1, SOL, DEF, grid):
     falta = ok & (d > 0)
     cls = np.where(falta & (brecha <= 0), 3, cls)
     reg = falta & (brecha > 0) & (Pm > r * (c + rep))
-    cls = np.where(reg, 2, cls)
     mod = falta & (brecha > 0) & ~reg
     sol_nd = np.isnan(cob)
-    cls = np.where(mod & sol_nd, 9, cls)
+    cls = np.where(reg & ~sol_nd, 2, cls)
+    cls = np.where((reg | mod) & sol_nd, 9, cls)
     cls = np.where(mod & ~sol_nd & (cob >= 1), 1, cls)
     cls = np.where(mod & ~sol_nd & (cob < 1), 5, cls)
     return cls, brecha
@@ -238,10 +242,15 @@ def main() -> None:
     tp = tp.set_index("cod_prov")
     if SMOKE:
         tp = tp.iloc[:10]
-    defs_p = {kk: v.reindex(tp.index).to_numpy(float) for kk, v in dprov.items()}
+    defs_all = {kk: v.reindex(tp.index).to_numpy(float) for kk, v in dprov.items()}
+    defs_p = {kk: v for kk, v in defs_all.items() if kk[0] == "2021-2025"}
+    defs_p12 = {kk: v for kk, v in defs_all.items() if kk[0] == "2012-2025"}
     cls_p, _ = multiverso(tp.precio.to_numpy(float), tp.suelo_todos.to_numpy(float), tp.suelo_m50k.to_numpy(float),
                           tp.uu_solar.to_numpy(float), defs_p, grid)
     modal_p, share_p, valid_p, cnt_p = resumen_clases(cls_p)
+    cls_p12, _ = multiverso(tp.precio.to_numpy(float), tp.suelo_todos.to_numpy(float), tp.suelo_m50k.to_numpy(float),
+                            tp.uu_solar.to_numpy(float), defs_p12, grid)
+    modal_p12, share_p12, _, _ = resumen_clases(cls_p12)
     nS = len(grid)
     # brecha (sin déficit) rango en multiverso
     _, br_p = clasificar(tp.precio.to_numpy(float), tp.suelo_todos.to_numpy(float), tp.suelo_m50k.to_numpy(float),
@@ -251,7 +260,7 @@ def main() -> None:
                                      tp.suelo_m50k.to_numpy(float), tp.uu_solar.to_numpy(float),
                                      defs_p[("2021-2025", "mediana")], grid)[0][i, ci] for i in range(len(tp))])
     dm = defs_p[("2021-2025", "mediana")]
-    # estabilidad de la brecha (sin déficit): clase de brecha {<=0, moderada, regulatoria}
+    # estabilidad de la brecha (sin déficit): clase de brecha {<=0, moderada, elevada}
     out_p = pd.DataFrame({
         "cod_prov": tp.index, "provincia": tp.provincia.values, "precio_eur_m2": tp.precio.values,
         "suelo_eur_m2": tp.suelo_todos.values, "deficit_2021_2025_mediana": dm,
@@ -261,14 +270,16 @@ def main() -> None:
         "brecha_p10": np.nanpercentile(br_p, 10, axis=1), "brecha_p90": np.nanpercentile(br_p, 90, axis=1),
         "pct_brecha_positiva": np.nanmean(br_p > 0, axis=1) * 100,
         "clase_central": c_central, "clase_modal": modal_p, "estabilidad_pct": share_p * 100,
-        "n_especificaciones": valid_p,
+        "n_especificaciones": valid_p, "periodo_principal": "2021-2025",
+        "clase_modal_2012_2025": modal_p12, "estabilidad_2012_2025_pct": share_p12 * 100,
+        "sin_dato_solares": np.isnan(tp.uu_solar.to_numpy(float)),
     })
     for j, c in enumerate(CODIGOS):
         out_p[f"pct_clase_{c}"] = cnt_p[:, j] / np.maximum(valid_p, 1) * 100
     out_p["capa_fuente_deficit"] = capa_def.reindex(out_p.cod_prov).values
     out_p["estable_80"] = out_p.estabilidad_pct >= UMBRAL_C2 * 100
     out_p["capa"] = np.where(out_p.estable_80 & COSTE_VERIFICADO, "C2", "C4")
-    out_p["capa_efectiva"] = np.where((out_p.capa == "C2") & (out_p.capa_fuente_deficit.isin(["C1", "C2"])), "C2", "C4")
+    out_p["capa_efectiva"] = "C4"
     out_p["clase_etiqueta"] = out_p.clase_modal.map(ETIQ)
     out_p.to_csv(OUT / "clasificacion_provincias.csv", index=False, float_format="%.3f")
 
@@ -303,9 +314,13 @@ def main() -> None:
     um["uu_solar"] = c26.uu_solar.reindex(um.index).values
     um["uu_res"] = c26.uu_res.reindex(um.index).values
     defs_m = {per: dm_m[per].reindex(um.index).to_numpy(float) for per in dm_m}
+    defs_m21 = {"2021-2025": defs_m["2021-2025"]}
     cls_m, _ = multiverso(um.precio.to_numpy(float), um.suelo_todos.to_numpy(float), um.suelo_m50k.to_numpy(float),
-                          um.uu_solar.to_numpy(float), defs_m, grid)
+                          um.uu_solar.to_numpy(float), defs_m21, grid)
     modal_m, share_m, valid_m, cnt_m = resumen_clases(cls_m)
+    cls_m12, _ = multiverso(um.precio.to_numpy(float), um.suelo_todos.to_numpy(float), um.suelo_m50k.to_numpy(float),
+                            um.uu_solar.to_numpy(float), {"2012-2025": defs_m["2012-2025"]}, grid)
+    modal_m12, share_m12, _, _ = resumen_clases(cls_m12)
     d21 = defs_m["2021-2025"]
     _, br_m = clasificar(um.precio.to_numpy(float), um.suelo_todos.to_numpy(float), um.suelo_m50k.to_numpy(float),
                          um.uu_solar.to_numpy(float), d21, grid)
@@ -319,6 +334,8 @@ def main() -> None:
         "brecha_central": br_m[:, ci], "brecha_min": np.nanmin(br_m, 1), "brecha_max": np.nanmax(br_m, 1),
         "pct_brecha_positiva": np.nanmean(br_m > 0, axis=1) * 100,
         "clase_central": cen_m, "clase_modal": modal_m, "estabilidad_pct": share_m * 100, "n_especificaciones": valid_m,
+        "periodo_principal": "2021-2025", "clase_modal_2012_2025": modal_m12, "estabilidad_2012_2025_pct": share_m12 * 100,
+        "sin_dato_solares": np.isnan(um.uu_solar.to_numpy(float)),
     })
     for j, c in enumerate(CODIGOS):
         out_m[f"pct_clase_{c}"] = cnt_m[:, j] / np.maximum(valid_m, 1) * 100
@@ -327,6 +344,7 @@ def main() -> None:
     out_m["estable_80"] = est
     out_m["capa"] = np.where(est & (out_m.precio_fuente == "municipal") & COSTE_VERIFICADO, "C2", "C4")
     out_m["capa_efectiva"] = "C4"
+    out_m["cobertura_solares_10viv"] = out_m.uu_solar * 10 / np.where(out_m.deficit_2021_2025 > 0, out_m.deficit_2021_2025, np.nan)
     out_m["clase_etiqueta"] = out_m.clase_modal.map(ETIQ)
     out_m.to_csv(OUT / "clasificacion_municipios.csv", index=False, float_format="%.3f")
 
@@ -341,8 +359,10 @@ def main() -> None:
                         "2021", "2026", n_unid, np.nan, np.nan, np.nan,
                         notas=f"m={g[0]};e={g[1]};c={g[2]};suelo={int(g[3])};r={g[4]};viv/solar={int(g[5])};"
                               f"deficit={dn};clases={json.dumps(cnt)}")
-    log_spec("M3_prov", cls_p, list(dprov.keys()), len(tp))
-    log_spec("M3_mun", cls_m, list(defs_m.keys()), len(um))
+    log_spec("M3_prov", cls_p, list(defs_p.keys()), len(tp))
+    log_spec("M3_prov12", cls_p12, list(defs_p12.keys()), len(tp))
+    log_spec("M3_mun", cls_m, list(defs_m21.keys()), len(um))
+    log_spec("M3_mun12", cls_m12, ["2012-2025"], len(um))
     reg.flush()
 
     # ============ tablas de apoyo
@@ -418,37 +438,37 @@ def escribir_json(out_p, out_m, nac, tp_out, grid, capa_def) -> None:
     ext_bajo = pp.nsmallest(3, "brecha_central")[["provincia", "brecha_central"]].values.tolist()
     rng = (float(pp.brecha_central.min()), float(pp.brecha_central.max()))
     # ficha M3-V1
-    fal = out_p[out_p.deficit_2021_2025_mediana > 0]
+    fal = out_p[(out_p.deficit_2021_2025_mediana > 0) & ~out_p.sin_dato_solares]
     cob = {v: float((fal.uu_solar * v / fal.deficit_2021_2025_mediana >= 1).mean()) for v in VIV_SOLAR}
-    rent = float((fal.pct_brecha_positiva >= 80).mean())
-    if cob[5] >= 0.8:
-        ver = "PARCIALMENTE"
-    elif cob[20] < 0.5:
-        ver = "NO RESPALDADA"
-    else:
-        ver = "ANALIZADA, NO CONCLUYENTE"
+    fm = out_m[(out_m.deficit_2021_2025 > 0) & ~out_m.sin_dato_solares]
+    cob_m = {v: float((fm.uu_solar * v / fm.deficit_2021_2025 >= 1).mean()) for v in VIV_SOLAR}
+    n_sin = int(out_p.sin_dato_solares.sum())
+    ver = "ANALIZADA, NO CONCLUYENTE"   # regla común: con capa C4 el máximo es este veredicto
     ficha = {
         "id": "M3-V1", "tema": "Suelo disponible",
         "enunciado": "Hay suelo de sobra para construir.",
         "capa": "C4",
-        "magnitud": (f"Solares catastrales (uso «solar») 2026: {int(nac.uu_solar):,} unidades urbanas; con 5/10/20 viviendas por "
+        "magnitud": (f"Solares catastrales (uso «solar») 2026: {int(nac.uu_solar):,} unidades urbanas. Con 5/10/20 viviendas por "
                      f"solar cubren el déficit 2021-2025 (mediana M1) en {cob[5]*100:.0f} %/{cob[10]*100:.0f} %/{cob[20]*100:.0f} % de "
-                     f"las {len(fal)} provincias con déficit positivo. La brecha precio-coste no se usa en esta "
-                     f"ficha: el coste en nivel es un supuesto.").replace(",", "."),
-        "intervalo": f"cobertura provincial [{cob[5]*100:.0f} %; {cob[20]*100:.0f} %] según viviendas por solar (5 a 20)",
+                     f"las {len(fal)} provincias con déficit positivo y dato de solares (excluidas {n_sin} provincias sin dato de "
+                     f"solares). Esa prueba provincial no es informativa: da positivo por construcción cuando el total de solares "
+                     f"supera con holgura al déficit. En municipios con déficit positivo y dato ({len(fm)}), la cobertura es "
+                     f"{cob_m[5]*100:.0f} %/{cob_m[10]*100:.0f} %/{cob_m[20]*100:.0f} %. La brecha precio-coste no se usa: "
+                     f"el coste en nivel es un supuesto.").replace(",", "."),
+        "intervalo": (f"cobertura provincial [{cob[5]*100:.0f} %; {cob[20]*100:.0f} %]; municipal "
+                      f"[{cob_m[5]*100:.0f} %; {cob_m[20]*100:.0f} %] según viviendas por solar (5 a 20)"),
         "cota": "—",
-        "literatura": "Glaeser y Gyourko (2018, VERIFICADA): precio por encima del coste de construcción más suelo como indicio de restricción de oferta; sin cifra citable para España.",
+        "literatura": "Glaeser y Gyourko (2018, VERIFICADA): precio por encima del coste de construcción más suelo; sin cifra citable para España.",
         "veredicto": ver,
-        "regla": ("PROVISIONAL: depende del déficit de M1, en corrección al generar este fichero; se recalcula al ejecutar m3_run. "
-                  "Regla fijada antes de calcular: PARCIALMENTE si los solares cubren el déficit en >= 80 % de las provincias con 5 "
-                  "viviendas por solar; NO RESPALDADA si en < 50 % con 20; en otro caso, ANALIZADA, NO CONCLUYENTE. "
-                  "RESPALDADA no es posible: la única fuente de suelo (Catastro) no distingue suelo urbanizado, clasificado ni "
-                  "disponible, y el SIU no es accesible."),
-        "limites": ("El uso «solar» catastral es suelo urbano sin edificar, no suelo urbanizable ni edificabilidad; SIU inaccesible "
-                    "(docs/v4/fuentes_fallidas.md). Catastro no cubre territorios forales. El coste de construcción en nivel "
-                    "no tiene fuente verificable."),
-        "evidencia": ["output/v4/M3/clasificacion_provincias.csv", "output/v4/M3/tablas/M3_solares_nacional_catastro.csv",
-                      "data/raw/v4/catastro_solares_municipios.csv.gz"],
+        "regla": ("Regla común con M4-V3: con capa C4 el veredicto máximo es «ANALIZADA, NO CONCLUYENTE»; PARCIALMENTE exige al menos "
+                  "C2. La fuente de suelo es única (Catastro) y el SIU no es accesible."),
+        "limites": ("El uso «solar» catastral cuenta unidades urbanas sin edificar, sin superficie, uso urbanístico, edificabilidad, "
+                    "estado de urbanización ni disponibilidad en el mercado. Puede sobrestimar el suelo disponible (incluye solares "
+                    "industriales o terciarios, parcelas residuales, suelo sin urbanizar del todo) y subestimarlo (deja fuera el suelo "
+                    "urbanizable sin planeamiento de desarrollo, rústico a efectos catastrales). Sin dato en las provincias forales. "
+                    "SIU inaccesible (docs/v4/fuentes_fallidas.md). El coste de construcción en nivel no tiene fuente verificable."),
+        "evidencia": ["output/v4/M3/clasificacion_provincias.csv", "output/v4/M3/clasificacion_municipios.csv",
+                      "output/v4/M3/tablas/M3_solares_nacional_catastro.csv", "data/raw/v4/catastro_solares_municipios.csv.gz"],
     }
     (OUT / "fichas_verificador.json").write_text(json.dumps([ficha], ensure_ascii=False, indent=1), encoding="utf-8")
 
@@ -456,7 +476,7 @@ def escribir_json(out_p, out_m, nac, tp_out, grid, capa_def) -> None:
     sup = ["coste de construcción 900/1.200/1.500 EUR/m2 (supuesto externo, NO verificado)",
            "margen del promotor 15/20/25 % (Glaeser y Gyourko)", "edificabilidad 0,8/1,2/1,6 m2/m2",
            "suelo MIVAU provincial (no existe dato municipal)", "viviendas por solar 5/10/20"]
-    lim = ["PROVISIONAL: déficit de M1 en corrección", "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
+    lim = ["Umbrales fijados en el código antes de clasificar; prerregistro no verificable; clase 5 añadida después del diseño", "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
            "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
            "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",
            "Solares catastrales ≠ suelo disponible (SIU inaccesible)"]
@@ -493,8 +513,7 @@ def escribir_json(out_p, out_m, nac, tp_out, grid, capa_def) -> None:
         "nivel_evidencia": "EXPLORATORIO (C4): brecha con coste supuesto; sin lenguaje causal",
         "diagnosticos": {"umbral_estabilidad": UMBRAL_C2, "fdr": "no aplica: no hay contrastes de hipótesis", "semilla": SEED},
         "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None},
-        "notas": ("PROVISIONAL: los recuentos dependen de las tablas de M1 (déficit con error de terminadas, en corrección); "
-                  "m3_run las lee en tiempo de ejecución y se recalcula. Sin PEM/m2 ni MBC verificables: el coste en nivel es supuesto (900-1.500). Empleo sectorial y plazos de licencia: "
+        "notas": ("Capa C4 por coste en nivel supuesto. Periodo principal 2021-2025; 2012-2025 en columnas aparte. Umbrales sin prerregistro verificable. Sin PEM/m2 ni MBC verificables: el coste en nivel es supuesto (900-1.500). Empleo sectorial y plazos de licencia: "
                   "no hay datos abiertos en la base (Eurostat empleo es total; EPA sin rama). SIU: fallo de red."),
     }
     (OUT / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float), encoding="utf-8")

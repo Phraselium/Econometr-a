@@ -331,6 +331,7 @@ def extranjeros():
     pv["clave_nombre"] = pv.codigo.map(nombres)
     pv["zona"] = np.where(pv.codigo.isin(ISLAS), "islas", np.where(pv.codigo.isin(COSTA), "costa", "interior"))
     pv.loc[pv.codigo.isin(["51", "52"]), "zona"] = "otras"
+    pv["supuesto_zona"] = "costa/islas: lista del analista (ver decisiones.md)"
     pv = pv.sort_values("codigo")
     if SMOKE:
         pv = pv.head(6)
@@ -345,6 +346,16 @@ def extranjeros():
     mz = mz.dropna(subset=["codigo"])
     mz["zona"] = np.where(mz.codigo.isin(ISLAS), "islas", np.where(mz.codigo.isin(COSTA), "costa", "interior"))
     mz = mz[~mz.codigo.isin(["51", "52"])]
+    METRO = {"08", "46", "29"}
+    mz["zona_sens"] = np.where(mz.codigo.isin(ISLAS), "islas", np.where(mz.codigo.isin(METRO), "costa_metropolitana",
+                               np.where(mz.codigo.isin(COSTA), "costa_no_metropolitana", "interior")))
+    zs = mz.pivot_table(index=["anyo", "zona_sens"], columns="var", values="sum", aggfunc="sum").reset_index()
+    zs["ext"] = zs.tx_residencia_residentes_extranjeros + zs.tx_residencia_no_residentes_extranjeros
+    ts = zs.groupby("anyo")[["ext", "tx_residencia_total"]].transform("sum")
+    zs["pct_compras_ext_en_zona"] = 100 * zs.ext / ts.ext
+    zs["pct_compraventas_total_en_zona"] = 100 * zs.tx_residencia_total / ts.tx_residencia_total
+    zs["supuesto"] = "COSTA = provincias con litoral + islas; sensibilidad separa Barcelona, Valencia y Málaga (metropolitanas)"
+    zs.round(2).to_csv(TAB / "extranjeros_concentracion_sensibilidad.csv", index=False)
     zz = mz.pivot_table(index=["anyo", "zona"], columns="var", values="sum", aggfunc="sum").reset_index()
     zz["ext"] = zz.tx_residencia_residentes_extranjeros + zz.tx_residencia_no_residentes_extranjeros
     tot = zz.groupby("anyo")[["ext", "tx_residencia_total", "tx_residencia_no_residentes_extranjeros"]].transform("sum")
@@ -353,7 +364,7 @@ def extranjeros():
     zz["pct_ext_en_la_zona"] = 100 * zz.ext / zz.tx_residencia_total
     zz["pct_no_res_ext_en_zona"] = 100 * zz.tx_residencia_no_residentes_extranjeros / tot.tx_residencia_no_residentes_extranjeros
     zz[["anyo", "zona", "ext", "tx_residencia_total", "pct_compras_ext_en_zona", "pct_compraventas_total_en_zona",
-        "pct_ext_en_la_zona", "pct_no_res_ext_en_zona"]].round(2).to_csv(TAB / "extranjeros_concentracion_zonas.csv", index=False)
+        "pct_ext_en_la_zona", "pct_no_res_ext_en_zona"]].assign(supuesto="COSTA = provincias con litoral (lista COSTA); ISLAS = 07, 35, 38; Ceuta y Melilla fuera").round(2).to_csv(TAB / "extranjeros_concentracion_zonas.csv", index=False)
     reg("extranjeros", "concentracion_zonas", "reparto costa/islas/interior", len(zz), "supuesto COSTA declarado")
     # Notariado CV: tres provincias valencianas, 2018-2025
     cv = pd.read_csv(RAW / "pdf" / "notariado_cv_prov_trimestral.csv")
@@ -448,9 +459,9 @@ def main():
             "pct_vacias": float(n.pct_vacias), "pct_esporadico": float(n.pct_esporadico), "pct_vut": float(n.pct_vut),
             "ratio_vacias_esporadico_sobre_vut": float(n.ratio_vacias_esporadico_sobre_vut),
             "fuentes": "INE Censo 2021 (59525, 59531 consumo electrico); INE VUT (experimental)",
-            "capa": "C1 turisticas (INE y registro GVA); C4 vacias y esporadicas (fuente unica INE)"},
+            "capa": "C4: turisticas (INE y GVA discrepan 1,5-2,2 veces; GVA solo 3 provincias) y vacias/esporadicas (fuente unica)"},
         "tenencia_nacional": {"pct_alquiler": float(ten_n.pct_alquiler), "pct_propiedad": float(ten_n.pct_propiedad),
-                              "pct_otro_cesion": float(ten_n.pct_otro_cesion), "fuente": "Censo 2021, 59523"},
+                              "pct_otro_cesion": float(ten_n.pct_otro_cesion), "fuente": "Censo 2021, 59523", "capa": "C4 (fuente unica)"},
         "eff_otras_propiedades_total": float(eff[eff.edad == "total"].valor.iloc[0]),
         "pj_comprador_etdp": {"anyo": int(u), "pct_comprador_pj": float(pjt.pct_comprador_pj.loc[u]),
                               "pct_vendedor_pj": float(pjt.pct_vendedor_pj.loc[u]),
@@ -464,11 +475,14 @@ def main():
                                  "notariado_pct_residentes": float(nt.notariado_pct_ext_residentes),
                                  "notariado_pct_no_residentes": float(nt.notariado_pct_ext_no_residentes),
                                  "registradores_pct_publicado": {int(k): float(v) for k, v in rg_pub.items()},
-                                 "capa": "C1 (3 fuentes; definiciones y coberturas distintas)"},
+                                 "capa": "C4 (MIVAU y Notariado no se tratan como independientes; Registradores difiere mas de 15 %). Definicion unica: MIVAU, residentes + no residentes. V14 (9,6-11,0 %) contaba solo residentes."},
         "extranjeros_concentracion_ultimo_anyo_mivau": {z: {"pct_compras_ext": float(r.pct_compras_ext_en_zona),
                                                             "pct_compraventas_total": float(r.pct_compraventas_total_en_zona),
                                                             "pct_ext_en_zona": float(r.pct_ext_en_la_zona)}
                                                         for z, r in costa.iterrows()},
+        "supuesto_costa_islas": "COSTA = 22 provincias con litoral incl. Balears y Canarias; incluye Barcelona, Valencia y Malaga (metropolitanas); sensibilidad en tablas/extranjeros_concentracion_sensibilidad.csv",
+        "nota_pj_vendedoras": "Las ventas de personas juridicas incluyen promotores (obra nueva) y entidades financieras: el 24,7 % no es 'empresas propietarias de stock'. ETDP procede del Registro de la Propiedad.",
+        "estado_referencias": "Las cifras proceden de fuentes oficiales (INE, MIVAU, CGN, Registradores, BdE); ninguna referencia bibliografica de esta rama esta VERIFICADA (DOI Crossref + cuartil Scimago): NO VERIFICADA, cuartil no verificado",
         "airbnb_robustez": "solo robustez; ver tablas/oferta_anunciada_airbnb_robustez.csv",
     }
     json.dump(hechos, open(OUT / "hechos.json", "w"), ensure_ascii=False, indent=1)
@@ -476,7 +490,7 @@ def main():
     res = {
         "rama": "M4",
         "pregunta": "¿Qué peso tienen personas jurídicas y compradores extranjeros en el parque (stock) y en el mercado (flujos)?",
-        "capa": "C1 (stock por uso, tenencia, extranjeros) / C4 (peso de PJ: fuente única en flujos, sin dato de stock)",
+        "capa": "C4 (stock por uso, tenencia, turísticas, extranjeros y PJ; el peso de extranjeros no cumple C1 por independencia y concordancia)",
         "datos": ["ine_t59531", "ine_v3_censo2021_municipio_viviendas", "ine_v2_vut", "gva_vut_municipio",
                   "ine_v4_t59523", "ine_v4_t59529", "ine_v4_t50272", "ine_v4_t50256", "eff_tenencia_edad_v3",
                   "notariado_cgn_extranjeros_semestral", "notariado_cv_prov_trimestral", "registradores_eri_anuario",
@@ -522,20 +536,23 @@ def fichas(h, ev, pjt, pv, zz):
             "output/v4/M4/tablas/extranjeros_concentracion_zonas.csv"]
     return [
         {"id": "M4-V1", "tema": "Compradores extranjeros (sustituye a V14)",
-         "enunciado": "Los compradores extranjeros encarecen la vivienda en España.", "capa": "C1",
-         "magnitud": (f"Peso en las compraventas: MIVAU {f1(e['mivau_pct'])} % en {e['anyo_mivau']} "
+         "enunciado": "Los compradores extranjeros encarecen la vivienda en España.", "capa": "C4",
+         "magnitud": (f"Definición única: comprador extranjero según MIVAU (residentes + no residentes). Peso en las compraventas: MIVAU {f1(e['mivau_pct'])} % en {e['anyo_mivau']} "
                       f"(residentes {f1(e['mivau_pct_residentes'])} %, no residentes {f1(e['mivau_pct_no_residentes'])} %); "
                       f"Notariado, vivienda libre, {f1(e['notariado_pct'])} % en {e['notariado_anyo']} "
                       f"(residentes {f1(e['notariado_pct_residentes'])} %, no residentes {f1(e['notariado_pct_no_residentes'])} %); "
                       f"Registradores {f1(min(rp.values()))}-{f1(max(rp.values()))} % en 2023-2025. "
-                      "El efecto sobre el precio no se ha estimado."),
+                      "El 9,6-11,0 % de V14 (v3) contaba solo residentes extranjeros (en 2025, "
+                      f"{f1(e['mivau_pct_residentes'])} % con MIVAU); V14 queda sustituida por esta ficha. El efecto sobre el precio no se ha estimado."),
          "intervalo": f"[{f1(lo)}; {f1(hi)}] % de las compraventas (rango entre fuentes, por definiciones distintas)",
          "cota": "— (sin cota C2 de precio)",
-         "literatura": "v2 (BV): sin efecto identificado; el peso es un hecho C1, no un efecto.",
+         "literatura": "v2 (BV): sin efecto identificado. Referencia NO VERIFICADA (sin DOI Crossref; cuartil no verificado). El peso es un hecho descriptivo, no un efecto.",
          "veredicto": "ANALIZADA, NO CONCLUYENTE",
-         "regla": "Hay un hecho C1 con tres fuentes sobre el peso, pero ningún diseño ni cota C2 sobre el efecto en el precio.",
-         "limites": ("Las fuentes difieren en cobertura (MIVAU: todas las transmisiones; Notariado: operaciones de vivienda "
-                     "libre; Registradores: compraventas registradas). Registradores no separa residentes de no residentes. "
+         "regla": "Capa C4 (la menor de sus componentes): MIVAU y Notariado no se tratan como independientes y Registradores difiere más de 15 %; no hay diseño ni cota C2 sobre el efecto en el precio. Con C4 el veredicto máximo es ANALIZADA, NO CONCLUYENTE.",
+         "limites": ("Independencia: MIVAU elabora su estadística, según la revisión, con datos del Notariado (no verificado en la web en esta pasada; se trata como no independiente). "
+                     "Registradores mide la inscripción (desfase respecto a la escritura) y su 13,8-15,0 % queda 3,6 puntos de media por debajo de MIVAU (correlación provincial 0,99). "
+                     "Definiciones: nacionalidad frente a residencia y trato del NIE no coinciden entre fuentes; Notariado cubre vivienda libre, MIVAU todas las viviendas, Registradores compraventas de vivienda registradas. "
+                     "Registradores no separa residentes de no residentes. Costa e islas: lista del analista, que incluye Barcelona, Valencia y Málaga (sensibilidad en extranjeros_concentracion_sensibilidad.csv). "
                      "La concentración en costa e islas es un hecho descriptivo; no implica efecto."),
          "evidencia": ev_x},
         {"id": "M4-V2", "tema": "Empresas en el mercado del alquiler",
@@ -547,7 +564,7 @@ def fichas(h, ev, pjt, pv, zz):
          "veredicto": "NO ANALIZADA: FALTAN DATOS",
          "regla": ("Faltan titularidad (Catastro no publica titulares por tipo), arrendador en las fianzas de Incasòl y "
                    "tipo de arrendador en el Censo. La cuota de compra no mide el alquiler."),
-         "limites": "El único dato por tipo de persona es de compraventas (ETDP), no de alquiler ni de stock; capa C4 declarada.",
+         "limites": "El único dato por tipo de persona es de compraventas (ETDP, del Registro de la Propiedad), no de alquiler ni de stock; capa C4. Las ventas de personas jurídicas incluyen promotores (obra nueva) y entidades financieras: el porcentaje de vendedores no mide empresas propietarias de stock ni desinversión de tenedores.",
          "evidencia": ["output/v4/M4/tablas/flujo_compraventas_comprador_pj_etdp.csv",
                        "output/v4/M4/tablas/tenencia_censo2021.csv", "output/v4/M4/tablas/flujo_alquiler_incasol_contratos.csv"]},
         {"id": "M4-V3", "tema": "Viviendas vacías, de uso esporádico y turísticas",
@@ -562,8 +579,8 @@ def fichas(h, ev, pjt, pv, zz):
          "veredicto": "ANALIZADA, NO CONCLUYENTE",
          "regla": "Hecho descriptivo: las vacías y esporádicas suman un orden de magnitud más que las turísticas. «Muchas» no tiene umbral y la fuente de vacías es única (capa C4), por lo que no cabe veredicto de respaldo.",
          "limites": ("Vacía y esporádica se infieren del consumo eléctrico (INE, experimental); las turísticas son de otra fecha y "
-                     "pertenecen al parque principal o no principal (no suman). El registro de la Generalitat Valenciana y el INE difieren "
-                     "en turísticas (ver vut_ine_frente_registro_gva.csv). No se estima ningún efecto."),
+                     "pertenecen al parque principal o no principal (no suman). El registro de la Generalitat Valenciana (3 provincias) y el INE difieren "
+                     "1,5-2,2 veces en turísticas (ver vut_ine_frente_registro_gva.csv): la cifra nacional es de fuente única (C4). No se estima ningún efecto."),
          "evidencia": ["output/v4/M4/tablas/stock_uso_nacional.csv", "output/v4/M4/tablas/stock_uso_provincia.csv",
                        "output/v4/M4/tablas/stock_uso_ciudades.csv", "output/v4/M4/tablas/vut_ine_frente_registro_gva.csv"]},
     ]

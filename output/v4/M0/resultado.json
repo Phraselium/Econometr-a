@@ -35,6 +35,26 @@
    "coef_esperado_stock": 0.006688325939489464
   }
  },
+ "deficit_2021_2024": {
+  "mediana": 732749.889,
+  "min": 562692.0,
+  "max": 902807.7779999999,
+  "capa": "C1",
+  "dh_epa": 1019800.0,
+  "dh_ecp": 937265.0,
+  "rango_hogares_rel": 0.08434569112420895,
+  "catastro_ok": true,
+  "n_comb": 12,
+  "razon_capa": "todos los componentes C1: hogares ECP y EPA corregida dentro de ±15 %; terminadas MIVAU-Catastro dentro de ±15 % en 2021-2024"
+ },
+ "deficit_2021_2025": {
+  "capa": "C4",
+  "razon": "capa = la menor de sus componentes: terminadas 2025 es C4 frágil (Catastro +14,9 %, sale con otras alineaciones); ΔH 2021-2025 es C1",
+  "rango": [
+   559752.0,
+   969059.308
+  ]
+ },
  "fuera_muestra": {
   "modelo": null,
   "rmse": null,

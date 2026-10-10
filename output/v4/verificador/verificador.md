@@ -18,7 +18,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | V12 | Los tipos de interés son la causa principal de la subida de los precios de la vivienda (≥50 % de la subida). | ANALIZADA, NO CONCLUYENTE | C4 |
 | V13 | Hay una burbuja en el precio de la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
 | M3-V1 | Hay suelo de sobra para construir. | ANALIZADA, NO CONCLUYENTE | C4 |
-| M4-V1 | Los compradores extranjeros encarecen la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C1 |
+| M4-V1 | Los compradores extranjeros encarecen la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
 | M4-V2 | Las empresas dominan el mercado del alquiler. | NO ANALIZADA: FALTAN DATOS | C4 |
 | M4-V3 | Hay muchas viviendas vacías o de uso esporádico frente a las turísticas. | ANALIZADA, NO CONCLUYENTE | C4 |
 | M7-V1 | Hay una burbuja en el precio de la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
@@ -262,13 +262,13 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Campo | Contenido |
 |---|---|
 | Veredicto | **ANALIZADA, NO CONCLUYENTE** |
-| Capa de la evidencia | C1 |
-| Magnitud | Peso en las compraventas: MIVAU 16,9 % en 2025 (residentes 10,1 %, no residentes 6,8 %); Notariado, vivienda libre, 18,8 % en 2025 (residentes 11,6 %, no residentes 7,2 %); Registradores 13,8-15,0 % en 2023-2025. El efecto sobre el precio no se ha estimado. |
+| Capa de la evidencia | C4 |
+| Magnitud | Definición única: comprador extranjero según MIVAU (residentes + no residentes). Peso en las compraventas: MIVAU 16,9 % en 2025 (residentes 10,1 %, no residentes 6,8 %); Notariado, vivienda libre, 18,8 % en 2025 (residentes 11,6 %, no residentes 7,2 %); Registradores 13,8-15,0 % en 2023-2025. El 9,6-11,0 % de V14 (v3) contaba solo residentes extranjeros (en 2025, 10,1 % con MIVAU); V14 queda sustituida por esta ficha. El efecto sobre el precio no se ha estimado. |
 | Intervalo | [13,8; 18,8] % de las compraventas (rango entre fuentes, por definiciones distintas) |
 | Cota | — (sin cota C2 de precio) |
-| Literatura | v2 (BV): sin efecto identificado; el peso es un hecho C1, no un efecto. |
-| Regla del veredicto | Hay un hecho C1 con tres fuentes sobre el peso, pero ningún diseño ni cota C2 sobre el efecto en el precio. |
-| Límites | Las fuentes difieren en cobertura (MIVAU: todas las transmisiones; Notariado: operaciones de vivienda libre; Registradores: compraventas registradas). Registradores no separa residentes de no residentes. La concentración en costa e islas es un hecho descriptivo; no implica efecto. |
+| Literatura | v2 (BV): sin efecto identificado. Referencia NO VERIFICADA (sin DOI Crossref; cuartil no verificado). El peso es un hecho descriptivo, no un efecto. |
+| Regla del veredicto | Capa C4 (la menor de sus componentes): MIVAU y Notariado no se tratan como independientes y Registradores difiere más de 15 %; no hay diseño ni cota C2 sobre el efecto en el precio. Con C4 el veredicto máximo es ANALIZADA, NO CONCLUYENTE. |
+| Límites | Independencia: MIVAU elabora su estadística, según la revisión, con datos del Notariado (no verificado en la web en esta pasada; se trata como no independiente). Registradores mide la inscripción (desfase respecto a la escritura) y su 13,8-15,0 % queda 3,6 puntos de media por debajo de MIVAU (correlación provincial 0,99). Definiciones: nacionalidad frente a residencia y trato del NIE no coinciden entre fuentes; Notariado cubre vivienda libre, MIVAU todas las viviendas, Registradores compraventas de vivienda registradas. Registradores no separa residentes de no residentes. Costa e islas: lista del analista, que incluye Barcelona, Valencia y Málaga (sensibilidad en extranjeros_concentracion_sensibilidad.csv). La concentración en costa e islas es un hecho descriptivo; no implica efecto. |
 | Evidencia | output/v4/M4/tablas/extranjeros_evolucion_nacional.csv, output/v4/M4/tablas/extranjeros_provincias_2023_2025.csv, output/v4/M4/tablas/extranjeros_concentracion_zonas.csv |
 
 ## M4-V2 · Empresas en el mercado del alquiler
@@ -284,7 +284,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Cota | — |
 | Literatura | No revisada en esta ficha. |
 | Regla del veredicto | Faltan titularidad (Catastro no publica titulares por tipo), arrendador en las fianzas de Incasòl y tipo de arrendador en el Censo. La cuota de compra no mide el alquiler. |
-| Límites | El único dato por tipo de persona es de compraventas (ETDP), no de alquiler ni de stock; capa C4 declarada. |
+| Límites | El único dato por tipo de persona es de compraventas (ETDP, del Registro de la Propiedad), no de alquiler ni de stock; capa C4. Las ventas de personas jurídicas incluyen promotores (obra nueva) y entidades financieras: el porcentaje de vendedores no mide empresas propietarias de stock ni desinversión de tenedores. |
 | Evidencia | output/v4/M4/tablas/flujo_compraventas_comprador_pj_etdp.csv, output/v4/M4/tablas/tenencia_censo2021.csv, output/v4/M4/tablas/flujo_alquiler_incasol_contratos.csv |
 
 ## M4-V3 · Viviendas vacías, de uso esporádico y turísticas
@@ -300,7 +300,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Cota | — |
 | Literatura | No revisada en esta ficha. |
 | Regla del veredicto | Hecho descriptivo: las vacías y esporádicas suman un orden de magnitud más que las turísticas. «Muchas» no tiene umbral y la fuente de vacías es única (capa C4), por lo que no cabe veredicto de respaldo. |
-| Límites | Vacía y esporádica se infieren del consumo eléctrico (INE, experimental); las turísticas son de otra fecha y pertenecen al parque principal o no principal (no suman). El registro de la Generalitat Valenciana y el INE difieren en turísticas (ver vut_ine_frente_registro_gva.csv). No se estima ningún efecto. |
+| Límites | Vacía y esporádica se infieren del consumo eléctrico (INE, experimental); las turísticas son de otra fecha y pertenecen al parque principal o no principal (no suman). El registro de la Generalitat Valenciana (3 provincias) y el INE difieren 1,5-2,2 veces en turísticas (ver vut_ine_frente_registro_gva.csv): la cifra nacional es de fuente única (C4). No se estima ningún efecto. |
 | Evidencia | output/v4/M4/tablas/stock_uso_nacional.csv, output/v4/M4/tablas/stock_uso_provincia.csv, output/v4/M4/tablas/stock_uso_ciudades.csv, output/v4/M4/tablas/vut_ine_frente_registro_gva.csv |
 
 ## M7-V1 · Burbuja de precios

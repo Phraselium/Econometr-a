@@ -18,6 +18,7 @@
       "bajas del parque 0/0,1/0,2 % anual (supuesto: la cifra con bajas es C2)"
     ],
     "limites": [
+      "Capa C4 por regla B5: hogares de fuente única (ECP) impiden C2; altas triangulables (componente C2)",
       "Hogares de una sola fuente (ECP, 2021T1-2025T4 = 4,75 años) frente a 5 años de altas: ventana ≈5 % más corta en hogares",
       "Catastro no cubre territorios forales (Álava, Bizkaia, Gipuzkoa, Navarra): el rango usa 48 provincias",
       "Déficit contable no equivale a demanda insatisfecha a cualquier precio",
@@ -50,7 +51,7 @@
   {
     "id": "M1-H-nacional-2021-2025",
     "enunciado_neutro": "Suma provincial del déficit contable (Δ hogares − altas) 2021-2025, muestra común de 48 provincias",
-    "capa": "C2",
+    "capa": "C4",
     "magnitud": 744099.8200000001,
     "unidad": "viviendas",
     "intervalo": [
@@ -66,6 +67,7 @@
       "bajas del parque 0/0,1/0,2 % anual (supuesto: la cifra con bajas es C2)"
     ],
     "limites": [
+      "Capa C4 por regla B5: hogares de fuente única (ECP) impiden C2; altas triangulables (componente C2)",
       "Hogares de una sola fuente (ECP, 2021T1-2025T4 = 4,75 años) frente a 5 años de altas: ventana ≈5 % más corta en hogares",
       "Catastro no cubre territorios forales (Álava, Bizkaia, Gipuzkoa, Navarra): el rango usa 48 provincias",
       "Déficit contable no equivale a demanda insatisfecha a cualquier precio",
@@ -328,7 +330,7 @@
   {
     "id": "M1-H-conciliacion-M0",
     "enunciado_neutro": "Conciliación del déficit nacional 2021-2025 con M0/v3 (701 mil; 560-969 mil)",
-    "capa": "C2",
+    "capa": "C4",
     "magnitud": 700934.0,
     "unidad": "viviendas (52 provincias, MIVAU, bajas 0 %)",
     "intervalo": [

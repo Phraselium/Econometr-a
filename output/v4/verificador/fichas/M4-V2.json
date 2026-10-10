@@ -9,7 +9,7 @@
  "literatura": "No revisada en esta ficha.",
  "veredicto": "NO ANALIZADA: FALTAN DATOS",
  "regla": "Faltan titularidad (Catastro no publica titulares por tipo), arrendador en las fianzas de Incasòl y tipo de arrendador en el Censo. La cuota de compra no mide el alquiler.",
- "limites": "El único dato por tipo de persona es de compraventas (ETDP), no de alquiler ni de stock; capa C4 declarada.",
+ "limites": "El único dato por tipo de persona es de compraventas (ETDP, del Registro de la Propiedad), no de alquiler ni de stock; capa C4. Las ventas de personas jurídicas incluyen promotores (obra nueva) y entidades financieras: el porcentaje de vendedores no mide empresas propietarias de stock ni desinversión de tenedores.",
  "evidencia": [
   "output/v4/M4/tablas/flujo_compraventas_comprador_pj_etdp.csv",
   "output/v4/M4/tablas/tenencia_censo2021.csv",

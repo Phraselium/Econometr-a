@@ -1,13 +1,13 @@
 nivel,clase,etiqueta,n,n_estables_80,estabilidad_mediana_pct
-provincias,1,1 falta y hay suelo rentable,0,0,
-provincias,2,2 falta y brecha regulatoria,18,5,57.9
-provincias,3,3 falta pero no rentable,28,3,55.6
-provincias,4,4 no falta,4,0,50.0
-provincias,5,"5 falta, brecha moderada, solares insuficientes (clase añadida)",0,0,
-provincias,9,9 indeterminada (sin dato de solares),0,0,
-municipios,1,1 falta y hay suelo rentable,0,0,
-municipios,2,2 falta y brecha regulatoria,246,101,72.2
-municipios,3,3 falta pero no rentable,129,31,66.7
-municipios,4,4 no falta,326,193,100.0
-municipios,5,"5 falta, brecha moderada, solares insuficientes (clase añadida)",0,0,
-municipios,9,9 indeterminada (sin dato de solares),0,0,
+provincias,1,"1 falta y brecha positiva moderada con coste supuesto, hay solares",0,0,
+provincias,2,"2 falta y precio > r*(coste + suelo), coste supuesto (brecha precio-coste elevada)",16,4,55.6
+provincias,3,3 falta y brecha <= 0 con coste supuesto,30,15,79.6
+provincias,4,4 no falta,0,0,
+provincias,5,"5 falta, brecha positiva moderada, solares insuficientes (clase añadida)",0,0,
+provincias,9,"9 falta y brecha positiva, sin dato de solares (forales)",4,3,100.0
+municipios,1,"1 falta y brecha positiva moderada con coste supuesto, hay solares",0,0,
+municipios,2,"2 falta y precio > r*(coste + suelo), coste supuesto (brecha precio-coste elevada)",298,144,77.8
+municipios,3,3 falta y brecha <= 0 con coste supuesto,156,56,74.1
+municipios,4,4 no falta,247,247,100.0
+municipios,5,"5 falta, brecha positiva moderada, solares insuficientes (clase añadida)",0,0,
+municipios,9,"9 falta y brecha positiva, sin dato de solares (forales)",0,0,

@@ -322,10 +322,51 @@ def gl() -> dict:
     return {"g1": (cl, ee, float(g1.ic95_lo), float(g1.ic95_hi), float(g1.p_holm)), "lam_acc": lam_acc, "lam2": lam2, "esp": esp, "T": T}
 
 
+# ---------------------------------------------------------------- 4. Déficit 2021-2024 (ventana C1)
+def deficit_2021_2024(term: dict) -> dict:
+    """Todos los componentes C1: hogares (ECP y EPA corregida coinciden ≤15 %) y terminadas (MIVAU-Catastro ≤15 % en 2019-2024)."""
+    sys.path.insert(0, str(RAIZ / "src" / "v3"))
+    import pa_data
+    q = pa_data.nacional_q()
+    m = pa_data.mivau_nacional_anual()
+    epa = q.hogares_epa * 1000.0
+    ecp = q.hogares_ecp
+    corr = 242_400.0          # salto del quiebre EPA 2021T1 retirado (criterio v1, informe 5.1)
+    dh_epa = float(epa["2024Q4"] - epa["2020Q4"]) + corr
+    dh_ecp = float(ecp["2024Q4"] - ecp["2021Q1"])
+    rango_h = (max(dh_epa, dh_ecp) - min(dh_epa, dh_ecp)) / np.mean([dh_epa, dh_ecp])
+    df = term["nac"]
+    anios = range(2021, 2025)
+    cat_ok = bool(df[df.anio.isin(anios)].coinciden_2_indep.all())
+    yrs = list(anios)
+    lib = m.libres.reindex(yrs)
+    prot = m.protegida.reindex(yrs)
+    park0 = m.parque.reindex([y - 1 for y in yrs]).values
+    filas = []
+    for hn, dh in (("EPA corregida", dh_epa), ("ECP", dh_ecp)):
+        for pf, ser in (("con", lib + prot.fillna(0)), ("sin", lib)):
+            for b in (0.0, 0.001, 0.002):
+                baj = float(np.nansum(b * park0))
+                bruto = float(ser.sum())
+                filas.append({"hogares": hn, "delta_hogares": dh, "protegida": pf, "bajas_pct": 100 * b, "bruto": bruto,
+                              "bajas": baj, "terminadas_netas": bruto - baj, "deficit": dh - (bruto - baj)})
+    t = pd.DataFrame(filas)
+    comp_c1 = (rango_h <= TOL) and cat_ok
+    t["capa"] = "C1" if comp_c1 else "C4"
+    t.to_csv(OUT / "deficit_2021_2024.csv", index=False, float_format="%.0f")
+    med = float(t.deficit.median())
+    lo, hi = float(t.deficit.min()), float(t.deficit.max())
+    REG.log("M0", "deficit_2021_2024", "dH - (terminadas - bajas), 12 combinaciones", 2021, 2024, 4, np.nan, np.nan, np.nan, coef_interes=med,
+            notas=f"rango {lo:.0f}-{hi:.0f}; capa {t.capa.iloc[0]}")
+    return {"mediana": med, "min": lo, "max": hi, "capa": t.capa.iloc[0], "dh_epa": dh_epa, "dh_ecp": dh_ecp,
+            "rango_hogares_rel": float(rango_h), "catastro_ok": cat_ok, "n_comb": int(len(t))}
+
+
 def main() -> None:
     c = conciliacion()
     t = terminadas()
     g = gl()
+    d24 = deficit_2021_2024(t)
     nac = t["nac"]
     res = {
         "rama": "M0",
@@ -347,6 +388,8 @@ def main() -> None:
             "gl": {"coef": g["g1"][0], "ee": g["g1"][1], "lambda_2022_2024": g["lam_acc"], "lambda_2015_2020": g["lam2"],
                    "coef_esperado_stock": g["esp"]["esperado_serpavi_central"]},
         },
+        "deficit_2021_2024": {**d24, "razon_capa": "todos los componentes C1: hogares ECP y EPA corregida dentro de ±15 %; terminadas MIVAU-Catastro dentro de ±15 % en 2021-2024"},
+        "deficit_2021_2025": {"capa": "C4", "razon": "capa = la menor de sus componentes: terminadas 2025 es C4 frágil (Catastro +14,9 %, sale con otras alineaciones); ΔH 2021-2025 es C1", "rango": [c["min"], c["max"]]},
         "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None, "nota": "no aplica: conciliación y triangulación contable"},
         "notas": "Sin BdE terminadas en data/raw; cifra BdE NO VERIFICADA en método. Catastro solo régimen común.",
     }

@@ -123,7 +123,7 @@
    "gl_supuesto": 39,
    "RV": 0.3228740111252447,
    "RV_alpha": 0.06195870371889006,
-   "nota": "aproximación: t=τ/se_placebo con gl=n_donantes-1; Oster no calculable sin los datos selladas (una evaluación, sin re-acceso)"
+   "nota": "aproximación: t=τ/se_placebo con gl=n_donantes-1; Oster no calculable sin los datos sellados (una evaluación, sin re-acceso)"
   },
   "multiverso_H5": {
    "did": {

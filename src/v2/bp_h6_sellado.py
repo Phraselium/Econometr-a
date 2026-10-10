@@ -36,6 +36,7 @@ DISEÑO FIJADO ANTES DE LA LLAMADA (fiel a docs/v2/hipotesis.md, H6)
   intercambiables (la media de 4 provincias con Barcelona puede ser menos ruidosa que 4 donantes al azar: prueba
   conservadora); (f) zona_tensionada_share usa pesos catastrales del año de stock más cercano, que puede ser sellado
   (solo afecta al secundario ponderado). Secundario informativo fijado ahora: SDiD sin 2023Q3-Q4 en el pre.
+* GUARDA: aborta antes de calcular nada si algún |Δln| entre 2024Q2 y 2024Q3 supera 0,05 (cambio de base).
 * Orden de cálculo: PRINCIPAL y DECISION se fijan primero; cada secundario va en try/except (el error queda como texto).
 * Ejecutar con OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 y timeout amplio (~1 min esperado): si se corta, H6 queda quemada.
 * Secundarios (informativos, no deciden): SC de Abadie y DiD; Δ4; agregado ponderado por zona_tensionada_share de
@@ -53,6 +54,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import bp_lib as bl  # noqa: E402
 
 SEED = 20261010
+UMBRAL_SALTO = 0.05   # guarda de base: |Δln IPC| máximo admitido entre 2024Q2 y 2024Q3 (fijado antes de abrir)
 
 
 def qrange(a, b):
@@ -94,6 +96,13 @@ def _evaluar(sellado, train, cfg):
         raise RuntimeError("abortado: tratadas ausentes del entrenamiento")
     donantes = [u for u in units_train if u not in trat and u not in cfg["no_donantes"]]
     niv, q_all = _wide(pan_all, cfg)
+    # GUARDA DE BASE (umbral fijado antes de abrir): un salto |Δln| > 0,05 entre el último trimestre de entrenamiento y el
+    # primero de la ventana en cualquier provincia indica niveles en bases distintas (el crecimiento trimestral normal es ~1 %).
+    q_last, q_first = max(pt["trimestre"]), cfg["post"][0]
+    salto = (niv[q_first] - niv[q_last]).abs()
+    if (salto > UMBRAL_SALTO).any() or salto.isna().all():
+        raise RuntimeError(f"abortado: salto de nivel anómalo {q_last}->{q_first} (máx {salto.max():.3f} > {UMBRAL_SALTO}); "
+                           "posible cambio de base entre entrenamiento y sellado")
     d4 = niv - niv.shift(4, axis=1)
     pos = {q: i for i, q in enumerate(q_all)}
     pre_n, pre_4, post = cfg["pre_nivel"], cfg["pre_d4"], cfg["post"]

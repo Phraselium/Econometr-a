@@ -109,6 +109,24 @@ def test_cfg_real_exacta():
     return out
 
 
+def test_guarda_de_base():
+    """Pseudo-sellado en OTRA base (factor por provincia): la guarda debe abortar. Con la misma base, se recupera -0,03."""
+    s, t = pseudo_real(0.0)
+    f = s["panel_prov_q"]
+    fac = {u: 1.0 + 0.002 * i for i, u in enumerate(sorted(f.cod_prov.unique()))}
+    f = f.copy()
+    f["ipc_alquiler"] = f["ipc_alquiler"] * f["cod_prov"].map(fac) * 1.25
+    try:
+        bh._evaluar({"panel_prov_q": f}, t, dict(bh.CFG_REAL, B=20))
+    except RuntimeError as e:
+        assert "abortado" in str(e) and "salto" in str(e)
+    else:
+        raise AssertionError("la guarda debía abortar")
+    s2, t2 = pseudo_real(-0.03)
+    r = bh._evaluar(s2, t2, dict(bh.CFG_REAL, B=100))
+    assert abs(r["DECISION"]["tau"] + 0.03) < 0.005 and r["DECISION"]["cumple_regla"]
+
+
 def test_secundario_falla_no_aborta():
     """Si un secundario lanza error, la decisión principal se devuelve igualmente."""
     s, t, cfg, ps, tr = pseudo()
@@ -145,6 +163,7 @@ if __name__ == "__main__":
     test_no_abre_muestra_sellada()
     test_aborta_con_dato_ausente()
     test_secundario_falla_no_aborta()
+    test_guarda_de_base()
     rr = test_cfg_real_exacta()
     r0, r1 = test_sin_efecto(), test_efecto_inyectado()
     out = ROOT / "output" / "v2" / "BP" / "dryrun_h6_sellado.json"

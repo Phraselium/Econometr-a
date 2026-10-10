@@ -2,7 +2,8 @@
 
 Entrada: data/raw/pdf/originales/serpavi_bd_2011-2024.xlsx (BD oficial, 71 MB, excluida de git).
          Si no existe y no hay salida en cache, se descarga con la URL verificada en extract_serpavi.py.
-Salida:  data/raw/pdf/serpavi_v2_municipios.csv  (formato largo; hojas 'Municipios' y 'Provincias')
+Salida:  data/raw/pdf/serpavi_v2_municipios.csv.gz  (formato largo; hojas 'Municipios' y 'Provincias').
+         El .csv sin comprimir (~95 MB) queda en disco y en .gitignore.
 
 Variables (solo las pedidas; nombres de serie IGUALES a v1 para poder contrastar):
   alquiler_m2 mediana / p25 / p75  (EUR/m2/mes, vivienda habitual en alquiler, tipologia VC y VU)
@@ -12,7 +13,7 @@ Variables (solo las pedidas; nombres de serie IGUALES a v1 para poder contrastar
 
 Anyos 2011-2024. Huecos (celdas vacias: muestra insuficiente / secreto estadistico) se omiten, no se rellenan.
 Caché: si la salida existe y no hay FORCE=1, no hace falta el XLSX.
-El CSV supera 50 MB: no se versiona (gitignore) y su checksum va a data/CHECKSUMS.sha256.
+La salida se escribe comprimida (gzip, mtime=0) para no superar 50 MB.
 Registro en data/raw/_manifest.csv con el mismo formato que utils_fetch.save().
 """
 from __future__ import annotations
@@ -30,7 +31,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from utils_fetch import FORCE, MANIFEST, RAW, download  # noqa: E402
 from extract_serpavi import PAGE_URL, XLSX, XLSX_URL  # noqa: E402  (reutiliza ruta y URL de v1; v1 no se modifica)
 
-OUT = RAW / "pdf" / "serpavi_v2_municipios.csv"
+OUT = RAW / "pdf" / "serpavi_v2_municipios.csv.gz"  # gzip determinista (<50 MB, versionable)
 FUENTE = "MIVAU-SERPAVI (AEAT IRPF)"
 COL_RE = re.compile(r"^(BI_ALVHEPCO|ALQM2(?:mes)?_LV)_(M|25|75|TVC|TVU)(?:_(VC|VU))?_(\d{2})$")
 STAT = {"M": "mediana", "25": "p25", "75": "p75"}
@@ -141,7 +142,7 @@ def main() -> None:
     n_mun = df.loc[df.nivel == "MUN", "codigo"].nunique()
     validar(df)
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(OUT, index=False)
+    df.to_csv(OUT, index=False, compression={"method": "gzip", "mtime": 0})
     registrar(df)
     print(f"[ok] {OUT.name}: {len(df)} obs, {df.serie.nunique()} series, {n_prov} provincias, "
           f"{n_mun} municipios, {df.fecha.min()} -> {df.fecha.max()}, NaN={int(df.valor.isna().sum())}")

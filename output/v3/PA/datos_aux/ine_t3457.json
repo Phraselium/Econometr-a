@@ -1,0 +1,1513 @@
+[{"COD":"CENSO1527219", "Nombre":"Total Nacional. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2.5218536E7, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527218", "Nombre":"Total Nacional. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2.5208623E7, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527217", "Nombre":"Total Nacional. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1.8083692E7, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527216", "Nombre":"Total Nacional. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":7124931.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527215", "Nombre":"Total Nacional. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3681565.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527214", "Nombre":"Total Nacional. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3443365.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527213", "Nombre":"Total Nacional. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":9913.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527212", "Nombre":"Andalucía. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":4354360.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527211", "Nombre":"Andalucía. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":4353146.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527210", "Nombre":"Andalucía. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3087222.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527209", "Nombre":"Andalucía. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1265924.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527208", "Nombre":"Andalucía. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":628703.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527207", "Nombre":"Andalucía. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":637221.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527206", "Nombre":"Andalucía. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1213.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527093", "Nombre":"Almería. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":395155.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527092", "Nombre":"Almería. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":395086.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527091", "Nombre":"Almería. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":249309.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527090", "Nombre":"Almería. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":145777.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527089", "Nombre":"Almería. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":72486.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527088", "Nombre":"Almería. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":73291.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527087", "Nombre":"Almería. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":70.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527086", "Nombre":"Cádiz. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":618721.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527085", "Nombre":"Cádiz. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":618546.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527084", "Nombre":"Cádiz. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":447975.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527083", "Nombre":"Cádiz. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":170571.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527082", "Nombre":"Cádiz. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":94562.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527081", "Nombre":"Cádiz. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":76009.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527080", "Nombre":"Cádiz. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":176.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527079", "Nombre":"Córdoba. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":396244.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527078", "Nombre":"Córdoba. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":396085.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527077", "Nombre":"Córdoba. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":296688.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527076", "Nombre":"Córdoba. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":99397.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527075", "Nombre":"Córdoba. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":43721.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527074", "Nombre":"Córdoba. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":55676.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527073", "Nombre":"Córdoba. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":159.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527072", "Nombre":"Granada. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":532267.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527071", "Nombre":"Granada. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":532088.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527070", "Nombre":"Granada. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":350186.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527069", "Nombre":"Granada. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":181902.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527068", "Nombre":"Granada. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":88804.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527067", "Nombre":"Granada. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":93098.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527066", "Nombre":"Granada. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":179.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527065", "Nombre":"Huelva. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":287866.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527064", "Nombre":"Huelva. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":287807.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527063", "Nombre":"Huelva. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":189566.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527062", "Nombre":"Huelva. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":98241.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527061", "Nombre":"Huelva. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":64917.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527060", "Nombre":"Huelva. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":33324.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527059", "Nombre":"Huelva. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":58.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527058", "Nombre":"Jaén. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":344025.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527057", "Nombre":"Jaén. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":343916.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527056", "Nombre":"Jaén. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":247993.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527055", "Nombre":"Jaén. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":95923.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527054", "Nombre":"Jaén. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":37002.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527053", "Nombre":"Jaén. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":58921.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527052", "Nombre":"Jaén. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":109.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527051", "Nombre":"Málaga. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":897647.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527050", "Nombre":"Málaga. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":897400.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527049", "Nombre":"Málaga. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":606351.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527048", "Nombre":"Málaga. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":291049.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527047", "Nombre":"Málaga. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":170438.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527046", "Nombre":"Málaga. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":120611.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527045", "Nombre":"Málaga. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":247.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527044", "Nombre":"Sevilla. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":882434.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527043", "Nombre":"Sevilla. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":882218.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527042", "Nombre":"Sevilla. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":699154.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527041", "Nombre":"Sevilla. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":183064.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527040", "Nombre":"Sevilla. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":56774.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527039", "Nombre":"Sevilla. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":126290.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527038", "Nombre":"Sevilla. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":216.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527205", "Nombre":"Aragón. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":778947.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527204", "Nombre":"Aragón. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":778316.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527203", "Nombre":"Aragón. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":538870.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527202", "Nombre":"Aragón. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":239446.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527201", "Nombre":"Aragón. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":139109.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527200", "Nombre":"Aragón. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":100337.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527199", "Nombre":"Aragón. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":630.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527037", "Nombre":"Huesca. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":156176.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527036", "Nombre":"Huesca. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":155971.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527035", "Nombre":"Huesca. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":89180.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527034", "Nombre":"Huesca. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":66791.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527033", "Nombre":"Huesca. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":45605.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527032", "Nombre":"Huesca. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":21186.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527031", "Nombre":"Huesca. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":205.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527030", "Nombre":"Teruel. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":112240.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527029", "Nombre":"Teruel. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":112136.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527028", "Nombre":"Teruel. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":56109.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527027", "Nombre":"Teruel. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":56027.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527026", "Nombre":"Teruel. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":40672.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527025", "Nombre":"Teruel. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":15355.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527024", "Nombre":"Teruel. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":104.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527023", "Nombre":"Zaragoza. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":510530.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527022", "Nombre":"Zaragoza. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":510210.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527021", "Nombre":"Zaragoza. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":393582.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527020", "Nombre":"Zaragoza. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":116628.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527019", "Nombre":"Zaragoza. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":52832.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527018", "Nombre":"Zaragoza. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":63796.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527017", "Nombre":"Zaragoza. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":321.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527198", "Nombre":"Asturias, Principado de. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":614170.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527197", "Nombre":"Asturias, Principado de. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":613905.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527196", "Nombre":"Asturias, Principado de. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":457798.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527195", "Nombre":"Asturias, Principado de. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":156107.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527194", "Nombre":"Asturias, Principado de. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":73250.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527193", "Nombre":"Asturias, Principado de. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":82857.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527192", "Nombre":"Asturias, Principado de. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":265.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543424", "Nombre":"Asturias. Total habitantes. Total viviendas. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":614170.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543423", "Nombre":"Asturias. Total habitantes. Vivienda familiar. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":613905.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543422", "Nombre":"Asturias. Total habitantes. Vivienda principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":457798.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543421", "Nombre":"Asturias. Total habitantes. Vivienda no principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":156107.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543420", "Nombre":"Asturias. Total habitantes. Vivienda secundaria. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":73250.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543419", "Nombre":"Asturias. Total habitantes. Vivienda vacía. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":82857.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543418", "Nombre":"Asturias. Total habitantes. Vivienda colectiva. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":265.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527191", "Nombre":"Balears, Illes. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":586883.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527190", "Nombre":"Balears, Illes. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":586709.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527189", "Nombre":"Balears, Illes. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":429737.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527188", "Nombre":"Balears, Illes. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":156972.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527187", "Nombre":"Balears, Illes. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":85717.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527186", "Nombre":"Balears, Illes. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":71255.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527185", "Nombre":"Balears, Illes. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":174.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543417", "Nombre":"Balears, Illes. Total habitantes. Total viviendas. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":586883.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543416", "Nombre":"Balears, Illes. Total habitantes. Vivienda familiar. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":586709.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543415", "Nombre":"Balears, Illes. Total habitantes. Vivienda principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":429737.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543414", "Nombre":"Balears, Illes. Total habitantes. Vivienda no principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":156972.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543413", "Nombre":"Balears, Illes. Total habitantes. Vivienda secundaria. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":85717.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543412", "Nombre":"Balears, Illes. Total habitantes. Vivienda vacía. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":71255.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543411", "Nombre":"Balears, Illes. Total habitantes. Vivienda colectiva. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":174.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527184", "Nombre":"Canarias. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1041208.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527183", "Nombre":"Canarias. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1040945.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527182", "Nombre":"Canarias. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":789953.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527181", "Nombre":"Canarias. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":250992.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527180", "Nombre":"Canarias. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":112730.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527179", "Nombre":"Canarias. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":138262.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527178", "Nombre":"Canarias. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":263.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527016", "Nombre":"Palmas, Las. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":532187.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527015", "Nombre":"Palmas, Las. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":532058.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527014", "Nombre":"Palmas, Las. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":409329.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527013", "Nombre":"Palmas, Las. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":122729.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527012", "Nombre":"Palmas, Las. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":45829.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527011", "Nombre":"Palmas, Las. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":76900.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527010", "Nombre":"Palmas, Las. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":129.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527009", "Nombre":"Santa Cruz de Tenerife. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":509020.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527008", "Nombre":"Santa Cruz de Tenerife. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":508887.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527007", "Nombre":"Santa Cruz de Tenerife. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":380624.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527006", "Nombre":"Santa Cruz de Tenerife. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":128263.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527005", "Nombre":"Santa Cruz de Tenerife. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":66901.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527004", "Nombre":"Santa Cruz de Tenerife. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":61362.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527003", "Nombre":"Santa Cruz de Tenerife. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":134.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527177", "Nombre":"Cantabria. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":358618.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527176", "Nombre":"Cantabria. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":358499.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527175", "Nombre":"Cantabria. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":236743.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527174", "Nombre":"Cantabria. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":121756.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527173", "Nombre":"Cantabria. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":74697.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527172", "Nombre":"Cantabria. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":47059.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527171", "Nombre":"Cantabria. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":119.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543410", "Nombre":"Cantabria. Total habitantes. Total viviendas. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":358618.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543409", "Nombre":"Cantabria. Total habitantes. Vivienda familiar. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":358499.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543408", "Nombre":"Cantabria. Total habitantes. Vivienda principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":236743.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543407", "Nombre":"Cantabria. Total habitantes. Vivienda no principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":121756.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543406", "Nombre":"Cantabria. Total habitantes. Vivienda secundaria. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":74697.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543405", "Nombre":"Cantabria. Total habitantes. Vivienda vacía. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":47059.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543404", "Nombre":"Cantabria. Total habitantes. Vivienda colectiva. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":119.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527170", "Nombre":"Castilla y León. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1719788.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527169", "Nombre":"Castilla y León. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1718752.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527168", "Nombre":"Castilla y León. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1037966.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527167", "Nombre":"Castilla y León. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":680786.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527166", "Nombre":"Castilla y León. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":422335.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527165", "Nombre":"Castilla y León. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":258451.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527164", "Nombre":"Castilla y León. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1036.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527002", "Nombre":"Ávila. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":163619.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527001", "Nombre":"Ávila. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":163548.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527000", "Nombre":"Ávila. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":69316.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526999", "Nombre":"Ávila. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":94232.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526998", "Nombre":"Ávila. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":68536.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526997", "Nombre":"Ávila. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":25696.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526996", "Nombre":"Ávila. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":71.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526995", "Nombre":"Burgos. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":253673.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526994", "Nombre":"Burgos. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":253505.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526993", "Nombre":"Burgos. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":151831.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526992", "Nombre":"Burgos. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":101674.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526991", "Nombre":"Burgos. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":65684.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526990", "Nombre":"Burgos. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":35990.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526989", "Nombre":"Burgos. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":167.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526988", "Nombre":"León. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":325300.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526987", "Nombre":"León. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":325107.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526986", "Nombre":"León. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":206060.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526985", "Nombre":"León. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":119047.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526984", "Nombre":"León. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":60235.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526983", "Nombre":"León. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":58812.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526982", "Nombre":"León. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":193.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526981", "Nombre":"Palencia. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":112312.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526980", "Nombre":"Palencia. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":112221.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526979", "Nombre":"Palencia. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":69197.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526978", "Nombre":"Palencia. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":43024.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526977", "Nombre":"Palencia. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":26299.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526976", "Nombre":"Palencia. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":16725.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526975", "Nombre":"Palencia. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":91.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526974", "Nombre":"Salamanca. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":237024.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526973", "Nombre":"Salamanca. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":236869.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526972", "Nombre":"Salamanca. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":143714.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526971", "Nombre":"Salamanca. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":93155.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526970", "Nombre":"Salamanca. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":59369.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526969", "Nombre":"Salamanca. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":33786.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526968", "Nombre":"Salamanca. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":155.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526967", "Nombre":"Segovia. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":124148.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526966", "Nombre":"Segovia. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":124086.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526965", "Nombre":"Segovia. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":64257.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526964", "Nombre":"Segovia. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":59829.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526963", "Nombre":"Segovia. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":40865.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526962", "Nombre":"Segovia. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":18964.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526961", "Nombre":"Segovia. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":62.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526960", "Nombre":"Soria. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":76714.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526959", "Nombre":"Soria. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":76670.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526958", "Nombre":"Soria. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":38273.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526957", "Nombre":"Soria. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":38397.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526956", "Nombre":"Soria. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":25967.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526955", "Nombre":"Soria. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":12430.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526954", "Nombre":"Soria. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":43.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526953", "Nombre":"Valladolid. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":288124.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526952", "Nombre":"Valladolid. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":287951.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526951", "Nombre":"Valladolid. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":215838.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526950", "Nombre":"Valladolid. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":72113.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526949", "Nombre":"Valladolid. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":35794.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526948", "Nombre":"Valladolid. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":36319.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526947", "Nombre":"Valladolid. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":173.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526946", "Nombre":"Zamora. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":138875.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526945", "Nombre":"Zamora. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":138795.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526944", "Nombre":"Zamora. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":79480.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526943", "Nombre":"Zamora. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":59315.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526942", "Nombre":"Zamora. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":39587.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526941", "Nombre":"Zamora. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":19728.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526940", "Nombre":"Zamora. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":80.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527163", "Nombre":"Castilla - La Mancha. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1245724.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527162", "Nombre":"Castilla - La Mancha. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1244941.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527161", "Nombre":"Castilla - La Mancha. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":787516.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527160", "Nombre":"Castilla - La Mancha. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":457425.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527159", "Nombre":"Castilla - La Mancha. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":254768.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527158", "Nombre":"Castilla - La Mancha. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":202657.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527157", "Nombre":"Castilla - La Mancha. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":783.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526939", "Nombre":"Albacete. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":216050.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526938", "Nombre":"Albacete. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":215948.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526937", "Nombre":"Albacete. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":149373.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526936", "Nombre":"Albacete. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":66575.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526935", "Nombre":"Albacete. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":30244.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526934", "Nombre":"Albacete. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":36331.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526933", "Nombre":"Albacete. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":102.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526932", "Nombre":"Ciudad Real. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":286143.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526931", "Nombre":"Ciudad Real. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":285971.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526930", "Nombre":"Ciudad Real. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":198017.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526929", "Nombre":"Ciudad Real. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":87954.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526928", "Nombre":"Ciudad Real. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":41522.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526927", "Nombre":"Ciudad Real. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":46432.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526926", "Nombre":"Ciudad Real. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":172.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526925", "Nombre":"Cuenca. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":156620.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526924", "Nombre":"Cuenca. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":156495.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526923", "Nombre":"Cuenca. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":83350.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526922", "Nombre":"Cuenca. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":73145.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526921", "Nombre":"Cuenca. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":50739.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526920", "Nombre":"Cuenca. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":22406.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526919", "Nombre":"Cuenca. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":125.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526918", "Nombre":"Guadalajara. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":173175.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526917", "Nombre":"Guadalajara. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":173035.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526916", "Nombre":"Guadalajara. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":98931.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526915", "Nombre":"Guadalajara. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":74104.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526914", "Nombre":"Guadalajara. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":53334.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526913", "Nombre":"Guadalajara. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":20770.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526912", "Nombre":"Guadalajara. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":140.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526911", "Nombre":"Toledo. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":413736.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526910", "Nombre":"Toledo. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":413491.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526909", "Nombre":"Toledo. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":257845.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526908", "Nombre":"Toledo. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":155647.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526907", "Nombre":"Toledo. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":78928.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526906", "Nombre":"Toledo. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":76718.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526905", "Nombre":"Toledo. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":245.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527156", "Nombre":"Cataluña. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3865393.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527155", "Nombre":"Cataluña. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3863381.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527154", "Nombre":"Cataluña. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2944944.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527153", "Nombre":"Cataluña. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":918437.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527152", "Nombre":"Cataluña. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":470081.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527151", "Nombre":"Cataluña. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":448356.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527150", "Nombre":"Cataluña. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2012.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526904", "Nombre":"Barcelona. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2604368.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526903", "Nombre":"Barcelona. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2603097.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526902", "Nombre":"Barcelona. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2168607.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526901", "Nombre":"Barcelona. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":434490.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526900", "Nombre":"Barcelona. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":151335.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526899", "Nombre":"Barcelona. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":283155.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526898", "Nombre":"Barcelona. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1271.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526897", "Nombre":"Girona. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":489516.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526896", "Nombre":"Girona. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":489214.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526895", "Nombre":"Girona. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":292054.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526894", "Nombre":"Girona. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":197160.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526893", "Nombre":"Girona. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":141700.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526892", "Nombre":"Girona. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":55460.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526891", "Nombre":"Girona. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":302.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526890", "Nombre":"Lleida. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":245109.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526889", "Nombre":"Lleida. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":244841.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526888", "Nombre":"Lleida. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":171180.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526887", "Nombre":"Lleida. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":73661.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526886", "Nombre":"Lleida. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":36496.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526885", "Nombre":"Lleida. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":37165.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526884", "Nombre":"Lleida. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":268.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526883", "Nombre":"Tarragona. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":526399.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526882", "Nombre":"Tarragona. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":526229.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526881", "Nombre":"Tarragona. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":313103.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526880", "Nombre":"Tarragona. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":213126.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526879", "Nombre":"Tarragona. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":140549.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526878", "Nombre":"Tarragona. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":72577.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526877", "Nombre":"Tarragona. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":171.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527149", "Nombre":"Comunitat Valenciana. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3147678.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527148", "Nombre":"Comunitat Valenciana. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3147062.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527147", "Nombre":"Comunitat Valenciana. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1986896.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527146", "Nombre":"Comunitat Valenciana. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1160166.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527145", "Nombre":"Comunitat Valenciana. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":655137.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527144", "Nombre":"Comunitat Valenciana. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":505029.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527143", "Nombre":"Comunitat Valenciana. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":617.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526876", "Nombre":"Alicante/Alacant. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1274325.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526875", "Nombre":"Alicante/Alacant. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1274096.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526874", "Nombre":"Alicante/Alacant. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":738367.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526873", "Nombre":"Alicante/Alacant. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":535729.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526872", "Nombre":"Alicante/Alacant. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":326705.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526871", "Nombre":"Alicante/Alacant. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":209024.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526870", "Nombre":"Alicante/Alacant. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":229.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526869", "Nombre":"Castellón/Castelló. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":420516.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526868", "Nombre":"Castellón/Castelló. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":420421.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526867", "Nombre":"Castellón/Castelló. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":233871.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526866", "Nombre":"Castellón/Castelló. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":186550.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526865", "Nombre":"Castellón/Castelló. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":104547.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526864", "Nombre":"Castellón/Castelló. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":82003.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526863", "Nombre":"Castellón/Castelló. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":94.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526862", "Nombre":"Valencia/València. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1452838.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526861", "Nombre":"Valencia/València. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1452545.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526860", "Nombre":"Valencia/València. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1014658.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526859", "Nombre":"Valencia/València. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":437887.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526858", "Nombre":"Valencia/València. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":223885.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526857", "Nombre":"Valencia/València. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":214002.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526856", "Nombre":"Valencia/València. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":293.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527142", "Nombre":"Extremadura. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":648603.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527141", "Nombre":"Extremadura. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":648350.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527140", "Nombre":"Extremadura. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":424980.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527139", "Nombre":"Extremadura. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":223370.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527138", "Nombre":"Extremadura. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":118197.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527137", "Nombre":"Extremadura. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":105173.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527136", "Nombre":"Extremadura. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":253.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526855", "Nombre":"Badajoz. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":372610.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526854", "Nombre":"Badajoz. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":372493.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526853", "Nombre":"Badajoz. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":259955.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526852", "Nombre":"Badajoz. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":112538.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526851", "Nombre":"Badajoz. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":49441.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526850", "Nombre":"Badajoz. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":63097.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526849", "Nombre":"Badajoz. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":117.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526848", "Nombre":"Cáceres. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":275993.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526847", "Nombre":"Cáceres. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":275857.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526846", "Nombre":"Cáceres. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":165025.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526845", "Nombre":"Cáceres. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":110832.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526844", "Nombre":"Cáceres. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":68756.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526843", "Nombre":"Cáceres. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":42076.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526842", "Nombre":"Cáceres. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":136.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527135", "Nombre":"Galicia. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1606001.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527134", "Nombre":"Galicia. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1605481.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527133", "Nombre":"Galicia. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1059233.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527132", "Nombre":"Galicia. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":546248.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527131", "Nombre":"Galicia. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":246852.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527130", "Nombre":"Galicia. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":299396.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527129", "Nombre":"Galicia. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":520.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526841", "Nombre":"Coruña, A. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":646796.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526840", "Nombre":"Coruña, A. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":646613.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526839", "Nombre":"Coruña, A. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":440351.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526838", "Nombre":"Coruña, A. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":206262.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526837", "Nombre":"Coruña, A. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":86193.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526836", "Nombre":"Coruña, A. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":120069.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526835", "Nombre":"Coruña, A. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":183.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526834", "Nombre":"Lugo. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":224152.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526833", "Nombre":"Lugo. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":224049.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526832", "Nombre":"Lugo. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":135891.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526831", "Nombre":"Lugo. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":88158.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526830", "Nombre":"Lugo. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":42919.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526829", "Nombre":"Lugo. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":45239.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526828", "Nombre":"Lugo. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":102.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526827", "Nombre":"Ourense. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":246075.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526826", "Nombre":"Ourense. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":245970.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526825", "Nombre":"Ourense. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":133985.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526824", "Nombre":"Ourense. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":111985.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526823", "Nombre":"Ourense. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":56049.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526822", "Nombre":"Ourense. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":55936.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526821", "Nombre":"Ourense. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":105.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526820", "Nombre":"Pontevedra. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":488978.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526819", "Nombre":"Pontevedra. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":488848.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526818", "Nombre":"Pontevedra. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":349005.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526817", "Nombre":"Pontevedra. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":139843.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526816", "Nombre":"Pontevedra. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":61691.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526815", "Nombre":"Pontevedra. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":78152.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526814", "Nombre":"Pontevedra. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":130.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527128", "Nombre":"Madrid, Comunidad de. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2895660.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527127", "Nombre":"Madrid, Comunidad de. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2894679.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527126", "Nombre":"Madrid, Comunidad de. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2469378.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527125", "Nombre":"Madrid, Comunidad de. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":425301.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527124", "Nombre":"Madrid, Comunidad de. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":162022.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527123", "Nombre":"Madrid, Comunidad de. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":263279.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527122", "Nombre":"Madrid, Comunidad de. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":980.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543403", "Nombre":"Madrid. Total habitantes. Total viviendas. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2895660.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543402", "Nombre":"Madrid. Total habitantes. Vivienda familiar. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2894679.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543401", "Nombre":"Madrid. Total habitantes. Vivienda principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2469378.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543400", "Nombre":"Madrid. Total habitantes. Vivienda no principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":425301.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543399", "Nombre":"Madrid. Total habitantes. Vivienda secundaria. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":162022.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543398", "Nombre":"Madrid. Total habitantes. Vivienda vacía. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":263279.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543397", "Nombre":"Madrid. Total habitantes. Vivienda colectiva. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":980.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527121", "Nombre":"Murcia, Región de. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":776853.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527120", "Nombre":"Murcia, Región de. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":776700.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527119", "Nombre":"Murcia, Región de. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":515367.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527118", "Nombre":"Murcia, Región de. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":261333.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527117", "Nombre":"Murcia, Región de. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":132216.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527116", "Nombre":"Murcia, Región de. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":129117.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527115", "Nombre":"Murcia, Región de. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":153.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543396", "Nombre":"Murcia. Total habitantes. Total viviendas. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":776853.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543395", "Nombre":"Murcia. Total habitantes. Vivienda familiar. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":776700.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543394", "Nombre":"Murcia. Total habitantes. Vivienda principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":515367.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543393", "Nombre":"Murcia. Total habitantes. Vivienda no principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":261333.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543392", "Nombre":"Murcia. Total habitantes. Vivienda secundaria. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":132216.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543391", "Nombre":"Murcia. Total habitantes. Vivienda vacía. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":129117.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543390", "Nombre":"Murcia. Total habitantes. Vivienda colectiva. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":153.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527114", "Nombre":"Navarra, Comunidad Foral de. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":308800.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527113", "Nombre":"Navarra, Comunidad Foral de. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":308602.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527112", "Nombre":"Navarra, Comunidad Foral de. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":248596.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527111", "Nombre":"Navarra, Comunidad Foral de. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":60006.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527110", "Nombre":"Navarra, Comunidad Foral de. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":24540.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527109", "Nombre":"Navarra, Comunidad Foral de. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":35466.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527108", "Nombre":"Navarra, Comunidad Foral de. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":197.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543389", "Nombre":"Navarra. Total habitantes. Total viviendas. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":308800.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543388", "Nombre":"Navarra. Total habitantes. Vivienda familiar. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":308602.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543387", "Nombre":"Navarra. Total habitantes. Vivienda principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":248596.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543386", "Nombre":"Navarra. Total habitantes. Vivienda no principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":60006.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543385", "Nombre":"Navarra. Total habitantes. Vivienda secundaria. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":24540.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543384", "Nombre":"Navarra. Total habitantes. Vivienda vacía. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":35466.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543383", "Nombre":"Navarra. Total habitantes. Vivienda colectiva. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":197.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527107", "Nombre":"País Vasco. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1018182.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527106", "Nombre":"País Vasco. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1017602.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527105", "Nombre":"País Vasco. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":888940.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527104", "Nombre":"País Vasco. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":128662.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527103", "Nombre":"País Vasco. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":47659.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527102", "Nombre":"País Vasco. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":81003.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527101", "Nombre":"País Vasco. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":581.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526813", "Nombre":"Araba/Álava. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":155883.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526812", "Nombre":"Araba/Álava. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":155767.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526811", "Nombre":"Araba/Álava. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":135107.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526810", "Nombre":"Araba/Álava. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":20660.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526809", "Nombre":"Araba/Álava. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":9791.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526808", "Nombre":"Araba/Álava. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":10869.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526807", "Nombre":"Araba/Álava. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":116.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526806", "Nombre":"Bizkaia. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":534160.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526805", "Nombre":"Bizkaia. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":533882.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526804", "Nombre":"Bizkaia. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":467295.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526803", "Nombre":"Bizkaia. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":66587.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526802", "Nombre":"Bizkaia. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":22883.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526801", "Nombre":"Bizkaia. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":43704.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526800", "Nombre":"Bizkaia. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":279.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526799", "Nombre":"Gipuzkoa. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":328139.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526798", "Nombre":"Gipuzkoa. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":327952.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526797", "Nombre":"Gipuzkoa. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":286537.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526796", "Nombre":"Gipuzkoa. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":41415.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526795", "Nombre":"Gipuzkoa. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":14985.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526794", "Nombre":"Gipuzkoa. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":26430.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526793", "Nombre":"Gipuzkoa. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":186.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527100", "Nombre":"Rioja, La. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":198759.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527099", "Nombre":"Rioja, La. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":198669.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527098", "Nombre":"Rioja, La. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":129984.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527097", "Nombre":"Rioja, La. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":68685.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527096", "Nombre":"Rioja, La. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":32940.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527095", "Nombre":"Rioja, La. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":35745.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1527094", "Nombre":"Rioja, La. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":90.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543382", "Nombre":"Rioja, La. Total habitantes. Total viviendas. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":198759.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543381", "Nombre":"Rioja, La. Total habitantes. Vivienda familiar. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":198669.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543380", "Nombre":"Rioja, La. Total habitantes. Vivienda principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":129984.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543379", "Nombre":"Rioja, La. Total habitantes. Vivienda no principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":68685.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543378", "Nombre":"Rioja, La. Total habitantes. Vivienda secundaria. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":32940.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543377", "Nombre":"Rioja, La. Total habitantes. Vivienda vacía. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":35745.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543376", "Nombre":"Rioja, La. Total habitantes. Vivienda colectiva. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":90.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543438", "Nombre":"Ceuta. Total habitantes. Total viviendas. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":26664.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543437", "Nombre":"Ceuta. Total habitantes. Vivienda familiar. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":26652.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543436", "Nombre":"Ceuta. Total habitantes. Vivienda principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":24904.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543435", "Nombre":"Ceuta. Total habitantes. Vivienda no principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1748.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543434", "Nombre":"Ceuta. Total habitantes. Vivienda secundaria. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":413.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543433", "Nombre":"Ceuta. Total habitantes. Vivienda vacía. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1335.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543432", "Nombre":"Ceuta. Total habitantes. Vivienda colectiva. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":13.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526792", "Nombre":"Ceuta. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":26664.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526791", "Nombre":"Ceuta. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":26652.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526790", "Nombre":"Ceuta. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":24904.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526789", "Nombre":"Ceuta. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1748.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526788", "Nombre":"Ceuta. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":413.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526787", "Nombre":"Ceuta. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1335.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526786", "Nombre":"Ceuta. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":13.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543431", "Nombre":"Melilla. Total habitantes. Total viviendas. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":26246.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543430", "Nombre":"Melilla. Total habitantes. Vivienda familiar. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":26233.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543429", "Nombre":"Melilla. Total habitantes. Vivienda principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":24666.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543428", "Nombre":"Melilla. Total habitantes. Vivienda no principal. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1567.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543427", "Nombre":"Melilla. Total habitantes. Vivienda secundaria. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":200.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543426", "Nombre":"Melilla. Total habitantes. Vivienda vacía. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1367.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1543425", "Nombre":"Melilla. Total habitantes. Vivienda colectiva. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":13.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526785", "Nombre":"Melilla. Total viviendas. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":26246.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526784", "Nombre":"Melilla. Vivienda familiar. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":26233.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526783", "Nombre":"Melilla. Vivienda principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":24666.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526782", "Nombre":"Melilla. Vivienda no principal. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1567.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526781", "Nombre":"Melilla. Vivienda secundaria. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":200.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526780", "Nombre":"Melilla. Vivienda vacía. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":1367.0, "Secreto":false}
+]
+}
+,{"COD":"CENSO1526779", "Nombre":"Melilla. Vivienda colectiva. Total habitantes. Vivienda. ", "FK_Unidad":214, "FK_Escala":1, "Data":[{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":13.0, "Secreto":false}
+]
+}
+]

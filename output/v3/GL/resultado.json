@@ -1,0 +1,53 @@
+{
+ "rama": "GL",
+ "capa": "C4",
+ "pregunta": "¿Reproduce el efecto de los alquileres turísticos sobre el alquiler (García-López 2020) en Barcelona 2021-2024?",
+ "datos": "SERPAVI sección/distrito (stock IRPF) 2021-2024; VUT INE oleadas 2021M02-2024M11; Censo 2021; sellado v3 excluido",
+ "N": 3260,
+ "metodo": "MCO con FE de sección y año, cluster distrito (réplica conceptual, sin IV)",
+ "estimacion": -0.042099049332524056,
+ "ic95": [
+  -0.07222565326437355,
+  -0.011972445400674568
+ ],
+ "p_ajustado": 0.16955511966749745,
+ "nivel_evidencia": "EXPLORATORIO",
+ "diagnosticos": {
+  "pretendencia_adelanto_BCN": {
+   "coef_lead": 0.000370791197879277,
+   "ee": 0.0009436742970765327,
+   "p": 0.7060677840533012,
+   "nota": "N=3 años; FE; el adelanto de VUT no debería predecir el alquiler"
+  },
+  "placebo_permutacion_BCN": {
+   "reps": 500,
+   "coef_real": -0.004166504610531088,
+   "p_perm": 0.0,
+   "sd_placebo": 0.0009169195595062796
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "no aplica: réplica de coeficiente"
+ },
+ "clasificacion": {
+  "GL1_bcn_seccion_vut100viv": "NO REPLICABLE",
+  "GL2_bcn_distrito_vut100viv": "NO REPLICABLE",
+  "GL3_bcn_seccion_vut_cien": "NO REPLICADO",
+  "GL4_bcn_distrito_vut_cien": "NO REPLICADO",
+  "GL5_bcn_seccion_vut_cien_pond_viv": "NO REPLICADO",
+  "EXT_Madrid_seccion_vut100viv": "NO REPLICABLE",
+  "EXT_Madrid_seccion_vut_cien": "REPLICADO",
+  "EXT_València_seccion_vut100viv": "NO REPLICABLE",
+  "EXT_València_seccion_vut_cien": "REPLICADO",
+  "EXT_Sevilla_seccion_vut100viv": "NO REPLICABLE",
+  "EXT_Sevilla_seccion_vut_cien": "NO REPLICADO",
+  "EXT_Málaga_seccion_vut100viv": "NO REPLICABLE",
+  "EXT_Málaga_seccion_vut_cien": "REPLICADO",
+  "EXT_Espana_seccion_vut100viv": "NO REPLICABLE",
+  "EXT_Espana_seccion_vut_cien": "PARCIAL"
+ },
+ "notas": "Pérdidas armonización {'seccion_nacional': {'unidades_alq_sin_vut_o_censo': 13, 'unidades_no_balanceadas_o_sin_alq': 2766, 'unidades_finales': 17657}, 'distrito_nacional': {'unidades_alq_sin_vut_o_censo': 4, 'unidades_no_balanceadas_o_sin_alq': 454, 'unidades_finales': 2975}}. {'distritos_BCN_incluidos': ['01', '02', '03', '04', '05', '06', '07', '08'], 'Palma_no_estimable': 'menos de 2 distritos no sellados con datos: sin clusters'}. Smoke=False"
+}

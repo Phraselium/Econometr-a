@@ -1,0 +1,217 @@
+[{"Nombre":"Total (tamaño de municipio), Total (tamaño del hogar)", "Data":[{"Valor":1.8539223E7, "Secreto":false}
+]
+}
+,{"Nombre":"Total (tamaño de municipio), 1 persona", "Data":[{"Valor":5001166.0, "Secreto":false}
+]
+}
+,{"Nombre":"Total (tamaño de municipio), 2 personas", "Data":[{"Valor":5203749.0, "Secreto":false}
+]
+}
+,{"Nombre":"Total (tamaño de municipio), 3 personas", "Data":[{"Valor":3837982.0, "Secreto":false}
+]
+}
+,{"Nombre":"Total (tamaño de municipio), 4 personas", "Data":[{"Valor":3123216.0, "Secreto":false}
+]
+}
+,{"Nombre":"Total (tamaño de municipio), 5 o más personas", "Data":[{"Valor":1373110.0, "Secreto":false}
+]
+}
+,{"Nombre":"Menos de 101 habitantes, Total (tamaño del hogar)", "Data":[{"Valor":39835.0, "Secreto":false}
+]
+}
+,{"Nombre":"Menos de 101 habitantes, 1 persona", "Data":[{"Valor":19485.0, "Secreto":false}
+]
+}
+,{"Nombre":"Menos de 101 habitantes, 2 personas", "Data":[{"Valor":10383.0, "Secreto":false}
+]
+}
+,{"Nombre":"Menos de 101 habitantes, 3 personas", "Data":[{"Valor":5285.0, "Secreto":false}
+]
+}
+,{"Nombre":"Menos de 101 habitantes, 4 personas", "Data":[{"Valor":2967.0, "Secreto":false}
+]
+}
+,{"Nombre":"Menos de 101 habitantes, 5 o más personas", "Data":[{"Valor":1715.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 101 a 500, Total (tamaño del hogar)", "Data":[{"Valor":296627.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 101 a 500, 1 persona", "Data":[{"Valor":117872.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 101 a 500, 2 personas", "Data":[{"Valor":81210.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 101 a 500, 3 personas", "Data":[{"Valor":48601.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 101 a 500, 4 personas", "Data":[{"Valor":33168.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 101 a 500, 5 o más personas", "Data":[{"Valor":15776.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 501 a 1.000, Total (tamaño del hogar)", "Data":[{"Valor":309198.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 501 a 1.000, 1 persona", "Data":[{"Valor":107242.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 501 a 1.000, 2 personas", "Data":[{"Valor":86379.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 501 a 1.000, 3 personas", "Data":[{"Valor":55765.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 501 a 1.000, 4 personas", "Data":[{"Valor":42040.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 501 a 1.000, 5 o más personas", "Data":[{"Valor":17772.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 1.001 a 2.000, Total (tamaño del hogar)", "Data":[{"Valor":514677.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 1.001 a 2.000, 1 persona", "Data":[{"Valor":164321.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 1.001 a 2.000, 2 personas", "Data":[{"Valor":143901.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 1.001 a 2.000, 3 personas", "Data":[{"Valor":98008.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 1.001 a 2.000, 4 personas", "Data":[{"Valor":76846.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 1.001 a 2.000, 5 o más personas", "Data":[{"Valor":31601.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 2.001 a 5.000, Total (tamaño del hogar)", "Data":[{"Valor":1187931.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 2.001 a 5.000, 1 persona", "Data":[{"Valor":329092.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 2.001 a 5.000, 2 personas", "Data":[{"Valor":329261.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 2.001 a 5.000, 3 personas", "Data":[{"Valor":242732.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 2.001 a 5.000, 4 personas", "Data":[{"Valor":202974.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 2.001 a 5.000, 5 o más personas", "Data":[{"Valor":83872.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 5.001 a 10.000, Total (tamaño del hogar)", "Data":[{"Valor":1505656.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 5.001 a 10.000, 1 persona", "Data":[{"Valor":384647.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 5.001 a 10.000, 2 personas", "Data":[{"Valor":411177.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 5.001 a 10.000, 3 personas", "Data":[{"Valor":320623.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 5.001 a 10.000, 4 personas", "Data":[{"Valor":277040.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 5.001 a 10.000, 5 o más personas", "Data":[{"Valor":112169.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 10.001 a 20.000, Total (tamaño del hogar)", "Data":[{"Valor":1877494.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 10.001 a 20.000, 1 persona", "Data":[{"Valor":471336.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 10.001 a 20.000, 2 personas", "Data":[{"Valor":517794.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 10.001 a 20.000, 3 personas", "Data":[{"Valor":399758.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 10.001 a 20.000, 4 personas", "Data":[{"Valor":345573.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 10.001 a 20.000, 5 o más personas", "Data":[{"Valor":143033.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 20.001 a 50.000, Total (tamaño del hogar)", "Data":[{"Valor":2978347.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 20.001 a 50.000, 1 persona", "Data":[{"Valor":736462.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 20.001 a 50.000, 2 personas", "Data":[{"Valor":821093.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 20.001 a 50.000, 3 personas", "Data":[{"Valor":642660.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 20.001 a 50.000, 4 personas", "Data":[{"Valor":544813.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 20.001 a 50.000, 5 o más personas", "Data":[{"Valor":233319.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 50.001 a 100.000, Total (tamaño del hogar)", "Data":[{"Valor":2350255.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 50.001 a 100.000, 1 persona", "Data":[{"Valor":592173.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 50.001 a 100.000, 2 personas", "Data":[{"Valor":647487.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 50.001 a 100.000, 3 personas", "Data":[{"Valor":499864.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 50.001 a 100.000, 4 personas", "Data":[{"Valor":417946.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 50.001 a 100.000, 5 o más personas", "Data":[{"Valor":192785.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 100.001 a 500.000, Total (tamaño del hogar)", "Data":[{"Valor":4396998.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 100.001 a 500.000, 1 persona", "Data":[{"Valor":1169883.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 100.001 a 500.000, 2 personas", "Data":[{"Valor":1259251.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 100.001 a 500.000, 3 personas", "Data":[{"Valor":922978.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 100.001 a 500.000, 4 personas", "Data":[{"Valor":722467.0, "Secreto":false}
+]
+}
+,{"Nombre":"De 100.001 a 500.000, 5 o más personas", "Data":[{"Valor":322419.0, "Secreto":false}
+]
+}
+,{"Nombre":"Más de 500.000, Total (tamaño del hogar)", "Data":[{"Valor":3082205.0, "Secreto":false}
+]
+}
+,{"Nombre":"Más de 500.000, 1 persona", "Data":[{"Valor":908653.0, "Secreto":false}
+]
+}
+,{"Nombre":"Más de 500.000, 2 personas", "Data":[{"Valor":895813.0, "Secreto":false}
+]
+}
+,{"Nombre":"Más de 500.000, 3 personas", "Data":[{"Valor":601708.0, "Secreto":false}
+]
+}
+,{"Nombre":"Más de 500.000, 4 personas", "Data":[{"Valor":457382.0, "Secreto":false}
+]
+}
+,{"Nombre":"Más de 500.000, 5 o más personas", "Data":[{"Valor":218649.0, "Secreto":false}
+]
+}
+]

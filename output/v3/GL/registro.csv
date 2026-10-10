@@ -1,0 +1,17 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+GL,GL1_bcn_seccion_vut100viv,"lnalq ~ vut100 | FE unidad+año, cluster distrito",2021,2024,3260,,,,,-0.004166504610531088,0.029848891001099765,seccion; log-puntos por 100 VUT/100 viviendas (1 pp); NO REPLICABLE
+GL,GL2_bcn_distrito_vut100viv,"lnalq ~ vut100 | FE unidad+año, cluster distrito",2021,2024,32,,,,,-0.005391196074945699,0.01457650278854218,distrito; log-puntos por 1 pp; NO REPLICABLE
+GL,GL3_bcn_seccion_vut_cien,"lnalq ~ vut_cien | FE unidad+año, cluster distrito",2021,2024,3260,,,,,-0.042099049332524056,0.01304270151288442,seccion; log-puntos por 100 VUT (homogéneo); NO REPLICADO
+GL,GL4_bcn_distrito_vut_cien,"lnalq ~ vut_cien | FE unidad+año, cluster distrito",2021,2024,32,,,,,-0.0008317828296640879,0.026313623789909913,distrito; log-puntos por 100 VUT (homogéneo); NO REPLICADO
+GL,GL5_bcn_seccion_vut_cien_pond_viv,"lnalq ~ vut_cien | FE unidad+año, cluster distrito",2021,2024,3260,,,,,-0.040542711015028106,0.0030867367122463392,"seccion; log-puntos por 100 VUT, pond. viviendas; NO REPLICADO"
+GL,EXT_Madrid_seccion_vut100viv,"lnalq ~ vut100 | FE unidad+año, cluster distrito",2021,2024,7160,,,,,0.003222596555079991,0.17381065481820443,seccion; log-puntos por 1 pp; NO REPLICABLE
+GL,EXT_Madrid_seccion_vut_cien,"lnalq ~ vut_cien | FE unidad+año, cluster distrito",2021,2024,7160,,,,,0.04086320470887437,0.14644737880504188,seccion; log-puntos por 100 VUT; REPLICADO
+GL,EXT_València_seccion_vut100viv,"lnalq ~ vut100 | FE unidad+año, cluster distrito",2021,2024,1940,,,,,0.0050081222388316275,0.046746355688606515,seccion; log-puntos por 1 pp; NO REPLICABLE
+GL,EXT_València_seccion_vut_cien,"lnalq ~ vut_cien | FE unidad+año, cluster distrito",2021,2024,1940,,,,,0.04901405681257531,0.11598156947801566,seccion; log-puntos por 100 VUT; REPLICADO
+GL,EXT_Sevilla_seccion_vut100viv,"lnalq ~ vut100 | FE unidad+año, cluster distrito",2021,2024,1408,,,,,-0.002656362571556317,0.009910707751770493,seccion; log-puntos por 1 pp; NO REPLICABLE
+GL,EXT_Sevilla_seccion_vut_cien,"lnalq ~ vut_cien | FE unidad+año, cluster distrito",2021,2024,1408,,,,,-0.02393480884949667,0.015468516046609726,seccion; log-puntos por 100 VUT; NO REPLICADO
+GL,EXT_Málaga_seccion_vut100viv,"lnalq ~ vut100 | FE unidad+año, cluster distrito",2021,2024,916,,,,,0.0017446900671220181,0.47761659931295813,seccion; log-puntos por 1 pp; NO REPLICABLE
+GL,EXT_Málaga_seccion_vut_cien,"lnalq ~ vut_cien | FE unidad+año, cluster distrito",2021,2024,916,,,,,0.008434901391465499,0.5783675545128779,seccion; log-puntos por 100 VUT; REPLICADO
+GL,EXT_Espana_seccion_vut100viv,"lnalq ~ vut100 | FE unidad+año, cluster distrito",2021,2024,70628,,,,,0.001129033230568214,0.1126622975437661,seccion; log-puntos por 1 pp; NO REPLICABLE
+GL,EXT_Espana_seccion_vut_cien,"lnalq ~ vut_cien | FE unidad+año, cluster distrito",2021,2024,70628,,,,,0.0052596779702845375,0.1326227323798484,seccion; log-puntos por 100 VUT; PARCIAL
+GL,GL_pretend_lead,lnalq ~ vut100+lead,2021,2023,2445,,,,,0.000370791197879277,0.7060677840533012,pretendencias

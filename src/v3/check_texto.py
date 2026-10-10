@@ -32,12 +32,13 @@ CAUSAL = r"\b(caus[aó]\w*|provoc\w*|efecto causal|impacto causal|gracias a|debi
 NEGACION = re.compile(r"(sin evidencia|no se puede afirmar|no identifica|no causal|no implica|no permite|"
                       r"no demuestra|no hay evidencia|como m[áa]ximo|como m[íi]nimo|cota)", re.I)
 CAMPOS_FICHA = ["id", "enunciado", "capa", "magnitud", "intervalo", "cota", "literatura", "veredicto", "limites"]
-VEREDICTOS = {"RESPALDADA", "PARCIALMENTE", "NO RESPALDADA", "CONTRADICHA", "SIN EVIDENCIA SUFICIENTE"}
+VEREDICTOS = {"RESPALDADA", "PARCIALMENTE", "NO RESPALDADA", "CONTRADICHA", "SIN EVIDENCIA SUFICIENTE",
+              "ANALIZADA, NO CONCLUYENTE", "NO ANALIZADA: FALTAN DATOS"}   # las dos últimas, v4
 CAPAS = {"C1", "C2", "C3", "C4"}
 
 
 def _ficheros() -> list[Path]:
-    out = sorted((RAIZ / "output" / "v3").rglob("*.md"))
+    out = sorted((RAIZ / "output" / "v3").rglob("*.md")) + sorted((RAIZ / "output" / "v4").rglob("*.md"))
     h = RAIZ / "docs" / "v3" / "hipotesis.md"
     return out + ([h] if h.exists() else [])
 
@@ -89,7 +90,9 @@ def main() -> int:
     errores = []
     for p in _ficheros():
         errores += revisar_texto(p.read_text(encoding="utf-8"), str(p.relative_to(RAIZ)))
-    for p in sorted((RAIZ / "output" / "v3" / "verificador" / "fichas").glob("*.json")):
+    fichas = sorted((RAIZ / "output" / "v3" / "verificador" / "fichas").glob("*.json")) + \
+        sorted((RAIZ / "output" / "v4" / "verificador" / "fichas").glob("*.json"))
+    for p in fichas:
         errores += revisar_ficha(json.loads(p.read_text(encoding="utf-8")), str(p.relative_to(RAIZ)))
     for e in errores:
         print(e)

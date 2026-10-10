@@ -9,21 +9,21 @@
   "metodo": "MCO con FE de provincia y trimestre, EE cluster provincia + wild cluster bootstrap (Webb, 9.999, WCR); Holm/BH intra-H2 (m=2) sobre crédito e interacción; el Holm de la familia de 7 confirmatorias se aplica en la síntesis BS; DM-HLN fuera de muestra (bloques h=4, embargo 4, primer test 2012Q1)",
   "estimacion": {
     "d4_ln_hipotecas_importe": 0.008725977343066814,
-    "cu_x_expo": -0.004411807921252146,
-    "d4_ln_ocupados": 0.04394489706791709
+    "cu_x_expo": -0.004411807921252147,
+    "d4_ln_ocupados": 0.04394489706791708
   },
   "ic95": {
     "d4_ln_hipotecas_importe": [
-      0.003317065056375153,
-      0.014134889629758476
+      0.003317065056375154,
+      0.014134889629758474
     ],
     "cu_x_expo": [
-      -0.005827142601763597,
-      -0.002996473240740695
+      -0.005827142601763598,
+      -0.002996473240740696
     ],
     "d4_ln_ocupados": [
-      0.0053162700535187846,
-      0.0825735240823154
+      0.005316270053518764,
+      0.08257352408231539
     ]
   },
   "p_ajustado": {

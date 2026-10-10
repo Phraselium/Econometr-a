@@ -17,3 +17,11 @@
 - 8 agrupaciones de países: BHJ/AKM con poca potencia; Sargan rechaza en la ecuación de precio.
 - Submuestra 2009-2014 sin primera etapa (F 0,7); 2015-2021, p=0,073. β_alquiler>0 y H3 quedan EXPLORATORIO; la magnitud (0,8-5) no está identificada.
 - Flujos de inmigración provinciales solo hasta 2021-2022: sin evaluación sellada posible.
+
+## BO (oferta y suelo) — aprobada en re-revisión
+- H4 inestable y endógena: falla en 2005-2013 y 2014-2023; el IV con desplazadores de demanda no la respalda (J rechaza); el placebo de precio futuro es significativo (ciclo común). EXPLORATORIO.
+- Oferta medida con viviendas LIBRES iniciadas/terminadas (no totales); sin licencias municipales.
+- Déficit 2021Q1-2024Q2: incluye 14.873 viviendas protegidas SUPUESTAS (ritmo constante) además de las 34.704 observadas; no comparable con el periodo 2021-2025 del BdE.
+- Suelo: serie ruidosa; sin señal anticipatoria robusta tras BH/Holm sobre 160 contrastes.
+- Panel UE: sin inferencia válida para la comparación de España (un único clúster); el resultado de alquiler (−6) lo producen 2008-2010 y 2021-2023.
+- Fuera de muestra: ningún modelo de precio con variables de oferta mejora al AR(4); el de iniciadas mejora (p 0,03) pero no sobrevive a BH.

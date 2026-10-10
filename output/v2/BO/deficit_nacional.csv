@@ -1,0 +1,7 @@
+variante,periodo,delta_hogares,terminadas_libres,protegida,deficit,ref
+"EPA corregida, sin protegida",2021Q1-2024Q2,919399.9999999988,286539.0,0.0,632860.9999999987,EPA
+"EPA corregida, con protegida (49 prov. + reescalado)",2021Q1-2024Q2,919399.9999999988,286539.0,34704.2249523523,598156.7750476464,EPA
+"EPA corregida, con protegida (solo 49 prov., cota inferior)",2021Q1-2024Q2,919399.9999999988,286539.0,33164.0,599696.9999999987,EPA
+"ECP, sin protegida",2021Q1-2024Q1,815267.0,264744.0,0.0,550523.0,ECP
+"ECP, con protegida (49 prov. + reescalado)",2021Q1-2024Q1,815267.0,264744.0,32449.4623898374,518073.5376101626,ECP
+"ECP, con protegida (solo 49 prov., cota inferior)",2021Q1-2024Q1,815267.0,264744.0,30992.0,519531.0,ECP

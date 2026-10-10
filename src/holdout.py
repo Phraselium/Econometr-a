@@ -156,6 +156,7 @@ def evaluate(hipotesis: str, fn, rama: str, paneles: list[str]):
                 "hipotesis": hipotesis, "rama": rama, "paneles": paneles}
     with open(LOG, "a") as f:   # se registra ANTES de leer nada sellado
         f.write(json.dumps(apertura, ensure_ascii=False) + "\n")
+    _log_md(apertura["utc"], hipotesis, rama, paneles, "APERTURA (antes de leer)")
     sellado = {}
     for p in paneles:
         _freq, _col_t, col_geo = CATALOGO[p]
@@ -166,15 +167,18 @@ def evaluate(hipotesis: str, fn, rama: str, paneles: list[str]):
            "hipotesis": hipotesis, "rama": rama, "paneles": paneles, "resultado": res}
     with open(LOG, "a") as f:
         f.write(json.dumps(reg, ensure_ascii=False, default=str) + "\n")
+    _log_md(reg["utc"], hipotesis, rama, paneles, json.dumps(res, ensure_ascii=False, default=str)[:300])
+    return res
+
+
+def _log_md(utc, hipotesis, rama, paneles, texto):
     LOG_MD.parent.mkdir(parents=True, exist_ok=True)
     nuevo = not LOG_MD.exists()
     with open(LOG_MD, "a") as f:
         if nuevo:
             f.write("# Accesos a la muestra sellada (copia versionada de data/sealed/_accesos.log)\n\n"
-                    "| UTC | hipótesis | rama | paneles | resultado |\n|---|---|---|---|---|\n")
-        f.write(f"| {reg['utc']} | {hipotesis} | {rama} | {', '.join(paneles)} | "
-                f"{json.dumps(res, ensure_ascii=False, default=str)[:300]} |\n")
-    return res
+                    "| UTC | hipótesis | rama | paneles | evento / resultado |\n|---|---|---|---|---|\n")
+        f.write(f"| {utc} | {hipotesis} | {rama} | {', '.join(paneles)} | {texto} |\n")
 
 
 if __name__ == "__main__":

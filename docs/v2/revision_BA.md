@@ -102,3 +102,26 @@ He hecho un ensayo en seco solo con entrenamiento (pseudo-sellado: ajuste hasta 
 10. **C10 [orquestador, infraestructura]** `holdout.evaluate`: registrar un evento «apertura» en _accesos.log antes de leer data/sealed, para que un fallo de `fn` no permita un segundo acceso sin rastro.
 
 Tras C1-C5, basta una re-revisión breve: diff de ba_informe.py y ba_h1_sellado.py, el test y las nuevas cifras de H1. Solo entonces debe ejecutarse `holdout.evaluate("H1", ...)`.
+
+---
+
+## Re-revisión (iteración 2 de 2): commit `b2858d7` en r2/BA
+
+### Veredicto final: **APROBAR**. Ya se puede ejecutar UNA vez `holdout.evaluate("H1", ...)`.
+
+**Reproducción.** Nuevo clon aislado de r2/BA en `b2858d7`, sin red (`HTTPS_PROXY=HTTP_PROXY=http://127.0.0.1:9`). Dos ejecuciones de `ba_run.py`: exit 0 en ambas. Los md5 de los 17 ficheros son idénticos entre sí e idénticos a los versionados. `tests/test_ba_h1_dryrun.py`: OK.
+
+**C1-C4 verificados:**
+- **C1.** En el train, `pob_20_34` de 2024Q2 es NaN con método `anulado_fuga_sellado`. N de H1 = 3.185 (antes 3.234). 20-34 = 0,149; extranjera = −0,018. El fuera de muestra no cambia (usa la escalera de valores observados).
+- **C2.** `nivel_evidencia = EXPLORATORIO`; p_H1 de intersección-unión (unilateral) = 0,85; `candidata_a_robusta = false`. Ya no aparece «provisional» y el Holm se presenta como «intra-H1». Es coherente con el criterio uniforme adoptado en decisiones.md.
+- **C3.** He revisado `_parches`. `_fit_predict` y `_dols` se estiman solo con las unidades de entrenamiento. El efecto fijo de cada provincia sellada es la media del residuo con objetivos ≤ L, y para el ECM con niveles ≤ L. Se aplica igual en B, AR(4) y ECM v1, y los parches se restauran en `finally`. Hay contraste principal (52 provincias) y tres secundarios, incluido (b'). Se exige n_periodos ≥ 8 y la regla de decisión está en el docstring.
+- **C4.** El test cubre el pseudo-sellado y comprueba que las pendientes no dependen de la historia de las selladas: perturbar esa historia no mueve el RMSE de las 49 provincias.
+
+**Sin evaluación previa.** No hay ninguna llamada a `evaluate` fuera del docstring. docs/v2/holdout_accesos.md no existe en ninguna rama ni en el historial. No puedo leer `_accesos.log` (permiso denegado), así que la comprobación es indirecta. Ojo con C10: ahora una apertura que falle consume el único acceso. Antes de llamar hay que ejecutar el test de ensayo en seco. Recomendación al orquestador: copiar también la «apertura» en holdout_accesos.md.
+
+**Pasan a docs/v2/limitaciones.md (no bloqueantes):**
+- **C6.** El criterio de signos en las submuestras y el modelo primario B se declararon dentro de la rama: no se puede auditar que se fijaran antes de ver resultados.
+- **C7.** El regresor principal de H1 usa población interpolada en T2-T4, con el 1 de enero siguiente. Las versiones con T1 observado y anual coinciden. Además, el padrón se publica con unos 6 meses de retraso, de modo que el fuera de muestra no es en tiempo real.
+- **C8.** Turismo: N temporal = 6 en el panel provincial; BH sobre 3 de los 8 contrastes; causalidad inversa posible. La población extranjera es negativa y significativa en 2008-2019.
+
+C5 (guarda `__main__`) y C9 (estado y cuartil de las referencias en signos_vs_literatura.csv; las 5 citadas son VERIFICADA en docs/literatura.md) son mejoras cosméticas y no limitaciones.

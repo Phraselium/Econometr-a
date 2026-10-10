@@ -1,0 +1,16 @@
+{
+ "id": "V11",
+ "tema": "Vivienda pública",
+ "enunciado": "Construir vivienda pública resolvería el problema de la vivienda.",
+ "capa": "C4",
+ "magnitud": "Simulación P-D no disponible.",
+ "intervalo": "ver magnitud",
+ "cota": "—",
+ "literatura": "Calibración con la literatura de P-D.",
+ "veredicto": "SIN EVIDENCIA SUFICIENTE",
+ "regla": "Aumentar la oferta reduce la brecha en todo el rango simulado, pero «resolver» depende del volumen y del plazo; ver P-D.",
+ "limites": "Simulación con rangos de elasticidades; coste fiscal no cuantificado sin dato de coste.",
+ "evidencia": [
+  "output/v3/PD/resultados.json"
+ ]
+}

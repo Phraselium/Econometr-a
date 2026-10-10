@@ -1,0 +1,17 @@
+{
+ "id": "V13",
+ "tema": "Burbuja",
+ "enunciado": "Hay una burbuja en el precio de la vivienda en España.",
+ "capa": "C4",
+ "magnitud": "Precio/renta 2023: [3,0; 4,1] veces la renta anual; la dirección de la razón precio/alquiler 2015-2024 no está establecida (medidas de signo contrario: [-9,3; 43,9] %).",
+ "intervalo": "n/d",
+ "cota": "—",
+ "literatura": "Sin test de exuberancia (GSADF) realizado en v3.",
+ "veredicto": "SIN EVIDENCIA SUFICIENTE",
+ "regla": "Sin test de exuberancia y con indicadores de valoración contradictorios, no se puede afirmar ni descartar.",
+ "limites": "El test GSADF por CCAA estaba previsto en P-E (exploratorio) y no se ejecutó.",
+ "evidencia": [
+  "output/v3/PA/hechos.json#A4",
+  "output/v3/PA/hechos.json#A6"
+ ]
+}

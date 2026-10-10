@@ -1,0 +1,17 @@
+{
+ "id": "V03",
+ "tema": "Inmigración",
+ "enunciado": "La inmigración explica la subida de los precios y de los alquileres.",
+ "capa": "C2",
+ "magnitud": "Fracción máxima de la creación neta de hogares atribuible a hogares extranjeros: 45,2 % en 2014-2019 (rango [15,1; 45,2]); en 2014-2025 y 2020-2025 la cota con el extremo lógico (1 persona por hogar) llega al 100 % y no es informativa; en 2008-2013 el saldo extranjero neto fue negativo (cota 0,0 %).",
+ "intervalo": "[15,1; 45,2] % (2014-2019)",
+ "cota": "C2 de cantidad (hogares); las traducciones a precio son C4 condicionadas a ε.",
+ "literatura": "Saiz (2007), Sá (2015), González y Ortega (2013): magnitudes de calibración (no replicadas).",
+ "veredicto": "PARCIALMENTE",
+ "regla": "La inmigración puede ser una parte relevante de la demanda nueva desde 2014 (cota no nula), pero la cota no es informativa en 2020-2025 con supuestos débiles y no hay diseño C3 propio; v2 (BI) la asocia al alquiler con evidencia EXPLORATORIA. No basta para «explica» ni para descartarla.",
+ "limites": "Medida por nacionalidad (las nacionalizaciones la sesgan a la baja); tamaño del hogar extranjero supuesto.",
+ "evidencia": [
+  "output/v3/PB/cotas.json#B2",
+  "output/v2/informe_v2.md"
+ ]
+}

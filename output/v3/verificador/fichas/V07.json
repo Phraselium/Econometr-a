@@ -1,0 +1,16 @@
+{
+ "id": "V07",
+ "tema": "Topes de alquiler",
+ "enunciado": "Los topes al precio del alquiler reducen la oferta de vivienda en alquiler.",
+ "capa": "C4",
+ "magnitud": "Diseño H3-3 no disponible.",
+ "intervalo": "ver magnitud",
+ "cota": "—",
+ "literatura": "Jofre-Monseny et al. (2023): −4,5 % renta (T2 c3); −0,3 % contratos (no significativo). Diamond et al. (2019, San Francisco): calibración.",
+ "veredicto": "SIN EVIDENCIA SUFICIENTE",
+ "regla": "Según la capa y el signo de H3-3b (número de contratos nuevos).",
+ "limites": "El número de contratos registrados no es el stock ofertado; posible desvío a temporada no observado.",
+ "evidencia": [
+  "output/v3/C3/resultado.json"
+ ]
+}

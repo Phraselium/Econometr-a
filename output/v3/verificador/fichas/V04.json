@@ -1,0 +1,17 @@
+{
+ "id": "V04",
+ "tema": "Oferta y suelo",
+ "enunciado": "El problema de la vivienda se debe a la falta de oferta nueva y de suelo.",
+ "capa": "C1",
+ "magnitud": "Balance contable hogares − viviendas nuevas 2021-2025: 701.187 viviendas (rango entre fuentes [559.752; 969.059]); en 2012-2021 el signo no está determinado ([-1.015.321; 689.037]). El papel del suelo como moderador no es detectable con los datos (P-C4).",
+ "intervalo": "[559.752; 969.059] viviendas (2021-2025)",
+ "cota": "—",
+ "literatura": "Saiz (2010), Glaeser y Gyourko (2018): calibración; BdE (Informe Anual 2025, DOI no comprobado) ≈750 mil.",
+ "veredicto": "PARCIALMENTE",
+ "regla": "El desfase entre hogares y viviendas nuevas desde 2021 es un hecho C1 compatible con la afirmación; antes de 2021 el signo no está determinado y el componente «suelo» no tiene evidencia propia.",
+ "limites": "Un balance contable no mide demanda insatisfecha a cualquier precio; bajas del parque supuestas.",
+ "evidencia": [
+  "output/v3/PA/tablas/A1_tabla_unica_periodos.csv",
+  "output/v3/POT/potencia.md#P-C4"
+ ]
+}

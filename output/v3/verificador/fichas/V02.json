@@ -1,0 +1,17 @@
+{
+ "id": "V02",
+ "tema": "Grandes tenedores",
+ "enunciado": "Los fondos de inversión y los grandes tenedores son los responsables de la subida de precios y alquileres.",
+ "capa": "C4",
+ "magnitud": "Sin datos de titularidad por tamaño de tenedor (solicitud de transparencia al Catastro pendiente).",
+ "intervalo": "n/d",
+ "cota": "B3 en espera de datos (src/v3/ingesta_grandes_tenedores.py)",
+ "literatura": "Sin trabajo replicado para España con estos datos.",
+ "veredicto": "SIN EVIDENCIA SUFICIENTE",
+ "regla": "Sin datos de la cuota de grandes tenedores no se puede acotar su contribución.",
+ "limites": "La ingesta está preparada; la cota se calculará con el esquema de B1 cuando lleguen los datos.",
+ "evidencia": [
+  "docs/v3/solicitudes_transparencia.md",
+  "output/v3/PB/grandes_tenedores.json"
+ ]
+}

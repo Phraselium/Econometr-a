@@ -1,0 +1,16 @@
+{
+ "id": "V14",
+ "tema": "Compradores extranjeros",
+ "enunciado": "Los compradores extranjeros encarecen la vivienda en España.",
+ "capa": "C1",
+ "magnitud": "Cuota de compraventas por personas de nacionalidad extranjera 2023-2025: [9,6; 15,0] % (MIVAU 9,6-11,0 %; Registradores 13,8-15,0 %). Su efecto sobre el precio no se ha estimado.",
+ "intervalo": "[9,6; 15,0] % de las compraventas",
+ "cota": "—",
+ "literatura": "v2 (BV): sin efecto identificado.",
+ "veredicto": "SIN EVIDENCIA SUFICIENTE",
+ "regla": "Hay un hecho C1 sobre su peso, pero ningún diseño sobre su efecto en el precio.",
+ "limites": "La cuota incluye residentes extranjeros; la de no residentes es menor y se concentra en zonas costeras.",
+ "evidencia": [
+  "data/processed (nacional_q_v2 vía holdout.load_full)"
+ ]
+}

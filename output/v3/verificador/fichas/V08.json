@@ -1,0 +1,17 @@
+{
+ "id": "V08",
+ "tema": "Viviendas vacías",
+ "enunciado": "Hay millones de viviendas vacías que se podrían movilizar para resolver el problema.",
+ "capa": "C1",
+ "magnitud": "Censo 2021: 3,83 millones de viviendas vacías (estimación por consumo eléctrico). Solo [27,5; 36,0] % de ellas están en los municipios del tercil alto de presión de precios.",
+ "intervalo": "[27,5; 36,0] % en el tercil alto de presión",
+ "cota": "—",
+ "literatura": "—",
+ "veredicto": "PARCIALMENTE",
+ "regla": "La cifra de millones es un hecho C1, pero la mayor parte no está donde sube el precio; la fracción movilizable es un supuesto (P-D).",
+ "limites": "Vacía por consumo eléctrico incluye viviendas en venta, en obras o en herencias; independencia parcial de las dos medidas.",
+ "evidencia": [
+  "output/v3/PA/hechos.json#A3",
+  "output/v3/PD/resultados.json"
+ ]
+}

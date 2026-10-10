@@ -1,0 +1,14 @@
+{
+ "id": "V10",
+ "tema": "Fiscalidad",
+ "enunciado": "Bajar el ITP o el IVA de la vivienda la abarataría para los compradores.",
+ "capa": "C4",
+ "magnitud": "Sin diseño propio; la incidencia depende de la elasticidad de la oferta (no estimada aquí).",
+ "intervalo": "n/d",
+ "cota": "—",
+ "literatura": "Sin trabajo de incidencia verificado incorporado.",
+ "veredicto": "SIN EVIDENCIA SUFICIENTE",
+ "regla": "Con oferta poco elástica, parte de la rebaja se traslada al precio; sin estimación, no se puede cuantificar.",
+ "limites": "Los cambios autonómicos del ITP permitirían un diseño de diferencias (no realizado).",
+ "evidencia": []
+}

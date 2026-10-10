@@ -1,0 +1,17 @@
+{
+ "id": "V06",
+ "tema": "Topes de alquiler",
+ "enunciado": "Los topes al precio del alquiler bajan los alquileres.",
+ "capa": "C4",
+ "magnitud": "Diseño H3-3 no disponible.",
+ "intervalo": "ver magnitud",
+ "cota": "—",
+ "literatura": "Jofre-Monseny et al. (2023): −4,5 % renta (T2 c3).",
+ "veredicto": "SIN EVIDENCIA SUFICIENTE",
+ "regla": "Según la capa y el signo de H3-3a (topes de la Ley 11/2020 en los contratos nuevos).",
+ "limites": "Un solo episodio (Cataluña 2020-2022, 16 meses); validación sellada por fuente (SERPAVI), no independiente.",
+ "evidencia": [
+  "output/v3/C3/resultado.json",
+  "output/v3/C3/tabla_replicacion_jms.csv"
+ ]
+}

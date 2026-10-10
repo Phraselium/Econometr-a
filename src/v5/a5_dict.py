@@ -128,6 +128,10 @@ ALIAS_N = {"N5": "I12", "N6": "I05", "N7": "I10", "N8": "I02", "N9": "I06-I09"}
 # Direccion: derogar/reducir si en la ventana aparece un verbo de supresion; I14 ademas con verbos de paralizacion.
 NEG = (r"deroga|suprim|eliminar|eliminaci|supress|derogaci|revoca|dejar sin efecto|acabar[ea]mos con|poner fin|pondremos fin|"
        r"derogarem|suprimir|abolir|abolici|retirar")
-NEG_I14 = NEG + r"|paraliz|suspen|moratoria|prohib\w+ (?:de )?(?:los )?(?:desahucios|desalojos|lanzamientos)|parar los desahucios|frenar (?:los )?desahucios|evitar (?:los )?desahucios"
+NEG_I14 = NEG
+# Verbos de paralizacion en I14: ambiguos (describen medidas existentes o propuestas); se marcan 'revisar' sin decidir.
+AMBIG_I14 = r"paraliz|suspen|moratoria|prohib\w+ (?:de )?(?:los )?(?:desahucios|desalojos|lanzamientos)|parar los desahucios|frenar (?:los )?desahucios|evitar (?:los )?desahucios"
+# Ventana (caracteres a cada lado del termino) para buscar el verbo de supresion.
+WIN = 70
 # Terminos que no son 'instrumento' cuando el instrumento es el propio rotulo (p.ej. I14 'ocupacion ilegal' se codifica a favor).
 CONTEXT_REQ = {"I06", "I08", "I09", "I15", "I18", "I29", "I11", "I24", "I21", "I22", "N1", "N2", "N3", "I25", "I28"}

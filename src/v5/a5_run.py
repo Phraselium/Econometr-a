@@ -14,7 +14,7 @@ from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from a5_dict import ALIAS_N, CONTEXT_REQ, D, NEG, NEG_I14, V  # noqa: E402
+from a5_dict import ALIAS_N, AMBIG_I14, CONTEXT_REQ, D, NEG, NEG_I14, V, WIN  # noqa: E402
 
 SEED = 20261010
 random.seed(SEED)
@@ -70,8 +70,11 @@ def cita(raw, s, e, n=40):
 
 
 def direccion(ins, win):
-    rx = NEG_I14 if ins == "I14" else NEG
-    return "derogar/reducir" if re.search(rx, win) else "a favor/ampliar"
+    if re.search(NEG_I14 if ins == "I14" else NEG, win):
+        return "derogar/reducir"
+    if ins == "I14" and re.search(AMBIG_I14, win):
+        return "revisar"
+    return "a favor/ampliar"
 
 
 def main():
@@ -99,7 +102,7 @@ def main():
                         if a in seen:
                             continue
                         seen.add(a)
-                        win = n[max(a, m.start() - 160):min(b, m.end() + 160)]
+                        win = n[max(a, m.start() - WIN):m.end()]
                         dr = direccion(ins, win)
                         cnt[(d["doc_id"], ins)][dr].add((pno, a))
                         medidas.append((d["doc_id"], ins, dr, c, pno, "si", metodo, a))
@@ -124,7 +127,7 @@ def main():
     docs_cota = {d["doc_id"] for d in inv if "resumen" in d["tipo"]}
     rec = []
     for ins in D:
-        def docs(dr, cl):
+        def docs(dr, cl):  # noqa: E306
             return {k[0] for k, v in cnt.items() if k[1] == ins and v[dr] and clase[k[0]] == cl}
         fav, con = docs("a favor/ampliar", "propuesta"), docs("derogar/reducir", "propuesta")
         nor = docs("a favor/ampliar", "norma") | docs("derogar/reducir", "norma")
@@ -199,7 +202,7 @@ def diccionario(inv, estado):
          "## Reglas", "",
          "- Unidad: frase (delimitada por . ; ! ? o vineta) que contiene el termino; una fila por documento x instrumento x direccion x pagina (primera frase). Las paginas son indices del PDF (no la numeracion impresa).",
          "- Instrumentos con contexto obligatorio (hay palabra de vivienda/alquiler/hipoteca/suelo a +-250 caracteres): " + ", ".join(sorted(CONTEXT_REQ)) + ".",
-         "- Direccion, regla de v4: `a favor/ampliar` por defecto; `derogar/reducir` si en la frase (+-160 caracteres del termino) aparece un verbo de supresion: `" + NEG + "`. Para I14 (desalojos) se anaden verbos de paralizacion: `paraliz|suspen|moratoria|prohib|parar/frenar/evitar desahucios`, porque reducen el instrumento tal como se define en v4 (acortar desalojos).",
+         "- Direccion, regla de v4: `a favor/ampliar` por defecto; `derogar/reducir` si en la frase (hasta " + str(WIN) + " caracteres antes del termino, incluido este) aparece un verbo de supresion: `" + NEG + "`. En I14 (desalojos) los verbos de paralizacion/suspension (`" + AMBIG_I14 + "`) dan `revisar`: pueden describir una medida existente o una propuesta y no se decide automaticamente.",
          "- Alias N de la matriz v4: " + "; ".join(f"{k}={v}" for k, v in ALIAS_N.items()) + ". No se duplican busquedas.",
          "- I17 e I23 no tienen definicion en `docs/v4/instrumentos.md`: no se buscan (registrado como hueco).",
          "- Limites: es una busqueda de candidatos. Una coincidencia no es una medida validada (ver `output/v5/A5/validacion_precision.csv`); una medida redactada sin ninguno de los terminos no se detecta (recall medido contra v4 en `docs/v5/programas/conciliacion_v4.csv`).", "",

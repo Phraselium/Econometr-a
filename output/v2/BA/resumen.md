@@ -1,17 +1,17 @@
 # BA - Alquiler: resumen (fase de entrenamiento; muestra sellada NO evaluada)
 
-Nivel de evidencia global: **ASOCIACIÓN ROBUSTA** (provisional), solo para el componente población 20-34; asociación, no causalidad.
-Contribuciones por periodo y turismo: **EXPLORATORIO**. Muestra: 49 provincias, 2008Q1-2024Q2 (N=3234).
+Nivel de evidencia de H1: **EXPLORATORIO** (no confirmada: falla la conjunción; p_H1 intersección-unión unilateral = 0.850). El componente población 20-34 es un resultado parcial EXPLORATORIO (sobrevive a Holm intra-H1 y a las submuestras, no pre-registrado por separado). Asociación, no causalidad; la evaluación sellada está pendiente y no puede elevar H1 a ROBUSTA.
+Contribuciones por periodo (descomposición contable, no atribución causal) y turismo: **EXPLORATORIO**. Muestra: 49 provincias, 2008Q1-2024Q2 (N=3185).
 Cifras generadas por src/v2/ba_run.py (output/v2/BA/*.csv); 50 filas en registro.csv.
 
 ## H1 (pre-registrada)
 Δ4 ln IPC alquiler sobre Δ4 ln pob 20-34, Δ4 ln pob extranjera, Δ4 ln ocupados; FE de provincia y trimestre; EE cluster provincia.
 
-| variable | coef | IC95 % (t, 48 gl) | p cluster | p wild bootstrap (Webb, 9.999) | p Holm (2 contrastes clave) |
+| variable | coef | IC95 % (t, 48 gl) | p cluster | p wild bootstrap (Webb, 9.999) | p Holm intra-H1 (2 contrastes) |
 |---|---|---|---|---|---|
-| pob 20-34 | 0.145 | [0.043; 0.248] | 0.0065 | 0.0094 | 0.0188 |
-| pob extranjera | -0.018 | [-0.054; 0.017] | 0.2999 | 0.3035 | 0.3035 |
-| ocupados | -0.0012 | [-0.011; 0.008] | 0.7978 | 0.7961 | - |
+| pob 20-34 | 0.149 | [0.046; 0.252] | 0.0056 | 0.0077 | 0.0154 |
+| pob extranjera | -0.018 | [-0.054; 0.017] | 0.2979 | 0.3001 | 0.3001 |
+| ocupados | -0.0014 | [-0.011; 0.008] | 0.7788 | 0.7778 | - |
 
 Lectura: 1 pp más de crecimiento interanual de la población de 20-34 años se asocia con ~0.15 pp más de crecimiento del
 alquiler (diferencial entre provincias, condicionado a efectos de tiempo). **La parte "extranjera" de H1 no se confirma**: coeficiente
@@ -21,7 +21,7 @@ pre-registrada (joven Y extranjera, ambos +) **no queda confirmada** en entrenam
 Robustez (h1_robustez.csv): el coeficiente de 20-34 es positivo en todas las submuestras (sin COVID, 2008-2019, desde 2014, sin Madrid/Barcelona,
 sin las 5 mayores, solo T1 con población observada, 19 salidas de una CCAA) y en el panel anual (coef 0.149, p bootstrap 0.0042);
 el de extranjera es negativo o nulo en todas (anual: -0.015). Sin efectos de tiempo (la variante usa también
-la serie temporal común) la extranjera pasa a 0.135 (p <0.001): la
+la serie temporal común) la extranjera pasa a 0.137 (p <0.001): la
 asociación temporal agregada con la población extranjera no se traslada a diferencias entre provincias.
 **Aviso de datos**: la población (1 de enero) está interpolada log-linealmente en T2-T4 (marcada); la robustez T1 y anual evita la interpolación y coincide.
 
@@ -30,11 +30,11 @@ Coeficientes H1 por periodo (EE cluster; q = BH sobre 12 contrastes):
 
 | variable | P1 2008-13 | P2 2014-19 | P3 2020-21 | P4 2022-24Q2 |
 |---|---|---|---|---|
-| pob 20-34 | 0.172 (0.067; q=0.08) | 0.211 (0.060; q=0.01) | 0.175 (0.073; q=0.08) | 0.072 (0.055; q=0.29) |
-| pob extranjera | -0.037 (0.026; q=0.29) | -0.022 (0.027; q=0.46) | -0.041 (0.030; q=0.29) | -0.012 (0.031; q=0.70) |
-| ocupados | -0.021 (0.012; q=0.20) | 0.012 (0.007; q=0.20) | 0.010 (0.008; q=0.29) | 0.012 (0.015; q=0.46) |
+| pob 20-34 | 0.171 (0.067; q=0.07) | 0.212 (0.060; q=0.01) | 0.178 (0.073; q=0.07) | 0.081 (0.055; q=0.26) |
+| pob extranjera | -0.038 (0.026; q=0.26) | -0.022 (0.027; q=0.46) | -0.039 (0.031; q=0.30) | -0.005 (0.030; q=0.87) |
+| ocupados | -0.021 (0.012; q=0.19) | 0.012 (0.007; q=0.19) | 0.010 (0.008; q=0.30) | 0.011 (0.014; q=0.46) |
 
-Igualdad entre periodos (Wald, F): pob 20-34 p=0.039; extranjera p=0.627; ocupados p=0.139.
+Igualdad entre periodos (Wald, F): pob 20-34 p=0.064; extranjera p=0.514; ocupados p=0.129.
 La asociación con 20-34 es positiva en P1-P3 y se debilita en P4 (q alto), cuando el alquiler crece más en la muestra.
 
 Contribuciones (C1: sin efectos de tiempo, FE provincia + trimestre del año, coeficientes por periodo; contribución = β_P × (media_P(x) − media muestral de x);
@@ -42,10 +42,10 @@ IC95 con EE cluster, que NO recogen shocks comunes; tipos, regulación y expecta
 
 | periodo | Δ4 ln alquiler (media periodo − media muestra) | demografía | empleo |
 |---|---|---|---|
-| P1 2008Q1-2013Q4 | 0.54 pp | -0.07 pp [-0.14 pp; -0.00 pp] | 0.16 pp [0.05 pp; 0.27 pp] |
-| P2 2014Q1-2019Q4 | -0.79 pp | -0.41 pp [-0.49 pp; -0.33 pp] | -0.01 pp [-0.04 pp; 0.03 pp] |
-| P3 2020Q1-2021Q4 | -0.19 pp | 0.24 pp [0.05 pp; 0.43 pp] | 0.00 pp [-0.00 pp; 0.00 pp] |
-| P4 2022Q1-2024Q2 | 0.77 pp | 0.68 pp [0.51 pp; 0.85 pp] | 0.01 pp [-0.05 pp; 0.06 pp] |
+| P1 2008Q1-2013Q4 | 0.55 pp | -0.05 pp [-0.12 pp; 0.01 pp] | 0.16 pp [0.05 pp; 0.27 pp] |
+| P2 2014Q1-2019Q4 | -0.78 pp | -0.39 pp [-0.47 pp; -0.32 pp] | -0.00 pp [-0.04 pp; 0.03 pp] |
+| P3 2020Q1-2021Q4 | -0.18 pp | 0.25 pp [0.06 pp; 0.45 pp] | 0.00 pp [-0.00 pp; 0.00 pp] |
+| P4 2022Q1-2024Q2 | 0.77 pp | 0.70 pp [0.52 pp; 0.87 pp] | 0.01 pp [-0.05 pp; 0.07 pp] |
 
 Oferta (terminadas/1.000 hab.), coste de uso y PIB pc (anual): contribuciones_por_periodo.csv (C2 trimestral desde 2010Q4; C4 anual). Contribuciones pequeñas
 (del orden de décimas de pp) y, para oferta, con signo + en P1 (contrario a la literatura; posible respuesta de la construcción al alquiler). El coste de

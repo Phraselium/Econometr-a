@@ -96,7 +96,12 @@ def escribir(OUT, r_h1, holm, signos, robdf, k1, per_t, per_w, cont, c2, c4, tur
     ok_ext = bool(holm["d4_ln_pob_extranj"] < 0.05 and co["d4_ln_pob_extranj"] > 0 and
                   signos.get("d4_ln_pob_extranj", False) and signos.get("d_ln_pob_extranj", False))
     h1_conj = ok_pob and ok_ext
-    nivel = "ASOCIACIÓN ROBUSTA" if (ok_pob or ok_ext) else "EXPLORATORIO"
+    # H1 conjunta: contraste de intersección-unión (p = máx. de los p unilaterales en la dirección +)
+    p_uni = {v: (pbt[v] / 2 if co[v] > 0 else 1 - pbt[v] / 2) for v in bl.CLAVE_H1}
+    p_iut = float(max(p_uni.values()))
+    # criterio uniforme: con evaluación sellada pendiente el nivel máximo es EXPLORATORIO
+    nivel = "EXPLORATORIO"
+    candidata = bool(p_iut <= 0.05 / 7 and h1_conj)
     best = tab[tab["primario"]].iloc[0]
     mejora_oos = bool(best["rmse"] < best["rmse_AR4"] and best["p_vs_AR4"] < 0.05)
 
@@ -118,6 +123,9 @@ def escribir(OUT, r_h1, holm, signos, robdf, k1, per_t, per_w, cont, c2, c4, tur
                     "holm_H1_clave": {k: float(v) for k, v in holm.items()}},
         nivel_evidencia=nivel,
         diagnosticos={"r2_within": float(r_h1["r2_within"]), "clusters": int(r_h1["G"]),
+                      "p_H1_IUT_unilateral": p_iut, "p_unilateral_componentes": {k: float(v) for k, v in p_uni.items()},
+                      "candidata_a_robusta": candidata,
+                      "H1_estado": "NO CONFIRMADA en entrenamiento: falla la conjunción (extranjera no es +)",
                       "criterio_robustez_pob_20_34": ok_pob, "criterio_robustez_pob_extranj": ok_ext,
                       "H1_conjuncion_confirmada_en_entrenamiento": h1_conj,
                       "signos_positivos_en_todas_las_submuestras": {k: bool(v) for k, v in signos.items()},
@@ -128,11 +136,12 @@ def escribir(OUT, r_h1, holm, signos, robdf, k1, per_t, per_w, cont, c2, c4, tur
                        "p_vs_ar4": float(best["p_vs_AR4"]), "dm_vs_ecm_v1": float(best["dm_vs_ECM_v1"]),
                        "p_vs_ecm_v1": float(best["p_vs_ECM_v1"]), "mejora_significativa_vs_AR4": mejora_oos,
                        "validacion": "bloques de 4 orígenes, primer test 2012Q1, h=4, embargo 4, misma muestra"},
-        notas="Asociación, sin identificación causal. ASOCIACIÓN ROBUSTA se aplica SOLO al componente población 20-34 y es "
-              "PROVISIONAL (falta la evaluación sellada de H1: RMSE vs AR(4)). La conjunción de H1 (joven Y extranjera) NO se "
-              "confirma en entrenamiento: la población extranjera no es significativa y su signo es negativo con efectos de "
-              "tiempo. El modelo con variables de H1 no mejora significativamente al AR(4) fuera de muestra: no se presenta "
-              "como explicación predictiva. Turismo y contribuciones por periodo: EXPLORATORIO (causalidad inversa posible).")
+        notas="Asociación, sin identificación causal. H1 (conjunta) = EXPLORATORIO, no confirmada: contraste de intersección-unión "
+              "p_H1_IUT (unilateral +) alto porque la población extranjera tiene signo negativo. El componente población 20-34 "
+              "(Holm intra-H1 sobre 2 contrastes; positivo en todas las submuestras y en la versión anual) es un resultado "
+              "parcial EXPLORATORIO, no pre-registrado por separado. La evaluación sellada de H1 (RMSE vs AR(4)) está pendiente y "
+              "no puede elevar H1 a ROBUSTA. El modelo con variables de H1 no mejora significativamente al AR(4) en "
+              "entrenamiento (informativo). Turismo y contribuciones por periodo: EXPLORATORIO (causalidad inversa posible).")
 
     # ---------------- resumen.md
     c = cont[(cont["spec"] == "C1_Q_H1vars_sinFEt") & (cont["referencia"] == "media_muestra")]
@@ -168,14 +177,14 @@ def escribir(OUT, r_h1, holm, signos, robdf, k1, per_t, per_w, cont, c2, c4, tur
     cvv = cr(cv, "P4", "turismo_VUT")
     md = f"""# BA - Alquiler: resumen (fase de entrenamiento; muestra sellada NO evaluada)
 
-Nivel de evidencia global: **{nivel}** (provisional), solo para el componente población 20-34; asociación, no causalidad.
-Contribuciones por periodo y turismo: **EXPLORATORIO**. Muestra: 49 provincias, 2008Q1-2024Q2 (N={r_h1['n']}).
+Nivel de evidencia de H1: **{nivel}** (no confirmada: falla la conjunción; p_H1 intersección-unión unilateral = {p_iut:.3f}). El componente población 20-34 es un resultado parcial EXPLORATORIO (sobrevive a Holm intra-H1 y a las submuestras, no pre-registrado por separado). Asociación, no causalidad; la evaluación sellada está pendiente y no puede elevar H1 a ROBUSTA.
+Contribuciones por periodo (descomposición contable, no atribución causal) y turismo: **EXPLORATORIO**. Muestra: 49 provincias, 2008Q1-2024Q2 (N={r_h1['n']}).
 Cifras generadas por src/v2/ba_run.py (output/v2/BA/*.csv); {len(LOG.reg.rows)} filas en registro.csv.
 
 ## H1 (pre-registrada)
 Δ4 ln IPC alquiler sobre Δ4 ln pob 20-34, Δ4 ln pob extranjera, Δ4 ln ocupados; FE de provincia y trimestre; EE cluster provincia.
 
-| variable | coef | IC95 % (t, 48 gl) | p cluster | p wild bootstrap (Webb, 9.999) | p Holm (2 contrastes clave) |
+| variable | coef | IC95 % (t, 48 gl) | p cluster | p wild bootstrap (Webb, 9.999) | p Holm intra-H1 (2 contrastes) |
 |---|---|---|---|---|---|
 | pob 20-34 | {co['d4_ln_pob_20_34']:.3f} | [{ic['d4_ln_pob_20_34'][0]:.3f}; {ic['d4_ln_pob_20_34'][1]:.3f}] | {r_h1['p'][0]:.4f} | {pbt['d4_ln_pob_20_34']:.4f} | {holm['d4_ln_pob_20_34']:.4f} |
 | pob extranjera | {co['d4_ln_pob_extranj']:.3f} | [{ic['d4_ln_pob_extranj'][0]:.3f}; {ic['d4_ln_pob_extranj'][1]:.3f}] | {r_h1['p'][1]:.4f} | {pbt['d4_ln_pob_extranj']:.4f} | {holm['d4_ln_pob_extranj']:.4f} |

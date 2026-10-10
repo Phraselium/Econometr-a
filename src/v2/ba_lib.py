@@ -32,6 +32,7 @@ PERIODOS = {"P1": ("2008Q1", "2013Q4"), "P2": ("2014Q1", "2019Q4"),
 PERIODOS_A = {"P1": (2008, 2013), "P2": (2014, 2019), "P3": (2020, 2021), "P4": (2022, 2024)}
 H1_X = ["d4_ln_pob_20_34", "d4_ln_pob_extranj", "d4_ln_ocupados"]
 H1_Y = "d4_ln_ipc_alquiler"
+CLAVE_H1 = ["d4_ln_pob_20_34", "d4_ln_pob_extranj"]
 WEBB = np.array([-np.sqrt(1.5), -1.0, -np.sqrt(0.5), np.sqrt(0.5), 1.0, np.sqrt(1.5)])
 
 

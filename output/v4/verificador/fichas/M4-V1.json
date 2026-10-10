@@ -1,0 +1,18 @@
+{
+ "id": "M4-V1",
+ "tema": "Compradores extranjeros (sustituye a V14)",
+ "enunciado": "Los compradores extranjeros encarecen la vivienda en España.",
+ "capa": "C1",
+ "magnitud": "Peso en las compraventas: MIVAU 16,9 % en 2025 (residentes 10,1 %, no residentes 6,8 %); Notariado, vivienda libre, 18,8 % en 2025 (residentes 11,6 %, no residentes 7,2 %); Registradores 13,8-15,0 % en 2023-2025. El efecto sobre el precio no se ha estimado.",
+ "intervalo": "[13,8; 18,8] % de las compraventas (rango entre fuentes, por definiciones distintas)",
+ "cota": "— (sin cota C2 de precio)",
+ "literatura": "v2 (BV): sin efecto identificado; el peso es un hecho C1, no un efecto.",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Hay un hecho C1 con tres fuentes sobre el peso, pero ningún diseño ni cota C2 sobre el efecto en el precio.",
+ "limites": "Las fuentes difieren en cobertura (MIVAU: todas las transmisiones; Notariado: operaciones de vivienda libre; Registradores: compraventas registradas). Registradores no separa residentes de no residentes. La concentración en costa e islas es un hecho descriptivo; no implica efecto.",
+ "evidencia": [
+  "output/v4/M4/tablas/extranjeros_evolucion_nacional.csv",
+  "output/v4/M4/tablas/extranjeros_provincias_2023_2025.csv",
+  "output/v4/M4/tablas/extranjeros_concentracion_zonas.csv"
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "id": "M4-V2",
+ "tema": "Empresas en el mercado del alquiler",
+ "enunciado": "Las empresas dominan el mercado del alquiler.",
+ "capa": "C4",
+ "magnitud": "Flujo: las personas jurídicas son el 11,3 % de los compradores y el 24,7 % de los vendedores en las compraventas de vivienda (2024, INE ETDP; fuente única). Stock de viviendas en alquiler por tipo de titular y contratos nuevos por tipo de arrendador: sin dato.",
+ "intervalo": "—",
+ "cota": "—",
+ "literatura": "No revisada en esta ficha.",
+ "veredicto": "NO ANALIZADA: FALTAN DATOS",
+ "regla": "Faltan titularidad (Catastro no publica titulares por tipo), arrendador en las fianzas de Incasòl y tipo de arrendador en el Censo. La cuota de compra no mide el alquiler.",
+ "limites": "El único dato por tipo de persona es de compraventas (ETDP), no de alquiler ni de stock; capa C4 declarada.",
+ "evidencia": [
+  "output/v4/M4/tablas/flujo_compraventas_comprador_pj_etdp.csv",
+  "output/v4/M4/tablas/tenencia_censo2021.csv",
+  "output/v4/M4/tablas/flujo_alquiler_incasol_contratos.csv"
+ ]
+}

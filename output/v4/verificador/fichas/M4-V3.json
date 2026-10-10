@@ -1,0 +1,19 @@
+{
+ "id": "M4-V3",
+ "tema": "Viviendas vacías, de uso esporádico y turísticas",
+ "enunciado": "Hay muchas viviendas vacías o de uso esporádico frente a las turísticas.",
+ "capa": "C1 (turísticas) / C4 (vacías y esporádicas: fuente única)",
+ "magnitud": "España: 3.828.307 vacías (14,4 % del parque) y 2.517.628 de uso esporádico (9,5 %) en el Censo 2021 (método de consumo eléctrico); 341.001 turísticas en mayo de 2026 (1,3 % del parque 2021). Ratio (vacías + esporádicas) / turísticas: 18,6.",
+ "intervalo": "—",
+ "cota": "—",
+ "literatura": "No revisada en esta ficha.",
+ "veredicto": "RESPALDADA",
+ "regla": "Respaldada en el sentido relativo: las vacías y esporádicas suman un orden de magnitud más que las turísticas. «Muchas» no tiene umbral.",
+ "limites": "Vacía y esporádica se infieren del consumo eléctrico (INE, experimental); las turísticas son de otra fecha y pertenecen al parque principal o no principal (no suman). El registro de la Generalitat Valenciana y el INE difieren en turísticas (ver vut_ine_frente_registro_gva.csv). No se estima ningún efecto.",
+ "evidencia": [
+  "output/v4/M4/tablas/stock_uso_nacional.csv",
+  "output/v4/M4/tablas/stock_uso_provincia.csv",
+  "output/v4/M4/tablas/stock_uso_ciudades.csv",
+  "output/v4/M4/tablas/vut_ine_frente_registro_gva.csv"
+ ]
+}

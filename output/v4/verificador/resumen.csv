@@ -13,3 +13,7 @@ V11,Vivienda pública,Construir vivienda pública resolvería el problema de la 
 V12,Tipos de interés,Los tipos de interés son la causa principal de la subida de los precios de la vivienda (≥50 % de la subida).,"ANALIZADA, NO CONCLUYENTE",C4
 V13,Burbuja,Hay una burbuja en el precio de la vivienda en España.,"ANALIZADA, NO CONCLUYENTE",C4
 V14,Compradores extranjeros,Los compradores extranjeros encarecen la vivienda en España.,"ANALIZADA, NO CONCLUYENTE",C1
+M3-V1,Suelo disponible,Hay suelo de sobra para construir.,PARCIALMENTE,C4
+M4-V1,Compradores extranjeros (sustituye a V14),Los compradores extranjeros encarecen la vivienda en España.,"ANALIZADA, NO CONCLUYENTE",C1
+M4-V2,Empresas en el mercado del alquiler,Las empresas dominan el mercado del alquiler.,NO ANALIZADA: FALTAN DATOS,C4
+M4-V3,"Viviendas vacías, de uso esporádico y turísticas",Hay muchas viviendas vacías o de uso esporádico frente a las turísticas.,RESPALDADA,C1 (turísticas) / C4 (vacías y esporádicas: fuente única)

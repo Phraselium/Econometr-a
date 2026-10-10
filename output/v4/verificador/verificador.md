@@ -18,6 +18,10 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | V12 | Los tipos de interés son la causa principal de la subida de los precios de la vivienda (≥50 % de la subida). | ANALIZADA, NO CONCLUYENTE | C4 |
 | V13 | Hay una burbuja en el precio de la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
 | V14 | Los compradores extranjeros encarecen la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C1 |
+| M3-V1 | Hay suelo de sobra para construir. | PARCIALMENTE | C4 |
+| M4-V1 | Los compradores extranjeros encarecen la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C1 |
+| M4-V2 | Las empresas dominan el mercado del alquiler. | NO ANALIZADA: FALTAN DATOS | C4 |
+| M4-V3 | Hay muchas viviendas vacías o de uso esporádico frente a las turísticas. | RESPALDADA | C1 (turísticas) / C4 (vacías y esporádicas: fuente única) |
 
 ## V01 · Viviendas turísticas
 
@@ -250,3 +254,67 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Regla del veredicto | Hay un hecho C1 sobre su peso, pero ningún diseño sobre su efecto en el precio. v4: Hay un hecho C1 sobre su peso en las compraventas (M4 lo amplía) y ningún diseño sobre el precio. |
 | Límites | La cuota incluye residentes extranjeros; la de no residentes es menor y se concentra en zonas costeras. |
 | Evidencia | data/processed (nacional_q_v2 vía holdout.load_full) |
+
+## M3-V1 · Suelo disponible
+
+**Afirmación:** Hay suelo de sobra para construir.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **PARCIALMENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | Solares catastrales (uso «solar») 2026: 3.092.393 unidades urbanas; con 5/10/20 viviendas por solar cubren el déficit 2021-2025 (mediana M1) en 92 %/92 %/92 % de las 52 provincias con déficit positivo. La brecha precio-coste no se usa en esta ficha: el coste en nivel es un supuesto. |
+| Intervalo | cobertura provincial [92 %; 92 %] según viviendas por solar (5 a 20) |
+| Cota | — |
+| Literatura | Glaeser y Gyourko (2018, VERIFICADA): precio por encima del coste de construcción más suelo como indicio de restricción de oferta; sin cifra citable para España. |
+| Regla del veredicto | PROVISIONAL: depende del déficit de M1, en corrección al generar este fichero; se recalcula al ejecutar m3_run. Regla fijada antes de calcular: PARCIALMENTE si los solares cubren el déficit en >= 80 % de las provincias con 5 viviendas por solar; NO RESPALDADA si en < 50 % con 20; en otro caso, ANALIZADA, NO CONCLUYENTE. RESPALDADA no es posible: la única fuente de suelo (Catastro) no distingue suelo urbanizado, clasificado ni disponible, y el SIU no es accesible. |
+| Límites | El uso «solar» catastral es suelo urbano sin edificar, no suelo urbanizable ni edificabilidad; SIU inaccesible (docs/v4/fuentes_fallidas.md). Catastro no cubre territorios forales. El coste de construcción en nivel no tiene fuente verificable. |
+| Evidencia | output/v4/M3/clasificacion_provincias.csv, output/v4/M3/tablas/M3_solares_nacional_catastro.csv, data/raw/v4/catastro_solares_municipios.csv.gz |
+
+## M4-V1 · Compradores extranjeros (sustituye a V14)
+
+**Afirmación:** Los compradores extranjeros encarecen la vivienda en España.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C1 |
+| Magnitud | Peso en las compraventas: MIVAU 16,9 % en 2025 (residentes 10,1 %, no residentes 6,8 %); Notariado, vivienda libre, 18,8 % en 2025 (residentes 11,6 %, no residentes 7,2 %); Registradores 13,8-15,0 % en 2023-2025. El efecto sobre el precio no se ha estimado. |
+| Intervalo | [13,8; 18,8] % de las compraventas (rango entre fuentes, por definiciones distintas) |
+| Cota | — (sin cota C2 de precio) |
+| Literatura | v2 (BV): sin efecto identificado; el peso es un hecho C1, no un efecto. |
+| Regla del veredicto | Hay un hecho C1 con tres fuentes sobre el peso, pero ningún diseño ni cota C2 sobre el efecto en el precio. |
+| Límites | Las fuentes difieren en cobertura (MIVAU: todas las transmisiones; Notariado: operaciones de vivienda libre; Registradores: compraventas registradas). Registradores no separa residentes de no residentes. La concentración en costa e islas es un hecho descriptivo; no implica efecto. |
+| Evidencia | output/v4/M4/tablas/extranjeros_evolucion_nacional.csv, output/v4/M4/tablas/extranjeros_provincias_2023_2025.csv, output/v4/M4/tablas/extranjeros_concentracion_zonas.csv |
+
+## M4-V2 · Empresas en el mercado del alquiler
+
+**Afirmación:** Las empresas dominan el mercado del alquiler.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **NO ANALIZADA: FALTAN DATOS** |
+| Capa de la evidencia | C4 |
+| Magnitud | Flujo: las personas jurídicas son el 11,3 % de los compradores y el 24,7 % de los vendedores en las compraventas de vivienda (2024, INE ETDP; fuente única). Stock de viviendas en alquiler por tipo de titular y contratos nuevos por tipo de arrendador: sin dato. |
+| Intervalo | — |
+| Cota | — |
+| Literatura | No revisada en esta ficha. |
+| Regla del veredicto | Faltan titularidad (Catastro no publica titulares por tipo), arrendador en las fianzas de Incasòl y tipo de arrendador en el Censo. La cuota de compra no mide el alquiler. |
+| Límites | El único dato por tipo de persona es de compraventas (ETDP), no de alquiler ni de stock; capa C4 declarada. |
+| Evidencia | output/v4/M4/tablas/flujo_compraventas_comprador_pj_etdp.csv, output/v4/M4/tablas/tenencia_censo2021.csv, output/v4/M4/tablas/flujo_alquiler_incasol_contratos.csv |
+
+## M4-V3 · Viviendas vacías, de uso esporádico y turísticas
+
+**Afirmación:** Hay muchas viviendas vacías o de uso esporádico frente a las turísticas.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **RESPALDADA** |
+| Capa de la evidencia | C1 (turísticas) / C4 (vacías y esporádicas: fuente única) |
+| Magnitud | España: 3.828.307 vacías (14,4 % del parque) y 2.517.628 de uso esporádico (9,5 %) en el Censo 2021 (método de consumo eléctrico); 341.001 turísticas en mayo de 2026 (1,3 % del parque 2021). Ratio (vacías + esporádicas) / turísticas: 18,6. |
+| Intervalo | — |
+| Cota | — |
+| Literatura | No revisada en esta ficha. |
+| Regla del veredicto | Respaldada en el sentido relativo: las vacías y esporádicas suman un orden de magnitud más que las turísticas. «Muchas» no tiene umbral. |
+| Límites | Vacía y esporádica se infieren del consumo eléctrico (INE, experimental); las turísticas son de otra fecha y pertenecen al parque principal o no principal (no suman). El registro de la Generalitat Valenciana y el INE difieren en turísticas (ver vut_ine_frente_registro_gva.csv). No se estima ningún efecto. |
+| Evidencia | output/v4/M4/tablas/stock_uso_nacional.csv, output/v4/M4/tablas/stock_uso_provincia.csv, output/v4/M4/tablas/stock_uso_ciudades.csv, output/v4/M4/tablas/vut_ine_frente_registro_gva.csv |

@@ -32,3 +32,4 @@
 - Multiverso (324 especificaciones x variantes de déficit M1): margen 15/20/25 %; edificabilidad 0,8/1,2/1,6; coste 900/1.200/1.500 EUR/m2 (supuesto externo no verificado); suelo todos o >50.000 hab.; viviendas por solar 5/10/20. C2 si la clase modal aparece en >= 80 %.
 - Los umbrales no se fijaron con M1. m3_run lee M1 en ejecución; los recuentos son PROVISIONALES hasta corregir M1 (error de terminadas).
 - Municipios sin valor tasado propio usan el precio provincial (proxy, siempre C4). La capa efectiva se limita a la del déficit de M1.
+- M3, revisión: segundo intento de coste en nivel sin resultado. Licencias y visados del Boletín Online (BoletinOnline2 y BoletinOnline, orden 10000000) y el INE no traen presupuesto de ejecución material; el Catastro extraído no trae superficie construida, así que V_CONSTRUCCION/m2 no se puede calcular. Brecha y clasificación pasan a C4 («coste en nivel supuesto»); la ficha M3-V1 se apoya solo en solares y suelo.

@@ -155,3 +155,28 @@ Comprobado en compra M1:
 La frase del «Método» («se mide respecto a la media muestral … no respecto al origen del coste de uso») es, por tanto, incorrecta.
 
 Corrección: usar `(coste_uso_aprox − media muestral)·expo` como regresor de contribución, o calcular la contribución como β·[media_P − media muestral] de la variable agregada. Después hay que reejecutar, actualizar las filas de crédito/coste de uso de compra y verificar que los contrafactuales no cambian (son diferencias). Alquiler, contrafactuales y nacional no se ven afectados.
+
+## Verificación de C1 (commit `ca39974`)
+Comprobado en un clon aislado, sin red y a 1 hilo: `bd_run.py` sale con exit 0 y las salidas son idénticas a las versionadas (`git status` limpio). El `make models` completo de 77fe139 también terminó con exit 0.
+
+**La implementación es correcta:**
+- Estima con el regresor sin centrar (`Xraw`).
+- Mide la contribución con `(coste_uso − media muestral)·expo`.
+- Los contrafactuales no cambian, porque son diferencias.
+
+**Reconciliación de las cifras:** mis −0,42 y +1,72 eran solo el término `cu_x_expo`; el +0,13 y el +2,27 del agente son la familia completa, que incluye además las hipotecas (+0,548). En compra M1, P2-P4:
+
+| | Hipotecas | Término `cu_x_expo` | Familia completa |
+|---|---|---|---|
+| Antes (77fe139) | +0,55 | −0,42 | +0,13 |
+| Con C1 (ca39974) | +0,548 | +1,722 | +2,270 |
+
+No hay discrepancia.
+
+**Ajuste de texto obligatorio, sin reestimar:** la familia crédito/coste de uso de compra excluye 0 en M1 pero no en M2:
+- desde 2014: 2,27 [0,39; 4,81] en M1 frente a 0,03 [−3,26; 4,45] en M2;
+- desde 2020: 1,93 frente a −0,00.
+
+Hay que añadirla a «No robustos» y quitarla de «Lectura» como cifra destacada (línea 115 del resumen).
+
+**Veredicto final: APROBAR**, con ese ajuste de texto.

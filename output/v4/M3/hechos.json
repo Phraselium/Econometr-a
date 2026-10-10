@@ -2,7 +2,7 @@
  {
   "id": "M3-H-brecha-prov",
   "enunciado_neutro": "Brecha central precio - coste(1+margen) - suelo repercutido por provincia: rango [-734; 2208] EUR/m2; mayores [['Madrid', 2207.570833333333], ['Balears, Illes', 2046.963541666667], ['Gipuzkoa', 1666.6020833333332]]; menores [['Ciudad Real', -733.5854166666667], ['Jaén', -677.7802083333333], ['Cáceres', -612.8854166666666]]",
-  "capa": "C2",
+  "capa": "C4",
   "magnitud": -67.73020833333325,
   "unidad": "EUR/m2 (mediana provincial)",
   "intervalo": [
@@ -32,7 +32,7 @@
  {
   "id": "M3-H-clases-prov",
   "enunciado_neutro": "Clase modal por provincia: {'1 falta y hay suelo rentable': 0, '2 falta y brecha regulatoria': 18, '3 falta pero no rentable': 28, '4 no falta': 4, '5 falta, brecha moderada, solares insuficientes (clase añadida)': 0, '9 indeterminada (sin dato de solares)': 0}; estables (>=80 %): 8 de 52",
-  "capa": "C2",
+  "capa": "C4",
   "magnitud": 8,
   "unidad": "provincias estables",
   "intervalo": [

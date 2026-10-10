@@ -1,7 +1,7 @@
 codigo,mivau_total_2023_25,mivau_ext_residentes,mivau_ext_no_residentes,mivau_pct_ext,mivau_pct_no_res_sobre_ext,registradores_pct_ext_ponderado_2023_25,registradores_ext_n_2023_25,clave_nombre,zona
-01,11840.0,656.0,12.0,5.642,1.796,,0.0,araba/alava,interior
+01,11840.0,656.0,12.0,5.642,1.796,3.174,348.359,alava araba,interior
 02,13834.0,1046.0,43.0,7.872,3.949,2.482,302.694,albacete,interior
-03,166858.0,26490.0,57689.0,50.449,68.531,,0.0,alicante/alacant,costa
+03,166858.0,26490.0,57689.0,50.449,68.531,43.683,67049.466,alacant alicante,costa
 04,46943.0,7389.0,4181.0,24.647,36.137,18.924,8269.365,almeria,costa
 05,9996.0,617.0,21.0,6.383,3.292,3.672,278.848,avila,interior
 06,23241.0,816.0,55.0,3.748,6.315,1.527,310.806,badajoz,interior
@@ -10,7 +10,7 @@ codigo,mivau_total_2023_25,mivau_ext_residentes,mivau_ext_no_residentes,mivau_pc
 09,18133.0,1401.0,48.0,7.991,3.313,4.3,670.962,burgos,interior
 10,16673.0,662.0,63.0,4.348,8.69,2.083,268.431,caceres,interior
 11,53731.0,2951.0,1671.0,8.602,36.153,5.102,2487.37,cadiz,costa
-12,41254.0,5631.0,2474.0,19.647,30.524,,0.0,castellon/castello,costa
+12,41254.0,5631.0,2474.0,19.647,30.524,13.817,5250.148,castello castellon,costa
 13,20997.0,1597.0,33.0,7.763,2.025,4.652,872.645,ciudad real,interior
 14,31730.0,1002.0,268.0,4.003,21.102,1.936,545.094,cordoba,interior
 15,36735.0,1537.0,326.0,5.071,17.499,2.047,663.459,a coruna,costa
@@ -44,7 +44,7 @@ codigo,mivau_total_2023_25,mivau_ext_residentes,mivau_ext_no_residentes,mivau_pc
 43,50683.0,6915.0,2472.0,18.521,26.334,16.261,7681.951,tarragona,costa
 44,6161.0,718.0,19.0,11.962,2.578,4.037,184.945,teruel,interior
 45,42749.0,4656.0,90.0,11.102,1.896,5.913,2284.031,toledo,interior
-46,124510.0,19556.0,5262.0,19.933,21.202,,0.0,valencia/valencia,costa
+46,124510.0,19556.0,5262.0,19.933,21.202,13.423,15609.561,valencia valencia,costa
 47,21902.0,1233.0,39.0,5.808,3.066,4.211,831.179,valladolid,interior
 48,40191.0,1704.0,126.0,4.553,6.885,3.537,1273.47,bizkaia,costa
 49,6749.0,344.0,22.0,5.423,6.011,2.657,138.727,zamora,interior

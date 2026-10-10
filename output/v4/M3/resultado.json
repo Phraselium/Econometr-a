@@ -1,7 +1,7 @@
 {
  "rama": "M3",
  "pregunta": "¿Se puede construir donde hace falta? (suelo, brecha precio-coste, capacidad, clasificación)",
- "capa": "C2 (brecha y clase donde estable >= 80 %) / C4 (resto, solares, municipios)",
+ "capa": "C4 (coste en nivel supuesto, no verificado)",
  "datos": [
   "catastro_solares_municipios (v4)",
   "mivau_valor_tasado_*",
@@ -48,7 +48,7 @@
  },
  "ic95": null,
  "p_ajustado": null,
- "nivel_evidencia": "ASOCIACIÓN: cotas descriptivas con supuestos; sin lenguaje causal (C2/C4)",
+ "nivel_evidencia": "EXPLORATORIO (C4): brecha con coste supuesto; sin lenguaje causal",
  "diagnosticos": {
   "umbral_estabilidad": 0.8,
   "fdr": "no aplica: no hay contrastes de hipótesis",

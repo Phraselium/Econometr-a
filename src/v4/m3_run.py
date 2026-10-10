@@ -49,6 +49,8 @@ RATIO = [1.25, 1.5]
 VIV_SOLAR = [5, 10, 20]
 CENTRAL = dict(m=0.20, e=1.2, c=1200.0, s=0, r=1.25, v=10)
 UMBRAL_C2 = 0.80
+# Sin fuente verificable de coste en nivel (PEM/m2, licencias, MBC; Catastro sin superficie construida): todo es C4.
+COSTE_VERIFICADO = False
 ETIQ = {1: "1 falta y hay suelo rentable", 2: "2 falta y brecha regulatoria", 3: "3 falta pero no rentable",
         4: "4 no falta", 5: "5 falta, brecha moderada, solares insuficientes (clase añadida)",
         9: "9 indeterminada (sin dato de solares)"}
@@ -264,7 +266,8 @@ def main() -> None:
     for j, c in enumerate(CODIGOS):
         out_p[f"pct_clase_{c}"] = cnt_p[:, j] / np.maximum(valid_p, 1) * 100
     out_p["capa_fuente_deficit"] = capa_def.reindex(out_p.cod_prov).values
-    out_p["capa"] = np.where(out_p.estabilidad_pct >= UMBRAL_C2 * 100, "C2", "C4")
+    out_p["estable_80"] = out_p.estabilidad_pct >= UMBRAL_C2 * 100
+    out_p["capa"] = np.where(out_p.estable_80 & COSTE_VERIFICADO, "C2", "C4")
     out_p["capa_efectiva"] = np.where((out_p.capa == "C2") & (out_p.capa_fuente_deficit.isin(["C1", "C2"])), "C2", "C4")
     out_p["clase_etiqueta"] = out_p.clase_modal.map(ETIQ)
     out_p.to_csv(OUT / "clasificacion_provincias.csv", index=False, float_format="%.3f")
@@ -321,7 +324,8 @@ def main() -> None:
         out_m[f"pct_clase_{c}"] = cnt_m[:, j] / np.maximum(valid_m, 1) * 100
     out_m["capa_fuente_deficit"] = "C4"   # M1: todos los déficits municipales son C4
     est = out_m.estabilidad_pct >= UMBRAL_C2 * 100
-    out_m["capa"] = np.where(est & (out_m.precio_fuente == "municipal"), "C2", "C4")
+    out_m["estable_80"] = est
+    out_m["capa"] = np.where(est & (out_m.precio_fuente == "municipal") & COSTE_VERIFICADO, "C2", "C4")
     out_m["capa_efectiva"] = "C4"
     out_m["clase_etiqueta"] = out_m.clase_modal.map(ETIQ)
     out_m.to_csv(OUT / "clasificacion_municipios.csv", index=False, float_format="%.3f")
@@ -429,10 +433,10 @@ def escribir_json(out_p, out_m, nac, tp_out, grid, capa_def) -> None:
         "capa": "C4",
         "magnitud": (f"Solares catastrales (uso «solar») 2026: {int(nac.uu_solar):,} unidades urbanas; con 5/10/20 viviendas por "
                      f"solar cubren el déficit 2021-2025 (mediana M1) en {cob[5]*100:.0f} %/{cob[10]*100:.0f} %/{cob[20]*100:.0f} % de "
-                     f"las {len(fal)} provincias con déficit positivo. La brecha precio-coste es positiva en al menos el 80 % del "
-                     f"multiverso en el {rent*100:.0f} % de ellas.").replace(",", "."),
+                     f"las {len(fal)} provincias con déficit positivo. La brecha precio-coste no se usa en esta "
+                     f"ficha: el coste en nivel es un supuesto.").replace(",", "."),
         "intervalo": f"cobertura provincial [{cob[5]*100:.0f} %; {cob[20]*100:.0f} %] según viviendas por solar (5 a 20)",
-        "cota": "C2 solo para la brecha (coste en nivel es un supuesto no verificado); la disponibilidad de suelo es C4",
+        "cota": "—",
         "literatura": "Glaeser y Gyourko (2018, VERIFICADA): precio por encima del coste de construcción más suelo como indicio de restricción de oferta; sin cifra citable para España.",
         "veredicto": ver,
         "regla": ("PROVISIONAL: depende del déficit de M1, en corrección al generar este fichero; se recalcula al ejecutar m3_run. "
@@ -460,11 +464,11 @@ def escribir_json(out_p, out_m, nac, tp_out, grid, capa_def) -> None:
         {"id": "M3-H-brecha-prov", "enunciado_neutro": (
             f"Brecha central precio - coste(1+margen) - suelo repercutido por provincia: rango [{rng[0]:.0f}; {rng[1]:.0f}] EUR/m2; "
             f"mayores {ext_alto}; menores {ext_bajo}"),
-         "capa": "C2", "magnitud": float(pp.brecha_central.median()), "unidad": "EUR/m2 (mediana provincial)",
+         "capa": "C4", "magnitud": float(pp.brecha_central.median()), "unidad": "EUR/m2 (mediana provincial)",
          "intervalo": [float(pp.brecha_min.min()), float(pp.brecha_max.max())],
          "fuentes": ["MIVAU valor tasado", "MIVAU suelo urbano", "supuesto de coste"], "supuestos": sup, "limites": lim},
         {"id": "M3-H-clases-prov", "enunciado_neutro": f"Clase modal por provincia: {cc_p}; estables (>=80 %): {len(pe)} de {len(out_p)}",
-         "capa": "C2", "magnitud": len(pe), "unidad": "provincias estables", "intervalo": [0, len(out_p)],
+         "capa": "C4", "magnitud": len(pe), "unidad": "provincias estables", "intervalo": [0, len(out_p)],
          "fuentes": ["M1", "MIVAU", "Catastro"], "supuestos": sup, "limites": lim + ["La capa efectiva está limitada por la del déficit de M1"]},
         {"id": "M3-H-clases-mun", "enunciado_neutro": f"Clase modal por municipio: {cc_m}; estables (>=80 %): {len(me)} de {len(out_m)}",
          "capa": "C4", "magnitud": len(me), "unidad": "municipios estables", "intervalo": [0, len(out_m)],
@@ -478,7 +482,7 @@ def escribir_json(out_p, out_m, nac, tp_out, grid, capa_def) -> None:
     (OUT / "hechos.json").write_text(json.dumps(hechos, ensure_ascii=False, indent=1), encoding="utf-8")
     res = {
         "rama": "M3", "pregunta": "¿Se puede construir donde hace falta? (suelo, brecha precio-coste, capacidad, clasificación)",
-        "capa": "C2 (brecha y clase donde estable >= 80 %) / C4 (resto, solares, municipios)",
+        "capa": "C4 (coste en nivel supuesto, no verificado)",
         "datos": ["catastro_solares_municipios (v4)", "mivau_valor_tasado_*", "mivau_v2_suelo", "mivau_v2_iniciadas_terminadas_prov",
                   "eurostat_costes", "eurostat_produccion_construccion", "output/v4/M1"],
         "N": {"provincias": len(out_p), "municipios": len(out_m), "especificaciones_por_unidad": int(len(grid))},
@@ -486,7 +490,7 @@ def escribir_json(out_p, out_m, nac, tp_out, grid, capa_def) -> None:
         "estimacion": {"brecha_provincial_rango_central": rng, "clases_provincias": cc_p, "clases_municipios": cc_m,
                        "estables_provincias": len(pe), "estables_municipios": len(me), "cobertura_solares": cob},
         "ic95": None, "p_ajustado": None,
-        "nivel_evidencia": "ASOCIACIÓN: cotas descriptivas con supuestos; sin lenguaje causal (C2/C4)",
+        "nivel_evidencia": "EXPLORATORIO (C4): brecha con coste supuesto; sin lenguaje causal",
         "diagnosticos": {"umbral_estabilidad": UMBRAL_C2, "fdr": "no aplica: no hay contrastes de hipótesis", "semilla": SEED},
         "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None},
         "notas": ("PROVISIONAL: los recuentos dependen de las tablas de M1 (déficit con error de terminadas, en corrección); "

@@ -44,7 +44,7 @@ UNIPROV_CCAA = {"asturias": "33", "balears": "07", "cantabria": "39", "madrid": 
 def norm(s: str) -> str:
     s = unicodedata.normalize("NFD", str(s))
     s = "".join(c for c in s if unicodedata.category(c) != "Mn").lower()
-    toks = re.sub(r"[^a-z0-9/]+", " ", s).split()
+    toks = re.sub(r"[^a-z0-9]+", " ", s).split()
     toks = [t for t in toks if t not in ("de", "del", "principado", "comunidad", "region", "foral", "la")] or toks
     return " ".join(sorted(toks))
 
@@ -302,6 +302,7 @@ def extranjeros():
     # provincias: MIVAU y Registradores (2023-2025)
     rp = r[(r.serie == "viv_pct_compras_extranjeros") & (r.nivel == "provincia")].copy()
     rp["k"] = rp.territorio.map(norm)
+    rp = rp.drop_duplicates(["k", "periodo"])
     odp = od[(od.serie == "compraventas_viv_num") & (od.nivel == "provincia")].copy()
     odp["k"] = odp.territorio.map(norm)
     rp = rp.merge(odp[["k", "periodo", "valor", "territorio"]].rename(columns={"valor": "cv", "territorio": "terr_od"}),

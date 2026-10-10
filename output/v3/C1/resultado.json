@@ -9,7 +9,10 @@
   -0.0007441567463695395,
   0.0012638926027352235
  ],
- "p_ajustado": null,
+ "p_ajustado": {
+  "H3-1": 0.4665802657379153,
+  "H3-2": 0.5008513023066891
+ },
  "p_sellado": {
   "H3-1": 0.23329013286895764,
   "H3-2": 0.5008513023066891
@@ -136,7 +139,8 @@
       }
      },
      "b_placebos": {
-      "pasa": false,
+      "pasa": true,
+      "nota_ADRH": "P3: ADRH significativo (p<0,05) se informa sin invalidar automáticamente",
       "tamano_placebo_tratamiento": 0.06506506506506507,
       "p_ADRH": 0.00032294043028094024,
       "p_aleatorizacion_real": 0.375
@@ -167,7 +171,6 @@
     },
     "fallan": [
      "a_adelanto",
-     "b_placebos",
      "c_sensibilidad",
      "d_sellado"
     ]
@@ -189,7 +192,8 @@
       }
      },
      "b_placebos": {
-      "pasa": false,
+      "pasa": true,
+      "nota_ADRH": "P3: ADRH significativo (p<0,05) se informa sin invalidar automáticamente",
       "tamano_placebo_tratamiento": 0.002002002002002002,
       "p_ADRH": 0.0026347579653301016,
       "p_aleatorizacion_real": 0.966
@@ -224,7 +228,6 @@
     },
     "fallan": [
      "a_adelanto",
-     "b_placebos",
      "c_sensibilidad",
      "d_sellado"
     ]

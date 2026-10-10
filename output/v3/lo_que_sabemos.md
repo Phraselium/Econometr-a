@@ -26,26 +26,33 @@ Ningún resultado de este proyecto alcanzó C3. Detalle y fuentes: output/v3/art
 
 **Soluciones (simulación con rangos de parámetros)**
 - [C2] Para estabilizar el esfuerzo de acceso en 2026-2035 se necesitan **104.000-413.000 viviendas al año**, frente a 89.000-101.000 terminadas. La brecha es positiva en todo el rango de supuestos.
-- [C2] Las opciones que añaden viviendas reducen el esfuerzo de acceso en todo el rango simulado sin reducir la oferta: construir 25.000-100.000 viviendas más al año, o movilizar el 10-30 % de las vacías situadas donde hay presión de precios. Esas vacías cubrirían entre el **4,6 % y el 51 %** de la brecha.
+- [C2] Tienen signo estable en toda la rejilla simulada (reducen el esfuerzo de acceso sin reducir la oferta): construir 25.000-100.000 viviendas más al año, o movilizar el 10-30 % de las vacías situadas donde hay presión de precios. Esas vacías cubrirían entre el **4,6 % y el 51 %** de la brecha. La simulación no modela costes, así que esta ordenación no compara costes y beneficios.
 
-## Probable pero no demostrado
+## Probable pero no demostrado (exploratorio, C4)
 
-- [C4] Topes de la Ley 11/2020 en Cataluña. La renta de los contratos nuevos fue **un 5,4 % menor** en los municipios sujetos (IC95 −7,1 % a −3,7 %; −37 €/mes). La validación por otra fuente (SERPAVI) tiene el mismo signo y menor tamaño (−0,8 %). La réplica de Jofre-Monseny et al. (2023) reproduce su resultado en la especificación más cercana. No llega a C3: el test de pretendencias de Rambachan-Roth y el de sensibilidad no lo permiten.
-- [C4] En el número de contratos nuevos bajo los topes, el signo es negativo en la mayoría de especificaciones (−4,9 %), pero el contraste principal no es significativo y fallan las pretendencias y el placebo de fecha.
+Asociaciones que no alcanzan la capa C3. Se informan sin lenguaje causal y no deciden ningún veredicto.
+
+
+- [C4] Topes de la Ley 11/2020 en Cataluña. La renta de los contratos nuevos de los municipios sujetos se asocia a una diferencia de **−5,4 %** (IC95 −7,1 % a −3,7 %; −37 €/mes). La validación por otra fuente (SERPAVI) tiene el mismo signo y menor tamaño (−0,8 %). La réplica de Jofre-Monseny et al. (2023) reproduce su resultado en la especificación más cercana. No llega a C3: el test de pretendencias de Rambachan-Roth y el de sensibilidad no lo permiten.
+- [C4] Número de contratos nuevos bajo los topes: asociación de −4,9 % (IC95 −9,9 % a +0,5 %), no significativa. La validación por fuente (stock SERPAVI) da −4,4 % y excluye 0. Hay estimadores alternativos de signo opuesto, y fallan las pretendencias y el placebo de fecha.
 - [C4] Asociación entre viviendas turísticas y alquiler por sección censal (2021-2024): pequeña. Con un aumento típico de 1,4 puntos de viviendas turísticas sobre el parque, el alquiler sube **menos de un 0,5 %**. En los distritos sellados el IC95 incluye 0. La réplica de García-López et al. (2020) no se reproduce con datos actuales (otro periodo y otra medida de alquiler).
 
 ## No se puede afirmar con estos datos
 
 - Que las viviendas turísticas sean la causa principal de la subida del alquiler en España (sin evidencia C3; las cotas no lo descartan solo con supuestos débiles).
-- Que los topes reduzcan la oferta de alquiler, ni que no la reduzcan.
+- Que los topes reduzcan el alquiler o la oferta de alquiler, ni que no lo hagan: ningún diseño alcanzó C3.
 - La contribución de los grandes tenedores: los datos están pedidos al Catastro (docs/v3/solicitudes_transparencia.md).
 - Que exista una burbuja: no hay test de exuberancia, y las dos medidas de la razón precio/alquiler discrepan en signo.
 - El efecto sobre el precio de los compradores extranjeros, de la ocupación ilegal o de bajar el ITP/IVA: no hay diseño ni datos.
 - Una cifra de efecto de la regulación de viviendas turísticas sobre el alquiler local: depende de una elasticidad sin estimación española verificada.
 
-## Problema y soluciones robustas
+## Problema y soluciones robustas (signo estable en todo el rango simulado)
 
 - [C1] El desfase entre hogares y viviendas nuevas desde 2021 y la caída de la propiedad entre los jóvenes son hechos confirmados por varias fuentes.
-- [C2] Aumentar la oferta mejora el esfuerzo de acceso en todo el rango de supuestos simulado. Es la única familia de medidas para la que el signo no depende de supuestos inciertos.
-- [C4] El saldo neto de los topes para los inquilinos (beneficio menos posible reducción de contratos) cambia de signo según la respuesta de la oferta: −4.600 a +1.600 € al año por inquilino cubierto. Depende de supuestos.
-- [C4] Retirar viviendas turísticas devuelve como máximo unas 31.000 viviendas al alquiler en las seis grandes ciudades, retirándolas todas en las secciones de mayor peso. Su efecto sobre el alquiler local depende de una elasticidad no estimada.
+- [C2] Signo estable en toda la rejilla simulada:
+  - en sentido estricto, más construcción y movilización de vacías donde hay presión;
+  - solo débilmente (efecto ≤ 0, nulo si desplaza a la construcción privada), la vivienda pública.
+  
+  La retirada de viviendas turísticas no tiene signo estable al incluir la estimación sellada H3-1. Los topes dependen de la respuesta de la oferta. Ninguna opción incluye sus costes.
+- [C4] Topes: la reducción de renta por inquilino cubierto es de 148-598 €/año. El efecto sobre el esfuerzo medio de los inquilinos va de −2,9 % a +7,3 % según la respuesta de la oferta.
+- [C2] Retirar todas las viviendas turísticas de las secciones de mayor peso de las seis grandes ciudades devolvería como máximo unas 31.000 viviendas al alquiler. [C4] Su efecto sobre el alquiler local va de −2,0 % a +0,5 % con la estimación sellada H3-1, y es mayor con calibraciones de la literatura no replicadas.

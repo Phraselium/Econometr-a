@@ -13,14 +13,19 @@ Este documento presenta los resultados del proyecto v3 para quienes diseñan o e
 
 | Palanca | Resultado | Capa | ¿Depende de supuestos? |
 |---|---|---|---|
-| Más oferta (construcción) | 104.000-413.000 viviendas/año para estabilizar el esfuerzo en 2026-2035; +25.000 a +100.000 viviendas/año reducen el esfuerzo en todo el rango simulado | C2 | No en el signo; sí en la magnitud |
+| Más oferta (construcción) | 104.000-413.000 viviendas/año para estabilizar el esfuerzo en 2026-2035; +25.000 a +100.000 viviendas/año reducen el esfuerzo en toda la rejilla | C2 | No en el signo; sí en la magnitud; costes no modelados |
 | Movilizar vacías donde hay presión | El 10-30 % de las vacías del tercil alto aporta 50.000-248.000 viviendas, el 4,6-51 % de la brecha | C2 | El porcentaje movilizable es un supuesto; coste sin cuantificar |
 | Vivienda pública | Reduce el esfuerzo si no desplaza construcción privada; efecto nulo con desplazamiento total | C2 (dominancia débil) | Sí: grado de desplazamiento y coste unitario |
-| Regulación de viviendas turísticas | Retirarlas todas en las secciones de mayor peso de 6 ciudades devuelve como máximo unas 31.000 viviendas; el efecto en el alquiler local depende de una elasticidad no estimada | C2 en cantidad, C4 en precio | Sí |
-| Topes de alquiler | Contratos nuevos −5,4 % de renta en Cataluña (2020-2022); el saldo neto para los inquilinos va de −4.600 a +1.600 €/año según la respuesta de la oferta | C4 | Sí: el signo del saldo depende de la reducción de contratos |
+| Regulación de viviendas turísticas | Retirarlas todas en las secciones de mayor peso de 6 ciudades devolvería como máximo unas 31.000 viviendas; efecto local en alquiler de −2,0 % a +0,5 % con H3-1 sellado (mayor con calibraciones no replicadas) | C2 en cantidad, C4 en precio | Sí: signo no estable |
+| Topes de alquiler | Asociación de −5,4 % en la renta de los contratos nuevos (Cataluña, 2020-2022); contratos −4,9 % [−9,9; +0,5]; esfuerzo medio de los inquilinos de −2,9 % a +7,3 % según la respuesta de la oferta | C4 | Sí: el signo depende de la reducción de contratos |
 | Tipos de interés | El coste de uso puede cubrir la subida de 2014-2021; en 2021-2025 tiene el signo contrario | C2 | Depende del suelo del coste de uso |
 
-Lectura. La única familia de medidas cuyo signo no depende de supuestos inciertos en la simulación es la que añade viviendas donde hay demanda: construcción, movilización y vivienda pública sin desplazamiento. Las demás pueden mejorar o empeorar el acceso según parámetros que los datos actuales no fijan.
+Lectura:
+- Signo estable en toda la rejilla, en sentido estricto: construcción y movilización de vacías donde hay presión.
+- Signo estable solo débilmente (≤ 0, nulo si desplaza a la construcción privada): vivienda pública.
+- Signo no estable: retirada de viviendas turísticas y topes. Pueden mejorar o empeorar el acceso según parámetros que los datos actuales no fijan.
+
+La simulación no incluye costes (fiscales, de suelo, de movilización ni pérdidas de los propietarios). La ordenación no es una evaluación coste-beneficio.
 
 ## 3. Lo que falta para decidir mejor
 - Datos de titularidad por tamaño de tenedor (solicitud al Catastro redactada; docs/v3/solicitudes_transparencia.md).

@@ -9,7 +9,7 @@
 Sobre esa base examinamos los factores más citados en el debate y simulamos soluciones con rangos de parámetros.
 - **Hechos (C1).** Entre 2021 y 2025 los hogares crecieron en 560.000-969.000 más que las viviendas nuevas. La propiedad de los hogares menores de 35 años cayó 24-34 puntos desde 2008. Solo un tercio de las viviendas vacías está en los municipios con más presión de precios.
 - **Cotas (C2).** El aumento de viviendas turísticas de 2020 a 2024 equivale como máximo al 2,7 % del stock de alquiler.
-- **Efectos.** Ningún diseño alcanzó C3. Los topes de alquiler de Cataluña (2020-2022) se asocian a rentas un 5,4 % menores en los contratos nuevos (C4), en línea con la literatura replicada. La asociación entre viviendas turísticas y alquiler por sección censal es pequeña y no se distingue de cero en la muestra sellada. En la simulación, solo las medidas que añaden viviendas donde hay demanda mejoran el esfuerzo de acceso en todo el rango de supuestos.
+- **Efectos.** Ningún diseño alcanzó C3. Los topes de alquiler de Cataluña (2020-2022) se asocian a rentas un 5,4 % menores en los contratos nuevos (C4), en línea con la literatura replicada, sin alcanzar C3. La asociación entre viviendas turísticas y alquiler por sección censal es pequeña y no se distingue de cero en la muestra sellada. En la simulación, solo las medidas que añaden viviendas donde hay demanda tienen un signo estable en toda la rejilla de supuestos; la simulación no incluye costes.
 
 ## 1. Introducción y estándar epistémico
 El proyecto parte de dos versiones previas: v1, un modelo nacional; y v2, con paneles provinciales, una muestra sellada y Holm sobre 7 hipótesis, sin ninguna confirmada. La v3 cambia la pregunta: ya no busca «qué explica la subida», sino **qué puede afirmarse con seguridad y qué no**.
@@ -92,7 +92,8 @@ Diferencias de fondo con García-López et al.: el periodo (2021-2024 frente a 2
   - H3-1 nacional con efectos fijos: β de entrenamiento +0,00026 [−0,0007; 0,0013] y sellada +0,00105 [−0,0007; 0,0028] (p = 0,23).
   - Con un aumento típico de 1,37 pp de VUT, la sellada equivale a +0,14 % (+0,8 €/mes).
   - H3-2, shift-share leave-one-out, 6 ciudades: β sellada +0,0042 [−0,0086; 0,0170] (F = 60).
-- *Criterios de C3.* Fallan el test de adelanto, el placebo de resultado (ADRH), la sensibilidad y la validación sellada. Capa C4. Holm: 0,47 y 0,50.
+- *Criterios de C3.* Fallan el test de adelanto, la sensibilidad y la validación sellada. El placebo de tratamiento (permutación dentro del municipio) pasa. El placebo de resultado (ADRH) es significativo (p = 0,0003) y se informa sin invalidar automáticamente, según P3. Capa C4. Holm: 0,47 y 0,50.
+- *Sellado de H3-1 en las 6 ciudades.* β = −0,0013 [−0,0034; 0,0008], p = 0,20: signo opuesto al nacional. Solo el nacional era el contraste confirmatorio, una elección declarada como desviación.
 - *Multiverso H3-1.* 96 especificaciones; nacional: 75 % con el mismo signo y 10 % significativas.
 - *Hallazgo del test de adelanto (C4).* El crecimiento futuro de las VUT se asocia con el crecimiento pasado del alquiler en 2016-2020 (+0,0017 por pp, p < 0,001), un valor mayor que la estimación principal. Las VUT crecieron donde el alquiler ya subía. Si ese sesgo de selección es no negativo (supuesto no pre-registrado), la estimación sellada sería un límite superior del efecto medio. No se usa para ningún veredicto.
 
@@ -103,17 +104,26 @@ Diferencias de fondo con García-López et al.: el periodo (2021-2024 frente a 2
 ## 6. Soluciones (P-D, simulación con rangos)
 Ver output/v3/PD.
 - Estabilizar el esfuerzo de acceso en 2026-2035 requiere 104.000-413.000 viviendas al año. La brecha frente a las terminadas es positiva en todo el rango (C2).
-- Mejoran el esfuerzo en todo el rango sin reducir la oferta: construir +25.000 a +100.000 viviendas al año, y movilizar el 10-30 % de las vacías del tercil alto de presión, que aporta el 4,6-51 % de la brecha (C2).
+- Con signo estable en toda la rejilla, sin reducir la oferta: construir +25.000 a +100.000 viviendas al año, y movilizar el 10-30 % de las vacías del tercil alto de presión, que aporta el 4,6-51 % de la brecha (C2).
+- Vivienda pública: dominancia débil, con efecto ≤ 0 y nulo si desplaza.
+- Retirada de VUT: signo no estable con H3-1 sellado.
+- Los costes no se modelan: la ordenación no es coste-beneficio.
 - La opción de mínimo arrepentimiento máximo depende de la dosis supuesta (C4).
-- El saldo de los topes para los inquilinos cambia de signo según la respuesta de la oferta: −4.600 a +1.600 €/año (C4).
+- Topes: reducción de renta de 148-598 €/año por inquilino cubierto; efecto sobre el esfuerzo medio de los inquilinos de −2,9 % a +7,3 % según la respuesta de la oferta (C4).
 
 ## 7. Verificador
 Hay 14 afirmaciones del debate en output/v3/verificador/:
-- RESPALDADA (1): «faltan cientos de miles de viviendas».
-- PARCIALMENTE (5): inmigración, oferta y suelo, vacías, vivienda pública y tipos de interés.
-- SIN EVIDENCIA SUFICIENTE (8): turísticos como causa principal, grandes tenedores, topes (alquiler y oferta), ocupación ilegal, ITP/IVA, burbuja y compradores extranjeros.
+Las afirmaciones de atribución (turísticos, inmigración, oferta y suelo, tipos) se juzgan con una regla común:
+- «causa principal» exige ≥50 % de la subida;
+- una cota de cantidad no es respaldo;
+- la evidencia C4 no decide.
 
-Ninguna afirmación queda NO RESPALDADA ni CONTRADICHA: con la regla de no promover capas, las estimaciones C4 no deciden.
+Resultado:
+- RESPALDADA (1): «faltan cientos de miles de viviendas».
+- PARCIALMENTE (3): vacías movilizables, vivienda pública (según supuestos) y tipos de interés (contradicha en 2021-2025, no descartada en 2014-2021).
+- SIN EVIDENCIA SUFICIENTE (10): turísticos, grandes tenedores, inmigración, oferta y suelo como causa principal, topes (alquiler y oferta), ocupación ilegal, ITP/IVA, burbuja y compradores extranjeros.
+
+Ninguna afirmación queda NO RESPALDADA ni CONTRADICHA en su conjunto.
 
 ## 8. Limitaciones
 Ver docs/v3/limitaciones.md. Las principales:

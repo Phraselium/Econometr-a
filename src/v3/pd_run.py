@@ -492,7 +492,7 @@ def main(smoke: bool = False):
             "depende de L, ε+η, ℓ y de la cobertura (supuesto)", "C4", "Valoración monetaria simplificada; sin costes administrativos ni de calidad; el saldo no se presenta (tablas/t3_*).")
     if P3["alt"]:
         c3 = d["c3p"]
-        add("P3 topes de alquiler", "reducción de renta por inquilino cubierto, alternativa H3-3 (C3, DiD Cataluña)", P3["alt"]["ben"].min(), P3["alt"]["ben"].max(), "€/año", NA,
+        add("P3 topes de alquiler", "reducción de renta por inquilino cubierto, alternativa H3-3a (estimación propia C4, DiD Cataluña)", P3["alt"]["ben"].min(), P3["alt"]["ben"].max(), "€/año", NA,
             f"β de H3-3a ({100 * c3['cut'][1]:.1f} %, IC {100 * c3['cut'][0]:.1f} a {100 * c3['cut'][2]:.1f} %) y renta anual", "C4", "Fila alternativa a JMS; C4 según output/v3/C3/resultado.json; sellado por fuente, no espacial.")
         add("P3 topes de alquiler", "variación de contratos cubiertos, alternativa H3-3b", 100 * c3["L"][0], 100 * c3["L"][2], "%", NA,
             f"IC de H3-3b ({100 * c3['L'][0]:.1f} a {100 * c3['L'][2]:.1f} %, punto {100 * c3['L'][1]:.1f} %); incluye 0", "C4", "Alternativa a JMS (-0,3 %) y Diamond (-15 %); entra también en la rejilla del arrepentimiento.")

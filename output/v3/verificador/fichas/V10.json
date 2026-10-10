@@ -8,7 +8,7 @@
  "cota": "—",
  "literatura": "Sin trabajo de incidencia verificado incorporado.",
  "veredicto": "SIN EVIDENCIA SUFICIENTE",
- "regla": "Con oferta poco elástica, parte de la rebaja se traslada al precio; sin estimación, no se puede cuantificar.",
+ "regla": "La incidencia depende de la elasticidad de la oferta: si fuera baja, parte de la rebaja podría trasladarse al precio; sin estimación no se puede cuantificar ni fijar su signo neto para el comprador.",
  "limites": "Los cambios autonómicos del ITP permitirían un diseño de diferencias (no realizado).",
  "evidencia": []
 }

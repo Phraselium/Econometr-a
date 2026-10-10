@@ -149,49 +149,17 @@ def estructura_serpavi(col, treated, controls):
     return set(ok[ok == 4].index)
 
 
-class shim_pandas3:
-    """evaluate_v3 usa DataFrame.apply(pd.to_numeric, errors='ignore'), que pandas 3 ya no admite (ValueError
-    'invalid error value specified' DESPUÉS de registrar la apertura). Se sustituye SOLO durante la llamada, en memoria;
-    src/holdout.py no se modifica."""
-
-    def __enter__(self):
-        self.orig = pd.DataFrame.apply
-        orig = self.orig
-
-        def ap(df, func, *a, **k):
-            if func is pd.to_numeric and k.get("errors") == "ignore":
-                out = df.copy()
-                for c in out.columns:
-                    try:
-                        out[c] = pd.to_numeric(out[c])
-                    except (ValueError, TypeError):
-                        pass
-                return out
-            return orig(df, func, *a, **k)
-        pd.DataFrame.apply = ap
-        return self
-
-    def __exit__(self, *x):
-        pd.DataFrame.apply = self.orig
-
-
-def dry_run(fn, muni_train, tag):
-    """Test en seco de fn con un panel sintético de la misma forma, a través de evaluate_v3 con rutas de ensayo
-    (el registro real de accesos no se toca)."""
-    import tempfile
-    tmp = Path(tempfile.mkdtemp(prefix="c3_dry_"))
+def dry_run(fn, muni_train):
+    """Test en seco de fn con un panel sintético de la misma forma (ida y vuelta por CSV como texto). No toca holdout."""
+    import io
     rr = np.random.default_rng(E.SEED)
     filas = [(m, y, float(np.exp(rr.normal(2.2, .3))), float(np.exp(rr.normal(5, 1)))) for m in muni_train for y in range(2018, 2024)]
     syn = pd.DataFrame(filas, columns=["cod_ine", "anio", "alq", "n_viv"])
     syn.loc[rr.choice(len(syn), 20, replace=False), "alq"] = np.nan
-    old = (holdout.SEALED, holdout.LOG, holdout.LOG_MD)
-    try:
-        holdout.SEALED, holdout.LOG, holdout.LOG_MD = tmp, tmp / "_accesos.log", tmp / "accesos.md"
-        holdout.sellar_fuente_v3(syn, "c3_serpavi")
-        with shim_pandas3():
-            r = holdout.evaluate_v3(f"DRY-{tag}", fn, "C3-dry", ["c3_serpavi"])
-    finally:
-        holdout.SEALED, holdout.LOG, holdout.LOG_MD = old
+    buf = io.StringIO()
+    syn.to_csv(buf, index=False)
+    buf.seek(0)
+    r = fn({"c3_serpavi": pd.read_csv(buf, dtype=str).apply(pd.to_numeric)})
     json.dumps(r)
     return r
 
@@ -337,6 +305,13 @@ def main():
         pretrend = np.array([np.polyfit(t_ax, row[:BASE], 1)[0] for row in Yl])
         cov = {"ln_poblacion": np.log(gr["pop"].reindex(idx).values), "nivel_previo": Yl[:, :BASE].mean(1), "pendiente_previa": pretrend}
         sens = E.sensibilidad(d, trv, cov)
+        sens["RV_q1_vs_sin_pendiente_previa"] = bool(sens["RV_q1"] > max(v for kk, v in sens["r2_parcial"].items() if kk != "pendiente_previa"))
+        lo_, hi_ = 0.0, 20.0   # M̄ de ruptura: menor M̄ con IC robusto RM que incluye 0 (misma semilla y réplicas)
+        for _ in range(14):
+            mid = (lo_ + hi_) / 2
+            ic_ = E.rr_bounds(Y, trv, BASE - 1, pre_cols, list(post), REPS, Mbar=mid)["ic_RM"]
+            lo_, hi_ = (mid, hi_) if (ic_[0] > 0 or ic_[1] < 0) else (lo_, mid)
+        rr["Mbar_ruptura"] = float(hi_)
         # ---------- multiverso
         mv = []
         for ctrl in ("todos", "pop20k", "tenso20k"):
@@ -396,10 +371,10 @@ def main():
         # ---------- criterios a-c
         a_ok = bool(wp["p"] > 0.10 and (rr["ic_RM"][0] > 0 or rr["ic_RM"][1] < 0))
         b_ok = bool(all(min(p_["p"], p_["p_ri"]) >= 0.05 for p_ in pls))
-        c_ok = bool(sens["RV_q1"] > sens["r2_parcial_max"] and sens["oster_abs"] > 1)
+        c_ok = bool(sens["RV_q1"] > max(sens["r2_parcial_max"], sens["r2d_parcial_max"]) and sens["oster_abs"] > 1)
         est_out[k] = dict(estimado=True, N=int(len(idx)), nT=cs_["nT"], nC=cs_["nC"], CS=cs_, TWFE=tw, DID_M=dm,
                           pretrend_wald=wp, rambachan_roth=rr, sensibilidad=sens, placebos=pls)
-        crit_out[k] = dict(a=a_ok, b=b_ok, c=c_ok)
+        crit_out[k] = dict(a=a_ok, b="parcial (sin placebo de resultado)" if b_ok else False, c=c_ok)
         print(k, "CS", round(cs_["b"], 4), round(cs_["se"], 4), "p", round(cs_["p"], 4), "| TWFE", round(tw["b"], 4), "| pre p", round(wp["p"], 3),
               "RR", [round(x, 4) for x in rr["ic_RM"]], "| crit", crit_out[k], "| mv med", round(mv.b.median(), 4))
     pd.concat(pl_all).to_csv(OUT / "placebos.csv", index=False)
@@ -417,7 +392,7 @@ def main():
     sell = {}
     for k in Y_:
         fn = make_fn(k, treated_tr, ctrl_set, rent_ref)
-        dr = dry_run(fn, sorted(treated_tr | ctrl_set), HIP[k])      # test en seco (rutas de ensayo); si falla, se detiene
+        dr = dry_run(fn, sorted(treated_tr | ctrl_set))      # test en seco (rutas de ensayo); si falla, se detiene
         res.setdefault("dry_run", {})[HIP[k]] = dr
         f = OUT_REAL / f"sellado_{HIP[k]}.json"
         if f.exists():
@@ -428,8 +403,7 @@ def main():
             sell[k] = dict(omitido="sin potencia en la especificación o en la validación (P2)")
         else:
             try:
-                with shim_pandas3():
-                    r = holdout.evaluate_v3(HIP[k], fn, "C3", ["c3_serpavi"])
+                r = holdout.evaluate_v3(HIP[k], fn, "C3", ["c3_serpavi"])
                 f.write_text(json.dumps(r, indent=1, ensure_ascii=False, default=str))
                 sell[k] = r
             except Exception as ex:   # noqa: BLE001  el acceso queda consumido: se registra y NO se repite
@@ -534,7 +508,7 @@ def escribir_salidas(res, est_out, sell, capa, rep, pot):
                N=res["meta"]["balanceadas_2019Q1_2023Q4"], metodo="DiD Callaway-Sant'Anna con un solo momento (2020Q4), TWFE y DID_M como contraste; cluster municipio; "
                "event study, cotas Rambachan-Roth (sin paquete), placebos P3, Oster, Cinelli-Hazlett, multiverso",
                estimacion=top, ic95={h: (top[h]["CS"]["pct_ic95"] if top[h]["CS"] else None) for h in top},
-               p_ajustado=None, nivel_evidencia=None, p_validacion_sellada=p_val,
+               p_ajustado=pd.read_csv(dat.RAIZ / 'output/v3/holm_v3.csv').set_index('hipotesis').p_holm.reindex(['H3-3a', 'H3-3b']).to_dict(), nivel_evidencia=None, p_validacion_sellada=p_val,
                capa=capa, criterios={h: capa[h]["criterios"] for h in capa},
                diagnosticos=dict(potencia=res["potencia"], pretendencias={HIP[k]: dict(wald=est_out[k]["pretrend_wald"], rr=est_out[k]["rambachan_roth"]) for k in Y_ if est_out[k].get("estimado")},
                                  sensibilidad={HIP[k]: est_out[k]["sensibilidad"] for k in Y_ if est_out[k].get("estimado")},
@@ -563,8 +537,11 @@ DESV = """# Desviaciones del pre-registro (C3)
 8. Contratos: ln del nº de fianzas (sin denominador de población; la población fija se absorbe en los efectos fijos de municipio). Sin controles (paro, ERTO) que sí usan JMS.
 9. El resultado de renta es la media de las medias de banda ponderada por nº de contratos; las bandas cambian entre años.
 10. Potencia de la validación SERPAVI: la estructura (municipios con los 4 años) viene de SERPAVI y la varianza es la de las fianzas anuales (aproximación; SERPAVI es un stock IRPF y su varianza real no se miró).
-11. holdout.evaluate_v3 usa DataFrame.apply(pd.to_numeric, errors='ignore'), no válido en pandas 3. Se aplica un parche en memoria solo durante la llamada (clase shim_pandas3); src/holdout.py no se modifica. El test en seco se hizo a través de evaluate_v3 con rutas de ensayo, sin tocar el registro real de accesos.
+11. Parche de pandas 3 (retirado). La primera versión aplicó en memoria un parche a `DataFrame.apply(pd.to_numeric, errors='ignore')` y un test en seco con `holdout.LOG` redirigido. La versión actual de `holdout.py` (c5e8aae) ya no contiene esa llamada: el parche era código muerto y se eliminó. `holdout.py` sí fue modificado por c5e8aae, después del ancla 204c073. El test en seco ahora llama a `fn` con un panel sintético, sin tocar `holdout`. Ninguna estimación cambia.
 12. Muestra: panel equilibrado 2019Q1-2023Q4 (misma muestra para event study, pretendencias, estimación principal y sensibilidad). Las réplicas JMS usan paneles equilibrados de su propio periodo.
+14. Validación por fuente: DiD 2x2 con pre 2018-2019 y post 2021-2022; descarta 2020 y 2023 (el pre-registro dice SERPAVI 2018-2023).
+15. Umbrales de placebo fijados después del pre-registro: cualquier placebo con p < 0,05 (t o aleatorización) cuenta como fallo de b.
+16. Criterio c (revisión de la oleada 2): RV_q=1 frente al mayor R² parcial entre R²_y y R²_d, y |δ| de Oster > 1. H3-3a depende de tomar la pendiente previa como covariable observada: sin ella RV_q=1 supera al resto (la capa no cambia porque falla a). Criterio b de H3-3: parcial, sin placebo de resultado. Se informa el M̄ de ruptura de Rambachan-Roth.
 13. fuera_muestra: no se compara con AR(4)/ECM v1 (es un efecto de política); la validación fuera de muestra es la sellada por fuente.
 """
 

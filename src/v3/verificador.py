@@ -12,7 +12,17 @@ Reglas generales:
 - PARCIALMENTE: respaldada en parte (zonas, periodos o magnitud menor) o según supuestos.
 - SIN EVIDENCIA SUFICIENTE: solo C4, o sin datos.
 Una ficha nunca usa una capa superior a la de su evidencia (check_texto lo comprueba).
+
+REGLA COMÚN para afirmaciones de atribución («X explica / es la causa principal de la subida») — V01, V03, V04, V12:
+(i) el enunciado fija la fracción que necesita: «causa principal» = ≥50 % de la subida; «explica» = ≥50 %;
+(ii) una cota superior C2 de CANTIDAD (viviendas u hogares) no es respaldo ni parcial: no atribuye precio;
+(iii) la evidencia C4 no entra en el veredicto (se informa en «magnitud»);
+(iv) CONTRADICHA en un periodo si una cota C2 o un hecho C1 tiene signo contrario en ese periodo; PARCIALMENTE si
+     está contradicha en unos periodos y es compatible (cota C2 que alcanza el 50 %) en otros; RESPALDADA si una cota
+     inferior C2/C3 supera el 50 %; NO RESPALDADA si una cota superior C2/C3 de PRECIO queda por debajo del 50 %;
+     en otro caso, SIN EVIDENCIA SUFICIENTE.
 """
+
 from __future__ import annotations
 
 import json
@@ -25,6 +35,19 @@ RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ / "src"))
 OUT = RAIZ / "output" / "v3"
 DEST = OUT / "verificador"
+
+LIT = {
+    "GL": "García-López et al. (2020), JUE, VERIFICADA, Q1",
+    "MESVAL": "MESVAL-UV (2022), NO VERIFICADA (sin DOI)",
+    "JMS": "Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE, VERIFICADA, Q1",
+    "DIAMOND": "Diamond, McQuade y Qian (2019), AER, VERIFICADA, Q1",
+    "SAIZ07": "Saiz (2007), JUE, VERIFICADA, Q1 (año no comprobado)",
+    "SA": "Sá (2015), EJ, VERIFICADA, Q1",
+    "GO": "González y Ortega (2013), JRS, VERIFICADA, cuartil no verificado",
+    "POTERBA": "Poterba (1984), QJE, VERIFICADA, Q1",
+    "BDE": "Banco de España, Informe Anual 2025 (DOI no comprobado)",
+    "SAIZ10": "Saiz (2010), QJE, VERIFICADA",
+}
 
 
 def _json(ruta: Path):
@@ -113,15 +136,14 @@ def fichas(ev) -> list[dict]:
         intervalo=f"desplazamiento de oferta {_iv([b1c.get('sensibilidad_min'), b1c.get('sensibilidad_max')])} % del stock",
         cota=(f"C2 (cantidad): ≤{_f(b1c.get('cota_superior'))} % del stock de alquiler. C4 (precio, condicionado a ε): "
               f"≤{_f(b1p.get('cota_superior'))} % con |ε_d|=0,33 y ≤{_f(b1cen.get('cota_superior'))} % con |ε_d|=1"),
-        literatura=("García-López et al. (2020) en Barcelona 2012-2016: réplica conceptual 2021-2024 NO REPLICADO "
+        literatura=(f"{LIT['GL']}, Barcelona 2012-2016: réplica conceptual 2021-2024 NO REPLICADO "
                     f"(T = {_f(gl.get('objetivo_T_pp'), 4)} log-p por pp; propia {_f(gl.get('estimacion'), 4)}). "
-                    "MESVAL (2022): NO REPLICABLE (datos propietarios)."),
+                    f"{LIT['MESVAL']}: NO REPLICABLE (datos propietarios)."),
         veredicto=("NO RESPALDADA" if (c1capa == "C3" and c1 and c1.get("contribucion_nacional_pct_max", 100) < 50)
                    else "SIN EVIDENCIA SUFICIENTE"),
-        regla=("La afirmación exige que las VUT expliquen más de la mitad de la subida nacional. Con C2 solo se acota la "
-               "cantidad (desplazamiento pequeño frente al stock; una cuarta parte de la subida ocurre donde las VUT no "
-               "crecieron), lo que no basta para descartarla. NO RESPALDADA solo si H3-1 alcanza C3 y su efecto implica "
-               "menos de la mitad de la subida nacional; si no, SIN EVIDENCIA SUFICIENTE (las estimaciones C4 no deciden). "
+        regla=("Regla común (i)-(iv): «causa principal» exige ≥50 % de la subida. Solo hay cota C2 de cantidad "
+               "(desplazamiento pequeño frente al stock; una cuarta parte de la subida municipal ocurre donde las VUT "
+               "apenas crecieron), que no atribuye precio; sin cota C2/C3 de precio, SIN EVIDENCIA SUFICIENTE. "
                "H3-1 y H3-2 quedaron en C4 (fallan adelanto, placebos, sensibilidad y sellado): sus estimaciones, "
                "pequeñas y con IC que incluye 0, no se promueven de capa."),
         limites=("Las VUT del INE no son todos los alquileres de temporada; el efecto local en barrios concretos puede "
@@ -145,23 +167,33 @@ def fichas(ev) -> list[dict]:
     # ---------------------------------------------------------------- V03 inmigración
     b2c = PB.get("B2-nac-cuota-2014-2019", {})
     b2_0813 = PB.get("B2-nac-cuota-2008-2013", {})
+    ne = None
+    f_ne = OUT / "PB" / "tablas" / "b2_no_explica_provincias.csv"
+    if f_ne.exists():
+        t = pd.read_csv(f_ne)
+        ne = t[(t["periodo"] == "2014-2019") & (t["mercado"] == "alquiler")]["no_explica_saldo_no_pos_pct"]
+        ne = float(ne.iloc[0]) if len(ne) else None
     out.append(dict(
         id="V03", tema="Inmigración",
-        enunciado="La inmigración explica la subida de los precios y de los alquileres.",
+        enunciado="La inmigración es la causa principal de la subida de los precios y de los alquileres (≥50 % de la subida).",
         capa="C2",
         magnitud=(f"Fracción máxima de la creación neta de hogares atribuible a hogares extranjeros: "
                   f"{_f(b2c.get('cota_superior'))} % en 2014-2019 (rango {_iv([b2c.get('sensibilidad_min'), b2c.get('sensibilidad_max')])}); "
                   "en 2014-2025 y 2020-2025 la cota con el extremo lógico (1 persona por hogar) llega al 100 % y no es informativa; "
-                  f"en 2008-2013 el saldo extranjero neto fue negativo (cota {_f(b2_0813.get('cota_superior'))} %)."),
-        intervalo=_iv([b2c.get("sensibilidad_min"), b2c.get("sensibilidad_max")]) + " % (2014-2019)",
+                  f"en 2008-2013 el saldo extranjero neto fue negativo (cota {_f(b2_0813.get('cota_superior'))} %). "
+                  + (f"Dato análogo al de V01: en 2014-2019 el {_f(ne)} % de la subida del alquiler provincial ocurrió en "
+                     "provincias con saldo extranjero no positivo; en 2020-2025 no hay provincias así (sin dato análogo). "
+                     if ne is not None else "Sin dato análogo de subida sin inmigración neta. ")
+                  + "Las traducciones a precio son C4 condicionadas a ε."),
+        intervalo=_iv([b2c.get("sensibilidad_min"), b2c.get("sensibilidad_max")]) + " % de Δhogares (2014-2019)",
         cota="C2 de cantidad (hogares); las traducciones a precio son C4 condicionadas a ε.",
-        literatura="Saiz (2007), Sá (2015), González y Ortega (2013): magnitudes de calibración (no replicadas).",
-        veredicto="PARCIALMENTE",
-        regla=("La inmigración puede ser una parte relevante de la demanda nueva desde 2014 (cota no nula), pero la cota "
-               "no es informativa en 2020-2025 con supuestos débiles y no hay diseño C3 propio; v2 (BI) la asocia al "
-               "alquiler con evidencia EXPLORATORIA. No basta para «explica» ni para descartarla."),
+        literatura=f"{LIT['SAIZ07']}; {LIT['SA']}; {LIT['GO']}: magnitudes de calibración (no replicadas).",
+        veredicto="SIN EVIDENCIA SUFICIENTE",
+        regla=("Regla común (i)-(iv), la misma que V01: solo hay cota C2 de cantidad (hogares), que no atribuye precio; "
+               "sin cota C2/C3 de precio ni diseño C3 propio, SIN EVIDENCIA SUFICIENTE. v2 (BI) asocia la inmigración al "
+               "alquiler con evidencia EXPLORATORIA, que no entra en el veredicto."),
         limites="Medida por nacionalidad (las nacionalizaciones la sesgan a la baja); tamaño del hogar extranjero supuesto.",
-        evidencia=["output/v3/PB/cotas.json#B2", "output/v2/informe_v2.md"],
+        evidencia=["output/v3/PB/cotas.json#B2", "output/v3/PB/tablas/b2_no_explica_provincias.csv", "output/v2/informe_v2.md"],
     ))
 
     # ---------------------------------------------------------------- V04 falta de oferta y suelo
@@ -169,17 +201,18 @@ def fichas(ev) -> list[dict]:
     a1b = PA.get("A1_nacional_2012-2021", {})
     out.append(dict(
         id="V04", tema="Oferta y suelo",
-        enunciado="El problema de la vivienda se debe a la falta de oferta nueva y de suelo.",
+        enunciado="La falta de oferta nueva y de suelo es la causa principal del problema de la vivienda (≥50 % de la subida).",
         capa="C1",
         magnitud=(f"Balance contable hogares − viviendas nuevas 2021-2025: {_f(a1.get('magnitud'), 0)} viviendas "
                   f"(rango entre fuentes {_iv(a1.get('intervalo'), 0)}); en 2012-2021 el signo no está determinado "
                   f"({_iv(a1b.get('intervalo'), 0)}). El papel del suelo como moderador no es detectable con los datos (P-C4)."),
         intervalo=_iv(a1.get("intervalo"), 0) + " viviendas (2021-2025)",
         cota="—",
-        literatura="Saiz (2010), Glaeser y Gyourko (2018): calibración; BdE (Informe Anual 2025, DOI no comprobado) ≈750 mil.",
-        veredicto="PARCIALMENTE",
-        regla=("El desfase entre hogares y viviendas nuevas desde 2021 es un hecho C1 compatible con la afirmación; "
-               "antes de 2021 el signo no está determinado y el componente «suelo» no tiene evidencia propia."),
+        literatura=f"{LIT['SAIZ10']}; Glaeser y Gyourko (2018), JEP, VERIFICADA: calibración. {LIT['BDE']}: ≈750 mil.",
+        veredicto="SIN EVIDENCIA SUFICIENTE",
+        regla=("Regla común (i)-(iv), la misma que V01 y V03: el desfase hogares − viviendas nuevas desde 2021 es un hecho "
+               "C1 (ver V05), pero no atribuye la subida; no hay cota C2/C3 de precio para la oferta y el moderador «suelo» "
+               "no es detectable (P-C4)."),
         limites="Un balance contable no mide demanda insatisfecha a cualquier precio; bajas del parque supuestas.",
         evidencia=["output/v3/PA/tablas/A1_tabla_unica_periodos.csv", "output/v3/POT/potencia.md#P-C4"],
     ))
@@ -191,7 +224,7 @@ def fichas(ev) -> list[dict]:
         capa="C1",
         magnitud=f"2021-2025: {_f(a1.get('magnitud'), 0)} viviendas; rango entre fuentes {_iv(a1.get('intervalo'), 0)}.",
         intervalo=_iv(a1.get("intervalo"), 0) + " viviendas",
-        cota="—", literatura="BdE (Informe Anual 2025) ≈750 mil, dentro del rango.",
+        cota="—", literatura=f"{LIT['BDE']}: ≈750 mil, dentro del rango.",
         veredicto="RESPALDADA",
         regla="Todas las combinaciones de fuentes de 2021-2025 dan un balance positivo de cientos de miles (C1).",
         limites=("Depende del periodo de partida: con 2012 como base el signo no está determinado. «Faltan» se refiere "
@@ -201,42 +234,48 @@ def fichas(ev) -> list[dict]:
 
     # ---------------------------------------------------------------- V06 / V07 topes
     c3 = ev.get("C3")
-    jms = "Jofre-Monseny et al. (2023): −4,5 % renta (T2 c3); réplica propia en output/v3/C3/tabla_replicacion_jms.csv."
-    if not c3:
-        v06 = v07 = "SIN EVIDENCIA SUFICIENTE"
-        mag6 = mag7 = "Diseño H3-3 no disponible."
-        capa6 = capa7 = "C4"
-    else:
-        est, cap = c3["estimacion"], c3["capa"]
-        a, b = est["H3-3a"], est["H3-3b"]
-        capa6, capa7 = cap["H3-3a"]["capa"], cap["H3-3b"]["capa"]
-        mag6 = (f"Topes de la Ley 11/2020 (contratos nuevos, fianzas Incasòl): {_f(a['CS']['pct'])} % "
-                f"{_iv(a['CS']['pct_ic95'])}, {_f(a['CS']['eur_mes'], 0)} €/mes {_iv(a['CS']['eur_mes_ic95'], 0)}; "
-                f"validación sellada por fuente (SERPAVI, stock): {_f(a['sellado']['pct'], 2)} % "
-                f"{_iv(a['sellado']['pct_ic95'], 2)}. Capa {capa6}: {cap['H3-3a'].get('fallo', '')}.")
-        mag7 = (f"Número de contratos nuevos: {_f(b['CS']['pct'])} % {_iv(b['CS']['pct_ic95'])} (p {_f(b['CS']['p'], 3)}); "
-                f"validación por fuente (viviendas en alquiler declaradas, stock): {_f(b['sellado']['pct'])} % "
-                f"{_iv(b['sellado']['pct_ic95'])}. Capa {capa7}: {cap['H3-3b'].get('fallo', '')}.")
-        v06 = "RESPALDADA" if capa6 == "C3" and a["CS"]["ic95"][1] < 0 else "SIN EVIDENCIA SUFICIENTE"
-        v07 = "RESPALDADA" if capa7 == "C3" and b["CS"]["ic95"][1] < 0 else "SIN EVIDENCIA SUFICIENTE"
-    out.append(dict(
-        id="V06", tema="Topes de alquiler", enunciado="Los topes al precio del alquiler bajan los alquileres.",
-        capa=capa6, magnitud=mag6, intervalo="ver magnitud", cota="—", literatura=jms, veredicto=v06,
-        regla=("RESPALDADA solo con C3 robusto. H3-3a queda en C4 (falla Rambachan-Roth con M̄=1 y la sensibilidad); "
-               "las estimaciones C4 (fianzas, SERPAVI sellado y réplica de JMS 2023) tienen todas signo negativo, pero "
-               "no se promueven de capa."),
-        limites="Un solo episodio (Cataluña 2020-2022, 16 meses); validación sellada por fuente (SERPAVI), no independiente.",
-        evidencia=["output/v3/C3/resultado.json", "output/v3/C3/tabla_replicacion_jms.csv"],
-    ))
-    out.append(dict(
-        id="V07", tema="Topes de alquiler", enunciado="Los topes al precio del alquiler reducen la oferta de vivienda en alquiler.",
-        capa=capa7, magnitud=mag7, intervalo="ver magnitud", cota="—",
-        literatura=jms[:-1] + "; −0,3 % contratos (no significativo). Diamond et al. (2019, San Francisco): calibración.",
-        veredicto=v07, regla=("RESPALDADA solo con C3 robusto. H3-3b queda en C4 (fallan pretendencias, placebo de fecha y "
-                              "sensibilidad); el contraste principal no es significativo (p≈0,07)."),
-        limites="El número de contratos registrados no es el stock ofertado; posible desvío a temporada no observado.",
-        evidencia=["output/v3/C3/resultado.json"],
-    ))
+    holm = {}
+    f_h = OUT / "holm_v3.csv"
+    if f_h.exists():
+        holm = pd.read_csv(f_h).set_index("hipotesis")["p_holm"].to_dict()
+    jt = None
+    f_j = OUT / "C3" / "tabla_replicacion_jms.csv"
+    if f_j.exists():
+        jt = pd.read_csv(f_j)
+
+    def ficha_tope(h, fid, enunciado, objetivo, que):
+        if not c3:
+            return dict(id=fid, tema="Topes de alquiler", enunciado=enunciado, capa="C4",
+                        magnitud="Diseño H3-3 no disponible.", intervalo="n/d", cota="—", literatura=LIT["JMS"],
+                        veredicto="SIN EVIDENCIA SUFICIENTE", regla="Sin diseño.", limites="—", evidencia=[])
+        e, capa = c3["estimacion"][h], c3["capa"][h]
+        mv = c3.get("diagnosticos", {}).get("multiverso", {}).get(h, {})
+        alt = ""
+        if jt is not None:
+            sub = jt[jt["hipotesis"] == h].head(2)
+            alt = "; ".join(f"{r.especificacion.split(':')[0]} {_f(100 * r.coef)} % [{_f(100 * r.ic95_lo)}; "
+                            f"{_f(100 * r.ic95_hi)}] ({r.clasificacion if isinstance(r.clasificacion, str) else 's/c'})"
+                            for r in sub.itertuples())
+        mag = (f"Principal (Callaway-Sant'Anna, fianzas Incasòl, {que}): {_f(e['CS']['pct'])} % {_iv(e['CS']['pct_ic95'])} "
+               f"(p {_f(e['CS']['p'], 3)}). Validación sellada por fuente (SERPAVI, stock): {_f(e['sellado']['pct'], 2)} % "
+               f"{_iv(e['sellado']['pct_ic95'], 2)}, p_Holm {_f(holm.get(h), 3)}. Estimadores alternativos y réplica de "
+               f"JMS (objetivo {objetivo}): {alt or 'n/d'}. Multiverso: {_f(100 * mv.get('prop_mismo_signo', float('nan')), 0)} % "
+               f"mismo signo, {_f(100 * mv.get('prop_signif_5pct', float('nan')), 0)} % significativas. Capa {capa['capa']} "
+               f"({capa.get('fallo', '')}).")
+        return dict(id=fid, tema="Topes de alquiler", enunciado=enunciado, capa=capa["capa"], magnitud=mag,
+                    intervalo=_iv(e["CS"]["pct_ic95"]) + " % (principal)", cota="—",
+                    literatura=f"{LIT['JMS']}; {LIT['DIAMOND']} (calibración, San Francisco).",
+                    veredicto="RESPALDADA" if capa["capa"] == "C3" and e["CS"]["ic95"][1] < 0 else "SIN EVIDENCIA SUFICIENTE",
+                    regla=("RESPALDADA solo con C3 robusto; con capa C4 el veredicto es SIN EVIDENCIA SUFICIENTE aunque "
+                           "las estimaciones C4 apunten en una dirección (no se promueve de capa)."),
+                    limites=("Un solo episodio (Cataluña, 2020Q4-2022Q1). La validación por fuente mide un stock (SERPAVI) "
+                             "en los mismos municipios: no es independiente y su magnitud es menor que la principal."),
+                    evidencia=["output/v3/C3/resultado.json", "output/v3/C3/tabla_replicacion_jms.csv", "output/v3/holm_v3.csv"])
+
+    out.append(ficha_tope("H3-3a", "V06", "Los topes al precio del alquiler bajan los alquileres.", "−4,5 %",
+                          "renta de los contratos nuevos"))
+    out.append(ficha_tope("H3-3b", "V07", "Los topes al precio del alquiler reducen la oferta de vivienda en alquiler.",
+                          "−0,3 % en contratos", "número de contratos nuevos"))
 
     # ---------------------------------------------------------------- V08 vacías
     a3 = PA.get("A3_vacias_tercil_alto_vs_bajo", {})
@@ -274,14 +313,15 @@ def fichas(ev) -> list[dict]:
         capa="C4", magnitud="Sin diseño propio; la incidencia depende de la elasticidad de la oferta (no estimada aquí).",
         intervalo="n/d", cota="—", literatura="Sin trabajo de incidencia verificado incorporado.",
         veredicto="SIN EVIDENCIA SUFICIENTE",
-        regla="Con oferta poco elástica, parte de la rebaja se traslada al precio; sin estimación, no se puede cuantificar.",
+        regla=("La incidencia depende de la elasticidad de la oferta: si fuera baja, parte de la rebaja podría trasladarse al "
+               "precio; sin estimación no se puede cuantificar ni fijar su signo neto para el comprador."),
         limites="Los cambios autonómicos del ITP permitirían un diseño de diferencias (no realizado).",
         evidencia=[],
     ))
 
     # ---------------------------------------------------------------- V11 vivienda pública
     pd_ = ev["PD"] or []
-    pub = [x for x in pd_ if "públic" in str(x.get("politica", "")).lower() or "vacías" in str(x.get("politica", "")).lower()]
+    pub = [x for x in pd_ if "públic" in str(x.get("politica", "")).lower()]
     out.append(dict(
         id="V11", tema="Vivienda pública",
         enunciado="Construir vivienda pública resolvería el problema de la vivienda.",
@@ -290,8 +330,9 @@ def fichas(ev) -> list[dict]:
                   or "Simulación P-D no disponible."),
         intervalo="ver magnitud", cota="—", literatura="Calibración con la literatura de P-D.",
         veredicto="PARCIALMENTE" if pub else "SIN EVIDENCIA SUFICIENTE",
-        regla=("Aumentar la oferta reduce la brecha en todo el rango simulado, pero «resolver» depende del volumen y del "
-               "plazo; ver P-D."),
+        regla=("Según supuestos: en P-D la vivienda pública reduce el esfuerzo de acceso o lo deja igual (≤ 0; nulo si "
+               "desplaza por completo a la construcción privada, ρ = 1); con 10.000-25.000 viviendas/año queda lejos de "
+               "la brecha de 104.000-413.000 viviendas/año, de modo que «resolver» depende del volumen y del desplazamiento."),
         limites="Simulación con rangos de elasticidades; coste fiscal no cuantificado sin dato de coste.",
         evidencia=["output/v3/PD/resultados.json"],
     ))
@@ -300,16 +341,19 @@ def fichas(ev) -> list[dict]:
     b4a, b4b = PB.get("B4-nac-2014-2021", {}), PB.get("B4-nac-2021-2025", {})
     out.append(dict(
         id="V12", tema="Tipos de interés",
-        enunciado="Los tipos de interés explican la subida de los precios de la vivienda.",
+        enunciado="Los tipos de interés son la causa principal de la subida de los precios de la vivienda (≥50 % de la subida).",
         capa="C2",
-        magnitud=(f"2014-2021: la caída del coste de uso podría cubrir toda la subida (cota {_f(b4a.get('cota_superior'))} % "
-                  f"frente a la subida observada). 2021-2025: el coste de uso subió (cota {_f(b4b.get('cota_superior'))} %), "
-                  "de signo contrario a la subida de precios: no puede explicarla. Sobre el alquiler no actúan directamente (supuesto)."),
+        magnitud=(f"2014-2021: Δln(1/coste de uso) = +{_f(b4a.get('cota_superior'))} % (rango "
+                  f"{_iv([b4a.get('sensibilidad_min'), b4a.get('sensibilidad_max')])} %), por encima de la subida del precio "
+                  "de compra del periodo: la cota no excluye que cubra toda la subida. 2021-2025: Δln(1/coste de uso) = "
+                  f"{_f(b4b.get('cota_superior'))} %, de signo contrario a la subida de precios. Sobre el alquiler no se "
+                  "calcula cota (supuesto de efecto nulo, C4)."),
         intervalo=f"2014-2021 {_iv([b4a.get('sensibilidad_min'), b4a.get('sensibilidad_max')])} %; 2021-2025 {_iv([b4b.get('sensibilidad_min'), b4b.get('sensibilidad_max')])} %",
         cota="C2 en estado estacionario P/R = 1/uc.",
-        literatura="Poterba (1984) para el coste de uso.",
+        literatura=f"{LIT['POTERBA']} para el coste de uso.",
         veredicto="PARCIALMENTE",
-        regla="Compatible con 2014-2021; contradicha por el signo en 2021-2025. Respaldada solo para una parte del periodo.",
+        regla=("Regla común (iv): CONTRADICHA en 2021-2025 (cota C2 de signo contrario) y compatible en 2014-2021 (la cota "
+               "C2 alcanza el 50 %, sin cota inferior): PARCIALMENTE, contradicha en un periodo y no descartada en otro."),
         limites="Depende del suelo del coste de uso y de la ganancia esperada; estado estacionario.",
         evidencia=["output/v3/PB/cotas.json#B4"],
     ))

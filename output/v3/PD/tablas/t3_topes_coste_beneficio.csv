@@ -1,19 +1,19 @@
-cobertura,magnitud,unidad,min,mediana,max,frac_neto_positivo
-0.05,beneficio_agregado,M€/año,18.711080071034896,40.06957577297328,83.89174155588282,
-0.05,coste_desvio,M€/año,0.0,2.5299980923779977,106.77603633185701,
-0.05,coste_traspaso_no_cubiertos,M€/año,-181.09215761882948,10.415968058316416,711.8402422123801,
-0.05,neto_agregado,M€/año,-778.3916101373,22.119694534905115,264.9838991747123,0.6092592592592593
-0.05,contratos_cubiertos,contratos,148904.5,158825.75,168747.0,
-0.05,contratos_desviados,contratos,0.0,3540.93186,25312.05,
-0.15,beneficio_agregado,M€/año,56.133240213104685,120.20872731891984,251.67522466764845,
-0.15,coste_desvio,M€/año,0.0,7.589994277133993,320.32810899557103,
-0.15,coste_traspaso_no_cubiertos,M€/año,-543.2764728564886,31.247904174949248,2135.5207266371403,
-0.15,neto_agregado,M€/año,-2335.1748304118996,66.35908360471535,794.951697524137,0.6092592592592593
-0.15,contratos_cubiertos,contratos,446713.5,476477.25,506241.0,
-0.15,contratos_desviados,contratos,0.0,10622.795580000002,75936.15,
-0.3,beneficio_agregado,M€/año,112.26648042620937,240.41745463783968,503.3504493352969,
-0.3,coste_desvio,M€/año,0.0,15.179988554267986,640.6562179911421,
-0.3,coste_traspaso_no_cubiertos,M€/año,-1086.5529457129771,62.495808349898496,4271.041453274281,
-0.3,neto_agregado,M€/año,-4670.349660823799,132.7181672094307,1589.903395048274,0.6092592592592593
-0.3,contratos_cubiertos,contratos,893427.0,952954.5,1012482.0,
-0.3,contratos_desviados,contratos,0.0,21245.591160000004,151872.3,
+cobertura,magnitud,unidad,min,mediana,max,frac_neto_positivo,advertencia
+0.05,beneficio_agregado,M€/año,18.711080071034896,43.0932434437661,104.79508284783196,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.05,coste_desvio,M€/año,0.0,5.8359713050765745,106.77603633185701,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.05,coste_traspaso_no_cubiertos,M€/año,-181.09215761882948,19.724966915492665,711.8402422123801,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.05,neto_agregado,M€/año,-778.3916101373,12.696450798425198,285.88724046666147,0.5666666666666667,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.05,contratos_cubiertos,contratos,148904.5,158825.75,168747.0,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.05,contratos_desviados,contratos,0.0,6917.301041853273,25312.05,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.15,beneficio_agregado,M€/año,56.133240213104685,129.27973033129828,314.38524854349595,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.15,coste_desvio,M€/año,0.0,17.50791391522972,320.32810899557103,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.15,coste_traspaso_no_cubiertos,M€/año,-543.2764728564886,59.174900746477974,2135.5207266371403,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.15,neto_agregado,M€/año,-2335.1748304118996,38.08935239527561,857.6617213999846,0.5666666666666667,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.15,contratos_cubiertos,contratos,446713.5,476477.25,506241.0,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.15,contratos_desviados,contratos,0.0,20751.90312555982,75936.15,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.3,beneficio_agregado,M€/año,112.26648042620937,258.55946066259656,628.7704970869919,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.3,coste_desvio,M€/año,0.0,35.01582783045944,640.6562179911421,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.3,coste_traspaso_no_cubiertos,M€/año,-1086.5529457129771,118.34980149295595,4271.041453274281,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.3,neto_agregado,M€/año,-4670.349660823799,76.17870479055122,1715.3234427999691,0.5666666666666667,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.3,contratos_cubiertos,contratos,893427.0,952954.5,1012482.0,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)
+0.3,contratos_desviados,contratos,0.0,41503.80625111964,151872.3,,Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)

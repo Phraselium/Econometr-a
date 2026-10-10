@@ -182,8 +182,13 @@ def sensibilidad(d, tr, cov):
     f = abs(t1[1]) / np.sqrt(df1)
     rv = float(0.5 * (np.sqrt(f ** 4 + 4 * f ** 2) - f ** 2))
     pr = {k: float(t1[2 + i] ** 2 / (t1[2 + i] ** 2 + df1)) for i, k in enumerate(names)}
+    prd = {}
+    for i, k in enumerate(names):   # R² parcial de la covariable con el tratamiento (R²_d)
+        Z_ = np.column_stack([np.ones(n)] + [Xc[:, 2 + j] for j in range(len(names)) if j != i] + [Xc[:, 2 + i]])
+        _, tt, _, dfz = ols_t(Z_, tr.astype(float))
+        prd[k] = float(tt[-1] ** 2 / (tt[-1] ** 2 + dfz))
     return dict(oster_delta=delta, oster_abs=abs(delta), beta_corto=float(b0[1]), beta_largo=float(b1[1]), R2_corto=r0,
-                R2_largo=r1, Rmax=rmax, RV_q1=rv, r2_parcial=pr, r2_parcial_max=max(pr.values()) if pr else 0.0,
+                R2_largo=r1, Rmax=rmax, RV_q1=rv, r2_parcial=pr, r2d_parcial=prd, r2d_parcial_max=max(prd.values()) if prd else 0.0, r2_parcial_max=max(pr.values()) if pr else 0.0,
                 t_largo=float(t1[1]))
 
 

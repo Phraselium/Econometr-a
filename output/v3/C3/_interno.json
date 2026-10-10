@@ -319,7 +319,8 @@
      -0.09116469671560419,
      -0.027857184247383912
     ],
-    "theta_SD0": -0.05882999320499922
+    "theta_SD0": -0.05882999320499922,
+    "Mbar_ruptura": 0.29052734375
    },
    "sensibilidad": {
     "oster_delta": 25.668932251285952,
@@ -335,8 +336,15 @@
      "nivel_previo": 0.007609377151230519,
      "pendiente_previa": 0.279242934021917
     },
+    "r2d_parcial": {
+     "ln_poblacion": 0.5525367195351636,
+     "nivel_previo": 0.007121459118473571,
+     "pendiente_previa": 0.0003306744991389043
+    },
+    "r2d_parcial_max": 0.5525367195351636,
     "r2_parcial_max": 0.279242934021917,
-    "t_largo": -3.1389434294390184
+    "t_largo": -3.1389434294390184,
+    "RV_q1_vs_sin_pendiente_previa": true
    },
    "placebos": [
     {
@@ -446,7 +454,8 @@
      -0.17383800331588187,
      0.01788873902614843
     ],
-    "theta_SD0": -0.08327149471414581
+    "theta_SD0": -0.08327149471414581,
+    "Mbar_ruptura": 0.001220703125
    },
    "sensibilidad": {
     "oster_delta": -6.066643019823655,
@@ -462,8 +471,15 @@
      "nivel_previo": 0.006011826380211723,
      "pendiente_previa": 0.16597056419025943
     },
+    "r2d_parcial": {
+     "ln_poblacion": 0.04512293018854765,
+     "nivel_previo": 0.01635443603971592,
+     "pendiente_previa": 0.0028252371924231087
+    },
+    "r2d_parcial_max": 0.04512293018854765,
     "r2_parcial_max": 0.16597056419025943,
-    "t_largo": -1.9761989998032057
+    "t_largo": -1.9761989998032057,
+    "RV_q1_vs_sin_pendiente_previa": true
    },
    "placebos": [
     {
@@ -503,7 +519,7 @@
  "criterios_abc": {
   "alq": {
    "a": false,
-   "b": true,
+   "b": "parcial (sin placebo de resultado)",
    "c": false
   },
   "n": {
@@ -628,7 +644,7 @@
    "fallo": "falla: a, c",
    "criterios": {
     "a": false,
-    "b": true,
+    "b": "parcial (sin placebo de resultado)",
     "c": false,
     "d": true,
     "e": "pendiente: Holm m=4 lo aplica el orquestador"

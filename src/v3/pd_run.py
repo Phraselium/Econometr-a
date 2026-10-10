@@ -100,6 +100,14 @@ def cargar() -> dict:
     # --- C1 (H3-1) y C3 (H3-3a/b): se leen en tiempo de ejecución
     for k, ruta in (("C1", RAIZ / "output" / "v3" / "C1" / "resultado.json"), ("C3", RAIZ / "output" / "v3" / "C3" / "resultado.json")):
         d[k] = json.load(open(ruta)) if ruta.exists() else None
+    ruta = RAIZ / "output" / "v3" / "C1" / "sellado_H3-1.json"
+    d["C1s"] = json.load(open(ruta)).get("nacional") if ruta.exists() else None
+    d["c3p"] = None
+    try:
+        a, b = d["C3"]["estimacion"]["H3-3a"]["CS"], d["C3"]["estimacion"]["H3-3b"]["CS"]
+        d["c3p"] = {"cut": [a["pct_ic95"][0] / 100, a["pct"] / 100, a["pct_ic95"][1] / 100], "L": [b["pct_ic95"][0] / 100, b["pct"] / 100, b["pct_ic95"][1] / 100]}
+    except (TypeError, KeyError):
+        pass
     return d
 
 
@@ -167,12 +175,15 @@ def politica1(d, smoke, reg, tablas):
 def opciones(d, smoke, reg, tablas):
     s = d["sec"]
     mO2 = ["cantidad_eps", "T_GL_bajo", "T_GL_alto", "Barron"]
-    beta_c1 = None
-    if d["C1"] and isinstance(d["C1"].get("estimacion"), (int, float)):
-        beta_c1 = float(d["C1"]["estimacion"])
-        mO2.append("beta_H3-1")
+    betas = []
+    if d["C1s"]:
+        betas = [d["C1s"]["b"], d["C1s"]["lo"], d["C1s"]["hi"]]   # H3-1 sellado (C4), log-p por pp de VUT/parque
+        mO2 += ["H3-1_sellado_b", "H3-1_sellado_lo", "H3-1_sellado_hi"]
     Ldim = [JMS_L + Z * JMS_L_EE, JMS_L, JMS_L - Z * JMS_L_EE, DIAMOND_L]
     cuts = [JMS_CUT - Z * JMS_CUT_EE, JMS_CUT, JMS_CUT + Z * JMS_CUT_EE]
+    if d["c3p"]:
+        Ldim = Ldim + d["c3p"]["L"]
+        cuts = cuts + d["c3p"]["cut"]
     g = rejilla({
         "eps": ext(EPS, smoke), "eta": ext(ETA, smoke), "R": d["R"], "phimode": [0, 1], "s": ext([0, 0.5, 1], smoke),
         "m": ext(list(range(len(mO2))), smoke), "L": ext(Ldim, smoke), "cut": ext(cuts, smoke),
@@ -195,8 +206,8 @@ def opciones(d, smoke, reg, tablas):
         ret = g["s"] * X * s["V_top"]
         loc = np.select([g["m"] == 0, g["m"] == 1, g["m"] == 2, g["m"] == 3],
                         [-ret / s["R_top"] / ed, -T_GL[0] * X * s["w_top_pp"], -T_GL[1] * X * s["w_top_pp"], -BARRON * X], default=np.nan)
-        if beta_c1 is not None:
-            loc = np.where(g["m"] == 4, -abs(beta_c1) * X * s["w_top_pp"], loc)   # unidad supuesta: log-p por pp (se declara en notas)
+        for j, bb in enumerate(betas):
+            loc = np.where(g["m"] == 4 + j, -bb * X * s["w_top_pp"], loc)
         agrega(f"P2_retirar_VUT_{int(X * 100)}pct", "P2 retirar VUT", f"{int(X * 100)} % en el decil superior de peso", loc * s["R_top"] / g["R"], ret)
     for kap in (0.05, 0.15, 0.30):
         agrega(f"P3_tope_cobertura_{int(kap * 100)}pct", "P3 topes de alquiler", f"cobertura {int(kap * 100)} % del stock de alquiler",
@@ -262,7 +273,8 @@ def politica3(d, smoke, reg, tablas, O):
             f = v / 1e6 if u == "M€/año" else v
             filas.append({"cobertura": kap, "magnitud": nombre, "unidad": u, "min": f.min(), "mediana": np.median(f), "max": f.max(),
                           "frac_neto_positivo": float((neto > 0).mean()) if nombre == "neto_agregado" else np.nan})
-    tablas["t3_topes_coste_beneficio.csv"] = pd.DataFrame(filas)
+    tablas["t3_topes_coste_beneficio.csv"] = pd.DataFrame(filas).assign(
+        advertencia="Valoración monetaria simplificada; sin costes administrativos ni de calidad; pérdida por desvío es supuesto; saldo fuera de la presentación principal (W5 opción b)")
     rows = []
     for Lv in sorted(set(g["L"])):
         f = g["L"] == Lv
@@ -278,7 +290,12 @@ def politica3(d, smoke, reg, tablas, O):
     tablas["t3_signo_por_eps_eta.csv"] = pd.DataFrame(rows)
     reg.log("P3", "P3_neto_por_inquilino", "Ra·|cut|·(1+L) − max(−L,0)·ℓ·Ra − (−L)·Ra/(ε+η)", 2026, 2035, len(ed), np.nan, np.nan, np.nan,
             coef_interes=float(np.median(por_inq)), notas=f"€/año por inquilino cubierto: {por_inq.min():.0f} a {por_inq.max():.0f}")
-    return dict(por_inq=por_inq, ben_inq=ben_inq, g=g)
+    alt = None
+    if d["c3p"]:
+        g3 = rejilla({"eps": ext(EPS, smoke), "eta": ext(ETA, smoke), "Ra": d["Ra"], "L": d["c3p"]["L"], "cut": d["c3p"]["cut"], "ell": ext([0.1, 0.25, 0.5], smoke)})
+        e3 = g3["eps"] + g3["eta"]
+        alt = {"ben": g3["Ra"] * (-g3["cut"]), "neto": g3["Ra"] * (-g3["cut"]) * (1 + g3["L"]) - np.maximum(-g3["L"], 0) * g3["ell"] * g3["Ra"] - (-g3["L"]) * g3["Ra"] / e3}
+    return dict(por_inq=por_inq, ben_inq=ben_inq, g=g, alt=alt)
 
 
 # ------------------------------------------------------------------ figuras
@@ -359,7 +376,9 @@ def main(smoke: bool = False):
                        "pct_stock_alquiler_nacional_min": 100 * ret / max(d["R"]), "pct_stock_alquiler_nacional_max": 100 * ret / min(d["R"]),
                        "local_cantidad_eps_max_pct": -100 * ret / s["R_top"] / 0.3, "local_cantidad_eps_min_pct": -100 * ret / s["R_top"] / (1.5 + 1.75),
                        "local_T_bajo_pct": -100 * T_GL[0] * X * s["w_top_pp"], "local_T_alto_pct": -100 * T_GL[1] * X * s["w_top_pp"],
-                       "local_Barron_pct": -100 * BARRON * X})
+                       "local_Barron_pct": -100 * BARRON * X,
+                       **({"local_H31_b_pct": -100 * d["C1s"]["b"] * X * s["w_top_pp"], "local_H31_lo_pct": -100 * d["C1s"]["hi"] * X * s["w_top_pp"],
+                           "local_H31_hi_pct": -100 * d["C1s"]["lo"] * X * s["w_top_pp"]} if d["C1s"] else {})})
     p2 = pd.DataFrame(p2)
     tablas["t2_vut_efecto_local.csv"] = p2
     tablas["t2_vut_secciones_top.csv"] = pd.DataFrame(s["por_ciudad"]).assign(umbral_pp=s["umbral_pp"])
@@ -412,10 +431,13 @@ def main(smoke: bool = False):
 
     def add(politica, metrica, lo, hi, unidad, robusta, depende, capa, limites, debil=None):
         R.append({"politica": politica, "metrica": metrica, "rango_min": None if lo is None else float(lo), "rango_max": None if hi is None else float(hi),
-                  "unidad": unidad, "robusta_en_todo_el_rango": robusta, "domina_debilmente": debil, "depende_de": depende, "capa": capa, "limites": limites})
+                  "unidad": unidad, "signo_estable_en_la_rejilla": robusta, "domina_debilmente": debil, "depende_de": depende, "capa": capa, "limites": limites})
 
     NA = "n/a (cantidad contable o condicional)"
     yn = lambda b: "sí" if b else "no"  # noqa: E731
+
+    def sg(o):
+        return "sí" if o.domina_estricto else ("≤ 0 (posiblemente nulo)" if o.domina_debil else "no")
     marca_c13 = "" if (d["C1"] or d["C3"]) else " Resultados C1/C3 de la oleada 2 ausentes: solo rangos de literatura (marcado)."
     lim1 = ("Modelo log-lineal de stock-flujo con ε y η constantes; las terminadas MIVAU incluyen toda vivienda (no solo residencia habitual); "
             "las bajas son un supuesto; el balance contable no equivale a demanda insatisfecha a cualquier precio.")
@@ -431,35 +453,51 @@ def main(smoke: bool = False):
         "supuesto de movilización (0-30 %)", "C2", lim1)
     for K in (25, 50, 100):
         o = tab.loc[f"P1_construccion_{K}k_anio"]
-        add("P1 estabilizar el esfuerzo", f"variación del esfuerzo medio con +{K} mil/año adicionales", o.esfuerzo_min_pct, o.esfuerzo_max_pct, "%", yn(o.domina_estricto),
+        add("P1 estabilizar el esfuerzo", f"variación del esfuerzo medio con +{K} mil/año adicionales", o.esfuerzo_min_pct, o.esfuerzo_max_pct, "%", sg(o),
             "la magnitud depende de ε, η y de la fracción que llega al alquiler; signo < 0 en toda la rejilla", "C2", "Sin coste fiscal ni efecto sobre el suelo y la construcción.", yn(o.domina_debil))
     # P2
     for X in (0.25, 0.5, 1.0):
         add("P2 retirar turísticos", f"viviendas devueltas al alquiler (X = {int(X * 100)} % en secciones de mayor peso, 6 ciudades)", 0, X * s["V_top"], "viviendas", NA,
             "depende de la sustitución s (cota B1: máximo 1:1, mínimo 0)", "C2", "Cota superior de sustitución 1:1 (PB B1); no estima cuántas vuelven.")
         r = p2[p2.X == X]
-        add("P2 retirar turísticos", f"variación local del alquiler (X = {int(X * 100)} %), método T de GL y Barron", r.local_T_alto_pct.min(), r.local_Barron_pct.max(), "% del alquiler de las secciones",
-            "no", "depende del método (T de GL o Barron) y de X; H3-1 ausente, solo literatura", "C4",
-            "Rango de literatura no verificado en España; la réplica propia de GL es NO REPLICADO; T alto sin verificar." + marca_c13)
-        add("P2 retirar turísticos", f"variación local del alquiler (X = {int(X * 100)} %), vía cantidad B1 con ε", r.local_cantidad_eps_max_pct.min(), 0, "% del alquiler de las secciones", "no",
-            "depende de ε, η y de s (nula si s = 0)", "C4", "Condicional a ε y s; aproximación log-lineal, fuera de su rango de validez por debajo de -30 %.")
+        def trunc(v):
+            return max(float(v), -100.0)
+
+        def nota_val(v):
+            return " Valor truncado a -100 %: fuera de validez log-lineal (< -30 %)." if v < -30 else ""
+        lo_t = r.local_T_alto_pct.min()
+        add("P2 retirar turísticos", f"variación local del alquiler (X = {int(X * 100)} %), T de GL (NO REPLICADO) y Barron", trunc(lo_t), r.local_Barron_pct.max(), "% del alquiler de las secciones",
+            "no", "depende del método (T de GL o Barron) y de X", "C4",
+            "GL NO REPLICADO en la réplica propia (output/v3/GL); rango de literatura no verificado en España; T alto sin verificar." + nota_val(lo_t))
+        if d["C1s"]:
+            add("P2 retirar turísticos", f"variación local del alquiler (X = {int(X * 100)} %), H3-1 sellado (β = {d['C1s']['b']:.5f}, IC95 [{d['C1s']['lo']:.4f}; {d['C1s']['hi']:.4f}])",
+                r.local_H31_lo_pct.min(), r.local_H31_hi_pct.max(), "% del alquiler de las secciones", "no",
+                "el IC95 de β incluye 0 y valores de signo opuesto: el rango llega a ≥ 0", "C4", "H3-1 sellado (C4, output/v3/C1/sellado_H3-1.json); asociación, no efecto causal; unidad log-p por pp de VUT/parque.")
+        lo_q = r.local_cantidad_eps_max_pct.min()
+        add("P2 retirar turísticos", f"variación local del alquiler (X = {int(X * 100)} %), vía cantidad B1 con ε", trunc(lo_q), 0, "% del alquiler de las secciones", "no",
+            "depende de ε, η y de s (nula si s = 0)", "C4", "Condicional a ε y s; aproximación log-lineal." + nota_val(lo_q))
     n2 = tab.loc["P2_retirar_VUT_50pct"]
-    add("P2 retirar turísticos", "variación del esfuerzo medio nacional con X = 50 %", n2.esfuerzo_min_pct, n2.esfuerzo_max_pct, "%", yn(n2.domina_estricto),
+    add("P2 retirar turísticos", "variación del esfuerzo medio nacional con X = 50 %", n2.esfuerzo_min_pct, n2.esfuerzo_max_pct, "%", sg(n2),
         "efecto ≤ 0 en toda la rejilla y nulo si s = 0 en la vía de cantidad (domina débilmente); magnitud depende de s, ε, η y del método", "C2",
         "Solo seis ciudades; ponderación nacional por el stock de alquiler; sin costes ni variación del sector turístico.", yn(n2.domina_debil))
     # P3
     pi, bi = P3["por_inq"], P3["ben_inq"]
     add("P3 topes de alquiler", "reducción de renta por inquilino cubierto", bi.min(), bi.max(), "€/año", NA, "reducción JMS (IC) y renta anual de alquiler", "C4",
         "Efecto de Jofre-Monseny et al. (Cataluña 2016-22) extrapolado; H3-3 ausente." if d["C3"] is None else "H3-3 presente (ver notas).")
-    add("P3 topes de alquiler", "neto por inquilino cubierto (beneficio menos desvío y traspaso)", pi.min(), pi.max(), "€/año", yn(pi.min() > 0),
-        "depende de la variación de contratos L (de +3,8 % a -15 %), de ε+η y de la pérdida por desvío ℓ", "C4", "ℓ es un supuesto sin dato; Diamond es San Francisco 1994, JMS es Cataluña.")
+    # W5 opción (b): el saldo neto (por inquilino y agregado) queda solo en tablas/t3_* con advertencia
     ft = tablas["t3_topes_coste_beneficio.csv"]
-    for kap in (0.05, 0.15, 0.30):
-        f = ft[(ft.cobertura == kap) & (ft.magnitud == "neto_agregado")].iloc[0]
-        add("P3 topes de alquiler", f"neto agregado con cobertura {int(kap * 100)} %", f["min"], f["max"], "M€/año", yn(f["min"] > 0), "depende de L, ε+η, ℓ y de la cobertura (supuesto)", "C4",
-            "Valoración monetaria simplificada; sin costes administrativos ni efectos en calidad.")
+    for nom in ("beneficio_agregado", "coste_desvio", "coste_traspaso_no_cubiertos"):
+        f = ft[(ft.cobertura == 0.15) & (ft.magnitud == nom)].iloc[0]
+        add("P3 topes de alquiler", f"{nom.replace('_', ' ')} con cobertura 15 % (componente, sin saldo)", f["min"], f["max"], "M€/año", NA,
+            "depende de L, ε+η, ℓ y de la cobertura (supuesto)", "C4", "Valoración monetaria simplificada; sin costes administrativos ni de calidad; el saldo no se presenta (tablas/t3_*).")
+    if P3["alt"]:
+        c3 = d["c3p"]
+        add("P3 topes de alquiler", "reducción de renta por inquilino cubierto, alternativa H3-3 (C3, DiD Cataluña)", P3["alt"]["ben"].min(), P3["alt"]["ben"].max(), "€/año", NA,
+            f"β de H3-3a ({100 * c3['cut'][1]:.1f} %, IC {100 * c3['cut'][0]:.1f} a {100 * c3['cut'][2]:.1f} %) y renta anual", "C4", "Fila alternativa a JMS; C4 según output/v3/C3/resultado.json; sellado por fuente, no espacial.")
+        add("P3 topes de alquiler", "variación de contratos cubiertos, alternativa H3-3b", 100 * c3["L"][0], 100 * c3["L"][2], "%", NA,
+            f"IC de H3-3b ({100 * c3['L'][0]:.1f} a {100 * c3['L'][2]:.1f} %, punto {100 * c3['L'][1]:.1f} %); incluye 0", "C4", "Alternativa a JMS (-0,3 %) y Diamond (-15 %); entra también en la rejilla del arrepentimiento.")
     p3 = tab.loc["P3_tope_cobertura_15pct"]
-    add("P3 topes de alquiler", "variación del esfuerzo medio de los inquilinos (cobertura 15 %)", p3.esfuerzo_min_pct, p3.esfuerzo_max_pct, "%", yn(p3.domina_estricto),
+    add("P3 topes de alquiler", "variación del esfuerzo medio de los inquilinos (cobertura 15 %)", p3.esfuerzo_min_pct, p3.esfuerzo_max_pct, "%", sg(p3),
         f"el signo depende de L y de ε+η: baja en el {100 * p3.frac_mejora:.0f} % de la rejilla y sube en el {100 * p3.frac_empeora:.0f} %", "C4",
         "Incluye el traspaso de la oferta perdida a los inquilinos no cubiertos; la oferta baja en parte de la rejilla.", yn(p3.domina_debil))
     # P4
@@ -467,13 +505,13 @@ def main(smoke: bool = False):
         o = tab.loc[f"P4_movilizar_{int(m * 100)}pct_vacias_alto"]
         add("P4 movilización de vacías", f"viviendas aportadas ({int(m * 100)} % de las vacías del tercil alto)", m * d["V_alto"][0], m * d["V_alto"][1], "viviendas", NA,
             "depende del % movilizable (supuesto 0-30 %) y de la medida de presión", "C2", "Supuesto de movilización sin dato; las vacías incluyen segundas residencias y viviendas no aptas.")
-        add("P4 movilización de vacías", f"variación del esfuerzo medio nacional ({int(m * 100)} %)", o.esfuerzo_min_pct, o.esfuerzo_max_pct, "%", yn(o.domina_estricto),
+        add("P4 movilización de vacías", f"variación del esfuerzo medio nacional ({int(m * 100)} %)", o.esfuerzo_min_pct, o.esfuerzo_max_pct, "%", sg(o),
             "la magnitud depende de ε, η y de la fracción que llega al alquiler; signo < 0", "C2", "Movilización y localización supuestas; el efecto local en el tercil alto es mayor que el nacional.", yn(o.domina_debil))
     add("P4 movilización de vacías", "aporte máximo (30 %) como % de la brecha acumulada de P1", 100 * 0.3 * d["V_alto"][0] / (HORIZ * brecha_hi),
         100 * 0.3 * d["V_alto"][1] / (HORIZ * brecha_p10), "%", NA, "depende de la brecha de P1 y del % movilizable", "C2", "Brecha de P1 sin movilización; el extremo alto usa el percentil 10 de la brecha.")
     for G in (10, 25):
         o = tab.loc[f"P4_publica_{G}k_anio"]
-        add("P4 vivienda pública", f"variación del esfuerzo medio nacional ({G} mil/año; coste unitario = parámetro)", o.esfuerzo_min_pct, o.esfuerzo_max_pct, "%", yn(o.domina_estricto),
+        add("P4 vivienda pública", f"variación del esfuerzo medio nacional ({G} mil/año; coste unitario = parámetro)", o.esfuerzo_min_pct, o.esfuerzo_max_pct, "%", sg(o),
             "depende del desplazamiento de la construcción privada ρ (nulo si ρ = 1), ε y η", "C2", "Sin coste unitario en data/; coste total = unidades x parámetro (sin cifra inventada).", yn(o.domina_debil))
     # criterio
     mm = tab.regret_max_pp.idxmin()
@@ -484,9 +522,9 @@ def main(smoke: bool = False):
         "; ".join(dom), "C2", "Dominancia frente a sin política, sin coste fiscal.")
     add("Criterio", "opciones que dominan débilmente (efecto ≤ 0 y oferta ≥ 0)", len(domd), len(tab) - 1, "n.º de opciones (de las evaluadas)", yn(domd), "; ".join(domd), "C2", "Incluye efectos nulos.")
     add("Criterio", f"mínimo arrepentimiento máximo, todas las dosis: {mm}", tab.loc[mm, "regret_max_pp"], tab.loc[mm, "regret_max_pp"], "puntos log x100", "no",
-        "depende de las dosis consideradas (supuestos): la dosis mayor minimiza el arrepentimiento", "C4", "Arrepentimiento medido en esfuerzo medio nacional; sin costes.")
+        "depende de las dosis consideradas (supuestos): la dosis mayor minimiza el arrepentimiento", "C4", "Resultado mecánico: no se modelan costes (fiscal, de suelo, de movilización, pérdida de propietarios, desplazamiento de la demanda turística), así que la mayor dosis minimiza el arrepentimiento por construcción.")
     add("Criterio", f"mínimo arrepentimiento máximo, dosis central: {mmc}", tab.loc[mmc, "regret_max_dosis_central_pp"], tab.loc[mmc, "regret_max_dosis_central_pp"], "puntos log x100", "no",
-        "depende de la dosis central elegida", "C4", "Dosis centrales: P1 50 mil/año, P2 50 %, P3 15 %, P4 30 % y 25 mil/año.")
+        "depende de la dosis central elegida", "C4", "Resultado mecánico en ausencia de costes modelados. Dosis centrales: P1 50 mil/año, P2 50 %, P3 15 %, P4 30 % y 25 mil/año.")
 
     tablas["resultados_tabla.csv"] = pd.DataFrame(R)
     for nom, df in tablas.items():
@@ -499,6 +537,7 @@ def main(smoke: bool = False):
         "pregunta": "Qué variación simulada del esfuerzo de acceso y de la oferta producen cuatro políticas en rangos de parámetros, y cuál domina o minimiza el arrepentimiento máximo",
         "datos": "output/v3/PA (A1-A4), output/v3/PB (B1), MIVAU terminadas 2021-25, literatura_v3 parte B; C1/C3 de oleada 2: " + ("presentes" if d["C1"] or d["C3"] else "ausentes (solo literatura, marcado)"),
         "N": {"escenarios_rejilla_politicas": int(len(g["eps"])), "escenarios_P1": int(len(df1)), "opciones": int(len(tab))},
+        "opcion_W5": "(b) el saldo neto de los topes sale de la presentación principal y queda en tablas/t3_* con advertencia; no hay canal de costes en las opciones, de modo que el mínimo arrepentimiento es mecánico",
         "metodo": "Simulación contrafactual stock-flujo log-lineal sobre rejilla completa de parámetros; dominancia y regret minimax; sin contrastes de hipótesis",
         "estimacion": {"P1_necesarias_mediana": float(sinm.necesarias.median()), "P1_necesarias_rango": [float(sinm.necesarias.min()), float(sinm.necesarias.max())],
                        "terminadas_2021_25_rango": [c0lo, c0hi], "minimax_regret_todas_dosis": mm, "minimax_regret_dosis_central": mmc,

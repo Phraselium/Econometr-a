@@ -444,6 +444,11 @@ def _sig(b, lo, hi):
     return bool(b is not None and b > 0 and lo > 0)
 
 
+def _holm():
+    h = pd.read_csv(cd.RAIZ / "output/v3/holm_v3.csv").set_index("hipotesis")
+    return {k: f(h.loc[k, "p_holm"]) for k in ("H3-1", "H3-2")}
+
+
 def cierre(pan, lead, rent, dv):
     capas = {}
     for hip, key_n, key_s in (("H3-1", "nacional", "nacional"), ("H3-2", "6_ciudades", "6_ciudades")):
@@ -458,12 +463,14 @@ def cierre(pan, lead, rent, dv):
                               "detalle": {x: {"p": f(v["p"]), "b": f(v["b"])} for x, v in pasa_ad.items()}}
         pm = pr.get("placebo_permutacion") or pr.get("placebo_permutacion_instrumento")
         ra = pr.get("placebo_resultado_ADRH")
-        crit["b_placebos"] = {"pasa": bool(pm["size5"] <= 0.10 and (ra is None or ra["p"] >= 0.05)),
+        crit["b_placebos"] = {"pasa": bool(pm["size5"] <= 0.10),
+                              "nota_ADRH": "P3: ADRH significativo (p<0,05) se informa sin invalidar automáticamente"
+                              if ra is not None and ra["p"] < 0.05 else "ADRH no significativo",
                               "tamano_placebo_tratamiento": f(pm["size5"]),
                               "p_ADRH": f(ra["p"]) if ra else None, "p_aleatorizacion_real": f(pm["p_rand"])}
         se = pr.get("sensibilidad") or pr.get("sensibilidad_2SLS")
         mejor = max(se["r2_mejor_cov_y"], se["r2_mejor_cov_d"])
-        crit["c_sensibilidad"] = {"pasa": bool(se["RV_q1"] > mejor and se["delta_oster"] > 1),
+        crit["c_sensibilidad"] = {"pasa": bool(se["RV_q1"] > mejor and abs(se["delta_oster"]) > 1),
                                   "RV_q1": f(se["RV_q1"]), "R2_parcial_mejor_cov": f(mejor),
                                   "delta_oster": f(se["delta_oster"])}
         s = R["sellado"][hip]
@@ -493,6 +500,7 @@ def cierre(pan, lead, rent, dv):
     est = h1["principal"]["nacional"] if h1.get("estimado") else {}
     sell1 = R["sellado"]["H3-1"].get("nacional", {}) if isinstance(R["sellado"]["H3-1"], dict) else {}
     capa_final = "C3 (condicionada a Holm m=4)" if any(c["capa"].startswith("C3") for c in capas.values()) else "C4"
+    HOLM = _holm()
     res = {
         "rama": "C1",
         "pregunta": "¿Se asocia más VUT por cada 100 viviendas de una sección con más alquiler SERPAVI? (H3-1 FE; "
@@ -503,7 +511,7 @@ def cierre(pan, lead, rent, dv):
         "metodo": "MCO con FE sección + año×municipio, cluster distrito (H3-1); 2SLS shift-share LOO (H3-2)",
         "estimacion": est.get("b"),
         "ic95": [est.get("lo"), est.get("hi")],
-        "p_ajustado": None,
+        "p_ajustado": HOLM,
         "p_sellado": {"H3-1": sell1.get("p"),
                       "H3-2": (R["sellado"]["H3-2"].get("6_ciudades") or {}).get("p")
                       if isinstance(R["sellado"]["H3-2"], dict) else None},

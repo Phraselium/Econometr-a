@@ -1,14 +1,14 @@
 {
  "id": "V12",
  "tema": "Tipos de interés",
- "enunciado": "Los tipos de interés explican la subida de los precios de la vivienda.",
+ "enunciado": "Los tipos de interés son la causa principal de la subida de los precios de la vivienda (≥50 % de la subida).",
  "capa": "C2",
- "magnitud": "2014-2021: la caída del coste de uso podría cubrir toda la subida (cota 78,0 % frente a la subida observada). 2021-2025: el coste de uso subió (cota -20,5 %), de signo contrario a la subida de precios: no puede explicarla. Sobre el alquiler no actúan directamente (supuesto).",
+ "magnitud": "2014-2021: Δln(1/coste de uso) = +78,0 % (rango [23,5; 109,6] %), por encima de la subida del precio de compra del periodo: la cota no excluye que cubra toda la subida. 2021-2025: Δln(1/coste de uso) = -20,5 %, de signo contrario a la subida de precios. Sobre el alquiler no se calcula cota (supuesto de efecto nulo, C4).",
  "intervalo": "2014-2021 [23,5; 109,6] %; 2021-2025 [-99,8; -20,5] %",
  "cota": "C2 en estado estacionario P/R = 1/uc.",
- "literatura": "Poterba (1984) para el coste de uso.",
+ "literatura": "Poterba (1984), QJE, VERIFICADA, Q1 para el coste de uso.",
  "veredicto": "PARCIALMENTE",
- "regla": "Compatible con 2014-2021; contradicha por el signo en 2021-2025. Respaldada solo para una parte del periodo.",
+ "regla": "Regla común (iv): CONTRADICHA en 2021-2025 (cota C2 de signo contrario) y compatible en 2014-2021 (la cota C2 alcanza el 50 %, sin cota inferior): PARCIALMENTE, contradicha en un periodo y no descartada en otro.",
  "limites": "Depende del suelo del coste de uso y de la ganancia esperada; estado estacionario.",
  "evidencia": [
   "output/v3/PB/cotas.json#B4"

@@ -3,15 +3,16 @@
  "tema": "Topes de alquiler",
  "enunciado": "Los topes al precio del alquiler bajan los alquileres.",
  "capa": "C4",
- "magnitud": "Topes de la Ley 11/2020 (contratos nuevos, fianzas Incasòl): -5,4 % [-7,1; -3,7], -37 €/mes [-48; -25]; validación sellada por fuente (SERPAVI, stock): -0,77 % [-1,39; -0,14]. Capa C4: falla: a, c.",
- "intervalo": "ver magnitud",
+ "magnitud": "Principal (Callaway-Sant'Anna, fianzas Incasòl, renta de los contratos nuevos): -5,4 % [-7,1; -3,7] (p 0,000). Validación sellada por fuente (SERPAVI, stock): -0,77 % [-1,39; -0,14], p_Holm 0,048. Estimadores alternativos y réplica de JMS (objetivo −4,5 %): R1 JMS -3,5 % [-4,7; -2,3] (REPLICADO); R2 JMS -4,5 % [-6,5; -2,6] (REPLICADO). Multiverso: 100 % mismo signo, 89 % significativas. Capa C4 (falla: a, c).",
+ "intervalo": "[-7,1; -3,7] % (principal)",
  "cota": "—",
- "literatura": "Jofre-Monseny et al. (2023): −4,5 % renta (T2 c3); réplica propia en output/v3/C3/tabla_replicacion_jms.csv.",
+ "literatura": "Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE, VERIFICADA, Q1; Diamond, McQuade y Qian (2019), AER, VERIFICADA, Q1 (calibración, San Francisco).",
  "veredicto": "SIN EVIDENCIA SUFICIENTE",
- "regla": "RESPALDADA solo con C3 robusto. H3-3a queda en C4 (falla Rambachan-Roth con M̄=1 y la sensibilidad); las estimaciones C4 (fianzas, SERPAVI sellado y réplica de JMS 2023) tienen todas signo negativo, pero no se promueven de capa.",
- "limites": "Un solo episodio (Cataluña 2020-2022, 16 meses); validación sellada por fuente (SERPAVI), no independiente.",
+ "regla": "RESPALDADA solo con C3 robusto; con capa C4 el veredicto es SIN EVIDENCIA SUFICIENTE aunque las estimaciones C4 apunten en una dirección (no se promueve de capa).",
+ "limites": "Un solo episodio (Cataluña, 2020Q4-2022Q1). La validación por fuente mide un stock (SERPAVI) en los mismos municipios: no es independiente y su magnitud es menor que la principal.",
  "evidencia": [
   "output/v3/C3/resultado.json",
-  "output/v3/C3/tabla_replicacion_jms.csv"
+  "output/v3/C3/tabla_replicacion_jms.csv",
+  "output/v3/holm_v3.csv"
  ]
 }

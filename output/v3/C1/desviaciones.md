@@ -14,3 +14,6 @@
 12. **Conley.** Núcleo Bartlett de 1 km entre centroides (cartografía INE 2021, centroides calculados sin geopandas; temporales borrados; caché `centroides.csv`). Sin corrección de grados de libertad.
 13. **Fuera de muestra.** No se compara con AR(4) ni con ECM v1: son coeficientes de asociación entre secciones, no pronósticos. La validación fuera de muestra es la sellada.
 14. **Holm (m=4).** Lo aplica el orquestador con `p_sellado` de `resultado.json`.
+15. **Familia confirmatoria de H3-1.** Se eligió la muestra nacional como único confirmatorio (punto 2). Si las 6 ciudades también lo fueran, m sería 5. El sellado de las 6 ciudades da β = −0,0013 [−0,0034; 0,0008], p = 0,20 (wcb 0,24), con signo opuesto al nacional (+0,0010); se informa con el mismo relieve y la hipótesis no se apoya en ninguna de las dos.
+16. **Umbrales fijados después del pre-registro.** El umbral de placebo de tratamiento (≤ 10 % de permutaciones con |t| > 1,96) se fijó después. Criterio b revisado: depende solo de la permutación; el ADRH significativo (H3-1, p = 0,0003) se informa sin invalidar automáticamente (P3). Criterio c unificado con C3: RV_q=1 frente a max(R²_y, R²_d) de la covariable más fuerte y |δ| de Oster > 1. Las capas no cambian (a falla).
+17. **p_ajustado** (Holm m = 4) tomado de `output/v3/holm_v3.csv`: H3-1 0,467; H3-2 0,501.

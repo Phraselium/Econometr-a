@@ -3,14 +3,16 @@
  "tema": "Topes de alquiler",
  "enunciado": "Los topes al precio del alquiler reducen la oferta de vivienda en alquiler.",
  "capa": "C4",
- "magnitud": "Número de contratos nuevos: -4,9 % [-9,9; 0,5] (p 0,073); validación por fuente (viviendas en alquiler declaradas, stock): -4,4 % [-6,4; -2,3]. Capa C4: falla: a, b, c.",
- "intervalo": "ver magnitud",
+ "magnitud": "Principal (Callaway-Sant'Anna, fianzas Incasòl, número de contratos nuevos): -4,9 % [-9,9; 0,5] (p 0,073). Validación sellada por fuente (SERPAVI, stock): -4,36 % [-6,37; -2,30], p_Holm 0,000. Estimadores alternativos y réplica de JMS (objetivo −0,3 % en contratos): R1 JMS 3,0 % [-0,9; 7,0] (PARCIAL); R2 JMS -2,0 % [-8,3; 4,2] (PARCIAL). Multiverso: 81 % mismo signo, 0 % significativas. Capa C4 (falla: a, b, c).",
+ "intervalo": "[-9,9; 0,5] % (principal)",
  "cota": "—",
- "literatura": "Jofre-Monseny et al. (2023): −4,5 % renta (T2 c3); réplica propia en output/v3/C3/tabla_replicacion_jms.csv; −0,3 % contratos (no significativo). Diamond et al. (2019, San Francisco): calibración.",
+ "literatura": "Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE, VERIFICADA, Q1; Diamond, McQuade y Qian (2019), AER, VERIFICADA, Q1 (calibración, San Francisco).",
  "veredicto": "SIN EVIDENCIA SUFICIENTE",
- "regla": "RESPALDADA solo con C3 robusto. H3-3b queda en C4 (fallan pretendencias, placebo de fecha y sensibilidad); el contraste principal no es significativo (p≈0,07).",
- "limites": "El número de contratos registrados no es el stock ofertado; posible desvío a temporada no observado.",
+ "regla": "RESPALDADA solo con C3 robusto; con capa C4 el veredicto es SIN EVIDENCIA SUFICIENTE aunque las estimaciones C4 apunten en una dirección (no se promueve de capa).",
+ "limites": "Un solo episodio (Cataluña, 2020Q4-2022Q1). La validación por fuente mide un stock (SERPAVI) en los mismos municipios: no es independiente y su magnitud es menor que la principal.",
  "evidencia": [
-  "output/v3/C3/resultado.json"
+  "output/v3/C3/resultado.json",
+  "output/v3/C3/tabla_replicacion_jms.csv",
+  "output/v3/holm_v3.csv"
  ]
 }

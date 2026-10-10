@@ -1,8 +1,8 @@
 id,tema,enunciado,veredicto,capa
 V01,Viviendas turísticas,Las viviendas turísticas son la causa principal de la subida del alquiler en España.,SIN EVIDENCIA SUFICIENTE,C2
 V02,Grandes tenedores,Los fondos de inversión y los grandes tenedores son los responsables de la subida de precios y alquileres.,SIN EVIDENCIA SUFICIENTE,C4
-V03,Inmigración,La inmigración explica la subida de los precios y de los alquileres.,PARCIALMENTE,C2
-V04,Oferta y suelo,El problema de la vivienda se debe a la falta de oferta nueva y de suelo.,PARCIALMENTE,C1
+V03,Inmigración,La inmigración es la causa principal de la subida de los precios y de los alquileres (≥50 % de la subida).,SIN EVIDENCIA SUFICIENTE,C2
+V04,Oferta y suelo,La falta de oferta nueva y de suelo es la causa principal del problema de la vivienda (≥50 % de la subida).,SIN EVIDENCIA SUFICIENTE,C1
 V05,Déficit,Faltan cientos de miles de viviendas en España.,RESPALDADA,C1
 V06,Topes de alquiler,Los topes al precio del alquiler bajan los alquileres.,SIN EVIDENCIA SUFICIENTE,C4
 V07,Topes de alquiler,Los topes al precio del alquiler reducen la oferta de vivienda en alquiler.,SIN EVIDENCIA SUFICIENTE,C4
@@ -10,6 +10,6 @@ V08,Viviendas vacías,Hay millones de viviendas vacías que se podrían moviliza
 V09,Seguridad jurídica,La ocupación ilegal de viviendas y la inseguridad jurídica retraen la oferta de alquiler.,SIN EVIDENCIA SUFICIENTE,C4
 V10,Fiscalidad,Bajar el ITP o el IVA de la vivienda la abarataría para los compradores.,SIN EVIDENCIA SUFICIENTE,C4
 V11,Vivienda pública,Construir vivienda pública resolvería el problema de la vivienda.,PARCIALMENTE,C2
-V12,Tipos de interés,Los tipos de interés explican la subida de los precios de la vivienda.,PARCIALMENTE,C2
+V12,Tipos de interés,Los tipos de interés son la causa principal de la subida de los precios de la vivienda (≥50 % de la subida).,PARCIALMENTE,C2
 V13,Burbuja,Hay una burbuja en el precio de la vivienda en España.,SIN EVIDENCIA SUFICIENTE,C4
 V14,Compradores extranjeros,Los compradores extranjeros encarecen la vivienda en España.,SIN EVIDENCIA SUFICIENTE,C1

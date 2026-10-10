@@ -4,10 +4,11 @@
  "pregunta": "Qué variación simulada del esfuerzo de acceso y de la oferta producen cuatro políticas en rangos de parámetros, y cuál domina o minimiza el arrepentimiento máximo",
  "datos": "output/v3/PA (A1-A4), output/v3/PB (B1), MIVAU terminadas 2021-25, literatura_v3 parte B; C1/C3 de oleada 2: presentes",
  "N": {
-  "escenarios_rejilla_politicas": 51840,
+  "escenarios_rejilla_politicas": 317520,
   "escenarios_P1": 1944,
   "opciones": 14
  },
+ "opcion_W5": "(b) el saldo neto de los topes sale de la presentación principal y queda en tablas/t3_* con advertencia; no hay canal de costes en las opciones, de modo que el mínimo arrepentimiento es mecánico",
  "metodo": "Simulación contrafactual stock-flujo log-lineal sobre rejilla completa de parámetros; dominancia y regret minimax; sin contrastes de hipótesis",
  "estimacion": {
   "P1_necesarias_mediana": 261345.5713,
@@ -32,9 +33,6 @@
    "P1_construccion_25k_anio",
    "P1_construccion_50k_anio",
    "P1_construccion_100k_anio",
-   "P2_retirar_VUT_25pct",
-   "P2_retirar_VUT_50pct",
-   "P2_retirar_VUT_100pct",
    "P4_movilizar_10pct_vacias_alto",
    "P4_movilizar_30pct_vacias_alto",
    "P4_publica_10k_anio",
@@ -47,7 +45,7 @@
  "diagnosticos": {
   "sanidad_necesarias_igual_ritmo_hogares": "verificada (assert)",
   "FDR": "no aplica: sin p-valores",
-  "C1_resultado_json": "ausente",
+  "C1_resultado_json": "presente",
   "C3_resultado_json": "presente"
  },
  "fuera_muestra": {

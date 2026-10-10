@@ -19,5 +19,5 @@ renta_anual_alquiler,"[4447.4502, 5635.0253999999995, 8436.775080000001]","SERPA
 crowding_out_publica_rho,"0, 0,5, 1",SUPUESTO sin dato
 fraccion_a_alquiler_phi,"R/H0 (proporcional) y 0,5",SUPUESTO
 sustitucion_s,"0, 0,5, 1",B1: 1:1 es el máximo (C2); límite inferior 0
-C1_H3-1,ausente,"output/v3/C1/resultado.json; si ausente, solo literatura (marcado)"
+C1_H3-1,presente,"output/v3/C1/resultado.json; si ausente, solo literatura (marcado)"
 C3_H3-3,presente,"output/v3/C3/resultado.json; si ausente, solo JMS y Diamond (marcado)"

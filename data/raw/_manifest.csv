@@ -87,7 +87,7 @@ v2_eventos_politica.csv,BOE/boletines oficiales,41.0,2013-06-05,2026-07-29,41.0,
 v2_zonas_tensionadas.csv,"BOE (Secretaría de Estado de Vivienda, art. 18 Ley 12/2023)",9.0,2024-03-16,2026-07-30,318.0,0.0,2026-10-10T06:14:59Z
 v3/airbnb_insideairbnb_agregados_v3.csv.gz,Inside Airbnb (CC BY 4.0; insideairbnb.com/get-the-data),45.0,2025-12-14,2026-09-28,17685.0,0.0,2026-10-10T12:06:19Z
 v3/cartografia/Cartografia_secc.zip,"INE Cartografía secciones censales 2021 (ZIP, sin extraer)",,,2021-01-01,,,2026-10-10T12:17:20Z
-v3/cataluna_contencion_rentas_v3.csv,BOE (Ley 11/2020 consolidada; Resoluciones SEVAU art. 18 Ley 12/2023) + zonas_tensionadas_v3,3.0,2020-09-21,2024-10-09,327.0,0.0,2026-10-10T13:18:12Z
+v3/cataluna_contencion_rentas_v3.csv,BOE (Ley 11/2020 consolidada; Resoluciones SEVAU art. 18 Ley 12/2023) + zonas_tensionadas_v3,3.0,2020-09-21,2024-10-09,332.0,0.0,2026-10-10T13:19:17Z
 v3/eff_tenencia_edad_v3.csv,BdE EFF,168.0,2002-12-31,2022-12-31,336.0,0.0,2026-10-10T12:16:47Z
 v3/eurostat_emancipacion_tenencia_v3.csv,Eurostat ilc_lvps08 / ilc_lvho02,258.0,2004-01-01,2025-01-01,4587.0,0.0,2026-10-10T12:03:33Z
 v3/hut_registro_turismo_cat_v3.csv.gz,"Registre de Turisme de Catalunya - Establiments d'allotjament turístic (Socrata t2h3-cgys, Dept. Empresa i Treball; licencia Ver términos de uso)",16.0,2026-10-05,2026-10-05,5514.0,0.0,2026-10-10T12:06:51Z

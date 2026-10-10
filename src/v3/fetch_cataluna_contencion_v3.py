@@ -52,11 +52,20 @@ LEY11_ANEXO_NUEVO = ("20201001", 61)
 LEY11_ANEXO_ORIG = ("20200921", 60)
 BOE_LEY11 = "BOE-A-2020-11363"
 BOE_STC = "BOE-A-2022-5807"
+# cod_ine erróneos en zonas_tensionadas_v3.csv (Rubí = 08184 en Incasòl; Mont-roig del Camp = 43092)
+ZONAS_ERRATA = {("BOE-A-2024-5214", "08085"): "08184", ("BOE-A-2024-20576", "17110"): "43092"}
 STC_PUB_BOE = "2022-04-08"
 ALIAS = {  # variantes ortográficas BOE/anexo -> nombre INE/Incasòl
     "santa perpetua de la mogoda": "santa perpetua de mogoda",
     "sant adria de besos": "sant adria de besos",
-    "l hospitalet de llobregat": "l hospitalet de llobregat",
+    "pineda": "pineda de mar",  # anexo Ley 11/2020: «Pineda» = Pineda de Mar (08163)
+    "castell d aro platja d aro i s agaro": "castell platja d aro",  # 17048
+}
+# Erratas del texto BOE en la lista de municipios (coma ausente / conjunción «i» suelta)
+BOE_LIST_FIX = {
+    "Castell d'Aro, Platja d'Aro i S'Agaró": "@@CASTELL@@",
+    "Manresa el Masnou": "Manresa, el Masnou",
+    "i Vilassar de Mar": "Vilassar de Mar",
 }
 
 
@@ -91,6 +100,9 @@ def catalan_list(t: str) -> list[str]:
     for k, l in enumerate(lines):
         if l == "Cataluña.":
             nxt = next(x for x in lines[k + 1:] if x)
+            for bad, good in BOE_LIST_FIX.items():
+                nxt = nxt.replace(bad, good)
+            nxt = nxt.replace("@@CASTELL@@", "Castell-Platja d'Aro")
             return [s.strip().rstrip(".") for s in nxt.split(", ") if s.strip()]
     return []
 
@@ -152,8 +164,16 @@ def main() -> None:
             checks.append(f"{bid}: sin filas Cataluña en el BOE (CSV Cataluña: {len(sub)})")
             continue
         checks.append(f"{bid}: BOE Cataluña {len(names)} municipios; CSV Cataluña {len(sub)}")
-        if len(sub) and set(sub["cod_ine_municipio"]) != {to_code(n) for n in names}:
-            fallidos.append(f"{bid}: códigos del CSV distintos de los del BOE")
+        if len(sub):
+            csv_set = set(sub["cod_ine_municipio"])
+            boe_set = {to_code(n) for n in names}
+            # Erratas conocidas en zonas_tensionadas_v3.csv (solo lectura): se usa el código validado en Incasòl/BOE
+            csv_set = {ZONAS_ERRATA.get((bid, c), c) for c in csv_set}
+            if csv_set != boe_set:
+                fallidos.append(f"{bid}: códigos del CSV distintos de los del BOE: {sorted(csv_set ^ boe_set)}")
+            elif any((bid, c) in ZONAS_ERRATA for c in sub["cod_ine_municipio"]):
+                checks.append(f"{bid}: erratas corregidas del CSV de zonas " + str(
+                    {c: ZONAS_ERRATA[(bid, c)] for c in sub["cod_ine_municipio"] if (bid, c) in ZONAS_ERRATA}))
         if len(names) == 131 and "131 municipios" not in t:
             fallidos.append(f"{bid}: 131 no aparece en el texto")
         r = sub.iloc[0]

@@ -66,3 +66,10 @@ Formato: fecha · decisión · motivo. Las desviaciones del pre-registro (`prere
 | P-C4 suelo como moderador | 0,154 y 0,67 frente a 0,1 | **NO-GO**: no detectable |
 
 La decisión queda condicionada a la revisión de la oleada 1.
+
+## Contención de rentas Cataluña (Ley 11/2020) y zonas tensionadas Cataluña (Ley 12/2023) — 2026-10-10
+- Anexo Ley 11/2020: 61 municipios en el texto consolidado BOE (versión 2020-10-01, tras DL 33/2020, que añadió Mollet del Vallès); el texto original (2020-09-21) cita 60. Se usa 61.
+- fecha_vigencia_fin Ley 11/2020 = 2021-09-21: caducidad de la DT segunda (un año desde 22/09/2020). La STC 37/2022 (BOE 08/04/2022) anuló arts. 1, 6-13, 15, 16.2, DA 1-4 y DT 1 y 4.b, no la DT segunda.
+- «Pineda» del anexo = Pineda de Mar (08163); «Castell d'Aro, Platja d'Aro i S'Agaró» = 17048.
+- Errata en data/raw/v3/zonas_tensionadas_v3.csv (no editado): Rubí aparece con 08085 (Font-rubí) en lugar de 08184; Mont-roig del Camp con 17110 (Mont-ras) en lugar de 43092. La salida usa los códigos validados en Incasòl y en el texto BOE.
+- Ley 12/2023: la relación trimestral la publica la Secretaría de Estado de Vivienda y Agenda Urbana (Resolución, no orden ministerial). Cataluña: 140 (BOE-A-2024-5214, TER/800/2024) y 131 (BOE-A-2024-20576, TER/2408/2024). Sin declaraciones catalanas en 2025 en el BOE consultado; la ampliación a 302 (julio 2026) solo figura en prensa.

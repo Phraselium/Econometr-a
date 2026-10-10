@@ -1,0 +1,52 @@
+{
+  "smoke": false,
+  "origenes": [
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020
+  ],
+  "n_splits": 8,
+  "anual": [
+    {
+      "modelo": "AR4+flujo_t (observado)",
+      "n": 392,
+      "n_periodos": 8,
+      "rmse": 0.00941,
+      "mae": 0.0073,
+      "rmse_AR4": 0.0107,
+      "dm_vs_AR4": 1.43136,
+      "p_vs_AR4": 0.19542
+    },
+    {
+      "modelo": "AR4+flujo_t+1 (contemporáneo, NO pronóstico)",
+      "n": 392,
+      "n_periodos": 8,
+      "rmse": 0.00805,
+      "mae": 0.00624,
+      "rmse_AR4": 0.0107,
+      "dm_vs_AR4": 2.28374,
+      "p_vs_AR4": 0.05632
+    }
+  ],
+  "ecm_v1_trimestral_Q4": {
+    "modelo": "ECM_v1",
+    "n": 392.0,
+    "n_periodos": 8.0,
+    "rmse": 0.015574328354289022,
+    "mae": 0.011481210734964196,
+    "rmse_AR4": 0.012516258597129971,
+    "dm_vs_AR4": -1.119616939401537,
+    "p_vs_AR4": 0.2998175659497596
+  },
+  "nota": "No es posible extender a la tasa de inmigración instrumentada/observada en panel_ar4 del alquiler: los flujos terminan en 2021-22 (antes de la muestra de test completa) y el ECM v1 requiere datos trimestrales; se compara AR(4) panel anual con AR(4)+flujo observado, bloques expansivos con embargo, orígenes hasta 2020."
+}

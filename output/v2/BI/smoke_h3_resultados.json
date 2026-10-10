@@ -1,0 +1,394 @@
+{
+  "smoke": true,
+  "B": 499,
+  "N": 327,
+  "G": 49,
+  "sistema": {
+    "b_alq": 12.695421532381554,
+    "b_pre": -70.07176663291911,
+    "cov": -2782.5744869293057,
+    "contraste": 82.76718816530067,
+    "se_contraste": 153.37809657799107,
+    "se_contraste_dif_directa": 153.37809657799122,
+    "corr_ecuaciones": -0.8899441329975512
+  },
+  "contraste_conjunto": {
+    "p_wcb_beta_alq_gt0": 0.2,
+    "p_wcb_contraste_gt0": 0.142,
+    "p_IUT_wcb": 0.2,
+    "p_cluster_beta_alq_gt0": 0.297367061755051,
+    "p_cluster_contraste_gt0": 0.2959739807406617,
+    "p_IUT_cluster": 0.297367061755051,
+    "holm_2_componentes": [
+      0.284,
+      0.284
+    ],
+    "cota_bonferroni_familia7": 1.0,
+    "nota": "H3 se sostiene si ambos componentes rechazan (unión-intersección); Holm sobre la familia de 7 la aplica el orquestador; se da la cota Bonferroni-7"
+  },
+  "diagnosticos": {
+    "F_cluster": 0.26497383286747234,
+    "F_efectivo_MOP": "= F robusto cluster (un instrumento, un regresor): Andrews-Stock-Sun 2019; no se compara con VC no tabulados",
+    "rotemberg_alq": {
+      "top": [
+        {
+          "grupo": "africa",
+          "alpha": 0.6774312045425016,
+          "beta_g": 14.985868313762682,
+          "F_g": 0.1312711389499208
+        },
+        {
+          "grupo": "sudamerica",
+          "alpha": 0.48863168583270566,
+          "beta_g": 4.415479262765782,
+          "F_g": 2.5570258557922614
+        },
+        {
+          "grupo": "europa",
+          "alpha": -0.17210777878506786,
+          "beta_g": 0.08779574844132873,
+          "F_g": 0.060567070145259035
+        }
+      ],
+      "suma_neg": -0.2030626311031518,
+      "suma_top2": 1.1660628903752073
+    },
+    "rotemberg_pre": {
+      "top": [
+        {
+          "grupo": "africa",
+          "alpha": 0.6774312045425016,
+          "beta_g": 14.04613328075932,
+          "F_g": 0.1312711389499208
+        },
+        {
+          "grupo": "sudamerica",
+          "alpha": 0.48863168583270566,
+          "beta_g": -43.17889390345193,
+          "F_g": 2.5570258557922614
+        },
+        {
+          "grupo": "europa",
+          "alpha": -0.17210777878506786,
+          "beta_g": 281.82985016746954,
+          "F_g": 0.060567070145259035
+        }
+      ],
+      "suma_neg": -0.2030626311031518,
+      "suma_top2": 1.1660628903752073
+    },
+    "corr_zmedio_caract02": {
+      "ln_p02": {
+        "corr": -0.2192,
+        "p": 0.1302
+      },
+      "paro02": {
+        "corr": 0.0593,
+        "p": 0.6859
+      },
+      "ln_pob02": {
+        "corr": -0.4955,
+        "p": 0.0003
+      },
+      "extr02": {
+        "corr": -0.0922,
+        "p": 0.5288
+      },
+      "costa": {
+        "corr": 0.029,
+        "p": 0.8431
+      }
+    },
+    "pretendencias": {
+      "alq": {
+        "b_por_DE_z": -0.1776532092631881,
+        "se": 0.08484980604379427,
+        "p": 0.04158985163634885,
+        "n": 245
+      },
+      "pre": {
+        "b_por_DE_z": 0.32225068219181496,
+        "se": 0.33508156504091,
+        "p": 0.3410160766997897,
+        "n": 241
+      }
+    },
+    "overid": {
+      "alq": {
+        "J": 3.156374100833548,
+        "p_hansen": 0.5320059571115678,
+        "df": 4,
+        "sargan": 5.610960745175597,
+        "p_sargan": 0.23014674735897997,
+        "b_2sls_5inst": 6.876605162407189,
+        "se": 4.186088492211619,
+        "b_gmm": 5.03155738835387,
+        "F_5inst": 1.4904158474972053
+      },
+      "pre": {
+        "J": 8.265480111997203,
+        "p_hansen": 0.08232335642138305,
+        "df": 4,
+        "sargan": 25.93036252938451,
+        "p_sargan": 3.268435334831691e-05,
+        "b_2sls_5inst": 7.505447201178731,
+        "se": 13.406130029376596,
+        "b_gmm": -1.9595581162041926,
+        "F_5inst": 1.4904158474972053
+      }
+    },
+    "BHJ": {
+      "alq_anioFE": {
+        "b": 4.422934695574065,
+        "se": 2.0399596650309038,
+        "p": 0.06679943086007151,
+        "G": 8,
+        "n": 56
+      },
+      "alq_anio+grupoFE": {
+        "b": 4.382436188102355,
+        "se": 1.9761078684412965,
+        "p": 0.062086632898783904,
+        "G": 8,
+        "n": 56
+      },
+      "pre_anioFE": {
+        "b": 9.592642065231727,
+        "se": 13.987000017840455,
+        "p": 0.5148878658612972,
+        "G": 8,
+        "n": 56
+      },
+      "pre_anio+grupoFE": {
+        "b": 7.788414876697419,
+        "se": 13.502575487114774,
+        "p": 0.5821339273487318,
+        "G": 8,
+        "n": 56
+      }
+    },
+    "AKM0": {
+      "alq": {
+        "b": 12.695421532381554,
+        "se": 4.852646893521299,
+        "p_norm": 0.00889183920355351,
+        "p_t": 0.03460063187794637,
+        "G": 8
+      },
+      "pre": {
+        "b": -70.07176663291911,
+        "se": 84.47947874718695,
+        "p_norm": 0.4068480576923855,
+        "p_t": 0.4342182194796932,
+        "G": 8
+      }
+    }
+  },
+  "robustez": [
+    {
+      "spec": "tendencias_prov",
+      "resultado": "y_alq",
+      "regresor": "x",
+      "n": 327,
+      "b": 9.2565,
+      "se": 13.6151,
+      "p_cluster": 0.4999,
+      "F": 1.0767
+    },
+    {
+      "spec": "stock_dcuota_extranj",
+      "resultado": "y_alq",
+      "regresor": "x_stock",
+      "n": 327,
+      "b": 0.8318,
+      "se": 0.4959,
+      "p_cluster": 0.1,
+      "F": 8.1181
+    },
+    {
+      "spec": "flujo_t-1",
+      "resultado": "y_alq",
+      "regresor": "x_l1",
+      "n": 327,
+      "b": 0.8715,
+      "se": 0.6573,
+      "p_cluster": 0.1911,
+      "F": 7.2365
+    },
+    {
+      "spec": "x_t_y_x_t-1",
+      "resultado": "y_alq",
+      "regresor": "x",
+      "n": 327,
+      "b": 8.444,
+      "se": 17.1971,
+      "p_cluster": 0.6257,
+      "F": 0.2967
+    },
+    {
+      "spec": "x_t_y_x_t-1",
+      "resultado": "y_alq",
+      "regresor": "x_l1",
+      "n": 327,
+      "b": 0.4662,
+      "se": 1.6072,
+      "p_cluster": 0.773,
+      "F": 0.2967
+    },
+    {
+      "spec": "z_alineado_stock_t+1",
+      "resultado": "y_alq",
+      "regresor": "x",
+      "n": 327,
+      "b": 12.1175,
+      "se": 13.9656,
+      "p_cluster": 0.3899,
+      "F": 0.9255
+    },
+    {
+      "spec": "tendencias_prov",
+      "resultado": "y_pre",
+      "regresor": "x",
+      "n": 327,
+      "b": 0.6439,
+      "se": 17.6791,
+      "p_cluster": 0.9711,
+      "F": 1.0767
+    },
+    {
+      "spec": "stock_dcuota_extranj",
+      "resultado": "y_pre",
+      "regresor": "x_stock",
+      "n": 327,
+      "b": -4.5911,
+      "se": 2.2776,
+      "p_cluster": 0.0494,
+      "F": 8.1181
+    },
+    {
+      "spec": "flujo_t-1",
+      "resultado": "y_pre",
+      "regresor": "x_l1",
+      "n": 327,
+      "b": -7.7844,
+      "se": 4.1397,
+      "p_cluster": 0.0661,
+      "F": 7.2365
+    },
+    {
+      "spec": "x_t_y_x_t-1",
+      "resultado": "y_pre",
+      "regresor": "x",
+      "n": 327,
+      "b": 1.635,
+      "se": 20.6396,
+      "p_cluster": 0.9372,
+      "F": 0.2967
+    },
+    {
+      "spec": "x_t_y_x_t-1",
+      "resultado": "y_pre",
+      "regresor": "x_l1",
+      "n": 327,
+      "b": -7.8629,
+      "se": 4.0687,
+      "p_cluster": 0.0592,
+      "F": 0.2967
+    },
+    {
+      "spec": "z_alineado_stock_t+1",
+      "resultado": "y_pre",
+      "regresor": "x",
+      "n": 327,
+      "b": -28.4348,
+      "se": 33.1925,
+      "p_cluster": 0.3959,
+      "F": 0.9255
+    }
+  ],
+  "criterios_causal": {
+    "F_ge_10": false,
+    "pretendencias_ns": false,
+    "J_hansen_no_rechaza": true,
+    "sargan_homoc_p": {
+      "alq": 0.23014674735897997,
+      "pre": 3.268435334831691e-05
+    },
+    "componentes": {
+      "beta_alq_gt0": {
+        "p_wcb_1c": 0.2,
+        "p_holm7_cota": 1,
+        "sobrevive_WCB": false,
+        "sobrevive_Holm7_cota": false,
+        "nivel": "EXPLORATORIO"
+      },
+      "contraste_alq_menos_compra_gt0": {
+        "p_wcb_1c": 0.142,
+        "p_holm7_cota": 0.9939999999999999,
+        "sobrevive_WCB": false,
+        "sobrevive_Holm7_cota": false,
+        "nivel": "EXPLORATORIO"
+      }
+    }
+  },
+  "nivel_evidencia": "EXPLORATORIO",
+  "tabla_principal": [
+    {
+      "resultado": "alq",
+      "b_2sls": 12.6954,
+      "se": 23.7049,
+      "t": 0.5356,
+      "p_cluster_2c": 0.5947,
+      "p_cluster_1c": 0.2974,
+      "p_wcb_2c": 0.318,
+      "p_wcb_1c": 0.2,
+      "ar_lo": -15.0,
+      "ar_hi": 15.0,
+      "b_ols": 0.3354,
+      "se_ols": 0.6725,
+      "F": 0.265,
+      "pi": 0.0291,
+      "r2_parcial": 0.0081,
+      "ic95_lo": -34.9664,
+      "ic95_hi": 60.3572
+    },
+    {
+      "resultado": "pre",
+      "b_2sls": -70.0718,
+      "se": 131.9006,
+      "t": -0.5312,
+      "p_cluster_2c": 0.5977,
+      "p_cluster_1c": 0.7012,
+      "p_wcb_2c": 0.308,
+      "p_wcb_1c": 0.858,
+      "ar_lo": -15.0,
+      "ar_hi": 15.0,
+      "b_ols": 1.9823,
+      "se_ols": 2.2065,
+      "F": 0.265,
+      "pi": 0.0291,
+      "r2_parcial": 0.0081,
+      "ic95_lo": -335.2757,
+      "ic95_hi": 195.1322
+    },
+    {
+      "resultado": "dif",
+      "b_2sls": 82.7672,
+      "se": 153.3781,
+      "t": 0.5396,
+      "p_cluster_2c": 0.5919,
+      "p_cluster_1c": 0.296,
+      "p_wcb_2c": 0.268,
+      "p_wcb_1c": 0.142,
+      "ar_lo": -15.0,
+      "ar_hi": 15.0,
+      "b_ols": -1.647,
+      "se_ols": 2.2422,
+      "F": 0.265,
+      "pi": 0.0291,
+      "r2_parcial": 0.0081,
+      "ic95_lo": -225.6201,
+      "ic95_hi": 391.1545
+    }
+  ]
+}

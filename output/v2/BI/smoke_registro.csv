@@ -1,0 +1,48 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+BI,H3_2SLS_alq,"y_alq ~ x | FE prov+año | z shift-share (cuotas 2002, LOO)",2009,2015,327,,,,,12.695421532381554,0.318,EE cluster prov; WCB Webb B=499; F=0.26; confirmatoria H3; SMOKE
+BI,H3_OLS_alq,y_alq ~ x | FE prov+año,2009,2015,327,,,,,0.3353557242233134,0.620289604657426,referencia MCO
+BI,H3_2SLS_pre,"y_pre ~ x | FE prov+año | z shift-share (cuotas 2002, LOO)",2009,2015,327,,,,,-70.07176663291911,0.308,EE cluster prov; WCB Webb B=499; F=0.26; confirmatoria H3; SMOKE
+BI,H3_OLS_pre,y_pre ~ x | FE prov+año,2009,2015,327,,,,,1.9823106414335152,0.3734667666759951,referencia MCO
+BI,H3_2SLS_dif,"y_dif ~ x | FE prov+año | z shift-share (cuotas 2002, LOO)",2009,2015,327,,,,,82.76718816530072,0.268,EE cluster prov; WCB Webb B=499; F=0.26; confirmatoria H3; SMOKE
+BI,H3_OLS_dif,y_dif ~ x | FE prov+año,2009,2015,327,,,,,-1.6469549172102023,0.4661996791409031,referencia MCO
+BI,H3_conjunto_IUT,beta_alq>0 y beta_alq-beta_pre>0,2009,2015,327,,,,,82.76718816530067,0.2,IUT con p WCB una cola
+BI,diag_rotemberg_alq,pesos de Rotemberg (8 grupos),2009,2015,327,,,,,,,top=africa
+BI,diag_rotemberg_pre,pesos de Rotemberg (8 grupos),2009,2015,327,,,,,,,top=africa
+BI,diag_cuotas_caract02,"corr cuotas 2002 con ln_p02, paro02, ln_pob02, extr02, costa",2009,2015,49,,,,,,,ver cuotas_vs_caracteristicas02.csv
+BI,diag_pretrend_alq,y_alq(2003-07) ~ z_medio(2009-21) + FE año,2003,2007,245,,,,,-0.1776532092631881,0.04158985163634885,pretendencias; EE cluster prov
+BI,diag_pretrend_pre,y_pre(2003-07) ~ z_medio(2009-21) + FE año,2003,2007,241,,,,,0.32225068219181496,0.3410160766997897,pretendencias; EE cluster prov
+BI,diag_overid_alq,y_alq ~ x | 5 instrumentos por grupo,2009,2015,327,,,,,6.876605162407189,0.5320059571115678,Hansen J cluster=3.16 (df=4)
+BI,diag_overid_pre,y_pre ~ x | 5 instrumentos por grupo,2009,2015,327,,,,,7.505447201178731,0.08232335642138305,Hansen J cluster=8.27 (df=4)
+BI,diag_BHJ_alq_anioFE,"BHJ nivel shock (56 shocks g-t, 8 grupos)",2009,2015,327,,,,,4.422934695574065,0.06679943086007151,potencia baja: 8 grupos; EE cluster por grupo t(7)
+BI,diag_BHJ_alq_anio+grupoFE,"BHJ nivel shock (56 shocks g-t, 8 grupos)",2009,2015,327,,,,,4.382436188102355,0.062086632898783904,potencia baja: 8 grupos; EE cluster por grupo t(7)
+BI,diag_BHJ_pre_anioFE,"BHJ nivel shock (56 shocks g-t, 8 grupos)",2009,2015,327,,,,,9.592642065231727,0.5148878658612972,potencia baja: 8 grupos; EE cluster por grupo t(7)
+BI,diag_BHJ_pre_anio+grupoFE,"BHJ nivel shock (56 shocks g-t, 8 grupos)",2009,2015,327,,,,,7.788414876697419,0.5821339273487318,potencia baja: 8 grupos; EE cluster por grupo t(7)
+BI,diag_AKM0_alq,EE exposición-robustos tipo AKM (agrupa grupos-shock),2009,2015,327,,,,,12.695421532381554,0.03460063187794637,aprox. AKM0; 8 shocks-grupo
+BI,diag_AKM0_pre,EE exposición-robustos tipo AKM (agrupa grupos-shock),2009,2015,327,,,,,-70.07176663291911,0.4342182194796932,aprox. AKM0; 8 shocks-grupo
+BI,rob_tendencias_prov_y_alq_x,y_alq ~ x | z,2009,2015,327,,,,,9.256474873989637,0.49985369675220004,EXPLORATORIO; ; F=1.08
+BI,rob_stock_dcuota_extranj_y_alq_x_stock,y_alq ~ x_stock | z,2009,2015,327,,,,,0.8317990034916597,0.09996096574411768,EXPLORATORIO; stock vs flujo; F=8.12
+BI,rob_flujo_t-1_y_alq_x_l1,y_alq ~ x_l1 | z_l1,2009,2015,327,,,,,0.871541473079329,0.191101675249907,EXPLORATORIO; timing; F=7.24
+BI,rob_x_t_y_x_t-1_y_alq_x,"y_alq ~ x,x_l1 | z,z_l1",2009,2015,327,,,,,8.443973377837912,0.6256548737268016,EXPLORATORIO; timing conjunto; F=0.30
+BI,rob_x_t_y_x_t-1_y_alq_x_l1,"y_alq ~ x,x_l1 | z,z_l1",2009,2015,327,,,,,0.4661852273691831,0.7730146886401907,EXPLORATORIO; timing conjunto; F=0.30
+BI,rob_z_alineado_stock_t+1_y_alq_x,y_alq ~ x | z_fwd,2009,2015,327,,,,,12.117456144098599,0.38989525983026807,EXPLORATORIO; instrumento con ΔS_{t+1}; F=0.93
+BI,rob_tendencias_prov_y_pre_x,y_pre ~ x | z,2009,2015,327,,,,,0.6439218246322603,0.9710963819019798,EXPLORATORIO; ; F=1.08
+BI,rob_stock_dcuota_extranj_y_pre_x_stock,y_pre ~ x_stock | z,2009,2015,327,,,,,-4.591074468027405,0.04944261059775989,EXPLORATORIO; stock vs flujo; F=8.12
+BI,rob_flujo_t-1_y_pre_x_l1,y_pre ~ x_l1 | z_l1,2009,2015,327,,,,,-7.784394638591676,0.06612707989666626,EXPLORATORIO; timing; F=7.24
+BI,rob_x_t_y_x_t-1_y_pre_x,"y_pre ~ x,x_l1 | z,z_l1",2009,2015,327,,,,,1.6350230459887127,0.9371888767655832,EXPLORATORIO; timing conjunto; F=0.30
+BI,rob_x_t_y_x_t-1_y_pre_x_l1,"y_pre ~ x,x_l1 | z,z_l1",2009,2015,327,,,,,-7.862884559617607,0.05920795052278887,EXPLORATORIO; timing conjunto; F=0.30
+BI,rob_z_alineado_stock_t+1_y_pre_x,y_pre ~ x | z_fwd,2009,2015,327,,,,,-28.43479127987891,0.39588725353897924,EXPLORATORIO; instrumento con ΔS_{t+1}; F=0.93
+BI,BI_PRESUPUESTO,presupuesto declarado,,,0,,,,,,,"n_max=14 configuraciones. heterogeneidad EXPLORATORIA: lasso alpha=0.02 fijo (X estandarizado); RF 300 arboles, min_samples_leaf=10, max_features=0.5; CausalForestDML 500 arboles, min_samples_leaf=10; cross-fitting 5 bloques de provincias x 3 repeticiones; sin busqueda de hiperparametros"
+BI,DML_PLR_lasso,y_alq ~ x + g(W) [PLR],2009,2015,343,,,,,,,"EXPLORATORIO; theta=0.221 se_cl=0.378 p=0.5615 | config={""folds"": 5, ""learner"": ""lasso"", ""mod"": ""PLR"", ""reps"": 3}"
+BI,DML_PLIV_lasso,y_alq ~ x + g(W) [PLIV],2009,2015,343,,,,,,,"EXPLORATORIO; theta=4.138 se_cl=7.020 p=0.5583 | config={""folds"": 5, ""learner"": ""lasso"", ""mod"": ""PLIV"", ""reps"": 3}"
+BI,DML_PLR_rf,y_alq ~ x + g(W) [PLR],2009,2015,343,,,,,,,"EXPLORATORIO; theta=0.487 se_cl=0.322 p=0.1369 | config={""folds"": 5, ""learner"": ""rf"", ""mod"": ""PLR"", ""reps"": 3}"
+BI,DML_PLIV_rf,y_alq ~ x + g(W) [PLIV],2009,2015,343,,,,,,,"EXPLORATORIO; theta=2.613 se_cl=1.754 p=0.1428 | config={""folds"": 5, ""learner"": ""rf"", ""mod"": ""PLIV"", ""reps"": 3}"
+BI,CausalForestDML,"y_alq ~ x | X=ln_pob02,extr02,ln_p02,costa,paro02",2009,2015,343,,,,,,,"EXPLORATORIO; ATE=0.298 | config={""cv"": ""bloques provincias"", ""min_samples_leaf"": 10, ""n_estimators"": 200}"
+BI,IV_inter_ln_pob02,"y_alq ~ x + x*ln_pob02 | z, z*ln_pob02",2009,2015,343,,,,,,,"EXPLORATORIO; p_inter=0.4612 | config={""c"": ""ln_pob02""}"
+BI,IV_inter_extr02,"y_alq ~ x + x*extr02 | z, z*extr02",2009,2015,343,,,,,,,"EXPLORATORIO; p_inter=0.0740 | config={""c"": ""extr02""}"
+BI,IV_inter_ln_p02,"y_alq ~ x + x*ln_p02 | z, z*ln_p02",2009,2015,343,,,,,,,"EXPLORATORIO; p_inter=0.3160 | config={""c"": ""ln_p02""}"
+BI,IV_inter_costa,"y_alq ~ x + x*costa | z, z*costa",2009,2015,343,,,,,,,"EXPLORATORIO; p_inter=0.4170 | config={""c"": ""costa""}"
+BI,IV_inter_paro02,"y_alq ~ x + x*paro02 | z, z*paro02",2009,2015,343,,,,,,,"EXPLORATORIO; p_inter=0.8542 | config={""c"": ""paro02""}"
+BI,OOS_AR4+flujo_t (observado),yh=ln rent_{t+1}-ln rent_t ~ AR4 [+ flujo]; FE prov,2008,2015,196,,,,0.016849607163836,,,anual; vs AR4 DM-HLN=-0.987 p=0.396; bloques con embargo
+BI,"OOS_AR4+flujo_t+1 (contemporáneo, NO pronóstico)",yh=ln rent_{t+1}-ln rent_t ~ AR4 [+ flujo]; FE prov,2008,2015,196,,,,0.009008156184088815,,,anual; vs AR4 DM-HLN=0.783 p=0.491; bloques con embargo
+BI,OOS_AR4,AR4 panel anual,2008,2015,196,,,,0.009810398444611285,,,base
+BI,OOS_ECMv1_trim_Q4,panel_ecm_v1 ipc_alquiler h=4 orígenes T4,,,98,,,,0.026735737993562533,,,referencia; AR4 rmse=0.02175; DM vs AR4=nan p=nan; muestra distinta de la anual

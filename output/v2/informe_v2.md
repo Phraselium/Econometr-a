@@ -80,7 +80,7 @@ El sellado es **procedimental** (permisos, carga obligatoria vía `holdout.load_
 - Heterogeneidad y aprendizaje automático (BI, BM): Chernozhukov et al. (2018) [verificada] y Athey, Tibshirani y Wager (2019) [verificada]; elastic net Zou y Hastie (2005) [verificada]; post-double-selection Belloni, Chernozhukov y Hansen (2014) [verificada]; ALE Apley y Zhu (2020) [verificada]; LSTM Hochreiter y Schmidhuber (1997) [verificada]; SHAP Lundberg y Lee (2017) [NO VERIFICADA] y LightGBM Ke et al. (2017) [NO VERIFICADA].
 - Parámetros cambiantes y proyecciones locales (BM, BV, BO): BVAR Giannone, Lenza y Primiceri (2015) [verificada]; TVP-VAR Primiceri (2005) [verificada] con la corrección de Del Negro y Primiceri (2015) [verificada]; proyecciones locales Jordà (2005) [verificada].
 - Coste de uso de la vivienda: Poterba (1984) [verificada].
-- Contexto y signos esperados: demografía y alquiler Khametshin, López Rodríguez y Pérez García (2024) [verificada]; inmigración y precios Saiz (2007) [verificada]; turismo Garcia-López et al. (2020) [verificada]; tope de rentas (contratos nuevos) Jofre-Monseny, Martínez-Mazza y Segú (2023) [NO VERIFICADA]; elasticidad de la oferta citada por el Banco de España Caldera y Johansson (2013) [verificada] y Cavalleri, Cournède y Özsöğüt (2019) [verificada]; déficit de 750.000 viviendas Banco de España (2026) [verificada].
+- Contexto y signos esperados: demografía y alquiler Khametshin, López Rodríguez y Pérez García (2024) [verificada]; inmigración y precios Saiz (2007) [verificada]; turismo Garcia-López et al. (2020) [verificada]; tope de rentas (contratos nuevos) Jofre-Monseny, Martínez-Mazza y Segú (2023) [cuartil no verificado]; elasticidad de la oferta citada por el Banco de España Caldera y Johansson (2013) [verificada] y Cavalleri, Cournède y Özsöğüt (2019) [verificada]; déficit de 750.000 viviendas Banco de España (2026) [verificada].
 
 *Fuente: `docs/literatura.md`; `output/v2/tablas/referencias_v2.csv`.*
 
@@ -537,7 +537,7 @@ La prioridad es un ordenamiento de BS según su efecto sobre la inferencia; el t
 
 ## 12. Referencias (marca de verificación)
 
-Estado según `docs/literatura.md` (DOI comprobado en Crossref; cuartil leído de resultados de búsqueda de Scimago o de agregadores, en la mayoría de la edición 2025, no del año de publicación: «año publ. no comprobado»). No se inventa ninguna referencia: las **NO VERIFICADAS** son 3 y las de **cuartil no verificado**, 2.
+Estado según `docs/literatura.md` (DOI comprobado en Crossref; cuartil leído de resultados de búsqueda de Scimago o de agregadores, en la mayoría de la edición 2025, no del año de publicación: «año publ. no comprobado»). No se inventa ninguna referencia: las **NO VERIFICADAS** son 2 y las de **cuartil no verificado**, 2.
 
 | Referencia | DOI | Revista | Cuartil | Estado |
 |---|---|---|---|---|
@@ -570,10 +570,10 @@ Estado según `docs/literatura.md` (DOI comprobado en Crossref; cuartil leído d
 | Caldera y Johansson (2013), 22(3), 231-249 | 10.1016/j.jhe.2013.05.002 | J. Housing Economics | Q2 (SJR 2025; año publ. no comprobado) | VERIFICADA |
 | Cavalleri, Cournède y Özsöğüt (2019), OECD ECO WP | 10.1787/4777e29a-en | OECD Economics Dept. WP | sin cuartil (WP) | VERIFICADA (parcial: DOI sí; autores y nº no confirmados) |
 | Garcia-López et al. (2020), 119, 103278 | 10.1016/j.jue.2020.103278 | J. Urban Economics | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
-| Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916 (citada por BP/resultado.json) | no consta en docs/literatura.md | Regional Science and Urban Economics | cuartil no verificado | NO VERIFICADA |
+| Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916 | 10.1016/j.regsciurbeco.2023.103916 | Regional Science and Urban Economics | cuartil no verificado | VERIFICADA |
 | Banco de España (2026), Informe Anual 2025 | 10.53479/43565 | Banco de España (informe institucional) | n/a (informe) | VERIFICADA |
 
-NO VERIFICADAS: Lundberg y Lee (2017), NeurIPS 30 (SHAP), «A Unified Approach to Interpreting Model Predictions»; Ke et al. (2017), NeurIPS 30 (LightGBM), «LightGBM: A Highly Efficient Gradient Boosting Decision Tree»; Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916 (citada por BP/resultado.json). Cuartil no verificado: Roodman, Nielsen, MacKinnon y Webb (2019), 19(1), 4-60; Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916 (citada por BP/resultado.json).
+NO VERIFICADAS: Lundberg y Lee (2017), NeurIPS 30 (SHAP), «A Unified Approach to Interpreting Model Predictions»; Ke et al. (2017), NeurIPS 30 (LightGBM), «LightGBM: A Highly Efficient Gradient Boosting Decision Tree». Cuartil no verificado: Roodman, Nielsen, MacKinnon y Webb (2019), 19(1), 4-60; Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916.
 
 *Fuente: `output/v2/tablas/referencias_v2.csv`; `docs/literatura.md`.*
 

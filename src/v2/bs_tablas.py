@@ -461,8 +461,13 @@ def t_refs() -> pd.DataFrame:
             esp.append(["Roodman, Nielsen, MacKinnon y Webb (2019), 19(1), 4-60", re.search(r"DOI (10\.\S+?) \(", bloque).group(1),
                         "The Stata Journal", "cuartil no verificado", "VERIFICADA (DOI en Crossref); cuartil no verificado"])
         elif clave == "JOFRE":
-            esp.append(["Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916 (citada por BP/resultado.json)", "no consta en docs/literatura.md",
-                        "Regional Science and Urban Economics", "cuartil no verificado", "NO VERIFICADA (no figura en docs/literatura.md; cifra solo según el resumen publicado, citada por la rama BP)"])
+            doi_j = "10.1016/j.regsciurbeco.2023.103916"
+            en_lit = any(doi_j in x and "**VERIFICADA**" in x for x in txt)   # anexo v2-D de docs/literatura.md
+            esp.append(["Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916",
+                        doi_j if en_lit else "no consta en docs/literatura.md",
+                        "Regional Science and Urban Economics", "cuartil no verificado",
+                        "VERIFICADA (DOI en Crossref); cuartil no verificado" if en_lit else
+                        "NO VERIFICADA (no figura en docs/literatura.md; cifra solo según el resumen publicado, citada por la rama BP)"])
         elif clave == "BDE":
             ln = next(x for x in txt if x.startswith("- Banco de España (2026). *Informe Anual 2025*"))
             esp.append(["Banco de España (2026), Informe Anual 2025", re.search(r"DOI (10\.\S+?)\.", ln).group(1), "Banco de España (informe institucional)",

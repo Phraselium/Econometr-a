@@ -5,12 +5,12 @@
  "datos": "SERPAVI sección/distrito (stock IRPF) 2021-2024; VUT INE oleadas 2021M02-2024M11; Censo 2021; sellado v3 excluido",
  "N": 3260,
  "metodo": "MCO con FE de sección y año, cluster distrito (réplica conceptual, sin IV)",
- "estimacion": -0.042099049332524056,
+ "estimacion": -0.004166504610531088,
  "ic95": [
-  -0.07222565326437355,
-  -0.011972445400674568
+  -0.00779122015238227,
+  -0.0005417890686799064
  ],
- "p_ajustado": 0.16955511966749745,
+ "p_ajustado": 0.26864001900989787,
  "nivel_evidencia": "EXPLORATORIO",
  "diagnosticos": {
   "pretendencia_adelanto_BCN": {
@@ -26,6 +26,11 @@
    "sd_placebo": 0.0009169195595062796
   }
  },
+ "objetivo_T_pp": 0.03877573287671233,
+ "T_pp_rango": [
+  0.0175,
+  0.07
+ ],
  "fuera_muestra": {
   "modelo": null,
   "rmse": null,
@@ -33,21 +38,21 @@
   "nota": "no aplica: réplica de coeficiente"
  },
  "clasificacion": {
-  "GL1_bcn_seccion_vut100viv": "NO REPLICABLE",
-  "GL2_bcn_distrito_vut100viv": "NO REPLICABLE",
-  "GL3_bcn_seccion_vut_cien": "NO REPLICADO",
-  "GL4_bcn_distrito_vut_cien": "NO REPLICADO",
-  "GL5_bcn_seccion_vut_cien_pond_viv": "NO REPLICADO",
-  "EXT_Madrid_seccion_vut100viv": "NO REPLICABLE",
-  "EXT_Madrid_seccion_vut_cien": "REPLICADO",
-  "EXT_València_seccion_vut100viv": "NO REPLICABLE",
-  "EXT_València_seccion_vut_cien": "REPLICADO",
-  "EXT_Sevilla_seccion_vut100viv": "NO REPLICABLE",
-  "EXT_Sevilla_seccion_vut_cien": "NO REPLICADO",
-  "EXT_Málaga_seccion_vut100viv": "NO REPLICABLE",
-  "EXT_Málaga_seccion_vut_cien": "REPLICADO",
-  "EXT_Espana_seccion_vut100viv": "NO REPLICABLE",
-  "EXT_Espana_seccion_vut_cien": "PARCIAL"
+  "GL1_bcn_seccion_vut100viv": "NO REPLICADO",
+  "GL2_bcn_distrito_vut100viv": "NO REPLICADO",
+  "GL3_bcn_seccion_vut_cien": "NO CLASIFICADA (informativa)",
+  "GL4_bcn_distrito_vut_cien": "NO CLASIFICADA (informativa)",
+  "GL5_bcn_seccion_vut_cien_pond_viv": "NO CLASIFICADA (informativa)",
+  "EXT_Madrid_seccion_vut100viv": "NO REPLICADO",
+  "EXT_Madrid_seccion_vut_cien": "NO CLASIFICADA (informativa)",
+  "EXT_València_seccion_vut100viv": "PARCIAL",
+  "EXT_València_seccion_vut_cien": "NO CLASIFICADA (informativa)",
+  "EXT_Sevilla_seccion_vut100viv": "NO REPLICADO",
+  "EXT_Sevilla_seccion_vut_cien": "NO CLASIFICADA (informativa)",
+  "EXT_Málaga_seccion_vut100viv": "NO REPLICADO",
+  "EXT_Málaga_seccion_vut_cien": "NO CLASIFICADA (informativa)",
+  "EXT_Espana_seccion_vut100viv": "NO REPLICADO",
+  "EXT_Espana_seccion_vut_cien": "NO CLASIFICADA (informativa)"
  },
  "notas": "Pérdidas armonización {'seccion_nacional': {'unidades_alq_sin_vut_o_censo': 13, 'unidades_no_balanceadas_o_sin_alq': 2766, 'unidades_finales': 17657}, 'distrito_nacional': {'unidades_alq_sin_vut_o_censo': 4, 'unidades_no_balanceadas_o_sin_alq': 454, 'unidades_finales': 2975}}. {'distritos_BCN_incluidos': ['01', '02', '03', '04', '05', '06', '07', '08'], 'Palma_no_estimable': 'menos de 2 distritos no sellados con datos: sin clusters'}. Smoke=False"
 }

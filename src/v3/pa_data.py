@@ -167,8 +167,9 @@ def mivau_nacional_anual() -> pd.DataFrame:
     prot = p[(p.nivel == "nacional") & (p.tabla_codigo == 31306000)].set_index("periodo").valor
     q = pd.read_csv(RAW / "mivau_parque.csv")
     parque = q[q.nivel == "nacional"].set_index("periodo").valor
+    for sr in (lib, prot, parque):
+        sr.index = sr.index.astype(int)
     out = pd.concat([lib.rename("libres"), prot.rename("protegida"), parque.rename("parque")], axis=1)
-    out.index = out.index.astype(int)
     return out.sort_index()
 
 

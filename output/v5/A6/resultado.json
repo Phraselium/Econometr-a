@@ -1,0 +1,30 @@
+{
+ "rama": "A6",
+ "pregunta": "Topes fuera de C3 y no replicación de García-López",
+ "capa": "C4",
+ "datos": [
+  "output/v4/M0",
+  "docs/v4/decisiones.md"
+ ],
+ "N": null,
+ "metodo": "consolidación documental de v4 M0 (sin nuevas estimaciones)",
+ "estimacion": -0.0042,
+ "ic95": [
+  -0.0078,
+  -0.0005
+ ],
+ "p_ajustado": 0.27,
+ "nivel_evidencia": "EXPLORATORIO",
+ "diagnosticos": {
+  "atenuacion_stock_flujo": [
+   0.55,
+   0.75
+  ]
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "H3-3 fuera de C3 por contaminación de la validación; GL no replica: datos (stock vs flujo) cuantificados; periodo y método no contrastables."
+}

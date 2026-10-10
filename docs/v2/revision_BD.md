@@ -117,3 +117,41 @@ Motivo bloqueante: el código versionado **no se ejecuta** (exit 1), por lo que 
 - Coeficientes coherentes con BA/BV.
 - Advertencias de los contrafactuales y ausencia de lenguaje causal.
 - Figuras con fuente.
+
+---
+
+# Re-revisión (iteración 2, commit `77fe139`)
+
+## Veredicto final: **APROBAR**, con una corrección obligatoria (C1) antes de fusionar
+La corrección C1 es acotada y verificable con un diff y una reejecución. Si no se hace, el veredicto pasa a REHACER. Fuera de C1 no hay más cambios pendientes.
+
+## Comprobaciones
+- **Reproducción.** Dos clones de `r2/BD` sin `data/sealed`, con `HTTPS_PROXY=http://127.0.0.1:9`, 1 hilo y las salidas versionadas apartadas. Ejecutado con `make models MODELS=src/v2/bd_run.py`: exit 0 en ambos clones.
+  - Los md5 de los 18 ficheros son idénticos entre los dos clones **e idénticos a lo versionado**.
+  - `registro.csv` tiene 31 especificaciones (32 líneas con la cabecera), incluidas las 2 nacionales.
+  - `--smoke` reproduce bit a bit la `smoke/` versionada (17 ficheros).
+- **`make models` completo** (tercer clon, sin red): `bd_run.py` figura en `MODELS`, se ejecuta sin error y la ejecución sigue con `bi_run.py`; las salidas de BD no cambian. No esperé al final de BM. `output/f3/*` aparece modificado en ese clon; es ajeno a BD.
+- **Fuga:** sin cambios respecto a la iteración 1 (sin fuga). La identidad contable sigue cuadrando (error máximo 1e-7, por el redondeo de los csv).
+- **Etiquetas:** 20-34 pasa a EXPLORATORIO y cita Holm-7; demografía en EXPLORATORIO. Correcto.
+- **No robustos:** la sección «No robustos» (20-34 desde 2020, (a1) de alquiler en P4, (b) de compra M1) está fuera de la respuesta breve y avisa de que no hay corrección por multiplicidad. Correcto.
+- **Nacional:**
+  - La tabla LP incluye ya la fila estacional (P4 −3,0) y cuadra con el observado (4,8).
+  - Muestra del DOLS corregida (2007Q1-2023Q4) y figura sin recorte.
+  - IC LP por simulación con HAC(4). Con este método, el coeficiente de permisos tiene p=0,046 en la muestra de BD (p=0,08 con 8 retardos; en v1 era 0,27). Los IC de permisos que excluyen 0 son, por tanto, marginales y dependen de los retardos; basta con que el texto lo diga (recomendado, no obligatorio).
+- **`limitaciones.md`:** la rama solo **añade** 8 líneas, una sección BD nueva al final. No pisa otras secciones y `git merge-tree` con `r2/main` no da conflictos.
+- `revision_BD.md` aparece borrado en la rama solo porque se creó después en `r2/main`; la fusión lo conserva.
+
+## C1 (obligatoria): la corrección de `cu_x_expo` no hace lo que declara
+El código resta `c0 = media(cu_x_expo)` (≈ 0,0198) al producto, no la media del coste de uso. Como la exposición está estandarizada sin ponderar, el término de nivel cū·media_ponderada(expo) sigue en la contribución, y esta sigue dependiendo del origen del coste de uso.
+
+Comprobado en compra M1:
+
+| | P1 | P3 | P2-P4 |
+|---|---|---|---|
+| Sin corregir (iteración 1) | −4,58 | — | −0,49 |
+| Con `x − c0` (iteración 2) | −4,50 | −0,07 | −0,42 |
+| Con `(cu − cū)·expo` | −2,50 | +1,30 | +1,72 |
+
+La frase del «Método» («se mide respecto a la media muestral … no respecto al origen del coste de uso») es, por tanto, incorrecta.
+
+Corrección: usar `(coste_uso_aprox − media muestral)·expo` como regresor de contribución, o calcular la contribución como β·[media_P − media muestral] de la variable agregada. Después hay que reejecutar, actualizar las filas de crédito/coste de uso de compra y verificar que los contrafactuales no cambian (son diferencias). Alquiler, contrafactuales y nacional no se ven afectados.

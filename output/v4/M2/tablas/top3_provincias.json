@@ -1,0 +1,292 @@
+{
+ "2006-2007": {
+  "tamano_nativos": [
+   [
+    "Madrid",
+    15420
+   ],
+   [
+    "Sevilla",
+    5694
+   ],
+   [
+    "Málaga",
+    5666
+   ]
+  ],
+  "tamano_extranjeros": [
+   [
+    "Madrid",
+    24783
+   ],
+   [
+    "Barcelona",
+    20073
+   ],
+   [
+    "Alicante/Alacant",
+    14541
+   ]
+  ],
+  "estructura": [
+   [
+    "Madrid",
+    10429
+   ],
+   [
+    "Barcelona",
+    7792
+   ],
+   [
+    "Valencia/València",
+    3577
+   ]
+  ],
+  "tasa": [
+   [
+    "Madrid",
+    15910
+   ],
+   [
+    "Barcelona",
+    13151
+   ],
+   [
+    "Valencia/València",
+    6148
+   ]
+  ]
+ },
+ "2008-2013": {
+  "tamano_nativos": [
+   [
+    "Madrid",
+    105874
+   ],
+   [
+    "Barcelona",
+    56472
+   ],
+   [
+    "Sevilla",
+    23506
+   ]
+  ],
+  "tamano_extranjeros": [
+   [
+    "Madrid",
+    -29089
+   ],
+   [
+    "Barcelona",
+    -9849
+   ],
+   [
+    "Valencia/València",
+    -9661
+   ]
+  ],
+  "estructura": [
+   [
+    "Madrid",
+    69043
+   ],
+   [
+    "Barcelona",
+    45819
+   ],
+   [
+    "Valencia/València",
+    28725
+   ]
+  ],
+  "tasa": [
+   [
+    "Madrid",
+    53971
+   ],
+   [
+    "Barcelona",
+    48507
+   ],
+   [
+    "Valencia/València",
+    22328
+   ]
+  ]
+ },
+ "2014-2019": {
+  "tamano_nativos": [
+   [
+    "Madrid",
+    84364
+   ],
+   [
+    "Barcelona",
+    25731
+   ],
+   [
+    "Balears, Illes",
+    17211
+   ]
+  ],
+  "tamano_extranjeros": [
+   [
+    "Barcelona",
+    33755
+   ],
+   [
+    "Madrid",
+    12310
+   ],
+   [
+    "Alicante/Alacant",
+    -6207
+   ]
+  ],
+  "estructura": [
+   [
+    "Madrid",
+    43202
+   ],
+   [
+    "Barcelona",
+    31859
+   ],
+   [
+    "Valencia/València",
+    23142
+   ]
+  ],
+  "tasa": [
+   [
+    "Madrid",
+    -32553
+   ],
+   [
+    "Barcelona",
+    -27210
+   ],
+   [
+    "Valencia/València",
+    -12153
+   ]
+  ]
+ },
+ "2020-2025": {
+  "tamano_nativos": [
+   [
+    "Madrid",
+    42476
+   ],
+   [
+    "Murcia",
+    16750
+   ],
+   [
+    "Asturias",
+    -12763
+   ]
+  ],
+  "tamano_extranjeros": [
+   [
+    "Madrid",
+    103857
+   ],
+   [
+    "Barcelona",
+    89308
+   ],
+   [
+    "Valencia/València",
+    58074
+   ]
+  ],
+  "estructura": [
+   [
+    "Madrid",
+    27947
+   ],
+   [
+    "Barcelona",
+    25207
+   ],
+   [
+    "Sevilla",
+    16268
+   ]
+  ],
+  "tasa": [
+   [
+    "Barcelona",
+    -12529
+   ],
+   [
+    "Asturias",
+    -8013
+   ],
+   [
+    "Madrid",
+    -7849
+   ]
+  ]
+ },
+ "2021-2025": {
+  "tamano_nativos": [
+   [
+    "Madrid",
+    51607
+   ],
+   [
+    "Barcelona",
+    14930
+   ],
+   [
+    "Murcia",
+    14168
+   ]
+  ],
+  "tamano_extranjeros": [
+   [
+    "Madrid",
+    93471
+   ],
+   [
+    "Barcelona",
+    78748
+   ],
+   [
+    "Valencia/València",
+    54150
+   ]
+  ],
+  "estructura": [
+   [
+    "Barcelona",
+    14180
+   ],
+   [
+    "Madrid",
+    13914
+   ],
+   [
+    "Sevilla",
+    11354
+   ]
+  ],
+  "tasa": [
+   [
+    "Madrid",
+    27786
+   ],
+   [
+    "Barcelona",
+    21739
+   ],
+   [
+    "Valencia/València",
+    9451
+   ]
+  ]
+ }
+}

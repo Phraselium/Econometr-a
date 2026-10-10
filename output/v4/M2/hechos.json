@@ -1,0 +1,169 @@
+[
+ {
+  "id": "M2-H1",
+  "enunciado_neutro": "Descomposición shapley de la variación de hogares (personas de referencia) en España por periodo.",
+  "capa": "C1",
+  "magnitud": {
+   "2006-2007": {
+    "dH": 446014,
+    "tamano_nativos": 96021,
+    "tamano_extranjeros": 166483,
+    "estructura": 75256,
+    "tasa": 108254,
+    "pct_tamano_nativos": 21.5,
+    "pct_tamano_extranjeros": 37.3,
+    "pct_estructura": 16.9,
+    "pct_tasa": 24.3
+   },
+   "2008-2013": {
+    "dH": 1320532,
+    "tamano_nativos": 415792,
+    "tamano_extranjeros": -7386,
+    "estructura": 499502,
+    "tasa": 412624,
+    "pct_tamano_nativos": 31.5,
+    "pct_tamano_extranjeros": -0.6,
+    "pct_estructura": 37.8,
+    "pct_tasa": 31.2
+   },
+   "2014-2019": {
+    "dH": 321543,
+    "tamano_nativos": 100683,
+    "tamano_extranjeros": 63141,
+    "estructura": 387714,
+    "tasa": -229995,
+    "pct_tamano_nativos": 31.3,
+    "pct_tamano_extranjeros": 19.6,
+    "pct_estructura": 120.6,
+    "pct_tasa": -71.5
+   },
+   "2020-2025": {
+    "dH": 806485,
+    "tamano_nativos": 56942,
+    "tamano_extranjeros": 615726,
+    "estructura": 253861,
+    "tasa": -120044,
+    "pct_tamano_nativos": 7.1,
+    "pct_tamano_extranjeros": 76.3,
+    "pct_estructura": 31.5,
+    "pct_tasa": -14.9
+   },
+   "2021-2025": {
+    "dH": 965804,
+    "tamano_nativos": 88471,
+    "tamano_extranjeros": 558240,
+    "estructura": 155194,
+    "tasa": 163899,
+    "pct_tamano_nativos": 9.2,
+    "pct_tamano_extranjeros": 57.8,
+    "pct_estructura": 16.1,
+    "pct_tasa": 17.0
+   }
+  },
+  "unidad": "hogares y % de ΔH",
+  "intervalo": "ver notas: población padrón x tasa EPA frente a hogares EPA/ECP en calibracion_hogares.csv",
+  "fuentes": [
+   "INE padrón (ine_v2_padron_prov_edad_nac.csv; contraste con panel_prov_a)",
+   "INE EPA 65944 (jefatura por edad)",
+   "EPA hogares y ECP 60131 (calibración de nivel)"
+  ],
+  "supuestos": [
+   "Cuatro grupos de edad; 'nativos' = nacionalidad española (incluye nacionalizados)",
+   "h por edad común a ambas nacionalidades",
+   "Shapley con 4 factores (N_esp, N_ext, estructura, tasa)"
+  ],
+  "limites": [
+   "EPA con ruptura de serie hacia 2021 (marco censal); la tasa 65+ cae en 2025. Jefatura por edad solo de EPA (una fuente) y sin desglose por nacionalidad; tasa h común a nativos y extranjeros.",
+   "Periodo 2002-2007 no disponible: EPA 65944 empieza en 2006; se informa 2006-2007.",
+   "Diferencia relativa padrón CSV frente a panel_prov_a (2022): 0.0000%"
+  ]
+ },
+ {
+  "id": "M2-H2",
+  "enunciado_neutro": "Inmigración bruta desde el extranjero frente a la variación de población extranjera (dos fuentes).",
+  "capa": "C1",
+  "magnitud": [
+   {
+    "periodo": "2006-2007",
+    "delta_poblacion_extranjera": 518519.0,
+    "inmigracion_bruta_INE": NaN,
+    "inmigracion_bruta_Eurostat": 840844.0
+   },
+   {
+    "periodo": "2008-2013",
+    "delta_poblacion_extranjera": -21710.0,
+    "inmigracion_bruta_INE": 1871410.0,
+    "inmigracion_bruta_Eurostat": 2028126.0
+   },
+   {
+    "periodo": "2014-2019",
+    "delta_poblacion_extranjera": 174410.0,
+    "inmigracion_bruta_INE": 1920613.0,
+    "inmigracion_bruta_Eurostat": 2238130.0
+   },
+   {
+    "periodo": "2020-2025",
+    "delta_poblacion_extranjera": 1670693.0,
+    "inmigracion_bruta_INE": NaN,
+    "inmigracion_bruta_Eurostat": 5154325.0
+   },
+   {
+    "periodo": "2021-2025",
+    "delta_poblacion_extranjera": 1509269.0,
+    "inmigracion_bruta_INE": NaN,
+    "inmigracion_bruta_Eurostat": 4686407.0
+   }
+  ],
+  "unidad": "personas",
+  "intervalo": "INE frente a Eurostat",
+  "fuentes": [
+   "INE EM 24421 (semestral, 2008-2022S1)",
+   "Eurostat migr_imm1ctz"
+  ],
+  "supuestos": [
+   "Flujo bruto, no neto"
+  ],
+  "limites": [
+   "No hay emigración ni migración interior en data/raw: no se separa migración interior ni neta; no es un término de la descomposición.",
+   "INE y Eurostat difieren desde 2021"
+  ]
+ },
+ {
+  "id": "M2-L1",
+  "enunciado_neutro": "Hogares adicionales en 2025 si rigieran las tasas de jefatura por edad de 2008 (y media 2006-2007).",
+  "capa": "C2",
+  "magnitud": {
+   "EPA 65944 (población EPA 2025)|2008|16-34": 221967,
+   "EPA 65944 (población EPA 2025)|2008|35-44": -810640,
+   "EPA 65944 (población EPA 2025)|2008|total": -43489,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|20-34": 357231,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|35-64": -1104668,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|total": -112274,
+   "EPA 65944 (población EPA 2025)|media 2006-2007|16-34": 177677,
+   "EPA 65944 (población EPA 2025)|media 2006-2007|35-44": -834738,
+   "EPA 65944 (población EPA 2025)|media 2006-2007|total": -158056,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|20-34": 279124,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|35-64": -1187760,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|total": -263915
+  },
+  "unidad": "hogares",
+  "intervalo": [
+   177677,
+   357231
+  ],
+  "fuentes": [
+   "EPA 65944",
+   "Padrón INE",
+   "ECP 60131"
+  ],
+  "supuestos": [
+   "Contrafactual: la tasa de jefatura por edad de la referencia aplica en 2025 a la población de 2025",
+   "Referencia 2004-2007 sustituida por 2006-2007 (EPA 65944 desde 2006)"
+  ],
+  "limites": [
+   "EPA con ruptura de serie hacia 2021 (marco censal); la tasa 65+ cae en 2025. Jefatura por edad solo de EPA (una fuente) y sin desglose por nacionalidad; tasa h común a nativos y extranjeros.",
+   "Los tramos 16-34 y 35-44 solo salen de la vía EPA; la vía padrón usa 20-34 y 35-64.",
+   "Una cota con supuesto contrafactual; no es déficit ni demanda a cualquier precio."
+  ]
+ }
+]

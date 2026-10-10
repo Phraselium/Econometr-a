@@ -1,0 +1,382 @@
+{
+ "rama": "M2",
+ "pregunta": "¿Por qué se crean tantos hogares?",
+ "capa": "C1 (descomposición) y C2 (demanda latente)",
+ "datos": [
+  "ine_v2_padron_prov_edad_nac.csv",
+  "panel_prov_a (contraste)",
+  "pa_aux/ine_t65944.json",
+  "ine_hogares_60131.csv",
+  "ine_epa_hogares.csv",
+  "ine_v2_migraciones_prov.csv",
+  "eurostat_inmigracion_anual.csv"
+ ],
+ "N": 5,
+ "metodo": "Shapley sobre 4 factores (tamaño nativos, tamaño extranjeros, estructura por edad, tasa de jefatura)",
+ "estimacion": {
+  "2006-2007": {
+   "dH": 446014,
+   "tamano_nativos": 96021,
+   "tamano_extranjeros": 166483,
+   "estructura": 75256,
+   "tasa": 108254,
+   "pct_tamano_nativos": 21.5,
+   "pct_tamano_extranjeros": 37.3,
+   "pct_estructura": 16.9,
+   "pct_tasa": 24.3
+  },
+  "2008-2013": {
+   "dH": 1320532,
+   "tamano_nativos": 415792,
+   "tamano_extranjeros": -7386,
+   "estructura": 499502,
+   "tasa": 412624,
+   "pct_tamano_nativos": 31.5,
+   "pct_tamano_extranjeros": -0.6,
+   "pct_estructura": 37.8,
+   "pct_tasa": 31.2
+  },
+  "2014-2019": {
+   "dH": 321543,
+   "tamano_nativos": 100683,
+   "tamano_extranjeros": 63141,
+   "estructura": 387714,
+   "tasa": -229995,
+   "pct_tamano_nativos": 31.3,
+   "pct_tamano_extranjeros": 19.6,
+   "pct_estructura": 120.6,
+   "pct_tasa": -71.5
+  },
+  "2020-2025": {
+   "dH": 806485,
+   "tamano_nativos": 56942,
+   "tamano_extranjeros": 615726,
+   "estructura": 253861,
+   "tasa": -120044,
+   "pct_tamano_nativos": 7.1,
+   "pct_tamano_extranjeros": 76.3,
+   "pct_estructura": 31.5,
+   "pct_tasa": -14.9
+  },
+  "2021-2025": {
+   "dH": 965804,
+   "tamano_nativos": 88471,
+   "tamano_extranjeros": 558240,
+   "estructura": 155194,
+   "tasa": 163899,
+   "pct_tamano_nativos": 9.2,
+   "pct_tamano_extranjeros": 57.8,
+   "pct_estructura": 16.1,
+   "pct_tasa": 17.0
+  }
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO (C1 hechos); latente: cota C2",
+ "diagnosticos": {
+  "dif_rel_padron_vs_panel_2022": 0.0,
+  "corr_dH_obs_modelo_prov_2021_2025": 0.9935801141340528,
+  "top3_provincias": {
+   "2006-2007": {
+    "tamano_nativos": [
+     [
+      "Madrid",
+      15420
+     ],
+     [
+      "Sevilla",
+      5694
+     ],
+     [
+      "Málaga",
+      5666
+     ]
+    ],
+    "tamano_extranjeros": [
+     [
+      "Madrid",
+      24783
+     ],
+     [
+      "Barcelona",
+      20073
+     ],
+     [
+      "Alicante/Alacant",
+      14541
+     ]
+    ],
+    "estructura": [
+     [
+      "Madrid",
+      10429
+     ],
+     [
+      "Barcelona",
+      7792
+     ],
+     [
+      "Valencia/València",
+      3577
+     ]
+    ],
+    "tasa": [
+     [
+      "Madrid",
+      15910
+     ],
+     [
+      "Barcelona",
+      13151
+     ],
+     [
+      "Valencia/València",
+      6148
+     ]
+    ]
+   },
+   "2008-2013": {
+    "tamano_nativos": [
+     [
+      "Madrid",
+      105874
+     ],
+     [
+      "Barcelona",
+      56472
+     ],
+     [
+      "Sevilla",
+      23506
+     ]
+    ],
+    "tamano_extranjeros": [
+     [
+      "Madrid",
+      -29089
+     ],
+     [
+      "Barcelona",
+      -9849
+     ],
+     [
+      "Valencia/València",
+      -9661
+     ]
+    ],
+    "estructura": [
+     [
+      "Madrid",
+      69043
+     ],
+     [
+      "Barcelona",
+      45819
+     ],
+     [
+      "Valencia/València",
+      28725
+     ]
+    ],
+    "tasa": [
+     [
+      "Madrid",
+      53971
+     ],
+     [
+      "Barcelona",
+      48507
+     ],
+     [
+      "Valencia/València",
+      22328
+     ]
+    ]
+   },
+   "2014-2019": {
+    "tamano_nativos": [
+     [
+      "Madrid",
+      84364
+     ],
+     [
+      "Barcelona",
+      25731
+     ],
+     [
+      "Balears, Illes",
+      17211
+     ]
+    ],
+    "tamano_extranjeros": [
+     [
+      "Barcelona",
+      33755
+     ],
+     [
+      "Madrid",
+      12310
+     ],
+     [
+      "Alicante/Alacant",
+      -6207
+     ]
+    ],
+    "estructura": [
+     [
+      "Madrid",
+      43202
+     ],
+     [
+      "Barcelona",
+      31859
+     ],
+     [
+      "Valencia/València",
+      23142
+     ]
+    ],
+    "tasa": [
+     [
+      "Madrid",
+      -32553
+     ],
+     [
+      "Barcelona",
+      -27210
+     ],
+     [
+      "Valencia/València",
+      -12153
+     ]
+    ]
+   },
+   "2020-2025": {
+    "tamano_nativos": [
+     [
+      "Madrid",
+      42476
+     ],
+     [
+      "Murcia",
+      16750
+     ],
+     [
+      "Asturias",
+      -12763
+     ]
+    ],
+    "tamano_extranjeros": [
+     [
+      "Madrid",
+      103857
+     ],
+     [
+      "Barcelona",
+      89308
+     ],
+     [
+      "Valencia/València",
+      58074
+     ]
+    ],
+    "estructura": [
+     [
+      "Madrid",
+      27947
+     ],
+     [
+      "Barcelona",
+      25207
+     ],
+     [
+      "Sevilla",
+      16268
+     ]
+    ],
+    "tasa": [
+     [
+      "Barcelona",
+      -12529
+     ],
+     [
+      "Asturias",
+      -8013
+     ],
+     [
+      "Madrid",
+      -7849
+     ]
+    ]
+   },
+   "2021-2025": {
+    "tamano_nativos": [
+     [
+      "Madrid",
+      51607
+     ],
+     [
+      "Barcelona",
+      14930
+     ],
+     [
+      "Murcia",
+      14168
+     ]
+    ],
+    "tamano_extranjeros": [
+     [
+      "Madrid",
+      93471
+     ],
+     [
+      "Barcelona",
+      78748
+     ],
+     [
+      "Valencia/València",
+      54150
+     ]
+    ],
+    "estructura": [
+     [
+      "Barcelona",
+      14180
+     ],
+     [
+      "Madrid",
+      13914
+     ],
+     [
+      "Sevilla",
+      11354
+     ]
+    ],
+    "tasa": [
+     [
+      "Madrid",
+      27786
+     ],
+     [
+      "Barcelona",
+      21739
+     ],
+     [
+      "Valencia/València",
+      9451
+     ]
+    ]
+   }
+  },
+  "latente_total_rango": [
+   -263915,
+   -43489
+  ]
+ },
+ "fuera_muestra": {
+  "modelo": "no aplica (identidad contable)",
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Sin jefatura por nacionalidad ni migración interior; provincias con h nacional; 2002-2007 sustituido por 2006-2007."
+}

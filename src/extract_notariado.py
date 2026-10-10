@@ -586,7 +586,9 @@ def main() -> None:
     V("actos_revision_entre_ediciones", max(rev) < 0.02, np.nan, "cambio relativo maximo del mismo mes entre ediciones solapadas (revision de datos)",
       PAGINAS_REVISADAS["notariado_cv_actos_mensual"], "los valores difieren entre ediciones: se conservan todas (columna edicion); usar la mas reciente", max(rev))
     # (c) contraste con INE ETDP provincia (viviendas) mensual: la edicion mas reciente de cada mes
-    last = act.sort_values("edicion").groupby(["territorio", "fecha"]).tail(1)
+    # orden cronologico de ediciones (v5, BK-045): el orden de texto ponia '1T2026' antes que '2019-2020'
+    orden_ed = {k: i for i, (k, _) in enumerate(ACTOS)}
+    last = act.assign(_o=act.edicion.map(orden_ed)).sort_values("_o").groupby(["territorio", "fecha"]).tail(1).drop(columns="_o")
     for prov, ine_name in (("Valencia", "Valencia/València"), ("Alicante", "Alicante/Alacant"), ("Castellón", "Castellón/Castelló")):
         d = pd.read_csv(RAW / "ine_etdp_compraventas.csv")
         d = d[d["nombre"].str.startswith(f"{ine_name}. General. Compraventa")].set_index("fecha")["valor"]

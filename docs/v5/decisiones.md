@@ -21,3 +21,13 @@
   3. los recuentos de programas solo usan documentos oficiales;
   4. ningún script de `make all` lee ficheros de data/raw no versionados (comprobación estática de nombres literales, excluidos los fetch);
   5. el léxico valorativo o partidista en E4, E5 y E8 (reutiliza check_texto).
+
+## R1 técnico (orquestador)
+- BK-045. Orden cronológico de las ediciones del Notariado en extract_notariado.py; queda en ERRATA.md.
+- BK-046. Nombres de los 19 distritos SERPAVI de València:
+  - nombres tomados de la capa oficial de distritos del Ajuntament (geoportal, CC BY 4.0, descargada el 2026-10-10, en data/raw/v5);
+  - supuesto declarado: el código 46250dd corresponde al distrito municipal dd (19 = 19);
+  - salida en output/v5/R1T, sin tocar output/f6 (v1 cerrada).
+- BK-044. Fe de erratas de las notas de v2 en ERRATA.md, sin reescribir output/v2.
+- BK-047. El blob de 95 MB de serpavi_v2_municipios.csv sigue en el historial remoto (a011c2f). No se reescribe, porque el force push está denegado; queda documentado.
+- Los subagentes trabajan en el árbol principal con rutas disjuntas (src/v5/<módulo>_*, output/v5/<MÓDULO>), sin commit. No hacen falta worktrees porque no hay ficheros compartidos; esto cumple el límite de 3.

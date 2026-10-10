@@ -1,0 +1,24 @@
+{
+ "rama": "R1T",
+ "pregunta": "Pendientes técnicos del backlog (BK-046)",
+ "capa": "C4",
+ "datos": [
+  "serpavi_valencia_distritos",
+  "valencia_distritos_nombres (Ajuntament, 2026-10-10)"
+ ],
+ "N": 19,
+ "metodo": "cruce código SERPAVI 46250dd = distrito municipal dd (19 = 19)",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "distritos_cruzados": 19
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Supuesto declarado: los distritos censales de SERPAVI coinciden con los 19 distritos municipales."
+}

@@ -5,7 +5,7 @@ tools: Bash, Read, Write, Edit, Glob, Grep
 model: sonnet
 ---
 Ingeniero de ML v2. Reglas:
-1. Solo en tu worktree ../wt-<rama>; src/v2/<rama>_*.py → output/v2/<rama>/. econ_utils y data/ solo lectura.
+1. Solo en tu worktree ../wt-<rama>; src/v3/<rama>_*.py → output/v3/<rama>/. econ_utils y data/ solo lectura.
 2. Validación temporal en BLOQUES con embargo (≥4 trimestres entre entrenamiento y prueba); nada de CV aleatoria en series/paneles temporales. Semillas fijas (SEED=20261010).
 3. Presupuesto de hiperparámetros declarado ANTES (nº de configuraciones) y registrado; cada configuración cuenta como especificación en el Registry.
 4. Compara SIEMPRE en la misma muestra con AR(4) y ECM v1 (Diebold-Mariano con corrección Harvey-Leybourne-Newbold). Un modelo que no mejora fuera de muestra no se presenta como explicación.

@@ -20,7 +20,8 @@
 | B4 contribuciones a la subida (triangulación) | B | hecho | C2 (cotas v3)/C4 | «contribuciones no estables»: solo el 22 % de 37 comparaciones de orden con τ≥0,67; B3 pone la oferta primera, v2 ≈0; contratos nuevos sin descomposición; inversión sin dato | 102.139 |
 | Revisión módulo B | B | REHACER (1-3) → corregido; APROBADO | — | docs/v5/revision_B.md | 86.262 |
 | C-a Europa (C4), crédito a promotores (C1), contado (C3) | C | hecho | C4 | España: precio real +42,6 % vs mediana UE +37,4 % (P65); alquiler real −10,3 %; emancipación fuera del IQR; crédito a promotores 470 → 98 mm €; contado 30-58 % | 139.510 |
+| C-b seguridad jurídica (C5), fiscalidad (C6), empresas (C8) | C | hecho | C4 | usurpación y cuota de alquiler: rho +0,57/+0,66 (signo contrario a la afirmación; urbanización); AEAT no publica por número de inmuebles (sin dato); PJ: 11,3 % de compradores; residual de stock no persona física 16,9-38,1 % | 130.684 |
 
 **Hecho:** módulos R, A y B aprobados; C-a; check_v5 en make check.
 **Siguiente:** C-b y C-c (en curso) → revisión C → D.
-**Tokens de subagentes v5:** 1.735.849 / 4.200.000 (R: 601.209 / 900.000; A: 471.653 / 700.000; B: 523.477 / 1.000.000; C: 139.510 / 700.000) (corte global al 80 %: 3.360.000; reserva 420.000).
+**Tokens de subagentes v5:** 1.866.533 / 4.200.000 (R: 601.209 / 900.000; A: 471.653 / 700.000; B: 523.477 / 1.000.000; C: 270.194 / 700.000) (corte global al 80 %: 3.360.000; reserva 420.000).

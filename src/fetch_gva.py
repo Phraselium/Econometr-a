@@ -111,7 +111,8 @@ def _filas_recuento(total: int, prov: pd.Series, mun: pd.Series, fecha: str, per
 
 def build_vut() -> None:
     nombre = "gva_vut_municipio.csv"
-    if cached(nombre):
+    # el .csv (67 MB) no se versiona; la copia versionada es el .csv.gz (v5, R1)
+    if cached(nombre) or cached(nombre + ".gz"):
         return
     pkg_h = ckan_pkg(["dades-turisme-habitatges-comunitat-valenciana-2025"])
     r_h = ckan_recurso(pkg_h, lambda r: "hist" in r["name"].lower() and r["format"].upper() == "CSV")
@@ -164,6 +165,7 @@ def build_vut() -> None:
     df = pd.DataFrame(filas)
     print(f"[vut] foto {fecha_foto}: {len(lista)} registros; Valencia ciudad {int(mun.get(VLC, 0))}")
     save(df, nombre, FUENTE_VUT)
+    df.to_csv(RAW / (nombre + ".gz"), index=False, compression={"method": "gzip", "mtime": 0})
 
 
 # ---------------------------------------------------------------- PADRON

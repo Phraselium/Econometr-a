@@ -158,7 +158,7 @@ def stock():
         res[nombre] = t
         reg("stock", f"stock_uso_{nombre}", "tabla descriptiva", len(t), "C1 hecho; sin contraste")
     # contraste VUT: INE frente a registro autonomico (Comunitat Valenciana)
-    g = pd.read_csv(RAW / "gva_vut_municipio.csv", dtype={"codigo": str},
+    g = pd.read_csv(RAW / "gva_vut_municipio.csv.gz", dtype={"codigo": str},
                     usecols=["periodo", "serie", "valor", "ambito", "codigo"])
     g = g[g.serie.str.startswith("vut_stock_prov_")]
     ult = g.periodo.max()

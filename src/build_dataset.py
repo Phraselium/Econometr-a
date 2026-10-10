@@ -915,7 +915,7 @@ def build_valencia() -> pd.DataFrame:
                 nota=NPROV_NOTA)
 
     # --- GVA VUT registro (stock fin de trimestre 2010-2024; NO se encadena con la lista 2026) ---
-    gva_vut = read_raw("gva_vut_municipio.csv", ["fecha", "serie", "valor"])
+    gva_vut = read_raw("gva_vut_municipio.csv.gz", ["fecha", "serie", "valor"])
     GVA_NOTA = ("registro administrativo (GVA, CKAN); stock = último mes del trimestre; 2010-2024; "
                 "saltos regulatorios 2016-2019, 2021 y purga 2025-26; no encadenar con vut_foto (lista 2026)")
     for terr, serie, rol, extra in [
@@ -1089,7 +1089,7 @@ def build_validacion_gva(pad_ext: pd.DataFrame | None = None) -> pd.DataFrame:
         R.append(dict(bloque=bloque, check=check, territorio=territorio, n_obs=n,
                       error_max=error_max, valor_ref=valor, independiente=independiente, nota=nota))
 
-    gv = read_raw("gva_vut_municipio.csv", ["fecha", "serie", "valor"])
+    gv = read_raw("gva_vut_municipio.csv.gz", ["fecha", "serie", "valor"])
     gv = gv.drop_duplicates(["fecha", "serie"], keep="last")
     wide = gv.pivot(index="fecha", columns="serie", values="valor").sort_index()
     mun_stock = wide[[c for c in wide.columns if c.startswith("vut_stock_mun_")]]

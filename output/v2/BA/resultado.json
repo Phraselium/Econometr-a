@@ -1,0 +1,87 @@
+{
+  "rama": "BA",
+  "pregunta": "¿Qué se asocia con el crecimiento del alquiler provincial y cómo cambia por periodo? H1: Δ4 ln IPC alquiler ~ Δ4 ln pob 20-34, Δ4 ln pob extranjera, Δ4 ln ocupados (FE prov y trimestre).",
+  "datos": "panel_prov_q 2008Q1-2024Q2, 49 provincias de entrenamiento (via v2_common.load); panel_prov_a; panel_muni_a. Población interpolada intra-anual en T2-T4 (marcada); robustez con T1 observado y panel anual.",
+  "N": {
+    "H1_prov_trim": 3234,
+    "provincias": 49,
+    "OOS_obs_comunes": 1974,
+    "municipal": 1981
+  },
+  "metodo": "MCO con efectos fijos de provincia y trimestre; EE cluster por provincia (CR1, t(G-1)); wild cluster bootstrap restringido con pesos de Webb (9.999, semilla 20261010); Holm sobre los 2 contrastes clave; BH sobre coeficientes por periodo; OOS directo h=4 con bloques+embargo y DM-HLN.",
+  "estimacion": {
+    "d4_ln_pob_20_34": 0.14543455686672954,
+    "d4_ln_pob_extranj": -0.0184750042666429,
+    "d4_ln_ocupados": -0.0012291669500607057
+  },
+  "ic95": {
+    "d4_ln_pob_20_34": [
+      0.042686212808026244,
+      0.24818290092543283
+    ],
+    "d4_ln_pob_extranj": [
+      -0.05392231370648744,
+      0.01697230517320164
+    ],
+    "d4_ln_ocupados": [
+      -0.010823485407175367,
+      0.008365151507053956
+    ]
+  },
+  "p_ajustado": {
+    "p_boot_bruto": {
+      "d4_ln_pob_20_34": 0.009400940094009401,
+      "d4_ln_pob_extranj": 0.3035303530353035,
+      "d4_ln_ocupados": 0.7960796079607961
+    },
+    "holm_H1_clave": {
+      "d4_ln_pob_20_34": 0.018801880188018802,
+      "d4_ln_pob_extranj": 0.3035303530353035
+    }
+  },
+  "nivel_evidencia": "ASOCIACIÓN ROBUSTA",
+  "diagnosticos": {
+    "r2_within": 0.033458439912889215,
+    "clusters": 49,
+    "criterio_robustez_pob_20_34": true,
+    "criterio_robustez_pob_extranj": false,
+    "H1_conjuncion_confirmada_en_entrenamiento": false,
+    "signos_positivos_en_todas_las_submuestras": {
+      "d4_ln_pob_20_34": true,
+      "d4_ln_pob_extranj": false,
+      "d_ln_pob_20_34": true,
+      "d_ln_pob_extranj": false
+    },
+    "Wald_igualdad_coef_periodos": [
+      {
+        "x": "d4_ln_pob_20_34",
+        "F": 3.020392,
+        "p_F": 0.038694
+      },
+      {
+        "x": "d4_ln_pob_extranj",
+        "F": 0.586001,
+        "p_F": 0.627119
+      },
+      {
+        "x": "d4_ln_ocupados",
+        "F": 1.916912,
+        "p_F": 0.139414
+      }
+    ],
+    "n_especificaciones_registradas": 50
+  },
+  "fuera_muestra": {
+    "modelo": "B_AR4_mas_H1",
+    "rmse": 0.011693684642235165,
+    "rmse_AR4": 0.01243561235469299,
+    "rmse_ECM_v1": 0.014168648208784706,
+    "dm_vs_ar4": 0.46403186750763187,
+    "p_vs_ar4": 0.6450793705687764,
+    "dm_vs_ecm_v1": 1.4340272086454235,
+    "p_vs_ecm_v1": 0.1591478031495189,
+    "mejora_significativa_vs_AR4": false,
+    "validacion": "bloques de 4 orígenes, primer test 2012Q1, h=4, embargo 4, misma muestra"
+  },
+  "notas": "Asociación, sin identificación causal. ASOCIACIÓN ROBUSTA se aplica SOLO al componente población 20-34 y es PROVISIONAL (falta la evaluación sellada de H1: RMSE vs AR(4)). La conjunción de H1 (joven Y extranjera) NO se confirma en entrenamiento: la población extranjera no es significativa y su signo es negativo con efectos de tiempo. El modelo con variables de H1 no mejora significativamente al AR(4) fuera de muestra: no se presenta como explicación predictiva. Turismo y contribuciones por periodo: EXPLORATORIO (causalidad inversa posible)."
+}

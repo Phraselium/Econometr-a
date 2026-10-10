@@ -1,0 +1,22 @@
+familia,contraste,p_bruto,p_ajustado,metodo
+F1_H1_contrastes_clave(Holm),d4_ln_pob_20_34,0.0094009401,0.0188018802,"Holm (p wild cluster bootstrap Webb 9.999, bilateral)"
+F1_H1_contrastes_clave(Holm),d4_ln_pob_extranj,0.303530353,0.303530353,"Holm (p wild cluster bootstrap Webb 9.999, bilateral)"
+F2_coef_por_periodo(12),d4_ln_pob_20_34__P1,0.013135348,0.0785865749,BH (q); Holm en periodos_coef.csv
+F2_coef_por_periodo(12),d4_ln_pob_20_34__P2,0.000999791,0.011997492,BH (q); Holm en periodos_coef.csv
+F2_coef_por_periodo(12),d4_ln_pob_20_34__P3,0.0196466437,0.0785865749,BH (q); Holm en periodos_coef.csv
+F2_coef_por_periodo(12),d4_ln_pob_20_34__P4,0.2001977776,0.2902117897,BH (q); Holm en periodos_coef.csv
+F2_coef_por_periodo(12),d4_ln_pob_extranj__P1,0.1656218804,0.2902117897,BH (q); Holm en periodos_coef.csv
+F2_coef_por_periodo(12),d4_ln_pob_extranj__P2,0.4134601663,0.4638255865,BH (q); Holm en periodos_coef.csv
+F2_coef_por_periodo(12),d4_ln_pob_extranj__P3,0.1784650662,0.2902117897,BH (q); Holm en periodos_coef.csv
+F2_coef_por_periodo(12),d4_ln_pob_extranj__P4,0.7037260566,0.7037260566,BH (q); Holm en periodos_coef.csv
+F2_coef_por_periodo(12),d4_ln_ocupados__P1,0.0806389299,0.2039019273,BH (q); Holm en periodos_coef.csv
+F2_coef_por_periodo(12),d4_ln_ocupados__P2,0.0849591364,0.2039019273,BH (q); Holm en periodos_coef.csv
+F2_coef_por_periodo(12),d4_ln_ocupados__P3,0.2176588423,0.2902117897,BH (q); Holm en periodos_coef.csv
+F2_coef_por_periodo(12),d4_ln_ocupados__P4,0.4251734543,0.4638255865,BH (q); Holm en periodos_coef.csv
+F3_OOS_DM_vs_AR4(4),D_AR4_H1_oferta_cu,0.1286365942,0.5145463768,Holm
+F3_OOS_DM_vs_AR4(4),A_solo_H1,0.4220471331,1.0,Holm
+F3_OOS_DM_vs_AR4(4),C_AR4_H1_oferta,0.5847098282,1.0,Holm
+F3_OOS_DM_vs_AR4(4),B_AR4_mas_H1,0.6450793706,1.0,Holm
+F4_turismo(3),T_muni_base,0.2517173282,0.3775759922,BH
+F4_turismo(3),T_prov_dlnVUT,0.3957865227,0.3957865227,BH
+F4_turismo(3),T_prov_dVUTpc,0.0006792936,0.0020378808,BH

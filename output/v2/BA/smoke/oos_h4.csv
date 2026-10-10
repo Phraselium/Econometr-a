@@ -1,0 +1,2 @@
+modelo,n,n_periodos,rmse,mae,rmse_AR4,dm_vs_AR4,p_vs_AR4,rmse_ECM_v1,dm_vs_ECM_v1,p_vs_ECM_v1,primario,razon_rmse_vs_AR4,razon_rmse_vs_ECM,p_vs_AR4_holm,rmse_ECM_v1_baseline
+B_AR4_mas_H1,160,16,0.0117018361,0.0092354094,0.0086460939,-1.5453241559,0.1431016083,0.0132170488,2.0553812075,0.0576850758,True,1.3534245838,0.8853592205,0.1431016083,0.0132170488

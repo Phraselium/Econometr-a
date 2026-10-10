@@ -1,0 +1,67 @@
+{
+  "rama": "BS",
+  "pregunta": "Síntesis v2: ¿qué se asocia con el alquiler y con la compra, por periodo, y qué hipótesis confirmatorias sobreviven a Holm-7 y a la muestra sellada?",
+  "datos": "Solo salidas versionadas de output/v2/{BA,BV,BI,BO,BP,BM,BD} y docs (sin data/sealed ni data/raw; sin estimación nueva)",
+  "N": {
+    "hipotesis_confirmatorias": 7,
+    "modelos_fuera_muestra_filas": 109,
+    "contribuciones_filas": 126,
+    "factores_ranking": 22,
+    "referencias": 31,
+    "especificaciones_v2": 34
+  },
+  "metodo": "Holm sobre las 7 confirmatorias (p = decisión pre-registrada, intersección-unión; con evaluación sellada, máximo de dentro de muestra y sellado), leyendo todos los p de los ficheros de rama; BH en tablas fuera de muestra cuando la rama no lo aporta",
+  "estimacion": {
+    "p_hipotesis_H6": 0.013986013986013986,
+    "p_hipotesis_H3": 0.0294,
+    "p_hipotesis_H4": 0.0463046304630463,
+    "p_hipotesis_H2": 0.19467579127919515,
+    "p_hipotesis_H1": 0.8499349934993499,
+    "p_hipotesis_H5": 0.968031968031968,
+    "p_hipotesis_H7": 1.0
+  },
+  "ic95": null,
+  "p_ajustado": {
+    "holm7_H6": 0.0979020979020979,
+    "holm7_H3": 0.1764,
+    "holm7_H4": 0.23152315231523152,
+    "holm7_H2": 0.7787031651167806,
+    "holm7_H1": 1.0,
+    "holm7_H5": 1.0,
+    "holm7_H7": 1.0
+  },
+  "nivel_evidencia": "EXPLORATORIO",
+  "diagnosticos": {
+    "supera_holm7": [],
+    "etiquetas_finales": {
+      "H1": "EXPLORATORIO",
+      "H2": "EXPLORATORIO",
+      "H3": "EXPLORATORIO",
+      "H4": "EXPLORATORIO",
+      "H5": "EXPLORATORIO",
+      "H6": "EXPLORATORIO",
+      "H7": "EXPLORATORIO"
+    },
+    "modelos_validacion_mejoran_AR4_con_BH": 0,
+    "modelos_validacion_mejoran_AR4_sin_corregir": 2,
+    "sellados_principales_que_mejoran_AR4": [
+      [
+        "BA",
+        "B_AR4_mas_H1",
+        "Δ4 ln IPC alquiler (panel provincial)"
+      ]
+    ],
+    "componentes_BD_no_robustos": 19,
+    "smoke": true
+  },
+  "fuera_muestra": {
+    "modelo": "H1: AR(4)+variables demográficas (sellado, 52 provincias, 2024Q3-2026Q2)",
+    "rmse": 0.010785174515890483,
+    "dm_vs_ar4": 3.984829084760093,
+    "p_vs_ar4": 0.005291203548195239,
+    "rmse_ar4": 0.012244975322719311,
+    "dm_vs_ecm_v1": 2.6960593832913307,
+    "p_vs_ecm_v1": 0.03081425479804881
+  },
+  "notas": "Ninguna confirmatoria supera Holm-7; todas EXPLORATORIO (etiquetas del orquestador). La mejora predictiva sellada de H1 es un hecho fuera de muestra, no una asociación robusta de cada coeficiente. Se leen p de ficheros (holm7_verificacion.csv)."
+}

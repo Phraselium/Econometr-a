@@ -1,0 +1,6 @@
+# Lint del proyecto: errores reales (pyflakes y errores de sintaxis/estilo graves), sin estilo cosmético.
+line-length = 160
+target-version = "py311"
+[lint]
+select = ["E9", "F"]
+ignore = ["F401", "F841", "E741", "F541"]

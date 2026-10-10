@@ -1,0 +1,9 @@
+variable,signo_esperado,fuente,estimacion,p_ajustado,modelo,signo_observado,coherente_con_signo,significativo_5%
+Δ4 ln pob 20-34,+,"Khametshin et al. (2024, BdE DO 2432); hipotesis.md",0.14879763,0.01540154,H1 (FE prov+trim; Holm),+,sí,True
+Δ4 ln pob extranjera,+,"Khametshin et al. (2024); Helfer et al. (2023, Suiza); Torres-Téllez y Montero-Soler (2023, resumen secundario)",-0.01844998,0.30013001,H1 (FE prov+trim; Holm),-,no,False
+Δ4 ln pob extranjera,+,idem (variante sin FE de tiempo),0.13671378,0.0,H1 sin FE de tiempo (p bruto cluster),+,sí,True
+Δ4 ln ocupados,+,hipotesis.md (signos esperados),-0.00136336,0.77777778,"H1 (p bootstrap, sin ajuste: no clave)",-,no,False
+"oferta: terminadas/1.000 hab. (Δ4 ln, retardo 4T)",-,hipotesis.md; Khametshin et al. (demanda > oferta),0.00111321,0.11229177,C2 (P2; sin FE de tiempo; p bruto),+,no,False
+"coste de uso (Δ4 pp, nacional)",ambiguo (+ si sustitución compra→alquiler),Khametshin et al. (2024): prudencia crediticia desplaza demanda al alquiler; Garriga et al. (2019),0.00195638,0.00755114,C2 (P2; serie temporal única; p bruto),+,n/a,True
+"viviendas turísticas (Δ por 1.000 uu, municipal 2020→23)",+,"García-López et al. (2020, JUE; Barcelona)",0.00035047,0.37757599,"muni, FE prov (BH)",+,sí,False
+"viviendas turísticas (Δ por 1.000 hab., provincial)",+,idem,0.00239225,0.00203788,prov trimestral N_t=6 (BH),+,sí,True

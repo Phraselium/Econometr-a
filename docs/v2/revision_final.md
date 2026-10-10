@@ -71,3 +71,20 @@ Todos están presentes: alquiler frente a compra (§3); ecuaciones con EE, IC y 
 6. **C6.** Matizar «Ninguna cifra está escrita a mano»: hay literales con fuente (MDE ≈1,7 % de BP/resumen.md; 0,45 de v1; 0,029, 0,174 y 0,035 de versiones previas). Citarlos o leerlos de fichero.
 7. **C7.** En la línea BHJ (§9), usar formato español y escribir p < 0,001 en lugar de «p=0.000».
 8. **C8.** Déficit con protegida: 34.704 = observadas en 49 provincias (33.164) más un reescalado. Decir «observadas y reescaladas a 52 provincias» y dar la cota inferior (599.697).
+
+## Verificación de la condición (cae4761)
+
+**Reproducción: NO verificada por el revisor.** El sistema de ficheros temporal del entorno se llenó al clonar (ENOSPC) y no tengo permiso para liberar espacio. La reproducción ×2 con md5 queda a cargo del `make all` ×2 del orquestador, que debe incluir la comparación de md5 con lo versionado.
+
+Comprobado sobre `output/v2/informe_v2.md` y `src/v2/bs_tablas.py` de r2/main:
+- **C1, hecho.** Fila «Demografía agregada» en las ventanas de compra (desde 2014: −6,50 [−15,48; −0,16] / −7,53 [−19,75; −2,62], «replica»); frase de §3 corregida; P1 crédito/CU mencionado.
+- **C2, hecho.** H2 frente al ECM v1 (49 provincias: 0,0531 frente a 0,0542; DM −0,12; p 0,910). Observación no pre-registrada del sellado de compra: 0,0528 frente a 0,0619, solo RMSE. «Listón bajo» limitado a entrenamiento.
+- **C3, hecho.** El anexo declara la exclusión: H6 12, H1 4, H2 5, H7 9.
+- **C4, hecho.** §2 hereda los estados (Cavalleri «parcial»).
+- **C5-C8, hechos.**
+
+**Error nuevo (C9, obligatorio).** En el ranking, «Demografía (20-34 y extranjera) | compra» pasa a E = «sí» y sube del puesto 11 al 4. `bs_tablas.py:393` evalúa E con la ventana «P2-P4 (desde 2014)». El criterio E está definido, en el informe y en las demás filas, como «replicada en M1 y M2 **desde 2020**». Desde 2020 esa fila no se replica (1,19 frente a −5,27). Además, el informe aplica la regla de forma incoherente entre filas. Corrección: usar «P3-P4 (desde 2020)» en E, lo que devuelve E = no. Mantener el texto sobre 2014 en la columna de motivos.
+
+### Veredicto final: **REHACER (acotado a C9)**
+
+Es un cambio de una línea en `bs_tablas.py:393` más la reejecución de `bs_run.py`. Pasa a **APROBAR** sin nueva revisión si se cumplen tres condiciones: el diff toca solo esa línea; el ranking devuelve la fila a E = no; y el `make all` ×2 del orquestador da md5 idénticos.

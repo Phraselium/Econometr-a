@@ -288,14 +288,14 @@ Criterios (A-E) por familia y mercado: **A** p ajustado por multiplicidad < 0,05
 | 1 | Coste de uso × exposición hipotecaria | compra | EXPLORATORIO | sí | sí | no | no | no | 2 | 5 |
 | 2 | Demografía: modelo conjunto de H1 (valor predictivo) | alquiler | EXPLORATORIO | n/a | n/a | no | sí | n/a | 1 | 2 |
 | 3 | Precio/alquiler (arbitraje, ratio vs media) | alquiler | EXPLORATORIO | sí | sí | n/a | n/a | n/a | 1 | 2 |
-| 4 | Demografía (20-34 y extranjera) | compra | EXPLORATORIO | n/a | no | n/a | n/a | sí | 1 | 2 |
-| 5 | Precio/alquiler (arbitraje, ratio vs media) | compra | EXPLORATORIO | sí | sí | n/a | n/a | n/a | 1 | 2 |
-| 6 | Política: zonas tensionadas de Cataluña (H6) | alquiler | EXPLORATORIO | no | no | n/a | sí | n/a | 1 | 3 |
-| 7 | Demografía: población 20-34 (BA) | alquiler | EXPLORATORIO | sí | sí | no | n/a | no | 1 | 4 |
-| 8 | Crédito hipotecario nuevo | compra | EXPLORATORIO | sí | no | no | no | no | 1 | 5 |
-| 9 | Viviendas turísticas (VUT) | alquiler | EXPLORATORIO | no | n/a | n/a | n/a | n/a | 0 | 1 |
-| 10 | Crédito, tipos y coste de uso | alquiler | EXPLORATORIO | n/a | n/a | no | n/a | no | 0 | 2 |
-| 11 | Oferta (terminadas) | alquiler | EXPLORATORIO | n/a | n/a | no | n/a | no | 0 | 2 |
+| 4 | Precio/alquiler (arbitraje, ratio vs media) | compra | EXPLORATORIO | sí | sí | n/a | n/a | n/a | 1 | 2 |
+| 5 | Política: zonas tensionadas de Cataluña (H6) | alquiler | EXPLORATORIO | no | no | n/a | sí | n/a | 1 | 3 |
+| 6 | Demografía: población 20-34 (BA) | alquiler | EXPLORATORIO | sí | sí | no | n/a | no | 1 | 4 |
+| 7 | Crédito hipotecario nuevo | compra | EXPLORATORIO | sí | no | no | no | no | 1 | 5 |
+| 8 | Viviendas turísticas (VUT) | alquiler | EXPLORATORIO | no | n/a | n/a | n/a | n/a | 0 | 1 |
+| 9 | Crédito, tipos y coste de uso | alquiler | EXPLORATORIO | n/a | n/a | no | n/a | no | 0 | 2 |
+| 10 | Oferta (terminadas) | alquiler | EXPLORATORIO | n/a | n/a | no | n/a | no | 0 | 2 |
+| 11 | Demografía (20-34 y extranjera) | compra | EXPLORATORIO | n/a | no | n/a | n/a | no | 0 | 2 |
 | 12 | Inmigración instrumentada (BI) | compra | EXPLORATORIO | no | no | n/a | n/a | n/a | 0 | 2 |
 | 13 | Oferta (terminadas / iniciadas) | compra | EXPLORATORIO | n/a | n/a | no | n/a | no | 0 | 2 |
 | 14 | Suelo (precio del suelo) | compra | EXPLORATORIO | no | n/a | no | n/a | n/a | 0 | 2 |
@@ -315,14 +315,14 @@ Criterios (A-E) por familia y mercado: **A** p ajustado por multiplicidad < 0,05
 - **1. Coste de uso × exposición hipotecaria (compra)**: Coef. −0,0044 (Holm m=2 <0,001), significativo en ambas submuestras; el modelo C3 es peor que el AR(4) en entrenamiento (p 0,117) y no mejora en el sellado; solo se identifica el diferencial por exposición (no aleatoria); en BD M2 el coste de uso nacional sale con signo contrario.
 - **2. Demografía: modelo conjunto de H1 (valor predictivo) (alquiler)**: Hecho fuera de muestra: en la muestra sellada mejora al AR(4) (RMSE 0,0108 vs 0,0122; p 0,005); ×7 = 0,037; en entrenamiento no mejoraba (p 0,645). No se atribuye a un coeficiente concreto; H1 conjunta EXPLORATORIO.
 - **3. Precio/alquiler (arbitraje, ratio vs media) (alquiler)**: Ratio por encima de la media predice más alquiler (h=4: 0,021, Holm 0,024); con media expansiva Holm 0,115; reversión mecánica posible.
-- **4. Demografía (20-34 y extranjera) (compra)**: En BD desde 2020 la contribución cambia de signo entre M1 (1,19 pp) y M2 (−5,27 pp): sin atribución estable desde 2020; desde 2014 la demografía agregada SÍ se replica en M1 (−6,50) y M2 (−7,53) con IC95 que excluyen 0 (composición; EXPLORATORIO).
-- **5. Precio/alquiler (arbitraje, ratio vs media) (compra)**: Ratio por encima de la media predice menos crecimiento del precio (h=4: −0,119, Holm <0,001); con media expansiva −0,065 (Holm 0,213); reversión mecánica posible.
-- **6. Política: zonas tensionadas de Cataluña (H6) (alquiler)**: τ SDiD −0,0117, p nominal 0,014 (cumple la regla), Holm-7 0,098; DiD simple de signo contrario y Tarragona positiva.
-- **7. Demografía: población 20-34 (BA) (alquiler)**: Coef. 0,149 (Holm intra-H1 0,0154), + en todas las submuestras; el modelo no mejora al AR(4) en entrenamiento (p 0,645); en BD desde 2020 no replica entre M1 y M2; H1 (conjunta) no supera Holm-7 (1,000): tope EXPLORATORIO.
-- **8. Crédito hipotecario nuevo (compra)**: Coef. 0,0087 (Holm m=2 0,0018); no significativo en 2014-2024 (p 0,198) ni con crédito retardado; H2 no se confirma en el sellado (p 0,195); simultaneidad.
-- **9. Viviendas turísticas (VUT) (alquiler)**: Depende de la métrica: municipal p 0,252, provincial Δ ln VUT p 0,396, provincial Δ por 1.000 hab. p 0,0007 (N temporal 6); causalidad inversa no descartada.
-- **10. Crédito, tipos y coste de uso (alquiler)**: Coste de uso = una serie nacional única (IC subestimados, sin ajuste); el modelo D no mejora al AR(4) (p 0,129); BD sin señal.
-- **11. Oferta (terminadas) (alquiler)**: Contribuciones del orden de décimas de pp; signo + en P1 (contrario al esperado); el modelo C no mejora al AR(4) (p 0,585).
+- **4. Precio/alquiler (arbitraje, ratio vs media) (compra)**: Ratio por encima de la media predice menos crecimiento del precio (h=4: −0,119, Holm <0,001); con media expansiva −0,065 (Holm 0,213); reversión mecánica posible.
+- **5. Política: zonas tensionadas de Cataluña (H6) (alquiler)**: τ SDiD −0,0117, p nominal 0,014 (cumple la regla), Holm-7 0,098; DiD simple de signo contrario y Tarragona positiva.
+- **6. Demografía: población 20-34 (BA) (alquiler)**: Coef. 0,149 (Holm intra-H1 0,0154), + en todas las submuestras; el modelo no mejora al AR(4) en entrenamiento (p 0,645); en BD desde 2020 no replica entre M1 y M2; H1 (conjunta) no supera Holm-7 (1,000): tope EXPLORATORIO.
+- **7. Crédito hipotecario nuevo (compra)**: Coef. 0,0087 (Holm m=2 0,0018); no significativo en 2014-2024 (p 0,198) ni con crédito retardado; H2 no se confirma en el sellado (p 0,195); simultaneidad.
+- **8. Viviendas turísticas (VUT) (alquiler)**: Depende de la métrica: municipal p 0,252, provincial Δ ln VUT p 0,396, provincial Δ por 1.000 hab. p 0,0007 (N temporal 6); causalidad inversa no descartada.
+- **9. Crédito, tipos y coste de uso (alquiler)**: Coste de uso = una serie nacional única (IC subestimados, sin ajuste); el modelo D no mejora al AR(4) (p 0,129); BD sin señal.
+- **10. Oferta (terminadas) (alquiler)**: Contribuciones del orden de décimas de pp; signo + en P1 (contrario al esperado); el modelo C no mejora al AR(4) (p 0,585).
+- **11. Demografía (20-34 y extranjera) (compra)**: En BD desde 2020 la contribución cambia de signo entre M1 (1,19 pp) y M2 (−5,27 pp): sin atribución estable desde 2020; desde 2014 la demografía agregada SÍ se replica en M1 (−6,50) y M2 (−7,53) con IC95 que excluyen 0 (composición; EXPLORATORIO).
 - **12. Inmigración instrumentada (BI) (compra)**: β compra −1,04 (p WCB 1 cola 0,661), IC95 muy ancho; el signo cambia entre variantes.
 - **13. Oferta (terminadas / iniciadas) (compra)**: Contribución ≈ 0 en BD; ningún modelo de precio con oferta mejora al AR(4) (P4 p 0,208).
 - **14. Suelo (precio del suelo) (compra)**: Serie cruda sin señal (mín. Holm 1,00); solo la variante «media4T», añadida a posteriori, da Holm 0,021 en P4 (h=6); P2 no mejora al AR(4) (p 0,609).

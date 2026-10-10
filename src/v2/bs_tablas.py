@@ -390,7 +390,7 @@ def t_ranking(holm: pd.DataFrame) -> pd.DataFrame:
     dm_ = _bd(bd, "P3-P4 (desde 2020)", "demografia", "compra")
     d14 = _bd(bd, "P2-P4 (desde 2014)", "demografia", "compra")
     add("compra", "Demografía (20-34 y extranjera)", "EXPLORATORIO", dict(
-        B_signo_estable=bool(bdsg("P3-P4 (desde 2020)", "demografia", "compra")), E_bd_M1_M2=_bd_repl(bd, "P2-P4 (desde 2014)", "demografia", "compra")),
+        B_signo_estable=bool(bdsg("P3-P4 (desde 2020)", "demografia", "compra")), E_bd_M1_M2=_bd_repl(bd, "P3-P4 (desde 2020)", "demografia", "compra")),
         f"En BD desde 2020 la contribución cambia de signo entre M1 ({N(dm_.contrib_pp_M1,2)} pp) y M2 ({N(dm_.contrib_pp_M2,2)} pp): sin atribución estable desde 2020; desde 2014 la demografía agregada SÍ se replica en M1 ({N(d14.contrib_pp_M1,2)}) y M2 ({N(d14.contrib_pp_M2,2)}) con IC95 que excluyen 0 (composición; EXPLORATORIO)", "BD/tabla_resumen.csv")
     bic = bi_id.query("spec=='principal' and res=='pre'").iloc[0]
     add("compra", "Inmigración instrumentada (BI)", "EXPLORATORIO", dict(

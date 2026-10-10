@@ -1,0 +1,327 @@
+[
+  {
+    "id": "M1-H-nacional-2012-2025",
+    "enunciado_neutro": "Suma provincial del déficit contable (Δ hogares − altas) 2012-2025, muestra común de 46 provincias",
+    "capa": "C4",
+    "magnitud": 1285931.5908272117,
+    "unidad": "viviendas",
+    "intervalo": [
+      -229590.2283455768,
+      1899499.96
+    ],
+    "fuentes": [
+      "Censos 2011/2021 + ECP",
+      "Censo anual INE (personas)",
+      "MIVAU fin de obra",
+      "Catastro"
+    ],
+    "supuestos": [
+      "bajas del parque 0/0,1/0,2 % anual",
+      "tamaño medio de hogar Censo 2021 constante (ruta Censo anual)"
+    ],
+    "limites": [
+      "Ventanas de las rutas ECP y Censo anual no coinciden exactamente",
+      "Catastro no cubre territorios forales",
+      "Déficit contable no equivale a demanda insatisfecha a cualquier precio",
+      "Tramo de hogares 2011-2021 de fuente única"
+    ]
+  },
+  {
+    "id": "M1-H-top10-prov-2012-2025",
+    "enunciado_neutro": "Provincias con mayor déficit contable 2012-2025 (mediana entre combinaciones): Madrid (249.372); Barcelona (150.070); Málaga (99.323); Valencia/València (94.649); Alicante/Alacant (85.180); Murcia (61.804); Sevilla (51.109); Almería (45.704); Balears. Illes (39.864); Cádiz (36.896)",
+    "capa": "C4",
+    "magnitud": 913969.8826689709,
+    "unidad": "viviendas (suma de 10 provincias)",
+    "intervalo": [
+      95715.78968393285,
+      1227362.8627710398
+    ],
+    "fuentes": [
+      "ECP",
+      "Censo anual",
+      "MIVAU",
+      "Catastro"
+    ],
+    "supuestos": [
+      "como arriba"
+    ],
+    "limites": [
+      "La capa C1 exige mismo signo en todas las combinaciones; ver capa por provincia en M1_provincias.csv"
+    ]
+  },
+  {
+    "id": "M1-H-nacional-2021-2025",
+    "enunciado_neutro": "Suma provincial del déficit contable (Δ hogares − altas) 2021-2025, muestra común de 46 provincias",
+    "capa": "C1",
+    "magnitud": 768859.7516544231,
+    "unidad": "viviendas",
+    "intervalo": [
+      287350.77165442304,
+      1307401.3
+    ],
+    "fuentes": [
+      "ECP INE",
+      "Censo anual INE (personas)",
+      "MIVAU fin de obra",
+      "Catastro"
+    ],
+    "supuestos": [
+      "bajas del parque 0/0,1/0,2 % anual",
+      "tamaño medio de hogar Censo 2021 constante (ruta Censo anual)"
+    ],
+    "limites": [
+      "Ventanas de las rutas ECP y Censo anual no coinciden exactamente",
+      "Catastro no cubre territorios forales",
+      "Déficit contable no equivale a demanda insatisfecha a cualquier precio"
+    ]
+  },
+  {
+    "id": "M1-H-top10-prov-2021-2025",
+    "enunciado_neutro": "Provincias con mayor déficit contable 2021-2025 (mediana entre combinaciones): Madrid (164.340); Barcelona (114.900); Valencia/València (76.759); Alicante/Alacant (66.656); Málaga (42.646); Murcia (34.536); Balears. Illes (27.956); Tarragona (25.086); Girona (20.367); Toledo (19.578)",
+    "capa": "C1",
+    "magnitud": 592824.5670222654,
+    "unidad": "viviendas (suma de 10 provincias)",
+    "intervalo": [
+      302452.54405003804,
+      819834.66
+    ],
+    "fuentes": [
+      "ECP",
+      "Censo anual",
+      "MIVAU",
+      "Catastro"
+    ],
+    "supuestos": [
+      "como arriba"
+    ],
+    "limites": [
+      "La capa C1 exige mismo signo en todas las combinaciones; ver capa por provincia en M1_provincias.csv"
+    ]
+  },
+  {
+    "id": "M1-H-concentracion-provincia-2012-2025",
+    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 6 y 16 (mediana)",
+    "capa": "C4",
+    "magnitud": 16,
+    "unidad": "unidades (80 %)",
+    "intervalo": [
+      null,
+      null
+    ],
+    "fuentes": [
+      "M1_provincias.csv"
+    ],
+    "supuestos": [
+      "déficit = mediana entre combinaciones (provincias) o única estimación (municipios)"
+    ],
+    "limites": [
+      "Depende del universo con datos"
+    ]
+  },
+  {
+    "id": "M1-H-concentracion-provincia-2012-2025",
+    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 3-7 y 6-19 (rango entre combinaciones)",
+    "capa": "C4",
+    "magnitud": "6-19",
+    "unidad": "unidades (80 %)",
+    "intervalo": [
+      null,
+      null
+    ],
+    "fuentes": [
+      "M1_provincias.csv"
+    ],
+    "supuestos": [
+      "déficit = mediana entre combinaciones (provincias) o única estimación (municipios)"
+    ],
+    "limites": [
+      "Depende del universo con datos"
+    ]
+  },
+  {
+    "id": "M1-H-concentracion-municipio-2012-2025",
+    "enunciado_neutro": "Unidades (municipio) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 42 y 128 (Catastro, fuente única)",
+    "capa": "C4",
+    "magnitud": 128,
+    "unidad": "unidades (80 %)",
+    "intervalo": [
+      null,
+      null
+    ],
+    "fuentes": [
+      "Catastro + Censo anual"
+    ],
+    "supuestos": [
+      "déficit = mediana entre combinaciones (provincias) o única estimación (municipios)"
+    ],
+    "limites": [
+      "Depende del universo con datos"
+    ]
+  },
+  {
+    "id": "M1-H-concentracion-provincia-2021-2025",
+    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2021-2025: 5 y 15 (mediana)",
+    "capa": "C1",
+    "magnitud": 15,
+    "unidad": "unidades (80 %)",
+    "intervalo": [
+      null,
+      null
+    ],
+    "fuentes": [
+      "M1_provincias.csv"
+    ],
+    "supuestos": [
+      "déficit = mediana entre combinaciones (provincias) o única estimación (municipios)"
+    ],
+    "limites": [
+      "Depende del universo con datos"
+    ]
+  },
+  {
+    "id": "M1-H-concentracion-provincia-2021-2025",
+    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2021-2025: 3-6 y 9-20 (rango entre combinaciones)",
+    "capa": "C1",
+    "magnitud": "9-20",
+    "unidad": "unidades (80 %)",
+    "intervalo": [
+      null,
+      null
+    ],
+    "fuentes": [
+      "M1_provincias.csv"
+    ],
+    "supuestos": [
+      "déficit = mediana entre combinaciones (provincias) o única estimación (municipios)"
+    ],
+    "limites": [
+      "Depende del universo con datos"
+    ]
+  },
+  {
+    "id": "M1-H-concentracion-municipio-2021-2025",
+    "enunciado_neutro": "Unidades (municipio) que acumulan el 50 % y el 80 % del déficit positivo 2021-2025: 25 y 133 (Catastro, fuente única)",
+    "capa": "C4",
+    "magnitud": 133,
+    "unidad": "unidades (80 %)",
+    "intervalo": [
+      null,
+      null
+    ],
+    "fuentes": [
+      "Catastro + Censo anual"
+    ],
+    "supuestos": [
+      "déficit = mediana entre combinaciones (provincias) o única estimación (municipios)"
+    ],
+    "limites": [
+      "Depende del universo con datos"
+    ]
+  },
+  {
+    "id": "M1-H-excedente-provincia-2012-2025",
+    "enunciado_neutro": "3 provincias con déficit negativo (altas > Δ hogares) 2012-2025. suma 7.115 viviendas",
+    "capa": "C4",
+    "magnitud": 7114.745989694908,
+    "unidad": "viviendas",
+    "intervalo": [
+      -0.0,
+      398640.7255845842
+    ],
+    "fuentes": [
+      "como arriba"
+    ],
+    "supuestos": [
+      "excedente contable; no implica vivienda vacía ni utilizable"
+    ],
+    "limites": [
+      "Puede reflejar segunda residencia, vacía o hogares no captados"
+    ]
+  },
+  {
+    "id": "M1-H-excedente-municipio-2012-2025",
+    "enunciado_neutro": "302 municipios con déficit negativo (altas > Δ hogares) 2012-2025. suma 297.076 viviendas",
+    "capa": "C4",
+    "magnitud": 297075.9893192678,
+    "unidad": "viviendas",
+    "intervalo": [
+      null,
+      null
+    ],
+    "fuentes": [
+      "como arriba"
+    ],
+    "supuestos": [
+      "excedente contable; no implica vivienda vacía ni utilizable"
+    ],
+    "limites": [
+      "Puede reflejar segunda residencia, vacía o hogares no captados"
+    ]
+  },
+  {
+    "id": "M1-H-excedente-provincia-2021-2025",
+    "enunciado_neutro": "0 provincias con déficit negativo (altas > Δ hogares) 2021-2025. suma -0 viviendas",
+    "capa": "C1",
+    "magnitud": -0.0,
+    "unidad": "viviendas",
+    "intervalo": [
+      -0.0,
+      66236.5283202405
+    ],
+    "fuentes": [
+      "como arriba"
+    ],
+    "supuestos": [
+      "excedente contable; no implica vivienda vacía ni utilizable"
+    ],
+    "limites": [
+      "Puede reflejar segunda residencia, vacía o hogares no captados"
+    ]
+  },
+  {
+    "id": "M1-H-excedente-municipio-2021-2025",
+    "enunciado_neutro": "249 municipios con déficit negativo (altas > Δ hogares) 2021-2025. suma 70.906 viviendas",
+    "capa": "C4",
+    "magnitud": 70905.87859491844,
+    "unidad": "viviendas",
+    "intervalo": [
+      null,
+      null
+    ],
+    "fuentes": [
+      "como arriba"
+    ],
+    "supuestos": [
+      "excedente contable; no implica vivienda vacía ni utilizable"
+    ],
+    "limites": [
+      "Puede reflejar segunda residencia, vacía o hogares no captados"
+    ]
+  },
+  {
+    "id": "M1-H-latente-provincias",
+    "enunciado_neutro": "Demanda latente por emancipación retrasada repartida por provincias según población de 20-34 años (referencia: tasa de convivencia con los padres de España 2008)",
+    "capa": "C2",
+    "magnitud": 315016.9086666666,
+    "unidad": "hogares implícitos (nacional)",
+    "intervalo": [
+      187955.56299999985,
+      505901.8666666667
+    ],
+    "fuentes": [
+      "Eurostat ilc_lvps08 / ECV",
+      "EPA 65944",
+      "Padrón INE 20-34 años por provincia"
+    ],
+    "supuestos": [
+      "Tasa de convivencia 2008 como referencia contrafactual",
+      "personas por hogar joven 1,5-2,0",
+      "misma brecha de tasa en todas las provincias (no hay tasa provincial)"
+    ],
+    "limites": [
+      "Solo cambia la población joven entre provincias",
+      "M2 (output/v4/M2) no estaba disponible al calcular",
+      "No se suma al déficit: puede solaparse con Δ hogares observado"
+    ]
+  }
+]

@@ -54,6 +54,11 @@ ine_migraciones_nacionalidad.csv,INE,61,2023-04-01,2026-07-01,854,714,2026-10-09
 ine_migraciones_total_anual.csv,INE,276,2021-01-01,2024-01-01,1104,0,2026-10-09T18:47:35Z
 ine_padron_valencia.csv,INE,23,1996-01-01,2026-07-01,1163,32,2026-10-09T19:18:51Z
 ine_padron_vlc_nacionalidad.csv,INE Padrón continuo,174,1998-01-01,2022-01-01,2442,22,2026-10-09T19:55:16Z
+ine_v2_etdp_prov.csv,"INE ETDP - Compraventa de viviendas según régimen y estado (tabla 6150, mensual)",265,2007-01-01,2026-07-01,62275,0,2026-10-10T06:13:42Z
+ine_v2_hipotecas_prov.csv,"INE HPT - Hipotecas constituidas sobre el total de fincas, viviendas (tabla 76317, base nueva)",106,2003-01-01,2026-07-01,29998,0,2026-10-10T06:13:23Z
+ine_v2_ipc_alquiler_prov.csv,"INE IPC - Índices provinciales de subgrupos ECOICOP v2, Alquiler de vivienda (tabla 76142)",106,2002-01-01,2026-08-01,31376,0,2026-10-10T06:14:04Z
+ine_v2_ipva.csv,"INE IPVA - Índice de Precios de Vivienda en Alquiler (tablas 59058, 59005, 59059, 59060, 59061)",3420,2011-01-01,2024-01-01,47348,2954,2026-10-10T06:14:22Z
+ine_v2_migraciones_prov.csv,"INE EM/EMCR - Flujo de inmigración procedente del extranjero por provincia, semestre (tablas 24420, 24421)",3922,2008-01-01,2022-01-01,102392,18,2026-10-10T06:15:15Z
 ine_vut_nacional_ccaa_prov.csv,INE - Estadistica experimental viviendas turisticas,268,2020-08-01,2026-05-01,3484,0,2026-10-09T18:51:20Z
 ine_vut_valencia_municipio.csv,INE - Estadistica experimental viviendas turisticas,4,2020-08-01,2026-05-01,52,0,2026-10-09T19:58:28Z
 ine_vut_valencia_provincia.csv,INE - Estadistica experimental viviendas turisticas,4,2020-08-01,2026-05-01,52,0,2026-10-09T19:59:33Z
@@ -72,6 +77,6 @@ mivau_visados.csv,MIVAU - Boletin Online Fomento (sedal),63,2008-01-01,2026-06-0
 oecd_house_prices.csv,OCDE,332,2000-01-01,2026-07-01,20581,0,2026-10-10T06:06:59Z
 pdf/serpavi_v2_municipios.csv,MIVAU-SERPAVI (AEAT IRPF),32402,2011-01-01,2024-01-01,351686,0,2026-10-10T06:04:08Z
 pdf/serpavi_v2_municipios.csv.gz,MIVAU-SERPAVI (AEAT IRPF),32402,2011-01-01,2024-01-01,351686,0,2026-10-10T06:07:19Z
-v2_eventos_politica.csv,BOE/boletines oficiales,41,2013-06-05,2026-07-29,41,6,2026-10-10T06:12:30Z
-v2_zonas_tensionadas.csv,"BOE (Secretaría de Estado de Vivienda, art. 18 Ley 12/2023)",9,2024-03-16,2026-07-30,318,0,2026-10-10T06:12:30Z
+v2_eventos_politica.csv,BOE/boletines oficiales,41,2013-06-05,2026-07-29,41,6,2026-10-10T06:14:59Z
+v2_zonas_tensionadas.csv,"BOE (Secretaría de Estado de Vivienda, art. 18 Ley 12/2023)",9,2024-03-16,2026-07-30,318,0,2026-10-10T06:14:59Z
 vlc_precio_vivienda_libre.csv,Ajuntament de València - Opendata (CKAN); fuente primaria no indicada en el recurso,24,2021-04-01,2022-04-01,120,0,2026-10-09T18:54:14Z

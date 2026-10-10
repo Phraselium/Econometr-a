@@ -461,7 +461,7 @@ def parse_resolution(bid, idx):
         mp = re.search(r"núm\.\s*\d+,\s*(\d{1,2}) de (\w+) de (\d{4})", decl_txt)
         f_pub_aut = to_iso(mp.group(3), MESES[mp.group(2).lower()], mp.group(1)) if mp else ""
         if not f_pub_aut and cc != "09":
-            mq = re.search(re.escape(decl_txt[:30]) + r"[^–]{0,700}?publicad\w+ en el «[^»]+» el (\d{1,2}) de (\w+) de (\d{4})", intro_txt)
+            mq = re.search(re.escape(decl_txt[:95]) + r"[^–]{0,700}?publicad\w+ en el «[^»]+» el (\d{1,2}) de (\w+) de (\d{4})", intro_txt)
             if mq and mq.group(2).lower() in MESES:
                 f_pub_aut = to_iso(mq.group(3), MESES[mq.group(2).lower()], mq.group(1))
         if not f_pub_aut and cc == "09":

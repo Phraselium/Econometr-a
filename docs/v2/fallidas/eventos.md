@@ -1,6 +1,6 @@
 # Eventos de política de vivienda: fuentes fallidas y no verificadas
 
-Generado por src/build_eventos.py (2026-10-10T06:12:30Z).
+Generado por src/build_eventos.py (2026-10-10T06:14:59Z).
 
 | id | evento | URL probada / fuente | problema | alternativa |
 |---|---|---|---|---|

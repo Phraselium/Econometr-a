@@ -49,3 +49,9 @@ Formato: fecha · decisión · motivo. Las desviaciones del pre-registro (`prere
   - Cobertura: 12 oleadas, 2021M02-2026M05; falta 2020M08, que no está en el GIS.
   - Para 2022M08 se usa el servicio «Porcentaje_…», porque el de «Viviendas_…» está vacío.
   - Validación: la suma de secciones equivale a un 89-90 % del total provincial JAXI en todas las oleadas (p. ej. 2024M02: 351.389 frente a 391.996). La ratio es estable, lo que indica viviendas sin sección asignada. En los análisis por sección se usa la sección; en las cotas nacionales, el total JAXI.
+- **Sellado v3 (fijado antes de cualquier estimación de P-C).** Implementación: `holdout.distritos_sellados_v3()` y `es_sellado_v3()`; lista en data/processed/v3/sellado_v3.json.
+  - Tamaño: 20 % de los 10.460 distritos (2.136), en bloques espaciales completos (pares de distritos consecutivos), más la última oleada (2026M05) en todas las unidades.
+  - Estratificación: por municipio en las ciudades con ≥4 bloques; por provincia en el resto.
+  - Motivo de estratificar: sin estratos, el sorteo sellaba 6 de los 10 distritos de Barcelona y 9 de los 19 de València, y dejaba la réplica y P-C1 sin muestra en las ciudades clave.
+  - Uso: P-C (diseños, réplicas y selección de modelos) excluye las observaciones selladas. C1 y C2 (hechos y cotas, agregados municipales o provinciales) usan todas las unidades: no seleccionan modelos de efecto.
+- **Sin worktrees en la oleada 1.** Cada subagente escribe en su propio espacio de nombres (src/v3/<prefijo>_*, output/v3/<DISEÑO>/) y solo el orquestador hace commit. Así no se duplican 700 MB por worktree en un disco con ~7 GB libres.

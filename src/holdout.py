@@ -226,6 +226,71 @@ def load_full(nombre: str, uso: str) -> pd.DataFrame:
     return df
 
 
+# ---------------------------------------------------------------- sellado v3 (secciones censales, P-C)
+ULTIMA_OLEADA_V3 = "2026M05"          # última oleada de VUT del INE: sellada para todas las unidades
+FRACCION_DISTRITOS_V3 = 0.20
+VUT_SECCION = HERE / "data" / "raw" / "v3" / "ine_v3_vut_seccion.csv.gz"
+
+
+def bloques_distritos_v3(distritos: list[str]) -> dict[str, str]:
+    """distrito (7 dígitos: municipio 5 + distrito 2) -> bloque espacial.
+
+    Sin cartografía: en municipios con ≥2 distritos, pares de distritos de numeración consecutiva (01-02, 03-04…);
+    en municipios con un solo distrito, el propio municipio. Supuesto documentado en docs/v3/decisiones.md.
+    """
+    dist = sorted(set(distritos))
+    por_mun: dict[str, list[str]] = {}
+    for d in dist:
+        por_mun.setdefault(d[:5], []).append(d)
+    out = {}
+    for mun, ds in por_mun.items():
+        for d in ds:
+            out[d] = mun if len(ds) == 1 else f"{mun}-{(int(d[5:]) - 1) // 2:02d}"
+    return out
+
+
+def distritos_sellados_v3() -> list[str]:
+    """20 % de los distritos por bloques espaciales completos, ESTRATIFICADO: en municipios con ≥4 bloques el
+    estrato es el municipio (cada gran ciudad conserva ~80 % de sus distritos para estimar); el resto de bloques
+    se estratifica por provincia. En cada estrato, bloques en orden aleatorio (SEED) hasta alcanzar el 20 % de sus
+    distritos. Lista de distritos de la oleada 2024M02 (estable)."""
+    v = pd.read_csv(VUT_SECCION, usecols=["periodo", "nivel", "codigo"], dtype={"codigo": str})
+    dist = v.loc[(v["nivel"] == "distrito") & (v["periodo"] == "2024M02"), "codigo"].str.zfill(7).unique().tolist()
+    bl = bloques_distritos_v3(dist)
+    miembros: dict[str, list[str]] = {}
+    for d, b in bl.items():
+        miembros.setdefault(b, []).append(d)
+    n_bloques_mun: dict[str, int] = {}
+    for b in miembros:
+        n_bloques_mun[b[:5]] = n_bloques_mun.get(b[:5], 0) + 1
+    estratos: dict[str, list[str]] = {}
+    for b in sorted(miembros):
+        e = b[:5] if n_bloques_mun[b[:5]] >= 4 else b[:2]
+        estratos.setdefault(e, []).append(b)
+    rng = np.random.default_rng(SEED)
+    sel = set()
+    for e in sorted(estratos):
+        bs = estratos[e]
+        objetivo = FRACCION_DISTRITOS_V3 * sum(len(miembros[b]) for b in bs)
+        n = 0
+        for i in rng.permutation(len(bs)):
+            if n >= objetivo - 1e-9 or n + len(miembros[bs[i]]) > objetivo + 1:   # no pasarse más de 1 distrito
+                continue
+            sel.add(bs[i])
+            n += len(miembros[bs[i]])
+    return sorted(d for d, b in bl.items() if b in sel)
+
+
+def es_sellado_v3(codigo_seccion_o_distrito: pd.Series, periodo: pd.Series | None = None,
+                  sellados: list[str] | None = None) -> pd.Series:
+    """True si la unidad pertenece a un distrito sellado o la observación es de la última oleada."""
+    sellados = set(sellados if sellados is not None else distritos_sellados_v3())
+    m = codigo_seccion_o_distrito.astype(str).str.zfill(7).str[:7].isin(sellados)
+    if periodo is not None:
+        m = m | (periodo.astype(str) >= ULTIMA_OLEADA_V3)
+    return m
+
+
 def _log_md(utc, hipotesis, rama, paneles, texto):
     LOG_MD.parent.mkdir(parents=True, exist_ok=True)
     nuevo = not LOG_MD.exists()

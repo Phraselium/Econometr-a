@@ -32,8 +32,8 @@ La capa de un hecho es la menor de las de sus componentes. Con C4, el veredicto 
 ## Probable pero no demostrado (exploratorio, C4)
 - [C4] Componentes de la creación de hogares en 2021-2025, en una descomposición contable con jefatura de fuente única:
   - población de nacionalidad extranjera, **56-58 %** (53-76 % según la corrección de la EPA);
-  - estructura por edad, 17-20 %;
-  - tasa de jefatura, 16-17 %;
+  - estructura por edad, 20 %;
+  - tasa de jefatura, 16 %;
   - población de nacionalidad española, 9 %.
 - [C4] El déficit 2021-2025 se concentra: 7 provincias suman el 50 % y 19 el 80 %. Encabezan Madrid, Barcelona, Valencia, Alicante y Murcia. Ninguna provincia tiene excedente en 2021-2025; 249 municipios sí, con 71.000 viviendas.
 - [C4] Compradores extranjeros en 2025: el **16,9 %** de las compraventas según el Ministerio (10,1 % residentes; 6,8 % no residentes) y el 18,8 % según el Notariado. Las dos fuentes no son independientes. El 72 % de esas compras está en provincias de costa e islas, frente al 58 % del total (supuesto de clasificación declarado).

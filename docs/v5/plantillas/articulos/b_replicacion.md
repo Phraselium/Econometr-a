@@ -4,13 +4,13 @@
 
 ## Resumen
 
-Este artículo documenta un intento de replicar y extender dos resultados de la literatura empírica sobre vivienda en España: la asociación entre la presencia de viviendas de uso turístico (VUT) y los alquileres, estimada para Barcelona por García-López et al. (2020), y la asociación entre los topes al alquiler de la Ley 11/2020 de Cataluña y las rentas y los contratos. La replicación conceptual del primer resultado, con datos de stock de contratos (SERPAVI) y de VUT del INE para 2021-2024, da un coeficiente de {{E-GL-coef}} [C4], de signo contrario al original y no distinguible de cero tras el ajuste de Holm (p ajustado {{E-GL-pholm}}). El artículo separa las fuentes de la discrepancia: datos (stock frente a flujo, cuantificada), periodo y método (no contrastables). Sobre los topes, las estimaciones de entrenamiento apuntan a rentas más bajas, {{E-v3-H3-3a-CS}} [C4], pero la validación quedó contaminada y la hipótesis se retira de forma definitiva de la capa causal. Se añaden una cota de identificación parcial para VUT ({{B4-v3-vut-cantidad}} del stock de alquiler como máximo [C2]) y una discrepancia de medición entre el registro autonómico y el INE (cociente {{R1A-H6}} [C4]). El artículo es una replicación honesta: los negativos se reportan y ninguna conclusión se promueve de capa.
+Este artículo documenta un intento de replicar y extender dos resultados de la literatura empírica sobre vivienda en España: la asociación entre la presencia de viviendas de uso turístico (VUT) y los alquileres, estimada para Barcelona por García-López et al. (2020), y la asociación entre los topes al alquiler de la `Ley 11/2020` de Cataluña y las rentas y los contratos. La replicación conceptual del primer resultado, con datos de stock de contratos (SERPAVI) y de VUT del INE para 2021-2024, da un coeficiente de {{E-GL-coef}} [C4], de signo contrario al original y no distinguible de cero tras el ajuste de Holm (p ajustado {{E-GL-pholm}}). El artículo separa las fuentes de la discrepancia: datos (stock frente a flujo, cuantificada), periodo y método (no contrastables). Sobre los topes, las estimaciones de entrenamiento apuntan a rentas más bajas, {{E-v3-H3-3a-CS}} [C4], pero la validación quedó contaminada y la hipótesis se retira de forma definitiva de la capa causal. Se añaden una cota de identificación parcial para VUT ({{B4-v3-vut-cantidad}} del stock de alquiler como máximo [C2]) y una discrepancia de medición entre el registro autonómico y el INE (cociente {{R1A-H6}} [C4]). El artículo es una replicación honesta: los negativos se reportan y ninguna conclusión se promueve de capa.
 
 **Palabras clave:** replicación, viviendas de uso turístico, control de alquileres, SERPAVI, identificación parcial.
 
 ## Abstract
 
-We document an attempt to replicate and extend two results in the empirical housing literature on Spain: the association between short-term rental (STR) units and rents in Barcelona (García-López et al., 2020), and the association between the 2020 Catalan rent caps and rents and contracts. Our conceptual replication of the first result, using a stock-of-contracts rent measure (SERPAVI) and official STR counts for 2021-2024, yields {{E-GL-coef}} [C4], with the opposite sign and not distinguishable from zero after Holm adjustment (adjusted p {{E-GL-pholm}}). We decompose the discrepancy into data (stock versus flow, quantified), period and method (not testable). For rent caps, training-sample estimates point to lower rents, {{E-v3-H3-3a-CS}} [C4], but validation was contaminated and the hypothesis is permanently withdrawn from the causal layer. We add a partial-identification bound for STR ({{B4-v3-vut-cantidad}} of the rental stock at most [C2]) and a measurement discrepancy between the regional register and the INE count (ratio {{R1A-H6}} [C4]). Negative results are reported and no conclusion is promoted across evidence layers.
+We document an attempt to replicate and extend two results in the empirical housing literature on Spain: the association between short-term rental (STR) units and rents in Barcelona (García-López et al., 2020), and the association between the 2020 Catalan rent caps and rents and contracts. Our conceptual replication of the first result, using a stock-of-contracts rent measure (SERPAVI) and official STR counts for 2021-2024, yields {{E-GL-coef}} [C4], with the opposite sign and not distinguishable from zero after Holm adjustment (adjusted p {{E-GL-pholm}}). We decompose the discrepancy into data (stock versus flow, quantified), period and method (not testable). For rent caps, training-sample estimates point to lower rents, {{E-v3-H3-3a-CS}} [C4], but validation was contaminated and the hypothesis is permanently withdrawn from the effects layer. We add a partial-identification bound for STR ({{B4-v3-vut-cantidad}} of the rental stock at most [C2]) and a measurement discrepancy between the regional register and the INE count (ratio {{R1A-H6}} [C4]). Negative results are reported and no conclusion is promoted across evidence layers.
 
 **Keywords:** replication, short-term rentals, rent control, administrative rent data, partial identification.
 
@@ -30,7 +30,7 @@ La contribución es metodológica y sustantiva. Metodológica, porque separa las
 - **Alquiler, flujo.** Incasòl: renta media de los contratos nuevos con fianza depositada en Cataluña, por municipio, 2012-2025 (con una ruptura de umbral en 2021).
 - **Viviendas turísticas.** INE, medición experimental de VUT a partir de plataformas, por sección, disponible desde 2020-2021. Registro de VUT de la Generalitat Valenciana (GVA), solo para las tres provincias valencianas.
 - **IPC de alquiler.** INE, índice nacional.
-- **Topes.** Municipios sujetos a la Ley 11/2020 de Cataluña frente a municipios de control.
+- **Topes.** Municipios sujetos a la `Ley 11/2020` de Cataluña frente a municipios de control.
 
 La cobertura de la suma de secciones del INE frente al total provincial es de {{R1A-H8}} [C4]: los totales nacionales de VUT se toman del total publicado y no de la suma por sección.
 
@@ -86,7 +86,7 @@ Estos resultados no se pueden presentar como evidencia causal. La revisión post
 1. El cálculo de potencia de v3 usó municipios que luego quedaron en la muestra sellada. La muestra sellada dejó de ser independiente del diseño.
 2. La validación por una segunda fuente (SERPAVI) mide el mismo mercado en los mismos municipios; no es una prueba independiente.
 
-En consecuencia, `H3-3` queda fuera de C3 de forma definitiva: sus estimaciones se reportan como [C4], las fichas `V06` y `V07` del verificador dan el veredicto ANALIZADA, NO CONCLUYENTE y el control `check_v5` impide etiquetar los topes con la capa causal. El artículo lo reporta porque una replicación honesta debe incluir los fallos del propio protocolo, no solo los del trabajo replicado.
+En consecuencia, `H3-3` queda fuera de C3 de forma definitiva: sus estimaciones se reportan como [C4], las fichas `V06` y `V07` del verificador dan el veredicto ANALIZADA, NO CONCLUYENTE y el control `check_v5` impide asignar a los topes la capa de efectos. El artículo lo reporta porque una replicación honesta debe incluir los fallos del propio protocolo, no solo los del trabajo replicado.
 
 La literatura publicada sobre la misma regulación (Jofre-Monseny et al., 2023) y la revisión de Kholodilin (2024) son referencias para quien quiera contrastar estas magnitudes; este artículo no pretende arbitrar entre ellas.
 
@@ -101,7 +101,7 @@ En las tres provincias valencianas, el registro de VUT de la GVA cuenta más viv
 ## Robustez
 
 - **Unidad geográfica.** La réplica por sección y por distrito da el mismo signo y una magnitud similar.
-- **Multiverso de los topes.** Las especificaciones alternativas de v3 están registradas en `output/v3/C3`; ninguna cambia la capa, porque la contaminación afecta a la validación y no a la estimación puntual.
+- **Multiverso de los topes.** Las especificaciones alternativas de v3 están registradas en los resultados de v3; ninguna cambia la capa, porque la contaminación afecta a la validación y no a la estimación puntual.
 - **Fuente de VUT.** Con el registro de la GVA, la intensidad turística aumenta en el cociente indicado; no hay serie anterior a 2020 en ninguna de las dos fuentes.
 - **Cobertura.** La suma de secciones del INE cubre {{R1A-H8}} del total provincial [C4].
 
@@ -113,8 +113,8 @@ En las tres provincias valencianas, el registro de VUT de la GVA cuenta más viv
 |---|---|---|---|
 | VUT y alquiler, Barcelona (García-López et al., 2020) | no | datos (stock frente a flujo, cuantificado), periodo y método (no contrastables) | [C4] |
 | VUT y alquiler, secciones de España | nulo | asociación pequeña en el stock | [C4] |
-| Topes y renta, Cataluña | no evaluable como causal | validación contaminada | [C4] |
-| Topes y contratos, Cataluña | no evaluable como causal | validación contaminada | [C4] |
+| Topes y renta, Cataluña | no evaluable con el protocolo | validación contaminada | [C4] |
+| Topes y contratos, Cataluña | no evaluable con el protocolo | validación contaminada | [C4] |
 | Cota de cantidad de VUT | sí, como cota | supuestos de Manski explícitos | [C2] |
 
 ### Lecciones para replicaciones con datos administrativos españoles

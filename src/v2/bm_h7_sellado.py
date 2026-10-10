@@ -43,6 +43,49 @@ SEL_FILE = bl.OUT / "seleccion_H7.json"
 OBJ = {"B": ("ipc_alquiler", False), "C": ("p_tasado", True)}
 
 
+UMBRAL_CONTINUIDAD = 0.05     # |Δln| de ipv / ipc_alquiler entre L y L+1; fijado y documentado ANTES de abrir el sellado
+
+
+def _reencadenar(train_df, sell_df, clave_t, col_u, L):
+    """Concatena entrenamiento y sellado SIN mezclar bases de índices: para las filas del sellado posteriores a L de
+    unidades con historia de entrenamiento, rehace ipv/ipc_alquiler (y ln_) desde el nivel de L con sus Δln (d_ln_*)."""
+    out = _concat(train_df, sell_df, ([col_u] if col_u else []) + [clave_t])
+    out[clave_t] = out[clave_t].astype(str)
+    var = "ipv" if col_u is None else "ipc_alquiler"
+    out = out.sort_values(([col_u] if col_u else []) + [clave_t]).reset_index(drop=True)
+    grupos = [(None, out)] if col_u is None else list(out.groupby(col_u))
+    for _, g in grupos:
+        ix = g.index
+        pos = g[clave_t] > L
+        if not pos.any() or not (g[clave_t] <= L).any():
+            continue
+        lvl_L = g.loc[g[clave_t] == L, f"ln_{var}"]
+        if lvl_L.empty or np.isnan(lvl_L.iloc[0]):
+            continue
+        dl = g.loc[pos, f"d_ln_{var}"]
+        nuevo = lvl_L.iloc[0] + dl.cumsum()
+        out.loc[nuevo.index, f"ln_{var}"] = nuevo
+        out.loc[nuevo.index, var] = np.exp(nuevo)
+    return out
+
+
+def _guarda_continuidad(nac, pan, L):
+    """Aborta si |Δln| de ipv (nacional) o ipc_alquiler (cualquier provincia) entre L y el trimestre siguiente > umbral."""
+    sig = lambda df: sorted(df.loc[df["trimestre"] > L, "trimestre"].unique())[0]   # noqa: E731
+    worst = 0.0
+    n = nac.set_index("trimestre")
+    t1 = sig(nac)
+    worst = max(worst, abs(float(n.loc[t1, "ln_ipv"] - n.loc[L, "ln_ipv"])))
+    for u, g in pan.groupby("cod_prov"):
+        g = g.set_index("trimestre")
+        if L in g.index and t1 in g.index:
+            worst = max(worst, abs(float(g.loc[t1, "ln_ipc_alquiler"] - g.loc[L, "ln_ipc_alquiler"])))
+    if worst > UMBRAL_CONTINUIDAD:
+        raise RuntimeError(f"abortado: discontinuidad de nivel {worst:.3f} > {UMBRAL_CONTINUIDAD} entre {L} y {t1} "
+                           "(posible cambio de base entre entrenamiento y sellado)")
+    return worst
+
+
 def _spec(nombre):
     for s in bl.specs_enet() + [bl.SPEC_PL] + bl.specs_rf() + bl.specs_lgbm():
         if s.nombre == nombre:
@@ -134,12 +177,15 @@ def _holm(ps: dict, alfa=0.05):
 
 def _evaluar(sellado, train, L, fin, o_ini, o_fin, seleccion=None, hist_ini="2012Q1", objetivos="ABC"):
     seleccion = seleccion or json.loads(SEL_FILE.read_text())
-    pan = _concat(train["panel_prov_q"], sellado["panel_prov_q"], ["cod_prov", "trimestre"])
-    nac = _concat(train["nacional_q_v2"], sellado["nacional_q_v2"], ["trimestre"])
-    pan["cod_prov"] = pan["cod_prov"].astype(str)
-    pan["trimestre"] = pan["trimestre"].astype(str)
-    nac["trimestre"] = nac["trimestre"].astype(str)
-    pan = pan.sort_values(["cod_prov", "trimestre"]).reset_index(drop=True)
+    tp, sp = train["panel_prov_q"].copy(), sellado["panel_prov_q"].copy()
+    tp["cod_prov"], sp["cod_prov"] = tp["cod_prov"].astype(str), sp["cod_prov"].astype(str)
+    for d_ in (tp, sp, train["nacional_q_v2"], sellado["nacional_q_v2"]):
+        d_["trimestre"] = d_["trimestre"].astype(str)
+    pan = _reencadenar(tp, sp, "trimestre", "cod_prov", L)
+    nac = _reencadenar(train["nacional_q_v2"].copy(), sellado["nacional_q_v2"].copy(), "trimestre", None, L)
+    pan = pan[pan["trimestre"] <= fin]
+    nac = nac[nac["trimestre"] <= fin]
+    continuidad = _guarda_continuidad(nac, pan, L)
     units_train = sorted(train["panel_prov_q"]["cod_prov"].astype(str).unique())
     sell = set(sellado["panel_prov_q"]["cod_prov"].astype(str)) - set(units_train)
 
@@ -149,30 +195,18 @@ def _evaluar(sellado, train, L, fin, o_ini, o_fin, seleccion=None, hist_ini="201
         return [(np.arange(0, posL + 1), np.array(orig))]
 
     res = {"L": L, "fin": fin, "selladas": sorted(sell), "seleccion": {o: seleccion[o]["modelo"] for o in objetivos},
+           "continuidad_max_dln_L_L1": continuidad, "umbral_continuidad": UMBRAL_CONTINUIDAD, "secundarios_errores": {},
            "regla": "objetivo cumple: RMSE<AR4 y <ECM v1, DM>0 ambos, p_IUT=max(p) con Holm m=3 < 0,05; H7 si alguno"}
-    pint = {}
+    pint, marcos = {}, {}
+    # ETAPA 1: resultado principal de los TRES objetivos (antes de cualquier secundario)
     for o in objetivos:
         sel = seleccion[o]
         m, a, e, per = _frames(o, sel, pan, nac, units_train, sell, fin, split_main)
         npd = int(m.dropna(subset=["y_real", "y_pred"])["periodo"].nunique())
         if npd < N_MIN_PERIODOS:
             raise RuntimeError(f"abortado: objetivo {o} con n_periodos={npd} < {N_MIN_PERIODOS}; DM-HLN no calculable")
-        r = {"modelo": sel["modelo"], "clase": sel["clase"],
-             "PRINCIPAL": _resumen(m, a, e, None if o != "A" else None)}
-        if o != "A":
-            r["sec_a_entrenamiento_49"] = _resumen(m, a, e, units_train)
-            if sell:
-                r["sec_b_selladas_ventana"] = _resumen(m, a, e, sorted(sell)) if \
-                    m[m["unidad"].isin(sell)]["periodo"].nunique() >= 8 else "n < 8 periodos"
-                # (b') selladas en toda su historia (bloques con embargo; objetivos <= L; datos recortados a L)
-                pb = pan[pan["trimestre"] <= L]
-                nb = nac[nac["trimestre"] <= L]
-
-                def split_hist(per):
-                    return vc.block_splits(per, H, 4, 4, 8, first_test=hist_ini)
-                mb, ab, eb, perb = _frames(o, sel, pb, nb, units_train, sell, L, split_hist)
-                keep = [x[x["periodo_obj"].astype(str) <= L] for x in (mb, ab, eb)]
-                r["sec_b2_selladas_historia"] = _resumen(*keep, sorted(sell))
+        marcos[o] = (m, a, e)
+        r = {"modelo": sel["modelo"], "clase": sel["clase"], "PRINCIPAL": _resumen(m, a, e)}
         r["p_IUT"] = r["PRINCIPAL"]["p_IUT"]
         pint[o] = r["p_IUT"]
         res[o] = r
@@ -181,7 +215,36 @@ def _evaluar(sellado, train, L, fin, o_ini, o_fin, seleccion=None, hist_ini="201
         res[o]["p_IUT_Holm"] = adj[o]
         res[o]["cumple"] = bool(rech[o])
     res["H7_cumple"] = bool(any(rech.values()))
+    # ETAPA 3: secundarios informativos; cada uno en try/except (un fallo se registra y NO aborta)
+    for o in objetivos:
+        if o == "A":
+            continue
+        m, a, e = marcos[o]
+        sel = seleccion[o]
+        r = res[o]
+        for nombre, fn in (
+            ("sec_a_entrenamiento_49", lambda: _resumen(m, a, e, units_train)),
+            ("sec_b_selladas_ventana", lambda: _resumen(m, a, e, sorted(sell)) if
+             m[m["unidad"].isin(sell)]["periodo"].nunique() >= 8 else "n < 8 periodos"),
+            ("sec_b2_selladas_historia", lambda o=o, sel=sel: _historia(o, sel, pan, nac, units_train, sell, L, hist_ini)),
+        ):
+            try:
+                r[nombre] = fn()
+            except Exception as ex:  # noqa: BLE001
+                r[nombre] = f"error: {type(ex).__name__}: {ex}"
+                res["secundarios_errores"][f"{o}:{nombre}"] = r[nombre]
     return res
+
+
+def _historia(o, sel, pan, nac, units_train, sell, L, hist_ini):
+    pb = pan[pan["trimestre"] <= L]
+    nb = nac[nac["trimestre"] <= L]
+
+    def split_hist(per):
+        return vc.block_splits(per, H, 4, 4, 8, first_test=hist_ini)
+    mb, ab, eb, _ = _frames(o, sel, pb, nb, units_train, sell, L, split_hist)
+    keep = [x[x["periodo_obj"].astype(str) <= L] for x in (mb, ab, eb)]
+    return _resumen(*keep, sorted(sell))
 
 
 def evaluar_H7(sellado: dict, train: dict) -> dict:

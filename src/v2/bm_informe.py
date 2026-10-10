@@ -21,13 +21,13 @@ def _f(x, d=4):
 
 def escribir(OUT, T, sel, P, perm, shp, lps, ms, usadas):
     cand = T[T["clase"] != "linea_base"]
+    lstm = json.loads((OUT / "lstm_resultado.json").read_text())
     L = ["# Resumen BM (modelos predictivos y no lineales) — EXPLORATORIO",
          "",
          "Validación SOLO en bloques temporales con embargo (v2_common.block_splits: h=4, primer test 2012Q1, bloques de 4 "
          "orígenes, embargo 4, ventana expansiva). Misma muestra que AR(4) y ECM v1; DM-HLN (h=4, pérdida cuadrática; paneles: "
          "media transversal por periodo). Datos solo de entrenamiento (vía v2_common.load); H7 sellada NO ejecutada aquí.",
-         "", f"Configuraciones de hiperparámetros evaluadas: {usadas} (presupuesto declarado 63, de las cuales 4 reservadas al "
-         "bloque 5, no ejecutado). Cada una cuenta como especificación en output/v2/BM/registro.csv.", ""]
+         "", f"Configuraciones de hiperparámetros evaluadas: {usadas} (presupuesto declarado 63; las 4 de reserva se reasignaron al LSTM; bloque 5 no ejecutado). Cada una cuenta como especificación en output/v2/BM/registro.csv.", ""]
     L += ["## 1. Qué modelo gana (fuera de muestra, entrenamiento)", ""]
     L += ["| Objetivo | N | RMSE AR(4) | RMSE ECM v1 | Mejor candidato por RMSE medio en bloques | RMSE | DM vs AR4 (p) | DM vs ECM v1 (p) | p_BH AR4 / ECM |",
           "|---|---|---|---|---|---|---|---|---|"]
@@ -149,8 +149,8 @@ def escribir(OUT, T, sel, P, perm, shp, lps, ms, usadas):
           "asociaciones predictivas, no efectos causales, con colinealidad alta.",
           "- Bloque 5 NO ejecutado: factor dinámico provincial (reserva de 4 configuraciones sin usar) y spillovers espaciales (los paneles no "
           "traen coordenadas ni matriz de contigüidad: se omite).",
-          "- Bloque 6 NO ejecutado: torch no está instalado (se declara; no se instala). Sin deep learning no hay nada que reportar frente a "
-          "gradient boosting; el resultado es «no ejecutado», no «negativo».",
+          "- Bloque 6 (LSTM pequeño, solo panel B, 4 configuraciones, torch " + lstm.get("torch", "n/d") + "): " + lstm.get("resultado", lstm.get("estado", "")) +
+          f" (RMSE LSTM {lstm.get('RMSE_LSTM', float('nan')):.4f} vs {lstm.get('gradient_boosting')} {lstm.get('RMSE_GB', float('nan')):.4f}; DM {lstm.get('DM_LSTM_vs_GB', float('nan')):.2f}, p={lstm.get('p', float('nan')):.3f}). Fuera de H7.",
           "- Los datos de población en el modelo son «en escalera» (último 1-ene observado); el padrón se publica con retraso: en tiempo real "
           "no estaría disponible. Variables de oferta y turismo tienen mucha ausencia (imputación por mediana dentro del split; LightGBM "
           "usa NaN nativo); turismo (VUT) solo existe desde 2020Q3.",
@@ -180,7 +180,7 @@ def escribir(OUT, T, sel, P, perm, shp, lps, ms, usadas):
         nivel_evidencia="EXPLORATORIO",
         diagnosticos={"seleccion": {o: sel[o]["modelo"] for o in "ABC"},
                       "candidatos_que_mejoran_ambas_bases_nominal": n_ok, "con_BH": n_ok_bh,
-                      "bloque5": "no ejecutado", "bloque6": "no ejecutado (torch no instalado)",
+                      "bloque5": "no ejecutado", "bloque6": lstm.get("resultado", lstm.get("estado")),
                       "markov_switching": ms.get("estado")},
         fuera_muestra={"modelo": {o: sel[o]["modelo"] for o in "ABC"}, "rmse": {o: fm_rmse[o]["rmse"] for o in "ABC"},
                        "dm_vs_ar4": fm_dm},

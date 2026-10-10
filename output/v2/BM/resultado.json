@@ -6,7 +6,7 @@
     "A": 38,
     "B": 2254,
     "C": 2209,
-    "configuraciones": 59
+    "configuraciones": 63
   },
   "metodo": "Validación en bloques con embargo (h=4, primer test 2012Q1, embargo 4); elastic net, post-lasso plug-in, RF, LightGBM; ARDL, ECM de umbral, BVAR Minnesota, TVP-VAR con olvido (nacional); DM-HLN; PDS grupal (BCH) y proyecciones locales por periodo; importancias por permutación agrupada, SHAP y ALE",
   "estimacion": {
@@ -65,7 +65,7 @@
     "candidatos_que_mejoran_ambas_bases_nominal": 0,
     "con_BH": 0,
     "bloque5": "no ejecutado",
-    "bloque6": "no ejecutado (torch no instalado)",
+    "bloque6": "RESULTADO NEGATIVO: el LSTM no supera al mejor gradient boosting con DM-HLN",
     "markov_switching": "ok"
   },
   "fuera_muestra": {

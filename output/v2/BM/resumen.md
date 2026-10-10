@@ -2,7 +2,7 @@
 
 Validación SOLO en bloques temporales con embargo (v2_common.block_splits: h=4, primer test 2012Q1, bloques de 4 orígenes, embargo 4, ventana expansiva). Misma muestra que AR(4) y ECM v1; DM-HLN (h=4, pérdida cuadrática; paneles: media transversal por periodo). Datos solo de entrenamiento (vía v2_common.load); H7 sellada NO ejecutada aquí.
 
-Configuraciones de hiperparámetros evaluadas: 59 (presupuesto declarado 63, de las cuales 4 reservadas al bloque 5, no ejecutado). Cada una cuenta como especificación en output/v2/BM/registro.csv.
+Configuraciones de hiperparámetros evaluadas: 63 (presupuesto declarado 63; las 4 de reserva se reasignaron al LSTM; bloque 5 no ejecutado). Cada una cuenta como especificación en output/v2/BM/registro.csv.
 
 ## 1. Qué modelo gana (fuera de muestra, entrenamiento)
 
@@ -100,7 +100,7 @@ Proyecciones locales por periodo (familias principales; output/v2/BM/proyeccione
 - El ECM v1 es peor que el AR(4) en los tres objetivos (RMSE mayor): mejorar al ECM v1 es un listón bajo.
 - Importancias: de modelos que no mejoran al AR(4) fuera de muestra → NO son explicación (regla 4). Incluso si lo hicieran, son asociaciones predictivas, no efectos causales, con colinealidad alta.
 - Bloque 5 NO ejecutado: factor dinámico provincial (reserva de 4 configuraciones sin usar) y spillovers espaciales (los paneles no traen coordenadas ni matriz de contigüidad: se omite).
-- Bloque 6 NO ejecutado: torch no está instalado (se declara; no se instala). Sin deep learning no hay nada que reportar frente a gradient boosting; el resultado es «no ejecutado», no «negativo».
+- Bloque 6 (LSTM pequeño, solo panel B, 4 configuraciones, torch 2.14.1+cpu): RESULTADO NEGATIVO: el LSTM no supera al mejor gradient boosting con DM-HLN (RMSE LSTM 0.0141 vs LGBM_nl4_n400 0.0124; DM -0.84, p=0.404). Fuera de H7.
 - Los datos de población en el modelo son «en escalera» (último 1-ene observado); el padrón se publica con retraso: en tiempo real no estaría disponible. Variables de oferta y turismo tienen mucha ausencia (imputación por mediana dentro del split; LightGBM usa NaN nativo); turismo (VUT) solo existe desde 2020Q3.
 - Efectos de política (n_eventos, nacionales) solo varían en el tiempo y se confunden con cualquier shock agregado.
 - Nada de lo anterior es evidencia de H7 hasta la evaluación sellada (criterio uniforme (b)): nivel EXPLORATORIO.

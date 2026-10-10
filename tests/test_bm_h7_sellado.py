@@ -94,7 +94,56 @@ def test_historia_de_selladas_no_mueve_las_pendientes():
     assert r1["B"]["PRINCIPAL"]["rmse"] != r2["B"]["PRINCIPAL"]["rmse"]
 
 
+def _cambio_base(s, kipv=0.62, kalq=0.87):
+    s = {k: v.copy() for k, v in s.items()}
+    n, p = s["nacional_q_v2"], s["panel_prov_q"]
+    n["ipv"] *= kipv
+    n["ln_ipv"] += np.log(kipv)
+    p["ipc_alquiler"] *= kalq
+    p["ln_ipc_alquiler"] += np.log(kalq)
+    return s
+
+
+def test_cambio_de_base_en_el_sellado_da_el_mismo_resultado():
+    s, t, _ = pseudo()
+    r0 = bh._evaluar(s, t, L, FIN, O_INI, O_FIN)
+    r1 = bh._evaluar(_cambio_base(s), t, L, FIN, O_INI, O_FIN)      # se reencadena desde el nivel de L
+    for o in "ABC":
+        assert abs(r0[o]["PRINCIPAL"]["rmse"] - r1[o]["PRINCIPAL"]["rmse"]) < 1e-9, o
+        assert abs(r0[o]["PRINCIPAL"]["rmse_AR4"] - r1[o]["PRINCIPAL"]["rmse_AR4"]) < 1e-9, o
+
+
+def test_guarda_aborta_con_discontinuidad():
+    s, t, _ = pseudo()
+    s2 = _cambio_base(s)
+    nac = bh._concat(t["nacional_q_v2"], s2["nacional_q_v2"], ["trimestre"])      # concatenación ingenua (sin reencadenar)
+    pan = bh._concat(t["panel_prov_q"], s2["panel_prov_q"], ["cod_prov", "trimestre"])
+    for d_ in (nac, pan):
+        d_["trimestre"] = d_["trimestre"].astype(str)
+    try:
+        bh._guarda_continuidad(nac, pan, L)
+    except RuntimeError as e:
+        assert "discontinuidad" in str(e)
+        return
+    raise AssertionError("debía abortar")
+
+
+def test_secundario_que_falla_no_aborta():
+    s, t, _ = pseudo()
+    orig = bh._historia
+    bh._historia = lambda *a, **k: (_ for _ in ()).throw(ValueError("fallo simulado"))
+    try:
+        r = bh._evaluar(s, t, L, FIN, O_INI, O_FIN, objetivos="BC")
+    finally:
+        bh._historia = orig
+    assert "error" in r["B"]["sec_b2_selladas_historia"] and r["secundarios_errores"]
+    assert np.isfinite(r["B"]["PRINCIPAL"]["rmse"]) and "H7_cumple" in r
+
+
 if __name__ == "__main__":
+    test_cambio_de_base_en_el_sellado_da_el_mismo_resultado()
+    test_guarda_aborta_con_discontinuidad()
+    test_secundario_que_falla_no_aborta()
     test_aborta_con_pocos_periodos()
     test_historia_de_selladas_no_mueve_las_pendientes()
     test_todas_las_clases()

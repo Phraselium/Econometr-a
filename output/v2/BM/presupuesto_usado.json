@@ -1,6 +1,6 @@
 {
  "n_max_declarado": 63,
- "configuraciones_usadas": 59,
+ "configuraciones_usadas": 63,
  "bloque5_factor_dinamico": "no ejecutado",
- "bloque6_deep_learning": "no ejecutado (torch no instalado)"
+ "bloque6_deep_learning": "ejecutado"
 }

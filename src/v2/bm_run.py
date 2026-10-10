@@ -16,6 +16,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import bm_lib as bl  # noqa: E402
+import bm_lstm  # noqa: E402
 import bm_modelos as bm  # noqa: E402
 import v2_common as vc  # noqa: E402
 from econ_utils import Registry  # noqa: E402
@@ -335,6 +336,8 @@ def main():
         tablas.append(tab)
         bases_rows += br
         sels[o] = sel
+        if o == 'B':
+            tabB, candsB = tab, cands
         tiempo(f"modelos_{o}")
         if o in ("B", "C"):
             p_, s_, a_ = importancias(o, obj[o], cands, tab, reg)
@@ -374,14 +377,60 @@ def main():
                         n_comun_ranking=s["n_comun"], cobertura=s["cobertura"], rmse_bloques_todos=s["vals"],
                         meta=s["meta"]) for o, s in sels.items()}
     (OUT / "seleccion_H7.json").write_text(json.dumps(sel_json, indent=1, ensure_ascii=False, default=str))
+    lstm = bloque6_lstm(obj['B'], tabB, candsB, pres)
     reg.flush()
     usadas = pres.usadas
     (OUT / "presupuesto_usado.json").write_text(json.dumps(
         {"n_max_declarado": pres.n_max, "configuraciones_usadas": usadas,
-         "bloque5_factor_dinamico": "no ejecutado", "bloque6_deep_learning": "no ejecutado (torch no instalado)"}, indent=1))
+         "bloque5_factor_dinamico": "no ejecutado", "bloque6_deep_learning": lstm["estado"]}, indent=1))
     informe(T, sel_json, P, pd.DataFrame(perm), pd.DataFrame(shp), pd.DataFrame(lps), ms, usadas)
     tiempo("fin")
     (OUT / "tiempos.json").write_text(json.dumps(TIEMPOS, indent=1))
+
+
+def bloque6_lstm(v, tabB, candsB, pres):
+    """LSTM pequeño en el panel B vs el mejor LightGBM (DM-HLN). Si no lo supera: resultado negativo (fuera de H7)."""
+    try:
+        import torch
+    except Exception as ex:  # noqa: BLE001
+        out = {"estado": f"no ejecutado: {type(ex).__name__}: {ex}"}
+        (OUT / "lstm_resultado.json").write_text(json.dumps(out, indent=1, ensure_ascii=False))
+        return out
+    tg = tabB[(tabB["clase"] == "lgbm") & (tabB["N"] > 0)]
+    if tg.empty:            # solo en --smoke (no se ejecutan árboles)
+        tg = tabB[tabB["N"] > 0]
+    gb = tg.sort_values("rmse_bloques_medio").iloc[0]["modelo"]
+    gbdf = candsB[gb][1]
+    filas, preds = [], {}
+    grid = bm_lstm.GRID[:1] if SMOKE else bm_lstm.GRID
+    for hid, ep in grid:
+        n = f"LSTM_h{hid}_e{ep}"
+        df = bm_lstm.lstm_bloques(v["long"], v["per"], v["splits"], v["cols"], v["units"], hid, ep, n)
+        preds[n] = df
+        r = vc.evaluar(df, v["base"], 4).iloc[0].to_dict()
+        k = df.dropna(subset=["y_real", "y_pred"]).drop_duplicates(["unidad", "periodo"]).set_index(["unidad", "periodo"])
+        g = gbdf.dropna(subset=["y_real", "y_pred"]).drop_duplicates(["unidad", "periodo"]).set_index(["unidad", "periodo"])
+        com = k.index.intersection(g.index)
+        eg, el = (g.loc[com, "y_real"] - g.loc[com, "y_pred"]).values, (k.loc[com, "y_real"] - k.loc[com, "y_pred"]).values
+        dm = vc.dm_panel(eg, el, com.get_level_values("periodo").values, 4)
+        filas.append(dict(modelo=n, N=int(r["n"]), RMSE=r["rmse"], RMSE_AR4=r["rmse_AR4"], RMSE_ECM_v1=r["rmse_ECM_v1"],
+                          DM_vs_AR4=r["dm_vs_AR4"], p_vs_AR4=r["p_vs_AR4"], GB=gb, N_comun_GB=int(len(com)),
+                          RMSE_LSTM_en_comun=float(np.sqrt(np.mean(el ** 2))), RMSE_GB_en_comun=float(np.sqrt(np.mean(eg ** 2))),
+                          DM_LSTM_vs_GB=dm["DM"], p_LSTM_vs_GB=dm["p"]))
+        pres.usar(f"B_{n}", {"hidden": hid, "epochs": ep, "torch": torch.__version__}, formula="LSTM ventana 8 trimestres",
+                  muestra_ini="2012Q1", muestra_fin=Q_FIN, n=int(r["n"]), rmse_oos=float(r["rmse"]), notas="bloque 6; fuera de H7")
+    t = pd.DataFrame(filas)
+    t.to_csv(OUT / "lstm_panelB.csv", index=False, float_format="%.6g")
+    mejor = t.sort_values("RMSE").iloc[0]
+    valido = bool(mejor["RMSE_LSTM_en_comun"] < mejor["RMSE_GB_en_comun"] and mejor["p_LSTM_vs_GB"] < 0.05 and mejor["DM_LSTM_vs_GB"] > 0)
+    out = {"estado": "ejecutado", "torch": torch.__version__, "mejor_lstm": mejor["modelo"], "gradient_boosting": gb,
+           "valido_supera_GB": valido, "resultado": "LSTM supera al gradient boosting (DM-HLN p<0,05)" if valido else
+           "RESULTADO NEGATIVO: el LSTM no supera al mejor gradient boosting con DM-HLN",
+           "RMSE_LSTM": float(mejor["RMSE_LSTM_en_comun"]), "RMSE_GB": float(mejor["RMSE_GB_en_comun"]),
+           "DM_LSTM_vs_GB": float(mejor["DM_LSTM_vs_GB"]), "p": float(mejor["p_LSTM_vs_GB"]),
+           "nota": "selección del mejor LSTM entre 4 configuraciones (optimista); fuera de H7"}
+    (OUT / "lstm_resultado.json").write_text(json.dumps(out, indent=1, ensure_ascii=False))
+    return out
 
 
 def informe(T, sel, P, perm, shp, lps, ms, usadas):

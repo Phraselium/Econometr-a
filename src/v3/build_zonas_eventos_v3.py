@@ -1,0 +1,58 @@
+"""D2 v3: copia sin editar de las zonas tensionadas v2 (data/raw/v3/zonas_tensionadas_v3.csv) y eventos regulatorios
+(data/raw/v3/eventos_v3.csv). Las fechas BOE se leen de la ficha consolidada de cada norma (boe.es/eli, consultado 2026-10-10).
+Lo que no se pudo confirmar queda como 'no verificada'.
+"""
+from __future__ import annotations
+
+import shutil
+import sys
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parents[2]
+RAW = ROOT / "data" / "raw"
+V3 = RAW / "v3"
+
+EVENTOS = [
+    # evento, norma, fecha_publicacion, fecha_entrada_vigor, ambito, url, verificacion, nota
+    ("Ley por el derecho a la vivienda", "Ley 12/2023, de 24 de mayo (BOE-A-2023-12203)", "2023-05-25", "2023-05-26",
+     "Estatal", "https://www.boe.es/eli/es/l/2023/05/24/12", "VERIFICADA BOE", "Crea el régimen de zonas tensionadas"),
+    ("Registro Único de Arrendamientos y Ventanilla Única Digital de Arrendamientos", "Real Decreto 1312/2024, de 23 de diciembre (BOE-A-2024-26931)",
+     "2024-12-24", "2025-01-02", "Estatal", "https://www.boe.es/eli/es/rd/2024/12/23/1312", "VERIFICADA BOE (publicación y entrada en vigor)",
+     "Regula el procedimiento del Registro y crea la Ventanilla Única Digital. Fecha de obligatoriedad de inscripción: NO VERIFICADA (no localizada en el texto consolidado por búsqueda automática; revisar disposiciones transitorias)"),
+    ("Reforma LPH: viviendas de uso turístico (aprobación de la comunidad)", "Ley Orgánica 1/2025, de 2 de enero (BOE-A-2025-76), disposición final correspondiente a la Ley de Propiedad Horizontal",
+     "2025-01-03", "2025-04-03", "Estatal", "https://www.boe.es/eli/es/lo/2025/01/02/1",
+     "VERIFICADA BOE (fechas); número de disposición final NO VERIFICADO", "Texto de la LPH modificado en el art. contenido en el bloque de disposiciones finales"),
+    ("Ley catalana de contención de rentas en arrendamientos de vivienda", "Ley 11/2020, de 18 de septiembre (BOE-A-2020-11363)",
+     "2020-09-29 (BOE; DOGC 2020-09-21)", "2020-09-22", "Cataluña", "https://www.boe.es/eli/es-ct/l/2020/09/18/11",
+     "VERIFICADA BOE", "Vigencia desde 22/09/2020 (DOGC)"),
+    ("Anulación de la Ley catalana 11/2020 (contención de rentas)", "STC 37/2022, de 10 de marzo (Tribunal Constitucional)",
+     "NO VERIFICADA (fecha BOE)", "Sin efectos desde la sentencia (nulidad de preceptos según nota del texto BOE)", "Cataluña",
+     "https://www.boe.es/eli/es-ct/l/2020/09/18/11", "VERIFICADA (fecha de sentencia en nota del BOE); fecha de BOE NO VERIFICADA",
+     "Nota del texto consolidado: inconstitucionalidad y nulidad de preceptos; el alcance exacto (arts.) NO VERIFICADO"),
+    ("Declaración de zonas tensionadas Cataluña (Resolución TER/2940/2023, modificada por TER/800/2024)", "Resolución TER/800/2024, de 13 de marzo (BOE-A-2024-5214)",
+     "2024-03-15", "2024-03-16", "Cataluña (municipios; ver zonas_tensionadas_v3.csv)", "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-5214",
+     "VERIFICADA (fila de v2 con fecha BOE)", "Efecto hasta 2027-03-16 según v2"),
+    ("Decreto-ley catalán 3/2023 (moratoria de licencias de VUT)", "Decreto-ley 3/2023 (Generalitat de Cataluña)", "NO VERIFICADA", "NO VERIFICADA",
+     "Cataluña", "", "NO VERIFICADA", "Pendiente de confirmar en DOGC/BOE; no incluido en análisis"),
+    ("Decreto de viviendas de uso turístico Comunitat Valenciana", "Decreto-ley 9/2024 (Generalitat Valenciana)", "NO VERIFICADA", "NO VERIFICADA",
+     "Comunitat Valenciana", "", "NO VERIFICADA", "Número y fecha no confirmados; dadesobertes.gva.es/DOGV inaccesibles desde el proxy en esta pasada"),
+]
+
+
+def main() -> None:
+    V3.mkdir(parents=True, exist_ok=True)
+    dst = V3 / "zonas_tensionadas_v3.csv"
+    if not dst.exists():
+        shutil.copyfile(RAW / "v2_zonas_tensionadas.csv", dst)  # copia sin editar; v2 no se toca
+    z = pd.read_csv(dst, dtype=str)
+    print(f"[zonas] {len(z)} filas; por CCAA: {z.groupby('ccaa').size().to_dict()}")
+    ev = pd.DataFrame(EVENTOS, columns=["evento", "norma", "fecha_publicacion", "fecha_entrada_vigor", "ambito", "url",
+                                        "verificacion", "nota"])
+    ev.to_csv(V3 / "eventos_v3.csv", index=False)
+    print(f"[ok] eventos_v3.csv: {len(ev)} eventos; verificados: {ev['verificacion'].str.startswith('VERIFICADA').sum()}")
+
+
+if __name__ == "__main__":
+    sys.exit(main())

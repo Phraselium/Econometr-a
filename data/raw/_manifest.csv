@@ -85,4 +85,13 @@ pdf/serpavi_v2_municipios.csv,MIVAU-SERPAVI (AEAT IRPF),32402,2011-01-01,2024-01
 pdf/serpavi_v2_municipios.csv.gz,MIVAU-SERPAVI (AEAT IRPF),32402,2011-01-01,2024-01-01,351686,0,2026-10-10T06:07:19Z
 v2_eventos_politica.csv,BOE/boletines oficiales,41,2013-06-05,2026-07-29,41,6,2026-10-10T06:14:59Z
 v2_zonas_tensionadas.csv,"BOE (Secretaría de Estado de Vivienda, art. 18 Ley 12/2023)",9,2024-03-16,2026-07-30,318,0,2026-10-10T06:14:59Z
+v3/eurostat_emancipacion_tenencia_v3.csv,Eurostat ilc_lvps08 / ilc_lvho02,258,2004-01-01,2025-01-01,4587,0,2026-10-10T12:03:33Z
+v3/incasol_fianzas_municipio_v3.csv.gz,Incasòl - fiances de lloguer (Socrata qww9-bvhh),9865,2007-01-01,2026-01-01,138315,19964,2026-10-10T12:03:33Z
+v3/ine_v3_censo2021_municipio_viviendas.csv,INE Censo de Población y Viviendas 2021 (provisional),3,2021-11-01,2021-11-01,24396,0,2026-10-10T12:03:16Z
+v3/ine_v3_censo2021_seccion_indicadores.csv.gz,INE Censo de Población y Viviendas 2021 (provisional),36,2021-11-01,2021-11-01,1307988,47705,2026-10-10T12:04:12Z
+v3/ine_v3_vut_municipio_pct.csv,INE Medición del número de viviendas turísticas (estadística experimental),8207,2020-08-01,2026-05-01,106524,4068,2026-10-10T12:03:50Z
+v3/madrid_alquiler_cp_v3.csv.gz,Comunidad de Madrid - alquiler medio por CP (1934258; origen no verificado),54,2023-01-01,2024-01-01,108,0,2026-10-10T12:03:33Z
+v3/serpavi_distritos_nacional_v3.csv.gz,"MIVAU-SERPAVI (IRPF, stock) distritos censales",100359,2011-01-01,2024-01-01,1099206,0,2026-10-10T12:03:33Z
+v3/serpavi_secciones_nacional_v3.csv.gz,"MIVAU-SERPAVI (IRPF, stock) secciones censales",398392,2011-01-01,2024-01-01,4577321,0,2026-10-10T12:03:33Z
+v3/zonas_tensionadas_v3.csv,BOE/CCAA - copia sin editar de v2_zonas_tensionadas,0,2024-03-15,2026-07-29,318,0,2026-10-10T12:03:33Z
 vlc_precio_vivienda_libre.csv,Ajuntament de València - Opendata (CKAN); fuente primaria no indicada en el recurso,24,2021-04-01,2022-04-01,120,0,2026-10-09T18:54:14Z

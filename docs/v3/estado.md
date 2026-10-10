@@ -16,8 +16,11 @@
 
 | Lista oficial Ley 11/2020 y zonas tensionadas (Cataluña) | 1 | hecho | — | 61 municipios (Ley 11/2020); 140 y 131 (zonas 2024) | 97.863 |
 
+| Revisión oleada 1 (it. 1: REHACER O1-O10) y correcciones P-A/P-B/POT/GL | 1 | hecho | — | ver docs/v3/revision_oleada1.md | 132.184 + correcciones 78.877 |
+| Revisión oleada 1, iteración 2 | 1 | en curso | — | — | — |
+
 **Hecho:** setup; literatura v3; D2 (scripts src/v3/fetch_*_v3.py, build_zonas_eventos_v3.py).
 **Pendiente de datos:** D1 INE (en curso); Barcelona por barrio (bloqueado, anti-bot); Madrid por distrito; GVA fianzas; SIU (solicitud); obligatoriedad RD 1312/2024 sin verificar.
-**Siguiente:** P-A, P-B, potencia y réplica GL (en curso) → make check → reviewer oleada 1 → go/no-go P-C.
-**Tokens de subagentes v3:** 1.138.074 / 3.500.000 (cierre al 80 %: 2.800.000).
+**Siguiente:** iteración 2 de la revisión → tag prereg-v3 → oleada 2 (H3-1, H3-2, H3-3a/b).
+**Tokens de subagentes v3:** 1.349.523 / 3.500.000 (cierre al 80 %: 2.800.000).
 - 2026-10-10: cataluna_contencion_rentas_v3.csv generado (61 Ley 11/2020; 140 + 131 Ley 12/2023; 0 en 2025). Pendiente: DOGC no accesible; prórroga 2026 no verificada. Ver decisiones.md.

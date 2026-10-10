@@ -387,6 +387,34 @@ M1_prov,M1prov_14_2021-2025_Censo anual_MIVAU _sin_0.0,D = Δhogares − altas,2
 M1_prov,M1prov_14_2021-2025_Censo anual_MIVAU _sin_0.1,D = Δhogares − altas,2021,2025,1,,,,,-60.394407308462405,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 M1_prov,M1prov_14_2021-2025_Censo anual_MIVAU _sin_0.2,D = Δhogares − altas,2021,2025,1,,,,,1595.7055926915377,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 M1_prov,M1prov_14_2021-2025_Censo anual_Catast_incluida_nan,D = Δhogares − altas,2021,2025,1,,,,,-9662.494407308463,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_15_2012-2025_Censo+ECP_MIVAU _con_0.0,D = Δhogares − altas,2012,2025,1,,,,,30970.0,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_15_2012-2025_Censo+ECP_MIVAU _con_0.1,D = Δhogares − altas,2012,2025,1,,,,,40025.144,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_15_2012-2025_Censo+ECP_MIVAU _con_0.2,D = Δhogares − altas,2012,2025,1,,,,,49080.288,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_15_2012-2025_Censo+ECP_MIVAU _sin_0.0,D = Δhogares − altas,2012,2025,1,,,,,30970.0,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_15_2012-2025_Censo+ECP_MIVAU _sin_0.1,D = Δhogares − altas,2012,2025,1,,,,,40025.144,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_15_2012-2025_Censo+ECP_MIVAU _sin_0.2,D = Δhogares − altas,2012,2025,1,,,,,49080.288,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_15_2012-2025_Censo+ECP_Catast_incluida_nan,D = Δhogares − altas,2012,2025,1,,,,,4449.0,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_15_2012-2025_Censo+Censo anual_MIVAU _con_0.0,D = Δhogares − altas,2012,2025,1,,,,,19116.284212151484,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_15_2012-2025_Censo+Censo anual_MIVAU _con_0.1,D = Δhogares − altas,2012,2025,1,,,,,27524.632212151482,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_15_2012-2025_Censo+Censo anual_MIVAU _con_0.2,D = Δhogares − altas,2012,2025,1,,,,,35932.98021215148,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_15_2012-2025_Censo+Censo anual_MIVAU _sin_0.0,D = Δhogares − altas,2012,2025,1,,,,,19116.284212151484,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_15_2012-2025_Censo+Censo anual_MIVAU _sin_0.1,D = Δhogares − altas,2012,2025,1,,,,,27524.632212151482,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_15_2012-2025_Censo+Censo anual_MIVAU _sin_0.2,D = Δhogares − altas,2012,2025,1,,,,,35932.98021215148,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_15_2012-2025_Censo+Censo anual_Catast_incluida_nan,D = Δhogares − altas,2012,2025,1,,,,,-5128.715787848516,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_15_2021-2025_ECP_MIVAU _con_0.0,D = Δhogares − altas,2021,2025,1,,,,,21752.0,,ECP 2021T1-2025T4
+M1_prov,M1prov_15_2021-2025_ECP_MIVAU _con_0.1,D = Δhogares − altas,2021,2025,1,,,,,25186.805,,ECP 2021T1-2025T4
+M1_prov,M1prov_15_2021-2025_ECP_MIVAU _con_0.2,D = Δhogares − altas,2021,2025,1,,,,,28621.61,,ECP 2021T1-2025T4
+M1_prov,M1prov_15_2021-2025_ECP_MIVAU _sin_0.0,D = Δhogares − altas,2021,2025,1,,,,,21752.0,,ECP 2021T1-2025T4
+M1_prov,M1prov_15_2021-2025_ECP_MIVAU _sin_0.1,D = Δhogares − altas,2021,2025,1,,,,,25186.805,,ECP 2021T1-2025T4
+M1_prov,M1prov_15_2021-2025_ECP_MIVAU _sin_0.2,D = Δhogares − altas,2021,2025,1,,,,,28621.61,,ECP 2021T1-2025T4
+M1_prov,M1prov_15_2021-2025_ECP_Catast_incluida_nan,D = Δhogares − altas,2021,2025,1,,,,,9965.0,,ECP 2021T1-2025T4
+M1_prov,M1prov_15_2021-2025_Censo anual_MIVAU _con_0.0,D = Δhogares − altas,2021,2025,1,,,,,6118.284212151484,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_15_2021-2025_Censo anual_MIVAU _con_0.1,D = Δhogares − altas,2021,2025,1,,,,,8866.128212151485,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_15_2021-2025_Censo anual_MIVAU _con_0.2,D = Δhogares − altas,2021,2025,1,,,,,11613.972212151484,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_15_2021-2025_Censo anual_MIVAU _sin_0.0,D = Δhogares − altas,2021,2025,1,,,,,6118.284212151484,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_15_2021-2025_Censo anual_MIVAU _sin_0.1,D = Δhogares − altas,2021,2025,1,,,,,8866.128212151485,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_15_2021-2025_Censo anual_MIVAU _sin_0.2,D = Δhogares − altas,2021,2025,1,,,,,11613.972212151484,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_15_2021-2025_Censo anual_Catast_incluida_nan,D = Δhogares − altas,2021,2025,1,,,,,-3392.715787848516,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 M1_prov,M1prov_16_2012-2025_Censo+ECP_MIVAU _con_0.0,D = Δhogares − altas,2012,2025,1,,,,,308.0,,Censos 2011-2021 + ECP 2021T4-2025T4
 M1_prov,M1prov_16_2012-2025_Censo+ECP_MIVAU _con_0.1,D = Δhogares − altas,2012,2025,1,,,,,2500.6800000000003,,Censos 2011-2021 + ECP 2021T4-2025T4
 M1_prov,M1prov_16_2012-2025_Censo+ECP_MIVAU _con_0.2,D = Δhogares − altas,2012,2025,1,,,,,4693.360000000001,,Censos 2011-2021 + ECP 2021T4-2025T4
@@ -911,6 +939,34 @@ M1_prov,M1prov_34_2021-2025_Censo anual_MIVAU _sin_0.0,D = Δhogares − altas,2
 M1_prov,M1prov_34_2021-2025_Censo anual_MIVAU _sin_0.1,D = Δhogares − altas,2021,2025,1,,,,,275.02378761640085,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 M1_prov,M1prov_34_2021-2025_Censo anual_MIVAU _sin_0.2,D = Δhogares − altas,2021,2025,1,,,,,740.7477876164008,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 M1_prov,M1prov_34_2021-2025_Censo anual_Catast_incluida_nan,D = Δhogares − altas,2021,2025,1,,,,,-35.70021238359914,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_35_2012-2025_Censo+ECP_MIVAU _con_0.0,D = Δhogares − altas,2012,2025,1,,,,,35494.0,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_35_2012-2025_Censo+ECP_MIVAU _con_0.1,D = Δhogares − altas,2012,2025,1,,,,,42944.618,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_35_2012-2025_Censo+ECP_MIVAU _con_0.2,D = Δhogares − altas,2012,2025,1,,,,,50395.236000000004,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_35_2012-2025_Censo+ECP_MIVAU _sin_0.0,D = Δhogares − altas,2012,2025,1,,,,,35494.0,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_35_2012-2025_Censo+ECP_MIVAU _sin_0.1,D = Δhogares − altas,2012,2025,1,,,,,42944.618,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_35_2012-2025_Censo+ECP_MIVAU _sin_0.2,D = Δhogares − altas,2012,2025,1,,,,,50395.236000000004,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_35_2012-2025_Censo+ECP_Catast_incluida_nan,D = Δhogares − altas,2012,2025,1,,,,,-7444.0,,Censos 2011-2021 + ECP 2021T4-2025T4
+M1_prov,M1prov_35_2012-2025_Censo+Censo anual_MIVAU _con_0.0,D = Δhogares − altas,2012,2025,1,,,,,28581.81282157119,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_35_2012-2025_Censo+Censo anual_MIVAU _con_0.1,D = Δhogares − altas,2012,2025,1,,,,,35500.24382157119,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_35_2012-2025_Censo+Censo anual_MIVAU _con_0.2,D = Δhogares − altas,2012,2025,1,,,,,42418.67482157119,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_35_2012-2025_Censo+Censo anual_MIVAU _sin_0.0,D = Δhogares − altas,2012,2025,1,,,,,28581.81282157119,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_35_2012-2025_Censo+Censo anual_MIVAU _sin_0.1,D = Δhogares − altas,2012,2025,1,,,,,35500.24382157119,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_35_2012-2025_Censo+Censo anual_MIVAU _sin_0.2,D = Δhogares − altas,2012,2025,1,,,,,42418.67482157119,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_35_2012-2025_Censo+Censo anual_Catast_incluida_nan,D = Δhogares − altas,2012,2025,1,,,,,-11070.187178428809,,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+M1_prov,M1prov_35_2021-2025_ECP_MIVAU _con_0.0,D = Δhogares − altas,2021,2025,1,,,,,26461.0,,ECP 2021T1-2025T4
+M1_prov,M1prov_35_2021-2025_ECP_MIVAU _con_0.1,D = Δhogares − altas,2021,2025,1,,,,,29217.185,,ECP 2021T1-2025T4
+M1_prov,M1prov_35_2021-2025_ECP_MIVAU _con_0.2,D = Δhogares − altas,2021,2025,1,,,,,31973.37,,ECP 2021T1-2025T4
+M1_prov,M1prov_35_2021-2025_ECP_MIVAU _sin_0.0,D = Δhogares − altas,2021,2025,1,,,,,26461.0,,ECP 2021T1-2025T4
+M1_prov,M1prov_35_2021-2025_ECP_MIVAU _sin_0.1,D = Δhogares − altas,2021,2025,1,,,,,29217.185,,ECP 2021T1-2025T4
+M1_prov,M1prov_35_2021-2025_ECP_MIVAU _sin_0.2,D = Δhogares − altas,2021,2025,1,,,,,31973.37,,ECP 2021T1-2025T4
+M1_prov,M1prov_35_2021-2025_ECP_Catast_incluida_nan,D = Δhogares − altas,2021,2025,1,,,,,12065.0,,ECP 2021T1-2025T4
+M1_prov,M1prov_35_2021-2025_Censo anual_MIVAU _con_0.0,D = Δhogares − altas,2021,2025,1,,,,,15021.812821571191,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_35_2021-2025_Censo anual_MIVAU _con_0.1,D = Δhogares − altas,2021,2025,1,,,,,17226.76082157119,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_35_2021-2025_Censo anual_MIVAU _con_0.2,D = Δhogares − altas,2021,2025,1,,,,,19431.708821571192,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_35_2021-2025_Censo anual_MIVAU _sin_0.0,D = Δhogares − altas,2021,2025,1,,,,,15021.812821571191,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_35_2021-2025_Censo anual_MIVAU _sin_0.1,D = Δhogares − altas,2021,2025,1,,,,,17226.76082157119,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_35_2021-2025_Censo anual_MIVAU _sin_0.2,D = Δhogares − altas,2021,2025,1,,,,,19431.708821571192,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+M1_prov,M1prov_35_2021-2025_Censo anual_Catast_incluida_nan,D = Δhogares − altas,2021,2025,1,,,,,3911.8128215711913,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 M1_prov,M1prov_36_2012-2025_Censo+ECP_MIVAU _con_0.0,D = Δhogares − altas,2012,2025,1,,,,,27502.0,,Censos 2011-2021 + ECP 2021T4-2025T4
 M1_prov,M1prov_36_2012-2025_Censo+ECP_MIVAU _con_0.1,D = Δhogares − altas,2012,2025,1,,,,,34347.692,,Censos 2011-2021 + ECP 2021T4-2025T4
 M1_prov,M1prov_36_2012-2025_Censo+ECP_MIVAU _con_0.2,D = Δhogares − altas,2012,2025,1,,,,,41193.384,,Censos 2011-2021 + ECP 2021T4-2025T4
@@ -1383,5 +1439,5 @@ M1_prov,M1prov_52_2021-2025_Censo anual_MIVAU _sin_0.0,D = Δhogares − altas,2
 M1_prov,M1prov_52_2021-2025_Censo anual_MIVAU _sin_0.1,D = Δhogares − altas,2021,2025,1,,,,,299.6260335454,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 M1_prov,M1prov_52_2021-2025_Censo anual_MIVAU _sin_0.2,D = Δhogares − altas,2021,2025,1,,,,,417.01403354539997,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 M1_prov,M1prov_52_2021-2025_Censo anual_Catast_incluida_nan,D = Δhogares − altas,2021,2025,1,,,,,-1480.7619664546,,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
-M1_mun,M1mun_2012-2025,D municipal (Catastro; hogares Censo anual / tamaño 2021),2012,2025,642,,,,,20768.6513301757,,C4 fuente única; suma de municipios >10000 hab
+M1_mun,M1mun_2012-2025,D municipal (Catastro; hogares Censo anual / tamaño 2021),2012,2025,695,,,,,7608.612303789418,,C4 fuente única; suma de municipios >10000 hab
 M1_mun,M1mun_2021-2025,D municipal (Catastro; hogares Censo anual / tamaño 2021),2021,2025,703,,,,,254754.9814342886,,C4 fuente única; suma de municipios >10000 hab

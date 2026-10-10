@@ -12,33 +12,33 @@
     "ine_v2_padron_prov_edad_nac"
   ],
   "N": {
-    "provincias": 50,
+    "provincias": 52,
     "municipios_2021_2025": 703,
-    "municipios_2012_2025": 642
+    "municipios_2012_2025": 695
   },
   "metodo": "Déficit contable D = Δhogares − altas netas; rutas de hogares y fuentes de altas cruzadas; bajas 0/0,1/0,2 %",
   "estimacion": {
     "nacional_2021_2025": {
-      "n_prov_comun": 46,
-      "min": 287350.77165442304,
-      "max": 1307401.3,
-      "mediana": 768859.7516544231,
+      "n_prov_comun": 48,
+      "min": 287869.8686881457,
+      "max": 1367996.28,
+      "mediana": 797429.0366881457,
       "n_combinaciones": 8,
       "signo_unico": true,
-      "n_prov_fin_obra": 50,
-      "min_fin_obra_todas": 645807.7538462818,
-      "max_fin_obra_todas": 1374799.1
+      "n_prov_fin_obra": 52,
+      "min_fin_obra_todas": 666947.8508800045,
+      "max_fin_obra_todas": 1435394.08
     },
     "nacional_2012_2025": {
-      "n_prov_comun": 46,
-      "min": -229590.2283455768,
-      "max": 1899499.96,
-      "mediana": 1285931.5908272117,
+      "n_prov_comun": 48,
+      "min": -245789.13131185411,
+      "max": 1998975.484,
+      "mediana": 1350676.028844073,
       "n_combinaciones": 8,
       "signo_unico": false,
-      "n_prov_fin_obra": 50,
-      "min_fin_obra_todas": 1072173.753846282,
-      "max_fin_obra_todas": 2018268.456
+      "n_prov_fin_obra": 52,
+      "min_fin_obra_todas": 1119871.8508800047,
+      "max_fin_obra_todas": 2117743.98
     }
   },
   "ic95": null,
@@ -50,19 +50,19 @@
         "nivel": "provincia",
         "periodo": "2012-2025",
         "escenario": "mediana",
-        "n_unidades": 50,
+        "n_unidades": 52,
         "n_50": 6,
-        "n_80": 16,
-        "total_positivo": 1380212.099410178,
-        "n_positivos": 47.0
+        "n_80": 18,
+        "total_positivo": 1444956.5374270394,
+        "n_positivos": 49.0
       },
       {
         "nivel": "provincia",
         "periodo": "2012-2025",
         "escenario": "rango entre combinaciones",
-        "n_unidades": 50,
+        "n_unidades": 52,
         "n_50": "3-7",
-        "n_80": "6-19",
+        "n_80": "6-21",
         "total_positivo": null,
         "n_positivos": null
       },
@@ -70,29 +70,29 @@
         "nivel": "municipio",
         "periodo": "2012-2025",
         "escenario": "Catastro, fuente única",
-        "n_unidades": 642,
-        "n_50": 42,
-        "n_80": 128,
-        "total_positivo": 317844.6406494435,
-        "n_positivos": 340.0
+        "n_unidades": 695,
+        "n_50": 45,
+        "n_80": 135,
+        "total_positivo": 333696.50370153214,
+        "n_positivos": 361.0
       },
       {
         "nivel": "provincia",
         "periodo": "2021-2025",
         "escenario": "mediana",
-        "n_unidades": 50,
+        "n_unidades": 52,
         "n_50": 5,
-        "n_80": 15,
-        "total_positivo": 845815.0524078883,
-        "n_positivos": 50.0
+        "n_80": 17,
+        "total_positivo": 874933.7733355352,
+        "n_positivos": 52.0
       },
       {
         "nivel": "provincia",
         "periodo": "2021-2025",
         "escenario": "rango entre combinaciones",
-        "n_unidades": 50,
-        "n_50": "3-6",
-        "n_80": "9-20",
+        "n_unidades": 52,
+        "n_50": "4-7",
+        "n_80": "9-21",
         "total_positivo": null,
         "n_positivos": null
       },
@@ -113,15 +113,15 @@
         "periodo": "2012-2025",
         "n_excedente": 3,
         "viviendas_excedente_mediana": 7114.745989694908,
-        "viviendas_excedente_min": -0.0,
-        "viviendas_excedente_max": 398640.7255845842,
+        "viviendas_excedente_min": 0.0,
+        "viviendas_excedente_max": 414839.6285508615,
         "nota": "min/max: solo provincias con exceso en todas las combinaciones, suma de la cota correspondiente"
       },
       {
         "nivel": "municipio",
         "periodo": "2012-2025",
-        "n_excedente": 302,
-        "viviendas_excedente_mediana": 297075.9893192678,
+        "n_excedente": 334,
+        "viviendas_excedente_mediana": 326087.8913977427,
         "viviendas_excedente_min": null,
         "viviendas_excedente_max": null,
         "nota": "Catastro, fuente única (C4)"
@@ -130,9 +130,9 @@
         "nivel": "provincia",
         "periodo": "2021-2025",
         "n_excedente": 0,
-        "viviendas_excedente_mediana": -0.0,
-        "viviendas_excedente_min": -0.0,
-        "viviendas_excedente_max": 66236.5283202405,
+        "viviendas_excedente_mediana": 0.0,
+        "viviendas_excedente_min": 0.0,
+        "viviendas_excedente_max": 69629.24410808901,
         "nota": "min/max: solo provincias con exceso en todas las combinaciones, suma de la cota correspondiente"
       },
       {
@@ -146,8 +146,8 @@
       }
     ],
     "capas_provincia_2021_2025": {
-      "C4": 26,
-      "C1": 24
+      "C4": 27,
+      "C1": 25
     },
     "mapa": "sin geopandas: gráficos de barras ordenados (no coropleta)"
   },

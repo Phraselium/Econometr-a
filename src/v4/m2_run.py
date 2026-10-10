@@ -162,6 +162,7 @@ def latente(cel, h4, pad, ecp25, k):
 
 def censo_hogares() -> tuple[float, float]:
     """Hogares censales (2011: viviendas principales, INE 3457; 2021: hogares, Censo 2021)."""
+    sys.path.insert(0, str(RAIZ / "src" / "v3"))
     import pa_data
     return pa_data.censo2011_nacional()["principal"], pa_data.censo2021_hogares_nacional()
 
@@ -177,7 +178,7 @@ def totales(pad, h4, h4r, nac, epa_anual, ecp, cruza):
         de = epa[b] - epa[a] - (ajuste if a < 2021 <= b else 0.0)
         dec = float(ecp[f"{b}T1"] - ecp[f"{a}T1"]) if a >= 2021 else np.nan
         f = {"periodo": r.periodo, "dH_modelo_EPA_corregida": r.dH, "dH_EPA_hogares_corregida": de,
-             "dH_EPA_hogares_sin_corregir": epa[b] - epa[a], "dH_ECP": dec}
+             "dH_EPA_hogares_sin_corregir": epa[b] - epa[a], "dH_ECP_o_censo": dec}
         v = [x for x in (r.dH, de, dec) if not np.isnan(x)]
         f["rango_rel_%"] = 100 * (max(v) - min(v)) / abs(np.mean(v))
         f["coinciden_15pc"] = bool(f["rango_rel_%"] <= 15)
@@ -187,7 +188,7 @@ def totales(pad, h4, h4r, nac, epa_anual, ecp, cruza):
     dm = decompone(pad, h4, "00", 2011, 2021)["dH"]
     v = [c21 - c11, de, dm]
     filas.append({"periodo": "2011-2021 (censo)", "dH_modelo_EPA_corregida": dm, "dH_EPA_hogares_corregida": de,
-                  "dH_EPA_hogares_sin_corregir": epa[2021] - epa[2011], "dH_ECP": c21 - c11,
+                  "dH_EPA_hogares_sin_corregir": epa[2021] - epa[2011], "dH_ECP_o_censo": c21 - c11,
                   "rango_rel_%": 100 * (max(v) - min(v)) / abs(np.mean(v)), "coinciden_15pc": bool(100 * (max(v) - min(v)) / abs(np.mean(v)) <= 15)})
     return pd.DataFrame(filas)
 
@@ -288,7 +289,7 @@ def main(smoke: bool = False) -> None:
                         for k in ("tamano_nativos", "tamano_extranjeros", "estructura", "tasa")}
     json.dump(tops, open(OUT / "tablas" / "top3_provincias.json", "w"), ensure_ascii=False, indent=1)
     figuras(nac, prv, lat, nm)
-    escribe_json(nac, lat, fl, calib, dif_panel, corr, tops)
+    escribe_json(nac, lat, fl, calib, dif_panel, corr, tops, tc, sens, kq)
     reg.flush()
 
 
@@ -316,7 +317,7 @@ def figuras(nac, prv, lat, nm):
     fig.tight_layout(); fig.savefig(OUT / "figuras" / "provincias_2014_2019.png", dpi=130); plt.close(fig)
 
 
-def escribe_json(nac, lat, fl, calib, dif_panel, corr, tops):
+def escribe_json(nac, lat, fl, calib, dif_panel, corr, tops, tc, sens, kq):
     n = nac.set_index("periodo")
     desc = {p: {k: round(float(n.loc[p, k])) for k in ("dH", "tamano_nativos", "tamano_extranjeros", "estructura", "tasa")}
             | {"pct_" + k: round(float(n.loc[p, "pct_" + k]), 1) for k in ("tamano_nativos", "tamano_extranjeros", "estructura", "tasa")}
@@ -327,14 +328,21 @@ def escribe_json(nac, lat, fl, calib, dif_panel, corr, tops):
     f35 = lat[lat.grupo.isin(["35-44", "35-64"])].hogares_adicionales
     comun_s = ("EPA con ruptura de serie hacia 2021 (marco censal); la tasa 65+ cae en 2025. Jefatura por edad solo de EPA (una fuente) y sin desglose por nacionalidad; "
                "tasa h común a nativos y extranjeros.")
+    tcs = tc.set_index("periodo")
+    tot_c1 = {p: ("C1" if bool(tcs.loc[p, "coinciden_15pc"]) else "C4 (fuentes no coinciden en 15 %)") for p in tcs.index}
+    sensd = {r.periodo: {k: round(float(r[k])) for k in ("dH", "N_esp", "N_ext", "estructura", "tasa")} for _, r in sens.iterrows()}
     hechos = [
-        {"id": "M2-H1", "enunciado_neutro": "Descomposición shapley de la variación de hogares (personas de referencia) en España por periodo.",
-         "capa": "C1", "magnitud": desc, "unidad": "hogares y % de ΔH", "intervalo": "ver notas: población padrón x tasa EPA frente a hogares EPA/ECP en calibracion_hogares.csv",
+        {"id": "M2-H0", "enunciado_neutro": "Variación total de hogares por periodo según modelo (EPA corregida), EPA hogares, ECP y Censo.",
+         "capa": tot_c1, "magnitud": tc.round(1).to_dict("records"), "unidad": "hogares", "intervalo": "rango_rel_% en total_dH_fuentes.csv; umbral declarado 15 %",
+         "fuentes": ["EPA hogares (salto 2021 retirado, criterio v1)", "ECP 60131 (2021-2025)", "Censo 2011 (INE 3457) y 2021", "padrón x h EPA"],
+         "supuestos": ["Corrección de ruptura: nivel 2021 sustituido por la media de 2020 y 2022"], "limites": ["ECP solo desde 2021; censo solo 2011-2021"]},
+        {"id": "M2-H1", "enunciado_neutro": "Descomposición shapley de la variación de hogares (personas de referencia) en España por periodo, con EPA corregida de la ruptura de 2021.",
+         "capa": "C4 (jefatura de fuente única: EPA)", "sensibilidad_sin_corregir": sensd, "k_ruptura_por_grupo": {g: round(float(kq[g]), 4) for g in kq.index}, "magnitud": desc, "unidad": "hogares y % de ΔH", "intervalo": "ver notas: población padrón x tasa EPA frente a hogares EPA/ECP en calibracion_hogares.csv",
          "fuentes": ["INE padrón (ine_v2_padron_prov_edad_nac.csv; contraste con panel_prov_a)", "INE EPA 65944 (jefatura por edad)",
                      "EPA hogares y ECP 60131 (calibración de nivel)"],
          "supuestos": ["Cuatro grupos de edad; 'nativos' = nacionalidad española (incluye nacionalizados)", "h por edad común a ambas nacionalidades",
                        "Shapley con 4 factores (N_esp, N_ext, estructura, tasa)"],
-         "limites": [comun_s, "Periodo 2002-2007 no disponible: EPA 65944 empieza en 2006; se informa 2006-2007.",
+         "limites": [comun_s, "Censos 2011/2021 por edad de la persona de referencia: no localizados en Tempus (ver fuentes_fallidas); descomposición censal no posible.", "Periodo 2002-2007 no disponible: EPA 65944 empieza en 2006; se informa 2006-2007.",
                      f"Diferencia relativa padrón CSV frente a panel_prov_a (2022): {dif_panel:.4%}"]},
         {"id": "M2-H2", "enunciado_neutro": "Inmigración bruta desde el extranjero frente a la variación de población extranjera (dos fuentes).",
          "capa": "C1", "magnitud": fl.round(0).to_dict("records"), "unidad": "personas", "intervalo": "INE frente a Eurostat",
@@ -347,15 +355,15 @@ def escribe_json(nac, lat, fl, calib, dif_panel, corr, tops):
          "intervalo": [round(float(j.min())), round(float(j.max()))], "fuentes": ["EPA 65944", "Padrón INE", "ECP 60131"],
          "supuestos": ["Contrafactual: la tasa de jefatura por edad de la referencia aplica en 2025 a la población de 2025",
                        "Referencia 2004-2007 sustituida por 2006-2007 (EPA 65944 desde 2006)"],
-         "limites": [comun_s, "Los tramos 16-34 y 35-44 solo salen de la vía EPA; la vía padrón usa 20-34 y 35-64.",
+         "limites": ["Resultado principal: no hay latente neta en el conjunto de edades (16-34 positiva, 35-44 negativa).", comun_s, "Los tramos 16-34 y 35-44 solo salen de la vía EPA; la vía padrón usa 20-34 y 35-64.",
                      "Una cota con supuesto contrafactual; no es déficit ni demanda a cualquier precio."]},
     ]
     json.dump(hechos, open(OUT / "hechos.json", "w"), ensure_ascii=False, indent=1)
-    res = {"rama": "M2", "pregunta": "¿Por qué se crean tantos hogares?", "capa": "C1 (descomposición) y C2 (demanda latente)",
+    res = {"rama": "M2", "pregunta": "¿Por qué se crean tantos hogares?", "capa": "ΔH total C1 (si coinciden fuentes); componentes C4; latente C2",
            "datos": ["ine_v2_padron_prov_edad_nac.csv", "panel_prov_a (contraste)", "pa_aux/ine_t65944.json", "ine_hogares_60131.csv",
                      "ine_epa_hogares.csv", "ine_v2_migraciones_prov.csv", "eurostat_inmigracion_anual.csv"],
            "N": int(len(n)), "metodo": "Shapley sobre 4 factores (tamaño nativos, tamaño extranjeros, estructura por edad, tasa de jefatura)",
-           "estimacion": desc, "ic95": None, "p_ajustado": None, "nivel_evidencia": "DESCRIPTIVO (C1 hechos); latente: cota C2",
+           "estimacion": desc, "ic95": None, "p_ajustado": None, "nivel_evidencia": "ΔH total: C1 donde coinciden las fuentes; componentes (a)(b)(c): C4 (jefatura de fuente única, EPA); latente: cota C2",
            "diagnosticos": {"dif_rel_padron_vs_panel_2022": dif_panel, "corr_dH_obs_modelo_prov_2021_2025": corr,
                             "top3_provincias": tops, "latente_total_rango": [round(float(tot.min())), round(float(tot.max()))]},
            "fuera_muestra": {"modelo": "no aplica (identidad contable)", "rmse": None, "dm_vs_ar4": None},

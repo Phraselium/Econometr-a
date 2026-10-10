@@ -387,6 +387,34 @@ cod_prov,provincia,periodo,ruta_hogares,delta_hogares,fuente_altas,protegida,baj
 14,Córdoba,2021-2025,Censo anual,-1716.4944,MIVAU fin de obra (bruto),sin,0.1000,-1656.1000,-60.3944,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 14,Córdoba,2021-2025,Censo anual,-1716.4944,MIVAU fin de obra (bruto),sin,0.2000,-3312.2000,1595.7056,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 14,Córdoba,2021-2025,Censo anual,-1716.4944,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,7946.0000,-9662.4944,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+15,"Coruña, A",2012-2025,Censo+ECP,30970.0000,MIVAU fin de obra (bruto),con,0.0000,0.0000,30970.0000,Censos 2011-2021 + ECP 2021T4-2025T4
+15,"Coruña, A",2012-2025,Censo+ECP,30970.0000,MIVAU fin de obra (bruto),con,0.1000,-9055.1440,40025.1440,Censos 2011-2021 + ECP 2021T4-2025T4
+15,"Coruña, A",2012-2025,Censo+ECP,30970.0000,MIVAU fin de obra (bruto),con,0.2000,-18110.2880,49080.2880,Censos 2011-2021 + ECP 2021T4-2025T4
+15,"Coruña, A",2012-2025,Censo+ECP,30970.0000,MIVAU fin de obra (bruto),sin,0.0000,0.0000,30970.0000,Censos 2011-2021 + ECP 2021T4-2025T4
+15,"Coruña, A",2012-2025,Censo+ECP,30970.0000,MIVAU fin de obra (bruto),sin,0.1000,-9055.1440,40025.1440,Censos 2011-2021 + ECP 2021T4-2025T4
+15,"Coruña, A",2012-2025,Censo+ECP,30970.0000,MIVAU fin de obra (bruto),sin,0.2000,-18110.2880,49080.2880,Censos 2011-2021 + ECP 2021T4-2025T4
+15,"Coruña, A",2012-2025,Censo+ECP,30970.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,26521.0000,4449.0000,Censos 2011-2021 + ECP 2021T4-2025T4
+15,"Coruña, A",2012-2025,Censo+Censo anual,19116.2842,MIVAU fin de obra (bruto),con,0.0000,0.0000,19116.2842,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+15,"Coruña, A",2012-2025,Censo+Censo anual,19116.2842,MIVAU fin de obra (bruto),con,0.1000,-8408.3480,27524.6322,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+15,"Coruña, A",2012-2025,Censo+Censo anual,19116.2842,MIVAU fin de obra (bruto),con,0.2000,-16816.6960,35932.9802,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+15,"Coruña, A",2012-2025,Censo+Censo anual,19116.2842,MIVAU fin de obra (bruto),sin,0.0000,0.0000,19116.2842,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+15,"Coruña, A",2012-2025,Censo+Censo anual,19116.2842,MIVAU fin de obra (bruto),sin,0.1000,-8408.3480,27524.6322,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+15,"Coruña, A",2012-2025,Censo+Censo anual,19116.2842,MIVAU fin de obra (bruto),sin,0.2000,-16816.6960,35932.9802,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+15,"Coruña, A",2012-2025,Censo+Censo anual,19116.2842,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,24245.0000,-5128.7158,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+15,"Coruña, A",2021-2025,ECP,21752.0000,MIVAU fin de obra (bruto),con,0.0000,0.0000,21752.0000,ECP 2021T1-2025T4
+15,"Coruña, A",2021-2025,ECP,21752.0000,MIVAU fin de obra (bruto),con,0.1000,-3434.8050,25186.8050,ECP 2021T1-2025T4
+15,"Coruña, A",2021-2025,ECP,21752.0000,MIVAU fin de obra (bruto),con,0.2000,-6869.6100,28621.6100,ECP 2021T1-2025T4
+15,"Coruña, A",2021-2025,ECP,21752.0000,MIVAU fin de obra (bruto),sin,0.0000,0.0000,21752.0000,ECP 2021T1-2025T4
+15,"Coruña, A",2021-2025,ECP,21752.0000,MIVAU fin de obra (bruto),sin,0.1000,-3434.8050,25186.8050,ECP 2021T1-2025T4
+15,"Coruña, A",2021-2025,ECP,21752.0000,MIVAU fin de obra (bruto),sin,0.2000,-6869.6100,28621.6100,ECP 2021T1-2025T4
+15,"Coruña, A",2021-2025,ECP,21752.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,11787.0000,9965.0000,ECP 2021T1-2025T4
+15,"Coruña, A",2021-2025,Censo anual,6118.2842,MIVAU fin de obra (bruto),con,0.0000,0.0000,6118.2842,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+15,"Coruña, A",2021-2025,Censo anual,6118.2842,MIVAU fin de obra (bruto),con,0.1000,-2747.8440,8866.1282,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+15,"Coruña, A",2021-2025,Censo anual,6118.2842,MIVAU fin de obra (bruto),con,0.2000,-5495.6880,11613.9722,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+15,"Coruña, A",2021-2025,Censo anual,6118.2842,MIVAU fin de obra (bruto),sin,0.0000,0.0000,6118.2842,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+15,"Coruña, A",2021-2025,Censo anual,6118.2842,MIVAU fin de obra (bruto),sin,0.1000,-2747.8440,8866.1282,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+15,"Coruña, A",2021-2025,Censo anual,6118.2842,MIVAU fin de obra (bruto),sin,0.2000,-5495.6880,11613.9722,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+15,"Coruña, A",2021-2025,Censo anual,6118.2842,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,9511.0000,-3392.7158,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 16,Cuenca,2012-2025,Censo+ECP,308.0000,MIVAU fin de obra (bruto),con,0.0000,0.0000,308.0000,Censos 2011-2021 + ECP 2021T4-2025T4
 16,Cuenca,2012-2025,Censo+ECP,308.0000,MIVAU fin de obra (bruto),con,0.1000,-2192.6800,2500.6800,Censos 2011-2021 + ECP 2021T4-2025T4
 16,Cuenca,2012-2025,Censo+ECP,308.0000,MIVAU fin de obra (bruto),con,0.2000,-4385.3600,4693.3600,Censos 2011-2021 + ECP 2021T4-2025T4
@@ -911,6 +939,34 @@ cod_prov,provincia,periodo,ruta_hogares,delta_hogares,fuente_altas,protegida,baj
 34,Palencia,2021-2025,Censo anual,-190.7002,MIVAU fin de obra (bruto),sin,0.1000,-465.7240,275.0238,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 34,Palencia,2021-2025,Censo anual,-190.7002,MIVAU fin de obra (bruto),sin,0.2000,-931.4480,740.7478,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 34,Palencia,2021-2025,Censo anual,-190.7002,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,-155.0000,-35.7002,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+35,"Palmas, Las",2012-2025,Censo+ECP,35494.0000,MIVAU fin de obra (bruto),con,0.0000,0.0000,35494.0000,Censos 2011-2021 + ECP 2021T4-2025T4
+35,"Palmas, Las",2012-2025,Censo+ECP,35494.0000,MIVAU fin de obra (bruto),con,0.1000,-7450.6180,42944.6180,Censos 2011-2021 + ECP 2021T4-2025T4
+35,"Palmas, Las",2012-2025,Censo+ECP,35494.0000,MIVAU fin de obra (bruto),con,0.2000,-14901.2360,50395.2360,Censos 2011-2021 + ECP 2021T4-2025T4
+35,"Palmas, Las",2012-2025,Censo+ECP,35494.0000,MIVAU fin de obra (bruto),sin,0.0000,0.0000,35494.0000,Censos 2011-2021 + ECP 2021T4-2025T4
+35,"Palmas, Las",2012-2025,Censo+ECP,35494.0000,MIVAU fin de obra (bruto),sin,0.1000,-7450.6180,42944.6180,Censos 2011-2021 + ECP 2021T4-2025T4
+35,"Palmas, Las",2012-2025,Censo+ECP,35494.0000,MIVAU fin de obra (bruto),sin,0.2000,-14901.2360,50395.2360,Censos 2011-2021 + ECP 2021T4-2025T4
+35,"Palmas, Las",2012-2025,Censo+ECP,35494.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,42938.0000,-7444.0000,Censos 2011-2021 + ECP 2021T4-2025T4
+35,"Palmas, Las",2012-2025,Censo+Censo anual,28581.8128,MIVAU fin de obra (bruto),con,0.0000,0.0000,28581.8128,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+35,"Palmas, Las",2012-2025,Censo+Censo anual,28581.8128,MIVAU fin de obra (bruto),con,0.1000,-6918.4310,35500.2438,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+35,"Palmas, Las",2012-2025,Censo+Censo anual,28581.8128,MIVAU fin de obra (bruto),con,0.2000,-13836.8620,42418.6748,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+35,"Palmas, Las",2012-2025,Censo+Censo anual,28581.8128,MIVAU fin de obra (bruto),sin,0.0000,0.0000,28581.8128,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+35,"Palmas, Las",2012-2025,Censo+Censo anual,28581.8128,MIVAU fin de obra (bruto),sin,0.1000,-6918.4310,35500.2438,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+35,"Palmas, Las",2012-2025,Censo+Censo anual,28581.8128,MIVAU fin de obra (bruto),sin,0.2000,-13836.8620,42418.6748,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+35,"Palmas, Las",2012-2025,Censo+Censo anual,28581.8128,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,39652.0000,-11070.1872,Censo 2011 (viv. principales) y Censo anual 1-ene-2025 / tamaño medio 2021 (supuesto)
+35,"Palmas, Las",2021-2025,ECP,26461.0000,MIVAU fin de obra (bruto),con,0.0000,0.0000,26461.0000,ECP 2021T1-2025T4
+35,"Palmas, Las",2021-2025,ECP,26461.0000,MIVAU fin de obra (bruto),con,0.1000,-2756.1850,29217.1850,ECP 2021T1-2025T4
+35,"Palmas, Las",2021-2025,ECP,26461.0000,MIVAU fin de obra (bruto),con,0.2000,-5512.3700,31973.3700,ECP 2021T1-2025T4
+35,"Palmas, Las",2021-2025,ECP,26461.0000,MIVAU fin de obra (bruto),sin,0.0000,0.0000,26461.0000,ECP 2021T1-2025T4
+35,"Palmas, Las",2021-2025,ECP,26461.0000,MIVAU fin de obra (bruto),sin,0.1000,-2756.1850,29217.1850,ECP 2021T1-2025T4
+35,"Palmas, Las",2021-2025,ECP,26461.0000,MIVAU fin de obra (bruto),sin,0.2000,-5512.3700,31973.3700,ECP 2021T1-2025T4
+35,"Palmas, Las",2021-2025,ECP,26461.0000,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,14396.0000,12065.0000,ECP 2021T1-2025T4
+35,"Palmas, Las",2021-2025,Censo anual,15021.8128,MIVAU fin de obra (bruto),con,0.0000,0.0000,15021.8128,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+35,"Palmas, Las",2021-2025,Censo anual,15021.8128,MIVAU fin de obra (bruto),con,0.1000,-2204.9480,17226.7608,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+35,"Palmas, Las",2021-2025,Censo anual,15021.8128,MIVAU fin de obra (bruto),con,0.2000,-4409.8960,19431.7088,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+35,"Palmas, Las",2021-2025,Censo anual,15021.8128,MIVAU fin de obra (bruto),sin,0.0000,0.0000,15021.8128,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+35,"Palmas, Las",2021-2025,Censo anual,15021.8128,MIVAU fin de obra (bruto),sin,0.1000,-2204.9480,17226.7608,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+35,"Palmas, Las",2021-2025,Censo anual,15021.8128,MIVAU fin de obra (bruto),sin,0.2000,-4409.8960,19431.7088,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
+35,"Palmas, Las",2021-2025,Censo anual,15021.8128,"Catastro (Δ unidades urbanas residenciales, neto)",incluida,,11110.0000,3911.8128,Censo anual 1-ene-2021 a 1-ene-2025; hogares = personas/tamaño medio Censo 2021 (supuesto)
 36,Pontevedra,2012-2025,Censo+ECP,27502.0000,MIVAU fin de obra (bruto),con,0.0000,0.0000,27502.0000,Censos 2011-2021 + ECP 2021T4-2025T4
 36,Pontevedra,2012-2025,Censo+ECP,27502.0000,MIVAU fin de obra (bruto),con,0.1000,-6845.6920,34347.6920,Censos 2011-2021 + ECP 2021T4-2025T4
 36,Pontevedra,2012-2025,Censo+ECP,27502.0000,MIVAU fin de obra (bruto),con,0.2000,-13691.3840,41193.3840,Censos 2011-2021 + ECP 2021T4-2025T4

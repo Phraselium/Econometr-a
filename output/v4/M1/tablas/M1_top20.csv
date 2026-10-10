@@ -12,33 +12,33 @@ provincia,2012-2025,10,11,Cádiz,-15527.9,36896.1,58629.2,C4
 provincia,2012-2025,11,38,Santa Cruz de Tenerife,-3614.1,36775.1,49301.6,C4
 provincia,2012-2025,12,43,Tarragona,4111.9,36580.5,50891.2,C4
 provincia,2012-2025,13,18,Granada,-10379.2,35912.1,53753.5,C4
-provincia,2012-2025,14,45,Toledo,-1605.3,33329.1,44405.6,C4
-provincia,2012-2025,15,48,Bizkaia,19249.1,31472.1,44763.5,C4
-provincia,2012-2025,16,17,Girona,10509.0,28106.8,39363.4,C4
-provincia,2012-2025,17,36,Pontevedra,-7382.3,25971.7,41193.4,C4
-provincia,2012-2025,18,12,Castellón/Castelló,4162.3,24680.0,34989.4,C4
-provincia,2012-2025,19,31,Navarra,16183.2,22204.8,28801.4,C4
-provincia,2012-2025,20,20,Gipuzkoa,15014.8,21975.2,29591.9,C4
+provincia,2012-2025,14,35,"Palmas, Las",-11070.2,35497.1,50395.2,C4
+provincia,2012-2025,15,45,Toledo,-1605.3,33329.1,44405.6,C4
+provincia,2012-2025,16,48,Bizkaia,19249.1,31472.1,44763.5,C4
+provincia,2012-2025,17,15,"Coruña, A",-5128.7,29247.3,49080.3,C4
+provincia,2012-2025,18,17,Girona,10509.0,28106.8,39363.4,C4
+provincia,2012-2025,19,36,Pontevedra,-7382.3,25971.7,41193.4,C4
+provincia,2012-2025,20,12,Castellón/Castelló,4162.3,24680.0,34989.4,C4
 municipio,2012-2025,1,30030,Murcia,,13038.4,,C4
 municipio,2012-2025,2,29069,Marbella,,8166.6,,C4
 municipio,2012-2025,3,04079,Roquetas de Mar,,6888.3,,C4
 municipio,2012-2025,4,03014,Alicante/Alacant,,6458.4,,C4
 municipio,2012-2025,5,03066,Elda,,6100.4,,C4
 municipio,2012-2025,6,17079,Girona,,5882.1,,C4
-municipio,2012-2025,7,12040,Castelló de la Plana,,5191.8,,C4
-municipio,2012-2025,8,29025,Benalmádena,,5029.1,,C4
-municipio,2012-2025,9,29038,Cártama,,4864.4,,C4
-municipio,2012-2025,10,08101,Hospitalet de Llobregat (L'),,4795.6,,C4
-municipio,2012-2025,11,30027,Molina de Segura,,4684.3,,C4
-municipio,2012-2025,12,45121,Ocaña,,4198.6,,C4
-municipio,2012-2025,13,29091,Torrox,,4181.5,,C4
-municipio,2012-2025,14,29082,Rincón de la Victoria,,3864.7,,C4
-municipio,2012-2025,15,03031,Benidorm,,3776.9,,C4
-municipio,2012-2025,16,46250,València,,3731.6,,C4
-municipio,2012-2025,17,11015,Chiclana de la Frontera,,3726.1,,C4
-municipio,2012-2025,18,18140,Motril,,3703.0,,C4
-municipio,2012-2025,19,07024,Formentera,,3526.4,,C4
-municipio,2012-2025,20,46111,Chiva,,3526.2,,C4
+municipio,2012-2025,7,04902,Ejido (El),,5430.1,,C4
+municipio,2012-2025,8,12040,Castelló de la Plana,,5191.8,,C4
+municipio,2012-2025,9,29025,Benalmádena,,5029.1,,C4
+municipio,2012-2025,10,29038,Cártama,,4864.4,,C4
+municipio,2012-2025,11,08101,Hospitalet de Llobregat (L'),,4795.6,,C4
+municipio,2012-2025,12,30027,Molina de Segura,,4684.3,,C4
+municipio,2012-2025,13,45121,Ocaña,,4198.6,,C4
+municipio,2012-2025,14,29091,Torrox,,4181.5,,C4
+municipio,2012-2025,15,29082,Rincón de la Victoria,,3864.7,,C4
+municipio,2012-2025,16,03031,Benidorm,,3776.9,,C4
+municipio,2012-2025,17,46250,València,,3731.6,,C4
+municipio,2012-2025,18,11015,Chiclana de la Frontera,,3726.1,,C4
+municipio,2012-2025,19,18140,Motril,,3703.0,,C4
+municipio,2012-2025,20,07024,Formentera,,3526.4,,C4
 provincia,2021-2025,1,28,Madrid,72667.8,164340.5,221774.4,C1
 provincia,2021-2025,2,08,Barcelona,56834.4,114899.6,157638.5,C1
 provincia,2021-2025,3,46,Valencia/València,48456.4,76758.8,98953.1,C1
@@ -50,15 +50,15 @@ provincia,2021-2025,8,43,Tarragona,15362.9,25085.8,37715.8,C1
 provincia,2021-2025,9,17,Girona,13952.9,20367.4,28846.2,C1
 provincia,2021-2025,10,45,Toledo,12488.7,19578.0,29089.8,C1
 provincia,2021-2025,11,12,Castellón/Castelló,12250.3,18899.5,26501.7,C1
-provincia,2021-2025,12,38,Santa Cruz de Tenerife,7714.9,18306.7,28017.6,C1
-provincia,2021-2025,13,04,Almería,11003.2,17912.1,28467.6,C1
-provincia,2021-2025,14,41,Sevilla,-6838.7,16863.2,48534.0,C4
-provincia,2021-2025,15,50,Zaragoza,3806.2,15536.3,29984.0,C1
-provincia,2021-2025,16,48,Bizkaia,5668.1,15025.9,25497.0,C4
-provincia,2021-2025,17,18,Granada,669.8,14754.7,31168.9,C1
-provincia,2021-2025,18,31,Navarra,8449.2,13430.0,19073.0,C4
-provincia,2021-2025,19,11,Cádiz,-6688.9,10684.8,32681.1,C4
-provincia,2021-2025,20,19,Guadalajara,5140.9,8919.5,11760.8,C1
+provincia,2021-2025,12,35,"Palmas, Las",3911.8,18329.2,31973.4,C1
+provincia,2021-2025,13,38,Santa Cruz de Tenerife,7714.9,18306.7,28017.6,C1
+provincia,2021-2025,14,04,Almería,11003.2,17912.1,28467.6,C1
+provincia,2021-2025,15,41,Sevilla,-6838.7,16863.2,48534.0,C4
+provincia,2021-2025,16,50,Zaragoza,3806.2,15536.3,29984.0,C1
+provincia,2021-2025,17,48,Bizkaia,5668.1,15025.9,25497.0,C4
+provincia,2021-2025,18,18,Granada,669.8,14754.7,31168.9,C1
+provincia,2021-2025,19,31,Navarra,8449.2,13430.0,19073.0,C4
+provincia,2021-2025,20,15,"Coruña, A",-3392.7,10789.5,28621.6,C4
 municipio,2021-2025,1,28079,Madrid,,51350.2,,C4
 municipio,2021-2025,2,08019,Barcelona,,23434.2,,C4
 municipio,2021-2025,3,46250,València,,13047.6,,C4

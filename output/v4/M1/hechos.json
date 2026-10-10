@@ -1,13 +1,13 @@
 [
   {
     "id": "M1-H-nacional-2012-2025",
-    "enunciado_neutro": "Suma provincial del déficit contable (Δ hogares − altas) 2012-2025, muestra común de 46 provincias",
+    "enunciado_neutro": "Suma provincial del déficit contable (Δ hogares − altas) 2012-2025, muestra común de 48 provincias",
     "capa": "C4",
-    "magnitud": 1285931.5908272117,
+    "magnitud": 1350676.028844073,
     "unidad": "viviendas",
     "intervalo": [
-      -229590.2283455768,
-      1899499.96
+      -245789.13131185411,
+      1998975.484
     ],
     "fuentes": [
       "Censos 2011/2021 + ECP",
@@ -51,13 +51,13 @@
   },
   {
     "id": "M1-H-nacional-2021-2025",
-    "enunciado_neutro": "Suma provincial del déficit contable (Δ hogares − altas) 2021-2025, muestra común de 46 provincias",
+    "enunciado_neutro": "Suma provincial del déficit contable (Δ hogares − altas) 2021-2025, muestra común de 48 provincias",
     "capa": "C1",
-    "magnitud": 768859.7516544231,
+    "magnitud": 797429.0366881457,
     "unidad": "viviendas",
     "intervalo": [
-      287350.77165442304,
-      1307401.3
+      287869.8686881457,
+      1367996.28
     ],
     "fuentes": [
       "ECP INE",
@@ -100,9 +100,9 @@
   },
   {
     "id": "M1-H-concentracion-provincia-2012-2025",
-    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 6 y 16 (mediana)",
+    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 6 y 18 (mediana)",
     "capa": "C4",
-    "magnitud": 16,
+    "magnitud": 18,
     "unidad": "unidades (80 %)",
     "intervalo": [
       null,
@@ -120,9 +120,9 @@
   },
   {
     "id": "M1-H-concentracion-provincia-2012-2025",
-    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 3-7 y 6-19 (rango entre combinaciones)",
+    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 3-7 y 6-21 (rango entre combinaciones)",
     "capa": "C4",
-    "magnitud": "6-19",
+    "magnitud": "6-21",
     "unidad": "unidades (80 %)",
     "intervalo": [
       null,
@@ -140,9 +140,9 @@
   },
   {
     "id": "M1-H-concentracion-municipio-2012-2025",
-    "enunciado_neutro": "Unidades (municipio) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 42 y 128 (Catastro, fuente única)",
+    "enunciado_neutro": "Unidades (municipio) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 45 y 135 (Catastro, fuente única)",
     "capa": "C4",
-    "magnitud": 128,
+    "magnitud": 135,
     "unidad": "unidades (80 %)",
     "intervalo": [
       null,
@@ -160,9 +160,9 @@
   },
   {
     "id": "M1-H-concentracion-provincia-2021-2025",
-    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2021-2025: 5 y 15 (mediana)",
+    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2021-2025: 5 y 17 (mediana)",
     "capa": "C1",
-    "magnitud": 15,
+    "magnitud": 17,
     "unidad": "unidades (80 %)",
     "intervalo": [
       null,
@@ -180,9 +180,9 @@
   },
   {
     "id": "M1-H-concentracion-provincia-2021-2025",
-    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2021-2025: 3-6 y 9-20 (rango entre combinaciones)",
+    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2021-2025: 4-7 y 9-21 (rango entre combinaciones)",
     "capa": "C1",
-    "magnitud": "9-20",
+    "magnitud": "9-21",
     "unidad": "unidades (80 %)",
     "intervalo": [
       null,
@@ -225,8 +225,8 @@
     "magnitud": 7114.745989694908,
     "unidad": "viviendas",
     "intervalo": [
-      -0.0,
-      398640.7255845842
+      0.0,
+      414839.6285508615
     ],
     "fuentes": [
       "como arriba"
@@ -240,9 +240,9 @@
   },
   {
     "id": "M1-H-excedente-municipio-2012-2025",
-    "enunciado_neutro": "302 municipios con déficit negativo (altas > Δ hogares) 2012-2025. suma 297.076 viviendas",
+    "enunciado_neutro": "334 municipios con déficit negativo (altas > Δ hogares) 2012-2025. suma 326.088 viviendas",
     "capa": "C4",
-    "magnitud": 297075.9893192678,
+    "magnitud": 326087.8913977427,
     "unidad": "viviendas",
     "intervalo": [
       null,
@@ -260,13 +260,13 @@
   },
   {
     "id": "M1-H-excedente-provincia-2021-2025",
-    "enunciado_neutro": "0 provincias con déficit negativo (altas > Δ hogares) 2021-2025. suma -0 viviendas",
+    "enunciado_neutro": "0 provincias con déficit negativo (altas > Δ hogares) 2021-2025. suma 0 viviendas",
     "capa": "C1",
-    "magnitud": -0.0,
+    "magnitud": 0.0,
     "unidad": "viviendas",
     "intervalo": [
-      -0.0,
-      66236.5283202405
+      0.0,
+      69629.24410808901
     ],
     "fuentes": [
       "como arriba"

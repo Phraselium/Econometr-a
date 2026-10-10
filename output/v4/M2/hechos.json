@@ -1,8 +1,133 @@
 [
  {
+  "id": "M2-H0",
+  "enunciado_neutro": "Variación total de hogares por periodo según modelo (EPA corregida), EPA hogares, ECP y Censo.",
+  "capa": {
+   "2006-2007": "C1",
+   "2008-2013": "C1",
+   "2014-2019": "C1",
+   "2020-2025": "C1",
+   "2021-2025": "C1",
+   "2011-2021 (censo)": "C4 (fuentes no coinciden en 15 %)"
+  },
+  "magnitud": [
+   {
+    "periodo": "2006-2007",
+    "dH_modelo_EPA_corregida": 446014.1,
+    "dH_EPA_hogares_corregida": 463250.0,
+    "dH_EPA_hogares_sin_corregir": 463250.0,
+    "dH_ECP_o_censo": NaN,
+    "rango_rel_%": 3.8,
+    "coinciden_15pc": true
+   },
+   {
+    "periodo": "2008-2013",
+    "dH_modelo_EPA_corregida": 1320532.1,
+    "dH_EPA_hogares_corregida": 1144725.0,
+    "dH_EPA_hogares_sin_corregir": 1144725.0,
+    "dH_ECP_o_censo": NaN,
+    "rango_rel_%": 14.3,
+    "coinciden_15pc": true
+   },
+   {
+    "periodo": "2014-2019",
+    "dH_modelo_EPA_corregida": 321542.6,
+    "dH_EPA_hogares_corregida": 367650.0,
+    "dH_EPA_hogares_sin_corregir": 367650.0,
+    "dH_ECP_o_censo": NaN,
+    "rango_rel_%": 13.4,
+    "coinciden_15pc": true
+   },
+   {
+    "periodo": "2020-2025",
+    "dH_modelo_EPA_corregida": 1030588.6,
+    "dH_EPA_hogares_corregida": 1155550.0,
+    "dH_EPA_hogares_sin_corregir": 965625.0,
+    "dH_ECP_o_censo": NaN,
+    "rango_rel_%": 11.4,
+    "coinciden_15pc": true
+   },
+   {
+    "periodo": "2021-2025",
+    "dH_modelo_EPA_corregida": 998114.4,
+    "dH_EPA_hogares_corregida": 1013350.0,
+    "dH_EPA_hogares_sin_corregir": 1013350.0,
+    "dH_ECP_o_censo": 981823.0,
+    "rango_rel_%": 3.2,
+    "coinciden_15pc": true
+   },
+   {
+    "periodo": "2011-2021 (censo)",
+    "dH_modelo_EPA_corregida": 1013453.5,
+    "dH_EPA_hogares_corregida": 1038750.0,
+    "dH_EPA_hogares_sin_corregir": 848825.0,
+    "dH_ECP_o_censo": 455531.0,
+    "rango_rel_%": 69.8,
+    "coinciden_15pc": false
+   }
+  ],
+  "unidad": "hogares",
+  "intervalo": "rango_rel_% en total_dH_fuentes.csv; umbral declarado 15 %",
+  "fuentes": [
+   "EPA hogares (salto 2021 retirado, criterio v1)",
+   "ECP 60131 (2021-2025)",
+   "Censo 2011 (INE 3457) y 2021",
+   "padrón x h EPA"
+  ],
+  "supuestos": [
+   "Corrección de ruptura: nivel 2021 sustituido por la media de 2020 y 2022"
+  ],
+  "limites": [
+   "ECP solo desde 2021; censo solo 2011-2021"
+  ]
+ },
+ {
   "id": "M2-H1",
-  "enunciado_neutro": "Descomposición shapley de la variación de hogares (personas de referencia) en España por periodo.",
-  "capa": "C1",
+  "enunciado_neutro": "Descomposición shapley de la variación de hogares (personas de referencia) en España por periodo, con EPA corregida de la ruptura de 2021.",
+  "capa": "C4 (jefatura de fuente única: EPA)",
+  "sensibilidad_sin_corregir": {
+   "2006-2007": {
+    "dH": 446014,
+    "N_esp": 96021,
+    "N_ext": 166483,
+    "estructura": 75256,
+    "tasa": 108254
+   },
+   "2008-2013": {
+    "dH": 1320532,
+    "N_esp": 415792,
+    "N_ext": -7386,
+    "estructura": 499502,
+    "tasa": 412624
+   },
+   "2014-2019": {
+    "dH": 321543,
+    "N_esp": 100683,
+    "N_ext": 63141,
+    "estructura": 387714,
+    "tasa": -229995
+   },
+   "2020-2025": {
+    "dH": 806485,
+    "N_esp": 56942,
+    "N_ext": 615726,
+    "estructura": 253861,
+    "tasa": -120044
+   },
+   "2021-2025": {
+    "dH": 965804,
+    "N_esp": 88471,
+    "N_ext": 558240,
+    "estructura": 155194,
+    "tasa": 163899
+   }
+  },
+  "k_ruptura_por_grupo": {
+   "0-19": 1.458,
+   "20-34": 1.0807,
+   "35-64": 0.9901,
+   "65+": 1.0375
+  },
   "magnitud": {
    "2006-2007": {
     "dH": 446014,
@@ -38,26 +163,26 @@
     "pct_tasa": -71.5
    },
    "2020-2025": {
-    "dH": 806485,
-    "tamano_nativos": 56942,
-    "tamano_extranjeros": 615726,
-    "estructura": 253861,
-    "tasa": -120044,
-    "pct_tamano_nativos": 7.1,
-    "pct_tamano_extranjeros": 76.3,
-    "pct_estructura": 31.5,
-    "pct_tasa": -14.9
+    "dH": 1030589,
+    "tamano_nativos": 57259,
+    "tamano_extranjeros": 618863,
+    "estructura": 263421,
+    "tasa": 91046,
+    "pct_tamano_nativos": 5.6,
+    "pct_tamano_extranjeros": 60.0,
+    "pct_estructura": 25.6,
+    "pct_tasa": 8.8
    },
    "2021-2025": {
-    "dH": 965804,
-    "tamano_nativos": 88471,
-    "tamano_extranjeros": 558240,
-    "estructura": 155194,
-    "tasa": 163899,
-    "pct_tamano_nativos": 9.2,
-    "pct_tamano_extranjeros": 57.8,
-    "pct_estructura": 16.1,
-    "pct_tasa": 17.0
+    "dH": 998114,
+    "tamano_nativos": 89437,
+    "tamano_extranjeros": 563493,
+    "estructura": 173495,
+    "tasa": 171690,
+    "pct_tamano_nativos": 9.0,
+    "pct_tamano_extranjeros": 56.5,
+    "pct_estructura": 17.4,
+    "pct_tasa": 17.2
    }
   },
   "unidad": "hogares y % de ΔH",
@@ -74,6 +199,7 @@
   ],
   "limites": [
    "EPA con ruptura de serie hacia 2021 (marco censal); la tasa 65+ cae en 2025. Jefatura por edad solo de EPA (una fuente) y sin desglose por nacionalidad; tasa h común a nativos y extranjeros.",
+   "Censos 2011/2021 por edad de la persona de referencia: no localizados en Tempus (ver fuentes_fallidas); descomposición censal no posible.",
    "Periodo 2002-2007 no disponible: EPA 65944 empieza en 2006; se informa 2006-2007.",
    "Diferencia relativa padrón CSV frente a panel_prov_a (2022): 0.0000%"
   ]
@@ -133,23 +259,23 @@
   "enunciado_neutro": "Hogares adicionales en 2025 si rigieran las tasas de jefatura por edad de 2008 (y media 2006-2007).",
   "capa": "C2",
   "magnitud": {
-   "EPA 65944 (población EPA 2025)|2008|16-34": 221967,
-   "EPA 65944 (población EPA 2025)|2008|35-44": -810640,
-   "EPA 65944 (población EPA 2025)|2008|total": -43489,
-   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|20-34": 357231,
-   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|35-64": -1104668,
-   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|total": -112274,
-   "EPA 65944 (población EPA 2025)|media 2006-2007|16-34": 177677,
-   "EPA 65944 (población EPA 2025)|media 2006-2007|35-44": -834738,
-   "EPA 65944 (población EPA 2025)|media 2006-2007|total": -158056,
-   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|20-34": 279124,
-   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|35-64": -1187760,
-   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|total": -263915
+   "EPA 65944 (población EPA 2025)|2008|16-34": 70062,
+   "EPA 65944 (población EPA 2025)|2008|35-44": -771627,
+   "EPA 65944 (población EPA 2025)|2008|total": -267342,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|20-34": 211416,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|35-64": -969714,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|total": -329145,
+   "EPA 65944 (población EPA 2025)|media 2006-2007|16-34": 25773,
+   "EPA 65944 (población EPA 2025)|media 2006-2007|35-44": -795725,
+   "EPA 65944 (población EPA 2025)|media 2006-2007|total": -381910,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|20-34": 134183,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|35-64": -1051877,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|total": -479091
   },
   "unidad": "hogares",
   "intervalo": [
-   177677,
-   357231
+   25773,
+   211416
   ],
   "fuentes": [
    "EPA 65944",
@@ -161,6 +287,7 @@
    "Referencia 2004-2007 sustituida por 2006-2007 (EPA 65944 desde 2006)"
   ],
   "limites": [
+   "Resultado principal: no hay latente neta en el conjunto de edades (16-34 positiva, 35-44 negativa).",
    "EPA con ruptura de serie hacia 2021 (marco censal); la tasa 65+ cae en 2025. Jefatura por edad solo de EPA (una fuente) y sin desglose por nacionalidad; tasa h común a nativos y extranjeros.",
    "Los tramos 16-34 y 35-44 solo salen de la vía EPA; la vía padrón usa 20-34 y 35-64.",
    "Una cota con supuesto contrafactual; no es déficit ni demanda a cualquier precio."

@@ -1,7 +1,7 @@
 {
  "rama": "M2",
  "pregunta": "¿Por qué se crean tantos hogares?",
- "capa": "C1 (descomposición) y C2 (demanda latente)",
+ "capa": "ΔH total C1 (si coinciden fuentes); componentes C4; latente C2",
  "datos": [
   "ine_v2_padron_prov_edad_nac.csv",
   "panel_prov_a (contraste)",
@@ -48,34 +48,34 @@
    "pct_tasa": -71.5
   },
   "2020-2025": {
-   "dH": 806485,
-   "tamano_nativos": 56942,
-   "tamano_extranjeros": 615726,
-   "estructura": 253861,
-   "tasa": -120044,
-   "pct_tamano_nativos": 7.1,
-   "pct_tamano_extranjeros": 76.3,
-   "pct_estructura": 31.5,
-   "pct_tasa": -14.9
+   "dH": 1030589,
+   "tamano_nativos": 57259,
+   "tamano_extranjeros": 618863,
+   "estructura": 263421,
+   "tasa": 91046,
+   "pct_tamano_nativos": 5.6,
+   "pct_tamano_extranjeros": 60.0,
+   "pct_estructura": 25.6,
+   "pct_tasa": 8.8
   },
   "2021-2025": {
-   "dH": 965804,
-   "tamano_nativos": 88471,
-   "tamano_extranjeros": 558240,
-   "estructura": 155194,
-   "tasa": 163899,
-   "pct_tamano_nativos": 9.2,
-   "pct_tamano_extranjeros": 57.8,
-   "pct_estructura": 16.1,
-   "pct_tasa": 17.0
+   "dH": 998114,
+   "tamano_nativos": 89437,
+   "tamano_extranjeros": 563493,
+   "estructura": 173495,
+   "tasa": 171690,
+   "pct_tamano_nativos": 9.0,
+   "pct_tamano_extranjeros": 56.5,
+   "pct_estructura": 17.4,
+   "pct_tasa": 17.2
   }
  },
  "ic95": null,
  "p_ajustado": null,
- "nivel_evidencia": "DESCRIPTIVO (C1 hechos); latente: cota C2",
+ "nivel_evidencia": "ΔH total: C1 donde coinciden las fuentes; componentes (a)(b)(c): C4 (jefatura de fuente única, EPA); latente: cota C2",
  "diagnosticos": {
   "dif_rel_padron_vs_panel_2022": 0.0,
-  "corr_dH_obs_modelo_prov_2021_2025": 0.9935801141340528,
+  "corr_dH_obs_modelo_prov_2021_2025": 0.9938508142172513,
   "top3_provincias": {
    "2006-2007": {
     "tamano_nativos": [
@@ -255,57 +255,57 @@
     "tamano_nativos": [
      [
       "Madrid",
-      42476
+      42710
      ],
      [
       "Murcia",
-      16750
+      16839
      ],
      [
       "Asturias",
-      -12763
+      -12836
      ]
     ],
     "tamano_extranjeros": [
      [
       "Madrid",
-      103857
+      104418
      ],
      [
       "Barcelona",
-      89308
+      89821
      ],
      [
       "Valencia/València",
-      58074
+      58364
      ]
     ],
     "estructura": [
      [
       "Madrid",
-      27947
+      29647
      ],
      [
       "Barcelona",
-      25207
+      26475
      ],
      [
       "Sevilla",
-      16268
+      16632
      ]
     ],
     "tasa": [
      [
-      "Barcelona",
-      -12529
-     ],
-     [
-      "Asturias",
-      -8013
-     ],
-     [
       "Madrid",
-      -7849
+      21750
+     ],
+     [
+      "Barcelona",
+      13569
+     ],
+     [
+      "Sevilla",
+      6986
      ]
     ]
    },
@@ -313,64 +313,64 @@
     "tamano_nativos": [
      [
       "Madrid",
-      51607
+      52161
      ],
      [
       "Barcelona",
-      14930
+      15098
      ],
      [
       "Murcia",
-      14168
+      14314
      ]
     ],
     "tamano_extranjeros": [
      [
       "Madrid",
-      93471
+      94386
      ],
      [
       "Barcelona",
-      78748
+      79569
      ],
      [
       "Valencia/València",
-      54150
+      54643
      ]
     ],
     "estructura": [
      [
-      "Barcelona",
-      14180
+      "Madrid",
+      17213
      ],
      [
-      "Madrid",
-      13914
+      "Barcelona",
+      16621
      ],
      [
       "Sevilla",
-      11354
+      12028
      ]
     ],
     "tasa": [
      [
       "Madrid",
-      27786
+      29157
      ],
      [
       "Barcelona",
-      21739
+      22841
      ],
      [
       "Valencia/València",
-      9451
+      9896
      ]
     ]
    }
   },
   "latente_total_rango": [
-   -263915,
-   -43489
+   -479091,
+   -267342
   ]
  },
  "fuera_muestra": {

@@ -19,3 +19,8 @@
 - Hecho: extracción Catastro (data/raw/v4/catastro_solares_municipios.csv.gz), brecha precio-coste, multiverso, clasificación en output/v4/M3. Recuentos PROVISIONALES: dependen de M1 (en corrección).
 - Siguiente: reejecutar `python3 src/v4/m3_run.py` cuando M1 esté corregido. Sin fuente de coste en nivel (supuesto 900-1.500).
 - Tokens de subagente M3: aprox. 100.000.
+
+## M4 parque frente a mercado (subagente)
+- Hecho: stock por uso (nacional, 50 provincias, 7 ciudades), tenencia Censo 2021, flujo de personas jurídicas (ETDP), ficha de extranjeros (MIVAU, Notariado, Registradores), Airbnb como robustez, 3 fichas. Salidas en output/v4/M4/; descargas en data/raw/v4.
+- Fallos: ver docs/v4/fuentes_fallidas.md (titulares del Catastro, arrendador de Incasòl).
+- Siguiente: integrar M4 en el informe; si se obtiene una fuente de titularidad, reabrir M4-V2.

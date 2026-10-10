@@ -559,8 +559,8 @@ def fichas(h, ev, pjt, pv, zz):
                       f"({f1(s['pct_vut'])} % del parque 2021). Ratio (vacías + esporádicas) / turísticas: "
                       f"{f1(s['ratio_vacias_esporadico_sobre_vut'])}."),
          "intervalo": "—", "cota": "—", "literatura": "No revisada en esta ficha.",
-         "veredicto": "RESPALDADA",
-         "regla": "Respaldada en el sentido relativo: las vacías y esporádicas suman un orden de magnitud más que las turísticas. «Muchas» no tiene umbral.",
+         "veredicto": "ANALIZADA, NO CONCLUYENTE",
+         "regla": "Hecho descriptivo: las vacías y esporádicas suman un orden de magnitud más que las turísticas. «Muchas» no tiene umbral y la fuente de vacías es única (capa C4), por lo que no cabe veredicto de respaldo.",
          "limites": ("Vacía y esporádica se infieren del consumo eléctrico (INE, experimental); las turísticas son de otra fecha y "
                      "pertenecen al parque principal o no principal (no suman). El registro de la Generalitat Valenciana y el INE difieren "
                      "en turísticas (ver vut_ine_frente_registro_gva.csv). No se estima ningún efecto."),

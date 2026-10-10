@@ -21,7 +21,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | M3-V1 | Hay suelo de sobra para construir. | PARCIALMENTE | C4 |
 | M4-V1 | Los compradores extranjeros encarecen la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C1 |
 | M4-V2 | Las empresas dominan el mercado del alquiler. | NO ANALIZADA: FALTAN DATOS | C4 |
-| M4-V3 | Hay muchas viviendas vacías o de uso esporádico frente a las turísticas. | RESPALDADA | C4 |
+| M4-V3 | Hay muchas viviendas vacías o de uso esporádico frente a las turísticas. | ANALIZADA, NO CONCLUYENTE | C4 |
 
 ## V01 · Viviendas turísticas
 
@@ -309,12 +309,12 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 
 | Campo | Contenido |
 |---|---|
-| Veredicto | **RESPALDADA** |
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C4 |
 | Magnitud | España: 3.828.307 vacías (14,4 % del parque) y 2.517.628 de uso esporádico (9,5 %) en el Censo 2021 (método de consumo eléctrico); 341.001 turísticas en mayo de 2026 (1,3 % del parque 2021). Ratio (vacías + esporádicas) / turísticas: 18,6. |
 | Intervalo | — |
 | Cota | — |
 | Literatura | No revisada en esta ficha. |
-| Regla del veredicto | Respaldada en el sentido relativo: las vacías y esporádicas suman un orden de magnitud más que las turísticas. «Muchas» no tiene umbral. |
+| Regla del veredicto | Hecho descriptivo: las vacías y esporádicas suman un orden de magnitud más que las turísticas. «Muchas» no tiene umbral y la fuente de vacías es única (capa C4), por lo que no cabe veredicto de respaldo. |
 | Límites | Vacía y esporádica se infieren del consumo eléctrico (INE, experimental); las turísticas son de otra fecha y pertenecen al parque principal o no principal (no suman). El registro de la Generalitat Valenciana y el INE difieren en turísticas (ver vut_ine_frente_registro_gva.csv). No se estima ningún efecto. |
 | Evidencia | output/v4/M4/tablas/stock_uso_nacional.csv, output/v4/M4/tablas/stock_uso_provincia.csv, output/v4/M4/tablas/stock_uso_ciudades.csv, output/v4/M4/tablas/vut_ine_frente_registro_gva.csv |

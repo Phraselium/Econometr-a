@@ -11,6 +11,10 @@ FÓRMULAS (propias; sensemakr no está instalado):
   gl = G−1 (clústeres; conservador) y, como referencia, gl = n−K.
 Sin lenguaje causal: son sensibilidades de asociaciones (C4), no identificación.
 """
+import os
+
+for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+    os.environ.setdefault(_v, "1")
 import json
 import sys
 import warnings
@@ -278,8 +282,7 @@ def main():
     r = {"BI": bi()}
     r["BP"] = bp(B=20 if smoke else 200)
     r["BO_H4"] = "no ejecutado (presupuesto del módulo; BK-040 'si cabe')"
-    (OUT / ("smoke_" if smoke else "") / "tablas" / "sens_multiverso.json" if False else OUT / "tablas/sens_multiverso.json").write_text(
-        json.dumps(r, ensure_ascii=False, indent=1, default=float))
+    (OUT / "tablas/sens_multiverso.json").write_text(json.dumps(r, ensure_ascii=False, indent=1, default=float))
     reg.flush()
     print(json.dumps(r, ensure_ascii=False, indent=1, default=float))
 

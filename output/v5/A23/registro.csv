@@ -1,0 +1,13 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+puente,mix_ccaa_importe2015,"Laspeyres CCAA, 2015-2025, 3 fuentes",2015,2025,17,,,,,0.8052886621718225,,INE_IPV=80.5%; MIVAU_tasado=49.6%; Registradores=63.8%
+puente,mix_ccaa_num2015,"Laspeyres CCAA, 2015-2025, 3 fuentes",2015,2025,17,,,,,0.7682482245602724,,INE_IPV=76.8%; MIVAU_tasado=45.3%; Registradores=59.6%
+puente,mix_ccaa_importe2025,"Laspeyres CCAA, 2015-2025, 3 fuentes",2015,2025,17,,,,,0.7995159720873588,,INE_IPV=80.0%; MIVAU_tasado=49.0%; Registradores=63.0%
+puente,mix_ccaa_importe_medio,"Laspeyres CCAA, 2015-2025, 3 fuentes",2015,2025,17,,,,,0.8024023171295909,,INE_IPV=80.2%; MIVAU_tasado=49.3%; Registradores=63.4%
+puente,mix_provincial_reg,Laspeyres provincial Registradores,2015,2025,52,,,,,0.6682776312103798,,66.8% frente a publicado 56.1%
+puente,nueva_usada,Δcuota nueva × prima nueva/usada (Registradores 2025),2015,2025,11,,,,,4.2536503631821435e-05,,Δcuota=0.05 pp; prima=9.2%; efecto=0.00 pp
+puente,puente_total,INE IPV -> mediana núcleo,2015,2025,11,,,,,0.3269921246875105,,INE 79.9% ; núcleo 47.2% ; residuo -30.9 pp
+tri,nucleo_2015_2025,mayor conjunto a <=15 % en nivel con >=2 grupos,2015,2025,4,,,,,0.47205438066465266,,"['MIVAU_tasado', 'Notariado', 'Registradores']; C1=True"
+nuevos,dir_cat,IPVA nuevo + Incasòl 2021-2024,2021,2024,2,,,,,,,"{'IPVA_nuevo': 0.17217375759261366, 'Incasol': 0.16639951332610248, 'IPVA_existente': 0.0749918439987245, 'IPC_alquiler': 0.04788053915767265}"
+nuevos,dir_cv,IPVA nuevo + GVA fianzas 2021-2024,2021,2024,2,,,,,,,"{'IPVA_nuevo': 0.22416971113239612, 'GVA_fianzas': 0.30841121495327095, 'GVA_fianzas_pesos_prov': 0.37813098799299705, 'IPVA_existente': 0.08333177069734946, 'IPC_alquiler': 0.07196071728484066}"
+expl,cuota_nuevos,(T-E)/(N-E) IPVA 2021-2024,2021,2024,4,,,,,,,"{2021: 0.176, 2022: 0.165, 2023: 0.159, 2024: 0.139}"
+expl,tope_contrafactico,E_cf = E2021 * prod(1+HICP),2022,2024,3,,,,,0.07248307170538859,,stock +7.2% adicional si todo se actualizase al HICP

@@ -1,0 +1,172 @@
+{
+ "BI": {
+  "sensibilidad": {
+   "OLS_alq_x": {
+    "b_corto": 0.9649125416479137,
+    "b_largo": 0.7383320494776519,
+    "se_largo": 0.23369760872938297,
+    "t": 3.1593479004426834,
+    "r2_corto": 0.05145541604666204,
+    "r2_largo": 0.07046564081876627,
+    "rmax": 0.09160533306439615,
+    "delta_oster": 2.930338534792453,
+    "beta_star_delta1": 0.48637070074224176,
+    "RV": 0.3637420071666203,
+    "RV_alpha": 0.14989174921237391,
+    "RV_gl_n": 0.1256270720077971,
+    "RV_alpha_gl_n": 0.04947306159651722
+   },
+   "RF_alq_z": {
+    "b_corto": 0.6574600388607875,
+    "b_largo": 0.5729694213868686,
+    "se_largo": 0.1928018572084818,
+    "t": 2.9718044716099463,
+    "r2_corto": 0.052766987109931884,
+    "r2_largo": 0.08616346474561509,
+    "rmax": 0.11201250416929963,
+    "delta_oster": 8.761515137204531,
+    "beta_star_delta1": 0.5075732641681433,
+    "RV": 0.34670132526444475,
+    "RV_alpha": 0.1266309444433553,
+    "RV_gl_n": 0.11864081812182325,
+    "RV_alpha_gl_n": 0.041864242831111516
+   },
+   "RF_dif_z": {
+    "b_corto": 0.8802478653225425,
+    "b_largo": 1.6347981532285625,
+    "se_largo": 0.564979622717975,
+    "t": 2.8935524176322667,
+    "r2_corto": 0.0052321781193794825,
+    "r2_largo": 0.12006675799037936,
+    "rmax": 0.15608678538749318,
+    "delta_oster": -6.907240795044806,
+    "beta_star_delta1": 1.871477053202826,
+    "RV": 0.3394423955784435,
+    "RV_alpha": 0.11673154915885821,
+    "RV_gl_n": 0.11570881262475434,
+    "RV_alpha_gl_n": 0.03867130029433742
+   },
+   "RF_pre_z": {
+    "b_corto": -0.22278782646175518,
+    "b_largo": -1.061828731841694,
+    "se_largo": 0.6047941889720493,
+    "t": -1.7556860684234625,
+    "r2_corto": 0.0003342075975989456,
+    "r2_largo": 0.1365260453638646,
+    "rmax": 0.17748385897302396,
+    "delta_oster": -4.208096140048685,
+    "beta_star_delta1": -1.3141586921142767,
+    "RV": 0.22332885059717955,
+    "RV_alpha": 0.0,
+    "RV_gl_n": 0.07192435648521235,
+    "RV_alpha_gl_n": 0.0
+   },
+   "2SLS_alq_base": {
+    "b": 3.059768888487086,
+    "se": 0.953645113176817,
+    "t": 3.2084984720304117
+   },
+   "2SLS_alq_con_controles": {
+    "b": 3.809772896980188,
+    "se": 1.361363305592908,
+    "t": 2.7984983004378368
+   }
+  },
+  "multiverso": {
+   "n_spec": 80,
+   "signo_base": 1,
+   "coef_base": 3.059768888487086,
+   "prop_mismo_signo": 0.9625,
+   "prop_mismo_signo_sig_nominal": 0.475,
+   "prop_mismo_signo_sig_holm": 0.0375,
+   "rango_b": [
+    -18.36854203971961,
+    12.695421532381625
+   ],
+   "mediana_b": 1.7900093189138726
+  },
+  "multiverso_dif": {
+   "n_spec": 80,
+   "signo_base": 1,
+   "coef_base": 4.096606444914873,
+   "prop_mismo_signo": 0.7125,
+   "prop_mismo_signo_sig_nominal": 0.2875,
+   "prop_mismo_signo_sig_holm": 0.0,
+   "rango_b": [
+    -34.03187286429846,
+    82.76718816530075
+   ],
+   "mediana_b": 3.582187714923939
+  }
+ },
+ "BP": {
+  "sens_H5_colapsada": {
+   "b_corto": 0.019074660731408552,
+   "b_largo": 0.010619246285068539,
+   "se_largo": 0.0072757752044210165,
+   "t": 1.4595346869177475,
+   "r2_corto": 0.20220713952414593,
+   "r2_largo": 0.47823776889997016,
+   "rmax": 0.6217090995699612,
+   "delta_oster": 2.416300495376223,
+   "beta_star_delta1": 0.006224409506534874,
+   "RV": 0.19918078332692307,
+   "RV_alpha": 0.0,
+   "RV_gl_n": 0.19918078332692307,
+   "RV_alpha_gl_n": 0.0,
+   "nota": "versión colapsada (49 provincias, 4 tratadas): ΔY = media ln IPC alquiler 2020Q4-2022Q1 menos 2016Q1-2020Q3, controles 2015; HC1; gl=n-K. NO es el SDiD"
+  },
+  "sens_H6_publicado": {
+   "tau": -0.01166293937763773,
+   "se_placebo": 0.004759675743363219,
+   "t_aprox": -2.450364269856043,
+   "gl_supuesto": 39,
+   "RV": 0.3228740111252447,
+   "RV_alpha": 0.06195870371889006,
+   "nota": "aproximación: t=τ/se_placebo con gl=n_donantes-1; Oster no calculable sin los datos selladas (una evaluación, sin re-acceso)"
+  },
+  "multiverso_H5": {
+   "did": {
+    "n_spec": 72,
+    "tau_base": 0.01907466073140794,
+    "signo_base": 1,
+    "prop_mismo_signo": 0.8611111111111112,
+    "prop_mismo_signo_sig_nominal": 0.5,
+    "prop_mismo_signo_sig_holm": 0.0,
+    "prop_negativo": 0.1388888888888889,
+    "rango_tau": [
+     -0.002913159898140864,
+     0.027089945177959558
+    ]
+   },
+   "sc": {
+    "n_spec": 72,
+    "tau_base": 0.004801742720145589,
+    "signo_base": 1,
+    "prop_mismo_signo": 0.9861111111111112,
+    "prop_mismo_signo_sig_nominal": 0.6805555555555556,
+    "prop_mismo_signo_sig_holm": 0.0,
+    "prop_negativo": 0.013888888888888888,
+    "rango_tau": [
+     -0.0005348845715335591,
+     0.012173963023204592
+    ]
+   },
+   "sdid": {
+    "n_spec": 72,
+    "tau_base": 0.003706725840213625,
+    "signo_base": 1,
+    "prop_mismo_signo": 0.7916666666666666,
+    "prop_mismo_signo_sig_nominal": 0.19444444444444445,
+    "prop_mismo_signo_sig_holm": 0.0,
+    "prop_negativo": 0.20833333333333334,
+    "rango_tau": [
+     -0.0029663698010912983,
+     0.00560866590848246
+    ]
+   }
+  },
+  "B_permutaciones_multiverso": 200
+ },
+ "BO_H4": "no ejecutado (presupuesto del módulo; BK-040 'si cabe')"
+}

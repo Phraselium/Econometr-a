@@ -1,0 +1,8 @@
+paso,descripcion,pp_o_nivel,rango_min_pp,rango_max_pp,capa,supuesto,factor,acumulado_pct
+0,IPV INE publicado (media anual 2025 / 2015),79.90465053521632,,,C1,"Hecho: INE IPV, 4 trimestres por año",hecho,79.90465053521632
+1,Pesos CCAA comunes (importe 2015) aplicados al IPV,0.6242156819659339,,,C2,Laspeyres con pesos de importe 2015 de Registradores; rango por pesos en mix_ccaa_por_fuente.csv,composición geográfica,80.52886621718226
+2,Nueva/usada: cambio de peso × prima de nueva (media de pm2),0.007679230096135914,,,C4,Prima de nueva constante e igual a la de 2025; cuotas ETDP,composición antigüedad,80.53654544727839
+3,Desfase temporal (escritura/tasación/inscripción),0.0,-6.884350398289141,6.254966874401102,C4,Efecto central 0 por construcción; rango = ventana INE desplazada ±2 trimestres,cobertura/periodo,80.53654544727839
+4,"RESIDUO: método (hedónico frente a media/mediana de pm2), calidad, tamaño, cobertura y ruido",-30.94952817176989,,,C4,No descomponible con los datos del repositorio; es lo que falta hasta el núcleo con pesos comunes,residuo,49.587017275508494
+5,Pesos CCAA propios de las fuentes del núcleo (deshacer pesos comunes),-2.3815792090432275,,,C2,Mediana de MIVAU/Notariado/Registradores publicados frente a con pesos comunes (Notariado sin CCAA: sin cambio),composición geográfica,47.20543806646526
+6,"Mediana del núcleo publicada (MIVAU, Notariado, Registradores)",47.20543806646526,,,C1,Cuantía C1 del núcleo en M7,hecho,47.20543806646526

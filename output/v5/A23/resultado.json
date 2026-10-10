@@ -1,0 +1,156 @@
+{
+ "rama": "A23",
+ "pregunta": "A2: ¿por qué el IPV del INE (+80 % en 2015-2025) y el núcleo MIVAU/Notariado/Registradores (+44 % a +56 %) difieren y qué banda triangulada resulta? A3: ¿por qué la renta del stock de contratos sube menos que la de los contratos nuevos y cuánto?",
+ "capa": "C1 (direcciones y bandas con >=2 fuentes independientes); C2 (pesos CCAA, tope legal contrafactual); C4 (residuo del puente, desfase, nueva/usada, rotación, contratos nuevos nacionales)",
+ "datos": "INE IPV (25171/80270), MIVAU valor tasado, Notariado CGN, Registradores opendata y ERI, INE ETDP, INE IPC alquiler, INE IPVA (59005/59058), SERPAVI, Incasòl, GVA fianzas 2020-2026 (nueva descarga), BCE HICP",
+ "N": {
+  "precio_anios": 11,
+  "ccaa": 17,
+  "provincias_registradores": 52,
+  "fianzas_gva_2020_2025": 194188,
+  "ipva_provincias": 48
+ },
+ "metodo": "Puente en log de la variación acumulada de medias anuales 2015-2025 con pesos comunes (Laspeyres, importe 2015); sensibilidad a pesos y al desfase; banda mínimo-máximo y mediana; factor común (1.er componente); descomposición del IPVA en existentes y nuevos; contrafactual de tope legal frente al HICP; rotación = fianzas / contratos SERPAVI.",
+ "estimacion": {
+  "precio": {
+   "INE_IPV_pct": 79.9,
+   "nucleo_pct": [
+    44.2,
+    56.1
+   ],
+   "mediana_nucleo_pct": 47.2,
+   "efecto_pesos_CCAA_en_INE_pp": 0.6,
+   "efecto_nueva_usada_pp": 0.004,
+   "desfase_rango_pp": [
+    -6.9,
+    6.3
+   ],
+   "residuo_pp": -30.9,
+   "registradores_pesos_provincia_pct": 66.8,
+   "variacion_superficie_implicita_registradores_pct": -3.2,
+   "factor_comun_var_explicada_pct": 89.2
+  },
+  "alquiler": {
+   "stock_2015_2024_pct": {
+    "IPC_alquiler": 10.9,
+    "SERPAVI": 43.0,
+    "IPVA_existente": 20.6,
+    "IPVA_total": 22.9
+   },
+   "ipc_2015_2025_pct": 13.6,
+   "nuevo_2021_2024_pct": {
+    "IPVA_nuevo": 19.3,
+    "Incasol": 16.6,
+    "GVA_fianzas": 30.8
+   },
+   "brecha_nuevo_existente_2024_pct": 13.6,
+   "cuota_implicita_nuevos_pct": {
+    "2021": 17.6,
+    "2022": 16.5,
+    "2023": 15.9,
+    "2024": 13.9
+   },
+   "contribuciones_IPVA_total_2021_2024_pts": {
+    "existentes": 7.06,
+    "nuevos": 3.54,
+    "composicion_residuo": -0.38,
+    "total": 10.23
+   },
+   "tope_contrafactico_stock_adicional_pct": 7.2
+  }
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "ASOCIACIÓN / DESCRIPTIVO: conciliación contable, sin identificación causal; sin lenguaje causal",
+ "diagnosticos": {
+  "independencia": "INE IPV y Notariado: un grupo (fuente notarial); MIVAU y Notariado parcialmente independientes; Registradores independiente. IPVA y SERPAVI: un grupo (AEAT-IRPF); IPC alquiler, Incasòl y GVA: grupos propios.",
+  "nucleo_precio": {
+   "fuentes": [
+    "MIVAU_tasado",
+    "Notariado",
+    "Registradores"
+   ],
+   "c1": true,
+   "rango": [
+    0.44222817245119317,
+    0.5612210713431098
+   ]
+  },
+  "banda_precio_total_pct": [
+   44.2,
+   79.9
+  ],
+  "nucleo_stock_alquiler": [
+   "IPC_alquiler",
+   "IPVA_existente",
+   "IPVA_total"
+  ],
+  "dir_c1_nuevos": {
+   "Cataluña": true,
+   "Comunitat Valenciana": true
+  },
+  "cuantia_nuevos_territorial": {
+   "Cataluña": {
+    "nucleo": [
+     "Incasol",
+     "IPVA_nuevo"
+    ],
+    "c1": true,
+    "rango": [
+     0.16639951332610248,
+     0.17217375759261366
+    ]
+   },
+   "Comunitat Valenciana": {
+    "nucleo": [
+     "IPVA_nuevo",
+     "GVA_fianzas"
+    ],
+    "c1": true,
+    "rango": [
+     0.22416971113239612,
+     0.30841121495327095
+    ]
+   }
+  },
+  "ipva_base_2015_coherente": true,
+  "sensibilidad_pesos_ccaa": "ver tablas/mix_ccaa_por_fuente.csv (cuatro juegos de pesos)",
+  "rotacion": {
+   "cat": {
+    "2015": 0.4318923140533836,
+    "2016": 0.4031568040198152,
+    "2017": 0.4165917667924629,
+    "2018": 0.42258322088974465,
+    "2019": 0.3943536672158797,
+    "2020": 0.3196673101642579,
+    "2021": 0.38404384896467725,
+    "2022": 0.34344276368105253,
+    "2023": 0.28640485607344723,
+    "2024": 0.24981564203192147
+   },
+   "cv": {
+    "2020": 0.143286620214515,
+    "2021": 0.15817161218272122,
+    "2022": 0.15799659246638764,
+    "2023": 0.1395162678602169,
+    "2024": 0.13463621147976765
+   }
+  },
+  "tests_y_fdr": "Sin contraste de hipótesis: todas las especificaciones están en registro.csv; Holm/BH no aplica"
+ },
+ "fuera_muestra": {
+  "modelo": "no aplica (conciliación descriptiva, sin predicción)",
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "El residuo del puente de precio (método hedónico frente a media/mediana de pm2, calidad, tamaño, cobertura) no se descompone con los datos del repositorio.",
+  "Los pesos CCAA aumentan la variación de MIVAU y Registradores y casi no cambian el IPV: el mix geográfico NO explica la diferencia INE frente a núcleo, y de hecho la amplía.",
+  "Con pesos provinciales Registradores sube a +66,8 %: el mix geográfico fino empuja a la baja la media publicada de pm2.",
+  "Cuota implícita de contratos nuevos del IPVA 14-18 % (supuesto: índices existente y nuevo en base 2015=100, agregación lineal); rotación observada Incasòl/SERPAVI 25-43 % y GVA/SERPAVI 13-16 %: definiciones distintas, se dan ambas.",
+  "Tope legal 2 % (2022) y 3 % (2023-2024) y fianza = una mensualidad: NO VERIFICADOS en esta sesión; el contrafactual es una cota C2 que supone actualización anual al HICP de todos los contratos.",
+  "Portales (Idealista, Fotocasa): sin cifra incluida (sin descarga verificable); solo serían C4.",
+  "GVA 2026 parcial (excluido de variaciones). Fianzas de Madrid, Euskadi y Baleares: sin datos abiertos localizados.",
+  "IPVA contrato nuevo/existente: AEAT-IRPF, 2021-2024 (48 provincias, sin País Vasco ni Navarra)."
+ ]
+}

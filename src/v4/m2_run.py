@@ -333,20 +333,29 @@ def escribe_json(nac, lat, fl, calib, dif_panel, corr, tops, tc, sens, kq):
     comun_s = ("EPA con ruptura de serie hacia 2021 (marco censal); la tasa 65+ cae en 2025. Jefatura por edad solo de EPA (una fuente) y sin desglose por nacionalidad; "
                "tasa h común a nativos y extranjeros.")
     tcs = tc.set_index("periodo")
-    tot_c1 = {p: ("C1" if bool(tcs.loc[p, "coinciden_15pc"]) else "C4 (fuentes no coinciden en 15 %)") for p in tcs.index}
+    tot_c1 = {}
+    for p_ in tcs.index:
+        if p_ == "2021-2025":
+            tot_c1[p_] = "C1" if bool(tcs.loc[p_, "coinciden_15pc"]) else "C4"
+        elif p_.startswith("2011-2021"):
+            tot_c1[p_] = "C4 (censo y EPA corregida discrepan; no se resuelve cuál es correcta)"
+        else:
+            tot_c1[p_] = "C4 (fuentes dependientes de la EPA, no independientes)"
+    sh_c, sh_s = n["pct_tamano_extranjeros"], 100 * sens.set_index("periodo").N_ext / sens.set_index("periodo").dH
+    rango_ext = {p_: [round(float(min(sh_c[p_], sh_s[p_])), 1), round(float(max(sh_c[p_], sh_s[p_])), 1)] for p_ in n.index}
     sensd = {r.periodo: {k: round(float(r[k])) for k in ("dH", "N_esp", "N_ext", "estructura", "tasa")} for _, r in sens.iterrows()}
     hechos = [
-        {"id": "M2-H0", "enunciado_neutro": "Variación total de hogares por periodo según modelo (EPA corregida), EPA hogares, ECP y Censo.",
+        {"id": "M2-H0", "enunciado_neutro": "Variación total de hogares por periodo según modelo (EPA corregida), EPA hogares, ECP y Censo. Solo 2021-2025 compara fuentes independientes (EPA frente a ECP). Desde 2006 hasta 2019 el modelo, la EPA y la EPA calibrada con el padrón comparten la EPA y la población del INE; no son independientes. El censo 2011-2021 (+456 mil) discrepa de la EPA corregida (≈+1,1 millones): el Censo 2011 es muestral y mide viviendas principales, el de 2021 se basa en registros y mide hogares, y la EPA tiene la ruptura de 2021; no se resuelve qué medida es correcta y se reportan ambas.",
          "capa": tot_c1, "magnitud": tc.round(1).to_dict("records"), "unidad": "hogares", "intervalo": "rango_rel_% en total_dH_fuentes.csv; umbral declarado 15 %",
          "fuentes": ["EPA hogares (salto 2021 retirado, criterio v1)", "ECP 60131 (2021-2025)", "Censo 2011 (INE 3457) y 2021", "padrón x h EPA"],
          "supuestos": ["Corrección de ruptura: nivel 2021 sustituido por la media de 2020 y 2022"], "limites": ["ECP solo desde 2021; censo solo 2011-2021"]},
-        {"id": "M2-H1", "enunciado_neutro": "Descomposición shapley de la variación de hogares (personas de referencia) en España por periodo, con EPA corregida de la ruptura de 2021.",
+        {"id": "M2-H1", "enunciado_neutro": "Descomposición contable (Shapley) de ΔH por periodo con EPA corregida de la ruptura de 2021 (criterio v1: salto persistente retirado entero). El componente de población de nacionalidad extranjera es una partida contable: nacionalidad no es origen (las nacionalizaciones trasladan población al componente de nacionalidad española), la tasa de jefatura es común a ambos grupos y no se miden flujos migratorios ni se atribuyen precios.", "rango_cuota_componente_nacionalidad_extranjera_pct_corregida_frente_a_sin_corregir": rango_ext,
          "capa": "C4 (jefatura de fuente única: EPA)", "sensibilidad_sin_corregir": sensd, "k_ruptura_por_grupo": {g: round(float(kq[g]), 4) for g in kq.index}, "magnitud": desc, "unidad": "hogares y % de ΔH", "intervalo": "ver notas: población padrón x tasa EPA frente a hogares EPA/ECP en calibracion_hogares.csv",
          "fuentes": ["INE padrón (ine_v2_padron_prov_edad_nac.csv; contraste con panel_prov_a)", "INE EPA 65944 (jefatura por edad)",
                      "EPA hogares y ECP 60131 (calibración de nivel)"],
          "supuestos": ["Cuatro grupos de edad; 'nativos' = nacionalidad española (incluye nacionalizados)", "h por edad común a ambas nacionalidades",
                        "Shapley con 4 factores (N_esp, N_ext, estructura, tasa)"],
-         "limites": [comun_s, "Censos 2011/2021 por edad de la persona de referencia: no localizados en Tempus (ver fuentes_fallidas); descomposición censal no posible.", "Periodo 2002-2007 no disponible: EPA 65944 empieza en 2006; se informa 2006-2007.",
+         "limites": ["Ajuste anual (≈263 mil hogares en el total) frente a 242.400 de v1: v1 usa media de Δ trimestrales; aquí media anual de Δ en 2019-20 y 2021-22, por lo que no es idéntico. k del tramo 0-19 (≈1,19) se aplica a tasas ~0,002 (menores de 20 años); su peso en ΔH es despreciable.", comun_s, "Censos 2011/2021 por edad de la persona de referencia: no localizados en Tempus (ver fuentes_fallidas); descomposición censal no posible.", "Periodo 2002-2007 no disponible: EPA 65944 empieza en 2006; se informa 2006-2007.",
                      f"Diferencia relativa padrón CSV frente a panel_prov_a (2022): {dif_panel:.4%}"]},
         {"id": "M2-H2", "enunciado_neutro": "Inmigración bruta desde el extranjero frente a la variación de población extranjera (dos fuentes).",
          "capa": "C1", "magnitud": fl.round(0).to_dict("records"), "unidad": "personas", "intervalo": "INE frente a Eurostat",
@@ -359,9 +368,15 @@ def escribe_json(nac, lat, fl, calib, dif_panel, corr, tops, tc, sens, kq):
          "intervalo": [round(float(j.min())), round(float(j.max()))], "fuentes": ["EPA 65944", "Padrón INE", "ECP 60131"],
          "supuestos": ["Contrafactual: la tasa de jefatura por edad de la referencia aplica en 2025 a la población de 2025",
                        "Referencia 2004-2007 sustituida por 2006-2007 (EPA 65944 desde 2006)"],
-         "limites": ["Resultado principal: no hay latente neta en el conjunto de edades (16-34 positiva, 35-44 negativa).", comun_s, "Los tramos 16-34 y 35-44 solo salen de la vía EPA; la vía padrón usa 20-34 y 35-64.",
+         "limites": ["Titular por edades: 16-34 y 20-34 positivas pero pequeñas en EPA; 35-44 negativa (mayor jefatura que en 2008, a contrastar con la ruptura de 2021). La suma neta de todas las edades es un dato secundario de agregación, no una medida de demanda insatisfecha.", comun_s, "Los tramos 16-34 y 35-44 solo salen de la vía EPA; la vía padrón usa 20-34 y 35-64.",
                      "Una cota con supuesto contrafactual; no es déficit ni demanda a cualquier precio."]},
     ]
+    hechos.append({"id": "M2-C1", "enunciado_neutro": "Conciliación de dos latentes juveniles.", "capa": "C2",
+                   "magnitud": "M2 (jefatura 2008): 16-34 entre +23 mil y -22 mil (EPA), 20-34 entre +84 mil y +161 mil (padrón/ECP). M1/A2 (convivencia con padres): 188-506 mil.",
+                   "unidad": "hogares", "intervalo": "ver demanda_latente.csv", "fuentes": ["EPA 65944", "Eurostat/ECV, EPA parentesco (M1/A2)"],
+                   "supuestos": ["M2: la tasa de jefatura por edad de 2008 regiría en 2025", "M1/A2: la tasa de convivencia con padres de 2008 o UE-27 regiría"],
+                   "limites": ["Miden cosas distintas: dejar de convivir con los padres no equivale a encabezar un hogar (parejas, pisos compartidos); M1/A2 no compensa otras edades, M2 sí en el total.",
+                               "Los órdenes de magnitud solo se solapan en la vía padrón/ECP (≈84-161 mil) frente a la cota baja de M1; no se concilian en una cifra única."]})
     json.dump(hechos, open(OUT / "hechos.json", "w"), ensure_ascii=False, indent=1)
     res = {"rama": "M2", "pregunta": "¿Por qué se crean tantos hogares?", "capa": "ΔH total C1 (si coinciden fuentes); componentes C4; latente C2",
            "datos": ["ine_v2_padron_prov_edad_nac.csv", "panel_prov_a (contraste)", "pa_aux/ine_t65944.json", "ine_hogares_60131.csv",

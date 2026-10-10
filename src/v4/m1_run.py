@@ -23,6 +23,7 @@ import econ_utils  # noqa: E402
 import pa_data as pdat  # noqa: E402
 
 SEED = 20261010
+TOL = 0.15
 np.random.seed(SEED)
 RAW = RAIZ / "data" / "raw"
 OUT = RAIZ / "output" / "v4" / "M1"
@@ -79,6 +80,8 @@ def terminadas_mivau() -> tuple[pd.DataFrame, pd.DataFrame]:
     q = pd.read_csv(RAW / "mivau_v2_protegida.csv")
     q = q[q.serie.str.startswith("prot_definitiva_anual")]
     pro = q.pivot_table(index="territorio", columns="periodo", values="valor", aggfunc="first")
+    lib.columns = lib.columns.astype(int)
+    pro.columns = pro.columns.astype(int)
     return lib, pro
 
 
@@ -152,19 +155,25 @@ def deficit_provincial(reg, H_ecp, nombres, ca, cm, cat, lib, pro, filtro) -> pd
                 yrs = range(t0, ylast + 1)
                 li = np.nansum([lib.loc[terr].get(y, np.nan) for y in yrs])
                 pr = np.nansum([pro.loc[terr_p].get(y, np.nan) for y in yrs]) if terr_p in pro.index else 0.0
+                assert li > 0, f"terminadas MIVAU nulas: {cod} {t0}-{ylast}"
                 for pf, tot in (("con", li + pr), ("sin", li)):
                     for b in BAJAS:
                         n = tot - b * stock0 * len(yrs)
                         filas.append({"cod_prov": cod, "provincia": nombres[cod], "periodo": per, "ruta_hogares": rn,
+                                      "ambito": "robustez" if "Censo anual" in rn else "principal",
                                       "delta_hogares": dh, "fuente_altas": "MIVAU fin de obra (bruto)", "protegida": pf,
                                       "bajas_pct": 100 * b, "altas": n, "deficit": dh - n, "nota": nota})
                 a0 = {2012: 2012, 2021: 2021}[t0]
                 if cod not in FORALES and cod in cat_p.index and pd.notna(cat_p.loc[cod].get(a0)) and pd.notna(cat_p.loc[cod].get(ccat1)):
                     n = cat_p.loc[cod, ccat1] - cat_p.loc[cod, a0]
                     filas.append({"cod_prov": cod, "provincia": nombres[cod], "periodo": per, "ruta_hogares": rn,
+                                  "ambito": "robustez" if "Censo anual" in rn else "principal",
                                   "delta_hogares": dh, "fuente_altas": "Catastro (Δ unidades urbanas residenciales, neto)",
                                   "protegida": "incluida", "bajas_pct": np.nan, "altas": n, "deficit": dh - n, "nota": nota})
     t = pd.DataFrame(filas)
+    for y in range(2012, 2026):
+        v = float(lib[y].sum())
+        assert np.isfinite(v) and v > 0, f"terminadas MIVAU nacionales nulas o NaN en {y}"
     for r in t.itertuples():
         reg.log("M1_prov", f"M1prov_{r.cod_prov}_{r.periodo}_{r.ruta_hogares}_{r.fuente_altas[:6]}_{r.protegida}_{r.bajas_pct}",
                 "D = Δhogares − altas", r.periodo[:4], r.periodo[5:], 1, np.nan, np.nan, np.nan, np.nan, r.deficit, np.nan,
@@ -173,21 +182,34 @@ def deficit_provincial(reg, H_ecp, nombres, ca, cm, cat, lib, pro, filtro) -> pd
 
 
 def resumen_prov(t: pd.DataFrame) -> pd.DataFrame:
-    base = t[t.protegida.isin(["con", "incluida"])]
+    """Cifra principal: ruta ECP (2021-2025) o Censos+ECP (2012-2025). Capa por triangulación de las altas (±15 %)."""
+    base = t[(t.ambito == "principal") & t.protegida.isin(["con", "incluida"])]
     res = []
     for (cod, per), g in base.groupby(["cod_prov", "periodo"]):
-        signo = np.sign(g.deficit)
-        rutas = g.ruta_hogares.nunique()
-        fuentes = g.fuente_altas.nunique()
-        mismo = bool((signo > 0).all() or (signo < 0).all())
-        c1 = per == "2021-2025" and rutas >= 2 and fuentes >= 2 and mismo
+        mi = g[(g.fuente_altas.str.startswith("MIVAU")) & (g.bajas_pct == 0)]
+        ca = g[g.fuente_altas.str.startswith("Catastro")]
+        dif = np.nan
+        if len(mi) and len(ca):
+            dif = (ca.altas.iloc[0] - mi.altas.iloc[0]) / mi.altas.iloc[0]
+        tri = bool(np.isfinite(dif) and abs(dif) <= TOL)
         res.append({"cod_prov": cod, "provincia": g.provincia.iloc[0], "periodo": per, "min": g.deficit.min(),
-                    "mediana": g.deficit.median(), "max": g.deficit.max(), "n_rutas_hogares": rutas, "n_fuentes_altas": fuentes,
-                    "mismo_signo": mismo, "capa": "C1" if c1 else "C4",
-                    "motivo_capa": ("≥2 fuentes de hogares y de altas, mismo signo" if c1 else
-                                    "tramo 2012-2021 de hogares de fuente única (Censos)" if per == "2012-2025" else
-                                    "falta una fuente de altas (foral) o discrepa el signo")})
+                    "mediana": g.deficit.median(), "max": g.deficit.max(), "n_rutas_hogares": g.ruta_hogares.nunique(),
+                    "n_fuentes_altas": g.fuente_altas.nunique(), "dif_rel_altas_catastro_vs_mivau": dif,
+                    "altas_triangulan_15pct": tri, "capa": "C2" if tri else "C4",
+                    "motivo_capa": ("altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2"
+                                    if tri else "altas sin triangular en ±15 % (o sin Catastro: foral) -> C4")})
     return pd.DataFrame(res)
+
+
+def robustez_censo_anual(t: pd.DataFrame, pr: pd.DataFrame) -> pd.DataFrame:
+    """Vía Censo anual (personas / tamaño medio 2021): robustez, fuera de la cifra principal; cuantifica el sesgo en ΔH."""
+    r = t[t.ambito == "robustez"].drop_duplicates(["cod_prov", "periodo"])[["cod_prov", "periodo", "delta_hogares"]]
+    p = t[t.ambito == "principal"].drop_duplicates(["cod_prov", "periodo"])[["cod_prov", "periodo", "delta_hogares"]]
+    m = r.merge(p, on=["cod_prov", "periodo"], suffixes=("_censo_anual", "_principal"))
+    m["cociente"] = m.delta_hogares_censo_anual / m.delta_hogares_principal
+    d = t[t.ambito == "robustez"]
+    d = d[d.protegida.isin(["con", "incluida"])].groupby(["cod_prov", "periodo"]).deficit.agg(["min", "median", "max"]).reset_index()
+    return m.merge(d, on=["cod_prov", "periodo"]).rename(columns={"min": "deficit_min", "median": "deficit_mediana", "max": "deficit_max"})
 
 
 # ------------------------------------------------------------------ déficit municipal
@@ -356,6 +378,8 @@ def main() -> None:
         return
     conc, exc = tablas_concentracion(pr, t, mun)
     lat, lat_info = latente(nombres)
+    rob = robustez_censo_anual(t, pr)
+    rob.to_csv(OUT / "tablas" / "M1_robustez_censo_anual.csv", index=False, float_format="%.4f")
     pr2 = pr.merge(lat[["cod_prov", "latente_min", "latente_mediana", "latente_max"]], on="cod_prov", how="left")
     t.to_csv(OUT / "tablas" / "M1_provincias_combinaciones.csv", index=False, float_format="%.4f")
     pr2.to_csv(OUT / "tablas" / "M1_provincias.csv", index=False, float_format="%.4f")
@@ -380,7 +404,7 @@ def main() -> None:
 
 def nacional_comun(t: pd.DataFrame, per: str) -> dict:
     """Suma de provincias por combinación; muestra común = provincias con todas las combinaciones (sin forales)."""
-    b = t[(t.periodo == per) & t.protegida.isin(["con", "incluida"])]
+    b = t[(t.periodo == per) & (t.ambito == "principal") & t.protegida.isin(["con", "incluida"])]
     comun = sorted(set(b.cod_prov) - set(FORALES))
     s = b[b.cod_prov.isin(comun)].groupby(["ruta_hogares", "fuente_altas", "bajas_pct"], dropna=False).deficit.sum()
     s_fo = b[b.fuente_altas.str.startswith("MIVAU")].groupby(["ruta_hogares", "bajas_pct"]).deficit.sum()

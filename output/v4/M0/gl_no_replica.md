@@ -28,10 +28,11 @@ Lectura: en 2022-2024 el stock SERPAVI recoge 55% de la variación acumulada de 
 - La atenuación explica una magnitud menor que 0,01215, no un signo negativo: el IC95 propio ([−0,0078; −0,0005]) queda por debajo de cero y de cualquier λT positivo.
 - El IC95 de GL2 (distrito) es igual de negativo: la unidad (sección o distrito) no cambia el resultado, con 8 clusters.
 
-## Qué explicación tiene más apoyo
-1. Datos (stock frente a flujo): CUANTIFICADA y real, pero solo reduce la magnitud esperada; por sí sola no produce un coeficiente negativo. Apoyo: moderado para la magnitud, nulo para el signo.
-2. Método (FE sin IV, 3 diferencias anuales, 8 clusters): no se puede cuantificar sin instrumento. El diagnóstico de v3 ya lo indica: pretendencia sin señal (p=0,71, N=3), placebo de permutación p=0,026 con pocas permutaciones distintas. Un coeficiente negativo con FE es compatible con confusión (los distritos con más cambio de VUT diferían en tendencia de alquiler) y con error de medida del VUT; los datos no permiten distinguirlo.
-3. Periodo (2021-2024 con regulación y alquiler de temporada posterior a la pandemia frente a 2012-2016): plausible, no contrastable aquí porque el VUT del INE no existe antes de 2021. València (PARCIAL, signo de GL) y Sevilla (signo contrario) muestran que el signo varía por ciudad, lo que apunta a heterogeneidad además de a un problema de datos.
-Conclusión: la discrepancia no se atribuye a una sola fuente. El apoyo cuantificado es que la mezcla stock/IRPF atenúa la magnitud; el signo opuesto queda sin explicar con estos datos y es compatible con identificación débil (sin IV, ventana corta) y con medida distinta del VUT. No se afirma que GL esté refutado ni confirmado para España 2021-2024. Siguiente paso mínimo: serie histórica de VUT/anuncios 2012-2016 y un instrumento (no disponibles en el repo).
+## Qué se puede decir (sin atribuir causas)
+- El coeficiente propio no es distinguible de 0 tras Holm (p Holm = 0.27); su IC95 sin ajustar excluye λT.
+- Datos (stock frente a flujo): atenuación cuantificada en una sola ciudad, con 3-12 diferencias anuales; en 2012-2016 la razón es negativa (−0,68) y las pendientes van de 0,07 a 0,46. Solo es compatible con una magnitud menor, no con un signo negativo.
+- Método (FE sin IV, 3 diferencias anuales, 8 clusters): no se puede contrastar sin instrumento. Pretendencia sin señal (p=0,71, N=3); el placebo (p=0,026) tiene pocas permutaciones distintas. Un coeficiente negativo es compatible con confusión o con error de medida del VUT; los datos no lo distinguen.
+- Periodo: no se puede contrastar, porque el VUT del INE no existe antes de 2021. Que València (PARCIAL) y Sevilla (signo contrario) difieran es compatible con heterogeneidad o con ruido: con estimaciones C4 no se distingue.
+No se atribuye la discrepancia a ninguna fuente ni se afirma que GL esté refutado o confirmado para España 2021-2024. Faltan serie histórica de VUT/anuncios 2012-2016 y un instrumento (no disponibles en el repo).
 
 Capa: C4 (EXPLORATORIO).

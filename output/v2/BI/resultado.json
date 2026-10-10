@@ -1,0 +1,1006 @@
+{
+  "rama": "BI",
+  "pregunta": "H3 (confirmatoria): ¿se asocia la inmigración (flujo/población, instrumentada con shift-share por agrupación de países, cuotas 2002) más con el alquiler que con el precio de compra (β_alq>0 y β_alq>β_compra)?",
+  "datos": "panel_prov_a (v2_common.load), 49 provincias de entrenamiento, 2009-2021; flujos INE EM; stock por nacionalidad ECP; IPC alquiler (media anual); valor tasado real.",
+  "N": 621,
+  "metodo": "2SLS, FE provincia y año, EE cluster provincia (49), wild cluster bootstrap restringido (WRE, Webb, B=9999); shift-share con cuotas 2002 fijas y shock nacional leave-one-out; contraste conjunto por unión-intersección (p_IUT). Diagnósticos GPSS/placebo/subperiodos EXPLORATORIOS.",
+  "estimacion": {
+    "coef_alquiler": 3.0598,
+    "coef_compra_real": -1.0368,
+    "coef_alq_menos_compra": 4.0966,
+    "se_cluster": {
+      "alq": 0.9536,
+      "compra": 2.5063,
+      "dif": 2.2019
+    },
+    "p_wcb_una_cola": {
+      "alq": 0.001,
+      "dif": 0.0294
+    },
+    "p_wcb_dos_colas": {
+      "alq": 0.001,
+      "compra": 0.6709,
+      "dif": 0.0512
+    },
+    "contraste_con_instrumento_alineado": {
+      "b": -2.0879066127984856,
+      "p_wcb_1c": 0.9239
+    },
+    "magnitud": "NO identificada (rango razonable 0,8-5 entre variantes)",
+    "unidades": "puntos % de variación anual por cada 1 p.p. de población"
+  },
+  "ic95": {
+    "alq": [
+      1.1423,
+      4.9772
+    ],
+    "compra": [
+      -6.076,
+      4.0023
+    ],
+    "dif": [
+      -0.3306,
+      8.5238
+    ],
+    "AR_alq": [
+      1.35,
+      6.0
+    ]
+  },
+  "p_ajustado": {
+    "p_IUT_H3_sin_ajustar_wcb": 0.0294,
+    "cota_Holm7_H3": 0.20579999999999998,
+    "nota": "la unidad de la familia de 7 es H3 (p_IUT); el ajuste final lo aplica el orquestador; las cotas por componente son informativas"
+  },
+  "nivel_evidencia": "EXPLORATORIO",
+  "diagnosticos": {
+    "nivel_beta_alq_signo": "EXPLORATORIO (signo positivo estable con el instrumento completo, pero falla submuestras 2015-2021 p=0,073, controles GPSS de extranjeros 2002 p=0,115 y los placebos de resultado pasado rechazan también en precio: patrón transversal persistente; magnitud NO identificada)",
+    "F_cluster": 14.436690131943159,
+    "criterios": {
+      "F_ge_10_principal": true,
+      "pretendencias_NO_informativas": "ventana 2003-07 = boom de llegadas a los mismos enclaves",
+      "J_hansen_p": {
+        "alq": 0.29049293229122086,
+        "pre": 0.1190964506244817
+      },
+      "sargan_homoc_p": {
+        "alq": 0.06458727968257157,
+        "pre": 5.838537710458626e-06
+      },
+      "placebo_alquiler_pasado_rechaza": true,
+      "signo_alq_positivo_en_todas_las_variantes_con_instrumento_completo": true,
+      "signo_contraste_estable": false,
+      "CAUSAL": "DESCARTADO: placebos de alquiler pasado rechazan, cuotas no balanceadas, F cae con controles GPSS",
+      "componentes": {
+        "beta_alq_gt0 (componente, signo)": {
+          "p_wcb_1c": 0.001,
+          "p_cota_Holm7": 0.007,
+          "informativo_no_confirmatorio": true
+        },
+        "contraste_alq_menos_compra_gt0": {
+          "p_wcb_1c": 0.0294,
+          "p_cota_Holm7": 0.20579999999999998,
+          "informativo_no_confirmatorio": true
+        }
+      }
+    },
+    "identificacion_exploratoria": [
+      {
+        "spec": "principal",
+        "res": "alq",
+        "n": 621,
+        "b": 3.059768888487086,
+        "se": 0.953645113176817,
+        "p_cluster": 0.002378707542836383,
+        "F": 14.436690131943159,
+        "p_wcb_1c": 0.0009,
+        "nota": ""
+      },
+      {
+        "spec": "principal",
+        "res": "pre",
+        "n": 621,
+        "b": -1.0368375564277892,
+        "se": 2.506256685938904,
+        "p_cluster": 0.6809367156157196,
+        "F": 14.436690131943159,
+        "p_wcb_1c": 0.6609,
+        "nota": ""
+      },
+      {
+        "spec": "principal",
+        "res": "dif",
+        "n": 621,
+        "b": 4.096606444914873,
+        "se": 2.2018892332312276,
+        "p_cluster": 0.06894754276876353,
+        "F": 14.436690131943159,
+        "p_wcb_1c": 0.0313,
+        "nota": ""
+      },
+      {
+        "spec": "gpss_extr02",
+        "res": "alq",
+        "n": 621,
+        "b": 1.951471884592962,
+        "se": 1.2140766717291316,
+        "p_cluster": 0.11453197392122388,
+        "F": 15.039171371070584,
+        "p_wcb_1c": 0.078,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_extr02",
+        "res": "pre",
+        "n": 621,
+        "b": 8.698838354577159,
+        "se": 4.338936255000778,
+        "p_cluster": 0.05063870605376376,
+        "F": 15.039171371070584,
+        "p_wcb_1c": 0.0811,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_extr02",
+        "res": "dif",
+        "n": 621,
+        "b": -6.747366469984195,
+        "se": 4.201880501902247,
+        "p_cluster": 0.11487829331751684,
+        "F": 15.039171371070584,
+        "p_wcb_1c": 0.8665,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_ln_pob02",
+        "res": "alq",
+        "n": 621,
+        "b": 3.1682381041447036,
+        "se": 1.3056885508348,
+        "p_cluster": 0.019051311330349527,
+        "F": 9.004029057265692,
+        "p_wcb_1c": 0.0062,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_ln_pob02",
+        "res": "pre",
+        "n": 621,
+        "b": -2.1931688093184443,
+        "se": 2.7349821069343476,
+        "p_cluster": 0.426565872154195,
+        "F": 9.004029057265692,
+        "p_wcb_1c": 0.7917,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_ln_pob02",
+        "res": "dif",
+        "n": 621,
+        "b": 5.3614069134631475,
+        "se": 2.6025397121345066,
+        "p_cluster": 0.044835878180198435,
+        "F": 9.004029057265692,
+        "p_wcb_1c": 0.0087,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_ln_p02",
+        "res": "alq",
+        "n": 621,
+        "b": 3.105299433550279,
+        "se": 1.066587588467603,
+        "p_cluster": 0.005442797354100122,
+        "F": 9.923081940571041,
+        "p_wcb_1c": 0.0028,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_ln_p02",
+        "res": "pre",
+        "n": 621,
+        "b": -0.9723409937194843,
+        "se": 2.8044639093747676,
+        "p_cluster": 0.7303231867368791,
+        "F": 9.923081940571041,
+        "p_wcb_1c": 0.6426,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_ln_p02",
+        "res": "dif",
+        "n": 621,
+        "b": 4.077640427269762,
+        "se": 2.3858453823685415,
+        "p_cluster": 0.09389204103437686,
+        "F": 9.923081940571041,
+        "p_wcb_1c": 0.0454,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_paro02",
+        "res": "alq",
+        "n": 621,
+        "b": 3.6981383237804315,
+        "se": 1.0258429781591107,
+        "p_cluster": 0.0007406964702740291,
+        "F": 13.12195317914398,
+        "p_wcb_1c": 0.0003,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_paro02",
+        "res": "pre",
+        "n": 621,
+        "b": -0.32720809068818246,
+        "se": 3.2017205973881318,
+        "p_cluster": 0.9190255996859158,
+        "F": 13.12195317914398,
+        "p_wcb_1c": 0.5454,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_paro02",
+        "res": "dif",
+        "n": 621,
+        "b": 4.025346414468614,
+        "se": 2.799007887255975,
+        "p_cluster": 0.15688454955730033,
+        "F": 13.12195317914398,
+        "p_wcb_1c": 0.0787,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_costa",
+        "res": "alq",
+        "n": 621,
+        "b": 2.9377164396010613,
+        "se": 0.8400598513098881,
+        "p_cluster": 0.0010242590166819935,
+        "F": 18.826708084617188,
+        "p_wcb_1c": 0.0011,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_costa",
+        "res": "pre",
+        "n": 621,
+        "b": 0.3526897371630122,
+        "se": 2.360460106727454,
+        "p_cluster": 0.8818516775244633,
+        "F": 18.826708084617188,
+        "p_wcb_1c": 0.4489,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_costa",
+        "res": "dif",
+        "n": 621,
+        "b": 2.5850267024380487,
+        "se": 2.1146293553497295,
+        "p_cluster": 0.22750665463978856,
+        "F": 18.826708084617188,
+        "p_wcb_1c": 0.112,
+        "nota": "característica 2002 x año (GPSS)"
+      },
+      {
+        "spec": "gpss_todas",
+        "res": "alq",
+        "n": 621,
+        "b": 4.610793476737047,
+        "se": 3.122281491728199,
+        "p_cluster": 0.14627687221951352,
+        "F": 4.638004321095837,
+        "p_wcb_1c": 0.0423,
+        "nota": "5 características 2002 x año"
+      },
+      {
+        "spec": "gpss_todas",
+        "res": "pre",
+        "n": 621,
+        "b": 9.931827719297921,
+        "se": 10.140465838591817,
+        "p_cluster": 0.33228079115911346,
+        "F": 4.638004321095837,
+        "p_wcb_1c": 0.1079,
+        "nota": "5 características 2002 x año"
+      },
+      {
+        "spec": "gpss_todas",
+        "res": "dif",
+        "n": 621,
+        "b": -5.321034242560873,
+        "se": 8.782462836395295,
+        "p_cluster": 0.5474552882418163,
+        "F": 4.638004321095837,
+        "p_wcb_1c": 0.7718,
+        "nota": "5 características 2002 x año"
+      },
+      {
+        "spec": "solo_Sudamerica",
+        "res": "alq",
+        "n": 621,
+        "b": 2.451369627083666,
+        "se": 0.6297466105547112,
+        "p_cluster": 0.00030562693917725363,
+        "F": 52.48945245845787,
+        "p_wcb_1c": 0.0009,
+        "nota": "instrumento: solo cuota Sudamérica"
+      },
+      {
+        "spec": "solo_Sudamerica",
+        "res": "pre",
+        "n": 621,
+        "b": 2.982042043885348,
+        "se": 1.3444934137172146,
+        "p_cluster": 0.03132321983712926,
+        "F": 52.48945245845787,
+        "p_wcb_1c": 0.0123,
+        "nota": "instrumento: solo cuota Sudamérica"
+      },
+      {
+        "spec": "solo_Sudamerica",
+        "res": "dif",
+        "n": 621,
+        "b": -0.5306724168016836,
+        "se": 1.2957605090968236,
+        "p_cluster": 0.6839615911704249,
+        "F": 52.48945245845787,
+        "p_wcb_1c": 0.6686,
+        "nota": "instrumento: solo cuota Sudamérica"
+      },
+      {
+        "spec": "sin_Sudamerica",
+        "res": "alq",
+        "n": 621,
+        "b": 4.341439811033109,
+        "se": 2.6560037991713408,
+        "p_cluster": 0.10868039044479405,
+        "F": 1.7319926521774827,
+        "p_wcb_1c": 0.0179,
+        "nota": "instrumento sin Sudamérica"
+      },
+      {
+        "spec": "sin_Sudamerica",
+        "res": "pre",
+        "n": 621,
+        "b": -9.503121872837017,
+        "se": 7.136059538411568,
+        "p_cluster": 0.1892469054555205,
+        "F": 1.7319926521774827,
+        "p_wcb_1c": 0.9645,
+        "nota": "instrumento sin Sudamérica"
+      },
+      {
+        "spec": "sin_Sudamerica",
+        "res": "dif",
+        "n": 621,
+        "b": 13.844561683870129,
+        "se": 7.773936958705678,
+        "p_cluster": 0.08125844109016912,
+        "F": 1.7319926521774827,
+        "p_wcb_1c": 0.0053,
+        "nota": "instrumento sin Sudamérica"
+      },
+      {
+        "spec": "z_alineado_t+1",
+        "res": "alq",
+        "n": 621,
+        "b": 2.3672554249424267,
+        "se": 0.5871368035121077,
+        "p_cluster": 0.00019707484195585062,
+        "F": 29.88199875091793,
+        "p_wcb_1c": 0.0002,
+        "nota": "ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t"
+      },
+      {
+        "spec": "z_alineado_t+1",
+        "res": "pre",
+        "n": 621,
+        "b": 4.455162037740912,
+        "se": 1.6439323651507418,
+        "p_cluster": 0.009301260385865285,
+        "F": 29.88199875091793,
+        "p_wcb_1c": 0.0017,
+        "nota": "ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t"
+      },
+      {
+        "spec": "z_alineado_t+1",
+        "res": "dif",
+        "n": 621,
+        "b": -2.0879066127984856,
+        "se": 1.5150223191335854,
+        "p_cluster": 0.1745519648256399,
+        "F": 29.88199875091793,
+        "p_wcb_1c": 0.9239,
+        "nota": "ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t"
+      },
+      {
+        "spec": "flujo_t-1",
+        "res": "alq",
+        "n": 621,
+        "b": 0.8045766073070368,
+        "se": 0.5698119600846839,
+        "p_cluster": 0.16439925556873308,
+        "F": 9.673495151593416,
+        "p_wcb_1c": 0.0893,
+        "nota": "lectura alternativa de 'flujo t-1'"
+      },
+      {
+        "spec": "flujo_t-1",
+        "res": "pre",
+        "n": 621,
+        "b": -6.052024259976148,
+        "se": 3.2890911887892593,
+        "p_cluster": 0.07195155730760659,
+        "F": 9.673495151593416,
+        "p_wcb_1c": 0.9839,
+        "nota": "lectura alternativa de 'flujo t-1'"
+      },
+      {
+        "spec": "flujo_t-1",
+        "res": "dif",
+        "n": 621,
+        "b": 6.856600867283183,
+        "se": 3.159516844508836,
+        "p_cluster": 0.03497542306743135,
+        "F": 9.673495151593416,
+        "p_wcb_1c": 0.0049,
+        "nota": "lectura alternativa de 'flujo t-1'"
+      },
+      {
+        "spec": "sub_2009-2014",
+        "res": "alq",
+        "n": 278,
+        "b": 9.742197903547341,
+        "se": 12.323891211345178,
+        "p_cluster": 0.4331165904867519,
+        "F": 0.727531118698807,
+        "p_wcb_1c": 0.0506,
+        "nota": "subperiodo"
+      },
+      {
+        "spec": "sub_2009-2014",
+        "res": "pre",
+        "n": 278,
+        "b": -45.65219982049715,
+        "se": 56.54968667897268,
+        "p_cluster": 0.4234798118630912,
+        "F": 0.727531118698807,
+        "p_wcb_1c": 0.9628,
+        "nota": "subperiodo"
+      },
+      {
+        "spec": "sub_2009-2014",
+        "res": "dif",
+        "n": 278,
+        "b": 55.394397724044495,
+        "se": 66.92744222081281,
+        "p_cluster": 0.4119488633819493,
+        "F": 0.727531118698807,
+        "p_wcb_1c": 0.0294,
+        "nota": "subperiodo"
+      },
+      {
+        "spec": "sub_2015-2021",
+        "res": "alq",
+        "n": 343,
+        "b": 2.4985308885068473,
+        "se": 1.362541037491315,
+        "p_cluster": 0.07289827657501216,
+        "F": 7.627331810097426,
+        "p_wcb_1c": 0.0586,
+        "nota": "subperiodo"
+      },
+      {
+        "spec": "sub_2015-2021",
+        "res": "pre",
+        "n": 343,
+        "b": -1.7953789991029414,
+        "se": 2.726238819128912,
+        "p_cluster": 0.5133280312369707,
+        "F": 7.627331810097426,
+        "p_wcb_1c": 0.7901,
+        "nota": "subperiodo"
+      },
+      {
+        "spec": "sub_2015-2021",
+        "res": "dif",
+        "n": 343,
+        "b": 4.2939098876097885,
+        "se": 2.854506480325451,
+        "p_cluster": 0.13906735220048896,
+        "F": 7.627331810097426,
+        "p_wcb_1c": 0.0297,
+        "nota": "subperiodo"
+      },
+      {
+        "spec": "placebo_resultado_t-1",
+        "res": "alq",
+        "n": 607,
+        "b": 4.0862144644734055,
+        "se": 1.1503012357059517,
+        "p_cluster": 0.0008681322562201307,
+        "F": 22.39361271458603,
+        "p_wcb_1c": 0.0002,
+        "nota": "resultado PASADO sobre x_t instrumentado (debería ser 0)"
+      },
+      {
+        "spec": "placebo_resultado_t-1",
+        "res": "pre",
+        "n": 607,
+        "b": 5.812130220508631,
+        "se": 2.6799065111091953,
+        "p_cluster": 0.03508465279153845,
+        "F": 22.39361271458603,
+        "p_wcb_1c": 0.0113,
+        "nota": "resultado PASADO sobre x_t instrumentado (debería ser 0)"
+      },
+      {
+        "spec": "placebo_resultado_t-2",
+        "res": "alq",
+        "n": 607,
+        "b": 3.6716658213549325,
+        "se": 0.8533945052363647,
+        "p_cluster": 8.258885600516087e-05,
+        "F": 22.39361271458603,
+        "p_wcb_1c": 0.0003,
+        "nota": "resultado PASADO sobre x_t instrumentado (debería ser 0)"
+      },
+      {
+        "spec": "placebo_resultado_t-2",
+        "res": "pre",
+        "n": 607,
+        "b": 10.098191826538086,
+        "se": 2.686794725773465,
+        "p_cluster": 0.000463591970586727,
+        "F": 22.39361271458603,
+        "p_wcb_1c": 0.0002,
+        "nota": "resultado PASADO sobre x_t instrumentado (debería ser 0)"
+      }
+    ],
+    "balance_cuotas_Sudamerica": {
+      "extr02": {
+        "corr": 0.36066725549235135,
+        "p": 0.010902185387612373
+      },
+      "ln_pob02": {
+        "corr": 0.6059573117968888,
+        "p": 3.953594574673332e-06
+      },
+      "ln_p02": {
+        "corr": 0.42596128606665273,
+        "p": 0.002276482262419389
+      },
+      "paro02": {
+        "corr": -0.09245959957202131,
+        "p": 0.5274751909370896
+      },
+      "costa": {
+        "corr": 0.053638349931538716,
+        "p": 0.7143357321081288
+      }
+    },
+    "pretendencias_Sudamerica": {
+      "alq": {
+        "b": -0.18158947545508553,
+        "se": 0.11000564421420339,
+        "p": 0.10532297681275592
+      },
+      "pre": {
+        "b": 0.0640590783670267,
+        "se": 0.3618706044792825,
+        "p": 0.86023592653375
+      }
+    },
+    "rotemberg_alq": {
+      "top": [
+        {
+          "grupo": "sudamerica",
+          "alpha": 0.6781075821575451,
+          "beta_g": 2.4513696270836642,
+          "F_g": 52.48945245845787
+        },
+        {
+          "grupo": "africa",
+          "alpha": 0.12345581632653335,
+          "beta_g": 7.907840750146036,
+          "F_g": 0.29036407856067087
+        },
+        {
+          "grupo": "europa",
+          "alpha": 0.09149520851987886,
+          "beta_g": 2.503743428206271,
+          "F_g": 1.8644205574527097
+        }
+      ],
+      "suma_neg": 0.0,
+      "suma_top2": 0.8015633984840784
+    },
+    "pretendencias_NO_informativas": {
+      "alq": {
+        "b_por_DE_z": -0.01234667502184732,
+        "se": 0.14513171035163536,
+        "p": 0.9325578354508528,
+        "n": 245
+      },
+      "pre": {
+        "b_por_DE_z": 0.1512961337981207,
+        "se": 0.24023568012100252,
+        "p": 0.5318236872886383,
+        "n": 241
+      }
+    },
+    "overid": {
+      "alq": {
+        "J": 4.969001667131724,
+        "p_hansen": 0.29049293229122086,
+        "df": 4,
+        "sargan": 8.86411076457294,
+        "p_sargan": 0.06458727968257157,
+        "b_2sls_5inst": 2.2961318481211466,
+        "se": 0.5979112495840815,
+        "b_gmm": 2.033880112560748,
+        "F_5inst": 10.757935624030265
+      },
+      "pre": {
+        "J": 7.337405764880166,
+        "p_hansen": 0.1190964506244817,
+        "df": 4,
+        "sargan": 29.62357156411336,
+        "p_sargan": 5.838537710458626e-06,
+        "b_2sls_5inst": 4.842167313242789,
+        "se": 1.338235621766111,
+        "b_gmm": 4.648287327942045,
+        "F_5inst": 10.757935624030265
+      }
+    },
+    "BHJ": {
+      "alq_anioFE": {
+        "b": 3.9852137130891077,
+        "se": 0.6515567863624729,
+        "p": 0.0004831931042800774,
+        "G": 8,
+        "n": 104
+      },
+      "alq_anio+grupoFE": {
+        "b": 3.9964476435488008,
+        "se": 0.656312053728238,
+        "p": 0.0004963152831974023,
+        "G": 8,
+        "n": 104
+      },
+      "pre_anioFE": {
+        "b": 2.9017546344055907,
+        "se": 4.6546223294822235,
+        "p": 0.5527755870479453,
+        "G": 8,
+        "n": 104
+      },
+      "pre_anio+grupoFE": {
+        "b": 2.4559861196327746,
+        "se": 4.496951135894625,
+        "p": 0.6019302881469896,
+        "G": 8,
+        "n": 104
+      }
+    },
+    "AKM0": {
+      "alq": {
+        "b": 3.059768888487086,
+        "se": 0.7420457462013964,
+        "p_norm": 3.732824263613673e-05,
+        "p_t": 0.004440451804919667,
+        "G": 8
+      },
+      "pre": {
+        "b": -1.0368375564277892,
+        "se": 4.264745507482826,
+        "p_norm": 0.8079137771275711,
+        "p_t": 0.8148842467359583,
+        "G": 8
+      }
+    },
+    "corr_zmedio_caract02": {
+      "ln_p02": {
+        "corr": 0.0714,
+        "p": 0.6257
+      },
+      "paro02": {
+        "corr": -0.336,
+        "p": 0.0183
+      },
+      "ln_pob02": {
+        "corr": -0.4038,
+        "p": 0.004
+      },
+      "extr02": {
+        "corr": 0.5644,
+        "p": 0.0
+      },
+      "costa": {
+        "corr": 0.2174,
+        "p": 0.1335
+      }
+    },
+    "sistema": {
+      "b_alq": 3.059768888487086,
+      "b_pre": -1.0368375564277892,
+      "cov": 1.1712226911399377,
+      "contraste": 4.096606444914875,
+      "se_contraste": 2.201889233231228,
+      "se_contraste_dif_directa": 2.2018892332312276,
+      "corr_ecuaciones": 0.4900350469910946
+    },
+    "robustez_timing": [
+      {
+        "spec": "tendencias_prov",
+        "resultado": "y_alq",
+        "regresor": "x",
+        "n": 621,
+        "b": 3.8966,
+        "se": 1.658,
+        "p_cluster": 0.0229,
+        "F": 5.4378
+      },
+      {
+        "spec": "sin_covid",
+        "resultado": "y_alq",
+        "regresor": "x",
+        "n": 523,
+        "b": 2.3823,
+        "se": 0.7707,
+        "p_cluster": 0.0033,
+        "F": 14.268
+      },
+      {
+        "spec": "stock_dcuota_extranj",
+        "resultado": "y_alq",
+        "regresor": "x_stock",
+        "n": 621,
+        "b": 1.1899,
+        "se": 0.3916,
+        "p_cluster": 0.0038,
+        "F": 13.5872
+      },
+      {
+        "spec": "flujo_t-1",
+        "resultado": "y_alq",
+        "regresor": "x_l1",
+        "n": 621,
+        "b": 0.8046,
+        "se": 0.5698,
+        "p_cluster": 0.1644,
+        "F": 9.6735
+      },
+      {
+        "spec": "x_t_y_x_t-1",
+        "resultado": "y_alq",
+        "regresor": "x",
+        "n": 621,
+        "b": 2.1153,
+        "se": 1.1028,
+        "p_cluster": 0.0611,
+        "F": 7.0837
+      },
+      {
+        "spec": "x_t_y_x_t-1",
+        "resultado": "y_alq",
+        "regresor": "x_l1",
+        "n": 621,
+        "b": 0.5179,
+        "se": 0.6562,
+        "p_cluster": 0.4339,
+        "F": 7.0837
+      },
+      {
+        "spec": "z_alineado_stock_t+1",
+        "resultado": "y_alq",
+        "regresor": "x",
+        "n": 621,
+        "b": 2.3673,
+        "se": 0.5871,
+        "p_cluster": 0.0002,
+        "F": 29.882
+      },
+      {
+        "spec": "tendencias_prov",
+        "resultado": "y_pre",
+        "regresor": "x",
+        "n": 621,
+        "b": -9.5412,
+        "se": 5.4797,
+        "p_cluster": 0.0881,
+        "F": 5.4378
+      },
+      {
+        "spec": "sin_covid",
+        "resultado": "y_pre",
+        "regresor": "x",
+        "n": 523,
+        "b": -0.9188,
+        "se": 2.589,
+        "p_cluster": 0.7242,
+        "F": 14.268
+      },
+      {
+        "spec": "stock_dcuota_extranj",
+        "resultado": "y_pre",
+        "regresor": "x_stock",
+        "n": 621,
+        "b": -0.4032,
+        "se": 0.9824,
+        "p_cluster": 0.6833,
+        "F": 13.5872
+      },
+      {
+        "spec": "flujo_t-1",
+        "resultado": "y_pre",
+        "regresor": "x_l1",
+        "n": 621,
+        "b": -6.052,
+        "se": 3.2891,
+        "p_cluster": 0.072,
+        "F": 9.6735
+      },
+      {
+        "spec": "x_t_y_x_t-1",
+        "resultado": "y_pre",
+        "regresor": "x",
+        "n": 621,
+        "b": 13.2851,
+        "se": 3.0695,
+        "p_cluster": 0.0001,
+        "F": 7.0837
+      },
+      {
+        "spec": "x_t_y_x_t-1",
+        "resultado": "y_pre",
+        "regresor": "x_l1",
+        "n": 621,
+        "b": -7.8527,
+        "se": 2.494,
+        "p_cluster": 0.0028,
+        "F": 7.0837
+      },
+      {
+        "spec": "z_alineado_stock_t+1",
+        "resultado": "y_pre",
+        "regresor": "x",
+        "n": 621,
+        "b": 4.4552,
+        "se": 1.6439,
+        "p_cluster": 0.0093,
+        "F": 29.882
+      }
+    ],
+    "heterogeneidad_EXPLORATORIO": {
+      "dml": [
+        {
+          "modelo": "PLR",
+          "learner": "lasso",
+          "theta": 0.29425196344957916,
+          "se_cluster": 0.15210010556546583,
+          "p": 0.05894573350060784,
+          "theta_por_rep": [
+            0.29425196344957916,
+            0.2680028016152744,
+            0.3540670312249844
+          ]
+        },
+        {
+          "modelo": "PLIV",
+          "learner": "lasso",
+          "theta": 2.054966540024816,
+          "se_cluster": 1.510395721128714,
+          "p": 0.1800113542218215,
+          "theta_por_rep": [
+            2.054966540024816,
+            2.126029840966694,
+            1.684909240225836
+          ]
+        },
+        {
+          "modelo": "PLR",
+          "learner": "rf",
+          "theta": 0.47989026282748365,
+          "se_cluster": 0.10492977178801402,
+          "p": 3.3878201371738555e-05,
+          "theta_por_rep": [
+            0.4869806956884057,
+            0.4561663616735663,
+            0.47989026282748365
+          ]
+        },
+        {
+          "modelo": "PLIV",
+          "learner": "rf",
+          "theta": 1.417252570276208,
+          "se_cluster": 0.6039038359924209,
+          "p": 0.023108693257422142,
+          "theta_por_rep": [
+            1.6469045948406178,
+            1.417252570276208,
+            1.3880246689419304
+          ]
+        }
+      ],
+      "causal_forest": {
+        "ate": 0.4314290964564197,
+        "ate_ic95": [
+          0.07552575794812816,
+          0.7873324349647112
+        ],
+        "importancias": {
+          "ln_pob02": 0.2305423492146396,
+          "extr02": 0.31841298240936633,
+          "ln_p02": 0.22536566532792154,
+          "costa": 0.02516003810353645,
+          "paro02": 0.20051896494453597
+        }
+      },
+      "interacciones_iv": [
+        {
+          "caracteristica": "ln_pob02",
+          "b_x": 3.0133492521734415,
+          "b_inter": -0.003009723980467013,
+          "se_inter": 0.41365675395756346,
+          "p_inter": 0.9942248813411916,
+          "F": 25.956310357210945,
+          "p_holm": 1.0
+        },
+        {
+          "caracteristica": "extr02",
+          "b_x": 1.9069247390417647,
+          "b_inter": 0.3409523407364924,
+          "se_inter": 0.36106554055639106,
+          "p_inter": 0.3497481161520779,
+          "F": 25.980992840517427,
+          "p_holm": 1.0
+        },
+        {
+          "caracteristica": "ln_p02",
+          "b_x": 2.9988406265356473,
+          "b_inter": 0.008361410252553181,
+          "se_inter": 0.26939507199742424,
+          "p_inter": 0.975368152691254,
+          "F": 14.470407128146215,
+          "p_holm": 1.0
+        },
+        {
+          "caracteristica": "costa",
+          "b_x": 3.0069750154147306,
+          "b_inter": 0.0024744570495963594,
+          "se_inter": 0.28124596920167405,
+          "p_inter": 0.9930166120696584,
+          "F": 11.509666323211079,
+          "p_holm": 1.0
+        },
+        {
+          "caracteristica": "paro02",
+          "b_x": 2.8349286181998754,
+          "b_inter": -0.16251580792832815,
+          "se_inter": 0.37681070189999966,
+          "p_inter": 0.6681862656406294,
+          "F": 12.030700252513396,
+          "p_holm": 1.0
+        }
+      ]
+    }
+  },
+  "fuera_muestra": {
+    "modelo": "AR4 panel anual + flujo de inmigración observado en t (orígenes 2013-2020, bloques con embargo)",
+    "rmse": 0.00941,
+    "rmse_AR4": 0.0107,
+    "dm_vs_ar4": 1.43136,
+    "p_dm_hln": 0.19542,
+    "contemporaneo_no_pronostico": {
+      "rmse": 0.00805,
+      "dm_vs_ar4": 2.28374,
+      "p": 0.05632
+    },
+    "ecm_v1": "NO COMPARABLE: el ECM v1 (DOLS sobre ocupados, tipo hipotecario y costes) solo está definido en frecuencia trimestral y no existe un análogo anual en la misma muestra; se retira del cuadro en vez de comparar muestras distintas.",
+    "nota": "No es posible extender a la tasa de inmigración instrumentada/observada en panel_ar4 del alquiler: los flujos terminan en 2021-22 (antes de la muestra de test completa) y el ECM v1 solo existe en trimestres (retirado, no comparable); aviso: el flujo del año t se publica a mitad de t+1 (pseudo-pronóstico con pequeña anticipación); se compara AR(4) panel anual con AR(4)+flujo observado, bloques expansivos con embargo, orígenes hasta 2020."
+  },
+  "notas": "Elecciones NO fijadas en el pre-registro (desviación/interpretación declarada): (i) 'flujo/población t-1' se lee como flujo del año t (INE EM) dividido por la población a 1 de enero del año t−1; la lectura alternativa flujo_{t-1}/pob_{t-2} se muestra aparte; (ii) momento del shock: el principal usa ΔS_t = S(1-ene t) − S(1-ene t-1), que cubre el año t-1 (desalineado con el flujo del año t); la versión alineada ΔS_{t+1} se muestra aparte y cambia el signo del contraste; (iii) el valor tasado se deflacta con el deflactor nacional (inocuo con FE de año); (iv) Europa = UE+resto de Europa (ruptura UE28/UE27 de 2021); cuotas y shock sobre las 49 provincias de entrenamiento. H3 sin muestra sellada. Heterogeneidad (DML, causal forest) EXPLORATORIA. CAUSAL descartado."
+}

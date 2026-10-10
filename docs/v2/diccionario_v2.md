@@ -48,6 +48,8 @@ Convenciones: `<var>_metodo` ∈ {observado, agregado_media, agregado_suma, fin_
 | prov_a | pob_nac_<grupo> | INE ECP población por agrupación de países de nacionalidad (77023) | ine_v2_padron_prov_pais.csv | 77023 | personas | anual (1 enero) | observado | observado | grupos según fichero; algunos con cobertura parcial |
 | prov_a | precio_alquiler_ratio_nivel | derivado | — | — | años de alquiler (ratio) | anual | cociente | derivado | p_tasado / (12 × serpavi_mediana_vc); años con ambos datos |
 | prov_a | esfuerzo_aprox | derivado | — | — | años de PIB per cápita (proxy) | anual | cociente | derivado | vivienda de 90 m² (supuesto); renta disponible provincial NO existe en v2 |
+| prov_a | iniciadas_libres_anual | MIVAU Boletín Online viviendas libres iniciadas (anual) | mivau_v2_iniciadas_terminadas_prov.csv | 32200500 | viviendas | anual | observado | observado | 43 provincias por serie provincial + 9 uniprovinciales por serie CCAA; cobertura fuente 1991-2025, panel 2002-2025; cuadra con la suma mensual de 4 trimestres (tabla 32100500) en 2008-2023 donde ambas existen (error 0); cubre 2016-2017, que la mensual no trae completos; ln_ y d_ln_ (Δ1 año) derivados |
+| prov_a | terminadas_libres_anual | MIVAU Boletín Online viviendas libres terminadas (anual) | mivau_v2_iniciadas_terminadas_prov.csv | 32201000 | viviendas | anual | observado | observado | 43 provincias por serie provincial + 9 uniprovinciales por serie CCAA; cobertura fuente 1991-2025, panel 2002-2025; cuadra con la suma mensual de 4 trimestres (tabla 32101000) en 2008-2023 donde ambas existen; cubre 2016-2017, que la mensual no trae completos; ln_ y d_ln_ (Δ1 año) derivados |
 | prov_a | agregados anuales de trimestrales | derivado | panel_prov_q | — | según variable | anual | media (p_tasado, p_suelo, ipc, EPA, zona) o suma (ETDP, hipotecas, MIVAU); NaN si falta un trimestre | agregado_media / agregado_suma | stock (pob_*): valor 1 enero (T1); vut: agosto (T3); inmig: suma S1+S2 |
 | muni_a | serpavi_mediana_vc | SERPAVI municipal (AEAT IRPF) | varios (ver docs) | — | €/m²/mes | anual | según fuente | observado |  |
 | muni_a | serpavi_mediana_vu | SERPAVI municipal (AEAT IRPF) | varios (ver docs) | — | €/m²/mes | anual | según fuente | observado |  |
@@ -184,6 +186,8 @@ Filas: 1248; unidades (cod_prov): 52; claves duplicadas: 0
 | pob_nac_pais_de_la_ue28_sin_espana | 2002 | 2020 | 52 | 0 | 260 |
 | precio_alquiler_ratio_nivel | 2011 | 2024 | 52 | 0 | 577 |
 | esfuerzo_aprox | 2002 | 2025 | 52 | 0 | 57 |
+| iniciadas_libres_anual | 2002 | 2025 | 52 | 0 | 0 |
+| terminadas_libres_anual | 2002 | 2025 | 52 | 0 | 0 |
 
 ### panel_muni_a
 

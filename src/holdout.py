@@ -109,6 +109,32 @@ def _sin_interpolacion_hacia_sellado(tr: pd.DataFrame, col_t: str, col_geo: str 
     return tr
 
 
+# Índices publicados en base 2025=100 (INE IPV e IPC): su nivel incorpora información de 2025 (sellada).
+# En entrenamiento se rebasan a media de 2015 = 100 por unidad; las diferencias logarítmicas no cambian.
+INDICES_BASE_2025 = ["ipc_alquiler", "ipv", "ipv_nueva", "ipv_usada"]
+
+
+def _rebase_indices_2015(tr: pd.DataFrame, nombre: str, col_t: str, col_geo: str | None) -> pd.DataFrame:
+    anio = tr[col_t].astype(str).str[:4]
+    unidad = tr[col_geo].astype(str) if col_geo and col_geo in tr.columns else pd.Series("_", index=tr.index)
+    lnf = {}
+    for v in INDICES_BASE_2025:
+        if v not in tr.columns:
+            continue
+        base = tr[v].where(anio == "2015").groupby(unidad).transform("mean")
+        f = 100.0 / base
+        tr[v] = tr[v] * f
+        lnf[v] = np.log(f)
+        if f"ln_{v}" in tr.columns:
+            tr[f"ln_{v}"] = tr[f"ln_{v}"] + lnf[v]
+    if "ratio_precio_alquiler_idx" in tr.columns and "ipc_alquiler" in lnf:
+        ajuste = -lnf["ipc_alquiler"]
+        if nombre == "nacional_q_v2" and "ipv" in lnf:   # nacional: ln ipv − ln ipc_alquiler
+            ajuste = ajuste + lnf["ipv"]
+        tr["ratio_precio_alquiler_idx"] = tr["ratio_precio_alquiler_idx"] + ajuste
+    return tr
+
+
 def build() -> dict:
     """Genera data/processed/v2/train/<p>.csv y data/sealed/<p>.csv para cada panel existente."""
     TRAIN.mkdir(parents=True, exist_ok=True)
@@ -123,6 +149,7 @@ def build() -> dict:
         df = pd.read_csv(src, dtype={col_geo: str} if col_geo else None)
         sell, emb = _mascara_sellada(df, freq, col_t, col_geo)
         tr = _sin_interpolacion_hacia_sellado(df[~sell & ~emb].copy(), col_t, col_geo)
+        tr = _rebase_indices_2015(tr, nombre, col_t, col_geo)
         tr.to_csv(TRAIN / f"{nombre}.csv", index=False)
         df[sell].to_csv(SEALED / f"{nombre}.csv", index=False)
         resumen["paneles"][nombre] = {"filas": len(df), "train": int((~sell & ~emb).sum()),

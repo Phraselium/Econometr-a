@@ -115,3 +115,53 @@ Es incompatible con el dictamen:
 9. **[Bajo]** Corregir `COSTA` (añadir 27 Lugo) y citar la fuente. Registrar los β_g de Rotemberg y los CATE descriptivos como familias en `registro.csv`. Añadir Andrews-Stock-Sun 2019, Roodman et al. 2019 y Jaeger-Ruist-Stuhler 2018 a la literatura con su estado y cuartil.
 
 Nada de lo anterior exige tocar la muestra sellada: H3 no la tiene.
+
+---
+
+# Re-revisión (iteración 2 de 2, final) · r2/BI en ee91dc9 (r2/main fusionado en baa530f)
+
+## Veredicto final: **APROBAR**, condicionado a correcciones de texto y etiqueta que no requieren reestimar
+
+Condiciones para fusionar (el orquestador puede aplicarlas sin otra iteración; ninguna cifra cambia):
+1. **β_alq > 0 baja de «ASOCIACIÓN ROBUSTA (solo signo)» a EXPLORATORIO** en `bi_h3.py` (de donde sale el nivel del componente en `resultado.json`) y en `resumen.md`. Justificación más abajo.
+2. **Corregir la definición de x**, que está mal descrita en dos sitios y de dos formas distintas. Lo verifiqué en el clon (Valencia: x_2020 = 26.059 / 2.554.332 = flujo **del año 2020** / población a 1-ene-**2019**). En el código, x_t = flujo durante t / pob(1-ene t−1).
+   - `resumen.md` dice «población a 1 de enero del año t».
+   - `docs/v2/decisiones.md` (entrada BI) dice «flujo durante t−1».
+   - Hay que dejar las dos con la definición real. La entrada del momento del shock (ΔS cubre el año t−1) sí es correcta.
+
+## 1. Reproducción
+Clon aislado de r2/BI (ee91dc9), sin `data/sealed` y con el proxy a 127.0.0.1:9. Dos ejecuciones con exit 0 (56 s y 53 s). Los **28 ficheros de `output/v2/BI/` tienen md5 idénticos** entre las dos ejecuciones y respecto a lo versionado.
+
+## 2. Comprobación de los cambios pedidos
+| Cambio | Estado |
+|---|---|
+| Retirar CAUSAL | Hecho («CAUSAL descartado», con motivos) |
+| GPSS características 2002 × año, placebos t−1/t−2, solo/sin Sudamérica, subperiodos, flujo t−1, alineado, con WCB | Hecho. 47 especificaciones nuevas (97 líneas en el registro). Mis cifras de la iteración 1 se reproducen. El placebo usa la muestra principal (F 22,4 frente a mi 14,4/8,5 en muestras distintas); la conclusión es la misma |
+| Pretendencias 2003-07 declaradas no informativas; Sudamérica p = 0,11 | Hecho |
+| Momento del shock y lectura de x declarados | Hecho, salvo el error de definición de x de la condición 2 |
+| Lenguaje (sin LATE ni «efecto») | Hecho. «Efecto» solo aparece en negaciones |
+| Naturaleza del shock (nacionalizaciones frente a flujo bruto) | Hecho |
+| ECM v1 | Retirado por no comparable, con motivo. Correcto: es mejor que comparar en muestras distintas. Retraso de publicación del flujo advertido |
+| Holm | p_IUT = 0,0294 como unidad de la familia; cota Holm-7 = 0,21 |
+| COSTA con Lugo; literatura pendiente (Roodman 2019, Jaeger-Ruist-Stuhler 2018) | Hecho. La literatura queda anotada en decisiones.md para BS |
+| Fuga / lecturas | Sin cambios: solo `vc.load`, sin `holdout`/`sealed` |
+
+## 3. Pregunta clave: ¿se sostiene «ASOCIACIÓN ROBUSTA en el signo» para β_alq > 0?
+
+**No. Dictamen: EXPLORATORIO.** Corrijo mi dictamen de la iteración 1, que era demasiado generoso. Con el criterio uniforme (c), ASOCIACIÓN ROBUSTA exige sobrevivir a Holm-7 **y a submuestras**. Los placebos son tests de identificación: por sí solos impiden CAUSAL, no la asociación. Pero las tablas que ahora existen muestran que el componente tampoco cumple la parte de robustez:
+- **Submuestras.** La única submuestra con primera etapa, 2015-2021, da coef. 2,50 con p cluster 0,073 y p WCB de una cola 0,059: no sobrevive al 5 %. La de 2009-2014 no tiene información (F 0,7). Sin COVID y sin Madrid/Barcelona sí sobreviven, pero no son submuestras temporales independientes.
+- **Control de balance más relevante.** Con extranjeros 2002 × año, coef. 1,95 con p 0,115 (WCB 1c 0,078). Con todas las características el F es 4,6.
+- **Los placebos vacían el contenido de «signo de la asociación de x_t con y_t».** El instrumento se asocia igual de fuerte con el alquiler de t−1 y t−2 (4,09 y 3,67), y también con el precio pasado (5,8 y 10,1). Lo que es estable no es una asociación del flujo del año t, sino un patrón transversal persistente: las provincias grandes, caras y con enclave sudamericano tuvieron más crecimiento de alquiler durante todo el periodo. Eso es compatible por igual con un efecto acumulado de la inmigración y con una tendencia provincial confundida.
+- Lo único estable es el signo positivo en las variantes que usan el instrumento completo y en el MCO con FE (0,96). Es un hecho descriptivo y exploratorio, no una asociación robusta en el sentido de la escala.
+
+**Niveles finales:** H3 (conjunción) **EXPLORATORIO** (p_IUT 0,029, contraste con signo inestable). Componente β_alq > 0: **EXPLORATORIO** (signo positivo en la mayoría de las variantes; magnitud no identificada, 0,8-5). β_compra: no informativo. Nada de esto cambia la entrada de H3 en la familia de Holm (p_IUT = 0,0294).
+
+## 4. Para docs/v2/limitaciones.md (sección «BI (inmigración) — aprobada en re-revisión»)
+- Cuotas 2002 no balanceadas: Sudamérica (68 % del peso de Rotemberg) correlaciona con población, precio y extranjeros 2002. Con extranjeros 2002 × año, el coeficiente del alquiler pierde significación y el contraste cambia de signo.
+- El placebo de resultados pasados rechaza (alquiler y precio de t−1 y t−2). El diseño no separa el flujo de t de flujos pasados (shocks persistentes) ni de tendencias provinciales.
+- No hay ventana pre-tratamiento válida: 2003-07 fueron los años del boom de entradas a los mismos enclaves.
+- Elecciones no pre-registradas: momento del shock (ΔS del año t−1 frente al flujo de t; la versión alineada invierte el contraste) y lectura de x (flujo de t / población a 1-ene t−1; con flujo t−1 el coeficiente del alquiler es 0,80, no significativo).
+- Shock = variación del stock de nacionales (incluye nacionalizaciones) frente a x = flujo bruto. Hay 8 grupos de origen, así que BHJ y AKM tienen poca potencia y validez asintótica dudosa. Sargan rechaza en la ecuación del precio.
+- Magnitud no identificada (0,8-5; 3× MCO y Saiz 2007, 7× v1). Sin evaluación sellada ni datos posteriores a 2021.
+- Fuera de muestra: sin mejora frente al AR(4) anual (8 orígenes, potencia mínima). Sin comparación con ECM v1 (solo trimestral). Pseudo-pronóstico con anticipación de publicación del flujo.
+- Heterogeneidad (DML, causal forest) sin instrumento y no confirmada con interacciones IV. PLR sin FE de provincia. COSTA es una clasificación propia sin fuente.

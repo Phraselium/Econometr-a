@@ -753,8 +753,39 @@ for nm, n_, u in [("precio_alquiler_ratio_nivel", "derivado", "años de alquiler
         "vivienda de 90 m² (supuesto); renta disponible provincial NO existe en v2" if nm == "esfuerzo_aprox"
         else "p_tasado / (12 × serpavi_mediana_vc); años con ambos datos")
 ann["vut_viviendas_metodo"] = np.where(ann.get("vut_viviendas", pd.Series(dtype=float)).notna(), "observado", "")
+# Iniciadas/terminadas libres ANUALES (MIVAU 32200500/32201000, observado). Provincias multiprovinciales desde la
+# serie provincial; uniprovinciales (9) desde la serie de su CCAA, igual que en la mensual. Cubre 2016-2017,
+# que la tabla mensual no trae completos (faltan abr-jun de 2016 y 2017).
+def mivau_annual(tabla: str, prefix: str) -> pd.DataFrame:
+    d0 = num(rd("mivau_v2_iniciadas_terminadas_prov.csv"))
+    d0 = d0[(d0.tabla_codigo == tabla) & d0.serie.str.startswith(prefix)]
+    d = d0[d0.nivel == "provincia"].copy()
+    d["cod_prov"] = d.territorio.map(prov_code)
+    d = d.dropna(subset=["cod_prov"])
+    cc = d0[d0.nivel.isin(["ccaa", "ciudad_autonoma"])].copy()
+    cc["cod_prov"] = cc.territorio.map(ccaa_prov_code)
+    cc = cc[cc.cod_prov.isin(UNI_PROV) & ~cc.cod_prov.isin(set(d.cod_prov))].dropna(subset=["cod_prov"])
+    d = pd.concat([d, cc], ignore_index=True)
+    d["anio"] = pd.to_datetime(d.fecha).dt.year
+    d = dedup(d.dropna(subset=["valor"]), ["cod_prov", "anio"])
+    return d[["cod_prov", "anio", "valor"]]
+
+
+for tab_, pre_, nm_ in [("32200500", "viv_libres_iniciadas_anual_", "iniciadas_libres_anual"),
+                        ("32201000", "viv_libres_terminadas_anual_", "terminadas_libres_anual")]:
+    ann = ann.merge(mivau_annual(tab_, pre_).rename(columns={"valor": nm_}), on=["cod_prov", "anio"], how="left")
+reg("prov_a", "iniciadas_libres_anual", "MIVAU Boletín Online viviendas libres iniciadas (anual)",
+    "mivau_v2_iniciadas_terminadas_prov.csv", "32200500", "viviendas", "anual", "observado", "observado",
+    "43 provincias por serie provincial + 9 uniprovinciales por serie CCAA; cobertura fuente 1991-2025, panel 2002-2025; "
+    "cuadra con la suma mensual de 4 trimestres (tabla 32100500) en 2008-2023 donde ambas existen (error 0); "
+    "cubre 2016-2017, que la mensual no trae completos; ln_ y d_ln_ (Δ1 año) derivados")
+reg("prov_a", "terminadas_libres_anual", "MIVAU Boletín Online viviendas libres terminadas (anual)",
+    "mivau_v2_iniciadas_terminadas_prov.csv", "32201000", "viviendas", "anual", "observado", "observado",
+    "43 provincias por serie provincial + 9 uniprovinciales por serie CCAA; cobertura fuente 1991-2025, panel 2002-2025; "
+    "cuadra con la suma mensual de 4 trimestres (tabla 32101000) en 2008-2023 donde ambas existen; "
+    "cubre 2016-2017, que la mensual no trae completos; ln_ y d_ln_ (Δ1 año) derivados")
 ann = ann.merge(PROV_DF, on="cod_prov", how="left")
-ANNUAL_LEVEL = [c for c in ann.columns if c not in ("cod_prov", "anio", "provincia", "cod_ccaa") and not c.endswith("_metodo")]
+ANNUAL_LEVEL =[c for c in ann.columns if c not in ("cod_prov", "anio", "provincia", "cod_ccaa") and not c.endswith("_metodo")]
 ANNUAL_LEVEL = [c for c in ANNUAL_LEVEL if pd.api.types.is_numeric_dtype(ann[c])]
 ann = add_logs(ann, ANNUAL_LEVEL, "cod_prov", quarterly=False)
 ann = ann[["anio", "cod_prov", "provincia", "cod_ccaa"] + [c for c in ann.columns if c not in ("anio", "cod_prov", "provincia", "cod_ccaa")]]
@@ -1161,6 +1192,9 @@ check("Valor tasado Valencia 2015T1", float(_pq.loc[("46", "2015Q1"), "p_tasado"
 _ann = PANEL_PROV_A.set_index(["cod_prov", "anio"])
 _r = sp[(sp.nivel == "PROV") & (sp.codigo == "28") & (sp.tipologia == "VC") & (sp.variable == "alquiler_m2") & (sp.estadistico == "mediana") & (sp.fecha.str.startswith("2019"))]
 check("SERPAVI mediana VC Madrid 2019 (provincia)", float(_ann.loc[("28", 2019), "serpavi_mediana_vc"]), float(_r.valor.iloc[0]))
+_raw_mv = num(rd("mivau_v2_iniciadas_terminadas_prov.csv"))
+_r = _raw_mv[(_raw_mv.serie == "viv_libres_iniciadas_anual_provincia_albacete") & (_raw_mv.fecha.str.startswith("2019"))]
+check("MIVAU iniciadas anual Albacete 2019", float(_ann.loc[("02", 2019), "iniciadas_libres_anual"]), float(_r.valor.iloc[0]))
 
 # ---------------------------------------------------------------- ESCRITURA
 DOCS.mkdir(parents=True, exist_ok=True)

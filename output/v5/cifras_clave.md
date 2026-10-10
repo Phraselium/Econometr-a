@@ -178,6 +178,13 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 | D1-H11 | Parte de una ayuda general que se traslada al precio, clase A4 1 (método A) | 58.4 | 27.8–81.8 | % | rejilla εd 0,3-1,5 | 37 provincias de clase 1 | output/v5/A4; output/v3/PD; literatura verificada | C4 | 2026-10-10 |
 | D1-H12 | Parte de una ayuda general que se traslada al precio, clase A4 2 (método A) | 100 | 88.1–100 | % | rejilla εd 0,3-1,5 | 11 provincias de clase 2 | output/v5/A4; output/v3/PD; literatura verificada | C4 | 2026-10-10 |
 | D1-H13 | Parte de una ayuda general que se traslada al precio, clase A4 3 (método A) | 76.4 | 50.1–89.8 | % | rejilla εd 0,3-1,5 | 2 provincias de clase 3 | output/v5/A4; output/v3/PD; literatura verificada | C4 | 2026-10-10 |
+| D2-H01 | Necesidad anual de vivienda, provincias de clase A4 1 (B1) | 1.893e+05 | 9.166e+04–2.687e+05 | viviendas/año | 2026-2035 | 37 provincias | output/v5/B1; output/v5/A4 | C4 | 2026-10-10 |
+| D2-H02 | Necesidad anual de vivienda, provincias de clase A4 2 (B1) | 2.169e+04 | 1979–3.638e+04 | viviendas/año | 2026-2035 | 11 provincias | output/v5/B1; output/v5/A4 | C4 | 2026-10-10 |
+| D2-H03 | Necesidad anual de vivienda, provincias de clase A4 3 (B1) | 3130 | -111–3971 | viviendas/año | 2026-2035 | 2 provincias | output/v5/B1; output/v5/A4 | C4 | 2026-10-10 |
+| D2-H09 | Necesidad anual de vivienda, provincias de clase A4 9 (B1) | 716 | 105–842 | viviendas/año | 2026-2035 | 2 provincias | output/v5/B1; output/v5/A4 | C4 | 2026-10-10 |
+| D2-H11 | Cobertura de la necesidad por la construcción adicional de P-D (+25-100 mil/año repartidas por cuota), clase 1 | 29.1 | 11.6–46.5 | % | 2026-2035 | 37 provincias | output/v3/PD; output/v5/B1; output/v5/A4 | C4 | 2026-10-10 |
+| D2-H12 | Cobertura de la necesidad por la construcción adicional de P-D (+25-100 mil/año repartidas por cuota), clase 2 | 29.1 | 11.6–46.5 | % | 2026-2035 | 11 provincias | output/v3/PD; output/v5/B1; output/v5/A4 | C4 | 2026-10-10 |
+| D2-H13 | Cobertura de la necesidad por la construcción adicional de P-D (+25-100 mil/año repartidas por cuota), clase 3 | 29.1 | 11.6–46.5 | % | 2026-2035 | 2 provincias | output/v3/PD; output/v5/B1; output/v5/A4 | C4 | 2026-10-10 |
 | D3-coincide | Referencias de organismos: coincide | 10 |  | referencias | 2026-10-10 | España | BdE; OCDE; Eurostat; INE; Ministerio | C4 | 2026-10-10 |
 | D3-difiere | Referencias de organismos: difiere | 3 |  | referencias | 2026-10-10 | España | BdE; OCDE; Eurostat; INE; Ministerio | C4 | 2026-10-10 |
 | D3-no_comparable | Referencias de organismos: no comparable | 9 |  | referencias | 2026-10-10 | España | BdE; OCDE; Eurostat; INE; Ministerio | C4 | 2026-10-10 |

@@ -1,0 +1,37 @@
+[
+ {
+  "tabla": "N_anual_central_provincias_vs_N10_nacional_div10",
+  "suma_provincial": 214870.0,
+  "nacional": 214867.78999999998,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "N_anual_central_suma_clases",
+  "suma_provincial": 214870.0,
+  "nacional": 214870.0,
+  "tolerancia_rel": 1e-09,
+  "ok": true
+ },
+ {
+  "tabla": "M_central_provincias_vs_B1_nacional",
+  "suma_provincial": 733549.0,
+  "nacional": 733553.2,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "pd_construccion_adicional_max_vs_nacional",
+  "suma_provincial": 100000.0,
+  "nacional": 100000.0,
+  "tolerancia_rel": 1e-09,
+  "ok": true
+ },
+ {
+  "tabla": "provincias",
+  "suma_provincial": 52.0,
+  "nacional": 52.0,
+  "tolerancia_rel": 0.0,
+  "ok": true
+ }
+]

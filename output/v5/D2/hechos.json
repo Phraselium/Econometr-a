@@ -1,0 +1,93 @@
+[
+ {
+  "id": "D2-H01",
+  "indicador": "Necesidad anual de vivienda, provincias de clase A4 1 (B1)",
+  "valor": 189335,
+  "min": 91656,
+  "max": 268728,
+  "unidad": "viviendas/año",
+  "periodo": "2026-2035",
+  "cobertura": "37 provincias",
+  "fuentes": "output/v5/B1; output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "D2-H11",
+  "indicador": "Cobertura de la necesidad por la construcción adicional de P-D (+25-100 mil/año repartidas por cuota), clase 1",
+  "valor": 29.1,
+  "min": 11.6,
+  "max": 46.5,
+  "unidad": "%",
+  "periodo": "2026-2035",
+  "cobertura": "37 provincias",
+  "fuentes": "output/v3/PD; output/v5/B1; output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "D2-H02",
+  "indicador": "Necesidad anual de vivienda, provincias de clase A4 2 (B1)",
+  "valor": 21689,
+  "min": 1979,
+  "max": 36383,
+  "unidad": "viviendas/año",
+  "periodo": "2026-2035",
+  "cobertura": "11 provincias",
+  "fuentes": "output/v5/B1; output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "D2-H12",
+  "indicador": "Cobertura de la necesidad por la construcción adicional de P-D (+25-100 mil/año repartidas por cuota), clase 2",
+  "valor": 29.1,
+  "min": 11.6,
+  "max": 46.5,
+  "unidad": "%",
+  "periodo": "2026-2035",
+  "cobertura": "11 provincias",
+  "fuentes": "output/v3/PD; output/v5/B1; output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "D2-H03",
+  "indicador": "Necesidad anual de vivienda, provincias de clase A4 3 (B1)",
+  "valor": 3130,
+  "min": -111,
+  "max": 3971,
+  "unidad": "viviendas/año",
+  "periodo": "2026-2035",
+  "cobertura": "2 provincias",
+  "fuentes": "output/v5/B1; output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "D2-H13",
+  "indicador": "Cobertura de la necesidad por la construcción adicional de P-D (+25-100 mil/año repartidas por cuota), clase 3",
+  "valor": 29.1,
+  "min": 11.6,
+  "max": 46.5,
+  "unidad": "%",
+  "periodo": "2026-2035",
+  "cobertura": "2 provincias",
+  "fuentes": "output/v3/PD; output/v5/B1; output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "D2-H09",
+  "indicador": "Necesidad anual de vivienda, provincias de clase A4 9 (B1)",
+  "valor": 716,
+  "min": 105,
+  "max": 842,
+  "unidad": "viviendas/año",
+  "periodo": "2026-2035",
+  "cobertura": "2 provincias",
+  "fuentes": "output/v5/B1; output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ }
+]

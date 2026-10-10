@@ -227,7 +227,7 @@ def main() -> dict:
     (OUT / "hechos.json").write_text(json.dumps(hechos, ensure_ascii=False, indent=1))
 
     inc1, inc2, inc3 = (f"{pct(pa.loc[c].parte_precio_min)}-{pct(pa.loc[c].parte_precio_max)}" for c in (1, 2, 3))
-    fichas = [dict(id="D1-V1", tema="Ayudas a la demanda", enunciado="Las ayudas a los jóvenes para comprar o alquilar abaratan su acceso a la vivienda.", capa="C2 (signo por grupo) / C4 (magnitud y clase)",
+    fichas = [dict(id="D1-V1", tema="Ayudas a la demanda", enunciado="Las ayudas a los jóvenes para comprar o alquilar abaratan su acceso a la vivienda.", capa="C2",
                    magnitud=(f"Signo por grupo (C2, estable en la rejilla de P-D): el beneficiario paga igual o menos; el no beneficiario paga más. Traslado a precios de una ayuda general por unidad "
                              f"(C4, método A): clase 1 {inc1}; clase 2 {inc2}; clase 3 {inc3}; clase 9 No evaluable. Con el método B: clase 1 {pct(f(1, 'B').parte_precio_min)}-{pct(f(1, 'B').parte_precio_max)}, "
                              f"clase 2 {pct(f(2, 'B').parte_precio_min)}-{pct(f(2, 'B').parte_precio_max)}, clase 3 {pct(f(3, 'B').parte_precio_min)}-{pct(f(3, 'B').parte_precio_max)}."),
@@ -235,7 +235,8 @@ def main() -> dict:
                    literatura="Eriksen-Ross 2015 (VERIFICADA, Q1); Hilber-Turner 2014 (VERIFICADA); Gibbons-Manning 2006 (VERIFICADA, cuartil no verificado); Carozzi-Hilber-Yu 2024 (VERIFICADA, Q1).",
                    veredicto="PARCIALMENTE",
                    regla=("Regla común con M5-V1: signo estable (C2) para el grupo al que se refiere la afirmación, PARCIALMENTE acotado a ese grupo. Por clase, cuanto más rígida la oferta (clase 2), "
-                          "mayor es la parte que se traslada al precio y menor la ventaja neta del beneficiario; en la clase 1 la parte es menor, pero no nula. La clase es C4."),
+                          "mayor es la parte que se traslada al precio y menor la ventaja neta del beneficiario; en la clase 1 la parte es menor, pero no nula. La capa C2 es solo del signo por grupo; "
+                          "la magnitud del traslado y su desglose por clase son C4 (las clases de A4 son C4) y no se promueven."),
                    limites="Sin evaluación verificada de los avales ICO ni de las ayudas españolas; la respuesta de oferta de A4 es C4; una ayuda focalizada tiene una cota superior de traslado.",
                    evidencia=["output/v5/D1/incidencia_ayudas_por_clase.csv", "output/v5/D1/matriz_instrumentos.csv"])]
     (OUT / "fichas_verificador.json").write_text(json.dumps(fichas, ensure_ascii=False, indent=1))

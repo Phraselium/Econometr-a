@@ -1,0 +1,66 @@
+{
+ "rama": "D2",
+ "pregunta": "¿Qué combinación de instrumentos tiene signo estable o evidencia verificada aplicable en cada clase de provincia, y qué parte de la necesidad cubre?",
+ "capa": "C4",
+ "datos": [
+  "output/v5/B1",
+  "output/v5/B2",
+  "output/v5/A4",
+  "output/v5/D1",
+  "output/v3/PD"
+ ],
+ "N": {
+  "provincias": 52
+ },
+ "metodo": "cruce de tablas; reparto de P-D por cuota de necesidad (supuesto); vacías de B1 a 10 años",
+ "estimacion": {
+  "necesidad_anual_nacional": 214867.78999999998,
+  "por_clase": {
+   "1": {
+    "necesidad": 189335.0,
+    "cobertura_pd_pct": [
+     11.634942057988553,
+     46.53976823195421
+    ],
+    "cobertura_vacias_pct": 30.22663532891436
+   },
+   "2": {
+    "necesidad": 21689.0,
+    "cobertura_pd_pct": [
+     11.634942057988551,
+     46.539768231954206
+    ],
+    "cobertura_vacias_pct": 74.34782608695652
+   },
+   "3": {
+    "necesidad": 3130.0,
+    "cobertura_pd_pct": [
+     11.634942057988551,
+     46.539768231954206
+    ],
+    "cobertura_vacias_pct": 0.0
+   },
+   "9": {
+    "necesidad": 716.0,
+    "cobertura_pd_pct": [
+     11.634942057988551,
+     46.539768231954206
+    ],
+    "cobertura_vacias_pct": 0.0
+   }
+  }
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO (C4)",
+ "diagnosticos": {
+  "control_sumas": "output/v5/D2/control_sumas.json",
+  "todos_ok": true
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Lenguaje condicional; sin efectos por clase; sin especificaciones nuevas."
+}

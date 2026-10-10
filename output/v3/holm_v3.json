@@ -3,17 +3,17 @@
  "filas": [
   {
    "hipotesis": "H3-1",
-   "p_sellado": null,
-   "p_usado": 1.0,
-   "p_holm": 1.0,
-   "nota": "no evaluada: p=1"
+   "p_sellado": 0.23329013286895764,
+   "p_usado": 0.23329013286895764,
+   "p_holm": 0.4665802657379153,
+   "nota": ""
   },
   {
    "hipotesis": "H3-2",
-   "p_sellado": null,
-   "p_usado": 1.0,
-   "p_holm": 1.0,
-   "nota": "no evaluada: p=1"
+   "p_sellado": 0.5008513023066891,
+   "p_usado": 0.5008513023066891,
+   "p_holm": 0.5008513023066891,
+   "nota": ""
   },
   {
    "hipotesis": "H3-3a",

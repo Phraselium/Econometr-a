@@ -17,14 +17,12 @@ FAMILIA = ["H3-1", "H3-2", "H3-3a", "H3-3b"]
 
 
 def _p_c1(h: str) -> float | None:
-    f = OUT / "C1" / f"sellado_{h}.json"
+    """p de la evaluación sellada de la especificación principal (output/v3/C1/resultado.json, p_sellado)."""
+    f = OUT / "C1" / "resultado.json"
     if not f.exists():
         return None
-    d = json.loads(f.read_text())
-    for k in ("p", "p_dos_colas", "p_valor", "pvalue"):
-        if k in d and d[k] is not None:
-            return float(d[k])
-    return None
+    v = json.loads(f.read_text()).get("p_sellado", {}).get(h)
+    return None if v is None else float(v)
 
 
 def _p_c3(h: str) -> float | None:

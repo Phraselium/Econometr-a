@@ -94,9 +94,15 @@ def fichas(ev) -> list[dict]:
     b1cen = PB.get("B1-nac-precio-central", {})
     c1capa, c1 = _c3(ev, "C1")
     gl = ev["GL"] or {}
-    c1txt = "H3-1 no disponible" if c1capa is None else (
-        f"H3-1 (sección, FE): capa {c1capa}; β = {_f(c1.get('estimacion'), 4)} log-p por pp de VUT, "
-        f"IC95 {_iv(c1.get('ic95'), 4)}")
+    if c1capa is None:
+        c1txt = "H3-1 no disponible"
+    else:
+        sel = _json(OUT / "C1" / "sellado_H3-1.json") or {}
+        sn = sel.get("nacional", {})
+        c1txt = (f"H3-1 (sección, efectos fijos, nacional): capa {c1capa}; entrenamiento β = {_f(c1.get('estimacion'), 5)} "
+                 f"log-p por pp de VUT, IC95 {_iv(c1.get('ic95'), 4)}; distritos sellados β = {_f(sn.get('b'), 4)} "
+                 f"[{_f(sn.get('lo'), 4)}; {_f(sn.get('hi'), 4)}] (p {_f(sn.get('p'), 2)}). Con un aumento típico de "
+                 "1,37 pp de VUT equivale a menos de +0,5 % de alquiler (C4)")
     out.append(dict(
         id="V01", tema="Viviendas turísticas",
         enunciado="Las viviendas turísticas son la causa principal de la subida del alquiler en España.",
@@ -115,7 +121,9 @@ def fichas(ev) -> list[dict]:
         regla=("La afirmación exige que las VUT expliquen más de la mitad de la subida nacional. Con C2 solo se acota la "
                "cantidad (desplazamiento pequeño frente al stock; una cuarta parte de la subida ocurre donde las VUT no "
                "crecieron), lo que no basta para descartarla. NO RESPALDADA solo si H3-1 alcanza C3 y su efecto implica "
-               "menos de la mitad de la subida nacional; si no, SIN EVIDENCIA SUFICIENTE (las estimaciones C4 no deciden)."),
+               "menos de la mitad de la subida nacional; si no, SIN EVIDENCIA SUFICIENTE (las estimaciones C4 no deciden). "
+               "H3-1 y H3-2 quedaron en C4 (fallan adelanto, placebos, sensibilidad y sellado): sus estimaciones, "
+               "pequeñas y con IC que incluye 0, no se promueven de capa."),
         limites=("Las VUT del INE no son todos los alquileres de temporada; el efecto local en barrios concretos puede "
                  "ser mayor que el nacional (ver cotas por ciudad en output/v3/PB); SERPAVI es un stock que amortigua."),
         evidencia=["output/v3/PB/cotas.json#B1", "output/v3/C1/resultado.json", "output/v3/GL/replicacion.md"],

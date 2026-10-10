@@ -32,3 +32,10 @@ Solo se revisó lo versionado en el repositorio; no se hizo prueba de red en est
 | datos.gob.es (catálogo nacional) | apidata/catalog/dataset?_q=fianzas; catalogo.datos.gob.es | — | 2026-10-10 | Bloqueado (Incapsula) / túnel 502 |
 | Portales (Idealista, Fotocasa) | No consultados | — | 2026-10-10 | Sin cifra incluida: no hay descarga verificable de informes públicos en esta sesión. Si se añaden, solo C4 con procedencia |
 | Tope legal de actualización (RDL 6/2022, RDL 8/2023) y fianza = 1 mensualidad (LAU art. 36) | texto legal no consultado | — | 2026-10-10 | NO VERIFICADO; se declara como supuesto en a23_run.py |
+
+## R1b (donut, sensibilidad v2, GSADF; 2026-10-10)
+
+| Fuente | Endpoint probado | Edición | Fecha de la prueba | Resultado |
+|---|---|---|---|---|
+| Atlas de Áreas Urbanas (MIVAU) | https://www.mivau.gob.es (raíz) | — | 2026-10-10 | 403 desde el proxy; no está en el repositorio. Sustituto declarado: áreas = capital provincial (o municipio de mayor parque de viviendas, Censo 2021) y radio de 15-60 km sobre centroides de secciones INE 2021 (data/raw/v5/municipio_centroides_utm30.csv, generado por src/v5/r1b_fetch.py desde el zip local) |
+| BO H4 (sensibilidad Oster/CH) | — | — | 2026-10-10 | No ejecutado por presupuesto del módulo (BK-040 «si cabe») |

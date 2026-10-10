@@ -1,0 +1,18 @@
+{
+ "T": 78,
+ "R": 200,
+ "nboot_interno": 99,
+ "cv95_iid": 2.1839111015035195,
+ "phi0.0": {
+  "rechazo_vc_iid": 0.04,
+  "rechazo_bootstrap_AR": 0.02
+ },
+ "phi0.3": {
+  "rechazo_vc_iid": 0.08,
+  "rechazo_bootstrap_AR": 0.04
+ },
+ "phi0.5": {
+  "rechazo_vc_iid": 0.15,
+  "rechazo_bootstrap_AR": 0.04
+ }
+}

@@ -1,0 +1,358 @@
+[
+ {
+  "id": "R1B-D-tasado",
+  "indicador": "Cambio de pendiente del gradiente de crecimiento anual con la distancia al centro (2019-2024 menos 2015-2019), valor tasado (>25.000 hab.), capital + 25 km",
+  "valor": -0.044,
+  "min": -0.507,
+  "max": 0.418,
+  "unidad": "pp de crecimiento anual por cada 10 km",
+  "periodo": "2015-2019 frente a 2019-2024",
+  "cobertura": "17 áreas, 128 municipios",
+  "fuentes": [
+   "valor tasado (>25.000 hab.)"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-D-tasado-mv",
+  "indicador": "Proporción de especificaciones con cambio de pendiente positivo (periferia gana frente al centro), valor tasado (>25.000 hab.)",
+  "valor": 0.547,
+  "min": 0.547,
+  "max": 0.547,
+  "unidad": "proporción",
+  "periodo": "2015-2024",
+  "cobertura": "128 especificaciones",
+  "fuentes": [
+   "valor tasado (>25.000 hab.)"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-D-tasado-holm",
+  "indicador": "Proporción de especificaciones significativas tras Holm, valor tasado (>25.000 hab.)",
+  "valor": 0.0,
+  "min": 0,
+  "max": 1,
+  "unidad": "proporción",
+  "periodo": "2015-2024",
+  "cobertura": "128 especificaciones",
+  "fuentes": [
+   "valor tasado (>25.000 hab.)"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-D-serpavi_VC",
+  "indicador": "Cambio de pendiente del gradiente de crecimiento anual con la distancia al centro (2019-2024 menos 2015-2019), alquiler SERPAVI VC, capital + 25 km",
+  "valor": 0.161,
+  "min": -0.141,
+  "max": 0.464,
+  "unidad": "pp de crecimiento anual por cada 10 km",
+  "periodo": "2015-2019 frente a 2019-2024",
+  "cobertura": "41 áreas, 673 municipios",
+  "fuentes": [
+   "alquiler SERPAVI VC"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-D-serpavi_VC-mv",
+  "indicador": "Proporción de especificaciones con cambio de pendiente positivo (periferia gana frente al centro), alquiler SERPAVI VC",
+  "valor": 0.771,
+  "min": 0.771,
+  "max": 0.771,
+  "unidad": "proporción",
+  "periodo": "2015-2024",
+  "cobertura": "96 especificaciones",
+  "fuentes": [
+   "alquiler SERPAVI VC"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-D-serpavi_VC-holm",
+  "indicador": "Proporción de especificaciones significativas tras Holm, alquiler SERPAVI VC",
+  "valor": 0.0,
+  "min": 0,
+  "max": 1,
+  "unidad": "proporción",
+  "periodo": "2015-2024",
+  "cobertura": "96 especificaciones",
+  "fuentes": [
+   "alquiler SERPAVI VC"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-S-BI-delta",
+  "indicador": "Oster δ (β*=0, Rmax=1,3·R²) de la forma reducida alquiler~instrumento Bartik, BI",
+  "valor": 8.76,
+  "min": 2.93,
+  "max": 8.76,
+  "unidad": "razón δ",
+  "periodo": "2009-2021",
+  "cobertura": "49 provincias, N=621",
+  "fuentes": [
+   "INE/MIVAU vía data/processed"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-S-BI-RV",
+  "indicador": "Valor de robustez Cinelli-Hazlett RV (q=1) de la forma reducida BI, gl=G-1",
+  "valor": 0.347,
+  "min": 0.127,
+  "max": 0.347,
+  "unidad": "R² parcial",
+  "periodo": "2009-2021",
+  "cobertura": "49 provincias",
+  "fuentes": [
+   "INE/MIVAU vía data/processed"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-S-BI-mv",
+  "indicador": "BI: proporción de especificaciones con el mismo signo que la base (alquiler)",
+  "valor": 0.963,
+  "min": 0.037,
+  "max": 0.475,
+  "unidad": "proporción (min = significativas tras Holm; max = significativas nominales)",
+  "periodo": "2009-2021",
+  "cobertura": "80 especificaciones",
+  "fuentes": [
+   "INE/MIVAU vía data/processed"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-S-BP-mv",
+  "indicador": "BP H5 SDiD: proporción de especificaciones con el mismo signo que la base (positivo)",
+  "valor": 0.792,
+  "min": 0.0,
+  "max": 0.194,
+  "unidad": "proporción (min = Holm; B=200 permutaciones, resolución limitada)",
+  "periodo": "2012Q1-2022Q1",
+  "cobertura": "72 especificaciones",
+  "fuentes": [
+   "INE IPC alquiler vía data/processed"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-S-BP-H6-RV",
+  "indicador": "BP H6 (resultado publicado, muestra sellada): RV aproximado desde τ y EE de placebo",
+  "valor": 0.323,
+  "min": 0.062,
+  "max": 0.323,
+  "unidad": "R² parcial (aprox.)",
+  "periodo": "2024Q3-2026Q2",
+  "cobertura": "4 tratadas, 40 donantes",
+  "fuentes": [
+   "output/v2/BP/h6_sellado.json"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-G-tam",
+  "indicador": "Tamaño empírico del GSADF con vc iid cuando Δy es AR(1) con phi=0,5 (nominal 5 %)",
+  "valor": 0.15,
+  "min": 0.04,
+  "max": 0.15,
+  "unidad": "% (fracción)",
+  "periodo": "simulación T=78, R=200",
+  "cobertura": "Monte Carlo",
+  "fuentes": [
+   "simulación propia"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "R1B-G-tam-corr",
+  "indicador": "Tamaño empírico con vc por bootstrap de AR(p) estimado, phi=0,5",
+  "valor": 0.04,
+  "min": 0.02,
+  "max": 0.04,
+  "unidad": "% (fracción)",
+  "periodo": "simulación T=78, R=200",
+  "cobertura": "Monte Carlo",
+  "fuentes": [
+   "simulación propia"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "R1B-G-0",
+  "indicador": "GSADF (vc bootstrap AR): precio/renta: IPV / renta del hogar",
+  "valor": 3.416,
+  "min": 2.478,
+  "max": 3.416,
+  "unidad": "estadístico (min = vc 95 %; p=0.012; BH familia=0.080)",
+  "periodo": "2007Q1-2026Q2",
+  "cobertura": "Nacional",
+  "fuentes": [
+   "INE IPV",
+   "MIVAU tasado",
+   "INE renta",
+   "BdE tipo hipotecario"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-G-1",
+  "indicador": "GSADF (vc bootstrap AR): precio/alquiler: IPV / IPC alquiler",
+  "valor": 3.097,
+  "min": 2.986,
+  "max": 3.097,
+  "unidad": "estadístico (min = vc 95 %; p=0.036; BH familia=0.096)",
+  "periodo": "2007Q1-2026Q2",
+  "cobertura": "Nacional",
+  "fuentes": [
+   "INE IPV",
+   "MIVAU tasado",
+   "INE renta",
+   "BdE tipo hipotecario"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-G-2",
+  "indicador": "GSADF (vc bootstrap AR): precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): IPV",
+  "valor": 0.895,
+  "min": 3.13,
+  "max": 0.895,
+  "unidad": "estadístico (min = vc 95 %; p=0.762; BH familia=0.948)",
+  "periodo": "2007Q1-2026Q2",
+  "cobertura": "Nacional",
+  "fuentes": [
+   "INE IPV",
+   "MIVAU tasado",
+   "INE renta",
+   "BdE tipo hipotecario"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-G-3",
+  "indicador": "GSADF (vc bootstrap AR): precio frente a valor de cuota hipotecaria constante sobre renta: IPV",
+  "valor": 0.909,
+  "min": 2.477,
+  "max": 0.909,
+  "unidad": "estadístico (min = vc 95 %; p=0.604; BH familia=0.948)",
+  "periodo": "2007Q1-2026Q2",
+  "cobertura": "Nacional",
+  "fuentes": [
+   "INE IPV",
+   "MIVAU tasado",
+   "INE renta",
+   "BdE tipo hipotecario"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-G-5",
+  "indicador": "GSADF (vc bootstrap AR): precio/renta: valor tasado / renta del hogar",
+  "valor": 0.224,
+  "min": 3.088,
+  "max": 0.224,
+  "unidad": "estadístico (min = vc 95 %; p=0.932; BH familia=0.948)",
+  "periodo": "2007Q1-2026Q2",
+  "cobertura": "Nacional",
+  "fuentes": [
+   "INE IPV",
+   "MIVAU tasado",
+   "INE renta",
+   "BdE tipo hipotecario"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-G-6",
+  "indicador": "GSADF (vc bootstrap AR): precio/alquiler: valor tasado / IPC alquiler",
+  "valor": 4.344,
+  "min": 3.537,
+  "max": 4.344,
+  "unidad": "estadístico (min = vc 95 %; p=0.020; BH familia=0.080)",
+  "periodo": "2007Q1-2026Q2",
+  "cobertura": "Nacional",
+  "fuentes": [
+   "INE IPV",
+   "MIVAU tasado",
+   "INE renta",
+   "BdE tipo hipotecario"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-G-7",
+  "indicador": "GSADF (vc bootstrap AR): precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): valor tasado",
+  "valor": 0.161,
+  "min": 3.175,
+  "max": 0.161,
+  "unidad": "estadístico (min = vc 95 %; p=0.948; BH familia=0.948)",
+  "periodo": "2007Q1-2026Q2",
+  "cobertura": "Nacional",
+  "fuentes": [
+   "INE IPV",
+   "MIVAU tasado",
+   "INE renta",
+   "BdE tipo hipotecario"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-G-8",
+  "indicador": "GSADF (vc bootstrap AR): precio frente a valor de cuota hipotecaria constante sobre renta: valor tasado",
+  "valor": 0.516,
+  "min": 2.949,
+  "max": 0.516,
+  "unidad": "estadístico (min = vc 95 %; p=0.838; BH familia=0.948)",
+  "periodo": "2007Q1-2026Q2",
+  "cobertura": "Nacional",
+  "fuentes": [
+   "INE IPV",
+   "MIVAU tasado",
+   "INE renta",
+   "BdE tipo hipotecario"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ },
+ {
+  "id": "R1B-G-ccaa",
+  "indicador": "CCAA-medida con exuberancia tras BH (vc corregidos) de 34",
+  "valor": 7,
+  "min": 7,
+  "max": 19,
+  "unidad": "series (max = significativas sin ajuste)",
+  "periodo": "2007Q1-2026Q2",
+  "cobertura": "17 CCAA x 2 medidas",
+  "fuentes": [
+   "INE IPV",
+   "MIVAU tasado",
+   "INE IPC alquiler"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)"
+ }
+]

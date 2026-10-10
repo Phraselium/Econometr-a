@@ -77,7 +77,7 @@ def tasado_anual(d):
 
 
 def serpavi_anual(minc):
-    s = pd.read_csv(RAW / "pdf/serpavi_v2_municipios.csv", dtype={"codigo": str})
+    s = pd.read_csv(RAW / "pdf/serpavi_v2_municipios.csv.gz", dtype={"codigo": str})
     s = s[(s.tipologia == "VC")]
     a = s[(s.variable == "alquiler_m2") & (s.estadistico == "mediana")].pivot_table(index="codigo", columns="periodo", values="valor")
     n = s[s.variable == "n_contratos"].pivot_table(index="codigo", columns="periodo", values="valor")

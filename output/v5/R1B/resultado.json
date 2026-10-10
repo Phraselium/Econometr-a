@@ -1,0 +1,292 @@
+{
+ "rama": "R1b",
+ "pregunta": "BK-041 efecto donut post-COVID; BK-040 sensibilidad/multiverso de diseños v2 (BI, BP); BK-023 GSADF con tamaño corregido y fundamentales.",
+ "capa": "C4",
+ "datos": "MIVAU valor tasado municipal (>25k hab., 306 municipios, hasta 2026T2); SERPAVI municipal VC (2011-2024); centroides de secciones INE 2021; Censo 2021; panel_prov_a/q (v2, entrenamiento); nacional_q_v2 (holdout.load_full, registrado); panel_ccaa_q",
+ "N": {
+  "donut_tasado_principal": 128,
+  "donut_serpavi_principal": 673,
+  "BI": 621,
+  "BP_tratadas": 4,
+  "BP_donantes": 45,
+  "gsadf_T": 78,
+  "gsadf_series": 48
+ },
+ "metodo": "Donut: diferencia de pendientes de Δ(crecimiento anual) sobre distancia con FE de área, EE agrupados por área; multiverso 320 especificaciones (fuente, centro, radio, periodo, forma, centro incluido); Holm. Sensibilidad: Oster (Rmax=1,3·R²) y Cinelli-Hazlett (RV, RV_alfa; fórmula propia en src/v5/r1b_sens.py); multiverso BI (160) y BP H5 (216); Holm. GSADF: vc por bootstrap recursivo de residuos con AR(p) por BIC bajo raíz unitaria, 499 réplicas; BH y Holm por familia; tamaño por Monte Carlo.",
+ "estimacion": {
+  "donut": {
+   "serpavi_VC": {
+    "n_spec": 96,
+    "prop_dif_pos": 0.7708333333333334,
+    "prop_sig_nominal_pos": 0.041666666666666664,
+    "prop_sig_holm": 0.0,
+    "mediana_dif": 0.09250118604659582,
+    "mediana_b_pre": -0.10834004388998192,
+    "mediana_b_post": -0.011901545697944965
+   },
+   "serpavi_VC_n50": {
+    "n_spec": 96,
+    "prop_dif_pos": 0.9583333333333334,
+    "prop_sig_nominal_pos": 0.10416666666666667,
+    "prop_sig_holm": 0.0,
+    "mediana_dif": 0.10334285379040417,
+    "mediana_b_pre": -0.08987630974936914,
+    "mediana_b_post": -0.004325888097916675
+   },
+   "tasado": {
+    "n_spec": 128,
+    "prop_dif_pos": 0.546875,
+    "prop_sig_nominal_pos": 0.0,
+    "prop_sig_holm": 0.0,
+    "mediana_dif": 0.028414337740777652,
+    "mediana_b_pre": -0.3131911487914955,
+    "mediana_b_post": -0.25182953701570077
+   }
+  },
+  "donut_principal": {
+   "tasado": {
+    "dif": -0.044365660872264595,
+    "ee": 0.23590319436079935,
+    "p": 0.8531884527911905,
+    "p_holm_320": 1.0,
+    "areas": 17
+   },
+   "serpavi_VC": {
+    "dif": 0.16148374444501412,
+    "ee": 0.15409620715483333,
+    "p": 0.3009567670995716,
+    "p_holm_320": 1.0,
+    "areas": 41
+   },
+   "serpavi_VC_n50": {
+    "dif": 0.11408725778641095,
+    "ee": 0.08558448910939626,
+    "p": 0.1919332155540899,
+    "p_holm_320": 1.0,
+    "areas": 33
+   }
+  },
+  "donut_placebo_tasado": [
+   {
+    "ventana": "2010-2015|2015-2019",
+    "n": 127,
+    "areas": 17,
+    "dif": 0.06560367276549847,
+    "ee": 0.35199753136834383,
+    "p": 0.854492950756672
+   },
+   {
+    "ventana": "2011-2015|2015-2019",
+    "n": 128,
+    "areas": 17,
+    "dif": 0.3531980813671529,
+    "ee": 0.3754980727528842,
+    "p": 0.3608888806183421
+   }
+  ],
+  "sensibilidad_BI": {
+   "OLS_alq_x": {
+    "b_corto": 0.9649125416479137,
+    "b_largo": 0.7383320494776519,
+    "se_largo": 0.23369760872938297,
+    "t": 3.1593479004426834,
+    "r2_corto": 0.05145541604666204,
+    "r2_largo": 0.07046564081876627,
+    "rmax": 0.09160533306439615,
+    "delta_oster": 2.930338534792453,
+    "beta_star_delta1": 0.48637070074224176,
+    "RV": 0.3637420071666203,
+    "RV_alpha": 0.14989174921237391,
+    "RV_gl_n": 0.1256270720077971,
+    "RV_alpha_gl_n": 0.04947306159651722
+   },
+   "RF_alq_z": {
+    "b_corto": 0.6574600388607875,
+    "b_largo": 0.5729694213868686,
+    "se_largo": 0.1928018572084818,
+    "t": 2.9718044716099463,
+    "r2_corto": 0.052766987109931884,
+    "r2_largo": 0.08616346474561509,
+    "rmax": 0.11201250416929963,
+    "delta_oster": 8.761515137204531,
+    "beta_star_delta1": 0.5075732641681433,
+    "RV": 0.34670132526444475,
+    "RV_alpha": 0.1266309444433553,
+    "RV_gl_n": 0.11864081812182325,
+    "RV_alpha_gl_n": 0.041864242831111516
+   },
+   "RF_dif_z": {
+    "b_corto": 0.8802478653225425,
+    "b_largo": 1.6347981532285625,
+    "se_largo": 0.564979622717975,
+    "t": 2.8935524176322667,
+    "r2_corto": 0.0052321781193794825,
+    "r2_largo": 0.12006675799037936,
+    "rmax": 0.15608678538749318,
+    "delta_oster": -6.907240795044806,
+    "beta_star_delta1": 1.871477053202826,
+    "RV": 0.3394423955784435,
+    "RV_alpha": 0.11673154915885821,
+    "RV_gl_n": 0.11570881262475434,
+    "RV_alpha_gl_n": 0.03867130029433742
+   },
+   "RF_pre_z": {
+    "b_corto": -0.22278782646175518,
+    "b_largo": -1.061828731841694,
+    "se_largo": 0.6047941889720493,
+    "t": -1.7556860684234625,
+    "r2_corto": 0.0003342075975989456,
+    "r2_largo": 0.1365260453638646,
+    "rmax": 0.17748385897302396,
+    "delta_oster": -4.208096140048685,
+    "beta_star_delta1": -1.3141586921142767,
+    "RV": 0.22332885059717955,
+    "RV_alpha": 0.0,
+    "RV_gl_n": 0.07192435648521235,
+    "RV_alpha_gl_n": 0.0
+   },
+   "2SLS_alq_base": {
+    "b": 3.059768888487086,
+    "se": 0.953645113176817,
+    "t": 3.2084984720304117
+   },
+   "2SLS_alq_con_controles": {
+    "b": 3.809772896980188,
+    "se": 1.361363305592908,
+    "t": 2.7984983004378368
+   }
+  },
+  "multiverso_BI": {
+   "n_spec": 80,
+   "signo_base": 1,
+   "coef_base": 3.059768888487086,
+   "prop_mismo_signo": 0.9625,
+   "prop_mismo_signo_sig_nominal": 0.475,
+   "prop_mismo_signo_sig_holm": 0.0375,
+   "rango_b": [
+    -18.36854203971961,
+    12.695421532381625
+   ],
+   "mediana_b": 1.7900093189138726
+  },
+  "multiverso_BI_dif": {
+   "n_spec": 80,
+   "signo_base": 1,
+   "coef_base": 4.096606444914873,
+   "prop_mismo_signo": 0.7125,
+   "prop_mismo_signo_sig_nominal": 0.2875,
+   "prop_mismo_signo_sig_holm": 0.0,
+   "rango_b": [
+    -34.03187286429846,
+    82.76718816530075
+   ],
+   "mediana_b": 3.582187714923939
+  },
+  "sens_BP_H5_colapsada": {
+   "b_corto": 0.019074660731408552,
+   "b_largo": 0.010619246285068539,
+   "se_largo": 0.0072757752044210165,
+   "t": 1.4595346869177475,
+   "r2_corto": 0.20220713952414593,
+   "r2_largo": 0.47823776889997016,
+   "rmax": 0.6217090995699612,
+   "delta_oster": 2.416300495376223,
+   "beta_star_delta1": 0.006224409506534874,
+   "RV": 0.19918078332692307,
+   "RV_alpha": 0.0,
+   "RV_gl_n": 0.19918078332692307,
+   "RV_alpha_gl_n": 0.0,
+   "nota": "versión colapsada (49 provincias, 4 tratadas): ΔY = media ln IPC alquiler 2020Q4-2022Q1 menos 2016Q1-2020Q3, controles 2015; HC1; gl=n-K. NO es el SDiD"
+  },
+  "sens_BP_H6_publicado": {
+   "tau": -0.01166293937763773,
+   "se_placebo": 0.004759675743363219,
+   "t_aprox": -2.450364269856043,
+   "gl_supuesto": 39,
+   "RV": 0.3228740111252447,
+   "RV_alpha": 0.06195870371889006,
+   "nota": "aproximación: t=τ/se_placebo con gl=n_donantes-1; Oster no calculable sin los datos selladas (una evaluación, sin re-acceso)"
+  },
+  "multiverso_BP_H5": {
+   "did": {
+    "n_spec": 72,
+    "tau_base": 0.01907466073140794,
+    "signo_base": 1,
+    "prop_mismo_signo": 0.8611111111111112,
+    "prop_mismo_signo_sig_nominal": 0.5,
+    "prop_mismo_signo_sig_holm": 0.0,
+    "prop_negativo": 0.1388888888888889,
+    "rango_tau": [
+     -0.002913159898140864,
+     0.027089945177959558
+    ]
+   },
+   "sc": {
+    "n_spec": 72,
+    "tau_base": 0.004801742720145589,
+    "signo_base": 1,
+    "prop_mismo_signo": 0.9861111111111112,
+    "prop_mismo_signo_sig_nominal": 0.6805555555555556,
+    "prop_mismo_signo_sig_holm": 0.0,
+    "prop_negativo": 0.013888888888888888,
+    "rango_tau": [
+     -0.0005348845715335591,
+     0.012173963023204592
+    ]
+   },
+   "sdid": {
+    "n_spec": 72,
+    "tau_base": 0.003706725840213625,
+    "signo_base": 1,
+    "prop_mismo_signo": 0.7916666666666666,
+    "prop_mismo_signo_sig_nominal": 0.19444444444444445,
+    "prop_mismo_signo_sig_holm": 0.0,
+    "prop_negativo": 0.20833333333333334,
+    "rango_tau": [
+     -0.0029663698010912983,
+     0.00560866590848246
+    ]
+   }
+  },
+  "gsadf_tamano": {
+   "T": 78,
+   "R": 200,
+   "nboot_interno": 99,
+   "cv95_iid": 2.1839111015035195,
+   "phi0.0": {
+    "rechazo_vc_iid": 0.04,
+    "rechazo_bootstrap_AR": 0.02
+   },
+   "phi0.3": {
+    "rechazo_vc_iid": 0.08,
+    "rechazo_bootstrap_AR": 0.04
+   },
+   "phi0.5": {
+    "rechazo_vc_iid": 0.15,
+    "rechazo_bootstrap_AR": 0.04
+   }
+  }
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "donut": "Holm sobre 320 especificaciones: ninguna significativa; ver tablas/donut_multiverso.csv",
+  "gsadf": "BH/Holm por familia en tablas/gsadf_corregido.csv"
+ },
+ "nivel_evidencia": "EXPLORATORIO (C4)",
+ "diagnosticos": {
+  "donut_cobertura": {
+   "municipios_tasado": 306,
+   "tasado_sin_codigo": [],
+   "municipios_serpavi_VC": 2668
+  },
+  "BP_multiverso_nota": "B=200 permutaciones por especificación: el p mínimo es ~0,005, así que Holm sobre 72 pruebas no puede rechazar por resolución; la proporción Holm es un límite inferior",
+  "BI_nota": "Oster y RV sobre la forma reducida y el MCO (la 2SLS no tiene R² propio); RV con gl=G-1",
+  "BO_H4": "no ejecutado (presupuesto del módulo; BK-040 'si cabe')"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Sin lenguaje causal. Donut: el Atlas de Áreas Urbanas no está en el repositorio y mivau.gob.es respondió 403 desde el proxy (2026-10-10); áreas = capital provincial (o mayor parque de viviendas del Censo 2021) y radio declarado; centroides como media de cajas de secciones. El tasado cubre solo municipios >25k, así que la periferia lejana no se observa. Una exuberancia estadística no es una burbuja. H6 se evalúa solo con su resultado publicado (muestra sellada, sin re-acceso). nacional_q_v2 leído vía holdout.load_full (registrado)."
+}

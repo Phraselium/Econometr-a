@@ -1,0 +1,16 @@
+bloque,clave,concepto,valor,url,fecha_consulta
+MBC,MBC1,valor_pesetas_m2_1993,46800,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC2,valor_pesetas_m2_1993,43200,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC3,valor_pesetas_m2_1993,39600,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC4,valor_pesetas_m2_1993,36000,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC5,valor_pesetas_m2_1993,34200,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC6,valor_pesetas_m2_1993,32400,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC7,valor_pesetas_m2_1993,28800,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC1,coef_max_incremento,1.36,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC2,coef_max_incremento,1.31,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC3,coef_max_incremento,1.29,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC4,coef_max_incremento,1.27,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC5,coef_max_incremento,1.24,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC6,coef_max_incremento,1.22,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MBC,MBC7,coef_max_incremento,1.2,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10
+MODULACION,"Vv=1,40[VR+VC]FL",factor,1.4,https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265,2026-10-10

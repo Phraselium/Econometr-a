@@ -26,7 +26,7 @@ VALORATIVO = [
 PARTIDISTA = [
     r"PSOE", r"\bPP\b", r"\bVox\b", r"\bSumar\b", r"Podemos", r"\bERC\b", r"\bJunts\b", r"\bBildu\b", r"\bPNV\b",
     r"Ciudadanos\b", r"Compromís", r"S[áa]nchez", r"Feij[óo]o", r"Abascal", r"Ayuso", r"Puigdemont",
-    r"\bla izquierda\b", r"\bla derecha\b", r"progresistas?", r"conservador(?:es|a)?\b", r"el Gobierno de \w+",
+    r"\bBNG\b", r"\bUPN\b", r"Coalici[óo]n Canaria", r"\bCUP\b", r"M[áa]s Madrid", r"\bla izquierda\b", r"\bla derecha\b", r"progresistas?", r"conservador(?:es|a)?\b", r"el Gobierno de \w+",
 ]
 CAUSAL = r"\b(caus[aó]\w*|provoc\w*|efecto causal|impacto causal|gracias a|debido a|se debe a|ha hecho (?:subir|bajar))\b"
 NEGACION = re.compile(r"(sin evidencia|no se puede afirmar|no identifica|no causal|no implica|no permite|"
@@ -38,7 +38,8 @@ CAPAS = {"C1", "C2", "C3", "C4"}
 
 
 def _ficheros() -> list[Path]:
-    out = sorted((RAIZ / "output" / "v3").rglob("*.md")) + sorted((RAIZ / "output" / "v4").rglob("*.md"))
+    out = [p for v in ("v3", "v4", "v5") for p in sorted((RAIZ / "output" / v).rglob("*.md"))]
+    out += sorted((RAIZ / "docs" / "v5" / "plantillas").rglob("*.md"))   # v5: plantillas de entregables
     h = RAIZ / "docs" / "v3" / "hipotesis.md"
     return out + ([h] if h.exists() else [])
 
@@ -90,10 +91,13 @@ def main() -> int:
     errores = []
     for p in _ficheros():
         errores += revisar_texto(p.read_text(encoding="utf-8"), str(p.relative_to(RAIZ)))
-    fichas = sorted((RAIZ / "output" / "v3" / "verificador" / "fichas").glob("*.json")) + \
-        sorted((RAIZ / "output" / "v4" / "verificador" / "fichas").glob("*.json"))
+    fichas = [p for v in ("v3", "v4", "v5") for p in sorted((RAIZ / "output" / v / "verificador" / "fichas").glob("*.json"))]
     for p in fichas:
         errores += revisar_ficha(json.loads(p.read_text(encoding="utf-8")), str(p.relative_to(RAIZ)))
+    # v5: fichas de módulo (listas) antes de pasar al verificador
+    for p in sorted((RAIZ / "output" / "v5").glob("*/fichas_verificador.json")):
+        for f in json.loads(p.read_text(encoding="utf-8")):
+            errores += revisar_ficha(f, f"{p.relative_to(RAIZ)}#{f.get('id')}")
     for e in errores:
         print(e)
     print(f"check_texto: {len(errores)} errores")

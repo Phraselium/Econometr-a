@@ -10,7 +10,7 @@
   "literatura": "NO VERIFICADA (sin DOI Crossref en esta pasada; cuartil no verificado). El resultado es una asociación transversal, no un efecto.",
   "veredicto": "ANALIZADA, NO CONCLUYENTE",
   "regla": "Capa C4 (menor de sus componentes): una sola fuente efectiva por provincia (MIVAU/Notariado no independientes; Registradores sin residencia por provincia) y sin diseño de identificación; el máximo con C4 es ANALIZADA, NO CONCLUYENTE.",
-  "limites": "~50 unidades, 1 corte transversal; costa e islas confunden (la bivariada se debe a esa concentración, sin descartar efecto); valor tasado ≠ precio de transacción; MIVAU cubre todas las viviendas y el Notariado solo vivienda libre (cociente Notariado/MIVAU de extranjeros por CCAA 1,04-1,24, correlación de rangos 1.00); errores robustos HC3 con pocas unidades pueden subestimar la varianza; peso de residentes extranjeros (E4) tampoco se asocia con controles.",
+  "limites": "~50 unidades, 1 corte transversal; costa e islas confunden (la asociación bivariada desaparece al controlar por esa concentración; no se descarta ni se identifica un efecto); valor tasado ≠ precio de transacción; MIVAU cubre todas las viviendas y el Notariado solo vivienda libre (cociente Notariado/MIVAU de extranjeros por CCAA 1,04-1,24, correlación de rangos 1.00); errores robustos HC3 con pocas unidades pueden subestimar la varianza; peso de residentes extranjeros (E4) tampoco se asocia con controles.",
   "evidencia": [
    "output/v5/R1A/tablas/no_residentes_regresiones.csv",
    "output/v5/R1A/tablas/no_residentes_peso_2015_2025.csv",

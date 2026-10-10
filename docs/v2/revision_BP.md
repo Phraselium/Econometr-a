@@ -99,3 +99,39 @@ Riesgos que hay que declarar ANTES de abrir (C5): (a) **anticipación**: la reso
 9. **C9 [baja]** `simplex_qp`: comprobar `r.success` y avisar si no converge. Fijar `OMP_NUM_THREADS=1` en la ejecución (el SC sin penalización depende de los hilos) y regenerar las salidas versionadas con esa configuración. Declarar que los pesos catastrales de `zona_tensionada_share` pueden ser de un año sellado (solo afectan al secundario ponderado).
 
 Tras C1-C5 (C3 solo cambia el SC de robustez) basta una re-revisión breve de bp_h6_sellado.py, del test, del resumen y del Makefile. El análisis de H5 y su nivel EXPLORATORIO no cambian.
+
+---
+
+## Re-revisión (iteración 2; commit `300ca59`, con r2/main `d590094` fusionado)
+
+**Reproducción.** Clon nuevo aislado, sin red, `OMP_NUM_THREADS=1`: `bp_main.py` y `tests/test_bp_h6_sellado.py` dos veces, con exit 0 en las cuatro ejecuciones. Los md5 de los 31 ficheros son idénticos entre ejecuciones e idénticos a los versionados (`git status` limpio). Tests nuevos: `test_cfg_real_exacta` (τ −0,0312, p 0,010 con −0,03 inyectado; 6,3 s con B=100) y `test_secundario_falla_no_aborta`, ambos OK. **H6 sigue sin evaluar**: docs/v2/holdout_accesos.md solo contiene H1 y H2.
+
+**Cambios C1-C9: resueltos.** El PRINCIPAL y la DECISION se fijan antes que los secundarios, y cada secundario va en try/except. Se añade el secundario sin 2023Q3-Q4. La DECLARACIÓN EX ANTE (MDE de H6 ≈ 1,7 % y de H5 ≈ 0,56 %, IPC de parque frente a contratos nuevos, Jofre-Monseny et al. 2023, lectura de un nulo) y los riesgos (a)-(f) están en el docstring, en resumen.md y en resultado.json. La etiqueta pasa a «candidata a CAUSAL», se corrige el lenguaje, se añade el contador de QP no convergidos (0) y el Makefile ejecuta solo puntos de entrada con un hilo. El SDiD y el DiD de H5 no cambian con el rebase; H5 sigue EXPLORATORIO.
+
+**Defecto nuevo y bloqueante, introducido por C3 (infraestructura).** `holdout.build` rebasa `ipc_alquiler` a 2015=100 **solo en el entrenamiento** (`_rebase_indices_2015(tr, ...)`). El panel sellado se sigue escribiendo en **base 2025=100** (`df[sell].to_csv(...)`, holdout.py:154). `evaluar_H6` concatena los dos paneles en niveles (`pd.concat([pt, ps])` → `_wide` → `np.log`), de modo que cada provincia salta de nivel entre 2024Q2 y 2024Q3 en ln(P̄_2025/P̄_2015). Como la base 2025 normaliza cada provincia por su propia media de 2025, que ya incluye el efecto, **el estimador anula por construcción el efecto que quiere medir.** Lo he comprobado con el CFG_REAL sobre un sellado falso hecho solo con entrenamiento, dividiendo los niveles «sellados» por su media de 2025:
+
+| Sellado falso | τ SDiD (principal) | p | ¿cumple? | τ Δ4 (secundario) |
+|---|---|---|---|---|
+| misma base, efecto −0,03 | −0,0312 | 0,010 | sí | −0,0134 |
+| base 2025 en el sellado, efecto −0,03 | **−0,0004** | 0,88 | **no** | −0,0205 |
+| base 2025 en el sellado, efecto 0 | −0,0004 | 0,88 | no | −0,0205 (espurio) |
+
+Los tests no lo detectan porque construyen el pseudo-sellado a partir del entrenamiento, que ya está en la base 2015. Si se abre H6 así, la única evaluación queda inservible.
+
+### Veredicto final: **REHACER** (no abrir H6 todavía)
+
+Cambios pedidos, todos necesarios antes de `holdout.evaluate("H6", ...)`:
+1. **[bloqueante, orquestador]** En `holdout.build`, aplicar al panel sellado el mismo factor por unidad (100 / media de 2015 del índice), que se calcula con datos de 2015 (no sellados), y regenerar data/sealed. Alternativa local en `_evaluar`: reconstruir los niveles post encadenando el `d_ln_ipc_alquiler` sellado (invariante a la base) desde el nivel de entrenamiento de 2024Q2.
+2. **[bloqueante, BP]** Guarda en `_evaluar`: abortar ANTES de estimar si |(ln niv[2024Q3] − ln niv[2024Q2]) − d_ln_ipc_alquiler sellado[2024Q3]| > 1e-6 en alguna unidad usada.
+3. **[bloqueante, BP]** Test: un pseudo-sellado en otra base (como la tabla) debe abortar por la guarda, o, con la corrección, dar el mismo τ que en la misma base.
+4. **[orquestador, transversal]** Revisar cualquier otro evaluador sellado que concatene niveles de `ipc_alquiler`, `ipv*` o `ratio_precio_alquiler_idx` de entrenamiento y sellado (p. ej., H7/BM).
+
+Tras 1-3, basta comprobar la guarda y el test; el resto de la rama está aprobado.
+
+### Para docs/v2/limitaciones.md
+- H5: el diseño no identifica (placebo de fecha falsa p=0,009; pendiente pre p=0,04); EXPLORATORIO; signo contrario al pre-registrado.
+- IPC de alquiler = parque de contratos vigentes; los topes actúan sobre contratos nuevos en municipios concretos: MDE ≈ 0,56 % (H5) y ≈ 1,7 % (H6); un nulo no prueba ausencia de efecto (Jofre-Monseny et al. 2023: −4/−6 % en contratos nuevos).
+- H6 mide el «paquete catalán 2024-2026» (DL 3/2023 VUT, 2.ª ronda); posible anticipación desde 2023 (sesgo hacia 0); los choques nacionales solo se absorben si su incidencia es común.
+- Inferencia placebo con 4 tratadas: supone unidades intercambiables; jackknife poco fiable.
+- Índices INE en base 2025=100: los niveles sin rebasar llevan información sellada; el SC sin penalización depende de los hilos BLAS (se fija 1 hilo).
+- `zona_tensionada_share`: pesos catastrales de un año posiblemente sellado (solo en el secundario).

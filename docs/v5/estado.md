@@ -16,6 +16,7 @@
 | Revisión módulo A | A | REHACER (B1-B4) → corregido; APROBADO | — | docs/v5/revision_A.md; clases territoriales y fuentes únicas pasan a C4 | 85.520 |
 | B1 necesidad por provincia 2026-2035 | B | hecho | C4 (F en C2) | 94 mil-310 mil viviendas/año (central 215 mil); atraso 83-147 mil/año; F 172 mil/año; L 80-217 mil/año (no se resta: F ya es neta) | 130.132 |
 | B3 diferencias entre provincias (pre-registrado) | B | hecho | C4 (descriptivo honesto) | MDE 0,62 DT; solo convergencia (−16 pp/DT, Holm 0,0013); Bartik y población no rechazadas; Shapley no coincide entre fuentes | 141.302 |
+| B2 proyección del déficit 2026-2030 | B | hecho | C4 (F en C2) | nacional empeora en los 3 escenarios: 0,70 M (2025) → 1,30 M central (0,87-1,45 M) en 2030; provincias: 20 empeoran, 5 mejoran, 27 indeterminadas | ≈60.000 (pendiente de notificación) |
 
 **Hecho:** módulos R y A aprobados; B1 y B3; check_v5 en make check.
 **Siguiente:** B2 (proyección del déficit 2026-2030), B4 (contribuciones a la subida) → revisión B → C.

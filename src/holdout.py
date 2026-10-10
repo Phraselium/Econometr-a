@@ -73,7 +73,7 @@ def _mascara_sellada(df: pd.DataFrame, freq: str, col_t: str, col_geo: str | Non
     """Devuelve (sellado, embargo) como máscaras booleanas."""
     if freq == "Q":
         t = df[col_t].astype(str)
-        temporal = (t >= Q_SELLO_INI) & (t <= Q_SELLO_FIN)
+        temporal = t >= Q_SELLO_INI   # todo lo posterior al inicio del sellado (incluye filas > 2026Q2 si existen)
         embargo = pd.Series(False, index=df.index)
     else:
         a = pd.to_numeric(df[col_t], errors="coerce")

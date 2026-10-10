@@ -62,3 +62,19 @@
 - V13 se retira, sustituida por M7-V1 (burbuja).
 - La latente de M1 remite a la conciliación M2-C1. Se borra el directorio `_smoke` de M3.
 - Oleada B APROBADA tras esta corrección; no hace falta otra iteración del revisor, porque los cambios son los que el propio revisor propuso.
+
+## M5 (orquestador)
+- **Presupuesto.** M5a consumió 331.769 tokens de subagentes (245.499 + 86.270), el 83 % del límite del módulo (0,4 M). Por la regla del 80 %, M5b (matriz y fichas) lo hace el orquestador sin subagente, en `src/v4/m5_run.py`.
+- **Rúbrica idéntica para 14 grupos de instrumentos.** Recoge mecanismo, evidencia (capa y literatura), efecto con rango, plazo, coste, riesgos, distribución, ámbito territorial en el que funciona (clase M3) y estabilidad del signo.
+  - Efectos: salen de P-D v3 donde existe simulación. Para las ayudas a la demanda se usa la incidencia |εd|/(εs+|εd|) con una rejilla de elasticidades, en C4.
+  - Instrumentos sin simulación ni literatura verificada: figuran como «sin evaluar».
+- **Neutralidad.**
+  - «n_documentos» cuenta los documentos distintos que proponen cada instrumento, sin nombres.
+  - Faltan 2 programas, inaccesibles (docs/v4/fuentes_fallidas.md).
+  - Un programa se leyó en una copia no oficial, marcada en el CSV.
+- **Fichas nuevas, de todo el espectro**, todas ANALIZADA, NO CONCLUYENTE salvo M5-V5:
+  - M5-V1, ayudas a jóvenes;
+  - M5-V2, faltan viviendas en toda España;
+  - M5-V3, los hogares crecen por la inmigración;
+  - M5-V4, limitar las compras de no residentes;
+  - M5-V5, bajar impuestos a la construcción: NO ANALIZADA.

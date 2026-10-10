@@ -15,4 +15,9 @@ M3-V1,Suelo disponible,Hay suelo de sobra para construir.,"ANALIZADA, NO CONCLUY
 M4-V1,Compradores extranjeros (sustituye a V14),Los compradores extranjeros encarecen la vivienda en España.,"ANALIZADA, NO CONCLUYENTE",C4
 M4-V2,Empresas en el mercado del alquiler,Las empresas dominan el mercado del alquiler.,NO ANALIZADA: FALTAN DATOS,C4
 M4-V3,"Viviendas vacías, de uso esporádico y turísticas",Hay muchas viviendas vacías o de uso esporádico frente a las turísticas.,"ANALIZADA, NO CONCLUYENTE",C4
+M5-V1,Ayudas a la demanda,Las ayudas a los jóvenes para comprar o alquilar abaratan su acceso a la vivienda.,"ANALIZADA, NO CONCLUYENTE",C4
+M5-V2,Geografía del déficit,Faltan viviendas en toda España.,"ANALIZADA, NO CONCLUYENTE",C4
+M5-V3,Demografía,Los hogares crecen por la inmigración.,"ANALIZADA, NO CONCLUYENTE",C4
+M5-V4,Compras de no residentes,Limitar las compras de no residentes bajaría los precios de la vivienda.,"ANALIZADA, NO CONCLUYENTE",C4
+M5-V5,Fiscalidad de la construcción,Bajar los impuestos a la construcción abarataría la vivienda.,NO ANALIZADA: FALTAN DATOS,C4
 M7-V1,Burbuja de precios,Hay una burbuja en el precio de la vivienda en España.,"ANALIZADA, NO CONCLUYENTE",C4

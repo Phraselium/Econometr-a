@@ -1,0 +1,47 @@
+{
+ "rama": "M5",
+ "pregunta": "¿Qué instrumentos funcionarían, con la misma vara?",
+ "capa": "C2/C4",
+ "datos": "medidas_programas.csv (procedencia), P-D v3, M3, literatura v3/v4",
+ "N": 14,
+ "metodo": "rúbrica idéntica; incidencia con rejilla de elasticidades",
+ "estimacion": {
+  "signo_estable_estricto": [
+   "P1",
+   "I10/I27/N7"
+  ],
+  "signo_debil": [
+   "I02/N8"
+  ],
+  "signo_no_estable": [
+   "I01",
+   "I16",
+   "I06/I07/I08/I09/N9"
+  ],
+  "sin_evaluar": [
+   "I04/I20",
+   "N1/I13",
+   "N2",
+   "I12/N5",
+   "I14",
+   "I05/N6/I26/N3",
+   "I21",
+   "I29"
+  ]
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO (C4) salvo filas C2 de P-D",
+ "diagnosticos": {
+  "incidencia_rango": [
+   0.13043478260869565,
+   0.8823529411764706
+  ]
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "SEED sin uso (determinista)"
+}

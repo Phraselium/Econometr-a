@@ -1,0 +1,84 @@
+[
+ {
+  "id": "M5-V1",
+  "tema": "Ayudas a la demanda",
+  "enunciado": "Las ayudas a los jóvenes para comprar o alquilar abaratan su acceso a la vivienda.",
+  "capa": "C4",
+  "magnitud": "Con la rejilla de elasticidades (oferta 0,2-2; demanda 0,3-1,5), entre el 13 % y el 88 % de la ayuda se traslada al precio o la renta. El beneficiario paga menos en neto, salvo con oferta totalmente rígida; los no beneficiarios pagan más.",
+  "intervalo": "13-88 % de la ayuda al precio",
+  "cota": "C4: depende de elasticidades sin estimación española verificada",
+  "literatura": "Gibbons y Manning (2006), JPubE, VERIFICADA, cuartil no verificado: 60-67 % de incidencia en arrendadores; Carozzi, Hilber y Yu (2024), JUE, VERIFICADA, Q1.",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Para el beneficiario la ayuda reduce el coste neto en casi toda la rejilla, pero «abaratar el acceso» para los jóvenes en conjunto depende de cuánto se traslade al precio, que no está estimado para España. Capa C4: como máximo no concluyente.",
+  "limites": "Sin evaluación verificada de los avales ICO ni de las ayudas españolas.",
+  "evidencia": [
+   "output/v4/M5/incidencia_ayudas_demanda.csv"
+  ],
+  "convenciones": {
+   "A (estricta: traducción a precio en C4)": "ANALIZADA, NO CONCLUYENTE",
+   "B (estructural: traducción a precio como C2)": "PARCIALMENTE: abarata para el beneficiario y encarece para los no beneficiarios en toda la rejilla."
+  }
+ },
+ {
+  "id": "M5-V2",
+  "tema": "Geografía del déficit",
+  "enunciado": "Faltan viviendas en toda España.",
+  "capa": "C4",
+  "magnitud": "2021-2025: ninguna provincia con excedente; 7 provincias suman el 50 % del déficit y 19 el 80 %; 249 municipios con excedente (71 mil viviendas). Hechos de M1 en C4 (hogares provinciales de fuente única).",
+  "intervalo": "7 provincias = 50 % del déficit",
+  "cota": "—",
+  "literatura": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Hay déficit en todas las provincias, pero muy concentrado y con municipios en excedente; capa C4 (fuente única de hogares provinciales).",
+  "limites": "Los municipios usan Catastro (sin territorios forales). Capa C4 por regla B5: hogares de fuente única (ECP) impiden C2; altas triangulables (componente C2)",
+  "evidencia": [
+   "output/v4/M1/hechos.json"
+  ]
+ },
+ {
+  "id": "M5-V3",
+  "tema": "Demografía",
+  "enunciado": "Los hogares crecen por la inmigración.",
+  "capa": "C4",
+  "magnitud": "2021-2025: hogares +1,01 millones (C1: ECP y EPA corregida). En la descomposición contable, el componente de población de nacionalidad extranjera supone el 56-58 % (rango 53-76 % según la corrección de la EPA), con jefatura de fuente única (C4).",
+  "intervalo": "56-58 % de ΔH (componente contable)",
+  "cota": "—",
+  "literatura": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "La descomposición es contable, no causal, y sus componentes son C4. Es compatible con la afirmación como descripción del crecimiento de hogares 2021-2025; no lo es para 2008-2013, cuando el componente extranjero fue ≈0.",
+  "limites": "Nacionalidad, no país de nacimiento; sin migración interior.",
+  "evidencia": [
+   "output/v4/M2/hechos.json"
+  ]
+ },
+ {
+  "id": "M5-V4",
+  "tema": "Compras de no residentes",
+  "enunciado": "Limitar las compras de no residentes bajaría los precios de la vivienda.",
+  "capa": "C4",
+  "magnitud": "Compradores extranjeros no residentes ≈7 % de las compraventas en 2025 (MIVAU), concentrados en costa e islas (C4). Sin diseño sobre el precio.",
+  "intervalo": "≈7 % de las compraventas",
+  "cota": "—",
+  "literatura": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Hay un peso descriptivo (C4), pero ningún diseño ni cota sobre el precio.",
+  "limites": "Fuentes no independientes (MIVAU y Notariado).",
+  "evidencia": [
+   "output/v4/M4/hechos.json"
+  ]
+ },
+ {
+  "id": "M5-V5",
+  "tema": "Fiscalidad de la construcción",
+  "enunciado": "Bajar los impuestos a la construcción abarataría la vivienda.",
+  "capa": "C4",
+  "magnitud": "Sin diseño ni datos de incidencia; con oferta rígida parte de la rebaja puede trasladarse al precio del suelo.",
+  "intervalo": "n/d",
+  "cota": "—",
+  "literatura": "—",
+  "veredicto": "NO ANALIZADA: FALTAN DATOS",
+  "regla": "Falta una serie de cargas tributarias de la promoción por municipio y una estimación de la elasticidad de oferta.",
+  "limites": "—",
+  "evidencia": []
+ }
+]

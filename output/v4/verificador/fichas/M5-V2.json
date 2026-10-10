@@ -1,0 +1,16 @@
+{
+ "id": "M5-V2",
+ "tema": "Geografía del déficit",
+ "enunciado": "Faltan viviendas en toda España.",
+ "capa": "C4",
+ "magnitud": "2021-2025: ninguna provincia con excedente; 7 provincias suman el 50 % del déficit y 19 el 80 %; 249 municipios con excedente (71 mil viviendas). Hechos de M1 en C4 (hogares provinciales de fuente única).",
+ "intervalo": "7 provincias = 50 % del déficit",
+ "cota": "—",
+ "literatura": "—",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Hay déficit en todas las provincias, pero muy concentrado y con municipios en excedente; capa C4 (fuente única de hogares provinciales).",
+ "limites": "Los municipios usan Catastro (sin territorios forales). Capa C4 por regla B5: hogares de fuente única (ECP) impiden C2; altas triangulables (componente C2)",
+ "evidencia": [
+  "output/v4/M1/hechos.json"
+ ]
+}

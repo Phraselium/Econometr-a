@@ -1,0 +1,16 @@
+{
+ "id": "M5-V3",
+ "tema": "Demografía",
+ "enunciado": "Los hogares crecen por la inmigración.",
+ "capa": "C4",
+ "magnitud": "2021-2025: hogares +1,01 millones (C1: ECP y EPA corregida). En la descomposición contable, el componente de población de nacionalidad extranjera supone el 56-58 % (rango 53-76 % según la corrección de la EPA), con jefatura de fuente única (C4).",
+ "intervalo": "56-58 % de ΔH (componente contable)",
+ "cota": "—",
+ "literatura": "—",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "La descomposición es contable, no causal, y sus componentes son C4. Es compatible con la afirmación como descripción del crecimiento de hogares 2021-2025; no lo es para 2008-2013, cuando el componente extranjero fue ≈0.",
+ "limites": "Nacionalidad, no país de nacimiento; sin migración interior.",
+ "evidencia": [
+  "output/v4/M2/hechos.json"
+ ]
+}

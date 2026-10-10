@@ -20,6 +20,11 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | M4-V1 | Los compradores extranjeros encarecen la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
 | M4-V2 | Las empresas dominan el mercado del alquiler. | NO ANALIZADA: FALTAN DATOS | C4 |
 | M4-V3 | Hay muchas viviendas vacías o de uso esporádico frente a las turísticas. | ANALIZADA, NO CONCLUYENTE | C4 |
+| M5-V1 | Las ayudas a los jóvenes para comprar o alquilar abaratan su acceso a la vivienda. | ANALIZADA, NO CONCLUYENTE | C4 |
+| M5-V2 | Faltan viviendas en toda España. | ANALIZADA, NO CONCLUYENTE | C4 |
+| M5-V3 | Los hogares crecen por la inmigración. | ANALIZADA, NO CONCLUYENTE | C4 |
+| M5-V4 | Limitar las compras de no residentes bajaría los precios de la vivienda. | ANALIZADA, NO CONCLUYENTE | C4 |
+| M5-V5 | Bajar los impuestos a la construcción abarataría la vivienda. | NO ANALIZADA: FALTAN DATOS | C4 |
 | M7-V1 | Hay una burbuja en el precio de la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
 
 ## V01 · Viviendas turísticas
@@ -285,6 +290,88 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Regla del veredicto | Hecho descriptivo: las vacías y esporádicas suman un orden de magnitud más que las turísticas. «Muchas» no tiene umbral y la fuente de vacías es única (capa C4), por lo que no cabe veredicto de respaldo. |
 | Límites | Vacía y esporádica se infieren del consumo eléctrico (INE, experimental); las turísticas son de otra fecha y pertenecen al parque principal o no principal (no suman). El registro de la Generalitat Valenciana (3 provincias) y el INE difieren 1,5-2,2 veces en turísticas (ver vut_ine_frente_registro_gva.csv): la cifra nacional es de fuente única (C4). No se estima ningún efecto. |
 | Evidencia | output/v4/M4/tablas/stock_uso_nacional.csv, output/v4/M4/tablas/stock_uso_provincia.csv, output/v4/M4/tablas/stock_uso_ciudades.csv, output/v4/M4/tablas/vut_ine_frente_registro_gva.csv |
+
+## M5-V1 · Ayudas a la demanda
+
+**Afirmación:** Las ayudas a los jóvenes para comprar o alquilar abaratan su acceso a la vivienda.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | Con la rejilla de elasticidades (oferta 0,2-2; demanda 0,3-1,5), entre el 13 % y el 88 % de la ayuda se traslada al precio o la renta. El beneficiario paga menos en neto, salvo con oferta totalmente rígida; los no beneficiarios pagan más. |
+| Intervalo | 13-88 % de la ayuda al precio |
+| Cota | C4: depende de elasticidades sin estimación española verificada |
+| Literatura | Gibbons y Manning (2006), JPubE, VERIFICADA, cuartil no verificado: 60-67 % de incidencia en arrendadores; Carozzi, Hilber y Yu (2024), JUE, VERIFICADA, Q1. |
+| Regla del veredicto | Para el beneficiario la ayuda reduce el coste neto en casi toda la rejilla, pero «abaratar el acceso» para los jóvenes en conjunto depende de cuánto se traslade al precio, que no está estimado para España. Capa C4: como máximo no concluyente. |
+| Límites | Sin evaluación verificada de los avales ICO ni de las ayudas españolas. |
+| Evidencia | output/v4/M5/incidencia_ayudas_demanda.csv |
+| Convención A (estricta: traducción a precio en C4) | ANALIZADA, NO CONCLUYENTE |
+| Convención B (estructural: traducción a precio como C2) | PARCIALMENTE: abarata para el beneficiario y encarece para los no beneficiarios en toda la rejilla. |
+
+## M5-V2 · Geografía del déficit
+
+**Afirmación:** Faltan viviendas en toda España.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | 2021-2025: ninguna provincia con excedente; 7 provincias suman el 50 % del déficit y 19 el 80 %; 249 municipios con excedente (71 mil viviendas). Hechos de M1 en C4 (hogares provinciales de fuente única). |
+| Intervalo | 7 provincias = 50 % del déficit |
+| Cota | — |
+| Literatura | — |
+| Regla del veredicto | Hay déficit en todas las provincias, pero muy concentrado y con municipios en excedente; capa C4 (fuente única de hogares provinciales). |
+| Límites | Los municipios usan Catastro (sin territorios forales). Capa C4 por regla B5: hogares de fuente única (ECP) impiden C2; altas triangulables (componente C2) |
+| Evidencia | output/v4/M1/hechos.json |
+
+## M5-V3 · Demografía
+
+**Afirmación:** Los hogares crecen por la inmigración.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | 2021-2025: hogares +1,01 millones (C1: ECP y EPA corregida). En la descomposición contable, el componente de población de nacionalidad extranjera supone el 56-58 % (rango 53-76 % según la corrección de la EPA), con jefatura de fuente única (C4). |
+| Intervalo | 56-58 % de ΔH (componente contable) |
+| Cota | — |
+| Literatura | — |
+| Regla del veredicto | La descomposición es contable, no causal, y sus componentes son C4. Es compatible con la afirmación como descripción del crecimiento de hogares 2021-2025; no lo es para 2008-2013, cuando el componente extranjero fue ≈0. |
+| Límites | Nacionalidad, no país de nacimiento; sin migración interior. |
+| Evidencia | output/v4/M2/hechos.json |
+
+## M5-V4 · Compras de no residentes
+
+**Afirmación:** Limitar las compras de no residentes bajaría los precios de la vivienda.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | Compradores extranjeros no residentes ≈7 % de las compraventas en 2025 (MIVAU), concentrados en costa e islas (C4). Sin diseño sobre el precio. |
+| Intervalo | ≈7 % de las compraventas |
+| Cota | — |
+| Literatura | — |
+| Regla del veredicto | Hay un peso descriptivo (C4), pero ningún diseño ni cota sobre el precio. |
+| Límites | Fuentes no independientes (MIVAU y Notariado). |
+| Evidencia | output/v4/M4/hechos.json |
+
+## M5-V5 · Fiscalidad de la construcción
+
+**Afirmación:** Bajar los impuestos a la construcción abarataría la vivienda.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **NO ANALIZADA: FALTAN DATOS** |
+| Capa de la evidencia | C4 |
+| Magnitud | Sin diseño ni datos de incidencia; con oferta rígida parte de la rebaja puede trasladarse al precio del suelo. |
+| Intervalo | n/d |
+| Cota | — |
+| Literatura | — |
+| Regla del veredicto | Falta una serie de cargas tributarias de la promoción por municipio y una estimación de la elasticidad de oferta. |
+| Límites | — |
+| Evidencia | — |
 
 ## M7-V1 · Burbuja de precios
 

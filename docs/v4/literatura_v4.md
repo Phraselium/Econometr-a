@@ -39,7 +39,7 @@ Sin DOI comprobado no se cita ningún resultado. Cada fila es un tema pendiente,
 
 | Tema | Referencia buscada | Estado |
 |---|---|---|
-| Capitalización de ayudas | Fack (2006), ayudas al alquiler en Francia | **NO VERIFICADA**: la consulta a Crossref devolvió HTTP 429 y no se repitió. |
+| Capitalización de ayudas | Fack (2006), ayudas al alquiler en Francia | Reintentado en la segunda pasada: hallado Fack (2005), VERIFICADA (ver tabla de búsquedas). |
 | Vivienda pública y crowding-out | Sinai y Waldfogel (2005) | **NO VERIFICADA**: consulta a Crossref con HTTP 429, no repetida. |
 | Vacancia, Vancouver | Evaluación del impuesto a la vivienda vacía de Vancouver | **NO VERIFICADA**: no buscada. |
 | Fiscalidad en España | López-García y evaluación del fin de la deducción por vivienda en 2013 | **NO VERIFICADA**: no buscada. |
@@ -48,5 +48,28 @@ Sin DOI comprobado no se cita ningún resultado. Cada fila es un tema pendiente,
 | Captura de plusvalías | Estimación de efecto | **NO VERIFICADA**: no buscada. |
 | Licencias y suelo | Magnitud de Hilber y Vermeulen (2016) | Referencia verificada; magnitud no extraída. |
 
+## Búsquedas por instrumento en Crossref (2026-10-10, segunda pasada)
+
+Una consulta bibliográfica (`api.crossref.org/works?query.bibliographic=...`, 1-2 resultados) por instrumento sin literatura, para que «sin evidencia hallada» no signifique «no buscada». Una consulta de Crossref devuelve metadatos, no evaluación de calidad: un resultado no pertinente solo indica que esa consulta no halló una referencia útil, no que no exista evidencia. «429» = consulta fallida por límite de la API, no repetida.
+
+| Instrumento | Búsqueda realizada | Resultado |
+|---|---|---|
+| I02 parque público (desplazamiento) | Sinai, Waldfogel, «Do low-income housing subsidies increase the occupied housing stock» | Solo el documento de trabajo NBER w8709 (2002, DOI 10.3386/w8709) con título «Do Low-Income Housing Subsidies Increase Housing Consumption?», primer autor Sinai. El artículo de 2005 (JPubE) no apareció: **NO VERIFICADA**. |
+| I08 ayudas al alquiler (capitalización) | Fack, «Why are housing allowances so inflationary» (2 consultas) | Hallado Fack (2005), «Pourquoi les ménages pauvres paient-ils des loyers de plus en plus élevés ?», *Économie et statistique* 381(1), 17-40, DOI 10.3406/estat.2005.7207: **VERIFICADA** (año 2005, no 2006). Magnitud no extraída. También Fack (2011), *Regards croisés sur l'économie* 9(1), 92-104, DOI 10.3917/rce.009.0092 (no cuenta como nueva; no leída). |
+| I03 reservas de suelo | «inclusionary zoning housing prices supply effects» | Un trabajo de 2024 (tesis o documento, DOI 10.32920/25417417); sin revista. Sin referencia verificable de revista. |
+| I05 plusvalías | «land value capture betterment levy effects land prices» | Resultados no pertinentes (capítulo conceptual 2014; artículo conceptual sobre otro país). Sin evidencia hallada. |
+| I07 fiscalidad compra | «mortgage interest deduction elimination Spain housing prices 2013» | Hallado Damen (2016), «The effect of mortgage interest deduction and mortgage characteristics on house prices», *Journal of Housing Economics* 34, 15-29, DOI 10.1016/j.jhe.2016.06.002: **VERIFICADA**; ámbito y magnitud no extraídos. No apareció evaluación del fin de la deducción española de 2013 (López-García: **NO VERIFICADA**). |
+| I12 industrialización | «modular prefabricated construction cost housing productivity» | **429**; sin resultado. |
+| I14 desalojo y posesión | «eviction squatting tenant protection landlord rental supply effect» | Resultados no pertinentes (manuales jurídicos). Sin evidencia hallada. |
+| I21 compras con fin de inversión | 2 consultas («foreign buyers ...») | 1.ª: 429. 2.ª: resultados no pertinentes (fecundidad; nota divulgativa). Sin evidencia hallada. |
+| I19 sinhogarismo | «Housing First randomized homelessness housing stability» | Resultados no pertinentes o de enciclopedia. Sin evidencia hallada en esta consulta. |
+| N3/I26 impuesto sobre el suelo | «land value tax effects on land development housing supply» | Anderson (1993), *Land Economics* 69(3), 263 (tasación por uso del suelo; no es el mismo instrumento); sin referencia pertinente verificada. |
+| N2 mayor edificabilidad | «upzoning density reform effect on housing supply and rents» | Un documento de trabajo SSRN de 2025 sobre Minneapolis 2040 (DOI 10.2139/ssrn.5395203); no es artículo de revista. |
+| I27 vivienda vacía (Vancouver) | «Vancouver empty homes tax vacancy» | Dos resultados (2021, revista de derecho fiscal; 2026, sin revista listada); no evaluados. |
+| I11 rehabilitación | «energy efficiency retrofit subsidy effect on house prices» | Dos documentos de trabajo SSRN (2025-2026; uno sobre España); sin artículo de revista. |
+| I15 incentivos a arrendadores | «tax incentive landlords rental housing supply effect» | Resultados no pertinentes. Sin evidencia hallada. |
+| I01, I06, I10, I13, I16 | Ya cubiertos arriba (Diamond; Jofre-Monseny; Carozzi; Segú; Hilber-Vermeulen; García-López) | Con evidencia. |
+| I04, I09, I18, I20, I22, I24, I25, I28, I29, N1, N4 | Sin consulta en esta pasada (presupuesto) | **No buscados** (sigue pendiente; no equivale a «sin evidencia»). |
+
 ## Recuento
-VERIFICADA nuevas: 5 (Gibbons y Manning 2006; Segú 2020; Carozzi, Hilber y Yu 2024; Baum-Snow y Marion 2009; Glaeser, Gyourko y Saks 2005). NO VERIFICADA: 7 temas pendientes (sin referencia con DOI comprobado). Cuartil: Q1 solo para JUE (docs/v3); las demás «cuartil no verificado».
+VERIFICADA nuevas: 7 (Gibbons y Manning 2006; Segú 2020; Carozzi, Hilber y Yu 2024; Baum-Snow y Marion 2009; Glaeser, Gyourko y Saks 2005; Fack 2005; Damen 2016). NO VERIFICADA: Sinai y Waldfogel (2005), López-García (evaluación 2013) y los temas sin referencia (ver tabla). Fack ya no es NO VERIFICADA (se halló el artículo de 2005). Cuartil: Q1 solo para JUE (docs/v3); las demás «cuartil no verificado».

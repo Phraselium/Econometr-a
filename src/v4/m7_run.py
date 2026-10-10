@@ -6,9 +6,10 @@ Supuestos declarados:
   - Independencia de fuentes de precio: el IPV del INE se construye con datos notariales, así que
     INE y Notariado forman UN grupo («notarial»); MIVAU (tasaciones) y Registradores (inscripciones)
     son otros dos. La serie BdE de precio tasado es la misma que la del MIVAU (no independiente).
-  - C1 si al menos dos fuentes de grupos distintos difieren <= 5 pp anuales en la variación anualizada.
-  - Alquiler: IPC de alquiler (encuesta/administrativo, índice), SERPAVI (STOCK: mediana de contratos
-    vigentes declarados en el IRPF, responde con retraso) e Incasòl (FLUJO: fianzas de contratos
+  - Dirección C1: >=2 fuentes de grupos distintos con igual signo, |var| >= 5 % y diferencia <= 5 pp anuales.
+  - Cuantía C1: >=2 fuentes independientes dentro de ±15 % en el nivel del índice acumulado; si no, C4.
+  - Alquiler: IPC de alquiler (encuesta/administrativo, índice), SERPAVI (renta media declarada en el IRPF de contratos vigentes,
+    con contratos nuevos y cambios de composición) e Incasòl (FLUJO: fianzas de contratos
     nuevos; solo Cataluña; el umbral de la banda superior pasa de >650 a >600 euros en 2021).
   - GSADF: ADF con un rezago de Δy fijo; r0 = 0,01 + 1,8/sqrt(T); valores críticos por bootstrap
     wild recursivo (Phillips y Shi 2020): Δy*_t = e_t·Δy_t, e_t ~ N(0,1). Capa C4.
@@ -41,7 +42,8 @@ OUT = RAIZ / "output" / "v4" / "M7" / ("smoke" if SMOKE else "")
 TAB = OUT / "tablas"
 TAB.mkdir(parents=True, exist_ok=True)
 REG = econ_utils.Registry(OUT / "registro.csv")
-TOL = 0.05
+TOL = 0.05          # solo DIRECCIÓN (pp anuales)
+TOL_NIVEL = 0.15    # CUANTÍA: nivel del índice acumulado
 GRUPO = {"INE_IPV": "notarial", "Notariado": "notarial", "MIVAU_tasado": "tasacion",
          "Registradores": "registral", "IPC_alquiler": "ine", "SERPAVI": "irpf", "Incasol": "fianzas"}
 
@@ -72,20 +74,35 @@ def variaciones(idx: dict[str, pd.Series], a0: int, a1: int) -> dict:
             ann[k] = float((s.loc[a1] / s.loc[a0]) ** (1 / (a1 - a0)) - 1)
     pares = [(a, b, abs(ann[a] - ann[b])) for a in ann for b in ann
              if a < b and GRUPO[a] != GRUPO[b]]
-    ok = [(a, b, d) for a, b, d in pares if d <= TOL]
     mejor = min(pares, key=lambda x: x[2]) if pares else None
+    # dirección (regla de ±5 pp anuales, solo para la dirección): mismo signo y lejos de 0 (|var| >= 5 %)
+    dir_ok = [(a, b) for a, b, d in pares if d <= TOL and cum[a] * cum[b] > 0
+              and min(abs(cum[a]), abs(cum[b])) >= 0.05]
+    # cuantía: mayor conjunto de fuentes con niveles acumulados dentro de ±15 % entre sí
+    ks = sorted(cum, key=lambda k: cum[k])
+    nucleo: list[str] = []
+    for i in range(len(ks)):
+        for j in range(i, len(ks)):
+            if (1 + cum[ks[j]]) / (1 + cum[ks[i]]) - 1 <= TOL_NIVEL and j - i + 1 > len(nucleo):
+                nucleo = ks[i:j + 1]
+    indep = len({GRUPO[k] for k in nucleo}) >= 2
     return {"cum": cum, "ann": ann, "n_fuentes": len(cum),
             "rango_cum": [min(cum.values()), max(cum.values())] if cum else [np.nan, np.nan],
-            "c1": bool(ok), "pares_ok": [f"{a}/{b}" for a, b, _ in ok],
+            "c1_dir": bool(dir_ok), "c1_cuantia": bool(len(nucleo) >= 2 and indep), "c1": bool(len(nucleo) >= 2 and indep),
+            "nucleo": nucleo, "discrepantes": [k for k in cum if k not in nucleo],
+            "nucleo_rango": [min(cum[k] for k in nucleo), max(cum[k] for k in nucleo)] if nucleo else [np.nan, np.nan],
+            "pares_ok": [f"{a}/{b}" for a, b in dir_ok],
             "mejor_par": f"{mejor[0]}/{mejor[1]} ({mejor[2] * 100:.1f} pp)" if mejor else ""}
 
 
 def fila_var(terr, tipo, a0, a1, v):
     return {"territorio": terr, "tipo": tipo, "desde": a0, "hasta": a1, "n_fuentes": v["n_fuentes"],
             "min_pct": 100 * v["rango_cum"][0], "max_pct": 100 * v["rango_cum"][1],
-            "mediana_pct": 100 * float(np.median(list(v["cum"].values()))) if v["cum"] else np.nan,
-            "capa": "C1" if v["c1"] else "C4",
-            "pares_dentro_5pp": ";".join(v["pares_ok"]), "par_mas_cercano": v["mejor_par"],
+            "mediana_pct_no_C1": 100 * float(np.median(list(v["cum"].values()))) if v["cum"] else np.nan,
+            "capa_direccion": "C1" if v["c1_dir"] else "C4",
+            "capa_cuantia": "C1" if v["c1_cuantia"] else "C4",
+            "nucleo_cuantia": ";".join(v["nucleo"]), "fuentes_discrepantes": ";".join(v["discrepantes"]),
+            "pares_direccion_5pp_anual": ";".join(v["pares_ok"]), "par_mas_cercano": v["mejor_par"],
             **{f"var_{k}_pct": 100 * x for k, x in v["cum"].items()}}
 
 
@@ -122,14 +139,14 @@ def triangulacion(nac: pd.DataFrame, pan: pd.DataFrame) -> dict:
         filas.append(fila_var("España", "precio", a0, a1, v))
         res[f"precio_{a0}_{a1}"] = v
         reg("triang", f"precio_nac_{a0}_{a1}", "var acumulada de índices 2015=100", v["n_fuentes"],
-            f"rango [{100 * v['rango_cum'][0]:.1f}; {100 * v['rango_cum'][1]:.1f}] %; C1={v['c1']}",
+            f"rango [{100 * v['rango_cum'][0]:.1f}; {100 * v['rango_cum'][1]:.1f}] %; dirección C1={v['c1_dir']}; cuantía C1={v['c1_cuantia']}",
             a0, a1, coef=float(np.median(list(v["cum"].values()))))
     # ---- precio por CCAA
     mp = {"Principado de Asturias": "Asturias", "C. Foral de Navarra": "Comunidad Foral de Navarra"}
     rc = rg[(rg.serie == "compraventas_viv_pm2") & (rg.nivel == "ccaa")].copy()
     rc["ccaa"] = rc.territorio.replace(mp)
     rc["anio"] = rc.periodo.astype(int)
-    c1_ccaa = {}
+    c1_ccaa, dir_ccaa, nf_ccaa = {}, {}, {}
     for c in sorted(pan.ccaa.unique()):
         p = pan[pan.ccaa == c]
         idx = {"INE_IPV": anual_trim(p, "ipv"), "MIVAU_tasado": anual_trim(p, "p_tasado"),
@@ -138,8 +155,12 @@ def triangulacion(nac: pd.DataFrame, pan: pd.DataFrame) -> dict:
         for a0, a1 in [(2015, 2025), (2021, 2025)]:
             v = variaciones(idx, a0, a1)
             filas.append(fila_var(c, "precio", a0, a1, v))
-            c1_ccaa[(c, a0)] = v["c1"]
+            c1_ccaa[(c, a0)] = v["c1_cuantia"]
+            dir_ccaa[(c, a0)] = v["c1_dir"]
+            nf_ccaa[c] = v["n_fuentes"]
     pd.DataFrame(filas).to_csv(TAB / "variacion_precio.csv", index=False)
+    res["n_ccaa_dir_c1"] = {a0: sum(1 for (c, a), ok in dir_ccaa.items() if a == a0 and ok) for a0 in (2015, 2021)}
+    res["fuentes_por_ccaa"] = nf_ccaa
     res["n_ccaa_c1"] = {a0: sum(1 for (c, a), ok in c1_ccaa.items() if a == a0 and ok) for a0 in (2015, 2021)}
     reg("triang", "precio_ccaa_c1", "n CCAA con >=2 fuentes independientes a <=5 pp anuales",
         len(pan.ccaa.unique()), str(res["n_ccaa_c1"]))
@@ -183,7 +204,7 @@ def triangulacion(nac: pd.DataFrame, pan: pd.DataFrame) -> dict:
                 fa.append(fila_var(terr, "alquiler", a0, a1, v))
                 res[f"alq_{terr}_{a0}_{a1}"] = v
                 reg("triang", f"alq_{terr}_{a0}_{a1}", "var acumulada de índices 2015=100", v["n_fuentes"],
-                    f"rango [{100 * v['rango_cum'][0]:.1f}; {100 * v['rango_cum'][1]:.1f}] %; C1={v['c1']}",
+                    f"rango [{100 * v['rango_cum'][0]:.1f}; {100 * v['rango_cum'][1]:.1f}] %; dirección C1={v['c1_dir']}; cuantía C1={v['c1_cuantia']}",
                     a0, a1, coef=float(np.median(list(v["cum"].values()))))
     # CCAA: IPC frente a SERPAVI (dos fuentes independientes)
     mps = {"Asturias": "Principado de Asturias", "Comunidad Foral de Navarra": "Comunidad Foral de Navarra"}
@@ -194,7 +215,7 @@ def triangulacion(nac: pd.DataFrame, pan: pd.DataFrame) -> dict:
         idx = {k: rebase(s) for k, s in idx.items() if 2015 in s.index}
         v = variaciones(idx, 2015, 2024)
         fa.append(fila_var(c, "alquiler", 2015, 2024, v))
-        n_ok += int(v["c1"])
+        n_ok += int(v["c1_dir"])
     res["n_ccaa_alq_c1"] = n_ok
     pd.DataFrame(fa).to_csv(TAB / "variacion_alquiler.csv", index=False)
     reg("triang", "alq_ccaa_c1", "IPC frente a SERPAVI 2015-2024 <=5 pp anuales", 17, f"{n_ok} de 17 CCAA")
@@ -448,9 +469,12 @@ def ficha(tri: dict, gs: dict, ver: dict) -> dict:
     cnt = ccaa[ccaa.exuberancia_holm05].groupby("territorio").size()
     ambas = sorted(cnt[cnt == 2].index)
     v15, v21 = tri["precio_2015_2025"], tri["precio_2021_2025"]
-    mag = (f"Precio de compra 2015-2025: +{100 * v15['rango_cum'][0]:.0f} % a +{100 * v15['rango_cum'][1]:.0f} % "
-           f"según la fuente ({v15['n_fuentes']} fuentes); 2021-2025: +{100 * v21['rango_cum'][0]:.0f} % a "
-           f"+{100 * v21['rango_cum'][1]:.0f} %. GSADF nacional precio/alquiler: exuberancia (BH 5 %, ambos métodos) en "
+    n15, n21 = v15["nucleo_rango"], v21["nucleo_rango"]
+    mag = (f"Precio de compra 2015-2025: dirección C1 (positiva); cuantía: núcleo {', '.join(v15['nucleo'])} "
+           f"+{100 * n15[0]:.0f} % a +{100 * n15[1]:.0f} % (cuantía {'C1' if v15['c1_cuantia'] else 'C4'}), "
+           f"discrepante: {', '.join(v15['discrepantes']) or 'ninguna'} (rango total +{100 * v15['rango_cum'][0]:.0f} % a "
+           f"+{100 * v15['rango_cum'][1]:.0f} %). 2021-2025: núcleo +{100 * n21[0]:.0f} % a +{100 * n21[1]:.0f} %, "
+           f"rango total +{100 * v21['rango_cum'][0]:.0f} % a +{100 * v21['rango_cum'][1]:.0f} %. GSADF nacional precio/alquiler: exuberancia (BH 5 %, ambos métodos) en "
            f"{n_pa_ok} de {len(pa)} medidas; CCAA con exuberancia en ambas medidas: {len(ambas)} de 17; "
            f"episodios nacionales: {'; '.join(pa.episodios_bsadf)}.")
     ver_txt = "ANALIZADA, NO CONCLUYENTE"
@@ -465,7 +489,7 @@ def ficha(tri: dict, gs: dict, ver: dict) -> dict:
         "id": "M7-V1", "tema": "Burbuja de precios",
         "enunciado": "Hay una burbuja en el precio de la vivienda en España.",
         "capa": "C4", "magnitud": mag,
-        "intervalo": f"[{100 * v15['rango_cum'][0]:.0f}; {100 * v15['rango_cum'][1]:.0f}] % de variación 2015-2025",
+        "intervalo": f"[{100 * n15[0]:.0f}; {100 * n15[1]:.0f}] % de variación 2015-2025 (núcleo de cuantía)",
         "cota": "—",
         "literatura": "Phillips, Shi y Yu (2015), GSADF: NO VERIFICADA (DOI y cuartil no comprobados sin red).",
         "veredicto": ver_txt, "regla": regla,
@@ -489,7 +513,11 @@ def main() -> None:
     (OUT / "fichas_verificador.json").write_text(json.dumps([fch], ensure_ascii=False, indent=1), encoding="utf-8")
     df = gs["df"]
     hechos = {"precio_2015_2025": {k: v for k, v in tri["precio_2015_2025"].items() if k != "disp"},
-              "precio_2021_2025": tri["precio_2021_2025"], "n_ccaa_precio_c1": tri["n_ccaa_c1"],
+              "precio_2021_2025": tri["precio_2021_2025"], "n_ccaa_precio_cuantia_c1": tri["n_ccaa_c1"], "n_ccaa_precio_direccion_c1": tri["n_ccaa_dir_c1"],
+              "fuentes_por_ccaa": tri["fuentes_por_ccaa"],
+              "regla_5pp_anual": "Los ±5 pp anuales valen SOLO para la DIRECCIÓN (mismo signo y |var| >= 5 %). La cuantía es C1 solo si >=2 fuentes de grupos independientes coinciden dentro de ±15 % en el nivel del índice acumulado; si no, C4. mediana_pct_no_C1 no es una cifra C1.",
+              "independencia_precio": "INE IPV y Notariado comparten fuente (notarial). MIVAU (tasaciones) y Notariado son solo parcialmente independientes; Registradores es independiente de ambos. IPV del INE es la fuente discrepante en 2015-2025.",
+              "nota_alquiler": "IPC de alquiler y SERPAVI cubren contratos vigentes. El IPC sigue la renta de las mismas viviendas, con actualización anual limitada por ley en 2022-2024 (sin verificar en el BOE). SERPAVI es la renta media declarada, con contratos nuevos y cambios de composición. Dirección C1 (signo positivo y lejos de 0); cuantía C4.",
               "n_ccaa_alquiler_c1_2015_2024": tri["n_ccaa_alq_c1"],
               "alquiler": {k: v for k, v in tri.items() if k.startswith("alq_")},
               "verificacion_gsadf": ver, "tamano_gsadf": tam, "autocorr_dy_media": gs["ac_dy_media"]}
@@ -505,7 +533,7 @@ def main() -> None:
            "nivel_evidencia": "EXPLORATORIO (GSADF); DESCRIPTIVO/C1 (triangulación)",
            "diagnosticos": {"verificacion_simulada": ver, "tamano_ar1": tam, "autocorr_dy_media": gs["ac_dy_media"], "fdr": "BH por familia (nacional 6; CCAA 34), exuberancia si BH<0,05 con ambos métodos; Holm en p_holm (con 499 réplicas y 40 pruebas el mínimo Holm es 0,08)"},
            "fuera_muestra": {"modelo": "no aplica (test de exuberancia, sin predicción)", "rmse": None, "dm_vs_ar4": None},
-           "notas": "Un test de exuberancia no identifica burbujas. INE e IPV de Notariado comparten fuente; BdE=MIVAU. SERPAVI es un stock y acaba en 2024."}
+           "notas": "Un test de exuberancia no identifica burbujas. INE e IPV de Notariado comparten fuente; BdE=MIVAU. SERPAVI acaba en 2024; cubre contratos vigentes igual que el IPC, que sigue las mismas viviendas."}
     (OUT / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float), encoding="utf-8")
     REG.flush()
     print(df[["territorio", "medida", "gsadf", "cv95_mc", "p_mc", "p_wild", "p_holm", "episodios_bsadf"]].to_string())

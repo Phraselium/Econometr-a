@@ -26,7 +26,9 @@ CLASES = {1: "falta y brecha positiva moderada (coste supuesto)", 2: "falta y pr
           3: "falta pero no rentable construir (coste supuesto)", 4: "no falta"}
 
 
-def _n_docs() -> dict[str, set]:
+def _n_docs() -> dict[str, dict[str, set]]:
+    """id de instrumento -> {"favor": documentos, "contra": documentos}. Documentos distintos; la dirección sale de la
+    columna «direccion» (a favor/ampliar frente a derogar/reducir) si existe."""
     f = RAIZ / "data" / "raw" / "v4" / "medidas_programas.csv"
     if not f.exists():
         return {}
@@ -34,7 +36,14 @@ def _n_docs() -> dict[str, set]:
     col_ins = [c for c in d.columns if c.lower().startswith("instrumento")][0]
     col_doc = [c for c in d.columns if c.lower().startswith("documento")][0]
     d["id"] = d[col_ins].astype(str).str.split().str[0]
-    return d.groupby("id")[col_doc].agg(lambda x: set(x)).to_dict()
+    if "direccion" in d.columns:
+        contra = d["direccion"].astype(str).str.contains("derog|reduc", case=False)
+    else:
+        contra = d[col_ins].astype(str).str.contains("derogaci", case=False)
+    out: dict[str, dict[str, set]] = {}
+    for (i, c), g in d.groupby([d["id"], contra]):
+        out.setdefault(i, {"favor": set(), "contra": set()})["contra" if c else "favor"] |= set(g[col_doc])
+    return out
 
 
 def _pd() -> dict[str, tuple[float, float, str]]:
@@ -46,9 +55,10 @@ def _pd() -> dict[str, tuple[float, float, str]]:
 
 
 def _r(pdres: dict, clave: str, unidad: str = "%") -> str:
-    for k, (lo, hi, capa) in pdres.items():
+    """Magnitud de P-D v3: siempre C4 (condicional a ε; regla de v3 y revisión C, C4). El signo se informa aparte."""
+    for k, (lo, hi, _capa) in pdres.items():
         if k.startswith(clave):
-            return f"{lo:,.1f} a {hi:,.1f} {unidad} ({capa}; P-D v3)".replace(",", "X").replace(".", ",").replace("X", ".")
+            return f"{lo:,.1f} a {hi:,.1f} {unidad} (magnitud C4; P-D v3)".replace(",", "X").replace(".", ",").replace("X", ".")
     return "sin simulación"
 
 
@@ -56,7 +66,7 @@ def incidencia() -> pd.DataFrame:
     """Parte de una ayuda a la demanda que se traslada al precio (la captan los vendedores o arrendadores):
     |εd| / (εs + |εd|). Rejilla con rangos plausibles (supuestos, C4 en la convención A)."""
     filas = []
-    for es in (0.2, 0.5, 1.0, 2.0):
+    for es in (0.0, 0.45, 1.75):   # misma rejilla de oferta que P-D v3 (η)
         for ed in (0.3, 0.6, 1.0, 1.5):
             filas.append({"elasticidad_oferta": es, "elasticidad_demanda_abs": ed,
                           "parte_al_precio": ed / (es + ed), "parte_al_beneficiario": es / (es + ed)})
@@ -65,7 +75,8 @@ def incidencia() -> pd.DataFrame:
 
 def matriz(nd: dict, pdres: dict, inc: pd.DataFrame, clases: dict) -> list[dict]:
     lo_i, hi_i = inc.parte_al_precio.min(), inc.parte_al_precio.max()
-    inc_txt = f"entre el {100 * lo_i:.0f} % y el {100 * hi_i:.0f} % de la ayuda se traslada al precio (rejilla de elasticidades, C4)"
+    inc_txt = (f"entre el {100 * lo_i:.0f} % y el {100 * hi_i:.0f} % de una ayuda general por unidad se traslada al precio (magnitud C4; "
+               "con oferta rígida, η = 0, el 100 %); para una ayuda focalizada es una cota superior")
     donde_oferta = f"clases 1-2 de M3 ({clases.get(1, 0) + clases.get(2, 0)} municipios; C4)"
     donde_rigida = f"clases 2-3 (oferta rígida o no rentable; {clases.get(2, 0) + clases.get(3, 0)} municipios; C4)"
     M = [
@@ -111,7 +122,8 @@ def matriz(nd: dict, pdres: dict, inc: pd.DataFrame, clases: dict) -> list[dict]
              evidencia="Gibbons y Manning (2006, VERIFICADA): 60-67 % de la incidencia en arrendadores; Carozzi, Hilber y Yu (2024, VERIFICADA, Q1): precios al alza sin más construcción donde la oferta es rígida",
              efecto=inc_txt, plazo="inmediato", coste="alto y recurrente (ayudas) o diferido (avales: riesgo contingente)",
              riesgos="capitalización en precios y rentas con oferta rígida", distribucion="ganan los beneficiarios (en parte) y los vendedores o arrendadores; pierden los no beneficiarios que compran o alquilan",
-             donde="mayor eficacia donde la oferta es elástica; menor en las clases 2-3 de M3", signo="no (para el conjunto del mercado)"),
+             donde="mayor eficacia donde la oferta es elástica; menor en las clases 2-3 de M3",
+             signo="no (para el conjunto del mercado); por grupo, C2: beneficiario ≥ 0 (nulo con η = 0), no beneficiario paga más"),
         dict(id="I14", instrumento="Seguridad jurídica del propietario y procedimientos de desalojo", mecanismo="Menor riesgo percibido: más oferta de alquiler.",
              evidencia="sin datos (V09; solicitud S10)", efecto="sin simulación propia", plazo="corto-medio", coste="bajo (administración de justicia)",
              riesgos="hogares vulnerables sin alternativa habitacional", distribucion="ganan los arrendadores; pueden perder hogares vulnerables", donde="sin dato territorial", signo="sin evaluar"),
@@ -126,9 +138,37 @@ def matriz(nd: dict, pdres: dict, inc: pd.DataFrame, clases: dict) -> list[dict]
              evidencia="sin diseño propio; la incidencia depende de la elasticidad de oferta (V10)", efecto="sin simulación propia", plazo="medio", coste="medio (menor recaudación)",
              riesgos="captura por el precio del suelo con oferta rígida", distribucion="ganan promotores y, en parte, compradores", donde="clase 3 de M3 (no rentable a coste actual; C4)", signo="sin evaluar"),
     ]
+    sin = dict(evidencia="sin evidencia hallada en la búsqueda registrada (docs/v4/literatura_v4.md)", efecto="sin simulación propia",
+               signo="sin evaluar")
+    M += [
+        dict(id="I03", instrumento="Reservas de suelo para vivienda protegida", mecanismo="Porcentaje obligatorio de VPO en nuevos desarrollos.",
+             plazo="medio-largo", coste="bajo (fiscal); coste para el promotor", riesgos="menor suelo libre; efecto sobre la viabilidad",
+             distribucion="ganan adjudicatarios de VPO; pagan promotores y compradores libres", donde=donde_oferta, **sin),
+        dict(id="I11", instrumento="Rehabilitación del parque", mecanismo="Amplía la oferta utilizable sin suelo nuevo.", plazo="corto-medio",
+             coste="medio (ayudas)", riesgos="efecto pequeño sobre la cantidad", distribucion="ganan propietarios que rehabilitan", donde="parque antiguo", **sin),
+        dict(id="I15", instrumento="Fiscalidad de arrendadores (incentivos o recargos condicionados)", mecanismo="Premia o grava el alquiler según precio o uso.",
+             plazo="corto", coste="medio (gasto fiscal) o recauda", riesgos="incidencia incierta", distribucion="arrendadores e inquilinos según diseño",
+             donde="sin dato territorial", **sin),
+        dict(id="I18", instrumento="Duración y prórroga de los contratos de alquiler", mecanismo="Más estabilidad contractual.", plazo="inmediato",
+             coste="bajo", riesgos="posible efecto sobre la oferta", distribucion="ganan inquilinos con contrato; arrendadores pierden flexibilidad",
+             donde="mercados de alquiler", **sin),
+        dict(id="I19", instrumento="Sinhogarismo y vivienda de emergencia", mecanismo="Provisión directa a personas sin hogar.", plazo="corto",
+             coste="medio", riesgos="escala limitada", distribucion="ganan personas sin hogar; coste fiscal", donde="grandes ciudades", **sin),
+        dict(id="I22", instrumento="Obligaciones a grandes tenedores (alquiler social obligatorio)", mecanismo="Cuota obligatoria de alquiler social.",
+             plazo="corto", coste="bajo (fiscal)", riesgos="sin datos de titularidad para medir su alcance (M4-V2)", distribucion="pagan grandes tenedores; ganan adjudicatarios",
+             donde="sin dato territorial", **sin),
+        dict(id="I24", instrumento="Derecho subjetivo a la vivienda", mecanismo="Acceso exigible; requiere oferta pública o ayudas.", plazo="largo",
+             coste="alto", riesgos="depende de la oferta disponible", distribucion="ganan los hogares con derecho; coste fiscal", donde="todo el territorio", **sin),
+        dict(id="I25", instrumento="Coordinación multinivel (pacto de Estado)", mecanismo="Acuerdo estable sobre competencias y financiación.", plazo="largo",
+             coste="bajo", riesgos="—", distribucion="—", donde="todo el territorio", **sin),
+        dict(id="I28", instrumento="Inembargabilidad de la vivienda habitual", mecanismo="Protege el hogar frente a la ejecución de deudas.", plazo="inmediato",
+             coste="bajo", riesgos="posible encarecimiento o racionamiento del crédito", distribucion="ganan deudores; pueden perder acreedores y solicitantes de crédito",
+             donde="todo el territorio", **sin),
+    ]
     for m in M:
         ids = m["id"].split("/")
-        m["n_documentos"] = len(set().union(*[nd.get(i, set()) for i in ids]))   # documentos distintos
+        m["n_documentos_a_favor"] = len(set().union(*[nd.get(i, {}).get("favor", set()) for i in ids]))
+        m["n_documentos_en_contra"] = len(set().union(*[nd.get(i, {}).get("contra", set()) for i in ids]))
     return M
 
 
@@ -137,17 +177,21 @@ def fichas(inc: pd.DataFrame) -> list[dict]:
     m1 = json.loads((RAIZ / "output" / "v4" / "M1" / "hechos.json").read_text())
     return [
         dict(id="M5-V1", tema="Ayudas a la demanda", enunciado="Las ayudas a los jóvenes para comprar o alquilar abaratan su acceso a la vivienda.",
-             capa="C4", magnitud=(f"Con la rejilla de elasticidades (oferta 0,2-2; demanda 0,3-1,5), entre el {100 * lo_i:.0f} % y el {100 * hi_i:.0f} % "
-                                  "de la ayuda se traslada al precio o la renta. El beneficiario paga menos en neto, salvo con oferta totalmente rígida; "
-                                  "los no beneficiarios pagan más."),
-             intervalo=f"{100 * lo_i:.0f}-{100 * hi_i:.0f} % de la ayuda al precio", cota="C4: depende de elasticidades sin estimación española verificada",
-             literatura="Gibbons y Manning (2006), JPubE, VERIFICADA, cuartil no verificado: 60-67 % de incidencia en arrendadores; Carozzi, Hilber y Yu (2024), JUE, VERIFICADA, Q1.",
-             veredicto="ANALIZADA, NO CONCLUYENTE",
-             regla=("Para el beneficiario la ayuda reduce el coste neto en casi toda la rejilla, pero «abaratar el acceso» para los jóvenes en "
-                    "conjunto depende de cuánto se traslade al precio, que no está estimado para España. Capa C4: como máximo no concluyente."),
-             limites="Sin evaluación verificada de los avales ICO ni de las ayudas españolas.", evidencia=["output/v4/M5/incidencia_ayudas_demanda.csv"],
-             convenciones={"A (estricta: traducción a precio en C4)": "ANALIZADA, NO CONCLUYENTE",
-                           "B (estructural: traducción a precio como C2)": "PARCIALMENTE: abarata para el beneficiario y encarece para los no beneficiarios en toda la rejilla."}),
+             capa="C2", magnitud=(f"Signo (C2, estable en la rejilla de P-D: oferta η ∈ {{0; 0,45; 1,75}}, demanda 0,3-1,5): el beneficiario paga "
+                                  "lo mismo o menos en neto (nada menos con oferta totalmente rígida) y los no beneficiarios pagan más. "
+                                  f"Magnitud (C4): entre el {100 * lo_i:.0f} % y el {100 * hi_i:.0f} % de una ayuda general por unidad se traslada al precio; "
+                                  "para una ayuda focalizada en jóvenes es una cota superior, escalada por su peso en la demanda. Los avales relajan "
+                                  "la restricción de entrada y no son una ayuda por unidad: su traducción es más incierta."),
+             intervalo=f"{100 * lo_i:.0f}-{100 * hi_i:.0f} % de una ayuda general al precio (C4)", cota="C2 de signo por grupo; magnitud C4",
+             literatura=("Gibbons y Manning (2006), JPubE, VERIFICADA, cuartil no verificado: 60-67 % de incidencia en arrendadores; "
+                         "Carozzi, Hilber y Yu (2024), JUE, VERIFICADA, Q1 (referencia cualitativa para avales: precio al alza sin más construcción con oferta rígida)."),
+             veredicto="PARCIALMENTE",
+             regla=("Regla común con V11 (revisión C, C5): si el signo es estable en la rejilla (C2) para el grupo al que se refiere la "
+                    "afirmación, PARCIALMENTE acotado a ese grupo; la magnitud es C4. Abarata (o no encarece) para el beneficiario y encarece "
+                    "para los no beneficiarios; «abaratar el acceso de los jóvenes» en conjunto depende de la magnitud, no establecida."),
+             limites="Sin evaluación verificada de los avales ICO ni de las ayudas españolas.", evidencia=["output/v4/M5/tablas/incidencia_ayudas_demanda.csv"],
+             convenciones={"A (estricta: traducción a precio en C4)": "PARCIALMENTE (signo por grupo, C2)",
+                           "B (estructural: traducción a precio como C2)": "PARCIALMENTE: misma conclusión con la magnitud también como cota."}),
         dict(id="M5-V2", tema="Geografía del déficit", enunciado="Faltan viviendas en toda España.",
              capa="C4", magnitud=("2021-2025: ninguna provincia con excedente; 7 provincias suman el 50 % del déficit y 19 el 80 %; "
                                   "249 municipios con excedente (71 mil viviendas). Hechos de M1 en C4 (hogares provinciales de fuente única)."),
@@ -184,10 +228,12 @@ def main() -> dict:
     df = pd.DataFrame(M)
     df.to_csv(OUT / "matriz_instrumentos.csv", index=False)
     inc.to_csv(OUT / "tablas" / "incidencia_ayudas_demanda.csv", index=False)
-    cols = ["id", "instrumento", "n_documentos", "evidencia", "efecto", "plazo", "coste", "riesgos", "distribucion", "donde", "signo"]
+    cols = ["id", "instrumento", "n_documentos_a_favor", "n_documentos_en_contra", "evidencia", "efecto", "plazo", "coste", "riesgos", "distribucion", "donde", "signo"]
     md = ("# Matriz de instrumentos (M5)\n\nRúbrica idéntica para todos. Se evalúan instrumentos, no partidos: la procedencia de las "
-          "medidas está en data/raw/v4/medidas_programas.csv. «n_documentos» cuenta en cuántos documentos (de los analizados) aparece "
-          "el instrumento; 0 = no propuesto. «Signo» = signo estable del efecto sobre el esfuerzo de acceso en la rejilla simulada. "
+          "medidas está en data/raw/v4/medidas_programas.csv. «n_documentos_a_favor» y «n_documentos_en_contra» cuentan documentos "
+          "distintos (de los analizados; cobertura en docs/v4/cobertura_programas.md) que proponen ampliar o derogar/reducir el "
+          "instrumento. Criterio de inclusión: todos los instrumentos de docs/v4/instrumentos.md (propuestos y no propuestos). "
+          "«Signo» = signo del efecto sobre el esfuerzo de acceso en la rejilla de P-D (capa C2 si es estable); las magnitudes son C4. "
           "Ninguna simulación incluye costes; la ordenación no es coste-beneficio.\n\n"
           "| " + " | ".join(cols) + " |\n|" + "---|" * len(cols) + "\n"
           + "".join("| " + " | ".join(str(r[c]) for c in cols) + " |\n" for r in M))

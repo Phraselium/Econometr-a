@@ -78,5 +78,5 @@
   "rmse": null,
   "dm_vs_ar4": null
  },
- "notas": "Un test de exuberancia no identifica burbujas. INE e IPV de Notariado comparten fuente; BdE=MIVAU. SERPAVI es un stock y acaba en 2024."
+ "notas": "Un test de exuberancia no identifica burbujas. INE e IPV de Notariado comparten fuente; BdE=MIVAU. SERPAVI acaba en 2024; cubre contratos vigentes igual que el IPC, que sigue las mismas viviendas."
 }

@@ -48,7 +48,9 @@ CONV_B = {
             "con |ε_d| = 1 la cota es 2,7 % (44 % de la subida), y quedaría NO RESPALDADA."),
     "V03": ("ANALIZADA, NO CONCLUYENTE", "Compra 2014-2025: cota de precio ≤26,3 % frente a una subida observada de ≈33-34 % según la ponderación (≈78-79 % de la "
             "subida): no excluye la afirmación; alquiler: cota no informativa (227 %)."),
-    "V11": ("PARCIALMENTE", "Igual en ambas convenciones: el signo de P-D (≤ 0, nulo con desplazamiento total) no depende de la traducción a precio."),
+    "V11": ("PARCIALMENTE", "Regla común con M5-V1 (revisión C, C5): signo estable en la rejilla (≤ 0, nulo con desplazamiento total), C2; "
+            "magnitud C4. «Resolvería» no se sostiene a las dosis simuladas: 10.000-25.000 viviendas/año frente a una brecha de "
+            "104.000-413.000/año (cantidades contables C2)."),
     "V12": ("PARCIALMENTE", "Con P/R = 1/uc: incompatible con 2021-2025 (signo contrario) y no descartada en 2014-2021 (la cota supera la subida observada)."),
 }
 
@@ -120,6 +122,8 @@ def ficha_md(f: dict) -> str:
 def main() -> list[dict]:
     fs = [transformar(f) for f in _cargar_v3() if f["id"] not in RETIRADAS] + [transformar(f) for f in _nuevas()]
     (DEST / "fichas").mkdir(parents=True, exist_ok=True)
+    for viejo in (DEST / "fichas").glob("*.json"):   # retira fichas que ya no se generan (p. ej. V13, V14)
+        viejo.unlink()
     for f in fs:
         (DEST / "fichas" / f"{f['id']}.json").write_text(json.dumps(f, ensure_ascii=False, indent=1))
     cab = ("# Verificador de afirmaciones sobre la vivienda en España (v4)\n\n"

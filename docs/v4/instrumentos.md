@@ -1,62 +1,57 @@
-# Taxonomía de instrumentos de vivienda (M5a, 2026-10-10)
+# Taxonomía de instrumentos de vivienda (M5a, recalculada desde el CSV, 2026-10-10)
 
-Se evalúan instrumentos, no actores. La procedencia (quién, página, cita) está solo en `data/raw/v4/medidas_programas.csv`. Aquí solo hay recuentos de documentos.
+Se evalúan instrumentos, no actores. La procedencia (quién, página, cita) está solo en `data/raw/v4/medidas_programas.csv`. Aquí solo hay recuentos de documentos y de medidas.
 
-## Alcance y límites de la recogida
-- Documentos leídos y codificados: 9 programas de las elecciones generales de 2023 de grupos con representación en la XV legislatura (8 de la pasada anterior más 1 añadido en la pasada 2, copia no oficial). 89 medidas en el CSV (71 + 18 de la pasada 2).
-- NO recogidos (ver `docs/v4/fuentes_fallidas.md`): 2 programas de grupos con representación (no localizados o no accesibles) y las proposiciones de ley sobre vivienda de la XV legislatura (congreso.es), no consultadas por límite de presupuesto. Los recuentos «n de 8» son por tanto cotas inferiores sobre el conjunto de grupos. El recuento de la tabla A no incluye aún el programa añadido en la pasada 2 (ver «Pendiente»).
-- Alcance de lectura por documento: solo el apartado de vivienda y, donde se localizó, medidas de vivienda en otros apartados (suelo, ocupación, fiscalidad). Un documento puede tener medidas en páginas no leídas.
-- Una medida que aparece en varios documentos cuenta como un instrumento. Cada medida del CSV tiene un único instrumento principal (los programas mezclan varios en una frase).
-- Normas «en vigor»: solo se afirma lo que consta en `docs/` (verificado en v2/v3) o en la cita literal del programa. Las demás van marcadas «sin verificar en BOE» y deben comprobarse antes de citarse.
+## Alcance, reglas y límites
+- 9 programas de las elecciones generales de 2023 de grupos con representación en la XV legislatura, codificados en 88 medidas (recuento del CSV). Cobertura por documento: `docs/v4/cobertura_programas.md`.
+- Procedencia: 4 de los 9 documentos se leyeron en «copia no oficial alojada por un medio»; los otros 5, en la web del propio grupo. No se comprobó que las 4 copias coincidan con la versión oficial.
+- NO recogidos (`docs/v4/fuentes_fallidas.md`): 2 programas de grupos con representación (no localizados) y las proposiciones de ley de la XV legislatura (congreso.es).
+- Regla de codificación única. Cada medida tiene un instrumento principal. La columna `direccion` vale «a favor/ampliar» si la medida crea, mantiene, amplía o refuerza el instrumento tal como está definido en su rótulo, y «derogar/reducir» si propone derogarlo o suprimirlo. Toda propuesta de derogar el control de rentas o la Ley 12/2023 es I01 con «derogar/reducir» en todos los documentos.
+- Los recuentos por instrumento separan documentos a favor y en contra: un documento con posiciones opuestas contaría en ambas columnas. Nadie «propone» un instrumento por figurar en la columna en contra.
+- Normas «en vigor»: solo se afirma lo documentado en `docs/` o en la cita literal; el resto va «sin verificar en BOE».
 
-## A. Instrumentos propuestos en al menos un documento
-| Id | Instrumento | Mecanismo (1-2 frases) | Docs (de 8) | En vigor en España |
-|---|---|---|---|---|
-| I01 | Regulación de precios del alquiler (zonas tensionadas, índice de referencia, topes) | Limita el crecimiento o el nivel de la renta en zonas declaradas tensionadas. Hay propuestas de ampliarlo (3 docs) y de derogar el marco vigente (2 docs). | 5 | Sí: Ley 12/2023, de 24 de mayo, por el derecho a la vivienda (cita en los programas y en docs v2). Aplicación efectiva solo en Cataluña desde 16/03/2024 según el Apunte Fedea 2026/15 (NO VERIFICADA). |
-| I02 | Parque público o social de alquiler a gran escala | El sector público construye, compra o rehabilita vivienda para alquiler por debajo de mercado. Aumenta oferta y desplaza demanda del mercado privado. | 6 | Parcial: Plan Estatal de Vivienda 2022-2025 (sin verificar en BOE). El peso del parque social ronda el 2,5 % de principales según una cifra de un programa (no verificada). |
-| I03 | Reservas de suelo para vivienda protegida | Obliga a destinar un porcentaje de nuevos desarrollos a VPO. Reduce el suelo libre y condiciona la oferta de mercado. | 3 | Sí, reserva del 30 % en suelo urbanizable (texto refundido de la Ley de Suelo, RDL 7/2015; sin verificar en BOE). |
-| I04 | Movilización de suelo y patrimonio públicos (incluida la cartera de la sociedad de gestión de activos) | Cede o promueve en suelo público, o transfiere activos, para vivienda asequible. Baja el coste del suelo en esas promociones. | 6 | Parcial: SEPES y Sareb existen; transferencias por convenio (sin verificar en BOE). |
-| I05 | Captura de plusvalías del suelo | La administración recupera parte del aumento de valor por recalificación y lo destina a política de vivienda. | 1 | Sí, parcial: cesión de aprovechamiento a la administración (TRLSRU art. 18; sin verificar). |
-| I06 | Avales públicos a hipotecas | El Estado garantiza parte del préstamo (20 %, hasta 95 % del precio financiado) para compradores jóvenes. Relaja la restricción de entrada; con oferta rígida puede capitalizarse en precio. | 2 | Sí: línea ICO-MIVAU de avales, 2024; cifras de diseño de prensa especializada no oficial (sin verificar en BOE). |
-| I07 | Fiscalidad y ahorro para vivienda en propiedad (IVA, ITP, cuenta ahorro, deducciones) | Reduce el coste de uso del propietario o el coste de compra. Ayuda a la demanda. | 3 | Sí, parcial: deducción por vivienda habitual suprimida para adquisiciones desde 2013 (sin verificar en BOE); ITP autonómico. |
-| I08 | Ayudas directas al alquiler (demanda) | Subvención al inquilino. Con oferta inelástica, parte se traslada a la renta. | 3 | Sí: Bono Alquiler Joven y ayudas de los planes estatales (RD 42/2022, sin verificar en BOE). |
-| I09 | Ayudas a hogares hipotecados (bono, congelación o limitación de cuotas, código de buenas prácticas, dación en pago) | Transfiere o aplaza carga financiera a deudores. Efecto en precios indirecto. | 3 | Sí, parcial: Código de Buenas Prácticas y medidas anticrisis (RDL 19/2022, RDL 8/2023; sin verificar en BOE). |
-| I10 | Movilización de vivienda vacía (registro, convenios, recuperación de posesión) | Pone en uso vivienda desocupada con registro, incentivos u otros medios. El efecto depende de cuánta vacía esté realmente disponible. | 4 | Parcial: registros autonómicos; sin verificar. |
-| I11 | Rehabilitación del parque | Ayudas a la rehabilitación y a la eficiencia energética. Amplía oferta utilizable sin suelo nuevo. | 1 | Sí: ayudas con fondos europeos (sin verificar en BOE). |
-| I12 | Industrialización de la construcción | Prefabricación y construcción industrializada para bajar plazos y costes por vivienda. | 1 | No como política específica (clúster citado solo como propuesta). Sin verificar. |
-| I13 | Agilización y seguridad jurídica urbanística | Menos plazo e incertidumbre en planeamiento y licencias, para acelerar la oferta. | 1 | No como medida de licencias; sin verificar. |
-| I14 | Seguridad jurídica del propietario y antiocupación | Acorta desalojos y refuerza la posesión. Efecto esperado sobre la oferta de alquiler por menor riesgo percibido. | 2 | Sí, parcial: reforma de 2018 de desalojo en ocupación; sin verificar. |
-| I15 | Fiscalidad de arrendadores e inversores inmobiliarios | Incentivos o recargos fiscales condicionados al precio o al uso. | 2 | Sí, parcial: reducción del 50-90 % en el IRPF del arrendador condicionada a zona tensionada (Ley 12/2023; sin verificar la cuantía). |
-| I16 | Alquiler turístico y de temporada | Regula esos usos para que no eludan el control de rentas ni retiren oferta residencial. | 2 | Sí, parcial: Ley 12/2023 y registro de alquileres de corta duración (sin verificar en BOE). |
-| I18 | Duración y prórroga de contratos de alquiler | Alarga la estabilidad del contrato. Efecto contractual, con posible efecto sobre la oferta. | 3 | Sí: LAU (prórroga de 5 años, 7 si arrendador es persona jurídica; sin verificar en BOE). |
-| I19 | Sinhogarismo y vivienda de emergencia | Provisión directa a personas sin hogar (Housing First). | 2 | Parcial: estrategia nacional vigente; sin verificar. |
-| I20 | Colaboración público-privada y nuevas modalidades (derecho de superficie, cooperativas de cesión de uso, asociaciones sin ánimo de lucro) | El sector público aporta suelo o garantías y el privado promueve y gestiona. | 2 | Parcial; sin verificar. |
-| I21 | Limitación de compras especulativas o de no residentes | Condiciona o restringe la compra con fin de inversión. Modifica la demanda de inversión. | 2 | Sí, parcial: visado de residencia por inversión inmobiliaria (Ley 14/2013), citado en un programa como vigente. |
-| I22 | Obligaciones a grandes tenedores (alquiler social obligatorio) | Impone cuota de alquiler social a propietarios grandes. | 1 | Sí, parcial: definición de gran tenedor y obligaciones en la Ley 12/2023 (sin verificar). |
-| I24 | Derecho subjetivo a la vivienda | Convierte el acceso en un derecho exigible. Requiere oferta pública o ayudas para ser efectivo. | 2 | No como derecho subjetivo exigible. |
-| I25 | Coordinación multinivel (pacto de Estado) | Acuerdo estable entre Estado, comunidades y entes locales sobre competencias y financiación. | 1 | No. |
-| I26 | Gravamen sobre suelo urbanizable ocioso | Grava el suelo urbanizable sin desarrollar para incentivar su puesta en uso. | 1 | No a nivel estatal. |
-| I27 | Recargo o impuesto a la vivienda vacía | Encarece mantener vivienda desocupada mediante un recargo en un impuesto local o estatal. | 1 | Sí, parcial: recargo del IBI a vivienda desocupada (TRLRHL art. 72.4; sin verificar). |
-| I28 | Inembargabilidad de la vivienda habitual | Impide el embargo de la vivienda familiar por incumplimientos personales de los titulares. Protege el hogar frente a la ejecución de deudas. | 1 (pasada 2, copia no oficial) | Sin verificar en BOE. |
-| I29 | Reducción de tributos sobre la promoción y construcción de vivienda | Baja la carga fiscal que recae sobre el proceso edificatorio (IVA de obra, tasas, impuestos locales asociados). Reduce el coste de construcción por vivienda. | 1 (pasada 2, copia no oficial) | Parcial; sin verificar en BOE. |
+## A. Instrumentos que aparecen en el CSV
+| Id | Instrumento | Mecanismo (1-2 frases) | Medidas | Docs a favor | Docs en contra | En vigor en España |
+|---|---|---|---|---|---|---|
+| I01 | Regulación de precios del alquiler (zonas tensionadas, índice de referencia, topes) | Limita el crecimiento o el nivel de la renta en zonas declaradas tensionadas. | 7 | 3 | 4 medidas en 3 docs | Sí: Ley 12/2023, de 24 de mayo (docs v2). Efectiva solo en Cataluña desde 16/03/2024 según Fedea 2026/15 (NO VERIFICADA). |
+| I02 | Parque público o social de alquiler a gran escala | El sector público construye, compra o rehabilita vivienda para alquiler por debajo de mercado. | 9 | 7 | 0 | Parcial: Plan Estatal 2022-2025 (sin verificar en BOE). |
+| I03 | Reservas de suelo para vivienda protegida | Obliga a destinar un porcentaje de nuevos desarrollos a VPO. | 3 | 3 | 0 | Sí, 30 % en suelo urbanizable (RDL 7/2015; sin verificar). |
+| I04 | Movilización de suelo y patrimonio públicos (incl. cartera de la sociedad de activos) | Cede o promueve en suelo público, o transfiere activos, para vivienda asequible. | 11 | 7 | 0 | Parcial (SEPES, Sareb; sin verificar). |
+| I05 | Captura de plusvalías del suelo | La administración recupera parte del aumento de valor por recalificación. | 1 | 1 | 0 | Parcial: cesión de aprovechamiento (TRLSRU art. 18; sin verificar). |
+| I06 | Avales públicos a hipotecas | El Estado garantiza parte del préstamo a compradores jóvenes. Con oferta rígida puede capitalizarse en precio. | 2 | 2 | 0 | Sí: línea ICO-MIVAU 2024 (cifras de prensa especializada; sin verificar en BOE). |
+| I07 | Fiscalidad y ahorro para vivienda en propiedad (IVA, deducciones, cuenta ahorro) | Reduce el coste de uso o de compra del propietario. | 6 | 4 | 0 | Parcial: deducción por vivienda habitual suprimida desde 2013 (sin verificar). |
+| I08 | Ayudas directas al alquiler (demanda) | Subvención al inquilino; con oferta inelástica parte se traslada a la renta. | 4 | 4 | 0 | Sí: Bono Alquiler Joven (RD 42/2022; sin verificar). |
+| I09 | Ayudas a hogares hipotecados | Transfiere o aplaza carga financiera a deudores. | 5 | 3 | 0 | Parcial: Código de Buenas Prácticas, RDL 19/2022 y 8/2023 (sin verificar). |
+| I10 | Movilización de vivienda vacía (registro, convenios, recuperación de posesión) | Pone en uso vivienda desocupada. | 4 | 4 | 0 | Parcial (registros autonómicos; sin verificar). |
+| I11 | Rehabilitación del parque | Ayudas a rehabilitación y eficiencia energética. | 1 | 1 | 0 | Sí, fondos europeos (sin verificar). |
+| I12 | Industrialización de la construcción | Prefabricación para bajar plazos y costes por vivienda. | 1 | 1 | 0 | No como política específica (sin verificar). |
+| I13 | Agilización y seguridad jurídica urbanística (incl. liberalizar suelo no protegido) | Menos plazo e incertidumbre en planeamiento. | 2 | 2 | 0 | No como medida específica (sin verificar). |
+| I14 | Seguridad jurídica y procedimientos de desalojo | Acorta desalojos y refuerza la posesión; efecto esperado sobre la oferta de alquiler por menor riesgo percibido. | 5 | 3 | 0 | Parcial: reforma de 2018 (sin verificar). |
+| I15 | Fiscalidad de arrendadores e inversores inmobiliarios | Incentivos o recargos fiscales condicionados al precio o al uso. | 4 | 2 | 0 | Parcial: reducción en el IRPF del arrendador en zona tensionada (Ley 12/2023; cuantía sin verificar). |
+| I16 | Alquiler turístico y de temporada | Regula esos usos para que no eludan el control de rentas ni retiren oferta residencial. | 4 | 3 | 0 | Parcial: Ley 12/2023 y registro de corta duración (sin verificar). |
+| I18 | Duración y prórroga de contratos de alquiler | Alarga la estabilidad del contrato. | 3 | 3 | 0 | Sí: LAU (sin verificar). |
+| I19 | Sinhogarismo y vivienda de emergencia | Provisión directa (Housing First). | 2 | 2 | 0 | Parcial (sin verificar). |
+| I20 | Colaboración público-privada y nuevas modalidades | El sector público aporta suelo o garantías y el privado promueve y gestiona. | 3 | 3 | 0 | Parcial (sin verificar). |
+| I21 | Limitación de compras con fin de inversión o de no residentes | Condiciona la compra con fin de inversión. | 2 | 2 | 0 | Parcial: visado por inversión (Ley 14/2013, citada en un programa). |
+| I22 | Obligaciones a grandes tenedores | Impone cuota de alquiler social a propietarios grandes. | 1 | 1 | 0 | Parcial: Ley 12/2023 (sin verificar). |
+| I24 | Derecho subjetivo a la vivienda | Convierte el acceso en derecho exigible; requiere oferta pública o ayudas. | 2 | 2 | 0 | No como derecho exigible. |
+| I25 | Coordinación multinivel (pacto de Estado) | Acuerdo entre Estado, comunidades y entes locales. | 1 | 1 | 0 | No. |
+| I26 | Gravamen sobre suelo urbanizable ocioso | Grava el suelo sin edificar para incentivar su puesta en uso. | 1 | 1 | 0 | No a nivel estatal. |
+| I27 | Recargo o impuesto a la vivienda vacía | Encarece mantener vivienda desocupada. | 1 | 1 | 0 | Parcial: recargo de IBI (TRLRHL art. 72.4; sin verificar). |
+| I28 | Inembargabilidad de la vivienda habitual | Impide el embargo de la vivienda familiar por deudas personales. | 1 | 1 | 0 | Sin verificar. |
+| I29 | Reducción de tributos sobre la promoción y construcción de vivienda | Baja la carga fiscal del proceso edificatorio. | 1 | 1 | 0 | Parcial (sin verificar). |
+| N1 | Agilización de licencias (medios técnicos municipales para informes) | Reduce el plazo y la incertidumbre del permiso. | 1 | 1 | 0 | Sin verificar; silencio positivo general, no como medida de vivienda. |
 
-## B. Instrumentos no propuestos (o propuestos por 0-1 documentos) añadidos por el equipo
-| Id | Instrumento | Mecanismo | Docs (de 8) | En vigor |
-|---|---|---|---|---|
-| N1 | Agilización de licencias (plazos, silencio positivo, ventanilla única) | Reduce el tiempo y la incertidumbre del permiso. En la literatura el retraso regulatorio eleva precios (Hilber y Vermeulen 2016). | 0 | Sin verificar; el silencio positivo existe de forma general, pero no como medida de vivienda. |
-| N2 | Aumento de edificabilidad o densidad (zonificación permisiva) | Eleva el techo de oferta en suelo ya urbano. Elasticidad de oferta baja es el supuesto clave (Saiz 2010). | 0 | No como medida estatal. |
-| N3 | Impuesto sobre el valor del suelo (en lugar del impuesto sobre la construcción) | Grava el suelo, no la edificación. Reduce la retención especulativa. | 0 (I26 es el más cercano) | No. |
-| N4 | Incentivo fiscal a la promoción de alquiler asequible privado (tipo crédito fiscal a la oferta) | Subvenciona al promotor privado a cambio de rentas limitadas. | 0 | Parcial; sin verificar. |
-| N5 | Industrialización de la construcción | Ya figura como I12 (1 documento); se evalúa también por estimaciones de coste. | 1 | Ver I12. |
-| N6 | Captura de plusvalías del suelo | Ya figura como I05 (1 documento). | 1 | Ver I05. |
-| N7 | Impuesto o recargo a la vivienda vacía | Ya figura como I27 (1 documento). | 1 | Ver I27. |
-| N8 | Alquiler social a gran escala | Ya figura como I02 (6 documentos). | 6 | Ver I02. |
-| N9 | Ayudas a la demanda con oferta rígida | No es un instrumento aparte: agrupa I06, I07, I08 e I09. Se analiza como familia por su riesgo de capitalización en precios. | I06+I07+I08+I09 | Ver cada uno. |
+Total de medidas: 88. Docs a favor: documentos con al menos una medida «a favor/ampliar» del instrumento. En I01, los 4 «en contra» son medidas de 3 documentos.
 
-## Cómo se usa en M5
-Rúbrica común por instrumento: efecto esperado en precio, en cantidad, requisito de oferta y evidencia (ver `docs/v4/literatura_v4.md`). La simulación P-D usa solo el rango de la literatura y las elasticidades de oferta ya registradas. Ningún instrumento se puntúa por quién lo propone.
+## B. Instrumentos sin ninguna medida en el CSV (añadidos por el equipo)
+| Id | Instrumento | Mecanismo | Docs |
+|---|---|---|---|
+| N2 | Mayor edificabilidad o densidad (zonificación permisiva) | Eleva el techo de oferta en suelo ya urbano (Saiz 2010). | 0 |
+| N3 | Impuesto sobre el valor del suelo (en lugar del impuesto sobre la construcción) | Grava el suelo sin edificar, no la edificación. Es el más cercano a I26. | 0 |
+| N4 | Incentivo fiscal a la promoción privada de alquiler asequible (crédito fiscal a la oferta) | Subvenciona al promotor a cambio de rentas limitadas. | 0 |
 
-## Pendiente
-- Recuentos de la tabla A («Docs (de 8)») sin actualizar tras la pasada 2 (9 programas). Recalcular desde el CSV cuando se cierre M5a.
-- Instrumentos N1 y I28/I29 añadidos o usados en la pasada 2: N1 se usó para una medida de capacidad técnica municipal para licencias; I28 e I29 son nuevos.
-- Medidas no codificadas en la pasada 2: items de urbanismo general sin mención explícita de vivienda; un punto de cargas familiares con mención a la primera vivienda; el apartado de acciones pasadas (proposiciones de ley ya presentadas), que no es un compromiso del programa; una frase de un punto con el inicio no extraíble en la copia (fila marcada).
+Agrupación analítica: las ayudas a la demanda con oferta rígida son la familia I06+I07+I08+I09 (no un instrumento aparte). Su riesgo común es la capitalización en precio.
+
+## Estado
+Sección «Pendiente» cerrada: recuentos recalculados desde el CSV (88 medidas, 9 documentos). Rúbrica común por instrumento en M5; la simulación P-D usa solo rangos de la literatura (`docs/v4/literatura_v4.md`).

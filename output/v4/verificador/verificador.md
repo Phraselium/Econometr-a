@@ -20,7 +20,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | M4-V1 | Los compradores extranjeros encarecen la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
 | M4-V2 | Las empresas dominan el mercado del alquiler. | NO ANALIZADA: FALTAN DATOS | C4 |
 | M4-V3 | Hay muchas viviendas vacías o de uso esporádico frente a las turísticas. | ANALIZADA, NO CONCLUYENTE | C4 |
-| M5-V1 | Las ayudas a los jóvenes para comprar o alquilar abaratan su acceso a la vivienda. | ANALIZADA, NO CONCLUYENTE | C4 |
+| M5-V1 | Las ayudas a los jóvenes para comprar o alquilar abaratan su acceso a la vivienda. | PARCIALMENTE | C2 |
 | M5-V2 | Faltan viviendas en toda España. | ANALIZADA, NO CONCLUYENTE | C4 |
 | M5-V3 | Los hogares crecen por la inmigración. | ANALIZADA, NO CONCLUYENTE | C4 |
 | M5-V4 | Limitar las compras de no residentes bajaría los precios de la vivienda. | ANALIZADA, NO CONCLUYENTE | C4 |
@@ -207,7 +207,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Límites | Simulación con rangos de elasticidades; coste fiscal no cuantificado sin dato de coste. |
 | Evidencia | output/v3/PD/resultados.json |
 | Convención A (estricta: traducción a precio en C4) | PARCIALMENTE |
-| Convención B (estructural: traducción a precio como C2) | PARCIALMENTE. Igual en ambas convenciones: el signo de P-D (≤ 0, nulo con desplazamiento total) no depende de la traducción a precio. |
+| Convención B (estructural: traducción a precio como C2) | PARCIALMENTE. Regla común con M5-V1 (revisión C, C5): signo estable en la rejilla (≤ 0, nulo con desplazamiento total), C2; magnitud C4. «Resolvería» no se sostiene a las dosis simuladas: 10.000-25.000 viviendas/año frente a una brecha de 104.000-413.000/año (cantidades contables C2). |
 
 ## V12 · Tipos de interés
 
@@ -297,17 +297,17 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 
 | Campo | Contenido |
 |---|---|
-| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
-| Capa de la evidencia | C4 |
-| Magnitud | Con la rejilla de elasticidades (oferta 0,2-2; demanda 0,3-1,5), entre el 13 % y el 88 % de la ayuda se traslada al precio o la renta. El beneficiario paga menos en neto, salvo con oferta totalmente rígida; los no beneficiarios pagan más. |
-| Intervalo | 13-88 % de la ayuda al precio |
-| Cota | C4: depende de elasticidades sin estimación española verificada |
-| Literatura | Gibbons y Manning (2006), JPubE, VERIFICADA, cuartil no verificado: 60-67 % de incidencia en arrendadores; Carozzi, Hilber y Yu (2024), JUE, VERIFICADA, Q1. |
-| Regla del veredicto | Para el beneficiario la ayuda reduce el coste neto en casi toda la rejilla, pero «abaratar el acceso» para los jóvenes en conjunto depende de cuánto se traslade al precio, que no está estimado para España. Capa C4: como máximo no concluyente. |
+| Veredicto | **PARCIALMENTE** |
+| Capa de la evidencia | C2 |
+| Magnitud | Signo (C2, estable en la rejilla de P-D: oferta η ∈ {0; 0,45; 1,75}, demanda 0,3-1,5): el beneficiario paga lo mismo o menos en neto (nada menos con oferta totalmente rígida) y los no beneficiarios pagan más. Magnitud (C4): entre el 15 % y el 100 % de una ayuda general por unidad se traslada al precio; para una ayuda focalizada en jóvenes es una cota superior, escalada por su peso en la demanda. Los avales relajan la restricción de entrada y no son una ayuda por unidad: su traducción es más incierta. |
+| Intervalo | 15-100 % de una ayuda general al precio (C4) |
+| Cota | C2 de signo por grupo; magnitud C4 |
+| Literatura | Gibbons y Manning (2006), JPubE, VERIFICADA, cuartil no verificado: 60-67 % de incidencia en arrendadores; Carozzi, Hilber y Yu (2024), JUE, VERIFICADA, Q1 (referencia cualitativa para avales: precio al alza sin más construcción con oferta rígida). |
+| Regla del veredicto | Regla común con V11 (revisión C, C5): si el signo es estable en la rejilla (C2) para el grupo al que se refiere la afirmación, PARCIALMENTE acotado a ese grupo; la magnitud es C4. Abarata (o no encarece) para el beneficiario y encarece para los no beneficiarios; «abaratar el acceso de los jóvenes» en conjunto depende de la magnitud, no establecida. |
 | Límites | Sin evaluación verificada de los avales ICO ni de las ayudas españolas. |
-| Evidencia | output/v4/M5/incidencia_ayudas_demanda.csv |
-| Convención A (estricta: traducción a precio en C4) | ANALIZADA, NO CONCLUYENTE |
-| Convención B (estructural: traducción a precio como C2) | PARCIALMENTE: abarata para el beneficiario y encarece para los no beneficiarios en toda la rejilla. |
+| Evidencia | output/v4/M5/tablas/incidencia_ayudas_demanda.csv |
+| Convención A (estricta: traducción a precio en C4) | PARCIALMENTE (signo por grupo, C2) |
+| Convención B (estructural: traducción a precio como C2) | PARCIALMENTE: misma conclusión con la magnitud también como cota. |
 
 ## M5-V2 · Geografía del déficit
 
@@ -381,8 +381,8 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 |---|---|
 | Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C4 |
-| Magnitud | Precio de compra 2015-2025: +44 % a +80 % según la fuente (4 fuentes); 2021-2025: +24 % a +36 %. GSADF nacional precio/alquiler: exuberancia (BH 5 %, ambos métodos) en 2 de 2 medidas; CCAA con exuberancia en ambas medidas: 5 de 17; episodios nacionales: 2011Q4-2013Q3;2017Q2-2019Q3;2024Q2-2026Q2; 2017Q4-2019Q2;2024Q4-2026Q2. |
-| Intervalo | [44; 80] % de variación 2015-2025 |
+| Magnitud | Precio de compra 2015-2025: dirección C1 (positiva); cuantía: núcleo MIVAU_tasado, Notariado, Registradores +44 % a +56 % (cuantía C1), discrepante: INE_IPV (rango total +44 % a +80 %). 2021-2025: núcleo +24 % a +36 %, rango total +24 % a +36 %. GSADF nacional precio/alquiler: exuberancia (BH 5 %, ambos métodos) en 2 de 2 medidas; CCAA con exuberancia en ambas medidas: 5 de 17; episodios nacionales: 2011Q4-2013Q3;2017Q2-2019Q3;2024Q2-2026Q2; 2017Q4-2019Q2;2024Q4-2026Q2. |
+| Intervalo | [44; 56] % de variación 2015-2025 (núcleo de cuantía) |
 | Cota | — |
 | Literatura | Phillips, Shi y Yu (2015), GSADF: NO VERIFICADA (DOI y cuartil no comprobados sin red). |
 | Regla del veredicto | Hay exuberancia estadística en el ratio precio/alquiler (episodios fechados con BSADF), pero un test de exuberancia no separa una burbuja de cambios en los fundamentos (renta, tipos de interés, oferta) ni mide la sobrevaloración. Con capa C4 el veredicto no puede ser RESPALDADA ni CONTRADICHA. |

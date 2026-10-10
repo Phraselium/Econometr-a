@@ -280,7 +280,7 @@
  {
   "id": "M2-L1",
   "enunciado_neutro": "Hogares adicionales en 2025 si rigieran las tasas de jefatura por edad de 2008 (y media 2006-2007).",
-  "capa": "C2",
+  "capa": "C4 (regla B5: jefatura por edad de fuente única, EPA)",
   "magnitud": {
    "EPA 65944 (población EPA 2025)|2008|16-34": 22554,
    "EPA 65944 (población EPA 2025)|2008|35-44": -709942,
@@ -319,7 +319,7 @@
  {
   "id": "M2-C1",
   "enunciado_neutro": "Conciliación de dos latentes juveniles.",
-  "capa": "C2",
+  "capa": "C4 (latente por jefatura) y C2 (latente por convivencia, M1/A2)",
   "magnitud": "M2 (jefatura 2008): 16-34 entre +23 mil y -22 mil (EPA), 20-34 entre +84 mil y +161 mil (padrón/ECP). M1/A2 (convivencia con padres): 188-506 mil.",
   "unidad": "hogares",
   "intervalo": "ver demanda_latente.csv",

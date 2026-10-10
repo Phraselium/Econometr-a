@@ -15,6 +15,6 @@
  ],
  "convenciones": {
   "A (estricta: traducción a precio en C4)": "PARCIALMENTE",
-  "B (estructural: traducción a precio como C2)": "PARCIALMENTE. Igual en ambas convenciones: el signo de P-D (≤ 0, nulo con desplazamiento total) no depende de la traducción a precio."
+  "B (estructural: traducción a precio como C2)": "PARCIALMENTE. Regla común con M5-V1 (revisión C, C5): signo estable en la rejilla (≤ 0, nulo con desplazamiento total), C2; magnitud C4. «Resolvería» no se sostiene a las dosis simuladas: 10.000-25.000 viviendas/año frente a una brecha de 104.000-413.000/año (cantidades contables C2)."
  }
 }

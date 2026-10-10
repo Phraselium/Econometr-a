@@ -1,7 +1,7 @@
 {
  "rama": "M2",
  "pregunta": "¿Por qué se crean tantos hogares?",
- "capa": "ΔH total C1 (si coinciden fuentes); componentes C4; latente C2",
+ "capa": "ΔH total C1 (si coinciden fuentes); componentes C4; latente por jefatura C4 (B5); por convivencia C2 (M1)",
  "datos": [
   "ine_v2_padron_prov_edad_nac.csv",
   "panel_prov_a (contraste)",

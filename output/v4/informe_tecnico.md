@@ -33,7 +33,7 @@ Del v1 al v3 la cifra baja por tres pasos, y la cadena cierra de forma exacta:
 Frente al Banco de España quedan +49.066 que no se pueden descomponer, porque su método no está publicado (output/v4/M0/conciliacion_deficit.md).
 
 ### 1.2 Viviendas terminadas (M0)
-- [C1] En 2019-2024 se terminaron entre 91.000 y 101.000 viviendas al año. El Ministerio (certificados de fin de obra, libres y protegidas) y el Catastro (aumento neto de unidades residenciales) coinciden dentro de ±15 %.
+- [C1] En 2019-2024, en el territorio común (sin País Vasco ni Navarra), se terminaron entre 72.000 (2019) y 94.000 (2024) viviendas al año; en el total nacional del Ministerio, entre 78.800 y 101.000. El Ministerio (certificados de fin de obra, libres y protegidas) y el Catastro (aumento neto de unidades residenciales) coinciden dentro de ±15 %.
 - Las dos fuentes son independientes solo en parte, porque comparten documento de origen: el certificado final de obra.
 - En 2012-2017 difieren entre 1,2 y 3 veces, por lo que esos años quedan en C4. 2018 y 2025 también son C4, por la fragilidad de los datos.
 
@@ -51,7 +51,7 @@ Descomposición contable de la variación de hogares (ΔH) en tres efectos: tama
 - [C4] La participación del componente de nacionalidad extranjera varía entre el 53 % y el 76 % de ΔH en 2020-2025, según cómo se corrija la ruptura de la EPA.
 - Entre 2011 y 2021 el censo (+456.000) y la EPA corregida (+1.111.000) discrepan, y no se resuelve cuál es correcta.
 
-**Demanda latente juvenil (C2).**
+**Demanda latente juvenil.** Por jefatura, C4 (regla B5: jefatura de fuente única); por convivencia con los padres, C2.
 - Con la jefatura de 2008 aplicada a la población actual:
   - 16-34 años: entre −22.000 y +23.000 hogares, según la referencia;
   - 20-34 años: entre +84.000 y +161.000;
@@ -62,8 +62,8 @@ Descomposición contable de la variación de hogares (ΔH) en tres efectos: tama
 ### 1.4 Precios (M7)
 | Medida | 2015-2025 | 2021-2025 | Capa |
 |---|---|---|---|
-| Precio de compra (INE IPV, valor tasado, Registradores, Notariado) | +44 % a +80 % | +24 % a +36 % | C1, en España y en las 17 CCAA |
-| Alquiler (IPC de alquiler frente a SERPAVI) | +11 % a +43 % (2015-2024) | +6 % a +15 % (2021-2024) | C1 en dirección; cuantía no establecida (precio frente a stock de contratos) |
+| Precio de compra (núcleo: valor tasado, Registradores, Notariado; INE IPV aparte) | +44 % a +56 % (INE IPV: +80 %, discrepante) | +24 % a +36 % | Dirección C1 en España y 17 CCAA; cuantía C1 en España y 15 de 17 CCAA (3 fuentes por CCAA, Navarra 2). Ministerio y Notariado, independientes solo en parte |
+| Alquiler (IPC de alquiler frente a SERPAVI) | +11 % a +43 % (2015-2024) | +6 % a +15 % (2021-2024) | 2015-2024: dirección C1, cuantía C4 (el IPC sigue las mismas viviendas con contratos vigentes y límite legal de actualización 2022-2024, efecto sin verificar; SERPAVI es la renta media declarada, con contratos nuevos). 2021-2024: C1 en dirección y cuantía |
 
 **Exuberancia (GSADF, C4).**
 - Hay episodios explosivos en las dos medidas nacionales de precio/alquiler: 2011-13, 2017-19 y 2024-26. En las comunidades, 5 de 17 los muestran en ambas medidas.
@@ -159,21 +159,21 @@ Por zonas, el 72 % de las compras de extranjeros se hace en provincias de costa 
 
 ## 5. Matriz de instrumentos (M5)
 
-**Procedencia.** Se recogieron 88 medidas de 9 documentos oficiales o de programas; uno se leyó en una copia no oficial y 2 programas no fueron accesibles. Están agrupadas en 29 instrumentos, más 4 no propuestos. Se evalúan instrumentos, no partidos; la procedencia está en data/raw/v4/medidas_programas.csv.
+**Procedencia.** Se recogieron 88 medidas de 9 documentos oficiales o de programas; 4 de los 9 se leyeron en una copia no oficial alojada por un medio, y 2 programas no fueron accesibles. Los PDF solo se pudieron leer como imagen, sin búsqueda por palabras clave sobre el texto completo, así que los recuentos por instrumento son cotas inferiores (docs/v4/cobertura_programas.md). Están agrupadas en 29 instrumentos, más 4 no propuestos. Se evalúan instrumentos, no partidos; la procedencia está en data/raw/v4/medidas_programas.csv.
 
 **Rúbrica.** Es idéntica para todos los instrumentos (output/v4/M5/matriz_instrumentos.md). Resumen:
 
-| Instrumento | Documentos que lo proponen | Evidencia (capa) | Efecto sobre el esfuerzo de acceso | Plazo | Riesgo principal | Signo estable |
+| Instrumento | Documentos a favor / en contra | Evidencia (capa) | Efecto sobre el esfuerzo de acceso | Plazo | Riesgo principal | Signo estable |
 |---|---|---|---|---|---|---|
-| Más construcción donde falta | transversal | C2 (P-D v3) | −24,4 % a −0,8 % (+50.000/año) | medio-largo | suelo, licencias, capacidad | sí |
-| Movilización de vacías (incentivos, recargo) | 4 | C2 (P-D); Segú (2020): vacancia −13 % relativo en Francia | −4,5 % a −0,1 % (10 %); hasta el 51 % de la brecha (30 %) | corto-medio | vacías mal medidas | sí |
-| Parque público o social | 7 | C2 (P-D, dominancia débil) | −13,1 % a 0 % (25.000/año) | largo | desplazamiento de la promoción privada; coste | ≤ 0 (posiblemente nulo) |
-| Topes al alquiler | 6 | C4 propio; Jofre-Monseny et al. (2023): −4,5 %; Diamond et al. (2019): −15 % oferta | −2,9 % a +7,3 % (inquilinos) | inmediato | reducción o desvío de oferta | no |
-| Regulación de turísticos | 3 | C2 cantidad, C4 precio | −1,7 % a 0 % nacional | corto | desvío a temporada | no |
-| Ayudas a la demanda (avales, alquiler, fiscalidad de la compra) | 7 | C4; Gibbons y Manning (2006): 60-67 % a arrendadores; Carozzi et al. (2024): precio al alza sin más construcción con oferta rígida | el 13-88 % de la ayuda se traslada al precio | inmediato | capitalización | no |
-| Suelo público y colaboración público-privada | 7 | sin evaluar | — | medio-largo | volumen de suelo | — |
-| Licencias y seguridad urbanística | 2 | Hilber y Vermeulen (2016) (magnitud no extraída) | — | corto-medio | — | — |
-| Densidad, industrialización, fiscalidad del suelo, rebajas fiscales a la construcción, seguridad jurídica frente a la ocupación ilegal, límites a no residentes | 0-3 | sin evaluar | — | — | — | — |
+| Más construcción donde falta | transversal | signo C2 (P-D v3) | −24,4 % a −0,8 % (+50.000/año; magnitud C4) | medio-largo | suelo, licencias, capacidad | sí |
+| Movilización de vacías (incentivos, recargo) | 4 / 0 | signo C2 (P-D); Segú (2020): vacancia −13 % relativo en Francia | −4,5 % a −0,1 % (10 %; magnitud C4); hasta el 51 % de la brecha (30 %; cantidad C2) | corto-medio | vacías mal medidas | sí |
+| Parque público o social | 7 / 0 | signo C2 (P-D, dominancia débil) | −13,1 % a 0 % (25.000/año; magnitud C4) | largo | desplazamiento de la promoción privada; coste | ≤ 0 (posiblemente nulo) |
+| Topes al alquiler | 3 / 3 (derogar o reducir) | C4 propio; Jofre-Monseny et al. (2023): −4,5 %; Diamond et al. (2019): −15 % oferta | −2,9 % a +7,3 % (inquilinos) | inmediato | reducción o desvío de oferta | no |
+| Regulación de turísticos | 3 / 0 | C2 cantidad, C4 precio | −1,7 % a 0 % nacional | corto | desvío a temporada | no |
+| Ayudas a la demanda (avales, alquiler, fiscalidad de la compra) | 7 / 0 | C4; Gibbons y Manning (2006): 60-67 % a arrendadores; Carozzi et al. (2024): precio al alza sin más construcción con oferta rígida | el 15-100 % de una ayuda general se traslada al precio (magnitud C4; cota superior si es focalizada); signo por grupo C2: el beneficiario no paga más y los no beneficiarios pagan más | inmediato | capitalización | no (conjunto); sí por grupo |
+| Suelo público y colaboración público-privada | 7 / 0 | sin evaluar | — | medio-largo | volumen de suelo | — |
+| Licencias y seguridad urbanística | 2 / 0 | Hilber y Vermeulen (2016) (magnitud no extraída) | — | corto-medio | — | — |
+| Densidad, industrialización, fiscalidad del suelo, rebajas fiscales a la construcción, seguridad jurídica frente a la ocupación ilegal, límites a no residentes | 0-3 / 0 | sin evaluar | — | — | — | — |
 
 **Distribución**, es decir, quién gana y quién pierde: ver la columna correspondiente de la matriz.
 
@@ -181,7 +181,7 @@ Por zonas, el 72 % de las compras de extranjeros se hace en provincias de costa 
 - Las medidas de oferta tienen más margen en las clases 1 y 2.
 - Las ayudas a la demanda se capitalizan más en las clases 2 y 3, donde la oferta es rígida.
 
-**Lectura.** En la simulación, solo las medidas que añaden viviendas donde hay demanda tienen signo estable en toda la rejilla. Ninguna simulación incluye costes, por lo que la tabla no ordena por coste-beneficio.
+**Lectura.** Entre los instrumentos simulados, solo las medidas que añaden viviendas donde hay demanda tienen signo estable en toda la rejilla (C2); las magnitudes son C4. Otros grupos, algunos de oferta (licencias, densidad, suelo), no se evaluaron. Ninguna simulación incluye costes, por lo que la tabla no ordena por coste-beneficio.
 
 ---
 

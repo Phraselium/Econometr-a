@@ -49,12 +49,12 @@ El inventario completo, con fichero, fuente, número de series, fechas y fecha d
 | Dirección General del Catastro | Estadísticas catastrales municipales: unidades urbanas por uso, solares | catastro.hacienda.gob.es | Reutilización con cita |
 | Banco de España | Tipos, crédito, precio de la vivienda, EFF (cuadros publicados) | bde.es | Reutilización con cita |
 | BCE, BIS, OCDE, Eurostat | Tipos, IAPC, precios de la vivienda, empleo, migración, emancipación | API públicas | Eurostat: CC BY 4.0; los demás, reutilización con cita |
-| Consejo General del Notariado y Colegio de Registradores | Compraventas por nacionalidad, precios | Estadísticas publicadas (PDF y datos abiertos) | Reutilización con cita |
+| Consejo General del Notariado y Colegio de Registradores | Compraventas por nacionalidad, precios | Estadísticas publicadas (PDF y datos abiertos) | Condiciones de reutilización no verificadas; se usan agregados publicados con cita |
 | Incasòl / Generalitat de Catalunya | Fianzas de alquiler por municipio | analisi.transparenciacatalunya.cat (Socrata) | CC BY 4.0 |
 | Generalitat Valenciana, Ayuntamiento de València, Comunidad de Madrid | Viviendas turísticas, padrón municipal, alquiler por código postal | portales de datos abiertos | Reutilización con cita |
 | BOE y diarios oficiales | Normas y zonas tensionadas | boe.es | Dominio público |
 | Inside Airbnb | Agregados de anuncios (solo robustez) | insideairbnb.com | CC BY 4.0 |
-| Programas electorales (M5) | Citas literales ≤40 palabras con procedencia (data/raw/v4/medidas_programas.csv) | Webs oficiales de los partidos | Cita con fines de investigación |
+| Programas electorales (M5) | Citas literales ≤40 palabras con procedencia (data/raw/v4/medidas_programas.csv) | Webs de los partidos (5 documentos) y copias no oficiales alojadas por medios (4 documentos; docs/v4/cobertura_programas.md) | Cita breve con fines de investigación |
 
 **Ficheros de más de 50 MB.** No están en el repositorio. Sus checksums están en `data/CHECKSUMS.sha256` y se regeneran con los scripts de descarga. Ninguno es necesario para `make all`.
 
@@ -68,6 +68,12 @@ El inventario completo, con fichero, fuente, número de series, fechas y fecha d
 | output/v3/{lo_que_sabemos, articulo, informe_politica}.md | redactados a partir de output/v3/*/ (PA, PB, C1, C3, GL, PD) |
 | output/v4/{working_paper, informe_tecnico, policy_brief, lo_que_sabemos}.md | redactados a partir de output/v4/M0-M7 |
 | output/v4/M0 … M7 | src/v4/m0_run.py … m7_run.py (M6 = docs/v4/preguntas_abiertas.md, solicitudes.md) |
+| Working paper, tabla de hechos (déficit, hogares, terminadas) | m0_run.py (output/v4/M0/), m2_run.py (output/v4/M2/) |
+| Working paper e informe, mapas y concentración provincial | m1_run.py (output/v4/M1/figuras, tablas) |
+| Clasificación territorial (clases 1-4 y 9) | m3_run.py (output/v4/M3/) |
+| Parque y mercado, compradores extranjeros | m4_run.py (output/v4/M4/) |
+| Precios triangulados y GSADF | m7_run.py (output/v4/M7/tablas) |
+| Matriz de instrumentos | m5_run.py (output/v4/M5/matriz_instrumentos.{csv,md}) |
 | output/v3/verificador/, output/v4/verificador/ | src/v3/verificador.py, src/v4/verificador.py |
 
 Los documentos de síntesis (.md) se redactan a partir de las salidas. Las cifras citadas en ellos proceden de los JSON y CSV indicados, y `src/v3/check_texto.py` controla su redacción.

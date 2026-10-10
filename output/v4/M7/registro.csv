@@ -1,13 +1,13 @@
 fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
-triang,precio_nac_2015_2025,var acumulada de índices 2015=100,2015,2025,4,,,,,0.5166377260038812,,rango [44.2; 79.9] %; C1=True
-triang,precio_nac_2021_2025,var acumulada de índices 2015=100,2021,2025,4,,,,,0.26810570686590485,,rango [23.5; 36.4] %; C1=True
-triang,precio_ccaa_c1,n CCAA con >=2 fuentes independientes a <=5 pp anuales,,,17,,,,,,,"{2015: 17, 2021: 17}"
-triang,alq_España_2015_2024,var acumulada de índices 2015=100,2015,2024,2,,,,,0.26981081259041184,,rango [10.9; 43.0] %; C1=True
-triang,alq_España_2021_2024,var acumulada de índices 2015=100,2021,2024,2,,,,,0.10188089240636566,,rango [5.7; 14.7] %; C1=True
-triang,alq_Cataluña_2015_2025,var acumulada de índices 2015=100,2015,2025,2,,,,,0.3348919770833948,,rango [12.5; 54.5] %; C1=True
-triang,alq_Cataluña_2021_2025,var acumulada de índices 2015=100,2021,2025,2,,,,,0.12624440743617193,,rango [6.3; 18.9] %; C1=True
-triang,alq_Cataluña_2015_2024,var acumulada de índices 2015=100,2015,2024,3,,,,,0.4295081967213117,,rango [10.9; 51.5] %; C1=True
-triang,alq_Cataluña_2021_2024,var acumulada de índices 2015=100,2021,2024,3,,,,,0.1314415137340499,,rango [4.8; 16.6] %; C1=True
+triang,precio_nac_2015_2025,var acumulada de índices 2015=100,2015,2025,4,,,,,0.5166377260038812,,rango [44.2; 79.9] %; dirección C1=True; cuantía C1=True
+triang,precio_nac_2021_2025,var acumulada de índices 2015=100,2021,2025,4,,,,,0.26810570686590485,,rango [23.5; 36.4] %; dirección C1=True; cuantía C1=True
+triang,precio_ccaa_c1,n CCAA con >=2 fuentes independientes a <=5 pp anuales,,,17,,,,,,,"{2015: 15, 2021: 17}"
+triang,alq_España_2015_2024,var acumulada de índices 2015=100,2015,2024,2,,,,,0.26981081259041184,,rango [10.9; 43.0] %; dirección C1=True; cuantía C1=False
+triang,alq_España_2021_2024,var acumulada de índices 2015=100,2021,2024,2,,,,,0.10188089240636566,,rango [5.7; 14.7] %; dirección C1=True; cuantía C1=True
+triang,alq_Cataluña_2015_2025,var acumulada de índices 2015=100,2015,2025,2,,,,,0.3348919770833948,,rango [12.5; 54.5] %; dirección C1=True; cuantía C1=False
+triang,alq_Cataluña_2021_2025,var acumulada de índices 2015=100,2021,2025,2,,,,,0.12624440743617193,,rango [6.3; 18.9] %; dirección C1=True; cuantía C1=True
+triang,alq_Cataluña_2015_2024,var acumulada de índices 2015=100,2015,2024,3,,,,,0.4295081967213117,,rango [10.9; 51.5] %; dirección C1=True; cuantía C1=True
+triang,alq_Cataluña_2021_2024,var acumulada de índices 2015=100,2021,2024,3,,,,,0.1314415137340499,,rango [4.8; 16.6] %; dirección C1=True; cuantía C1=True
 triang,alq_ccaa_c1,IPC frente a SERPAVI 2015-2024 <=5 pp anuales,,,17,,,,,,,15 de 17 CCAA
 verif,gsadf_sim_nula,GSADF sobre paseo aleatorio simulado T=120,,,120,,,,,,0.152,"GSADF 1.80, cv95 2.31, p 0.152"
 verif,gsadf_sim_burbuja,GSADF sobre serie con episodio explosivo 45-65,,,120,,,,,,0.002,"GSADF 5.03, cv95 2.38, p 0.002; episodios [(46, 64)]"

@@ -12,15 +12,16 @@
 | M4 parque frente a mercado | B | hecho | C1/C4 | Compradores extranjeros 2025: MIVAU 16,9 %, Notariado 18,8 % (C1); personas jurídicas: 11,3 % compradores (C4, ETDP); titularidad del stock: sin datos | 128.323 |
 
 | Revisión oleada B (REHACER → correcciones; it. 2 REHACER acotado → corregido) | B | APROBADA | — | reglas B4/B5; déficit 2021-24 C1 sin bajas 563-689 mil | 80.288 + 15.330 |
-| M7 índice de precios triangulado y GSADF | B | hecho | C1/C4 | Compra 2015-25 +44 % a +80 % (C1); 2021-25 +24 % a +36 %; GSADF: episodios 2011-13, 2017-19 y 2024-26 (C4) | 93.179 |
+| M7 índice de precios triangulado y GSADF | B | hecho (C6 aplicado) | C1/C4 | Compra 2015-25: núcleo +44 % a +56 % (cuantía C1; INE IPV +80 %, discrepante); 2021-25 +24 % a +36 % (C1); alquiler 2015-24 dirección C1, cuantía C4; 2021-24 +6 % a +15 % (C1); 15/17 CCAA cuantía C1; GSADF C4 | 93.179 + 10.963 |
 | M5a medidas por instrumento y literatura | C | parcial (pasada 2: 1 programa añadido por copia no oficial; 2 no accesibles) | — | 89 medidas (71 + 18), 27+2 instrumentos (I28, I29 nuevos), 5 VERIFICADA / 7 NO VERIFICADA; recuentos de tabla A pendientes | 245.499 + ~45.000 (pasada 2) |
 | M6 preguntas abiertas y solicitudes | C | hecho | — | 10 preguntas; S3-S10 redactadas | 0 (orquestador) |
 
 | M5a pasada 2 (programas adicionales) | C | hecho | — | 88 medidas, 9 documentos; 2 no accesibles | 86.270 |
-| M5b matriz de instrumentos y fichas | C | hecho | C2/C4 | signo estable: construcción y vacías; débil: vivienda pública; no estable: topes, VUT y ayudas a la demanda (13-88 % al precio) | 0 (orquestador; M5 al 83 % del límite) |
+| M5b matriz de instrumentos y fichas | C | hecho | C2/C4 | signo estable: construcción y vacías; débil: vivienda pública; no estable: topes, VUT y ayudas a la demanda (15-100 % al precio) | 0 (orquestador; M5 al 83 % del límite) |
 | Entregables (WP, informe técnico, brief, lo_que_sabemos, README) | C | hecho (borrador) | — | — | 0 (orquestador) |
-| Revisión oleada C | C | en curso | — | — | — |
+| Revisión oleada C | C | REHACER (14 cambios) → correcciones hechas | — | docs/v4/revision_oleadaC.md | 147.305 |
+| M5a corrección C2/C7/C8/C13 | C | hecho (C8 parcial: sin búsqueda por palabras clave; 11 instrumentos sin búsqueda bibliográfica) | — | columna `direccion`; I01 3 a favor / 3 en contra; 4 de 9 en copia no oficial; 7 referencias nuevas VERIFICADA | 62.904 |
 
-**Hecho:** M0-M7; revisiones A y B; entregables en borrador.
-**Siguiente:** revisión C → correcciones → make all ×2 en clon limpio → cierre.
-**Tokens de subagentes v4:** 1.206.587 / 2.500.000 (cierre al 80 %: 2.000.000).
+**Hecho:** M0-M7; revisiones A, B y C con sus correcciones; entregables actualizados.
+**Siguiente:** revisión C, iteración 2 (acotada) → make all ×2 en clon limpio → cierre.
+**Tokens de subagentes v4:** 1.427.759 / 2.500.000 (57 %; cierre al 80 %: 2.000.000). Por oleada: A 408.598; B 439.886 (incluye M7); C 541.978 (incluye M5a 394.673, el 99 % del límite del módulo); sin asignar a fila 37.297 (ya en el total previo).

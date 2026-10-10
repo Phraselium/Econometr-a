@@ -17,7 +17,21 @@
    0.4422281724511927,
    0.7990465053521634
   ],
+  "c1_dir": true,
+  "c1_cuantia": true,
   "c1": true,
+  "nucleo": [
+   "MIVAU_tasado",
+   "Notariado",
+   "Registradores"
+  ],
+  "discrepantes": [
+   "INE_IPV"
+  ],
+  "nucleo_rango": [
+   0.4422281724511927,
+   0.5612210713431098
+  ],
   "pares_ok": [
    "INE_IPV/MIVAU_tasado",
    "INE_IPV/Registradores",
@@ -45,7 +59,20 @@
    0.23549920760697307,
    0.3636565085620582
   ],
+  "c1_dir": true,
+  "c1_cuantia": true,
   "c1": true,
+  "nucleo": [
+   "Notariado",
+   "Registradores",
+   "MIVAU_tasado",
+   "INE_IPV"
+  ],
+  "discrepantes": [],
+  "nucleo_rango": [
+   0.23549920760697307,
+   0.3636565085620582
+  ],
   "pares_ok": [
    "INE_IPV/MIVAU_tasado",
    "INE_IPV/Registradores",
@@ -55,10 +82,36 @@
   ],
   "mejor_par": "Notariado/Registradores (0.4 pp)"
  },
- "n_ccaa_precio_c1": {
+ "n_ccaa_precio_cuantia_c1": {
+  "2015": 15,
+  "2021": 17
+ },
+ "n_ccaa_precio_direccion_c1": {
   "2015": 17,
   "2021": 17
  },
+ "fuentes_por_ccaa": {
+  "Andalucía": 3,
+  "Aragón": 3,
+  "Asturias": 3,
+  "Canarias": 3,
+  "Cantabria": 3,
+  "Castilla y León": 3,
+  "Castilla-La Mancha": 3,
+  "Cataluña": 3,
+  "Comunidad Foral de Navarra": 2,
+  "Comunidad de Madrid": 3,
+  "Comunitat Valenciana": 3,
+  "Extremadura": 3,
+  "Galicia": 3,
+  "Illes Balears": 3,
+  "La Rioja": 3,
+  "País Vasco": 3,
+  "Región de Murcia": 3
+ },
+ "regla_5pp_anual": "Los ±5 pp anuales valen SOLO para la DIRECCIÓN (mismo signo y |var| >= 5 %). La cuantía es C1 solo si >=2 fuentes de grupos independientes coinciden dentro de ±15 % en el nivel del índice acumulado; si no, C4. mediana_pct_no_C1 no es una cifra C1.",
+ "independencia_precio": "INE IPV y Notariado comparten fuente (notarial). MIVAU (tasaciones) y Notariado son solo parcialmente independientes; Registradores es independiente de ambos. IPV del INE es la fuente discrepante en 2015-2025.",
+ "nota_alquiler": "IPC de alquiler y SERPAVI cubren contratos vigentes. El IPC sigue la renta de las mismas viviendas, con actualización anual limitada por ley en 2022-2024 (sin verificar en el BOE). SERPAVI es la renta media declarada, con contratos nuevos y cambios de composición. Dirección C1 (signo positivo y lejos de 0); cuantía C4.",
  "n_ccaa_alquiler_c1_2015_2024": 15,
  "alquiler": {
   "alq_España_2015_2024": {
@@ -75,7 +128,19 @@
     0.10930506007020946,
     0.4303165651106142
    ],
-   "c1": true,
+   "c1_dir": true,
+   "c1_cuantia": false,
+   "c1": false,
+   "nucleo": [
+    "IPC_alquiler"
+   ],
+   "discrepantes": [
+    "SERPAVI"
+   ],
+   "nucleo_rango": [
+    0.10930506007020946,
+    0.10930506007020946
+   ],
    "pares_ok": [
     "IPC_alquiler/SERPAVI"
    ],
@@ -95,7 +160,18 @@
     0.056933868033793855,
     0.14682791677893747
    ],
+   "c1_dir": true,
+   "c1_cuantia": true,
    "c1": true,
+   "nucleo": [
+    "IPC_alquiler",
+    "SERPAVI"
+   ],
+   "discrepantes": [],
+   "nucleo_rango": [
+    0.056933868033793855,
+    0.14682791677893747
+   ],
    "pares_ok": [
     "IPC_alquiler/SERPAVI"
    ],
@@ -115,7 +191,19 @@
     0.1246442144132407,
     0.5451397397535489
    ],
-   "c1": true,
+   "c1_dir": true,
+   "c1_cuantia": false,
+   "c1": false,
+   "nucleo": [
+    "IPC_alquiler"
+   ],
+   "discrepantes": [
+    "Incasol"
+   ],
+   "nucleo_rango": [
+    0.1246442144132407,
+    0.1246442144132407
+   ],
    "pares_ok": [
     "IPC_alquiler/Incasol"
    ],
@@ -135,7 +223,18 @@
     0.06300891509400541,
     0.18947989977833846
    ],
+   "c1_dir": true,
+   "c1_cuantia": true,
    "c1": true,
+   "nucleo": [
+    "IPC_alquiler",
+    "Incasol"
+   ],
+   "discrepantes": [],
+   "nucleo_rango": [
+    0.06300891509400541,
+    0.18947989977833846
+   ],
    "pares_ok": [
     "IPC_alquiler/Incasol"
    ],
@@ -157,7 +256,20 @@
     0.10863866617307316,
     0.5151582139430964
    ],
+   "c1_dir": true,
+   "c1_cuantia": true,
    "c1": true,
+   "nucleo": [
+    "SERPAVI",
+    "Incasol"
+   ],
+   "discrepantes": [
+    "IPC_alquiler"
+   ],
+   "nucleo_rango": [
+    0.4295081967213117,
+    0.5151582139430964
+   ],
    "pares_ok": [
     "IPC_alquiler/SERPAVI",
     "IPC_alquiler/Incasol",
@@ -181,10 +293,20 @@
     0.04788053915767243,
     0.16639951332610248
    ],
+   "c1_dir": true,
+   "c1_cuantia": true,
    "c1": true,
+   "nucleo": [
+    "IPC_alquiler",
+    "SERPAVI",
+    "Incasol"
+   ],
+   "discrepantes": [],
+   "nucleo_rango": [
+    0.04788053915767243,
+    0.16639951332610248
+   ],
    "pares_ok": [
-    "IPC_alquiler/SERPAVI",
-    "IPC_alquiler/Incasol",
     "Incasol/SERPAVI"
    ],
    "mejor_par": "Incasol/SERPAVI (1.1 pp)"

@@ -1,0 +1,23 @@
+{
+ "id": "V03",
+ "tema": "Inmigración",
+ "enunciado": "La inmigración es la causa principal de la subida de los precios y de los alquileres (≥50 % de la subida).",
+ "capa": "C2",
+ "magnitud": "Fracción máxima de la creación neta de hogares atribuible a hogares extranjeros: 45,2 % en 2014-2019 (rango [15,1; 45,2]); en 2014-2025 y 2020-2025 la cota con el extremo lógico (1 persona por hogar) llega al 100 % y no es informativa; en 2008-2013 el saldo extranjero neto fue negativo (cota 0,0 %). Dato análogo al de V01: en 2014-2019 el 30,2 % de la subida del alquiler provincial ocurrió en provincias con saldo extranjero no positivo; en 2020-2025 no hay provincias así (sin dato análogo). Las traducciones a precio son C4 condicionadas a ε.",
+ "intervalo": "[15,1; 45,2] % de Δhogares (2014-2019)",
+ "cota": "C2 de cantidad (hogares); las traducciones a precio son C4 condicionadas a ε.",
+ "literatura": "Saiz (2007), JUE, VERIFICADA, Q1 (año no comprobado); Sá (2015), EJ, VERIFICADA, Q1; González y Ortega (2013), JRS, VERIFICADA, cuartil no verificado: magnitudes de calibración (no replicadas).",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Regla común (i)-(iv), la misma que V01: solo hay cota C2 de cantidad (hogares), que no atribuye precio; sin cota C2/C3 de precio ni diseño C3 propio, SIN EVIDENCIA SUFICIENTE. v2 (BI) asocia la inmigración al alquiler con evidencia EXPLORATORIA, que no entra en el veredicto. v4: Hay cotas C2 de hogares (M2 la amplía) y traducciones a precio C4; ninguna decide.",
+ "limites": "Medida por nacionalidad (las nacionalizaciones la sesgan a la baja); tamaño del hogar extranjero supuesto.",
+ "evidencia": [
+  "output/v3/PB/cotas.json#B2",
+  "output/v3/PB/tablas/b2_no_explica_provincias.csv",
+  "output/v2/informe_v2.md"
+ ],
+ "veredicto_v3": "SIN EVIDENCIA SUFICIENTE",
+ "convenciones": {
+  "A (estricta: traducción a precio en C4)": "ANALIZADA, NO CONCLUYENTE",
+  "B (estructural: traducción a precio como C2)": "PARCIALMENTE. Compra: cota de precio ≤26,3 % en 2014-2025 (<50 %); alquiler: cota no informativa (227 %). No respaldada para el precio de compra; no concluyente para el alquiler."
+ }
+}

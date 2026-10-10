@@ -1,0 +1,23 @@
+{
+ "id": "V01",
+ "tema": "Viviendas turísticas",
+ "enunciado": "Las viviendas turísticas son la causa principal de la subida del alquiler en España.",
+ "capa": "C2",
+ "magnitud": "El aumento de VUT 2020M08-2024M08 equivale como máximo al 2,7 % del stock de alquiler (sustitución 1:1). El 25,0 % de la subida municipal del alquiler ocurre en municipios donde las VUT apenas crecieron. H3-1 (sección, efectos fijos, nacional): capa C4; entrenamiento β = 0,00026 log-p por pp de VUT, IC95 [-0,0007; 0,0013]; distritos sellados β = 0,0010 [-0,0007; 0,0028] (p 0,23). Con un aumento típico de 1,37 pp de VUT equivale a menos de +0,5 % de alquiler (C4).",
+ "intervalo": "desplazamiento de oferta [2,4; 2,7] % del stock",
+ "cota": "C2 (cantidad): ≤2,7 % del stock de alquiler. C4 (precio, condicionado a ε): ≤8,3 % con |ε_d|=0,33 y ≤2,7 % con |ε_d|=1",
+ "literatura": "García-López et al. (2020), JUE, VERIFICADA, Q1, Barcelona 2012-2016: réplica conceptual 2021-2024 NO REPLICADO (T = 0,0121 log-p por pp; propia -0,0042). MESVAL-UV (2022), NO VERIFICADA (sin DOI): NO REPLICABLE (datos propietarios).",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Regla común (i)-(iv): «causa principal» exige ≥50 % de la subida. Solo hay cota C2 de cantidad (desplazamiento ≤2,7 % del stock de alquiler; el 25 % de la subida municipal ocurre donde las VUT apenas crecieron), que no atribuye precio; sin cota C2/C3 de precio, SIN EVIDENCIA SUFICIENTE. H3-1 y H3-2 quedaron en C4 (fallan adelanto, sensibilidad y sellado; el placebo de tratamiento pasa): sus estimaciones, con IC95 que incluye 0, no se promueven de capa. v4: Hay cotas C2 de cantidad, cotas de precio C4 y un diseño (H3-1, C4); ninguno decide.",
+ "limites": "Las VUT del INE no son todos los alquileres de temporada; el efecto local en barrios concretos puede ser mayor que el nacional (ver cotas por ciudad en output/v3/PB); SERPAVI es un stock que amortigua.",
+ "evidencia": [
+  "output/v3/PB/cotas.json#B1",
+  "output/v3/C1/resultado.json",
+  "output/v3/GL/replicacion.md"
+ ],
+ "veredicto_v3": "SIN EVIDENCIA SUFICIENTE",
+ "convenciones": {
+  "A (estricta: traducción a precio en C4)": "ANALIZADA, NO CONCLUYENTE",
+  "B (estructural: traducción a precio como C2)": "NO RESPALDADA. Con |ε_d| = 0,33 (extremo del rango), la cota de precio es ≤8,3 % de alquiler, por debajo del 50 % de la subida que exige «causa principal»."
+ }
+}

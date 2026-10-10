@@ -1,0 +1,21 @@
+{
+ "id": "V12",
+ "tema": "Tipos de interés",
+ "enunciado": "Los tipos de interés son la causa principal de la subida de los precios de la vivienda (≥50 % de la subida).",
+ "capa": "C4",
+ "magnitud": "Con el supuesto estructural P/R = 1/coste de uso (C4): 2014-2021, Δln(1/uc) = +78,0 % (rango [23,5; 109,6] %), por encima de la subida del precio de compra; 2021-2025, Δln(1/uc) = -20,5 %, de signo contrario a la subida de precios. Sobre el alquiler no se calcula cota.",
+ "intervalo": "2014-2021 [23,5; 109,6] %; 2021-2025 [-99,8; -20,5] %",
+ "cota": "C4: traducción a precio con un supuesto estructural (mismo estándar que la vía ε de V01 y V03).",
+ "literatura": "Poterba (1984), QJE, VERIFICADA, Q1 para el coste de uso.",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Regla común (i)-(iv), con el mismo estándar que V01 y V03: toda traducción de una cota a precio que descansa en un supuesto estructural no estimado (ε en V01/V03; P/R = 1/uc aquí) es C4 y no decide. Con ese supuesto, la afirmación sería incompatible con 2021-2025 y no descartada en 2014-2021. v4: Cota B4 analizada; con la convención A la traducción a precio es C4.",
+ "limites": "Estado estacionario; depende del suelo del coste de uso y de la ganancia esperada.",
+ "evidencia": [
+  "output/v3/PB/cotas.json#B4"
+ ],
+ "veredicto_v3": "SIN EVIDENCIA SUFICIENTE",
+ "convenciones": {
+  "A (estricta: traducción a precio en C4)": "ANALIZADA, NO CONCLUYENTE",
+  "B (estructural: traducción a precio como C2)": "PARCIALMENTE. Con P/R = 1/uc: incompatible con 2021-2025 (signo contrario) y no descartada en 2014-2021."
+ }
+}

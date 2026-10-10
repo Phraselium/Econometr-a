@@ -38,7 +38,8 @@ check:
 	$(PY) src/v3/check_texto.py
 
 verificador:
-	@if [ -f src/v3/verificador.py ]; then $(PY) src/v3/verificador.py; else echo "verificador: src/v3/verificador.py aún no existe"; fi
+	@if [ -f src/v3/verificador.py ]; then $(PY) src/v3/verificador.py; fi
+	@if [ -f src/v4/verificador.py ]; then $(PY) src/v4/verificador.py; fi
 
 distclean:
 	rm -rf data/processed/* output/*

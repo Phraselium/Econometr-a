@@ -1,0 +1,17 @@
+{
+ "id": "V09",
+ "tema": "Seguridad jurídica",
+ "enunciado": "La ocupación ilegal de viviendas y la inseguridad jurídica retraen la oferta de alquiler.",
+ "capa": "C4",
+ "magnitud": "Sin datos de ocupaciones por municipio y periodo en las fuentes reunidas.",
+ "intervalo": "n/d",
+ "cota": "—",
+ "literatura": "Sin trabajo verificado incorporado.",
+ "veredicto": "NO ANALIZADA: FALTAN DATOS",
+ "regla": "Sin medida del fenómeno ni diseño, no se puede evaluar. v4: Faltan datos de ocupaciones ilegales por municipio y periodo (judiciales o policiales).",
+ "limites": "Requeriría datos judiciales o policiales a escala municipal.",
+ "evidencia": [
+  "docs/v3/fuentes_fallidas.md"
+ ],
+ "veredicto_v3": "SIN EVIDENCIA SUFICIENTE"
+}

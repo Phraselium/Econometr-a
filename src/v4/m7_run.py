@@ -533,7 +533,7 @@ def main() -> None:
            "nivel_evidencia": "EXPLORATORIO (GSADF); DESCRIPTIVO/C1 (triangulación)",
            "diagnosticos": {"verificacion_simulada": ver, "tamano_ar1": tam, "autocorr_dy_media": gs["ac_dy_media"], "fdr": "BH por familia (nacional 6; CCAA 34), exuberancia si BH<0,05 con ambos métodos; Holm en p_holm (con 499 réplicas y 40 pruebas el mínimo Holm es 0,08)"},
            "fuera_muestra": {"modelo": "no aplica (test de exuberancia, sin predicción)", "rmse": None, "dm_vs_ar4": None},
-           "notas": "Un test de exuberancia no identifica burbujas. INE e IPV de Notariado comparten fuente; BdE=MIVAU. SERPAVI acaba en 2024; cubre contratos vigentes igual que el IPC, que sigue las mismas viviendas."}
+           "notas": "Un test de exuberancia no identifica burbujas. INE IPV y Notariado comparten fuente (notarial); MIVAU (tasaciones) y Notariado, solo parcialmente independientes; Registradores, independiente de ambos; BdE=MIVAU. SERPAVI acaba en 2024; cubre contratos vigentes igual que el IPC, que sigue las mismas viviendas."}
     (OUT / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float), encoding="utf-8")
     REG.flush()
     print(df[["territorio", "medida", "gsadf", "cv95_mc", "p_mc", "p_wild", "p_holm", "episodios_bsadf"]].to_string())

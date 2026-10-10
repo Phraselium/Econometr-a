@@ -1,7 +1,7 @@
 # Vivienda en España: diagnóstico e instrumentos (policy brief, v4)
 
 ## Mensajes principales
-1. **Faltan viviendas, sobre todo en pocas provincias.**
+1. **Faltan viviendas.**
    - [C1] Entre 2021 y 2024 los hogares crecieron entre 563.000 y 689.000 más que las viviendas nuevas, sin suponer bajas del parque. [C2] Con bajas, hasta 903.000.
    - [C4] La mitad del déficit está en 7 provincias.
 2. **Los hogares crecen deprisa.**
@@ -22,7 +22,7 @@
 | Vivienda pública o social a gran escala | mejora o no cambia (nula si desplaza a la promoción privada) | C2 (débil) | desplazamiento y coste | donde hay déficit |
 | Topes al alquiler | depende de la respuesta de la oferta (−2,9 % a +7,3 % en el esfuerzo de los inquilinos) | C4 | reducción o desvío de oferta | mercados tensionados |
 | Regulación de viviendas turísticas | depende (−1,7 % a 0 % nacional; local mayor) | C2 en cantidad, C4 en precio | desvío a temporada | secciones con mucha VUT |
-| Ayudas a la demanda (avales, ayudas al alquiler, fiscalidad de la compra) | depende: el 15-100 % se traslada al precio | C4 | capitalización con oferta rígida | donde la oferta es elástica |
+| Ayudas a la demanda (avales, ayudas al alquiler, fiscalidad de la compra) | depende: el 15-100 % de una ayuda general se traslada al precio; por grupo, el beneficiario no paga más y los no beneficiarios pagan más | conjunto y magnitud C4; signo por grupo C2 | capitalización con oferta rígida | donde la oferta es elástica |
 | Licencias, densidad, industrialización, fiscalidad del suelo, seguridad jurídica, límites a no residentes, rebajas fiscales a la construcción | sin evaluar | — | — | — |
 
 ## Qué falta para decidir mejor

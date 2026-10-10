@@ -165,7 +165,10 @@ def matriz(nd: dict, pdres: dict, inc: pd.DataFrame, clases: dict) -> list[dict]
              coste="bajo", riesgos="posible encarecimiento o racionamiento del crédito", distribucion="ganan deudores; pueden perder acreedores y solicitantes de crédito",
              donde="todo el territorio", **sin),
     ]
+    no_buscados = {"I18", "I22", "I24", "I25", "I28"}  # docs/v4/literatura_v4.md: «No buscados»
     for m in M:
+        if m["id"] in no_buscados:
+            m["evidencia"] = "no buscada (pendiente; no equivale a «sin evidencia»; docs/v4/literatura_v4.md)"
         ids = m["id"].split("/")
         m["n_documentos_a_favor"] = len(set().union(*[nd.get(i, {}).get("favor", set()) for i in ids]))
         m["n_documentos_en_contra"] = len(set().union(*[nd.get(i, {}).get("contra", set()) for i in ids]))

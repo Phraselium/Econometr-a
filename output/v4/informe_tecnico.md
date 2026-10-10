@@ -62,7 +62,7 @@ Descomposición contable de la variación de hogares (ΔH) en tres efectos: tama
 ### 1.4 Precios (M7)
 | Medida | 2015-2025 | 2021-2025 | Capa |
 |---|---|---|---|
-| Precio de compra (núcleo: valor tasado, Registradores, Notariado; INE IPV aparte) | +44 % a +56 % (INE IPV: +80 %, discrepante) | +24 % a +36 % | Dirección C1 en España y 17 CCAA; cuantía C1 en España y 15 de 17 CCAA (3 fuentes por CCAA, Navarra 2). Ministerio y Notariado, independientes solo en parte |
+| Precio de compra (núcleo: valor tasado, Registradores, Notariado; INE IPV aparte) | +44 % a +56 % (INE IPV: +80 %, discrepante) | +24 % a +36 % | Dirección C1 en España y 17 CCAA; cuantía C1 en España y 15 de 17 CCAA (3 fuentes por CCAA, Navarra 2). El IPV del INE y el Notariado comparten fuente notarial; el Ministerio (tasaciones) y el Notariado son independientes solo en parte; Registradores es independiente de ambos |
 | Alquiler (IPC de alquiler frente a SERPAVI) | +11 % a +43 % (2015-2024) | +6 % a +15 % (2021-2024) | 2015-2024: dirección C1, cuantía C4 (el IPC sigue las mismas viviendas con contratos vigentes y límite legal de actualización 2022-2024, efecto sin verificar; SERPAVI es la renta media declarada, con contratos nuevos). 2021-2024: C1 en dirección y cuantía |
 
 **Exuberancia (GSADF, C4).**

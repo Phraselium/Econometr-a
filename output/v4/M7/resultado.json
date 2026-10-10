@@ -78,5 +78,5 @@
   "rmse": null,
   "dm_vs_ar4": null
  },
- "notas": "Un test de exuberancia no identifica burbujas. INE e IPV de Notariado comparten fuente; BdE=MIVAU. SERPAVI acaba en 2024; cubre contratos vigentes igual que el IPC, que sigue las mismas viviendas."
+ "notas": "Un test de exuberancia no identifica burbujas. INE IPV y Notariado comparten fuente (notarial); MIVAU (tasaciones) y Notariado, solo parcialmente independientes; Registradores, independiente de ambos; BdE=MIVAU. SERPAVI acaba en 2024; cubre contratos vigentes igual que el IPC, que sigue las mismas viviendas."
 }

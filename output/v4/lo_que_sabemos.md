@@ -18,7 +18,7 @@ La capa de un hecho es la menor de las de sus componentes. Con C4, el veredicto 
 - [C2] Demanda latente de los jóvenes medida con la tasa de convivencia con los padres frente a la de 2008: **188.000-506.000 hogares** (output/v4/M2, nota M2-C1).
 
 **Precios**
-- [C1] El precio de compra subió en 2015-2025 entre un **44 % y un 56 %** según el núcleo Ministerio-Notariado-Registradores (Ministerio y Notariado son independientes solo en parte). El IPV del INE discrepa al alza: **+80 %**. En 2021-2025 la subida fue del **24 % al 36 %**. La dirección es C1 en España y en las 17 comunidades; la cuantía es C1 en 15 de ellas (3 fuentes por comunidad; Navarra, 2).
+- [C1] El precio de compra subió en 2015-2025 entre un **44 % y un 56 %** según el núcleo Ministerio-Notariado-Registradores (el IPV del INE y el Notariado comparten fuente notarial; el Ministerio (tasaciones) y el Notariado son independientes solo en parte; Registradores es independiente de ambos). El IPV del INE discrepa al alza: **+80 %**. En 2021-2025 la subida fue del **24 % al 36 %**. La dirección es C1 en España y en las 17 comunidades; la cuantía es C1 en 15 de ellas (3 fuentes por comunidad; Navarra, 2).
 - [C1] El alquiler subió en 2015-2024: **+11 %** con el IPC de alquiler y **+43 %** con SERPAVI. La dirección es C1; la cuantía es C4, porque las medidas no son comparables: el IPC sigue las mismas viviendas con contratos vigentes (con el límite legal de actualización de 2022-2024, sin verificar su efecto) y SERPAVI da la renta media declarada, que incluye contratos nuevos. En 2021-2024 la subida fue del **6 % al 15 %**, C1 en dirección y cuantía.
 
 **Cotas de v3 que se mantienen**

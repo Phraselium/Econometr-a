@@ -15,7 +15,7 @@ Combinamos registros públicos (INE, Ministerio de Vivienda, Catastro, Notariado
    - Por esa regla, cifras habituales en el debate (déficit 2021-2025, peso de compradores extranjeros, vacías) quedan en C4. Se identifica en qué ventana o con qué fuentes pasan a C1.
 2. **Una conciliación de las cifras de déficit** de nuestras versiones anteriores y del Banco de España, con una cadena de pasos que cierra exactamente, y una cifra C1 para 2021-2024.
 3. **Una descomposición contable de la creación de hogares** (población por nacionalidad, estructura por edad y jefatura), con la corrección de la ruptura de la EPA de 2021 y la declaración de qué componentes son de fuente única.
-4. **Una evaluación de instrumentos con la misma rúbrica.** Las medidas proceden de documentos oficiales y se agrupan por instrumento, no por partido. Incluye instrumentos no propuestos y un verificador de afirmaciones del debate con veredictos y convenciones explícitas.
+4. **Una evaluación de instrumentos con la misma rúbrica.** Las medidas proceden de 9 documentos de programas (4 leídos en copia no oficial alojada por un medio) y se agrupan por instrumento, no por partido. Incluye instrumentos no propuestos y un verificador de afirmaciones del debate con veredictos y convenciones explícitas.
 
 Frente a la literatura:
 - no estimamos efectos causales nuevos que superen criterios estrictos;
@@ -49,7 +49,7 @@ Frente a la literatura:
 - **Brecha precio-coste** (Glaeser y Gyourko 2018): precio − coste × (1 + margen) − suelo. Una brecha grande es compatible con restricciones a la oferta, pero no las identifica.
 
 ## 4. Métodos por capas
-- **C1, hechos.** Al menos dos fuentes independientes, con un rango declarado de coincidencia (±15 % en niveles; ±5 pp anuales en variaciones de precio). Si dos fuentes comparten el documento de origen, la independencia es parcial y se declara.
+- **C1, hechos.** Al menos dos fuentes independientes, con un rango declarado de coincidencia (±15 % en niveles; en variaciones de precio, ±5 pp anuales es la regla de dirección y la cuantía exige ±15 % en nivel). Si dos fuentes comparten el documento de origen, la independencia es parcial y se declara.
 - **C2, cotas.** Supuestos explícitos: bajas del parque, sustitución 1:1 de viviendas turísticas por alquiler, tasas de referencia.
 - **C3, efectos.** Pre-registro (v3: ancla 204c073), pretendencias (Rambachan y Roth 2023), placebos, sensibilidad (Oster 2019; Cinelli y Hazlett 2020), validación sellada y Holm.
 - **C4.** Todo lo demás. Las traducciones de cotas a precio que usan elasticidades sin estimación española se tratan como C4 (convención A). El verificador muestra también el veredicto con la convención B, en la que esas traducciones cuentan como C2.
@@ -138,18 +138,18 @@ Ver docs/v3/limitaciones.md, y para v4 docs/v4/decisiones.md y las revisiones. L
 - Cinelli y Hazlett (2020), *JRSS-B* 82(1). DOI 10.1111/rssb.12348. VERIFICADA, Q1.
 - Diamond, McQuade y Qian (2019), *American Economic Review*. DOI 10.1257/aer.20181289. VERIFICADA, Q1.
 - García-López, Jofre-Monseny, Martínez-Mazza y Segú (2020), *Journal of Urban Economics*. DOI 10.1016/j.jue.2020.103278. VERIFICADA, Q1.
-- Gibbons y Manning (2006), *Journal of Public Economics* 90(4-5). DOI 10.1016/j.jpubeco.2005.01.002. VERIFICADA, cuartil no verificado.
-- Glaeser y Gyourko (2018), *Journal of Economic Perspectives*. DOI 10.1257/jep.32.1.3. VERIFICADA, cuartil no verificado.
+- Gibbons y Manning (2006), *Journal of Public Economics* 90(4-5). DOI 10.1016/j.jpubeco.2005.01.002. DOI verificado (Crossref); cuartil no verificado.
+- Glaeser y Gyourko (2018), *Journal of Economic Perspectives*. DOI 10.1257/jep.32.1.3. DOI verificado (Crossref); cuartil no verificado.
 - Hilber y Vermeulen (2016), *Economic Journal* 126(591). DOI 10.1111/ecoj.12213. VERIFICADA, Q1.
 - Jofre-Monseny, Martínez-Mazza y Segú (2023), *Regional Science and Urban Economics*. DOI 10.1016/j.regsciurbeco.2023.103916. VERIFICADA, Q1.
 - Manski (2003), *Partial Identification of Probability Distributions*, Springer. DOI 10.1007/b97478. VERIFICADA (libro).
 - Oster (2019), *JBES* 37(2). DOI 10.1080/07350015.2016.1227711. VERIFICADA, Q1.
 - Phillips, Shi y Yu (2015), *International Economic Review* (test GSADF). NO VERIFICADA en este proyecto (DOI no comprobado).
 - Rambachan y Roth (2023), *Review of Economic Studies* 90(5). DOI 10.1093/restud/rdad018. VERIFICADA, Q1.
-- Saiz (2010), *Quarterly Journal of Economics*. DOI 10.1162/qjec.2010.125.3.1253. VERIFICADA, cuartil no verificado.
-- Segú (2020), *Journal of Public Economics* 185, 104079. DOI 10.1016/j.jpubeco.2019.104079. VERIFICADA, cuartil no verificado.
-- Baum-Snow y Marion (2009), *Journal of Public Economics* 93(5-6). DOI 10.1016/j.jpubeco.2009.01.001. VERIFICADA, cuartil no verificado.
-- Glaeser, Gyourko y Saks (2005), *Journal of Law and Economics* 48(2). DOI 10.1086/429979. VERIFICADA, cuartil no verificado.
+- Saiz (2010), *Quarterly Journal of Economics*. DOI 10.1162/qjec.2010.125.3.1253. DOI verificado (Crossref); cuartil no verificado.
+- Segú (2020), *Journal of Public Economics* 185, 104079. DOI 10.1016/j.jpubeco.2019.104079. DOI verificado (Crossref); cuartil no verificado.
+- Baum-Snow y Marion (2009), *Journal of Public Economics* 93(5-6). DOI 10.1016/j.jpubeco.2009.01.001. DOI verificado (Crossref); cuartil no verificado.
+- Glaeser, Gyourko y Saks (2005), *Journal of Law and Economics* 48(2). DOI 10.1086/429979. DOI verificado (Crossref); cuartil no verificado.
 - Jofre-Monseny et al. y Diamond et al.: arriba. Banco de España (2026), Informe Anual 2025. NO VERIFICADA (DOI no comprobado).
 - Lista completa: docs/literatura.md (anexos v3 y v4) y output/v3/articulo.md §11.
 

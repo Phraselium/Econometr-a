@@ -83,10 +83,21 @@
 - **Presupuesto de M5.** La corrección C2/C7/C8/C13 la hizo el agente M5a (62.904 tokens). M5 llega a 394.673 tokens, el 99 % del límite del módulo, por encima de la regla del 80 %. Se justifica porque C2, C7 y C13 son requisitos de neutralidad: codificar a favor y en contra con una sola regla y declarar las copias no oficiales. C8 queda parcial y se declara como limitación: sin búsqueda por palabras clave, porque los PDF solo se leen como imagen, así que los recuentos son cotas inferiores; y 11 instrumentos no tienen búsqueda bibliográfica registrada.
 - **C2.** El CSV de medidas lleva la columna `direccion`. I01 queda con 3 documentos a favor y 3 en contra («derogar/reducir»). La matriz y el informe muestran «a favor / en contra».
 - **C6.**
-  - Precio de compra: la cuantía C1 es el núcleo Ministerio-Notariado-Registradores (+44 % a +56 %). El IPV del INE (+80 %) se reporta como discrepante. Las dos primeras fuentes son independientes solo en parte.
+  - Precio de compra: la cuantía C1 es el núcleo Ministerio-Notariado-Registradores (+44 % a +56 %). El IPV del INE (+80 %) se reporta como discrepante. Independencia, igual en todos los documentos: el IPV del INE y el Notariado comparten fuente notarial; el Ministerio (tasaciones) y el Notariado son independientes solo en parte; Registradores es independiente de ambos.
   - Alquiler 2015-2024: dirección C1, cuantía C4, porque el IPC (contratos vigentes, mismas viviendas) y SERPAVI (renta media declarada) no miden lo mismo. 2021-2024: C1 en dirección y cuantía.
   - CCAA: 3 fuentes por comunidad (Navarra, 2); la cuantía es C1 en 15 de 17.
 - **C7.** 4 de los 9 documentos se leyeron en copia no oficial alojada por un medio. Consta en el informe, el WP, el README y docs/v4/cobertura_programas.md.
 - **C11.** Pregunta abierta 10 reformulada: el GSADF ya se ejecutó; queda abierto si la exuberancia es una burbuja.
 - **C13 y C14.** Rótulos neutros. El README declara no verificadas las condiciones de reutilización de Notariado y Registradores y mapea las tablas a sus programas.
 - **lo_que_sabemos.** La demanda latente por jefatura (C4) sale de «Afirmable con seguridad»; check_texto la detectó.
+
+## Revisión de la oleada C, iteración 2: REHACER acotado (2 correcciones de texto) → corregido
+- B1. Los instrumentos I18, I22, I24, I25 e I28 se rotulan en la matriz «no buscada», no «sin evidencia hallada», en coherencia con literatura_v4.md.
+- B2. Contribución 4 del WP: 9 documentos de programas, 4 de ellos leídos en copia no oficial.
+- Recomendaciones aplicadas:
+  - R1: en la fila de ayudas del brief, signo por grupo C2, y conjunto y magnitud C4.
+  - R2: ±5 pp es la regla de dirección; la cuantía exige ±15 % en nivel.
+  - R3: encabezado neutro en capa.
+  - R4: «DOI verificado (Crossref); cuartil no verificado».
+  - R5: independencia de las fuentes de precio unificada (INE IPV y Notariado comparten fuente; Ministerio y Notariado, parcialmente independientes; Registradores, independiente).
+- Oleada C APROBADA tras estas correcciones, que son las que propuso el revisor; no hace falta otra iteración.

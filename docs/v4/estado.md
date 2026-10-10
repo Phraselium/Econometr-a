@@ -19,9 +19,9 @@
 | M5a pasada 2 (programas adicionales) | C | hecho | — | 88 medidas, 9 documentos; 2 no accesibles | 86.270 |
 | M5b matriz de instrumentos y fichas | C | hecho | C2/C4 | signo estable: construcción y vacías; débil: vivienda pública; no estable: topes, VUT y ayudas a la demanda (15-100 % al precio) | 0 (orquestador; M5 al 83 % del límite) |
 | Entregables (WP, informe técnico, brief, lo_que_sabemos, README) | C | hecho (borrador) | — | — | 0 (orquestador) |
-| Revisión oleada C | C | REHACER (14 cambios) → correcciones hechas | — | docs/v4/revision_oleadaC.md | 147.305 |
+| Revisión oleada C | C | REHACER (14 cambios) → corregido; it. 2 REHACER acotado → corregido; APROBADA | — | docs/v4/revision_oleadaC.md, revision_oleadaC_it2.md | 147.305 + 47.741 |
 | M5a corrección C2/C7/C8/C13 | C | hecho (C8 parcial: sin búsqueda por palabras clave; 11 instrumentos sin búsqueda bibliográfica) | — | columna `direccion`; I01 3 a favor / 3 en contra; 4 de 9 en copia no oficial; 7 referencias nuevas VERIFICADA | 62.904 |
 
-**Hecho:** M0-M7; revisiones A, B y C con sus correcciones; entregables actualizados.
-**Siguiente:** revisión C, iteración 2 (acotada) → make all ×2 en clon limpio → cierre.
-**Tokens de subagentes v4:** 1.427.759 / 2.500.000 (57 %; cierre al 80 %: 2.000.000). Por oleada: A 408.598; B 439.886 (incluye M7); C 541.978 (incluye M5a 394.673, el 99 % del límite del módulo); sin asignar a fila 37.297 (ya en el total previo).
+**Hecho:** M0-M7; revisiones A, B y C aprobadas; entregables actualizados.
+**Siguiente:** make all ×2 en clon limpio → cierre.
+**Tokens de subagentes v4:** 1.475.500 / 2.500.000 (59 %; cierre al 80 %: 2.000.000). Por oleada: A 408.598; B 439.886 (incluye M7); C 589.719 (incluye M5a 394.673, el 99 % del límite del módulo); sin asignar a fila 37.297 (ya en el total previo).

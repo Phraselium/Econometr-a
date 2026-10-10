@@ -32,7 +32,7 @@ HECHOS: list[dict] = []
 
 
 def hecho(id_, enun, capa, mag, unidad, lo, hi, fuentes, supuestos, limites):
-    assert capa in ("C1", "C4")
+    assert capa in ("C1", "C2", "C4")
     assert capa == "C4" or len(fuentes) >= 2
     HECHOS.append({"id": id_, "enunciado_neutro": enun, "capa": capa, "magnitud": None if pd.isna(mag) else round(float(mag), 3),
                    "unidad": unidad, "intervalo": [round(float(lo), 3), round(float(hi), 3)], "fuentes": fuentes,
@@ -58,26 +58,43 @@ def main() -> None:
     F_H = ["INE EPA (hogares, tabla 65269/65944; media trimestral)", "INE Censos 2011 y 2021 y ECP (tabla 60131)"]
     F_N = ["MIVAU certificados de fin de obra (libres) y calificaciones definitivas (protegida)", "MIVAU estimación del parque de viviendas",
            "INE Censos 2011 y 2021 (stock de viviendas)"]
-    for r in r1.itertuples():
+    ESPEC = ["2002-2007", "2008-2013", "2014-2019", "2020-2025", "2014-2025"]
+    tab = r1.copy()
+    tab["preespecificado"] = tab.periodo.isin(ESPEC)
+    tab["signo"] = np.where((tab.min_total < 0) & (tab.max_total > 0), "signo no determinado",
+                            np.where(tab.max_total <= 0, "negativo (altas netas superiores)", "positivo"))
+    tab["mediana"] = [t1[(t1.periodo == p_) & t1.protegida.isin(["con", "incluida"])].deficit.median() for p_ in tab.periodo]
+    tab["criterio"] = np.where(tab.preespecificado, "ventana fijada en la especificación",
+                               "ventana añadida tras ver las fuentes disponibles: Censos 2011/2021 y ECP (desde 2021T1) permiten dos fuentes de hogares; "
+                               "elegida por disponibilidad de fuentes, no por el resultado; 2021-2025 se añade para comparar con el BdE")
+    tab = tab.sort_values("preespecificado", ascending=False, kind="stable")
+    guardar(tab, "A1_tabla_unica_periodos")
+    for r in tab.itertuples():
         g = t1[(t1.periodo == r.periodo) & t1.protegida.isin(["con", "incluida"])]
         c1 = r.capa == "C1"
+        indet = r.signo == "signo no determinado"
         fh = F_H if r.n_fuentes_hogares >= 2 else [F_H[0] + " (única fuente de hogares en este periodo)"]
         fn = [x for x in F_N if (x == F_N[0]) or (x == F_N[1]) or r.periodo in ("2012-2021", "2012-2025")]
         hecho(f"A1_nacional_{r.periodo}",
-              f"Déficit contable acumulado (variación de hogares menos altas netas de vivienda) entre {r.periodo.replace('-', ' y ')}, "
-              f"con vivienda protegida: mediana de las combinaciones {g.deficit.median():,.0f}; "
-              f"rango entre fuentes con bajas del 0,1 %: {r.min_entre_fuentes_bajas01:,.0f} a {r.max_entre_fuentes_bajas01:,.0f}. "
-              f"Las bajas del 0 % al 0,2 % anual mueven la cifra entre 0 y {r.efecto_bajas_02_viviendas:,.0f} viviendas."
+              f"Balance contable (variación de hogares menos altas netas de vivienda) entre {r.periodo.replace('-', ' y ')}, con vivienda protegida: "
+              + (f"el signo no está determinado por las fuentes (rango {r.min_total:,.0f} a {r.max_total:,.0f}). " if indet else
+                 f"rango de las combinaciones {r.min_total:,.0f} a {r.max_total:,.0f} ({r.signo}); mediana {r.mediana:,.0f}. ")
+              + f"Con bajas del 0,1 %, rango entre fuentes {r.min_entre_fuentes_bajas01:,.0f} a {r.max_entre_fuentes_bajas01:,.0f}. "
+              f"Las bajas del 0 % al 0,2 % anual suman hasta {r.efecto_bajas_02_viviendas:,.0f} viviendas."
               + ("" if c1 else " Una sola fuente de hogares: hecho de fuente única (C4)."),
-              "C1" if c1 else "C4", g.deficit.median(), "viviendas", r.min_total, r.max_total, fh + fn,
+              "C1" if c1 else "C4", np.nan if indet else r.mediana, "viviendas", r.min_total, r.max_total, fh + fn,
               "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior "
-              "(se aplican solo a la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas.",
-              "Signo negativo = altas netas superiores a la variación de hogares. Un déficit contable no equivale a demanda insatisfecha a cualquier precio. Quiebre de la EPA en 2021; la ECP está anclada al "
-              "Censo 2021 (no es independiente de él); el fin de obra del MIVAU cubre menos que la variación del parque y del Censo.")
+              "(solo en la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas. "
+              + ("Ventana fijada en la especificación." if r.preespecificado else
+                 "Ventana añadida tras ver las fuentes disponibles (criterio: disponibilidad de Censos y ECP, no el resultado)."),
+              "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. "
+              "Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. "
+              "Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. "
+              "El cambio de signo entre periodos (negativo en 2002-2013, positivo desde 2014) es parte del hecho.")
     # comparación con la cifra del BdE (2021-2025)
     g = t1[(t1.periodo == "2021-2025") & t1.protegida.isin(["con", "incluida"])]
     bde = {"cifra_bde": pa_a1.BDE["cifra"], "ief": pa_a1.BDE["ief"], "min_pa": g.deficit.min(), "max_pa": g.deficit.max(),
-           "bde_dentro_del_rango": bool(g.deficit.min() <= pa_a1.BDE["cifra"] <= g.deficit.max()), "nota": pa_a1.BDE["fuente"]}
+           "bde_dentro_del_rango": bool(g.deficit.min() <= pa_a1.BDE["cifra"] <= g.deficit.max()), "nota": pa_a1.BDE["fuente"] + ". Cifra del BdE: DOI no comprobado (NO VERIFICADA en Crossref)"}
     (TAB / "A1_comparacion_BdE.json").write_text(json.dumps(bde, ensure_ascii=False, indent=1, default=float))
     s = rp[rp.periodo == "2022-2025"]
     hecho("A1_provincial_2022-2025",
@@ -93,17 +110,27 @@ def main() -> None:
     s2, r2 = pa_a23.a2(reg)
     guardar(s2, "A2_series_tasa")
     guardar(r2, "A2_hogares_implicitos")
+    ult = int(r2.anio.iloc[0])
+    tes = r2[r2.fuente.str.startswith("Eurostat")].tasa_observada.iloc[0]
+    tep = r2[r2.fuente.str.startswith("EPA")].tasa_observada.iloc[0]
+    hecho("A2_tasa_convivencia_25_34",
+          f"Tasa de personas de 25-34 años que viven con sus progenitores en {ult}: {tes:.1f} % (Eurostat/ECV) y {tep:.1f} % (EPA, hijo/a de la persona de referencia). "
+          f"España 2008: {r2[r2.referencia == 'España 2008'].tasa_referencia.iloc[0]:.1f} % (ECV) y {r2[r2.referencia == 'España 2008'].tasa_referencia.iloc[-1]:.1f} % (EPA); UE-27 {ult}: "
+          f"{r2[r2.referencia.str.startswith('UE')].tasa_referencia.iloc[0]:.1f} % (ECV).",
+          "C1", (tes + tep) / 2, "% de la población 25-34", min(tes, tep), max(tes, tep),
+          ["Eurostat ilc_lvps08 (ECV)", "INE EPA tabla 65944 (hijo/a de la persona de referencia)"], "Conceptos distintos entre las dos tasas (convivencia con progenitores frente a hijo/a de la persona de referencia).",
+          "Sin desagregación por CCAA (la especificación la pedía; no hay datos nacionales por CCAA en estas tablas); sin error muestral publicado en los ficheros. "
+          "Eurostat ilc_lvps08 procede de la ECV (EU-SILC).")
     hecho("A2_hogares_implicitos",
-          f"Hogares implícitos de 25-34 años (diferencia entre la tasa observada de convivencia con progenitores en {int(r2.anio.iloc[0])} y la "
-          f"tasa de referencia): {r2.hogares_implicitos.min():,.0f} a {r2.hogares_implicitos.max():,.0f}. Con la referencia España 2008: "
+          f"Cota bajo supuestos: hogares implícitos de 25-34 años si la tasa de convivencia fuese la de referencia (diferencia con la tasa de {ult} multiplicada por la población de 25-34 y dividida por el tamaño del hogar joven): "
+          f"{r2.hogares_implicitos.min():,.0f} a {r2.hogares_implicitos.max():,.0f}. Con España 2008 como referencia: "
           f"{r2[r2.referencia == 'España 2008'].hogares_implicitos.min():,.0f} a {r2[r2.referencia == 'España 2008'].hogares_implicitos.max():,.0f}; "
-          f"con la media UE-27: {r2[r2.referencia.str.startswith('UE')].hogares_implicitos.min():,.0f} a "
-          f"{r2[r2.referencia.str.startswith('UE')].hogares_implicitos.max():,.0f} (solo ECV).",
-          "C1", r2.hogares_implicitos.median(), "hogares (= viviendas)", r2.hogares_implicitos.min(), r2.hogares_implicitos.max(),
+          f"con la media UE-27: {r2[r2.referencia.str.startswith('UE')].hogares_implicitos.min():,.0f} a {r2[r2.referencia.str.startswith('UE')].hogares_implicitos.max():,.0f} (solo ECV).",
+          "C2", np.nan, "hogares (= viviendas)", r2.hogares_implicitos.min(), r2.hogares_implicitos.max(),
           ["Eurostat ilc_lvps08 (ECV)", "INE EPA tabla 65944 (hijo/a de la persona de referencia)"],
-          "Personas por hogar joven entre 1,5 y 2,0; una vivienda por hogar; referencias: España 2008 (cada fuente con su propia tasa) y UE-27 del último año (solo ECV).",
-          "El Censo 2021 no publica la relación con la persona de referencia por tramo de edad accesible; sin desagregación por CCAA; sin error muestral "
-          "publicado en los ficheros (no se inventa). Las dos tasas miden conceptos distintos (convivencia con progenitores frente a hijo/a de la persona de referencia).")
+          "Contrafactual: tasa de referencia = España 2008 o UE-27 del último año; personas por hogar joven entre 1,5 y 2,0; una vivienda por hogar. "
+          "El rango mezcla la medida (ECV frente a EPA) y los supuestos (referencia y tamaño). No se da valor central.",
+          "No es una medida descriptiva: depende de una referencia contrafactual. Sin desagregación por CCAA; sin error muestral publicado.")
 
     # ---------------- A3
     v3, t3, cob = pa_a23.a3(reg)
@@ -114,14 +141,21 @@ def main() -> None:
     gb = todos[todos.tercil == "bajo"].pct_vacias_de_la_muestra
     F3 = ["INE Censo 2021, tabla 59531 (vacías y uso esporádico por consumo eléctrico)", "Catastro (unidades urbanas residenciales) − Censo 2021 (principales) − INE VUT",
           "MIVAU valor tasado y SERPAVI (presión)"]
+    p0 = "Δ ln valor tasado 2015-2021"
+    fx = todos[todos.presion == p0]
+    ra = fx[fx.tercil == "alto"].pct_vacias_de_la_muestra
+    cm = todos[todos.medida_vacia == "Censo 2021: vacías"]
+    rd = cm[cm.tercil == "alto"].pct_vacias_de_la_muestra
     hecho("A3_vacias_tercil_alto_vs_bajo",
-          f"Porcentaje de las viviendas vacías (de los municipios con dato de presión) situado en el tercil alto de presión: {gr.min():.1f} a {gr.max():.1f} %; "
-          f"en el tercil bajo: {gb.min():.1f} a {gb.max():.1f} %. Rango entre tres medidas de vacancia y tres medidas de presión.",
-          "C1", gr.median(), "% de las vacías de la muestra", gr.min(), gr.max(), F3,
-          "Terciles por rango dentro de los municipios con dato; presión = Δ ln valor tasado 2015-21 y 2021-25 y Δ ln alquiler SERPAVI 2015-21; "
-          "segunda medida = Catastro 2021 − viviendas principales − VUT (VUT ausente = 0).",
-          "Muestra con valor tasado: 277 municipios; con SERPAVI: 1.806. Los municipios de menos de ~375 viviendas se agrupan en «resto» en el INE y quedan fuera. "
-          "La segunda medida incluye segundas residencias. El Catastro no cubre País Vasco ni Navarra (la segunda medida excluye esos municipios).")
+          f"Porcentaje de las viviendas vacías (de los municipios con dato) situado en el tercil alto de presión. Rango de medida (tres medidas de vacancia, presión fija = {p0}, 277 municipios): "
+          f"{ra.min():.1f} a {ra.max():.1f} %. Rango de definición (vacías del Censo 2021, tres definiciones de presión, 277 a 1.806 municipios): {rd.min():.1f} a {rd.max():.1f} %. "
+          f"Tercil bajo, rango total: {gb.min():.1f} a {gb.max():.1f} %.",
+          "C1", np.nan, "% de las vacías de la muestra", ra.min(), ra.max(), F3,
+          "Terciles por rango dentro de los municipios con dato; presión = Δ ln valor tasado 2015-21 y 2021-25 y Δ ln alquiler SERPAVI 2015-21 (definiciones, no mediciones repetidas); "
+          "segunda medida = Catastro 2021 − viviendas principales − VUT (VUT ausente = 0). Intervalo = rango de medida; el rango de definición figura en el enunciado.",
+          "Independencia parcial entre las dos medidas de vacancia: ambas usan las viviendas principales del Censo 2021 (la segunda las resta). Muestra con valor tasado: 277 municipios; con SERPAVI: 1.806. "
+          "Los municipios de menos de ~375 viviendas se agrupan en «resto» en el INE y quedan fuera. La segunda medida incluye segundas residencias. "
+          "El Catastro no cubre País Vasco ni Navarra (la segunda medida excluye esos municipios).")
     may = t3[(t3.muestra == ">50.000 hab.") & t3.tercil.isin(["alto", "bajo"]) & t3.presion.str.startswith("Δ")]
     ga = may[may.tercil == "alto"].pct_vacias_de_la_muestra
     gbj = may[may.tercil == "bajo"].pct_vacias_de_la_muestra

@@ -1,0 +1,95 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+BI,H3_2SLS_alq,"y_alq ~ x | FE prov+año | z shift-share (cuotas 2002, LOO)",2009,2015,327,,,,,12.695421532381554,0.318,EE cluster prov; WCB Webb B=499; F=0.26; confirmatoria H3; SMOKE
+BI,H3_OLS_alq,y_alq ~ x | FE prov+año,2009,2015,327,,,,,0.3353557242233134,0.620289604657426,referencia MCO
+BI,H3_2SLS_pre,"y_pre ~ x | FE prov+año | z shift-share (cuotas 2002, LOO)",2009,2015,327,,,,,-70.07176663291911,0.308,EE cluster prov; WCB Webb B=499; F=0.26; confirmatoria H3; SMOKE
+BI,H3_OLS_pre,y_pre ~ x | FE prov+año,2009,2015,327,,,,,1.9823106414335152,0.3734667666759951,referencia MCO
+BI,H3_2SLS_dif,"y_dif ~ x | FE prov+año | z shift-share (cuotas 2002, LOO)",2009,2015,327,,,,,82.76718816530072,0.268,EE cluster prov; WCB Webb B=499; F=0.26; confirmatoria H3; SMOKE
+BI,H3_OLS_dif,y_dif ~ x | FE prov+año,2009,2015,327,,,,,-1.6469549172102023,0.4661996791409031,referencia MCO
+BI,H3_conjunto_IUT,beta_alq>0 y beta_alq-beta_pre>0,2009,2015,327,,,,,82.76718816530067,0.2,IUT con p WCB una cola
+BI,diag_rotemberg_alq,pesos de Rotemberg (8 grupos),2009,2015,327,,,,,,,top=africa
+BI,diag_rotemberg_pre,pesos de Rotemberg (8 grupos),2009,2015,327,,,,,,,top=africa
+BI,diag_cuotas_caract02,"corr cuotas 2002 con ln_p02, paro02, ln_pob02, extr02, costa",2009,2015,49,,,,,,,ver cuotas_vs_caracteristicas02.csv
+BI,diag_pretrend_alq,y_alq(2003-07) ~ z_medio(2009-21) + FE año,2003,2007,245,,,,,-0.1776532092631881,0.04158985163634885,pretendencias; EE cluster prov
+BI,diag_pretrend_pre,y_pre(2003-07) ~ z_medio(2009-21) + FE año,2003,2007,241,,,,,0.32225068219181496,0.3410160766997897,pretendencias; EE cluster prov
+BI,diag_overid_alq,y_alq ~ x | 5 instrumentos por grupo,2009,2015,327,,,,,6.876605162407189,0.5320059571115678,Hansen J cluster=3.16 (df=4)
+BI,diag_overid_pre,y_pre ~ x | 5 instrumentos por grupo,2009,2015,327,,,,,7.505447201178731,0.08232335642138305,Hansen J cluster=8.27 (df=4)
+BI,diag_BHJ_alq_anioFE,"BHJ nivel shock (56 shocks g-t, 8 grupos)",2009,2015,327,,,,,4.422934695574065,0.06679943086007151,potencia baja: 8 grupos; EE cluster por grupo t(7)
+BI,diag_BHJ_alq_anio+grupoFE,"BHJ nivel shock (56 shocks g-t, 8 grupos)",2009,2015,327,,,,,4.382436188102355,0.062086632898783904,potencia baja: 8 grupos; EE cluster por grupo t(7)
+BI,diag_BHJ_pre_anioFE,"BHJ nivel shock (56 shocks g-t, 8 grupos)",2009,2015,327,,,,,9.592642065231727,0.5148878658612972,potencia baja: 8 grupos; EE cluster por grupo t(7)
+BI,diag_BHJ_pre_anio+grupoFE,"BHJ nivel shock (56 shocks g-t, 8 grupos)",2009,2015,327,,,,,7.788414876697419,0.5821339273487318,potencia baja: 8 grupos; EE cluster por grupo t(7)
+BI,diag_AKM0_alq,EE exposición-robustos tipo AKM (agrupa grupos-shock),2009,2015,327,,,,,12.695421532381554,0.03460063187794637,aprox. AKM0; 8 shocks-grupo
+BI,diag_AKM0_pre,EE exposición-robustos tipo AKM (agrupa grupos-shock),2009,2015,327,,,,,-70.07176663291911,0.4342182194796932,aprox. AKM0; 8 shocks-grupo
+BI,id_principal_alq,y_alq ~ x | z,2009,2015,327,,,,,12.695421532381554,0.594734123510102,EXPLORATORIO identificación; F=0.26; p_wcb_1c=0.1860; 
+BI,id_principal_pre,y_pre ~ x | z,2009,2015,327,,,,,-70.07176663291911,0.5976977261125391,EXPLORATORIO identificación; F=0.26; p_wcb_1c=0.8740; 
+BI,id_principal_dif,y_dif ~ x | z,2009,2015,327,,,,,82.76718816530072,0.5919479614813234,EXPLORATORIO identificación; F=0.26; p_wcb_1c=0.1480; 
+BI,id_gpss_extr02_alq,y_alq ~ x | z | controles,2009,2015,327,,,,,-0.03684563709918024,0.995289887049563,EXPLORATORIO identificación; F=0.09; p_wcb_1c=0.5800; característica 2002 x año (GPSS)
+BI,id_gpss_extr02_pre,y_pre ~ x | z | controles,2009,2015,327,,,,,64.78076968617364,0.74904323439601,EXPLORATORIO identificación; F=0.09; p_wcb_1c=0.2340; característica 2002 x año (GPSS)
+BI,id_gpss_extr02_dif,y_dif ~ x | z | controles,2009,2015,327,,,,,-64.8176153232728,0.7505701145719496,EXPLORATORIO identificación; F=0.09; p_wcb_1c=0.7520; característica 2002 x año (GPSS)
+BI,id_gpss_ln_pob02_alq,y_alq ~ x | z | controles,2009,2015,327,,,,,10.961359320756195,0.6183771272310905,EXPLORATORIO identificación; F=0.26; p_wcb_1c=0.1640; característica 2002 x año (GPSS)
+BI,id_gpss_ln_pob02_pre,y_pre ~ x | z | controles,2009,2015,327,,,,,-52.41949051451729,0.5910180974460171,EXPLORATORIO identificación; F=0.26; p_wcb_1c=0.8340; característica 2002 x año (GPSS)
+BI,id_gpss_ln_pob02_dif,y_dif ~ x | z | controles,2009,2015,327,,,,,63.38084983527349,0.5879758453575386,EXPLORATORIO identificación; F=0.26; p_wcb_1c=0.1960; característica 2002 x año (GPSS)
+BI,id_gpss_ln_p02_alq,y_alq ~ x | z | controles,2009,2015,327,,,,,8.316118797149521,0.5629398309730417,EXPLORATORIO identificación; F=0.34; p_wcb_1c=0.1520; característica 2002 x año (GPSS)
+BI,id_gpss_ln_p02_pre,y_pre ~ x | z | controles,2009,2015,327,,,,,-39.90604025918624,0.5453708203521119,EXPLORATORIO identificación; F=0.34; p_wcb_1c=0.8600; característica 2002 x año (GPSS)
+BI,id_gpss_ln_p02_dif,y_dif ~ x | z | controles,2009,2015,327,,,,,48.22215905633576,0.5328958853767379,EXPLORATORIO identificación; F=0.34; p_wcb_1c=0.1520; característica 2002 x año (GPSS)
+BI,id_gpss_paro02_alq,y_alq ~ x | z | controles,2009,2015,327,,,,,-251.29854045612112,0.9784992128777699,EXPLORATORIO identificación; F=0.00; p_wcb_1c=0.5760; característica 2002 x año (GPSS)
+BI,id_gpss_paro02_pre,y_pre ~ x | z | controles,2009,2015,327,,,,,1313.377132115672,0.9784227929871318,EXPLORATORIO identificación; F=0.00; p_wcb_1c=0.4880; característica 2002 x año (GPSS)
+BI,id_gpss_paro02_dif,y_dif ~ x | z | controles,2009,2015,327,,,,,-1564.6756725717928,0.9784343448608697,EXPLORATORIO identificación; F=0.00; p_wcb_1c=0.5080; característica 2002 x año (GPSS)
+BI,id_gpss_costa_alq,y_alq ~ x | z | controles,2009,2015,327,,,,,6.823346599284378,0.36331763566064584,EXPLORATORIO identificación; F=0.86; p_wcb_1c=0.0520; característica 2002 x año (GPSS)
+BI,id_gpss_costa_pre,y_pre ~ x | z | controles,2009,2015,327,,,,,-29.260902573592748,0.37498706182686964,EXPLORATORIO identificación; F=0.86; p_wcb_1c=0.9160; característica 2002 x año (GPSS)
+BI,id_gpss_costa_dif,y_dif ~ x | z | controles,2009,2015,327,,,,,36.08424917287712,0.3447826070218113,EXPLORATORIO identificación; F=0.86; p_wcb_1c=0.0460; característica 2002 x año (GPSS)
+BI,id_gpss_todas_alq,y_alq ~ x | z | controles,2009,2015,327,,,,,-7.2447355193148235,0.717839382030701,EXPLORATORIO identificación; F=0.19; p_wcb_1c=0.7840; 5 características 2002 x año
+BI,id_gpss_todas_pre,y_pre ~ x | z | controles,2009,2015,327,,,,,-41.53952723971947,0.7075030317125799,EXPLORATORIO identificación; F=0.19; p_wcb_1c=0.7760; 5 características 2002 x año
+BI,id_gpss_todas_dif,y_dif ~ x | z | controles,2009,2015,327,,,,,34.294791720404696,0.7102385656560665,EXPLORATORIO identificación; F=0.19; p_wcb_1c=0.2420; 5 características 2002 x año
+BI,id_solo_Sudamerica_alq,y_alq ~ x | zg_sudamerica,2009,2015,327,,,,,4.415479262765778,0.3019504989268397,EXPLORATORIO identificación; F=2.56; p_wcb_1c=0.0720; instrumento: solo cuota Sudamérica
+BI,id_solo_Sudamerica_pre,y_pre ~ x | zg_sudamerica,2009,2015,327,,,,,-43.17889390345196,0.20943132834104589,EXPLORATORIO identificación; F=2.56; p_wcb_1c=0.9980; instrumento: solo cuota Sudamérica
+BI,id_solo_Sudamerica_dif,y_dif ~ x | zg_sudamerica,2009,2015,327,,,,,47.594373166217736,0.1931106321683672,EXPLORATORIO identificación; F=2.56; p_wcb_1c=0.0040; instrumento: solo cuota Sudamérica
+BI,id_sin_Sudamerica_alq,y_alq ~ x | z_sin_sud,2009,2015,327,,,,,20.607218250541585,0.7769303345283233,EXPLORATORIO identificación; F=0.08; p_wcb_1c=0.1840; instrumento sin Sudamérica
+BI,id_sin_Sudamerica_pre,y_pre ~ x | z_sin_sud,2009,2015,327,,,,,-95.76891949637353,0.7665449576766505,EXPLORATORIO identificación; F=0.08; p_wcb_1c=0.6220; instrumento sin Sudamérica
+BI,id_sin_Sudamerica_dif,y_dif ~ x | z_sin_sud,2009,2015,327,,,,,116.37613774691516,0.7669013853187071,EXPLORATORIO identificación; F=0.08; p_wcb_1c=0.3620; instrumento sin Sudamérica
+BI,id_z_alineado_t+1_alq,y_alq ~ x | z_fwd,2009,2015,327,,,,,12.117456144098599,0.38989525983026807,"EXPLORATORIO identificación; F=0.93; p_wcb_1c=0.0280; ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t"
+BI,id_z_alineado_t+1_pre,y_pre ~ x | z_fwd,2009,2015,327,,,,,-28.43479127987891,0.39588725353897924,"EXPLORATORIO identificación; F=0.93; p_wcb_1c=0.9100; ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t"
+BI,id_z_alineado_t+1_dif,y_dif ~ x | z_fwd,2009,2015,327,,,,,40.55224742397749,0.358813838922927,"EXPLORATORIO identificación; F=0.93; p_wcb_1c=0.0480; ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t"
+BI,id_flujo_t-1_alq,y_alq ~ x_l1 | z_l1,2009,2015,327,,,,,0.871541473079329,0.191101675249907,EXPLORATORIO identificación; F=7.24; p_wcb_1c=0.0880; lectura alternativa de 'flujo t-1'
+BI,id_flujo_t-1_pre,y_pre ~ x_l1 | z_l1,2009,2015,327,,,,,-7.784394638591676,0.06612707989666626,EXPLORATORIO identificación; F=7.24; p_wcb_1c=1.0000; lectura alternativa de 'flujo t-1'
+BI,id_flujo_t-1_dif,y_dif ~ x_l1 | z_l1,2009,2015,327,,,,,8.655936111671007,0.03886761254781354,EXPLORATORIO identificación; F=7.24; p_wcb_1c=0.0060; lectura alternativa de 'flujo t-1'
+BI,id_sub_2009-2012_alq,y_alq ~ x | z,2009,2015,188,,,,,20.576784724286398,0.6665475818409874,EXPLORATORIO identificación; F=0.21; p_wcb_1c=0.0260; subperiodo
+BI,id_sub_2009-2012_pre,y_pre ~ x | z,2009,2015,188,,,,,23.561903770692382,0.6470655945865174,EXPLORATORIO identificación; F=0.21; p_wcb_1c=0.1940; subperiodo
+BI,id_sub_2009-2012_dif,y_dif ~ x | z,2009,2015,188,,,,,-2.9851190464059885,0.9082702329414458,EXPLORATORIO identificación; F=0.21; p_wcb_1c=0.4700; subperiodo
+BI,id_sub_2013-2015_alq,y_alq ~ x | z,2009,2015,139,,,,,517.8951602328634,0.971315667292914,EXPLORATORIO identificación; F=0.00; p_wcb_1c=0.4980; subperiodo
+BI,id_sub_2013-2015_pre,y_pre ~ x | z,2009,2015,139,,,,,2472.2585433566487,0.9716570085416046,EXPLORATORIO identificación; F=0.00; p_wcb_1c=0.3980; subperiodo
+BI,id_sub_2013-2015_dif,y_dif ~ x | z,2009,2015,139,,,,,-1954.363383123784,0.9717536609889218,EXPLORATORIO identificación; F=0.00; p_wcb_1c=0.6420; subperiodo
+BI,id_placebo_resultado_t-1_alq,y_alq_p1 ~ x | z,2009,2015,314,,,,,23.406294517524415,0.493725063603606,EXPLORATORIO identificación; F=0.45; p_wcb_1c=0.1220; resultado PASADO sobre x_t instrumentado (debería ser 0)
+BI,id_placebo_resultado_t-1_pre,y_pre_p1 ~ x | z,2009,2015,314,,,,,-19.88711267486548,0.6186705543436751,EXPLORATORIO identificación; F=0.45; p_wcb_1c=0.8620; resultado PASADO sobre x_t instrumentado (debería ser 0)
+BI,id_placebo_resultado_t-2_alq,y_alq_p2 ~ x | z,2009,2015,314,,,,,25.350206041218605,0.4303833787643303,EXPLORATORIO identificación; F=0.45; p_wcb_1c=0.2160; resultado PASADO sobre x_t instrumentado (debería ser 0)
+BI,id_placebo_resultado_t-2_pre,y_pre_p2 ~ x | z,2009,2015,314,,,,,2.517198395990743,0.8934692597216054,EXPLORATORIO identificación; F=0.45; p_wcb_1c=0.5580; resultado PASADO sobre x_t instrumentado (debería ser 0)
+BI,id_pretrend_Sudamerica_alq,y_alq(2003-07) ~ z_Sudamérica medio,2003,2007,245,,,,,-0.18872316480410894,0.10297033556533296,ventana 2003-07 = boom de llegadas (no pre-tratamiento)
+BI,id_pretrend_Sudamerica_pre,y_pre(2003-07) ~ z_Sudamérica medio,2003,2007,241,,,,,0.24720873446456393,0.5122639831666443,ventana 2003-07 = boom de llegadas (no pre-tratamiento)
+BI,id_rotemberg_beta_g,β_g de Rotemberg (8 grupos x 2 resultados) en rotemberg_*.csv,2009,2015,327,,,,,,,familia de diagnósticos descriptivos
+BI,id_AR_conjunto,conjunto de confianza Anderson-Rubin en rejilla (3 resultados),2009,2015,327,,,,,,,en h3_principal.csv
+BI,het_CATE_terciles,"CATE del bosque por terciles y Spearman (6 características; vut20_pm es de 2020, posterior)",2009,2015,327,,,,,,,"descriptivo, ver bi_het"
+BI,rob_tendencias_prov_y_alq_x,y_alq ~ x | z,2009,2015,327,,,,,9.256474873989637,0.49985369675220004,EXPLORATORIO; ; F=1.08
+BI,rob_stock_dcuota_extranj_y_alq_x_stock,y_alq ~ x_stock | z,2009,2015,327,,,,,0.8317990034916597,0.09996096574411768,EXPLORATORIO; stock vs flujo; F=8.12
+BI,rob_flujo_t-1_y_alq_x_l1,y_alq ~ x_l1 | z_l1,2009,2015,327,,,,,0.871541473079329,0.191101675249907,EXPLORATORIO; timing; F=7.24
+BI,rob_x_t_y_x_t-1_y_alq_x,"y_alq ~ x,x_l1 | z,z_l1",2009,2015,327,,,,,8.443973377837912,0.6256548737268016,EXPLORATORIO; timing conjunto; F=0.30
+BI,rob_x_t_y_x_t-1_y_alq_x_l1,"y_alq ~ x,x_l1 | z,z_l1",2009,2015,327,,,,,0.4661852273691831,0.7730146886401907,EXPLORATORIO; timing conjunto; F=0.30
+BI,rob_z_alineado_stock_t+1_y_alq_x,y_alq ~ x | z_fwd,2009,2015,327,,,,,12.117456144098599,0.38989525983026807,EXPLORATORIO; instrumento con ΔS_{t+1}; F=0.93
+BI,rob_tendencias_prov_y_pre_x,y_pre ~ x | z,2009,2015,327,,,,,0.6439218246322603,0.9710963819019798,EXPLORATORIO; ; F=1.08
+BI,rob_stock_dcuota_extranj_y_pre_x_stock,y_pre ~ x_stock | z,2009,2015,327,,,,,-4.591074468027405,0.04944261059775989,EXPLORATORIO; stock vs flujo; F=8.12
+BI,rob_flujo_t-1_y_pre_x_l1,y_pre ~ x_l1 | z_l1,2009,2015,327,,,,,-7.784394638591676,0.06612707989666626,EXPLORATORIO; timing; F=7.24
+BI,rob_x_t_y_x_t-1_y_pre_x,"y_pre ~ x,x_l1 | z,z_l1",2009,2015,327,,,,,1.6350230459887127,0.9371888767655832,EXPLORATORIO; timing conjunto; F=0.30
+BI,rob_x_t_y_x_t-1_y_pre_x_l1,"y_pre ~ x,x_l1 | z,z_l1",2009,2015,327,,,,,-7.862884559617607,0.05920795052278887,EXPLORATORIO; timing conjunto; F=0.30
+BI,rob_z_alineado_stock_t+1_y_pre_x,y_pre ~ x | z_fwd,2009,2015,327,,,,,-28.43479127987891,0.39588725353897924,EXPLORATORIO; instrumento con ΔS_{t+1}; F=0.93
+BI,BI_PRESUPUESTO,presupuesto declarado,,,0,,,,,,,"n_max=14 configuraciones. heterogeneidad EXPLORATORIA: lasso alpha=0.02 fijo (X estandarizado); RF 300 arboles, min_samples_leaf=10, max_features=0.5; CausalForestDML 500 arboles, min_samples_leaf=10; cross-fitting 5 bloques de provincias x 3 repeticiones; sin busqueda de hiperparametros"
+BI,DML_PLR_lasso,y_alq ~ x + g(W) [PLR],2009,2015,343,,,,,,,"EXPLORATORIO; theta=0.225 se_cl=0.380 p=0.5562 | config={""folds"": 5, ""learner"": ""lasso"", ""mod"": ""PLR"", ""reps"": 3}"
+BI,DML_PLIV_lasso,y_alq ~ x + g(W) [PLIV],2009,2015,343,,,,,,,"EXPLORATORIO; theta=4.155 se_cl=7.148 p=0.5638 | config={""folds"": 5, ""learner"": ""lasso"", ""mod"": ""PLIV"", ""reps"": 3}"
+BI,DML_PLR_rf,y_alq ~ x + g(W) [PLR],2009,2015,343,,,,,,,"EXPLORATORIO; theta=0.514 se_cl=0.317 p=0.1114 | config={""folds"": 5, ""learner"": ""rf"", ""mod"": ""PLR"", ""reps"": 3}"
+BI,DML_PLIV_rf,y_alq ~ x + g(W) [PLIV],2009,2015,343,,,,,,,"EXPLORATORIO; theta=2.519 se_cl=1.662 p=0.1362 | config={""folds"": 5, ""learner"": ""rf"", ""mod"": ""PLIV"", ""reps"": 3}"
+BI,CausalForestDML,"y_alq ~ x | X=ln_pob02,extr02,ln_p02,costa,paro02",2009,2015,343,,,,,,,"EXPLORATORIO; ATE=0.334 | config={""cv"": ""bloques provincias"", ""min_samples_leaf"": 10, ""n_estimators"": 200}"
+BI,IV_inter_ln_pob02,"y_alq ~ x + x*ln_pob02 | z, z*ln_pob02",2009,2015,343,,,,,,,"EXPLORATORIO; p_inter=0.4612 | config={""c"": ""ln_pob02""}"
+BI,IV_inter_extr02,"y_alq ~ x + x*extr02 | z, z*extr02",2009,2015,343,,,,,,,"EXPLORATORIO; p_inter=0.0740 | config={""c"": ""extr02""}"
+BI,IV_inter_ln_p02,"y_alq ~ x + x*ln_p02 | z, z*ln_p02",2009,2015,343,,,,,,,"EXPLORATORIO; p_inter=0.3160 | config={""c"": ""ln_p02""}"
+BI,IV_inter_costa,"y_alq ~ x + x*costa | z, z*costa",2009,2015,343,,,,,,,"EXPLORATORIO; p_inter=0.4450 | config={""c"": ""costa""}"
+BI,IV_inter_paro02,"y_alq ~ x + x*paro02 | z, z*paro02",2009,2015,343,,,,,,,"EXPLORATORIO; p_inter=0.8542 | config={""c"": ""paro02""}"
+BI,OOS_AR4+flujo_t (observado),yh=ln rent_{t+1}-ln rent_t ~ AR4 [+ flujo]; FE prov,2008,2015,196,,,,0.016849607163836,,,anual; vs AR4 DM-HLN=-0.987 p=0.396; bloques con embargo
+BI,"OOS_AR4+flujo_t+1 (contemporáneo, NO pronóstico)",yh=ln rent_{t+1}-ln rent_t ~ AR4 [+ flujo]; FE prov,2008,2015,196,,,,0.009008156184088815,,,anual; vs AR4 DM-HLN=0.783 p=0.491; bloques con embargo
+BI,OOS_AR4,AR4 panel anual,2008,2015,196,,,,0.009810398444611285,,,base

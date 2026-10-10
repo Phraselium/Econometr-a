@@ -1,14 +1,14 @@
 [
  {
   "id": "M2-H0",
-  "enunciado_neutro": "Variación total de hogares por periodo según modelo (EPA corregida), EPA hogares, ECP y Censo.",
+  "enunciado_neutro": "Variación total de hogares por periodo según modelo (EPA corregida), EPA hogares, ECP y Censo. Solo 2021-2025 compara fuentes independientes (EPA frente a ECP). Desde 2006 hasta 2019 el modelo, la EPA y la EPA calibrada con el padrón comparten la EPA y la población del INE; no son independientes. El censo 2011-2021 (+456 mil) discrepa de la EPA corregida (≈+1,1 millones): el Censo 2011 es muestral y mide viviendas principales, el de 2021 se basa en registros y mide hogares, y la EPA tiene la ruptura de 2021; no se resuelve qué medida es correcta y se reportan ambas.",
   "capa": {
-   "2006-2007": "C1",
-   "2008-2013": "C1",
-   "2014-2019": "C1",
-   "2020-2025": "C1",
+   "2006-2007": "C4 (fuentes dependientes de la EPA, no independientes)",
+   "2008-2013": "C4 (fuentes dependientes de la EPA, no independientes)",
+   "2014-2019": "C4 (fuentes dependientes de la EPA, no independientes)",
+   "2020-2025": "C4 (fuentes dependientes de la EPA, no independientes)",
    "2021-2025": "C1",
-   "2011-2021 (censo)": "C4 (fuentes no coinciden en 15 %)"
+   "2011-2021 (censo)": "C4 (censo y EPA corregida discrepan; no se resuelve cuál es correcta)"
   },
   "magnitud": [
    {
@@ -83,7 +83,29 @@
  },
  {
   "id": "M2-H1",
-  "enunciado_neutro": "Descomposición shapley de la variación de hogares (personas de referencia) en España por periodo, con EPA corregida de la ruptura de 2021.",
+  "enunciado_neutro": "Descomposición contable (Shapley) de ΔH por periodo con EPA corregida de la ruptura de 2021 (criterio v1: salto persistente retirado entero). El componente de población de nacionalidad extranjera es una partida contable: nacionalidad no es origen (las nacionalizaciones trasladan población al componente de nacionalidad española), la tasa de jefatura es común a ambos grupos y no se miden flujos migratorios ni se atribuyen precios.",
+  "rango_cuota_componente_nacionalidad_extranjera_pct_corregida_frente_a_sin_corregir": {
+   "2006-2007": [
+    37.3,
+    37.3
+   ],
+   "2008-2013": [
+    -0.6,
+    -0.6
+   ],
+   "2014-2019": [
+    19.6,
+    19.6
+   ],
+   "2020-2025": [
+    53.3,
+    76.3
+   ],
+   "2021-2025": [
+    55.6,
+    57.8
+   ]
+  },
   "capa": "C4 (jefatura de fuente única: EPA)",
   "sensibilidad_sin_corregir": {
    "2006-2007": {
@@ -198,6 +220,7 @@
    "Shapley con 4 factores (N_esp, N_ext, estructura, tasa)"
   ],
   "limites": [
+   "Ajuste anual (≈263 mil hogares en el total) frente a 242.400 de v1: v1 usa media de Δ trimestrales; aquí media anual de Δ en 2019-20 y 2021-22, por lo que no es idéntico. k del tramo 0-19 (≈1,19) se aplica a tasas ~0,002 (menores de 20 años); su peso en ΔH es despreciable.",
    "EPA con ruptura de serie hacia 2021 (marco censal); la tasa 65+ cae en 2025. Jefatura por edad solo de EPA (una fuente) y sin desglose por nacionalidad; tasa h común a nativos y extranjeros.",
    "Censos 2011/2021 por edad de la persona de referencia: no localizados en Tempus (ver fuentes_fallidas); descomposición censal no posible.",
    "Periodo 2002-2007 no disponible: EPA 65944 empieza en 2006; se informa 2006-2007.",
@@ -287,10 +310,30 @@
    "Referencia 2004-2007 sustituida por 2006-2007 (EPA 65944 desde 2006)"
   ],
   "limites": [
-   "Resultado principal: no hay latente neta en el conjunto de edades (16-34 positiva, 35-44 negativa).",
+   "Titular por edades: 16-34 y 20-34 positivas pero pequeñas en EPA; 35-44 negativa (mayor jefatura que en 2008, a contrastar con la ruptura de 2021). La suma neta de todas las edades es un dato secundario de agregación, no una medida de demanda insatisfecha.",
    "EPA con ruptura de serie hacia 2021 (marco censal); la tasa 65+ cae en 2025. Jefatura por edad solo de EPA (una fuente) y sin desglose por nacionalidad; tasa h común a nativos y extranjeros.",
    "Los tramos 16-34 y 35-44 solo salen de la vía EPA; la vía padrón usa 20-34 y 35-64.",
    "Una cota con supuesto contrafactual; no es déficit ni demanda a cualquier precio."
+  ]
+ },
+ {
+  "id": "M2-C1",
+  "enunciado_neutro": "Conciliación de dos latentes juveniles.",
+  "capa": "C2",
+  "magnitud": "M2 (jefatura 2008): 16-34 entre +23 mil y -22 mil (EPA), 20-34 entre +84 mil y +161 mil (padrón/ECP). M1/A2 (convivencia con padres): 188-506 mil.",
+  "unidad": "hogares",
+  "intervalo": "ver demanda_latente.csv",
+  "fuentes": [
+   "EPA 65944",
+   "Eurostat/ECV, EPA parentesco (M1/A2)"
+  ],
+  "supuestos": [
+   "M2: la tasa de jefatura por edad de 2008 regiría en 2025",
+   "M1/A2: la tasa de convivencia con padres de 2008 o UE-27 regiría"
+  ],
+  "limites": [
+   "Miden cosas distintas: dejar de convivir con los padres no equivale a encabezar un hogar (parejas, pisos compartidos); M1/A2 no compensa otras edades, M2 sí en el total.",
+   "Los órdenes de magnitud solo se solapan en la vía padrón/ECP (≈84-161 mil) frente a la cota baja de M1; no se concilian en una cifra única."
   ]
  }
 ]

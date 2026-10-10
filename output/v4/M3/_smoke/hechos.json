@@ -1,0 +1,113 @@
+[
+ {
+  "id": "M3-H-brecha-prov",
+  "enunciado_neutro": "Brecha central precio - coste(1+margen) - suelo repercutido por provincia: rango [-613; 2047] EUR/m2; mayores [['Balears, Illes', 2046.963541666667], ['Barcelona', 1497.8468749999997], ['Araba/Álava', 818.9447916666668]]; menores [['Cáceres', -612.8854166666666], ['Badajoz', -555.1218749999999], ['Ávila', -393.4270833333333]]",
+  "capa": "C2",
+  "magnitud": -132.86197916666674,
+  "unidad": "EUR/m2 (mediana provincial)",
+  "intervalo": [
+   -1319.9375,
+   2539.5164062500003
+  ],
+  "fuentes": [
+   "MIVAU valor tasado",
+   "MIVAU suelo urbano",
+   "supuesto de coste"
+  ],
+  "supuestos": [
+   "coste de construcción 900/1.200/1.500 EUR/m2 (supuesto externo, NO verificado)",
+   "margen del promotor 15/20/25 % (Glaeser y Gyourko)",
+   "edificabilidad 0,8/1,2/1,6 m2/m2",
+   "suelo MIVAU provincial (no existe dato municipal)",
+   "viviendas por solar 5/10/20"
+  ],
+  "limites": [
+   "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
+   "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
+   "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",
+   "Solares catastrales ≠ suelo disponible (SIU inaccesible)"
+  ]
+ },
+ {
+  "id": "M3-H-clases-prov",
+  "enunciado_neutro": "Clase modal por provincia: {'1 falta y hay suelo rentable': 0, '2 falta y brecha regulatoria': 4, '3 falta pero no rentable': 6, '4 no falta': 0, '5 falta, brecha moderada, solares insuficientes (clase añadida)': 0, '9 indeterminada (sin dato de solares)': 0}; estables (>=80 %): 2 de 10",
+  "capa": "C2",
+  "magnitud": 2,
+  "unidad": "provincias estables",
+  "intervalo": [
+   0,
+   10
+  ],
+  "fuentes": [
+   "M1",
+   "MIVAU",
+   "Catastro"
+  ],
+  "supuestos": [
+   "coste de construcción 900/1.200/1.500 EUR/m2 (supuesto externo, NO verificado)",
+   "margen del promotor 15/20/25 % (Glaeser y Gyourko)",
+   "edificabilidad 0,8/1,2/1,6 m2/m2",
+   "suelo MIVAU provincial (no existe dato municipal)",
+   "viviendas por solar 5/10/20"
+  ],
+  "limites": [
+   "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
+   "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
+   "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",
+   "Solares catastrales ≠ suelo disponible (SIU inaccesible)",
+   "La capa efectiva está limitada por la del déficit de M1"
+  ]
+ },
+ {
+  "id": "M3-H-clases-mun",
+  "enunciado_neutro": "Clase modal por municipio: {'1 falta y hay suelo rentable': 0, '2 falta y brecha regulatoria': 32, '3 falta pero no rentable': 16, '4 no falta': 12, '5 falta, brecha moderada, solares insuficientes (clase añadida)': 0, '9 indeterminada (sin dato de solares)': 0}; estables (>=80 %): 32 de 60",
+  "capa": "C4",
+  "magnitud": 32,
+  "unidad": "municipios estables",
+  "intervalo": [
+   0,
+   60
+  ],
+  "fuentes": [
+   "M1",
+   "MIVAU",
+   "Catastro"
+  ],
+  "supuestos": [
+   "coste de construcción 900/1.200/1.500 EUR/m2 (supuesto externo, NO verificado)",
+   "margen del promotor 15/20/25 % (Glaeser y Gyourko)",
+   "edificabilidad 0,8/1,2/1,6 m2/m2",
+   "suelo MIVAU provincial (no existe dato municipal)",
+   "viviendas por solar 5/10/20"
+  ],
+  "limites": [
+   "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
+   "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
+   "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",
+   "Solares catastrales ≠ suelo disponible (SIU inaccesible)",
+   "Déficit municipal M1 es C4",
+   "Municipios sin valor tasado propio usan el precio provincial (proxy)"
+  ]
+ },
+ {
+  "id": "M3-H-solares",
+  "enunciado_neutro": "Catastro 2026: 3092393 unidades urbanas con uso solar y 24270133 residenciales",
+  "capa": "C4",
+  "magnitud": 3092393.0,
+  "unidad": "unidades urbanas",
+  "intervalo": [
+   3092393.0,
+   3092393.0
+  ],
+  "fuentes": [
+   "Catastro (fuente única; SIU inaccesible)"
+  ],
+  "supuestos": [],
+  "limites": [
+   "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
+   "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
+   "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",
+   "Solares catastrales ≠ suelo disponible (SIU inaccesible)"
+  ]
+ }
+]

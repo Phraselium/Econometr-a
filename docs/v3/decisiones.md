@@ -93,3 +93,7 @@ La decisión queda condicionada a la revisión de la oleada 1.
   - `holdout.sellar_v3`: separa las unidades selladas al construir el panel, y la rama solo recibe el entrenamiento.
   - `holdout.sellar_fuente_v3`: validación por fuente de P-C3; la rama guarda el panel sin mirarlo.
   - `holdout.evaluate_v3`: una apertura por hipótesis, registrada antes de leer.
+
+## Oleada 2/3 (orquestador)
+- **H3-3 (topes), resultado:** C4. Fallan el criterio a (el IC de Rambachan-Roth con M̄=1 incluye 0) y el c (sensibilidad). En H3-3b fallan además las pretendencias y el placebo de fecha. Cada hipótesis abrió la validación por fuente una sola vez (log 13:42:50Z).
+- **P-D, topes:** se calibra con Jofre-Monseny et al. (2023), que es VERIFICADA (−4,5 % [IC]). La estimación propia de H3-3a (−5,4 % [−7,1; −3,7], C4) cae en un rango compatible. No sustituye a la calibración porque es C4. P-D lee los resultados de la oleada 2 en tiempo de ejecución y deja constancia de que existen.

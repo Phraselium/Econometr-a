@@ -161,7 +161,7 @@ def terminadas() -> dict:
     for ccaa in ("pais_vasco", "navarra_comunidad_foral_de"):
         park_n = park_n.sub(serie_anual(pq, f"parque_total_viviendas_ccaa_{ccaa}"), fill_value=0)
     dpk_c = park_n.diff().reindex(yrs)
-    cat = pd.read_csv(RAW / "catastro_urbana_municipios.csv", usecols=["periodo", "valor", "unidad", "codigo"], dtype={"codigo": str})
+    cat = pd.read_csv(RAW / "catastro_urbana_municipios.csv.gz", usecols=["periodo", "valor", "unidad", "codigo"], dtype={"codigo": str})
     cat = cat[cat.unidad == "unidades_urbanas_residenciales"]
     uu = cat.groupby("periodo").valor.sum()
     ncod = cat.groupby("periodo").codigo.nunique()

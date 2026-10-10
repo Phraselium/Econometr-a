@@ -13,9 +13,9 @@
 
 | Revisión oleada B (REHACER → correcciones; it. 2 REHACER acotado → corregido) | B | APROBADA | — | reglas B4/B5; déficit 2021-24 C1 sin bajas 563-689 mil | 80.288 + 15.330 |
 | M7 índice de precios triangulado y GSADF | B | hecho | C1/C4 | Compra 2015-25 +44 % a +80 % (C1); 2021-25 +24 % a +36 %; GSADF: episodios 2011-13, 2017-19 y 2024-26 (C4) | 93.179 |
-| M5a medidas por instrumento y literatura | C | parcial (faltan 3 programas, en curso) | — | 71 medidas, 25+4 instrumentos, 5 VERIFICADA / 7 NO VERIFICADA | 245.499 |
+| M5a medidas por instrumento y literatura | C | parcial (pasada 2: 1 programa añadido por copia no oficial; 2 no accesibles) | — | 89 medidas (71 + 18), 27+2 instrumentos (I28, I29 nuevos), 5 VERIFICADA / 7 NO VERIFICADA; recuentos de tabla A pendientes | 245.499 + ~45.000 (pasada 2) |
 | M6 preguntas abiertas y solicitudes | C | hecho | — | 10 preguntas; S3-S10 redactadas | 0 (orquestador) |
 
 **Hecho:** M0, M1, M2, M3, M4, M6, M7; revisiones A y B.
-**Siguiente:** completar los 3 programas → M5b evaluación de instrumentos → entregables → revisión C → cierre.
+**Siguiente:** completar los 2 programas no accesibles (fuentes_fallidas M5a-2) y recalcular recuentos de instrumentos.md → M5b evaluación de instrumentos → entregables → revisión C → cierre.
 **Tokens de subagentes v4:** 1.120.317 / 2.500.000 (cierre al 80 %: 2.000.000).

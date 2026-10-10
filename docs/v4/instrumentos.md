@@ -3,8 +3,8 @@
 Se evalúan instrumentos, no actores. La procedencia (quién, página, cita) está solo en `data/raw/v4/medidas_programas.csv`. Aquí solo hay recuentos de documentos.
 
 ## Alcance y límites de la recogida
-- Documentos leídos y codificados: 8 programas de las elecciones generales de 2023 de grupos con representación en la XV legislatura. 71 medidas en el CSV.
-- NO recogidos (ver `docs/v4/fuentes_fallidas.md`): 3 programas de grupos con representación (PDF demasiado grande para la herramienta, o no localizado) y las proposiciones de ley sobre vivienda de la XV legislatura (congreso.es), no consultadas por límite de presupuesto. Los recuentos «n de 8» son por tanto cotas inferiores sobre el conjunto de grupos.
+- Documentos leídos y codificados: 9 programas de las elecciones generales de 2023 de grupos con representación en la XV legislatura (8 de la pasada anterior más 1 añadido en la pasada 2, copia no oficial). 89 medidas en el CSV (71 + 18 de la pasada 2).
+- NO recogidos (ver `docs/v4/fuentes_fallidas.md`): 2 programas de grupos con representación (no localizados o no accesibles) y las proposiciones de ley sobre vivienda de la XV legislatura (congreso.es), no consultadas por límite de presupuesto. Los recuentos «n de 8» son por tanto cotas inferiores sobre el conjunto de grupos. El recuento de la tabla A no incluye aún el programa añadido en la pasada 2 (ver «Pendiente»).
 - Alcance de lectura por documento: solo el apartado de vivienda y, donde se localizó, medidas de vivienda en otros apartados (suelo, ocupación, fiscalidad). Un documento puede tener medidas en páginas no leídas.
 - Una medida que aparece en varios documentos cuenta como un instrumento. Cada medida del CSV tiene un único instrumento principal (los programas mezclan varios en una frase).
 - Normas «en vigor»: solo se afirma lo que consta en `docs/` (verificado en v2/v3) o en la cita literal del programa. Las demás van marcadas «sin verificar en BOE» y deben comprobarse antes de citarse.
@@ -37,6 +37,8 @@ Se evalúan instrumentos, no actores. La procedencia (quién, página, cita) est
 | I25 | Coordinación multinivel (pacto de Estado) | Acuerdo estable entre Estado, comunidades y entes locales sobre competencias y financiación. | 1 | No. |
 | I26 | Gravamen sobre suelo urbanizable ocioso | Grava el suelo urbanizable sin desarrollar para incentivar su puesta en uso. | 1 | No a nivel estatal. |
 | I27 | Recargo o impuesto a la vivienda vacía | Encarece mantener vivienda desocupada mediante un recargo en un impuesto local o estatal. | 1 | Sí, parcial: recargo del IBI a vivienda desocupada (TRLRHL art. 72.4; sin verificar). |
+| I28 | Inembargabilidad de la vivienda habitual | Impide el embargo de la vivienda familiar por incumplimientos personales de los titulares. Protege el hogar frente a la ejecución de deudas. | 1 (pasada 2, copia no oficial) | Sin verificar en BOE. |
+| I29 | Reducción de tributos sobre la promoción y construcción de vivienda | Baja la carga fiscal que recae sobre el proceso edificatorio (IVA de obra, tasas, impuestos locales asociados). Reduce el coste de construcción por vivienda. | 1 (pasada 2, copia no oficial) | Parcial; sin verificar en BOE. |
 
 ## B. Instrumentos no propuestos (o propuestos por 0-1 documentos) añadidos por el equipo
 | Id | Instrumento | Mecanismo | Docs (de 8) | En vigor |
@@ -53,3 +55,8 @@ Se evalúan instrumentos, no actores. La procedencia (quién, página, cita) est
 
 ## Cómo se usa en M5
 Rúbrica común por instrumento: efecto esperado en precio, en cantidad, requisito de oferta y evidencia (ver `docs/v4/literatura_v4.md`). La simulación P-D usa solo el rango de la literatura y las elasticidades de oferta ya registradas. Ningún instrumento se puntúa por quién lo propone.
+
+## Pendiente
+- Recuentos de la tabla A («Docs (de 8)») sin actualizar tras la pasada 2 (9 programas). Recalcular desde el CSV cuando se cierre M5a.
+- Instrumentos N1 y I28/I29 añadidos o usados en la pasada 2: N1 se usó para una medida de capacidad técnica municipal para licencias; I28 e I29 son nuevos.
+- Medidas no codificadas en la pasada 2: items de urbanismo general sin mención explícita de vivienda; un punto de cargas familiares con mención a la primera vivienda; el apartado de acciones pasadas (proposiciones de ley ya presentadas), que no es un compromiso del programa; una frase de un punto con el inicio no extraíble en la copia (fila marcada).

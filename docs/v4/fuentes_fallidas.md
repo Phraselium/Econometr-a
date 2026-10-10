@@ -1,7 +1,8 @@
 # Fuentes fallidas v4
 
 ## M5a (2026-10-10)
-- Programa electoral 2023 de un grupo con representación (grupo sin codificar nº 1): las copias https://theobjective.com/wp-content/uploads/2023/07/programa-vox-23j.pdf y https://static.poder360.com.br/2023/07/Programa-VOX-2023.pdf superan los 10 MB de WebFetch (maxContentLength). Sin medidas codificadas; no sustituido por prensa.
+- Programa electoral 2023 de un grupo con representación (grupo sin codificar nº 1): las copias [URL de copia de prensa redactada] y [URL de copia de prensa redactada] superan los 10 MB de WebFetch (maxContentLength). Sin medidas codificadas en la primera pasada.
+  - Resolución (2026-10-10, pasada 2): el sitio oficial del grupo nº 1 devuelve 403 a curl y a WebFetch (bloqueo de acceso automatizado; no se intentó evadirlo). Se descargó con curl a /tmp (21,6 MB, por debajo del límite de 50 MB; no se guardó en el repo) la copia de prensa, marcada «copia no oficial» en el CSV. Se codificaron 18 medidas (pp. 40-76). Copia borrada al terminar.
 - Programa electoral 2023 de un grupo catalán con representación (sin codificar nº 2): no localizado en su sitio oficial (la búsqueda devuelve documentos de otras elecciones). Sin medidas.
 - Programa electoral 2023 de un grupo canario con representación (sin codificar nº 3): no localizado en su sitio oficial (solo el de 2015). Sin medidas.
 - Proposiciones de ley sobre vivienda de la XV legislatura (congreso.es): no consultadas por límite de presupuesto de la tarea (pendiente de una segunda pasada).
@@ -25,3 +26,10 @@
 | Incasòl y dades obertes de la Generalitat: tipo de arrendador (persona física o jurídica) | analisi.transparenciacatalunya.cat (qww9-bvhh; catálogo con búsquedas «arrendador», «persona jurídica») | qww9-bvhh solo trae municipio, tramo de renta y periodo; el catálogo no devuelve ningún conjunto con tipo de arrendador | Ninguna; el IHB (w8kv-kmwv) solo cubre viviendas vacías de grandes tenedores y no se usa | 2026-10-10 |
 | Registradores: compras por personas jurídicas y compras de extranjeros separadas por residencia | data/raw/pdf/registradores_* | Las series extraídas solo traen % de compras de extranjeros (sin residentes y no residentes) y ninguna de personas jurídicas | Notariado y MIVAU para residentes y no residentes; INE ETDP para personas jurídicas (fuente única) | 2026-10-10 |
 | EFF por percentil de riqueza (otras propiedades) | data/raw/v3/eff_tenencia_edad_v3.csv | Solo hay desglose por edad | Edad (oleada 2022) | 2026-10-10 |
+
+## M5a-2 (2026-10-10, pasada 2 de programas)
+| Fuente | URL | Error | Alternativa | Fecha |
+|---|---|---|---|---|
+| Programa 2023 del grupo catalán con representación (sin codificar nº 2) | Sitio oficial del grupo (dominio redactado: regla de nombres en md) | DNS no resuelve (ENOTFOUND) en WebFetch y curl; el dominio alternativo devuelve 403 | Búsqueda web: solo el programa de 2019 (otro dominio) y noticias. No hay copia del programa de 2023. Sin medidas | 2026-10-10 |
+| Programa 2023 del grupo canario con representación (sin codificar nº 3) | [URL oficial del listado de programas redactada] (listado oficial) | El listado oficial incluye programas generales de 2011, 2015, 2016 y 2019 pero no de 2023. El único PDF de 2023 hallado es un manifiesto conjunto de 26/06/2023 (14 pp.; firmado por varias formaciones canarias), no un programa del grupo | No se codifica: el manifiesto no es programa de un grupo. Una mención genérica a vivienda (punto 29) no se codifica | 2026-10-10 |
+| Copia de prensa del programa del grupo nº 1 (sitio oficial 403) | Sitio oficial del grupo (dominio redactado) | HTTP 403 con curl y WebFetch; no se evade el bloqueo | Copia de prensa marcada «copia no oficial» (ver M5a) | 2026-10-10 |

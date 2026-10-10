@@ -1,0 +1,22 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+BM,BM_PRESUPUESTO,presupuesto declarado,,,0,,,,,,,n_max=63 configuraciones. presupuesto BM declarado en presupuesto.json antes de ejecutar
+BM,A_EN_l10.3_a0.4,y_{t+4} ~ familias (enet),2012Q1,2024Q2,38,,,,0.16510005026799018,,,"objetivo A; DM vs AR4 -1.727 | config={""alpha"": 0.4, ""l1_ratio"": 0.3}"
+BM,A_EN_l10.3_a0.15,y_{t+4} ~ familias (enet),2012Q1,2024Q2,38,,,,0.21317836649105376,,,"objetivo A; DM vs AR4 -1.617 | config={""alpha"": 0.15, ""l1_ratio"": 0.3}"
+BM,A_PostLasso,y_{t+4} ~ familias (postlasso),2012Q1,2024Q2,38,,,,0.2562516206736747,,,objetivo A; DM vs AR4 -1.340
+BM,A_ARDL,y_{t+4} ~ familias (ardl),2012Q1,2024Q2,34,,,,0.09746906778661417,,,"objetivo A; DM vs AR4 -1.190 | config={""dx_lags"": [0, 1], ""p"": 4}"
+BM,A_TAR_ECM_asim,y_{t+4} ~ familias (tar_ecm),2012Q1,2024Q2,38,,,,0.14533496935025592,,,"objetivo A; DM vs AR4 -1.653 | config={""umbral"": ""asim""}"
+BM,A_TAR_ECM_credito,y_{t+4} ~ familias (tar_ecm),2012Q1,2024Q2,38,,,,0.12248772109290329,,,"objetivo A; DM vs AR4 -1.408 | config={""umbral"": ""credito""}"
+BM,A_BVAR_lam0.05,y_{t+4} ~ familias (bvar),2012Q1,2024Q2,38,,,,0.08157204584951136,,,"objetivo A; DM vs AR4 -1.521 | config={""lambda"": 0.05}"
+BM,A_BVAR_lam0.1,y_{t+4} ~ familias (bvar),2012Q1,2024Q2,38,,,,0.07996466396714653,,,"objetivo A; DM vs AR4 -1.349 | config={""lambda"": 0.1}"
+BM,A_BVAR_lam0.2,y_{t+4} ~ familias (bvar),2012Q1,2024Q2,38,,,,0.07703396639375443,,,"objetivo A; DM vs AR4 -1.030 | config={""lambda"": 0.2}"
+BM,A_BVAR_lam0.4,y_{t+4} ~ familias (bvar),2012Q1,2024Q2,38,,,,0.07545909961064012,,,"objetivo A; DM vs AR4 -0.846 | config={""lambda"": 0.4}"
+BM,A_BVAR_lam1.0,y_{t+4} ~ familias (bvar),2012Q1,2024Q2,38,,,,0.07656116611093329,,,"objetivo A; DM vs AR4 -1.011 | config={""lambda"": 1.0}"
+BM,A_TVPVAR_k0.99,y_{t+4} ~ familias (tvpvar),2012Q1,2024Q2,38,,,,0.0767729381563243,,,"objetivo A; DM vs AR4 -0.971 | config={""kappa"": 0.99}"
+BM,A_TVPVAR_k0.95,y_{t+4} ~ familias (tvpvar),2012Q1,2024Q2,38,,,,0.07255028413722052,,,"objetivo A; DM vs AR4 -0.307 | config={""kappa"": 0.95}"
+BM,B_EN_l10.3_a0.4,y_{t+4} ~ familias (enet),2012Q1,2024Q2,2254,,,,0.014848421802011106,,,"objetivo B; DM vs AR4 0.295 | config={""alpha"": 0.4, ""l1_ratio"": 0.3}"
+BM,B_EN_l10.3_a0.15,y_{t+4} ~ familias (enet),2012Q1,2024Q2,2254,,,,0.014130613405166413,,,"objetivo B; DM vs AR4 0.460 | config={""alpha"": 0.15, ""l1_ratio"": 0.3}"
+BM,B_PostLasso,y_{t+4} ~ familias (postlasso),2012Q1,2024Q2,2254,,,,0.015494131308734206,,,objetivo B; DM vs AR4 -0.014
+BM,C_EN_l10.3_a0.4,y_{t+4} ~ familias (enet),2012Q1,2024Q2,2209,,,,0.054018364835317516,,,"objetivo C; DM vs AR4 -1.425 | config={""alpha"": 0.4, ""l1_ratio"": 0.3}"
+BM,C_EN_l10.3_a0.15,y_{t+4} ~ familias (enet),2012Q1,2024Q2,2209,,,,0.05357110895698281,,,"objetivo C; DM vs AR4 -2.536 | config={""alpha"": 0.15, ""l1_ratio"": 0.3}"
+BM,C_PostLasso,y_{t+4} ~ familias (postlasso),2012Q1,2024Q2,2209,,,,0.07185248313022259,,,objetivo C; DM vs AR4 -2.039
+BM,B_LSTM_h8_e25,LSTM ventana 8 trimestres,2012Q1,2024Q2,2254,,,,0.01649102861232114,,,"bloque 6; fuera de H7 | config={""epochs"": 25, ""hidden"": 8, ""torch"": ""2.14.1+cpu""}"

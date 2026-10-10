@@ -1,0 +1,160 @@
+{
+  "rama": "BM",
+  "declarado_antes_de_ejecutar": true,
+  "unidad": "configuracion de hiperparametros = una especificacion en el Registry",
+  "n_max_total": 63,
+  "por_modelo": {
+    "ARDL_nacional": {
+      "objetivos": [
+        "A"
+      ],
+      "configs_por_objetivo": 1
+    },
+    "elastic_net": {
+      "objetivos": [
+        "A",
+        "B",
+        "C"
+      ],
+      "configs_por_objetivo": 10,
+      "rejilla": {
+        "l1_ratio": [
+          0.3,
+          0.7
+        ],
+        "alpha_sobre_y_y_X_estandarizados": [
+          0.005,
+          0.02,
+          0.05,
+          0.15,
+          0.4
+        ]
+      }
+    },
+    "post_lasso_plugin": {
+      "objetivos": [
+        "A",
+        "B",
+        "C"
+      ],
+      "configs_por_objetivo": 1
+    },
+    "random_forest": {
+      "objetivos": [
+        "B",
+        "C"
+      ],
+      "configs_por_objetivo": 4,
+      "rejilla": {
+        "max_depth": [
+          4,
+          8
+        ],
+        "min_samples_leaf": [
+          10,
+          40
+        ]
+      },
+      "A": "no ejecutado: N de entrenamiento 8-60"
+    },
+    "lightgbm": {
+      "objetivos": [
+        "B",
+        "C"
+      ],
+      "configs_por_objetivo": 4,
+      "rejilla": {
+        "num_leaves": [
+          4,
+          12
+        ],
+        "n_estimators": [
+          150,
+          400
+        ],
+        "learning_rate": 0.03
+      },
+      "A": "no ejecutado: N de entrenamiento 8-60"
+    },
+    "ecm_umbral": {
+      "objetivos": [
+        "A"
+      ],
+      "configs_por_objetivo": 2,
+      "umbrales": [
+        "ECT>0 (asimetria)",
+        "credito d4>0"
+      ]
+    },
+    "bvar_minnesota": {
+      "objetivos": [
+        "A"
+      ],
+      "configs_por_objetivo": 5,
+      "rejilla": {
+        "lambda": [
+          0.05,
+          0.1,
+          0.2,
+          0.4,
+          1.0
+        ]
+      },
+      "seleccion": "verosimilitud marginal con datos de entrenamiento de cada split"
+    },
+    "tvp_var_olvido": {
+      "objetivos": [
+        "A"
+      ],
+      "configs_por_objetivo": 2,
+      "rejilla": {
+        "kappa": [
+          0.95,
+          0.99
+        ]
+      }
+    },
+    "en_factor_comun_bloque5": {
+      "objetivos": [
+        "B",
+        "C"
+      ],
+      "configs_por_objetivo": 0,
+      "nota": "bloque 5 no ejecutado; la reserva de 4 configuraciones se reasigna al LSTM (REHACER iteracion 1, declarado antes de ejecutar)"
+    },
+    "lstm_panel_B": {
+      "objetivos": [
+        "B"
+      ],
+      "configs_por_objetivo": 4,
+      "rejilla": {
+        "hidden": [
+          8,
+          16
+        ],
+        "epochs": [
+          25,
+          50
+        ]
+      },
+      "fijo": {
+        "ventana_trimestres": 8,
+        "lr": 0.003,
+        "weight_decay": 0.001,
+        "capas": 1,
+        "batch": 256
+      },
+      "torch": "2.14.1+cpu",
+      "determinismo": "torch.manual_seed(20261010), use_deterministic_algorithms(True), 1 hilo",
+      "regla": "solo se reporta como valido si supera al mejor gradient boosting (LGBM elegido en B) con DM-HLN p<0,05 y RMSE menor; si no, resultado negativo; fuera de H7 (no es candidato)"
+    }
+  },
+  "cuentas": "A: 21; B: 19; C: 19; LSTM B: 4 => 63",
+  "no_cuentan_como_configuraciones": [
+    "contrastes PDS por familia y periodo",
+    "proyecciones locales por periodo",
+    "importancias",
+    "ECM con Markov-switching (solo descriptivo, en muestra)"
+  ],
+  "torch_version": "2.14.1+cpu"
+}

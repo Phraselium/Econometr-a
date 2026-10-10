@@ -55,3 +55,14 @@ Formato: fecha · decisión · motivo. Las desviaciones del pre-registro (`prere
   - Motivo de estratificar: sin estratos, el sorteo sellaba 6 de los 10 distritos de Barcelona y 9 de los 19 de València, y dejaba la réplica y P-C1 sin muestra en las ciudades clave.
   - Uso: P-C (diseños, réplicas y selección de modelos) excluye las observaciones selladas. C1 y C2 (hechos y cotas, agregados municipales o provinciales) usan todas las unidades: no seleccionan modelos de efecto.
 - **Sin worktrees en la oleada 1.** Cada subagente escribe en su propio espacio de nombres (src/v3/<prefijo>_*, output/v3/<DISEÑO>/) y solo el orquestador hace commit. Así no se duplican 700 MB por worktree en un disco con ~7 GB libres.
+
+## Puerta go/no-go de P-C (potencia; output/v3/POT/potencia.md)
+| Diseño | EMD frente a EER | Decisión |
+|---|---|---|
+| P-C1 turísticos → alquiler, sección, efectos fijos (MCO) | 0,002 (nacional) y 0,006 (6 ciudades) frente a 0,01 | **GO** |
+| P-C1 shift-share leave-one-out | 6 ciudades: 0,008-0,009 (F 24-29); nacional: no detectable (F 0,25-5,3) | **GO solo en las 6 ciudades** |
+| P-C2 caída de anuncios 2025-2026 | EMD infinito: no hay alquiler a escala fina posterior a 2024 | **NO-GO**: «no detectable con los datos disponibles». Queda como descripción C4 de la caída de anuncios |
+| P-C3 topes de Cataluña y zonas tensionadas (alquiler y contratos, fianzas municipales) | topes 0,018 frente a 0,03 y 0,054 frente a 0,10; zonas 0,023 frente a 0,03 y 0,079 frente a 0,10 | **GO**. Antes del pre-registro se sustituye el proxy de 58 municipios por la lista oficial de municipios sujetos a la Ley 11/2020 y se recalcula la potencia |
+| P-C4 suelo como moderador | 0,154 y 0,67 frente a 0,1 | **NO-GO**: no detectable |
+
+La decisión queda condicionada a la revisión de la oleada 1.

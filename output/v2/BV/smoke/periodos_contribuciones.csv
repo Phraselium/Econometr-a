@@ -1,0 +1,17 @@
+periodo,familia,contribucion_pp,ic95_inf,ic95_sup,se
+P1_ajuste,credito_tipos,-0.85978677,-1.8302382,0.11066466,0.42899382
+P1_ajuste,coste_de_uso,-0.51657922,-0.88817926,-0.14497919,0.164268
+P1_ajuste,empleo_renta,-0.44151761,-1.3614528,0.47841756,0.40666281
+P1_ajuste,demografia,-0.5621692,-1.4105965,0.28625808,0.37505231
+P1_ajuste,oferta,0.1553163,-0.1473044,0.45793701,0.13377528
+P1_ajuste,TOTAL_explicado,-2.2247365,-3.969765,-0.47970798,0.77140022
+P1_ajuste,OBSERVADO_desv_media,-2.8446267,,,
+P1_ajuste,"RESTO_(FE,interceptos,no_explicado)",-0.61989022,,,
+P2_recuperacion,credito_tipos,0.48993684,0.15406054,0.82581315,0.14847611
+P2_recuperacion,coste_de_uso,0.053687799,-0.24939689,0.35677249,0.13398038
+P2_recuperacion,empleo_renta,-0.0067453308,-0.34359852,0.33010786,0.14890795
+P2_recuperacion,demografia,0.1844724,0.066510042,0.30243475,0.05214596
+P2_recuperacion,oferta,0.047736264,-0.13367743,0.22914996,0.080195002
+P2_recuperacion,TOTAL_explicado,0.76908797,-0.01658895,1.5547649,0.34731315
+P2_recuperacion,OBSERVADO_desv_media,1.9123541,,,
+P2_recuperacion,"RESTO_(FE,interceptos,no_explicado)",1.1432661,,,

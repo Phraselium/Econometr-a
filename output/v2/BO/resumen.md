@@ -14,7 +14,7 @@ Signos como en la hipótesis; p_IUT = 0,026 sin ajustar. Elasticidad de iniciada
 
 Por qué NO sube de nivel:
 - **Submuestras (regla ex ante: 5 con signos correctos):** fallan 2009-2013 (β_precio = −1,81) y, en robustez, el precio en t−2 (β_precio ≈ 0). Pasan sin Madrid-Barcelona (p_IUT 0,077), 2014-2023 (β_inter = −0,59, p 0,31), 2009-2019 (p_IUT 0,21) y sin 2020-2021 (p 0,10). El resultado se apoya en 2014-2023 para el precio y en 2009-2019 para la interacción: no es estable.
-- **Holm sobre las 7 lo aplica el orquestador.** Con p_IUT = 0,026, solo sobreviviría si fuera la menor de las 7 y ≤ 0,0071; no es el caso (0,026 > 0,0071), así que no sobrevive con la familia completa salvo que los demás p sean mayores y el corte aplicable sea 0,05/7 para el menor.
+- **Holm sobre las 7 lo aplica el orquestador.** El p_IUT sin ajustar es 0,026; solo sobreviviría con la familia completa si fuera el menor de los siete y ≤ 0,05/7 = 0,0071, lo que no se cumple (0,026 > 0,0071).
 - **No es CAUSAL:** el precio es endógeno (la demanda y las expectativas mueven a la vez precio e iniciación). 2SLS con ocupados y población 20-34 (t−1): β_precio = 0,73 (EE 2,49), p_IUT = 0,64; F de primera etapa 5,9 (precio) y 20,8 (interacción); J de Hansen = 14,3, p = 0,0008 (rechaza validez conjunta). Con un solo instrumento: F = 2,5 (ocupados) o 10,8 (población); ni signos ni significación. El placebo de precio futuro (t+1) tiene coeficiente 0,90 (p 0,17), del mismo tamaño que el efecto principal: no descarta anticipación o endogeneidad.
 
 ## 2. Déficit (DESCRIPTIVO)

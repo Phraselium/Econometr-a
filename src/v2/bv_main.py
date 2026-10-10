@@ -315,7 +315,8 @@ if not SMOKE:
     subs = h2[h2.spec.isin(["H2_sub_hasta2013", "H2_sub_desde2014", "H2_sin_covid"])]
     sub_ok = bool(all((subs[(subs["var"] == "d4_ln_hipotecas_importe")]["coef"] > 0)) and all(subs[subs["var"] == "cu_x_expo"]["coef"] < 0))
     oos_ok = bool(best["mejora_vs_AR4"] and best["p_holm_vs_AR4"] < 0.10)
-    nivel = "ASOCIACIÓN ROBUSTA" if (signos_ok and holm_ok and sub_ok and oos_ok) else "EXPLORATORIO"
+    nivel = "EXPLORATORIO"   # criterio uniforme (decisiones.md): H2 tiene evaluación sellada -> antes del sellado, máximo EXPLORATORIO
+    p_iu = float(max(fam.values()))   # contraste intersección-unión de la H2 conjunta (p = máx.)
     crit = dict(signos_ok=bool(signos_ok), holm_ok=bool(holm_ok), submuestras_ok=sub_ok, oos_ok=oos_ok)
     ic = {r["var"]: [r["ic95_inf"], r["ic95_sup"]] for _, r in t0.iterrows()}
     est = {r["var"]: r["coef"] for _, r in t0.iterrows()}
@@ -329,11 +330,11 @@ if not SMOKE:
         metodo="MCO con FE de provincia y trimestre, EE cluster provincia + wild cluster bootstrap (Webb, 9.999, WCR); Holm/BH intra-H2 (m=2) sobre crédito e interacción; el Holm de la familia de 7 confirmatorias se aplica en la síntesis BS; DM-HLN fuera de muestra (bloques h=4, embargo 4, primer test 2012Q1)",
         estimacion=est, ic95=ic, p_ajustado={"holm_m2_wcb": pa, "holm_m2_credito_l4": holm_l4},
         nivel_evidencia=nivel,
-        diagnosticos={"criterios_nivel": crit, "p_wcb": fam, "p_wcb_cota": "los p=0 del bootstrap son p <= 1/(B+1) = 1e-4 (B=9.999)", "nota_simultaneidad": "el crédito es comovimiento con el precio (v1); la variante con crédito retardado 4T se reporta; asociación, no causalidad",
+        diagnosticos={"criterios_nivel": crit, "p_wcb": fam, "p_interseccion_union_H2": p_iu, "holm_familia_7": "lo aplica el orquestador en BS; aquí solo Holm intra-H2 (m=2)", "p_wcb_cota": "los p=0 del bootstrap son p <= 1/(B+1) = 1e-4 (B=9.999)", "nota_simultaneidad": "el crédito es comovimiento con el precio (v1); la variante con crédito retardado 4T se reporta; asociación, no causalidad",
                       "nota_identificacion": "el nivel nacional del coste de uso queda absorbido por el FE de trimestre; solo se identifica la interacción con la exposición 2005-2007"},
         fuera_muestra={"modelo": f"BV_{best['cfg']} (panel, h=4; modelo de H2 fijado para el sellado)", "rmse": float(best["rmse"]), "dm_vs_ar4": float(best["dm_vs_AR4"]),
                        "rmse_ar4": float(best["rmse_AR4"]), "rmse_ecm_v1": float(best["rmse_ECM_v1"]), "dm_vs_ecm_v1": float(best["dm_vs_ECM_v1"]),
                        "p_holm_vs_ar4": float(best["p_holm_vs_AR4"]), "n": int(best["n"])},
-        notas="Máximo posible sin muestra sellada: ASOCIACIÓN ROBUSTA; la confirmación requiere holdout.evaluate('H2') (evaluar_H2 en bv_h2_sellado.py, NO ejecutada). No residentes: sin datos provinciales (limitación). Periodos, arbitraje y nacional: EXPLORATORIO.")
+        notas="Antes del sellado el máximo es EXPLORATORIO (criterio uniforme); oos_ok (C3 vs AR4 en validación) es solo informativo; la confirmación requiere holdout.evaluate('H2') (evaluar_H2 en bv_h2_sellado.py, NO ejecutada). No residentes: sin datos provinciales (limitación). Periodos, arbitraje y nacional: EXPLORATORIO.")
     print("NIVEL", nivel, crit, flush=True)
 print("OK", flush=True)

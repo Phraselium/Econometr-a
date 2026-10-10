@@ -49,6 +49,8 @@
       "d4_ln_hipotecas_importe": 0.0018001800180018,
       "cu_x_expo": 0.0
     },
+    "p_interseccion_union_H2": 0.0018001800180018,
+    "holm_familia_7": "lo aplica el orquestador en BS; aquí solo Holm intra-H2 (m=2)",
     "p_wcb_cota": "los p=0 del bootstrap son p <= 1/(B+1) = 1e-4 (B=9.999)",
     "nota_simultaneidad": "el crédito es comovimiento con el precio (v1); la variante con crédito retardado 4T se reporta; asociación, no causalidad",
     "nota_identificacion": "el nivel nacional del coste de uso queda absorbido por el FE de trimestre; solo se identifica la interacción con la exposición 2005-2007"
@@ -63,5 +65,5 @@
     "p_holm_vs_ar4": 1.0,
     "n": 2209
   },
-  "notas": "Máximo posible sin muestra sellada: ASOCIACIÓN ROBUSTA; la confirmación requiere holdout.evaluate('H2') (evaluar_H2 en bv_h2_sellado.py, NO ejecutada). No residentes: sin datos provinciales (limitación). Periodos, arbitraje y nacional: EXPLORATORIO."
+  "notas": "Antes del sellado el máximo es EXPLORATORIO (criterio uniforme); oos_ok (C3 vs AR4 en validación) es solo informativo; la confirmación requiere holdout.evaluate('H2') (evaluar_H2 en bv_h2_sellado.py, NO ejecutada). No residentes: sin datos provinciales (limitación). Periodos, arbitraje y nacional: EXPLORATORIO."
 }

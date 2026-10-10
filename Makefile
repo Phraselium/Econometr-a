@@ -4,7 +4,7 @@
 PY ?= python3
 V3_ORDEN := pa_run pb_run pot_run gl_run c1_run c3_run holm_v3 pd_run
 V4_ORDEN := m0_run m2_run m1_run m3_run m4_run m7_run m5_run
-V5_ORDEN := r1t_run r1c_run r1a_run r1b_run a23_run a4_run a5_run a5_hechos b1_run b2_run b3_run b4_run cifras_clave
+V5_ORDEN := r1t_run r1c_run r1a_run r1b_run a23_run a4_run a5_run a5_hechos b1_run b2_run b3_run b4_run ca_run cifras_clave
 FETCH  := $(sort $(wildcard src/fetch_*.py)) $(sort $(wildcard src/extract_*.py))
 MODELS := $(sort $(wildcard src/f[2-6]_*.py)) $(foreach r,ba_run bv_main bi_run bo_run bp_main bm_run bd_run bs_run,$(wildcard src/v2/$(r).py))
 # v3: puntos de entrada en orden (se añaden al aprobarse cada diseño); el verificador y los informes al final

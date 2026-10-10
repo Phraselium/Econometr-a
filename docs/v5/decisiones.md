@@ -141,3 +141,11 @@
   - se excluyen Ceuta y Melilla;
   - en un corte transversal no hay AR(4): se usa LOO-CV frente a un modelo de solo media.
 - **Aviso.** F4 (suelo y rigidez, de A4) usa precios de 2021-2025, así que su asociación con Y1 puede ser mecánica.
+
+## C-a (subagente): Europa, crédito a promotores y compras al contado
+- **Capa C4 en los tres ángulos.**
+  - Eurostat toma los datos de España del INE, así que coinciden por construcción, no por independencia.
+  - INE (ETDP e hipotecas) y Registradores comparten origen registral.
+  - Se mantiene el criterio estricto. La columna `candidata_C1_si_se_acepta_coherencia` queda solo como información.
+- **Crédito a promotores.** Una sola asociación sobrevive a Holm, de 36 pruebas. Fuera de muestra no mejora a AR(4). La comparación con el ECM v1 no aplica, porque ese modelo es del precio.
+- **Contado.** Entre el 30 % y el 58 % de las compraventas, según qué parte de las hipotecas sea de compra. La demanda inversora no equivale al contado.

@@ -1,0 +1,132 @@
+{
+ "rama": "CA",
+ "pregunta": "(C4) ¿Qué es específico de España frente a la UE-27? (C1) ¿El crédito a promotores se asocia a las iniciadas? (C3) ¿Se compra al contado o con hipoteca?",
+ "capa": "C4 (Europa; el valor de España es C1 donde coincide con el INE) · C4 (crédito, descriptivo) · C4 (contado: cota con supuesto)",
+ "datos": "Eurostat (prc_hpi_a, prc_hicp_aind, ilc_lvho07a, ilc_lvho05a, yth_demo_030, ilc_lvho02, sts_cobp_a, demo_pjan, demo_gind); BdE be0418; BCE BLS (EPB) España; MIVAU iniciadas; INE H 76317, ETDP 6150; Registradores ERI",
+ "N": {
+  "europa_indicadores": 10,
+  "credito_trimestres": 66,
+  "contado_anios": 19
+ },
+ "metodo": "Posición en la UE-27 (percentil, desviación frente a la mediana, rango intercuartílico); regresiones descriptivas con HAC(8) y Holm sobre 36 pruebas; razón hipotecas/compraventas con cota 1-phi*razón",
+ "estimacion": {
+  "fuera_IQR_sostenido_5a": [
+   {
+    "id": "emancipacion",
+    "variante": "nivel",
+    "posicion": "sobre",
+    "percentil_ES": 88.9
+   },
+   {
+    "id": "propiedad",
+    "variante": "cambio_desde_2015",
+    "posicion": "bajo",
+    "percentil_ES": 22.2
+   },
+   {
+    "id": "alquiler_mercado",
+    "variante": "cambio_desde_2015",
+    "posicion": "sobre",
+    "percentil_ES": 81.5
+   }
+  ],
+  "fuera_IQR_sostenido_3a": [
+   {
+    "id": "emancipacion",
+    "variante": "nivel",
+    "posicion": "sobre",
+    "percentil_ES": 88.9
+   },
+   {
+    "id": "emancipacion",
+    "variante": "cambio_desde_2015",
+    "posicion": "sobre",
+    "percentil_ES": 92.6
+   },
+   {
+    "id": "propiedad",
+    "variante": "cambio_desde_2015",
+    "posicion": "bajo",
+    "percentil_ES": 22.2
+   },
+   {
+    "id": "alquiler_mercado",
+    "variante": "cambio_desde_2015",
+    "posicion": "sobre",
+    "percentil_ES": 81.5
+   },
+   {
+    "id": "crec_pob",
+    "variante": "nivel",
+    "posicion": "sobre",
+    "percentil_ES": 85.2
+   },
+   {
+    "id": "migr_neta",
+    "variante": "nivel",
+    "posicion": "sobre",
+    "percentil_ES": 96.3
+   }
+  ],
+  "credito_retardos_significativos_holm": [
+   {
+    "regresor": "g_inmobiliarias",
+    "retardo_trim": 8,
+    "rho": -0.5634,
+    "p_holm": 0.0319
+   }
+  ],
+  "contado": {
+   "anio": 2025,
+   "hipotecas_por_100_compraventas_INE": 70.0,
+   "phi_critico_pct": 71.4
+  }
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "metodo": "Holm",
+  "n_pruebas": 36,
+  "min": 0.03191147299840973
+ },
+ "nivel_evidencia": "EXPLORATORIO (C4) en los tres ángulos; sin lenguaje causal",
+ "diagnosticos": {
+  "triangulacion_contado_ok": true,
+  "contraste_nacional": [
+   {
+    "id": "hpi_real",
+    "dif_max": 0.387,
+    "tolerancia": 1.0,
+    "dentro_tolerancia": true
+   },
+   {
+    "id": "alq_real",
+    "dif_max": 0.005,
+    "tolerancia": 2.0,
+    "dentro_tolerancia": true
+   },
+   {
+    "id": "propiedad",
+    "dif_max": 0.967,
+    "tolerancia": 3.0,
+    "dentro_tolerancia": true
+   },
+   {
+    "id": "crec_pob",
+    "dif_max": 0.946,
+    "tolerancia": 0.5,
+    "dentro_tolerancia": false
+   }
+  ],
+  "solapamiento_regresiones": "variaciones interanuales solapadas; p con HAC(8)"
+ },
+ "fuera_muestra": {
+  "modelo": "ADL(4)+crédito constr.+inmob. (retardo 4) frente a AR(4); 1 paso, ventana expansiva, embargo 4 trim.",
+  "rmse": 0.14142380075165492,
+  "dm_vs_ar4": {
+   "DM_HLN": 0.5727673407104286,
+   "p": 0.5712168129548957,
+   "n": 30
+  }
+ },
+ "notas": "Notariado: sin datos accesibles (CIEN sin compraventas; portal con cuenta). Registradores: solo 2022-2025 (texto de los ERI Anuarios). El saldo por actividad no es nuevas operaciones; las nuevas operaciones por finalidad no están en el Boletín. ECM v1 no aplicable al crédito/iniciadas. Eurostat toma los datos de ES del INE: el contraste con el INE es de coherencia, no de independencia."
+}

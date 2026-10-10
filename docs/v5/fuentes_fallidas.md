@@ -75,3 +75,13 @@ Prueba del 2026-10-10 contra la API Tempus del INE (https://servicios.ine.es/wst
 | Fuente | Endpoint | Resultado |
 |---|---|---|
 | ADRH renta por hogar provincial 2015 | servicios.ine.es/wstempus/js/ES/DATOS_TABLA/30656 (y 31097, 30824) | Solo municipios/secciones; descarga completa «No puede mostrarse por restricciones de volumen». Sin agregado provincial 2015. Se usa PIB pc de la CRE |
+
+## CA (2026-10-10, comparación europea, crédito a promotores, contado frente a hipoteca)
+| Fuente | Endpoint | Resultado | Alternativa |
+|---|---|---|---|
+| BdE, nuevas operaciones de crédito por finalidad (construcción, inmobiliarias) | Boletín Estadístico cap. 4, be04xx/be19xx (csv) probados be0401-be0430, be1901-be1920 | Los cuadros 4.12, 4.13, 4.18 dan solo saldos por finalidad; las nuevas operaciones por actividad no figuran en el Boletín (be1913 es SNF sin desglose por actividad) | Saldo (be0418, mensual, desde 1992-12) como serie de crédito; no es flujo |
+| BCE BLS (EPB) España, criterios de vivienda anteriores a 2022 | data-api.ecb.europa.eu/service/data/BLS/Q.ES.ALL.CP.H.H.B3.ST.S.FNET | Disponible solo desde 2022-Q2 (18 trimestres); empresas desde 2003-Q1 | Se usa empresas (CP.E.Z) para 2005-2025; vivienda solo descriptiva reciente |
+| BCE data-api, claves BLS con comodines (Q.ES, Q.ES.ALL.ALL...) | idem | HTTP 400 con página de bloqueo; solo funcionan claves completas o detail=serieskeysonly en BLS/all | Claves completas de 10 dimensiones |
+| Notariado, porcentaje de compraventas con préstamo hipotecario | notariado.org/liferay/web/cien/estadisticas-al-completo (getFiltrosWeb: 404/HTML); penotariado.com (exige cuenta, ver docs/fallidas/notariado.md) | Sin serie accesible de compraventas ni de financiadas | Ninguna: tercera fuente de C3 sin dato |
+| Registradores, % de compras con hipoteca | opendata.registradores.org (solo compraventas); ERI Anuarios 2023-2025 (PDF local) | No publica el porcentaje; sí el número de hipotecas sobre vivienda (2022-2025, texto del capítulo 17) | Razón hipotecas/compraventas 2022-2025 |
+| Eurostat, nivel de precio de la vivienda comparable (€/m²) | datasets pedidos (prc_hpi_a es índice 2015=100) | No existe un nivel en los datasets solicitados; no se probaron otros | Sobrecarga y alquiler como aproximaciones de asequibilidad |

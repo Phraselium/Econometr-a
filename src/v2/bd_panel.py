@@ -79,7 +79,7 @@ def decompone(d, mercado, modelo, B, seed, reg, smoke=False, provs=None, con_cf=
                              ic95_tiempo_sup=hi_t, ic95_inf=min(lo_c, lo_t), ic95_sup=max(hi_c, hi_t),
                              observado_pp=ob, pct_observado=100 * pe / ob if ob else np.nan))
     cfdf = pd.DataFrame(rows)
-    for nm in sorted(cfdf["escenario"].unique()):
+    for nm in (sorted(cfdf["escenario"].unique()) if len(cfdf) else []):
         x = cfdf[(cfdf.escenario == nm) & (cfdf.periodo == "P2-P4 acumulado")].iloc[0]
         reg.log("BD", f"{mercado}_{modelo}_cf_{nm}", f"contrafactual parcial ceteris paribus sobre {mercado}_{modelo}",
                 s["trimestre"].min(), s["trimestre"].max(), len(s), np.nan, np.nan, np.nan, np.nan, x["efecto_pp"], np.nan,

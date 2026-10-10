@@ -30,9 +30,9 @@ def evidencia(mercado, comp):
         return "DESCRIPTIVO"
     if mercado == "alquiler":
         if comp == "demografia_20_34":
-            return "ASOCIACIÓN ROBUSTA (candidato: coef. 20-34 de H1; mejora predictiva confirmada en sellado; Holm-7 pendiente en BS)"
+            return "EXPLORATORIO (coeficiente análogo al componente 20-34 de H1; Holm-7 ejecutado: ninguna confirmatoria sobrevive; nivel según BS)"
         if comp == "demografia":
-            return "mixto: 20-34 candidato a ASOCIACIÓN ROBUSTA; extranjera EXPLORATORIO"
+            return "EXPLORATORIO"
         if comp == "politica":
             return "EXPLORATORIO (H5/tope: falló placebos y pretendencias en BP)"
         return "EXPLORATORIO"
@@ -122,11 +122,12 @@ def fig_bosque(contrib, mercado, modelo, ruta, titulo):
 
 def fig_nacional(cp, lp, ruta):
     fig, axs = plt.subplots(1, 2, figsize=(13, 4.8))
-    for ax, df, tt in ((axs[0], lp, "Largo plazo (identidad ECM v1 real)"), (axs[1], cp, "Corto plazo (ecuación ECM v1 real)")):
+    for ax, df, tt in ((axs[0], lp, "Largo plazo (identidad ECM v1 real, IC por HAC)"), (axs[1], cp, "Corto plazo (ecuación ECM v1 real)")):
         comps = [c for c in df.componente.unique() if c != "observado"]
         cmap = plt.get_cmap("tab10")
         x = np.arange(4)
         pos, neg = np.zeros(4), np.zeros(4)
+        topes = []
         for i, f in enumerate(comps):
             v = np.array([df[(df.periodo == p) & (df.componente == f)]["contrib_pp"].iloc[0] for p in L.PNAMES])
             b = np.where(v >= 0, pos, neg)
@@ -136,15 +137,17 @@ def fig_nacional(cp, lp, ruta):
         obs = [df[(df.periodo == p) & (df.componente == "observado")]["contrib_pp"].iloc[0] for p in L.PNAMES]
         ax.scatter(x, obs, marker="D", color="black", zorder=5, s=34, label="observado")
         ax.axhline(0, color="black", lw=0.8)
+        ax.set_ylim(min(neg.min(), min(obs)) * 1.08 - 1, max(pos.max(), max(obs)) * 1.08 + 1)
         ax.set_xticks(x)
         ax.set_xticklabels(L.PNAMES)
         ax.set_ylabel("pp de ln precio real acumulados")
         ax.set_title(tt, fontsize=10)
-        ax.legend(fontsize=6.5)
+        ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.5, -0.1), ncol=3)
+        ax.margins(y=0.12)
         ax.grid(axis="y", alpha=0.25)
     fig.suptitle("Nacional: precio real de la vivienda (IPV/deflactor), descomposición con el ECM v1 real - EXPLORATORIO", fontsize=10)
-    fig.text(0.01, 0.005, "Fuente: nacional_q_v2 (v2_common.load); elaboración propia. Los IC95 (bootstrap de residuos por bloques) están en nacional_*.csv. " + CAUSAL_AVISO, fontsize=6.5)
-    fig.tight_layout(rect=(0, 0.03, 1, 0.94))
+    fig.text(0.01, 0.005, "Fuente: nacional_q_v2 (v2_common.load); elaboración propia. Los IC95 (CP: bootstrap de residuos por bloques; LP: simulación con covarianza HAC) están en nacional_*.csv. " + CAUSAL_AVISO, fontsize=6.5)
+    fig.tight_layout(rect=(0, 0.05, 1, 0.94))
     fig.savefig(ruta, dpi=130, metadata={"Software": None})
     plt.close(fig)
 

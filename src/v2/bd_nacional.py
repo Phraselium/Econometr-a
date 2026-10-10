@@ -156,16 +156,17 @@ def ejecutar(B, seed, reg):
             out[p] = c
         return out
     pl = lp_contrib(par)
-    # bootstrap: residuos DOLS por bloques, regresores fijos -> b* -> contribuciones LP
-    fitd = Xd[okd].values @ par.values
-    yd = n.loc[okd, "y"].values
-    bsl = {p: {k: [] for k in pl[p]} for p in pl}
-    rng = np.random.default_rng(seed + 1)
+    # IC de LP: simulación normal con la covarianza HAC(4) del DOLS (coherente con v1; el bootstrap de residuos
+    # con regresores fijos subestimaba la incertidumbre del DOLS)
+    import statsmodels.api as sm
     Xv = Xd[okd].values
-    for _ in range(B):
-        ys = fitd + _blocks(rng, ed)
-        b2 = pd.Series(np.linalg.lstsq(Xv, ys, rcond=None)[0], index=Xd.columns)
-        c2 = lp_contrib(b2)
+    yd = n.loc[okd, "y"].values
+    cov = sm.OLS(yd, Xv).fit(cov_type="HAC", cov_kwds={"maxlags": 4}).cov_params()
+    rng = np.random.default_rng(seed + 1)
+    draws = rng.multivariate_normal(par.values, np.asarray(cov), size=B, method="eigh")
+    bsl = {p: {k: [] for k in pl[p]} for p in pl}
+    for dr in draws:
+        c2 = lp_contrib(pd.Series(dr, index=Xd.columns))
         for p in c2:
             for k, v in c2[p].items():
                 bsl[p][k].append(v)
@@ -179,4 +180,4 @@ def ejecutar(B, seed, reg):
     lpdf = pd.DataFrame(rows)
     coef = pd.DataFrame({"parametro": ["LP:" + x for x in XS] + ["CP:const"] + ["CP:" + x for x in CP_X],
                          "coef": list(par[XS]) + list(bcp)})
-    return dict(cp=cpdf, lp=lpdf, coef=coef, n_lp=int(okd.sum()), n_cp=len(sc), muestra=(sc["trimestre"].min(), sc["trimestre"].max()))
+    return dict(cp=cpdf, lp=lpdf, coef=coef, muestra_lp=(n.loc[okd, 'trimestre'].min(), n.loc[okd, 'trimestre'].max()), n_lp=int(okd.sum()), n_cp=len(sc), muestra=(sc["trimestre"].min(), sc["trimestre"].max()))

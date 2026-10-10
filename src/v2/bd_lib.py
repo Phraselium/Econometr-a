@@ -142,12 +142,14 @@ def muestra(d: pd.DataFrame, mercado: str) -> pd.DataFrame:
     return s
 
 
-def construir_X(s: pd.DataFrame, mercado: str, modelo: str):
+def construir_X(s: pd.DataFrame, mercado: str, modelo: str, c0: float = 0.0):
     """Devuelve Xc (contribuciones), meta (DataFrame col, var, familia, periodo), Xn (molestia)."""
     per = s["per"].values
     cols, meta = [], []
     for v, fam, por in SPEC_VARS[mercado]:
         x = s[v].values.astype(float)
+        if v == "cu_x_expo":
+            x = x - c0      # variable en NIVEL: contribución medida respecto a la media muestral (c0), como BA/BV
         if por:
             for p in PNAMES:
                 cols.append(np.where(per == p, x, 0.0))
@@ -230,7 +232,8 @@ class Panel:
     def __init__(self, s, mercado, modelo, cf_dfs):
         self.s, self.mercado, self.modelo = s, mercado, modelo
         self.Y = s[YVAR[mercado]].values.astype(float)
-        self.Xc, self.meta, self.Xn = construir_X(s, mercado, modelo)
+        self.c0 = float(s["cu_x_expo"].mean()) if mercado == "compra" else 0.0
+        self.Xc, self.meta, self.Xn = construir_X(s, mercado, modelo, self.c0)
         self.w = s["pob_w"].values.astype(float)
         self.uid0 = pd.factorize(s["cod_prov"])[0]
         tq = sorted(s["trimestre"].unique())
@@ -249,7 +252,7 @@ class Panel:
             sc = dfc.set_index(["cod_prov", "trimestre"]).loc[list(zip(s["cod_prov"], s["trimestre"]))].reset_index()
             sc["per"] = s["per"].values
             sc["x_cu"] = sc["x_cu"].values
-            Xcf, _, _ = construir_X(sc, mercado, modelo)
+            Xcf, _, _ = construir_X(sc, mercado, modelo, self.c0)
             self.cf[nm] = Xcf
 
     # -- una "realización": remuestreo de filas

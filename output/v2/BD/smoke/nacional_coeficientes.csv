@@ -1,0 +1,15 @@
+parametro,coef
+LP:ln_ocupados,1.633763
+LP:tipo_hip_real,0.0094848
+LP:ln_permisos_l4,0.0433539
+LP:ln_costes_real,-0.5952537
+CP:const,0.0009781
+CP:ect_l1,-0.0883321
+CP:q2,0.007081
+CP:q3,0.00216
+CP:q4,-0.0213036
+CP:d_ocup_l1,0.5478259
+CP:d_tipo_l1,-0.0106526
+CP:d_renta,0.153643
+CP:dy_l4,0.2553206
+CP:d_cred,0.0418964

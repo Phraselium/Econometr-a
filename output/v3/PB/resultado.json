@@ -12,14 +12,14 @@
   "B1_precio_central_pct": 2.7458,
   "B1_cantidad_pct": 2.7458,
   "B1_no_explica_pct": 25.0291,
-  "B2_cuota_max_2014-2025_pct": 79.5141,
-  "B2_cuota_max_2020-2025_pct": 92.9816,
+  "B2_cuota_max_2014-2025_pct": 100.0,
+  "B2_cuota_max_2020-2025_pct": 100.0,
   "B4_dln_inv_uc_max_2014-2021_pct": 78.0102,
   "B4_dln_inv_uc_max_2021-2025_pct": -20.5251
  },
  "ic95": null,
  "p_ajustado": null,
- "nivel_evidencia": "COTA C2 (identificación parcial; no CAUSAL)",
+ "nivel_evidencia": "C2 (cotas de cantidad: B1, B2 cuota/viviendas, B4 condicionada al suelo de uc); C4 (cotas de precio de B1 y B2, condicionales a |ε_d|); no CAUSAL",
  "diagnosticos": {
   "cobertura_stock_alquiler_B1_municipal": 0.8896952976860649,
   "B3": "en espera",
@@ -33,7 +33,7 @@
  "notas": [
   "No hay predicción fuera de muestra: las cotas son aritmética bajo supuestos, no modelos predictivos (sin DM ni AR(4)).",
   "Sin lenguaje causal: solo «como máximo X puede atribuirse a Y bajo el supuesto Z».",
-  "|ε_d| (0,33-1,0) es implícito de González y Ortega (2013) y Saiz (2007); laguna de la literatura v3 B: sin estimación verificada para España.",
+  "|ε_d| no tiene estimación verificada para España (laguna de literatura v3 B). Los valores de González y Ortega (2013) y Saiz (2007) son formas reducidas de equilibrio, no elasticidades de demanda: las cotas de precio se publican como función cota(ε)=desplazamiento/|ε| (C4), con mínimo de rejilla 0,33 (la cota→∞ si ε→0).",
   "Total JAXI para cifras nacionales de VUT; la suma por sección cubre solo 89-90 %.",
   "Hogares por nacionalidad no existen en la ECP: tamaño de hogar extranjero en rango 2,0-3,0 (supuesto).",
   "EPA tiene quiebre en 2021 (se contrasta con ECP)."

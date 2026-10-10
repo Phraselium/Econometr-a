@@ -182,13 +182,28 @@ def main() -> None:
     n23 = nac[nac.anio == pa_a456.ANIO_A4]
     F4n = ["INE ADRH (renta neta media por hogar por sección, ponderada por hogares del Censo 2021)", "Contabilidad nacional (renta disponible de los hogares, Eurostat) / hogares EPA",
            "MIVAU valor tasado", "BCE tipo de interés de nuevos préstamos de vivienda"]
+    rr = pd.read_csv(pdat.RAW / "pdf" / "registradores_opendata_anual.csv")
+    pm2_reg = float(rr[(rr.serie == "compraventas_viv_pm2") & (rr.nivel == "nacional") & (rr.periodo == pa_a456.ANIO_A4)].valor.iloc[0])
+    tipo23 = n23.tipo_hipotecario_pct.iloc[0]
+    pr_all, cu_all = [], []
+    filas_n = []
+    for _, rw in n23.iterrows():
+        for nom, pm in (("valor tasado", rw.precio_m2_tasado), ("Registradores", pm2_reg)):
+            c_ = pa_a456.cuota(pm * pa_a456.M2, tipo23)
+            pr_all.append(pm * pa_a456.M2 / rw.renta_hogar_anual)
+            cu_all.append(100 * c_ / (rw.renta_hogar_anual / 12))
+            filas_n.append({"anio": pa_a456.ANIO_A4, "precio_fuente": nom, "renta_fuente": rw.renta_fuente, "precio_m2": pm,
+                            "precio_renta": pr_all[-1], "cuota_mes": c_, "cuota_pct_renta": cu_all[-1]})
+    guardar(pd.DataFrame(filas_n), "A4_nacional_2023_dos_precios")
     hecho("A4_precio_renta_nacional_2023",
-          f"Precio de una vivienda de 80 m² (valor tasado) en veces la renta anual del hogar, {pa_a456.ANIO_A4}: {n23.precio_renta.min():.2f} a {n23.precio_renta.max():.2f}; "
-          f"cuota hipotecaria (80 % del precio, 25 años, tipo {n23.tipo_hipotecario_pct.iloc[0]:.2f} %) de {n23.cuota_mes.iloc[0]:,.0f} €/mes, "
-          f"{n23.cuota_pct_renta.min():.1f} a {n23.cuota_pct_renta.max():.1f} % de la renta mensual del hogar.", "C1", n23.precio_renta.median(),
-          "veces la renta anual", n23.precio_renta.min(), n23.precio_renta.max(), F4n,
-          "80 m²; LTV 80 %; 25 años; tipo medio anual; sin gastos ni impuestos de compra.",
-          "Los dos denominadores miden conceptos distintos (renta neta ADRH frente a renta disponible por hogar de la contabilidad nacional); sin cuota por edad (no hay fuente cargada de renta por edad).")
+          f"Precio de una vivienda de 80 m² en veces la renta anual del hogar, {pa_a456.ANIO_A4}: {min(pr_all):.2f} a {max(pr_all):.2f} (dos fuentes de precio: valor tasado y Registradores; "
+          f"dos de renta: ADRH y cuentas nacionales); cuota hipotecaria (80 % del precio, 25 años, tipo {tipo23:.2f} %) entre {min(cu_all):.1f} y {max(cu_all):.1f} % de la renta mensual del hogar.",
+          "C1", np.nan, "veces la renta anual", min(pr_all), max(pr_all),
+          ["MIVAU valor tasado", "Registradores (precio m² de compraventas, datos abiertos)", "INE ADRH (renta neta media por hogar)",
+           "Contabilidad nacional (renta disponible de los hogares, Eurostat) / hogares EPA"],
+          "80 m²; LTV 80 %; 25 años; tipo medio anual; sin gastos ni impuestos de compra. Sin valor central: el rango mezcla fuentes de precio y de renta.",
+          "El tipo hipotecario procede de una sola serie (BCE). Los dos denominadores miden conceptos distintos (renta neta ADRH frente a renta disponible por hogar de la contabilidad nacional). "
+          "Sin cuota por edad (no hay fuente cargada de renta por edad).")
     p4 = o4["A4_provincias"]
     allr = pd.concat([p4.precio_renta_tasado, p4.precio_renta_registradores])
     allc = pd.concat([p4.cuota_pct_renta_tasado, p4.cuota_pct_renta_registradores])
@@ -223,17 +238,18 @@ def main() -> None:
           ["Banco de España, EFF (tablas publicadas, EFF2022)", "INE ECV, tabla 9994"], "Edad de la persona de referencia; los tramos de las fuentes no coinciden (EFF <35; ECV 16-29).",
           "Sin error muestral en los ficheros extraídos (el campo error_max es de validación de la extracción, no muestral).")
     m = [val("EFF", 2022, "65-74"), val("EFF", 2022, "75+"), val("INE ECV", 2022, "65 y más años"), val("Eurostat", 2022, "65+")]
-    lo, hi = min(x[0] for x in m), max(x[1] for x in m)
+    lo, hi = min(x[0] for x in m[:3]), max(x[1] for x in m[:3])
     hecho("A5_propiedad_65_mas_2022",
           f"Hogares propietarios cuya persona de referencia tiene 65 años o más (2022): EFF 65-74 {m[0][0]:.1f} %, EFF 75+ {m[1][0]:.1f} %, ECV {m[2][0]:.1f} %, "
-          f"Eurostat (adultos solos de 65+) {m[3][0]:.1f} %.", "C1", float(np.mean([x[0] for x in m])), "% de hogares", lo, hi,
-          ["Banco de España, EFF", "INE ECV, tabla 9994", "Eurostat ilc_lvho02"], "Tramos y unidades de los tres no coinciden; Eurostat solo adultos que viven solos.",
-          "Eurostat no desagrega por edad de la persona de referencia de otros tipos de hogar.")
+          f"Eurostat (adultos solos de 65+) {m[3][0]:.1f} % (misma encuesta que la ECV; no cuenta como fuente independiente y queda fuera del intervalo).",
+          "C1", np.nan, "% de hogares", lo, hi, ["Banco de España, EFF", "INE ECV, tabla 9994"],
+          "Tramos distintos entre EFF y ECV. Intervalo = EFF (65-74 y 75+) y ECV.",
+          "Eurostat ilc_lvho02 procede de la ECV (EU-SILC); solo adultos que viven solos.")
     tot = [val("EFF", 2022, "total"), val("INE ECV", 2022, "Total"), val("INE ECV", 2021, "Total"), val("Censo", 2021, "total")]
     lo, hi = min(x[0] for x in tot), max(x[1] for x in tot)
     hecho("A5_propiedad_total",
           f"Hogares propietarios, todas las edades: EFF 2022 {tot[0][0]:.1f} %, ECV 2022 {tot[1][0]:.1f} %, ECV 2021 {tot[2][0]:.1f} %, Censo 2021 {tot[3][0]:.1f} %.",
-          "C1", float(np.mean([x[0] for x in tot])), "% de hogares", lo, hi, ["Banco de España, EFF", "INE ECV", "INE Censo 2021"],
+          "C1", np.nan, "% de hogares", lo, hi, ["Banco de España, EFF", "INE ECV", "INE Censo 2021"],
           "Censo 2021: viviendas principales en propiedad sobre principales (secciones).", "Fechas de referencia distintas (2021 y 2022).")
     e08, e22 = val("EFF", 2008, "<35"), val("EFF", 2022, "<35")
     c08, c22 = val("INE ECV", 2008, "De 16 a 29 años"), val("INE ECV", 2022, "De 16 a 29 años")
@@ -250,12 +266,27 @@ def main() -> None:
     rn = o6["A6_ratio_nacional"].set_index("anio")
     ch_idx = 100 * (rn.loc[2024, "ratio_ipv_ipc_base2015"] / rn.loc[2015, "ratio_ipv_ipc_base2015"] - 1)
     ch_niv = 100 * (rn.loc[2024, "ratio_niveles_tasado_serpavi"] / rn.loc[2015, "ratio_niveles_tasado_serpavi"] - 1)
+    nq_ = pdat.nacional_q()
+    nq_["anio"] = [int(i[:4]) for i in nq_.index]
+    an = nq_.groupby("anio")[["ipv", "ipc_alquiler", "p_tasado"]].mean()
+    an["serpavi"] = nq_.groupby("anio").serpavi_esp_constante.mean()
+    def ch(num, den):
+        return 100 * ((num[2024] / den[2024]) / (num[2015] / den[2015]) - 1)
+    cruz = pd.DataFrame([
+        {"medida": "IPV / IPC alquiler", "variacion_2015_2024_pct": ch(an.ipv, an.ipc_alquiler)},
+        {"medida": "valor tasado / SERPAVI (niveles)", "variacion_2015_2024_pct": ch(an.p_tasado, an.serpavi)},
+        {"medida": "valor tasado / IPC alquiler (cruzada)", "variacion_2015_2024_pct": ch(an.p_tasado, an.ipc_alquiler)},
+        {"medida": "IPV / SERPAVI (cruzada)", "variacion_2015_2024_pct": ch(an.ipv, an.serpavi)}])
+    guardar(cruz, "A6_variacion_ratio_2015_2024")
     hecho("A6_ratio_precio_alquiler_2015_2024",
-          f"Variación 2015-2024 de la razón precio/alquiler: {ch_idx:+.1f} % con el cociente de índices IPV/IPC de alquiler; {ch_niv:+.1f} % con el cociente de niveles "
-          f"valor tasado/(SERPAVI×12) (de {rn.loc[2015, 'ratio_niveles_tasado_serpavi']:.1f} a {rn.loc[2024, 'ratio_niveles_tasado_serpavi']:.1f} años de alquiler). "
-          "Las dos medidas difieren en el signo.", "C1", (ch_idx + ch_niv) / 2, "% de variación", min(ch_idx, ch_niv), max(ch_idx, ch_niv),
+          f"Entre 2015 y 2024, la dirección de la variación de la razón precio/alquiler no está establecida con las fuentes disponibles: dirección no establecida, las dos medidas discrepan en signo "
+          f"({ch_idx:+.1f} % con índices IPV / IPC de alquiler; {ch_niv:+.1f} % con niveles valor tasado/(SERPAVI×12), de {rn.loc[2015, 'ratio_niveles_tasado_serpavi']:.1f} a "
+          f"{rn.loc[2024, 'ratio_niveles_tasado_serpavi']:.1f} años de alquiler). Combinaciones cruzadas: valor tasado/IPC de alquiler {cruz.variacion_2015_2024_pct.iloc[2]:+.1f} %; "
+          f"IPV/SERPAVI {cruz.variacion_2015_2024_pct.iloc[3]:+.1f} %. La diferencia procede sobre todo de la medida de alquiler (IPC de alquiler {100 * (an.ipc_alquiler[2024] / an.ipc_alquiler[2015] - 1):+.1f} %; "
+          f"SERPAVI {100 * (an.serpavi[2024] / an.serpavi[2015] - 1):+.1f} %). Ambas son medidas de stock de contratos.",
+          "C1", np.nan, "% de variación", min(ch_idx, ch_niv), max(ch_idx, ch_niv),
           ["INE IPV e IPC alquiler (cociente de índices)", "MIVAU valor tasado y SERPAVI (niveles)"],
-          "Medias anuales; SERPAVI nacional asignado por año.",
+          "Medias anuales; SERPAVI nacional asignado por año. La capa C1 se refiere solo al rango de las medidas (la discrepancia), no a una dirección; sin magnitud única.",
           "El IPC de alquiler mide el stock completo de alquileres; SERPAVI es el stock declarado en el IRPF; ambos amortiguan los cambios de contratos nuevos. "
           "Si dos métodos discrepan se informan los dos.")
     uc = o6["A6_coste_uso"]
@@ -325,7 +356,7 @@ def main() -> None:
         "metodo": "Descriptivo/contable; rango entre combinaciones de fuentes; sin contrastes de hipótesis ni estimación causal",
         "estimacion": {h["id"]: {"magnitud": h["magnitud"], "unidad": h["unidad"]} for h in HECHOS},
         "ic95": None, "p_ajustado": None,
-        "nivel_evidencia": "DESCRIPTIVO (capa C1 con ≥2 fuentes; los hechos de fuente única van como C4)",
+        "nivel_evidencia": "DESCRIPTIVO (C1: ≥2 fuentes; A2 hogares implícitos: C2 cota bajo supuestos; fuente única: C4)",
         "diagnosticos": {"cuadre_censo2021_vacias_suma_unidades_igual_total_nacional": bool(abs(pdat.vacias2021().vacias.sum() - cob["vacias_total_pais"]) < 1),
                          "comparacion_BdE": bde, "cobertura_vacancia": cob,
                          "fdr": "No aplica: no hay contrastes de hipótesis (no hay p-valores)"},
@@ -333,7 +364,8 @@ def main() -> None:
         "notas": ["La cifra del BdE DO 2432 no es de déficit (trata del alquiler); la comparación usa el Informe Anual 2025 (≈750.000, 2021-2025).",
                   "Interpolaciones: ninguna propia; EPA 2002Q1 como base del periodo 2002-2007 (marcado).",
                   "No encontrado: Censo 2021 por relación con la persona de referencia y tramos 25-34; renta por edad (ECV/EES); error muestral publicado de EPA, ECV y EFF no disponible en los ficheros.",
-                  "ECP anclada al Censo 2021 (no independiente de él)."],
+                  "ECP anclada al Censo 2021 (no independiente de él); Eurostat ilc_lvps08/ilc_lvho02 proceden de la ECV (no cuentan como fuente distinta).",
+                  "Revisión oleada 1 (O2, O3, O10): ventanas A1 añadidas tras ver las fuentes (criterio: disponibilidad de Censos y ECP); cifra del BdE con DOI no comprobado."],
     }
     (OUT / "resultado.json").write_text(json.dumps(resultado, ensure_ascii=False, indent=1, default=float))
     print(f"hechos={len(HECHOS)} registro={len(reg.rows)}")

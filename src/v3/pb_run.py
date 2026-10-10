@@ -40,11 +40,11 @@ RAW3 = RAW / "v3"
 #   mínimo 0,33 = 17 % de flujo -> +52 % de precio (González y Ortega 2013): 1/ε = 52/17 ≈ 3,06;
 #   central 1,0 = 1 % de población -> ≈ +1 % de alquiler (Saiz 2007).
 EPS_MIN, EPS_CENTRAL = 0.33, 1.0
-EPS_GRID = [0.25, 0.33, 0.5, 0.75, 1.0, 1.5, 2.0]
+EPS_GRID = [0.33, 0.5, 0.75, 1.0, 1.5, 2.0]   # el mínimo de la rejilla es EPS_MIN: por debajo la cota de precio crece sin límite (∞ si ε→0)
 M2_TIPO = 80.0                      # m2 de la vivienda tipo (misma convención que A4)
 UMBRAL_DVUT = 0.001                 # 0,1 puntos de ΔVUT/stock de alquiler
 UMBRALES = [0.001, 0.005, 0.01, 0.02]
-TAM_EXT = {"min": 2.0, "max": 3.0}  # personas por hogar extranjero (rango); central = media nacional
+TAM_EXT = {"1.0": 1.0, "2.0": 2.0, "3.0": 3.0}  # personas por hogar extranjero: 1,0 = extremo lógico (cota); 2,0 y 3,0 + central = sensibilidad
 BAJAS = [0.0, 0.001, 0.002]
 DEP, GAN, IBI = [1.0, 2.0, 3.0], [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0], [0.5, 0.75, 1.0]
 UC_SUELO = 1.0                      # uc (en %) mínimo para que 1/uc esté definido y acotado
@@ -69,13 +69,27 @@ class Ctx:
     def log(self, modelo_id, formula, ini, fin, n, valor, notas=""):
         self.reg.log("PB", modelo_id, formula, ini, fin, int(n), np.nan, np.nan, np.nan, coef_interes=valor, notas=notas)
 
-    def cota(self, id, factor, ambito, periodo, valor, unidad, supuesto, no_explica, smin, smax, limites, frase_obj=""):
+    def cota(self, id, factor, ambito, periodo, valor, unidad, supuesto, no_explica, smin, smax, limites, frase_obj="", capa="C2"):
         f = lambda v: None if v is None or (isinstance(v, float) and not np.isfinite(v)) else round(float(v), 4)  # noqa: E731
+        inferior = None
+        if factor == "turisticos" and valor is not None and np.isfinite(valor) and valor < 0:
+            # ΔVUT < 0: la sustitución s en [0,1] da un efecto en [valor, 0]: cota superior 0, el valor negativo es la cota inferior
+            inferior, valor, no_explica = valor, 0.0, None
+        vals = [v for v in (smin, smax, valor, inferior) if v is not None and np.isfinite(v)]
+        smin, smax = (min(vals), max(vals)) if vals else (None, None)
+        obj = ("al " + frase_obj[3:]) if frase_obj.startswith("el ") else ("a " + (frase_obj or factor))
+        if capa == "C4":
+            frase = f"CONDICIONAL (C4): si |ε_d| = {EPS_MIN}, entonces el efecto es ≤ {f(valor)} {unidad}; ver tabla «si |ε_d| = x, entonces ≤ y». Supuesto: {supuesto}"
+        elif inferior is not None:
+            frase = f"con ΔVUT negativo, la cota superior es 0 y la cota inferior {f(inferior)} {unidad} bajo el supuesto {supuesto}"
+        elif valor is None:
+            frase = f"sin cota superior definida por este modelo; supuesto: {supuesto}"
+        else:
+            frase = f"como máximo {f(valor)} {unidad} puede atribuirse {obj} bajo el supuesto {supuesto}"
         self.cotas.append({
-            "id": id, "factor": factor, "ambito": ambito, "periodo": periodo, "cota_superior": f(valor), "unidad": unidad,
-            "supuesto_extremo": supuesto, "no_explica": f(no_explica), "sensibilidad_min": f(smin), "sensibilidad_max": f(smax),
-            "capa": "C2", "limites": limites,
-            "frase": f"como máximo {f(valor)} {unidad} puede atribuirse a {frase_obj or factor} bajo el supuesto {supuesto}"})
+            "id": id, "factor": factor, "ambito": ambito, "periodo": periodo, "cota_superior": f(valor), "cota_inferior": f(inferior),
+            "unidad": unidad, "supuesto_extremo": supuesto, "no_explica": f(no_explica), "sensibilidad_min": f(smin),
+            "sensibilidad_max": f(smax), "capa": capa, "limites": limites, "frase": frase})
 
 
 # ---------------------------------------------------------------- datos
@@ -148,7 +162,10 @@ def b1(c: Ctx, d: dict, cen: pd.DataFrame):
                               no_explica_agregado_pct=100 * max(0.0, 1 - max(q / e, 0) / dlr) if dlr > 0 else np.nan,
                               cota_eur_mes=q / e * renta_eur))
     t = pd.DataFrame(filas)
+    t["enunciado_C4"] = [f"si |ε_d| = {e}, entonces la variación del alquiler está en [{min(x, 0):.2f}, {max(x, 0):.2f}] % (condicional a ε, no verificado)"
+                         for e, x in zip(t.eps, t.cota_precio_pct)]
     c.csv(t, "b1_nacional_sensibilidad.csv")
+    c.csv(t[t.stock == "censo2021"][["periodo", "eps", "dVUT", "cota_cantidad_pct", "cota_precio_pct", "enunciado_C4"]], "b1_precio_condicional_si_eps.csv")
     for r in t[(t.stock == "censo2021") & t.eps.isin([EPS_MIN])].itertuples():
         c.log(f"B1-nac-{r.periodo}", "dlnR_max=(dVUT/stock)/eps; stock=censo2021; eps=0.33", r.periodo[:7], r.periodo[8:], 1, r.cota_precio_pct,
               "cota nacional JAXI")
@@ -206,16 +223,16 @@ def b1(c: Ctx, d: dict, cen: pd.DataFrame):
            qmain.dVUT, qmain.dVUT, lim, "las viviendas turísticas nuevas")
     c.cota("B1-nac-precio-eps_min", "turisticos", "nacional", ps, qmain.cota_precio_pct, "% de alquiler (Δ ln)",
            f"sustitución 1:1 y |ε_d|={EPS_MIN} (valor bajo del rango; sin respuesta de la oferta)", ne_muni,
-           main.cota_precio_pct.min(), main.cota_precio_pct.max(), lim, "el aumento de viviendas turísticas")
+           main.cota_precio_pct.min(), main.cota_precio_pct.max(), lim, "el aumento de viviendas turísticas", capa="C4")
     c.cota("B1-nac-precio-central", "turisticos", "nacional", ps, qc.cota_precio_pct, "% de alquiler (Δ ln)",
            f"sustitución 1:1 y |ε_d|={EPS_CENTRAL} (central)", ne_muni, main[main.eps >= EPS_CENTRAL].cota_precio_pct.min(),
-           main[main.eps >= EPS_CENTRAL].cota_precio_pct.max(), lim, "el aumento de viviendas turísticas")
+           main[main.eps >= EPS_CENTRAL].cota_precio_pct.max(), lim, "el aumento de viviendas turísticas", capa="C4")
     c.cota("B1-nac-precio-eps_min-eur", "turisticos", "nacional", ps, qmain.cota_eur_mes, "€/mes (alquiler tipo de 80 m2)",
-           f"sustitución 1:1 y |ε_d|={EPS_MIN}", ne_muni, main.cota_eur_mes.min(), main.cota_eur_mes.max(), lim, "el aumento de viviendas turísticas")
+           f"sustitución 1:1 y |ε_d|={EPS_MIN}", ne_muni, main.cota_eur_mes.min(), main.cota_eur_mes.max(), lim, "el aumento de viviendas turísticas", capa="C4")
     for r in t[(t.stock == "censo2021") & (t.eps == EPS_MIN) & (t.periodo != ps)].itertuples():
         c.cota(f"B1-nac-precio-eps_min-{r.periodo}", "turisticos", "nacional", r.periodo, r.cota_precio_pct, "% de alquiler (Δ ln)",
-               f"sustitución 1:1 y |ε_d|={EPS_MIN}" + (" (ΔVUT negativo: liberación de oferta; la cota superior es ≤ 0)" if r.dVUT < 0 else ""),
-               ne_muni, None, None, lim, "el aumento de viviendas turísticas")
+               f"sustitución 1:1 y |ε_d|={EPS_MIN}" + (" (ΔVUT negativo)" if r.dVUT < 0 else ""),
+               ne_muni, None, None, lim, "el aumento de viviendas turísticas", capa="C4")
 
     # ---- provincial
     cp = cen.groupby("prov")[["viv_total", "viv_alquiler"]].sum().reset_index().rename(columns={"prov": "cod_prov"})
@@ -246,7 +263,7 @@ def b1(c: Ctx, d: dict, cen: pd.DataFrame):
         c.cota(f"B1-prov-{r.cod_prov}-precio-eps_min", "turisticos", f"provincia {r.provincia}", "2020-2024", r.cota_precio_epsmin_pct,
                "% de alquiler (Δ ln)", f"sustitución 1:1 y |ε_d|={EPS_MIN} dentro de la provincia", r.no_explica_agregado_pct,
                100 * r.q / max(EPS_GRID), 100 * r.q / min(EPS_GRID),
-               "Alquiler = IPC de alquiler provincial (anual); stock = Censo 2021; VUT = panel provincial (oleada de agosto). " + lim.split(";")[3])
+               "Alquiler = IPC de alquiler provincial (anual); stock = Censo 2021; VUT = panel provincial (oleada de agosto). " + lim.split(";")[3] + " Condicional a |ε_d| (C4).", "el aumento de viviendas turísticas", capa="C4")
 
     # ---- ciudades (municipio) y València por sección
     ciu = pmw[pmw.muni.isin(CIUDADES)].copy()
@@ -263,14 +280,14 @@ def b1(c: Ctx, d: dict, cen: pd.DataFrame):
             c.log(f"B1-ciudad-{r.muni}", "dlnR_max=(dVUT/stock)/eps; eps=0.33", 2020, 2024, 1, r.cota_precio_epsmin_pct, r.ciudad)
             c.cota(f"B1-ciudad-{r.muni}-cantidad", "turisticos", f"ciudad {r.ciudad}", "2020-2024", r.cota_cantidad_pct,
                    "% del stock de alquiler", "sustitución 1:1", r.no_explica_agregado_pct, 100 * r.q_alq, 100 * r.q_alq,
-                   "SERPAVI = stock de contratos declarados (amortigua cambios); ΔVUT negativo implica cota ≤ 0 (la oferta turística bajó).", "las viviendas turísticas nuevas")
+                   "SERPAVI = stock de contratos declarados (amortigua cambios); con ΔVUT negativo la cota superior es 0 y el valor negativo es la cota inferior.", "las viviendas turísticas nuevas")
             c.cota(f"B1-ciudad-{r.muni}-precio-eps_min", "turisticos", f"ciudad {r.ciudad}", "2020-2024", r.cota_precio_epsmin_pct,
                    "% de alquiler (Δ ln)", f"sustitución 1:1 y |ε_d|={EPS_MIN}", r.no_explica_agregado_pct,
                    100 * r.q_alq / max(EPS_GRID), 100 * r.q_alq / min(EPS_GRID),
-                   "SERPAVI = stock de contratos declarados (amortigua cambios); ΔVUT negativo implica cota ≤ 0.", "el aumento de viviendas turísticas")
+                   "SERPAVI = stock de contratos declarados (amortigua cambios); con ΔVUT negativo la cota superior es 0. Condicional a |ε_d| (C4).", "el aumento de viviendas turísticas", capa="C4")
             c.cota(f"B1-ciudad-{r.muni}-precio-eur", "turisticos", f"ciudad {r.ciudad}", "2020-2024", r.cota_eur_mes_epsmin,
                    "€/mes (alquiler tipo de 80 m2)", f"sustitución 1:1 y |ε_d|={EPS_MIN}", r.no_explica_agregado_pct, None, None,
-                   "Renta SERPAVI 2020 x 80 m2 (supuesto de vivienda tipo).", "el aumento de viviendas turísticas")
+                   "Renta SERPAVI 2020 x 80 m2 (supuesto de vivienda tipo). Condicional a |ε_d| (C4).", "el aumento de viviendas turísticas", capa="C4")
     # secciones de las ciudades: 2021M08 -> 2024M08
     sec = b1_secciones(c, cen)
     return dict(ne_muni=ne_muni, ne_prov=ne_prov, nac=t, qmain=qmain, cob=cob, sec=sec, renta_eur=renta_eur)
@@ -336,7 +353,7 @@ def b2(c: Ctx, d: dict, cen: pd.DataFrame):
         term = pa.term.loc[max(a, 2008):b - 1].sum() + pa.prot.loc[max(a, 2008):b - 1].sum() if a >= 2008 else np.nan
         dlp = lnr(q1("p_tasado", a), q1("p_tasado", b))
         dlr = lnr(q1("ipc_alquiler", a), q1("ipc_alquiler", b))
-        for tk, tam in [("min", TAM_EXT["min"]), ("central", tam_c), ("max", TAM_EXT["max"])]:
+        for tk, tam in [*TAM_EXT.items(), ("central", tam_c)]:
             dhe = dext / tam
             for fuente, dht in [("EPA", dh_epa), ("ECP", dh_ecp)]:
                 if np.isnan(dht):
@@ -357,7 +374,11 @@ def b2(c: Ctx, d: dict, cen: pd.DataFrame):
                                          no_explica_alquiler_pct=(100 * max(0.0, 1 - pr / dlr) if dlr > 0 else np.nan),
                                          saldo_ext_no_positivo=bool(dext <= 0)))
     t = pd.DataFrame(rows)
+    t["enunciado_compra_C4"] = [f"si |ε_d| = {e}, entonces el precio de compra sube ≤ {x:.2f} % (condicional a ε, no verificado)" for e, x in zip(t.eps, t.cota_precio_compra_pct)]
+    t["enunciado_alquiler_C4"] = [f"si |ε_d| = {e}, entonces el alquiler sube ≤ {x:.2f} % (condicional a ε, no verificado)" for e, x in zip(t.eps, t.cota_precio_alquiler_pct)]
     c.csv(t, "b2_nacional_sensibilidad.csv")
+    c.csv(t[(t.fuente_hogares == "EPA") & (t.baja_anual == 0.0) & (t.tam_ext == "1.0")][["periodo", "eps", "dH_ext", "cota_precio_compra_pct", "cota_precio_alquiler_pct", "enunciado_compra_C4", "enunciado_alquiler_C4"]],
+          "b2_precio_condicional_si_eps.csv")
     # provincias: saldo extranjero y subida en provincias con saldo <= 0
     cp = cen.groupby("prov")[["viv_total", "viv_alquiler"]].sum()
     pw = pp.set_index(["cod_prov", "anio"])
@@ -396,32 +417,39 @@ def b2(c: Ctx, d: dict, cen: pd.DataFrame):
         g = t[t.periodo == pe]
         if g.empty:
             continue
-        extremo = g[(g.tam_ext == "min")]
-        base = extremo[(extremo.fuente_hogares == "EPA") & (extremo.baja_anual == 0.0)]
+        base = g[(g.tam_ext == "1.0") & (g.fuente_hogares == "EPA") & (g.baja_anual == 0.0)]
         r0 = base.iloc[0]
-        cuota = r0.cuota_max_dH_pct
+        cuota = float(g[g.tam_ext == "1.0"].cuota_max_dH_pct.max())          # máximo entre fuentes de hogares (EPA, ECP)
         saldo_ng = bool(r0.saldo_ext_no_positivo)
-        ne_comp = g[(g.tam_ext == "min") & (g.eps == EPS_MIN)].no_explica_compra_pct.iloc[0]
+        ne_comp = g[(g.tam_ext == "1.0") & (g.eps == EPS_MIN)].no_explica_compra_pct.iloc[0]
         nxp = nx[(nx.periodo == pe) & (nx.mercado == "compra")]
-        lim = ("Hogares extranjeros = ΔPoblación extranjera (padrón, 1 de enero) / tamaño de hogar en rango 2,0-3,0 (supuesto: no hay hogares por nacionalidad en la ECP; "
-               "central = personas/hogar nacional); hogares totales = EPA (quiebre 2021) y ECP si existe; sin respuesta de la oferta ni de la población nacional; "
-               "|ε_d| implícito de la literatura. Todos los hogares extranjeros netos se suponen demandantes en el mercado considerado.")
+        lim = ("Población extranjera por NACIONALIDAD (padrón, 1 de enero): las nacionalizaciones restan del stock, así que ΔPoblación extranjera INFRAVALORA la entrada neta de "
+               "nacidos fuera (sesgo a la baja; no hay serie de población nacida en el extranjero por provincia y año, solo el Censo 2021); "
+               "hogares extranjeros = ΔPoblación / tamaño de hogar; el extremo lógico es 1,0 persona por hogar y 2,0, 3,0 y la media nacional son sensibilidad; "
+               "hogares totales = EPA (quiebre 2021) y ECP (desde 2021): se toma el máximo entre fuentes; sin respuesta de la oferta ni de la población nacional. "
+               "Todos los hogares extranjeros netos se suponen demandantes en el mercado considerado. Las cotas de PRECIO son C4: condicionales a |ε_d|, sin estimación verificada para España.")
+        sens_tam = "tamaños 2,0 / 3,0 / media nacional"
         if np.isfinite(cuota) and r0.dH_total > 0:
-            c.cota(f"B2-nac-cuota-{pe}", "inmigracion", "nacional", pe, min(cuota, 100.0) if cuota > 0 else 0.0, "% de Σ Δhogares (máx. fracción del déficit atribuible)",
-                   "tamaño de hogar extranjero = 2,0 (máximo número de hogares) y todos los hogares extranjeros netos adicionales",
-                   100.0 if saldo_ng else (100 - max(cuota, 0)), float(g.cuota_max_dH_pct.min()), float(g.cuota_max_dH_pct.max()), lim,
-                   "la población extranjera neta")
+            nota = " (cuota sin truncar > 100 %: cota no informativa)" if cuota > 100 else ""
+            c.cota(f"B2-nac-cuota-{pe}", "inmigracion", "nacional", pe, min(cuota, 100.0) if cuota > 0 else 0.0,
+                   "% de Σ Δhogares (fracción de la creación neta de hogares; no es fracción del déficit)",
+                   "1,0 persona por hogar extranjero (máximo número de hogares) y máximo entre fuentes de hogares" + nota,
+                   None if saldo_ng else max(100 - cuota, 0.0),
+                   float(g[g.tam_ext == "3.0"].cuota_max_dH_pct.min()), cuota, lim + f" Sensibilidad: {sens_tam}.", "la población extranjera neta")
         if not np.isnan(r0.cota_viviendas):
-            c.cota(f"B2-nac-viviendas-{pe}", "inmigracion", "nacional", pe, r0.cota_viviendas, "viviendas del déficit A1 (con bajas 0 %)",
-                   "tamaño de hogar 2,0 y bajas 0 %", None, float(g.cota_viviendas.min()), float(g.cota_viviendas.max()), lim, "la población extranjera neta")
+            c.cota(f"B2-nac-viviendas-{pe}", "inmigracion", "nacional", pe, float(g[g.tam_ext == "1.0"].cota_viviendas.max()),
+                   "viviendas: min(ΔH_ext, déficit A1)",
+                   "1,0 persona por hogar y bajas 0 % (máximo entre fuentes y bajas)", None, float(g[g.tam_ext == "3.0"].cota_viviendas.min()),
+                   float(g[g.tam_ext == "1.0"].cota_viviendas.max()), lim, "la población extranjera neta")
         for mk, col, nec in [("compra", "cota_precio_compra_pct", "no_explica_compra_pct"), ("alquiler", "cota_precio_alquiler_pct", "no_explica_alquiler_pct")]:
-            gm = g[(g.tam_ext == "min") & (g.eps == EPS_MIN) & (g.fuente_hogares == "EPA") & (g.baja_anual == 0.0)].iloc[0]
-            lo, hi = float(g[col].min()), float(g[col].max())
+            gm = g[(g.tam_ext == "1.0") & (g.eps == EPS_MIN) & (g.fuente_hogares == "EPA") & (g.baja_anual == 0.0)].iloc[0]
+            lo, hi = float(g[(g.tam_ext == "3.0") & (g.eps == g.eps.max())][col].min()), float(g[g.tam_ext == "1.0"][col].max())
+            ne = gm[nec] if np.isfinite(gm[nec]) else None
             c.cota(f"B2-nac-precio-{mk}-{pe}", "inmigracion", "nacional", pe, gm[col], "% de precio (Δ ln)" if mk == "compra" else "% de alquiler (Δ ln)",
-                   f"tamaño de hogar 2,0 y |ε_d|={EPS_MIN}" + ("; saldo extranjero ≤ 0: cota 0" if saldo_ng else ""),
-                   gm[nec], lo, hi, lim + (" Nota: en este periodo el Δ ln observado no es positivo, el «no explica» no se define." if not np.isfinite(gm[nec]) else ""),
-                   "el saldo de hogares extranjeros")
-        c.log(f"B2-nac-{pe}", "cuota_max=dH_ext(tam=2.0)/sum dH_total", a, b, int(pa.n[b]), cuota,
+                   f"C4 condicional: 1,0 persona por hogar extranjero y |ε_d|={EPS_MIN} (mínimo de la rejilla; la cota→∞ si ε→0)" + ("; saldo extranjero ≤ 0: cota 0" if saldo_ng else ""),
+                   ne, lo, hi, lim + (" «No explica» no definido: el Δ ln observado no es positivo." if ne is None else ""),
+                   "el saldo de hogares extranjeros", capa="C4")
+        c.log(f"B2-nac-{pe}", "cuota_max=dH_ext(tam=1.0)/sum dH_total", a, b, int(pa.n[b]), cuota,
               f"saldo_ext_no_pos={saldo_ng}; no_explica_compra={ne_comp:.1f}; prov_saldo_no_pos={nxp.n_prov_saldo_no_pos.iloc[0] if len(nxp) else ''}")
     return dict(t=t, nx=nx, pr=pr_)
 
@@ -457,7 +485,7 @@ def b4(c: Ctx, d: dict):
                         dln_inv_uc_min_pct=mn, dln_inv_uc_max_pct=mx, dln_inv_uc_central_pct=gd[(gd.dep == 2.0) & (gd.ganancia == 1.5) & (gd.ibi == 0.75)].dln_inv_uc_pct.mean(),
                         dlnP_tasado_pct=dlp, dlnIPV_pct=dlv, dlnR_pct=dlr, signo_contrario=bool(signo_contrario),
                         no_explica_compra_pct=ne, no_explica_alquiler_pct=100.0,
-                        extremo=f"dep={ext.dep}, ganancia={ext.ganancia}, ibi={ext.ibi}", coste_uso_v2_ini=an.coste_uso_aprox[a], coste_uso_v2_fin=an.coste_uso_aprox[b]))
+                        extremo=f"dep={ext.dep}, ganancia={ext.ganancia}, ibi={ext.ibi} (maximiza Δln(1/uc); uc0={ext.uc0:.2f}, uc1={ext.uc1:.2f})", coste_uso_v2_ini=an.coste_uso_aprox[a], coste_uso_v2_fin=an.coste_uso_aprox[b]))
         # sensibilidad al suelo de uc
         sm = []
         for suelo in (0.5, 1.0, 2.0):
@@ -466,6 +494,7 @@ def b4(c: Ctx, d: dict):
             sm.append(dict(periodo=pe, suelo_uc=suelo, n_definidos=len(gg), dln_inv_uc_min_pct=v.min(), dln_inv_uc_max_pct=v.max()))
             c.log(f"B4-{pe}-suelo{suelo}", "dln(1/uc)=ln(uc0/uc1)", a, b, len(gg), float(v.max()), f"min={v.min():.2f}")
         suelos.append(pd.DataFrame(sm))
+        res[-1]["suelos_txt"] = "; ".join(f"suelo uc={x['suelo_uc']}%: máx {x['dln_inv_uc_max_pct']:.1f}" for x in sm)
         res[-1]["sens_min"], res[-1]["sens_max"] = min(x["dln_inv_uc_min_pct"] for x in sm), max(x["dln_inv_uc_max_pct"] for x in sm)
     r = pd.DataFrame(res)
     c.csv(r, "b4_periodos.csv")
@@ -481,14 +510,17 @@ def b4(c: Ctx, d: dict):
            "sin impuestos ni deducciones, sin racionamiento de crédito, expectativas fijas; combinaciones con uc < 1 % se excluyen (1/uc sin cota). "
            "Los tipos no actúan directamente sobre el alquiler.")
     for r_ in r.itertuples():
-        if r_.periodo == "2007-2014":
-            continue
         pe = r_.periodo
         c.cota(f"B4-nac-{pe}", "tipos", "nacional", pe, r_.dln_inv_uc_max_pct, "% de precio de compra (Δ ln(1/uc))",
-               f"{r_.extremo} (uc más bajo permitido)" + ("; SIGNO CONTRARIO: la cota superior es negativa" if r_.signo_contrario else ""),
-               r_.no_explica_compra_pct, r_.sens_min, r_.sens_max, lim + " Sensibilidad: suelo de uc 0,5-2 %.", "la variación del coste de uso")
-        c.cota(f"B4-nac-alquiler-{pe}", "tipos", "nacional", pe, 0.0, "% de alquiler (sin canal directo)", "los tipos no entran en el alquiler por supuesto",
-               100.0, None, None, "El estado estacionario de B4 solo acota el precio de compra.", "los tipos")
+               f"combinación {r_.extremo}" + ("; SIGNO CONTRARIO al del precio observado: la cota superior es negativa" if r_.signo_contrario and r_.dln_inv_uc_max_pct < 0 else
+                                              ("; SIGNO CONTRARIO: los tipos bajan y el precio cae" if r_.signo_contrario else ""))
+               + f". Dependencia del suelo de uc (1/uc sin cota finita si uc→0): con suelo 1 % la cota es {r_.dln_inv_uc_max_pct:.1f}; {r_.suelos_txt}",
+               r_.no_explica_compra_pct if np.isfinite(r_.no_explica_compra_pct) else None, r_.sens_min, r_.sens_max,
+               lim + " La conclusión «no explica» depende del tipo nominal y de una ganancia esperada constante entre años; con tipo real casi todas las combinaciones quedan indefinidas. Sensibilidad: suelo de uc 0,5-2 %.",
+               "la variación del coste de uso")
+        c.cota(f"B4-nac-alquiler-{pe}", "tipos", "nacional", pe, None, "% de alquiler",
+               "SUPUESTO: efecto de los tipos sobre el alquiler = 0 (no acotado por este modelo; los tipos pueden actuar vía elección de tenencia)",
+               None, None, None, "El estado estacionario de B4 solo acota el precio de compra; esto es un supuesto, no una cota.", "los tipos", capa="C4")
     return r
 
 
@@ -515,9 +547,9 @@ def figuras(c: Ctx, r1: dict, r2: dict, r4: pd.DataFrame):
     t = r2["t"]
     g = t[(t.fuente_hogares == "EPA") & (t.baja_anual == 0.0) & (t.eps == EPS_MIN)].pivot_table(index="periodo", columns="tam_ext", values="cuota_max_dH_pct")
     fig, ax = plt.subplots(figsize=(7, 4))
-    g[["max", "min"]].plot.bar(ax=ax)
+    g[["3.0", "1.0"]].plot.bar(ax=ax)
     ax.set_ylabel("% de Σ Δhogares")
-    ax.set_title("B2 (C2): cuota máxima de la población extranjera neta (tamaño 3,0 / 2,0)")
+    ax.set_title("B2 (C2): cuota máxima de la población extranjera neta (1,0 / 3,0 pers. por hogar)")
     fig.tight_layout()
     fig.savefig(c.fig / "b2_cuota.png", dpi=120)
     plt.close(fig)
@@ -571,13 +603,13 @@ def main(argv=None):
                        "B4_dln_inv_uc_max_2014-2021_pct": nac["B4-nac-2014-2021"]["cota_superior"],
                        "B4_dln_inv_uc_max_2021-2025_pct": nac["B4-nac-2021-2025"]["cota_superior"]},
         "ic95": None, "p_ajustado": None,
-        "nivel_evidencia": "COTA C2 (identificación parcial; no CAUSAL)",
+        "nivel_evidencia": "C2 (cotas de cantidad: B1, B2 cuota/viviendas, B4 condicionada al suelo de uc); C4 (cotas de precio de B1 y B2, condicionales a |ε_d|); no CAUSAL",
         "diagnosticos": {"cobertura_stock_alquiler_B1_municipal": float(r1["cob"]) if np.isfinite(r1["cob"]) else None,
                          "B3": gt.get("estado"), "FDR": "no aplica: sin contrastes de hipótesis"},
         "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None},
         "notas": ["No hay predicción fuera de muestra: las cotas son aritmética bajo supuestos, no modelos predictivos (sin DM ni AR(4)).",
                   "Sin lenguaje causal: solo «como máximo X puede atribuirse a Y bajo el supuesto Z».",
-                  "|ε_d| (0,33-1,0) es implícito de González y Ortega (2013) y Saiz (2007); laguna de la literatura v3 B: sin estimación verificada para España.",
+                  "|ε_d| no tiene estimación verificada para España (laguna de literatura v3 B). Los valores de González y Ortega (2013) y Saiz (2007) son formas reducidas de equilibrio, no elasticidades de demanda: las cotas de precio se publican como función cota(ε)=desplazamiento/|ε| (C4), con mínimo de rejilla 0,33 (la cota→∞ si ε→0).",
                   "Total JAXI para cifras nacionales de VUT; la suma por sección cubre solo 89-90 %.",
                   "Hogares por nacionalidad no existen en la ECP: tamaño de hogar extranjero en rango 2,0-3,0 (supuesto).",
                   "EPA tiene quiebre en 2021 (se contrasta con ECP).", *c.notas],

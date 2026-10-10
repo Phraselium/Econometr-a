@@ -4,7 +4,7 @@
  "pregunta": "Qué magnitudes contables y descriptivas del problema de la vivienda (déficit, demanda latente, vacancia, esfuerzo de acceso, tenencia, precio/alquiler) están medidas con ≥2 fuentes y con qué rango",
  "datos": "MIVAU (fin de obra, parque, protegida, valor tasado, SERPAVI), INE (EPA, ECP, Censos 2011/2021, tabla 59531, ADRH, IPV, IPC), Catastro, Eurostat, BdE (EFF), ECV, Registradores, Incasòl",
  "N": {
-  "hechos": 23,
+  "hechos": 24,
   "provincias": 52,
   "municipios_vacancia": 3139
  },
@@ -15,11 +15,11 @@
    "unidad": "viviendas"
   },
   "A1_nacional_2008-2013": {
-   "magnitud": -150989.948,
+   "magnitud": null,
    "unidad": "viviendas"
   },
   "A1_nacional_2014-2019": {
-   "magnitud": 238046.875,
+   "magnitud": null,
    "unidad": "viviendas"
   },
   "A1_nacional_2020-2025": {
@@ -31,7 +31,7 @@
    "unidad": "viviendas"
   },
   "A1_nacional_2012-2021": {
-   "magnitud": -132255.212,
+   "magnitud": null,
    "unidad": "viviendas"
   },
   "A1_nacional_2022-2025": {
@@ -39,7 +39,7 @@
    "unidad": "viviendas"
   },
   "A1_nacional_2012-2025": {
-   "magnitud": 506670.261,
+   "magnitud": null,
    "unidad": "viviendas"
   },
   "A1_nacional_2021-2025": {
@@ -50,12 +50,16 @@
    "magnitud": 664583.312,
    "unidad": "viviendas"
   },
+  "A2_tasa_convivencia_25_34": {
+   "magnitud": 45.274,
+   "unidad": "% de la población 25-34"
+  },
   "A2_hogares_implicitos": {
-   "magnitud": 433630.171,
+   "magnitud": null,
    "unidad": "hogares (= viviendas)"
   },
   "A3_vacias_tercil_alto_vs_bajo": {
-   "magnitud": 35.831,
+   "magnitud": null,
    "unidad": "% de las vacías de la muestra"
   },
   "A3_vacias_mayores_50000": {
@@ -67,7 +71,7 @@
    "unidad": "vacías por 100 hogares nuevos"
   },
   "A4_precio_renta_nacional_2023": {
-   "magnitud": 3.389,
+   "magnitud": null,
    "unidad": "veces la renta anual"
   },
   "A4_precio_renta_provincias_2023": {
@@ -83,11 +87,11 @@
    "unidad": "% de hogares"
   },
   "A5_propiedad_65_mas_2022": {
-   "magnitud": 85.529,
+   "magnitud": null,
    "unidad": "% de hogares"
   },
   "A5_propiedad_total": {
-   "magnitud": 74.819,
+   "magnitud": null,
    "unidad": "% de hogares"
   },
   "A5_cambio_propiedad_jovenes_2008_2022": {
@@ -95,7 +99,7 @@
    "unidad": "puntos porcentuales"
   },
   "A6_ratio_precio_alquiler_2015_2024": {
-   "magnitud": 17.312,
+   "magnitud": null,
    "unidad": "% de variación"
   },
   "A6_coste_uso_poterba_2023": {
@@ -105,7 +109,7 @@
  },
  "ic95": null,
  "p_ajustado": null,
- "nivel_evidencia": "DESCRIPTIVO (capa C1 con ≥2 fuentes; los hechos de fuente única van como C4)",
+ "nivel_evidencia": "DESCRIPTIVO (C1: ≥2 fuentes; A2 hogares implícitos: C2 cota bajo supuestos; fuente única: C4)",
  "diagnosticos": {
   "cuadre_censo2021_vacias_suma_unidades_igual_total_nacional": true,
   "comparacion_BdE": {
@@ -114,7 +118,7 @@
    "min_pa": 559752.0,
    "max_pa": 969059.308,
    "bde_dentro_del_rango": true,
-   "nota": "BdE, Informe Anual 2025, cap. 2 (≈750.000; IEF otoño 2025: 700.000). El DO 2432 trata del alquiler y no del déficit"
+   "nota": "BdE, Informe Anual 2025, cap. 2 (≈750.000; IEF otoño 2025: 700.000). El DO 2432 trata del alquiler y no del déficit. Cifra del BdE: DOI no comprobado (NO VERIFICADA en Crossref)"
   },
   "cobertura_vacancia": {
    "n_municipios_publicados": 3139,
@@ -138,6 +142,7 @@
   "La cifra del BdE DO 2432 no es de déficit (trata del alquiler); la comparación usa el Informe Anual 2025 (≈750.000, 2021-2025).",
   "Interpolaciones: ninguna propia; EPA 2002Q1 como base del periodo 2002-2007 (marcado).",
   "No encontrado: Censo 2021 por relación con la persona de referencia y tramos 25-34; renta por edad (ECV/EES); error muestral publicado de EPA, ECV y EFF no disponible en los ficheros.",
-  "ECP anclada al Censo 2021 (no independiente de él)."
+  "ECP anclada al Censo 2021 (no independiente de él); Eurostat ilc_lvps08/ilc_lvho02 proceden de la ECV (no cuentan como fuente distinta).",
+  "Revisión oleada 1 (O2, O3, O10): ventanas A1 añadidas tras ver las fuentes (criterio: disponibilidad de Censos y ECP); cifra del BdE con DOI no comprobado."
  ]
 }

@@ -71,13 +71,13 @@ PB,B1-seccion-Málaga,"no explica por sección, umbral 0.1pp",2021M08,2024M08,37
 PB,B1-seccion-Sevilla,"no explica por sección, umbral 0.1pp",2021M08,2024M08,454,,,,,39.55322887179516,,
 PB,B1-seccion-València,"no explica por sección, umbral 0.1pp",2021M08,2024M08,575,,,,,28.29557575012484,,
 PB,B1-seccion-Zaragoza,"no explica por sección, umbral 0.1pp",2021M08,2024M08,468,,,,,52.01651040958799,,
-PB,B2-nac-2002-2007,cuota_max=dH_ext(tam=2.0)/sum dH_total,2002,2007,52,,,,,63.57174341179779,,saldo_ext_no_pos=False; no_explica_compra=70.8; prov_saldo_no_pos=0
-PB,B2-nac-2008-2013,cuota_max=dH_ext(tam=2.0)/sum dH_total,2008,2013,52,,,,,-0.8625347636074692,,saldo_ext_no_pos=True; no_explica_compra=nan; prov_saldo_no_pos=15
-PB,B2-nac-2009-2014,cuota_max=dH_ext(tam=2.0)/sum dH_total,2009,2014,52,,,,,-35.975840761750376,,saldo_ext_no_pos=True; no_explica_compra=nan; prov_saldo_no_pos=47
-PB,B2-nac-2014-2019,cuota_max=dH_ext(tam=2.0)/sum dH_total,2014,2019,52,,,,,22.59782327027719,,saldo_ext_no_pos=False; no_explica_compra=91.0; prov_saldo_no_pos=29
-PB,B2-nac-2020-2025,cuota_max=dH_ext(tam=2.0)/sum dH_total,2020,2025,52,,,,,92.98157836153183,,saldo_ext_no_pos=False; no_explica_compra=55.7; prov_saldo_no_pos=2
-PB,B2-nac-2021-2025,cuota_max=dH_ext(tam=2.0)/sum dH_total,2021,2025,52,,,,,71.03779534971292,,saldo_ext_no_pos=False; no_explica_compra=61.8; prov_saldo_no_pos=2
-PB,B2-nac-2014-2025,cuota_max=dH_ext(tam=2.0)/sum dH_total,2014,2025,52,,,,,79.51412007397927,,saldo_ext_no_pos=False; no_explica_compra=60.4; prov_saldo_no_pos=0
+PB,B2-nac-2002-2007,cuota_max=dH_ext(tam=1.0)/sum dH_total,2002,2007,52,,,,,127.14348682359558,,saldo_ext_no_pos=False; no_explica_compra=41.6; prov_saldo_no_pos=0
+PB,B2-nac-2008-2013,cuota_max=dH_ext(tam=1.0)/sum dH_total,2008,2013,52,,,,,-1.7250695272149383,,saldo_ext_no_pos=True; no_explica_compra=nan; prov_saldo_no_pos=15
+PB,B2-nac-2009-2014,cuota_max=dH_ext(tam=1.0)/sum dH_total,2009,2014,52,,,,,-71.95168152350075,,saldo_ext_no_pos=True; no_explica_compra=nan; prov_saldo_no_pos=47
+PB,B2-nac-2014-2019,cuota_max=dH_ext(tam=1.0)/sum dH_total,2014,2019,52,,,,,45.19564654055438,,saldo_ext_no_pos=False; no_explica_compra=82.1; prov_saldo_no_pos=29
+PB,B2-nac-2020-2025,cuota_max=dH_ext(tam=1.0)/sum dH_total,2020,2025,52,,,,,185.96315672306366,,saldo_ext_no_pos=False; no_explica_compra=11.5; prov_saldo_no_pos=2
+PB,B2-nac-2021-2025,cuota_max=dH_ext(tam=1.0)/sum dH_total,2021,2025,52,,,,,153.72108822058559,,saldo_ext_no_pos=False; no_explica_compra=23.6; prov_saldo_no_pos=2
+PB,B2-nac-2014-2025,cuota_max=dH_ext(tam=1.0)/sum dH_total,2014,2025,52,,,,,159.02824014795854,,saldo_ext_no_pos=False; no_explica_compra=20.7; prov_saldo_no_pos=0
 PB,B4-2014-2021-suelo0.5,dln(1/uc)=ln(uc0/uc1),2014,2021,59,,,,,109.59420600361418,,min=23.51
 PB,B4-2014-2021-suelo1.0,dln(1/uc)=ln(uc0/uc1),2014,2021,55,,,,,78.01020587416866,,min=23.51
 PB,B4-2014-2021-suelo2.0,dln(1/uc)=ln(uc0/uc1),2014,2021,42,,,,,50.17377246352069,,min=23.51

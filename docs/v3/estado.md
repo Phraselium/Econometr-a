@@ -14,8 +14,10 @@
 | EFF/ECV tenencia por edad (pdf-extractor) | 1 | hecho | — | EFF 8 oleadas 2002-2022 (validada, error 0); ECV 2004-2025 por edad | 99.567 |
 | D3 Airbnb/HUT, Barcelona por barrio | 1 | hecho (parcial) | — | IA: 36 instantáneas ES (9 ciudades, 2025-12 a 2026-09; BCN 18.177→15.236 anuncios, habitación −29 %, entera −10 %); HUT: 104.502 HUT Alta (foto 2026-10-05, sin fechas alta/baja); BCN opendata, Google Trends y atractivos bloqueados | ~0 (sin subagentes) |
 
+| Lista oficial Ley 11/2020 y zonas tensionadas (Cataluña) | 1 | hecho | — | 61 municipios (Ley 11/2020); 140 y 131 (zonas 2024) | 97.863 |
+
 **Hecho:** setup; literatura v3; D2 (scripts src/v3/fetch_*_v3.py, build_zonas_eventos_v3.py).
 **Pendiente de datos:** D1 INE (en curso); Barcelona por barrio (bloqueado, anti-bot); Madrid por distrito; GVA fianzas; SIU (solicitud); obligatoriedad RD 1312/2024 sin verificar.
 **Siguiente:** P-A, P-B, potencia y réplica GL (en curso) → make check → reviewer oleada 1 → go/no-go P-C.
-**Tokens de subagentes v3:** 1.040.211 / 3.500.000 (cierre al 80 %: 2.800.000).
+**Tokens de subagentes v3:** 1.138.074 / 3.500.000 (cierre al 80 %: 2.800.000).
 - 2026-10-10: cataluna_contencion_rentas_v3.csv generado (61 Ley 11/2020; 140 + 131 Ley 12/2023; 0 en 2025). Pendiente: DOGC no accesible; prórroga 2026 no verificada. Ver decisiones.md.

@@ -388,9 +388,10 @@ def t_ranking(holm: pd.DataFrame) -> pd.DataFrame:
         f"Coef. {N(c_cr.loc['d4_ln_ocupados','coef'])}; p bootstrap {N(c_cr.loc['d4_ln_ocupados','p_wcb'])} sin ajuste (no forma parte de Holm de H2); el modelo con ocupados no mejora al AR(4)",
         "BV/h2_resultados.csv; BV/oos_panel.csv; BD/tabla_resumen.csv")
     dm_ = _bd(bd, "P3-P4 (desde 2020)", "demografia", "compra")
+    d14 = _bd(bd, "P2-P4 (desde 2014)", "demografia", "compra")
     add("compra", "Demografía (20-34 y extranjera)", "EXPLORATORIO", dict(
-        B_signo_estable=bool(bdsg("P3-P4 (desde 2020)", "demografia", "compra")), E_bd_M1_M2=_bd_repl(bd, "P3-P4 (desde 2020)", "demografia", "compra")),
-        f"En BD desde 2020 la contribución cambia de signo entre M1 ({N(dm_.contrib_pp_M1,2)} pp) y M2 ({N(dm_.contrib_pp_M2,2)} pp): sin atribución estable", "BD/tabla_resumen.csv")
+        B_signo_estable=bool(bdsg("P3-P4 (desde 2020)", "demografia", "compra")), E_bd_M1_M2=_bd_repl(bd, "P2-P4 (desde 2014)", "demografia", "compra")),
+        f"En BD desde 2020 la contribución cambia de signo entre M1 ({N(dm_.contrib_pp_M1,2)} pp) y M2 ({N(dm_.contrib_pp_M2,2)} pp): sin atribución estable desde 2020; desde 2014 la demografía agregada SÍ se replica en M1 ({N(d14.contrib_pp_M1,2)}) y M2 ({N(d14.contrib_pp_M2,2)}) con IC95 que excluyen 0 (composición; EXPLORATORIO)", "BD/tabla_resumen.csv")
     bic = bi_id.query("spec=='principal' and res=='pre'").iloc[0]
     add("compra", "Inmigración instrumentada (BI)", "EXPLORATORIO", dict(
         A_p_ajustado=bic.p_wcb_1c < .05, B_signo_estable=False),
@@ -508,4 +509,13 @@ def t_registro(smoke: bool = False) -> tuple[pd.DataFrame, dict]:
     r["es_especificacion"] = ~es_pres
     r["n_total_especificaciones_v2"] = total
     por_rama = r[~es_pres].groupby("rama").size().reindex(L.RAMAS).to_dict()
-    return r, {"total": total, "por_rama": {k: int(v) for k, v in por_rama.items()}, "filas_presupuesto_excluidas": int(es_pres.sum())}
+    def cuenta(nodo, clave):
+        if isinstance(nodo, dict):
+            return (1 if clave in nodo else 0) + sum(cuenta(v, clave) for k_, v in nodo.items() if k_ != "DECISION")
+        return 0
+    res = {h: L.j(f"{r_}/{f}")["resultado"] for h, r_, f in (("H1", "BA", "h1_sellado.json"), ("H2", "BV", "h2_sellado.json"), ("H6", "BP", "h6_sellado.json"), ("H7", "BM", "h7_sellado.json"))}
+    n = {h: cuenta(res[h], "tau" if h == "H6" else "rmse") for h in res}
+    txt = (f"H6: {n['H6']} estimaciones de efecto (SDiD, SC, DiD en ln y Δ4, ponderada, 4 por provincia y sin 2023Q3-Q4); "
+           f"H1: {n['H1']}, H2: {n['H2']} y H7: {n['H7']} evaluaciones de predicción (principal y secundarias)")
+    r["nota_sellado"] = "no incluye las estimaciones de las evaluaciones selladas: " + txt
+    return r, {"sellado_n": txt, "total": total, "por_rama": {k: int(v) for k, v in por_rama.items()}, "filas_presupuesto_excluidas": int(es_pres.sum())}

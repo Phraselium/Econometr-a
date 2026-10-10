@@ -119,11 +119,11 @@ def s_resumen(holm, ha, oos, rank, reg, regmeta, k):
     ordenados = '; '.join(f"{x.hipotesis} {N(x.p_holm7)}" for x in holm.sort_values(['p_holm7','hipotesis']).itertuples())
     s = f"""## 1. Resumen ejecutivo
 
-**Alcance.** {L.entero(regmeta['total'])} especificaciones registradas en v2 (`output/v2/tablas/registro_v2.csv`; v1: {L.entero(v1_tot)}), sobre paneles provinciales ({K()['nprov']} provincias de entrenamiento, {K()['train_rango']}) con la muestra {K()['sell_vent']} y las provincias {K()['sell_codigos']} selladas. Lenguaje de **asociación**: ninguna pregunta alcanza el nivel CAUSAL y ninguna confirmatoria alcanza ASOCIACIÓN ROBUSTA.
+**Alcance.** {L.entero(regmeta['total'])} especificaciones registradas en v2 (`output/v2/tablas/registro_v2.csv`; v1: {L.entero(v1_tot)}), (sin contar las estimaciones de las evaluaciones selladas: {regmeta['sellado_n']}; ver anexo), sobre paneles provinciales ({K()['nprov']} provincias de entrenamiento, {K()['train_rango']}) con la muestra {K()['sell_vent']} y las provincias {K()['sell_codigos']} selladas. Lenguaje de **asociación**: ninguna pregunta alcanza el nivel CAUSAL y ninguna confirmatoria alcanza ASOCIACIÓN ROBUSTA.
 
 - **Hipótesis confirmatorias.** Ninguna de las 7 supera Holm sobre la familia de 7 (p ajustado por hipótesis: {ordenados}; el menor es {h.p_holm7.idxmin()}). Por el criterio uniforme todas quedan **EXPLORATORIO** (etiquetas fijadas en `docs/v2/decisiones.md`).
 - **Hecho predictivo de v2.** En la muestra sellada, el modelo demográfico de alquiler (H1) mejora al AR(4) de panel (RMSE {N(h1s['rmse'],4)} frente a {N(h1s['rmse_AR4'],4)}; DM-HLN {N(h1s['dm_vs_AR4'],2)}; p = {PV(h1s['p_vs_AR4'])}; p×7 = {N(7*h1s['p_vs_AR4'])}) y al ECM v1 (p = {PV(h1s['p_vs_ECM_v1'])}). Es un hecho fuera de muestra; **no** convierte la hipótesis conjunta de H1 (que exigía también signo + de la población extranjera, no cumplido: p_IUT {N(h.loc['H1','p_dentro_muestra'])}) en una asociación robusta de cada coeficiente. En las {K()['nsell']} provincias selladas solas (n = {int(L.j('BA/h1_sellado.json')['resultado']['selladas_ventana']['n'])}) no hay diferencia significativa.
-- **Ningún otro modelo supera al AR(4).** De {k['n_val']} configuraciones evaluadas en validación por bloques con embargo, {k['val_bh']} mejoran al AR(4) tras BH ({k['val_raw']} con p<0,05 sin corregir); de los {k['n_sel']} contrastes sellados principales, solo cumple ({sel_txt}).
+- **Ningún otro modelo supera al AR(4).** De {k['n_val']} configuraciones evaluadas en validación por bloques con embargo, {k['val_bh']} mejoran al AR(4) tras BH ({k['val_raw']} con p<0,05 sin corregir); de los {k['n_sel']} contrastes sellados principales, solo cumple {len(k['sel_ok'])} ({sel_txt}).
 - **Alquiler frente a compra.** Alquiler: la población de 20-34 años es la asociación más estable entre provincias (+, en todas las submuestras), pero no se traduce en explicar la subida agregada. Compra: el crédito hipotecario nuevo (+) y el coste de uso × exposición hipotecaria (−) se asocian con el precio real dentro de muestra, sin valor predictivo (H2 no se confirma en el sellado). Lo que más pesa en ambos mercados es el componente común no explicado: desde 2020 el alquiler acumula {N(ao.observado_pp,2)} pp y el componente común es {N(co.contrib_pp_M1,2)} pp ({N(co.pct_observado_M1,0)} % del observado, M1); desde 2014, {N(a14.observado_pp,2)} pp con {N(c14.contrib_pp_M1,2)} pp en el común. El precio real de compra varía {N(po.observado_pp,2,True)} pp desde 2020.
 - **Política.** Tope catalán de 2020 (H5): signo contrario y fallan pretendencias. Zonas tensionadas (H6): τ = {N(h6['tau'],4,True)} en ln del IPC de alquiler, p nominal {N(h6['p_perm_bilateral'])}, pero Holm-7 {N(h.loc['H6','p_holm7'])}; el DiD simple discrepa y hay heterogeneidad entre provincias: EXPLORATORIO.
 - **Contribuciones por periodo (BD).** {n_nr} de los componentes familia × periodo × mercado son «no robustos» (el IC95 excluye 0 solo en uno de los dos modelos o con signos opuestos): no son hallazgos.
@@ -171,7 +171,7 @@ El sellado es **procedimental** (permisos, carga obligatoria vía `holdout.load_
 **Interpolaciones y datos no validados (solo robustez, nunca en un modelo principal sin marca).**
 - Población (1 de enero) interpolada log-linealmente en T2-T4 en el panel trimestral: marcada; la robustez con T1 observado y con el panel anual coincide (`BA/resumen.md`). El padrón se publica con retraso, de modo que en tiempo real el dato no estaría disponible (`docs/v2/limitaciones.md`, C7 de BA).
 - Viviendas turísticas (INE) solo desde {K()['vut_desde']} (N temporal {K()['nt_vut']} en el módulo provincial); SERPAVI municipal (extraído de visor/PDF) se usa únicamente en el módulo exploratorio de turismo de BA, no en los modelos principales.
-- Vivienda protegida en el déficit: {obs.group(1) if obs else 'n/d'} viviendas observadas (2021Q1-2024Q2) más {sup} viviendas **supuestas** (ritmo constante, 2024Q3-2025Q4) en la ilustración de BO; el supuesto no se usa como dato.
+- Vivienda protegida en el déficit: {obs.group(1) if obs else 'n/d'} viviendas observadas en las provincias de entrenamiento y reescaladas por cobertura (cota inferior sin reescalar: {L.entero(L.c('BO/deficit_nacional.csv').query("variante.str.contains('cota inferior') and ref=='EPA'", engine='python').protegida.iloc[0])}; 2021Q1-2024Q2) más {sup} viviendas **supuestas** (ritmo constante, 2024Q3-2025Q4) en la ilustración de BO; el supuesto no se usa como dato.
 - Coste de uso aproximado (sin impuestos ni prima de riesgo; misma serie para todas las provincias). No hay datos provinciales de no residentes ni de inversores (`docs/v2/fuentes_fallidas.md`; licencias, titularidad catastral y AEAT: descargas fallidas).
 {src('output/v2/BA/resumen.md','output/v2/BO/resumen.md','docs/v2/fuentes_fallidas.md','docs/v2/viabilidad_g0.md')}
 **Fugas detectadas y corregidas** (`docs/v2/decisiones.md`):
@@ -190,7 +190,9 @@ def s_metodos(refs):
         if not m:
             raise KeyError(clave)
         e = r.loc[m[0]]
-        etq = "NO VERIFICADA" if e.estado.startswith("NO VERIFICADA") else ("cuartil no verificado" if e.cuartil_no_verificado else "verificada")
+        etq = e.estado if e.estado != "VERIFICADA" else "verificada"
+        if e.cuartil_no_verificado and e.estado == "VERIFICADA":
+            etq = "verificada; cuartil no verificado"
         return f"{m[0]} [{etq}]"
     s = f"""**Métodos y referencias metodológicas** (estado de verificación entre corchetes; detalle en la sección 12):
 - Comparación fuera de muestra: Diebold-Mariano {t('Diebold')} con la corrección de muestra finita {t('Harvey')}.
@@ -225,6 +227,9 @@ def s_alq_vs_compra(ctr):
     ex = L.c("BA/h1_principal.csv").set_index("var")
     arb = L.c("BV/arbitraje_lp.csv")
     ap = arb[(arb.h == 4) & (arb.desv == "media_total")].set_index("outcome")
+    _c = ctr[(ctr.mercado == 'compra')]
+    dm14 = _c[(_c.periodo == 'P2-P4 (desde 2014)') & (_c.familia == 'demografia')].iloc[0]
+    cp1 = _c[(_c.periodo == 'P1') & (_c.familia == 'credito_tipos_cu')].iloc[0]
     s = f"""## 3. Alquiler frente a compra: qué se asocia con cada uno y por periodo
 
 Todo en este apartado es **asociación** (EXPLORATORIO o DESCRIPTIVO). Crecimiento acumulado observado por periodo en pp de ln (alquiler nominal; valor tasado real) y coeficientes por periodo de las ecuaciones de BA y BV:
@@ -241,7 +246,7 @@ Todo en este apartado es **asociación** (EXPLORATORIO o DESCRIPTIVO). Crecimien
 - El crédito hipotecario nuevo (+) y el coste de uso × exposición hipotecaria (−) se asocian con el crecimiento del precio real en la muestra completa, con los signos esperados, pero el crédito no es significativo en 2014-2024 ni con el crédito retardado 4 trimestres (simultaneidad), y el modelo con ambas variables no predice mejor que un AR(4) (sección 6).
 - La asociación del coste de uso es fuerte en P1 y P3 y nula en P4: el alza de tipos de 2022 no se recoge con esta variable.
 - Arbitraje alquiler-compra (ratio precio/alquiler 1 unidad de log por encima de su media, h = 4): precio {N(ap.loc['y_precio','coef'])} (Holm m=16 {PV(ap.loc['y_precio','p_holm_m16'])}) y alquiler {N(ap.loc['y_alq','coef'])} (Holm {N(ap.loc['y_alq','p_holm_m16'])}); el ajuste es sobre todo vía precio; la desviación respecto de la media de toda la muestra incorpora reversión mecánica.
-- Demografía, empleo y oferta: sin atribución estable en BD entre M1 y M2.
+- Demografía agregada: desde 2014 es negativa en M1 ({N(dm14.contrib_pp_M1,2)} pp) y en M2 ({N(dm14.contrib_pp_M2,2)} pp) con IC95 que excluyen 0, es decir, se replica entre modelos (EXPLORATORIO; refleja la composición de la población, no un efecto); desde 2020 no hay atribución estable. El crédito/coste de uso en P1 también se replica ({N(cp1.contrib_pp_M1,2)} y {N(cp1.contrib_pp_M2,2)} pp). Empleo y oferta: sin atribución estable entre M1 y M2.
 
 **Común a ambos.** Lo que más pesa es lo no explicado por las familias medidas (efectos comunes de tiempo: tipos, expectativas, inflación, regulación nacional); ver sección 4.3.
 {src('output/v2/BA/resumen.md','output/v2/BV/resumen.md','output/v2/BI/resumen.md','output/v2/BV/arbitraje_lp.csv','output/v2/BA/h1_principal.csv','output/v2/BI/h3_principal.csv')}"""
@@ -261,8 +266,8 @@ def s_ecuaciones(ctr):
     bd_r = pd.DataFrame()
     ctr2 = ctr.copy()
     def tabla_ctr(mer, ventanas):
-        fam = ["demografia_20_34", "demografia_extranj", "empleo_renta", "credito_tipos_cu", "oferta", "politica", "explicado_familias", "comun_efectos_tiempo", "residuo", "observado"]
-        nombres = {"demografia_20_34": "Demografía: 20-34", "demografia_extranj": "Demografía: extranjera", "empleo_renta": "Empleo (ocupados)",
+        fam = ["demografia", "demografia_20_34", "demografia_extranj", "empleo_renta", "credito_tipos_cu", "oferta", "politica", "explicado_familias", "comun_efectos_tiempo", "residuo", "observado"]
+        nombres = {"demografia": "Demografía agregada (20-34 + extranjera)", "demografia_20_34": "Demografía: 20-34", "demografia_extranj": "Demografía: extranjera", "empleo_renta": "Empleo (ocupados)",
                    "credito_tipos_cu": "Crédito / coste de uso", "oferta": "Oferta (terminadas)", "politica": "Política (tope CAT)",
                    "explicado_familias": "Suma de familias", "comun_efectos_tiempo": "Común (efectos de tiempo)", "residuo": "Residuo", "observado": "Observado"}
         out = []
@@ -336,6 +341,8 @@ Contribución = coeficiente por periodo × variación media de la familia (media
 
 {tabla_ctr('alquiler', VENT)}
 
+**Corrección a la lectura de BD para compra:** la cita anterior dice «sin atribución estable entre M1 y M2»; con la tabla de ventanas, la demografía agregada desde 2014 sí se replica en M1 y M2 (y el crédito/coste de uso de P1), EXPLORATORIO; el resto no.
+
 **Compra (valor tasado real), por periodo (M1).**
 
 {tabla_periodos('compra')}
@@ -399,6 +406,8 @@ def s_oos(oos, k):
     h1sec = oos[(oos.rama == "BA") & (oos.tipo_muestra == "sellada_secundaria")]
     h1v = h1sec[h1sec.muestra.str.contains("solo provincias selladas")].iloc[0]
     h7 = L.j("BM/h7_sellado.json")["resultado"]["A"]["PRINCIPAL"]
+    hC = L.j("BM/h7_sellado.json")["resultado"]["C"]["PRINCIPAL"]
+    h2c = oos[(oos.rama == 'BV') & oos.muestra.str.contains('referencia ECM')].iloc[0]
     lstm = L.j("BM/lstm_resultado.json")
     sel_txt = ", ".join(f"{a[0]}: {a[1]}" for a in k["sel_ok"])
     vv = val[(val.DM_vs_AR4 > 0) & (val.p_vs_AR4 < .05) & (val.nota != 'línea base')]
@@ -411,7 +420,7 @@ Todo en la misma muestra por contraste, h = 4 trimestres (anual en BI), DM con c
 
 {tv}
 {src('output/v2/tablas/modelos_fuera_muestra.csv')}
-De {k['n_val']} filas de modelos con variables (incluidas {L.c('BM/lstm_panelB.csv').shape[0]} configuraciones de LSTM), **{k['val_bh']} mejoran al AR(4) con BH** ({k['val_raw']} con p < 0,05 sin corregir: {cruda}, que tampoco sobreviven a BH). El ECM v1 es peor que el AR(4) en los tres objetivos de BM: mejorarlo es un listón bajo. El LSTM no supera al gradient boosting (RMSE {N(lstm['RMSE_LSTM'],4)} frente a {N(lstm['RMSE_GB'],4)}; DM {N(lstm['DM_LSTM_vs_GB'],2)}; p = {PV(lstm['p'])}): resultado negativo.
+De {k['n_val']} filas de modelos con variables (incluidas {L.c('BM/lstm_panelB.csv').shape[0]} configuraciones de LSTM), **{k['val_bh']} mejoran al AR(4) con BH** ({k['val_raw']} con p < 0,05 sin corregir: {cruda}, que tampoco sobreviven a BH). El ECM v1 es peor que el AR(4) en los tres objetivos de BM: en entrenamiento mejorarlo es un listón bajo (en el sellado de compra no lo es: ver 6.2). El LSTM no supera al gradient boosting (RMSE {N(lstm['RMSE_LSTM'],4)} frente a {N(lstm['RMSE_GB'],4)}; DM {N(lstm['DM_LSTM_vs_GB'],2)}; p = {PV(lstm['p'])}): resultado negativo.
 
 ### 6.2 Muestra sellada (una evaluación por hipótesis; principal = {K()['nprov']+K()['nsell']} provincias, {K()['sell_vent']})
 
@@ -419,7 +428,9 @@ De {k['n_val']} filas de modelos con variables (incluidas {L.c('BM/lstm_panelB.c
 {src('output/v2/BA/h1_sellado.json','output/v2/BV/h2_sellado.json','output/v2/BM/h7_sellado.json','output/v2/tablas/modelos_fuera_muestra.csv')}
 **Lectura.** Ningún modelo supera al AR(4) salvo la mejora sellada del modelo demográfico de alquiler ({sel_txt}). En las {K()['nsell']} provincias selladas solas (n = {int(h1v.N)}) esa mejora no es significativa (p = {PV(h1v.p_vs_AR4)}): la potencia es baja y el resultado descansa en las {K()['nprov']} provincias de entrenamiento evaluadas en {K()['sell_vent']}. En entrenamiento el mismo modelo no mejoraba (p = {PV(oos[(oos.rama=='BA') & (oos.modelo=='B_AR4_mas_H1') & (oos.tipo_muestra=='validacion_entrenamiento')].p_vs_AR4.iloc[0])}). H2 (C3) y H7 (A, B, C) no cumplen la regla.
 
-**Observación NO pre-registrada (no se usa como evidencia).** En la ventana sellada nacional (n = {int(h7['n'])}) el ECM v1 tuvo RMSE {N(h7['rmse_ECM_v1'],4)} frente a {N(h7['rmse_AR4'],4)} del AR(4) y {N(h7['rmse'],4)} del TVP-VAR elegido para H7. Con n = 8 y sin que se hubiera fijado de antemano, no se interpreta; en entrenamiento el ECM v1 era peor que el AR(4) en los tres objetivos.
+**Contraste de H2 con el ECM v1** (49 provincias, {K()['sell_vent']}; `sec_c` de `BV/h2_sellado.json`): ECM v1 RMSE {N(h2c.RMSE_ECM_v1,4)} frente a {N(h2c.RMSE,4)} de C3; DM {N(h2c.DM_vs_ECM_v1,2)}; p = {PV(h2c.p_vs_ECM_v1)}: sin diferencia.
+
+**Observación NO pre-registrada (no se usa como evidencia).** En la sellada de compra provincial (52 provincias) el ECM v1 tuvo menor RMSE que el AR(4): {N(hC['rmse_ECM_v1'],4)} frente a {N(hC['rmse_AR4'],4)} (solo RMSE, sin contraste). En la ventana sellada nacional (n = {int(h7['n'])}) el ECM v1 tuvo RMSE {N(h7['rmse_ECM_v1'],4)} frente a {N(h7['rmse_AR4'],4)} del AR(4) y {N(h7['rmse'],4)} del TVP-VAR elegido para H7. Con n = 8 y sin que se hubiera fijado de antemano, no se interpreta; en entrenamiento el ECM v1 era peor que el AR(4) en los tres objetivos.
 {src('output/v2/BM/h7_sellado.json','output/v2/BM/resumen.md')}"""
     return s
 
@@ -480,7 +491,7 @@ def s_cambios(holm, regmeta):
          f"2SLS β alquiler {N(b3.loc['alq','b_2sls'],2)} (p WCB {N(b3.loc['alq','p_wcb_2c'])}); con GPSS de extranjeros 2002 {N(bi.loc[('gpss_extr02','alq'),'b'],2)} (p cluster {N(bi.loc[('gpss_extr02','alq'),'p_cluster'])}); placebo de alquiler pasado rechaza",
          "Con paneles provinciales, GPSS y placebos la inmigración **ya no es una asociación robusta con el alquiler**: solo el signo + es estable; magnitud no identificada; CAUSAL descartado"],
         ["Déficit de vivienda", f"{L.entero(d1p.deficit)} (2021T1-2025T4, EPA corregida, sin protegida); {L.entero(d1e.deficit)} (ECP)",
-         f"{L.entero(dn.loc['EPA corregida, sin protegida','deficit'])} sin protegida y {L.entero(dn.loc['EPA corregida, con protegida (49 prov. + reescalado)','deficit'])} con protegida (2021Q1-2024Q2, observadas)",
+         f"{L.entero(dn.loc['EPA corregida, sin protegida','deficit'])} sin protegida y {L.entero(dn.loc['EPA corregida, con protegida (49 prov. + reescalado)','deficit'])} con protegida (2021Q1-2024Q2; protegida observada y reescalada por cobertura; cota inferior {L.entero(dn.loc['EPA corregida, con protegida (solo 49 prov., cota inferior)','deficit'])})",
          "No comparable (periodo más corto por el sellado); con/sin protegida se separan observadas y supuestas; DESCRIPTIVO"],
         ["Predicción", f"El modelo preferido no mejora al AR(4) (DM p = {dmv1})", "Ninguna configuración mejora al AR(4) en validación (BH); solo H1 mejora en el sellado",
          "Validación en bloques con embargo y evaluación sellada única"],
@@ -505,6 +516,7 @@ def s_negativos():
     suelo = L.c("BO/suelo_proyecciones_locales.csv")
     tur = L.c("BA/turismo.csv").set_index("spec")
     bhj = linea_md("BI/resumen.md", r"^- BHJ a nivel de shock")
+    bhj_es = re.sub(r'(\d)\.(\d)', r'\1,\2', bhj.lstrip('- ').replace('p=0.000', 'p < 0,001')).replace('p=', 'p = ')
     ue = seccion_md("BO/resumen.md", r"4\. Panel UE")
     h5 = L.j("BP/resultado.json")
     s = f"""## 9. Resultados negativos (se reportan igual que los positivos)
@@ -514,7 +526,7 @@ def s_negativos():
 - **H7.** Ningún objetivo cumple la regla: A (nacional, TVP-VAR) {N(h7['A']['PRINCIPAL']['rmse'],4)} frente a {N(h7['A']['PRINCIPAL']['rmse_AR4'],4)}; B (alquiler, LightGBM) {N(h7['B']['PRINCIPAL']['rmse'],4)} frente a {N(h7['B']['PRINCIPAL']['rmse_AR4'],4)} (p = {N(h7['B']['PRINCIPAL']['p_vs_AR4'])}); C (compra, elastic net) {N(h7['C']['PRINCIPAL']['rmse'],4)} frente a {N(h7['C']['PRINCIPAL']['rmse_AR4'],4)}. *(`BM/h7_sellado.json`)*
 - **LSTM.** RMSE {N(lstm['RMSE_LSTM'],4)} frente a {N(lstm['RMSE_GB'],4)} del gradient boosting; DM {N(lstm['DM_LSTM_vs_GB'],2)} (p = {PV(lstm['p'])}); la selección del mejor LSTM entre 4 configuraciones es además optimista. *(`BM/lstm_resultado.json`)*
 - **H4 (oferta).** Falla submuestras: sin signos esperados en {', '.join(f"{x.spec.split('_',1)[1] if '_' in x.spec else x.spec} (p_IUT {N(x.p_IUT)})" for x in h4.itertuples() if not x.signos_ok)}; el IV no la respalda (J de Hansen rechaza) y el placebo de precio futuro es significativo. *(`BO/h4_robustez_submuestras.csv`, `BO/resumen.md`)*
-- **H3 con pocos grupos.** {bhj.lstrip('- ')} *(`BI/resumen.md`)*
+- **H3 con pocos grupos.** {bhj_es} *(`BI/resumen.md`)*
 - **Suelo.** La serie cruda no da señal (mínimo p Holm sobre 160 contrastes = {N(suelo[suelo.variante=='crudo'].p_Holm.min(),2)}); la variante «media4T», añadida a posteriori, da p Holm = {N(suelo[suelo.variante=='media4T'].p_Holm.min())} solo en P4 (h = 6, n pequeña): no es una señal anticipatoria robusta. *(`BO/suelo_proyecciones_locales.csv`)*
 - **Turismo (VUT).** Municipal: coef. {N(tur.loc['T_muni_base','coef'],5)} (p = {N(tur.loc['T_muni_base','p'])}), placebo de pretendencia p = {N(tur.loc['T_muni_PLACEBO_pretend','p'])}; provincial: Δ ln VUT p = {N(tur.loc['T_prov_dlnVUT','p'])} frente a Δ por 1.000 hab. p = {N(tur.loc['T_prov_dVUTpc','p'],4)} con N temporal 6: depende de la métrica. *(`BA/turismo.csv`)*
 - **Panel UE.** {ue.replace(chr(10), ' ')} *(`BO/resumen.md`, sección 4)*
@@ -611,7 +623,7 @@ def s_anexo(reg, regmeta):
 
 {md_df(pr)}
 
-Total v2: {L.entero(regmeta['total'])} (excluye {regmeta['filas_presupuesto_excluidas']} filas de presupuesto declarado de configuraciones). Cada rama registra sus especificaciones en `output/v2/<rama>/registro.csv` (Registry de `econ_utils`); la concatenación con columna `rama` es `output/v2/tablas/registro_v2.csv`.
+Total v2: {L.entero(regmeta['total'])} (excluye {regmeta['filas_presupuesto_excluidas']} filas de presupuesto declarado de configuraciones). **Las {L.entero(regmeta['total'])} no incluyen las estimaciones de las 4 evaluaciones selladas** (una por hipótesis, ejecutadas por el orquestador con `holdout.evaluate`, no por las ramas): {regmeta['sellado_n']}. No se añaden a `registro_v2.csv` porque el Registry de cada rama se cerró antes del sellado; sus resultados están en los `*_sellado.json` y en `modelos_fuera_muestra.csv`. Cada rama registra sus especificaciones en `output/v2/<rama>/registro.csv` (Registry de `econ_utils`); la concatenación con columna `rama` es `output/v2/tablas/registro_v2.csv`.
 
 Reproducibilidad: `python3 src/v2/bs_run.py` (1 hilo, SEED = {L.SEED}, sin red) regenera `output/v2/BS/*`, `output/v2/tablas/*.csv` y este informe; dos ejecuciones dan md5 idénticos. Todas las cifras se leen de los ficheros citados.
 {src('output/v2/tablas/registro_v2.csv')}"""
@@ -622,7 +634,7 @@ def construir(holm, ha, oos, ctr, rank, refs, reg, regmeta, bsdir) -> str:
     k = pack(holm, ha, oos, ctr, rank, refs, reg, regmeta)
     cab = f"""# Determinantes del precio de la vivienda en España: informe v2 (síntesis BS)
 
-Documento generado por `src/v2/bs_run.py` a partir de las salidas versionadas de las ramas BA, BV, BI, BO, BP, BM y BD (`output/v2/`). Ninguna cifra está escrita a mano: cada bloque cita su fichero de origen. Escala de evidencia: CAUSAL > ASOCIACIÓN ROBUSTA > EXPLORATORIO > DESCRIPTIVO; **ninguna conclusión de este informe supera EXPLORATORIO** y se evita el lenguaje causal. Inferencia: EE cluster por provincia con wild cluster bootstrap (Webb) o HAC(4); comparación de modelos en la misma muestra frente a AR(4) y ECM v1 (Diebold-Mariano con corrección Harvey-Leybourne-Newbold).
+Documento generado por `src/v2/bs_run.py` a partir de las salidas versionadas de las ramas BA, BV, BI, BO, BP, BM y BD (`output/v2/`). Las cifras se insertan desde ficheros versionados y cada bloque cita su origen; las pocas excepciones son literales citados de documentos (p. ej. 0,17 / 0,174 y 0,035 de `docs/v2/decisiones.md`, 0,029 del script previo de Holm-7, el MDE y el 0,45 que recogen los resúmenes de rama) o convenciones (umbral de 0,05). Escala de evidencia: CAUSAL > ASOCIACIÓN ROBUSTA > EXPLORATORIO > DESCRIPTIVO; **ninguna conclusión de este informe supera EXPLORATORIO** y se evita el lenguaje causal. Inferencia: EE cluster por provincia con wild cluster bootstrap (Webb) o HAC(4); comparación de modelos en la misma muestra frente a AR(4) y ECM v1 (Diebold-Mariano con corrección Harvey-Leybourne-Newbold).
 
 """
     partes = [s_resumen(holm, ha, oos, rank, reg, regmeta, k), s_datos(regmeta), s_metodos(refs), s_alq_vs_compra(ctr), s_ecuaciones(ctr), s_ranking(rank), s_oos(oos, k),

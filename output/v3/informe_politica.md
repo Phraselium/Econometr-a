@@ -6,7 +6,7 @@ Este documento presenta los resultados del proyecto v3 para quienes diseñan o e
 - [C1] Balance hogares − viviendas nuevas en 2021-2025: +701.000 viviendas (rango 560.000-969.000). El signo depende del año de partida: con 2012 como base no está determinado.
 - [C1] Emancipación: viven con sus padres el 40,3-50,2 % de las personas de 25-34 años. La propiedad entre los hogares de menos de 35 años es del 30,7-31,8 % (2022), entre 24,2 y 34,0 puntos menos que en 2008.
 - [C1] Esfuerzo: el precio de 80 m² equivale a 3,0-4,1 años de renta media del hogar (2023).
-- [C1] Vacías: sobre 277 municipios con dato, el 27,5-40,3 % está en el tercil alto de presión de precios y el 20,7-28,3 % en el tercil bajo.
+- [C1] Vacías: en las muestras municipales con dato (277 a 1.806 municipios según la definición de presión), el 27,5-40,3 % está en el tercil alto de presión de precios y el 20,7-28,3 % en el tercil bajo.
 - [C4, fuente única] El Censo 2021 estima 3,8 millones de viviendas vacías. Se terminaron 89.000-101.000 viviendas al año en 2021-2025 (certificados de fin de obra del MIVAU).
 
 ## 2. Qué dice la evidencia sobre cada palanca

@@ -23,3 +23,5 @@
 4. *Módulo València.* La ciudad y la provincia usan medidas de alquiler distintas (SERPAVI e IPC), y la ciudad y las secciones, periodos distintos (2020-2024 y 2021M08-2024M08). Las filas no son comparables entre sí.
 5. *V05 y la ventana de A1.* El veredicto de V05 (PARCIALMENTE) depende de las ventanas C1 de A1, elegidas tras ver la disponibilidad de fuentes (limitación 7 de la oleada 1).
 6. *Réplicas de García-López con 8-16 clústeres.* Las p sin ajustar pueden engañar: todas las p de Holm superan 0,04.
+7. *Base municipal del reparto de vacías.* El rango 27,5-40,3 % del tercil alto combina el rango de medida (27,5-36,0 %, 277 municipios con valor tasado) y el de definición de presión (30,4-40,3 %, entre 277 y 1.806 municipios). No se calcula sobre una base común de municipios.
+8. *Compraventas de extranjeros (V14).* El rango 9,6-15,0 % (MIVAU 9,6-11,0 %; Registradores 13,8-15,0 %) se lee de los datos procesados de la v2, no de un hecho de output/v3/PA. Las dos fuentes no se solapan, y el rango recoge esa discrepancia.

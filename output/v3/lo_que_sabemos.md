@@ -15,7 +15,7 @@ Ningún resultado de este proyecto alcanzó C3. El detalle y las fuentes están 
 - [C1] Viven con sus padres el **40,3-50,2 %** de las personas de 25 a 34 años (Eurostat/ECV y EPA).
 - [C1] La propiedad de la vivienda entre los hogares de menos de 35 años era del **30,7-31,8 %** en 2022, **24,2 a 34,0 puntos menos** que en 2008 (EFF y ECV). En los hogares de 65 años o más es del 83,0-89,4 %.
 - [C1] El precio de una vivienda de 80 m² equivale a **3,0-4,1 veces** la renta anual media de un hogar en 2023 (Atlas de renta del INE, con valor tasado y precio registral).
-- [C1] Sobre los 277 municipios con dato, entre el **27,5 % y el 40,3 %** de las viviendas vacías están en los municipios del tercil alto de presión de precios. En el tercil bajo está entre el 20,7 % y el 28,3 %. El rango recoge las dos medidas de vacías y las definiciones de presión.
+- [C1] En las muestras municipales con dato (277 a 1.806 municipios según la definición de presión), entre el **27,5 % y el 40,3 %** de las viviendas vacías están en los municipios del tercil alto de presión de precios. En el tercil bajo está entre el 20,7 % y el 28,3 %. El rango recoge las dos medidas de vacías y las definiciones de presión.
 - [C1] Las personas de nacionalidad extranjera hicieron entre el **9,6 % y el 15,0 %** de las compraventas de vivienda en 2023-2025 (MIVAU y Registradores; output/v3/verificador/fichas/V14.json).
 
 **Cotas: cuánto puede pesar cada factor como máximo**

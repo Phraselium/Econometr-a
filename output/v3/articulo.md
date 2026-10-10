@@ -7,7 +7,7 @@
 - C4, exploratorio.
 
 Sobre esa base examinamos los factores más citados en el debate y simulamos soluciones con rangos de parámetros.
-- **Hechos (C1).** Entre 2021 y 2025 los hogares crecieron en 560.000-969.000 más que las viviendas nuevas. La propiedad de los hogares menores de 35 años cayó 24,2-34,0 puntos desde 2008. Entre el 27,5 % y el 40,3 % de las viviendas vacías de los 277 municipios con dato está en el tercil de mayor presión de precios.
+- **Hechos (C1).** Entre 2021 y 2025 los hogares crecieron en 560.000-969.000 más que las viviendas nuevas. La propiedad de los hogares menores de 35 años cayó 24,2-34,0 puntos desde 2008. Entre el 27,5 % y el 40,3 % de las viviendas vacías de las muestras municipales con dato (277 a 1.806 municipios) está en el tercil de mayor presión de precios.
 - **Cotas (C2).** El aumento de viviendas turísticas de 2020 a 2024 equivale como máximo al 2,7 % del stock de alquiler.
 - **Efectos.** Ningún diseño alcanzó C3. Los topes de alquiler de Cataluña (2020-2022) se asocian a rentas un 5,4 % menores en los contratos nuevos (C4), en línea con la literatura replicada, sin alcanzar C3. La asociación entre viviendas turísticas y alquiler por sección censal es de +0,0010 log-puntos por punto de VUT en la muestra sellada (IC95 −0,0007 a +0,0028), sin distinguirse de cero. En la simulación, solo las medidas que añaden viviendas donde hay demanda tienen un signo estable en toda la rejilla de supuestos; la simulación no incluye costes.
 
@@ -52,7 +52,7 @@ Fuentes: output/v3/PA y output/v3/PB.
 | Hogares que se formarían con la emancipación de referencia | 188.000-748.000 | C2 |
 | Propiedad de hogares de menos de 35 años (2022) | 30,7-31,8 %; −24 a −34 puntos frente a 2008 | C1 |
 | Precio/renta (80 m², 2023) | 3,0-4,1 años | C1 |
-| Vacías en el tercil alto de presión (277 municipios con dato; dos medidas) | 27,5-40,3 % (tercil bajo 20,7-28,3 %) | C1 |
+| Vacías en el tercil alto de presión (277 a 1.806 municipios con dato; dos medidas y definiciones) | 27,5-40,3 % (tercil bajo 20,7-28,3 %) | C1 |
 | Viviendas vacías, total (Censo 2021, consumo eléctrico) | 3,8 millones | C4 (fuente única) |
 | Razón precio/alquiler 2015-2024 | dirección no establecida (−9 % a +44 %) | C1 (rango) |
 | Compraventas por personas de nacionalidad extranjera, 2023-2025 (output/v3/verificador/fichas/V14.json) | 9,6-15,0 % | C1 |

@@ -139,8 +139,8 @@ Generado por `make verificador` a partir de output/v3. Cada ficha evalúa la afi
 |---|---|
 | Veredicto | **PARCIALMENTE** |
 | Capa de la evidencia | C1 |
-| Magnitud | Censo 2021: 3,83 millones de viviendas vacías (estimación por consumo eléctrico, fuente única, C4). Sobre los 277 municipios con dato, el 27,5-40,3 % de las vacías está en el tercil alto de presión de precios y el 20,7-28,3 % en el tercil bajo (C1, dos medidas). |
-| Intervalo | 27,5-40,3 % en el tercil alto de presión (277 municipios) |
+| Magnitud | Censo 2021: 3,83 millones de viviendas vacías (estimación por consumo eléctrico, fuente única, C4). En las muestras municipales con dato (277 a 1.806 municipios según la definición), el 27,5-40,3 % de las vacías está en el tercil alto de presión de precios y el 20,7-28,3 % en el tercil bajo (C1, dos medidas). |
+| Intervalo | 27,5-40,3 % en el tercil alto de presión (277 a 1.806 municipios) |
 | Cota | — |
 | Literatura | — |
 | Regla del veredicto | La cifra de millones es de fuente única (C4); el reparto por presión (C1) sitúa en el tercil alto entre el 27,5 % y el 40,3 %; la fracción movilizable es un supuesto (P-D). PARCIALMENTE: hay muchas vacías, pero su movilización para «resolver» no está evaluada. |

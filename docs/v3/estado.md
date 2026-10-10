@@ -24,8 +24,12 @@
 
 | P-D simulaciones de soluciones | 3 | hecho | C2/C4 | +104-413 mil viv/año necesarias (frente a 89-101 mil terminadas): brecha positiva en todo el rango (C2); topes: signo del neto depende de L y ε (C4); vacías: 4,6-51 % de la brecha | 139.692 |
 
+| Revisión oleada 2 (REHACER W1-W10 → APROBAR it. 2) y correcciones | 2 | APROBAR | — | regla común del verificador; estándar único C4 para traducciones a precio | 154.391 + correcciones 35.309 |
+| Entregables: lo_que_sabemos, articulo, informe_politica (València), verificador | 3 | hecho | — | 14 fichas: 0 RESPALDADA, 3 PARCIALMENTE, 11 SIN EVIDENCIA SUFICIENTE | 0 (orquestador) |
+| Revisión oleada 3 (REHACER Z1-Z8 → APROBAR it. 2) | 3 | APROBAR | — | limitaciones v3 completadas | 126.108 |
+
 **Hecho:** setup; literatura v3; D2 (scripts src/v3/fetch_*_v3.py, build_zonas_eventos_v3.py).
 **Pendiente de datos:** D1 INE (en curso); Barcelona por barrio (bloqueado, anti-bot); Madrid por distrito; GVA fianzas; SIU (solicitud); obligatoriedad RD 1312/2024 sin verificar.
-**Siguiente:** reviewer oleada 2 → entregables (lo_que_sabemos, articulo, informe_politica + València) → reviewer oleada 3 → cierre make all ×2.
-**Tokens de subagentes v3:** 1.790.521 / 3.500.000 (cierre al 80 %: 2.800.000).
+**Siguiente:** cierre: make all sin red ×2 en clon limpio sobre el HEAD final; resumen final.
+**Tokens de subagentes v3:** 2.106.329 / 3.500.000 (cierre al 80 %: 2.800.000).
 - 2026-10-10: cataluna_contencion_rentas_v3.csv generado (61 Ley 11/2020; 140 + 131 Ley 12/2023; 0 en 2025). Pendiente: DOGC no accesible; prórroga 2026 no verificada. Ver decisiones.md.

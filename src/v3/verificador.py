@@ -288,9 +288,9 @@ def fichas(ev) -> list[dict]:
         enunciado="Hay millones de viviendas vacías que se podrían movilizar para resolver el problema.",
         capa="C1",
         magnitud=("Censo 2021: 3,83 millones de viviendas vacías (estimación por consumo eléctrico, fuente única, C4). "
-                  "Sobre los 277 municipios con dato, el 27,5-40,3 % de las vacías está en el tercil alto de presión de "
+                  "En las muestras municipales con dato (277 a 1.806 municipios según la definición), el 27,5-40,3 % de las vacías está en el tercil alto de presión de "
                   "precios y el 20,7-28,3 % en el tercil bajo (C1, dos medidas)."),
-        intervalo="27,5-40,3 % en el tercil alto de presión (277 municipios)",
+        intervalo="27,5-40,3 % en el tercil alto de presión (277 a 1.806 municipios)",
         cota="—", literatura="—",
         veredicto="PARCIALMENTE",
         regla=("La cifra de millones es de fuente única (C4); el reparto por presión (C1) sitúa en el tercil alto entre "

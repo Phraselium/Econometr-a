@@ -175,3 +175,29 @@ lo_que_sabemos.md, en la viñeta C4 sobre VUT: «se asocia a un alquiler mayor e
 - **Z8. Limitaciones.** Añadir las seis que faltan (sección anterior).
 
 Tras aplicar Z1-Z8, una comprobación de texto basta para aprobar (`make check` y una relectura de las cifras tocadas). No hace falta volver a estimar ni abrir la muestra sellada.
+
+## Iteración 2 (HEAD `22e708e`)
+
+Alcance: solo la comprobación de texto que pedí en la iteración 1. He verificado que Z1-Z8 están aplicados y he releído contra su fuente las cifras que se han tocado. `make check` da 0 errores en check_texto, según el coordinador; no lo he vuelto a ejecutar.
+
+| Z | Estado | Comprobación |
+|---|---|---|
+| Z1 | Aplicado | Las cifras corregidas son 79,7 % y 20,3 %. La fila provincial da 0 % y lleva la advertencia de medidas distintas. La nota de periodos está. Las oleadas se comparan dentro del mismo mes: agosto (6.899, 5.616, 7.976) y mayo (6.553, 5.393), y las cinco cifras coinciden con data/raw/ine_v2_vut.csv (municipio de València). La fila de secciones da 28,3 % (173 de 575) y coincide con b1_no_explica_secciones.csv. La réplica de García-López lleva p_Holm 0,37 y G = 15. «Pequeño» ya no aparece. |
+| Z2 | Aplicado | V05 pasa a PARCIALMENTE con un criterio de periodo común a todas las fichas. El recuento del §7 queda en 0/3/11. «No se puede afirmar» lista las cuatro atribuciones. |
+| Z3 | Aplicado | Las vacías se dan con un rango de 27,5-40,3 % frente al tercil bajo (20,7-28,3 %). «Solo» se ha eliminado. Los 3,8 millones pasan a C4 de fuente única. |
+| Z4 | Aplicado con un residuo | Las terminadas y la caída de VUT desde 2024 pasan a C4. Las compraventas de extranjeros siguen en C1, pero su fuente es la ficha V14 (data/processed v2), no una salida de PA. |
+| Z5 | Aplicado | Las cifras C4 hablan de «variación asociada». Se indica que el IC95 incluye 0 en el entrenamiento y en el sellado. Los adjetivos se han sustituido por cifras. |
+| Z6 | Aplicado | Las solicitudes figuran como «redactada y pendiente de presentar». |
+| Z7 | Aplicado | Hay referencias con DOI, estado y cuartil en el §11. García-López se cuantifica por pasos. En JMS se declara que, en los pasos 4 y 5, el grupo de control y el periodo cambian a la vez. La fila de contratos da CS y TWFE. |
+| Z8 | Aplicado | Se han añadido seis limitaciones en la sección de la oleada 3. |
+
+Residuos menores (no bloquean):
+- **R1.** «Sobre los 277 municipios con dato, 27,5-40,3 %». Según PA A3, el rango de medida (27,5-36,0 %) usa 277 municipios, pero el rango de definición (30,4-40,3 %) usa entre 277 y 1.806. La frase aparece en lo_que_sabemos, el informe, el artículo, V08 y las limitaciones.
+- **R2.** La cifra C1 de compraventas de extranjeros (9,6-15,0 %) no tiene un hecho en output/v3/PA. Su origen es la ficha V14, que lee data/processed v2.
+
+Texto propuesto para docs/v3/limitaciones.md (sección «oleada 3»):
+
+> 7. *Base municipal del reparto de vacías.* El rango 27,5-40,3 % del tercil alto combina el rango de medida (27,5-36,0 %, 277 municipios con valor tasado) y el de definición de presión (30,4-40,3 %, entre 277 y 1.806 municipios). No se calcula sobre una base común de municipios.
+> 8. *Compraventas de extranjeros (V14).* El rango 9,6-15,0 % (MIVAU 9,6-11,0 %; Registradores 13,8-15,0 %) se lee de los datos procesados de la v2, no de un hecho de output/v3/PA. Las dos fuentes no se solapan, y el rango recoge esa discrepancia.
+
+### Veredicto de la iteración 2: **APROBAR**, condicionado a añadir R1 y R2 a docs/v3/limitaciones.md con el texto propuesto.

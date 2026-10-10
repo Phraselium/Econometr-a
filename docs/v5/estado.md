@@ -35,5 +35,5 @@
 | Revisión módulo E | E | REHACER (B1-B3) → corregido; APROBADO (reserva) | — | docs/v5/revision_E.md | 69.865 (reserva) |
 
 **Hecho:** módulos R, A, B, C, D y E aprobados; E9-E12 parciales (solicitudes, licencias, CITATION, zenodo, CHANGELOG, tareas del autor, correo, calendario).
-**Siguiente:** cierre (make all ×2 sin red en clon limpio, etiqueta v5.0, resumen).
+**Siguiente:** v5 CERRADA. `make all` ×2 sin red en clon limpio: rc=0 y md5 idénticos salvo tiempos.json. Pendiente del autor: docs/v5/tareas_autor.md (revisión externa, replicación de las 15 cifras, licencias, DOI, etiquetas, solicitudes).
 **Tokens de subagentes v5:** 3.093.637 / 4.200.000 (R: 601.209 / 900.000; A: 471.653 / 700.000; B: 523.477 / 1.000.000; C: 416.137 / 700.000; D: 499.772 / 600.000; E: 511.524 / 600.000) (corte global al 80 %: 3.360.000; reserva 420.000, de la que se usan 69.865).

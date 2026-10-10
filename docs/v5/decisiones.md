@@ -234,3 +234,19 @@
   - Saludo del correo.
 - Queda anotado, sin corregir, que el artículo del Colegio tiene unas 1.740 palabras de prosa sin las citas entre paréntesis (2.040 con ellas). Ampliarlo es tarea del autor antes del envío.
 - **El módulo E queda APROBADO.** E llegó al 85 % de su límite; la revisión y estas correcciones se cargan a la reserva de cierre.
+
+## Cierre v5
+- Doble ejecución de `make all` sin red (HTTPS_PROXY a 127.0.0.1:9, un hilo) en un clon limpio de 9ab13fd:
+  - rc=0 las dos veces (1.852 s y 1.799 s);
+  - md5 idénticos en output/ y data/processed, salvo `output/v2/BM/tiempos.json`;
+  - todas las salidas v1-v5 coinciden con lo versionado.
+- Módulos R, A, B, C, D y E APROBADOS por el revisor, cada uno tras una ronda de correcciones. Todo lo aprobado está en r5/main y en la rama remota designada.
+- La etiqueta `v5.0` se crea en local. El remoto rechaza las etiquetas (docs/v5/bloqueos.md); publicarla es tarea del autor.
+- Tokens de subagentes: 3.093.637 de 4.200.000 (74 %), por debajo del corte global (3.360.000). Por módulo:
+  - R 601.209
+  - A 471.653
+  - B 523.477
+  - C 416.137
+  - D 499.772
+  - E 511.524
+  - Revisión E (reserva): 69.865

@@ -9,7 +9,7 @@ Este README sigue el modelo de los editores de datos (AEA Data Editor / Social S
 |---|---|
 | Orden principal | `make all` (data → clean → models → report → verificador) |
 | Red | No es necesaria. Las descargas están en caché en data/raw; `make data` solo vuelve a descargar con `FORCE=1`. |
-| Tiempo | ≈22 minutos por ejecución completa (`make all`), medido dos veces en un clon limpio con un solo hilo: 1.333 s y 1.312 s. |
+| Tiempo | ≈30 minutos por ejecución completa (`make all`, v1-v5), medido dos veces en un clon limpio con un solo hilo: 1.852 s y 1.799 s. |
 | Determinismo | Un solo hilo (OMP, OpenBLAS y MKL = 1) y SEED = 20261010. Dos ejecuciones en clon limpio dan md5 idénticos en output/ y data/processed, salvo `output/v2/BM/tiempos.json` (tiempos de reloj). |
 | Comprobaciones | `make check`: ruff, pytest, control de texto (neutralidad, capas, verbos de atribución) y `src/v5/check_v5.py`. check_v5 comprueba: toda cifra de los entregables v5 sale de output/v5/cifras_clave.csv; la suma provincial es igual a la nacional; los recuentos usan solo documentos oficiales; ningún script lee ficheros no versionados; ningún tope aparece en C3. `make verificador`: regenera las fichas v3, v4 y v5. |
 | Software | Python 3.13. Versiones fijadas en `requirements.lock` (154 paquetes; incluye torch CPU para un módulo de v2). Programa del sistema: `pdftotext` (poppler-utils), que usa `src/v5/a5_run.py` para leer los programas oficiales. |

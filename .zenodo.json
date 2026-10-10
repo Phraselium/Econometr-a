@@ -1,0 +1,11 @@
+{
+  "title": "Vivienda en España: base de evidencia reproducible (v5)",
+  "upload_type": "software",
+  "description": "Base de evidencia independiente y reproducible sobre la vivienda en España, por provincias y con un módulo para València. Cada resultado se clasifica en una de cuatro capas: hechos con al menos dos fuentes, cotas, efectos identificados y resultados exploratorios. Incluye un informe técnico, un working paper, un verificador de afirmaciones y el código y los datos para reproducirlo todo sin conexión a la red con `make all`.",
+  "creators": [{"name": "Romero, Borja", "affiliation": "Economista independiente"}],
+  "version": "5.0",
+  "language": "spa",
+  "license": "CC-BY-4.0",
+  "keywords": ["vivienda", "España", "precios de la vivienda", "alquiler", "déficit de vivienda", "reproducibilidad"],
+  "notes": "La licencia CC BY 4.0 cubre el código y los textos propios. Los datos de terceros conservan sus licencias: véase docs/v5/licencias_datos.md."
+}

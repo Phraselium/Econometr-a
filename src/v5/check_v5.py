@@ -65,7 +65,7 @@ def cifras() -> list[str]:
     return err
 
 
-SUMAS_REQUERIDAS = ("A4", "B1")   # módulos con tablas provinciales declaradas
+SUMAS_REQUERIDAS = ("A4", "B1", "B2", "D2")   # módulos con tablas provinciales declaradas
 
 
 def sumas() -> list[str]:

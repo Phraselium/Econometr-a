@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Si usa este trabajo, cítelo así."
+title: "Vivienda en España: base de evidencia reproducible (v5)"
+type: software
+authors:
+  - family-names: Romero
+    given-names: Borja
+    affiliation: "Economista independiente"
+version: "5.0"
+date-released: "2026-10-10"
+license: "CC-BY-4.0"
+keywords: [vivienda, España, precios, alquiler, déficit de vivienda, econometría, reproducibilidad]
+abstract: "Base de evidencia independiente y reproducible sobre la vivienda en España por provincias, con un módulo para València. Cubre el déficit y la necesidad de vivienda 2026-2035, las diferencias territoriales, los precios y el alquiler triangulados, la comparación europea, una matriz de instrumentos de política y un verificador de afirmaciones. Cada resultado se clasifica en cuatro capas de evidencia."

@@ -1,0 +1,50 @@
+{
+ "rama": "B4",
+ "pregunta": "¿Cuánto de la variación del precio de compra y del alquiler (stock y contratos nuevos) se asocia con cada familia (demografía, renta y empleo, financiación, oferta, turismo y no residentes, inversión, residuo) y es estable el orden entre métodos y periodos?",
+ "capa": "C4 (C2 solo en las cotas de cantidad de v3 PB)",
+ "datos": "output/v5/B3 (Shapley y coeficientes provinciales), output/v2/BD y BV (descomposición temporal), output/v3/PB (cotas), output/v5/A23 (observados), output/v5/R1A y R1B. Sin datos nuevos ni reestimación.",
+ "N": {
+  "entradas": 71,
+  "huecos": 29,
+  "comparaciones_estabilidad": 37
+ },
+ "metodo": "Triangulación de salidas existentes: v2 (pp de Δln, FE, M1/M2), B3 (cuota de R2 y beta estandarizado, transversal), v3 (cotas). Unidades no sumables entre métodos; rango por celda = mín-máx entre variantes de un método. Estabilidad = tau de Kendall del orden de las 4 familias comunes.",
+ "estimacion": {
+  "observados_v2_pp": {
+   "alquiler_stock|2015-2019": 1.5806978,
+   "alquiler_stock|2019-2025": 5.6646282,
+   "alquiler_stock|2015-2025": 7.245326,
+   "compra|2015-2019": 3.3929412,
+   "compra|2019-2025": -4.4990819,
+   "compra|2015-2025": -1.1061406
+  },
+  "estabilidad": {
+   "veredicto": "contribuciones no estables",
+   "tau_min": -0.7071067811865477,
+   "tau_max": 1.0,
+   "frac_tau_ge_067": 0.21621621621621623,
+   "umbral": 0.67
+  },
+  "alquiler_nuevos": "sin descomposición por familia en ninguna fuente: solo conciliación contable de A23 (IPVA 2021-2024: existentes 7,06, nuevos 3,54, composición -0,38 de 10,23 pts)",
+  "inversion": "sin dato: grandes tenedores en espera de solicitud de transparencia (v3 PB B3)"
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO / DESCRIPTIVO: contribuciones contables y cotas, no efectos. Nada es C3.",
+ "diagnosticos": {
+  "estabilidad": "contribuciones no estables",
+  "ventanas": "Ventanas de v2 desplazadas (2014Q1-2024Q1; P4 hasta 2024Q1) frente a 2015-2025; compra v2 es REAL, A23 es nominal.",
+  "multiplicidad": "No se contrasta ninguna hipótesis nueva; los p de B3 conservan su ajuste original."
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "No aplica validación fuera de muestra: no se estima nada; AR(4)/ECM v1 y DM no procede.",
+  "Contribución contable no es efecto: v2 asigna coef×variación media; B3 reparte R2 entre provincias; v3 da máximos bajo supuestos.",
+  "Cuando B3 y v2 discrepan se reportan ambos (ver tabla larga).",
+  "Capa de cada celda = la menor de sus componentes."
+ ]
+}

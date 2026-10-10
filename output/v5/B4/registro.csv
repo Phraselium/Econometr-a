@@ -1,0 +1,72 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+B4,alquiler_stock|2015-2019|demografica|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2019Q4,,0,,,,,-3.59083765,,contribucion_contable
+B4,alquiler_stock|2015-2019|renta_empleo|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2019Q4,,0,,,,,0.1233165,,contribucion_contable
+B4,alquiler_stock|2015-2019|financiacion_tipos|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2019Q4,,0,,,,,0.0111454,,contribucion_contable
+B4,alquiler_stock|2015-2019|oferta_suelo|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2019Q4,,0,,,,,0.01864345,,contribucion_contable
+B4,alquiler_stock|2015-2019|residuo|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2019Q4,,0,,,,,5.0184302,,contribucion_contable
+B4,alquiler_stock|2019-2025|demografica|v2_BD_temporal,triangulacion_sin_reestimacion,2020Q1-2024Q1,,0,,,,,0.38748255,,contribucion_contable
+B4,alquiler_stock|2019-2025|renta_empleo|v2_BD_temporal,triangulacion_sin_reestimacion,2020Q1-2024Q1,,0,,,,,0.0392643,,contribucion_contable
+B4,alquiler_stock|2019-2025|financiacion_tipos|v2_BD_temporal,triangulacion_sin_reestimacion,2020Q1-2024Q1,,0,,,,,-0.06989334999999999,,contribucion_contable
+B4,alquiler_stock|2019-2025|oferta_suelo|v2_BD_temporal,triangulacion_sin_reestimacion,2020Q1-2024Q1,,0,,,,,0.0088847,,contribucion_contable
+B4,alquiler_stock|2019-2025|residuo|v2_BD_temporal,triangulacion_sin_reestimacion,2020Q1-2024Q1,,0,,,,,5.3344027,,contribucion_contable
+B4,alquiler_stock|2015-2025|demografica|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2024Q1,,0,,,,,-3.2033550999999996,,contribucion_contable
+B4,alquiler_stock|2015-2025|renta_empleo|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2024Q1,,0,,,,,0.1625807,,contribucion_contable
+B4,alquiler_stock|2015-2025|financiacion_tipos|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2024Q1,,0,,,,,-0.05874794999999999,,contribucion_contable
+B4,alquiler_stock|2015-2025|oferta_suelo|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2024Q1,,0,,,,,0.02752815,,contribucion_contable
+B4,alquiler_stock|2015-2025|residuo|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2024Q1,,0,,,,,10.35283285,,contribucion_contable
+B4,compra|2015-2019|demografica|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2019Q4,,0,,,,,-4.97617905,,contribucion_contable
+B4,compra|2015-2019|renta_empleo|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2019Q4,,0,,,,,0.47672580000000003,,contribucion_contable
+B4,compra|2015-2019|financiacion_tipos|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2019Q4,,0,,,,,0.1822229,,contribucion_contable
+B4,compra|2015-2019|oferta_suelo|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2019Q4,,0,,,,,0.11112925,,contribucion_contable
+B4,compra|2015-2019|residuo|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2019Q4,,0,,,,,7.5990424,,contribucion_contable
+B4,compra|2019-2025|demografica|v2_BD_temporal,triangulacion_sin_reestimacion,2020Q1-2024Q1,,0,,,,,-2.0403281499999997,,contribucion_contable
+B4,compra|2019-2025|renta_empleo|v2_BD_temporal,triangulacion_sin_reestimacion,2020Q1-2024Q1,,0,,,,,0.60897715,,contribucion_contable
+B4,compra|2019-2025|financiacion_tipos|v2_BD_temporal,triangulacion_sin_reestimacion,2020Q1-2024Q1,,0,,,,,0.96624115,,contribucion_contable
+B4,compra|2019-2025|oferta_suelo|v2_BD_temporal,triangulacion_sin_reestimacion,2020Q1-2024Q1,,0,,,,,-0.017765700000000002,,contribucion_contable
+B4,compra|2019-2025|residuo|v2_BD_temporal,triangulacion_sin_reestimacion,2020Q1-2024Q1,,0,,,,,-4.01620635,,contribucion_contable
+B4,compra|2015-2025|demografica|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2024Q1,,0,,,,,-7.01650715,,contribucion_contable
+B4,compra|2015-2025|renta_empleo|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2024Q1,,0,,,,,1.0857029,,contribucion_contable
+B4,compra|2015-2025|financiacion_tipos|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2024Q1,,0,,,,,1.1484641,,contribucion_contable
+B4,compra|2015-2025|oferta_suelo|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2024Q1,,0,,,,,0.0933635,,contribucion_contable
+B4,compra|2015-2025|residuo|v2_BD_temporal,triangulacion_sin_reestimacion,2014Q1-2024Q1,,0,,,,,3.58283605,,contribucion_contable
+B4,alquiler_stock|2019-2025|turismo_no_residentes|v2_BD_temporal,triangulacion_sin_reestimacion,2021Q3-2024Q1,,0,,,,,0.016471,,contribucion_contable
+B4,compra|2015-2019|demografica|v2_BV_modeloB,triangulacion_sin_reestimacion,P2_recuperacion,,0,,,,,-0.41505418,,contribucion_contable
+B4,compra|2015-2019|renta_empleo|v2_BV_modeloB,triangulacion_sin_reestimacion,P2_recuperacion,,0,,,,,0.087368764,,contribucion_contable
+B4,compra|2015-2019|financiacion_tipos|v2_BV_modeloB,triangulacion_sin_reestimacion,P2_recuperacion,,0,,,,,0.25607303,,contribucion_contable
+B4,compra|2015-2019|oferta_suelo|v2_BV_modeloB,triangulacion_sin_reestimacion,P2_recuperacion,,0,,,,,0.022401923,,contribucion_contable
+B4,compra|2019-2025|demografica|v2_BV_modeloB,triangulacion_sin_reestimacion,P3_covid+P4_tipos,,0,,,,,-1.645719819,,contribucion_contable
+B4,compra|2019-2025|renta_empleo|v2_BV_modeloB,triangulacion_sin_reestimacion,P3_covid+P4_tipos,,0,,,,,0.25293383199999997,,contribucion_contable
+B4,compra|2019-2025|financiacion_tipos|v2_BV_modeloB,triangulacion_sin_reestimacion,P3_covid+P4_tipos,,0,,,,,0.6547930670000002,,contribucion_contable
+B4,compra|2019-2025|oferta_suelo|v2_BV_modeloB,triangulacion_sin_reestimacion,P3_covid+P4_tipos,,0,,,,,-0.0210951953,,contribucion_contable
+B4,compra|2015-2025|demografica|B3_transversal_Shapley,triangulacion_sin_reestimacion,2015-2025 (50 provincias),,0,,,,,23.62116184903029,,reparto_varianza_transversal
+B4,compra|2015-2025|renta_empleo|B3_transversal_Shapley,triangulacion_sin_reestimacion,2015-2025 (50 provincias),,0,,,,,9.833916813572072,,reparto_varianza_transversal
+B4,compra|2015-2025|financiacion_tipos|B3_transversal_Shapley,triangulacion_sin_reestimacion,2015-2025 (50 provincias),,0,,,,,11.291891126392516,,reparto_varianza_transversal
+B4,compra|2015-2025|oferta_suelo|B3_transversal_Shapley,triangulacion_sin_reestimacion,2015-2025 (50 provincias),,0,,,,,25.886835432364727,,reparto_varianza_transversal
+B4,compra|2015-2025|turismo_no_residentes|B3_transversal_Shapley,triangulacion_sin_reestimacion,2015-2025 (50 provincias),,0,,,,,18.395327437574444,,reparto_varianza_transversal
+B4,compra|2015-2025|residuo|B3_transversal_Shapley,triangulacion_sin_reestimacion,2015-2025 (50 provincias),,0,,,,,,,reparto_varianza_transversal
+B4,compra|2019-2025|demografica|B3_transversal_coef,triangulacion_sin_reestimacion,2021-2025,,0,,,,,0.0,,asociacion_transversal
+B4,compra|2019-2025|renta_empleo|B3_transversal_coef,triangulacion_sin_reestimacion,2021-2025,,0,,,,,0.0,,asociacion_transversal
+B4,compra|2019-2025|financiacion_tipos|B3_transversal_coef,triangulacion_sin_reestimacion,2021-2025,,0,,,,,0.0,,asociacion_transversal
+B4,compra|2019-2025|oferta_suelo|B3_transversal_coef,triangulacion_sin_reestimacion,2021-2025,,0,,,,,1.311339632270339,,asociacion_transversal
+B4,compra|2019-2025|turismo_no_residentes|B3_transversal_coef,triangulacion_sin_reestimacion,2021-2025,,0,,,,,0.0,,asociacion_transversal
+B4,alquiler_stock|2015-2025|demografica|B3_transversal_coef,triangulacion_sin_reestimacion,2015-2021,,0,,,,,0.4510222632737964,,asociacion_transversal
+B4,alquiler_stock|2015-2025|renta_empleo|B3_transversal_coef,triangulacion_sin_reestimacion,2015-2021,,0,,,,,0.4240095108529821,,asociacion_transversal
+B4,alquiler_stock|2015-2025|financiacion_tipos|B3_transversal_coef,triangulacion_sin_reestimacion,2015-2021,,0,,,,,0.0,,asociacion_transversal
+B4,alquiler_stock|2015-2025|oferta_suelo|B3_transversal_coef,triangulacion_sin_reestimacion,2015-2021,,0,,,,,0.9433837842955344,,asociacion_transversal
+B4,alquiler_stock|2015-2025|turismo_no_residentes|B3_transversal_coef,triangulacion_sin_reestimacion,2015-2021,,0,,,,,0.0,,asociacion_transversal
+B4,alquiler_stock|2019-2025|demografica|B3_transversal_coef,triangulacion_sin_reestimacion,2021-2024,,0,,,,,0.6496624897900123,,asociacion_transversal
+B4,alquiler_stock|2019-2025|renta_empleo|B3_transversal_coef,triangulacion_sin_reestimacion,2021-2024,,0,,,,,0.474414447924025,,asociacion_transversal
+B4,alquiler_stock|2019-2025|financiacion_tipos|B3_transversal_coef,triangulacion_sin_reestimacion,2021-2024,,0,,,,,0.0,,asociacion_transversal
+B4,alquiler_stock|2019-2025|oferta_suelo|B3_transversal_coef,triangulacion_sin_reestimacion,2021-2024,,0,,,,,0.929685616038753,,asociacion_transversal
+B4,alquiler_stock|2019-2025|turismo_no_residentes|B3_transversal_coef,triangulacion_sin_reestimacion,2021-2024,,0,,,,,0.0,,asociacion_transversal
+B4,alquiler_stock|2019-2025|turismo_no_residentes|v3_PB_cota,triangulacion_sin_reestimacion,2020M08-2024M08,,0,,,,,2.7458,,cota_superior
+B4,alquiler_stock|2019-2025|turismo_no_residentes|v3_PB_cota_precio,triangulacion_sin_reestimacion,2020M08-2024M08,,0,,,,,2.7458,,cota_condicional
+B4,compra|2015-2019|demografica|v3_PB_cota_inmigracion,triangulacion_sin_reestimacion,2014-2019,,0,,,,,,,cota_condicional
+B4,alquiler_stock|2015-2019|demografica|v3_PB_cota_inmigracion,triangulacion_sin_reestimacion,2014-2019,,0,,,,,,,cota_condicional
+B4,compra|2019-2025|demografica|v3_PB_cota_inmigracion,triangulacion_sin_reestimacion,2020-2025,,0,,,,,,,cota_condicional
+B4,alquiler_stock|2019-2025|demografica|v3_PB_cota_inmigracion,triangulacion_sin_reestimacion,2020-2025,,0,,,,,,,cota_condicional
+B4,compra|2015-2025|demografica|v3_PB_cota_inmigracion,triangulacion_sin_reestimacion,2014-2025,,0,,,,,,,cota_condicional
+B4,alquiler_stock|2015-2025|demografica|v3_PB_cota_inmigracion,triangulacion_sin_reestimacion,2014-2025,,0,,,,,,,cota_condicional
+B4,compra|2015-2025|financiacion_tipos|v3_PB_cota_tipos,triangulacion_sin_reestimacion,2014-2021,,0,,,,,,,cota_condicional
+B4,compra|2015-2025|financiacion_tipos|v3_PB_cota_tipos,triangulacion_sin_reestimacion,2021-2025,,0,,,,,,,cota_condicional
+B4,compra|2015-2025|turismo_no_residentes|R1A_no_residentes,triangulacion_sin_reestimacion,2015-2025 (43 prov.),,0,,,,,,,asociacion_transversal

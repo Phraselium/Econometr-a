@@ -1,0 +1,70 @@
+[
+ {
+  "id": "B4-V1",
+  "tema": "Inmigración",
+  "enunciado": "La subida se debe sobre todo a la inmigración.",
+  "capa": "C4",
+  "magnitud": "Cota C2 de cantidad: la población extranjera puede explicar como máximo el 45,2 % de la creación de hogares en 2014-2019 (174.410 viviendas) y no informa en 2020-2025 (100 %). Precio: condicional a |ε_d|=0,33, ≤2,1 % (2014-2019) y ≤19,0 % (2020-2025) (C4). v2: la demografía contribuye -3,0 a -3,6 pp al alquiler en 2014-2019 y signo opuesto según modelo en compra 2020-2024 (M1 +1,2; M2 -5,3 pp reales). B3: demografía segunda por cuota de R2 (21-26 %), con p de Holm 0,41 para F2.",
+  "intervalo": "Cuota de R2 entre provincias 21-26 %; contribución v2 sin signo estable",
+  "cota": "C2 solo la cantidad; magnitud sobre precio C4",
+  "literatura": "No aplica.",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "El efecto sobre precio solo es C4 (ε sin estimación verificada, fuente única de población); sin C3 no se puede afirmar ni negar el papel principal.",
+  "limites": "La asociación transversal y la contribución temporal discrepan en signo y orden; sin identificación causal.",
+  "evidencia": [
+   "output/v5/B4/tabla_contribuciones_larga.csv",
+   "output/v5/B4/estabilidad.csv"
+  ]
+ },
+ {
+  "id": "B4-V2",
+  "tema": "Turismo",
+  "enunciado": "La subida se debe a los pisos turísticos.",
+  "capa": "C4",
+  "magnitud": "Cota C2: como máximo el 2,4-2,7 % del stock de alquiler (hasta 81.771 viviendas), 2020M08-2024M08, suponiendo sustitución 1:1. En precio de alquiler, condicional a |ε_d| (1,0-0,33): ≤2,7-8,3 % frente a un alquiler de stock que sube 10,9-22,9 % en 2015-2024 (IPC, IPVA). v2 (2021T3-2024T1): +0,02 pp [-0,06; 0,09] de 2,26 pp. B3: VUT sin coeficiente distinguible de 0 en precio. Concentración local: hasta 8,9 % del stock en Málaga capital (cota C2).",
+  "intervalo": "Cantidad 2,4-2,7 % del stock (C2); precio ≤1,2-8,3 % (C4, condicional)",
+  "cota": "C2 de cantidad; C4 de precio",
+  "literatura": "No aplica.",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "La cota de cantidad (C2) limita el desplazamiento nacional, pero la traducción a precio depende de una elasticidad no verificada (C4): no se llega a un veredicto sobre «se debe». El alcance es nacional; en ciudades concretas la cota es mayor.",
+  "limites": "VUT del INE es estadística experimental; sin series de alquiler turístico/de temporada (BK-014 sin analizar); no residentes: asociación bivariada que desaparece con controles (R1A, C4).",
+  "evidencia": [
+   "output/v5/B4/tabla_contribuciones_larga.csv",
+   "output/v5/B4/estabilidad.csv"
+  ]
+ },
+ {
+  "id": "B4-V3",
+  "tema": "Oferta",
+  "enunciado": "La subida se debe a la falta de oferta.",
+  "capa": "C4",
+  "magnitud": "B3: la brecha de oferta (F4) es la familia con mayor cuota de R2 entre provincias (23-29 %), pero se mide en 2021-2025 con precios y puede ser en parte mecánica. v2: la oferta contemporánea (terminadas) contribuye -0,02 a 0,10 pp, con IC que incluye 0. Los déficits de A4 son de clase C2 en 11 provincias (2021-2025).",
+  "intervalo": "B3 23-29 % del R2; v2 -0,02 a 0,10 pp",
+  "cota": "C4 (no hay cota de oferta con supuestos explícitos en esta tabla)",
+  "literatura": "No aplica.",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Los dos métodos discrepan (orden primero en B3, nulo en v2) y ninguno es C3; se reportan ambos.",
+  "limites": "Medición distinta en cada método (stock de déficit frente a flujo de terminadas); sin respuesta de la oferta identificada.",
+  "evidencia": [
+   "output/v5/B4/tabla_contribuciones_larga.csv",
+   "output/v5/B4/estabilidad.csv"
+  ]
+ },
+ {
+  "id": "B4-V4",
+  "tema": "Financiación",
+  "enunciado": "La subida se debe a los tipos de interés bajos.",
+  "capa": "C4",
+  "magnitud": "v3 PB: caída del coste de uso permite como máximo +23,5 a +78,0 % (Δln 1/uc) en 2014-2021 frente a +12,7 % de precio tasado; en 2021-2025 los tipos suben y el precio también (+25,0 %): signo contrario. v2: financiación y tipos +1,9 a +2,3 pp en compra real (M1) y ≈0 (M2): discrepan. En alquiler, el efecto de los tipos se fija en 0 por supuesto. B3: hipotecas por 1.000 habitantes sin asociación distinguible (8,9-13,6 % del R2).",
+  "intervalo": "v2 compra -0,00 a 2,27 pp según modelo; cota v3 23-78 % (C4)",
+  "cota": "C4",
+  "literatura": "No aplica.",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Los métodos discrepan y el efecto común de los tipos nacionales queda en el componente común de v2 (tiempo), no atribuible por provincia; sin C3 no se concluye.",
+  "limites": "Los tipos nacionales no varían entre provincias: v2 y B3 no los identifican; la cota v3 es condicional a supuestos de coste de uso.",
+  "evidencia": [
+   "output/v5/B4/tabla_contribuciones_larga.csv",
+   "output/v5/B4/estabilidad.csv"
+  ]
+ }
+]

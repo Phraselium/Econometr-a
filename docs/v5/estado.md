@@ -25,7 +25,9 @@
 | Revisión módulo C | C | REHACER (B1-B2) → corregido; APROBADO | — | docs/v5/revision_C.md; CC-V2 pasa a C4 | 59.146 |
 | D1-lit literatura de instrumentos | D | hecho | — | 19 referencias VERIFICADAS nuevas; ayudas a la demanda: el traslado sube con la oferta rígida (Eriksen-Ross; Hilber-Turner); 11 instrumentos siguen sin referencia verificada | 126.832 |
 | D3 convergencia con organismos | D | hecho | — | 13 cifras frente a 22 referencias: 10 coinciden, 3 difieren (periodo o concepto), 9 no comparables (4 no localizadas) | 121.649 |
+| D1 matriz de instrumentos completa | D | hecho | C2 (signo por grupo)/C4 | 36 instrumentos + P1 con la rúbrica completa; 18 «No evaluable» con motivo; traslado de las ayudas a precios: clase 1 28-82 %, clase 2 88-100 %, clase 3 50-90 % (método A; el B se reporta) | 84.733 (D1+D2) |
+| D2 política por territorio | D | hecho | C4 | necesidad: clase 1 88 %, clase 2 10 %; P-D +25-100 mil/año cubre el 12-47 %; vacías: 30 % (clase 1) y 74 % (clase 2) en el central | — |
 
 **Hecho:** módulos R, A, B y C aprobados; D1-lit; E9-E12 parciales (solicitudes, licencias, CITATION, zenodo, CHANGELOG, tareas del autor, correo, calendario).
 **Siguiente:** D1-D2 y D3 (en curso) → revisión D → E (plantillas y entregables).
-**Tokens de subagentes v5:** 2.260.957 / 4.200.000 (R: 601.209 / 900.000; A: 471.653 / 700.000; B: 523.477 / 1.000.000; C: 416.137 / 700.000; D: 248.481 / 600.000) (corte global al 80 %: 3.360.000; reserva 420.000).
+**Tokens de subagentes v5:** 2.345.690 / 4.200.000 (R: 601.209 / 900.000; A: 471.653 / 700.000; B: 523.477 / 1.000.000; C: 416.137 / 700.000; D: 333.214 / 600.000) (corte global al 80 %: 3.360.000; reserva 420.000).

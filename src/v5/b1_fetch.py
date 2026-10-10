@@ -38,7 +38,7 @@ def vuelca(nombre, t, n, filtro):
 
 
 def edad_min(nom, minimo):
-    m = re.search(r"(\d+) años?\.?\s*$", nom.strip())
+    m = re.search(r"(\d+)(?: a \d+| y más)? años?\b", nom)
     return bool(m) and int(m.group(1)) >= minimo
 
 
@@ -48,7 +48,7 @@ def main():
     vuelca("ine_b1_t36726_proy_poblacion_prov.csv", 36726, 17,
            lambda n: n.startswith("Total.") and ("Todas las edades" in n or edad_min(n, 65)))
     vuelca("ine_b1_t67235_mortalidad_prov.csv", 67235, 1,
-           lambda n: ". Total. " in n and "Riesgo de muerte" in n and edad_min(n.split(". Riesgo")[0], 65))
+           lambda n: ". Total. " in n and "Riesgo de muerte" in n and edad_min(n, 65))
     vuelca("ine_b1_t69764_saldos_prov.csv", 69764, 10,
            lambda n: "Todas las edades. Total. Total. Saldo" in n)
 

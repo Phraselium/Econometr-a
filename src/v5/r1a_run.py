@@ -8,6 +8,11 @@ Salidas: output/v5/R1A/ (tablas, registro.csv, resultado.json, hechos.json, fich
 """
 from __future__ import annotations
 
+import os
+
+for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+    os.environ.setdefault(_v, "1")
+
 import json
 import sys
 import unicodedata
@@ -316,12 +321,12 @@ def tarea_bk052() -> dict:
     # Cuota explicada (en logs) por factor, como cota: min..max
     sh = {
         "fecha_estacionalidad_INE (cota superior)": (0.0, ln(f_fecha_max) / ln(r_total)),
-        "bajas_no_depuradas (cota inferior; fechas distintas)": (ln(f_bajas) / ln(r_total), ln(f_bajas) / ln(r_total)),
+        "bajas_no_depuradas (solo cota inferior; fechas distintas)": (ln(f_bajas) / ln(r_total), float("nan")),
         "cobertura (INE provincial ya completa)": (0.0, 0.0),
     }
-    lo_res = 1 - sum(v[1] for v in sh.values())
+    # revisión R (B2): las bajas solo tienen cota inferior, así que el residual solo tiene cota SUPERIOR (no identificado por abajo)
     hi_res = 1 - sum(v[0] for v in sh.values())
-    sh["residual_definicion (anuncios activos vs registro)"] = (lo_res, hi_res)
+    sh["residual_definicion (anuncios activos vs registro; solo cota superior)"] = (float("nan"), hi_res)
     pd.DataFrame([{"factor": k, "cuota_ln_min": v[0], "cuota_ln_max": v[1]} for k, v in sh.items()]).round(3).to_csv(
         TAB / "vut_discrepancia_descomposicion.csv", index=False)
     return dict(c=c, tot=tot, ratio_foto=ratio_foto, ratio_foto_tot=ratio_foto_tot, r_ref=r_ref, rango=rango, rango_tot=rango_tot, f_fecha=f_fecha_max, f_bajas=f_bajas,
@@ -372,7 +377,7 @@ def escribir(r2: dict, r52: dict, r14: dict) -> None:
         "p_ajustado": {k: float(v) for k, v in t.p_holm.items()},
         "nivel_evidencia": "EXPLORATORIO (C4): asociación transversal con ~50 unidades; sin identificación causal",
         "diagnosticos": {"R2_aj_E2": r2["r2"], "pearson_dlnp_nr": st["pearson_dlnp_nr"], "spearman_dlnp_nr": st["spearman_dlnp_nr"],
-                         "spec_curve": "la asociación bivariada (E1) desaparece con renta, población y costa/islas (E2-E8, todos p_Holm=1)",
+                         "spec_curve": "con renta, población y costa/islas (E2-E8) el coeficiente no se distingue de cero (p_Holm=1); el IC95 de E2 [-0,55; 0,59] es compatible con cero y con hasta un 60 % del coeficiente bivariado (E1): no se puede atribuir la asociación bivariada a ningún factor",
                          "fuentes_BK002": nota_fuentes,
                          "BK014": "NO ANALIZADA: FALTAN DATOS (ver docs/v5/fuentes_fallidas.md)"},
         "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None},
@@ -381,7 +386,7 @@ def escribir(r2: dict, r52: dict, r14: dict) -> None:
             "Precio = valor tasado medio de vivienda libre (MIVAU, €/m2), logaritmo de la media 2025 menos la media 2015.",
             "Costa e islas: lista del analista (21 unidades costeras, 3 insulares), sensibilidad E6 y E8.",
             "Ceuta y Melilla excluidas; 7 comunidades uniprovinciales entran con datos de CCAA.",
-            "Sin lenguaje causal: la bivariada refleja concentración común de costa e islas, no un efecto.",
+            "Sin lenguaje causal: con controles el coeficiente no se distingue de cero, pero el IC95 no excluye una asociación de hasta el 60 % de la bivariada; no se atribuye a costa e islas ni a un efecto.",
             f"BK-052: el cociente GVA/INE cae entre {r52['rango_tot'][0]:.2f} y {r52['rango_tot'][1]:.2f} (3 provincias) y por provincia/fecha entre {r52['rango'][0]:.2f} y {r52['rango'][1]:.2f}. GVA solo cubre 3 provincias.",
         ]}
     json.dump(resultado, open(OUT / "resultado.json", "w"), ensure_ascii=False, indent=1)
@@ -426,7 +431,7 @@ def escribir(r2: dict, r52: dict, r14: dict) -> None:
         "literatura": "NO VERIFICADA (sin DOI Crossref en esta pasada; cuartil no verificado). El resultado es una asociación transversal, no un efecto.",
         "veredicto": "ANALIZADA, NO CONCLUYENTE",
         "regla": "Capa C4 (menor de sus componentes): una sola fuente efectiva por provincia (MIVAU/Notariado no independientes; Registradores sin residencia por provincia) y sin diseño de identificación; el máximo con C4 es ANALIZADA, NO CONCLUYENTE.",
-        "limites": ("~50 unidades, 1 corte transversal; costa e islas confunden (la asociación bivariada desaparece al controlar por esa concentración; no se descarta ni se identifica un efecto); "
+        "limites": ("~50 unidades, 1 corte transversal; costa e islas concentran a la vez peso de no residentes y subida de precio; con controles el coeficiente no se distingue de cero (IC95 compatible con cero y con hasta un 60 % de la bivariada); no se identifica un efecto; "
                     "valor tasado ≠ precio de transacción; MIVAU cubre todas las viviendas y el Notariado solo vivienda libre (cociente Notariado/MIVAU de extranjeros por CCAA 1,04-1,24, correlación de rangos "
                     f"{r2['corr_cc']:.2f}); errores robustos HC3 con pocas unidades pueden subestimar la varianza; peso de residentes extranjeros (E4) tampoco se asocia con controles."),
         "evidencia": ["output/v5/R1A/tablas/no_residentes_regresiones.csv", "output/v5/R1A/tablas/no_residentes_peso_2015_2025.csv",

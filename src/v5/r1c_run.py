@@ -129,7 +129,7 @@ reg.log("T1", "tenencia_65mas_EFF_vs_ECV", "ECV65+ - EFF65-74/75+", 2022, 2022, 
 
 hecho("R1C-001", "Hogares con vivienda principal en propiedad", round(float(np.mean([t_eff, t_ecv, t_cen])), 1),
       round(rng[0], 1), round(rng[1], 1), "% de hogares", "2021-2022", "Espana", "BdE EFF; INE ECV; INE Censo 2021",
-      c_tot, "2022")
+      c_tot, "2021-11 (Censo) / 2022 (EFF, ECV)")
 hecho("R1C-002", "Hogares con otras propiedades (cualquier inmueble), tramo 65-74", EFF[("pct_hogares_otras_propiedades", "65-74")],
       EFF[("pct_hogares_otras_propiedades", "65-74")], EFF[("pct_hogares_otras_propiedades", "65-74")],
       "% de hogares del tramo", "2022", "Espana", "BdE EFF 2022", "C4", "2022")

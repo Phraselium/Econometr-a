@@ -110,3 +110,27 @@ Ordenados por impacto y, a igual impacto, por menor coste.
 16. BK-048 Pendientes menores de v1 (bajo, S; v1 cerrada: solo anotar).
 17. BK-042 Bloque 5 de modelos v2 (bajo, M).
 18. BK-038 P-E de v3 (bajo, M).
+
+## Estado tras R1 (v5; actualizado tras la revisión R)
+
+| id | Estado | Dónde | Lo que queda abierto | Motivo | Coste |
+|---|---|---|---|---|---|
+| BK-002 | Hecho (C4) | output/v5/R1A | Notariado y Registradores por provincia y residencia del comprador | Datos: Notariado solo por CCAA; Registradores no separa residencia | S (solicitud) |
+| BK-052 | Hecho (cotas) | output/v5/R1A/tablas/vut_discrepancia_descomposicion.csv | Residual por definición ≤74 %, sin cota inferior | Fechas de bajas distintas | S |
+| BK-041 | Hecho (C4) | output/v5/R1B | Atlas de Áreas Urbanas (403) | Fuente fallida | S |
+| BK-040 | Parcial | output/v5/R1B | BO H4 sin sensibilidad; H6 solo con RV aproximado | Presupuesto (BO) y muestra sellada (H6) | M (≈60k) |
+| BK-023 | Hecho (C4) | output/v5/R1B | — | — | — |
+| BK-014 | No analizada | docs/v5/fuentes_fallidas.md (R1A y A23) | Alquiler de temporada y por habitaciones: ninguna fuente oficial con duración del contrato (las fianzas de la GVA no la traen) | Datos | S (probar la estadística experimental del INE y las fianzas con duración) |
+| BK-009 | Hecho (C4) | output/v5/R1C | Afiliación de construcción por provincia | Fuente no localizada | S |
+| BK-034 | Hecho (C4; premisa corregida) | output/v5/R1C | Desglose por sección | Datos (el INE no lo publica) | — |
+| BK-017 | No | — | Réplica MESVAL | Datos privados (Fotocasa) | L; pasa a preguntas abiertas |
+| D3 v3 | No se reabre | docs/v3 | Suelo como moderador | NO-GO por potencia en v3 | — |
+| D6 v3 | No aplica | — | Heterogeneidad ya cubierta en v1-v3 | — | — |
+| Tabla de titularidad | Hecho | output/v5/R1C | Personas jurídicas y sector público en el stock | Datos (solicitudes S1 y S3) | — |
+| BK-047 | Hecho | data/CHECKSUMS.sha256 | Blob en el historial remoto | No reescribible (force push denegado) | — |
+| BK-045 / BK-046 / BK-044 | Hecho | R1T, ERRATA.md | — | — | — |
+| BK-050 | Abierto | — | Series del Ministerio y Registradores sin incorporar | Impacto bajo | S |
+| BK-051 | Abierto | — | Tabla de relaciones del seccionado | Fuente fallida | S |
+| BK-042 | Abierto | — | Bloque 5 de los modelos v2 | Impacto bajo: ningún modelo supera al AR | M |
+| BK-038 | Abierto | — | P-E de v3 | No especificado ni pre-registrado | M |
+| BK-048 | Anotado | — | Menores de v1 | v1 cerrada | — |

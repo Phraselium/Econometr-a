@@ -46,7 +46,7 @@
   "R2_aj_E2": 0.6024371353904167,
   "pearson_dlnp_nr": 0.5634700659245395,
   "spearman_dlnp_nr": 0.5551500600240096,
-  "spec_curve": "la asociación bivariada (E1) desaparece con renta, población y costa/islas (E2-E8, todos p_Holm=1)",
+  "spec_curve": "con renta, población y costa/islas (E2-E8) el coeficiente no se distingue de cero (p_Holm=1); el IC95 de E2 [-0,55; 0,59] es compatible con cero y con hasta un 60 % del coeficiente bivariado (E1): no se puede atribuir la asociación bivariada a ningún factor",
   "fuentes_BK002": "MIVAU (Boletín, tabla 1.6, residencia del comprador) y Notariado (CCAA) no son independientes; Registradores no separa residentes de no residentes ni publica la residencia por provincia: una sola fuente efectiva para el peso provincial, por lo que no se alcanza C1.",
   "BK014": "NO ANALIZADA: FALTAN DATOS (ver docs/v5/fuentes_fallidas.md)"
  },
@@ -60,7 +60,7 @@
   "Precio = valor tasado medio de vivienda libre (MIVAU, €/m2), logaritmo de la media 2025 menos la media 2015.",
   "Costa e islas: lista del analista (21 unidades costeras, 3 insulares), sensibilidad E6 y E8.",
   "Ceuta y Melilla excluidas; 7 comunidades uniprovinciales entran con datos de CCAA.",
-  "Sin lenguaje causal: la bivariada refleja concentración común de costa e islas, no un efecto.",
+  "Sin lenguaje causal: con controles el coeficiente no se distingue de cero, pero el IC95 no excluye una asociación de hasta el 60 % de la bivariada; no se atribuye a costa e islas ni a un efecto.",
   "BK-052: el cociente GVA/INE cae entre 1.41 y 1.75 (3 provincias) y por provincia/fecha entre 0.98 y 2.94. GVA solo cubre 3 provincias."
  ]
 }

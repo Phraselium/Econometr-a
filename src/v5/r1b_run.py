@@ -84,7 +84,7 @@ def main():
         "magnitud": (f"Con valores críticos por bootstrap de AR(p) estimado (tamaño comprobado: {100 * tam['phi0.5']['rechazo_bootstrap_AR']:.1f} % con phi=0,5 frente a "
                      f"{100 * tam['phi0.5']['rechazo_vc_iid']:.1f} % con vc iid), el cociente precio/alquiler muestra exuberancia sin ajustar (p<0,05) en "
                      f"{int((sup.p_corr < .05).sum())} de 2 medidas nacionales, pero ninguna sobrevive a BH en la familia de 8 cocientes (BH {sup.p_bh.min():.3f}-{sup.p_bh.max():.3f}); "
-                     f"episodios que persisten: {'; '.join(sup.episodios_corregidos.dropna())}. Precio frente a valor de descuento del alquiler con tipos (prima de 3 pp; sensibilidad 2 y 4 pp) y frente a la cuota hipotecaria constante sobre renta: "
+                     f"episodios fechados sin ajuste múltiple (ninguno sobrevive a BH): {'; '.join(sup.episodios_corregidos.dropna())}. Precio frente a valor de descuento del alquiler con tipos (prima de 3 pp; sensibilidad 2 y 4 pp) y frente a la cuota hipotecaria constante sobre renta: "
                      f"sin exuberancia (p {nf[nf.medida.str.contains('frente a valor')].p_corr.min():.2f}-{nf[nf.medida.str.contains('frente a valor')].p_corr.max():.2f}). "
                      f"CCAA con exuberancia tras BH: {int(cc.exuberancia_bh05.sum())} de 34 series (M7 con vc iid: {int((cc.p_M7 < .05).sum())} de 34 con p<0,05 sin ajuste; con vc corregidos: {int((cc.p_corr < .05).sum())})."),
         "intervalo": "—", "cota": "—", "literatura": "Phillips, Shi y Yu (2015), GSADF: NO VERIFICADA (DOI y cuartil no comprobados sin red).",

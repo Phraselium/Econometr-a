@@ -85,3 +85,17 @@
   - el C1 de cuantía es el NÚCLEO IPC + IPVA (10,9-22,9 %, dentro de ±15 % en nivel; encuesta frente a datos tributarios, independientes);
   - SERPAVI (+43 %) va aparte como discrepante (C4);
   - antes el rango 10,9-43 % salía como C1. Es coherente con la decisión C6 de v4.
+- Pre-registro de B3: commit 8803f049c0f46ae4db8a79221470594295931d86 (etiqueta local `prereg-v5`; el push de etiquetas devuelve 403, véase bloqueos.md).
+
+## Revisión del módulo R: REHACER (B1-B3) → corregido por el orquestador
+- **B1.** El backlog añade la tabla «Estado tras R1», con lo abierto, el motivo y el coste.
+- **B2.** En la discrepancia VUT, las bajas son solo una cota inferior, así que el residual por definición solo tiene cota superior (≤74 %). El «53-74 %» se retira.
+- **B3.** No residentes: «con controles el coeficiente no se distingue de cero; el IC95 es compatible con cero y con hasta un 60 % de la bivariada». Se retiran «desaparece» y «costa e islas confunden».
+- **No bloqueantes.**
+  - N1: la tenencia en propiedad es C1 con una tolerancia de 5 pp entre fuentes, que pasa a ser regla declarada; fecha del dato «2021-11 / 2022».
+  - N2: `holdout.load_full` se usa en R1b para un análisis C4. El acceso queda registrado y no hay hipótesis confirmatorias pendientes sobre esos datos, así que no hay fuga.
+  - N3: corregida la errata.
+  - N4: GSADF «fechados sin ajuste múltiple».
+  - N5: un solo hilo fijado en los scripts.
+  - N6: la sección R1A de fuentes fallidas remite a A23.
+- Son las correcciones que propuso el propio revisor y no cambian ninguna estimación, así que el módulo R queda APROBADO sin otra iteración.

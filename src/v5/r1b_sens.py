@@ -224,7 +224,7 @@ def bp(B=200):
     t6 = h6["tau"] / h6["se_placebo"]
     out["sens_H6_publicado"] = dict(tau=h6["tau"], se_placebo=h6["se_placebo"], t_aprox=float(t6), gl_supuesto=39,
                                     RV=rv(t6, 39)[0], RV_alpha=rv(t6, 39)[1],
-                                    nota="aproximación: t=τ/se_placebo con gl=n_donantes-1; Oster no calculable sin los datos selladas (una evaluación, sin re-acceso)")
+                                    nota="aproximación: t=τ/se_placebo con gl=n_donantes-1; Oster no calculable sin los datos sellados (una evaluación, sin re-acceso)")
 
     # --- multiverso SDiD H5
     rng = np.random.default_rng(SEED)

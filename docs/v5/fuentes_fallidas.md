@@ -10,7 +10,7 @@ Cada entrada: fuente, endpoint probado, edición, fecha de la prueba, error.
 - INE ICC (indice de costes de construccion): no existe como operacion en Tempus (busqueda en OPERACIONES_DISPONIBLES, 2026-10-10); se usan Eurostat sts_copi_q (en repositorio) e INE ETCL tablas 6030. Afiliacion a la Seguridad Social, seccion F, por provincia: no localizada en fuente abierta accesible. Tabla EPA 66088 (ocupados por sector y CCAA) solo trae 2005-2007 (base antigua); se usa 65354 (provincia, 2007T4-2026T1).
 - BK-034 (corregido): la tabla INE 59531 (Censo 2021, consumo electrico, DATOS_TABLA?nult=1) SI publica vacias y uso esporadico por entidad municipal: 3.185 entidades (510 marcadas con asterisco agrupan municipios pequenos) que suman el total nacional. No hay desglose por seccion censal. Fuente unica (C4).
 
-## R1A (BK-014 · alquiler de temporada y por habitaciones)
+## R1A (BK-014 · alquiler de temporada y por habitaciones) (2026-10-10; véase también A23: fianzas GVA sin duración del contrato)
 
 | Fuente | Endpoint / fichero probado | Edición | Fecha de la prueba | Resultado |
 |---|---|---|---|---|

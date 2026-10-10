@@ -19,16 +19,16 @@
     0.0,
     0.2118265618503421
    ],
-   "bajas_no_depuradas (cota inferior; fechas distintas)": [
+   "bajas_no_depuradas (solo cota inferior; fechas distintas)": [
     0.25984198709153933,
-    0.25984198709153933
+    NaN
    ],
    "cobertura (INE provincial ya completa)": [
     0.0,
     0.0
    ],
-   "residual_definicion (anuncios activos vs registro)": [
-    0.5283314510581185,
+   "residual_definicion (anuncios activos vs registro; solo cota superior)": [
+    NaN,
     0.7401580129084606
    ]
   },

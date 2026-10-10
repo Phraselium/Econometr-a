@@ -22,7 +22,6 @@ Ningún resultado de este proyecto alcanzó C3. Detalle y fuentes: output/v3/art
 **Cotas: cuánto puede pesar cada factor como máximo**
 - [C2] Viviendas turísticas. Su aumento de 2020 a 2024 equivale, como máximo, al **2,4-2,7 % del stock de viviendas en alquiler**, suponiendo que cada vivienda turística nueva es una de alquiler menos. Una **cuarta parte** de la subida municipal del alquiler ocurrió en municipios donde las viviendas turísticas apenas crecieron. Desde 2024 su número baja: la cota superior de ese periodo es 0.
 - [C2] Inmigración. En 2014-2019 los hogares extranjeros suponen **como máximo el 45 %** de la creación neta de hogares. Para 2020-2025 la cota no es informativa: el supuesto extremo la lleva al 100 %.
-- [C2] Tipos de interés. La bajada del coste de uso en 2014-2021 es compatible con toda la subida del precio de compra de ese periodo. En 2021-2025 el coste de uso subió y no puede contribuir a la subida de precios de ese periodo, porque su signo es el contrario.
 
 **Soluciones (simulación con rangos de parámetros)**
 - [C2] Para estabilizar el esfuerzo de acceso en 2026-2035 se necesitan **104.000-413.000 viviendas al año**, frente a 89.000-101.000 terminadas. La brecha es positiva en todo el rango de supuestos.
@@ -35,7 +34,8 @@ Asociaciones que no alcanzan la capa C3. Se informan sin lenguaje causal y no de
 
 - [C4] Topes de la Ley 11/2020 en Cataluña. La renta de los contratos nuevos de los municipios sujetos se asocia a una diferencia de **−5,4 %** (IC95 −7,1 % a −3,7 %; −37 €/mes). La validación por otra fuente (SERPAVI) tiene el mismo signo y menor tamaño (−0,8 %). La réplica de Jofre-Monseny et al. (2023) reproduce su resultado en la especificación más cercana. No llega a C3: el test de pretendencias de Rambachan-Roth y el de sensibilidad no lo permiten.
 - [C4] Número de contratos nuevos bajo los topes: asociación de −4,9 % (IC95 −9,9 % a +0,5 %), no significativa. La validación por fuente (stock SERPAVI) da −4,4 % y excluye 0. Hay estimadores alternativos de signo opuesto, y fallan las pretendencias y el placebo de fecha.
-- [C4] Asociación entre viviendas turísticas y alquiler por sección censal (2021-2024): pequeña. Con un aumento típico de 1,4 puntos de viviendas turísticas sobre el parque, el alquiler sube **menos de un 0,5 %**. En los distritos sellados el IC95 incluye 0. La réplica de García-López et al. (2020) no se reproduce con datos actuales (otro periodo y otra medida de alquiler).
+- [C4] Tipos de interés, con el supuesto estructural P/R = 1/coste de uso: la bajada del coste de uso en 2014-2021 es compatible con toda la subida del precio de compra de ese periodo. En 2021-2025 el coste de uso subió, con signo contrario a la subida de precios.
+- [C4] Asociación entre viviendas turísticas y alquiler por sección censal (2021-2024): pequeña. Con un aumento típico de 1,4 puntos de viviendas turísticas sobre el parque, se asocia a un alquiler mayor en **menos de un 0,5 %**. En los distritos sellados el IC95 incluye 0. La réplica de García-López et al. (2020) no se reproduce con datos actuales (otro periodo y otra medida de alquiler).
 
 ## No se puede afirmar con estos datos
 
@@ -46,7 +46,7 @@ Asociaciones que no alcanzan la capa C3. Se informan sin lenguaje causal y no de
 - El efecto sobre el precio de los compradores extranjeros, de la ocupación ilegal o de bajar el ITP/IVA: no hay diseño ni datos.
 - Una cifra de efecto de la regulación de viviendas turísticas sobre el alquiler local: depende de una elasticidad sin estimación española verificada.
 
-## Problema y soluciones robustas (signo estable en todo el rango simulado)
+## Problema y opciones con signo estable en la rejilla
 
 - [C1] El desfase entre hogares y viviendas nuevas desde 2021 y la caída de la propiedad entre los jóvenes son hechos confirmados por varias fuentes.
 - [C2] Signo estable en toda la rejilla simulada:

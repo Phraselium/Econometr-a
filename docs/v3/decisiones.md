@@ -143,3 +143,13 @@ La decisión queda condicionada a la revisión de la oleada 1.
 - `src/holdout.py` (commit c5e8aae): evaluate_v3 se corrigió para pandas 3, porque pd.to_numeric(errors='ignore') ya no existe. La corrección se aplicó DESPUÉS de las evaluaciones selladas de H3-3a y H3-3b, que se hicieron con un parche en memoria equivalente, y ANTES de las de H3-1 y H3-2. Una apertura por hipótesis (log 13:42:50Z y 13:47:05-09Z).
 - C3 redirigió holdout.LOG en el test en seco de fn; se eliminó (W9). El log real tiene solo las aperturas declaradas.
 - El pre-registro fijaba la sección «Probable pero no demostrado» de lo_que_sabemos.md por mandato del usuario. Se mantiene con el calificativo «(exploratorio, C4)» y redacción de asociación (W3).
+
+## Revisión de la oleada 2: APROBAR (iteración 2)
+- Residuos corregidos en edición:
+  - R1: regla de V01.
+  - R2: lenguaje de asociación y título de lo_que_sabemos.
+  - R3: fila P-D de retirada de VUT en C4.
+- R4, estándar único: toda traducción de cotas a precio con supuesto estructural no estimado es C4, sea ε o P/R = 1/uc. Consecuencias:
+  - B4 pasa de C2 a C4. Es una bajada de capa, no una promoción.
+  - V12 pasa a SIN EVIDENCIA SUFICIENTE.
+  - La convención y su alternativa constan en docs/v3/limitaciones.md (L-v3-W3).

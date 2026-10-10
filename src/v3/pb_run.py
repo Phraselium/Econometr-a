@@ -516,8 +516,9 @@ def b4(c: Ctx, d: dict):
                                               ("; SIGNO CONTRARIO: los tipos bajan y el precio cae" if r_.signo_contrario else ""))
                + f". Dependencia del suelo de uc (1/uc sin cota finita si uc→0): con suelo 1 % la cota es {r_.dln_inv_uc_max_pct:.1f}; {r_.suelos_txt}",
                r_.no_explica_compra_pct if np.isfinite(r_.no_explica_compra_pct) else None, r_.sens_min, r_.sens_max,
-               lim + " La conclusión «no explica» depende del tipo nominal y de una ganancia esperada constante entre años; con tipo real casi todas las combinaciones quedan indefinidas. Sensibilidad: suelo de uc 0,5-2 %.",
-               "la variación del coste de uso")
+               lim + " La conclusión «no explica» depende del tipo nominal y de una ganancia esperada constante entre años; con tipo real casi todas las combinaciones quedan indefinidas. Sensibilidad: suelo de uc 0,5-2 %."
+               " Capa C4: la traducción a precio descansa en el supuesto estructural P/R = 1/uc, con el mismo estándar que la vía ε de B1 y B2 (revisión oleada 2, R4).",
+               "la variación del coste de uso", capa="C4")
         c.cota(f"B4-nac-alquiler-{pe}", "tipos", "nacional", pe, None, "% de alquiler",
                "SUPUESTO: efecto de los tipos sobre el alquiler = 0 (no acotado por este modelo; los tipos pueden actuar vía elección de tenencia)",
                None, None, None, "El estado estacionario de B4 solo acota el precio de compra; esto es un supuesto, no una cota.", "los tipos", capa="C4")

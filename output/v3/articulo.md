@@ -58,9 +58,9 @@ Fuentes: output/v3/PA y output/v3/PB.
 | Desplazamiento máximo de la oferta de alquiler por VUT 2020-2024 | ≤2,4-2,7 % del stock | C2 |
 | Parte de la subida municipal del alquiler donde las VUT apenas crecieron | 25 % | C2 |
 | Hogares extranjeros en la creación neta de hogares 2014-2019 | ≤45 % | C2 |
-| Coste de uso 2014-2021 frente a 2021-2025 | compatible con toda la subida / signo contrario | C2 |
+| Coste de uso 2014-2021 frente a 2021-2025 (con P/R = 1/uc) | compatible con toda la subida / signo contrario | C4 (supuesto estructural) |
 
-Las traducciones a precio de las cotas de viviendas turísticas e inmigración dependen de una elasticidad de demanda sin estimación española verificada. Se presentan como tablas condicionales («si |ε| = x, como máximo y») y en C4.
+Las traducciones a precio de las cotas de viviendas turísticas e inmigración dependen de una elasticidad de demanda sin estimación española verificada. La del coste de uso depende del supuesto estructural P/R = 1/uc. Las tres se presentan en C4, con el mismo estándar; las de VUT e inmigración, como tablas condicionales («si |ε| = x, como máximo y»).
 
 ## 4. Replicación y extensión
 
@@ -120,8 +120,10 @@ Las afirmaciones de atribución (turísticos, inmigración, oferta y suelo, tipo
 
 Resultado:
 - RESPALDADA (1): «faltan cientos de miles de viviendas».
-- PARCIALMENTE (3): vacías movilizables, vivienda pública (según supuestos) y tipos de interés (contradicha en 2021-2025, no descartada en 2014-2021).
-- SIN EVIDENCIA SUFICIENTE (10): turísticos, grandes tenedores, inmigración, oferta y suelo como causa principal, topes (alquiler y oferta), ocupación ilegal, ITP/IVA, burbuja y compradores extranjeros.
+- PARCIALMENTE (2): vacías movilizables y vivienda pública (según supuestos).
+- SIN EVIDENCIA SUFICIENTE (11): turísticos, grandes tenedores, inmigración, oferta y suelo, tipos de interés como causa principal, topes (alquiler y oferta), ocupación ilegal, ITP/IVA, burbuja y compradores extranjeros.
+
+Con el supuesto estructural P/R = 1/uc (C4), la afirmación sobre los tipos sería incompatible con 2021-2025 y no descartada en 2014-2021.
 
 Ninguna afirmación queda NO RESPALDADA ni CONTRADICHA en su conjunto.
 

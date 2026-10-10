@@ -119,3 +119,50 @@ No hay veredicto RESPALDADA ni NO RESPALDADA apoyado en C4. Sí hay un veredicto
   - Añadir la etiqueta VERIFICADA/NO VERIFICADA con cuartil a la literatura de las fichas.
   - V10: regla condicional sin afirmación direccional.
   - V12: corregir «podría cubrir toda la subida» frente al 78 %.
+
+---
+
+## Iteración 2 (HEAD 4208dbf)
+
+Revisión limitada a W1-W10. No se reestima nada ni se abre el sellado.
+
+### Estado de W1-W10
+
+| W | Estado | Comprobación |
+|---|---|---|
+| W1 | **Resuelto**, con una salvedad (R4) | Hay una regla común (i)-(iv) en el docstring de `verificador.py`, que se aplica a V01, V03, V04 y V12. V03 pasa a SIN EVIDENCIA SUFICIENTE, igual que V01. La evidencia C4 (v2 BI) queda fuera de la regla. Se añade un dato en contra análogo: el 30,2 % de la subida provincial ocurrió donde el saldo extranjero no fue positivo. Los enunciados de V03, V04 y V12 fijan ahora el umbral del 50 %. |
+| W2 | **Resuelto** | V11 usa solo las filas de vivienda pública: [−5,4; 0] y [−13,1; 0]. La regla dice «según supuestos», con efecto nulo si ρ = 1. |
+| W3 | **Resuelto en lo sustancial**, con residuo menor (R2) | La sección «Probable pero no demostrado (exploratorio, C4)» declara que no decide veredictos. Incluye por igual alquiler y contratos bajo los topes, y VUT. «No se puede afirmar» trata igual los topes sobre alquiler y sobre oferta. La «Lectura» del informe reproduce los conjuntos de P-D: construcción y vacías de forma estricta; vivienda pública solo débilmente; VUT y topes con signo no estable. La construcción lleva ya «costes no modelados». Persisten «el alquiler sube menos de un 0,5 %» (C4, `lo_que_sabemos.md` l. 38) y el título «Problema y soluciones robustas». |
+| W4 | **Resuelto** | P-D se ejecuta con C1 presente. Las filas de H3-1 sellado (C4) dan rangos que alcanzan ≥ 0, por ejemplo [−2,0; +0,49] % con X = 100 %. GL figura como NO REPLICADO en la fila. Los valores por debajo de −30 % llevan aviso y por debajo de −100 % se truncan. |
+| W5 | **Resuelto** | Se retira el saldo neto de los topes; quedan sus componentes, sin saldo. Las filas de arrepentimiento declaran que el resultado es «mecánico: no se modelan costes» y enumeran los costes omitidos de cada opción. |
+| W6 | **Resuelto en P-D**, con residuo de redacción (R2) | La columna se llama ahora `signo_estable_en_la_rejilla`; la vivienda pública figura como «≤ 0 (posiblemente nulo)». |
+| W7 | **Resuelto** | V06 y V07 usan la misma plantilla: principal, sellado con p_Holm, R1/R2 JMS, multiverso (100/89 % frente a 81/0 %), misma regla y mismos límites. |
+| W8 | **Resuelto** | `decisiones.md` §«Desviaciones de la oleada 2» transcribe C1 1-17 y C3 1-16. Incluye la ventana 2018-19/2021-22 sin 2023, la familia de H3-1 con el sellado de 6 ciudades de signo opuesto, los umbrales fijados después y el cambio de `holdout.py` en c5e8aae. C3 §11 está corregido. |
+| W9 | **Resuelto** | El criterio c es igual en C1 y C3: max(R²_y, R²_d) y \|δ\| > 1. Se declara la dependencia de H3-3a respecto a la pendiente previa. El criterio b de H3-1 queda según P3 y el de H3-3 como «parcial». Se informa `Mbar_ruptura`. El shim y la redirección del LOG están eliminados. Las capas no cambian: H3-1 falla a, c y d; H3-2 falla a, c y d; H3-3a falla a y c; H3-3b falla a, b y c. Todas siguen en C4. |
+| W10 | **Resuelto** | `p_ajustado` está relleno en C1 y C3 y coincide con `holm_v3.csv`. LIT lleva etiquetas VERIFICADA/NO VERIFICADA con cuartil. V10 está en forma condicional. V12 dice ahora «la cota no excluye que cubra toda la subida». |
+
+### Sobre la sección «Probable pero no demostrado»
+
+Es aceptable con el calificativo «(exploratorio, C4)» y la frase de que no decide veredictos, por tres razones:
+- su contenido es simétrico: topes en renta y en contratos, y VUT;
+- los dos ítems de topes dan los resultados en contra junto a los a favor;
+- la misma afirmación aparece en «No se puede afirmar» con independencia de su signo.
+
+La palabra «Probable» no pertenece a la escala. Su uso queda cubierto por la limitación L-v3-W3 propuesta abajo.
+
+### Residuos (no bloquean; se corrigen en edición o pasan a limitaciones)
+
+- **R1.** La regla de V01 sigue diciendo «fallan adelanto, placebos, sensibilidad y sellado». Tras W9, H3-1 falla adelanto, sensibilidad y sellado; el placebo de tratamiento pasa. Es una corrección de texto en `verificador.py`.
+- **R2.**
+  - `lo_que_sabemos.md` l. 38: cambiar «el alquiler sube menos de un 0,5 %» por «se asocia a un alquiler mayor en menos de un 0,5 %».
+  - Título: cambiar «Problema y soluciones robustas (signo estable…)» por «Problema y opciones con signo estable en la rejilla».
+- **R3.** Fila 19 de P-D (retirar VUT, esfuerzo nacional, X = 50 %): `domina_debilmente = no` y rango [−1,7; +0,01], pero `depende_de` sigue diciendo «≤ 0 en toda la rejilla (domina débilmente)». Además, mantiene la capa C2 aunque incorpora una entrada C4 (H3-1) y su signo no es estable. Debe ser C4 y hay que actualizar `depende_de`.
+- **R4.** V12 sale PARCIALMENTE porque su traducción a precio (coste de uso en estado estacionario) se trata como C2. V01 y V03 quedan en SIN EVIDENCIA porque su traducción a precio (vía ε) es C4. La diferencia no está justificada en el código ni en decisiones.md. Si las cotas de VUT vía ε contaran como C2, V01 pasaría a NO RESPALDADA (≤8,3 % < 50 %). No se puede corregir en esta iteración sin decidir una regla, y pasa a limitaciones.
+
+### Veredicto de la iteración 2: **APROBAR**
+
+W1-W10 están resueltos y no cambia ninguna capa. R1-R3 son correcciones de texto y de etiqueta que el orquestador debe aplicar antes del cierre, sin nueva revisión. R4 queda documentado como limitación.
+
+### Texto propuesto para docs/v3/limitaciones.md
+
+> **L-v3-W3 (verificador y documentos).** (1) La traducción de cotas a precio usa dos estándares. En tipos de interés (V12), el coste de uso en estado estacionario P/R = 1/uc se trata como C2. En viviendas turísticas e inmigración (V01, V03), la traducción vía la elasticidad de demanda ε se trata como C4, porque no hay estimación española verificada. Ambas son supuestos estructurales. Con un estándar único, V12 pasaría a SIN EVIDENCIA SUFICIENTE si se tratara como C4, o V01 a NO RESPALDADA si las cotas vía ε se trataran como C2 (≤8,3 % de la subida). Ninguno de los dos cambios se ha hecho. (2) La sección «Probable pero no demostrado (exploratorio, C4)» de lo_que_sabemos.md responde a un requisito del entregable. «Probable» no es una capa de la escala: sus ítems son C4 y no deciden ningún veredicto. (3) La simulación P-D no modela costes de ninguna opción (fiscal, de suelo, de movilización, pérdida para propietarios, demanda turística desplazada). La dominancia y el arrepentimiento mínimo comparan solo efectos sobre el esfuerzo y la oferta, y favorecen mecánicamente a las dosis mayores. (4) H3-1 se evaluó con la muestra nacional como único confirmatorio. El sellado de las 6 ciudades (secundario) tiene signo opuesto (β = −0,0013, p = 0,20). Con ambas muestras en la familia, m = 5, y ninguna conclusión cambia.

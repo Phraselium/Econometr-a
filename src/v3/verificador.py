@@ -144,7 +144,7 @@ def fichas(ev) -> list[dict]:
         regla=("Regla común (i)-(iv): «causa principal» exige ≥50 % de la subida. Solo hay cota C2 de cantidad "
                "(desplazamiento pequeño frente al stock; una cuarta parte de la subida municipal ocurre donde las VUT "
                "apenas crecieron), que no atribuye precio; sin cota C2/C3 de precio, SIN EVIDENCIA SUFICIENTE. "
-               "H3-1 y H3-2 quedaron en C4 (fallan adelanto, placebos, sensibilidad y sellado): sus estimaciones, "
+               "H3-1 y H3-2 quedaron en C4 (fallan adelanto, sensibilidad y sellado; el placebo de tratamiento pasa): sus estimaciones, "
                "pequeñas y con IC que incluye 0, no se promueven de capa."),
         limites=("Las VUT del INE no son todos los alquileres de temporada; el efecto local en barrios concretos puede "
                  "ser mayor que el nacional (ver cotas por ciudad en output/v3/PB); SERPAVI es un stock que amortigua."),
@@ -342,19 +342,19 @@ def fichas(ev) -> list[dict]:
     out.append(dict(
         id="V12", tema="Tipos de interés",
         enunciado="Los tipos de interés son la causa principal de la subida de los precios de la vivienda (≥50 % de la subida).",
-        capa="C2",
-        magnitud=(f"2014-2021: Δln(1/coste de uso) = +{_f(b4a.get('cota_superior'))} % (rango "
-                  f"{_iv([b4a.get('sensibilidad_min'), b4a.get('sensibilidad_max')])} %), por encima de la subida del precio "
-                  "de compra del periodo: la cota no excluye que cubra toda la subida. 2021-2025: Δln(1/coste de uso) = "
-                  f"{_f(b4b.get('cota_superior'))} %, de signo contrario a la subida de precios. Sobre el alquiler no se "
-                  "calcula cota (supuesto de efecto nulo, C4)."),
+        capa="C4",
+        magnitud=(f"Con el supuesto estructural P/R = 1/coste de uso (C4): 2014-2021, Δln(1/uc) = +{_f(b4a.get('cota_superior'))} % "
+                  f"(rango {_iv([b4a.get('sensibilidad_min'), b4a.get('sensibilidad_max')])} %), por encima de la subida del precio "
+                  f"de compra; 2021-2025, Δln(1/uc) = {_f(b4b.get('cota_superior'))} %, de signo contrario a la subida de precios. "
+                  "Sobre el alquiler no se calcula cota."),
         intervalo=f"2014-2021 {_iv([b4a.get('sensibilidad_min'), b4a.get('sensibilidad_max')])} %; 2021-2025 {_iv([b4b.get('sensibilidad_min'), b4b.get('sensibilidad_max')])} %",
-        cota="C2 en estado estacionario P/R = 1/uc.",
+        cota="C4: traducción a precio con un supuesto estructural (mismo estándar que la vía ε de V01 y V03).",
         literatura=f"{LIT['POTERBA']} para el coste de uso.",
-        veredicto="PARCIALMENTE",
-        regla=("Regla común (iv): CONTRADICHA en 2021-2025 (cota C2 de signo contrario) y compatible en 2014-2021 (la cota "
-               "C2 alcanza el 50 %, sin cota inferior): PARCIALMENTE, contradicha en un periodo y no descartada en otro."),
-        limites="Depende del suelo del coste de uso y de la ganancia esperada; estado estacionario.",
+        veredicto="SIN EVIDENCIA SUFICIENTE",
+        regla=("Regla común (i)-(iv), con el mismo estándar que V01 y V03: toda traducción de una cota a precio que descansa en "
+               "un supuesto estructural no estimado (ε en V01/V03; P/R = 1/uc aquí) es C4 y no decide. Con ese supuesto, la "
+               "afirmación sería incompatible con 2021-2025 y no descartada en 2014-2021."),
+        limites="Estado estacionario; depende del suelo del coste de uso y de la ganancia esperada.",
         evidencia=["output/v3/PB/cotas.json#B4"],
     ))
 

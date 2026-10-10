@@ -18,7 +18,7 @@ Este documento presenta los resultados del proyecto v3 para quienes diseñan o e
 | Vivienda pública | Reduce el esfuerzo si no desplaza construcción privada; efecto nulo con desplazamiento total | C2 (dominancia débil) | Sí: grado de desplazamiento y coste unitario |
 | Regulación de viviendas turísticas | Retirarlas todas en las secciones de mayor peso de 6 ciudades devolvería como máximo unas 31.000 viviendas; efecto local en alquiler de −2,0 % a +0,5 % con H3-1 sellado (mayor con calibraciones no replicadas) | C2 en cantidad, C4 en precio | Sí: signo no estable |
 | Topes de alquiler | Asociación de −5,4 % en la renta de los contratos nuevos (Cataluña, 2020-2022); contratos −4,9 % [−9,9; +0,5]; esfuerzo medio de los inquilinos de −2,9 % a +7,3 % según la respuesta de la oferta | C4 | Sí: el signo depende de la reducción de contratos |
-| Tipos de interés | El coste de uso puede cubrir la subida de 2014-2021; en 2021-2025 tiene el signo contrario | C2 | Depende del suelo del coste de uso |
+| Tipos de interés | Con P/R = 1/coste de uso: compatible con la subida de 2014-2021; signo contrario en 2021-2025 | C4 (supuesto estructural) | Depende del suelo del coste de uso |
 
 Lectura:
 - Signo estable en toda la rejilla, en sentido estricto: construcción y movilización de vacías donde hay presión.

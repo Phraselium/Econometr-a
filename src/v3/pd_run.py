@@ -478,7 +478,7 @@ def main(smoke: bool = False):
             "depende de ε, η y de s (nula si s = 0)", "C4", "Condicional a ε y s; aproximación log-lineal." + nota_val(lo_q))
     n2 = tab.loc["P2_retirar_VUT_50pct"]
     add("P2 retirar turísticos", "variación del esfuerzo medio nacional con X = 50 %", n2.esfuerzo_min_pct, n2.esfuerzo_max_pct, "%", sg(n2),
-        "efecto ≤ 0 en toda la rejilla y nulo si s = 0 en la vía de cantidad (domina débilmente); magnitud depende de s, ε, η y del método", "C2",
+        "signo no estable: con H3-1 sellado (C4) el rango incluye valores > 0; depende de s, ε, η y del método", "C4",
         "Solo seis ciudades; ponderación nacional por el stock de alquiler; sin costes ni variación del sector turístico.", yn(n2.domina_debil))
     # P3
     pi, bi = P3["por_inq"], P3["ben_inq"]

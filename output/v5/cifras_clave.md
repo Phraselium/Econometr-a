@@ -240,8 +240,8 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 | E-E1-B2-indeterminado | Provincias cuyo déficit indeterminado 2025-2030 en todo el rango | 27 |  | provincias | 2025 a 2030 | 52 provincias | B2 (rango completo) | C4 | 2026-10-10 |
 | E-E1-B2-mejora | Provincias cuyo déficit mejora 2025-2030 en todo el rango | 5 |  | provincias | 2025 a 2030 | 52 provincias | B2 (rango completo) | C4 | 2026-10-10 |
 | E-E1-B3-N | Provincias del corte transversal principal de B3 (sin Ceuta ni Melilla) | 50 |  | provincias | 2015-2025 | España | B3 | C4 | 2026-10-10 |
-| E-E1-B3-RV-H-B3-1 | Cinelli-Hazlett RV (q=1) de H-B3-1 | 0.2815 | 0.041–0.3196 | R² parcial (min = RV_α; max = RV con gl N-K-1) | 2015-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
-| E-E1-B3-RV-H-B3-2 | Cinelli-Hazlett RV (q=1) de H-B3-2 | 0.2621 | 0.01485–0.2982 | R² parcial (min = RV_α; max = RV con gl N-K-1) | 2015-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
+| E-E1-B3-RV-H-B3-1 | Cinelli-Hazlett RV (q=1) de H-B3-1 | 0.2815 | 0.041–0.3196 | R² parcial | 2015-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
+| E-E1-B3-RV-H-B3-2 | Cinelli-Hazlett RV (q=1) de H-B3-2 | 0.2621 | 0.01485–0.2982 | R² parcial | 2015-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
 | E-E1-B3-mvp-H-B3-1 | Multiverso H-B3-1: % de especificaciones con p<0,05 | 3.125 |  | % | 2015-2025 / 2021-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
 | E-E1-B3-mvp-H-B3-2 | Multiverso H-B3-2: % de especificaciones con p<0,05 | 59.38 |  | % | 2015-2025 / 2021-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
 | E-E1-B3-mvp-H-B3-6 | Multiverso H-B3-6: % de especificaciones con p<0,05 | 46.88 |  | % | 2015-2025 / 2021-2025 | 50 provincias | B3 | C4 | 2026-10-10 |

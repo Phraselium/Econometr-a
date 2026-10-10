@@ -57,7 +57,7 @@ def filas() -> list[dict]:
         f.append(h(f"E-E1-B3-oster-{k}", f"Oster δ (Rmax acotado a 1) de {k}", s["delta_oster"], None, None, "razón δ",
                    "2015-2025", "50 provincias", "B3", "C4", FECHA))
         f.append(h(f"E-E1-B3-RV-{k}", f"Cinelli-Hazlett RV (q=1) de {k}", s["RV"], s["RV_alpha"], s["RV_gl_n"],
-                   "R² parcial (min = RV_α; max = RV con gl N-K-1)", "2015-2025", "50 provincias", "B3", "C4", FECHA))
+                   "R² parcial", "2015-2025", "50 provincias", "B3", "C4", FECHA))
     # --- D1: incidencia por clase, método B ---------------------------------------------------------
     inc = _csv("D1/incidencia_ayudas_por_clase.csv")
     for r in inc[inc.metodo == "B"].itertuples():

@@ -235,8 +235,8 @@ E-E1-B2-estable3,Provincias con el mismo signo central en los 3 escenarios de te
 E-E1-B2-indeterminado,Provincias cuyo déficit indeterminado 2025-2030 en todo el rango,27,,,provincias,2025 a 2030,52 provincias,B2 (rango completo),C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-B2-indeterminado
 E-E1-B2-mejora,Provincias cuyo déficit mejora 2025-2030 en todo el rango,5,,,provincias,2025 a 2030,52 provincias,B2 (rango completo),C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-B2-mejora
 E-E1-B3-N,Provincias del corte transversal principal de B3 (sin Ceuta ni Melilla),50,,,provincias,2015-2025,España,B3,C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-B3-N
-E-E1-B3-RV-H-B3-1,Cinelli-Hazlett RV (q=1) de H-B3-1,0.281489,0.0410038,0.31958,R² parcial (min = RV_α; max = RV con gl N-K-1),2015-2025,50 provincias,B3,C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-B3-RV-H-B3-1
-E-E1-B3-RV-H-B3-2,Cinelli-Hazlett RV (q=1) de H-B3-2,0.262136,0.0148464,0.298248,R² parcial (min = RV_α; max = RV con gl N-K-1),2015-2025,50 provincias,B3,C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-B3-RV-H-B3-2
+E-E1-B3-RV-H-B3-1,Cinelli-Hazlett RV (q=1) de H-B3-1,0.281489,0.0410038,0.31958,R² parcial,2015-2025,50 provincias,B3,C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-B3-RV-H-B3-1
+E-E1-B3-RV-H-B3-2,Cinelli-Hazlett RV (q=1) de H-B3-2,0.262136,0.0148464,0.298248,R² parcial,2015-2025,50 provincias,B3,C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-B3-RV-H-B3-2
 E-E1-B3-mvp-H-B3-1,"Multiverso H-B3-1: % de especificaciones con p<0,05",3.125,,,%,2015-2025 / 2021-2025,50 provincias,B3,C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-B3-mvp-H-B3-1
 E-E1-B3-mvp-H-B3-2,"Multiverso H-B3-2: % de especificaciones con p<0,05",59.375,,,%,2015-2025 / 2021-2025,50 provincias,B3,C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-B3-mvp-H-B3-2
 E-E1-B3-mvp-H-B3-6,"Multiverso H-B3-6: % de especificaciones con p<0,05",46.875,,,%,2015-2025 / 2021-2025,50 provincias,B3,C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-B3-mvp-H-B3-6

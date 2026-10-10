@@ -1,12 +1,20 @@
 archivo,fuente,n_series,primera_fecha,ultima_fecha,n_obs,n_nan,descargado_utc
+bde_credito_finalidad.csv,BdE,14,1992-12-01,2026-08-01,4928,1805,2026-10-10T06:04:37Z
 bde_precio_vivienda_libre.csv,BdE,3,1995-03-01,2026-06-01,378,144,2026-10-09T18:46:33Z
 bde_tipo_hipotecario_referencia.csv,BdE,1,1973-01-01,2026-09-01,645,215,2026-10-09T18:46:34Z
+bde_tipos_hipotecas_nuevas.csv,BdE,6,2003-01-01,2026-08-01,1704,0,2026-10-10T06:04:39Z
 ecb_euribor1y.csv,BCE,1,1994-01-01,2026-09-01,393,0,2026-10-09T18:41:42Z
 ecb_hicp_es.csv,BCE,1,1996-01-01,2025-12-01,360,0,2026-10-09T18:41:50Z
 ecb_nuevo_credito_vivienda_es.csv,BCE,1,2003-01-01,2026-08-01,284,0,2026-10-09T18:41:44Z
 ecb_stock_credito_vivienda_es.csv,BCE,1,2003-01-01,2026-08-01,284,0,2026-10-09T18:41:46Z
 ecb_tipo_hipotecario_es.csv,BCE,1,2003-01-01,2026-08-01,284,0,2026-10-09T18:41:41Z
 ecb_tipo_oficial.csv,BCE,1,1999-01-01,2026-09-16,48,0,2026-10-09T18:41:48Z
+eu_hicp.csv,Eurostat,64,2000-01-01,2025-01-01,1640,0,2026-10-10T06:05:52Z
+eu_hicp_rent.csv,Eurostat,96,2000-01-01,2025-12-01,11461,0,2026-10-10T06:05:50Z
+eu_hpi.csv,Eurostat,122,2005-01-01,2026-04-01,5878,0,2026-10-10T06:05:45Z
+eu_income_emp.csv,Eurostat,62,2000-01-01,2025-01-01,1318,0,2026-10-10T06:06:05Z
+eu_migr_pop.csv,Eurostat,64,2000-01-01,2025-01-01,1580,8,2026-10-10T06:06:02Z
+eu_permits.csv,Eurostat,89,2000-01-01,2026-04-01,4289,0,2026-10-10T06:05:58Z
 eurostat_costes.csv,Eurostat,1,1980-01-01,2026-04-01,186,0,2026-10-09T18:43:32Z
 eurostat_empleo_nuts2.csv,Eurostat,19,2008-01-01,2025-01-01,342,0,2026-10-09T18:43:37Z
 eurostat_hpi.csv,Eurostat,6,2005-10-01,2026-04-01,486,0,2026-10-09T18:43:34Z
@@ -51,7 +59,11 @@ mivau_transacciones_extranjeros.csv,MIVAU - Boletin Online Fomento (sedal),576,2
 mivau_transacciones_municipios.csv,MIVAU - Boletin Online Fomento (sedal),305,2004-01-01,2026-01-01,27145,0,2026-10-09T18:59:23Z
 mivau_transacciones_residencia.csv,MIVAU - Boletin Online Fomento (sedal),640,2007-01-01,2026-04-01,49920,0,2026-10-09T18:53:45Z
 mivau_transacciones_total.csv,MIVAU - Boletin Online Fomento (sedal),65,2004-01-01,2026-01-01,5696,0,2026-10-09T18:53:41Z
+mivau_v2_iniciadas_terminadas_prov.csv,MIVAU - Boletin Online Fomento/Transportes (sedal),252,1991-01-01,2026-06-01,32004,3,2026-10-10T06:02:36Z
+mivau_v2_protegida.csv,MIVAU - Boletin Online Fomento/Transportes (sedal),252,1991-01-01,2026-06-01,32382,6,2026-10-10T06:02:30Z
+mivau_v2_suelo.csv,MIVAU - Boletin Online Fomento/Transportes (sedal),124,2004-01-01,2026-04-01,11160,1739,2026-10-10T06:02:23Z
 mivau_valor_tasado_municipios.csv,MIVAU - Boletin Online Fomento (sedal),309,2005-01-01,2026-04-01,24861,0,2026-10-09T18:53:40Z
 mivau_valor_tasado_nacional_ccaa_prov.csv,MIVAU - Boletin Online Fomento (sedal),65,1995-01-01,2026-04-01,7939,0,2026-10-09T18:53:37Z
 mivau_visados.csv,MIVAU - Boletin Online Fomento (sedal),63,2008-01-01,2026-06-01,13605,0,2026-10-09T18:53:40Z
+pdf/serpavi_v2_municipios.csv,MIVAU-SERPAVI (AEAT IRPF),32402,2011-01-01,2024-01-01,351686,0,2026-10-10T06:04:08Z
 vlc_precio_vivienda_libre.csv,Ajuntament de València - Opendata (CKAN); fuente primaria no indicada en el recurso,24,2021-04-01,2022-04-01,120,0,2026-10-09T18:54:14Z

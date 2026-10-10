@@ -229,3 +229,170 @@ Notas de discrepancia respecto a la lista de partida:
 - Anexo metodológico: verificación **parcial** de Leamer (1985, AER 75(3), 308-313; solo listados de búsqueda, sin DOI) y de Holm (1979; DOI 10.2307/4615733 solo por registros de búsqueda, Crossref por DOI dio 404). Leamer (1983) verificado en IDEAS (sin DOI).
 - Anexo: páginas finales no confirmadas en Crossref (solo p. inicial) para Stock-Watson 1993, Breusch-Pagan 1979, Jarque-Bera 1987, Chow 1960, Hansen 1982 y Godfrey 1978a; DOI de Pesaran (2004, WP) no localizado.
 - Anexo: MacKinnon (2010, WP Queen's) **NO VERIFICADA** (no buscada; no se cita). Chudik-Pesaran y Rotemberg (1983): no citados en el repositorio, no incluidos.
+
+---
+
+# PARTE v2 (verificación 2026-10-10)
+
+Método: DOI comprobado en la API de Crossref (`api.crossref.org/works/<DOI>` o consulta bibliográfica que devuelve el DOI; autores, revista, volumen, número y páginas leídos del registro). Cuartil: página de la revista en Scimago (scimagojr.com) obtenida mediante búsqueda; la descarga directa de scimagojr.com devolvió 403. Leyenda de cuartil: «Q1 (SJR 2025)» = mejor cuartil de la edición 2025; «Q1 (a-b)» = el historial anual visible en el resultado cubre esos años, incluido el de publicación; cuando solo se vio 2025 **no** se comprobó el año de publicación y se indica. Los resultados numéricos proceden de abstracts o resúmenes leídos; si no se pudo leer la magnitud se escribe «magnitud no extraída». Los documentos de trabajo (WP) no tienen cuartil.
+
+## Correcciones y discrepancias de la parte v2
+
+1. Garriga, Manuelli y Peralta-Alva (2019) es **American Economic Review** 109(6), 2036-2072, no Econometrica.
+2. Garcia-López et al. (2020): *Journal of Urban Economics* 119, art. 103278 (Crossref no da número de fascículo; ver DOI). Hay dos versiones con cifras distintas (WP IEB 2019: 5,3 % precios de transacción; 2020: 4,6 %); se cita la publicada.
+3. Caldera y Johansson (2013) pasa de **NO VERIFICADA** (v1) a **VERIFICADA** en Crossref (JHE 22(3), 231-249). Cavalleri, Cournède y Özsöğüt (2019): el DOI 10.1787/4777e29a-en existe en Crossref como «How responsive are housing markets in the OECD? National level estimates», OECD Economics Department WP (20/12/2019), pero el registro no lista autores ni número; el título v1 («How responsive are housing markets in the OECD?») estaba incompleto. Autores y nº 1589 siguen sin confirmar aquí.
+4. Hahn et al. y Mense et al.: el trabajo de Mense, Michelsen y Kholodilin (JUE 2023) estudia la Mietpreisbremse federal, no el Mietendeckel de Berlín; este último es Hahn, Kholodilin, Waltl y Fongoni (Management Science 2024).
+5. Monràs y García-Montalvo: solo existen documentos de trabajo verificados (FRBSF WP 2023-28 con DOI; versiones UPF/CEPR sin DOI comprobado). Las cifras cambian entre versiones; no hay artículo en revista localizado.
+6. Fedea (2026), Apunte 2026/15 sobre la Ley 12/2023: sin DOI; **NO VERIFICADA** (solo resumen de prensa y de la ficha del PDF; no se leyó el texto).
+7. Sin discrepancias de revista/año en Chernozhukov et al. 2018, Wager-Athey 2018, Goldsmith-Pinkham et al. 2020, Borusyak-Hull-Jaravel 2022, Callaway-Sant'Anna 2021, Arkhangelsky et al. 2021, Plagborg-Møller y Wolf 2021, Giannone-Lenza-Primiceri 2015, Primiceri 2005, Kaplan-Mitman-Violante 2020, Saiz 2007, Sá 2015 y Lim et al. 2021. Primiceri (2005) tiene corrección: Del Negro y Primiceri (2015), REStud 82(4), 1342-1345.
+8. Callaway-Sant'Anna, Sun-Abraham, Goodman-Bacon: números de revista tal como figuran en Crossref (J. Econometrics 225(2)); fecha en línea no consta como campo propio.
+
+## v2-1. Auge reciente de precios y alquileres en España y Europa
+
+**Khametshin, López Rodríguez y Pérez García (2024), BdE Documento Ocasional 2432.** *Pregunta:* evolución y determinantes del alquiler residencial en España. *Datos:* estadísticas del BdE y registros de hogares (detalle de fuentes no extraído). *Diseño:* descriptivo, sin identificación causal. *Resultado:* la subida de precios del alquiler desde 2015, más intensa en grandes áreas urbanas, resulta de una demanda que crece más que la oferta; el dinamismo demográfico y la concentración urbana lideran la demanda; parte de la demanda se desplaza al alquiler por la prudencia crediticia hipotecaria; la expansión se concentra en jóvenes y población de origen extranjero. Cifras de magnitud no extraídas.
+
+**Kaplan, Mitman y Violante (2020, JPE 128(9)).** *Pregunta:* qué impulsó el boom-bust de 2000-2010 en EE. UU. *Diseño:* modelo de equilibrio con tres shocks (renta, condiciones de financiación, creencias sobre demanda futura). *Resultado:* el principal impulsor de precios y alquileres fue un cambio de creencias, no las condiciones de crédito, que afectan sobre todo a propiedad, apalancamiento y ejecuciones. Relevancia: señala que las expectativas deben controlarse al explicar el auge actual.
+
+**Garriga, Manuelli y Peralta-Alva (2019, AER 109(6)).** *Diseño:* modelo macro con mercados financieros segmentados. *Resultado:* una bajada de tipos hipotecarios siempre sube los precios; relajar el LTV tiene efecto ambiguo; en equilibrio general los shocks financieros pueden bajar alquileres y subir precios (desconexión precio-alquiler). Con previsión perfecta explica aproximadamente la mitad de la subida de precios en EE. UU. en los 2000.
+
+**López Rodríguez y Matea (2020), SSRN, BdE** (DOI de SSRN en Crossref): revisión de intervención pública en el alquiler; contenido no leído. **Borgia, Monge y Poza (2026), *Cities* 179, art. 107628**: título «How does regulation impact housing rental prices? Evidence from Spain using fractional integration techniques»; DOI y metadatos en Crossref (fecha de emisión 2026 según el registro); no se localizó abstract; resultado no verificado. **Torres-Téllez y Montero-Soler (2023, CyTET 55(215), 47-60)**: provincias españolas 2001-2019; resumen secundario (no leído el texto): inmigración llegada encareció la vivienda hasta un 2,5 % en la burbuja, la salida la redujo 1,12 % tras la crisis, y la llegada en 2010-2019 explicaría +5,9 % en alquiler (cifras no contrastadas con el artículo). Europa 2022-2025: la nota del BCE (FSR, mayo 2022, recuadro 2) atribuye el alza 2020-21 a demanda y tipos reales bajos; sin DOI, **NO VERIFICADA**.
+
+## v2-2. Inmigración y vivienda
+
+**Helfer, Grossmann y Osikominu (2023, Swiss J. Econ. Stat. 159(1)).** *Datos:* precios en 106 mercados laborales locales (1985-2016) y alquileres de 26 cantones (1998-2016). *Diseño:* IV de asentamientos históricos y event study con el acuerdo de libre circulación UE de 2002. *Resultado:* tras la reforma, la inmigración elevó sustancialmente los precios de casas unifamiliares y pisos en propiedad; los alquileres subieron aún más; antes de 2002 sin efecto. Magnitud no extraída. **Degen y Fischer (2017, SJES 153(1), 15-36):** una entrada de 1 % de la población coincide con ~+2,7 % en precios de casas unifamiliares (cifra de resumen secundario; texto no leído).
+
+**Kürschner Rauck y Kvasnicka (2025, J. Regional Science 65(5), 1269-1302).** Crisis de refugiados de 2015 en Alemania: efecto **negativo** sobre el crecimiento del alquiler a corto plazo (resumen secundario; mecanismo atribuido a percepción como desamenidad). Magnitud no extraída.
+
+**Howard (2020, AEJ: Macro 12(4), 147-179).** «The migration accelerator»: movilidad laboral, vivienda y demanda; contenido no leído más allá del título. **Torres-Téllez y Montero-Soler (2023):** ver v2-1. Nguyen et al. (2026, IMF WP/26/65): precios de vivienda y migración interna en España 2007-2023, con llegada de inmigrantes extranjeros como instrumento (resumen secundario; resultados no extraídos). Para España siguen siendo González y Ortega (2013) y los datos de v1.
+
+## v2-3. Regulación del alquiler y zonas tensionadas
+
+**Diamond, McQuade y Qian (2019, AER 109(9), 3365-3394).** San Francisco, expansión del control de 1994 (cuasi-experimento): los propietarios afectados redujeron la oferta de alquiler un 15 %; la protección a inquilinos incumbentes en el corto plazo se acompaña de una subida de alquileres de mercado a largo plazo (el +5,1 % urbano aparece solo en versiones de trabajo). **Mense, Michelsen y Kholodilin (2023, JUE 134, 103513):** Mietpreisbremse alemana, evidencia causal sobre segmentación del mercado; magnitud no extraída. **Hahn, Kholodilin, Waltl y Fongoni (2024, Management Science 70(3), 1901-1923):** Mietendeckel de Berlín; los alquileres anunciados bajaron en la zona regulada, se abrió una brecha con municipios vecinos sin regulación y la oferta disponible cayó de forma significativa (resumen secundario). **Kholodilin (2024, JHE 63, 101983):** revisión «casi completa» de los efectos del control de alquileres.
+
+**Monràs y García-Montalvo (WP 2023, FRBSF WP 2023-28, DOI 10.24148/wp2023-28; versiones UPF/CEPR).** Cataluña, control de segunda generación (2020): versión de diciembre de 2021, -5 % en el alquiler, la mitad por composición, y caída de oferta; versiones posteriores destacan efectos distribuidos (subida en el tramo bajo, bajada en el alto). Cifras inestables entre versiones; no usar como definitivas. **Fedea Apunte 2026/15 (Pinto)** sobre la Ley 12/2023: contención efectiva solo en Cataluña desde el 16/03/2024; **NO VERIFICADA** (sin DOI, texto no leído).
+
+## v2-4. Alquiler turístico (Airbnb)
+
+**Garcia-López, Jofre-Monseny, Martínez-Mazza y Segú (2020, JUE 119, 103278).** *Datos:* barrios de Barcelona. *Diseño:* efectos fijos, IV shift-share, event studies y caso Sagrada Familia. *Resultado:* alquileres +1,9 % en el barrio medio, +7 % en el decil superior de actividad Airbnb; precios de transacción +4,6 % de media y +17 % en el decil superior (+14 % precios de oferta). **Barron, Kung y Proserpio (2021, Marketing Science 40(1), 23-47):** EE. UU., IV; Airbnb eleva precios y alquileres (magnitud no extraída). **Franco y Santos (2021, RSUE 88, 103667):** Portugal; 1 p. p. más de cuota Airbnb en un municipio se asocia con +3,7 % en precios (+3,2 % en Lisboa/Oporto); la cifra de alquiler difiere entre versiones y no se confirmó. Evidencia española adicional (San Sebastián, Málaga, Madrid) solo en repositorios y prensa: **NO VERIFICADA** (sin DOI).
+
+## v2-5. Inversores, no residentes y golden visas
+
+**Badarinza y Ramadorai (2018, JFE 130(3), 532-555).** Londres, compras corporativas del Land Registry (2,44 millones de transacciones, 1995-2013); el riesgo político en el país de origen eleva los precios de Londres en los barrios con más residentes de ese origen, de forma persistente. **Cvijanović y Spaenjers (2021, Management Science 67(7), 4120-4138).** París, registros notariales: los compradores extranjeros pagan más y revenden por menos; el efecto causal de su demanda sobre los precios es positivo pero pequeño. **Santos y Strohmaier (2024), SSRN/IZA DP 16857:** Portugal, golden visa de 2012; prima de ~38.000 euros sobre el valor fiscal en el umbral de 500.000 euros (>10 % en vivienda de alta gama); WP. **Foremny, Li, Martínez-Toledano y Segú (2025), SSRN:** «Golden Visas and Real Estate Markets»; DOI en Crossref pero resultados no leídos (SSRN dio 403). Cese del golden visa en España (3/04/2025): solo fuentes secundarias, no verificado en el BOE.
+
+## v2-6. Tipos de interés, crédito y precios
+
+**Gimeno y Martínez-Carrascal (2010, J. Banking & Finance 34(8), 1849-1855).** España, VECM: en el largo plazo cada variable afecta a la otra; solo los precios corrigen el desequilibrio, el crédito no; en el corto plazo, efecto positivo contemporáneo mutuo. **Garriga et al. (2019)** y **Kaplan et al. (2020)**: ver v2-1 (tipos hipotecarios más bajos suben precios; el crédito por sí solo no explica el boom en KMV: contraste de hipótesis). Estudio 2023 en *Revista de Estudios Empresariales* (relación negativa tipo hipotecario-precio con retardo de 1-4 trimestres): resumen secundario sin DOI comprobado, **NO VERIFICADA**. Cloyne et al. (borrowing) y Jordà-Schularick-Taylor (2015): no se verificó la versión publicada; no se citan.
+
+## v2-7. Elasticidad de la oferta y suelo
+
+**Caldera y Johansson (2013, JHE 22(3), 231-249):** elasticidad de oferta en la OCDE; origen de la cifra ~0,45 de España que cita el BdE. **Cavalleri et al. (2019):** ver correcciones. **Solé-Ollé y Viladecans-Marsal (2012, J. Public Economics 96(1-2), 10-19):** más de 2.000 municipios españoles 2003-2007; oferta local de suelo (zonificación) dependiente de lobbying y competencia política (magnitud no extraída). **Gyourko, Mayer y Sinai (2013, AEJ: Economic Policy 5(4), 167-199)**, «Superstar Cities». **Paciorek (2012), FEDS 2012-01** (WP de la Fed; versión JUE no verificada). Complementa v1: Saiz (2010), Hilber-Vermeulen (2016).
+
+## v2-8. Aprendizaje automático y predicción de precios
+
+**Mullainathan y Spiess (2017, JEP 31(2), 87-106):** ML como herramienta de predicción (no identificación causal); ilustración con precios de vivienda en el original (detalle no leído). **Rico-Juan y Taltavull de La Paz (2021, Expert Systems with Applications 171, 114590):** precios de oferta en Alicante; el bosque aleatorio es el mejor predictor, con error inferior al 2 % (resumen), y la combinación con hedónicos aporta no linealidades e interpretabilidad. **Lim, Arık, Loeff y Pfister (2021, Int. J. Forecasting 37(4), 1748-1764):** Temporal Fusion Transformer para predicción multi-horizonte interpretable (aplicación a vivienda no verificada). **Harvey, Leybourne y Newbold (1997, IJF 13(2), 281-291):** corrección de pequeña muestra del contraste Diebold-Mariano (v1 anexo) para comparar errores de predicción. Hjort et al. (2022, gradient boosting): no se pudo verificar en Crossref; **NO VERIFICADA**.
+
+## v2-9. DML y bosques causales
+
+**Chernozhukov et al. (2018, Econometrics J. 21(1), C1-C68):** DML con ortogonalización de Neyman y cross-fitting; inferencia válida con nuisance estimados por ML. **Wager y Athey (2018, JASA 113(523), 1228-1242):** bosques causales con normalidad asintótica para efectos heterogéneos. **Athey, Tibshirani y Wager (2019, Annals of Statistics 47(2), 1148-1178):** generalized random forests. **Baiardi y Naghi (2024, Econometrics J. 27(2), 213-234):** reanálisis de estudios aplicados con DML; resultados cuantitativos no extraídos. No se localizó aplicación de DML/bosques causales a inmigración y vivienda en España (laguna).
+
+## v2-10. Shift-share
+
+Ya verificados en v1: Goldsmith-Pinkham et al. (2020), Borusyak et al. (2022), Adão et al. (2019). Añadido: **Borusyak, Hull y Jaravel (2024), «A Practical Guide to Shift-Share Instruments»**, NBER WP 33236 (DOI Crossref 10.3386/w33236; versión en revista no confirmada). Aplicaciones con IV tipo shift-share en vivienda: Saiz (2007), González y Ortega (2013), García-López et al. (2020) y Helfer et al. (2023).
+
+## v2-11. DiD escalonado y control sintético
+
+**Callaway y Sant'Anna (2021, J. Econometrics 225(2), 200-230); Sun y Abraham (2021, J. Econometrics 225(2), 175-199); de Chaisemartin y D'Haultfœuille (2020, AER 110(9), 2964-2996); Goodman-Bacon (2021, J. Econometrics 225(2), 254-277); Borusyak, Jaravel y Spiess (2024, REStud 91(6), 3253-3285); Roth, Sant'Anna, Bilinski y Poe (2023, J. Econometrics 235(2), 2218-2244):** con tratamiento escalonado y efectos heterogéneos, el TWFE usa comparaciones contaminadas (Goodman-Bacon) y estimadores alternativos recuperan ATT por cohorte y periodo (CS, SA, dCDH, BJS). **Abadie, Diamond y Hainmueller (2010, JASA 105(490), 493-505)** y **Abadie (2021, JEL 59(2), 391-425):** control sintético; requisitos de ajuste previo y datos. **Arkhangelsky et al. (2021, AER 111(12), 4088-4118):** DiD sintético, combina pesos de unidades y tiempos. Aplicación directa: Cataluña 2020 y zonas tensionadas (Ley 12/2023) con tratamiento escalonado.
+
+## v2-12. BVAR, TVP-VAR y proyecciones locales
+
+**Giannone, Lenza y Primiceri (2015, REStat 97(2), 436-451):** selección jerárquica de la priors (Minnesota) por verosimilitud marginal. **Bańbura, Giannone y Reichlin (2010, J. Applied Econometrics 25(1), 71-92):** VAR bayesianos grandes. **Primiceri (2005, REStud 72(3), 821-852)** y corrección **Del Negro y Primiceri (2015, REStud 82(4), 1342-1345):** TVP-VAR con volatilidad estocástica. **Plagborg-Møller y Wolf (2021, Econometrica 89(2), 955-980):** VAR y LP estiman las mismas respuestas al impulso, con diferencias de sesgo-varianza. **Montiel Olea y Plagborg-Møller (2021, Econometrica 89(4), 1789-1823):** LP con rezagos aumentados, inferencia con errores normales válida sea estacionaria o no. Jordà (2005) en v1. Nota: con rezagos aumentados no se necesita HAC según este artículo; el CLAUDE.md fija HAC(4) como comparación, a documentar.
+
+## Tabla: signos esperados v2
+
+Signos como hipótesis derivadas de la literatura, no resultados propios. «?» = sin evidencia verificada o resultado no extraído.
+
+| Variable | Signo en alquiler | Signo en compra | Referencias |
+|---|---|---|---|
+| Flujo/stock de inmigrantes | + (más que en compra en Suiza); − en Alemania 2015 (refugiados, crecimiento del alquiler) | + (EE. UU., España, Suiza); − Reino Unido | Saiz 2007; Helfer et al. 2023; Kürschner Rauck-Kvasnicka 2025; González-Ortega 2013; Sá 2015; Torres-Téllez y Montero-Soler 2023 |
+| Control de alquileres / zonas tensionadas | − en el segmento regulado a corto plazo; + a largo plazo y fuera de la zona (por caída de oferta) | ? (no extraído) | Diamond et al. 2019; Hahn et al. 2024; Mense et al. 2023; Monràs-García-Montalvo (WP) |
+| Alquiler turístico (cuota Airbnb) | + | + | Garcia-López et al. 2020; Barron et al. 2021; Franco-Santos 2021 |
+| Compradores extranjeros / golden visa | ? | + (pequeño en París; >10 % gama alta en Portugal) | Badarinza-Ramadorai 2018; Cvijanović-Spaenjers 2021; Santos-Strohmaier 2024 (WP) |
+| Tipo hipotecario | ambiguo (puede subir por desplazamiento de demanda al alquiler; baja en equilibrio general si sube el precio) | − | Garriga et al. 2019; Khametshin et al. 2024; Gimeno-Martínez-Carrascal 2010 |
+| Crédito hipotecario | ? | + (causalidad bidireccional) | Gimeno-Martínez-Carrascal 2010; contraste: Kaplan et al. 2020 (condiciones de crédito no mueven precios) |
+| Creencias/expectativas | + | + | Kaplan et al. 2020 |
+| Elasticidad de oferta / suelo disponible | − sobre el alquiler (a menor elasticidad, más subida) | − sobre el precio | Caldera-Johansson 2013; Solé-Ollé y Viladecans 2012; Saiz 2010 y Hilber-Vermeulen 2016 (v1) |
+| Hogares y demografía (urbana) | + | + | Khametshin et al. 2024 |
+
+## Tabla: referencias v2
+
+| Referencia | DOI | Revista | Cuartil | Estado |
+|---|---|---|---|---|
+| Chernozhukov et al. (2018), 21(1), C1-C68 | 10.1111/ectj.12097 | Econometrics Journal | Q1 (2010-2025) | VERIFICADA |
+| Wager y Athey (2018), 113(523), 1228-1242 | 10.1080/01621459.2017.1319839 | JASA | Q1 (1999-2022) | VERIFICADA |
+| Goldsmith-Pinkham et al. (2020), 110(8) [v1] | 10.1257/aer.20181047 | AER | Q1 (1999-2025) | VERIFICADA |
+| Borusyak, Hull y Jaravel (2022), 89(1) [v1] | 10.1093/restud/rdab030 | REStud | Q1 (1999-2025) | VERIFICADA |
+| Callaway y Sant'Anna (2021), 225(2), 200-230 | 10.1016/j.jeconom.2020.12.001 | J. Econometrics | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Sun y Abraham (2021), 225(2), 175-199 | 10.1016/j.jeconom.2020.09.006 | J. Econometrics | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Goodman-Bacon (2021), 225(2), 254-277 | 10.1016/j.jeconom.2021.03.014 | J. Econometrics | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Roth et al. (2023), 235(2), 2218-2244 | 10.1016/j.jeconom.2023.03.008 | J. Econometrics | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| de Chaisemartin y D'Haultfœuille (2020), 110(9), 2964-2996 | 10.1257/aer.20181169 | AER | Q1 (1999-2025) | VERIFICADA |
+| Arkhangelsky et al. (2021), 111(12), 4088-4118 | 10.1257/aer.20190159 | AER | Q1 (1999-2025) | VERIFICADA |
+| Borusyak, Jaravel y Spiess (2024), 91(6), 3253-3285 | 10.1093/restud/rdae007 | REStud | Q1 (1999-2025) | VERIFICADA |
+| Abadie, Diamond y Hainmueller (2010), 105(490), 493-505 | 10.1198/jasa.2009.ap08746 | JASA | Q1 (1999-2022) | VERIFICADA |
+| Abadie (2021), 59(2), 391-425 | 10.1257/jel.20191450 | J. Economic Literature | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Plagborg-Møller y Wolf (2021), 89(2), 955-980 | 10.3982/ECTA17813 | Econometrica | Q1 (1999-2020 visto) | VERIFICADA |
+| Montiel Olea y Plagborg-Møller (2021), 89(4), 1789-1823 | 10.3982/ECTA18756 | Econometrica | Q1 (1999-2020 visto) | VERIFICADA |
+| Giannone, Lenza y Primiceri (2015), 97(2), 436-451 | 10.1162/REST_a_00483 | Rev. Economics and Statistics | Q1 (1999-2025) | VERIFICADA |
+| Primiceri (2005), 72(3), 821-852 | 10.1111/j.1467-937X.2005.00353.x | REStud | Q1 (1999-2025) | VERIFICADA |
+| Del Negro y Primiceri (2015), 82(4), 1342-1345 | 10.1093/restud/rdv024 | REStud | Q1 (1999-2025) | VERIFICADA |
+| Bańbura, Giannone y Reichlin (2010), 25(1), 71-92 | 10.1002/jae.1137 | J. Applied Econometrics | Q1 (2001-2025) | VERIFICADA |
+| Athey, Tibshirani y Wager (2019), 47(2), 1148-1178 | 10.1214/18-aos1709 | Annals of Statistics | Q1 (1999-2025) | VERIFICADA |
+| Baiardi y Naghi (2024), 27(2), 213-234 | 10.1093/ectj/utae004 | Econometrics Journal | Q1 (2010-2025) | VERIFICADA |
+| Harvey, Leybourne y Newbold (1997), 13(2), 281-291 | 10.1016/S0169-2070(96)00719-4 | Int. J. Forecasting | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Lim et al. (2021), 37(4), 1748-1764 | 10.1016/j.ijforecast.2021.03.012 | Int. J. Forecasting | Q1 (SJR 2025) | VERIFICADA |
+| Mullainathan y Spiess (2017), 31(2), 87-106 | 10.1257/jep.31.2.87 | J. Economic Perspectives | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Rico-Juan y Taltavull de La Paz (2021), 171, 114590 | 10.1016/j.eswa.2021.114590 | Expert Systems with Applications | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Kaplan, Mitman y Violante (2020), 128(9), 3285-3345 | 10.1086/708816 | J. Political Economy | Q1 (1999-2025) | VERIFICADA |
+| Garriga, Manuelli y Peralta-Alva (2019), 109(6), 2036-2072 | 10.1257/aer.20140193 | AER | Q1 (1999-2025) | VERIFICADA |
+| Garcia-López et al. (2020), 119, 103278 | 10.1016/j.jue.2020.103278 | J. Urban Economics | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Saiz (2007), 61(2) [v1] | 10.1016/j.jue.2006.07.004 | J. Urban Economics | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Sá (2015), 125(587) [v1] | 10.1111/ecoj.12158 | Economic Journal | Q1 (1999-2025) | VERIFICADA |
+| Helfer, Grossmann y Osikominu (2023), 159(1) | 10.1186/s41937-023-00110-1 | Swiss J. Economics and Statistics | Q2 (2023) | VERIFICADA |
+| Degen y Fischer (2017), 153(1), 15-36 | 10.1007/BF03399433 | Swiss J. Economics and Statistics | cuartil no verificado (2017) | VERIFICADA (DOI); cuartil no verificado |
+| Kürschner Rauck y Kvasnicka (2025), 65(5), 1269-1302 | 10.1111/jors.70002 | J. Regional Science | Q1 (SJR 2025) | VERIFICADA |
+| Howard (2020), 12(4), 147-179 | 10.1257/mac.20180363 | AEJ: Macroeconomics | Q1 (2010-2025) | VERIFICADA (resultado no leído) |
+| Torres-Téllez y Montero-Soler (2023), 55(215), 47-60 | 10.37230/cytet.2023.215.3 | Ciudad y Territorio Estudios Territoriales | cuartil no verificado (Q2/Q3 según instantánea) | VERIFICADA (DOI); cuartil no verificado |
+| Nguyen et al. (2026), IMF WP/26/65 | 10.5089/9798229042475.001 | IMF Working Papers | sin cuartil (WP) | VERIFICADA (DOI); resultados no extraídos |
+| Diamond, McQuade y Qian (2019), 109(9), 3365-3394 | 10.1257/aer.20181289 | AER | Q1 (1999-2025) | VERIFICADA |
+| Mense, Michelsen y Kholodilin (2023), 134, 103513 | 10.1016/j.jue.2022.103513 | J. Urban Economics | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA (magnitud no extraída) |
+| Hahn, Kholodilin, Waltl y Fongoni (2024), 70(3), 1901-1923 | 10.1287/mnsc.2023.4775 | Management Science | Q1 (1999-) | VERIFICADA |
+| Kholodilin (2024), 63, 101983 | 10.1016/j.jhe.2024.101983 | J. Housing Economics | Q2 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Monràs y García-Montalvo (2023), FRBSF WP 2023-28 | 10.24148/wp2023-28 | Federal Reserve Bank of San Francisco WP | sin cuartil (WP) | VERIFICADA (DOI de WP); no hay versión en revista |
+| Fedea Apunte 2026/15 (Pinto), 2026 | sin DOI | Fedea | n/a | NO VERIFICADA |
+| Barron, Kung y Proserpio (2021), 40(1), 23-47 | 10.1287/mksc.2020.1227 | Marketing Science | Q1 (1999-2025) | VERIFICADA |
+| Franco y Santos (2021), 88, 103667 | 10.1016/j.regsciurbeco.2021.103667 | Regional Science and Urban Economics | Q1 (2019-2025) | VERIFICADA |
+| Badarinza y Ramadorai (2018), 130(3), 532-555 | 10.1016/j.jfineco.2018.07.010 | J. Financial Economics | Q1 (1999-2025) | VERIFICADA |
+| Cvijanović y Spaenjers (2021), 67(7), 4120-4138 | 10.1287/mnsc.2020.3686 | Management Science | Q1 (1999-) | VERIFICADA |
+| Santos y Strohmaier (2024), All that glitters? | 10.2139/ssrn.4761334 | SSRN / IZA DP 16857 | sin cuartil (WP) | VERIFICADA (DOI SSRN); WP |
+| Foremny, Li, Martínez-Toledano y Segú (2025), Golden Visas and Real Estate Markets | 10.2139/ssrn.5347820 (y 10.2139/ssrn.5276559) | SSRN | sin cuartil (WP) | VERIFICADA (DOI); resultados no leídos |
+| Gimeno y Martínez-Carrascal (2010), 34(8), 1849-1855 | 10.1016/j.jbankfin.2009.12.011 | J. Banking & Finance | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Caldera y Johansson (2013), 22(3), 231-249 | 10.1016/j.jhe.2013.05.002 | J. Housing Economics | Q2 (SJR 2025; año publ. no comprobado) | VERIFICADA (antes NO VERIFICADA) |
+| Cavalleri, Cournède y Özsöğüt (2019), OECD ECO WP | 10.1787/4777e29a-en | OECD Economics Dept. WP | sin cuartil (WP) | DOI VERIFICADO; autores/nº no en Crossref |
+| Solé-Ollé y Viladecans-Marsal (2012), 96(1-2), 10-19 | 10.1016/j.jpubeco.2011.08.001 | J. Public Economics | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Gyourko, Mayer y Sinai (2013), 5(4), 167-199 | 10.1257/pol.5.4.167 | AEJ: Economic Policy | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
+| Paciorek (2012), FEDS 2012-01 | 10.17016/feds.2012.01 | Fed Finance and Economics Discussion Series | sin cuartil (WP) | VERIFICADA (DOI de WP) |
+| Khametshin, López Rodríguez y Pérez García (2024), BdE DO 2432 | 10.53479/37872 | BdE Documentos Ocasionales | sin cuartil | VERIFICADA |
+| López Rodríguez y Matea (2020), SSRN | 10.2139/ssrn.3527362 | SSRN / BdE | sin cuartil (WP) | VERIFICADA (DOI); contenido no leído |
+| Borgia, Monge y Poza (2026), 179, 107628 | 10.1016/j.cities.2026.107628 | Cities | Q1 (SJR 2025; Urban Studies Q1 2016-2025) | VERIFICADA (DOI); abstract no localizado |
+| Borusyak, Hull y Jaravel (2024), NBER WP 33236 | 10.3386/w33236 | NBER WP | sin cuartil (WP) | VERIFICADA (DOI de WP) |
+| Hjort et al. (2022), gradient boosted trees | no localizado | J. Property Research (no confirmada) | cuartil no verificado | NO VERIFICADA |
+| BCE, FSR mayo 2022, recuadro 2 | sin DOI | ECB Financial Stability Review | n/a | NO VERIFICADA |
+| Estudio 2023, Revista de Estudios Empresariales (tipos y precios) | no localizado | Revista de Estudios Empresariales | cuartil no verificado | NO VERIFICADA |
+
+## Lagunas v2
+
+- Scimago: la ficha directa devolvió 403; cuartiles leídos de resultados de búsqueda sobre scimagojr.com. Para la mayoría solo consta la edición 2025 (se indica); el cuartil del año de publicación está comprobado solo donde aparece el rango de años.
+- Cloyne et al. y Jordà-Schularick-Taylor (2015): versiones publicadas no verificadas; no se citan. Hjort et al. (2022): sin verificar.
+- Magnitudes no extraídas: Mense et al. 2023, Barron et al. 2021, Helfer et al. 2023, Kürschner Rauck-Kvasnicka 2025, Gimeno-Martínez-Carrascal (coeficientes), Foremny et al. 2025, Baiardi-Naghi 2024.
+- No se encontró estudio revisado por pares sobre Ley 12/2023 con identificación causal ni sobre Airbnb en España con DOI comprobado (salvo García-López et al. 2020 para Barcelona).
+- Sin evidencia verificada de DML/bosques causales o BVAR/TVP-VAR aplicados a inmigración y vivienda en España.

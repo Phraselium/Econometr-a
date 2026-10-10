@@ -34,7 +34,7 @@ def parse_periodo(p: str) -> dt.date:
     """'2008-Q1' -> 2008-01-01; '2008-M03' -> 2008-03-01; '2008-S2' -> 2008-07-01; '2008' -> 2008-01-01."""
     if m := re.fullmatch(r"(\d{4})-Q([1-4])", p):
         return dt.date(int(m[1]), 3 * int(m[2]) - 2, 1)
-    if m := re.fullmatch(r"(\d{4})-M(\d{2})", p):
+    if m := re.fullmatch(r"(\d{4})-M?(\d{2})", p):
         return dt.date(int(m[1]), int(m[2]), 1)
     if m := re.fullmatch(r"(\d{4})-S([12])", p):
         return dt.date(int(m[1]), 1 if m[2] == "1" else 7, 1)

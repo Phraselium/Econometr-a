@@ -1,0 +1,21 @@
+analisis,variable,esperado,estimado,coincide,p,coef
+"H2 principal (confirmatoria, sin sellado)",d4_ln_hipotecas_importe,+,+,True,0.00180018,0.0087334586
+"H2 principal (confirmatoria, sin sellado)",cu_x_expo,-,-,True,0,-0.0044103597
+"H2 principal (confirmatoria, sin sellado)",d4_ln_ocupados,+,+,True,0.03180318,0.04390522
+H2 crédito retardado 4T,hip_l4,+,+,True,0.47914791,0.0019449937
+H2 crédito retardado 4T,cu_x_expo,-,-,True,0,-0.0042130349
+H2 crédito retardado 4T,d4_ln_ocupados,+,+,True,0.03850385,0.04360962
+Periodo P1_ajuste (expl.),d4_ln_hipotecas_importe,+,+,True,0.17267045,0.00676067
+Periodo P1_ajuste (expl.),cu_x_expo,-,-,True,2.5554332e-08,-0.0075398601
+Periodo P1_ajuste (expl.),d4_ln_ocupados,+,+,True,0.2206494,0.059998406
+Periodo P2_recuperacion (expl.),d4_ln_hipotecas_importe,+,+,True,0.20337256,0.0064597422
+Periodo P2_recuperacion (expl.),cu_x_expo,-,-,True,0.015315726,-0.0028342481
+Periodo P2_recuperacion (expl.),d4_ln_ocupados,+,+,True,0.70401384,0.011985136
+Periodo P3_covid (expl.),d4_ln_hipotecas_importe,+,+,True,0.18123374,0.0065107011
+Periodo P3_covid (expl.),cu_x_expo,-,-,True,4.3864125e-05,-0.012986227
+Periodo P3_covid (expl.),d4_ln_ocupados,+,+,True,0.45017614,0.022095595
+Periodo P4_tipos (expl.),d4_ln_hipotecas_importe,+,-,False,0.5328372,-0.0038337678
+Periodo P4_tipos (expl.),cu_x_expo,-,-,True,0.89843704,-0.00011122111
+Periodo P4_tipos (expl.),d4_ln_ocupados,+,+,True,0.028017848,0.076615399
+Arbitraje LP (expl.) h=1..8,dev_ratio->y_precio,-,0+/8-,True,4.7852816e-10,-0.13831344
+Arbitraje LP (expl.) h=1..8,dev_ratio->y_alq,+,8+/0-,True,0.0026548501,0.022230957

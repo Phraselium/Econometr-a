@@ -1,0 +1,66 @@
+{
+  "rama": "BV",
+  "pregunta": "H2 (confirmatoria): ¿se asocia el crecimiento del precio real de compra provincial con el crédito hipotecario nuevo (+) y con el coste de uso (−, vía interacción con la exposición hipotecaria 2005-2007)? Más: periodos, arbitraje alquiler-compra, nacional y fuera de muestra.",
+  "datos": "panel_prov_q y nacional_q_v2 (holdout.load_train), 49 provincias, 2004Q1-2024Q2; precio real = Δ4 ln p_tasado − Δ4 ln deflactor nacional (nacional_q_v2); sin muestra sellada",
+  "N": {
+    "H2_principal": 3981,
+    "provincias": 49
+  },
+  "metodo": "MCO con FE de provincia y trimestre, EE cluster provincia + wild cluster bootstrap (Webb, 9.999, WCR); Holm/BH (m=2) sobre crédito e interacción; DM-HLN fuera de muestra (bloques h=4, embargo 4, primer test 2012Q1)",
+  "estimacion": {
+    "d4_ln_hipotecas_importe": 0.008733458645550089,
+    "cu_x_expo": -0.004410359671893741,
+    "d4_ln_ocupados": 0.043905220099598845
+  },
+  "ic95": {
+    "d4_ln_hipotecas_importe": [
+      0.0033233320926515635,
+      0.014143585198448614
+    ],
+    "cu_x_expo": [
+      -0.005830899155774797,
+      -0.002989820188012685
+    ],
+    "d4_ln_ocupados": [
+      0.005284398360132191,
+      0.0825260418390655
+    ]
+  },
+  "p_ajustado": {
+    "holm_m2_wcb": {
+      "cu_x_expo": 0.0,
+      "d4_ln_hipotecas_importe": 0.0018001800180018,
+      "d4_ln_ocupados": null
+    },
+    "holm_m2_credito_l4": {
+      "cu_x_expo": 0.0,
+      "hip_l4": 0.47914791479147917
+    }
+  },
+  "nivel_evidencia": "EXPLORATORIO",
+  "diagnosticos": {
+    "criterios_nivel": {
+      "signos_ok": true,
+      "holm_ok": true,
+      "submuestras_ok": true,
+      "oos_ok": false
+    },
+    "p_wcb": {
+      "d4_ln_hipotecas_importe": 0.0018001800180018,
+      "cu_x_expo": 0.0
+    },
+    "nota_simultaneidad": "el crédito es comovimiento con el precio (v1); la variante con crédito retardado 4T se reporta; asociación, no causalidad",
+    "nota_identificacion": "el nivel nacional del coste de uso queda absorbido por el FE de trimestre; solo se identifica la interacción con la exposición 2005-2007"
+  },
+  "fuera_muestra": {
+    "modelo": "BV_C1 (panel, h=4)",
+    "rmse": 0.04134457249543945,
+    "dm_vs_ar4": 0.2822652931280002,
+    "rmse_ar4": 0.04177169991644137,
+    "rmse_ecm_v1": 0.08089908077620954,
+    "dm_vs_ecm_v1": 1.6739629922448112,
+    "p_holm_vs_ar4": 1.0,
+    "n": 2209
+  },
+  "notas": "Máximo posible sin muestra sellada: ASOCIACIÓN ROBUSTA; la confirmación requiere holdout.evaluate('H2') (evaluar_H2 en bv_h2_sellado.py, NO ejecutada). No residentes: sin datos provinciales (limitación). Periodos, arbitraje y nacional: EXPLORATORIO."
+}

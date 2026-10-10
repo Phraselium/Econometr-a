@@ -25,3 +25,10 @@
 - Suelo: serie ruidosa; sin señal anticipatoria robusta tras BH/Holm sobre 160 contrastes.
 - Panel UE: sin inferencia válida para la comparación de España (un único clúster); el resultado de alquiler (−6) lo producen 2008-2010 y 2021-2023.
 - Fuera de muestra: ningún modelo de precio con variables de oferta mejora al AR(4); el de iniciadas mejora (p 0,03) pero no sobrevive a BH.
+
+## BM (modelos) — aprobada en re-revisión
+- Ningún modelo con variables (59 configuraciones + 4 LSTM) supera al AR(4) ni al ECM v1 en la validación por bloques de entrenamiento tras BH; el ECM v1 es peor que el AR(4) en los tres objetivos. Importancias (SHAP, permutación, ALE) solo EXPLORATORIO.
+- H7: potencia baja (8 orígenes; objetivo nacional con n=8); el modelo elegido para compra provincial ya era peor que el AR(4) en entrenamiento; el contraste principal usa las 52 provincias, no solo las selladas; un aborto con <8 periodos consumiría el acceso.
+- El código del BVAR no sigue exactamente lo declarado (verosimilitud marginal) sin efecto en la elección; algunas constantes fijas no declaradas.
+- Bloque 5 (factor dinámico, spillovers espaciales) no ejecutado: sin coordenadas en los paneles. Deep learning solo probado en el panel de alquiler (LSTM; resultado negativo frente a LightGBM).
+- El umbral de continuidad (0,05) se fijó después del acceso de comprobación declarado por el orquestador (docs/v2/decisiones.md).

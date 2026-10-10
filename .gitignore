@@ -8,3 +8,6 @@ data/raw/gva_orig/vut_*.csv
 output/.models.lock
 data/processed/.clean.lock
 output/.*.tmp
+
+# V2
+data/sealed/

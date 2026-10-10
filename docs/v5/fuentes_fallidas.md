@@ -101,3 +101,11 @@ Prueba del 2026-10-10 contra la API Tempus del INE (https://servicios.ine.es/wst
 | INE Censo 2021, viviendas en alquiler por tipo de arrendador (sociedades) | Tempus operaciones 8 y 463 | 2021 | No hay tabla con tipo de arrendador. SIN DATO |
 | SERPAVI, contratos vigentes por CCAA | repositorio local (solo distritos/municipios) | — | No se uso: stock de alquiler del Censo 2021 y ECV 2025 en su lugar |
 | Fianzas de alquiler por CCAA | GVA (data/raw/v5/gva_fianzas_*) | 2020-2026 | Solo Comunitat Valenciana; el resto de CCAA, SIN DATO |
+
+## CC (2026-10-10, desigualdad y vivienda protegida)
+| Fuente | Endpoint | Resultado | Alternativa |
+|---|---|---|---|
+| INE ECV, sobrecarga de coste de vivienda por decil/quintil | servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/155 (listado de tablas) | No hay tabla de sobrecarga ni de gasto de vivienda sobre renta por decil; solo distribución por decil dentro de cada tenencia (t.59953) | Eurostat ilc_lvho07b (quintil) e ilc_lvho07c (tenencia); es la misma ECV, no fuente independiente |
+| Eurostat, sobrecarga por quintil x tenencia | ilc_lvho07b, ilc_lvho07c, ilc_lvho28 (prueba 2026-10-10) | No existe el cruce quintil x tenencia | Tablas marginales por separado |
+| BdE EFF, herencia/donación de la vivienda principal y ayuda para la entrada | bde.es/webbde/es/estadis/eff/ (devuelve portada genérica sin enlaces EFF); rutas /wbe/... y /f/webbde/SES/... : 404; PDF locales EFF 2007-2022 (data/raw/v3/originales): 0 coincidencias de herencia/donación | SIN DATO | Proxy ECV: propiedad sin hipoteca y cesión en hogares de 16-29 años (no es medida de herencia) |
+| BOE, texto de RD 1932/1991, 2190/1995, 1186/1998, 1/2002, 801/2005, 233/2013 | eli y buscar/doc.php (OK); la API de legislación consolidada solo trae 2008, 2013, 2018, 2022, 2026 | Texto accesible, pero los RD de 1992-1998, 2013-2022 no fijan plazo de régimen de venta | Supuesto 15-30 años; el régimen autonómico no recogido |

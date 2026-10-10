@@ -1,0 +1,44 @@
+{
+ "rama": "CC",
+ "pregunta": "C7: esfuerzo de vivienda por renta y tenencia y papel de la ayuda familiar; C2: viviendas protegidas que dejan el régimen 2026-2035",
+ "capa": "C4 (C7, fuente única: Eurostat-SILC es la ECV) · C2 (salidas de vivienda protegida, cota con supuestos de plazo)",
+ "datos": "Eurostat ilc_lvho07b/07c; INE ECV t.9994 y t.59953; BdE EFF (cuadros publicados en repo); MIVAU tabla 1.6; BOE (10 RD)",
+ "N": {
+  "sobrecarga_anios": 11,
+  "calificaciones_anios": 35
+ },
+ "metodo": "descriptivo por grupo; cota por convolución plazo-calificación en 3 escenarios",
+ "estimacion": {
+  "C7a_cambio_pp_2015_a_2025": {
+   "QU1": -13.2,
+   "QU2": -2.4,
+   "QU3": 0.0,
+   "QU4": -0.2,
+   "QU5": 0.0,
+   "RENT_MKT": -16.5,
+   "OWN_L": -5.3,
+   "OWN_NL": -0.8,
+   "RENT_FR": -1.5
+  },
+  "C2_salidas_2026_2035": {
+   "bajo": 532040.0,
+   "base": 594890.0,
+   "alto": 669394.0
+  },
+  "C2_calificaciones_nuevas_media_5a": 11264.6
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO (C7) · COTA C2 (C2)",
+ "diagnosticos": {
+  "cuadre_suma_CCAA_nacional_max_abs": 6024.0,
+  "p_valores": "no aplican: sin errores tipicos publicados",
+  "holm_bh": "n/a (0 contrastes)"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Eurostat ilc_lvho07 es la ECV: ECV y Eurostat NO son independientes, luego no hay C1. INE no publica sobrecarga por decil: solo quintil y tenencia (Eurostat); la tasa quintil x tenencia no esta publicada. EFF: ningun documento accesible del BdE publica herencia/donacion ni ayuda para la entrada (SIN DATO). Plazos de 1992-1998 y 2013-2022 no constan en el RD: supuesto 15-30 años. No se incluye descalificacion anticipada. Los tres escenarios son un rango de supuestos, no cotas estrictas: la cota inferior logica es 0 (si el regimen fuese permanente) y el escenario alto no cubre plazos <15 años. La suma de CCAA difiere de la serie nacional hasta 6024 viviendas/año en algun año (ver diagnosticos). Rango por CCAA no estimable: el plazo autonomico no esta recogido."
+}

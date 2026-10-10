@@ -1,0 +1,13 @@
+periodo,serie,valor
+2002,eff_pct_hogares_vivienda_principal|edad=<35|ed=BE dic-2007 (EFF2005),68.3
+2005,eff_pct_hogares_vivienda_principal|edad=<35|ed=BE dic-2007 (EFF2005),62.1
+2005,eff_pct_hogares_vivienda_principal|edad=<35|ed=BE dic-2010 (EFF2008),62.0
+2008,eff_pct_hogares_vivienda_principal|edad=<35|ed=BE dic-2010 (EFF2008),65.8
+2008,eff_pct_hogares_vivienda_principal|edad=<35|ed=BE ene-2014 (EFF2011),65.8
+2011,eff_pct_hogares_vivienda_principal|edad=<35|ed=BE ene-2014 (EFF2011),69.8
+2011,"eff_pct_hogares_vivienda_principal|edad=<35|ed=AA 2017 (EFF2014, ingles)",69.3
+2014,"eff_pct_hogares_vivienda_principal|edad=<35|ed=AA 2017 (EFF2014, ingles)",49.5
+2017,eff_pct_hogares_vivienda_principal|edad=<35|ed=BE 3/2022 (EFF2020),41.3
+2020,eff_pct_hogares_vivienda_principal|edad=<35|ed=BE 3/2022 (EFF2020),36.1
+2020,eff_pct_hogares_vivienda_principal|edad=<35|ed=DO 2413 (EFF2022),36.1
+2022,eff_pct_hogares_vivienda_principal|edad=<35|ed=DO 2413 (EFF2022),31.8

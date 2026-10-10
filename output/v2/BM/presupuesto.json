@@ -1,0 +1,19 @@
+{
+  "rama": "BM",
+  "declarado_antes_de_ejecutar": true,
+  "unidad": "configuracion de hiperparametros = una especificacion en el Registry",
+  "n_max_total": 63,
+  "por_modelo": {
+    "ARDL_nacional": {"objetivos": ["A"], "configs_por_objetivo": 1},
+    "elastic_net": {"objetivos": ["A", "B", "C"], "configs_por_objetivo": 10, "rejilla": {"l1_ratio": [0.3, 0.7], "alpha_sobre_y_y_X_estandarizados": [0.005, 0.02, 0.05, 0.15, 0.4]}},
+    "post_lasso_plugin": {"objetivos": ["A", "B", "C"], "configs_por_objetivo": 1},
+    "random_forest": {"objetivos": ["B", "C"], "configs_por_objetivo": 4, "rejilla": {"max_depth": [4, 8], "min_samples_leaf": [10, 40]}, "A": "no ejecutado: N de entrenamiento 8-60"},
+    "lightgbm": {"objetivos": ["B", "C"], "configs_por_objetivo": 4, "rejilla": {"num_leaves": [4, 12], "n_estimators": [150, 400], "learning_rate": 0.03}, "A": "no ejecutado: N de entrenamiento 8-60"},
+    "ecm_umbral": {"objetivos": ["A"], "configs_por_objetivo": 2, "umbrales": ["ECT>0 (asimetria)", "credito d4>0"]},
+    "bvar_minnesota": {"objetivos": ["A"], "configs_por_objetivo": 5, "rejilla": {"lambda": [0.05, 0.1, 0.2, 0.4, 1.0]}, "seleccion": "verosimilitud marginal con datos de entrenamiento de cada split"},
+    "tvp_var_olvido": {"objetivos": ["A"], "configs_por_objetivo": 2, "rejilla": {"kappa": [0.95, 0.99]}},
+    "en_factor_comun_bloque5": {"objetivos": ["B", "C"], "configs_por_objetivo": 2, "nota": "reserva; solo si hay presupuesto de tokens"}
+  },
+  "cuentas": "A: 1+10+1+2+5+2 = 21; B: 10+1+4+4 = 19; C: 19; reserva bloque 5: 4 => 63",
+  "no_cuentan_como_configuraciones": ["contrastes PDS por familia y periodo", "proyecciones locales por periodo", "importancias", "ECM con Markov-switching (solo descriptivo, en muestra)"]
+}

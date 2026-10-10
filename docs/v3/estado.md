@@ -3,6 +3,7 @@
 | Tarea | Oleada | Estado | Capa | Resultado principal | Tokens subagentes |
 |---|---|---|---|---|---|
 | Setup (r3/main, CLAUDE.md, make check, docs/v3) | 0 | hecho | — | — | 0 |
+| D1 datos INE (municipal y sección) | 1 | parcial | — | Censo 2021 sección (indicadores, edad 3 grupos), VUT municipal %, cartografía 2021; VUT y ADRH sección no disponibles | ~0 (sin subagentes) |
 | Literatura v3 (replicación, magnitudes, métodos) | 1 | hecho | — | 25 VERIFICADA / 3 NO; GL2020 réplica parcial (alquiler); MESVAL no replicable (Fotocasa); JMS2023 parcial | 166.408 |
 | D1 INE (censo, VUT sección, ADRH) | 1 | en curso | — | — | — |
 | D2 fianzas, SERPAVI sección, EFF, emancipación, eventos | 1 | hecho (parcial) | — | SERPAVI sección/distrito nacional 2011-2024; Incasòl municipal 2007-2026; Eurostat emancipación; eventos BOE (6/8 verificados). Fallidas: SIU, GVA, BCN barrios, EFF, ECV | 99.401 |

@@ -101,3 +101,4 @@ v3/serpavi_distritos_nacional_v3.csv.gz,"MIVAU-SERPAVI (IRPF, stock) distritos c
 v3/serpavi_secciones_nacional_v3.csv.gz,"MIVAU-SERPAVI (IRPF, stock) secciones censales",398392.0,2011-01-01,2024-01-01,4577321.0,0.0,2026-10-10T12:03:33Z
 v3/zonas_tensionadas_v3.csv,BOE/CCAA - copia sin editar de v2_zonas_tensionadas,0.0,2024-03-15,2026-07-29,318.0,0.0,2026-10-10T12:03:33Z
 vlc_precio_vivienda_libre.csv,Ajuntament de València - Opendata (CKAN); fuente primaria no indicada en el recurso,24.0,2021-04-01,2022-04-01,120.0,0.0,2026-10-09T18:54:14Z
+v3/ine_v3_vut_seccion.csv.gz,INE (servergis ArcGIS),145101,2021-02-01,2026-05-01,1683867,17327,2026-10-10T12:40:00Z

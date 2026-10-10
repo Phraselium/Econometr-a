@@ -19,3 +19,5 @@ data/raw/pdf/serpavi_v2_municipios.csv
 data/raw/v2_orig/
 # v3 D1 (INE): >50 MB o originales re-descargables
 data/raw/v3/cartografia/
+# v3 D1: originales INE re-descargables (caché de src/v3/fetch_ine_v3.py)
+data/raw/v3_orig/

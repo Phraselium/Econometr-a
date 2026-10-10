@@ -38,3 +38,14 @@ Formato: fecha · decisión · motivo. Las desviaciones del pre-registro (`prere
 
   Clasificación provisional: NO REPLICABLE con los datos originales. La «replicación» se hace como **réplica conceptual**: la misma especificación (efectos fijos de unidad y de periodo; tratamiento = viviendas turísticas por cada 100 viviendas), con las viviendas turísticas del INE por sección (2020-2025) y el alquiler SERPAVI por sección en Barcelona. Su coeficiente se compara con el objetivo (alquiler +0,035 % por 100 anuncios, tabla 3, col. 2, cifra del WP 2019) en unidades homogéneas.
 - **P-C2 (caída de anuncios 2025-2026):** Inside Airbnb solo cubre 2025-12 a 2026-09, posterior a la obligatoriedad del registro único (julio de 2025 según el texto del RD; está por verificar). No hay periodo previo, así que no hay diseño con pretendencias. Se decidirá en la puerta de potencia: probablemente es descriptivo (C4) o no se estima. Las oleadas INE de VUT (2024M08, 2024M11 y posteriores) pueden aportar un periodo previo a escala de sección.
+
+## D1 INE (2026-10-10, src/v3/fetch_ine_v3.py)
+- Fecha de referencia del Censo 2021 = 2021-11-01 (fecha censal). Los indicadores por sección son provisionales según el INE (secciones de algunas viviendas en reasignación).
+- Edad por sección: solo grandes grupos (ID_GRAN_GRUPO_EDAD); los tramos 16-24 a 45-64 no están disponibles por sección en la API (ver fuentes_fallidas).
+- Cuadre sección -> municipio (viviendas, tabla 59525): tolerancia 0,5. Cuadre edad -> t1_1: tolerancia 10 personas (diferencias de redondeo entre la API y el fichero de indicadores, máximo observado ±6).
+- VUT municipal: filas sin código único se marcan en `nivel` (agregado_o_no_identificado / municipio_ambiguo). Son agregados (CCAA, provincias) o homónimos; no entran en cuadres.
+- Originales de descarga en data/raw/v3_orig (gitignored; re-descargables con FORCE=1).
+- **VUT por sección (orquestador):** las tablas JAXI del INE llegan solo a municipio, pero los servicios ArcGIS del INE (servergis/Hosted/Viviendas_turísticas_<oleada>) publican distrito y sección. Script: `src/v3/fetch_ine_vut_seccion_v3.py`.
+  - Cobertura: 12 oleadas, 2021M02-2026M05; falta 2020M08, que no está en el GIS.
+  - Para 2022M08 se usa el servicio «Porcentaje_…», porque el de «Viviendas_…» está vacío.
+  - Validación: la suma de secciones equivale a un 89-90 % del total provincial JAXI en todas las oleadas (p. ej. 2024M02: 351.389 frente a 391.996). La ratio es estable, lo que indica viviendas sin sección asignada. En los análisis por sección se usa la sección; en las cotas nacionales, el total JAXI.

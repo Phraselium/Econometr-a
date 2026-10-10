@@ -212,6 +212,11 @@ def load_full(nombre: str, uso: str) -> pd.DataFrame:
     El sellado v3 propio (secciones censales) es otro y no pasa por aquí.
     """
     hechas = {a["hipotesis"] for a in _accesos() if a.get("evento") == "evaluacion"}
+    if LOG_MD.exists():   # copia versionada del registro (un clon limpio no tiene data/sealed/_accesos.log)
+        for linea in LOG_MD.read_text().splitlines():
+            celdas = [c.strip() for c in linea.split("|")]
+            if len(celdas) > 5 and celdas[2] in HIPOTESIS_V2_SELLADAS and not celdas[5].startswith("APERTURA"):
+                hechas.add(celdas[2])
     faltan = [h for h in HIPOTESIS_V2_SELLADAS if h not in hechas]
     if faltan:
         raise PermissionError(f"Evaluaciones selladas v2 pendientes: {faltan}")

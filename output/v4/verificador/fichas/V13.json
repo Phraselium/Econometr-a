@@ -7,8 +7,8 @@
  "intervalo": "n/d",
  "cota": "—",
  "literatura": "Sin test de exuberancia (GSADF) realizado en v3.",
- "veredicto": "NO ANALIZADA: FALTAN DATOS",
- "regla": "Sin test de exuberancia y con indicadores de valoración contradictorios, no se puede afirmar ni descartar. v4: No se realizó test de exuberancia (GSADF); los indicadores de valoración disponibles discrepan.",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Sin test de exuberancia y con indicadores de valoración contradictorios, no se puede afirmar ni descartar. v4: Se analizaron indicadores de valoración (precio/renta, precio/alquiler), que discrepan en dirección; no se realizó test de exuberancia (GSADF), que los datos permitirían.",
  "limites": "El test GSADF por CCAA estaba previsto en P-E (exploratorio) y no se ejecutó.",
  "evidencia": [
   "output/v3/PA/hechos.json#A4",

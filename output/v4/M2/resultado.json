@@ -48,26 +48,26 @@
    "pct_tasa": -71.5
   },
   "2020-2025": {
-   "dH": 1030589,
-   "tamano_nativos": 57259,
-   "tamano_extranjeros": 618863,
-   "estructura": 263421,
-   "tasa": 91046,
-   "pct_tamano_nativos": 5.6,
-   "pct_tamano_extranjeros": 60.0,
-   "pct_estructura": 25.6,
-   "pct_tasa": 8.8
+   "dH": 1159788,
+   "tamano_nativos": 57464,
+   "tamano_extranjeros": 618407,
+   "estructura": 276741,
+   "tasa": 207177,
+   "pct_tamano_nativos": 5.0,
+   "pct_tamano_extranjeros": 53.3,
+   "pct_estructura": 23.9,
+   "pct_tasa": 17.9
   },
   "2021-2025": {
-   "dH": 998114,
-   "tamano_nativos": 89437,
-   "tamano_extranjeros": 563493,
-   "estructura": 173495,
-   "tasa": 171690,
-   "pct_tamano_nativos": 9.0,
-   "pct_tamano_extranjeros": 56.5,
-   "pct_estructura": 17.4,
-   "pct_tasa": 17.2
+   "dH": 1011002,
+   "tamano_nativos": 90091,
+   "tamano_extranjeros": 562619,
+   "estructura": 197962,
+   "tasa": 160329,
+   "pct_tamano_nativos": 8.9,
+   "pct_tamano_extranjeros": 55.6,
+   "pct_estructura": 19.6,
+   "pct_tasa": 15.9
   }
  },
  "ic95": null,
@@ -75,7 +75,7 @@
  "nivel_evidencia": "ΔH total: C1 donde coinciden las fuentes; componentes (a)(b)(c): C4 (jefatura de fuente única, EPA); latente: cota C2",
  "diagnosticos": {
   "dif_rel_padron_vs_panel_2022": 0.0,
-  "corr_dH_obs_modelo_prov_2021_2025": 0.9938508142172513,
+  "corr_dH_obs_modelo_prov_2021_2025": 0.9939755542304821,
   "top3_provincias": {
    "2006-2007": {
     "tamano_nativos": [
@@ -255,57 +255,57 @@
     "tamano_nativos": [
      [
       "Madrid",
-      42710
+      42851
      ],
      [
       "Murcia",
-      16839
+      16883
      ],
      [
       "Asturias",
-      -12836
+      -12900
      ]
     ],
     "tamano_extranjeros": [
      [
       "Madrid",
-      104418
+      104267
      ],
      [
       "Barcelona",
-      89821
+      89691
      ],
      [
       "Valencia/València",
-      58364
+      58290
      ]
     ],
     "estructura": [
      [
       "Madrid",
-      29647
+      31616
      ],
      [
       "Barcelona",
-      26475
+      27907
      ],
      [
       "Sevilla",
-      16632
+      17179
      ]
     ],
     "tasa": [
      [
       "Madrid",
-      21750
+      35728
      ],
      [
       "Barcelona",
-      13569
+      27240
      ],
      [
-      "Sevilla",
-      6986
+      "Valencia/València",
+      12105
      ]
     ]
    },
@@ -313,64 +313,64 @@
     "tamano_nativos": [
      [
       "Madrid",
-      52161
+      52511
      ],
      [
       "Barcelona",
-      15098
+      15215
      ],
      [
       "Murcia",
-      14314
+      14389
      ]
     ],
     "tamano_extranjeros": [
      [
       "Madrid",
-      94386
+      94091
      ],
      [
       "Barcelona",
-      79569
+      79321
      ],
      [
       "Valencia/València",
-      54643
+      54496
      ]
     ],
     "estructura": [
      [
       "Madrid",
-      17213
+      20940
      ],
      [
       "Barcelona",
-      16621
+      19335
      ],
      [
       "Sevilla",
-      12028
+      12998
      ]
     ],
     "tasa": [
      [
       "Madrid",
-      29157
+      27701
      ],
      [
       "Barcelona",
-      22841
+      21557
      ],
      [
       "Valencia/València",
-      9896
+      9278
      ]
     ]
    }
   },
   "latente_total_rango": [
-   -479091,
-   -267342
+   -600972,
+   -396038
   ]
  },
  "fuera_muestra": {

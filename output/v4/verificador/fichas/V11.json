@@ -12,5 +12,9 @@
  "limites": "Simulación con rangos de elasticidades; coste fiscal no cuantificado sin dato de coste.",
  "evidencia": [
   "output/v3/PD/resultados.json"
- ]
+ ],
+ "convenciones": {
+  "A (estricta: traducción a precio en C4)": "PARCIALMENTE",
+  "B (estructural: traducción a precio como C2)": "PARCIALMENTE. Igual en ambas convenciones: el signo de P-D (≤ 0, nulo con desplazamiento total) no depende de la traducción a precio."
+ }
 }

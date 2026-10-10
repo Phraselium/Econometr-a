@@ -40,29 +40,29 @@
    },
    {
     "periodo": "2020-2025",
-    "dH_modelo_EPA_corregida": 1030588.6,
-    "dH_EPA_hogares_corregida": 1155550.0,
+    "dH_modelo_EPA_corregida": 1159788.3,
+    "dH_EPA_hogares_corregida": 1228075.0,
     "dH_EPA_hogares_sin_corregir": 965625.0,
     "dH_ECP_o_censo": NaN,
-    "rango_rel_%": 11.4,
+    "rango_rel_%": 5.7,
     "coinciden_15pc": true
    },
    {
     "periodo": "2021-2025",
-    "dH_modelo_EPA_corregida": 998114.4,
+    "dH_modelo_EPA_corregida": 1011001.7,
     "dH_EPA_hogares_corregida": 1013350.0,
     "dH_EPA_hogares_sin_corregir": 1013350.0,
     "dH_ECP_o_censo": 981823.0,
-    "rango_rel_%": 3.2,
+    "rango_rel_%": 3.1,
     "coinciden_15pc": true
    },
    {
     "periodo": "2011-2021 (censo)",
-    "dH_modelo_EPA_corregida": 1013453.5,
-    "dH_EPA_hogares_corregida": 1038750.0,
+    "dH_modelo_EPA_corregida": 1129766.0,
+    "dH_EPA_hogares_corregida": 1111275.0,
     "dH_EPA_hogares_sin_corregir": 848825.0,
     "dH_ECP_o_censo": 455531.0,
-    "rango_rel_%": 69.8,
+    "rango_rel_%": 75.0,
     "coinciden_15pc": false
    }
   ],
@@ -123,10 +123,10 @@
    }
   },
   "k_ruptura_por_grupo": {
-   "0-19": 1.458,
-   "20-34": 1.0807,
-   "35-64": 0.9901,
-   "65+": 1.0375
+   "0-19": 1.1933,
+   "20-34": 1.1088,
+   "35-64": 0.9744,
+   "65+": 1.0905
   },
   "magnitud": {
    "2006-2007": {
@@ -163,26 +163,26 @@
     "pct_tasa": -71.5
    },
    "2020-2025": {
-    "dH": 1030589,
-    "tamano_nativos": 57259,
-    "tamano_extranjeros": 618863,
-    "estructura": 263421,
-    "tasa": 91046,
-    "pct_tamano_nativos": 5.6,
-    "pct_tamano_extranjeros": 60.0,
-    "pct_estructura": 25.6,
-    "pct_tasa": 8.8
+    "dH": 1159788,
+    "tamano_nativos": 57464,
+    "tamano_extranjeros": 618407,
+    "estructura": 276741,
+    "tasa": 207177,
+    "pct_tamano_nativos": 5.0,
+    "pct_tamano_extranjeros": 53.3,
+    "pct_estructura": 23.9,
+    "pct_tasa": 17.9
    },
    "2021-2025": {
-    "dH": 998114,
-    "tamano_nativos": 89437,
-    "tamano_extranjeros": 563493,
-    "estructura": 173495,
-    "tasa": 171690,
-    "pct_tamano_nativos": 9.0,
-    "pct_tamano_extranjeros": 56.5,
-    "pct_estructura": 17.4,
-    "pct_tasa": 17.2
+    "dH": 1011002,
+    "tamano_nativos": 90091,
+    "tamano_extranjeros": 562619,
+    "estructura": 197962,
+    "tasa": 160329,
+    "pct_tamano_nativos": 8.9,
+    "pct_tamano_extranjeros": 55.6,
+    "pct_estructura": 19.6,
+    "pct_tasa": 15.9
    }
   },
   "unidad": "hogares y % de ΔH",
@@ -259,23 +259,23 @@
   "enunciado_neutro": "Hogares adicionales en 2025 si rigieran las tasas de jefatura por edad de 2008 (y media 2006-2007).",
   "capa": "C2",
   "magnitud": {
-   "EPA 65944 (población EPA 2025)|2008|16-34": 70062,
-   "EPA 65944 (población EPA 2025)|2008|35-44": -771627,
-   "EPA 65944 (población EPA 2025)|2008|total": -267342,
-   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|20-34": 211416,
-   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|35-64": -969714,
-   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|total": -329145,
-   "EPA 65944 (población EPA 2025)|media 2006-2007|16-34": 25773,
-   "EPA 65944 (población EPA 2025)|media 2006-2007|35-44": -795725,
-   "EPA 65944 (población EPA 2025)|media 2006-2007|total": -381910,
-   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|20-34": 134183,
-   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|35-64": -1051877,
-   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|total": -479091
+   "EPA 65944 (población EPA 2025)|2008|16-34": 22554,
+   "EPA 65944 (población EPA 2025)|2008|35-44": -709942,
+   "EPA 65944 (población EPA 2025)|2008|total": -396038,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|20-34": 160953,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|35-64": -770884,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|2008|total": -451986,
+   "EPA 65944 (población EPA 2025)|media 2006-2007|16-34": -21736,
+   "EPA 65944 (población EPA 2025)|media 2006-2007|35-44": -734040,
+   "EPA 65944 (población EPA 2025)|media 2006-2007|total": -510605,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|20-34": 84214,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|35-64": -852522,
+   "Padrón 2025 x tasas EPA, calibrado a hogares ECP|media 2006-2007|total": -600972
   },
   "unidad": "hogares",
   "intervalo": [
-   25773,
-   211416
+   -21736,
+   160953
   ],
   "fuentes": [
    "EPA 65944",

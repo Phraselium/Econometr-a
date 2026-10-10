@@ -76,7 +76,7 @@ def conciliacion() -> dict:
     pasos = [
         ("v1 principal (EPA corregida, libres)", 866_100.0, None),
         ("fuente de hogares: EPA corregida -> ECP (ambas con stock 1 de enero)", dh_ecp_v1 - dh_epa_corr, "hogares"),
-        ("medida de hogares: stock 1 de enero -> media trimestral 2021T1-2025T4", dh_ecp_v3 - dh_ecp_v1, "hogares/fechas"),
+        ("desplazamiento de ventana: de 1-ene-2021 a 1-ene-2026 (stock) a media del 1T-2021 al 4T-2025 (la ventana pierde un trimestre inicial y final)", dh_ecp_v3 - dh_ecp_v1, "desplazamiento de ventana"),
         ("protegida: añadir calificaciones definitivas (no incluidas en v1)", -prot, "protegida"),
         ("bajas del parque (v1 y referencia v3: 0)", 0.0, "bajas"),
         ("periodo (ambos 2021-2025)", 0.0, "periodo"),
@@ -111,12 +111,12 @@ def conciliacion() -> dict:
         nv = "" if pd.isna(x.nivel_resultante) else f(x.nivel_resultante)
         md.append(f"| {x.paso} | {f(x.delta_deficit)} | {nv} | {x.componente} |")
     md += ["", "## Lectura",
-           f"- De 866.100 (v1) a 700.934 (referencia v3) hay −165.166: hogares −55.164 (fuente), −53.679 (medida: stock 1 de enero frente a media trimestral), protegida −{f(prot)}; bajas y periodo 0 por construcción. La suma cierra exacta.",
+           f"- De 866.100 (v1) a 700.934 (referencia v3) hay −165.166: hogares −55.164 (fuente), −53.679 (desplazamiento de ventana de un trimestre: v1 mide de 1-ene-2021 a 1-ene-2026 y v3 del 1T-2021 al 4T-2025; no es una diferencia de concepto del hogar), protegida −{f(prot)}; bajas y periodo 0 por construcción. La suma cierra exacta.",
            f"- La protegida medida con calificaciones definitivas de MIVAU ({f(prot)}) es coherente con el residuo de 60.936 que v1 atribuyó a la protegida (diferencia de 4.613; v1 lo obtuvo como BdE implícito menos terminadas).",
            "- La única fuente con efecto grande no resuelto es la corrección del quiebre EPA 2021T1 (242.400): con ella 866.100, sin ella 623.700. Es una elección de medida, no un dato.",
            "- Las bajas del parque no están medidas: cada 0,1 % anual del parque suma 134.063 al déficit. Es la mayor incertidumbre de v3 (rango 559.752-969.059) y no la reduce ninguna fuente disponible.",
            "- Frente al BdE (≈750.000): la referencia v3 queda 49.066 por debajo y v1 116.100 por encima. El BdE no declara fuente de hogares, protegida ni bajas, así que ese residuo no se puede descomponer; la fuente de hogares ECP es inferencia. 700.000 (IEF) es compatible en signo con un periodo más corto, sin verificar.",
-           "- Conclusión: las cifras 700.000-866.100 difieren por la medida de hogares (≈109.000) y la protegida (≈56.000), no por el periodo. El déficit en niveles, con bajas, queda en el rango de v3 (C2). La cifra del BdE es una referencia externa NO VERIFICADA en su método."]
+           "- Conclusión: las cifras 700.000-866.100 difieren por la fuente de hogares (≈55.000) y el desplazamiento de ventana de un trimestre (≈54.000) y la protegida (≈56.000), no por el periodo. El déficit en niveles, con bajas, queda en el rango de v3 (C2). La cifra del BdE es una referencia externa NO VERIFICADA en su método."]
     (OUT / "conciliacion_deficit.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     REG.log("M0", "conc_cadena", "d_v1 + pasos aditivos = ref_v3", 2021, 2025, 1, np.nan, np.nan, np.nan, coef_interes=float(ecp0.deficit), notas="cierre exacto de la cadena")
     return {"ref_v3": float(ecp0.deficit), "prot": prot, "mediana": float(r.mediana), "min": float(r.min_total), "max": float(r.max_total)}
@@ -188,7 +188,9 @@ def terminadas() -> dict:
     # coincide si el Catastro (alineación pre-especificada: sin retraso, municipios constantes) está dentro de ±15 % del MIVAU bruto
     ok = df.dif_catastro_munic_const_vs_mivau_bruto.abs() <= TOL
     df["coinciden_2_indep"] = ok
-    df["capa"] = np.where(ok, "C1", "C4")
+    robusto = df.anio.between(2019, 2024)
+    df["capa"] = np.where(ok & robusto, "C1", np.where(ok, "C4 (rango, C1 frágil)", "C4"))
+    df["coincide_10pct"] = df.dif_catastro_munic_const_vs_mivau_bruto.abs() <= 0.10
     df["rango_bajo"] = df[["comun_mivau_bruto_sin_PV_NA", "catastro_dUU_res_munic_constantes"]].min(axis=1)
     df["rango_alto"] = df[["comun_mivau_bruto_sin_PV_NA", "catastro_dUU_res_munic_constantes"]].max(axis=1)
     df.to_csv(OUT / "terminadas_triangulacion.csv", index=False, float_format="%.4f")
@@ -217,7 +219,7 @@ def terminadas() -> dict:
           "- Calificaciones definitivas de protegida (tabla 1.6): es otro registro del Ministerio, pero mide la calificación y no la finalización; se suma a las libres para tener un bruto comparable. Misma fuente administrativa.",
           f"- Δ parque MIVAU: estimación del propio Ministerio, cuya metodología no consta en el repo. Mediana de |Δparque − bruto|/bruto = {dep_rel:.1%} en 2021-2025 (casi idéntica a las terminadas) y {dep_rel_ant:.0%} en 2012-2020 (muy superior, a la par del Catastro). Se trata como NO independiente y como segundo método discrepante antes de 2021, que se reporta pero no se usa para promover.",
           "- Banco de España: data/raw/bde_* contiene precios de tasación, crédito y tipos; NO hay serie de viviendas terminadas. La única cifra del BdE es 92.000 en 2025 (Informe Anual, vía output/f4). Frente a 80.792 libres + 12.858 protegida = 93.650 (−1,8 %) es consistente con la serie del Ministerio, pero el BdE no nombra la fuente: no se cuenta como independiente.",
-          "- Catastro: registro fiscal con otro proceso de alta (declaraciones y regularizaciones). Es la única fuente independiente. Cubre régimen común (sin País Vasco ni Navarra); la comparación usa las demás comunidades del MIVAU. Mide el aumento neto de unidades residenciales, incluye altas por regularización y no resta bajas.", "",
+          "- Catastro: registro fiscal con otro proceso de alta (declaraciones y regularizaciones). Es independiente solo en parte: el alta catastral de obra nueva suele apoyarse en la escritura de obra nueva o la declaración de alteración, que exigen el certificado final de obra, documento de origen común con MIVAU aunque el proceso administrativo sea distinto. Cubre régimen común (sin País Vasco ni Navarra); la comparación usa las demás comunidades del MIVAU. Su variación de stock es neta por construcción (altas menos bajas, con regularizaciones); MIVAU es flujo bruto, y la coincidencia puede deberse a que las regularizaciones compensen las bajas.", "",
           "## Resultado anual (territorio común, sin País Vasco ni Navarra)", "",
           "| año | MIVAU libres+prot | Catastro ΔUU | dif Catastro | Δparque | capa | rango |", "|---|---|---|---|---|---|---|"]
     for _, x in df.iterrows():
@@ -231,11 +233,11 @@ def terminadas() -> dict:
     for _, x in df.iterrows():
         md.append(f"| {int(x.anio)} | {f(x.mivau_libres_mensual)} | {f(x.mivau_protegida_calif_def)} | {f(x.mivau_bruto_libres_mas_prot)} |")
     md += ["", "## Veredicto",
-           f"- Años con dos fuentes independientes dentro de ±{TOL:.0%}: {nok} de {len(df)} ({', '.join(str(int(a)) for a in df[ok].anio) or 'ninguno'}). Esos años pasan a C1 con el rango MIVAU-Catastro de la tabla; el resto queda en C4.",
+           f"- Años con dos fuentes independientes dentro de ±{TOL:.0%}: {nok} de {len(df)} ({', '.join(str(int(a)) for a in df[ok].anio) or 'ninguno'}). C1 solo el núcleo 2019-2024 (presente en las tres alineaciones), con el rango MIVAU-Catastro de la tabla; 2018 y 2025 quedan en C4 con rango y la salvedad de C1 frágil (cerca del umbral; salen con otras alineaciones); el resto en C4. Con ±10 % coinciden: {', '.join(str(int(a)) for a in df[df.coincide_10pct].anio) or 'ninguno'}.",
            f"- Reglas aplicadas: un año es C1 solo si Catastro y MIVAU coinciden; no se promociona ningún año por la coincidencia de Δparque, que no es independiente. Sensibilidad a la alineación: con rezago de un año en el Catastro coinciden {int(ok_rez.sum())} años ({', '.join(str(int(a)) for a in df[ok_rez].anio) or 'ninguno'}); con todos los municipios (no constantes), {int(ok_sinh.sum())} ({', '.join(str(int(a)) for a in df[ok_sinh].anio) or 'ninguno'}).",
            "- 2012-2017: MIVAU (libres + protegida) es entre 1,2 y 3 veces menor que el Catastro y el Δparque; el Catastro en esos años incorpora altas por regularización y actualización, y MIVAU puede infraregistrar certificados. Los dos métodos discrepan y no se resuelve: C4. 2018 (−12,1 %) y 2025 (+14,9 %) están cerca del umbral. Rango C1 2018-2025 en territorio común; no cubre País Vasco ni Navarra.",
            "- Cifra nacional 2024: 86.609 libres + 14.371 protegida = 100.980, la cifra que v1 marcó como NO VERIFICADA (prensa); se reproduce con MIVAU, pero es la misma fuente, no una verificación independiente. 2025: 93.650 (BdE ≈ 92.000).",
-           "- La serie MIVAU de libres se usa sola en las cifras de v1 y v3 (C1 de fuente única hasta esta triangulación); aquí solo se promociona lo que supera el contraste con el Catastro. Las diferencias no se resuelven: el Catastro mide altas netas con regularizaciones, MIVAU mide certificados de fin de obra."]
+           "- La serie MIVAU de libres se usa sola en las cifras de v1 y v3 ; aquí solo se promociona lo que supera el contraste con el Catastro. Las diferencias no se resuelven: el Catastro mide variación neta con regularizaciones, MIVAU mide certificados de fin de obra."]
     (OUT / "terminadas_triangulacion.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     return {"n_ok": nok, "anios_ok": [int(a) for a in df[ok].anio], "agg": agg, "ident": ident, "dep_rel": dep_rel, "nac": df}
 
@@ -309,11 +311,12 @@ def gl() -> dict:
            f"Observado: {cl:+.4f}.",
            "- La atenuación explica una magnitud menor que 0,01215, no un signo negativo: el IC95 propio ([−0,0078; −0,0005]) queda por debajo de cero y de cualquier λT positivo.",
            "- El IC95 de GL2 (distrito) es igual de negativo: la unidad (sección o distrito) no cambia el resultado, con 8 clusters.", "",
-           "## Qué explicación tiene más apoyo",
-           "1. Datos (stock frente a flujo): CUANTIFICADA y real, pero solo reduce la magnitud esperada; por sí sola no produce un coeficiente negativo. Apoyo: moderado para la magnitud, nulo para el signo.",
-           "2. Método (FE sin IV, 3 diferencias anuales, 8 clusters): no se puede cuantificar sin instrumento. El diagnóstico de v3 ya lo indica: pretendencia sin señal (p=0,71, N=3), placebo de permutación p=0,026 con pocas permutaciones distintas. Un coeficiente negativo con FE es compatible con confusión (los distritos con más cambio de VUT diferían en tendencia de alquiler) y con error de medida del VUT; los datos no permiten distinguirlo.",
-           "3. Periodo (2021-2024 con regulación y alquiler de temporada posterior a la pandemia frente a 2012-2016): plausible, no contrastable aquí porque el VUT del INE no existe antes de 2021. València (PARCIAL, signo de GL) y Sevilla (signo contrario) muestran que el signo varía por ciudad, lo que apunta a heterogeneidad además de a un problema de datos.",
-           "Conclusión: la discrepancia no se atribuye a una sola fuente. El apoyo cuantificado es que la mezcla stock/IRPF atenúa la magnitud; el signo opuesto queda sin explicar con estos datos y es compatible con identificación débil (sin IV, ventana corta) y con medida distinta del VUT. No se afirma que GL esté refutado ni confirmado para España 2021-2024. Siguiente paso mínimo: serie histórica de VUT/anuncios 2012-2016 y un instrumento (no disponibles en el repo).",
+           "## Qué se puede decir (sin atribuir causas)",
+           f"- El coeficiente propio no es distinguible de 0 tras Holm (p Holm = {g1.p_holm:.2f}); su IC95 sin ajustar excluye λT.",
+           "- Datos (stock frente a flujo): atenuación cuantificada en una sola ciudad, con 3-12 diferencias anuales; en 2012-2016 la razón es negativa (−0,68) y las pendientes van de 0,07 a 0,46. Solo es compatible con una magnitud menor, no con un signo negativo.",
+           "- Método (FE sin IV, 3 diferencias anuales, 8 clusters): no se puede contrastar sin instrumento. Pretendencia sin señal (p=0,71, N=3); el placebo (p=0,026) tiene pocas permutaciones distintas. Un coeficiente negativo es compatible con confusión o con error de medida del VUT; los datos no lo distinguen.",
+           "- Periodo: no se puede contrastar, porque el VUT del INE no existe antes de 2021. Que València (PARCIAL) y Sevilla (signo contrario) difieran es compatible con heterogeneidad o con ruido: con estimaciones C4 no se distingue.",
+           "No se atribuye la discrepancia a ninguna fuente ni se afirma que GL esté refutado o confirmado para España 2021-2024. Faltan serie histórica de VUT/anuncios 2012-2016 y un instrumento (no disponibles en el repo).",
            "", "Capa: C4 (EXPLORATORIO)."]
     (OUT / "gl_no_replica.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     return {"g1": (cl, ee, float(g1.ic95_lo), float(g1.ic95_hi), float(g1.p_holm)), "lam_acc": lam_acc, "lam2": lam2, "esp": esp, "T": T}

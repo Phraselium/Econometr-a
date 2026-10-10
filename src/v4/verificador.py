@@ -35,15 +35,21 @@ SPLIT = {
     "V09": ("NO ANALIZADA: FALTAN DATOS", "Faltan datos de ocupaciones ilegales por municipio y periodo (judiciales o policiales)."),
     "V10": ("NO ANALIZADA: FALTAN DATOS", "Falta una serie armonizada de tipos de ITP/IVA por CCAA y fecha con precios a escala fina; el diseño de diferencias no se realizó."),
     "V12": ("ANALIZADA, NO CONCLUYENTE", "Cota B4 analizada; con la convención A la traducción a precio es C4."),
-    "V13": ("NO ANALIZADA: FALTAN DATOS", "No se realizó test de exuberancia (GSADF); los indicadores de valoración disponibles discrepan."),
+    "V13": ("ANALIZADA, NO CONCLUYENTE", "Se analizaron indicadores de valoración (precio/renta, precio/alquiler), que discrepan en dirección; no se realizó test de exuberancia (GSADF), que los datos permitirían."),
     "V14": ("ANALIZADA, NO CONCLUYENTE", "Hay un hecho C1 sobre su peso en las compraventas (M4 lo amplía) y ningún diseño sobre el precio."),
 }
 
 # Veredicto bajo la convención B (traducciones a precio estructurales como C2), con su motivo
 CONV_B = {
-    "V01": ("NO RESPALDADA", "Con |ε_d| = 0,33 (extremo del rango), la cota de precio es ≤8,3 % de alquiler, por debajo del 50 % de la subida que exige «causa principal»."),
-    "V03": ("PARCIALMENTE", "Compra: cota de precio ≤26,3 % en 2014-2025 (<50 %); alquiler: cota no informativa (227 %). No respaldada para el precio de compra; no concluyente para el alquiler."),
-    "V12": ("PARCIALMENTE", "Con P/R = 1/uc: incompatible con 2021-2025 (signo contrario) y no descartada en 2014-2021."),
+    # Regla B: la cota de precio se compara con la subida OBSERVADA del mismo periodo; «causa principal» queda
+    # NO RESPALDADA solo si la cota es < 50 % de esa subida. B nunca cambia la capa de la ficha.
+    "V01": ("ANALIZADA, NO CONCLUYENTE", "Con |ε_d| = 0,33 la cota de precio es ≤8,3 % de alquiler frente a una subida observada del 6,3 % "
+            "(IPC de alquiler 2020-2024): la cota supera el 100 % de la subida (133 %) y no excluye la afirmación; "
+            "con |ε_d| = 1 la cota es 2,7 % (44 % de la subida), y quedaría NO RESPALDADA."),
+    "V03": ("ANALIZADA, NO CONCLUYENTE", "Compra 2014-2025: cota de precio ≤26,3 % frente a una subida observada de ≈33-34 % según la ponderación (≈78-79 % de la "
+            "subida): no excluye la afirmación; alquiler: cota no informativa (227 %)."),
+    "V11": ("PARCIALMENTE", "Igual en ambas convenciones: el signo de P-D (≤ 0, nulo con desplazamiento total) no depende de la traducción a precio."),
+    "V12": ("PARCIALMENTE", "Con P/R = 1/uc: incompatible con 2021-2025 (signo contrario) y no descartada en 2014-2021 (la cota supera la subida observada)."),
 }
 
 
@@ -66,6 +72,8 @@ def transformar(f: dict) -> dict:
         f["veredicto_v3"] = f["veredicto"]
         f["veredicto"], motivo = SPLIT[f["id"]]
         f["regla"] = f["regla"] + " v4: " + motivo
+    f["literatura"] = f.get("literatura", "").replace("Banco de España, Informe Anual 2025 (DOI no comprobado)",
+                                                       "Banco de España, Informe Anual 2025 (NO VERIFICADA: DOI no comprobado)")
     if f["id"] in CONV_B:
         vb, motivo = CONV_B[f["id"]]
         f["convenciones"] = {"A (estricta: traducción a precio en C4)": f["veredicto"],

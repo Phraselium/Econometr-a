@@ -103,4 +103,9 @@ v3/madrid_alquiler_cp_v3.csv.gz,Comunidad de Madrid - alquiler medio por CP (193
 v3/serpavi_distritos_nacional_v3.csv.gz,"MIVAU-SERPAVI (IRPF, stock) distritos censales",100359.0,2011-01-01,2024-01-01,1099206.0,0.0,2026-10-10T12:03:33Z
 v3/serpavi_secciones_nacional_v3.csv.gz,"MIVAU-SERPAVI (IRPF, stock) secciones censales",398392.0,2011-01-01,2024-01-01,4577321.0,0.0,2026-10-10T12:03:33Z
 v3/zonas_tensionadas_v3.csv,BOE/CCAA - copia sin editar de v2_zonas_tensionadas,0.0,2024-03-15,2026-07-29,318.0,0.0,2026-10-10T12:03:33Z
+v4/catastro_solares_municipios.csv.gz,Catastro - Estadisticas catastrales municipales (URBANA2012-2026.xls); extracto,7610.0,2012-01-01,2026-01-01,114065.0,45742.0,2026-10-10T15:57:31Z
 vlc_precio_vivienda_libre.csv,Ajuntament de València - Opendata (CKAN); fuente primaria no indicada en el recurso,24.0,2021-04-01,2022-04-01,120.0,0.0,2026-10-09T18:54:14Z
+v4/ine_v4_t59523.csv,INE tabla 59523 (API Tempus),3456,,,3456,0,2026-10-10T15:57:43Z
+v4/ine_v4_t59529.csv,INE tabla 59529 (API Tempus),604,,,604,0,2026-10-10T15:57:44Z
+v4/ine_v4_t50256.csv,INE tabla 50256 (API Tempus),4,2006,2026,940,0,2026-10-10T15:57:45Z
+v4/ine_v4_t50272.csv,INE tabla 50272 (API Tempus),4,2006,2024,76,0,2026-10-10T15:57:46Z

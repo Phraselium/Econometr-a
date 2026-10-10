@@ -16,7 +16,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | V10 | Bajar el ITP o el IVA de la vivienda la abarataría para los compradores. | NO ANALIZADA: FALTAN DATOS | C4 |
 | V11 | Construir vivienda pública resolvería el problema de la vivienda. | PARCIALMENTE | C2 |
 | V12 | Los tipos de interés son la causa principal de la subida de los precios de la vivienda (≥50 % de la subida). | ANALIZADA, NO CONCLUYENTE | C4 |
-| V13 | Hay una burbuja en el precio de la vivienda en España. | NO ANALIZADA: FALTAN DATOS | C4 |
+| V13 | Hay una burbuja en el precio de la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
 | V14 | Los compradores extranjeros encarecen la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C1 |
 
 ## V01 · Viviendas turísticas
@@ -35,7 +35,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Límites | Las VUT del INE no son todos los alquileres de temporada; el efecto local en barrios concretos puede ser mayor que el nacional (ver cotas por ciudad en output/v3/PB); SERPAVI es un stock que amortigua. |
 | Evidencia | output/v3/PB/cotas.json#B1, output/v3/C1/resultado.json, output/v3/GL/replicacion.md |
 | Convención A (estricta: traducción a precio en C4) | ANALIZADA, NO CONCLUYENTE |
-| Convención B (estructural: traducción a precio como C2) | NO RESPALDADA. Con |ε_d| = 0,33 (extremo del rango), la cota de precio es ≤8,3 % de alquiler, por debajo del 50 % de la subida que exige «causa principal». |
+| Convención B (estructural: traducción a precio como C2) | ANALIZADA, NO CONCLUYENTE. Con |ε_d| = 0,33 la cota de precio es ≤8,3 % de alquiler frente a una subida observada del 6,3 % (IPC de alquiler 2020-2024): la cota supera el 100 % de la subida (133 %) y no excluye la afirmación; con |ε_d| = 1 la cota es 2,7 % (44 % de la subida), y quedaría NO RESPALDADA. |
 
 ## V02 · Grandes tenedores
 
@@ -69,7 +69,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Límites | Medida por nacionalidad (las nacionalizaciones la sesgan a la baja); tamaño del hogar extranjero supuesto. |
 | Evidencia | output/v3/PB/cotas.json#B2, output/v3/PB/tablas/b2_no_explica_provincias.csv, output/v2/informe_v2.md |
 | Convención A (estricta: traducción a precio en C4) | ANALIZADA, NO CONCLUYENTE |
-| Convención B (estructural: traducción a precio como C2) | PARCIALMENTE. Compra: cota de precio ≤26,3 % en 2014-2025 (<50 %); alquiler: cota no informativa (227 %). No respaldada para el precio de compra; no concluyente para el alquiler. |
+| Convención B (estructural: traducción a precio como C2) | ANALIZADA, NO CONCLUYENTE. Compra 2014-2025: cota de precio ≤26,3 % frente a una subida observada de ≈33-34 % según la ponderación (≈78-79 % de la subida): no excluye la afirmación; alquiler: cota no informativa (227 %). |
 
 ## V04 · Oferta y suelo
 
@@ -82,7 +82,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Magnitud | Balance contable hogares − viviendas nuevas 2021-2025: 701.187 viviendas (rango entre fuentes [559.752; 969.059]); en 2012-2021 el signo no está determinado ([-1.015.321; 689.037]). El papel del suelo como moderador no es detectable con los datos (P-C4). |
 | Intervalo | [559.752; 969.059] viviendas (2021-2025) |
 | Cota | — |
-| Literatura | Saiz (2010), QJE, VERIFICADA; Glaeser y Gyourko (2018), JEP, VERIFICADA: calibración. Banco de España, Informe Anual 2025 (DOI no comprobado): ≈750 mil. |
+| Literatura | Saiz (2010), QJE, VERIFICADA; Glaeser y Gyourko (2018), JEP, VERIFICADA: calibración. Banco de España, Informe Anual 2025 (NO VERIFICADA: DOI no comprobado): ≈750 mil. |
 | Regla del veredicto | Regla común (i)-(iv), la misma que V01 y V03: el desfase hogares − viviendas nuevas desde 2021 es un hecho C1 (ver V05), pero no atribuye la subida; no hay cota C2/C3 de precio para la oferta y el moderador «suelo» no es detectable (P-C4). v4: Hay hechos C1 de balance hogares-viviendas (M1) sin atribución de precio; el suelo no es detectable (P-C4). |
 | Límites | Un balance contable no mide demanda insatisfecha a cualquier precio; bajas del parque supuestas. |
 | Evidencia | output/v3/PA/tablas/A1_tabla_unica_periodos.csv, output/v3/POT/potencia.md#P-C4 |
@@ -98,7 +98,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Magnitud | 2021-2025: 701.187 viviendas; rango entre fuentes [559.752; 969.059]. 2012-2021: signo no determinado ([-1.015.321; 689.037]). |
 | Intervalo | [559.752; 969.059] viviendas |
 | Cota | — |
-| Literatura | Banco de España, Informe Anual 2025 (DOI no comprobado): ≈750 mil, dentro del rango. |
+| Literatura | Banco de España, Informe Anual 2025 (NO VERIFICADA: DOI no comprobado): ≈750 mil, dentro del rango. |
 | Regla del veredicto | Criterio de periodo común a todas las fichas: una afirmación sin periodo se juzga en todas las ventanas C1 disponibles. Respaldada en 2021-2025 (todas las combinaciones dan cientos de miles, C1) y no determinada con 2012 como base: PARCIALMENTE. Las ventanas C1 se eligieron tras ver la disponibilidad de fuentes (docs/v3/limitaciones.md, 7). |
 | Límites | Depende del periodo de partida: con 2012 como base el signo no está determinado. «Faltan» se refiere al balance contable, no a una necesidad normativa. |
 | Evidencia | output/v3/PA/hechos.json#A1_nacional_2021-2025 |
@@ -198,6 +198,8 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Regla del veredicto | Según supuestos: en P-D la vivienda pública reduce el esfuerzo de acceso o lo deja igual (≤ 0; nulo si desplaza por completo a la construcción privada, ρ = 1); con 10.000-25.000 viviendas/año queda lejos de la brecha de 104.000-413.000 viviendas/año, de modo que «resolver» depende del volumen y del desplazamiento. |
 | Límites | Simulación con rangos de elasticidades; coste fiscal no cuantificado sin dato de coste. |
 | Evidencia | output/v3/PD/resultados.json |
+| Convención A (estricta: traducción a precio en C4) | PARCIALMENTE |
+| Convención B (estructural: traducción a precio como C2) | PARCIALMENTE. Igual en ambas convenciones: el signo de P-D (≤ 0, nulo con desplazamiento total) no depende de la traducción a precio. |
 
 ## V12 · Tipos de interés
 
@@ -215,7 +217,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Límites | Estado estacionario; depende del suelo del coste de uso y de la ganancia esperada. |
 | Evidencia | output/v3/PB/cotas.json#B4 |
 | Convención A (estricta: traducción a precio en C4) | ANALIZADA, NO CONCLUYENTE |
-| Convención B (estructural: traducción a precio como C2) | PARCIALMENTE. Con P/R = 1/uc: incompatible con 2021-2025 (signo contrario) y no descartada en 2014-2021. |
+| Convención B (estructural: traducción a precio como C2) | PARCIALMENTE. Con P/R = 1/uc: incompatible con 2021-2025 (signo contrario) y no descartada en 2014-2021 (la cota supera la subida observada). |
 
 ## V13 · Burbuja
 
@@ -223,13 +225,13 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 
 | Campo | Contenido |
 |---|---|
-| Veredicto | **NO ANALIZADA: FALTAN DATOS** |
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C4 |
 | Magnitud | Precio/renta 2023: [3,0; 4,1] veces la renta anual; la dirección de la razón precio/alquiler 2015-2024 no está establecida (medidas de signo contrario: [-9,3; 43,9] %). |
 | Intervalo | n/d |
 | Cota | — |
 | Literatura | Sin test de exuberancia (GSADF) realizado en v3. |
-| Regla del veredicto | Sin test de exuberancia y con indicadores de valoración contradictorios, no se puede afirmar ni descartar. v4: No se realizó test de exuberancia (GSADF); los indicadores de valoración disponibles discrepan. |
+| Regla del veredicto | Sin test de exuberancia y con indicadores de valoración contradictorios, no se puede afirmar ni descartar. v4: Se analizaron indicadores de valoración (precio/renta, precio/alquiler), que discrepan en dirección; no se realizó test de exuberancia (GSADF), que los datos permitirían. |
 | Límites | El test GSADF por CCAA estaba previsto en P-E (exploratorio) y no se ejecutó. |
 | Evidencia | output/v3/PA/hechos.json#A4, output/v3/PA/hechos.json#A6 |
 

@@ -177,57 +177,57 @@
   "tamano_nativos": [
    [
     "Madrid",
-    42710
+    42851
    ],
    [
     "Murcia",
-    16839
+    16883
    ],
    [
     "Asturias",
-    -12836
+    -12900
    ]
   ],
   "tamano_extranjeros": [
    [
     "Madrid",
-    104418
+    104267
    ],
    [
     "Barcelona",
-    89821
+    89691
    ],
    [
     "Valencia/València",
-    58364
+    58290
    ]
   ],
   "estructura": [
    [
     "Madrid",
-    29647
+    31616
    ],
    [
     "Barcelona",
-    26475
+    27907
    ],
    [
     "Sevilla",
-    16632
+    17179
    ]
   ],
   "tasa": [
    [
     "Madrid",
-    21750
+    35728
    ],
    [
     "Barcelona",
-    13569
+    27240
    ],
    [
-    "Sevilla",
-    6986
+    "Valencia/València",
+    12105
    ]
   ]
  },
@@ -235,57 +235,57 @@
   "tamano_nativos": [
    [
     "Madrid",
-    52161
+    52511
    ],
    [
     "Barcelona",
-    15098
+    15215
    ],
    [
     "Murcia",
-    14314
+    14389
    ]
   ],
   "tamano_extranjeros": [
    [
     "Madrid",
-    94386
+    94091
    ],
    [
     "Barcelona",
-    79569
+    79321
    ],
    [
     "Valencia/València",
-    54643
+    54496
    ]
   ],
   "estructura": [
    [
     "Madrid",
-    17213
+    20940
    ],
    [
     "Barcelona",
-    16621
+    19335
    ],
    [
     "Sevilla",
-    12028
+    12998
    ]
   ],
   "tasa": [
    [
     "Madrid",
-    29157
+    27701
    ],
    [
     "Barcelona",
-    22841
+    21557
    ],
    [
     "Valencia/València",
-    9896
+    9278
    ]
   ]
  }

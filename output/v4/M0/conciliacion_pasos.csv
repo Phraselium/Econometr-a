@@ -1,7 +1,7 @@
 paso,delta_deficit,nivel_resultante,componente
 "v1 principal (EPA corregida, libres)",866100,866100,
 fuente de hogares: EPA corregida -> ECP (ambas con stock 1 de enero),-55164,810936,hogares
-medida de hogares: stock 1 de enero -> media trimestral 2021T1-2025T4,-53679,757257,hogares/fechas
+desplazamiento de ventana: de 1-ene-2021 a 1-ene-2026 (stock) a media del 1T-2021 al 4T-2025 (la ventana pierde un trimestre inicial y final),-53679,757257,desplazamiento de ventana
 protegida: añadir calificaciones definitivas (no incluidas en v1),-56323,700934,protegida
 bajas del parque (v1 y referencia v3: 0),0,700934,bajas
 periodo (ambos 2021-2025),0,700934,periodo

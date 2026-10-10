@@ -54,11 +54,15 @@ def tasas4(cel: pd.DataFrame) -> pd.DataFrame:
 
 
 def corrige_ruptura(h4: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
-    """Ruptura EPA 2021T1 (quiebre_epa_2021): reescala h(t>=2021) por grupo con k = media geométrica(h2020, h2022)/h2021.
+    """Ruptura EPA 2021T1 (quiebre_epa_2021), criterio v1 adaptado a media anual.
 
-    Mismo criterio que v1 (Δ2021 := media de los Δ adyacentes): el nivel de 2021 se sustituye por la interpolación.
+    v1: el Δ del trimestre de la ruptura se sustituye por la media de los Δ adyacentes y el nivel resultante se
+    arrastra a todo t>=2021 (salto persistente eliminado entero). Aquí, con medias anuales: Δlog h(2020→2021) :=
+    media de Δlog h(2019→2020) y Δlog h(2021→2022); k = h2021_corr/h2021 se aplica a todo t>=2021.
     """
-    k = np.sqrt(h4.loc[2020] * h4.loc[2022]) / h4.loc[2021]
+    d1 = np.log(h4.loc[2020] / h4.loc[2019])
+    d2 = np.log(h4.loc[2022] / h4.loc[2021])
+    k = np.exp(np.log(h4.loc[2020]) + 0.5 * (d1 + d2)) / h4.loc[2021]
     hc = h4.copy()
     hc.loc[hc.index >= 2021] = hc.loc[hc.index >= 2021] * k
     return hc, k
@@ -170,7 +174,7 @@ def censo_hogares() -> tuple[float, float]:
 def totales(pad, h4, h4r, nac, epa_anual, ecp, cruza):
     """ΔH total por fuente: modelo (EPA corregida), EPA hogares (salto 2021 retirado), ECP y Censo."""
     epa = epa_anual * 1000
-    ajuste = epa[2021] - 0.5 * (epa[2020] + epa[2022])  # salto de nivel de 2021 (criterio v1)
+    ajuste = epa[2021] - (epa[2020] + 0.5 * ((epa[2020] - epa[2019]) + (epa[2022] - epa[2021])))  # salto persistente (criterio v1)
     c11, c21 = censo_hogares()
     filas = []
     for _, r in nac.iterrows():

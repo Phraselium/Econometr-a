@@ -353,7 +353,8 @@ def main():
                                               for n, d in ml.items() if d}
         # guarda las predicciones de los seleccionados y de las bases
         keep = [cands[sel["seleccionado"]][1]] + [obj[o]["base"][k] for k in obj[o]["base"]]
-        pd.concat(keep).assign(objetivo=o).to_csv(OUT / f"predicciones_seleccion_{o}.csv.gz", index=False)
+        pd.concat(keep).assign(objetivo=o).to_csv(OUT / f"predicciones_seleccion_{o}.csv.gz", index=False,
+                                                   float_format="%.10g", compression={"method": "gzip", "mtime": 0})
     T = pd.concat(tablas + [pd.DataFrame(bases_rows)], ignore_index=True)
     T.to_csv(OUT / "tabla_fuera_muestra.csv", index=False, float_format="%.6g")
     pd.DataFrame(perm).to_csv(OUT / "importancia_permutacion_familias.csv", index=False, float_format="%.6g")
@@ -380,7 +381,7 @@ def main():
          "bloque5_factor_dinamico": "no ejecutado", "bloque6_deep_learning": "no ejecutado (torch no instalado)"}, indent=1))
     informe(T, sel_json, P, pd.DataFrame(perm), pd.DataFrame(shp), pd.DataFrame(lps), ms, usadas)
     tiempo("fin")
-    (OUT.parent / "BM_tiempos.json").write_text(json.dumps(TIEMPOS, indent=1)) if not SMOKE else None
+    (OUT / "tiempos.json").write_text(json.dumps(TIEMPOS, indent=1))
 
 
 def informe(T, sel, P, perm, shp, lps, ms, usadas):

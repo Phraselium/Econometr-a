@@ -1,0 +1,89 @@
+{
+  "rama": "BM",
+  "pregunta": "H7 (confirmatoria, fase de entrenamiento): ¿algún modelo con variables (panel o ML) supera al AR(4) y al ECM v1 fuera de muestra a 4 trimestres? Más: qué familias importan por periodo (exploratorio).",
+  "datos": "nacional_q_v2 y panel_prov_q (holdout.load_train vía v2_common.load); 49 provincias de entrenamiento; orígenes 2012Q1-2023Q2; sin muestra sellada",
+  "N": {
+    "A": 38,
+    "B": 2254,
+    "C": 2209,
+    "configuraciones": 59
+  },
+  "metodo": "Validación en bloques con embargo (h=4, primer test 2012Q1, embargo 4); elastic net, post-lasso plug-in, RF, LightGBM; ARDL, ECM de umbral, BVAR Minnesota, TVP-VAR con olvido (nacional); DM-HLN; PDS grupal (BCH) y proyecciones locales por periodo; importancias por permutación agrupada, SHAP y ALE",
+  "estimacion": {
+    "A": {
+      "modelo": "TVPVAR_k0.95",
+      "rmse": 0.07255028413722037,
+      "rmse_AR4": 0.06990488215961357,
+      "rmse_ECM_v1": 0.10937207125645489,
+      "N": 38
+    },
+    "B": {
+      "modelo": "LGBM_nl4_n400",
+      "rmse": 0.012361885294753187,
+      "rmse_AR4": 0.015446559020722783,
+      "rmse_ECM_v1": 0.016841350284841676,
+      "N": 2254
+    },
+    "C": {
+      "modelo": "EN_l10.7_a0.4",
+      "rmse": 0.05278476799665975,
+      "rmse_AR4": 0.04177169991644137,
+      "rmse_ECM_v1": 0.08089908077620954,
+      "N": 2209
+    }
+  },
+  "ic95": null,
+  "p_ajustado": {
+    "BH_por_objetivo_sobre_configuraciones": {
+      "A": {
+        "p_vs_AR4": 0.7604664169044572,
+        "p_vs_ECM_v1": 0.35901803402383503,
+        "p_BH_AR4": 0.7604664169044572,
+        "p_BH_ECM_v1": 0.48188447245352695
+      },
+      "B": {
+        "p_vs_AR4": 0.35297971678733725,
+        "p_vs_ECM_v1": 0.14601443585310198,
+        "p_BH_AR4": 0.9885543061769727,
+        "p_BH_ECM_v1": 0.4192749265393479
+      },
+      "C": {
+        "p_vs_AR4": 0.19396657824977326,
+        "p_vs_ECM_v1": 0.18682969678934247,
+        "p_BH_AR4": 0.19396657824977326,
+        "p_BH_ECM_v1": 0.4204730970126731
+      }
+    }
+  },
+  "nivel_evidencia": "EXPLORATORIO",
+  "diagnosticos": {
+    "seleccion": {
+      "A": "TVPVAR_k0.95",
+      "B": "LGBM_nl4_n400",
+      "C": "EN_l10.7_a0.4"
+    },
+    "candidatos_que_mejoran_ambas_bases_nominal": 0,
+    "con_BH": 0,
+    "bloque5": "no ejecutado",
+    "bloque6": "no ejecutado (torch no instalado)",
+    "markov_switching": "ok"
+  },
+  "fuera_muestra": {
+    "modelo": {
+      "A": "TVPVAR_k0.95",
+      "B": "LGBM_nl4_n400",
+      "C": "EN_l10.7_a0.4"
+    },
+    "rmse": {
+      "A": 0.07255028413722037,
+      "B": 0.012361885294753187,
+      "C": 0.05278476799665975
+    },
+    "dm_vs_ar4": {
+      "A": -0.3071300364090549,
+      "B": 0.9385354905135542,
+      "C": -1.3186244566754626
+    }
+  },
+  "notas": "Criterio uniforme (b): H7 tiene evaluación sellada, así que antes del sellado el máximo es EXPLORATORIO. Evaluación sellada preparada (bm_h7_sellado.evaluar_H7) y NO ejecutada. Importancias exploratorias con colinealidad."
+}

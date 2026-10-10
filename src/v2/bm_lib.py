@@ -295,7 +295,8 @@ def ajustar(long: pd.DataFrame, posL: int, cols: list, spec: Spec, units_train, 
         from sklearn.ensemble import RandomForestRegressor
         f.model = RandomForestRegressor(n_estimators=300, max_depth=p["max_depth"],
                                         min_samples_leaf=p["min_samples_leaf"], max_features=0.5,
-                                        random_state=SEED, n_jobs=4).fit(Xi.values, yz)
+                                        random_state=SEED, n_jobs=1).fit(Xi.values, yz)
+        f.model.set_params(n_jobs=1)     # la suma paralela de árboles en predict no es determinista bit a bit
     elif spec.clase == "lgbm":
         f.model = _lgbm(p).fit(X.values, yz)
     else:
@@ -313,7 +314,7 @@ def predecir_filas(f: Fit, long: pd.DataFrame, posL: int, test_pos, units_train,
     if sub.empty:
         return None
     raw = f.predict_raw(sub)
-    fe = sub["unidad"].map(f.fe).astype(float).values
+    fe = np.array(sub["unidad"].map(f.fe), dtype=float)
     for u in units_extra:
         hist = ((long["unidad"] == u) & (long["pos"] + h <= posL) & long["yh"].notna()
                 & long[AR_COLS].notna().all(axis=1))

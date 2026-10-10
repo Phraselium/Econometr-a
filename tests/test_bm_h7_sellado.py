@@ -47,7 +47,7 @@ def test_dry_run_seleccion_real():
     assert r["selladas"] == ps and len(ps) == 3
     for o in "ABC":
         assert r[o]["PRINCIPAL"]["n_periodos"] >= 8 and np.isfinite(r[o]["PRINCIPAL"]["p_vs_AR4"])
-        assert 0 <= r[o]["p_IUT_Holm_m3"] <= 1
+        assert 0 <= r[o]["p_IUT_Holm"] <= 1
     assert r["B"]["PRINCIPAL"]["n"] > r["B"]["sec_a_entrenamiento_49"]["n"]
     assert "sec_b2_selladas_historia" in r["C"]
     return r
@@ -66,7 +66,7 @@ def test_todas_las_clases():
                 if oo != o:
                     continue
             s2[o] = dict(s2[o], modelo=nombre, clase=clase, config=cfg)
-            r = bh._evaluar(s, t, L, FIN, O_INI, O_FIN, seleccion=s2)
+            r = bh._evaluar(s, t, L, FIN, O_INI, O_FIN, seleccion=s2, objetivos=o)
             assert r[o]["PRINCIPAL"]["n_periodos"] >= 8, (o, nombre)
             assert np.isfinite(r[o]["PRINCIPAL"]["rmse"]), (o, nombre)
 

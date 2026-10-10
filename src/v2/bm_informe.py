@@ -89,8 +89,8 @@ def escribir(OUT, T, sel, P, perm, shp, lps, ms, usadas):
             top = gp.sort_values("abs_shap_medio", ascending=False).head(2)
             L.append(f"- {per_}: " + "; ".join(f"{r.familia} {r.abs_shap_medio:.4f}" for r in top.itertuples()))
         L.append("")
-    L += ["ALE de las 3 variables con mayor |SHAP| en output/v2/BM/ale_top3.csv (efecto medio local, libre de colinealidad extrema "
-          "solo si las variables no son colineales; aquí es una aproximación).", ""]
+    L += ["ALE de las 3 variables con mayor |SHAP| en output/v2/BM/ale_top3.csv (efecto medio local; con regresores muy colineales "
+          "el ALE sigue extrapolando poco pero no separa efectos de variables casi duplicadas).", ""]
     L += ["### Post-double-selection por familia (BCH, EE Driscoll-Kraay/HAC(4); EXPLORATORIO)", "",
           "Solo se reportan contrastes con ≥20 periodos distintos y diseño de rango completo (P3 y P4 tienen 8 y 6 periodos: "
           "no hay potencia para variables que solo varían en el tiempo; se omiten). BH dentro de cada objetivo. "
@@ -102,9 +102,19 @@ def escribir(OUT, T, sel, P, perm, shp, lps, ms, usadas):
         tot = Pf[Pf["objetivo"] == o]
         L.append(f"- {NOMBRE_OBJ[o]}: {len(g)} de {len(tot)} contrastes (familia × periodo) fiables con p_BH<0,05. " +
                  ("; ".join(f"{r.periodo}: {r.familia}" for r in g.itertuples()) if len(g) else "Ninguno."))
-    L += ["", "Proyecciones locales por periodo (familias principales): output/v2/BM/proyecciones_locales_periodos.csv "
-          "(p solo con ≥20 periodos). Los coeficientes cambian de signo entre periodos (p. ej. tipo hipotecario real y n_eventos), "
-          "lo que sugiere parámetros cambiantes, pero con colinealidad temporal fuerte entre regresores nacionales.", ""]
+    L += ["", "Colinealidad y tamaño de T: las variables nacionales (tipos, eventos, crédito nacional) solo varían en el tiempo "
+          "(T≈80 en «Todo», 20-24 por periodo), de modo que los p de PDS están probablemente sobreestimados y significación "
+          "NO implica poder predictivo (ningún modelo con estas familias mejora al AR(4) fuera de muestra).", ""]
+    lp = lps[(lps["fiable"] == True) & (lps["periodo"] != "Todo")]  # noqa: E712
+    cambios = []
+    for (o, v), g in lp.groupby(["objetivo", "var"]):
+        sg = g[g["p"] < 0.05]
+        if (sg["coef"] > 0).any() and (sg["coef"] < 0).any():
+            cambios.append(f"{o}:{v} (" + ", ".join(f"{r.periodo} {'+' if r.coef > 0 else '-'}" for r in sg.itertuples()) + ")")
+    L += ["Proyecciones locales por periodo (familias principales; output/v2/BM/proyecciones_locales_periodos.csv; p solo con ≥20 "
+          "periodos, es decir P1 y P2 y «Todo»; P0, P3 y P4 se publican sin p). Variables con coeficiente significativo (p<0,05, "
+          "sin corregir) de signo distinto entre periodos fiables: " + ("; ".join(cambios) if cambios else "ninguna") +
+          ". Indicio de parámetros cambiantes, no prueba (colinealidad temporal fuerte entre regresores nacionales).", ""]
     L += ["## 4. Parámetros cambiantes y no linealidad (nacional, A)", "",
           "- ECM de umbral (ECT>0 vs ≤0; crédito en expansión vs no): ver tabla; ninguno supera al AR(4).",
           f"- Markov-switching (2 regímenes, ECT con coeficiente cambiante; DESCRIPTIVO en muestra, N={ms.get('n', 'n/d')}): "
@@ -116,14 +126,25 @@ def escribir(OUT, T, sel, P, perm, shp, lps, ms, usadas):
           "- TVP-VAR: SIMPLIFICACIÓN de Primiceri (2005) con olvido exponencial (Koop-Korobilis): coeficientes paseo aleatorio con factor "
           "κ, varianza de medida EWMA (0,98), sin volatilidad estocástica; los coeficientes se filtran hasta L (fin de entrenamiento del "
           "split) y se mantienen fijos en el bloque de test (misma información que el resto de modelos).", ""]
+    fm_b = cand[(cand["objetivo"] == "B") & (cand["modelo"] == sel["B"]["modelo"])].iloc[0].to_dict()
+    fm_b = {"rmse": fm_b["RMSE"], "rmse_AR4": fm_b["RMSE_AR4"], "p_vs_AR4": fm_b["p_vs_AR4"]}
     L += ["## 5. Resultados negativos y lo que NO se puede afirmar", ""]
-    L += ["- Ningún modelo con variables mejora de forma significativa (p<0,05 frente a AR(4) y ECM v1) en los bloques de entrenamiento "
-          "si n_ok es 0 (ver conteo arriba); si algún candidato lo hiciera, la selección es optimista (mínimo sobre ≥19 configuraciones "
-          "por objetivo) y solo la evaluación sellada puede confirmarlo.",
+    ecm_peor = all((T[(T["objetivo"] == o) & (T["modelo"] == "ECM_v1")]["RMSE"].iloc[0]
+                    > T[(T["objetivo"] == o) & (T["modelo"] == "AR4")]["RMSE"].iloc[0]) for o in "ABC")
+    ardl = cand[(cand["modelo"] == "ARDL")]
+    L += [(f"- Ningún modelo con variables mejora de forma significativa (p<0,05 frente a AR(4) y ECM v1) en los bloques de entrenamiento"
+           if n_ok == 0 else f"- {n_ok} candidato(s) mejoran nominalmente a ambas bases (ver tabla)") +
+          "; la selección del mínimo sobre ≥19 configuraciones por objetivo es optimista y solo la evaluación sellada puede confirmar nada.",
+          "- Reducciones de RMSE no significativas: en B el LightGBM elegido reduce el RMSE un "
+          f"{100 * (1 - fm_b['rmse'] / fm_b['rmse_AR4']):.0f} % frente al AR(4), pero DM-HLN no lo distingue (p={fm_b['p_vs_AR4']:.2f}); "
+          "con 46 orígenes autocorrelados la potencia es baja.",
+          f"- ARDL (A): cobertura {float(ardl['cobertura'].iloc[0]):.2f} de la muestra AR(4)∩ECM v1 (<0,90): excluido de la elección por la regla."
+          if len(ardl) else "",
           "- Objetivo A: N de entrenamiento 8-60 (IPV desde 2007Q1; muestra común AR4∩ECM v1 de 38 orígenes y 12 bloques); no se ejecutan "
           "árboles (RF/LightGBM) por falta de datos; la potencia del DM es muy baja. Elastic net con N≈8 al inicio produce RMSE muy "
           "superiores al AR(4).",
-          "- El ECM v1 es la base peor en los tres objetivos (RMSE mayor que el AR(4)); mejorar al ECM v1 es un listón bajo.",
+          ("- El ECM v1 es peor que el AR(4) en los tres objetivos (RMSE mayor): mejorar al ECM v1 es un listón bajo."
+           if ecm_peor else "- El ECM v1 no es siempre peor que el AR(4) (ver tabla)."),
           "- Importancias: de modelos que no mejoran al AR(4) fuera de muestra → NO son explicación (regla 4). Incluso si lo hicieran, son "
           "asociaciones predictivas, no efectos causales, con colinealidad alta.",
           "- Bloque 5 NO ejecutado: factor dinámico provincial (reserva de 4 configuraciones sin usar) y spillovers espaciales (los paneles no "

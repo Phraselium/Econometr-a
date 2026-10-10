@@ -132,7 +132,7 @@ def _holm(ps: dict, alfa=0.05):
     return adj, rechaza
 
 
-def _evaluar(sellado, train, L, fin, o_ini, o_fin, seleccion=None, hist_ini="2012Q1"):
+def _evaluar(sellado, train, L, fin, o_ini, o_fin, seleccion=None, hist_ini="2012Q1", objetivos="ABC"):
     seleccion = seleccion or json.loads(SEL_FILE.read_text())
     pan = _concat(train["panel_prov_q"], sellado["panel_prov_q"], ["cod_prov", "trimestre"])
     nac = _concat(train["nacional_q_v2"], sellado["nacional_q_v2"], ["trimestre"])
@@ -148,10 +148,10 @@ def _evaluar(sellado, train, L, fin, o_ini, o_fin, seleccion=None, hist_ini="201
         orig = [i for i, p in enumerate(per) if o_ini <= p <= o_fin and i + H < len(per)]
         return [(np.arange(0, posL + 1), np.array(orig))]
 
-    res = {"L": L, "fin": fin, "selladas": sorted(sell), "seleccion": {o: seleccion[o]["modelo"] for o in "ABC"},
+    res = {"L": L, "fin": fin, "selladas": sorted(sell), "seleccion": {o: seleccion[o]["modelo"] for o in objetivos},
            "regla": "objetivo cumple: RMSE<AR4 y <ECM v1, DM>0 ambos, p_IUT=max(p) con Holm m=3 < 0,05; H7 si alguno"}
     pint = {}
-    for o in "ABC":
+    for o in objetivos:
         sel = seleccion[o]
         m, a, e, per = _frames(o, sel, pan, nac, units_train, sell, fin, split_main)
         npd = int(m.dropna(subset=["y_real", "y_pred"])["periodo"].nunique())
@@ -177,8 +177,8 @@ def _evaluar(sellado, train, L, fin, o_ini, o_fin, seleccion=None, hist_ini="201
         pint[o] = r["p_IUT"]
         res[o] = r
     adj, rech = _holm(pint)
-    for o in "ABC":
-        res[o]["p_IUT_Holm_m3"] = adj[o]
+    for o in objetivos:
+        res[o]["p_IUT_Holm"] = adj[o]
         res[o]["cumple"] = bool(rech[o])
     res["H7_cumple"] = bool(any(rech.values()))
     return res
@@ -190,4 +190,5 @@ def evaluar_H7(sellado: dict, train: dict) -> dict:
 
 
 if __name__ == "__main__":
-    raise SystemExit("solo vía holdout.evaluate('H7', evaluar_H7, 'BM', ['panel_prov_q', 'nacional_q_v2'])")
+    print("bm_h7_sellado: no se ejecuta directamente; el orquestador lo llama UNA vez vía "
+          "holdout.evaluate('H7', evaluar_H7, 'BM', ['panel_prov_q', 'nacional_q_v2'])")

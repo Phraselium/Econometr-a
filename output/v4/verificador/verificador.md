@@ -83,7 +83,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 |---|---|
 | Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C1 |
-| Magnitud | Balance contable hogares − viviendas nuevas 2021-2025: 701.187 viviendas (rango entre fuentes [559.752; 969.059]); en 2012-2021 el signo no está determinado ([-1.015.321; 689.037]). El papel del suelo como moderador no es detectable con los datos (P-C4). |
+| Magnitud | Balance contable hogares − viviendas nuevas 2021-2025: 701.187 viviendas (rango entre fuentes [559.752; 969.059]); en 2012-2021 el signo no está determinado ([-1.015.321; 689.037]). El papel del suelo como moderador no es detectable con los datos (P-C4). v4 (M0): déficit 2021-2024 con todos los componentes en C1 = 732.750 viviendas (rango [562.692; 902.808]); 2021-2025 queda en C4 porque las terminadas de 2025 son frágiles. |
 | Intervalo | [559.752; 969.059] viviendas (2021-2025) |
 | Cota | — |
 | Literatura | Saiz (2010), QJE, VERIFICADA; Glaeser y Gyourko (2018), JEP, VERIFICADA: calibración. Banco de España, Informe Anual 2025 (NO VERIFICADA: DOI no comprobado): ≈750 mil. |
@@ -99,7 +99,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 |---|---|
 | Veredicto | **PARCIALMENTE** |
 | Capa de la evidencia | C1 |
-| Magnitud | 2021-2025: 701.187 viviendas; rango entre fuentes [559.752; 969.059]. 2012-2021: signo no determinado ([-1.015.321; 689.037]). |
+| Magnitud | 2021-2025: 701.187 viviendas; rango entre fuentes [559.752; 969.059]. 2012-2021: signo no determinado ([-1.015.321; 689.037]). v4 (M0): déficit 2021-2024 con todos los componentes en C1 = 732.750 viviendas (rango [562.692; 902.808]); 2021-2025 queda en C4 porque las terminadas de 2025 son frágiles. |
 | Intervalo | [559.752; 969.059] viviendas |
 | Cota | — |
 | Literatura | Banco de España, Informe Anual 2025 (NO VERIFICADA: DOI no comprobado): ≈750 mil, dentro del rango. |
@@ -247,13 +247,13 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 |---|---|
 | Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C4 |
-| Magnitud | Solares catastrales (uso «solar») 2026: 3.092.393 unidades urbanas; con 5/10/20 viviendas por solar cubren el déficit 2021-2025 (mediana M1) en 92 %/92 %/92 % de las 52 provincias con déficit positivo. La brecha precio-coste no se usa en esta ficha: el coste en nivel es un supuesto. |
-| Intervalo | cobertura provincial [92 %; 92 %] según viviendas por solar (5 a 20) |
+| Magnitud | Solares catastrales (uso «solar») 2026: 3.092.393 unidades urbanas. Con 5/10/20 viviendas por solar cubren el déficit 2021-2025 (mediana M1) en 100 %/100 %/100 % de las 48 provincias con déficit positivo y dato de solares (excluidas 4 provincias sin dato de solares). Esa prueba provincial no es informativa: da positivo por construcción cuando el total de solares supera con holgura al déficit. En municipios con déficit positivo y dato (454) la cobertura es 100 %/100 %/100 %. La brecha precio-coste no se usa: el coste en nivel es un supuesto. |
+| Intervalo | cobertura provincial [100 %; 100 %]; municipal [100 %; 100 %] según viviendas por solar (5 a 20) |
 | Cota | — |
-| Literatura | Glaeser y Gyourko (2018, VERIFICADA): precio por encima del coste de construcción más suelo como indicio de restricción de oferta; sin cifra citable para España. |
-| Regla del veredicto | PROVISIONAL: depende del déficit de M1, en corrección al generar este fichero; se recalcula al ejecutar m3_run. Regla fijada antes de calcular: PARCIALMENTE si los solares cubren el déficit en >= 80 % de las provincias con 5 viviendas por solar; NO RESPALDADA si en < 50 % con 20; en otro caso, ANALIZADA, NO CONCLUYENTE. RESPALDADA no es posible: la única fuente de suelo (Catastro) no distingue suelo urbanizado, clasificado ni disponible, y el SIU no es accesible. |
-| Límites | El uso «solar» catastral es suelo urbano sin edificar, no suelo urbanizable ni edificabilidad; SIU inaccesible (docs/v4/fuentes_fallidas.md). Catastro no cubre territorios forales. El coste de construcción en nivel no tiene fuente verificable. |
-| Evidencia | output/v4/M3/clasificacion_provincias.csv, output/v4/M3/tablas/M3_solares_nacional_catastro.csv, data/raw/v4/catastro_solares_municipios.csv.gz |
+| Literatura | Glaeser y Gyourko (2018, VERIFICADA): precio por encima del coste de construcción más suelo; sin cifra citable para España. |
+| Regla del veredicto | Regla común con M4-V3: con capa C4 el veredicto máximo es «ANALIZADA, NO CONCLUYENTE»; PARCIALMENTE exige al menos C2. La fuente de suelo es única (Catastro) y el SIU no es accesible. |
+| Límites | El uso «solar» catastral cuenta unidades urbanas sin edificar, sin superficie, uso urbanístico, edificabilidad, estado de urbanización ni disponibilidad en el mercado. Puede sobrestimar el suelo disponible (incluye solares industriales o terciarios, parcelas residuales, suelo sin urbanizar del todo) y subestimarlo (deja fuera el suelo urbanizable sin planeamiento de desarrollo, rústico a efectos catastrales). Sin dato en las provincias forales. SIU inaccesible (docs/v4/fuentes_fallidas.md). El coste de construcción en nivel no tiene fuente verificable. |
+| Evidencia | output/v4/M3/clasificacion_provincias.csv, output/v4/M3/clasificacion_municipios.csv, output/v4/M3/tablas/M3_solares_nacional_catastro.csv, data/raw/v4/catastro_solares_municipios.csv.gz |
 
 ## M4-V1 · Compradores extranjeros (sustituye a V14)
 

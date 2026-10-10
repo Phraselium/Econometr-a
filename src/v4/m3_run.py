@@ -448,13 +448,13 @@ def escribir_json(out_p, out_m, nac, tp_out, grid, capa_def) -> None:
         "id": "M3-V1", "tema": "Suelo disponible",
         "enunciado": "Hay suelo de sobra para construir.",
         "capa": "C4",
-        "magnitud": (f"Solares catastrales (uso «solar») 2026: {int(nac.uu_solar):,} unidades urbanas. Con 5/10/20 viviendas por "
+        "magnitud": (f"Solares catastrales (uso «solar») 2026: {int(nac.uu_solar):,}".replace(",", ".") + f" unidades urbanas. Con 5/10/20 viviendas por "
                      f"solar cubren el déficit 2021-2025 (mediana M1) en {cob[5]*100:.0f} %/{cob[10]*100:.0f} %/{cob[20]*100:.0f} % de "
                      f"las {len(fal)} provincias con déficit positivo y dato de solares (excluidas {n_sin} provincias sin dato de "
                      f"solares). Esa prueba provincial no es informativa: da positivo por construcción cuando el total de solares "
-                     f"supera con holgura al déficit. En municipios con déficit positivo y dato ({len(fm)}), la cobertura es "
+                     f"supera con holgura al déficit. En municipios con déficit positivo y dato ({len(fm)}) la cobertura es "
                      f"{cob_m[5]*100:.0f} %/{cob_m[10]*100:.0f} %/{cob_m[20]*100:.0f} %. La brecha precio-coste no se usa: "
-                     f"el coste en nivel es un supuesto.").replace(",", "."),
+                     f"el coste en nivel es un supuesto."),
         "intervalo": (f"cobertura provincial [{cob[5]*100:.0f} %; {cob[20]*100:.0f} %]; municipal "
                       f"[{cob_m[5]*100:.0f} %; {cob_m[20]*100:.0f} %] según viviendas por solar (5 a 20)"),
         "cota": "—",

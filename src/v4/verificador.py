@@ -72,8 +72,23 @@ CAPA_V4 = {"V08": ("C4", "La cifra de vacías y su reparto proceden del Censo 20
 VEREDICTOS_C4 = {"ANALIZADA, NO CONCLUYENTE", "NO ANALIZADA: FALTAN DATOS", "SIN EVIDENCIA SUFICIENTE"}
 
 
+def _deficit_2021_2024() -> str | None:
+    r = RAIZ / "output" / "v4" / "M0" / "resultado.json"
+    if not r.exists():
+        return None
+    d = json.loads(r.read_text()).get("deficit_2021_2024")
+    if not isinstance(d, dict):
+        return None
+    lo, hi = d.get("rango", [None, None]) if isinstance(d.get("rango"), list) else (d.get("min"), d.get("max"))
+    med = d.get("mediana")
+    return (f"v4 (M0): déficit 2021-2024 con todos los componentes en C1 = {v3._f(med, 0)} viviendas "
+            f"(rango {v3._iv([lo, hi], 0)}); 2021-2025 queda en C4 porque las terminadas de 2025 son frágiles.")
+
+
 def transformar(f: dict) -> dict:
     f = dict(f)
+    if f["id"] in ("V04", "V05") and (txt := _deficit_2021_2024()):
+        f["magnitud"] = f["magnitud"] + " " + txt
     if f["id"] in CAPA_V4:
         f["capa"], motivo = CAPA_V4[f["id"]]
         f["regla"] = f["regla"] + " v4: " + motivo

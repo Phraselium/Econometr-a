@@ -1,0 +1,4 @@
+periodo,tipo_ini,tipo_fin,n_combos,n_definidos,dln_inv_uc_min_pct,dln_inv_uc_max_pct,dln_inv_uc_central_pct,dlnP_tasado_pct,dlnIPV_pct,dlnR_pct,signo_contrario,no_explica_compra_pct,no_explica_alquiler_pct,extremo,coste_uso_v2_ini,coste_uso_v2_fin,sens_min,sens_max
+2014-2021,2.93167,1.47917,63,55,23.5147,78.0102,42.6714,12.733,31.2174,4.35308,False,0,100,"dep=1.0, ganancia=2.0, ibi=0.75",2.87578,-0.325265,23.5147,109.594
+2021-2025,1.47917,2.7275,63,55,-70.0914,-20.5251,-37.6657,24.9627,31.017,7.92218,True,100,100,"dep=3.0, ganancia=0.0, ibi=1.0",-0.325265,-0.092466,-99.7686,-20.5251
+2007-2014,5.09083,2.93167,63,63,27.1166,91.9545,41.63,-34.2907,-43.7877,8.99365,True,,100,"dep=1.0, ganancia=3.0, ibi=0.5",1.28276,2.87578,27.1166,91.9545

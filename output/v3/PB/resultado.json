@@ -1,0 +1,41 @@
+{
+ "rama": "PB",
+ "pregunta": "¿Qué parte máxima de la subida de precios y alquileres puede atribuirse a turísticos, inmigración, grandes tenedores y tipos, bajo supuestos débiles?",
+ "datos": "paneles completos (holdout.load_full, uso PB); INE VUT (JAXI y sección); Censo 2021 (alquiler por sección); SERPAVI; padrón; EPA/ECP; BdE tipos",
+ "N": {
+  "municipios_B1": 3479,
+  "provincias": 52
+ },
+ "metodo": "identificación parcial (cotas de Manski): sustitución 1:1, traspaso completo, ε_d implícito de la literatura, estado estacionario P/R=1/uc",
+ "estimacion": {
+  "B1_precio_eps_min_pct": 8.3205,
+  "B1_precio_central_pct": 2.7458,
+  "B1_cantidad_pct": 2.7458,
+  "B1_no_explica_pct": 25.0291,
+  "B2_cuota_max_2014-2025_pct": 79.5141,
+  "B2_cuota_max_2020-2025_pct": 92.9816,
+  "B4_dln_inv_uc_max_2014-2021_pct": 78.0102,
+  "B4_dln_inv_uc_max_2021-2025_pct": -20.5251
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "COTA C2 (identificación parcial; no CAUSAL)",
+ "diagnosticos": {
+  "cobertura_stock_alquiler_B1_municipal": 0.8896952976860649,
+  "B3": "en espera",
+  "FDR": "no aplica: sin contrastes de hipótesis"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "No hay predicción fuera de muestra: las cotas son aritmética bajo supuestos, no modelos predictivos (sin DM ni AR(4)).",
+  "Sin lenguaje causal: solo «como máximo X puede atribuirse a Y bajo el supuesto Z».",
+  "|ε_d| (0,33-1,0) es implícito de González y Ortega (2013) y Saiz (2007); laguna de la literatura v3 B: sin estimación verificada para España.",
+  "Total JAXI para cifras nacionales de VUT; la suma por sección cubre solo 89-90 %.",
+  "Hogares por nacionalidad no existen en la ECP: tamaño de hogar extranjero en rango 2,0-3,0 (supuesto).",
+  "EPA tiene quiebre en 2021 (se contrasta con ECP)."
+ ]
+}

@@ -1,0 +1,287 @@
+{
+ "rama": "POT",
+ "capa": "C4",
+ "pregunta": "¿Tienen los diseños P-C potencia para detectar el EER?",
+ "datos": "SERPAVI sec/distrito, INE VUT, Censo 2021, Incasòl, zonas tensionadas, panel_prov_a (load_full)",
+ "N": 70628,
+ "metodo": "EMD analítico con EE clúster + bootstrap de clústeres (500 réplicas)",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "veredictos": {
+   "P-C1": [
+    "estimable",
+    "no detectable con los datos disponibles"
+   ],
+   "P-C2": [
+    "no detectable con los datos disponibles"
+   ],
+   "P-C3": [
+    "estimable"
+   ],
+   "P-C4": [
+    "no detectable con los datos disponibles"
+   ]
+  },
+  "filas": [
+   {
+    "diseno": "P-C1",
+    "especificacion": "OLS FE sección+año, nacional",
+    "N": 70628,
+    "clusters": 2888,
+    "ee": 0.0007115055566405844,
+    "emd": 0.0019933434500895007,
+    "eer": 0.01,
+    "unidad": "log-puntos de alquiler por 1 pp VUT/viviendas",
+    "potencia_sim_en_emd": 0.968,
+    "F_1a_etapa": NaN,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C1",
+    "especificacion": "OLS FE, 6 ciudades grandes (pool)",
+    "N": 14768,
+    "clusters": 56,
+    "ee": 0.0022119311741111646,
+    "emd": 0.006196913680873101,
+    "eer": 0.01,
+    "unidad": "log-puntos de alquiler por 1 pp VUT/viviendas",
+    "potencia_sim_en_emd": 0.988,
+    "F_1a_etapa": NaN,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C1",
+    "especificacion": "OLS FE, Barcelona",
+    "N": 3260,
+    "clusters": 8,
+    "ee": 0.0015328928219397286,
+    "emd": 0.004294529870897818,
+    "eer": 0.01,
+    "unidad": "log-puntos de alquiler por 1 pp VUT/viviendas",
+    "potencia_sim_en_emd": 0.736,
+    "F_1a_etapa": NaN,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C1",
+    "especificacion": "OLS FE, Madrid",
+    "N": 7160,
+    "clusters": 16,
+    "ee": 0.002256885369245472,
+    "emd": 0.006322856689453543,
+    "eer": 0.01,
+    "unidad": "log-puntos de alquiler por 1 pp VUT/viviendas",
+    "potencia_sim_en_emd": 1.0,
+    "F_1a_etapa": NaN,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C1",
+    "especificacion": "OLS FE, València",
+    "N": 1940,
+    "clusters": 15,
+    "ee": 0.002296405570854709,
+    "emd": 0.006433575902098826,
+    "eer": 0.01,
+    "unidad": "log-puntos de alquiler por 1 pp VUT/viviendas",
+    "potencia_sim_en_emd": 0.646,
+    "F_1a_etapa": NaN,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C1",
+    "especificacion": "OLS FE, Sevilla",
+    "N": 1408,
+    "clusters": 8,
+    "ee": 0.0007576310383963764,
+    "emd": 0.0021225679179548668,
+    "eer": 0.01,
+    "unidad": "log-puntos de alquiler por 1 pp VUT/viviendas",
+    "potencia_sim_en_emd": 0.532,
+    "F_1a_etapa": NaN,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C1",
+    "especificacion": "OLS FE, Málaga",
+    "N": 916,
+    "clusters": 8,
+    "ee": 0.00232579630901101,
+    "emd": 0.006515916559666947,
+    "eer": 0.01,
+    "unidad": "log-puntos de alquiler por 1 pp VUT/viviendas",
+    "potencia_sim_en_emd": 0.7,
+    "F_1a_etapa": NaN,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C1",
+    "especificacion": "shift-share LOO municipio, nacional",
+    "N": 68092,
+    "clusters": 2254,
+    "ee": 0.044277060690869736,
+    "emd": 0.12404595873303143,
+    "eer": 0.01,
+    "unidad": "log-puntos por 1 pp VUT (2SLS)",
+    "potencia_sim_en_emd": 0.686,
+    "F_1a_etapa": 0.2525779562974893,
+    "veredicto": "no detectable con los datos disponibles"
+   },
+   {
+    "diseno": "P-C1",
+    "especificacion": "shift-share LOO municipio, 6 ciudades",
+    "N": 14768,
+    "clusters": 56,
+    "ee": 0.002862167427698155,
+    "emd": 0.00801860595720357,
+    "eer": 0.01,
+    "unidad": "log-puntos por 1 pp VUT (2SLS)",
+    "potencia_sim_en_emd": 0.906,
+    "F_1a_etapa": 23.723351551267754,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C1",
+    "especificacion": "shift-share LOO provincia, nacional",
+    "N": 70628,
+    "clusters": 2888,
+    "ee": 0.00846701273533965,
+    "emd": 0.023721057720901814,
+    "eer": 0.01,
+    "unidad": "log-puntos por 1 pp VUT (2SLS)",
+    "potencia_sim_en_emd": 0.778,
+    "F_1a_etapa": 5.318593074514745,
+    "veredicto": "no detectable con los datos disponibles"
+   },
+   {
+    "diseno": "P-C1",
+    "especificacion": "shift-share LOO provincia, 6 ciudades",
+    "N": 14768,
+    "clusters": 56,
+    "ee": 0.003209334824563202,
+    "emd": 0.008991225004471443,
+    "eer": 0.01,
+    "unidad": "log-puntos por 1 pp VUT (2SLS)",
+    "potencia_sim_en_emd": 0.884,
+    "F_1a_etapa": 29.351092516213185,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C2",
+    "especificacion": "caída de anuncios 2025-2026 -> alquiler fino",
+    "N": 0,
+    "clusters": 0,
+    "ee": Infinity,
+    "emd": Infinity,
+    "eer": 0.09999999999999999,
+    "unidad": "log-puntos de alquiler por 1 de caída log de anuncios",
+    "potencia_sim_en_emd": NaN,
+    "F_1a_etapa": NaN,
+    "veredicto": "no detectable con los datos disponibles"
+   },
+   {
+    "diseno": "P-C3",
+    "especificacion": "topes Ley 11/2020 (2016-2022) -> alquiler",
+    "N": 3171,
+    "clusters": 453,
+    "ee": 0.006337075796095298,
+    "emd": 0.01775385787640206,
+    "eer": 0.03,
+    "unidad": "log-puntos (efecto = coef de D)",
+    "potencia_sim_en_emd": 0.822,
+    "F_1a_etapa": NaN,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C3",
+    "especificacion": "topes Ley 11/2020 (2016-2022) -> contratos",
+    "N": 3171,
+    "clusters": 453,
+    "ee": 0.019283010761222984,
+    "emd": 0.05402299790935561,
+    "eer": 0.1,
+    "unidad": "log-puntos (efecto = coef de D)",
+    "potencia_sim_en_emd": 0.786,
+    "F_1a_etapa": NaN,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C3",
+    "especificacion": "zonas tensionadas (2016-2025) -> alquiler",
+    "N": 4380,
+    "clusters": 438,
+    "ee": 0.008164338361188484,
+    "emd": 0.022873089668378314,
+    "eer": 0.03,
+    "unidad": "log-puntos (efecto = coef de D)",
+    "potencia_sim_en_emd": 0.816,
+    "F_1a_etapa": NaN,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C3",
+    "especificacion": "zonas tensionadas (2016-2025) -> contratos",
+    "N": 4380,
+    "clusters": 438,
+    "ee": 0.028146943019032755,
+    "emd": 0.07885605949719017,
+    "eer": 0.1,
+    "unidad": "log-puntos (efecto = coef de D)",
+    "potencia_sim_en_emd": 0.804,
+    "F_1a_etapa": NaN,
+    "veredicto": "estimable"
+   },
+   {
+    "diseno": "P-C4",
+    "especificacion": "d_ln_ocupados x ln p_suelo",
+    "N": 1134,
+    "clusters": 50,
+    "ee": 0.0549456410117446,
+    "emd": 0.15393489565824536,
+    "eer": 0.1,
+    "unidad": "diferencia de elasticidad p75-p25 de ln(p_suelo)",
+    "potencia_sim_en_emd": 0.806,
+    "F_1a_etapa": NaN,
+    "veredicto": "no detectable con los datos disponibles"
+   },
+   {
+    "diseno": "P-C4",
+    "especificacion": "d_ln_pob_total x ln p_suelo",
+    "N": 1134,
+    "clusters": 50,
+    "ee": 0.23898648234004088,
+    "emd": 0.6695409962526745,
+    "eer": 0.1,
+    "unidad": "diferencia de elasticidad p75-p25 de ln(p_suelo)",
+    "potencia_sim_en_emd": 0.758,
+    "F_1a_etapa": NaN,
+    "veredicto": "no detectable con los datos disponibles"
+   }
+  ],
+  "p2": {
+   "serpavi_distrito_max_anio": 2024,
+   "incasol_max_anio_nivel_municipal": 2026,
+   "madrid_cp_periodos": [
+    "2023",
+    "2024"
+   ],
+   "insideairbnb_rango": [
+    "2025-12-14",
+    "2026-09-28"
+   ]
+  },
+  "p3": {
+   "tratados_proxy_topes": 58
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "no aplica: cálculo de potencia"
+ },
+ "notas": "Smoke=False. P-C3a con tratados PROXY. Pérdidas: {'unidades_alq_sin_vut_o_censo': 13, 'unidades_no_balanceadas_o_sin_alq': 2766, 'unidades_finales': 17657}"
+}

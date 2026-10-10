@@ -1,0 +1,5 @@
+umbral_pp,n_muni,n_total,stock_en_set_pct,no_explica_muni_pct,n_prov_set,no_explica_radio_prov_pct,dlnR_medio_pond_pct,cobertura_stock_alquiler_pct
+0.1,604,2102,27.1387,25.0291,2,20.7727,17.251,88.9695
+0.5,745,2102,38.5487,35.7379,2,20.7727,17.251,88.9695
+1,910,2102,58.2799,53.2541,7,41.9977,17.251,88.9695
+2,1132,2102,72.3445,69.6326,19,52.5588,17.251,88.9695

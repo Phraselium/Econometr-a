@@ -1,0 +1,89 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+PB,B1-nac-2020M08-2024M08,dlnR_max=(dVUT/stock)/eps; stock=censo2021; eps=0.33,2020M08,2024M08,1,,,,,8.320472474138905,,cota nacional JAXI
+PB,B1-nac-2021M08-2024M08,dlnR_max=(dVUT/stock)/eps; stock=censo2021; eps=0.33,2021M08,2024M08,1,,,,,9.798134496976404,,cota nacional JAXI
+PB,B1-nac-2020M08-2026M05,dlnR_max=(dVUT/stock)/eps; stock=censo2021; eps=0.33,2020M08,2026M05,1,,,,,1.9846989226997265,,cota nacional JAXI
+PB,B1-nac-2024M08-2026M05,dlnR_max=(dVUT/stock)/eps; stock=censo2021; eps=0.33,2024M08,2026M05,1,,,,,-6.3357735514391775,,cota nacional JAXI
+PB,B1-noexplica-umbral0.1,sum_i w_i dlnR_i [dVUT_i/stock_i<umbral] / sum_i w_i dlnR_i,2020,2024,2102,,,,,25.029099331838346,,radio provincial 20.8
+PB,B1-noexplica-umbral0.5,sum_i w_i dlnR_i [dVUT_i/stock_i<umbral] / sum_i w_i dlnR_i,2020,2024,2102,,,,,35.73785873570252,,radio provincial 20.8
+PB,B1-noexplica-umbral1.0,sum_i w_i dlnR_i [dVUT_i/stock_i<umbral] / sum_i w_i dlnR_i,2020,2024,2102,,,,,53.254052872386445,,radio provincial 42.0
+PB,B1-noexplica-umbral2.0,sum_i w_i dlnR_i [dVUT_i/stock_i<umbral] / sum_i w_i dlnR_i,2020,2024,2102,,,,,69.63263188813762,,radio provincial 52.6
+PB,B1-prov-01,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,1.1372165487752177,,Araba/Álava
+PB,B1-prov-02,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,9.395270859470376,,Albacete
+PB,B1-prov-03,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,23.435378785237585,,Alicante/Alacant
+PB,B1-prov-04,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,16.961340649377043,,Almería
+PB,B1-prov-05,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,24.647979652306162,,Ávila
+PB,B1-prov-06,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,3.8967156254014474,,Badajoz
+PB,B1-prov-07,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,-6.6093775886484964,,"Balears, Illes"
+PB,B1-prov-08,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,-4.214619125113283,,Barcelona
+PB,B1-prov-09,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,7.160434601067846,,Burgos
+PB,B1-prov-10,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,6.375924509053813,,Cáceres
+PB,B1-prov-11,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,29.689410271486032,,Cádiz
+PB,B1-prov-12,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,32.623128860316726,,Castellón/Castelló
+PB,B1-prov-13,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,5.667970299835629,,Ciudad Real
+PB,B1-prov-14,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,12.102054428872979,,Córdoba
+PB,B1-prov-15,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,15.224367065933626,,"Coruña, A"
+PB,B1-prov-16,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,11.470182786307337,,Cuenca
+PB,B1-prov-17,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,4.874244492103724,,Girona
+PB,B1-prov-18,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,15.820651981128727,,Granada
+PB,B1-prov-19,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,4.293608124253285,,Guadalajara
+PB,B1-prov-20,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,1.612378639097068,,Gipuzkoa
+PB,B1-prov-21,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,10.455646048866386,,Huelva
+PB,B1-prov-22,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,14.337693254521106,,Huesca
+PB,B1-prov-23,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,11.197968521504167,,Jaén
+PB,B1-prov-24,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,6.905531640046586,,León
+PB,B1-prov-25,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,4.19603474716393,,Lleida
+PB,B1-prov-26,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,5.410889414947581,,"Rioja, La"
+PB,B1-prov-27,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,30.5300597844301,,Lugo
+PB,B1-prov-28,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,1.6357428840429475,,Madrid
+PB,B1-prov-29,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,47.185776783630764,,Málaga
+PB,B1-prov-30,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,8.957125464964383,,Murcia
+PB,B1-prov-31,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,6.415628181908289,,Navarra
+PB,B1-prov-32,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,10.412933540397404,,Ourense
+PB,B1-prov-33,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,20.103412788687088,,Asturias
+PB,B1-prov-34,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,3.896439217895453,,Palencia
+PB,B1-prov-35,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,22.499854313937167,,"Palmas, Las"
+PB,B1-prov-36,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,31.277056277056275,,Pontevedra
+PB,B1-prov-37,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,3.9136390320266123,,Salamanca
+PB,B1-prov-38,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,22.45101861612334,,Santa Cruz de Tenerife
+PB,B1-prov-39,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,41.69415490170207,,Cantabria
+PB,B1-prov-40,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,7.6653642644976525,,Segovia
+PB,B1-prov-41,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,6.847460545632369,,Sevilla
+PB,B1-prov-42,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,14.808138037599795,,Soria
+PB,B1-prov-43,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,5.49662202204575,,Tarragona
+PB,B1-prov-44,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,11.478859766596518,,Teruel
+PB,B1-prov-45,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,4.911805480877383,,Toledo
+PB,B1-prov-46,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,9.600019093489694,,Valencia/València
+PB,B1-prov-47,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,2.3587861096982965,,Valladolid
+PB,B1-prov-48,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,4.738542440791346,,Bizkaia
+PB,B1-prov-49,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,10.70681447561317,,Zamora
+PB,B1-prov-50,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,1.8703270973549562,,Zaragoza
+PB,B1-prov-51,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,-0.8036162732295328,,Ceuta
+PB,B1-prov-52,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,0.5260290443179471,,Melilla
+PB,B1-ciudad-08019,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,-10.795930601368367,,Barcelona
+PB,B1-ciudad-28079,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,1.8576657990566339,,Madrid
+PB,B1-ciudad-29067,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,27.015369247883037,,Málaga
+PB,B1-ciudad-41091,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,9.308265690813306,,Sevilla
+PB,B1-ciudad-46250,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,5.842005483999577,,València
+PB,B1-ciudad-50297,dlnR_max=(dVUT/stock)/eps; eps=0.33,2020,2024,1,,,,,1.7466246026277936,,Zaragoza
+PB,B1-seccion-Barcelona,"no explica por sección, umbral 0.1pp",2021M08,2024M08,1051,,,,,78.28969626541154,,
+PB,B1-seccion-Madrid,"no explica por sección, umbral 0.1pp",2021M08,2024M08,2323,,,,,42.03036102010578,,
+PB,B1-seccion-Málaga,"no explica por sección, umbral 0.1pp",2021M08,2024M08,370,,,,,21.898122204918792,,
+PB,B1-seccion-Sevilla,"no explica por sección, umbral 0.1pp",2021M08,2024M08,454,,,,,39.55322887179516,,
+PB,B1-seccion-València,"no explica por sección, umbral 0.1pp",2021M08,2024M08,575,,,,,28.29557575012484,,
+PB,B1-seccion-Zaragoza,"no explica por sección, umbral 0.1pp",2021M08,2024M08,468,,,,,52.01651040958799,,
+PB,B2-nac-2002-2007,cuota_max=dH_ext(tam=2.0)/sum dH_total,2002,2007,52,,,,,63.57174341179779,,saldo_ext_no_pos=False; no_explica_compra=70.8; prov_saldo_no_pos=0
+PB,B2-nac-2008-2013,cuota_max=dH_ext(tam=2.0)/sum dH_total,2008,2013,52,,,,,-0.8625347636074692,,saldo_ext_no_pos=True; no_explica_compra=nan; prov_saldo_no_pos=15
+PB,B2-nac-2009-2014,cuota_max=dH_ext(tam=2.0)/sum dH_total,2009,2014,52,,,,,-35.975840761750376,,saldo_ext_no_pos=True; no_explica_compra=nan; prov_saldo_no_pos=47
+PB,B2-nac-2014-2019,cuota_max=dH_ext(tam=2.0)/sum dH_total,2014,2019,52,,,,,22.59782327027719,,saldo_ext_no_pos=False; no_explica_compra=91.0; prov_saldo_no_pos=29
+PB,B2-nac-2020-2025,cuota_max=dH_ext(tam=2.0)/sum dH_total,2020,2025,52,,,,,92.98157836153183,,saldo_ext_no_pos=False; no_explica_compra=55.7; prov_saldo_no_pos=2
+PB,B2-nac-2021-2025,cuota_max=dH_ext(tam=2.0)/sum dH_total,2021,2025,52,,,,,71.03779534971292,,saldo_ext_no_pos=False; no_explica_compra=61.8; prov_saldo_no_pos=2
+PB,B2-nac-2014-2025,cuota_max=dH_ext(tam=2.0)/sum dH_total,2014,2025,52,,,,,79.51412007397927,,saldo_ext_no_pos=False; no_explica_compra=60.4; prov_saldo_no_pos=0
+PB,B4-2014-2021-suelo0.5,dln(1/uc)=ln(uc0/uc1),2014,2021,59,,,,,109.59420600361418,,min=23.51
+PB,B4-2014-2021-suelo1.0,dln(1/uc)=ln(uc0/uc1),2014,2021,55,,,,,78.01020587416866,,min=23.51
+PB,B4-2014-2021-suelo2.0,dln(1/uc)=ln(uc0/uc1),2014,2021,42,,,,,50.17377246352069,,min=23.51
+PB,B4-2021-2025-suelo0.5,dln(1/uc)=ln(uc0/uc1),2021,2025,59,,,,,-20.525058237100197,,min=-99.77
+PB,B4-2021-2025-suelo1.0,dln(1/uc)=ln(uc0/uc1),2021,2025,55,,,,,-20.525058237100197,,min=-70.09
+PB,B4-2021-2025-suelo2.0,dln(1/uc)=ln(uc0/uc1),2021,2025,42,,,,,-20.525058237100197,,min=-44.47
+PB,B4-2007-2014-suelo0.5,dln(1/uc)=ln(uc0/uc1),2007,2014,63,,,,,91.9545034990223,,min=27.12
+PB,B4-2007-2014-suelo1.0,dln(1/uc)=ln(uc0/uc1),2007,2014,63,,,,,91.9545034990223,,min=27.12
+PB,B4-2007-2014-suelo2.0,dln(1/uc)=ln(uc0/uc1),2007,2014,59,,,,,68.79772312179516,,min=27.12

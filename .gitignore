@@ -11,3 +11,4 @@ output/.*.tmp
 
 # V2
 data/sealed/
+data/raw/pdf/serpavi_v2_municipios.csv

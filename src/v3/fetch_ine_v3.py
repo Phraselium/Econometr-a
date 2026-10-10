@@ -110,7 +110,9 @@ def vut_pct_municipio(by_name: dict) -> pd.DataFrame:
         if len(codes) == 1:
             codigo, nivel = codes[0], "municipio"
         else:
-            codigo, nivel = "", "municipio"
+            # 0 coincidencias: agregados (CCAA, provincias, Rioja La, etc.); >1: nombre homónimo.
+            codigo = ""
+            nivel = "municipio_ambiguo" if codes else "agregado_o_no_identificado"
             n_sin_codigo += 1
         unidad = "%" if "orcentaje" in medida or "%" in medida else "número"
         for o in s.get("Data") or []:
@@ -239,46 +241,42 @@ def cuadre_seccion_municipio(sec: pd.DataFrame, mun: pd.DataFrame) -> dict:
 
 
 # ---------------------------------------------------------------- 4. Edad por sección (API Censo)
-GRUPOS_EDAD = [(0, 15, "0-15"), (16, 24, "16-24"), (25, 34, "25-34"),
-               (35, 44, "35-44"), (45, 64, "45-64"), (65, 200, "65+")]
-
-
-def edad_de(txt: str):
-    t = str(txt).strip()
-    if t.startswith("Menos de 1"):
-        return 0
-    m = re.match(r"^(\d+)", t)
-    return int(m.group(1)) if m else None
+# La API no admite ID_EDAD (años simples) combinado con sección (404). Se usan los grandes grupos
+# de edad por sección (ID_GRAN_GRUPO_EDAD). Los grupos 16-24, 25-34, 35-44 y 45-64 no se obtienen
+# a nivel sección (ver docs/v3/fuentes_fallidas.md).
+GRAN_GRUPO = {"Menos de 16": "0-15", "16-64": "16-64", "65 o más": "65+"}
 
 
 def censo_edad_seccion(sec_pob: pd.Series) -> tuple[pd.DataFrame, dict]:
     body = {"idioma": "ES", "metrica": ["SPERSONAS"], "tabla": "per.ppal",
-            "variables": ["ID_RESIDENCIA_N5", "ID_EDAD"]}
-    d = post_json(body, "censo_api_seccion_edad.json")
+            "variables": ["ID_RESIDENCIA_N5", "ID_GRAN_GRUPO_EDAD"]}
+    d = post_json(body, "censo_api_seccion_gran_grupo_edad.json")
     rows = []
+    no_mapeado = set()
     for r in d["data"]:
         m = re.search(r"(\d{10})$", str(r.get("ID_RESIDENCIA_N5", "")))
-        edad = edad_de(r.get("ID_EDAD"))
-        if not m or edad is None or r.get("SPERSONAS") is None:
+        g = GRAN_GRUPO.get(str(r.get("ID_GRAN_GRUPO_EDAD")))
+        if g is None:
+            no_mapeado.add(str(r.get("ID_GRAN_GRUPO_EDAD")))
             continue
-        rows.append((m.group(1), edad, float(r["SPERSONAS"])))
+        if not m or r.get("SPERSONAS") is None:
+            continue
+        rows.append((m.group(1), g, float(r["SPERSONAS"])))
     del d
-    pob = pd.DataFrame(rows, columns=["codigo", "edad", "pob"])
-    pob["grupo"] = None
-    for lo, hi, lab in GRUPOS_EDAD:
-        pob.loc[pob["edad"].between(lo, hi), "grupo"] = lab
-    agg = pob.groupby(["codigo", "grupo"])["pob"].sum().reset_index()
+    pob = pd.DataFrame(rows, columns=["codigo", "grupo", "pob"])
     tot = pob.groupby("codigo")["pob"].sum()
     ref = sec_pob.reindex(tot.index)
     diff = (tot - ref).abs()
-    cuadre = {"secciones": int(len(tot)), "ok_total_vs_t1_1": int((diff < 0.5).sum()),
-              "ko_total_vs_t1_1": int((diff >= 0.5).sum()), "sin_t1_1": int(ref.isna().sum())}
+    # Tolerancia de ±10 personas: la API y el fichero de indicadores difieren en redondeo/provisionalidad.
+    cuadre = {"secciones": int(len(tot)), "ok_total_vs_t1_1_tol10": int((diff <= 10).sum()),
+              "ko_total_vs_t1_1_tol10": int((diff > 10).sum()), "sin_t1_1": int(ref.isna().sum()),
+              "max_abs_dif_personas": float(diff.max()), "grupos_no_mapeados": sorted(no_mapeado)}
     out = pd.DataFrame({
         "fecha": CENSO_FECHA, "periodo": "2021",
-        "serie": "EDAD_" + agg["grupo"].astype(str),
-        "valor": agg["pob"], "unidad": "personas", "fuente": FUENTE_CENSO,
-        "url": CENSO_API, "territorio": "", "nivel": "seccion", "codigo": agg["codigo"],
-        "desglose": "Población por grupo de edad (ID_EDAD, Censo 2021), suma de años simples",
+        "serie": "EDAD_" + pob["grupo"], "valor": pob["pob"], "unidad": "personas",
+        "fuente": FUENTE_CENSO, "url": CENSO_API, "territorio": "", "nivel": "seccion",
+        "codigo": pob["codigo"],
+        "desglose": "Población por gran grupo de edad (ID_GRAN_GRUPO_EDAD, Censo 2021)",
     })
     return out, cuadre
 

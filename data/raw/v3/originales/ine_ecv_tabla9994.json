@@ -1,0 +1,1981 @@
+[{"COD":"ECV2512", "Nombre":"Ambos sexos. Total. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":73.3, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":73.6, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":75.1, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":75.9, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":75.8, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":75.2, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":75.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":76.1, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":76.7, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":77.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":77.3, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":78.0, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":77.7, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":79.2, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":79.6, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":79.4, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":79.3, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":79.6, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":80.1, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":79.5, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":80.5, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":79.5, "Secreto":false}
+]
+}
+,{"COD":"ECV9710", "Nombre":"Ambos sexos. Total. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":48.9, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":48.8, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":48.7, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":49.5, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":49.0, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":48.5, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":51.3, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":50.7, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":51.2, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":50.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":49.9, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":49.7, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":49.0, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":50.7, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":50.5, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":48.1, "Secreto":false}
+]
+}
+,{"COD":"ECV9709", "Nombre":"Ambos sexos. Total. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":24.4, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":24.7, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":26.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":26.5, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":26.8, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":26.7, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":24.6, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":25.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":25.5, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":27.0, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":27.4, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":28.4, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":28.7, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":28.5, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":29.1, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":31.3, "Secreto":false}
+]
+}
+,{"COD":"ECV2510", "Nombre":"Ambos sexos. Total. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":16.7, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":17.0, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":15.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":15.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":15.2, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":14.7, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":15.4, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":14.8, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":14.3, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":13.8, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":13.1, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":12.4, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":12.9, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":12.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":12.1, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":11.4, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":11.3, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":11.0, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":10.4, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":10.3, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":9.5, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":10.0, "Secreto":false}
+]
+}
+,{"COD":"ECV2511", "Nombre":"Ambos sexos. Total. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":3.5, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":3.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":3.3, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":3.0, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":2.8, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":3.3, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":2.7, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":2.7, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":2.6, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":2.5, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":2.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":2.5, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":2.5, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":2.5, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":3.1, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":3.3, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":3.2, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":3.2, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":3.2, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":3.5, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":3.9, "Secreto":false}
+]
+}
+,{"COD":"ECV2509", "Nombre":"Ambos sexos. Total. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":6.5, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":6.1, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":6.1, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":6.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":6.2, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":6.8, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":6.0, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":6.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":6.4, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":6.5, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":7.1, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":7.0, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":6.9, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":6.3, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":5.5, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":6.1, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":6.1, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":6.1, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":6.3, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":7.0, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":6.4, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":6.7, "Secreto":false}
+]
+}
+,{"COD":"ECV2504", "Nombre":"Ambos sexos. De 16 a 29 años. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":30.6, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":27.0, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":29.0, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":30.7, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":32.5, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":31.8, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":25.5, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":29.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":26.5, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":28.4, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":34.2, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":34.2, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":38.5, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":42.5, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":46.4, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":46.9, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":50.0, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":54.9, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":58.1, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":56.1, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":53.6, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":47.7, "Secreto":false}
+]
+}
+,{"COD":"ECV9706", "Nombre":"Ambos sexos. De 16 a 29 años. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":14.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":12.7, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":13.8, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":13.5, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":17.9, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":12.2, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":8.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":12.0, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":12.1, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":13.4, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":16.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":11.8, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":15.4, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":17.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":17.6, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":10.8, "Secreto":false}
+]
+}
+,{"COD":"ECV9705", "Nombre":"Ambos sexos. De 16 a 29 años. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":16.5, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":14.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":15.3, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":17.2, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":14.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":19.6, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":16.6, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":17.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":14.4, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":15.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":17.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":22.4, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":23.1, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":25.3, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":28.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":36.1, "Secreto":false}
+]
+}
+,{"COD":"ECV2502", "Nombre":"Ambos sexos. De 16 a 29 años. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":49.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":51.2, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":48.7, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":47.6, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":47.7, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":45.4, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":48.2, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":45.8, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":48.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":47.8, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":43.1, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":47.4, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":41.8, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":39.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":40.3, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":36.4, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":33.7, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":32.3, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":28.4, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":25.5, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":31.6, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":37.6, "Secreto":false}
+]
+}
+,{"COD":"ECV2503", "Nombre":"Ambos sexos. De 16 a 29 años. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":4.9, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":7.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":7.9, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":5.8, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":4.8, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":3.9, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":3.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":6.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":3.3, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":5.0, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":5.3, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":2.7, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":4.6, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":4.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2.5, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":5.2, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":4.0, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":4.2, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":3.8, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":2.7, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":3.5, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":1.7, "Secreto":false}
+]
+}
+,{"COD":"ECV2501", "Nombre":"Ambos sexos. De 16 a 29 años. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":14.7, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":14.5, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":14.3, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":15.9, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":15.1, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":18.9, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":22.5, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":18.0, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":21.4, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":18.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":17.4, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":15.7, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":15.1, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":14.4, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":10.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":11.5, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":12.3, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":8.7, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":9.7, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":15.6, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":11.2, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":13.0, "Secreto":false}
+]
+}
+,{"COD":"ECV2500", "Nombre":"Ambos sexos. De 30 a 44 años. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":53.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":52.9, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":55.3, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":56.7, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":58.0, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":59.3, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":59.4, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":60.7, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":63.8, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":64.4, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":65.3, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":68.6, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":67.9, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":71.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":72.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":73.7, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":73.8, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":73.7, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":74.3, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":72.7, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":72.5, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":71.1, "Secreto":false}
+]
+}
+,{"COD":"ECV9704", "Nombre":"Ambos sexos. De 30 a 44 años. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":15.2, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":16.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":14.7, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":15.6, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":15.1, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":13.3, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":15.0, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":15.8, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":16.2, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":14.5, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":15.7, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":16.6, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":15.0, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":18.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":18.9, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":17.6, "Secreto":false}
+]
+}
+,{"COD":"ECV9703", "Nombre":"Ambos sexos. De 30 a 44 años. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":37.9, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":36.6, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":40.5, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":41.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":42.9, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":46.0, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":44.4, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":44.9, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":47.6, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":49.9, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":49.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":52.1, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":52.9, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":53.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":53.9, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":56.1, "Secreto":false}
+]
+}
+,{"COD":"ECV2498", "Nombre":"Ambos sexos. De 30 a 44 años. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":32.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":33.1, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":29.6, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":28.9, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":28.5, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":26.9, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":28.8, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":27.2, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":25.1, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":24.2, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":22.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":19.8, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":21.3, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":19.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":18.4, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":16.6, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":16.4, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":16.2, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":15.8, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":17.1, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":15.0, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":15.5, "Secreto":false}
+]
+}
+,{"COD":"ECV2499", "Nombre":"Ambos sexos. De 30 a 44 años. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":5.0, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":5.1, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":4.7, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":4.0, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":3.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":4.1, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":3.2, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":2.7, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":2.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":2.0, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":1.8, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":2.0, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":2.0, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":1.8, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2.2, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":2.5, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":2.7, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":2.8, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":2.3, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":2.7, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":3.8, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":3.8, "Secreto":false}
+]
+}
+,{"COD":"ECV2497", "Nombre":"Ambos sexos. De 30 a 44 años. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":9.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":8.8, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":10.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":10.4, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":9.9, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":9.7, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":8.6, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":9.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":8.2, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":9.5, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":10.4, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":9.6, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":8.8, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":8.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":6.6, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":7.1, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":7.1, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":7.3, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":7.6, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":7.5, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":8.7, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":9.6, "Secreto":false}
+]
+}
+,{"COD":"ECV2496", "Nombre":"Ambos sexos. De 45 a 64 años. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":75.0, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":76.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":78.5, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":79.3, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":79.5, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":78.0, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":79.8, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":80.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":80.5, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":80.9, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":81.4, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":82.0, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":82.4, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":82.7, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":82.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":83.5, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":83.1, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":83.7, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":83.8, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":83.2, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":86.6, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":85.9, "Secreto":false}
+]
+}
+,{"COD":"ECV9702", "Nombre":"Ambos sexos. De 45 a 64 años. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":43.0, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":43.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":44.0, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":45.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":45.9, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":47.1, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":51.7, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":51.1, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":52.8, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":52.5, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":53.2, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":53.4, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":55.1, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":56.6, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":57.1, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":55.6, "Secreto":false}
+]
+}
+,{"COD":"ECV9701", "Nombre":"Ambos sexos. De 45 a 64 años. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":32.0, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":33.1, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":34.5, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":34.2, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":33.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":30.8, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":28.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":29.3, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":27.7, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":28.3, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":28.2, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":28.6, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":27.3, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":26.2, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":25.7, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":27.9, "Secreto":false}
+]
+}
+,{"COD":"ECV2494", "Nombre":"Ambos sexos. De 45 a 64 años. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":15.3, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":14.9, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":13.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":12.9, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":12.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":12.1, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":12.6, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":11.8, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":11.3, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":10.9, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":10.3, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":9.5, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":9.4, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":9.3, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":9.0, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":8.2, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":8.7, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":8.0, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":7.3, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":7.0, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":6.0, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":6.5, "Secreto":false}
+]
+}
+,{"COD":"ECV2495", "Nombre":"Ambos sexos. De 45 a 64 años. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":3.6, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":3.0, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":2.7, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":2.7, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":2.4, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":3.3, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":2.7, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":2.5, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":2.7, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":3.0, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":2.8, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":2.7, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":2.4, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":2.7, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3.0, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":3.1, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":3.2, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":3.3, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":3.8, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":3.5, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":2.8, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":3.4, "Secreto":false}
+]
+}
+,{"COD":"ECV2493", "Nombre":"Ambos sexos. De 45 a 64 años. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":6.0, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":5.6, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":5.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":5.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":5.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":6.7, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":4.8, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":5.3, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":5.5, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":5.2, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":5.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":5.8, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":5.8, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":5.3, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":5.1, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":5.1, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":5.0, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":5.1, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":5.1, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":6.3, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":4.6, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":4.1, "Secreto":false}
+]
+}
+,{"COD":"ECV2492", "Nombre":"Ambos sexos. 65 y más años. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":88.2, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":88.6, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":89.1, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":89.4, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":88.8, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":89.1, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":89.8, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":89.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":89.2, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":90.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":89.3, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":89.8, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":89.2, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":90.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":89.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":87.8, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":87.5, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":87.3, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":87.5, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":86.8, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":87.4, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":86.5, "Secreto":false}
+]
+}
+,{"COD":"ECV9700", "Nombre":"Ambos sexos. 65 y más años. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":82.4, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":82.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":82.8, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":83.3, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":82.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":83.9, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":85.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":85.0, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":84.6, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":85.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":84.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":85.3, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":84.2, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":85.8, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":84.9, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":82.8, "Secreto":false}
+]
+}
+,{"COD":"ECV9699", "Nombre":"Ambos sexos. 65 y más años. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":5.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":6.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":6.3, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":6.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":6.2, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":5.2, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":4.7, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":4.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":4.6, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":4.9, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":4.9, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":4.5, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":5.0, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":4.3, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":5.0, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":5.0, "Secreto":false}
+]
+}
+,{"COD":"ECV2490", "Nombre":"Ambos sexos. 65 y más años. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":5.5, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":5.2, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":4.9, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":5.0, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":5.3, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":5.0, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":4.5, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":4.1, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":4.3, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":3.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":3.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":2.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":3.3, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":2.8, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3.2, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":3.8, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":3.5, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":3.7, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":3.6, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":3.8, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":3.3, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":3.2, "Secreto":false}
+]
+}
+,{"COD":"ECV2491", "Nombre":"Ambos sexos. 65 y más años. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":2.3, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":2.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":2.7, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":2.3, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":2.5, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":2.5, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":2.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":2.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":2.2, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":2.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":2.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":2.8, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":2.6, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":2.9, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3.3, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":3.4, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":3.9, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":3.5, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":3.2, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":3.6, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":4.1, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":4.9, "Secreto":false}
+]
+}
+,{"COD":"ECV2489", "Nombre":"Ambos sexos. 65 y más años. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":4.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":3.9, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":3.3, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":3.3, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":3.4, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":3.4, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":3.7, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":3.8, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":4.3, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":4.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":4.7, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":4.5, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":4.9, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":4.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3.7, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":5.0, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":5.1, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":5.5, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":5.6, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":5.8, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":5.2, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":5.4, "Secreto":false}
+]
+}
+,{"COD":"ECV2488", "Nombre":"Hombres. Total. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":73.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":74.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":75.9, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":77.0, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":76.5, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":75.2, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":76.2, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":77.3, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":78.1, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":78.8, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":77.7, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":78.8, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":78.3, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":80.2, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":80.5, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":79.8, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":80.0, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":80.4, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":81.1, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":81.0, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":82.1, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":80.8, "Secreto":false}
+]
+}
+,{"COD":"ECV9698", "Nombre":"Hombres. Total. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":47.5, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":47.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":47.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":48.3, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":47.2, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":46.2, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":49.2, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":50.7, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":50.7, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":49.3, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":49.1, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":49.2, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":48.5, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":49.6, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":49.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":47.2, "Secreto":false}
+]
+}
+,{"COD":"ECV9697", "Nombre":"Hombres. Total. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":26.3, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":27.1, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":28.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":28.7, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":29.3, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":29.0, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":26.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":26.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":27.3, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":29.5, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":28.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":29.6, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":29.8, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":30.6, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":30.7, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":32.6, "Secreto":false}
+]
+}
+,{"COD":"ECV2486", "Nombre":"Hombres. Total. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":17.0, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":16.9, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":15.1, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":14.6, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":14.8, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":15.1, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":15.8, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":14.0, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":13.6, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":13.0, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":13.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":12.3, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":12.6, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":11.7, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":11.6, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":11.4, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":11.4, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":11.1, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":10.0, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":9.3, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":8.8, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":9.6, "Secreto":false}
+]
+}
+,{"COD":"ECV2487", "Nombre":"Hombres. Total. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":3.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":3.0, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":3.1, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":2.8, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":2.7, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":2.8, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":2.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":2.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":2.2, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":2.2, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":2.0, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":2.0, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":2.0, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":2.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2.4, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":2.4, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":2.8, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":2.9, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":2.9, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":2.9, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":3.1, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":3.3, "Secreto":false}
+]
+}
+,{"COD":"ECV2485", "Nombre":"Hombres. Total. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":6.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":5.8, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":5.9, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":5.6, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":6.0, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":7.0, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":5.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":6.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":6.1, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":6.0, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":6.8, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":6.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":7.1, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":6.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":5.5, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":6.4, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":5.8, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":5.6, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":6.1, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":6.8, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":6.0, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":6.3, "Secreto":false}
+]
+}
+,{"COD":"ECV2480", "Nombre":"Hombres. De 16 a 29 años. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":33.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":30.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":26.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":28.2, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":27.1, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":25.3, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":26.0, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":29.9, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":28.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":30.2, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":31.0, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":34.2, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":38.9, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":45.3, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":54.4, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":48.1, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":48.6, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":55.1, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":58.1, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":62.3, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":56.1, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":50.7, "Secreto":false}
+]
+}
+,{"COD":"ECV9694", "Nombre":"Hombres. De 16 a 29 años. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":15.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":15.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":13.5, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":10.9, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":12.2, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":7.8, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":7.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":14.5, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":14.8, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":16.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":17.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":12.0, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":14.7, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":16.9, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":19.3, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":11.1, "Secreto":false}
+]
+}
+,{"COD":"ECV9693", "Nombre":"Hombres. De 16 a 29 años. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":18.0, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":15.0, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":12.9, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":17.3, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":14.8, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":17.6, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":18.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":15.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":14.1, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":13.5, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":13.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":22.2, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":24.2, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":28.4, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":35.1, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":37.0, "Secreto":false}
+]
+}
+,{"COD":"ECV2478", "Nombre":"Hombres. De 16 a 29 años. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":46.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":47.2, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":49.5, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":47.7, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":51.5, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":46.5, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":43.3, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":45.5, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":41.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":47.0, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":43.4, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":46.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":38.1, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":37.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":31.9, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":37.0, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":36.2, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":32.9, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":27.1, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":20.9, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":27.5, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":34.9, "Secreto":false}
+]
+}
+,{"COD":"ECV2479", "Nombre":"Hombres. De 16 a 29 años. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":6.2, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":8.0, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":9.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":6.6, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":5.1, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":6.2, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":3.3, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":4.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":3.3, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":3.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":4.7, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":2.5, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":4.5, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":5.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2.9, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":2.0, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":2.4, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":3.9, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":4.5, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":3.4, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":4.4, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":1.5, "Secreto":false}
+]
+}
+,{"COD":"ECV2477", "Nombre":"Hombres. De 16 a 29 años. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":13.9, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":14.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":14.7, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":17.5, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":16.4, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":22.0, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":27.4, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":20.2, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":25.8, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":19.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":20.9, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":16.4, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":18.5, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":12.7, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":10.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":13.0, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":12.8, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":8.1, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":10.3, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":13.4, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":12.1, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":12.9, "Secreto":false}
+]
+}
+,{"COD":"ECV2476", "Nombre":"Hombres. De 30 a 44 años. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":54.5, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":54.9, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":56.8, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":58.3, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":59.0, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":60.8, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":61.4, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":64.9, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":67.1, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":67.3, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":67.1, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":69.5, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":67.9, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":71.9, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":71.9, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":73.0, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":73.4, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":73.4, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":74.7, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":73.3, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":73.7, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":72.1, "Secreto":false}
+]
+}
+,{"COD":"ECV9692", "Nombre":"Hombres. De 30 a 44 años. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":15.4, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":16.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":14.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":14.6, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":13.4, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":13.2, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":14.2, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":17.5, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":17.1, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":14.3, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":16.3, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":16.4, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":15.2, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":18.5, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":18.3, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":17.6, "Secreto":false}
+]
+}
+,{"COD":"ECV9691", "Nombre":"Hombres. De 30 a 44 años. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":39.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":38.5, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":42.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":43.7, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":45.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":47.7, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":47.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":47.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":49.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":52.9, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":50.8, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":53.0, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":52.8, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":53.4, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":53.6, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":55.4, "Secreto":false}
+]
+}
+,{"COD":"ECV2474", "Nombre":"Hombres. De 30 a 44 años. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":32.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":32.7, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":29.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":28.2, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":27.4, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":26.3, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":27.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":23.9, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":22.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":22.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":21.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":19.0, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":21.3, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":18.4, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":19.2, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":16.5, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":16.2, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":16.6, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":15.6, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":16.1, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":14.8, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":15.1, "Secreto":false}
+]
+}
+,{"COD":"ECV2475", "Nombre":"Hombres. De 30 a 44 años. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":4.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":4.0, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":4.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":4.0, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":3.9, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":3.7, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":2.6, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":2.7, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":2.5, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":1.9, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":1.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":1.7, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":1.6, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":1.6, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2.0, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":2.3, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":2.4, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":2.7, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":1.9, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":2.8, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":3.3, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":3.4, "Secreto":false}
+]
+}
+,{"COD":"ECV2473", "Nombre":"Hombres. De 30 a 44 años. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":9.2, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":8.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":9.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":9.5, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":9.7, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":9.2, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":8.2, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":8.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":7.5, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":8.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":9.8, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":9.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":9.2, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":8.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":6.9, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":8.2, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":8.1, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":7.4, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":7.7, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":7.9, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":8.2, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":9.4, "Secreto":false}
+]
+}
+,{"COD":"ECV2472", "Nombre":"Hombres. De 45 a 64 años. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":76.2, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":77.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":79.9, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":80.9, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":80.9, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":78.2, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":80.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":80.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":80.8, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":81.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":81.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":82.3, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":83.5, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":83.5, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":83.3, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":83.8, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":83.8, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":84.6, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":84.7, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":85.0, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":87.9, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":87.2, "Secreto":false}
+]
+}
+,{"COD":"ECV9690", "Nombre":"Hombres. De 45 a 64 años. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":43.3, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":43.2, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":44.7, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":45.8, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":46.0, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":46.5, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":51.0, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":51.7, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":52.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":52.4, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":53.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":54.3, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":56.5, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":56.2, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":56.9, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":55.1, "Secreto":false}
+]
+}
+,{"COD":"ECV9689", "Nombre":"Hombres. De 45 a 64 años. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":32.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":34.2, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":35.2, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":35.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":34.8, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":31.7, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":29.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":28.9, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":27.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":29.4, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":28.1, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":27.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":27.0, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":27.3, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":26.4, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":28.7, "Secreto":false}
+]
+}
+,{"COD":"ECV2470", "Nombre":"Hombres. De 45 a 64 años. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":15.0, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":14.6, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":12.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":12.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":11.9, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":12.1, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":13.5, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":11.2, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":11.6, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":10.3, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":11.1, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":9.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":8.4, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":8.8, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":8.5, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":8.0, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":8.6, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":7.7, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":6.7, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":5.8, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":4.9, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":5.6, "Secreto":false}
+]
+}
+,{"COD":"ECV2471", "Nombre":"Hombres. De 45 a 64 años. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":3.0, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":2.6, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":2.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":2.4, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":2.0, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":2.4, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":1.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":2.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":2.2, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":2.8, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":2.0, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":2.1, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":2.2, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":2.4, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3.0, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":2.8, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":3.2, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":3.0, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":3.7, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":3.0, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":2.6, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":3.1, "Secreto":false}
+]
+}
+,{"COD":"ECV2469", "Nombre":"Hombres. De 45 a 64 años. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":5.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":5.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":5.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":4.7, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":5.2, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":7.3, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":4.5, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":5.8, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":5.5, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":5.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":5.4, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":5.8, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":5.9, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":5.2, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":5.3, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":5.4, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":4.4, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":4.7, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":4.9, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":6.1, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":4.6, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":4.1, "Secreto":false}
+]
+}
+,{"COD":"ECV2468", "Nombre":"Hombres. 65 y más años. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":89.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":89.8, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":90.0, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":90.8, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":89.9, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":89.5, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":89.7, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":90.3, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":90.7, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":92.2, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":90.8, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":91.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":91.0, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":92.4, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":92.2, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":90.0, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":90.3, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":90.3, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":89.6, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":89.3, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":90.4, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":89.3, "Secreto":false}
+]
+}
+,{"COD":"ECV9688", "Nombre":"Hombres. 65 y más años. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":82.3, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":82.2, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":82.5, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":83.8, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":82.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":82.5, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":83.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":85.7, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":85.4, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":86.4, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":86.0, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":86.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":85.5, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":87.4, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":86.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":84.1, "Secreto":false}
+]
+}
+,{"COD":"ECV9687", "Nombre":"Hombres. 65 y más años. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":6.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":7.7, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":7.5, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":7.0, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":7.3, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":7.0, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":5.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":4.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":5.3, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":5.8, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":4.8, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":4.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":5.5, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":5.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":5.4, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":5.9, "Secreto":false}
+]
+}
+,{"COD":"ECV2466", "Nombre":"Hombres. 65 y más años. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":5.4, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":4.5, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":4.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":4.2, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":4.7, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":5.7, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":4.8, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":4.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":4.1, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":3.5, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":3.2, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":2.6, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":3.2, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":2.6, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2.7, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":4.1, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":3.7, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":3.3, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":3.4, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":3.2, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":2.5, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":2.7, "Secreto":false}
+]
+}
+,{"COD":"ECV2467", "Nombre":"Hombres. 65 y más años. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":2.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":2.2, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":2.6, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":2.2, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":2.5, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":2.1, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":1.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":1.8, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":1.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":1.6, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":2.4, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":2.2, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":1.8, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":1.6, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2.0, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":2.0, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":2.7, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":2.6, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":2.4, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":2.6, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":3.2, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":3.7, "Secreto":false}
+]
+}
+,{"COD":"ECV2465", "Nombre":"Hombres. 65 y más años. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":3.4, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":3.5, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":3.1, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":2.8, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":2.9, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":2.7, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":3.5, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":3.3, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":3.3, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":2.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":3.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":3.3, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":4.0, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":3.4, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3.1, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":3.9, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":3.3, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":3.8, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":4.6, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":4.9, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":3.9, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":4.2, "Secreto":false}
+]
+}
+,{"COD":"ECV2464", "Nombre":"Mujeres. Total. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":72.5, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":72.5, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":74.1, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":74.5, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":74.9, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":75.3, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":75.6, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":74.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":74.7, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":74.6, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":76.7, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":76.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":76.8, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":77.8, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":78.3, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":78.7, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":78.1, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":78.4, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":78.6, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":76.7, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":77.4, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":76.9, "Secreto":false}
+]
+}
+,{"COD":"ECV9686", "Nombre":"Mujeres. Total. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":50.7, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":51.0, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":50.5, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":51.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":51.4, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":51.9, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":54.4, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":50.8, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":51.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":51.5, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":51.2, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":50.3, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":49.7, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":52.3, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":51.5, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":49.4, "Secreto":false}
+]
+}
+,{"COD":"ECV9685", "Nombre":"Mujeres. Total. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":21.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":21.5, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":23.6, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":23.3, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":23.5, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":23.5, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":21.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":23.5, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":22.7, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":23.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":25.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":26.6, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":27.1, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":25.5, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":26.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":29.3, "Secreto":false}
+]
+}
+,{"COD":"ECV2462", "Nombre":"Mujeres. Total. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":16.5, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":17.1, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":15.9, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":15.7, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":15.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":14.1, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":14.8, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":16.0, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":15.2, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":15.0, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":12.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":12.6, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":13.4, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":12.5, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":12.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":11.5, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":11.2, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":10.9, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":11.0, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":11.9, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":11.0, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":10.8, "Secreto":false}
+]
+}
+,{"COD":"ECV2463", "Nombre":"Mujeres. Total. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":4.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":4.0, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":3.6, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":3.2, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":2.9, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":4.0, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":3.5, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":3.3, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":3.2, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":3.0, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":3.2, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":3.3, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":3.2, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":3.2, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3.4, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":4.1, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":4.1, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":3.8, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":3.7, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":3.9, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":4.4, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":5.0, "Secreto":false}
+]
+}
+,{"COD":"ECV2461", "Nombre":"Mujeres. Total. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":6.9, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":6.5, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":6.5, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":6.7, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":6.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":6.6, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":6.2, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":6.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":6.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":7.4, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":7.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":7.2, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":6.6, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":6.6, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":5.5, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":5.7, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":6.6, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":6.9, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":6.7, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":7.5, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":7.3, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":7.3, "Secreto":false}
+]
+}
+,{"COD":"ECV2456", "Nombre":"Mujeres. De 16 a 29 años. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":26.7, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":22.9, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":31.8, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":33.3, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":39.8, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":39.5, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":24.7, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":29.1, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":23.6, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":26.6, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":39.8, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":34.2, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":38.1, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":39.4, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":39.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":45.6, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":51.5, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":54.5, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":58.1, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":47.6, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":49.8, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":42.4, "Secreto":false}
+]
+}
+,{"COD":"ECV9682", "Nombre":"Mujeres. De 16 a 29 años. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":12.0, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":9.5, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":14.1, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":16.2, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":25.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":17.5, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":10.2, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":8.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":9.0, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":9.9, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":15.2, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":11.7, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":16.4, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":17.4, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":16.3, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":10.5, "Secreto":false}
+]
+}
+,{"COD":"ECV9681", "Nombre":"Mujeres. De 16 a 29 años. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":14.7, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":13.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":17.7, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":17.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":14.2, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":22.0, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":14.5, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":20.5, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":14.6, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":16.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":24.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":22.5, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":21.7, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":22.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":23.5, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":35.1, "Secreto":false}
+]
+}
+,{"COD":"ECV2454", "Nombre":"Mujeres. De 16 a 29 años. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":54.3, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":56.1, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":48.0, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":47.4, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":42.4, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":44.1, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":54.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":46.3, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":56.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":48.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":42.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":47.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":46.6, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":41.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":47.4, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":35.8, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":31.1, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":31.6, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":30.0, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":31.9, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":37.9, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":42.3, "Secreto":false}
+]
+}
+,{"COD":"ECV2455", "Nombre":"Mujeres. De 16 a 29 años. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":3.3, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":6.5, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":6.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":5.0, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":4.4, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":1.1, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":4.8, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":9.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":3.3, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":7.0, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":6.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":3.0, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":4.8, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":3.2, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2.1, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":8.7, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":5.8, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":4.4, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":2.9, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":1.7, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":2.3, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":2.1, "Secreto":false}
+]
+}
+,{"COD":"ECV2453", "Nombre":"Mujeres. De 16 a 29 años. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":15.7, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":14.6, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":13.9, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":14.3, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":13.3, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":15.3, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":15.6, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":15.0, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":16.3, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":17.6, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":11.2, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":14.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":10.6, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":16.4, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":10.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":10.0, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":11.6, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":9.5, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":8.9, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":18.7, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":9.9, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":13.2, "Secreto":false}
+]
+}
+,{"COD":"ECV2452", "Nombre":"Mujeres. De 30 a 44 años. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":51.0, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":49.9, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":52.9, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":54.2, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":56.5, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":56.7, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":56.2, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":54.2, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":58.6, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":59.5, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":62.2, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":67.2, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":67.7, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":70.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":74.2, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":74.8, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":74.4, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":74.3, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":73.5, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":71.4, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":69.4, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":68.8, "Secreto":false}
+]
+}
+,{"COD":"ECV9680", "Nombre":"Mujeres. De 30 a 44 años. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":14.9, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":16.2, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":15.2, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":17.0, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":17.5, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":13.6, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":16.3, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":13.2, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":14.7, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":14.8, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":14.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":16.8, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":14.7, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":17.6, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":19.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":17.7, "Secreto":false}
+]
+}
+,{"COD":"ECV9679", "Nombre":"Mujeres. De 30 a 44 años. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":36.1, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":33.7, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":37.7, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":37.2, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":39.0, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":43.1, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":39.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":41.0, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":43.8, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":44.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":47.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":50.4, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":53.1, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":52.3, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":54.4, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":57.1, "Secreto":false}
+]
+}
+,{"COD":"ECV2450", "Nombre":"Mujeres. De 30 a 44 años. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":32.2, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":33.8, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":29.9, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":29.9, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":30.1, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":28.0, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":30.3, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":32.4, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":28.7, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":27.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":24.2, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":21.3, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":21.3, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":20.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":17.1, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":16.9, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":16.8, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":15.7, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":16.1, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":19.5, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":15.5, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":16.4, "Secreto":false}
+]
+}
+,{"COD":"ECV2451", "Nombre":"Mujeres. De 30 a 44 años. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":6.3, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":6.8, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":5.2, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":4.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":3.1, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":4.8, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":4.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":2.8, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":3.6, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":2.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":2.2, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":2.5, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":2.7, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":2.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":2.7, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":2.9, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":3.1, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":3.0, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":3.0, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":2.4, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":5.0, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":4.6, "Secreto":false}
+]
+}
+,{"COD":"ECV2449", "Nombre":"Mujeres. De 30 a 44 años. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":10.6, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":9.6, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":12.0, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":11.7, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":10.3, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":10.5, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":9.4, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":10.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":9.2, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":10.8, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":11.4, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":9.0, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":8.2, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":7.9, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":6.0, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":5.3, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":5.6, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":7.1, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":7.4, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":6.7, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":10.0, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":10.2, "Secreto":false}
+]
+}
+,{"COD":"ECV2448", "Nombre":"Mujeres. De 45 a 64 años. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":73.3, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":74.8, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":76.3, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":76.8, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":77.3, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":77.6, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":79.4, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":80.0, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":79.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":79.3, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":81.1, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":81.4, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":80.5, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":81.4, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":82.0, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":83.1, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":81.9, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":82.1, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":82.0, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":78.6, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":83.0, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":82.8, "Secreto":false}
+]
+}
+,{"COD":"ECV9678", "Nombre":"Mujeres. De 45 a 64 años. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":42.4, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":43.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":42.9, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":44.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":45.7, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":48.1, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":52.9, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":49.8, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":52.5, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":52.9, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":52.5, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":51.6, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":52.7, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":57.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":57.5, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":56.5, "Secreto":false}
+]
+}
+,{"COD":"ECV9677", "Nombre":"Mujeres. De 45 a 64 años. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":30.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":31.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":33.4, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":32.7, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":31.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":29.5, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":26.5, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":30.2, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":27.4, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":26.4, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":28.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":29.8, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":27.8, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":24.2, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":24.6, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":26.6, "Secreto":false}
+]
+}
+,{"COD":"ECV2446", "Nombre":"Mujeres. De 45 a 64 años. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":15.9, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":15.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":15.1, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":14.2, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":13.7, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":12.0, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":11.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":12.9, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":10.9, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":11.9, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":8.8, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":9.0, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":11.2, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":10.2, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":10.0, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":8.7, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":8.8, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":8.5, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":8.6, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":10.0, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":8.8, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":8.9, "Secreto":false}
+]
+}
+,{"COD":"ECV2447", "Nombre":"Mujeres. De 45 a 64 años. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":4.5, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":3.6, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":3.1, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":3.2, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":3.0, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":4.6, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":4.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":2.7, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":3.7, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":3.5, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":4.3, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":3.7, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":2.9, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":3.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3.1, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":3.6, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":3.4, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":3.7, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":4.0, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":4.6, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":3.3, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":4.2, "Secreto":false}
+]
+}
+,{"COD":"ECV2445", "Nombre":"Mujeres. De 45 a 64 años. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":6.4, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":6.1, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":5.5, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":5.8, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":6.1, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":5.7, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":5.4, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":4.3, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":5.5, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":5.4, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":5.9, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":5.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":5.5, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":5.3, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":4.9, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":4.6, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":6.0, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":5.8, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":5.4, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":6.8, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":4.9, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":4.2, "Secreto":false}
+]
+}
+,{"COD":"ECV2444", "Nombre":"Mujeres. 65 y más años. Total Nacional. Propiedad. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":87.2, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":87.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":88.1, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":87.9, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":87.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":88.7, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":89.8, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":88.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":87.4, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":87.5, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":87.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":87.4, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":87.2, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":87.7, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":87.2, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":85.4, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":84.3, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":83.9, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":85.2, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":83.9, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":83.7, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":83.2, "Secreto":false}
+]
+}
+,{"COD":"ECV9676", "Nombre":"Mujeres. 65 y más años. Total Nacional. Propiedad sin hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":82.5, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":82.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":83.1, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":82.8, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":82.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":85.5, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":86.5, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":84.1, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":83.6, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":83.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":82.7, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":83.4, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":82.7, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":84.1, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":82.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":81.4, "Secreto":false}
+]
+}
+,{"COD":"ECV9675", "Nombre":"Mujeres. 65 y más años. Total Nacional. Propiedad con hipoteca. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":4.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":4.9, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":5.0, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":5.1, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":5.0, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":3.2, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":3.3, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":4.5, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":3.8, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":3.9, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":4.9, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":4.0, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":4.4, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":3.6, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":4.4, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":4.0, "Secreto":false}
+]
+}
+,{"COD":"ECV2442", "Nombre":"Mujeres. 65 y más años. Total Nacional. Alquiler a precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":5.5, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":6.0, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":5.5, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":6.0, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":5.9, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":4.2, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":4.1, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":3.6, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":4.6, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":4.1, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":3.9, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":3.2, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":3.5, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":3.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":3.8, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":3.5, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":3.2, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":4.2, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":3.9, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":4.5, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":4.3, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":3.8, "Secreto":false}
+]
+}
+,{"COD":"ECV2443", "Nombre":"Mujeres. 65 y más años. Total Nacional. Alquiler inferior al precio de mercado. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":2.4, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":2.4, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":2.9, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":2.3, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":2.6, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":2.9, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":2.3, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":3.5, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":2.5, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":2.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":2.6, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":3.5, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":3.6, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":4.3, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":4.7, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":4.9, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":5.3, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":4.4, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":4.2, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":4.8, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":5.1, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":6.2, "Secreto":false}
+]
+}
+,{"COD":"ECV2441", "Nombre":"Mujeres. 65 y más años. Total Nacional. Cesión. Hogar. ", "FK_Unidad":232, "FK_Escala":1, "Data":[{"Fecha":1735686000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2025, "Valor":4.8, "Secreto":false}
+,{"Fecha":1704063600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2024, "Valor":4.3, "Secreto":false}
+,{"Fecha":1672527600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2023, "Valor":3.5, "Secreto":false}
+,{"Fecha":1640991600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2022, "Valor":3.8, "Secreto":false}
+,{"Fecha":1609455600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2021, "Valor":4.0, "Secreto":false}
+,{"Fecha":1577833200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2020, "Valor":4.2, "Secreto":false}
+,{"Fecha":1546297200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2019, "Valor":3.8, "Secreto":false}
+,{"Fecha":1514761200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2018, "Valor":4.3, "Secreto":false}
+,{"Fecha":1483225200000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2017, "Valor":5.5, "Secreto":false}
+,{"Fecha":1451602800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2016, "Valor":5.7, "Secreto":false}
+,{"Fecha":1420066800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2015, "Valor":5.9, "Secreto":false}
+,{"Fecha":1388530800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2014, "Valor":5.9, "Secreto":false}
+,{"Fecha":1356994800000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2013, "Valor":5.8, "Secreto":false}
+,{"Fecha":1325372400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2012, "Valor":5.0, "Secreto":false}
+,{"Fecha":1293836400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2011, "Valor":4.3, "Secreto":false}
+,{"Fecha":1262300400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2010, "Valor":6.2, "Secreto":false}
+,{"Fecha":1230764400000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2009, "Valor":7.2, "Secreto":false}
+,{"Fecha":1199142000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2008, "Valor":7.5, "Secreto":false}
+,{"Fecha":1167606000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2007, "Valor":6.7, "Secreto":false}
+,{"Fecha":1136070000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2006, "Valor":6.8, "Secreto":false}
+,{"Fecha":1104534000000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2005, "Valor":6.8, "Secreto":false}
+,{"Fecha":1072911600000, "FK_TipoDato":1, "FK_Periodo":28, "Anyo":2004, "Valor":6.8, "Secreto":false}
+]
+}
+]

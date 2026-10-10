@@ -1,7 +1,7 @@
 {
   "rama": "M1",
   "pregunta": "¿Dónde se concentra el déficit contable de vivienda (hogares frente a viviendas nuevas)?",
-  "capa": "C1 (provincias 2021-2025 con mismo signo) / C4 (resto, municipios) / C2 (latente)",
+  "capa": "C2 (déficit nacional 2021-2025 y provincias con altas triangulables en ±15 %) / C4 (resto, municipios, 2012-2025) / C2 (latente)",
   "datos": [
     "ine_v2_hogares_prov",
     "ine_v3_gis_seccion (Censo anual)",
@@ -160,7 +160,9 @@
     "No hay contrastes de hipótesis: FDR no aplicable; todas las combinaciones están en registro.csv",
     "Municipal: sin terminadas MIVAU por municipio en data/raw/mivau_*; solo Catastro (C4); no se descargó nada",
     "EPA provincial solo ocupados/parados: no hay hogares por provincia en EPA",
-    "Censo anual n_personas = 1 de enero; hogares = personas / tamaño medio Censo 2021 (supuesto)",
+    "Censo anual n_personas = 1 de enero; vía Censo anual solo en robustez (M1_robustez_censo_anual.csv)",
+    "Cifra principal: ECP (única fuente de hogares) y altas MIVAU/Catastro; C1 exigiría dos fuentes independientes dentro de ±15 %: no se cumple en hogares",
+    "Ventanas: ECP 2021T1-2025T4 (4,75 años) frente a 5 años de altas",
     "Cruce censo 2011 municipal por nombre; homónimos descartados"
   ],
   "figuras": [

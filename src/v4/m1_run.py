@@ -423,40 +423,40 @@ def escribir_json(t, pr, mun, conc, exc, lat, lat_info, figs) -> None:
 
     for per in nac:
         n = nac[per]
-        capa = "C1" if per == "2021-2025" and n["signo_unico"] else "C4"
+        capa = "C2" if per == "2021-2025" and n["signo_unico"] else "C4"
         hechos.append({
             "id": f"M1-H-nacional-{per}",
             "enunciado_neutro": f"Suma provincial del déficit contable (Δ hogares − altas) {per}, muestra común de {n['n_prov_comun']} provincias",
             "capa": capa, "magnitud": n["mediana"], "unidad": "viviendas", "intervalo": [n["min"], n["max"]],
-            "fuentes": ["ECP INE" if per == "2021-2025" else "Censos 2011/2021 + ECP", "Censo anual INE (personas)", "MIVAU fin de obra", "Catastro"],
-            "supuestos": ["bajas del parque 0/0,1/0,2 % anual", "tamaño medio de hogar Censo 2021 constante (ruta Censo anual)"],
-            "limites": ["Ventanas de las rutas ECP y Censo anual no coinciden exactamente", "Catastro no cubre territorios forales",
+            "fuentes": ["ECP INE" if per == "2021-2025" else "Censos 2011/2021 + ECP", "MIVAU fin de obra", "Catastro"],
+            "supuestos": ["bajas del parque 0/0,1/0,2 % anual (supuesto: la cifra con bajas es C2)"],
+            "limites": ["Hogares de una sola fuente (ECP, 2021T1-2025T4 = 4,75 años) frente a 5 años de altas: ventana ≈5 % más corta en hogares", "Catastro no cubre territorios forales (Álava, Bizkaia, Gipuzkoa, Navarra): el rango usa 48 provincias",
                         "Déficit contable no equivale a demanda insatisfecha a cualquier precio"] +
                        ([] if capa == "C1" else ["Tramo de hogares 2011-2021 de fuente única"])})
         hechos.append({
             "id": f"M1-H-top10-prov-{per}",
             "enunciado_neutro": f"Provincias con mayor déficit contable {per} (mediana entre combinaciones): " + "; ".join(top(per)),
-            "capa": "C4" if per == "2012-2025" else "C1", "magnitud": float(pr[pr.periodo == per].nlargest(10, "mediana").mediana.sum()),
+            "capa": "C4", "magnitud": float(pr[pr.periodo == per].nlargest(10, "mediana").mediana.sum()),
             "unidad": "viviendas (suma de 10 provincias)", "intervalo": [float(pr[pr.periodo == per].nlargest(10, "mediana")["min"].sum()),
                                                                           float(pr[pr.periodo == per].nlargest(10, "mediana")["max"].sum())],
             "fuentes": ["ECP", "Censo anual", "MIVAU", "Catastro"], "supuestos": ["como arriba"],
-            "limites": ["La capa C1 exige mismo signo en todas las combinaciones; ver capa por provincia en M1_provincias.csv"]})
+            "limites": ["Capa por provincia en M1_provincias.csv (C2 si las altas MIVAU y Catastro coinciden en ±15 %, si no C4)"]})
     for r in conc.itertuples():
         hechos.append({
             "id": f"M1-H-concentracion-{r.nivel}-{r.periodo}",
             "enunciado_neutro": f"Unidades ({r.nivel}) que acumulan el 50 % y el 80 % del déficit positivo {r.periodo}: {r.n_50} y {r.n_80} ({r.escenario})",
-            "capa": "C4" if r.nivel == "municipio" or r.periodo == "2012-2025" else "C1", "magnitud": r.n_80, "unidad": "unidades (80 %)",
+            "capa": "C4", "magnitud": r.n_80, "unidad": "unidades (80 %)",
             "intervalo": [None, None], "fuentes": ["M1_provincias.csv" if r.nivel == "provincia" else "Catastro + Censo anual"],
-            "supuestos": ["déficit = mediana entre combinaciones (provincias) o única estimación (municipios)"],
+            "supuestos": ["déficit = mediana entre combinaciones (provincias) o única estimación (municipios)"] + ([] if r.nivel == "provincia" else ["hogares municipales = personas del Censo anual / tamaño medio de hogar del Censo 2021 constante (sesga ΔH a la baja si el tamaño cae; ver M1_robustez_censo_anual.csv)"]),
             "limites": ["Depende del universo con datos"]})
     for r in exc.itertuples():
         hechos.append({
             "id": f"M1-H-excedente-{r.nivel}-{r.periodo}",
             "enunciado_neutro": f"{r.n_excedente} {r.nivel}s con déficit negativo (altas > Δ hogares) {r.periodo}, suma {r.viviendas_excedente_mediana:,.0f} viviendas".replace(",", "."),
-            "capa": "C4" if r.nivel == "municipio" or r.periodo == "2012-2025" else "C1", "magnitud": r.viviendas_excedente_mediana,
+            "capa": "C4", "magnitud": r.viviendas_excedente_mediana,
             "unidad": "viviendas", "intervalo": [None if pd.isna(r.viviendas_excedente_min) else r.viviendas_excedente_min,
                                                  None if pd.isna(r.viviendas_excedente_max) else r.viviendas_excedente_max],
-            "fuentes": ["como arriba"], "supuestos": ["excedente contable; no implica vivienda vacía ni utilizable"],
+            "fuentes": ["como arriba"], "supuestos": ["excedente contable; no implica vivienda vacía ni utilizable"] + ([] if r.nivel == "provincia" else ["hogares municipales = personas Censo anual / tamaño medio 2021 constante (sesgo a la baja de ΔH)"]),
             "limites": ["Puede reflejar segunda residencia, vacía o hogares no captados"]})
     e = lat_info["escenarios"]
     hechos.append({
@@ -468,12 +468,31 @@ def escribir_json(t, pr, mun, conc, exc, lat, lat_info, figs) -> None:
                       "misma brecha de tasa en todas las provincias (no hay tasa provincial)"],
         "limites": ["Solo cambia la población joven entre provincias", "M2 (output/v4/M2) no estaba disponible al calcular",
                     "No se suma al déficit: puede solaparse con Δ hogares observado"]})
+    rob = pd.read_csv(OUT / "tablas" / "M1_robustez_censo_anual.csv", dtype={"cod_prov": str})
+    r21 = rob[rob.periodo == "2021-2025"]
+    n21c = nac["2021-2025"]
+    hechos.append({
+        "id": "M1-H-conciliacion-M0", "enunciado_neutro": "Conciliación del déficit nacional 2021-2025 con M0/v3 (701 mil; 560-969 mil)",
+        "capa": "C2", "magnitud": n21c["min_fin_obra_todas"], "unidad": "viviendas (52 provincias, MIVAU, bajas 0 %)",
+        "intervalo": [n21c["min_fin_obra_todas"], n21c["max_fin_obra_todas"]],
+        "fuentes": ["ECP", "MIVAU fin de obra", "Catastro"],
+        "supuestos": ["mismos Δ hogares ECP 2021T1-2025T4 y terminadas 2021-2025 que M0"],
+        "limites": ["Con bajas 0 % y 52 provincias la cifra coincide con M0 (≈701 mil); con bajas 0,2 % llega a ≈967 mil (techo 969 mil de v3)",
+                    "Con Catastro (48 provincias, sin Álava, Bizkaia, Gipuzkoa ni Navarra) el déficit es menor (≈657 mil) porque el Catastro suma más altas que el fin de obra",
+                    "El suelo 560 mil de v3 no se reproduce en M1: incluye otra fuente de hogares o altas (Δ parque); la diferencia es de fuente"]})
+    hechos.append({
+        "id": "M1-H-robustez-censo-anual", "enunciado_neutro": "Vía Censo anual (personas / tamaño medio 2021) fuera de la cifra principal: ΔH 2021-2025 frente a ECP",
+        "capa": "C4", "magnitud": float(r21.delta_hogares_censo_anual.sum()), "unidad": "hogares (52 provincias)",
+        "intervalo": [float(r21.delta_hogares_principal.sum()), float(r21.delta_hogares_principal.sum())],
+        "fuentes": ["Censo anual INE", "ECP INE (comparación)"],
+        "supuestos": ["tamaño medio de hogar constante en 2021 (sesgo a la baja de ΔH cuando el tamaño cae)"],
+        "limites": ["Ventana 1-ene-2021 a 1-ene-2025 (4 años)", "No independiente de ECP (ambos derivan del padrón)", "Solo robustez"]})
     (OUT / "hechos.json").write_text(json.dumps(hechos, ensure_ascii=False, indent=2))
     n21, n25 = nac["2021-2025"], nac["2012-2025"]
     cm = conc.set_index(["nivel", "periodo", "escenario"])
     res = {
         "rama": "M1", "pregunta": "¿Dónde se concentra el déficit contable de vivienda (hogares frente a viviendas nuevas)?",
-        "capa": "C1 (provincias 2021-2025 con mismo signo) / C4 (resto, municipios) / C2 (latente)",
+        "capa": "C2 (déficit nacional 2021-2025 y provincias con altas triangulables en ±15 %) / C4 (resto, municipios, 2012-2025) / C2 (latente)",
         "datos": ["ine_v2_hogares_prov", "ine_v3_gis_seccion (Censo anual)", "censo 2011/2021", "mivau_v2_iniciadas_terminadas_prov",
                   "mivau_v2_protegida", "catastro_urbana_municipios", "ine_v2_padron_prov_edad_nac"],
         "N": {"provincias": int(pr.cod_prov.nunique()), "municipios_2021_2025": int(mun[(mun.periodo == "2021-2025") & mun.deficit_valido].shape[0]),
@@ -489,7 +508,9 @@ def escribir_json(t, pr, mun, conc, exc, lat, lat_info, figs) -> None:
         "notas": ["No hay contrastes de hipótesis: FDR no aplicable; todas las combinaciones están en registro.csv",
                   "Municipal: sin terminadas MIVAU por municipio en data/raw/mivau_*; solo Catastro (C4); no se descargó nada",
                   "EPA provincial solo ocupados/parados: no hay hogares por provincia en EPA",
-                  "Censo anual n_personas = 1 de enero; hogares = personas / tamaño medio Censo 2021 (supuesto)",
+                  "Censo anual n_personas = 1 de enero; vía Censo anual solo en robustez (M1_robustez_censo_anual.csv)",
+                  "Cifra principal: ECP (única fuente de hogares) y altas MIVAU/Catastro; C1 exigiría dos fuentes independientes dentro de ±15 %: no se cumple en hogares",
+                  "Ventanas: ECP 2021T1-2025T4 (4,75 años) frente a 5 años de altas",
                   "Cruce censo 2011 municipal por nombre; homónimos descartados"],
         "figuras": figs}
     (OUT / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=2, default=float))

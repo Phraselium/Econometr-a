@@ -9,7 +9,7 @@
   "cota": "C2 solo para la brecha (coste en nivel es un supuesto no verificado); la disponibilidad de suelo es C4",
   "literatura": "Glaeser y Gyourko (2018, VERIFICADA): precio por encima del coste de construcción más suelo como indicio de restricción de oferta; sin cifra citable para España.",
   "veredicto": "PARCIALMENTE",
-  "regla": "Regla fijada antes de calcular: PARCIALMENTE si los solares cubren el déficit en >= 80 % de las provincias con 5 viviendas por solar; NO RESPALDADA si en < 50 % con 20; en otro caso, ANALIZADA, NO CONCLUYENTE. RESPALDADA no es posible: la única fuente de suelo (Catastro) no distingue suelo urbanizado, clasificado ni disponible, y el SIU no es accesible.",
+  "regla": "PROVISIONAL: depende del déficit de M1, en corrección al generar este fichero; se recalcula al ejecutar m3_run. Regla fijada antes de calcular: PARCIALMENTE si los solares cubren el déficit en >= 80 % de las provincias con 5 viviendas por solar; NO RESPALDADA si en < 50 % con 20; en otro caso, ANALIZADA, NO CONCLUYENTE. RESPALDADA no es posible: la única fuente de suelo (Catastro) no distingue suelo urbanizado, clasificado ni disponible, y el SIU no es accesible.",
   "limites": "El uso «solar» catastral es suelo urbano sin edificar, no suelo urbanizable ni edificabilidad; SIU inaccesible (docs/v4/fuentes_fallidas.md). Catastro no cubre territorios forales. El coste de construcción en nivel no tiene fuente verificable.",
   "evidencia": [
    "output/v4/M3/clasificacion_provincias.csv",

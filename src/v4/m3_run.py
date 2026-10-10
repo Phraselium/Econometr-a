@@ -435,7 +435,8 @@ def escribir_json(out_p, out_m, nac, tp_out, grid, capa_def) -> None:
         "cota": "C2 solo para la brecha (coste en nivel es un supuesto no verificado); la disponibilidad de suelo es C4",
         "literatura": "Glaeser y Gyourko (2018, VERIFICADA): precio por encima del coste de construcción más suelo como indicio de restricción de oferta; sin cifra citable para España.",
         "veredicto": ver,
-        "regla": ("Regla fijada antes de calcular: PARCIALMENTE si los solares cubren el déficit en >= 80 % de las provincias con 5 "
+        "regla": ("PROVISIONAL: depende del déficit de M1, en corrección al generar este fichero; se recalcula al ejecutar m3_run. "
+                  "Regla fijada antes de calcular: PARCIALMENTE si los solares cubren el déficit en >= 80 % de las provincias con 5 "
                   "viviendas por solar; NO RESPALDADA si en < 50 % con 20; en otro caso, ANALIZADA, NO CONCLUYENTE. "
                   "RESPALDADA no es posible: la única fuente de suelo (Catastro) no distingue suelo urbanizado, clasificado ni "
                   "disponible, y el SIU no es accesible."),
@@ -451,7 +452,7 @@ def escribir_json(out_p, out_m, nac, tp_out, grid, capa_def) -> None:
     sup = ["coste de construcción 900/1.200/1.500 EUR/m2 (supuesto externo, NO verificado)",
            "margen del promotor 15/20/25 % (Glaeser y Gyourko)", "edificabilidad 0,8/1,2/1,6 m2/m2",
            "suelo MIVAU provincial (no existe dato municipal)", "viviendas por solar 5/10/20"]
-    lim = ["Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
+    lim = ["PROVISIONAL: déficit de M1 en corrección", "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
            "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
            "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",
            "Solares catastrales ≠ suelo disponible (SIU inaccesible)"]
@@ -488,7 +489,8 @@ def escribir_json(out_p, out_m, nac, tp_out, grid, capa_def) -> None:
         "nivel_evidencia": "ASOCIACIÓN: cotas descriptivas con supuestos; sin lenguaje causal (C2/C4)",
         "diagnosticos": {"umbral_estabilidad": UMBRAL_C2, "fdr": "no aplica: no hay contrastes de hipótesis", "semilla": SEED},
         "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None},
-        "notas": ("Sin PEM/m2 ni MBC verificables: el coste en nivel es supuesto (900-1.500). Empleo sectorial y plazos de licencia: "
+        "notas": ("PROVISIONAL: los recuentos dependen de las tablas de M1 (déficit con error de terminadas, en corrección); "
+                  "m3_run las lee en tiempo de ejecución y se recalcula. Sin PEM/m2 ni MBC verificables: el coste en nivel es supuesto (900-1.500). Empleo sectorial y plazos de licencia: "
                   "no hay datos abiertos en la base (Eurostat empleo es total; EPA sin rama). SIU: fallo de red."),
     }
     (OUT / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float), encoding="utf-8")

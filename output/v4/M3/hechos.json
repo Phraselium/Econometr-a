@@ -22,6 +22,7 @@
    "viviendas por solar 5/10/20"
   ],
   "limites": [
+   "PROVISIONAL: déficit de M1 en corrección",
    "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
    "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
    "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",
@@ -51,6 +52,7 @@
    "viviendas por solar 5/10/20"
   ],
   "limites": [
+   "PROVISIONAL: déficit de M1 en corrección",
    "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
    "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
    "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",
@@ -81,6 +83,7 @@
    "viviendas por solar 5/10/20"
   ],
   "limites": [
+   "PROVISIONAL: déficit de M1 en corrección",
    "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
    "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
    "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",
@@ -104,6 +107,7 @@
   ],
   "supuestos": [],
   "limites": [
+   "PROVISIONAL: déficit de M1 en corrección",
    "Sin fuente verificable de PEM/m2 ni de MBC: el nivel del coste es un supuesto, no un dato",
    "Costes fuera: honorarios técnicos, tasas e ICIO, licencias, financiación y beneficio (cubiertos por el margen)",
    "Valor tasado = tasación de vivienda libre existente y nueva, no precio de obra nueva",

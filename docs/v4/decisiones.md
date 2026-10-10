@@ -26,3 +26,9 @@
 - A7. V13 pasa a ANALIZADA, NO CONCLUYENTE: se analizaron indicadores y no se hizo el test GSADF. La cifra del BdE va como NO VERIFICADA (DOI no comprobado).
 - A1, A3-A6, A8-A10 y A11 están devueltos a M1, M2 y M0. M3 lee M1 en tiempo de ejecución.
 - Gestión: tras la revisión hay 5 subagentes activos a la vez (M3, M4 y las correcciones de M0, M1 y M2). Supera el máximo orientativo de 3. Ninguno usa worktree ni comparte ficheros de salida.
+
+## M3: ¿se puede construir? (umbrales declarados antes de clasificar)
+- Clases: 4 déficit <= 0; 3 brecha <= 0; 2 precio > r(coste + suelo repercutido), r en {1,25; 1,5}; 1 brecha > 0 sin ser 2 y con solares suficientes; 5 (añadida) brecha moderada con solares insuficientes; 9 sin dato de solares.
+- Multiverso (324 especificaciones x variantes de déficit M1): margen 15/20/25 %; edificabilidad 0,8/1,2/1,6; coste 900/1.200/1.500 EUR/m2 (supuesto externo no verificado); suelo todos o >50.000 hab.; viviendas por solar 5/10/20. C2 si la clase modal aparece en >= 80 %.
+- Los umbrales no se fijaron con M1. m3_run lee M1 en ejecución; los recuentos son PROVISIONALES hasta corregir M1 (error de terminadas).
+- Municipios sin valor tasado propio usan el precio provincial (proxy, siempre C4). La capa efectiva se limita a la del déficit de M1.

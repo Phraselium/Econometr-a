@@ -14,3 +14,8 @@
 **Hecho:** setup; M0.
 **Siguiente:** M1, M2 (corrección), M4 → revisión de la oleada A → M3 → M5 → M6.
 **Tokens de subagentes v4:** 258.162 / 2.500.000 (cierre al 80 %: 2.000.000).
+
+## M3 (2026-10-10)
+- Hecho: extracción Catastro (data/raw/v4/catastro_solares_municipios.csv.gz), brecha precio-coste, multiverso, clasificación en output/v4/M3. Recuentos PROVISIONALES: dependen de M1 (en corrección).
+- Siguiente: reejecutar `python3 src/v4/m3_run.py` cuando M1 esté corregido. Sin fuente de coste en nivel (supuesto 900-1.500).
+- Tokens de subagente M3: aprox. 100.000.

@@ -1,0 +1,13 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+stock,stock_uso_nacional,tabla descriptiva,,,1,,,,,,,C1 hecho; sin contraste
+stock,stock_uso_provincia,tabla descriptiva,,,5,,,,,,,C1 hecho; sin contraste
+stock,stock_uso_ciudades,tabla descriptiva,,,7,,,,,,,C1 hecho; sin contraste
+stock,vut_ine_vs_gva,INE VUT vs registro GVA,,,3,,,,,,,dos metodos discrepan: se reportan ambos
+titularidad,tenencia_censo2021,tabla descriptiva,,,13,,,,,,,C1 (Censo 2021); no distingue arrendador
+titularidad,eff_otras_propiedades,tabla descriptiva,,,7,,,,,,,"hogares, no personas juridicas; sin percentil"
+flujos,etdp_comprador_pj,PF->PJ + PJ->PJ,2006,2024,19,,,,,11.3,,fuente unica -> C4 para el contraste con el stock
+flujos,incasol_contratos,suma anual de contratos,,,19,,,,,,,sin tipo de arrendador
+extranjeros,evolucion_nacional,cuotas por fuente,2007,2025,19,,,,,,,3 fuentes; definiciones distintas
+extranjeros,provincias_2023_25,cuotas por provincia,,,6,,,,,,,MIVAU y Registradores
+extranjeros,concentracion_zonas,reparto costa/islas/interior,,,57,,,,,,,supuesto COSTA declarado
+oferta,airbnb_robustez,ratio anuncios/VUT,,,9,,,,,,,solo robustez; sin scraping; alquiler de temporada no distinguido

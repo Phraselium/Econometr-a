@@ -1,0 +1,65 @@
+{
+ "stock_uso_nacional": {
+  "viv_total": 26623708.0,
+  "principal": 18536616.0,
+  "no_principal": 8087092.0,
+  "vacias_consumo": 3828307.0,
+  "uso_esporadico_consumo": 2517628.0,
+  "turisticas_ine_2026M05": 341001.0,
+  "pct_vacias": 14.37931560847948,
+  "pct_esporadico": 9.456338688810739,
+  "pct_vut": 1.2808170822786968,
+  "ratio_vacias_esporadico_sobre_vut": 18.609725484675998,
+  "fuentes": "INE Censo 2021 (59525, 59531 consumo electrico); INE VUT (experimental)",
+  "capa": "C1 turisticas (INE y registro GVA); C4 vacias y esporadicas (fuente unica INE)"
+ },
+ "tenencia_nacional": {
+  "pct_alquiler": 16.095812741656836,
+  "pct_propiedad": 75.46483673179614,
+  "pct_otro_cesion": 8.439350526547024,
+  "fuente": "Censo 2021, 59523"
+ },
+ "eff_otras_propiedades_total": 46.8,
+ "pj_comprador_etdp": {
+  "anyo": 2024,
+  "pct_comprador_pj": 11.3,
+  "pct_vendedor_pj": 24.700000000000003,
+  "pct_comprador_pj_2007": 5.6,
+  "capa": "C4 (fuente unica)"
+ },
+ "pj_stock": "sin dato: Catastro no publica titulares por tipo; Incasol y Censo no traen tipo de arrendador",
+ "extranjeros_nacional": {
+  "anyo_mivau": 2025,
+  "mivau_pct": 16.891317676255174,
+  "mivau_pct_residentes": 10.059754730305743,
+  "mivau_pct_no_residentes": 6.8315629459494325,
+  "notariado_anyo": 2025,
+  "notariado_pct": 18.815392655336478,
+  "notariado_pct_residentes": 11.63227144552472,
+  "notariado_pct_no_residentes": 7.183121209811756,
+  "registradores_pct_publicado": {
+   "2023": 14.98,
+   "2024": 14.6,
+   "2025": 13.82
+  },
+  "capa": "C1 (3 fuentes; definiciones y coberturas distintas)"
+ },
+ "extranjeros_concentracion_ultimo_anyo_mivau": {
+  "costa": {
+   "pct_compras_ext": 71.88066239147904,
+   "pct_compraventas_total": 57.57408986727786,
+   "pct_ext_en_zona": 21.11771771910781
+  },
+  "interior": {
+   "pct_compras_ext": 17.749381568374115,
+   "pct_compraventas_total": 36.86703800437077,
+   "pct_ext_en_zona": 8.143422550738258
+  },
+  "islas": {
+   "pct_compras_ext": 10.369956040146848,
+   "pct_compraventas_total": 5.558872128351367,
+   "pct_ext_en_zona": 31.553840253140283
+  }
+ },
+ "airbnb_robustez": "solo robustez; ver tablas/oferta_anunciada_airbnb_robustez.csv"
+}

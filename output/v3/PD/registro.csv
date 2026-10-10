@@ -1,0 +1,18 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+P1,P1_necesarias,c* = Δh + a·A2/10 + bajas + arrastre − mov·V/10,2026,2035,1944,,,,,249208.1838,,rango 78750-413004; terminadas 2021-25 89320-100980
+P1,P1_statu_quo_2035,p = (Σ demanda − Σ oferta)/H0/(ε+η),2026,2035,9720,,,,,5.447479600452687,,% 2035 vs 2025: 0.0 a 73.9
+P-D,O0_sin_politica,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,0.0,,rango 0.0000 a 0.0000; oferta 0 a 0
+P-D,P1_construccion_25k_anio,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.01709583714314064,,rango -0.1399 a -0.0039; oferta 250000 a 250000
+P-D,P1_construccion_50k_anio,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.03419167428628128,,rango -0.2798 a -0.0079; oferta 500000 a 500000
+P-D,P1_construccion_100k_anio,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.06838334857256256,,rango -0.5596 a -0.0158; oferta 1000000 a 1000000
+P-D,P2_retirar_VUT_25pct,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.0006796121158573038,,rango -0.0086 a -0.0000; oferta 0 a 7649
+P-D,P2_retirar_VUT_50pct,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.0013592242317146076,,rango -0.0171 a -0.0000; oferta 0 a 15298
+P-D,P2_retirar_VUT_100pct,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.002718448463429215,,rango -0.0342 a -0.0000; oferta 0 a 30595
+P-D,P3_tope_cobertura_5pct,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.0015477758620689656,,rango -0.0092 a 0.0233; oferta -25312 a 6439
+P-D,P3_tope_cobertura_15pct,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.0046433275862068964,,rango -0.0276 a 0.0700; oferta -75936 a 19318
+P-D,P3_tope_cobertura_30pct,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.009286655172413793,,rango -0.0552 a 0.1400; oferta -151872 a 38636
+P-D,P4_movilizar_10pct_vacias_alto,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.004386202616778842,,rango -0.0463 a -0.0008; oferta 50142 a 82698
+P-D,P4_movilizar_30pct_vacias_alto,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.013158607850336526,,rango -0.1388 a -0.0024; oferta 150427 a 248096
+P-D,P4_publica_10k_anio,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.002564375571471096,,rango -0.0560 a -0.0000; oferta 0 a 100000
+P-D,P4_publica_25k_anio,variación simulada del esfuerzo de acceso (log) en 2035 frente a sin política,2026,2035,51840,,,,,-0.00641093892867774,,rango -0.1399 a -0.0000; oferta 0 a 250000
+P3,P3_neto_por_inquilino,"Ra·|cut|·(1+L) − max(−L,0)·ℓ·Ra − (−L)·Ra/(ε+η)",2026,2035,3240,,,,,136.73355985925494,,€/año por inquilino cubierto: -4613 a 1570

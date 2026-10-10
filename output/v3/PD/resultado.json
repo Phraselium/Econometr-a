@@ -1,0 +1,60 @@
+{
+ "rama": "PD",
+ "capa": "C2/C4 por resultado (ver resultados.json)",
+ "pregunta": "Qué variación simulada del esfuerzo de acceso y de la oferta producen cuatro políticas en rangos de parámetros, y cuál domina o minimiza el arrepentimiento máximo",
+ "datos": "output/v3/PA (A1-A4), output/v3/PB (B1), MIVAU terminadas 2021-25, literatura_v3 parte B; C1/C3 de oleada 2: presentes",
+ "N": {
+  "escenarios_rejilla_politicas": 51840,
+  "escenarios_P1": 1944,
+  "opciones": 14
+ },
+ "metodo": "Simulación contrafactual stock-flujo log-lineal sobre rejilla completa de parámetros; dominancia y regret minimax; sin contrastes de hipótesis",
+ "estimacion": {
+  "P1_necesarias_mediana": 261345.5713,
+  "P1_necesarias_rango": [
+   103560.0,
+   413004.25440000003
+  ],
+  "terminadas_2021_25_rango": [
+   89320.0,
+   100980.0
+  ],
+  "minimax_regret_todas_dosis": "P1_construccion_100k_anio",
+  "minimax_regret_dosis_central": "P1_construccion_50k_anio",
+  "domina_estricto": [
+   "P1_construccion_25k_anio",
+   "P1_construccion_50k_anio",
+   "P1_construccion_100k_anio",
+   "P4_movilizar_10pct_vacias_alto",
+   "P4_movilizar_30pct_vacias_alto"
+  ],
+  "domina_debil": [
+   "P1_construccion_25k_anio",
+   "P1_construccion_50k_anio",
+   "P1_construccion_100k_anio",
+   "P2_retirar_VUT_25pct",
+   "P2_retirar_VUT_50pct",
+   "P2_retirar_VUT_100pct",
+   "P4_movilizar_10pct_vacias_alto",
+   "P4_movilizar_30pct_vacias_alto",
+   "P4_publica_10k_anio",
+   "P4_publica_25k_anio"
+  ]
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO",
+ "diagnosticos": {
+  "sanidad_necesarias_igual_ritmo_hogares": "verificada (assert)",
+  "FDR": "no aplica: sin p-valores",
+  "C1_resultado_json": "ausente",
+  "C3_resultado_json": "presente"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "no aplica: simulación con rangos, sin predicción fuera de muestra"
+ },
+ "notas": "Capa C2 solo para cantidades contables y signo bajo supuestos débiles; magnitudes de precio condicionales a ε (C4). Sin lenguaje causal. Topes: JMS y Diamond son literatura externa; ℓ, cobertura, ρ, φ y las dosis son supuestos. Coste público = parámetro sin cifra."
+}

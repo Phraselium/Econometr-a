@@ -1,0 +1,649 @@
+{
+ "meta": {
+  "muni_entrenamiento": 559,
+  "balanceadas_2019Q1_2023Q4": 191,
+  "sujetos_en_entrenamiento": 50,
+  "rent_ref_eur_mes": 682.755625,
+  "contratos_trim_por_muni_ref": 298.5267857142857,
+  "nT": 48,
+  "nC": 142
+ },
+ "potencia": [
+  {
+   "hipotesis": "H3-3a",
+   "especificacion": "CS trimestral 2019Q1-2022Q1 (pre 7, post 6)",
+   "N": 190,
+   "clusters": 190,
+   "ee": 0.009039369647164673,
+   "emd_t": 0.025455970011098356,
+   "emd_wcb": 0.025790782752017224,
+   "emd": 0.025790782752017224,
+   "eer": 0.03,
+   "veredicto": "estimable"
+  },
+  {
+   "hipotesis": "H3-3a",
+   "especificacion": "Validación SERPAVI anual (estructura SERPAVI, varianza de fianzas anuales)",
+   "N": 190,
+   "clusters": 190,
+   "ee": 0.006104848913438158,
+   "emd_t": 0.017192000872706108,
+   "emd_wcb": 0.01732873683349869,
+   "emd": 0.01732873683349869,
+   "eer": 0.03,
+   "veredicto": "estimable"
+  },
+  {
+   "hipotesis": "H3-3b",
+   "especificacion": "CS trimestral 2019Q1-2022Q1 (pre 7, post 6)",
+   "N": 190,
+   "clusters": 190,
+   "ee": 0.02757480703254717,
+   "emd_t": 0.07765402769014092,
+   "emd_wcb": 0.0771871595429606,
+   "emd": 0.07765402769014092,
+   "eer": 0.1,
+   "veredicto": "estimable"
+  },
+  {
+   "hipotesis": "H3-3b",
+   "especificacion": "Validación SERPAVI anual (estructura SERPAVI, varianza de fianzas anuales)",
+   "N": 190,
+   "clusters": 190,
+   "ee": 0.02035147639751536,
+   "emd_t": 0.057312245552346236,
+   "emd_wcb": 0.058762052751845276,
+   "emd": 0.058762052751845276,
+   "eer": 0.1,
+   "veredicto": "estimable"
+  }
+ ],
+ "potencia_ok": {
+  "alq": true,
+  "n": true
+ },
+ "potencia_validacion_ok": {
+  "alq": true,
+  "n": true
+ },
+ "replicacion_jms": [
+  {
+   "hipotesis": "H3-3a",
+   "resultado": "log alquiler",
+   "especificacion": "R1 JMS: trimestral 2019Q1-2022Q4, TWFE, control tenso<20k, sin Barcelona",
+   "N_municipios": 137,
+   "tratados": 48,
+   "controles": 89,
+   "coef": -0.034767839644518045,
+   "ee": 0.0060223376358966045,
+   "ic95_lo": -0.046677378336461836,
+   "ic95_hi": -0.022858300952574254,
+   "p": 5.037113779557183e-08,
+   "objetivo_T": -0.045,
+   "clasificacion": "REPLICADO",
+   "criterio": "IC95 contiene T y excluye 0"
+  },
+  {
+   "hipotesis": "H3-3a",
+   "resultado": "log alquiler",
+   "especificacion": "R2 JMS: trimestral 2019Q1-2022Q4, CS, control tenso<20k, sin Barcelona",
+   "N_municipios": 137,
+   "tratados": 48,
+   "controles": 89,
+   "coef": -0.04516457226683088,
+   "ee": 0.009882741100089498,
+   "ic95_lo": -0.06470959301843283,
+   "ic95_hi": -0.02561955151522892,
+   "p": 1.0891885509953117e-05,
+   "objetivo_T": -0.045,
+   "clasificacion": "REPLICADO",
+   "criterio": "IC95 contiene T y excluye 0"
+  },
+  {
+   "hipotesis": "H3-3a",
+   "resultado": "log alquiler",
+   "especificacion": "R3 JMS: anual 2017-2022, TWFE con fracción del año, control tenso<20k",
+   "N_municipios": 210,
+   "tratados": 49,
+   "controles": 161,
+   "coef": -0.030119103675110354,
+   "ee": 0.006926313040290789,
+   "ic95_lo": -0.04377349494698854,
+   "ic95_hi": -0.01646471240323217,
+   "p": 2.141129396176172e-05,
+   "objetivo_T": -0.045,
+   "clasificacion": "PARCIAL",
+   "criterio": "excluye 0 con el signo de T, sin contener T"
+  },
+  {
+   "hipotesis": "H3-3a",
+   "resultado": "log alquiler",
+   "especificacion": "EXT1: trimestral 2019Q1-2023Q4, TWFE, todos los no sujetos",
+   "N_municipios": 190,
+   "tratados": 48,
+   "controles": 142,
+   "coef": -0.03264782915012254,
+   "ee": 0.00537312061269679,
+   "ic95_lo": -0.04324682043013722,
+   "ic95_hi": -0.02204883787010786,
+   "p": 6.6458312154885686e-09,
+   "objetivo_T": -0.045,
+   "clasificacion": "PARCIAL",
+   "criterio": "excluye 0 con el signo de T, sin contener T"
+  },
+  {
+   "hipotesis": "H3-3a",
+   "resultado": "log alquiler",
+   "especificacion": "EXT2: anual 2017-2023, TWFE con fracción del año, todos los no sujetos",
+   "N_municipios": 363,
+   "tratados": 49,
+   "controles": 314,
+   "coef": -0.02573934900074886,
+   "ee": 0.005935759654724226,
+   "ic95_lo": -0.03741225074349472,
+   "ic95_hi": -0.014066447258003002,
+   "p": 1.8807610413246535e-05,
+   "objetivo_T": -0.045,
+   "clasificacion": "PARCIAL",
+   "criterio": "excluye 0 con el signo de T, sin contener T"
+  },
+  {
+   "hipotesis": "H3-3b",
+   "resultado": "log contratos",
+   "especificacion": "R1 JMS: trimestral 2019Q1-2022Q4, TWFE, control tenso<20k, sin Barcelona",
+   "N_municipios": 137,
+   "tratados": 48,
+   "controles": 89,
+   "coef": 0.030428814285341714,
+   "ee": 0.020071895857093992,
+   "ic95_lo": -0.009264579672823153,
+   "ic95_hi": 0.07012220824350658,
+   "p": 0.13184249661236394,
+   "objetivo_T": -0.003,
+   "clasificacion": "PARCIAL",
+   "criterio": "IC95 contiene T y 0"
+  },
+  {
+   "hipotesis": "H3-3b",
+   "resultado": "log contratos",
+   "especificacion": "R2 JMS: trimestral 2019Q1-2022Q4, CS, control tenso<20k, sin Barcelona",
+   "N_municipios": 137,
+   "tratados": 48,
+   "controles": 89,
+   "coef": -0.02034828713816057,
+   "ee": 0.031761758238971795,
+   "ic95_lo": -0.08316327111891529,
+   "ic95_hi": 0.042466696842594145,
+   "p": 0.5228337002194724,
+   "objetivo_T": -0.003,
+   "clasificacion": "PARCIAL",
+   "criterio": "IC95 contiene T y 0"
+  },
+  {
+   "hipotesis": "H3-3b",
+   "resultado": "log contratos",
+   "especificacion": "R3 JMS: anual 2017-2022, TWFE con fracción del año, control tenso<20k",
+   "N_municipios": 210,
+   "tratados": 49,
+   "controles": 161,
+   "coef": -0.008729515477509452,
+   "ee": 0.021534568012571392,
+   "ic95_lo": -0.051182320570791404,
+   "ic95_hi": 0.03372328961577249,
+   "p": 0.6856185825203415,
+   "objetivo_T": -0.003,
+   "clasificacion": "PARCIAL",
+   "criterio": "IC95 contiene T y 0"
+  },
+  {
+   "hipotesis": "H3-3b",
+   "resultado": "log contratos",
+   "especificacion": "EXT1: trimestral 2019Q1-2023Q4, TWFE, todos los no sujetos",
+   "N_municipios": 190,
+   "tratados": 48,
+   "controles": 142,
+   "coef": 0.022319726553828318,
+   "ee": 0.017154446804343283,
+   "ic95_lo": -0.01151905079709627,
+   "ic95_hi": 0.05615850390475291,
+   "p": 0.19480665713472475,
+   "objetivo_T": -0.003,
+   "clasificacion": "PARCIAL",
+   "criterio": "IC95 contiene T y 0"
+  },
+  {
+   "hipotesis": "H3-3b",
+   "resultado": "log contratos",
+   "especificacion": "EXT2: anual 2017-2023, TWFE con fracción del año, todos los no sujetos",
+   "N_municipios": 363,
+   "tratados": 49,
+   "controles": 314,
+   "coef": -0.0012663477939112784,
+   "ee": 0.018107488813603082,
+   "ic95_lo": -0.03687542734295151,
+   "ic95_hi": 0.034342731755128954,
+   "p": 0.9442839869977703,
+   "objetivo_T": -0.003,
+   "clasificacion": "PARCIAL",
+   "criterio": "IC95 contiene T y 0"
+  }
+ ],
+ "replicacion_jms_clasificacion": {
+  "H3-3a": "REPLICADO",
+  "H3-3b": "PARCIAL"
+ },
+ "estimacion": {
+  "alq": {
+   "estimado": true,
+   "N": 190,
+   "nT": 48,
+   "nC": 142,
+   "CS": {
+    "b": -0.05563954856935398,
+    "se": 0.009075292378523973,
+    "p": 5.033084685031353e-09,
+    "ic": [
+     -0.07354203926692057,
+     -0.03773705787178738
+    ],
+    "nT": 48,
+    "nC": 142,
+    "p_wcb": 0.001,
+    "p_ri": 0.001,
+    "pct": -5.411998174326271,
+    "pct_ic95": [
+     -7.090291358989953,
+     -3.703388803605301
+    ],
+    "eur_mes": -36.950721960109924,
+    "eur_mes_ic95": [
+     -48.40936308239285,
+     -25.285095372235396
+    ]
+   },
+   "TWFE": {
+    "b": -0.052024674573351776,
+    "se": 0.005553518885417404,
+    "p": 2.265075894330442e-17,
+    "ic": [
+     -0.06297951859841322,
+     -0.04106983054829033
+    ],
+    "nT": 48,
+    "nC": 142,
+    "pct": -5.0694557152880515,
+    "pct_ic95": [
+     -6.103729523557588,
+     -4.023789310645487
+    ],
+    "eur_mes": -34.611994053013156,
+    "eur_mes_ic95": [
+     -41.67355665687513,
+     -27.472647856580785
+    ]
+   },
+   "DID_M": {
+    "b": -0.040645025020471466,
+    "se": 0.01094954012512536,
+    "p": 0.00027076981634178786,
+    "ic": [
+     -0.06224477432403834,
+     -0.019045275716904595
+    ],
+    "nT": 48,
+    "nC": 142,
+    "pct": -3.9830094246583014,
+    "pct_ic95": [
+     -6.0347144253205425,
+     -1.8865060350591545
+    ],
+    "eur_mes": -27.19422089113469,
+    "eur_mes_ic95": [
+     -41.20235219156243,
+     -12.880226070330849
+    ]
+   },
+   "pretrend_wald": {
+    "W": 6.216376197753896,
+    "k": 6,
+    "p": 0.3993933162652069
+   },
+   "rambachan_roth": {
+    "theta": -0.055639548569353985,
+    "cota_RM": 0.07017516706309185,
+    "ic_RM": [
+     -0.23393751545940847,
+     0.12318935271367437
+    ],
+    "ic_SD0": [
+     -0.09116469671560419,
+     -0.027857184247383912
+    ],
+    "theta_SD0": -0.05882999320499922
+   },
+   "sensibilidad": {
+    "oster_delta": 25.668932251285952,
+    "oster_abs": 25.668932251285952,
+    "beta_corto": -0.05563954856935389,
+    "beta_largo": -0.05087748873425946,
+    "R2_corto": 0.09960418904745383,
+    "R2_largo": 0.35671345956836065,
+    "Rmax": 0.4637274974388689,
+    "RV_q1": 0.20568138785148768,
+    "r2_parcial": {
+     "ln_poblacion": 4.590491490831735e-06,
+     "nivel_previo": 0.007609377151230519,
+     "pendiente_previa": 0.279242934021917
+    },
+    "r2_parcial_max": 0.279242934021917,
+    "t_largo": -3.1389434294390184
+   },
+   "placebos": [
+    {
+     "resultado": "alq",
+     "placebo": "fecha falsa 2019Q4 (trimestral)",
+     "b": -0.012157015199261262,
+     "se": 0.00976819931650381,
+     "p": 0.21484637962142153,
+     "p_ri": 0.387,
+     "nT": 48,
+     "nC": 142
+    },
+    {
+     "resultado": "alq",
+     "placebo": "fecha falsa 2018Q4 (anual: 2019 frente a 2018)",
+     "b": 0.008092811918963626,
+     "se": 0.006747807203330543,
+     "p": 0.23115294722963398,
+     "p_ri": 0.585,
+     "nT": 49,
+     "nC": 331
+    },
+    {
+     "resultado": "alq",
+     "placebo": "unidades falsas 10.000-20.000 hab. (2020Q4)",
+     "b": -0.008663397564419919,
+     "se": 0.013259606220059736,
+     "p": 0.5145909161300986,
+     "p_ri": 0.542,
+     "p_wcb": 0.52,
+     "nT": 42,
+     "nC": 100
+    }
+   ]
+  },
+  "n": {
+   "estimado": true,
+   "N": 190,
+   "nT": 48,
+   "nC": 142,
+   "CS": {
+    "b": -0.04997755784028853,
+    "se": 0.027687099110964078,
+    "p": 0.07266151313516774,
+    "ic": [
+     -0.10459486531675083,
+     0.004639749636173772
+    ],
+    "nT": 48,
+    "nC": 142,
+    "p_wcb": 0.08,
+    "p_ri": 0.181,
+    "pct": -4.874922761707367,
+    "pct_ic95": [
+     -9.931065082649305,
+     0.46505299407064715
+    ],
+    "contratos_trim_muni": -14.55295022657909
+   },
+   "TWFE": {
+    "b": -0.002092315038469981,
+    "se": 0.018727973838519128,
+    "p": 0.9111628889129125,
+    "ic": [
+     -0.03903502407384014,
+     0.034850393996900174
+    ],
+    "nT": 48,
+    "nC": 142,
+    "pct": -0.2090127673178288,
+    "pct_ic95": [
+     -3.8282974691610128,
+     3.5464785463277915
+    ],
+    "contratos_trim_muni": -0.6239590960063934
+   },
+   "DID_M": {
+    "b": -0.03768344151936554,
+    "se": 0.036308828752558336,
+    "p": 0.30066876325710845,
+    "ic": [
+     -0.10930851340359884,
+     0.033941630364867754
+    ],
+    "nT": 48,
+    "nC": 142,
+    "pct": -3.6982255921473195,
+    "pct_ic95": [
+     -10.354619318373203,
+     3.4524220164497743
+    ],
+    "contratos_trim_muni": -11.040193988700503
+   },
+   "pretrend_wald": {
+    "W": 16.090970282016972,
+    "k": 6,
+    "p": 0.013273933332888167
+   },
+   "rambachan_roth": {
+    "theta": -0.04997755784028854,
+    "cota_RM": 0.4667985220256944,
+    "ic_RM": [
+     -0.8247083863978281,
+     0.6693921060972784
+    ],
+    "ic_SD0": [
+     -0.17383800331588187,
+     0.01788873902614843
+    ],
+    "theta_SD0": -0.08327149471414581
+   },
+   "sensibilidad": {
+    "oster_delta": -6.066643019823655,
+    "oster_abs": 6.066643019823655,
+    "beta_corto": -0.04997755784028832,
+    "beta_largo": -0.10432311188801532,
+    "R2_corto": 0.009694324889914507,
+    "R2_largo": 0.1867809598422121,
+    "Rmax": 0.24281524779487573,
+    "RV_q1": 0.1351208950587759,
+    "r2_parcial": {
+     "ln_poblacion": 0.0017511348056404462,
+     "nivel_previo": 0.006011826380211723,
+     "pendiente_previa": 0.16597056419025943
+    },
+    "r2_parcial_max": 0.16597056419025943,
+    "t_largo": -1.9761989998032057
+   },
+   "placebos": [
+    {
+     "resultado": "n",
+     "placebo": "fecha falsa 2019Q4 (trimestral)",
+     "b": -0.0920814541049852,
+     "se": 0.03580275222685323,
+     "p": 0.01088623262345554,
+     "p_ri": 0.024,
+     "nT": 48,
+     "nC": 142
+    },
+    {
+     "resultado": "n",
+     "placebo": "fecha falsa 2018Q4 (anual: 2019 frente a 2018)",
+     "b": -0.006597789974907654,
+     "se": 0.018939809087034673,
+     "p": 0.7277670157872106,
+     "p_ri": 0.871,
+     "nT": 49,
+     "nC": 331
+    },
+    {
+     "resultado": "n",
+     "placebo": "unidades falsas 10.000-20.000 hab. (2020Q4)",
+     "b": 0.051091479882039,
+     "se": 0.04055259825197597,
+     "p": 0.20980815441281528,
+     "p_ri": 0.257,
+     "p_wcb": 0.213,
+     "nT": 42,
+     "nC": 100
+    }
+   ]
+  }
+ },
+ "criterios_abc": {
+  "alq": {
+   "a": false,
+   "b": true,
+   "c": false
+  },
+  "n": {
+   "a": false,
+   "b": false,
+   "c": false
+  }
+ },
+ "multiverso": {
+  "H3-3a": {
+   "n_specs": 36,
+   "mediana_b": -0.04795291814691095,
+   "mediana_pct": -4.682133656113507,
+   "prop_mismo_signo": 1.0,
+   "prop_signif_5pct": 0.8888888888888888
+  },
+  "H3-3b": {
+   "n_specs": 36,
+   "mediana_b": -0.03362425468079688,
+   "mediana_pct": -3.3065242402924855,
+   "prop_mismo_signo": 0.8055555555555556,
+   "prop_signif_5pct": 0.0
+  }
+ },
+ "dry_run": {
+  "H3-3a": {
+   "hipotesis": "H3-3a",
+   "resultado": "alq",
+   "diseno": "DiD anual; Δ = media(2021-2022) - media(2018-2019); 2020 excluido",
+   "beta": -0.00045200992029361536,
+   "se": 0.049003528320442157,
+   "ic95": [
+    -0.09715837578777609,
+    0.09625435594718884
+   ],
+   "p_dos_colas": 0.9926507829033039,
+   "p_una_cola_neg": 0.49632539145165194,
+   "pct": -0.04519077791997894,
+   "pct_ic95": [
+    -9.258771738268667,
+    10.10390842192228
+   ],
+   "nT": 47,
+   "nC": 132,
+   "eur_mes": -0.3085425782299142,
+   "eur_mes_ic95": [
+    -63.21478484893961,
+    68.98500309552311
+   ]
+  },
+  "H3-3b": {
+   "hipotesis": "H3-3b",
+   "resultado": "n_viv",
+   "diseno": "DiD anual; Δ = media(2021-2022) - media(2018-2019); 2020 excluido",
+   "beta": 0.0034406922567804185,
+   "se": 0.15863046223570787,
+   "ic95": [
+    -0.30948370247080126,
+    0.31636508698436205
+   ],
+   "p_dos_colas": 0.9827182565938429,
+   "p_una_cola_neg": 0.5086408717030786,
+   "pct": 0.3446618232920917,
+   "pct_ic95": [
+    -26.617426915262676,
+    37.21311114021282
+   ],
+   "nT": 48,
+   "nC": 142
+  }
+ },
+ "sellado": {
+  "alq": {
+   "hipotesis": "H3-3a",
+   "resultado": "alq",
+   "diseno": "DiD anual; Δ = media(2021-2022) - media(2018-2019); 2020 excluido",
+   "beta": -0.007727674478050062,
+   "se": 0.00318369914597447,
+   "ic95": [
+    -0.014008039007080106,
+    -0.0014473099490200179
+   ],
+   "p_dos_colas": 0.01615610463556489,
+   "p_una_cola_neg": 0.008078052317782445,
+   "pct": -0.7697892765467396,
+   "pct_ic95": [
+    -1.391038295041458,
+    -0.14462631010744298
+   ],
+   "nT": 48,
+   "nC": 142,
+   "eur_mes": -5.255779586269671,
+   "eur_mes_ic95": [
+    -9.49739220529965,
+    -0.9874442674885106
+   ]
+  },
+  "n": {
+   "hipotesis": "H3-3b",
+   "resultado": "n_viv",
+   "diseno": "DiD anual; Δ = media(2021-2022) - media(2018-2019); 2020 excluido",
+   "beta": -0.0445597579218958,
+   "se": 0.01079748760655884,
+   "ic95": [
+    -0.06585955889480388,
+    -0.02325995694898772
+   ],
+   "p_dos_colas": 5.5210740454896164e-05,
+   "p_una_cola_neg": 2.7605370227448082e-05,
+   "pct": -4.358155519282725,
+   "pct_ic95": [
+    -6.373765522277564,
+    -2.2991529382691778
+   ],
+   "nT": 48,
+   "nC": 142
+  }
+ },
+ "capa": {
+  "H3-3a": {
+   "capa": "C4",
+   "fallo": "falla: a, c",
+   "criterios": {
+    "a": false,
+    "b": true,
+    "c": false,
+    "d": true,
+    "e": "pendiente: Holm m=4 lo aplica el orquestador"
+   }
+  },
+  "H3-3b": {
+   "capa": "C4",
+   "fallo": "falla: a, b, c",
+   "criterios": {
+    "a": false,
+    "b": false,
+    "c": false,
+    "d": true,
+    "e": "pendiente: Holm m=4 lo aplica el orquestador"
+   }
+  }
+ }
+}

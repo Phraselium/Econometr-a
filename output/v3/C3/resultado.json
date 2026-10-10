@@ -1,0 +1,376 @@
+{
+ "rama": "C3",
+ "pregunta": "¿Redujeron los topes de la Ley 11/2020 la renta (H3-3a) y el nº de contratos nuevos (H3-3b) en los 61 municipios sujetos?",
+ "datos": "Incasòl fianzas municipales trimestrales 2019Q1-2023Q4 (entrenamiento, vía sellar_v3), lista Ley 11/2020, Censo 2021 (población), SERPAVI municipal 2018-2023 (sellado por fuente)",
+ "N": 191,
+ "metodo": "DiD Callaway-Sant'Anna con un solo momento (2020Q4), TWFE y DID_M como contraste; cluster municipio; event study, cotas Rambachan-Roth (sin paquete), placebos P3, Oster, Cinelli-Hazlett, multiverso",
+ "estimacion": {
+  "H3-3a": {
+   "CS": {
+    "b": -0.05563954856935398,
+    "ic95": [
+     -0.07354203926692057,
+     -0.03773705787178738
+    ],
+    "pct": -5.411998174326271,
+    "pct_ic95": [
+     -7.090291358989953,
+     -3.703388803605301
+    ],
+    "eur_mes": -36.950721960109924,
+    "eur_mes_ic95": [
+     -48.40936308239285,
+     -25.285095372235396
+    ],
+    "contratos_trim_muni": null,
+    "p": 5.033084685031353e-09,
+    "p_ri": 0.001
+   },
+   "sellado": {
+    "hipotesis": "H3-3a",
+    "resultado": "alq",
+    "diseno": "DiD anual; Δ = media(2021-2022) - media(2018-2019); 2020 excluido",
+    "beta": -0.007727674478050062,
+    "se": 0.00318369914597447,
+    "ic95": [
+     -0.014008039007080106,
+     -0.0014473099490200179
+    ],
+    "p_dos_colas": 0.01615610463556489,
+    "p_una_cola_neg": 0.008078052317782445,
+    "pct": -0.7697892765467396,
+    "pct_ic95": [
+     -1.391038295041458,
+     -0.14462631010744298
+    ],
+    "nT": 48,
+    "nC": 142,
+    "eur_mes": -5.255779586269671,
+    "eur_mes_ic95": [
+     -9.49739220529965,
+     -0.9874442674885106
+    ]
+   }
+  },
+  "H3-3b": {
+   "CS": {
+    "b": -0.04997755784028853,
+    "ic95": [
+     -0.10459486531675083,
+     0.004639749636173772
+    ],
+    "pct": -4.874922761707367,
+    "pct_ic95": [
+     -9.931065082649305,
+     0.46505299407064715
+    ],
+    "eur_mes": null,
+    "eur_mes_ic95": null,
+    "contratos_trim_muni": -14.55295022657909,
+    "p": 0.07266151313516774,
+    "p_ri": 0.181
+   },
+   "sellado": {
+    "hipotesis": "H3-3b",
+    "resultado": "n_viv",
+    "diseno": "DiD anual; Δ = media(2021-2022) - media(2018-2019); 2020 excluido",
+    "beta": -0.0445597579218958,
+    "se": 0.01079748760655884,
+    "ic95": [
+     -0.06585955889480388,
+     -0.02325995694898772
+    ],
+    "p_dos_colas": 5.5210740454896164e-05,
+    "p_una_cola_neg": 2.7605370227448082e-05,
+    "pct": -4.358155519282725,
+    "pct_ic95": [
+     -6.373765522277564,
+     -2.2991529382691778
+    ],
+    "nT": 48,
+    "nC": 142
+   }
+  }
+ },
+ "ic95": {
+  "H3-3a": [
+   -7.090291358989953,
+   -3.703388803605301
+  ],
+  "H3-3b": [
+   -9.931065082649305,
+   0.46505299407064715
+  ]
+ },
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO",
+ "p_validacion_sellada": {
+  "H3-3a": 0.01615610463556489,
+  "H3-3b": 5.5210740454896164e-05
+ },
+ "capa": {
+  "H3-3a": {
+   "capa": "C4",
+   "fallo": "falla: a, c",
+   "criterios": {
+    "a": false,
+    "b": true,
+    "c": false,
+    "d": true,
+    "e": "pendiente: Holm m=4 lo aplica el orquestador"
+   }
+  },
+  "H3-3b": {
+   "capa": "C4",
+   "fallo": "falla: a, b, c",
+   "criterios": {
+    "a": false,
+    "b": false,
+    "c": false,
+    "d": true,
+    "e": "pendiente: Holm m=4 lo aplica el orquestador"
+   }
+  }
+ },
+ "criterios": {
+  "H3-3a": {
+   "a": false,
+   "b": true,
+   "c": false,
+   "d": true,
+   "e": "pendiente: Holm m=4 lo aplica el orquestador"
+  },
+  "H3-3b": {
+   "a": false,
+   "b": false,
+   "c": false,
+   "d": true,
+   "e": "pendiente: Holm m=4 lo aplica el orquestador"
+  }
+ },
+ "diagnosticos": {
+  "potencia": [
+   {
+    "hipotesis": "H3-3a",
+    "especificacion": "CS trimestral 2019Q1-2022Q1 (pre 7, post 6)",
+    "N": 190,
+    "clusters": 190,
+    "ee": 0.009039369647164673,
+    "emd_t": 0.025455970011098356,
+    "emd_wcb": 0.025790782752017224,
+    "emd": 0.025790782752017224,
+    "eer": 0.03,
+    "veredicto": "estimable"
+   },
+   {
+    "hipotesis": "H3-3a",
+    "especificacion": "Validación SERPAVI anual (estructura SERPAVI, varianza de fianzas anuales)",
+    "N": 190,
+    "clusters": 190,
+    "ee": 0.006104848913438158,
+    "emd_t": 0.017192000872706108,
+    "emd_wcb": 0.01732873683349869,
+    "emd": 0.01732873683349869,
+    "eer": 0.03,
+    "veredicto": "estimable"
+   },
+   {
+    "hipotesis": "H3-3b",
+    "especificacion": "CS trimestral 2019Q1-2022Q1 (pre 7, post 6)",
+    "N": 190,
+    "clusters": 190,
+    "ee": 0.02757480703254717,
+    "emd_t": 0.07765402769014092,
+    "emd_wcb": 0.0771871595429606,
+    "emd": 0.07765402769014092,
+    "eer": 0.1,
+    "veredicto": "estimable"
+   },
+   {
+    "hipotesis": "H3-3b",
+    "especificacion": "Validación SERPAVI anual (estructura SERPAVI, varianza de fianzas anuales)",
+    "N": 190,
+    "clusters": 190,
+    "ee": 0.02035147639751536,
+    "emd_t": 0.057312245552346236,
+    "emd_wcb": 0.058762052751845276,
+    "emd": 0.058762052751845276,
+    "eer": 0.1,
+    "veredicto": "estimable"
+   }
+  ],
+  "pretendencias": {
+   "H3-3a": {
+    "wald": {
+     "W": 6.216376197753896,
+     "k": 6,
+     "p": 0.3993933162652069
+    },
+    "rr": {
+     "theta": -0.055639548569353985,
+     "cota_RM": 0.07017516706309185,
+     "ic_RM": [
+      -0.23393751545940847,
+      0.12318935271367437
+     ],
+     "ic_SD0": [
+      -0.09116469671560419,
+      -0.027857184247383912
+     ],
+     "theta_SD0": -0.05882999320499922
+    }
+   },
+   "H3-3b": {
+    "wald": {
+     "W": 16.090970282016972,
+     "k": 6,
+     "p": 0.013273933332888167
+    },
+    "rr": {
+     "theta": -0.04997755784028854,
+     "cota_RM": 0.4667985220256944,
+     "ic_RM": [
+      -0.8247083863978281,
+      0.6693921060972784
+     ],
+     "ic_SD0": [
+      -0.17383800331588187,
+      0.01788873902614843
+     ],
+     "theta_SD0": -0.08327149471414581
+    }
+   }
+  },
+  "sensibilidad": {
+   "H3-3a": {
+    "oster_delta": 25.668932251285952,
+    "oster_abs": 25.668932251285952,
+    "beta_corto": -0.05563954856935389,
+    "beta_largo": -0.05087748873425946,
+    "R2_corto": 0.09960418904745383,
+    "R2_largo": 0.35671345956836065,
+    "Rmax": 0.4637274974388689,
+    "RV_q1": 0.20568138785148768,
+    "r2_parcial": {
+     "ln_poblacion": 4.590491490831735e-06,
+     "nivel_previo": 0.007609377151230519,
+     "pendiente_previa": 0.279242934021917
+    },
+    "r2_parcial_max": 0.279242934021917,
+    "t_largo": -3.1389434294390184
+   },
+   "H3-3b": {
+    "oster_delta": -6.066643019823655,
+    "oster_abs": 6.066643019823655,
+    "beta_corto": -0.04997755784028832,
+    "beta_largo": -0.10432311188801532,
+    "R2_corto": 0.009694324889914507,
+    "R2_largo": 0.1867809598422121,
+    "Rmax": 0.24281524779487573,
+    "RV_q1": 0.1351208950587759,
+    "r2_parcial": {
+     "ln_poblacion": 0.0017511348056404462,
+     "nivel_previo": 0.006011826380211723,
+     "pendiente_previa": 0.16597056419025943
+    },
+    "r2_parcial_max": 0.16597056419025943,
+    "t_largo": -1.9761989998032057
+   }
+  },
+  "placebos": {
+   "H3-3a": [
+    {
+     "resultado": "alq",
+     "placebo": "fecha falsa 2019Q4 (trimestral)",
+     "b": -0.012157015199261262,
+     "se": 0.00976819931650381,
+     "p": 0.21484637962142153,
+     "p_ri": 0.387,
+     "nT": 48,
+     "nC": 142
+    },
+    {
+     "resultado": "alq",
+     "placebo": "fecha falsa 2018Q4 (anual: 2019 frente a 2018)",
+     "b": 0.008092811918963626,
+     "se": 0.006747807203330543,
+     "p": 0.23115294722963398,
+     "p_ri": 0.585,
+     "nT": 49,
+     "nC": 331
+    },
+    {
+     "resultado": "alq",
+     "placebo": "unidades falsas 10.000-20.000 hab. (2020Q4)",
+     "b": -0.008663397564419919,
+     "se": 0.013259606220059736,
+     "p": 0.5145909161300986,
+     "p_ri": 0.542,
+     "p_wcb": 0.52,
+     "nT": 42,
+     "nC": 100
+    }
+   ],
+   "H3-3b": [
+    {
+     "resultado": "n",
+     "placebo": "fecha falsa 2019Q4 (trimestral)",
+     "b": -0.0920814541049852,
+     "se": 0.03580275222685323,
+     "p": 0.01088623262345554,
+     "p_ri": 0.024,
+     "nT": 48,
+     "nC": 142
+    },
+    {
+     "resultado": "n",
+     "placebo": "fecha falsa 2018Q4 (anual: 2019 frente a 2018)",
+     "b": -0.006597789974907654,
+     "se": 0.018939809087034673,
+     "p": 0.7277670157872106,
+     "p_ri": 0.871,
+     "nT": 49,
+     "nC": 331
+    },
+    {
+     "resultado": "n",
+     "placebo": "unidades falsas 10.000-20.000 hab. (2020Q4)",
+     "b": 0.051091479882039,
+     "se": 0.04055259825197597,
+     "p": 0.20980815441281528,
+     "p_ri": 0.257,
+     "p_wcb": 0.213,
+     "nT": 42,
+     "nC": 100
+    }
+   ]
+  },
+  "multiverso": {
+   "H3-3a": {
+    "n_specs": 36,
+    "mediana_b": -0.04795291814691095,
+    "mediana_pct": -4.682133656113507,
+    "prop_mismo_signo": 1.0,
+    "prop_signif_5pct": 0.8888888888888888
+   },
+   "H3-3b": {
+    "n_specs": 36,
+    "mediana_b": -0.03362425468079688,
+    "mediana_pct": -3.3065242402924855,
+    "prop_mismo_signo": 0.8055555555555556,
+    "prop_signif_5pct": 0.0
+   }
+  },
+  "replicacion_jms": {
+   "H3-3a": "REPLICADO",
+   "H3-3b": "PARCIAL"
+  }
+ },
+ "fuera_muestra": {
+  "modelo": "validación sellada por fuente (SERPAVI anual)",
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "No aplica AR(4)/ECM v1: es un efecto de política, no un pronóstico; la validación fuera de muestra es la sellada por fuente."
+ },
+ "notas": "p_ajustado: Holm m=4 lo aplica el orquestador con p_validacion_sellada. Magnitudes en % y €/mes (renta media previa de los tratados en fianzas). Ver desviaciones.md."
+}

@@ -332,7 +332,8 @@ def evaluate_v3(hipotesis: str, fn, rama: str, nombres: list[str]):
     with open(LOG, "a") as f:
         f.write(json.dumps(apertura, ensure_ascii=False) + "\n")
     _log_md(apertura["utc"], hipotesis, rama, apertura["paneles"], "APERTURA (antes de leer)")
-    sellado = {n: pd.read_csv(SEALED / f"v3_{n}.csv", dtype=str).apply(pd.to_numeric, errors="ignore")
+    sellado = {n: pd.read_csv(SEALED / f"v3_{n}.csv", dtype={c: str for c in ("codigo", "seccion", "distrito",
+                                                                           "cod_ine", "cod_muni", "cusec")})
                for n in nombres}
     res = fn(sellado)
     reg = {**apertura, "utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

@@ -1,0 +1,23 @@
+parametro,valor,fuente_o_supuesto
+eps_d,"[0.3, 0.5, 0.75, 1.0, 1.5]","rango del encargo; sin estimación verificada para España (literatura_v3 B, laguna 2)"
+eta_oferta,"[0.0, 0.45, 1.75]","0 = fórmula del encargo; 0,45 BdE IA 2025; 1,75 Saiz (2010)"
+ritmo_hogares_anual,103560 / 207120 / 242550,A1 2021-25 y 2022-25 (EPA y Censo+ECP); el primer valor es el supuesto de desaceleración al 50 %
+latentes_A2,"[187955.713, 747693.2]","A2 (C2), absorción 0, 50, 100 %"
+bajas_anuales,"0, 0,1, 0,2 % del parque 2025",parque 27099556 (MIVAU); supuesto de A1
+terminadas_2021_25,"[89320.0, 93644.6, 100980.0]","MIVAU libres+protegida {2021: 94728.0, 2022: 89545.0, 2023: 89320.0, 2024: 100980.0, 2025: 93650.0}"
+H0_hogares,19497924,Censo 2021 + ΔECP 2022-25
+stock_alquiler,"[2978090.0, 3374940.0]",PB: Censo 2021 y ECV2021×ECP
+V_alto_vacias,"[501422.0, 826985.0]","A3 Censo vacías tercil alto: [{'presion': 'Δ ln valor tasado 2015-2021', 'vacias': 501422.0}, {'presion': 'Δ ln valor tasado 2021-2025', 'vacias': 580536.0}, {'presion': 'Δ ln alquiler SERPAVI 2015-2021', 'vacias': 826985.0}]"
+VUT_top,"V=30595, R=92165, peso=7.20 pp","decil superior de peso VUT/parque en 6 ciudades (umbral 2.88 pp), PB b1_secciones_ciudades"
+T_GL,"(0.0122, 0.117)",output/v3/GL/resultado.json (T_pp_rango); extremo alto sin verificar
+Barron,0.018,"Barron, Kung y Proserpio (2021), elasticidad alquiler/anuncios"
+JMS,renta -0.045±0.012; contratos -0.003±0.041,Jofre-Monseny et al. 2023; EE tomado en puntos log (supuesto)
+Diamond,-0.15,"Diamond, McQuade y Qian (2019), oferta en inmuebles afectados, San Francisco 1994"
+perdida_desvio_ell,"0,1, 0,25, 0,5 de la renta anual",SUPUESTO sin dato
+cobertura_topes,"5, 15, 30 % del stock de alquiler",SUPUESTO; 15 % ≈ hogares en municipios con marca de zona tensionada en A3 (lectura de la marca por verificar)
+renta_anual_alquiler,"[4447.4502, 5635.0253999999995, 8436.775080000001]","SERPAVI 2023, p10/mediana/p90 provincial x12"
+crowding_out_publica_rho,"0, 0,5, 1",SUPUESTO sin dato
+fraccion_a_alquiler_phi,"R/H0 (proporcional) y 0,5",SUPUESTO
+sustitucion_s,"0, 0,5, 1",B1: 1:1 es el máximo (C2); límite inferior 0
+C1_H3-1,ausente,"output/v3/C1/resultado.json; si ausente, solo literatura (marcado)"
+C3_H3-3,presente,"output/v3/C3/resultado.json; si ausente, solo JMS y Diamond (marcado)"

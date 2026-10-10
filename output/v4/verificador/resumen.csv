@@ -16,4 +16,4 @@ V14,Compradores extranjeros,Los compradores extranjeros encarecen la vivienda en
 M3-V1,Suelo disponible,Hay suelo de sobra para construir.,PARCIALMENTE,C4
 M4-V1,Compradores extranjeros (sustituye a V14),Los compradores extranjeros encarecen la vivienda en España.,"ANALIZADA, NO CONCLUYENTE",C1
 M4-V2,Empresas en el mercado del alquiler,Las empresas dominan el mercado del alquiler.,NO ANALIZADA: FALTAN DATOS,C4
-M4-V3,"Viviendas vacías, de uso esporádico y turísticas",Hay muchas viviendas vacías o de uso esporádico frente a las turísticas.,RESPALDADA,C1 (turísticas) / C4 (vacías y esporádicas: fuente única)
+M4-V3,"Viviendas vacías, de uso esporádico y turísticas",Hay muchas viviendas vacías o de uso esporádico frente a las turísticas.,RESPALDADA,C4

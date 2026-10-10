@@ -21,7 +21,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | M3-V1 | Hay suelo de sobra para construir. | PARCIALMENTE | C4 |
 | M4-V1 | Los compradores extranjeros encarecen la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C1 |
 | M4-V2 | Las empresas dominan el mercado del alquiler. | NO ANALIZADA: FALTAN DATOS | C4 |
-| M4-V3 | Hay muchas viviendas vacías o de uso esporádico frente a las turísticas. | RESPALDADA | C1 (turísticas) / C4 (vacías y esporádicas: fuente única) |
+| M4-V3 | Hay muchas viviendas vacías o de uso esporádico frente a las turísticas. | RESPALDADA | C4 |
 
 ## V01 · Viviendas turísticas
 
@@ -310,7 +310,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Campo | Contenido |
 |---|---|
 | Veredicto | **RESPALDADA** |
-| Capa de la evidencia | C1 (turísticas) / C4 (vacías y esporádicas: fuente única) |
+| Capa de la evidencia | C4 |
 | Magnitud | España: 3.828.307 vacías (14,4 % del parque) y 2.517.628 de uso esporádico (9,5 %) en el Censo 2021 (método de consumo eléctrico); 341.001 turísticas en mayo de 2026 (1,3 % del parque 2021). Ratio (vacías + esporádicas) / turísticas: 18,6. |
 | Intervalo | — |
 | Cota | — |

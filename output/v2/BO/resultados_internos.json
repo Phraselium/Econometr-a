@@ -1,0 +1,475 @@
+{
+ "h4": {
+  "info": {
+   "n_prov_suelo": 47,
+   "media_ln_suelo": 5.344289133218053,
+   "provincias_sin_suelo": [
+    "51",
+    "52"
+   ],
+   "iniciadas_desde": 2008,
+   "muestra": [
+    2009,
+    2023
+   ]
+  },
+  "principal": {
+   "spec": "H4_principal",
+   "n": 550,
+   "G": 47,
+   "muestra": "2009-2023",
+   "b_precio": 1.0403523088008075,
+   "se_precio": 0.5071118775309507,
+   "lo_precio": 0.019589042358988396,
+   "hi_precio": 2.061115575242627,
+   "p_uni_precio": 0.0221022102210221,
+   "b_inter": -1.1632314032464037,
+   "se_inter": 0.5594136716838304,
+   "lo_inter": -2.2892727209541444,
+   "hi_inter": -0.0371900855386631,
+   "p_uni_inter": 0.026202620262026202,
+   "p_IUT": 0.026202620262026202,
+   "signos_ok": true
+  },
+  "p_IUT": 0.026202620262026202,
+  "signos_ok": true,
+  "subm_signos_ok": false,
+  "subm_n": 5,
+  "subm_IUT_p": [
+   [
+    "S1_sin_Madrid_Barcelona",
+    0.07653826913456728
+   ],
+   [
+    "S2_2009-2013",
+    0.9249624812406203
+   ],
+   [
+    "S3_2014-2023",
+    0.3091545772886443
+   ],
+   [
+    "S4_pre-COVID_2009-2019",
+    0.2066033016508254
+   ],
+   [
+    "S5_sin_COVID_2020-2021",
+    0.09954977488744372
+   ]
+  ],
+  "iv": [
+   {
+    "spec": "IV1_ocup_y_pob2034",
+    "n": 550,
+    "G": 47,
+    "b_precio": 0.7277434682124165,
+    "se_precio": 2.493731376948236,
+    "p_uni_precio": 0.3858646766778065,
+    "b_inter": 0.637783679349581,
+    "se_inter": 1.7137452285386363,
+    "p_uni_inter": 0.6442577928770779,
+    "p_IUT": 0.6442577928770779,
+    "F_precio": 5.900913206946244,
+    "F_inter": 20.750301459510627,
+    "J": 14.256462866837678,
+    "J_gl": 2,
+    "J_p": 0.0008021367660366086
+   },
+   {
+    "spec": "IV2_solo_ocup",
+    "n": 550,
+    "G": 47,
+    "b_precio": 0.7997488502048664,
+    "se_precio": 11.758654209577122,
+    "p_uni_precio": 0.4730347799067829,
+    "b_inter": 4.522236915130741,
+    "se_inter": 4.952298571070377,
+    "p_uni_inter": 0.8170398665092273,
+    "p_IUT": 0.8170398665092273,
+    "F_precio": 2.5386627671151345,
+    "F_inter": 28.517784051868208,
+    "J": NaN,
+    "J_gl": 0,
+    "J_p": NaN
+   },
+   {
+    "spec": "IV3_solo_pob2034",
+    "n": 550,
+    "G": 47,
+    "b_precio": -0.09018375899880096,
+    "se_precio": 2.292844392926804,
+    "p_uni_precio": 0.5156023244946512,
+    "b_inter": -5.72302266208884,
+    "se_inter": 1.6444586421083474,
+    "p_uni_inter": 0.0005541078773823425,
+    "p_IUT": 0.5156023244946512,
+    "F_precio": 10.822841376290235,
+    "F_inter": 28.090483138270052,
+    "J": NaN,
+    "J_gl": 0,
+    "J_p": NaN
+   }
+  ],
+  "placebo_lead_p": 0.1748659555997822,
+  "placebo_lead_b": 0.8962634076590869
+ },
+ "deficit": {
+  "tabla": [
+   {
+    "variante": "EPA corregida, sin protegida",
+    "periodo": "2021Q1-2024Q2",
+    "delta_hogares": 919399.9999999987,
+    "terminadas_libres": 286539.0,
+    "protegida": 0.0,
+    "deficit": 632860.9999999987,
+    "ref": "EPA"
+   },
+   {
+    "variante": "EPA corregida, con protegida (49 prov. + reescalado)",
+    "periodo": "2021Q1-2024Q2",
+    "delta_hogares": 919399.9999999987,
+    "terminadas_libres": 286539.0,
+    "protegida": 34704.22495235233,
+    "deficit": 598156.7750476464,
+    "ref": "EPA"
+   },
+   {
+    "variante": "EPA corregida, con protegida (solo 49 prov., cota inferior)",
+    "periodo": "2021Q1-2024Q2",
+    "delta_hogares": 919399.9999999987,
+    "terminadas_libres": 286539.0,
+    "protegida": 33164.0,
+    "deficit": 599696.9999999987,
+    "ref": "EPA"
+   },
+   {
+    "variante": "ECP, sin protegida",
+    "periodo": "2021Q1-2024Q1",
+    "delta_hogares": 815267.0,
+    "terminadas_libres": 264744.0,
+    "protegida": 0.0,
+    "deficit": 550523.0,
+    "ref": "ECP"
+   },
+   {
+    "variante": "ECP, con protegida (49 prov. + reescalado)",
+    "periodo": "2021Q1-2024Q1",
+    "delta_hogares": 815267.0,
+    "terminadas_libres": 264744.0,
+    "protegida": 32449.46238983744,
+    "deficit": 518073.5376101626,
+    "ref": "ECP"
+   },
+   {
+    "variante": "ECP, con protegida (solo 49 prov., cota inferior)",
+    "periodo": "2021Q1-2024Q1",
+    "delta_hogares": 815267.0,
+    "terminadas_libres": 264744.0,
+    "protegida": 30992.0,
+    "deficit": 519531.0,
+    "ref": "ECP"
+   }
+  ],
+  "prot_escalada_total": 34704.22495235233,
+  "prot_49_total": 33164.0,
+  "prot_trim_medio": 2478.873210882309,
+  "cobertura_media": 0.9548247469716665,
+  "n_trim": 14,
+  "v1_residuo_epa": 116100,
+  "v1_residuo_ecp": 60936,
+  "ilustracion_2021_2025": 49577.46421764618,
+  "tam_hogar_ecp": 2.528527824238253,
+  "prov_top5": [
+   [
+    "43",
+    12.45751436566904
+   ],
+   [
+    "04",
+    12.387925406855969
+   ],
+   [
+    "17",
+    11.387054955212012
+   ],
+   [
+    "12",
+    9.938805154744804
+   ],
+   [
+    "19",
+    9.533649431581235
+   ]
+  ]
+ },
+ "suelo": {
+  "crudo_P1": {
+   "suelo_antic_pos_p05": 0,
+   "precio_antic_pos_p05": 0,
+   "suelo_antic_pos_BH05": 0,
+   "precio_antic_pos_BH05": 0,
+   "n_h": 8,
+   "min_p_suelo": 0.15274065568603457,
+   "min_p_precio": 0.5761320946411638,
+   "coef_suelo_h4": 0.006671568544262689,
+   "coef_precio_h4": -0.19519286879244177
+  },
+  "crudo_P2": {
+   "suelo_antic_pos_p05": 0,
+   "precio_antic_pos_p05": 0,
+   "suelo_antic_pos_BH05": 0,
+   "precio_antic_pos_BH05": 0,
+   "n_h": 8,
+   "min_p_suelo": 0.10422067313525041,
+   "min_p_precio": 0.049920849384254604,
+   "coef_suelo_h4": -0.001507914905497382,
+   "coef_precio_h4": -0.022288853203273732
+  },
+  "crudo_P3": {
+   "suelo_antic_pos_p05": 0,
+   "precio_antic_pos_p05": 0,
+   "suelo_antic_pos_BH05": 0,
+   "precio_antic_pos_BH05": 0,
+   "n_h": 8,
+   "min_p_suelo": 0.40561526327341024,
+   "min_p_precio": 0.3483116816069666,
+   "coef_suelo_h4": 0.0005984188126826672,
+   "coef_precio_h4": -0.3010221121998353
+  },
+  "crudo_P4": {
+   "suelo_antic_pos_p05": 0,
+   "precio_antic_pos_p05": 0,
+   "suelo_antic_pos_BH05": 0,
+   "precio_antic_pos_BH05": 0,
+   "n_h": 8,
+   "min_p_suelo": 0.071747591024736,
+   "min_p_precio": 0.2686951595473019,
+   "coef_suelo_h4": 0.005532747061295253,
+   "coef_precio_h4": 0.97856498768765
+  },
+  "crudo_TODO": {
+   "suelo_antic_pos_p05": 0,
+   "precio_antic_pos_p05": 0,
+   "suelo_antic_pos_BH05": 0,
+   "precio_antic_pos_BH05": 0,
+   "n_h": 8,
+   "min_p_suelo": 0.2531488392121067,
+   "min_p_precio": 0.18837257098667207,
+   "coef_suelo_h4": 0.0025923658627533363,
+   "coef_precio_h4": -0.08407735860940778
+  },
+  "media4T_P1": {
+   "suelo_antic_pos_p05": 0,
+   "precio_antic_pos_p05": 0,
+   "suelo_antic_pos_BH05": 0,
+   "precio_antic_pos_BH05": 0,
+   "n_h": 8,
+   "min_p_suelo": 0.059422088695122284,
+   "min_p_precio": 0.270693851999381,
+   "coef_suelo_h4": 0.012627572306908422,
+   "coef_precio_h4": -0.21437045757612147
+  },
+  "media4T_P2": {
+   "suelo_antic_pos_p05": 0,
+   "precio_antic_pos_p05": 0,
+   "suelo_antic_pos_BH05": 0,
+   "precio_antic_pos_BH05": 0,
+   "n_h": 8,
+   "min_p_suelo": 0.19456640497002922,
+   "min_p_precio": 0.2371770465287933,
+   "coef_suelo_h4": 0.004878555251834413,
+   "coef_precio_h4": 0.04784971576493866
+  },
+  "media4T_P3": {
+   "suelo_antic_pos_p05": 0,
+   "precio_antic_pos_p05": 0,
+   "suelo_antic_pos_BH05": 0,
+   "precio_antic_pos_BH05": 0,
+   "n_h": 8,
+   "min_p_suelo": 0.10367975901145407,
+   "min_p_precio": 0.7825721646871634,
+   "coef_suelo_h4": -0.0037770051520655402,
+   "coef_precio_h4": -0.04207766677484215
+  },
+  "media4T_P4": {
+   "suelo_antic_pos_p05": 3,
+   "precio_antic_pos_p05": 0,
+   "suelo_antic_pos_BH05": 1,
+   "precio_antic_pos_BH05": 0,
+   "n_h": 8,
+   "min_p_suelo": 0.00012926970935213817,
+   "min_p_precio": 0.6962056042306521,
+   "coef_suelo_h4": 0.028683879094522892,
+   "coef_precio_h4": -0.08723024903930912
+  },
+  "media4T_TODO": {
+   "suelo_antic_pos_p05": 0,
+   "precio_antic_pos_p05": 0,
+   "suelo_antic_pos_BH05": 0,
+   "precio_antic_pos_BH05": 0,
+   "n_h": 8,
+   "min_p_suelo": 0.18948488597554675,
+   "min_p_precio": 0.22212637388390696,
+   "coef_suelo_h4": 0.005626520467432117,
+   "coef_precio_h4": -0.11274525218851084
+  }
+ },
+ "ue": {
+  "mg": {
+   "precio": {
+    "ES": 1.907768942965836,
+    "ES_se": 1.2307999950182844,
+    "UE_media": 0.9924096331696567,
+    "UE_mediana": 0.9517646223940047,
+    "UE_se_media": 0.21052937534838917,
+    "n_paises": 26,
+    "rango_ES": 22
+   },
+   "alquiler": {
+    "ES": -6.000963284826559,
+    "ES_se": 2.946825402456762,
+    "UE_media": 2.706598069892797,
+    "UE_mediana": 1.6306079654102894,
+    "UE_se_media": 0.7672918519945768,
+    "n_paises": 27,
+    "rango_ES": 1
+   }
+  },
+  "panel": [
+   {
+    "regresor": "precio",
+    "b_resto": 0.6168980080673166,
+    "se_resto": 0.27705130332548483,
+    "b_ES": 1.6856394151327039,
+    "se_ES": 0.1973718970274175,
+    "dif_ES_menos_resto": 1.0687414070653873,
+    "se_dif": 0.26417488509752357,
+    "p_dif": 0.0003922531538688259,
+    "n": 434,
+    "G": 28
+   },
+   {
+    "regresor": "alquiler",
+    "b_resto": 0.31865417482767455,
+    "se_resto": 0.28455302909337293,
+    "b_ES": -7.044711999731697,
+    "se_ES": 0.6256458845426401,
+    "dif_ES_menos_resto": -7.3633661745593715,
+    "se_dif": 0.5740808855999883,
+    "p_dif": 3.0470277324383396e-13,
+    "n": 518,
+    "G": 29
+   }
+  ],
+  "panel_q": [
+   {
+    "regresor": "precio_trimestral",
+    "b_resto": 0.570757790160854,
+    "se_resto": 0.23594737638031069,
+    "b_ES": 1.2748920723291322,
+    "se_ES": 0.19795855019679331,
+    "dif_ES_menos_resto": 0.7041342821682781,
+    "se_dif": 0.26507930989982137,
+    "p_dif": 0.013318527482441495,
+    "n": 1740,
+    "G": 27
+   }
+  ]
+ },
+ "oos": {
+  "tabla": [
+   {
+    "objetivo": "precio real",
+    "modelo": "P1_ini",
+    "n": 1211,
+    "n_periodos": 26,
+    "rmse": 0.05902444369988153,
+    "mae": 0.04557083022878166,
+    "rmse_AR4": 0.03944871377553504,
+    "dm_vs_AR4": -1.374133130653645,
+    "p_vs_AR4": 0.18159567424811768,
+    "rmse_ECM_v1": 0.06472943891769725,
+    "dm_vs_ECM_v1": 0.30713590868855606,
+    "p_vs_ECM_v1": 0.7612837907879375,
+    "p_BH": 0.25007330141336925
+   },
+   {
+    "objetivo": "precio real",
+    "modelo": "P2_suelo",
+    "n": 1211,
+    "n_periodos": 26,
+    "rmse": 0.04043354920658679,
+    "mae": 0.032777077601718635,
+    "rmse_AR4": 0.03944871377553504,
+    "dm_vs_AR4": -0.5181947860674502,
+    "p_vs_AR4": 0.6088784968628141,
+    "rmse_ECM_v1": 0.06472943891769725,
+    "dm_vs_ECM_v1": 1.7300598063071566,
+    "p_vs_ECM_v1": 0.09594845515454636,
+    "p_BH": 0.6088784968628141
+   },
+   {
+    "objetivo": "precio real",
+    "modelo": "P3_ini_suelo",
+    "n": 1211,
+    "n_periodos": 26,
+    "rmse": 0.05860154554706567,
+    "mae": 0.04532378419100351,
+    "rmse_AR4": 0.03944871377553504,
+    "dm_vs_AR4": -1.3901164555920449,
+    "p_vs_AR4": 0.17674775442224602,
+    "rmse_ECM_v1": 0.06472943891769725,
+    "dm_vs_ECM_v1": 0.3344957547110565,
+    "p_vs_ECM_v1": 0.7407955891609143,
+    "p_BH": 0.25007330141336925
+   },
+   {
+    "objetivo": "precio real",
+    "modelo": "P4_ini_suelo_term",
+    "n": 1211,
+    "n_periodos": 26,
+    "rmse": 0.055372707487497536,
+    "mae": 0.04289737605666803,
+    "rmse_AR4": 0.03944871377553504,
+    "dm_vs_AR4": -1.291352296298447,
+    "p_vs_AR4": 0.20839441784447435,
+    "rmse_ECM_v1": 0.06472943891769725,
+    "dm_vs_ECM_v1": 0.5403464502556571,
+    "p_vs_ECM_v1": 0.5937398140037833,
+    "p_BH": 0.25007330141336925
+   },
+   {
+    "objetivo": "iniciadas (4T)",
+    "modelo": "I1_precio",
+    "n": 1025,
+    "n_periodos": 22,
+    "rmse": 0.50793991583252,
+    "mae": 0.38329801630462584,
+    "rmse_AR4": 0.5262285889325625,
+    "dm_vs_AR4": 2.2906386911719667,
+    "p_vs_AR4": 0.03243140448299192,
+    "rmse_ECM_v1": NaN,
+    "dm_vs_ECM_v1": NaN,
+    "p_vs_ECM_v1": NaN,
+    "p_BH": 0.09729421344897576
+   },
+   {
+    "objetivo": "iniciadas (4T)",
+    "modelo": "I2_precio_suelo",
+    "n": 1025,
+    "n_periodos": 22,
+    "rmse": 0.5063806226076901,
+    "mae": 0.38152075465179836,
+    "rmse_AR4": 0.5262285889325625,
+    "dm_vs_AR4": 2.3918375736295916,
+    "p_vs_AR4": 0.026199502057133728,
+    "rmse_ECM_v1": NaN,
+    "dm_vs_ECM_v1": NaN,
+    "p_vs_ECM_v1": NaN,
+    "p_BH": 0.09729421344897576
+   }
+  ],
+  "primario": "P3_ini_suelo",
+  "n_pres": 6
+ }
+}

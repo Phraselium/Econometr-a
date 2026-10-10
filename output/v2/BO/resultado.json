@@ -1,0 +1,125 @@
+{
+  "rama": "BO",
+  "pregunta": "H4 (confirmatoria): elasticidad de las viviendas iniciadas libres al precio real (+) y mayor con suelo más barato (interacción −); déficit de vivienda; suelo vs precio; elasticidad de permisos UE; fuera de muestra",
+  "datos": "panel_prov_a 2009-2023 (47 provincias de entrenamiento con iniciadas y suelo; iniciadas MIVAU desde 2008); panel_prov_q, nacional_q_v2 (hasta 2024Q2), panel_ue_a/q; sin muestra sellada",
+  "N": 550,
+  "metodo": "MCO con FE provincia y año, EE cluster provincia + wild cluster bootstrap restringido (Webb, B=9999); contraste conjunto por intersección-unión; robustez 2SLS (ocupados, población 20-34); proyecciones locales; panel UE; fuera de muestra en bloques con embargo (DM-HLN)",
+  "estimacion": {
+    "beta_precio": 1.0403523088008075,
+    "beta_interaccion": -1.1632314032464037,
+    "p_uni_precio_boot": 0.0221022102210221,
+    "p_uni_interaccion_boot": 0.026202620262026202,
+    "p_IUT_sin_ajustar": 0.026202620262026202,
+    "signos_ok": true
+  },
+  "ic95": {
+    "beta_precio": [
+      0.019589042358988396,
+      2.061115575242627
+    ],
+    "beta_interaccion": [
+      -2.2892727209541444,
+      -0.0371900855386631
+    ]
+  },
+  "p_ajustado": {
+    "p_IUT_sin_ajustar": 0.026202620262026202,
+    "Holm_7": "lo aplica el orquestador (BS); p_IUT mínimo requerido para sobrevivir si es la menor de las 7: 0,05/7=0,0071",
+    "submuestras_signos_ok": false
+  },
+  "nivel_evidencia": "EXPLORATORIO",
+  "diagnosticos": {
+    "IV": [
+      {
+        "spec": "IV1_ocup_y_pob2034",
+        "n": 550,
+        "G": 47,
+        "b_precio": 0.7277434682124165,
+        "se_precio": 2.493731376948236,
+        "p_uni_precio": 0.3858646766778065,
+        "b_inter": 0.637783679349581,
+        "se_inter": 1.7137452285386363,
+        "p_uni_inter": 0.6442577928770779,
+        "p_IUT": 0.6442577928770779,
+        "F_precio": 5.900913206946244,
+        "F_inter": 20.750301459510627,
+        "J": 14.256462866837678,
+        "J_gl": 2,
+        "J_p": 0.0008021367660366086
+      },
+      {
+        "spec": "IV2_solo_ocup",
+        "n": 550,
+        "G": 47,
+        "b_precio": 0.7997488502048664,
+        "se_precio": 11.758654209577122,
+        "p_uni_precio": 0.4730347799067829,
+        "b_inter": 4.522236915130741,
+        "se_inter": 4.952298571070377,
+        "p_uni_inter": 0.8170398665092273,
+        "p_IUT": 0.8170398665092273,
+        "F_precio": 2.5386627671151345,
+        "F_inter": 28.517784051868208,
+        "J": NaN,
+        "J_gl": 0,
+        "J_p": NaN
+      },
+      {
+        "spec": "IV3_solo_pob2034",
+        "n": 550,
+        "G": 47,
+        "b_precio": -0.09018375899880096,
+        "se_precio": 2.292844392926804,
+        "p_uni_precio": 0.5156023244946512,
+        "b_inter": -5.72302266208884,
+        "se_inter": 1.6444586421083474,
+        "p_uni_inter": 0.0005541078773823425,
+        "p_IUT": 0.5156023244946512,
+        "F_precio": 10.822841376290235,
+        "F_inter": 28.090483138270052,
+        "J": NaN,
+        "J_gl": 0,
+        "J_p": NaN
+      }
+    ],
+    "placebo_precio_futuro": {
+      "coef": 0.8962634076590869,
+      "p": 0.1748659555997822
+    },
+    "submuestras_p_IUT": [
+      [
+        "S1_sin_Madrid_Barcelona",
+        0.07653826913456728
+      ],
+      [
+        "S2_2009-2013",
+        0.9249624812406203
+      ],
+      [
+        "S3_2014-2023",
+        0.3091545772886443
+      ],
+      [
+        "S4_pre-COVID_2009-2019",
+        0.2066033016508254
+      ],
+      [
+        "S5_sin_COVID_2020-2021",
+        0.09954977488744372
+      ]
+    ],
+    "advertencia": "precio endógeno; IV con desplazadores de demanda débil y J rechaza; asociación, no causal"
+  },
+  "fuera_muestra": {
+    "modelo": "P3_ini_suelo",
+    "rmse": 0.05860154554706567,
+    "dm_vs_ar4": -1.3901164555920449,
+    "rmse_AR4": 0.03944871377553504,
+    "p_vs_AR4": 0.17674775442224602,
+    "rmse_ECM_v1": 0.06472943891769725,
+    "dm_vs_ecm_v1": 0.3344957547110565,
+    "p_vs_ecm_v1": 0.7407955891609143,
+    "nota": "precio real h=4; no mejora al AR(4). En iniciadas, AR4+precio mejora al AR4 (ver oos_h4.csv)"
+  },
+  "notas": "Resultados secundarios (déficit, suelo, UE, OOS) EXPLORATORIOS/DESCRIPTIVOS; ver resumen.md y desviaciones.md. Protegida 2021Q1-2024Q2 ≈ 34704 viviendas (reescalada)."
+}

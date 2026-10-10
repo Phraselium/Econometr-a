@@ -1,0 +1,133 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+H4,H4_principal,"d_ln_ini ~ d_ln_pr_l1 + inter | FE(cod_prov,anio) cl=cod_prov",2009,2015,96,,,,,-1.7846230652016504,0.3316582914572864,PRE-REGISTRADA. WCR Webb B=199; precio real = p_tasado/deflactor medio anual | G=14
+H4,R1_precio_nominal,"d_ln_ini ~ d_ln_pn_l1 + inter_n | FE(cod_prov,anio) cl=cod_prov",2009,2015,96,,,,,-1.8364119173504065,0.2864321608040201,robustez/submuestra; WCR Webb B=199 | G=14
+H4,R2_precio_lag2,"d_ln_ini ~ d_ln_pr_l2 + inter_l2 | FE(cod_prov,anio) cl=cod_prov",2010,2015,82,,,,,4.748350649495026,0.07537688442211055,robustez/submuestra; WCR Webb B=199 | G=14
+H4,S1_sin_Madrid_Barcelona,"d_ln_ini ~ d_ln_pr_l1 + inter | FE(cod_prov,anio) cl=cod_prov",2009,2015,89,,,,,-2.0860767346564435,0.32663316582914576,robustez/submuestra; WCR Webb B=199 | G=13
+H4,S2_2009-2013,"d_ln_ini ~ d_ln_pr_l1 + inter | FE(cod_prov,anio) cl=cod_prov",2009,2013,69,,,,,-3.5155985721082765,0.1708542713567839,robustez/submuestra; WCR Webb B=199 | G=14
+H4,S4_pre-COVID_2009-2019,"d_ln_ini ~ d_ln_pr_l1 + inter | FE(cod_prov,anio) cl=cod_prov",2009,2015,96,,,,,-1.7846230652016504,0.3316582914572864,robustez/submuestra; WCR Webb B=199 | G=14
+H4,S5_sin_COVID_2020-2021,"d_ln_ini ~ d_ln_pr_l1 + inter | FE(cod_prov,anio) cl=cod_prov",2009,2015,96,,,,,-1.7846230652016504,0.3316582914572864,robustez/submuestra; WCR Webb B=199 | G=14
+H4,D1_placebo_lead_precio,"d_ln_ini ~ d_ln_pr_l1 + inter + d_ln_pr_f1 + inter_f1 | FE(cod_prov,anio) cl=cod_prov",2009,2014,80,,,,,0.403784510861412,0.8657426597831599,diagnóstico: precio real FUTURO (t+1) como placebo; coeficiente ~0 si no hay anticipación/endogeneidad | G=14
+H4,IV1_ocup_y_pob2034,"2SLS d_ln_ini ~ ['d_ln_pr_l1', 'inter'] | inst=['d_ln_ocup_l1', 'd_ln_pob2034_l1', 'd_ln_ocup_l1_x', 'd_ln_pob2034_l1_x'] | FE(prov,anio) cl=prov",2009,2015,96,,,,,-6.712271302527663,0.31969889234925275,"ROBUSTEZ (no confirmatoria). F1={'d_ln_pr_l1': 6.689854228125692, 'inter': 5.012366987610167}; J={'J': 3.0352612069122022, 'df': 2, 'p': 0.21923071655507542}; G=14"
+H4,IV2_solo_ocup,"2SLS d_ln_ini ~ ['d_ln_pr_l1', 'inter'] | inst=['d_ln_ocup_l1', 'd_ln_ocup_l1_x'] | FE(prov,anio) cl=prov",2009,2015,96,,,,,-10.051130480053956,0.7801550278665716,"ROBUSTEZ (no confirmatoria). F1={'d_ln_pr_l1': 0.43435830618869486, 'inter': 7.644378893384387}; J={'J': nan, 'df': 0, 'p': nan}; G=14"
+H4,IV3_solo_pob2034,"2SLS d_ln_ini ~ ['d_ln_pr_l1', 'inter'] | inst=['d_ln_pob2034_l1', 'd_ln_pob2034_l1_x'] | FE(prov,anio) cl=prov",2009,2015,96,,,,,-5.518396972942135,0.43025435477807694,"ROBUSTEZ (no confirmatoria). F1={'d_ln_pr_l1': 12.615280674867268, 'inter': 12.374627786785659}; J={'J': nan, 'df': 0, 'p': nan}; G=14"
+DEFICIT,D_nacional,Σ(Δhogares − terminadas [− protegida]) 2021Q1-2024Q2,2021Q1,2024Q2,14,,,,,,,DESCRIPTIVO; protegida = calificaciones definitivas VPO (MIVAU) como aprox. de terminadas
+DEFICIT,D_provincial_proxy,Δpob_total/tamaño hogar nacional − terminadas − protegida (2020-2022),2020,2022,49,,,,,,,DESCRIPTIVO; sin hogares provinciales; población 1-ene (padrón)
+SUELO,L_crudo_P1_suelo->precio_h1,"fp1 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2013Q4,327,,,,,0.005658904546970264,0.19636214929513746,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P1_precio->suelo_h1,"fs1 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2013Q4,326,,,,,0.3642723386861949,0.28918416448529666,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P1_suelo->precio_h2,"fp2 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2013Q4,326,,,,,0.010102807825135753,0.30532717924799774,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P1_precio->suelo_h2,"fs2 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2013Q4,325,,,,,0.46061869554842083,0.27865199927708917,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P1_suelo->precio_h3,"fp3 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2013Q4,326,,,,,0.007415554815530637,0.4897009972239831,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P1_precio->suelo_h3,"fs3 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2013Q4,325,,,,,0.16461797655266522,0.679566523476354,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P1_suelo->precio_h4,"fp4 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2013Q4,326,,,,,0.0075786650352183205,0.5112011443469241,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P1_precio->suelo_h4,"fs4 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2013Q4,325,,,,,-0.18828533830205094,0.6016217329221499,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P2_suelo->precio_h1,"fp1 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2014Q1,2015Q3,96,,,,,0.0028993438188709766,0.6373129452984819,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P2_precio->suelo_h1,"fs1 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2014Q1,2015Q3,96,,,,,-1.1283024695177708,0.18161823871515073,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P2_suelo->precio_h2,"fp2 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2014Q1,2015Q2,82,,,,,0.010202964177130446,0.47966320586527145,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P2_precio->suelo_h2,"fs2 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2014Q1,2015Q2,82,,,,,0.031461065165251864,0.9854711142853644,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P2_suelo->precio_h3,"fp3 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2014Q1,2015Q1,68,,,,,0.008908611973017908,0.5678095860559988,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_P2_precio->suelo_h3,"fs3 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2014Q1,2015Q1,68,,,,,-0.1056972196884373,0.9624960069311195,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_TODO_suelo->precio_h1,"fp1 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2015Q3,423,,,,,0.002934481752030664,0.48079293961859343,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_TODO_precio->suelo_h1,"fs1 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2015Q3,422,,,,,0.14612593789474237,0.6268738626571609,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_TODO_suelo->precio_h2,"fp2 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2015Q2,408,,,,,0.006108580567274726,0.5298480604015836,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_TODO_precio->suelo_h2,"fs2 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2015Q2,407,,,,,0.3104486259446193,0.3972313968756218,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_TODO_suelo->precio_h3,"fp3 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2015Q1,394,,,,,0.003664559464321873,0.7362034732218395,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_TODO_precio->suelo_h3,"fs3 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2015Q1,393,,,,,0.10556179945382564,0.7763636657581837,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_TODO_suelo->precio_h4,"fp4 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2014Q4,381,,,,,0.004297655294274827,0.7215657018716286,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_crudo_TODO_precio->suelo_h4,"fs4 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2014Q4,380,,,,,-0.03198513414458209,0.9327981674576582,EXPLORATORIO; proyección local; origen t en el periodo; suelo=crudo | G=14
+SUELO,L_media4T_P1_suelo->precio_h1,"fp1 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2013Q4,322,,,,,0.008607142340296954,0.5264917427612892,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_P1_precio->suelo_h1,"fs1 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2013Q4,321,,,,,0.1536702759151977,0.31378239056712987,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_P1_suelo->precio_h2,"fp2 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2013Q4,321,,,,,0.008705704570607098,0.6893448921567091,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_P1_precio->suelo_h2,"fs2 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2013Q4,319,,,,,0.3405891105185384,0.11046115724571384,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_P1_suelo->precio_h3,"fp3 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2013Q4,321,,,,,0.010061523822148,0.636899936408375,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_P1_precio->suelo_h3,"fs3 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2013Q4,317,,,,,0.3638971669177648,0.16377464397944957,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_P1_suelo->precio_h4,"fp4 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2013Q4,321,,,,,0.013385992885955421,0.5976469456115778,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_P1_precio->suelo_h4,"fs4 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2013Q4,316,,,,,0.2764053053651259,0.41884932488186627,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_P2_suelo->precio_h1,"fp1 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2014Q1,2015Q3,91,,,,,0.012462870511009628,0.5557700234907259,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=13
+SUELO,L_media4T_P2_precio->suelo_h1,"fs1 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2014Q1,2015Q3,91,,,,,-0.3473228257995477,0.22482353833099408,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=13
+SUELO,L_media4T_P2_suelo->precio_h2,"fp2 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2014Q1,2015Q2,78,,,,,0.024458705855120836,0.4839096536626316,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=13
+SUELO,L_media4T_P2_precio->suelo_h2,"fs2 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2014Q1,2015Q2,78,,,,,0.16161161214041486,0.6956070001454872,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=13
+SUELO,L_media4T_P2_suelo->precio_h3,"fp3 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2014Q1,2015Q1,65,,,,,0.01760287117004723,0.5777208937522549,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=13
+SUELO,L_media4T_P2_precio->suelo_h3,"fs3 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2014Q1,2015Q1,65,,,,,0.5520791076938911,0.3811770637381641,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=13
+SUELO,L_media4T_TODO_suelo->precio_h1,"fp1 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2015Q3,413,,,,,0.004308323761847709,0.7537304458910896,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_TODO_precio->suelo_h1,"fs1 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2015Q3,412,,,,,0.11129164116221364,0.3551494743338362,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_TODO_suelo->precio_h2,"fp2 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2015Q2,399,,,,,0.003267304887887281,0.8823918555606367,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_TODO_precio->suelo_h2,"fs2 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2015Q2,397,,,,,0.29455079691788877,0.09903813446361553,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_TODO_suelo->precio_h3,"fp3 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2015Q1,386,,,,,0.0003323160245308568,0.9886731766732734,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_TODO_precio->suelo_h3,"fs3 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2015Q1,382,,,,,0.3215636428149197,0.1961828771442588,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_TODO_suelo->precio_h4,"fp4 ~ d4_s + d4_p | FE(prov,trim) cl=prov",2008Q1,2014Q4,373,,,,,0.001066598269006521,0.9670364563951112,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+SUELO,L_media4T_TODO_precio->suelo_h4,"fs4 ~ d4_p + d4_s | FE(prov,trim) cl=prov",2008Q1,2014Q4,368,,,,,0.2933416245671505,0.40155237380517556,EXPLORATORIO; proyección local; origen t en el periodo; suelo=media4T | G=14
+UE,UE_AT_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2012,2023,12,,,,,0.7811125621245002,0.7682714372927643,EXPLORATORIO; serie corta
+UE,UE_AT_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,3.9463881164307857,7.75010018174616e-05,EXPLORATORIO; serie corta
+UE,UE_BE_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,-0.08275351736720483,0.9149783672233994,EXPLORATORIO; serie corta
+UE,UE_BE_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,1.5447301969181284,0.10039116212266239,EXPLORATORIO; serie corta
+UE,UE_BG_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,0.39463923134753925,0.6700173575733314,EXPLORATORIO; serie corta
+UE,UE_BG_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,-0.7980536366467272,0.768699502400988,EXPLORATORIO; serie corta
+UE,UE_CY_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,2.4108040202669017,0.03579020297123097,EXPLORATORIO; serie corta
+UE,UE_CY_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,3.2697008891370856,0.06608790780210273,EXPLORATORIO; serie corta
+UE,UE_CZ_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2010,2023,14,,,,,0.956288649769762,0.17657091720637474,EXPLORATORIO; serie corta
+UE,UE_CZ_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,-0.9379095176884625,0.3662784368266068,EXPLORATORIO; serie corta
+UE,UE_DE_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,1.38002517789402,0.17159959397022362,EXPLORATORIO; serie corta
+UE,UE_DE_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,5.4630927216253955,3.238777453474018e-07,EXPLORATORIO; serie corta
+UE,UE_DK_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,-0.5750810421328282,0.6788223385592237,EXPLORATORIO; serie corta
+UE,UE_DK_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,12.145584878491942,0.020749981691235667,EXPLORATORIO; serie corta
+UE,UE_EE_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,-0.03740657576337059,0.9429875815473301,EXPLORATORIO; serie corta
+UE,UE_EE_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,0.04171953038146304,0.9392279155288251,EXPLORATORIO; serie corta
+UE,UE_EL_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,-2.245857156157935,0.3594536687124324,EXPLORATORIO; serie corta
+UE,UE_ES_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2008,2023,16,,,,,1.907768942965836,0.14344150900386976,EXPLORATORIO; serie corta
+UE,UE_ES_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,-6.000963284826559,0.05861000536573109,EXPLORATORIO; serie corta
+UE,UE_FI_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,1.1444411152826914,0.6721827484561033,EXPLORATORIO; serie corta
+UE,UE_FI_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,7.959848839181402,1.9345542194427936e-10,EXPLORATORIO; serie corta
+UE,UE_FR_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,-0.4484302439778465,0.6228949037909999,EXPLORATORIO; serie corta
+UE,UE_FR_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,4.627954520939689,0.013809218322233571,EXPLORATORIO; serie corta
+UE,UE_HR_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2010,2023,14,,,,,1.5470236290469523,0.014470387046452626,EXPLORATORIO; serie corta
+UE,UE_HR_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,-0.3349681864079709,0.5226721299989328,EXPLORATORIO; serie corta
+UE,UE_HU_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2009,2023,15,,,,,2.0776832609807965,0.12395744122589825,EXPLORATORIO; serie corta
+UE,UE_HU_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,1.1396791148687424,0.7667122230636502,EXPLORATORIO; serie corta
+UE,UE_IE_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,2.611027018548803,0.0008320539131314327,EXPLORATORIO; serie corta
+UE,UE_IE_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,5.302479679809577,2.5967907711380993e-06,EXPLORATORIO; serie corta
+UE,UE_IT_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2012,2023,12,,,,,3.2172841252846784,0.006800606640217523,EXPLORATORIO; serie corta
+UE,UE_IT_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,0.19562981565410312,0.8689726633566274,EXPLORATORIO; serie corta
+UE,UE_LT_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2008,2023,16,,,,,-0.09913153405489669,0.5680167023967944,EXPLORATORIO; serie corta
+UE,UE_LT_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,-0.1761112075443864,0.8078876140867195,EXPLORATORIO; serie corta
+UE,UE_LU_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2009,2023,15,,,,,0.26985644154301314,0.6997003241538635,EXPLORATORIO; serie corta
+UE,UE_LU_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,2.7900214865252217,0.032556038306515996,EXPLORATORIO; serie corta
+UE,UE_LV_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2008,2023,16,,,,,0.077831954993871,0.8882155362702031,EXPLORATORIO; serie corta
+UE,UE_LV_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,-0.47400039586868986,0.6583992437374454,EXPLORATORIO; serie corta
+UE,UE_MT_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,-0.3698540411286043,0.7731560617689296,EXPLORATORIO; serie corta
+UE,UE_MT_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,-2.72826076025286,0.4585175173078999,EXPLORATORIO; serie corta
+UE,UE_NL_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,0.5328792710720058,0.6588584086896885,EXPLORATORIO; serie corta
+UE,UE_NL_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,3.3945907397107504,0.07710853864645174,EXPLORATORIO; serie corta
+UE,UE_NO_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,1.1128183286463271,0.3197444249197744,EXPLORATORIO; serie corta
+UE,UE_NO_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,4.803685179439756,0.04192698001876183,EXPLORATORIO; serie corta
+UE,UE_PL_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2012,2023,12,,,,,1.431327605995677,0.059679868123006956,EXPLORATORIO; serie corta
+UE,UE_PL_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,4.486642276828439,0.10405578170770112,EXPLORATORIO; serie corta
+UE,UE_PT_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2010,2023,14,,,,,3.2977349446354203,7.85266508138931e-05,EXPLORATORIO; serie corta
+UE,UE_PT_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,2.977261002502938,0.2873538104510926,EXPLORATORIO; serie corta
+UE,UE_RO_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2011,2023,13,,,,,0.6719529586957151,0.034019802140409165,EXPLORATORIO; serie corta
+UE,UE_RO_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,0.2633886922706853,0.4218622207831079,EXPLORATORIO; serie corta
+UE,UE_SE_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2023,17,,,,,1.3519416848963213,0.4919855536725076,EXPLORATORIO; serie corta
+UE,UE_SE_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,14.213835931407353,2.0858065447286075e-09,EXPLORATORIO; serie corta
+UE,UE_SI_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2009,2023,15,,,,,1.201394840792585,0.029483592089271437,EXPLORATORIO; serie corta
+UE,UE_SI_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,1.6306079654102894,0.11600316162204523,EXPLORATORIO; serie corta
+UE,UE_SK_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2008,2023,16,,,,,0.9472405950182474,0.09558774106290582,EXPLORATORIO; serie corta
+UE,UE_SK_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2023,18,,,,,0.5764671701388048,0.769624336375442,EXPLORATORIO; serie corta
+UE,UE_UK_precio,d_ln_permisos_t ~ d_ln_precio_real_(t-1) HAC(1) [anual],2007,2019,13,,,,,-0.6452318571793253,0.351634020106064,EXPLORATORIO; serie corta
+UE,UE_UK_alquiler,d_ln_permisos_t ~ d_ln_alquiler_real_(t-1) HAC(1) [anual],2006,2019,14,,,,,0.5727214789144471,0.7496066294222322,EXPLORATORIO; serie corta
+UE,UE_MG_precio,media entre países (mean-group),,,26,,,,,0.9924096331696567,,EXPLORATORIO
+UE,UE_MG_alquiler,media entre países (mean-group),,,27,,,,,2.706598069892797,,EXPLORATORIO
+UE,UE_panel_precio,"d_ln_permisos ~ d_lh_l×(no ES, ES) | FE(geo,anio) cl=geo",2007,2023,434,,,,,1.6856394151327039,3.734529374204399e-09,EXPLORATORIO; anual | G=28
+UE,UE_panel_alquiler,"d_ln_permisos ~ d_la_l×(no ES, ES) | FE(geo,anio) cl=geo",2006,2023,518,,,,,-7.044711999731697,6.5866136880513616e-12,EXPLORATORIO; anual | G=29
+UE,UE_panel_q_precio,"Δ4 ln permisos ~ Δ4 ln precio real (t-4) ×(no ES, ES) | FE(geo,trim) cl=geo",2007Q1,2024Q2,1740,,,,,1.2748920723291322,7.987125010624154e-07,EXPLORATORIO; trimestral (permisos índice) | G=27
+OOS,OOS_PRESUPUESTO,presupuesto declarado,,,0,,,,,,,n_max=6 configuraciones. 4 de precio real (AR4+oferta/suelo) y 2 de iniciadas; primario: P3
+OOS,P1_ini,y_(t+4)=Δln precio real ~ AR(4)+['ini'],,,0,,,,,,,"objetivo precio real, h=4 | config={""ini"": true}"
+OOS,P2_suelo,y_(t+4)=Δln precio real ~ AR(4)+['suelo'],,,0,,,,,,,"objetivo precio real, h=4 | config={""suelo"": true}"
+OOS,P3_ini_suelo,"y_(t+4)=Δln precio real ~ AR(4)+['ini', 'suelo']",,,0,,,,,,,"objetivo precio real, h=4 | config={""ini"": true, ""suelo"": true}"
+OOS,P4_ini_suelo_term,"y_(t+4)=Δln precio real ~ AR(4)+['ini', 'suelo', 'term']",,,0,,,,,,,"objetivo precio real, h=4 | config={""ini"": true, ""suelo"": true, ""term"": true}"
+OOS,I1_precio,y_(t+4)=Δln iniciadas(4T) ~ AR(4)+['precio'],,,0,,,,,,,"objetivo iniciadas, h=4; sin ECM v1 | config={""precio"": true}"
+OOS,I2_precio_suelo,"y_(t+4)=Δln iniciadas(4T) ~ AR(4)+['precio', 'suelo']",,,0,,,,,,,"objetivo iniciadas, h=4; sin ECM v1 | config={""precio"": true, ""suelo"": true}"
+OOS,OOS_P1_ini,h=4 precio real vs AR4 (y ECM v1 si precio),2011Q1,2024Q2,108,,,,0.0837486606688646,,2.8055948122557348e-05,DM-HLN vs AR4=-9.596; rmse AR4=0.05230
+OOS,OOS_P2_suelo,h=4 precio real vs AR4 (y ECM v1 si precio),2011Q1,2024Q2,108,,,,0.057583757087328984,,0.47999485413865384,DM-HLN vs AR4=-0.746; rmse AR4=0.05230
+OOS,OOS_P3_ini_suelo,h=4 precio real vs AR4 (y ECM v1 si precio),2011Q1,2024Q2,108,,,,0.08342901497510058,,3.3922474664716866e-05,DM-HLN vs AR4=-9.322; rmse AR4=0.05230
+OOS,OOS_P4_ini_suelo_term,h=4 precio real vs AR4 (y ECM v1 si precio),2011Q1,2024Q2,108,,,,0.08007082388489122,,0.005746598841176198,DM-HLN vs AR4=-3.920; rmse AR4=0.05230
+OOS,OOS_I1_precio,h=4 iniciadas (4T) vs AR4 (y ECM v1 si precio),2011Q1,2024Q2,109,,,,0.8152307519433316,,0.9576785348096544,DM-HLN vs AR4=-0.055; rmse AR4=0.81427
+OOS,OOS_I2_precio_suelo,h=4 iniciadas (4T) vs AR4 (y ECM v1 si precio),2011Q1,2024Q2,109,,,,0.82023270015887,,0.6598903039506617,DM-HLN vs AR4=-0.459; rmse AR4=0.81427

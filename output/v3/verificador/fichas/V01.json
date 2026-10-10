@@ -8,7 +8,7 @@
  "cota": "C2 (cantidad): ≤2,7 % del stock de alquiler. C4 (precio, condicionado a ε): ≤8,3 % con |ε_d|=0,33 y ≤2,7 % con |ε_d|=1",
  "literatura": "García-López et al. (2020), JUE, VERIFICADA, Q1, Barcelona 2012-2016: réplica conceptual 2021-2024 NO REPLICADO (T = 0,0121 log-p por pp; propia -0,0042). MESVAL-UV (2022), NO VERIFICADA (sin DOI): NO REPLICABLE (datos propietarios).",
  "veredicto": "SIN EVIDENCIA SUFICIENTE",
- "regla": "Regla común (i)-(iv): «causa principal» exige ≥50 % de la subida. Solo hay cota C2 de cantidad (desplazamiento pequeño frente al stock; una cuarta parte de la subida municipal ocurre donde las VUT apenas crecieron), que no atribuye precio; sin cota C2/C3 de precio, SIN EVIDENCIA SUFICIENTE. H3-1 y H3-2 quedaron en C4 (fallan adelanto, placebos, sensibilidad y sellado): sus estimaciones, pequeñas y con IC que incluye 0, no se promueven de capa.",
+ "regla": "Regla común (i)-(iv): «causa principal» exige ≥50 % de la subida. Solo hay cota C2 de cantidad (desplazamiento pequeño frente al stock; una cuarta parte de la subida municipal ocurre donde las VUT apenas crecieron), que no atribuye precio; sin cota C2/C3 de precio, SIN EVIDENCIA SUFICIENTE. H3-1 y H3-2 quedaron en C4 (fallan adelanto, sensibilidad y sellado; el placebo de tratamiento pasa): sus estimaciones, pequeñas y con IC que incluye 0, no se promueven de capa.",
  "limites": "Las VUT del INE no son todos los alquileres de temporada; el efecto local en barrios concretos puede ser mayor que el nacional (ver cotas por ciudad en output/v3/PB); SERPAVI es un stock que amortigua.",
  "evidencia": [
   "output/v3/PB/cotas.json#B1",

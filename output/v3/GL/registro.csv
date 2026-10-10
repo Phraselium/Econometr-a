@@ -12,6 +12,6 @@ GL,EXT_Sevilla_seccion_vut100viv,"lnalq ~ vut100 | FE unidad+año, cluster distr
 GL,EXT_Sevilla_seccion_vut_cien,"lnalq ~ vut_cien | FE unidad+año, cluster distrito",2021,2024,1408,,,,,-0.02393480884949667,0.015468516046609726,seccion; log-puntos por 100 VUT; NO CLASIFICADA (informativa)
 GL,EXT_Málaga_seccion_vut100viv,"lnalq ~ vut100 | FE unidad+año, cluster distrito",2021,2024,916,,,,,0.0017446900671220181,0.47761659931295813,seccion; log-puntos por 1 pp; NO REPLICADO
 GL,EXT_Málaga_seccion_vut_cien,"lnalq ~ vut_cien | FE unidad+año, cluster distrito",2021,2024,916,,,,,0.008434901391465499,0.5783675545128779,seccion; log-puntos por 100 VUT; NO CLASIFICADA (informativa)
-GL,EXT_Espana_seccion_vut100viv,"lnalq ~ vut100 | FE unidad+año, cluster distrito",2021,2024,70628,,,,,0.001129033230568214,0.1126622975437661,seccion; log-puntos por 1 pp; NO REPLICADO
-GL,EXT_Espana_seccion_vut_cien,"lnalq ~ vut_cien | FE unidad+año, cluster distrito",2021,2024,70628,,,,,0.0052596779702845375,0.1326227323798484,seccion; log-puntos por 100 VUT; NO CLASIFICADA (informativa)
+GL,EXT_Espana_seccion_vut100viv,"lnalq ~ vut100 | FE unidad+año, cluster distrito",2021,2024,70628,,,,,0.0011290332305682188,0.11266229754376604,seccion; log-puntos por 1 pp; NO REPLICADO
+GL,EXT_Espana_seccion_vut_cien,"lnalq ~ vut_cien | FE unidad+año, cluster distrito",2021,2024,70628,,,,,0.005259677970284537,0.13262273237984812,seccion; log-puntos por 100 VUT; NO CLASIFICADA (informativa)
 GL,GL_pretend_lead,lnalq ~ vut100+lead,2021,2023,2445,,,,,0.000370791197879277,0.7060677840533012,pretendencias

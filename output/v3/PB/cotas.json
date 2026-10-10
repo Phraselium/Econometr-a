@@ -1691,9 +1691,9 @@
   "no_explica": 0.0,
   "sensibilidad_min": 23.5147,
   "sensibilidad_max": 109.5942,
-  "capa": "C2",
-  "limites": "uc = tipo hipotecario nominal (media anual, BdE) + depreciación + IBI - ganancia esperada, estado estacionario P/R = 1/uc; sin impuestos ni deducciones, sin racionamiento de crédito, expectativas fijas; combinaciones con uc < 1 % se excluyen (1/uc sin cota). Los tipos no actúan directamente sobre el alquiler. La conclusión «no explica» depende del tipo nominal y de una ganancia esperada constante entre años; con tipo real casi todas las combinaciones quedan indefinidas. Sensibilidad: suelo de uc 0,5-2 %.",
-  "frase": "como máximo 78.0102 % de precio de compra (Δ ln(1/uc)) puede atribuirse a la variación del coste de uso bajo el supuesto combinación dep=1.0, ganancia=2.0, ibi=0.75 (maximiza Δln(1/uc); uc0=2.68, uc1=1.23). Dependencia del suelo de uc (1/uc sin cota finita si uc→0): con suelo 1 % la cota es 78.0; suelo uc=0.5%: máx 109.6; suelo uc=1.0%: máx 78.0; suelo uc=2.0%: máx 50.2"
+  "capa": "C4",
+  "limites": "uc = tipo hipotecario nominal (media anual, BdE) + depreciación + IBI - ganancia esperada, estado estacionario P/R = 1/uc; sin impuestos ni deducciones, sin racionamiento de crédito, expectativas fijas; combinaciones con uc < 1 % se excluyen (1/uc sin cota). Los tipos no actúan directamente sobre el alquiler. La conclusión «no explica» depende del tipo nominal y de una ganancia esperada constante entre años; con tipo real casi todas las combinaciones quedan indefinidas. Sensibilidad: suelo de uc 0,5-2 %. Capa C4: la traducción a precio descansa en el supuesto estructural P/R = 1/uc, con el mismo estándar que la vía ε de B1 y B2 (revisión oleada 2, R4).",
+  "frase": "CONDICIONAL (C4): si |ε_d| = 0.33, entonces el efecto es ≤ 78.0102 % de precio de compra (Δ ln(1/uc)); ver tabla «si |ε_d| = x, entonces ≤ y». Supuesto: combinación dep=1.0, ganancia=2.0, ibi=0.75 (maximiza Δln(1/uc); uc0=2.68, uc1=1.23). Dependencia del suelo de uc (1/uc sin cota finita si uc→0): con suelo 1 % la cota es 78.0; suelo uc=0.5%: máx 109.6; suelo uc=1.0%: máx 78.0; suelo uc=2.0%: máx 50.2"
  },
  {
   "id": "B4-nac-alquiler-2014-2021",
@@ -1723,9 +1723,9 @@
   "no_explica": 100.0,
   "sensibilidad_min": -99.7686,
   "sensibilidad_max": -20.5251,
-  "capa": "C2",
-  "limites": "uc = tipo hipotecario nominal (media anual, BdE) + depreciación + IBI - ganancia esperada, estado estacionario P/R = 1/uc; sin impuestos ni deducciones, sin racionamiento de crédito, expectativas fijas; combinaciones con uc < 1 % se excluyen (1/uc sin cota). Los tipos no actúan directamente sobre el alquiler. La conclusión «no explica» depende del tipo nominal y de una ganancia esperada constante entre años; con tipo real casi todas las combinaciones quedan indefinidas. Sensibilidad: suelo de uc 0,5-2 %.",
-  "frase": "como máximo -20.5251 % de precio de compra (Δ ln(1/uc)) puede atribuirse a la variación del coste de uso bajo el supuesto combinación dep=3.0, ganancia=0.0, ibi=1.0 (maximiza Δln(1/uc); uc0=5.48, uc1=6.73); SIGNO CONTRARIO al del precio observado: la cota superior es negativa. Dependencia del suelo de uc (1/uc sin cota finita si uc→0): con suelo 1 % la cota es -20.5; suelo uc=0.5%: máx -20.5; suelo uc=1.0%: máx -20.5; suelo uc=2.0%: máx -20.5"
+  "capa": "C4",
+  "limites": "uc = tipo hipotecario nominal (media anual, BdE) + depreciación + IBI - ganancia esperada, estado estacionario P/R = 1/uc; sin impuestos ni deducciones, sin racionamiento de crédito, expectativas fijas; combinaciones con uc < 1 % se excluyen (1/uc sin cota). Los tipos no actúan directamente sobre el alquiler. La conclusión «no explica» depende del tipo nominal y de una ganancia esperada constante entre años; con tipo real casi todas las combinaciones quedan indefinidas. Sensibilidad: suelo de uc 0,5-2 %. Capa C4: la traducción a precio descansa en el supuesto estructural P/R = 1/uc, con el mismo estándar que la vía ε de B1 y B2 (revisión oleada 2, R4).",
+  "frase": "CONDICIONAL (C4): si |ε_d| = 0.33, entonces el efecto es ≤ -20.5251 % de precio de compra (Δ ln(1/uc)); ver tabla «si |ε_d| = x, entonces ≤ y». Supuesto: combinación dep=3.0, ganancia=0.0, ibi=1.0 (maximiza Δln(1/uc); uc0=5.48, uc1=6.73); SIGNO CONTRARIO al del precio observado: la cota superior es negativa. Dependencia del suelo de uc (1/uc sin cota finita si uc→0): con suelo 1 % la cota es -20.5; suelo uc=0.5%: máx -20.5; suelo uc=1.0%: máx -20.5; suelo uc=2.0%: máx -20.5"
  },
  {
   "id": "B4-nac-alquiler-2021-2025",
@@ -1755,9 +1755,9 @@
   "no_explica": null,
   "sensibilidad_min": 27.1166,
   "sensibilidad_max": 91.9545,
-  "capa": "C2",
-  "limites": "uc = tipo hipotecario nominal (media anual, BdE) + depreciación + IBI - ganancia esperada, estado estacionario P/R = 1/uc; sin impuestos ni deducciones, sin racionamiento de crédito, expectativas fijas; combinaciones con uc < 1 % se excluyen (1/uc sin cota). Los tipos no actúan directamente sobre el alquiler. La conclusión «no explica» depende del tipo nominal y de una ganancia esperada constante entre años; con tipo real casi todas las combinaciones quedan indefinidas. Sensibilidad: suelo de uc 0,5-2 %.",
-  "frase": "como máximo 91.9545 % de precio de compra (Δ ln(1/uc)) puede atribuirse a la variación del coste de uso bajo el supuesto combinación dep=1.0, ganancia=3.0, ibi=0.5 (maximiza Δln(1/uc); uc0=3.59, uc1=1.43); SIGNO CONTRARIO: los tipos bajan y el precio cae. Dependencia del suelo de uc (1/uc sin cota finita si uc→0): con suelo 1 % la cota es 92.0; suelo uc=0.5%: máx 92.0; suelo uc=1.0%: máx 92.0; suelo uc=2.0%: máx 68.8"
+  "capa": "C4",
+  "limites": "uc = tipo hipotecario nominal (media anual, BdE) + depreciación + IBI - ganancia esperada, estado estacionario P/R = 1/uc; sin impuestos ni deducciones, sin racionamiento de crédito, expectativas fijas; combinaciones con uc < 1 % se excluyen (1/uc sin cota). Los tipos no actúan directamente sobre el alquiler. La conclusión «no explica» depende del tipo nominal y de una ganancia esperada constante entre años; con tipo real casi todas las combinaciones quedan indefinidas. Sensibilidad: suelo de uc 0,5-2 %. Capa C4: la traducción a precio descansa en el supuesto estructural P/R = 1/uc, con el mismo estándar que la vía ε de B1 y B2 (revisión oleada 2, R4).",
+  "frase": "CONDICIONAL (C4): si |ε_d| = 0.33, entonces el efecto es ≤ 91.9545 % de precio de compra (Δ ln(1/uc)); ver tabla «si |ε_d| = x, entonces ≤ y». Supuesto: combinación dep=1.0, ganancia=3.0, ibi=0.5 (maximiza Δln(1/uc); uc0=3.59, uc1=1.43); SIGNO CONTRARIO: los tipos bajan y el precio cae. Dependencia del suelo de uc (1/uc sin cota finita si uc→0): con suelo 1 % la cota es 92.0; suelo uc=0.5%: máx 92.0; suelo uc=1.0%: máx 92.0; suelo uc=2.0%: máx 68.8"
  },
  {
   "id": "B4-nac-alquiler-2007-2014",

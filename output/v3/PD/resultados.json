@@ -235,8 +235,8 @@
   "unidad": "%",
   "signo_estable_en_la_rejilla": "no",
   "domina_debilmente": "no",
-  "depende_de": "efecto ≤ 0 en toda la rejilla y nulo si s = 0 en la vía de cantidad (domina débilmente); magnitud depende de s, ε, η y del método",
-  "capa": "C2",
+  "depende_de": "signo no estable: con H3-1 sellado (C4) el rango incluye valores > 0; depende de s, ε, η y del método",
+  "capa": "C4",
   "limites": "Solo seis ciudades; ponderación nacional por el stock de alquiler; sin costes ni variación del sector turístico."
  },
  {

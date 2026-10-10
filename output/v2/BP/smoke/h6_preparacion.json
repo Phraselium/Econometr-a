@@ -1,0 +1,42 @@
+{
+  "nota": "Preparación con datos <= 2023Q4. No se estima ningún efecto de H6.",
+  "n_donantes": 10,
+  "donantes": [
+    "03",
+    "06",
+    "09",
+    "13",
+    "18",
+    "21",
+    "27",
+    "37",
+    "39",
+    "47"
+  ],
+  "excluidos_ex_ante": [
+    "01",
+    "20",
+    "48",
+    "31",
+    "15"
+  ],
+  "pre_nivel": [
+    "2016Q1",
+    "2023Q4",
+    26
+  ],
+  "excluidos_del_ajuste": "2020Q4-2022Q1 (tope catalán) y 2024Q1-2024Q2 (140 municipios tratados desde 2024-03-16)",
+  "ajuste_prueba_pesos": {
+    "pre_ajuste": 18,
+    "rmse_brecha_centrada": 0.005212616139071478,
+    "peso_max": 0.3886475518993429,
+    "n_pesos_gt_1pct": 5
+  },
+  "potencia": {
+    "ventana_pseudo_post": "2022Q3-2023Q4",
+    "sd_efecto_placebo": 0.006646363598927404,
+    "mde_aprox_80pct_dos_colas": 0.01860981807699673,
+    "B": 50,
+    "lectura": "orden de magnitud del efecto mínimo detectable en ln puntos de IPC de alquiler (8 trim. reales serán algo menos ruidosos o similares)"
+  }
+}

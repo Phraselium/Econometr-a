@@ -1,0 +1,47 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+H5,H5_sdid_ln_ipc_alquiler_post1_2020Q4_2022Q1,ln_ipc_alquiler ~ sdid(tratada x post),2016Q1,2022Q1,1225,,,,,0.003706725840213625,0.06493506493506493,EXPLORATORIO/CONFIRMATORIA; se_placebo=0.0020073; B=1000
+H5,H5_sc_ln_ipc_alquiler_post1_2020Q4_2022Q1,ln_ipc_alquiler ~ sc(tratada x post),2016Q1,2022Q1,1225,,,,,0.004801742720145589,0.06493506493506493,EXPLORATORIO/CONFIRMATORIA; se_placebo=0.0025693; B=1000
+H5,H5_did_ln_ipc_alquiler_post1_2020Q4_2022Q1,ln_ipc_alquiler ~ did(tratada x post),2016Q1,2022Q1,1225,,,,,0.01907466073140794,0.000999000999000999,EXPLORATORIO/CONFIRMATORIA; se_placebo=0.0055588; B=1000
+H5,H5_sdid_ln_ipc_alquiler_post2_2022Q2_2023Q4,ln_ipc_alquiler ~ sdid(tratada x post),2016Q1,2023Q4,1274,,,,,0.0055434151384835305,0.35764235764235763,EXPLORATORIO/CONFIRMATORIA; se_placebo=0.0058593; B=1000
+H5,H5_sc_ln_ipc_alquiler_post2_2022Q2_2023Q4,ln_ipc_alquiler ~ sc(tratada x post),2016Q1,2023Q4,1274,,,,,0.005944835482054219,0.34665334665334663,EXPLORATORIO/CONFIRMATORIA; se_placebo=0.0063727; B=1000
+H5,H5_did_ln_ipc_alquiler_post2_2022Q2_2023Q4,ln_ipc_alquiler ~ did(tratada x post),2016Q1,2023Q4,1274,,,,,0.025041811589428,0.007992007992007992,EXPLORATORIO/CONFIRMATORIA; se_placebo=0.0091784; B=1000
+H5,H5_sdid_d4_ln_ipc_alquiler_post1_2020Q4_2022Q1,d4_ln_ipc_alquiler ~ sdid(tratada x post),2016Q1,2022Q1,1225,,,,,0.0005614254945009913,0.7722277722277723,EXPLORATORIO/CONFIRMATORIA; se_placebo=0.0019976; B=1000
+H5,H5_sc_d4_ln_ipc_alquiler_post1_2020Q4_2022Q1,d4_ln_ipc_alquiler ~ sc(tratada x post),2016Q1,2022Q1,1225,,,,,0.002687634450023551,0.2007992007992008,EXPLORATORIO/CONFIRMATORIA; se_placebo=0.0021142; B=1000
+H5,H5_did_d4_ln_ipc_alquiler_post1_2020Q4_2022Q1,d4_ln_ipc_alquiler ~ did(tratada x post),2016Q1,2022Q1,1225,,,,,0.0009178123652828713,0.6993006993006993,EXPLORATORIO/CONFIRMATORIA; se_placebo=0.0023414; B=1000
+H5,H5_sdid_d4_ln_ipc_alquiler_post2_2022Q2_2023Q4,d4_ln_ipc_alquiler ~ sdid(tratada x post),2016Q1,2023Q4,1274,,,,,-0.0012008626894266074,0.6973026973026973,EXPLORATORIO/CONFIRMATORIA; se_placebo=0.0029815; B=1000
+H5,H5_sc_d4_ln_ipc_alquiler_post2_2022Q2_2023Q4,d4_ln_ipc_alquiler ~ sc(tratada x post),2016Q1,2023Q4,1274,,,,,0.0018112226321005279,0.5874125874125874,EXPLORATORIO/CONFIRMATORIA; se_placebo=0.0032771; B=1000
+H5,H5_did_d4_ln_ipc_alquiler_post2_2022Q2_2023Q4,d4_ln_ipc_alquiler ~ did(tratada x post),2016Q1,2023Q4,1274,,,,,-0.0004179176788248087,0.8621378621378621,EXPLORATORIO/CONFIRMATORIA; se_placebo=0.0026858; B=1000
+H5,H5_did_FE_cluster_ln_ipc_alquiler_post1_2020Q4_2022Q1,ln_ipc_alquiler ~ D + FE prov + FE trim (cluster prov),2016Q1,2022Q1,1225,,,,,0.019074660731414502,0.004688529525973068,p analítico t(G-1) con solo 4 tratadas: poco fiable; usar p de permutación
+H5,H5_did_FE_cluster_ln_ipc_alquiler_post2_2022Q2_2023Q4,ln_ipc_alquiler ~ D + FE prov + FE trim (cluster prov),2016Q1,2023Q4,1274,,,,,0.02504181158941543,0.03357242096969772,p analítico t(G-1) con solo 4 tratadas: poco fiable; usar p de permutación
+H5,H5_did_FE_cluster_d4_ln_ipc_alquiler_post1_2020Q4_2022Q1,d4_ln_ipc_alquiler ~ D + FE prov + FE trim (cluster prov),2016Q1,2022Q1,1225,,,,,0.0009178123652829491,0.7496375159999592,p analítico t(G-1) con solo 4 tratadas: poco fiable; usar p de permutación
+H5,H5_did_FE_cluster_d4_ln_ipc_alquiler_post2_2022Q2_2023Q4,d4_ln_ipc_alquiler ~ D + FE prov + FE trim (cluster prov),2016Q1,2023Q4,1274,,,,,-0.00041791767882485154,0.8491858377426809,p analítico t(G-1) con solo 4 tratadas: poco fiable; usar p de permutación
+H5,H5_pretendencias_sdid_ln_ipc_alquiler,event study 2016Q1-2020Q3 (brecha centrada en media pre),2016Q1,2020Q3,19,,,,,0.00030897189171997776,0.03996003996003996,p_rms=0.1409; permutación B=1000
+H5,H5_pretendencias_did_ln_ipc_alquiler,event study 2016Q1-2020Q3 (brecha centrada en media pre),2016Q1,2020Q3,19,,,,,0.005322527534880002,0.00999000999000999,p_rms=0.0100; permutación B=1000
+H5,H5_pretendencias_sdid_d4_ln_ipc_alquiler,event study 2016Q1-2020Q3 (brecha centrada en media pre),2016Q1,2020Q3,19,,,,,0.0007826670146282045,0.02197802197802198,p_rms=0.1798; permutación B=1000
+H5,H5_pretendencias_did_d4_ln_ipc_alquiler,event study 2016Q1-2020Q3 (brecha centrada en media pre),2016Q1,2020Q3,19,,,,,0.002376433991934456,0.011988011988011988,p_rms=0.0999; permutación B=1000
+H5,H5_placebo_tiempo_sdid_ln_ipc_alquiler,ln_ipc_alquiler: fecha falsa 2018Q4,2016Q1,2020Q3,931,,,,,0.007751433640361461,0.008991008991008992,placebo en el tiempo (debe ser nulo)
+H5,H5_placebo_tiempo_sc_ln_ipc_alquiler,ln_ipc_alquiler: fecha falsa 2018Q4,2016Q1,2020Q3,931,,,,,0.009619488398338927,0.002997002997002997,placebo en el tiempo (debe ser nulo)
+H5,H5_placebo_tiempo_did_ln_ipc_alquiler,ln_ipc_alquiler: fecha falsa 2018Q4,2016Q1,2020Q3,931,,,,,0.013870163854652642,0.01098901098901099,placebo en el tiempo (debe ser nulo)
+H5,H5_placebo_tiempo_sdid_d4_ln_ipc_alquiler,d4_ln_ipc_alquiler: fecha falsa 2018Q4,2016Q1,2020Q3,931,,,,,0.005451174173435462,0.004995004995004995,placebo en el tiempo (debe ser nulo)
+H5,H5_placebo_tiempo_sc_d4_ln_ipc_alquiler,d4_ln_ipc_alquiler: fecha falsa 2018Q4,2016Q1,2020Q3,931,,,,,0.005958025004554456,0.015984015984015984,placebo en el tiempo (debe ser nulo)
+H5,H5_placebo_tiempo_did_d4_ln_ipc_alquiler,d4_ln_ipc_alquiler: fecha falsa 2018Q4,2016Q1,2020Q3,931,,,,,0.006466717324041449,0.00999000999000999,placebo en el tiempo (debe ser nulo)
+H5,H5_prov_08_ln_ipc_alquiler_post1_2020Q4_2022Q1,"ln_ipc_alquiler: SDiD, tratada 08 sola",2016Q1,2022Q1,1225,,,,,-0.0013718433343696814,0.7391304347826086,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_17_ln_ipc_alquiler_post1_2020Q4_2022Q1,"ln_ipc_alquiler: SDiD, tratada 17 sola",2016Q1,2022Q1,1225,,,,,0.006261273219987679,0.1956521739130435,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_25_ln_ipc_alquiler_post1_2020Q4_2022Q1,"ln_ipc_alquiler: SDiD, tratada 25 sola",2016Q1,2022Q1,1225,,,,,0.006248610264155463,0.1956521739130435,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_43_ln_ipc_alquiler_post1_2020Q4_2022Q1,"ln_ipc_alquiler: SDiD, tratada 43 sola",2016Q1,2022Q1,1225,,,,,0.007625604496776184,0.10869565217391304,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_08_ln_ipc_alquiler_post2_2022Q2_2023Q4,"ln_ipc_alquiler: SDiD, tratada 08 sola",2016Q1,2023Q4,1274,,,,,-0.008760109443946647,0.5652173913043478,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_17_ln_ipc_alquiler_post2_2022Q2_2023Q4,"ln_ipc_alquiler: SDiD, tratada 17 sola",2016Q1,2023Q4,1274,,,,,0.02697691379202618,0.043478260869565216,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_25_ln_ipc_alquiler_post2_2022Q2_2023Q4,"ln_ipc_alquiler: SDiD, tratada 25 sola",2016Q1,2023Q4,1274,,,,,0.009416242662915714,0.5434782608695652,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_43_ln_ipc_alquiler_post2_2022Q2_2023Q4,"ln_ipc_alquiler: SDiD, tratada 43 sola",2016Q1,2023Q4,1274,,,,,0.009673064521752522,0.5,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_08_d4_ln_ipc_alquiler_post1_2020Q4_2022Q1,"d4_ln_ipc_alquiler: SDiD, tratada 08 sola",2016Q1,2022Q1,1225,,,,,-0.00440291566939203,0.2608695652173913,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_17_d4_ln_ipc_alquiler_post1_2020Q4_2022Q1,"d4_ln_ipc_alquiler: SDiD, tratada 17 sola",2016Q1,2022Q1,1225,,,,,-0.0012104926752280571,0.6739130434782609,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_25_d4_ln_ipc_alquiler_post1_2020Q4_2022Q1,"d4_ln_ipc_alquiler: SDiD, tratada 25 sola",2016Q1,2022Q1,1225,,,,,0.003972775961648031,0.30434782608695654,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_43_d4_ln_ipc_alquiler_post1_2020Q4_2022Q1,"d4_ln_ipc_alquiler: SDiD, tratada 43 sola",2016Q1,2022Q1,1225,,,,,0.0050334148360608325,0.21739130434782608,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_08_d4_ln_ipc_alquiler_post2_2022Q2_2023Q4,"d4_ln_ipc_alquiler: SDiD, tratada 08 sola",2016Q1,2023Q4,1274,,,,,-0.007012543158154773,0.17391304347826086,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_17_d4_ln_ipc_alquiler_post2_2022Q2_2023Q4,"d4_ln_ipc_alquiler: SDiD, tratada 17 sola",2016Q1,2023Q4,1274,,,,,0.003577138034277772,0.5217391304347826,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_25_d4_ln_ipc_alquiler_post2_2022Q2_2023Q4,"d4_ln_ipc_alquiler: SDiD, tratada 25 sola",2016Q1,2023Q4,1274,,,,,0.0002494659523749016,0.9347826086956522,exploratorio; permutación exacta (45 donantes)
+H5,H5_prov_43_d4_ln_ipc_alquiler_post2_2022Q2_2023Q4,"d4_ln_ipc_alquiler: SDiD, tratada 43 sola",2016Q1,2023Q4,1274,,,,,0.00038380991397592265,0.9130434782608695,exploratorio; permutación exacta (45 donantes)
+H5,H5_diag_ajuste_vs_AR4,RMSE sintético vs AR(4) de panel,2016Q1,2020Q3,8,,,,,0.006258719899834902,0.5014322430520348,rmse_AR4=0.0043444; diagnóstico
+BP,EXPL_RDL_7/2019_(,"media Δ4 ln IPC alquiler nacional, post - pre",2017Q1-2018Q4,2019Q2-2020Q1,0,,,,,0.006456276749999934,,DESCRIPTIVO; sin inferencia
+BP,EXPL_Ley_12/2023_,"media Δ4 ln IPC alquiler nacional, post - pre",2021Q3-2022Q4,2023Q3-2024Q2,0,,,,,0.009954995750000029,,DESCRIPTIVO; sin inferencia
+BP,H6_preparacion,ajuste de pesos con datos <=2023Q4 (sin efecto: la ventana de efecto es sellada),2016Q1,2023Q4,40,,,,,,,solo preparación; no se evalúa ningún efecto

@@ -446,3 +446,16 @@ Método: DOI consultado en api.crossref.org/works/<DOI> (2026-10-10). Scimago (s
 ## Anexo v2-D (añadido por el orquestador, 2026-10-10)
 
 - Jofre-Monseny, J., Martínez-Mazza, R. y Segú, M. (2023). Effectiveness and supply effects of high-coverage rent control policies. *Regional Science and Urban Economics*, 101, 103916. DOI 10.1016/j.regsciurbeco.2023.103916. **VERIFICADA** (Crossref: título, autores, revista, volumen y número de artículo comprobados) · cuartil no verificado. Uso: evalúa el control de alquileres de Cataluña (Ley 11/2020); relevante para H5/H6 porque el IPC de alquiler del INE mide todos los contratos vigentes y el tope afecta sobre todo a los nuevos (potencia baja de nuestras pruebas).
+
+## Anexo v3 (2026-10-10): referencias nuevas verificadas
+
+Detalle, cuartiles y protocolos en docs/v3/literatura_v3.md. Una línea por referencia (DOI comprobado en Crossref 2026-10-10).
+
+- Manski, C. F. (2003). *Partial Identification of Probability Distributions*. Springer. DOI 10.1007/b97478. VERIFICADA (el registro de Crossref no lista autor) · no aplica cuartil (libro).
+- Oster, E. (2019). Unobservable selection and coefficient stability: Theory and evidence. *JBES* 37(2), 187-204. DOI 10.1080/07350015.2016.1227711. VERIFICADA · Q1 (agregador; año no comprobado).
+- Cinelli, C. y Hazlett, C. (2020). Making sense of sensitivity: Extending omitted variable bias. *JRSS-B* 82(1), 39-67. DOI 10.1111/rssb.12348. VERIFICADA · Q1 (agregador; año no comprobado).
+- Rambachan, A. y Roth, J. (2023). A more credible approach to parallel trends. *REStud* 90(5), 2555-2591. DOI 10.1093/restud/rdad018. VERIFICADA · Q1 (1999-2025).
+- de Chaisemartin, C. y D'Haultfœuille, X. (2026). Difference-in-differences estimators of intertemporal treatment effects. *REStat* 108(4), 863-880. DOI 10.1162/rest_a_01414. VERIFICADA · Q1 (1999-2025).
+- Simonsohn, U., Simmons, J. P. y Nelson, L. D. (2020). Specification curve analysis. *Nature Human Behaviour* 4(11), 1208-1214. DOI 10.1038/s41562-020-0912-z. VERIFICADA · cuartil no verificado.
+- Conley, T. G. (1999). GMM estimation with cross sectional dependence. *J. Econometrics* 92(1), 1-45. DOI 10.1016/s0304-4076(98)00084-0. VERIFICADA · Q1 (SJR 2025; año no comprobado).
+- No verificadas en v3 (sin DOI comprobado): Pastor, Morillas, Morala y Serrano (2022), MESVAL DT 05/2022 (el DOI impreso 10.12842/MESVAL_DT2022_05 da 404 en Crossref y DataCite); Romero Jordán, Sanz Sanz y Pérez López (2006), FUNCAS DT 249/2006; de Chaisemartin et al., DiD con tratamientos continuos (arXiv 2201.06898).

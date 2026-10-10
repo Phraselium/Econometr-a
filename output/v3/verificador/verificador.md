@@ -8,7 +8,7 @@ Generado por `make verificador` a partir de output/v3. Cada ficha evalúa la afi
 | V02 | Los fondos de inversión y los grandes tenedores son los responsables de la subida de precios y alquileres. | SIN EVIDENCIA SUFICIENTE | C4 |
 | V03 | La inmigración es la causa principal de la subida de los precios y de los alquileres (≥50 % de la subida). | SIN EVIDENCIA SUFICIENTE | C2 |
 | V04 | La falta de oferta nueva y de suelo es la causa principal del problema de la vivienda (≥50 % de la subida). | SIN EVIDENCIA SUFICIENTE | C1 |
-| V05 | Faltan cientos de miles de viviendas en España. | RESPALDADA | C1 |
+| V05 | Faltan cientos de miles de viviendas en España. | PARCIALMENTE | C1 |
 | V06 | Los topes al precio del alquiler bajan los alquileres. | SIN EVIDENCIA SUFICIENTE | C4 |
 | V07 | Los topes al precio del alquiler reducen la oferta de vivienda en alquiler. | SIN EVIDENCIA SUFICIENTE | C4 |
 | V08 | Hay millones de viviendas vacías que se podrían movilizar para resolver el problema. | PARCIALMENTE | C1 |
@@ -31,7 +31,7 @@ Generado por `make verificador` a partir de output/v3. Cada ficha evalúa la afi
 | Intervalo | desplazamiento de oferta [2,4; 2,7] % del stock |
 | Cota | C2 (cantidad): ≤2,7 % del stock de alquiler. C4 (precio, condicionado a ε): ≤8,3 % con |ε_d|=0,33 y ≤2,7 % con |ε_d|=1 |
 | Literatura | García-López et al. (2020), JUE, VERIFICADA, Q1, Barcelona 2012-2016: réplica conceptual 2021-2024 NO REPLICADO (T = 0,0121 log-p por pp; propia -0,0042). MESVAL-UV (2022), NO VERIFICADA (sin DOI): NO REPLICABLE (datos propietarios). |
-| Regla del veredicto | Regla común (i)-(iv): «causa principal» exige ≥50 % de la subida. Solo hay cota C2 de cantidad (desplazamiento pequeño frente al stock; una cuarta parte de la subida municipal ocurre donde las VUT apenas crecieron), que no atribuye precio; sin cota C2/C3 de precio, SIN EVIDENCIA SUFICIENTE. H3-1 y H3-2 quedaron en C4 (fallan adelanto, sensibilidad y sellado; el placebo de tratamiento pasa): sus estimaciones, pequeñas y con IC que incluye 0, no se promueven de capa. |
+| Regla del veredicto | Regla común (i)-(iv): «causa principal» exige ≥50 % de la subida. Solo hay cota C2 de cantidad (desplazamiento ≤2,7 % del stock de alquiler; el 25 % de la subida municipal ocurre donde las VUT apenas crecieron), que no atribuye precio; sin cota C2/C3 de precio, SIN EVIDENCIA SUFICIENTE. H3-1 y H3-2 quedaron en C4 (fallan adelanto, sensibilidad y sellado; el placebo de tratamiento pasa): sus estimaciones, con IC95 que incluye 0, no se promueven de capa. |
 | Límites | Las VUT del INE no son todos los alquileres de temporada; el efecto local en barrios concretos puede ser mayor que el nacional (ver cotas por ciudad en output/v3/PB); SERPAVI es un stock que amortigua. |
 | Evidencia | output/v3/PB/cotas.json#B1, output/v3/C1/resultado.json, output/v3/GL/replicacion.md |
 
@@ -89,13 +89,13 @@ Generado por `make verificador` a partir de output/v3. Cada ficha evalúa la afi
 
 | Campo | Contenido |
 |---|---|
-| Veredicto | **RESPALDADA** |
+| Veredicto | **PARCIALMENTE** |
 | Capa de la evidencia | C1 |
-| Magnitud | 2021-2025: 701.187 viviendas; rango entre fuentes [559.752; 969.059]. |
+| Magnitud | 2021-2025: 701.187 viviendas; rango entre fuentes [559.752; 969.059]. 2012-2021: signo no determinado ([-1.015.321; 689.037]). |
 | Intervalo | [559.752; 969.059] viviendas |
 | Cota | — |
 | Literatura | Banco de España, Informe Anual 2025 (DOI no comprobado): ≈750 mil, dentro del rango. |
-| Regla del veredicto | Todas las combinaciones de fuentes de 2021-2025 dan un balance positivo de cientos de miles (C1). |
+| Regla del veredicto | Criterio de periodo común a todas las fichas: una afirmación sin periodo se juzga en todas las ventanas C1 disponibles. Respaldada en 2021-2025 (todas las combinaciones dan cientos de miles, C1) y no determinada con 2012 como base: PARCIALMENTE. Las ventanas C1 se eligieron tras ver la disponibilidad de fuentes (docs/v3/limitaciones.md, 7). |
 | Límites | Depende del periodo de partida: con 2012 como base el signo no está determinado. «Faltan» se refiere al balance contable, no a una necesidad normativa. |
 | Evidencia | output/v3/PA/hechos.json#A1_nacional_2021-2025 |
 
@@ -139,11 +139,11 @@ Generado por `make verificador` a partir de output/v3. Cada ficha evalúa la afi
 |---|---|
 | Veredicto | **PARCIALMENTE** |
 | Capa de la evidencia | C1 |
-| Magnitud | Censo 2021: 3,83 millones de viviendas vacías (estimación por consumo eléctrico). Solo [27,5; 36,0] % de ellas están en los municipios del tercil alto de presión de precios. |
-| Intervalo | [27,5; 36,0] % en el tercil alto de presión |
+| Magnitud | Censo 2021: 3,83 millones de viviendas vacías (estimación por consumo eléctrico, fuente única, C4). Sobre los 277 municipios con dato, el 27,5-40,3 % de las vacías está en el tercil alto de presión de precios y el 20,7-28,3 % en el tercil bajo (C1, dos medidas). |
+| Intervalo | 27,5-40,3 % en el tercil alto de presión (277 municipios) |
 | Cota | — |
 | Literatura | — |
-| Regla del veredicto | La cifra de millones es un hecho C1, pero la mayor parte no está donde sube el precio; la fracción movilizable es un supuesto (P-D). |
+| Regla del veredicto | La cifra de millones es de fuente única (C4); el reparto por presión (C1) sitúa en el tercil alto entre el 27,5 % y el 40,3 %; la fracción movilizable es un supuesto (P-D). PARCIALMENTE: hay muchas vacías, pero su movilización para «resolver» no está evaluada. |
 | Límites | Vacía por consumo eléctrico incluye viviendas en venta, en obras o en herencias; independencia parcial de las dos medidas. |
 | Evidencia | output/v3/PA/hechos.json#A3, output/v3/PD/resultados.json |
 

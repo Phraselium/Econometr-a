@@ -7,7 +7,7 @@
 - C4, exploratorio.
 
 Sobre esa base examinamos los factores más citados en el debate y simulamos soluciones con rangos de parámetros.
-- **Hechos (C1).** Entre 2021 y 2025 los hogares crecieron en 560.000-969.000 más que las viviendas nuevas. La propiedad de los hogares menores de 35 años cayó 24-34 puntos desde 2008. Solo un tercio de las viviendas vacías está en los municipios con más presión de precios.
+- **Hechos (C1).** Entre 2021 y 2025 los hogares crecieron en 560.000-969.000 más que las viviendas nuevas. La propiedad de los hogares menores de 35 años cayó 24,2-34,0 puntos desde 2008. Entre el 27,5 % y el 40,3 % de las viviendas vacías de los 277 municipios con dato está en el tercil de mayor presión de precios.
 - **Cotas (C2).** El aumento de viviendas turísticas de 2020 a 2024 equivale como máximo al 2,7 % del stock de alquiler.
 - **Efectos.** Ningún diseño alcanzó C3. Los topes de alquiler de Cataluña (2020-2022) se asocian a rentas un 5,4 % menores en los contratos nuevos (C4), en línea con la literatura replicada, sin alcanzar C3. La asociación entre viviendas turísticas y alquiler por sección censal es pequeña y no se distingue de cero en la muestra sellada. En la simulación, solo las medidas que añaden viviendas donde hay demanda tienen un signo estable en toda la rejilla de supuestos; la simulación no incluye costes.
 
@@ -32,7 +32,7 @@ Todas las fuentes son públicas (data/raw/_manifest.csv):
 - **Otras:** fianzas de Incasòl (Cataluña, contratos nuevos, 2007-2026); Eurostat; Inside Airbnb (9 ciudades, desde 2025-12); Registradores y Notariado.
 - **Fallos y pendientes:**
   - No se pudieron descargar el SIU, las fianzas de la GVA, los barrios de Barcelona (opendata con bloqueo anti-bot), el histórico de Airbnb ni Google Trends (docs/v3/fuentes_fallidas.md).
-  - Los datos de grandes tenedores y del suelo se han pedido por transparencia (docs/v3/solicitudes_transparencia.md).
+  - Las solicitudes de transparencia sobre grandes tenedores y suelo están redactadas y pendientes de presentar (docs/v3/solicitudes_transparencia.md).
 
 **Muestra sellada v3.** La forman el 20 % de los distritos censales (2.136 de 10.460), en bloques de distritos contiguos estratificados por gran ciudad o provincia, más la última oleada. Se fijó antes de estimar y se abre una vez por hipótesis con `holdout.evaluate_v3`.
 
@@ -47,14 +47,15 @@ Fuentes: output/v3/PA y output/v3/PB.
 |---|---|---|
 | Balance hogares − viviendas nuevas 2021-2025 | +701.000 (560.000-969.000) | C1 |
 | El mismo balance desde 2012 | signo no determinado (−436.000 a +1.501.000) | C1 (rango) |
-| Terminadas por año 2021-2025 | 89.000-101.000 | C1 |
+| Terminadas por año 2021-2025 | 89.000-101.000 | C4 (fuente única: fin de obra MIVAU) |
 | Personas de 25-34 años que viven con sus padres | 40-50 % | C1 |
 | Hogares que se formarían con la emancipación de referencia | 188.000-748.000 | C2 |
 | Propiedad de hogares de menos de 35 años (2022) | 30,7-31,8 %; −24 a −34 puntos frente a 2008 | C1 |
 | Precio/renta (80 m², 2023) | 3,0-4,1 años | C1 |
-| Vacías (Censo 2021) en el tercil alto de presión | 27-36 % de 3,8 millones | C1 |
+| Vacías en el tercil alto de presión (277 municipios con dato; dos medidas) | 27,5-40,3 % (tercil bajo 20,7-28,3 %) | C1 |
+| Viviendas vacías, total (Censo 2021, consumo eléctrico) | 3,8 millones | C4 (fuente única) |
 | Razón precio/alquiler 2015-2024 | dirección no establecida (−9 % a +44 %) | C1 (rango) |
-| Compraventas por personas de nacionalidad extranjera, 2023-2025 | 9,6-15,0 % | C1 |
+| Compraventas por personas de nacionalidad extranjera, 2023-2025 (output/v3/verificador/fichas/V14.json) | 9,6-15,0 % | C1 |
 | Desplazamiento máximo de la oferta de alquiler por VUT 2020-2024 | ≤2,4-2,7 % del stock | C2 |
 | Parte de la subida municipal del alquiler donde las VUT apenas crecieron | 25 % | C2 |
 | Hogares extranjeros en la creación neta de hogares 2014-2019 | ≤45 % | C2 |
@@ -74,11 +75,27 @@ Las traducciones a precio de las cotas de viviendas turísticas e inmigración d
 | Jofre-Monseny et al. (2023), topes de Cataluña, renta | −0,045 (0,006) | trimestral, Callaway-Sant'Anna, control tenso de menos de 20.000 hab.: −0,045 [−0,065; −0,026] | REPLICADO |
 | — misma réplica, TWFE | −0,045 | −0,035 [−0,047; −0,023] | REPLICADO |
 | — anual 2017-2022 | −0,045 | −0,030 [−0,044; −0,016] | PARCIAL |
-| — contratos | −0,003 (0,021) | +0,030 [−0,009; 0,070] | PARCIAL (IC incluye T y 0) |
+| — contratos, TWFE | −0,003 (0,021) | +0,030 [−0,009; 0,070] | PARCIAL (IC incluye T y 0) |
+| — contratos, Callaway-Sant'Anna | −0,003 (0,021) | −0,020 [−0,083; +0,042] | PARCIAL (IC incluye T y 0) |
 
 **Qué cambia cada mejora:**
-- *García-López.* Homogeneizar unidades por punto porcentual de stock reduce el objetivo de 0,039 a 0,012 al usar las 233 áreas básicas del artículo. Excluir los distritos sellados y hacer el placebo por clúster (p = 0,026) no cambia la clasificación.
-- *Jofre-Monseny et al.* Pasar de TWFE a Callaway-Sant'Anna mueve la estimación de −0,035 a −0,045. Ampliar el control a todos los municipios no sujetos la atenúa a −0,033, y la frecuencia anual, a −0,030.
+- *García-López.* Barcelona, por pasos:
+  1. Unidad del artículo, por 100 VUT y por sección: −0,042 [−0,072; −0,012]. Unidad no homogénea con el objetivo.
+  2. Ponderado por viviendas: −0,041 [−0,062; −0,019].
+  3. Por punto porcentual de VUT sobre el parque, por sección: −0,0042 [−0,0078; −0,0005]. Por distrito: −0,0054 [−0,0093; −0,0014].
+  4. Objetivo homogeneizado: pasa de 0,039 (con 73 barrios) a 0,012 (con las 233 áreas básicas del artículo); el rango es 0,012-0,117 según la razón VUT/anuncios.
+  5. Excluir los distritos sellados se hizo antes de estimar, así que no hay estimación previa con la que comparar.
+  6. Placebo por permutación de clústeres: p = 0,026.
+
+  Ningún paso cambia la clasificación (NO REPLICADO).
+- *Jofre-Monseny et al.* Renta, por pasos:
+  1. TWFE trimestral 2019Q1-2022Q4, control de municipios tensos de menos de 20.000 habitantes, sin Barcelona: −0,035.
+  2. Callaway-Sant'Anna con la misma muestra: −0,045.
+  3. Frecuencia anual 2017-2022, mismo control: −0,030.
+  4. Control con todos los municipios no sujetos y periodo hasta 2023Q4 (trimestral): −0,033.
+  5. Lo mismo en anual 2017-2023: −0,026.
+
+  En los pasos 4 y 5 cambian a la vez el grupo de control y el fin del periodo: con las especificaciones estimadas no se pueden separar ambos efectos. Es una limitación.
 
 Diferencias de fondo con García-López et al.: el periodo (2021-2024 frente a 2012-2016), la medida del alquiler (SERPAVI, un stock que amortigua, frente al precio de oferta) y la ausencia de instrumento.
 
@@ -119,8 +136,8 @@ Las afirmaciones de atribución (turísticos, inmigración, oferta y suelo, tipo
 - la evidencia C4 no decide.
 
 Resultado:
-- RESPALDADA (1): «faltan cientos de miles de viviendas».
-- PARCIALMENTE (2): vacías movilizables y vivienda pública (según supuestos).
+- RESPALDADA (0).
+- PARCIALMENTE (3): «faltan cientos de miles de viviendas» (respaldada en 2021-2025 y no determinada con 2012 como base), vacías movilizables y vivienda pública (según supuestos).
 - SIN EVIDENCIA SUFICIENTE (11): turísticos, grandes tenedores, inmigración, oferta y suelo, tipos de interés como causa principal, topes (alquiler y oferta), ocupación ilegal, ITP/IVA, burbuja y compradores extranjeros.
 
 Con el supuesto estructural P/R = 1/uc (C4), la afirmación sobre los tipos sería incompatible con 2021-2025 y no descartada en 2014-2021.
@@ -141,3 +158,34 @@ Ver docs/v3/limitaciones.md. Las principales:
 
 ## 10. Declaración de uso de IA
 El proyecto se ejecutó con agentes de IA (Claude): un orquestador y subagentes de datos, literatura, econometría y revisión independiente por oleadas. Todas las cifras proceden del código del repositorio y de fuentes públicas citadas. Las referencias se verificaron con DOI o se marcan como NO VERIFICADA. Las decisiones, desviaciones e incidencias están en docs/v3/decisiones.md.
+
+## 11. Referencias (estado de verificación y cuartil Scimago)
+| Referencia | DOI | Estado | Cuartil |
+|---|---|---|---|
+| García-López, Jofre-Monseny, Martínez-Mazza y Segú (2020), *Journal of Urban Economics* | 10.1016/j.jue.2020.103278 | VERIFICADA | Q1 |
+| Jofre-Monseny, Martínez-Mazza y Segú (2023), *Regional Science and Urban Economics* | 10.1016/j.regsciurbeco.2023.103916 | VERIFICADA | Q1 |
+| MESVAL-UV (2022), documento de trabajo 05/2022 | sin DOI en Crossref/DataCite | NO VERIFICADA | n/a |
+| Saiz (2007), *Journal of Urban Economics* | 10.1016/j.jue.2006.07.004 | VERIFICADA | Q1 (año no comprobado) |
+| Saiz (2010), *Quarterly Journal of Economics* | 10.1162/qjec.2010.125.3.1253 | VERIFICADA | cuartil no verificado |
+| Sá (2015), *Economic Journal* | 10.1111/ecoj.12158 | VERIFICADA | Q1 |
+| González y Ortega (2013), *Journal of Regional Science* | 10.1111/jors.12010 | VERIFICADA | cuartil no verificado |
+| Glaeser y Gyourko (2018), *Journal of Economic Perspectives* | 10.1257/jep.32.1.3 | VERIFICADA | cuartil no verificado |
+| Barron, Kung y Proserpio (2021), *Marketing Science* | 10.1287/mksc.2020.1227 | VERIFICADA | Q1 |
+| Diamond, McQuade y Qian (2019), *American Economic Review* | 10.1257/aer.20181289 | VERIFICADA | Q1 |
+| Kholodilin (2024), *Journal of Housing Economics* | 10.1016/j.jhe.2024.101983 | VERIFICADA | Q2 (año no comprobado) |
+| Poterba (1984), *Quarterly Journal of Economics* | 10.2307/1883123 | VERIFICADA | Q1 |
+| Khametshin et al. (2024), Banco de España, Documento Ocasional 2432 | 10.53479/37872 | VERIFICADA | sin cuartil (serie del BdE) |
+| Banco de España (2026), Informe Anual 2025, cap. 2 | 10.53479/43565 | DOI no comprobado en Crossref | n/a |
+| Manski (2003), *Partial Identification of Probability Distributions*, Springer | 10.1007/b97478 | VERIFICADA | libro |
+| Oster (2019), *Journal of Business & Economic Statistics* | 10.1080/07350015.2016.1227711 | VERIFICADA | Q1 |
+| Cinelli y Hazlett (2020), *JRSS-B* | 10.1111/rssb.12348 | VERIFICADA | Q1 |
+| Rambachan y Roth (2023), *Review of Economic Studies* | 10.1093/restud/rdad018 | VERIFICADA | Q1 |
+| Callaway y Sant'Anna (2021), *Journal of Econometrics* | 10.1016/j.jeconom.2020.12.001 | VERIFICADA | Q1 (año no comprobado) |
+| de Chaisemartin y D'Haultfœuille (2020), *American Economic Review* | 10.1257/aer.20181169 | VERIFICADA | Q1 |
+| Simonsohn, Simmons y Nelson (2020), *Nature Human Behaviour* | 10.1038/s41562-020-0912-z | VERIFICADA | cuartil no verificado |
+| Conley (1999), *Journal of Econometrics* | 10.1016/s0304-4076(98)00084-0 | VERIFICADA | Q1 (año no comprobado) |
+| Borusyak, Hull y Jaravel (2022), *Review of Economic Studies* | 10.1093/restud/rdab030 | VERIFICADA | Q1 |
+| Goldsmith-Pinkham, Sorkin y Swift (2020), *American Economic Review* | 10.1257/aer.20181047 | VERIFICADA | Q1 |
+| Adão, Kolesár y Morales (2019), *Quarterly Journal of Economics* | 10.1093/qje/qjz025 | VERIFICADA | Q1 (año no comprobado) |
+
+Detalle y fuentes de la verificación: docs/v3/literatura_v3.md y docs/literatura.md (anexo v3).

@@ -15,3 +15,11 @@
 2. *«Probable pero no demostrado».* Es una sección exigida en el entregable, pero «probable» no es una capa de la escala: sus ítems son C4 y no deciden veredictos.
 3. *P-D no modela costes* (fiscal, de suelo, de movilización, pérdida para propietarios, demanda turística desplazada). La dominancia y el mínimo arrepentimiento solo comparan efectos sobre el esfuerzo y la oferta, y favorecen mecánicamente a las dosis mayores.
 4. *Familia de H3-1.* El único contraste confirmatorio fue el nacional. El sellado de las 6 ciudades, secundario, tiene signo opuesto (β = −0,0013, p = 0,20). Con ambas muestras en la familia (m = 5) no cambia ninguna conclusión.
+
+## Heredadas de la revisión de la oleada 3
+1. *Vacías.* La cifra total (3,8 millones) procede de una sola fuente: el Censo 2021, por consumo eléctrico. El reparto por tercil de presión se calcula sobre 277 municipios con dato y depende de la definición de presión (27,5-40,3 % en el tercil alto).
+2. *VUT del INE.* Es una estadística experimental: la suma de secciones cubre ≈90 % del total publicado. Las oleadas son de meses distintos y tienen estacionalidad, así que las comparaciones solo son válidas entre oleadas del mismo mes.
+3. *Terminadas del MIVAU.* Son de fuente única (certificados de fin de obra) y cubren menos que la variación del parque.
+4. *Módulo València.* La ciudad y la provincia usan medidas de alquiler distintas (SERPAVI e IPC), y la ciudad y las secciones, periodos distintos (2020-2024 y 2021M08-2024M08). Las filas no son comparables entre sí.
+5. *V05 y la ventana de A1.* El veredicto de V05 (PARCIALMENTE) depende de las ventanas C1 de A1, elegidas tras ver la disponibilidad de fuentes (limitación 7 de la oleada 1).
+6. *Réplicas de García-López con 8-16 clústeres.* Las p sin ajustar pueden engañar: todas las p de Holm superan 0,04.

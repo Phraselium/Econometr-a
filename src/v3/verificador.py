@@ -142,10 +142,10 @@ def fichas(ev) -> list[dict]:
         veredicto=("NO RESPALDADA" if (c1capa == "C3" and c1 and c1.get("contribucion_nacional_pct_max", 100) < 50)
                    else "SIN EVIDENCIA SUFICIENTE"),
         regla=("Regla común (i)-(iv): «causa principal» exige ≥50 % de la subida. Solo hay cota C2 de cantidad "
-               "(desplazamiento pequeño frente al stock; una cuarta parte de la subida municipal ocurre donde las VUT "
+               "(desplazamiento ≤2,7 % del stock de alquiler; el 25 % de la subida municipal ocurre donde las VUT "
                "apenas crecieron), que no atribuye precio; sin cota C2/C3 de precio, SIN EVIDENCIA SUFICIENTE. "
                "H3-1 y H3-2 quedaron en C4 (fallan adelanto, sensibilidad y sellado; el placebo de tratamiento pasa): sus estimaciones, "
-               "pequeñas y con IC que incluye 0, no se promueven de capa."),
+               "con IC95 que incluye 0, no se promueven de capa."),
         limites=("Las VUT del INE no son todos los alquileres de temporada; el efecto local en barrios concretos puede "
                  "ser mayor que el nacional (ver cotas por ciudad en output/v3/PB); SERPAVI es un stock que amortigua."),
         evidencia=["output/v3/PB/cotas.json#B1", "output/v3/C1/resultado.json", "output/v3/GL/replicacion.md"],
@@ -222,11 +222,15 @@ def fichas(ev) -> list[dict]:
         id="V05", tema="Déficit",
         enunciado="Faltan cientos de miles de viviendas en España.",
         capa="C1",
-        magnitud=f"2021-2025: {_f(a1.get('magnitud'), 0)} viviendas; rango entre fuentes {_iv(a1.get('intervalo'), 0)}.",
+        magnitud=(f"2021-2025: {_f(a1.get('magnitud'), 0)} viviendas; rango entre fuentes {_iv(a1.get('intervalo'), 0)}. "
+                  f"2012-2021: signo no determinado ({_iv(a1b.get('intervalo'), 0)})."),
         intervalo=_iv(a1.get("intervalo"), 0) + " viviendas",
         cota="—", literatura=f"{LIT['BDE']}: ≈750 mil, dentro del rango.",
-        veredicto="RESPALDADA",
-        regla="Todas las combinaciones de fuentes de 2021-2025 dan un balance positivo de cientos de miles (C1).",
+        veredicto="PARCIALMENTE",
+        regla=("Criterio de periodo común a todas las fichas: una afirmación sin periodo se juzga en todas las ventanas C1 "
+               "disponibles. Respaldada en 2021-2025 (todas las combinaciones dan cientos de miles, C1) y no determinada "
+               "con 2012 como base: PARCIALMENTE. Las ventanas C1 se eligieron tras ver la disponibilidad de fuentes "
+               "(docs/v3/limitaciones.md, 7)."),
         limites=("Depende del periodo de partida: con 2012 como base el signo no está determinado. «Faltan» se refiere "
                  "al balance contable, no a una necesidad normativa."),
         evidencia=["output/v3/PA/hechos.json#A1_nacional_2021-2025"],
@@ -283,13 +287,15 @@ def fichas(ev) -> list[dict]:
         id="V08", tema="Viviendas vacías",
         enunciado="Hay millones de viviendas vacías que se podrían movilizar para resolver el problema.",
         capa="C1",
-        magnitud=(f"Censo 2021: 3,83 millones de viviendas vacías (estimación por consumo eléctrico). Solo "
-                  f"{_iv(a3.get('intervalo'))} % de ellas están en los municipios del tercil alto de presión de precios."),
-        intervalo=_iv(a3.get("intervalo")) + " % en el tercil alto de presión",
+        magnitud=("Censo 2021: 3,83 millones de viviendas vacías (estimación por consumo eléctrico, fuente única, C4). "
+                  "Sobre los 277 municipios con dato, el 27,5-40,3 % de las vacías está en el tercil alto de presión de "
+                  "precios y el 20,7-28,3 % en el tercil bajo (C1, dos medidas)."),
+        intervalo="27,5-40,3 % en el tercil alto de presión (277 municipios)",
         cota="—", literatura="—",
         veredicto="PARCIALMENTE",
-        regla=("La cifra de millones es un hecho C1, pero la mayor parte no está donde sube el precio; la fracción "
-               "movilizable es un supuesto (P-D)."),
+        regla=("La cifra de millones es de fuente única (C4); el reparto por presión (C1) sitúa en el tercil alto entre "
+               "el 27,5 % y el 40,3 %; la fracción movilizable es un supuesto (P-D). PARCIALMENTE: hay muchas vacías, "
+               "pero su movilización para «resolver» no está evaluada."),
         limites="Vacía por consumo eléctrico incluye viviendas en venta, en obras o en herencias; independencia parcial de las dos medidas.",
         evidencia=["output/v3/PA/hechos.json#A3", "output/v3/PD/resultados.json"],
     ))

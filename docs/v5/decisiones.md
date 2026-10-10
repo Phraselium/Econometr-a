@@ -99,3 +99,45 @@
   - N5: un solo hilo fijado en los scripts.
   - N6: la sección R1A de fuentes fallidas remite a A23.
 - Son las correcciones que propuso el propio revisor y no cambian ninguna estimación, así que el módulo R queda APROBADO sin otra iteración.
+
+## Revisión del módulo A: REHACER (B1-B4) → corregido por el orquestador
+- **B1.** Pasan a C4 las filas de fuente única de A23:
+  - el IPV por sí solo (P1);
+  - el €/m² de Registradores y el de Notariado (P6, P7: difieren un 17 %);
+  - las reponderaciones (P4, P8, P9);
+  - el contrafactual sin tope (A8).
+  Se elimina A1 (IPC 2015-2025), que duplicaba el indicador con otro periodo. El núcleo de alquiler de stock se da solo como rango (sin mediana) y con la tolerancia.
+- **B2.** Todas las clases territoriales pasan a C4 (regla B5: el déficit provincial 2021-2025 es C4). «Robusta (diagnóstico)» indica que la clase se mantiene en todo el rango 422-1.500 €/m², en todos los márgenes y holguras y con el signo del déficit estable; es un diagnóstico, no una capa. La concentración provincial también es C4.
+- **B3.** `src/v5/a5_hechos.py` genera los hechos de A5 a partir del inventario, la conciliación y la validación: 22 documentos oficiales, no 25. La precisión del 50 % y el 78 % va en las notas de resultado.json.
+- **B4.**
+  - a4_run escribe `control_sumas.json`, que compara la suma provincial con la serie nacional publicada de terminadas y con los hogares.
+  - check_v5 falla si falta el control en A4 o B1.
+  - check_v5 comprueba también los recuentos «en contra» y los topes con capa C3 en los JSON.
+- **No bloqueantes.**
+  - Fechas del dato en lugar de la fecha de cálculo.
+  - Verbos de atribución sustituidos por «diferencia contable».
+  - Ámbito de la ficha A23-V2.
+  - Nombres de formaciones fuera de a5_run (se leen del inventario) y de fuentes_fallidas.
+  - Latente por convivencia leída del texto de origen.
+  - García-López marcado VERIFICADA (DOI en Crossref, JUE Q1).
+- Son las correcciones que propuso el revisor y no hay nuevas estimaciones: el módulo A queda APROBADO.
+
+## B1 (subagente)
+- **Método stock-flujo por componentes** (output/v5/B1/metodo.md): A + R + V + F − M − K. La demanda desplazada D y la segunda residencia S van aparte.
+- **L, vivienda liberada por envejecimiento: NO se resta en la cifra central.** La proyección de hogares del INE (F) ya descuenta las disoluciones, así que restarla las contaría dos veces. La fórmula literal (restando L) se da solo como variante.
+- **R, bajas estimadas.** Sale negativa en 38 provincias con los dos métodos y se acota a 0. Es una cota inferior sin información, y queda abierta en el backlog.
+- **Sin dato provincial:** hogares compartidos, hacinamiento, habitaciones y traslados a residencias.
+- **Capa.** El total es C4; solo F (INE) es C2.
+
+## B3 (subagente; pre-registro prereg-v5)
+- **Potencia.** Con un efecto mínimo detectable de 0,62 DT (más de 0,5), el resultado es DESCRIPTIVO HONESTO, como fija el pre-registro.
+- **Hipótesis.**
+  - Se rechaza solo H-B3-6 (convergencia, Holm 0,0013). Con el precio inicial de Registradores el coeficiente baja a la mitad, por posible error de medida.
+  - H-B3-1 (Bartik) y H-B3-2 (población) no se rechazan.
+- **Shapley.** El orden de las familias no coincide entre las fuentes de Y1, así que queda en C4.
+- **Desviaciones** (exploratorias; output/v5/B3/desviaciones.md):
+  - la renta se mide con el PIB per cápita de la CRE, porque ADRH provincial no está disponible;
+  - el alquiler llega a 2024 (N = 46);
+  - se excluyen Ceuta y Melilla;
+  - en un corte transversal no hay AR(4): se usa LOO-CV frente a un modelo de solo media.
+- **Aviso.** F4 (suelo y rigidez, de A4) usa precios de 2021-2025, así que su asociación con Y1 puede ser mecánica.

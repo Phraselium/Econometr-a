@@ -1,0 +1,133 @@
+[
+ {
+  "id": "B1-H1",
+  "indicador": "Necesidad total de vivienda por año (A+R+V+F-M-K), suma de 52 provincias",
+  "valor": 214867.8,
+  "min": 93627.8,
+  "max": 309920.8,
+  "unidad": "viviendas/año",
+  "periodo": "2026-2035",
+  "cobertura": "España (52 provincias)",
+  "fuentes": [
+   "A4/M1",
+   "INE 54562",
+   "Censo 2021",
+   "MIVAU",
+   "Catastro"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025"
+ },
+ {
+  "id": "B1-H2",
+  "indicador": "Atraso a absorber en 10 años (déficit 2021-2025 + emancipación retrasada)",
+  "valor": 1103170.4,
+  "min": 830962.6,
+  "max": 1473641.4,
+  "unidad": "viviendas (stock)",
+  "periodo": "2021-2025 absorbido en 2026-2035",
+  "cobertura": "España",
+  "fuentes": [
+   "A4",
+   "M1",
+   "M2"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025"
+ },
+ {
+  "id": "B1-H3",
+  "indicador": "Reposición del parque (10 años)",
+  "valor": 89664.7,
+  "min": 1070.3,
+  "max": 178259.0,
+  "unidad": "viviendas",
+  "periodo": "2026-2035",
+  "cobertura": "España",
+  "fuentes": [
+   "Censo 2011/2021 + MIVAU",
+   "Catastro + MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025"
+ },
+ {
+  "id": "B1-H4",
+  "indicador": "Crecimiento de hogares proyectado (INE, 10 años)",
+  "valor": 1720537.0,
+  "min": 1308531.1,
+  "max": 1772410.4,
+  "unidad": "hogares",
+  "periodo": "2026-2035",
+  "cobertura": "España",
+  "fuentes": [
+   "INE Proyección de Hogares 54562",
+   "INE Proyecciones de Población 36726"
+  ],
+  "capa": "C2",
+  "fecha_dato": "2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025"
+ },
+ {
+  "id": "B1-H5",
+  "indicador": "Ajuste de vacancia friccional en zonas con presión",
+  "valor": 58674.0,
+  "min": 0.0,
+  "max": 117348.0,
+  "unidad": "viviendas",
+  "periodo": "2026-2035",
+  "cobertura": "España",
+  "fuentes": [
+   "Censo 2021"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025"
+ },
+ {
+  "id": "B1-H6",
+  "indicador": "Vacías movilizables en zonas con presión (10-30 %)",
+  "valor": 733553.2,
+  "min": 366776.6,
+  "max": 1100329.8,
+  "unidad": "viviendas",
+  "periodo": "2026-2035",
+  "cobertura": "España",
+  "fuentes": [
+   "INE 59531",
+   "A4"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025"
+ },
+ {
+  "id": "B1-H7",
+  "indicador": "Cartera en construcción (iniciadas menos terminadas, 2-3 años)",
+  "valor": 89815.0,
+  "min": 75674.0,
+  "max": 103956.0,
+  "unidad": "viviendas",
+  "periodo": "2023-2025",
+  "cobertura": "España",
+  "fuentes": [
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025"
+ },
+ {
+  "id": "B1-H8",
+  "indicador": "Viviendas liberadas por envejecimiento (tasa de disolución de hogares de 75+)",
+  "valor": 1415262.8,
+  "min": 801982.2,
+  "max": 2170069.6,
+  "unidad": "viviendas (10 años)",
+  "periodo": "2026-2035",
+  "cobertura": "España",
+  "fuentes": [
+   "INE 36726",
+   "INE 67235",
+   "M2 jefatura"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025"
+ }
+]

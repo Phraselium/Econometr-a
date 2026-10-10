@@ -18,7 +18,7 @@ CLASES (clase publicada = la del coste central del rango, m=20 %, r=1,25; por un
   3  falta y no es rentable: brecha <= 0;
   4  no falta: deficit <= 0 (sin deficit positivo; no implica exceso de oferta);
   9  sin dato: falta precio, suelo, deficit u oferta (no se imputa).
-CAPA: C2 solo si la clase es la misma en TODO el rango de coste oficial (5 puntos), los 3 margenes {15,20,25} %, las 2 holguras
+CAPA (tras revisión A): C4 siempre; «robusta (diagnóstico)» si la clase es la misma en TODO el rango de coste oficial (5 puntos), los 3 margenes {15,20,25} %, las 2 holguras
   r {1,25; 1,5} y el signo del deficit coincide en min/mediana/max de M1 (resto de parametros en el valor central). Si no, C4. El
   nivel del deficit sigue siendo C4 (regla B5): `capa_estricta_B5` = C4 en todas; la clase C2 es condicional al SIGNO.
   Municipios: C4 siempre (deficit de fuente unica Catastro).
@@ -218,7 +218,9 @@ def main():
     # quedar por debajo del coste de mercado; C2 exige además la misma clase con el rango supuesto de v4
     # (900-1.500 EUR/m2), es decir, estabilidad en la unión 422-1.500 EUR/m2.
     out_p["estable_union_rangos"] = out_p.estable_costes_m_r & (out_p.clase_con_rango_supuesto_M3 == out_p.clase_2021_2025)
-    out_p["capa"] = np.where(out_p.estable_union_rangos & out_p.signo_deficit_estable, "C2", "C4")
+    # revisión A (B2): el déficit provincial 2021-2025 es C4 (B5), así que toda clase es C4; la estabilidad es solo un diagnóstico
+    out_p["robusta_diagnostico"] = out_p.estable_union_rangos & out_p.signo_deficit_estable
+    out_p["capa"] = "C4"
     out_p["capa"] = np.where(out_p.clase_2021_2025 == 9, "sin dato", out_p.capa)
     out_p["capa_estricta_B5"] = "C4"
     out_p["clase_v4_modal"] = v4p.clase_modal.reindex(idx).values
@@ -255,11 +257,11 @@ def main():
             for k in COD:
                 sub = df[df[col] == k]
                 if nivel == "provincia":
-                    c2 = int(((sub.capa == "C2")).sum()) if per == "2021-2025" else int(sub.get("estable_2012_2025", pd.Series(dtype=bool)).sum())
+                    c2 = int(sub.robusta_diagnostico.sum()) if per == "2021-2025" else int(sub.get("estable_2012_2025", pd.Series(dtype=bool)).sum())
                 else:
                     c2 = 0
-                filas.append(dict(nivel=nivel, periodo=per, clase=k, etiqueta=ETIQ[k], n=len(sub), n_C2=c2,
-                                  n_C4=len(sub) - c2))
+                filas.append(dict(nivel=nivel, periodo=per, clase=k, etiqueta=ETIQ[k], n=len(sub), n_robustas=c2,
+                                  n_no_robustas=len(sub) - c2))
     rec = pd.DataFrame(filas)
     rec.to_csv(OUT / "tablas" / "A4_recuentos_por_clase.csv", index=False)
     trans = []
@@ -329,6 +331,10 @@ def concentracion(nombres, smoke):
     conc["m1_2021_2025"] = cm[(cm.nivel == "provincia") & (cm.periodo == "2021-2025")].to_dict("records")
     conc["reconciliacion"] = nac
     pd.DataFrame([{"periodo": k, **v} for k, v in nac.items()]).to_csv(OUT / "tablas" / "A4_reconciliacion_prov_nacional.csv", index=False)
+    # control de puerta v5 (check_v5): suma provincial = nacional (terminadas: serie nacional publicada independiente)
+    ctrl = [dict(tabla=f"A4 {k} {var}", suma_provincial=v[f"{var}_prov"], nacional=v[f"{var}_nac"], tolerancia_rel=1e-6)
+            for k, v in nac.items() for var in ("dh", "libres", "prot", "deficit") if v[f"{var}_nac"] == v[f"{var}_nac"]]
+    (OUT / "control_sumas.json").write_text(json.dumps(ctrl, ensure_ascii=False, indent=1))
     pd.DataFrame([{"periodo": p, "n_50": conc[p]["n_50"], "n_80": conc[p]["n_80"], "n_positivos": conc[p]["n_pos"],
                    "total_positivo": conc[p]["total_pos"], "total_neto_52prov": conc[p]["total_neto"]}
                   for p in ("2021-2025", "2021-2024")]).to_csv(OUT / "tablas" / "A4_concentracion.csv", index=False)
@@ -341,8 +347,8 @@ def figuras(out_p, rec, conc, tab, meta):
     fig, ax = plt.subplots(1, 2, figsize=(11, 4))
     for a, per in zip(ax, ("2021-2025", "2012-2025")):
         r = rec[(rec.nivel == "provincia") & (rec.periodo == per)]
-        a.bar([str(k) for k in r.clase], r.n_C2, label="C2")
-        a.bar([str(k) for k in r.clase], r.n_C4, bottom=r.n_C2, label="C4")
+        a.bar([str(k) for k in r.clase], r.n_robustas, label="robusta (diagnóstico)")
+        a.bar([str(k) for k in r.clase], r.n_no_robustas, bottom=r.n_robustas, label="no robusta")
         a.set_title(f"Provincias por clase, {per}")
         a.set_xlabel("clase")
         a.legend()
@@ -369,21 +375,21 @@ def figuras(out_p, rec, conc, tab, meta):
 def escribir_json(out_p, out_m, rec, conc, tab, meta, cgrid):
     def rc(nivel, per):
         r = rec[(rec.nivel == nivel) & (rec.periodo == per)]
-        return {int(k): [int(n), int(c2)] for k, n, c2 in zip(r.clase, r.n, r.n_C2)}
+        return {int(k): [int(n), int(c2)] for k, n, c2 in zip(r.clase, r.n, r.n_robustas)}
     rcn = conc["reconciliacion"]
     resultado = {
         "rama": "A4", "pregunta": "¿Dónde falta vivienda y es rentable construirla con el coste oficial? Rango oficial de coste y reclasificación",
-        "capa": "C2 (clases estables en todo el rango de coste, margen y r, condicionadas al signo del déficit) / C4 (resto, municipios)",
+        "capa": "C4 (regla B5: el déficit provincial 2021-2025 es C4); la estabilidad de la clase en todo el rango de costes, márgenes y holguras se da como diagnóstico de robustez, no como capa",
         "datos": ["RD 1020/1993 (BOE-A-1993-19265): MBC1-MBC7 y coeficientes de la norma 16", "Eurostat sts_copi_q (ES)",
                   "MIVAU valor tasado y precios de suelo", "output/v4/M1 (déficit)", "output/v4/M3 (suelo, precio, municipios)"],
         "N": {"provincias": int(len(out_p)), "municipios": int(len(out_m))},
         "metodo": "Rango de coste = MBC 1993 (BOE) actualizado con índice Eurostat; clases por unidad en rejilla coste x margen x r x edificabilidad x suelo x umbral de oferta x variante de déficit",
         "estimacion": {"coste_eur_m2_rango": [round(meta["cmin"], 1), round(meta["cmax"], 1)], "factor_actualizacion_1993_a_2025_26": round(meta["factor"], 4),
-                       "provincias_2021_2025_[n,n_C2]": rc("provincia", "2021-2025"), "provincias_2012_2025_[n,n_C2]": rc("provincia", "2012-2025"),
-                       "municipios_2021_2025_[n,n_C2]": rc("municipio", "2021-2025"), "municipios_2012_2025_[n,n_C2]": rc("municipio", "2012-2025"),
+                       "provincias_2021_2025_[n,n_robustas]": rc("provincia", "2021-2025"), "provincias_2012_2025_[n,n_robustas]": rc("provincia", "2012-2025"),
+                       "municipios_2021_2025_[n,n_robustas]": rc("municipio", "2021-2025"), "municipios_2012_2025_[n,n_robustas]": rc("municipio", "2012-2025"),
                        "concentracion": {p: {k: conc[p][k] for k in ("n_50", "n_80", "n_pos", "total_pos", "total_neto", "n_prov")} for p in ("2021-2025", "2021-2024")}},
         "ic95": None, "p_ajustado": None,
-        "nivel_evidencia": "COTA (C2) condicionada y EXPLORATORIO (C4); sin lenguaje causal",
+        "nivel_evidencia": "EXPLORATORIO (C4); sin lenguaje causal",
         "diagnosticos": {"reconciliacion_prov_nacional": rcn, "cobertura": "52 provincias; Álava, Bizkaia, Gipuzkoa y Navarra solo con altas MIVAU (sin Catastro)",
                          "coste_fuentes": {"a_MBC": "dato 1993 + índice (derivado)", "b_VPO_CCAA": "sin dato", "c_PEM_visados_licencias": "sin dato"}},
         "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None},
@@ -397,16 +403,18 @@ def escribir_json(out_p, out_m, rec, conc, tab, meta, cgrid):
 
     add("A4-001", "Rango oficial derivado de coste de construcción (MBC 1993 actualizado)", round((meta["cmin"] + meta["cmax"]) / 2, 0),
         round(meta["cmin"], 0), round(meta["cmax"], 0), "EUR/m2 construido", "2025T3-2026T2", "España (sin MBC por municipio)",
-        "BOE-A-1993-19265; Eurostat sts_copi_q", "C4", hoy)
+        "BOE-A-1993-19265; Eurostat sts_copi_q", "C4", "2026T2")
     for per in ("2021-2025", "2012-2025"):
         for k in COD:
             n, c2 = rc("provincia", per)[k]
-            add(f"A4-prov-{per}-c{k}", f"Provincias en clase {k} ({ETIQ[k]})", n, c2, n, "provincias", per, "52 provincias", "output/v4/M1; M3; A4", "C2" if c2 == n and n > 0 else "C4", hoy)
+            add(f"A4-prov-{per}-c{k}", f"Provincias en clase {k} ({ETIQ[k]})", n, None, None, "provincias", per, "52 provincias", "output/v4/M1; M3; A4", "C4", "2025")
+            add(f"A4-prov-{per}-c{k}-robustas", f"Provincias en clase {k} con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico)", c2, None, None,
+                "provincias", per, "52 provincias", "output/v5/A4", "C4", "2025")
     for p in ("2021-2025", "2021-2024"):
         add(f"A4-conc50-{p}", "Provincias que suman el 50 % del déficit positivo", conc[p]["n_50"], conc[p]["n_50"], conc[p]["n_50"], "provincias", p,
-            "52 provincias", "ECP INE; MIVAU fin de obra (bajas 0)", "C1" if p == "2021-2024" else "C4", "2026-10")
+            "52 provincias", "ECP INE; MIVAU fin de obra (bajas 0)", "C4", "2025")
         add(f"A4-conc80-{p}", "Provincias que suman el 80 % del déficit positivo", conc[p]["n_80"], conc[p]["n_80"], conc[p]["n_80"], "provincias", p,
-            "52 provincias", "ECP INE; MIVAU fin de obra (bajas 0)", "C1" if p == "2021-2024" else "C4", "2026-10")
+            "52 provincias", "ECP INE; MIVAU fin de obra (bajas 0)", "C4", "2025")
     (OUT / "hechos.json").write_text(json.dumps(h, ensure_ascii=False, indent=1, default=float))
 
 

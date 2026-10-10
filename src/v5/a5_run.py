@@ -155,8 +155,11 @@ def main():
 
 
 def conciliar(inv, textos, cnt, uniq):
-    mp = {"PSOE": "A5-D01", "PP": "A5-D02", "Vox": "A5-D04", "Sumar": "A5-D05", "ERC": "A5-D06",
-          "EH Bildu": "A5-D07", "PNV": "A5-D08", "BNG": "A5-D09", "UPN": "A5-D10"}
+    # correspondencia formación -> documento del programa 2023, leída del inventario (los nombres solo viven allí)
+    prog = [r for r in inv if r["tipo"].startswith("programa electoral 2023")]
+    mp = {}
+    for r in prog:
+        mp.setdefault(r["formacion"], r["doc_id"])
     v4 = list(csv.DictReader((ROOT / "data/raw/v4/medidas_programas.csv").open(encoding="utf-8")))
     rows = []
     hit_pages = defaultdict(set)

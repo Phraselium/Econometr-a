@@ -1,0 +1,50 @@
+[
+ {
+  "tabla": "A4 2021-2025 dh",
+  "suma_provincial": 1169157.0,
+  "nacional": 1169157.0,
+  "tolerancia_rel": 1e-06
+ },
+ {
+  "tabla": "A4 2021-2025 libres",
+  "suma_provincial": 411900.0,
+  "nacional": 411900.0,
+  "tolerancia_rel": 1e-06
+ },
+ {
+  "tabla": "A4 2021-2025 prot",
+  "suma_provincial": 56323.0,
+  "nacional": 56323.0,
+  "tolerancia_rel": 1e-06
+ },
+ {
+  "tabla": "A4 2021-2025 deficit",
+  "suma_provincial": 700934.0,
+  "nacional": 700934.0,
+  "tolerancia_rel": 1e-06
+ },
+ {
+  "tabla": "A4 2021-2024 dh",
+  "suma_provincial": 937265.0,
+  "nacional": 937265.0,
+  "tolerancia_rel": 1e-06
+ },
+ {
+  "tabla": "A4 2021-2024 libres",
+  "suma_provincial": 331108.0,
+  "nacional": 331108.0,
+  "tolerancia_rel": 1e-06
+ },
+ {
+  "tabla": "A4 2021-2024 prot",
+  "suma_provincial": 43465.0,
+  "nacional": 43465.0,
+  "tolerancia_rel": 1e-06
+ },
+ {
+  "tabla": "A4 2021-2024 deficit",
+  "suma_provincial": 562692.0,
+  "nacional": 562692.0,
+  "tolerancia_rel": 1e-06
+ }
+]

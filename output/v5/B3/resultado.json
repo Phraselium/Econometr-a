@@ -1,0 +1,155 @@
+{
+ "rama": "B3",
+ "pregunta": "¿Con qué características provinciales se asocian las diferencias de variación del precio, el alquiler y el esfuerzo de acceso entre las 50 provincias, 2015-2025?",
+ "capa": "C4",
+ "datos": "MIVAU valor tasado libre trimestral (2015T1-2025T4) y Registradores provincial anual (2015, 2025); SERPAVI municipal agregado a provincia (2015/2021-2024); IPVA INE (robustez); EPA INE ocupados por sector y provincia (2011/2015-2025); Padrón INE 1-ene (2015-2025); CRE INE PIB provincial (hasta 2024); INE VUT 2021; Censo 2021 viviendas; INE hipotecas sobre viviendas (2015); A4 (clase, brecha, respuesta de oferta 2021-2025); centroides municipales UTM30",
+ "N": {
+  "principal_Y1_P1": 50,
+  "Y2_P1": 46,
+  "Y2_P2": 47,
+  "Y3_P1": 50,
+  "excluidas": "Ceuta y Melilla (sin A4, sin SERPAVI 2015, sin sectores EPA comparables)"
+ },
+ "metodo": "MCO con las 8 familias a la vez (13 regresores estandarizados); EE HC3 y Conley (Bartlett, 100 y 200 km); se usa el mayor p; inferencia por aleatorización Freedman-Lane (5.000 permutaciones, SEED=20261010); Holm sobre 8 familias x Y1 x P1 (y sobre las 3 confirmatorias); BH sobre las 40 exploratorias; Shapley de R² con dos fuentes de Y1; multiverso 32 especificaciones; Oster y Cinelli-Hazlett.",
+ "estimacion": {
+  "H-B3-1": {
+   "regresor": "F1_bartik",
+   "b_por_DT_logpuntos": 0.023629574327914245,
+   "beta_std_en_DT_de_Y": 0.14805373046079556,
+   "signo_esperado": 1
+  },
+  "H-B3-2": {
+   "regresor": "F2_dlnpob",
+   "b_por_DT_logpuntos": 0.035524006756453674,
+   "beta_std_en_DT_de_Y": 0.22257962196950498,
+   "signo_esperado": 1
+  },
+  "H-B3-6": {
+   "regresor": "F6_lnp0",
+   "b_por_DT_logpuntos": -0.16007492925294786,
+   "beta_std_en_DT_de_Y": -1.0029673027647301,
+   "signo_esperado": -1
+  }
+ },
+ "ic95": {
+  "H-B3-1": [
+   -0.0006136170163016444,
+   0.047872765672130134
+  ],
+  "H-B3-2": [
+   -0.007393484340151649,
+   0.078441497853059
+  ],
+  "H-B3-6": [
+   -0.23785524559995286,
+   -0.08229461290594288
+  ]
+ },
+ "p_ajustado": {
+  "H-B3-1": {
+   "holm_8_familias": 0.3346046730824239,
+   "holm_3_confirmatorias": 0.11153489102747463,
+   "p_mayor_sin_ajuste": 0.055767445513737315,
+   "p_aleatorizacion": 0.04919016196760648
+  },
+  "H-B3-2": {
+   "holm_8_familias": 0.407478807834292,
+   "holm_3_confirmatorias": 0.11153489102747463,
+   "p_mayor_sin_ajuste": 0.101869701958573,
+   "p_aleatorizacion": 0.07318536292741452
+  },
+  "H-B3-6": {
+   "holm_8_familias": 0.0012665009863238397,
+   "holm_3_confirmatorias": 0.0005427861369959313,
+   "p_mayor_sin_ajuste": 0.0001809287123319771,
+   "p_aleatorizacion": 0.0001999600079984003
+  }
+ },
+ "nivel_evidencia": "DESCRIPTIVO (descriptivo honesto: el efecto mínimo detectable con Holm supera 0,5 DT; ver potencia.md)",
+ "diagnosticos": {
+  "R2_principal": 0.911506699182258,
+  "R2_ajustado_principal": 0.8795507849980734,
+  "shapley": {
+   "orden_igual_en_dos_fuentes": false,
+   "spearman": 0.9047619047619048,
+   "kendall": 0.7857142857142856,
+   "R2_tasado": 0.9115066991822581,
+   "R2_registradores": 0.8208410390832163
+  },
+  "multiverso": [
+   {
+    "hipotesis": "H-B3-1",
+    "n_especificaciones": 32,
+    "pct_mismo_signo_que_principal": 62.5,
+    "pct_signo_esperado": 62.5,
+    "pct_p_menor_005": 3.125,
+    "b_min": -0.017485096330692066,
+    "b_max": 0.023629574327914245
+   },
+   {
+    "hipotesis": "H-B3-2",
+    "n_especificaciones": 32,
+    "pct_mismo_signo_que_principal": 100.0,
+    "pct_signo_esperado": 100.0,
+    "pct_p_menor_005": 59.375,
+    "b_min": 0.026173685306569508,
+    "b_max": 0.07697030952867474
+   },
+   {
+    "hipotesis": "H-B3-6",
+    "n_especificaciones": 32,
+    "pct_mismo_signo_que_principal": 100.0,
+    "pct_signo_esperado": 100.0,
+    "pct_p_menor_005": 46.875,
+    "b_min": -0.21217532288797905,
+    "b_max": -0.0014548147889601494
+   }
+  ],
+  "sensibilidad": {
+   "H-B3-1": {
+    "b_corto": 0.07337247217975905,
+    "b_largo": 0.023629574327914647,
+    "se_largo": 0.010165140081544274,
+    "t": 2.3245694735497313,
+    "r2_corto": 0.21134560329209462,
+    "r2_largo": 0.9115066991822581,
+    "rmax": 1.0,
+    "delta_oster": 3.758481328037984,
+    "beta_star_delta1": 0.017342573737639044,
+    "RV": 0.28148887683881474,
+    "RV_alpha": 0.04100379910720114,
+    "RV_gl_n": 0.31958013278120845,
+    "RV_alpha_gl_n": 0.04330798131797053,
+    "regresor": "F1_bartik",
+    "nota": "Corto = solo el regresor; largo = las 8 familias. gl de RV: G-1 con G=N (cada provincia su clúster) y N-K-1 (RV_gl_n)."
+   },
+   "H-B3-2": {
+    "b_corto": 0.12059144008733061,
+    "b_largo": 0.03552400675645314,
+    "se_largo": 0.016629721334083046,
+    "t": 2.136175708708105,
+    "r2_corto": 0.5708997803538267,
+    "r2_largo": 0.911506699182258,
+    "rmax": 1.0,
+    "delta_oster": 1.6073175457379083,
+    "beta_star_delta1": 0.013422582647289748,
+    "RV": 0.26213621783608276,
+    "RV_alpha": 0.014846378748301385,
+    "RV_gl_n": 0.29824800641138344,
+    "RV_alpha_gl_n": 0.012795754373832867,
+    "regresor": "F2_dlnpob",
+    "nota": "Corto = solo el regresor; largo = las 8 familias. gl de RV: G-1 con G=N (cada provincia su clúster) y N-K-1 (RV_gl_n)."
+   }
+  },
+  "advertencia_F6": "Y1 es la variación del log del precio y F6 es el log del precio inicial de la misma serie: el error de medida del precio inicial empuja el coeficiente hacia valores negativos. Control con el precio inicial de otra fuente en hip['H-B3-6']."
+ },
+ "fuera_muestra": {
+  "modelo": "MCO 8 familias, LOO-CV (validación en bloques con embargo no aplica a corte transversal)",
+  "rmse": 0.0664040666613165,
+  "rmse_media": 0.1612217034973582,
+  "dm_vs_ar4": null,
+  "dm_hln_vs_media": -4.281087586998579,
+  "p_dm_hln_vs_media": 8.625612083205552e-05
+ },
+ "notas": "Capa C4. Lenguaje de asociación, no de efecto. Validación AR(4)/ECM v1 y bloques con embargo no aplican a un corte transversal de 50 provincias: se sustituyen por validación cruzada dejando una fuera (LOO) frente al modelo de solo media, con Diebold-Mariano corregido por HLN (declarado como desviación). Ventanas distintas por límite de datos: Y2 hasta 2024 (SERPAVI), Y3 y crecimiento de renta hasta 2024 (CRE). Renta: PIB per cápita CRE en lugar de ADRH (ver desviaciones.md)."
+}

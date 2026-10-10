@@ -1,53 +1,53 @@
-cod_prov,provincia,precio_eur_m2,suelo_eur_m2,resp_oferta,deficit_2021_2025_min,deficit_2021_2025_mediana,deficit_2021_2025_max,clase_2021_2025,clase_modal_2021_2025,estable_costes_m_r,estable_solo_coste,signo_deficit_estable,estab_total_pct,brecha_cmin,brecha_cmax,clase_con_rango_supuesto_M3,clase_2012_2025,clase_modal_2012_2025,estable_2012_2025,estab_total_2012_2025_pct,estable_union_rangos,capa,capa_estricta_B5,clase_v4_modal,clase_etiqueta
-01,Araba/Álava,2443.925,221.976,0.480,3608.000,4448.430,5288.860,1,1,True,True,True,100.000,1752.809,1140.384,1,1,1,True,100.000,True,C2,C4,9,1 falta y es rentable
-02,Albacete,1171.250,114.311,0.253,3490.000,4641.783,5903.130,1,1,False,False,True,66.667,569.855,-42.570,3,4,4,False,66.667,False,C4,C4,3,1 falta y es rentable
-03,Alicante/Alacant,1936.200,252.164,-0.036,49860.000,57280.015,67405.060,2,2,True,True,True,98.333,1219.927,607.502,-1,2,2,True,98.333,False,C4,C4,2,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
-04,Almería,1424.975,183.500,0.643,17251.000,19643.408,22896.630,1,1,True,True,True,98.889,765.922,153.497,-1,1,1,True,98.889,False,C4,C4,3,1 falta y es rentable
-05,Ávila,1102.625,67.263,-0.001,1007.000,1726.868,3016.470,2,2,False,False,True,58.333,540.436,-71.988,3,4,4,False,66.667,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
-06,Badajoz,981.825,116.336,-0.225,3025.000,7223.870,10211.480,2,3,False,False,True,50.000,378.742,-233.683,3,2,3,False,33.333,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
-07,"Balears, Illes",3837.175,420.254,0.420,13903.000,15972.308,20424.230,1,1,True,True,True,100.000,2980.827,2368.402,1,1,1,True,100.000,True,C2,C4,2,1 falta y es rentable
-08,Barcelona,3118.950,217.324,0.293,76854.000,89835.615,109313.460,1,1,True,True,True,100.000,2431.710,1819.286,1,1,1,True,100.000,True,C2,C4,2,1 falta y es rentable
-09,Burgos,1404.375,74.589,0.535,3546.000,4389.597,6302.390,1,1,True,True,True,88.889,836.081,223.657,-1,4,4,False,66.667,False,C4,C4,3,1 falta y es rentable
-10,Cáceres,927.575,120.552,0.885,-121.000,1054.392,2880.570,1,3,False,False,False,39.259,320.979,-291.446,3,4,4,False,66.667,False,C4,C4,3,1 falta y es rentable
-11,Cádiz,1940.075,209.745,0.565,11855.000,17193.765,22056.060,1,1,True,True,True,100.000,1259.151,646.727,-1,1,1,False,66.667,False,C4,C4,2,1 falta y es rentable
-12,Castellón/Castelló,1398.675,153.828,0.813,16673.000,19633.180,22984.720,1,1,True,True,True,96.667,764.349,151.924,-1,1,1,True,96.667,False,C4,C4,3,1 falta y es rentable
-13,Ciudad Real,808.175,122.112,0.363,3987.000,5858.950,7118.800,3,3,False,False,True,74.444,200.279,-412.146,3,4,4,True,100.000,False,C4,C4,3,3 falta y no es rentable
-14,Córdoba,1263.900,166.996,0.119,1135.000,5893.062,8998.250,1,1,False,True,True,63.333,618.600,6.176,-1,4,4,False,66.667,False,C4,C4,3,1 falta y es rentable
-15,"Coruña, A",1670.300,125.029,0.525,9965.000,17303.403,22455.610,1,1,True,True,True,100.000,1059.973,447.548,-1,1,1,True,100.000,False,C4,C4,3,1 falta y es rentable
-16,Cuenca,913.250,97.007,0.111,1734.000,2487.540,3390.160,1,3,False,False,True,46.667,326.275,-286.150,3,4,4,True,100.000,False,C4,C4,3,1 falta y es rentable
-17,Girona,2097.675,178.720,0.290,16362.000,18813.053,21436.210,1,1,True,True,True,100.000,1442.605,830.181,1,1,1,True,100.000,True,C2,C4,2,1 falta y es rentable
-18,Granada,1598.450,142.399,0.717,16665.000,18882.230,23184.920,1,1,True,True,True,100.000,973.648,361.223,-1,1,1,True,100.000,False,C4,C4,3,1 falta y es rentable
-19,Guadalajara,1644.700,102.221,1.112,4639.000,5976.948,6516.790,1,1,True,True,True,100.000,1053.380,440.955,-1,1,1,False,66.667,False,C4,C4,3,1 falta y es rentable
-20,Gipuzkoa,3379.875,327.928,-0.187,2573.000,4324.430,6075.860,2,2,True,True,True,100.000,2600.465,1988.041,2,4,4,False,66.667,True,C2,C4,9,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
-21,Huelva,1474.900,114.175,0.455,5316.000,7235.113,9635.450,1,1,True,True,True,100.000,873.618,261.193,-1,1,1,True,100.000,False,C4,C4,3,1 falta y es rentable
-22,Huesca,1432.200,132.343,0.334,2587.000,3225.108,4305.430,1,1,True,True,True,98.889,815.778,203.353,-1,4,4,False,66.667,False,C4,C4,3,1 falta y es rentable
-23,Jaén,885.225,147.606,0.107,4436.000,5449.300,8173.200,3,3,False,False,True,62.222,256.084,-356.341,3,4,4,False,66.667,False,C4,C4,3,3 falta y no es rentable
-24,León,1025.525,54.968,0.415,2714.000,4299.812,6960.250,1,1,False,False,True,63.333,473.582,-138.843,3,4,4,True,100.000,False,C4,C4,3,1 falta y es rentable
-25,Lleida,1233.775,146.392,0.156,7034.000,8440.202,10360.810,1,1,False,False,True,61.667,605.645,-6.779,-1,1,1,False,41.111,False,C4,C4,3,1 falta y es rentable
-26,"Rioja, La",1408.900,130.939,0.450,3144.000,4493.333,5257.330,1,1,True,True,True,100.000,793.648,181.223,-1,1,1,False,66.667,False,C4,C4,3,1 falta y es rentable
-27,Lugo,1126.200,63.443,-0.355,3463.000,4840.667,6153.670,2,2,False,False,True,66.667,567.195,-45.230,3,2,2,False,44.444,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
-28,Madrid,3942.975,354.485,0.269,95897.000,107367.852,125466.410,1,1,True,True,True,100.000,3141.435,2529.010,1,1,1,True,100.000,True,C2,C4,2,1 falta y es rentable
-29,Málaga,2950.675,340.192,0.705,23982.000,26844.393,34318.570,1,1,True,True,True,100.000,2161.045,1548.621,1,1,1,True,100.000,True,C2,C4,2,1 falta y es rentable
-30,Murcia,1290.150,174.716,1.455,35087.000,38582.750,43528.000,1,1,False,True,True,92.222,638.417,25.992,-1,1,1,False,92.222,False,C4,C4,3,1 falta y es rentable
-31,Navarra,1881.725,149.625,0.759,4356.000,6011.520,7667.040,1,1,True,True,True,100.000,1250.901,638.477,-1,4,4,False,66.667,False,C4,C4,9,1 falta y es rentable
-32,Ourense,1067.075,58.906,-0.145,2902.000,4314.708,5630.830,2,2,False,False,True,56.667,511.850,-100.574,3,2,2,False,37.778,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
-33,Asturias,1714.250,137.175,0.780,4136.000,6484.855,11542.420,1,1,True,True,True,100.000,1093.801,481.377,-1,4,4,True,100.000,False,C4,C4,2,1 falta y es rentable
-34,Palencia,1045.675,58.634,0.841,507.000,1363.078,1671.310,1,1,False,False,True,75.556,490.677,-121.748,3,4,4,False,66.667,False,C4,C4,3,1 falta y es rentable
-35,"Palmas, Las",2171.225,296.765,1.590,12065.000,20115.092,24249.370,1,1,True,True,True,100.000,1417.785,805.360,1,1,1,False,66.667,True,C2,C4,2,1 falta y es rentable
-36,Pontevedra,1743.125,159.067,0.548,3991.000,9098.070,13064.280,1,1,True,True,True,100.000,1104.433,492.008,-1,1,1,False,66.667,False,C4,C4,2,1 falta y es rentable
-37,Salamanca,1429.525,77.688,0.176,3444.000,4419.307,6265.230,1,1,True,True,True,71.111,858.649,246.224,-1,4,4,False,66.667,False,C4,C4,3,1 falta y es rentable
-38,Santa Cruz de Tenerife,2192.650,225.528,0.027,12948.000,17769.658,21800.630,2,2,True,True,True,66.667,1498.574,886.149,2,2,2,False,44.444,True,C2,C4,2,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
-39,Cantabria,2030.475,100.849,0.756,5981.000,7456.605,9817.420,1,1,True,True,True,100.000,1440.298,827.873,1,1,1,False,66.667,True,C2,C4,2,1 falta y es rentable
-40,Segovia,1434.400,86.499,0.098,2093.000,2510.637,3472.550,2,2,False,True,True,60.000,856.181,243.757,-1,4,4,True,100.000,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
-41,Sevilla,1804.475,164.559,0.919,15258.000,18002.248,24386.990,1,1,True,True,True,100.000,1161.206,548.782,-1,1,1,False,66.667,False,C4,C4,2,1 falta y es rentable
-42,Soria,1105.475,87.759,0.638,-626.000,5.912,785.000,1,1,False,False,False,51.852,526.206,-86.218,3,4,4,True,100.000,False,C4,C4,3,1 falta y es rentable
-43,Tarragona,1743.600,133.920,0.689,25310.000,28368.447,32527.790,1,1,True,True,True,100.000,1125.864,513.439,-1,1,1,True,100.000,False,C4,C4,2,1 falta y es rentable
-44,Teruel,985.900,93.468,0.089,678.000,1418.277,1935.110,2,3,False,False,True,37.778,401.874,-210.551,3,4,4,True,100.000,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
-45,Toledo,1180.300,120.271,0.511,17664.000,19235.463,22057.850,1,1,False,False,True,83.333,573.938,-38.487,-1,1,1,False,83.333,False,C4,C4,3,1 falta y es rentable
-46,Valencia/València,1875.100,230.645,0.957,59206.000,68926.270,80093.080,1,1,True,True,True,100.000,1176.760,564.335,-1,1,1,True,100.000,False,C4,C4,2,1 falta y es rentable
-47,Valladolid,1563.875,117.294,1.485,5383.000,6204.275,8431.100,1,1,True,True,True,100.000,959.994,347.569,-1,1,1,False,66.667,False,C4,C4,3,1 falta y es rentable
-48,Bizkaia,2922.625,264.800,0.022,9341.000,12124.520,14908.040,2,2,True,True,True,66.667,2195.822,1583.397,2,2,2,False,44.444,True,C2,C4,9,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
-49,Zamora,935.475,68.571,0.054,518.000,1502.025,2074.100,2,3,False,False,True,40.000,372.196,-240.228,3,4,4,True,100.000,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
-50,Zaragoza,1855.750,118.377,0.167,15406.000,17396.998,20843.990,1,1,True,True,True,67.222,1250.966,638.542,-1,4,4,False,66.667,False,C4,C4,2,1 falta y es rentable
-51,Ceuta,2160.500,,0.766,28.000,1066.787,1279.150,9,9,True,True,True,100.000,,,9,9,9,False,100.000,True,sin dato,C4,0,9 sin dato
-52,Melilla,2091.150,,-0.327,-181.000,997.367,1217.470,9,9,True,True,False,100.000,,,9,9,9,False,100.000,True,sin dato,C4,0,9 sin dato
+cod_prov,provincia,precio_eur_m2,suelo_eur_m2,resp_oferta,deficit_2021_2025_min,deficit_2021_2025_mediana,deficit_2021_2025_max,clase_2021_2025,clase_modal_2021_2025,estable_costes_m_r,estable_solo_coste,signo_deficit_estable,estab_total_pct,brecha_cmin,brecha_cmax,clase_con_rango_supuesto_M3,clase_2012_2025,clase_modal_2012_2025,estable_2012_2025,estab_total_2012_2025_pct,estable_union_rangos,robusta_diagnostico,capa,capa_estricta_B5,clase_v4_modal,clase_etiqueta
+01,Araba/Álava,2443.925,221.976,0.480,3608.000,4448.430,5288.860,1,1,True,True,True,100.000,1752.809,1140.384,1,1,1,True,100.000,True,True,C4,C4,9,1 falta y es rentable
+02,Albacete,1171.250,114.311,0.253,3490.000,4641.783,5903.130,1,1,False,False,True,66.667,569.855,-42.570,3,4,4,False,66.667,False,False,C4,C4,3,1 falta y es rentable
+03,Alicante/Alacant,1936.200,252.164,-0.036,49860.000,57280.015,67405.060,2,2,True,True,True,98.333,1219.927,607.502,-1,2,2,True,98.333,False,False,C4,C4,2,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
+04,Almería,1424.975,183.500,0.643,17251.000,19643.408,22896.630,1,1,True,True,True,98.889,765.922,153.497,-1,1,1,True,98.889,False,False,C4,C4,3,1 falta y es rentable
+05,Ávila,1102.625,67.263,-0.001,1007.000,1726.868,3016.470,2,2,False,False,True,58.333,540.436,-71.988,3,4,4,False,66.667,False,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
+06,Badajoz,981.825,116.336,-0.225,3025.000,7223.870,10211.480,2,3,False,False,True,50.000,378.742,-233.683,3,2,3,False,33.333,False,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
+07,"Balears, Illes",3837.175,420.254,0.420,13903.000,15972.308,20424.230,1,1,True,True,True,100.000,2980.827,2368.402,1,1,1,True,100.000,True,True,C4,C4,2,1 falta y es rentable
+08,Barcelona,3118.950,217.324,0.293,76854.000,89835.615,109313.460,1,1,True,True,True,100.000,2431.710,1819.286,1,1,1,True,100.000,True,True,C4,C4,2,1 falta y es rentable
+09,Burgos,1404.375,74.589,0.535,3546.000,4389.597,6302.390,1,1,True,True,True,88.889,836.081,223.657,-1,4,4,False,66.667,False,False,C4,C4,3,1 falta y es rentable
+10,Cáceres,927.575,120.552,0.885,-121.000,1054.392,2880.570,1,3,False,False,False,39.259,320.979,-291.446,3,4,4,False,66.667,False,False,C4,C4,3,1 falta y es rentable
+11,Cádiz,1940.075,209.745,0.565,11855.000,17193.765,22056.060,1,1,True,True,True,100.000,1259.151,646.727,-1,1,1,False,66.667,False,False,C4,C4,2,1 falta y es rentable
+12,Castellón/Castelló,1398.675,153.828,0.813,16673.000,19633.180,22984.720,1,1,True,True,True,96.667,764.349,151.924,-1,1,1,True,96.667,False,False,C4,C4,3,1 falta y es rentable
+13,Ciudad Real,808.175,122.112,0.363,3987.000,5858.950,7118.800,3,3,False,False,True,74.444,200.279,-412.146,3,4,4,True,100.000,False,False,C4,C4,3,3 falta y no es rentable
+14,Córdoba,1263.900,166.996,0.119,1135.000,5893.062,8998.250,1,1,False,True,True,63.333,618.600,6.176,-1,4,4,False,66.667,False,False,C4,C4,3,1 falta y es rentable
+15,"Coruña, A",1670.300,125.029,0.525,9965.000,17303.403,22455.610,1,1,True,True,True,100.000,1059.973,447.548,-1,1,1,True,100.000,False,False,C4,C4,3,1 falta y es rentable
+16,Cuenca,913.250,97.007,0.111,1734.000,2487.540,3390.160,1,3,False,False,True,46.667,326.275,-286.150,3,4,4,True,100.000,False,False,C4,C4,3,1 falta y es rentable
+17,Girona,2097.675,178.720,0.290,16362.000,18813.053,21436.210,1,1,True,True,True,100.000,1442.605,830.181,1,1,1,True,100.000,True,True,C4,C4,2,1 falta y es rentable
+18,Granada,1598.450,142.399,0.717,16665.000,18882.230,23184.920,1,1,True,True,True,100.000,973.648,361.223,-1,1,1,True,100.000,False,False,C4,C4,3,1 falta y es rentable
+19,Guadalajara,1644.700,102.221,1.112,4639.000,5976.948,6516.790,1,1,True,True,True,100.000,1053.380,440.955,-1,1,1,False,66.667,False,False,C4,C4,3,1 falta y es rentable
+20,Gipuzkoa,3379.875,327.928,-0.187,2573.000,4324.430,6075.860,2,2,True,True,True,100.000,2600.465,1988.041,2,4,4,False,66.667,True,True,C4,C4,9,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
+21,Huelva,1474.900,114.175,0.455,5316.000,7235.113,9635.450,1,1,True,True,True,100.000,873.618,261.193,-1,1,1,True,100.000,False,False,C4,C4,3,1 falta y es rentable
+22,Huesca,1432.200,132.343,0.334,2587.000,3225.108,4305.430,1,1,True,True,True,98.889,815.778,203.353,-1,4,4,False,66.667,False,False,C4,C4,3,1 falta y es rentable
+23,Jaén,885.225,147.606,0.107,4436.000,5449.300,8173.200,3,3,False,False,True,62.222,256.084,-356.341,3,4,4,False,66.667,False,False,C4,C4,3,3 falta y no es rentable
+24,León,1025.525,54.968,0.415,2714.000,4299.812,6960.250,1,1,False,False,True,63.333,473.582,-138.843,3,4,4,True,100.000,False,False,C4,C4,3,1 falta y es rentable
+25,Lleida,1233.775,146.392,0.156,7034.000,8440.202,10360.810,1,1,False,False,True,61.667,605.645,-6.779,-1,1,1,False,41.111,False,False,C4,C4,3,1 falta y es rentable
+26,"Rioja, La",1408.900,130.939,0.450,3144.000,4493.333,5257.330,1,1,True,True,True,100.000,793.648,181.223,-1,1,1,False,66.667,False,False,C4,C4,3,1 falta y es rentable
+27,Lugo,1126.200,63.443,-0.355,3463.000,4840.667,6153.670,2,2,False,False,True,66.667,567.195,-45.230,3,2,2,False,44.444,False,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
+28,Madrid,3942.975,354.485,0.269,95897.000,107367.852,125466.410,1,1,True,True,True,100.000,3141.435,2529.010,1,1,1,True,100.000,True,True,C4,C4,2,1 falta y es rentable
+29,Málaga,2950.675,340.192,0.705,23982.000,26844.393,34318.570,1,1,True,True,True,100.000,2161.045,1548.621,1,1,1,True,100.000,True,True,C4,C4,2,1 falta y es rentable
+30,Murcia,1290.150,174.716,1.455,35087.000,38582.750,43528.000,1,1,False,True,True,92.222,638.417,25.992,-1,1,1,False,92.222,False,False,C4,C4,3,1 falta y es rentable
+31,Navarra,1881.725,149.625,0.759,4356.000,6011.520,7667.040,1,1,True,True,True,100.000,1250.901,638.477,-1,4,4,False,66.667,False,False,C4,C4,9,1 falta y es rentable
+32,Ourense,1067.075,58.906,-0.145,2902.000,4314.708,5630.830,2,2,False,False,True,56.667,511.850,-100.574,3,2,2,False,37.778,False,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
+33,Asturias,1714.250,137.175,0.780,4136.000,6484.855,11542.420,1,1,True,True,True,100.000,1093.801,481.377,-1,4,4,True,100.000,False,False,C4,C4,2,1 falta y es rentable
+34,Palencia,1045.675,58.634,0.841,507.000,1363.078,1671.310,1,1,False,False,True,75.556,490.677,-121.748,3,4,4,False,66.667,False,False,C4,C4,3,1 falta y es rentable
+35,"Palmas, Las",2171.225,296.765,1.590,12065.000,20115.092,24249.370,1,1,True,True,True,100.000,1417.785,805.360,1,1,1,False,66.667,True,True,C4,C4,2,1 falta y es rentable
+36,Pontevedra,1743.125,159.067,0.548,3991.000,9098.070,13064.280,1,1,True,True,True,100.000,1104.433,492.008,-1,1,1,False,66.667,False,False,C4,C4,2,1 falta y es rentable
+37,Salamanca,1429.525,77.688,0.176,3444.000,4419.307,6265.230,1,1,True,True,True,71.111,858.649,246.224,-1,4,4,False,66.667,False,False,C4,C4,3,1 falta y es rentable
+38,Santa Cruz de Tenerife,2192.650,225.528,0.027,12948.000,17769.658,21800.630,2,2,True,True,True,66.667,1498.574,886.149,2,2,2,False,44.444,True,True,C4,C4,2,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
+39,Cantabria,2030.475,100.849,0.756,5981.000,7456.605,9817.420,1,1,True,True,True,100.000,1440.298,827.873,1,1,1,False,66.667,True,True,C4,C4,2,1 falta y es rentable
+40,Segovia,1434.400,86.499,0.098,2093.000,2510.637,3472.550,2,2,False,True,True,60.000,856.181,243.757,-1,4,4,True,100.000,False,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
+41,Sevilla,1804.475,164.559,0.919,15258.000,18002.248,24386.990,1,1,True,True,True,100.000,1161.206,548.782,-1,1,1,False,66.667,False,False,C4,C4,2,1 falta y es rentable
+42,Soria,1105.475,87.759,0.638,-626.000,5.912,785.000,1,1,False,False,False,51.852,526.206,-86.218,3,4,4,True,100.000,False,False,C4,C4,3,1 falta y es rentable
+43,Tarragona,1743.600,133.920,0.689,25310.000,28368.447,32527.790,1,1,True,True,True,100.000,1125.864,513.439,-1,1,1,True,100.000,False,False,C4,C4,2,1 falta y es rentable
+44,Teruel,985.900,93.468,0.089,678.000,1418.277,1935.110,2,3,False,False,True,37.778,401.874,-210.551,3,4,4,True,100.000,False,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
+45,Toledo,1180.300,120.271,0.511,17664.000,19235.463,22057.850,1,1,False,False,True,83.333,573.938,-38.487,-1,1,1,False,83.333,False,False,C4,C4,3,1 falta y es rentable
+46,Valencia/València,1875.100,230.645,0.957,59206.000,68926.270,80093.080,1,1,True,True,True,100.000,1176.760,564.335,-1,1,1,True,100.000,False,False,C4,C4,2,1 falta y es rentable
+47,Valladolid,1563.875,117.294,1.485,5383.000,6204.275,8431.100,1,1,True,True,True,100.000,959.994,347.569,-1,1,1,False,66.667,False,False,C4,C4,3,1 falta y es rentable
+48,Bizkaia,2922.625,264.800,0.022,9341.000,12124.520,14908.040,2,2,True,True,True,66.667,2195.822,1583.397,2,2,2,False,44.444,True,True,C4,C4,9,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
+49,Zamora,935.475,68.571,0.054,518.000,1502.025,2074.100,2,3,False,False,True,40.000,372.196,-240.228,3,4,4,True,100.000,False,False,C4,C4,3,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)
+50,Zaragoza,1855.750,118.377,0.167,15406.000,17396.998,20843.990,1,1,True,True,True,67.222,1250.966,638.542,-1,4,4,False,66.667,False,False,C4,C4,2,1 falta y es rentable
+51,Ceuta,2160.500,,0.766,28.000,1066.787,1279.150,9,9,True,True,True,100.000,,,9,9,9,False,100.000,True,True,sin dato,C4,0,9 sin dato
+52,Melilla,2091.150,,-0.327,-181.000,997.367,1217.470,9,9,True,True,False,100.000,,,9,9,9,False,100.000,True,False,sin dato,C4,0,9 sin dato

@@ -4,50 +4,79 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 
 | id | indicador | valor | rango | unidad | periodo | cobertura | fuentes | capa | fecha del dato |
 |---|---|---|---|---|---|---|---|---|---|
-| A23-A1 | Alquiler stock, IPC alquiler 2015-2025 | 13.6 |  | % | 2015-2025 | España | INE IPC alquiler | C1 | 2025T4 |
 | A23-A10 | Contratos nuevos Comunitat Valenciana 2021-2024: IPVA nuevo y fianzas GVA | 26.6 | 22.4–30.8 | % | 2021-2024 | Comunitat Valenciana | INE IPVA (AEAT); GVA fianzas | C1 | 2024 |
 | A23-A11 | Rotación Cataluña: fianzas Incasòl / contratos vigentes SERPAVI | 25 | 25–43.2 | % | 2015-2024 | Cataluña | Incasòl; SERPAVI | C4 | 2024 |
 | A23-A12 | Rotación Comunitat Valenciana: fianzas GVA / contratos vigentes SERPAVI | 13.5 | 13.5–15.8 | % | 2020-2024 | Comunitat Valenciana | GVA; SERPAVI | C4 | 2024 |
 | A23-A13 | Municipios con renta media de fianzas x2 o más (Incasòl 2015-2025, >=30 fianzas) | 1 |  | municipios | 2015-2025 | 261 municipios de Cataluña | Incasòl | C4 | 2025 |
 | A23-A14 | Municipios con mediana de fianza x2 o más (GVA 2020-2025, >=30 fianzas) | 2 |  | municipios | 2020-2025 | 103 municipios de la C. Valenciana | GVA fianzas | C4 | 2025 |
-| A23-A2 | Alquiler stock 2015-2024: núcleo IPC de alquiler e IPVA (contratos existentes y total) | 20.6 | 10.9–22.9 | % | 2015-2024 | España | INE IPC (encuesta); INE IPVA (datos tributarios AEAT) | C1 | 2024 |
+| A23-A2 | Alquiler stock 2015-2024: núcleo IPC de alquiler e IPVA (contratos existentes y total; tolerancia ±15 % en nivel) |  | 10.9–22.9 | % | 2015-2024 | España | INE IPC (encuesta); INE IPVA (datos tributarios AEAT) | C1 | 2024 |
 | A23-A2b | Alquiler stock 2015-2024: SERPAVI (renta declarada, composición constante), discrepante del núcleo | 43 |  | % | 2015-2024 | España | Ministerio SERPAVI | C4 | 2024 |
 | A23-A3 | Contratos nuevos, IPVA nuevo contrato 2015-2024 (base 2015=100) | 37 |  | % | 2015-2024 | España | INE IPVA (AEAT) | C4 | 2024 |
 | A23-A4 | Contratos nuevos, Incasòl renta media 2015-2025 | 54.5 |  | % | 2015-2025 | Cataluña | Incasòl fianzas | C4 | 2025 |
 | A23-A5 | Contratos nuevos, GVA mediana fianza 2020-2025 | 58 |  | % | 2020-2025 | Comunitat Valenciana | GVA registro de fianzas | C4 | 2025 |
 | A23-A6 | Brecha nuevo menos existente (IPVA) 2024 | 13.6 |  | % | 2024 | España | INE IPVA (AEAT) | C4 | 2024 |
 | A23-A7 | Cuota implícita de contratos nuevos en el IPVA | 16 | 13.9–17.6 | % | 2021-2024 | España | INE IPVA | C4 | 2024 |
-| A23-A8 | Subida adicional del stock si todo contrato se actualizase al HICP (sin tope) | 7.2 |  | % | 2022-2024 | España | INE IPVA; BCE HICP; supuesto de tope | C2 | 2024 |
+| A23-A8 | Subida adicional del stock si todo contrato se actualizase al HICP (sin tope) | 7.2 |  | % | 2022-2024 | España | INE IPVA; BCE HICP; supuesto de tope | C4 | 2024 |
 | A23-A9 | Contratos nuevos Cataluña 2021-2024: IPVA nuevo e Incasòl | 16.9 | 16.6–17.2 | % | 2021-2024 | Cataluña | INE IPVA (AEAT); Incasòl | C1 | 2024 |
-| A23-P1 | Precio de compra, variación acumulada 2015-2025, INE IPV | 79.9 |  | % | 2015-2025 (media anual) | España | INE IPV (tabla 25171/80270) | C1 | 2025T4 |
-| A23-P10 | Factor común de las 4 fuentes de precio: varianza explicada por el 1.er componente | 89.2 |  | % | 2016-2025 (dln anual) | España | INE, MIVAU, Notariado, Registradores | C4 | 2026-10-10 |
+| A23-P1 | Precio de compra, variación acumulada 2015-2025, INE IPV | 79.9 |  | % | 2015-2025 (media anual) | España | INE IPV (tabla 25171/80270) | C4 | 2025T4 |
+| A23-P10 | Factor común de las 4 fuentes de precio: varianza explicada por el 1.er componente | 89.2 |  | % | 2016-2025 (dln anual) | España | INE, MIVAU, Notariado, Registradores | C4 | 2025T4 |
 | A23-P2 | Precio de compra, núcleo MIVAU/Notariado/Registradores 2015-2025 | 47.2 | 44.2–56.1 | % | 2015-2025 (media anual) | España | MIVAU valor tasado; Notariado CGN; Registradores opendata | C1 | 2025 (anual) |
-| A23-P3 | Residuo del puente INE IPV -> núcleo (método, calidad, tamaño, cobertura) | -30.9 |  | pp | 2015-2025 | España | cálculo A23 (puente_precio.csv) | C4 | 2026-10-10 |
-| A23-P4 | Efecto de pesos CCAA comunes sobre el IPV | 0.6 |  | pp | 2015-2025 | 17 CCAA | INE IPV CCAA + Registradores (pesos) | C2 | 2026-10-10 |
-| A23-P5 | Efecto de la composición nueva/usada sobre la media de pm2 | 0 |  | pp | 2015-2025 | España | INE ETDP + Registradores ERI 2025 | C4 | 2025 |
-| A23-P6 | Precio por m2 Registradores nacional 2025 | 2284 |  | EUR/m2 | 2025 | España | Registradores opendata | C1 | 2025 |
-| A23-P7 | Precio por m2 Notariado 2025 | 1949 |  | EUR/m2 | 2025 | España | Notariado CGN | C1 | 2025S2 |
-| A23-P8 | Registradores con pesos provinciales de importe 2015 (52 provincias) | 66.8 |  | % | 2015-2025 | España | Registradores opendata (provincia) | C2 | 2025 |
-| A23-P9 | Registradores con pesos CCAA de importe 2015 | 63.8 |  | % | 2015-2025 | 17 CCAA | Registradores opendata (CCAA) | C2 | 2025 |
-| A4-001 | Rango oficial derivado de coste de construcción (MBC 1993 actualizado) | 677 | 422–932 | EUR/m2 construido | 2025T3-2026T2 | España (sin MBC por municipio) | BOE-A-1993-19265; Eurostat sts_copi_q | C4 | 2026-10-10 |
-| A4-conc50-2021-2024 | Provincias que suman el 50 % del déficit positivo | 6 | 6–6 | provincias | 2021-2024 | 52 provincias | ECP INE; MIVAU fin de obra (bajas 0) | C1 | 2026-10 |
-| A4-conc50-2021-2025 | Provincias que suman el 50 % del déficit positivo | 6 | 6–6 | provincias | 2021-2025 | 52 provincias | ECP INE; MIVAU fin de obra (bajas 0) | C4 | 2026-10 |
-| A4-conc80-2021-2024 | Provincias que suman el 80 % del déficit positivo | 17 | 17–17 | provincias | 2021-2024 | 52 provincias | ECP INE; MIVAU fin de obra (bajas 0) | C1 | 2026-10 |
-| A4-conc80-2021-2025 | Provincias que suman el 80 % del déficit positivo | 18 | 18–18 | provincias | 2021-2025 | 52 provincias | ECP INE; MIVAU fin de obra (bajas 0) | C4 | 2026-10 |
-| A4-prov-2012-2025-c1 | Provincias en clase 1 (1 falta y es rentable) | 24 | 13–24 | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
-| A4-prov-2012-2025-c2 | Provincias en clase 2 (2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)) | 6 | 1–6 | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
-| A4-prov-2012-2025-c3 | Provincias en clase 3 (3 falta y no es rentable) | 0 | 0–0 | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
-| A4-prov-2012-2025-c4 | Provincias en clase 4 (4 no falta (deficit <= 0)) | 20 | 8–20 | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
-| A4-prov-2012-2025-c9 | Provincias en clase 9 (9 sin dato) | 2 | 0–2 | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
-| A4-prov-2021-2025-c1 | Provincias en clase 1 (1 falta y es rentable) | 37 | 8–37 | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
-| A4-prov-2021-2025-c2 | Provincias en clase 2 (2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)) | 11 | 3–11 | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
-| A4-prov-2021-2025-c3 | Provincias en clase 3 (3 falta y no es rentable) | 2 | 0–2 | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
-| A4-prov-2021-2025-c4 | Provincias en clase 4 (4 no falta (deficit <= 0)) | 0 | 0–0 | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
-| A4-prov-2021-2025-c9 | Provincias en clase 9 (9 sin dato) | 2 | 0–2 | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
-| A5-H01 | Documentos oficiales con texto buscado | 25 | 25–25 | documentos | 2023-2026 | programas 2023 (6), resumen (1), normas (2), proposiciones de ley XV leg. (13); inventario | ['docs/v5/programas/inventario.csv'] | C4 | 2026-10-10 |
-| A5-H02 | Medidas v4 sin documento oficial (excluidas) | 41 | 41–41 | medidas | 2023 | 3 de los 9 programas v4 | ['docs/v5/programas/conciliacion_v4.csv'] | C4 | 2026-10-10 |
-| A5-H03 | Medidas v4 confirmadas en texto oficial por diccionario | 44 | 44–47 | medidas | 2023 | 6 programas con texto oficial (47 medidas v4); cita literal presente en 47 | ['docs/v5/programas/conciliacion_v4.csv'] | C4 | 2026-10-10 |
-| A5-H04 | Precision del diccionario (medida estricta / medida o mencion) | 50 | 50–78 | % | 2026-10-10 | muestra aleatoria de 40 coincidencias en documentos no normativos | ['output/v5/A5/validacion_precision.csv'] | C4 | 2026-10-10 |
+| A23-P3 | Residuo no identificado del puente INE IPV -> núcleo (sin descomponer; candidatos: método, calidad, tamaño, cobertura) | -30.9 |  | pp | 2015-2025 | España | cálculo A23 (puente_precio.csv) | C4 | 2025T4 |
+| A23-P4 | Diferencia contable del IPV con pesos CCAA comunes | 0.6 |  | pp | 2015-2025 | 17 CCAA | INE IPV CCAA + Registradores (pesos) | C4 | 2025T4 |
+| A23-P5 | Diferencia contable por composición nueva/usada en la media de pm2 | 0 |  | pp | 2015-2025 | España | INE ETDP + Registradores ERI 2025 | C4 | 2025 |
+| A23-P6 | Precio por m2 Registradores nacional 2025 | 2284 |  | EUR/m2 | 2025 | España | Registradores opendata | C4 | 2025 |
+| A23-P7 | Precio por m2 Notariado 2025 | 1949 |  | EUR/m2 | 2025 | España | Notariado CGN | C4 | 2025S2 |
+| A23-P8 | Registradores con pesos provinciales de importe 2015 (52 provincias) | 66.8 |  | % | 2015-2025 | España | Registradores opendata (provincia) | C4 | 2025 |
+| A23-P9 | Registradores con pesos CCAA de importe 2015 | 63.8 |  | % | 2015-2025 | 17 CCAA | Registradores opendata (CCAA) | C4 | 2025 |
+| A4-001 | Rango oficial derivado de coste de construcción (MBC 1993 actualizado) | 677 | 422–932 | EUR/m2 construido | 2025T3-2026T2 | España (sin MBC por municipio) | BOE-A-1993-19265; Eurostat sts_copi_q | C4 | 2026T2 |
+| A4-conc50-2021-2024 | Provincias que suman el 50 % del déficit positivo | 6 | 6–6 | provincias | 2021-2024 | 52 provincias | ECP INE; MIVAU fin de obra (bajas 0) | C4 | 2025 |
+| A4-conc50-2021-2025 | Provincias que suman el 50 % del déficit positivo | 6 | 6–6 | provincias | 2021-2025 | 52 provincias | ECP INE; MIVAU fin de obra (bajas 0) | C4 | 2025 |
+| A4-conc80-2021-2024 | Provincias que suman el 80 % del déficit positivo | 17 | 17–17 | provincias | 2021-2024 | 52 provincias | ECP INE; MIVAU fin de obra (bajas 0) | C4 | 2025 |
+| A4-conc80-2021-2025 | Provincias que suman el 80 % del déficit positivo | 18 | 18–18 | provincias | 2021-2025 | 52 provincias | ECP INE; MIVAU fin de obra (bajas 0) | C4 | 2025 |
+| A4-prov-2012-2025-c1 | Provincias en clase 1 (1 falta y es rentable) | 24 |  | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2025 |
+| A4-prov-2012-2025-c1-robustas | Provincias en clase 1 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico) | 13 |  | provincias | 2012-2025 | 52 provincias | output/v5/A4 | C4 | 2025 |
+| A4-prov-2012-2025-c2 | Provincias en clase 2 (2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)) | 6 |  | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2025 |
+| A4-prov-2012-2025-c2-robustas | Provincias en clase 2 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico) | 1 |  | provincias | 2012-2025 | 52 provincias | output/v5/A4 | C4 | 2025 |
+| A4-prov-2012-2025-c3 | Provincias en clase 3 (3 falta y no es rentable) | 0 |  | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2025 |
+| A4-prov-2012-2025-c3-robustas | Provincias en clase 3 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico) | 0 |  | provincias | 2012-2025 | 52 provincias | output/v5/A4 | C4 | 2025 |
+| A4-prov-2012-2025-c4 | Provincias en clase 4 (4 no falta (deficit <= 0)) | 20 |  | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2025 |
+| A4-prov-2012-2025-c4-robustas | Provincias en clase 4 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico) | 8 |  | provincias | 2012-2025 | 52 provincias | output/v5/A4 | C4 | 2025 |
+| A4-prov-2012-2025-c9 | Provincias en clase 9 (9 sin dato) | 2 |  | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2025 |
+| A4-prov-2012-2025-c9-robustas | Provincias en clase 9 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico) | 0 |  | provincias | 2012-2025 | 52 provincias | output/v5/A4 | C4 | 2025 |
+| A4-prov-2021-2025-c1 | Provincias en clase 1 (1 falta y es rentable) | 37 |  | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2025 |
+| A4-prov-2021-2025-c1-robustas | Provincias en clase 1 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico) | 8 |  | provincias | 2021-2025 | 52 provincias | output/v5/A4 | C4 | 2025 |
+| A4-prov-2021-2025-c2 | Provincias en clase 2 (2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)) | 11 |  | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2025 |
+| A4-prov-2021-2025-c2-robustas | Provincias en clase 2 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico) | 3 |  | provincias | 2021-2025 | 52 provincias | output/v5/A4 | C4 | 2025 |
+| A4-prov-2021-2025-c3 | Provincias en clase 3 (3 falta y no es rentable) | 2 |  | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2025 |
+| A4-prov-2021-2025-c3-robustas | Provincias en clase 3 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico) | 0 |  | provincias | 2021-2025 | 52 provincias | output/v5/A4 | C4 | 2025 |
+| A4-prov-2021-2025-c4 | Provincias en clase 4 (4 no falta (deficit <= 0)) | 0 |  | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2025 |
+| A4-prov-2021-2025-c4-robustas | Provincias en clase 4 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico) | 0 |  | provincias | 2021-2025 | 52 provincias | output/v5/A4 | C4 | 2025 |
+| A4-prov-2021-2025-c9 | Provincias en clase 9 (9 sin dato) | 2 |  | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2025 |
+| A4-prov-2021-2025-c9-robustas | Provincias en clase 9 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico) | 1 |  | provincias | 2021-2025 | 52 provincias | output/v5/A4 | C4 | 2025 |
+| A5-H01 | Documentos oficiales con texto buscado por palabras clave | 22 |  | documentos | 2023-2026 | ley: 1; plan: 1; programa: 6; proposicion: 13; resumen: 1 | docs/v5/programas/inventario.csv | C4 | 2026-10-10 |
+| A5-H02 | Medidas de v4 sin documento oficial (excluidas de los recuentos) | 41 |  | medidas | 2023 | 3 documentos de v4 | docs/v5/programas/conciliacion_v4.csv | C4 | 2026-10-10 |
+| A5-H03 | Medidas de v4 detectadas por el diccionario en el texto oficial | 44 |  | medidas | 2023 | 47 medidas de v4 con documento oficial (calibración en la misma muestra) | docs/v5/programas/conciliacion_v4.csv | C4 | 2026-10-10 |
+| A5-H04 | Precisión del diccionario: coincidencias que son una medida (estricta) | 50 | 50–77.5 | % | 2023-2026 | muestra aleatoria de 40 coincidencias (máximo: medida o mención) | output/v5/A5/validacion_precision.json | C4 | 2026-10-10 |
+| B1-H1 | Necesidad total de vivienda por año (A+R+V+F-M-K), suma de 52 provincias | 2.149e+05 | 9.363e+04–3.099e+05 | viviendas/año | 2026-2035 | España (52 provincias) | ['A4/M1', 'INE 54562', 'Censo 2021', 'MIVAU', 'Catastro'] | C4 | 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025 |
+| B1-H2 | Atraso a absorber en 10 años (déficit 2021-2025 + emancipación retrasada) | 1.103e+06 | 8.31e+05–1.474e+06 | viviendas (stock) | 2021-2025 absorbido en 2026-2035 | España | ['A4', 'M1', 'M2'] | C4 | 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025 |
+| B1-H3 | Reposición del parque (10 años) | 8.966e+04 | 1070–1.783e+05 | viviendas | 2026-2035 | España | ['Censo 2011/2021 + MIVAU', 'Catastro + MIVAU'] | C4 | 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025 |
+| B1-H4 | Crecimiento de hogares proyectado (INE, 10 años) | 1.721e+06 | 1.309e+06–1.772e+06 | hogares | 2026-2035 | España | ['INE Proyección de Hogares 54562', 'INE Proyecciones de Población 36726'] | C2 | 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025 |
+| B1-H5 | Ajuste de vacancia friccional en zonas con presión | 5.867e+04 | 0–1.173e+05 | viviendas | 2026-2035 | España | ['Censo 2021'] | C4 | 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025 |
+| B1-H6 | Vacías movilizables en zonas con presión (10-30 %) | 7.336e+05 | 3.668e+05–1.1e+06 | viviendas | 2026-2035 | España | ['INE 59531', 'A4'] | C4 | 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025 |
+| B1-H7 | Cartera en construcción (iniciadas menos terminadas, 2-3 años) | 8.982e+04 | 7.567e+04–1.04e+05 | viviendas | 2023-2025 | España | ['MIVAU'] | C4 | 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025 |
+| B1-H8 | Viviendas liberadas por envejecimiento (tasa de disolución de hogares de 75+) | 1.415e+06 | 8.02e+05–2.17e+06 | viviendas (10 años) | 2026-2035 | España | ['INE 36726', 'INE 67235', 'M2 jefatura'] | C4 | 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025 |
+| B3-H-B3-1-b | Asociación de F1_bartik con la variación log del precio (por DT del regresor) | 2.36 | -0.06–4.79 | puntos logarítmicos (≈ %) por DT | 2015-2025 | 50 provincias | MIVAU valor tasado; INE (EPA, Padrón); A4 | C4 | 2026-10-10 (tasado hasta 2025T4) |
+| B3-H-B3-1-p | p ajustado Holm (8 familias) de H-B3-1 | 0.3346 |  | probabilidad | 2015-2025 | 50 provincias | MIVAU valor tasado; INE | C4 | 2026-10-10 |
+| B3-H-B3-2-b | Asociación de F2_dlnpob con la variación log del precio (por DT del regresor) | 3.55 | -0.74–7.84 | puntos logarítmicos (≈ %) por DT | 2015-2025 | 50 provincias | MIVAU valor tasado; INE (EPA, Padrón); A4 | C4 | 2026-10-10 (tasado hasta 2025T4) |
+| B3-H-B3-2-p | p ajustado Holm (8 familias) de H-B3-2 | 0.4075 |  | probabilidad | 2015-2025 | 50 provincias | MIVAU valor tasado; INE | C4 | 2026-10-10 |
+| B3-H-B3-6-b | Asociación de F6_lnp0 con la variación log del precio (por DT del regresor) | -16.01 | -23.79–-8.23 | puntos logarítmicos (≈ %) por DT | 2015-2025 | 50 provincias | MIVAU valor tasado; INE (EPA, Padrón); A4 | C4 | 2026-10-10 (tasado hasta 2025T4) |
+| B3-H-B3-6-p | p ajustado Holm (8 familias) de H-B3-6 | 0.0013 |  | probabilidad | 2015-2025 | 50 provincias | MIVAU valor tasado; INE | C4 | 2026-10-10 |
+| B3-R2 | R² del modelo de 8 familias (Y1 tasado, P1) | 0.912 |  | proporción | 2015-2025 | 50 provincias | MIVAU valor tasado; INE; A4 | C4 | 2026-10-10 |
+| B3-mv-H-B3-1 | Multiverso H-B3-1: % de especificaciones con el signo de la principal | 62.5 |  | % | 2015-2025 / 2021-2025 | 32 especificaciones | MIVAU; Registradores; INE | C4 | 2026-10-10 |
+| B3-mv-H-B3-2 | Multiverso H-B3-2: % de especificaciones con el signo de la principal | 100 |  | % | 2015-2025 / 2021-2025 | 32 especificaciones | MIVAU; Registradores; INE | C4 | 2026-10-10 |
+| B3-mv-H-B3-6 | Multiverso H-B3-6: % de especificaciones con el signo de la principal | 100 |  | % | 2015-2025 / 2021-2025 | 32 especificaciones | MIVAU; Registradores; INE | C4 | 2026-10-10 |
+| B3-shap-orden | Shapley: mismo orden de familias con Y1 tasado y Registradores (1 = sí) | 0 |  | indicador | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores | C4 | 2026-10-10 |
+| B3-shap-spearman | Correlación de Spearman de los Shapley entre fuentes | 0.905 |  | coeficiente | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores | C4 | 2026-10-10 |
 | R1A-H1 | Peso de compradores extranjeros no residentes en las compraventas, España 2025 | 6.83 | 6.83–6.83 | % | 2025 | España | ['MIVAU Boletín tabla 1.6'] | C4 | 2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2) |
 | R1A-H2 | Peso de compradores extranjeros no residentes, España 2015 | 9.86 | 9.86–9.86 | % | 2015 | España | ['MIVAU Boletín tabla 1.6'] | C4 | 2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2) |
 | R1A-H3 | Peso de no residentes extranjeros por provincia 2025 (rango entre unidades) | 32.5 | 0.07–32.5 | % | 2025 | 50 unidades | ['MIVAU Boletín tabla 1.6'] | C4 | 2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2) |

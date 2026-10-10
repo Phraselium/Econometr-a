@@ -9,7 +9,7 @@
   "periodo": "2015-2025 (media anual)",
   "cobertura": "España",
   "fuentes": "INE IPV (tabla 25171/80270)",
-  "capa": "C1",
+  "capa": "C4",
   "fecha_dato": "2025T4"
  },
  {
@@ -27,7 +27,7 @@
  },
  {
   "id": "A23-P3",
-  "indicador": "Residuo del puente INE IPV -> núcleo (método, calidad, tamaño, cobertura)",
+  "indicador": "Residuo no identificado del puente INE IPV -> núcleo (sin descomponer; candidatos: método, calidad, tamaño, cobertura)",
   "valor": -30.9,
   "min": null,
   "max": null,
@@ -36,11 +36,11 @@
   "cobertura": "España",
   "fuentes": "cálculo A23 (puente_precio.csv)",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025T4"
  },
  {
   "id": "A23-P4",
-  "indicador": "Efecto de pesos CCAA comunes sobre el IPV",
+  "indicador": "Diferencia contable del IPV con pesos CCAA comunes",
   "valor": 0.6,
   "min": null,
   "max": null,
@@ -48,12 +48,12 @@
   "periodo": "2015-2025",
   "cobertura": "17 CCAA",
   "fuentes": "INE IPV CCAA + Registradores (pesos)",
-  "capa": "C2",
-  "fecha_dato": "2026-10-10"
+  "capa": "C4",
+  "fecha_dato": "2025T4"
  },
  {
   "id": "A23-P5",
-  "indicador": "Efecto de la composición nueva/usada sobre la media de pm2",
+  "indicador": "Diferencia contable por composición nueva/usada en la media de pm2",
   "valor": 0.0,
   "min": null,
   "max": null,
@@ -74,7 +74,7 @@
   "periodo": "2025",
   "cobertura": "España",
   "fuentes": "Registradores opendata",
-  "capa": "C1",
+  "capa": "C4",
   "fecha_dato": "2025"
  },
  {
@@ -87,26 +87,13 @@
   "periodo": "2025",
   "cobertura": "España",
   "fuentes": "Notariado CGN",
-  "capa": "C1",
+  "capa": "C4",
   "fecha_dato": "2025S2"
  },
  {
-  "id": "A23-A1",
-  "indicador": "Alquiler stock, IPC alquiler 2015-2025",
-  "valor": 13.6,
-  "min": null,
-  "max": null,
-  "unidad": "%",
-  "periodo": "2015-2025",
-  "cobertura": "España",
-  "fuentes": "INE IPC alquiler",
-  "capa": "C1",
-  "fecha_dato": "2025T4"
- },
- {
   "id": "A23-A2",
-  "indicador": "Alquiler stock 2015-2024: núcleo IPC de alquiler e IPVA (contratos existentes y total)",
-  "valor": 20.6,
+  "indicador": "Alquiler stock 2015-2024: núcleo IPC de alquiler e IPVA (contratos existentes y total; tolerancia ±15 % en nivel)",
+  "valor": null,
   "min": 10.9,
   "max": 22.9,
   "unidad": "%",
@@ -204,7 +191,7 @@
   "periodo": "2022-2024",
   "cobertura": "España",
   "fuentes": "INE IPVA; BCE HICP; supuesto de tope",
-  "capa": "C2",
+  "capa": "C4",
   "fecha_dato": "2024"
  },
  {
@@ -217,7 +204,7 @@
   "periodo": "2015-2025",
   "cobertura": "España",
   "fuentes": "Registradores opendata (provincia)",
-  "capa": "C2",
+  "capa": "C4",
   "fecha_dato": "2025"
  },
  {
@@ -230,7 +217,7 @@
   "periodo": "2015-2025",
   "cobertura": "17 CCAA",
   "fuentes": "Registradores opendata (CCAA)",
-  "capa": "C2",
+  "capa": "C4",
   "fecha_dato": "2025"
  },
  {
@@ -244,7 +231,7 @@
   "cobertura": "España",
   "fuentes": "INE, MIVAU, Notariado, Registradores",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025T4"
  },
  {
   "id": "A23-A9",

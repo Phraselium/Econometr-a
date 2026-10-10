@@ -10,7 +10,7 @@
   - Ninguna ficha del verificador ni ningún entregable las presenta como C3. Las fichas V06 y V07 lo dicen.
   - `src/v5/check_v5.py` comprueba que ningún texto asocie «topes» a C3.
 
-## García-López et al. (2020): por qué no se replica
+## García-López, Jofre-Monseny, Martínez-Mazza y Segú (2020), Journal of Urban Economics 119, 103278 (DOI 10.1016/j.jue.2020.103278; VERIFICADA, Q1 según docs/literatura.md y docs/v3): por qué no se replica
 Fuente: output/v4/M0/gl_no_replica.md.
 
 | Fuente de la discrepancia | García-López | Réplica propia | Cuantificable |

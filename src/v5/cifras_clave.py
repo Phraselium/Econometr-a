@@ -45,10 +45,11 @@ def v4_adaptadores() -> list[dict]:
                 "output/v4/M0/terminadas_triangulacion.csv:comun_mivau_bruto_sin_PV_NA"))
     m2c = json.loads((V4 / "M2" / "hechos.json").read_text())
     lat = [x for x in m2c if x["id"] == "M2-C1"][0]
-    f.append(_f("latente_convivencia", "Demanda latente de jóvenes por convivencia con los padres (frente a 2008)", None, 188000, 506000,
+    import re
+    mn, mx = (int(x) * 1000 for x in re.search(r"(\d+)-(\d+) mil", lat["magnitud"]).groups())
+    f.append(_f("latente_convivencia", "Demanda latente de jóvenes por convivencia con los padres (frente a 2008)", None, mn, mx,
                 "hogares", "2008-2025", "España", "INE EPA y ECV (tasa de convivencia con los padres)", "C2", "2025", "—",
-                "output/v4/M2/hechos.json:M2-C1 (texto: 188-506 mil)"))
-    assert "188" in lat["magnitud"] and "506" in lat["magnitud"]
+                "output/v4/M2/hechos.json:M2-C1 (magnitud, «convivencia con padres»)"))
     ext = json.loads((V4 / "M4" / "hechos.json").read_text())["extranjeros_nacional"]
     f.append(_f("compradores_extranjeros", "Compraventas de vivienda con comprador extranjero (residente o no)", ext["mivau_pct"],
                 ext["mivau_pct"], ext["notariado_pct"], "%", str(ext["anyo_mivau"]), "España", "Ministerio; Notariado (no independientes)",
@@ -77,7 +78,7 @@ def main() -> None:
     ck = pd.DataFrame(v4_adaptadores() + v5_hechos(), columns=COLS)
     ck["capa"] = ck.capa.astype(str)
     ck = ck.sort_values("id", kind="stable")
-    ck.to_csv(V5 / "cifras_clave.csv", index=False, float_format="%.4g")
+    ck.to_csv(V5 / "cifras_clave.csv", index=False, float_format="%.6g")
     md = ["# Cifras clave v5", "",
           "Tabla única de la que leen todos los entregables. Una fila por indicador y periodo. Generada por src/v5/cifras_clave.py.", "",
           "| id | indicador | valor | rango | unidad | periodo | cobertura | fuentes | capa | fecha del dato |", "|---|---|---|---|---|---|---|---|---|---|"]

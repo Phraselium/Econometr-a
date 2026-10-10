@@ -1,61 +1,53 @@
 [
  {
   "id": "A5-H01",
-  "indicador": "Documentos oficiales con texto buscado",
-  "valor": 25,
-  "min": 25,
-  "max": 25,
+  "indicador": "Documentos oficiales con texto buscado por palabras clave",
+  "valor": 22,
+  "min": null,
+  "max": null,
   "unidad": "documentos",
   "periodo": "2023-2026",
-  "cobertura": "programas 2023 (6), resumen (1), normas (2), proposiciones de ley XV leg. (13); inventario",
-  "fuentes": [
-   "docs/v5/programas/inventario.csv"
-  ],
+  "cobertura": "ley: 1; plan: 1; programa: 6; proposicion: 13; resumen: 1",
+  "fuentes": "docs/v5/programas/inventario.csv",
   "capa": "C4",
   "fecha_dato": "2026-10-10"
  },
  {
   "id": "A5-H02",
-  "indicador": "Medidas v4 sin documento oficial (excluidas)",
+  "indicador": "Medidas de v4 sin documento oficial (excluidas de los recuentos)",
   "valor": 41,
-  "min": 41,
-  "max": 41,
+  "min": null,
+  "max": null,
   "unidad": "medidas",
   "periodo": "2023",
-  "cobertura": "3 de los 9 programas v4",
-  "fuentes": [
-   "docs/v5/programas/conciliacion_v4.csv"
-  ],
+  "cobertura": "3 documentos de v4",
+  "fuentes": "docs/v5/programas/conciliacion_v4.csv",
   "capa": "C4",
   "fecha_dato": "2026-10-10"
  },
  {
   "id": "A5-H03",
-  "indicador": "Medidas v4 confirmadas en texto oficial por diccionario",
+  "indicador": "Medidas de v4 detectadas por el diccionario en el texto oficial",
   "valor": 44,
-  "min": 44,
-  "max": 47,
+  "min": null,
+  "max": null,
   "unidad": "medidas",
   "periodo": "2023",
-  "cobertura": "6 programas con texto oficial (47 medidas v4); cita literal presente en 47",
-  "fuentes": [
-   "docs/v5/programas/conciliacion_v4.csv"
-  ],
+  "cobertura": "47 medidas de v4 con documento oficial (calibración en la misma muestra)",
+  "fuentes": "docs/v5/programas/conciliacion_v4.csv",
   "capa": "C4",
   "fecha_dato": "2026-10-10"
  },
  {
   "id": "A5-H04",
-  "indicador": "Precision del diccionario (medida estricta / medida o mencion)",
-  "valor": 50,
-  "min": 50,
-  "max": 78,
+  "indicador": "Precisión del diccionario: coincidencias que son una medida (estricta)",
+  "valor": 50.0,
+  "min": 50.0,
+  "max": 77.5,
   "unidad": "%",
-  "periodo": "2026-10-10",
-  "cobertura": "muestra aleatoria de 40 coincidencias en documentos no normativos",
-  "fuentes": [
-   "output/v5/A5/validacion_precision.csv"
-  ],
+  "periodo": "2023-2026",
+  "cobertura": "muestra aleatoria de 40 coincidencias (máximo: medida o mención)",
+  "fuentes": "output/v5/A5/validacion_precision.json",
   "capa": "C4",
   "fecha_dato": "2026-10-10"
  }

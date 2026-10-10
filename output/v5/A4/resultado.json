@@ -1,7 +1,7 @@
 {
  "rama": "A4",
  "pregunta": "¿Dónde falta vivienda y es rentable construirla con el coste oficial? Rango oficial de coste y reclasificación",
- "capa": "C2 (clases estables en todo el rango de coste, margen y r, condicionadas al signo del déficit) / C4 (resto, municipios)",
+ "capa": "C4 (regla B5: el déficit provincial 2021-2025 es C4); la estabilidad de la clase en todo el rango de costes, márgenes y holguras se da como diagnóstico de robustez, no como capa",
  "datos": [
   "RD 1020/1993 (BOE-A-1993-19265): MBC1-MBC7 y coeficientes de la norma 16",
   "Eurostat sts_copi_q (ES)",
@@ -20,7 +20,7 @@
    932.1
   ],
   "factor_actualizacion_1993_a_2025_26": 2.4367,
-  "provincias_2021_2025_[n,n_C2]": {
+  "provincias_2021_2025_[n,n_robustas]": {
    "1": [
     37,
     8
@@ -39,10 +39,10 @@
    ],
    "9": [
     2,
-    0
+    1
    ]
   },
-  "provincias_2012_2025_[n,n_C2]": {
+  "provincias_2012_2025_[n,n_robustas]": {
    "1": [
     24,
     13
@@ -64,7 +64,7 @@
     0
    ]
   },
-  "municipios_2021_2025_[n,n_C2]": {
+  "municipios_2021_2025_[n,n_robustas]": {
    "1": [
     381,
     0
@@ -86,7 +86,7 @@
     0
    ]
   },
-  "municipios_2012_2025_[n,n_C2]": {
+  "municipios_2012_2025_[n,n_robustas]": {
    "1": [
     321,
     0
@@ -129,7 +129,7 @@
  },
  "ic95": null,
  "p_ajustado": null,
- "nivel_evidencia": "COTA (C2) condicionada y EXPLORATORIO (C4); sin lenguaje causal",
+ "nivel_evidencia": "EXPLORATORIO (C4); sin lenguaje causal",
  "diagnosticos": {
   "reconciliacion_prov_nacional": {
    "2021-2025": {

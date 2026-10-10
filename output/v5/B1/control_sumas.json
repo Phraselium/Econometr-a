@@ -1,0 +1,73 @@
+[
+ {
+  "tabla": "hogares_proyectados_2026",
+  "suma_provincial": 19759349.0,
+  "nacional": 19759349.0,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "hogares_proyectados_2036",
+  "suma_provincial": 21479886.0,
+  "nacional": 21479886.0,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "F_variacion_hogares_2026_2036",
+  "suma_provincial": 1720537.0,
+  "nacional": 1720537.0,
+  "tolerancia_rel": 0.01,
+  "ok": true
+ },
+ {
+  "tabla": "poblacion_proyectada_2026",
+  "suma_provincial": 49590099.0,
+  "nacional": 49590099.0,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "viviendas_totales_censo2021",
+  "suma_provincial": 26623708.0,
+  "nacional": 26623708.0,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "vacias_censo2021_INE59531",
+  "suma_provincial": 3828307.0,
+  "nacional": 3828307.0,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "esporadicas_censo2021_INE59531",
+  "suma_provincial": 2517628.0,
+  "nacional": 2517628.0,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "latente_A2_central",
+  "suma_provincial": 315016.9086,
+  "nacional": 315016.9086,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "necesidad_10a_central",
+  "suma_provincial": 2148677.8960650726,
+  "nacional": 2148677.8960650726,
+  "tolerancia_rel": 1e-09,
+  "ok": true
+ },
+ {
+  "tabla": "D_saldo_interprovincial_personas",
+  "suma_provincial": 0.0,
+  "nacional": 0.0,
+  "tolerancia_rel": 0.0,
+  "nota": "suma interprovincial = 0 por construcción (tolerancia absoluta 1 persona)",
+  "ok": true
+ }
+]

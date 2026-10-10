@@ -1,0 +1,6 @@
+componente,estado,solapamiento
+A1 déficit 2021-2025 (A4/M1),dato,base; hogares formados sin vivienda
+"A2 emancipación retrasada (M1 latente, Eurostat/ECV o EPA)",dato,no solapa con A1 (hogares NO formados); sí con A3 si hubiera datos
+A3 hogares compartidos/varios núcleos,sin dato,Censo 2021 provincial por núcleos no accesible por Tempus; solaparía con A2
+A4 hacinamiento e infravivienda,sin dato,solaparía con A3
+A5 pisos y habitaciones compartidas,sin dato,solaparía con A2/A3

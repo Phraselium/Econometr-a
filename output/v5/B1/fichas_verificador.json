@@ -1,0 +1,35 @@
+[
+ {
+  "id": "B1-V1",
+  "tema": "Necesidad de vivienda",
+  "enunciado": "Hacen falta X viviendas al año en España.",
+  "capa": "C4",
+  "magnitud": "Contabilidad stock-flujo 2026-2035 (suma de 52 provincias): 214868 viviendas/año central, rango 93628 a 309921 (cotas con todos los componentes en su extremo). De ellas, atraso a absorber en 10 años: 110317/año; crecimiento de hogares más reposición: 181020/año. D y S aparte.",
+  "intervalo": "93628 a 309921 viviendas/año (C4)",
+  "cota": "—",
+  "literatura": "Gabriel y Nothaft (2001), J. Urban Econ., DOI 10.1006/juec.2000.2187: VERIFICADA (Crossref), cuartil no verificado; sustenta la existencia de una vacancia friccional, no el rango 2-4 % (supuesto del encargo).",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Capa del total = menor de sus componentes: A, R, V, M, K y L en C4 (hogares provinciales de fuente única, supuestos no contrastados); solo F (INE, dos métodos) en C2. Con C4 el máximo es ANALIZADA, NO CONCLUYENTE. El valor depende del atraso y de las vacías movilizables, que son los componentes más inciertos.",
+  "limites": "Sin dato de hogares compartidos, hacinamiento ni residencias; vacancia disponible sin dato; K aproxima la cartera con iniciadas menos terminadas; ranges no son IC.",
+  "evidencia": [
+   "output/v5/B1/tablas/B1_tabla_provincial.csv",
+   "output/v5/B1/resultado.json"
+  ]
+ },
+ {
+  "id": "B1-V2",
+  "tema": "Envejecimiento",
+  "enunciado": "La vivienda que dejan los mayores resolverá el problema de la vivienda.",
+  "capa": "C4",
+  "magnitud": "Viviendas liberadas por disolución de hogares de 75+ en 2026-2035: 141526/año central (rango 80198-217007); equivalen al 66% de la necesidad anual central; 97% de ellas en provincias con presión (A4 clase 1-2). Ya están descontadas en el crecimiento neto de hogares del INE, así que no suman a la oferta adicional.",
+  "intervalo": "80198 a 217007 viviendas/año (C4)",
+  "cota": "—",
+  "literatura": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "L es C4 (tasa de jefatura 75+ sin dato propio, traslados a residencias sin dato, destino de la vivienda liberada -venta, alquiler, herencia, uso esporádico- sin dato). Los hechos acotan el orden de magnitud, no el veredicto.",
+  "limites": "Sin Censo 2021 por edad del jefe; mortalidad de 2024 constante (sesgo al alza de la liberación).",
+  "evidencia": [
+   "output/v5/B1/tablas/B1_envejecimiento.csv"
+  ]
+ }
+]

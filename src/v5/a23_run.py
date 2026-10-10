@@ -548,25 +548,23 @@ def escribir(rp, ra):
     pb, ex = rp["puente"], ra["explicacion"]
     c = rp["cum_publicado"]
     hecho("A23-P1", "Precio de compra, variación acumulada 2015-2025, INE IPV", pct(c["INE_IPV"]), None, None, "%", "2015-2025 (media anual)",
-          "España", "INE IPV (tabla 25171/80270)", "C1", "2025T4")
+          "España", "INE IPV (tabla 25171/80270)", "C4", "2025T4")
     hecho("A23-P2", "Precio de compra, núcleo MIVAU/Notariado/Registradores 2015-2025", pct(rp["core_med"]), pct(rp["nucleo"]["rango"][0]),
           pct(rp["nucleo"]["rango"][1]), "%", "2015-2025 (media anual)", "España",
           "MIVAU valor tasado; Notariado CGN; Registradores opendata", "C1" if rp["nucleo"]["c1"] else "C4", "2025 (anual)")
-    hecho("A23-P3", "Residuo del puente INE IPV -> núcleo (método, calidad, tamaño, cobertura)", pct(pb["residuo_pp"]), None, None, "pp",
-          "2015-2025", "España", "cálculo A23 (puente_precio.csv)", "C4", FECHA)
-    hecho("A23-P4", "Efecto de pesos CCAA comunes sobre el IPV", pct(pb["p1"] - pb["p0"]), None, None, "pp", "2015-2025", "17 CCAA",
-          "INE IPV CCAA + Registradores (pesos)", "C2", FECHA)
-    hecho("A23-P5", "Efecto de la composición nueva/usada sobre la media de pm2", round(pb["mix_nu_pp"], 2), None, None, "pp", "2015-2025",
+    hecho("A23-P3", "Residuo no identificado del puente INE IPV -> núcleo (sin descomponer; candidatos: método, calidad, tamaño, cobertura)", pct(pb["residuo_pp"]), None, None, "pp",
+          "2015-2025", "España", "cálculo A23 (puente_precio.csv)", "C4", "2025T4")
+    hecho("A23-P4", "Diferencia contable del IPV con pesos CCAA comunes", pct(pb["p1"] - pb["p0"]), None, None, "pp", "2015-2025", "17 CCAA",
+          "INE IPV CCAA + Registradores (pesos)", "C4", "2025T4")
+    hecho("A23-P5", "Diferencia contable por composición nueva/usada en la media de pm2", round(pb["mix_nu_pp"], 2), None, None, "pp", "2015-2025",
           "España", "INE ETDP + Registradores ERI 2025", "C4", "2025")
     hecho("A23-P6", "Precio por m2 Registradores nacional 2025", rp["nivel"]["reg_2025"], None, None, "EUR/m2", "2025", "España",
-          "Registradores opendata", "C1", "2025")
-    hecho("A23-P7", "Precio por m2 Notariado 2025", rp["nivel"]["not_2025"], None, None, "EUR/m2", "2025", "España", "Notariado CGN", "C1", "2025S2")
+          "Registradores opendata", "C4", "2025")
+    hecho("A23-P7", "Precio por m2 Notariado 2025", rp["nivel"]["not_2025"], None, None, "EUR/m2", "2025", "España", "Notariado CGN", "C4", "2025S2")
     s_ = ra["stock"]["cum_2015_2024"]
-    hecho("A23-A1", "Alquiler stock, IPC alquiler 2015-2025", pct(ra["stock"]["cum_2015_2025_ipc"]), None, None, "%", "2015-2025", "España",
-          "INE IPC alquiler", "C1" if ra["stock"]["c1_cuantia_stock"] else "C4", "2025T4")
     # v5 (orquestador): el C1 de cuantía es el NÚCLEO (fuentes dentro de ±15 % en nivel); SERPAVI va aparte
     nuc_v = {k: s_[k] for k in ra["stock"]["nucleo_stock"] if k in s_}
-    hecho("A23-A2", "Alquiler stock 2015-2024: núcleo IPC de alquiler e IPVA (contratos existentes y total)", pct(float(np.median(list(nuc_v.values())))),
+    hecho("A23-A2", "Alquiler stock 2015-2024: núcleo IPC de alquiler e IPVA (contratos existentes y total; tolerancia ±15 % en nivel)", None,
           pct(min(nuc_v.values())), pct(max(nuc_v.values())), "%", "2015-2024", "España", "INE IPC (encuesta); INE IPVA (datos tributarios AEAT)",
           "C1" if ra["stock"]["c1_cuantia_stock"] else "C4", "2024")
     hecho("A23-A2b", "Alquiler stock 2015-2024: SERPAVI (renta declarada, composición constante), discrepante del núcleo", pct(s_["SERPAVI"]), None, None,
@@ -584,14 +582,14 @@ def escribir(rp, ra):
           pct(min(ex["cuota_implicita_nuevos"].values())), pct(max(ex["cuota_implicita_nuevos"].values())), "%", "2021-2024", "España",
           "INE IPVA", "C4", "2024")
     hecho("A23-A8", "Subida adicional del stock si todo contrato se actualizase al HICP (sin tope)", pct(ex["tope_legal_contrafactico_pp"]), None, None,
-          "%", "2022-2024", "España", "INE IPVA; BCE HICP; supuesto de tope", "C2", "2024")
+          "%", "2022-2024", "España", "INE IPVA; BCE HICP; supuesto de tope", "C4", "2024")
     mp_ = rp["mix_provincial_registradores"]["cum_pesos_provincia_importe2015"]
     hecho("A23-P8", "Registradores con pesos provinciales de importe 2015 (52 provincias)", pct(mp_), None, None, "%", "2015-2025", "España",
-          "Registradores opendata (provincia)", "C2", "2025")
+          "Registradores opendata (provincia)", "C4", "2025")
     hecho("A23-P9", "Registradores con pesos CCAA de importe 2015", pct(rp["cw"]["importe2015|Registradores"]), None, None, "%", "2015-2025",
-          "17 CCAA", "Registradores opendata (CCAA)", "C2", "2025")
+          "17 CCAA", "Registradores opendata (CCAA)", "C4", "2025")
     hecho("A23-P10", "Factor común de las 4 fuentes de precio: varianza explicada por el 1.er componente", pct(rp["factor"]["var_explicada"]), None, None,
-          "%", "2016-2025 (dln anual)", "España", "INE, MIVAU, Notariado, Registradores", "C4", FECHA)
+          "%", "2016-2025 (dln anual)", "España", "INE, MIVAU, Notariado, Registradores", "C4", "2025T4")
     ct = ra["cuantia_nuevos_territorial"]
     hecho("A23-A9", "Contratos nuevos Cataluña 2021-2024: IPVA nuevo e Incasòl", pct(float(np.mean(ct["Cataluña"]["rango"]))), pct(ct["Cataluña"]["rango"][0]),
           pct(ct["Cataluña"]["rango"][1]), "%", "2021-2024", "Cataluña", "INE IPVA (AEAT); Incasòl", "C1" if ct["Cataluña"]["c1"] else "C4", "2024")
@@ -640,9 +638,9 @@ def fichas(rp, ra):
                        f"C. Valenciana {pct(ct['Comunitat Valenciana']['rango'][0])}-{pct(ct['Comunitat Valenciana']['rango'][1])} %. Municipios con renta de fianzas x2 o más: "
                        f"{ra['municipal']['incasol_municipios_dobles']} de {ra['municipal']['incasol_municipios_n']} (Cataluña, 2015-2025) y {ra['municipal']['gva_municipios_dobles_2020_2025']} de {ra['municipal']['gva_municipios_n']} (C. Valenciana, 2020-2025)."),
           "intervalo": f"[{pct(min(ipn.loc[2024] / 100 - 1, nv['extension']['Incasol_2015_2025']))}; {pct(max(ipn.loc[2024] / 100 - 1, nv['extension']['Incasol_2015_2025']))}] % en 2015-2024/25",
-          "cota": "Dirección C1 (IPVA, Incasòl y GVA, grupos independientes, mismo signo); cuantía nacional C4 (fuentes de cobertura distinta).",
+          "cota": "Dirección C1 en Cataluña y C. Valenciana (IPVA, Incasòl y GVA, grupos independientes, mismo signo); cuantía nacional C4 (fuentes de cobertura distinta).",
           "literatura": "No aplica.", "veredicto": "ANALIZADA, NO CONCLUYENTE",
-          "regla": "Regla B5: la cuantía nacional de contratos nuevos es de fuente única (IPVA, C4), así que el veredicto nacional es como máximo ANALIZADA, NO CONCLUYENTE. Limitado a Cataluña y C. Valenciana (C1 en dirección y banda 2021-2024), la afirmación queda CONTRADICHA en promedio. Las medias de contratos nuevos suben más que el stock, pero ninguna fuente alcanza +100 % en el periodo; la afirmación puede cumplirse en municipios o segmentos concretos fuera de las fuentes oficiales con dato.",
+          "regla": "Regla B5: la cuantía nacional de contratos nuevos es de fuente única (IPVA, C4), así que el veredicto nacional es como máximo ANALIZADA, NO CONCLUYENTE. Limitado a Cataluña y C. Valenciana (C1 en dirección y banda 2021-2024), la afirmación queda CONTRADICHA en promedio en 2021-2024. Las medias de contratos nuevos suben más que el stock, pero ninguna fuente alcanza +100 % en el periodo; la afirmación puede cumplirse en municipios o segmentos concretos fuera de las fuentes oficiales con dato.",
           "limites": lim_comun, "evidencia": ["output/v5/A23/tablas/brecha_nuevo_stock_ccaa.csv", "output/v5/A23/tablas/gva_fianzas_resumen.csv"],
           "fecha_dato": "IPVA 2024; Incasòl 2025; GVA 2025 (2026 parcial excluido)"}
     json.dump([f1, f2], open(OUT / "fichas_verificador.json", "w"), ensure_ascii=False, indent=1)
@@ -653,7 +651,7 @@ def resultado(rp, ra):
     r = {"rama": "A23",
          "pregunta": "A2: ¿por qué el IPV del INE (+80 % en 2015-2025) y el núcleo MIVAU/Notariado/Registradores (+44 % a +56 %) difieren y qué banda triangulada resulta? "
                      "A3: ¿por qué la renta del stock de contratos sube menos que la de los contratos nuevos y cuánto?",
-         "capa": "C1 (direcciones y bandas con >=2 fuentes independientes); C2 (pesos CCAA, tope legal contrafactual); C4 (residuo del puente, desfase, nueva/usada, rotación, contratos nuevos nacionales)",
+         "capa": "C1 (núcleo de precio 2015-2025 y 2021-2025; núcleo de alquiler de stock; contratos nuevos 2021-2024 en Cataluña y C. Valenciana) / C4 (resto: fuentes únicas, reponderaciones, puente, desfase, nueva/usada, rotación, tope contrafactual)",
          "datos": "INE IPV (25171/80270), MIVAU valor tasado, Notariado CGN, Registradores opendata y ERI, INE ETDP, INE IPC alquiler, INE IPVA (59005/59058), SERPAVI, Incasòl, GVA fianzas 2020-2026 (nueva descarga), BCE HICP",
          "N": {"precio_anios": 11, "ccaa": 17, "provincias_registradores": rp["mix_provincial_registradores"]["n_provincias"],
                "fianzas_gva_2020_2025": int(ra["series"]["gva_n"]), "ipva_provincias": 48},
@@ -680,8 +678,8 @@ def resultado(rp, ra):
                           "tests_y_fdr": "Sin contraste de hipótesis: todas las especificaciones están en registro.csv; Holm/BH no aplica"},
          "fuera_muestra": {"modelo": "no aplica (conciliación descriptiva, sin predicción)", "rmse": None, "dm_vs_ar4": None},
          "notas": ["El residuo del puente de precio (método hedónico frente a media/mediana de pm2, calidad, tamaño, cobertura) no se descompone con los datos del repositorio.",
-                   "Los pesos CCAA aumentan la variación de MIVAU y Registradores y casi no cambian el IPV: el mix geográfico NO explica la diferencia INE frente a núcleo, y de hecho la amplía.",
-                   "Con pesos provinciales Registradores sube a +66,8 %: el mix geográfico fino empuja a la baja la media publicada de pm2.",
+                   "Los pesos CCAA aumentan la variación de MIVAU y Registradores y casi no cambian el IPV: la reponderación geográfica no reduce la diferencia INE frente a núcleo; la amplía.",
+                   "Con pesos provinciales la variación de Registradores es mayor (+66,8 %) que la media publicada de pm2.",
                    "Cuota implícita de contratos nuevos del IPVA 14-18 % (supuesto: índices existente y nuevo en base 2015=100, agregación lineal); rotación observada Incasòl/SERPAVI 25-43 % y GVA/SERPAVI 13-16 %: definiciones distintas, se dan ambas.",
                    "Tope legal 2 % (2022) y 3 % (2023-2024) y fianza = una mensualidad: NO VERIFICADOS en esta sesión; el contrafactual es una cota C2 que supone actualización anual al HICP de todos los contratos.",
                    "Portales (Idealista, Fotocasa): sin cifra incluida (sin descarga verificable); solo serían C4.",

@@ -1,7 +1,7 @@
 {
  "rama": "A23",
  "pregunta": "A2: ¿por qué el IPV del INE (+80 % en 2015-2025) y el núcleo MIVAU/Notariado/Registradores (+44 % a +56 %) difieren y qué banda triangulada resulta? A3: ¿por qué la renta del stock de contratos sube menos que la de los contratos nuevos y cuánto?",
- "capa": "C1 (direcciones y bandas con >=2 fuentes independientes); C2 (pesos CCAA, tope legal contrafactual); C4 (residuo del puente, desfase, nueva/usada, rotación, contratos nuevos nacionales)",
+ "capa": "C1 (núcleo de precio 2015-2025 y 2021-2025; núcleo de alquiler de stock; contratos nuevos 2021-2024 en Cataluña y C. Valenciana) / C4 (resto: fuentes únicas, reponderaciones, puente, desfase, nueva/usada, rotación, tope contrafactual)",
  "datos": "INE IPV (25171/80270), MIVAU valor tasado, Notariado CGN, Registradores opendata y ERI, INE ETDP, INE IPC alquiler, INE IPVA (59005/59058), SERPAVI, Incasòl, GVA fianzas 2020-2026 (nueva descarga), BCE HICP",
  "N": {
   "precio_anios": 11,
@@ -145,8 +145,8 @@
  },
  "notas": [
   "El residuo del puente de precio (método hedónico frente a media/mediana de pm2, calidad, tamaño, cobertura) no se descompone con los datos del repositorio.",
-  "Los pesos CCAA aumentan la variación de MIVAU y Registradores y casi no cambian el IPV: el mix geográfico NO explica la diferencia INE frente a núcleo, y de hecho la amplía.",
-  "Con pesos provinciales Registradores sube a +66,8 %: el mix geográfico fino empuja a la baja la media publicada de pm2.",
+  "Los pesos CCAA aumentan la variación de MIVAU y Registradores y casi no cambian el IPV: la reponderación geográfica no reduce la diferencia INE frente a núcleo; la amplía.",
+  "Con pesos provinciales la variación de Registradores es mayor (+66,8 %) que la media publicada de pm2.",
   "Cuota implícita de contratos nuevos del IPVA 14-18 % (supuesto: índices existente y nuevo en base 2015=100, agregación lineal); rotación observada Incasòl/SERPAVI 25-43 % y GVA/SERPAVI 13-16 %: definiciones distintas, se dan ambas.",
   "Tope legal 2 % (2022) y 3 % (2023-2024) y fianza = una mensualidad: NO VERIFICADOS en esta sesión; el contrafactual es una cota C2 que supone actualización anual al HICP de todos los contratos.",
   "Portales (Idealista, Fotocasa): sin cifra incluida (sin descarga verificable); solo serían C4.",

@@ -32,13 +32,14 @@ def provincias() -> pd.DataFrame:
 
 def mapa_nombres(a: pd.DataFrame) -> dict:
     m = {key(n): c for c, n in zip(a.cod_prov, a.provincia)}
-    extra = {"coruna(a)": "15", "acoruna": "15", "corunaa": "15", "palmas(las)": "35", "laspalmas": "35", "palmas,las": "35",
-             "balears(illes)": "07", "illesbalears": "07", "balearsilles": "07", "rioja(la)": "26", "larioja": "26", "riojala": "26",
-             "araba/alava": "01", "asturias(principadode)": "33", "principadodeasturias": "33", "madrid(comunidadde)": "28",
-             "comunidaddemadrid": "28", "murcia(regionde)": "30", "regiondemurcia": "30", "navarra(com.foraldel)": "31",
-             "navarra(comunidadforalde)": "31", "cforaldenavarra": "31", "c.foraldenavarra": "31", "navarra": "31"}
+    alias = {"15": ["Coruña (A)", "A Coruña", "Coruña, A"], "35": ["Palmas (Las)", "Las Palmas", "Palmas, Las"],
+             "07": ["Balears (Illes)", "Illes Balears", "Balears, Illes"], "26": ["Rioja (La)", "La Rioja", "Rioja, La"],
+             "01": ["Araba/Alava", "Araba / Álava"], "33": ["Asturias (Principado de )", "Principado de Asturias"],
+             "28": ["Madrid (Comunidad de)", "Comunidad de Madrid"], "30": ["Murcia (Región de)", "Región de Murcia"],
+             "31": ["Navarra (Com. Foral de)", "Navarra (Comunidad Foral de)", "C. Foral de Navarra"],
+             "03": ["Alicante / Alacant"], "12": ["Castellón / Castelló"], "46": ["Valencia / València"]}
+    extra = {key(n): c for c, ns in alias.items() for n in ns}
     m.update(extra)
-    m.update({"alicante/alacant": "03", "castellon/castello": "12", "valencia/valencia": "46"})
     return m
 
 
@@ -52,6 +53,7 @@ def lee_tasado(a, m):
     t["cod"] = [cod_de(x, m) for x in t.territorio]
     t = t[((t.nivel == "provincia")) | ((t.nivel == "ccaa") & t.cod.isin(uni))].dropna(subset=["cod"])
     t["anio"] = t.periodo.str[:4].astype(int)
+    t = t.drop_duplicates(["cod", "periodo"])      # Navarra figura con dos rótulos en 2015-2018
     g = t.groupby(["cod", "anio"]).valor.agg(["mean", "count"]).reset_index()
     g = g[g["count"] == 4]
     return g.pivot(index="cod", columns="anio", values="mean")
@@ -67,7 +69,7 @@ def lee_registradores(m):
 def lee_epa(m):
     s = pd.read_csv(RAW / "v5/ine_r1c_t65354.csv")
     s["terr"] = s.nombre.str.split(".").str[0]
-    s["sector"] = s.nombre.str.split(".").str[-2].str.strip() if False else s.nombre.str.split(".").str[4].str.strip()
+    s["sector"] = s.nombre.str.split(".").str[3].str.strip()
     s["cod"] = [cod_de(x, m) for x in s.terr]
     s = s[s.sector.isin(SECT)].dropna(subset=["cod"])
     s["anio"] = s.periodo.str[:4].astype(int)
@@ -192,6 +194,7 @@ def construir():
     D["isla"] = [float(c in ISLA) for c in cods]
     D["grande"] = [float(c in GRANDES) for c in cods]
     D.attrs.update(meta)
+    D.attrs["T"], D.attrs["R"] = T, R
     return D, meta
 
 
@@ -222,16 +225,13 @@ def regresores(D, lab, w=2015, src="t"):
 def dependientes(D, lab, src="t"):
     a0, a1 = (2015, 2025) if lab == "P1" else (2021, 2025)
     yc = D.attrs["ycre"]
+    S = D.attrs["T"] if src == "t" else D.attrs["R"]
     Y = pd.DataFrame(index=D.index)
     Y["Y1"] = np.log(D[f"p{src}{a1}"] / D[f"p{src}{a0}"])
     Y["Y2"] = D[f"y2_{lab}"]
     Y["Y2_ipva"] = D[f"y2i_{lab}"]
-    # Y3 esfuerzo = precio/renta; ventana común a0 -> ycre (límite de la CRE provincial)
-    p1 = D[f"p{src}{a1}"] if yc == a1 else None
-    Y["Y3"] = np.nan
-    if yc >= a1:
-        pass
-    else:
-        # precio al año ycre: media anual del tasado (o Registradores); se carga aparte
-        Y["Y3"] = np.nan
+    # Y3 = esfuerzo (precio / renta): ventana a0 -> ycre (límite de la CRE provincial con las 50 provincias)
+    dp = np.log(S[yc].reindex(D.index) / S[a0].reindex(D.index))
+    dpib = np.log(D[f"pib{yc}"] / D[f"pob{yc}"]) - np.log(D[f"pib{a0}"] / D[f"pob{a0}"])
+    Y["Y3"] = dp - dpib
     return Y

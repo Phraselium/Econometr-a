@@ -134,5 +134,8 @@
   "rmse": null,
   "dm_vs_ar4": null
  },
- "notas": "Recuentos de coincidencias de palabras clave, no de medidas validadas una a una; ver validacion_precision.csv. No se evaluan medidas."
+ "notas": [
+  "Recuentos de coincidencias de palabras clave, no de medidas validadas una a una; ver validacion_precision.csv. No se evaluan medidas.",
+  "Los recuentos son COTAS de coincidencias del diccionario, no de medidas validadas: precisión 50 % (medida) y 78 % (medida o mención), n = 40."
+ ]
 }

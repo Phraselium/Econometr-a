@@ -1,0 +1,184 @@
+{
+ "hip": {
+  "H-B3-1": {
+   "familia": "F1",
+   "regresor": "F1_bartik",
+   "signo_esperado": 1,
+   "b_por_DT": 0.023629574327914245,
+   "beta_std": 0.14805373046079556,
+   "ic95": [
+    -0.0006136170163016444,
+    0.047872765672130134
+   ],
+   "p_hc3": 0.055767445513737315,
+   "p_c100": 0.022321995051518707,
+   "p_c200": 0.02544370832072854,
+   "p_mayor": 0.055767445513737315,
+   "p_perm": 0.04919016196760648,
+   "p_holm8": 0.3346046730824239,
+   "p_holm3": 0.11153489102747463,
+   "signo_observado": 1,
+   "signo_coincide": true,
+   "rechaza_holm8": false,
+   "rechaza_holm3": false,
+   "concuerda_perm": false
+  },
+  "H-B3-2": {
+   "familia": "F2",
+   "regresor": "F2_dlnpob",
+   "signo_esperado": 1,
+   "b_por_DT": 0.035524006756453674,
+   "beta_std": 0.22257962196950498,
+   "ic95": [
+    -0.007393484340151649,
+    0.078441497853059
+   ],
+   "p_hc3": 0.101869701958573,
+   "p_c100": 0.03952463797066573,
+   "p_c200": 0.04794093964663872,
+   "p_mayor": 0.101869701958573,
+   "p_perm": 0.07318536292741452,
+   "p_holm8": 0.407478807834292,
+   "p_holm3": 0.11153489102747463,
+   "signo_observado": 1,
+   "signo_coincide": true,
+   "rechaza_holm8": false,
+   "rechaza_holm3": false,
+   "concuerda_perm": true
+  },
+  "H-B3-6": {
+   "familia": "F6",
+   "regresor": "F6_lnp0",
+   "signo_esperado": -1,
+   "b_por_DT": -0.16007492925294786,
+   "beta_std": -1.0029673027647301,
+   "ic95": [
+    -0.23785524559995286,
+    -0.08229461290594288
+   ],
+   "p_hc3": 0.0001809287123319771,
+   "p_c100": 1.491653035639185e-06,
+   "p_c200": 1.915062254078055e-06,
+   "p_mayor": 0.0001809287123319771,
+   "p_perm": 0.0001999600079984003,
+   "p_holm8": 0.0012665009863238397,
+   "p_holm3": 0.0005427861369959313,
+   "signo_observado": -1,
+   "signo_coincide": true,
+   "rechaza_holm8": true,
+   "rechaza_holm3": true,
+   "concuerda_perm": true,
+   "control_error_medida_F6_precio_registradores": {
+    "b_por_DT": -0.09019034592368284,
+    "p_mayor": 0.05755190061983232,
+    "p_perm": 0.016396720655868825
+   }
+  }
+ },
+ "fuera": {
+  "modelo": "MCO 8 familias, LOO-CV (validación en bloques con embargo no aplica a corte transversal)",
+  "rmse": 0.0664040666613165,
+  "rmse_media": 0.1612217034973582,
+  "dm_vs_ar4": null,
+  "dm_hln_vs_media": -4.281087586998579,
+  "p_dm_hln_vs_media": 8.625612083205552e-05
+ },
+ "shap": {
+  "orden_igual": false,
+  "spearman": 0.9047619047619048,
+  "kendall": 0.7857142857142856,
+  "r2_tasado": 0.9115066991822581,
+  "r2_reg": 0.8208410390832163
+ },
+ "n": {
+  "Y1_P1": 50,
+  "Y2_P1": 46,
+  "Y3_P1": 50,
+  "Y1_P2": 50,
+  "Y2_P2": 47,
+  "Y3_P2": 50
+ },
+ "sens": {
+  "H-B3-1": {
+   "b_corto": 0.07337247217975905,
+   "b_largo": 0.023629574327914647,
+   "se_largo": 0.010165140081544274,
+   "t": 2.3245694735497313,
+   "r2_corto": 0.21134560329209462,
+   "r2_largo": 0.9115066991822581,
+   "rmax": 1.0,
+   "delta_oster": 3.758481328037984,
+   "beta_star_delta1": 0.017342573737639044,
+   "RV": 0.28148887683881474,
+   "RV_alpha": 0.04100379910720114,
+   "RV_gl_n": 0.31958013278120845,
+   "RV_alpha_gl_n": 0.04330798131797053,
+   "regresor": "F1_bartik",
+   "nota": "Corto = solo el regresor; largo = las 8 familias. gl de RV: G-1 con G=N (cada provincia su clúster) y N-K-1 (RV_gl_n)."
+  },
+  "H-B3-2": {
+   "b_corto": 0.12059144008733061,
+   "b_largo": 0.03552400675645314,
+   "se_largo": 0.016629721334083046,
+   "t": 2.136175708708105,
+   "r2_corto": 0.5708997803538267,
+   "r2_largo": 0.911506699182258,
+   "rmax": 1.0,
+   "delta_oster": 1.6073175457379083,
+   "beta_star_delta1": 0.013422582647289748,
+   "RV": 0.26213621783608276,
+   "RV_alpha": 0.014846378748301385,
+   "RV_gl_n": 0.29824800641138344,
+   "RV_alpha_gl_n": 0.012795754373832867,
+   "regresor": "F2_dlnpob",
+   "nota": "Corto = solo el regresor; largo = las 8 familias. gl de RV: G-1 con G=N (cada provincia su clúster) y N-K-1 (RV_gl_n)."
+  }
+ },
+ "mvr": [
+  {
+   "hipotesis": "H-B3-1",
+   "n_especificaciones": 32,
+   "pct_mismo_signo_que_principal": 62.5,
+   "pct_signo_esperado": 62.5,
+   "pct_p_menor_005": 3.125,
+   "b_min": -0.017485096330692066,
+   "b_max": 0.023629574327914245
+  },
+  {
+   "hipotesis": "H-B3-2",
+   "n_especificaciones": 32,
+   "pct_mismo_signo_que_principal": 100.0,
+   "pct_signo_esperado": 100.0,
+   "pct_p_menor_005": 59.375,
+   "b_min": 0.026173685306569508,
+   "b_max": 0.07697030952867474
+  },
+  {
+   "hipotesis": "H-B3-6",
+   "n_especificaciones": 32,
+   "pct_mismo_signo_que_principal": 100.0,
+   "pct_signo_esperado": 100.0,
+   "pct_p_menor_005": 46.875,
+   "b_min": -0.21217532288797905,
+   "b_max": -0.0014548147889601494
+  }
+ ],
+ "holm8": {
+  "F1": 0.3346046730824239,
+  "F2": 0.407478807834292,
+  "F3": 1.0,
+  "F4": 3.667020410807161e-05,
+  "F5": 0.3346046730824239,
+  "F6": 0.0012665009863238397,
+  "F7": 1.0,
+  "F8": 1.0
+ },
+ "holm3": {
+  "F1": 0.11153489102747463,
+  "F2": 0.11153489102747463,
+  "F6": 0.0005427861369959313
+ },
+ "ycre": 2024,
+ "r2_principal": 0.911506699182258,
+ "r2a_principal": 0.8795507849980734
+}

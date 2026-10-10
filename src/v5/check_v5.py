@@ -65,8 +65,12 @@ def cifras() -> list[str]:
     return err
 
 
+SUMAS_REQUERIDAS = ("A4", "B1")   # módulos con tablas provinciales declaradas
+
+
 def sumas() -> list[str]:
-    err = []
+    err = [f"falta output/v5/{m}/control_sumas.json (suma provincial = nacional)" for m in SUMAS_REQUERIDAS
+           if (OUT / m).is_dir() and not (OUT / m / "control_sumas.json").exists()]
     for p in sorted(OUT.glob("*/control_sumas.json")):
         for c in json.loads(p.read_text()):
             tol = c.get("tolerancia_rel", 1e-6)
@@ -86,8 +90,11 @@ def recuentos() -> list[str]:
         sub = of[of.instrumento == x.instrumento]
         normas = set(str(x.normas_con_coincidencia).split(";")) if "normas_con_coincidencia" in rec else set()
         nf = sub[sub.direccion.astype(str).str.startswith("a favor") & ~sub.doc_id.isin(normas)].doc_id.nunique()
+        nc = sub[~sub.direccion.astype(str).str.startswith("a favor") & ~sub.doc_id.isin(normas)].doc_id.nunique()
         if nf != x.n_documentos_a_favor:
             err.append(f"A5: {x.instrumento}: recuento a favor {x.n_documentos_a_favor} ≠ {nf} documentos oficiales")
+        if "n_documentos_en_contra" in rec and nc < x.n_documentos_en_contra:
+            err.append(f"A5: {x.instrumento}: recuento en contra {x.n_documentos_en_contra} > {nc} documentos oficiales")
     return err
 
 
@@ -111,9 +118,17 @@ def lecturas_no_versionadas() -> list[str]:
 
 def topes_c3() -> list[str]:
     err = []
+    for p in sorted(OUT.rglob("*.json")):
+        try:
+            d = json.loads(p.read_text())
+        except ValueError:
+            continue
+        for f in d if isinstance(d, list) else [d]:
+            if isinstance(f, dict) and re.search(r"\btopes?\b", json.dumps(f, ensure_ascii=False), re.I) and str(f.get("capa", "")).startswith("C3"):
+                err.append(f"{p.relative_to(RAIZ)}: topes con capa C3")
     for p in list(OUT.rglob("*.md")) + list(PLANT.rglob("*.md")):
         for i, l in enumerate(p.read_text().splitlines(), 1):
-            if re.search(r"\btopes?\b", l, re.I) and "[C3]" in l:
+            if re.search(r"\btopes?\b", l, re.I) and re.search(r"\bC3\b", l) and not re.search(r"(fuera de|no es|sin|ning[uú]n[ao]?|nunca)\b.*C3|(fuera de|no es|sin) C3", l, re.I):
                 err.append(f"{p.relative_to(RAIZ)}:{i}: topes etiquetados como C3")
     return err
 

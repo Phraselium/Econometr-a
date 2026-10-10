@@ -1,0 +1,36 @@
+{
+ "H-B3-1": {
+  "b_corto": 0.07337247217975905,
+  "b_largo": 0.023629574327914647,
+  "se_largo": 0.010165140081544274,
+  "t": 2.3245694735497313,
+  "r2_corto": 0.21134560329209462,
+  "r2_largo": 0.9115066991822581,
+  "rmax": 1.0,
+  "delta_oster": 3.758481328037984,
+  "beta_star_delta1": 0.017342573737639044,
+  "RV": 0.28148887683881474,
+  "RV_alpha": 0.04100379910720114,
+  "RV_gl_n": 0.31958013278120845,
+  "RV_alpha_gl_n": 0.04330798131797053,
+  "regresor": "F1_bartik",
+  "nota": "Corto = solo el regresor; largo = las 8 familias. gl de RV: G-1 con G=N (cada provincia su clúster) y N-K-1 (RV_gl_n)."
+ },
+ "H-B3-2": {
+  "b_corto": 0.12059144008733061,
+  "b_largo": 0.03552400675645314,
+  "se_largo": 0.016629721334083046,
+  "t": 2.136175708708105,
+  "r2_corto": 0.5708997803538267,
+  "r2_largo": 0.911506699182258,
+  "rmax": 1.0,
+  "delta_oster": 1.6073175457379083,
+  "beta_star_delta1": 0.013422582647289748,
+  "RV": 0.26213621783608276,
+  "RV_alpha": 0.014846378748301385,
+  "RV_gl_n": 0.29824800641138344,
+  "RV_alpha_gl_n": 0.012795754373832867,
+  "regresor": "F2_dlnpob",
+  "nota": "Corto = solo el regresor; largo = las 8 familias. gl de RV: G-1 con G=N (cada provincia su clúster) y N-K-1 (RV_gl_n)."
+ }
+}

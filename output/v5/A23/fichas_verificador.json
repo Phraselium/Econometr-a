@@ -30,10 +30,10 @@
   "fuente": "INE IPVA contrato nuevo (AEAT); Incasòl fianzas; GVA registro de fianzas",
   "magnitud": "IPVA contrato nuevo 2015-2024 +37.0 % (nacional). Incasòl renta media 2015-2025 +54.5 % (Cataluña). GVA mediana de fianza 2020-2025 +58.0 % (C. Valenciana). 2021-2024: Cataluña 16.6-17.2 %, C. Valenciana 22.4-30.8 %. Municipios con renta de fianzas x2 o más: 1 de 261 (Cataluña, 2015-2025) y 2 de 103 (C. Valenciana, 2020-2025).",
   "intervalo": "[37.0; 54.5] % en 2015-2024/25",
-  "cota": "Dirección C1 (IPVA, Incasòl y GVA, grupos independientes, mismo signo); cuantía nacional C4 (fuentes de cobertura distinta).",
+  "cota": "Dirección C1 en Cataluña y C. Valenciana (IPVA, Incasòl y GVA, grupos independientes, mismo signo); cuantía nacional C4 (fuentes de cobertura distinta).",
   "literatura": "No aplica.",
   "veredicto": "ANALIZADA, NO CONCLUYENTE",
-  "regla": "Regla B5: la cuantía nacional de contratos nuevos es de fuente única (IPVA, C4), así que el veredicto nacional es como máximo ANALIZADA, NO CONCLUYENTE. Limitado a Cataluña y C. Valenciana (C1 en dirección y banda 2021-2024), la afirmación queda CONTRADICHA en promedio. Las medias de contratos nuevos suben más que el stock, pero ninguna fuente alcanza +100 % en el periodo; la afirmación puede cumplirse en municipios o segmentos concretos fuera de las fuentes oficiales con dato.",
+  "regla": "Regla B5: la cuantía nacional de contratos nuevos es de fuente única (IPVA, C4), así que el veredicto nacional es como máximo ANALIZADA, NO CONCLUYENTE. Limitado a Cataluña y C. Valenciana (C1 en dirección y banda 2021-2024), la afirmación queda CONTRADICHA en promedio en 2021-2024. Las medias de contratos nuevos suben más que el stock, pero ninguna fuente alcanza +100 % en el periodo; la afirmación puede cumplirse en municipios o segmentos concretos fuera de las fuentes oficiales con dato.",
   "limites": "Sin fianzas de Madrid, Euskadi ni Baleares (sin dato abierto localizado, docs/v5/fuentes_fallidas.md); IPVA nuevo contrato solo 2021-2024 (2015=100 supuesto, coherente con el total); portales (Idealista, Fotocasa) fuera de la ficha (C4, sin cifra verificada); medias no excluyen municipios concretos con subidas mayores.",
   "evidencia": [
    "output/v5/A23/tablas/brecha_nuevo_stock_ccaa.csv",

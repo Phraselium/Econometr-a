@@ -13,7 +13,10 @@
 | A6 topes y García-López | A | hecho (consolidación) | C4 | output/v5/A6/nota.md | 0 (orquestador) |
 | A5 programas oficiales y palabras clave | A | hecho | C4 (cotas) | 25 documentos oficiales; 3 de v4 excluidos (no oficiales); 631 coincidencias; precisión 50 % (medida) / 78 % (medida o mención) | 125.013 |
 | Revisión módulo R | R | REHACER (B1-B3) → corregido; APROBADO | — | docs/v5/revision_R.md | 82.937 |
+| Revisión módulo A | A | REHACER (B1-B4) → corregido; APROBADO | — | docs/v5/revision_A.md; clases territoriales y fuentes únicas pasan a C4 | 85.520 |
+| B1 necesidad por provincia 2026-2035 | B | hecho | C4 (F en C2) | 94 mil-310 mil viviendas/año (central 215 mil); atraso 83-147 mil/año; F 172 mil/año; L 80-217 mil/año (no se resta: F ya es neta) | 130.132 |
+| B3 diferencias entre provincias (pre-registrado) | B | hecho | C4 (descriptivo honesto) | MDE 0,62 DT; solo convergencia (−16 pp/DT, Holm 0,0013); Bartik y población no rechazadas; Shapley no coincide entre fuentes | 141.302 |
 
-**Hecho:** setup, R0, R1 (técnico, a, b, c), A2-A3, A4, A6; check_v5 en make check.
-**Siguiente:** revisión R (en curso); B1 (en curso); A1 (cifras clave) → revisión de A.
-**Tokens de subagentes v5:** 987.342 / 4.200.000 (R: 601.209 / 900.000; A: 386.133 / 700.000) (corte global al 80 %: 3.360.000; reserva 420.000).
+**Hecho:** módulos R y A aprobados; B1 y B3; check_v5 en make check.
+**Siguiente:** B2 (proyección del déficit 2026-2030), B4 (contribuciones a la subida) → revisión B → C.
+**Tokens de subagentes v5:** 1.344.296 / 4.200.000 (R: 601.209 / 900.000; A: 471.653 / 700.000; B: 271.434 / 1.000.000) (corte global al 80 %: 3.360.000; reserva 420.000).

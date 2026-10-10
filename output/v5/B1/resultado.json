@@ -1,0 +1,118 @@
+{
+ "rama": "B1",
+ "pregunta": "¿Cuántas viviendas al año, por provincia, hacen falta en 2026-2035 (stock-flujo por componentes)?",
+ "capa": "C4",
+ "datos": [
+  "INE Proyección de Hogares 54562 (2026)",
+  "INE Proyecciones de Población 36726",
+  "INE tablas de mortalidad 67235",
+  "INE EM saldos 69764",
+  "Censo 2021",
+  "MIVAU terminadas/iniciadas",
+  "Catastro",
+  "A4/M1/M2/R1C"
+ ],
+ "N": 52,
+ "metodo": "Necesidad = A+R+V+F-M-K (L aparte, ya neta en F); rango min-central-max por componente; capa del total = menor de sus componentes",
+ "estimacion": {
+  "necesidad_anual_viviendas": {
+   "min": 93627.81668348733,
+   "central": 214867.78960650726,
+   "max": 309920.82708487625
+  },
+  "necesidad_10a": {
+   "min": 936278.1668348733,
+   "central": 2148677.8960650726,
+   "max": 3099208.2708487627
+  },
+  "atraso_anual": {
+   "min": 83096.25633,
+   "central": 110317.04046,
+   "max": 147364.13966000002
+  },
+  "crecimiento_mas_reposicion_anual": {
+   "min": 130960.14035348727,
+   "central": 181020.16714650727,
+   "max": 195066.94342487628
+  },
+  "componentes_10a": {
+   "A1": {
+    "min": 643007.0,
+    "central": 788153.496,
+    "max": 967739.53
+   },
+   "A2": {
+    "min": 187955.5633,
+    "central": 315016.9086,
+    "max": 505901.8666
+   },
+   "A": {
+    "min": 830962.5633,
+    "central": 1103170.4046,
+    "max": 1473641.3966
+   },
+   "R": {
+    "min": 1070.3441066347161,
+    "central": 89664.6714650727,
+    "max": 178258.99882351066
+   },
+   "V": {
+    "min": 0.0,
+    "central": 58674.020000000004,
+    "max": 117348.04000000001
+   },
+   "F": {
+    "min": 1308531.059428238,
+    "central": 1720537.0,
+    "max": 1772410.4354252522
+   },
+   "M": {
+    "min": 366776.60000000003,
+    "central": 733553.2000000001,
+    "max": 1100329.8
+   },
+   "K": {
+    "min": 75674.0,
+    "central": 89815.0,
+    "max": 103956.0
+   },
+   "L": {
+    "min": 801982.236874165,
+    "central": 1415262.770954409,
+    "max": 2170069.5821300936
+   }
+  }
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO (C4: componentes de fuente única o con supuestos no contrastados)",
+ "diagnosticos": {
+  "control_sumas_fallos": [],
+  "n_prov_presion": 48,
+  "n_prov_R_un_metodo": 4,
+  "n_prov_K_sin_dato": 0,
+  "R_prov_con_ambas_tasas_no_positivas": 38,
+  "R_tasa_censo_mediana": -0.0037250716752011944,
+  "R_tasa_catastro_mediana": -0.0014069358188025913,
+  "necesidad_formula_literal_menos_L_10a": 733415.1251106634,
+  "necesidad_solo_provincias_con_presion_10a": 2110221.106665073,
+  "necesidad_solo_provincias_positivas_10a": 2198566.1222100756
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "No es un modelo predictivo: es una contabilidad con rangos; AR(4) y ECM v1 no aplican (fuera_muestra null).",
+  "Holm/BH no aplica: no hay contrastes de hipótesis; todas las especificaciones están en registro.csv.",
+  "F (INE) ya es neta de disoluciones de hogares; restar L además duplicaría. Se da la fórmula literal como variante.",
+  "A3-A5 (hogares compartidos, hacinamiento, habitaciones compartidas) SIN DATO provincial accesible; rango sin ellos.",
+  "R: 2 métodos (Censo 2011-2021 + MIVAU; Catastro + MIVAU); tasas negativas se acotan a 0; forales sin Catastro (1 método).",
+  "R (resultado negativo): en la mayoría de provincias el stock crece más que las terminadas (tasas brutas de baja negativas); los métodos no detectan bajas netas y el rango inferior se acota a 0; R es un límite inferior no informativo, no una medición.",
+  "V: base = viviendas en alquiler Censo 2021 (venta sin dato); disponible sin dato: mínimo 0, central 2 %, máximo 4 %.",
+  "L: tasa de jefatura 75+ no disponible; se usa la de 65+ de M2 (0.568, 2025) con factor 0,85-1,15; traslados a residencias SIN DATO.",
+  "Min y máx combinan los extremos de todos los componentes a la vez: son cotas, no intervalos de confianza.",
+  "D y S van aparte: D = saldo interprovincial EM 2021-2024 (suma 0); S = esporádicas Censo 2021 (stock)."
+ ]
+}

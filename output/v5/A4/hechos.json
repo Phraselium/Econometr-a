@@ -10,137 +10,267 @@
   "cobertura": "España (sin MBC por municipio)",
   "fuentes": "BOE-A-1993-19265; Eurostat sts_copi_q",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2026T2"
  },
  {
   "id": "A4-prov-2021-2025-c1",
   "indicador": "Provincias en clase 1 (1 falta y es rentable)",
   "valor": 37,
-  "min": 8,
-  "max": 37,
+  "min": null,
+  "max": null,
   "unidad": "provincias",
   "periodo": "2021-2025",
   "cobertura": "52 provincias",
   "fuentes": "output/v4/M1; M3; A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "A4-prov-2021-2025-c1-robustas",
+  "indicador": "Provincias en clase 1 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico)",
+  "valor": 8,
+  "min": null,
+  "max": null,
+  "unidad": "provincias",
+  "periodo": "2021-2025",
+  "cobertura": "52 provincias",
+  "fuentes": "output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-prov-2021-2025-c2",
   "indicador": "Provincias en clase 2 (2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta))",
   "valor": 11,
-  "min": 3,
-  "max": 11,
+  "min": null,
+  "max": null,
   "unidad": "provincias",
   "periodo": "2021-2025",
   "cobertura": "52 provincias",
   "fuentes": "output/v4/M1; M3; A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "A4-prov-2021-2025-c2-robustas",
+  "indicador": "Provincias en clase 2 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico)",
+  "valor": 3,
+  "min": null,
+  "max": null,
+  "unidad": "provincias",
+  "periodo": "2021-2025",
+  "cobertura": "52 provincias",
+  "fuentes": "output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-prov-2021-2025-c3",
   "indicador": "Provincias en clase 3 (3 falta y no es rentable)",
   "valor": 2,
-  "min": 0,
-  "max": 2,
+  "min": null,
+  "max": null,
   "unidad": "provincias",
   "periodo": "2021-2025",
   "cobertura": "52 provincias",
   "fuentes": "output/v4/M1; M3; A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "A4-prov-2021-2025-c3-robustas",
+  "indicador": "Provincias en clase 3 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico)",
+  "valor": 0,
+  "min": null,
+  "max": null,
+  "unidad": "provincias",
+  "periodo": "2021-2025",
+  "cobertura": "52 provincias",
+  "fuentes": "output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-prov-2021-2025-c4",
   "indicador": "Provincias en clase 4 (4 no falta (deficit <= 0))",
   "valor": 0,
-  "min": 0,
-  "max": 0,
+  "min": null,
+  "max": null,
   "unidad": "provincias",
   "periodo": "2021-2025",
   "cobertura": "52 provincias",
   "fuentes": "output/v4/M1; M3; A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "A4-prov-2021-2025-c4-robustas",
+  "indicador": "Provincias en clase 4 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico)",
+  "valor": 0,
+  "min": null,
+  "max": null,
+  "unidad": "provincias",
+  "periodo": "2021-2025",
+  "cobertura": "52 provincias",
+  "fuentes": "output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-prov-2021-2025-c9",
   "indicador": "Provincias en clase 9 (9 sin dato)",
   "valor": 2,
-  "min": 0,
-  "max": 2,
+  "min": null,
+  "max": null,
   "unidad": "provincias",
   "periodo": "2021-2025",
   "cobertura": "52 provincias",
   "fuentes": "output/v4/M1; M3; A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "A4-prov-2021-2025-c9-robustas",
+  "indicador": "Provincias en clase 9 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico)",
+  "valor": 1,
+  "min": null,
+  "max": null,
+  "unidad": "provincias",
+  "periodo": "2021-2025",
+  "cobertura": "52 provincias",
+  "fuentes": "output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-prov-2012-2025-c1",
   "indicador": "Provincias en clase 1 (1 falta y es rentable)",
   "valor": 24,
-  "min": 13,
-  "max": 24,
+  "min": null,
+  "max": null,
   "unidad": "provincias",
   "periodo": "2012-2025",
   "cobertura": "52 provincias",
   "fuentes": "output/v4/M1; M3; A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "A4-prov-2012-2025-c1-robustas",
+  "indicador": "Provincias en clase 1 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico)",
+  "valor": 13,
+  "min": null,
+  "max": null,
+  "unidad": "provincias",
+  "periodo": "2012-2025",
+  "cobertura": "52 provincias",
+  "fuentes": "output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-prov-2012-2025-c2",
   "indicador": "Provincias en clase 2 (2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta))",
   "valor": 6,
-  "min": 1,
-  "max": 6,
+  "min": null,
+  "max": null,
   "unidad": "provincias",
   "periodo": "2012-2025",
   "cobertura": "52 provincias",
   "fuentes": "output/v4/M1; M3; A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "A4-prov-2012-2025-c2-robustas",
+  "indicador": "Provincias en clase 2 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico)",
+  "valor": 1,
+  "min": null,
+  "max": null,
+  "unidad": "provincias",
+  "periodo": "2012-2025",
+  "cobertura": "52 provincias",
+  "fuentes": "output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-prov-2012-2025-c3",
   "indicador": "Provincias en clase 3 (3 falta y no es rentable)",
   "valor": 0,
-  "min": 0,
-  "max": 0,
+  "min": null,
+  "max": null,
   "unidad": "provincias",
   "periodo": "2012-2025",
   "cobertura": "52 provincias",
   "fuentes": "output/v4/M1; M3; A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "A4-prov-2012-2025-c3-robustas",
+  "indicador": "Provincias en clase 3 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico)",
+  "valor": 0,
+  "min": null,
+  "max": null,
+  "unidad": "provincias",
+  "periodo": "2012-2025",
+  "cobertura": "52 provincias",
+  "fuentes": "output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-prov-2012-2025-c4",
   "indicador": "Provincias en clase 4 (4 no falta (deficit <= 0))",
   "valor": 20,
-  "min": 8,
-  "max": 20,
+  "min": null,
+  "max": null,
   "unidad": "provincias",
   "periodo": "2012-2025",
   "cobertura": "52 provincias",
   "fuentes": "output/v4/M1; M3; A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "A4-prov-2012-2025-c4-robustas",
+  "indicador": "Provincias en clase 4 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico)",
+  "valor": 8,
+  "min": null,
+  "max": null,
+  "unidad": "provincias",
+  "periodo": "2012-2025",
+  "cobertura": "52 provincias",
+  "fuentes": "output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-prov-2012-2025-c9",
   "indicador": "Provincias en clase 9 (9 sin dato)",
   "valor": 2,
-  "min": 0,
-  "max": 2,
+  "min": null,
+  "max": null,
   "unidad": "provincias",
   "periodo": "2012-2025",
   "cobertura": "52 provincias",
   "fuentes": "output/v4/M1; M3; A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "A4-prov-2012-2025-c9-robustas",
+  "indicador": "Provincias en clase 9 con clase estable en todo el rango de costes, márgenes y holguras (diagnóstico)",
+  "valor": 0,
+  "min": null,
+  "max": null,
+  "unidad": "provincias",
+  "periodo": "2012-2025",
+  "cobertura": "52 provincias",
+  "fuentes": "output/v5/A4",
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-conc50-2021-2025",
@@ -153,7 +283,7 @@
   "cobertura": "52 provincias",
   "fuentes": "ECP INE; MIVAU fin de obra (bajas 0)",
   "capa": "C4",
-  "fecha_dato": "2026-10"
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-conc80-2021-2025",
@@ -166,7 +296,7 @@
   "cobertura": "52 provincias",
   "fuentes": "ECP INE; MIVAU fin de obra (bajas 0)",
   "capa": "C4",
-  "fecha_dato": "2026-10"
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-conc50-2021-2024",
@@ -178,8 +308,8 @@
   "periodo": "2021-2024",
   "cobertura": "52 provincias",
   "fuentes": "ECP INE; MIVAU fin de obra (bajas 0)",
-  "capa": "C1",
-  "fecha_dato": "2026-10"
+  "capa": "C4",
+  "fecha_dato": "2025"
  },
  {
   "id": "A4-conc80-2021-2024",
@@ -191,7 +321,7 @@
   "periodo": "2021-2024",
   "cobertura": "52 provincias",
   "fuentes": "ECP INE; MIVAU fin de obra (bajas 0)",
-  "capa": "C1",
-  "fecha_dato": "2026-10"
+  "capa": "C4",
+  "fecha_dato": "2025"
  }
 ]

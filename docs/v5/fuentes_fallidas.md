@@ -53,7 +53,7 @@ Solo se revisó lo versionado en el repositorio; no se hizo prueba de red en est
 ## A5 (2026-10-10, programas oficiales)
 | Fuente | URL | Error | Alternativa | Fecha |
 |---|---|---|---|---|
-| Programa 2023, D01 (web oficial) | https://www.psoe.es/ y /media-content/2023/07/ProgramaElectoral_ElexGenerales_PSOE_2023.pdf | HTTP 200 con HTML de 212 bytes: script anti-bot (Incapsula); no se evade | Solo copia de medio (v4): «no oficial: excluido» | 2026-10-10 |
+| Programa 2023, D01 (web oficial) | web oficial de la formación de D01 (URL en inventario.csv) | HTTP 200 con HTML de 212 bytes: script anti-bot (Incapsula); no se evade | Solo copia de medio (v4): «no oficial: excluido» | 2026-10-10 |
 | Programa 2023, D02 (completo) | https://www.pp.es/programa-electoral y 3 rutas /storage/2023/07/... y /sites/default/files/documentos/... | HTTP 404 | Resumen oficial de 5 pp. (D03, cota); el completo solo en copia de medio: excluido | 2026-10-10 |
 | Programa 2023, D04 | https://www.voxespana.es/ , /programa y rutas de PDF probadas | HTTP 403 (bloqueo) / 404 | Solo copia de medio (v4): excluido; sus proposiciones de ley (D20, D21) si entran | 2026-10-10 |
 | Programa 2023, D13 | https://www.junts.cat y busqueda web | Sin PDF del programa de 2023 (solo manifiestos de otras convocatorias) | Proposicion de ley oficial D26 (congreso.es) | 2026-10-10 |
@@ -61,3 +61,17 @@ Solo se revisó lo versionado en el repositorio; no se hizo prueba de red en est
 | Programa 2023, D15 | https://www.podemos.info | HTTP 403 | Ninguna; no se probo otra via | 2026-10-10 |
 | Programa 2023, D16 | https://compromis.net | Sin conexion (codigo 000) | Ninguna | 2026-10-10 |
 | Proposiciones de ley XV leg. de formaciones sin PL de vivienda localizada | congreso.es/webpublica/opendata/iniciativas/ProposicionesDeLey (CSV 2026-10-10) | Sin iniciativa de vivienda localizada por palabra clave en OBJETO para BNG, UPN, CC | Ninguna | 2026-10-10 |
+
+## B1 (necesidad de vivienda 2026-2035)
+Prueba del 2026-10-10 contra la API Tempus del INE (https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/{op}):
+- Censo 2021 (operaciones 463 CENSOP y 8 CENSOPV; edición 2021): sin tablas de hogares con varios núcleos, hacinamiento, superficie por persona ni hogares por edad del jefe. Componentes A3, A4, A5 y tasa de jefatura 75+ de L: SIN DATO (Censo 2021 solo aporta por sección hogares por tamaño, `t22_*`).
+- ECV (operación 155, edición 2025): tabla 10001 (problemas en la vivienda) solo por CCAA y sin hacinamiento; no se usa para provincias.
+- Traslados a residencias (EPA/Censo/literatura) y licencias de derribo del Ministerio: no se localizó endpoint; no probados fuera del repositorio. Componente de residencias de L y método de demoliciones de R: SIN DATO.
+- Proyección de Hogares (operación 70, tabla 54562, mod. 2026-06-17) incluye provincias: sin fallo.
+- Vacancia disponible en venta y alquiler por provincia: sin endpoint; V usa solo el alquiler del Censo 2021.
+- Referencia Rosen y Smith (1983, AER) sobre vacancia natural: no hallada en Crossref (consulta 2026-10-10): NO VERIFICADA.
+
+## B3 (2026-10-10)
+| Fuente | Endpoint | Resultado |
+|---|---|---|
+| ADRH renta por hogar provincial 2015 | servicios.ine.es/wstempus/js/ES/DATOS_TABLA/30656 (y 31097, 30824) | Solo municipios/secciones; descarga completa «No puede mostrarse por restricciones de volumen». Sin agregado provincial 2015. Se usa PIB pc de la CRE |

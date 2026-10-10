@@ -17,10 +17,12 @@
 | Lista oficial Ley 11/2020 y zonas tensionadas (Cataluña) | 1 | hecho | — | 61 municipios (Ley 11/2020); 140 y 131 (zonas 2024) | 97.863 |
 
 | Revisión oleada 1 (it. 1: REHACER O1-O10) y correcciones P-A/P-B/POT/GL | 1 | hecho | — | ver docs/v3/revision_oleada1.md | 132.184 + correcciones 78.877 |
-| Revisión oleada 1, iteración 2 | 1 | en curso | — | — | — |
+| Revisión oleada 1, iteración 2 | 1 | APROBAR | — | pre-registro congelado (ancla 204c073); limitaciones v3 | 35.188 |
+| Oleada 2: H3-1/H3-2 (VUT → alquiler) | 2 | en curso | — | — | — |
+| Oleada 2: H3-3 topes + réplica JMS 2023 | 2 | en curso | — | — | — |
 
 **Hecho:** setup; literatura v3; D2 (scripts src/v3/fetch_*_v3.py, build_zonas_eventos_v3.py).
 **Pendiente de datos:** D1 INE (en curso); Barcelona por barrio (bloqueado, anti-bot); Madrid por distrito; GVA fianzas; SIU (solicitud); obligatoriedad RD 1312/2024 sin verificar.
-**Siguiente:** iteración 2 de la revisión → tag prereg-v3 → oleada 2 (H3-1, H3-2, H3-3a/b).
-**Tokens de subagentes v3:** 1.349.523 / 3.500.000 (cierre al 80 %: 2.800.000).
+**Siguiente:** oleada 2 (en curso) → Holm m=4 → reviewer oleada 2 → oleada 3 (P-D, verificador, informes).
+**Tokens de subagentes v3:** 1.384.711 / 3.500.000 (cierre al 80 %: 2.800.000).
 - 2026-10-10: cataluna_contencion_rentas_v3.csv generado (61 Ley 11/2020; 140 + 131 Ley 12/2023; 0 en 2025). Pendiente: DOGC no accesible; prórroga 2026 no verificada. Ver decisiones.md.

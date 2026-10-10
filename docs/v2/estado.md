@@ -8,11 +8,13 @@
 | Paso A B0 paneles (limpiador) | hecho | — | 7 paneles; sellado 686 filas prov-trim | 265.765 |
 | G0 viabilidad + prereg | hecho | — | H1-H7; BT recortada; ancla SHA 910c42a | 0 |
 | Infra v2_common (bloques, AR4, ECM v1, DM-HLN) | hecho | — | 16 tests (4 de no-fuga) | 76.956 |
-| BA alquiler | revisión (wt-BA) | — | H1 parcial: + pob 20-34; extranjera n.s. | 150.917 |
-| BV compra | REHACER it.1 (evaluar_H2) | REHACER | H2 dentro de muestra: signos esperados; sin mejora OOS | 99.084 + rev. 108.603 |
-| BI inmigración | revisión (wt-BI) | — | β_alquiler 3,06 (2SLS); compra n.s. | 144.852 |
+| BA alquiler | APROBADA y fusionada; H1 sellada evaluada | APROBAR (it.2) | H1 conjunta EXPLORATORIO (p_IUT 0,85); mejora predictiva sellada vs AR(4) p=0,005 | 173.983 + rev. 141.720 |
+| BV compra | APROBADA y fusionada; H2 sellada evaluada | APROBAR (it.2) | H2 NO confirmada en sellado (p=0,19); signos dentro de muestra EXPLORATORIO | 133.326 + rev. 139.310 |
+| BI inmigración | re-revisión (it.2) | — | H3 EXPLORATORIO; β_alq>0 no causal | 190.612 + rev. 110.454 |
+| BO oferta y suelo | en curso (wt-BO) | | | |
+| BP política | en curso (wt-BP) | | | |
 | Literatura métodos (anexo v2-B) | hecho | — | 5 nuevas; 2 NO VERIFICADAS (actas NeurIPS) | 55.684 |
 
 **Hecho:** rama r2/main; requirements.lock; data/sealed ignorado; CLAUDE.md v2; .claude/settings.json (permisos + hook ruff); subagentes v2 (data-fetcher haiku, econometrician/ml-engineer/lit-researcher sonnet, reviewer opus); comandos /rama y /estado; checksums de ficheros >50 MB.
-**Siguiente:** puertas de BA, BV, BI → evaluación sellada H1/H2 tras APROBAR → ola 2 (BO, BP, BM).
-**Tokens de subagentes v2 acumulados:** 1.867.761.
+**Siguiente:** puertas de BI, BO, BP → BM → BD → BS. Evaluaciones selladas hechas: H1 (confirma mejora predictiva), H2 (no confirma).
+**Tokens de subagentes v2 acumulados:** 2.379.453.

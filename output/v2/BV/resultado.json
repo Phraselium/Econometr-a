@@ -1,0 +1,69 @@
+{
+  "rama": "BV",
+  "pregunta": "H2 (confirmatoria): ¿se asocia el crecimiento del precio real de compra provincial con el crédito hipotecario nuevo (+) y con el coste de uso (−, vía interacción con la exposición hipotecaria 2005-2007)? Más: periodos, arbitraje alquiler-compra, nacional y fuera de muestra.",
+  "datos": "panel_prov_q y nacional_q_v2 (holdout.load_train), 49 provincias, 2004Q1-2024Q2; precio real = Δ4 ln p_tasado − Δ4 ln deflactor nacional (nacional_q_v2); sin muestra sellada",
+  "N": {
+    "H2_principal": 3981,
+    "provincias": 49
+  },
+  "metodo": "MCO con FE de provincia y trimestre, EE cluster provincia + wild cluster bootstrap (Webb, 9.999, WCR); Holm/BH intra-H2 (m=2) sobre crédito e interacción; el Holm de la familia de 7 confirmatorias se aplica en la síntesis BS; DM-HLN fuera de muestra (bloques h=4, embargo 4, primer test 2012Q1)",
+  "estimacion": {
+    "d4_ln_hipotecas_importe": 0.008725977343066814,
+    "cu_x_expo": -0.004411807921252146,
+    "d4_ln_ocupados": 0.04394489706791709
+  },
+  "ic95": {
+    "d4_ln_hipotecas_importe": [
+      0.003317065056375153,
+      0.014134889629758476
+    ],
+    "cu_x_expo": [
+      -0.005827142601763597,
+      -0.002996473240740695
+    ],
+    "d4_ln_ocupados": [
+      0.0053162700535187846,
+      0.0825735240823154
+    ]
+  },
+  "p_ajustado": {
+    "holm_m2_wcb": {
+      "cu_x_expo": 0.0,
+      "d4_ln_hipotecas_importe": 0.0018001800180018,
+      "d4_ln_ocupados": null
+    },
+    "holm_m2_credito_l4": {
+      "cu_x_expo": 0.0,
+      "hip_l4": 0.4805480548054806
+    }
+  },
+  "nivel_evidencia": "EXPLORATORIO",
+  "diagnosticos": {
+    "criterios_nivel": {
+      "signos_ok": true,
+      "holm_ok": true,
+      "submuestras_ok": true,
+      "oos_ok": false
+    },
+    "p_wcb": {
+      "d4_ln_hipotecas_importe": 0.0018001800180018,
+      "cu_x_expo": 0.0
+    },
+    "p_interseccion_union_H2": 0.0018001800180018,
+    "holm_familia_7": "lo aplica el orquestador en BS; aquí solo Holm intra-H2 (m=2)",
+    "p_wcb_cota": "los p=0 del bootstrap son p <= 1/(B+1) = 1e-4 (B=9.999)",
+    "nota_simultaneidad": "el crédito es comovimiento con el precio (v1); la variante con crédito retardado 4T se reporta; asociación, no causalidad",
+    "nota_identificacion": "el nivel nacional del coste de uso queda absorbido por el FE de trimestre; solo se identifica la interacción con la exposición 2005-2007"
+  },
+  "fuera_muestra": {
+    "modelo": "BV_C3 (panel, h=4; modelo de H2 fijado para el sellado)",
+    "rmse": 0.06054825465922567,
+    "dm_vs_ar4": -1.5997387439061488,
+    "rmse_ar4": 0.04177169991644137,
+    "rmse_ecm_v1": 0.08089908077620954,
+    "dm_vs_ecm_v1": 0.9192783448757501,
+    "p_holm_vs_ar4": 1.0,
+    "n": 2209
+  },
+  "notas": "Antes del sellado el máximo es EXPLORATORIO (criterio uniforme); oos_ok (C3 vs AR4 en validación) es solo informativo; la confirmación requiere holdout.evaluate('H2') (evaluar_H2 en bv_h2_sellado.py, NO ejecutada). No residentes: sin datos provinciales (limitación). Periodos, arbitraje y nacional: EXPLORATORIO."
+}

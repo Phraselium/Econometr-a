@@ -1,0 +1,17 @@
+objetivo,var1,fam1,var2,fam2,rho
+A,g_pob_total,demografia,g_pob_extranj,demografia,0.9263
+A,g_pob_total,demografia,cruz_d4,precio_cruzado,0.9638
+A,g_pob_extranj,demografia,cruz_d4,precio_cruzado,0.8696
+A,d4_ln_ocupados,empleo_renta,d4_ln_permisos,oferta_suelo,0.7713
+A,tipo_hip_real,credito_tipos,coste_uso_aprox,credito_tipos,0.9702
+A,tipo_hip_real,credito_tipos,n_eventos,politica,-0.8722
+A,coste_uso_aprox,credito_tipos,n_eventos,politica,-0.8672
+B,g_pob_total,demografia,g_pob_20_34,demografia,0.8087
+B,g_pob_extranj,demografia,g_pob_20_34,demografia,0.7235
+B,d4_ln_hipotecas_importe,credito_tipos,d4_ln_hipotecas_n,credito_tipos,0.9493
+B,tipo_hip_real,credito_tipos,coste_uso_aprox,credito_tipos,0.9703
+C,g_pob_total,demografia,g_pob_20_34,demografia,0.8081
+C,g_pob_extranj,demografia,g_pob_20_34,demografia,0.7239
+C,g_pob_extranj,demografia,cruz_d4,precio_cruzado,0.7112
+C,d4_ln_hipotecas_importe,credito_tipos,d4_ln_hipotecas_n,credito_tipos,0.9489
+C,tipo_hip_real,credito_tipos,coste_uso_aprox,credito_tipos,0.9702

@@ -12,3 +12,8 @@ output/.*.tmp
 # V2
 data/sealed/
 data/raw/pdf/serpavi_v2_municipios.csv
+# v2: CSV sin comprimir >50 MB (se versiona la version .csv.gz)
+data/raw/catastro_urbana_municipios.csv
+data/raw/pdf/serpavi_v2_municipios.csv
+# v2: originales descargados (ficheros publicados; se re-descargan con FORCE=1)
+data/raw/v2_orig/

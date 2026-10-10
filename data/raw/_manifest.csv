@@ -4,6 +4,8 @@ bde_precio_vivienda_libre.csv,BdE,3,1995-03-01,2026-06-01,378,144,2026-10-09T18:
 bde_tipo_hipotecario_referencia.csv,BdE,1,1973-01-01,2026-09-01,645,215,2026-10-09T18:46:34Z
 bde_tipos_hipotecas_nuevas.csv,BdE,6,2003-01-01,2026-08-01,1704,0,2026-10-10T06:04:39Z
 bis_rpp.csv,BIS,132,2000-01-01,2026-04-01,12628,0,2026-10-10T06:07:01Z
+catastro_urbana_municipios.csv,"Catastro - Estadisticas catastrales, Datos municipios (Urbano)",15220,2011-12-31,2025-12-31,228130,0,2026-10-10T06:10:18Z
+catastro_urbana_municipios.csv.gz,"Catastro - Estadisticas catastrales, Datos municipios (Urbano)",15220,2011-12-31,2025-12-31,228130,0,2026-10-10T06:11:02Z
 ecb_euribor1y.csv,BCE,1,1994-01-01,2026-09-01,393,0,2026-10-09T18:41:42Z
 ecb_hicp_es.csv,BCE,1,1996-01-01,2025-12-01,360,0,2026-10-09T18:41:50Z
 ecb_nuevo_credito_vivienda_es.csv,BCE,1,2003-01-01,2026-08-01,284,0,2026-10-09T18:41:44Z
@@ -70,4 +72,6 @@ mivau_visados.csv,MIVAU - Boletin Online Fomento (sedal),63,2008-01-01,2026-06-0
 oecd_house_prices.csv,OCDE,332,2000-01-01,2026-07-01,20581,0,2026-10-10T06:06:59Z
 pdf/serpavi_v2_municipios.csv,MIVAU-SERPAVI (AEAT IRPF),32402,2011-01-01,2024-01-01,351686,0,2026-10-10T06:04:08Z
 pdf/serpavi_v2_municipios.csv.gz,MIVAU-SERPAVI (AEAT IRPF),32402,2011-01-01,2024-01-01,351686,0,2026-10-10T06:07:19Z
+v2_eventos_politica.csv,BOE/boletines oficiales,41,2013-06-05,2026-07-29,41,6,2026-10-10T06:12:30Z
+v2_zonas_tensionadas.csv,"BOE (Secretaría de Estado de Vivienda, art. 18 Ley 12/2023)",9,2024-03-16,2026-07-30,318,0,2026-10-10T06:12:30Z
 vlc_precio_vivienda_libre.csv,Ajuntament de València - Opendata (CKAN); fuente primaria no indicada en el recurso,24,2021-04-01,2022-04-01,120,0,2026-10-09T18:54:14Z

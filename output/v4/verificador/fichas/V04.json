@@ -3,7 +3,7 @@
  "tema": "Oferta y suelo",
  "enunciado": "La falta de oferta nueva y de suelo es la causa principal del problema de la vivienda (≥50 % de la subida).",
  "capa": "C1",
- "magnitud": "Balance contable hogares − viviendas nuevas 2021-2025: 701.187 viviendas (rango entre fuentes [559.752; 969.059]); en 2012-2021 el signo no está determinado ([-1.015.321; 689.037]). El papel del suelo como moderador no es detectable con los datos (P-C4). v4 (M0): déficit 2021-2024 con todos los componentes en C1 = 732.750 viviendas (rango [562.692; 902.808]); 2021-2025 queda en C4 porque las terminadas de 2025 son frágiles.",
+ "magnitud": "Balance contable hogares − viviendas nuevas 2021-2025: 701.187 viviendas (rango entre fuentes [559.752; 969.059]); en 2012-2021 el signo no está determinado ([-1.015.321; 689.037]). El papel del suelo como moderador no es detectable con los datos (P-C4). v4 (M0): déficit 2021-2024 sin bajas = [562.692; 688.692] viviendas (C1: todos los componentes medidos con dos fuentes); con bajas supuestas del 0,1-0,2 % anual, hasta 902.808 (C2). La cifra 2021-2025 de v3 queda en C4 porque las terminadas de 2025 son frágiles.",
  "intervalo": "[559.752; 969.059] viviendas (2021-2025)",
  "cota": "—",
  "literatura": "Saiz (2010), QJE, VERIFICADA; Glaeser y Gyourko (2018), JEP, VERIFICADA: calibración. Banco de España, Informe Anual 2025 (NO VERIFICADA: DOI no comprobado): ≈750 mil.",

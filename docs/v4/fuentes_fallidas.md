@@ -1,5 +1,16 @@
 # Fuentes fallidas v4
 
+## M5a (2026-10-10)
+- Programa electoral 2023 de un grupo con representación (grupo sin codificar nº 1): las copias https://theobjective.com/wp-content/uploads/2023/07/programa-vox-23j.pdf y https://static.poder360.com.br/2023/07/Programa-VOX-2023.pdf superan los 10 MB de WebFetch (maxContentLength). Sin medidas codificadas; no sustituido por prensa.
+- Programa electoral 2023 de un grupo catalán con representación (sin codificar nº 2): no localizado en su sitio oficial (la búsqueda devuelve documentos de otras elecciones). Sin medidas.
+- Programa electoral 2023 de un grupo canario con representación (sin codificar nº 3): no localizado en su sitio oficial (solo el de 2015). Sin medidas.
+- Proposiciones de ley sobre vivienda de la XV legislatura (congreso.es): no consultadas por límite de presupuesto de la tarea (pendiente de una segunda pasada).
+- Tres de los programas codificados se leyeron en copias alojadas por medios (elindependiente.com, theobjective.com), no en el sitio del grupo (no localizado). No se comprobó que la copia coincida con la versión oficial. La nota de prensa de resumen de uno de ellos (pp.es) solo trae un extracto y no se usó.
+- Un programa 2023 hallado en elnacional.cat corresponde a un partido sin representación en el Congreso en la XV legislatura; excluido.
+- Lectura parcial: un documento de 16 páginas se leyó en pp. 2-6; otro solo en pp. 45-47; otro en pp. 113-114; otro en pp. 14-16; otro en pp. 72-76 (impresas); otro en pp. 207-220; otro en pp. 21-22, 31-33 y 78-79. Medidas de vivienda fuera de esas páginas pueden no estar recogidas.
+- Crossref (HTTP 429): Sinai y Waldfogel (2005) y Fack (2006) sin verificar.
+- Scimago (scimagojr.com): 403 en v3; no reintentado.
+
 | Fuente | URL | Error | Alternativa | Fecha |
 |---|---|---|---|---|
 

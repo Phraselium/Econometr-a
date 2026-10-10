@@ -66,7 +66,8 @@ def _nuevas() -> list[dict]:
     return out
 
 
-RETIRADAS = {"V14": "sustituida por M4-V1 (una sola definición de comprador extranjero; revisión B, B1)"}
+RETIRADAS = {"V14": "sustituida por M4-V1 (una sola definición de comprador extranjero; revisión B, B1)",
+             "V13": "sustituida por M7-V1 (burbuja: índice triangulado y test GSADF; revisión B, it. 2)"}
 CAPA_V4 = {"V08": ("C4", "La cifra de vacías y su reparto proceden del Censo 2021 (consumo eléctrico); Catastro − hogares no es "
                    "independiente del Censo, que se construye sobre el Catastro (revisión B, B10/B8).")}
 VEREDICTOS_C4 = {"ANALIZADA, NO CONCLUYENTE", "NO ANALIZADA: FALTAN DATOS", "SIN EVIDENCIA SUFICIENTE"}
@@ -79,10 +80,11 @@ def _deficit_2021_2024() -> str | None:
     d = json.loads(r.read_text()).get("deficit_2021_2024")
     if not isinstance(d, dict):
         return None
-    lo, hi = d.get("rango", [None, None]) if isinstance(d.get("rango"), list) else (d.get("min"), d.get("max"))
-    med = d.get("mediana")
-    return (f"v4 (M0): déficit 2021-2024 con todos los componentes en C1 = {v3._f(med, 0)} viviendas "
-            f"(rango {v3._iv([lo, hi], 0)}); 2021-2025 queda en C4 porque las terminadas de 2025 son frágiles.")
+    lo1, hi1 = d.get("c1_sin_bajas", [None, None])
+    lo, hi = d.get("c2_con_bajas", [d.get("min"), d.get("max")])
+    return (f"v4 (M0): déficit 2021-2024 sin bajas = {v3._iv([lo1, hi1], 0)} viviendas (C1: todos los componentes "
+            f"medidos con dos fuentes); con bajas supuestas del 0,1-0,2 % anual, hasta {v3._f(hi, 0)} (C2). "
+            "La cifra 2021-2025 de v3 queda en C4 porque las terminadas de 2025 son frágiles.")
 
 
 def transformar(f: dict) -> dict:

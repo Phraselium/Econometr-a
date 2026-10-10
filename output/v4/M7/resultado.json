@@ -4,7 +4,7 @@
  "capa": "C1 (triangulación) / C4 (GSADF)",
  "datos": "INE IPV, MIVAU valor tasado, Registradores, Notariado, IPC alquiler, SERPAVI, Incasòl; panel_ccaa_q; nacional_q_v2",
  "N": 78,
- "metodo": "GSADF (Phillips, Shi y Yu 2015), ADF(1), r0=0,01+1,8/sqrt(T), wild bootstrap 499 réplicas, SEED 20261010",
+ "metodo": "GSADF (Phillips, Shi y Yu 2015), ADF(1), r0=0,01+1,8/sqrt(T), valores críticos por simulación (paseo aleatorio) y wild bootstrap, 499 réplicas cada uno, SEED 20261010",
  "estimacion": {
   "precio/alquiler: IPV / IPC alquiler | Nacional": 3.097,
   "precio/alquiler: valor tasado / IPC alquiler | Nacional": 4.344,
@@ -14,38 +14,47 @@
   "nivel: valor tasado | Nacional": 4.815
  },
  "ic95": {
-  "precio/alquiler: IPV / IPC alquiler | Nacional": 2.773,
-  "precio/alquiler: valor tasado / IPC alquiler | Nacional": 2.934,
-  "precio/renta: IPV / renta del hogar | Nacional": 3.447,
-  "precio/renta: valor tasado / renta del hogar | Nacional": 2.799,
-  "nivel: IPV | Nacional": 2.844,
-  "nivel: valor tasado | Nacional": 3.301
+  "precio/alquiler: IPV / IPC alquiler | Nacional": 2.291,
+  "precio/alquiler: valor tasado / IPC alquiler | Nacional": 2.24,
+  "precio/renta: IPV / renta del hogar | Nacional": 2.183,
+  "precio/renta: valor tasado / renta del hogar | Nacional": 2.24,
+  "nivel: IPV | Nacional": 2.217,
+  "nivel: valor tasado | Nacional": 2.1
  },
  "p_ajustado": {
-  "precio/alquiler: IPV / IPC alquiler | Nacional": 0.6,
-  "precio/alquiler: valor tasado / IPC alquiler | Nacional": 0.156,
-  "precio/renta: IPV / renta del hogar | Nacional": 0.624,
-  "precio/renta: valor tasado / renta del hogar | Nacional": 0.82,
-  "nivel: IPV | Nacional": 0.6,
-  "nivel: valor tasado | Nacional": 0.288
+  "precio/alquiler: IPV / IPC alquiler | Nacional": 0.0144,
+  "precio/alquiler: valor tasado / IPC alquiler | Nacional": 0.008,
+  "precio/renta: IPV / renta del hogar | Nacional": 0.006,
+  "precio/renta: valor tasado / renta del hogar | Nacional": 0.802,
+  "nivel: IPV | Nacional": 0.009,
+  "nivel: valor tasado | Nacional": 0.006
  },
  "nivel_evidencia": "EXPLORATORIO (GSADF); DESCRIPTIVO/C1 (triangulación)",
  "diagnosticos": {
   "verificacion_simulada": {
    "nula": {
     "gsadf": 1.7970639529673749,
-    "cv95": 2.4277313823694713,
-    "p": 0.144
+    "cv95": 2.313601433393373,
+    "p": 0.152,
+    "cv95_wild": 2.6208303488854527,
+    "p_wild": 0.176
    },
    "burbuja": {
     "gsadf": 5.034529620932796,
-    "cv95": 5.6288449035945805,
-    "p": 0.11
+    "cv95": 2.380639145658519,
+    "p": 0.002,
+    "cv95_wild": 5.3221230590484,
+    "p_wild": 0.08
    },
-   "episodios_burbuja": [],
+   "episodios_burbuja": [
+    [
+     46,
+     64
+    ]
+   ],
    "episodios_nula": [
     [
-     54,
+     57,
      62
     ]
    ],
@@ -53,9 +62,16 @@
     45,
     65
    ],
-   "ok": false
+   "ok": true
   },
-  "holm_sobre": 40
+  "tamano_ar1": {
+   "cv95_iid": 2.0958334270675656,
+   "rechazo_iid": 0.05,
+   "rechazo_phi0.3": 0.07,
+   "rechazo_phi0.5": 0.12666666666666668
+  },
+  "autocorr_dy_media": 0.40011260800976756,
+  "fdr": "BH por familia (nacional 6; CCAA 34), exuberancia si BH<0,05 con ambos métodos; Holm en p_holm (con 499 réplicas y 40 pruebas el mínimo Holm es 0,08)"
  },
  "fuera_muestra": {
   "modelo": "no aplica (test de exuberancia, sin predicción)",

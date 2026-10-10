@@ -8,4 +8,4 @@ M0,gl_atenuacion,dlog SERPAVI ~ dlog Incasol (BCN),2015,2020,6,,,,,0.15697362696
 M0,gl_atenuacion,dlog SERPAVI ~ dlog Incasol (BCN),2022,2024,3,,,,,,,"2022-2024 (periodo propio, sin salto 2021)"
 M0,gl_atenuacion,dlog SERPAVI ~ dlog Incasol (BCN),2015,2024,9,,,,,0.07066473556389563,,2015-2024 sin 2021
 M0,gl_atenuacion,dlog SERPAVI ~ dlog Incasol (BCN),2012,2024,12,,,,,0.4566609539447727,,2012-2024 sin 2021
-M0,deficit_2021_2024,"dH - (terminadas - bajas), 12 combinaciones",2021,2024,4,,,,,732749.889,,rango 562692-902808; capa C1
+M0,deficit_2021_2024,"dH - (terminadas - bajas), 12 combinaciones",2021,2024,4,,,,,732750.0,,C1 (sin bajas) 562692-688692; con bajas supuestas (C2) hasta 902808

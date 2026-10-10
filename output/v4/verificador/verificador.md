@@ -16,7 +16,6 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | V10 | Bajar el ITP o el IVA de la vivienda la abarataría para los compradores. | NO ANALIZADA: FALTAN DATOS | C4 |
 | V11 | Construir vivienda pública resolvería el problema de la vivienda. | PARCIALMENTE | C2 |
 | V12 | Los tipos de interés son la causa principal de la subida de los precios de la vivienda (≥50 % de la subida). | ANALIZADA, NO CONCLUYENTE | C4 |
-| V13 | Hay una burbuja en el precio de la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
 | M3-V1 | Hay suelo de sobra para construir. | ANALIZADA, NO CONCLUYENTE | C4 |
 | M4-V1 | Los compradores extranjeros encarecen la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
 | M4-V2 | Las empresas dominan el mercado del alquiler. | NO ANALIZADA: FALTAN DATOS | C4 |
@@ -83,7 +82,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 |---|---|
 | Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C1 |
-| Magnitud | Balance contable hogares − viviendas nuevas 2021-2025: 701.187 viviendas (rango entre fuentes [559.752; 969.059]); en 2012-2021 el signo no está determinado ([-1.015.321; 689.037]). El papel del suelo como moderador no es detectable con los datos (P-C4). v4 (M0): déficit 2021-2024 con todos los componentes en C1 = 732.750 viviendas (rango [562.692; 902.808]); 2021-2025 queda en C4 porque las terminadas de 2025 son frágiles. |
+| Magnitud | Balance contable hogares − viviendas nuevas 2021-2025: 701.187 viviendas (rango entre fuentes [559.752; 969.059]); en 2012-2021 el signo no está determinado ([-1.015.321; 689.037]). El papel del suelo como moderador no es detectable con los datos (P-C4). v4 (M0): déficit 2021-2024 sin bajas = [562.692; 688.692] viviendas (C1: todos los componentes medidos con dos fuentes); con bajas supuestas del 0,1-0,2 % anual, hasta 902.808 (C2). La cifra 2021-2025 de v3 queda en C4 porque las terminadas de 2025 son frágiles. |
 | Intervalo | [559.752; 969.059] viviendas (2021-2025) |
 | Cota | — |
 | Literatura | Saiz (2010), QJE, VERIFICADA; Glaeser y Gyourko (2018), JEP, VERIFICADA: calibración. Banco de España, Informe Anual 2025 (NO VERIFICADA: DOI no comprobado): ≈750 mil. |
@@ -99,7 +98,7 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 |---|---|
 | Veredicto | **PARCIALMENTE** |
 | Capa de la evidencia | C1 |
-| Magnitud | 2021-2025: 701.187 viviendas; rango entre fuentes [559.752; 969.059]. 2012-2021: signo no determinado ([-1.015.321; 689.037]). v4 (M0): déficit 2021-2024 con todos los componentes en C1 = 732.750 viviendas (rango [562.692; 902.808]); 2021-2025 queda en C4 porque las terminadas de 2025 son frágiles. |
+| Magnitud | 2021-2025: 701.187 viviendas; rango entre fuentes [559.752; 969.059]. 2012-2021: signo no determinado ([-1.015.321; 689.037]). v4 (M0): déficit 2021-2024 sin bajas = [562.692; 688.692] viviendas (C1: todos los componentes medidos con dos fuentes); con bajas supuestas del 0,1-0,2 % anual, hasta 902.808 (C2). La cifra 2021-2025 de v3 queda en C4 porque las terminadas de 2025 son frágiles. |
 | Intervalo | [559.752; 969.059] viviendas |
 | Cota | — |
 | Literatura | Banco de España, Informe Anual 2025 (NO VERIFICADA: DOI no comprobado): ≈750 mil, dentro del rango. |
@@ -223,22 +222,6 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 | Convención A (estricta: traducción a precio en C4) | ANALIZADA, NO CONCLUYENTE |
 | Convención B (estructural: traducción a precio como C2) | PARCIALMENTE. Con P/R = 1/uc: incompatible con 2021-2025 (signo contrario) y no descartada en 2014-2021 (la cota supera la subida observada). |
 
-## V13 · Burbuja
-
-**Afirmación:** Hay una burbuja en el precio de la vivienda en España.
-
-| Campo | Contenido |
-|---|---|
-| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
-| Capa de la evidencia | C4 |
-| Magnitud | Precio/renta 2023: [3,0; 4,1] veces la renta anual; la dirección de la razón precio/alquiler 2015-2024 no está establecida (medidas de signo contrario: [-9,3; 43,9] %). |
-| Intervalo | n/d |
-| Cota | — |
-| Literatura | Sin test de exuberancia (GSADF) realizado en v3. |
-| Regla del veredicto | Sin test de exuberancia y con indicadores de valoración contradictorios, no se puede afirmar ni descartar. v4: Se analizaron indicadores de valoración (precio/renta, precio/alquiler), que discrepan en dirección; no se realizó test de exuberancia (GSADF), que los datos permitirían. |
-| Límites | El test GSADF por CCAA estaba previsto en P-E (exploratorio) y no se ejecutó. |
-| Evidencia | output/v3/PA/hechos.json#A4, output/v3/PA/hechos.json#A6 |
-
 ## M3-V1 · Suelo disponible
 
 **Afirmación:** Hay suelo de sobra para construir.
@@ -311,10 +294,10 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 |---|---|
 | Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C4 |
-| Magnitud | Precio de compra 2015-2025: +44 % a +80 % según la fuente (4 fuentes); 2021-2025: +24 % a +36 %. GSADF nacional precio/alquiler: exuberancia (Holm 5 %) en 0 de 2 medidas; CCAA con exuberancia en ambas medidas: 0. |
+| Magnitud | Precio de compra 2015-2025: +44 % a +80 % según la fuente (4 fuentes); 2021-2025: +24 % a +36 %. GSADF nacional precio/alquiler: exuberancia (BH 5 %, ambos métodos) en 2 de 2 medidas; CCAA con exuberancia en ambas medidas: 5. |
 | Intervalo | [44; 80] % de variación 2015-2025 |
 | Cota | — |
 | Literatura | Phillips, Shi y Yu (2015), GSADF: NO VERIFICADA (DOI y cuartil no comprobados sin red). |
-| Regla del veredicto | El test de exuberancia no rechaza la raíz unitaria en las series nacionales de precio/alquiler y no identifica una burbuja; la ausencia de rechazo tampoco la descarta. C4. |
-| Límites | El test detecta comportamiento explosivo de la serie, no una burbuja: no identifica si el precio se separa de los fundamentos. Ratios con índices rebasados (nivel de la ratio arbitrario); ADF con un rezago; bootstrap wild de 499 réplicas; muestra 2007-2026 corta para el ciclo. Precio/renta solo nacional; sin renta trimestral por CCAA. Verificación con series simuladas: NO superada. |
+| Regla del veredicto | Hay exuberancia estadística en alguna serie, pero un test de exuberancia no separa burbuja de cambios en los fundamentos (renta, tipos de interés, oferta). Capa C4: ni RESPALDADA ni CONTRADICHA. |
+| Límites | El test detecta comportamiento explosivo de la serie, no una burbuja: no identifica si el precio se separa de los fundamentos. Ratios con índices rebasados (nivel de la ratio arbitrario); ADF con un rezago; valores críticos por simulación de paseo aleatorio (principal) y wild bootstrap (499 réplicas; conservador si la muestra ya contiene tramos explosivos); muestra 2007-2026 corta para el ciclo. Precio/renta solo nacional; sin renta trimestral por CCAA. Verificación con series simuladas: superada. |
 | Evidencia | output/v4/M7/tablas/gsadf_resultados.csv, output/v4/M7/tablas/variacion_precio.csv, data/processed (nacional_q_v2 vía holdout.load_full) |

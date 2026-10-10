@@ -36,16 +36,24 @@
   }
  },
  "deficit_2021_2024": {
-  "mediana": 732749.889,
+  "mediana": 732750.0,
   "min": 562692.0,
-  "max": 902807.7779999999,
-  "capa": "C1",
+  "max": 902808.0,
+  "capa": "C1 sin bajas; C2 con bajas supuestas",
+  "c1_sin_bajas": [
+   562692.0,
+   688692.0
+  ],
+  "c2_con_bajas": [
+   562692.0,
+   902808.0
+  ],
   "dh_epa": 1019800.0,
   "dh_ecp": 937265.0,
   "rango_hogares_rel": 0.08434569112420895,
   "catastro_ok": true,
   "n_comb": 12,
-  "razon_capa": "todos los componentes C1: hogares ECP y EPA corregida dentro de ±15 %; terminadas MIVAU-Catastro dentro de ±15 % en 2021-2024"
+  "razon_capa": "C1 solo sin bajas: hogares ECP y EPA corregida dentro de ±15 % y terminadas MIVAU-Catastro dentro de ±15 % en 2021-2024; con bajas supuestas (0,1-0,2 %) es una cota C2 (revisión B, it. 2)"
  },
  "deficit_2021_2025": {
   "capa": "C4",

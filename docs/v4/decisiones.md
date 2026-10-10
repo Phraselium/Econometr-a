@@ -56,3 +56,9 @@
   - M0: déficit 2021-2024 con todos los componentes en C1;
   - M2: A3, M2-H2 pasa a C4.
 - M3, revisión oleada B (B4, B6, B7). Se retira PROVISIONAL (M1 corregido). Capa C4 siempre (coste en nivel supuesto); la estabilidad se reporta sin promover de capa. Clase 2 renombrada «precio > r·(coste + suelo), coste supuesto» (sin atribución de causa; Glaeser y Gyourko lo leen como posible impuesto regulatorio implícito, no afirmado aquí); clases 1 y 3 «con coste supuesto». Clase 9 = falta y brecha positiva sin dato de solares (4 provincias forales). Clase y estabilidad por periodo: 2021-2025 principal, 2012-2025 en columnas aparte. Ficha M3-V1: denominador de 48 provincias con dato; prueba provincial no informativa; veredicto máximo ANALIZADA, NO CONCLUYENTE con C4. Limitación: los umbrales se fijaron en el código antes de clasificar, pero el prerregistro no es verificable en git y la clase 5 se añadió después del diseño (recuento 0).
+
+## Revisión de la oleada B, iteración 2: REHACER acotado → corregido por el orquestador
+- Déficit 2021-2024: es C1 solo sin bajas, 562.692-688.692 viviendas. Con bajas supuestas del 0,1-0,2 % anual llega a 902.808, como cota C2. En `deficit_2021_2024.csv` el formato redondeaba bajas_pct a 0; corregido. V04 y V05 citan las dos cifras.
+- V13 se retira, sustituida por M7-V1 (burbuja).
+- La latente de M1 remite a la conciliación M2-C1. Se borra el directorio `_smoke` de M3.
+- Oleada B APROBADA tras esta corrección; no hace falta otra iteración del revisor, porque los cambios son los que el propio revisor propuso.

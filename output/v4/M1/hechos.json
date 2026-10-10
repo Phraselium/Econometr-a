@@ -323,7 +323,7 @@
     ],
     "limites": [
       "Solo cambia la población joven entre provincias",
-      "M2 (output/v4/M2) no estaba disponible al calcular",
+      "Definición A2 (convivencia con los padres); M2 usa la jefatura de 2008: conceptos distintos, ver nota de conciliación M2-C1 en output/v4/M2/hechos.json",
       "No se suma al déficit: puede solaparse con Δ hogares observado"
     ]
   },

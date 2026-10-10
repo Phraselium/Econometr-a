@@ -318,6 +318,39 @@ def trim_idx(fechas: list[str], i: int) -> str:
     return fechas[i]
 
 
+def bh(p: np.ndarray) -> np.ndarray:
+    """p ajustados de Benjamini-Hochberg."""
+    m = len(p)
+    o = np.argsort(p)
+    adj = np.minimum.accumulate((p[o] * m / np.arange(1, m + 1))[::-1])[::-1]
+    out = np.empty(m)
+    out[o] = np.minimum(adj, 1.0)
+    return out
+
+
+def distorsion_tamano(r: int = 300) -> dict:
+    """Tamaño del GSADF con valores críticos iid cuando Δy es AR(1) (phi = 0,5): evalúa el sobre-rechazo."""
+    t_len = 78
+    rng = np.random.default_rng(SEED + 5)
+    w0 = max(int(math.floor((0.01 + 1.8 / math.sqrt(t_len)) * t_len)), 8)
+    ab = _ventanas(t_len - 2, w0)
+    stat = lambda y: float(np.max(bsadf_path(y, w0, ab)[w0 - 1:]))  # noqa: E731
+    nul = np.array([stat(np.cumsum(rng.standard_normal(t_len))) for _ in range(r)])
+    cv = float(np.quantile(nul, 0.95))
+    out = {"cv95_iid": cv, "rechazo_iid": float(np.mean(nul > cv))}
+    for phi in (0.3, 0.5):
+        rej = 0
+        for _ in range(r):
+            e = rng.standard_normal(t_len)
+            d = np.zeros(t_len)
+            for t in range(1, t_len):
+                d[t] = phi * d[t - 1] + e[t]
+            rej += stat(np.cumsum(d)) > cv
+        out[f"rechazo_phi{phi}"] = rej / r
+    reg("verif", "tamano_gsadf", "tamaño con Δy AR(1), T=78, vc iid", r, str(out))
+    return out
+
+
 def tramo_continuo(p: pd.DataFrame) -> pd.DataFrame:
     """Tramo trimestral contiguo más largo sin huecos (el test exige una serie sin interrupciones)."""
     per = pd.PeriodIndex([f"{t[:4]}Q{t[-1]}" for t in p.index], freq="Q")
@@ -362,13 +395,20 @@ def series_gsadf(nac: pd.DataFrame, pan: pd.DataFrame) -> dict:
     df["p_holm"] = [h[str(i)] for i in df.index]
     hw = econ_utils.holm(dict(zip(df.index.astype(str), df.p_wild)))
     df["p_holm_wild"] = [hw[str(i)] for i in df.index]
-    df["exuberancia_holm05"] = df.p_holm < 0.05
+    fam = np.where(df.territorio == "Nacional", "nacional", "ccaa")
+    for col in ("p_mc", "p_wild"):
+        df["bh_" + col] = np.nan
+        for f in ("nacional", "ccaa"):
+            m = fam == f
+            df.loc[m, "bh_" + col] = bh(df.loc[m, col].to_numpy())
+    df["exuberancia_holm05"] = (df.bh_p_mc < 0.05) & (df.bh_p_wild < 0.05)   # BH por familia, ambos métodos
     df.to_csv(TAB / "gsadf_resultados.csv", index=False)
     for _, f in df.iterrows():
         reg("gsadf", f"gsadf_{f.territorio}_{f.medida}", "GSADF ADF(1) con intercepto, wild bootstrap", int(f["T"]),
-            f"cv95 {f.cv95_mc:.2f}; episodios: {f.episodios_bsadf or 'ninguno'}; Holm {f.p_holm:.3f}",
+            f"cv95 {f.cv95_mc:.2f}; episodios: {f.episodios_bsadf or 'ninguno'}; Holm {f.p_holm:.3f}; BH {f.bh_p_mc:.3f}",
             f.ini, f.fin, coef=f.gsadf, p=f.p_mc)
-    return {"df": df, "curvas": curvas}
+    ac = [float(np.corrcoef(np.diff(s.to_numpy())[1:], np.diff(s.to_numpy())[:-1])[0, 1]) for _, _, s in series]
+    return {"df": df, "curvas": curvas, "ac_dy_media": float(np.mean(ac))}
 
 
 # ------------------------------------------------------------------ figuras
@@ -410,16 +450,17 @@ def ficha(tri: dict, gs: dict, ver: dict) -> dict:
     v15, v21 = tri["precio_2015_2025"], tri["precio_2021_2025"]
     mag = (f"Precio de compra 2015-2025: +{100 * v15['rango_cum'][0]:.0f} % a +{100 * v15['rango_cum'][1]:.0f} % "
            f"según la fuente ({v15['n_fuentes']} fuentes); 2021-2025: +{100 * v21['rango_cum'][0]:.0f} % a "
-           f"+{100 * v21['rango_cum'][1]:.0f} %. GSADF nacional precio/alquiler: exuberancia (Holm 5 %) en "
-           f"{n_pa_ok} de {len(pa)} medidas; CCAA con exuberancia en ambas medidas: {len(ambas)}.")
+           f"+{100 * v21['rango_cum'][1]:.0f} %. GSADF nacional precio/alquiler: exuberancia (BH 5 %, ambos métodos) en "
+           f"{n_pa_ok} de {len(pa)} medidas; CCAA con exuberancia en ambas medidas: {len(ambas)} de 17; "
+           f"episodios nacionales: {'; '.join(pa.episodios_bsadf)}.")
+    ver_txt = "ANALIZADA, NO CONCLUYENTE"
     if n_pa_ok == 0 and not ambas:
-        ver_txt = "ANALIZADA, NO CONCLUYENTE"
-        regla = ("El test de exuberancia no rechaza la raíz unitaria en las series nacionales de precio/alquiler y no "
-                 "identifica una burbuja; la ausencia de rechazo tampoco la descarta. C4.")
+        regla = ("El test no detecta exuberancia en las series nacionales de precio/alquiler; no identifica una burbuja y "
+                 "la ausencia de rechazo tampoco la descarta. C4.")
     else:
-        ver_txt = "PARCIALMENTE"
-        regla = ("Hay exuberancia estadística en alguna serie, pero un test de exuberancia no separa burbuja de "
-                 "cambios en los fundamentos (renta, tipos de interés, oferta). Capa C4: ni RESPALDADA ni CONTRADICHA.")
+        regla = ("Hay exuberancia estadística en el ratio precio/alquiler (episodios fechados con BSADF), pero un test de "
+                 "exuberancia no separa una burbuja de cambios en los fundamentos (renta, tipos de interés, oferta) ni mide "
+                 "la sobrevaloración. Con capa C4 el veredicto no puede ser RESPALDADA ni CONTRADICHA.")
     return {
         "id": "M7-V1", "tema": "Burbuja de precios",
         "enunciado": "Hay una burbuja en el precio de la vivienda en España.",
@@ -428,7 +469,7 @@ def ficha(tri: dict, gs: dict, ver: dict) -> dict:
         "cota": "—",
         "literatura": "Phillips, Shi y Yu (2015), GSADF: NO VERIFICADA (DOI y cuartil no comprobados sin red).",
         "veredicto": ver_txt, "regla": regla,
-        "limites": ("El test detecta comportamiento explosivo de la serie, no una burbuja: no identifica si el precio se "
+        "limites": ("Sobre-rechazo moderado con Δy autocorrelacionada (tamaño 12,7 % con phi=0,5, vc al 5 %). El test detecta comportamiento explosivo de la serie, no una burbuja: no identifica si el precio se "
                     "separa de los fundamentos. Ratios con índices rebasados (nivel de la ratio arbitrario); ADF con un rezago; "
                     "valores críticos por simulación de paseo aleatorio (principal) y wild bootstrap (499 réplicas; conservador si la muestra ya contiene tramos explosivos); muestra 2007-2026 corta para el ciclo. Precio/renta solo nacional; sin renta "
                     "trimestral por CCAA. Verificación con series simuladas: " + ("superada." if ver["ok"] else "NO superada.")),
@@ -443,6 +484,7 @@ def main() -> None:
     ver = verificar_implementacion()
     gs = series_gsadf(nq, pan)
     figuras(tri, gs)
+    tam = distorsion_tamano()
     fch = ficha(tri, gs, ver)
     (OUT / "fichas_verificador.json").write_text(json.dumps([fch], ensure_ascii=False, indent=1), encoding="utf-8")
     df = gs["df"]
@@ -450,7 +492,7 @@ def main() -> None:
               "precio_2021_2025": tri["precio_2021_2025"], "n_ccaa_precio_c1": tri["n_ccaa_c1"],
               "n_ccaa_alquiler_c1_2015_2024": tri["n_ccaa_alq_c1"],
               "alquiler": {k: v for k, v in tri.items() if k.startswith("alq_")},
-              "verificacion_gsadf": ver}
+              "verificacion_gsadf": ver, "tamano_gsadf": tam, "autocorr_dy_media": gs["ac_dy_media"]}
     (OUT / "hechos.json").write_text(json.dumps(hechos, ensure_ascii=False, indent=1, default=float), encoding="utf-8")
     nac_r = df[df.territorio == "Nacional"]
     res = {"rama": "M7", "pregunta": "¿Hay exuberancia de precios? Triangulación de precio de compra y alquiler y GSADF.",
@@ -459,9 +501,9 @@ def main() -> None:
            "N": int(df["T"].max()), "metodo": f"GSADF (Phillips, Shi y Yu 2015), ADF(1), r0=0,01+1,8/sqrt(T), valores críticos por simulación (paseo aleatorio) y wild bootstrap, {NBOOT} réplicas cada uno, SEED {SEED}",
            "estimacion": {r.medida + " | " + r.territorio: round(float(r.gsadf), 3) for r in nac_r.itertuples()},
            "ic95": {r.medida + " | " + r.territorio: round(float(r.cv95_mc), 3) for r in nac_r.itertuples()},
-           "p_ajustado": {r.medida + " | " + r.territorio: round(float(r.p_holm), 4) for r in nac_r.itertuples()},
+           "p_ajustado": {r.medida + " | " + r.territorio: round(float(r.bh_p_mc), 4) for r in nac_r.itertuples()},
            "nivel_evidencia": "EXPLORATORIO (GSADF); DESCRIPTIVO/C1 (triangulación)",
-           "diagnosticos": {"verificacion_simulada": ver, "holm_sobre": int(len(df))},
+           "diagnosticos": {"verificacion_simulada": ver, "tamano_ar1": tam, "autocorr_dy_media": gs["ac_dy_media"], "fdr": "BH por familia (nacional 6; CCAA 34), exuberancia si BH<0,05 con ambos métodos; Holm en p_holm (con 499 réplicas y 40 pruebas el mínimo Holm es 0,08)"},
            "fuera_muestra": {"modelo": "no aplica (test de exuberancia, sin predicción)", "rmse": None, "dm_vs_ar4": None},
            "notas": "Un test de exuberancia no identifica burbujas. INE e IPV de Notariado comparten fuente; BdE=MIVAU. SERPAVI es un stock y acaba en 2024."}
     (OUT / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float), encoding="utf-8")

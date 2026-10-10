@@ -135,3 +135,60 @@ M3 y M4 son en general prudentes: no usan lenguaje causal, no ofrecen cifras de 
   - Airbnb solo se usa en robustez;
   - el comprador persona jurídica de la ETDP es de fuente única y está en C4;
   - M4-V2 está bien como NO ANALIZADA por falta de stock por titular.
+
+## Iteración 2 (HEAD 429f70e)
+
+### Veredicto: **REHACER (acotado)**
+Quedan dos puntos de capa. Basta con corregirlos y regenerar, sin otra iteración de revisión. Si no se corrigen, el texto propuesto abajo debe ir a `docs/v4/limitaciones.md`.
+
+### Resueltos
+
+| Cambio | Estado | Comprobación |
+|---|---|---|
+| B1 | Resuelto | V14 retirada. Definición única: MIVAU residentes + no residentes. Se explica que la cifra 9,6-11,0 % de V14 contaba solo residentes. |
+| B2 | Resuelto | Extranjeros en C4. MIVAU y Notariado se declaran no independientes (pendiente de confirmar en la web, como dice la ficha). Las definiciones están explicadas. |
+| B3 | Resuelto | Turísticas, tenencia y stock por uso en C4. `resultado.json` es coherente. |
+| B4 | Resuelto | Ver detalle abajo. |
+| B5 | Resuelto | Todos los hechos de M1 en C4, salvo la latente (C2, supuesto contrafactual). |
+| B6 | Resuelto | Etiquetas neutras con «coste supuesto». |
+| B7 | Resuelto | Ver detalle abajo. |
+| B8 | Parcial | Ver detalle abajo. |
+| B9 | Resuelto | Nota de promotores y entidades, supuesto de costa en la ficha, `extranjeros_concentracion_sensibilidad.csv` con las metropolitanas aparte, y referencia «v2 (BV)» como NO VERIFICADA. |
+| B10 | Resuelto | M4-V3 en C4, ANALIZADA, NO CONCLUYENTE. |
+
+- **B4.**
+  - M3-V1 usa ahora 48 provincias en el denominador y dice que la prueba provincial no informa.
+  - Se añadió la cobertura municipal (454 municipios con dato; da también el 100 %).
+  - Veredicto: ANALIZADA, NO CONCLUYENTE.
+  - La regla «C4 ⇒ como máximo no concluyente» está en `src/v3/check_texto.py:79` y en `src/v4/verificador.py:95`.
+- **B7.**
+  - PROVISIONAL retirado.
+  - Capa C4 siempre.
+  - Clase 9 con las 4 forales.
+  - Periodo principal 2021-2025 y 2012-2025 aparte.
+  - Prerregistro no verificable y clase 5 añadida después: ambos declarados.
+- **B8.**
+  - M2-H2 está en C4.
+  - V08 está en C4 y es NO CONCLUYENTE.
+  - Lo que sigue pendiente se detalla en el apartado siguiente.
+
+### Pendiente
+1. **V04/V05 (A6/B8): siguen rotuladas como C1 con cifras que no son C1.**
+   - El intervalo principal sigue siendo [559.752; 969.059] para 2021-2025. Según el propio texto de la ficha, 2021-2025 es C4.
+   - La cifra nueva de 2021-2024, 732.750 [562.692; 902.808], incluye bajas supuestas (0,1-0,2 %), y eso la deja en C2 por la regla B5.
+   - En `output/v4/M0/deficit_2021_2024.csv`, las 12 filas dicen C1, también las que tienen bajas > 0. La columna `bajas_pct` vale 0 en todas las filas aunque `bajas` sea 107.058 o 214.116: es un error de columna.
+   - Corrección:
+     - En el CSV: C1 solo con bajas = 0, rango [562.692; 688.692] (EPA y ECP difieren un 8,4 % en ΔH; las terminadas de 2021-2024 están en el núcleo C1 de A8). Las filas con bajas, a C2. Hay que arreglar `bajas_pct`.
+     - En V04/V05: intervalo principal de 2021-2024 con bajas = 0 en C1, y la cota con bajas en C2. Hay que retirar de la cabecera el rango de 2021-2025 o rotularlo como C4.
+   - El veredicto PARCIALMENTE de V05 se sostiene incluso con el suelo C1 (562.692 ≥ «cientos de miles»).
+2. **M7-V1 repite la afirmación de V13** («Hay una burbuja…»). Es el mismo patrón que B1: hay que retirar V13 o marcarla como «sustituida por M7-V1».
+3. **Detalles menores, que no bloquean.**
+   - `M1-H-latente-provincias` dice todavía «M2 no estaba disponible» (A10).
+   - `M1-H-nacional-2021-2025` mantiene el límite «tramo 2011-2021», que no corresponde a esa ventana.
+   - `output/v4/M3/_smoke/` conserva la etiqueta «brecha regulatoria»: hay que regenerarlo o borrarlo.
+   - M1 nacional 2021-2025 está en C4 y M0 2021-2024 en C1. Es más conservador de lo que exige B5 (ΔH nacional C1 por EPA frente a ECP) y no es una promoción. Conviene que el texto lo explique: ventana distinta y terminadas de 2025 frágiles.
+
+### Texto propuesto para docs/v4/limitaciones.md (solo si no se corrigen 1 y 2)
+> **Capas del déficit nacional (V04/V05).** Solo es un hecho C1 el déficit contable 2021-2024 sin bajas: 562.692-688.692 viviendas (hogares ECP o EPA corregida; terminadas MIVAU con o sin protegida). Las cifras con bajas del parque del 0,1-0,2 % anual (hasta 902.808) dependen de un supuesto y son C2. El rango 2021-2025 (559.752-969.059) es C4, por la fragilidad de las terminadas de 2025. Donde una ficha o una tabla rotule estas cifras como C1, prevalece esta nota.
+>
+> **Fichas duplicadas.** V13 y M7-V1 evalúan la misma afirmación. La ficha vigente es M7-V1.

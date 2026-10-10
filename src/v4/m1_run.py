@@ -466,7 +466,7 @@ def escribir_json(t, pr, mun, conc, exc, lat, lat_info, figs) -> None:
         "fuentes": ["Eurostat ilc_lvps08 / ECV", "EPA 65944", "Padrón INE 20-34 años por provincia"],
         "supuestos": ["Tasa de convivencia 2008 como referencia contrafactual", "personas por hogar joven 1,5-2,0",
                       "misma brecha de tasa en todas las provincias (no hay tasa provincial)"],
-        "limites": ["Solo cambia la población joven entre provincias", "M2 (output/v4/M2) no estaba disponible al calcular",
+        "limites": ["Solo cambia la población joven entre provincias", "Definición A2 (convivencia con los padres); M2 usa la jefatura de 2008: conceptos distintos, ver nota de conciliación M2-C1 en output/v4/M2/hechos.json",
                     "No se suma al déficit: puede solaparse con Δ hogares observado"]})
     rob = pd.read_csv(OUT / "tablas" / "M1_robustez_censo_anual.csv", dtype={"cod_prov": str})
     r21 = rob[rob.periodo == "2021-2025"]

@@ -352,13 +352,19 @@ def deficit_2021_2024(term: dict) -> dict:
                               "bajas": baj, "terminadas_netas": bruto - baj, "deficit": dh - (bruto - baj)})
     t = pd.DataFrame(filas)
     comp_c1 = (rango_h <= TOL) and cat_ok
-    t["capa"] = "C1" if comp_c1 else "C4"
-    t.to_csv(OUT / "deficit_2021_2024.csv", index=False, float_format="%.0f")
+    # capa = la menor de los componentes: sin bajas, todos medidos (C1); con bajas supuestas, cota con supuesto (C2)
+    t["capa"] = np.where(t.bajas_pct == 0, "C1", "C2") if comp_c1 else "C4"
+    for c in ("delta_hogares", "bruto", "bajas", "terminadas_netas", "deficit"):
+        t[c] = t[c].round(0)
+    t.to_csv(OUT / "deficit_2021_2024.csv", index=False)
+    c1 = t[t.capa == "C1"]
     med = float(t.deficit.median())
     lo, hi = float(t.deficit.min()), float(t.deficit.max())
+    lo1, hi1 = (float(c1.deficit.min()), float(c1.deficit.max())) if len(c1) else (np.nan, np.nan)
     REG.log("M0", "deficit_2021_2024", "dH - (terminadas - bajas), 12 combinaciones", 2021, 2024, 4, np.nan, np.nan, np.nan, coef_interes=med,
-            notas=f"rango {lo:.0f}-{hi:.0f}; capa {t.capa.iloc[0]}")
-    return {"mediana": med, "min": lo, "max": hi, "capa": t.capa.iloc[0], "dh_epa": dh_epa, "dh_ecp": dh_ecp,
+            notas=f"C1 (sin bajas) {lo1:.0f}-{hi1:.0f}; con bajas supuestas (C2) hasta {hi:.0f}")
+    return {"mediana": med, "min": lo, "max": hi, "capa": "C1 sin bajas; C2 con bajas supuestas",
+            "c1_sin_bajas": [lo1, hi1], "c2_con_bajas": [lo, hi], "dh_epa": dh_epa, "dh_ecp": dh_ecp,
             "rango_hogares_rel": float(rango_h), "catastro_ok": cat_ok, "n_comb": int(len(t))}
 
 
@@ -388,7 +394,7 @@ def main() -> None:
             "gl": {"coef": g["g1"][0], "ee": g["g1"][1], "lambda_2022_2024": g["lam_acc"], "lambda_2015_2020": g["lam2"],
                    "coef_esperado_stock": g["esp"]["esperado_serpavi_central"]},
         },
-        "deficit_2021_2024": {**d24, "razon_capa": "todos los componentes C1: hogares ECP y EPA corregida dentro de ±15 %; terminadas MIVAU-Catastro dentro de ±15 % en 2021-2024"},
+        "deficit_2021_2024": {**d24, "razon_capa": "C1 solo sin bajas: hogares ECP y EPA corregida dentro de ±15 % y terminadas MIVAU-Catastro dentro de ±15 % en 2021-2024; con bajas supuestas (0,1-0,2 %) es una cota C2 (revisión B, it. 2)"},
         "deficit_2021_2025": {"capa": "C4", "razon": "capa = la menor de sus componentes: terminadas 2025 es C4 frágil (Catastro +14,9 %, sale con otras alineaciones); ΔH 2021-2025 es C1", "rango": [c["min"], c["max"]]},
         "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None, "nota": "no aplica: conciliación y triangulación contable"},
         "notas": "Sin BdE terminadas en data/raw; cifra BdE NO VERIFICADA en método. Catastro solo régimen común.",

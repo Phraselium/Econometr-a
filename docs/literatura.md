@@ -459,3 +459,14 @@ Detalle, cuartiles y protocolos en docs/v3/literatura_v3.md. Una línea por refe
 - Simonsohn, U., Simmons, J. P. y Nelson, L. D. (2020). Specification curve analysis. *Nature Human Behaviour* 4(11), 1208-1214. DOI 10.1038/s41562-020-0912-z. VERIFICADA · cuartil no verificado.
 - Conley, T. G. (1999). GMM estimation with cross sectional dependence. *J. Econometrics* 92(1), 1-45. DOI 10.1016/s0304-4076(98)00084-0. VERIFICADA · Q1 (SJR 2025; año no comprobado).
 - No verificadas en v3 (sin DOI comprobado): Pastor, Morillas, Morala y Serrano (2022), MESVAL DT 05/2022 (el DOI impreso 10.12842/MESVAL_DT2022_05 da 404 en Crossref y DataCite); Romero Jordán, Sanz Sanz y Pérez López (2006), FUNCAS DT 249/2006; de Chaisemartin et al., DiD con tratamientos continuos (arXiv 2201.06898).
+
+## Anexo v4 (2026-10-10): referencias nuevas verificadas
+
+Detalle y resultados en docs/v4/literatura_v4.md. DOI comprobado en Crossref 2026-10-10; Scimago no accesible.
+
+- Gibbons, S. y Manning, A. (2006). The incidence of UK housing benefit: Evidence from the 1990s reforms. *Journal of Public Economics* 90(4-5), 799-822. DOI 10.1016/j.jpubeco.2005.01.002. VERIFICADA · cuartil no verificado.
+- Segú, M. (2020). The impact of taxing vacancy on housing markets: Evidence from France. *Journal of Public Economics* 185, 104079. DOI 10.1016/j.jpubeco.2019.104079. VERIFICADA · cuartil no verificado.
+- Carozzi, F., Hilber, C. A. L. y Yu, X. (2024). On the economic impacts of mortgage credit expansion policies: Evidence from help to buy. *Journal of Urban Economics* 139, 103611. DOI 10.1016/j.jue.2023.103611. VERIFICADA · Q1 (SJR 2025; año no comprobado).
+- Baum-Snow, N. y Marion, J. (2009). The effects of low income housing tax credit developments on neighborhoods. *Journal of Public Economics* 93(5-6), 654-666. DOI 10.1016/j.jpubeco.2009.01.001. VERIFICADA · cuartil no verificado.
+- Glaeser, E. L., Gyourko, J. y Saks, R. (2005). Why is Manhattan so expensive? Regulation and the rise in housing prices. *Journal of Law and Economics* 48(2), 331-369. DOI 10.1086/429979. VERIFICADA · cuartil no verificado.
+- NO VERIFICADAS (sin DOI comprobado, no citadas): Fack (2006); Sinai y Waldfogel (2005) (Crossref HTTP 429, no repetido); evaluaciones de Vancouver, del fin de la deducción de 2013 (López-García), del aval ICO, de industrialización y de captura de plusvalías (no buscadas o sin resultado).

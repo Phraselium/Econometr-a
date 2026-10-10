@@ -73,3 +73,15 @@ La decisión queda condicionada a la revisión de la oleada 1.
 - «Pineda» del anexo = Pineda de Mar (08163); «Castell d'Aro, Platja d'Aro i S'Agaró» = 17048.
 - Errata en data/raw/v3/zonas_tensionadas_v3.csv (no editado): Rubí aparece con 08085 (Font-rubí) en lugar de 08184; Mont-roig del Camp con 17110 (Mont-ras) en lugar de 43092. La salida usa los códigos validados en Incasòl y en el texto BOE.
 - Ley 12/2023: la relación trimestral la publica la Secretaría de Estado de Vivienda y Agenda Urbana (Resolución, no orden ministerial). Cataluña: 140 (BOE-A-2024-5214, TER/800/2024) y 131 (BOE-A-2024-20576, TER/2408/2024). Sin declaraciones catalanas en 2025 en el BOE consultado; la ampliación a 302 (julio 2026) solo figura en prensa.
+
+## Revisión de la oleada 1: REHACER (iteración 1) — docs/v3/revision_oleada1.md
+- **O1, incidencias de sellado, declaradas:**
+  - (i) El subagente de potencia y GL ejecutó un `describe()` global sobre el fichero de VUT por sección (todas las unidades y oleadas, incluida la 2026M05) antes de recibir la orden de sellado. Fueron estadísticos marginales del tratamiento, sin el resultado. Contaminación baja.
+  - (ii) `pot_run.pc3` estimó P-C3 (topes y zonas, fianzas municipales) con todos los municipios, incluidos los que el sellado v3 deja fuera, y publicó los coeficientes: topes −0,022 / +0,002; zonas −0,047 / −0,203.
+  - (iii) Los coeficientes de P-C1 en la muestra no sellada (nacional +0,0011 y ciudades) también se conocen por la réplica GL.
+
+  Consecuencias, fijadas ahora:
+  - La potencia publicará solo el EE y el EMD.
+  - `prereg-v3` declara (ii) y (iii), y en P-C1 solo la evaluación sellada es confirmatoria.
+  - **P-C3 no tiene ya una muestra sellada espacial limpia.** Su validación sellada se hace **por fuente**: la misma especificación con el alquiler SERPAVI (IRPF) municipal de Cataluña, 2018-2023, que no se ha estimado nunca para P-C3, evaluada una vez vía `holdout.evaluate`. Es una desviación del sellado espacial y se declara como tal. Las zonas tensionadas de 2024 ya vistas quedan en C4.
+  - Ventana de los topes: 2020Q4-2022Q1 (vigencia efectiva hasta la STC 37/2022, BOE 08/04/2022), con sensibilidad de fin en 2021Q3.

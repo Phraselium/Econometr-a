@@ -1,0 +1,78 @@
+{
+ "utc": "2026-10-10T07:53:11Z",
+ "evento": "evaluacion",
+ "hipotesis": "H2",
+ "rama": "BV",
+ "paneles": [
+  "panel_prov_q",
+  "nacional_q_v2"
+ ],
+ "resultado": {
+  "cfg": "C3",
+  "regla": "RMSE_modelo < RMSE_AR4 y p < 0,05 (principal: todas las provincias)",
+  "provincias_entrenamiento": 49,
+  "provincias_selladas": [
+   "11",
+   "16",
+   "45"
+  ],
+  "PRINCIPAL_todas": {
+   "modelo": "BV_C3",
+   "n": 416,
+   "n_periodos": 8,
+   "rmse": 0.054645142613630605,
+   "mae": 0.0464239490576576,
+   "rmse_AR4": 0.06191320729327712,
+   "dm_vs_AR4": 1.4340651045884543,
+   "p_vs_AR4": 0.19467579127919515,
+   "cumple_regla": false
+  },
+  "sec_a_entrenamiento": {
+   "modelo": "BV_C3",
+   "n": 392,
+   "n_periodos": 8,
+   "rmse": 0.05418307202597978,
+   "mae": 0.04594215694290309,
+   "rmse_AR4": 0.06148396629694899,
+   "dm_vs_AR4": 1.5578853688280756,
+   "p_vs_AR4": 0.16321964814018136,
+   "cumple_regla": false
+  },
+  "sec_b_selladas_ventana": {
+   "modelo": "BV_C3",
+   "n": 24,
+   "n_periodos": 8,
+   "rmse": 0.06170441467533286,
+   "mae": 0.054293220265314766,
+   "rmse_AR4": 0.06854469314027196,
+   "dm_vs_AR4": 0.6522065747236331,
+   "p_vs_AR4": 0.5350895573741333,
+   "cumple_regla": false
+  },
+  "sec_b2_selladas_historia": {
+   "modelo": "BV_C3",
+   "n": 138,
+   "n_periodos": 48,
+   "rmse": 0.05454755289316489,
+   "mae": 0.04306177833312317,
+   "rmse_AR4": 0.042561382337771396,
+   "dm_vs_AR4": -0.7648416114679204,
+   "p_vs_AR4": 0.4481893095596122,
+   "cumple_regla": false
+  },
+  "sec_c_ecm_v1_referencia_entrenamiento": {
+   "modelo": "BV_C3",
+   "n": 392,
+   "n_periodos": 8,
+   "rmse": 0.05418307202597978,
+   "mae": 0.04594215694290309,
+   "rmse_AR4": 0.06148396629694899,
+   "dm_vs_AR4": 1.5578853688280756,
+   "p_vs_AR4": 0.16321964814018136,
+   "rmse_ECM_v1": 0.05306673799345357,
+   "dm_vs_ECM_v1": -0.1171171669274837,
+   "p_vs_ECM_v1": 0.9100566978411967,
+   "cumple_regla": false
+  }
+ }
+}

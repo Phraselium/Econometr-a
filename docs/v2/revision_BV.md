@@ -91,3 +91,30 @@ Pre-registro: «Δ4 ln p_tasado sobre Δ4 ln hipotecas_importe (provincial), cos
 9. **C9 [para el orquestador, fuera de BV]** Fuga en el train común: `pob_*` 2024Q2 está interpolada con el dato del 1-1-2025 (sellado). Hay que corregirlo en holdout/build (NaN o arrastre del último observado) antes de la puerta de BA (H1 usa Δ4 ln pob 20-34).
 
 Tras C1-C5 basta una re-revisión breve de bv_h2_sellado.py, bv_lib.preparar_panel y del test. No hace falta repetir el análisis de entrenamiento salvo `oos_ok` y el texto.
+
+---
+
+# Re-revisión (iteración 2 de 2) — commit `e05f42c` (r2/BV, con r2/main fusionado)
+
+## Veredicto final: **APROBAR**
+
+Con este veredicto el orquestador puede llamar UNA vez a `holdout.evaluate("H2", bv_h2_sellado.evaluar_H2, "BV", ["panel_prov_q", "nacional_q_v2"])`.
+
+## Comprobaciones
+
+- **Reproducción.** Clon aislado nuevo (clon local de r2/main + fetch de r2/BV en `e05f42c`), sin red (`HTTPS_PROXY=http://127.0.0.1:9`). Se ejecutaron dos veces `bv_main.py`, `bv_main.py --smoke` y `tests/test_bv_h2_sellado.py`: exit 0 en las seis ejecuciones. Los md5 de los 28 ficheros de output/v2/BV son idénticos entre ejecuciones, y `git status` queda limpio (las salidas coinciden con las versionadas).
+- **H2 no evaluada.** docs/v2/holdout_accesos.md (r2/main `58e460b`) solo contiene dos filas de H1 (APERTURA + resultado) y ninguna de H2. El código de la rama no llama a `evaluate`, y `bv_h2_sellado.py` aborta si se ejecuta como script.
+- **C1 (orígenes).** Los orígenes son 2023Q3-2025Q2 (objetivos 2024Q3-2026Q2, 8 periodos). La función aborta con RuntimeError si n_periodos < 8 (lo comprueba `test_aborta_con_pocos_periodos`). El ensayo en seco da contrastes finitos y no degenerados (principal: n=392, 8 periodos, DM −2,71).
+- **C2 (modelo).** `CFG="C3"` está fijo en el código y `config_h2_sellado.json` no depende del ranking. C3 = AR(4) de panel + Δ4 crédito + Δ4 ocupados + coste de uso + coste de uso × exposición. Es fiel a «el modelo con estas variables… frente al AR(4) de panel». La regla de decisión (RMSE_C3 < RMSE_AR4 y p_DM-HLN bilateral < 0,05, con el Holm de las 7 en BS) queda escrita antes de la llamada.
+- **C3 (provincias selladas).** Las pendientes se estiman solo con las 49 de entrenamiento y objetivos ≤ 2024Q2. El efecto fijo propio de 11, 16 y 45 es la media del residuo en su historia con objetivos ≤ 2024Q2, aplicada por igual al modelo y al AR(4). El principal usa 52 provincias; los secundarios son (a), (b), (b′) y el ECM v1. He comprobado que la maquinaria propia `_predecir` reproduce exactamente `vc.panel_ar4` y `run_panel_model` en el mismo split (diferencia máxima de predicción ≈ 5e-10).
+- **C4 (exposición).** Usa la población observada del 1 de enero (sin interpolar) y se estandariza con la media y la DE de las 49 de entrenamiento (`exposicion_ref(pt)`), también para las selladas. Los coeficientes de H2 apenas cambian (crédito +0,00873, interacción −0,00441) y el resumen es coherente.
+- **C5-C8.** Hay ensayo en seco versionado. Las desviaciones están declaradas en output/v2/BV/desviaciones.md (pendiente de trasladar a decisiones.md). EXPLORATORIO aplica el criterio uniforme; se han hecho los cambios de redacción y la cota de p del WCB; el arbitraje se refiere a la media expansiva.
+- **C9 (holdout).** `_sin_interpolacion_hacia_sellado` pone a NaN los valores interpolados posteriores a la última observación de entrenamiento. `evaluate` registra la apertura antes de leer y bloquea un segundo intento.
+
+## Observaciones no bloqueantes → docs/v2/limitaciones.md
+
+1. **(b′) desborda la ventana.** El docstring dice «orígenes 2012Q1-2023Q2», pero `block_splits` sobre ≤ 2024Q2 llega a orígenes 2023Q4, con objetivos hasta 2024Q4 que se solapan dos trimestres con la ventana. Es solo secundario e informativo: al informar del resultado hay que leerlo así.
+2. **Riesgo de pérdida del único acceso.** Si el valor tasado de 2026Q2 no figura en la muestra sellada, la función aborta con n_periodos < 8 y la apertura ya queda registrada: H2 no podría evaluarse nunca. En ese caso se documenta como «no evaluable», sin reintento.
+3. **Potencia baja.** Son 8 periodos con h=4 (DM-HLN con t(7)). Además, C3 es claramente peor que el AR(4) en la validación de entrenamiento (RMSE 0,0605 frente a 0,0418) y en el ensayo en seco. Lo esperable es un resultado negativo para la parte predictiva de H2.
+4. **Inferencia.** Crédito: simultaneidad (sin poder predictivo a t−4). Coste de uso: aproximación nacional sin impuestos ni prima de riesgo, identificada solo por la interacción con una exposición no aleatoria. Datos de añada actual (deflactor SA), no en tiempo real.
+5. **Presupuestos y Holm.** Presupuesto OOS nacional separado (4) del de panel (6). Holm intra-H2 m=2; el Holm de las 7 queda pendiente en BS.

@@ -33,7 +33,12 @@ PROC = ROOT / "data" / "processed"
 V1_NAC = PROC / "nacional_q.csv"
 V1_FILES = sorted(PROC.glob("*.csv"))  # ficheros v1: no se tocan; md5 antes/después
 V1_MD5_BEFORE = {p.name: hashlib.md5(p.read_bytes()).hexdigest() for p in V1_FILES}
-OUT = PROC / "v2"
+# Paneles COMPLETOS (con la muestra sellada) → data/sealed/_full del repositorio principal (no versionado,
+# lectura denegada a las ramas). src/holdout.py build genera desde ahí data/processed/v2/train/ (versionado).
+sys.path.insert(0, str(ROOT / "src"))
+import holdout  # noqa: E402
+OUT = holdout.SEALED / "_full"
+OUT.mkdir(parents=True, exist_ok=True)
 DOCS = ROOT / "docs" / "v2"
 
 QL = [str(p) for p in pd.period_range("2002Q1", "2026Q2", freq="Q")]
@@ -194,12 +199,22 @@ dic = dic.drop_duplicates("cod_muni")
 MUNI_NAME = dict(zip(dic.cod_muni, dic.NOMBRE))
 MUNI_PROV = dict(zip(dic.cod_muni, dic.cod_prov))
 MUNI_CCAA = dict(zip(dic.cod_muni, dic.ccaa))
+def _name_variants(n: str) -> set[str]:
+    """Variantes normalizadas: nombre completo, partes bilingües, y artículo al inicio/final."""
+    out = {norm(n)} | {norm(p) for p in n.split("/")}
+    m = re.match(r"^(.*?)\s*(?:,\s*|\s*\(\s*)(El|La|Los|Las|Les|Els|L')\s*\)?\s*$", n)
+    if m:
+        base, art = m.group(1), m.group(2)
+        out |= {norm(base), norm(f"{art} {base}")}
+    return {k for k in out if k}
+
+
 _MK: dict[str, set] = {}
 for _c, _n in MUNI_NAME.items():
-    for _k in {norm(_n)} | {norm(p) for p in _n.split("/")}:
-        if _k:
-            _MK.setdefault(_k, set()).add(_c)
-_MATCH_LOG: dict[str, list] = {"no_casado": [], "ambiguo": [], "casado_con_provincia": 0, "casado_unico": 0}
+    for _k in _name_variants(_n):
+        _MK.setdefault(_k, set()).add(_c)
+_MK_KEYS = sorted(_MK)
+_MATCH_LOG: dict = {"no_casado": [], "ambiguo": [], "casado_con_provincia": 0, "casado_unico": 0}
 _MATCH_CACHE: dict[tuple, str | None] = {}
 
 
@@ -207,7 +222,16 @@ def muni_code(name, hint: str | None = None) -> str | None:
     key = (norm(name), norm(hint) if hint else "")
     if key in _MATCH_CACHE:
         return _MATCH_CACHE[key]
+    if str(name).startswith("Resto "):          # agregado de «resto de provincia», no es municipio
+        _MATCH_CACHE[key] = None
+        _MATCH_LOG.setdefault("resto_agregado", set()).add(str(name))
+        return None
     cands = set(_MK.get(norm(name), set()))
+    for part in str(name).split("/"):           # nombre bilingüe: probar cada parte
+        cands |= set(_MK.get(norm(part), set()))
+    if not cands and len(str(name)) >= 35:      # nombre truncado en la fuente: prefijo único
+        pre = norm(name)
+        cands = {c for k in _MK_KEYS if k.startswith(pre) for c in _MK[k]}
     res = None
     if len(cands) == 1:
         res = next(iter(cands))
@@ -291,6 +315,35 @@ def put(name, W, label, panel="prov_q", fuente="", archivo="", tabla="", unidad=
     reg(panel, name, fuente, archivo, tabla, unidad, freq, agreg, label if isinstance(label, str) else "mixto", notas)
 
 
+# Provincias uniprovinciales (CCAA = provincia): MIVAU solo publica la serie de la CCAA
+UNI_PROV = {"07", "26", "28", "30", "31", "33", "39", "51", "52"}
+FILLED: dict[str, list] = {}
+
+
+def ccaa_prov_code(t) -> str | None:
+    """Código provincial de una CCAA uniprovincial ('Madrid (Comunidad de)' -> 28; 'Rioja (La)' -> 26)."""
+    return prov_code(t) or prov_code(re.split(r"[,(]", str(t))[0])
+
+
+def uni_ccaa_wide(d: pd.DataFrame) -> pd.DataFrame:
+    d = d.copy()
+    d["cod"] = d.territorio.map(ccaa_prov_code)
+    d = d[d.cod.isin(UNI_PROV)].dropna(subset=["cod"])
+    return wide(d, "cod", "trimestre", "valor", PROVS, QL)
+
+
+def fill_uni(W: pd.DataFrame, Wc: pd.DataFrame, nm: str) -> pd.DataFrame:
+    out = W.copy()
+    filled = []
+    for c in Wc.index:
+        if out.loc[c].isna().all() and Wc.loc[c].notna().any():
+            out.loc[c] = Wc.loc[c]
+            filled.append(c)
+    FILLED[nm] = filled
+    log(f"  {nm}: provincias uniprovinciales rellenadas con serie CCAA: {[PROV_NAME[c] for c in filled]}")
+    return out
+
+
 # p_tasado y p_suelo (MIVAU, trimestral)
 vt = rd("mivau_valor_tasado_nacional_ccaa_prov.csv")
 vt = num(vt)
@@ -298,19 +351,32 @@ vt = vt[(vt.nivel == "provincia") & vt.serie.str.startswith("valor_tasado_libre_
 vt["cod"] = vt.territorio.map(prov_code)
 log(f"  p_tasado: {vt.cod.isna().sum()} filas sin provincia casada: {sorted(vt[vt.cod.isna()].territorio.unique())}")
 vt["trimestre"] = qlab(vt.fecha)
-put("p_tasado", wide(vt.dropna(subset=["cod"]), "cod", "trimestre", "valor", PROVS, QL), "observado",
+vt_ccaa = num(rd("mivau_valor_tasado_nacional_ccaa_prov.csv"))
+vt_ccaa = vt_ccaa[vt_ccaa.nivel.isin(["ccaa", "ciudad_autonoma"]) & vt_ccaa.serie.str.startswith("valor_tasado_libre_")].copy()
+vt_ccaa["trimestre"] = qlab(vt_ccaa.fecha)
+W_pt = fill_uni(wide(vt.dropna(subset=["cod"]), "cod", "trimestre", "valor", PROVS, QL), uni_ccaa_wide(vt_ccaa), "p_tasado")
+put("p_tasado", W_pt, "observado",
     fuente="MIVAU Boletín Online (sedal) valor tasado vivienda libre", archivo="mivau_valor_tasado_nacional_ccaa_prov.csv",
-    tabla="35101000", unidad="€/m²", freq="trimestral", agreg="ninguna", notas="serie provincial (nivel provincia)")
+    tabla="35101000", unidad="€/m²", freq="trimestral", agreg="ninguna",
+    notas="serie provincial; en uniprovinciales (" + ", ".join(PROV_NAME[c] for c in FILLED["p_tasado"]) +
+          ") se usa la serie de la CCAA (CCAA = provincia)")
 
 sl = rd("mivau_v2_suelo.csv")
 sl = num(sl)
 sl = sl[(sl.nivel == "provincia") & sl.serie.str.startswith("suelo_pm2_provincia_")].copy()
 sl["cod"] = sl.territorio.map(prov_code)
 sl["trimestre"] = sl.periodo.str.replace("T", "Q")
-put("p_suelo", wide(sl.dropna(subset=["cod"]), "cod", "trimestre", "valor", PROVS, QL), "observado",
+sl_ccaa = rd("mivau_v2_suelo.csv")
+sl_ccaa = num(sl_ccaa)
+sl_ccaa = sl_ccaa[sl_ccaa.nivel.isin(["ccaa"]) & sl_ccaa.serie.str.startswith("suelo_pm2_ccaa_") &
+                  (sl_ccaa.tabla_codigo == "36400500")].copy()
+sl_ccaa["trimestre"] = sl_ccaa.periodo.str.replace("T", "Q")
+W_sl = fill_uni(wide(sl.dropna(subset=["cod"]), "cod", "trimestre", "valor", PROVS, QL), uni_ccaa_wide(sl_ccaa), "p_suelo")
+put("p_suelo", W_sl, "observado",
     fuente="MIVAU Boletín Online (sedal) precio medio suelo urbano", archivo="mivau_v2_suelo.csv",
     tabla="36400500", unidad="€/m²", freq="trimestral", agreg="ninguna",
-    notas="serie provincial de todos los municipios (no la de municipios >50.000 hab., tabla 36403000)")
+    notas="serie provincial de todos los municipios (no la de municipios >50.000 hab., tabla 36403000); uniprovinciales (" +
+          ", ".join(PROV_NAME[c] for c in FILLED["p_suelo"]) + ") con serie CCAA")
 
 # IPC alquiler (INE 76142, índice mensual -> media trimestral)
 ipc = num(rd("ine_v2_ipc_alquiler_prov.csv"))
@@ -357,10 +423,21 @@ for med, nm in [("EPA_ocupados", "ocupados"), ("EPA_parados", "parados")]:
 
 # Iniciadas/terminadas libres (MIVAU 32100500/32101000, mensual, suma) y protegidas (31205000)
 def mivau_monthly(file, tabla, prefix, how="sum"):
-    d = num(rd(file))
-    d = d[(d.nivel == "provincia") & (d.tabla_codigo == tabla) & d.serie.str.startswith(prefix)].copy()
+    """Serie provincial mensual; en uniprovinciales sin serie provincial se usa la de su CCAA."""
+    d0 = num(rd(file))
+    d = d0[(d0.nivel == "provincia") & (d0.tabla_codigo == tabla) & d0.serie.str.startswith(prefix)].copy()
     d["cod"] = d.territorio.map(prov_code)
-    return monthly_to_q(d.dropna(subset=["cod"])[["cod", "fecha", "valor"]], ["cod"], how)
+    d = d.dropna(subset=["cod"])
+    cc = d0[(d0.nivel.isin(["ccaa", "ciudad_autonoma"])) & (d0.tabla_codigo == tabla) &
+            d0.serie.str.startswith(prefix.replace("provincia_", "ccaa_"))].copy()
+    cc["cod"] = cc.territorio.map(ccaa_prov_code)
+    cc = cc[cc.cod.isin(UNI_PROV)].dropna(subset=["cod"])
+    have = set(d.cod)
+    cc = cc[~cc.cod.isin(have)]
+    if len(cc):
+        log(f"  {tabla}: uniprovinciales con serie CCAA: {sorted({PROV_NAME[c] for c in cc.cod})}")
+    d = pd.concat([d, cc], ignore_index=True)
+    return monthly_to_q(d[["cod", "fecha", "valor"]], ["cod"], how)
 
 
 g_ini = mivau_monthly("mivau_v2_iniciadas_terminadas_prov.csv", "32100500", "viv_libres_iniciadas_mensual_provincia_")
@@ -403,7 +480,7 @@ def stock_q(d: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     A = wide(d, "cod", "anio", "valor", PROVS, list(range(2002, 2027)))
     V = pd.DataFrame(np.nan, index=PROVS, columns=QL)
     M = pd.DataFrame("", index=PROVS, columns=QL, dtype=object)
-    for y in AY:
+    for y in range(2002, 2027):
         v0 = A[y]
         v1 = A[y + 1] if (y + 1) in A.columns else pd.Series(np.nan, index=PROVS)
         V[f"{y}Q1"] = v0
@@ -413,7 +490,7 @@ def stock_q(d: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
             val = np.exp(np.log(v0) + (k - 1) / 4 * (np.log(v1) - np.log(v0)))
             V[f"{y}Q{k}"] = val.where(ok)
             M[f"{y}Q{k}"] = np.where(ok, "interpolado_loglineal", "")
-    return V, M
+    return V.reindex(columns=QL), M.reindex(columns=QL)
 
 
 def put_stock(name, d, **kw):
@@ -488,8 +565,24 @@ put("zona_tensionada_share", wide(ZONA_Q, "cod", "trimestre", "valor", PROVS, QL
     fuente="BOE declaraciones de zona tensionada (Ley 12/2023 art. 18) + Catastro uu residenciales por municipio",
     archivo="v2_zonas_tensionadas.csv; catastro_urbana_municipios.csv.gz", tabla="—", unidad="fracción [0,1]",
     freq="declaración (escalonada)", agreg="peso = unidades urbanas residenciales del municipio (año de stock disponible más cercano)",
-    notas="NaN antes de 2024T1 (sin declaraciones en el fichero). Municipios fuera del fichero = 0 desde 2024 (supuesto de cobertura completa del fichero).")
-log(f"  zona_tensionada_share: {ZONA_Q.shape[0]} celdas prov-trimestre con dato")
+    notas="NaN antes de 2024T1 (sin declaraciones en el fichero). Municipios fuera del fichero = 0 desde 2024 (supuesto de cobertura completa del fichero). NaN en provincias sin pesos catastrales (País Vasco y Navarra no aparecen en Catastro estatal).")
+# Indicador sin pesos: 1 si algún municipio de la provincia tiene zona tensionada vigente al final del trimestre
+# (cubre País Vasco y Navarra, sin pesos catastrales). Necesario para excluir provincias tratadas como donantes.
+any_rows = []
+for q in QL:
+    per = pd.Period(q, freq="Q")
+    if per.year < ZONA_START:
+        continue
+    act = set(active_mask(per.end_time.normalize(), zon))
+    for prov in PROVS:
+        any_rows.append((prov, q, float(any(str(m)[:2] == prov for m in act))))
+ZONA_ANY = pd.DataFrame(any_rows, columns=["cod", "trimestre", "valor"])
+put("zona_tensionada_any", wide(ZONA_ANY, "cod", "trimestre", "valor", PROVS, QL), "escalonado",
+    fuente="BOE declaraciones de zona tensionada (Ley 12/2023 art. 18)", archivo="v2_zonas_tensionadas.csv", tabla="—",
+    unidad="0/1", freq="declaración (escalonada)", agreg="1 si algún municipio de la provincia está declarado (sin ponderar)",
+    notas="NaN antes de 2024T1. Incluye País Vasco y Navarra (sin pesos catastrales en zona_tensionada_share).")
+log(f"  zona_tensionada_share: {ZONA_Q.shape[0]} celdas prov-trimestre con dato; sin pesos catastrales: "
+    f"{[PROV_NAME[c] for c in PROVS if c not in set(ZONA_Q.cod)]}")
 
 # ---------------------------------------------------------------- ensamblado trimestral provincial
 base = pd.DataFrame({"cod_prov": np.repeat(PROVS, len(QL)), "trimestre": np.tile(QL, len(PROVS))})
@@ -698,7 +791,7 @@ vtm["cod_muni"] = [muni_code(n, h) for n, h in zip(vtm.territorio, vtm.provincia
 vtm["anio"] = pd.to_datetime(vtm.fecha).dt.year
 mu_pt = vtm.dropna(subset=["cod_muni"]).groupby(["cod_muni", "anio"]).valor.agg(["mean", "count"]).reset_index()
 mu_pt = mu_pt[mu_pt["count"] >= 1].rename(columns={"mean": "p_tasado"})
-log(f"  p_tasado municipal: {vtm.cod_muni.nunique()} munis con código, {vtm.cod_muni.isna().sum()} filas sin casar")
+log(f"  p_tasado municipal: {vtm.cod_muni.nunique()} municipios casados; {vtm.cod_muni.isna().sum()} filas sin casar")
 
 # trans_total municipal (suma de 4 trimestres)
 trm = num(rd("mivau_transacciones_municipios.csv"))
@@ -718,7 +811,7 @@ vm["dist"] = (vm.fd.dt.month - 8).abs()
 vm = vm.dropna(subset=["cod_muni"])
 vm = vm[vm.dist <= 3].sort_values(["cod_muni", "anio", "dist"]).drop_duplicates(["cod_muni", "anio"])
 VUT_M = vm[["cod_muni", "anio", "valor"]].rename(columns={"valor": "vut_viviendas"})
-log(f"  VUT municipal: {vm.cod_muni.nunique()} munis casados (de {vm.territorio.nunique()} nombres)")
+log(f"  VUT municipal: {vm.cod_muni.nunique()} municipios casados (filas con mes cercano a agosto)")
 
 # Catastro uu residenciales (código directo)
 UU = cat[["cod_muni", "anio", "valor"]].rename(columns={"valor": "uu_residenciales"}).drop_duplicates(["cod_muni", "anio"])
@@ -732,7 +825,7 @@ IPVA_M = {}
 for med, nm in [("IPVA_indice", "ipva_indice"), ("IPVA_variacion_anual", "ipva_var")]:
     d = ipm[ipm.medida == med].dropna(subset=["cod_muni"]).drop_duplicates(["cod_muni", "anio"])
     IPVA_M[nm] = d[["cod_muni", "anio", "valor"]].rename(columns={"valor": nm})
-log(f"  IPVA municipal: {ipm.cod_muni.notna().sum()} filas casadas; sin casar: {ipm.cod_muni.isna().sum()}")
+log(f"  IPVA municipal (59060): {ipm.cod_muni.notna().sum()} filas casadas; sin casar: {ipm.cod_muni.isna().sum()}")
 
 # Zona tensionada municipal: fracción de días del año vigente (años >= 2024; munis fuera del fichero = 0)
 ZM_ROWS = []
@@ -818,6 +911,24 @@ UE_META: dict[str, tuple] = {}
 
 
 def ue_put(nm, long_q=None, long_a=None, meta=()):
+    for tag, lg, keys in (("Q", long_q, ["geo", "trimestre"]), ("A", long_a, ["geo", "anio"])):
+        if lg is not None and lg.duplicated(keys).any():
+            n_dup = int(lg.duplicated(keys).sum())
+            conf = lg[lg.duplicated(keys, keep=False)].groupby(keys).valor.nunique()
+            log(f"  aviso UE {nm}/{tag}: {n_dup} claves duplicadas; conflictos de valor: {int((conf > 1).sum())}")
+            if (conf > 1).any():
+                bad = conf[conf > 1].index
+                lg = lg.set_index(keys)
+                lg = lg[~lg.index.isin(bad)].reset_index()
+                if tag == "Q":
+                    long_q = lg
+                else:
+                    long_a = lg
+            else:
+                if tag == "Q":
+                    long_q = lg.drop_duplicates(keys)
+                else:
+                    long_a = lg.drop_duplicates(keys)
     UE_SER[nm] = (long_q, long_a)
     UE_META[nm] = meta
 
@@ -832,7 +943,7 @@ ue_put("hpi", long_q=ehq[["geo", "trimestre", "valor"]].assign(metodo="observado
 
 # BIS (nominal, trimestral, 2010=100) -> columna alternativa hpi_bis
 bis = num(rd("bis_rpp.csv"))
-bis = bis[bis.precio == "nominal"].copy()
+bis = bis[(bis.precio == "nominal") & (bis.unidad == "Índice 2010 = 100")].copy()
 bis["geo"] = bis.territorio.replace(GEO_BIS)
 bis["trimestre"] = bis.periodo.str.replace("-", "")
 bis = bis[bis.geo.isin(UE_GEO)]
@@ -848,7 +959,8 @@ oc["geo"] = oc.territorio.map(GEO_ISO3)
 oc = oc.dropna(subset=["geo"])
 oc_q = oc[oc.frecuencia == "Q"].assign(trimestre=lambda x: x.periodo.str.replace("-", ""))
 oc_a = oc[oc.frecuencia == "A"].assign(anio=lambda x: x.periodo.str[:4].astype(int))
-for med, nm in [("HPI", "hpi_oecd"), ("HPI_YDH", "ocde_precio_ingreso"), ("HPI_RPI", "ocde_precio_alquiler")]:
+for med, nm in [("HPI", "hpi_oecd"), ("HPI_YDH", "ocde_precio_ingreso"), ("HPI_RPI", "ocde_precio_alquiler"),
+                ("RPI", "ocde_alquiler_idx")]:
     ue_put(nm, long_q=oc_q[oc_q.medida == med][["geo", "trimestre", "valor"]].assign(metodo="observado"),
            long_a=oc_a[oc_a.medida == med][["geo", "anio", "valor"]].assign(metodo="observado"),
            meta=(f"OCDE {med}", "DF_HOUSE_PRICES", "índice / ratio"))
@@ -1119,7 +1231,8 @@ lines += ["## Notas de limitación", "",
           "- zona_tensionada: NaN antes de 2024; municipios fuera del fichero BOE = 0 desde 2024 (supuesto).",
           "- Casamiento de municipios por nombre (VUT INE, IPVA municipal, valor tasado y transacciones MIVAU) con ine_diccionario_municipios_2026.xlsx: "
           f"{_MATCH_LOG['casado_unico']} casados por nombre único, {_MATCH_LOG['casado_con_provincia']} con ayuda de provincia, "
-          f"{len(_MATCH_LOG['no_casado'])} nombres sin casar, {len(_MATCH_LOG['ambiguo'])} ambiguos (no casados).",
+          f"{len(set(_MATCH_LOG['no_casado']))} nombres sin casar, {len(_MATCH_LOG['ambiguo'])} ambiguos (no casados), "
+          f"{len(_MATCH_LOG.get('resto_agregado', []))} nombres «Resto de provincia» excluidos (agregados, no municipios).",
           f"- Nombres sin casar (muestra): {sorted(set(_MATCH_LOG['no_casado']))[:40]}",
           f"- Ambiguos (muestra): {_MATCH_LOG['ambiguo'][:20]}",
           "- coste_uso_aprox: aproximación sin impuestos, depreciación ni prima de riesgo (método derivado).",

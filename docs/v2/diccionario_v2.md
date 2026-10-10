@@ -8,8 +8,8 @@ Convenciones: `<var>_metodo` ∈ {observado, agregado_media, agregado_suma, fin_
 
 | panel | variable | fuente | archivo raw | tabla | unidad | frecuencia original | agregación | método | notas |
 |---|---|---|---|---|---|---|---|---|---|
-| prov_q | p_tasado | MIVAU Boletín Online (sedal) valor tasado vivienda libre | mivau_valor_tasado_nacional_ccaa_prov.csv | 35101000 | €/m² | trimestral | ninguna | observado | serie provincial (nivel provincia) |
-| prov_q | p_suelo | MIVAU Boletín Online (sedal) precio medio suelo urbano | mivau_v2_suelo.csv | 36400500 | €/m² | trimestral | ninguna | observado | serie provincial de todos los municipios (no la de municipios >50.000 hab., tabla 36403000) |
+| prov_q | p_tasado | MIVAU Boletín Online (sedal) valor tasado vivienda libre | mivau_valor_tasado_nacional_ccaa_prov.csv | 35101000 | €/m² | trimestral | ninguna | observado | serie provincial; en uniprovinciales (Balears, Illes, Rioja, La, Madrid, Murcia, Navarra, Asturias, Cantabria, Ceuta, Melilla) se usa la serie de la CCAA (CCAA = provincia) |
+| prov_q | p_suelo | MIVAU Boletín Online (sedal) precio medio suelo urbano | mivau_v2_suelo.csv | 36400500 | €/m² | trimestral | ninguna | observado | serie provincial de todos los municipios (no la de municipios >50.000 hab., tabla 36403000); uniprovinciales (Balears, Illes, Rioja, La, Madrid, Murcia, Navarra, Asturias, Cantabria) con serie CCAA |
 | prov_q | ipc_alquiler | INE IPC subclase alquiler de vivienda | ine_v2_ipc_alquiler_prov.csv | 76142 | índice (base INE) | mensual | media de 3 meses (NaN si falta alguno) | agregado_media |  |
 | prov_q | compraventas_total | INE ETDP compraventas de viviendas | ine_v2_etdp_prov.csv | 6150 | número de compraventas | mensual | suma de 3 meses (NaN si falta alguno) | agregado_suma |  |
 | prov_q | compraventas_nueva | INE ETDP compraventas de viviendas | ine_v2_etdp_prov.csv | 6150 | número de compraventas | mensual | suma de 3 meses (NaN si falta alguno) | agregado_suma |  |
@@ -28,7 +28,8 @@ Convenciones: `<var>_metodo` ∈ {observado, agregado_media, agregado_suma, fin_
 | prov_q | pob_extranj | INE ECP población residente 1 de enero (77023) | ine_v2_padron_prov_edad_nac.csv | 77023 | personas | anual (1 enero) -> trimestral | T1 = 1 de enero; T2-T4 interpolados | observado (T1) / interpolado_loglineal (T2-T4) |  |
 | prov_q | pob_20_34 | INE ECP población residente 1 de enero (77023) | ine_v2_padron_prov_edad_nac.csv | 77023 | personas | anual (1 enero) -> trimestral | T1 = 1 de enero; T2-T4 interpolados | observado (T1) / interpolado_loglineal (T2-T4) | grupo 20-34 años, total nacionalidades |
 | prov_q | inmig_flujo | INE EM inmigración procedente del extranjero, provincia (24420) | ine_v2_migraciones_prov.csv | 24420 | personas (flujo semestral) | semestral (2008S1-2022S1) | semestre asignado al último trimestre del semestre (S1→T2, S2→T4) | semestral_asignado | sin repartir entre trimestres |
-| prov_q | zona_tensionada_share | BOE declaraciones de zona tensionada (Ley 12/2023 art. 18) + Catastro uu residenciales por municipio | v2_zonas_tensionadas.csv; catastro_urbana_municipios.csv.gz | — | fracción [0,1] | declaración (escalonada) | peso = unidades urbanas residenciales del municipio (año de stock disponible más cercano) | escalonado | NaN antes de 2024T1 (sin declaraciones en el fichero). Municipios fuera del fichero = 0 desde 2024 (supuesto de cobertura completa del fichero). |
+| prov_q | zona_tensionada_share | BOE declaraciones de zona tensionada (Ley 12/2023 art. 18) + Catastro uu residenciales por municipio | v2_zonas_tensionadas.csv; catastro_urbana_municipios.csv.gz | — | fracción [0,1] | declaración (escalonada) | peso = unidades urbanas residenciales del municipio (año de stock disponible más cercano) | escalonado | NaN antes de 2024T1 (sin declaraciones en el fichero). Municipios fuera del fichero = 0 desde 2024 (supuesto de cobertura completa del fichero). NaN en provincias sin pesos catastrales (País Vasco y Navarra no aparecen en Catastro estatal). |
+| prov_q | zona_tensionada_any | BOE declaraciones de zona tensionada (Ley 12/2023 art. 18) | v2_zonas_tensionadas.csv | — | 0/1 | declaración (escalonada) | 1 si algún municipio de la provincia está declarado (sin ponderar) | escalonado | NaN antes de 2024T1. Incluye País Vasco y Navarra (sin pesos catastrales en zona_tensionada_share). |
 | prov_q | ratio_precio_alquiler_idx | derivado | — | — | índice (diferencia de logs) | trimestral | ln p_tasado − ln ipc_alquiler | derivado | índice relativo; no es un nivel de precio/alquiler |
 | prov_q | coste_uso_aprox | derivado (Poterba) | nacional_q v1 (tipo_hip, inflacion_deflactor) | — | pp | trimestral | tipo_hip − media móvil 4T de la inflación interanual | derivado | aproximación SIN impuestos, sin depreciación ni prima de riesgo; mismo valor en todas las provincias |
 | prov_q | credito_vivienda_nuevo | BdE nuevas operaciones crédito vivienda hogares (DN_1TI2TIE96) | bde_credito_finalidad.csv | be1916 | Millones € | mensual | suma de 3 meses | agregado_suma | nacional (mismo valor en todas las provincias) |
@@ -59,12 +60,13 @@ Convenciones: `<var>_metodo` ∈ {observado, agregado_media, agregado_suma, fin_
 | muni_a | ipva_indice | INE IPVA municipal (59060) | varios (ver docs) | — | índice | anual | según fuente | observado |  |
 | muni_a | ipva_var | INE IPVA municipal (59060) | varios (ver docs) | — | % var. anual | anual | según fuente | observado |  |
 | muni_a | zona_tensionada | BOE zonas tensionadas; munis fuera del fichero = 0 desde 2024 | varios (ver docs) | — | fracción de días del año | anual | según fuente | derivado |  |
-| muni_a | municipio / cod_muni | INE diccionario municipios 2026 (ine_diccionario_municipios_2026.xlsx) | ine_diccionario_municipios_2026.xlsx | — | código | — | casado por nombre si no hay código | observado | casados por nombre: 8455 únicos + 4 con provincia; no casados: 95; ambiguos: 17 |
+| muni_a | municipio / cod_muni | INE diccionario municipios 2026 (ine_diccionario_municipios_2026.xlsx) | ine_diccionario_municipios_2026.xlsx | — | código | — | casado por nombre si no hay código | observado | casados por nombre: 8448 únicos + 7 con provincia; no casados: 17; ambiguos: 53 |
 | ue_a/q | hpi | Eurostat prc_hpi (índice precios vivienda compra, total) | eu_*.csv / bis_rpp.csv / oecd_house_prices.csv | prc_hpi_q / prc_hpi_a | I15 (2015=100) | anual / trimestral | según fuente | observado / agregado_media / anual_asignado | UE geo ISO2 Eurostat (EL, UK) |
 | ue_a/q | hpi_bis | BIS WS_SPP precios residenciales nominal | eu_*.csv / bis_rpp.csv / oecd_house_prices.csv | WS_SPP | índice 2010=100 | anual / trimestral | según fuente | observado / agregado_media / anual_asignado | UE geo ISO2 Eurostat (EL, UK) |
 | ue_a/q | hpi_oecd | OCDE HPI | eu_*.csv / bis_rpp.csv / oecd_house_prices.csv | DF_HOUSE_PRICES | índice / ratio | anual / trimestral | según fuente | observado / agregado_media / anual_asignado | UE geo ISO2 Eurostat (EL, UK) |
 | ue_a/q | ocde_precio_ingreso | OCDE HPI_YDH | eu_*.csv / bis_rpp.csv / oecd_house_prices.csv | DF_HOUSE_PRICES | índice / ratio | anual / trimestral | según fuente | observado / agregado_media / anual_asignado | UE geo ISO2 Eurostat (EL, UK) |
 | ue_a/q | ocde_precio_alquiler | OCDE HPI_RPI | eu_*.csv / bis_rpp.csv / oecd_house_prices.csv | DF_HOUSE_PRICES | índice / ratio | anual / trimestral | según fuente | observado / agregado_media / anual_asignado | UE geo ISO2 Eurostat (EL, UK) |
+| ue_a/q | ocde_alquiler_idx | OCDE RPI | eu_*.csv / bis_rpp.csv / oecd_house_prices.csv | DF_HOUSE_PRICES | índice / ratio | anual / trimestral | según fuente | observado / agregado_media / anual_asignado | UE geo ISO2 Eurostat (EL, UK) |
 | ue_a/q | alquiler_hicp | Eurostat HICP CP041 alquiler | eu_*.csv / bis_rpp.csv / oecd_house_prices.csv | prc_hicp_midx/aind | índice | anual / trimestral | según fuente | observado / agregado_media / anual_asignado | UE geo ISO2 Eurostat (EL, UK) |
 | ue_a/q | permisos | Eurostat permisos de construcción de viviendas | eu_*.csv / bis_rpp.csv / oecd_house_prices.csv | sts_cobp_a / q | THS viviendas (A); índice 2021=100 (Q) | anual / trimestral | según fuente | observado / agregado_media / anual_asignado | UE geo ISO2 Eurostat (EL, UK) |
 | ue_a/q | inmig_por_1000 | Eurostat migr_imm1ctz / demo_pjan × 1000 | eu_*.csv / bis_rpp.csv / oecd_house_prices.csv | migr_imm1ctz, demo_pjan | por 1.000 hab. | anual / trimestral | según fuente | observado / agregado_media / anual_asignado | UE geo ISO2 Eurostat (EL, UK) |
@@ -88,8 +90,8 @@ Filas: 5096; unidades (cod_prov): 52; claves duplicadas: 0
 
 | variable | primer dato | último dato | nº unidades con dato | nº interpolaciones | nº NaN |
 |---|---|---|---|---|---|
-| p_tasado | 2002Q1 | 2026Q2 | 43 | 0 | 898 |
-| p_suelo | 2004Q1 | 2026Q2 | 43 | 0 | 1243 |
+| p_tasado | 2002Q1 | 2026Q2 | 52 | 0 | 33 |
+| p_suelo | 2004Q1 | 2026Q2 | 50 | 0 | 614 |
 | ipc_alquiler | 2002Q1 | 2026Q2 | 52 | 0 | 0 |
 | compraventas_total | 2007Q1 | 2026Q2 | 52 | 0 | 1040 |
 | compraventas_nueva | 2007Q1 | 2026Q2 | 52 | 0 | 1040 |
@@ -100,15 +102,16 @@ Filas: 5096; unidades (cod_prov): 52; claves duplicadas: 0
 | hipotecas_importe | 2003Q1 | 2026Q2 | 52 | 0 | 208 |
 | ocupados | 2002Q1 | 2026Q2 | 52 | 0 | 0 |
 | parados | 2002Q1 | 2026Q2 | 52 | 0 | 0 |
-| iniciadas_libres | 2008Q1 | 2026Q2 | 43 | 0 | 2001 |
-| terminadas_libres | 2008Q1 | 2026Q2 | 43 | 0 | 1914 |
-| protegida | 2008Q1 | 2026Q2 | 43 | 0 | 1914 |
+| iniciadas_libres | 2008Q1 | 2026Q2 | 50 | 0 | 1497 |
+| terminadas_libres | 2008Q1 | 2026Q2 | 50 | 0 | 1396 |
+| protegida | 2008Q1 | 2026Q2 | 50 | 0 | 1396 |
 | vut_viviendas | 2020Q3 | 2026Q2 | 52 | 0 | 4420 |
-| pob_total | 2002Q1 | 2025Q1 | 52 | 3588 | 260 |
-| pob_extranj | 2002Q1 | 2025Q1 | 52 | 3588 | 260 |
-| pob_20_34 | 2002Q1 | 2025Q1 | 52 | 3588 | 260 |
+| pob_total | 2002Q1 | 2026Q1 | 52 | 3744 | 52 |
+| pob_extranj | 2002Q1 | 2026Q1 | 52 | 3744 | 52 |
+| pob_20_34 | 2002Q1 | 2026Q1 | 52 | 3744 | 52 |
 | inmig_flujo | 2008Q2 | 2022Q2 | 52 | 0 | 3588 |
 | zona_tensionada_share | 2024Q1 | 2026Q2 | 48 | 0 | 4616 |
+| zona_tensionada_any | 2024Q1 | 2026Q2 | 52 | 0 | 4576 |
 | tipo_hip | 2003Q1 | 2026Q2 | 52 | 0 | 208 |
 | euribor | 2002Q1 | 2026Q2 | 52 | 0 | 0 |
 | tipo_hip_real | 2003Q1 | 2026Q2 | 52 | 0 | 208 |
@@ -116,7 +119,7 @@ Filas: 5096; unidades (cod_prov): 52; claves duplicadas: 0
 | coste_uso_aprox | 2003Q1 | 2026Q2 | 52 | 0 | 208 |
 | credito_vivienda_nuevo | 2003Q1 | 2026Q2 | 52 | 0 | 208 |
 | saldo | 2002Q1 | 2026Q2 | 52 | 0 | 0 |
-| ratio_precio_alquiler_idx | 2002Q1 | 2026Q2 | 43 | 0 | 898 |
+| ratio_precio_alquiler_idx | 2002Q1 | 2026Q2 | 52 | 0 | 33 |
 
 ### panel_prov_a
 
@@ -124,8 +127,8 @@ Filas: 1248; unidades (cod_prov): 52; claves duplicadas: 0
 
 | variable | primer dato | último dato | nº unidades con dato | nº interpolaciones | nº NaN |
 |---|---|---|---|---|---|
-| p_tasado | 2002 | 2025 | 43 | 0 | 225 |
-| p_suelo | 2004 | 2025 | 43 | 0 | 317 |
+| p_tasado | 2002 | 2025 | 52 | 0 | 14 |
+| p_suelo | 2004 | 2025 | 50 | 0 | 164 |
 | ipc_alquiler | 2002 | 2025 | 52 | 0 | 0 |
 | ocupados | 2002 | 2025 | 52 | 0 | 0 |
 | parados | 2002 | 2025 | 52 | 0 | 0 |
@@ -137,9 +140,9 @@ Filas: 1248; unidades (cod_prov): 52; claves duplicadas: 0
 | compraventas_protegida | 2007 | 2025 | 52 | 0 | 260 |
 | hipotecas_n | 2003 | 2025 | 52 | 0 | 52 |
 | hipotecas_importe | 2003 | 2025 | 52 | 0 | 52 |
-| iniciadas_libres | 2008 | 2025 | 43 | 0 | 560 |
-| terminadas_libres | 2008 | 2025 | 43 | 0 | 474 |
-| protegida | 2008 | 2025 | 43 | 0 | 474 |
+| iniciadas_libres | 2008 | 2025 | 50 | 0 | 448 |
+| terminadas_libres | 2008 | 2025 | 50 | 0 | 348 |
+| protegida | 2008 | 2025 | 50 | 0 | 348 |
 | pob_total | 2002 | 2025 | 52 | 0 | 0 |
 | pob_extranj | 2002 | 2025 | 52 | 0 | 0 |
 | pob_20_34 | 2002 | 2025 | 52 | 0 | 0 |
@@ -179,8 +182,8 @@ Filas: 1248; unidades (cod_prov): 52; claves duplicadas: 0
 | pob_nac_pais_de_europa_menos_ue28 | 2002 | 2020 | 52 | 0 | 260 |
 | pob_nac_pais_de_la_ue27_2020_sin_espana | 2021 | 2025 | 52 | 0 | 988 |
 | pob_nac_pais_de_la_ue28_sin_espana | 2002 | 2020 | 52 | 0 | 260 |
-| precio_alquiler_ratio_nivel | 2011 | 2024 | 43 | 0 | 692 |
-| esfuerzo_aprox | 2002 | 2024 | 43 | 0 | 268 |
+| precio_alquiler_ratio_nivel | 2011 | 2024 | 52 | 0 | 577 |
+| esfuerzo_aprox | 2002 | 2025 | 52 | 0 | 57 |
 
 ### panel_muni_a
 
@@ -192,12 +195,12 @@ Filas: 83496; unidades (cod_muni): 3479; claves duplicadas: 0
 | serpavi_mediana_vu | 2011 | 2024 | 3184 | 0 | 50444 |
 | serpavi_n_vc | 2011 | 2024 | 3479 | 0 | 37781 |
 | serpavi_n_vu | 2011 | 2024 | 3477 | 0 | 37791 |
-| p_tasado | 2005 | 2025 | 288 | 0 | 77770 |
-| trans_total | 2004 | 2025 | 292 | 0 | 77072 |
-| vut_viviendas | 2020 | 2025 | 3461 | 0 | 62754 |
+| p_tasado | 2005 | 2025 | 299 | 0 | 77554 |
+| trans_total | 2004 | 2025 | 301 | 0 | 76874 |
+| vut_viviendas | 2020 | 2025 | 3445 | 0 | 62850 |
 | uu_residenciales | 2012 | 2025 | 3224 | 0 | 38379 |
-| ipva_indice | 2011 | 2024 | 696 | 0 | 73935 |
-| ipva_var | 2012 | 2024 | 696 | 0 | 74617 |
+| ipva_indice | 2011 | 2024 | 703 | 0 | 73850 |
+| ipva_var | 2012 | 2024 | 703 | 0 | 74538 |
 | zona_tensionada | 2024 | 2025 | 3479 | 0 | 76538 |
 
 ### panel_ue_a
@@ -207,10 +210,11 @@ Filas: 744; unidades (geo): 31; claves duplicadas: 0
 | variable | primer dato | último dato | nº unidades con dato | nº interpolaciones | nº NaN |
 |---|---|---|---|---|---|
 | hpi | 2005 | 2025 | 29 | 0 | 179 |
-| hpi_bis | 2002 | 2010 | 10 | 0 | 734 |
+| hpi_bis | 2002 | 2025 | 31 | 0 | 45 |
 | hpi_oecd | 2002 | 2025 | 26 | 0 | 158 |
 | ocde_precio_ingreso | 2002 | 2025 | 26 | 0 | 164 |
 | ocde_precio_alquiler | 2002 | 2025 | 26 | 0 | 158 |
+| ocde_alquiler_idx | 2002 | 2025 | 26 | 0 | 120 |
 | alquiler_hicp | 2002 | 2025 | 31 | 0 | 9 |
 | permisos | 2005 | 2025 | 29 | 0 | 141 |
 | inmig_por_1000 | 2002 | 2024 | 31 | 0 | 63 |
@@ -232,6 +236,7 @@ Filas: 3038; unidades (geo): 31; claves duplicadas: 0
 | hpi_oecd | 2002Q1 | 2026Q2 | 26 | 0 | 644 |
 | ocde_precio_ingreso | 2002Q1 | 2026Q2 | 26 | 0 | 670 |
 | ocde_precio_alquiler | 2002Q1 | 2026Q2 | 26 | 0 | 656 |
+| ocde_alquiler_idx | 2002Q1 | 2026Q2 | 26 | 0 | 502 |
 | alquiler_hicp | 2002Q1 | 2025Q4 | 31 | 0 | 95 |
 | permisos | 2002Q1 | 2026Q2 | 28 | 0 | 299 |
 | inmig_por_1000 | 2002Q1 | 2024Q4 | 31 | 0 | 314 |
@@ -248,8 +253,8 @@ Filas: 3038; unidades (geo): 31; claves duplicadas: 0
 - IPVA provincial sin País Vasco ni Navarra (no publicado por la fuente).
 - Unidades de hipotecas_importe y pib_prov inferidas de FK_Unidad/magnitud: no verificadas contra metadatos.
 - zona_tensionada: NaN antes de 2024; municipios fuera del fichero BOE = 0 desde 2024 (supuesto).
-- Casamiento de municipios por nombre (VUT INE, IPVA municipal, valor tasado y transacciones MIVAU) con ine_diccionario_municipios_2026.xlsx: 8455 casados por nombre único, 4 con ayuda de provincia, 95 nombres sin casar, 17 ambiguos (no casados).
-- Nombres sin casar (muestra): ['Alcoy/Alcoi', 'Alicante/Alacant', 'Almazora/Almassora', 'Benicasim/Benicàssim', 'Calonge', 'Calpe/Calp', "Castell-Platja d'Aro", 'Castellón de la Plana/Castelló de la Pla', 'Castellón de la Plana/Castelló de la Plana', 'Cerdedo', 'Cesuras', 'Cotobade', 'Elche/Elx', 'Jávea/Xàbia', 'Jávea/Xábia', 'Mahón', 'Maó-Mahón', 'Monóvar/Monòver', 'Oropesa del Mar/Orpesa', 'Oza dos Ríos', 'Palma de Mallorca', 'Puerto de Santa María', 'Resto Albacete', 'Resto Alicante/Alacant', 'Resto Almería', 'Resto Asturias', 'Resto Badajoz', 'Resto Baleares, Illes', 'Resto Barcelona', 'Resto Burgos', 'Resto Cantabria', 'Resto Castellón/Castelló', 'Resto Ciudad Real', 'Resto Coruña, A', 'Resto Cuenca', 'Resto Cáceres', 'Resto Cádiz', 'Resto Córdoba', 'Resto Girona', 'Resto Granada']
-- Ambiguos (muestra): ['Cieza (nan): 2 candidatos', 'Mieres (nan): 2 candidatos', 'Campillo, El (): 2 candidatos', 'Torrent (): 2 candidatos', 'Fonfría (): 2 candidatos', 'Molar, El (): 2 candidatos', 'Rebollar (): 2 candidatos', 'Villaescusa (): 2 candidatos', 'Sancti-Spíritus (): 2 candidatos', 'Moya (): 2 candidatos', 'Sada (): 2 candidatos', 'Castejón (): 2 candidatos', 'Arroyomolinos (): 2 candidatos', 'Sobrado (): 2 candidatos', 'Cabanes (): 2 candidatos', 'Villanueva de los Infantes (): 2 candidatos', 'Zarza, La (): 2 candidatos']
+- Casamiento de municipios por nombre (VUT INE, IPVA municipal, valor tasado y transacciones MIVAU) con ine_diccionario_municipios_2026.xlsx: 8448 casados por nombre único, 7 con ayuda de provincia, 15 nombres sin casar, 53 ambiguos (no casados), 46 nombres «Resto de provincia» excluidos (agregados, no municipios).
+- Nombres sin casar (muestra): ['Calonge', "Castell-Platja d'Aro", 'Cerdedo', 'Cesuras', 'Cotobade', 'Mahón', 'Maó-Mahón', 'Oza dos Ríos', 'Palma de Mallorca', 'San Cristóbal Laguna', 'Sant Carles de la Ràpita', 'Santa Coloma Gramanet', 'Santa Cruz deTenerife', 'Santa Eulalia del Río', 'Vitoria']
+- Ambiguos (muestra): ['Cieza (nan): 2 candidatos', 'Mieres (nan): 2 candidatos', 'Serrada (): 2 candidatos', 'Carpio (): 2 candidatos', 'Campillo, El (): 2 candidatos', 'Torrent (): 2 candidatos', 'Piles (): 2 candidatos', 'Oliva (): 2 candidatos', 'Marines (): 2 candidatos', 'Molinos (): 2 candidatos', 'Fonfría (): 2 candidatos', 'Molar, El (): 2 candidatos', 'Tejado (): 2 candidatos', 'Rebollar (): 2 candidatos', 'Herrera (): 2 candidatos', 'Sotillo (): 2 candidatos', 'Villaescusa (): 2 candidatos', 'Pesquera (): 2 candidatos', 'Frontera (): 2 candidatos', 'Sancti-Spíritus (): 2 candidatos']
 - coste_uso_aprox: aproximación sin impuestos, depreciación ni prima de riesgo (método derivado).
 - ratio_precio_alquiler_idx es una diferencia de logaritmos (índice), no un nivel.

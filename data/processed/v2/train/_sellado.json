@@ -1,0 +1,51 @@
+{
+  "provincias_selladas": [
+    "11",
+    "16",
+    "45"
+  ],
+  "paneles": {
+    "panel_prov_q": {
+      "filas": 5096,
+      "train": 4410,
+      "sellado": 686,
+      "embargo": 0
+    },
+    "panel_prov_a": {
+      "filas": 1248,
+      "train": 1078,
+      "sellado": 121,
+      "embargo": 49
+    },
+    "panel_muni_a": {
+      "filas": 83496,
+      "train": 71720,
+      "sellado": 8516,
+      "embargo": 3260
+    },
+    "panel_ue_a": {
+      "filas": 744,
+      "train": 682,
+      "sellado": 31,
+      "embargo": 31
+    },
+    "panel_ue_q": {
+      "filas": 3038,
+      "train": 2790,
+      "sellado": 248,
+      "embargo": 0
+    },
+    "nacional_q_v2": {
+      "filas": 127,
+      "train": 119,
+      "sellado": 8,
+      "embargo": 0
+    },
+    "eventos_q": {
+      "filas": 3430,
+      "train": 3150,
+      "sellado": 280,
+      "embargo": 0
+    }
+  }
+}

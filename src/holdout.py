@@ -31,8 +31,7 @@ ANIO_EMBARGO, ANIO_SELLO_INI = 2024, 2025
 N_PROV_SELLADAS = 3
 
 HERE = Path(__file__).resolve().parents[1]          # raíz del worktree o del repo
-SRC_V2 = HERE / "data" / "processed" / "v2"           # paneles completos (versionados)
-TRAIN = SRC_V2 / "train"                              # paneles de entrenamiento (versionados)
+TRAIN = HERE / "data" / "processed" / "v2" / "train"  # paneles de entrenamiento (versionados)
 
 
 def _repo_principal() -> Path:
@@ -47,6 +46,7 @@ def _repo_principal() -> Path:
 
 SEALED = _repo_principal() / "data" / "sealed"
 LOG = SEALED / "_accesos.log"
+SRC_V2 = SEALED / "_full"                             # paneles completos (NO versionados)
 LOG_MD = _repo_principal() / "docs" / "v2" / "holdout_accesos.md"
 
 # Catálogo de paneles: nombre -> (frecuencia, columna de periodo, columna de provincia o None)
@@ -57,6 +57,7 @@ CATALOGO = {
     "panel_ue_a": ("A", "anio", None),
     "panel_ue_q": ("Q", "trimestre", None),
     "nacional_q_v2": ("Q", "trimestre", None),
+    "eventos_q": ("Q", "trimestre", None),
 }
 
 # 52 provincias (códigos INE 01-52)
@@ -91,6 +92,8 @@ def build() -> dict:
     resumen = {"provincias_selladas": provincias_selladas(), "paneles": {}}
     for nombre, (freq, col_t, col_geo) in CATALOGO.items():
         src = SRC_V2 / f"{nombre}.csv"
+        if not src.exists():
+            src = SRC_V2 / f"{nombre}.csv.gz"
         if not src.exists():
             continue
         df = pd.read_csv(src, dtype={col_geo: str} if col_geo else None)

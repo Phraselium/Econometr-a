@@ -14,6 +14,8 @@ data:
 
 clean:
 	flock data/processed/.clean.lock $(PY) src/build_dataset.py
+	flock data/processed/.clean.lock $(PY) src/build_dataset_v2.py
+	$(PY) src/holdout.py build
 
 models:
 	@mkdir -p output; for s in $(MODELS); do echo ">> $$s"; flock output/.models.lock $(PY) $$s || exit 1; done

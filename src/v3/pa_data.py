@@ -154,7 +154,7 @@ def censo2021_secciones() -> pd.DataFrame:
 
 
 def catastro() -> pd.DataFrame:
-    c = pd.read_csv(RAW / "catastro_urbana_municipios.csv", dtype={"codigo": str, "provincia_codigo": str},
+    c = pd.read_csv(RAW / "catastro_urbana_municipios.csv.gz", dtype={"codigo": str, "provincia_codigo": str},
                     usecols=["periodo", "codigo", "valor", "provincia_codigo", "unidad"])
     c = c[c.unidad == "unidades_urbanas_residenciales"]
     return c.rename(columns={"valor": "uu_res", "provincia_codigo": "cod_prov"})[["periodo", "codigo", "cod_prov", "uu_res"]]

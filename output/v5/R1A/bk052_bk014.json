@@ -1,0 +1,55 @@
+{
+ "BK052": {
+  "ratio_2024_11": 1.5605992740752181,
+  "ratio_rango_total": [
+   1.4072611250105418,
+   1.7466666666666666
+  ],
+  "ratio_rango_prov_fecha": [
+   0.9782669579342408,
+   2.9385263157894737
+  ],
+  "ratio_foto_2026": {
+   "Alicante/Alacant": 1.8528057732984944,
+   "Castellón/Castelló": 1.9062947067238913,
+   "Valencia/València": 1.4206924979389943
+  },
+  "cuotas_ln": {
+   "fecha_estacionalidad_INE (cota superior)": [
+    0.0,
+    0.2118265618503421
+   ],
+   "bajas_no_depuradas (cota inferior; fechas distintas)": [
+    0.25984198709153933,
+    0.25984198709153933
+   ],
+   "cobertura (INE provincial ya completa)": [
+    0.0,
+    0.0
+   ],
+   "residual_definicion (anuncios activos vs registro)": [
+    0.5283314510581185,
+    0.7401580129084606
+   ]
+  },
+  "cobertura_secciones": [
+   0.9021723761937285,
+   0.9074638547907905,
+   0.9025529718498128
+  ],
+  "cobertura_CV": [
+   0.9952145477747647,
+   1.0
+  ],
+  "capa": "C4"
+ },
+ "BK014": {
+  "estado": "NO ANALIZADA: FALTAN DATOS",
+  "inventario": {
+   "INE estadística experimental de alojamiento": "VUT sin duración de estancia (data/raw/ine_v2_vut.csv): sin alquiler de temporada",
+   "SERPAVI": "contratos de alquiler declarados en IRPF; sin duración ni habitación (data/raw/pdf/serpavi_*)",
+   "fianzas autonómicas (Incasòl)": "data/raw/v3/incasol_fianzas_municipio_v3.csv.gz: fianzas de contratos de alquiler de vivienda; sin duración",
+   "Inside Airbnb": "agregados v3 con room_type/minimum_nights solo para ciudades concretas (C4, fuente única)"
+  }
+ }
+}

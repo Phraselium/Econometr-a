@@ -1,0 +1,126 @@
+[
+ {
+  "id": "R1A-H1",
+  "indicador": "Peso de compradores extranjeros no residentes en las compraventas, España 2025",
+  "valor": 6.83,
+  "min": 6.83,
+  "max": 6.83,
+  "unidad": "%",
+  "periodo": "2025",
+  "cobertura": "España",
+  "fuentes": [
+   "MIVAU Boletín tabla 1.6"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2)"
+ },
+ {
+  "id": "R1A-H2",
+  "indicador": "Peso de compradores extranjeros no residentes, España 2015",
+  "valor": 9.86,
+  "min": 9.86,
+  "max": 9.86,
+  "unidad": "%",
+  "periodo": "2015",
+  "cobertura": "España",
+  "fuentes": [
+   "MIVAU Boletín tabla 1.6"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2)"
+ },
+ {
+  "id": "R1A-H3",
+  "indicador": "Peso de no residentes extranjeros por provincia 2025 (rango entre unidades)",
+  "valor": 32.5,
+  "min": 0.07,
+  "max": 32.5,
+  "unidad": "%",
+  "periodo": "2025",
+  "cobertura": "50 unidades",
+  "fuentes": [
+   "MIVAU Boletín tabla 1.6"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2)"
+ },
+ {
+  "id": "R1A-H4",
+  "indicador": "Asociación bivariada precio 2015-2025 y peso inicial de no residentes (coef.)",
+  "valor": 0.96,
+  "min": 0.46,
+  "max": 1.47,
+  "unidad": "% de precio por punto de peso inicial",
+  "periodo": "2015-2025",
+  "cobertura": "50 unidades",
+  "fuentes": [
+   "MIVAU Boletín"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2)"
+ },
+ {
+  "id": "R1A-H5",
+  "indicador": "Misma asociación con renta, población, costa e islas (coef.)",
+  "valor": 0.02,
+  "min": -0.55,
+  "max": 0.59,
+  "unidad": "% de precio por punto de peso inicial",
+  "periodo": "2015-2025",
+  "cobertura": "50 unidades",
+  "fuentes": [
+   "MIVAU Boletín",
+   "INE padrón",
+   "INE CRE"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2)"
+ },
+ {
+  "id": "R1A-H6",
+  "indicador": "Cociente VUT registro GVA (stock) / INE, 3 provincias valencianas, 2024-11",
+  "valor": 1.56,
+  "min": 1.41,
+  "max": 1.75,
+  "unidad": "veces",
+  "periodo": "2020-08 a 2024-11",
+  "cobertura": "Alicante, Castellón, Valencia",
+  "fuentes": [
+   "INE VUT (experimental)",
+   "GVA Registre de Turisme"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2)"
+ },
+ {
+  "id": "R1A-H7",
+  "indicador": "Cociente VUT registro vigente GVA (2026-10-09) / INE (2026-05)",
+  "valor": 1.76,
+  "min": 1.42,
+  "max": 1.91,
+  "unidad": "veces",
+  "periodo": "2026",
+  "cobertura": "3 provincias",
+  "fuentes": [
+   "INE VUT (experimental)",
+   "GVA Registre de Turisme"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2)"
+ },
+ {
+  "id": "R1A-H8",
+  "indicador": "Cobertura de la suma de secciones INE VUT frente al total provincial (52 provincias)",
+  "valor": 90.4,
+  "min": 90.2,
+  "max": 90.7,
+  "unidad": "%",
+  "periodo": "2024-11 a 2026-05",
+  "cobertura": "España",
+  "fuentes": [
+   "INE VUT (experimental)"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2)"
+ }
+]

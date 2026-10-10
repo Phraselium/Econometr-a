@@ -147,9 +147,12 @@ def build() -> dict:
         if not src.exists():
             continue
         df = pd.read_csv(src, dtype={col_geo: str} if col_geo else None)
+        # Rebase ANTES de separar: entrenamiento y sellado quedan en la MISMA base (2015=100 por unidad).
+        # El factor usa solo valores de 2015 (anteriores al sellado). Rebasar solo el entrenamiento
+        # anulaba por construcción efectos medidos concatenando niveles (revisión BP).
+        df = _rebase_indices_2015(df, nombre, col_t, col_geo)
         sell, emb = _mascara_sellada(df, freq, col_t, col_geo)
         tr = _sin_interpolacion_hacia_sellado(df[~sell & ~emb].copy(), col_t, col_geo)
-        tr = _rebase_indices_2015(tr, nombre, col_t, col_geo)
         tr.to_csv(TRAIN / f"{nombre}.csv", index=False)
         df[sell].to_csv(SEALED / f"{nombre}.csv", index=False)
         resumen["paneles"][nombre] = {"filas": len(df), "train": int((~sell & ~emb).sum()),

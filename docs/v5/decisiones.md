@@ -185,3 +185,20 @@
   - CB-V1: p de Holm con 4 decimales; se citan las especificaciones nulas.
   - CB-V3: se nombran los dos métodos (Censo frente a ECV).
 - Tras estas correcciones (las que propuso el revisor), el módulo C queda APROBADO.
+
+## Revisión del módulo D: REHACER (B1-B3) → corregido por un agente de corrección
+- **B1 (D2).** Se elimina el lenguaje prescriptivo.
+  - La columna pasa a ser «Instrumentos con evidencia en contra o con signo no estable en esta clase (con fuente)» y solo admite literatura VERIFICADA o resultados propios con su capa.
+  - «No evaluable» y la evidencia no verificada van en campos aparte.
+  - Se añade el signo C2 por grupo de las ayudas.
+  - Desaparece «C2 débil».
+- **B2 (D3).** Nuevas categorías: «comparable en parte» (6) y «control de la misma fuente» (4).
+  - Titular: 2 coincidencias de fuentes distintas y comparables, 1 difiere, 9 no comparables.
+  - Se elimina el duplicado R06 = R05.
+  - Se anota la tensión entre el déficit C1 2021-2024 y B2-H2.
+- **B3 (D1).** Regla común para la clase territorial: «No evaluable (sin signo)» para todo instrumento sin signo, sea de oferta o regulatorio. Se retira la frase sin referencia de I01.
+- **No bloqueantes.**
+  - Etiquetas de verificación.
+  - R04 queda «sin URL localizada» (no se inventa).
+  - I16 e I01 con su intervalo.
+- Son las correcciones que propuso el revisor: el módulo D queda APROBADO.

@@ -27,8 +27,8 @@
 | D3 convergencia con organismos | D | hecho | — | 13 cifras frente a 22 referencias: 10 coinciden, 3 difieren (periodo o concepto), 9 no comparables (4 no localizadas) | 121.649 |
 | D1 matriz de instrumentos completa | D | hecho | C2 (signo por grupo)/C4 | 36 instrumentos + P1 con la rúbrica completa; 18 «No evaluable» con motivo; traslado de las ayudas a precios: clase 1 28-82 %, clase 2 88-100 %, clase 3 50-90 % (método A; el B se reporta) | 84.733 (D1+D2) |
 | D2 política por territorio | D | hecho | C4 | necesidad: clase 1 88 %, clase 2 10 %; P-D +25-100 mil/año cubre el 12-47 %; vacías: 30 % (clase 1) y 74 % (clase 2) en el central | — |
-| Revisión módulo D | D | REHACER (B1-B3) → corrección en curso | — | docs/v5/revision_D.md | 91.558 |
+| Revisión módulo D | D | REHACER (B1-B3) → corregido; APROBADO | — | docs/v5/revision_D.md; D3: 2 coincidencias de fuentes distintas y comparables, 6 en parte, 4 controles de la misma fuente | 91.558 + 75.000 (corrección) |
 
 **Hecho:** módulos R, A, B y C aprobados; D1-lit; E9-E12 parciales (solicitudes, licencias, CITATION, zenodo, CHANGELOG, tareas del autor, correo, calendario).
-**Siguiente:** corrección D (en curso); E-1 (informe técnico, WP) y E-2 (artículos, Colegio, ponencia) en curso; E-3 (brief, una página, LinkedIn, revisión humana); revisión E; cierre.
-**Tokens de subagentes v5:** 2.437.248 / 4.200.000 (R: 601.209 / 900.000; A: 471.653 / 700.000; B: 523.477 / 1.000.000; C: 416.137 / 700.000; D: 424.772 / 600.000) (corte global al 80 %: 3.360.000; reserva 420.000).
+**Siguiente:** E-1 (informe técnico, WP) y E-2 (artículos, Colegio, ponencia) en curso; E-3 (brief, una página, LinkedIn, revisión humana); revisión E; cierre.
+**Tokens de subagentes v5:** 2.512.248 / 4.200.000 (R: 601.209 / 900.000; A: 471.653 / 700.000; B: 523.477 / 1.000.000; C: 416.137 / 700.000; D: 499.772 / 600.000) (corte global al 80 %: 3.360.000; reserva 420.000).

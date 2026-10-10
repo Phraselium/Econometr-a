@@ -13,19 +13,36 @@ SEED = 20261010
 FECHA = "2026-10-10"
 PD_LO, PD_HI = 25_000, 100_000   # construcción adicional de P-D v3 (viviendas/año, nacional)
 
+AYU_SIGNO = ("C2 (P-D v3): el beneficiario paga igual o menos (igual con εs = 0) y el no beneficiario paga más; conjunto del mercado sin signo estable. "
+             "Traslado a precios por clase: C4")
+I02_SIGNO = "I02/N8: C2 (signo ≤ 0, nulo con desplazamiento total de la construcción privada)"
 COMBI = {
-    1: dict(estable="P1 más construcción donde falta (signo estable C2); I10/I27/N7 movilización de vacías (signo estable C2)",
-            verificada="N2 edificabilidad (Büchler-Lutz 2024, Greenaway-McGrevy-Phillips 2023; VERIFICADAS, otros países, magnitud de resumen secundario); N1/I13 licencias (Ball 2011, solo asociación)",
-            plazo="vacías: corto-medio; construcción y N2: medio-largo", no_rec="Ayudas generales a la demanda (I06-I09, N9) sin más oferta: con εs de A4 en esta clase (central 0,55) se traslada al precio el 28-82 % (método A) o el 15-46 % (método B) de una ayuda general; I02/N8 solo si no desplaza a la construcción privada (signo ≤ 0, posiblemente nulo)"),
-    2: dict(estable="P1 más construcción (signo estable C2) y I10/I27/N7 (signo estable C2); la clase se define por oferta sin respuesta, de modo que el cuello de botella es de suelo o regulatorio",
-            verificada="N2 edificabilidad y N1/I13 licencias actúan sobre ese cuello de botella (mismas referencias que en clase 1; sin evaluación en España)",
-            plazo="vacías: corto-medio; N2/N1: medio; construcción: medio-largo", no_rec="Ayudas generales a la demanda (I06-I09, N9): con εs ≈ 0 (A4) se traslada al precio el 88-100 % de una ayuda general (Eriksen-Ross 2015: subidas donde la oferta es rígida; Hilber-Turner 2014: efecto adverso en mercados restrictivos); I29 y N4 (la rebaja o el crédito se capitaliza en el suelo, literatura NO VERIFICADA)"),
-    3: dict(estable="P1 con financiación pública y I02/N8 (signo ≤ 0, posiblemente nulo: C2 débil); I10/I27/N7 no aplican porque B1 no asigna movilización a clases sin presión",
-            verificada="Sin literatura verificada con magnitud aplicable: I04/I20 y N4 NO VERIFICADAS (solo robustez)",
-            plazo="largo (5-10 años) para parque público", no_rec="Ayudas generales a la demanda: con εs de A4 en esta clase (central 0,23) se traslada al precio el 50-90 % (método A) o el 40-77 % (método B); N2 No evaluable: construir no es rentable al coste oficial, no hay una restricción de edificabilidad identificada (C4)"),
-    9: dict(estable="No evaluable: clase 9 (sin dato de clase en A4)", verificada="No evaluable: sin dato", plazo="No evaluable",
-            no_rec="No evaluable: sin dato"),
+    1: dict(estable="P1 más construcción donde falta (signo estable C2); I10/I27/N7 movilización de vacías (signo estable C2); " + I02_SIGNO,
+            verificada="N2 edificabilidad (Büchler-Lutz 2024, Greenaway-McGrevy-Phillips 2023; VERIFICADAS, otros países, magnitud de resumen secundario); N1/I13 licencias (Ball 2011, VERIFICADA, solo asociación)",
+            plazo="vacías: corto-medio; construcción y N2: medio-largo", clase_ayudas=1,
+            contra="I02/N8 con posible desplazamiento de la construcción privada (signo ≤ 0, que puede ser nulo; C2); ayudas generales a la demanda (I06-I09, N9) sin más oferta: traslado al precio del {A} (método A) o {B} (método B) de una ayuda general (C4)"),
+    2: dict(estable="P1 más construcción (signo estable C2) y I10/I27/N7 (signo estable C2); " + I02_SIGNO + "; la clase se define por oferta sin respuesta, de modo que el cuello de botella es de suelo o regulatorio",
+            verificada="N2 edificabilidad y N1/I13 licencias se dirigen a ese cuello de botella (inferencia de mecanismo, C4; mismas referencias que en clase 1; sin evaluación en España)",
+            plazo="vacías: corto-medio; N2/N1: medio; construcción: medio-largo", clase_ayudas=2,
+            contra="ayudas generales a la demanda (I06-I09, N9): traslado al precio del {A} (método A) o {B} (método B) de una ayuda general (C4); Eriksen-Ross 2015 (VERIFICADA, Q1) halla subidas donde la oferta es rígida e Hilber-Turner 2014 (VERIFICADA, Q1) un efecto adverso en mercados restrictivos (otros países)"),
+    3: dict(estable="P1 con financiación pública (signo estable C2); " + I02_SIGNO + "; I10/I27/N7 no aplican porque B1 no asigna movilización a clases sin presión",
+            verificada="Sin literatura verificada con magnitud aplicable a esta clase",
+            plazo="largo (5-10 años) para parque público", clase_ayudas=3,
+            contra="ayudas generales a la demanda (I06-I09, N9): traslado al precio del {A} (método A) o {B} (método B) de una ayuda general (C4)"),
+    9: dict(estable="No evaluable: clase 9 (sin dato de clase en A4)", verificada="No evaluable: sin dato", plazo="No evaluable", clase_ayudas=None,
+            contra="No evaluable: sin dato"),
 }
+
+
+def listas_d1() -> dict:
+    """Agrupa los instrumentos de la matriz D1 por tipo de signo (regla común para todas las clases)."""
+    m = pd.read_csv(RAIZ / "output" / "v5" / "D1" / "matriz_instrumentos.csv")
+    m = m[m.id != "P1"]
+    sg = m.signo.astype(str)
+    ne = m[sg.str.startswith("No evaluable")].id.tolist()
+    rob = m[sg.str.contains("NO VERIFICADA") & ~sg.str.startswith("No evaluable")].id.tolist()
+    nest = m[(sg == "no") | sg.str.startswith("no (") | sg.str.startswith("crédito menor")].id.tolist()
+    return dict(ne=", ".join(ne), rob=", ".join(rob), nest=", ".join(nest))
 
 
 def main() -> dict:
@@ -50,15 +67,33 @@ def main() -> dict:
         d[f"vacias_movilizables_anual_{s}"] = d[f"M_{s}"] / 10
     d["cobertura_vacias_central_pct"] = 100 * d.vacias_movilizables_anual_central / d.N_anual_central.where(d.N_anual_central > 0)
     d["clase"] = d.clase_A4
-    for k in ("estable", "verificada", "plazo", "no_rec"):
-        d[{"estable": "instrumentos_signo_estable_C2", "verificada": "instrumentos_evidencia_verificada_aplicable", "plazo": "plazo", "no_rec": "instrumentos_no_recomendados_por_evidencia"}[k]] = d.clase.map(lambda c, k=k: COMBI[c][k])
+    L = listas_d1()
+
+    def rango(c, m):
+        r = ic[(ic.clase == c) & (ic.metodo == m)].iloc[0]
+        lo, hi = round(100 * r.parte_precio_min), round(100 * r.parte_precio_max)
+        return f"{lo} %" if lo == hi else f"{lo}-{hi} %"
+    for c in (1, 2, 3):
+        COMBI[c]["contra"] = COMBI[c]["contra"].format(A=rango(c, "A"), B=rango(c, "B"))
+    NO_EV = "No evaluable (campo separado): " + L["ne"]
+    for c in COMBI:
+        COMBI[c]["ne"] = "No evaluable: sin dato de clase" if c == 9 else NO_EV
+        COMBI[c]["noest"] = "No evaluable: sin dato de clase" if c == 9 else f"{L['nest']} (signo no estable en P-D v3 o discrepancia en la literatura; sin inferencia por clase, C4)"
+        COMBI[c]["rob"] = "No evaluable: sin dato de clase" if c == 9 else f"{L['rob']} (evidencia no verificada: solo robustez, sin uso en la lectura por clase)"
+        COMBI[c]["ayu"] = "No evaluable: sin dato de clase" if c == 9 else AYU_SIGNO
+    NOMBRES = {"estable": "instrumentos_signo_estable_C2", "verificada": "instrumentos_evidencia_verificada_aplicable", "plazo": "plazo",
+               "contra": "instrumentos_con_evidencia_en_contra_o_signo_no_estable_en_esta_clase_con_fuente", "ayu": "signo_C2_ayudas_demanda",
+               "noest": "instrumentos_signo_no_estable", "rob": "evidencia_no_verificada_solo_robustez", "ne": "instrumentos_no_evaluables"}
+    for k, nom in NOMBRES.items():
+        d[nom] = d.clase.map(lambda c, k=k: COMBI[c][k])
     d["capa"] = "C4"
-    d["lectura"] = ("Con la evidencia disponible, en provincias de clase " + d.clase.astype(str) + " los instrumentos con signo estable son los indicados; "
+    d["lectura"] = ("Con la evidencia disponible, en provincias de clase " + d.clase.astype(str) + " los instrumentos con signo estable son los que figuran en las columnas de signo; "
                     "la cobertura es un orden de magnitud (reparto proporcional a la necesidad, C4), no una predicción.")
     cols = ["cod_prov", "provincia", "clase", "robusta_diagnostico", "N_anual_min", "N_anual_central", "N_anual_max", "D2025", "D2030_min", "D2030_central", "D2030_max",
             "pd_construccion_adicional_min", "pd_construccion_adicional_max", "cobertura_pd_min_pct", "cobertura_pd_max_pct", "vacias_movilizables_anual_min",
             "vacias_movilizables_anual_central", "vacias_movilizables_anual_max", "cobertura_vacias_central_pct", "plazo", "instrumentos_signo_estable_C2",
-            "instrumentos_evidencia_verificada_aplicable", "instrumentos_no_recomendados_por_evidencia", "capa"]
+            "instrumentos_evidencia_verificada_aplicable", "instrumentos_con_evidencia_en_contra_o_signo_no_estable_en_esta_clase_con_fuente", "signo_C2_ayudas_demanda",
+            "instrumentos_signo_no_estable", "evidencia_no_verificada_solo_robustez", "instrumentos_no_evaluables", "capa"]
     d[cols].round(2).to_csv(OUT / "politica_territorio.csv", index=False)
     # resumen por clase
     g = d.groupby("clase").agg(n=("cod_prov", "size"), robustas=("robusta_diagnostico", "sum"), N_min=("N_anual_min", "sum"), N_central=("N_anual_central", "sum"),
@@ -114,7 +149,11 @@ def main() -> dict:
                 f"- Necesidad cubierta (orden de magnitud, C4): necesidad {f0(r.N_central)} viviendas/año; la construcción adicional de P-D (+{f0(PD_LO)} a +{f0(PD_HI)} nacional, repartida por cuota) "
                 f"aportaría {f0(r.pd_min)}-{f0(r.pd_max)} viviendas/año ({r.cob_pd_min_pct:.0f}-{r.cob_pd_max_pct:.0f} % de la necesidad de la clase) y la movilización de vacías "
                 f"{f0(r.vac_central)} viviendas/año en el central ({r.cob_vac_pct:.0f} %)."),
-               f"- No recomendados por la evidencia en esta clase: {x['no_rec']}.\n"]
+               f"- Instrumentos con evidencia en contra o con signo no estable en esta clase (con fuente): {x['contra']}.",
+               f"- Signo C2 de las ayudas a la demanda: {x['ayu']}.",
+               f"- Instrumentos con signo no estable: {x['noest']}.",
+               f"- Evidencia no verificada: {x['rob']}.",
+               f"- {x['ne']}.\n"]
     md += ["## Lectura transversal (C4)\n",
            f"- Con la construcción adicional de P-D (+{f0(PD_LO)} a +{f0(PD_HI)}/año) el porcentaje de cobertura es igual en todas las clases por construcción del reparto proporcional (supuesto): solo la cifra absoluta distingue las clases. Cubre una fracción de la necesidad central nacional ({f0(nac_n)}/año), no su totalidad.",
            "- La movilización de vacías sí difiere por clase, porque depende de las vacías de cada provincia con presión: en el central cubre un 30 % de la necesidad en la clase 1 y un 74 % en la clase 2 (con 10-30 % de movilización; rango en la tabla). En las clases 3 y 9 B1 no asigna movilización (sin presión).",

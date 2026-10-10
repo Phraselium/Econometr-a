@@ -25,6 +25,13 @@ FECHA = "2026-10-10"
 # Cifras cuyo min/max no es incertidumbre de España (rango entre países o p10-p90 municipal): se usa solo el valor.
 SOLO_VALOR_PREFIJOS = ("CA-EU-", "R1C-021")
 
+# Controles de transcripción: misma fuente primaria que el proyecto (no cuentan como coincidencia independiente).
+CONTROL_MISMA_FUENTE = {"R15", "R16", "R19", "R20"}
+# Referencias que repiten la misma cifra de otra referencia (la OCDE cita la estimación del BdE).
+DUPLICADO_DE = {"R06": "R05"}
+# Coincidencias con los mismos insumos primarios (ECP del INE y terminadas del MIVAU): concordancia aritmética.
+MISMOS_INSUMOS = {"R03", "R04"}
+
 # Contexto de método del proyecto que explica diferencias (no valora a los organismos).
 METODO_PROY = {
     "deficit_2124_c1": "proyecto: aumento de hogares (ECP y EPA corregida) menos terminadas (Ministerio y Catastro), sin bajas",
@@ -76,15 +83,16 @@ def fmt(iv) -> str:
 
 def clasificar(proy, ref, comparable, estado):
     if estado != "localizada" or ref is None:
-        return "no comparable", None
+        return "no comparable", None, ""
     if comparable == "no":
-        return "no comparable", None
+        return "no comparable", None, ""
     solapa = proy[0] <= ref[1] and ref[0] <= proy[1]
     mp, mr = (proy[0] + proy[1]) / 2, (ref[0] + ref[1]) / 2
     dif = (mr - mp) / abs(mp) if mp else None
-    if solapa or (dif is not None and abs(dif) <= TOL):
-        return "coincide", dif
-    return "difiere", dif
+    num_ok = solapa or (dif is not None and abs(dif) <= TOL)
+    if comparable == "parcial":   # periodo, concepto o cobertura distintos: misma regla para todas las referencias
+        return "comparable en parte", dif, ("numéricamente compatible" if num_ok else "numéricamente distinta")
+    return ("coincide" if num_ok else "difiere"), dif, ""
 
 
 def main() -> None:
@@ -104,8 +112,16 @@ def main() -> None:
         else:
             proy = intervalo(c["valor"], c["min"], c["max"])
         ref = intervalo(r["valor"], r["min"], r["max"])
-        veredicto, dif = clasificar(proy, ref, r["comparable"], r["estado"])
+        veredicto, dif, num_parcial = clasificar(proy, ref, r["comparable"], r["estado"])
+        if r["ref_id"] in CONTROL_MISMA_FUENTE and veredicto in ("coincide", "difiere"):
+            veredicto = "control misma fuente"
         motivos = []
+        if num_parcial:
+            motivos.append(f"comparable en parte ({num_parcial}; no cuenta como coincidencia ni como diferencia)")
+        if r["ref_id"] in DUPLICADO_DE:
+            motivos.append(f"misma cifra que {DUPLICADO_DE[r['ref_id']]} (la OCDE cita al BdE): no se cuenta dos veces")
+        if r["ref_id"] in MISMOS_INSUMOS:
+            motivos.append("el BdE usa los mismos insumos primarios que B2-H2 (ECP del INE y terminadas del MIVAU): concordancia aritmética, no confirmación independiente")
         if r["estado"] != "localizada":
             motivos.append("cifra del organismo no localizada")
         if r["periodo"].strip() != c["periodo"].strip():
@@ -143,7 +159,9 @@ def main() -> None:
         w.writeheader()
         w.writerows(filas)
 
-    n = {k: sum(1 for x in filas if x["veredicto"] == k) for k in ("coincide", "difiere", "no comparable")}
+    cats = ("coincide", "difiere", "comparable en parte", "control misma fuente", "no comparable")
+    n = {k: sum(1 for x in filas if x["veredicto"] == k) for k in cats}
+    n_ins = sum(1 for x in filas if x["veredicto"] == "coincide" and x["ref_id"] in MISMOS_INSUMOS)
     n_noloc = sum(1 for r in refs if r["estado"] != "localizada")
     cifras_usadas = sorted({x["id_cifra"] for x in filas})
 
@@ -152,13 +170,15 @@ def main() -> None:
         "",
         f"Generado por src/v5/d3_run.py (sin red). Fecha: {FECHA}. Referencias: data/raw/v5/d3_referencias.csv.",
         "",
-        f"Regla: «coincide» si los rangos se solapan o la diferencia entre puntos medios es ≤ {int(TOL * 100)} % "
-        "del valor del proyecto; «no comparable» si concepto o periodo impiden la comparación o la cifra no se localizó. "
+        f"Regla: «coincide» o «difiere» solo si concepto, periodo y cobertura son comparables: coincide si los rangos se solapan o la diferencia entre puntos medios es ≤ {int(TOL * 100)} % "
+        "del valor del proyecto. «Comparable en parte» (periodo, concepto o cobertura distintos) no cuenta como coincidencia ni como diferencia, con la misma regla para todas las referencias. "
+        "«Control misma fuente» = misma fuente primaria que el proyecto (transcripción). «No comparable» si el concepto lo impide o la cifra no se localizó. "
         "Las diferencias se describen por concepto, periodo, cobertura, método o bajas; no se valora a ningún organismo.",
         "",
         f"Resumen: {len(cifras_usadas)} cifras del proyecto, {len(filas)} referencias; "
-        f"coinciden {n['coincide']}, difieren {n['difiere']}, no comparables {n['no comparable']} "
-        f"(de ellas {n_noloc} no localizadas).",
+        f"coincidencias de fuentes distintas con concepto, periodo y cobertura comparables: {n['coincide']} (de ellas {n_ins} con los mismos insumos primarios); "
+        f"difieren {n['difiere']}; comparables en parte {n['comparable en parte']} (R06 repite la cifra de R05); "
+        f"controles de la misma fuente {n['control misma fuente']} (no cuentan); no comparables {n['no comparable']} (de ellas {n_noloc} no localizadas).",
         "",
         "| ref | cifra (id) | proyecto | capa | organismo · documento · pág. | organismo | dif. % | veredicto | explicación |",
         "|---|---|---|---|---|---|---|---|---|",
@@ -175,7 +195,12 @@ def main() -> None:
         "Notas:",
         "- Varias referencias de Eurostat (sobrecarga, emancipación, IPV, IPCA alquiler) proceden de la misma fuente "
         "primaria que la cifra del proyecto: su coincidencia es un control de transcripción, no una confirmación independiente.",
-        "- La cifra de 600.000 de la OCDE (2022-2025) es la estimación del Banco de España citada por la OCDE.",
+        "- La cifra de 600.000 de la OCDE (2022-2025) es la estimación del Banco de España citada por la OCDE (R06 = R05, una sola cifra).",
+        "- Tensión interna declarada: R01/R02 comparan la cifra C1 de 2021-2024 (aumento de hogares con ECP y EPA corregida, 562.692-688.692), mientras que R03-R05 usan B2-H2 (2021-2025, solo ECP, 700.934): "
+        "son dos construcciones distintas. Con el aumento de hogares de 2025 (240.000, BdE) y las terminadas de 2025 (92.000), 562.692 + (240.000 − 92.000) ≈ 710.692 supera 700.934; "
+        "la diferencia (≈ 9.800 viviendas, 1,4 %) puede deberse a las dos construcciones (EPA corregida frente a solo ECP; terminadas de cada fuente) y no se ha descompuesto en D3. "
+        "Esta tensión no afecta al recuento de coincidencias, que usa B2-H2 para R03-R05.",
+        "- R09 y R10 son paráfrasis de docs/literatura.md, no citas literales; R04 no tiene URL de documento localizada (véase la referencia).",
         "- La coincidencia numérica no cambia la capa de la cifra del proyecto (sin promoción de capa).",
     ]
     (SAL / "convergencia.md").write_text("\n".join(md) + "\n", encoding="utf-8")
@@ -199,7 +224,7 @@ def main() -> None:
         "nivel_evidencia": "DESCRIPTIVO",
         "diagnosticos": {"referencias_no_localizadas": n_noloc, "cifras_proyecto": cifras_usadas},
         "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None},
-        "notas": "Las coincidencias con Eurostat en sobrecarga, emancipación, IPV y alquiler comparten fuente primaria con el proyecto.",
+        "notas": "Titular: solo cuentan coincidencias de fuentes distintas con concepto, periodo y cobertura comparables; controles de la misma fuente, comparables en parte y R06 = R05 se separan. Tensión entre el déficit C1 2021-2024 (ECP+EPA) y B2-H2 (solo ECP) declarada en convergencia.md. Las coincidencias con Eurostat en sobrecarga, emancipación, IPV y alquiler comparten fuente primaria con el proyecto.",
     }
     (SAL / "resultado.json").write_text(json.dumps(resultado, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 

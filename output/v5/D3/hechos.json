@@ -2,7 +2,7 @@
   {
     "id": "D3-coincide",
     "indicador": "Referencias de organismos: coincide",
-    "valor": 10,
+    "valor": 2,
     "min": null,
     "max": null,
     "unidad": "referencias",
@@ -15,7 +15,33 @@
   {
     "id": "D3-difiere",
     "indicador": "Referencias de organismos: difiere",
-    "valor": 3,
+    "valor": 1,
+    "min": null,
+    "max": null,
+    "unidad": "referencias",
+    "periodo": "2026-10-10",
+    "cobertura": "España",
+    "fuentes": "BdE; OCDE; Eurostat; INE; Ministerio",
+    "capa": "C4",
+    "fecha_dato": "2026-10-10"
+  },
+  {
+    "id": "D3-comparable_en_parte",
+    "indicador": "Referencias de organismos: comparable en parte",
+    "valor": 6,
+    "min": null,
+    "max": null,
+    "unidad": "referencias",
+    "periodo": "2026-10-10",
+    "cobertura": "España",
+    "fuentes": "BdE; OCDE; Eurostat; INE; Ministerio",
+    "capa": "C4",
+    "fecha_dato": "2026-10-10"
+  },
+  {
+    "id": "D3-control_misma_fuente",
+    "indicador": "Referencias de organismos: control misma fuente",
+    "valor": 4,
     "min": null,
     "max": null,
     "unidad": "referencias",

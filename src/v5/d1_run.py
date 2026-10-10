@@ -70,6 +70,11 @@ def main() -> dict:
     OUT.mkdir(parents=True, exist_ok=True)
     pdres, inc = m5._pd(), m5.incidencia()
     base = {r["id"]: r for r in m5.matriz({}, pdres, inc, {})}
+    for r in base.values():   # N1/N4: decimales y cota superior; IC95 que incluye 0
+        if r.get("id") == "I16":
+            r["efecto"] = r["efecto"].replace("-1,7 a 0,0 %", "-1,70 a +0,01 % (cota superior > 0)")
+        if r.get("id") == "I01":
+            r["riesgos"] = r["riesgos"].replace("+0,5], C4)", "+0,5], el IC95 incluye 0, C4)")
     t = tax()
     a = pd.read_csv(RAIZ / "output" / "v5" / "A4" / "clasificacion_provincias.csv", dtype={"cod_prov": str})
     es = es_por_clase(a)
@@ -99,8 +104,8 @@ def main() -> dict:
     NE = "No evaluable: "
     esp = {
         "I03": ("Schuetz-Meltzer-Been 2011 (VERIFICADA, Q1); Krimmel-Wang 2026 (VERIFICADA, Q1): existencia acreditada, resultado no leído", NE + "magnitud no extraída de la literatura verificada; sin simulación propia", NE + "signo no extraído", None),
-        "I04": ("Ali-Raviola 2025 (NO VERIFICADA, Crossref 429): precios del entorno estables o al alza (resumen secundario, EE. UU.)", NE + "sin literatura verificada con magnitud ni simulación propia", NE + "sin literatura verificada", None),
-        "I20": ("Ali-Raviola 2025 (NO VERIFICADA; solo robustez)", NE + "sin literatura verificada con magnitud ni simulación propia", NE + "sin literatura verificada", None),
+        "I04": ("Ali-Raviola 2025 (DOI verificado en Crossref, 10.1111/1540-6229.12525; cuartil no verificado): precios del entorno estables o al alza (resumen secundario, EE. UU.)", NE + "sin literatura verificada con magnitud ni simulación propia", NE + "sin literatura verificada", None),
+        "I20": ("Ali-Raviola 2025 (DOI verificado; cuartil no verificado; resumen secundario, solo robustez)", NE + "sin literatura verificada con magnitud ni simulación propia", NE + "sin literatura verificada", None),
         "I05": ("Oates-Schwab 1997 (DOI verificado; cuartil no verificado): permisos de construcción +70 % en Pittsburgh, sobre todo comercial (resumen secundario, sin verificar; EE. UU. 1970-1980)", NE + "la magnitud es de un resumen secundario sin verificar y de otro país; solo robustez", NE + "sin signo verificado", None),
         "I26": ("Oates-Schwab 1997 (DOI verificado; cuartil no verificado)", NE + "magnitud de resumen secundario sin verificar (comercial, EE. UU.)", NE + "sin signo verificado", None),
         "N3": ("Oates-Schwab 1997 (DOI verificado; cuartil no verificado)", NE + "magnitud de resumen secundario sin verificar (comercial, EE. UU.)", NE + "sin signo verificado", None),
@@ -113,7 +118,7 @@ def main() -> dict:
         "N4": ("Bono-Trannoy (INSEE; NO VERIFICADA): precio del suelo +8 a +10 % en 2 años tras un incentivo a la oferta de alquiler (Francia, 2004-2010; resumen secundario); LIHTC: Diamond-McQuade 2019 y Eriksen-Rosenthal 2010 (VERIFICADAS, resultado no leído)", "Literatura no verificada: +8 a +10 % en el precio del suelo (riesgo de capitalización en el suelo); solo robustez", "+ precio del suelo (NO VERIFICADA)", None),
         "I02": ("Baum-Snow y Marion 2009 (v4, VERIFICADA, magnitud no extraída); Diamond-McQuade 2019 y Eriksen-Rosenthal 2010 (VERIFICADAS, resultado no leído; LIHTC)", None, None, None),
         "N8": ("Equivale a I02 (agrupación v4)", None, None, None),
-        "I14": ("Mora-Sanguinetti 2012 (NO VERIFICADA, Crossref 400): ineficiencia judicial con efecto positivo menor sobre la propiedad frente al alquiler (España, panel provincial)", NE + "magnitud no extraída; fuente no verificada", NE + "fuente no verificada", None),
+        "I14": ("Mora-Sanguinetti 2012 (DOI verificado en Crossref; cuartil no verificado): la ineficiencia judicial se asocia a un mayor peso de la propiedad frente al alquiler (España, panel provincial; documento de trabajo)", NE + "magnitud no extraída; fuente no verificada", NE + "fuente no verificada", None),
         "I18": ("Documento de trabajo preliminar, Cataluña 2018 (NO VERIFICADA, sin DOI): sin efecto en oferta ni precio", "Literatura preliminar: efecto 0 en oferta y precio (Cataluña, reforma de 2018; solo robustez)", "0 (preliminar, NO VERIFICADA)", None),
         "I19": ("Phillips-Sullivan 2025 (VERIFICADA, ensayo aleatorio); Stergiopoulos 2019 (VERIFICADA); Evans-Sullivan-Wallskog 2016 (DOI verificado; cuartil no verificado)", NE + "resultados no extraídos; la medida no se orienta al precio ni a la oferta", NE + "resultado no leído", None),
         "I21": ("Estudios de Vancouver y Ontario (NO VERIFICADA, sin DOI): -6 % del precio en barrios con más compradores extranjeros (resumen secundario)", "Literatura no verificada: -6 % del precio en barrios con más compradores extranjeros (Canadá; solo robustez). En España el peso descriptivo es ≈7 % de las compraventas (C4)", "- precio local (NO VERIFICADA)", None),
@@ -128,11 +133,12 @@ def main() -> dict:
     ids = [f"I{i:02d}" for i in range(1, 30) if i not in (17, 23)] + [f"N{i}" for i in range(1, 10)]
     clase_txt = {
         "oferta": "1 (oferta responde) y 2 (si la restricción es de suelo o edificabilidad); en 3 solo con financiación pública (inferencia de mecanismo, C4)",
-        "rigida": "efecto de signo no estable; la literatura sugiere más riesgo de capitalización en 2-3 (C4)",
+        "rigida": "Con signo, sin inferencia de mecanismo por clase (C4)",
         "publica": "3 y 2 (donde la construcción privada no cubre el coste; inferencia de mecanismo, C4), en 1 con riesgo de desplazar la construcción privada",
         "ayudas": "mayor eficacia en 1 (oferta más elástica); menor en 2 y 3 (ver traslado por clase)",
         "vacias": "1 y 2 (provincias con presión; solo el 27-40 % de las vacías está donde hay presión, C4)",
-        "sin": "No evaluable: sin evaluación por clase",
+        "sin": "Con signo, sin inferencia de mecanismo por clase (C4)",
+        "sin_signo": "No evaluable (sin signo)",
     }
     clase_de = {"I02": "publica", "N8": "publica", "I03": "oferta", "I04": "publica", "I20": "publica", "N4": "publica", "N1": "oferta", "I13": "oferta", "N2": "oferta",
                 "I12": "publica", "N5": "publica", "I29": "publica", "I05": "oferta", "N6": "oferta", "I26": "oferta", "N3": "oferta", "I10": "vacias", "I27": "vacias", "N7": "vacias",
@@ -161,8 +167,8 @@ def main() -> dict:
         if i in ("I06", "I07", "I08", "N9"):
             efecto, signo = r_ay, sig_ay
             evid = ("Eriksen-Ross 2015 (VERIFICADA, Q1): sin efecto medio en el alquiler, subidas en unidades cerca del máximo del cheque y en áreas de oferta rígida; "
-                    "Hilber-Turner 2014 (VERIFICADA): la deducción hipotecaria eleva la propiedad solo en mercados poco regulados, adverso en restrictivos; "
-                    "Saiz 2010 (v4, VERIFICADA); Gibbons-Manning 2006 (VERIFICADA): 60-67 % de incidencia en arrendadores; Carozzi-Hilber-Yu 2024 (VERIFICADA, Q1); "
+                    "Hilber-Turner 2014 (VERIFICADA, Q1): la deducción hipotecaria eleva la propiedad solo en mercados poco regulados, adverso en restrictivos; "
+                    "Saiz 2010 (v4, VERIFICADA); Gibbons-Manning 2006 (VERIFICADA, Q1; J. Public Economics): 60-67 % de incidencia en arrendadores; Carozzi-Hilber-Yu 2024 (VERIFICADA, Q1); "
                     "Best-Kleven 2018, Besley et al. 2014, Collinson-Ganong 2018, Susin 2002, Berger et al. 2020, Gruber et al. 2021 (VERIFICADAS, magnitud no extraída)")
             if i == "I06":
                 efecto += ". Los avales relajan la restricción de entrada y no son una ayuda por unidad: la traducción es más incierta (cota superior)"
@@ -179,7 +185,11 @@ def main() -> dict:
             cota = f"{nf} a favor / {nc} en contra (cota de coincidencias, A5)" + (f"; usa el recuento de {ra}" if ra != i else "")
         else:
             cota = "No evaluable: A5 no codifica este id"
-        cd = clase_de.get(i, "sin")
+        # regla común (B3): sin signo evaluable -> «No evaluable (sin signo)» para todo instrumento; con signo, plantilla por tipo de mecanismo
+        if str(signo).startswith("No evaluable"):
+            cd = "sin_signo"
+        else:
+            cd = clase_de.get(i, "sin")
         rows.append(dict(id=i, instrumento=nom, grupo_v4=r.get("id", "—"), mecanismo=mec, evidencia_y_capa=evid, efecto_y_rango=efecto, signo=signo,
                          plazo=r.get("plazo", NE + "sin dato"), coste_fiscal=f"{r.get('coste', 'No evaluable')}; {PRIV}", riesgos=r.get("riesgos", "—"),
                          distribucion=r.get("distribucion", "—"), clase_A4_donde_funciona=clase_txt[cd],
@@ -232,7 +242,7 @@ def main() -> dict:
                              f"(C4, método A): clase 1 {inc1}; clase 2 {inc2}; clase 3 {inc3}; clase 9 No evaluable. Con el método B: clase 1 {pct(f(1, 'B').parte_precio_min)}-{pct(f(1, 'B').parte_precio_max)}, "
                              f"clase 2 {pct(f(2, 'B').parte_precio_min)}-{pct(f(2, 'B').parte_precio_max)}, clase 3 {pct(f(3, 'B').parte_precio_min)}-{pct(f(3, 'B').parte_precio_max)}."),
                    intervalo=f"clase 1: {inc1}; clase 2: {inc2}; clase 3: {inc3} al precio (C4)", cota="C2 de signo por grupo; magnitud y clase C4",
-                   literatura="Eriksen-Ross 2015 (VERIFICADA, Q1); Hilber-Turner 2014 (VERIFICADA); Gibbons-Manning 2006 (VERIFICADA, cuartil no verificado); Carozzi-Hilber-Yu 2024 (VERIFICADA, Q1).",
+                   literatura="Eriksen-Ross 2015 (VERIFICADA, Q1); Hilber-Turner 2014 (VERIFICADA, Q1); Gibbons-Manning 2006 (VERIFICADA, Q1; J. Public Economics); Carozzi-Hilber-Yu 2024 (VERIFICADA, Q1).",
                    veredicto="PARCIALMENTE",
                    regla=("Regla común con M5-V1: signo estable (C2) para el grupo al que se refiere la afirmación, PARCIALMENTE acotado a ese grupo. Por clase, cuanto más rígida la oferta (clase 2), "
                           "mayor es la parte que se traslada al precio y menor la ventaja neta del beneficiario; en la clase 1 la parte es menor, pero no nula. La capa C2 es solo del signo por grupo; "

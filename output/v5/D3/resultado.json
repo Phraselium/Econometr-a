@@ -6,8 +6,10 @@
   "N": 22,
   "metodo": "comparación de rangos; coincide si solape o diferencia <= 15 %",
   "estimacion": {
-    "coincide": 10,
-    "difiere": 3,
+    "coincide": 2,
+    "difiere": 1,
+    "comparable en parte": 6,
+    "control misma fuente": 4,
     "no comparable": 9
   },
   "ic95": null,
@@ -38,5 +40,5 @@
     "rmse": null,
     "dm_vs_ar4": null
   },
-  "notas": "Las coincidencias con Eurostat en sobrecarga, emancipación, IPV y alquiler comparten fuente primaria con el proyecto."
+  "notas": "Titular: solo cuentan coincidencias de fuentes distintas con concepto, periodo y cobertura comparables; controles de la misma fuente, comparables en parte y R06 = R05 se separan. Tensión entre el déficit C1 2021-2024 (ECP+EPA) y B2-H2 (solo ECP) declarada en convergencia.md. Las coincidencias con Eurostat en sobrecarga, emancipación, IPV y alquiler comparten fuente primaria con el proyecto."
 }

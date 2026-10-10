@@ -81,10 +81,12 @@ def _b3() -> list[dict]:
                      d["estimacion"][hip]["b_por_DT_logpuntos"] * 100, lo * 100, hi * 100, "puntos log. por DT", per,
                      "50 provincias", fu, "C4", "2025"))
         p = d["p_ajustado"][hip]
-        out.append(h(f"E-B3-{hip}-p3", f"{hip}: p Holm sobre las 3 confirmatorias", p["holm_3_confirmatorias"], None, None,
-                     "probabilidad", per, "50 provincias", fu, "C4", "2025"))
-        out.append(h(f"E-B3-{hip}-pri", f"{hip}: p por aleatorización Freedman-Lane", p["p_aleatorizacion"], None, None,
-                     "probabilidad", per, "50 provincias", fu, "C4", "2025"))
+        out.append(h(f"E-B3-{hip}-p3", f"{hip}: p Holm sobre las 3 confirmatorias", p["holm_3_confirmatorias"] * 100, None, None,
+                     "% (valor p)", per, "50 provincias", fu, "C4", "2025"))
+        out.append(h(f"E-B3-{hip}-pri", f"{hip}: p por aleatorización Freedman-Lane", p["p_aleatorizacion"] * 100, None, None,
+                     "% (valor p)", per, "50 provincias", fu, "C4", "2025"))
+    out.append(h("E-B3-H-B3-6-p8", "H-B3-6: p Holm sobre 8 familias", d["p_ajustado"]["H-B3-6"]["holm_8_familias"] * 100, None,
+                 None, "% (valor p)", per, "50 provincias", fu, "C4", "2025"))
     s = d["diagnosticos"]["shapley"]
     out.append(h("E-B3-R2reg", "R² del modelo de 8 familias con precio de Registradores", s["R2_registradores"], None, None,
                  "proporción", per, "50 provincias", fu, "C4", "2025"))
@@ -96,8 +98,8 @@ def _b3() -> list[dict]:
     out.append(h("E-B3-N", "Provincias en la muestra principal de B3", d["N"]["principal_Y1_P1"], None, None, "provincias",
                  per, "España sin Ceuta y Melilla", fu, "C4", "2025"))
     pe = pd.read_csv(O5 / "B3/tablas/potencia_emd.csv")
-    ref = pe[(pe.R2 == 0.5) & (pe.VIF == 2.0) & (pe.m_Holm == 8)].EMD_DT.iloc[0]
-    g8 = pe[pe.m_Holm == 8].EMD_DT
+    ref = pe[(pe.K == 12) & (pe.R2 == 0.5) & (pe.VIF == 2.0) & (pe.m_Holm == 8)].EMD_DT.iloc[0]
+    g8 = pe[(pe.K == 12) & (pe.m_Holm == 8)].EMD_DT
     out.append(h("E-B3-EMD", "Efecto mínimo detectable con Holm m=8 (R² 0,5, VIF 2; rango de la rejilla)", ref, g8.min(), g8.max(),
                  "DT", "pre-registro 2026-10-10", "50 provincias", "B3 potencia (analítica y simulación)", "C4", "2026"))
     return out
@@ -110,11 +112,11 @@ def _replicacion() -> list[dict]:
     lo, hi = gl["ic95"]
     fu = "SERPAVI; INE VUT; Ayuntamiento de Barcelona"
     out.append(h("E-GL-coef", "Réplica García-López: coeficiente propio (FE sección y año, sin IV), Barcelona",
-                 gl["estimacion"], lo, hi, "log-puntos por punto de VUT/parque", "2021-2024", "Barcelona (secciones)", fu, "C4", "2024"))
-    out.append(h("E-GL-pholm", "Réplica García-López: p ajustado Holm", gl["p_ajustado"], None, None, "probabilidad",
+                 gl["estimacion"] * 1000, lo * 1000, hi * 1000, "milésimas de log-punto por punto de VUT/parque", "2021-2024", "Barcelona (secciones)", fu, "C4", "2024"))
+    out.append(h("E-GL-pholm", "Réplica García-López: p ajustado Holm", gl["p_ajustado"] * 100, None, None, "% (valor p)",
                  "2021-2024", "Barcelona", fu, "C4", "2024"))
-    out.append(h("E-GL-esperado", "Coeficiente esperado en un stock si el efecto de GL sobre el flujo se atenuase", m0["coef_esperado_stock"],
-                 None, None, "log-puntos por punto de VUT/parque", "2012-2024", "Barcelona", "Incasòl; SERPAVI", "C4", "2024"))
+    out.append(h("E-GL-esperado", "Coeficiente esperado en un stock si el efecto de GL sobre el flujo se atenuase", m0["coef_esperado_stock"] * 1000,
+                 None, None, "milésimas de log-punto por punto de VUT/parque", "2012-2024", "Barcelona", "Incasòl; SERPAVI", "C4", "2024"))
     out.append(h("E-GL-lambda", "Parte de la variación del flujo (Incasòl) que recoge el stock (SERPAVI)", m0["lambda_2022_2024"] * 100,
                  m0["lambda_2022_2024"] * 100, m0["lambda_2015_2020"] * 100, "%", "2022-2024 (máx: 2015-2020)", "Barcelona",
                  "Incasòl; SERPAVI", "C4", "2024"))
@@ -130,9 +132,9 @@ def _replicacion() -> list[dict]:
                      "SERPAVI; Incasòl", "C4", "2022"))
     c1 = _j(O3 / "C1/resultado.json")
     out.append(h("E-v3-H3-1", "VUT por 100 viviendas y alquiler SERPAVI (FE sección, nacional), coeficiente v3",
-                 c1["estimacion"], c1["ic95"][0], c1["ic95"][1], "log-puntos por VUT/100 viv.", "2021-2024", "Secciones censales",
+                 c1["estimacion"] * 1000, c1["ic95"][0] * 1000, c1["ic95"][1] * 1000, "milésimas de log-punto por VUT/100 viv.", "2021-2024", "Secciones censales",
                  "INE VUT; SERPAVI", "C4", "2024"))
-    out.append(h("E-v3-H3-1-p", "p Holm de H3-1 (v3)", c1["p_ajustado"]["H3-1"], None, None, "probabilidad", "2021-2024",
+    out.append(h("E-v3-H3-1-p", "p Holm de H3-1 (v3)", c1["p_ajustado"]["H3-1"] * 100, None, None, "% (valor p)", "2021-2024",
                  "Secciones censales", "INE VUT; SERPAVI", "C4", "2024"))
     pb = _j(O3 / "PB/resultado.json")["estimacion"]
     out.append(h("E-v3-vut-precio-cota", "Cota de precio atribuible a VUT con la elasticidad mínima de la rejilla (v3)",

@@ -185,8 +185,10 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 | D2-H11 | Cobertura de la necesidad por la construcción adicional de P-D (+25-100 mil/año repartidas por cuota), clase 1 | 29.1 | 11.6–46.5 | % | 2026-2035 | 37 provincias | output/v3/PD; output/v5/B1; output/v5/A4 | C4 | 2026-10-10 |
 | D2-H12 | Cobertura de la necesidad por la construcción adicional de P-D (+25-100 mil/año repartidas por cuota), clase 2 | 29.1 | 11.6–46.5 | % | 2026-2035 | 11 provincias | output/v3/PD; output/v5/B1; output/v5/A4 | C4 | 2026-10-10 |
 | D2-H13 | Cobertura de la necesidad por la construcción adicional de P-D (+25-100 mil/año repartidas por cuota), clase 3 | 29.1 | 11.6–46.5 | % | 2026-2035 | 2 provincias | output/v3/PD; output/v5/B1; output/v5/A4 | C4 | 2026-10-10 |
-| D3-coincide | Referencias de organismos: coincide | 10 |  | referencias | 2026-10-10 | España | BdE; OCDE; Eurostat; INE; Ministerio | C4 | 2026-10-10 |
-| D3-difiere | Referencias de organismos: difiere | 3 |  | referencias | 2026-10-10 | España | BdE; OCDE; Eurostat; INE; Ministerio | C4 | 2026-10-10 |
+| D3-coincide | Referencias de organismos: coincide | 2 |  | referencias | 2026-10-10 | España | BdE; OCDE; Eurostat; INE; Ministerio | C4 | 2026-10-10 |
+| D3-comparable_en_parte | Referencias de organismos: comparable en parte | 6 |  | referencias | 2026-10-10 | España | BdE; OCDE; Eurostat; INE; Ministerio | C4 | 2026-10-10 |
+| D3-control_misma_fuente | Referencias de organismos: control misma fuente | 4 |  | referencias | 2026-10-10 | España | BdE; OCDE; Eurostat; INE; Ministerio | C4 | 2026-10-10 |
+| D3-difiere | Referencias de organismos: difiere | 1 |  | referencias | 2026-10-10 | España | BdE; OCDE; Eurostat; INE; Ministerio | C4 | 2026-10-10 |
 | D3-no_comparable | Referencias de organismos: no comparable | 9 |  | referencias | 2026-10-10 | España | BdE; OCDE; Eurostat; INE; Ministerio | C4 | 2026-10-10 |
 | E-B1-A1 | Atraso: déficit 2021-2025 (componente A1) | 7.882e+05 | 6.43e+05–9.677e+05 | viviendas | 2026-2035 | España (52 provincias) | INE Proyección de Hogares; INE mortalidad; Censo 2021; MIVAU; Catastro | C4 | 2026 |
 | E-B1-A2 | Atraso: emancipación retrasada (componente A2) | 3.15e+05 | 1.88e+05–5.059e+05 | viviendas | 2026-2035 | España (52 provincias) | INE Proyección de Hogares; INE mortalidad; Censo 2021; MIVAU; Catastro | C4 | 2026 |
@@ -212,26 +214,83 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 | E-B2-empeora | Provincias cuyo déficit 2025-2030 empeora en todo el rango (ritmo actual) | 20 |  | provincias | 2025 a 2030 | 52 provincias | B2 (INE hogares; MIVAU) | C4 | 2025 |
 | E-B2-indeterminado | Provincias cuyo déficit 2025-2030 indeterminado en todo el rango (ritmo actual) | 27 |  | provincias | 2025 a 2030 | 52 provincias | B2 (INE hogares; MIVAU) | C4 | 2025 |
 | E-B2-mejora | Provincias cuyo déficit 2025-2030 mejora en todo el rango (ritmo actual) | 5 |  | provincias | 2025 a 2030 | 52 provincias | B2 (INE hogares; MIVAU) | C4 | 2025 |
-| E-B3-EMD | Efecto mínimo detectable con Holm m=8 (R² 0,5, VIF 2; rango de la rejilla) | 0.5854 | 0.3206–1.105 | DT | pre-registro 2026-10-10 | 50 provincias | B3 potencia (analítica y simulación) | C4 | 2026 |
+| E-B3-EMD | Efecto mínimo detectable con Holm m=8 (R² 0,5, VIF 2; rango de la rejilla) | 0.6194 | 0.3393–1.105 | DT | pre-registro 2026-10-10 | 50 provincias | B3 potencia (analítica y simulación) | C4 | 2026 |
 | E-B3-H-B3-1-ic | H-B3-1: coeficiente por DT del regresor con IC95 (HC3/Conley, mayor EE) | 2.363 | -0.06136–4.787 | puntos log. por DT | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
-| E-B3-H-B3-1-p3 | H-B3-1: p Holm sobre las 3 confirmatorias | 0.1115 |  | probabilidad | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
-| E-B3-H-B3-1-pri | H-B3-1: p por aleatorización Freedman-Lane | 0.04919 |  | probabilidad | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
+| E-B3-H-B3-1-p3 | H-B3-1: p Holm sobre las 3 confirmatorias | 11.15 |  | % (valor p) | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
+| E-B3-H-B3-1-pri | H-B3-1: p por aleatorización Freedman-Lane | 4.919 |  | % (valor p) | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
 | E-B3-H-B3-2-ic | H-B3-2: coeficiente por DT del regresor con IC95 (HC3/Conley, mayor EE) | 3.552 | -0.7393–7.844 | puntos log. por DT | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
-| E-B3-H-B3-2-p3 | H-B3-2: p Holm sobre las 3 confirmatorias | 0.1115 |  | probabilidad | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
-| E-B3-H-B3-2-pri | H-B3-2: p por aleatorización Freedman-Lane | 0.07319 |  | probabilidad | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
+| E-B3-H-B3-2-p3 | H-B3-2: p Holm sobre las 3 confirmatorias | 11.15 |  | % (valor p) | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
+| E-B3-H-B3-2-pri | H-B3-2: p por aleatorización Freedman-Lane | 7.319 |  | % (valor p) | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
 | E-B3-H-B3-6-ic | H-B3-6: coeficiente por DT del regresor con IC95 (HC3/Conley, mayor EE) | -16.01 | -23.79–-8.229 | puntos log. por DT | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
-| E-B3-H-B3-6-p3 | H-B3-6: p Holm sobre las 3 confirmatorias | 0.0005428 |  | probabilidad | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
-| E-B3-H-B3-6-pri | H-B3-6: p por aleatorización Freedman-Lane | 0.0002 |  | probabilidad | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
+| E-B3-H-B3-6-p3 | H-B3-6: p Holm sobre las 3 confirmatorias | 0.05428 |  | % (valor p) | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
+| E-B3-H-B3-6-p8 | H-B3-6: p Holm sobre 8 familias | 0.1267 |  | % (valor p) | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
+| E-B3-H-B3-6-pri | H-B3-6: p por aleatorización Freedman-Lane | 0.02 |  | % (valor p) | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
 | E-B3-N | Provincias en la muestra principal de B3 | 50 |  | provincias | 2015-2025 | España sin Ceuta y Melilla | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
 | E-B3-R2reg | R² del modelo de 8 familias con precio de Registradores | 0.8208 |  | proporción | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
 | E-B3-kendall | Tau de Kendall de los Shapley entre fuentes de precio | 0.7857 |  | coeficiente | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
 | E-B3-rmse | RMSE dejando una fuera, modelo de 8 familias (máx = modelo de solo media) | 0.0664 |  | log-puntos | 2015-2025 | 50 provincias | MIVAU valor tasado; Registradores; EPA; Padrón; CRE | C4 | 2025 |
-| E-GL-coef | Réplica García-López: coeficiente propio (FE sección y año, sin IV), Barcelona | -0.004167 | -0.007791–-0.0005418 | log-puntos por punto de VUT/parque | 2021-2024 | Barcelona (secciones) | SERPAVI; INE VUT; Ayuntamiento de Barcelona | C4 | 2024 |
-| E-GL-esperado | Coeficiente esperado en un stock si el efecto de GL sobre el flujo se atenuase | 0.006688 |  | log-puntos por punto de VUT/parque | 2012-2024 | Barcelona | Incasòl; SERPAVI | C4 | 2024 |
+| E-E1-B2-D2030-a | Déficit nacional a fin de 2030, escenario (a) de terminadas (central) | 1.297e+06 |  | viviendas | 1-ene-2026 a 31-dic-2030 | España | B2 | C4 | 2026-10-10 |
+| E-E1-B2-D2030-b | Déficit nacional a fin de 2030, escenario (b) de terminadas (central) | 1.136e+06 |  | viviendas | 1-ene-2026 a 31-dic-2030 | España | B2 | C4 | 2026-10-10 |
+| E-E1-B2-D2030-c | Déficit nacional a fin de 2030, escenario (c) de terminadas (central) | 1.276e+06 |  | viviendas | 1-ene-2026 a 31-dic-2030 | España | B2 | C4 | 2026-10-10 |
+| E-E1-B2-empeora | Provincias cuyo déficit empeora 2025-2030 en todo el rango | 20 |  | provincias | 2025 a 2030 | 52 provincias | B2 (rango completo) | C4 | 2026-10-10 |
+| E-E1-B2-empeora-a | Provincias que empeoran, escenario (a) central | 45 |  | provincias | 2025 a 2030 | 52 provincias | B2 | C4 | 2026-10-10 |
+| E-E1-B2-empeora-b | Provincias que empeoran, escenario (b) central | 40 |  | provincias | 2025 a 2030 | 52 provincias | B2 | C4 | 2026-10-10 |
+| E-E1-B2-empeora-c | Provincias que empeoran, escenario (c) central | 41 |  | provincias | 2025 a 2030 | 52 provincias | B2 | C4 | 2026-10-10 |
+| E-E1-B2-estable3 | Provincias con el mismo signo central en los 3 escenarios de terminadas | 46 |  | provincias | 2025 a 2030 | 52 provincias | B2 | C4 | 2026-10-10 |
+| E-E1-B2-indeterminado | Provincias cuyo déficit indeterminado 2025-2030 en todo el rango | 27 |  | provincias | 2025 a 2030 | 52 provincias | B2 (rango completo) | C4 | 2026-10-10 |
+| E-E1-B2-mejora | Provincias cuyo déficit mejora 2025-2030 en todo el rango | 5 |  | provincias | 2025 a 2030 | 52 provincias | B2 (rango completo) | C4 | 2026-10-10 |
+| E-E1-B3-N | Provincias del corte transversal principal de B3 (sin Ceuta ni Melilla) | 50 |  | provincias | 2015-2025 | España | B3 | C4 | 2026-10-10 |
+| E-E1-B3-RV-H-B3-1 | Cinelli-Hazlett RV (q=1) de H-B3-1 | 0.2815 | 0.041–0.3196 | R² parcial (min = RV_α; max = RV con gl N-K-1) | 2015-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
+| E-E1-B3-RV-H-B3-2 | Cinelli-Hazlett RV (q=1) de H-B3-2 | 0.2621 | 0.01485–0.2982 | R² parcial (min = RV_α; max = RV con gl N-K-1) | 2015-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
+| E-E1-B3-mvp-H-B3-1 | Multiverso H-B3-1: % de especificaciones con p<0,05 | 3.125 |  | % | 2015-2025 / 2021-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
+| E-E1-B3-mvp-H-B3-2 | Multiverso H-B3-2: % de especificaciones con p<0,05 | 59.38 |  | % | 2015-2025 / 2021-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
+| E-E1-B3-mvp-H-B3-6 | Multiverso H-B3-6: % de especificaciones con p<0,05 | 46.88 |  | % | 2015-2025 / 2021-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
+| E-E1-B3-nesp | Especificaciones del multiverso por hipótesis confirmatoria (B3) | 32 |  | especificaciones | 2015-2025 / 2021-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
+| E-E1-B3-oster-H-B3-1 | Oster δ (Rmax acotado a 1) de H-B3-1 | 3.758 |  | razón δ | 2015-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
+| E-E1-B3-oster-H-B3-2 | Oster δ (Rmax acotado a 1) de H-B3-2 | 1.607 |  | razón δ | 2015-2025 | 50 provincias | B3 | C4 | 2026-10-10 |
+| E-E1-D1-incB-1 | Parte de una ayuda general que se traslada al precio, clase A4 1 (método B, rejilla P-D) | 30.95 | 14.63–46.15 | % | rejilla εd 0,3-1,5 | clase A4 | D1 | C4 | 2026-10-10 |
+| E-E1-D1-incB-2 | Parte de una ayuda general que se traslada al precio, clase A4 2 (método B, rejilla P-D) | 100 | 100–100 | % | rejilla εd 0,3-1,5 | clase A4 | D1 | C4 | 2026-10-10 |
+| E-E1-D1-incB-3 | Parte de una ayuda general que se traslada al precio, clase A4 3 (método B, rejilla P-D) | 63.05 | 40–76.92 | % | rejilla εd 0,3-1,5 | clase A4 | D1 | C4 | 2026-10-10 |
+| E-E1-D2-cobpd-1 | Cobertura de la necesidad por la construcción adicional de P-D, clase A4 1 | 29.09 | 11.63–46.54 | % | 2026-2035 | clase A4 | D2 (P-D v3, reparto por cuota) | C4 | 2026-10-10 |
+| E-E1-D2-cobpd-2 | Cobertura de la necesidad por la construcción adicional de P-D, clase A4 2 | 29.09 | 11.63–46.54 | % | 2026-2035 | clase A4 | D2 (P-D v3, reparto por cuota) | C4 | 2026-10-10 |
+| E-E1-D2-covvac-1 | Cobertura de la necesidad por vacías movilizables, clase A4 1 (central) | 30.23 |  | % | 2026-2035 | clase A4 | D2 | C4 | 2026-10-10 |
+| E-E1-D2-covvac-2 | Cobertura de la necesidad por vacías movilizables, clase A4 2 (central) | 74.35 |  | % | 2026-2035 | clase A4 | D2 | C4 | 2026-10-10 |
+| E-E1-D2-nprov-1 | Provincias de clase A4 1 (2021-2025) | 37 | 8–37 | provincias (min = robustas) | 2021-2025 | 52 provincias | D2 (A4) | C4 | 2026-10-10 |
+| E-E1-D2-nprov-2 | Provincias de clase A4 2 (2021-2025) | 11 | 3–11 | provincias (min = robustas) | 2021-2025 | 52 provincias | D2 (A4) | C4 | 2026-10-10 |
+| E-E1-D2-vac-1 | Vacías movilizables por año, clase A4 1 (central y rango) | 5.723e+04 | 2.862e+04–8.585e+04 | viviendas/año | 2026-2035 | clase A4 | D2 (B1) | C4 | 2026-10-10 |
+| E-E1-D2-vac-2 | Vacías movilizables por año, clase A4 2 (central y rango) | 1.613e+04 | 8063–2.419e+04 | viviendas/año | 2026-2035 | clase A4 | D2 (B1) | C4 | 2026-10-10 |
+| E-E1-VLC-B1 | Necesidad anual de vivienda, provincia de València | 1.699e+04 | 1.324e+04–2.241e+04 | viviendas/año | 2026-2035 | provincia de València | B1 | C4 | 2026-10-10 |
+| E-E1-VLC-B2 | Déficit acumulado a fin de 2030, provincia de València | 1.187e+05 | 1.121e+05–1.289e+05 | viviendas | 1-ene-2026 a 31-dic-2030 | provincia de València | B2 | C4 | 2026-10-10 |
+| E-E1-VLC-claseciu-v4 | Clase M3 v4 de València ciudad (coste supuesto) | 2 |  | clase | 2021-2025 | València ciudad | v4 M3 | C4 | 2026-10-10 |
+| E-E1-VLC-claseciu-v5 | Clase A4 v5 de València ciudad (rango oficial de coste) | 1 |  | clase | 2021-2025 | València ciudad | A4 | C4 | 2026-10-10 |
+| E-E1-VLC-claseprov | Clase A4 de la provincia de València (2021-2025) | 1 |  | clase | 2021-2025 | provincia de València | A4 | C4 | 2026-10-10 |
+| E-E1-VLC-contratos | Contratos SERPAVI con renta declarada en los distritos de València, 2024 | 6.574e+04 | 228–5810 | contratos (min-max por distrito) | 2024 | València ciudad | SERPAVI (MIVAU) | C4 | 2026-10-10 |
+| E-E1-VLC-crec-max | Crecimiento de la renta mediana SERPAVI 2015-2024, distrito Ciutat Vella | 85.81 |  | % | 2015-2024 | distrito Ciutat Vella | SERPAVI (MIVAU) | C4 | 2026-10-10 |
+| E-E1-VLC-crec-med | Crecimiento de la renta mediana SERPAVI 2015-2024, mediana entre distritos | 73.49 | 50.66–85.81 | % | 2015-2024 | 19 distritos de València | SERPAVI (MIVAU) | C4 | 2026-10-10 |
+| E-E1-VLC-crec-min | Crecimiento de la renta mediana SERPAVI 2015-2024, distrito Poblats Del Nord | 50.66 |  | % | 2015-2024 | distrito Poblats Del Nord | SERPAVI (MIVAU) | C4 | 2026-10-10 |
+| E-E1-VLC-def2125 | Déficit contable 2021-2025, provincia de València (mediana y rango) | 6.893e+04 | 5.921e+04–8.009e+04 | viviendas | 2021-2025 | provincia de València | A4 (INE, Ministerio, Catastro) | C4 | 2026-10-10 |
+| E-E1-VLC-defciu | Déficit contable 2021-2025, València ciudad (fuente única) | 1.305e+04 |  | viviendas | 2021-2025 | València ciudad | A4 (padrón y Catastro) | C4 | 2026-10-10 |
+| E-E1-VLC-estab-v4 | Estabilidad de la clase M3 v4 de València ciudad en el multiverso | 97.22 |  | % | 2021-2025 | València ciudad | v4 M3 | C4 | 2026-10-10 |
+| E-E1-VLC-fianza-2020 | Mediana de la fianza depositada en la GVA, 2020 | 500 |  | € | 2020 | Comunitat Valenciana | GVA (registro de fianzas) | C4 | 2026-10-10 |
+| E-E1-VLC-fianza-2025 | Mediana de la fianza depositada en la GVA, 2025 | 790 |  | € | 2025 | Comunitat Valenciana | GVA (registro de fianzas) | C4 | 2026-10-10 |
+| E-E1-VLC-fianza-n2025 | Fianzas depositadas en la GVA, 2025 | 3.508e+04 |  | contratos | 2025 | Comunitat Valenciana | GVA (registro de fianzas) | C4 | 2026-10-10 |
+| E-E1-VLC-ndist | Distritos de València ciudad con SERPAVI y nombre | 19 |  | distritos | 2015-2024 | València ciudad | SERPAVI (MIVAU); Ajuntament de València (nombres) | C4 | 2026-10-10 |
+| E-E1-VLC-precio | Valor tasado de la vivienda libre, València ciudad | 2849 |  | €/m² | 2025 | València ciudad | MIVAU (valor tasado) | C4 | 2026-10-10 |
+| E-E1-VLC-serpavi-max | Renta mediana SERPAVI 2024, distrito Ciutat Vella | 10.9 |  | €/m²/mes | 2024 | distrito Ciutat Vella | SERPAVI (MIVAU) | C4 | 2026-10-10 |
+| E-E1-VLC-serpavi-med | Mediana entre distritos de la renta mediana SERPAVI 2024 | 8.03 | 5.87–10.9 | €/m²/mes | 2024 | 19 distritos de València | SERPAVI (MIVAU) | C4 | 2026-10-10 |
+| E-E1-VLC-serpavi-min | Renta mediana SERPAVI 2024, distrito Poblats Del Nord | 5.87 |  | €/m²/mes | 2024 | distrito Poblats Del Nord | SERPAVI (MIVAU) | C4 | 2026-10-10 |
+| E-E1-nprov | Provincias (y ciudades autónomas) de la contabilidad provincial B1/B2 | 52 |  | provincias | 2026-2035 | España | B2 | C4 | 2026-10-10 |
+| E-E1-ver-anc | Afirmaciones con veredicto «ANALIZADA, NO CONCLUYENTE» | 26 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
+| E-E1-ver-contr | Afirmaciones con veredicto «CONTRADICHA» | 1 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
+| E-E1-ver-n | Afirmaciones del debate evaluadas en el verificador v5 | 33 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
+| E-E1-ver-nafd | Afirmaciones con veredicto «NO ANALIZADA: FALTAN DATOS» | 3 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
+| E-E1-ver-parc | Afirmaciones con veredicto «PARCIALMENTE» | 3 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
+| E-GL-coef | Réplica García-López: coeficiente propio (FE sección y año, sin IV), Barcelona | -4.167 | -7.791–-0.5418 | milésimas de log-punto por punto de VUT/parque | 2021-2024 | Barcelona (secciones) | SERPAVI; INE VUT; Ayuntamiento de Barcelona | C4 | 2024 |
+| E-GL-esperado | Coeficiente esperado en un stock si el efecto de GL sobre el flujo se atenuase | 6.688 |  | milésimas de log-punto por punto de VUT/parque | 2012-2024 | Barcelona | Incasòl; SERPAVI | C4 | 2024 |
 | E-GL-lambda | Parte de la variación del flujo (Incasòl) que recoge el stock (SERPAVI) | 55.05 | 55.05–74.91 | % | 2022-2024 (máx: 2015-2020) | Barcelona | Incasòl; SERPAVI | C4 | 2024 |
-| E-GL-pholm | Réplica García-López: p ajustado Holm | 0.2686 |  | probabilidad | 2021-2024 | Barcelona | SERPAVI; INE VUT; Ayuntamiento de Barcelona | C4 | 2024 |
-| E-v3-H3-1 | VUT por 100 viviendas y alquiler SERPAVI (FE sección, nacional), coeficiente v3 | 0.0002599 | -0.0007442–0.001264 | log-puntos por VUT/100 viv. | 2021-2024 | Secciones censales | INE VUT; SERPAVI | C4 | 2024 |
-| E-v3-H3-1-p | p Holm de H3-1 (v3) | 0.4666 |  | probabilidad | 2021-2024 | Secciones censales | INE VUT; SERPAVI | C4 | 2024 |
+| E-GL-pholm | Réplica García-López: p ajustado Holm | 26.86 |  | % (valor p) | 2021-2024 | Barcelona | SERPAVI; INE VUT; Ayuntamiento de Barcelona | C4 | 2024 |
+| E-v3-H3-1 | VUT por 100 viviendas y alquiler SERPAVI (FE sección, nacional), coeficiente v3 | 0.2599 | -0.7442–1.264 | milésimas de log-punto por VUT/100 viv. | 2021-2024 | Secciones censales | INE VUT; SERPAVI | C4 | 2024 |
+| E-v3-H3-1-p | p Holm de H3-1 (v3) | 46.66 |  | % (valor p) | 2021-2024 | Secciones censales | INE VUT; SERPAVI | C4 | 2024 |
 | E-v3-H3-3a-CS | Topes v3 (renta), DiD Callaway-Sant'Anna en entrenamiento; reportado como C4 | -5.412 | -7.09–-3.703 | % | 2018-2022 | Municipios sujetos de Cataluña | SERPAVI; Incasòl | C4 | 2022 |
 | E-v3-H3-3a-sell | Topes v3 (renta), DiD anual en la muestra sellada; validación contaminada, C4 | -0.7698 | -1.391–-0.1446 | % | 2018-2022 | Municipios sujetos de Cataluña | SERPAVI; Incasòl | C4 | 2022 |
 | E-v3-H3-3b-CS | Topes v3 (contratos), DiD Callaway-Sant'Anna en entrenamiento; reportado como C4 | -4.875 | -9.931–0.4651 | % | 2018-2022 | Municipios sujetos de Cataluña | SERPAVI; Incasòl | C4 | 2022 |

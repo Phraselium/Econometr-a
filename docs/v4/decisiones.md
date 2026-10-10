@@ -33,3 +33,11 @@
 - Los umbrales no se fijaron con M1. m3_run lee M1 en ejecución; los recuentos son PROVISIONALES hasta corregir M1 (error de terminadas).
 - Municipios sin valor tasado propio usan el precio provincial (proxy, siempre C4). La capa efectiva se limita a la del déficit de M1.
 - M3, revisión: segundo intento de coste en nivel sin resultado. Licencias y visados del Boletín Online (BoletinOnline2 y BoletinOnline, orden 10000000) y el INE no traen presupuesto de ejecución material; el Catastro extraído no trae superficie construida, así que V_CONSTRUCCION/m2 no se puede calcular. Brecha y clasificación pasan a C4 («coste en nivel supuesto»); la ficha M3-V1 se apoya solo en solares y suelo.
+
+## M4: parque frente a mercado (subagente)
+- Descargas (src/v4/m4_fetch.py → data/raw/v4): INE Censo 2021 tenencia (59523 nacional y provincias; 59529 municipios grandes) y ETDP 50256/50272 (compraventas de vivienda por tipo de transmitente y titular).
+- «6 grandes ciudades + València» = Madrid, Barcelona, València, Sevilla, Zaragoza, Málaga y Bilbao (siete municipios).
+- Comprador persona jurídica (ETDP) = física→jurídica + jurídica→jurídica. Fuente única → C4. Sin dato de stock por titular → la comparación stock/flujos no se puede hacer; M4-V2 queda NO ANALIZADA: FALTAN DATOS.
+- Costa e islas: lista de provincias con litoral más Balears y Canarias (Ceuta y Melilla fuera). Supuesto del analista.
+- Vacías y esporádicas (consumo eléctrico, INE) son fuente única → C4; turísticas (INE y registro GVA, que discrepan) → C1. Ficha M4-V3 RESPALDADA solo en sentido relativo.
+- Airbnb solo robustez: anuncios no son viviendas.

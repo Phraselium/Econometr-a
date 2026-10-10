@@ -95,6 +95,8 @@
  "p_ajustado": null,
  "nivel_evidencia": "DESCRIPTIVO",
  "diagnosticos": {
+  "corr_prov_mivau_registradores_2023_25": 0.9893779251674211,
+  "dif_media_registradores_menos_mivau_pp": -3.5882289814407375,
   "cuadre_etdp_suma_cuatro": 100.0,
   "cobertura_registradores_ccaa_min": 0.9859568345323741,
   "vut_ine_vs_gva": [

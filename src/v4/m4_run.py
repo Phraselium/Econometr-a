@@ -552,7 +552,7 @@ def fichas(h, ev, pjt, pv, zz):
                        "output/v4/M4/tablas/tenencia_censo2021.csv", "output/v4/M4/tablas/flujo_alquiler_incasol_contratos.csv"]},
         {"id": "M4-V3", "tema": "Viviendas vacías, de uso esporádico y turísticas",
          "enunciado": "Hay muchas viviendas vacías o de uso esporádico frente a las turísticas.",
-         "capa": "C1 (turísticas) / C4 (vacías y esporádicas: fuente única)",
+         "capa": "C4",
          "magnitud": (f"España: {miles(s['vacias_consumo'])} vacías ({f1(s['pct_vacias'])} % del parque) y "
                       f"{miles(s['uso_esporadico_consumo'])} de uso esporádico ({f1(s['pct_esporadico'])} %) en el Censo 2021 "
                       f"(método de consumo eléctrico); {miles(s['turisticas_ine_2026M05'])} turísticas en mayo de 2026 "

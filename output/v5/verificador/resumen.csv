@@ -1,0 +1,34 @@
+id,tema,enunciado,veredicto,capa
+V02,Grandes tenedores,Los fondos de inversión y los grandes tenedores son los responsables de la subida de precios y alquileres.,NO ANALIZADA: FALTAN DATOS,C4
+V05,Déficit,Faltan cientos de miles de viviendas en España.,PARCIALMENTE,C1
+V06,Topes de alquiler,Los topes al precio del alquiler bajan los alquileres.,"ANALIZADA, NO CONCLUYENTE",C4
+V07,Topes de alquiler,Los topes al precio del alquiler reducen la oferta de vivienda en alquiler.,"ANALIZADA, NO CONCLUYENTE",C4
+V08,Viviendas vacías,Hay millones de viviendas vacías que se podrían movilizar para resolver el problema.,"ANALIZADA, NO CONCLUYENTE",C4
+V10,Fiscalidad,Bajar el ITP o el IVA de la vivienda la abarataría para los compradores.,NO ANALIZADA: FALTAN DATOS,C4
+V11,Vivienda pública,Construir vivienda pública resolvería el problema de la vivienda.,PARCIALMENTE,C2
+M3-V1,Suelo disponible,Hay suelo de sobra para construir.,"ANALIZADA, NO CONCLUYENTE",C4
+M4-V3,"Viviendas vacías, de uso esporádico y turísticas",Hay muchas viviendas vacías o de uso esporádico frente a las turísticas.,"ANALIZADA, NO CONCLUYENTE",C4
+M5-V2,Geografía del déficit,Faltan viviendas en toda España.,"ANALIZADA, NO CONCLUYENTE",C4
+M5-V3,Demografía,Los hogares crecen por la inmigración.,"ANALIZADA, NO CONCLUYENTE",C4
+M5-V4,Compras de no residentes,Limitar las compras de no residentes bajaría los precios de la vivienda.,"ANALIZADA, NO CONCLUYENTE",C4
+M5-V5,Fiscalidad de la construcción,Bajar los impuestos a la construcción abarataría la vivienda.,NO ANALIZADA: FALTAN DATOS,C4
+A23-V1,Alquiler,El alquiler se ha duplicado (variante stock: renta de los contratos vigentes).,CONTRADICHA,C1
+A23-V2,Alquiler,El alquiler se ha duplicado (variante contratos nuevos: renta de quien firma ahora).,"ANALIZADA, NO CONCLUYENTE",C4
+B1-V1,Necesidad de vivienda,Hacen falta X viviendas al año en España.,"ANALIZADA, NO CONCLUYENTE",C4
+B1-V2,Envejecimiento,La vivienda que dejan los mayores resolverá el problema de la vivienda.,"ANALIZADA, NO CONCLUYENTE",C4
+B2-V1,Cierre del déficit,Al ritmo actual el déficit se cerrará en pocos años.,"ANALIZADA, NO CONCLUYENTE",C4
+B4-V1,Inmigración,La subida se debe sobre todo a la inmigración.,"ANALIZADA, NO CONCLUYENTE",C4
+B4-V2,Turismo,La subida se debe a los pisos turísticos.,"ANALIZADA, NO CONCLUYENTE",C4
+B4-V3,Oferta,La subida se debe a la falta de oferta.,"ANALIZADA, NO CONCLUYENTE",C4
+B4-V4,Financiación,La subida se debe a los tipos de interés bajos.,"ANALIZADA, NO CONCLUYENTE",C4
+CA-V1,Comparación europea,La vivienda en España es más cara que en Europa.,"ANALIZADA, NO CONCLUYENTE",C4
+CA-V2,Crédito a promotores,La falta de crédito a promotores frena la oferta de vivienda.,"ANALIZADA, NO CONCLUYENTE",C4
+CA-V3,Forma de pago,La mayoría compra al contado.,"ANALIZADA, NO CONCLUYENTE",C4
+CB-V1,Seguridad juridica y oferta,La ocupacion ilegal reduce la oferta de alquiler.,"ANALIZADA, NO CONCLUYENTE",C4
+CB-V2,Arrendadores,La mayoria de los caseros son pequenos propietarios.,"ANALIZADA, NO CONCLUYENTE",C4
+CB-V3,Empresas en el alquiler,Las empresas y fondos dominan el alquiler.,"ANALIZADA, NO CONCLUYENTE",C4
+CC-V1,Desigualdad y ayuda familiar,Sin ayuda familiar los jóvenes no pueden comprar vivienda.,"ANALIZADA, NO CONCLUYENTE",C4
+CC-V2,Vivienda protegida,Las viviendas protegidas se pierden por descalificación y el parque protegido se erosiona.,"ANALIZADA, NO CONCLUYENTE",C4
+D1-V1,Ayudas a la demanda,Las ayudas a los jóvenes para comprar o alquilar abaratan su acceso a la vivienda.,PARCIALMENTE,C2
+R1A-V1,Compradores extranjeros y precio por provincia,Los compradores extranjeros encarecen la vivienda.,"ANALIZADA, NO CONCLUYENTE",C4
+R1B-V1,Burbuja de precios (revisión con tamaño corregido y fundamentales),Hay una burbuja en el precio de la vivienda en España.,"ANALIZADA, NO CONCLUYENTE",C4

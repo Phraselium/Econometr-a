@@ -1,0 +1,17 @@
+{
+ "id": "B4-V3",
+ "tema": "Oferta",
+ "enunciado": "La subida se debe a la falta de oferta.",
+ "capa": "C4",
+ "magnitud": "B3: la brecha de oferta (F4) es la familia con mayor cuota de R2 entre provincias (23-29 %), pero se mide en 2021-2025 con precios y puede ser en parte mecánica. v2: la componente contable de la oferta contemporánea (terminadas) es de -0,02 a 0,10 pp, con IC que incluye 0. Las clases de A4 son C4 (regla B5).",
+ "intervalo": "B3 23-29 % del R2; v2 -0,02 a 0,10 pp",
+ "cota": "C4 (no hay cota de oferta con supuestos explícitos en esta tabla)",
+ "literatura": "No aplica.",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Los dos métodos discrepan (orden primero en B3, nulo en v2) y ninguno es C3; se reportan ambos.",
+ "limites": "Medición distinta en cada método (stock de déficit frente a flujo de terminadas); sin respuesta de la oferta identificada.",
+ "evidencia": [
+  "output/v5/B4/tabla_contribuciones_larga.csv",
+  "output/v5/B4/estabilidad.csv"
+ ]
+}

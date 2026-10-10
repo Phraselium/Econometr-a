@@ -1,0 +1,15 @@
+{
+ "id": "V10",
+ "tema": "Fiscalidad",
+ "enunciado": "Bajar el ITP o el IVA de la vivienda la abarataría para los compradores.",
+ "capa": "C4",
+ "magnitud": "Sin diseño propio; la incidencia depende de la elasticidad de la oferta (no estimada aquí).",
+ "intervalo": "n/d",
+ "cota": "—",
+ "literatura": "Sin trabajo de incidencia verificado incorporado.",
+ "veredicto": "NO ANALIZADA: FALTAN DATOS",
+ "regla": "La incidencia depende de la elasticidad de la oferta: si fuera baja, parte de la rebaja podría trasladarse al precio; sin estimación no se puede cuantificar ni fijar su signo neto para el comprador. v4: Falta una serie armonizada de tipos de ITP/IVA por CCAA y fecha con precios a escala fina; el diseño de diferencias no se realizó.",
+ "limites": "Los cambios autonómicos del ITP permitirían un diseño de diferencias (no realizado).",
+ "evidencia": [],
+ "veredicto_v3": "SIN EVIDENCIA SUFICIENTE"
+}

@@ -1,0 +1,17 @@
+{
+ "id": "CC-V2",
+ "tema": "Vivienda protegida",
+ "enunciado": "Las viviendas protegidas se pierden por descalificación y el parque protegido se erosiona.",
+ "capa": "C4",
+ "magnitud": "Escenarios ilustrativos (plazo de 30 años salvo excepciones; no recorren el supuesto de 15-30 años): salidas 2026-2035 de 532040 (bajo) a 669394 (alto) viviendas, base 594890, frente a 11265 calificaciones nuevas al año de media en los últimos 5 años (2021-2025).",
+ "intervalo": "0-669394 viviendas (cota inferior lógica 0 si el régimen fuese permanente)",
+ "cota": "Sin cota C2: los escenarios no recorren todo el supuesto de plazos (15-30 años) y las descalificaciones efectivas no se observan",
+ "literatura": "NO VERIFICADA (el texto introductorio del RD 326/2026 afirma la dinámica de descalificación; no hay contraste independiente)",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Regla B4: con capa C4 el máximo es ANALIZADA, NO CONCLUYENTE. Los escenarios ilustran la salida por fin de plazo con supuestos; la descalificación efectiva no se observa.",
+ "limites": "Los plazos autonómicos no se han recogido; las salidas son por fin de plazo, no descalificaciones observadas.",
+ "evidencia": [
+  "output/v5/CC/tablas/salidas_nacional_2026_2035.csv",
+  "output/v5/CC/tablas/plazos_planes.csv"
+ ]
+}

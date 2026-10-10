@@ -1,0 +1,16 @@
+{
+ "id": "B1-V2",
+ "tema": "Envejecimiento",
+ "enunciado": "La vivienda que dejan los mayores resolverá el problema de la vivienda.",
+ "capa": "C4",
+ "magnitud": "Viviendas liberadas por disolución de hogares de 75+ en 2026-2035: 141526/año central (rango 80198-217007); equivalen al 66% de la necesidad anual central; 97% de ellas en provincias con presión (A4 clase 1-2). Ya están descontadas en el crecimiento neto de hogares del INE, así que no suman a la oferta adicional.",
+ "intervalo": "80198 a 217007 viviendas/año (C4)",
+ "cota": "—",
+ "literatura": "—",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "L es C4 (tasa de jefatura 75+ sin dato propio, traslados a residencias sin dato, destino de la vivienda liberada -venta, alquiler, herencia, uso esporádico- sin dato). Los hechos acotan el orden de magnitud, no el veredicto.",
+ "limites": "Sin Censo 2021 por edad del jefe; mortalidad de 2024 constante (sesgo al alza de la liberación).",
+ "evidencia": [
+  "output/v5/B1/tablas/B1_envejecimiento.csv"
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "id": "M5-V4",
+ "tema": "Compras de no residentes",
+ "enunciado": "Limitar las compras de no residentes bajaría los precios de la vivienda.",
+ "capa": "C4",
+ "magnitud": "Compradores extranjeros no residentes ≈7 % de las compraventas en 2025 (MIVAU), concentrados en costa e islas (C4). Sin diseño sobre el precio.",
+ "intervalo": "≈7 % de las compraventas",
+ "cota": "—",
+ "literatura": "—",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Hay un peso descriptivo (C4), pero ningún diseño ni cota sobre el precio.",
+ "limites": "Fuentes no independientes (MIVAU y Notariado).",
+ "evidencia": [
+  "output/v4/M4/hechos.json"
+ ]
+}

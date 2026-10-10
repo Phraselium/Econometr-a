@@ -1,0 +1,18 @@
+{
+ "id": "R1B-V1",
+ "tema": "Burbuja de precios (revisión con tamaño corregido y fundamentales)",
+ "enunciado": "Hay una burbuja en el precio de la vivienda en España.",
+ "capa": "C4",
+ "magnitud": "Con valores críticos por bootstrap de AR(p) estimado (tamaño comprobado: 4.0 % con phi=0,5 frente a 15.0 % con vc iid), el cociente precio/alquiler muestra exuberancia sin ajustar (p<0,05) en 2 de 2 medidas nacionales, pero ninguna sobrevive a BH en la familia de 8 cocientes (BH 0.080-0.096); episodios fechados sin ajuste múltiple (ninguno sobrevive a BH): 2024Q4-2026Q2; 2025Q1-2026Q2. Precio frente a valor de descuento del alquiler con tipos (prima de 3 pp; sensibilidad 2 y 4 pp) y frente a la cuota hipotecaria constante sobre renta: sin exuberancia (p 0.60-0.95). CCAA con exuberancia tras BH: 7 de 34 series (M7 con vc iid: 29 de 34 con p<0,05 sin ajuste; con vc corregidos: 19).",
+ "intervalo": "—",
+ "cota": "—",
+ "literatura": "Phillips, Shi y Yu (2015), GSADF: NO VERIFICADA (DOI y cuartil no comprobados sin red).",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Una exuberancia estadística no es una burbuja: el test detecta crecimiento explosivo de una serie o de un cociente, no la causa (renta, tipos, oferta, expectativas) ni la sobrevaloración. Con capa C4 el veredicto no puede ser RESPALDADA ni CONTRADICHA. Los cocientes frente a fundamentales con tipos no muestran exuberancia, lo que no equivale a ausencia de sobrevaloración: el valor fundamental usado es una referencia simple con supuestos propios.",
+ "limites": "Muestra 2007Q1-2026Q2 (T=78) corta para el ciclo; ADF con un rezago; el valor de descuento fija g=2 % y una prima de 3 pp (sensibilidad 2 y 4 pp) y usa el tipo medio de nuevas hipotecas ; renta del hogar nacional; sin renta por CCAA; el tamaño con bootstrap queda en 2-4 % (por debajo del nominal) con R=200.",
+ "evidencia": [
+  "output/v5/R1B/tablas/gsadf_corregido.csv",
+  "output/v5/R1B/tablas/gsadf_tamano.json",
+  "output/v4/M7/tablas/gsadf_resultados.csv"
+ ]
+}

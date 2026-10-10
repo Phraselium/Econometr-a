@@ -45,6 +45,7 @@ check:
 verificador:
 	@if [ -f src/v3/verificador.py ]; then $(PY) src/v3/verificador.py; fi
 	@if [ -f src/v4/verificador.py ]; then $(PY) src/v4/verificador.py; fi
+	@if [ -f src/v5/verificador.py ]; then $(PY) src/v5/verificador.py; fi
 
 distclean:
 	rm -rf data/processed/* output/*

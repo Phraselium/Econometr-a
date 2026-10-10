@@ -1,0 +1,17 @@
+{
+ "id": "B4-V1",
+ "tema": "Inmigración",
+ "enunciado": "La subida se debe sobre todo a la inmigración.",
+ "capa": "C4",
+ "magnitud": "Cota C2 de cantidad: la población extranjera supone como máximo el 45,2 % de la creación de hogares en 2014-2019 (174.410 viviendas) y no informa en 2020-2025 (100 %). Precio: condicional a |ε_d|=0,33, ≤2,1 % (2014-2019) y ≤19,0 % (2020-2025) (C4). v2: la componente demográfica de la descomposición contable es de -3,0 a -4,1 pp al alquiler en 2014-2019 y signo opuesto según modelo en compra 2020-2024 (M1 +1,2; M2 -5,3 pp reales). B3: demografía segunda por cuota de R2 (21-26 %), con p de Holm 0,41 para F2.",
+ "intervalo": "Cuota de R2 entre provincias 21-26 %; contribución v2 sin signo estable",
+ "cota": "C2 solo la cantidad; magnitud sobre precio C4",
+ "literatura": "No aplica.",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "La traducción a precio solo es C4 (ε sin estimación verificada, fuente única de población); sin C3 no se puede afirmar ni negar el papel principal.",
+ "limites": "La asociación transversal y la contribución temporal discrepan en signo y orden; sin identificación causal.",
+ "evidencia": [
+  "output/v5/B4/tabla_contribuciones_larga.csv",
+  "output/v5/B4/estabilidad.csv"
+ ]
+}

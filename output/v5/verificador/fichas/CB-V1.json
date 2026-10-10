@@ -1,0 +1,17 @@
+{
+ "id": "CB-V1",
+ "tema": "Seguridad juridica y oferta",
+ "enunciado": "La ocupacion ilegal reduce la oferta de alquiler.",
+ "capa": "C4",
+ "magnitud": "N=17 CCAA; Spearman usurpacion/100.000 viv. con cuota de alquiler: rho=0.66 (p Holm 0.0378); verbales posesorios con cuota: rho=0.61 (p Holm 0.0525). Las especificaciones sobre variaciones 2021-2025 y sobre lanzamientos por LAU no son significativas (registro.csv). El signo es positivo (mas usurpaciones donde hay mas alquiler), contrario al de la afirmacion; es compatible con que ambas magnitudes crecen con la urbanizacion. Sin diseno que identifique un efecto.",
+ "intervalo": null,
+ "cota": "Sin cota (C4)",
+ "literatura": "No consultada en este modulo",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Con C4 y sin identificacion, como maximo ANALIZADA, NO CONCLUYENTE.",
+ "limites": "Una asociacion entre CCAA no distingue oferta, demanda ni composicion; el denominador (viviendas) y el numerador (denuncias) dependen del tamano del parque; el delito de usurpacion incluye inmuebles que no son vivienda; fianzas por CCAA no disponibles.",
+ "evidencia": "CGPJ 1T 2026; Interior 2025; INE Censo 2021 y ECV 2025; tablas en output/v5/CB/tablas",
+ "convenciones": {
+  "(nota)": "Cifras con fecha del dato; sin lenguaje causal"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "id": "V05",
+ "tema": "Déficit",
+ "enunciado": "Faltan cientos de miles de viviendas en España.",
+ "capa": "C1",
+ "magnitud": "2021-2025: 701.187 viviendas; rango entre fuentes [559.752; 969.059]. 2012-2021: signo no determinado ([-1.015.321; 689.037]). v4 (M0): déficit 2021-2024 sin bajas = [562.692; 688.692] viviendas (C1: todos los componentes medidos con dos fuentes); con bajas supuestas del 0,1-0,2 % anual, hasta 902.808 (C2). La cifra 2021-2025 de v3 queda en C4 porque las terminadas de 2025 son frágiles.",
+ "intervalo": "[559.752; 969.059] viviendas",
+ "cota": "—",
+ "literatura": "Banco de España, Informe Anual 2025 (NO VERIFICADA: DOI no comprobado): ≈750 mil, dentro del rango.",
+ "veredicto": "PARCIALMENTE",
+ "regla": "Criterio de periodo común a todas las fichas: una afirmación sin periodo se juzga en todas las ventanas C1 disponibles. Respaldada en 2021-2025 (todas las combinaciones dan cientos de miles, C1) y no determinada con 2012 como base: PARCIALMENTE. Las ventanas C1 se eligieron tras ver la disponibilidad de fuentes (docs/v3/limitaciones.md, 7).",
+ "limites": "Depende del periodo de partida: con 2012 como base el signo no está determinado. «Faltan» se refiere al balance contable, no a una necesidad normativa.",
+ "evidencia": [
+  "output/v3/PA/hechos.json#A1_nacional_2021-2025"
+ ]
+}

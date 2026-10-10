@@ -1,0 +1,17 @@
+{
+ "id": "CA-V2",
+ "tema": "Crédito a promotores",
+ "enunciado": "La falta de crédito a promotores frena la oferta de vivienda.",
+ "capa": "C4",
+ "magnitud": "El saldo de crédito a construcción y actividades inmobiliarias pasó de 470 mil millones de euros (máximo, 2008) a 98 en 2025. De 36 pruebas (retardos de 0 a 8 trimestres, 4 regresores) con Holm, 1 resulta distinta de cero: g_inmobiliarias retardo 8 (rho -0.56); el signo es negativo (asociación descriptiva únicamente). Fuera de muestra, el modelo con crédito no mejora a AR(4) (DM-HLN p = 0.57).",
+ "intervalo": "—",
+ "cota": "—",
+ "literatura": "—",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Relación descriptiva entre variaciones interanuales, sin interpretación de efecto. El saldo no es nuevas operaciones (no disponibles por finalidad en el Boletín).",
+ "limites": "Variaciones interanuales solapadas (HAC 8); iniciadas libres, no protegidas; la EPB de España trae criterios de empresas desde 2003 y de vivienda desde 2022.",
+ "evidencia": [
+  "output/v5/CA/tablas/credito_iniciadas_retardos.csv",
+  "output/v5/CA/tablas/credito_iniciadas_anual.csv"
+ ]
+}

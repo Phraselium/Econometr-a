@@ -1,0 +1,17 @@
+{
+ "id": "CA-V3",
+ "tema": "Forma de pago",
+ "enunciado": "La mayoría compra al contado.",
+ "capa": "C4",
+ "magnitud": "En 2025, el INE registra 70.0 hipotecas sobre vivienda por cada 100 compraventas de vivienda; Registradores da 70.7 (diferencia máxima 1.9 pp en 2022-2025). Si todas las hipotecas financiaran compras, el contado sería al menos el 30 %; la mayoría al contado exige que menos del 71 % de las hipotecas sobre vivienda financie una compra, fracción no observada.",
+ "intervalo": "contado 30 % (phi = 1) a 58 % (phi = 0,6)",
+ "cota": "C2-like: contado = 100 - phi x razón; supuesto sobre phi declarado, no estimado",
+ "literatura": "—",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "La razón hipotecas/compraventas es un hecho coherente en dos fuentes (ambas de origen registral); el porcentaje al contado depende de qué parte de las hipotecas no es de compra. La demanda inversora no equivale al contado: un inversor puede financiarse con hipoteca y un comprador residente puede pagar al contado.",
+ "limites": "Notariado (porcentaje de compras financiadas) sin dato accesible; Registradores solo 2022-2025 (texto de los Anuarios ERI). No distingue comprador residente de inversor.",
+ "evidencia": [
+  "output/v5/CA/tablas/contado_ratio_hipotecas_compraventas.csv",
+  "output/v5/CA/tablas/contado_sensibilidad_phi.csv"
+ ]
+}

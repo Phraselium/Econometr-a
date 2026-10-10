@@ -1,0 +1,17 @@
+{
+ "id": "B4-V2",
+ "tema": "Turismo",
+ "enunciado": "La subida se debe a los pisos turísticos.",
+ "capa": "C4",
+ "magnitud": "Cota C2: como máximo el 2,4-2,7 % del stock de alquiler (hasta 81.771 viviendas), 2020M08-2024M08, suponiendo sustitución 1:1. En precio de alquiler, condicional a |ε_d| (1,0-0,33): ≤2,7-8,3 % frente a un alquiler de stock que sube 10,9-22,9 % en 2015-2024 (IPC, IPVA). v2 (2021T3-2024T1, solo M1): +0,02 pp [-0,06; 0,09] de 2,26 pp. B3: VUT sin coeficiente distinguible de 0 en precio. Concentración local: hasta 8,9 % del stock en Málaga capital (cota C2).",
+ "intervalo": "Cantidad 2,4-2,7 % del stock (C2); precio ≤2,7-8,3 % (C4, condicional)",
+ "cota": "C2 de cantidad; C4 de precio",
+ "literatura": "No aplica.",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "La cota de cantidad (C2) limita el desplazamiento nacional, pero la traducción a precio depende de una elasticidad no verificada (C4): no se llega a un veredicto sobre «se debe». El alcance es nacional; en ciudades concretas la cota es mayor.",
+ "limites": "VUT del INE es estadística experimental; sin series de alquiler turístico/de temporada (BK-014 sin analizar); no residentes: con controles la asociación no se distingue de cero (R1A, C4).",
+ "evidencia": [
+  "output/v5/B4/tabla_contribuciones_larga.csv",
+  "output/v5/B4/estabilidad.csv"
+ ]
+}

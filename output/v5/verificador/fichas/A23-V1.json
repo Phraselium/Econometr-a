@@ -1,0 +1,21 @@
+{
+ "id": "A23-V1",
+ "variante": "stock de contratos",
+ "tema": "Alquiler",
+ "enunciado": "El alquiler se ha duplicado (variante stock: renta de los contratos vigentes).",
+ "capa": "C1",
+ "periodo": "2015-2025 (IPC alquiler) y 2015-2024 (SERPAVI, IPVA)",
+ "fuente": "INE IPC alquiler; MIVAU-SERPAVI (AEAT-IRPF); INE IPVA",
+ "magnitud": "Stock 2015-2025: IPC alquiler +13.6 %. 2015-2024: IPC alquiler +10.9 %, IPVA contratos existentes +20.6 %, IPVA total +22.9 %, SERPAVI (composición constante) +43.0 %. Ninguna fuente llega a +100 %.",
+ "intervalo": "[10.9; 43.0] % (núcleo IPC/IPVA: 10.9-22.9 %; SERPAVI discrepante)",
+ "cota": "Cuantía C1 en el núcleo (IPC alquiler, grupo INE; IPVA, grupo AEAT); SERPAVI comparte fuente (AEAT) con el IPVA y queda fuera del núcleo; se reportan ambos.",
+ "literatura": "No aplica.",
+ "veredicto": "CONTRADICHA",
+ "regla": "Duplicarse exige +100 %; el stock mide las mismas viviendas o contratos vigentes y todas las medidas quedan por debajo.",
+ "limites": "El stock sube menos que la renta de quien busca piso (ver variante contratos nuevos). Sin fianzas de Madrid, Euskadi ni Baleares (sin dato abierto localizado, docs/v5/fuentes_fallidas.md); IPVA nuevo contrato solo 2021-2024 (2015=100 supuesto, coherente con el total); portales (Idealista, Fotocasa) fuera de la ficha (C4, sin cifra verificada); medias no excluyen municipios concretos con subidas mayores.",
+ "evidencia": [
+  "output/v5/A23/tablas/alquiler_series_nacional_cataluna.csv",
+  "output/v5/A23/tablas/ipva_cuota_implicita.csv"
+ ],
+ "fecha_dato": "IPC 2025T4; SERPAVI e IPVA 2024"
+}

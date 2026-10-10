@@ -1,0 +1,17 @@
+{
+ "id": "CC-V1",
+ "tema": "Desigualdad y ayuda familiar",
+ "enunciado": "Sin ayuda familiar los jóvenes no pueden comprar vivienda.",
+ "capa": "C4",
+ "magnitud": "No medible con los datos accesibles: la EFF publicada en el repositorio no recoge herencia, donación ni ayuda para la entrada. Contexto descriptivo: 30,6 % de los hogares de 16-29 años están en propiedad (34,2 % en 2015), de ellos 14,1 puntos sin hipoteca (la ECV no distingue su origen).",
+ "intervalo": "n/d",
+ "cota": "n/d",
+ "literatura": "NO VERIFICADA (no se consultó literatura en este módulo)",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Con capa C4 el máximo es «ANALIZADA, NO CONCLUYENTE»; la afirmación exige un contrafactual (compra sin ayuda) que ningún dato accesible identifica.",
+ "limites": "Propiedad sin hipoteca no equivale a herencia o donación. Sin cuadro EFF de ayuda familiar. ECV y Eurostat no son fuentes independientes.",
+ "evidencia": [
+  "output/v5/CC/tablas/ecv_tenencia_16_29.csv",
+  "output/v5/CC/tablas/sobrecarga_quintil_tenencia_2015_ultimo.csv"
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "id": "B4-V4",
+ "tema": "Financiación",
+ "enunciado": "La subida se debe a los tipos de interés bajos.",
+ "capa": "C4",
+ "magnitud": "v3 PB: la caída del coste de uso es compatible como máximo con +23,5 a +78,0 % (Δln 1/uc) en 2014-2021 frente a +12,7 % de precio tasado; en 2021-2025 los tipos suben y el precio también (+25,0 %): signo contrario. v2: financiación y tipos +1,9 a +2,3 pp en compra real (M1) y ≈0 (M2): discrepan. En alquiler, la componente de los tipos se fija en 0 por supuesto. B3: hipotecas por 1.000 habitantes sin asociación distinguible (8,9-13,6 % del R2).",
+ "intervalo": "v2 compra -0,00 a 2,27 pp según modelo; cota v3 23-78 % (C4)",
+ "cota": "C4",
+ "literatura": "No aplica.",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Los métodos discrepan y la componente común de los tipos nacionales queda en el componente común de v2 (tiempo), no atribuible por provincia; sin C3 no se concluye.",
+ "limites": "Los tipos nacionales no varían entre provincias: v2 y B3 no los identifican; la cota v3 es condicional a supuestos de coste de uso.",
+ "evidencia": [
+  "output/v5/B4/tabla_contribuciones_larga.csv",
+  "output/v5/B4/estabilidad.csv"
+ ]
+}

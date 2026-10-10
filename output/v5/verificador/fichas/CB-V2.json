@@ -1,0 +1,17 @@
+{
+ "id": "CB-V2",
+ "tema": "Arrendadores",
+ "enunciado": "La mayoria de los caseros son pequenos propietarios.",
+ "capa": "C4",
+ "magnitud": "Personas fisicas declaran 2.333.816 viviendas equivalentes arrendadas como vivienda habitual (IRPF 2024); el residual PJ+publico+no declarado es 16.9-38.1 % del stock; 0.81 viviendas equivalentes por declarante con ingresos de capital inmobiliario.",
+ "intervalo": null,
+ "cota": "Sin cota (C4)",
+ "literatura": "No consultada en este modulo",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Falta la distribucion por numero de inmuebles (1, 2-4, >=5): la AEAT no la publica; el promedio no la sustituye. Los datos acotan el peso de las personas juridicas, no el tamano de las carteras de las personas fisicas.",
+ "limites": "Fechas distintas entre fuentes; Navarra y Pais Vasco fuera de la AEAT; copropiedad cuenta como declarantes separados.",
+ "evidencia": "AEAT IRPF 2024; INE Censo 2021, ECV 2025, ECH 2025T4",
+ "convenciones": {
+  "(nota)": "Cifras con fecha del dato; sin lenguaje causal"
+ }
+}

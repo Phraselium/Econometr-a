@@ -1,0 +1,19 @@
+{
+ "id": "V07",
+ "tema": "Topes de alquiler",
+ "enunciado": "Los topes al precio del alquiler reducen la oferta de vivienda en alquiler.",
+ "capa": "C4",
+ "magnitud": "Principal (Callaway-Sant'Anna, fianzas Incasòl, número de contratos nuevos): -4,9 % [-9,9; 0,5] (p 0,073). Validación sellada por fuente (SERPAVI, stock): -4,36 % [-6,37; -2,30], p_Holm 0,000. Estimadores alternativos y réplica de JMS (objetivo −0,3 % en contratos): R1 JMS 3,0 % [-0,9; 7,0] (PARCIAL); R2 JMS -2,0 % [-8,3; 4,2] (PARCIAL). Multiverso: 81 % mismo signo, 0 % significativas. Capa C4 (falla: a, b, c).",
+ "intervalo": "[-9,9; 0,5] % (principal)",
+ "cota": "—",
+ "literatura": "Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE, VERIFICADA, Q1; Diamond, McQuade y Qian (2019), AER, VERIFICADA, Q1 (calibración, San Francisco).",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "RESPALDADA solo con C3 robusto; con capa C4 el veredicto es SIN EVIDENCIA SUFICIENTE aunque las estimaciones C4 apunten en una dirección (no se promueve de capa). v4: H3-3b analizada: C4 (fallan pretendencias, placebo de fecha y sensibilidad); mismas salvedades de contaminación que V06.",
+ "limites": "Un solo episodio (Cataluña, 2020Q4-2022Q1). La validación por fuente mide un stock (SERPAVI) en los mismos municipios: no es independiente y su magnitud es menor que la principal.",
+ "evidencia": [
+  "output/v3/C3/resultado.json",
+  "output/v3/C3/tabla_replicacion_jms.csv",
+  "output/v3/holm_v3.csv"
+ ],
+ "veredicto_v3": "SIN EVIDENCIA SUFICIENTE"
+}

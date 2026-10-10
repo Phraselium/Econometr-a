@@ -1,0 +1,17 @@
+{
+ "id": "CB-V3",
+ "tema": "Empresas en el alquiler",
+ "enunciado": "Las empresas y fondos dominan el alquiler.",
+ "capa": "C4",
+ "magnitud": "Flujo de compra con comprador PJ: 11.3 % de compraventas (ETDP 2024). Stock: el residual PJ+publico+no declarado del alquiler principal es 16.9 % (stock del Censo 2021) y 38.1 % (stock ECV 2025); los dos métodos discrepan y se dan ambos. Es una cota superior del peso de las empresas bajo esos supuestos.",
+ "intervalo": null,
+ "cota": "Sin cota (C4)",
+ "literatura": "No consultada en este modulo",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Bajo los supuestos declarados, ninguna de las dos estimaciones del residual alcanza el 50 % del stock de vivienda principal en alquiler; ambas son C4 (fechas distintas, fuente unica del Censo, discrepancia entre ellas) y no miden el peso por zonas ni por tamano de cartera.",
+ "limites": "No se localizo Catastro por naturaleza del titular, Notariado ni Censo por tipo de arrendador; concentracion local (grandes ciudades) no medida.",
+ "evidencia": "INE ETDP 2024; AEAT 2024; INE Censo 2021; INE ECV 2025",
+ "convenciones": {
+  "(nota)": "Cifras con fecha del dato; sin lenguaje causal"
+ }
+}

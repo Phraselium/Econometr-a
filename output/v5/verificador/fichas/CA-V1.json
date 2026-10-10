@@ -1,0 +1,17 @@
+{
+ "id": "CA-V1",
+ "tema": "Comparación europea",
+ "enunciado": "La vivienda en España es más cara que en Europa.",
+ "capa": "C4",
+ "magnitud": "Crecimiento (real, 2015-2025): precio +42.6 % en España frente a una mediana UE-27 de +37.4 % (percentil 65, dentro del rango intercuartílico 16.9 a 60.9); alquiler real -10.3 % frente a -3.0 % (percentil 22, bajo). Nivel: Eurostat no publica un precio por m² comparable; como aproximación, la sobrecarga de coste de vivienda es 7.2 % de la población (2025) frente a una mediana de 6.1 % (percentil 74, dentro). Sostenidamente fuera del rango (5 años): emancipacion|nivel, propiedad|cambio_desde_2015, alquiler_mercado|cambio_desde_2015; (3 años): emancipacion|nivel, emancipacion|cambio_desde_2015, propiedad|cambio_desde_2015, alquiler_mercado|cambio_desde_2015, crec_pob|nivel, migr_neta|nivel.",
+ "intervalo": "percentil de España en el precio real: 65; en la sobrecarga: 74",
+ "cota": "—",
+ "literatura": "—",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Variante de nivel: no contrastable con un precio comparable (el HPI es un índice, no un nivel); las aproximaciones de asequibilidad no sitúan a España fuera del rango intercuartílico. Variante de crecimiento: el precio real acumulado desde 2015 queda dentro del rango; el alquiler real queda por debajo de la mediana. Capa C4: el dato del resto de países es de fuente única (Eurostat) y el de España procede del INE.",
+ "limites": "Comparación entre índices con base 2015; deflactor IPCA general; Eurostat toma los datos de España del INE (coherencia, no independencia). Países sin dato en el año omitidos.",
+ "evidencia": [
+  "output/v5/CA/tablas/europa_posicion_es.csv",
+  "output/v5/CA/tablas/europa_contraste_nacional.csv"
+ ]
+}

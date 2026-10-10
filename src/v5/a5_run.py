@@ -23,6 +23,8 @@ RAW = ROOT / "data/raw/v5/programas"
 OUT = ROOT / "output/v5/A5"
 DOCS = ROOT / "docs/v5/programas"
 CTX = re.compile(V + r"|alquiler|lloguer|aluguer|hipotec|arrend|suelo|sol\b|habitac")
+# Se enmascara el nombre propio de la ley de suelo (contiene "rehabilitacion"/"suelo") para no generar coincidencias de I11/I13 por el rotulo.
+MASK = re.compile(r"ley del? suelo y rehabilitacion urbana")
 SENT_END = re.compile(r"[.;!?•]\s")
 
 
@@ -91,7 +93,7 @@ def main():
         nw = sum(len(x.split()) for x in pg)
         estado[d["doc_id"]] = (metodo, len(pg), nw)
         for pno, raw in enumerate(pg, 1):
-            n = norm(raw)
+            n = MASK.sub(lambda m: " " * len(m.group()), norm(raw))
             for ins, rxs in comp.items():
                 seen = set()
                 for rx in rxs:

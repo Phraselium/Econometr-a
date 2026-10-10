@@ -84,7 +84,8 @@ def recuentos() -> list[str]:
     err = []
     for x in rec.itertuples():
         sub = of[of.instrumento == x.instrumento]
-        nf = sub[sub.direccion.astype(str).str.startswith("a favor")].doc_id.nunique()
+        normas = set(str(x.normas_con_coincidencia).split(";")) if "normas_con_coincidencia" in rec else set()
+        nf = sub[sub.direccion.astype(str).str.startswith("a favor") & ~sub.doc_id.isin(normas)].doc_id.nunique()
         if nf != x.n_documentos_a_favor:
             err.append(f"A5: {x.instrumento}: recuento a favor {x.n_documentos_a_favor} ≠ {nf} documentos oficiales")
     return err

@@ -102,6 +102,8 @@ def main():
                 row["fecha_descarga"] = old.get(did, {}).get("fecha_descarga", today)
             if p.exists() and p.read_bytes()[:4] == b"%PDF":
                 row["sha256"] = sha(p)
+                row["estado_texto"] = ("texto extraible (pdftotext); resumen: cota" if "resumen" in tipo
+                                       else "texto extraible (pdftotext): busqueda sistematica")
                 out = subprocess.run(["pdfinfo", str(p)], capture_output=True, text=True).stdout
                 row["paginas"] = next((ln.split()[1] for ln in out.splitlines() if ln.startswith("Pages")), "")
             else:

@@ -60,3 +60,18 @@
   - 2021-2024: 6 y 17.
   - La suma provincial es igual a la nacional (700.934 y 562.692).
   - Las cuatro provincias forales solo tienen altas del Ministerio.
+
+## A5 (subagente)
+- **Documentos.** 25 documentos oficiales con texto extraíble:
+  - 6 programas de 2023 y 1 resumen oficial;
+  - la Ley 12/2023 y el RD 326/2026 (Plan Estatal 2026-2030);
+  - 13 proposiciones de ley de la XV legislatura.
+- **Exclusiones.** 3 programas de v4 solo existen en copias de medios: «no oficial», fuera de los recuentos. 4 formaciones no tienen programa localizado.
+- **Conciliación con v4.** 41 de las 88 medidas de v4 quedan como no verificables porque no hay documento oficial. Las 47 restantes están todas en el texto oficial.
+- **Búsqueda por palabras clave** (diccionario declarado en docs/v5/programas/diccionario.md).
+  - Precisión: 50 % son medidas pertinentes y 78 % son medidas o menciones (40 coincidencias auditadas).
+  - Recall en las citas de v4: 44 de 47, pero con calibración en la misma muestra.
+  - Los recuentos son COTAS de coincidencias, no de medidas validadas (C4).
+  - La dirección automática es poco fiable. La matriz D1 usará los recuentos solo como contexto, nunca para evaluar.
+- **Recuentos y normas.** Las normas (ley y RD) se cuentan aparte. check_v5 deja de contarlas en «a favor».
+- **Requisito de sistema.** a5_run.py usa `pdftotext` (poppler-utils), que se declara en el README de replicación.

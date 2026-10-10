@@ -1,0 +1,41 @@
+doc_id,instrumento,pagina,direccion_automatica,etiqueta_manual
+A5-D03,I04,2,a favor/ampliar,M
+A5-D05,I01,77,a favor/ampliar,X
+A5-D05,I01,78,a favor/ampliar,M
+A5-D05,I02,75,a favor/ampliar,X
+A5-D05,I02,115,a favor/ampliar,R
+A5-D05,I03,79,a favor/ampliar,M
+A5-D05,I07,58,a favor/ampliar,R
+A5-D05,I09,77,a favor/ampliar,M
+A5-D05,I14,77,a favor/ampliar,M
+A5-D05,I18,77,a favor/ampliar,M
+A5-D05,I19,105,a favor/ampliar,R
+A5-D05,I22,77,a favor/ampliar,M
+A5-D06,I02,56,a favor/ampliar,X
+A5-D06,I14,114,revisar,X
+A5-D06,I19,7,a favor/ampliar,R
+A5-D07,I09,4,a favor/ampliar,M
+A5-D07,I21,2,a favor/ampliar,X
+A5-D08,I20,2,a favor/ampliar,R
+A5-D09,I02,15,a favor/ampliar,M
+A5-D09,I10,15,a favor/ampliar,M
+A5-D17,I02,3,a favor/ampliar,M
+A5-D17,I04,4,a favor/ampliar,M
+A5-D17,I07,3,a favor/ampliar,R
+A5-D17,I27,2,a favor/ampliar,R
+A5-D18,I01,7,derogar/reducir,M
+A5-D18,I01,15,a favor/ampliar,X
+A5-D18,I02,6,a favor/ampliar,R
+A5-D18,I14,6,revisar,M
+A5-D18,I14,15,a favor/ampliar,X
+A5-D19,I02,5,a favor/ampliar,X
+A5-D23,I07,2,a favor/ampliar,M
+A5-D26,I10,9,a favor/ampliar,R
+A5-D26,I14,1,a favor/ampliar,M
+A5-D26,I14,8,a favor/ampliar,X
+A5-D26,I14,9,a favor/ampliar,M
+A5-D26,I14,12,revisar,X
+A5-D27,I16,2,a favor/ampliar,M
+A5-D27,I18,4,a favor/ampliar,M
+A5-D28,I13,1,a favor/ampliar,X
+A5-D29,I02,6,a favor/ampliar,M

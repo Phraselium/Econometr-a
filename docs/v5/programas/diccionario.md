@@ -49,10 +49,10 @@ Texto normalizado (minusculas, sin tildes); los terminos son expresiones regular
 - `reserva[s]? (?:de |del |obligatoria de )?(?:suelo|sol|solo|edificabilidad)`
 - `reserva[s]? (?:del )?\d+ ?%`
 - `\bvpo\b`
-- `vivienda[s]? protegida`
-- `habitatges? protegit`
-- `vivendas? protexid`
-- `vivienda[s]? de proteccion oficial`
+- `vivienda[s]? protegida.{0,40}(?:reserva|porcentaje|\d+ ?%)`
+- `(?:reserva|porcentaje|\d+ ?%).{0,60}vivienda[s]? protegida`
+- `(?:reserva|percentatge).{0,60}habitatges? protegit`
+- `reservas?.{0,60}vivendas? protexid`
 
 ### I04 Movilizacion de suelo y patrimonio publicos
 
@@ -94,7 +94,7 @@ Texto normalizado (minusculas, sin tildes); los terminos son expresiones regular
 - `deduccion(?:es)? (?:por|de|en el irpf por) (?:la )?(?:compra|adquisicion|vivienda habitual)`
 - `deducci[oó] (?:per|de) (?:compra|adquisici|habitatge)`
 - `iva (?:reducido |superreducido )?(?:de|en|a) (?:la )?(?:vivienda|compra|construccion)`
-- `cuenta[s]? (?:vivienda|ahorro.vivienda|de ahorro)`
+- `cuenta[s]? (?:vivienda|de ahorro)`
 - `ahorro.vivienda`
 - `itp (?:reducido|bonificado)`
 - `impuesto de transmisiones patrimoniales`
@@ -278,12 +278,10 @@ Texto normalizado (minusculas, sin tildes); los terminos son expresiones regular
 - `vivienda colaborativa`
 - `cohousing`
 - `asociaciones de vivienda`
-- `organizaciones sin (?:animo de )?lucro`
-- `entidades sin animo de lucro`
 
 ### I21 Limitacion de compras con fin de inversion o de no residentes
 
-- `no residentes`
+- `(?:compra|adquisicion|propietarios?|inversores?) (?:de vivienda )?(?:por )?(?:no residentes|extranjeros)`
 - `extranjeros no (?:comunitarios|residentes)`
 - `compra\w* (?:de |por )?(?:vivienda |viviendas )?(?:con fines|con fin) (?:de )?(?:inversion|especulativ)`
 - `visado de residencia`

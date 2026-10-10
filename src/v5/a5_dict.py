@@ -21,7 +21,7 @@ D = {
     r"aluguer (?:social|accesible|publico)", r"vivienda[s]? (?:de )?(?:proteccion|promocion) publica", r"vivienda[s]? asequible"]),
  "I03": ("Reservas de suelo para vivienda protegida", [
     r"reserva[s]? (?:de |del |obligatoria de )?(?:suelo|sol|solo|edificabilidad)", r"reserva[s]? (?:del )?\d+ ?%", r"\bvpo\b",
-    r"vivienda[s]? protegida", r"habitatges? protegit", r"vivendas? protexid", r"vivienda[s]? de proteccion oficial"]),
+    r"vivienda[s]? protegida.{0,40}(?:reserva|porcentaje|\d+ ?%)", r"(?:reserva|porcentaje|\d+ ?%).{0,60}vivienda[s]? protegida", r"(?:reserva|percentatge).{0,60}habitatges? protegit", r"reservas?.{0,60}vivendas? protexid"]),
  "I04": ("Movilizacion de suelo y patrimonio publicos", [
     r"suelos? publico", r"sol public", r"solo publico", r"patrimonio (?:publico|de suelo|inmobiliario)", r"patrimoni public",
     r"\bsepes\b", r"\bsareb\b", r"sociedad de gestion de activos", r"cesion de suelo", r"derecho de superficie", r"dret de superficie",
@@ -35,7 +35,7 @@ D = {
  "I07": ("Fiscalidad y ahorro para vivienda en propiedad", [
     r"deduccion(?:es)? (?:por|de|en el irpf por) (?:la )?(?:compra|adquisicion|vivienda habitual)",
     r"deducci[oó] (?:per|de) (?:compra|adquisici|habitatge)", r"iva (?:reducido |superreducido )?(?:de|en|a) (?:la )?(?:vivienda|compra|construccion)",
-    r"cuenta[s]? (?:vivienda|ahorro.vivienda|de ahorro)", r"ahorro.vivienda", r"itp (?:reducido|bonificado)",
+    r"cuenta[s]? (?:vivienda|de ahorro)", r"ahorro.vivienda", r"itp (?:reducido|bonificado)",
     r"impuesto de transmisiones patrimoniales", r"desgravacion", r"iva .{0,40}vivienda", r"fiscalidade sobre a vivenda", r"fiscalidad .{0,20}(?:sobre )?(?:la )?vivienda"]),
  "I08": ("Ayudas directas al alquiler", [
     r"ayudas? (?:directas? )?(?:al|para el|para pagar el|de) alquiler", r"bono (?:de )?alquiler", r"bono joven",
@@ -82,9 +82,9 @@ D = {
  "I20": ("Colaboracion publico-privada y nuevas modalidades", [
     r"colaboracion publico.privada", r"col.laboracio public.privada", r"colaboracion publicoprivada", r"cooperativas? de (?:vivienda|cesion)",
     r"concesion\w* (?:administrativa )?(?:de suelo|para)", r"colaboracion con el sector privado",
-    r"promocion privada de alquiler", r"vivienda colaborativa", r"cohousing", r"asociaciones de vivienda", r"organizaciones sin (?:animo de )?lucro", r"entidades sin animo de lucro"]),
+    r"promocion privada de alquiler", r"vivienda colaborativa", r"cohousing", r"asociaciones de vivienda"]),
  "I21": ("Limitacion de compras con fin de inversion o de no residentes", [
-    r"no residentes", r"extranjeros no (?:comunitarios|residentes)", r"compra\w* (?:de |por )?(?:vivienda |viviendas )?(?:con fines|con fin) (?:de )?(?:inversion|especulativ)",
+    r"(?:compra|adquisicion|propietarios?|inversores?) (?:de vivienda )?(?:por )?(?:no residentes|extranjeros)", r"extranjeros no (?:comunitarios|residentes)", r"compra\w* (?:de |por )?(?:vivienda |viviendas )?(?:con fines|con fin) (?:de )?(?:inversion|especulativ)",
     r"visado de residencia", r"golden visa", r"visados? (?:de oro|por inversion)", r"residencia por inversion", r"autorizacion\w* (?:administrativa\w* )?de compraventa",
     r"compradores? (?:no residentes|extranjeros)", r"especulacion inmobiliaria", r"fondos? (?:buitre|de inversion)", r"condicionar .{0,60}compraventa", r"visat de residencia", r"adquisicion\w* de vivienda\w* por (?:no residentes|extranjeros)"]),
  "I22": ("Obligaciones a grandes tenedores", [

@@ -11,7 +11,8 @@
 | R1b donut, sensibilidad v2, GSADF con tamaño corregido | R | hecho | C4 | donut: periferia gana en 77 % (SERPAVI) y 55 % (tasado) de 320 specs, nada tras Holm; BI Bartik Oster δ=8,8, RV=0,35; GSADF: ningún episodio nacional sobrevive a BH; frente a fundamentales, sin exuberancia | 153.673 |
 | A4 coste oficial y reclasificación | A | hecho parcial (1 de 3 fuentes de coste; corrección del orquestador) | C2 (11 provincias)/C4 | coste MBC 1993 actualizado 422-932 €/m²; provincias 2021-25: clase 1 = 37 (8 C2), 2 = 11 (3 C2), 3 = 2, 4 = 0, 9 = 2; concentración 6 provincias = 50 %, 18 = 80 % | 125.446 |
 | A6 topes y García-López | A | hecho (consolidación) | C4 | output/v5/A6/nota.md | 0 (orquestador) |
+| A5 programas oficiales y palabras clave | A | hecho | C4 (cotas) | 25 documentos oficiales; 3 de v4 excluidos (no oficiales); 631 coincidencias; precisión 50 % (medida) / 78 % (medida o mención) | 125.013 |
 
 **Hecho:** setup, R0, R1 (técnico, a, b, c), A2-A3, A4, A6; check_v5 en make check.
-**Siguiente:** A5 (en curso); revisión de R; A1 (cifras clave) → revisión de A.
-**Tokens de subagentes v5:** 779.392 / 4.200.000 (R: 518.272 / 900.000; A: 261.120 / 700.000) (corte global al 80 %: 3.360.000; reserva 420.000).
+**Siguiente:** revisión R (en curso); B1 (en curso); A1 (cifras clave) → revisión de A.
+**Tokens de subagentes v5:** 904.405 / 4.200.000 (R: 518.272 / 900.000; A: 386.133 / 700.000) (corte global al 80 %: 3.360.000; reserva 420.000).

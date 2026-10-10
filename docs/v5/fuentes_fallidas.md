@@ -49,3 +49,15 @@ Solo se revisó lo versionado en el repositorio; no se hizo prueba de red en est
 | (c) PEM por m2 en licencias/visados (MIVAU Boletín Online, CSCAE) | https://apps.fomento.gob.es/BoletinOnline2/?nivel=2&orden=3x000000 (30-37); https://www.mivau.gob.es/vivienda/estadisticas-observatorio; https://www.cscae.com/index.php/es/estadisticas | — | 2026-10-10 | Boletín: las tablas de edificación son de unidades (iniciadas, terminadas, protegidas), sin presupuesto de ejecución material; MIVAU 403; CSCAE 404. SIN DATO |
 | INE ETCL / Eurostat sts_copi_q | data/raw/eurostat_costes.csv; data/raw/v5/ine_r1c_t6030.csv | 1980Q1-2026Q2 | 2026-10-10 | Solo evolución (índice 2021=100): se usa para actualizar el MBC de 1993; no da nivel |
 | Catastro (catastro.hacienda.gob.es/esp/valores_referencia.asp) | idem | — | 2026-10-10 | Túnel 502 |
+
+## A5 (2026-10-10, programas oficiales)
+| Fuente | URL | Error | Alternativa | Fecha |
+|---|---|---|---|---|
+| Programa 2023, D01 (web oficial) | https://www.psoe.es/ y /media-content/2023/07/ProgramaElectoral_ElexGenerales_PSOE_2023.pdf | HTTP 200 con HTML de 212 bytes: script anti-bot (Incapsula); no se evade | Solo copia de medio (v4): «no oficial: excluido» | 2026-10-10 |
+| Programa 2023, D02 (completo) | https://www.pp.es/programa-electoral y 3 rutas /storage/2023/07/... y /sites/default/files/documentos/... | HTTP 404 | Resumen oficial de 5 pp. (D03, cota); el completo solo en copia de medio: excluido | 2026-10-10 |
+| Programa 2023, D04 | https://www.voxespana.es/ , /programa y rutas de PDF probadas | HTTP 403 (bloqueo) / 404 | Solo copia de medio (v4): excluido; sus proposiciones de ley (D20, D21) si entran | 2026-10-10 |
+| Programa 2023, D13 | https://www.junts.cat y busqueda web | Sin PDF del programa de 2023 (solo manifiestos de otras convocatorias) | Proposicion de ley oficial D26 (congreso.es) | 2026-10-10 |
+| Programa 2023, D14 | https://www.coalicioncanaria.org y busqueda web | Sin programa general 2023 (solo programas locales/insulares) | Ninguna | 2026-10-10 |
+| Programa 2023, D15 | https://www.podemos.info | HTTP 403 | Ninguna; no se probo otra via | 2026-10-10 |
+| Programa 2023, D16 | https://compromis.net | Sin conexion (codigo 000) | Ninguna | 2026-10-10 |
+| Proposiciones de ley XV leg. de formaciones sin PL de vivienda localizada | congreso.es/webpublica/opendata/iniciativas/ProposicionesDeLey (CSV 2026-10-10) | Sin iniciativa de vivienda localizada por palabra clave en OBJETO para BNG, UPN, CC | Ninguna | 2026-10-10 |

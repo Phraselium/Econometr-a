@@ -1,0 +1,73 @@
+{
+  "rama": "BD",
+  "pregunta": "¿Qué familias de variables se asocian con el crecimiento acumulado del alquiler y del precio real de compra en P1-P4 (descomposición, IC y contrafactuales parciales)?",
+  "datos": "panel_prov_q y nacional_q_v2 vía v2_common.load; 49 provincias; 2008Q1-2024Q1 (2024Q2 sin población por fuga del sellado); sin muestra sellada",
+  "N": {
+    "alquiler": 3185,
+    "compra": 3156,
+    "provincias": 49,
+    "nacional_LP": 68,
+    "nacional_CP": 65
+  },
+  "metodo": "MCO con FE (M1: provincia+trimestre; M2: provincia+trimestre del año+intercepto de periodo+Δ4 coste de uso nacional), coeficientes por periodo; contribución = coef × variación media ponderada por población; IC95 por bootstrap de provincias y de bloques de tiempo (4), B=999; contrafactuales parciales ceteris paribus; ECM v1 real nacional con bootstrap de residuos por bloques",
+  "estimacion": {
+    "alquiler_M1_P3P4_observado": 5.664628191523604,
+    "alquiler_M1_P3P4_demografia_20_34": 0.34090351805910746,
+    "alquiler_M1_P3P4_comun_efectos_tiempo": 5.7897221573501705,
+    "alquiler_M2_P3P4_demografia_20_34": 0.5709455783042153,
+    "compra_M1_P3P4_observado": -4.499081865974274,
+    "compra_M1_P3P4_comun_efectos_tiempo": -5.729529729469938,
+    "compra_M1_P3P4_explicado_familias": 1.9417695823455885
+  },
+  "ic95": {
+    "alquiler_M1_P3P4_observado": [
+      4.8137295435920615,
+      6.5834251945740165
+    ],
+    "alquiler_M1_P3P4_demografia_20_34": [
+      -0.10705680970022295,
+      0.853348948376905
+    ],
+    "alquiler_M1_P3P4_comun_efectos_tiempo": [
+      4.1641590428623,
+      7.7586488425150755
+    ],
+    "alquiler_M2_P3P4_demografia_20_34": [
+      0.0945857052432592,
+      1.0403068891515561
+    ],
+    "compra_M1_P3P4_observado": [
+      -10.366825681301469,
+      -2.5637097583028985
+    ],
+    "compra_M1_P3P4_comun_efectos_tiempo": [
+      -12.077148503943853,
+      -1.9483349940369674
+    ],
+    "compra_M1_P3P4_explicado_familias": [
+      -1.5431303947808832,
+      4.732759951461731
+    ]
+  },
+  "p_ajustado": {
+    "nota": "sin contrastes de hipótesis: descomposición descriptiva con IC; Holm-7 de las confirmatorias lo aplica BS"
+  },
+  "nivel_evidencia": "EXPLORATORIO",
+  "diagnosticos": {
+    "heredado": {
+      "alquiler_demografia_20_34": "candidato a ASOCIACIÓN ROBUSTA (H1, sujeto a Holm-7 en BS)",
+      "alquiler_resto": "EXPLORATORIO",
+      "compra": "EXPLORATORIO (H2 no confirmada en sellado)",
+      "comun_residuo": "DESCRIPTIVO"
+    },
+    "identidad_contable": "observado = familias + común + residuo (se verifica en tabla_resumen.csv)",
+    "limitacion_P4": "P4 termina en 2024Q1",
+    "robustez": "M1 vs M2 difieren en magnitud y a veces en signo"
+  },
+  "fuera_muestra": {
+    "modelo": "no aplica (descomposición en muestra; el fuera de muestra está en BA/BV)",
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": "EXPLORATORIO. Contrafactuales parciales, sin equilibrio general ni identificación causal. Sin lenguaje causal."
+}

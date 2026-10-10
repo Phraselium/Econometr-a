@@ -25,3 +25,7 @@ Formato: fecha · decisión · motivo. Las desviaciones del pre-registro (`prere
 - Eurostat: ilc_lvps08 (18-34 con padres) y ilc_lvho02 (tenencia × tipo de hogar, rskpovth = TOTAL). Las celdas ':' de Eurostat no aparecen en el JSON y no se rellenan. Cuadre: OWN_L + OWN_NL = OWN, OWN + RENT = 100 % (España, 2007 y 2025).
 - Eventos BOE: fechas de publicación y entrada en vigor comprobadas en boe.es/eli (Ley 12/2023; RD 1312/2024; LO 1/2025; Ley 11/2020 catalana). Sin confirmar: obligatoriedad del registro, número de la disposición final de la LPH, STC 37/2022 (fecha BOE), DL catalán 3/2023 y DL valenciano 9/2024.
 - Zonas tensionadas: copia sin editar de la v2 (318 filas: Cataluña 271, Navarra 21, País Vasco 18, Asturias 6, Galicia 2). No se añadieron declaraciones nuevas porque no se pudieron verificar en esta pasada.
+
+- 2026-10-10 · D3 · Inside Airbnb: se usa data/listings.csv.gz (no la versión visualisations/listings.csv) para leer room_type, neighbourhood_cleansed y last_review; el bruto se descarta tras agregar. Anuncios activos = filas de la captura; con reseña 12m = last_review ≥ fecha de captura − 365 días. Cuadre barrios = total ciudad en las 36 capturas.
+- 2026-10-10 · D3 · Google Trends no se descarga: no hay API pública y el endpoint explore exige token de widget; pytrends sería scraping no autorizado. Alternativa: exportación CSV manual por el responsable.
+- 2026-10-10 · D3 · HUT: el dataset t2h3-cgys es una foto actual sin fechas de alta/baja; se entrega como snapshot (no sirve para flujos de altas en 2025-2026).

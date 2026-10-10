@@ -197,7 +197,7 @@ def fetch_hut() -> Path:
                                "count(*) as n,sum(total_places) as plazas",
                     "$group": "codi_municipi_idescat,municipi,tipus_establiment,estat",
                     "$limit": 50000})
-    tot_n = _soql({"$select": "count(*) as n,sum(total_places) as plazas", "$group": "tipus_establiment,estat",
+    tot_n = _soql({"$select": "tipus_establiment,estat,count(*) as n,sum(total_places) as plazas", "$group": "tipus_establiment,estat",
                    "$limit": 50000})
     for g in grupos:
         ine5 = str(g.get("codi_municipi_idescat") or "")[:5] or "SIN_DATO"

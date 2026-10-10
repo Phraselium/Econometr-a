@@ -85,7 +85,9 @@ pdf/serpavi_v2_municipios.csv,MIVAU-SERPAVI (AEAT IRPF),32402,2011-01-01,2024-01
 pdf/serpavi_v2_municipios.csv.gz,MIVAU-SERPAVI (AEAT IRPF),32402,2011-01-01,2024-01-01,351686,0,2026-10-10T06:07:19Z
 v2_eventos_politica.csv,BOE/boletines oficiales,41,2013-06-05,2026-07-29,41,6,2026-10-10T06:14:59Z
 v2_zonas_tensionadas.csv,"BOE (Secretaría de Estado de Vivienda, art. 18 Ley 12/2023)",9,2024-03-16,2026-07-30,318,0,2026-10-10T06:14:59Z
+v3/airbnb_insideairbnb_agregados_v3.csv.gz,Inside Airbnb (CC BY 4.0; insideairbnb.com/get-the-data),45,2025-12-14,2026-09-28,17685,0,2026-10-10T12:06:19Z
 v3/eurostat_emancipacion_tenencia_v3.csv,Eurostat ilc_lvps08 / ilc_lvho02,258,2004-01-01,2025-01-01,4587,0,2026-10-10T12:03:33Z
+v3/hut_registro_turismo_cat_v3.csv.gz,"Registre de Turisme de Catalunya - Establiments d'allotjament turístic (Socrata t2h3-cgys, Dept. Empresa i Treball; licencia Ver términos de uso)",16,2026-10-05,2026-10-05,5514,0,2026-10-10T12:06:51Z
 v3/incasol_fianzas_municipio_v3.csv.gz,Incasòl - fiances de lloguer (Socrata qww9-bvhh),9865,2007-01-01,2026-01-01,138315,19964,2026-10-10T12:03:33Z
 v3/ine_v3_censo2021_municipio_viviendas.csv,INE Censo de Población y Viviendas 2021 (provisional),3,2021-11-01,2021-11-01,24396,0,2026-10-10T12:03:16Z
 v3/ine_v3_censo2021_seccion_indicadores.csv.gz,INE Censo de Población y Viviendas 2021 (provisional),36,2021-11-01,2021-11-01,1307988,47705,2026-10-10T12:04:12Z

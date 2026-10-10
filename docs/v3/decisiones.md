@@ -14,3 +14,6 @@ Formato: fecha · decisión · motivo. Las desviaciones del pre-registro (`prere
   - En municipios de un solo distrito, el bloque es el municipio.
   - Si se obtiene la cartografía de secciones (INE), se sustituye por bloques de contigüidad antes del pre-registro.
 - Magnitudes en €/mes, % y viviendas. Holm en confirmatorias v3; BH en exploratorias.
+- Para P-A (C1) y P-B (C2) se usan los paneles COMPLETOS. Se leen con `holdout.load_full(nombre, uso)`, que solo funciona si ya existen las 4 evaluaciones selladas de v2 (H1, H2, H6 y H7) y registra cada lectura con el evento «v3_completo». El sellado v2 ya no protege ninguna hipótesis pendiente.
+- La especificación de P-A y P-B (docs/v3/especificacion_PA_PB.md) se fija ANTES de calcular. También fija el efecto económicamente relevante de cada diseño P-C, que decide el go/no-go por potencia.
+- Las solicitudes de transparencia están redactadas pero no presentadas: exigen la identificación electrónica de una persona física. La cota de grandes tenedores queda en espera, con la ingesta preparada.

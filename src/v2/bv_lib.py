@@ -31,13 +31,31 @@ def bh(pvals: dict) -> dict:
 
 
 # ------------------------------------------------------------------ datos
-def preparar_panel(pan: pd.DataFrame, nac: pd.DataFrame) -> pd.DataFrame:
-    """Añade: precio real (deflactor nacional de nacional_q_v2), exposición hipotecaria 2005-2007
-    (importe hipotecario por habitante, media 2005Q1-2007Q4, fija por provincia; z-score entre
-    provincias de entrenamiento) y las variables derivadas de H2."""
+def exposicion_raw(d: pd.DataFrame) -> pd.Series:
+    """Importe hipotecario por habitante 2005-2007: media de los 3 años de (suma de los 4 trimestres del
+    importe / población observada del 1 de enero (T1) del mismo año). Sin población interpolada."""
+    x = d[d["trimestre"].between("2005Q1", "2007Q4")].copy()
+    x["anio"] = x["trimestre"].str[:4]
+    imp = x.groupby(["cod_prov", "anio"])["hipotecas_importe"].agg(lambda v: v.sum(min_count=4))
+    t1 = x[(x["trimestre"].str[-2:] == "Q1") & (~x["pob_total_interp"].astype(bool))].set_index(["cod_prov", "anio"])["pob_total"]
+    return (imp / t1).groupby(level=0).mean()
+
+
+def exposicion_ref(pan_train: pd.DataFrame):
+    """Media y DE (poblacional) de la exposición entre las provincias de ENTRENAMIENTO (parámetros fijos)."""
+    ex = exposicion_raw(pan_train.assign(trimestre=pan_train["trimestre"].astype(str)))
+    return float(ex.mean()), float(ex.std(ddof=0))
+
+
+def preparar_panel(pan: pd.DataFrame, nac: pd.DataFrame, tmax: str = vc.Q_TRAIN_FIN, expo_ref=None) -> pd.DataFrame:
+    """Añade: precio real (deflactor nacional de nacional_q_v2), exposición hipotecaria 2005-2007 (ver
+    exposicion_raw) estandarizada con `expo_ref`=(media, DE) de las provincias de entrenamiento (si None,
+    se calcula con las provincias recibidas, que en entrenamiento son las 49) y variables derivadas de H2."""
     d = pan.copy()
     d["trimestre"] = d["trimestre"].astype(str)
-    d = d[d["trimestre"] <= vc.Q_TRAIN_FIN].copy()
+    ex = exposicion_raw(d)
+    mu, sd = expo_ref if expo_ref is not None else (float(ex.mean()), float(ex.std(ddof=0)))
+    d = d[d["trimestre"] <= tmax].copy()
     n = nac.copy()
     n["trimestre"] = n["trimestre"].astype(str)
     n = n.drop_duplicates("trimestre").set_index("trimestre")
@@ -45,11 +63,8 @@ def preparar_panel(pan: pd.DataFrame, nac: pd.DataFrame) -> pd.DataFrame:
     d["d4_ln_defl"] = d["trimestre"].map(n["d4_ln_deflactor"])
     d["ln_p_real"] = d["ln_p_tasado"] - d["ln_defl"]
     d["d4_ln_p_real"] = d["d4_ln_p_tasado"] - d["d4_ln_defl"]
-    pc = d["hipotecas_importe"] / d["pob_total"]
-    m = d["trimestre"].between("2005Q1", "2007Q4")
-    ex = pc[m].groupby(d.loc[m, "cod_prov"]).mean()
     d["expo_raw"] = d["cod_prov"].map(ex)
-    d["expo"] = (d["expo_raw"] - ex.mean()) / ex.std(ddof=0)
+    d["expo"] = (d["expo_raw"] - mu) / sd
     d["cu_x_expo"] = d["coste_uso_aprox"] * d["expo"]
     d = d.sort_values(["cod_prov", "trimestre"]).reset_index(drop=True)
     d["hip_l4"] = d.groupby("cod_prov")["d4_ln_hipotecas_importe"].shift(4)

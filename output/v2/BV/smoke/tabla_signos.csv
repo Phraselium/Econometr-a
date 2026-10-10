@@ -1,15 +1,15 @@
 analisis,variable,esperado,estimado,coincide,p,coef
-"H2 principal (confirmatoria, sin sellado)",d4_ln_hipotecas_importe,+,+,True,0.015075377,0.029670471
-"H2 principal (confirmatoria, sin sellado)",cu_x_expo,-,-,True,0.0050251256,-0.0075992554
-"H2 principal (confirmatoria, sin sellado)",d4_ln_ocupados,+,-,False,0.68844221,-0.022048192
-H2 crédito retardado 4T,hip_l4,+,+,True,0.88442211,0.0018756539
-H2 crédito retardado 4T,cu_x_expo,-,-,True,0.0050251256,-0.0072764402
-H2 crédito retardado 4T,d4_ln_ocupados,+,-,False,0.98492462,-0.0018445648
-Periodo P1_ajuste (expl.),d4_ln_hipotecas_importe,+,+,True,0.014166881,0.048498799
-Periodo P1_ajuste (expl.),cu_x_expo,-,-,True,0.0064098327,-0.0074661799
-Periodo P1_ajuste (expl.),d4_ln_ocupados,+,+,True,0.7532276,0.046685518
-Periodo P2_recuperacion (expl.),d4_ln_hipotecas_importe,+,+,True,0.30187252,0.010445409
-Periodo P2_recuperacion (expl.),cu_x_expo,-,-,True,0.34612573,-0.0019037658
-Periodo P2_recuperacion (expl.),d4_ln_ocupados,+,-,False,0.24741593,-0.068565246
-Arbitraje LP (expl.) h=1..8,dev_ratio->y_precio,-,0+/8-,True,0.015062586,-0.27131508
-Arbitraje LP (expl.) h=1..8,dev_ratio->y_alq,+,8+/0-,True,0.036017395,0.035127954
+"H2 principal (confirmatoria, sin sellado)",d4_ln_hipotecas_importe,+,+,True,0.015075377,0.029662898
+"H2 principal (confirmatoria, sin sellado)",cu_x_expo,-,-,True,0.0050251256,-0.0075971714
+"H2 principal (confirmatoria, sin sellado)",d4_ln_ocupados,+,-,False,0.68844221,-0.021972944
+H2 crédito retardado 4T,hip_l4,+,+,True,0.88442211,0.0018773471
+H2 crédito retardado 4T,cu_x_expo,-,-,True,0.0050251256,-0.007273703
+H2 crédito retardado 4T,d4_ln_ocupados,+,-,False,0.98492462,-0.0017777578
+Periodo P1_ajuste (expl.),d4_ln_hipotecas_importe,+,+,True,0.01423576,0.048462118
+Periodo P1_ajuste (expl.),cu_x_expo,-,-,True,0.0063647335,-0.0074638833
+Periodo P1_ajuste (expl.),d4_ln_ocupados,+,+,True,0.75273405,0.04679604
+Periodo P2_recuperacion (expl.),d4_ln_hipotecas_importe,+,+,True,0.30143311,0.010458525
+Periodo P2_recuperacion (expl.),cu_x_expo,-,-,True,0.35120335,-0.001891627
+Periodo P2_recuperacion (expl.),d4_ln_ocupados,+,-,False,0.24785894,-0.068513263
+Arbitraje LP (expl.) h=1..8,dev_ratio->y_precio,-,0+/8-,True,0.0060387805,-0.34173204
+Arbitraje LP (expl.) h=1..8,dev_ratio->y_alq,+,7+/1-,False,0.31769331,0.031522741

@@ -1,0 +1,68 @@
+{
+ "cfg": "C3",
+ "regla": "RMSE_modelo < RMSE_AR4 y p < 0,05 (principal: todas las provincias)",
+ "provincias_entrenamiento": 46,
+ "provincias_selladas": [
+  "12",
+  "17",
+  "44"
+ ],
+ "PRINCIPAL_todas": {
+  "modelo": "BV_C3",
+  "n": 392,
+  "n_periodos": 8,
+  "rmse": 0.08516405052166208,
+  "mae": 0.07782582223278085,
+  "rmse_AR4": 0.039889468691187466,
+  "dm_vs_AR4": -2.7131292204557864,
+  "p_vs_AR4": 0.030062683978004972,
+  "cumple_regla": false
+ },
+ "sec_a_entrenamiento": {
+  "modelo": "BV_C3",
+  "n": 368,
+  "n_periodos": 8,
+  "rmse": 0.08468089290088404,
+  "mae": 0.07751697082174829,
+  "rmse_AR4": 0.03873078249824033,
+  "dm_vs_AR4": -2.911898359828951,
+  "p_vs_AR4": 0.022599326203564574,
+  "cumple_regla": false
+ },
+ "sec_b_selladas_ventana": {
+  "modelo": "BV_C3",
+  "n": 24,
+  "n_periodos": 8,
+  "rmse": 0.09225615232776031,
+  "mae": 0.08256154386861324,
+  "rmse_AR4": 0.054662401204118534,
+  "dm_vs_AR4": -1.1848582695268783,
+  "p_vs_AR4": 0.2747362783193886,
+  "cumple_regla": false
+ },
+ "sec_b2_selladas_historia": {
+  "modelo": "BV_C3",
+  "n": 112,
+  "n_periodos": 40,
+  "rmse": 0.05021720396408067,
+  "mae": 0.03864580308789291,
+  "rmse_AR4": 0.042421826069317846,
+  "dm_vs_AR4": -0.4931217294521637,
+  "p_vs_AR4": 0.6246918944824431,
+  "cumple_regla": false
+ },
+ "sec_c_ecm_v1_referencia_entrenamiento": {
+  "modelo": "BV_C3",
+  "n": 368,
+  "n_periodos": 8,
+  "rmse": 0.08468089290088404,
+  "mae": 0.07751697082174829,
+  "rmse_AR4": 0.03873078249824033,
+  "dm_vs_AR4": -2.911898359828951,
+  "p_vs_AR4": 0.022599326203564574,
+  "rmse_ECM_v1": 0.07340289050840171,
+  "dm_vs_ECM_v1": -0.3628195678070732,
+  "p_vs_ECM_v1": 0.7274474905090643,
+  "cumple_regla": false
+ }
+}

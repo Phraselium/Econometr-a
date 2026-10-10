@@ -65,7 +65,7 @@ res_h2.append(t0)
 t1, _ = corre_h2("H2_credito_l4", pan, Y, ["hip_l4", "cu_x_expo", "d4_ln_ocupados"], "crédito retardado 4 trimestres (simultaneidad)", True)
 res_h2.append(t1)
 pan["d4_ln_p_nom"] = pan["d4_ln_p_tasado"]
-res_h2.append(corre_h2("H2_nominal", pan, "d4_ln_p_nom", X0, "robustez: precio nominal")[0])
+res_h2.append(corre_h2("H2_nominal_equivalente_por_FE_trim", pan, "d4_ln_p_nom", X0, "NO es robustez: el deflactor es nacional y lo absorbe el FE de trimestre (equivalente numérico)")[0])
 res_h2.append(corre_h2("H2_ambos_cred", pan, Y, ["d4_ln_hipotecas_importe", "hip_l4", "cu_x_expo", "d4_ln_ocupados"], "robustez: crédito t y t-4")[0])
 res_h2.append(corre_h2("H2_sin_credito", pan, Y, ["cu_x_expo", "d4_ln_ocupados"], "robustez: sin crédito")[0])
 if not SMOKE:
@@ -205,22 +205,21 @@ for h in range(1, 9):
             reg.log("ARB_LP", f"LP_{disp}_{yn}_h{h}", f"{yn}(t+{h}) ~ {dv} + d4 ln p + d4 ln alq | FE prov+trim | cluster prov",
                     "", "", f.N, np.nan, np.nan, np.nan, coef_interes=r["coef"], p_interes=r["p"], notas="EXPLORATORIO")
 lp = pd.DataFrame(lp_rows)
-mp = lp[lp.desv == "media_total"].copy()
-mp["key"] = mp["outcome"] + "_h" + mp["h"].astype(str)
-hh = bl.holm(dict(zip(mp.key, mp.p)))
-bb = bl.bh(dict(zip(mp.key, mp.p)))
 lp["p_holm_m16"] = np.nan
 lp["p_bh_m16"] = np.nan
-for i, r in lp[lp.desv == "media_total"].iterrows():
-    k = r["outcome"] + "_h" + str(r["h"])
-    lp.loc[i, "p_holm_m16"], lp.loc[i, "p_bh_m16"] = hh[k], bb[k]
+for dsv in ("media_total", "media_expansiva"):
+    sel = lp[lp.desv == dsv]
+    keys = {i: p_ for i, p_ in zip(sel.index, sel.p)}
+    hh, bb = bl.holm(keys), bl.bh(keys)
+    for i in sel.index:
+        lp.loc[i, "p_holm_m16"], lp.loc[i, "p_bh_m16"] = hh[i], bb[i]
 csv(lp, "arbitraje_lp.csv")
 for yn, esp in (("y_precio", "-"), ("y_alq", "+")):
-    s = lp[(lp.desv == "media_total") & (lp.outcome == yn)]
+    s = lp[(lp.desv == "media_expansiva") & (lp.outcome == yn)]
     signos.append(dict(analisis="Arbitraje LP (expl.) h=1..8", variable=f"dev_ratio->{yn}", esperado=esp,
                        estimado=f"{(s.coef > 0).sum()}+/{(s.coef < 0).sum()}-", coincide=bool(((s.coef < 0) if esp == "-" else (s.coef > 0)).all()),
                        p=float(s.p.min()), coef=float(s.coef.mean())))
-print(lp[lp.desv == "media_total"].round(4).to_string(), flush=True)
+print(lp[lp.desv == "media_expansiva"].round(4).to_string(), flush=True)
 
 # ============================================================ 4-5. Fuera de muestra
 DESDE, MINTR = ("2014Q1", 8) if SMOKE else ("2012Q1", 8)
@@ -303,8 +302,9 @@ csv(pd.DataFrame(nac_is), "nacional_en_muestra.csv")
 # ============================================================ 7. cierre
 st = pd.DataFrame(signos)
 csv(st, "tabla_signos.csv")
-best = tp.sort_values("rmse").iloc[0]
-(OUT / "config_h2_sellado.json").write_text(json.dumps({"cfg": best["cfg"], "criterio": "menor RMSE en validación en bloques (entrenamiento)"}))
+best = tp[tp.cfg == "C3"].iloc[0]   # modelo de H2 (variables del pre-registro), fijado SIN selección por RMSE
+best_rmse = tp.sort_values("rmse").iloc[0]["cfg"]
+(OUT / "config_h2_sellado.json").write_text(json.dumps({"cfg": "C3", "criterio": "pre-registro: AR(4) de panel + variables de H2; no se elige por RMSE (C1 era el de menor RMSE en entrenamiento: %s)" % best_rmse}))
 reg.flush()
 
 if not SMOKE:
@@ -326,12 +326,12 @@ if not SMOKE:
         pregunta="H2 (confirmatoria): ¿se asocia el crecimiento del precio real de compra provincial con el crédito hipotecario nuevo (+) y con el coste de uso (−, vía interacción con la exposición hipotecaria 2005-2007)? Más: periodos, arbitraje alquiler-compra, nacional y fuera de muestra.",
         datos="panel_prov_q y nacional_q_v2 (holdout.load_train), 49 provincias, 2004Q1-2024Q2; precio real = Δ4 ln p_tasado − Δ4 ln deflactor nacional (nacional_q_v2); sin muestra sellada",
         N={"H2_principal": int(t0["N"].iloc[0]), "provincias": int(t0["G"].iloc[0])},
-        metodo="MCO con FE de provincia y trimestre, EE cluster provincia + wild cluster bootstrap (Webb, 9.999, WCR); Holm/BH (m=2) sobre crédito e interacción; DM-HLN fuera de muestra (bloques h=4, embargo 4, primer test 2012Q1)",
+        metodo="MCO con FE de provincia y trimestre, EE cluster provincia + wild cluster bootstrap (Webb, 9.999, WCR); Holm/BH intra-H2 (m=2) sobre crédito e interacción; el Holm de la familia de 7 confirmatorias se aplica en la síntesis BS; DM-HLN fuera de muestra (bloques h=4, embargo 4, primer test 2012Q1)",
         estimacion=est, ic95=ic, p_ajustado={"holm_m2_wcb": pa, "holm_m2_credito_l4": holm_l4},
         nivel_evidencia=nivel,
-        diagnosticos={"criterios_nivel": crit, "p_wcb": fam, "nota_simultaneidad": "el crédito es comovimiento con el precio (v1); la variante con crédito retardado 4T se reporta; asociación, no causalidad",
+        diagnosticos={"criterios_nivel": crit, "p_wcb": fam, "p_wcb_cota": "los p=0 del bootstrap son p <= 1/(B+1) = 1e-4 (B=9.999)", "nota_simultaneidad": "el crédito es comovimiento con el precio (v1); la variante con crédito retardado 4T se reporta; asociación, no causalidad",
                       "nota_identificacion": "el nivel nacional del coste de uso queda absorbido por el FE de trimestre; solo se identifica la interacción con la exposición 2005-2007"},
-        fuera_muestra={"modelo": f"BV_{best['cfg']} (panel, h=4)", "rmse": float(best["rmse"]), "dm_vs_ar4": float(best["dm_vs_AR4"]),
+        fuera_muestra={"modelo": f"BV_{best['cfg']} (panel, h=4; modelo de H2 fijado para el sellado)", "rmse": float(best["rmse"]), "dm_vs_ar4": float(best["dm_vs_AR4"]),
                        "rmse_ar4": float(best["rmse_AR4"]), "rmse_ecm_v1": float(best["rmse_ECM_v1"]), "dm_vs_ecm_v1": float(best["dm_vs_ECM_v1"]),
                        "p_holm_vs_ar4": float(best["p_holm_vs_AR4"]), "n": int(best["n"])},
         notas="Máximo posible sin muestra sellada: ASOCIACIÓN ROBUSTA; la confirmación requiere holdout.evaluate('H2') (evaluar_H2 en bv_h2_sellado.py, NO ejecutada). No residentes: sin datos provinciales (limitación). Periodos, arbitraje y nacional: EXPLORATORIO.")

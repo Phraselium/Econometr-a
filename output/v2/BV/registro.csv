@@ -1,99 +1,99 @@
 fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
-H2,H2_principal,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3981,,,,,0.008733458645550089,0.0021380351927742106,var=d4_ln_hipotecas_importe p_wcb=0.0018001800180018 especificación pre-registrada; Δ4 ln p_tasado real (deflactor nacional ln_deflactor de nacional_q_v2) B=9999
-H2,H2_principal,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3981,,,,,-0.004410359671893741,1.067622624348452e-07,var=cu_x_expo p_wcb=0.0 especificación pre-registrada; Δ4 ln p_tasado real (deflactor nacional ln_deflactor de nacional_q_v2) B=9999
-H2,H2_principal,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3981,,,,,0.043905220099598845,0.02672592886899528,var=d4_ln_ocupados p_wcb=0.0318031803180318 especificación pre-registrada; Δ4 ln p_tasado real (deflactor nacional ln_deflactor de nacional_q_v2) B=9999
-H2,H2_credito_l4,d4_ln_p_real ~ hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,0.001944993732364073,0.4801155806731931,var=hip_l4 p_wcb=0.47914791479147917 crédito retardado 4 trimestres (simultaneidad) B=9999
-H2,H2_credito_l4,d4_ln_p_real ~ hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,-0.004213034909301047,1.028453436725361e-07,var=cu_x_expo p_wcb=0.0 crédito retardado 4 trimestres (simultaneidad) B=9999
-H2,H2_credito_l4,d4_ln_p_real ~ hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,0.04360962021181686,0.03161661722396816,var=d4_ln_ocupados p_wcb=0.03850385038503851 crédito retardado 4 trimestres (simultaneidad) B=9999
-H2,H2_nominal,d4_ln_p_nom ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3981,,,,,0.008733458645550085,0.0021380351927742106,var=d4_ln_hipotecas_importe p_wcb=nan robustez: precio nominal B=0
-H2,H2_nominal,d4_ln_p_nom ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3981,,,,,-0.004410359671893742,1.0676226243484574e-07,var=cu_x_expo p_wcb=nan robustez: precio nominal B=0
-H2,H2_nominal,d4_ln_p_nom ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3981,,,,,0.04390522009959885,0.02672592886899537,var=d4_ln_ocupados p_wcb=nan robustez: precio nominal B=0
-H2,H2_ambos_cred,d4_ln_p_real ~ d4_ln_hipotecas_importe + hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,0.010628390154309527,0.005094926539551334,var=d4_ln_hipotecas_importe p_wcb=nan robustez: crédito t y t-4 B=0
-H2,H2_ambos_cred,d4_ln_p_real ~ d4_ln_hipotecas_importe + hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,0.00561567901398219,0.10475015549698914,var=hip_l4 p_wcb=nan robustez: crédito t y t-4 B=0
-H2,H2_ambos_cred,d4_ln_p_real ~ d4_ln_hipotecas_importe + hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,-0.004108454685967213,1.484362431709337e-07,var=cu_x_expo p_wcb=nan robustez: crédito t y t-4 B=0
-H2,H2_ambos_cred,d4_ln_p_real ~ d4_ln_hipotecas_importe + hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,0.039093428705693635,0.0577585386943182,var=d4_ln_ocupados p_wcb=nan robustez: crédito t y t-4 B=0
-H2,H2_sin_credito,d4_ln_p_real ~ cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2003Q1,2024Q2,4169,,,,,-0.004846287995534598,8.214877533864513e-08,var=cu_x_expo p_wcb=nan robustez: sin crédito B=0
-H2,H2_sin_credito,d4_ln_p_real ~ cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2003Q1,2024Q2,4169,,,,,0.05077793669961463,0.00808282998767529,var=d4_ln_ocupados p_wcb=nan robustez: sin crédito B=0
-H2,H2_sub_hasta2013,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2013Q4,1924,,,,,0.008574056720311165,0.04025074233254983,var=d4_ln_hipotecas_importe p_wcb=nan submuestra 2004Q1-2013Q4 B=0
-H2,H2_sub_hasta2013,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2013Q4,1924,,,,,-0.005024386210942498,4.781159731893267e-05,var=cu_x_expo p_wcb=nan submuestra 2004Q1-2013Q4 B=0
-H2,H2_sub_hasta2013,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2013Q4,1924,,,,,0.06052694815944964,0.0647252316251369,var=d4_ln_ocupados p_wcb=nan submuestra 2004Q1-2013Q4 B=0
-H2,H2_sub_desde2014,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2014Q1,2024Q2,2057,,,,,0.004551902462665667,0.1979397019972317,var=d4_ln_hipotecas_importe p_wcb=nan submuestra 2014Q1-2024Q2 B=0
-H2,H2_sub_desde2014,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2014Q1,2024Q2,2057,,,,,-0.0019214630529805893,0.0024742648166000644,var=cu_x_expo p_wcb=nan submuestra 2014Q1-2024Q2 B=0
-H2,H2_sub_desde2014,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2014Q1,2024Q2,2057,,,,,0.030307573906623482,0.1478509222607093,var=d4_ln_ocupados p_wcb=nan submuestra 2014Q1-2024Q2 B=0
-H2,H2_sin_covid,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3589,,,,,0.009060544598346251,0.0029495363003159657,var=d4_ln_hipotecas_importe p_wcb=nan sin 2020-2021 B=0
-H2,H2_sin_covid,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3589,,,,,-0.004275038977605222,1.754690815788497e-07,var=cu_x_expo p_wcb=nan sin 2020-2021 B=0
-H2,H2_sin_covid,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3589,,,,,0.04848429820964144,0.03326761241635675,var=d4_ln_ocupados p_wcb=nan sin 2020-2021 B=0
-H2,H2_sin_madrid_bcn,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3817,,,,,0.007592624585343786,0.00475396013171342,var=d4_ln_hipotecas_importe p_wcb=nan sin Madrid ni Barcelona B=0
-H2,H2_sin_madrid_bcn,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3817,,,,,-0.004456572971801585,2.0402810307577454e-07,var=cu_x_expo p_wcb=nan sin Madrid ni Barcelona B=0
-H2,H2_sin_madrid_bcn,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3817,,,,,0.04629314163407475,0.01974639644361292,var=d4_ln_ocupados p_wcb=nan sin Madrid ni Barcelona B=0
-P_periodos,B_d4_ln_hipotecas_importe__P1_ajuste,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.022022804528907175,0.0013041024218189215,EXPLORATORIO
-P_periodos,B_cu_x_expo__P1_ajuste,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,-0.007862139168746573,1.1995576353468696e-07,EXPLORATORIO
-P_periodos,B_d4_ln_ocupados__P1_ajuste,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.29462527660647486,8.884196013784034e-05,EXPLORATORIO
-P_periodos,B_d4_ln_pob_20_34__P1_ajuste,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.31120715432559554,0.19584896631594897,EXPLORATORIO
-P_periodos,B_d4_ln_pob_extranj__P1_ajuste,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.06283426466691326,0.4610772737132961,EXPLORATORIO
-P_periodos,B_d4_ln_terminadas_libres__P1_ajuste,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.0034251851218299397,0.2664530997241978,EXPLORATORIO
-P_periodos,B_d4_ln_hipotecas_importe__P2_recuperacion,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.02227129550692467,0.00010352812587395659,EXPLORATORIO
-P_periodos,B_cu_x_expo__P2_recuperacion,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,-0.003977927920036884,0.003946494279210107,EXPLORATORIO
-P_periodos,B_d4_ln_ocupados__P2_recuperacion,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.04252256685939138,0.24593235183873582,EXPLORATORIO
-P_periodos,B_d4_ln_pob_20_34__P2_recuperacion,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.11690284511318744,0.4372695140767641,EXPLORATORIO
-P_periodos,B_d4_ln_pob_extranj__P2_recuperacion,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.16807757937559206,0.0005347817734125189,EXPLORATORIO
-P_periodos,B_d4_ln_terminadas_libres__P2_recuperacion,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.0014378014288527698,0.32154125666809286,EXPLORATORIO
-P_periodos,B_d4_ln_hipotecas_importe__P3_covid,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.022199640592960652,4.088890526216252e-06,EXPLORATORIO
-P_periodos,B_cu_x_expo__P3_covid,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,-0.009813042736636279,0.0019394293541618226,EXPLORATORIO
-P_periodos,B_d4_ln_ocupados__P3_covid,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.0816509130054667,0.005361277894893451,EXPLORATORIO
-P_periodos,B_d4_ln_pob_20_34__P3_covid,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,-0.12804182864121788,0.5342870925716624,EXPLORATORIO
-P_periodos,B_d4_ln_pob_extranj__P3_covid,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.09473319073597948,0.14637352622131303,EXPLORATORIO
-P_periodos,B_d4_ln_terminadas_libres__P3_covid,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,-0.0010671997299131473,0.4855615157863336,EXPLORATORIO
-P_periodos,B_d4_ln_hipotecas_importe__P4_tipos,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.005274551266081759,0.45991409199316335,EXPLORATORIO
-P_periodos,B_cu_x_expo__P4_tipos,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.0035069653498084113,0.01225932576747962,EXPLORATORIO
-P_periodos,B_d4_ln_ocupados__P4_tipos,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.08797683252144409,0.08713861089051841,EXPLORATORIO
-P_periodos,B_d4_ln_pob_20_34__P4_tipos,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,0.21782246735202307,0.2205811671268611,EXPLORATORIO
-P_periodos,B_d4_ln_pob_extranj__P4_tipos,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,-0.33648484999389144,5.904570698618741e-05,EXPLORATORIO
-P_periodos,B_d4_ln_terminadas_libres__P4_tipos,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2883,,,,,-0.000255922001900981,0.9260430631011938,EXPLORATORIO
-P_periodos,contrib_P1_ajuste_credito_tipos,beta_p x (xbar_p - xbar_total),,,2883,,,,,-0.6524198198269702,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P1_ajuste_coste_de_uso,beta_p x (xbar_p - xbar_total),,,2883,,,,,-1.3122511300083657,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P1_ajuste_empleo_renta,beta_p x (xbar_p - xbar_total),,,2883,,,,,-1.071183904109874,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P1_ajuste_demografia,beta_p x (xbar_p - xbar_total),,,2883,,,,,-0.48130604658388076,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P1_ajuste_oferta,beta_p x (xbar_p - xbar_total),,,2883,,,,,-0.12411861518116411,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P1_ajuste_TOTAL_explicado,beta_p x (xbar_p - xbar_total),,,2883,,,,,-3.641279515710255,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P1_ajuste_OBSERVADO_desv_media,beta_p x (xbar_p - xbar_total),,,2883,,,,,-3.344605377152203,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,"contrib_P1_ajuste_RESTO_(FE,interceptos,no_explicado)",beta_p x (xbar_p - xbar_total),,,2883,,,,,0.2966741385580521,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P2_recuperacion_credito_tipos,beta_p x (xbar_p - xbar_total),,,2883,,,,,0.36041133166949146,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P2_recuperacion_coste_de_uso,beta_p x (xbar_p - xbar_total),,,2883,,,,,-0.11678176821077225,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P2_recuperacion_empleo_renta,beta_p x (xbar_p - xbar_total),,,2883,,,,,0.08501734133528784,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P2_recuperacion_demografia,beta_p x (xbar_p - xbar_total),,,2883,,,,,-0.44223051778564165,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P2_recuperacion_oferta,beta_p x (xbar_p - xbar_total),,,2883,,,,,0.021681921746203574,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P2_recuperacion_TOTAL_explicado,beta_p x (xbar_p - xbar_total),,,2883,,,,,-0.09190169124543104,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P2_recuperacion_OBSERVADO_desv_media,beta_p x (xbar_p - xbar_total),,,2883,,,,,1.8534646340747836,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,"contrib_P2_recuperacion_RESTO_(FE,interceptos,no_explicado)",beta_p x (xbar_p - xbar_total),,,2883,,,,,1.9453663253202147,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P3_covid_credito_tipos,beta_p x (xbar_p - xbar_total),,,2883,,,,,0.43912922005582605,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P3_covid_coste_de_uso,beta_p x (xbar_p - xbar_total),,,2883,,,,,1.0179983136742754,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P3_covid_empleo_renta,beta_p x (xbar_p - xbar_total),,,2883,,,,,-0.006374768991543653,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P3_covid_demografia,beta_p x (xbar_p - xbar_total),,,2883,,,,,0.055660046608012305,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P3_covid_oferta,beta_p x (xbar_p - xbar_total),,,2883,,,,,-0.025572968936627034,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P3_covid_TOTAL_explicado,beta_p x (xbar_p - xbar_total),,,2883,,,,,1.480839842409943,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P3_covid_OBSERVADO_desv_media,beta_p x (xbar_p - xbar_total),,,2883,,,,,0.9134104339252179,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,"contrib_P3_covid_RESTO_(FE,interceptos,no_explicado)",beta_p x (xbar_p - xbar_total),,,2883,,,,,-0.5674294084847251,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P4_tipos_credito_tipos,beta_p x (xbar_p - xbar_total),,,2883,,,,,0.015939517148969694,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P4_tipos_coste_de_uso,beta_p x (xbar_p - xbar_total),,,2883,,,,,-1.0922216517769545,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P4_tipos_empleo_renta,beta_p x (xbar_p - xbar_total),,,2883,,,,,0.2061896506197976,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P4_tipos_demografia,beta_p x (xbar_p - xbar_total),,,2883,,,,,-1.3529816170758828,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P4_tipos_oferta,beta_p x (xbar_p - xbar_total),,,2883,,,,,-0.0038794712189887544,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P4_tipos_TOTAL_explicado,beta_p x (xbar_p - xbar_total),,,2883,,,,,-2.226953572303059,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,contrib_P4_tipos_OBSERVADO_desv_media,beta_p x (xbar_p - xbar_total),,,2883,,,,,1.3338045478383458,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,"contrib_P4_tipos_RESTO_(FE,interceptos,no_explicado)",beta_p x (xbar_p - xbar_total),,,2883,,,,,3.560758120141405,,EXPLORATORIO; pp de Δ4 ln precio real
-P_periodos,A_d4_ln_hipotecas_importe__P1_ajuste,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.006760669993432714,0.17267044607683343,EXPLORATORIO p_holm=1 p_bh=0.331
-P_periodos,A_cu_x_expo__P1_ajuste,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,-0.007539860050584372,2.5554332453234808e-08,EXPLORATORIO p_holm=3.067e-07 p_bh=3.067e-07
-P_periodos,A_d4_ln_ocupados__P1_ajuste,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.05999840616726092,0.2206493977239689,EXPLORATORIO p_holm=1 p_bh=0.331
-P_periodos,A_d4_ln_hipotecas_importe__P2_recuperacion,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.006459742224443859,0.2033725557899249,EXPLORATORIO p_holm=1 p_bh=0.331
-P_periodos,A_cu_x_expo__P2_recuperacion,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,-0.00283424805947014,0.015315725798914515,EXPLORATORIO p_holm=0.1532 p_bh=0.06126
-P_periodos,A_d4_ln_ocupados__P2_recuperacion,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.01198513626132661,0.7040138437870587,EXPLORATORIO p_holm=1 p_bh=0.768
-P_periodos,A_d4_ln_hipotecas_importe__P3_covid,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.00651070114372552,0.18123373943272666,EXPLORATORIO p_holm=1 p_bh=0.331
-P_periodos,A_cu_x_expo__P3_covid,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,-0.012986227133169458,4.386412546195468e-05,EXPLORATORIO p_holm=0.0004825 p_bh=0.0002632
-P_periodos,A_d4_ln_ocupados__P3_covid,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.02209559497871173,0.45017614412363033,EXPLORATORIO p_holm=1 p_bh=0.6002
-P_periodos,A_d4_ln_hipotecas_importe__P4_tipos,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,-0.0038337678283458477,0.532837196806974,EXPLORATORIO p_holm=1 p_bh=0.6394
-P_periodos,A_cu_x_expo__P4_tipos,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,-0.00011122111308904342,0.8984370423739191,EXPLORATORIO p_holm=1 p_bh=0.8984
-P_periodos,A_d4_ln_ocupados__P4_tipos,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.07661539881226698,0.028017848336092856,EXPLORATORIO p_holm=0.2522 p_bh=0.08405
+H2,H2_principal,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3981,,,,,0.008725977343066814,0.0021506800837410023,var=d4_ln_hipotecas_importe p_wcb=0.0018001800180018 especificación pre-registrada; Δ4 ln p_tasado real (deflactor nacional ln_deflactor de nacional_q_v2) B=9999
+H2,H2_principal,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3981,,,,,-0.004411807921252146,9.774667629423955e-08,var=cu_x_expo p_wcb=0.0 especificación pre-registrada; Δ4 ln p_tasado real (deflactor nacional ln_deflactor de nacional_q_v2) B=9999
+H2,H2_principal,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3981,,,,,0.04394489706791709,0.0266248587511238,var=d4_ln_ocupados p_wcb=0.0316031603160316 especificación pre-registrada; Δ4 ln p_tasado real (deflactor nacional ln_deflactor de nacional_q_v2) B=9999
+H2,H2_credito_l4,d4_ln_p_real ~ hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,0.0019398232703509695,0.48111523750617274,var=hip_l4 p_wcb=0.4805480548054806 crédito retardado 4 trimestres (simultaneidad) B=9999
+H2,H2_credito_l4,d4_ln_p_real ~ hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,-0.004215596169967168,9.442496100411615e-08,var=cu_x_expo p_wcb=0.0 crédito retardado 4 trimestres (simultaneidad) B=9999
+H2,H2_credito_l4,d4_ln_p_real ~ hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,0.043652813931058465,0.03149158088303138,var=d4_ln_ocupados p_wcb=0.038303830383038306 crédito retardado 4 trimestres (simultaneidad) B=9999
+H2,H2_nominal_equivalente_por_FE_trim,d4_ln_p_nom ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3981,,,,,0.00872597734306681,0.0021506800837410023,var=d4_ln_hipotecas_importe p_wcb=nan NO es robustez: el deflactor es nacional y lo absorbe el FE de trimestre (equivalente numérico) B=0
+H2,H2_nominal_equivalente_por_FE_trim,d4_ln_p_nom ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3981,,,,,-0.004411807921252147,9.774667629423955e-08,var=cu_x_expo p_wcb=nan NO es robustez: el deflactor es nacional y lo absorbe el FE de trimestre (equivalente numérico) B=0
+H2,H2_nominal_equivalente_por_FE_trim,d4_ln_p_nom ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3981,,,,,0.04394489706791707,0.02662485875112406,var=d4_ln_ocupados p_wcb=nan NO es robustez: el deflactor es nacional y lo absorbe el FE de trimestre (equivalente numérico) B=0
+H2,H2_ambos_cred,d4_ln_p_real ~ d4_ln_hipotecas_importe + hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,0.010618117581657762,0.005117899926957975,var=d4_ln_hipotecas_importe p_wcb=nan robustez: crédito t y t-4 B=0
+H2,H2_ambos_cred,d4_ln_p_real ~ d4_ln_hipotecas_importe + hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,0.005607217632261607,0.10506484578762423,var=hip_l4 p_wcb=nan robustez: crédito t y t-4 B=0
+H2,H2_ambos_cred,d4_ln_p_real ~ d4_ln_hipotecas_importe + hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,-0.004110738004853602,1.3671741035128653e-07,var=cu_x_expo p_wcb=nan robustez: crédito t y t-4 B=0
+H2,H2_ambos_cred,d4_ln_p_real ~ d4_ln_hipotecas_importe + hip_l4 + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2005Q1,2024Q2,3793,,,,,0.039141093834949486,0.05752059896921311,var=d4_ln_ocupados p_wcb=nan robustez: crédito t y t-4 B=0
+H2,H2_sin_credito,d4_ln_p_real ~ cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2003Q1,2024Q2,4169,,,,,-0.004848853032831042,7.539155560603338e-08,var=cu_x_expo p_wcb=nan robustez: sin crédito B=0
+H2,H2_sin_credito,d4_ln_p_real ~ cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2003Q1,2024Q2,4169,,,,,0.05080792744471981,0.008058668268655133,var=d4_ln_ocupados p_wcb=nan robustez: sin crédito B=0
+H2,H2_sub_hasta2013,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2013Q4,1924,,,,,0.008566545598704227,0.04042765346754369,var=d4_ln_hipotecas_importe p_wcb=nan submuestra 2004Q1-2013Q4 B=0
+H2,H2_sub_hasta2013,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2013Q4,1924,,,,,-0.005024783885553743,4.630724981180893e-05,var=cu_x_expo p_wcb=nan submuestra 2004Q1-2013Q4 B=0
+H2,H2_sub_hasta2013,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2013Q4,1924,,,,,0.06050766184051298,0.06476531926808655,var=d4_ln_ocupados p_wcb=nan submuestra 2004Q1-2013Q4 B=0
+H2,H2_sub_desde2014,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2014Q1,2024Q2,2057,,,,,0.004550074859405864,0.1980135967000885,var=d4_ln_hipotecas_importe p_wcb=nan submuestra 2014Q1-2024Q2 B=0
+H2,H2_sub_desde2014,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2014Q1,2024Q2,2057,,,,,-0.001928321059771301,0.002343912451526681,var=cu_x_expo p_wcb=nan submuestra 2014Q1-2024Q2 B=0
+H2,H2_sub_desde2014,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2014Q1,2024Q2,2057,,,,,0.030301354663198395,0.14786223029369536,var=d4_ln_ocupados p_wcb=nan submuestra 2014Q1-2024Q2 B=0
+H2,H2_sin_covid,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3589,,,,,0.009052804318566806,0.002968064745793319,var=d4_ln_hipotecas_importe p_wcb=nan sin 2020-2021 B=0
+H2,H2_sin_covid,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3589,,,,,-0.004276955993944725,1.6176059975247717e-07,var=cu_x_expo p_wcb=nan sin 2020-2021 B=0
+H2,H2_sin_covid,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3589,,,,,0.04850370499811309,0.033204535081013814,var=d4_ln_ocupados p_wcb=nan sin 2020-2021 B=0
+H2,H2_sin_madrid_bcn,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3817,,,,,0.007588350944423992,0.004774693605222676,var=d4_ln_hipotecas_importe p_wcb=nan sin Madrid ni Barcelona B=0
+H2,H2_sin_madrid_bcn,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3817,,,,,-0.004454860202152255,1.855131206394527e-07,var=cu_x_expo p_wcb=nan sin Madrid ni Barcelona B=0
+H2,H2_sin_madrid_bcn,d4_ln_p_real ~ d4_ln_hipotecas_importe + cu_x_expo + d4_ln_ocupados | FE prov + trim | cluster prov,2004Q1,2024Q2,3817,,,,,0.046335691233941136,0.019667816498314762,var=d4_ln_ocupados p_wcb=nan sin Madrid ni Barcelona B=0
+P_periodos,B_d4_ln_hipotecas_importe__P1_ajuste,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.021925217762908306,0.0013497186577965232,EXPLORATORIO
+P_periodos,B_cu_x_expo__P1_ajuste,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,-0.007921621984906113,1.2911179978271145e-07,EXPLORATORIO
+P_periodos,B_d4_ln_ocupados__P1_ajuste,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.29435139368549323,9.107501608551635e-05,EXPLORATORIO
+P_periodos,B_d4_ln_pob_20_34__P1_ajuste,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.33044526248496875,0.16555508451272127,EXPLORATORIO
+P_periodos,B_d4_ln_pob_extranj__P1_ajuste,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.05874529216926566,0.49067666339339744,EXPLORATORIO
+P_periodos,B_d4_ln_terminadas_libres__P1_ajuste,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.0033894868074294286,0.2701388245554435,EXPLORATORIO
+P_periodos,B_d4_ln_hipotecas_importe__P2_recuperacion,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.0222802430716046,0.00010191663657176647,EXPLORATORIO
+P_periodos,B_cu_x_expo__P2_recuperacion,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,-0.0040846341862238195,0.003737553223032013,EXPLORATORIO
+P_periodos,B_d4_ln_ocupados__P2_recuperacion,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.04325367214754517,0.23851839596069158,EXPLORATORIO
+P_periodos,B_d4_ln_pob_20_34__P2_recuperacion,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.11345940533843818,0.4646395998174769,EXPLORATORIO
+P_periodos,B_d4_ln_pob_extranj__P2_recuperacion,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.16749566649155084,0.0007855573536398814,EXPLORATORIO
+P_periodos,B_d4_ln_terminadas_libres__P2_recuperacion,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.0014600167340729493,0.31392142209329293,EXPLORATORIO
+P_periodos,B_d4_ln_hipotecas_importe__P3_covid,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.02214785016629408,4.581266342823618e-06,EXPLORATORIO
+P_periodos,B_cu_x_expo__P3_covid,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,-0.009737057699415245,0.0022173078690477066,EXPLORATORIO
+P_periodos,B_d4_ln_ocupados__P3_covid,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.08245654241649072,0.005045401558921041,EXPLORATORIO
+P_periodos,B_d4_ln_pob_20_34__P3_covid,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,-0.1499459554419673,0.4803679551484893,EXPLORATORIO
+P_periodos,B_d4_ln_pob_extranj__P3_covid,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.0966690509185965,0.15147466167263915,EXPLORATORIO
+P_periodos,B_d4_ln_terminadas_libres__P3_covid,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,-0.0010764723376211394,0.484737451871956,EXPLORATORIO
+P_periodos,B_d4_ln_hipotecas_importe__P4_tipos,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.005089810136694494,0.4262326625678609,EXPLORATORIO
+P_periodos,B_cu_x_expo__P4_tipos,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.002580137329012015,0.08945085536226195,EXPLORATORIO
+P_periodos,B_d4_ln_ocupados__P4_tipos,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.10361919893944013,0.036127859684271624,EXPLORATORIO
+P_periodos,B_d4_ln_pob_20_34__P4_tipos,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.065795937583097,0.735088953126722,EXPLORATORIO
+P_periodos,B_d4_ln_pob_extranj__P4_tipos,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,-0.3079556083094722,0.00015248187805714288,EXPLORATORIO
+P_periodos,B_d4_ln_terminadas_libres__P4_tipos,d4_ln_p_real ~ vars x periodo | FE prov + intercepto de periodo | cluster prov,,,2836,,,,,0.0003249147915209302,0.9107121778649897,EXPLORATORIO
+P_periodos,contrib_P1_ajuste_credito_tipos,beta_p x (xbar_p - xbar_total),,,2836,,,,,-0.6479572738566619,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P1_ajuste_coste_de_uso,beta_p x (xbar_p - xbar_total),,,2836,,,,,-1.2953494557225285,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P1_ajuste_empleo_renta,beta_p x (xbar_p - xbar_total),,,2836,,,,,-1.064133582275186,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P1_ajuste_demografia,beta_p x (xbar_p - xbar_total),,,2836,,,,,-0.4718962556884803,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P1_ajuste_oferta,beta_p x (xbar_p - xbar_total),,,2836,,,,,-0.12193122900809661,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P1_ajuste_TOTAL_explicado,beta_p x (xbar_p - xbar_total),,,2836,,,,,-3.6012677965509527,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P1_ajuste_OBSERVADO_desv_media,beta_p x (xbar_p - xbar_total),,,2836,,,,,-3.276637374259578,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,"contrib_P1_ajuste_RESTO_(FE,interceptos,no_explicado)",beta_p x (xbar_p - xbar_total),,,2836,,,,,0.32463042229137484,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P2_recuperacion_credito_tipos,beta_p x (xbar_p - xbar_total),,,2836,,,,,0.36215313928338666,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P2_recuperacion_coste_de_uso,beta_p x (xbar_p - xbar_total),,,2836,,,,,-0.10608010732170439,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P2_recuperacion_empleo_renta,beta_p x (xbar_p - xbar_total),,,2836,,,,,0.0873687644539721,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P2_recuperacion_demografia,beta_p x (xbar_p - xbar_total),,,2836,,,,,-0.4150541750523672,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P2_recuperacion_oferta,beta_p x (xbar_p - xbar_total),,,2836,,,,,0.02240192304988808,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P2_recuperacion_TOTAL_explicado,beta_p x (xbar_p - xbar_total),,,2836,,,,,-0.04921045558682474,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P2_recuperacion_OBSERVADO_desv_media,beta_p x (xbar_p - xbar_total),,,2836,,,,,1.921432636967409,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,"contrib_P2_recuperacion_RESTO_(FE,interceptos,no_explicado)",beta_p x (xbar_p - xbar_total),,,2836,,,,,1.9706430925542338,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P3_covid_credito_tipos,beta_p x (xbar_p - xbar_total),,,2836,,,,,0.43969227948482414,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P3_covid_coste_de_uso,beta_p x (xbar_p - xbar_total),,,2836,,,,,1.0430942042796505,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P3_covid_empleo_renta,beta_p x (xbar_p - xbar_total),,,2836,,,,,-0.0047416079598736,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P3_covid_demografia,beta_p x (xbar_p - xbar_total),,,2836,,,,,0.024924181454131614,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P3_covid_oferta,beta_p x (xbar_p - xbar_total),,,2836,,,,,-0.02607902387985272,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P3_covid_TOTAL_explicado,beta_p x (xbar_p - xbar_total),,,2836,,,,,1.47689003337888,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P3_covid_OBSERVADO_desv_media,beta_p x (xbar_p - xbar_total),,,2836,,,,,0.9813784368178434,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,"contrib_P3_covid_RESTO_(FE,interceptos,no_explicado)",beta_p x (xbar_p - xbar_total),,,2836,,,,,-0.49551159656103655,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P4_tipos_credito_tipos,beta_p x (xbar_p - xbar_total),,,2836,,,,,0.01500909653882487,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P4_tipos_coste_de_uso,beta_p x (xbar_p - xbar_total),,,2836,,,,,-0.8430025116582097,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P4_tipos_empleo_renta,beta_p x (xbar_p - xbar_total),,,2836,,,,,0.25767543885573346,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P4_tipos_demografia,beta_p x (xbar_p - xbar_total),,,2836,,,,,-1.6706440348468858,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P4_tipos_oferta,beta_p x (xbar_p - xbar_total),,,2836,,,,,0.004983828699096003,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P4_tipos_TOTAL_explicado,beta_p x (xbar_p - xbar_total),,,2836,,,,,-2.235978182411441,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,contrib_P4_tipos_OBSERVADO_desv_media,beta_p x (xbar_p - xbar_total),,,2836,,,,,1.0942821430357395,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,"contrib_P4_tipos_RESTO_(FE,interceptos,no_explicado)",beta_p x (xbar_p - xbar_total),,,2836,,,,,3.3302603254471803,,EXPLORATORIO; pp de Δ4 ln precio real
+P_periodos,A_d4_ln_hipotecas_importe__P1_ajuste,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.006756407145899507,0.17290155157789883,EXPLORATORIO p_holm=1 p_bh=0.3291
+P_periodos,A_cu_x_expo__P1_ajuste,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,-0.007535447297591303,2.3971613561451915e-08,EXPLORATORIO p_holm=2.877e-07 p_bh=2.877e-07
+P_periodos,A_d4_ln_ocupados__P1_ajuste,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.06017624527734777,0.21937161755877857,EXPLORATORIO p_holm=1 p_bh=0.3291
+P_periodos,A_d4_ln_hipotecas_importe__P2_recuperacion,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.006473752531069669,0.202329456185284,EXPLORATORIO p_holm=1 p_bh=0.3291
+P_periodos,A_cu_x_expo__P2_recuperacion,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,-0.0028421872284890575,0.015118603398988498,EXPLORATORIO p_holm=0.1512 p_bh=0.06047
+P_periodos,A_d4_ln_ocupados__P2_recuperacion,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.01201047850270511,0.7034618093460957,EXPLORATORIO p_holm=1 p_bh=0.7674
+P_periodos,A_d4_ln_hipotecas_importe__P3_covid,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.006502808260966857,0.18247417276257144,EXPLORATORIO p_holm=1 p_bh=0.3291
+P_periodos,A_cu_x_expo__P3_covid,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,-0.012944074921706676,5.167915202851914e-05,EXPLORATORIO p_holm=0.0005685 p_bh=0.0003101
+P_periodos,A_d4_ln_ocupados__P3_covid,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.022527565246012966,0.441110294033427,EXPLORATORIO p_holm=1 p_bh=0.5881
+P_periodos,A_d4_ln_hipotecas_importe__P4_tipos,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,-0.0038561359855003733,0.5307604955407117,EXPLORATORIO p_holm=1 p_bh=0.6369
+P_periodos,A_cu_x_expo__P4_tipos,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,-0.00011995551607554955,0.8902021848904996,EXPLORATORIO p_holm=1 p_bh=0.8902
+P_periodos,A_d4_ln_ocupados__P4_tipos,d4_ln_p_real ~ X0 x periodo | FE prov+trim | cluster prov,,,3205,,,,,0.07659014545809051,0.027730433926714253,EXPLORATORIO p_holm=0.2496 p_bh=0.08319
 ARB_LP,LP_media_total_y_precio_h1,y_precio(t+1) ~ dev_ratio + d4 ln p + d4 ln alq | FE prov+trim | cluster prov,,,4113,,,,,-0.0355276317187714,4.270156059462195e-06,EXPLORATORIO
 ARB_LP,LP_media_total_y_alq_h1,y_alq(t+1) ~ dev_ratio + d4 ln p + d4 ln alq | FE prov+trim | cluster prov,,,4120,,,,,0.0050081529022798004,0.0026548501062096056,EXPLORATORIO
 ARB_LP,LP_media_expansiva_y_precio_h1,y_precio(t+1) ~ dev_exp + d4 ln p + d4 ln alq | FE prov+trim | cluster prov,,,3329,,,,,-0.017688839540824623,0.1066027000189312,EXPLORATORIO
@@ -129,10 +129,10 @@ ARB_LP,LP_media_expansiva_y_alq_h8,y_alq(t+8) ~ dev_exp + d4 ln p + d4 ln alq | 
 OOS_panel,OOS_panel_PRESUPUESTO,presupuesto declarado,,,0,,,,,,,n_max=6 configuraciones. panel h=4 var_precio=p_tasado real; C1 AR4+Δ4hip; C2 +Δ4ocup; C3 +cu+cu×expo; C4 sin AR; C5 crédito t-4; C6 AR4+coste uso
 OOS_panel,OOS_panel_C1,panel h=4 var_precio=p_tasado real; C1 AR4+Δ4hip; C2 +Δ4ocup; C3 +cu+cu×expo; C4 sin AR; C5 crédito t-4; C6 AR4+coste uso,2012Q1,2024Q2,2209,,,,0.04134457249543945,,,"DM vs AR4=0.282 p=0.779; vs ECM=1.674 p=0.101 | config={""cfg"": ""C1""}"
 OOS_panel,OOS_panel_C2,panel h=4 var_precio=p_tasado real; C1 AR4+Δ4hip; C2 +Δ4ocup; C3 +cu+cu×expo; C4 sin AR; C5 crédito t-4; C6 AR4+coste uso,2012Q1,2024Q2,2209,,,,0.041965069138515165,,,"DM vs AR4=-0.086 p=0.932; vs ECM=1.653 p=0.105 | config={""cfg"": ""C2""}"
-OOS_panel,OOS_panel_C3,panel h=4 var_precio=p_tasado real; C1 AR4+Δ4hip; C2 +Δ4ocup; C3 +cu+cu×expo; C4 sin AR; C5 crédito t-4; C6 AR4+coste uso,2012Q1,2024Q2,2209,,,,0.060550254520485756,,,"DM vs AR4=-1.600 p=0.117; vs ECM=0.919 p=0.363 | config={""cfg"": ""C3""}"
-OOS_panel,OOS_panel_C4,panel h=4 var_precio=p_tasado real; C1 AR4+Δ4hip; C2 +Δ4ocup; C3 +cu+cu×expo; C4 sin AR; C5 crédito t-4; C6 AR4+coste uso,2012Q1,2024Q2,2209,,,,0.0601812093314701,,,"DM vs AR4=-1.508 p=0.139; vs ECM=0.936 p=0.354 | config={""cfg"": ""C4""}"
-OOS_panel,OOS_panel_C5,panel h=4 var_precio=p_tasado real; C1 AR4+Δ4hip; C2 +Δ4ocup; C3 +cu+cu×expo; C4 sin AR; C5 crédito t-4; C6 AR4+coste uso,2012Q1,2024Q2,2209,,,,0.05846707303560981,,,"DM vs AR4=-1.508 p=0.138; vs ECM=1.002 p=0.322 | config={""cfg"": ""C5""}"
-OOS_panel,OOS_panel_C6,panel h=4 var_precio=p_tasado real; C1 AR4+Δ4hip; C2 +Δ4ocup; C3 +cu+cu×expo; C4 sin AR; C5 crédito t-4; C6 AR4+coste uso,2012Q1,2024Q2,2209,,,,0.0633140796901804,,,"DM vs AR4=-1.536 p=0.132; vs ECM=0.803 p=0.426 | config={""cfg"": ""C6""}"
+OOS_panel,OOS_panel_C3,panel h=4 var_precio=p_tasado real; C1 AR4+Δ4hip; C2 +Δ4ocup; C3 +cu+cu×expo; C4 sin AR; C5 crédito t-4; C6 AR4+coste uso,2012Q1,2024Q2,2209,,,,0.06054825465922567,,,"DM vs AR4=-1.600 p=0.117; vs ECM=0.919 p=0.363 | config={""cfg"": ""C3""}"
+OOS_panel,OOS_panel_C4,panel h=4 var_precio=p_tasado real; C1 AR4+Δ4hip; C2 +Δ4ocup; C3 +cu+cu×expo; C4 sin AR; C5 crédito t-4; C6 AR4+coste uso,2012Q1,2024Q2,2209,,,,0.060178097210252565,,,"DM vs AR4=-1.507 p=0.139; vs ECM=0.936 p=0.354 | config={""cfg"": ""C4""}"
+OOS_panel,OOS_panel_C5,panel h=4 var_precio=p_tasado real; C1 AR4+Δ4hip; C2 +Δ4ocup; C3 +cu+cu×expo; C4 sin AR; C5 crédito t-4; C6 AR4+coste uso,2012Q1,2024Q2,2209,,,,0.05846421705171185,,,"DM vs AR4=-1.508 p=0.139; vs ECM=1.002 p=0.322 | config={""cfg"": ""C5""}"
+OOS_panel,OOS_panel_C6,panel h=4 var_precio=p_tasado real; C1 AR4+Δ4hip; C2 +Δ4ocup; C3 +cu+cu×expo; C4 sin AR; C5 crédito t-4; C6 AR4+coste uso,2012Q1,2024Q2,2209,,,,0.06331209652115707,,,"DM vs AR4=-1.535 p=0.132; vs ECM=0.803 p=0.426 | config={""cfg"": ""C6""}"
 OOS_nac,OOS_nac_PRESUPUESTO,presupuesto declarado,,,0,,,,,,,"n_max=4 configuraciones. nacional h=4 p_tasado real; N1 AR4+Δcrédito; N2 +Δhipotecas+Δcu; N3 crédito por finalidad (vivienda, consumo, otros)+Δcu; N4 parsimonioso"
 OOS_nac,OOS_nac_N1,"nacional h=4 p_tasado real; N1 AR4+Δcrédito; N2 +Δhipotecas+Δcu; N3 crédito por finalidad (vivienda, consumo, otros)+Δcu; N4 parsimonioso",2012Q1,2024Q2,46,,,,0.04091850816940394,,,"DM vs AR4=-1.349 p=0.184; vs ECM=1.169 p=0.249 | config={""cfg"": ""N1""}"
 OOS_nac,OOS_nac_N2,"nacional h=4 p_tasado real; N1 AR4+Δcrédito; N2 +Δhipotecas+Δcu; N3 crédito por finalidad (vivienda, consumo, otros)+Δcu; N4 parsimonioso",2012Q1,2024Q2,46,,,,0.03487194208749257,,,"DM vs AR4=-1.995 p=0.052; vs ECM=1.475 p=0.147 | config={""cfg"": ""N2""}"

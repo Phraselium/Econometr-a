@@ -471,7 +471,7 @@ def ficha(tri: dict, gs: dict, ver: dict) -> dict:
         "veredicto": ver_txt, "regla": regla,
         "limites": ("Sobre-rechazo moderado con Δy autocorrelacionada (tamaño 12,7 % con phi=0,5, vc al 5 %). El test detecta comportamiento explosivo de la serie, no una burbuja: no identifica si el precio se "
                     "separa de los fundamentos. Ratios con índices rebasados (nivel de la ratio arbitrario); ADF con un rezago; "
-                    "valores críticos por simulación de paseo aleatorio (principal) y wild bootstrap (499 réplicas; conservador si la muestra ya contiene tramos explosivos); muestra 2007-2026 corta para el ciclo. Precio/renta solo nacional; sin renta "
+                    "valores críticos por simulación de paseo aleatorio (principal) y wild bootstrap (499 réplicas; más exigente si la muestra ya contiene tramos explosivos); muestra 2007-2026 corta para el ciclo. Precio/renta solo nacional; sin renta "
                     "trimestral por CCAA. Verificación con series simuladas: " + ("superada." if ver["ok"] else "NO superada.")),
         "evidencia": ["output/v4/M7/tablas/gsadf_resultados.csv", "output/v4/M7/tablas/variacion_precio.csv",
                       "data/processed (nacional_q_v2 vía holdout.load_full)"]}

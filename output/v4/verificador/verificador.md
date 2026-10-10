@@ -294,10 +294,10 @@ Generado por `make verificador`. Cada ficha evalúa la afirmación, no a quien l
 |---|---|
 | Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C4 |
-| Magnitud | Precio de compra 2015-2025: +44 % a +80 % según la fuente (4 fuentes); 2021-2025: +24 % a +36 %. GSADF nacional precio/alquiler: exuberancia (BH 5 %, ambos métodos) en 2 de 2 medidas; CCAA con exuberancia en ambas medidas: 5. |
+| Magnitud | Precio de compra 2015-2025: +44 % a +80 % según la fuente (4 fuentes); 2021-2025: +24 % a +36 %. GSADF nacional precio/alquiler: exuberancia (BH 5 %, ambos métodos) en 2 de 2 medidas; CCAA con exuberancia en ambas medidas: 5 de 17; episodios nacionales: 2011Q4-2013Q3;2017Q2-2019Q3;2024Q2-2026Q2; 2017Q4-2019Q2;2024Q4-2026Q2. |
 | Intervalo | [44; 80] % de variación 2015-2025 |
 | Cota | — |
 | Literatura | Phillips, Shi y Yu (2015), GSADF: NO VERIFICADA (DOI y cuartil no comprobados sin red). |
-| Regla del veredicto | Hay exuberancia estadística en alguna serie, pero un test de exuberancia no separa burbuja de cambios en los fundamentos (renta, tipos de interés, oferta). Capa C4: ni RESPALDADA ni CONTRADICHA. |
-| Límites | El test detecta comportamiento explosivo de la serie, no una burbuja: no identifica si el precio se separa de los fundamentos. Ratios con índices rebasados (nivel de la ratio arbitrario); ADF con un rezago; valores críticos por simulación de paseo aleatorio (principal) y wild bootstrap (499 réplicas; conservador si la muestra ya contiene tramos explosivos); muestra 2007-2026 corta para el ciclo. Precio/renta solo nacional; sin renta trimestral por CCAA. Verificación con series simuladas: superada. |
+| Regla del veredicto | Hay exuberancia estadística en el ratio precio/alquiler (episodios fechados con BSADF), pero un test de exuberancia no separa una burbuja de cambios en los fundamentos (renta, tipos de interés, oferta) ni mide la sobrevaloración. Con capa C4 el veredicto no puede ser RESPALDADA ni CONTRADICHA. |
+| Límites | Sobre-rechazo moderado con Δy autocorrelacionada (tamaño 12,7 % con phi=0,5, vc al 5 %). El test detecta comportamiento explosivo de la serie, no una burbuja: no identifica si el precio se separa de los fundamentos. Ratios con índices rebasados (nivel de la ratio arbitrario); ADF con un rezago; valores críticos por simulación de paseo aleatorio (principal) y wild bootstrap (499 réplicas; más exigente si la muestra ya contiene tramos explosivos); muestra 2007-2026 corta para el ciclo. Precio/renta solo nacional; sin renta trimestral por CCAA. Verificación con series simuladas: superada. |
 | Evidencia | output/v4/M7/tablas/gsadf_resultados.csv, output/v4/M7/tablas/variacion_precio.csv, data/processed (nacional_q_v2 vía holdout.load_full) |

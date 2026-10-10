@@ -112,7 +112,6 @@ Cifras generadas por `src/v2/bd_run.py` (B=49, semilla 20261010); dos ejecucione
 - Ninguna familia explica de forma robusta la evolución desde 2020: en M1 las familias suman −3,14 [−10,57; 8,08] pp y el común −1,33 [−17,68; 6,21] pp.
   En M2 la demografía (sobre todo extranjera: −11,31 [−16,96; −4,59] pp) sale con signo negativo en P3-P4 porque los coeficientes por periodo de la población cambian de signo
   (`coeficientes_por_periodo.csv`); no se interpreta, la inestabilidad entre M1 y M2 indica que no hay una atribución estable.
-- Crédito/coste de uso en P1 (con (coste de uso − media muestral) × exposición; la estimación no se centra): −4,33 [−9,99; 13,83] pp en M1; desde 2014 −1,52 [−15,45; 5,13] pp.
 - En compra M2 el coeficiente de Δ4 coste de uso nacional es 0,0058 (signo contrario al esperado si es positivo; IC por bloques de tiempo en `coeficientes_por_periodo.csv`).
 
 ## Contrafactuales (EXPLORATORIOS y PARCIALES)
@@ -237,6 +236,7 @@ Contribución en P4 (6 trimestres): −0,19 pp [−0,40; 0,48] sobre un crecimie
 - Población 20-34 en alquiler desde 2020: M1 −0,20 [−0,67; 1,14] (IC incluye 0) frente a M2 −0,11 [−0,68; 0,85] (IC excluye 0): solo aparece en un modelo.
 - (a1) alquiler en P4: M1 0,11 [−0,52; 0,52] frente a M2 0,06 [−0,59; 0,57]: solo M2 excluye 0.
 - (b) compra P2-P4: M1 3,11 [−4,35; 27,11] (excluye 0) frente a M2 −0,06 [−8,70; 7,32].
+- Crédito/coste de uso en compra desde 2014: M1 −1,52 [−15,45; 5,13] (excluye 0) frente a M2 −0,04 [−6,16; 6,24]; desde 2020: M1 −2,03 [−15,24; 3,66] frente a M2 −1,02 [−4,83; 4,71]: no se replica entre modelos.
 
 ## Qué NO se puede afirmar
 - Nada causal: ni «la demografía/el crédito/los tipos causaron» ni que los contrafactuales sean lo que habría ocurrido. Son aritmética de coeficientes de asociación.

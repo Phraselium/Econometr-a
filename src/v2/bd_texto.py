@@ -94,6 +94,7 @@ def escribir(ctx):
     L_nr.append(f"- Población 20-34 en alquiler desde 2020: M1 {cell(c, 'alquiler', 'M1', 'P3-P4 (desde 2020)', 'demografia_20_34')} (IC incluye 0) frente a M2 {cell(c, 'alquiler', 'M2', 'P3-P4 (desde 2020)', 'demografia_20_34')} (IC excluye 0): solo aparece en un modelo.")
     L_nr.append(f"- (a1) alquiler en P4: M1 {E('alquiler','M1','a1_solo_pob_20_34_sin_variacion','P4')} frente a M2 {E('alquiler','M2','a1_solo_pob_20_34_sin_variacion','P4')}: solo M2 excluye 0.")
     L_nr.append(f"- (b) compra P2-P4: M1 {E('compra','M1','b_credito_y_cu_congelados_2013Q4','P2-P4 acumulado')} (excluye 0) frente a M2 {E('compra','M2','b_credito_y_cu_congelados_2013Q4','P2-P4 acumulado')}.")
+    L_nr.append(f"- Crédito/coste de uso en compra desde 2014: M1 {cell(c, 'compra', 'M1', 'P2-P4 (desde 2014)', 'credito_tipos_cu')} (excluye 0) frente a M2 {cell(c, 'compra', 'M2', 'P2-P4 (desde 2014)', 'credito_tipos_cu')}; desde 2020: M1 {cell(c, 'compra', 'M1', 'P3-P4 (desde 2020)', 'credito_tipos_cu')} frente a M2 {cell(c, 'compra', 'M2', 'P3-P4 (desde 2020)', 'credito_tipos_cu')}: no se replica entre modelos.")
     no_rob = "\n".join(L_nr) + "\n"
     md = f"""# BD - Descomposición por periodos con contrafactuales e intervalos (alquiler y compra)
 
@@ -159,7 +160,6 @@ Cifras generadas por `src/v2/bd_run.py` (B={B}, semilla {vc.SEED}); dos ejecucio
 - Ninguna familia explica de forma robusta la evolución desde 2020: en M1 las familias suman {cell(c, 'compra', 'M1', 'P3-P4 (desde 2020)', 'explicado_familias')} pp y el común {cell(c, 'compra', 'M1', 'P3-P4 (desde 2020)', 'comun_efectos_tiempo')} pp.
   En M2 la demografía (sobre todo extranjera: {cell(c, 'compra', 'M2', 'P3-P4 (desde 2020)', 'demografia_extranj')} pp) sale con signo negativo en P3-P4 porque los coeficientes por periodo de la población cambian de signo
   (`coeficientes_por_periodo.csv`); no se interpreta, la inestabilidad entre M1 y M2 indica que no hay una atribución estable.
-- Crédito/coste de uso en P1 (con (coste de uso − media muestral) × exposición; la estimación no se centra): {cell(c, 'compra', 'M1', 'P1', 'credito_tipos_cu')} pp en M1; desde 2014 {cell(c, 'compra', 'M1', 'P2-P4 (desde 2014)', 'credito_tipos_cu')} pp.
 - En compra M2 el coeficiente de Δ4 coste de uso nacional es {fmt(ctx['coef'][(ctx['coef'].mercado=='compra')&(ctx['coef'].modelo=='M2')&(ctx['coef'].col=='x_cu')].coef.iloc[0], 4)} (signo contrario al esperado si es positivo; IC por bloques de tiempo en `coeficientes_por_periodo.csv`).
 
 ## Contrafactuales (EXPLORATORIOS y PARCIALES)

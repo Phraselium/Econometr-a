@@ -1,0 +1,8 @@
+hipotesis,rama,p_dentro_muestra,p_sellado,fuente,p_hipotesis,p_holm7,supera_holm7_5pct
+H6,BP,,0.013986013986013986,BP/h6_sellado.json,0.013986013986013986,0.0979020979020979,False
+H3,BI,0.029,,BI/resultado.json,0.029,0.17400000000000002,False
+H4,BO,0.046,,BO/resultado.json,0.046,0.22999999999999998,False
+H2,BV,0.0018,0.19467579127919515,BV/resultado.json; BV/h2_sellado.json,0.19467579127919515,0.7787031651167806,False
+H1,BA,0.85,0.005291203548195239,BA/resultado.json; BA/h1_sellado.json,0.85,1.0,False
+H5,BP,0.97,,BP/resultado.json (p una cola del signo esperado),0.97,1.0,False
+H7,BM,,1.0,BM/h7_sellado.json (Holm m=3 interno),1.0,1.0,False

@@ -5,7 +5,7 @@
   "rango_min": 103560.0,
   "rango_max": 413004.25440000003,
   "unidad": "viviendas/año",
-  "robusta_en_todo_el_rango": "sí",
+  "robusta_en_todo_el_rango": "n/a (cantidad contable o condicional)",
   "domina_debilmente": null,
   "depende_de": "ritmo de hogares, absorción de latentes (A2), bajas y arrastre 2024-25; no depende de ε ni de η (estabilizar exige oferta = demanda)",
   "capa": "C2",
@@ -17,9 +17,9 @@
   "rango_min": 2580.0,
   "rango_max": 323684.25440000003,
   "unidad": "viviendas/año",
-  "robusta_en_todo_el_rango": "sí",
+  "robusta_en_todo_el_rango": "n/a (cantidad contable o condicional)",
   "domina_debilmente": null,
-  "depende_de": "el signo depende del ritmo de hogares (supuesto de desaceleración al 50 %) y de las bajas",
+  "depende_de": "positiva en toda la rejilla sin movilización (incluido el ritmo de hogares al 50 %); con movilización del 30 % puede ser negativa si el ritmo de hogares es bajo",
   "capa": "C2",
   "limites": "Modelo log-lineal de stock-flujo con ε y η constantes; las terminadas MIVAU incluyen toda vivienda (no solo residencia habitual); las bajas son un supuesto; el balance contable no equivale a demanda insatisfecha a cualquier precio."
  },
@@ -29,7 +29,7 @@
   "rango_min": 0.04072268312280691,
   "rango_max": 73.90958120269782,
   "unidad": "%",
-  "robusta_en_todo_el_rango": "sí",
+  "robusta_en_todo_el_rango": "n/a (cantidad contable o condicional)",
   "domina_debilmente": null,
   "depende_de": "depende de |ε_d|, η y del ritmo de hogares",
   "capa": "C4",
@@ -41,7 +41,7 @@
   "rango_min": 78750.45,
   "rango_max": 397961.59440000006,
   "unidad": "viviendas/año",
-  "robusta_en_todo_el_rango": "sí",
+  "robusta_en_todo_el_rango": "n/a (cantidad contable o condicional)",
   "domina_debilmente": null,
   "depende_de": "supuesto de movilización (0-30 %)",
   "capa": "C2",
@@ -89,7 +89,7 @@
   "rango_min": 0.0,
   "rango_max": 7648.75,
   "unidad": "viviendas",
-  "robusta_en_todo_el_rango": "no",
+  "robusta_en_todo_el_rango": "n/a (cantidad contable o condicional)",
   "domina_debilmente": null,
   "depende_de": "depende de la sustitución s (cota B1: máximo 1:1, mínimo 0)",
   "capa": "C2",
@@ -117,7 +117,7 @@
   "domina_debilmente": null,
   "depende_de": "depende de ε, η y de s (nula si s = 0)",
   "capa": "C4",
-  "limites": "Condicional a ε y s."
+  "limites": "Condicional a ε y s; aproximación log-lineal, fuera de su rango de validez por debajo de -30 %."
  },
  {
   "politica": "P2 retirar turísticos",
@@ -125,7 +125,7 @@
   "rango_min": 0.0,
   "rango_max": 15297.5,
   "unidad": "viviendas",
-  "robusta_en_todo_el_rango": "no",
+  "robusta_en_todo_el_rango": "n/a (cantidad contable o condicional)",
   "domina_debilmente": null,
   "depende_de": "depende de la sustitución s (cota B1: máximo 1:1, mínimo 0)",
   "capa": "C2",
@@ -153,7 +153,7 @@
   "domina_debilmente": null,
   "depende_de": "depende de ε, η y de s (nula si s = 0)",
   "capa": "C4",
-  "limites": "Condicional a ε y s."
+  "limites": "Condicional a ε y s; aproximación log-lineal, fuera de su rango de validez por debajo de -30 %."
  },
  {
   "politica": "P2 retirar turísticos",
@@ -161,7 +161,7 @@
   "rango_min": 0.0,
   "rango_max": 30595.0,
   "unidad": "viviendas",
-  "robusta_en_todo_el_rango": "no",
+  "robusta_en_todo_el_rango": "n/a (cantidad contable o condicional)",
   "domina_debilmente": null,
   "depende_de": "depende de la sustitución s (cota B1: máximo 1:1, mínimo 0)",
   "capa": "C2",
@@ -189,7 +189,7 @@
   "domina_debilmente": null,
   "depende_de": "depende de ε, η y de s (nula si s = 0)",
   "capa": "C4",
-  "limites": "Condicional a ε y s."
+  "limites": "Condicional a ε y s; aproximación log-lineal, fuera de su rango de validez por debajo de -30 %."
  },
  {
   "politica": "P2 retirar turísticos",
@@ -209,7 +209,7 @@
   "rango_min": 147.833244648,
   "rango_max": 478.87135354080004,
   "unidad": "€/año",
-  "robusta_en_todo_el_rango": "sí",
+  "robusta_en_todo_el_rango": "n/a (cantidad contable o condicional)",
   "domina_debilmente": null,
   "depende_de": "reducción JMS (IC) y renta anual de alquiler",
   "capa": "C4",
@@ -281,7 +281,7 @@
   "rango_min": 50142.200000000004,
   "rango_max": 82698.5,
   "unidad": "viviendas",
-  "robusta_en_todo_el_rango": "no",
+  "robusta_en_todo_el_rango": "n/a (cantidad contable o condicional)",
   "domina_debilmente": null,
   "depende_de": "depende del % movilizable (supuesto 0-30 %) y de la medida de presión",
   "capa": "C2",
@@ -305,7 +305,7 @@
   "rango_min": 150426.6,
   "rango_max": 248095.5,
   "unidad": "viviendas",
-  "robusta_en_todo_el_rango": "no",
+  "robusta_en_todo_el_rango": "n/a (cantidad contable o condicional)",
   "domina_debilmente": null,
   "depende_de": "depende del % movilizable (supuesto 0-30 %) y de la medida de presión",
   "capa": "C2",
@@ -327,13 +327,13 @@
   "politica": "P4 movilización de vacías",
   "metrica": "aporte máximo (30 %) como % de la brecha acumulada de P1",
   "rango_min": 4.647325223738161,
-  "rango_max": 961.6104651162791,
+  "rango_max": 51.17995842787607,
   "unidad": "%",
-  "robusta_en_todo_el_rango": "no",
+  "robusta_en_todo_el_rango": "n/a (cantidad contable o condicional)",
   "domina_debilmente": null,
   "depende_de": "depende de la brecha de P1 y del % movilizable",
   "capa": "C2",
-  "limites": "Brecha de P1 sin movilización."
+  "limites": "Brecha de P1 sin movilización; el extremo alto usa el percentil 10 de la brecha."
  },
  {
   "politica": "P4 vivienda pública",

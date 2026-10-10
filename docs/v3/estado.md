@@ -19,10 +19,10 @@
 | Revisión oleada 1 (it. 1: REHACER O1-O10) y correcciones P-A/P-B/POT/GL | 1 | hecho | — | ver docs/v3/revision_oleada1.md | 132.184 + correcciones 78.877 |
 | Revisión oleada 1, iteración 2 | 1 | APROBAR | — | pre-registro congelado (ancla 204c073); limitaciones v3 | 35.188 |
 | Oleada 2: H3-1/H3-2 (VUT → alquiler) | 2 | en curso | — | — | — |
-| Oleada 2: H3-3 topes + réplica JMS 2023 | 2 | en curso | — | — | — |
+| Oleada 2: H3-3 topes + réplica JMS 2023 | 2 | hecho | C4 | H3-3a renta −5,4 % [−7,1; −3,7] (−37 €/mes); sellado SERPAVI −0,8 % [−1,4; −0,1]; falla RR y sensibilidad → C4. H3-3b contratos −4,9 % [−9,9; +0,5] → C4. JMS: renta REPLICADO (esp. más cercana) | 130.585 |
 
 **Hecho:** setup; literatura v3; D2 (scripts src/v3/fetch_*_v3.py, build_zonas_eventos_v3.py).
 **Pendiente de datos:** D1 INE (en curso); Barcelona por barrio (bloqueado, anti-bot); Madrid por distrito; GVA fianzas; SIU (solicitud); obligatoriedad RD 1312/2024 sin verificar.
 **Siguiente:** oleada 2 (en curso) → Holm m=4 → reviewer oleada 2 → oleada 3 (P-D, verificador, informes).
-**Tokens de subagentes v3:** 1.384.711 / 3.500.000 (cierre al 80 %: 2.800.000).
+**Tokens de subagentes v3:** 1.515.296 / 3.500.000 (cierre al 80 %: 2.800.000).
 - 2026-10-10: cataluna_contencion_rentas_v3.csv generado (61 Ley 11/2020; 140 + 131 Ley 12/2023; 0 en 2025). Pendiente: DOGC no accesible; prórroga 2026 no verificada. Ver decisiones.md.

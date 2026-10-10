@@ -369,12 +369,13 @@ def main(smoke: bool = False):
     # ---------- política 4
     sinm = df1[df1.mov == 0]
     brecha_lo, brecha_hi = float(sinm.brecha.min()), float(sinm.brecha.max())
+    brecha_p10 = float(sinm.brecha.quantile(0.1))
     p4 = []
     for V, nom in zip(d["V_alto"], ("presión mínima", "presión máxima")):
         for m in (0, 0.1, 0.2, 0.3):
             u = m * V
             p4.append({"V_alto": V, "medida": nom, "movilizable_pct": 100 * m, "viviendas": u, "por_anio_10a": u / HORIZ,
-                       "pct_brecha_acum_min": 100 * u / (HORIZ * brecha_hi), "pct_brecha_acum_max": 100 * u / (HORIZ * brecha_lo) if brecha_lo > 0 else np.nan})
+                       "pct_brecha_acum_min": 100 * u / (HORIZ * brecha_hi), "pct_brecha_acum_max": 100 * u / (HORIZ * brecha_p10)})
     tablas["t4_movilizacion.csv"] = pd.DataFrame(p4)
     tablas["t4_vacias_tercil_alto_local.csv"] = pd.DataFrame([{"presion": k, **v, "movilizar_30pct_por_100_hogares": 100 * 0.3 * v["vacias"] / v["hogares"]} for k, v in d["H_alto"].items()])
     tablas["t4_coste_publico_parametro.csv"] = pd.DataFrame([{"parametro": "coste_unitario_publico_eur_por_vivienda", "valor": None,
@@ -413,19 +414,20 @@ def main(smoke: bool = False):
         R.append({"politica": politica, "metrica": metrica, "rango_min": None if lo is None else float(lo), "rango_max": None if hi is None else float(hi),
                   "unidad": unidad, "robusta_en_todo_el_rango": robusta, "domina_debilmente": debil, "depende_de": depende, "capa": capa, "limites": limites})
 
+    NA = "n/a (cantidad contable o condicional)"
     yn = lambda b: "sí" if b else "no"  # noqa: E731
     marca_c13 = "" if (d["C1"] or d["C3"]) else " Resultados C1/C3 de la oleada 2 ausentes: solo rangos de literatura (marcado)."
     lim1 = ("Modelo log-lineal de stock-flujo con ε y η constantes; las terminadas MIVAU incluyen toda vivienda (no solo residencia habitual); "
             "las bajas son un supuesto; el balance contable no equivale a demanda insatisfecha a cualquier precio.")
     c0lo, c0hi = d["c0"][0], d["c0"][2]
-    add("P1 estabilizar el esfuerzo", "viviendas necesarias por año 2026-2035 (sin movilización)", sinm.necesarias.min(), sinm.necesarias.max(), "viviendas/año", "sí",
+    add("P1 estabilizar el esfuerzo", "viviendas necesarias por año 2026-2035 (sin movilización)", sinm.necesarias.min(), sinm.necesarias.max(), "viviendas/año", NA,
         "ritmo de hogares, absorción de latentes (A2), bajas y arrastre 2024-25; no depende de ε ni de η (estabilizar exige oferta = demanda)", "C2", lim1)
     add("P1 estabilizar el esfuerzo", f"brecha frente a las terminadas 2021-25 ({c0lo / 1e3:.0f}-{c0hi / 1e3:.0f} mil/año)", sinm.brecha.min(), sinm.brecha.max(), "viviendas/año",
-        yn(sinm.brecha.min() > 0), "el signo depende del ritmo de hogares (supuesto de desaceleración al 50 %) y de las bajas", "C2", lim1)
-    add("P1 estabilizar el esfuerzo", "variación simulada del esfuerzo 2035 vs 2025 con el ritmo actual de terminadas", sq.pct.min(), sq.pct.max(), "%", yn(sq.pct.min() > 0),
+        NA, "positiva en toda la rejilla sin movilización (incluido el ritmo de hogares al 50 %); con movilización del 30 % puede ser negativa si el ritmo de hogares es bajo", "C2", lim1)
+    add("P1 estabilizar el esfuerzo", "variación simulada del esfuerzo 2035 vs 2025 con el ritmo actual de terminadas", sq.pct.min(), sq.pct.max(), "%", NA,
         "depende de |ε_d|, η y del ritmo de hogares", "C4", "Condicional a ε (sin estimación verificada para España)." + marca_c13)
     m30 = df1[df1.mov == 0.30]
-    add("P1 estabilizar el esfuerzo", "viviendas necesarias por año con movilización del 30 % del tercil alto", m30.necesarias.min(), m30.necesarias.max(), "viviendas/año", "sí",
+    add("P1 estabilizar el esfuerzo", "viviendas necesarias por año con movilización del 30 % del tercil alto", m30.necesarias.min(), m30.necesarias.max(), "viviendas/año", NA,
         "supuesto de movilización (0-30 %)", "C2", lim1)
     for K in (25, 50, 100):
         o = tab.loc[f"P1_construccion_{K}k_anio"]
@@ -433,21 +435,21 @@ def main(smoke: bool = False):
             "la magnitud depende de ε, η y de la fracción que llega al alquiler; signo < 0 en toda la rejilla", "C2", "Sin coste fiscal ni efecto sobre el suelo y la construcción.", yn(o.domina_debil))
     # P2
     for X in (0.25, 0.5, 1.0):
-        add("P2 retirar turísticos", f"viviendas devueltas al alquiler (X = {int(X * 100)} % en secciones de mayor peso, 6 ciudades)", 0, X * s["V_top"], "viviendas", "no",
+        add("P2 retirar turísticos", f"viviendas devueltas al alquiler (X = {int(X * 100)} % en secciones de mayor peso, 6 ciudades)", 0, X * s["V_top"], "viviendas", NA,
             "depende de la sustitución s (cota B1: máximo 1:1, mínimo 0)", "C2", "Cota superior de sustitución 1:1 (PB B1); no estima cuántas vuelven.")
         r = p2[p2.X == X]
         add("P2 retirar turísticos", f"variación local del alquiler (X = {int(X * 100)} %), método T de GL y Barron", r.local_T_alto_pct.min(), r.local_Barron_pct.max(), "% del alquiler de las secciones",
             "no", "depende del método (T de GL o Barron) y de X; H3-1 ausente, solo literatura", "C4",
             "Rango de literatura no verificado en España; la réplica propia de GL es NO REPLICADO; T alto sin verificar." + marca_c13)
         add("P2 retirar turísticos", f"variación local del alquiler (X = {int(X * 100)} %), vía cantidad B1 con ε", r.local_cantidad_eps_max_pct.min(), 0, "% del alquiler de las secciones", "no",
-            "depende de ε, η y de s (nula si s = 0)", "C4", "Condicional a ε y s.")
+            "depende de ε, η y de s (nula si s = 0)", "C4", "Condicional a ε y s; aproximación log-lineal, fuera de su rango de validez por debajo de -30 %.")
     n2 = tab.loc["P2_retirar_VUT_50pct"]
     add("P2 retirar turísticos", "variación del esfuerzo medio nacional con X = 50 %", n2.esfuerzo_min_pct, n2.esfuerzo_max_pct, "%", yn(n2.domina_estricto),
         "efecto ≤ 0 en toda la rejilla y nulo si s = 0 en la vía de cantidad (domina débilmente); magnitud depende de s, ε, η y del método", "C2",
         "Solo seis ciudades; ponderación nacional por el stock de alquiler; sin costes ni variación del sector turístico.", yn(n2.domina_debil))
     # P3
     pi, bi = P3["por_inq"], P3["ben_inq"]
-    add("P3 topes de alquiler", "reducción de renta por inquilino cubierto", bi.min(), bi.max(), "€/año", "sí", "reducción JMS (IC) y renta anual de alquiler", "C4",
+    add("P3 topes de alquiler", "reducción de renta por inquilino cubierto", bi.min(), bi.max(), "€/año", NA, "reducción JMS (IC) y renta anual de alquiler", "C4",
         "Efecto de Jofre-Monseny et al. (Cataluña 2016-22) extrapolado; H3-3 ausente." if d["C3"] is None else "H3-3 presente (ver notas).")
     add("P3 topes de alquiler", "neto por inquilino cubierto (beneficio menos desvío y traspaso)", pi.min(), pi.max(), "€/año", yn(pi.min() > 0),
         "depende de la variación de contratos L (de +3,8 % a -15 %), de ε+η y de la pérdida por desvío ℓ", "C4", "ℓ es un supuesto sin dato; Diamond es San Francisco 1994, JMS es Cataluña.")
@@ -463,12 +465,12 @@ def main(smoke: bool = False):
     # P4
     for m in (0.1, 0.3):
         o = tab.loc[f"P4_movilizar_{int(m * 100)}pct_vacias_alto"]
-        add("P4 movilización de vacías", f"viviendas aportadas ({int(m * 100)} % de las vacías del tercil alto)", m * d["V_alto"][0], m * d["V_alto"][1], "viviendas", "no",
+        add("P4 movilización de vacías", f"viviendas aportadas ({int(m * 100)} % de las vacías del tercil alto)", m * d["V_alto"][0], m * d["V_alto"][1], "viviendas", NA,
             "depende del % movilizable (supuesto 0-30 %) y de la medida de presión", "C2", "Supuesto de movilización sin dato; las vacías incluyen segundas residencias y viviendas no aptas.")
         add("P4 movilización de vacías", f"variación del esfuerzo medio nacional ({int(m * 100)} %)", o.esfuerzo_min_pct, o.esfuerzo_max_pct, "%", yn(o.domina_estricto),
             "la magnitud depende de ε, η y de la fracción que llega al alquiler; signo < 0", "C2", "Movilización y localización supuestas; el efecto local en el tercil alto es mayor que el nacional.", yn(o.domina_debil))
     add("P4 movilización de vacías", "aporte máximo (30 %) como % de la brecha acumulada de P1", 100 * 0.3 * d["V_alto"][0] / (HORIZ * brecha_hi),
-        100 * 0.3 * d["V_alto"][1] / (HORIZ * brecha_lo) if brecha_lo > 0 else None, "%", "no", "depende de la brecha de P1 y del % movilizable", "C2", "Brecha de P1 sin movilización.")
+        100 * 0.3 * d["V_alto"][1] / (HORIZ * brecha_p10), "%", NA, "depende de la brecha de P1 y del % movilizable", "C2", "Brecha de P1 sin movilización; el extremo alto usa el percentil 10 de la brecha.")
     for G in (10, 25):
         o = tab.loc[f"P4_publica_{G}k_anio"]
         add("P4 vivienda pública", f"variación del esfuerzo medio nacional ({G} mil/año; coste unitario = parámetro)", o.esfuerzo_min_pct, o.esfuerzo_max_pct, "%", yn(o.domina_estricto),

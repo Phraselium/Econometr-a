@@ -192,23 +192,31 @@ def fichas(ev) -> list[dict]:
     ))
 
     # ---------------------------------------------------------------- V06 / V07 topes
-    c3capa, c3 = _c3(ev, "C3")
-    jms = "Jofre-Monseny et al. (2023): −4,5 % renta (T2 c3)."
-    if c3capa is None:
+    c3 = ev.get("C3")
+    jms = "Jofre-Monseny et al. (2023): −4,5 % renta (T2 c3); réplica propia en output/v3/C3/tabla_replicacion_jms.csv."
+    if not c3:
         v06 = v07 = "SIN EVIDENCIA SUFICIENTE"
         mag6 = mag7 = "Diseño H3-3 no disponible."
         capa6 = capa7 = "C4"
     else:
-        h3a, h3b = c3.get("H3-3a", {}), c3.get("H3-3b", {})
-        capa6, capa7 = h3a.get("capa", c3capa), h3b.get("capa", c3capa)
-        mag6 = f"H3-3a: {h3a.get('resumen', 'ver resultado.json')}"
-        mag7 = f"H3-3b: {h3b.get('resumen', 'ver resultado.json')}"
-        v06 = h3a.get("veredicto_verificador", "PARCIALMENTE")
-        v07 = h3b.get("veredicto_verificador", "SIN EVIDENCIA SUFICIENTE")
+        est, cap = c3["estimacion"], c3["capa"]
+        a, b = est["H3-3a"], est["H3-3b"]
+        capa6, capa7 = cap["H3-3a"]["capa"], cap["H3-3b"]["capa"]
+        mag6 = (f"Topes de la Ley 11/2020 (contratos nuevos, fianzas Incasòl): {_f(a['CS']['pct'])} % "
+                f"{_iv(a['CS']['pct_ic95'])}, {_f(a['CS']['eur_mes'], 0)} €/mes {_iv(a['CS']['eur_mes_ic95'], 0)}; "
+                f"validación sellada por fuente (SERPAVI, stock): {_f(a['sellado']['pct'], 2)} % "
+                f"{_iv(a['sellado']['pct_ic95'], 2)}. Capa {capa6}: {cap['H3-3a'].get('fallo', '')}.")
+        mag7 = (f"Número de contratos nuevos: {_f(b['CS']['pct'])} % {_iv(b['CS']['pct_ic95'])} (p {_f(b['CS']['p'], 3)}); "
+                f"validación por fuente (viviendas en alquiler declaradas, stock): {_f(b['sellado']['pct'])} % "
+                f"{_iv(b['sellado']['pct_ic95'])}. Capa {capa7}: {cap['H3-3b'].get('fallo', '')}.")
+        v06 = "RESPALDADA" if capa6 == "C3" and a["CS"]["ic95"][1] < 0 else "SIN EVIDENCIA SUFICIENTE"
+        v07 = "RESPALDADA" if capa7 == "C3" and b["CS"]["ic95"][1] < 0 else "SIN EVIDENCIA SUFICIENTE"
     out.append(dict(
         id="V06", tema="Topes de alquiler", enunciado="Los topes al precio del alquiler bajan los alquileres.",
         capa=capa6, magnitud=mag6, intervalo="ver magnitud", cota="—", literatura=jms, veredicto=v06,
-        regla="Según la capa y el signo de H3-3a (topes de la Ley 11/2020 en los contratos nuevos).",
+        regla=("RESPALDADA solo con C3 robusto. H3-3a queda en C4 (falla Rambachan-Roth con M̄=1 y la sensibilidad); "
+               "las estimaciones C4 (fianzas, SERPAVI sellado y réplica de JMS 2023) tienen todas signo negativo, pero "
+               "no se promueven de capa."),
         limites="Un solo episodio (Cataluña 2020-2022, 16 meses); validación sellada por fuente (SERPAVI), no independiente.",
         evidencia=["output/v3/C3/resultado.json", "output/v3/C3/tabla_replicacion_jms.csv"],
     ))
@@ -216,7 +224,8 @@ def fichas(ev) -> list[dict]:
         id="V07", tema="Topes de alquiler", enunciado="Los topes al precio del alquiler reducen la oferta de vivienda en alquiler.",
         capa=capa7, magnitud=mag7, intervalo="ver magnitud", cota="—",
         literatura=jms[:-1] + "; −0,3 % contratos (no significativo). Diamond et al. (2019, San Francisco): calibración.",
-        veredicto=v07, regla="Según la capa y el signo de H3-3b (número de contratos nuevos).",
+        veredicto=v07, regla=("RESPALDADA solo con C3 robusto. H3-3b queda en C4 (fallan pretendencias, placebo de fecha y "
+                              "sensibilidad); el contraste principal no es significativo (p≈0,07)."),
         limites="El número de contratos registrados no es el stock ofertado; posible desvío a temporada no observado.",
         evidencia=["output/v3/C3/resultado.json"],
     ))

@@ -14,7 +14,7 @@ Generado por `make verificador` a partir de output/v3. Cada ficha evalúa la afi
 | V08 | Hay millones de viviendas vacías que se podrían movilizar para resolver el problema. | PARCIALMENTE | C1 |
 | V09 | La ocupación ilegal de viviendas y la inseguridad jurídica retraen la oferta de alquiler. | SIN EVIDENCIA SUFICIENTE | C4 |
 | V10 | Bajar el ITP o el IVA de la vivienda la abarataría para los compradores. | SIN EVIDENCIA SUFICIENTE | C4 |
-| V11 | Construir vivienda pública resolvería el problema de la vivienda. | SIN EVIDENCIA SUFICIENTE | C4 |
+| V11 | Construir vivienda pública resolvería el problema de la vivienda. | PARCIALMENTE | C2 |
 | V12 | Los tipos de interés explican la subida de los precios de la vivienda. | PARCIALMENTE | C2 |
 | V13 | Hay una burbuja en el precio de la vivienda en España. | SIN EVIDENCIA SUFICIENTE | C4 |
 | V14 | Los compradores extranjeros encarecen la vivienda en España. | SIN EVIDENCIA SUFICIENTE | C1 |
@@ -107,11 +107,11 @@ Generado por `make verificador` a partir de output/v3. Cada ficha evalúa la afi
 |---|---|
 | Veredicto | **SIN EVIDENCIA SUFICIENTE** |
 | Capa de la evidencia | C4 |
-| Magnitud | Diseño H3-3 no disponible. |
+| Magnitud | Topes de la Ley 11/2020 (contratos nuevos, fianzas Incasòl): -5,4 % [-7,1; -3,7], -37 €/mes [-48; -25]; validación sellada por fuente (SERPAVI, stock): -0,77 % [-1,39; -0,14]. Capa C4: falla: a, c. |
 | Intervalo | ver magnitud |
 | Cota | — |
-| Literatura | Jofre-Monseny et al. (2023): −4,5 % renta (T2 c3). |
-| Regla del veredicto | Según la capa y el signo de H3-3a (topes de la Ley 11/2020 en los contratos nuevos). |
+| Literatura | Jofre-Monseny et al. (2023): −4,5 % renta (T2 c3); réplica propia en output/v3/C3/tabla_replicacion_jms.csv. |
+| Regla del veredicto | RESPALDADA solo con C3 robusto. H3-3a queda en C4 (falla Rambachan-Roth con M̄=1 y la sensibilidad); las estimaciones C4 (fianzas, SERPAVI sellado y réplica de JMS 2023) tienen todas signo negativo, pero no se promueven de capa. |
 | Límites | Un solo episodio (Cataluña 2020-2022, 16 meses); validación sellada por fuente (SERPAVI), no independiente. |
 | Evidencia | output/v3/C3/resultado.json, output/v3/C3/tabla_replicacion_jms.csv |
 
@@ -123,11 +123,11 @@ Generado por `make verificador` a partir de output/v3. Cada ficha evalúa la afi
 |---|---|
 | Veredicto | **SIN EVIDENCIA SUFICIENTE** |
 | Capa de la evidencia | C4 |
-| Magnitud | Diseño H3-3 no disponible. |
+| Magnitud | Número de contratos nuevos: -4,9 % [-9,9; 0,5] (p 0,073); validación por fuente (viviendas en alquiler declaradas, stock): -4,4 % [-6,4; -2,3]. Capa C4: falla: a, b, c. |
 | Intervalo | ver magnitud |
 | Cota | — |
-| Literatura | Jofre-Monseny et al. (2023): −4,5 % renta (T2 c3); −0,3 % contratos (no significativo). Diamond et al. (2019, San Francisco): calibración. |
-| Regla del veredicto | Según la capa y el signo de H3-3b (número de contratos nuevos). |
+| Literatura | Jofre-Monseny et al. (2023): −4,5 % renta (T2 c3); réplica propia en output/v3/C3/tabla_replicacion_jms.csv; −0,3 % contratos (no significativo). Diamond et al. (2019, San Francisco): calibración. |
+| Regla del veredicto | RESPALDADA solo con C3 robusto. H3-3b queda en C4 (fallan pretendencias, placebo de fecha y sensibilidad); el contraste principal no es significativo (p≈0,07). |
 | Límites | El número de contratos registrados no es el stock ofertado; posible desvío a temporada no observado. |
 | Evidencia | output/v3/C3/resultado.json |
 
@@ -185,9 +185,9 @@ Generado por `make verificador` a partir de output/v3. Cada ficha evalúa la afi
 
 | Campo | Contenido |
 |---|---|
-| Veredicto | **SIN EVIDENCIA SUFICIENTE** |
-| Capa de la evidencia | C4 |
-| Magnitud | Simulación P-D no disponible. |
+| Veredicto | **PARCIALMENTE** |
+| Capa de la evidencia | C2 |
+| Magnitud | viviendas aportadas (10 % de las vacías del tercil alto): [50.142,2; 82.698,5] viviendas; variación del esfuerzo medio nacional (10 %): [-4,5; -0,1] %; viviendas aportadas (30 % de las vacías del tercil alto): [150.426,6; 248.095,5] viviendas |
 | Intervalo | ver magnitud |
 | Cota | — |
 | Literatura | Calibración con la literatura de P-D. |

@@ -32,7 +32,8 @@ SERVICIOS = [
     "Censo_2024___Porcentaje_de_personas_nacidas_en_el_extranjero",
     "Censo_2025___Porcentaje_de_personas_nacidas_en_el_extranjero",
 ]
-NO_DATO = {"objectid", "objectid_1", "objectid_12", "shape_leng", "shape_le_1", "shape__length", "shape__area",
+ADRH_ORDEN = {"dato1": "Renta neta media por persona", "dato2": "Renta neta media por hogar"}
+NO_DATO = {"anyo", "año", "anio", "objectid", "objectid_1", "objectid_12", "shape_leng", "shape_le_1", "shape__length", "shape__area",
            "cnut0", "cnut1", "cnut2", "cnut3", "cca", "cpro", "cmun", "cdis", "csec"}
 
 
@@ -81,6 +82,19 @@ def main() -> None:
         largo = df[[cod]].assign(periodo=per).join(df[num]).melt(id_vars=[cod, "periodo"], var_name="campo",
                                                                   value_name="valor")
         largo = largo.rename(columns={cod: "codigo"}).assign(servicio=serv)
+        # etiqueta de cada datoN: campo indicadorN (primer valor no nulo); sin etiquetas -> orden de ADRH 2023
+        etiq = {}
+        for c in num:
+            ic = "indicador" + c[4:] if c.startswith("dato") else None
+            if ic and ic in df and df[ic].notna().any():
+                etiq[c] = str(df[ic].dropna().iloc[0]).strip()
+            elif c in ADRH_ORDEN and serv.lower().startswith(("renta", "1_renta", "adrh")):
+                etiq[c] = ADRH_ORDEN[c] + " (etiqueta por orden ADRH; supuesto)"
+            else:
+                etiq[c] = c
+        largo["indicador"] = largo["campo"].map(etiq)
+        anio = next((c for c in ("anyo", "año", "anio") if c in df), None)
+        largo["anio"] = df.loc[0, anio] if anio else (serv.split("_")[1] if serv.startswith("Censo_") else "")
         partes.append(largo)
         print(f"{serv}: {df[cod].nunique()} secciones; campos {num}")
     out = pd.concat(partes, ignore_index=True)

@@ -19,17 +19,18 @@
    "p": 0.7060677840533012,
    "nota": "N=3 años; FE; el adelanto de VUT no debería predecir el alquiler"
   },
-  "placebo_permutacion_BCN": {
+  "placebo_permutacion_cluster_BCN": {
    "reps": 500,
    "coef_real": -0.004166504610531088,
-   "p_perm": 0.0,
-   "sd_placebo": 0.0009169195595062796
+   "p_perm": 0.02594810379241517,
+   "sd_placebo": 0.0017643853251452454,
+   "nota": "permutación por distrito; p = (1+#)/(R+1), mínimo 1/(R+1); 8 distritos no sellados: pocas permutaciones distintas"
   }
  },
- "objetivo_T_pp": 0.03877573287671233,
+ "objetivo_T_pp": 0.01214862017167382,
  "T_pp_rango": [
-  0.0175,
-  0.07
+  0.012148620171673822,
+  0.1170712419289396
  ],
  "fuera_muestra": {
   "modelo": null,

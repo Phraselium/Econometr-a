@@ -40,6 +40,7 @@ SMOKE = "--smoke" in sys.argv
 
 def norm(s: str) -> str:
     s = unicodedata.normalize("NFKD", str(s)).encode("ascii", "ignore").decode().lower()
+    s = re.sub(r"^(.*?)\s*\((a|el|la|las|los|l|o|as|os)\)$", r"\2 \1", s.strip())
     s = re.sub(r"\(.*?\)", lambda m: " " + m.group(0)[1:-1], s)
     m = re.match(r"^(.*), (a|el|la|las|los|l|o|as|os)$", s.strip())
     if m:
@@ -244,15 +245,15 @@ def tablas_concentracion(prov_res: pd.DataFrame, t_prov: pd.DataFrame, mun: pd.D
                       "n_50": f"{min(ns[50])}-{max(ns[50])}", "n_80": f"{min(ns[80])}-{max(ns[80])}",
                       "total_positivo": np.nan, "n_positivos": np.nan})
         neg = r.mediana[r.mediana < 0]
-        exc.append({"nivel": "provincia", "periodo": per, "n_excedente": int(len(neg)), "viviendas_excedente_mediana": float(-neg.sum()),
-                    "viviendas_excedente_min": float(-r[r["max"] < 0]["max"].sum()),
-                    "viviendas_excedente_max": float(-r[r["min"] < 0]["min"].sum()),
+        exc.append({"nivel": "provincia", "periodo": per, "n_excedente": int(len(neg)), "viviendas_excedente_mediana": abs(float(neg.sum())),
+                    "viviendas_excedente_min": abs(float(r[r["max"] < 0]["max"].sum())),
+                    "viviendas_excedente_max": abs(float(r[r["min"] < 0]["min"].sum())),
                     "nota": "min/max: solo provincias con exceso en todas las combinaciones, suma de la cota correspondiente"})
         m = mun[(mun.periodo == per) & mun.deficit_valido].set_index("cod_mun").deficit
         c = concentracion(m)
         filas.append({"nivel": "municipio", "periodo": per, "escenario": "Catastro, fuente única", "n_unidades": len(m), **c})
         neg = m[m < 0]
-        exc.append({"nivel": "municipio", "periodo": per, "n_excedente": int(len(neg)), "viviendas_excedente_mediana": float(-neg.sum()),
+        exc.append({"nivel": "municipio", "periodo": per, "n_excedente": int(len(neg)), "viviendas_excedente_mediana": abs(float(neg.sum())),
                     "viviendas_excedente_min": np.nan, "viviendas_excedente_max": np.nan, "nota": "Catastro, fuente única (C4)"})
     return pd.DataFrame(filas), pd.DataFrame(exc)
 

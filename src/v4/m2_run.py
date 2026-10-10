@@ -53,6 +53,17 @@ def tasas4(cel: pd.DataFrame) -> pd.DataFrame:
     return c.h.unstack()[G4]
 
 
+def corrige_ruptura(h4: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
+    """Ruptura EPA 2021T1 (quiebre_epa_2021): reescala h(t>=2021) por grupo con k = media geométrica(h2020, h2022)/h2021.
+
+    Mismo criterio que v1 (Δ2021 := media de los Δ adyacentes): el nivel de 2021 se sustituye por la interpolación.
+    """
+    k = np.sqrt(h4.loc[2020] * h4.loc[2022]) / h4.loc[2021]
+    hc = h4.copy()
+    hc.loc[hc.index >= 2021] = hc.loc[hc.index >= 2021] * k
+    return hc, k
+
+
 def padron() -> pd.DataFrame:
     d = pd.read_csv(RAW / "ine_v2_padron_prov_edad_nac.csv", usecols=["periodo", "valor", "codigo", "nivel", "desglose"])
     d = d[d.periodo.str.endswith("T1")].copy()
@@ -121,15 +132,16 @@ def flujos(pad_nac, pad):
     return pd.DataFrame(filas)
 
 
-def latente(cel, h4, pad, ecp25):
+def latente(cel, h4, pad, ecp25, k):
     c25 = cel[cel.anio == 2025].set_index("tramo")
+    kt = c25.index.map(EPA2G).map(k).values  # corrección de ruptura por grupo, aplicada a cada tramo
     refs = {"2008": lambda t: cel[(cel.anio == 2008)].set_index("tramo"),
             "media 2006-2007": lambda t: cel[cel.anio.isin([2006, 2007])].groupby("tramo")[["pob", "ref"]].sum()}
     filas = []
     for nref, f in refs.items():
         r = f(None)
         hr = r.ref / r.pob
-        h25 = c25.ref / c25.pob
+        h25 = c25.ref / c25.pob * kt
         ex = c25.pob * (hr - h25)  # hogares adicionales por tramo con la tasa de referencia
         for nombre, tr in [("16-34", FINO["16-34"]), ("35-44", FINO["35-44"]), ("total", list(c25.index))]:
             filas.append({"fuente": "EPA 65944 (población EPA 2025)", "referencia": nref, "grupo": nombre,
@@ -148,12 +160,45 @@ def latente(cel, h4, pad, ecp25):
     return pd.DataFrame(filas)
 
 
+def censo_hogares() -> tuple[float, float]:
+    """Hogares censales (2011: viviendas principales, INE 3457; 2021: hogares, Censo 2021)."""
+    import pa_data
+    return pa_data.censo2011_nacional()["principal"], pa_data.censo2021_hogares_nacional()
+
+
+def totales(pad, h4, h4r, nac, epa_anual, ecp, cruza):
+    """ΔH total por fuente: modelo (EPA corregida), EPA hogares (salto 2021 retirado), ECP y Censo."""
+    epa = epa_anual * 1000
+    ajuste = epa[2021] - 0.5 * (epa[2020] + epa[2022])  # salto de nivel de 2021 (criterio v1)
+    c11, c21 = censo_hogares()
+    filas = []
+    for _, r in nac.iterrows():
+        a, b = (int(x) for x in r.periodo.split("-"))
+        de = epa[b] - epa[a] - (ajuste if a < 2021 <= b else 0.0)
+        dec = float(ecp[f"{b}T1"] - ecp[f"{a}T1"]) if a >= 2021 else np.nan
+        f = {"periodo": r.periodo, "dH_modelo_EPA_corregida": r.dH, "dH_EPA_hogares_corregida": de,
+             "dH_EPA_hogares_sin_corregir": epa[b] - epa[a], "dH_ECP": dec}
+        v = [x for x in (r.dH, de, dec) if not np.isnan(x)]
+        f["rango_rel_%"] = 100 * (max(v) - min(v)) / abs(np.mean(v))
+        f["coinciden_15pc"] = bool(f["rango_rel_%"] <= 15)
+        filas.append(f)
+    # censo 2011-2021 frente a EPA corregida y modelo
+    de = epa[2021] - epa[2011] - ajuste
+    dm = decompone(pad, h4, "00", 2011, 2021)["dH"]
+    v = [c21 - c11, de, dm]
+    filas.append({"periodo": "2011-2021 (censo)", "dH_modelo_EPA_corregida": dm, "dH_EPA_hogares_corregida": de,
+                  "dH_EPA_hogares_sin_corregir": epa[2021] - epa[2011], "dH_ECP": c21 - c11,
+                  "rango_rel_%": 100 * (max(v) - min(v)) / abs(np.mean(v)), "coinciden_15pc": bool(100 * (max(v) - min(v)) / abs(np.mean(v)) <= 15)})
+    return pd.DataFrame(filas)
+
+
 def main(smoke: bool = False) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "tablas").mkdir(exist_ok=True)
     reg = Registry(OUT / "registro.csv")
     cel = epa_cells()
-    h4 = tasas4(cel)
+    h4r = tasas4(cel)
+    h4, kq = corrige_ruptura(h4r)
     pad = padron()
     provs = sorted({c for c, _ in pad.index if c != "00"})
     if smoke:
@@ -191,6 +236,11 @@ def main(smoke: bool = False) -> None:
                     coef_interes=q["dH"], notas="tasa h nacional aplicada a la provincia")
             prv.append({"cod_prov": c, "periodo": nombre, **q})
     nac = pd.DataFrame(nac)
+    sens = pd.DataFrame([{"periodo": n_, **decompone(pad, h4r, "00", a_, b_)} for n_, a_, b_ in PERIODOS])
+    sens.to_csv(OUT / "tablas" / "sensibilidad_sin_corregir_nacional.csv", index=False)
+    cruza = {n_: (a_ < 2021 <= b_) for n_, a_, b_ in PERIODOS}
+    tc = totales(pad, h4, h4r, nac, epa_anual, ecp, cruza)
+    tc.to_csv(OUT / "tablas" / "total_dH_fuentes.csv", index=False)
     prv = pd.DataFrame(prv)
     for d in (nac, prv):
         d["tamano_nativos"], d["tamano_extranjeros"] = d.N_esp, d.N_ext
@@ -213,7 +263,7 @@ def main(smoke: bool = False) -> None:
     else:
         corr = np.nan
     fl = flujos(None, pad)
-    lat = latente(cel, h4, pad, float(ecp["2025T1"]))
+    lat = latente(cel, h4, pad, float(ecp["2025T1"]), kq)
     nac.to_csv(OUT / "tablas" / "descomposicion_nacional.csv", index=False)
     prv.to_csv(OUT / "tablas" / ("descomposicion_provincial_smoke.csv" if smoke else "descomposicion_provincial.csv"), index=False)
     fl.to_csv(OUT / "tablas" / "flujos_inmigracion.csv", index=False)

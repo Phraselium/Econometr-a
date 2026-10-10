@@ -11,6 +11,11 @@
 | M3 ¿se puede construir? | B | hecho (reejecutado con M1 corregido) | C4 | Coste en nivel sin fuente verificable → brecha y clases C4; solares del Catastro extraídos | 111.803 |
 | M4 parque frente a mercado | B | hecho | C1/C4 | Compradores extranjeros 2025: MIVAU 16,9 %, Notariado 18,8 % (C1); personas jurídicas: 11,3 % compradores (C4, ETDP); titularidad del stock: sin datos | 128.323 |
 
-**Hecho:** M0, M1, M2, M3, M4.
-**Siguiente:** M5 (recogida de medidas por instrumento y evaluación) y revisión de la oleada B (M3-M4) en paralelo → M6 → entregables → revisión C → cierre.
-**Tokens de subagentes v4:** 648.724 / 2.500.000 (cierre al 80 %: 2.000.000).
+| Revisión oleada B (REHACER → correcciones; it. 2 REHACER acotado → corregido) | B | APROBADA | — | reglas B4/B5; déficit 2021-24 C1 sin bajas 563-689 mil | 80.288 + 15.330 |
+| M7 índice de precios triangulado y GSADF | B | hecho | C1/C4 | Compra 2015-25 +44 % a +80 % (C1); 2021-25 +24 % a +36 %; GSADF: episodios 2011-13, 2017-19 y 2024-26 (C4) | 93.179 |
+| M5a medidas por instrumento y literatura | C | parcial (faltan 3 programas, en curso) | — | 71 medidas, 25+4 instrumentos, 5 VERIFICADA / 7 NO VERIFICADA | 245.499 |
+| M6 preguntas abiertas y solicitudes | C | hecho | — | 10 preguntas; S3-S10 redactadas | 0 (orquestador) |
+
+**Hecho:** M0, M1, M2, M3, M4, M6, M7; revisiones A y B.
+**Siguiente:** completar los 3 programas → M5b evaluación de instrumentos → entregables → revisión C → cierre.
+**Tokens de subagentes v4:** 1.120.317 / 2.500.000 (cierre al 80 %: 2.000.000).

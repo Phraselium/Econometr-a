@@ -1,0 +1,10 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+R1A_BK002,E1_bivariada,dlnp ~ nr_ini,0,49,50,0.30327973425952615,-57.72342831968301,-53.899382308826716,,0.009626935989701987,0.00018184286864680605,HC3; N=50 unidades; coef en log-puntos por pp
+R1A_BK002,E2_controles,dlnp ~ nr_ini + lnpib_pc0 + dlnpob + costa + isla,0,49,50,0.6024371353904167,-82.12554308164715,-70.65340504907827,,0.00017794445331236494,0.9513022860655356,HC3; N=50 unidades; coef en log-puntos por pp
+R1A_BK002,E3_conv_precio0,dlnp ~ nr_ini + lnpib_pc0 + dlnpob + costa + isla + lnp0,0,49,50,0.636538175736969,-85.75895913053557,-72.37479809253855,,-1.1441603240390204e-05,0.9963759959471048,HC3; N=50 unidades; coef en log-puntos por pp
+R1A_BK002,E4_residentes_extr,dlnp ~ re_ini + lnpib_pc0 + dlnpob + costa + isla,0,49,50,0.6023869081562347,-82.11922658856895,-70.64708855600007,,-8.41269296142338e-05,0.9895768332653593,HC3; N=50 unidades; coef en log-puntos por pp
+R1A_BK002,E5_nr_total,dlnp ~ nrt_ini + lnpib_pc0 + dlnpob + costa + isla,0,49,50,0.6026064437449641,-82.14684089781213,-70.67470286524325,,0.00036661058779424103,0.8988535498470185,HC3; N=50 unidades; coef en log-puntos por pp
+R1A_BK002,E6_costa_sol,dlnp ~ nr_ini + lnpib_pc0 + dlnpob + costa_sol + isla,0,49,50,0.6052110425520386,-82.47562980029824,-71.00349176772936,,0.0014036447860969834,0.6631630030705278,HC3; N=50 unidades; coef en log-puntos por pp
+R1A_BK002,E7_cambio_contemporaneo,dlnp ~ d_nr + lnpib_pc0 + dlnpob + costa + isla,0,49,50,0.6085415778066968,-82.89923123436512,-71.42709320179624,,0.006468407399081283,0.4275350395666091,HC3; N=50 unidades; coef en log-puntos por pp
+R1A_BK002,E8_sin_islas,dlnp ~ nr_ini + lnpib_pc0 + dlnpob + costa,0,49,48,0.5318949366577903,-78.91282664225292,-69.55682158771347,,0.00016218721055947334,0.9554636911220044,HC3; sin islas
+R1A_BK002,E2_bootstrap,dlnp ~ nr_ini + lnpib_pc0 + dlnpob + costa + isla,2015,2025,50,,,,,-0.00027605030589978707,,bootstrap 2000 rem. IC95 [-0.0085; 0.0054]

@@ -1,0 +1,66 @@
+{
+ "rama": "R1A",
+ "pregunta": "¿Se asocia el peso inicial de los compradores extranjeros no residentes con la subida de precios provincial 2015-2025? Además: conciliación VUT INE frente a GVA (BK-052) y alquiler de temporada/por habitaciones (BK-014).",
+ "capa": "C4",
+ "datos": "MIVAU Boletín (transacciones por residencia del comprador, valor tasado libre €/m2; hasta 2026T2); INE padrón (1 enero) y CRE (PIB provincial 2015); Notariado CCAA 2025; INE VUT (provincia, sección) y GVA Registre de Turisme (stock a 2024-12, registro vigente 2026-10-09)",
+ "N": {
+  "unidades_BK002": 50,
+  "provincias": 43,
+  "uniprovinciales_como_CCAA": 7,
+  "fechas_BK052": 10,
+  "provincias_BK052": 3
+ },
+ "metodo": "BK-002: corte transversal MCO con errores HC3, 8 especificaciones registradas (Holm) y bootstrap de 2000 remuestreos; BK-052: conciliación multiplicativa (cotas por factor); BK-014: inventario de fuentes.",
+ "estimacion": {
+  "BK002_E1_bivariada_dlnP_por_pp_nr": 0.009626935989701987,
+  "BK002_E2_con_controles_dlnP_por_pp_nr": 0.00017794445331236494,
+  "BK052_ratio_GVA_INE_2024_11": 1.5605992740752181,
+  "BK052_ratio_foto_2026": 1.7578606538191464
+ },
+ "ic95": {
+  "BK002_E1": [
+   0.004585927692788228,
+   0.014667944286615745
+  ],
+  "BK002_E2": [
+   -0.005532818508361819,
+   0.005888707414986549
+  ],
+  "BK002_E2_bootstrap": [
+   -0.00845944769413652,
+   0.0054354611588216546
+  ]
+ },
+ "p_ajustado": {
+  "E1_bivariada": 0.0014547429491744484,
+  "E2_controles": 1.0,
+  "E3_conv_precio0": 1.0,
+  "E4_residentes_extr": 1.0,
+  "E5_nr_total": 1.0,
+  "E6_costa_sol": 1.0,
+  "E7_cambio_contemporaneo": 1.0,
+  "E8_sin_islas": 1.0
+ },
+ "nivel_evidencia": "EXPLORATORIO (C4): asociación transversal con ~50 unidades; sin identificación causal",
+ "diagnosticos": {
+  "R2_aj_E2": 0.6024371353904167,
+  "pearson_dlnp_nr": 0.5634700659245395,
+  "spearman_dlnp_nr": 0.5551500600240096,
+  "spec_curve": "la asociación bivariada (E1) desaparece con renta, población y costa/islas (E2-E8, todos p_Holm=1)",
+  "fuentes_BK002": "MIVAU (Boletín, tabla 1.6, residencia del comprador) y Notariado (CCAA) no son independientes; Registradores no separa residentes de no residentes ni publica la residencia por provincia: una sola fuente efectiva para el peso provincial, por lo que no se alcanza C1.",
+  "BK014": "NO ANALIZADA: FALTAN DATOS (ver docs/v5/fuentes_fallidas.md)"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "Peso de no residentes extranjeros = compraventas de no residentes extranjeros / total (MIVAU, años completos); peso inicial = media 2015-2016.",
+  "Precio = valor tasado medio de vivienda libre (MIVAU, €/m2), logaritmo de la media 2025 menos la media 2015.",
+  "Costa e islas: lista del analista (21 unidades costeras, 3 insulares), sensibilidad E6 y E8.",
+  "Ceuta y Melilla excluidas; 7 comunidades uniprovinciales entran con datos de CCAA.",
+  "Sin lenguaje causal: la bivariada refleja concentración común de costa e islas, no un efecto.",
+  "BK-052: el cociente GVA/INE cae entre 1.41 y 1.75 (3 provincias) y por provincia/fecha entre 0.98 y 2.94. GVA solo cubre 3 provincias."
+ ]
+}

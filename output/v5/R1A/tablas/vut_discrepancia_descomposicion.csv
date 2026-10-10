@@ -1,0 +1,5 @@
+factor,cuota_ln_min,cuota_ln_max
+fecha_estacionalidad_INE (cota superior),0.0,0.212
+bajas_no_depuradas (cota inferior; fechas distintas),0.26,0.26
+cobertura (INE provincial ya completa),0.0,0.0
+residual_definicion (anuncios activos vs registro),0.528,0.74

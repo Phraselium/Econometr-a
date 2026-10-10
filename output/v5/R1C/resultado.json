@@ -1,0 +1,48 @@
+{
+ "rama": "R1C",
+ "pregunta": "Quien posee las viviendas (por edad, persona juridica, sector publico; parque y mercado) y capacidad del sector construccion (BK-009)",
+ "capa": "C4",
+ "datos": "BdE EFF 2022; INE ECV 9994; INE Censo 2021 (59523); INE ETDP 50272; INE EPA 65354; MIVAU iniciadas; Eurostat costes e HPI; INE ETCL 6030; BdE tasacion",
+ "N": 34,
+ "metodo": "tabulacion descriptiva con capa por celda; ratio empleo/iniciadas y correlacion de Spearman entre CCAA",
+ "estimacion": {
+  "tenencia_total_pct": 74.5,
+  "ratio_ocupados_por_vivienda_iniciada": {
+   "2008": 10.34,
+   "2013": 35.22,
+   "2025": 12.56
+  },
+  "crecimiento_pct_2014T1_2025T4": {
+   "coste_materiales_eurostat": 34.0,
+   "coste_laboral_constr_ine": 31.2,
+   "precio_hpi_eurostat": 96.9,
+   "precio_tasacion_bde": 52.8
+  },
+  "crecimiento_pct_2008T1_2013T4": {
+   "coste_materiales_eurostat": 11.6,
+   "coste_laboral_constr_ine": 24.7,
+   "precio_hpi_eurostat": -36.0,
+   "precio_tasacion_bde": -30.2
+  },
+  "spearman_dlog_emp_ini_2013_2025": {
+   "rho": 0.611,
+   "n_ccaa": 19
+  }
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "spearman_holm": 0.0055
+ },
+ "nivel_evidencia": "DESCRIPTIVO / EXPLORATORIO (tenencia total C1; resto C4)",
+ "diagnosticos": {
+  "celdas_sin_dato": 8,
+  "provincias_sin_mapa_ccaa": [],
+  "muestra_comun_costes": "2008Q1-2025Q4 n=72"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "BK-034: INE 59531 publica vacias y esporadicas en 3185 entidades municipales (510 agrupan municipios pequenos); sin seccion; fuente unica C4. Veredicto como maximo ANALIZADA, NO CONCLUYENTE. Sin dato: personas juridicas en el parque, sector publico, Censo por edad, arrendador por tipo (solicitudes S1, S3, S4, S7). Iniciadas = solo vivienda libre. Empleo: EPA ocupados por provincia agregados a CCAA; sin afiliacion SS por provincia (no localizada). INE no publica un ICC propio: se usan Eurostat sts_copi_q (coste de materiales y mano de obra) e INE ETCL. Analisis de capacidad no contrasta cuello de botella causal."
+}

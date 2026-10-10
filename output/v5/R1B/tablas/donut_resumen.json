@@ -1,0 +1,108 @@
+{
+ "resumen": {
+  "serpavi_VC": {
+   "n_spec": 96,
+   "prop_dif_pos": 0.7708333333333334,
+   "prop_sig_nominal_pos": 0.041666666666666664,
+   "prop_sig_holm": 0.0,
+   "mediana_dif": 0.09250118604659582,
+   "mediana_b_pre": -0.10834004388998192,
+   "mediana_b_post": -0.011901545697944965
+  },
+  "serpavi_VC_n50": {
+   "n_spec": 96,
+   "prop_dif_pos": 0.9583333333333334,
+   "prop_sig_nominal_pos": 0.10416666666666667,
+   "prop_sig_holm": 0.0,
+   "mediana_dif": 0.10334285379040417,
+   "mediana_b_pre": -0.08987630974936914,
+   "mediana_b_post": -0.004325888097916675
+  },
+  "tasado": {
+   "n_spec": 128,
+   "prop_dif_pos": 0.546875,
+   "prop_sig_nominal_pos": 0.0,
+   "prop_sig_holm": 0.0,
+   "mediana_dif": 0.028414337740777652,
+   "mediana_b_pre": -0.3131911487914955,
+   "mediana_b_post": -0.25182953701570077
+  }
+ },
+ "principal": {
+  "tasado": {
+   "fuente": "tasado",
+   "centro": "capital",
+   "radio_km": 25,
+   "periodo": "15-19|19-24",
+   "forma": "lineal",
+   "excl_centro": false,
+   "n": 128,
+   "areas": 17,
+   "b_pre": -0.17420713424602052,
+   "b_post": -0.21857279511828498,
+   "dif": -0.044365660872264595,
+   "ee": 0.23590319436079935,
+   "p": 0.8531884527911905,
+   "tstat": -0.1880672323767268,
+   "p_holm": 1.0
+  },
+  "serpavi_VC": {
+   "fuente": "serpavi_VC",
+   "centro": "capital",
+   "radio_km": 25,
+   "periodo": "15-19|19-24",
+   "forma": "lineal",
+   "excl_centro": false,
+   "n": 673,
+   "areas": 41,
+   "b_pre": -0.09062825557666228,
+   "b_post": 0.07085548886835198,
+   "dif": 0.16148374444501412,
+   "ee": 0.15409620715483333,
+   "p": 0.3009567670995716,
+   "tstat": 1.047941071533045,
+   "p_holm": 1.0
+  },
+  "serpavi_VC_n50": {
+   "fuente": "serpavi_VC_n50",
+   "centro": "capital",
+   "radio_km": 25,
+   "periodo": "15-19|19-24",
+   "forma": "lineal",
+   "excl_centro": false,
+   "n": 452,
+   "areas": 33,
+   "b_pre": -0.0927129459149609,
+   "b_post": 0.021374311871449996,
+   "dif": 0.11408725778641095,
+   "ee": 0.08558448910939626,
+   "p": 0.1919332155540899,
+   "tstat": 1.3330366164899545,
+   "p_holm": 1.0
+  }
+ },
+ "placebo": [
+  {
+   "ventana": "2010-2015|2015-2019",
+   "n": 127,
+   "areas": 17,
+   "dif": 0.06560367276549847,
+   "ee": 0.35199753136834383,
+   "p": 0.854492950756672
+  },
+  {
+   "ventana": "2011-2015|2015-2019",
+   "n": 128,
+   "areas": 17,
+   "dif": 0.3531980813671529,
+   "ee": 0.3754980727528842,
+   "p": 0.3608888806183421
+  }
+ ],
+ "cobertura": {
+  "municipios_tasado": 306,
+  "tasado_sin_codigo": [],
+  "municipios_serpavi_VC": 2668
+ },
+ "n_spec": 320
+}

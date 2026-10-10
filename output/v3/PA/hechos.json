@@ -15,7 +15,7 @@
    "MIVAU estimación del parque de viviendas"
   ],
   "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (solo en la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas. Ventana fijada en la especificación.",
-  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El cambio de signo entre periodos (negativo en 2002-2013, positivo desde 2014) es parte del hecho."
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El signo depende del periodo: positivo y determinado en 2021-2025 y 2022-2025; no determinado en 2008-2013, 2014-2019, 2012-2021 y 2012-2025 (las combinaciones de fuentes cambian de signo); 2002-2007 con una sola fuente de hogares (C4)."
  },
  {
   "id": "A1_nacional_2008-2013",
@@ -33,7 +33,7 @@
    "MIVAU estimación del parque de viviendas"
   ],
   "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (solo en la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas. Ventana fijada en la especificación.",
-  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El cambio de signo entre periodos (negativo en 2002-2013, positivo desde 2014) es parte del hecho."
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El signo depende del periodo: positivo y determinado en 2021-2025 y 2022-2025; no determinado en 2008-2013, 2014-2019, 2012-2021 y 2012-2025 (las combinaciones de fuentes cambian de signo); 2002-2007 con una sola fuente de hogares (C4)."
  },
  {
   "id": "A1_nacional_2014-2019",
@@ -51,7 +51,7 @@
    "MIVAU estimación del parque de viviendas"
   ],
   "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (solo en la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas. Ventana fijada en la especificación.",
-  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El cambio de signo entre periodos (negativo en 2002-2013, positivo desde 2014) es parte del hecho."
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El signo depende del periodo: positivo y determinado en 2021-2025 y 2022-2025; no determinado en 2008-2013, 2014-2019, 2012-2021 y 2012-2025 (las combinaciones de fuentes cambian de signo); 2002-2007 con una sola fuente de hogares (C4)."
  },
  {
   "id": "A1_nacional_2020-2025",
@@ -69,7 +69,7 @@
    "MIVAU estimación del parque de viviendas"
   ],
   "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (solo en la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas. Ventana fijada en la especificación.",
-  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El cambio de signo entre periodos (negativo en 2002-2013, positivo desde 2014) es parte del hecho."
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El signo depende del periodo: positivo y determinado en 2021-2025 y 2022-2025; no determinado en 2008-2013, 2014-2019, 2012-2021 y 2012-2025 (las combinaciones de fuentes cambian de signo); 2002-2007 con una sola fuente de hogares (C4)."
  },
  {
   "id": "A1_nacional_2014-2025",
@@ -87,7 +87,7 @@
    "MIVAU estimación del parque de viviendas"
   ],
   "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (solo en la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas. Ventana fijada en la especificación.",
-  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El cambio de signo entre periodos (negativo en 2002-2013, positivo desde 2014) es parte del hecho."
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El signo depende del periodo: positivo y determinado en 2021-2025 y 2022-2025; no determinado en 2008-2013, 2014-2019, 2012-2021 y 2012-2025 (las combinaciones de fuentes cambian de signo); 2002-2007 con una sola fuente de hogares (C4)."
  },
  {
   "id": "A1_nacional_2012-2021",
@@ -107,7 +107,7 @@
    "INE Censos 2011 y 2021 (stock de viviendas)"
   ],
   "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (solo en la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas. Ventana añadida tras ver las fuentes disponibles (criterio: disponibilidad de Censos y ECP, no el resultado).",
-  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El cambio de signo entre periodos (negativo en 2002-2013, positivo desde 2014) es parte del hecho."
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El signo depende del periodo: positivo y determinado en 2021-2025 y 2022-2025; no determinado en 2008-2013, 2014-2019, 2012-2021 y 2012-2025 (las combinaciones de fuentes cambian de signo); 2002-2007 con una sola fuente de hogares (C4)."
  },
  {
   "id": "A1_nacional_2022-2025",
@@ -126,7 +126,7 @@
    "MIVAU estimación del parque de viviendas"
   ],
   "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (solo en la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas. Ventana añadida tras ver las fuentes disponibles (criterio: disponibilidad de Censos y ECP, no el resultado).",
-  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El cambio de signo entre periodos (negativo en 2002-2013, positivo desde 2014) es parte del hecho."
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El signo depende del periodo: positivo y determinado en 2021-2025 y 2022-2025; no determinado en 2008-2013, 2014-2019, 2012-2021 y 2012-2025 (las combinaciones de fuentes cambian de signo); 2002-2007 con una sola fuente de hogares (C4)."
  },
  {
   "id": "A1_nacional_2012-2025",
@@ -146,7 +146,7 @@
    "INE Censos 2011 y 2021 (stock de viviendas)"
   ],
   "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (solo en la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas. Ventana añadida tras ver las fuentes disponibles (criterio: disponibilidad de Censos y ECP, no el resultado).",
-  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El cambio de signo entre periodos (negativo en 2002-2013, positivo desde 2014) es parte del hecho."
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El signo depende del periodo: positivo y determinado en 2021-2025 y 2022-2025; no determinado en 2008-2013, 2014-2019, 2012-2021 y 2012-2025 (las combinaciones de fuentes cambian de signo); 2002-2007 con una sola fuente de hogares (C4)."
  },
  {
   "id": "A1_nacional_2021-2025",
@@ -165,7 +165,7 @@
    "MIVAU estimación del parque de viviendas"
   ],
   "supuestos": "Hogares = viviendas principales en los censos; bajas = 0, 0,1 y 0,2 % anual del parque MIVAU del año anterior (solo en la fuente bruta de fin de obra); calificación definitiva de protegida como proxy de terminadas. Ventana añadida tras ver las fuentes disponibles (criterio: disponibilidad de Censos y ECP, no el resultado).",
-  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El cambio de signo entre periodos (negativo en 2002-2013, positivo desde 2014) es parte del hecho."
+  "limites": "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. El signo depende del periodo: positivo y determinado en 2021-2025 y 2022-2025; no determinado en 2008-2013, 2014-2019, 2012-2021 y 2012-2025 (las combinaciones de fuentes cambian de signo); 2002-2007 con una sola fuente de hogares (C4)."
  },
  {
   "id": "A1_provincial_2022-2025",

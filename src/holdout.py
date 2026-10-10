@@ -291,6 +291,58 @@ def es_sellado_v3(codigo_seccion_o_distrito: pd.Series, periodo: pd.Series | Non
     return m
 
 
+def sellar_v3(df: pd.DataFrame, nombre: str, col_codigo: str, col_periodo: str | None = None,
+              col_municipio: str | None = None) -> pd.DataFrame:
+    """Separa un panel v3 construido por una rama: escribe la parte sellada en data/sealed/v3_<nombre>.csv
+    (sin devolverla ni mostrarla) y devuelve SOLO la parte de entrenamiento.
+
+    Unidades selladas: distrito sellado (código de sección o distrito) o, en paneles municipales
+    (col_municipio), municipios con ≥50 % de sus distritos sellados; más la última oleada si col_periodo.
+    """
+    sell = distritos_sellados_v3()
+    if col_municipio is not None:
+        v = pd.read_csv(VUT_SECCION, usecols=["periodo", "nivel", "codigo"], dtype={"codigo": str})
+        dist = v.loc[(v["nivel"] == "distrito") & (v["periodo"] == "2024M02"), "codigo"].str.zfill(7)
+        frac = dist.isin(set(sell)).groupby(dist.str[:5]).mean()
+        mun_sell = set(frac[frac >= 0.5].index)
+        m = df[col_municipio].astype(str).str.zfill(5).isin(mun_sell)
+    else:
+        m = es_sellado_v3(df[col_codigo], None, sell)
+    if col_periodo is not None:
+        m = m | (df[col_periodo].astype(str) >= ULTIMA_OLEADA_V3)
+    SEALED.mkdir(parents=True, exist_ok=True)
+    df[m].to_csv(SEALED / f"v3_{nombre}.csv", index=False)
+    return df[~m].copy()
+
+
+def sellar_fuente_v3(df: pd.DataFrame, nombre: str) -> None:
+    """Validación sellada POR FUENTE (P-C3): guarda el panel entero en data/sealed/v3_<nombre>.csv sin devolverlo.
+    La rama lo construye sin mirarlo (sin describe ni estimaciones) y solo se lee vía evaluate_v3."""
+    SEALED.mkdir(parents=True, exist_ok=True)
+    df.to_csv(SEALED / f"v3_{nombre}.csv", index=False)
+
+
+def evaluate_v3(hipotesis: str, fn, rama: str, nombres: list[str]):
+    """Como evaluate(), para paneles v3 escritos por sellar_v3. Una sola apertura por hipótesis (registrada antes
+    de leer). fn(dict nombre->DataFrame sellado) -> dict serializable."""
+    if any(a["hipotesis"] == hipotesis for a in _accesos()):
+        raise PermissionError(f"La hipótesis {hipotesis} ya abrió la muestra sellada (una sola vez).")
+    apertura = {"utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "evento": "apertura",
+                "hipotesis": hipotesis, "rama": rama, "paneles": [f"v3_{n}" for n in nombres]}
+    with open(LOG, "a") as f:
+        f.write(json.dumps(apertura, ensure_ascii=False) + "\n")
+    _log_md(apertura["utc"], hipotesis, rama, apertura["paneles"], "APERTURA (antes de leer)")
+    sellado = {n: pd.read_csv(SEALED / f"v3_{n}.csv", dtype=str).apply(pd.to_numeric, errors="ignore")
+               for n in nombres}
+    res = fn(sellado)
+    reg = {**apertura, "utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+           "evento": "evaluacion", "resultado": res}
+    with open(LOG, "a") as f:
+        f.write(json.dumps(reg, ensure_ascii=False, default=str) + "\n")
+    _log_md(reg["utc"], hipotesis, rama, apertura["paneles"], json.dumps(res, ensure_ascii=False, default=str)[:300])
+    return res
+
+
 def _log_md(utc, hipotesis, rama, paneles, texto):
     LOG_MD.parent.mkdir(parents=True, exist_ok=True)
     nuevo = not LOG_MD.exists()

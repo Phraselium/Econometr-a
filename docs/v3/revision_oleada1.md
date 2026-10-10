@@ -159,3 +159,82 @@ La puerta go/no-go de P-C no debe darse por cerrada hasta corregir O1, O2, O8 y 
 - La regla go/no-go fijada ex ante.
 - B3 en espera, sin una cifra inventada.
 - El intervalo de la réplica de GL calculado con t(G−1).
+
+---
+
+## Iteración 2 (HEAD a4b5d69, r3/main)
+
+### Veredicto: **APROBAR** la oleada 1 (O1-O10 resueltos), con dos condiciones
+1. Antes de congelar `prereg-v3`, corregir los puntos P1-P6 del borrador de pre-registro (más abajo). Son cambios de redacción y de cálculo de potencia, no de resultados.
+2. Corregir el error material R1.
+
+Al no haber más iteraciones, lo que persiste va a docs/v3/limitaciones.md con el texto propuesto al final.
+
+### Estado de O1-O10
+| Punto | Estado | Comprobación |
+|---|---|---|
+| O1 sellado | Resuelto | potencia.md ya no publica coeficientes (solo EE y EMD). P-C3 excluye las unidades selladas. Las incidencias (i)-(iii) constan en decisiones.md y en hipotesis.md. La validación sellada de P-C3 «por fuente» se declara como desviación. |
+| O2 signo | Resuelto | A6 tiene `magnitud: null` y la redacción «dirección no establecida». A1 2012-21 y 2012-25 dicen «signo no determinado» y no llevan mediana en el enunciado. |
+| O3 periodos A1 | Resuelto | La tabla única marca la columna `preespecificado` y el criterio de cada ventana. La cifra del BdE figura como «DOI no comprobado». La dependencia EPA/ECP consta en `limites`. **Persiste R1.** |
+| O4 ε | Resuelto | Las cotas de precio de B1 y B2 son C4 condicionales y se acompañan de la tabla «si \|ε\| = x». En todas las filas, `sensibilidad_max` = cota. Las cotas de cantidad siguen en C2. |
+| O5 ΔVUT < 0 | Resuelto | Cota superior 0 y cota inferior negativa. La frase ya no dice «aumento». |
+| O6 B2 | Resuelto (declarado) | Usa el extremo lógico de 1,0 persona por hogar: la cuota es 100 % y no informativa. Toma el máximo entre fuentes y corrige la etiqueta. 2008-14 queda «no definido». El sesgo por nacionalidad no se corrige (no hay serie de nacidos fuera por año) pero está declarado. |
+| O7 B4 | Resuelto | La dependencia del suelo de uc es explícita (50-110 %). La etiqueta del extremo está corregida. 2007-14 se publica. El alquiler pasa a «SUPUESTO, no acotado», en C4. «No explica» queda condicionado al tipo nominal y a una ganancia esperada constante. |
+| O8 GL | Resuelto | T = 0,01215 (233 AEB), con rango 0,012-0,117 por la razón VUT/anuncios. La clasificación se da con los dos extremos de T y no cambia. El placebo se hace por clúster (p = 0,026). |
+| O9 potencia | Resuelto | EMD = máx(t(G−1), WCB). Las ciudades con G < 20 figuran como «no concluyente». P-C3 usa los 61 municipios oficiales (49 tratados tras balanceo y sellado), con códigos corregidos y una ventana de sensibilidad hasta 2021T3. Los veredictos GO/NO-GO son coherentes con la regla. |
+| O10 capas | Resuelto | A2 se divide en tasa (C1) y hogares implícitos (C2). A4 nacional usa dos fuentes de precio. Eurostat ya no se cuenta como fuente independiente de la ECV. A3 separa el rango de medida del de definición. |
+
+**R1 (error material, obligatorio).** En `limites` de A1, la frase «El cambio de signo entre periodos (negativo en 2002-2013, positivo desde 2014) es parte del hecho» contradice la propia tabla única: 2008-2013 y 2014-2019 tienen «signo no determinado». Texto correcto:
+> «negativo en 2002-2007; no determinado en 2008-2013 y 2014-2019; positivo en 2020-2025, 2021-2025 y 2022-2025».
+
+Menor: en `limites` de B1 nacional sigue «|ε_d| implícito de la literatura». Debe decir «sin estimación verificada; las formas reducidas citadas no son elasticidades de demanda».
+
+### Borrador del pre-registro (docs/v3/hipotesis.md): cambios obligatorios antes del tag
+- **P1. Pretendencias en H3-1 y H3-2.**
+  - El tratamiento (VUT del INE) empieza en 2021M02 y es continuo y siempre activo: no hay periodo sin tratamiento.
+  - Tal como está escrito, el criterio (a) (event study y Rambachan-Roth) no tiene operacionalización. Hay que fijarla ex ante. Por ejemplo:
+    - adelantos ΔVUT_{t+1}, ΔVUT_{t+2} sobre ln alquiler_t;
+    - pretendencia del alquiler SERPAVI 2015-2020 sobre la cuota de VUT de 2021M02 (placebo temporal);
+    - Rambachan-Roth aplicado al estimador de tratamiento continuo de dCDH.
+  - Si no hay forma de cumplir (a), declarar ya que H3-1 y H3-2 tienen como máximo C4 por ese criterio.
+- **P2. Potencia de la especificación registrada.**
+  - La potencia aprobada usa efectos fijos de sección + año, fianzas anuales 2016-2022 y la muestra no sellada. El pre-registro fija otra cosa:
+    - efectos fijos de año × municipio (H3-1);
+    - un panel trimestral 2017Q1-2023Q4 con Callaway-Sant'Anna (H3-3);
+    - una validación en la submuestra sellada (≈ 20 % de distritos; en el conjunto de las 6 ciudades quedan pocos clústeres) o en SERPAVI (stock, efecto atenuado).
+  - Hay que recalcular el EMD de la especificación principal **y de cada validación sellada** antes del tag.
+  - Si la validación sellada no tiene potencia (EMD > EER), el criterio (d) debe decir que su fallo por falta de potencia es «no concluyente», no una refutación.
+- **P3. Placebo de resultado.**
+  - Hay que nombrar la variable para cada hipótesis. Por ejemplo:
+    - para H3-1, el alquiler de vivienda unifamiliar, o el precio tasado municipal en ciudades sin VUT;
+    - para H3-3, las fianzas de locales, si existen.
+  - El placebo de tratamiento también debe concretarse: qué fechas falsas (p. ej., 2018Q4) y qué unidades falsas.
+- **P4. Familia Holm.** Hay que especificar:
+  - que Holm (m = 4, α = 0,05, bilateral) se aplica a los p de la **especificación principal en la muestra confirmatoria**: sellada para H3-1 y H3-2; principal más validación por fuente para H3-3;
+  - el orden de la decisión;
+  - que los p del multiverso no entran en la familia.
+- **P5. Ciudades.** H3-2 enumera Palma, pero la réplica GL la declara «no estimable» (menos de 2 distritos no sellados). Hay que decir que el conjunto efectivo es de 5 ciudades en la muestra no sellada y cuántos distritos sellados aporta cada ciudad.
+- **P6. Estimandos de H3-3b.**
+  - La hipótesis se refiere a contratos nuevos (flujo, fianzas).
+  - La validación usa el número de viviendas en alquiler de SERPAVI, que es un stock. Son estimandos distintos.
+  - Hay que declarar la relación esperada (efecto en el stock ≤ efecto en el flujo) y que el criterio (d) solo exige el signo.
+
+Correcto en el borrador:
+- declara lo ya conocido (O1);
+- en P-C1, solo la evaluación sellada es confirmatoria;
+- las zonas tensionadas de 2024 quedan en C4;
+- la triangulación es requisito de «robusto»;
+- WCB con G < 50;
+- un multiverso finito y enumerado;
+- la redacción de las hipótesis es neutra.
+
+### Texto propuesto para docs/v3/limitaciones.md (lo que persiste)
+> **Limitaciones v3 heredadas de la revisión de la oleada 1.**
+> 1. *Validación sellada de P-C3.* Los coeficientes de P-C3 con fianzas (topes y zonas) se calcularon una vez con todos los municipios, incluidos los sellados, antes de fijar el pre-registro. La validación sellada de P-C3 no es espacial sino por fuente (SERPAVI municipal, stock IRPF). Esa fuente mide el mismo mercado, en los mismos municipios y en el mismo periodo: no es una muestra independiente y su efecto esperado está atenuado. Un resultado C3 de P-C3 debe leerse con esta salvedad.
+> 2. *Estimaciones de P-C1 conocidas.* Las estimaciones de P-C1 en la muestra no sellada se conocían al pre-registrar. Solo la evaluación sellada es confirmatoria.
+> 3. *Exploración previa.* Antes de fijar el sellado se hizo un `describe()` global del tratamiento VUT, incluida la oleada 2026M05. Fueron estadísticos marginales, sin el resultado; la contaminación se considera baja.
+> 4. *B2 (inmigración).* La población extranjera se mide por nacionalidad: las nacionalizaciones sesgan a la baja la entrada neta de nacidos fuera. Con el extremo lógico (1 persona por hogar), la cota de la cuota de ΣΔhogares es del 100 %: no es informativa.
+> 5. *Traducciones a precio (B1, B2).* Son C4 condicionales a |ε_d|. No hay estimación verificada para España, y las formas reducidas citadas no son elasticidades de demanda.
+> 6. *B4.* Sin suelo para uc, la cota de 2014-2021 no es finita. La conclusión sobre 2021-2025 depende del tipo nominal y de una ganancia esperada constante.
+> 7. *A1.* Las ventanas C1 se añadieron después de ver qué fuentes había disponibles. Las cinco ventanas preespecificadas son C4 (una sola fuente de hogares). La EPA y la ECP no son plenamente independientes.
+> 8. *Réplica de García-López et al.* El objetivo T depende de la razón entre VUT del INE y anuncios (rango 0,012-0,117 por pp). Esa razón se observa en una sola fecha (2025).

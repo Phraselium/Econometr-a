@@ -90,7 +90,7 @@ def main() -> None:
               "Signo negativo = altas netas superiores a la variación de hogares. Un balance contable no equivale a demanda insatisfecha a cualquier precio. "
               "Independencia parcial entre fuentes: la EPA se calibra con cifras de población del INE y la ECP está anclada al Censo 2021. "
               "Quiebre de la EPA en 2021; el fin de obra del MIVAU cubre menos que la variación del parque y del Censo. "
-              "El cambio de signo entre periodos (negativo en 2002-2013, positivo desde 2014) es parte del hecho.")
+              "El signo depende del periodo: positivo y determinado en 2021-2025 y 2022-2025; no determinado en 2008-2013, 2014-2019, 2012-2021 y 2012-2025 (las combinaciones de fuentes cambian de signo); 2002-2007 con una sola fuente de hogares (C4).")
     # comparación con la cifra del BdE (2021-2025)
     g = t1[(t1.periodo == "2021-2025") & t1.protegida.isin(["con", "incluida"])]
     bde = {"cifra_bde": pa_a1.BDE["cifra"], "ief": pa_a1.BDE["ief"], "min_pa": g.deficit.min(), "max_pa": g.deficit.max(),

@@ -250,8 +250,10 @@ E-E1-D2-cobpd-1,"Cobertura de la necesidad por la construcción adicional de P-D
 E-E1-D2-cobpd-2,"Cobertura de la necesidad por la construcción adicional de P-D, clase A4 2",29.085,11.63,46.54,%,2026-2035,clase A4,"D2 (P-D v3, reparto por cuota)",C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-D2-cobpd-2
 E-E1-D2-covvac-1,"Cobertura de la necesidad por vacías movilizables, clase A4 1 (central)",30.23,,,%,2026-2035,clase A4,D2,C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-D2-covvac-1
 E-E1-D2-covvac-2,"Cobertura de la necesidad por vacías movilizables, clase A4 2 (central)",74.35,,,%,2026-2035,clase A4,D2,C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-D2-covvac-2
-E-E1-D2-nprov-1,Provincias de clase A4 1 (2021-2025),37,8,37,provincias (min = robustas),2021-2025,52 provincias,D2 (A4),C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-D2-nprov-1
-E-E1-D2-nprov-2,Provincias de clase A4 2 (2021-2025),11,3,11,provincias (min = robustas),2021-2025,52 provincias,D2 (A4),C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-D2-nprov-2
+E-E1-D2-nprov-1,Provincias de clase A4 1 (2021-2025),37,,,provincias,2021-2025,52 provincias,D2 (A4),C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-D2-nprov-1
+E-E1-D2-nprov-2,Provincias de clase A4 2 (2021-2025),11,,,provincias,2021-2025,52 provincias,D2 (A4),C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-D2-nprov-2
+E-E1-D2-nrob-1,Provincias de clase A4 1 con clase robusta (2021-2025),8,,,provincias,2021-2025,52 provincias,D2 (A4),C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-D2-nrob-1
+E-E1-D2-nrob-2,Provincias de clase A4 2 con clase robusta (2021-2025),3,,,provincias,2021-2025,52 provincias,D2 (A4),C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-D2-nrob-2
 E-E1-D2-vac-1,"Vacías movilizables por año, clase A4 1 (central y rango)",57229.6,28615.1,85845.2,viviendas/año,2026-2035,clase A4,D2 (B1),C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-D2-vac-1
 E-E1-D2-vac-2,"Vacías movilizables por año, clase A4 2 (central y rango)",16125.3,8062.7,24188,viviendas/año,2026-2035,clase A4,D2 (B1),C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-D2-vac-2
 E-E1-VLC-B1,"Necesidad anual de vivienda, provincia de València",16993,13241,22407,viviendas/año,2026-2035,provincia de València,B1,C4,2026-10-10,—,output/v5/E/hechos.json:E-E1-VLC-B1

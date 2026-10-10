@@ -73,7 +73,7 @@ La necesidad acumulada en 2026-2035 es de 2.148.680 viviendas (936.278-3.099.210
 
 El rango es amplio: el máximo multiplica el mínimo por más de tres. La mayor parte de la amplitud procede de dos supuestos que no se pueden contrastar con los datos disponibles: la fracción de vacías que se movilizaría y la tasa de jefatura de referencia para la emancipación retrasada.
 
-Como referencia del ritmo actual, las terminadas al año en el territorio común en 2019-2024 fueron — viviendas/año (72.264-94.426 viviendas/año) (2019-2024; Ministerio (fin de obra) y Catastro (altas), dentro de ±15 %; dato de 2024; C1). La comparación con la necesidad central indica una brecha anual del orden de varias decenas de miles de viviendas en el escenario central [C4].
+Como referencia del ritmo actual, las terminadas al año en el territorio común en 2019-2024 estuvieron entre 72.264-94.426 viviendas/año (2019-2024; Ministerio (fin de obra) y Catastro (altas), dentro de ±15 %; dato de 2024; C1). La comparación con la necesidad central indica una brecha anual del orden de varias decenas de miles de viviendas en el escenario central [C4].
 
 ### Distribución provincial
 
@@ -100,7 +100,7 @@ Con el rango completo, el déficit empeora en 20 provincias, mejora en 5 provinc
 - **Reposición.** Con los dos métodos de bajas, el componente R se mueve entre 1.070 viviendas y 178.259 viviendas [C4]; el resultado agregado es poco sensible a R porque es pequeño frente a A y F.
 - **Vacías.** La fracción movilizable es el supuesto más influyente. Con el diez por ciento, M resta 366.777 viviendas; con el treinta por ciento, 1.100.330 viviendas [C4]. La mediana municipal del porcentaje de vacías en el Censo 2021 es 17,4 % de viviendas (6,8-35,2 % de viviendas) [C4], con gran dispersión entre municipios.
 - **Escenario de terminadas.** El escenario (c), de tendencia, no entra en el rango principal; su resultado nacional cae entre los de (a) y (b).
-- **Contraste con organismos.** El módulo D3 compara las cifras clave con las de organismos públicos y privados: 2,0 referencias coinciden, 1,0 referencias difieren y 9,0 referencias no son comparables por concepto o periodo [C4].
+- **Contraste con organismos.** El módulo D3 compara las cifras clave con las de organismos públicos y privados: 2 referencias coinciden, 1 referencias difieren y 9 referencias no son comparables por concepto o periodo [C4].
 
 ## Discusión
 

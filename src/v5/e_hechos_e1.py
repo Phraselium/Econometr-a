@@ -74,8 +74,10 @@ def filas() -> list[dict]:
         f.append(h(f"E-E1-D2-cobpd-{r.clase}", f"Cobertura de la necesidad por la construcción adicional de P-D, clase A4 {r.clase}",
                    (r.cob_pd_min_pct + r.cob_pd_max_pct) / 2, r.cob_pd_min_pct, r.cob_pd_max_pct, "%", "2026-2035",
                    "clase A4", "D2 (P-D v3, reparto por cuota)", "C4", FECHA))
-        f.append(h(f"E-E1-D2-nprov-{r.clase}", f"Provincias de clase A4 {r.clase} (2021-2025)", r.n, r.robustas, r.n,
-                   "provincias (min = robustas)", "2021-2025", "52 provincias", "D2 (A4)", "C4", FECHA))
+        f.append(h(f"E-E1-D2-nprov-{r.clase}", f"Provincias de clase A4 {r.clase} (2021-2025)", r.n, None, None,
+                   "provincias", "2021-2025", "52 provincias", "D2 (A4)", "C4", FECHA))
+        f.append(h(f"E-E1-D2-nrob-{r.clase}", f"Provincias de clase A4 {r.clase} con clase robusta (2021-2025)", r.robustas,
+                   None, None, "provincias", "2021-2025", "52 provincias", "D2 (A4)", "C4", FECHA))
     # --- Verificador -------------------------------------------------------------------------------
     ver = _csv("verificador/resumen.csv")
     f.append(h("E-E1-ver-n", "Afirmaciones del debate evaluadas en el verificador v5", len(ver), None, None, "afirmaciones",

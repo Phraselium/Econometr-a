@@ -73,7 +73,7 @@ La necesidad acumulada en 2026-2035 es de {{E-B1-N10}} [C4], es decir, {{E-B1-an
 
 El rango es amplio: el máximo multiplica el mínimo por más de tres. La mayor parte de la amplitud procede de dos supuestos que no se pueden contrastar con los datos disponibles: la fracción de vacías que se movilizaría y la tasa de jefatura de referencia para la emancipación retrasada.
 
-Como referencia del ritmo actual, las terminadas al año en el territorio común en 2019-2024 fueron {{terminadas_1924:cita}}. La comparación con la necesidad central indica una brecha anual del orden de varias decenas de miles de viviendas en el escenario central [C4].
+Como referencia del ritmo actual, las terminadas al año en el territorio común en 2019-2024 estuvieron entre {{terminadas_1924:rango}} ({{terminadas_1924:periodo}}; {{terminadas_1924:fuentes}}; dato de {{terminadas_1924:fecha_dato}}; {{terminadas_1924:capa}}). La comparación con la necesidad central indica una brecha anual del orden de varias decenas de miles de viviendas en el escenario central [C4].
 
 ### Distribución provincial
 

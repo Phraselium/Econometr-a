@@ -307,7 +307,9 @@ for fam in COMUNES + ["turismo_no_residentes", "residuo"]:
     r = rg("compra", "2015-2025", fam, "B3_transversal_Shapley")
     hecho(f"B4-b3-shapley-{fam}", f"Cuota de R2 entre provincias de {fam} (precio)", r.central, r.rango_lo, r.rango_hi,
           "% del R2", "2015-2025", "50 provincias", "B3 (MIVAU y Registradores)", "C4", "2025T4")
-hecho("B4-v3-vut-cantidad", "Máximo de stock de alquiler desplazado por viviendas turísticas", 2.746, 2.423, 2.746,
+_vut = json.loads((ROOT / "output" / "v3" / "PB" / "cotas.json").read_text())[0]   # cota C2 de cantidad de v3 (no tecleada)
+hecho("B4-v3-vut-cantidad", "Máximo de stock de alquiler desplazado por viviendas turísticas", round(_vut["cota_superior"], 3),
+      round(_vut["sensibilidad_min"], 3), round(_vut["sensibilidad_max"], 3),
       "% del stock de alquiler", "2020M08-2024M08", "España", "v3 PB (INE VUT, Censo 2021)", "C2", "2024-08")
 hecho("B4-estabilidad-tau-min", "Tau de Kendall mínima del orden de familias entre métodos/periodos", float(est.tau.min()),
       float(est.tau.min()), float(est.tau.max()), "tau (4 familias)", "2015-2025", "comparaciones: %d" % len(est),

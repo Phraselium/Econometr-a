@@ -202,3 +202,13 @@
   - R04 queda «sin URL localizada» (no se inventa).
   - I16 e I01 con su intervalo.
 - Son las correcciones que propuso el revisor: el módulo D queda APROBADO.
+
+## E (redactores y orquestador)
+- Todas las cifras de los entregables salen de cifras_clave mediante plantillas. check_v5 rechaza cualquier cifra tecleada en ellas.
+- **Extensión del artículo del Colegio (E4).** E-2 lo entregó con 1.463 palabras. El orquestador lo amplía a unas 2.040 (mínimo pedido: 2.000), con:
+  - emancipación como cota C2;
+  - Cataluña en contratos nuevos (C1);
+  - una sección de convergencia con otros organismos;
+  - viñetas C4 sobre Europa, crédito, contado y no residentes.
+- **Artículos (E3).** Son borradores de entre 1.500 y 3.200 palabras, más cortos de lo previsto, porque el redactor llegó al 80 % del presupuesto. La ampliación pasa al backlog (BK-E3, coste M) y a las tareas del autor antes del envío a revistas. Los cuartiles de Housing Studies, Investigaciones Regionales, SERIEs, Papers in Regional Science y JCRE quedan «no verificados».
+- **Cifra tecleada en B4.** B4-v3-vut-cantidad estaba tecleada en b4_run.py. Ahora se lee de output/v3/PB/cotas.json, con el mismo valor.

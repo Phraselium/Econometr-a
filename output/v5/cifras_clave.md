@@ -255,8 +255,10 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 | E-E1-D2-cobpd-2 | Cobertura de la necesidad por la construcción adicional de P-D, clase A4 2 | 29.09 | 11.63–46.54 | % | 2026-2035 | clase A4 | D2 (P-D v3, reparto por cuota) | C4 | 2026-10-10 |
 | E-E1-D2-covvac-1 | Cobertura de la necesidad por vacías movilizables, clase A4 1 (central) | 30.23 |  | % | 2026-2035 | clase A4 | D2 | C4 | 2026-10-10 |
 | E-E1-D2-covvac-2 | Cobertura de la necesidad por vacías movilizables, clase A4 2 (central) | 74.35 |  | % | 2026-2035 | clase A4 | D2 | C4 | 2026-10-10 |
-| E-E1-D2-nprov-1 | Provincias de clase A4 1 (2021-2025) | 37 | 8–37 | provincias (min = robustas) | 2021-2025 | 52 provincias | D2 (A4) | C4 | 2026-10-10 |
-| E-E1-D2-nprov-2 | Provincias de clase A4 2 (2021-2025) | 11 | 3–11 | provincias (min = robustas) | 2021-2025 | 52 provincias | D2 (A4) | C4 | 2026-10-10 |
+| E-E1-D2-nprov-1 | Provincias de clase A4 1 (2021-2025) | 37 |  | provincias | 2021-2025 | 52 provincias | D2 (A4) | C4 | 2026-10-10 |
+| E-E1-D2-nprov-2 | Provincias de clase A4 2 (2021-2025) | 11 |  | provincias | 2021-2025 | 52 provincias | D2 (A4) | C4 | 2026-10-10 |
+| E-E1-D2-nrob-1 | Provincias de clase A4 1 con clase robusta (2021-2025) | 8 |  | provincias | 2021-2025 | 52 provincias | D2 (A4) | C4 | 2026-10-10 |
+| E-E1-D2-nrob-2 | Provincias de clase A4 2 con clase robusta (2021-2025) | 3 |  | provincias | 2021-2025 | 52 provincias | D2 (A4) | C4 | 2026-10-10 |
 | E-E1-D2-vac-1 | Vacías movilizables por año, clase A4 1 (central y rango) | 5.723e+04 | 2.862e+04–8.585e+04 | viviendas/año | 2026-2035 | clase A4 | D2 (B1) | C4 | 2026-10-10 |
 | E-E1-D2-vac-2 | Vacías movilizables por año, clase A4 2 (central y rango) | 1.613e+04 | 8063–2.419e+04 | viviendas/año | 2026-2035 | clase A4 | D2 (B1) | C4 | 2026-10-10 |
 | E-E1-VLC-B1 | Necesidad anual de vivienda, provincia de València | 1.699e+04 | 1.324e+04–2.241e+04 | viviendas/año | 2026-2035 | provincia de València | B1 | C4 | 2026-10-10 |

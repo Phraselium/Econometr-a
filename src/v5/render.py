@@ -20,10 +20,17 @@ OUT = ROOT / "output" / "v5"
 MARC = re.compile(r"\{\{([A-Za-z0-9_.\-]+)(?::([a-z_]+))?\}\}")
 
 
+CONTEOS = {"instrumentos", "referencias", "afirmaciones", "distritos", "documentos", "medidas", "especificaciones",
+           "series", "entidades", "clase", "declarantes", "hechos/anio", "procedimientos/anio", "lanzamientos/anio"}
+
+
 def fmt_num(x: float, unidad: str = "") -> str:
     if pd.isna(x):
         return "—"
     x = float(x)
+    # recuentos (instrumentos, referencias, afirmaciones...): enteros sin decimales
+    if x.is_integer() and str(unidad).split(" ")[0] in CONTEOS:
+        return f"{x:,.0f}".replace(",", ".")
     if unidad in ("viviendas", "hogares", "personas", "contratos", "€", "€/m²", "€/mes", "municipios", "provincias") or abs(x) >= 1000:
         s = f"{x:,.0f}".replace(",", ".")
     elif abs(x) >= 10:

@@ -1,14 +1,14 @@
 # Determinantes del precio de la vivienda en España: informe v2 (síntesis BS)
 
-Documento generado por `src/v2/bs_run.py` a partir de las salidas versionadas de las ramas BA, BV, BI, BO, BP, BM y BD (`output/v2/`). Ninguna cifra está escrita a mano: cada bloque cita su fichero de origen. Escala de evidencia: CAUSAL > ASOCIACIÓN ROBUSTA > EXPLORATORIO > DESCRIPTIVO; **ninguna conclusión de este informe supera EXPLORATORIO** y se evita el lenguaje causal. Inferencia: EE cluster por provincia con wild cluster bootstrap (Webb) o HAC(4); comparación de modelos en la misma muestra frente a AR(4) y ECM v1 (Diebold-Mariano con corrección Harvey-Leybourne-Newbold).
+Documento generado por `src/v2/bs_run.py` a partir de las salidas versionadas de las ramas BA, BV, BI, BO, BP, BM y BD (`output/v2/`). Las cifras se insertan desde ficheros versionados y cada bloque cita su origen; las pocas excepciones son literales citados de documentos (p. ej. 0,17 / 0,174 y 0,035 de `docs/v2/decisiones.md`, 0,029 del script previo de Holm-7, el MDE y el 0,45 que recogen los resúmenes de rama) o convenciones (umbral de 0,05). Escala de evidencia: CAUSAL > ASOCIACIÓN ROBUSTA > EXPLORATORIO > DESCRIPTIVO; **ninguna conclusión de este informe supera EXPLORATORIO** y se evita el lenguaje causal. Inferencia: EE cluster por provincia con wild cluster bootstrap (Webb) o HAC(4); comparación de modelos en la misma muestra frente a AR(4) y ECM v1 (Diebold-Mariano con corrección Harvey-Leybourne-Newbold).
 
 ## 1. Resumen ejecutivo
 
-**Alcance.** 34 especificaciones registradas en v2 (`output/v2/tablas/registro_v2.csv`; v1: 3.812), sobre paneles provinciales (49 provincias de entrenamiento, 2002Q1-2024Q2) con la muestra 2024Q3-2026Q2 y las provincias 11, 16 y 45 selladas. Lenguaje de **asociación**: ninguna pregunta alcanza el nivel CAUSAL y ninguna confirmatoria alcanza ASOCIACIÓN ROBUSTA.
+**Alcance.** 34 especificaciones registradas en v2 (`output/v2/tablas/registro_v2.csv`; v1: 3.812), (sin contar las estimaciones de las evaluaciones selladas: H6: 12 estimaciones de efecto (SDiD, SC, DiD en ln y Δ4, ponderada, 4 por provincia y sin 2023Q3-Q4); H1: 4, H2: 5 y H7: 9 evaluaciones de predicción (principal y secundarias); ver anexo), sobre paneles provinciales (49 provincias de entrenamiento, 2002Q1-2024Q2) con la muestra 2024Q3-2026Q2 y las provincias 11, 16 y 45 selladas. Lenguaje de **asociación**: ninguna pregunta alcanza el nivel CAUSAL y ninguna confirmatoria alcanza ASOCIACIÓN ROBUSTA.
 
 - **Hipótesis confirmatorias.** Ninguna de las 7 supera Holm sobre la familia de 7 (p ajustado por hipótesis: H6 0,098; H3 0,176; H4 0,232; H2 0,779; H1 1,000; H5 1,000; H7 1,000; el menor es H6). Por el criterio uniforme todas quedan **EXPLORATORIO** (etiquetas fijadas en `docs/v2/decisiones.md`).
 - **Hecho predictivo de v2.** En la muestra sellada, el modelo demográfico de alquiler (H1) mejora al AR(4) de panel (RMSE 0,0108 frente a 0,0122; DM-HLN 3,98; p = 0,005; p×7 = 0,037) y al ECM v1 (p = 0,031). Es un hecho fuera de muestra; **no** convierte la hipótesis conjunta de H1 (que exigía también signo + de la población extranjera, no cumplido: p_IUT 0,850) en una asociación robusta de cada coeficiente. En las 3 provincias selladas solas (n = 24) no hay diferencia significativa.
-- **Ningún otro modelo supera al AR(4).** De 85 configuraciones evaluadas en validación por bloques con embargo, 0 mejoran al AR(4) tras BH (2 con p<0,05 sin corregir); de los 5 contrastes sellados principales, solo cumple (BA: B_AR4_mas_H1).
+- **Ningún otro modelo supera al AR(4).** De 85 configuraciones evaluadas en validación por bloques con embargo, 0 mejoran al AR(4) tras BH (2 con p<0,05 sin corregir); de los 5 contrastes sellados principales, solo cumple 1 (BA: B_AR4_mas_H1).
 - **Alquiler frente a compra.** Alquiler: la población de 20-34 años es la asociación más estable entre provincias (+, en todas las submuestras), pero no se traduce en explicar la subida agregada. Compra: el crédito hipotecario nuevo (+) y el coste de uso × exposición hipotecaria (−) se asocian con el precio real dentro de muestra, sin valor predictivo (H2 no se confirma en el sellado). Lo que más pesa en ambos mercados es el componente común no explicado: desde 2020 el alquiler acumula 5,66 pp y el componente común es 5,79 pp (102 % del observado, M1); desde 2014, 7,25 pp con 10,14 pp en el común. El precio real de compra varía −4,50 pp desde 2020.
 - **Política.** Tope catalán de 2020 (H5): signo contrario y fallan pretendencias. Zonas tensionadas (H6): τ = −0,0117 en ln del IPC de alquiler, p nominal 0,014, pero Holm-7 0,098; el DiD simple discrepa y hay heterogeneidad entre provincias: EXPLORATORIO.
 - **Contribuciones por periodo (BD).** 19 de los componentes familia × periodo × mercado son «no robustos» (el IC95 excluye 0 solo en uno de los dos modelos o con signos opuestos): no son hallazgos.
@@ -59,7 +59,7 @@ El sellado es **procedimental** (permisos, carga obligatoria vía `holdout.load_
 **Interpolaciones y datos no validados (solo robustez, nunca en un modelo principal sin marca).**
 - Población (1 de enero) interpolada log-linealmente en T2-T4 en el panel trimestral: marcada; la robustez con T1 observado y con el panel anual coincide (`BA/resumen.md`). El padrón se publica con retraso, de modo que en tiempo real el dato no estaría disponible (`docs/v2/limitaciones.md`, C7 de BA).
 - Viviendas turísticas (INE) solo desde 2020Q3 (N temporal 6 en el módulo provincial); SERPAVI municipal (extraído de visor/PDF) se usa únicamente en el módulo exploratorio de turismo de BA, no en los modelos principales.
-- Vivienda protegida en el déficit: 34.704 viviendas observadas (2021Q1-2024Q2) más 14.873 viviendas **supuestas** (ritmo constante, 2024Q3-2025Q4) en la ilustración de BO; el supuesto no se usa como dato.
+- Vivienda protegida en el déficit: 34.704 viviendas observadas en las provincias de entrenamiento y reescaladas por cobertura (cota inferior sin reescalar: 33.164; 2021Q1-2024Q2) más 14.873 viviendas **supuestas** (ritmo constante, 2024Q3-2025Q4) en la ilustración de BO; el supuesto no se usa como dato.
 - Coste de uso aproximado (sin impuestos ni prima de riesgo; misma serie para todas las provincias). No hay datos provinciales de no residentes ni de inversores (`docs/v2/fuentes_fallidas.md`; licencias, titularidad catastral y AEAT: descargas fallidas).
 
 *Fuente: `output/v2/BA/resumen.md`; `output/v2/BO/resumen.md`; `docs/v2/fuentes_fallidas.md`; `docs/v2/viabilidad_g0.md`.*
@@ -74,13 +74,13 @@ El sellado es **procedimental** (permisos, carga obligatoria vía `holdout.load_
 
 **Métodos y referencias metodológicas** (estado de verificación entre corchetes; detalle en la sección 12):
 - Comparación fuera de muestra: Diebold-Mariano Diebold y Mariano (1995) [verificada] con la corrección de muestra finita Harvey, Leybourne y Newbold (1997) [verificada].
-- Inferencia con pocos clusters: wild cluster bootstrap restringido, Roodman, Nielsen, MacKinnon y Webb (2019) [cuartil no verificado] y pesos de Webb (2023) [verificada].
+- Inferencia con pocos clusters: wild cluster bootstrap restringido, Roodman, Nielsen, MacKinnon y Webb (2019) [verificada; cuartil no verificado] y pesos de Webb (2023) [verificada].
 - Control sintético y SDiD (H5, H6): Abadie, Diamond y Hainmueller (2010) [verificada] y Arkhangelsky et al. (2021) [verificada].
-- Shift-share (H3): Goldsmith-Pinkham et al. (2020) [verificada], Borusyak, Hull y Jaravel (2022) [verificada], Adão, Kolesár y Morales (2019) [verificada]; crítica de exogeneidad y de dinámica: Jaeger, Ruist y Stuhler (2018) [verificada]; F de primera etapa: Montiel Olea y Pflueger (2013) [verificada].
+- Shift-share (H3): Goldsmith-Pinkham et al. (2020) [verificada], Borusyak, Hull y Jaravel (2022) [verificada], Adão, Kolesár y Morales (2019) [verificada]; crítica de exogeneidad y de dinámica: Jaeger, Ruist y Stuhler (2018) [VERIFICADA (WP; revista NO VERIFICADA)]; F de primera etapa: Montiel Olea y Pflueger (2013) [verificada].
 - Heterogeneidad y aprendizaje automático (BI, BM): Chernozhukov et al. (2018) [verificada] y Athey, Tibshirani y Wager (2019) [verificada]; elastic net Zou y Hastie (2005) [verificada]; post-double-selection Belloni, Chernozhukov y Hansen (2014) [verificada]; ALE Apley y Zhu (2020) [verificada]; LSTM Hochreiter y Schmidhuber (1997) [verificada]; SHAP Lundberg y Lee (2017) [NO VERIFICADA] y LightGBM Ke et al. (2017) [NO VERIFICADA].
 - Parámetros cambiantes y proyecciones locales (BM, BV, BO): BVAR Giannone, Lenza y Primiceri (2015) [verificada]; TVP-VAR Primiceri (2005) [verificada] con la corrección de Del Negro y Primiceri (2015) [verificada]; proyecciones locales Jordà (2005) [verificada].
 - Coste de uso de la vivienda: Poterba (1984) [verificada].
-- Contexto y signos esperados: demografía y alquiler Khametshin, López Rodríguez y Pérez García (2024) [verificada]; inmigración y precios Saiz (2007) [verificada]; turismo Garcia-López et al. (2020) [verificada]; tope de rentas (contratos nuevos) Jofre-Monseny, Martínez-Mazza y Segú (2023) [NO VERIFICADA]; elasticidad de la oferta citada por el Banco de España Caldera y Johansson (2013) [verificada] y Cavalleri, Cournède y Özsöğüt (2019) [verificada]; déficit de 750.000 viviendas Banco de España (2026) [verificada].
+- Contexto y signos esperados: demografía y alquiler Khametshin, López Rodríguez y Pérez García (2024) [verificada]; inmigración y precios Saiz (2007) [verificada]; turismo Garcia-López et al. (2020) [verificada]; tope de rentas (contratos nuevos) Jofre-Monseny, Martínez-Mazza y Segú (2023) [verificada; cuartil no verificado]; elasticidad de la oferta citada por el Banco de España Caldera y Johansson (2013) [verificada] y Cavalleri, Cournède y Özsöğüt (2019) [VERIFICADA (parcial: DOI sí; autores y nº no confirmados)]; déficit de 750.000 viviendas Banco de España (2026) [verificada].
 
 *Fuente: `docs/literatura.md`; `output/v2/tablas/referencias_v2.csv`.*
 
@@ -107,7 +107,7 @@ Todo en este apartado es **asociación** (EXPLORATORIO o DESCRIPTIVO). Crecimien
 - El crédito hipotecario nuevo (+) y el coste de uso × exposición hipotecaria (−) se asocian con el crecimiento del precio real en la muestra completa, con los signos esperados, pero el crédito no es significativo en 2014-2024 ni con el crédito retardado 4 trimestres (simultaneidad), y el modelo con ambas variables no predice mejor que un AR(4) (sección 6).
 - La asociación del coste de uso es fuerte en P1 y P3 y nula en P4: el alza de tipos de 2022 no se recoge con esta variable.
 - Arbitraje alquiler-compra (ratio precio/alquiler 1 unidad de log por encima de su media, h = 4): precio −0,119 (Holm m=16 <0,001) y alquiler 0,021 (Holm 0,024); el ajuste es sobre todo vía precio; la desviación respecto de la media de toda la muestra incorpora reversión mecánica.
-- Demografía, empleo y oferta: sin atribución estable en BD entre M1 y M2.
+- Demografía agregada: desde 2014 es negativa en M1 (−6,50 pp) y en M2 (−7,53 pp) con IC95 que excluyen 0, es decir, se replica entre modelos (EXPLORATORIO; refleja la composición de la población, no un efecto); desde 2020 no hay atribución estable. El crédito/coste de uso en P1 también se replica (−4,18 y −5,49 pp). Empleo y oferta: sin atribución estable entre M1 y M2.
 
 **Común a ambos.** Lo que más pesa es lo no explicado por las familias medidas (efectos comunes de tiempo: tipos, expectativas, inflación, regulación nacional); ver sección 4.3.
 
@@ -180,6 +180,7 @@ La demografía contribuye de forma negativa en 2014-2019 por composición, no po
 
 | Ventana | Componente | M1 pp [IC95 %] | M2 pp [IC95 %] | Robustez M1/M2 | Nivel |
 |---|---|---|---|---|---|
+| P2-P4 (desde 2014) | Demografía agregada (20-34 + extranjera) | −3,09 [−5,96; −0,74] | −3,32 [−6,57; −0,03] | replica en M1 y M2 | EXPLORATORIO |
 | P2-P4 (desde 2014) | Demografía: 20-34 | −2,67 [−4,40; −1,05] | −3,61 [−5,83; −1,15] | replica en M1 y M2 | EXPLORATORIO |
 | P2-P4 (desde 2014) | Demografía: extranjera | −0,41 [−2,17; 1,03] | 0,29 [−1,49; 1,50] | sin señal: IC95 incluye 0 en M1 y M2 | EXPLORATORIO |
 | P2-P4 (desde 2014) | Empleo (ocupados) | 0,25 [−0,05; 0,54] | 0,08 [−0,27; 0,41] | sin señal: IC95 incluye 0 en M1 y M2 | EXPLORATORIO |
@@ -190,6 +191,7 @@ La demografía contribuye de forma negativa en 2014-2019 por composición, no po
 | P2-P4 (desde 2014) | Común (efectos de tiempo) | 10,14 [5,57; 13,25] | 11,69 [8,34; 14,11] | contable | DESCRIPTIVO |
 | P2-P4 (desde 2014) | Residuo | −0,19 [−0,61; 0,28] | −0,93 [−1,55; 0,04] | contable | DESCRIPTIVO |
 | P2-P4 (desde 2014) | Observado | 7,25 [3,45; 11,26] | 7,25 [3,50; 11,24] | contable | DESCRIPTIVO |
+| P3-P4 (desde 2020) | Demografía agregada (20-34 + extranjera) | −0,05 [−1,93; 1,21] | 0,83 [−0,81; 1,63] | sin señal: IC95 incluye 0 en M1 y M2 | EXPLORATORIO |
 | P3-P4 (desde 2020) | Demografía: 20-34 | 0,34 [−0,11; 0,85] | 0,57 [0,09; 1,04] | NO ROBUSTO: IC95 excluye 0 solo en M2 | EXPLORATORIO |
 | P3-P4 (desde 2020) | Demografía: extranjera | −0,39 [−2,15; 0,82] | 0,26 [−1,26; 1,16] | sin señal: IC95 incluye 0 en M1 y M2 | EXPLORATORIO |
 | P3-P4 (desde 2020) | Empleo (ocupados) | 0,08 [−0,12; 0,30] | −0,00 [−0,20; 0,22] | sin señal: IC95 incluye 0 en M1 y M2 | EXPLORATORIO |
@@ -200,6 +202,8 @@ La demografía contribuye de forma negativa en 2014-2019 por composición, no po
 | P3-P4 (desde 2020) | Común (efectos de tiempo) | 5,79 [4,16; 7,76] | 5,36 [3,92; 7,19] | contable | DESCRIPTIVO |
 | P3-P4 (desde 2020) | Residuo | −0,12 [−0,54; 0,29] | −0,36 [−0,74; 0,17] | contable | DESCRIPTIVO |
 | P3-P4 (desde 2020) | Observado | 5,66 [4,81; 6,58] | 5,66 [4,95; 6,55] | contable | DESCRIPTIVO |
+
+**Corrección a la lectura de BD para compra:** la cita anterior dice «sin atribución estable entre M1 y M2»; con la tabla de ventanas, la demografía agregada desde 2014 sí se replica en M1 y M2 (y el crédito/coste de uso de P1), EXPLORATORIO; el resto no.
 
 **Compra (valor tasado real), por periodo (M1).**
 
@@ -214,6 +218,7 @@ La demografía contribuye de forma negativa en 2014-2019 por composición, no po
 
 | Ventana | Componente | M1 pp [IC95 %] | M2 pp [IC95 %] | Robustez M1/M2 | Nivel |
 |---|---|---|---|---|---|
+| P2-P4 (desde 2014) | Demografía agregada (20-34 + extranjera) | −6,50 [−15,48; −0,16] | −7,53 [−19,75; −2,62] | replica en M1 y M2 | EXPLORATORIO |
 | P2-P4 (desde 2014) | Demografía: 20-34 | −7,46 [−14,84; −3,17] | −3,46 [−12,19; 1,34] | NO ROBUSTO: IC95 excluye 0 solo en M1 | EXPLORATORIO |
 | P2-P4 (desde 2014) | Demografía: extranjera | 0,96 [−3,20; 5,19] | −4,08 [−10,46; −0,84] | NO ROBUSTO: IC95 excluye 0 solo en M2 | EXPLORATORIO |
 | P2-P4 (desde 2014) | Empleo (ocupados) | 0,50 [−0,43; 1,61] | 1,67 [0,48; 2,96] | NO ROBUSTO: IC95 excluye 0 solo en M2 | EXPLORATORIO |
@@ -223,6 +228,7 @@ La demografía contribuye de forma negativa en 2014-2019 por composición, no po
 | P2-P4 (desde 2014) | Común (efectos de tiempo) | −0,15 [−11,42; 9,45] | 1,95 [−10,34; 16,59] | contable | DESCRIPTIVO |
 | P2-P4 (desde 2014) | Residuo | 2,68 [0,70; 4,45] | 2,68 [0,41; 4,92] | contable | DESCRIPTIVO |
 | P2-P4 (desde 2014) | Observado | −1,11 [−10,23; 5,70] | −1,11 [−10,48; 6,04] | contable | DESCRIPTIVO |
+| P3-P4 (desde 2020) | Demografía agregada (20-34 + extranjera) | 1,19 [−2,28; 4,13] | −5,27 [−8,49; −0,87] | NO ROBUSTO: IC95 excluye 0 solo en M2 | EXPLORATORIO |
 | P3-P4 (desde 2020) | Demografía: 20-34 | 0,16 [−1,86; 1,41] | −1,08 [−3,34; 0,70] | sin señal: IC95 incluye 0 en M1 y M2 | EXPLORATORIO |
 | P3-P4 (desde 2020) | Demografía: extranjera | 1,03 [−2,46; 4,04] | −4,19 [−7,40; −0,57] | NO ROBUSTO: IC95 excluye 0 solo en M2 | EXPLORATORIO |
 | P3-P4 (desde 2020) | Empleo (ocupados) | 0,45 [−0,02; 0,99] | 0,77 [0,13; 1,44] | NO ROBUSTO: IC95 excluye 0 solo en M2 | EXPLORATORIO |
@@ -282,14 +288,14 @@ Criterios (A-E) por familia y mercado: **A** p ajustado por multiplicidad < 0,05
 | 1 | Coste de uso × exposición hipotecaria | compra | EXPLORATORIO | sí | sí | no | no | no | 2 | 5 |
 | 2 | Demografía: modelo conjunto de H1 (valor predictivo) | alquiler | EXPLORATORIO | n/a | n/a | no | sí | n/a | 1 | 2 |
 | 3 | Precio/alquiler (arbitraje, ratio vs media) | alquiler | EXPLORATORIO | sí | sí | n/a | n/a | n/a | 1 | 2 |
-| 4 | Precio/alquiler (arbitraje, ratio vs media) | compra | EXPLORATORIO | sí | sí | n/a | n/a | n/a | 1 | 2 |
-| 5 | Política: zonas tensionadas de Cataluña (H6) | alquiler | EXPLORATORIO | no | no | n/a | sí | n/a | 1 | 3 |
-| 6 | Demografía: población 20-34 (BA) | alquiler | EXPLORATORIO | sí | sí | no | n/a | no | 1 | 4 |
-| 7 | Crédito hipotecario nuevo | compra | EXPLORATORIO | sí | no | no | no | no | 1 | 5 |
-| 8 | Viviendas turísticas (VUT) | alquiler | EXPLORATORIO | no | n/a | n/a | n/a | n/a | 0 | 1 |
-| 9 | Crédito, tipos y coste de uso | alquiler | EXPLORATORIO | n/a | n/a | no | n/a | no | 0 | 2 |
-| 10 | Oferta (terminadas) | alquiler | EXPLORATORIO | n/a | n/a | no | n/a | no | 0 | 2 |
-| 11 | Demografía (20-34 y extranjera) | compra | EXPLORATORIO | n/a | no | n/a | n/a | no | 0 | 2 |
+| 4 | Demografía (20-34 y extranjera) | compra | EXPLORATORIO | n/a | no | n/a | n/a | sí | 1 | 2 |
+| 5 | Precio/alquiler (arbitraje, ratio vs media) | compra | EXPLORATORIO | sí | sí | n/a | n/a | n/a | 1 | 2 |
+| 6 | Política: zonas tensionadas de Cataluña (H6) | alquiler | EXPLORATORIO | no | no | n/a | sí | n/a | 1 | 3 |
+| 7 | Demografía: población 20-34 (BA) | alquiler | EXPLORATORIO | sí | sí | no | n/a | no | 1 | 4 |
+| 8 | Crédito hipotecario nuevo | compra | EXPLORATORIO | sí | no | no | no | no | 1 | 5 |
+| 9 | Viviendas turísticas (VUT) | alquiler | EXPLORATORIO | no | n/a | n/a | n/a | n/a | 0 | 1 |
+| 10 | Crédito, tipos y coste de uso | alquiler | EXPLORATORIO | n/a | n/a | no | n/a | no | 0 | 2 |
+| 11 | Oferta (terminadas) | alquiler | EXPLORATORIO | n/a | n/a | no | n/a | no | 0 | 2 |
 | 12 | Inmigración instrumentada (BI) | compra | EXPLORATORIO | no | no | n/a | n/a | n/a | 0 | 2 |
 | 13 | Oferta (terminadas / iniciadas) | compra | EXPLORATORIO | n/a | n/a | no | n/a | no | 0 | 2 |
 | 14 | Suelo (precio del suelo) | compra | EXPLORATORIO | no | n/a | no | n/a | n/a | 0 | 2 |
@@ -309,14 +315,14 @@ Criterios (A-E) por familia y mercado: **A** p ajustado por multiplicidad < 0,05
 - **1. Coste de uso × exposición hipotecaria (compra)**: Coef. −0,0044 (Holm m=2 <0,001), significativo en ambas submuestras; el modelo C3 es peor que el AR(4) en entrenamiento (p 0,117) y no mejora en el sellado; solo se identifica el diferencial por exposición (no aleatoria); en BD M2 el coste de uso nacional sale con signo contrario.
 - **2. Demografía: modelo conjunto de H1 (valor predictivo) (alquiler)**: Hecho fuera de muestra: en la muestra sellada mejora al AR(4) (RMSE 0,0108 vs 0,0122; p 0,005); ×7 = 0,037; en entrenamiento no mejoraba (p 0,645). No se atribuye a un coeficiente concreto; H1 conjunta EXPLORATORIO.
 - **3. Precio/alquiler (arbitraje, ratio vs media) (alquiler)**: Ratio por encima de la media predice más alquiler (h=4: 0,021, Holm 0,024); con media expansiva Holm 0,115; reversión mecánica posible.
-- **4. Precio/alquiler (arbitraje, ratio vs media) (compra)**: Ratio por encima de la media predice menos crecimiento del precio (h=4: −0,119, Holm <0,001); con media expansiva −0,065 (Holm 0,213); reversión mecánica posible.
-- **5. Política: zonas tensionadas de Cataluña (H6) (alquiler)**: τ SDiD −0,0117, p nominal 0,014 (cumple la regla), Holm-7 0,098; DiD simple de signo contrario y Tarragona positiva.
-- **6. Demografía: población 20-34 (BA) (alquiler)**: Coef. 0,149 (Holm intra-H1 0,0154), + en todas las submuestras; el modelo no mejora al AR(4) en entrenamiento (p 0,645); en BD desde 2020 no replica entre M1 y M2; H1 (conjunta) no supera Holm-7 (1,000): tope EXPLORATORIO.
-- **7. Crédito hipotecario nuevo (compra)**: Coef. 0,0087 (Holm m=2 0,0018); no significativo en 2014-2024 (p 0,198) ni con crédito retardado; H2 no se confirma en el sellado (p 0,195); simultaneidad.
-- **8. Viviendas turísticas (VUT) (alquiler)**: Depende de la métrica: municipal p 0,252, provincial Δ ln VUT p 0,396, provincial Δ por 1.000 hab. p 0,0007 (N temporal 6); causalidad inversa no descartada.
-- **9. Crédito, tipos y coste de uso (alquiler)**: Coste de uso = una serie nacional única (IC subestimados, sin ajuste); el modelo D no mejora al AR(4) (p 0,129); BD sin señal.
-- **10. Oferta (terminadas) (alquiler)**: Contribuciones del orden de décimas de pp; signo + en P1 (contrario al esperado); el modelo C no mejora al AR(4) (p 0,585).
-- **11. Demografía (20-34 y extranjera) (compra)**: En BD desde 2020 la contribución cambia de signo entre M1 (1,19 pp) y M2 (−5,27 pp): sin atribución estable.
+- **4. Demografía (20-34 y extranjera) (compra)**: En BD desde 2020 la contribución cambia de signo entre M1 (1,19 pp) y M2 (−5,27 pp): sin atribución estable desde 2020; desde 2014 la demografía agregada SÍ se replica en M1 (−6,50) y M2 (−7,53) con IC95 que excluyen 0 (composición; EXPLORATORIO).
+- **5. Precio/alquiler (arbitraje, ratio vs media) (compra)**: Ratio por encima de la media predice menos crecimiento del precio (h=4: −0,119, Holm <0,001); con media expansiva −0,065 (Holm 0,213); reversión mecánica posible.
+- **6. Política: zonas tensionadas de Cataluña (H6) (alquiler)**: τ SDiD −0,0117, p nominal 0,014 (cumple la regla), Holm-7 0,098; DiD simple de signo contrario y Tarragona positiva.
+- **7. Demografía: población 20-34 (BA) (alquiler)**: Coef. 0,149 (Holm intra-H1 0,0154), + en todas las submuestras; el modelo no mejora al AR(4) en entrenamiento (p 0,645); en BD desde 2020 no replica entre M1 y M2; H1 (conjunta) no supera Holm-7 (1,000): tope EXPLORATORIO.
+- **8. Crédito hipotecario nuevo (compra)**: Coef. 0,0087 (Holm m=2 0,0018); no significativo en 2014-2024 (p 0,198) ni con crédito retardado; H2 no se confirma en el sellado (p 0,195); simultaneidad.
+- **9. Viviendas turísticas (VUT) (alquiler)**: Depende de la métrica: municipal p 0,252, provincial Δ ln VUT p 0,396, provincial Δ por 1.000 hab. p 0,0007 (N temporal 6); causalidad inversa no descartada.
+- **10. Crédito, tipos y coste de uso (alquiler)**: Coste de uso = una serie nacional única (IC subestimados, sin ajuste); el modelo D no mejora al AR(4) (p 0,129); BD sin señal.
+- **11. Oferta (terminadas) (alquiler)**: Contribuciones del orden de décimas de pp; signo + en P1 (contrario al esperado); el modelo C no mejora al AR(4) (p 0,585).
 - **12. Inmigración instrumentada (BI) (compra)**: β compra −1,04 (p WCB 1 cola 0,661), IC95 muy ancho; el signo cambia entre variantes.
 - **13. Oferta (terminadas / iniciadas) (compra)**: Contribución ≈ 0 en BD; ningún modelo de precio con oferta mejora al AR(4) (P4 p 0,208).
 - **14. Suelo (precio del suelo) (compra)**: Serie cruda sin señal (mín. Holm 1,00); solo la variante «media4T», añadida a posteriori, da Holm 0,021 en P4 (h=6); P2 no mejora al AR(4) (p 0,609).
@@ -351,7 +357,7 @@ Todo en la misma muestra por contraste, h = 4 trimestres (anual en BI), DM con c
 
 *Fuente: `output/v2/tablas/modelos_fuera_muestra.csv`.*
 
-De 85 filas de modelos con variables (incluidas 4 configuraciones de LSTM), **0 mejoran al AR(4) con BH** (2 con p < 0,05 sin corregir: BO I1_precio (p 0,032, p BH 0,097); BO I2_precio_suelo (p 0,026, p BH 0,097), que tampoco sobreviven a BH). El ECM v1 es peor que el AR(4) en los tres objetivos de BM: mejorarlo es un listón bajo. El LSTM no supera al gradient boosting (RMSE 0,0141 frente a 0,0124; DM −0,84; p = 0,404): resultado negativo.
+De 85 filas de modelos con variables (incluidas 4 configuraciones de LSTM), **0 mejoran al AR(4) con BH** (2 con p < 0,05 sin corregir: BO I1_precio (p 0,032, p BH 0,097); BO I2_precio_suelo (p 0,026, p BH 0,097), que tampoco sobreviven a BH). El ECM v1 es peor que el AR(4) en los tres objetivos de BM: en entrenamiento mejorarlo es un listón bajo (en el sellado de compra no lo es: ver 6.2). El LSTM no supera al gradient boosting (RMSE 0,0141 frente a 0,0124; DM −0,84; p = 0,404): resultado negativo.
 
 ### 6.2 Muestra sellada (una evaluación por hipótesis; principal = 52 provincias, 2024Q3-2026Q2)
 
@@ -367,7 +373,9 @@ De 85 filas de modelos con variables (incluidas 4 configuraciones de LSTM), **0 
 
 **Lectura.** Ningún modelo supera al AR(4) salvo la mejora sellada del modelo demográfico de alquiler (BA: B_AR4_mas_H1). En las 3 provincias selladas solas (n = 24) esa mejora no es significativa (p = 0,589): la potencia es baja y el resultado descansa en las 49 provincias de entrenamiento evaluadas en 2024Q3-2026Q2. En entrenamiento el mismo modelo no mejoraba (p = 0,645). H2 (C3) y H7 (A, B, C) no cumplen la regla.
 
-**Observación NO pre-registrada (no se usa como evidencia).** En la ventana sellada nacional (n = 8) el ECM v1 tuvo RMSE 0,0128 frente a 0,0508 del AR(4) y 0,0722 del TVP-VAR elegido para H7. Con n = 8 y sin que se hubiera fijado de antemano, no se interpreta; en entrenamiento el ECM v1 era peor que el AR(4) en los tres objetivos.
+**Contraste de H2 con el ECM v1** (49 provincias, 2024Q3-2026Q2; `sec_c` de `BV/h2_sellado.json`): ECM v1 RMSE 0,0531 frente a 0,0542 de C3; DM −0,12; p = 0,910: sin diferencia.
+
+**Observación NO pre-registrada (no se usa como evidencia).** En la sellada de compra provincial (52 provincias) el ECM v1 tuvo menor RMSE que el AR(4): 0,0528 frente a 0,0619 (solo RMSE, sin contraste). En la ventana sellada nacional (n = 8) el ECM v1 tuvo RMSE 0,0128 frente a 0,0508 del AR(4) y 0,0722 del TVP-VAR elegido para H7. Con n = 8 y sin que se hubiera fijado de antemano, no se interpreta; en entrenamiento el ECM v1 era peor que el AR(4) en los tres objetivos.
 
 *Fuente: `output/v2/BM/h7_sellado.json`; `output/v2/BM/resumen.md`.*
 
@@ -423,7 +431,7 @@ Todos coinciden salvo redondeo; se usa el valor del fichero. El único efecto vi
 | Escala de evidencia | «asociación» (ninguna pregunta alcanzó el nivel causal) | CAUSAL > ASOCIACIÓN ROBUSTA > EXPLORATORIO > DESCRIPTIVO; 7 confirmatorias pre-registradas con Holm-7 | Pre-registro (tag `prereg-v2`) y muestra sellada: separa confirmación de exploración |
 | Especificaciones probadas | 3.812 | 34 | Corrección por búsqueda: Holm/BH por familia y Holm-7 |
 | Inmigración y alquiler | OLS IPC alquiler 0,534 (p WCB 0,004); panel de 17 CCAA, 2003-2025; 2SLS 0,437 (p WCB 0,119) | 2SLS β alquiler 3,06 (p WCB 0,001); con GPSS de extranjeros 2002 1,95 (p cluster 0,115); placebo de alquiler pasado rechaza | Con paneles provinciales, GPSS y placebos la inmigración **ya no es una asociación robusta con el alquiler**: solo el signo + es estable; magnitud no identificada; CAUSAL descartado |
-| Déficit de vivienda | 866.100 (2021T1-2025T4, EPA corregida, sin protegida); 810.936 (ECP) | 632.861 sin protegida y 598.157 con protegida (2021Q1-2024Q2, observadas) | No comparable (periodo más corto por el sellado); con/sin protegida se separan observadas y supuestas; DESCRIPTIVO |
+| Déficit de vivienda | 866.100 (2021T1-2025T4, EPA corregida, sin protegida); 810.936 (ECP) | 632.861 sin protegida y 598.157 con protegida (2021Q1-2024Q2; protegida observada y reescalada por cobertura; cota inferior 599.697) | No comparable (periodo más corto por el sellado); con/sin protegida se separan observadas y supuestas; DESCRIPTIVO |
 | Predicción | El modelo preferido no mejora al AR(4) (DM p = 0,509) | Ninguna configuración mejora al AR(4) en validación (BH); solo H1 mejora en el sellado | Validación en bloques con embargo y evaluación sellada única |
 | Caldera y Johansson (2013) | NO VERIFICADA | VERIFICADA | DOI comprobado en Crossref en v2; el informe v1 no se modifica |
 | Quiebres | Chow 2014Q1; modelo no estable | Periodos P0-P5 fijados ex ante; coeficientes por periodo y contribuciones con IC | Se pregunta por los periodos en vez de detectarlos |
@@ -439,7 +447,7 @@ Cavalleri, Cournède y Özsöğüt (2019) sigue como parcialmente verificada (DO
 - **H7.** Ningún objetivo cumple la regla: A (nacional, TVP-VAR) 0,0722 frente a 0,0508; B (alquiler, LightGBM) 0,0111 frente a 0,0122 (p = 0,499); C (compra, elastic net) 0,0655 frente a 0,0619. *(`BM/h7_sellado.json`)*
 - **LSTM.** RMSE 0,0141 frente a 0,0124 del gradient boosting; DM −0,84 (p = 0,404); la selección del mejor LSTM entre 4 configuraciones es además optimista. *(`BM/lstm_resultado.json`)*
 - **H4 (oferta).** Falla submuestras: sin signos esperados en precio_lag2 (p_IUT 0,615), 2005-2013 (p_IUT 0,884), 2014-2023 (p_IUT 0,631); el IV no la respalda (J de Hansen rechaza) y el placebo de precio futuro es significativo. *(`BO/h4_robustez_submuestras.csv`, `BO/resumen.md`)*
-- **H3 con pocos grupos.** BHJ a nivel de shock (8 grupos × 13 años, t(7)): alquiler 3.99 (p=0.000); precio 2.90 (p=0.55). Con 8 shocks la potencia y la inferencia son pobres: no aporta evidencia de exogeneidad de los shocks. *(`BI/resumen.md`)*
+- **H3 con pocos grupos.** BHJ a nivel de shock (8 grupos × 13 años, t(7)): alquiler 3,99 (p < 0,001); precio 2,90 (p = 0,55). Con 8 shocks la potencia y la inferencia son pobres: no aporta evidencia de exogeneidad de los shocks. *(`BI/resumen.md`)*
 - **Suelo.** La serie cruda no da señal (mínimo p Holm sobre 160 contrastes = 1,00); la variante «media4T», añadida a posteriori, da p Holm = 0,021 solo en P4 (h = 6, n pequeña): no es una señal anticipatoria robusta. *(`BO/suelo_proyecciones_locales.csv`)*
 - **Turismo (VUT).** Municipal: coef. 0,00035 (p = 0,252), placebo de pretendencia p = 0,814; provincial: Δ ln VUT p = 0,396 frente a Δ por 1.000 hab. p = 0,0007 con N temporal 6: depende de la métrica. *(`BA/turismo.csv`)*
 - **Panel UE.** Elasticidad de los permisos al precio real (t−1), anual: España 1,91 (EE HAC 1,23) frente a 0,99 de media UE (26 países, EE 0,21); España es la 5.ª más alta de 27. Panel con FE país y año: 1,69 (España) frente a 0,62 (resto); no se dan p ni EE de la diferencia (España es un único clúster: inferencia cluster no válida). Trimestral: 1,27 frente a 0,57 (HICP general trimestral «anual_asignado»). Alquiler: España −6,0 frente a +2,7 de media UE, la más baja; el valor lo generan dos episodios en que el alquiler real y los permisos se mueven en sentido contrario (2008-2010 y 2021-2023, con la inflación general alta); no interpretar. Series de 11-18 años: elasticidades por país imprecisas. *(`BO/resumen.md`, sección 4)*
@@ -537,7 +545,7 @@ La prioridad es un ordenamiento de BS según su efecto sobre la inferencia; el t
 
 ## 12. Referencias (marca de verificación)
 
-Estado según `docs/literatura.md` (DOI comprobado en Crossref; cuartil leído de resultados de búsqueda de Scimago o de agregadores, en la mayoría de la edición 2025, no del año de publicación: «año publ. no comprobado»). No se inventa ninguna referencia: las **NO VERIFICADAS** son 3 y las de **cuartil no verificado**, 2.
+Estado según `docs/literatura.md` (DOI comprobado en Crossref; cuartil leído de resultados de búsqueda de Scimago o de agregadores, en la mayoría de la edición 2025, no del año de publicación: «año publ. no comprobado»). No se inventa ninguna referencia: las **NO VERIFICADAS** son 2 y las de **cuartil no verificado**, 2.
 
 | Referencia | DOI | Revista | Cuartil | Estado |
 |---|---|---|---|---|
@@ -570,10 +578,10 @@ Estado según `docs/literatura.md` (DOI comprobado en Crossref; cuartil leído d
 | Caldera y Johansson (2013), 22(3), 231-249 | 10.1016/j.jhe.2013.05.002 | J. Housing Economics | Q2 (SJR 2025; año publ. no comprobado) | VERIFICADA |
 | Cavalleri, Cournède y Özsöğüt (2019), OECD ECO WP | 10.1787/4777e29a-en | OECD Economics Dept. WP | sin cuartil (WP) | VERIFICADA (parcial: DOI sí; autores y nº no confirmados) |
 | Garcia-López et al. (2020), 119, 103278 | 10.1016/j.jue.2020.103278 | J. Urban Economics | Q1 (SJR 2025; año publ. no comprobado) | VERIFICADA |
-| Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916 (citada por BP/resultado.json) | no consta en docs/literatura.md | Regional Science and Urban Economics | cuartil no verificado | NO VERIFICADA |
+| Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916 | 10.1016/j.regsciurbeco.2023.103916 | Regional Science and Urban Economics | cuartil no verificado | VERIFICADA |
 | Banco de España (2026), Informe Anual 2025 | 10.53479/43565 | Banco de España (informe institucional) | n/a (informe) | VERIFICADA |
 
-NO VERIFICADAS: Lundberg y Lee (2017), NeurIPS 30 (SHAP), «A Unified Approach to Interpreting Model Predictions»; Ke et al. (2017), NeurIPS 30 (LightGBM), «LightGBM: A Highly Efficient Gradient Boosting Decision Tree»; Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916 (citada por BP/resultado.json). Cuartil no verificado: Roodman, Nielsen, MacKinnon y Webb (2019), 19(1), 4-60; Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916 (citada por BP/resultado.json).
+NO VERIFICADAS: Lundberg y Lee (2017), NeurIPS 30 (SHAP), «A Unified Approach to Interpreting Model Predictions»; Ke et al. (2017), NeurIPS 30 (LightGBM), «LightGBM: A Highly Efficient Gradient Boosting Decision Tree». Cuartil no verificado: Roodman, Nielsen, MacKinnon y Webb (2019), 19(1), 4-60; Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916.
 
 *Fuente: `output/v2/tablas/referencias_v2.csv`; `docs/literatura.md`.*
 
@@ -589,7 +597,7 @@ NO VERIFICADAS: Lundberg y Lee (2017), NeurIPS 30 (SHAP), «A Unified Approach t
 | BM | 4 |
 | BD | 5 |
 
-Total v2: 34 (excluye 1 filas de presupuesto declarado de configuraciones). Cada rama registra sus especificaciones en `output/v2/<rama>/registro.csv` (Registry de `econ_utils`); la concatenación con columna `rama` es `output/v2/tablas/registro_v2.csv`.
+Total v2: 34 (excluye 1 filas de presupuesto declarado de configuraciones). **Las 34 no incluyen las estimaciones de las 4 evaluaciones selladas** (una por hipótesis, ejecutadas por el orquestador con `holdout.evaluate`, no por las ramas): H6: 12 estimaciones de efecto (SDiD, SC, DiD en ln y Δ4, ponderada, 4 por provincia y sin 2023Q3-Q4); H1: 4, H2: 5 y H7: 9 evaluaciones de predicción (principal y secundarias). No se añaden a `registro_v2.csv` porque el Registry de cada rama se cerró antes del sellado; sus resultados están en los `*_sellado.json` y en `modelos_fuera_muestra.csv`. Cada rama registra sus especificaciones en `output/v2/<rama>/registro.csv` (Registry de `econ_utils`); la concatenación con columna `rama` es `output/v2/tablas/registro_v2.csv`.
 
 Reproducibilidad: `python3 src/v2/bs_run.py` (1 hilo, SEED = 20261010, sin red) regenera `output/v2/BS/*`, `output/v2/tablas/*.csv` y este informe; dos ejecuciones dan md5 idénticos. Todas las cifras se leen de los ficheros citados.
 

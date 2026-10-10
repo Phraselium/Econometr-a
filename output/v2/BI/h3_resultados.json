@@ -19,16 +19,12 @@
     "p_cluster_beta_alq_gt0": 0.0011893537714182088,
     "p_cluster_contraste_gt0": 0.03447377138438099,
     "p_IUT_cluster": 0.03447377138438099,
-    "holm_2_componentes": [
-      0.002,
-      0.0294
-    ],
     "cota_bonferroni_familia7": 0.20579999999999998,
     "nota": "H3 se sostiene si ambos componentes rechazan (unión-intersección); Holm sobre la familia de 7 la aplica el orquestador; se da la cota Bonferroni-7"
   },
   "diagnosticos": {
     "F_cluster": 14.436690131943168,
-    "F_efectivo_MOP": "= F robusto cluster (un instrumento, un regresor): Andrews-Stock-Sun 2019; no se compara con VC no tabulados",
+    "F_efectivo_MOP": "no implementado: con un instrumento y un regresor se reporta el F robusto cluster, sin valores críticos",
     "rotemberg_alq": {
       "top": [
         {
@@ -95,8 +91,8 @@
         "p": 0.0
       },
       "costa": {
-        "corr": 0.2339,
-        "p": 0.1058
+        "corr": 0.2174,
+        "p": 0.1335
       }
     },
     "pretendencias": {
@@ -184,6 +180,515 @@
       }
     }
   },
+  "balance_cuotas_Sudamerica": {
+    "extr02": {
+      "corr": 0.36066725549235135,
+      "p": 0.010902185387612373
+    },
+    "ln_pob02": {
+      "corr": 0.6059573117968888,
+      "p": 3.953594574673332e-06
+    },
+    "ln_p02": {
+      "corr": 0.42596128606665273,
+      "p": 0.002276482262419389
+    },
+    "paro02": {
+      "corr": -0.09245959957202131,
+      "p": 0.5274751909370896
+    },
+    "costa": {
+      "corr": 0.053638349931538716,
+      "p": 0.7143357321081288
+    }
+  },
+  "pretendencias_Sudamerica": {
+    "alq": {
+      "b": -0.18158947545508372,
+      "se": 0.11000564421420359,
+      "p": 0.10532297681275983
+    },
+    "pre": {
+      "b": 0.0640590783670267,
+      "se": 0.3618706044792825,
+      "p": 0.86023592653375
+    }
+  },
+  "identificacion": [
+    {
+      "spec": "principal",
+      "res": "alq",
+      "n": 621,
+      "b": 3.059768888487095,
+      "se": 0.9536451131768212,
+      "p_cluster": 0.0023787075428364176,
+      "F": 14.436690131943168,
+      "p_wcb_1c": 0.0009,
+      "nota": ""
+    },
+    {
+      "spec": "principal",
+      "res": "pre",
+      "n": 621,
+      "b": -1.0368375564277885,
+      "se": 2.5062566859389035,
+      "p_cluster": 0.6809367156157197,
+      "F": 14.436690131943168,
+      "p_wcb_1c": 0.6609,
+      "nota": ""
+    },
+    {
+      "spec": "principal",
+      "res": "dif",
+      "n": 621,
+      "b": 4.096606444914884,
+      "se": 2.201889233231221,
+      "p_cluster": 0.06894754276876199,
+      "F": 14.436690131943168,
+      "p_wcb_1c": 0.0313,
+      "nota": ""
+    },
+    {
+      "spec": "gpss_extr02",
+      "res": "alq",
+      "n": 621,
+      "b": 1.9514718845930188,
+      "se": 1.2140766717291331,
+      "p_cluster": 0.11453197392121409,
+      "F": 15.039171371070575,
+      "p_wcb_1c": 0.078,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_extr02",
+      "res": "pre",
+      "n": 621,
+      "b": 8.698838354577157,
+      "se": 4.338936255000779,
+      "p_cluster": 0.050638706053763846,
+      "F": 15.039171371070575,
+      "p_wcb_1c": 0.0811,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_extr02",
+      "res": "dif",
+      "n": 621,
+      "b": -6.747366469984141,
+      "se": 4.20188050190225,
+      "p_cluster": 0.11487829331751993,
+      "F": 15.039171371070575,
+      "p_wcb_1c": 0.8665,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_ln_pob02",
+      "res": "alq",
+      "n": 621,
+      "b": 3.1682381041447174,
+      "se": 1.305688550834809,
+      "p_cluster": 0.01905131133034982,
+      "F": 9.004029057265692,
+      "p_wcb_1c": 0.0062,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_ln_pob02",
+      "res": "pre",
+      "n": 621,
+      "b": -2.193168809318444,
+      "se": 2.7349821069343463,
+      "p_cluster": 0.4265658721541948,
+      "F": 9.004029057265692,
+      "p_wcb_1c": 0.7917,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_ln_pob02",
+      "res": "dif",
+      "n": 621,
+      "b": 5.36140691346316,
+      "se": 2.602539712134508,
+      "p_cluster": 0.044835878180198026,
+      "F": 9.004029057265692,
+      "p_wcb_1c": 0.0087,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_ln_p02",
+      "res": "alq",
+      "n": 621,
+      "b": 3.1052994335502935,
+      "se": 1.0665875884676113,
+      "p_cluster": 0.005442797354100255,
+      "F": 9.923081940571045,
+      "p_wcb_1c": 0.0028,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_ln_p02",
+      "res": "pre",
+      "n": 621,
+      "b": -0.972340993719484,
+      "se": 2.8044639093747685,
+      "p_cluster": 0.7303231867368792,
+      "F": 9.923081940571045,
+      "p_wcb_1c": 0.6426,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_ln_p02",
+      "res": "dif",
+      "n": 621,
+      "b": 4.0776404272697775,
+      "se": 2.3858453823685317,
+      "p_cluster": 0.09389204103437432,
+      "F": 9.923081940571045,
+      "p_wcb_1c": 0.0454,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_paro02",
+      "res": "alq",
+      "n": 621,
+      "b": 3.698138323780419,
+      "se": 1.0258429781591105,
+      "p_cluster": 0.0007406964702740542,
+      "F": 13.12195317914397,
+      "p_wcb_1c": 0.0003,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_paro02",
+      "res": "pre",
+      "n": 621,
+      "b": -0.3272080906881824,
+      "se": 3.2017205973881318,
+      "p_cluster": 0.9190255996859158,
+      "F": 13.12195317914397,
+      "p_wcb_1c": 0.5454,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_paro02",
+      "res": "dif",
+      "n": 621,
+      "b": 4.0253464144686015,
+      "se": 2.7990078872559687,
+      "p_cluster": 0.15688454955730066,
+      "F": 13.12195317914397,
+      "p_wcb_1c": 0.0787,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_costa",
+      "res": "alq",
+      "n": 621,
+      "b": 2.937716439601094,
+      "se": 0.8400598513098891,
+      "p_cluster": 0.0010242590166818857,
+      "F": 18.826708084617177,
+      "p_wcb_1c": 0.0011,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_costa",
+      "res": "pre",
+      "n": 621,
+      "b": 0.352689737163012,
+      "se": 2.360460106727454,
+      "p_cluster": 0.8818516775244634,
+      "F": 18.826708084617177,
+      "p_wcb_1c": 0.4489,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_costa",
+      "res": "dif",
+      "n": 621,
+      "b": 2.5850267024380793,
+      "se": 2.114629355349722,
+      "p_cluster": 0.22750665463978145,
+      "F": 18.826708084617177,
+      "p_wcb_1c": 0.112,
+      "nota": "característica 2002 x año (GPSS)"
+    },
+    {
+      "spec": "gpss_todas",
+      "res": "alq",
+      "n": 621,
+      "b": 4.610793476737182,
+      "se": 3.122281491728222,
+      "p_cluster": 0.14627687221950483,
+      "F": 4.638004321095843,
+      "p_wcb_1c": 0.0423,
+      "nota": "5 características 2002 x año"
+    },
+    {
+      "spec": "gpss_todas",
+      "res": "pre",
+      "n": 621,
+      "b": 9.931827719297921,
+      "se": 10.140465838591815,
+      "p_cluster": 0.33228079115911346,
+      "F": 4.638004321095843,
+      "p_wcb_1c": 0.1079,
+      "nota": "5 características 2002 x año"
+    },
+    {
+      "spec": "gpss_todas",
+      "res": "dif",
+      "n": 621,
+      "b": -5.321034242560732,
+      "se": 8.78246283639524,
+      "p_cluster": 0.5474552882418244,
+      "F": 4.638004321095843,
+      "p_wcb_1c": 0.7718,
+      "nota": "5 características 2002 x año"
+    },
+    {
+      "spec": "solo_Sudamerica",
+      "res": "alq",
+      "n": 621,
+      "b": 2.451369627083683,
+      "se": 0.6297466105547175,
+      "p_cluster": 0.0003056269391772646,
+      "F": 52.48945245845787,
+      "p_wcb_1c": 0.0009,
+      "nota": "instrumento: solo cuota Sudamérica"
+    },
+    {
+      "spec": "solo_Sudamerica",
+      "res": "pre",
+      "n": 621,
+      "b": 2.9820420438853468,
+      "se": 1.3444934137172144,
+      "p_cluster": 0.031323219837129296,
+      "F": 52.48945245845787,
+      "p_wcb_1c": 0.0123,
+      "nota": "instrumento: solo cuota Sudamérica"
+    },
+    {
+      "spec": "solo_Sudamerica",
+      "res": "dif",
+      "n": 621,
+      "b": -0.5306724168016651,
+      "se": 1.2957605090968265,
+      "p_cluster": 0.683961591170436,
+      "F": 52.48945245845787,
+      "p_wcb_1c": 0.6686,
+      "nota": "instrumento: solo cuota Sudamérica"
+    },
+    {
+      "spec": "sin_Sudamerica",
+      "res": "alq",
+      "n": 621,
+      "b": 4.341439811033107,
+      "se": 2.656003799171381,
+      "p_cluster": 0.10868039044479946,
+      "F": 1.731992652177482,
+      "p_wcb_1c": 0.0179,
+      "nota": "instrumento sin Sudamérica"
+    },
+    {
+      "spec": "sin_Sudamerica",
+      "res": "pre",
+      "n": 621,
+      "b": -9.503121872837019,
+      "se": 7.136059538411573,
+      "p_cluster": 0.18924690545552061,
+      "F": 1.731992652177482,
+      "p_wcb_1c": 0.9645,
+      "nota": "instrumento sin Sudamérica"
+    },
+    {
+      "spec": "sin_Sudamerica",
+      "res": "dif",
+      "n": 621,
+      "b": 13.844561683870133,
+      "se": 7.773936958705719,
+      "p_cluster": 0.08125844109017065,
+      "F": 1.731992652177482,
+      "p_wcb_1c": 0.0053,
+      "nota": "instrumento sin Sudamérica"
+    },
+    {
+      "spec": "z_alineado_t+1",
+      "res": "alq",
+      "n": 621,
+      "b": 2.3672554249424285,
+      "se": 0.5871368035121088,
+      "p_cluster": 0.00019707484195585304,
+      "F": 29.881998750917926,
+      "p_wcb_1c": 0.0002,
+      "nota": "ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t"
+    },
+    {
+      "spec": "z_alineado_t+1",
+      "res": "pre",
+      "n": 621,
+      "b": 4.455162037740912,
+      "se": 1.6439323651507418,
+      "p_cluster": 0.009301260385865285,
+      "F": 29.881998750917926,
+      "p_wcb_1c": 0.0017,
+      "nota": "ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t"
+    },
+    {
+      "spec": "z_alineado_t+1",
+      "res": "dif",
+      "n": 621,
+      "b": -2.0879066127984838,
+      "se": 1.5150223191335839,
+      "p_cluster": 0.1745519648256398,
+      "F": 29.881998750917926,
+      "p_wcb_1c": 0.9239,
+      "nota": "ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t"
+    },
+    {
+      "spec": "flujo_t-1",
+      "res": "alq",
+      "n": 621,
+      "b": 0.804576607307019,
+      "se": 0.5698119600846865,
+      "p_cluster": 0.16439925556874413,
+      "F": 9.673495151593412,
+      "p_wcb_1c": 0.0893,
+      "nota": "lectura alternativa de 'flujo t-1'"
+    },
+    {
+      "spec": "flujo_t-1",
+      "res": "pre",
+      "n": 621,
+      "b": -6.052024259976144,
+      "se": 3.289091188789257,
+      "p_cluster": 0.07195155730760659,
+      "F": 9.673495151593412,
+      "p_wcb_1c": 0.9839,
+      "nota": "lectura alternativa de 'flujo t-1'"
+    },
+    {
+      "spec": "flujo_t-1",
+      "res": "dif",
+      "n": 621,
+      "b": 6.856600867283165,
+      "se": 3.1595168445088246,
+      "p_cluster": 0.03497542306743114,
+      "F": 9.673495151593412,
+      "p_wcb_1c": 0.0049,
+      "nota": "lectura alternativa de 'flujo t-1'"
+    },
+    {
+      "spec": "sub_2009-2014",
+      "res": "alq",
+      "n": 278,
+      "b": 9.742197903547234,
+      "se": 12.323891211345217,
+      "p_cluster": 0.4331165904867584,
+      "F": 0.727531118698807,
+      "p_wcb_1c": 0.0506,
+      "nota": "subperiodo"
+    },
+    {
+      "spec": "sub_2009-2014",
+      "res": "pre",
+      "n": 278,
+      "b": -45.65219982049715,
+      "se": 56.54968667897268,
+      "p_cluster": 0.4234798118630912,
+      "F": 0.727531118698807,
+      "p_wcb_1c": 0.9628,
+      "nota": "subperiodo"
+    },
+    {
+      "spec": "sub_2009-2014",
+      "res": "dif",
+      "n": 278,
+      "b": 55.394397724044396,
+      "se": 66.92744222081285,
+      "p_cluster": 0.4119488633819505,
+      "F": 0.727531118698807,
+      "p_wcb_1c": 0.0294,
+      "nota": "subperiodo"
+    },
+    {
+      "spec": "sub_2015-2021",
+      "res": "alq",
+      "n": 343,
+      "b": 2.4985308885069104,
+      "se": 1.3625410374913107,
+      "p_cluster": 0.0728982765750043,
+      "F": 7.627331810097426,
+      "p_wcb_1c": 0.0586,
+      "nota": "subperiodo"
+    },
+    {
+      "spec": "sub_2015-2021",
+      "res": "pre",
+      "n": 343,
+      "b": -1.7953789991029414,
+      "se": 2.726238819128912,
+      "p_cluster": 0.5133280312369707,
+      "F": 7.627331810097426,
+      "p_wcb_1c": 0.7901,
+      "nota": "subperiodo"
+    },
+    {
+      "spec": "sub_2015-2021",
+      "res": "dif",
+      "n": 343,
+      "b": 4.293909887609851,
+      "se": 2.854506480325461,
+      "p_cluster": 0.13906735220048472,
+      "F": 7.627331810097426,
+      "p_wcb_1c": 0.0297,
+      "nota": "subperiodo"
+    },
+    {
+      "spec": "placebo_resultado_t-1",
+      "res": "alq",
+      "n": 607,
+      "b": 4.0862144644734055,
+      "se": 1.1503012357059585,
+      "p_cluster": 0.0008681322562201873,
+      "F": 22.393612714586002,
+      "p_wcb_1c": 0.0002,
+      "nota": "resultado PASADO sobre x_t instrumentado (debería ser 0)"
+    },
+    {
+      "spec": "placebo_resultado_t-1",
+      "res": "pre",
+      "n": 607,
+      "b": 5.81213022050863,
+      "se": 2.6799065111091966,
+      "p_cluster": 0.03508465279153857,
+      "F": 22.393612714586002,
+      "p_wcb_1c": 0.0113,
+      "nota": "resultado PASADO sobre x_t instrumentado (debería ser 0)"
+    },
+    {
+      "spec": "placebo_resultado_t-2",
+      "res": "alq",
+      "n": 607,
+      "b": 3.671665821354946,
+      "se": 0.8533945052363602,
+      "p_cluster": 8.258885600515072e-05,
+      "F": 22.393612714586002,
+      "p_wcb_1c": 0.0003,
+      "nota": "resultado PASADO sobre x_t instrumentado (debería ser 0)"
+    },
+    {
+      "spec": "placebo_resultado_t-2",
+      "res": "pre",
+      "n": 607,
+      "b": 10.09819182653809,
+      "se": 2.6867947257734652,
+      "p_cluster": 0.000463591970586727,
+      "F": 22.393612714586002,
+      "p_wcb_1c": 0.0002,
+      "nota": "resultado PASADO sobre x_t instrumentado (debería ser 0)"
+    }
+  ],
   "robustez": [
     {
       "spec": "tendencias_prov",
@@ -326,32 +831,36 @@
       "F": 29.882
     }
   ],
-  "criterios_causal": {
-    "F_ge_10": true,
-    "pretendencias_ns": true,
-    "J_hansen_no_rechaza": true,
+  "criterios_identificacion": {
+    "F_ge_10_principal": true,
+    "pretendencias_NO_informativas": "ventana 2003-07 = boom de llegadas a los mismos enclaves",
+    "J_hansen_p": {
+      "alq": 0.29049293229123613,
+      "pre": 0.11909645062448146
+    },
     "sargan_homoc_p": {
       "alq": 0.06458727968257606,
       "pre": 5.838537710458627e-06
     },
+    "placebo_alquiler_pasado_rechaza": true,
+    "signo_alq_positivo_en_todas_las_variantes_con_instrumento_completo": true,
+    "signo_contraste_estable": false,
+    "CAUSAL": "DESCARTADO: placebos de alquiler pasado rechazan, cuotas no balanceadas, F cae con controles GPSS",
     "componentes": {
-      "beta_alq_gt0": {
+      "beta_alq_gt0 (componente, signo)": {
         "p_wcb_1c": 0.001,
-        "p_holm7_cota": 0.007,
-        "sobrevive_WCB": true,
-        "sobrevive_Holm7_cota": true,
-        "nivel": "CAUSAL"
+        "p_cota_Holm7": 0.007,
+        "informativo_no_confirmatorio": true
       },
       "contraste_alq_menos_compra_gt0": {
         "p_wcb_1c": 0.0294,
-        "p_holm7_cota": 0.20579999999999998,
-        "sobrevive_WCB": true,
-        "sobrevive_Holm7_cota": false,
-        "nivel": "EXPLORATORIO"
+        "p_cota_Holm7": 0.20579999999999998,
+        "informativo_no_confirmatorio": true
       }
     }
   },
   "nivel_evidencia": "EXPLORATORIO",
+  "nivel_beta_alq_signo": "ASOCIACIÓN ROBUSTA (solo signo; magnitud NO identificada)",
   "tabla_principal": [
     {
       "resultado": "alq",

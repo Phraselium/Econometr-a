@@ -19,6 +19,54 @@ BI,diag_BHJ_pre_anioFE,"BHJ nivel shock (104 shocks g-t, 8 grupos)",2009,2021,62
 BI,diag_BHJ_pre_anio+grupoFE,"BHJ nivel shock (104 shocks g-t, 8 grupos)",2009,2021,621,,,,,2.455986119632776,0.6019302881469893,potencia baja: 8 grupos; EE cluster por grupo t(7)
 BI,diag_AKM0_alq,EE exposición-robustos tipo AKM (agrupa grupos-shock),2009,2021,621,,,,,3.059768888487095,0.004440451804919705,aprox. AKM0; 8 shocks-grupo
 BI,diag_AKM0_pre,EE exposición-robustos tipo AKM (agrupa grupos-shock),2009,2021,621,,,,,-1.0368375564277885,0.8148842467359584,aprox. AKM0; 8 shocks-grupo
+BI,id_principal_alq,y_alq ~ x | z,2009,2021,621,,,,,3.059768888487095,0.0023787075428364176,EXPLORATORIO identificación; F=14.44; p_wcb_1c=0.0009; 
+BI,id_principal_pre,y_pre ~ x | z,2009,2021,621,,,,,-1.0368375564277885,0.6809367156157197,EXPLORATORIO identificación; F=14.44; p_wcb_1c=0.6609; 
+BI,id_principal_dif,y_dif ~ x | z,2009,2021,621,,,,,4.096606444914884,0.06894754276876199,EXPLORATORIO identificación; F=14.44; p_wcb_1c=0.0313; 
+BI,id_gpss_extr02_alq,y_alq ~ x | z | controles,2009,2021,621,,,,,1.9514718845930188,0.11453197392121409,EXPLORATORIO identificación; F=15.04; p_wcb_1c=0.0780; característica 2002 x año (GPSS)
+BI,id_gpss_extr02_pre,y_pre ~ x | z | controles,2009,2021,621,,,,,8.698838354577157,0.050638706053763846,EXPLORATORIO identificación; F=15.04; p_wcb_1c=0.0811; característica 2002 x año (GPSS)
+BI,id_gpss_extr02_dif,y_dif ~ x | z | controles,2009,2021,621,,,,,-6.747366469984141,0.11487829331751993,EXPLORATORIO identificación; F=15.04; p_wcb_1c=0.8665; característica 2002 x año (GPSS)
+BI,id_gpss_ln_pob02_alq,y_alq ~ x | z | controles,2009,2021,621,,,,,3.1682381041447174,0.01905131133034982,EXPLORATORIO identificación; F=9.00; p_wcb_1c=0.0062; característica 2002 x año (GPSS)
+BI,id_gpss_ln_pob02_pre,y_pre ~ x | z | controles,2009,2021,621,,,,,-2.193168809318444,0.4265658721541948,EXPLORATORIO identificación; F=9.00; p_wcb_1c=0.7917; característica 2002 x año (GPSS)
+BI,id_gpss_ln_pob02_dif,y_dif ~ x | z | controles,2009,2021,621,,,,,5.36140691346316,0.044835878180198026,EXPLORATORIO identificación; F=9.00; p_wcb_1c=0.0087; característica 2002 x año (GPSS)
+BI,id_gpss_ln_p02_alq,y_alq ~ x | z | controles,2009,2021,621,,,,,3.1052994335502935,0.005442797354100255,EXPLORATORIO identificación; F=9.92; p_wcb_1c=0.0028; característica 2002 x año (GPSS)
+BI,id_gpss_ln_p02_pre,y_pre ~ x | z | controles,2009,2021,621,,,,,-0.972340993719484,0.7303231867368792,EXPLORATORIO identificación; F=9.92; p_wcb_1c=0.6426; característica 2002 x año (GPSS)
+BI,id_gpss_ln_p02_dif,y_dif ~ x | z | controles,2009,2021,621,,,,,4.0776404272697775,0.09389204103437432,EXPLORATORIO identificación; F=9.92; p_wcb_1c=0.0454; característica 2002 x año (GPSS)
+BI,id_gpss_paro02_alq,y_alq ~ x | z | controles,2009,2021,621,,,,,3.698138323780419,0.0007406964702740542,EXPLORATORIO identificación; F=13.12; p_wcb_1c=0.0003; característica 2002 x año (GPSS)
+BI,id_gpss_paro02_pre,y_pre ~ x | z | controles,2009,2021,621,,,,,-0.3272080906881824,0.9190255996859158,EXPLORATORIO identificación; F=13.12; p_wcb_1c=0.5454; característica 2002 x año (GPSS)
+BI,id_gpss_paro02_dif,y_dif ~ x | z | controles,2009,2021,621,,,,,4.0253464144686015,0.15688454955730066,EXPLORATORIO identificación; F=13.12; p_wcb_1c=0.0787; característica 2002 x año (GPSS)
+BI,id_gpss_costa_alq,y_alq ~ x | z | controles,2009,2021,621,,,,,2.937716439601094,0.0010242590166818857,EXPLORATORIO identificación; F=18.83; p_wcb_1c=0.0011; característica 2002 x año (GPSS)
+BI,id_gpss_costa_pre,y_pre ~ x | z | controles,2009,2021,621,,,,,0.352689737163012,0.8818516775244634,EXPLORATORIO identificación; F=18.83; p_wcb_1c=0.4489; característica 2002 x año (GPSS)
+BI,id_gpss_costa_dif,y_dif ~ x | z | controles,2009,2021,621,,,,,2.5850267024380793,0.22750665463978145,EXPLORATORIO identificación; F=18.83; p_wcb_1c=0.1120; característica 2002 x año (GPSS)
+BI,id_gpss_todas_alq,y_alq ~ x | z | controles,2009,2021,621,,,,,4.610793476737182,0.14627687221950483,EXPLORATORIO identificación; F=4.64; p_wcb_1c=0.0423; 5 características 2002 x año
+BI,id_gpss_todas_pre,y_pre ~ x | z | controles,2009,2021,621,,,,,9.931827719297921,0.33228079115911346,EXPLORATORIO identificación; F=4.64; p_wcb_1c=0.1079; 5 características 2002 x año
+BI,id_gpss_todas_dif,y_dif ~ x | z | controles,2009,2021,621,,,,,-5.321034242560732,0.5474552882418244,EXPLORATORIO identificación; F=4.64; p_wcb_1c=0.7718; 5 características 2002 x año
+BI,id_solo_Sudamerica_alq,y_alq ~ x | zg_sudamerica,2009,2021,621,,,,,2.451369627083683,0.0003056269391772646,EXPLORATORIO identificación; F=52.49; p_wcb_1c=0.0009; instrumento: solo cuota Sudamérica
+BI,id_solo_Sudamerica_pre,y_pre ~ x | zg_sudamerica,2009,2021,621,,,,,2.9820420438853468,0.031323219837129296,EXPLORATORIO identificación; F=52.49; p_wcb_1c=0.0123; instrumento: solo cuota Sudamérica
+BI,id_solo_Sudamerica_dif,y_dif ~ x | zg_sudamerica,2009,2021,621,,,,,-0.5306724168016651,0.683961591170436,EXPLORATORIO identificación; F=52.49; p_wcb_1c=0.6686; instrumento: solo cuota Sudamérica
+BI,id_sin_Sudamerica_alq,y_alq ~ x | z_sin_sud,2009,2021,621,,,,,4.341439811033107,0.10868039044479946,EXPLORATORIO identificación; F=1.73; p_wcb_1c=0.0179; instrumento sin Sudamérica
+BI,id_sin_Sudamerica_pre,y_pre ~ x | z_sin_sud,2009,2021,621,,,,,-9.503121872837019,0.18924690545552061,EXPLORATORIO identificación; F=1.73; p_wcb_1c=0.9645; instrumento sin Sudamérica
+BI,id_sin_Sudamerica_dif,y_dif ~ x | z_sin_sud,2009,2021,621,,,,,13.844561683870133,0.08125844109017065,EXPLORATORIO identificación; F=1.73; p_wcb_1c=0.0053; instrumento sin Sudamérica
+BI,id_z_alineado_t+1_alq,y_alq ~ x | z_fwd,2009,2021,621,,,,,2.3672554249424285,0.00019707484195585304,"EXPLORATORIO identificación; F=29.88; p_wcb_1c=0.0002; ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t"
+BI,id_z_alineado_t+1_pre,y_pre ~ x | z_fwd,2009,2021,621,,,,,4.455162037740912,0.009301260385865285,"EXPLORATORIO identificación; F=29.88; p_wcb_1c=0.0017; ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t"
+BI,id_z_alineado_t+1_dif,y_dif ~ x | z_fwd,2009,2021,621,,,,,-2.0879066127984838,0.1745519648256398,"EXPLORATORIO identificación; F=29.88; p_wcb_1c=0.9239; ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t"
+BI,id_flujo_t-1_alq,y_alq ~ x_l1 | z_l1,2009,2021,621,,,,,0.804576607307019,0.16439925556874413,EXPLORATORIO identificación; F=9.67; p_wcb_1c=0.0893; lectura alternativa de 'flujo t-1'
+BI,id_flujo_t-1_pre,y_pre ~ x_l1 | z_l1,2009,2021,621,,,,,-6.052024259976144,0.07195155730760659,EXPLORATORIO identificación; F=9.67; p_wcb_1c=0.9839; lectura alternativa de 'flujo t-1'
+BI,id_flujo_t-1_dif,y_dif ~ x_l1 | z_l1,2009,2021,621,,,,,6.856600867283165,0.03497542306743114,EXPLORATORIO identificación; F=9.67; p_wcb_1c=0.0049; lectura alternativa de 'flujo t-1'
+BI,id_sub_2009-2014_alq,y_alq ~ x | z,2009,2021,278,,,,,9.742197903547234,0.4331165904867584,EXPLORATORIO identificación; F=0.73; p_wcb_1c=0.0506; subperiodo
+BI,id_sub_2009-2014_pre,y_pre ~ x | z,2009,2021,278,,,,,-45.65219982049715,0.4234798118630912,EXPLORATORIO identificación; F=0.73; p_wcb_1c=0.9628; subperiodo
+BI,id_sub_2009-2014_dif,y_dif ~ x | z,2009,2021,278,,,,,55.394397724044396,0.4119488633819505,EXPLORATORIO identificación; F=0.73; p_wcb_1c=0.0294; subperiodo
+BI,id_sub_2015-2021_alq,y_alq ~ x | z,2009,2021,343,,,,,2.4985308885069104,0.0728982765750043,EXPLORATORIO identificación; F=7.63; p_wcb_1c=0.0586; subperiodo
+BI,id_sub_2015-2021_pre,y_pre ~ x | z,2009,2021,343,,,,,-1.7953789991029414,0.5133280312369707,EXPLORATORIO identificación; F=7.63; p_wcb_1c=0.7901; subperiodo
+BI,id_sub_2015-2021_dif,y_dif ~ x | z,2009,2021,343,,,,,4.293909887609851,0.13906735220048472,EXPLORATORIO identificación; F=7.63; p_wcb_1c=0.0297; subperiodo
+BI,id_placebo_resultado_t-1_alq,y_alq_p1 ~ x | z,2009,2021,607,,,,,4.0862144644734055,0.0008681322562201873,EXPLORATORIO identificación; F=22.39; p_wcb_1c=0.0002; resultado PASADO sobre x_t instrumentado (debería ser 0)
+BI,id_placebo_resultado_t-1_pre,y_pre_p1 ~ x | z,2009,2021,607,,,,,5.81213022050863,0.03508465279153857,EXPLORATORIO identificación; F=22.39; p_wcb_1c=0.0113; resultado PASADO sobre x_t instrumentado (debería ser 0)
+BI,id_placebo_resultado_t-2_alq,y_alq_p2 ~ x | z,2009,2021,607,,,,,3.671665821354946,8.258885600515072e-05,EXPLORATORIO identificación; F=22.39; p_wcb_1c=0.0003; resultado PASADO sobre x_t instrumentado (debería ser 0)
+BI,id_placebo_resultado_t-2_pre,y_pre_p2 ~ x | z,2009,2021,607,,,,,10.09819182653809,0.000463591970586727,EXPLORATORIO identificación; F=22.39; p_wcb_1c=0.0002; resultado PASADO sobre x_t instrumentado (debería ser 0)
+BI,id_pretrend_Sudamerica_alq,y_alq(2003-07) ~ z_Sudamérica medio,2003,2007,245,,,,,-0.18158947545508372,0.10532297681275983,ventana 2003-07 = boom de llegadas (no pre-tratamiento)
+BI,id_pretrend_Sudamerica_pre,y_pre(2003-07) ~ z_Sudamérica medio,2003,2007,241,,,,,0.0640590783670267,0.86023592653375,ventana 2003-07 = boom de llegadas (no pre-tratamiento)
+BI,id_rotemberg_beta_g,β_g de Rotemberg (8 grupos x 2 resultados) en rotemberg_*.csv,2009,2021,621,,,,,,,familia de diagnósticos descriptivos
+BI,id_AR_conjunto,conjunto de confianza Anderson-Rubin en rejilla (3 resultados),2009,2021,621,,,,,,,en h3_principal.csv
+BI,het_CATE_terciles,"CATE del bosque por terciles y Spearman (6 características; vut20_pm es de 2020, posterior)",2009,2021,621,,,,,,,"descriptivo, ver bi_het"
 BI,rob_tendencias_prov_y_alq_x,y_alq ~ x | z,2009,2021,621,,,,,3.896575478137412,0.022927505943277447,EXPLORATORIO; ; F=5.44
 BI,rob_sin_covid_y_alq_x,y_alq ~ x | z,2009,2021,523,,,,,2.3823075103469447,0.0033157476453145773,EXPLORATORIO; ; F=14.27
 BI,rob_stock_dcuota_extranj_y_alq_x_stock,y_alq ~ x_stock | z,2009,2021,621,,,,,1.189930006694039,0.003840841948781587,EXPLORATORIO; stock vs flujo; F=13.59
@@ -34,17 +82,16 @@ BI,rob_x_t_y_x_t-1_y_pre_x,"y_pre ~ x,x_l1 | z,z_l1",2009,2021,621,,,,,13.285064
 BI,rob_x_t_y_x_t-1_y_pre_x_l1,"y_pre ~ x,x_l1 | z,z_l1",2009,2021,621,,,,,-7.852699441679679,0.002820202825552876,EXPLORATORIO; timing conjunto; F=7.08
 BI,rob_z_alineado_stock_t+1_y_pre_x,y_pre ~ x | z_fwd,2009,2021,621,,,,,4.455162037740912,0.009301260385865285,EXPLORATORIO; instrumento con ΔS_{t+1}; F=29.88
 BI,BI_PRESUPUESTO,presupuesto declarado,,,0,,,,,,,"n_max=14 configuraciones. heterogeneidad EXPLORATORIA: lasso alpha=0.02 fijo (X estandarizado); RF 300 arboles, min_samples_leaf=10, max_features=0.5; CausalForestDML 500 arboles, min_samples_leaf=10; cross-fitting 5 bloques de provincias x 3 repeticiones; sin busqueda de hiperparametros"
-BI,DML_PLR_lasso,y_alq ~ x + g(W) [PLR],2009,2021,637,,,,,,,"EXPLORATORIO; theta=0.298 se_cl=0.152 p=0.0552 | config={""folds"": 5, ""learner"": ""lasso"", ""mod"": ""PLR"", ""reps"": 3}"
-BI,DML_PLIV_lasso,y_alq ~ x + g(W) [PLIV],2009,2021,637,,,,,,,"EXPLORATORIO; theta=2.049 se_cl=1.494 p=0.1767 | config={""folds"": 5, ""learner"": ""lasso"", ""mod"": ""PLIV"", ""reps"": 3}"
-BI,DML_PLR_rf,y_alq ~ x + g(W) [PLR],2009,2021,637,,,,,,,"EXPLORATORIO; theta=0.477 se_cl=0.107 p=0.0001 | config={""folds"": 5, ""learner"": ""rf"", ""mod"": ""PLR"", ""reps"": 3}"
-BI,DML_PLIV_rf,y_alq ~ x + g(W) [PLIV],2009,2021,637,,,,,,,"EXPLORATORIO; theta=1.445 se_cl=0.631 p=0.0265 | config={""folds"": 5, ""learner"": ""rf"", ""mod"": ""PLIV"", ""reps"": 3}"
+BI,DML_PLR_lasso,y_alq ~ x + g(W) [PLR],2009,2021,637,,,,,,,"EXPLORATORIO; theta=0.294 se_cl=0.152 p=0.0589 | config={""folds"": 5, ""learner"": ""lasso"", ""mod"": ""PLR"", ""reps"": 3}"
+BI,DML_PLIV_lasso,y_alq ~ x + g(W) [PLIV],2009,2021,637,,,,,,,"EXPLORATORIO; theta=2.055 se_cl=1.510 p=0.1800 | config={""folds"": 5, ""learner"": ""lasso"", ""mod"": ""PLIV"", ""reps"": 3}"
+BI,DML_PLR_rf,y_alq ~ x + g(W) [PLR],2009,2021,637,,,,,,,"EXPLORATORIO; theta=0.480 se_cl=0.105 p=0.0000 | config={""folds"": 5, ""learner"": ""rf"", ""mod"": ""PLR"", ""reps"": 3}"
+BI,DML_PLIV_rf,y_alq ~ x + g(W) [PLIV],2009,2021,637,,,,,,,"EXPLORATORIO; theta=1.417 se_cl=0.604 p=0.0231 | config={""folds"": 5, ""learner"": ""rf"", ""mod"": ""PLIV"", ""reps"": 3}"
 BI,CausalForestDML,"y_alq ~ x | X=ln_pob02,extr02,ln_p02,costa,paro02",2009,2021,637,,,,,,,"EXPLORATORIO; ATE=0.431 | config={""cv"": ""bloques provincias"", ""min_samples_leaf"": 10, ""n_estimators"": 500}"
 BI,IV_inter_ln_pob02,"y_alq ~ x + x*ln_pob02 | z, z*ln_pob02",2009,2021,637,,,,,,,"EXPLORATORIO; p_inter=0.9942 | config={""c"": ""ln_pob02""}"
 BI,IV_inter_extr02,"y_alq ~ x + x*extr02 | z, z*extr02",2009,2021,637,,,,,,,"EXPLORATORIO; p_inter=0.3497 | config={""c"": ""extr02""}"
 BI,IV_inter_ln_p02,"y_alq ~ x + x*ln_p02 | z, z*ln_p02",2009,2021,637,,,,,,,"EXPLORATORIO; p_inter=0.9754 | config={""c"": ""ln_p02""}"
-BI,IV_inter_costa,"y_alq ~ x + x*costa | z, z*costa",2009,2021,637,,,,,,,"EXPLORATORIO; p_inter=0.9868 | config={""c"": ""costa""}"
+BI,IV_inter_costa,"y_alq ~ x + x*costa | z, z*costa",2009,2021,637,,,,,,,"EXPLORATORIO; p_inter=0.9930 | config={""c"": ""costa""}"
 BI,IV_inter_paro02,"y_alq ~ x + x*paro02 | z, z*paro02",2009,2021,637,,,,,,,"EXPLORATORIO; p_inter=0.6682 | config={""c"": ""paro02""}"
 BI,OOS_AR4+flujo_t (observado),yh=ln rent_{t+1}-ln rent_t ~ AR4 [+ flujo]; FE prov,2008,2020,392,,,,0.009406434252115951,,,anual; vs AR4 DM-HLN=1.431 p=0.195; bloques con embargo
 BI,"OOS_AR4+flujo_t+1 (contemporáneo, NO pronóstico)",yh=ln rent_{t+1}-ln rent_t ~ AR4 [+ flujo]; FE prov,2008,2020,392,,,,0.008049272679750863,,,anual; vs AR4 DM-HLN=2.284 p=0.056; bloques con embargo
 BI,OOS_AR4,AR4 panel anual,2008,2020,392,,,,0.01069646624906726,,,base
-BI,OOS_ECMv1_trim_Q4,panel_ecm_v1 ipc_alquiler h=4 orígenes T4,,,392,,,,0.015574328354289022,,,referencia; AR4 rmse=0.01252; DM vs AR4=-1.120 p=0.300; muestra distinta de la anual

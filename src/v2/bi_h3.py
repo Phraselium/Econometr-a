@@ -85,10 +85,8 @@ def run(reg, smoke=False, B=9999):
     p1 = float(T.loc[0, "p_wcb_1c"])
     p2 = float(T.loc[2, "p_wcb_1c"])
     pc1, pc2 = float(T.loc[0, "p_cluster_1c"]), float(T.loc[2, "p_cluster_1c"])
-    h = holm([p1, p2])
     res["contraste_conjunto"] = dict(p_wcb_beta_alq_gt0=p1, p_wcb_contraste_gt0=p2, p_IUT_wcb=max(p1, p2),
                                      p_cluster_beta_alq_gt0=pc1, p_cluster_contraste_gt0=pc2, p_IUT_cluster=max(pc1, pc2),
-                                     holm_2_componentes=[float(x) for x in h],
                                      cota_bonferroni_familia7=float(min(1, 7 * max(p1, p2))),
                                      nota="H3 se sostiene si ambos componentes rechazan (unión-intersección); Holm sobre la familia de 7 la aplica el orquestador; se da la cota Bonferroni-7")
     log(reg, "H3_conjunto_IUT", "beta_alq>0 y beta_alq-beta_pre>0", m, b_c, max(p1, p2), "IUT con p WCB una cola", a0, a1)
@@ -96,7 +94,7 @@ def run(reg, smoke=False, B=9999):
     dg = {}
     pe = bc.primera_etapa(fe.r(m["x"]), fe.r(m["z"]), fe)
     dg["F_cluster"] = pe["F"]
-    dg["F_efectivo_MOP"] = "= F robusto cluster (un instrumento, un regresor): Andrews-Stock-Sun 2019; no se compara con VC no tabulados"
+    dg["F_efectivo_MOP"] = "no implementado: con un instrumento y un regresor se reporta el F robusto cluster, sin valores críticos"
     # Rotemberg
     for k, yv in (("alq", "y_alq"), ("pre", "y_pre")):
         R = bc.rotemberg(m, fe, yv)
@@ -173,6 +171,72 @@ def run(reg, smoke=False, B=9999):
         log(reg, f"diag_AKM0_{k}", "EE exposición-robustos tipo AKM (agrupa grupos-shock)", m, r_["b"], r_["p_t"], "aprox. AKM0; 8 shocks-grupo", a0, a1)
     dg["AKM0"] = ak
     res["diagnosticos"] = dg
+    # --- diagnósticos de identificación (EXPLORATORIOS; revisión de la puerta)
+    res_id = []
+    car_cols = ["extr02", "ln_pob02", "ln_p02", "paro02", "costa"]
+    ys_ = (("alq", "y_alq"), ("pre", "y_pre"), ("dif", "y_dif"))
+
+    def spec(name, mm, zv, extra=None, xv="x", ys=ys_, wcb=True, nota=""):
+        f2 = bc.FE(mm, extra=extra)
+        xt = f2.r(mm[xv]); zt = f2.r(mm[zv])
+        pe_ = bc.primera_etapa(xt, zt, f2)
+        for kk, yv in ys:
+            r = bc.iv(f2.r(mm[yv]), xt, zt, f2)
+            b_, s_ = float(r["b"][0]), float(r["se"][0])
+            row = dict(spec=name, res=kk, n=len(mm), b=b_, se=s_, p_cluster=float(bc.tp(b_ / s_, f2.G)), F=pe_["F"], p_wcb_1c=np.nan, nota=nota)
+            if wcb:
+                row["p_wcb_1c"] = bc.wcb_wre(mm[yv].values, mm[xv].values, mm[zv].values, f2, 0.0, B, seed=bc.SEED + 100 + len(res_id))["p_right"]
+            res_id.append(row)
+            log(reg, f"id_{name}_{kk}", f"{yv} ~ {xv} | {zv}" + (" | controles" if extra is not None else ""), mm, b_, row["p_cluster"],
+                f"EXPLORATORIO identificación; F={pe_['F']:.2f}; p_wcb_1c={row['p_wcb_1c']:.4f}; {nota}", a0, a1)
+
+    def ctrl(cols):
+        yd = pd.get_dummies(m["anio"], dtype=float).iloc[:, 1:].values
+        return np.hstack([((m[c] - m[c].mean()) / m[c].std()).values[:, None] * yd for c in cols])
+    spec("principal", m, "z")
+    for c in car_cols:
+        spec(f"gpss_{c}", m, "z", extra=ctrl([c]), nota="característica 2002 x año (GPSS)")
+    spec("gpss_todas", m, "z", extra=ctrl(car_cols), nota="5 características 2002 x año")
+    m["z_sin_sud"] = m["z"] - m["zg_sudamerica"]
+    spec("solo_Sudamerica", m, "zg_sudamerica", nota="instrumento: solo cuota Sudamérica")
+    spec("sin_Sudamerica", m, "z_sin_sud", nota="instrumento sin Sudamérica")
+    spec("z_alineado_t+1", bc.muestra(d, ["x", "z_fwd", "y_alq", "y_pre", "y_dif"], a0, a1), "z_fwd", nota="ΔS_{t+1}=S(1-ene t+1)-S(1-ene t), alineado con el flujo del año t")
+    ml_ = bc.muestra(d, ["x_l1", "z_l1", "y_alq", "y_pre", "y_dif"], a0, a1)
+    spec("flujo_t-1", ml_, "z_l1", xv="x_l1", nota="lectura alternativa de 'flujo t-1'")
+    cut = 2012 if smoke else 2014
+    spec(f"sub_{a0}-{cut}", m[m["anio"] <= cut].reset_index(drop=True), "z", nota="subperiodo")
+    spec(f"sub_{cut + 1}-{a1}", m[m["anio"] > cut].reset_index(drop=True), "z", nota="subperiodo")
+    # placebo: resultados pasados sobre x_t instrumentado (misma muestra principal)
+    for L_ in (1, 2):
+        d[f"y_alq_p{L_}"] = d.groupby("cod_prov")["y_alq"].shift(L_)
+        d[f"y_pre_p{L_}"] = d.groupby("cod_prov")["y_pre"].shift(L_)
+    mp = bc.muestra(d, ["x", "z", "y_alq", "y_pre", "y_alq_p1", "y_alq_p2", "y_pre_p1", "y_pre_p2"], a0, a1)
+    for L_ in (1, 2):
+        spec(f"placebo_resultado_t-{L_}", mp, "z", ys=(("alq", f"y_alq_p{L_}"), ("pre", f"y_pre_p{L_}")), nota="resultado PASADO sobre x_t instrumentado (debería ser 0)")
+    # pretendencias con el instrumento dominante (Sudamérica) y balance
+    zb = m.groupby("cod_prov")["zg_sudamerica"].mean()
+    pts = {}
+    for kk, yv in (("alq", "y_alq"), ("pre", "y_pre")):
+        q = d[d["anio"].between(2003, 2007)].copy()
+        q["zb"] = q["cod_prov"].map(zb)
+        q["zb"] = (q["zb"] - zb.mean()) / zb.std()
+        q = q.dropna(subset=[yv, "zb"]).reset_index(drop=True)
+        Xm = np.column_stack([q["zb"].values, pd.get_dummies(q["anio"], dtype=float).values])
+        cl_ = pd.factorize(q["cod_prov"])[0]; G_ = cl_.max() + 1
+        be = np.linalg.lstsq(Xm, q[yv].values, rcond=None)[0]; e_ = q[yv].values - Xm @ be
+        Ai = np.linalg.inv(Xm.T @ Xm); sc_ = bc._csum(cl_, G_, Xm * e_[:, None])
+        V_ = G_ / (G_ - 1) * Ai @ (sc_.T @ sc_) @ Ai
+        pts[kk] = dict(b=float(be[0]), se=float(np.sqrt(V_[0, 0])), p=float(bc.tp(be[0] / np.sqrt(V_[0, 0]), G_)))
+        log(reg, f"id_pretrend_Sudamerica_{kk}", f"{yv}(2003-07) ~ z_Sudamérica medio", q, be[0], pts[kk]["p"], "ventana 2003-07 = boom de llegadas (no pre-tratamiento)", 2003, 2007)
+    cs = meta["share"]["sudamerica"]
+    bal = {c: dict(zip(("corr", "p"), (float(v) for v in stats.pearsonr(cs.loc[meta["car"][c].dropna().index], meta["car"][c].dropna())))) for c in car_cols}
+    res["balance_cuotas_Sudamerica"] = bal
+    res["pretendencias_Sudamerica"] = pts
+    reg.log("BI", "id_rotemberg_beta_g", "β_g de Rotemberg (8 grupos x 2 resultados) en rotemberg_*.csv", a0, a1, len(m), np.nan, np.nan, np.nan, notas="familia de diagnósticos descriptivos")
+    reg.log("BI", "id_AR_conjunto", "conjunto de confianza Anderson-Rubin en rejilla (3 resultados)", a0, a1, len(m), np.nan, np.nan, np.nan, notas="en h3_principal.csv")
+    reg.log("BI", "het_CATE_terciles", "CATE del bosque por terciles y Spearman (6 características; vut20_pm es de 2020, posterior)", a0, a1, len(m), np.nan, np.nan, np.nan, notas="descriptivo, ver bi_het")
+    pd.DataFrame(res_id).to_csv(OUT / f"{'smoke_' if smoke else ''}h3_identificacion.csv", index=False)
+    res["identificacion"] = res_id
     # --- robustez y stock/flujo/timing (EXPLORATORIO)
     rob = []
 
@@ -211,24 +275,25 @@ def run(reg, smoke=False, B=9999):
     R = pd.DataFrame(rob)
     R.to_csv(OUT / f"{'smoke_' if smoke else ''}h3_robustez_timing.csv", index=False)
     res["robustez"] = R.round(4).to_dict("records")
-    # --- nivel de evidencia (regla mecánica pre-especificada; Holm sobre 7 acotado por Bonferroni-7:
-    #     el p ajustado de Holm de la hipótesis con rango k es >= (8-k)*p, así que 7*p es la cota PESIMISTA)
-    F_ok = dg["F_cluster"] >= 10
-    pre_ok = all(v["p"] > 0.05 for v in pre.values())
-    j_ok = all(v["p_hansen"] > 0.05 for v in jj.values())
-    base = F_ok and pre_ok and j_ok
+    # --- nivel de evidencia (criterio uniforme de decisiones.md): H3 SIN evaluación sellada; unidad de Holm = H3 con p_IUT.
+    #     Holm-7 se acota por Bonferroni-7 (el ajuste final lo hace el orquestador). CAUSAL queda DESCARTADO (ver diagnóstico).
+    p_iut = max(p1, p2)
     comp = {}
-    for nm, pp in (("beta_alq_gt0", p1), ("contraste_alq_menos_compra_gt0", p2)):
-        wcb_ok, holm7 = pp < 0.05, min(1, 7 * pp) < 0.05
-        comp[nm] = dict(p_wcb_1c=pp, p_holm7_cota=min(1, 7 * pp), sobrevive_WCB=bool(wcb_ok), sobrevive_Holm7_cota=bool(holm7),
-                        nivel=("CAUSAL" if base and wcb_ok and holm7 else
-                               "ASOCIACIÓN ROBUSTA" if wcb_ok and holm7 else "EXPLORATORIO"))
-    res["criterios_causal"] = dict(F_ge_10=bool(F_ok), pretendencias_ns=bool(pre_ok), J_hansen_no_rechaza=bool(j_ok),
-                                   sargan_homoc_p=dict(alq=jj["alq"]["p_sargan"], pre=jj["pre"]["p_sargan"]),
-                                   componentes=comp)
-    # H3 tal como se registró = conjunción: el nivel es el peor de los dos componentes
-    orden = ["CAUSAL", "ASOCIACIÓN ROBUSTA", "EXPLORATORIO", "DESCRIPTIVO"]
-    res["nivel_evidencia"] = max((c["nivel"] for c in comp.values()), key=orden.index)
+    for nm, pp in (("beta_alq_gt0 (componente, signo)", p1), ("contraste_alq_menos_compra_gt0", p2)):
+        comp[nm] = dict(p_wcb_1c=pp, p_cota_Holm7=min(1, 7 * pp), informativo_no_confirmatorio=True)
+    sig_pos = all(r["b"] > 0 for r in res_id if r["res"] == "alq" and r["spec"] != "sin_Sudamerica" and not r["spec"].startswith(("placebo", "sub_")))
+    res["criterios_identificacion"] = dict(
+        F_ge_10_principal=bool(dg["F_cluster"] >= 10), pretendencias_NO_informativas="ventana 2003-07 = boom de llegadas a los mismos enclaves",
+        J_hansen_p=dict(alq=jj["alq"]["p_hansen"], pre=jj["pre"]["p_hansen"]),
+        sargan_homoc_p=dict(alq=jj["alq"]["p_sargan"], pre=jj["pre"]["p_sargan"]),
+        placebo_alquiler_pasado_rechaza=bool(any(r["spec"].startswith("placebo") and r["p_cluster"] < 0.05 for r in res_id if r["res"] == "alq")),
+        signo_alq_positivo_en_todas_las_variantes_con_instrumento_completo=bool(sig_pos),
+        signo_contraste_estable=bool(all(r["b"] > 0 for r in res_id if r["res"] == "dif" and r["spec"] in ("principal", "gpss_extr02", "gpss_todas", "z_alineado_t+1", "solo_Sudamerica"))),
+        CAUSAL="DESCARTADO: placebos de alquiler pasado rechazan, cuotas no balanceadas, F cae con controles GPSS",
+        componentes=comp)
+    h3_ar = min(1, 7 * p_iut) < 0.05 and bool(res["criterios_identificacion"]["signo_contraste_estable"])
+    res["nivel_evidencia"] = "ASOCIACIÓN ROBUSTA" if h3_ar else "EXPLORATORIO"
+    res["nivel_beta_alq_signo"] = "ASOCIACIÓN ROBUSTA (solo signo; magnitud NO identificada)" if min(1, 7 * p1) < 0.05 and sig_pos else "EXPLORATORIO"
     res["tabla_principal"] = T.round(4).to_dict("records")
     (OUT / f"{'smoke_' if smoke else ''}h3_resultados.json").write_text(json.dumps(res, indent=2, ensure_ascii=False, default=float))
     return res

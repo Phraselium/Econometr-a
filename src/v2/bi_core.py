@@ -20,7 +20,7 @@ GRUPOS = ["europa", "africa", "norteamerica", "asia", "centroamerica_caribe", "o
 GRUPOS5 = {"europa": ["europa"], "africa": ["africa"], "america": ["norteamerica", "centroamerica_caribe", "sudamerica"],
            "asia": ["asia"], "otros": ["oceania", "apatridas"]}
 COSTA = {"03", "04", "07", "08", "12", "15", "17", "18", "20", "21", "29", "30", "33", "35", "36", "38", "39",
-         "43", "46", "48", "51", "52"}   # provincias con litoral/insulares (clasificación geográfica externa)
+         "27", "43", "46", "48", "51", "52"}   # provincias con litoral/insulares (clasificación geográfica propia, sin fuente de datos; incluye Lugo)
 
 
 # ----------------------------------------------------------------- datos
@@ -104,7 +104,7 @@ def muestra(d, cols, a0=2009, a1=2021):
 class FE:
     """Proyector sobre dummies de provincia y año (y tendencias provinciales opcionales)."""
 
-    def __init__(self, m: pd.DataFrame, tend=False, anio_fe=True):
+    def __init__(self, m: pd.DataFrame, tend=False, anio_fe=True, extra=None):
         P = pd.get_dummies(m["cod_prov"], dtype=float)
         parts = [P.values]
         if anio_fe:
@@ -113,6 +113,8 @@ class FE:
         if tend:
             t = (m["anio"] - m["anio"].mean()).values[:, None]
             parts.append(P.values * t)
+        if extra is not None:
+            parts.append(np.asarray(extra, float))
         D = np.hstack(parts)
         Q, R = np.linalg.qr(D)
         rk = int((np.abs(np.diag(R)) > 1e-8 * np.abs(R).max()).sum())

@@ -75,22 +75,10 @@ def run(reg, smoke=False):
     E = pd.DataFrame(ev)
     E.to_csv(OUT / f"{'smoke_' if smoke else ''}oos_anual.csv", index=False)
     out["anual"] = E.round(5).to_dict("records")
-    # --- ECM v1 trimestral (referencia aparte, orígenes T4 ≤ 2020)
-    try:
-        nac, pan = vc.load("nacional_q_v2"), vc.load("panel_prov_q")
-        pan = pan[pan["trimestre"].astype(str) <= ("2015Q4" if smoke else "2021Q4")]
-        a = vc.panel_ar4(pan, "ipc_alquiler", "cod_prov", 4, real=False, nac=nac)
-        e = vc.panel_ecm_v1(pan, "ipc_alquiler", "cod_prov", 4, real=False, nac=nac)
-        for df in (a, e):
-            df.drop(df[~df["periodo"].astype(str).str.endswith("Q4")].index, inplace=True)
-        r = vc.evaluar(e, {"AR4": a}, 4).iloc[0].to_dict()
-        out["ecm_v1_trimestral_Q4"] = {k: (float(v) if not isinstance(v, str) else v) for k, v in r.items()}
-        reg.log("BI", "OOS_ECMv1_trim_Q4", "panel_ecm_v1 ipc_alquiler h=4 orígenes T4", "", "", int(r["n"]), np.nan, np.nan, np.nan,
-                rmse_oos=r["rmse"], notas=f"referencia; AR4 rmse={r['rmse_AR4']:.5f}; DM vs AR4={r['dm_vs_AR4']:.3f} p={r['p_vs_AR4']:.3f}; muestra distinta de la anual")
-    except Exception as ex:  # documentar, no ocultar
-        out["ecm_v1_trimestral_Q4"] = {"error": repr(ex)}
+    out["ecm_v1"] = ("NO COMPARABLE: el ECM v1 (DOLS sobre ocupados, tipo hipotecario y costes) solo está definido en frecuencia trimestral y "
+                     "no existe un análogo anual en la misma muestra; se retira del cuadro en vez de comparar muestras distintas.")
     out["nota"] = ("No es posible extender a la tasa de inmigración instrumentada/observada en panel_ar4 del alquiler: los flujos terminan en 2021-22 "
-                   "(antes de la muestra de test completa) y el ECM v1 requiere datos trimestrales; se compara AR(4) panel anual con AR(4)+flujo "
+                   "(antes de la muestra de test completa) y el ECM v1 solo existe en trimestres (retirado, no comparable); aviso: el flujo del año t se publica a mitad de t+1 (pseudo-pronóstico con pequeña anticipación); se compara AR(4) panel anual con AR(4)+flujo "
                    "observado, bloques expansivos con embargo, orígenes hasta 2020.")
     (OUT / f"{'smoke_' if smoke else ''}oos_resultados.json").write_text(json.dumps(out, indent=2, ensure_ascii=False, default=float))
     return out

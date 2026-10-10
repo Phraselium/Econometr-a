@@ -38,15 +38,6 @@
       "p_vs_AR4": 0.05632
     }
   ],
-  "ecm_v1_trimestral_Q4": {
-    "modelo": "ECM_v1",
-    "n": 392.0,
-    "n_periodos": 8.0,
-    "rmse": 0.015574328354289022,
-    "mae": 0.011481210734964196,
-    "rmse_AR4": 0.012516258597129971,
-    "dm_vs_AR4": -1.119616939401537,
-    "p_vs_AR4": 0.2998175659497596
-  },
-  "nota": "No es posible extender a la tasa de inmigración instrumentada/observada en panel_ar4 del alquiler: los flujos terminan en 2021-22 (antes de la muestra de test completa) y el ECM v1 requiere datos trimestrales; se compara AR(4) panel anual con AR(4)+flujo observado, bloques expansivos con embargo, orígenes hasta 2020."
+  "ecm_v1": "NO COMPARABLE: el ECM v1 (DOLS sobre ocupados, tipo hipotecario y costes) solo está definido en frecuencia trimestral y no existe un análogo anual en la misma muestra; se retira del cuadro en vez de comparar muestras distintas.",
+  "nota": "No es posible extender a la tasa de inmigración instrumentada/observada en panel_ar4 del alquiler: los flujos terminan en 2021-22 (antes de la muestra de test completa) y el ECM v1 solo existe en trimestres (retirado, no comparable); aviso: el flujo del año t se publica a mitad de t+1 (pseudo-pronóstico con pequeña anticipación); se compara AR(4) panel anual con AR(4)+flujo observado, bloques expansivos con embargo, orígenes hasta 2020."
 }

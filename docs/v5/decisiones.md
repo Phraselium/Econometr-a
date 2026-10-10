@@ -75,3 +75,13 @@
   - La dirección automática es poco fiable. La matriz D1 usará los recuentos solo como contexto, nunca para evaluar.
 - **Recuentos y normas.** Las normas (ley y RD) se cuentan aparte. check_v5 deja de contarlas en «a favor».
 - **Requisito de sistema.** a5_run.py usa `pdftotext` (poppler-utils), que se declara en el README de replicación.
+
+## A1 (orquestador)
+- `src/v5/cifras_clave.py` genera output/v5/cifras_clave.csv y .md (91 filas):
+  - hechos.json de los módulos v5;
+  - adaptadores de v4 que leen de sus JSON y CSV: déficit 2021-2024 C1 y C2, ΔH 2021-2025, terminadas 2019-2024, latente por convivencia, compradores extranjeros.
+- Va en `make all`, después de los módulos v5. El .md incluye la definición de las clases territoriales (1-4 y 9).
+- Alquiler de stock (A23-A2):
+  - el C1 de cuantía es el NÚCLEO IPC + IPVA (10,9-22,9 %, dentro de ±15 % en nivel; encuesta frente a datos tributarios, independientes);
+  - SERPAVI (+43 %) va aparte como discrepante (C4);
+  - antes el rango 10,9-43 % salía como C1. Es coherente con la decisión C6 de v4.

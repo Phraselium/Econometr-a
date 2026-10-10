@@ -105,15 +105,28 @@
  },
  {
   "id": "A23-A2",
-  "indicador": "Alquiler stock 2015-2024: rango IPC/SERPAVI/IPVA existente",
-  "valor": 21.8,
+  "indicador": "Alquiler stock 2015-2024: núcleo IPC de alquiler e IPVA (contratos existentes y total)",
+  "valor": 20.6,
   "min": 10.9,
-  "max": 43.0,
+  "max": 22.9,
   "unidad": "%",
   "periodo": "2015-2024",
   "cobertura": "España",
-  "fuentes": "INE IPC; SERPAVI; INE IPVA",
+  "fuentes": "INE IPC (encuesta); INE IPVA (datos tributarios AEAT)",
   "capa": "C1",
+  "fecha_dato": "2024"
+ },
+ {
+  "id": "A23-A2b",
+  "indicador": "Alquiler stock 2015-2024: SERPAVI (renta declarada, composición constante), discrepante del núcleo",
+  "valor": 43.0,
+  "min": null,
+  "max": null,
+  "unidad": "%",
+  "periodo": "2015-2024",
+  "cobertura": "España",
+  "fuentes": "Ministerio SERPAVI",
+  "capa": "C4",
   "fecha_dato": "2024"
  },
  {

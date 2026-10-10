@@ -564,8 +564,13 @@ def escribir(rp, ra):
     s_ = ra["stock"]["cum_2015_2024"]
     hecho("A23-A1", "Alquiler stock, IPC alquiler 2015-2025", pct(ra["stock"]["cum_2015_2025_ipc"]), None, None, "%", "2015-2025", "España",
           "INE IPC alquiler", "C1" if ra["stock"]["c1_cuantia_stock"] else "C4", "2025T4")
-    hecho("A23-A2", "Alquiler stock 2015-2024: rango IPC/SERPAVI/IPVA existente", pct(float(np.median(list(s_.values())))),
-          pct(min(s_.values())), pct(max(s_.values())), "%", "2015-2024", "España", "INE IPC; SERPAVI; INE IPVA", "C1" if ra["stock"]["c1_cuantia_stock"] else "C4", "2024")
+    # v5 (orquestador): el C1 de cuantía es el NÚCLEO (fuentes dentro de ±15 % en nivel); SERPAVI va aparte
+    nuc_v = {k: s_[k] for k in ra["stock"]["nucleo_stock"] if k in s_}
+    hecho("A23-A2", "Alquiler stock 2015-2024: núcleo IPC de alquiler e IPVA (contratos existentes y total)", pct(float(np.median(list(nuc_v.values())))),
+          pct(min(nuc_v.values())), pct(max(nuc_v.values())), "%", "2015-2024", "España", "INE IPC (encuesta); INE IPVA (datos tributarios AEAT)",
+          "C1" if ra["stock"]["c1_cuantia_stock"] else "C4", "2024")
+    hecho("A23-A2b", "Alquiler stock 2015-2024: SERPAVI (renta declarada, composición constante), discrepante del núcleo", pct(s_["SERPAVI"]), None, None,
+          "%", "2015-2024", "España", "Ministerio SERPAVI", "C4", "2024")
     nuv = ra["nuevos"]
     hecho("A23-A3", "Contratos nuevos, IPVA nuevo contrato 2015-2024 (base 2015=100)", pct(float(ra["series"]["ip_nu"].loc[2024] / 100 - 1)), None, None,
           "%", "2015-2024", "España", "INE IPVA (AEAT)", "C4", "2024")

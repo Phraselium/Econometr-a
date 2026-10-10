@@ -1,0 +1,111 @@
+# Cifras clave v5
+
+Tabla única de la que leen todos los entregables. Una fila por indicador y periodo. Generada por src/v5/cifras_clave.py.
+
+| id | indicador | valor | rango | unidad | periodo | cobertura | fuentes | capa | fecha del dato |
+|---|---|---|---|---|---|---|---|---|---|
+| A23-A1 | Alquiler stock, IPC alquiler 2015-2025 | 13.6 |  | % | 2015-2025 | España | INE IPC alquiler | C1 | 2025T4 |
+| A23-A10 | Contratos nuevos Comunitat Valenciana 2021-2024: IPVA nuevo y fianzas GVA | 26.6 | 22.4–30.8 | % | 2021-2024 | Comunitat Valenciana | INE IPVA (AEAT); GVA fianzas | C1 | 2024 |
+| A23-A11 | Rotación Cataluña: fianzas Incasòl / contratos vigentes SERPAVI | 25 | 25–43.2 | % | 2015-2024 | Cataluña | Incasòl; SERPAVI | C4 | 2024 |
+| A23-A12 | Rotación Comunitat Valenciana: fianzas GVA / contratos vigentes SERPAVI | 13.5 | 13.5–15.8 | % | 2020-2024 | Comunitat Valenciana | GVA; SERPAVI | C4 | 2024 |
+| A23-A13 | Municipios con renta media de fianzas x2 o más (Incasòl 2015-2025, >=30 fianzas) | 1 |  | municipios | 2015-2025 | 261 municipios de Cataluña | Incasòl | C4 | 2025 |
+| A23-A14 | Municipios con mediana de fianza x2 o más (GVA 2020-2025, >=30 fianzas) | 2 |  | municipios | 2020-2025 | 103 municipios de la C. Valenciana | GVA fianzas | C4 | 2025 |
+| A23-A2 | Alquiler stock 2015-2024: núcleo IPC de alquiler e IPVA (contratos existentes y total) | 20.6 | 10.9–22.9 | % | 2015-2024 | España | INE IPC (encuesta); INE IPVA (datos tributarios AEAT) | C1 | 2024 |
+| A23-A2b | Alquiler stock 2015-2024: SERPAVI (renta declarada, composición constante), discrepante del núcleo | 43 |  | % | 2015-2024 | España | Ministerio SERPAVI | C4 | 2024 |
+| A23-A3 | Contratos nuevos, IPVA nuevo contrato 2015-2024 (base 2015=100) | 37 |  | % | 2015-2024 | España | INE IPVA (AEAT) | C4 | 2024 |
+| A23-A4 | Contratos nuevos, Incasòl renta media 2015-2025 | 54.5 |  | % | 2015-2025 | Cataluña | Incasòl fianzas | C4 | 2025 |
+| A23-A5 | Contratos nuevos, GVA mediana fianza 2020-2025 | 58 |  | % | 2020-2025 | Comunitat Valenciana | GVA registro de fianzas | C4 | 2025 |
+| A23-A6 | Brecha nuevo menos existente (IPVA) 2024 | 13.6 |  | % | 2024 | España | INE IPVA (AEAT) | C4 | 2024 |
+| A23-A7 | Cuota implícita de contratos nuevos en el IPVA | 16 | 13.9–17.6 | % | 2021-2024 | España | INE IPVA | C4 | 2024 |
+| A23-A8 | Subida adicional del stock si todo contrato se actualizase al HICP (sin tope) | 7.2 |  | % | 2022-2024 | España | INE IPVA; BCE HICP; supuesto de tope | C2 | 2024 |
+| A23-A9 | Contratos nuevos Cataluña 2021-2024: IPVA nuevo e Incasòl | 16.9 | 16.6–17.2 | % | 2021-2024 | Cataluña | INE IPVA (AEAT); Incasòl | C1 | 2024 |
+| A23-P1 | Precio de compra, variación acumulada 2015-2025, INE IPV | 79.9 |  | % | 2015-2025 (media anual) | España | INE IPV (tabla 25171/80270) | C1 | 2025T4 |
+| A23-P10 | Factor común de las 4 fuentes de precio: varianza explicada por el 1.er componente | 89.2 |  | % | 2016-2025 (dln anual) | España | INE, MIVAU, Notariado, Registradores | C4 | 2026-10-10 |
+| A23-P2 | Precio de compra, núcleo MIVAU/Notariado/Registradores 2015-2025 | 47.2 | 44.2–56.1 | % | 2015-2025 (media anual) | España | MIVAU valor tasado; Notariado CGN; Registradores opendata | C1 | 2025 (anual) |
+| A23-P3 | Residuo del puente INE IPV -> núcleo (método, calidad, tamaño, cobertura) | -30.9 |  | pp | 2015-2025 | España | cálculo A23 (puente_precio.csv) | C4 | 2026-10-10 |
+| A23-P4 | Efecto de pesos CCAA comunes sobre el IPV | 0.6 |  | pp | 2015-2025 | 17 CCAA | INE IPV CCAA + Registradores (pesos) | C2 | 2026-10-10 |
+| A23-P5 | Efecto de la composición nueva/usada sobre la media de pm2 | 0 |  | pp | 2015-2025 | España | INE ETDP + Registradores ERI 2025 | C4 | 2025 |
+| A23-P6 | Precio por m2 Registradores nacional 2025 | 2284 |  | EUR/m2 | 2025 | España | Registradores opendata | C1 | 2025 |
+| A23-P7 | Precio por m2 Notariado 2025 | 1949 |  | EUR/m2 | 2025 | España | Notariado CGN | C1 | 2025S2 |
+| A23-P8 | Registradores con pesos provinciales de importe 2015 (52 provincias) | 66.8 |  | % | 2015-2025 | España | Registradores opendata (provincia) | C2 | 2025 |
+| A23-P9 | Registradores con pesos CCAA de importe 2015 | 63.8 |  | % | 2015-2025 | 17 CCAA | Registradores opendata (CCAA) | C2 | 2025 |
+| A4-001 | Rango oficial derivado de coste de construcción (MBC 1993 actualizado) | 677 | 422–932 | EUR/m2 construido | 2025T3-2026T2 | España (sin MBC por municipio) | BOE-A-1993-19265; Eurostat sts_copi_q | C4 | 2026-10-10 |
+| A4-conc50-2021-2024 | Provincias que suman el 50 % del déficit positivo | 6 | 6–6 | provincias | 2021-2024 | 52 provincias | ECP INE; MIVAU fin de obra (bajas 0) | C1 | 2026-10 |
+| A4-conc50-2021-2025 | Provincias que suman el 50 % del déficit positivo | 6 | 6–6 | provincias | 2021-2025 | 52 provincias | ECP INE; MIVAU fin de obra (bajas 0) | C4 | 2026-10 |
+| A4-conc80-2021-2024 | Provincias que suman el 80 % del déficit positivo | 17 | 17–17 | provincias | 2021-2024 | 52 provincias | ECP INE; MIVAU fin de obra (bajas 0) | C1 | 2026-10 |
+| A4-conc80-2021-2025 | Provincias que suman el 80 % del déficit positivo | 18 | 18–18 | provincias | 2021-2025 | 52 provincias | ECP INE; MIVAU fin de obra (bajas 0) | C4 | 2026-10 |
+| A4-prov-2012-2025-c1 | Provincias en clase 1 (1 falta y es rentable) | 24 | 13–24 | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
+| A4-prov-2012-2025-c2 | Provincias en clase 2 (2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)) | 6 | 1–6 | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
+| A4-prov-2012-2025-c3 | Provincias en clase 3 (3 falta y no es rentable) | 0 | 0–0 | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
+| A4-prov-2012-2025-c4 | Provincias en clase 4 (4 no falta (deficit <= 0)) | 20 | 8–20 | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
+| A4-prov-2012-2025-c9 | Provincias en clase 9 (9 sin dato) | 2 | 0–2 | provincias | 2012-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
+| A4-prov-2021-2025-c1 | Provincias en clase 1 (1 falta y es rentable) | 37 | 8–37 | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
+| A4-prov-2021-2025-c2 | Provincias en clase 2 (2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta)) | 11 | 3–11 | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
+| A4-prov-2021-2025-c3 | Provincias en clase 3 (3 falta y no es rentable) | 2 | 0–2 | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
+| A4-prov-2021-2025-c4 | Provincias en clase 4 (4 no falta (deficit <= 0)) | 0 | 0–0 | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
+| A4-prov-2021-2025-c9 | Provincias en clase 9 (9 sin dato) | 2 | 0–2 | provincias | 2021-2025 | 52 provincias | output/v4/M1; M3; A4 | C4 | 2026-10-10 |
+| A5-H01 | Documentos oficiales con texto buscado | 25 | 25–25 | documentos | 2023-2026 | programas 2023 (6), resumen (1), normas (2), proposiciones de ley XV leg. (13); inventario | ['docs/v5/programas/inventario.csv'] | C4 | 2026-10-10 |
+| A5-H02 | Medidas v4 sin documento oficial (excluidas) | 41 | 41–41 | medidas | 2023 | 3 de los 9 programas v4 | ['docs/v5/programas/conciliacion_v4.csv'] | C4 | 2026-10-10 |
+| A5-H03 | Medidas v4 confirmadas en texto oficial por diccionario | 44 | 44–47 | medidas | 2023 | 6 programas con texto oficial (47 medidas v4); cita literal presente en 47 | ['docs/v5/programas/conciliacion_v4.csv'] | C4 | 2026-10-10 |
+| A5-H04 | Precision del diccionario (medida estricta / medida o mencion) | 50 | 50–78 | % | 2026-10-10 | muestra aleatoria de 40 coincidencias en documentos no normativos | ['output/v5/A5/validacion_precision.csv'] | C4 | 2026-10-10 |
+| R1A-H1 | Peso de compradores extranjeros no residentes en las compraventas, España 2025 | 6.83 | 6.83–6.83 | % | 2025 | España | ['MIVAU Boletín tabla 1.6'] | C4 | 2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2) |
+| R1A-H2 | Peso de compradores extranjeros no residentes, España 2015 | 9.86 | 9.86–9.86 | % | 2015 | España | ['MIVAU Boletín tabla 1.6'] | C4 | 2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2) |
+| R1A-H3 | Peso de no residentes extranjeros por provincia 2025 (rango entre unidades) | 32.5 | 0.07–32.5 | % | 2025 | 50 unidades | ['MIVAU Boletín tabla 1.6'] | C4 | 2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2) |
+| R1A-H4 | Asociación bivariada precio 2015-2025 y peso inicial de no residentes (coef.) | 0.96 | 0.46–1.47 | % de precio por punto de peso inicial | 2015-2025 | 50 unidades | ['MIVAU Boletín'] | C4 | 2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2) |
+| R1A-H5 | Misma asociación con renta, población, costa e islas (coef.) | 0.02 | -0.55–0.59 | % de precio por punto de peso inicial | 2015-2025 | 50 unidades | ['MIVAU Boletín', 'INE padrón', 'INE CRE'] | C4 | 2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2) |
+| R1A-H6 | Cociente VUT registro GVA (stock) / INE, 3 provincias valencianas, 2024-11 | 1.56 | 1.41–1.75 | veces | 2020-08 a 2024-11 | Alicante, Castellón, Valencia | ['INE VUT (experimental)', 'GVA Registre de Turisme'] | C4 | 2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2) |
+| R1A-H7 | Cociente VUT registro vigente GVA (2026-10-09) / INE (2026-05) | 1.76 | 1.42–1.91 | veces | 2026 | 3 provincias | ['INE VUT (experimental)', 'GVA Registre de Turisme'] | C4 | 2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2) |
+| R1A-H8 | Cobertura de la suma de secciones INE VUT frente al total provincial (52 provincias) | 90.4 | 90.2–90.7 | % | 2024-11 a 2026-05 | España | ['INE VUT (experimental)'] | C4 | 2026-08 (descarga 2026-10-09/10; MIVAU hasta 2026T2) |
+| R1B-D-serpavi_VC | Cambio de pendiente del gradiente de crecimiento anual con la distancia al centro (2019-2024 menos 2015-2019), alquiler SERPAVI VC, capital + 25 km | 0.161 | -0.141–0.464 | pp de crecimiento anual por cada 10 km | 2015-2019 frente a 2019-2024 | 41 áreas, 673 municipios | ['alquiler SERPAVI VC'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-D-serpavi_VC-holm | Proporción de especificaciones significativas tras Holm, alquiler SERPAVI VC | 0 | 0–1 | proporción | 2015-2024 | 96 especificaciones | ['alquiler SERPAVI VC'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-D-serpavi_VC-mv | Proporción de especificaciones con cambio de pendiente positivo (periferia gana frente al centro), alquiler SERPAVI VC | 0.771 | 0.771–0.771 | proporción | 2015-2024 | 96 especificaciones | ['alquiler SERPAVI VC'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-D-tasado | Cambio de pendiente del gradiente de crecimiento anual con la distancia al centro (2019-2024 menos 2015-2019), valor tasado (>25.000 hab.), capital + 25 km | -0.044 | -0.507–0.418 | pp de crecimiento anual por cada 10 km | 2015-2019 frente a 2019-2024 | 17 áreas, 128 municipios | ['valor tasado (>25.000 hab.)'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-D-tasado-holm | Proporción de especificaciones significativas tras Holm, valor tasado (>25.000 hab.) | 0 | 0–1 | proporción | 2015-2024 | 128 especificaciones | ['valor tasado (>25.000 hab.)'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-D-tasado-mv | Proporción de especificaciones con cambio de pendiente positivo (periferia gana frente al centro), valor tasado (>25.000 hab.) | 0.547 | 0.547–0.547 | proporción | 2015-2024 | 128 especificaciones | ['valor tasado (>25.000 hab.)'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-G-0 | GSADF (vc bootstrap AR): precio/renta: IPV / renta del hogar | 3.416 | 2.478–3.416 | estadístico (min = vc 95 %; p=0.012; BH familia=0.080) | 2007Q1-2026Q2 | Nacional | ['INE IPV', 'MIVAU tasado', 'INE renta', 'BdE tipo hipotecario'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-G-1 | GSADF (vc bootstrap AR): precio/alquiler: IPV / IPC alquiler | 3.097 | 2.986–3.097 | estadístico (min = vc 95 %; p=0.036; BH familia=0.096) | 2007Q1-2026Q2 | Nacional | ['INE IPV', 'MIVAU tasado', 'INE renta', 'BdE tipo hipotecario'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-G-2 | GSADF (vc bootstrap AR): precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): IPV | 0.895 | 3.13–0.895 | estadístico (min = vc 95 %; p=0.762; BH familia=0.948) | 2007Q1-2026Q2 | Nacional | ['INE IPV', 'MIVAU tasado', 'INE renta', 'BdE tipo hipotecario'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-G-3 | GSADF (vc bootstrap AR): precio frente a valor de cuota hipotecaria constante sobre renta: IPV | 0.909 | 2.477–0.909 | estadístico (min = vc 95 %; p=0.604; BH familia=0.948) | 2007Q1-2026Q2 | Nacional | ['INE IPV', 'MIVAU tasado', 'INE renta', 'BdE tipo hipotecario'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-G-5 | GSADF (vc bootstrap AR): precio/renta: valor tasado / renta del hogar | 0.224 | 3.088–0.224 | estadístico (min = vc 95 %; p=0.932; BH familia=0.948) | 2007Q1-2026Q2 | Nacional | ['INE IPV', 'MIVAU tasado', 'INE renta', 'BdE tipo hipotecario'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-G-6 | GSADF (vc bootstrap AR): precio/alquiler: valor tasado / IPC alquiler | 4.344 | 3.537–4.344 | estadístico (min = vc 95 %; p=0.020; BH familia=0.080) | 2007Q1-2026Q2 | Nacional | ['INE IPV', 'MIVAU tasado', 'INE renta', 'BdE tipo hipotecario'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-G-7 | GSADF (vc bootstrap AR): precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): valor tasado | 0.161 | 3.175–0.161 | estadístico (min = vc 95 %; p=0.948; BH familia=0.948) | 2007Q1-2026Q2 | Nacional | ['INE IPV', 'MIVAU tasado', 'INE renta', 'BdE tipo hipotecario'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-G-8 | GSADF (vc bootstrap AR): precio frente a valor de cuota hipotecaria constante sobre renta: valor tasado | 0.516 | 2.949–0.516 | estadístico (min = vc 95 %; p=0.838; BH familia=0.948) | 2007Q1-2026Q2 | Nacional | ['INE IPV', 'MIVAU tasado', 'INE renta', 'BdE tipo hipotecario'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-G-ccaa | CCAA-medida con exuberancia tras BH (vc corregidos) de 34 | 7 | 7–19 | series (max = significativas sin ajuste) | 2007Q1-2026Q2 | 17 CCAA x 2 medidas | ['INE IPV', 'MIVAU tasado', 'INE IPC alquiler'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-G-tam | Tamaño empírico del GSADF con vc iid cuando Δy es AR(1) con phi=0,5 (nominal 5 %) | 0.15 | 0.04–0.15 | % (fracción) | simulación T=78, R=200 | Monte Carlo | ['simulación propia'] | C4 | 2026-10-10 |
+| R1B-G-tam-corr | Tamaño empírico con vc por bootstrap de AR(p) estimado, phi=0,5 | 0.04 | 0.02–0.04 | % (fracción) | simulación T=78, R=200 | Monte Carlo | ['simulación propia'] | C4 | 2026-10-10 |
+| R1B-S-BI-RV | Valor de robustez Cinelli-Hazlett RV (q=1) de la forma reducida BI, gl=G-1 | 0.347 | 0.127–0.347 | R² parcial | 2009-2021 | 49 provincias | ['INE/MIVAU vía data/processed'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-S-BI-delta | Oster δ (β*=0, Rmax=1,3·R²) de la forma reducida alquiler~instrumento Bartik, BI | 8.76 | 2.93–8.76 | razón δ | 2009-2021 | 49 provincias, N=621 | ['INE/MIVAU vía data/processed'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-S-BI-mv | BI: proporción de especificaciones con el mismo signo que la base (alquiler) | 0.963 | 0.037–0.475 | proporción (min = significativas tras Holm; max = significativas nominales) | 2009-2021 | 80 especificaciones | ['INE/MIVAU vía data/processed'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-S-BP-H6-RV | BP H6 (resultado publicado, muestra sellada): RV aproximado desde τ y EE de placebo | 0.323 | 0.062–0.323 | R² parcial (aprox.) | 2024Q3-2026Q2 | 4 tratadas, 40 donantes | ['output/v2/BP/h6_sellado.json'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1B-S-BP-mv | BP H5 SDiD: proporción de especificaciones con el mismo signo que la base (positivo) | 0.792 | 0–0.194 | proporción (min = Holm; B=200 permutaciones, resolución limitada) | 2012Q1-2022Q1 | 72 especificaciones | ['INE IPC alquiler vía data/processed'] | C4 | 2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2) |
+| R1C-001 | Hogares con vivienda principal en propiedad | 74.5 | 72.1–75.9 | % de hogares | 2021-2022 | Espana | BdE EFF; INE ECV; INE Censo 2021 | C1 | 2022 |
+| R1C-002 | Hogares con otras propiedades (cualquier inmueble), tramo 65-74 | 61.6 | 61.6–61.6 | % de hogares del tramo | 2022 | Espana | BdE EFF 2022 | C4 | 2022 |
+| R1C-003 | Hogares con otras propiedades (cualquier inmueble), tramo <35 | 15.3 | 15.3–15.3 | % de hogares del tramo | 2022 | Espana | BdE EFF 2022 | C4 | 2022 |
+| R1C-004 | Compraventas con comprador persona juridica | 11.3 | 11.3–11.3 | % de compraventas | 2024 | Espana | INE ETDP 50272 | C4 | 2024-12 |
+| R1C-010 | Ocupados en construccion por vivienda libre iniciada, nacional 2008 | 10.34 | 10.34–10.34 | personas por vivienda | 2008 | Espana | INE EPA 65354 (ocupados, construccion); MIVAU Boletin (viviendas libres iniciadas) | C4 | 2025-12 |
+| R1C-011 | Ocupados en construccion por vivienda libre iniciada, nacional 2013 | 35.22 | 35.22–35.22 | personas por vivienda | 2013 | Espana | INE EPA 65354 (ocupados, construccion); MIVAU Boletin (viviendas libres iniciadas) | C4 | 2025-12 |
+| R1C-012 | Ocupados en construccion por vivienda libre iniciada, nacional 2025 | 12.56 | 12.56–12.56 | personas por vivienda | 2025 | Espana | INE EPA 65354 (ocupados, construccion); MIVAU Boletin (viviendas libres iniciadas) | C4 | 2025-12 |
+| R1C-013 | Variacion 2014T1-2025T4 del coste de construccion (Eurostat) menos precio (tasacion BdE) | -18.8 | -65.7–-18.8 | puntos porcentuales | 2014T1-2025T4 | Espana | Eurostat sts_copi_q; INE ETCL 6030; Eurostat prc_hpi_q; BdE tasacion | C4 | 2025-12 |
+| R1C-020 | Entidades municipales con vacias y uso esporadico publicadas por el INE (Censo 2021, consumo electrico) | 3185 | 3185–3185 | entidades | 2021-11 | Espana (8.131 municipios en 3.185 entidades) | INE Censo 2021 tabla 59531 | C4 | 2026-10-10 |
+| R1C-021 | Mediana municipal del % de viviendas vacias (p10-p90 en min-max) | 17.4 | 6.8–35.2 | % de viviendas | 2021-11 | Espana, entidades municipales | INE Censo 2021 tabla 59531 | C4 | 2021-11 |
+| compradores_extranjeros | Compraventas de vivienda con comprador extranjero (residente o no) | 16.89 | 16.89–18.82 | % | 2025 | España | Ministerio; Notariado (no independientes) | C4 | 2025 |
+| compradores_no_residentes | Compraventas con comprador extranjero no residente | 6.832 |  | % | 2025 | España | Ministerio | C4 | 2025 |
+| deficit_2124_c1 | Déficit acumulado: aumento de hogares menos viviendas terminadas, sin bajas |  | 5.627e+05–6.887e+05 | viviendas | 2021-2024 | España | hogares: ECP y EPA corregida; terminadas: Ministerio y Catastro | C1 | 2024 |
+| deficit_2124_c2 | Déficit acumulado con bajas del parque supuestas del 0,1-0,2 % anual (cota) |  | 5.627e+05–9.028e+05 | viviendas | 2021-2024 | España | ídem, con bajas supuestas | C2 | 2024 |
+| dh_2125 | Aumento del número de hogares | 9.976e+05 | 9.818e+05–1.013e+06 | hogares | 2021-2025 | España | INE ECP y EPA (corregida por la ruptura de 2021) | C1 | 2025T1 |
+| latente_convivencia | Demanda latente de jóvenes por convivencia con los padres (frente a 2008) |  | 1.88e+05–5.06e+05 | hogares | 2008-2025 | España | INE EPA y ECV (tasa de convivencia con los padres) | C2 | 2025 |
+| terminadas_1924 | Viviendas terminadas al año (territorio común: sin País Vasco ni Navarra) |  | 7.226e+04–9.443e+04 | viviendas/año | 2019-2024 | territorio común | Ministerio (fin de obra) y Catastro (altas), dentro de ±15 % | C1 | 2024 |
+
+## Clases territoriales (A4)
+
+Se clasifica por provincia y municipio con el precio P, el suelo repercutido, el coste de construcción c (rango oficial derivado; C2 exige la misma clase también con el rango supuesto de v4), el margen m y la holgura r. «Falta» significa déficit del periodo > 0.
+
+| Clase | Nombre | Definición |
+|---|---|---|
+| 1 | Falta y es rentable | Déficit > 0; P − c(1+m) − suelo > 0; no cumple la clase 2. |
+| 2 | Falta con freno regulatorio o de suelo | Déficit > 0; P > r(c + suelo) (holgura) y las terminadas no responden. No se atribuye causa. |
+| 3 | Falta y no es rentable | Déficit > 0; P − c(1+m) − suelo ≤ 0. |
+| 4 | No falta | Déficit ≤ 0. No implica exceso de oferta. |
+| 9 | Sin dato | Falta precio, suelo, déficit u oferta; no se imputa. |
+
+Capa de la clase: C2 si se mantiene en todo el rango de costes, márgenes y holguras y el signo del déficit es estable; si no, C4. Los municipios son siempre C4. Véase output/v5/A4/resultado.json.

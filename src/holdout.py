@@ -85,6 +85,30 @@ def _mascara_sellada(df: pd.DataFrame, freq: str, col_t: str, col_geo: str | Non
     return temporal | geo, embargo & ~(temporal | geo)
 
 
+def _sin_interpolacion_hacia_sellado(tr: pd.DataFrame, col_t: str, col_geo: str | None) -> pd.DataFrame:
+    """Anula en entrenamiento los valores interpolados POSTERIORES a la última observación de entrenamiento.
+
+    Una interpolación entre la última observación de entrenamiento y la primera sellada (p. ej. población
+    de 2024Q2 entre el 1-ene-2024 y el 1-ene-2025) usa información sellada: fuga. Esos valores (y sus
+    transformaciones ln_/d_ln_/d4_ln_) pasan a NaN.
+    """
+    met = [c for c in tr.columns if c.endswith("_metodo")]
+    grupos = tr.groupby(col_geo) if col_geo and col_geo in tr.columns else [(None, tr)]
+    for _, g in grupos:
+        for mc in met:
+            var = mc[: -len("_metodo")]
+            obs = g.loc[g[mc] == "observado", col_t]
+            if obs.empty:
+                continue
+            ult = obs.astype(str).max()
+            idx = g.index[(g[mc] == "interpolado_loglineal") & (g[col_t].astype(str) > ult)]
+            if len(idx):
+                cols = [c for c in (var, f"ln_{var}", f"d_ln_{var}", f"d4_ln_{var}") if c in tr.columns]
+                tr.loc[idx, cols] = np.nan
+                tr.loc[idx, mc] = "anulado_fuga_sellado"
+    return tr
+
+
 def build() -> dict:
     """Genera data/processed/v2/train/<p>.csv y data/sealed/<p>.csv para cada panel existente."""
     TRAIN.mkdir(parents=True, exist_ok=True)
@@ -98,7 +122,8 @@ def build() -> dict:
             continue
         df = pd.read_csv(src, dtype={col_geo: str} if col_geo else None)
         sell, emb = _mascara_sellada(df, freq, col_t, col_geo)
-        df[~sell & ~emb].to_csv(TRAIN / f"{nombre}.csv", index=False)
+        tr = _sin_interpolacion_hacia_sellado(df[~sell & ~emb].copy(), col_t, col_geo)
+        tr.to_csv(TRAIN / f"{nombre}.csv", index=False)
         df[sell].to_csv(SEALED / f"{nombre}.csv", index=False)
         resumen["paneles"][nombre] = {"filas": len(df), "train": int((~sell & ~emb).sum()),
                                       "sellado": int(sell.sum()), "embargo": int(emb.sum())}
@@ -123,8 +148,14 @@ def evaluate(hipotesis: str, fn, rama: str, paneles: list[str]):
 
     fn(dict nombre->DataFrame sellado, dict nombre->DataFrame train) -> dict serializable.
     """
-    if any(a["hipotesis"] == hipotesis and a["evento"] == "evaluacion" for a in _accesos()):
-        raise PermissionError(f"La hipótesis {hipotesis} ya se evaluó en la muestra sellada (una sola vez).")
+    # Cualquier acceso previo (apertura o evaluación) cuenta: una sola apertura por hipótesis, aunque falle.
+    if any(a["hipotesis"] == hipotesis for a in _accesos()):
+        raise PermissionError(f"La hipótesis {hipotesis} ya abrió la muestra sellada (una sola vez).")
+    SEALED.mkdir(parents=True, exist_ok=True)
+    apertura = {"utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "evento": "apertura",
+                "hipotesis": hipotesis, "rama": rama, "paneles": paneles}
+    with open(LOG, "a") as f:   # se registra ANTES de leer nada sellado
+        f.write(json.dumps(apertura, ensure_ascii=False) + "\n")
     sellado = {}
     for p in paneles:
         _freq, _col_t, col_geo = CATALOGO[p]

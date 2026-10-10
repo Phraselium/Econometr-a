@@ -24,7 +24,7 @@ OUT = bl.OUT / ("smoke" if SMOKE else "")
 OUT.mkdir(parents=True, exist_ok=True)
 B_MAIN = 199 if SMOKE else 9999
 B_SUB = 199 if SMOKE else 1999
-A0, A1 = (2009, 2015) if SMOKE else (2009, 2023)
+A0, A1 = (2009, 2015) if SMOKE else (2005, 2023)
 LOG = bl.Log(OUT / "registro.csv")
 RES: dict = {}
 
@@ -87,21 +87,21 @@ def tarea_h4(pa, nq):
     d["d_ln_pr_f1"] = d.groupby("cod_prov", sort=False)["d_ln_pr"].shift(-1)
     d["inter_f1"] = d["d_ln_pr_f1"] * d["suelo_c"]
     m = d[d["anio"].between(A0, A1)]
-    info = dict(n_prov_suelo=d.attrs["n_prov_suelo"], media_ln_suelo=d.attrs["media_ln_suelo"],
+    info = dict(n_prov_suelo=d.attrs["n_prov_suelo"], media_ln_suelo=d.attrs["media_ln_suelo"], fuente_iniciadas="MIVAU 32200500 anual",
                 provincias_sin_suelo=sorted(set(d["cod_prov"]) - set(d.loc[d["suelo_c"].notna(), "cod_prov"])),
-                iniciadas_desde=int(d.loc[d["iniciadas_libres"].notna(), "anio"].min()), muestra=[A0, A1])
+                iniciadas_desde=int(d.loc[d["iniciadas_libres_anual"].notna(), "anio"].min()), muestra=[A0, A1])
     filas = []
     r = spec("H4", "H4_principal", m, Y, XP, "d_ln_pr_l1", boot=XP, B=B_MAIN,
-             notas=f"PRE-REGISTRADA. WCR Webb B={B_MAIN}; precio real = p_tasado/deflactor medio anual")
+             notas=f"PRE-REGISTRADA (muestra 2005-2023, iniciadas_libres_anual). WCR Webb B={B_MAIN}; precio real = p_tasado/deflactor medio anual")
     filas.append(fila_h4("H4_principal", r))
     tabs = [bl.tabla_res(r, "H4_principal")]
     # robustez / submuestras (B_SUB)
     sub = [("R1_precio_nominal", m, Y, ["d_ln_pn_l1", "inter_n"], "d_ln_pn_l1", "d_ln_pn_l1", "inter_n"),
            ("R2_precio_lag2", m[m["anio"] >= A0 + 1], Y, ["d_ln_pr_l2", "inter_l2"], "d_ln_pr_l2", "d_ln_pr_l2", "inter_l2"),
            ("S1_sin_Madrid_Barcelona", m[~m["cod_prov"].isin(["28", "08"])], Y, XP, "d_ln_pr_l1", "d_ln_pr_l1", "inter"),
-           ("S2_2009-2013", m[m["anio"] <= min(2013, A1)], Y, XP, "d_ln_pr_l1", "d_ln_pr_l1", "inter"),
+           ("S2_2005-2013", m[m["anio"] <= min(2013, A1)], Y, XP, "d_ln_pr_l1", "d_ln_pr_l1", "inter"),
            ("S3_2014-2023", m[m["anio"] >= 2014], Y, XP, "d_ln_pr_l1", "d_ln_pr_l1", "inter"),
-           ("S4_pre-COVID_2009-2019", m[m["anio"] <= min(2019, A1)], Y, XP, "d_ln_pr_l1", "d_ln_pr_l1", "inter"),
+           ("S4_pre-COVID_2005-2019", m[m["anio"] <= min(2019, A1)], Y, XP, "d_ln_pr_l1", "d_ln_pr_l1", "inter"),
            ("S5_sin_COVID_2020-2021", m[~m["anio"].isin([2020, 2021])], Y, XP, "d_ln_pr_l1", "d_ln_pr_l1", "inter")]
     sub_filas = []
     for sid, dd, y, xs, it, v1, v2 in sub:
@@ -112,6 +112,13 @@ def tarea_h4(pa, nq):
         filas.append(f)
         sub_filas.append(f)
         tabs.append(bl.tabla_res(rr, sid))
+    # R0: estimación previa (2009-2023, suma mensual, vista ANTES de la principal): robustez registrada
+    d0 = bl.preparar_h4(pa, nq, ini_col="iniciadas_libres")
+    m0 = d0[d0["anio"].between(2009, A1)]
+    r0 = spec("H4", "R0_vista_antes_2009-2023_mensual", m0, Y, XP, "d_ln_pr_l1", boot=XP, B=B_SUB,
+              notas=f"ROBUSTEZ; estimación previa vista antes (suma mensual, sin 2016-2018); WCR Webb B={B_SUB}")
+    filas.append(fila_h4("R0_vista_antes_2009-2023_mensual", r0))
+    tabs.append(bl.tabla_res(r0, "R0_vista_antes_2009-2023_mensual"))
     # placebo: precio futuro (t+1) añadido -> si el timing es exógeno, su coeficiente no debería ser significativo
     mp = m[m["anio"] <= A1 - 1]
     rp = spec("H4", "D1_placebo_lead_precio", mp, Y, XP + ["d_ln_pr_f1", "inter_f1"], "d_ln_pr_f1",
@@ -202,7 +209,8 @@ def tarea_deficit(pa, pq, nq):
                           prot_49_total=float(w["prot_49"].sum()), prot_trim_medio=prot_trim,
                           cobertura_media=float(w["cobertura"].mean()), n_trim=int(len(w)),
                           v1_residuo_epa=v1_epa_res, v1_residuo_ecp=v1_ecp_res,
-                          ilustracion_2021_2025=float(w["prot_escalada"].sum() + prot_trim * 6))
+                          ilustracion_2021_2025=float(w["prot_escalada"].sum() + prot_trim * 6),
+                          protegida_observada_2021Q1_2024Q2=float(w["prot_escalada"].sum()), protegida_SUPUESTA_2024Q3_2025Q4=float(prot_trim * 6))
     LOG.libre("DEFICIT", "D_nacional", "Σ(Δhogares − terminadas [− protegida]) 2021Q1-2024Q2", "2021Q1", "2024Q2",
               int(len(w)), notas="DESCRIPTIVO; protegida = calificaciones definitivas VPO (MIVAU) como aprox. de terminadas")
     # proxy provincial (anual; flujo durante el año t = stock 1-ene t+1 - stock 1-ene t; años 2020-2022)
@@ -276,10 +284,9 @@ def tarea_suelo(pq):
     t = pd.DataFrame(filas)
     t["q_BH"] = np.nan
     t["p_Holm"] = np.nan
-    for var in t["variante"].unique():
-        ix = t.index[t["variante"] == var]
-        t.loc[ix, "q_BH"] = pd.Series(bl.bh({i: t.loc[i, "p"] for i in ix}))
-        t.loc[ix, "p_Holm"] = pd.Series(bl.holm({i: t.loc[i, "p"] for i in ix}))
+    ix = t.index
+    t.loc[ix, "q_BH"] = pd.Series(bl.bh({i: t.loc[i, "p"] for i in ix}))      # familia = TODOS los contrastes (160)
+    t.loc[ix, "p_Holm"] = pd.Series(bl.holm({i: t.loc[i, "p"] for i in ix}))
     guardar("suelo_proyecciones_locales.csv", t)
     res = {}
     for var in t["variante"].unique():
@@ -361,13 +368,13 @@ def tarea_ue():
         d["x_noes"] = d[x] * (1 - d["es"])
         r = bl.fe_ols(d, "d_lp", ["x_noes", "x_es"], fe=("geo", "anio"), cluster="geo")
         LOG.spec("UE", f"UE_panel_{nm}", f"d_ln_permisos ~ {x}×(no ES, ES) | FE(geo,anio) cl=geo", r, "x_es",
-                 notas="EXPLORATORIO; anual")
+                 notas="EXPLORATORIO; anual; p/EE de x_es NO válidos (España = un solo clúster): no interpretar")
         # diferencia ES - resto
         V = r["V"]
         dif = r["beta"][1] - r["beta"][0]
         sed = float(np.sqrt(V[0, 0] + V[1, 1] - 2 * V[0, 1]))
-        pan.append(dict(regresor=nm, b_resto=r["beta"][0], se_resto=r["se"][0], b_ES=r["beta"][1], se_ES=r["se"][1],
-                        dif_ES_menos_resto=dif, se_dif=sed, p_dif=float(2 * stats.t.sf(abs(dif / sed), r["df"])),
+        pan.append(dict(regresor=nm, b_resto=r["beta"][0], se_resto=r["se"][0], b_ES=r["beta"][1],
+                        dif_ES_menos_resto=dif,
                         n=r["n"], G=r["G"]))
     guardar("ue_panel_ES_vs_resto.csv", pd.DataFrame(pan))
     # trimestral (robustez): Δ4 ln permisos_t sobre Δ4 ln precio real_{t-4}
@@ -381,12 +388,12 @@ def tarea_ue():
     if len(d) > 100:
         r = bl.fe_ols(d, "d_lp", ["x_noes", "x_es"], fe=("geo", "trimestre"), cluster="geo")
         LOG.spec("UE", "UE_panel_q_precio", "Δ4 ln permisos ~ Δ4 ln precio real (t-4) ×(no ES, ES) | FE(geo,trim) cl=geo", r,
-                 "x_es", notas="EXPLORATORIO; trimestral (permisos índice)")
+                 "x_es", notas="EXPLORATORIO; trimestral (permisos índice; hicp_general anual_asignado); p/EE de x_es NO válidos (un clúster)")
         V = r["V"]
         dif = r["beta"][1] - r["beta"][0]
         sed = float(np.sqrt(V[0, 0] + V[1, 1] - 2 * V[0, 1]))
-        pq_.append(dict(regresor="precio_trimestral", b_resto=r["beta"][0], se_resto=r["se"][0], b_ES=r["beta"][1], se_ES=r["se"][1],
-                        dif_ES_menos_resto=dif, se_dif=sed, p_dif=float(2 * stats.t.sf(abs(dif / sed), r["df"])), n=r["n"], G=r["G"]))
+        pq_.append(dict(regresor="precio_trimestral", b_resto=r["beta"][0], se_resto=r["se"][0], b_ES=r["beta"][1],
+                        dif_ES_menos_resto=dif, n=r["n"], G=r["G"]))
         guardar("ue_panel_trimestral.csv", pd.DataFrame(pq_))
     RES["ue"] = dict(mg=out, panel=pan, panel_q=pq_)
 
@@ -481,7 +488,7 @@ def tarea_oos(pq, nq):
         ev.insert(0, "objetivo", "iniciadas (4T)")
         filas.append(ev)
     t = pd.concat(filas, ignore_index=True)
-    # p unilateral (el modelo mejora): DM>0
+    # p bilateral de DM-HLN (DM>0: el modelo mejora a la base)
     t["p_BH"] = np.nan
     pdict = {r["modelo"]: r["p_vs_AR4"] for _, r in t.iterrows() if np.isfinite(r["p_vs_AR4"])}
     for k, v in bl.bh(pdict).items():
@@ -504,7 +511,7 @@ def escribir_resultado():
         OUT / "resultado.json", rama="BO",
         pregunta="H4 (confirmatoria): elasticidad de las viviendas iniciadas libres al precio real (+) y mayor con suelo más barato "
                  "(interacción −); déficit de vivienda; suelo vs precio; elasticidad de permisos UE; fuera de muestra",
-        datos="panel_prov_a 2009-2023 (47 provincias de entrenamiento con iniciadas y suelo; iniciadas MIVAU desde 2008); "
+        datos="panel_prov_a 2005-2023 (47 provincias de entrenamiento con iniciadas y suelo; iniciadas libres anuales MIVAU 32200500); "
               "panel_prov_q, nacional_q_v2 (hasta 2024Q2), panel_ue_a/q; sin muestra sellada",
         N=int(pr["n"]),
         metodo="MCO con FE provincia y año, EE cluster provincia + wild cluster bootstrap restringido (Webb, B=9999); "
@@ -524,7 +531,9 @@ def escribir_resultado():
                        "rmse_AR4": prim["rmse_AR4"], "p_vs_AR4": prim["p_vs_AR4"], "rmse_ECM_v1": prim["rmse_ECM_v1"],
                        "dm_vs_ecm_v1": prim["dm_vs_ECM_v1"], "p_vs_ecm_v1": prim["p_vs_ECM_v1"],
                        "nota": "precio real h=4; no mejora al AR(4). En iniciadas, AR4+precio mejora al AR4 (ver oos_h4.csv)"},
-        notas="Resultados secundarios (déficit, suelo, UE, OOS) EXPLORATORIOS/DESCRIPTIVOS; ver resumen.md y desviaciones.md. "
+        notas="H4 re-estimada UNA vez con la muestra pre-registrada 2005-2023 (iniciadas_libres_anual MIVAU 32200500). Protegida: OBSERVADA "
+              f"{dstr['protegida_observada_2021Q1_2024Q2']:.0f} (2021Q1-2024Q2) y SUPUESTA {dstr['protegida_SUPUESTA_2024Q3_2025Q4']:.0f} (2024Q3-2025Q4, 6 trim. a la media observada). "
+              "Resultados secundarios (déficit, suelo, UE, OOS) EXPLORATORIOS/DESCRIPTIVOS; ver resumen.md y desviaciones.md. "
               f"Protegida 2021Q1-2024Q2 ≈ {dstr['prot_escalada_total']:.0f} viviendas (reescalada).")
 
 

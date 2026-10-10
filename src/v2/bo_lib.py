@@ -234,9 +234,10 @@ def holm(pvals: dict) -> dict:
 
 
 # ------------------------------------------------------------------ variables H4
-def preparar_h4(pa: pd.DataFrame, nq: pd.DataFrame, suelo_ini=2005, suelo_fin=2007) -> pd.DataFrame:
+def preparar_h4(pa: pd.DataFrame, nq: pd.DataFrame, suelo_ini=2005, suelo_fin=2007,
+                ini_col="iniciadas_libres_anual") -> pd.DataFrame:
     """Panel anual provincial con las variables de H4.
-    d_ln_ini        = Δ ln iniciadas_libres_t (suma de 4 trimestres MIVAU; desde 2008 -> Δ desde 2009)
+    d_ln_ini        = Δ ln iniciadas_libres_t (tabla anual MIVAU 32200500, 2002-2025; ini_col)
     d_ln_pr_l1      = Δ ln precio real_{t-1}; precio real = p_tasado / deflactor (media anual de nacional_q_v2)
     suelo_c         = ln(media p_suelo 2005-2007) - media de las provincias de entrenamiento (fijo)
     inter           = d_ln_pr_l1 * suelo_c
@@ -252,7 +253,7 @@ def preparar_h4(pa: pd.DataFrame, nq: pd.DataFrame, suelo_ini=2005, suelo_fin=20
     gp = d.groupby("cod_prov", sort=False)
     d["ln_pr"] = np.log(d["p_tasado"] / d["defl"])
     d["ln_pn"] = np.log(d["p_tasado"])
-    d["ln_ini"] = np.log(d["iniciadas_libres"].where(d["iniciadas_libres"] > 0))
+    d["ln_ini"] = np.log(d[ini_col].where(d[ini_col] > 0))
     for v in ("ln_pr", "ln_pn", "ln_ini"):
         d["d_" + v] = d.groupby("cod_prov", sort=False)[v].diff()
     d["d_ln_ocup"] = d.groupby("cod_prov", sort=False)["ocupados"].transform(lambda s: np.log(s).diff())

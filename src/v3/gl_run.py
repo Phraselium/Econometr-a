@@ -22,16 +22,30 @@ reg = Registry(OUT / "registro.csv")
 rows = []
 
 
-def clasifica(lo, hi, b, comparable):
-    if not comparable:
-        return "NO REPLICABLE", "unidades no homogéneas con el objetivo"
-    if lo <= OBJ <= hi and b > 0:
-        return "REPLICADO", "IC95 contiene 0,035 y mismo signo"
-    if b > 0 and hi > 0 and lo > 0 and not lo <= OBJ <= hi:
-        return "PARCIAL", "mismo signo, IC95 no contiene 0,035"
-    if b > 0:
-        return "PARCIAL", "mismo signo pero IC95 no contiene 0,035"
-    return "NO REPLICADO", "signo distinto"
+def viv_bcn():
+    c = pd.read_csv(g.D / "ine_v3_censo2021_seccion_indicadores.csv.gz", usecols=["serie", "codigo", "valor"],
+                    dtype={"codigo": str})
+    c = c[(c.serie == "t18_1") & c.codigo.str.zfill(10).str.startswith("08019")]
+    return float(c.valor.sum())
+
+
+VIV = viv_bcn()
+V_BARRIO = VIV / 73
+T_PP = OBJ * V_BARRIO / 100 / 100            # log-puntos por 1 pp de VUT/parque
+T_RANGO = (OBJ * 5000 / 1e4, OBJ * 20000 / 1e4)
+
+
+def clasifica(lo, hi, b, T):
+    if T is None:
+        return "NO CLASIFICADA (informativa)", "unidad no homogénea con el objetivo"
+    cont_T, cont_0 = lo <= T <= hi, lo <= 0 <= hi
+    if cont_T and not cont_0:
+        return "REPLICADO", "IC95 contiene T y excluye 0"
+    if cont_T and cont_0:
+        return "PARCIAL", "IC95 contiene T y 0 (no concluyente)"
+    if not cont_0 and b > 0:
+        return "PARCIAL", "excluye 0 con signo de T pero no contiene T (difiere la magnitud)"
+    return "NO REPLICADO", "IC95 excluye T" + ("; signo contrario" if (not cont_0 and b < 0) else "")
 
 
 def estima(nombre, p, nivel, x, unidad, comparable, w=None):
@@ -43,9 +57,10 @@ def estima(nombre, p, nivel, x, unidad, comparable, w=None):
     r = g.fe_cluster(p, "lnalq", [x], w=None if w is None else p[w].values)
     b, se, lo, hi, pv = (float(r[k][0]) if k != "n" else r[k] for k in ["b", "se", "lo", "hi", "p"])
     # unidades homogéneas: log-puntos por 100 anuncios (VUT), objetivo 0,035
-    cl, crit = clasifica(lo, hi, b, comparable)
+    T = T_PP if x == 'vut100' else None
+    cl, crit = clasifica(lo, hi, b, T)
     rows.append(dict(especificacion=nombre, nivel=nivel, regresor=x, unidad_coef=unidad, N=r["n"],
-                     unidades=int(p.codigo.nunique()), clusters=r["G"], objetivo=OBJ if comparable else np.nan,
+                     unidades=int(p.codigo.nunique()), clusters=r["G"], objetivo=T if T is not None else np.nan,
                      coef=b, ee=se, ic95_lo=lo, ic95_hi=hi, p=pv, clasificacion=cl, criterio=crit))
     reg.log("GL", nombre, f"lnalq ~ {x} | FE unidad+año, cluster distrito", 2021, 2024, r["n"], np.nan, np.nan,
             np.nan, coef_interes=b, p_interes=pv, notas=f"{nivel}; {unidad}; {cl}")
@@ -109,24 +124,24 @@ def main():
     df["p_holm"] = df.especificacion.map(ph)
     df.to_csv(OUT / "tabla_replicacion.csv", index=False)
     lines = ["# Réplica conceptual de García-López et al. (2020), Barcelona (C4, EXPLORATORIO)", "",
-             "Objetivo: 0,035 (EE 0,009) log-puntos de alquiler por 100 anuncios (WP 2019, Tabla 3, panel A, col. 2). "
+             "Objetivo: 0,035 (EE 0,009) log-puntos por 100 anuncios en un barrio (WP 2019, Tabla 3, panel A, col. 2). "
+             f"Conversión: T_pp = 0,035 x (viviendas por barrio/100)/100; parque Barcelona censo 2021 = {VIV:.0f} viviendas / 73 barrios = {V_BARRIO:.0f}; T_pp = {T_PP:.6f} (rango {T_RANGO[0]:.6f} a {T_RANGO[1]:.6f} con barrios de 5.000 y 20.000). Comparación principal: coeficiente por pp de VUT/parque. "
              "Propio: log mediana SERPAVI €/m2 (vivienda colectiva, stock IRPF) 2021-2024, VUT del INE (media anual de oleadas "
              "hasta 2024M11), FE de sección y año, cluster por distrito. Sin sellados v3 (distritos 09 y 10 de Barcelona "
              "excluidos) y sin 2026M05. Sin instrumento ni histórico 2012-2016: NO es réplica exacta.", "",
              df[["especificacion", "nivel", "unidad_coef", "N", "clusters", "coef", "ee", "ic95_lo", "ic95_hi", "p_holm",
                  "clasificacion", "criterio"]].round(4).to_markdown(index=False), "",
-             "Las filas con unidades «por 1 pp» (VUT por 100 viviendas) no son homogéneas con el objetivo (por 100 anuncios): "
-             "clasificación NO REPLICABLE por unidades. Las filas «por 100 VUT» sí son homogéneas (VUT INE ≈ anuncios, "
-             "salvedad de definición).", "", "## Diagnósticos", "```", json.dumps(diag, indent=1), "```",
-             "", f"Pérdidas de armonización (unidades): {json.dumps(perd)}", "", "REPLICADO con IC que incluye 0 (Madrid, València, Málaga) es una coincidencia por imprecisión, no confirmación.", "", f"Notas: {json.dumps(ex, ensure_ascii=False)}", "", "Nivel de evidencia: EXPLORATORIO (C4)."]
+             "Las filas «por 100 VUT» en la sección son solo informativas (unidad no homogénea) y no se clasifican. Criterio: REPLICADO si IC95 contiene T y excluye 0; PARCIAL si contiene T y 0, o excluye 0 con signo de T sin contener T; NO REPLICADO en otro caso.", "",
+             "## Límites", "SERPAVI es stock IRPF y amortigua los cambios, frente al precio de oferta de Idealista que usa GL. El periodo es 2021-2024, frente a 2012-2016. No hay instrumento. Es C4 (EXPLORATORIO).", "", "## Diagnósticos", "```", json.dumps(diag, indent=1), "```",
+             "", f"Pérdidas de armonización (unidades): {json.dumps(perd)}", "", f"Notas: {json.dumps(ex, ensure_ascii=False)}", "", "Nivel de evidencia: EXPLORATORIO (C4)."]
     (OUT / "replicacion.md").write_text("\n".join(lines))
-    prin = df[df.especificacion == "GL3_bcn_seccion_vut_cien"].iloc[0]
+    prin = df[df.especificacion == "GL1_bcn_seccion_vut100viv"].iloc[0]
     res = dict(rama="GL", capa="C4", pregunta="¿Reproduce el efecto de los alquileres turísticos sobre el alquiler (García-López 2020) en Barcelona 2021-2024?",
                datos="SERPAVI sección/distrito (stock IRPF) 2021-2024; VUT INE oleadas 2021M02-2024M11; Censo 2021; sellado v3 excluido",
                N=int(prin.N), metodo="MCO con FE de sección y año, cluster distrito (réplica conceptual, sin IV)",
                estimacion=float(prin.coef), ic95=[float(prin.ic95_lo), float(prin.ic95_hi)],
                p_ajustado=float(prin.p_holm), nivel_evidencia="EXPLORATORIO",
-               diagnosticos=diag, fuera_muestra=dict(modelo=None, rmse=None, dm_vs_ar4=None,
+               diagnosticos=diag, objetivo_T_pp=T_PP, T_pp_rango=T_RANGO, fuera_muestra=dict(modelo=None, rmse=None, dm_vs_ar4=None,
                                                    nota="no aplica: réplica de coeficiente"),
                clasificacion={r_.especificacion: r_.clasificacion for r_ in df.itertuples()},
                notas=f"Pérdidas armonización {perd}. {ex}. Smoke={SMOKE}")

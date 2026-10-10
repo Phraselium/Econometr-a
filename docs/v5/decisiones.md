@@ -31,3 +31,32 @@
 - BK-044. Fe de erratas de las notas de v2 en ERRATA.md, sin reescribir output/v2.
 - BK-047. El blob de 95 MB de serpavi_v2_municipios.csv sigue en el historial remoto (a011c2f). No se reescribe, porque el force push está denegado; queda documentado.
 - Los subagentes trabajan en el árbol principal con rutas disjuntas (src/v5/<módulo>_*, output/v5/<MÓDULO>), sin commit. No hacen falta worktrees porque no hay ficheros compartidos; esto cumple el límite de 3.
+
+## R1a, R1b y R1c (subagentes)
+- **R1a.**
+  - Una frase de la ficha R1A-V1 con lenguaje causal («se debe a») se reescribe sin él.
+  - BK-014 (alquiler de temporada) queda NO ANALIZADA: el agente no probó endpoints de red, así que sigue en el backlog.
+- **R1b.** r1b_donut leía `serpavi_v2_municipios.csv` (95 MB, sin versionar) y pasa a leer el `.csv.gz` versionado. Lo detectó check_v5.
+- **R1c.** La tenencia en propiedad es C1 (EFF, ECV y Censo, 72-76 %). En v4 el Censo era C4 por ser fuente única; ahora hay tres fuentes independientes.
+
+## A2-A3 (subagente) y A6 (orquestador)
+- **A23-V2** («el alquiler de contratos nuevos se ha duplicado»).
+  - El agente había puesto una capa mixta con CONTRADICHA.
+  - Por la regla B5, la cuantía nacional es de fuente única (IPVA, C4): ANALIZADA, NO CONCLUYENTE a escala nacional.
+  - La contradicción en Cataluña y C. Valenciana (C1) se dice en la regla.
+- **A6.** Consolidación documental de v4 M0, sin nuevas estimaciones (output/v5/A6/nota.md). check_v5 impide etiquetar los topes como C3.
+
+## A4 (subagente + orquestador)
+- **Coste oficial en nivel.**
+  - Solo se obtuvo el MBC de 1993 (RD 1020/1993), actualizado con el índice de costes de Eurostat: 422-932 €/m², derivado y único para toda España.
+  - Fallaron los módulos de protegida de las CCAA y el presupuesto de ejecución material de visados (docs/v5/fuentes_fallidas.md).
+- **Corrección del orquestador.**
+  - El MBC es un módulo de valoración fiscal y puede quedar por debajo del coste de mercado. Por eso C2 exige que la clase se mantenga en la UNIÓN del rango oficial derivado y el rango supuesto de v4 (422-1.500 €/m²).
+  - Provincias C2 en 2021-2025: 8 de clase 1 y 3 de clase 2 (el agente daba 27 y 4).
+  - En 2012-2025 la estabilidad solo se mide con el rango oficial, porque no hay clasificación v4 comparable; se marca así.
+- **Clase 4 («no falta»).** Ninguna provincia en 2021-2025; 247 municipios.
+- **Concentración del déficit.**
+  - 2021-2025: 6 provincias suman el 50 % y 18 el 80 %.
+  - 2021-2024: 6 y 17.
+  - La suma provincial es igual a la nacional (700.934 y 562.692).
+  - Las cuatro provincias forales solo tienen altas del Ministerio.

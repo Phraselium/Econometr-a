@@ -1,0 +1,89 @@
+doc_id,instrumento_v4,direccion_v4,cita_v4_en_texto_oficial,pagina,coincide_v5_misma_pagina,estado
+A5-D01,I01,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I02,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I04,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I04,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I05,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I03,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I10,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I20,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I19,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I11,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I12,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I08,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I06,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I07,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D01,I02,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D02,I25,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D02,I01,derogar/reducir,,,,no verificable: sin documento oficial (excluido)
+A5-D02,I06,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D02,I13,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D02,I04,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D02,I02,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D02,I14,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D02,I14,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D05,I02,a favor/ampliar,si,76,si,confirmada
+A5-D05,I15,a favor/ampliar,si,76,si,confirmada
+A5-D05,I07,a favor/ampliar,si,76,si,confirmada
+A5-D05,I26,a favor/ampliar,si,76,si,confirmada
+A5-D05,I04,a favor/ampliar,si,76,si,confirmada
+A5-D05,I02,a favor/ampliar,si,76,si,confirmada
+A5-D05,I21,a favor/ampliar,si,76,no,"baja del diccionario: cita presente, sin coincidencia de palabra clave en esa pagina"
+A5-D05,I16,a favor/ampliar,si,77,si,confirmada
+A5-D05,I18,a favor/ampliar,si,77,si,confirmada
+A5-D05,I10,a favor/ampliar,si,77,si,confirmada
+A5-D05,I22,a favor/ampliar,si,77,si,confirmada
+A5-D05,I01,a favor/ampliar,si,77,si,confirmada
+A5-D05,I15,a favor/ampliar,si,77,si,confirmada
+A5-D05,I04,a favor/ampliar,si,77,si,confirmada
+A5-D05,I09,a favor/ampliar,si,77,si,confirmada
+A5-D05,I09,a favor/ampliar,si,78,si,confirmada
+A5-D05,I15,a favor/ampliar,si,78,si,confirmada
+A5-D05,I08,a favor/ampliar,si,78,si,confirmada
+A5-D05,I19,a favor/ampliar,si,78,si,confirmada
+A5-D05,I20,a favor/ampliar,si,79,si,confirmada
+A5-D05,I24,a favor/ampliar,si,79,si,confirmada
+A5-D05,I03,a favor/ampliar,si,79,si,confirmada
+A5-D06,I02,a favor/ampliar,si,114,si,confirmada
+A5-D06,I24,a favor/ampliar,si,114,si,confirmada
+A5-D06,I01,a favor/ampliar,si,114,si,confirmada
+A5-D06,I16,a favor/ampliar,si,114,si,confirmada
+A5-D06,I10,a favor/ampliar,si,114,si,confirmada
+A5-D06,I09,a favor/ampliar,si,115,si,confirmada
+A5-D06,I04,a favor/ampliar,si,115,si,confirmada
+A5-D06,I15,a favor/ampliar,si,115,si,"baja del diccionario: cita presente, sin coincidencia de palabra clave en esa pagina"
+A5-D06,I21,a favor/ampliar,si,115,si,"baja del diccionario: cita presente, sin coincidencia de palabra clave en esa pagina"
+A5-D07,I18,a favor/ampliar,si,4,si,confirmada
+A5-D07,I09,a favor/ampliar,si,4,si,confirmada
+A5-D07,I09,a favor/ampliar,si,4,si,confirmada
+A5-D08,I02,a favor/ampliar,si,45,si,confirmada
+A5-D08,I04,a favor/ampliar,si,46,no,"baja del diccionario: cita presente, sin coincidencia de palabra clave en esa pagina"
+A5-D09,I02,a favor/ampliar,si,15,si,confirmada
+A5-D09,I03,a favor/ampliar,si,15,si,confirmada
+A5-D09,I04,a favor/ampliar,si,15,si,confirmada
+A5-D09,I18,a favor/ampliar,si,15,si,confirmada
+A5-D09,I07,a favor/ampliar,si,15,si,confirmada
+A5-D09,I04,a favor/ampliar,si,15,si,confirmada
+A5-D09,I27,a favor/ampliar,si,15,si,confirmada
+A5-D09,I10,a favor/ampliar,si,15,si,confirmada
+A5-D09,I08,a favor/ampliar,si,16,si,confirmada
+A5-D10,I14,a favor/ampliar,si,6,si,confirmada
+A5-D10,I01,derogar/reducir,si,6,si,confirmada
+A5-D04,I14,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I14,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I13,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I07,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I29,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I02,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I20,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I04,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I04,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I01,derogar/reducir,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I16,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I16,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,N1,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I01,derogar/reducir,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I28,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I07,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I08,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)
+A5-D04,I07,a favor/ampliar,,,,no verificable: sin documento oficial (excluido)

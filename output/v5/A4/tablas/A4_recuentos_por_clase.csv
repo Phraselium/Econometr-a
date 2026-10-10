@@ -1,0 +1,21 @@
+nivel,periodo,clase,etiqueta,n,n_C2,n_C4
+provincia,2021-2025,1,1 falta y es rentable,37,8,29
+provincia,2021-2025,2,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta),11,3,8
+provincia,2021-2025,3,3 falta y no es rentable,2,0,2
+provincia,2021-2025,4,4 no falta (deficit <= 0),0,0,0
+provincia,2021-2025,9,9 sin dato,2,0,2
+provincia,2012-2025,1,1 falta y es rentable,24,13,11
+provincia,2012-2025,2,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta),6,1,5
+provincia,2012-2025,3,3 falta y no es rentable,0,0,0
+provincia,2012-2025,4,4 no falta (deficit <= 0),20,8,12
+provincia,2012-2025,9,9 sin dato,2,0,2
+municipio,2021-2025,1,1 falta y es rentable,381,0,381
+municipio,2021-2025,2,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta),55,0,55
+municipio,2021-2025,3,3 falta y no es rentable,18,0,18
+municipio,2021-2025,4,4 no falta (deficit <= 0),247,0,247
+municipio,2021-2025,9,9 sin dato,2,0,2
+municipio,2012-2025,1,1 falta y es rentable,321,0,321
+municipio,2012-2025,2,2 falta con freno regulatorio o de suelo (precio > r(c+suelo) y oferta sin respuesta),32,0,32
+municipio,2012-2025,3,3 falta y no es rentable,8,0,8
+municipio,2012-2025,4,4 no falta (deficit <= 0),332,0,332
+municipio,2012-2025,9,9 sin dato,10,0,10

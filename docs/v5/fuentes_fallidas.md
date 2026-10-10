@@ -39,3 +39,13 @@ Solo se revisó lo versionado en el repositorio; no se hizo prueba de red en est
 |---|---|---|---|---|
 | Atlas de Áreas Urbanas (MIVAU) | https://www.mivau.gob.es (raíz) | — | 2026-10-10 | 403 desde el proxy; no está en el repositorio. Sustituto declarado: áreas = capital provincial (o municipio de mayor parque de viviendas, Censo 2021) y radio de 15-60 km sobre centroides de secciones INE 2021 (data/raw/v5/municipio_centroides_utm30.csv, generado por src/v5/r1b_fetch.py desde el zip local) |
 | BO H4 (sensibilidad Oster/CH) | — | — | 2026-10-10 | No ejecutado por presupuesto del módulo (BK-040 «si cabe») |
+
+## A4 (coste de construcción oficial, 2026-10-10)
+
+| Fuente | Endpoint probado | Edición | Fecha de la prueba | Resultado |
+|---|---|---|---|---|
+| (a) MBC, RD 1020/1993 (BOE-A-1993-19265) | https://www.boe.es/buscar/act.php?id=BOE-A-1993-19265 | consolidada 2025-12 | 2026-10-10 | DESCARGADA a data/raw/v5/a4_mbc_rd1020_1993.csv (src/v5/a4_fetch.py). Solo MBC1-MBC7 de 1993 (28.800-46.800 pta/m2) y coeficientes máximos (1,20-1,36). MBC vigentes por ponencia municipal y valores de referencia (Orden HFP/1104/2021 solo fija el factor de minoración): sin tabla agregada accesible; sede del Catastro devuelve formulario por inmueble. SIN DATO por provincia |
+| (b) Módulos/precios máximos VPO (RD 42/2022 BOE-A-2022-802; RD 326/2026 BOE-A-2026-8872; RD 106/2018 BOE-A-2018-3358) | texto consolidado BOE | 2018, 2022, 2026 | 2026-10-10 | Sin módulo de coste: el precio máximo lo fija cada CCAA. Subvenciones por m2 útil (hasta 1.000 EUR/m2 en el RD 326/2026, art. del programa de vivienda asequible) no son coste. Comunidad de Madrid y Generalitat de Cataluña: URL probadas 404; Junta de Andalucía: portal sin tabla de módulos. SIN DATO |
+| (c) PEM por m2 en licencias/visados (MIVAU Boletín Online, CSCAE) | https://apps.fomento.gob.es/BoletinOnline2/?nivel=2&orden=3x000000 (30-37); https://www.mivau.gob.es/vivienda/estadisticas-observatorio; https://www.cscae.com/index.php/es/estadisticas | — | 2026-10-10 | Boletín: las tablas de edificación son de unidades (iniciadas, terminadas, protegidas), sin presupuesto de ejecución material; MIVAU 403; CSCAE 404. SIN DATO |
+| INE ETCL / Eurostat sts_copi_q | data/raw/eurostat_costes.csv; data/raw/v5/ine_r1c_t6030.csv | 1980Q1-2026Q2 | 2026-10-10 | Solo evolución (índice 2021=100): se usa para actualizar el MBC de 1993; no da nivel |
+| Catastro (catastro.hacienda.gob.es/esp/valores_referencia.asp) | idem | — | 2026-10-10 | Túnel 502 |

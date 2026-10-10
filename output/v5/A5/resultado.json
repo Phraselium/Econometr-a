@@ -1,0 +1,138 @@
+{
+ "rama": "v5/A5",
+ "pregunta": "Que instrumentos de vivienda aparecen en los documentos oficiales programaticos y normativos, y con que direccion",
+ "capa": "C4",
+ "datos": "docs/v5/programas/inventario.csv",
+ "N": 22,
+ "metodo": "pdftotext por pagina + diccionario de terminos (castellano, catalan, gallego) + direccion por regla de verbos de supresion en ventana",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "documentos_oficiales_con_texto": 22,
+  "frases_coincidentes": 1253,
+  "filas_medidas_csv": 716,
+  "documentos_cota": [
+   "A5-D03"
+  ],
+  "estado_texto": {
+   "A5-D03": [
+    "texto",
+    5,
+    1359
+   ],
+   "A5-D05": [
+    "texto",
+    182,
+    104839
+   ],
+   "A5-D06": [
+    "texto",
+    132,
+    65467
+   ],
+   "A5-D07": [
+    "texto",
+    16,
+    3528
+   ],
+   "A5-D08": [
+    "texto",
+    52,
+    22442
+   ],
+   "A5-D09": [
+    "texto",
+    68,
+    17986
+   ],
+   "A5-D10": [
+    "texto",
+    6,
+    1572
+   ],
+   "A5-D11": [
+    "texto",
+    61,
+    36329
+   ],
+   "A5-D12": [
+    "texto",
+    97,
+    56683
+   ],
+   "A5-D17": [
+    "texto",
+    21,
+    11490
+   ],
+   "A5-D18": [
+    "texto",
+    17,
+    9429
+   ],
+   "A5-D19": [
+    "texto",
+    11,
+    6509
+   ],
+   "A5-D20": [
+    "texto",
+    4,
+    1760
+   ],
+   "A5-D21": [
+    "texto",
+    5,
+    2115
+   ],
+   "A5-D22": [
+    "texto",
+    5,
+    2350
+   ],
+   "A5-D23": [
+    "texto",
+    5,
+    2404
+   ],
+   "A5-D24": [
+    "texto",
+    4,
+    2275
+   ],
+   "A5-D25": [
+    "texto",
+    5,
+    2321
+   ],
+   "A5-D26": [
+    "texto",
+    14,
+    8044
+   ],
+   "A5-D27": [
+    "texto",
+    5,
+    2246
+   ],
+   "A5-D28": [
+    "texto",
+    15,
+    8854
+   ],
+   "A5-D29": [
+    "texto",
+    11,
+    5823
+   ]
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Recuentos de coincidencias de palabras clave, no de medidas validadas una a una; ver validacion_precision.csv. No se evaluan medidas."
+}

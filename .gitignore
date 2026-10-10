@@ -17,3 +17,5 @@ data/raw/catastro_urbana_municipios.csv
 data/raw/pdf/serpavi_v2_municipios.csv
 # v2: originales descargados (ficheros publicados; se re-descargan con FORCE=1)
 data/raw/v2_orig/
+# v3 D1 (INE): >50 MB o originales re-descargables
+data/raw/v3/cartografia/

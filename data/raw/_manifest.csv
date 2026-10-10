@@ -86,15 +86,15 @@ pdf/serpavi_v2_municipios.csv.gz,MIVAU-SERPAVI (AEAT IRPF),32402.0,2011-01-01,20
 v2_eventos_politica.csv,BOE/boletines oficiales,41.0,2013-06-05,2026-07-29,41.0,6.0,2026-10-10T06:14:59Z
 v2_zonas_tensionadas.csv,"BOE (Secretaría de Estado de Vivienda, art. 18 Ley 12/2023)",9.0,2024-03-16,2026-07-30,318.0,0.0,2026-10-10T06:14:59Z
 v3/airbnb_insideairbnb_agregados_v3.csv.gz,Inside Airbnb (CC BY 4.0; insideairbnb.com/get-the-data),45.0,2025-12-14,2026-09-28,17685.0,0.0,2026-10-10T12:06:19Z
-v3/cartografia/Cartografia_secc.zip,"INE Cartografía secciones censales 2021 (ZIP, sin extraer)",,,2021-01-01,,,2026-10-10T12:16:40Z
+v3/cartografia/Cartografia_secc.zip,"INE Cartografía secciones censales 2021 (ZIP, sin extraer)",,,2021-01-01,,,2026-10-10T12:17:20Z
 v3/eff_tenencia_edad_v3.csv,BdE EFF,168.0,2002-12-31,2022-12-31,336.0,0.0,2026-10-10T12:16:47Z
 v3/eurostat_emancipacion_tenencia_v3.csv,Eurostat ilc_lvps08 / ilc_lvho02,258.0,2004-01-01,2025-01-01,4587.0,0.0,2026-10-10T12:03:33Z
 v3/hut_registro_turismo_cat_v3.csv.gz,"Registre de Turisme de Catalunya - Establiments d'allotjament turístic (Socrata t2h3-cgys, Dept. Empresa i Treball; licencia Ver términos de uso)",16.0,2026-10-05,2026-10-05,5514.0,0.0,2026-10-10T12:06:51Z
 v3/incasol_fianzas_municipio_v3.csv.gz,Incasòl - fiances de lloguer (Socrata qww9-bvhh),9865.0,2007-01-01,2026-01-01,138315.0,19964.0,2026-10-10T12:03:33Z
 v3/ine_ecv_tenencia_edad_v3.csv,INE ECV,90.0,2004-01-01,2025-01-01,1800.0,0.0,2026-10-10T12:16:47Z
 v3/ine_v3_censo2021_municipio_viviendas.csv,INE Censo de Población y Viviendas 2021 (provisional),3.0,2021-11-01,2021-11-01,24396.0,0.0,2026-10-10T12:16:49Z
-v3/ine_v3_censo2021_seccion_edad.csv,INE Censo de Población y Viviendas 2021 (provisional),3.0,2021-11-01,2021-11-01,108079.0,0.0,2026-10-10T12:16:40Z
-v3/ine_v3_censo2021_seccion_indicadores.csv.gz,INE Censo de Población y Viviendas 2021 (provisional),36.0,2021-11-01,2021-11-01,1307988.0,47705.0,2026-10-10T12:16:37Z
+v3/ine_v3_censo2021_seccion_edad.csv,INE Censo de Población y Viviendas 2021 (provisional),3.0,2021-11-01,2021-11-01,108079.0,0.0,2026-10-10T12:17:20Z
+v3/ine_v3_censo2021_seccion_indicadores.csv.gz,INE Censo de Población y Viviendas 2021 (provisional),36.0,2021-11-01,2021-11-01,1307988.0,47705.0,2026-10-10T12:17:17Z
 v3/ine_v3_vut_municipio_pct.csv,INE Medición del número de viviendas turísticas (estadística experimental),8207.0,2020-08-01,2026-05-01,106524.0,4068.0,2026-10-10T12:17:00Z
 v3/madrid_alquiler_cp_v3.csv.gz,Comunidad de Madrid - alquiler medio por CP (1934258; origen no verificado),54.0,2023-01-01,2024-01-01,108.0,0.0,2026-10-10T12:03:33Z
 v3/serpavi_distritos_nacional_v3.csv.gz,"MIVAU-SERPAVI (IRPF, stock) distritos censales",100359.0,2011-01-01,2024-01-01,1099206.0,0.0,2026-10-10T12:03:33Z

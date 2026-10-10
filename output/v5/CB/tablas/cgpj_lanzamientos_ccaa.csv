@@ -1,0 +1,937 @@
+ccaa,tipo,año,lanzamientos
+Andalucia,total,2013,9266
+Andalucia,total,2014,10344
+Andalucia,total,2015,10694
+Andalucia,total,2016,9998
+Andalucia,total,2017,10437
+Andalucia,total,2018,9795
+Andalucia,total,2019,8806
+Andalucia,total,2020,4517
+Andalucia,total,2021,6615
+Andalucia,total,2022,6717
+Andalucia,total,2023,4449
+Andalucia,total,2024,4027
+Andalucia,total,2025,3782
+Aragon,total,2013,1787
+Aragon,total,2014,1736
+Aragon,total,2015,1749
+Aragon,total,2016,1723
+Aragon,total,2017,1789
+Aragon,total,2018,1565
+Aragon,total,2019,1234
+Aragon,total,2020,791
+Aragon,total,2021,873
+Aragon,total,2022,918
+Aragon,total,2023,642
+Aragon,total,2024,638
+Aragon,total,2025,631
+Asturias,total,2013,1178
+Asturias,total,2014,1241
+Asturias,total,2015,1228
+Asturias,total,2016,1144
+Asturias,total,2017,1085
+Asturias,total,2018,1091
+Asturias,total,2019,1000
+Asturias,total,2020,716
+Asturias,total,2021,743
+Asturias,total,2022,752
+Asturias,total,2023,485
+Asturias,total,2024,704
+Asturias,total,2025,603
+Illes Balears,total,2013,2446
+Illes Balears,total,2014,2518
+Illes Balears,total,2015,2347
+Illes Balears,total,2016,2291
+Illes Balears,total,2017,2129
+Illes Balears,total,2018,2001
+Illes Balears,total,2019,1834
+Illes Balears,total,2020,1109
+Illes Balears,total,2021,1351
+Illes Balears,total,2022,1209
+Illes Balears,total,2023,880
+Illes Balears,total,2024,880
+Illes Balears,total,2025,851
+Canarias,total,2013,4331
+Canarias,total,2014,4298
+Canarias,total,2015,4391
+Canarias,total,2016,3690
+Canarias,total,2017,3524
+Canarias,total,2018,3808
+Canarias,total,2019,3333
+Canarias,total,2020,1779
+Canarias,total,2021,2763
+Canarias,total,2022,2445
+Canarias,total,2023,1782
+Canarias,total,2024,1732
+Canarias,total,2025,1426
+Cantabria,total,2013,716
+Cantabria,total,2014,625
+Cantabria,total,2015,799
+Cantabria,total,2016,721
+Cantabria,total,2017,705
+Cantabria,total,2018,576
+Cantabria,total,2019,564
+Cantabria,total,2020,461
+Cantabria,total,2021,559
+Cantabria,total,2022,448
+Cantabria,total,2023,151
+Cantabria,total,2024,257
+Cantabria,total,2025,191
+Castilla y Leon,total,2013,2768
+Castilla y Leon,total,2014,2798
+Castilla y Leon,total,2015,2719
+Castilla y Leon,total,2016,2720
+Castilla y Leon,total,2017,2716
+Castilla y Leon,total,2018,2504
+Castilla y Leon,total,2019,2239
+Castilla y Leon,total,2020,1577
+Castilla y Leon,total,2021,1629
+Castilla y Leon,total,2022,1596
+Castilla y Leon,total,2023,1027
+Castilla y Leon,total,2024,1122
+Castilla y Leon,total,2025,875
+Castilla-La Mancha,total,2013,2762
+Castilla-La Mancha,total,2014,2299
+Castilla-La Mancha,total,2015,2664
+Castilla-La Mancha,total,2016,2364
+Castilla-La Mancha,total,2017,2420
+Castilla-La Mancha,total,2018,2401
+Castilla-La Mancha,total,2019,1745
+Castilla-La Mancha,total,2020,980
+Castilla-La Mancha,total,2021,1508
+Castilla-La Mancha,total,2022,1264
+Castilla-La Mancha,total,2023,748
+Castilla-La Mancha,total,2024,857
+Castilla-La Mancha,total,2025,740
+Cataluna,total,2013,16008
+Cataluna,total,2014,15606
+Cataluna,total,2015,15557
+Cataluna,total,2016,14069
+Cataluna,total,2017,13308
+Cataluna,total,2018,13941
+Cataluna,total,2019,12446
+Cataluna,total,2020,5737
+Cataluna,total,2021,9398
+Cataluna,total,2022,8574
+Cataluna,total,2023,7148
+Cataluna,total,2024,7381
+Cataluna,total,2025,6814
+C. Valenciana,total,2013,9776
+C. Valenciana,total,2014,10471
+C. Valenciana,total,2015,10037
+C. Valenciana,total,2016,9635
+C. Valenciana,total,2017,8207
+C. Valenciana,total,2018,8083
+C. Valenciana,total,2019,7390
+C. Valenciana,total,2020,4501
+C. Valenciana,total,2021,6182
+C. Valenciana,total,2022,5594
+C. Valenciana,total,2023,3869
+C. Valenciana,total,2024,3610
+C. Valenciana,total,2025,2992
+Extremadura,total,2013,656
+Extremadura,total,2014,770
+Extremadura,total,2015,721
+Extremadura,total,2016,748
+Extremadura,total,2017,636
+Extremadura,total,2018,697
+Extremadura,total,2019,612
+Extremadura,total,2020,339
+Extremadura,total,2021,448
+Extremadura,total,2022,415
+Extremadura,total,2023,280
+Extremadura,total,2024,269
+Extremadura,total,2025,261
+Galicia,total,2013,2404
+Galicia,total,2014,2519
+Galicia,total,2015,2432
+Galicia,total,2016,2384
+Galicia,total,2017,2493
+Galicia,total,2018,1709
+Galicia,total,2019,2271
+Galicia,total,2020,1398
+Galicia,total,2021,1667
+Galicia,total,2022,1559
+Galicia,total,2023,1171
+Galicia,total,2024,1191
+Galicia,total,2025,1046
+Madrid,total,2013,8753
+Madrid,total,2014,7966
+Madrid,total,2015,7194
+Madrid,total,2016,6674
+Madrid,total,2017,6476
+Madrid,total,2018,6435
+Madrid,total,2019,5936
+Madrid,total,2020,2872
+Madrid,total,2021,4039
+Madrid,total,2022,3679
+Madrid,total,2023,2367
+Madrid,total,2024,2756
+Madrid,total,2025,2267
+Murcia,total,2013,2391
+Murcia,total,2014,2840
+Murcia,total,2015,2750
+Murcia,total,2016,3063
+Murcia,total,2017,2789
+Murcia,total,2018,3178
+Murcia,total,2019,2934
+Murcia,total,2020,1504
+Murcia,total,2021,2239
+Murcia,total,2022,1857
+Murcia,total,2023,779
+Murcia,total,2024,1203
+Murcia,total,2025,780
+Navarra,total,2013,390
+Navarra,total,2014,384
+Navarra,total,2015,442
+Navarra,total,2016,416
+Navarra,total,2017,415
+Navarra,total,2018,377
+Navarra,total,2019,329
+Navarra,total,2020,220
+Navarra,total,2021,247
+Navarra,total,2022,230
+Navarra,total,2023,134
+Navarra,total,2024,156
+Navarra,total,2025,167
+Pais Vasco,total,2013,1151
+Pais Vasco,total,2014,1086
+Pais Vasco,total,2015,1147
+Pais Vasco,total,2016,960
+Pais Vasco,total,2017,1196
+Pais Vasco,total,2018,1191
+Pais Vasco,total,2019,1043
+Pais Vasco,total,2020,669
+Pais Vasco,total,2021,863
+Pais Vasco,total,2022,771
+Pais Vasco,total,2023,593
+Pais Vasco,total,2024,608
+Pais Vasco,total,2025,974
+La Rioja,total,2013,406
+La Rioja,total,2014,590
+La Rioja,total,2015,488
+La Rioja,total,2016,437
+La Rioja,total,2017,429
+La Rioja,total,2018,319
+La Rioja,total,2019,290
+La Rioja,total,2020,236
+La Rioja,total,2021,235
+La Rioja,total,2022,238
+La Rioja,total,2023,154
+La Rioja,total,2024,173
+La Rioja,total,2025,140
+Espana,total,2013,67189
+Espana,total,2014,68091
+Espana,total,2015,67359
+Espana,total,2016,63037
+Espana,total,2017,60754
+Espana,total,2018,59671
+Espana,total,2019,54006
+Espana,total,2020,29406
+Espana,total,2021,41359
+Espana,total,2022,38266
+Espana,total,2023,26659
+Espana,total,2024,27564
+Espana,total,2025,24540
+Andalucia,hipotecaria,2013,4280
+Andalucia,hipotecaria,2014,5285
+Andalucia,hipotecaria,2015,5707
+Andalucia,hipotecaria,2016,5193
+Andalucia,hipotecaria,2017,5150
+Andalucia,hipotecaria,2018,4082
+Andalucia,hipotecaria,2019,3117
+Andalucia,hipotecaria,2020,1349
+Andalucia,hipotecaria,2021,1886
+Andalucia,hipotecaria,2022,1746
+Andalucia,hipotecaria,2023,1135
+Andalucia,hipotecaria,2024,994
+Andalucia,hipotecaria,2025,913
+Aragon,hipotecaria,2013,685
+Aragon,hipotecaria,2014,748
+Aragon,hipotecaria,2015,785
+Aragon,hipotecaria,2016,681
+Aragon,hipotecaria,2017,659
+Aragon,hipotecaria,2018,436
+Aragon,hipotecaria,2019,280
+Aragon,hipotecaria,2020,152
+Aragon,hipotecaria,2021,264
+Aragon,hipotecaria,2022,200
+Aragon,hipotecaria,2023,131
+Aragon,hipotecaria,2024,92
+Aragon,hipotecaria,2025,104
+Asturias,hipotecaria,2013,301
+Asturias,hipotecaria,2014,343
+Asturias,hipotecaria,2015,360
+Asturias,hipotecaria,2016,281
+Asturias,hipotecaria,2017,283
+Asturias,hipotecaria,2018,230
+Asturias,hipotecaria,2019,158
+Asturias,hipotecaria,2020,108
+Asturias,hipotecaria,2021,131
+Asturias,hipotecaria,2022,108
+Asturias,hipotecaria,2023,46
+Asturias,hipotecaria,2024,88
+Asturias,hipotecaria,2025,95
+Illes Balears,hipotecaria,2013,824
+Illes Balears,hipotecaria,2014,889
+Illes Balears,hipotecaria,2015,865
+Illes Balears,hipotecaria,2016,802
+Illes Balears,hipotecaria,2017,636
+Illes Balears,hipotecaria,2018,428
+Illes Balears,hipotecaria,2019,297
+Illes Balears,hipotecaria,2020,138
+Illes Balears,hipotecaria,2021,158
+Illes Balears,hipotecaria,2022,113
+Illes Balears,hipotecaria,2023,93
+Illes Balears,hipotecaria,2024,96
+Illes Balears,hipotecaria,2025,89
+Canarias,hipotecaria,2013,1905
+Canarias,hipotecaria,2014,2042
+Canarias,hipotecaria,2015,2159
+Canarias,hipotecaria,2016,1644
+Canarias,hipotecaria,2017,1246
+Canarias,hipotecaria,2018,1163
+Canarias,hipotecaria,2019,842
+Canarias,hipotecaria,2020,382
+Canarias,hipotecaria,2021,500
+Canarias,hipotecaria,2022,429
+Canarias,hipotecaria,2023,283
+Canarias,hipotecaria,2024,306
+Canarias,hipotecaria,2025,224
+Cantabria,hipotecaria,2013,205
+Cantabria,hipotecaria,2014,219
+Cantabria,hipotecaria,2015,311
+Cantabria,hipotecaria,2016,216
+Cantabria,hipotecaria,2017,165
+Cantabria,hipotecaria,2018,110
+Cantabria,hipotecaria,2019,102
+Cantabria,hipotecaria,2020,77
+Cantabria,hipotecaria,2021,125
+Cantabria,hipotecaria,2022,87
+Cantabria,hipotecaria,2023,18
+Cantabria,hipotecaria,2024,34
+Cantabria,hipotecaria,2025,20
+Castilla y Leon,hipotecaria,2013,910
+Castilla y Leon,hipotecaria,2014,1087
+Castilla y Leon,hipotecaria,2015,1102
+Castilla y Leon,hipotecaria,2016,1006
+Castilla y Leon,hipotecaria,2017,849
+Castilla y Leon,hipotecaria,2018,679
+Castilla y Leon,hipotecaria,2019,479
+Castilla y Leon,hipotecaria,2020,253
+Castilla y Leon,hipotecaria,2021,394
+Castilla y Leon,hipotecaria,2022,416
+Castilla y Leon,hipotecaria,2023,176
+Castilla y Leon,hipotecaria,2024,197
+Castilla y Leon,hipotecaria,2025,132
+Castilla-La Mancha,hipotecaria,2013,1519
+Castilla-La Mancha,hipotecaria,2014,1194
+Castilla-La Mancha,hipotecaria,2015,1430
+Castilla-La Mancha,hipotecaria,2016,1251
+Castilla-La Mancha,hipotecaria,2017,1164
+Castilla-La Mancha,hipotecaria,2018,957
+Castilla-La Mancha,hipotecaria,2019,544
+Castilla-La Mancha,hipotecaria,2020,249
+Castilla-La Mancha,hipotecaria,2021,516
+Castilla-La Mancha,hipotecaria,2022,269
+Castilla-La Mancha,hipotecaria,2023,130
+Castilla-La Mancha,hipotecaria,2024,174
+Castilla-La Mancha,hipotecaria,2025,136
+Cataluna,hipotecaria,2013,4426
+Cataluna,hipotecaria,2014,4861
+Cataluna,hipotecaria,2015,5337
+Cataluna,hipotecaria,2016,4452
+Cataluna,hipotecaria,2017,3832
+Cataluna,hipotecaria,2018,3778
+Cataluna,hipotecaria,2019,2618
+Cataluna,hipotecaria,2020,1069
+Cataluna,hipotecaria,2021,1766
+Cataluna,hipotecaria,2022,1567
+Cataluna,hipotecaria,2023,1264
+Cataluna,hipotecaria,2024,1121
+Cataluna,hipotecaria,2025,1050
+C. Valenciana,hipotecaria,2013,5353
+C. Valenciana,hipotecaria,2014,6268
+C. Valenciana,hipotecaria,2015,5767
+C. Valenciana,hipotecaria,2016,5398
+C. Valenciana,hipotecaria,2017,3885
+C. Valenciana,hipotecaria,2018,3344
+C. Valenciana,hipotecaria,2019,2633
+C. Valenciana,hipotecaria,2020,1620
+C. Valenciana,hipotecaria,2021,2192
+C. Valenciana,hipotecaria,2022,1902
+C. Valenciana,hipotecaria,2023,1049
+C. Valenciana,hipotecaria,2024,915
+C. Valenciana,hipotecaria,2025,637
+Extremadura,hipotecaria,2013,281
+Extremadura,hipotecaria,2014,358
+Extremadura,hipotecaria,2015,343
+Extremadura,hipotecaria,2016,324
+Extremadura,hipotecaria,2017,207
+Extremadura,hipotecaria,2018,229
+Extremadura,hipotecaria,2019,155
+Extremadura,hipotecaria,2020,81
+Extremadura,hipotecaria,2021,104
+Extremadura,hipotecaria,2022,71
+Extremadura,hipotecaria,2023,65
+Extremadura,hipotecaria,2024,42
+Extremadura,hipotecaria,2025,53
+Galicia,hipotecaria,2013,608
+Galicia,hipotecaria,2014,803
+Galicia,hipotecaria,2015,800
+Galicia,hipotecaria,2016,766
+Galicia,hipotecaria,2017,757
+Galicia,hipotecaria,2018,410
+Galicia,hipotecaria,2019,396
+Galicia,hipotecaria,2020,206
+Galicia,hipotecaria,2021,336
+Galicia,hipotecaria,2022,277
+Galicia,hipotecaria,2023,164
+Galicia,hipotecaria,2024,181
+Galicia,hipotecaria,2025,118
+Madrid,hipotecaria,2013,2657
+Madrid,hipotecaria,2014,2211
+Madrid,hipotecaria,2015,1736
+Madrid,hipotecaria,2016,1657
+Madrid,hipotecaria,2017,1336
+Madrid,hipotecaria,2018,1038
+Madrid,hipotecaria,2019,859
+Madrid,hipotecaria,2020,377
+Madrid,hipotecaria,2021,541
+Madrid,hipotecaria,2022,366
+Madrid,hipotecaria,2023,280
+Madrid,hipotecaria,2024,293
+Madrid,hipotecaria,2025,252
+Murcia,hipotecaria,2013,1318
+Murcia,hipotecaria,2014,1917
+Murcia,hipotecaria,2015,1851
+Murcia,hipotecaria,2016,2127
+Murcia,hipotecaria,2017,1597
+Murcia,hipotecaria,2018,1636
+Murcia,hipotecaria,2019,1427
+Murcia,hipotecaria,2020,692
+Murcia,hipotecaria,2021,929
+Murcia,hipotecaria,2022,721
+Murcia,hipotecaria,2023,315
+Murcia,hipotecaria,2024,423
+Murcia,hipotecaria,2025,254
+Navarra,hipotecaria,2013,98
+Navarra,hipotecaria,2014,144
+Navarra,hipotecaria,2015,191
+Navarra,hipotecaria,2016,167
+Navarra,hipotecaria,2017,154
+Navarra,hipotecaria,2018,97
+Navarra,hipotecaria,2019,57
+Navarra,hipotecaria,2020,36
+Navarra,hipotecaria,2021,35
+Navarra,hipotecaria,2022,45
+Navarra,hipotecaria,2023,21
+Navarra,hipotecaria,2024,17
+Navarra,hipotecaria,2025,30
+Pais Vasco,hipotecaria,2013,273
+Pais Vasco,hipotecaria,2014,231
+Pais Vasco,hipotecaria,2015,268
+Pais Vasco,hipotecaria,2016,256
+Pais Vasco,hipotecaria,2017,249
+Pais Vasco,hipotecaria,2018,235
+Pais Vasco,hipotecaria,2019,165
+Pais Vasco,hipotecaria,2020,76
+Pais Vasco,hipotecaria,2021,169
+Pais Vasco,hipotecaria,2022,141
+Pais Vasco,hipotecaria,2023,55
+Pais Vasco,hipotecaria,2024,78
+Pais Vasco,hipotecaria,2025,216
+La Rioja,hipotecaria,2013,168
+La Rioja,hipotecaria,2014,277
+La Rioja,hipotecaria,2015,213
+La Rioja,hipotecaria,2016,176
+La Rioja,hipotecaria,2017,161
+La Rioja,hipotecaria,2018,93
+La Rioja,hipotecaria,2019,64
+La Rioja,hipotecaria,2020,50
+La Rioja,hipotecaria,2021,57
+La Rioja,hipotecaria,2022,51
+La Rioja,hipotecaria,2023,35
+La Rioja,hipotecaria,2024,22
+La Rioja,hipotecaria,2025,23
+Espana,hipotecaria,2013,25811
+Espana,hipotecaria,2014,28877
+Espana,hipotecaria,2015,29225
+Espana,hipotecaria,2016,26397
+Espana,hipotecaria,2017,22330
+Espana,hipotecaria,2018,18945
+Espana,hipotecaria,2019,14193
+Espana,hipotecaria,2020,6915
+Espana,hipotecaria,2021,10103
+Espana,hipotecaria,2022,8509
+Espana,hipotecaria,2023,5260
+Espana,hipotecaria,2024,5073
+Espana,hipotecaria,2025,4346
+Andalucia,LAU,2013,4475
+Andalucia,LAU,2014,4408
+Andalucia,LAU,2015,4469
+Andalucia,LAU,2016,4364
+Andalucia,LAU,2017,4713
+Andalucia,LAU,2018,5093
+Andalucia,LAU,2019,5135
+Andalucia,LAU,2020,2942
+Andalucia,LAU,2021,4315
+Andalucia,LAU,2022,4506
+Andalucia,LAU,2023,2961
+Andalucia,LAU,2024,2712
+Andalucia,LAU,2025,2600
+Aragon,LAU,2013,1020
+Aragon,LAU,2014,921
+Aragon,LAU,2015,924
+Aragon,LAU,2016,957
+Aragon,LAU,2017,1070
+Aragon,LAU,2018,1090
+Aragon,LAU,2019,915
+Aragon,LAU,2020,609
+Aragon,LAU,2021,569
+Aragon,LAU,2022,685
+Aragon,LAU,2023,491
+Aragon,LAU,2024,517
+Aragon,LAU,2025,505
+Asturias,LAU,2013,798
+Asturias,LAU,2014,779
+Asturias,LAU,2015,814
+Asturias,LAU,2016,791
+Asturias,LAU,2017,762
+Asturias,LAU,2018,811
+Asturias,LAU,2019,777
+Asturias,LAU,2020,590
+Asturias,LAU,2021,598
+Asturias,LAU,2022,621
+Asturias,LAU,2023,422
+Asturias,LAU,2024,571
+Asturias,LAU,2025,467
+Illes Balears,LAU,2013,1580
+Illes Balears,LAU,2014,1587
+Illes Balears,LAU,2015,1438
+Illes Balears,LAU,2016,1468
+Illes Balears,LAU,2017,1465
+Illes Balears,LAU,2018,1528
+Illes Balears,LAU,2019,1470
+Illes Balears,LAU,2020,926
+Illes Balears,LAU,2021,1156
+Illes Balears,LAU,2022,1036
+Illes Balears,LAU,2023,747
+Illes Balears,LAU,2024,745
+Illes Balears,LAU,2025,731
+Canarias,LAU,2013,2176
+Canarias,LAU,2014,2086
+Canarias,LAU,2015,2139
+Canarias,LAU,2016,1913
+Canarias,LAU,2017,2096
+Canarias,LAU,2018,2450
+Canarias,LAU,2019,2343
+Canarias,LAU,2020,1338
+Canarias,LAU,2021,2154
+Canarias,LAU,2022,1887
+Canarias,LAU,2023,1398
+Canarias,LAU,2024,1302
+Canarias,LAU,2025,1129
+Cantabria,LAU,2013,433
+Cantabria,LAU,2014,350
+Cantabria,LAU,2015,462
+Cantabria,LAU,2016,438
+Cantabria,LAU,2017,505
+Cantabria,LAU,2018,427
+Cantabria,LAU,2019,428
+Cantabria,LAU,2020,371
+Cantabria,LAU,2021,410
+Cantabria,LAU,2022,350
+Cantabria,LAU,2023,123
+Cantabria,LAU,2024,207
+Cantabria,LAU,2025,150
+Castilla y Leon,LAU,2013,1689
+Castilla y Leon,LAU,2014,1583
+Castilla y Leon,LAU,2015,1410
+Castilla y Leon,LAU,2016,1551
+Castilla y Leon,LAU,2017,1658
+Castilla y Leon,LAU,2018,1652
+Castilla y Leon,LAU,2019,1638
+Castilla y Leon,LAU,2020,1256
+Castilla y Leon,LAU,2021,1133
+Castilla y Leon,LAU,2022,1090
+Castilla y Leon,LAU,2023,794
+Castilla y Leon,LAU,2024,825
+Castilla y Leon,LAU,2025,646
+Castilla-La Mancha,LAU,2013,1161
+Castilla-La Mancha,LAU,2014,989
+Castilla-La Mancha,LAU,2015,1105
+Castilla-La Mancha,LAU,2016,1018
+Castilla-La Mancha,LAU,2017,1172
+Castilla-La Mancha,LAU,2018,1312
+Castilla-La Mancha,LAU,2019,1144
+Castilla-La Mancha,LAU,2020,708
+Castilla-La Mancha,LAU,2021,941
+Castilla-La Mancha,LAU,2022,925
+Castilla-La Mancha,LAU,2023,573
+Castilla-La Mancha,LAU,2024,646
+Castilla-La Mancha,LAU,2025,518
+Cataluna,LAU,2013,10817
+Cataluna,LAU,2014,10009
+Cataluna,LAU,2015,9685
+Cataluna,LAU,2016,8971
+Cataluna,LAU,2017,8624
+Cataluna,LAU,2018,8877
+Cataluna,LAU,2019,8427
+Cataluna,LAU,2020,4211
+Cataluna,LAU,2021,6729
+Cataluna,LAU,2022,6160
+Cataluna,LAU,2023,5158
+Cataluna,LAU,2024,5539
+Cataluna,LAU,2025,5025
+C. Valenciana,LAU,2013,4164
+C. Valenciana,LAU,2014,3928
+C. Valenciana,LAU,2015,4034
+C. Valenciana,LAU,2016,4056
+C. Valenciana,LAU,2017,4134
+C. Valenciana,LAU,2018,4485
+C. Valenciana,LAU,2019,4486
+C. Valenciana,LAU,2020,2765
+C. Valenciana,LAU,2021,3807
+C. Valenciana,LAU,2022,3511
+C. Valenciana,LAU,2023,2673
+C. Valenciana,LAU,2024,2517
+C. Valenciana,LAU,2025,2158
+Extremadura,LAU,2013,344
+Extremadura,LAU,2014,373
+Extremadura,LAU,2015,334
+Extremadura,LAU,2016,384
+Extremadura,LAU,2017,391
+Extremadura,LAU,2018,428
+Extremadura,LAU,2019,410
+Extremadura,LAU,2020,236
+Extremadura,LAU,2021,310
+Extremadura,LAU,2022,319
+Extremadura,LAU,2023,201
+Extremadura,LAU,2024,200
+Extremadura,LAU,2025,167
+Galicia,LAU,2013,1611
+Galicia,LAU,2014,1558
+Galicia,LAU,2015,1507
+Galicia,LAU,2016,1544
+Galicia,LAU,2017,1639
+Galicia,LAU,2018,1245
+Galicia,LAU,2019,1800
+Galicia,LAU,2020,1150
+Galicia,LAU,2021,1294
+Galicia,LAU,2022,1246
+Galicia,LAU,2023,963
+Galicia,LAU,2024,959
+Galicia,LAU,2025,876
+Madrid,LAU,2013,5553
+Madrid,LAU,2014,5373
+Madrid,LAU,2015,5278
+Madrid,LAU,2016,4760
+Madrid,LAU,2017,5001
+Madrid,LAU,2018,5157
+Madrid,LAU,2019,4850
+Madrid,LAU,2020,2398
+Madrid,LAU,2021,3327
+Madrid,LAU,2022,3230
+Madrid,LAU,2023,2029
+Madrid,LAU,2024,2375
+Madrid,LAU,2025,1931
+Murcia,LAU,2013,1014
+Murcia,LAU,2014,861
+Murcia,LAU,2015,826
+Murcia,LAU,2016,864
+Murcia,LAU,2017,1108
+Murcia,LAU,2018,1419
+Murcia,LAU,2019,1359
+Murcia,LAU,2020,744
+Murcia,LAU,2021,1223
+Murcia,LAU,2022,1018
+Murcia,LAU,2023,406
+Murcia,LAU,2024,678
+Murcia,LAU,2025,458
+Navarra,LAU,2013,274
+Navarra,LAU,2014,230
+Navarra,LAU,2015,240
+Navarra,LAU,2016,237
+Navarra,LAU,2017,254
+Navarra,LAU,2018,255
+Navarra,LAU,2019,262
+Navarra,LAU,2020,169
+Navarra,LAU,2021,201
+Navarra,LAU,2022,175
+Navarra,LAU,2023,108
+Navarra,LAU,2024,133
+Navarra,LAU,2025,135
+Pais Vasco,LAU,2013,813
+Pais Vasco,LAU,2014,726
+Pais Vasco,LAU,2015,748
+Pais Vasco,LAU,2016,632
+Pais Vasco,LAU,2017,834
+Pais Vasco,LAU,2018,847
+Pais Vasco,LAU,2019,806
+Pais Vasco,LAU,2020,553
+Pais Vasco,LAU,2021,659
+Pais Vasco,LAU,2022,595
+Pais Vasco,LAU,2023,518
+Pais Vasco,LAU,2024,498
+Pais Vasco,LAU,2025,716
+La Rioja,LAU,2013,219
+La Rioja,LAU,2014,283
+La Rioja,LAU,2015,264
+La Rioja,LAU,2016,245
+La Rioja,LAU,2017,240
+La Rioja,LAU,2018,209
+La Rioja,LAU,2019,218
+La Rioja,LAU,2020,179
+La Rioja,LAU,2021,167
+La Rioja,LAU,2022,179
+La Rioja,LAU,2023,111
+La Rioja,LAU,2024,134
+La Rioja,LAU,2025,105
+Espana,LAU,2013,38141
+Espana,LAU,2014,36044
+Espana,LAU,2015,35677
+Espana,LAU,2016,34193
+Espana,LAU,2017,35666
+Espana,LAU,2018,37285
+Espana,LAU,2019,36468
+Espana,LAU,2020,21145
+Espana,LAU,2021,28993
+Espana,LAU,2022,27533
+Espana,LAU,2023,19676
+Espana,LAU,2024,20558
+Espana,LAU,2025,18317
+Andalucia,otros,2013,511
+Andalucia,otros,2014,651
+Andalucia,otros,2015,518
+Andalucia,otros,2016,441
+Andalucia,otros,2017,574
+Andalucia,otros,2018,620
+Andalucia,otros,2019,554
+Andalucia,otros,2020,226
+Andalucia,otros,2021,414
+Andalucia,otros,2022,466
+Andalucia,otros,2023,353
+Andalucia,otros,2024,321
+Andalucia,otros,2025,269
+Aragon,otros,2013,82
+Aragon,otros,2014,67
+Aragon,otros,2015,40
+Aragon,otros,2016,85
+Aragon,otros,2017,60
+Aragon,otros,2018,39
+Aragon,otros,2019,39
+Aragon,otros,2020,30
+Aragon,otros,2021,40
+Aragon,otros,2022,33
+Aragon,otros,2023,20
+Aragon,otros,2024,29
+Aragon,otros,2025,22
+Asturias,otros,2013,79
+Asturias,otros,2014,119
+Asturias,otros,2015,54
+Asturias,otros,2016,72
+Asturias,otros,2017,40
+Asturias,otros,2018,50
+Asturias,otros,2019,65
+Asturias,otros,2020,18
+Asturias,otros,2021,14
+Asturias,otros,2022,23
+Asturias,otros,2023,17
+Asturias,otros,2024,45
+Asturias,otros,2025,41
+Illes Balears,otros,2013,42
+Illes Balears,otros,2014,42
+Illes Balears,otros,2015,44
+Illes Balears,otros,2016,21
+Illes Balears,otros,2017,28
+Illes Balears,otros,2018,45
+Illes Balears,otros,2019,67
+Illes Balears,otros,2020,45
+Illes Balears,otros,2021,37
+Illes Balears,otros,2022,60
+Illes Balears,otros,2023,40
+Illes Balears,otros,2024,39
+Illes Balears,otros,2025,31
+Canarias,otros,2013,250
+Canarias,otros,2014,170
+Canarias,otros,2015,93
+Canarias,otros,2016,133
+Canarias,otros,2017,182
+Canarias,otros,2018,195
+Canarias,otros,2019,148
+Canarias,otros,2020,59
+Canarias,otros,2021,109
+Canarias,otros,2022,129
+Canarias,otros,2023,101
+Canarias,otros,2024,124
+Canarias,otros,2025,73
+Cantabria,otros,2013,78
+Cantabria,otros,2014,56
+Cantabria,otros,2015,26
+Cantabria,otros,2016,67
+Cantabria,otros,2017,35
+Cantabria,otros,2018,39
+Cantabria,otros,2019,34
+Cantabria,otros,2020,13
+Cantabria,otros,2021,24
+Cantabria,otros,2022,11
+Cantabria,otros,2023,10
+Cantabria,otros,2024,16
+Cantabria,otros,2025,21
+Castilla y Leon,otros,2013,169
+Castilla y Leon,otros,2014,128
+Castilla y Leon,otros,2015,207
+Castilla y Leon,otros,2016,163
+Castilla y Leon,otros,2017,209
+Castilla y Leon,otros,2018,173
+Castilla y Leon,otros,2019,122
+Castilla y Leon,otros,2020,68
+Castilla y Leon,otros,2021,102
+Castilla y Leon,otros,2022,90
+Castilla y Leon,otros,2023,57
+Castilla y Leon,otros,2024,100
+Castilla y Leon,otros,2025,97
+Castilla-La Mancha,otros,2013,82
+Castilla-La Mancha,otros,2014,116
+Castilla-La Mancha,otros,2015,129
+Castilla-La Mancha,otros,2016,95
+Castilla-La Mancha,otros,2017,84
+Castilla-La Mancha,otros,2018,132
+Castilla-La Mancha,otros,2019,57
+Castilla-La Mancha,otros,2020,23
+Castilla-La Mancha,otros,2021,51
+Castilla-La Mancha,otros,2022,70
+Castilla-La Mancha,otros,2023,45
+Castilla-La Mancha,otros,2024,37
+Castilla-La Mancha,otros,2025,86
+Cataluna,otros,2013,765
+Cataluna,otros,2014,736
+Cataluna,otros,2015,535
+Cataluna,otros,2016,646
+Cataluna,otros,2017,852
+Cataluna,otros,2018,1286
+Cataluna,otros,2019,1401
+Cataluna,otros,2020,457
+Cataluna,otros,2021,903
+Cataluna,otros,2022,847
+Cataluna,otros,2023,726
+Cataluna,otros,2024,721
+Cataluna,otros,2025,739
+C. Valenciana,otros,2013,259
+C. Valenciana,otros,2014,275
+C. Valenciana,otros,2015,236
+C. Valenciana,otros,2016,181
+C. Valenciana,otros,2017,188
+C. Valenciana,otros,2018,254
+C. Valenciana,otros,2019,271
+C. Valenciana,otros,2020,116
+C. Valenciana,otros,2021,183
+C. Valenciana,otros,2022,181
+C. Valenciana,otros,2023,147
+C. Valenciana,otros,2024,178
+C. Valenciana,otros,2025,197
+Extremadura,otros,2013,31
+Extremadura,otros,2014,39
+Extremadura,otros,2015,44
+Extremadura,otros,2016,40
+Extremadura,otros,2017,38
+Extremadura,otros,2018,40
+Extremadura,otros,2019,47
+Extremadura,otros,2020,22
+Extremadura,otros,2021,34
+Extremadura,otros,2022,25
+Extremadura,otros,2023,14
+Extremadura,otros,2024,27
+Extremadura,otros,2025,41
+Galicia,otros,2013,185
+Galicia,otros,2014,158
+Galicia,otros,2015,125
+Galicia,otros,2016,74
+Galicia,otros,2017,97
+Galicia,otros,2018,54
+Galicia,otros,2019,75
+Galicia,otros,2020,42
+Galicia,otros,2021,37
+Galicia,otros,2022,36
+Galicia,otros,2023,44
+Galicia,otros,2024,51
+Galicia,otros,2025,52
+Madrid,otros,2013,543
+Madrid,otros,2014,382
+Madrid,otros,2015,180
+Madrid,otros,2016,257
+Madrid,otros,2017,139
+Madrid,otros,2018,240
+Madrid,otros,2019,228
+Madrid,otros,2020,97
+Madrid,otros,2021,171
+Madrid,otros,2022,83
+Madrid,otros,2023,58
+Madrid,otros,2024,88
+Madrid,otros,2025,84
+Murcia,otros,2013,59
+Murcia,otros,2014,62
+Murcia,otros,2015,73
+Murcia,otros,2016,72
+Murcia,otros,2017,84
+Murcia,otros,2018,123
+Murcia,otros,2019,148
+Murcia,otros,2020,68
+Murcia,otros,2021,87
+Murcia,otros,2022,118
+Murcia,otros,2023,58
+Murcia,otros,2024,102
+Murcia,otros,2025,68
+Navarra,otros,2013,18
+Navarra,otros,2014,10
+Navarra,otros,2015,11
+Navarra,otros,2016,12
+Navarra,otros,2017,7
+Navarra,otros,2018,25
+Navarra,otros,2019,10
+Navarra,otros,2020,15
+Navarra,otros,2021,11
+Navarra,otros,2022,10
+Navarra,otros,2023,5
+Navarra,otros,2024,6
+Navarra,otros,2025,2
+Pais Vasco,otros,2013,65
+Pais Vasco,otros,2014,129
+Pais Vasco,otros,2015,131
+Pais Vasco,otros,2016,72
+Pais Vasco,otros,2017,113
+Pais Vasco,otros,2018,109
+Pais Vasco,otros,2019,72
+Pais Vasco,otros,2020,40
+Pais Vasco,otros,2021,35
+Pais Vasco,otros,2022,35
+Pais Vasco,otros,2023,20
+Pais Vasco,otros,2024,32
+Pais Vasco,otros,2025,42
+La Rioja,otros,2013,19
+La Rioja,otros,2014,30
+La Rioja,otros,2015,11
+La Rioja,otros,2016,16
+La Rioja,otros,2017,28
+La Rioja,otros,2018,17
+La Rioja,otros,2019,8
+La Rioja,otros,2020,7
+La Rioja,otros,2021,11
+La Rioja,otros,2022,8
+La Rioja,otros,2023,8
+La Rioja,otros,2024,17
+La Rioja,otros,2025,12
+Espana,otros,2013,3237
+Espana,otros,2014,3170
+Espana,otros,2015,2457
+Espana,otros,2016,2447
+Espana,otros,2017,2758
+Espana,otros,2018,3441
+Espana,otros,2019,3346
+Espana,otros,2020,1346
+Espana,otros,2021,2263
+Espana,otros,2022,2225
+Espana,otros,2023,1723
+Espana,otros,2024,1933
+Espana,otros,2025,1877

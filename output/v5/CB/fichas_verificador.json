@@ -1,0 +1,47 @@
+[
+ {
+  "id": "CB-V1",
+  "tema": "Seguridad juridica y oferta",
+  "enunciado": "La ocupacion ilegal reduce la oferta de alquiler.",
+  "capa": "C4",
+  "magnitud": "N=17 CCAA; Spearman usurpacion/100.000 viv. con cuota de alquiler: rho=0.66 (p Holm 0.04); verbales posesorios con cuota: rho=0.61 (p Holm 0.05). El signo es positivo (mas usurpaciones donde hay mas alquiler), contrario al de la afirmacion; es compatible con que ambas magnitudes crecen con la urbanizacion. Sin diseno que identifique un efecto.",
+  "intervalo": null,
+  "cota": "Sin cota (C4)",
+  "literatura": "No consultada en este modulo",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Con C4 y sin identificacion, como maximo ANALIZADA, NO CONCLUYENTE.",
+  "limites": "Una asociacion entre CCAA no distingue oferta, demanda ni composicion; el denominador (viviendas) y el numerador (denuncias) dependen del tamano del parque; el delito de usurpacion incluye inmuebles que no son vivienda; fianzas por CCAA no disponibles.",
+  "evidencia": "CGPJ 1T 2026; Interior 2025; INE Censo 2021 y ECV 2025; tablas en output/v5/CB/tablas",
+  "convenciones": "Cifras con fecha del dato; sin lenguaje causal"
+ },
+ {
+  "id": "CB-V2",
+  "tema": "Arrendadores",
+  "enunciado": "La mayoria de los caseros son pequenos propietarios.",
+  "capa": "C4",
+  "magnitud": "Personas fisicas declaran 2.333.816 viviendas equivalentes arrendadas como vivienda habitual (IRPF 2024); el residual PJ+publico+no declarado es 16.9-38.1 % del stock; 0.81 viviendas equivalentes por declarante con ingresos de capital inmobiliario.",
+  "intervalo": null,
+  "cota": "Sin cota (C4)",
+  "literatura": "No consultada en este modulo",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Falta la distribucion por numero de inmuebles (1, 2-4, >=5): la AEAT no la publica; el promedio no la sustituye. Los datos acotan el peso de las personas juridicas, no el tamano de las carteras de las personas fisicas.",
+  "limites": "Fechas distintas entre fuentes; Navarra y Pais Vasco fuera de la AEAT; copropiedad cuenta como declarantes separados.",
+  "evidencia": "AEAT IRPF 2024; INE Censo 2021, ECV 2025, ECH 2025T4",
+  "convenciones": "Cifras con fecha del dato; sin lenguaje causal"
+ },
+ {
+  "id": "CB-V3",
+  "tema": "Empresas en el alquiler",
+  "enunciado": "Las empresas y fondos dominan el alquiler.",
+  "capa": "C4",
+  "magnitud": "Flujo de compra con comprador PJ: 11.3 % de compraventas (ETDP 2024). Stock: el residual PJ+publico+no declarado es 16.9-38.1 % del alquiler principal, una cota superior del peso de las empresas bajo esos supuestos.",
+  "intervalo": null,
+  "cota": "Sin cota (C4)",
+  "literatura": "No consultada en este modulo",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Bajo los supuestos declarados, ninguna de las dos estimaciones del residual alcanza el 50 % del stock de vivienda principal en alquiler; ambas son C4 (fechas distintas, fuente unica del Censo, discrepancia entre ellas) y no miden el peso por zonas ni por tamano de cartera.",
+  "limites": "No se localizo Catastro por naturaleza del titular, Notariado ni Censo por tipo de arrendador; concentracion local (grandes ciudades) no medida.",
+  "evidencia": "INE ETDP 2024; AEAT 2024; INE Censo 2021; INE ECV 2025",
+  "convenciones": "Cifras con fecha del dato; sin lenguaje causal"
+ }
+]

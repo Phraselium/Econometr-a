@@ -85,3 +85,19 @@ Prueba del 2026-10-10 contra la API Tempus del INE (https://servicios.ine.es/wst
 | Notariado, porcentaje de compraventas con préstamo hipotecario | notariado.org/liferay/web/cien/estadisticas-al-completo (getFiltrosWeb: 404/HTML); penotariado.com (exige cuenta, ver docs/fallidas/notariado.md) | Sin serie accesible de compraventas ni de financiadas | Ninguna: tercera fuente de C3 sin dato |
 | Registradores, % de compras con hipoteca | opendata.registradores.org (solo compraventas); ERI Anuarios 2023-2025 (PDF local) | No publica el porcentaje; sí el número de hipotecas sobre vivienda (2022-2025, texto del capítulo 17) | Razón hipotecas/compraventas 2022-2025 |
 | Eurostat, nivel de precio de la vivienda comparable (€/m²) | datasets pedidos (prc_hpi_a es índice 2015=100) | No existe un nivel en los datasets solicitados; no se probaron otros | Sobrecarga y alquiler como aproximaciones de asequibilidad |
+
+## CB (2026-10-10, C5/C6/C8)
+| Fuente | Endpoint | Edicion | Resultado |
+|---|---|---|---|
+| CGPJ duracion media de verbales de desahucio | poderjudicial.es, pagina Efecto de la crisis (xlsx de 1T 2026) | 1T 2026 | No se publica en los ficheros localizados. SIN DATO |
+| Interior, Balance de Criminalidad (PDF/web del Ministerio) | https://www.interior.gob.es/opencms/es/prensa/balances-e-informes/ | 2024 | HTTP 403. Se usa el Portal Estadistico de Criminalidad (series anuales, px 11001), por CCAA desde 2010 |
+| Interior, allanamiento/usurpacion por provincia | .../Datos11/l0/11005.px | 2025 | No descargado (se uso CCAA, N=17) |
+| AEAT www.agenciatributaria.es | https://www.agenciatributaria.es/ | — | Error TLS (curl 60) con el proxy; no se evade. Se uso sede.agenciatributaria.gob.es (HTTP 200) |
+| AEAT IRPF, numero de inmuebles arrendados por declarante / tramos del propio rendimiento inmobiliario | Estadistica de los declarantes del IRPF 2019-2024 (partidas de Bienes inmobiliarios; tramos por Rend. e Imputac. totales) | 2024 | No existe distribucion por numero de inmuebles ni tramos de rendimiento inmobiliario: SIN DATO. Partidas 102, 149, 150 y 156 si (2019-2024) |
+| AEAT, reducciones de la Ley 12/2023 (50-90 %) | Partida 150 (IRPF 2024) | 2024 | Casilla unica con el 60 % y las nuevas reducciones: no separables |
+| AEAT Impuesto sobre Sociedades, ingresos por arrendamiento / CNAE 68 | sites/sociedadest2/2023 (DATOS GENERALES, SOCIEDADES NO FINANCIERAS) y ispartidas 2015-2017 | 2023 | Sin desglose por actividad inmobiliaria en las paginas inspeccionadas: SIN DATO (busqueda parcial) |
+| Catastro, titulares por naturaleza | https://www.catastro.hacienda.gob.es/estadisticas/estadisticas.html (y /esp/estadisticas.asp) | — | Devuelve la misma pagina de 16 KB (aplicacion con JavaScript), sin ficheros enlazados. SIN DATO |
+| Notariado, compradores persona juridica | https://www.notariado.org/liferay/web/cien/estadisticas (404); consejo-notariado.org (sin conexion) | — | SIN DATO |
+| INE Censo 2021, viviendas en alquiler por tipo de arrendador (sociedades) | Tempus operaciones 8 y 463 | 2021 | No hay tabla con tipo de arrendador. SIN DATO |
+| SERPAVI, contratos vigentes por CCAA | repositorio local (solo distritos/municipios) | — | No se uso: stock de alquiler del Censo 2021 y ECV 2025 en su lugar |
+| Fianzas de alquiler por CCAA | GVA (data/raw/v5/gva_fianzas_*) | 2020-2026 | Solo Comunitat Valenciana; el resto de CCAA, SIN DATO |

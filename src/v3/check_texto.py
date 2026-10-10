@@ -82,6 +82,9 @@ def revisar_ficha(f: dict, nombre: str) -> list[str]:
     texto = " ".join(str(f.get(k, "")) for k in ("magnitud", "limites", "resumen"))
     if capa != "C3" and re.search(CAUSAL, texto, re.I) and not NEGACION.search(texto):
         err.append(f"{nombre}: lenguaje causal con capa {capa}")
+    # v5 (revisión B): atribución en fichas C4 de módulos v5 («puede explicar», «contribuye», «el efecto»)
+    if capa == "C4" and nombre.startswith("output/v5/") and (m := re.search(r"\b(puede explicar|explica[nr]?|contribuy\w*|el efecto de)\b", texto, re.I)):
+        err.append(f"{nombre}: verbo de atribución «{m.group(0)}» con capa C4")
     err += [e.replace("<texto>", nombre) for e in revisar_texto(json.dumps(f, ensure_ascii=False), nombre)
             if "valorativo" in e or "partidista" in e]
     return err

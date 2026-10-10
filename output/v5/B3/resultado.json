@@ -151,5 +151,7 @@
   "dm_hln_vs_media": -4.281087586998579,
   "p_dm_hln_vs_media": 8.625612083205552e-05
  },
- "notas": "Capa C4. Lenguaje de asociación, no de efecto. Validación AR(4)/ECM v1 y bloques con embargo no aplican a un corte transversal de 50 provincias: se sustituyen por validación cruzada dejando una fuera (LOO) frente al modelo de solo media, con Diebold-Mariano corregido por HLN (declarado como desviación). Ventanas distintas por límite de datos: Y2 hasta 2024 (SERPAVI), Y3 y crecimiento de renta hasta 2024 (CRE). Renta: PIB per cápita CRE en lugar de ADRH (ver desviaciones.md)."
+ "notas": [
+  "Capa C4. Lenguaje de asociación, no de efecto. Validación AR(4)/ECM v1 y bloques con embargo no aplican a un corte transversal de 50 provincias: se sustituyen por validación cruzada dejando una fuera (LOO) frente al modelo de solo media, con Diebold-Mariano corregido por HLN (declarado como desviación). Ventanas distintas por límite de datos: Y2 hasta 2024 (SERPAVI), Y3 y crecimiento de renta hasta 2024 (CRE). Renta: PIB per cápita CRE en lugar de ADRH (ver desviaciones.md)."
+ ]
 }

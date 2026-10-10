@@ -1,0 +1,107 @@
+{
+ "rama": "CB",
+ "pregunta": "C5 seguridad juridica y oferta de alquiler; C6 pequenos y grandes arrendadores; C8 peso de empresas en stock y flujos",
+ "capa": "C4",
+ "datos": "CGPJ (lanzamientos y verbales posesorios por TSJ); Interior (allanamiento/usurpacion CCAA); INE Censo 2021, ECV 9997, ECH 60131, ETDP 50272; AEAT IRPF 2019-2024 y viviendas declaradas 2024",
+ "N": 17,
+ "metodo": "Descriptivo; correlacion de Spearman (p por permutacion, 10.000, seed 20261010) con Holm sobre 6 especificaciones; residual de stock AEAT frente a Censo/ECV",
+ "estimacion": {
+  "spearman_c5": {
+   "C5-S1": {
+    "rho": 0.57,
+    "p": 0.018,
+    "p_holm": 0.074,
+    "x": "usurp_x100k",
+    "y": "alq_share_censo"
+   },
+   "C5-S2": {
+    "rho": 0.66,
+    "p": 0.006,
+    "p_holm": 0.038,
+    "x": "usurp_x100k",
+    "y": "alq_share_ecv_2025"
+   },
+   "C5-S3": {
+    "rho": 0.61,
+    "p": 0.01,
+    "p_holm": 0.052,
+    "x": "verb_pos_x100k",
+    "y": "alq_share_ecv_2025"
+   },
+   "C5-S4": {
+    "rho": -0.1,
+    "p": 0.719,
+    "p_holm": 1.0,
+    "x": "usurp_x100k",
+    "y": "d_alq_ecv_2021_2025"
+   },
+   "C5-S5": {
+    "rho": 0.17,
+    "p": 0.523,
+    "p_holm": 1.0,
+    "x": "verb_pos_x100k",
+    "y": "d_alq_ecv_2021_2025"
+   },
+   "C5-S6": {
+    "rho": 0.17,
+    "p": 0.512,
+    "p_holm": 1.0,
+    "x": "lau_x1000_alq",
+    "y": "alq_share_ecv_2025"
+   }
+  },
+  "residual_pj_publico_no_declarado_pct": {
+   "censo2021": 16.9,
+   "ecv2025": 38.1
+  },
+  "viviendas_equiv_por_declarante": 0.81,
+  "comprador_pj_pct": 11.3
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "C5-S2": 0.0378,
+  "C5-S3": 0.0525,
+  "C5-S1": 0.074,
+  "C5-S6": 1.0,
+  "C5-S5": 1.0,
+  "C5-S4": 1.0
+ },
+ "nivel_evidencia": "DESCRIPTIVO / EXPLORATORIO (C4)",
+ "diagnosticos": {
+  "secciones_censo": 36333,
+  "ccaa": 17,
+  "fechas_distintas": "Censo 2021 vs AEAT 2024 vs ECV 2025",
+  "rho": {
+   "C5-S1": [
+    0.57,
+    0.074
+   ],
+   "C5-S2": [
+    0.66,
+    0.038
+   ],
+   "C5-S3": [
+    0.61,
+    0.052
+   ],
+   "C5-S4": [
+    -0.1,
+    1.0
+   ],
+   "C5-S5": [
+    0.17,
+    1.0
+   ],
+   "C5-S6": [
+    0.17,
+    1.0
+   ]
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Sin diseno causal. AEAT no publica distribucion por numero de inmuebles del arrendador; Catastro, Notariado, Censo (arrendador) y IS por actividad: SIN DATO (docs/v5/fuentes_fallidas.md, seccion CB). Fianzas por CCAA: solo Comunitat Valenciana (GVA)."
+}

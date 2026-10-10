@@ -10,7 +10,7 @@
   "cobertura": "50 provincias",
   "fuentes": "MIVAU valor tasado; INE (EPA, Padrón); A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10 (tasado hasta 2025T4)"
+  "fecha_dato": "2025T4"
  },
  {
   "id": "B3-H-B3-1-p",
@@ -23,7 +23,7 @@
   "cobertura": "50 provincias",
   "fuentes": "MIVAU valor tasado; INE",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025T4"
  },
  {
   "id": "B3-H-B3-2-b",
@@ -36,7 +36,7 @@
   "cobertura": "50 provincias",
   "fuentes": "MIVAU valor tasado; INE (EPA, Padrón); A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10 (tasado hasta 2025T4)"
+  "fecha_dato": "2025T4"
  },
  {
   "id": "B3-H-B3-2-p",
@@ -49,11 +49,11 @@
   "cobertura": "50 provincias",
   "fuentes": "MIVAU valor tasado; INE",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025T4"
  },
  {
   "id": "B3-H-B3-6-b",
-  "indicador": "Asociación de F6_lnp0 con la variación log del precio (por DT del regresor)",
+  "indicador": "Asociación de F6_lnp0 con la variación log del precio (por DT del regresor); con riesgo de error de medida: ver -control",
   "valor": -16.01,
   "min": -23.79,
   "max": -8.23,
@@ -62,7 +62,7 @@
   "cobertura": "50 provincias",
   "fuentes": "MIVAU valor tasado; INE (EPA, Padrón); A4",
   "capa": "C4",
-  "fecha_dato": "2026-10-10 (tasado hasta 2025T4)"
+  "fecha_dato": "2025T4"
  },
  {
   "id": "B3-H-B3-6-p",
@@ -75,7 +75,33 @@
   "cobertura": "50 provincias",
   "fuentes": "MIVAU valor tasado; INE",
   "capa": "C4",
-  "fecha_dato": "2026-10-10"
+  "fecha_dato": "2025T4"
+ },
+ {
+  "id": "B3-H-B3-6-b-control",
+  "indicador": "H-B3-6 con el precio inicial de Registradores (control de error de medida; por DT)",
+  "valor": -9.02,
+  "min": null,
+  "max": null,
+  "unidad": "puntos logarítmicos (≈ %) por DT",
+  "periodo": "2015-2025",
+  "cobertura": "50 provincias",
+  "fuentes": "MIVAU valor tasado; Registradores",
+  "capa": "C4",
+  "fecha_dato": "2025T4"
+ },
+ {
+  "id": "B3-H-B3-6-p-control",
+  "indicador": "p (mayor de HC3/Conley) de H-B3-6 con el precio inicial de Registradores; p de permutación 0.016",
+  "valor": 0.0576,
+  "min": null,
+  "max": null,
+  "unidad": "probabilidad",
+  "periodo": "2015-2025",
+  "cobertura": "50 provincias",
+  "fuentes": "MIVAU valor tasado; Registradores",
+  "capa": "C4",
+  "fecha_dato": "2025T4"
  },
  {
   "id": "B3-R2",

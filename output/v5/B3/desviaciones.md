@@ -9,3 +9,7 @@
 8. Validación AR(4)/ECM v1 y bloques con embargo no aplican a un corte transversal: LOO-CV frente a modelo de media, DM con HLN.
 9. Ceuta y Melilla excluidas. Conley con centroides municipales ponderados por secciones (Canarias en UTM30, distancia aproximada).
 10. Añadido: control de error de medida de F6 (precio inicial de Registradores).
+
+## Añadidas tras la revisión B
+- Oster: 1,3·R² (=1,18) supera 1, así que Rmax se acota a 1,0. Es una desviación del pre-registro, declarada aquí y sin cambios en la conclusión.
+- La potencia supuso K = 12 regresores y el modelo principal tiene 13. Con 13 el efecto mínimo detectable sube ligeramente, así que la conclusión de «descriptivo honesto» se mantiene.

@@ -95,10 +95,10 @@ def escribe(D, cuadro, R, rg, st, mv):
                                "empuja el coeficiente hacia valores negativos. Control con el precio inicial de otra fuente en hip['H-B3-6']."),
         },
         "fuera_muestra": R["fuera"],
-        "notas": ("Capa C4. Lenguaje de asociación, no de efecto. Validación AR(4)/ECM v1 y bloques con embargo no aplican a un corte transversal de 50 provincias: se "
+        "notas": ["Capa C4. Lenguaje de asociación, no de efecto. Validación AR(4)/ECM v1 y bloques con embargo no aplican a un corte transversal de 50 provincias: se "
                   "sustituyen por validación cruzada dejando una fuera (LOO) frente al modelo de solo media, con Diebold-Mariano corregido por HLN (declarado como "
                   "desviación). Ventanas distintas por límite de datos: Y2 hasta 2024 (SERPAVI), Y3 y crecimiento de renta hasta "
-                  f"{ycre} (CRE). Renta: PIB per cápita CRE en lugar de ADRH (ver desviaciones.md)."),
+                  f"{ycre} (CRE). Renta: PIB per cápita CRE en lugar de ADRH (ver desviaciones.md)."],
     }
     json.dump(resultado, open(OUT / "resultado.json", "w"), indent=1, ensure_ascii=False, default=float)
     H = []
@@ -106,10 +106,16 @@ def escribe(D, cuadro, R, rg, st, mv):
     def h(id_, ind, val, mn, mx, uni, per, cob, fu, fecha):
         H.append(dict(id=id_, indicador=ind, valor=val, min=mn, max=mx, unidad=uni, periodo=per, cobertura=cob, fuentes=fu, capa="C4", fecha_dato=fecha))
     for k, v in hip.items():
-        h(f"B3-{k}-b", f"Asociación de {v['regresor']} con la variación log del precio (por DT del regresor)", round(v["b_por_DT"] * 100, 2),
+        h(f"B3-{k}-b", f"Asociación de {v['regresor']} con la variación log del precio (por DT del regresor)" + ("; con riesgo de error de medida: ver -control" if k == "H-B3-6" else ""), round(v["b_por_DT"] * 100, 2),
           round(v["ic95"][0] * 100, 2), round(v["ic95"][1] * 100, 2), "puntos logarítmicos (≈ %) por DT", "2015-2025", "50 provincias",
-          "MIVAU valor tasado; INE (EPA, Padrón); A4", "2026-10-10 (tasado hasta 2025T4)")
-        h(f"B3-{k}-p", f"p ajustado Holm (8 familias) de {k}", round(v["p_holm8"], 4), None, None, "probabilidad", "2015-2025", "50 provincias", "MIVAU valor tasado; INE", "2026-10-10")
+          "MIVAU valor tasado; INE (EPA, Padrón); A4", "2025T4")
+        h(f"B3-{k}-p", f"p ajustado Holm (8 familias) de {k}", round(v["p_holm8"], 4), None, None, "probabilidad", "2015-2025", "50 provincias", "MIVAU valor tasado; INE", "2025T4")
+        if "control_error_medida_F6_precio_registradores" in v:   # revisión B (B3): el control acompaña siempre a H-B3-6
+            c = v["control_error_medida_F6_precio_registradores"]
+            h(f"B3-{k}-b-control", f"{k} con el precio inicial de Registradores (control de error de medida; por DT)", round(c["b_por_DT"] * 100, 2), None, None,
+              "puntos logarítmicos (≈ %) por DT", "2015-2025", "50 provincias", "MIVAU valor tasado; Registradores", "2025T4")
+            h(f"B3-{k}-p-control", f"p (mayor de HC3/Conley) de {k} con el precio inicial de Registradores; p de permutación {c['p_perm']:.3f}",
+              round(c["p_mayor"], 4), None, None, "probabilidad", "2015-2025", "50 provincias", "MIVAU valor tasado; Registradores", "2025T4")
     h("B3-R2", "R² del modelo de 8 familias (Y1 tasado, P1)", round(R["r2_principal"], 3), None, None, "proporción", "2015-2025", "50 provincias", "MIVAU valor tasado; INE; A4", "2026-10-10")
     h("B3-shap-orden", "Shapley: mismo orden de familias con Y1 tasado y Registradores (1 = sí)", int(sh["orden_igual"]), None, None, "indicador", "2015-2025", "50 provincias", "MIVAU valor tasado; Registradores", "2026-10-10")
     h("B3-shap-spearman", "Correlación de Spearman de los Shapley entre fuentes", round(sh["spearman"], 3), None, None, "coeficiente", "2015-2025", "50 provincias", "MIVAU valor tasado; Registradores", "2026-10-10")

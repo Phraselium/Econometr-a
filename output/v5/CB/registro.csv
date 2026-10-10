@@ -1,0 +1,10 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+C5,C5-S1,"spearman(usurp_x100k, alq_share_censo)",2021-2025,2021-2025,17,,,,,0.573529411764706,0.0184981501849815,"N=17 CCAA; p permutacion 10000, seed 20261010; Holm p=0.074; descriptivo"
+C5,C5-S2,"spearman(usurp_x100k, alq_share_ecv_2025)",2021-2025,2021-2025,17,,,,,0.6646230556389479,0.006299370062993701,"N=17 CCAA; p permutacion 10000, seed 20261010; Holm p=0.038; descriptivo"
+C5,C5-S3,"spearman(verb_pos_x100k, alq_share_ecv_2025)",2021-2025,2021-2025,17,,,,,0.6094421746357143,0.010498950104989501,"N=17 CCAA; p permutacion 10000, seed 20261010; Holm p=0.052; descriptivo"
+C5,C5-S4,"spearman(usurp_x100k, d_alq_ecv_2021_2025)",2021-2025,2021-2025,17,,,,,-0.09558823529411767,0.7188281171882812,"N=17 CCAA; p permutacion 10000, seed 20261010; Holm p=1.000; descriptivo"
+C5,C5-S5,"spearman(verb_pos_x100k, d_alq_ecv_2021_2025)",2021-2025,2021-2025,17,,,,,0.16666666666666669,0.5229477052294771,"N=17 CCAA; p permutacion 10000, seed 20261010; Holm p=1.000; descriptivo"
+C5,C5-S6,"spearman(lau_x1000_alq, alq_share_ecv_2025)",2021-2025,2021-2025,17,,,,,0.1692213684099166,0.5117488251174882,"N=17 CCAA; p permutacion 10000, seed 20261010; Holm p=1.000; descriptivo"
+C6,C6-E1,residual = 1 - AEAT_PF_habitual / stock_Censo2021 (regimen comun),2021,2024,15,,,,,16.92032764592596,,C4; fechas distintas; cota superior del residual PJ+publico+no declarado si el stock crece
+C6,C6-E2,residual = 1 - AEAT_PF_habitual / (ECV2025 x ECH2025T4),2024,2025,15,,,,,38.11434850189487,,C4; estimacion alternativa; ambas se reportan
+C6,C6-E3,viviendas equivalentes arrendadas / declarantes con ingresos de capital inmobiliario,2024,2024,1,,,,,0.8126704078998758,,"C4; promedio, no distribucion; incluye copropiedad y otros inmuebles en declarantes"

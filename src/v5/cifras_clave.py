@@ -76,6 +76,7 @@ def v5_hechos() -> list[dict]:
 
 def main() -> None:
     ck = pd.DataFrame(v4_adaptadores() + v5_hechos(), columns=COLS)
+    ck = ck[ck[["valor", "min", "max"]].notna().any(axis=1)]   # filas sin cifra (p. ej. NaN de origen) no entran
     ck["capa"] = ck.capa.astype(str)
     ck = ck.sort_values("id", kind="stable")
     ck.to_csv(V5 / "cifras_clave.csv", index=False, float_format="%.6g")

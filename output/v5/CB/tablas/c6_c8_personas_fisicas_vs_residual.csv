@@ -1,0 +1,8 @@
+magnitud,valor,unidad,fecha,fuente
+"Censo 2021: viviendas principales en alquiler, Espana",2965497.0,viviendas,2021-11,INE Censo 2021 (secciones)
+"Censo 2021: id., regimen fiscal comun (sin Navarra y Pais Vasco)",2809130.0,viviendas,2021-11,INE Censo 2021
+"AEAT: viviendas equivalentes arrendadas como vivienda habitual, personas fisicas",2333816.0,viviendas,IRPF 2024,AEAT viviendas declaradas IRPF 2024
+"AEAT: viviendas equivalentes arrendadas, total (habitual y otras)",2650952.0,viviendas,IRPF 2024,AEAT
+Estimacion A: residual (PJ + sector publico + alquiler no declarado) sobre stock Censo 2021,16.92032764592596,% del stock,2021/2024,Censo 2021 y AEAT
+Estimacion B: id. sobre stock ECV 2025 x hogares ECH 2025T4,38.11434850189487,% del stock,2025,"ECV 9997, ECH 60131, AEAT"
+ETDP: compraventas con comprador PJ,11.3,% compraventas,2024,INE ETDP 50272 (R1C-004)

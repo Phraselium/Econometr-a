@@ -149,3 +149,28 @@
   - Se mantiene el criterio estricto. La columna `candidata_C1_si_se_acepta_coherencia` queda solo como información.
 - **Crédito a promotores.** Una sola asociación sobrevive a Holm, de 36 pruebas. Fuera de muestra no mejora a AR(4). La comparación con el ECM v1 no aplica, porque ese modelo es del precio.
 - **Contado.** Entre el 30 % y el 58 % de las compraventas, según qué parte de las hipotecas sea de compra. La demanda inversora no equivale al contado.
+
+## B2 y B4 (subagentes)
+- **B2.**
+  - D2030 = D2025 (A4, bajas 0) + F (INE) − terminadas + bajas, en tres escenarios: (a) ritmo 2023-2025, (b) cartera, (c) tendencia, este último solo como sensibilidad.
+  - El retardo entre iniciadas y terminadas es de 3,2 años.
+  - **Limitación:** el retardo se calcula con acumulados desde 1991 e incluye obras iniciadas y nunca terminadas (2008-2012), así que está sesgado al alza.
+  - **Diferencia de partida frente a B1:** B1 parte de la mediana de combinaciones de A4 (788.153); B2 parte del déficit con bajas 0 (700.934), porque proyecta las bajas aparte.
+- **B4.**
+  - Triangulación sin reestimar.
+  - «Estable» exige un τ de Kendall ≥ 0,67 en el orden de las 4 familias comunes.
+  - **Limitación:** la τ compara estimandos distintos (cuota de R² transversal frente a contribución temporal), así que es esperable que no coincidan. La conclusión «no estables» se lee como «los métodos no permiten ordenar las familias».
+
+## Revisión del módulo B: REHACER (bloqueantes 1-3) → corregido por el orquestador
+1. **Fichas de B4.** Se quitan los verbos de atribución («puede explicar», «contribuye», «permite», «el efecto»). check_texto rechaza ahora esos verbos en las fichas C4 de v5.
+2. **B4-V2.** El intervalo de precio pasa a ≤2,7-8,3 %, igual que la magnitud.
+3. **H-B3-6 (convergencia).** Los hechos llevan siempre el control con el precio inicial de Registradores (b ≈ −9 pp por DT; p principal 0,058, no significativo; p de permutación 0,016).
+- **No bloqueantes.**
+  - Gabriel y Nothaft (JUE, Q1) pasa a VERIFICADA.
+  - Desviaciones de Oster y K en B3.
+  - Las filas sin cifra (NaN) no entran en cifras_clave.
+  - Las notas de B3 pasan a ser una lista.
+  - Anglicismo corregido.
+  - El método de B1 se amplía en el informe técnico (E1).
+  - Queda abierto, por impacto bajo, separar B2-H6 en tres hechos.
+- Son las correcciones que propuso el revisor y no cambian ninguna estimación: el módulo B queda APROBADO.

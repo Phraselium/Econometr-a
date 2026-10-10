@@ -499,10 +499,10 @@ def escribe_json(f, nac, control, h65, anio_h65, fallos) -> None:
                          (anual["central"], anual["min"], anual["max"], nac["A"]["central"] / 10,
                           (nac["F"]["central"] + nac["R"]["central"]) / 10)),
             "intervalo": "%.0f a %.0f viviendas/año (C4)" % (anual["min"], anual["max"]),
-            "cota": "—", "literatura": "Gabriel y Nothaft (2001), J. Urban Econ., DOI 10.1006/juec.2000.2187: VERIFICADA (Crossref), cuartil no verificado; sustenta la existencia de una vacancia friccional, no el rango 2-4 % (supuesto del encargo).",
+            "cota": "—", "literatura": "Gabriel y Nothaft (2001), J. Urban Econ., DOI 10.1006/juec.2000.2187: VERIFICADA (DOI en Crossref; JUE, Q1 según docs/literatura.md); sustenta la existencia de una vacancia friccional, no el rango 2-4 % (supuesto del encargo).",
             "veredicto": "ANALIZADA, NO CONCLUYENTE",
             "regla": "Capa del total = menor de sus componentes: A, R, V, M, K y L en C4 (hogares provinciales de fuente única, supuestos no contrastados); solo F (INE, dos métodos) en C2. Con C4 el máximo es ANALIZADA, NO CONCLUYENTE. El valor depende del atraso y de las vacías movilizables, que son los componentes más inciertos.",
-            "limites": "Sin dato de hogares compartidos, hacinamiento ni residencias; vacancia disponible sin dato; K aproxima la cartera con iniciadas menos terminadas; ranges no son IC.",
+            "limites": "Sin dato de hogares compartidos, hacinamiento ni residencias; vacancia disponible sin dato; K aproxima la cartera con iniciadas menos terminadas; los rangos no son IC.",
             "evidencia": ["output/v5/B1/tablas/B1_tabla_provincial.csv", "output/v5/B1/resultado.json"],
         },
         {

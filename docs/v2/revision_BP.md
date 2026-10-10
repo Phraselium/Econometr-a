@@ -135,3 +135,15 @@ Tras 1-3, basta comprobar la guarda y el test; el resto de la rama está aprobad
 - Inferencia placebo con 4 tratadas: supone unidades intercambiables; jackknife poco fiable.
 - Índices INE en base 2025=100: los niveles sin rebasar llevan información sellada; el SC sin penalización depende de los hilos BLAS (se fija 1 hilo).
 - `zona_tensionada_share`: pesos catastrales de un año posiblemente sellado (solo en el secundario).
+
+---
+
+## Verificación final (commit `3d57411`, con r2/main `26d2e83` fusionado)
+
+- **Reproducción.** Clon nuevo aislado, sin red, 1 hilo: `bp_main.py` y los tests dos veces, con exit 0 en las cuatro ejecuciones. Los md5 de los 31 ficheros son idénticos entre ejecuciones y con lo versionado. Entre `300ca59` y `3d57411` el train y output/v2/BP no cambian.
+- **holdout.build** (código): `_rebase_indices_2015` se aplica ahora a `df` COMPLETO antes de `_mascara_sellada`. Entrenamiento y sellado quedan en la misma base, y el factor usa solo valores de 2015. Correcto.
+- **Guarda** (`UMBRAL_SALTO = 0,05`, fijada antes de abrir): `test_guarda_de_base` pasa. Además, mi sellado falso realista (base 2025 = media propia de 2025) ahora **aborta** (salto máx. 0,215) y ya no anula el efecto. Con la misma base se recupera −0,03 (τ −0,0312, p 0,0099).
+- **H6 sigue sin evaluar**: holdout_accesos.md solo contiene H1 y H2.
+- **Acceso indebido declarado** (decisiones.md): el orquestador vio dos estadísticos del panel completo, la media de 2015 (= 100) y el máx. |Δln| 2024Q2→Q3 = 0,0129 en el conjunto de provincias, sin separar tratadas y donantes. No informa sobre τ, y el diseño, la regla y el umbral ya estaban fijados. **No afecta a H6.** Que conste en limitaciones.
+
+### Veredicto: **APROBAR**. Se puede ejecutar UNA vez `holdout.evaluate("H6", bp_h6_sellado.evaluar_H6, "BP", ["panel_prov_q"])` con `OMP_NUM_THREADS=1`, en segundo plano. Antes, regenerar data/sealed con el holdout corregido (si no se hace, la guarda abortaría y quemaría la apertura).

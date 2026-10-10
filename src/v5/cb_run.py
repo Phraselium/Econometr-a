@@ -289,12 +289,12 @@ resultado = dict(
 json.dump(resultado, open(OUT / "resultado.json", "w"), ensure_ascii=False, indent=1)
 ficha = lambda i, tema, enun, v, mag, regla, lim, ev: dict(id=i, tema=tema, enunciado=enun, capa="C4", magnitud=mag, intervalo=None, cota="Sin cota (C4)", literatura="No consultada en este modulo", veredicto=v, regla=regla, limites=lim, evidencia=ev, convenciones="Cifras con fecha del dato; sin lenguaje causal")
 fichas = [
-    ficha("CB-V1", "Seguridad juridica y oferta", "La ocupacion ilegal reduce la oferta de alquiler.", "ANALIZADA, NO CONCLUYENTE",
+    ficha("CB-V1", "Seguridad jurídica y oferta", "La ocupación ilegal reduce la oferta de alquiler.", "ANALIZADA, NO CONCLUYENTE",
           f"N=17 CCAA; Spearman usurpacion/100.000 viv. con cuota de alquiler: rho={res5['C5-S2'][2]:.2f} (p Holm {ph['C5-S2']:.4f}); verbales posesorios con cuota: rho={res5['C5-S3'][2]:.2f} (p Holm {ph['C5-S3']:.4f}). Las especificaciones sobre variaciones 2021-2025 y sobre lanzamientos por LAU no son significativas (registro.csv). El signo es positivo (mas usurpaciones donde hay mas alquiler), contrario al de la afirmacion; es compatible con que ambas magnitudes crecen con la urbanizacion. Sin diseno que identifique un efecto.",
           "Con C4 y sin identificacion, como maximo ANALIZADA, NO CONCLUYENTE.",
           "Una asociacion entre CCAA no distingue oferta, demanda ni composicion; el denominador (viviendas) y el numerador (denuncias) dependen del tamano del parque; el delito de usurpacion incluye inmuebles que no son vivienda; fianzas por CCAA no disponibles.",
           "CGPJ 1T 2026; Interior 2025; INE Censo 2021 y ECV 2025; tablas en output/v5/CB/tablas"),
-    ficha("CB-V2", "Arrendadores", "La mayoria de los caseros son pequenos propietarios.", "ANALIZADA, NO CONCLUYENTE",
+    ficha("CB-V2", "Arrendadores", "La mayoría de los caseros son pequeños propietarios.", "ANALIZADA, NO CONCLUYENTE",
           f"Personas fisicas declaran {arr_hab_equiv:,.0f} viviendas equivalentes arrendadas como vivienda habitual (IRPF 2024); el residual PJ+publico+no declarado es {rmin}-{rmax} % del stock; {ratio_viv:.2f} viviendas equivalentes por declarante con ingresos de capital inmobiliario.".replace(",", "."),
           "Falta la distribucion por numero de inmuebles (1, 2-4, >=5): la AEAT no la publica; el promedio no la sustituye. Los datos acotan el peso de las personas juridicas, no el tamano de las carteras de las personas fisicas.",
           "Fechas distintas entre fuentes; Navarra y Pais Vasco fuera de la AEAT; copropiedad cuenta como declarantes separados.", "AEAT IRPF 2024; INE Censo 2021, ECV 2025, ECH 2025T4"),

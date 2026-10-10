@@ -126,13 +126,13 @@ Toda especificación probada se registra (`registro.csv` de cada módulo). Las f
 
 **Alquiler.** Stock de contratos: {{A23-A2:rango}} en 2015-2024 [C1]. Contratos nuevos con dos fuentes: Cataluña {{A23-A9}} y Comunitat Valenciana {{A23-A10}} en 2021-2024 [C1]. En 2024 los contratos nuevos están {{A23-A6:valor}} por encima de los existentes [C4].
 
-**Europa.** El precio real de la vivienda en España creció {{CA-EU-hpi_real-crecimiento:valor}} desde 2015 y el alquiler real del IPCA {{CA-EU-alq_real-crecimiento:valor}} [C4]; la sobrecarga de coste bajó {{CA-EU-sobrecarga-cambio_desde_2015:valor}} [C4].
+**Europa.** El precio real de la vivienda en España creció {{CA-EU-hpi_real-crecimiento:valor}} y el alquiler real del IPCA {{CA-EU-alq_real-crecimiento:valor}} [C4]; la tasa de sobrecarga de coste varió {{CA-EU-sobrecarga-cambio_desde_2015:num}} puntos desde 2015 [C4].
 
 ![Puente de precio](A23/fig1_puente_precio.png)
 
 ### 4.4 Contribuciones
 
-Las contribuciones contables al precio de compra en 2015-2025 (v2) son: demografía {{B4-v2-compra-2015-2025-demografica:valor}}, renta y empleo {{B4-v2-compra-2015-2025-renta_empleo:valor}}, financiación {{B4-v2-compra-2015-2025-financiacion_tipos:valor}}, oferta {{B4-v2-compra-2015-2025-oferta_suelo:valor}} y residuo {{B4-v2-compra-2015-2025-residuo:valor}} [C4]. Entre provincias (B3), el reparto del R² da oferta y suelo {{B4-b3-shapley-oferta_suelo:valor}}, demografía {{B4-b3-shapley-demografica:valor}}, turismo y no residentes {{B4-b3-shapley-turismo_no_residentes:valor}}, financiación {{B4-b3-shapley-financiacion_tipos:valor}} y renta {{B4-b3-shapley-renta_empleo:valor}} [C4]. La tau de Kendall mínima del orden de las familias es {{B4-estabilidad-tau-min:valor}} [C4]: las contribuciones no son estables. Las viviendas turísticas desplazaron como máximo {{B4-v3-vut-cantidad:valor}} del stock de alquiler [C2].
+Las contribuciones contables al precio de compra en 2015-2025 (v2) son: demografía {{B4-v2-compra-2015-2025-demografica:valor}}, renta y empleo {{B4-v2-compra-2015-2025-renta_empleo:valor}}, financiación {{B4-v2-compra-2015-2025-financiacion_tipos:valor}}, oferta {{B4-v2-compra-2015-2025-oferta_suelo:valor}} y residuo {{B4-v2-compra-2015-2025-residuo:valor}} [C4]. Entre provincias (B3), el reparto del R² da oferta y suelo {{B4-b3-shapley-oferta_suelo:valor}}, demografía {{B4-b3-shapley-demografica:valor}}, turismo y no residentes {{B4-b3-shapley-turismo_no_residentes:valor}}, financiación {{B4-b3-shapley-financiacion_tipos:valor}} y renta {{B4-b3-shapley-renta_empleo:valor}} [C4]. La tau de Kendall mínima del orden de las familias es {{B4-estabilidad-tau-min:valor}} [C4]: las contribuciones no son estables. Las viviendas turísticas desplazaron como máximo {{B4-v3-vut-cantidad:valor}} [C2].
 
 ---
 

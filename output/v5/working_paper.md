@@ -126,13 +126,13 @@ Toda especificación probada se registra (`registro.csv` de cada módulo). Las f
 
 **Alquiler.** Stock de contratos: 10,9-22,9 % en 2015-2024 [C1]. Contratos nuevos con dos fuentes: Cataluña 16,9 % (16,6-17,2 %) y Comunitat Valenciana 26,6 % (22,4-30,8 %) en 2021-2024 [C1]. En 2024 los contratos nuevos están 13,6 % por encima de los existentes [C4].
 
-**Europa.** El precio real de la vivienda en España creció 42,6 % acumulado desde 2015 desde 2015 y el alquiler real del IPCA -10,3 % acumulado desde 2015 [C4]; la sobrecarga de coste bajó -3,1 cambio desde 2015 (% población) [C4].
+**Europa.** El precio real de la vivienda en España creció 42,6 % acumulado desde 2015 y el alquiler real del IPCA -10,3 % acumulado desde 2015 [C4]; la tasa de sobrecarga de coste varió -3,1 puntos desde 2015 [C4].
 
 ![Puente de precio](A23/fig1_puente_precio.png)
 
 ### 4.4 Contribuciones
 
-Las contribuciones contables al precio de compra en 2015-2025 (v2) son: demografía -7,0 pp de Δln acumulado, renta y empleo 1,1 pp de Δln acumulado, financiación 1,1 pp de Δln acumulado, oferta 0,09 pp de Δln acumulado y residuo 3,6 pp de Δln acumulado [C4]. Entre provincias (B3), el reparto del R² da oferta y suelo 25,9 % del R2, demografía 23,6 % del R2, turismo y no residentes 18,4 % del R2, financiación 11,3 % del R2 y renta 9,8 % del R2 [C4]. La tau de Kendall mínima del orden de las familias es -0,71 tau (4 familias) [C4]: las contribuciones no son estables. Las viviendas turísticas desplazaron como máximo 2,7 % del stock de alquiler del stock de alquiler [C2].
+Las contribuciones contables al precio de compra en 2015-2025 (v2) son: demografía -7,0 pp de Δln acumulado, renta y empleo 1,1 pp de Δln acumulado, financiación 1,1 pp de Δln acumulado, oferta 0,09 pp de Δln acumulado y residuo 3,6 pp de Δln acumulado [C4]. Entre provincias (B3), el reparto del R² da oferta y suelo 25,9 % del R2, demografía 23,6 % del R2, turismo y no residentes 18,4 % del R2, financiación 11,3 % del R2 y renta 9,8 % del R2 [C4]. La tau de Kendall mínima del orden de las familias es -0,71 tau (4 familias) [C4]: las contribuciones no son estables. Las viviendas turísticas desplazaron como máximo 2,7 % del stock de alquiler [C2].
 
 ---
 

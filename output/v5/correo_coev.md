@@ -3,7 +3,7 @@
 **Para:** Colegio de Economistas de València (secretaría técnica / comisión de publicaciones y formación)
 **Asunto:** Propuesta de artículo y ponencia: «Qué sabemos y qué no sobre la vivienda en España y València»
 
-Estimados señores:
+Estimados miembros de la comisión:
 
 Me llamo Borja Romero y soy economista. He terminado una base de evidencia independiente y reproducible sobre la vivienda en España, con un análisis por provincias y un módulo específico de València.
 

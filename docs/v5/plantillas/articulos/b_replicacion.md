@@ -4,7 +4,7 @@
 
 ## Resumen
 
-Este artículo documenta un intento de replicar y extender dos resultados de la literatura empírica sobre vivienda en España: la asociación entre la presencia de viviendas de uso turístico (VUT) y los alquileres, estimada para Barcelona por García-López et al. (2020), y la asociación entre los topes al alquiler de la `Ley 11/2020` de Cataluña y las rentas y los contratos. La replicación conceptual del primer resultado, con datos de stock de contratos (SERPAVI) y de VUT del INE para 2021-2024, da un coeficiente de {{E-GL-coef}} [C4], de signo contrario al original y no distinguible de cero tras el ajuste de Holm (p ajustado {{E-GL-pholm}}). El artículo separa las fuentes de la discrepancia: datos (stock frente a flujo, cuantificada), periodo y método (no contrastables). Sobre los topes, las estimaciones de entrenamiento apuntan a rentas más bajas, {{E-v3-H3-3a-CS}} [C4], pero la validación quedó contaminada y la hipótesis se retira de forma definitiva de la capa causal. Se añaden una cota de identificación parcial para VUT ({{B4-v3-vut-cantidad}} del stock de alquiler como máximo [C2]) y una discrepancia de medición entre el registro autonómico y el INE (cociente {{R1A-H6}} [C4]). El artículo es una replicación honesta: los negativos se reportan y ninguna conclusión se promueve de capa.
+Este artículo documenta un intento de replicar y extender dos resultados de la literatura empírica sobre vivienda en España: la asociación entre la presencia de viviendas de uso turístico (VUT) y los alquileres, estimada para Barcelona por García-López et al. (2020), y la asociación entre los topes al alquiler de la `Ley 11/2020` de Cataluña y las rentas y los contratos. La replicación conceptual del primer resultado, con datos de stock de contratos (SERPAVI) y de VUT del INE para 2021-2024, da un coeficiente de {{E-GL-coef}} [C4], de signo contrario al original y no distinguible de cero tras el ajuste de Holm (p ajustado {{E-GL-pholm}}). El artículo separa las fuentes de la discrepancia: datos (stock frente a flujo, cuantificada), periodo y método (no contrastables). Sobre los topes, las estimaciones de entrenamiento apuntan a rentas más bajas, {{E-v3-H3-3a-CS}} [C4], pero la validación quedó contaminada y la hipótesis se retira de forma definitiva de la capa causal. Se añaden una cota de identificación parcial para VUT ({{B4-v3-vut-cantidad}} como máximo [C2]) y una discrepancia de medición entre el registro autonómico y el INE (cociente {{R1A-H6}} [C4]). El artículo es una replicación honesta: los negativos se reportan y ninguna conclusión se promueve de capa.
 
 **Palabras clave:** replicación, viviendas de uso turístico, control de alquileres, SERPAVI, identificación parcial.
 
@@ -92,7 +92,7 @@ La literatura publicada sobre la misma regulación (Jofre-Monseny et al., 2023) 
 
 ### La cota de identificación parcial
 
-Bajo supuestos débiles, las VUT pueden haber desplazado como máximo {{B4-v3-vut-cantidad}} del stock de alquiler en 2020-2024 [C2]. La cota de precio depende de la elasticidad de la demanda, para la que no hay estimación verificada en España: con la elasticidad mínima de la rejilla sería {{E-v3-vut-precio-cota}} [C4], y crece sin límite si la elasticidad tiende a cero. Por eso la cota de precio se presenta como función de la elasticidad y queda en [C4]; la cota de cantidad, que no depende de ella, alcanza [C2].
+Bajo supuestos débiles, las VUT pueden haber desplazado como máximo {{B4-v3-vut-cantidad}} en 2020-2024 [C2]. La cota de precio depende de la elasticidad de la demanda, para la que no hay estimación verificada en España: con la elasticidad mínima de la rejilla sería {{E-v3-vut-precio-cota}} [C4], y crece sin límite si la elasticidad tiende a cero. Por eso la cota de precio se presenta como función de la elasticidad y queda en [C4]; la cota de cantidad, que no depende de ella, alcanza [C2].
 
 ### Discrepancia de medición: registro autonómico frente al INE
 
@@ -130,7 +130,7 @@ La serie de anuncios de 2012-2016 por barrio y el instrumento del original permi
 
 ## Conclusión
 
-La replicación conceptual no reproduce el resultado de García-López et al. (2020) en 2021-2024 con datos de stock: el coeficiente es {{E-GL-coef}} [C4] y no se distingue de cero tras Holm. La diferencia entre stock y flujo justifica una magnitud menor, no un cambio de signo; periodo y método no se pueden contrastar. Los topes al alquiler no se pueden evaluar como efecto con el protocolo aplicado porque la validación quedó contaminada; sus estimaciones se reportan como [C4]. Lo que sí se puede afirmar con supuestos débiles es una cota: como máximo {{B4-v3-vut-cantidad}} del stock de alquiler desplazado por VUT [C2].
+La replicación conceptual no reproduce el resultado de García-López et al. (2020) en 2021-2024 con datos de stock: el coeficiente es {{E-GL-coef}} [C4] y no se distingue de cero tras Holm. La diferencia entre stock y flujo justifica una magnitud menor, no un cambio de signo; periodo y método no se pueden contrastar. Los topes al alquiler no se pueden evaluar como efecto con el protocolo aplicado porque la validación quedó contaminada; sus estimaciones se reportan como [C4]. Lo que sí se puede afirmar con supuestos débiles es una cota: como máximo {{B4-v3-vut-cantidad}} desplazado por VUT [C2].
 
 ## Referencias
 

@@ -59,13 +59,13 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## Necesidad: la pieza sólida es el crecimiento de hogares
 
-- 1.720.540 hogares (1.308.530-1.772.410 hogares) (2026-2035; ['INE Proyección de Hogares 54562', 'INE Proyecciones de Población 36726']; dato de 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025; C2)
+- 1.720.540 hogares (1.308.530-1.772.410 hogares) (2026-2035; INE Proyección de Hogares 54562; INE Proyecciones de Población 36726; dato de 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025; C2)
 
 ---
 
 ## Necesidad anual, con rango
 
-- 214.868 viviendas/año (93.628-309.921 viviendas/año) (2026-2035; ['A4/M1', 'INE 54562', 'Censo 2021', 'MIVAU', 'Catastro']; dato de 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025; C4)
+- 214.868 viviendas/año (93.628-309.921 viviendas/año) (2026-2035; A4/M1; INE 54562; Censo 2021; MIVAU; Catastro; dato de 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025; C4)
 
 ![](../B1/figuras/B1_mapa_necesidad.png)
 
@@ -78,14 +78,14 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ---
 
-## Qué podría funcionar: depende del territorio
+## Instrumentos con signo estable según el territorio [C2 en el signo; C4 por clase]
 
 - Donde falta y construir es rentable, la oferta respondería; donde no es rentable, haría falta otro instrumento [C4]
 - La construcción adicional planificada cubriría en torno a 29,1 % de la necesidad [C4]
 
 ---
 
-## Qué no funcionaría por sí solo
+## Instrumentos con signo no estable o no evaluable [C4]
 
 - Una ayuda general a la demanda podría trasladarse al precio: 58,4 % a 100,0 % según la clase [C4]
 

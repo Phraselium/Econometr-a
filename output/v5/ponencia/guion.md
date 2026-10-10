@@ -8,7 +8,7 @@ Regla del ponente: cada cifra se dice con su periodo y su capa; los veredictos s
 - Mensaje: «Hoy no diré qué causa la subida; diré qué se puede medir y hasta dónde».
 
 ## Bloque 1 · Hechos (1:30-6:00; diapositivas 3-5) <!-- check:cifra-libre -->
-- Hogares frente a terminadas: 997.586 hogares hogares más en 2021-2025 [C1]; terminadas entre 72.264-94.426 viviendas/año [C1].
+- Hogares frente a terminadas: 997.586 hogares más en 2021-2025 [C1]; terminadas entre 72.264-94.426 viviendas/año [C1].
 - Alquiler: el stock creció entre 10,9 % y 22,9 % en 2015-2024 [C1]; los contratos nuevos, más.
 - Precio de compra: núcleo de fuentes 47,2 % en 2015-2025 (media anual) [C1]; el INE da más y la diferencia no está descompuesta.
 

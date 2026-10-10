@@ -52,7 +52,7 @@ Con el precio de Registradores el R² es {{E-B3-R2reg}} [C4]. Las especificacion
 
 ## Discusión
 
-El artículo muestra lo que un panel de {{E-B3-N}} puede y no puede decir. Puede describir: la geografía de los precios es muy predecible con características observables. No puede atribuir: con el tamaño mínimo detectable calculado de antemano, las asociaciones de magnitud plausible de la demanda no se distinguen del ruido tras ajustar por comparaciones múltiples. La convergencia es la única regularidad robusta al ajuste y es en parte compatible con error de medida. Las comparaciones con organismos se recogen en `output/v5/D3/convergencia.md` ({{D3-coincide}} coinciden y {{D3-difiere}} difieren) [C4].
+El artículo muestra lo que un panel de {{E-B3-N}} puede y no puede decir. Puede describir: la geografía de los precios es muy predecible con características observables. No puede atribuir: con el tamaño mínimo detectable calculado de antemano, las asociaciones de magnitud plausible de la demanda no se distinguen del ruido tras ajustar por comparaciones múltiples. La convergencia es la única regularidad robusta al ajuste y es en parte compatible con error de medida. Las comparaciones con organismos se recogen en `output/v5/D3/convergencia.md` ({{D3-coincide:num}} coinciden y {{D3-difiere:num}} difieren) [C4].
 
 ## Conclusión
 

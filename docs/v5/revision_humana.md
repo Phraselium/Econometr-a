@@ -2,7 +2,7 @@
 
 Las 15 cifras de output/v5/cifras_clave.csv con más marcadores en las plantillas de docs/v5/plantillas (recuento de usos, octubre de 2026). Para cada una: valor renderizado, capa, script y línea que la produce, fichero de salida, comando de réplica y casilla para el autor. Tras cualquier réplica se ejecuta `python3 src/v5/cifras_clave.py && python3 src/v5/render.py`. <!-- check:cifra-libre -->
 
-Nota: B4-v3-vut-cantidad tiene su valor escrito en el script de v5 a partir de una tabla de v3; conviene comprobarlo contra `output/v3/PB/tablas/b2_nacional_sensibilidad.csv`.
+Nota: B4-v3-vut-cantidad se lee de `output/v3/PB/cotas.json` (cota C2 de cantidad de v3 PB); no hay ninguna cifra tecleada en los scripts de v5.
 
 ## 1. A23-A2
 
@@ -90,7 +90,7 @@ Nota: B4-v3-vut-cantidad tiene su valor escrito en el script de v5 a partir de u
 - **Indicador:** Máximo de stock de alquiler desplazado por viviendas turísticas
 - **Valor renderizado:** 2,7 % del stock de alquiler (2,4-2,7 % del stock de alquiler) (2020M08-2024M08)
 - **Capa:** C2
-- **Script y línea:** `src/v5/b4_run.py:310` (valor fijado en el script, tomado de v3: revisar)
+- **Script y línea:** `src/v5/b4_run.py:310` (lee la cota de `output/v3/PB/cotas.json`, producida por v3 PB)
 - **Origen registrado en cifras_clave:** `output/v5/B4/hechos.json:B4-v3-vut-cantidad`
 - **Script de origen (adaptador de v4/v3):** `src/v3/pb_run.py:379` (output/v3/PB/tablas/b2_nacional_sensibilidad.csv; heredado de v3, no de v4)
 - **Fichero de salida:** `output/v5/B4/hechos.json`

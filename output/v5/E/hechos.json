@@ -798,10 +798,10 @@
   "valor": 1720537.0,
   "min": 1308531.1,
   "max": 1772410.4,
-  "unidad": "viviendas",
+  "unidad": "hogares",
   "periodo": "2026-2035",
   "cobertura": "España (52 provincias)",
-  "fuentes": "INE Proyección de Hogares; INE mortalidad; Censo 2021; MIVAU; Catastro",
+  "fuentes": "INE Proyección de Hogares (tabla 54562)",
   "capa": "C2",
   "fecha_dato": "2026"
  },

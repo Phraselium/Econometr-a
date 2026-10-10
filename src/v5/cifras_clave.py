@@ -68,6 +68,8 @@ def v5_hechos() -> list[dict]:
             continue
         for x in h:
             r = {c: x.get(c) for c in COLS if c not in ("ficha", "origen")}
+            if isinstance(r.get("fuentes"), list):   # listas de fuentes -> texto (revisión E, B2)
+                r["fuentes"] = "; ".join(map(str, r["fuentes"]))
             r["ficha"] = x.get("ficha", "—")
             r["origen"] = f"{p.relative_to(RAIZ)}:{x.get('id')}"
             f.append(r)

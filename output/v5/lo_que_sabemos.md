@@ -15,7 +15,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
   - [C2] Con bajas del parque supuestas, la cota llega a 902.808 viviendas (2021-2024).
 - [C1] Viviendas terminadas al año en el territorio común: 72.264-94.426 viviendas/año (2019-2024; Ministerio (fin de obra) y Catastro (altas), dentro de ±15 %; dato de 2024; C1).
 - [C2] Demanda latente de los jóvenes por convivencia con los padres, frente a 2008: 188.000-506.000 hogares (2008-2025; INE EPA y ECV (tasa de convivencia con los padres); dato de 2025; C2).
-- [C2] Crecimiento de hogares proyectado por el INE para 2026-2035: 1.720.540 viviendas (1.308.530-1.772.410 viviendas) (2026-2035; INE Proyección de Hogares; INE mortalidad; Censo 2021; MIVAU; Catastro; dato de 2026; C2); para 2026-2030: 1.024.160 hogares (819.421-1.060.360 hogares) (1-ene-2026 a 1-ene-2031; INE; dato de INE 2026-06-17; C2).
+- [C2] Crecimiento de hogares proyectado por el INE para 2026-2035: 1.720.540 hogares (1.308.530-1.772.410 hogares) (2026-2035; INE Proyección de Hogares (tabla 54562); dato de 2026; C2); para 2026-2030: 1.024.160 hogares (819.421-1.060.360 hogares) (1-ene-2026 a 1-ene-2031; INE; dato de INE 2026-06-17; C2).
 
 **Precios y alquileres**
 - [C1] Precio de compra, núcleo Ministerio-Notariado-Registradores: 47,2 % (44,2-56,1 %) (2015-2025 (media anual); MIVAU valor tasado; Notariado CGN; Registradores opendata; dato de 2025 (anual); C1).
@@ -37,7 +37,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - [C4] Compraventas con comprador extranjero en 2025: 16,9 % (16,9-18,8 %); no residentes: 6,8 %.
 - [C4] Compraventas con comprador persona jurídica en 2024: 11,3 % de compraventas.
 - [C4] La parte de una ayuda general que se traslada al precio va de 27,8 % a 81,8 % en las provincias donde falta vivienda y construir es rentable, y llega a 100,0 % donde la oferta no responde.
-- [C4] En Europa (Eurostat): tenencia en propiedad en España de 73,6 % de la población en 2025, dentro del rango intercuartílico de la Unión Europea; precio real de la vivienda 42,6 % acumulado desde 2015 desde 2015.
+- [C4] En Europa (Eurostat): tenencia en propiedad en España de 73,6 % de la población en 2025, dentro del rango intercuartílico de la Unión Europea; precio real de la vivienda 42,6 % acumulado desde 2015.
 - [C4] Crédito a construcción y actividades inmobiliarias: -79,3 % desde su máximo de 2008.
 
 ## No se puede afirmar con estos datos

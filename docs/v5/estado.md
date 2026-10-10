@@ -32,7 +32,8 @@
 | E-2 artículos (a, b, c), artículo del Colegio, ponencia | E | hecho (los artículos son borradores más cortos de lo previsto; el del Colegio lo amplió el orquestador a 2.040 palabras) | C1/C2 en titulares | output/v5/articulos/, articulo_colegio.md, ponencia/ | 171.013 |
 | E-3 policy brief, lo que sabemos, una página, LinkedIn (10), revisión humana (15 cifras) | E | hecho | C1/C2 en titulares | output/v5/{policy_brief,lo_que_sabemos,una_pagina}.md, linkedin/, docs/v5/revision_humana.md | 124.237 |
 | E9-E12 (orquestador) | E | hecho | — | README v5, CITATION.cff, .zenodo.json, CHANGELOG, ERRATA, licencias, solicitudes, tareas del autor, correo, calendario, preguntas abiertas | 0 |
+| Revisión módulo E | E | REHACER (B1-B3) → corregido; APROBADO (reserva) | — | docs/v5/revision_E.md | 69.865 (reserva) |
 
-**Hecho:** módulos R, A, B y C aprobados; D1-lit; E9-E12 parciales (solicitudes, licencias, CITATION, zenodo, CHANGELOG, tareas del autor, correo, calendario).
-**Siguiente:** revisión E → cierre (make all ×2 sin red en clon limpio, etiqueta v5.0, resumen).
-**Tokens de subagentes v5:** 3.023.772 / 4.200.000 (R: 601.209 / 900.000; A: 471.653 / 700.000; B: 523.477 / 1.000.000; C: 416.137 / 700.000; D: 499.772 / 600.000; E: 511.524 / 600.000) (corte global al 80 %: 3.360.000; reserva 420.000).
+**Hecho:** módulos R, A, B, C, D y E aprobados; E9-E12 parciales (solicitudes, licencias, CITATION, zenodo, CHANGELOG, tareas del autor, correo, calendario).
+**Siguiente:** cierre (make all ×2 sin red en clon limpio, etiqueta v5.0, resumen).
+**Tokens de subagentes v5:** 3.093.637 / 4.200.000 (R: 601.209 / 900.000; A: 471.653 / 700.000; B: 523.477 / 1.000.000; C: 416.137 / 700.000; D: 499.772 / 600.000; E: 511.524 / 600.000) (corte global al 80 %: 3.360.000; reserva 420.000, de la que se usan 69.865).

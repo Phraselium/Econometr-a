@@ -37,7 +37,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - [C4] Compraventas con comprador extranjero en 2025: {{compradores_extranjeros}}; no residentes: {{compradores_no_residentes}}.
 - [C4] Compraventas con comprador persona jurídica en 2024: {{R1C-004:valor}}.
 - [C4] La parte de una ayuda general que se traslada al precio va de {{D1-H11:min}} a {{D1-H11:max}} en las provincias donde falta vivienda y construir es rentable, y llega a {{D1-H12:valor}} donde la oferta no responde.
-- [C4] En Europa (Eurostat): tenencia en propiedad en España de {{CA-EU-propiedad-nivel:num}} % de la población en 2025, dentro del rango intercuartílico de la Unión Europea; precio real de la vivienda {{CA-EU-hpi_real-crecimiento:valor}} desde 2015.
+- [C4] En Europa (Eurostat): tenencia en propiedad en España de {{CA-EU-propiedad-nivel:num}} % de la población en 2025, dentro del rango intercuartílico de la Unión Europea; precio real de la vivienda {{CA-EU-hpi_real-crecimiento:valor}}.
 - [C4] Crédito a construcción y actividades inmobiliarias: {{CA-CR-saldo-caida}} desde su máximo de 2008.
 
 ## No se puede afirmar con estos datos

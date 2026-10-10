@@ -31,8 +31,8 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 26; NO ANALIZADA: FALTAN DATO
 | CA-V1 | La vivienda en España es más cara que en Europa. | ANALIZADA, NO CONCLUYENTE | C4 |
 | CA-V2 | La falta de crédito a promotores frena la oferta de vivienda. | ANALIZADA, NO CONCLUYENTE | C4 |
 | CA-V3 | La mayoría compra al contado. | ANALIZADA, NO CONCLUYENTE | C4 |
-| CB-V1 | La ocupacion ilegal reduce la oferta de alquiler. | ANALIZADA, NO CONCLUYENTE | C4 |
-| CB-V2 | La mayoria de los caseros son pequenos propietarios. | ANALIZADA, NO CONCLUYENTE | C4 |
+| CB-V1 | La ocupación ilegal reduce la oferta de alquiler. | ANALIZADA, NO CONCLUYENTE | C4 |
+| CB-V2 | La mayoría de los caseros son pequeños propietarios. | ANALIZADA, NO CONCLUYENTE | C4 |
 | CB-V3 | Las empresas y fondos dominan el alquiler. | ANALIZADA, NO CONCLUYENTE | C4 |
 | CC-V1 | Sin ayuda familiar los jóvenes no pueden comprar vivienda. | ANALIZADA, NO CONCLUYENTE | C4 |
 | CC-V2 | Las viviendas protegidas se pierden por descalificación y el parque protegido se erosiona. | ANALIZADA, NO CONCLUYENTE | C4 |
@@ -456,9 +456,9 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 26; NO ANALIZADA: FALTAN DATO
 | Límites | Notariado (porcentaje de compras financiadas) sin dato accesible; Registradores solo 2022-2025 (texto de los Anuarios ERI). No distingue comprador residente de inversor. |
 | Evidencia | output/v5/CA/tablas/contado_ratio_hipotecas_compraventas.csv, output/v5/CA/tablas/contado_sensibilidad_phi.csv |
 
-## CB-V1 · Seguridad juridica y oferta
+## CB-V1 · Seguridad jurídica y oferta
 
-**Afirmación:** La ocupacion ilegal reduce la oferta de alquiler.
+**Afirmación:** La ocupación ilegal reduce la oferta de alquiler.
 
 | Campo | Contenido |
 |---|---|
@@ -475,7 +475,7 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 26; NO ANALIZADA: FALTAN DATO
 
 ## CB-V2 · Arrendadores
 
-**Afirmación:** La mayoria de los caseros son pequenos propietarios.
+**Afirmación:** La mayoría de los caseros son pequeños propietarios.
 
 | Campo | Contenido |
 |---|---|
@@ -550,7 +550,7 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 26; NO ANALIZADA: FALTAN DATO
 | Magnitud | Signo por grupo (C2, estable en la rejilla de P-D): el beneficiario paga igual o menos; el no beneficiario paga más. Traslado a precios de una ayuda general por unidad (C4, método A): clase 1 28 %-82 %; clase 2 88 %-100 %; clase 3 50 %-90 %; clase 9 No evaluable. Con el método B: clase 1 15 %-46 %, clase 2 100 %-100 %, clase 3 40 %-77 %. |
 | Intervalo | clase 1: 28 %-82 %; clase 2: 88 %-100 %; clase 3: 50 %-90 % al precio (C4) |
 | Cota | C2 de signo por grupo; magnitud y clase C4 |
-| Literatura | Eriksen-Ross 2015 (VERIFICADA, Q1); Hilber-Turner 2014 (VERIFICADA); Gibbons-Manning 2006 (VERIFICADA, cuartil no verificado); Carozzi-Hilber-Yu 2024 (VERIFICADA, Q1). |
+| Literatura | Eriksen-Ross 2015 (VERIFICADA, Q1); Hilber-Turner 2014 (VERIFICADA, Q1); Gibbons-Manning 2006 (VERIFICADA, Q1; J. Public Economics); Carozzi-Hilber-Yu 2024 (VERIFICADA, Q1). |
 | Regla del veredicto | Regla común con M5-V1: signo estable (C2) para el grupo al que se refiere la afirmación, PARCIALMENTE acotado a ese grupo. Por clase, cuanto más rígida la oferta (clase 2), mayor es la parte que se traslada al precio y menor la ventaja neta del beneficiario; en la clase 1 la parte es menor, pero no nula. La capa C2 es solo del signo por grupo; la magnitud del traslado y su desglose por clase son C4 (las clases de A4 son C4) y no se promueven. |
 | Límites | Sin evaluación verificada de los avales ICO ni de las ayudas españolas; la respuesta de oferta de A4 es C4; una ayuda focalizada tiene una cota superior de traslado. |
 | Evidencia | output/v5/D1/incidencia_ayudas_por_clase.csv, output/v5/D1/matriz_instrumentos.csv |

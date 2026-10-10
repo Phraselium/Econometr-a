@@ -78,14 +78,14 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ---
 
-## Qué podría funcionar: depende del territorio
+## Instrumentos con signo estable según el territorio [C2 en el signo; C4 por clase]
 
 - Donde falta y construir es rentable, la oferta respondería; donde no es rentable, haría falta otro instrumento [C4]
 - La construcción adicional planificada cubriría en torno a {{D2-H11:valor}} de la necesidad [C4]
 
 ---
 
-## Qué no funcionaría por sí solo
+## Instrumentos con signo no estable o no evaluable [C4]
 
 - Una ayuda general a la demanda podría trasladarse al precio: {{D1-H11:valor}} a {{D1-H12:valor}} según la clase [C4]
 

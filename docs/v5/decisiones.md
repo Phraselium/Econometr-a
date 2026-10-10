@@ -212,3 +212,25 @@
   - viñetas C4 sobre Europa, crédito, contado y no residentes.
 - **Artículos (E3).** Son borradores de entre 1.500 y 3.200 palabras, más cortos de lo previsto, porque el redactor llegó al 80 % del presupuesto. La ampliación pasa al backlog (BK-E3, coste M) y a las tareas del autor antes del envío a revistas. Los cuartiles de Housing Studies, Investigaciones Regionales, SERIEs, Papers in Regional Science y JCRE quedan «no verificados».
 - **Cifra tecleada en B4.** B4-v3-vut-cantidad estaba tecleada en b4_run.py. Ahora se lee de output/v3/PB/cotas.json, con el mismo valor.
+
+## Revisión del módulo E: REHACER (B1-B3) → corregido por el orquestador (con cargo a la reserva)
+- **B1.** E-B1-F (componente F) pasa a «hogares», con su fuente propia (proyección del INE).
+- **B2.**
+  - render.py da el rango cuando no hay valor central, en lugar de «— unidad».
+  - cifras_clave convierte en texto las listas de fuentes.
+  - Se eliminan las unidades duplicadas en las plantillas. Un barrido automático de repeticiones, NaN y listas da 0 casos.
+- **B3.** La concentración provincial (C4) se rotula [C4] en el artículo del Colegio.
+- **No bloqueantes.**
+  - Concordancias de D3 (`:num`).
+  - Sobrecarga en puntos.
+  - Nota de B4 en la revisión humana.
+  - Títulos de las diapositivas 13-14 sin valoración.
+  - [C4] en la frase sobre València.
+  - Periodos del artículo del Colegio.
+  - Titular de LinkedIn 06.
+  - Declaración de independencia e IA en el informe técnico y en el artículo del Colegio.
+  - LICENSE doble (MIT para el código, CC BY 4.0 para los textos).
+  - Tildes en las fichas CB.
+  - Saludo del correo.
+- Queda anotado, sin corregir, que el artículo del Colegio tiene unas 1.740 palabras de prosa sin las citas entre paréntesis (2.040 con ellas). Ampliarlo es tarea del autor antes del envío.
+- **El módulo E queda APROBADO.** E llegó al 85 % de su límite; la revisión y estas correcciones se cargan a la reserva de cierre.

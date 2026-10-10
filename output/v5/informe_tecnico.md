@@ -35,7 +35,7 @@
 
 **Instrumentos.** Con la misma rúbrica se evalúan 36 instrumentos; en 18 instrumentos el signo no es evaluable con la evidencia disponible [C4]. Donde la oferta no responde (clase `2` de A4), una ayuda general a la demanda se trasladaría al precio en 100,0 % según la rejilla de elasticidades [C4]. Lo que aparece con signo estable en la rejilla de v3 es más construcción donde falta y la movilización de vacías [C2 en el signo; C4 en la magnitud].
 
-**Convergencia.** Frente a BdE, Ministerio, INE, OCDE y Eurostat, y solo cuando concepto, periodo y cobertura son comparables, las cifras del proyecto coinciden en 2 referencias y difieren en 1 referencias; otras 6 referencias son comparables solo en parte (otro periodo o concepto), 4 referencias comparten fuente primaria con el proyecto y no cuentan, y 9 referencias no son comparables [C4]. Las diferencias se describen por periodo, concepto o bajas del parque.
+**Convergencia.** Frente a BdE, Ministerio, INE, OCDE y Eurostat, y solo cuando concepto, periodo y cobertura son comparables, las cifras del proyecto coinciden en 2 y difieren en 1; otras 6 son comparables solo en parte (otro periodo o concepto), 4 comparten fuente primaria con el proyecto y no cuentan, y 9 no son comparables [C4]. Las diferencias se describen por periodo, concepto o bajas del parque.
 
 **Cómo está organizado.** El diagnóstico nacional abre el informe (déficit, hogares, terminadas, precios, alquiler y Europa). Siguen la necesidad futura por provincia y la proyección a 2030, el territorio (concentración, clases y diferencias provinciales), la pregunta de qué se asocia con la subida, el parque frente al mercado, los instrumentos, la política por territorio, el módulo València, la convergencia con organismos y las limitaciones. Cada sección termina con una «Lectura» que resume lo que se puede y lo que no se puede decir.
 
@@ -67,7 +67,7 @@ Reglas que se aplican en todo el informe:
 
 **Definición.** El déficit contable es el aumento del número de hogares menos las viviendas terminadas en el mismo periodo. No incluye la demanda latente (jóvenes que no se emancipan) ni la vivienda que sale del parque, salvo que se diga.
 
-**2021-2024 [C1].** Con dos fuentes independientes en cada componente (hogares: ECP y EPA corregida por la ruptura de 2021; terminadas: Ministerio y Catastro), el déficit está entre 562.692-688.692 viviendas. Es la única ventana en la que todos los componentes pasan la regla de dos fuentes (— viviendas (562.692-688.692 viviendas) (2021-2024; hogares: ECP y EPA corregida; terminadas: Ministerio y Catastro; dato de 2024; C1)).
+**2021-2024 [C1].** Con dos fuentes independientes en cada componente (hogares: ECP y EPA corregida por la ruptura de 2021; terminadas: Ministerio y Catastro), el déficit está entre 562.692-688.692 viviendas. Es la única ventana en la que todos los componentes pasan la regla de dos fuentes (562.692-688.692 viviendas (2021-2024; hogares: ECP y EPA corregida; terminadas: Ministerio y Catastro; dato de 2024; C1)).
 
 **Con bajas del parque [C2].** Si se suponen bajas anuales del parque en el rango declarado en v4, el déficit 2021-2024 queda entre 562.692-902.808 viviendas [C2]. La cota inferior es la cifra sin bajas; la superior, la de bajas máximas.
 
@@ -81,7 +81,7 @@ Reglas que se aplican en todo el informe:
 
 - Entre 2021 y 2025 los hogares aumentaron en 997.586 hogares (981.823-1.013.350 hogares) [C1] (INE ECP y EPA corregida por la ruptura de 2021).
 - La demanda latente de jóvenes que viven con sus padres, frente a la tasa de convivencia de 2008, está entre 188.000-506.000 hogares [C2]. Es una cota: supone que la tasa de 2008 es la de referencia.
-- El INE proyecta 1.720.540 hogares hogares más en 2026-2035 [C2] y 1.024.160 hogares en 2026-2030 [C2]. Es un escenario del INE: no reacciona a la oferta ni a los precios.
+- El INE proyecta 1.720.540 hogares más en 2026-2035 [C2] y 1.024.160 hogares en 2026-2030 [C2]. Es un escenario del INE: no reacciona a la oferta ni a los precios.
 - La descomposición contable de v4 (población por nacionalidad, edad y jefatura) se mantiene sin cambios en v5 y es C4 en los componentes de fuente única (`output/v4/M2`).
 
 ### 1.3 Viviendas terminadas
@@ -305,7 +305,7 @@ Las unidades no son sumables entre métodos. La estabilidad se mide con la tau d
 
 **Reparto entre provincias (B3, cuota del R²) [C4].** Oferta y suelo 25,9 % del R2; demografía 23,6 % del R2; turismo y no residentes 18,4 % del R2; financiación y tipos 11,3 % del R2; renta y empleo 9,8 % del R2; residuo 18,8-29,9 % del R2. El orden de las familias no es el mismo con valor tasado y con Registradores (correlación de Spearman 0,91 coeficiente).
 
-**Cota de cantidad [C2].** Las viviendas turísticas desplazaron como máximo 2,7 % del stock de alquiler (2,4-2,7 % del stock de alquiler) del stock de alquiler en 2020-2024 [C2].
+**Cota de cantidad [C2].** Las viviendas turísticas desplazaron como máximo 2,7 % del stock de alquiler (2,4-2,7 % del stock de alquiler) en 2020-2024 [C2].
 
 **Estabilidad.** La tau de Kendall mínima del orden de las familias entre métodos y periodos es -0,71 tau (4 familias) [C4]: el orden se invierte según se mire. En las series nacionales el residuo es grande y cambia de signo entre periodos; entre provincias pesan más la oferta, la demografía y el turismo.
 
@@ -333,7 +333,7 @@ El parque es el conjunto de viviendas existentes y sus ocupantes; el mercado son
 - Compraventas con comprador persona jurídica: 11,3 % de compraventas en 2024 [C4]. Es un flujo; no dice qué parte del parque poseen las empresas.
 - Declarantes del IRPF con rendimientos de capital inmobiliario: 3.262.030 declarantes; con reducción por arrendamiento de vivienda: 2.236.900 declarantes [C4].
 - Viviendas equivalentes arrendadas por personas físicas: 2.650.950 viviendas, es decir, 0,81 viviendas/declarante por declarante [C4].
-- Frente a las viviendas principales en alquiler del Censo (2.965.500 viviendas), el residual que incluye personas jurídicas, sector público y alquiler no declarado está entre 16,9-38,1 % del stock del stock [C4].
+- Frente a las viviendas principales en alquiler del Censo (2.965.500 viviendas), el residual que incluye personas jurídicas, sector público y alquiler no declarado está entre 16,9-38,1 % del stock [C4].
 - La AEAT no publica la distribución de arrendadores por número de inmuebles: no se puede contrastar cuánto alquiler está en manos de grandes tenedores.
 
 ### 5.3 No residentes (R1A)
@@ -358,7 +358,7 @@ El parque es el conjunto de viviendas existentes y sus ocupantes; el mercado son
 
 - Lanzamientos por la LAU (principalmente impago de alquiler): 18.317 lanzamientos/anio en 2025, frente a un máximo de 38.141 lanzamientos/anio en 2013-2025 [C4].
 - Hechos conocidos de allanamiento o usurpación: 14.875 hechos/anio en 2025; procedimientos verbales posesorios por ocupación ingresados: 1.845 procedimientos/anio [C4].
-- Frente a 2.965.500 viviendas viviendas principales en alquiler, los órdenes de magnitud son pequeños. Con los datos públicos no se puede contrastar si la percepción de inseguridad reduce la oferta de alquiler: la correlación entre comunidades no es un diseño que lo permita.
+- Frente a 2.965.500 viviendas principales en alquiler, los órdenes de magnitud son pequeños. Con los datos públicos no se puede contrastar si la percepción de inseguridad reduce la oferta de alquiler: la correlación entre comunidades no es un diseño que lo permita.
 
 ### 5.6 Fiscalidad (CB)
 
@@ -487,7 +487,7 @@ La tabla completa por distrito, con nombre, renta mediana de 2015 y 2024, contra
 ### 8.5 Heredado de v4
 
 Se mantiene la lectura del módulo València de v4 (`output/v4/informe_tecnico.md`):
-- la provincia de València está entre las tres primeras en déficit contable 2021-2025;
+- [C4] la provincia de València está entre las tres primeras en déficit contable 2021-2025;
 - el componente de nacionalidad extranjera pesa más en la variación de hogares de la provincia que en el conjunto nacional [C4];
 - las viviendas turísticas de la ciudad están en 2026 por debajo del nivel de 2021 en la comparación del mismo mes (INE, oleadas experimentales) [C4].
 
@@ -497,7 +497,7 @@ Se mantiene la lectura del módulo València de v4 (`output/v4/informe_tecnico.m
 
 **Regla.** Una cifra «coincide» o «difiere» solo si concepto, periodo y cobertura son comparables; coincide si los rangos se solapan o si la diferencia entre puntos medios no supera la tolerancia declarada. «Comparable en parte» (otro periodo, concepto o cobertura) no cuenta como coincidencia ni como diferencia. «Control de la misma fuente» es una cifra del organismo con la misma fuente primaria que el proyecto: confirma la transcripción y no cuenta. «No comparable» si el concepto lo impide o la cifra no se localizó. Las diferencias se describen por concepto, periodo, cobertura, método o bajas. No se valora a ningún organismo.
 
-**Resultado [C4].** Coinciden 2 referencias; difieren 1 referencias; son comparables en parte 6 referencias; son controles de la misma fuente 4 referencias; no son comparables 9 referencias.
+**Resultado [C4].** Coinciden 2; difieren 1; son comparables en parte 6; son controles de la misma fuente 4; no son comparables 9.
 
 | Cifra del proyecto | Organismo | Veredicto | Por qué |
 |---|---|---|---|
@@ -528,7 +528,7 @@ La tabla completa, con documento y página de cada organismo, está en [output/v
 - **Que una familia de factores «explique» la subida de precios.** Las contribuciones contables no son estables entre métodos ni periodos [C4].
 - **Que los grandes tenedores o los fondos determinen los precios.** No hay datos públicos del parque por tipo de propietario. El verificador lo deja en «no analizada: faltan datos».
 - **Que los topes al alquiler bajen o suban las rentas en España.** El resultado de v3 está fuera de C3 por contaminación de la validación; la réplica de García-López y otros no se reproduce (coeficiente propio -4,2 milésimas de log-punto por punto de VUT/parque (-7,8--0,54 milésimas de log-punto por punto de VUT/parque), p ajustado 26,9 % (valor p)) porque el stock de SERPAVI recoge solo 55,1 % de la variación del flujo [C4].
-- **Que las viviendas turísticas suban el alquiler nacional.** La asociación de v3 no se distingue de cero (0,26 milésimas de log-punto por VUT/100 viv. (-0,74-1,3 milésimas de log-punto por VUT/100 viv.), p ajustado 46,7 % (valor p)); la cota de cantidad es 2,7 % del stock de alquiler del stock de alquiler [C2].
+- **Que las viviendas turísticas suban el alquiler nacional.** La asociación de v3 no se distingue de cero (0,26 milésimas de log-punto por VUT/100 viv. (-0,74-1,3 milésimas de log-punto por VUT/100 viv.), p ajustado 46,7 % (valor p)); la cota de cantidad es 2,7 % del stock de alquiler [C2].
 - **Que haya una burbuja.** Las pruebas de exuberancia (GSADF) con tamaño corregido detectan episodios en algunas razones de precio y no en otras; una exuberancia estadística no es una burbuja (sección de robustez del working paper).
 - **Que el pre-registro de B3 confirme una hipótesis.** Su potencia era insuficiente; el resultado es descriptivo.
 
@@ -594,3 +594,7 @@ Licencias: `docs/v5/licencias_datos.md`. Fuentes fallidas: `docs/v5/fuentes_fall
 - Este informe se genera con `python3 src/v5/render.py` desde `docs/v5/plantillas/informe_tecnico.md`.
 - Toda especificación probada está en los `registro.csv` de cada módulo; la muestra sellada solo se usa vía `src/holdout.py`.
 - Semilla: `SEED=20261010` en todo lo aleatorio.
+
+## Declaración de independencia y uso de inteligencia artificial
+
+Este informe es un trabajo individual e independiente de Borja Romero, economista, sin financiación externa ni vínculo con partidos políticos. Evalúa afirmaciones e instrumentos, nunca partidos ni personas. El análisis, el código y los borradores se elaboraron con agentes de inteligencia artificial (Claude), bajo la supervisión del autor, que revisa y asume la responsabilidad del contenido. El detalle está en el apéndice C del working paper y en README_REPLICACION.md. Las correcciones se publican en ERRATA.md.

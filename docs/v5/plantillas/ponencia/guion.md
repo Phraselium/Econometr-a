@@ -8,7 +8,7 @@ Regla del ponente: cada cifra se dice con su periodo y su capa; los veredictos s
 - Mensaje: «Hoy no diré qué causa la subida; diré qué se puede medir y hasta dónde».
 
 ## Bloque 1 · Hechos (1:30-6:00; diapositivas 3-5) <!-- check:cifra-libre -->
-- Hogares frente a terminadas: {{dh_2125:valor}} hogares más en {{dh_2125:periodo}} [C1]; terminadas entre {{terminadas_1924:rango}} [C1].
+- Hogares frente a terminadas: {{dh_2125:valor}} más en {{dh_2125:periodo}} [C1]; terminadas entre {{terminadas_1924:rango}} [C1].
 - Alquiler: el stock creció entre {{A23-A2:min}} y {{A23-A2:max}} en {{A23-A2:periodo}} [C1]; los contratos nuevos, más.
 - Precio de compra: núcleo de fuentes {{A23-P2:valor}} en {{A23-P2:periodo}} [C1]; el INE da más y la diferencia no está descompuesta.
 

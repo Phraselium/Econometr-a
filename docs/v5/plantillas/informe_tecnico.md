@@ -35,7 +35,7 @@
 
 **Instrumentos.** Con la misma rúbrica se evalúan {{D1-H01:valor}}; en {{D1-H02:valor}} el signo no es evaluable con la evidencia disponible [C4]. Donde la oferta no responde (clase `2` de A4), una ayuda general a la demanda se trasladaría al precio en {{D1-H12:valor}} según la rejilla de elasticidades [C4]. Lo que aparece con signo estable en la rejilla de v3 es más construcción donde falta y la movilización de vacías [C2 en el signo; C4 en la magnitud].
 
-**Convergencia.** Frente a BdE, Ministerio, INE, OCDE y Eurostat, y solo cuando concepto, periodo y cobertura son comparables, las cifras del proyecto coinciden en {{D3-coincide:valor}} y difieren en {{D3-difiere:valor}}; otras {{D3-comparable_en_parte:valor}} son comparables solo en parte (otro periodo o concepto), {{D3-control_misma_fuente:valor}} comparten fuente primaria con el proyecto y no cuentan, y {{D3-no_comparable:valor}} no son comparables [C4]. Las diferencias se describen por periodo, concepto o bajas del parque.
+**Convergencia.** Frente a BdE, Ministerio, INE, OCDE y Eurostat, y solo cuando concepto, periodo y cobertura son comparables, las cifras del proyecto coinciden en {{D3-coincide:num}} y difieren en {{D3-difiere:num}}; otras {{D3-comparable_en_parte:num}} son comparables solo en parte (otro periodo o concepto), {{D3-control_misma_fuente:num}} comparten fuente primaria con el proyecto y no cuentan, y {{D3-no_comparable:num}} no son comparables [C4]. Las diferencias se describen por periodo, concepto o bajas del parque.
 
 **Cómo está organizado.** El diagnóstico nacional abre el informe (déficit, hogares, terminadas, precios, alquiler y Europa). Siguen la necesidad futura por provincia y la proyección a 2030, el territorio (concentración, clases y diferencias provinciales), la pregunta de qué se asocia con la subida, el parque frente al mercado, los instrumentos, la política por territorio, el módulo València, la convergencia con organismos y las limitaciones. Cada sección termina con una «Lectura» que resume lo que se puede y lo que no se puede decir.
 
@@ -81,7 +81,7 @@ Reglas que se aplican en todo el informe:
 
 - Entre 2021 y 2025 los hogares aumentaron en {{dh_2125}} [C1] (INE ECP y EPA corregida por la ruptura de 2021).
 - La demanda latente de jóvenes que viven con sus padres, frente a la tasa de convivencia de 2008, está entre {{latente_convivencia:rango}} [C2]. Es una cota: supone que la tasa de 2008 es la de referencia.
-- El INE proyecta {{B1-H4:valor}} hogares más en 2026-2035 [C2] y {{B2-H3:valor}} en 2026-2030 [C2]. Es un escenario del INE: no reacciona a la oferta ni a los precios.
+- El INE proyecta {{B1-H4:valor}} más en 2026-2035 [C2] y {{B2-H3:valor}} en 2026-2030 [C2]. Es un escenario del INE: no reacciona a la oferta ni a los precios.
 - La descomposición contable de v4 (población por nacionalidad, edad y jefatura) se mantiene sin cambios en v5 y es C4 en los componentes de fuente única (`output/v4/M2`).
 
 ### 1.3 Viviendas terminadas
@@ -305,7 +305,7 @@ Las unidades no son sumables entre métodos. La estabilidad se mide con la tau d
 
 **Reparto entre provincias (B3, cuota del R²) [C4].** Oferta y suelo {{B4-b3-shapley-oferta_suelo:valor}}; demografía {{B4-b3-shapley-demografica:valor}}; turismo y no residentes {{B4-b3-shapley-turismo_no_residentes:valor}}; financiación y tipos {{B4-b3-shapley-financiacion_tipos:valor}}; renta y empleo {{B4-b3-shapley-renta_empleo:valor}}; residuo {{B4-b3-shapley-residuo:rango}}. El orden de las familias no es el mismo con valor tasado y con Registradores (correlación de Spearman {{B3-shap-spearman:valor}}).
 
-**Cota de cantidad [C2].** Las viviendas turísticas desplazaron como máximo {{B4-v3-vut-cantidad}} del stock de alquiler en 2020-2024 [C2].
+**Cota de cantidad [C2].** Las viviendas turísticas desplazaron como máximo {{B4-v3-vut-cantidad}} en 2020-2024 [C2].
 
 **Estabilidad.** La tau de Kendall mínima del orden de las familias entre métodos y periodos es {{B4-estabilidad-tau-min:valor}} [C4]: el orden se invierte según se mire. En las series nacionales el residuo es grande y cambia de signo entre periodos; entre provincias pesan más la oferta, la demografía y el turismo.
 
@@ -333,7 +333,7 @@ El parque es el conjunto de viviendas existentes y sus ocupantes; el mercado son
 - Compraventas con comprador persona jurídica: {{CB-C8-01}} en 2024 [C4]. Es un flujo; no dice qué parte del parque poseen las empresas.
 - Declarantes del IRPF con rendimientos de capital inmobiliario: {{CB-C6-01:valor}}; con reducción por arrendamiento de vivienda: {{CB-C6-02:valor}} [C4].
 - Viviendas equivalentes arrendadas por personas físicas: {{CB-C6-03:valor}}, es decir, {{CB-C6-04:valor}} por declarante [C4].
-- Frente a las viviendas principales en alquiler del Censo ({{CB-C5-05:valor}}), el residual que incluye personas jurídicas, sector público y alquiler no declarado está entre {{CB-C6-05:rango}} del stock [C4].
+- Frente a las viviendas principales en alquiler del Censo ({{CB-C5-05:valor}}), el residual que incluye personas jurídicas, sector público y alquiler no declarado está entre {{CB-C6-05:rango}} [C4].
 - La AEAT no publica la distribución de arrendadores por número de inmuebles: no se puede contrastar cuánto alquiler está en manos de grandes tenedores.
 
 ### 5.3 No residentes (R1A)
@@ -358,7 +358,7 @@ El parque es el conjunto de viviendas existentes y sus ocupantes; el mercado son
 
 - Lanzamientos por la LAU (principalmente impago de alquiler): {{CB-C5-01:valor}} en 2025, frente a un máximo de {{CB-C5-02:valor}} en 2013-2025 [C4].
 - Hechos conocidos de allanamiento o usurpación: {{CB-C5-03:valor}} en 2025; procedimientos verbales posesorios por ocupación ingresados: {{CB-C5-04:valor}} [C4].
-- Frente a {{CB-C5-05:valor}} viviendas principales en alquiler, los órdenes de magnitud son pequeños. Con los datos públicos no se puede contrastar si la percepción de inseguridad reduce la oferta de alquiler: la correlación entre comunidades no es un diseño que lo permita.
+- Frente a {{CB-C5-05:num}} viviendas principales en alquiler, los órdenes de magnitud son pequeños. Con los datos públicos no se puede contrastar si la percepción de inseguridad reduce la oferta de alquiler: la correlación entre comunidades no es un diseño que lo permita.
 
 ### 5.6 Fiscalidad (CB)
 
@@ -487,7 +487,7 @@ La tabla completa por distrito, con nombre, renta mediana de 2015 y 2024, contra
 ### 8.5 Heredado de v4
 
 Se mantiene la lectura del módulo València de v4 (`output/v4/informe_tecnico.md`):
-- la provincia de València está entre las tres primeras en déficit contable 2021-2025;
+- [C4] la provincia de València está entre las tres primeras en déficit contable 2021-2025;
 - el componente de nacionalidad extranjera pesa más en la variación de hogares de la provincia que en el conjunto nacional [C4];
 - las viviendas turísticas de la ciudad están en 2026 por debajo del nivel de 2021 en la comparación del mismo mes (INE, oleadas experimentales) [C4].
 
@@ -497,7 +497,7 @@ Se mantiene la lectura del módulo València de v4 (`output/v4/informe_tecnico.m
 
 **Regla.** Una cifra «coincide» o «difiere» solo si concepto, periodo y cobertura son comparables; coincide si los rangos se solapan o si la diferencia entre puntos medios no supera la tolerancia declarada. «Comparable en parte» (otro periodo, concepto o cobertura) no cuenta como coincidencia ni como diferencia. «Control de la misma fuente» es una cifra del organismo con la misma fuente primaria que el proyecto: confirma la transcripción y no cuenta. «No comparable» si el concepto lo impide o la cifra no se localizó. Las diferencias se describen por concepto, periodo, cobertura, método o bajas. No se valora a ningún organismo.
 
-**Resultado [C4].** Coinciden {{D3-coincide:valor}}; difieren {{D3-difiere:valor}}; son comparables en parte {{D3-comparable_en_parte:valor}}; son controles de la misma fuente {{D3-control_misma_fuente:valor}}; no son comparables {{D3-no_comparable:valor}}.
+**Resultado [C4].** Coinciden {{D3-coincide:num}}; difieren {{D3-difiere:num}}; son comparables en parte {{D3-comparable_en_parte:num}}; son controles de la misma fuente {{D3-control_misma_fuente:num}}; no son comparables {{D3-no_comparable:num}}.
 
 | Cifra del proyecto | Organismo | Veredicto | Por qué |
 |---|---|---|---|
@@ -528,7 +528,7 @@ La tabla completa, con documento y página de cada organismo, está en [output/v
 - **Que una familia de factores «explique» la subida de precios.** Las contribuciones contables no son estables entre métodos ni periodos [C4].
 - **Que los grandes tenedores o los fondos determinen los precios.** No hay datos públicos del parque por tipo de propietario. El verificador lo deja en «no analizada: faltan datos».
 - **Que los topes al alquiler bajen o suban las rentas en España.** El resultado de v3 está fuera de C3 por contaminación de la validación; la réplica de García-López y otros no se reproduce (coeficiente propio {{E-GL-coef}}, p ajustado {{E-GL-pholm:valor}}) porque el stock de SERPAVI recoge solo {{E-GL-lambda:valor}} de la variación del flujo [C4].
-- **Que las viviendas turísticas suban el alquiler nacional.** La asociación de v3 no se distingue de cero ({{E-v3-H3-1}}, p ajustado {{E-v3-H3-1-p:valor}}); la cota de cantidad es {{B4-v3-vut-cantidad:valor}} del stock de alquiler [C2].
+- **Que las viviendas turísticas suban el alquiler nacional.** La asociación de v3 no se distingue de cero ({{E-v3-H3-1}}, p ajustado {{E-v3-H3-1-p:valor}}); la cota de cantidad es {{B4-v3-vut-cantidad:valor}} [C2].
 - **Que haya una burbuja.** Las pruebas de exuberancia (GSADF) con tamaño corregido detectan episodios en algunas razones de precio y no en otras; una exuberancia estadística no es una burbuja (sección de robustez del working paper).
 - **Que el pre-registro de B3 confirme una hipótesis.** Su potencia era insuficiente; el resultado es descriptivo.
 
@@ -594,3 +594,7 @@ Licencias: `docs/v5/licencias_datos.md`. Fuentes fallidas: `docs/v5/fuentes_fall
 - Este informe se genera con `python3 src/v5/render.py` desde `docs/v5/plantillas/informe_tecnico.md`.
 - Toda especificación probada está en los `registro.csv` de cada módulo; la muestra sellada solo se usa vía `src/holdout.py`.
 - Semilla: `SEED=20261010` en todo lo aleatorio.
+
+## Declaración de independencia y uso de inteligencia artificial
+
+Este informe es un trabajo individual e independiente de Borja Romero, economista, sin financiación externa ni vínculo con partidos políticos. Evalúa afirmaciones e instrumentos, nunca partidos ni personas. El análisis, el código y los borradores se elaboraron con agentes de inteligencia artificial (Claude), bajo la supervisión del autor, que revisa y asume la responsabilidad del contenido. El detalle está en el apéndice C del working paper y en README_REPLICACION.md. Las correcciones se publican en ERRATA.md.

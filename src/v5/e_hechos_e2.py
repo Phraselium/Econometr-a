@@ -35,7 +35,9 @@ def _b1() -> list[dict]:
                          ("K", "Cartera en construcción (componente K)", "C4"),
                          ("L", "Viviendas liberadas por envejecimiento (componente L, 10 años; no se resta)", "C4"),
                          ("R", "Reposición del parque (componente R, 10 años; límite inferior)", "C4")]:
-        out.append(h(f"E-B1-{c}", ind, g(c, "central"), g(c, "min"), g(c, "max"), "viviendas", per, "España (52 provincias)", fu, capa, "2026"))
+        # revisión E (B1): F es un aumento de HOGARES (proyección del INE), con sus fuentes propias
+        uni, fu_c = ("hogares", "INE Proyección de Hogares (tabla 54562)") if c == "F" else ("viviendas", fu)
+        out.append(h(f"E-B1-{c}", ind, g(c, "central"), g(c, "min"), g(c, "max"), uni, per, "España (52 provincias)", fu_c, capa, "2026"))
     out.append(h("E-B1-anual", "Necesidad de vivienda por año (N10/10), suma de 52 provincias", g("N10", "central") / 10,
                  g("N10", "min") / 10, g("N10", "max") / 10, "viviendas/año", per, "España (52 provincias)", fu, "C4", "2026"))
     for c, ind in [("N10_formula_literal_menos_L", "Variante literal: necesidad 10 años restando además L (duplica disoluciones)"),

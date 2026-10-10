@@ -52,7 +52,7 @@ Con el precio de Registradores el R² es 0,82 proporción [C4]. Las especificaci
 
 ## Discusión
 
-El artículo muestra lo que un panel de 50 provincias puede y no puede decir. Puede describir: la geografía de los precios es muy predecible con características observables. No puede atribuir: con el tamaño mínimo detectable calculado de antemano, las asociaciones de magnitud plausible de la demanda no se distinguen del ruido tras ajustar por comparaciones múltiples. La convergencia es la única regularidad robusta al ajuste y es en parte compatible con error de medida. Las comparaciones con organismos se recogen en `output/v5/D3/convergencia.md` (2 referencias coinciden y 1 referencias difieren) [C4].
+El artículo muestra lo que un panel de 50 provincias puede y no puede decir. Puede describir: la geografía de los precios es muy predecible con características observables. No puede atribuir: con el tamaño mínimo detectable calculado de antemano, las asociaciones de magnitud plausible de la demanda no se distinguen del ruido tras ajustar por comparaciones múltiples. La convergencia es la única regularidad robusta al ajuste y es en parte compatible con error de medida. Las comparaciones con organismos se recogen en `output/v5/D3/convergencia.md` (2 coinciden y 1 difieren) [C4].
 
 ## Conclusión
 

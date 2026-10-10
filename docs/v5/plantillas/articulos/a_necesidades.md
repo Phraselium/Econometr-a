@@ -100,7 +100,7 @@ Con el rango completo, el déficit empeora en {{E-B2-empeora}}, mejora en {{E-B2
 - **Reposición.** Con los dos métodos de bajas, el componente R se mueve entre {{E-B1-R:min}} y {{E-B1-R:max}} [C4]; el resultado agregado es poco sensible a R porque es pequeño frente a A y F.
 - **Vacías.** La fracción movilizable es el supuesto más influyente. Con el diez por ciento, M resta {{E-B1-M:min}}; con el treinta por ciento, {{E-B1-M:max}} [C4]. La mediana municipal del porcentaje de vacías en el Censo 2021 es {{R1C-021}} [C4], con gran dispersión entre municipios.
 - **Escenario de terminadas.** El escenario (c), de tendencia, no entra en el rango principal; su resultado nacional cae entre los de (a) y (b).
-- **Contraste con organismos.** El módulo D3 compara las cifras clave con las de organismos públicos y privados: {{D3-coincide}} coinciden, {{D3-difiere}} difieren y {{D3-no_comparable}} no son comparables por concepto o periodo [C4].
+- **Contraste con organismos.** El módulo D3 compara las cifras clave con las de organismos públicos y privados: {{D3-coincide:num}} coinciden, {{D3-difiere:num}} difieren y {{D3-no_comparable:num}} no son comparables por concepto o periodo [C4].
 
 ## Discusión
 

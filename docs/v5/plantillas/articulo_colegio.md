@@ -6,9 +6,9 @@ Pocas discusiones económicas generan tantas cifras contradictorias como la de l
 
 ## Los hogares crecen más deprisa que las viviendas terminadas [C1]
 
-El número de hogares aumentó en {{dh_2125:cita}}. En el mismo periodo, las viviendas terminadas al año en el territorio común estuvieron entre {{terminadas_1924:rango}} ({{terminadas_1924:periodo}}; {{terminadas_1924:fuentes}}; dato de {{terminadas_1924:fecha_dato}}; {{terminadas_1924:capa}}). La diferencia es un déficit acumulado: con bajas del parque nulas, el déficit 2021-2024 está entre {{deficit_2124_c1:rango}} ({{deficit_2124_c1:periodo}}; {{deficit_2124_c1:fuentes}}; dato de {{deficit_2124_c1:fecha_dato}}; {{deficit_2124_c1:capa}}); con bajas supuestas del parque, la cota está entre {{deficit_2124_c2:rango}} ({{deficit_2124_c2:periodo}}; {{deficit_2124_c2:fuentes}}; dato de {{deficit_2124_c2:fecha_dato}}; {{deficit_2124_c2:capa}}).
+El número de hogares aumentó en {{dh_2125:cita}}. Por su parte, en un periodo casi coincidente, las viviendas terminadas al año en el territorio común estuvieron entre {{terminadas_1924:rango}} ({{terminadas_1924:periodo}}; {{terminadas_1924:fuentes}}; dato de {{terminadas_1924:fecha_dato}}; {{terminadas_1924:capa}}). La diferencia es un déficit acumulado: con bajas del parque nulas, el déficit 2021-2024 está entre {{deficit_2124_c1:rango}} ({{deficit_2124_c1:periodo}}; {{deficit_2124_c1:fuentes}}; dato de {{deficit_2124_c1:fecha_dato}}; {{deficit_2124_c1:capa}}); con bajas supuestas del parque, la cota está entre {{deficit_2124_c2:rango}} ({{deficit_2124_c2:periodo}}; {{deficit_2124_c2:fuentes}}; dato de {{deficit_2124_c2:fecha_dato}}; {{deficit_2124_c2:capa}}).
 
-Hay que leer bien esta cifra. No dice que falten viviendas en todas partes: el déficit está concentrado, y un número pequeño de provincias suma la mitad del déficit positivo ({{A4-conc50-2021-2025:cita}}). Tampoco dice qué hay que hacer: es un hecho contable.
+Hay que leer bien esta cifra. No dice que falten viviendas en todas partes: según el reparto provincial, que es exploratorio [C4], el déficit está concentrado: un número pequeño de provincias suma la mitad del déficit positivo ({{A4-conc50-2021-2025:cita}}). Tampoco dice qué hay que hacer: es un hecho contable.
 
 ## El crecimiento de hogares previsto para la próxima década es grande [C2]
 
@@ -30,7 +30,7 @@ El {{R1C-001:cita}} de los hogares vive en una vivienda en propiedad. El acceso 
 
 ## Los jóvenes: la emancipación retrasada es una demanda latente acotada [C2]
 
-Si los jóvenes vivieran con sus padres en la misma proporción que en 2008, habría entre {{latente_convivencia:rango}} hogares más ({{latente_convivencia:periodo}}; {{latente_convivencia:fuentes}}; {{latente_convivencia:capa}}). La cifra es una cota con un supuesto explícito: toma 2008 como referencia de un mercado «normal». Otra referencia daría otra cifra. Aun así, sirve para dimensionar el problema: la demanda latente de los jóvenes es del mismo orden de magnitud que el déficit acumulado desde 2021.
+Si los jóvenes vivieran con sus padres en la misma proporción que en 2008, habría entre {{latente_convivencia:rango}} más ({{latente_convivencia:periodo}}; {{latente_convivencia:fuentes}}; {{latente_convivencia:capa}}). La cifra es una cota con un supuesto explícito: toma 2008 como referencia de un mercado «normal». Otra referencia daría otra cifra. Aun así, sirve para dimensionar el problema: la demanda latente de los jóvenes es del mismo orden de magnitud que el déficit acumulado desde 2021.
 
 Los datos exploratorios apuntan en la misma dirección [C4]:
 - la edad media de salida del hogar de los padres es de {{CA-EU-emancipacion-nivel:num}} años en España, por encima del rango intercuartílico europeo (Eurostat);
@@ -39,13 +39,13 @@ No se puede afirmar con estos datos que sin ayuda familiar los jóvenes no pueda
 
 ## Las viviendas turísticas pueden haber desplazado como máximo una parte pequeña del alquiler [C2]
 
-Con supuestos débiles y explícitos (sustitución completa, traspaso completo), las viviendas turísticas desplazaron como máximo {{B4-v3-vut-cantidad:cita}} del stock de alquiler. Es una cota superior: el valor real puede ser menor. En barrios concretos, la concentración es mucho mayor que la media. En la Comunitat Valenciana, además, el registro autonómico cuenta más viviendas turísticas que el INE (cociente {{R1A-H6:valor}}, [C4]); hay que saber qué fuente se usa.
+Con supuestos débiles y explícitos (sustitución completa, traspaso completo), las viviendas turísticas desplazaron como máximo {{B4-v3-vut-cantidad:cita}}. Es una cota superior: el valor real puede ser menor. En barrios concretos, la concentración es mucho mayor que la media. En la Comunitat Valenciana, además, el registro autonómico cuenta más viviendas turísticas que el INE (cociente {{R1A-H6:valor}}, [C4]); hay que saber qué fuente se usa.
 
 ## Lo probable pero no demostrado
 
 - [C4] Al ritmo de terminación de 2023-2025, el déficit empeora a 2030 en {{E-B2-empeora}} y mejora en {{E-B2-mejora}}; en el resto depende de los supuestos.
 - [C4] Entre provincias, la única regularidad que sobrevive al ajuste por comparaciones múltiples es la convergencia: crecieron menos las provincias que partían de precios más altos, y una parte es compatible con error de medida.
-- [C4] La sobrecarga por coste de la vivienda afecta a {{CC-C7a-ten-RENT_MKT:valor}} de los inquilinos a precio de mercado, frente a {{CC-C7a-ten-OWN_L:valor}} de los propietarios con hipoteca (Eurostat, 2025).
+- [C4] La sobrecarga por coste de la vivienda afecta al {{CC-C7a-ten-RENT_MKT:num}} % de los inquilinos a precio de mercado, frente al {{CC-C7a-ten-OWN_L:num}} % de los propietarios con hipoteca (Eurostat, 2025).
 - [C4] Frente a la Unión Europea, el precio real de la vivienda en España creció {{CA-EU-hpi_real-crecimiento:valor}}, dentro del rango intercuartílico de los países. El alquiler real, medido con el IPCA, varió {{CA-EU-alq_real-crecimiento:valor}}, porque esa medida sigue el stock de contratos. Lo que más aleja a España de la mediana europea es la emancipación tardía y la caída de la propiedad, no el precio.
 - [C4] El crédito vivo a la construcción y a las actividades inmobiliarias cayó de {{CA-CR-saldo-pico:valor}} a {{CA-CR-saldo-2025:valor}}. Su asociación con las viviendas iniciadas es débil: de las pruebas realizadas, solo una sobrevive al ajuste por comparaciones múltiples (ficha `CA-V2`).
 - [C4] No se puede saber con certeza qué parte de las compras se paga al contado. Según el INE se firman {{CA-CT-ratio-ine:valor}} sobre vivienda. Según qué parte de ellas financie una compra, el contado va desde un mínimo de {{CA-CT-contado-cota:valor}} hacia arriba. Comprar al contado tampoco equivale a comprar como inversión.
@@ -68,7 +68,7 @@ Para la Comunitat Valenciana, el mensaje práctico es doble. Primero, la necesid
 
 ## Cómo encajan estas cifras con las de otros organismos
 
-El proyecto compara sus cifras clave con las publicadas por el Banco de España, el Ministerio, el INE, la OCDE y Eurostat. Hay {{D3-coincide:valor}} coincidencias entre fuentes distintas y comparables, {{D3-comparable_en_parte:valor}} comparaciones en las que el periodo, el concepto o la cobertura solo coinciden en parte y {{D3-difiere:valor}} diferencia. Por ejemplo, el déficit que suele citarse para 2022-2024 es menor que el de 2021-2024 porque no incluye 2021, cuando los hogares crecieron con mucha fuerza. Antes de comparar cifras de déficit conviene comprobar el periodo y si se suponen bajas del parque.
+El proyecto compara sus cifras clave con las publicadas por el Banco de España, el Ministerio, el INE, la OCDE y Eurostat. Hay {{D3-coincide:num}} coincidencias entre fuentes distintas y comparables, {{D3-comparable_en_parte:num}} comparaciones en las que el periodo, el concepto o la cobertura solo coinciden en parte y {{D3-difiere:num}} diferencia. Por ejemplo, el déficit que suele citarse para 2022-2024 es menor que el de 2021-2024 porque no incluye 2021, cuando los hogares crecieron con mucha fuerza. Antes de comparar cifras de déficit conviene comprobar el periodo y si se suponen bajas del parque.
 
 ## Cómo leer las cifras
 
@@ -81,3 +81,5 @@ Cada cifra de este artículo lleva su periodo, sus fuentes, la fecha del dato y 
 - Verificador: [verificador](verificador/verificador.md). Evalúa afirmaciones, nunca a quien las formula.
 
 *Borja Romero, economista.*
+
+*Nota de independencia y método.* Trabajo individual e independiente, sin financiación externa ni vínculo con partidos. El análisis se hizo con agentes de inteligencia artificial bajo la supervisión del autor, que es el responsable del contenido. El código y los datos permiten reproducir cada cifra.

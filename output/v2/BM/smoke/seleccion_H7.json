@@ -1,0 +1,253 @@
+{
+ "A": {
+  "modelo": "TVPVAR_k0.95",
+  "empatados": [
+   "TVPVAR_k0.95"
+  ],
+  "clase": "tvpvar",
+  "config": {
+   "kappa": 0.95
+  },
+  "rmse_bloques": 0.059333975155533,
+  "n_comun_ranking": 38,
+  "cobertura": {
+   "EN_l10.3_a0.4": 1.0,
+   "EN_l10.3_a0.15": 1.0,
+   "PostLasso": 1.0,
+   "ARDL": 0.8947368421052632,
+   "TAR_ECM_asim": 1.0,
+   "TAR_ECM_credito": 1.0,
+   "BVAR_lam0.05": 1.0,
+   "BVAR_lam0.1": 1.0,
+   "BVAR_lam0.2": 1.0,
+   "BVAR_lam0.4": 1.0,
+   "BVAR_lam1.0": 1.0,
+   "TVPVAR_k0.99": 1.0,
+   "TVPVAR_k0.95": 1.0
+  },
+  "rmse_bloques_todos": {
+   "EN_l10.3_a0.4": 0.13315522731354507,
+   "EN_l10.3_a0.15": 0.1643342124976226,
+   "PostLasso": 0.1688580158958256,
+   "ARDL": NaN,
+   "TAR_ECM_asim": 0.10758609773512524,
+   "TAR_ECM_credito": 0.09628095038702195,
+   "BVAR_lam0.05": 0.0720706805710051,
+   "BVAR_lam0.1": 0.07062394157975126,
+   "BVAR_lam0.2": 0.06800213371595769,
+   "BVAR_lam0.4": 0.06642887209202884,
+   "BVAR_lam1.0": 0.06820965920953931,
+   "TVPVAR_k0.99": 0.0672425401196028,
+   "TVPVAR_k0.95": 0.059333975155533
+  },
+  "meta": {
+   "EN_l10.3_a0.4": {
+    "clase": "enet",
+    "rank": 2,
+    "orden": 0,
+    "config": {
+     "l1_ratio": 0.3,
+     "alpha": 0.4
+    }
+   },
+   "EN_l10.3_a0.15": {
+    "clase": "enet",
+    "rank": 2,
+    "orden": 1,
+    "config": {
+     "l1_ratio": 0.3,
+     "alpha": 0.15
+    }
+   },
+   "PostLasso": {
+    "clase": "postlasso",
+    "rank": 1,
+    "orden": 0,
+    "config": {}
+   },
+   "ARDL": {
+    "clase": "ardl",
+    "rank": 1,
+    "orden": 0,
+    "config": {
+     "p": 4,
+     "dx_lags": [
+      0,
+      1
+     ]
+    }
+   },
+   "TAR_ECM_asim": {
+    "clase": "tar_ecm",
+    "rank": 3,
+    "orden": 0,
+    "config": {
+     "umbral": "asim"
+    }
+   },
+   "TAR_ECM_credito": {
+    "clase": "tar_ecm",
+    "rank": 3,
+    "orden": 1,
+    "config": {
+     "umbral": "credito"
+    }
+   },
+   "BVAR_lam0.05": {
+    "clase": "bvar",
+    "rank": 3,
+    "orden": 10,
+    "config": {
+     "lambda": 0.05
+    }
+   },
+   "BVAR_lam0.1": {
+    "clase": "bvar",
+    "rank": 3,
+    "orden": 11,
+    "config": {
+     "lambda": 0.1
+    }
+   },
+   "BVAR_lam0.2": {
+    "clase": "bvar",
+    "rank": 3,
+    "orden": 12,
+    "config": {
+     "lambda": 0.2
+    }
+   },
+   "BVAR_lam0.4": {
+    "clase": "bvar",
+    "rank": 3,
+    "orden": 13,
+    "config": {
+     "lambda": 0.4
+    }
+   },
+   "BVAR_lam1.0": {
+    "clase": "bvar",
+    "rank": 3,
+    "orden": 14,
+    "config": {
+     "lambda": 1.0
+    }
+   },
+   "TVPVAR_k0.99": {
+    "clase": "tvpvar",
+    "rank": 4,
+    "orden": 0,
+    "config": {
+     "kappa": 0.99
+    }
+   },
+   "TVPVAR_k0.95": {
+    "clase": "tvpvar",
+    "rank": 4,
+    "orden": 1,
+    "config": {
+     "kappa": 0.95
+    }
+   }
+  }
+ },
+ "B": {
+  "modelo": "EN_l10.3_a0.4",
+  "empatados": [
+   "EN_l10.3_a0.4"
+  ],
+  "clase": "enet",
+  "config": {
+   "l1_ratio": 0.3,
+   "alpha": 0.4
+  },
+  "rmse_bloques": 0.013317289185849825,
+  "n_comun_ranking": 2254,
+  "cobertura": {
+   "EN_l10.3_a0.4": 1.0,
+   "EN_l10.3_a0.15": 1.0,
+   "PostLasso": 1.0
+  },
+  "rmse_bloques_todos": {
+   "EN_l10.3_a0.4": 0.013317289185849825,
+   "EN_l10.3_a0.15": 0.013450493474017305,
+   "PostLasso": 0.014905993298024436
+  },
+  "meta": {
+   "EN_l10.3_a0.4": {
+    "clase": "enet",
+    "rank": 2,
+    "orden": 0,
+    "config": {
+     "l1_ratio": 0.3,
+     "alpha": 0.4
+    }
+   },
+   "EN_l10.3_a0.15": {
+    "clase": "enet",
+    "rank": 2,
+    "orden": 1,
+    "config": {
+     "l1_ratio": 0.3,
+     "alpha": 0.15
+    }
+   },
+   "PostLasso": {
+    "clase": "postlasso",
+    "rank": 1,
+    "orden": 0,
+    "config": {}
+   }
+  }
+ },
+ "C": {
+  "modelo": "EN_l10.3_a0.4",
+  "empatados": [
+   "EN_l10.3_a0.15",
+   "EN_l10.3_a0.4"
+  ],
+  "clase": "enet",
+  "config": {
+   "l1_ratio": 0.3,
+   "alpha": 0.4
+  },
+  "rmse_bloques": 0.050787222405463135,
+  "n_comun_ranking": 2209,
+  "cobertura": {
+   "EN_l10.3_a0.4": 1.0,
+   "EN_l10.3_a0.15": 1.0,
+   "PostLasso": 1.0
+  },
+  "rmse_bloques_todos": {
+   "EN_l10.3_a0.4": 0.050787222405463135,
+   "EN_l10.3_a0.15": 0.05123951119761221,
+   "PostLasso": 0.06465322047873198
+  },
+  "meta": {
+   "EN_l10.3_a0.4": {
+    "clase": "enet",
+    "rank": 2,
+    "orden": 0,
+    "config": {
+     "l1_ratio": 0.3,
+     "alpha": 0.4
+    }
+   },
+   "EN_l10.3_a0.15": {
+    "clase": "enet",
+    "rank": 2,
+    "orden": 1,
+    "config": {
+     "l1_ratio": 0.3,
+     "alpha": 0.15
+    }
+   },
+   "PostLasso": {
+    "clase": "postlasso",
+    "rank": 1,
+    "orden": 0,
+    "config": {}
+   }
+  }
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "preparar": 5.0,
+ "modelos_A": 11.1,
+ "inferencia_A": 11.3,
+ "modelos_B": 120.9,
+ "importancias_B": 157.3,
+ "inferencia_B": 159.6,
+ "modelos_C": 262.3,
+ "importancias_C": 302.4,
+ "inferencia_C": 304.7,
+ "fin": 366.0
+}

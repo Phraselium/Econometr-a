@@ -1,0 +1,13 @@
+{
+ "estado": "ejecutado",
+ "torch": "2.14.1+cpu",
+ "mejor_lstm": "LSTM_h8_e25",
+ "gradient_boosting": "EN_l10.3_a0.4",
+ "valido_supera_GB": false,
+ "resultado": "RESULTADO NEGATIVO: el LSTM no supera al mejor gradient boosting con DM-HLN",
+ "RMSE_LSTM": 0.01649102861232114,
+ "RMSE_GB": 0.014848421802011106,
+ "DM_LSTM_vs_GB": -2.4945018147265743,
+ "p": 0.016352428548499737,
+ "nota": "selección del mejor LSTM entre 4 configuraciones (optimista); fuera de H7"
+}

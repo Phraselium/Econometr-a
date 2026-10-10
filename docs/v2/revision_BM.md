@@ -148,3 +148,53 @@ Exigido:
 5. **C5**: limitaciones del bloque 5; `smoke/`.
 
 Tras C1-C3: re-revisión breve de `bm_h7_sellado.py`, del test y de `decisiones.md`. Si se aprueba, el orquestador puede abrir H7 aunque C4 siga pendiente.
+
+---
+
+## Re-revisión (iteración 2 de 2): commit `83af813` en `r2/BM` (con r2/main ≥ `26d2e83` fusionado)
+
+### Veredicto final: **APROBAR**. H7 puede abrirse UNA vez con `holdout.evaluate("H7", bm_h7_sellado.evaluar_H7, "BM", ["panel_prov_q", "nacional_q_v2"])`.
+
+### Comprobaciones
+
+- **Reproducción.** Nuevo clon aislado de `83af813`, sin red, con OMP/OpenBLAS/MKL a 1 hilo y torch 2.14.1+cpu. Dos ejecuciones de `bm_run.py`: exit 0 y exit 0. Los md5 son idénticos entre sí y a los versionados, LSTM incluido (solo cambia `tiempos.json`). `pytest tests/test_bm_h7_sellado.py`: **7 passed**.
+- **H7 sin evaluar.** `docs/v2/holdout_accesos.md` (r2/main `f316bc5`) solo registra aperturas y resultados de H1, H2 y H6. No hay ninguna fila de H7. `bm_h7_sellado.py` no llama a `evaluate`.
+- **La elección de H7 no cambia.** `seleccion_H7.json` es idéntico a `d64da2d` (TVPVAR_k0.95 / LGBM_nl4_n400 / EN_l10.7_a0.4) y `regla_H7.md` no ha cambiado desde `046ecd2`.
+- **C1, resuelto.**
+  - `holdout.build` (r2/main) rebasa el panel completo antes de separar.
+  - Además, `_reencadenar` rehace `ipv` e `ipc_alquiler` (y `ln_`) del sellado desde el nivel de 2024Q2 con sus `d_ln`. Para las provincias selladas lo hace desde su propio nivel en L, lo que equivale a la identidad en su base.
+  - `_guarda_continuidad` (umbral 0,05) aborta antes de ajustar nada.
+  - Tests:
+    - con el sellado en otra base, el resultado es el mismo (tolerancia 1e-9 en A, B y C), lo que reproduce mi experimento de la iteración 1;
+    - con la concatenación ingenua, la guarda aborta.
+  - El riesgo de falso aborto es mínimo. En entrenamiento, |Δln IPV| trimestral ≤ 0,035 desde 2019. El máximo |Δln| del IPC de alquiler 2024Q2→Q3 declarado por el orquestador es 0,0129.
+  - Observación: el umbral se fijó después de esa declaración (acceso de comprobación ya registrado en `decisiones.md`). Es un parámetro de seguridad, no de inferencia, así que no invalida nada.
+- **C2, resuelto.**
+  - Etapa 1: los principales de A, B y C (cada uno aborta si tiene menos de 8 periodos), luego Holm m=3 y `H7_cumple`.
+  - Etapa 2: los secundarios, cada uno en `try/except` con el error registrado. Hay un test con un fallo inyectado en (b').
+  - Pendiente menor: la comprobación de 8 o más periodos sigue siendo por objetivo y no previa a los tres. Un aborto en C perdería A y B, pero el acceso se gasta igualmente al abortar, así que no cambia el riesgo.
+- **C4, resuelto.**
+  - `presupuesto.json` se modificó en `8cc303f` (09:20:44 UTC), ANTES de los resultados del LSTM (`83af813`, 09:37:25). Reasigna explícitamente la reserva del bloque 5 (4 → 0) a `lstm_panel_B` (4: hidden {8,16} × epochs {25,50}; fijos: ventana 8, lr 0,003, wd 1e-3, 1 capa, batch 256; semilla y algoritmos deterministas).
+  - El total sigue en 63 = 21 + 19 + 19 + 4, y `registro.csv` y `presupuesto_usado.json` lo cuadran. La reasignación respeta el presupuesto declarado, no lo amplía.
+  - Sin fuga en `bm_lstm.py`: filas de entrenamiento con pos+4 ≤ L; mediana, media/DE, FE y DE de y solo con entrenamiento; ventanas que terminan en el origen. Usa los mismos splits.
+  - DM-HLN frente a LGBM_nl4_n400 en la misma muestra (n=2254): el mejor LSTM (h16_e25) tiene RMSE 0,0141 frente a 0,0124; DM −0,84, p=0,40. Es un **resultado negativo** y queda fuera de H7. Con BH sobre las 4 configuraciones no cambia nada: ninguna mejora al GB y dos son significativamente peores.
+- **C3, parcial.** `decisiones.md` recoge la regla, que el modelo de C es peor en entrenamiento (prueba conservadora), los bloques 5 y 6, y que el principal con 52 provincias y Holm m=3 está en `regla_H7.md`, commiteada antes. No impide aprobar: lo que falta pasa a limitaciones (abajo).
+
+### A `docs/v2/limitaciones.md` (BM)
+
+1. H7 tiene potencia baja:
+   - en A, n=8 orígenes nacionales con DM-HLN;
+   - el modelo elegido para C (elastic net) ya es peor que el AR(4) en entrenamiento;
+   - un nulo se lee como «no hay evidencia de mejora», no como evidencia de ausencia.
+2. El contraste principal de los paneles usa las 52 provincias en la ventana sellada; el pre-registro decía «provincias selladas», que pasan a secundario (b) y (b'). Es el mismo criterio que en H1 y H2.
+3. Abortar con menos de 8 periodos en cualquier objetivo gasta el único acceso. La comprobación se hace por objetivo, no antes de los tres.
+4. BVAR: el presupuesto decía «elección de λ por verosimilitud marginal», pero el código compite con los 5 λ por RMSE y solo informa de la logML. Sin efecto en la elección.
+5. Hiperparámetros fijos no declarados en la rejilla:
+   - RF: 300 árboles, max_features 0,5;
+   - LGBM: min_child_samples 30, subsample 0,8;
+   - TVP: λ0 0,2, decay 0,98.
+6. Bloque 5 no ejecutado (sin contigüidad provincial ni factor dinámico). La reserva se reasignó al LSTM.
+7. Bloque 6: LSTM solo en el panel B, 4 configuraciones pequeñas. El resultado negativo vale para ese presupuesto, no para el deep learning en general.
+8. La población «en escalera» no está disponible en tiempo real (retraso del padrón). Las importancias (SHAP, permutación, ALE) y PDS son EXPLORATORIO, sobre modelos que no mejoran al AR(4).
+9. Umbral de continuidad (0,05) fijado después del acceso de comprobación declarado del orquestador.
+10. `output/v2/BM/smoke/` sigue versionado. Es salida de humo y no cuenta como especificaciones (limpieza pendiente, C5).

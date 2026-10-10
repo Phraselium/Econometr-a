@@ -23,5 +23,5 @@
 | M5a corrección C2/C7/C8/C13 | C | hecho (C8 parcial: sin búsqueda por palabras clave; 11 instrumentos sin búsqueda bibliográfica) | — | columna `direccion`; I01 3 a favor / 3 en contra; 4 de 9 en copia no oficial; 7 referencias nuevas VERIFICADA | 62.904 |
 
 **Hecho:** M0-M7; revisiones A, B y C aprobadas; entregables actualizados.
-**Siguiente:** make all ×2 en clon limpio → cierre.
+**Siguiente:** v4 CERRADA. `make all` ×2 sin red en clon limpio: rc=0 y md5 idénticos salvo tiempos.json. Pendiente externo: presentar las solicitudes S3-S10.
 **Tokens de subagentes v4:** 1.475.500 / 2.500.000 (59 %; cierre al 80 %: 2.000.000). Por oleada: A 408.598; B 439.886 (incluye M7); C 589.719 (incluye M5a 394.673, el 99 % del límite del módulo); sin asignar a fila 37.297 (ya en el total previo).

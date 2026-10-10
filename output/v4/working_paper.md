@@ -155,7 +155,7 @@ Ver docs/v3/limitaciones.md, y para v4 docs/v4/decisiones.md y las revisiones. L
 
 ## Apéndices
 - **A. Datos.** README_REPLICACION.md (fuentes, licencias, fechas de descarga) y data/raw/_manifest.csv.
-- **B. Replicación.** `make all` (≈20-21 minutos, un hilo), `make check` y `make verificador`. Registro de especificaciones: output/v4/M*/registro.csv.
+- **B. Replicación.** `make all` (≈22 minutos, un hilo), `make check` y `make verificador`. Registro de especificaciones: output/v4/M*/registro.csv.
 - **C. Uso de IA.**
   - **Cómo se hizo.** El proyecto se ejecutó con agentes de IA (Claude): un orquestador y subagentes de datos, literatura, econometría y revisión independiente por oleadas (A, B y C). Todas las cifras proceden del código del repositorio y de fuentes públicas.
   - **Referencias.** Se verifican por DOI o se marcan NO VERIFICADA.

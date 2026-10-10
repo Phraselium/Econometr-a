@@ -7,7 +7,7 @@ Este README sigue el modelo de los editores de datos (AEA Data Editor / Social S
 |---|---|
 | Orden principal | `make all` (data → clean → models → report → verificador) |
 | Red | No es necesaria. Las descargas están en caché en data/raw; `make data` solo vuelve a descargar con `FORCE=1`. |
-| Tiempo | ≈20-21 minutos por ejecución completa (`make all`), medido dos veces en un clon limpio con un solo hilo: 1.218 s y 1.222 s. |
+| Tiempo | ≈22 minutos por ejecución completa (`make all`), medido dos veces en un clon limpio con un solo hilo: 1.333 s y 1.312 s. |
 | Determinismo | Un solo hilo (OMP, OpenBLAS y MKL = 1) y SEED = 20261010. Dos ejecuciones en clon limpio dan md5 idénticos en output/ y data/processed, salvo `output/v2/BM/tiempos.json` (tiempos de reloj). |
 | Comprobaciones | `make check`: ruff, pytest y el control de texto de neutralidad y de capas. `make verificador`: regenera las fichas de afirmaciones v3 y v4. |
 | Software | Python 3.13. Versiones fijadas en `requirements.lock` (154 paquetes; incluye torch CPU para un módulo de v2). |

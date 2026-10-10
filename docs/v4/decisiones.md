@@ -101,3 +101,11 @@
   - R4: «DOI verificado (Crossref); cuartil no verificado».
   - R5: independencia de las fuentes de precio unificada (INE IPV y Notariado comparten fuente; Ministerio y Notariado, parcialmente independientes; Registradores, independiente).
 - Oleada C APROBADA tras estas correcciones, que son las que propuso el revisor; no hace falta otra iteración.
+
+## Cierre v4
+- Primera doble ejecución en clon limpio (d92e3c3): `make all` falló en m0_run porque leía `catastro_urbana_municipios.csv`, que no está versionado. Pasa a leer el `.csv.gz`, como ya hacía v3 (ce03d67).
+- Doble ejecución en clon limpio sin red (HTTPS_PROXY a 127.0.0.1:9, un hilo) sobre ce03d67:
+  - rc=0 las dos veces, 1.333 s y 1.312 s;
+  - md5 idénticos en output/ y data/processed salvo `output/v2/BM/tiempos.json` (tiempos de reloj);
+  - las salidas v4 coinciden con lo versionado.
+- Oleadas A, B y C APROBADAS; todo lo aprobado está en r4/main y en la rama remota designada.

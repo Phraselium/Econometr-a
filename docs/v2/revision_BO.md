@@ -83,3 +83,40 @@ Hay un motivo bloqueante. La muestra de H4 no es la pre-registrada (2005-2023), 
 7. **Textos menores:** número de filas del registro (249), comentario «p unilateral» en el OOS, ~0,11 en lugar de ~0,12, nota «PRE-REGISTRADA» y estado y cuartil de las referencias si se compara con BdE o Saiz.
 
 Tras los puntos 1, 2, 4 y 5, una re-revisión acotada bastaría: reproducir, comprobar el nuevo panel y su cuadre, revisar la H4 única y su nivel y revisar los textos.
+
+---
+
+# Re-revisión (iteración 2 de 2) · r2/BO en a94ee9a (con r2/main 3b23781 fusionado)
+
+## Veredicto final: **APROBAR**
+
+**Reproducción.** He hecho un clon aislado nuevo de r2/BO (a94ee9a), sin `data/sealed` y con el proxy a 127.0.0.1:9. Lo ejecuté dos veces: exit 0 en ambas (~10 s). Los 15 ficheros csv/json tienen md5 idénticos entre ejecuciones y respecto a lo versionado (`git status` limpio). Ejemplos: `resultado.json` 1d179baf…, `registro.csv` 18ed87b8…, `h4_principal.csv` 27ee1331….
+
+**Datos.** `iniciadas_libres_anual` (MIVAU 32200500) está en `panel_prov_a` de entrenamiento: 49 provincias, 2002-2023, sin huecos. El panel de entrenamiento termina en 2023 (2024 en embargo) y no contiene las provincias 11, 16 ni 45. He comprobado el cuadre con la suma mensual en las 658 observaciones donde coexisten: diferencia máxima 0,0. El build añade un `check` (Albacete 2019). Es una fuente oficial validada y es válida para el modelo principal. `bo_*.py` sigue leyendo solo con `vc.load`.
+
+**H4 pre-registrada y única.**
+- Muestra 2005-2023, 47 provincias, N = 879 (47 × 19 menos los huecos de p_tasado). La especificación, el bootstrap y la regla de submuestras no cambian: S2 y S4 conservan su definición en el código (≤2013 y ≤2019), y solo se renombran porque la muestra ahora empieza en 2005.
+- `registro.csv` contiene una sola fila `H4_principal`. La estimación previa queda como `R0_vista_antes_2009-2023_mensual`. Entre 3c8ffa1 y a94ee9a no hay ningún commit intermedio con otra principal. Más allá del registro y del historial, no puedo verificar que no hubiera ejecuciones sin registrar.
+
+**Resultados de H4.**
+- β_precio = 0,79 (EE 0,34) y β_inter = −0,62 (EE 0,34). p unilaterales bootstrap: 0,011 y 0,046, así que p_IUT = 0,046.
+- Falla la regla de submuestras: en S2 2005-2013, β_precio = −0,49; en S3 2014-2023, β_inter = +0,37.
+- 2SLS: p_IUT = 0,25, F = 5,3 y J con p = 0,0003.
+- El placebo de precio futuro es significativo: 1,27 (p = 0,012).
+- Con el criterio uniforme (c) el nivel es **EXPLORATORIO**, que es coherente. El texto no usa lenguaje causal.
+- Resto de cifras del texto: ≈ −0,06 con ln(1,1) es correcto; el registro tiene 250 filas.
+
+**Demás puntos, todos corregidos:**
+- Déficit: 34.704 OBSERVADAS frente a 14.873 SUPUESTAS, separadas en el resumen y en `resultado.json`.
+- El código 19 es Guadalajara y ahora se dan los valores por cada 1.000 habitantes.
+- Panel UE: ya no hay p ni EE de un único clúster; el HICP «anual_asignado» está declarado; el −6 se explica por los dos episodios.
+- Suelo: BH y Holm sobre los 160 contrastes.
+- El comentario «p bilateral» y la desviación 1b (iniciadas libres) están declarados.
+
+**Pasa a `docs/v2/limitaciones.md` (BO):**
+1. H4 es EXPLORATORIO. La asociación precio→iniciadas no es estable (negativa en 2005-2013; claramente positiva solo en 2014-2023). La interacción con el suelo cambia de signo en 2014-2023. El placebo de precio futuro significativo indica anticipación o endogeneidad. No hay instrumento válido (F < 10 en el precio; J rechaza).
+2. Iniciadas libres, no totales (no hay iniciadas protegidas comparables por provincia). Protegida = calificaciones definitivas, como aproximación a terminadas.
+3. Déficit 2021Q1-2024Q2 (EPA 632.861 / 598.157; ECP 550.523 / 518.074). No es comparable con el BdE (2021-2025). Los ≈ 49.600 de protegida incluyen 14.873 SUPUESTAS. Los residuos de v1 usan datos de 2024Q3-2025Q4. El déficit provincial es un proxy, con el tamaño medio del hogar nacional.
+4. El p_suelo trimestral es muy ruidoso. La señal suelo→precio (P4, h = 6, variante «media4T» añadida a posteriori) es aislada.
+5. Panel UE: España es un único clúster y no hay inferencia válida de la diferencia ES − resto. El −6 del alquiler está dominado por 2008-2010 y 2021-2023. El tope del 2 % a la actualización de rentas (RDL 6/2022) está NO VERIFICADO aquí. Series cortas.
+6. OOS: las variables de oferta no mejoran al AR(4) en precio. En iniciadas, la mejora (p = 0,03) no sobrevive a BH (0,097) ni hay ECM v1 con el que comparar. El OOS de iniciadas sigue usando la suma trimestral (sin 2016Q2 ni 2017Q2). Es un pseudo-pronóstico con retraso de publicación.

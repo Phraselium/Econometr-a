@@ -29,3 +29,12 @@ Formato: fecha · decisión · motivo. Las desviaciones del pre-registro (`prere
 - 2026-10-10 · D3 · Inside Airbnb: se usa data/listings.csv.gz (no la versión visualisations/listings.csv) para leer room_type, neighbourhood_cleansed y last_review; el bruto se descarta tras agregar. Anuncios activos = filas de la captura; con reseña 12m = last_review ≥ fecha de captura − 365 días. Cuadre barrios = total ciudad en las 36 capturas.
 - 2026-10-10 · D3 · Google Trends no se descarga: no hay API pública y el endpoint explore exige token de widget; pytrends sería scraping no autorizado. Alternativa: exportación CSV manual por el responsable.
 - 2026-10-10 · D3 · HUT: el dataset t2h3-cgys es una foto actual sin fechas de alta/baja; se entrega como snapshot (no sirve para flujos de altas en 2025-2026).
+
+## Oleada 1: datos de replicación (orquestador)
+- **García-López et al. (2020), Barcelona:** no es replicable en su forma original. Faltan tres cosas:
+  - el histórico de Inside Airbnb de 2012-2016 (solo hay capturas desde 2025-12);
+  - los alquileres por barrio (opendata BCN bloquea con anti-bot);
+  - el instrumento (Google Trends sin API, y sin atractivos turísticos).
+
+  Clasificación provisional: NO REPLICABLE con los datos originales. La «replicación» se hace como **réplica conceptual**: la misma especificación (efectos fijos de unidad y de periodo; tratamiento = viviendas turísticas por cada 100 viviendas), con las viviendas turísticas del INE por sección (2020-2025) y el alquiler SERPAVI por sección en Barcelona. Su coeficiente se compara con el objetivo (alquiler +0,035 % por 100 anuncios, tabla 3, col. 2, cifra del WP 2019) en unidades homogéneas.
+- **P-C2 (caída de anuncios 2025-2026):** Inside Airbnb solo cubre 2025-12 a 2026-09, posterior a la obligatoriedad del registro único (julio de 2025 según el texto del RD; está por verificar). No hay periodo previo, así que no hay diseño con pretendencias. Se decidirá en la puerta de potencia: probablemente es descriptivo (C4) o no se estima. Las oleadas INE de VUT (2024M08, 2024M11 y posteriores) pueden aportar un periodo previo a escala de sección.

@@ -1,4 +1,6 @@
-# Paquete de replicación: vivienda en España (v1-v4)
+# Paquete de replicación: vivienda en España (v1-v5)
+
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** 5.0. **Cita:** CITATION.cff. **DOI:** pendiente (Zenodo; .zenodo.json). **Licencia:** CC BY 4.0 para el código y los textos propios; los datos de terceros conservan su licencia (docs/v5/licencias_datos.md).
 
 Este README sigue el modelo de los editores de datos (AEA Data Editor / Social Science Data Editors). Explica cómo reproducir **todas** las tablas, figuras y documentos del proyecto a partir de los datos incluidos y sin conexión a la red.
 
@@ -9,8 +11,8 @@ Este README sigue el modelo de los editores de datos (AEA Data Editor / Social S
 | Red | No es necesaria. Las descargas están en caché en data/raw; `make data` solo vuelve a descargar con `FORCE=1`. |
 | Tiempo | ≈22 minutos por ejecución completa (`make all`), medido dos veces en un clon limpio con un solo hilo: 1.333 s y 1.312 s. |
 | Determinismo | Un solo hilo (OMP, OpenBLAS y MKL = 1) y SEED = 20261010. Dos ejecuciones en clon limpio dan md5 idénticos en output/ y data/processed, salvo `output/v2/BM/tiempos.json` (tiempos de reloj). |
-| Comprobaciones | `make check`: ruff, pytest y el control de texto de neutralidad y de capas. `make verificador`: regenera las fichas de afirmaciones v3 y v4. |
-| Software | Python 3.13. Versiones fijadas en `requirements.lock` (154 paquetes; incluye torch CPU para un módulo de v2). |
+| Comprobaciones | `make check`: ruff, pytest, control de texto (neutralidad, capas, verbos de atribución) y `src/v5/check_v5.py`. check_v5 comprueba: toda cifra de los entregables v5 sale de output/v5/cifras_clave.csv; la suma provincial es igual a la nacional; los recuentos usan solo documentos oficiales; ningún script lee ficheros no versionados; ningún tope aparece en C3. `make verificador`: regenera las fichas v3, v4 y v5. |
+| Software | Python 3.13. Versiones fijadas en `requirements.lock` (154 paquetes; incluye torch CPU para un módulo de v2). Programa del sistema: `pdftotext` (poppler-utils), que usa `src/v5/a5_run.py` para leer los programas oficiales. |
 | Hardware | CPU genérica, ≥8 GB de RAM y ≈2 GB de disco para un clon con datos. |
 
 ## 2. Cómo reproducir
@@ -30,10 +32,20 @@ Si se quiere impedir explícitamente el acceso a la red, puede usarse `HTTPS_PRO
    - v1: `src/f2_*.py` a `src/f6_*.py`;
    - v2: `src/v2/{ba_run, bv_main, bi_run, bo_run, bp_main, bm_run, bd_run, bs_run}.py`;
    - v3: `src/v3/{pa_run, pb_run, pot_run, gl_run, c1_run, c3_run, holm_v3, pd_run}.py`;
-   - v4: `src/v4/{m0_run, m2_run, m1_run, m3_run, m4_run, m7_run, m5_run}.py`.
-4. `report`: `src/report.py` y el verificador (`src/v3/verificador.py`, `src/v4/verificador.py`).
+   - v4: `src/v4/{m0_run, m2_run, m1_run, m3_run, m4_run, m7_run, m5_run}.py`;
+   - v5 (`V5_ORDEN` del Makefile):
+     - `r1t_run, r1c_run, r1a_run, r1b_run`: recuperación de pendientes;
+     - `a23_run, a4_run, a5_run, a5_hechos`: cierre de v4;
+     - `b1_run, b2_run, b3_run, b4_run`: necesidades y territorio;
+     - `ca_run, cb_run, cc_run`: ángulos pendientes;
+     - `d1_run, d2_run`: política;
+     - `e_hechos, cifras_clave, d3_run, cifras_clave, render`: tabla única de cifras, convergencia y entregables. `render.py` rellena las plantillas `docs/v5/plantillas/*.md` en `output/v5/`.
+4. `report`: `src/report.py` y el verificador (`src/v3/verificador.py`, `src/v4/verificador.py`, `src/v5/verificador.py`).
 
-Los scripts de descarga de v3 y v4 (`src/v3/fetch_*`, `src/v4/m*_fetch.py`) **no** forman parte de `make all`. Sus salidas están versionadas en data/raw/v3 y data/raw/v4.
+Los scripts de descarga de v3, v4 y v5 (`src/v3/fetch_*`, `src/v4/m*_fetch.py`, `src/v5/*_fetch.py`) **no** forman parte de `make all`. Sus salidas están versionadas en data/raw/v3, data/raw/v4 y data/raw/v5.
+
+### Pre-registro
+Las hipótesis confirmatorias de B3 (diferencias entre provincias) están en docs/v5/prereg_B3.md, en un commit anterior a cualquier salida de B3. La etiqueta git `prereg-v5` está en el repositorio local; el remoto de la sesión no acepta etiquetas (docs/v5/bloqueos.md).
 
 ### Muestra sellada
 - v2 y v3 reservan una muestra sellada para la evaluación confirmatoria. Solo se accede a ella a través de `src/holdout.py`, que registra cada acceso. La copia versionada del registro es docs/v2/holdout_accesos.md.
@@ -54,7 +66,7 @@ El inventario completo, con fichero, fuente, número de series, fechas y fecha d
 | Generalitat Valenciana, Ayuntamiento de València, Comunidad de Madrid | Viviendas turísticas, padrón municipal, alquiler por código postal | portales de datos abiertos | Reutilización con cita |
 | BOE y diarios oficiales | Normas y zonas tensionadas | boe.es | Dominio público |
 | Inside Airbnb | Agregados de anuncios (solo robustez) | insideairbnb.com | CC BY 4.0 |
-| Programas electorales (M5) | Citas literales ≤40 palabras con procedencia (data/raw/v4/medidas_programas.csv) | Webs de los partidos (5 documentos) y copias no oficiales alojadas por medios (4 documentos; docs/v4/cobertura_programas.md) | Cita breve con fines de investigación |
+| Programas electorales y proposiciones de ley (M5 y A5) | v4: citas ≤40 palabras (data/raw/v4/medidas_programas.csv). v5: 22 documentos oficiales en PDF con URL y hash (docs/v5/programas/inventario.csv); las copias no oficiales quedan fuera de los recuentos | Webs oficiales de las formaciones y congreso.es | Cita breve con fines de investigación; véase docs/v5/licencias_datos.md |
 
 **Ficheros de más de 50 MB.** No están en el repositorio. Sus checksums están en `data/CHECKSUMS.sha256` y se regeneran con los scripts de descarga. Ninguno es necesario para `make all`.
 
@@ -68,6 +80,11 @@ El inventario completo, con fichero, fuente, número de series, fechas y fecha d
 | output/v3/{lo_que_sabemos, articulo, informe_politica}.md | redactados a partir de output/v3/*/ (PA, PB, C1, C3, GL, PD) |
 | output/v4/{working_paper, informe_tecnico, policy_brief, lo_que_sabemos}.md | redactados a partir de output/v4/M0-M7 |
 | output/v4/M0 … M7 | src/v4/m0_run.py … m7_run.py (M6 = docs/v4/preguntas_abiertas.md, solicitudes.md) |
+| output/v5/cifras_clave.{csv,md} (tabla única de cifras v5) | src/v5/cifras_clave.py |
+| output/v5/{R1A,R1B,R1C,R1T,A23,A4,A5,A6,B1,B2,B3,B4,CA,CB,CC,D1,D2,D3} | src/v5/<módulo en minúsculas>_run.py (A6: nota de consolidación) |
+| output/v5/{informe_tecnico, working_paper, policy_brief, lo_que_sabemos, una_pagina, articulo_colegio}.md, articulos/, ponencia/, linkedin/ | docs/v5/plantillas/ + src/v5/render.py |
+| output/v5/verificador/ | src/v5/verificador.py |
+| Las 15 cifras más citables, con script y línea | docs/v5/revision_humana.md |
 | Working paper, tabla de hechos (déficit, hogares, terminadas) | m0_run.py (output/v4/M0/), m2_run.py (output/v4/M2/) |
 | Working paper e informe, mapas y concentración provincial | m1_run.py (output/v4/M1/figuras, tablas) |
 | Clasificación territorial (clases 1-4 y 9) | m3_run.py (output/v4/M3/) |
@@ -78,5 +95,7 @@ El inventario completo, con fichero, fuente, número de series, fechas y fecha d
 
 Los documentos de síntesis (.md) se redactan a partir de las salidas. Las cifras citadas en ellos proceden de los JSON y CSV indicados, y `src/v3/check_texto.py` controla su redacción.
 
-## 5. Contacto y uso de IA
-El proyecto se ejecutó con agentes de IA (Claude) bajo supervisión de la persona responsable del repositorio. El uso de IA se declara en output/v3/articulo.md §10 y en output/v4/working_paper.md, apéndice C.
+## 5. Independencia, contacto y uso de IA
+El trabajo es individual e independiente: no hay financiación externa ni vínculo con partidos. Si algo cambiara, se declararía aquí. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas. Las correcciones se publican en ERRATA.md y los cambios en CHANGELOG.md.
+
+El proyecto se ejecutó con agentes de IA (Claude) bajo supervisión de la persona responsable del repositorio. El uso de IA se declara en output/v3/articulo.md §10, en output/v4/working_paper.md (apéndice C) y en output/v5/working_paper.md (apéndice C). El autor es responsable del contenido. Antes de publicar, el autor replica a mano las 15 cifras de docs/v5/revision_humana.md.

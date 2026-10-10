@@ -88,3 +88,10 @@ Comprobado sobre `output/v2/informe_v2.md` y `src/v2/bs_tablas.py` de r2/main:
 ### Veredicto final: **REHACER (acotado a C9)**
 
 Es un cambio de una línea en `bs_tablas.py:393` más la reejecución de `bs_run.py`. Pasa a **APROBAR** sin nueva revisión si se cumplen tres condiciones: el diff toca solo esa línea; el ranking devuelve la fila a E = no; y el `make all` ×2 del orquestador da md5 idénticos.
+
+### Cierre de C9 (orquestador)
+- Diff de C9 (commit 74f89a2): una sola línea en `src/v2/bs_tablas.py` (ventana de E → «P3-P4 (desde 2020)»). Tras reejecutar `bs_run.py` solo cambian `ranking_factores.csv` y el ranking de `informe_v2.md`: «Demografía (20-34 y extranjera) | compra» vuelve a E = no (puesto 11).
+- `make all` ×2 sin red (proxy a 127.0.0.1:9, 1 hilo) en clon limpio de 74f89a2: ambas ejecuciones rc=0; 552 ficheros de output/ y data/processed comparados; **md5 idénticos salvo `output/v2/BM/tiempos.json`** (tiempos de reloj, no deterministas por naturaleza; no entra en ningún resultado).
+- Frente a lo versionado: `output/f3/{correccion_busqueda,panel_principal}.csv` y `output/registro_busqueda_f3.csv` diferían en el último dígito (~1e-16; generados antes de fijar BLAS a 1 hilo). Se versiona la salida de 1 hilo. `docs/v2/fallidas/ine.md` cambia solo la marca de tiempo de generación.
+
+### Veredicto final: **APROBAR** (condiciones de C9 cumplidas).

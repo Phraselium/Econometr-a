@@ -1,0 +1,19 @@
+[
+ {
+  "id": "B2-V1",
+  "tema": "Cierre del déficit",
+  "enunciado": "Al ritmo actual el déficit se cerrará en pocos años.",
+  "capa": "C4",
+  "magnitud": "Déficit acumulado nacional 2021-2025: 700934 viviendas. Proyección a fin de 2030 al ritmo 2023-2025 (suma de provincias): 1296672 central (rango 872529 a 1447953). Cambio frente a 2025: 595738 (rango 171595 a 747019); signo nacional: empeora. Provincias con rango completo: 20 empeoran, 5 mejoran, 27 indeterminadas. Escenarios centrales a fin de 2030: a 1296672, b 1136179, c 1276238.",
+  "intervalo": "872529 a 1447953 viviendas de déficit a fin de 2030 (C4)",
+  "cota": "—",
+  "literatura": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Proyección C4 (supuestos de bajas, retardo y ritmo constante); solo F (INE) es C2. Con C4 el máximo es ANALIZADA, NO CONCLUYENTE. Se informa el signo solo donde el rango completo no cruza cero.",
+  "limites": "Sin ajuste por atraso latente, vacías ni vivienda liberada; protegida medida con calificaciones definitivas; rangos no son IC; el retardo es nacional.",
+  "evidencia": [
+   "output/v5/B2/tablas/B2_deficit_2030_provincial.csv",
+   "output/v5/B2/resultado.json"
+  ]
+ }
+]

@@ -1,0 +1,39 @@
+[
+ {
+  "tabla": "hogares_proyectados_2031",
+  "suma_provincial": 20783505.0,
+  "nacional": 20783505.0,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "F_2026_2031",
+  "suma_provincial": 1024156.0,
+  "nacional": 1024156.0,
+  "tolerancia_rel": 0.01,
+  "ok": true
+ },
+ {
+  "tabla": "deficit_2025_A4",
+  "suma_provincial": 700934.0,
+  "nacional": 700934.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "terminadas_2026_2030_esc_a",
+  "suma_provincial": 473250.0000000001,
+  "nacional": 473250.0,
+  "tolerancia_rel": 0.01,
+  "nota": "nacional = 5 x media 2023-25 de la serie nacional publicada (libres terminadas + protegidas definitivas)",
+  "ok": true
+ },
+ {
+  "tabla": "deficit_2030_central",
+  "suma_provincial": 1296672.3357000002,
+  "nacional": 1296672.3357,
+  "tolerancia_rel": 0.01,
+  "nota": "nacional con series nacionales de F y T y D2025 nacional; bajas = suma provincial (sin serie nacional independiente)",
+  "ok": true
+ }
+]

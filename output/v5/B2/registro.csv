@@ -1,0 +1,214 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+B2,B2_Ta_01,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,4081.666666666667,,Araba/Álava; (c) solo sensibilidad; C4
+B2,B2_Tb_01,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,5327.060019668161,,Araba/Álava; (c) solo sensibilidad; C4
+B2,B2_Tc_01,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,6126.4999999998545,,Araba/Álava; (c) solo sensibilidad; C4
+B2,B2_D2030_01,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,6617.333333333333,,"Araba/Álava; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_02,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,3386.666666666667,,Albacete; (c) solo sensibilidad; C4
+B2,B2_Tb_02,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,3914.862877743186,,Albacete; (c) solo sensibilidad; C4
+B2,B2_Tc_02,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,2292.499999999636,,Albacete; (c) solo sensibilidad; C4
+B2,B2_D2030_02,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,5809.333333333333,,"Albacete; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_03,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,24931.666666666664,,Alicante/Alacant; (c) solo sensibilidad; C4
+B2,B2_Tb_03,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,39242.0824909669,,Alicante/Alacant; (c) solo sensibilidad; C4
+B2,B2_Tc_03,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,29922.00000000326,,Alicante/Alacant; (c) solo sensibilidad; C4
+B2,B2_D2030_03,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,100235.33333333334,,"Alicante/Alacant; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_04,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,6220.0,,Almería; (c) solo sensibilidad; C4
+B2,B2_Tb_04,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,9020.193287440958,,Almería; (c) solo sensibilidad; C4
+B2,B2_Tc_04,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,9006.00000000035,,Almería; (c) solo sensibilidad; C4
+B2,B2_D2030_04,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,37388.0,,"Almería; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_05,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,1425.0,,Ávila; (c) solo sensibilidad; C4
+B2,B2_Tb_05,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,1864.715581775653,,Ávila; (c) solo sensibilidad; C4
+B2,B2_Tc_05,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,1742.499999999971,,Ávila; (c) solo sensibilidad; C4
+B2,B2_D2030_05,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,1357.0,,"Ávila; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_06,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,2445.0,,Badajoz; (c) solo sensibilidad; C4
+B2,B2_Tb_06,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,6032.026535557945,,Badajoz; (c) solo sensibilidad; C4
+B2,B2_Tc_06,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,55.09999999991851,,Badajoz; (c) solo sensibilidad; C4
+B2,B2_D2030_06,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,9561.0,,"Badajoz; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_07,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,13896.666666666668,,"Balears, Illes; (c) solo sensibilidad; C4"
+B2,B2_Tb_07,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,17552.114913138466,,"Balears, Illes; (c) solo sensibilidad; C4"
+B2,B2_Tc_07,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,12163.499999999156,,"Balears, Illes; (c) solo sensibilidad; C4"
+B2,B2_D2030_07,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,34821.326433333335,,"Balears, Illes; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_08,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,49600.0,,Barcelona; (c) solo sensibilidad; C4
+B2,B2_Tb_08,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,63666.502628644026,,Barcelona; (c) solo sensibilidad; C4
+B2,B2_Tc_08,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,57677.50000000268,,Barcelona; (c) solo sensibilidad; C4
+B2,B2_D2030_08,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,165029.56845,,"Barcelona; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_09,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,4261.666666666667,,Burgos; (c) solo sensibilidad; C4
+B2,B2_Tb_09,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,5895.495719434252,,Burgos; (c) solo sensibilidad; C4
+B2,B2_Tc_09,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,4754.500000000196,,Burgos; (c) solo sensibilidad; C4
+B2,B2_D2030_09,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,4762.333333333333,,"Burgos; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_10,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,5838.333333333334,,Cáceres; (c) solo sensibilidad; C4
+B2,B2_Tb_10,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,5335.324051128573,,Cáceres; (c) solo sensibilidad; C4
+B2,B2_Tc_10,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,9455.500000000524,,Cáceres; (c) solo sensibilidad; C4
+B2,B2_D2030_10,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,-4054.333333333334,,"Cáceres; signo mejora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_11,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,12048.333333333332,,Cádiz; (c) solo sensibilidad; C4
+B2,B2_Tb_11,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,13984.605375284666,,Cádiz; (c) solo sensibilidad; C4
+B2,B2_Tc_11,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,15875.000000000757,,Cádiz; (c) solo sensibilidad; C4
+B2,B2_D2030_11,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,24855.666666666668,,"Cádiz; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_12,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,3953.333333333333,,Castellón/Castelló; (c) solo sensibilidad; C4
+B2,B2_Tb_12,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,5778.510088494373,,Castellón/Castelló; (c) solo sensibilidad; C4
+B2,B2_Tc_12,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,3864.499999999902,,Castellón/Castelló; (c) solo sensibilidad; C4
+B2,B2_D2030_12,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,34547.666666666664,,"Castellón/Castelló; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_13,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,3555.0,,Ciudad Real; (c) solo sensibilidad; C4
+B2,B2_Tb_13,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,4182.33151097892,,Ciudad Real; (c) solo sensibilidad; C4
+B2,B2_Tc_13,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,1441.4999999986612,,Ciudad Real; (c) solo sensibilidad; C4
+B2,B2_D2030_13,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,6032.0,,"Ciudad Real; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_14,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,6501.666666666666,,Córdoba; (c) solo sensibilidad; C4
+B2,B2_Tb_14,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,5850.662300884574,,Córdoba; (c) solo sensibilidad; C4
+B2,B2_Tc_14,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,8570.499999999942,,Córdoba; (c) solo sensibilidad; C4
+B2,B2_D2030_14,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,5415.333333333334,,"Córdoba; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_15,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,6511.666666666666,,"Coruña, A; (c) solo sensibilidad; C4"
+B2,B2_Tb_15,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,9186.790862009891,,"Coruña, A; (c) solo sensibilidad; C4"
+B2,B2_Tc_15,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,6823.5,,"Coruña, A; (c) solo sensibilidad; C4"
+B2,B2_D2030_15,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,22698.333333333336,,"Coruña, A; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_16,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,1871.6666666666665,,Cuenca; (c) solo sensibilidad; C4
+B2,B2_Tb_16,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,2370.0563749593334,,Cuenca; (c) solo sensibilidad; C4
+B2,B2_Tc_16,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,2654.0000000001455,,Cuenca; (c) solo sensibilidad; C4
+B2,B2_D2030_16,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,2868.3333333333335,,"Cuenca; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_17,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,8643.333333333334,,Girona; (c) solo sensibilidad; C4
+B2,B2_Tb_17,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,11426.425696488064,,Girona; (c) solo sensibilidad; C4
+B2,B2_Tc_17,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,14682.500000001746,,Girona; (c) solo sensibilidad; C4
+B2,B2_D2030_17,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,32626.982766666664,,"Girona; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_18,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,8321.666666666666,,Granada; (c) solo sensibilidad; C4
+B2,B2_Tb_18,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,10937.092022289347,,Granada; (c) solo sensibilidad; C4
+B2,B2_Tc_18,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,9764.000000000378,,Granada; (c) solo sensibilidad; C4
+B2,B2_D2030_18,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,30951.333333333336,,"Granada; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_19,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,5853.333333333334,,Guadalajara; (c) solo sensibilidad; C4
+B2,B2_Tb_19,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,8322.054723037612,,Guadalajara; (c) solo sensibilidad; C4
+B2,B2_Tc_19,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,5209.000000000136,,Guadalajara; (c) solo sensibilidad; C4
+B2,B2_D2030_19,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,8002.666666666666,,"Guadalajara; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_20,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,6905.0,,Gipuzkoa; (c) solo sensibilidad; C4
+B2,B2_Tb_20,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,8206.712867915281,,Gipuzkoa; (c) solo sensibilidad; C4
+B2,B2_Tc_20,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,4481.499999998661,,Gipuzkoa; (c) solo sensibilidad; C4
+B2,B2_D2030_20,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,4996.0,,"Gipuzkoa; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_21,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,4381.666666666667,,Huelva; (c) solo sensibilidad; C4
+B2,B2_Tb_21,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,5783.967446738239,,Huelva; (c) solo sensibilidad; C4
+B2,B2_Tc_21,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,4165.0000000000255,,Huelva; (c) solo sensibilidad; C4
+B2,B2_D2030_21,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,12869.333333333332,,"Huelva; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_22,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,2355.0,,Huesca; (c) solo sensibilidad; C4
+B2,B2_Tb_22,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,3450.196040643827,,Huesca; (c) solo sensibilidad; C4
+B2,B2_Tc_22,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,2828.4999999999054,,Huesca; (c) solo sensibilidad; C4
+B2,B2_D2030_22,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,4398.4187,,"Huesca; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_23,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,2628.333333333333,,Jaén; (c) solo sensibilidad; C4
+B2,B2_Tb_23,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,3028.1014749268,,Jaén; (c) solo sensibilidad; C4
+B2,B2_Tc_23,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,1771.9999999996799,,Jaén; (c) solo sensibilidad; C4
+B2,B2_D2030_23,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,5126.666666666667,,"Jaén; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_24,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,2258.3333333333335,,León; (c) solo sensibilidad; C4
+B2,B2_Tb_24,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,3707.8041297888653,,León; (c) solo sensibilidad; C4
+B2,B2_Tc_24,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,2076.999999999939,,León; (c) solo sensibilidad; C4
+B2,B2_D2030_24,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,3160.6666666666665,,"León; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_25,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,2735.0,,Lleida; (c) solo sensibilidad; C4
+B2,B2_Tb_25,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,3715.491904292733,,Lleida; (c) solo sensibilidad; C4
+B2,B2_Tc_25,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,2527.9999999999673,,Lleida; (c) solo sensibilidad; C4
+B2,B2_D2030_25,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,14424.0,,"Lleida; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_26,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,4070.0,,"Rioja, La; (c) solo sensibilidad; C4"
+B2,B2_Tb_26,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,5174.631019336653,,"Rioja, La; (c) solo sensibilidad; C4"
+B2,B2_Tc_26,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,2772.4999999995925,,"Rioja, La; (c) solo sensibilidad; C4"
+B2,B2_D2030_26,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,6266.331,,"Rioja, La; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_27,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,990.0,,Lugo; (c) solo sensibilidad; C4
+B2,B2_Tb_27,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,1428.1116486375195,,Lugo; (c) solo sensibilidad; C4
+B2,B2_Tc_27,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,554.9999999999709,,Lugo; (c) solo sensibilidad; C4
+B2,B2_D2030_27,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,4689.0,,"Lugo; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_28,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,92263.33333333334,,Madrid; (c) solo sensibilidad; C4
+B2,B2_Tb_28,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,113852.90140936627,,Madrid; (c) solo sensibilidad; C4
+B2,B2_Tc_28,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,76807.99999999884,,Madrid; (c) solo sensibilidad; C4
+B2,B2_D2030_28,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,212766.27816666666,,"Madrid; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_29,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,29615.0,,Málaga; (c) solo sensibilidad; C4
+B2,B2_Tb_29,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,45540.76933462232,,Málaga; (c) solo sensibilidad; C4
+B2,B2_Tc_29,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,32436.500000002125,,Málaga; (c) solo sensibilidad; C4
+B2,B2_D2030_29,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,47820.0,,"Málaga; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_30,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,13093.333333333332,,Murcia; (c) solo sensibilidad; C4
+B2,B2_Tb_30,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,18273.45986232905,,Murcia; (c) solo sensibilidad; C4
+B2,B2_Tc_30,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,17989.0,,Murcia; (c) solo sensibilidad; C4
+B2,B2_D2030_30,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,72366.66666666667,,"Murcia; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_31,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,11340.0,,Navarra; (c) solo sensibilidad; C4
+B2,B2_Tb_31,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,12422.49554900156,,Navarra; (c) solo sensibilidad; C4
+B2,B2_Tc_31,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,8395.999999999942,,Navarra; (c) solo sensibilidad; C4
+B2,B2_D2030_31,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,8397.0,,"Navarra; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_32,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,1173.3333333333333,,Ourense; (c) solo sensibilidad; C4
+B2,B2_Tb_32,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,1374.9987282861603,,Ourense; (c) solo sensibilidad; C4
+B2,B2_Tc_32,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,1822.5,,Ourense; (c) solo sensibilidad; C4
+B2,B2_D2030_32,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,5068.666666666667,,"Ourense; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_33,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,9820.0,,Asturias; (c) solo sensibilidad; C4
+B2,B2_Tb_33,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,12247.871950172757,,Asturias; (c) solo sensibilidad; C4
+B2,B2_Tc_33,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,10960.999999999272,,Asturias; (c) solo sensibilidad; C4
+B2,B2_D2030_33,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,3114.0,,"Asturias; signo mejora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_34,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,1513.3333333333335,,Palencia; (c) solo sensibilidad; C4
+B2,B2_Tb_34,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,1277.6415732552534,,Palencia; (c) solo sensibilidad; C4
+B2,B2_Tc_34,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,1833.4999999998909,,Palencia; (c) solo sensibilidad; C4
+B2,B2_D2030_34,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,-1233.7469833333334,,"Palencia; signo mejora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_35,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,7146.666666666666,,"Palmas, Las; (c) solo sensibilidad; C4"
+B2,B2_Tb_35,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,13105.449308410449,,"Palmas, Las; (c) solo sensibilidad; C4"
+B2,B2_Tc_35,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,7384.000000000306,,"Palmas, Las; (c) solo sensibilidad; C4"
+B2,B2_D2030_35,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,37492.333333333336,,"Palmas, Las; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_36,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,5203.333333333334,,Pontevedra; (c) solo sensibilidad; C4
+B2,B2_Tb_36,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,8447.14818747349,,Pontevedra; (c) solo sensibilidad; C4
+B2,B2_Tc_36,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,5428.499999999538,,Pontevedra; (c) solo sensibilidad; C4
+B2,B2_D2030_36,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,12538.666666666666,,"Pontevedra; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_37,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,2313.3333333333335,,Salamanca; (c) solo sensibilidad; C4
+B2,B2_Tb_37,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,2333.70485742436,,Salamanca; (c) solo sensibilidad; C4
+B2,B2_Tc_37,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,2882.9999999998254,,Salamanca; (c) solo sensibilidad; C4
+B2,B2_D2030_37,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,4534.654416666666,,"Salamanca; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_38,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,6433.333333333334,,Santa Cruz de Tenerife; (c) solo sensibilidad; C4
+B2,B2_Tb_38,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,7852.787597508946,,Santa Cruz de Tenerife; (c) solo sensibilidad; C4
+B2,B2_Tc_38,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,7529.500000000626,,Santa Cruz de Tenerife; (c) solo sensibilidad; C4
+B2,B2_D2030_38,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,33382.666666666664,,"Santa Cruz de Tenerife; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_39,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,4940.0,,Cantabria; (c) solo sensibilidad; C4
+B2,B2_Tb_39,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,7693.289675512398,,Cantabria; (c) solo sensibilidad; C4
+B2,B2_Tc_39,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,6327.000000000407,,Cantabria; (c) solo sensibilidad; C4
+B2,B2_D2030_39,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,11005.97005,,"Cantabria; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_40,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,1435.0,,Segovia; (c) solo sensibilidad; C4
+B2,B2_Tb_40,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,1700.8057817105864,,Segovia; (c) solo sensibilidad; C4
+B2,B2_Tc_40,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,614.5000000002183,,Segovia; (c) solo sensibilidad; C4
+B2,B2_D2030_40,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,3649.81075,,"Segovia; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_41,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,27060.0,,Sevilla; (c) solo sensibilidad; C4
+B2,B2_Tb_41,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,40713.7506391226,,Sevilla; (c) solo sensibilidad; C4
+B2,B2_Tc_41,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,37219.50000000419,,Sevilla; (c) solo sensibilidad; C4
+B2,B2_D2030_41,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,12768.0,,"Sevilla; signo mejora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_42,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,2240.0,,Soria; (c) solo sensibilidad; C4
+B2,B2_Tb_42,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,3108.913615206586,,Soria; (c) solo sensibilidad; C4
+B2,B2_Tc_42,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,1435.4999999997672,,Soria; (c) solo sensibilidad; C4
+B2,B2_D2030_42,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,-1442.4517,,"Soria; signo mejora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_43,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,5181.666666666666,,Tarragona; (c) solo sensibilidad; C4
+B2,B2_Tb_43,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,7639.208207141652,,Tarragona; (c) solo sensibilidad; C4
+B2,B2_Tc_43,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,5318.000000000564,,Tarragona; (c) solo sensibilidad; C4
+B2,B2_D2030_43,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,53190.333333333336,,"Tarragona; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_44,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,1528.3333333333335,,Teruel; (c) solo sensibilidad; C4
+B2,B2_Tb_44,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,2010.0871058666798,,Teruel; (c) solo sensibilidad; C4
+B2,B2_Tc_44,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,1814.0000000001237,,Teruel; (c) solo sensibilidad; C4
+B2,B2_D2030_44,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,834.6666666666665,,"Teruel; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_45,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,7248.333333333334,,Toledo; (c) solo sensibilidad; C4
+B2,B2_Tb_45,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,10807.645178621584,,Toledo; (c) solo sensibilidad; C4
+B2,B2_Tc_45,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,7514.499999999789,,Toledo; (c) solo sensibilidad; C4
+B2,B2_D2030_45,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,29964.666666666664,,"Toledo; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_46,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,17160.0,,Valencia/València; (c) solo sensibilidad; C4
+B2,B2_Tb_46,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,23751.12326449477,,Valencia/València; (c) solo sensibilidad; C4
+B2,B2_Tc_46,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,11404.999999998836,,Valencia/València; (c) solo sensibilidad; C4
+B2,B2_D2030_46,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,118711.0,,"Valencia/València; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_47,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,6680.0,,Valladolid; (c) solo sensibilidad; C4
+B2,B2_Tb_47,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,8350.023100624307,,Valladolid; (c) solo sensibilidad; C4
+B2,B2_Tc_47,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,7420.999999999913,,Valladolid; (c) solo sensibilidad; C4
+B2,B2_D2030_47,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,5796.0,,"Valladolid; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_48,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,9818.333333333334,,Bizkaia; (c) solo sensibilidad; C4
+B2,B2_Tb_48,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,12683.555018029147,,Bizkaia; (c) solo sensibilidad; C4
+B2,B2_Tc_48,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,9244.000000000568,,Bizkaia; (c) solo sensibilidad; C4
+B2,B2_D2030_48,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,13865.838716666665,,"Bizkaia; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_49,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,795.0,,Zamora; (c) solo sensibilidad; C4
+B2,B2_Tb_49,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,833.79323500488,,Zamora; (c) solo sensibilidad; C4
+B2,B2_Tc_49,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,720.4999999999968,,Zamora; (c) solo sensibilidad; C4
+B2,B2_D2030_49,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,325.56039999999996,,"Zamora; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_50,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,8846.666666666666,,Zaragoza; (c) solo sensibilidad; C4
+B2,B2_Tb_50,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,12512.901409366263,,Zaragoza; (c) solo sensibilidad; C4
+B2,B2_Tc_50,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,7895.000000000073,,Zaragoza; (c) solo sensibilidad; C4
+B2,B2_D2030_50,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,22839.794533333337,,"Zaragoza; signo empeora; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_51,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,181.66666666666669,,Ceuta; (c) solo sensibilidad; C4
+B2,B2_Tb_51,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,142.72867912193342,,Ceuta; (c) solo sensibilidad; C4
+B2,B2_Tc_51,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,16.30000000000291,,Ceuta; (c) solo sensibilidad; C4
+B2,B2_D2030_51,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,1680.3333333333333,,"Ceuta; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_Ta_52,terminadas 2026-2030 escenario (a) central,2026,2030,5,,,,,550.0,,Melilla; (c) solo sensibilidad; C4
+B2,B2_Tb_52,terminadas 2026-2030 escenario (b) central,2026,2030,5,,,,,682.3546116032269,,Melilla; (c) solo sensibilidad; C4
+B2,B2_Tc_52,terminadas 2026-2030 escenario (c) central,2026,2030,5,,,,,8.199999999967986,,Melilla; (c) solo sensibilidad; C4
+B2,B2_D2030_52,D2030 = D2025 + F - T(a) + B,2026,2030,5,,,,,1780.0,,"Melilla; signo indeterminado; p ajustado no aplica (proyección, sin contraste)"
+B2,B2_lag_2012-2025,"retardo medio iniciadas->terminadas (nacional, años)",2012,2025,1,,,,,3.205911231486019,,ventana de estimación
+B2,B2_lag_2016-2025,"retardo medio iniciadas->terminadas (nacional, años)",2016,2025,1,,,,,3.201127499186623,,ventana de estimación
+B2,B2_lag_2019-2025,"retardo medio iniciadas->terminadas (nacional, años)",2019,2025,1,,,,,3.073060930717897,,ventana de estimación
+B2,B2_lag_2022-2025,"retardo medio iniciadas->terminadas (nacional, años)",2022,2025,1,,,,,3.207045743734284,,ventana de estimación
+B2,B2_lag_2008-2025,"retardo medio iniciadas->terminadas (nacional, años)",2008,2025,1,,,,,2.9706485485047427,,ventana de estimación

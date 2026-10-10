@@ -1,0 +1,97 @@
+[
+ {
+  "id": "B2-H1",
+  "indicador": "Déficit acumulado nacional a fin de 2030 (suma de 52 provincias, escenario a)",
+  "valor": 1296672,
+  "min": 872529,
+  "max": 1447953,
+  "unidad": "viviendas",
+  "periodo": "1-ene-2026 a 31-dic-2030",
+  "cobertura": "España (52 provincias)",
+  "fuentes": [
+   "A4",
+   "INE 54562",
+   "MIVAU",
+   "B1"
+  ],
+  "capa": "C4",
+  "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17, base 1-ene-2026); INE Proyecciones de Población 36726; MIVAU Boletín Online (hasta 2025); A4 déficit 2021-2025 (ECP INE + MIVAU); B1 (R). Ejecución 2026-10-10"
+ },
+ {
+  "id": "B2-H2",
+  "indicador": "Déficit 2021-2025 de partida (bajas 0)",
+  "valor": 700934,
+  "min": 700934,
+  "max": 700934,
+  "unidad": "viviendas",
+  "periodo": "2021-2025",
+  "cobertura": "España (52 provincias)",
+  "fuentes": [
+   "ECP INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "ECP 2021-2025; MIVAU hasta 2025"
+ },
+ {
+  "id": "B2-H3",
+  "indicador": "Crecimiento de hogares proyectado INE 2026-2030",
+  "valor": 1024156,
+  "min": 819421,
+  "max": 1060364,
+  "unidad": "hogares",
+  "periodo": "1-ene-2026 a 1-ene-2031",
+  "cobertura": "España",
+  "fuentes": [
+   "INE 54562",
+   "INE 36726"
+  ],
+  "capa": "C2",
+  "fecha_dato": "INE 2026-06-17"
+ },
+ {
+  "id": "B2-H4",
+  "indicador": "Terminadas 2026-2030, ritmo actual (5 x media 2023-25)",
+  "valor": 473250,
+  "min": 402475,
+  "max": 648361,
+  "unidad": "viviendas",
+  "periodo": "2026-2030",
+  "cobertura": "España",
+  "fuentes": [
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "MIVAU hasta 2025"
+ },
+ {
+  "id": "B2-H5",
+  "indicador": "Retardo medio iniciadas-terminadas (nacional)",
+  "valor": 3.2,
+  "min": 2.97,
+  "max": 3.21,
+  "unidad": "años",
+  "periodo": "ventanas 2008-2025 a 2022-2025",
+  "cobertura": "España",
+  "fuentes": [
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "MIVAU hasta 2025"
+ },
+ {
+  "id": "B2-H6",
+  "indicador": "Provincias que empeoran / mejoran / indeterminadas (rango completo)",
+  "valor": 20,
+  "min": 5,
+  "max": 27,
+  "unidad": "provincias",
+  "periodo": "2025 a 2030",
+  "cobertura": "52 provincias (valor=empeora, min=mejora, max=indeterminado)",
+  "fuentes": [
+   "B2"
+  ],
+  "capa": "C4",
+  "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17, base 1-ene-2026); INE Proyecciones de Población 36726; MIVAU Boletín Online (hasta 2025); A4 déficit 2021-2025 (ECP INE + MIVAU); B1 (R). Ejecución 2026-10-10"
+ }
+]

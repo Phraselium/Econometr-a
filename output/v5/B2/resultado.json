@@ -1,0 +1,73 @@
+{
+ "rama": "B2",
+ "pregunta": "¿Mejora o empeora el déficit 2026-2030 por provincia al ritmo actual?",
+ "capa": "C4",
+ "datos": [
+  "INE Proyección de Hogares 54562",
+  "INE Proyecciones de Población 36726",
+  "MIVAU iniciadas/terminadas libres",
+  "MIVAU protegida (definitivas y provisionales)",
+  "A4 déficit 2021-2025",
+  "B1 R (bajas)"
+ ],
+ "N": 52,
+ "metodo": "D2030 = D2025 + F - T + B por provincia; T con 3 escenarios (a media 2023-25; b cartera con retardo; c tendencia, sensibilidad); rango = F_min/F_max, envolvente de T(a,b), B_min/B_max; signo por rango completo",
+ "estimacion": {
+  "deficit_2030_nacional": {
+   "min": 872529.0522858987,
+   "central": 1296672.3357000002,
+   "max": 1447952.8799406204
+  },
+  "deficit_2025_nacional": 700934.0,
+  "cambio_2025_2030_nacional": {
+   "min": 171595.0522858987,
+   "central": 595738.3357000002,
+   "max": 747018.8799406204
+  },
+  "signo_nacional_rango": "empeora",
+  "signo_nacional_por_escenario_central": {
+   "a": "empeora",
+   "b": "empeora",
+   "c": "empeora"
+  },
+  "deficit_2030_central_por_escenario": {
+   "a": 1296672,
+   "b": 1136179,
+   "c": 1276238
+  },
+  "n_provincias_por_signo": {
+   "indeterminado": 27,
+   "empeora": 20,
+   "mejora": 5
+  },
+  "n_prov_signo_estable_3_escenarios": 46,
+  "retardo_anios": {
+   "central": 3.201127499186623,
+   "2012-2025": 3.205911231486019,
+   "2016-2025": 3.201127499186623,
+   "2019-2025": 3.073060930717897,
+   "2022-2025": 3.207045743734284,
+   "2008-2025": 2.9706485485047427
+  },
+  "anios_cierre_nacional_si_mejora_ritmo_actual": null
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO (C4: proyección con supuestos; solo F es C2)",
+ "diagnosticos": {
+  "control_sumas_fallos": [],
+  "provincias_sin_serie_protegida": []
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "Proyección bajo supuestos, no pronóstico; AR(4) y ECM v1 no aplican (fuera_muestra null); Holm/BH no aplica (sin contrastes).",
+  "Supuestos: (1) D2025 = A4 con bajas 0; (2) bajas = R de B1 (acotado >= 0) / 10 por año, R es límite inferior no informativo; (3) terminadas = libres terminadas + protegidas definitivas (calificaciones definitivas como proxy); (4) en (b) las iniciadas posteriores a 2025 = media 2023-25 y el retardo nacional se aplica a todas las provincias; (5) hogares INE = escenario del INE, sin reacción a la oferta; no hay ajuste de A2, V, M ni L.",
+  "Rango: mínimo = F_min, T máximo (envolvente a-b), B_min; máximo al revés; son cotas, no IC.",
+  "Escenario (c) es solo sensibilidad y no entra en el rango principal.",
+  "Sin lenguaje causal: se describen magnitudes proyectadas, no efectos."
+ ]
+}

@@ -1,7 +1,7 @@
 nivel,periodo,escenario,n_unidades,n_50,n_80,total_positivo,n_positivos
-provincia,2012-2025,mediana,52,6,18,1444956.5374,49.0000
-provincia,2012-2025,rango entre combinaciones,52,3-7,6-21,,
+provincia,2012-2025,mediana,52,7,14,586824.7590,31.0000
+provincia,2012-2025,rango entre combinaciones,52,3-7,6-16,,
 municipio,2012-2025,"Catastro, fuente única",695,45,135,333696.5037,361.0000
-provincia,2021-2025,mediana,52,5,17,874933.7733,52.0000
-provincia,2021-2025,rango entre combinaciones,52,4-7,9-21,,
+provincia,2021-2025,mediana,52,7,19,788153.4950,52.0000
+provincia,2021-2025,rango entre combinaciones,52,4-7,9-20,,
 municipio,2021-2025,"Catastro, fuente única",703,25,133,325660.8600,454.0000

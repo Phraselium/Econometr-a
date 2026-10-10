@@ -20,25 +20,25 @@
   "estimacion": {
     "nacional_2021_2025": {
       "n_prov_comun": 48,
-      "min": 287869.8686881457,
-      "max": 1367996.28,
-      "mediana": 797429.0366881457,
-      "n_combinaciones": 8,
+      "min": 657059.0,
+      "max": 933231.28,
+      "mediana": 744099.8200000001,
+      "n_combinaciones": 4,
       "signo_unico": true,
       "n_prov_fin_obra": 52,
-      "min_fin_obra_todas": 666947.8508800045,
-      "max_fin_obra_todas": 1435394.08
+      "min_fin_obra_todas": 700934.0,
+      "max_fin_obra_todas": 967171.08
     },
     "nacional_2012_2025": {
       "n_prov_comun": 48,
-      "min": -245789.13131185411,
-      "max": 1998975.484,
-      "mediana": 1350676.028844073,
-      "n_combinaciones": 8,
+      "min": -77035.0,
+      "max": 1002103.484,
+      "mediana": 500380.871,
+      "n_combinaciones": 4,
       "signo_unico": false,
       "n_prov_fin_obra": 52,
-      "min_fin_obra_todas": 1119871.8508800047,
-      "max_fin_obra_todas": 2117743.98
+      "min_fin_obra_todas": 320536.0,
+      "max_fin_obra_todas": 1026654.98
     }
   },
   "ic95": null,
@@ -51,10 +51,10 @@
         "periodo": "2012-2025",
         "escenario": "mediana",
         "n_unidades": 52,
-        "n_50": 6,
-        "n_80": 18,
-        "total_positivo": 1444956.5374270394,
-        "n_positivos": 49.0
+        "n_50": 7,
+        "n_80": 14,
+        "total_positivo": 586824.7590000001,
+        "n_positivos": 31.0
       },
       {
         "nivel": "provincia",
@@ -62,7 +62,7 @@
         "escenario": "rango entre combinaciones",
         "n_unidades": 52,
         "n_50": "3-7",
-        "n_80": "6-21",
+        "n_80": "6-16",
         "total_positivo": null,
         "n_positivos": null
       },
@@ -81,9 +81,9 @@
         "periodo": "2021-2025",
         "escenario": "mediana",
         "n_unidades": 52,
-        "n_50": 5,
-        "n_80": 17,
-        "total_positivo": 874933.7733355352,
+        "n_50": 7,
+        "n_80": 19,
+        "total_positivo": 788153.4949999999,
         "n_positivos": 52.0
       },
       {
@@ -92,7 +92,7 @@
         "escenario": "rango entre combinaciones",
         "n_unidades": 52,
         "n_50": "4-7",
-        "n_80": "9-21",
+        "n_80": "9-20",
         "total_positivo": null,
         "n_positivos": null
       },
@@ -111,10 +111,10 @@
       {
         "nivel": "provincia",
         "periodo": "2012-2025",
-        "n_excedente": 3,
-        "viviendas_excedente_mediana": 7114.745989694908,
-        "viviendas_excedente_min": 0.0,
-        "viviendas_excedente_max": 414839.6285508615,
+        "n_excedente": 21,
+        "viviendas_excedente_mediana": 68918.64,
+        "viviendas_excedente_min": 11920.12,
+        "viviendas_excedente_max": 285881.0,
         "nota": "min/max: solo provincias con exceso en todas las combinaciones, suma de la cota correspondiente"
       },
       {
@@ -132,7 +132,7 @@
         "n_excedente": 0,
         "viviendas_excedente_mediana": 0.0,
         "viviendas_excedente_min": 0.0,
-        "viviendas_excedente_max": 69629.24410808901,
+        "viviendas_excedente_max": 928.0,
         "nota": "min/max: solo provincias con exceso en todas las combinaciones, suma de la cota correspondiente"
       },
       {
@@ -146,8 +146,8 @@
       }
     ],
     "capas_provincia_2021_2025": {
-      "C4": 27,
-      "C1": 25
+      "C4": 39,
+      "C2": 13
     },
     "mapa": "sin geopandas: gráficos de barras ordenados (no coropleta)"
   },

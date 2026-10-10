@@ -3,11 +3,11 @@
     "id": "M1-H-nacional-2012-2025",
     "enunciado_neutro": "Suma provincial del déficit contable (Δ hogares − altas) 2012-2025, muestra común de 48 provincias",
     "capa": "C4",
-    "magnitud": 1350676.028844073,
+    "magnitud": 500380.871,
     "unidad": "viviendas",
     "intervalo": [
-      -245789.13131185411,
-      1998975.484
+      -77035.0,
+      1002103.484
     ],
     "fuentes": [
       "Censos 2011/2021 + ECP",
@@ -28,13 +28,13 @@
   },
   {
     "id": "M1-H-top10-prov-2012-2025",
-    "enunciado_neutro": "Provincias con mayor déficit contable 2012-2025 (mediana entre combinaciones): Madrid (249.372); Barcelona (150.070); Málaga (99.323); Valencia/València (94.649); Alicante/Alacant (85.180); Murcia (61.804); Sevilla (51.109); Almería (45.704); Balears. Illes (39.864); Cádiz (36.896)",
+    "enunciado_neutro": "Provincias con mayor déficit contable 2012-2025 (mediana entre combinaciones): Valencia/València (60.862); Barcelona (54.827); Málaga (49.072); Murcia (45.805); Almería (36.506); Madrid (36.081); Alicante/Alacant (28.669); Tarragona (28.572); Palmas. Las (26.791); Granada (25.304)",
     "capa": "C4",
-    "magnitud": 913969.8826689709,
+    "magnitud": 392487.893,
     "unidad": "viviendas (suma de 10 provincias)",
     "intervalo": [
-      95715.78968393285,
-      1227362.8627710398
+      137673.0,
+      642129.572
     ],
     "fuentes": [
       "ECP",
@@ -53,11 +53,11 @@
     "id": "M1-H-nacional-2021-2025",
     "enunciado_neutro": "Suma provincial del déficit contable (Δ hogares − altas) 2021-2025, muestra común de 48 provincias",
     "capa": "C1",
-    "magnitud": 797429.0366881457,
+    "magnitud": 744099.8200000001,
     "unidad": "viviendas",
     "intervalo": [
-      287869.8686881457,
-      1367996.28
+      657059.0,
+      933231.28
     ],
     "fuentes": [
       "ECP INE",
@@ -77,13 +77,13 @@
   },
   {
     "id": "M1-H-top10-prov-2021-2025",
-    "enunciado_neutro": "Provincias con mayor déficit contable 2021-2025 (mediana entre combinaciones): Madrid (164.340); Barcelona (114.900); Valencia/València (76.759); Alicante/Alacant (66.656); Málaga (42.646); Murcia (34.536); Balears. Illes (27.956); Tarragona (25.086); Girona (20.367); Toledo (19.578)",
+    "enunciado_neutro": "Provincias con mayor déficit contable 2021-2025 (mediana entre combinaciones): Madrid (107.368); Barcelona (89.836); Valencia/València (68.926); Alicante/Alacant (57.280); Murcia (38.583); Tarragona (28.368); Málaga (26.844); Palmas. Las (20.115); Almería (19.643); Castellón/Castelló (19.633)",
     "capa": "C1",
-    "magnitud": 592824.5670222654,
+    "magnitud": 476597.0225,
     "unidad": "viviendas (suma de 10 provincias)",
     "intervalo": [
-      302452.54405003804,
-      819834.66
+      412185.0,
+      562783.09
     ],
     "fuentes": [
       "ECP",
@@ -100,9 +100,9 @@
   },
   {
     "id": "M1-H-concentracion-provincia-2012-2025",
-    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 6 y 18 (mediana)",
+    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 7 y 14 (mediana)",
     "capa": "C4",
-    "magnitud": 18,
+    "magnitud": 14,
     "unidad": "unidades (80 %)",
     "intervalo": [
       null,
@@ -120,9 +120,9 @@
   },
   {
     "id": "M1-H-concentracion-provincia-2012-2025",
-    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 3-7 y 6-21 (rango entre combinaciones)",
+    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2012-2025: 3-7 y 6-16 (rango entre combinaciones)",
     "capa": "C4",
-    "magnitud": "6-21",
+    "magnitud": "6-16",
     "unidad": "unidades (80 %)",
     "intervalo": [
       null,
@@ -160,9 +160,9 @@
   },
   {
     "id": "M1-H-concentracion-provincia-2021-2025",
-    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2021-2025: 5 y 17 (mediana)",
+    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2021-2025: 7 y 19 (mediana)",
     "capa": "C1",
-    "magnitud": 17,
+    "magnitud": 19,
     "unidad": "unidades (80 %)",
     "intervalo": [
       null,
@@ -180,9 +180,9 @@
   },
   {
     "id": "M1-H-concentracion-provincia-2021-2025",
-    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2021-2025: 4-7 y 9-21 (rango entre combinaciones)",
+    "enunciado_neutro": "Unidades (provincia) que acumulan el 50 % y el 80 % del déficit positivo 2021-2025: 4-7 y 9-20 (rango entre combinaciones)",
     "capa": "C1",
-    "magnitud": "9-21",
+    "magnitud": "9-20",
     "unidad": "unidades (80 %)",
     "intervalo": [
       null,
@@ -220,13 +220,13 @@
   },
   {
     "id": "M1-H-excedente-provincia-2012-2025",
-    "enunciado_neutro": "3 provincias con déficit negativo (altas > Δ hogares) 2012-2025. suma 7.115 viviendas",
+    "enunciado_neutro": "21 provincias con déficit negativo (altas > Δ hogares) 2012-2025. suma 68.919 viviendas",
     "capa": "C4",
-    "magnitud": 7114.745989694908,
+    "magnitud": 68918.64,
     "unidad": "viviendas",
     "intervalo": [
-      0.0,
-      414839.6285508615
+      11920.12,
+      285881.0
     ],
     "fuentes": [
       "como arriba"
@@ -266,7 +266,7 @@
     "unidad": "viviendas",
     "intervalo": [
       0.0,
-      69629.24410808901
+      928.0
     ],
     "fuentes": [
       "como arriba"

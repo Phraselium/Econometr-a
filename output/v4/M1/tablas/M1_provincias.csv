@@ -1,105 +1,105 @@
-cod_prov,provincia,periodo,min,mediana,max,n_rutas_hogares,n_fuentes_altas,mismo_signo,capa,motivo_capa,latente_min,latente_mediana,latente_max
-01,Araba/Álava,2012-2025,8674.8418,11987.3999,15611.7240,2,1,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),1151.5487,1930.0164,3099.5126
-01,Araba/Álava,2021-2025,3563.8418,6130.2649,9032.8600,2,1,True,C4,falta una fuente de altas (foral) o discrepa el signo,1151.5487,1930.0164,3099.5126
-02,Albacete,2012-2025,-8591.9738,6929.8381,13665.4000,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),1485.9229,2490.4335,3999.5153
-02,Albacete,2021-2025,-528.9738,4045.7651,9603.1300,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,1485.9229,2490.4335,3999.5153
-03,Alicante/Alacant,2012-2025,2107.0000,85179.8368,115186.1000,2,2,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),7519.7570,12603.2482,20240.2050
-03,Alicante/Alacant,2021-2025,37534.4486,66656.4846,91482.0600,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",7519.7570,12603.2482,20240.2050
-04,Almería,2012-2025,11027.1761,45704.0956,56598.3400,2,2,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),3175.0535,5321.4469,8545.9854
-04,Almería,2021-2025,11003.1761,17912.1401,28467.6300,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",3175.0535,5321.4469,8545.9854
-05,Ávila,2012-2025,-9283.1036,2865.4717,6925.3320,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),503.4259,843.7509,1355.0230
-05,Ávila,2021-2025,-346.1036,1839.5784,4296.4700,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,503.4259,843.7509,1355.0230
-06,Badajoz,2012-2025,-24226.6311,11113.2639,24218.0800,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),2440.8357,4090.8847,6569.7622
-06,Badajoz,2021-2025,-7821.6311,1928.5764,13464.4800,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,2440.8357,4090.8847,6569.7622
-07,"Balears, Illes",2012-2025,14358.0000,39864.1194,51842.8348,2,2,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),5421.8231,9087.0731,14593.3984
-07,"Balears, Illes",2021-2025,14161.8768,27956.1844,35040.2300,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",5421.8231,9087.0731,14593.3984
-08,Barcelona,2012-2025,8797.0000,150069.5718,210668.3040,2,2,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),24900.4132,41733.5409,67022.0412
-08,Barcelona,2021-2025,56834.3596,114899.6356,157638.4600,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",24900.4132,41733.5409,67022.0412
-09,Burgos,2012-2025,-7165.8294,6966.4598,14437.8440,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),1195.0510,2002.9270,3216.6036
-09,Burgos,2021-2025,-329.8294,4486.0046,10549.3900,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,1195.0510,2002.9270,3216.6036
-10,Cáceres,2012-2025,-17980.8660,6282.0215,14535.8040,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),1294.4263,2169.4819,3484.0826
-10,Cáceres,2021-2025,-3976.8660,1058.1950,7603.5700,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,1294.4263,2169.4819,3484.0826
-11,Cádiz,2012-2025,-15527.9479,36896.1116,58629.1880,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),4645.0581,7785.2011,12502.6551
-11,Cádiz,2021-2025,-6688.9479,10684.7501,32681.0600,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,4645.0581,7785.2011,12502.6551
-12,Castellón/Castelló,2012-2025,4162.2795,24679.9938,34989.4480,2,2,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),2312.6939,3876.1166,6224.8551
-12,Castellón/Castelló,2021-2025,12250.2795,18899.5115,26501.7200,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",2312.6939,3876.1166,6224.8551
-13,Ciudad Real,2012-2025,-23181.7550,1598.5520,10858.0040,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),1842.1732,3087.5155,4958.4000
-13,Ciudad Real,2021-2025,-859.7550,4718.3425,11412.8000,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,1842.1732,3087.5155,4958.4000
-14,Córdoba,2012-2025,-33260.4944,8629.3388,22260.8320,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),2882.7263,4831.5011,7759.1564
-14,Córdoba,2021-2025,-9662.4944,1365.3528,14696.2500,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,2882.7263,4831.5011,7759.1564
-15,"Coruña, A",2012-2025,-5128.7158,29247.3161,49080.2880,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),3542.5831,5937.4330,9535.2293
-15,"Coruña, A",2021-2025,-3392.7158,10789.4861,28621.6100,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,3542.5831,5937.4330,9535.2293
-16,Cuenca,2012-2025,-12870.1684,639.4458,4693.3600,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),752.2281,1260.7479,2024.6999
-16,Cuenca,2021-2025,922.8316,2558.3798,5004.1600,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",752.2281,1260.7479,2024.6999
-17,Girona,2012-2025,10509.0000,28106.8043,39363.4480,2,2,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),3307.4024,5543.2659,8902.2160
-17,Girona,2021-2025,13952.9006,20367.4266,28846.2100,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",3307.4024,5543.2659,8902.2160
-18,Granada,2012-2025,-10379.1916,35912.1397,53753.4760,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),3704.1988,6208.3038,9970.2347
-18,Granada,2021-2025,669.8084,14754.6722,31168.9200,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",3704.1988,6208.3038,9970.2347
-19,Guadalajara,2012-2025,-2.0000,14608.5682,18641.9000,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),1094.0838,1833.7042,2944.8400
-19,Guadalajara,2021-2025,5140.8615,8919.5355,11760.7900,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",1094.0838,1833.7042,2944.8400
-20,Gipuzkoa,2012-2025,15014.8229,21975.2185,29591.8920,2,1,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),2610.3196,4374.9426,7025.9456
-20,Gipuzkoa,2021-2025,3142.8229,8118.5555,13794.8600,2,1,True,C4,falta una fuente de altas (foral) o discrepa el signo,2610.3196,4374.9426,7025.9456
-21,Huelva,2012-2025,927.3077,18952.2829,26908.2480,2,2,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),2057.5244,3448.4479,5538.0399
-21,Huelva,2021-2025,405.3077,6306.5777,13530.4500,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",2057.5244,3448.4479,5538.0399
-22,Huesca,2012-2025,-2094.6307,5246.8286,9317.9280,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),817.0154,1369.3325,2199.0815
-22,Huesca,2021-2025,1081.3693,3485.4273,6661.4300,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",817.0154,1369.3325,2199.0815
-23,Jaén,2012-2025,-28915.0381,1187.4494,13627.7000,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),2377.7767,3985.1966,6400.0324
-23,Jaén,2021-2025,-6045.0381,1943.3609,11170.2000,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,2377.7767,3985.1966,6400.0324
-24,León,2012-2025,-25075.1235,-4065.1118,6192.4000,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),1325.3305,2221.2778,3567.2643
-24,León,2021-2025,-4027.1235,1809.3382,9107.2500,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,1325.3305,2221.2778,3567.2643
-25,Lleida,2012-2025,-5997.3092,8377.5539,14518.0520,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),1765.5837,2959.1501,4752.2514
-25,Lleida,2021-2025,4655.6908,8867.1768,13143.8100,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",1765.5837,2959.1501,4752.2514
-26,"Rioja, La",2012-2025,-3901.5771,8107.6450,13893.2520,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),1140.9744,1912.2937,3071.0509
-26,"Rioja, La",2021-2025,1148.4229,4761.5435,9337.3300,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",1140.9744,1912.2937,3071.0509
-27,Lugo,2012-2025,-19340.4056,4936.2852,11590.2560,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),942.6786,1579.9463,2537.3170
-27,Lugo,2021-2025,-104.4056,3343.0652,7243.6700,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,942.6786,1579.9463,2537.3170
-28,Madrid,2012-2025,4454.0000,249372.2143,318469.4800,2,2,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),29932.5803,50167.5436,80566.6403
-28,Madrid,2021-2025,72667.8487,164340.4947,221774.4100,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",29932.5803,50167.5436,80566.6403
-29,Málaga,2012-2025,33988.0000,99322.6458,121459.1160,2,2,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),6767.2106,11341.9668,18214.6482
-29,Málaga,2021-2025,14215.8806,42646.2226,63707.5700,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",6767.2106,11341.9668,18214.6482
-30,Murcia,2012-2025,23653.2928,61803.6909,85669.8840,2,2,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),6456.9867,10822.0259,17379.6484
-30,Murcia,2021-2025,16777.2928,34535.5464,55587.0000,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",6456.9867,10822.0259,17379.6484
-31,Navarra,2012-2025,16183.1886,22204.7886,28801.4000,2,1,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),2598.4264,4355.0094,6993.9338
-31,Navarra,2021-2025,8449.1886,13430.0103,19073.0400,2,1,True,C4,falta una fuente de altas (foral) o discrepa el signo,2598.4264,4355.0094,6993.9338
-32,Ourense,2012-2025,-20364.3165,2797.8293,9649.1000,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),875.4354,1467.2454,2356.3249
-32,Ourense,2021-2025,-97.3165,3068.3738,6690.8300,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,875.4354,1467.2454,2356.3249
-33,Asturias,2012-2025,-35672.4784,-610.6342,17891.7600,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),2902.1693,4864.0880,7811.4892
-33,Asturias,2021-2025,-6685.4784,5429.6288,20778.4200,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,2902.1693,4864.0880,7811.4892
-34,Palencia,2012-2025,-4001.7002,531.1779,3780.7360,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),486.0068,814.5562,1308.1377
-34,Palencia,2021-2025,-190.7002,1188.8739,2932.3100,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,486.0068,814.5562,1308.1377
-35,"Palmas, Las",2012-2025,-11070.1872,35497.1219,50395.2360,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),4859.6361,8144.8376,13080.2139
-35,"Palmas, Las",2021-2025,3911.8128,18329.2348,31973.3700,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",4859.6361,8144.8376,13080.2139
-36,Pontevedra,2012-2025,-7382.3393,25971.6874,41193.3840,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),3063.6485,5134.7301,8246.1273
-36,Pontevedra,2021-2025,-5379.3393,4402.6424,18230.2800,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,3063.6485,5134.7301,8246.1273
-37,Salamanca,2012-2025,-5489.2652,3689.0234,11103.6720,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),1076.7330,1804.6238,2898.1383
-37,Salamanca,2021-2025,-1264.2652,2861.8594,8233.2300,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,1076.7330,1804.6238,2898.1383
-38,Santa Cruz de Tenerife,2012-2025,-3614.0975,36775.0813,49301.5600,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),4365.0334,7315.8746,11748.9396
-38,Santa Cruz de Tenerife,2021-2025,7714.9025,18306.6805,28017.6300,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",4365.0334,7315.8746,11748.9396
-39,Cantabria,2012-2025,-2527.7247,9845.6547,19951.3040,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),1894.1349,3174.6042,5098.2603
-39,Cantabria,2021-2025,802.2753,6857.7057,14719.4200,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",1894.1349,3174.6042,5098.2603
-40,Segovia,2012-2025,-6083.7211,2377.6014,5614.1440,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),556.6156,932.8978,1498.1886
-40,Segovia,2021-2025,616.2789,2676.8089,5109.5500,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",556.6156,932.8978,1498.1886
-41,Sevilla,2012-2025,-23956.7313,51108.9553,80988.1520,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),7614.3342,12761.7612,20494.7691
-41,Sevilla,2021-2025,-6838.7313,16863.2303,48533.9900,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,7614.3342,12761.7612,20494.7691
-42,Soria,2012-2025,-4059.8902,1178.1959,3215.9920,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),308.2000,516.5487,829.5522
-42,Soria,2021-2025,-165.8902,1098.6398,2499.5500,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,308.2000,516.5487,829.5522
-43,Tarragona,2012-2025,4111.8765,36580.5317,50891.1720,2,2,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),3278.4311,5494.7096,8824.2370
-43,Tarragona,2021-2025,15362.8765,25085.7542,37715.7900,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",3278.4311,5494.7096,8824.2370
-44,Teruel,2012-2025,-7706.6273,498.7464,3419.7200,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),478.1614,801.4071,1287.0209
-44,Teruel,2021-2025,205.3727,1640.5304,3414.1100,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",478.1614,801.4071,1287.0209
-45,Toledo,2012-2025,-1605.3284,33329.1198,44405.6080,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),2788.2174,4673.1025,7504.7758
-45,Toledo,2021-2025,12488.6716,19577.9816,29089.8500,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",2788.2174,4673.1025,7504.7758
-46,Valencia/València,2012-2025,36816.0000,94648.6412,127851.4640,2,2,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),10794.4815,18091.7454,29054.4651
-46,Valencia/València,2021-2025,48456.3883,76758.8363,98953.0800,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",10794.4815,18091.7454,29054.4651
-47,Valladolid,2012-2025,-7646.1964,9018.2078,18224.4720,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),1701.8880,2852.3949,4580.8078
-47,Valladolid,2021-2025,-889.1964,5806.5418,14702.1000,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,1701.8880,2852.3949,4580.8078
-48,Bizkaia,2012-2025,19249.1289,31472.1444,44763.4800,2,1,True,C4,tramo 2012-2021 de hogares de fuente única (Censos),4023.0412,6742.6896,10828.4322
-48,Bizkaia,2021-2025,5668.1289,15025.8804,25497.0400,2,1,True,C4,falta una fuente de altas (foral) o discrepa el signo,4023.0412,6742.6896,10828.4322
-49,Zamora,2012-2025,-5064.5289,-2439.0000,1417.5000,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),471.6122,790.4305,1269.3930
-49,Zamora,2021-2025,-1618.5289,451.1756,2832.1000,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,471.6122,790.4305,1269.3930
-50,Zaragoza,2012-2025,-10606.8213,18464.0343,32758.8400,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),3651.6686,6120.2623,9828.8442
-50,Zaragoza,2021-2025,3806.1787,15536.2853,29983.9900,2,2,True,C1,"≥2 fuentes de hogares y de altas, mismo signo",3651.6686,6120.2623,9828.8442
-51,Ceuta,2012-2025,-2154.1514,843.7966,2406.5920,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),384.1755,643.8851,1034.0482
-51,Ceuta,2021-2025,-1235.1514,51.1843,1521.1500,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,384.1755,643.8851,1034.0482
-52,Melilla,2012-2025,-2910.7620,1562.0350,3002.8880,2,2,False,C4,tramo 2012-2021 de hogares de fuente única (Censos),418.1269,700.7882,1125.4318
-52,Melilla,2021-2025,-1480.7620,358.3200,1963.4700,2,2,False,C4,falta una fuente de altas (foral) o discrepa el signo,418.1269,700.7882,1125.4318
+cod_prov,provincia,periodo,min,mediana,max,n_rutas_hogares,n_fuentes_altas,dif_rel_altas_catastro_vs_mivau,altas_triangulan_15pct,capa,motivo_capa,latente_min,latente_mediana,latente_max
+01,Araba/Álava,2012-2025,1027.0000,3209.3620,5391.7240,1,1,,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1151.5487,1930.0164,3099.5126
+01,Araba/Álava,2021-2025,3608.0000,4448.4300,5288.8600,1,1,,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1151.5487,1930.0164,3099.5126
+02,Albacete,2012-2025,-4911.0000,-517.6500,4019.4000,1,2,0.2987,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1485.9229,2490.4335,3999.5153
+02,Albacete,2021-2025,3490.0000,4641.7825,5903.1300,1,2,-0.2965,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1485.9229,2490.4335,3999.5153
+03,Alicante/Alacant,2012-2025,2107.0000,28669.2750,55430.1000,1,2,0.2952,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,7519.7570,12603.2482,20240.2050
+03,Alicante/Alacant,2021-2025,49860.0000,57280.0150,67405.0600,1,2,0.1680,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,7519.7570,12603.2482,20240.2050
+04,Almería,2012-2025,13045.0000,36506.0850,44804.3400,1,2,1.7547,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,3175.0535,5321.4469,8545.9854
+04,Almería,2021-2025,17251.0000,19643.4075,22896.6300,1,2,0.2348,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,3175.0535,5321.4469,8545.9854
+05,Ávila,2012-2025,-8615.0000,-1423.6670,2012.3320,1,2,1.2306,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,503.4259,843.7509,1355.0230
+05,Ávila,2021-2025,1007.0000,1726.8675,3016.4700,1,2,0.2266,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,503.4259,843.7509,1355.0230
+06,Badajoz,2012-2025,-15278.0000,3759.2700,11584.0800,1,2,1.3004,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2440.8357,4090.8847,6569.7622
+06,Badajoz,2021-2025,3025.0000,7223.8700,10211.4800,1,2,0.9846,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2440.8357,4090.8847,6569.7622
+07,"Balears, Illes",2012-2025,3882.0000,13228.1810,20314.7240,1,2,-0.3374,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,5421.8231,9087.0731,14593.3984
+07,"Balears, Illes",2021-2025,13903.0000,15972.3075,20424.2300,1,2,-0.0601,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,5421.8231,9087.0731,14593.3984
+08,Barcelona,2012-2025,8797.0000,54826.5760,109518.3040,1,2,0.2748,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,24900.4132,41733.5409,67022.0412
+08,Barcelona,2021-2025,76854.0000,89835.6150,109313.4600,1,2,0.1343,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,24900.4132,41733.5409,67022.0412
+09,Burgos,2012-2025,-3907.0000,-1350.2890,3976.8440,1,2,0.0747,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,1195.0510,2002.9270,3216.6036
+09,Burgos,2021-2025,3546.0000,4389.5975,6302.3900,1,2,-0.0728,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,1195.0510,2002.9270,3216.6036
+10,Cáceres,2012-2025,-14251.0000,-3214.0490,2581.8040,1,2,0.7617,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1294.4263,2169.4819,3484.0826
+10,Cáceres,2021-2025,-121.0000,1054.3925,2880.5700,1,2,-0.1800,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1294.4263,2169.4819,3484.0826
+11,Cádiz,2012-2025,-2380.0000,22685.0470,35678.1880,1,2,0.9034,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,4645.0581,7785.2011,12502.6551
+11,Cádiz,2021-2025,11855.0000,17193.7650,22056.0600,1,2,0.3499,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,4645.0581,7785.2011,12502.6551
+12,Castellón/Castelló,2012-2025,5307.0000,18826.6120,27657.4480,1,2,1.4424,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2312.6939,3876.1166,6224.8551
+12,Castellón/Castelló,2021-2025,16673.0000,19633.1800,22984.7200,1,2,0.5240,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2312.6939,3876.1166,6224.8551
+13,Ciudad Real,2012-2025,-17457.0000,-6836.9990,-827.9960,1,2,0.7374,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1842.1732,3087.5155,4958.4000
+13,Ciudad Real,2021-2025,3987.0000,5858.9500,7118.8000,1,2,-0.5072,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1842.1732,3087.5155,4958.4000
+14,Córdoba,2012-2025,-24511.0000,-982.2920,7338.8320,1,2,1.3909,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2882.7263,4831.5011,7759.1564
+14,Córdoba,2021-2025,1135.0000,5893.0625,8998.2500,1,2,0.6534,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2882.7263,4831.5011,7759.1564
+15,"Coruña, A",2012-2025,4449.0000,18674.5720,32257.2880,1,2,0.5765,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,3542.5831,5937.4330,9535.2293
+15,"Coruña, A",2021-2025,9965.0000,17303.4025,22455.6100,1,2,0.9116,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,3542.5831,5937.4330,9535.2293
+16,Cuenca,2012-2025,-11976.0000,-4300.6600,-1011.6400,1,2,1.1532,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,752.2281,1260.7479,2024.6999
+16,Cuenca,2021-2025,1734.0000,2487.5400,3390.1600,1,2,-0.4207,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,752.2281,1260.7479,2024.6999
+17,Girona,2012-2025,8805.0000,13083.6120,22511.4480,1,2,-0.1011,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,3307.4024,5543.2659,8902.2160
+17,Girona,2021-2025,16362.0000,18813.0525,21436.2100,1,2,-0.3192,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,3307.4024,5543.2659,8902.2160
+18,Granada,2012-2025,1234.0000,25303.8690,36481.4760,1,2,1.1779,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,3704.1988,6208.3038,9970.2347
+18,Granada,2021-2025,16665.0000,18882.2300,23184.9200,1,2,0.0981,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,3704.1988,6208.3038,9970.2347
+19,Guadalajara,2012-2025,-2.0000,4267.2250,7903.9000,1,2,0.2847,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1094.0838,1833.7042,2944.8400
+19,Guadalajara,2021-2025,4639.0000,5976.9475,6516.7900,1,2,-0.3312,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1094.0838,1833.7042,2944.8400
+20,Gipuzkoa,2012-2025,-5010.0000,-416.0540,4177.8920,1,1,,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2610.3196,4374.9426,7025.9456
+20,Gipuzkoa,2021-2025,2573.0000,4324.4300,6075.8600,1,1,,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2610.3196,4374.9426,7025.9456
+21,Huelva,2012-2025,3428.0000,11282.0620,17327.2480,1,2,0.6094,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2057.5244,3448.4479,5538.0399
+21,Huelva,2021-2025,5316.0000,7235.1125,9635.4500,1,2,0.2873,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2057.5244,3448.4479,5538.0399
+22,Huesca,2012-2025,-1304.0000,-175.7680,3068.9280,1,2,-0.0112,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,817.0154,1369.3325,2199.0815
+22,Huesca,2021-2025,2587.0000,3225.1075,4305.4300,1,2,-0.1770,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,817.0154,1369.3325,2199.0815
+23,Jaén,2012-2025,-19890.0000,-4587.8250,2636.7000,1,2,1.1731,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2377.7767,3985.1966,6400.0324
+23,Jaén,2021-2025,4436.0000,5449.3000,8173.2000,1,2,-0.0527,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,2377.7767,3985.1966,6400.0324
+24,León,2012-2025,-19300.0000,-7529.9000,-698.6000,1,2,1.3776,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1325.3305,2221.2778,3567.2643
+24,León,2021-2025,2714.0000,4299.8125,6960.2500,1,2,0.3256,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1325.3305,2221.2778,3567.2643
+25,Lleida,2012-2025,-5130.0000,1238.7630,6386.0520,1,2,0.5722,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1765.5837,2959.1501,4752.2514
+25,Lleida,2021-2025,7034.0000,8440.2025,10360.8100,1,2,0.2752,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1765.5837,2959.1501,4752.2514
+26,"Rioja, La",2012-2025,-1417.0000,32.3130,4206.2520,1,2,0.0060,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,1140.9744,1912.2937,3071.0509
+26,"Rioja, La",2021-2025,3144.0000,4493.3325,5257.3300,1,2,-0.4025,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1140.9744,1912.2937,3071.0509
+27,Lugo,2012-2025,-15266.0000,2405.0640,7112.2560,1,2,3.5958,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,942.6786,1579.9463,2537.3170
+27,Lugo,2021-2025,3463.0000,4840.6675,6153.6700,1,2,-1.2936,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,942.6786,1579.9463,2537.3170
+28,Madrid,2012-2025,4454.0000,36080.6200,96889.4800,1,2,0.0513,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,29932.5803,50167.5436,80566.6403
+28,Madrid,2021-2025,95897.0000,107367.8525,125466.4100,1,2,-0.0847,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,29932.5803,50167.5436,80566.6403
+29,Málaga,2012-2025,33988.0000,49071.5290,67922.1160,1,2,0.1644,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,6767.2106,11341.9668,18214.6482
+29,Málaga,2021-2025,23982.0000,26844.3925,34318.5700,1,2,0.0126,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,6767.2106,11341.9668,18214.6482
+30,Murcia,2012-2025,36376.0000,45804.9710,62118.8840,1,2,0.1695,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,6456.9867,10822.0259,17379.6484
+30,Murcia,2021-2025,35087.0000,38582.7500,43528.0000,1,2,-0.2298,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,6456.9867,10822.0259,17379.6484
+31,Navarra,2012-2025,-6786.0000,-2462.8000,1860.4000,1,1,,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2598.4264,4355.0094,6993.9338
+31,Navarra,2021-2025,4356.0000,6011.5200,7667.0400,1,1,,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2598.4264,4355.0094,6993.9338
+32,Ourense,2012-2025,-16753.0000,874.5250,6042.1000,1,2,4.4095,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,875.4354,1467.2454,2356.3249
+32,Ourense,2021-2025,2902.0000,4314.7075,5630.8300,1,2,-1.3783,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,875.4354,1467.2454,2356.3249
+33,Asturias,2012-2025,-26962.0000,-16166.8100,-3269.2400,1,2,0.3070,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2902.1693,4864.0880,7811.4892
+33,Asturias,2021-2025,4136.0000,6484.8550,11542.4200,1,2,0.0718,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,2902.1693,4864.0880,7811.4892
+34,Palencia,2012-2025,-3104.0000,-2074.8160,40.7360,1,2,-0.1299,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,486.0068,814.5562,1308.1377
+34,Palencia,2021-2025,507.0000,1363.0775,1671.3100,1,2,-0.8961,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,486.0068,814.5562,1308.1377
+35,"Palmas, Las",2012-2025,-7444.0000,26791.3090,37967.2360,1,2,2.4549,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,4859.6361,8144.8376,13080.2139
+35,"Palmas, Las",2021-2025,12065.0000,20115.0925,24249.3700,1,2,0.8638,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,4859.6361,8144.8376,13080.2139
+36,Pontevedra,2012-2025,-953.0000,18411.8460,28680.3840,1,2,1.2740,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,3063.6485,5134.7301,8246.1273
+36,Pontevedra,2021-2025,3991.0000,9098.0700,13064.2800,1,2,0.7327,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,3063.6485,5134.7301,8246.1273
+37,Salamanca,2012-2025,-2127.0000,-206.8320,4509.6720,1,2,-0.0792,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,1076.7330,1804.6238,2898.1383
+37,Salamanca,2021-2025,3444.0000,4419.3075,6265.2300,1,2,0.1829,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1076.7330,1804.6238,2898.1383
+38,Santa Cruz de Tenerife,2012-2025,-2777.0000,23213.1400,33902.5600,1,2,1.4564,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,4365.0334,7315.8746,11748.9396
+38,Santa Cruz de Tenerife,2021-2025,12948.0000,17769.6575,21800.6300,1,2,0.5594,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,4365.0334,7315.8746,11748.9396
+39,Cantabria,2012-2025,-2384.0000,1930.3260,7657.3040,1,2,-0.2935,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1894.1349,3174.6042,5098.2603
+39,Cantabria,2021-2025,5981.0000,7456.6050,9817.4200,1,2,-0.2107,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1894.1349,3174.6042,5098.2603
+40,Segovia,2012-2025,-5392.0000,-2704.9640,-97.8560,1,2,0.3183,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,556.6156,932.8978,1498.1886
+40,Segovia,2021-2025,2093.0000,2510.6375,3472.5500,1,2,0.0593,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,556.6156,932.8978,1498.1886
+41,Sevilla,2012-2025,-8286.0000,13004.0380,31535.1520,1,2,0.3056,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,7614.3342,12761.7612,20494.7691
+41,Sevilla,2021-2025,15258.0000,18002.2475,24386.9900,1,2,-0.0383,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,7614.3342,12761.7612,20494.7691
+42,Soria,2012-2025,-4401.0000,-3361.5020,-2253.0080,1,2,-0.1838,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,308.2000,516.5487,829.5522
+42,Soria,2021-2025,-626.0000,5.9125,785.0000,1,2,-0.6180,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,308.2000,516.5487,829.5522
+43,Tarragona,2012-2025,8300.0000,28571.7930,39626.1720,1,2,1.4724,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,3278.4311,5494.7096,8824.2370
+43,Tarragona,2021-2025,25310.0000,28368.4475,32527.7900,1,2,0.3223,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,3278.4311,5494.7096,8824.2370
+44,Teruel,2012-2025,-6778.0000,-4031.3200,-1674.2800,1,2,0.3850,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,478.1614,801.4071,1287.0209
+44,Teruel,2021-2025,678.0000,1418.2775,1935.1100,1,2,-0.5761,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,478.1614,801.4071,1287.0209
+45,Toledo,2012-2025,1124.0000,16804.1520,25492.6080,1,2,0.6759,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,2788.2174,4673.1025,7504.7758
+45,Toledo,2021-2025,17664.0000,19235.4625,22057.8500,1,2,-0.1345,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,2788.2174,4673.1025,7504.7758
+46,Valencia/València,2012-2025,36816.0000,60861.8660,91371.4640,1,2,0.3804,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,10794.4815,18091.7454,29054.4651
+46,Valencia/València,2021-2025,59206.0000,68926.2700,80093.0800,1,2,0.3180,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,10794.4815,18091.7454,29054.4651
+47,Valladolid,2012-2025,-3229.0000,802.8680,6853.4720,1,2,0.1772,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,1701.8880,2852.3949,4580.8078
+47,Valladolid,2021-2025,5383.0000,6204.2750,8431.1000,1,2,0.0126,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,1701.8880,2852.3949,4580.8078
+48,Bizkaia,2012-2025,-1835.0000,5643.2400,13121.4800,1,1,,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,4023.0412,6742.6896,10828.4322
+48,Bizkaia,2021-2025,9341.0000,12124.5200,14908.0400,1,1,,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,4023.0412,6742.6896,10828.4322
+49,Zamora,2012-2025,-5976.0000,-3219.3750,-2087.5000,1,2,-1.0183,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,471.6122,790.4305,1269.3930
+49,Zamora,2021-2025,518.0000,1502.0250,2074.1000,1,2,-1.5699,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,471.6122,790.4305,1269.3930
+50,Zaragoza,2012-2025,-7263.0000,-2857.7900,7031.8400,1,2,-0.0646,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,3651.6686,6120.2623,9828.8442
+50,Zaragoza,2021-2025,15406.0000,17396.9975,20843.9900,1,2,-0.1382,True,C2,altas MIVAU y Catastro coinciden en ±15 %; hogares de una fuente (ECP) y bajas supuestas: C2,3651.6686,6120.2623,9828.8442
+51,Ceuta,2012-2025,-945.0000,960.6480,1520.5920,1,2,1.9402,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,384.1755,643.8851,1034.0482
+51,Ceuta,2021-2025,28.0000,1066.7875,1279.1500,1,2,4.0000,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,384.1755,643.8851,1034.0482
+52,Melilla,2012-2025,-1881.0000,-497.2780,53.8880,1,2,0.4069,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,418.1269,700.7882,1125.4318
+52,Melilla,2021-2025,-181.0000,997.3675,1217.4700,1,2,1.4812,False,C4,altas sin triangular en ±15 % (o sin Catastro: foral) -> C4,418.1269,700.7882,1125.4318

@@ -1,5 +1,5 @@
 nivel,periodo,n_excedente,viviendas_excedente_mediana,viviendas_excedente_min,viviendas_excedente_max,nota
-provincia,2012-2025,3,7114.7460,0.0000,414839.6286,"min/max: solo provincias con exceso en todas las combinaciones, suma de la cota correspondiente"
+provincia,2012-2025,21,68918.6400,11920.1200,285881.0000,"min/max: solo provincias con exceso en todas las combinaciones, suma de la cota correspondiente"
 municipio,2012-2025,334,326087.8914,,,"Catastro, fuente única (C4)"
-provincia,2021-2025,0,0.0000,0.0000,69629.2441,"min/max: solo provincias con exceso en todas las combinaciones, suma de la cota correspondiente"
+provincia,2021-2025,0,0.0000,0.0000,928.0000,"min/max: solo provincias con exceso en todas las combinaciones, suma de la cota correspondiente"
 municipio,2021-2025,249,70905.8786,,,"Catastro, fuente única (C4)"

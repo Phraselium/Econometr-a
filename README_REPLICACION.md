@@ -1,6 +1,6 @@
 # Paquete de replicación: vivienda en España (v1-v5)
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** 5.0. **Cita:** CITATION.cff. **DOI:** pendiente (Zenodo; .zenodo.json). **Licencia:** MIT para el código y CC BY 4.0 para los textos propios (LICENSE); los datos de terceros conservan su licencia (docs/v5/licencias_datos.md).
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** 5.1 (v6 en curso). **Cita:** CITATION.cff. **DOI:** pendiente (Zenodo; .zenodo.json). **Licencia:** MIT para el código y CC BY 4.0 para los textos propios (LICENSE); los datos de terceros conservan su licencia (docs/v5/licencias_datos.md).
 
 Este README sigue el modelo de los editores de datos (AEA Data Editor / Social Science Data Editors). Explica cómo reproducir **todas** las tablas, figuras y documentos del proyecto a partir de los datos incluidos y sin conexión a la red.
 
@@ -35,10 +35,11 @@ Si se quiere impedir explícitamente el acceso a la red, puede usarse `HTTPS_PRO
    - v4: `src/v4/{m0_run, m2_run, m1_run, m3_run, m4_run, m7_run, m5_run}.py`;
    - v5 (`V5_ORDEN` del Makefile):
      - `r1t_run, r1c_run, r1a_run, r1b_run`: recuperación de pendientes;
-     - `a23_run, a4_run, a5_run, a5_hechos`: cierre de v4;
-     - `b1_run, b2_run, b3_run, b4_run`: necesidades y territorio;
+     - `a23_run, a4_run, a5_run, a5_validacion, a5_hechos`: cierre de v4;
+     - `b1_run, b2_run, b3_potencia, b3_run, b4_run`: necesidades y territorio (`b3_potencia` es la potencia previa del pre-registro de B3);
      - `ca_run, cb_run, cc_run`: ángulos pendientes;
      - `d1_run, d2_run`: política;
+     - `../v5_1/t1_run … t4_run` (v5.1): bajas del parque, viviendas liberadas por envejecimiento, rangos de necesidad y déficit, dirección frente a magnitud;
      - `e_hechos, cifras_clave, d3_run, cifras_clave, render`: tabla única de cifras, convergencia y entregables. `render.py` rellena las plantillas `docs/v5/plantillas/*.md` en `output/v5/`.
 4. `report`: `src/report.py` y el verificador (`src/v3/verificador.py`, `src/v4/verificador.py`, `src/v5/verificador.py`).
 
@@ -77,8 +78,8 @@ El inventario completo, con fichero, fuente, número de series, fechas y fecha d
 |---|---|
 | output/informe.md (v1) | src/report.py, src/f*_*.py |
 | output/v2/informe_v2.md | src/v2/bs_run.py |
-| output/v3/{lo_que_sabemos, articulo, informe_politica}.md | redactados a partir de output/v3/*/ (PA, PB, C1, C3, GL, PD) |
-| output/v4/{working_paper, informe_tecnico, policy_brief, lo_que_sabemos}.md | redactados a partir de output/v4/M0-M7 |
+| archive/output/v3/{lo_que_sabemos, articulo, informe_politica}.md (histórico; trasladados en v6, archive/README.md) | redactados a partir de output/v3/*/ (PA, PB, C1, C3, GL, PD) |
+| output/v4/{informe_tecnico, lo_que_sabemos}.md y archive/output/v4/{working_paper, policy_brief}.md (histórico) | redactados a partir de output/v4/M0-M7 |
 | output/v4/M0 … M7 | src/v4/m0_run.py … m7_run.py (M6 = docs/v4/preguntas_abiertas.md, solicitudes.md) |
 | output/v5/cifras_clave.{csv,md} (tabla única de cifras v5) | src/v5/cifras_clave.py |
 | output/v5/{R1A,R1B,R1C,R1T,A23,A4,A5,A6,B1,B2,B3,B4,CA,CB,CC,D1,D2,D3} | src/v5/<módulo en minúsculas>_run.py (A6: nota de consolidación) |
@@ -98,4 +99,4 @@ Los documentos de síntesis (.md) se redactan a partir de las salidas. Las cifra
 ## 5. Independencia, contacto y uso de IA
 El trabajo es individual e independiente: no hay financiación externa ni vínculo con partidos. Si algo cambiara, se declararía aquí. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas. Las correcciones se publican en ERRATA.md y los cambios en CHANGELOG.md.
 
-El proyecto se ejecutó con agentes de IA (Claude) bajo supervisión de la persona responsable del repositorio. El uso de IA se declara en output/v3/articulo.md §10, en output/v4/working_paper.md (apéndice C) y en output/v5/working_paper.md (apéndice C). El autor es responsable del contenido. Antes de publicar, el autor replica a mano las 15 cifras de docs/v5/revision_humana.md.
+El proyecto se ejecutó con agentes de IA (Claude) bajo supervisión de la persona responsable del repositorio. El uso de IA se declara en archive/output/v3/articulo.md §10, en archive/output/v4/working_paper.md (apéndice C) y en output/v5/working_paper.md (apéndice C). El autor es responsable del contenido. Antes de publicar, el autor replica a mano las 15 cifras de docs/v5/revision_humana.md.

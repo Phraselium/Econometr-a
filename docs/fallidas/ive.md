@@ -20,7 +20,7 @@ Portal Estadístic de la Generalitat (PEGV). No se ha intentado saltar el proxy 
 Estado del proxy (`$HTTPS_PROXY/__agentproxy/status`): sin 403/407 (no es bloqueo de política). Los
 fallos figuran como `recentRelayFailures` de tipo `ws_closed_mid_exchange` en `pegv.gva.es:443`
 (2026-10-09T18:41:36Z) y `www.ive.es:443` (2026-10-09T18:44:01Z), con cortes tras 8-13 s. Según
-`/root/.ccr/README.md` es un fallo de túnel, no un rechazo del destino. Se reintenta más tarde.
+el README del proxy de la sesión es un fallo de túnel, no un rechazo del destino. Se reintenta más tarde.
 
 ## 2. Búsqueda de series IVE en el portal de datos abiertos (paso 1)
 

@@ -2,6 +2,15 @@
 
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
+## v6 (en curso)
+
+Auditoría del repositorio para su publicación (módulo G, 2026-10-11; detalle en docs/v6/auditoria.md):
+- README.md principal y docs/MAPA.md (vigente frente a histórico).
+- Salidas superadas de v3 y v4 trasladadas a archive/ con `git mv` (registro en archive/README.md): output/v3/{articulo, informe_politica, lo_que_sabemos}.md y output/v4/{working_paper, policy_brief}.md. Ninguna cifra cambia.
+- Makefile: `src/v5/a5_validacion.py` y `src/v5/b3_potencia.py` entran en `V5_ORDEN`; ya generaban salidas versionadas y reproducen los mismos ficheros byte a byte.
+- CITATION.cff, .zenodo.json y README_REPLICACION.md pasan a la versión 5.1.
+- Rutas locales absolutas eliminadas de documentos internos (docs/v2, docs/v5, docs/v5_1, docs/fallidas).
+
 ## v5.1 (2026-10-11)
 
 Cifras y capas cambiadas en los entregables (todas desde output/v5/cifras_clave.csv):

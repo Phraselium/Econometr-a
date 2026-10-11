@@ -1,5 +1,5 @@
 {
-  "title": "Vivienda en España: base de evidencia reproducible (v5)",
+  "title": "Vivienda en España: base de evidencia reproducible (v5.1)",
   "upload_type": "software",
   "description": "Base de evidencia independiente y reproducible sobre la vivienda en España, por provincias y con un módulo para València. Cada resultado se clasifica en una de cuatro capas: hechos con al menos dos fuentes, cotas, efectos identificados y resultados exploratorios. Incluye un informe técnico, un working paper, un verificador de afirmaciones y el código y los datos para reproducirlo todo sin conexión a la red con `make all`.",
   "creators": [
@@ -8,7 +8,7 @@
       "affiliation": "Economista independiente"
     }
   ],
-  "version": "5.0",
+  "version": "5.1",
   "language": "spa",
   "license": "MIT",
   "keywords": [

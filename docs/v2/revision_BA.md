@@ -1,6 +1,6 @@
 # Revisión v2: rama BA (alquiler), fase de entrenamiento
 
-Revisor independiente (opus). Objeto: rama `r2/BA`, commit `d4cdc85` (worktree /home/user/wt-BA): src/v2/ba_*.py y output/v2/BA/. Pre-registro: docs/v2/hipotesis.md en `910c42a`, sin cambios desde entonces. Fecha: 2026-10-10. Para que el criterio sea el mismo en todas las ramas, he tenido en cuenta docs/v2/revision_BV.md.
+Revisor independiente (opus). Objeto: rama `r2/BA`, commit `d4cdc85` (worktree ../wt-BA): src/v2/ba_*.py y output/v2/BA/. Pre-registro: docs/v2/hipotesis.md en `910c42a`, sin cambios desde entonces. Fecha: 2026-10-10. Para que el criterio sea el mismo en todas las ramas, he tenido en cuenta docs/v2/revision_BV.md.
 
 ## Veredicto: **REHACER**
 

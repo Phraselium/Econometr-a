@@ -1,6 +1,6 @@
 # Revisión v2 — rama BV (compra), fase de entrenamiento
 
-Revisor independiente (opus). Objeto: worktree `/home/user/wt-BV`, rama `r2/BV`, commit `9fb2830` (src/v2/bv_*.py, output/v2/BV/). Pre-registro: docs/v2/hipotesis.md en `910c42a` (sin cambios desde entonces en r2/main). Fecha: 2026-10-10.
+Revisor independiente (opus). Objeto: worktree `../wt-BV`, rama `r2/BV`, commit `9fb2830` (src/v2/bv_*.py, output/v2/BV/). Pre-registro: docs/v2/hipotesis.md en `910c42a` (sin cambios desde entonces en r2/main). Fecha: 2026-10-10.
 
 ## Veredicto: **REHACER**
 
@@ -8,7 +8,7 @@ El análisis de entrenamiento es sólido: reproducible, sin fuga en H2 y con len
 
 ## 1. Reproducción (clon aislado, sin red)
 
-- Clon local de /home/user/Econometr-a + `git fetch` de r2/BV, checkout `9fb2830`, sin data/sealed en el clon. `HTTPS_PROXY=HTTP_PROXY=http://127.0.0.1:9`.
+- Clon local del repositorio + `git fetch` de r2/BV, checkout `9fb2830`, sin data/sealed en el clon. `HTTPS_PROXY=HTTP_PROXY=http://127.0.0.1:9`.
 - `python3 src/v2/bv_main.py` y `python3 src/v2/bv_main.py --smoke`, dos veces cada uno: exit 0 en las cuatro ejecuciones.
 - md5 de los 26 ficheros de output/v2/BV (incluido smoke/): **idénticos** entre las dos ejecuciones (diff vacío).
 - Tras la 1.ª ejecución, `git status` estaba limpio: las salidas versionadas coinciden byte a byte con las regeneradas.

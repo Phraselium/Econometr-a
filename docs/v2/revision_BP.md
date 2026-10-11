@@ -1,6 +1,6 @@
 # Revisión v2 — rama BP (política de vivienda): H5 (sin sellado) y puerta de H6 (sellada)
 
-Revisor independiente (opus). Objeto: worktree `/home/user/wt-BP`, rama `r2/BP`, commit `7c9876f` (src/v2/bp_main.py, bp_lib.py, bp_h6_sellado.py, tests/test_bp_h6_sellado.py; output/v2/BP/). Pre-registro: docs/v2/hipotesis.md en `910c42a` (sin cambios hasta `7c9876f`). Fecha: 2026-10-10.
+Revisor independiente (opus). Objeto: worktree `../wt-BP`, rama `r2/BP`, commit `7c9876f` (src/v2/bp_main.py, bp_lib.py, bp_h6_sellado.py, tests/test_bp_h6_sellado.py; output/v2/BP/). Pre-registro: docs/v2/hipotesis.md en `910c42a` (sin cambios hasta `7c9876f`). Fecha: 2026-10-10.
 
 ## Veredicto: **REHACER** (acotado; no hay que rehacer H5 ni tocar el diseño de H6)
 

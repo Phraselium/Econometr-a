@@ -1,7 +1,7 @@
 # Instrucciones comunes para subagentes v5
 
 ## Antes de empezar
-- Proyecto: /home/user/Econometr-a, en español. Lee CLAUDE.md y docs/v5_1/decisiones.md.
+- Proyecto: raíz del repositorio (Econometr-a), en español. Lee CLAUDE.md y docs/v5_1/decisiones.md.
 - No hagas commit ni push: lo hace el orquestador.
 - No leas data/sealed. data/raw y data/processed son de solo lectura, salvo los ficheros NUEVOS que descargues a data/raw/v5_1/.
 - Lee los ficheros grandes solo con head, wc o consultas.

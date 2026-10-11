@@ -53,6 +53,153 @@ def leer_licencias_anual(f: Path, col: dict[str, int]) -> pd.DataFrame:
     return out.sort_index()
 
 
+def escribir_entregables(R, comp, desc, pnp, bj, D, base, nacB, nacC, L) -> None:
+    pc = lambda x: round(100 * x, 4)  # noqa: E731
+    d = {(r.periodo, r.escenario): r for r in D.itertuples()}
+    d24c, d24lo, d24hi = d[("2021-2024", "estimada_tasa_central")], d[("2021-2024", "estimada_tasa_min")], d[("2021-2024", "estimada_tasa_max")]
+    d25c, d25lo, d25hi = d[("2021-2025", "estimada_tasa_central")], d[("2021-2025", "estimada_tasa_min")], d[("2021-2025", "estimada_tasa_max")]
+    s24a, s24b = d[("2021-2024", "supuesto_0,1%")], d[("2021-2024", "supuesto_0,2%")]
+    s25a, s25b = d[("2021-2025", "supuesto_0,1%")], d[("2021-2025", "supuesto_0,2%")]
+    cen = 100 * R["central_nac"]
+    mx = 100 * R["max_nac"]
+    f = lambda x: f"{x:,.0f}".replace(",", ".")  # noqa: E731
+    H = []
+
+    def h(i, ind, v, lo, hi, u, per, cob, fu, capa, fd):
+        H.append({"id": i, "indicador": ind, "valor": v, "min": lo, "max": hi, "unidad": u, "periodo": per, "cobertura": cob,
+                  "fuentes": fu, "capa": capa, "fecha_dato": fd})
+    h("T1-H1", "Bajas netas implícitas en la identidad Censo 2011 + terminadas - Censo 2021 (negativas)", round(R["sA"] / VENT),
+      round(-R["A_libres"] / VENT), round(R["sA"] / VENT), "viviendas/año (negativo = el parque creció más que las terminadas)",
+      "1-nov-2011 a 1-ene-2021", "España (52 provincias)", ["INE Censo 2011 t3457", "INE Censo 2021 t59525", "MIVAU 3.2 y 1.6"], "C4",
+      "2021-01-01")
+    h("T1-H2", "Tasa anual implícita de la identidad de Censos (negativa)", pc(R["tasaA_nac"]), None, None, "% del parque al año",
+      "1-nov-2011 a 1-ene-2021", "España", ["INE Censos 2011 y 2021", "MIVAU"], "C4", "2021-01-01")
+    h("T1-H3", "Altas netas no explicadas por las terminadas del Ministerio", round(R["G"]), round(R["cat_extra"]), round(R["G"]), "viviendas",
+      "1-nov-2011 a 1-ene-2021", "España; la parte catastral solo en territorio común", ["INE Censos", "MIVAU", "Catastro"], "C4", "2021-01-01")
+    h("T1-H4", "Tasa anual Catastro-terminadas, territorio común (negativa)", pc(R["tasa_B_nac"]), None, None, "% del parque al año",
+      "2012-2020", "España sin País Vasco ni Navarra", ["Catastro urbana", "MIVAU"], "C4", "2021-01-01")
+    h("T1-H5", "Tasa anual Catastro-terminadas, territorio común", pc(R["tB1924"]), None, None, "% del parque al año",
+      "2019-2024", "España sin País Vasco ni Navarra", ["Catastro urbana", "MIVAU"], "C4", "2025-01-01")
+    h("T1-H6", "Viviendas con licencia de demolición (total y parcial) al año", round(R["L_media_1224"]["D_estrecha"]),
+      round(R["L_media_1224"]["D_estrecha"]), round(R["L_media_1224"]["D_amplia"]), "viviendas/año", "media 2012-2024", "España",
+      ["MIVAU licencias municipales de obra, tablas 6 y 10"], "C4", "2024-12-31")
+    h("T1-H7", "Viviendas con licencia de demolición en 2024", R["L2024"]["D_estrecha"], R["L2024"]["D_estrecha"], R["L2024"]["D_amplia"],
+      "viviendas", "2024", "España", ["MIVAU licencias, tablas 6 y 10"], "C4", "2024-12-31")
+    h("T1-H8", "Tasa anual de bajas (licencias de demolición, media 2015-2024)", round(cen, 4), 0.0, round(mx, 4), "% del parque al año",
+      "2015-2024", "España (reparto provincial por parque)", ["MIVAU licencias", "MIVAU parque"], "C4", "2024-12-31")
+    h("T1-H9", "Déficit contable 2021-2024 con bajas estimadas (ECP, con protegida)", round(d24c.deficit), round(d24lo.deficit),
+      round(d24hi.deficit), "viviendas", "2021-2024", "España", ["M0", "A4", "MIVAU licencias"], "C4", "2024-12-31")
+    h("T1-H10", "Déficit contable 2021-2025 con bajas estimadas (ECP, con protegida)", round(d25c.deficit), round(d25lo.deficit),
+      round(d25hi.deficit), "viviendas", "2021-2025", "España", ["M0", "A4", "MIVAU licencias"], "C4", "2025-12-31")
+    (OUT / "hechos.json").write_text(json.dumps(H, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    res = {
+        "rama": "T1",
+        "pregunta": "¿Cuántas viviendas salen cada año del parque residencial (bajas netas) por provincia, 2011-2025?",
+        "capa": "C4 (las identidades de stock dan bajas negativas y no miden bajas; las licencias son fuente única); cota física 0 (C2)",
+        "datos": ["INE Censo 2011 (t3457) y Censo 2021 (t59525)", "MIVAU terminadas libres y protegidas, parque",
+                  "Catastro urbana municipios 2012-2025", "MIVAU licencias municipales de obra (tablas 6, 10 y CCAA)"],
+        "N": {"provincias": R["nprov"], "anios_B": 13, "anios_C_nacional": 14},
+        "metodo": "a) identidad de stock con Censos; b) Catastro menos terminadas; c) licencias de demolición del Ministerio; margen de coincidencia ±0,05 pp anuales",
+        "estimacion": {"tasa_nacional_pct_anual": {"min": 0.0, "central": round(cen, 4), "max": round(mx, 4), "periodo": "2015-2024", "capa": "C4"},
+                       "identidad_censos_pct_anual": pc(R["tasaA_nac"]), "catastro_pct_anual_2012_2020": pc(R["tasa_B_nac"]),
+                       "catastro_pct_anual_2019_2024": pc(R["tB1924"]),
+                       "licencias_viviendas_anio_2024": R["L2024"],
+                       "deficit_2021_2024": {"central": round(d24c.deficit), "rango": [round(d24lo.deficit), round(d24hi.deficit)]},
+                       "deficit_2021_2025": {"central": round(d25c.deficit), "rango": [round(d25lo.deficit), round(d25hi.deficit)]}},
+        "ic95": None,
+        "p_ajustado": {k: v for k, v in R["padj"].items()},
+        "nivel_evidencia": "EXPLORATORIO (C4); sin lenguaje causal",
+        "diagnosticos": {"coinciden_a_b_dentro_margen": bool(R["dif_ab"] <= MARGEN_PP), "dif_a_b_pp": round(R["dif_ab"], 3),
+                         "dif_a_c_pp": round(R["dif_ac"], 3), "dif_b_c_pp": round(R["dif_bc"], 3),
+                         "dif_b_c_2019_2024_pp": [round(x, 3) for x in R["dif_bc1924"]],
+                         "provincias_con_bajas_negativas_A": R["n_neg_A"], "provincias_con_bajas_negativas_B": f"{R['n_neg_B']} de {R['n_B']}",
+                         "ratio_UU_catastro_censo2021": round(R["ratio_uu"], 3), "control_sumas": "output/v5_1/T1/control_sumas.json"},
+        "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None},
+        "notas": "Cálculo contable, no modelo predictivo: no aplica AR(4)/ECM v1. Los p son t de una muestra entre provincias (H0 tasa media = 0) con Holm, solo descriptivos. "
+                 "Licencias provinciales no existen en el Boletín: reparto CCAA por parque; CCAA hasta 2022, 2023-2024 con cuota media 2019-2022 y 2025 repetido de 2024 (marcados).",
+    }
+    (OUT / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float), encoding="utf-8")
+
+    fic = [{
+        "id": "T1-V1", "tema": "Bajas del parque",
+        "enunciado": "En España apenas se derriban viviendas / las bajas del parque son despreciables.",
+        "capa": "C4",
+        "magnitud": (f"Licencias de demolición del Ministerio: {f(R['L2024']['D_estrecha'])}-{f(R['L2024']['D_amplia'])} viviendas en 2024 y "
+                     f"{f(R['L_media_1224']['D_estrecha'])}-{f(R['L_media_1224']['D_amplia'])} de media en 2012-2024, es decir {cen:.3f} % del parque al año "
+                     f"(0,02-0,04 %), frente al 0,1-0,2 % supuesto antes. No incluye ruina, cambios de uso, agregaciones ni derribos sin licencia. "
+                     f"Las identidades de Censos y Catastro dan bajas negativas ({pc(R['tasaA_nac'])} % y {pc(R['tasa_B_nac'])} % al año en 2011-2020) y no acotan por arriba."),
+        "intervalo": f"0-{mx:.3f} % del parque al año (C4)",
+        "cota": "C2 solo la cota física inferior (bajas >= 0); sin cota superior medida",
+        "literatura": "—",
+        "veredicto": "ANALIZADA, NO CONCLUYENTE",
+        "regla": "Una sola fuente para el nivel (licencias del Ministerio) y los métodos de stock no miden bajas: capa C4. Lo licenciado es pequeño frente al parque; el total de salidas no está medido.",
+        "limites": "Licencia no es derribo ejecutado; faltan ruina, cambio de uso, agregaciones y obras sin licencia; reparto provincial por parque.",
+        "evidencia": ["output/v5_1/T1/tablas/comparacion_metodos.csv", "output/v5_1/T1/tablas/licencias_demolicion_nacional.csv",
+                      "output/v5_1/T1/tablas/identidad_descomposicion.csv"],
+    }]
+    (OUT / "fichas_verificador.json").write_text(json.dumps(fic, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    cm_ = comp.copy()
+    tabla = "\n".join(f"| {r.metodo} | {r.tasa_anual_pct:.3f} | {f(r.viviendas_anio)} | {r.signo} |" for r in cm_.itertuples())
+    dd = "\n".join(f"| {r.concepto.strip()} | {f(r.viviendas)} |" for r in desc.itertuples())
+    pn = "\n".join(f"| {r.concepto} | {f(r.censo_2011)} | {f(r.censo_2021)} | {f(r.variacion)} |" for r in pnp.itertuples())
+    dtab = "\n".join(f"| {r.periodo} | {r.escenario} | {f(r.bajas)} | {f(r.deficit)} |" for r in D.itertuples())
+    md = f"""# T1 · método
+
+Bajas del parque residencial (salidas netas), 2011-2025, en viviendas y % del parque. Cifras con fecha: {FECHAS['censo2011']}; {FECHAS['censo2021']}; {FECHAS['terminadas']}; {FECHAS['catastro']}; {FECHAS['licencias']}.
+
+## (a) Identidad de stock con los Censos
+Bajas = Parque_Censo2011 + Terminadas(1-nov-2011 a 31-dic-2020) - Parque_Censo2021. Tasa anual = Bajas / (ventana x Parque_2011), ventana = 9,17 años.
+
+- Fecha de referencia: el Censo 2021 se refiere a 1-ene-2021 (el manifiesto del repositorio anota 2021-11-01, que es la fecha de publicación de la descarga). Lo corrobora que el parque MIVAU a 31-dic-2020 (26.623.708) coincide con V_TOTAL del Censo 2021. El Censo 2011 se refiere a 1-nov-2011. Ventana de terminadas: nov-dic 2011 (libres mensuales; protegida a prorrata 2/12 del año, supuesto) más 2012-2020.
+- Corrección respecto a B1: B1 sumaba terminadas 2012-2021 (un año de más, {f(desc.viviendas.iloc[7])} viviendas netas de la ventana correcta). Con la ventana de B1 las bajas implícitas son {f(R['A_b1'])}; con la correcta, {f(R['sA'])}. B1 no cambia de signo (siguen negativas).
+- Definiciones: ambos Censos cuentan viviendas familiares (total = principales + no principales). Según el encargo, el Censo 2011 se obtuvo con encuesta y muestra y el 2021 con registros y Catastro (no verificado en el repositorio); esa diferencia de cobertura no se puede medir con datos del repositorio y es la causa principal admitida del residuo (se cuantifica por diferencia, no por medición). Descomposición del principal/no principal:
+
+| concepto | Censo 2011 | Censo 2021 | variación |
+|---|---|---|---|
+{pn}
+
+- Terminadas: MIVAU libres (3.2) + protegidas (calificaciones definitivas, 1.6). Solo libres: bajas implícitas {f(R['A_libres'])}.
+
+| concepto | viviendas |
+|---|---|
+{dd}
+
+Lectura: bajas negativas. El parque de los Censos creció {f(R['G'])} viviendas más de lo que explican las terminadas del Ministerio. Como mucho {f(R['cat_extra'])} (territorio común) se corresponden con altas catastrales sin terminadas (regularizaciones y viviendas aflorando); el resto ({f(R['G_com'] - R['cat_extra'])} en territorio común y {f(R['G_for'])} en las cuatro provincias forales) es cobertura censal, vivienda no registrada que aflora, rehabilitaciones que recuperan viviendas, cambios de uso a vivienda o terminadas no certificadas, sin separar. Provincias con bajas implícitas negativas: {R['n_neg_A']} de {R['nprov']}.
+
+## (b) Catastro
+Bajas(y) = Terminadas MIVAU(y) - [UU(1-ene-y+1) - UU(1-ene-y)], UU = unidades urbanas residenciales de los municipios presentes en todos los ejercicios 2012-2025, territorio común. UU / viviendas del Censo 2021 = {R['ratio_uu']:.3f}: no son la misma unidad, la comparación es de variaciones. Resultados anuales en tablas/bajas_nacional_B.csv y por provincia en tablas/catastro_bajas_provincia_anio.csv. Negativas en 2012-2017 (regularizaciones y actualización catastral, como en M0) y cercanas a 0 en 2018-2024, donde coincide con las terminadas por construcción de M0 (la coincidencia MIVAU-Catastro es el criterio de M0): no es una confirmación independiente de una baja pequeña. Provincias con bajas 2012-2020 negativas: {R['n_neg_B']} de {R['n_B']}.
+
+## (c) Licencias de obra del Ministerio
+Boletín Online, licencias municipales de obra: tabla 10 (viviendas a demoler en demolición total + viviendas suprimidas en demolición parcial) = definición estrecha; tabla 6 columna (3) (viviendas, obras de demolición total) = definición amplia. Coinciden hasta 2018; desde 2019 la amplia es mayor ({f(R['L2024']['D_amplia'])} frente a {f(R['L2024']['D_estrecha'])} en 2024) sin explicación en la fuente. Nivel provincial: no existe; hay CCAA hasta 2022, y se reparte por el parque provincial MIVAU (reparto, no medida). 2023-2024: cuota CCAA media 2019-2022; 2025: no publicado, se repite 2024 (marcado). Ceuta y Melilla: sin dato, tasa media del resto. La suma provincial es igual al total nacional (control_sumas.json). Una licencia no es un derribo ejecutado y no incluye ruina, cambios de uso ni agregaciones.
+
+## Comparación (margen ±0,05 pp anuales, declarado antes de ver los resultados: equivale a unas 13.500 viviendas/año, el 15 % de 90.000 terminadas, la tolerancia de M0)
+
+| método | tasa anual (%) | viviendas/año | signo |
+|---|---|---|---|
+{tabla}
+
+- a vs b: diferencia {R['dif_ab']:.3f} pp (fuera del margen, ambas negativas). a vs c: {R['dif_ac']:.3f} pp. b vs c 2012-2020: {R['dif_bc']:.3f} pp. b vs c 2019-2024: {R['dif_bc1924'][0]:.3f} y {R['dif_bc1924'][1]:.3f} pp (dentro del margen, pero b es neta de altas catastrales y coincide con las terminadas por construcción de M0).
+- Resultado: los métodos no coinciden en 2011-2020. Rango C4: 0 a {mx:.3f} % del parque al año (0 es la cota física; el máximo es el máximo anual 2011-2024 de la definición amplia). Causa de la discrepancia: a y b miden altas netas no certificadas, no bajas; solo c es positiva y es fuente única.
+- Capa: ningún método supera C4 como nivel de bajas. C1 requiere dos fuentes independientes con componentes C1 y aquí solo licencias miden bajas; C2 requeriría cota superior, que las identidades no dan (las altas no certificadas son un sumando desconocido, de modo que b es una cota inferior de las bajas si esas altas son >= 0).
+- Contraste de tasas medias provinciales (H0: media = 0, t de una muestra, Holm): {', '.join(f'{k}: p_aj={v:.2g}' for k, v in R['padj'].items())}. Descriptivo; las bajas de a y b son significativamente negativas, lo que confirma que no miden bajas.
+
+## Sustitución del supuesto de bajas en el déficit
+Déficit contable = delta de hogares (ECP) - terminadas (libres + protegida) + bajas, con bajas = tasa provincial x parque MIVAU a 1 de enero de cada año (tablas/bajas_provincia.csv: tasa_min = 0, central = media de las dos definiciones de licencia 2015-2024, max = máximo anual de la definición amplia 2011-2024). Base sin bajas: A4 / M0.
+
+| periodo | escenario | bajas acumuladas | déficit |
+|---|---|---|---|
+{dtab}
+
+Con las bajas licenciadas el déficit 2021-2024 queda en {f(d24c.deficit)} (rango {f(d24lo.deficit)}-{f(d24hi.deficit)}) y el 2021-2025 en {f(d25c.deficit)} ({f(d25lo.deficit)}-{f(d25hi.deficit)}), frente a {f(s24a.deficit)}-{f(s24b.deficit)} y {f(s25a.deficit)}-{f(s25b.deficit)} con el supuesto de 0,1-0,2 %. La capa pasa de C2 a C4 (la parte de bajas es de fuente única). El extremo del supuesto antiguo no queda respaldado por ningún método, pero tampoco refutado: ruina, cambios de uso y agregaciones no están medidos.
+
+## Fuera de alcance / no probado
+Censo 2011 de edificios en estado ruinoso, Estadística de Construcción de Edificios del INE y registros autonómicos de derribos: no probados en esta tarea.
+"""
+    (OUT / "metodo.md").write_text(md, encoding="utf-8")
+
+
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "tablas").mkdir(exist_ok=True)
@@ -266,6 +413,16 @@ def main() -> None:
         ["c) licencias, demolición estrecha (tabla 10) 2012-2020", 100 * float(tC["estrecha"]), float(bC["estrecha"]), "positiva"],
         ["c) licencias, demolición amplia (tabla 6) 2012-2020", 100 * float(tC["amplia"]), float(bC["amplia"]), "positiva"],
     ], columns=["metodo", "tasa_anual_pct", "viviendas_anio", "signo"])
+    b1924 = nacB.loc[2019:2024]
+    c1924 = nacC[nacC.anio.between(2019, 2024)].groupby("def").apply(lambda g: g.bajas.sum() / g.parque.sum(), include_groups=False)
+    tB1924 = float(b1924.bajas.sum() / b1924.UU.sum())
+    comp.loc[len(comp)] = ["b) Catastro, territorio común 2019-2024 (núcleo C1 de terminadas, M0)", 100 * tB1924,
+                           float(b1924.bajas.sum() / 6), "≈0 (neta)"]
+    comp.loc[len(comp)] = ["c) licencias demolición estrecha 2019-2024", 100 * float(c1924["estrecha"]),
+                           float(nacC[(nacC.anio.between(2019, 2024)) & (nacC["def"] == "estrecha")].bajas.sum() / 6), "positiva"]
+    comp.loc[len(comp)] = ["c) licencias demolición amplia 2019-2024", 100 * float(c1924["amplia"]),
+                           float(nacC[(nacC.anio.between(2019, 2024)) & (nacC["def"] == "amplia")].bajas.sum() / 6), "positiva"]
+    dif_bc1924 = [abs(comp.tasa_anual_pct[5] - comp.tasa_anual_pct[6]), abs(comp.tasa_anual_pct[5] - comp.tasa_anual_pct[7])]
     dif_ab = abs(comp.tasa_anual_pct[1] - comp.tasa_anual_pct[2])
     dif_ac = abs(comp.tasa_anual_pct[1] - comp.tasa_anual_pct[3])
     dif_bc = abs(comp.tasa_anual_pct[2] - comp.tasa_anual_pct[3])
@@ -381,7 +538,7 @@ def main() -> None:
     npos = {m: int((base[c].dropna() > 0).sum()) for m, c in (("A", "bajas_A"), ("B", "bajas_B_1220"))}
     resumen = {
         "tasaA_nac": tasaA_nac, "sA": sA, "tasa_A_com": tasa_A_com, "tasa_B_nac": tasa_B_nac, "sB": sB,
-        "tC": tC.to_dict(), "bC": bC.to_dict(), "dif_ab": dif_ab, "dif_ac": dif_ac, "dif_bc": dif_bc, "ratio_uu": ratio_uu,
+        "tC": tC.to_dict(), "bC": bC.to_dict(), "dif_bc1924": dif_bc1924, "tB1924": tB1924, "c1924": c1924.to_dict(), "dif_ab": dif_ab, "dif_ac": dif_ac, "dif_bc": dif_bc, "ratio_uu": ratio_uu,
         "npos": npos, "n_neg_A": int((base.bajas_A < 0).sum()), "n_neg_B": int((base.bajas_B_1220.dropna() < 0).sum()),
         "n_B": int(base.bajas_B_1220.notna().sum()), "pvals": pvals, "padj": padj, "G_com": G_com, "G_for": G_for,
         "cat_extra": cat_extra, "G": G, "term_W": float(base.term_W.sum()), "delta_censo": float(base.delta_censo.sum()),
@@ -394,6 +551,9 @@ def main() -> None:
         "ccaa_vs_nac": {int(y): float(CC.loc[y].sum() / L.loc[y, "D_amplia"]) for y in (2012, 2016, 2020, 2022) if y in CC.index},
     }
     (OUT / ("resumen_smoke.json" if SMOKE else "resumen_interno.json")).write_text(json.dumps(resumen, ensure_ascii=False, indent=1, default=float))
+
+    if not SMOKE:
+        escribir_entregables(resumen, comp, desc, pnp, bj, D, base, nacB, nacC, L)
     reg.flush()
     print(json.dumps(resumen, ensure_ascii=False, indent=1, default=float)[:6000])
     print(comp.to_string())

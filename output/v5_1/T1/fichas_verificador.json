@@ -1,0 +1,20 @@
+[
+ {
+  "id": "T1-V1",
+  "tema": "Bajas del parque",
+  "enunciado": "En España apenas se derriban viviendas / las bajas del parque son despreciables.",
+  "capa": "C4",
+  "magnitud": "Licencias de demolición del Ministerio: 5.898-9.706 viviendas en 2024 y 6.200-7.195 de media en 2012-2024, es decir 0.026 % del parque al año (0,02-0,04 %), frente al 0,1-0,2 % supuesto antes. No incluye ruina, cambios de uso, agregaciones ni derribos sin licencia. Las identidades de Censos y Catastro dan bajas negativas (-0.3278 % y -0.1758 % al año en 2011-2020) y no acotan por arriba.",
+  "intervalo": "0-0.052 % del parque al año (C4)",
+  "cota": "C2 solo la cota física inferior (bajas >= 0); sin cota superior medida",
+  "literatura": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Una sola fuente para el nivel (licencias del Ministerio) y los métodos de stock no miden bajas: capa C4. Lo licenciado es pequeño frente al parque; el total de salidas no está medido.",
+  "limites": "Licencia no es derribo ejecutado; faltan ruina, cambio de uso, agregaciones y obras sin licencia; reparto provincial por parque.",
+  "evidencia": [
+   "output/v5_1/T1/tablas/comparacion_metodos.csv",
+   "output/v5_1/T1/tablas/licencias_demolicion_nacional.csv",
+   "output/v5_1/T1/tablas/identidad_descomposicion.csv"
+  ]
+ }
+]

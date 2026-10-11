@@ -4,3 +4,6 @@ metodo,tasa_anual_pct,viviendas_anio,signo,margen_declarado_pp
 "b) Catastro, territorio común 2012-2020",-0.1757602417333874,-41036.88888888889,negativa,0.05
 "c) licencias, demolición estrecha (tabla 10) 2012-2020",0.024684123310260767,6390.222222222223,positiva,0.05
 "c) licencias, demolición amplia (tabla 6) 2012-2020",0.025205600737962238,6525.222222222223,positiva,0.05
+"b) Catastro, territorio común 2019-2024 (núcleo C1 de terminadas, M0)",-0.008259292866549545,-1969.3333333333333,≈0 (neta),0.05
+c) licencias demolición estrecha 2019-2024,0.021445187540877212,5712.833333333333,positiva,0.05
+c) licencias demolición amplia 2019-2024,0.02953413434824079,7867.666666666667,positiva,0.05

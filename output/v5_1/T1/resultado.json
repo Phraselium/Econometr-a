@@ -1,0 +1,75 @@
+{
+ "rama": "T1",
+ "pregunta": "¿Cuántas viviendas salen cada año del parque residencial (bajas netas) por provincia, 2011-2025?",
+ "capa": "C4 (las identidades de stock dan bajas negativas y no miden bajas; las licencias son fuente única); cota física 0 (C2)",
+ "datos": [
+  "INE Censo 2011 (t3457) y Censo 2021 (t59525)",
+  "MIVAU terminadas libres y protegidas, parque",
+  "Catastro urbana municipios 2012-2025",
+  "MIVAU licencias municipales de obra (tablas 6, 10 y CCAA)"
+ ],
+ "N": {
+  "provincias": 52,
+  "anios_B": 13,
+  "anios_C_nacional": 14
+ },
+ "metodo": "a) identidad de stock con Censos; b) Catastro menos terminadas; c) licencias de demolición del Ministerio; margen de coincidencia ±0,05 pp anuales",
+ "estimacion": {
+  "tasa_nacional_pct_anual": {
+   "min": 0.0,
+   "central": 0.0256,
+   "max": 0.0518,
+   "periodo": "2015-2024",
+   "capa": "C4"
+  },
+  "identidad_censos_pct_anual": -0.3278,
+  "catastro_pct_anual_2012_2020": -0.1758,
+  "catastro_pct_anual_2019_2024": -0.0083,
+  "licencias_viviendas_anio_2024": {
+   "D_estrecha": 5898,
+   "D_amplia": 9706
+  },
+  "deficit_2021_2024": {
+   "central": 590097,
+   "rango": [
+    562692,
+    618144
+   ]
+  },
+  "deficit_2021_2025": {
+   "central": 735254,
+   "rango": [
+    700934,
+    770380
+   ]
+  }
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "C_amplia": 4.2445833248273035e-17,
+  "C_estrecha": 4.2445833248273035e-17,
+  "A": 3.482726384174577e-12,
+  "B": 8.198934564706013e-08
+ },
+ "nivel_evidencia": "EXPLORATORIO (C4); sin lenguaje causal",
+ "diagnosticos": {
+  "coinciden_a_b_dentro_margen": false,
+  "dif_a_b_pp": 0.163,
+  "dif_a_c_pp": 0.363,
+  "dif_b_c_pp": 0.2,
+  "dif_b_c_2019_2024_pp": [
+   0.03,
+   0.038
+  ],
+  "provincias_con_bajas_negativas_A": 49,
+  "provincias_con_bajas_negativas_B": "43 de 48",
+  "ratio_UU_catastro_censo2021": 0.944,
+  "control_sumas": "output/v5_1/T1/control_sumas.json"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Cálculo contable, no modelo predictivo: no aplica AR(4)/ECM v1. Los p son t de una muestra entre provincias (H0 tasa media = 0) con Holm, solo descriptivos. Licencias provinciales no existen en el Boletín: reparto CCAA por parque; CCAA hasta 2022, 2023-2024 con cuota media 2019-2022 y 2025 repetido de 2024 (marcados)."
+}

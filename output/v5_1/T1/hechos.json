@@ -1,0 +1,164 @@
+[
+ {
+  "id": "T1-H1",
+  "indicador": "Bajas netas implícitas en la identidad Censo 2011 + terminadas - Censo 2021 (negativas)",
+  "valor": -82671,
+  "min": 97677,
+  "max": -82671,
+  "unidad": "viviendas/año (negativo = el parque creció más que las terminadas)",
+  "periodo": "1-nov-2011 a 1-ene-2021",
+  "cobertura": "España (52 provincias)",
+  "fuentes": [
+   "INE Censo 2011 t3457",
+   "INE Censo 2021 t59525",
+   "MIVAU 3.2 y 1.6"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2021-01-01"
+ },
+ {
+  "id": "T1-H2",
+  "indicador": "Tasa anual implícita de la identidad de Censos (negativa)",
+  "valor": -0.3278,
+  "min": null,
+  "max": null,
+  "unidad": "% del parque al año",
+  "periodo": "1-nov-2011 a 1-ene-2021",
+  "cobertura": "España",
+  "fuentes": [
+   "INE Censos 2011 y 2021",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2021-01-01"
+ },
+ {
+  "id": "T1-H3",
+  "indicador": "Altas netas no explicadas por las terminadas del Ministerio",
+  "valor": 757814,
+  "min": 369332,
+  "max": 757814,
+  "unidad": "viviendas",
+  "periodo": "1-nov-2011 a 1-ene-2021",
+  "cobertura": "España; la parte catastral solo en territorio común",
+  "fuentes": [
+   "INE Censos",
+   "MIVAU",
+   "Catastro"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2021-01-01"
+ },
+ {
+  "id": "T1-H4",
+  "indicador": "Tasa anual Catastro-terminadas, territorio común (negativa)",
+  "valor": -0.1758,
+  "min": null,
+  "max": null,
+  "unidad": "% del parque al año",
+  "periodo": "2012-2020",
+  "cobertura": "España sin País Vasco ni Navarra",
+  "fuentes": [
+   "Catastro urbana",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2021-01-01"
+ },
+ {
+  "id": "T1-H5",
+  "indicador": "Tasa anual Catastro-terminadas, territorio común",
+  "valor": -0.0083,
+  "min": null,
+  "max": null,
+  "unidad": "% del parque al año",
+  "periodo": "2019-2024",
+  "cobertura": "España sin País Vasco ni Navarra",
+  "fuentes": [
+   "Catastro urbana",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2025-01-01"
+ },
+ {
+  "id": "T1-H6",
+  "indicador": "Viviendas con licencia de demolición (total y parcial) al año",
+  "valor": 6200,
+  "min": 6200,
+  "max": 7195,
+  "unidad": "viviendas/año",
+  "periodo": "media 2012-2024",
+  "cobertura": "España",
+  "fuentes": [
+   "MIVAU licencias municipales de obra, tablas 6 y 10"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2024-12-31"
+ },
+ {
+  "id": "T1-H7",
+  "indicador": "Viviendas con licencia de demolición en 2024",
+  "valor": 5898,
+  "min": 5898,
+  "max": 9706,
+  "unidad": "viviendas",
+  "periodo": "2024",
+  "cobertura": "España",
+  "fuentes": [
+   "MIVAU licencias, tablas 6 y 10"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2024-12-31"
+ },
+ {
+  "id": "T1-H8",
+  "indicador": "Tasa anual de bajas (licencias de demolición, media 2015-2024)",
+  "valor": 0.0256,
+  "min": 0.0,
+  "max": 0.0518,
+  "unidad": "% del parque al año",
+  "periodo": "2015-2024",
+  "cobertura": "España (reparto provincial por parque)",
+  "fuentes": [
+   "MIVAU licencias",
+   "MIVAU parque"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2024-12-31"
+ },
+ {
+  "id": "T1-H9",
+  "indicador": "Déficit contable 2021-2024 con bajas estimadas (ECP, con protegida)",
+  "valor": 590097,
+  "min": 562692,
+  "max": 618144,
+  "unidad": "viviendas",
+  "periodo": "2021-2024",
+  "cobertura": "España",
+  "fuentes": [
+   "M0",
+   "A4",
+   "MIVAU licencias"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2024-12-31"
+ },
+ {
+  "id": "T1-H10",
+  "indicador": "Déficit contable 2021-2025 con bajas estimadas (ECP, con protegida)",
+  "valor": 735254,
+  "min": 700934,
+  "max": 770380,
+  "unidad": "viviendas",
+  "periodo": "2021-2025",
+  "cobertura": "España",
+  "fuentes": [
+   "M0",
+   "A4",
+   "MIVAU licencias"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2025-12-31"
+ }
+]

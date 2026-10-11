@@ -15,3 +15,9 @@
 - Para K4b se preparó docs/v6_1/k4b_especificacion.md: las 15 cifras sin referencias al código original.
 - K1 terminado: unos 90.000 tokens; integrado en make (V6_1_ORDEN). cifras_clave ahora también lee output/v6_1/*/hechos.json.
 - K4a está en curso. Este commit es intermedio e incluye correcciones parciales de K4a (fianzas Incasòl): ver docs/v6_1/auditoria_K4a.md cuando termine.
+- K4b terminado (unos 175.000 tokens). De las 15 cifras: 5 coinciden, 5 coinciden en parte y 5 no se pueden reconstruir con lo publicado.
+  - Los fallos de descripción del déficit van a la auditoría consolidada:
+    - la corrección EPA es una constante fija;
+    - la segunda fuente de terminadas es MIVAU con y sin protegida, no Catastro;
+    - las ventanas de hogares difieren.
+  - Ver docs/v6_1/doble_implementacion.md.

@@ -1,0 +1,16 @@
+id,valor_publicado,min_pub,max_pub,valor_k4b,min_k4b,max_k4b,dif_relativa,coincide,explicacion
+A23-A2,,10.9,22.9,,10.930506009861185,22.92000000000001,0.0028,si,"IPC alquiler (media anual del indice) e IPVA total nacional, 2015->2024; IPVA 'contrato existente' solo existe desde 2021, no se usa"
+terminadas_1924,,72264.0,94426.0,,72264.0,94426.0,0.0,si,"Ministerio: libres terminadas + protegidas definitivas, nacional menos Pais Vasco y Navarra; min-max anual 2019-2024"
+deficit_2124_c1,,562692.0,688692.0,,562692.0,626946.0,0.0897,parcial,dH(2021T1->2024T4) menos terminadas 2021-2024; 2 fuentes de hogares x 2 de terminadas (4 combinaciones; el original usa 12)
+deficit_2124_c2,,562692.0,902808.0,,562692.0,841061.7779999999,0.0684,parcial,"bajas 0,1-0,2 %/anio sobre parque (stock inicio de anio, suma ['2020', '2021', '2022', '2023']); cota sup. = max c1 + 0,2 % x parque"
+dh_2125,997586.5,981823.0,1013350.0,992010.125,970670.25,1013350.0,0.0114,parcial,"variacion de medias anuales 2021->2025; ECP y EPA (ambas dentro de 2021+, sin cruzar la ruptura)"
+D1-H11,58.4,27.8,81.8,,,,,no_reconstruible,"NO RECONSTRUIBLE: Requiere clases A4 (falta/rentable), respuesta de oferta de A4 y rejilla eps_d; el informe no da formula ni parametros"
+A23-P2,47.2,44.2,56.1,50.17246218971515,44.222817245119295,56.12210713431101,0.063,parcial,SOLO 2 de 3 fuentes: valor tasado MIVAU y Registradores EUR/m2 (media anual 2025/2015). Notariado: serie nacional 2015-2025 no esta en data/raw
+B4-v3-vut-cantidad,2.746,2.423,2.746,,,,,no_reconstruible,NO RECONSTRUIBLE: Requiere stock de alquiler y conversion VUT->viviendas desplazadas (cota de v3) no descrita en el texto
+D1-H12,100.0,88.1,100.0,,,,,no_reconstruible,NO RECONSTRUIBLE: Idem D1-H11
+A23-A10,26.6,22.4,30.8,27.77492278899574,24.70872408266439,30.841121495327094,0.1031,parcial,IPVA nuevo contrato CV 2024/2021 y mediana de la fianza GVA 2024/2021
+E-B1-F,1720537.0,1308531.1,1772410.4,1720537.0,,,0.0,si,idem B1-H4
+latente_convivencia,,188000.0,506000.0,,,,,no_reconstruible,NO RECONSTRUIBLE: Requiere tasa de convivencia con padres 2008 por edad y poblacion joven; la fuente (EPA/ECV/Eurostat) y la edad no estan precisadas en el texto
+B1-H1,214867.8,93627.8,309920.8,,,,,no_reconstruible,"NO RECONSTRUIBLE: Requiere A (atraso+emancipacion), R (bajas T1), V, M (vacias movilizables por provincia), K, por 52 provincias; parametros de rejilla v3 no publicados en el texto"
+B1-H4,1720537.0,1308531.1,1772410.4,1720537.0,,,0.0,si,H(2036)-H(2026) INE base nacional; rango min-max no reconstruible (no hay escenarios alternativos en raw)
+R1C-001,74.5,72.1,75.9,74.47491550605565,72.1,75.85,0.0007,si,"media y rango de EFF 2022, ECV 2021-22 (media) y Censo 2021 (propiedad/principales, suma de secciones)"

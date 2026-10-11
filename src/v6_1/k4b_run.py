@@ -106,13 +106,9 @@ _excl = ["Andalucía", "Aragón", "Canarias", "Castilla y León", "Castilla - La
          "Madrid, Comunidad de", "Rioja, La", "Balears, Illes", "Cantabria"]
 _w = _t[~_t.n.isin(_excl)].pivot_table(index="n", columns="anyo", values="valor")
 F_prov = float((_w[2036] - _w[2026]).sum())
-put("B1-H4", F, None, F_prov, f"H(2036)-H(2026) INE base nacional; max = suma de {len(_w)} unidades provinciales (si no son 52, ver nota); min no reconstruible (sin escenario bajo en raw)")
-R["B1-H4"]["n_prov"] = int(len(_w))
-_x = R["B1-H4"].copy()
-put("E-B1-F", F, None, F_prov, "idem B1-H4")
-_dummy = (
-    _x, "H(2036)-H(2026) del escenario base INE (tabla 54562; la tabla empieza en 2026, no hay 2025). Rango: no hay escenarios alternativos en raw")
-)
+put("B1-H4", F, None, None, "H(2036)-H(2026) INE base nacional; rango min-max no reconstruible (no hay escenarios alternativos en raw)")
+R["B1-H4"]["suma_provincial_49_unidades_no_concluyente"] = F_prov
+put("E-B1-F", F, None, None, "idem B1-H4")
 
 # ---------------- tenencia ----------------
 eff = rd("v3/eff_tenencia_edad_v3.csv")

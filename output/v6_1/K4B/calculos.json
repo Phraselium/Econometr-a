@@ -47,13 +47,14 @@
   "valor": 1720537.0,
   "min": null,
   "max": null,
-  "nota": "H(2036)-H(2026) del escenario base INE (tabla 54562; la tabla empieza en 2026, no hay 2025). Rango: no hay escenarios alternativos en raw"
+  "nota": "H(2036)-H(2026) INE base nacional; rango min-max no reconstruible (no hay escenarios alternativos en raw)",
+  "suma_provincial_49_unidades_no_concluyente": 1637616.0
  },
  "E-B1-F": {
   "valor": 1720537.0,
   "min": null,
   "max": null,
-  "nota": "idem B1-H4 (misma magnitud, otra etiqueta)"
+  "nota": "idem B1-H4"
  },
  "R1C-001": {
   "valor": 74.47491550605565,

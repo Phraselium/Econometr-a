@@ -1,0 +1,40 @@
+{
+ "rama": "v6_1/K4B",
+ "pregunta": "Reproducen 15 cifras de cifras_clave.csv desde data/raw con codigo independiente?",
+ "capa": "C4",
+ "datos": "data/raw (+ v3/v5 raw)",
+ "N": 15,
+ "metodo": "doble implementacion independiente (src/v6_1/k4b_run.py)",
+ "estimacion": {
+  "coinciden": 5,
+  "parciales": 5,
+  "no_reconstruibles": 5,
+  "no_coinciden": 0
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "A23-A2": "si",
+  "terminadas_1924": "si",
+  "deficit_2124_c1": "parcial",
+  "deficit_2124_c2": "parcial",
+  "dh_2125": "parcial",
+  "D1-H11": "no_reconstruible",
+  "A23-P2": "parcial",
+  "B4-v3-vut-cantidad": "no_reconstruible",
+  "D1-H12": "no_reconstruible",
+  "A23-A10": "parcial",
+  "E-B1-F": "si",
+  "latente_convivencia": "no_reconstruible",
+  "B1-H1": "no_reconstruible",
+  "B1-H4": "si",
+  "R1C-001": "si"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Ver docs/v6_1/doble_implementacion.md"
+}

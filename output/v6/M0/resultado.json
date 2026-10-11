@@ -82,7 +82,7 @@
      2024,
      2025
     ],
-    "sha256_sealed": "20dda6101faef8203008444ef47a192c51c58522f500e559898314a38e3ac553"
+    "sha256_sealed": "c2537e6301e9cec50eaea5cc37f03d23901e9ee2c74f120fad68edd0f4aaf429"
    },
    {
     "panel": "prov_trim_compra",
@@ -178,7 +178,7 @@
      2024,
      2025
     ],
-    "sha256_sealed": "eb693c9ee9d9d4384cb0d8d7a10797fdbcb5ffb583a3478a34db95aabd47362a"
+    "sha256_sealed": "393c1fe42fa6daeac150fc68af4053d7182afb84fd017718dd1fd27501958b49"
    },
    {
     "panel": "dis_alquiler_anual",

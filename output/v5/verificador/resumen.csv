@@ -16,7 +16,6 @@ A23-V1,Alquiler,El alquiler se ha duplicado (variante stock: renta de los contra
 A23-V2,Alquiler,El alquiler se ha duplicado (variante contratos nuevos: renta de quien firma ahora).,"ANALIZADA, NO CONCLUYENTE",C4
 B1-V1,Necesidad de vivienda,Hacen falta X viviendas al año en España.,"ANALIZADA, NO CONCLUYENTE",C4
 B1-V2,Envejecimiento,La vivienda que dejan los mayores resolverá el problema de la vivienda.,"ANALIZADA, NO CONCLUYENTE",C4
-B2-V1,Cierre del déficit,Al ritmo actual el déficit se cerrará en pocos años.,"ANALIZADA, NO CONCLUYENTE",C4
 B4-V1,Inmigración,La subida se debe sobre todo a la inmigración.,"ANALIZADA, NO CONCLUYENTE",C4
 B4-V2,Turismo,La subida se debe a los pisos turísticos.,"ANALIZADA, NO CONCLUYENTE",C4
 B4-V3,Oferta,La subida se debe a la falta de oferta.,"ANALIZADA, NO CONCLUYENTE",C4
@@ -32,3 +31,7 @@ CC-V2,Vivienda protegida,Las viviendas protegidas se pierden por descalificació
 D1-V1,Ayudas a la demanda,Las ayudas a los jóvenes para comprar o alquilar abaratan su acceso a la vivienda.,PARCIALMENTE,C2
 R1A-V1,Compradores extranjeros y precio por provincia,Los compradores extranjeros encarecen la vivienda.,"ANALIZADA, NO CONCLUYENTE",C4
 R1B-V1,Burbuja de precios (revisión con tamaño corregido y fundamentales),Hay una burbuja en el precio de la vivienda en España.,"ANALIZADA, NO CONCLUYENTE",C4
+T1-V1,Bajas del parque,En España apenas se derriban viviendas / las bajas del parque son despreciables.,"ANALIZADA, NO CONCLUYENTE",C4
+T2-V1,Envejecimiento,El envejecimiento resolvera el problema de la vivienda.,"ANALIZADA, NO CONCLUYENTE",C4
+T2-V2,Herencias,Las herencias liberaran vivienda suficiente.,"ANALIZADA, NO CONCLUYENTE",C4
+T4-V1,Cierre del déficit,Al ritmo actual el déficit se cerrará en pocos años.,PARCIALMENTE,C2

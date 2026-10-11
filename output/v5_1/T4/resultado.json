@@ -1,0 +1,231 @@
+{
+ "rama": "v5_1/T4",
+ "pregunta": "¿Se mantiene la dirección (empeora o mejora) del déficit 2026-2030 en todos los escenarios plausibles, y qué magnitud tiene?",
+ "capa": "Dirección nacional C2 (criterio de unanimidad en la rejilla); magnitud C4",
+ "datos": [
+  "output/v5/B2",
+  "output/v5/B1",
+  "output/v5_1/T1",
+  "output/v5_1/T2",
+  "output/v5/A4",
+  "MIVAU iniciadas/terminadas",
+  "INE 54562"
+ ],
+ "N": {
+  "provincias": 52,
+  "escenarios_por_horizonte": 180,
+  "horizontes": [
+   2030,
+   2035
+  ]
+ },
+ "metodo": "dD = F - T + B + X por provincia sobre una rejilla de 5 (terminadas) x 3 (hogares) x 3 (bajas T1) x 4 (liberadas que no llegan) = 180 escenarios; dirección = signo común en toda la rejilla (C2) o indeterminada (C4); magnitud siempre C4.",
+ "estimacion": {
+  "deficit_2030_nacional": {
+   "D_min": 788180.4780439441,
+   "D_central": 1349024.9363012582,
+   "D_central_con_X": 1516128.8352958672,
+   "D_max": 1773554.6482873654
+  },
+  "cambio_2025_2030_nacional": {
+   "dD_min": 87246.47804394414,
+   "dD_central": 585609.3512036076,
+   "dD_central_con_X": 752713.2501982168,
+   "dD_max": 946851.8329393049
+  },
+  "direccion_nacional_2030": "empeora",
+  "recuento_provincias_2030": {
+   "empeoran": 15,
+   "mejoran": 0,
+   "indeterminadas": 37,
+   "B2_anterior": [
+    20,
+    5,
+    27
+   ]
+  },
+  "deficit_2035_nacional": {
+   "D_min": 482095.1197128455,
+   "D_central": 1606859.2875048658,
+   "D_central_con_X": 1962501.3432048657,
+   "D_max": 2400412.069484775
+  },
+  "direccion_nacional_2035": "indeterminado",
+  "recuento_provincias_2035": {
+   "empeoran": 14,
+   "mejoran": 0,
+   "indeterminadas": 38
+  },
+  "terminadas_equilibrio_anual_2026_2030": {
+   "central": 211771.87024072153,
+   "con_X": 245192.65003964337,
+   "hogares_bajos_bajas_0": 163884.27550245536
+  },
+  "estres_ritmo_2006_2007": {
+   "terminadas_anual_nacional": 652844.5,
+   "dD_central_2030": -2205363.1487963926
+  },
+  "envejecimiento": [
+   {
+    "periodo": "2026-2030",
+    "liberadas_central": 869653.5201819406,
+    "liberadas_central_anual": 173930.70403638814,
+    "defunciones_75mas": 1557728.010653989,
+    "no_llega_central": 167103.89899460922,
+    "hogares_F_ine": 1024156.0,
+    "F_anual": 204831.2
+   },
+   {
+    "periodo": "2031-2035",
+    "liberadas_central": 986776.9931180594,
+    "liberadas_central_anual": 197355.39862361187,
+    "defunciones_75mas": 1767377.3662937148,
+    "no_llega_central": 188538.15670539075,
+    "hogares_F_ine": 696381.0,
+    "F_anual": 139276.2
+   },
+   {
+    "periodo": "2036-2040 (T2, escenario)",
+    "liberadas_central": 1140311.5130575586,
+    "liberadas_central_anual": 228062.30261151172,
+    "defunciones_75mas": NaN,
+    "no_llega_central": 217623.45560462467,
+    "hogares_F_ine": NaN,
+    "F_anual": NaN
+   }
+  ]
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO (C4 en magnitud); la dirección nacional sube a C2 solo con signo único en toda la rejilla",
+ "diagnosticos": {
+  "control_sumas_fallos": [],
+  "recuento_por_etapas": [
+   {
+    "horizonte": 2030,
+    "etapa": "E0 como B2 (T a,b; F mín-máx; bajas central y máx.; sin X)",
+    "n_escenarios": 12,
+    "nacional": "empeora",
+    "nacional_dD_min": 220381.397244402,
+    "nacional_dD_max": 657337.8417463517,
+    "n_empeoran": 22,
+    "n_mejoran": 4,
+    "n_indeterminadas": 26
+   },
+   {
+    "horizonte": 2030,
+    "etapa": "E1 + bajas mínimas (tasa 0)",
+    "n_escenarios": 18,
+    "nacional": "empeora",
+    "nacional_dD_min": 185678.0460407944,
+    "nacional_dD_max": 657337.8417463517,
+    "n_empeoran": 20,
+    "n_mejoran": 4,
+    "n_indeterminadas": 28
+   },
+   {
+    "horizonte": 2030,
+    "etapa": "E2 + terminadas mínimas y tendencia",
+    "n_escenarios": 36,
+    "nacional": "empeora",
+    "nacional_dD_min": 185678.0460407944,
+    "nacional_dD_max": 728112.8417463517,
+    "n_empeoran": 20,
+    "n_mejoran": 4,
+    "n_indeterminadas": 28
+   },
+   {
+    "horizonte": 2030,
+    "etapa": "E3 + terminadas optimistas",
+    "n_escenarios": 45,
+    "nacional": "empeora",
+    "nacional_dD_min": 87246.47804394414,
+    "nacional_dD_max": 728112.8417463517,
+    "n_empeoran": 15,
+    "n_mejoran": 4,
+    "n_indeterminadas": 33
+   },
+   {
+    "horizonte": 2030,
+    "etapa": "E4 + liberadas que no llegan (completa)",
+    "n_escenarios": 180,
+    "nacional": "empeora",
+    "nacional_dD_min": 87246.47804394414,
+    "nacional_dD_max": 946851.8329393049,
+    "n_empeoran": 15,
+    "n_mejoran": 0,
+    "n_indeterminadas": 37
+   },
+   {
+    "horizonte": 2035,
+    "etapa": "E0 como B2 (T a,b; F mín-máx; bajas central y máx.; sin X)",
+    "n_escenarios": 12,
+    "nacional": "empeora",
+    "nacional_dD_min": 104932.76369730491,
+    "nacional_dD_max": 966357.3579367145,
+    "n_empeoran": 16,
+    "n_mejoran": 8,
+    "n_indeterminadas": 28
+   },
+   {
+    "horizonte": 2035,
+    "etapa": "E1 + bajas mínimas (tasa 0)",
+    "n_escenarios": 18,
+    "nacional": "empeora",
+    "nacional_dD_min": 35526.06129008971,
+    "nacional_dD_max": 966357.3579367145,
+    "n_empeoran": 15,
+    "n_mejoran": 8,
+    "n_indeterminadas": 29
+   },
+   {
+    "horizonte": 2035,
+    "etapa": "E2 + terminadas mínimas y tendencia",
+    "n_escenarios": 36,
+    "nacional": "empeora",
+    "nacional_dD_min": 35526.06129008971,
+    "nacional_dD_max": 1107907.3579367145,
+    "n_empeoran": 15,
+    "n_mejoran": 5,
+    "n_indeterminadas": 32
+   },
+   {
+    "horizonte": 2035,
+    "etapa": "E3 + terminadas optimistas",
+    "n_escenarios": 45,
+    "nacional": "indeterminado",
+    "nacional_dD_min": -218838.88028715452,
+    "nacional_dD_max": 1107907.3579367145,
+    "n_empeoran": 14,
+    "n_mejoran": 5,
+    "n_indeterminadas": 33
+   },
+   {
+    "horizonte": 2035,
+    "etapa": "E4 + liberadas que no llegan (completa)",
+    "n_escenarios": 180,
+    "nacional": "indeterminado",
+    "nacional_dD_min": -218838.88028715452,
+    "nacional_dD_max": 1573709.2541367146,
+    "n_empeoran": 14,
+    "n_mejoran": 0,
+    "n_indeterminadas": 38
+   }
+  ]
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "Proyección bajo supuestos, no pronóstico; AR(4) y ECM v1 no aplican (fuera_muestra null); Holm/BH no aplica (sin contrastes).",
+  "Rejilla: terminadas = a (media 2023-25), b (cartera con retardo), c (tendencia 2021-25), lo (mínimo de a y b con el retardo más largo), opt (el mayor de: máximo anual 2019-2025 sostenido; cartera con el retardo más corto e iniciadas posteriores a 2025 en el máximo de 2021-25).",
+  "Hogares: INE (central), mínimo y máximo entre INE y jefatura constante con población proyectada (B1); la tabla 54562 solo trae un escenario del INE.",
+  "Bajas: tasa 0 (cota física, C2), central y máxima de T1 (C4) sobre el parque de 2024. Liberadas que no llegan al mercado (T2, C4): ninguna, mín., central, máx., que SUMAN a la necesidad efectiva; las liberadas no se restan.",
+  "Estrés 2006-2007: no entra en la rejilla plausible; se informa como ritmo de equilibrio (terminadas necesarias para no empeorar) frente a la media nacional de 2006-2007.",
+  "Dirección por provincia con las mismas reglas; D2025 de partida depende de la fuente (con/sin protegida) y de las bajas, y no altera el signo del cambio.",
+  "El reparto 2026-2030 / 2031-2035 de las liberadas y de X es proporcional a las defunciones de 75+ (proyección INE x riesgo de muerte 2024 constante).",
+  "Sin lenguaje causal."
+ ]
+}

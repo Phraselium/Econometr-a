@@ -1,0 +1,17 @@
+{
+ "id": "T2-V2",
+ "tema": "Herencias",
+ "enunciado": "Las herencias liberaran vivienda suficiente.",
+ "capa": "C4",
+ "magnitud": "Herencias inscritas: 203393 viviendas/ano (2023-2025, INE ETDP, fuente unica: C4). Liberadas por fallecimiento en propiedad: 118075/ano (modelo, C4). Fraccion que llega al mercado 75-87 % (supuesto C4: X entre vacias y vacias+secundarias del Censo 2021). No llegan 24548-46580 viviendas/ano, un aumento posible de la necesidad efectiva de 11-22 % (prueba de estres X=50 %: 43 %).",
+ "intervalo": "70096 a 275008 viviendas/ano al mercado (C4)",
+ "cota": "—",
+ "literatura": "—",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "El dato registral de las herencias es de fuente unica (INE) y el destino posterior (venta, alquiler, uso familiar, vacia) no tiene dato: la cifra de mercado es C4 por la menor capa de sus componentes. La suficiencia depende de ese destino.",
+ "limites": "Una inscripcion de herencia puede incluir segundas viviendas o vacias; no hay seguimiento de la vivienda heredada.",
+ "evidencia": [
+  "output/v5_1/T2/tablas/liberadas_provincia.csv",
+  "data/raw/v5_1/ine_t2_t6154.csv"
+ ]
+}

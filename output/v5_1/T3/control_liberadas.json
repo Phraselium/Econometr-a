@@ -1,0 +1,32 @@
+[
+ {
+  "tabla": "necesidad_nacional_10a_min",
+  "necesidad": 1239364.0384,
+  "suma_componentes_sin_L": 1239364.0384000002
+ },
+ {
+  "tabla": "necesidad_provincial_suma_10a_min",
+  "necesidad": 1239364.0384,
+  "suma_componentes_sin_L": 1239364.0384
+ },
+ {
+  "tabla": "necesidad_nacional_10a_central",
+  "necesidad": 2459886.3328408655,
+  "suma_componentes_sin_L": 2459886.3328408655
+ },
+ {
+  "tabla": "necesidad_provincial_suma_10a_central",
+  "necesidad": 2459886.3328408655,
+  "suma_componentes_sin_L": 2459886.3328408655
+ },
+ {
+  "tabla": "necesidad_nacional_10a_max",
+  "necesidad": 3386630.0383355226,
+  "suma_componentes_sin_L": 3386630.0383355226
+ },
+ {
+  "tabla": "necesidad_provincial_suma_10a_max",
+  "necesidad": 3386630.0383355226,
+  "suma_componentes_sin_L": 3386630.0383355226
+ }
+]

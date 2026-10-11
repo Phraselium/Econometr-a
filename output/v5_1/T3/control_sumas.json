@@ -1,0 +1,93 @@
+[
+ {
+  "tabla": "A1_fuente_ECP_con_protegida_2021_2025",
+  "suma_provincial": 700934.0,
+  "nacional": 700934.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "deficit_2021_2024_fuente_ECP_con_M0",
+  "suma_provincial": 562692.0,
+  "nacional": 562692.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "bajas_2021_2024_central_T1",
+  "suma_provincial": 27404.854874688863,
+  "nacional": 27404.854874688863,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "bajas_2021_2025_central_T1",
+  "suma_provincial": 34320.08509765051,
+  "nacional": 34320.08509765051,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "bajas_2021_2024_max_T1",
+  "suma_provincial": 55452.32494374429,
+  "nacional": 55452.32494374429,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "bajas_2021_2025_max_T1",
+  "suma_provincial": 69445.8153480606,
+  "nacional": 69445.8153480606,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "X_no_llega_central_10a_T2",
+  "suma_provincial": 355642.05569999997,
+  "nacional": 355642.05571676395,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "X_no_llega_min_10a_T2",
+  "suma_provincial": 245482.21579999998,
+  "nacional": 245482.21559956748,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "X_no_llega_max_10a_T2",
+  "suma_provincial": 465801.89619999996,
+  "nacional": 465801.8958339604,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "F_hogares_2026_2036",
+  "suma_provincial": 1720537.0,
+  "nacional": 1720537.0,
+  "tolerancia_rel": 0.01,
+  "ok": true
+ },
+ {
+  "tabla": "necesidad_10a_central",
+  "suma_provincial": 2459886.3328408655,
+  "nacional": 2459886.3328408655,
+  "tolerancia_rel": 1e-09,
+  "ok": true
+ },
+ {
+  "tabla": "necesidad_10a_min",
+  "suma_provincial": 1239364.0384,
+  "nacional": 1239364.0384,
+  "tolerancia_rel": 1e-09,
+  "ok": true
+ },
+ {
+  "tabla": "necesidad_10a_max",
+  "suma_provincial": 3386630.0383355226,
+  "nacional": 3386630.0383355226,
+  "tolerancia_rel": 1e-09,
+  "ok": true
+ }
+]

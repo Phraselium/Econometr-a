@@ -33,6 +33,7 @@ SUSTITUCIONES = {
     "V03": ("B4-V1", "triangulación de B3, v2 y las cotas de v3"),
     "V04": ("B4-V3", "triangulación de B3, v2 y A4"),
     "V12": ("B4-V4", "triangulación de B3, v2 y la cota de v3"),
+    "B2-V1": ("T4-V1", "v5.1: dirección y magnitud separadas en una rejilla de 180 escenarios"),
 }
 VEREDICTOS_C4 = {"ANALIZADA, NO CONCLUYENTE", "NO ANALIZADA: FALTAN DATOS"}
 
@@ -63,7 +64,7 @@ def transformar(f: dict) -> dict:
 
 def main() -> list[dict]:
     viejas = [f for f in v4.main() if f["id"] not in SUSTITUCIONES]
-    nuevas = [transformar(f) for f in _v5()]
+    nuevas = [transformar(f) for f in _v5() if f["id"] not in SUSTITUCIONES]   # v5.1 también sustituye fichas v5
     ids = {f["id"] for f in nuevas}
     assert all(n in ids for n, _ in SUSTITUCIONES.values()), "sustitución hacia una ficha v5 inexistente"
     fs = viejas + nuevas

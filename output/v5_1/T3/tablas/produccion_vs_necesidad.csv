@@ -1,0 +1,7 @@
+serie,produccion_min,produccion_media,produccion_max,necesidad_anual,necesidad_escenario,veces_cabe_con_prod_media,veces_cabe_con_prod_max,veces_cabe_con_prod_min,produccion_cubre_pct
+territorio común (cifras_clave terminadas_1924),72264.000,83345.000,94426.000,123936.404,min,1.487,1.313,1.715,67.248
+territorio común (cifras_clave terminadas_1924),72264.000,83345.000,94426.000,245988.633,central,2.951,2.605,3.404,33.882
+territorio común (cifras_clave terminadas_1924),72264.000,83345.000,94426.000,338663.004,max,4.063,3.587,4.686,24.610
+nacional con País Vasco y Navarra (MIVAU bruto),78810.000,89895.000,100980.000,123936.404,min,1.379,1.227,1.573,72.533
+nacional con País Vasco y Navarra (MIVAU bruto),78810.000,89895.000,100980.000,245988.633,central,2.736,2.436,3.121,36.544
+nacional con País Vasco y Navarra (MIVAU bruto),78810.000,89895.000,100980.000,338663.004,max,3.767,3.354,4.297,26.544

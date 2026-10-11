@@ -1,0 +1,11 @@
+horizonte,etapa,n_escenarios,nacional,nacional_dD_min,nacional_dD_max,n_empeoran,n_mejoran,n_indeterminadas
+2030,"E0 como B2 (T a,b; F mín-máx; bajas central y máx.; sin X)",12,empeora,220381,657338,22,4,26
+2030,E1 + bajas mínimas (tasa 0),18,empeora,185678,657338,20,4,28
+2030,E2 + terminadas mínimas y tendencia,36,empeora,185678,728113,20,4,28
+2030,E3 + terminadas optimistas,45,empeora,87246,728113,15,4,33
+2030,E4 + liberadas que no llegan (completa),180,empeora,87246,946852,15,0,37
+2035,"E0 como B2 (T a,b; F mín-máx; bajas central y máx.; sin X)",12,empeora,104933,966357,16,8,28
+2035,E1 + bajas mínimas (tasa 0),18,empeora,35526,966357,15,8,29
+2035,E2 + terminadas mínimas y tendencia,36,empeora,35526,1107907,15,5,32
+2035,E3 + terminadas optimistas,45,indeterminado,-218839,1107907,14,5,33
+2035,E4 + liberadas que no llegan (completa),180,indeterminado,-218839,1573709,14,0,38

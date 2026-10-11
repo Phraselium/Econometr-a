@@ -1,0 +1,19 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+T3,T3_def_2021-2024_EPA corregida_con_min,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2024,1,,,,,645227.0,,capa C1
+T3,T3_def_2021-2024_EPA corregida_con_central,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2024,1,,,,,672631.8548746889,,capa C4
+T3,T3_def_2021-2024_EPA corregida_con_max,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2024,1,,,,,700679.3249437443,,capa C4
+T3,T3_def_2021-2024_EPA corregida_sin_min,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2024,1,,,,,688692.0,,capa C1
+T3,T3_def_2021-2024_EPA corregida_sin_central,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2024,1,,,,,716096.8548746889,,capa C4
+T3,T3_def_2021-2024_EPA corregida_sin_max,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2024,1,,,,,744144.3249437443,,capa C4
+T3,T3_def_2021-2024_ECP_con_min,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2024,1,,,,,562692.0,,capa C1
+T3,T3_def_2021-2024_ECP_con_central,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2024,1,,,,,590096.8548746889,,capa C4
+T3,T3_def_2021-2024_ECP_con_max,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2024,1,,,,,618144.3249437443,,capa C4
+T3,T3_def_2021-2024_ECP_sin_min,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2024,1,,,,,606157.0,,capa C1
+T3,T3_def_2021-2024_ECP_sin_central,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2024,1,,,,,633561.8548746889,,capa C4
+T3,T3_def_2021-2024_ECP_sin_max,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2024,1,,,,,661609.3249437443,,capa C4
+T3,T3_def_2021-2025_ECP_con_min,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2025,1,,,,,700934.0,,capa C1
+T3,T3_def_2021-2025_ECP_con_central,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2025,1,,,,,735254.0850976505,,capa C4
+T3,T3_def_2021-2025_ECP_con_max,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2025,1,,,,,770379.8153480606,,capa C4
+T3,T3_def_2021-2025_ECP_sin_min,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2025,1,,,,,757257.0,,capa C1
+T3,T3_def_2021-2025_ECP_sin_central,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2025,1,,,,,791577.0850976505,,capa C4
+T3,T3_def_2021-2025_ECP_sin_max,deficit = deficit sin bajas (M0/M1) + bajas T1 (tasa x parque),2021,2025,1,,,,,826702.8153480606,,capa C4

@@ -1,0 +1,13 @@
+periodo,hogares,protegida,tasa_bajas,deficit_sin_bajas,bajas,deficit,capa
+2021-2024,EPA corregida,con,min,645227.0,0.0,645227.0,C1
+2021-2024,EPA corregida,con,central,645227.0,27404.9,672631.9,C4
+2021-2024,EPA corregida,con,max,645227.0,55452.3,700679.3,C4
+2021-2024,EPA corregida,sin,min,688692.0,0.0,688692.0,C1
+2021-2024,EPA corregida,sin,central,688692.0,27404.9,716096.9,C4
+2021-2024,EPA corregida,sin,max,688692.0,55452.3,744144.3,C4
+2021-2024,ECP,con,min,562692.0,0.0,562692.0,C1
+2021-2024,ECP,con,central,562692.0,27404.9,590096.9,C4
+2021-2024,ECP,con,max,562692.0,55452.3,618144.3,C4
+2021-2024,ECP,sin,min,606157.0,0.0,606157.0,C1
+2021-2024,ECP,sin,central,606157.0,27404.9,633561.9,C4
+2021-2024,ECP,sin,max,606157.0,55452.3,661609.3,C4

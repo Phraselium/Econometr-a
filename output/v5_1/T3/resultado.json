@@ -1,0 +1,189 @@
+{
+ "rama": "v5_1/T3",
+ "pregunta": "¿Qué rango tienen el déficit 2021-2025 y la necesidad 2026-2035 con las bajas estimadas (T1) y las liberadas que no llegan al mercado (T2), y qué supuesto pesa más en la amplitud?",
+ "capa": "C1 (déficit sin bajas) / C4 (con bajas y necesidad)",
+ "datos": [
+  "output/v4/M0",
+  "output/v4/M1",
+  "output/v5/A4",
+  "output/v5/B1",
+  "output/v5_1/T1",
+  "output/v5_1/T2"
+ ],
+ "N": {
+  "provincias": 52,
+  "combinaciones_deficit_2021_2024": 12,
+  "combinaciones_deficit_2021_2025": 6
+ },
+ "metodo": "Déficit = fuentes (M0/M1) + bajas T1 (tasa x parque MIVAU); necesidad = A+R+V+F-M-K+X con R y A1 a partir de las bajas de T1 y X = liberadas que no llegan al mercado (T2); las liberadas NO se restan; descomposición un supuesto cada vez (aditiva).",
+ "estimacion": {
+  "deficit_2021_2024": {
+   "sin_bajas_C1": [
+    562692.0,
+    688692.0
+   ],
+   "con_bajas_T1_C4": {
+    "central": 653096.8548746889,
+    "min": 562692.0,
+    "max": 744144.3249437443
+   },
+   "maximo_antiguo": 902808.0
+  },
+  "deficit_2021_2025": {
+   "sin_bajas_C1": [
+    700934.0,
+    757257.0
+   ],
+   "con_bajas_T1_C4": {
+    "central": 763415.5850976505,
+    "min": 700934.0,
+    "max": 826702.8153480606
+   }
+  },
+  "necesidad_anual": {
+   "min": 123936.40384,
+   "central": 245988.63328408654,
+   "max": 338663.00383355224
+  },
+  "necesidad_10a": {
+   "min": 1239364.0384,
+   "central": 2459886.3328408655,
+   "max": 3386630.0383355226
+  },
+  "componentes_10a": {
+   "A1": {
+    "min": 701681.0,
+    "central": 763977.8461336504,
+    "max": 827171.4776240606
+   },
+   "A2": {
+    "min": 187955.5633,
+    "central": 315016.9086,
+    "max": 505901.8666
+   },
+   "A": {
+    "min": 889636.5633,
+    "central": 1078994.7547336505,
+    "max": 1333073.3442240604
+   },
+   "R": {
+    "min": 0.0,
+    "central": 69406.7024072152,
+    "max": 140446.92251146227
+   },
+   "V": {
+    "min": 0.0,
+    "central": 58674.02,
+    "max": 117348.04
+   },
+   "F": {
+    "min": 1308531.0593,
+    "central": 1720537.0,
+    "max": 1772410.4354
+   },
+   "M": {
+    "min": 366776.60000000003,
+    "central": 733553.2000000001,
+    "max": 1100329.8
+   },
+   "K": {
+    "min": 75674.0,
+    "central": 89815.0,
+    "max": 103956.0
+   },
+   "X": {
+    "min": 245482.21579999998,
+    "central": 355642.05569999997,
+    "max": 465801.89619999996
+   }
+  },
+  "L_informativa_no_suma_ni_resta_10a": {
+   "min": 801982.2366999999,
+   "central": 1415262.7707,
+   "max": 2170069.5823000004
+  },
+  "descomposicion_amplitud_anual": {
+   "movilizables (M)": {
+    "amplitud": 73355.31999999999,
+    "peso_pct": 34.162195090036676
+   },
+   "flujo futuro (F)": {
+    "amplitud": 46387.93761,
+    "peso_pct": 21.603256239046733
+   },
+   "atraso (A1+A2)": {
+    "amplitud": 44343.67809240604,
+    "peso_pct": 20.65122723208842
+   },
+   "liberadas que no llegan al mercado (X)": {
+    "amplitud": 22031.96804,
+    "peso_pct": 10.26047450137131
+   },
+   "reposición (R)": {
+    "amplitud": 14044.692251146227,
+    "peso_pct": 6.540732378553917
+   },
+   "vacancia friccional (V)": {
+    "amplitud": 11734.804,
+    "peso_pct": 5.464997815991297
+   },
+   "cartera (K)": {
+    "amplitud": 2828.2,
+    "peso_pct": 1.3171167429116486
+   }
+  },
+  "producciones_serie": {
+   "territorio_comun_2019_2024": [
+    72264.0,
+    94426.0
+   ],
+   "nacional_con_PV_NA_2019_2024": [
+    78810.0,
+    100980.0
+   ]
+  }
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO (C4); el déficit sin bajas es C1 (descriptivo)",
+ "diagnosticos": {
+  "control_sumas_fallos": [],
+  "control_liberadas": "output/v5_1/T3/control_liberadas.json",
+  "reconciliacion_B1": [
+   {
+    "paso": "B1 (v5): R acotado a 0, A1 con bajas 0-0,2 %, sin X",
+    "N_anual_min": 93627.81667,
+    "N_anual_central": 214867.78959999996,
+    "N_anual_max": 309920.82708
+   },
+   {
+    "paso": "T3 sin X (R y A1 con bajas T1)",
+    "N_anual_min": 99388.18226,
+    "N_anual_central": 210424.42771408655,
+    "N_anual_max": 292082.8142135523
+   },
+   {
+    "paso": "T3 con X (liberadas que no llegan, suma)",
+    "N_anual_min": 123936.40384,
+    "N_anual_central": 245988.63328408654,
+    "N_anual_max": 338663.00383355224
+   }
+  ]
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "Contabilidad con rangos, no modelo predictivo: AR(4) y ECM v1 no aplican (fuera_muestra null); Holm/BH no aplica (sin contrastes).",
+  "Los rangos combinan los extremos de todos los supuestos a la vez: son cotas, no intervalos de confianza.",
+  "Déficit 2021-2024: 4 combinaciones de fuentes de M0 (hogares ECP / EPA corregida; con y sin protegida) x 3 niveles de bajas de T1 (0, central, máx.). Sin bajas sigue siendo C1.",
+  "Déficit 2021-2025 y A1: solo la ruta ECP provincial (con y sin protegida), porque EPA corregida no existe por provincia ni M0 llega a 2025.",
+  "R = 10 x tasa de bajas de T1 x parque MIVAU de 2024 (B1 usaba el parque del Censo 2021 y tasas de identidad acotadas a 0); L se informa pero NO entra: la proyección de hogares del INE ya la descuenta.",
+  "X (liberadas que no llegan al mercado) viene de T2 (fuente única, parámetros de residencias sin dato verificado) y SUMA a la necesidad.",
+  "Descomposición aditiva: la suma de amplitudes por componente iguala la amplitud conjunta.",
+  "Producción actual: se usa la serie del territorio común (cifras_clave terminadas_1924, C1: 72.264-94.426) y, como sensibilidad, la serie nacional con País Vasco y Navarra (78.810-100.980, MIVAU bruto). Como la necesidad cubre 52 provincias, la serie común sobrestima ligeramente las veces.",
+  "Sin lenguaje causal; asociaciones y magnitudes descriptivas."
+ ]
+}

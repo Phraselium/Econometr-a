@@ -2,7 +2,7 @@
 
 Generado por `make verificador`. Cada ficha evalúa la afirmación, nunca a quien la formula, y se aplican las mismas reglas a todas. Capas: C1 hechos (≥2 fuentes independientes), C2 cotas con supuestos explícitos, C3 efectos identificados (ninguno) y C4 exploratorio. Con C4 el veredicto es como máximo «ANALIZADA, NO CONCLUYENTE». «NO ANALIZADA: FALTAN DATOS» quiere decir que no hay datos para analizar la afirmación, no que sea falsa.
 
-Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 26; NO ANALIZADA: FALTAN DATOS: 3; PARCIALMENTE: 3; CONTRADICHA: 1.
+Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 28; PARCIALMENTE: 4; NO ANALIZADA: FALTAN DATOS: 3; CONTRADICHA: 1.
 
 | Id | Afirmación | Veredicto | Capa |
 |---|---|---|---|
@@ -23,7 +23,6 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 26; NO ANALIZADA: FALTAN DATO
 | A23-V2 | El alquiler se ha duplicado (variante contratos nuevos: renta de quien firma ahora). | ANALIZADA, NO CONCLUYENTE | C4 |
 | B1-V1 | Hacen falta X viviendas al año en España. | ANALIZADA, NO CONCLUYENTE | C4 |
 | B1-V2 | La vivienda que dejan los mayores resolverá el problema de la vivienda. | ANALIZADA, NO CONCLUYENTE | C4 |
-| B2-V1 | Al ritmo actual el déficit se cerrará en pocos años. | ANALIZADA, NO CONCLUYENTE | C4 |
 | B4-V1 | La subida se debe sobre todo a la inmigración. | ANALIZADA, NO CONCLUYENTE | C4 |
 | B4-V2 | La subida se debe a los pisos turísticos. | ANALIZADA, NO CONCLUYENTE | C4 |
 | B4-V3 | La subida se debe a la falta de oferta. | ANALIZADA, NO CONCLUYENTE | C4 |
@@ -39,6 +38,10 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 26; NO ANALIZADA: FALTAN DATO
 | D1-V1 | Las ayudas a los jóvenes para comprar o alquilar abaratan su acceso a la vivienda. | PARCIALMENTE | C2 |
 | R1A-V1 | Los compradores extranjeros encarecen la vivienda. | ANALIZADA, NO CONCLUYENTE | C4 |
 | R1B-V1 | Hay una burbuja en el precio de la vivienda en España. | ANALIZADA, NO CONCLUYENTE | C4 |
+| T1-V1 | En España apenas se derriban viviendas / las bajas del parque son despreciables. | ANALIZADA, NO CONCLUYENTE | C4 |
+| T2-V1 | El envejecimiento resolvera el problema de la vivienda. | ANALIZADA, NO CONCLUYENTE | C4 |
+| T2-V2 | Las herencias liberaran vivienda suficiente. | ANALIZADA, NO CONCLUYENTE | C4 |
+| T4-V1 | Al ritmo actual el déficit se cerrará en pocos años. | PARCIALMENTE | C2 |
 
 ## Fichas sustituidas en v5
 
@@ -53,6 +56,7 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 26; NO ANALIZADA: FALTAN DATO
 | V03 | B4-V1 | triangulación de B3, v2 y las cotas de v3 |
 | V04 | B4-V3 | triangulación de B3, v2 y A4 |
 | V12 | B4-V4 | triangulación de B3, v2 y la cota de v3 |
+| B2-V1 | T4-V1 | v5.1: dirección y magnitud separadas en una rejilla de 180 escenarios |
 
 ## V02 · Grandes tenedores
 
@@ -328,22 +332,6 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 26; NO ANALIZADA: FALTAN DATO
 | Límites | Sin Censo 2021 por edad del jefe; mortalidad de 2024 constante (sesgo al alza de la liberación). |
 | Evidencia | output/v5/B1/tablas/B1_envejecimiento.csv |
 
-## B2-V1 · Cierre del déficit
-
-**Afirmación:** Al ritmo actual el déficit se cerrará en pocos años.
-
-| Campo | Contenido |
-|---|---|
-| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
-| Capa de la evidencia | C4 |
-| Magnitud | Déficit acumulado nacional 2021-2025: 700934 viviendas. Proyección a fin de 2030 al ritmo 2023-2025 (suma de provincias): 1296672 central (rango 872529 a 1447953). Cambio frente a 2025: 595738 (rango 171595 a 747019); signo nacional: empeora. Provincias con rango completo: 20 empeoran, 5 mejoran, 27 indeterminadas. Escenarios centrales a fin de 2030: a 1296672, b 1136179, c 1276238. |
-| Intervalo | 872529 a 1447953 viviendas de déficit a fin de 2030 (C4) |
-| Cota | — |
-| Literatura | — |
-| Regla del veredicto | Proyección C4 (supuestos de bajas, retardo y ritmo constante); solo F (INE) es C2. Con C4 el máximo es ANALIZADA, NO CONCLUYENTE. Se informa el signo solo donde el rango completo no cruza cero. |
-| Límites | Sin ajuste por atraso latente, vacías ni vivienda liberada; protegida medida con calificaciones definitivas; rangos no son IC; el retardo es nacional. |
-| Evidencia | output/v5/B2/tablas/B2_deficit_2030_provincial.csv, output/v5/B2/resultado.json |
-
 ## B4-V1 · Inmigración
 
 **Afirmación:** La subida se debe sobre todo a la inmigración.
@@ -586,3 +574,67 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 26; NO ANALIZADA: FALTAN DATO
 | Regla del veredicto | Una exuberancia estadística no es una burbuja: el test detecta crecimiento explosivo de una serie o de un cociente, no la causa (renta, tipos, oferta, expectativas) ni la sobrevaloración. Con capa C4 el veredicto no puede ser RESPALDADA ni CONTRADICHA. Los cocientes frente a fundamentales con tipos no muestran exuberancia, lo que no equivale a ausencia de sobrevaloración: el valor fundamental usado es una referencia simple con supuestos propios. |
 | Límites | Muestra 2007Q1-2026Q2 (T=78) corta para el ciclo; ADF con un rezago; el valor de descuento fija g=2 % y una prima de 3 pp (sensibilidad 2 y 4 pp) y usa el tipo medio de nuevas hipotecas ; renta del hogar nacional; sin renta por CCAA; el tamaño con bootstrap queda en 2-4 % (por debajo del nominal) con R=200. |
 | Evidencia | output/v5/R1B/tablas/gsadf_corregido.csv, output/v5/R1B/tablas/gsadf_tamano.json, output/v4/M7/tablas/gsadf_resultados.csv |
+
+## T1-V1 · Bajas del parque
+
+**Afirmación:** En España apenas se derriban viviendas / las bajas del parque son despreciables.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | Licencias de demolición del Ministerio: 5.898-9.706 viviendas en 2024 y 6.200-7.195 de media en 2012-2024, es decir 0.026 % del parque al año (0,02-0,04 %), frente al 0,1-0,2 % supuesto antes. No incluye ruina, cambios de uso, agregaciones ni derribos sin licencia. Las identidades de Censos y Catastro dan bajas negativas (-0.3278 % y -0.1758 % al año en 2011-2020) y no acotan por arriba. |
+| Intervalo | 0-0.052 % del parque al año (C4) |
+| Cota | C2 solo la cota física inferior (bajas >= 0); sin cota superior medida |
+| Literatura | — |
+| Regla del veredicto | Una sola fuente para el nivel (licencias del Ministerio) y los métodos de stock no miden bajas: capa C4. Lo licenciado es pequeño frente al parque; el total de salidas no está medido. |
+| Límites | Licencia no es derribo ejecutado; faltan ruina, cambio de uso, agregaciones y obras sin licencia; reparto provincial por parque. |
+| Evidencia | output/v5_1/T1/tablas/comparacion_metodos.csv, output/v5_1/T1/tablas/licencias_demolicion_nacional.csv, output/v5_1/T1/tablas/identidad_descomposicion.csv |
+
+## T2-V1 · Envejecimiento
+
+**Afirmación:** El envejecimiento resolvera el problema de la vivienda.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | Liberadas por fallecimiento y traslado a residencia: 185643 viviendas/ano central (rango 93606-316859) en 2026-2035, frente a una necesidad central de 214868 viviendas/ano (B1). Ya estan descontadas en la proyeccion de hogares del INE, asi que no restan necesidad. Llegan al mercado 150079/ano (70096-275008). 97 % en provincias A4 clase 1-2. |
+| Intervalo | 93606 a 316859 viviendas/ano (C4) |
+| Cota | — |
+| Literatura | — |
+| Regla del veredicto | Capa C4: parametros de residencias sin dato propio y destino de la vivienda liberada sin dato. Cifra de orden de magnitud; no se resta de la necesidad. |
+| Límites | Solo 75+; reparto municipal por poblacion 65+; mortalidad 2024 constante; no contrasta la calidad ni la ubicacion de la vivienda. |
+| Evidencia | output/v5_1/T2/tablas/liberadas_provincia.csv, output/v5_1/T2/resultado.json |
+
+## T2-V2 · Herencias
+
+**Afirmación:** Las herencias liberaran vivienda suficiente.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | Herencias inscritas: 203393 viviendas/ano (2023-2025, INE ETDP, fuente unica: C4). Liberadas por fallecimiento en propiedad: 118075/ano (modelo, C4). Fraccion que llega al mercado 75-87 % (supuesto C4: X entre vacias y vacias+secundarias del Censo 2021). No llegan 24548-46580 viviendas/ano, un aumento posible de la necesidad efectiva de 11-22 % (prueba de estres X=50 %: 43 %). |
+| Intervalo | 70096 a 275008 viviendas/ano al mercado (C4) |
+| Cota | — |
+| Literatura | — |
+| Regla del veredicto | El dato registral de las herencias es de fuente unica (INE) y el destino posterior (venta, alquiler, uso familiar, vacia) no tiene dato: la cifra de mercado es C4 por la menor capa de sus componentes. La suficiencia depende de ese destino. |
+| Límites | Una inscripcion de herencia puede incluir segundas viviendas o vacias; no hay seguimiento de la vivienda heredada. |
+| Evidencia | output/v5_1/T2/tablas/liberadas_provincia.csv, data/raw/v5_1/ine_t2_t6154.csv |
+
+## T4-V1 · Cierre del déficit
+
+**Afirmación:** Al ritmo actual el déficit se cerrará en pocos años.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **PARCIALMENTE** |
+| Capa de la evidencia | C2 |
+| Magnitud | Dirección nacional 2025-2030 (C2): empeora en 180 escenarios (terminadas: ritmo actual, cartera, tendencia, mínimo y optimista; hogares bajos, central y altos; bajas 0, central y máxima de T1; liberadas que no llegan al mercado: ninguna, mín., central y máx.). Magnitud (C4): el déficit pasa de 763.416 (2025, central: media de las fuentes con y sin protegida más bajas centrales de T1; 700.934 sin bajas y con protegida) a 1.349.025 a fin de 2030 al ritmo 2023-2025 (rango de la rejilla 788.180 a 1.773.555); cambio 585.609 (rango 87.246 a 946.852). Para no empeorar harían falta unas 211.772 terminadas al año frente a 94.650 del ritmo actual y 146.435 del escenario optimista. Provincias: 15 empeoran, 0 mejoran y 37 indeterminadas (B2: 20 / 5 / 27). El déficit nacional 2025-2030 empeora en todos los escenarios de la rejilla (dirección C2); por tanto la afirmación «se cerrará en pocos años» no se sostiene en ninguno de ellos. La magnitud del aumento es C4. |
+| Intervalo | cambio del déficit 2025-2030: 87.246 a 946.852 viviendas (C4); dirección nacional C2 |
+| Cota | Dirección C2 solo si el signo es único en toda la rejilla; magnitud siempre C4 |
+| Literatura | — |
+| Regla del veredicto | Criterio T4: la dirección sube a C2 solo si el signo se mantiene en TODOS los escenarios que cubren el rango plausible de terminadas, hogares, bajas y liberadas; si no, C4. La magnitud es siempre C4 (con C4 el veredicto es como máximo «ANALIZADA, NO CONCLUYENTE»). Actualiza B2-V1: misma afirmación. |
+| Límites | Terminadas aproximadas con libres terminadas más calificaciones definitivas de protegida; el retardo de la cartera es nacional; el escenario de 2006-2007 queda fuera del rango plausible y se informa aparte; las bajas y las liberadas son C4 de fuente única; los rangos no son intervalos de confianza. |
+| Evidencia | output/v5_1/T4/tablas/recuento_por_etapas.csv, output/v5_1/T4/tablas/direccion_provincial_2030.csv, output/v5_1/T4/resultado.json |

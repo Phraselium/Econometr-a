@@ -24,3 +24,22 @@
   - `prereg-v5` y `v5.0` se crearon en local el 10 de octubre de 2026;
   - la fecha de publicación remota queda «pendiente» (campo que completa el autor);
   - una etiqueta local no es un sello de tiempo externo, así que en el futuro se depositará en OSF o Zenodo antes de estimar.
+
+## T3 y T4 (subagente)
+- **Déficit 2021-2024.** Combina las 12 combinaciones de fuentes de M0 con las bajas de T1.
+  - Sin bajas: 562.692-688.692 (C1).
+  - Con bajas estimadas: hasta 744.144 (C4), frente al antiguo máximo C2 de 902.808, que se basaba en un supuesto de bajas del 0,1-0,2 % que nada observado respalda.
+  - 2021-2025: 700.934-826.703 (C4).
+- **Necesidad 2026-2035.** Se presentan dos cifras, ambas C4:
+  - base (A + R + V + F − M − K, con R de T1): 99.000 / 210.000 / 292.000 al año (mínimo / central / máximo);
+  - con la sensibilidad de T2 (liberadas que no llegan al mercado, que SUMAN): 124.000 / 246.000 / 339.000.
+  - Los titulares usan la cifra con sensibilidad e indican la base.
+  - Las liberadas nunca se restan; check_v5 lo controla con control_liberadas.json.
+- **Descomposición de la amplitud.** Movilizables 34 %, flujo futuro 22 %, atraso 21 %, liberadas que no llegan 10 %, reposición 6,5 %, vacancia 5,5 % y cartera 1 %. El supuesto que más pesa es la fracción de vacías movilizables.
+- **Frente a las terminadas actuales** (72.000-94.000 al año en el territorio común): la necesidad equivale a 1,5 / 3,0 / 4,1 veces la producción media.
+- **T4, dirección y magnitud.** Rejilla de 180 escenarios: los de B2, uno optimista (146.435 terminadas al año, suma de máximos provinciales, por encima de cualquier año nacional observado), bajas 0, hogares bajos y liberadas.
+  - Dirección nacional 2026-2030: EMPEORA en los 180 escenarios, así que pasa a **C2**. La magnitud (cambio de +87.000 a +947.000) es C4.
+  - Provincias: 15 empeoran, 0 mejoran y 37 son indeterminadas (en v5: 20 / 5 / 27).
+  - A 2035, la dirección nacional es indeterminada (C4).
+  - El envejecimiento libera 870.000 viviendas en 2026-2030 y 987.000 en 2031-2035 (centrales, C4).
+- **Verificador.** La ficha T4-V1 sustituye a B2-V1. verificador.py admite ya sustituciones de fichas v5 por fichas v5.1.

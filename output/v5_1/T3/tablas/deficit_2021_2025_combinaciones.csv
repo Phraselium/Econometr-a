@@ -1,0 +1,7 @@
+periodo,hogares,protegida,tasa_bajas,deficit_sin_bajas,bajas,deficit,capa
+2021-2025,ECP,con,min,700934.0,0.0,700934.0,C1
+2021-2025,ECP,con,central,700934.0,34320.1,735254.1,C4
+2021-2025,ECP,con,max,700934.0,69445.8,770379.8,C4
+2021-2025,ECP,sin,min,757257.0,0.0,757257.0,C1
+2021-2025,ECP,sin,central,757257.0,34320.1,791577.1,C4
+2021-2025,ECP,sin,max,757257.0,69445.8,826702.8,C4

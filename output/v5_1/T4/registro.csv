@@ -1,0 +1,465 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+T4,T4_nac_2030_Ta_Fcentral_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,585609.3512036076,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fcentral_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,752713.2501982168,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fcentral_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,804348.3423965608,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fcentral_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,701078.158267952,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fcentral_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,621129.4612557312,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fcentral_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,788233.3602503403,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fcentral_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,839868.4524486844,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fcentral_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,736598.2683200756,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fcentral_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,550906.0,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fcentral_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,718009.8989946092,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fcentral_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,769644.9911929533,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fcentral_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,666374.8070643445,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmax_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,621817.7316942281,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmax_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,788921.6306888374,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmax_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,840556.7228871813,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmax_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,737286.5387585725,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmax_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,657337.8417463517,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmax_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,824441.7407409609,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmax_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,876076.8329393049,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmax_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,772806.6488106961,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmax_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,587114.3804906205,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmax_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,754218.2794852298,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmax_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,805853.3716835738,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmax_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,702583.187554965,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmin_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,380874.72871588403,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmin_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,547978.6277104933,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmin_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,599613.7199088373,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmin_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,496343.5357802285,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmin_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,416394.8387680076,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmin_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,583498.7377626168,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmin_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,635133.8299609609,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmin_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,531863.6458323521,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmin_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,346171.37751227646,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmin_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,513275.2765068857,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmin_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,564910.3687052297,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Ta_Fmin_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,461640.18457662093,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fcentral_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,425116.01973212557,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fcentral_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,592219.9187267348,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fcentral_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,643855.0109250789,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fcentral_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,540584.82679647,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fcentral_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,460636.12978424906,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fcentral_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,627740.0287788583,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fcentral_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,679375.1209772023,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fcentral_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,576104.9368485935,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fcentral_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,390412.66852851794,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fcentral_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,557516.5675231272,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fcentral_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,609151.6597214713,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fcentral_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,505881.4755928624,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmax_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,461324.4002227461,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmax_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,628428.2992173553,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmax_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,680063.3914156994,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmax_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,576793.2072870906,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmax_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,496844.51027486956,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmax_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,663948.4092694789,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmax_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,715583.5014678228,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmax_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,612313.317339214,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmax_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,426621.04901913845,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmax_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,593724.9480137477,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmax_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,645360.0402120918,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmax_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,542089.856083483,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmin_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,220381.397244402,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmin_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,387485.2962390112,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmin_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,439120.3884373553,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmin_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,335850.2043087465,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmin_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,255901.50729652555,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmin_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,423005.4062911348,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmin_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,474640.4984894788,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmin_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,371370.31436087005,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmin_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,185678.0460407944,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmin_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,352781.94503540365,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmin_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,404417.03723374766,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tb_Fmin_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,301146.85310513887,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fcentral_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,565175.2512035979,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fcentral_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,732279.1501982071,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fcentral_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,783914.2423965512,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fcentral_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,680644.0582679424,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fcentral_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,600695.3612557214,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fcentral_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,767799.2602503307,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fcentral_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,819434.3524486746,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fcentral_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,716164.1683200658,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fcentral_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,530471.8999999902,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fcentral_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,697575.7989945995,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fcentral_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,749210.8911929436,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fcentral_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,645940.7070643348,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmax_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,601383.6316942184,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmax_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,768487.5306888276,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmax_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,820122.6228871717,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmax_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,716852.4387585629,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmax_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,636903.7417463419,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmax_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,804007.6407409512,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmax_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,855642.7329392951,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmax_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,752372.5488106865,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmax_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,566680.2804906107,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmax_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,733784.17948522,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmax_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,785419.2716835641,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmax_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,682149.0875549553,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmin_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,360440.62871587434,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmin_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,527544.5277104835,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmin_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,579179.6199088276,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmin_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,475909.4357802188,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmin_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,395960.7387679979,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmin_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,563064.6377626071,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmin_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,614699.7299609511,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmin_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,511429.54583234235,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmin_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,325737.27751226677,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmin_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,492841.17650687596,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmin_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,544476.26870522,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tc_Fmin_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,441206.08457661123,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fcentral_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,656384.3512036076,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fcentral_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,823488.2501982169,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fcentral_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,875123.3423965608,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fcentral_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,771853.158267952,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fcentral_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,691904.4612557312,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fcentral_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,859008.3602503403,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fcentral_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,910643.4524486844,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fcentral_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,807373.2683200756,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fcentral_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,621681.0,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fcentral_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,788784.8989946092,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fcentral_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,840419.9911929532,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fcentral_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,737149.8070643445,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmax_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,692592.7316942281,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmax_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,859696.6306888374,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmax_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,911331.7228871814,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmax_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,808061.5387585725,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmax_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,728112.8417463517,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmax_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,895216.7407409608,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmax_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,946851.8329393049,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmax_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,843581.6488106961,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmax_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,657889.3804906205,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmax_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,824993.2794852298,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmax_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,876628.3716835737,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmax_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,773358.187554965,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmin_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,451649.7287158841,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmin_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,618753.6277104933,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmin_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,670388.7199088373,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmin_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,567118.5357802286,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmin_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,487169.8387680076,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmin_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,654273.7377626168,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmin_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,705908.8299609609,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmin_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,602638.6458323521,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmin_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,416946.37751227646,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmin_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,584050.2765068857,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmin_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,635685.3687052297,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Tlo_Fmin_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,532415.1845766209,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fcentral_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,326684.4517352753,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fcentral_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,493788.35072988446,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fcentral_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,545423.4429282285,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fcentral_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,442153.25879961974,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fcentral_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,362204.5617873988,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fcentral_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,529308.460782008,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fcentral_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,580943.5529803521,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fcentral_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,477673.3688517433,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fcentral_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,291981.10053166765,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fcentral_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,459084.9995262769,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fcentral_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,510720.09172462096,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fcentral_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,407449.9075960121,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmax_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,362892.8322258958,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmax_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,529996.731220505,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmax_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,581631.823418849,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmax_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,478361.63929024024,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmax_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,398412.9422780193,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmax_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,565516.8412726285,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmax_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,617151.9334709726,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmax_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,513881.7493423638,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmax_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,328189.4810222882,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmax_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,495293.3800168974,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmax_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,546928.4722152414,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmax_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,443658.2880866327,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmin_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,121949.82924755172,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmin_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,289053.728242161,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmin_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,340688.820440505,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmin_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,237418.6363118962,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmin_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,157469.93929967526,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmin_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,324573.8382942845,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmin_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,376208.93049262854,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmin_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,272938.74636401975,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmin_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,87246.47804394414,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmin_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,254350.37703855336,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmin_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,305985.4692368974,,escenario; capa C4 (magnitud)
+T4,T4_nac_2030_Topt_Fmin_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2030,52,,,,,202715.2851082886,,escenario; capa C4 (magnitud)
+T4,T4_prov_2030_01,signo de dD en toda la rejilla,2026,2030,1,,,,,-1778.6449619749183,,Araba/Álava; dD max 6109; indeterminado
+T4,T4_prov_2030_02,signo de dD en toda la rejilla,2026,2030,1,,,,,-3587.734541639225,,Albacete; dD max 6448; indeterminado
+T4,T4_prov_2030_03,signo de dD en toda la rejilla,2026,2030,1,,,,,29388.58510194005,,Alicante/Alacant; dD max 67718; empeora
+T4,T4_prov_2030_04,signo de dD en toda la rejilla,2026,2030,1,,,,,11422.788981537453,,Almería; dD max 25250; empeora
+T4,T4_prov_2030_05,signo de dD en toda la rejilla,2026,2030,1,,,,,-1426.278700094268,,Ávila; dD max 2102; indeterminado
+T4,T4_prov_2030_06,signo de dD en toda la rejilla,2026,2030,1,,,,,-10343.443545054966,,Badajoz; dD max 10485; indeterminado
+T4,T4_prov_2030_07,signo de dD en toda la rejilla,2026,2030,1,,,,,13053.522297738742,,"Balears, Illes; dD max 33468; empeora"
+T4,T4_prov_2030_08,signo de dD en toda la rejilla,2026,2030,1,,,,,44879.36516367618,,Barcelona; dD max 111675; empeora
+T4,T4_prov_2030_09,signo de dD en toda la rejilla,2026,2030,1,,,,,-3307.4631199326122,,Burgos; dD max 4939; indeterminado
+T4,T4_prov_2030_10,signo de dD en toda la rejilla,2026,2030,1,,,,,-11173.887348315708,,Cáceres; dD max 1088; indeterminado
+T4,T4_prov_2030_11,signo de dD en toda la rejilla,2026,2030,1,,,,,-12167.929680374267,,Cádiz; dD max 17474; indeterminado
+T4,T4_prov_2030_12,signo de dD en toda la rejilla,2026,2030,1,,,,,12582.002857285352,,Castellón/Castelló; dD max 22130; empeora
+T4,T4_prov_2030_13,signo de dD en toda la rejilla,2026,2030,1,,,,,-6738.1491125891025,,Ciudad Real; dD max 9016; indeterminado
+T4,T4_prov_2030_14,signo de dD en toda la rejilla,2026,2030,1,,,,,-11483.030048755305,,Córdoba; dD max 6694; indeterminado
+T4,T4_prov_2030_15,signo de dD en toda la rejilla,2026,2030,1,,,,,-3226.1943739314765,,"Coruña, A; dD max 17822; indeterminado"
+T4,T4_prov_2030_16,signo de dD en toda la rejilla,2026,2030,1,,,,,-1155.665900120845,,Cuenca; dD max 4163; indeterminado
+T4,T4_prov_2030_17,signo de dD en toda la rejilla,2026,2030,1,,,,,8236.56004325008,,Girona; dD max 22679; empeora
+T4,T4_prov_2030_18,signo de dD en toda la rejilla,2026,2030,1,,,,,-969.4998357854456,,Granada; dD max 21967; indeterminado
+T4,T4_prov_2030_19,signo de dD en toda la rejilla,2026,2030,1,,,,,-417.4436071481596,,Guadalajara; dD max 6979; indeterminado
+T4,T4_prov_2030_20,signo de dD en toda la rejilla,2026,2030,1,,,,,-5622.066853303403,,Gipuzkoa; dD max 9294; indeterminado
+T4,T4_prov_2030_21,signo de dD en toda la rejilla,2026,2030,1,,,,,-702.9140301182288,,Huelva; dD max 11653; indeterminado
+T4,T4_prov_2030_22,signo de dD en toda la rejilla,2026,2030,1,,,,,-1522.2730427824722,,Huesca; dD max 4262; indeterminado
+T4,T4_prov_2030_23,signo de dD en toda la rejilla,2026,2030,1,,,,,-9654.371259453703,,Jaén; dD max 6623; indeterminado
+T4,T4_prov_2030_24,signo de dD en toda la rejilla,2026,2030,1,,,,,-7427.3550917047905,,León; dD max 5092; indeterminado
+T4,T4_prov_2030_25,signo de dD en toda la rejilla,2026,2030,1,,,,,5426.86554663747,,Lleida; dD max 10040; empeora
+T4,T4_prov_2030_26,signo de dD en toda la rejilla,2026,2030,1,,,,,-1159.404145010797,,"Rioja, La; dD max 7702; indeterminado"
+T4,T4_prov_2030_27,signo de dD en toda la rejilla,2026,2030,1,,,,,-3113.3231398234634,,Lugo; dD max 6434; indeterminado
+T4,T4_prov_2030_28,signo de dD en toda la rejilla,2026,2030,1,,,,,46113.55253867211,,Madrid; dD max 134730; empeora
+T4,T4_prov_2030_29,signo de dD en toda la rejilla,2026,2030,1,,,,,857.7071026801859,,Málaga; dD max 40930; empeora
+T4,T4_prov_2030_30,signo de dD en toda la rejilla,2026,2030,1,,,,,13847.365236888705,,Murcia; dD max 45848; empeora
+T4,T4_prov_2030_31,signo de dD en toda la rejilla,2026,2030,1,,,,,-2296.92568619594,,Navarra; dD max 10945; indeterminado
+T4,T4_prov_2030_32,signo de dD en toda la rejilla,2026,2030,1,,,,,-1189.055684943829,,Ourense; dD max 7485; indeterminado
+T4,T4_prov_2030_33,signo de dD en toda la rejilla,2026,2030,1,,,,,-12380.705448157207,,Asturias; dD max 8247; indeterminado
+T4,T4_prov_2030_34,signo de dD en toda la rejilla,2026,2030,1,,,,,-3200.625247128799,,Palencia; dD max 370; indeterminado
+T4,T4_prov_2030_35,signo de dD en toda la rejilla,2026,2030,1,,,,,6680.875720263686,,"Palmas, Las; dD max 25053; empeora"
+T4,T4_prov_2030_36,signo de dD en toda la rejilla,2026,2030,1,,,,,-9403.087516594123,,Pontevedra; dD max 12579; indeterminado
+T4,T4_prov_2030_37,signo de dD en toda la rejilla,2026,2030,1,,,,,-3408.7397643090985,,Salamanca; dD max 4277; indeterminado
+T4,T4_prov_2030_38,signo de dD en toda la rejilla,2026,2030,1,,,,,11098.953684328579,,Santa Cruz de Tenerife; dD max 24823; empeora
+T4,T4_prov_2030_39,signo de dD en toda la rejilla,2026,2030,1,,,,,-3507.3072526775186,,Cantabria; dD max 9313; indeterminado
+T4,T4_prov_2030_40,signo de dD en toda la rejilla,2026,2030,1,,,,,-389.9150943186123,,Segovia; dD max 3689; indeterminado
+T4,T4_prov_2030_41,signo de dD en toda la rejilla,2026,2030,1,,,,,-34864.26895276836,,Sevilla; dD max 9897; indeterminado
+T4,T4_prov_2030_42,signo de dD en toda la rejilla,2026,2030,1,,,,,-2513.201147588922,,Soria; dD max 895; indeterminado
+T4,T4_prov_2030_43,signo de dD en toda la rejilla,2026,2030,1,,,,,17552.848339423734,,Tarragona; dD max 33107; empeora
+T4,T4_prov_2030_44,signo de dD en toda la rejilla,2026,2030,1,,,,,-1228.9862993313156,,Teruel; dD max 1982; indeterminado
+T4,T4_prov_2030_45,signo de dD en toda la rejilla,2026,2030,1,,,,,5566.118356543948,,Toledo; dD max 18018; empeora
+T4,T4_prov_2030_46,signo de dD en toda la rejilla,2026,2030,1,,,,,45142.52639903706,,Valencia/València; dD max 79755; empeora
+T4,T4_prov_2030_47,signo de dD en toda la rejilla,2026,2030,1,,,,,-7971.3759054037,,Valladolid; dD max 3642; indeterminado
+T4,T4_prov_2030_48,signo de dD en toda la rejilla,2026,2030,1,,,,,-5717.85015279542,,Bizkaia; dD max 13843; indeterminado
+T4,T4_prov_2030_49,signo de dD en toda la rejilla,2026,2030,1,,,,,-3125.1417809058903,,Zamora; dD max 1486; indeterminado
+T4,T4_prov_2030_50,signo de dD en toda la rejilla,2026,2030,1,,,,,-1929.9096775290454,,Zaragoza; dD max 13631; indeterminado
+T4,T4_prov_2030_51,signo de dD en toda la rejilla,2026,2030,1,,,,,-468.9533515973284,,Ceuta; dD max 1235; indeterminado
+T4,T4_prov_2030_52,signo de dD en toda la rejilla,2026,2030,1,,,,,-1120.1759381014554,,Melilla; dD max 2078; indeterminado
+T4,T4_nac_2035_Ta_Fcentral_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,843443.7024072151,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fcentral_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1199085.7581072152,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fcentral_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1309245.598607215,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fcentral_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1088925.9182072151,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fcentral_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,914483.9225114622,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fcentral_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1270125.9782114623,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fcentral_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1380285.8187114622,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fcentral_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1159966.1383114622,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fcentral_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,774037.0,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fcentral_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1129679.0557,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fcentral_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1239838.8962,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fcentral_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1019519.2158,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmax_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,895317.1378324674,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmax_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1250959.1935324676,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmax_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1361119.0340324675,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmax_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1140799.3536324676,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmax_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,966357.3579367145,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmax_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1321999.4136367145,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmax_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1432159.2541367146,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmax_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1211839.5737367147,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmax_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,825910.4354252523,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmax_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1181552.4911252523,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmax_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1291712.3316252523,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmax_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1071392.6512252523,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmin_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,431437.76183545357,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmin_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,787079.8175354536,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmin_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,897239.6580354535,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmin_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,676919.9776354536,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmin_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,502477.98193970066,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmin_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,858120.0376397007,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmin_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,968279.8781397006,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmin_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,747960.1977397007,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmin_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,362031.05942823837,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmin_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,717673.1151282383,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmin_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,827832.9556282384,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Ta_Fmin_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,607513.2752282384,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fcentral_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,516938.7042690665,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fcentral_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,872580.7599690665,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fcentral_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,982740.6004690665,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fcentral_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,762420.9200690665,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fcentral_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,587978.9243733136,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fcentral_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,943620.9800733136,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fcentral_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1053780.8205733136,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fcentral_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,833461.1401733136,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fcentral_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,447532.0018618513,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fcentral_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,803174.0575618513,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fcentral_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,913333.8980618513,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fcentral_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,693014.2176618513,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmax_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,568812.1396943188,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmax_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,924454.1953943188,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmax_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1034614.0358943187,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmax_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,814294.3554943188,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmax_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,639852.3597985659,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmax_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,995494.4154985658,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmax_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1105654.2559985658,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmax_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,885334.5755985659,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmax_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,499405.43728710356,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmax_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,855047.4929871036,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmax_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,965207.3334871036,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmax_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,744887.6530871035,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmin_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,104932.76369730491,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmin_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,460574.8193973049,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmin_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,570734.659897305,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmin_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,350414.9794973049,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmin_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,175972.98380155198,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmin_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,531615.039501552,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmin_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,641774.8800015519,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmin_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,421455.1996015519,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmin_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,35526.06129008971,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmin_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,391168.1169900897,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmin_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,501327.9574900897,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tb_Fmin_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,281008.2770900897,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fcentral_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,771147.0024071848,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fcentral_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1126789.058107185,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fcentral_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1236948.8986071849,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fcentral_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1016629.2182071848,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fcentral_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,842187.2225114319,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fcentral_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1197829.2782114318,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fcentral_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1307989.118711432,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fcentral_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1087669.4383114318,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fcentral_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,701740.2999999697,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fcentral_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1057382.3556999697,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fcentral_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1167542.1961999696,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fcentral_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,947222.5157999697,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmax_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,823020.4378324371,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmax_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1178662.4935324371,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmax_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1288822.334032437,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmax_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1068502.653632437,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmax_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,894060.6579366842,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmax_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1249702.7136366842,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmax_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1359862.5541366842,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmax_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1139542.8737366842,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmax_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,753613.7354252219,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmax_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1109255.7911252219,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmax_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1219415.631625222,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmax_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,999095.951225222,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmin_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,359141.0618354232,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmin_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,714783.1175354233,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmin_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,824942.9580354233,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmin_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,604623.2776354232,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmin_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,430181.28193967027,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmin_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,785823.3376396702,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmin_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,895983.1781396703,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmin_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,675663.4977396703,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmin_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,289734.35942820803,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmin_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,645376.415128208,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmin_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,755536.255628208,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tc_Fmin_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,535216.5752282081,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fcentral_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,984993.7024072151,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fcentral_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1340635.7581072152,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fcentral_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1450795.598607215,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fcentral_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1230475.9182072151,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fcentral_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1056033.9225114624,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fcentral_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1411675.9782114623,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fcentral_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1521835.8187114622,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fcentral_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1301516.1383114622,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fcentral_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,915587.0,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fcentral_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1271229.0557,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fcentral_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1381388.8962,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fcentral_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1161069.2158,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmax_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1036867.1378324674,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmax_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1392509.1935324676,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmax_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1502669.0340324675,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmax_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1282349.3536324676,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmax_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1107907.3579367145,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmax_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1463549.4136367145,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmax_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1573709.2541367146,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmax_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1353389.5737367144,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmax_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,967460.4354252523,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmax_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1323102.4911252523,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmax_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1433262.3316252523,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmax_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1212942.6512252523,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmin_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,572987.7618354536,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmin_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,928629.8175354536,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmin_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1038789.6580354536,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmin_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,818469.9776354536,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmin_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,644027.9819397007,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmin_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,999670.0376397007,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmin_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,1109829.8781397007,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmin_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,889510.1977397007,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmin_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,503581.0594282384,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmin_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,859223.1151282383,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmin_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,969382.9556282384,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Tlo_Fmin_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,749063.2752282384,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fcentral_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,262573.76269182225,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fcentral_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,618215.8183918223,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fcentral_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,728375.6588918222,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fcentral_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,508055.97849182226,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fcentral_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,333613.9827960693,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fcentral_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,689256.0384960693,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fcentral_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,799415.8789960693,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fcentral_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,579096.1985960694,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fcentral_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,193167.06028460705,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fcentral_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,548809.1159846071,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fcentral_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,658968.9564846071,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fcentral_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,438649.27608460706,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmax_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,314447.19811707456,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmax_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,670089.2538170745,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmax_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,780249.0943170745,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmax_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,559929.4139170746,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmax_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,385487.4182213216,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmax_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,741129.4739213216,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmax_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,851289.3144213216,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmax_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,630969.6340213215,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmax_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,245040.49570985933,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmax_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,600682.5514098593,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmax_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,710842.3919098594,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmax_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,490522.7115098593,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmin_Bcentral_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,-149432.17787993935,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmin_Bcentral_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,206209.87782006068,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmin_Bcentral_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,316369.71832006064,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmin_Bcentral_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,96050.03792006068,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmin_Bmax_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,-78391.9577756923,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmin_Bmax_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,277250.0979243077,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmin_Bmax_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,387409.9384243077,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmin_Bmax_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,167090.2580243077,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmin_Bmin_X0,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,-218838.88028715452,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmin_Bmin_Xcentral,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,136803.17541284545,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmin_Bmin_Xmax,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,246963.01591284547,,escenario; capa C4 (magnitud)
+T4,T4_nac_2035_Topt_Fmin_Bmin_Xmin,dD = F - T + B + X (suma de provincias),2026,2035,52,,,,,26643.335512845475,,escenario; capa C4 (magnitud)
+T4,T4_prov_2035_01,signo de dD en toda la rejilla,2026,2035,1,,,,,-8109.263502813597,,Araba/Álava; dD max 10425; indeterminado
+T4,T4_prov_2035_02,signo de dD en toda la rejilla,2026,2035,1,,,,,-9981.282248959844,,Albacete; dD max 12990; indeterminado
+T4,T4_prov_2035_03,signo de dD en toda la rejilla,2026,2035,1,,,,,32667.585101940043,,Alicante/Alacant; dD max 111526; empeora
+T4,T4_prov_2035_04,signo de dD en toda la rejilla,2026,2035,1,,,,,14271.322164082027,,Almería; dD max 44920; empeora
+T4,T4_prov_2035_05,signo de dD en toda la rejilla,2026,2035,1,,,,,-3707.9147832560952,,Ávila; dD max 3854; indeterminado
+T4,T4_prov_2035_06,signo de dD en toda la rejilla,2026,2035,1,,,,,-23031.98562078792,,Badajoz; dD max 19169; indeterminado
+T4,T4_prov_2035_07,signo de dD en toda la rejilla,2026,2035,1,,,,,13714.522297738746,,"Balears, Illes; dD max 59848; empeora"
+T4,T4_prov_2035_08,signo de dD en toda la rejilla,2026,2035,1,,,,,42108.36516367618,,Barcelona; dD max 172212; empeora
+T4,T4_prov_2035_09,signo de dD en toda la rejilla,2026,2035,1,,,,,-9222.697706941428,,Burgos; dD max 8499; indeterminado
+T4,T4_prov_2035_10,signo de dD en toda la rejilla,2026,2035,1,,,,,-27729.991492118144,,Cáceres; dD max 1481; indeterminado
+T4,T4_prov_2035_11,signo de dD en toda la rejilla,2026,2035,1,,,,,-34009.73549724051,,Cádiz; dD max 29386; indeterminado
+T4,T4_prov_2035_12,signo de dD en toda la rejilla,2026,2035,1,,,,,18767.27116254562,,Castellón/Castelló; dD max 40275; empeora
+T4,T4_prov_2035_13,signo de dD en toda la rejilla,2026,2035,1,,,,,-14961.391402742815,,Ciudad Real; dD max 17921; indeterminado
+T4,T4_prov_2035_14,signo de dD en toda la rejilla,2026,2035,1,,,,,-27599.98657025996,,Córdoba; dD max 10624; indeterminado
+T4,T4_prov_2035_15,signo de dD en toda la rejilla,2026,2035,1,,,,,-12994.419825390905,,"Coruña, A; dD max 31441; indeterminado"
+T4,T4_prov_2035_16,signo de dD en toda la rejilla,2026,2035,1,,,,,-3616.403136597219,,Cuenca; dD max 7333; indeterminado
+T4,T4_prov_2035_17,signo de dD en toda la rejilla,2026,2035,1,,,,,1786.999565398437,,Girona; dD max 39708; empeora
+T4,T4_prov_2035_18,signo de dD en toda la rejilla,2026,2035,1,,,,,-7426.264223286373,,Granada; dD max 39246; indeterminado
+T4,T4_prov_2035_19,signo de dD en toda la rejilla,2026,2035,1,,,,,-4726.092206211779,,Guadalajara; dD max 12104; indeterminado
+T4,T4_prov_2035_20,signo de dD en toda la rejilla,2026,2035,1,,,,,-14747.256373146687,,Gipuzkoa; dD max 19015; indeterminado
+T4,T4_prov_2035_21,signo de dD en toda la rejilla,2026,2035,1,,,,,-5359.037173702203,,Huelva; dD max 20270; indeterminado
+T4,T4_prov_2035_22,signo de dD en toda la rejilla,2026,2035,1,,,,,-4804.663988292687,,Huesca; dD max 7745; indeterminado
+T4,T4_prov_2035_23,signo de dD en toda la rejilla,2026,2035,1,,,,,-20426.389707030037,,Jaén; dD max 12324; indeterminado
+T4,T4_prov_2035_24,signo de dD en toda la rejilla,2026,2035,1,,,,,-17464.220341775075,,León; dD max 9269; indeterminado
+T4,T4_prov_2035_25,signo de dD en toda la rejilla,2026,2035,1,,,,,7944.86554663747,,Lleida; dD max 17040; empeora
+T4,T4_prov_2035_26,signo de dD en toda la rejilla,2026,2035,1,,,,,-5205.234680930368,,"Rioja, La; dD max 14438; indeterminado"
+T4,T4_prov_2035_27,signo de dD en toda la rejilla,2026,2035,1,,,,,-7504.9472711013095,,Lugo; dD max 12393; indeterminado
+T4,T4_prov_2035_28,signo de dD en toda la rejilla,2026,2035,1,,,,,15198.552538672113,,Madrid; dD max 222834; empeora
+T4,T4_prov_2035_29,signo de dD en toda la rejilla,2026,2035,1,,,,,-20928.07398101056,,Málaga; dD max 65241; indeterminado
+T4,T4_prov_2035_30,signo de dD en toda la rejilla,2026,2035,1,,,,,14282.340314825939,,Murcia; dD max 81954; empeora
+T4,T4_prov_2035_31,signo de dD en toda la rejilla,2026,2035,1,,,,,-9356.752190030391,,Navarra; dD max 21610; indeterminado
+T4,T4_prov_2035_32,signo de dD en toda la rejilla,2026,2035,1,,,,,-4370.548833234892,,Ourense; dD max 13947; indeterminado
+T4,T4_prov_2035_33,signo de dD en toda la rejilla,2026,2035,1,,,,,-30831.327812528325,,Asturias; dD max 13456; indeterminado
+T4,T4_prov_2035_34,signo de dD en toda la rejilla,2026,2035,1,,,,,-6853.086936121185,,Palencia; dD max 485; indeterminado
+T4,T4_prov_2035_35,signo de dD en toda la rejilla,2026,2035,1,,,,,2355.012607642275,,"Palmas, Las; dD max 42655; empeora"
+T4,T4_prov_2035_36,signo de dD en toda la rejilla,2026,2035,1,,,,,-24418.012248785853,,Pontevedra; dD max 22300; indeterminado
+T4,T4_prov_2035_37,signo de dD en toda la rejilla,2026,2035,1,,,,,-8843.639560931913,,Salamanca; dD max 7253; indeterminado
+T4,T4_prov_2035_38,signo de dD en toda la rejilla,2026,2035,1,,,,,12574.322534803541,,Santa Cruz de Tenerife; dD max 41500; empeora
+T4,T4_prov_2035_39,signo de dD en toda la rejilla,2026,2035,1,,,,,-10236.804906305966,,Cantabria; dD max 16234; indeterminado
+T4,T4_prov_2035_40,signo de dD en toda la rejilla,2026,2035,1,,,,,-1652.3882111200096,,Segovia; dD max 7433; indeterminado
+T4,T4_prov_2035_41,signo de dD en toda la rejilla,2026,2035,1,,,,,-78237.16428688081,,Sevilla; dD max 13128; indeterminado
+T4,T4_prov_2035_42,signo de dD en toda la rejilla,2026,2035,1,,,,,-5777.179714872219,,Soria; dD max 2099; indeterminado
+T4,T4_prov_2035_43,signo de dD en toda la rejilla,2026,2035,1,,,,,26476.568159501694,,Tarragona; dD max 60222; empeora
+T4,T4_prov_2035_44,signo de dD en toda la rejilla,2026,2035,1,,,,,-3140.007966483643,,Teruel; dD max 3483; indeterminado
+T4,T4_prov_2035_45,signo de dD en toda la rejilla,2026,2035,1,,,,,4157.977549697436,,Toledo; dD max 32822; empeora
+T4,T4_prov_2035_46,signo de dD en toda la rejilla,2026,2035,1,,,,,65130.52639903706,,Valencia/València; dD max 142037; empeora
+T4,T4_prov_2035_47,signo de dD en toda la rejilla,2026,2035,1,,,,,-19810.083394497626,,Valladolid; dD max 4918; indeterminado
+T4,T4_prov_2035_48,signo de dD en toda la rejilla,2026,2035,1,,,,,-17138.0504847011,,Bizkaia; dD max 23340; indeterminado
+T4,T4_prov_2035_49,signo de dD en toda la rejilla,2026,2035,1,,,,,-6451.978425810887,,Zamora; dD max 2753; indeterminado
+T4,T4_prov_2035_50,signo de dD en toda la rejilla,2026,2035,1,,,,,-12377.595954982477,,Zaragoza; dD max 24627; indeterminado
+T4,T4_prov_2035_51,signo de dD en toda la rejilla,2026,2035,1,,,,,-1181.6688307245365,,Ceuta; dD max 2208; indeterminado
+T4,T4_prov_2035_52,signo de dD en toda la rejilla,2026,2035,1,,,,,-2619.8126565612233,,Melilla; dD max 3791; indeterminado

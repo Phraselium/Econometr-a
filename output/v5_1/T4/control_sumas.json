@@ -1,0 +1,79 @@
+[
+ {
+  "tabla": "deficit_2025_fuente_ECP_con_A4",
+  "suma_provincial": 700934.0,
+  "nacional": 700934.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "F_2026_2031_hogares_INE",
+  "suma_provincial": 1024156.0,
+  "nacional": 1024156.0,
+  "tolerancia_rel": 0.01,
+  "ok": true
+ },
+ {
+  "tabla": "terminadas_esc_a_5a",
+  "suma_provincial": 473250.0,
+  "nacional": 473250.0,
+  "tolerancia_rel": 0.01,
+  "ok": true
+ },
+ {
+  "tabla": "F_2026_2036_hogares_INE",
+  "suma_provincial": 1720537.0,
+  "nacional": 1720537.0,
+  "tolerancia_rel": 0.01,
+  "ok": true
+ },
+ {
+  "tabla": "terminadas_esc_a_10a",
+  "suma_provincial": 946500.0,
+  "nacional": 946500.0,
+  "tolerancia_rel": 0.01,
+  "ok": true
+ },
+ {
+  "tabla": "X_central_2026_2035_T2",
+  "suma_provincial": 355642.05569999997,
+  "nacional": 355642.05571676395,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "X_min_2026_2035_T2",
+  "suma_provincial": 245482.2158,
+  "nacional": 245482.21559956748,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "X_max_2026_2035_T2",
+  "suma_provincial": 465801.8962,
+  "nacional": 465801.8958339604,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "liberadas_2026_2030_mas_2031_2035_T2",
+  "suma_provincial": 1856430.5133,
+  "nacional": 1856430.5130877716,
+  "tolerancia_rel": 1e-09,
+  "ok": true
+ },
+ {
+  "tabla": "dD_central_2030_a",
+  "suma_provincial": 585609.3512036076,
+  "nacional": 585609.3512036076,
+  "tolerancia_rel": 1e-09,
+  "ok": true
+ },
+ {
+  "tabla": "dD_nacional_2030_suma_provincias",
+  "suma_provincial": 585609.3512036076,
+  "nacional": 585609.3512036076,
+  "tolerancia_rel": 0.01,
+  "ok": true
+ }
+]

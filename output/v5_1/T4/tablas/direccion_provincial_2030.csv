@@ -1,0 +1,53 @@
+cod_prov,provincia,dD_min,dD_central_a,dD_central_a_con_X,dD_max,direccion,capa_direccion,capa_magnitud
+01,Araba/Álava,-1779.0,3076.0,3906.0,6109.0,indeterminado,C4,C4
+02,Albacete,-3588.0,2685.0,4380.0,6448.0,indeterminado,C4,C4
+03,Alicante/Alacant,29389.0,47650.0,55238.0,67718.0,empeora,C2,C4
+04,Almería,11423.0,19864.0,22203.0,25250.0,empeora,C2,C4
+05,Ávila,-1426.0,156.0,1393.0,2102.0,indeterminado,C4,C4
+06,Badajoz,-10343.0,3786.0,6513.0,10485.0,indeterminado,C4,C4
+07,"Balears, Illes",13054.0,21547.0,25037.0,33468.0,empeora,C2,C4
+08,Barcelona,44879.0,67254.0,79841.0,111675.0,empeora,C2,C4
+09,Burgos,-3307.0,1371.0,3448.0,4939.0,indeterminado,C4,C4
+10,Cáceres,-11174.0,-3589.0,-1243.0,1088.0,indeterminado,C4,C4
+11,Cádiz,-12168.0,10836.0,14218.0,17474.0,indeterminado,C4,C4
+12,Castellón/Castelló,12582.0,16464.0,19250.0,22130.0,empeora,C2,C4
+13,Ciudad Real,-6738.0,2518.0,5787.0,9016.0,indeterminado,C4,C4
+14,Córdoba,-11483.0,1547.0,4120.0,6694.0,indeterminado,C4,C4
+15,"Coruña, A",-3226.0,7607.0,14954.0,17822.0,indeterminado,C4,C4
+16,Cuenca,-1156.0,1383.0,2804.0,4163.0,indeterminado,C4,C4
+17,Girona,8237.0,16642.0,19424.0,22679.0,empeora,C2,C4
+18,Granada,-969.0,14873.0,18316.0,21967.0,indeterminado,C4,C4
+19,Guadalajara,-417.0,3653.0,4841.0,6979.0,indeterminado,C4,C4
+20,Gipuzkoa,-5622.0,2562.0,4482.0,9294.0,indeterminado,C4,C4
+21,Huelva,-703.0,7198.0,9014.0,11653.0,indeterminado,C4,C4
+22,Huesca,-1522.0,2028.0,3246.0,4262.0,indeterminado,C4,C4
+23,Jaén,-9654.0,1579.0,4179.0,6623.0,indeterminado,C4,C4
+24,León,-7427.0,-55.0,3559.0,5092.0,indeterminado,C4,C4
+25,Lleida,5427.0,6909.0,8578.0,10040.0,empeora,C2,C4
+26,"Rioja, La",-1159.0,3392.0,4740.0,7702.0,indeterminado,C4,C4
+27,Lugo,-3113.0,1419.0,5337.0,6434.0,indeterminado,C4,C4
+28,Madrid,46114.0,97387.0,109024.0,134730.0,empeora,C2,C4
+29,Málaga,858.0,25883.0,31501.0,40930.0,empeora,C2,C4
+30,Murcia,13847.0,38160.0,42288.0,45848.0,empeora,C2,C4
+31,Navarra,-2297.0,4589.0,6555.0,10945.0,indeterminado,C4,C4
+32,Ourense,-1189.0,2362.0,6691.0,7485.0,indeterminado,C4,C4
+33,Asturias,-12381.0,-667.0,4665.0,8247.0,indeterminado,C4,C4
+34,Palencia,-3201.0,-1803.0,-845.0,370.0,indeterminado,C4,C4
+35,"Palmas, Las",6681.0,19034.0,22489.0,25053.0,empeora,C2,C4
+36,Pontevedra,-9403.0,5144.0,10686.0,12579.0,indeterminado,C4,C4
+37,Salamanca,-3409.0,672.0,2636.0,4277.0,indeterminado,C4,C4
+38,Santa Cruz de Tenerife,11099.0,17228.0,21308.0,24823.0,empeora,C2,C4
+39,Cantabria,-3507.0,4578.0,7140.0,9313.0,indeterminado,C4,C4
+40,Segovia,-390.0,1405.0,2490.0,3689.0,indeterminado,C4,C4
+41,Sevilla,-34864.0,-283.0,4392.0,9897.0,indeterminado,C4,C4
+42,Soria,-2513.0,-933.0,-207.0,895.0,indeterminado,C4,C4
+43,Tarragona,17553.0,26827.0,30174.0,33107.0,empeora,C2,C4
+44,Teruel,-1229.0,340.0,1440.0,1982.0,indeterminado,C4,C4
+45,Toledo,5566.0,12967.0,16015.0,18018.0,empeora,C2,C4
+46,Valencia/València,45143.0,54956.0,63025.0,79755.0,empeora,C2,C4
+47,Valladolid,-7971.0,502.0,2266.0,3642.0,indeterminado,C4,C4
+48,Bizkaia,-5718.0,4210.0,7191.0,13843.0,indeterminado,C4,C4
+49,Zamora,-3125.0,-824.0,834.0,1486.0,indeterminado,C4,C4
+50,Zaragoza,-1930.0,7897.0,11310.0,13631.0,indeterminado,C4,C4
+51,Ceuta,-469.0,721.0,984.0,1235.0,indeterminado,C4,C4
+52,Melilla,-1120.0,902.0,1098.0,2078.0,indeterminado,C4,C4

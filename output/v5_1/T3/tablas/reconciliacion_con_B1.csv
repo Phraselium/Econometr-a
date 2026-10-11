@@ -1,0 +1,4 @@
+paso,N_anual_min,N_anual_central,N_anual_max
+"B1 (v5): R acotado a 0, A1 con bajas 0-0,2 %, sin X",93628,214868,309921
+T3 sin X (R y A1 con bajas T1),99388,210424,292083
+"T3 con X (liberadas que no llegan, suma)",123936,245989,338663

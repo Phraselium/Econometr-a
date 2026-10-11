@@ -1,0 +1,147 @@
+[
+ {
+  "id": "T3-H1",
+  "indicador": "Déficit acumulado sin bajas (12 combinaciones de M0: 4 de fuentes; las bajas a 0)",
+  "valor": null,
+  "min": 562692.0,
+  "max": 688692.0,
+  "unidad": "viviendas",
+  "periodo": "2021-2024",
+  "cobertura": "España",
+  "fuentes": [
+   "M0",
+   "INE ECP/EPA",
+   "Ministerio, Catastro"
+  ],
+  "capa": "C1",
+  "fecha_dato": "2024"
+ },
+ {
+  "id": "T3-H2",
+  "indicador": "Déficit acumulado con las bajas estimadas de T1 (4 fuentes x tasa 0 / central / máx.)",
+  "valor": 653096.9,
+  "min": 562692.0,
+  "max": 744144.3,
+  "unidad": "viviendas",
+  "periodo": "2021-2024",
+  "cobertura": "España",
+  "fuentes": [
+   "T1",
+   "M0",
+   "Licencias de demolición MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2024"
+ },
+ {
+  "id": "T3-H3",
+  "indicador": "Nuevo máximo del déficit 2021-2024 frente al máximo del supuesto antiguo de bajas 0,1-0,2 % (902.808)",
+  "valor": 744144.3,
+  "min": 744144.3,
+  "max": 902808.0,
+  "unidad": "viviendas",
+  "periodo": "2021-2024",
+  "cobertura": "España",
+  "fuentes": [
+   "T1",
+   "M0"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2024"
+ },
+ {
+  "id": "T3-H4",
+  "indicador": "Déficit 2021-2025 con las bajas estimadas de T1 (ECP, con y sin protegida)",
+  "valor": 763415.6,
+  "min": 700934.0,
+  "max": 826702.8,
+  "unidad": "viviendas",
+  "periodo": "2021-2025",
+  "cobertura": "España",
+  "fuentes": [
+   "A4",
+   "T1"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "T3-H5",
+  "indicador": "Necesidad anual de vivienda 2026-2035 recalculada (A+R+V+F-M-K+X; no resta liberadas)",
+  "valor": 245988.6,
+  "min": 123936.4,
+  "max": 338663.0,
+  "unidad": "viviendas/año",
+  "periodo": "2026-2035",
+  "cobertura": "España (52 provincias)",
+  "fuentes": [
+   "B1",
+   "T1",
+   "T2",
+   "A4"
+  ],
+  "capa": "C4",
+  "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; T1 y T2 de v5.1 (ejecución 2026-10-11)"
+ },
+ {
+  "id": "T3-H6",
+  "indicador": "Liberadas por envejecimiento que no llegan al mercado (componente que suma), por año",
+  "valor": 35564.2,
+  "min": 24548.2,
+  "max": 46580.2,
+  "unidad": "viviendas/año",
+  "periodo": "2026-2035",
+  "cobertura": "España",
+  "fuentes": [
+   "T2"
+  ],
+  "capa": "C4",
+  "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; T1 y T2 de v5.1 (ejecución 2026-10-11)"
+ },
+ {
+  "id": "T3-H7",
+  "indicador": "Reposición con las bajas de T1 (10 años)",
+  "valor": 69406.7,
+  "min": 0.0,
+  "max": 140446.9,
+  "unidad": "viviendas",
+  "periodo": "2026-2035",
+  "cobertura": "España",
+  "fuentes": [
+   "T1"
+  ],
+  "capa": "C4",
+  "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; T1 y T2 de v5.1 (ejecución 2026-10-11)"
+ },
+ {
+  "id": "T3-H8",
+  "indicador": "Amplitud conjunta (máx. - mín.) de la necesidad; mayor aporte: movilizables (M)",
+  "valor": 214726.6,
+  "min": 73355.3,
+  "max": 73355.3,
+  "unidad": "viviendas/año",
+  "periodo": "2026-2035",
+  "cobertura": "España",
+  "fuentes": [
+   "T3"
+  ],
+  "capa": "C4",
+  "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; T1 y T2 de v5.1 (ejecución 2026-10-11)"
+ },
+ {
+  "id": "T3-H9",
+  "indicador": "Veces que cabe la producción actual (media de 72.264-94.426) en la necesidad anual (territorio común; mínimo, central, máximo)",
+  "valor": 3.0,
+  "min": 1.5,
+  "max": 4.1,
+  "unidad": "veces",
+  "periodo": "2019-2024 (producción)",
+  "cobertura": "territorio común",
+  "fuentes": [
+   "M0",
+   "T3"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2024"
+ }
+]

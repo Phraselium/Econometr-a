@@ -38,7 +38,7 @@ CAPAS = {"C1", "C2", "C3", "C4"}
 
 
 def _ficheros() -> list[Path]:
-    out = [p for v in ("v3", "v4", "v5") for p in sorted((RAIZ / "output" / v).rglob("*.md"))]
+    out = [p for v in ("v3", "v4", "v5", "v5_1") for p in sorted((RAIZ / "output" / v).rglob("*.md"))]
     out += sorted((RAIZ / "docs" / "v5" / "plantillas").rglob("*.md"))   # v5: plantillas de entregables
     h = RAIZ / "docs" / "v3" / "hipotesis.md"
     return out + ([h] if h.exists() else [])
@@ -83,7 +83,7 @@ def revisar_ficha(f: dict, nombre: str) -> list[str]:
     if capa != "C3" and re.search(CAUSAL, texto, re.I) and not NEGACION.search(texto):
         err.append(f"{nombre}: lenguaje causal con capa {capa}")
     # v5 (revisión B): atribución en fichas C4 de módulos v5 («puede explicar», «contribuye», «el efecto»)
-    if capa == "C4" and nombre.startswith("output/v5/") and (m := re.search(r"\b(puede explicar|explica[nr]?|contribuy\w*|el efecto de)\b", texto, re.I)):
+    if capa == "C4" and nombre.startswith(("output/v5/", "output/v5_1/")) and (m := re.search(r"\b(puede explicar|explica[nr]?|contribuy\w*|el efecto de)\b", texto, re.I)):
         err.append(f"{nombre}: verbo de atribución «{m.group(0)}» con capa C4")
     err += [e.replace("<texto>", nombre) for e in revisar_texto(json.dumps(f, ensure_ascii=False), nombre)
             if "valorativo" in e or "partidista" in e]
@@ -98,7 +98,7 @@ def main() -> int:
     for p in fichas:
         errores += revisar_ficha(json.loads(p.read_text(encoding="utf-8")), str(p.relative_to(RAIZ)))
     # v5: fichas de módulo (listas) antes de pasar al verificador
-    for p in sorted((RAIZ / "output" / "v5").glob("*/fichas_verificador.json")):
+    for p in sorted((RAIZ / "output" / "v5").glob("*/fichas_verificador.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/fichas_verificador.json")):
         for f in json.loads(p.read_text(encoding="utf-8")):
             errores += revisar_ficha(f, f"{p.relative_to(RAIZ)}#{f.get('id')}")
     for e in errores:

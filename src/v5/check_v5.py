@@ -66,12 +66,16 @@ def cifras() -> list[str]:
 
 
 SUMAS_REQUERIDAS = ("A4", "B1", "B2", "D2")   # módulos con tablas provinciales declaradas
+SUMAS_REQUERIDAS_V51 = ("T1", "T2", "T3", "T4")
+OUT51 = RAIZ / "output" / "v5_1"
 
 
 def sumas() -> list[str]:
     err = [f"falta output/v5/{m}/control_sumas.json (suma provincial = nacional)" for m in SUMAS_REQUERIDAS
            if (OUT / m).is_dir() and not (OUT / m / "control_sumas.json").exists()]
-    for p in sorted(OUT.glob("*/control_sumas.json")):
+    err += [f"falta output/v5_1/{m}/control_sumas.json (suma provincial = nacional)" for m in SUMAS_REQUERIDAS_V51
+            if (OUT51 / m).is_dir() and not (OUT51 / m / "control_sumas.json").exists()]
+    for p in sorted(OUT.glob("*/control_sumas.json")) + sorted(OUT51.glob("*/control_sumas.json")):
         for c in json.loads(p.read_text()):
             tol = c.get("tolerancia_rel", 1e-6)
             if abs(c["suma_provincial"] - c["nacional"]) > tol * max(1.0, abs(c["nacional"])):
@@ -116,6 +120,20 @@ def lecturas_no_versionadas() -> list[str]:
     return sorted(set(err))
 
 
+def liberadas_no_restadas() -> list[str]:
+    """v5.1: la necesidad nunca resta las viviendas liberadas por envejecimiento (ya descontadas en la proyección del INE)."""
+    err = []
+    for p in sorted(OUT51.glob("*/control_liberadas.json")):
+        for c in json.loads(p.read_text()):
+            if abs(c["necesidad"] - c["suma_componentes_sin_L"]) > 1e-6 * max(1.0, abs(c["necesidad"])):
+                err.append(f"{p.relative_to(RAIZ)}: {c.get('tabla', '')}: la necesidad ({c['necesidad']}) no es la suma sin L ({c['suma_componentes_sin_L']})")
+    for p in list(OUT.rglob("*.md")) + list(PLANT.rglob("*.md")):
+        for i, l in enumerate(p.read_text().splitlines(), 1):
+            if re.search(r"(menos|restar|restando|descontar|descontando)\s+(las\s+)?(viviendas\s+)?liberadas", l, re.I) and not re.search(r"\bno\b|nunca|ya (las )?descuenta|contaría dos veces|doble", l, re.I):
+                err.append(f"{p.relative_to(RAIZ)}:{i}: parece restar las liberadas de la necesidad")
+    return err
+
+
 def topes_c3() -> list[str]:
     err = []
     for p in sorted(OUT.rglob("*.json")):
@@ -134,7 +152,7 @@ def topes_c3() -> list[str]:
 
 
 def main() -> int:
-    err = plantillas() + cifras() + sumas() + recuentos() + lecturas_no_versionadas() + topes_c3()
+    err = plantillas() + cifras() + sumas() + recuentos() + lecturas_no_versionadas() + topes_c3() + liberadas_no_restadas()
     for e in err:
         print(e)
     print(f"check_v5: {len(err)} errores")

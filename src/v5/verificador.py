@@ -39,7 +39,7 @@ VEREDICTOS_C4 = {"ANALIZADA, NO CONCLUYENTE", "NO ANALIZADA: FALTAN DATOS"}
 
 def _v5() -> list[dict]:
     out = []
-    for p in sorted((RAIZ / "output" / "v5").glob("*/fichas_verificador.json")):
+    for p in sorted((RAIZ / "output" / "v5").glob("*/fichas_verificador.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/fichas_verificador.json")):
         if p.parent.name == "verificador":
             continue
         out += json.loads(p.read_text(encoding="utf-8"))

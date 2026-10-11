@@ -91,7 +91,7 @@
   "fecha_dato": "2026-10-11"
  },
  {
-  "id": "m1b_elasticidad_anual_FE_unidad_año",
+  "id": "m1b_elasticidad_anual_FE_unidad_año_v2",
   "indicador": "Elasticidad precio tasado - alquiler (FE_unidad+año, asociación)",
   "valor": 1.313,
   "min": 0.93,
@@ -104,7 +104,7 @@
   "fecha_dato": "2026-10-11"
  },
  {
-  "id": "m1b_elasticidad_anual_FE_unidad_tendencia",
+  "id": "m1b_elasticidad_anual_FE_unidad_tendencia_v2",
   "indicador": "Elasticidad precio tasado - alquiler (FE_unidad+tendencia, asociación)",
   "valor": 0.434,
   "min": 0.177,

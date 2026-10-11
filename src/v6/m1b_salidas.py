@@ -83,6 +83,8 @@ def escribir(OUT, EXTRA, df, smoke, B):
     ylast = int(ult.anio)
 
     def hecho(i, ind, val, mn, mx, uni, per, cob, fu):
+        n = sum(1 for x in H if x["id"] == i or x["id"].startswith(i + "_v"))   # ids únicos para cifras_clave
+        i = i if n == 0 else f"{i}_v{n + 1}"
         H.append(dict(id=i, indicador=ind, valor=_f(val, 3), min=_f(mn, 3), max=_f(mx, 3), unidad=uni, periodo=per, cobertura=cob, fuentes=fu, capa="C4", fecha_dato=FECHA))
     cob = f"{int(ult.n_prov)} provincias de entrenamiento"
     fu = "MIVAU valor tasado; MIVAU-SERPAVI (alquiler de stock)"

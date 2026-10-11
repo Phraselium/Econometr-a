@@ -62,7 +62,7 @@ def v4_adaptadores() -> list[dict]:
 
 def v5_hechos() -> list[dict]:
     f = []
-    for p in sorted(V5.glob("*/hechos.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/hechos.json")):   # v5.1
+    for p in sorted(V5.glob("*/hechos.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6").glob("*/hechos.json")):   # v5.1 y v6
         h = json.loads(p.read_text())
         if not isinstance(h, list):
             continue

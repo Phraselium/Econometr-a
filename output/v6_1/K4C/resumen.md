@@ -1,6 +1,6 @@
 # K4c · Coherencia de cifras (resumen)
 
-Cifras significativas analizadas: 1993. Fuente de verdad: output/v5/cifras_clave.csv.
+Cifras significativas analizadas: 1989. Fuente de verdad: output/v5/cifras_clave.csv.
 
 ## Recuentos globales
 
@@ -8,7 +8,7 @@ Cifras significativas analizadas: 1993. Fuente de verdad: output/v5/cifras_clave
 |---|---|
 | EN_CIFRAS_CLAVE | 818 |
 | HISTORICA_MARCADA | 503 |
-| SIN_FECHA | 641 |
+| SIN_FECHA | 637 |
 | HUERFANA | 26 |
 | CONTRADICTORIA | 5 |
 
@@ -42,13 +42,13 @@ Cifras significativas analizadas: 1993. Fuente de verdad: output/v5/cifras_clave
 | output/v5/linkedin/08.md | 1 | 0 | 0 | 0 | 0 | 1 |
 | output/v5/linkedin/09.md | 0 | 0 | 3 | 0 | 0 | 3 |
 | output/v5/linkedin/10.md | 2 | 0 | 0 | 0 | 0 | 2 |
-| output/v5/lo_que_sabemos.md | 50 | 2 | 22 | 0 | 0 | 74 |
-| output/v5/policy_brief.md | 25 | 2 | 25 | 0 | 0 | 52 |
+| output/v5/lo_que_sabemos.md | 50 | 2 | 21 | 0 | 0 | 73 |
+| output/v5/policy_brief.md | 25 | 2 | 24 | 0 | 0 | 51 |
 | output/v5/ponencia/diapositivas.md | 16 | 0 | 13 | 0 | 0 | 29 |
 | output/v5/ponencia/guion.md | 11 | 0 | 22 | 0 | 0 | 33 |
-| output/v5/una_pagina.md | 19 | 0 | 1 | 0 | 0 | 20 |
+| output/v5/una_pagina.md | 19 | 0 | 0 | 0 | 0 | 19 |
 | output/v5/verificador/verificador.md | 254 | 26 | 8 | 26 | 4 | 318 |
-| output/v5/working_paper.md | 69 | 24 | 108 | 0 | 0 | 201 |
+| output/v5/working_paper.md | 69 | 24 | 107 | 0 | 0 | 200 |
 
 ## Contradictorias (prioridad 1)
 

@@ -47,16 +47,16 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 
 ## Alquiler y compraventa: qué predice y qué no (v6)
 
-[C4] Con datos públicos por provincia, municipio y distrito, los modelos de árboles predicen el alquiler de stock (SERPAVI) y el precio de compra (valor tasado) en provincias que no vieron mejor que la simple inercia: en el alquiler provincial, {{V6-M4-RMSE-alq_provincia:num}} % de error frente a {{V6-M4-PERS-alq_provincia:num}} %. Pero predecir no es explicar: ninguna variable es «relevante con seguridad», ninguna hipótesis confirmatoria pasa la corrección de Holm y, en el volumen trimestral de compraventas del último año, nada bate a la inercia. La población se asocia con los dos mercados y el PIB por habitante solo con la compra. Precio y alquiler se mueven juntos sin señales de exuberancia en ninguna de las {{E-V6-M1B-GSADF-TOT:num}} CCAA contrastadas. Para decidir, estos resultados orientan dónde mirar, no qué instrumento funciona.
+[C4] Con datos públicos por provincia, municipio y distrito, los modelos de árboles predicen el alquiler de stock (SERPAVI) y el precio de compra (valor tasado) en provincias que no vieron mejor que la simple inercia (y que la línea base más exigente en el alquiler de stock; en el precio anual, de forma frágil): en el alquiler provincial, {{V6-M4-RMSE-alq_provincia:num}} % de error frente a {{V6-M4-PERS-alq_provincia:num}} %. Pero predecir no es explicar: ninguna variable es «relevante con seguridad», ninguna hipótesis confirmatoria pasa la corrección de Holm y, en el volumen trimestral de compraventas del último año, nada bate a la inercia. La población se asocia con los dos mercados y el PIB por habitante solo con la compra. Precio y alquiler se mueven juntos sin señales de exuberancia en ninguna de las {{E-V6-M1B-GSADF-TOT:num}} CCAA contrastadas. Para decidir, estos resultados orientan dónde mirar, no qué instrumento funciona.
 
 ## Qué cambió entre versiones y por qué (v6.1)
 
 - [C4] **Inmigración.** v2 la asociaba más con el alquiler y v6 con la compra. El orden depende del método, de la medida de alquiler y de los controles, no de un resultado estable que se haya invertido.
-  - Con valor tasado, la asociación de la cuota de extranjeros es {{K2-CUOTA-COMPRA-SINPOB-SIN:valor}} sin controles.
+  - Con valor tasado, la asociación de la cuota de extranjeros es {{K2-CUOTA-COMPRA-SINPOB-SIN:valor}} sin población ni controles de demanda externa.
   - Baja a {{K2-CUOTA-COMPRA-SINPOB-EXT:valor}} con controles de costa y demanda externa.
   - Pasa a {{K2-CUOTA-COMPRA-SIN:valor}} controlando por población, que puede ser mediadora.
   - «ANALIZADA, NO CONCLUYENTE»: no se puede afirmar un efecto.
-- [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en {{K1-N-MEJOR:valor}} de las tareas: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.
+- [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en {{K1-N-MEJOR:num}} de las {{K1-N-TAREAS:valor}}: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.
 - [C4] **Iniciadas y alquiler.** La asociación es del mismo año. No hay orden temporal detectable, y no indica que construir suba el alquiler.
 - **Correcciones** (ERRATA.md): los contratos nuevos de la Comunitat Valenciana pasan a {{A23-A10:valor}} ({{A23-A10:rango}}) por un error de ponderación; otros redondeos son menores. Ninguna conclusión cambia.
 

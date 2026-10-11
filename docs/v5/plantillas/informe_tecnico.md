@@ -634,7 +634,7 @@ Error en la parte espacial sellada (RMSE en log-puntos multiplicados por cien, a
 
 Fuente: `output/v6/M4/mejor_modelo.csv` y `output/v6/M4/tabla_modelos.md`. El mejor modelo se elige por el error espacial sellado y la estabilidad entre periodos, nunca por el R². En el precio municipal y en Registradores el bosque no mejora al ECM v1 en más de un 5 % del error, y se queda la línea base.<!-- check:cifra-libre -->
 
-**Lectura.** Los árboles predicen mejor el alquiler de stock y el precio provincial que la inercia, en provincias que no vieron. En el precio municipal y con Registradores, la econometría heredada (ECM v1) basta. Predecir mejor no identifica por qué sube el precio.
+**Lectura.** Los árboles predicen mejor el alquiler de stock y el precio provincial que la inercia, en provincias que no vieron. En el precio municipal y con Registradores, la econometría heredada (ECM v1) basta. Predecir mejor no identifica por qué sube el precio. Frente a la línea base más exigente (§11.3 bis), la ventaja se mantiene en el alquiler de stock y en el precio trimestral de tasación. En el precio provincial anual es frágil, y en el precio trimestral el modelo queda por detrás de la base en la parte temporal. <!-- check:cifra-libre (referencia a sección) -->
 
 ### 11.3 bis Frente a la línea base más exigente (v6.1) [C4]
 
@@ -643,7 +643,7 @@ En v6.1 la comparación se repite en la misma validación sellada, con tres lín
 - un AR provincial con factor común;
 - efectos fijos de provincia y año.
 
-Solo cuentan como «predice mejor» los modelos que superan a la línea base con menor error en DM-HLN y en una permutación exacta sobre las provincias selladas, ambas con Holm. El modelo predice mejor que la base más exigente en {{K1-N-MEJOR:valor}} de las tareas.
+Solo cuentan como «predice mejor» los modelos que superan a la línea base con menor error en DM-HLN y en una permutación exacta sobre las provincias selladas, ambas con Holm. El modelo predice mejor que la base más exigente en {{K1-N-MEJOR:num}} de las {{K1-N-TAREAS:valor}}.
 
 | Mercado | Nivel | Error del mejor modelo (aprox. %) | Base más exigente (aprox. %) | Cociente | Clase |
 |---|---|---|---|---|---|
@@ -720,7 +720,7 @@ El historial completo, con versión, variable, medida, nivel, periodo, método, 
 - En v2, el flujo de inmigración, instrumentado con las cuotas de 2002, se asociaba más con el alquiler que con el precio de compra.
 - En v6, la cuota de extranjeros aparece en más modelos de compra que de alquiler.
 - Al repetir la comparación cambiando una sola dimensión cada vez, el orden entre mercados depende del método (mínimos cuadrados en dos etapas frente a MCO) y de la medida de alquiler (SERPAVI frente a IPC).
-- Con valor tasado y sin controles, la cuota de extranjeros se asocia con {{K2-CUOTA-COMPRA-SINPOB-SIN:valor}} ({{K2-CUOTA-COMPRA-SINPOB-SIN:rango}}).
+- Con valor tasado, sin población ni controles de demanda externa, la cuota de extranjeros se asocia con {{K2-CUOTA-COMPRA-SINPOB-SIN:valor}} ({{K2-CUOTA-COMPRA-SINPOB-SIN:rango}}).
   - Con controles de demanda externa (costa, vivienda no principal y compras de extranjeros residentes) baja a {{K2-CUOTA-COMPRA-SINPOB-EXT:valor}} ({{K2-CUOTA-COMPRA-SINPOB-EXT:rango}}). Esto es compatible con que la cuota recoja en parte provincias de costa.
   - Controlando además por población, que dentro de cada provincia tiene una correlación de {{K2-CORR-POB-DENTRO:valor}} con la cuota, pasa a {{K2-CUOTA-COMPRA-SIN:valor}} ({{K2-CUOTA-COMPRA-SIN:rango}}). La población puede ser mediadora o un término mecánico de la propia inmigración: controlarla estima otra magnitud y no prueba que la cuota no importe.
 - Las islas no se pueden contrastar porque están en la muestra sellada.

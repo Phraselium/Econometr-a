@@ -13,7 +13,7 @@
 
 **Qué cambió entre versiones (v6.1).** <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
 - La asociación de la inmigración con precio o alquiler cambia de mercado según el método, la medida y los controles: es «analizada, no concluyente» [C4].
-- Frente a la línea base más exigente, los modelos predicen mejor en 6,0 tareas de las tareas [C4].
+- Frente a la línea base más exigente, los modelos predicen mejor en 6 de las 9 tareas [C4].
 - Las correcciones están en ERRATA.md.
 
 > **Lo que NO se puede afirmar con estos datos**

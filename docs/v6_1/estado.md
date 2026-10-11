@@ -69,3 +69,5 @@ Plan de ahorro (D7): revisor post-K2 ≤60.000, K3 ≤70.000, K4c/K4d ≤90.000,
   - unidad del ratio de K3 corregida;
   - docs/v6_1/auditoria.md consolidada.
 - Acumulado de subagentes: 1.081.587 tokens (77 %). Queda el revisor final, a cargo de la reserva.
+- Revisor final (50.799 tokens): REHACER solo de texto (hallazgos 1-6), aplicado. Total de subagentes: 1.132.386 de 1.400.000 (81 %; el revisor final sale de la reserva de cierre).
+- Siguiente: `make check` y `make all` ×2 sin red en un clon limpio; después, cierre (CHANGELOG, CITATION y etiqueta local v6.1).

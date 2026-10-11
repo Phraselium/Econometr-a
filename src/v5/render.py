@@ -21,7 +21,7 @@ MARC = re.compile(r"\{\{([A-Za-z0-9_.\-]+)(?::([a-z_]+))?\}\}")
 
 
 CONTEOS = {"instrumentos", "variables", "hipótesis", "CCAA", "referencias", "afirmaciones", "distritos", "documentos", "medidas", "especificaciones",
-           "series", "entidades", "clase", "declarantes", "hechos/anio", "procedimientos/anio", "lanzamientos/anio"}
+           "series", "entidades", "tareas", "clase", "declarantes", "hechos/anio", "procedimientos/anio", "lanzamientos/anio"}
 
 
 def fmt_num(x: float, unidad: str = "") -> str:
@@ -31,6 +31,8 @@ def fmt_num(x: float, unidad: str = "") -> str:
     # recuentos (instrumentos, referencias, afirmaciones...): enteros sin decimales
     if x.is_integer() and str(unidad).split(" ")[0] in CONTEOS:
         return f"{x:,.0f}".replace(",", ".")
+    if unidad == "cociente":  # v6.1: cocientes de error con dos decimales (1,05 no debe leerse 1,0)
+        return f"{x:.2f}".replace(".", ",")
     if unidad in ("viviendas", "hogares", "personas", "contratos", "€", "€/m²", "€/mes", "municipios", "provincias") or abs(x) >= 1000:
         s = f"{x:,.0f}".replace(",", ".")
     elif abs(x) >= 10:

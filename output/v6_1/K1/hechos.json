@@ -418,5 +418,20 @@
   ],
   "capa": "C4",
   "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-N-TAREAS",
+  "indicador": "Tareas comparadas en la validacion sellada v6 (K1)",
+  "valor": 9,
+  "min": null,
+  "max": null,
+  "unidad": "tareas",
+  "periodo": "validacion sellada v6",
+  "cobertura": "9 tareas",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
  }
 ]

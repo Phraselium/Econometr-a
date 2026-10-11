@@ -15,7 +15,7 @@ El efecto en las cifras publicadas se refiere a output/v5/cifras_clave.csv y a l
 |---|---|---|---|
 | Crítica | 0 | — | — |
 | Alta | 5 | 5 | 2 (K4a-01, R-08) |
-| Media | 13 | 9 | 0 |
+| Media | 13 | 9 | 0 (R-10 corrige una descripción, no una cifra) |
 | Baja | 12 | 6 | 0 |
 
 ## Altas

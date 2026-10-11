@@ -297,6 +297,9 @@ def escribir_json(R, mod, tareas):
     hechos.append(dict(id="K1-N-MEJOR", indicador="Tareas en que el mejor modelo predice mejor que la base mas exigente (DM-HLN y permutacion, Holm, grupo espacial)",
                        valor=n_mej, min=None, max=None, unidad="tareas", periodo="validacion sellada v6", cobertura=f"{len(R)} tareas",
                        fuentes=["output/v6_1/K1/tabla_modelos_k1.csv"], capa="C4", fecha_dato=FECHA))
+    hechos.append(dict(id="K1-N-TAREAS", indicador="Tareas comparadas en la validacion sellada v6 (K1)", valor=int(len(R)), min=None, max=None,
+                       unidad="tareas", periodo="validacion sellada v6", cobertura=f"{len(R)} tareas",
+                       fuentes=["output/v6_1/K1/tabla_modelos_k1.csv"], capa="C4", fecha_dato=FECHA))
     (K1 / "hechos.json").write_text(json.dumps(hechos, ensure_ascii=False, indent=1, default=float))
 
 

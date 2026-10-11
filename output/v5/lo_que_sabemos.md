@@ -51,7 +51,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - [C4] La parte de una ayuda general que se traslada al precio, por clase territorial (A4, método A, rejilla de elasticidades de demanda): clase `1`, falta y es rentable, 27,8-81,8 %; clase `2`, la oferta no responde, 88,1-100,0 %; clase `3`, no rentable, 50,1-89,8 % [C4]. El extremo bajo se apoya en la literatura con oferta elástica (Eriksen y Ross, 2015) y el alto en la de oferta rígida (Gibbons y Manning, 2006; Hilber y Turner, 2014).
 - [C4] En Europa (Eurostat): tenencia en propiedad en España de 73,6 % de la población en 2025, dentro del rango intercuartílico de la Unión Europea; precio real de la vivienda 42,6 % acumulado desde 2015.
 - [C4] Crédito a construcción y actividades inmobiliarias: -79,3 % desde su máximo de 2008.
-- [C4] (v6) En provincias que los modelos no vieron, los árboles predicen el alquiler de stock con menos error que la persistencia: 1,6 % frente a 4,2 % en la provincia (SERPAVI, último año disponible). En el precio de compra (valor tasado) provincial: 2,5 % frente a 4,0 %. Predecir mejor no dice por qué sube el precio.
+- [C4] (v6) En provincias que los modelos no vieron, los árboles predicen el alquiler de stock con menos error que la persistencia: 1,6 % frente a 4,2 % en la provincia (SERPAVI, último año disponible). En el precio de compra (valor tasado) provincial: 2,5 % frente a 4,0 %. Frente a la línea base más exigente (un AR con factor común), la ventaja se mantiene en el alquiler, pero en el precio provincial anual es frágil. Predecir mejor no dice por qué sube el precio.
 - [C4] (v6) La población se asocia con el alquiler y con la compra; el PIB por habitante, con la compra y no con el alquiler (probabilidad de inclusión 0,84 frente a 0,10). En la población extranjera y en las viviendas iniciadas los métodos discrepan; la asociación de las iniciadas con el alquiler no indica que construir suba el alquiler (el orden temporal con el crecimiento del alquiler no se distingue de cero, C4).
 - [C4] (v6) Precio y alquiler se mueven juntos: elasticidad de 0,59 a 2,1 según la especificación (asociación). La ratio precio/alquiler mediana bajó de 20,3 a 17,1 años de alquiler entre 2015 y 2023, y el GSADF no detecta exuberancia en ninguna de las 11 CCAA contrastadas.
 
@@ -70,11 +70,11 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 ## Qué cambió entre versiones y por qué (v6.1)
 
 - [C4] **Inmigración.** v2 la asociaba más con el alquiler y v6 con la compra. El orden depende del método, de la medida de alquiler y de los controles, no de un resultado estable que se haya invertido.
-  - Con valor tasado, la asociación de la cuota de extranjeros es 4,3 % por +1 pp de cuota de extranjeros (t-1) sin controles.
+  - Con valor tasado, la asociación de la cuota de extranjeros es 4,3 % por +1 pp de cuota de extranjeros (t-1) sin población ni controles de demanda externa.
   - Baja a 1,6 % por +1 pp de cuota de extranjeros (t-1) con controles de costa y demanda externa.
   - Pasa a -1,3 % por +1 pp de cuota de extranjeros (t-1) controlando por población, que puede ser mediadora.
   - «ANALIZADA, NO CONCLUYENTE»: no se puede afirmar un efecto.
-- [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en 6,0 tareas de las tareas: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.
+- [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en 6 de las 9 tareas: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.
 - [C4] **Iniciadas y alquiler.** La asociación es del mismo año. No hay orden temporal detectable, y no indica que construir suba el alquiler.
 - **Correcciones** (ERRATA.md): los contratos nuevos de la Comunitat Valenciana pasan a 27,7 % (24,6-30,8 %) por un error de ponderación; otros redondeos son menores. Ninguna conclusión cambia.
 

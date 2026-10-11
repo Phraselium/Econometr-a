@@ -1,0 +1,23 @@
+{
+ "rama": "T6",
+ "pregunta": "¿Hay datos abiertos oficiales de alquiler de temporada y por habitaciones (BK-014) que permitan medir el desvío a temporada? Y, MESVAL (BK-017): ¿es replicable con fuentes abiertas?",
+ "capa": "NO ANALIZADA: FALTAN DATOS",
+ "datos": [],
+ "N": null,
+ "metodo": null,
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": null,
+ "diagnosticos": null,
+ "fuera_muestra": {"modelo": null, "rmse": null, "dm_vs_ar4": null},
+ "notas": [
+  "Fecha de la prueba: 2026-10-11. Sin descarga a data/raw/v5_1/t6/: ninguna fuente probada contiene duración del contrato ni modalidad de temporada o habitación utilizable.",
+  "(a) INE tabla 39363 (HTTP 200): viviendas turísticas, sin contratos de temporada.",
+  "(b) Registro Único de Arrendamientos: mivau.gob.es responde 403 (curl y WebFetch); no se localizó tabla estadística agregada.",
+  "(c) Incasòl (transparenciacatalunya qww9-bvhh, hepw-33ik; actualizado 2026-07-30) sin duración; GVA fianzas (viv-reg-fia-2026, 2026-10-10) sin duración; Euskadi EMAL mezcla temporada con vivienda habitual; Madrid y Baleares sin endpoint verificado.",
+  "(d) Barcelona y València: sin datasets de alquiler de temporada o habitaciones.",
+  "BK-017 MESVAL: no replicable con fuentes abiertas (datos privados de Fotocasa); sin descarga.",
+  "Solicitudes que lo resolverían: S4 y S6 (docs/v5/solicitudes.md)."
+ ]
+}

@@ -135,3 +135,5 @@ Ordenados por impacto y, a igual impacto, por menor coste.
 | BK-038 | Abierto | — | P-E de v3 | No especificado ni pre-registrado | M |
 | BK-048 | Anotado | — | Menores de v1 | v1 cerrada | — |
 | BK-E3 | Abierto | output/v5/articulos/ | Ampliar los tres artículos a 5.000-7.000 palabras antes del envío a revistas | Presupuesto del redactor | M |
+| BK-014 (v5.1) | Probado de nuevo el 2026-10-11, sin datos | docs/v5_1/fuentes_fallidas.md (T6) | Alquiler de temporada y por habitaciones | No hay fuente oficial con la duración del contrato | S (solicitudes S4 y S6) |
+| BK-017 (v5.1) | No replicable | — | MESVAL | Datos privados | L |

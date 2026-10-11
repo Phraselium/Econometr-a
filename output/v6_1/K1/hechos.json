@@ -1,0 +1,422 @@
+[
+ {
+  "id": "K1-RMSE-MUN_PRECIO_ANUAL",
+  "indicador": "RMSE espacial sellado del mejor modelo (MUN_PRECIO_ANUAL__bosque_bootstrap_bayesiano), compra (precio), municipio (anual), medida de precio: valor tasado MIVAU municipal",
+  "valor": 4.127,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "90 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-BASE-MUN_PRECIO_ANUAL",
+  "indicador": "RMSE espacial sellado de la base mas exigente (ecm_v1), compra (precio), municipio (anual), medida de precio: valor tasado MIVAU municipal",
+  "valor": 3.933,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "90 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RATIO-MUN_PRECIO_ANUAL",
+  "indicador": "Cociente de RMSE espacial, mejor modelo / base mas exigente, compra (precio), municipio (anual), medida de precio: valor tasado MIVAU municipal",
+  "valor": 1.049,
+  "unidad": "cociente",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "90 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RMSE-PROV_PRECIO_ANUAL",
+  "indicador": "RMSE espacial sellado del mejor modelo (PROV_PRECIO_ANUAL__random_forest), compra (precio), provincia (anual), medida de precio: valor tasado MIVAU",
+  "valor": 2.478,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "95 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-BASE-PROV_PRECIO_ANUAL",
+  "indicador": "RMSE espacial sellado de la base mas exigente (ecm_v1), compra (precio), provincia (anual), medida de precio: valor tasado MIVAU",
+  "valor": 2.818,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "95 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RATIO-PROV_PRECIO_ANUAL",
+  "indicador": "Cociente de RMSE espacial, mejor modelo / base mas exigente, compra (precio), provincia (anual), medida de precio: valor tasado MIVAU",
+  "valor": 0.879,
+  "unidad": "cociente",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "95 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RMSE-PROV_PRECIO_ANUAL_REGISTRADORES",
+  "indicador": "RMSE espacial sellado del mejor modelo (PROV_PRECIO_ANUAL_REGISTRADORES__bosque_bootstrap_bayesiano), compra (precio), provincia (anual), medida de precio: Registradores (robustez)",
+  "valor": 4.699,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "99 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-BASE-PROV_PRECIO_ANUAL_REGISTRADORES",
+  "indicador": "RMSE espacial sellado de la base mas exigente (ecm_v1), compra (precio), provincia (anual), medida de precio: Registradores (robustez)",
+  "valor": 4.676,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "99 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RATIO-PROV_PRECIO_ANUAL_REGISTRADORES",
+  "indicador": "Cociente de RMSE espacial, mejor modelo / base mas exigente, compra (precio), provincia (anual), medida de precio: Registradores (robustez)",
+  "valor": 1.005,
+  "unidad": "cociente",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "99 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RMSE-PROV_PRECIO_TRIM",
+  "indicador": "RMSE espacial sellado del mejor modelo (PROV_PRECIO_TRIM__bosque_bootstrap_bayesiano), compra (precio), provincia (trimestral), medida de precio: valor tasado MIVAU",
+  "valor": 1.614,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "380 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-BASE-PROV_PRECIO_TRIM",
+  "indicador": "RMSE espacial sellado de la base mas exigente (ar_factor_fac), compra (precio), provincia (trimestral), medida de precio: valor tasado MIVAU",
+  "valor": 1.817,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "380 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RATIO-PROV_PRECIO_TRIM",
+  "indicador": "Cociente de RMSE espacial, mejor modelo / base mas exigente, compra (precio), provincia (trimestral), medida de precio: valor tasado MIVAU",
+  "valor": 0.888,
+  "unidad": "cociente",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "380 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RMSE-PROV_VOL_ANUAL",
+  "indicador": "RMSE espacial sellado del mejor modelo (PROV_VOL_ANUAL__bosque_bootstrap_bayesiano), compra (volumen), provincia (anual)",
+  "valor": 13.045,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "99 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-BASE-PROV_VOL_ANUAL",
+  "indicador": "RMSE espacial sellado de la base mas exigente (ecm_v1), compra (volumen), provincia (anual)",
+  "valor": 13.698,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "99 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RATIO-PROV_VOL_ANUAL",
+  "indicador": "Cociente de RMSE espacial, mejor modelo / base mas exigente, compra (volumen), provincia (anual)",
+  "valor": 0.952,
+  "unidad": "cociente",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "99 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RMSE-PROV_VOL_TRIM",
+  "indicador": "RMSE espacial sellado del mejor modelo (PROV_VOL_TRIM__bosque_bootstrap_bayesiano), compra (volumen), provincia (trimestral)",
+  "valor": 11.301,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "380 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-BASE-PROV_VOL_TRIM",
+  "indicador": "RMSE espacial sellado de la base mas exigente (ar_factor_fac), compra (volumen), provincia (trimestral)",
+  "valor": 16.739,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "380 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RATIO-PROV_VOL_TRIM",
+  "indicador": "Cociente de RMSE espacial, mejor modelo / base mas exigente, compra (volumen), provincia (trimestral)",
+  "valor": 0.675,
+  "unidad": "cociente",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "380 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RMSE-alq_distrito",
+  "indicador": "RMSE espacial sellado del mejor modelo (alquiler_distrito_gb), alquiler de stock (SERPAVI), distrito",
+  "valor": 5.603,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "122 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-BASE-alq_distrito",
+  "indicador": "RMSE espacial sellado de la base mas exigente (ecm_v1), alquiler de stock (SERPAVI), distrito",
+  "valor": 6.122,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "122 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RATIO-alq_distrito",
+  "indicador": "Cociente de RMSE espacial, mejor modelo / base mas exigente, alquiler de stock (SERPAVI), distrito",
+  "valor": 0.915,
+  "unidad": "cociente",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "122 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RMSE-alq_municipio",
+  "indicador": "RMSE espacial sellado del mejor modelo (alquiler_municipio_gb), alquiler de stock (SERPAVI), municipio",
+  "valor": 5.054,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "82 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-BASE-alq_municipio",
+  "indicador": "RMSE espacial sellado de la base mas exigente (ar_factor_fac), alquiler de stock (SERPAVI), municipio",
+  "valor": 5.432,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "82 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RATIO-alq_municipio",
+  "indicador": "Cociente de RMSE espacial, mejor modelo / base mas exigente, alquiler de stock (SERPAVI), municipio",
+  "valor": 0.93,
+  "unidad": "cociente",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "82 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RMSE-alq_provincia",
+  "indicador": "RMSE espacial sellado del mejor modelo (alquiler_provincia_gb), alquiler de stock (SERPAVI), provincia",
+  "valor": 1.607,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "82 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-BASE-alq_provincia",
+  "indicador": "RMSE espacial sellado de la base mas exigente (ar_factor_fac), alquiler de stock (SERPAVI), provincia",
+  "valor": 2.203,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "82 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-RATIO-alq_provincia",
+  "indicador": "Cociente de RMSE espacial, mejor modelo / base mas exigente, alquiler de stock (SERPAVI), provincia",
+  "valor": 0.729,
+  "unidad": "cociente",
+  "min": null,
+  "max": null,
+  "periodo": "validacion sellada v6 (11 provincias, grupo espacial)",
+  "cobertura": "82 celdas provincia-periodo",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K1-N-MEJOR",
+  "indicador": "Tareas en que el mejor modelo predice mejor que la base mas exigente (DM-HLN y permutacion, Holm, grupo espacial)",
+  "valor": 6,
+  "min": null,
+  "max": null,
+  "unidad": "tareas",
+  "periodo": "validacion sellada v6",
+  "cobertura": "9 tareas",
+  "fuentes": [
+   "output/v6_1/K1/tabla_modelos_k1.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ }
+]

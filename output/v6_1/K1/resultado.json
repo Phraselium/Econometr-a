@@ -1,0 +1,124 @@
+{
+ "rama": "v6_1/K1",
+ "modulo": "K1",
+ "pregunta": "Que modelos de v6 siguen prediciendo mejor, en la misma validacion sellada, cuando la referencia es la linea base mas exigente?",
+ "capa": "C4",
+ "medida_precio": {
+  "principal": "valor tasado MIVAU (provincia, municipio)",
+  "robustez": [
+   "Registradores (provincia anual)"
+  ],
+  "alquiler": "no aplica (SERPAVI, stock)"
+ },
+ "datos": "output/v6/M4/sellado_*.json y output/v6_1/K1/sellado_*.json (evaluate_v6, ids k1_*)",
+ "N": {
+  "tareas": 9,
+  "provincias_selladas": 11,
+  "celdas_espaciales_min": 82
+ },
+ "metodo": "RMSE, DM-HLN (celdas provincia-periodo y agregado por periodo), permutacion por inversion de signo por provincia (10.000, SEED=20261010) y Holm; base exigente = menor RMSE espacial entre 7 bases factibles.",
+ "estimacion": [
+  {
+   "tarea": "MUN_PRECIO_ANUAL",
+   "mejor_modelo": "MUN_PRECIO_ANUAL__bosque_bootstrap_bayesiano",
+   "base_exigente": "ecm_v1",
+   "rmse_pct_modelo": 4.127032672189621,
+   "rmse_pct_base": 3.9327762309530807,
+   "ratio": 1.0493942268333594,
+   "clase": "no distinguible"
+  },
+  {
+   "tarea": "PROV_PRECIO_ANUAL",
+   "mejor_modelo": "PROV_PRECIO_ANUAL__random_forest",
+   "base_exigente": "ecm_v1",
+   "rmse_pct_modelo": 2.47815601234284,
+   "rmse_pct_base": 2.8177708129469976,
+   "ratio": 0.8794739447780113,
+   "clase": "predice mejor que la base mas exigente"
+  },
+  {
+   "tarea": "PROV_PRECIO_ANUAL_REGISTRADORES",
+   "mejor_modelo": "PROV_PRECIO_ANUAL_REGISTRADORES__bosque_bootstrap_bayesiano",
+   "base_exigente": "ecm_v1",
+   "rmse_pct_modelo": 4.69949047796393,
+   "rmse_pct_base": 4.675937870401568,
+   "ratio": 1.0050369804336896,
+   "clase": "no distinguible"
+  },
+  {
+   "tarea": "PROV_PRECIO_TRIM",
+   "mejor_modelo": "PROV_PRECIO_TRIM__bosque_bootstrap_bayesiano",
+   "base_exigente": "ar_factor_fac",
+   "rmse_pct_modelo": 1.613956221837991,
+   "rmse_pct_base": 1.8173761437968312,
+   "ratio": 0.8880694441526791,
+   "clase": "predice mejor que la base mas exigente"
+  },
+  {
+   "tarea": "PROV_VOL_ANUAL",
+   "mejor_modelo": "PROV_VOL_ANUAL__bosque_bootstrap_bayesiano",
+   "base_exigente": "ecm_v1",
+   "rmse_pct_modelo": 13.044732237851386,
+   "rmse_pct_base": 13.698449911473585,
+   "ratio": 0.9522779819726424,
+   "clase": "no distinguible"
+  },
+  {
+   "tarea": "PROV_VOL_TRIM",
+   "mejor_modelo": "PROV_VOL_TRIM__bosque_bootstrap_bayesiano",
+   "base_exigente": "ar_factor_fac",
+   "rmse_pct_modelo": 11.30114523644434,
+   "rmse_pct_base": 16.738852031556977,
+   "ratio": 0.6751445807119161,
+   "clase": "predice mejor que la base mas exigente"
+  },
+  {
+   "tarea": "alq_distrito",
+   "mejor_modelo": "alquiler_distrito_gb",
+   "base_exigente": "ecm_v1",
+   "rmse_pct_modelo": 5.602688597896718,
+   "rmse_pct_base": 6.121743878665939,
+   "ratio": 0.9152112059803563,
+   "clase": "predice mejor que la base mas exigente"
+  },
+  {
+   "tarea": "alq_municipio",
+   "mejor_modelo": "alquiler_municipio_gb",
+   "base_exigente": "ar_factor_fac",
+   "rmse_pct_modelo": 5.054267486780733,
+   "rmse_pct_base": 5.4318963055221605,
+   "ratio": 0.9304793763537933,
+   "clase": "predice mejor que la base mas exigente"
+  },
+  {
+   "tarea": "alq_provincia",
+   "mejor_modelo": "alquiler_provincia_gb",
+   "base_exigente": "ar_factor_fac",
+   "rmse_pct_modelo": 1.6065669415163826,
+   "rmse_pct_base": 2.2031150034483225,
+   "ratio": 0.7292251829803614,
+   "clase": "predice mejor que la base mas exigente"
+  }
+ ],
+ "ic95": null,
+ "p_ajustado": "Holm por tarea y grupo (DM-HLN y permutacion; tabla_largo_k1.csv)",
+ "nivel_evidencia": "EXPLORATORIO (C4): prediccion, no causalidad",
+ "diagnosticos": {
+  "clases": {
+   "predice mejor que la base mas exigente": 6,
+   "no distinguible": 3
+  },
+  "n_tareas_mejor_que_base_exigente": 6,
+  "variante_oraculo": "usa el factor del periodo objetivo (no conocible al predecir); solo informativa"
+ },
+ "fuera_muestra": {
+  "modelo": "alquiler_provincia_gb",
+  "rmse": 0.016065669415163825,
+  "dm_vs_ar4": {
+   "DM_HLN": -9.393597914596105,
+   "p_holm": 1.325562237789113e-14,
+   "grupo": "espacial sellado; alquiler provincia; AR por unidad"
+  }
+ },
+ "notas": "Capa C4. Segunda mirada a la misma muestra sellada para nuevos comparadores; 11 provincias selladas, poca potencia. El 'mejor modelo' se elige por RMSE sellado (optimista). Ver notas.md. Fecha: 2026-10-11"
+}

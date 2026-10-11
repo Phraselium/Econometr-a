@@ -202,7 +202,12 @@ def gva_fianzas():
 
 def incasol():
     f = pd.read_csv(RAW / "v3" / "incasol_fianzas_municipio_v3.csv.gz", dtype={"codigo": str}, low_memory=False,
-                    usecols=["fecha", "valor", "codigo", "banda", "serie"])
+                    usecols=["fecha", "valor", "codigo", "banda", "serie", "periodo", "unidad"])
+    # K4a-02: desde 2019 el fichero trae, por municipio y año, el acumulado anual, los acumulados (ene-mar, ene-jun, ene-sep) Y los
+    # trimestres sueltos (7 filas); sumarlos triplicaba los contratos (38.683 -> 128.736 en Barcelona 2023). Se deja solo el año completo.
+    # Además la banda «>600 euros/mes» existe en dos series (n_contratos y renta_media, unidad EUR/mes): se exige unidad == contratos
+    # (antes la cuota «>600» sumaba contratos y euros y llegaba a 606 %).
+    f = f[f.periodo.astype(str).str.contains("gener-desembre") & (f.unidad == "contratos")].copy()
     f["valor"] = num(f.valor)
     f["anio"] = anio_de(f.fecha)
     f["cod_mun"] = f.codigo.str.zfill(5)

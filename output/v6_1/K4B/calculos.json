@@ -1,0 +1,127 @@
+{
+ "dh_2125": {
+  "valor": 992010.125,
+  "min": 970670.25,
+  "max": 1013350.0,
+  "nota": "variacion de medias anuales 2021->2025; ECP y EPA (ambas dentro de 2021+, sin cruzar la ruptura)",
+  "variante_T1": {
+   "ECP 2025T1-2021T1": 981823.0,
+   "EPA 2025T1-2021T1": 1062300.0
+  }
+ },
+ "terminadas_1924": {
+  "valor": null,
+  "min": 72264.0,
+  "max": 94426.0,
+  "nota": "Ministerio: libres terminadas + protegidas definitivas, nacional menos Pais Vasco y Navarra; min-max anual 2019-2024",
+  "serie": {
+   "2019": 72264.0,
+   "2020": 81496.0,
+   "2021": 87741.0,
+   "2022": 82361.0,
+   "2023": 82847.0,
+   "2024": 94426.0
+  }
+ },
+ "deficit_2124_c1": {
+  "valor": null,
+  "min": 562692.0,
+  "max": 626946.0,
+  "nota": "dH(2021T1->2024T4) menos terminadas 2021-2024; 2 fuentes de hogares x 2 de terminadas (4 combinaciones; el original usa 12)",
+  "combos": {
+   "ECP-Min": 562692.0,
+   "ECP-Cat": 579011.0,
+   "EPA-Min": 610627.0,
+   "EPA-Cat": 626946.0
+  },
+  "T_min": 374573.0,
+  "T_cat": 358254.0
+ },
+ "deficit_2124_c2": {
+  "valor": null,
+  "min": 562692.0,
+  "max": 841061.7779999999,
+  "nota": "bajas 0,1-0,2 %/anio sobre parque (stock inicio de anio, suma ['2020', '2021', '2022', '2023']); cota sup. = max c1 + 0,2 % x parque"
+ },
+ "B1-H4": {
+  "valor": 1720537.0,
+  "min": null,
+  "max": null,
+  "nota": "H(2036)-H(2026) del escenario base INE (tabla 54562; la tabla empieza en 2026, no hay 2025). Rango: no hay escenarios alternativos en raw"
+ },
+ "E-B1-F": {
+  "valor": 1720537.0,
+  "min": null,
+  "max": null,
+  "nota": "idem B1-H4 (misma magnitud, otra etiqueta)"
+ },
+ "R1C-001": {
+  "valor": 74.47491550605565,
+  "min": 72.1,
+  "max": 75.85,
+  "nota": "media y rango de EFF 2022, ECV 2021-22 (media) y Censo 2021 (propiedad/principales, suma de secciones)",
+  "fuentes": {
+   "EFF2022": 72.1,
+   "ECV2021-22": 75.85,
+   "Censo2021": 75.47474651816698
+  }
+ },
+ "A23-A2": {
+  "valor": null,
+  "min": 10.930506009861185,
+  "max": 22.92000000000001,
+  "nota": "IPC alquiler (media anual del indice) e IPVA total nacional, 2015->2024; IPVA 'contrato existente' solo existe desde 2021, no se usa",
+  "IPC": 10.930506009861185,
+  "IPVA_total": 22.92000000000001
+ },
+ "A23-P2": {
+  "valor": 50.17246218971515,
+  "min": 44.222817245119295,
+  "max": 56.12210713431101,
+  "nota": "SOLO 2 de 3 fuentes: valor tasado MIVAU y Registradores EUR/m2 (media anual 2025/2015). Notariado: serie nacional 2015-2025 no esta en data/raw",
+  "valor_tasado": 44.222817245119295,
+  "registradores": 56.12210713431101
+ },
+ "A23-A10": {
+  "valor": 27.77492278899574,
+  "min": 24.70872408266439,
+  "max": 30.841121495327094,
+  "nota": "IPVA nuevo contrato CV 2024/2021 y mediana de la fianza GVA 2024/2021",
+  "IPVA_nuevo_CV": 24.70872408266439,
+  "fianza_mediana_GVA": 30.841121495327094,
+  "medianas": {
+   "2021": 535.0,
+   "2024": 700.0
+  }
+ },
+ "D1-H11": {
+  "valor": null,
+  "min": null,
+  "max": null,
+  "nota": "NO RECONSTRUIBLE: Requiere clases A4 (falta/rentable), respuesta de oferta de A4 y rejilla eps_d; el informe no da formula ni parametros"
+ },
+ "D1-H12": {
+  "valor": null,
+  "min": null,
+  "max": null,
+  "nota": "NO RECONSTRUIBLE: Idem D1-H11"
+ },
+ "B1-H1": {
+  "valor": null,
+  "min": null,
+  "max": null,
+  "nota": "NO RECONSTRUIBLE: Requiere A (atraso+emancipacion), R (bajas T1), V, M (vacias movilizables por provincia), K, por 52 provincias; parametros de rejilla v3 no publicados en el texto"
+ },
+ "latente_convivencia": {
+  "valor": null,
+  "min": null,
+  "max": null,
+  "nota": "NO RECONSTRUIBLE: Requiere tasa de convivencia con padres 2008 por edad y poblacion joven; la fuente (EPA/ECV/Eurostat) y la edad no estan precisadas en el texto"
+ },
+ "B4-v3-vut-cantidad": {
+  "valor": null,
+  "min": null,
+  "max": null,
+  "nota": "NO RECONSTRUIBLE: Requiere stock de alquiler y conversion VUT->viviendas desplazadas (cota de v3) no descrita en el texto"
+ }
+}

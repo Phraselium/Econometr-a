@@ -8,7 +8,7 @@
 2. [C1] En 2021-2024 los hogares crecieron más que las viviendas terminadas: el balance acumulado es de 562.692-688.692 viviendas sin contar bajas del parque. [C4] Con las bajas del parque estimadas, llegaría como máximo a 744.144 viviendas.
 3. [C1] Las viviendas terminadas fueron de 72.264-94.426 viviendas/año en 2019-2024 (territorio común), con el Ministerio y el Catastro de acuerdo.
 4. [C1] El precio de compra subió 47,2 % (44,2-56,1 %) en 2015-2025 según el núcleo Ministerio-Notariado-Registradores. [C1] El alquiler de los contratos vigentes subió 10,9-22,9 % en 2015-2024; el de los contratos nuevos crece más deprisa, pero esa brecha es [C4].
-5. [C2] La proyección del INE añade 1.720.540 hogares (1.308.530-1.772.410 hogares) en 2026-2035: es la parte de la necesidad que no depende de supuestos propios sobre el parque.
+5. [C2] La proyección del INE añade 1.720.537 hogares (1.308.531-1.772.410 hogares) en 2026-2035: es la parte de la necesidad que no depende de supuestos propios sobre el parque.
 6. [C2] Hasta 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista; cuánto empeora es [C4].
 7. [C2] La demanda latente de los jóvenes, medida por la convivencia con los padres frente a 2008, queda en 188.000-506.000 hogares.
 
@@ -17,7 +17,7 @@
 La necesidad de vivienda para 2026-2035 se construye por componentes. El crecimiento de hogares proyectado es [C2]. El resto (atraso, reposición, vacancia friccional, vacías movilizables, cartera en construcción) depende de supuestos y queda en [C4]:
 
 - [C4] Necesidad total por año, suma de provincias (base): 210.424 viviendas/año (99.388-292.083 viviendas/año). Si una parte de las viviendas liberadas no llega al mercado, la necesidad efectiva sube a 245.989 viviendas/año (123.936-338.663 viviendas/año). Equivale a 1,4 veces, 2,7 veces y 3,8 veces la producción actual (78.810-100.980 viviendas/año terminadas en 2019-2024, España con País Vasco y Navarra). El supuesto que más pesa es la fracción de vacías movilizables.
-- [C4] Viviendas liberadas por envejecimiento en 2026-2035: 1.856.430 viviendas (936.056-3.168.590 viviendas), de las que llegan al mercado 150.079 viviendas al año, sobre todo fuera de las capitales (1.099.270 viviendas en el resto de municipios frente a 619.768 viviendas en las capitales). Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
+- [C4] Viviendas liberadas por envejecimiento en 2026-2035: 1.856.430 viviendas (936.056-3.168.590 viviendas), de las que llegan al mercado 150.079 viviendas al año, sobre todo fuera de las capitales (1.099.268 viviendas en el resto de municipios frente a 619.768 viviendas en las capitales). Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 - [C4] Bajas del parque: las identidades de stock no las miden, y las demoliciones con licencia son 0,02-0,04 % del parque en 2024.
 - [C4] Atraso a absorber: déficit 2021-2025 de 788.154 viviendas y emancipación retrasada de 315.017 viviendas.
 - [C4] Vacías movilizables en zonas con presión: 733.553 viviendas (366.777-1.100.330 viviendas); reposición del parque: 89.665 viviendas (1.070-178.259 viviendas).

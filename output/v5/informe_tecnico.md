@@ -24,10 +24,10 @@
 - Los hogares con vivienda principal en propiedad son 74,5 % de hogares (72,1-75,9 % de hogares) [C1].
 
 **Lo que es una proyección o una contabilidad con supuestos [C4].**
-- Necesidad de vivienda 2026-2035 (base): 210.424 viviendas/año (99.388-292.083 viviendas/año) de media, suma de 52 provincias [C4]. Si una parte de las viviendas liberadas no llega al mercado, la necesidad efectiva sube a 245.989 viviendas/año (123.936-338.663 viviendas/año) [C4]. Equivale a 1,4 veces, 2,7 veces y 3,8 veces la producción actual con la misma cobertura. El mayor componente es el crecimiento de hogares proyectado por el INE (1.720.540 hogares en diez años, [C2]). El supuesto que más pesa en el rango es la fracción de vacías movilizables. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
+- Necesidad de vivienda 2026-2035 (base): 210.424 viviendas/año (99.388-292.083 viviendas/año) de media, suma de 52 provincias [C4]. Si una parte de las viviendas liberadas no llega al mercado, la necesidad efectiva sube a 245.989 viviendas/año (123.936-338.663 viviendas/año) [C4]. Equivale a 1,4 veces, 2,7 veces y 3,8 veces la producción actual con la misma cobertura. El mayor componente es el crecimiento de hogares proyectado por el INE (1.720.537 hogares en diez años, [C2]). El supuesto que más pesa en el rango es la fracción de vacías movilizables. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 - Viviendas liberadas por envejecimiento en 2026-2035: 1.856.430 viviendas (936.056-3.168.590 viviendas); llegan al mercado 150.079 viviendas al año [C4].
 - Bajas del parque: las identidades de stock no las miden; las demoliciones con licencia son 0,02-0,04 % del parque en 2024 [C4].
-- [C2] De 2025 a 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista. La magnitud es [C4]: un aumento de 585.609 viviendas (87.246-946.852 viviendas), hasta 1.349.020 viviendas (788.180-1.773.550 viviendas) a fin de 2030. Por provincias, 15 provincias empeoran, 0 provincias mejoran y 37 provincias quedan indeterminadas. A 2035 la dirección es indeterminada [C4].
+- [C2] De 2025 a 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista. La magnitud es [C4]: un aumento de 585.609 viviendas (87.246-946.852 viviendas), hasta 1.349.025 viviendas (788.180-1.773.555 viviendas) a fin de 2030. Por provincias, 15 provincias empeoran, 0 provincias mejoran y 37 provincias quedan indeterminadas. A 2035 la dirección es indeterminada [C4].
 - El déficit está concentrado: 6 provincias suman la mitad del déficit positivo de 2021-2025 [C4].
 
 **Lo que no se puede afirmar.**
@@ -85,7 +85,7 @@ Reglas que se aplican en todo el informe:
 
 - Entre 2021 y 2025 los hogares aumentaron en 997.586 hogares (981.823-1.013.350 hogares) [C1] (INE ECP y EPA corregida por la ruptura de 2021).
 - La demanda latente de jóvenes que viven con sus padres, frente a la tasa de convivencia de 2008, está entre 188.000-506.000 hogares [C2]. Es una cota: supone que la tasa de 2008 es la de referencia.
-- El INE proyecta 1.720.540 hogares más en 2026-2035 [C2] y 1.024.160 hogares en 2026-2030 [C2]. Es un escenario del INE: no reacciona a la oferta ni a los precios.
+- El INE proyecta 1.720.537 hogares más en 2026-2035 [C2] y 1.024.156 hogares en 2026-2030 [C2]. Es un escenario del INE: no reacciona a la oferta ni a los precios.
 - La descomposición contable de v4 (población por nacionalidad, edad y jefatura) se mantiene sin cambios en v5 y es C4 en los componentes de fuente única (`output/v4/M2`).
 
 ### 1.3 Viviendas terminadas
@@ -168,13 +168,13 @@ La necesidad de vivienda es una contabilidad stock-flujo por provincia, con rang
 
 | Componente | Qué es | Diez años, central (rango) | Capa |
 |---|---|---|---|
-| A | Atraso: déficit 2021-2025 más emancipación retrasada | 1.103.170 viviendas (stock) (830.963-1.473.640 viviendas (stock)) | C4 |
+| A | Atraso: déficit 2021-2025 más emancipación retrasada | 1.103.170 viviendas (stock) (830.963-1.473.641 viviendas (stock)) | C4 |
 | R | Reposición del parque | 89.665 viviendas (1.070-178.259 viviendas) | C4 |
 | V | Vacancia friccional en zonas con presión | 58.674 viviendas (0-117.348 viviendas) | C4 |
-| F | Crecimiento de hogares (INE) | 1.720.540 hogares (1.308.530-1.772.410 hogares) | C2 |
+| F | Crecimiento de hogares (INE) | 1.720.537 hogares (1.308.531-1.772.410 hogares) | C2 |
 | M | Vacías movilizables en zonas con presión | 733.553 viviendas (366.777-1.100.330 viviendas) | C4 |
 | K | Cartera en construcción | 89.815 viviendas (75.674-103.956 viviendas) | C4 |
-| L | Viviendas liberadas por envejecimiento (aparte; ya neta en F) | 1.415.260 viviendas (10 años) (801.982-2.170.070 viviendas (10 años)) | C4 |
+| L | Viviendas liberadas por envejecimiento (aparte; ya neta en F) | 1.415.263 viviendas (10 años) (801.982-2.170.070 viviendas (10 años)) | C4 |
 
 Decisiones de método:
 - F, del INE, ya es neta de disoluciones de hogares. Restar además L duplicaría: se da la fórmula literal solo como variante (733.415 viviendas en diez años) [C4].
@@ -190,7 +190,7 @@ Decisiones de método:
 ### 2.2 Resultado de B1
 
 - Necesidad total (`v5.1`, base): 210.424 viviendas/año (99.388-292.083 viviendas/año) de media en 2026-2035, suma de 52 provincias [C4]; con la sensibilidad X, 245.989 viviendas/año (123.936-338.663 viviendas/año) [C4]. Las cifras provinciales de abajo son de B1 (`v5`).
-- Las provincias con presión (clases `1` a `3` de A4) son 48 provincias; concentran 2.110.220 viviendas de la necesidad a diez años [C4].
+- Las provincias con presión (clases `1` a `3` de A4) son 48 provincias; concentran 2.110.221 viviendas de la necesidad a diez años [C4].
 - Las cuatro mayores necesidades anuales: Madrid 47.228 viviendas/año, Barcelona 30.963 viviendas/año, València 16.993 viviendas/año y Alicante 14.264 viviendas/año [C4].
 
 ![Necesidad anual de vivienda por provincia, 2026-2035](B1/figuras/B1_mapa_necesidad.png)
@@ -199,7 +199,7 @@ Decisiones de método:
 
 **Descomposición del rango [C4].** La amplitud de la necesidad anual (máximo menos mínimo) es de 214.727 viviendas/año. Se reparte así entre los supuestos: vacías movilizables 34,2 %, flujo futuro de hogares 21,6 %, atraso 20,7 %, liberadas que no llegan al mercado 10,3 %, reposición 6,5 %, vacancia friccional 5,5 % y cartera 1,3 %. El supuesto que más pesa es la fracción de vacías movilizables.
 
-**Viviendas liberadas por envejecimiento (`T2`) [C4].** En 2026-2035 se liberarían 1.856.430 viviendas (936.056-3.168.590 viviendas) por fallecimiento del último miembro del hogar o por traslado a una residencia; llegan al mercado (venta o alquiler) 150.079 viviendas al año. Por tipo de municipio (central): 619.768 viviendas en las capitales de provincia, 137.395 viviendas en el entorno de las grandes ciudades y 1.099.270 viviendas en el resto de municipios. Hay desajuste territorial: 28,4 % de las liberadas está en municipios sin clase A4 (sin precio de referencia); entre los clasificados, 65,5 % cae en municipios de clase `1` o `2`. Los parámetros de traslado a residencias no tienen dato verificado. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
+**Viviendas liberadas por envejecimiento (`T2`) [C4].** En 2026-2035 se liberarían 1.856.430 viviendas (936.056-3.168.590 viviendas) por fallecimiento del último miembro del hogar o por traslado a una residencia; llegan al mercado (venta o alquiler) 150.079 viviendas al año. Por tipo de municipio (central): 619.768 viviendas en las capitales de provincia, 137.395 viviendas en el entorno de las grandes ciudades y 1.099.268 viviendas en el resto de municipios. Hay desajuste territorial: 28,4 % de las liberadas está en municipios sin clase A4 (sin precio de referencia); entre los clasificados, 65,5 % cae en municipios de clase `1` o `2`. Los parámetros de traslado a residencias no tienen dato verificado. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 
 **Lectura.** La necesidad está concentrada donde ya hay déficit: las provincias con más necesidad anual son las mismas que encabezan el déficit contable de 2021-2025. Fuera de las provincias con presión, la necesidad procede sobre todo de la reposición y del crecimiento de hogares, y es pequeña.
 
@@ -207,7 +207,7 @@ Decisiones de método:
 
 `D2030 = D2025 + F − T + B`, por provincia:
 - `D2025`: déficit 2021-2025 con bajas nulas, 700.934 viviendas [C4];
-- F: hogares INE 2026-2030, 1.024.160 hogares [C2];
+- F: hogares INE 2026-2030, 1.024.156 hogares [C2];
 - T: terminadas, con tres escenarios: (a) media de 2023-2025 (473.250 viviendas en cinco años); (b) cartera con el retardo nacional de 3,2 años; (c) tendencia, solo como sensibilidad;
 - B: bajas, de R de B1, que es un límite inferior.
 
@@ -215,11 +215,11 @@ El rango de cada provincia combina el mínimo y el máximo de F, la envolvente d
 
 ### 2.4 Resultado de B2
 
-**Proyección 2026-2030 (`T4`).** En una rejilla de escenarios que incluye los de B2, uno de construcción optimista (146.435 terminadas al año, por encima de cualquier año nacional desde 2008), bajas nulas, hogares bajos y las liberadas, el déficit nacional empeora de 2025 a 2030 en todos los escenarios: la dirección es [C2]. La magnitud es [C4]: el aumento está en el intervalo 87.246-946.852 viviendas y el déficit a fin de 2030 queda en 1.349.020 viviendas (788.180-1.773.550 viviendas). Por provincias, 15 provincias empeoran, 0 provincias mejoran y 37 provincias quedan indeterminadas (en `v5`: 20 provincias, 5 provincias y 27 provincias). A 2035 la dirección nacional es indeterminada [C4], con un déficit a fin de 2035 entre 482.095 viviendas y 2.400.410 viviendas: el envejecimiento libera 869.654 viviendas (5 años) en 2026-2030 y 986.777 viviendas (5 años) en 2031-2035, de modo que pesa más después de 2030. Mantener constante el déficit en 2026-2030 exigiría 211.772 terminadas al año [C4].
+**Proyección 2026-2030 (`T4`).** En una rejilla de escenarios que incluye los de B2, uno de construcción optimista (146.435 terminadas al año, por encima de cualquier año nacional desde 2008), bajas nulas, hogares bajos y las liberadas, el déficit nacional empeora de 2025 a 2030 en todos los escenarios: la dirección es [C2]. La magnitud es [C4]: el aumento está en el intervalo 87.246-946.852 viviendas y el déficit a fin de 2030 queda en 1.349.025 viviendas (788.180-1.773.555 viviendas). Por provincias, 15 provincias empeoran, 0 provincias mejoran y 37 provincias quedan indeterminadas (en `v5`: 20 provincias, 5 provincias y 27 provincias). A 2035 la dirección nacional es indeterminada [C4], con un déficit a fin de 2035 entre 482.095 viviendas y 2.400.412 viviendas: el envejecimiento libera 869.654 viviendas (5 años) en 2026-2030 y 986.777 viviendas (5 años) en 2031-2035, de modo que pesa más después de 2030. Mantener constante el déficit en 2026-2030 exigiría 211.772 terminadas al año [C4].
 
 Los escenarios de B2 (`v5`), que la rejilla de `T4` incluye:
 
-- En el escenario (b), 1.136.180 viviendas; en el (c), 1.276.240 viviendas [C4].
+- En el escenario (b), 1.136.179 viviendas; en el (c), 1.276.238 viviendas [C4].
 - En el escenario central (a) empeoran 45 provincias; en el (b), 40 provincias; en el (c), 41 provincias [C4].
 - Con el rango completo: empeoran 20 provincias, mejoran 5 provincias y quedan indeterminadas 27 provincias [C4]. El signo central coincide en los tres escenarios en 46 provincias.
 
@@ -344,9 +344,9 @@ El parque es el conjunto de viviendas existentes y sus ocupantes; el mercado son
 ### 5.2 Empresas (CB)
 
 - Compraventas con comprador persona jurídica: 11,3 % de compraventas en 2024 [C4]. Es un flujo; no dice qué parte del parque poseen las empresas.
-- Declarantes del IRPF con rendimientos de capital inmobiliario: 3.262.030 declarantes; con reducción por arrendamiento de vivienda: 2.236.900 declarantes [C4].
-- Viviendas equivalentes arrendadas por personas físicas: 2.650.950 viviendas, es decir, 0,81 viviendas/declarante por declarante [C4].
-- Frente a las viviendas principales en alquiler del Censo (2.965.500 viviendas), el residual que incluye personas jurídicas, sector público y alquiler no declarado está entre 16,9-38,1 % del stock [C4].
+- Declarantes del IRPF con rendimientos de capital inmobiliario: 3.262.026 declarantes; con reducción por arrendamiento de vivienda: 2.236.896 declarantes [C4].
+- Viviendas equivalentes arrendadas por personas físicas: 2.650.952 viviendas, es decir, 0,81 viviendas/declarante por declarante [C4].
+- Frente a las viviendas principales en alquiler del Censo (2.965.497 viviendas), el residual que incluye personas jurídicas, sector público y alquiler no declarado está entre 16,9-38,1 % del stock [C4].
 - La AEAT no publica la distribución de arrendadores por número de inmuebles: no se puede contrastar cuánto alquiler está en manos de grandes tenedores.
 
 ### 5.3 No residentes (R1A)
@@ -371,11 +371,11 @@ El parque es el conjunto de viviendas existentes y sus ocupantes; el mercado son
 
 - Lanzamientos por la LAU (principalmente impago de alquiler): 18.317 lanzamientos/anio en 2025, frente a un máximo de 38.141 lanzamientos/anio en 2013-2025 [C4].
 - Hechos conocidos de allanamiento o usurpación: 14.875 hechos/anio en 2025; procedimientos verbales posesorios por ocupación ingresados: 1.845 procedimientos/anio [C4].
-- Frente a 2.965.500 viviendas principales en alquiler, los órdenes de magnitud son pequeños. Con los datos públicos no se puede contrastar si la percepción de inseguridad reduce la oferta de alquiler: la correlación entre comunidades no es un diseño que lo permita.
+- Frente a 2.965.497 viviendas principales en alquiler, los órdenes de magnitud son pequeños. Con los datos públicos no se puede contrastar si la percepción de inseguridad reduce la oferta de alquiler: la correlación entre comunidades no es un diseño que lo permita.
 
 ### 5.6 Fiscalidad (CB)
 
-- La reducción por arrendamiento de vivienda se aplica a 2.236.900 declarantes [C4].
+- La reducción por arrendamiento de vivienda se aplica a 2.236.896 declarantes [C4].
 - No hay en el repositorio una evaluación de la incidencia de los cambios fiscales en la oferta de alquiler. La matriz D1 los deja como «no evaluable» (instrumento `I15`).
 
 ### 5.7 Desigualdad (CC)

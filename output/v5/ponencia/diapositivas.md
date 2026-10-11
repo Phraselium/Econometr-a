@@ -61,7 +61,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## Necesidad: la pieza sólida es el crecimiento de hogares
 
-- 1.720.540 hogares (1.308.530-1.772.410 hogares) (2026-2035; INE Proyección de Hogares 54562; INE Proyecciones de Población 36726; dato de 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025; C2)
+- 1.720.537 hogares (1.308.531-1.772.410 hogares) (2026-2035; INE Proyección de Hogares 54562; INE Proyecciones de Población 36726; dato de 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025; C2)
 
 ---
 

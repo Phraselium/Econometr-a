@@ -62,7 +62,7 @@ def v4_adaptadores() -> list[dict]:
 
 def v5_hechos() -> list[dict]:
     f = []
-    for p in sorted(V5.glob("*/hechos.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6").glob("*/hechos.json")):   # v5.1 y v6
+    for p in sorted(V5.glob("*/hechos.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_1").glob("*/hechos.json")):   # v5.1, v6 y v6.1
         h = json.loads(p.read_text())
         if not isinstance(h, list):
             continue
@@ -81,7 +81,8 @@ def main() -> None:
     ck = ck[ck[["valor", "min", "max"]].notna().any(axis=1)]   # filas sin cifra (p. ej. NaN de origen) no entran
     ck["capa"] = ck.capa.astype(str)
     ck = ck.sort_values("id", kind="stable")
-    ck.to_csv(V5 / "cifras_clave.csv", index=False, float_format="%.6g")
+    # K4a-01: «%.6g» redondeaba a 6 cifras significativas los recuentos >= 1e6 (1.720.537 -> 1.720.540); «%.10g» es exacto hasta 1e10
+    ck.to_csv(V5 / "cifras_clave.csv", index=False, float_format="%.10g")
     md = ["# Cifras clave v5", "",
           "Tabla única de la que leen todos los entregables. Una fila por indicador y periodo. Generada por src/v5/cifras_clave.py.", "",
           "| id | indicador | valor | rango | unidad | periodo | cobertura | fuentes | capa | fecha del dato |", "|---|---|---|---|---|---|---|---|---|---|"]

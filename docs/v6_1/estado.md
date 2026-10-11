@@ -13,3 +13,5 @@
 ## En curso
 - K1 (ml-engineer), K4a (sonnet) y K4b (sonnet), lanzados en paralelo.
 - Para K4b se preparó docs/v6_1/k4b_especificacion.md: las 15 cifras sin referencias al código original.
+- K1 terminado: unos 90.000 tokens; integrado en make (V6_1_ORDEN). cifras_clave ahora también lee output/v6_1/*/hechos.json.
+- K4a está en curso. Este commit es intermedio e incluye correcciones parciales de K4a (fianzas Incasòl): ver docs/v6_1/auditoria_K4a.md cuando termine.

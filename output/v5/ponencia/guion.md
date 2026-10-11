@@ -20,7 +20,7 @@ Regla del ponente: cada cifra se dice con su periodo y su capa; los veredictos s
 - «Los topes bajan los alquileres» y «los topes reducen la oferta»: ANALIZADA, NO CONCLUYENTE [C4]; la validación quedó contaminada.
 
 ## Bloque 3 · Necesidades por territorio (11:00-15:30; diapositivas 10-12) <!-- check:cifra-libre -->
-- Crecimiento de hogares 1.720.540 hogares en 2026-2035 [C2].
+- Crecimiento de hogares 1.720.537 hogares en 2026-2035 [C2].
 - Necesidad anual base 210.424 viviendas/año [C4], con rango; si parte de las liberadas no llega al mercado, 245.989 viviendas/año. Entre 1,4 veces y 3,8 veces la producción actual. Lo que más pesa: cuántas vacías se pueden movilizar.
 - València: 16.993 viviendas/año al año en la provincia [C4]; a 2030 el déficit nacional empeora en todos los escenarios [C2] (ficha `T4-V1`); por provincias empeora en 15 provincias, mejora en 0 provincias y en 37 provincias es indeterminado [C4]. A 2035, indeterminado [C4].
 

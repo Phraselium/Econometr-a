@@ -17,5 +17,5 @@
 | Revisión final | APROBAR (16 no bloqueantes; prioritarios corregidos) | — | docs/v6/revision_final.md | 118.697 |
 
 **Hecho:** setup, G, M0-M4, entregables, revisión final.
-**Siguiente:** cierre (m3b en make tras su comprobación de determinismo; make all ×2 sin red en clon limpio; etiqueta v6.0).
+**Siguiente:** v6 CERRADA. Tareas del autor en docs/v6/tareas_autor.md.
 **Tokens de subagentes v6:** 1.541.747 / 2.200.000 (corte 1.760.000; reserva 220.000).

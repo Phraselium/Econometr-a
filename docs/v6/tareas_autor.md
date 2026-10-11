@@ -43,3 +43,5 @@ El remoto de la sesión rechaza las etiquetas; a 11 de octubre de 2026, `git ls-
 ## 7. Decisiones abiertas de la auditoría (docs/v6/auditoria.md)
 - [ ] Scripts de datos fuera de `make data`: `src/build_eventos.py`, `src/v3/build_zonas_eventos_v3.py` y `src/v3/pa_fetch_aux.py`. Propuesta: renombrarlos con el prefijo `fetch_` o documentarlos en README_REPLICACION.md §2 junto a los demás scripts de descarga que no entran en `make all`.
 - [ ] Historial git: la auditoría buscó en todo el historial los patrones habituales (ghp_, github_pat_, sk-, AKIA, xox, claves privadas) sin coincidencias; antes de hacer público el repositorio, conviene pasar además un escáner dedicado (p. ej., `gitleaks detect`). Los 332 commits figuran con el correo noreply@anthropic.com como autor: decidir si se reescribe la autoría o se deja (la firma del trabajo está en CITATION.cff).
+
+- [ ] Publicar la etiqueta `v6.0`, creada en local; el remoto de la sesión la rechaza.

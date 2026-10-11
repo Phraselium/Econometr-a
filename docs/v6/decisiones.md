@@ -66,3 +66,12 @@
 - N5-N6 y N8: las notas de M4/resultado.json recogen los embeddings medios, los sustitutos de BART y PyMC, el sesgo de selección del ganador mirado en el sellado y la divergencia del AR municipal.
 - N13-N15: M1A deja de decir «ASOCIACIÓN ROBUSTA»; M1B dice «variación asociada»; la elasticidad precio-alquiler se da como rango de 0,4 a 2,1 según la especificación; la fecha del dato es la de los datos.
 - El resto de no bloqueantes queda en docs/v6/revision_final.md, sin impacto en las conclusiones.
+
+## Cierre v6
+- Doble ejecución de `make all` sin red en un clon limpio de 6592b95, cada una en un proceso desacoplado porque supera el límite de 2 h de los comandos en segundo plano:
+  - rc=0 las dos veces (7.564 s y 7.776 s);
+  - md5 idénticos salvo `output/v2/BM/tiempos.json`;
+  - todas las salidas coinciden con lo versionado.
+- La evaluación sellada (m4_sellado.py) no está en make. `make all` no reabre el sellado; lo regenera m0_run y check_v6 verifica su sha256.
+- La etiqueta `v6.0` se crea en local; el remoto rechaza etiquetas (docs/v6/tareas_autor.md).
+- Tokens de subagentes v6: 1.541.747 de 2.200.000 (70 %), por debajo del corte de 1.760.000.

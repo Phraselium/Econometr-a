@@ -1,0 +1,284 @@
+[
+ {
+  "id": "T2-H1",
+  "indicador": "Viviendas liberadas por fallecimiento del ultimo miembro y traslado a residencia, acumuladas",
+  "valor": 1856430.5,
+  "min": 936056.4,
+  "max": 3168589.6,
+  "unidad": "viviendas",
+  "periodo": "2026-2035",
+  "cobertura": "52 provincias",
+  "fuentes": [
+   "INE 54562",
+   "INE 36726",
+   "INE 67235",
+   "INE Censo 2021",
+   "INE ECV 9994",
+   "INE ETDP 6154"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ },
+ {
+  "id": "T2-H2",
+  "indicador": "Viviendas liberadas al ano (media)",
+  "valor": 185643.1,
+  "min": 93605.6,
+  "max": 316859.0,
+  "unidad": "viviendas/ano",
+  "periodo": "2026-2035",
+  "cobertura": "52 provincias",
+  "fuentes": [
+   "INE 54562",
+   "INE 36726",
+   "INE 67235",
+   "INE Censo 2021",
+   "INE ECV 9994",
+   "INE ETDP 6154"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ },
+ {
+  "id": "T2-H3",
+  "indicador": "Viviendas liberadas por fallecimiento (formula B1 con correccion por muertes en residencia), acumuladas",
+  "valor": 1343164.5,
+  "min": 1343164.5,
+  "max": 1343164.5,
+  "unidad": "viviendas",
+  "periodo": "2026-2035",
+  "cobertura": "52 provincias",
+  "fuentes": [
+   "INE 54562",
+   "INE 36726",
+   "INE 67235",
+   "INE Censo 2021",
+   "INE ECV 9994",
+   "INE ETDP 6154"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ },
+ {
+  "id": "T2-H4",
+  "indicador": "Viviendas liberadas por traslado a residencia de quien vivia solo, acumuladas",
+  "valor": 513266.0,
+  "min": 513266.0,
+  "max": 513266.0,
+  "unidad": "viviendas",
+  "periodo": "2026-2035",
+  "cobertura": "52 provincias",
+  "fuentes": [
+   "INE 54562",
+   "INE 36726",
+   "INE 67235",
+   "INE Censo 2021",
+   "INE ECV 9994",
+   "INE ETDP 6154"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ },
+ {
+  "id": "T2-H5",
+  "indicador": "Escenario: viviendas liberadas acumuladas",
+  "valor": 1140311.5,
+  "min": 575802.5,
+  "max": 1944232.2,
+  "unidad": "viviendas",
+  "periodo": "2036-2040",
+  "cobertura": "52 provincias (escenario, mortalidad 2024 constante)",
+  "fuentes": [
+   "INE 54562",
+   "INE 36726",
+   "INE 67235",
+   "INE Censo 2021",
+   "INE ECV 9994",
+   "INE ETDP 6154"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ },
+ {
+  "id": "T2-H6",
+  "indicador": "Viviendas liberadas que llegan al mercado (venta o alquiler), al ano",
+  "valor": 150078.8,
+  "min": 70095.9,
+  "max": 275008.4,
+  "unidad": "viviendas/ano",
+  "periodo": "2026-2035",
+  "cobertura": "52 provincias",
+  "fuentes": [
+   "INE 54562",
+   "INE 36726",
+   "INE 67235",
+   "INE Censo 2021",
+   "INE ECV 9994",
+   "INE ETDP 6154"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ },
+ {
+  "id": "T2-H7",
+  "indicador": "Viviendas liberadas que NO llegan al mercado al ano (X data-based: vacias y secundarias del Censo 2021)",
+  "valor": 35564.2,
+  "min": 24548.2,
+  "max": 46580.2,
+  "unidad": "viviendas/ano",
+  "periodo": "2026-2035",
+  "cobertura": "52 provincias",
+  "fuentes": [
+   "INE 54562",
+   "INE 36726",
+   "INE 67235",
+   "INE Censo 2021",
+   "INE ECV 9994",
+   "INE ETDP 6154"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2021-11-01"
+ },
+ {
+  "id": "T2-H8",
+  "indicador": "Aumento posible de la necesidad efectiva (no_llega / necesidad central B1)",
+  "valor": 16.6,
+  "min": 11.4,
+  "max": 21.7,
+  "unidad": "%",
+  "periodo": "2026-2035",
+  "cobertura": "52 provincias",
+  "fuentes": [
+   "INE 54562",
+   "INE 36726",
+   "INE 67235",
+   "INE Censo 2021",
+   "INE ECV 9994",
+   "INE ETDP 6154"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ },
+ {
+  "id": "T2-H9",
+  "indicador": "Prueba de estres X=50 % (sin dato): aumento posible de la necesidad",
+  "valor": 43.2,
+  "min": 43.2,
+  "max": 43.2,
+  "unidad": "%",
+  "periodo": "2026-2035",
+  "cobertura": "52 provincias",
+  "fuentes": [
+   "INE 54562",
+   "INE 36726",
+   "INE 67235",
+   "INE Censo 2021",
+   "INE ECV 9994",
+   "INE ETDP 6154"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ },
+ {
+  "id": "T2-H10",
+  "indicador": "Cuota de las liberadas (central) en provincias A4 clase 1-2",
+  "valor": 97.2,
+  "min": 97.2,
+  "max": 97.2,
+  "unidad": "%",
+  "periodo": "2026-2035",
+  "cobertura": "52 provincias",
+  "fuentes": [
+   "output/v5/A4 clasificacion_provincias",
+   "INE 36726"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ },
+ {
+  "id": "T2-H11",
+  "indicador": "Cuota en municipios A4 clase 1-2 sobre las liberadas en municipios con clase (703 municipios con precio)",
+  "valor": 65.5,
+  "min": 65.5,
+  "max": 65.5,
+  "unidad": "%",
+  "periodo": "2026-2035",
+  "cobertura": "703 municipios clasificados",
+  "fuentes": [
+   "output/v5/A4 clasificacion_municipios",
+   "INE Censo 2021"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ },
+ {
+  "id": "T2-H12",
+  "indicador": "Cuota de las liberadas en municipios sin clase A4 (sin precio)",
+  "valor": 28.4,
+  "min": 28.4,
+  "max": 28.4,
+  "unidad": "%",
+  "periodo": "2026-2035",
+  "cobertura": "municipios sin clasificar",
+  "fuentes": [
+   "INE 54562",
+   "INE 36726",
+   "INE 67235",
+   "INE Censo 2021",
+   "INE ECV 9994",
+   "INE ETDP 6154"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ },
+ {
+  "id": "T2-H13",
+  "indicador": "Herencias de vivienda inscritas al ano (media 2023-2025)",
+  "valor": 203393.3,
+  "min": 203393.3,
+  "max": 203393.3,
+  "unidad": "viviendas/ano",
+  "periodo": "2023-2025",
+  "cobertura": "52 provincias",
+  "fuentes": [
+   "INE ETDP 6154"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2025-12-31"
+ },
+ {
+  "id": "T2-H14",
+  "indicador": "Liberadas por fallecimiento en vivienda en propiedad al ano (modelo)",
+  "valor": 118074.5,
+  "min": 118074.5,
+  "max": 118074.5,
+  "unidad": "viviendas/ano",
+  "periodo": "2026-2035",
+  "cobertura": "52 provincias",
+  "fuentes": [
+   "INE 54562",
+   "INE 36726",
+   "INE 67235",
+   "INE Censo 2021",
+   "INE ECV 9994",
+   "INE ETDP 6154"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ },
+ {
+  "id": "T2-H15",
+  "indicador": "Liberadas al ano frente a la necesidad central B1 (no se resta de ella)",
+  "valor": 86.4,
+  "min": 30.2,
+  "max": 338.4,
+  "unidad": "%",
+  "periodo": "2026-2035",
+  "cobertura": "52 provincias",
+  "fuentes": [
+   "output/v5/B1"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-06-17"
+ }
+]

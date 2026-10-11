@@ -1,0 +1,53 @@
+cod_prov,provincia,tasa_min,tasa_central,tasa_max,metodo,capa,tasa_licencia_estrecha,tasa_licencia_amplia
+01,Araba/Álava,0.0,7.76e-05,0.0009377,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,6.94e-05,8.57e-05
+02,Albacete,0.0,0.0002991,0.0006858,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002832,0.0003149
+03,Alicante/Alacant,0.0,0.0001921,0.0002801,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001744,0.0002098
+04,Almería,0.0,0.0004711,0.0009847,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.000412,0.0005303
+05,Ávila,0.0,0.0001109,0.0002919,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001064,0.0001154
+06,Badajoz,0.0,0.0002256,0.0006382,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002044,0.0002467
+07,"Balears, Illes",0.0,0.0009346,0.0019722,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0008907,0.0009785
+08,Barcelona,0.0,0.0002208,0.0003145,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002011,0.0002406
+09,Burgos,0.0,0.0001109,0.0002919,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001064,0.0001154
+10,Cáceres,0.0,0.0002256,0.0006382,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002044,0.0002467
+11,Cádiz,0.0,0.0004711,0.0009847,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.000412,0.0005303
+12,Castellón/Castelló,0.0,0.0001921,0.0002801,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001744,0.0002098
+13,Ciudad Real,0.0,0.0002991,0.0006858,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002832,0.0003149
+14,Córdoba,0.0,0.0004711,0.0009847,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.000412,0.0005303
+15,"Coruña, A",0.0,0.0001426,0.0002215,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001303,0.0001549
+16,Cuenca,0.0,0.0002991,0.0006858,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002832,0.0003149
+17,Girona,0.0,0.0002208,0.0003145,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002011,0.0002406
+18,Granada,0.0,0.0004711,0.0009847,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.000412,0.0005303
+19,Guadalajara,0.0,0.0002991,0.0006858,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002832,0.0003149
+20,Gipuzkoa,0.0,7.76e-05,0.0009377,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,6.94e-05,8.57e-05
+21,Huelva,0.0,0.0004711,0.0009847,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.000412,0.0005303
+22,Huesca,0.0,0.0002887,0.0003826,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002644,0.000313
+23,Jaén,0.0,0.0004711,0.0009847,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.000412,0.0005303
+24,León,0.0,0.0001109,0.0002919,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001064,0.0001154
+25,Lleida,0.0,0.0002208,0.0003145,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002011,0.0002406
+26,"Rioja, La",0.0,0.0002535,0.0008607,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.00023,0.000277
+27,Lugo,0.0,0.0001426,0.0002215,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001303,0.0001549
+28,Madrid,0.0,0.0001559,0.0002165,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001419,0.00017
+29,Málaga,0.0,0.0004711,0.0009847,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.000412,0.0005303
+30,Murcia,0.0,0.0002057,0.0004294,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001894,0.0002219
+31,Navarra,0.0,0.0003199,0.0007209,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002983,0.0003416
+32,Ourense,0.0,0.0001426,0.0002215,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001303,0.0001549
+33,Asturias,0.0,0.0002968,0.0005262,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002616,0.0003321
+34,Palencia,0.0,0.0001109,0.0002919,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001064,0.0001154
+35,"Palmas, Las",0.0,9.99e-05,0.0001528,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,9e-05,0.0001098
+36,Pontevedra,0.0,0.0001426,0.0002215,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001303,0.0001549
+37,Salamanca,0.0,0.0001109,0.0002919,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001064,0.0001154
+38,Santa Cruz de Tenerife,0.0,9.99e-05,0.0001528,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,9e-05,0.0001098
+39,Cantabria,0.0,0.0001247,0.0002398,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001138,0.0001355
+40,Segovia,0.0,0.0001109,0.0002919,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001064,0.0001154
+41,Sevilla,0.0,0.0004711,0.0009847,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.000412,0.0005303
+42,Soria,0.0,0.0001109,0.0002919,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001064,0.0001154
+43,Tarragona,0.0,0.0002208,0.0003145,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002011,0.0002406
+44,Teruel,0.0,0.0002887,0.0003826,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002644,0.000313
+45,Toledo,0.0,0.0002991,0.0006858,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002832,0.0003149
+46,Valencia/València,0.0,0.0001921,0.0002801,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001744,0.0002098
+47,Valladolid,0.0,0.0001109,0.0002919,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001064,0.0001154
+48,Bizkaia,0.0,7.76e-05,0.0009377,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,6.94e-05,8.57e-05
+49,Zamora,0.0,0.0001109,0.0002919,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0001064,0.0001154
+50,Zaragoza,0.0,0.0002887,0.0003826,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002644,0.000313
+51,Ceuta,0.0,0.0002553,0.0003608,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.0002311,0.0002794
+52,Melilla,0.0,0.0003081,0.0026714,min=0 (identidades a y b negativas; bajas>=0); central y max: licencias de demolición MIVAU repartidas por parque (c),C4,0.000284,0.0003323

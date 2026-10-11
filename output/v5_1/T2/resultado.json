@@ -1,0 +1,111 @@
+{
+ "rama": "v5_1/T2",
+ "pregunta": "Cuantas viviendas libera el envejecimiento (fallecimiento y traslado a residencia) en 2026-2035 y cuantas llegan al mercado, donde y con que sensibilidad",
+ "capa": "C4",
+ "datos": {
+  "mort": "INE tabla 67235, mortalidad por provincia 2024 (mod. 2025-11)",
+  "pob": "INE tabla 36726, Proyecciones de Poblacion 2024-2074 (corto plazo), 2026-2041",
+  "hog": "INE tabla 54562, Proyeccion de Hogares (mod. 2026-06-17)",
+  "censo": "INE Censo 2021 (1-nov-2021), secciones",
+  "ecv": "INE ECV tabla 9994, tenencia por edad de la persona de referencia, 2025",
+  "her": "INE ETDP tabla 6154, viviendas transmitidas por titulo (herencia), 2014-2025"
+ },
+ "N": 52,
+ "metodo": "Contabilidad de flujo por provincia: defunciones 75+ (proyeccion INE x riesgo de muerte 2024) x jefatura 65+ x disolucion, con correccion por muertes en residencia, mas traslados a residencia de quien vivia solo; reparto a municipios por poblacion 65+ del Censo 2021; tenencia ECV 65+ escalada con el Censo; fraccion de mercado con X = vacias y secundarias del Censo 2021. La vivienda liberada NO se resta de la necesidad: la proyeccion de hogares del INE (tabla 54562) ya la descuenta; la sensibilidad X es un posible AUMENTO de la necesidad efectiva respecto a la que el INE da por absorbida.",
+ "estimacion": {
+  "liberadas_2026_2035": {
+   "central": 1856430.5130877716,
+   "min": 936056.3501748865,
+   "max": 3168589.5848555197
+  },
+  "liberadas_anuales_2026_2035": {
+   "central": 185643.05130877715,
+   "min": 93605.63501748865,
+   "max": 316858.958485552
+  },
+  "escenario_2036_2040": {
+   "central": 1140311.5130575586,
+   "min": 575802.4852867009,
+   "max": 1944232.1682502422
+  },
+  "mercado_anual": {
+   "central": 150078.84573710078,
+   "min": 70095.88761988512,
+   "max": 275008.4108256729
+  },
+  "no_llega_anual": {
+   "central": 35564.20557167639,
+   "min": 24548.22155995675,
+   "max": 46580.18958339604
+  },
+  "aumento_necesidad_efectiva_pct": {
+   "central": 16.551669116103007,
+   "min": 11.424802947736353,
+   "max": 21.67853528446966,
+   "estres_X50": 43.19936730730373
+  },
+  "no_restar_de_necesidad": "La vivienda liberada NO se resta de la necesidad: la proyeccion de hogares del INE (tabla 54562) ya la descuenta; la sensibilidad X es un posible AUMENTO de la necesidad efectiva respecto a la que el INE da por absorbida.",
+  "por_tipo_municipio_central_2026_2035": {
+   "capital": 619767.9392451645,
+   "entorno_grande": 137395.03823964825,
+   "resto": 1099267.5356029589
+  }
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO",
+ "diagnosticos": {
+  "control_sumas": [
+   {
+    "tabla": "liberadas_central_2026_2035: suma tipos = suma provincias",
+    "suma_provincial": 1856430.5130877716,
+    "nacional": 1856430.5130877716,
+    "tolerancia_rel": 1e-09,
+    "ok": true
+   },
+   {
+    "tabla": "poblacion_75mas_2026 (suma provincial vs Total Nacional, INE 36726; 100+ incluido)",
+    "suma_provincial": 5133395.0,
+    "nacional": 5133395.0,
+    "tolerancia_rel": 0.001,
+    "ok": true
+   },
+   {
+    "tabla": "herencias_viviendas_2025 (suma 52 provincias vs Total Nacional ETDP)",
+    "suma_provincial": 208455.0,
+    "nacional": 208455.0,
+    "tolerancia_rel": 0.001,
+    "ok": true
+   },
+   {
+    "tabla": "pesos_municipio_suman_1 (por provincia, tipos)",
+    "suma_provincial": 52.0,
+    "nacional": 52.0,
+    "tolerancia_rel": 1e-09,
+    "ok": true
+   }
+  ],
+  "comparable_B1_fallecimiento_sin_ajuste_anual": 141526.27709544092,
+  "h65": 0.5675059326003702,
+  "tenencia_65_ECV": {
+   "propiedad": 0.882,
+   "alquiler": 0.078,
+   "cesion": 0.040999999999999995
+  },
+  "holm_bh": "no aplica: sin contraste de hipotesis; las especificaciones son escenarios de contabilidad"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "Rangos de supuestos, no intervalos de confianza.",
+  "Parametros de residencias (4-8 % de 75+, estancia 2,5-4 anos, 30-60 % solos, sobremortalidad x2): SIN DATO propio (Censo 2021 por edad en establecimientos colectivos e IMSERSO no accesibles); NO VERIFICADOS.",
+  "2036-2040 es escenario: mortalidad de 2024 constante (sesgo al alza), proyeccion INE corto plazo.",
+  "Tipo de municipio: regla propia (capital; resto con >=50.000 hab. del Censo 2021; resto). Atlas de Areas Urbanas no disponible (403). El reparto por municipio usa poblacion 65+ como proxy de 75+.",
+  "Solo defunciones de 75+ (como B1); no se cuentan 65-74.",
+  "La vivienda liberada NO se resta de la necesidad: la proyeccion de hogares del INE (tabla 54562) ya la descuenta; la sensibilidad X es un posible AUMENTO de la necesidad efectiva respecto a la que el INE da por absorbida.",
+  "Destino posterior (venta/alquiler/uso) sin dato: no existe en el INE el seguimiento de la vivienda heredada."
+ ]
+}

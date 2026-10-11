@@ -1,0 +1,64 @@
+{
+ "resumen": {
+  "2026-2035": {
+   "anios": 10,
+   "liberadas_min": 936056.3501748865,
+   "liberadas_central": 1856430.5130877716,
+   "liberadas_max": 3168589.5848555197,
+   "via_fallecimiento_central": 1343164.4788491842,
+   "via_residencia_central": 513266.0342385871,
+   "comparable_B1_fallecimiento_sin_ajuste": 1415262.7709544091,
+   "mercado_min": 700958.8761988512,
+   "mercado_central": 1500788.457371008,
+   "mercado_max": 2750084.1082567293,
+   "no_llega_central": 355642.05571676395,
+   "no_llega_min": 245482.21559956748,
+   "no_llega_max": 465801.8958339604,
+   "por_tipo_central": {
+    "capital": 619767.9392451645,
+    "entorno_grande": 137395.03823964825,
+    "resto": 1099267.5356029589
+   },
+   "en_prov_clase12_central": 1804607.704247381,
+   "en_mun_clase12_central": 869828.2502801243,
+   "en_mun_sin_clase_central": 528068.9454287781,
+   "herencias_anual_2023_25_modelo": 203393.33333333334,
+   "propietarias_central": 1631469.9543992272,
+   "alquiladas_central": 144063.16107070673,
+   "cesion_central": 80897.39761783747
+  },
+  "2036-2040": {
+   "anios": 5,
+   "liberadas_min": 575802.4852867009,
+   "liberadas_central": 1140311.5130575586,
+   "liberadas_max": 1944232.1682502422,
+   "via_fallecimiento_central": 828553.6258440538,
+   "via_residencia_central": 311757.88721350493,
+   "comparable_B1_fallecimiento_sin_ajuste": 873028.671366498,
+   "mercado_min": 431647.4485347376,
+   "mercado_central": 922688.0574529343,
+   "mercado_max": 1688774.392529652,
+   "no_llega_central": 217623.45560462467,
+   "no_llega_min": 149944.77384412594,
+   "no_llega_max": 285302.13736512343,
+   "por_tipo_central": {
+    "capital": 380675.3613515506,
+    "entorno_grande": 84496.296766858,
+    "resto": 675139.8549391502
+   },
+   "en_prov_clase12_central": 1108955.5656230368,
+   "en_mun_clase12_central": 537215.0905039662,
+   "en_mun_sin_clase_central": 319681.4734953477,
+   "herencias_anual_2023_25_modelo": 203393.33333333334,
+   "propietarias_central": 1001942.4561879889,
+   "alquiladas_central": 88718.65472742534,
+   "cesion_central": 49650.402142144696
+  }
+ },
+ "ten65": {
+  "propiedad": 0.882,
+  "alquiler": 0.078,
+  "cesion": 0.040999999999999995
+ },
+ "h65": 0.5675059326003702
+}

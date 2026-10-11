@@ -1,0 +1,6 @@
+metodo,tasa_anual_pct,viviendas_anio,signo,margen_declarado_pp
+"a) identidad Censo, nacional 2011-2020",-0.3278168941289341,-82670.6181818182,negativa,0.05
+"a) identidad Censo, territorio común",-0.3386119543817623,-80899.65454545456,negativa,0.05
+"b) Catastro, territorio común 2012-2020",-0.1757602417333874,-41036.88888888889,negativa,0.05
+"c) licencias, demolición estrecha (tabla 10) 2012-2020",0.024684123310260767,6390.222222222223,positiva,0.05
+"c) licencias, demolición amplia (tabla 6) 2012-2020",0.025205600737962238,6525.222222222223,positiva,0.05

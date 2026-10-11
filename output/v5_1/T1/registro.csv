@@ -1,0 +1,12 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+T1,test_A,media provincial tasa A = 0,2011,2020,52,,,,,-0.005005118766866946,1.7413631920872884e-12,t de una muestra entre provincias
+T1,test_B,media provincial tasa B = 0,2011,2020,48,,,,,-0.001554656586562897,8.198934564706013e-08,t de una muestra entre provincias
+T1,test_C_estrecha,media provincial tasa C_estrecha = 0,2011,2020,52,,,,,0.00026708376290069427,1.3318529868266897e-17,t de una muestra entre provincias
+T1,test_C_amplia,media provincial tasa C_amplia = 0,2011,2020,52,,,,,0.00027173317523562193,1.0611458312068259e-17,t de una muestra entre provincias
+T1,tasa_A_total_ventana_nov11_ene21,tasa anual de bajas / parque,2011,2020,52,,,,,-0.003278168941289341,,tasa nacional
+T1,tasa_A_comun,tasa anual de bajas / parque,2011,2020,52,,,,,-0.003386119543817623,,tasa nacional
+T1,tasa_B_catastro_1220,tasa anual de bajas / parque,2011,2020,52,,,,,-0.0017576024173338739,,tasa nacional
+T1,tasa_C_estrecha,tasa anual de bajas / parque,2011,2020,52,,,,,0.00024684123310260767,,tasa nacional
+T1,tasa_C_amplia,tasa anual de bajas / parque,2011,2020,52,,,,,0.00025205600737962237,,tasa nacional
+T1,A_variante_b1_ventana,Censo11 + term(2012-2021) - Censo21,2012,2021,52,,,,,-0.0027264827239171507,,lectura B1 (2021 como fecha 1-nov-2021)
+T1,A_solo_libres,Censo11 + libres - Censo21,2011,2020,52,,,,,-0.003873203145658901,,sin protegida

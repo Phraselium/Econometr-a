@@ -1,0 +1,9 @@
+concepto,viviendas,fuente
+Δ parque Censo 2011 a Censo 2021 (viviendas familiares),1405173.0,"INE 3457, 59525"
+"Terminadas MIVAU 1-nov-2011 a 31-dic-2020 (libres + protegidas, nov-dic 2011 y protegida 2011 a prorrata 2/12)",647359.0,MIVAU 3.2 y 1.6
+Diferencia = altas netas no explicadas por terminadas (= -bajas de la identidad),757814.0,cálculo
+"  de ellas, territorio común",741580.1666666666,cálculo
+"  de ellas, 4 provincias forales",16233.83333333333,cálculo
+  territorio común: Δ unidades urbanas residenciales Catastro 1-ene-2012 a 1-ene-2021 menos terminadas 2012-2020,369332.0,"Catastro, MIVAU"
+"  territorio común: residuo no explicado por el Catastro (cobertura censal 2011/2021, vivienda aflorada, otras)",372248.1666666666,cálculo
+Sensibilidad ventana: sumar terminadas 2021 completo y quitar nov-dic 2011 (lectura B1: 2012-2021),70235.0,cálculo

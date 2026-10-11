@@ -1,0 +1,151 @@
+{
+ "tasaA_nac": -0.003278168941289341,
+ "sA": -757814.0,
+ "tasa_A_com": -0.003386119543817623,
+ "tasa_B_nac": -0.0017576024173338739,
+ "sB": -369332.0,
+ "tC": {
+  "amplia": 0.00025205600737962237,
+  "estrecha": 0.00024684123310260767
+ },
+ "bC": {
+  "amplia": 6525.222222222223,
+  "estrecha": 6390.222222222223
+ },
+ "dif_ab": 0.1628517126483749,
+ "dif_ac": 0.36329607769202305,
+ "dif_bc": 0.20044436504364815,
+ "ratio_uu": 0.9435708765744207,
+ "npos": {
+  "A": 3,
+  "B": 5
+ },
+ "n_neg_A": 49,
+ "n_neg_B": 43,
+ "n_B": 48,
+ "pvals": {
+  "A": 1.7413631920872884e-12,
+  "B": 8.198934564706013e-08,
+  "C_estrecha": 1.3318529868266897e-17,
+  "C_amplia": 1.0611458312068259e-17
+ },
+ "padj": {
+  "C_amplia": 4.2445833248273035e-17,
+  "C_estrecha": 4.2445833248273035e-17,
+  "A": 3.482726384174577e-12,
+  "B": 8.198934564706013e-08
+ },
+ "G_com": 741580.1666666666,
+ "G_for": 16233.83333333333,
+ "cat_extra": 369332.0,
+ "G": 757814.0,
+ "term_W": 647359.0,
+ "delta_censo": 1405173.0,
+ "A_b1": -687579.0,
+ "A_libres": -895368.0,
+ "L2024": {
+  "D_estrecha": 5898,
+  "D_amplia": 9706
+ },
+ "L_media_1224": {
+  "D_estrecha": 6200.2307692307695,
+  "D_amplia": 7194.7692307692305
+ },
+ "tasa_L2024": [
+  0.0002192365949813554,
+  0.00036078507814327497
+ ],
+ "tasa_L_max_0024": 0.0014140733556059738,
+ "central_nac": 0.00025594410041606525,
+ "max_nac": 0.000517866981676632,
+ "deficit": [
+  {
+   "periodo": "2021-2024",
+   "escenario": "estimada_tasa_min",
+   "deficit_sin_bajas": 562692.0,
+   "bajas": 0.0,
+   "deficit": 562692.0,
+   "n_prov": 52
+  },
+  {
+   "periodo": "2021-2024",
+   "escenario": "estimada_tasa_central",
+   "deficit_sin_bajas": 562692.0,
+   "bajas": 27404.854874688863,
+   "deficit": 590096.8548746889,
+   "n_prov": 52
+  },
+  {
+   "periodo": "2021-2024",
+   "escenario": "supuesto_0,1%",
+   "deficit_sin_bajas": 562692.0,
+   "bajas": 107057.889,
+   "deficit": 669749.889,
+   "n_prov": 52
+  },
+  {
+   "periodo": "2021-2024",
+   "escenario": "supuesto_0,2%",
+   "deficit_sin_bajas": 562692.0,
+   "bajas": 214115.778,
+   "deficit": 776807.7779999999,
+   "n_prov": 52
+  },
+  {
+   "periodo": "2021-2024",
+   "escenario": "estimada_tasa_max",
+   "deficit_sin_bajas": 562692.0,
+   "bajas": 55452.32494374429,
+   "deficit": 618144.3249437443,
+   "n_prov": 52
+  },
+  {
+   "periodo": "2021-2025",
+   "escenario": "estimada_tasa_min",
+   "deficit_sin_bajas": 700934.0,
+   "bajas": 0.0,
+   "deficit": 700934.0,
+   "n_prov": 52
+  },
+  {
+   "periodo": "2021-2025",
+   "escenario": "estimada_tasa_central",
+   "deficit_sin_bajas": 700934.0,
+   "bajas": 34320.08509765051,
+   "deficit": 735254.0850976505,
+   "n_prov": 52
+  },
+  {
+   "periodo": "2021-2025",
+   "escenario": "supuesto_0,1%",
+   "deficit_sin_bajas": 700934.0,
+   "bajas": 134062.65399999998,
+   "deficit": 834996.654,
+   "n_prov": 52
+  },
+  {
+   "periodo": "2021-2025",
+   "escenario": "supuesto_0,2%",
+   "deficit_sin_bajas": 700934.0,
+   "bajas": 268125.30799999996,
+   "deficit": 969059.308,
+   "n_prov": 52
+  },
+  {
+   "periodo": "2021-2025",
+   "escenario": "estimada_tasa_max",
+   "deficit_sin_bajas": 700934.0,
+   "bajas": 69445.8153480606,
+   "deficit": 770379.8153480606,
+   "n_prov": 52
+  }
+ ],
+ "nprov": 52,
+ "smoke": false,
+ "ccaa_vs_nac": {
+  "2012": 1.0,
+  "2016": 1.0,
+  "2020": 0.9835796387520526,
+  "2022": 1.0
+ }
+}

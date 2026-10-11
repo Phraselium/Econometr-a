@@ -1,0 +1,86 @@
+[
+ {
+  "tabla": "viv_2011_censo",
+  "suma_provincial": 25218535.0,
+  "nacional": 25218536.0,
+  "tolerancia_rel": 0.005,
+  "ok": true
+ },
+ {
+  "tabla": "viv_2021_censo",
+  "suma_provincial": 26623708.0,
+  "nacional": 26623708.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "terminadas_W_libres_2012_2020",
+  "suma_provincial": 495030.0,
+  "nacional": 495030.0,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "licencias_demolicion_2014_amplia",
+  "suma_provincial": 5757.999999999999,
+  "nacional": 5758.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "licencias_demolicion_2014_estrecha",
+  "suma_provincial": 5757.999999999999,
+  "nacional": 5758.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "licencias_demolicion_2020_amplia",
+  "suma_provincial": 6090.000000000001,
+  "nacional": 6090.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "licencias_demolicion_2020_estrecha",
+  "suma_provincial": 5568.999999999999,
+  "nacional": 5569.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "licencias_demolicion_2024_amplia",
+  "suma_provincial": 9706.000000000002,
+  "nacional": 9706.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "licencias_demolicion_2024_estrecha",
+  "suma_provincial": 5898.0,
+  "nacional": 5898.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "bajas_A_suma_provincial",
+  "suma_provincial": -757814.0,
+  "nacional": -757814.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "bajas_B_1220_suma_provincial",
+  "suma_provincial": -369332.0,
+  "nacional": -369332.0,
+  "tolerancia_rel": 1e-06,
+  "ok": true
+ },
+ {
+  "tabla": "deficit_2021_2024_sin_bajas",
+  "suma_provincial": 562692.0,
+  "nacional": 562692.0,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ }
+]

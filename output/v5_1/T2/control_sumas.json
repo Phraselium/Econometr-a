@@ -1,0 +1,30 @@
+[
+ {
+  "tabla": "liberadas_central_2026_2035: suma tipos = suma provincias",
+  "suma_provincial": 1856430.5130877716,
+  "nacional": 1856430.5130877716,
+  "tolerancia_rel": 1e-09,
+  "ok": true
+ },
+ {
+  "tabla": "poblacion_75mas_2026 (suma provincial vs Total Nacional, INE 36726; 100+ incluido)",
+  "suma_provincial": 5133395.0,
+  "nacional": 5133395.0,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "herencias_viviendas_2025 (suma 52 provincias vs Total Nacional ETDP)",
+  "suma_provincial": 208455.0,
+  "nacional": 208455.0,
+  "tolerancia_rel": 0.001,
+  "ok": true
+ },
+ {
+  "tabla": "pesos_municipio_suman_1 (por provincia, tipos)",
+  "suma_provincial": 52.0,
+  "nacional": 52.0,
+  "tolerancia_rel": 1e-09,
+  "ok": true
+ }
+]

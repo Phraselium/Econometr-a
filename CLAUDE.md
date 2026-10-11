@@ -1,11 +1,11 @@
-# Vivienda España — v6 alquiler y compraventa (V1-V5.1 cerradas: no rehacer lo aprobado; v6 en docs/v6, src/v6, output/v6; entregables en output/v5)
+# Vivienda España — v6.1 cierre, auditoría y consolidación (V1-V6 cerradas: solo se corrigen errores hallados en la auditoría; v6.1 en docs/v6_1, src/v6_1, output/v6_1; entregables en output/v5)
 
 - Idioma: español. `make all` reproducible SIN red; SEED=20261010 en todo lo aleatorio.
-- Al empezar: leer docs/v6/estado.md, docs/v6/plan.md, docs/v6/decisiones.md, docs/v6/hipotesis.md y docs/MAPA.md.
+- Al empezar: leer docs/v6_1/estado.md, docs/v6_1/plan.md y docs/v6_1/decisiones.md (y, si hace falta, docs/v6/*, docs/v6/hipotesis.md y docs/MAPA.md).
 - Capas v3: C1 HECHOS (≥2 fuentes) · C2 COTAS (Manski, supuestos explícitos) · C3 EFECTOS (pretendencias, placebos, sensibilidad, sellado) · C4 EXPLORATORIO. Nunca promover de capa.
 - Neutralidad: veredicto sobre la afirmación, nunca sobre quién la dice; se evalúan afirmaciones e instrumentos, nunca partidos ni personas; sin lenguaje valorativo ni partidista. `make check` en cada puerta.
-- Tras cada tarea: actualizar docs/v6/estado.md (hecho / siguiente / tokens de subagentes).
-- Decisiones → docs/v6/decisiones.md; bloqueos reales → docs/v6/bloqueos.md; fuentes inaccesibles → docs/v6/fuentes_fallidas.md (endpoint, edición y fecha verificados).
+- Tras cada tarea: actualizar docs/v6_1/estado.md (hecho / siguiente / tokens de subagentes).
+- Decisiones → docs/v6_1/decisiones.md; bloqueos reales → docs/v6_1/bloqueos.md; fuentes inaccesibles → docs/v6/fuentes_fallidas.md (endpoint, edición y fecha verificados).
 - Subagentes devuelven: rutas + resumen ≤200 palabras + output/v6/<módulo>/resultado.json. Nunca datos crudos.
 - resultado.json: {rama, pregunta, capa, datos, N, metodo, estimacion, ic95, p_ajustado, nivel_evidencia, diagnosticos, fuera_muestra{modelo, rmse, dm_vs_ar4}, notas}.
 - data/raw: solo lectura. data/sealed: SOLO vía src/holdout.py (registra cada acceso; una evaluación por hipótesis confirmatoria).
@@ -21,3 +21,4 @@
 - Autor: Borja Romero, economista (firma individual, independiente). Resúmenes también en inglés en working paper y artículos.
 - v5.1: las viviendas liberadas por envejecimiento NUNCA se restan de la necesidad (la proyección de hogares del INE ya las descuenta); `make check` lo comprueba.
 - v6: validación sellada NUEVA (src/holdout.py: sellar_v6, evaluate_v6; último año + 11 provincias por bloques de CCAA); predicción ≠ causalidad: nada causal desde SHAP o importancias; cada resultado de compra declara su medida de precio.
+- v6.1: un modelo solo «predice mejor» si supera a la línea base más exigente (K1); todo error que cambie una cifra publicada va a ERRATA.md.

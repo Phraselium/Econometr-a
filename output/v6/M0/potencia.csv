@@ -1,10 +1,7 @@
-panel,desenlace,mercado,nivel,K_variables_panel,N_train,n_agrupaciones_CCAA,sd_desenlace_train,rho_min_iid,rho_min_cluster_ICC0.3,deff,N_eff,efecto_pct_1DE_iid,efecto_pct_1DE_cluster,fuente
-prov_compra_anual,ln_pm2_tasado,precio de compra,provincia,22,380,8,0.3202,0.1979,0.6764,14.95,25.4,6.54,24.18,valor tasado MIVAU (anual)
-prov_compra_anual,ln_cv_etdp,volumen de compra,provincia,22,410,11,1.1041,0.1906,0.6003,11.88,34.5,23.43,94.03,compraventas INE ETDP
-prov_trim_compra,ln_pm2_tasado,precio de compra,provincia (trimestral),4,1672,8,0.3285,0.0816,0.5985,63.4,26.4,2.72,21.72,valor tasado MIVAU (trimestral)
-prov_trim_compra,ln_cv_etdp,volumen de compra,provincia (trimestral),4,1672,8,1.018,0.0816,0.5985,63.4,26.4,8.66,83.9,compraventas INE ETDP
-prov_alquiler_anual,ln_alq_m2_serpavi_vc,alquiler de stock,provincia,10,344,11,0.2354,0.1951,0.5744,10.08,34.1,4.7,14.48,SERPAVI mediana VC
-prov_contratos_nuevos_anual,ln_fianza_media_gva_eur,alquiler de contratos nuevos,provincia (solo CV),5,15,1,0.1807,0.7559,,5.2,2.9,14.64,,fianzas GVA (€ depósito)
-mun_anual,ln_pm2_tasado_mun,precio de compra,"municipio (>25.000 hab., por nombre único)",9,1909,10,0.392,0.0826,0.5788,57.97,32.9,3.29,25.47,valor tasado MIVAU municipal
-mun_anual,ln_alq_m2_serpavi_mun,alquiler de stock,municipio,9,16633,11,0.3547,0.028,0.5535,454.33,36.6,1.0,21.69,SERPAVI municipal mediana VC
-dis_alquiler_anual,ln_alq_m2_serpavi_dis,alquiler de stock,distrito (aprox. mediana p25-p75),2,27578,11,0.355,0.0186,0.4866,752.83,36.6,0.66,18.86,SERPAVI distritos v3
+panel,desenlace,mercado,nivel,K,N_train,n_clusters_CCAA,sd_within,rho_min_iid,rho_min_cluster_ICC0.3,deff,N_eff,efecto_pct_1DE_within_iid,efecto_pct_1DE_within_cluster,fuente
+prov_compra_anual,ln_pm2_tasado,precio de compra,provincia,11,410,11,0.043,0.1804,0.5753,11.88,34.5,0.78,2.5,valor tasado MIVAU
+prov_compra_anual,ln_cv_etdp,volumen de compra,provincia,11,410,11,0.0851,0.1804,0.5753,11.88,34.5,1.55,5.02,compraventas INE ETDP
+prov_alquiler_anual,ln_alq_m2_serpavi_vc,alquiler de stock,provincia,4,344,11,0.0217,0.1789,0.536,10.08,34.1,0.39,1.17,SERPAVI mediana VC
+mun_compra_anual,ln_pm2_tasado_mun,precio de compra,municipio,1,1909,10,0.0634,0.0641,0.4716,57.97,32.9,0.41,3.04,valor tasado MIVAU municipal
+mun_alquiler_anual,ln_alq_m2_serpavi_mun,alquiler de stock,municipio,1,14656,11,0.0616,0.0231,0.4489,400.41,36.6,0.14,2.8,SERPAVI municipal
+dis_alquiler_anual,ln_alq_m2_serpavi_dis,alquiler de stock,distrito (punto medio p25-p75),2,27578,11,0.0713,0.0186,0.4866,752.83,36.6,0.13,3.53,SERPAVI distritos v3

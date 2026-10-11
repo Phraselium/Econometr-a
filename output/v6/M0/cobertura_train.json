@@ -1,8 +1,8 @@
 {
  "prov_compra_anual": {
   "ln_pm2_tasado": {
-   "n": 380,
-   "unidades": 38,
+   "n": 410,
+   "unidades": 41,
    "anios": [
     "2015",
     "2024"
@@ -235,16 +235,16 @@
    ]
   },
   "ln_ratio_precio_alquiler": {
-   "n": 317,
-   "unidades": 36,
+   "n": 344,
+   "unidades": 39,
    "anios": [
     "2015",
     "2023"
    ]
   },
   "rentabilidad_bruta_pct": {
-   "n": 317,
-   "unidades": 36,
+   "n": 344,
+   "unidades": 39,
    "anios": [
     "2015",
     "2023"
@@ -277,113 +277,113 @@
  },
  "prov_contratos_nuevos_anual": {
   "ln_fianza_media_gva_eur": {
-   "n": 15,
+   "n": 12,
    "unidades": 3,
    "anios": [
     "2020",
-    "2024"
+    "2023"
    ]
   },
   "ln_n_fianzas_gva": {
-   "n": 15,
+   "n": 12,
    "unidades": 3,
    "anios": [
     "2020",
-    "2024"
+    "2023"
    ]
   },
   "pct_fianzas_600_incasol": {
-   "n": 16,
+   "n": 12,
    "unidades": 4,
    "anios": [
     "2021",
-    "2024"
+    "2023"
    ]
   },
   "ln_n_fianzas_incasol": {
-   "n": 40,
+   "n": 36,
    "unidades": 4,
    "anios": [
     "2015",
-    "2024"
+    "2023"
    ]
   },
   "ln_ipva_nuevo_idx": {
-   "n": 152,
+   "n": 114,
    "unidades": 38,
    "anios": [
     "2021",
-    "2024"
+    "2023"
    ]
   }
  },
  "prov_trim_compra": {
   "ln_pm2_tasado": {
-   "n": 1672,
-   "unidades": 38,
+   "n": 1640,
+   "unidades": 41,
    "anios": [
     "2015",
-    "2025"
+    "2024"
    ]
   },
   "ln_cv_etdp": {
-   "n": 1672,
-   "unidades": 38,
+   "n": 1640,
+   "unidades": 41,
    "anios": [
     "2015",
-    "2025"
+    "2024"
    ]
   },
   "ln_ipc_alq_idx": {
-   "n": 1672,
-   "unidades": 38,
+   "n": 1640,
+   "unidades": 41,
    "anios": [
     "2015",
-    "2025"
+    "2024"
    ]
   },
   "ln_hip_viv_num": {
-   "n": 1672,
-   "unidades": 38,
+   "n": 1640,
+   "unidades": 41,
    "anios": [
     "2015",
-    "2025"
+    "2024"
    ]
   },
   "pm2_tasado": {
-   "n": 1672,
-   "unidades": 38,
+   "n": 1640,
+   "unidades": 41,
    "anios": [
     "2015",
-    "2025"
+    "2024"
    ]
   },
   "cv_etdp": {
-   "n": 1672,
-   "unidades": 38,
+   "n": 1640,
+   "unidades": 41,
    "anios": [
     "2015",
-    "2025"
+    "2024"
    ]
   },
   "ipc_alq_idx": {
-   "n": 1672,
-   "unidades": 38,
+   "n": 1640,
+   "unidades": 41,
    "anios": [
     "2015",
-    "2025"
+    "2024"
    ]
   },
   "hip_viv_num": {
-   "n": 1672,
-   "unidades": 38,
+   "n": 1640,
+   "unidades": 41,
    "anios": [
     "2015",
-    "2025"
+    "2024"
    ]
   }
  },
- "mun_anual": {
+ "mun_compra_anual": {
   "ln_pm2_tasado_mun": {
    "n": 1909,
    "unidades": 200,
@@ -391,66 +391,86 @@
     "2015",
     "2024"
    ]
-  },
+  }
+ },
+ "mun_alquiler_anual": {
   "ln_alq_m2_serpavi_mun": {
-   "n": 16633,
-   "unidades": 2021,
+   "n": 14656,
+   "unidades": 1888,
    "anios": [
     "2015",
-    "2024"
-   ]
-  },
-  "ln_n_fianzas_gva_mun": {
-   "n": 1374,
-   "unidades": 281,
-   "anios": [
-    "2020",
-    "2024"
-   ]
-  },
-  "ln_fianza_media_gva_mun_eur": {
-   "n": 1142,
-   "unidades": 272,
-   "anios": [
-    "2020",
-    "2024"
-   ]
-  },
-  "ln_n_fianzas_incasol_mun": {
-   "n": 8419,
-   "unidades": 943,
-   "anios": [
-    "2015",
-    "2024"
-   ]
-  },
-  "pct_fianzas_600_incasol_mun": {
-   "n": 1719,
-   "unidades": 623,
-   "anios": [
-    "2021",
-    "2024"
+    "2023"
    ]
   },
   "tensionada_mun": {
-   "n": 20530,
-   "unidades": 2470,
+   "n": 18181,
+   "unidades": 2341,
    "anios": [
     "2015",
-    "2024"
+    "2023"
    ]
   },
   "tope_cat_mun": {
-   "n": 20530,
-   "unidades": 2470,
+   "n": 18181,
+   "unidades": 2341,
    "anios": [
     "2015",
-    "2024"
+    "2023"
+   ]
+  }
+ },
+ "mun_contratos_anual": {
+  "ln_fianza_media_gva_mun_eur": {
+   "n": 905,
+   "unidades": 265,
+   "anios": [
+    "2020",
+    "2023"
+   ]
+  },
+  "ln_n_fianzas_gva_mun": {
+   "n": 1095,
+   "unidades": 281,
+   "anios": [
+    "2020",
+    "2023"
+   ]
+  },
+  "ln_n_fianzas_incasol_mun": {
+   "n": 7565,
+   "unidades": 941,
+   "anios": [
+    "2015",
+    "2023"
+   ]
+  },
+  "pct_fianzas_600_incasol_mun": {
+   "n": 1235,
+   "unidades": 562,
+   "anios": [
+    "2021",
+    "2023"
    ]
   }
  },
  "dis_alquiler_anual": {
   "ln_alq_m2_serpavi_dis": {
+   "n": 27578,
+   "unidades": 2501,
+   "anios": [
+    "2011",
+    "2023"
+   ]
+  },
+  "ln_alq_m2_p25_dis": {
+   "n": 27578,
+   "unidades": 2501,
+   "anios": [
+    "2011",
+    "2023"
+   ]
+  },
+  "ln_alq_m2_p75_dis": {
    "n": 27578,
    "unidades": 2501,
    "anios": [

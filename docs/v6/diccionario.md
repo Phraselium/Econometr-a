@@ -17,7 +17,7 @@ Extrapolación: ninguna. Las variables estáticas o de corte transversal (costa,
 |---|---|---|---|
 | Alquiler de stock | provincia | `ln_alq_m2_serpavi_vc` (SERPAVI, mediana VC, €/m²/mes, 2011-2024) | `ln_alq_mes_serpavi_vc` (€/mes); `ln_ipc_alq_idx` (IPC alquiler, índice, 2002-2025) |
 | Alquiler de stock | municipio | `ln_alq_m2_serpavi_mun` (SERPAVI municipal, mediana VC) | — |
-| Alquiler de stock | distrito / sección | `ln_alq_m2_serpavi_dis` (SERPAVI distrito v3, punto medio p25-p75) | p25 y p75 por separado (en `docs`, no en el panel) |
+| Alquiler de stock | distrito / sección | `ln_alq_m2_serpavi_dis` (SERPAVI distrito v3, punto medio p25-p75) | `ln_alq_m2_p25_dis`, `ln_alq_m2_p75_dis` (en el panel, N4) |
 | Contratos nuevos | provincia | `ln_fianza_media_gva_eur` (GVA, solo 3 provincias CV) | `ln_n_fianzas_gva`; `pct_fianzas_600_incasol` (Incasòl, 4 provincias CAT); `ln_ipva_nuevo_idx` (IPVA nuevo, 38 provincias) |
 | Contratos nuevos | municipio | `ln_fianza_media_gva_mun_eur` (GVA municipal) | `ln_n_fianzas_incasol_mun`, `pct_fianzas_600_incasol_mun` |
 | Precio de compra | provincia (anual) | `ln_pm2_tasado` (valor tasado MIVAU, €/m², media de 4 trimestres) | `ln_pm2_registradores` (Registradores, pm2 anual) |
@@ -70,11 +70,11 @@ Nivel: P = provincia, M = municipio, D = distrito. Fuentes en `data/raw` salvo q
 | ln_n_fianzas_gva | prov_contratos_nuevos_anual | fianzas registradas, nº, ln | anual | GVA | 2024 | C4 | 3 prov. |
 | ln_n_fianzas_incasol / pct_fianzas_600_incasol | prov_contratos_nuevos_anual | Incasòl: nº contratos (banda total) y % en banda >600 €/mes | anual | Incasòl (`v3/incasol_fianzas_municipio_v3`) | 2024 | C4 | 4 prov. (40 / 16 obs) |
 | ln_ipva_nuevo_idx | prov_contratos_nuevos_anual | IPVA nuevo contrato, índice provincial | anual | INE IPVA (`ine_v2_ipva`, «Nuevo contrato») | 2024 | C4 | 38 (152 obs, 2021-2024) |
-| ln_pm2_tasado_mun | mun_anual | valor tasado municipal, €/m², ln (municipios >25.000 con nombre único) | trimestral → anual (4 trim.) | MIVAU valor tasado municipios | 2025 | C4 | 200 mun. (1.909 obs, 2015-2024) |
-| ln_alq_m2_serpavi_mun | mun_anual | mediana alquiler €/m²/mes VC, municipal | anual | SERPAVI municipal (`pdf/serpavi_v2_municipios`) | 2024 | C1 | 2.021 mun. (16.633 obs) |
-| ln_n_fianzas_gva_mun / ln_fianza_media_gva_mun_eur | mun_anual | fianzas GVA municipal (nº y media €) | anual | GVA | 2024 | C4 | 281 / 272 mun. |
-| ln_n_fianzas_incasol_mun / pct_fianzas_600_incasol_mun | mun_anual | Incasòl municipal | anual | Incasòl | 2024 | C4 | 943 / 623 mun. |
-| tensionada_mun / tope_cat_mun | mun_anual | indicador 0/1 vigente en el año | evento | BOE / CCAA | 2025 | C1 | 2.470 mun. (todas las filas) |
+| ln_pm2_tasado_mun | mun_compra_anual / mun_alquiler_anual / mun_contratos_anual | valor tasado municipal, €/m², ln (municipios >25.000 con nombre único) | trimestral → anual (4 trim.) | MIVAU valor tasado municipios | 2025 | C4 | 200 mun. (1.909 obs, 2015-2024) |
+| ln_alq_m2_serpavi_mun | mun_compra_anual / mun_alquiler_anual / mun_contratos_anual | mediana alquiler €/m²/mes VC, municipal | anual | SERPAVI municipal (`pdf/serpavi_v2_municipios`) | 2024 | C1 | 2.021 mun. (16.633 obs) |
+| ln_n_fianzas_gva_mun / ln_fianza_media_gva_mun_eur | mun_compra_anual / mun_alquiler_anual / mun_contratos_anual | fianzas GVA municipal (nº y media €) | anual | GVA | 2024 | C4 | 281 / 272 mun. |
+| ln_n_fianzas_incasol_mun / pct_fianzas_600_incasol_mun | mun_compra_anual / mun_alquiler_anual / mun_contratos_anual | Incasòl municipal | anual | Incasòl | 2024 | C4 | 943 / 623 mun. |
+| tensionada_mun / tope_cat_mun | mun_compra_anual / mun_alquiler_anual / mun_contratos_anual | indicador 0/1 vigente en el año | evento | BOE / CCAA | 2025 | C1 | 2.470 mun. (todas las filas) |
 | ln_alq_m2_serpavi_dis | dis_alquiler_anual | punto medio p25-p75 €/m²/mes VC, distrito (v3; **no hay mediana**) | anual | SERPAVI distritos v3 (`v3/serpavi_distritos_nacional_v3`) | 2023 (sellado 2024) | C4 | 2.501 dist. (27.578 obs, 2011-2023) |
 | ln_vut_plazas_dis | dis_alquiler_anual | plazas VUT por distrito, ln, media de meses publicados | 1-2 meses/año | INE VUT sección v3 (`v3/ine_v3_vut_seccion`) | 2023 | C4 (experimental) | 4.950 dist. (13.523 obs, 2021-2023) |
 
@@ -101,7 +101,7 @@ La distancia es un **proxy** del centro, no la capital; el efecto donut se estim
 | Crédito hipotecario y a promotores provincial | Solo nacional y CCAA (BdE). |
 | Notariado (precio y volumen) | Solo Comunitat Valenciana (`pdf/notariado_cv_prov_trimestral`, 2018-2025); sin panel M0 para no sesgar la muestra a 3 provincias. |
 | VUT municipal (INE VTE, municipio) | Columna vacía tras el cruce (`ln_vut_viviendas_mun`): se elimina del train; revisar codificación. |
-| Precio por provincia de 9 provincias | MIVAU no tiene la serie provincial de Baleares, La Rioja, Madrid, Murcia, Navarra, Asturias, Cantabria, Ceuta y Melilla (las CCAA uniprovinciales figuran como CCAA). Pendiente: incorporar la serie CCAA a esas provincias. |
+| Precio por provincia (uniprovinciales) | RESUELTO (B3): las CCAA uniprovinciales (07, 26, 28, 30, 31, 33, 39) y Ceuta/Melilla (51, 52) toman la serie CCAA; marcado «CCAA = provincia (uniprovincial)», no es interpolación. Navarra tiene dos rótulos: se usa el de serie más completa. |
 | Municipios con valor tasado | 277 municipios emparejados por nombre único (de ~700 en A4); el resto, sin código fiable. |
 | Seguridad jurídica provincial | Solo CCAA (CB); en `ccaa_seguridad_juridica_transversal_desc.csv`. |
 | Costa, islas, distancia | Estáticas; fuera del panel (ver arriba). |
@@ -116,3 +116,16 @@ La distancia es un **proxy** del centro, no la capital; el efecto donut se estim
 - Los distritos SERPAVI (v3) solo cubren algunos municipios grandes (2.501 distritos con dato en train).
 - La validación sellada v6 es nueva, pero las provincias y los distritos se usaron de forma descriptiva en v4-v5
   (decisiones.md). Se dirá en todos los resultados.
+
+## 5. Cambios de la revisión (docs/v6/revision_M0.md)
+
+- B1: el trimestral usa el mismo corte que el anual de compra (2025T1 en adelante sellado).
+- B2: los paneles municipales se separan por medida (compra 2025, alquiler 2024, contratos 2024); el corte es el mismo en todos los niveles.
+- B3: uniprovinciales resueltos desde la serie CCAA; todas las provincias selladas tienen precio.
+- N1: etiqueta de provincia fija desde `territorio` (ETDP); gzip con `mtime=0`; md5 idénticos en dos ejecuciones.
+- N2: `sellado_info.json` guarda el sha256 de cada `data/sealed/v6_*.csv`, sin leer su contenido. Integrar `m0_run.py` en `make all` y el check del sha256 en `check_v6.py` queda pendiente (Makefile y check_v6 no están en las rutas de M0).
+- N3: agregados nacionales que suman desenlaces provinciales excluidos de modelos (ver hipotesis.md §3). IPV CCAA también como tasa (`ipv_tasa_anual_pct`).
+- N4: p25 y p75 del distrito en el panel.
+- N6: la caché de sellado se verifica también con distritos sellados en v3 (rama None).
+- N8: potencia con sd within, K = regresores preregistrados + 1, clústeres reales (8-11 CCAA).
+- Municipal: `mun_compra_anual` incluye todos los municipios con valor tasado por nombre único; el resto de municipios de SERPAVI o fianzas no tienen precio.

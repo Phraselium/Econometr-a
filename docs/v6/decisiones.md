@@ -31,3 +31,11 @@
   - las CCAA uniprovinciales se asignan a su provincia;
   - el pre-registro se cierra sin grados de libertad;
   - gzip con mtime=0.
+- **Correcciones de M0 aplicadas** por el agente: B1-B4, determinismo y los no bloqueantes locales.
+  - Cortes temporales por mercado: compra en 2025 y alquiler en 2024, iguales en todos los niveles.
+  - Las 11 provincias selladas tienen precio.
+  - hipotesis.md cerrado: regresores en t−1, efectos fijos de unidad y año, DM-HLN, Holm/BH, embargo de 1 año y criterio operativo de «relevante con seguridad».
+  - md5 idénticos.
+- **No hay segunda revisión de M0.** Las correcciones son exactamente las que pidió el revisor y no se ha estimado nada. El revisor final comprobará el pre-registro.
+- **m0_run.py entra en `make all` (V6_ORDEN).** En un clon limpio regenera el sellado (data/sealed no está versionado) y check_v6 verifica que su sha256 coincide con output/v6/M0/sellado_info.json.
+- **Pre-registro.** La etiqueta `prereg-v6` se pone en este commit, antes de cualquier estimación. Es local; el remoto rechaza etiquetas (tarea del autor).

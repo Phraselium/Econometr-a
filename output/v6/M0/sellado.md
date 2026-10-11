@@ -1,20 +1,35 @@
-# Sellado v6 (M0)
+# Sellado v6 (M0) — rehecho tras la revisión (docs/v6/revision_M0.md)
 
-Fecha: 2026-10-11. Función: `holdout.sellar_v6` (criterio temporal: año >= último año del desenlace del panel; espacial: provincias selladas v6). La parte sellada la escribe holdout en `data/sealed/v6_<panel>.csv`; M0 NO la ha leído. Sólo se guarda la parte de entrenamiento en `output/v6/M0/paneles/*_train.csv.gz`. Recuentos del lado sellado calculados sobre el panel en memoria antes del corte, sin abrir `data/sealed`.
+Fecha: 2026-10-11. Función: `holdout.sellar_v6`. Lado sellado escrito por holdout en `data/sealed/v6_<panel>.csv`; M0 no lo lee. Solo se guarda entrenamiento en `output/v6/M0/paneles/*_train.csv.gz`. Recuentos del lado sellado calculados sobre el panel en memoria; cada fichero sellado lleva su sha256 en `sellado_info.json` (N2).
 
-Provincias selladas v6 (11): 07, 22, 26, 28, 30, 31, 33, 35, 38, 44, 50. Distritos sellados en v3 excluidos de ambos lados (2.136 distritos, `holdout.distritos_sellados_v3`).
+## Tabla de cortes (un único año sellado por medida, en todos los niveles)
 
-Nota técnica: `holdout.distrito_sellado_v6` y `municipio_sellado_v6` releen el VUT (1,6 M filas) en cada llamada. M0 las sustituye por una caché con las mismas reglas (`cache_sellado` en `src/v6/m0_run.py`), verificada en una muestra de códigos. No se modifica `src/holdout.py`.
+| Medida | Corte (año sellado desde) | Niveles con ese corte |
+|---|---|---|
+| Compra (valor tasado MIVAU) | 2025 | provincia anual, provincia trimestral (2025T1 en adelante), municipio |
+| Alquiler de stock (SERPAVI) | 2024 | provincia, municipio, distrito |
+| Contratos nuevos (fianzas GVA/Incasòl) | 2024 | provincia, municipio |
 
-| Panel | Desenlace (último año) | Unidades total | Unidades entrenamiento | Unidades selladas | Años total | Años entrenamiento | Años sellados | Filas entrenamiento | Filas selladas |
-|---|---|---|---|---|---|---|---|---|---|
-| prov_compra_anual | ultimo_anio=2025 | 52 | 41 | 11 | 2015-2025 | 2015-2024 | 2025-2025 | 410 | 162 |
-| prov_alquiler_anual | ultimo_anio=2024 | 52 | 41 | 11 | 2015-2025 | 2015-2023 | 2024-2025 | 369 | 203 |
-| prov_contratos_nuevos_anual | ultimo_anio=2025 | 52 | 41 | 11 | 2015-2025 | 2015-2024 | 2025-2025 | 410 | 162 |
-| prov_trim_compra | ultimo_anio=2026 | 43 | 38 | 5 | 2015-2026 | 2015-2025 | 2026-2026 | 1672 | 306 |
-| mun_anual | ultimo_anio=2025 | 3063 | 2470 | 593 | 2015-2025 | 2015-2024 | 2025-2025 | 20530 | 6315 |
-| dis_alquiler_anual | ultimo_anio=2024 | 10552 | 6766 | 3786 | 2011-2024 | 2011-2023 | 2024-2024 | 40673 | 34420 |
+Provincias selladas v6 (11): 07, 22, 26, 28, 30, 31, 33, 35, 38, 44, 50. Distritos sellados en v3 excluidos de ambos lados (2.136).
 
-Notas: en paneles provinciales, el lado sellado combina el corte temporal (años >= ultimo_anio, en todas las provincias) y las 11 provincias selladas (todos sus años). En `mun_anual` las unidades selladas son municipios de esas provincias. En `dis_alquiler_anual` son distritos de esas provincias (sin distritos v3). En `prov_trim_compra` el corte es 2026 (último año con valor tasado trimestral); sólo 43 provincias tienen dato en la fuente.
+## Cobertura del precio en la parte espacial sellada
+Provincias selladas con alguna observación de valor tasado (tras B3): 07, 22, 26, 28, 30, 31, 33, 35, 38, 44, 50. Sin valor tasado: ninguna.
 
-Límite declarado: las provincias y los distritos se usaron de forma descriptiva en v4-v5, así que la validación v6 no es una muestra que nadie haya visto nunca (decisiones.md).
+## Unidades y años por panel
+
+| Panel | Corte | Unidades total | Unidades entrenamiento | Unidades selladas | Años entrenamiento | Años sellados | Filas entrenamiento | Filas selladas |
+|---|---|---|---|---|---|---|---|---|
+| prov_compra_anual | 2025 | 52 | 41 | 11 | 2015-2024 | 2025-2025 | 410 | 162 |
+| prov_alquiler_anual | 2024 | 52 | 41 | 11 | 2015-2023 | 2024-2025 | 369 | 203 |
+| prov_contratos_nuevos_anual | 2024 | 52 | 41 | 11 | 2015-2023 | 2024-2025 | 369 | 203 |
+| prov_trim_compra | 2025 | 52 | 41 | 11 | 2015-2024 | 2025-2026 | 1640 | 736 |
+| mun_compra_anual | 2025 | 3063 | 2470 | 593 | 2015-2024 | 2025-2025 | 20530 | 6315 |
+| mun_alquiler_anual | 2024 | 3063 | 2341 | 722 | 2015-2023 | 2024-2025 | 18181 | 8664 |
+| mun_contratos_anual | 2024 | 3063 | 2341 | 722 | 2015-2023 | 2024-2025 | 18181 | 8664 |
+| dis_alquiler_anual | 2024 | 10552 | 6766 | 3786 | 2011-2023 | 2024-2024 | 40673 | 34420 |
+
+## Notas
+- En paneles provinciales el lado sellado es (años >= corte, todas las provincias) U (las 11 provincias selladas, todos sus años).
+- Límite declarado (B5): el corte temporal cae en la ventana sellada de v2 (`holdout._mascara_sellada`, años >= 2025) y ya se abrió en 8 contrastes de v2. La parte nueva es la espacial. M4 reportará por separado (i) provincias selladas en años de entrenamiento y (ii) último año; las conclusiones se apoyan en (i).
+- Contratos nuevos: ninguna provincia de GVA (03, 12, 46) ni de Incasòl (08, 17, 25, 43) está sellada espacialmente (N5).
+- Caché de reglas de sellado: ver `cache_sellado` en `src/v6/m0_run.py` (N6 verificado con distritos v3).

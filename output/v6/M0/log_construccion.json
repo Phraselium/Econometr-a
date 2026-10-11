@@ -5,13 +5,18 @@
   "nota": "distritos v3 excluidos; provincias v6=['07', '22', '26', '28', '30', '31', '33', '35', '38', '44', '50']"
  },
  {
+  "paso": "uniprov_series_descartadas",
+  "n": 2,
+  "nota": "rótulos duplicados (p. ej. Navarra)"
+ },
+ {
   "paso": "tasado_prov_filas",
-  "n": 5402,
-  "nota": "sin cod=0 | provincias=43"
+  "n": 6447,
+  "nota": "sin cod=0 | provincias=52"
  },
  {
   "paso": "tasado_prov_anual",
-  "n": 1324,
+  "n": 1580,
   "nota": "media de 4 trimestres completos"
  },
  {
@@ -31,7 +36,7 @@
  },
  {
   "paso": "ultimo_anio_trim",
-  "n": 2026,
+  "n": 2025,
   "nota": "último año con valor tasado trimestral"
  },
  {
@@ -51,11 +56,21 @@
  },
  {
   "paso": "panel_total_prov_trim_compra",
-  "n": 1978,
-  "nota": "unidades=43"
+  "n": 2376,
+  "nota": "unidades=52"
  },
  {
-  "paso": "panel_total_mun_anual",
+  "paso": "panel_total_mun_compra_anual",
+  "n": 26845,
+  "nota": "unidades=3063"
+ },
+ {
+  "paso": "panel_total_mun_alquiler_anual",
+  "n": 26845,
+  "nota": "unidades=3063"
+ },
+ {
+  "paso": "panel_total_mun_contratos_anual",
   "n": 26845,
   "nota": "unidades=3063"
  },
@@ -76,23 +91,28 @@
  },
  {
   "paso": "train_prov_contratos_nuevos_anual",
-  "n": 410,
-  "nota": "ult=2025 sellado=162"
+  "n": 369,
+  "nota": "ult=2024 sellado=203"
  },
  {
   "paso": "train_prov_trim_compra",
-  "n": 1672,
-  "nota": "ult=2026 sellado=306"
+  "n": 1640,
+  "nota": "ult=2025 sellado=736"
  },
  {
-  "paso": "sin_dato_mun_anual",
-  "n": 1,
-  "nota": "ln_vut_viviendas_mun"
- },
- {
-  "paso": "train_mun_anual",
+  "paso": "train_mun_compra_anual",
   "n": 20530,
   "nota": "ult=2025 sellado=6315"
+ },
+ {
+  "paso": "train_mun_alquiler_anual",
+  "n": 18181,
+  "nota": "ult=2024 sellado=8664"
+ },
+ {
+  "paso": "train_mun_contratos_anual",
+  "n": 18181,
+  "nota": "ult=2024 sellado=8664"
  },
  {
   "paso": "train_dis_alquiler_anual",

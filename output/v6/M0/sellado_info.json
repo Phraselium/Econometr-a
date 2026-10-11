@@ -20,7 +20,8 @@
   "anios_sealed": [
    2025,
    2025
-  ]
+  ],
+  "sha256_sealed": "2124d4d6416e31d0f38b2808e226f468c248092f07081bc92a00f208a242e326"
  },
  {
   "panel": "prov_alquiler_anual",
@@ -43,15 +44,16 @@
   "anios_sealed": [
    2024,
    2025
-  ]
+  ],
+  "sha256_sealed": "2963f6becba50f1ab1bc91c29b4f3a5cc34c9f56e2b5a2f6d4b6d93596b2425f"
  },
  {
   "panel": "prov_contratos_nuevos_anual",
   "nivel": "provincia",
-  "ultimo_anio": 2025,
+  "ultimo_anio": 2024,
   "filas_total": 572,
-  "filas_train": 410,
-  "filas_sealed": 162,
+  "filas_train": 369,
+  "filas_sealed": 203,
   "unidades_total": 52,
   "unidades_train": 41,
   "unidades_sealed": 11,
@@ -61,38 +63,40 @@
   ],
   "anios_train": [
    2015,
-   2024
+   2023
   ],
   "anios_sealed": [
-   2025,
+   2024,
    2025
-  ]
+  ],
+  "sha256_sealed": "20dda6101faef8203008444ef47a192c51c58522f500e559898314a38e3ac553"
  },
  {
   "panel": "prov_trim_compra",
   "nivel": "provincia",
-  "ultimo_anio": 2026,
-  "filas_total": 1978,
-  "filas_train": 1672,
-  "filas_sealed": 306,
-  "unidades_total": 43,
-  "unidades_train": 38,
-  "unidades_sealed": 5,
+  "ultimo_anio": 2025,
+  "filas_total": 2376,
+  "filas_train": 1640,
+  "filas_sealed": 736,
+  "unidades_total": 52,
+  "unidades_train": 41,
+  "unidades_sealed": 11,
   "anios_total": [
    2015,
    2026
   ],
   "anios_train": [
    2015,
-   2025
+   2024
   ],
   "anios_sealed": [
-   2026,
+   2025,
    2026
-  ]
+  ],
+  "sha256_sealed": "19446f074c9d78b28b085647c336b09ebccef4c618ae7389f7b42917d2afc1b2"
  },
  {
-  "panel": "mun_anual",
+  "panel": "mun_compra_anual",
   "nivel": "municipio",
   "ultimo_anio": 2025,
   "filas_total": 26845,
@@ -112,7 +116,56 @@
   "anios_sealed": [
    2025,
    2025
-  ]
+  ],
+  "sha256_sealed": "f296e66254e6755197c1995185c4bba9463d601739366516dc7cf75451683b0a"
+ },
+ {
+  "panel": "mun_alquiler_anual",
+  "nivel": "municipio",
+  "ultimo_anio": 2024,
+  "filas_total": 26845,
+  "filas_train": 18181,
+  "filas_sealed": 8664,
+  "unidades_total": 3063,
+  "unidades_train": 2341,
+  "unidades_sealed": 722,
+  "anios_total": [
+   2015,
+   2025
+  ],
+  "anios_train": [
+   2015,
+   2023
+  ],
+  "anios_sealed": [
+   2024,
+   2025
+  ],
+  "sha256_sealed": "85b043baf03c06980ec44997f13394711be4e8acdf57b9e00cb3fa11fe21ce1f"
+ },
+ {
+  "panel": "mun_contratos_anual",
+  "nivel": "municipio",
+  "ultimo_anio": 2024,
+  "filas_total": 26845,
+  "filas_train": 18181,
+  "filas_sealed": 8664,
+  "unidades_total": 3063,
+  "unidades_train": 2341,
+  "unidades_sealed": 722,
+  "anios_total": [
+   2015,
+   2025
+  ],
+  "anios_train": [
+   2015,
+   2023
+  ],
+  "anios_sealed": [
+   2024,
+   2025
+  ],
+  "sha256_sealed": "eb693c9ee9d9d4384cb0d8d7a10797fdbcb5ffb583a3478a34db95aabd47362a"
  },
  {
   "panel": "dis_alquiler_anual",
@@ -135,6 +188,7 @@
   "anios_sealed": [
    2024,
    2024
-  ]
+  ],
+  "sha256_sealed": "7a234258117fb047adabd3dffd33bb63fd04fb0fdb22347681ae7b4e1ac41ebe"
  }
 ]

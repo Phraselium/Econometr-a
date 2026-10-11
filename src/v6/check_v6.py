@@ -58,8 +58,22 @@ def medida_precio() -> list[str]:
     return err
 
 
+def sellado_integro() -> list[str]:
+    """El sellado v6 regenerado (data/sealed/v6_*.csv) coincide con el sha256 versionado en output/v6/M0/sellado_info.json."""
+    import hashlib
+    info = OUT / "M0" / "sellado_info.json"
+    if not info.exists():
+        return []
+    err = []
+    for p in json.loads(info.read_text()):
+        f = holdout.SEALED / f"v6_{p['panel']}.csv"
+        if f.exists() and hashlib.sha256(f.read_bytes()).hexdigest() != p["sha256_sealed"]:
+            err.append(f"sellado v6 {p['panel']}: sha256 distinto del versionado (el sellado cambió)")
+    return err
+
+
 def main() -> int:
-    err = validacion_nueva() + sin_causalidad_ml() + medida_precio()
+    err = validacion_nueva() + sin_causalidad_ml() + medida_precio() + sellado_integro()
     for e in err:
         print(e)
     print(f"check_v6: {len(err)} errores")

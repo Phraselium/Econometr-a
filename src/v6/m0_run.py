@@ -7,6 +7,7 @@ Las fuentes sin dato o sin cobertura provincial se marcan «sin dato» en el dic
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import re
@@ -32,6 +33,7 @@ FECHA = "2026-10-11"
 ULT_PRECIO = 2025   # último año completo del valor tasado (2026T1 existe solo trimestral)
 ULT_SERPAVI = 2024  # último año SERPAVI (2011-2024)
 ULT_ANUAL = 2025    # último año completo en fuentes anuales/mensuales (2026 parcial, excluido)
+ULT_CONTRATOS = 2024  # último año con fianzas GVA/Incasòl de contrato (mismo corte en todos los niveles)
 INI_PROV = 2015
 REG = []            # diccionario: (panel, col, nivel, frec, fuente, fecha_dato, capa, transf, nota)
 
@@ -60,7 +62,7 @@ def aliases(nom: str) -> set[str]:
     if ", " in nom:
         a, c = nom.split(", ", 1)
         b += [f"{c} {a}", a]
-    return {norm(x) for x in b if norm(x)}
+    return sorted({norm(x) for x in b if norm(x)})
 
 
 def _mapa_prov():
@@ -74,9 +76,11 @@ def _mapa_prov():
 
 
 PROV_MAP = _mapa_prov()
-NOMBRE_PROV = {}  # cod -> nombre ETDP
-for _n, _c in PROV_MAP.items():
-    NOMBRE_PROV.setdefault(_c, _n)
+UNI_PROV = {"balears": "07", "rioja": "26", "madrid": "28", "murcia": "30", "navarra": "31", "asturias": "33",
+            "cantabria": "39", "ceuta": "51", "melilla": "52"}
+_E = rd("ine_v2_etdp_prov.csv", usecols=["territorio", "nivel", "codigo"], dtype=str)
+_E = _E[_E.nivel == "provincia"].drop_duplicates("codigo")
+NOMBRE_PROV = {c.zfill(2): t for c, t in zip(_E.codigo, _E.territorio)}  # etiqueta fija desde territorio ETDP
 
 
 SINONIMOS_PROV = {"guipuzcoa": "20", "vizcaya": "48"}  # nombres de MIVAU/SERPAVI no presentes en el alias de ETDP
@@ -113,8 +117,18 @@ def log(paso, n, nota=""):
 # ============================================================================ 1. PROVINCIAS: precio (compra)
 def precio_tasado_prov():
     d = rd("mivau_valor_tasado_nacional_ccaa_prov.csv", usecols=["fecha", "serie", "valor", "territorio", "nivel"], dtype=str)
-    d = d[(d.nivel == "provincia") & d.serie.str.startswith("valor_tasado_libre_provincia_")].copy()
-    d["cod"] = d.territorio.map(cod_prov)
+    base = d[(d.nivel == "provincia") & d.serie.str.startswith("valor_tasado_libre_provincia_")].copy()
+    base["cod"] = base.territorio.map(cod_prov)
+    # B3: CCAA uniprovinciales y ciudades autónomas: la serie CCAA es la de la provincia (no es interpolación)
+    uni = d[d.nivel.isin(["ccaa", "ciudad_autonoma"])].copy()
+    uni["cod"] = uni.serie.map(lambda x: next((c for k, c in UNI_PROV.items() if k in x), None))
+    uni = uni[uni.cod.notna()].copy()
+    cnt = uni.groupby(["cod", "serie"]).size().reset_index(name="n")
+    best = cnt.sort_values(["cod", "n", "serie"], ascending=[True, False, True]).drop_duplicates("cod")[["cod", "serie"]]
+    dup = cnt.merge(best, on=["cod", "serie"], how="left", indicator=True)
+    log("uniprov_series_descartadas", int((dup._merge == "left_only").sum()), "rótulos duplicados (p. ej. Navarra)")
+    uni = uni.merge(best, on=["cod", "serie"])
+    d = pd.concat([base, uni], ignore_index=True)
     d["valor"] = num(d.valor)
     log("tasado_prov_filas", len(d), f"sin cod={d.cod.isna().sum()} | provincias={d.cod.nunique()}")
     d["anio"] = anio_de(d.fecha)
@@ -591,6 +605,7 @@ def construir_ccaa_anual():
     ipv = ipv[ipv.anio.between(2015, ULT_ANUAL)]
     g = ipv.groupby(["ccaa", "anio"]).valor.agg(["mean", "count"])
     g = g[g["count"] >= 4]["mean"].rename("ipv_ine_ccaa_idx_media_anual").reset_index()
+    g["ipv_tasa_anual_pct"] = 100 * (g.ipv_ine_ccaa_idx_media_anual / g.groupby("ccaa").ipv_ine_ccaa_idx_media_anual.shift(1) - 1)
     cb = pd.read_csv(V5 / "CB" / "tablas" / "c5_panel_ccaa.csv", index_col=0)
     cb = cb[["alq_share_censo", "usurp_x100k", "verb_pos_x100k"]].rename_axis("ccaa").reset_index()
     cb["ccaa"] = cb.ccaa.astype(str)
@@ -617,14 +632,15 @@ def sellar_panel(df, nombre, nivel, col_anio, ult, **kw):
             "filas_sealed": int(len(df) - len(tr)), "unidades_total": u_tot, "unidades_train": u_tr,
             "unidades_sealed": u_tot - u_tr, "anios_total": [min(a_tot), max(a_tot)] if a_tot else None,
             "anios_train": [min(a_tr), max(a_tr)] if a_tr else None,
-            "anios_sealed": [int(ult), max(a_tot)] if a_tot else None}
+            "anios_sealed": [int(ult), max(a_tot)] if a_tot else None,
+            "sha256_sealed": hashlib.sha256((holdout.SEALED / f"v6_{nombre}.csv").read_bytes()).hexdigest()}
     return tr, info
 
 
 def escribir_train(tr: pd.DataFrame, nombre: str):
     PAN.mkdir(parents=True, exist_ok=True)
     ruta = PAN / f"{nombre}_train.csv.gz"
-    tr.to_csv(ruta, index=False, compression="gzip", float_format="%.6g")
+    tr.to_csv(ruta, index=False, compression={"method": "gzip", "mtime": 0}, float_format="%.6g")
     return ruta
 
 
@@ -738,7 +754,7 @@ def cache_sellado():
         return str(cod).zfill(5)[:2] in pv6
 
     muestra = ["0100101", "0200201", "2800101", "4400101", "3300101"]
-    for d in muestra:
+    for d in muestra + sorted(dv3)[:2]:
         assert dist_v6(d) == holdout.distrito_sellado_v6(d), d
     for c in ["01001", "07001", "22001", "50001", "03001"]:
         assert mun_v6(c) == holdout.municipio_sellado_v6(c), c
@@ -764,6 +780,8 @@ def main():
 
     P = P.merge(tensionadas_prov(M), on=["cod", "anio"], how="left")
     D = construir_distrito()
+    for c in ["alq_m2_serpavi_dis", "alq_m2_p25_dis", "alq_m2_p75_dis"]:  # N4: p25 y p75 en el panel
+        D["ln_" + c.replace("alq_m2_serpavi_dis", "alq_m2_serpavi_dis")] = np.log(D[c].where(D[c] > 0))
     D["ln_alq_m2_serpavi_dis"] = np.log(D.alq_m2_serpavi_dis.where(D.alq_m2_serpavi_dis > 0))
     D["ln_vut_plazas_dis"] = np.log(D.vut_plazas_dis.where(D.vut_plazas_dis > 0))
 
@@ -773,7 +791,7 @@ def main():
     Q["ln_ipc_alq_idx"] = np.log(Q.ipc_alq_idx.where(Q.ipc_alq_idx > 0))
     Q["ln_hip_viv_num"] = np.log(Q.hip_viv_num.where(Q.hip_viv_num > 0))
     Q = Q[Q.anio >= INI_PROV]
-    ult_trim = int(Q.anio[Q.pm2_tasado.notna()].max())
+    ult_trim = ULT_PRECIO  # B1: mismo corte temporal que el anual de compra (2025T1 en adelante sellado)
     log("ultimo_anio_trim", ult_trim, "último año con valor tasado trimestral")
 
     # Variables por panel (columnas del panel de modelización)
@@ -790,7 +808,7 @@ def main():
     C_MUN = ["ln_pm2_tasado_mun", "ln_alq_m2_serpavi_mun", "ln_vut_viviendas_mun", "ln_n_fianzas_gva_mun",
              "ln_fianza_media_gva_mun_eur", "ln_n_fianzas_incasol_mun", "pct_fianzas_600_incasol_mun",
              "tensionada_mun", "tope_cat_mun"]
-    C_DIS = ["ln_alq_m2_serpavi_dis", "ln_vut_plazas_dis"]
+    C_DIS = ["ln_alq_m2_serpavi_dis", "ln_alq_m2_p25_dis", "ln_alq_m2_p75_dis", "ln_vut_plazas_dis"]
     C_TRIM = ["ln_pm2_tasado", "ln_cv_etdp", "ln_ipc_alq_idx", "ln_hip_viv_num"]
 
     def sub(df, keys, cols, desde=INI_PROV, hasta=None):
@@ -804,12 +822,18 @@ def main():
         ("prov_alquiler_anual", sub(P, ["cod", "anio", "provincia"], C_ALQ, hasta=ULT_ANUAL), "provincia", ULT_SERPAVI,
          {"col_prov": "cod"}),
         ("prov_contratos_nuevos_anual", sub(P, ["cod", "anio", "provincia"], C_NUEVOS, hasta=ULT_ANUAL), "provincia",
-         ULT_ANUAL, {"col_prov": "cod"}),
+         ULT_CONTRATOS, {"col_prov": "cod"}),
         ("prov_trim_compra", Q[["cod", "anio", "t", "provincia"] + [c for c in C_TRIM + ["pm2_tasado", "cv_etdp",
                                                                                           "ipc_alq_idx", "hip_viv_num"]
                                                                   if c in Q.columns]],
          "provincia", ult_trim, {"col_prov": "cod"}),
-        ("mun_anual", M[["cod_mun", "anio", "cod_prov"] + C_MUN].copy(), "municipio", ULT_PRECIO, {"col_mun": "cod_mun"}),
+        ("mun_compra_anual", M[["cod_mun", "anio", "cod_prov", "ln_pm2_tasado_mun"]].copy(), "municipio", ULT_PRECIO,
+         {"col_mun": "cod_mun"}),
+        ("mun_alquiler_anual", M[["cod_mun", "anio", "cod_prov", "ln_alq_m2_serpavi_mun", "tensionada_mun", "tope_cat_mun"]].copy(),
+         "municipio", ULT_SERPAVI, {"col_mun": "cod_mun"}),
+        ("mun_contratos_anual", M[["cod_mun", "anio", "cod_prov", "ln_fianza_media_gva_mun_eur", "ln_n_fianzas_gva_mun",
+                                   "ln_n_fianzas_incasol_mun", "pct_fianzas_600_incasol_mun"]].copy(), "municipio",
+         ULT_CONTRATOS, {"col_mun": "cod_mun"}),
         ("dis_alquiler_anual", D[["distrito", "anio", "cod_prov"] + C_DIS].copy(), "distrito", ULT_SERPAVI,
          {"col_dist": "distrito"}),
     ]
@@ -860,78 +884,123 @@ def main():
         json.dump(resumen_cob, f, ensure_ascii=False, indent=1, default=str)
     with open(OUT / "log_construccion.json", "w", encoding="utf-8") as f:
         json.dump(LOG, f, ensure_ascii=False, indent=1)
+    cob_precio = sorted(set(P.loc[P.pm2_tasado.notna(), "cod"]))
+    for i in infos:
+        assert i["anios_train"] is None or i["anios_train"][1] < i["ultimo_anio"], i["panel"]
+    escribir_sellado_md(infos, cob_precio)
     pot = potencia_y_hechos()
     escribir_potencia_md(pot)
     escribir_resultado_hechos(pot, infos)
     print("OK", {i["panel"]: (i["filas_train"], i["filas_sealed"]) for i in infos})
 
 
+# Regresores preregistrados (docs/v6/hipotesis.md §2). Todos entran en t-1 (flujos y estados); FE de unidad y de año.
+CP_REG = ["ln_pob", "share_ext_pob", "ln_pib_pc", "paro_tasa", "ln_ocupados_miles", "ln_terminadas_libres",
+          "ln_iniciadas_libres", "ln_suelo_pm2_m50k", "ln_vut", "ln_hip_viv_num"]
+ALQ_REG = ["ln_pob", "share_ext_pob", "ln_pib_pc", "ln_vut", "ln_terminadas_libres", "ln_iniciadas_libres",
+           "n_mun_tensionados", "n_mun_topes_cat"]
+DIS_REG = ["ln_vut_plazas_dis", "ln_pib_pc"]
+# (panel, desenlace, mercado, nivel, unidad FE, regresores preregistrados, clúster, fuente)
 ESPECIFICACIONES_POT = [
-    # (panel, desenlace, mercado, nivel, K = variables candidatas del panel, unidad_clúster, fuente)
-    ("prov_compra_anual", "ln_pm2_tasado", "precio de compra", "provincia", 22, "cod", "valor tasado MIVAU (anual)"),
-    ("prov_compra_anual", "ln_cv_etdp", "volumen de compra", "provincia", 22, "cod", "compraventas INE ETDP"),
-    ("prov_trim_compra", "ln_pm2_tasado", "precio de compra", "provincia (trimestral)", 4, "cod", "valor tasado MIVAU (trimestral)"),
-    ("prov_trim_compra", "ln_cv_etdp", "volumen de compra", "provincia (trimestral)", 4, "cod", "compraventas INE ETDP"),
-    ("prov_alquiler_anual", "ln_alq_m2_serpavi_vc", "alquiler de stock", "provincia", 10, "cod", "SERPAVI mediana VC"),
-    ("prov_contratos_nuevos_anual", "ln_fianza_media_gva_eur", "alquiler de contratos nuevos", "provincia (solo CV)", 5, "cod", "fianzas GVA (€ depósito)"),
-    ("mun_anual", "ln_pm2_tasado_mun", "precio de compra", "municipio (>25.000 hab., por nombre único)", 9, "cod_prov", "valor tasado MIVAU municipal"),
-    ("mun_anual", "ln_alq_m2_serpavi_mun", "alquiler de stock", "municipio", 9, "cod_prov", "SERPAVI municipal mediana VC"),
-    ("dis_alquiler_anual", "ln_alq_m2_serpavi_dis", "alquiler de stock", "distrito (aprox. mediana p25-p75)", 2, "cod_prov", "SERPAVI distritos v3"),
+    ("prov_compra_anual", "ln_pm2_tasado", "precio de compra", "provincia", "cod", CP_REG, "cod_prov", "valor tasado MIVAU"),
+    ("prov_compra_anual", "ln_cv_etdp", "volumen de compra", "provincia", "cod", CP_REG, "cod_prov", "compraventas INE ETDP"),
+    ("prov_alquiler_anual", "ln_alq_m2_serpavi_vc", "alquiler de stock", "provincia", "cod", ALQ_REG, "cod_prov", "SERPAVI mediana VC"),
+    ("mun_compra_anual", "ln_pm2_tasado_mun", "precio de compra", "municipio", "cod_mun", CP_REG, "cod_prov", "valor tasado MIVAU municipal"),
+    ("mun_alquiler_anual", "ln_alq_m2_serpavi_mun", "alquiler de stock", "municipio", "cod_mun", ALQ_REG, "cod_prov", "SERPAVI municipal"),
+    ("dis_alquiler_anual", "ln_alq_m2_serpavi_dis", "alquiler de stock", "distrito (punto medio p25-p75)", "distrito", DIS_REG, "cod_prov", "SERPAVI distritos v3"),
 ]
 
 
 def potencia_y_hechos():
-    """Potencia (efecto mínimo detectable) con el N de entrenamiento de cada panel, agrupación por CCAA (ICC supuesto)
-    y Holm por el número de variables (cota Bonferroni, peor caso de Holm). Solo sobre la parte de entrenamiento."""
+    """Potencia (efecto mínimo detectable) sobre la PARTE DE ENTRENAMIENTO. Desviación típica WITHIN (y menos media de
+    unidad y de año), K = nº de regresores preregistrados + 1 (contraste del regresor principal), Fisher-z con
+    Bonferroni (cota superior de Holm), clúster = CCAA presentes en entrenamiento, ICC = 0,3 supuesto."""
     from holdout import CCAA_PROV
+    nombres = sorted({e[0] for e in ESPECIFICACIONES_POT})
     tr = {n: pd.read_csv(PAN / f"{n}_train.csv.gz", dtype={"cod": str, "cod_mun": str, "cod_prov": str, "distrito": str},
-                         low_memory=False) for n in ["prov_compra_anual", "prov_trim_compra", "prov_alquiler_anual",
-                                                       "prov_contratos_nuevos_anual", "mun_anual", "dis_alquiler_anual"]}
+                         low_memory=False) for n in nombres}
     icc = 0.3
     filas = []
-    for panel, y, mercado, nivel, K, cl, fuente in ESPECIFICACIONES_POT:
+    for panel, y, mercado, nivel, unidad, regs, cl, fuente in ESPECIFICACIONES_POT:
         d = tr[panel]
+        cols = [y] + [r for r in regs if r in d.columns]
         dd = d[d[y].notna()].copy()
-        if "cod" in dd and cl == "cod_prov":
-            dd["cod_prov"] = dd.cod_prov.astype(str).str.zfill(2) if "cod_prov" in dd else dd.cod.str[:2]
-        ccaa = dd[cl].astype(str).str.zfill(2).map(lambda c: CCAA_PROV.get(c, "x")) if cl != "cod" else \
-            dd.cod.astype(str).str.zfill(2).map(lambda c: CCAA_PROV.get(c, "x"))
+        dd[unidad] = dd[unidad].astype(str)
+        w = dd[y] - dd.groupby(unidad)[y].transform("mean")
+        w = w - w.groupby(dd.anio).transform("mean")
+        sd_w = float(w.std())
+        fuente_cl = dd[cl] if cl in dd.columns else dd[unidad]  # provincial: el propio código
+        ccaa = fuente_cl.astype(str).str.zfill(2).map(lambda c: CCAA_PROV.get(c, "x"))
         N = len(dd)
         n_cl = int(ccaa.nunique())
-        sd_y = float(dd[y].std())
+        K = len(cols)  # regresores preregistrados + desenlace (contraste del regresor principal)
         rho_iid, rho_cl, deff, neff = mde(N, n_cl, icc, K)
-        filas.append({"panel": panel, "desenlace": y, "mercado": mercado, "nivel": nivel, "K_variables_panel": K,
-                      "N_train": N, "n_agrupaciones_CCAA": n_cl, "sd_desenlace_train": round(sd_y, 4),
-                      "rho_min_iid": round(rho_iid, 4), "rho_min_cluster_ICC0.3": round(rho_cl, 4),
+        filas.append({"panel": panel, "desenlace": y, "mercado": mercado, "nivel": nivel, "K": K,
+                      "N_train": N, "n_clusters_CCAA": n_cl, "sd_within": round(sd_w, 4),
+                      "rho_min_iid": round(rho_iid, 4), "rho_min_cluster_ICC0.3": round(rho_cl, 4) if not math.isnan(rho_cl) else None,
                       "deff": round(deff, 2), "N_eff": round(neff, 1),
-                      "efecto_pct_1DE_iid": round(100 * (math.exp(rho_iid * sd_y) - 1), 2),
-                      "efecto_pct_1DE_cluster": round(100 * (math.exp(rho_cl * sd_y) - 1), 2) if not math.isnan(rho_cl) else None,
+                      "efecto_pct_1DE_within_iid": round(100 * (math.exp(rho_iid * sd_w) - 1), 2),
+                      "efecto_pct_1DE_within_cluster": round(100 * (math.exp(rho_cl * sd_w) - 1), 2) if not math.isnan(rho_cl) else None,
                       "fuente": fuente})
     pot = pd.DataFrame(filas)
     pot.to_csv(OUT / "potencia.csv", index=False)
     return pot
 
 
+def escribir_sellado_md(infos: list, cob_precio: list):
+    sel = holdout.provincias_selladas_v6()
+    L = ["# Sellado v6 (M0) — rehecho tras la revisión (docs/v6/revision_M0.md)", "",
+         f"Fecha: {FECHA}. Función: `holdout.sellar_v6`. Lado sellado escrito por holdout en `data/sealed/v6_<panel>.csv`; "
+         "M0 no lo lee. Solo se guarda entrenamiento en `output/v6/M0/paneles/*_train.csv.gz`. Recuentos del lado sellado "
+         "calculados sobre el panel en memoria; cada fichero sellado lleva su sha256 en `sellado_info.json` (N2).", "",
+         "## Tabla de cortes (un único año sellado por medida, en todos los niveles)", "",
+         "| Medida | Corte (año sellado desde) | Niveles con ese corte |", "|---|---|---|",
+         f"| Compra (valor tasado MIVAU) | {ULT_PRECIO} | provincia anual, provincia trimestral (2025T1 en adelante), municipio |",
+         f"| Alquiler de stock (SERPAVI) | {ULT_SERPAVI} | provincia, municipio, distrito |",
+         f"| Contratos nuevos (fianzas GVA/Incasòl) | {ULT_CONTRATOS} | provincia, municipio |", "",
+         "Provincias selladas v6 (11): " + ", ".join(sel) + ". Distritos sellados en v3 excluidos de ambos lados (2.136).", "",
+         "## Cobertura del precio en la parte espacial sellada",
+         "Provincias selladas con alguna observación de valor tasado (tras B3): " +
+         ", ".join(c for c in sel if c in cob_precio) + ". Sin valor tasado: " + (", ".join(c for c in sel if c not in cob_precio) or "ninguna") + ".", "",
+         "## Unidades y años por panel", "",
+         "| Panel | Corte | Unidades total | Unidades entrenamiento | Unidades selladas | Años entrenamiento | Años sellados | Filas entrenamiento | Filas selladas |",
+         "|---|---|---|---|---|---|---|---|---|"]
+    for i in infos:
+        L.append(f"| {i['panel']} | {i['ultimo_anio']} | {i['unidades_total']} | {i['unidades_train']} | {i['unidades_sealed']} | "
+                 f"{i['anios_train'][0]}-{i['anios_train'][1]} | {i['anios_sealed'][0]}-{i['anios_sealed'][1]} | "
+                 f"{i['filas_train']} | {i['filas_sealed']} |")
+    L += ["", "## Notas",
+          "- En paneles provinciales el lado sellado es (años >= corte, todas las provincias) U (las 11 provincias selladas, todos sus años).",
+          "- Límite declarado (B5): el corte temporal cae en la ventana sellada de v2 (`holdout._mascara_sellada`, años >= 2025) "
+          "y ya se abrió en 8 contrastes de v2. La parte nueva es la espacial. M4 reportará por separado (i) provincias selladas "
+          "en años de entrenamiento y (ii) último año; las conclusiones se apoyan en (i).",
+          "- Contratos nuevos: ninguna provincia de GVA (03, 12, 46) ni de Incasòl (08, 17, 25, 43) está sellada espacialmente (N5).",
+          "- Caché de reglas de sellado: ver `cache_sellado` en `src/v6/m0_run.py` (N6 verificado con distritos v3)."]
+    (OUT / "sellado.md").write_text("\n".join(L) + "\n", encoding="utf-8")
+
 def escribir_potencia_md(pot: pd.DataFrame):
-    cab = ("| panel | desenlace (mercado) | nivel | K | N train | CCAA (clusters) | sd(y) | ρ mín. iid | ρ mín. clúster (ICC 0,3) | "
-           "efecto mín. % por 1 DE de x (iid / clúster) |")
+    cab = ("| panel | desenlace (mercado) | nivel | K | N train | CCAA | sd within | ρ mín. iid | ρ mín. clúster (ICC 0,3) | "
+           "efecto mín. % por 1 DE within (iid / clúster) |")
     lin = ["|---|---|---|---|---|---|---|---|---|---|"]
     for _, r in pot.iterrows():
-        ef_cl = "n.d." if r["efecto_pct_1DE_cluster"] is None else f"{r['efecto_pct_1DE_cluster']:.2f}"
-        lin.append(f"| {r['panel']} | {r['desenlace']} ({r['mercado']}) | {r['nivel']} | {r['K_variables_panel']} | {r['N_train']} | "
-                   f"{r['n_agrupaciones_CCAA']} | {r['sd_desenlace_train']:.3f} | {r['rho_min_iid']:.3f} | "
-                   f"{r['rho_min_cluster_ICC0.3']:.3f} | {r['efecto_pct_1DE_iid']:.2f} / {ef_cl} |")
-    txt = ("# Potencia v6 (M0): efecto mínimo detectable\n\n"
-           f"Fecha del cálculo: {FECHA}. Parte de entrenamiento únicamente (N = filas con desenlace no nulo en *_train).\n\n"
-           "Método: ρ mín. = tanh((z_{1-α/(2K)} + z_{1-β}) / √(N_eff − 3)), con α = 0,05, β = 0,20 y K = número de variables "
-           "candidatas del panel (cota Bonferroni, que es el peor caso de Holm sobre K contrastes). La columna «iid» usa N; la "
-           "columna «clúster» usa N_eff = N / (1 + (m − 1)·ICC), con m = N / nº de CCAA y ICC = 0,3 SUPUESTO (no estimado). "
-           "Con 17 CCAA como clústeres, la inferencia clúster robusta es poco fiable: la columna clúster es orientativa.\n\n"
-           "El efecto mínimo en % se obtiene como 100·(exp(ρ·sd(ln y)) − 1): cambio de y por cada desviación típica de x.\n\n"
+        ef_cl = "n.d." if pd.isna(r["efecto_pct_1DE_within_cluster"]) else f"{r['efecto_pct_1DE_within_cluster']:.2f}"
+        rc = "n.d." if pd.isna(r["rho_min_cluster_ICC0.3"]) else f"{r['rho_min_cluster_ICC0.3']:.3f}"
+        lin.append(f"| {r['panel']} | {r['desenlace']} ({r['mercado']}) | {r['nivel']} | {r['K']} | {r['N_train']} | "
+                   f"{r['n_clusters_CCAA']} | {r['sd_within']:.3f} | {r['rho_min_iid']:.3f} | {rc} | "
+                   f"{r['efecto_pct_1DE_within_iid']:.2f} / {ef_cl} |")
+    txt = ("# Potencia v6 (M0): efecto mínimo detectable — rehecha tras la revisión\n\n"
+           f"Fecha del cálculo: {FECHA}. Solo parte de entrenamiento (N = filas con desenlace no nulo).\n\n"
+           "Especificación: FE de unidad y de año; regresores preregistrados en docs/v6/hipotesis.md §2 (t−1); K = regresores "
+           "preregistrados + desenlace. ρ mín. = tanh((z_{1−α/(2K)} + z_{1−β}) / √(N_eff − 3)), α = 0,05, β = 0,20 "
+           "(Bonferroni sobre K, cota superior de Holm). Columna «iid»: N_eff = N. Columna «clúster»: N_eff = N / (1 + (m − 1)·ICC), "
+           "m = N / nº de CCAA, ICC = 0,3 SUPUESTO. Con 8-11 CCAA la inferencia clúster no es fiable: la inferencia final usará "
+           "wild cluster bootstrap (Webb), pre-registrado en hipotesis.md.\n\n"
+           "La sd es WITHIN (desviación típica de y tras quitar media de unidad y de año). Efecto en % = 100·(exp(ρ·sd_within) − 1) "
+           "por cada desviación típica within de x.\n\n"
            + "\n".join([cab] + lin) + "\n\n"
-           "Lectura: ninguna especificación con N de entrenamiento inferior a ~400 puede detectar efectos pequeños con seguridad "
-           "tras Holm; el panel municipal y distrital tienen más N pero menos cobertura por unidad y sesgo de muestra "
-           "(solo municipios con valor tasado por nombre único y distritos con SERPAVI).\n")
+           "Lectura: con N de entrenamiento de 150-400 la potencia es baja: solo se detectan efectos grandes con seguridad tras "
+           "Holm. El contraste trimestral no tiene potencia propia: repite las mismas unidades que el anual (1.672 filas sin "
+           "independencia adicional). Contratos nuevos (N ≈ 15 filas en 3-4 provincias) no tiene potencia y queda como descriptivo.\n")
     (DOCS / "potencia.md").write_text(txt, encoding="utf-8")
 
 

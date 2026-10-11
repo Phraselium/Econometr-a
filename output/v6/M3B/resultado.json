@@ -1,0 +1,325 @@
+{
+ "rama": "v6/M3b",
+ "modulo": "M3b",
+ "mercado": "compra",
+ "medida_precio": {
+  "principal": "valor tasado MIVAU",
+  "robustez": [
+   "Registradores (provincia anual)"
+  ],
+  "no_usadas": "índice triangulado A23 e IPV INE: solo nacional/CCAA, sin panel provincial ni municipal; Notariado: solo C. Valenciana"
+ },
+ "pregunta": "¿Predicen mejor que AR y M1b_ADL, fuera de muestra, el precio y el volumen de la compraventa los modelos de ML, el jerárquico o el DL?",
+ "capa": "C4",
+ "datos": "output/v6/M0/paneles/{prov_trim_compra,prov_compra_anual,mun_compra_anual}_train; sin muestra sellada",
+ "N": {
+  "PROV_PRECIO_TRIM": 1476,
+  "PROV_VOL_TRIM": 1476,
+  "PROV_PRECIO_ANUAL": 369,
+  "PROV_VOL_ANUAL": 369,
+  "PROV_PRECIO_ANUAL_REGISTRADORES": 369,
+  "MUN_PRECIO_ANUAL": 1708
+ },
+ "metodo": "RF, LightGBM, bosque bootstrap bayesiano (sustituto de BART), MixedLM (sustituto de PyMC), MLP y GCN (solo municipal); validación por bloques temporales con embargo (orígenes 2018/20/22) y selección por bloques espaciales; DM-HLN",
+ "estimacion": {
+  "MUN_PRECIO_ANUAL": {
+   "mejor_ML": "BBF",
+   "rmse_pct_mejor_ML": 4.984,
+   "rmse_pct_AR": 8.954,
+   "rmse_pct_persistencia": 5.651,
+   "rmse_pct_ADL": 8.798,
+   "dm_vs_AR": -1.5646154506872973,
+   "p_dm_vs_AR": 0.1784438526384196,
+   "dm_vs_ADL": -1.4813697279668225,
+   "p_dm_vs_ADL": 0.19859724412655516,
+   "rmse_pct_ECMv1": null,
+   "DL": {
+    "DL_MLP_tabular": {
+     "rmse_pct": Infinity,
+     "bate_GB_rmse": false,
+     "dm_vs_GB": 1.0002587515790478,
+     "p_dm_vs_GB": 0.363103797367886
+    },
+    "DL_GCN_espacial": {
+     "rmse_pct": 8.311,
+     "bate_GB_rmse": false,
+     "dm_vs_GB": 2.3768544592732472,
+     "p_dm_vs_GB": 0.06341160102055787
+    }
+   },
+   "MixedLM_rmse_pct": 5.55
+  },
+  "PROV_PRECIO_ANUAL": {
+   "mejor_ML": "RF",
+   "rmse_pct_mejor_ML": 2.671,
+   "rmse_pct_AR": 4.121,
+   "rmse_pct_persistencia": 2.847,
+   "rmse_pct_ADL": 4.118,
+   "dm_vs_AR": -2.4015522457295884,
+   "p_dm_vs_AR": 0.061502664918365216,
+   "dm_vs_ADL": -2.426913783570214,
+   "p_dm_vs_ADL": 0.05960699230389632,
+   "rmse_pct_ECMv1": null
+  },
+  "PROV_PRECIO_ANUAL_REGISTRADORES": {
+   "mejor_ML": "BBF",
+   "rmse_pct_mejor_ML": 4.188,
+   "rmse_pct_AR": 7.177,
+   "rmse_pct_persistencia": 4.904,
+   "rmse_pct_ADL": 6.851,
+   "dm_vs_AR": -3.178908591177384,
+   "p_dm_vs_AR": 0.0245682521356985,
+   "dm_vs_ADL": -2.9226786007210426,
+   "p_dm_vs_ADL": 0.03291120835775718,
+   "rmse_pct_ECMv1": null
+  },
+  "PROV_PRECIO_TRIM": {
+   "mejor_ML": "BBF",
+   "rmse_pct_mejor_ML": 1.933,
+   "rmse_pct_AR": 3.546,
+   "rmse_pct_persistencia": 1.907,
+   "rmse_pct_ADL": 3.509,
+   "dm_vs_AR": -3.890263797227696,
+   "p_dm_vs_AR": 0.0007384953092463068,
+   "dm_vs_ADL": -5.029530249299788,
+   "p_dm_vs_ADL": 4.33518139953289e-05,
+   "rmse_pct_ECMv1": 3.874
+  },
+  "PROV_VOL_ANUAL": {
+   "mejor_ML": "BBF",
+   "rmse_pct_mejor_ML": 19.901,
+   "rmse_pct_AR": 28.714,
+   "rmse_pct_persistencia": 20.482,
+   "rmse_pct_ADL": 28.174,
+   "dm_vs_AR": -2.1191399632277883,
+   "p_dm_vs_AR": 0.08760100430742898,
+   "dm_vs_ADL": -2.0651266418556693,
+   "p_dm_vs_ADL": 0.09381931380054405,
+   "rmse_pct_ECMv1": null
+  },
+  "PROV_VOL_TRIM": {
+   "mejor_ML": "BBF",
+   "rmse_pct_mejor_ML": 25.665,
+   "rmse_pct_AR": 53.847,
+   "rmse_pct_persistencia": 25.746,
+   "rmse_pct_ADL": 67.788,
+   "dm_vs_AR": -3.3573634877464884,
+   "p_dm_vs_AR": 0.002725740133878797,
+   "dm_vs_ADL": -3.4125079988712788,
+   "p_dm_vs_ADL": 0.0023850957690221843,
+   "rmse_pct_ECMv1": 52.686
+  }
+ },
+ "ic95": null,
+ "p_ajustado": "BH sobre las pruebas DM de cada setting (columna p_vs_*_BH en tablas/modelos_metricas.csv)",
+ "nivel_evidencia": "EXPLORATORIO (C4): predicción, no causalidad",
+ "diagnosticos": {
+  "PROV_PRECIO_TRIM": {
+   "top_shap": {
+    "dy1": 0.0046,
+    "tipo_hip_ecb_pct_l1": 0.0027,
+    "ln_cred_nuevas_l1": 0.0019,
+    "qtr": 0.0016,
+    "other_l1": 0.0015
+   },
+   "spearman_shap_entre_pliegues": [
+    0.495,
+    0.25,
+    0.522
+   ],
+   "spearman_perm_entre_pliegues": [
+    1.0,
+    0.9,
+    0.9
+   ],
+   "vif_max": 1000799917193443.5,
+   "vif_n_gt10": 7,
+   "vif_top": {
+    "y1": 1000799917193443.6,
+    "y2": 1000799917193443.6,
+    "dy1": 1000799917193443.6,
+    "y3": 487.7
+   },
+   "aviso_colinealidad": "VIF>10 en 7 de 13 variables"
+  },
+  "PROV_VOL_TRIM": {
+   "top_shap": {
+    "dy1": 0.0441,
+    "qtr": 0.0392,
+    "tipo_hip_ecb_pct_l1": 0.0329,
+    "ln_cred_nuevas_l1": 0.0233,
+    "y1": 0.0167
+   },
+   "spearman_shap_entre_pliegues": [
+    0.813,
+    0.764,
+    0.868
+   ],
+   "spearman_perm_entre_pliegues": [
+    0.3,
+    0.3,
+    0.2
+   ],
+   "vif_max": 1000799917193443.5,
+   "vif_n_gt10": 6,
+   "vif_top": {
+    "y1": 1000799917193443.6,
+    "y2": 1000799917193443.6,
+    "dy1": 1000799917193443.6,
+    "y3": 45.8
+   },
+   "aviso_colinealidad": "VIF>10 en 6 de 13 variables"
+  },
+  "PROV_PRECIO_ANUAL": {
+   "top_shap": {
+    "ln_vut_l1": 0.0103,
+    "share_ext_pob_l1": 0.0037,
+    "ln_iniciadas_libres_l1": 0.0037,
+    "x": 0.0015,
+    "ln_suelo_pm2_m50k_l1": 0.0013
+   },
+   "spearman_shap_entre_pliegues": [
+    NaN,
+    NaN,
+    0.279
+   ],
+   "spearman_perm_entre_pliegues": [
+    NaN,
+    NaN,
+    -0.143
+   ],
+   "vif_max": 836.6722757120348,
+   "vif_n_gt10": 5,
+   "vif_top": {
+    "ln_ocupados_miles_l1": 836.7,
+    "ln_pob_l1": 750.2,
+    "ln_hip_viv_num_l1": 71.7,
+    "other_l1": 62.8
+   },
+   "aviso_colinealidad": "VIF>10 en 5 de 14 variables"
+  },
+  "PROV_VOL_ANUAL": {
+   "top_shap": {
+    "ln_vut_l1": 0.0478,
+    "ln_pib_pc_l1": 0.0286,
+    "yc": 0.0232,
+    "paro_tasa_l1": 0.0225,
+    "ln_iniciadas_libres_l1": 0.0203
+   },
+   "spearman_shap_entre_pliegues": [
+    0.706,
+    0.108,
+    0.405
+   ],
+   "spearman_perm_entre_pliegues": [
+    -0.943,
+    0.143,
+    0.029
+   ],
+   "vif_max": 836.6722757120348,
+   "vif_n_gt10": 5,
+   "vif_top": {
+    "ln_ocupados_miles_l1": 836.7,
+    "ln_pob_l1": 750.2,
+    "ln_hip_viv_num_l1": 71.7,
+    "y1": 62.8
+   },
+   "aviso_colinealidad": "VIF>10 en 5 de 14 variables"
+  },
+  "PROV_PRECIO_ANUAL_REGISTRADORES": {
+   "top_shap": {
+    "ln_suelo_pm2_m50k_l1": 0.0052,
+    "ln_vut_l1": 0.0033,
+    "ln_terminadas_libres_l1": 0.0031,
+    "ln_pib_pc_l1": 0.0027,
+    "share_ext_pob_l1": 0.0022
+   },
+   "spearman_shap_entre_pliegues": [
+    NaN,
+    NaN,
+    0.446
+   ],
+   "spearman_perm_entre_pliegues": [
+    NaN,
+    NaN,
+    0.429
+   ],
+   "vif_max": 877.5020254293245,
+   "vif_n_gt10": 5,
+   "vif_top": {
+    "ln_ocupados_miles_l1": 877.5,
+    "ln_pob_l1": 784.3,
+    "ln_hip_viv_num_l1": 67.4,
+    "other_l1": 60.0
+   },
+   "aviso_colinealidad": "VIF>10 en 5 de 14 variables"
+  },
+  "MUN_PRECIO_ANUAL": {
+   "top_shap": {
+    "ln_vut_l1": 0.0048,
+    "ln_iniciadas_libres_l1": 0.0046,
+    "ln_hip_viv_num_l1": 0.0029,
+    "prov_y1": 0.0026,
+    "paro_tasa_l1": 0.0024
+   },
+   "spearman_shap_entre_pliegues": [
+    0.471,
+    0.286,
+    0.814
+   ],
+   "spearman_perm_entre_pliegues": [
+    0.5,
+    0.393,
+    0.464
+   ],
+   "vif_max": 1000799917193443.5,
+   "vif_n_gt10": 8,
+   "vif_top": {
+    "y1": 1000799917193443.6,
+    "prov_y1": 1000799917193443.6,
+    "gap_prov": 1000799917193443.6,
+    "ln_ocupados_miles_l1": 1707.2
+   },
+   "aviso_colinealidad": "VIF>10 en 8 de 15 variables"
+  },
+  "jerarquico": {
+   "sustituto": "MixedLM (statsmodels) en lugar de PyMC/NumPyro (no instalados)",
+   "re_cov": {
+    "prov": {
+     "prov": 0.00048,
+     "y1": 4e-05,
+     "ln_pib_pc_l1": 1e-05
+    },
+    "y1": {
+     "prov": 4e-05,
+     "y1": 0.00105,
+     "ln_pib_pc_l1": 0.00016
+    },
+    "ln_pib_pc_l1": {
+     "prov": 1e-05,
+     "y1": 0.00016,
+     "ln_pib_pc_l1": 0.00209
+    }
+   },
+   "converged": true
+  }
+ },
+ "fuera_muestra": {
+  "modelo": "BBF",
+  "rmse": 0.019146959300418778,
+  "rmse_pct": 1.9331437845679034,
+  "setting": "PROV_PRECIO_TRIM",
+  "rmse_AR4": 0.0348440583756471,
+  "dm_vs_ar4": -3.890263797227696,
+  "p_dm_vs_ar4": 0.0007384953092463068,
+  "dm_vs_m1b_adl": -5.029530249299788,
+  "p_dm_vs_m1b_adl": 4.33518139953289e-05
+ },
+ "notas": [
+  "Resultado de predicción y exploratorio; SHAP, ALE y dependencia parcial son descriptivos y no admiten lectura causal.",
+  "Presupuesto: 30 configuraciones por familia (RF, LightGBM, bosque bootstrap bayesiano) y 8 por red; registro en registro.csv y tablas/hiperparametros_presupuesto.csv.",
+  "Paneles anuales: solo 6 periodos de validación para el DM; baja potencia. El pliegue 2018 anual entrena con un único año de objetivo (2016).",
+  "Panel municipal: N≈1.9k filas (200 municipios), no 20.000; el DL se evalúa con ese tamaño.",
+  "Fecha de ejecución 2026-10-11"
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "MUN_PRECIO_ANUAL": {
+  "mejor_ML": "BBF",
+  "rmse_pct_mejor_ML": 4.984,
+  "rmse_pct_AR": 8.954,
+  "rmse_pct_persistencia": 5.651,
+  "rmse_pct_ADL": 8.798,
+  "dm_vs_AR": -1.5646154506872973,
+  "p_dm_vs_AR": 0.1784438526384196,
+  "dm_vs_ADL": -1.4813697279668225,
+  "p_dm_vs_ADL": 0.19859724412655516,
+  "rmse_pct_ECMv1": null,
+  "DL": {
+   "DL_MLP_tabular": {
+    "rmse_pct": Infinity,
+    "bate_GB_rmse": false,
+    "dm_vs_GB": 1.0002587515790478,
+    "p_dm_vs_GB": 0.363103797367886
+   },
+   "DL_GCN_espacial": {
+    "rmse_pct": 8.311,
+    "bate_GB_rmse": false,
+    "dm_vs_GB": 2.3768544592732472,
+    "p_dm_vs_GB": 0.06341160102055787
+   }
+  },
+  "MixedLM_rmse_pct": 5.55
+ },
+ "PROV_PRECIO_ANUAL": {
+  "mejor_ML": "RF",
+  "rmse_pct_mejor_ML": 2.671,
+  "rmse_pct_AR": 4.121,
+  "rmse_pct_persistencia": 2.847,
+  "rmse_pct_ADL": 4.118,
+  "dm_vs_AR": -2.4015522457295884,
+  "p_dm_vs_AR": 0.061502664918365216,
+  "dm_vs_ADL": -2.426913783570214,
+  "p_dm_vs_ADL": 0.05960699230389632,
+  "rmse_pct_ECMv1": null
+ },
+ "PROV_PRECIO_ANUAL_REGISTRADORES": {
+  "mejor_ML": "BBF",
+  "rmse_pct_mejor_ML": 4.188,
+  "rmse_pct_AR": 7.177,
+  "rmse_pct_persistencia": 4.904,
+  "rmse_pct_ADL": 6.851,
+  "dm_vs_AR": -3.178908591177384,
+  "p_dm_vs_AR": 0.0245682521356985,
+  "dm_vs_ADL": -2.9226786007210426,
+  "p_dm_vs_ADL": 0.03291120835775718,
+  "rmse_pct_ECMv1": null
+ },
+ "PROV_PRECIO_TRIM": {
+  "mejor_ML": "BBF",
+  "rmse_pct_mejor_ML": 1.933,
+  "rmse_pct_AR": 3.546,
+  "rmse_pct_persistencia": 1.907,
+  "rmse_pct_ADL": 3.509,
+  "dm_vs_AR": -3.890263797227696,
+  "p_dm_vs_AR": 0.0007384953092463068,
+  "dm_vs_ADL": -5.029530249299788,
+  "p_dm_vs_ADL": 4.33518139953289e-05,
+  "rmse_pct_ECMv1": 3.874
+ },
+ "PROV_VOL_ANUAL": {
+  "mejor_ML": "BBF",
+  "rmse_pct_mejor_ML": 19.901,
+  "rmse_pct_AR": 28.714,
+  "rmse_pct_persistencia": 20.482,
+  "rmse_pct_ADL": 28.174,
+  "dm_vs_AR": -2.1191399632277883,
+  "p_dm_vs_AR": 0.08760100430742898,
+  "dm_vs_ADL": -2.0651266418556693,
+  "p_dm_vs_ADL": 0.09381931380054405,
+  "rmse_pct_ECMv1": null
+ },
+ "PROV_VOL_TRIM": {
+  "mejor_ML": "BBF",
+  "rmse_pct_mejor_ML": 25.665,
+  "rmse_pct_AR": 53.847,
+  "rmse_pct_persistencia": 25.746,
+  "rmse_pct_ADL": 67.788,
+  "dm_vs_AR": -3.3573634877464884,
+  "p_dm_vs_AR": 0.002725740133878797,
+  "dm_vs_ADL": -3.4125079988712788,
+  "p_dm_vs_ADL": 0.0023850957690221843,
+  "rmse_pct_ECMv1": 52.686
+ }
+}

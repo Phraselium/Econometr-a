@@ -528,7 +528,10 @@ def main():
         ls = t[t.modelo == S["ref"]].rmse_ln.iloc[0]
         finales.append(dict(id=mid, mercado=S["mercado"], nivel=S["nivel"], medida=S["medida"], medida_precio=S["medida_precio"],
                             ruta=str(ruta.relative_to(RAIZ)), familia=nombre, rmse_ln_cv_bloques=float(cand.rmse_ln), rmse_ln_linea_base=float(ls),
-                            bate_linea_base_rmse=bool(cand.rmse_ln < ls), p_dm_vs_ref=float(cand.get(f"p_vs_{S['ref']}", np.nan)), especificacion=spec))
+                            bate_linea_base_rmse=bool(cand.rmse_ln < ls), linea_base=S["ref"],
+                            rmse_ln_persistencia=float(t[t.modelo == "persistencia"].rmse_ln.iloc[0]),
+                            bate_persistencia_rmse=bool(cand.rmse_ln < t[t.modelo == "persistencia"].rmse_ln.iloc[0]),
+                            p_dm_vs_persistencia=float(cand.get("p_vs_persistencia", np.nan)), p_dm_vs_M1b_ADL=float(cand.get("p_vs_M1b_ADL", np.nan)), p_dm_vs_ref=float(cand.get(f"p_vs_{S['ref']}", np.nan)), especificacion=spec))
         if S["id"] == "MUN_PRECIO_ANUAL":
             _, r, re = mixed(D, D.iloc[-5:], ret=True)
             pd.DataFrame({k: v for k, v in re.items()}).T.to_csv(OUT / "tablas/jerarquico_efectos_por_provincia.csv")

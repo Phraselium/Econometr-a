@@ -99,7 +99,7 @@ def main():
         print(nivel, "mixto", m["convergido"], m["n"], m["n_grupos"], sd, flush=True)
         # pendientes por territorio (coeficientes variables) a CSV
         pd.DataFrame(m["re"]).T.round(5).to_csv(out / f"mixto_efectos_territorio_{nivel}.csv")
-    pd.concat(preds).to_csv(out / "predicciones_cv_mixto.csv.gz", index=False)
+    pd.concat(preds).to_csv(out / "predicciones_cv_mixto.csv.gz", index=False, compression={"method": "gzip", "mtime": 0})
     (out / "modelos_finales_mixto.json").write_text(json.dumps(fin, indent=1, ensure_ascii=False))
     pd.DataFrame(reg).to_csv(out / "registro_mixto.csv", index=False)
 

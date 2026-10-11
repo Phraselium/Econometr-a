@@ -131,14 +131,15 @@ class Tab:
     def _prep(self, X):
         X = np.asarray(X, float)
         X = np.where(np.isnan(X), self.med_, X)
-        return (X - self.mu_) / self.sd_
+        return np.clip((X - self.mu_) / self.sd_, -5, 5)
 
     def fit(self, X, y):
         torch = _torch()
         X = np.asarray(X, float)
         self.med_ = np.nan_to_num(np.nanmedian(X, 0))
         Xf = np.where(np.isnan(X), self.med_, X)
-        self.mu_, self.sd_ = Xf.mean(0), Xf.std(0) + 1e-9
+        self.mu_, self.sd_ = Xf.mean(0), Xf.std(0)
+        self.sd_ = np.where(self.sd_ < 1e-6, 1.0, self.sd_)
         self.ys_ = float(np.std(y) + 1e-9)
         Xt = torch.tensor(self._prep(X), dtype=torch.float32)
         yt = torch.tensor(np.asarray(y) / self.ys_, dtype=torch.float32)[:, None]

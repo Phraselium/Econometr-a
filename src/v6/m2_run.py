@@ -363,7 +363,7 @@ def main():
         bm.to_csv(stats_dir / f"bma_{res['nombre']}.csv", index=False)
         pdf.drop(columns=[]).to_csv(stats_dir / f"pds_{res['nombre']}.csv", index=False)
         rm.to_csv(stats_dir / f"multiverso_resumen_{res['nombre']}.csv", index=False)
-        mv.to_csv(stats_dir / f"multiverso_{res['nombre']}.csv.gz", index=False)
+        mv.to_csv(stats_dir / f"multiverso_{res['nombre']}.csv.gz", index=False, compression={"method": "gzip", "mtime": 0})
     REG.flush()
     import pickle
     with open(OUT / (".tmp_todo.pkl" if not SMOKE else ".tmp_smoke.pkl"), "wb") as f:

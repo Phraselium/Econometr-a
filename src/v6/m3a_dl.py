@@ -184,7 +184,7 @@ def main():
                  "nombres_paneles": L.NOMBRES["distrito"], "rmse_bloques_espaciotemporales": min(sc)}
         (out / "modelos" / f"{mid}.json").write_text(json.dumps(ficha, indent=1, ensure_ascii=False))
         fin.append({k: ficha[k] for k in ("id", "nivel", "medida", "familia")} | {"mercado": "alquiler", "ruta": f"output/v6/M3A/modelos/{mid}.json"})
-    pd.concat(preds).to_csv(out / "predicciones_cv_dl.csv.gz", index=False)
+    pd.concat(preds).to_csv(out / "predicciones_cv_dl.csv.gz", index=False, compression={"method": "gzip", "mtime": 0})
     pd.DataFrame(reg).to_csv(out / "registro_dl.csv", index=False)
     (out / "modelos_finales_dl.json").write_text(json.dumps(fin, indent=1, ensure_ascii=False))
 

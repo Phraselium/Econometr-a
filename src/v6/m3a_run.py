@@ -189,7 +189,7 @@ def main():
                          "estabilidad": stab[nivel], "mejores_hiperparametros": best, "rmse_bloques": best_sc,
                          "shap_top_global": imp.head(6).round(5).to_dict()}
         print(nivel, "hecho", round(time.time() - t0), "s", flush=True)
-    pd.concat(PRED).to_csv(OUT / "predicciones_cv_ml.csv.gz", index=False)
+    pd.concat(PRED).to_csv(OUT / "predicciones_cv_ml.csv.gz", index=False, compression={"method": "gzip", "mtime": 0})
     pd.DataFrame(REG_ROWS).to_csv(OUT / "registro_ml.csv", index=False)
     (OUT / "modelos_finales_ml.json").write_text(json.dumps(finales, indent=1, ensure_ascii=False))
     (OUT / "interpretacion.json").write_text(json.dumps({"ale": ales, "diag": INTERP}, indent=1, ensure_ascii=False))

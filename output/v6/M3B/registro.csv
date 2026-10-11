@@ -1,0 +1,600 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+OOS,PROV_PRECIO_TRIM|persistencia,"persistencia bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.018892500568847483,-3.9522986931192143,0.0006332448568096416,"{""mae_ln"": 0.01575, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": 0.0018615608896977588}"
+OOS,PROV_PRECIO_TRIM|estacional_y_t-4,"estacional_y_t-4 bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.03286744427222483,-0.5266991483180368,0.6034456725013078,"{""mae_ln"": 0.02611, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": 0.7040199512515257}"
+OOS,PROV_PRECIO_TRIM|AR,"AR bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.0348440583756471,,,"{""mae_ln"": 0.02517, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": NaN}"
+OOS,PROV_PRECIO_TRIM|ECMv1,"ECMv1 bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.0380104251078468,2.71889251602839,0.012242054230404947,"{""mae_ln"": 0.02807, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": 0.017138875922566927}"
+OOS,PROV_PRECIO_TRIM|M1b_ADL,"M1b_ADL bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.03448862599679135,-0.26072571589387356,0.7966242363621511,"{""mae_ln"": 0.02571, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": 0.7966242363621511}"
+OOS,PROV_PRECIO_TRIM|RF,"RF bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.019300525125322435,-3.8590533306913986,0.000797811809870468,"{""mae_ln"": 0.01597, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": 0.0018615608896977588}"
+OOS,PROV_PRECIO_TRIM|GB,"GB bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.020148234126783283,-3.6257570742018763,0.001417655514044746,"{""mae_ln"": 0.01659, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": 0.0024808971495783056}"
+OOS,PROV_PRECIO_TRIM|BBF,"BBF bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.019146959300418778,-3.890263797227696,0.0007384953092463068,"{""mae_ln"": 0.01584, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": 0.0018615608896977588}"
+OOS,PROV_VOL_TRIM|persistencia,"persistencia bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.22909502108730317,-3.357666513720563,0.002723744763397215,"{""mae_ln"": 0.14068, ""medida_precio"": null, ""p_BH"": 0.006820534434742191}"
+OOS,PROV_VOL_TRIM|estacional_y_t-4,"estacional_y_t-4 bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.275836011626584,-2.4313170139219276,0.023245582092435293,"{""mae_ln"": 0.18252, ""medida_precio"": null, ""p_BH"": 0.02711984577450784}"
+OOS,PROV_VOL_TRIM|AR,"AR bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.43078519811582766,,,"{""mae_ln"": 0.33793, ""medida_precio"": null, ""p_BH"": NaN}"
+OOS,PROV_VOL_TRIM|ECMv1,"ECMv1 bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.423216579158607,-0.15374101828317835,0.8791549266378316,"{""mae_ln"": 0.35772, ""medida_precio"": null, ""p_BH"": 0.8791549266378317}"
+OOS,PROV_VOL_TRIM|M1b_ADL,"M1b_ADL bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.5175303239880978,2.8675560797884203,0.00870262355698025,"{""mae_ln"": 0.39034, ""medida_precio"": null, ""p_BH"": 0.01218367297977235}"
+OOS,PROV_VOL_TRIM|RF,"RF bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.22954284642814704,-3.3284113899605585,0.0029230861863180817,"{""mae_ln"": 0.13888, ""medida_precio"": null, ""p_BH"": 0.006820534434742191}"
+OOS,PROV_VOL_TRIM|GB,"GB bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.24078650095640947,-3.1985637739958324,0.003992350704559291,"{""mae_ln"": 0.15356, ""medida_precio"": null, ""p_BH"": 0.0069866137329787584}"
+OOS,PROV_VOL_TRIM|BBF,"BBF bloques+embargo 4tr, orígenes 2018/20/22",8064,8099,984,,,,0.22845222609588695,-3.3573634877464884,0.002725740133878797,"{""mae_ln"": 0.13722, ""medida_precio"": null, ""p_BH"": 0.006820534434742191}"
+OOS,PROV_PRECIO_ANUAL|persistencia,"persistencia bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.028076020284945127,-2.2816707879695795,0.0713887643697132,"{""mae_ln"": 0.02274, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": 0.0892359554621415}"
+OOS,PROV_PRECIO_ANUAL|AR,"AR bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.040379248487081236,,,"{""mae_ln"": 0.03084, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": NaN}"
+OOS,PROV_PRECIO_ANUAL|M1b_ADL,"M1b_ADL bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.04035274854778314,-0.01853042475483099,0.9859324196780557,"{""mae_ln"": 0.03039, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": 0.9859324196780557}"
+OOS,PROV_PRECIO_ANUAL|RF,"RF bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.026361315023708407,-2.4015522457295884,0.061502664918365216,"{""mae_ln"": 0.02181, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": 0.0892359554621415}"
+OOS,PROV_PRECIO_ANUAL|GB,"GB bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.02646459382627684,-2.434681414517334,0.059039138860930776,"{""mae_ln"": 0.0218, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": 0.0892359554621415}"
+OOS,PROV_PRECIO_ANUAL|BBF,"BBF bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.026653199727754012,-2.35449178488755,0.06519536731744159,"{""mae_ln"": 0.02192, ""medida_precio"": ""valor tasado MIVAU"", ""p_BH"": 0.0892359554621415}"
+OOS,PROV_VOL_ANUAL|persistencia,"persistencia bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.18633210866818334,-1.6521849626563405,0.1594061540893644,"{""mae_ln"": 0.1417, ""medida_precio"": null, ""p_BH"": 0.1992576926117055}"
+OOS,PROV_VOL_ANUAL|AR,"AR bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.2524210843464127,,,"{""mae_ln"": 0.22917, ""medida_precio"": null, ""p_BH"": NaN}"
+OOS,PROV_VOL_ANUAL|M1b_ADL,"M1b_ADL bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.24822117784063974,-0.5727839324343793,0.5915852535882572,"{""mae_ln"": 0.22489, ""medida_precio"": null, ""p_BH"": 0.5915852535882572}"
+OOS,PROV_VOL_ANUAL|RF,"RF bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.18202006044187796,-2.1370873408034536,0.08563238719277487,"{""mae_ln"": 0.13941, ""medida_precio"": null, ""p_BH"": 0.14600167384571497}"
+OOS,PROV_VOL_ANUAL|GB,"GB bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.1863409553219195,-2.141546360739599,0.08515058424479845,"{""mae_ln"": 0.14263, ""medida_precio"": null, ""p_BH"": 0.14600167384571497}"
+OOS,PROV_VOL_ANUAL|BBF,"BBF bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.18149771062701575,-2.1191399632277883,0.08760100430742898,"{""mae_ln"": 0.13993, ""medida_precio"": null, ""p_BH"": 0.14600167384571497}"
+OOS,PROV_PRECIO_ANUAL_REGISTRADORES|persistencia,"persistencia bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.04787425610451798,-2.567661424597234,0.05017754188029291,"{""mae_ln"": 0.03848, ""medida_precio"": ""Registradores (robustez)"", ""p_BH"": 0.06272192735036614}"
+OOS,PROV_PRECIO_ANUAL_REGISTRADORES|AR,"AR bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.06931278689184377,,,"{""mae_ln"": 0.05671, ""medida_precio"": ""Registradores (robustez)"", ""p_BH"": NaN}"
+OOS,PROV_PRECIO_ANUAL_REGISTRADORES|M1b_ADL,"M1b_ADL bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.06626959198953174,-1.3271789305543562,0.24182169145274507,"{""mae_ln"": 0.0527, ""medida_precio"": ""Registradores (robustez)"", ""p_BH"": 0.24182169145274507}"
+OOS,PROV_PRECIO_ANUAL_REGISTRADORES|RF,"RF bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.0412802453951639,-3.1784528843100404,0.024580803257555253,"{""mae_ln"": 0.03256, ""medida_precio"": ""Registradores (robustez)"", ""p_BH"": 0.040968005429258755}"
+OOS,PROV_PRECIO_ANUAL_REGISTRADORES|GB,"GB bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.04104722374392536,-3.2201896720833876,0.023460685554941265,"{""mae_ln"": 0.03219, ""medida_precio"": ""Registradores (robustez)"", ""p_BH"": 0.040968005429258755}"
+OOS,PROV_PRECIO_ANUAL_REGISTRADORES|BBF,"BBF bloques+embargo 1a, orígenes 2018/20/22",2016,2024,246,,,,0.04102826455497162,-3.178908591177384,0.0245682521356985,"{""mae_ln"": 0.03185, ""medida_precio"": ""Registradores (robustez)"", ""p_BH"": 0.040968005429258755}"
+OOS,MUN_PRECIO_ANUAL|persistencia,"persistencia bloques+embargo 1a, orígenes 2018/20/22",2016,2024,1090,,,,0.05497053017236775,-1.4056070020860107,0.21883095719583956,"{""mae_ln"": 0.04472, ""medida_precio"": ""valor tasado MIVAU municipal"", ""p_BH"": 0.36036941349505136}"
+OOS,MUN_PRECIO_ANUAL|AR,"AR bloques+embargo 1a, orígenes 2018/20/22",2016,2024,1090,,,,0.08575415519734898,,,"{""mae_ln"": 0.06109, ""medida_precio"": ""valor tasado MIVAU municipal"", ""p_BH"": NaN}"
+OOS,MUN_PRECIO_ANUAL|M1b_ADL,"M1b_ADL bloques+embargo 1a, orígenes 2018/20/22",2016,2024,1090,,,,0.08432097078013283,-0.5581196050879096,0.6008293308364482,"{""mae_ln"": 0.05881, ""medida_precio"": ""valor tasado MIVAU municipal"", ""p_BH"": 0.6866620923845123}"
+OOS,MUN_PRECIO_ANUAL|RF,"RF bloques+embargo 1a, orígenes 2018/20/22",2016,2024,1090,,,,0.05013253782213603,-1.5780469159087465,0.1753847084803232,"{""mae_ln"": 0.04067, ""medida_precio"": ""valor tasado MIVAU municipal"", ""p_BH"": 0.36036941349505136}"
+OOS,MUN_PRECIO_ANUAL|GB,"GB bloques+embargo 1a, orígenes 2018/20/22",2016,2024,1090,,,,0.04929764792262146,-1.5536543105960787,0.18097902742015015,"{""mae_ln"": 0.03981, ""medida_precio"": ""valor tasado MIVAU municipal"", ""p_BH"": 0.36036941349505136}"
+OOS,MUN_PRECIO_ANUAL|BBF,"BBF bloques+embargo 1a, orígenes 2018/20/22",2016,2024,1090,,,,0.04863959813486101,-1.5646154506872973,0.1784438526384196,"{""mae_ln"": 0.03947, ""medida_precio"": ""valor tasado MIVAU municipal"", ""p_BH"": 0.36036941349505136}"
+OOS,MUN_PRECIO_ANUAL|MixedLM_jerarquico,"MixedLM_jerarquico bloques+embargo 1a, orígenes 2018/20/22",2016,2024,1090,,,,0.054012770895126266,-1.383026031833494,0.2252308834344071,"{""mae_ln"": 0.04392, ""medida_precio"": ""valor tasado MIVAU municipal"", ""p_BH"": 0.36036941349505136}"
+OOS,MUN_PRECIO_ANUAL|DL_MLP_tabular,"DL_MLP_tabular bloques+embargo 1a, orígenes 2018/20/22",2016,2024,1090,,,,4265227.467641763,1.0002587515790478,0.363103797367886,"{""mae_ln"": 1751759.33106, ""medida_precio"": ""valor tasado MIVAU municipal"", ""p_BH"": 0.48413839649051466}"
+OOS,MUN_PRECIO_ANUAL|DL_GCN_espacial,"DL_GCN_espacial bloques+embargo 1a, orígenes 2018/20/22",2016,2024,1090,,,,0.07983929474424267,-0.2446813791137957,0.8164274289359786,"{""mae_ln"": 0.06727, ""medida_precio"": ""valor tasado MIVAU municipal"", ""p_BH"": 0.8164274289359786}"
+HP,PROV_PRECIO_TRIM|RF|cfg0,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 5}",,,0,,,,0.018142000345291353,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg1,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.01808632611626393,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg2,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.017976615222730707,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg3,"{""max_depth"": 4, ""max_features"": 0.3, ""min_samples_leaf"": 3}",,,0,,,,0.018141390831618948,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg4,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 20}",,,0,,,,0.01788819764555104,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg5,"{""max_depth"": 8, ""max_features"": 0.7, ""min_samples_leaf"": 5}",,,0,,,,0.01822672206340346,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg6,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.018070353147336345,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg7,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 20}",,,0,,,,0.018041001878644717,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg8,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.018019169573269173,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg9,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 5}",,,0,,,,0.018142000345291353,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg10,"{""max_depth"": 6, ""max_features"": 0.3, ""min_samples_leaf"": 10}",,,0,,,,0.017982147587146644,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg11,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 20}",,,0,,,,0.01794318428226067,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg12,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 3}",,,0,,,,0.018140594407550257,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg13,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 1}",,,0,,,,0.018171710577422236,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg14,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.01814726164257869,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg15,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 3}",,,0,,,,0.018209518846426204,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg16,"{""max_depth"": 12, ""max_features"": 1.0, ""min_samples_leaf"": 1}",,,0,,,,0.018465552699408024,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg17,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.017976615222730707,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg18,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.017904442755956627,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg19,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.017848081074077995,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg20,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.018031699354526032,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg21,"{""max_depth"": 3, ""max_features"": 1.0, ""min_samples_leaf"": 3}",,,0,,,,0.018253496581905865,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg22,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.018031699354526032,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg23,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 5}",,,0,,,,0.018323058900255203,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg24,"{""max_depth"": 6, ""max_features"": 0.3, ""min_samples_leaf"": 5}",,,0,,,,0.01802575793965994,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg25,"{""max_depth"": 8, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.018001505737669714,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg26,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 5}",,,0,,,,0.018323058900255203,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg27,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 20}",,,0,,,,0.017947596414543424,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg28,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.018031699354526032,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|RF|cfg29,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 1}",,,0,,,,0.01826291944048024,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg0,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.01921656498820774,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg1,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.01984987404855715,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg2,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.01941467909987082,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg3,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 50, ""num_leaves"": 15, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.0181809271101378,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg4,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.020112019944321456,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg5,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.85}",,,0,,,,0.018485172072589335,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg6,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.018822636583943873,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg7,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.05, ""min_child_samples"": 20, ""n_estimators"": 100, ""num_leaves"": 15, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.018528487650498988,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg8,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.7}",,,0,,,,0.018893534483363186,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg9,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 50, ""num_leaves"": 15, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.018030876704256297,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg10,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.019315551483174088,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg11,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.018871510903570036,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg12,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 5, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.018622975560617733,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg13,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.7}",,,0,,,,0.018585886612028774,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg14,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 15, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.019544207900512783,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg15,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.018991536084037714,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg16,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.02, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.018625881580891655,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg17,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 1.0}",,,0,,,,0.018208743721435827,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg18,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.018257885161209214,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg19,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.019339647107708236,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg20,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 15, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.018652918007078162,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg21,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 7, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.019414863370981434,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg22,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.019144700079348296,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg23,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.85}",,,0,,,,0.018583774656392774,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg24,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.019499185800082548,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg25,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 20, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.7}",,,0,,,,0.01964873187441596,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg26,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.018093453562263984,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg27,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.02009156096616606,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg28,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.02, ""min_child_samples"": 10, ""n_estimators"": 50, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.018238629393776584,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|GB|cfg29,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.019445576959227145,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg0,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.0181592012360129,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg1,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.018338964523871588,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg2,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.018097338135624023,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg3,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.01831462540726216,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg4,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.018197715007878257,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg5,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.018197715007878257,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg6,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.017896069982836743,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg7,"{""max_depth"": 5, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.018124565650939336,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg8,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.0181592012360129,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg9,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.018130225745044807,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg10,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 100}",,,0,,,,0.01836970088680498,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg11,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.0183586348040254,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg12,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.018155119309826096,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg13,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.018070562218277103,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg14,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.01813515357559899,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg15,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 20, ""n_trees"": 100}",,,0,,,,0.0180887332802019,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg16,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.01814985845850131,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg17,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.01831498568989172,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg18,"{""max_depth"": 5, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.018124565650939336,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg19,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.018130225745044807,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg20,"{""max_depth"": 3, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.018296862758689286,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg21,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.01831566213771406,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg22,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.01805391666231243,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg23,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 100}",,,0,,,,0.01836970088680498,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg24,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.01813267851809532,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg25,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.018154984098554636,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg26,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.018197715007878257,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg27,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.018023753024729208,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg28,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.018132184622935674,,,bloques espaciales internos
+HP,PROV_PRECIO_TRIM|BBF|cfg29,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.01829234156839583,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg0,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 5}",,,0,,,,0.11609533526803495,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg1,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.13385301687301634,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg2,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.120669705700659,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg3,"{""max_depth"": 4, ""max_features"": 0.3, ""min_samples_leaf"": 3}",,,0,,,,0.12921860964320803,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg4,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 20}",,,0,,,,0.12247534506430535,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg5,"{""max_depth"": 8, ""max_features"": 0.7, ""min_samples_leaf"": 5}",,,0,,,,0.11583174089048824,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg6,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.12596962230231565,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg7,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 20}",,,0,,,,0.13374813395838256,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg8,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.13488530111630673,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg9,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 5}",,,0,,,,0.11609533526803495,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg10,"{""max_depth"": 6, ""max_features"": 0.3, ""min_samples_leaf"": 10}",,,0,,,,0.12331124438230993,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg11,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 20}",,,0,,,,0.12169357435922844,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg12,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 3}",,,0,,,,0.13342938817868905,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg13,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 1}",,,0,,,,0.12714994240635857,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg14,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.13254007483782823,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg15,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 3}",,,0,,,,0.13523811552055984,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg16,"{""max_depth"": 12, ""max_features"": 1.0, ""min_samples_leaf"": 1}",,,0,,,,0.11647099533161014,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg17,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.120669705700659,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg18,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.12835963604176978,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg19,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.1218705396564148,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg20,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.11935581749521292,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg21,"{""max_depth"": 3, ""max_features"": 1.0, ""min_samples_leaf"": 3}",,,0,,,,0.12890100027052578,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg22,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.11935581749521292,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg23,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 5}",,,0,,,,0.11792193533457829,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg24,"{""max_depth"": 6, ""max_features"": 0.3, ""min_samples_leaf"": 5}",,,0,,,,0.12220390461095994,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg25,"{""max_depth"": 8, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.11627410902941011,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg26,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 5}",,,0,,,,0.11792193533457829,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg27,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 20}",,,0,,,,0.12286554833548957,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg28,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.11935581749521292,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|RF|cfg29,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 1}",,,0,,,,0.11520451347360174,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg0,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.11791110516929675,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg1,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.12197122627416179,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg2,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.11785611796023314,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg3,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 50, ""num_leaves"": 15, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.11914680408322226,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg4,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.12087086872427394,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg5,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.85}",,,0,,,,0.11611143406417647,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg6,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.11872399607007032,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg7,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.05, ""min_child_samples"": 20, ""n_estimators"": 100, ""num_leaves"": 15, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.1173910736341619,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg8,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.7}",,,0,,,,0.11664920510543386,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg9,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 50, ""num_leaves"": 15, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.1336716180689522,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg10,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.11728923356735987,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg11,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.11715348471224248,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg12,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 5, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.11736150598719787,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg13,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.7}",,,0,,,,0.11658760376426038,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg14,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 15, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.1188785952829003,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg15,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.11786375965801672,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg16,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.02, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.11637376786617759,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg17,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 1.0}",,,0,,,,0.11935098382627823,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg18,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.11905032678437515,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg19,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.11896836917908171,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg20,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 15, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.11636674495582477,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg21,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 7, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.11941639491921734,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg22,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.11793568725263903,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg23,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.85}",,,0,,,,0.11617415871886268,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg24,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.1208171020075161,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg25,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 20, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.7}",,,0,,,,0.12073652210206642,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg26,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.12258972892376911,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg27,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.12103431947230009,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg28,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.02, ""min_child_samples"": 10, ""n_estimators"": 50, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.1297601591528961,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|GB|cfg29,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.11882789203481729,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg0,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.12687704969434796,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg1,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.11975812698934436,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg2,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.11895103603176031,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg3,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.13615567714390917,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg4,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.11924594424619493,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg5,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.11924594424619493,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg6,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.11839099608121077,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg7,"{""max_depth"": 5, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.11696319455248982,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg8,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.12687704969434796,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg9,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.12444924988966947,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg10,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 100}",,,0,,,,0.11888883739560223,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg11,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.11819254167702549,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg12,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.1350747534877481,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg13,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.12093104912894619,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg14,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.12502100969402052,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg15,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 20, ""n_trees"": 100}",,,0,,,,0.1338372735344999,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg16,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.12488643250587057,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg17,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.11848881298631879,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg18,"{""max_depth"": 5, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.11696319455248982,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg19,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.12444924988966947,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg20,"{""max_depth"": 3, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.12981862974650546,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg21,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.1364667737214668,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg22,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.12579967888302654,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg23,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 100}",,,0,,,,0.11888883739560223,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg24,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.11929593956849877,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg25,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.12609901257962594,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg26,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.11924594424619493,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg27,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.11753937707621975,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg28,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.1318719389696553,,,bloques espaciales internos
+HP,PROV_VOL_TRIM|BBF|cfg29,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.11994857915614177,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg0,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 5}",,,0,,,,0.024031652850239494,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg1,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.023315117712851913,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg2,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.023464420134147995,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg3,"{""max_depth"": 4, ""max_features"": 0.3, ""min_samples_leaf"": 3}",,,0,,,,0.023777607072810274,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg4,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 20}",,,0,,,,0.022761198697704415,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg5,"{""max_depth"": 8, ""max_features"": 0.7, ""min_samples_leaf"": 5}",,,0,,,,0.02406010386156916,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg6,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.023576018233587983,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg7,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 20}",,,0,,,,0.0227367192406478,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg8,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.02268974051045632,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg9,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 5}",,,0,,,,0.024031652850239494,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg10,"{""max_depth"": 6, ""max_features"": 0.3, ""min_samples_leaf"": 10}",,,0,,,,0.023158266795386035,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg11,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 20}",,,0,,,,0.022818344898377325,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg12,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 3}",,,0,,,,0.023928458724190055,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg13,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 1}",,,0,,,,0.023645254649244645,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg14,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.023434230904163442,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg15,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 3}",,,0,,,,0.024055739869202505,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg16,"{""max_depth"": 12, ""max_features"": 1.0, ""min_samples_leaf"": 1}",,,0,,,,0.02364564399936836,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg17,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.023464420134147995,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg18,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.02270960524740871,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg19,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.022708409806237173,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg20,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.023608256470295703,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg21,"{""max_depth"": 3, ""max_features"": 1.0, ""min_samples_leaf"": 3}",,,0,,,,0.024281243686851837,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg22,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.023608256470295703,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg23,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 5}",,,0,,,,0.024271399736448564,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg24,"{""max_depth"": 6, ""max_features"": 0.3, ""min_samples_leaf"": 5}",,,0,,,,0.023634951325770925,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg25,"{""max_depth"": 8, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.0236056085704886,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg26,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 5}",,,0,,,,0.024271399736448564,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg27,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 20}",,,0,,,,0.022818344898377325,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg28,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.023608256470295703,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|RF|cfg29,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 1}",,,0,,,,0.023574879616517944,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg0,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.0259639561002046,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg1,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.025791571776771546,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg2,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.026308095441821288,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg3,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 50, ""num_leaves"": 15, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.02430395365995694,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg4,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.025517349478069527,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg5,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.85}",,,0,,,,0.02315400361012843,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg6,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.025757640885766434,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg7,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.05, ""min_child_samples"": 20, ""n_estimators"": 100, ""num_leaves"": 15, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.02287944526248496,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg8,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.7}",,,0,,,,0.02328769479806145,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg9,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 50, ""num_leaves"": 15, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.022894447594998747,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg10,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.02623593502443479,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg11,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.023407279483767196,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg12,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 5, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.024809662481557717,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg13,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.7}",,,0,,,,0.023153305832144453,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg14,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 15, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.026258301619545298,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg15,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.023280904065064546,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg16,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.02, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.024505581436858204,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg17,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 1.0}",,,0,,,,0.024453193298204796,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg18,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.023096234555747355,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg19,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.023756832629714245,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg20,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 15, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.022750690715794487,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg21,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 7, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.025489524585819656,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg22,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.023211509327617463,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg23,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.85}",,,0,,,,0.023510134787385565,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg24,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.023738507185347105,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg25,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 20, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.7}",,,0,,,,0.023655441732004512,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg26,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.02298149816698396,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg27,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.026283910812092054,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg28,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.02, ""min_child_samples"": 10, ""n_estimators"": 50, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.02377162018861229,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|GB|cfg29,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.02540363862409653,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg0,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.024831126026752675,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg1,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.024991197646938173,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg2,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.022790871978954103,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg3,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.02500067988809028,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg4,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.024129619831355725,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg5,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.024129619831355725,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg6,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.022721478428208496,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg7,"{""max_depth"": 5, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.024611839587902907,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg8,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.024831126026752675,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg9,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.02450226516844807,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg10,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 100}",,,0,,,,0.02438978204509733,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg11,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.025248827265100564,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg12,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.02440049159140287,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg13,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.02429648507262186,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg14,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.024764822665978067,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg15,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 20, ""n_trees"": 100}",,,0,,,,0.02264948272469922,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg16,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.023964022041818772,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg17,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.025040144775053657,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg18,"{""max_depth"": 5, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.024611839587902907,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg19,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.02450226516844807,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg20,"{""max_depth"": 3, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.025154754532485654,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg21,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.02413094739400463,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg22,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.0242403614845511,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg23,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 100}",,,0,,,,0.02438978204509733,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg24,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.024660825017441445,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg25,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.024189237862820234,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg26,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.024129619831355725,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg27,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.024239697394310977,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg28,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.022709311477639427,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL|BBF|cfg29,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.02521149695860242,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg0,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 5}",,,0,,,,0.08594672699323518,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg1,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.08642106368214665,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg2,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.08614682788755128,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg3,"{""max_depth"": 4, ""max_features"": 0.3, ""min_samples_leaf"": 3}",,,0,,,,0.08612580541367455,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg4,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 20}",,,0,,,,0.08727984127988071,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg5,"{""max_depth"": 8, ""max_features"": 0.7, ""min_samples_leaf"": 5}",,,0,,,,0.08621514913747935,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg6,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.0866131229651591,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg7,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 20}",,,0,,,,0.08754732713191345,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg8,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.0872468416090139,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg9,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 5}",,,0,,,,0.08594672699323518,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg10,"{""max_depth"": 6, ""max_features"": 0.3, ""min_samples_leaf"": 10}",,,0,,,,0.08542962342897657,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg11,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 20}",,,0,,,,0.08791572156955,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg12,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 3}",,,0,,,,0.08734420421192872,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg13,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 1}",,,0,,,,0.08777785130387888,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg14,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.08679259858794015,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg15,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 3}",,,0,,,,0.08845098924899465,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg16,"{""max_depth"": 12, ""max_features"": 1.0, ""min_samples_leaf"": 1}",,,0,,,,0.08930178471479489,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg17,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.08614682788755128,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg18,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.08706896663217333,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg19,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.0870318408941831,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg20,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.08633238978188257,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg21,"{""max_depth"": 3, ""max_features"": 1.0, ""min_samples_leaf"": 3}",,,0,,,,0.08845544023061713,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg22,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.08633238978188257,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg23,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 5}",,,0,,,,0.0869476453803576,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg24,"{""max_depth"": 6, ""max_features"": 0.3, ""min_samples_leaf"": 5}",,,0,,,,0.08524216509143118,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg25,"{""max_depth"": 8, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.08612749336318126,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg26,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 5}",,,0,,,,0.0869476453803576,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg27,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 20}",,,0,,,,0.08791572156955,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg28,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.08633238978188257,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|RF|cfg29,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 1}",,,0,,,,0.08846028987601666,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg0,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.09003810866553975,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg1,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.09542744590371872,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg2,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.09379688679632925,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg3,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 50, ""num_leaves"": 15, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.08403513925398799,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg4,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.09928773998617242,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg5,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.85}",,,0,,,,0.08746660137398565,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg6,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.09462358433112905,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg7,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.05, ""min_child_samples"": 20, ""n_estimators"": 100, ""num_leaves"": 15, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.08832726004086293,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg8,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.7}",,,0,,,,0.08705497315346578,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg9,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 50, ""num_leaves"": 15, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.08695710406962016,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg10,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.09032078551161149,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg11,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.08672985813878575,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg12,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 5, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.08668075955633466,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg13,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.7}",,,0,,,,0.08660380069705081,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg14,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 15, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.08733245626209485,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg15,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.08841932453244024,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg16,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.02, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.08771497915179828,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg17,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 1.0}",,,0,,,,0.08697506953241933,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg18,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.086378739983712,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg19,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.09115784761257782,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg20,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 15, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.08805569681685277,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg21,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 7, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.09220472028292444,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg22,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.0895950582257402,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg23,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.85}",,,0,,,,0.08710054498471924,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg24,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.09098499623173444,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg25,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 20, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.7}",,,0,,,,0.09289066111010613,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg26,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.08640971681936122,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg27,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.09770446181123225,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg28,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.02, ""min_child_samples"": 10, ""n_estimators"": 50, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.08476881659664108,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|GB|cfg29,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.09290046127981637,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg0,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.08802763018607163,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg1,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.08753565675185239,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg2,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.08885382666920355,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg3,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.0889901949973743,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg4,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.08874297421439455,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg5,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.08874297421439455,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg6,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.08805263153915137,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg7,"{""max_depth"": 5, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.08689656157461785,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg8,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.08802763018607163,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg9,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.08673265017938321,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg10,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 100}",,,0,,,,0.09012414294051652,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg11,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.08915357337524372,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg12,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.08704774611287987,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg13,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.08716998809857708,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg14,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.08799964678655732,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg15,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 20, ""n_trees"": 100}",,,0,,,,0.08789240578656606,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg16,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.08797740291114993,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg17,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.08737800568196064,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg18,"{""max_depth"": 5, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.08689656157461785,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg19,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.08673265017938321,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg20,"{""max_depth"": 3, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.08863140029423384,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg21,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.08889579835743076,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg22,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.08636199246313192,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg23,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 100}",,,0,,,,0.09012414294051652,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg24,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.08813451064408084,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg25,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.08876926668891078,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg26,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.08874297421439455,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg27,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.08642878371491973,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg28,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.08850634564022881,,,bloques espaciales internos
+HP,PROV_VOL_ANUAL|BBF|cfg29,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.08947475366590701,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg0,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 5}",,,0,,,,0.03398138096709358,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg1,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.03338388177481044,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg2,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.03347394896183683,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg3,"{""max_depth"": 4, ""max_features"": 0.3, ""min_samples_leaf"": 3}",,,0,,,,0.034156285003245315,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg4,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 20}",,,0,,,,0.03334424857564396,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg5,"{""max_depth"": 8, ""max_features"": 0.7, ""min_samples_leaf"": 5}",,,0,,,,0.03417908926759366,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg6,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.03347306923057219,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg7,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 20}",,,0,,,,0.03332874623995125,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg8,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.03331219042180195,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg9,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 5}",,,0,,,,0.03398138096709358,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg10,"{""max_depth"": 6, ""max_features"": 0.3, ""min_samples_leaf"": 10}",,,0,,,,0.03337367364243599,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg11,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 20}",,,0,,,,0.03341687342674951,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg12,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 3}",,,0,,,,0.03394763194000737,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg13,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 1}",,,0,,,,0.035585615772467834,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg14,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.03346798381798097,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg15,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 3}",,,0,,,,0.0341947247209382,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg16,"{""max_depth"": 12, ""max_features"": 1.0, ""min_samples_leaf"": 1}",,,0,,,,0.036872053767357756,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg17,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.03347394896183683,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg18,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.03332156188078252,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg19,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.03332730050837252,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg20,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.03352015009407466,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg21,"{""max_depth"": 3, ""max_features"": 1.0, ""min_samples_leaf"": 3}",,,0,,,,0.034584093943201666,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg22,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.03352015009407466,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg23,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 5}",,,0,,,,0.03430091719845373,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg24,"{""max_depth"": 6, ""max_features"": 0.3, ""min_samples_leaf"": 5}",,,0,,,,0.03376249430706515,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg25,"{""max_depth"": 8, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.033525633052789806,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg26,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 5}",,,0,,,,0.03430091719845373,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg27,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 20}",,,0,,,,0.033416463238374716,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg28,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.03352015009407466,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|RF|cfg29,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 1}",,,0,,,,0.036079539852729915,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg0,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.03780756747090148,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg1,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.040012970316498274,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg2,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.03927042109178431,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg3,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 50, ""num_leaves"": 15, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.03415507061994181,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg4,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.040059377882943024,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg5,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.85}",,,0,,,,0.033742023265553436,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg6,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.03844286386396321,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg7,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.05, ""min_child_samples"": 20, ""n_estimators"": 100, ""num_leaves"": 15, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.033852971892311706,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg8,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.7}",,,0,,,,0.033882296546599376,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg9,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 50, ""num_leaves"": 15, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.033407661687742195,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg10,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.038626479029594186,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg11,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.03406648029984421,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg12,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 5, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.036443311903204934,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg13,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.7}",,,0,,,,0.0335574325584347,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg14,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 15, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.03717297652430196,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg15,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.034250430771052866,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg16,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.02, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.03635456949663989,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg17,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 1.0}",,,0,,,,0.03495444399330009,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg18,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.033383620500602146,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg19,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.03484899515623868,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg20,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 15, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.033707378928633965,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg21,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 7, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.03904684067920967,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg22,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.03425203334876593,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg23,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.85}",,,0,,,,0.033784745598020104,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg24,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.0348790122066489,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg25,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 20, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.7}",,,0,,,,0.035889524860551573,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg26,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.033431862423633045,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg27,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.04113347147126239,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg28,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.02, ""min_child_samples"": 10, ""n_estimators"": 50, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.03360038812401125,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|GB|cfg29,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.0391735666925055,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg0,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.03448202058156005,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg1,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.034577446453095496,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg2,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.033299654349979224,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg3,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.03432743240953718,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg4,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.03536366967956229,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg5,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.03536366967956229,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg6,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.03321871201974685,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg7,"{""max_depth"": 5, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.03421251417889437,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg8,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.03448202058156005,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg9,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.03413019874155853,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg10,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 100}",,,0,,,,0.03532420110320985,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg11,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.03511841488257213,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg12,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.03407578746466059,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg13,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.0340266885828611,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg14,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.034679731754653116,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg15,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 20, ""n_trees"": 100}",,,0,,,,0.03320539023375461,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg16,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.03492359420708051,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg17,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.03458865720838142,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg18,"{""max_depth"": 5, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.03421251417889437,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg19,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.03413019874155853,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg20,"{""max_depth"": 3, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.034748379585439894,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg21,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.0344124454683224,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg22,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.033993729032720764,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg23,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 100}",,,0,,,,0.03532420110320985,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg24,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.03487513416752189,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg25,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.03475113593283974,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg26,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.03536366967956229,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg27,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.03409981744119867,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg28,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.03321508538367414,,,bloques espaciales internos
+HP,PROV_PRECIO_ANUAL_REGISTRADORES|BBF|cfg29,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.03507272211283605,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg0,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 5}",,,0,,,,0.039754896289596935,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg1,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.04074762540962775,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg2,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.04029677680911036,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg3,"{""max_depth"": 4, ""max_features"": 0.3, ""min_samples_leaf"": 3}",,,0,,,,0.03986687285777102,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg4,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 20}",,,0,,,,0.0412408323218876,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg5,"{""max_depth"": 8, ""max_features"": 0.7, ""min_samples_leaf"": 5}",,,0,,,,0.039763211747300485,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg6,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.04004480886805512,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg7,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 20}",,,0,,,,0.04152006709023925,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg8,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.041546708339826516,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg9,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 5}",,,0,,,,0.039754896289596935,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg10,"{""max_depth"": 6, ""max_features"": 0.3, ""min_samples_leaf"": 10}",,,0,,,,0.04065895009163451,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg11,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 20}",,,0,,,,0.041345321753592144,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg12,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 3}",,,0,,,,0.040002259318442944,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg13,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 1}",,,0,,,,0.039725322239881324,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg14,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.04043885587846038,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg15,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 3}",,,0,,,,0.040199125753796514,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg16,"{""max_depth"": 12, ""max_features"": 1.0, ""min_samples_leaf"": 1}",,,0,,,,0.040668832644191265,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg17,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10}",,,0,,,,0.04029677680911036,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg18,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.041208720563965934,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg19,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 20}",,,0,,,,0.0413413599033183,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg20,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.04004533577248386,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg21,"{""max_depth"": 3, ""max_features"": 1.0, ""min_samples_leaf"": 3}",,,0,,,,0.039806281974754276,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg22,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.04004533577248386,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg23,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 5}",,,0,,,,0.04028222204220334,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg24,"{""max_depth"": 6, ""max_features"": 0.3, ""min_samples_leaf"": 5}",,,0,,,,0.03982488686789333,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg25,"{""max_depth"": 8, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.04007750950322011,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg26,"{""max_depth"": 6, ""max_features"": 1.0, ""min_samples_leaf"": 5}",,,0,,,,0.04028222204220334,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg27,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 20}",,,0,,,,0.04130929330771108,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg28,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 10}",,,0,,,,0.04004533577248386,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|RF|cfg29,"{""max_depth"": 8, ""max_features"": 0.5, ""min_samples_leaf"": 1}",,,0,,,,0.039880298713536905,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg0,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.04061898676989825,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg1,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.04247898077753568,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg2,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.042606704085676905,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg3,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 50, ""num_leaves"": 15, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.04038853683425452,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg4,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.04136240836351922,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg5,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.85}",,,0,,,,0.04053299607430025,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg6,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.0407327711355182,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg7,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.05, ""min_child_samples"": 20, ""n_estimators"": 100, ""num_leaves"": 15, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.0402171194159994,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg8,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.7}",,,0,,,,0.041791024593051194,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg9,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 50, ""num_leaves"": 15, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.04170746939933533,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg10,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.041415709430431526,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg11,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.04144871986456573,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg12,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 5, ""n_estimators"": 200, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.040176263245556176,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg13,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.7}",,,0,,,,0.0410548783562556,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg14,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 200, ""num_leaves"": 15, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.04119142109719257,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg15,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.041339295125569414,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg16,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.02, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.03995734395546682,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg17,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 10, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 1.0}",,,0,,,,0.04005124715839437,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg18,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.04096482172567701,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg19,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.04141788174339696,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg20,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 15, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.040816236253120634,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg21,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 7, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.04103427169928655,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg22,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.05, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 1.0}",,,0,,,,0.04003139851975066,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg23,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 100, ""num_leaves"": 4, ""reg_lambda"": 1.0, ""subsample"": 0.85}",,,0,,,,0.040787203768672606,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg24,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 30, ""n_estimators"": 400, ""num_leaves"": 7, ""reg_lambda"": 10.0, ""subsample"": 0.85}",,,0,,,,0.04181549141139209,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg25,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""min_child_samples"": 20, ""n_estimators"": 400, ""num_leaves"": 4, ""reg_lambda"": 10.0, ""subsample"": 0.7}",,,0,,,,0.04146674573230225,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg26,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.02, ""min_child_samples"": 30, ""n_estimators"": 200, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.04120264932302691,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg27,"{""colsample_bytree"": 0.7, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 400, ""num_leaves"": 3, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.04337929583210761,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg28,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.02, ""min_child_samples"": 10, ""n_estimators"": 50, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.85}",,,0,,,,0.04077729749583372,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GB|cfg29,"{""colsample_bytree"": 0.5, ""learning_rate"": 0.1, ""min_child_samples"": 5, ""n_estimators"": 100, ""num_leaves"": 7, ""reg_lambda"": 0.0, ""subsample"": 0.7}",,,0,,,,0.041240581032885026,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg0,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.04000919768488958,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg1,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.04036870227929497,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg2,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.041267179223933394,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg3,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.040555661856662865,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg4,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.04005155394770741,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg5,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.04005155394770741,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg6,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.04089112662006104,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg7,"{""max_depth"": 5, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.04002002987785162,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg8,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.04000919768488958,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg9,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.04002638366162444,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg10,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 100}",,,0,,,,0.04013766039780326,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg11,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.040299449785759694,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg12,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.04032543547239142,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg13,"{""max_depth"": 4, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.040149742559021824,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg14,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.03978671084620581,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg15,"{""max_depth"": 2, ""max_features"": 0.5, ""min_samples_leaf"": 20, ""n_trees"": 100}",,,0,,,,0.04158588386391553,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg16,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.040084945062614064,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg17,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 10, ""n_trees"": 50}",,,0,,,,0.04038509711352719,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg18,"{""max_depth"": 5, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.04002002987785162,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg19,"{""max_depth"": 3, ""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.04002638366162444,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg20,"{""max_depth"": 3, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.0400889230726988,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg21,"{""max_depth"": 2, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.04047585989404335,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg22,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.04012618415416631,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg23,"{""max_depth"": 5, ""max_features"": 1.0, ""min_samples_leaf"": 3, ""n_trees"": 100}",,,0,,,,0.04013766039780326,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg24,"{""max_depth"": 4, ""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_trees"": 100}",,,0,,,,0.04008364255316504,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg25,"{""max_depth"": 3, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.04005618662360367,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg26,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 3, ""n_trees"": 50}",,,0,,,,0.04005155394770741,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg27,"{""max_depth"": 5, ""max_features"": 0.5, ""min_samples_leaf"": 10, ""n_trees"": 100}",,,0,,,,0.040113145805531485,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg28,"{""max_depth"": 2, ""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_trees"": 50}",,,0,,,,0.04189319387724791,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|BBF|cfg29,"{""max_depth"": 4, ""max_features"": 1.0, ""min_samples_leaf"": 5, ""n_trees"": 50}",,,0,,,,0.040143885081894114,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|MLP|cfg0,"{""dropout"": 0.3, ""epochs"": 100, ""hidden"": 64, ""lr"": 0.003, ""wd"": 0.001}",,,0,,,,0.045148434062452426,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|MLP|cfg1,"{""dropout"": 0.3, ""epochs"": 200, ""hidden"": 16, ""lr"": 0.003, ""wd"": 0.01}",,,0,,,,0.04350601571870897,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|MLP|cfg2,"{""dropout"": 0.1, ""epochs"": 100, ""hidden"": 32, ""lr"": 0.003, ""wd"": 0.001}",,,0,,,,0.043028338461833925,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|MLP|cfg3,"{""dropout"": 0.1, ""epochs"": 100, ""hidden"": 64, ""lr"": 0.003, ""wd"": 0.001}",,,0,,,,0.04733482487620284,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|MLP|cfg4,"{""dropout"": 0.1, ""epochs"": 100, ""hidden"": 16, ""lr"": 0.01, ""wd"": 0.01}",,,0,,,,0.04780385202993018,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|MLP|cfg5,"{""dropout"": 0.1, ""epochs"": 100, ""hidden"": 32, ""lr"": 0.003, ""wd"": 0.01}",,,0,,,,0.043022044419486316,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|MLP|cfg6,"{""dropout"": 0.3, ""epochs"": 100, ""hidden"": 16, ""lr"": 0.003, ""wd"": 0.001}",,,0,,,,0.04137370186315519,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|MLP|cfg7,"{""dropout"": 0.1, ""epochs"": 200, ""hidden"": 16, ""lr"": 0.01, ""wd"": 0.01}",,,0,,,,0.04889572217663778,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GCN|cfg0,"{""dropout"": 0.0, ""epochs"": 200, ""hidden"": 64, ""lr"": 0.003, ""wd"": 0.001}",,,0,,,,0.10508732064754744,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GCN|cfg1,"{""dropout"": 0.0, ""epochs"": 100, ""hidden"": 32, ""lr"": 0.01, ""wd"": 0.001}",,,0,,,,0.07569718587699148,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GCN|cfg2,"{""dropout"": 0.3, ""epochs"": 100, ""hidden"": 32, ""lr"": 0.001, ""wd"": 0.01}",,,0,,,,0.04066913262668025,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GCN|cfg3,"{""dropout"": 0.1, ""epochs"": 200, ""hidden"": 64, ""lr"": 0.001, ""wd"": 0.01}",,,0,,,,0.061528273117683475,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GCN|cfg4,"{""dropout"": 0.3, ""epochs"": 100, ""hidden"": 64, ""lr"": 0.003, ""wd"": 0.001}",,,0,,,,0.05798246378731842,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GCN|cfg5,"{""dropout"": 0.1, ""epochs"": 200, ""hidden"": 64, ""lr"": 0.003, ""wd"": 0.001}",,,0,,,,0.09830654619953427,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GCN|cfg6,"{""dropout"": 0.0, ""epochs"": 200, ""hidden"": 32, ""lr"": 0.003, ""wd"": 0.0001}",,,0,,,,0.11126864037172218,,,bloques espaciales internos
+HP,MUN_PRECIO_ANUAL|GCN|cfg7,"{""dropout"": 0.3, ""epochs"": 100, ""hidden"": 32, ""lr"": 0.003, ""wd"": 0.01}",,,0,,,,0.04636323086907069,,,bloques espaciales internos

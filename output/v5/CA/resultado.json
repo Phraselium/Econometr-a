@@ -126,7 +126,9 @@
    "DM_HLN": 0.5727673407104286,
    "p": 0.5712168129548957,
    "n": 30
-  }
+  },
+  "pliegues_omitidos": 0,
+  "pliegues_evaluados": 30
  },
  "notas": "Notariado: sin datos accesibles (CIEN sin compraventas; portal con cuenta). Registradores: solo 2022-2025 (texto de los ERI Anuarios). El saldo por actividad no es nuevas operaciones; las nuevas operaciones por finalidad no están en el Boletín. ECM v1 no aplicable al crédito/iniciadas. Eurostat toma los datos de ES del INE: el contraste con el INE es de coherencia, no de independencia."
 }

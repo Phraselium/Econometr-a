@@ -1,5 +1,7 @@
 # Tareas del autor para la publicación (v6)
 
+> **Sustituido por docs/v6_1/tareas_autor.md (v6.1).**
+
 Lo que no pueden hacer los agentes. Sustituye a docs/v5/tareas_autor.md como lista de trabajo; las casillas pendientes de v5 se copian aquí. Se marca cada casilla al terminar.
 
 ## 1. Etiquetas git

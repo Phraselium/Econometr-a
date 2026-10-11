@@ -263,6 +263,7 @@ def credito():
     OOS = None
     jj = d[["g_inic", "g_constr_mas_inmob"]].dropna()
     e_ar, e_adl, idx = [], [], list(jj.index)
+    omitidos = 0  # v6.1 K4a-07: pliegues descartados por error numérico, ahora se cuentan y se informan
     T0 = 36
     for t_ in range(T0, len(jj)):
         tr = jj.iloc[: t_ - 4]  # embargo: se excluyen los 4 trimestres previos al objetivo
@@ -277,6 +278,7 @@ def credito():
         try:
             pa, pb = aj(Xa), aj(Xb)
         except Exception:  # noqa: BLE001
+            omitidos += 1
             continue
         e_ar.append(yv.iloc[t_] - pa)
         e_adl.append(yv.iloc[t_] - pb)
@@ -286,7 +288,8 @@ def credito():
         OOS = {"modelo": "ADL(4)+crédito constr.+inmob. (retardo 4) frente a AR(4); 1 paso, ventana expansiva, embargo 4 trim.",
                "rmse": float(np.sqrt((e_adl ** 2).mean())), "rmse_ar4": float(np.sqrt((e_ar ** 2).mean())),
                "dm_vs_ar4": {"DM_HLN": dm["DM"], "p": dm["p"], "n": dm["n"]},
-               "ecm_v1": "no aplicable: el ECM v1 modela el precio, no las iniciadas"}
+               "ecm_v1": "no aplicable: el ECM v1 modela el precio, no las iniciadas",
+               "pliegues_omitidos": omitidos, "pliegues_evaluados": int(len(e_ar))}
         REG.log("C1_credito", "OOS_ADL_vs_AR4", "g_inic", idx[T0], idx[-1], dm["n"], np.nan, np.nan, np.nan,
                 rmse_oos=OOS["rmse"], coef_interes=dm["DM"], p_interes=dm["p"], notas="DM-HLN; negativo = ADL mejor")
     # Figura
@@ -410,7 +413,9 @@ def main():
         "diagnosticos": {"triangulacion_contado_ok": ok, "contraste_nacional": tc[["id", "dif_max", "tolerancia", "dentro_tolerancia"]].to_dict("records"),
                          "solapamiento_regresiones": "variaciones interanuales solapadas; p con HAC(8)"},
         "fuera_muestra": {"modelo": oos["modelo"] if oos else None, "rmse": oos["rmse"] if oos else None,
-                          "dm_vs_ar4": oos["dm_vs_ar4"] if oos else None},
+                          "dm_vs_ar4": oos["dm_vs_ar4"] if oos else None,
+                          "pliegues_omitidos": oos["pliegues_omitidos"] if oos else None,
+                          "pliegues_evaluados": oos["pliegues_evaluados"] if oos else None},
         "notas": "Notariado: sin datos accesibles (CIEN sin compraventas; portal con cuenta). Registradores: solo 2022-2025 (texto de los ERI Anuarios). "
                  "El saldo por actividad no es nuevas operaciones; las nuevas operaciones por finalidad no están en el Boletín. "
                  "ECM v1 no aplicable al crédito/iniciadas. Eurostat toma los datos de ES del INE: el contraste con el INE es de coherencia, no de independencia.",

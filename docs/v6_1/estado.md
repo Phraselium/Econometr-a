@@ -58,3 +58,4 @@ Plan de ahorro (D7): revisor post-K2 ≤60.000, K3 ≤70.000, K4c/K4d ≤90.000,
   - Hasta el corte del 80 % quedan unos 111.000 tokens, para K5 (≤100.000).
   - El revisor final (≤60.000) sale de la reserva de cierre del 10 %.
   - K6 lo hace el orquestador.
+- K6 (parcial, orquestador): docs/v6_1/backlog.md y docs/v6_1/tareas_autor.md (definitivo) escritos; K4a-07 cerrado (0 de 30 pliegues omitidos).

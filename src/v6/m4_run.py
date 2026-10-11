@@ -482,7 +482,10 @@ def main():
                        "dm_vs_ar4": {"DM_HLN": None if pd.isna(h.dm_vs_ar) else float(h.dm_vs_ar), "p_holm": None if pd.isna(h.p_holm_vs_ar) else float(h.p_holm_vs_ar),
                                      "grupo": "espacial sellado (AR por unidad = persistencia en unidades nuevas)",
                                      "alquiler_provincia": True}},
-        notas=("Capa C4. Alquiler (stock) y contratos nuevos van separados; contratos nuevos sin modelo. " + LIM + " Fecha de la evaluacion: " + FECHA))
+        notas=("Capa C4. Alquiler (stock) y contratos nuevos van separados; contratos nuevos sin modelo. "
+               "Aproximaciones: la red de distrito usa la media de los embeddings entrenados para provincias nuevas; BART sustituido por un bosque con bootstrap bayesiano y PyMC por MixedLM. "
+               "Sesgo de selección: el «mejor modelo» se elige mirando el RMSE sellado, por lo que su RMSE es optimista (mejor de k candidatos); el sellado no intervino en el ajuste de ningún modelo. "
+               "El AR por unidad diverge en algunos municipios con T corto: sus DM en el grupo temporal municipal son poco informativos. " + LIM + " Fecha de la evaluacion: " + FECHA))
     (OUT / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float))
     # hechos.json
     hechos = []

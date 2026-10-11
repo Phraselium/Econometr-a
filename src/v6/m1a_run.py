@@ -595,7 +595,7 @@ res = {"rama": "v6/M1a", "mercado": "alquiler de stock (SERPAVI; IPC como robust
        "estimacion": "ver tabla_coeficientes.csv y tabla_magnitudes_eur_mes.csv",
        "ic95": "IC t(G-1) con EE por clúster CCAA en tabla_coeficientes.csv (p = wild bootstrap)",
        "p_ajustado": "Holm en S0 de cada nivel; BH en el resto (tabla_coeficientes.csv)",
-       "nivel_evidencia": "EXPLORATORIO / ASOCIACION ROBUSTA segun variable (columna nivel_evidencia); ninguna es CAUSAL",
+       "nivel_evidencia": "EXPLORATORIO (C4) o DESCRIPTIVO segun variable (columna nivel_evidencia); ninguna es ASOCIACION ROBUSTA ni CAUSAL",
        "diagnosticos": "diagnosticos.json", "fuera_muestra": FUERA,
        "contratos_nuevos": {"mercado": "contratos nuevos (fianzas)", "capa": "C4", "nivel_evidencia": "DESCRIPTIVO",
                             "nota": f"GVA {n_gva} obs y Incasol {n_inc} obs en provincia: sin potencia, descriptivo "

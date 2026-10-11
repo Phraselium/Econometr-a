@@ -58,3 +58,11 @@
 - **Ninguna variable cumple el criterio pre-registrado de «relevante con seguridad».** La familia econométrica nunca pasa Holm. Todo queda en C4.
 - **Limitación de la comparación espacial.** En provincias nuevas, AR, ECM y M1 caen a persistencia, porque no tienen efecto fijo. La red de M3a no admitía provincias nuevas y M4 usa la media de los embeddings (declarado).
 - Se elimina de output/v6/M1A/diagnosticos.json el campo «seg» (tiempo de ejecución), que impedía que dos ejecuciones dieran md5 idénticos.
+
+## Revisión final de v6: APROBAR (16 no bloqueantes) → correcciones prioritarias aplicadas por el orquestador
+- N1: m3b_run entra en `make all` una vez comprobado su determinismo.
+- N2-N3: M2 fija un solo hilo; M1A ya no guarda tiempos; `.tmp_todo.pkl` deja de versionarse (.gitignore).
+- N4: la desviación de las variables nacionales en el ML trimestral de compra queda declarada en M3B/desviaciones.md.
+- N5-N6 y N8: las notas de M4/resultado.json recogen los embeddings medios, los sustitutos de BART y PyMC, el sesgo de selección del ganador mirado en el sellado y la divergencia del AR municipal.
+- N13-N15: M1A deja de decir «ASOCIACIÓN ROBUSTA»; M1B dice «variación asociada»; la elasticidad precio-alquiler se da como rango de 0,4 a 2,1 según la especificación; la fecha del dato es la de los datos.
+- El resto de no bloqueantes queda en docs/v6/revision_final.md, sin impacto en las conclusiones.

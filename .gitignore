@@ -22,3 +22,4 @@ data/raw/v3/cartografia/
 # v3 D1: originales INE re-descargables (caché de src/v3/fetch_ine_v3.py)
 data/raw/v3_orig/
 data/raw/gva_vut_municipio.csv
+output/v6/M2/.tmp_*

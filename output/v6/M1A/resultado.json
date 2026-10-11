@@ -23,7 +23,7 @@
  "estimacion": "ver tabla_coeficientes.csv y tabla_magnitudes_eur_mes.csv",
  "ic95": "IC t(G-1) con EE por clúster CCAA en tabla_coeficientes.csv (p = wild bootstrap)",
  "p_ajustado": "Holm en S0 de cada nivel; BH en el resto (tabla_coeficientes.csv)",
- "nivel_evidencia": "EXPLORATORIO / ASOCIACION ROBUSTA segun variable (columna nivel_evidencia); ninguna es CAUSAL",
+ "nivel_evidencia": "EXPLORATORIO (C4) o DESCRIPTIVO segun variable (columna nivel_evidencia); ninguna es ASOCIACION ROBUSTA ni CAUSAL",
  "diagnosticos": "diagnosticos.json",
  "fuera_muestra": {
   "modelo": "M1 (EF de unidad + tendencia comun + regresores t-1, S1)",

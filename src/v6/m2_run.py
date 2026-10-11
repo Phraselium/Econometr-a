@@ -3,6 +3,10 @@
 Solo lee output/v6/M0/paneles/*_train.csv.gz. Todo C4 (asociativo/predictivo, nada causal).
 """
 import itertools
+import os
+
+for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+    os.environ.setdefault(_v, "1")
 import json
 import sys
 from pathlib import Path

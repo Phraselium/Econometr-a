@@ -116,5 +116,5 @@
    "alquiler_provincia": true
   }
  },
- "notas": "Capa C4. Alquiler (stock) y contratos nuevos van separados; contratos nuevos sin modelo. Validacion espacial nueva (11 provincias nunca usadas como validacion); temporal ya vista en v2 (otras provincias) y de forma descriptiva en v4-v5; el ultimo anio cae en la ventana sellada de v2. Las conclusiones se apoyan en la parte espacial. Fecha de la evaluacion: 2026-10-11"
+ "notas": "Capa C4. Alquiler (stock) y contratos nuevos van separados; contratos nuevos sin modelo. Aproximaciones: la red de distrito usa la media de los embeddings entrenados para provincias nuevas; BART sustituido por un bosque con bootstrap bayesiano y PyMC por MixedLM. Sesgo de selección: el «mejor modelo» se elige mirando el RMSE sellado, por lo que su RMSE es optimista (mejor de k candidatos); el sellado no intervino en el ajuste de ningún modelo. El AR por unidad diverge en algunos municipios con T corto: sus DM en el grupo temporal municipal son poco informativos. Validacion espacial nueva (11 provincias nunca usadas como validacion); temporal ya vista en v2 (otras provincias) y de forma descriptiva en v4-v5; el ultimo anio cae en la ventana sellada de v2. Las conclusiones se apoyan en la parte espacial. Fecha de la evaluacion: 2026-10-11"
 }

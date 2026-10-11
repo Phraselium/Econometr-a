@@ -10,3 +10,6 @@
 8. Interpretacion (SHAP, permutacion agrupada, ALE, PDP) sobre LightGBM; descriptiva C4. VIF muy alto (rezagos de y y poblacion/ocupados): atribuciones inestables entre pliegues.
 9. Un ejecucion previa con MLP defectuoso (escalado sin recorte) se descarto; las cifras vigentes son las de esta ejecucion.
 10. output/v6/M3B/_smoke contiene una ejecucion de humo (SMOKE=1) que no pude borrar por permisos; ignorar.
+
+## Añadida tras la revisión final (N4)
+- El ML trimestral de compra usa `tipo_hip_ecb_pct` y `ln_cred_nuevas` (nacionales), `ln_ipc_alq_idx` y `other_l1`, que no están en CP_REG. hipotesis.md §3 excluye las variables nacionales de los modelos provinciales con efectos fijos de año. Aquí no hay efectos fijos de año: los árboles usan esas variables como contexto temporal común. Es una desviación del pre-registro y la interpretación de esas variables es nula (no varían entre provincias).

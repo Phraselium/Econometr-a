@@ -28,7 +28,7 @@ OUT = RAIZ / "output/v6/M1B" / ("smoke" if SMOKE else "")
 (OUT / "tablas").mkdir(parents=True, exist_ok=True)
 PAN = RAIZ / "output/v6/M0/paneles"
 REG = econ_utils.Registry(OUT / "registro.csv")
-FECHA = "2026-10-11"
+FECHA = "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
 
 CP = ["ln_pob", "share_ext_pob", "ln_pib_pc", "paro_tasa", "ln_ocupados_miles", "ln_terminadas_libres",
       "ln_iniciadas_libres", "ln_suelo_pm2_m50k", "ln_vut", "ln_hip_viv_num"]

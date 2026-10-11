@@ -10,7 +10,7 @@
   "cobertura": "39 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; MIVAU-SERPAVI (alquiler de stock)",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_ratio_precio_alquiler_mediana_2015",
@@ -23,7 +23,7 @@
   "cobertura": "38 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; MIVAU-SERPAVI (alquiler de stock)",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_rentabilidad_bruta_mediana",
@@ -36,7 +36,7 @@
   "cobertura": "39 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; MIVAU-SERPAVI (alquiler de stock)",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_coste_uso_g2",
@@ -49,7 +49,7 @@
   "cobertura": "nacional",
   "fuentes": "ECB tipo hipotecario España; supuestos del autor",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_brecha_rentabilidad_coste_uso",
@@ -62,7 +62,7 @@
   "cobertura": "39 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; MIVAU-SERPAVI (alquiler de stock); ECB",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_elasticidad_anual_FE_unidad_año",
@@ -75,7 +75,7 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; MIVAU-SERPAVI (alquiler de stock)",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_elasticidad_anual_FE_unidad_tendencia",
@@ -88,7 +88,7 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; MIVAU-SERPAVI (alquiler de stock)",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_elasticidad_anual_FE_unidad_año_v2",
@@ -101,7 +101,7 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; MIVAU-SERPAVI (alquiler de stock)",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_elasticidad_anual_FE_unidad_tendencia_v2",
@@ -114,7 +114,7 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; MIVAU-SERPAVI (alquiler de stock)",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_elasticidad_trimestral_DOLS_FE_unidad_tendencia",
@@ -127,7 +127,7 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler (stock)",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_elasticidad_trimestral_DOLS_FE_unidad_trimestreentreprovincias",
@@ -140,7 +140,7 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler (stock)",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_sdm_rho_ln_cv_etdp",
@@ -153,7 +153,7 @@
   "cobertura": "41 provincias",
   "fuentes": "MIVAU; INE ETDP; centroides v5",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_sdm_rho_ln_pm2_tasado",
@@ -166,7 +166,7 @@
   "cobertura": "41 provincias",
   "fuentes": "MIVAU; INE ETDP; centroides v5",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_gsadf_ccaa_01",
@@ -179,7 +179,7 @@
   "cobertura": "8 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_gsadf_ccaa_06",
@@ -192,7 +192,7 @@
   "cobertura": "1 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_gsadf_ccaa_07",
@@ -205,7 +205,7 @@
   "cobertura": "9 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_gsadf_ccaa_08",
@@ -218,7 +218,7 @@
   "cobertura": "5 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_gsadf_ccaa_09",
@@ -231,7 +231,7 @@
   "cobertura": "4 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_gsadf_ccaa_10",
@@ -244,7 +244,7 @@
   "cobertura": "3 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_gsadf_ccaa_11",
@@ -257,7 +257,7 @@
   "cobertura": "2 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_gsadf_ccaa_12",
@@ -270,7 +270,7 @@
   "cobertura": "4 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_gsadf_ccaa_16",
@@ -283,7 +283,7 @@
   "cobertura": "3 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_gsadf_ccaa_18",
@@ -296,7 +296,7 @@
   "cobertura": "1 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_gsadf_ccaa_19",
@@ -309,11 +309,11 @@
   "cobertura": "1 provincias de entrenamiento",
   "fuentes": "MIVAU valor tasado; INE IPC alquiler",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_fe_precio_ln_pob",
-  "indicador": "Efecto asociado en el valor tasado de ln_pob (t-1): % por +10 % (logs) o +1 pp",
+  "indicador": "Variación asociada en el valor tasado de ln_pob (t-1): % por +10 % (logs) o +1 pp",
   "valor": 26.52,
   "min": null,
   "max": null,
@@ -322,11 +322,11 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU; INE",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_fe_precio_share_ext_pob",
-  "indicador": "Efecto asociado en el valor tasado de share_ext_pob (t-1): % por +10 % (logs) o +1 pp",
+  "indicador": "Variación asociada en el valor tasado de share_ext_pob (t-1): % por +10 % (logs) o +1 pp",
   "valor": -1.3,
   "min": null,
   "max": null,
@@ -335,11 +335,11 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU; INE",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_fe_precio_ln_pib_pc",
-  "indicador": "Efecto asociado en el valor tasado de ln_pib_pc (t-1): % por +10 % (logs) o +1 pp",
+  "indicador": "Variación asociada en el valor tasado de ln_pib_pc (t-1): % por +10 % (logs) o +1 pp",
   "valor": 1.343,
   "min": null,
   "max": null,
@@ -348,11 +348,11 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU; INE",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_fe_precio_paro_tasa",
-  "indicador": "Efecto asociado en el valor tasado de paro_tasa (t-1): % por +10 % (logs) o +1 pp",
+  "indicador": "Variación asociada en el valor tasado de paro_tasa (t-1): % por +10 % (logs) o +1 pp",
   "valor": -0.351,
   "min": null,
   "max": null,
@@ -361,11 +361,11 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU; INE",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_fe_precio_ln_ocupados_miles",
-  "indicador": "Efecto asociado en el valor tasado de ln_ocupados_miles (t-1): % por +10 % (logs) o +1 pp",
+  "indicador": "Variación asociada en el valor tasado de ln_ocupados_miles (t-1): % por +10 % (logs) o +1 pp",
   "valor": -1.229,
   "min": null,
   "max": null,
@@ -374,11 +374,11 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU; INE",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_fe_precio_ln_terminadas_libres",
-  "indicador": "Efecto asociado en el valor tasado de ln_terminadas_libres (t-1): % por +10 % (logs) o +1 pp",
+  "indicador": "Variación asociada en el valor tasado de ln_terminadas_libres (t-1): % por +10 % (logs) o +1 pp",
   "valor": 0.119,
   "min": null,
   "max": null,
@@ -387,11 +387,11 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU; INE",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_fe_precio_ln_iniciadas_libres",
-  "indicador": "Efecto asociado en el valor tasado de ln_iniciadas_libres (t-1): % por +10 % (logs) o +1 pp",
+  "indicador": "Variación asociada en el valor tasado de ln_iniciadas_libres (t-1): % por +10 % (logs) o +1 pp",
   "valor": 0.009,
   "min": null,
   "max": null,
@@ -400,11 +400,11 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU; INE",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  },
  {
   "id": "m1b_fe_precio_ln_hip_viv_num",
-  "indicador": "Efecto asociado en el valor tasado de ln_hip_viv_num (t-1): % por +10 % (logs) o +1 pp",
+  "indicador": "Variación asociada en el valor tasado de ln_hip_viv_num (t-1): % por +10 % (logs) o +1 pp",
   "valor": -0.426,
   "min": null,
   "max": null,
@@ -413,6 +413,6 @@
   "cobertura": "41 provincias de entrenamiento",
   "fuentes": "MIVAU; INE",
   "capa": "C4",
-  "fecha_dato": "2026-10-11"
+  "fecha_dato": "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
  }
 ]

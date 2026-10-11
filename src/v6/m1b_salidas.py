@@ -6,7 +6,7 @@ import json
 import numpy as np
 import pandas as pd
 
-FECHA = "2026-10-11"
+FECHA = "2024T4 (trimestral) / 2024 (anual de entrenamiento)"
 
 
 def _f(x, n=4):
@@ -100,5 +100,5 @@ def escribir(OUT, EXTRA, df, smoke, B):
     for _, r in gs.iterrows():
         hecho(f"m1b_gsadf_ccaa_{r.ccaa}", f"GSADF ratio precio/IPC alquiler, CCAA {r.ccaa}: p bootstrap (episodios: {r.episodios if isinstance(r.episodios, str) else 'ninguno'})", r.gsadf, None, r.cv95, "estadístico (max = vc 95 %)", "2015T1-2024T4", f"{int(r.n_prov_train)} provincias de entrenamiento", "MIVAU valor tasado; INE IPC alquiler")
     for _, r in fe[(fe.spec == "S2_nucleo8") & (fe.y == "ln_pm2_tasado")].iterrows():
-        hecho(f"m1b_fe_precio_{r['var']}", f"Efecto asociado en el valor tasado de {r['var']} (t-1): % por +10 % (logs) o +1 pp", r.efecto_pct_unidad, None, None, "% ; p_wcb=" + str(_f(r.p_wcb, 3)), "2016-2024", "41 provincias de entrenamiento", "MIVAU; INE")
+        hecho(f"m1b_fe_precio_{r['var']}", f"Variación asociada en el valor tasado de {r['var']} (t-1): % por +10 % (logs) o +1 pp", r.efecto_pct_unidad, None, None, "% ; p_wcb=" + str(_f(r.p_wcb, 3)), "2016-2024", "41 provincias de entrenamiento", "MIVAU; INE")
     (OUT / "hechos.json").write_text(json.dumps(H, ensure_ascii=False, indent=1))

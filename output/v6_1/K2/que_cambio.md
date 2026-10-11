@@ -1,0 +1,9 @@
+## Qué cambió entre versiones y por qué
+
+Las versiones v1-v3 y v6 no estiman la misma asociación de la inmigración con la vivienda. Esta sección compara las especificaciones, una dimensión cada vez, sobre las provincias de entrenamiento (C4; datos de 2009-2023; fecha 2026-10-11).
+
+**Inmigración.** En v2 el flujo de inmigración, instrumentado con cuotas de 2002, se asociaba más con el alquiler (IPC) que con el precio de compra. En v6 la cuota de extranjeros tiene probabilidad de inclusión alta en compra (0,77) y baja en alquiler (0,06). Al repetir la comparación, el orden depende del método: con 2SLS el coeficiente es 2,66 %/pp en alquiler y 0,09 en valor tasado; con MCO, 0,76 y 4,58. La población, correlacionada 0,66 con la cuota dentro de cada provincia, cambia el signo del coeficiente en compra (3,15 a -2,23 %/pp) y lo anula en alquiler. La medida de alquiler también importa: en la misma muestra, 3,59 con SERPAVI y 0,97 con IPC. Los controles de costa, vivienda no principal y compras de extranjeros residentes reducen el coeficiente sin población (4,26 a 1,60 en compra), compatible con que la cuota recoja en parte provincias de costa; las islas no se pueden contrastar porque están en la muestra sellada. Una probabilidad de inclusión alta no implica signo positivo: la media posterior en compra es -1,34 %/pp.
+
+**Otros cambios.** Empleo, renta, iniciadas y turísticos cambian de signo o de mercado según la medida de alquiler, el método y los controles; ningún intervalo de la especificación final excluye el cero.
+
+**Conclusión (C4, «ANALIZADA, NO CONCLUYENTE»).** Las diferencias entre versiones se explican por cambios de método, de controles y de medida, no por un resultado estable que se haya invertido. No se puede afirmar un efecto de la inmigración sobre el precio o el alquiler. Limitación: no se reproduce la muestra de 49 provincias de v2 (primera etapa débil en las provincias de entrenamiento).

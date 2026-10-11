@@ -1,0 +1,54 @@
+{
+ "rama": "K2",
+ "pregunta": "¿Qué dimensión de la especificación explica que la asociación de la inmigración con el precio y el alquiler difiera entre v1-v3 y v6?",
+ "capa": "C4",
+ "medida_precio": "valor tasado MIVAU (por defecto; Registradores, IPV INE y valor tasado real se contrastan en la tabla B)",
+ "datos": "Provincias de entrenamiento v6 (41; 38 con datos de v2), 2002-2024, output/v6/M0/paneles y data/processed/v2/train; sin data/sealed",
+ "N": {
+  "provincia_anio_compra": 328,
+  "provincia_anio_alquiler": 306,
+  "especificaciones": 181
+ },
+ "metodo": "MCO/2SLS con EF de provincia y año, errores agrupados, una dimensión cada vez; BMA aproximado con BIC; Holm y BH por bloque",
+ "estimacion": {
+  "cuota_compra_sin_poblacion": 4.264,
+  "cuota_compra_con_nucleo": -1.308,
+  "cuota_compra_con_nucleo_y_demanda_externa": -1.422,
+  "unidad": "% por +1 pp de cuota (t-1)",
+  "corr_poblacion_dentro": 0.664
+ },
+ "ic95": {
+  "cuota_compra_con_nucleo": [
+   -4.308,
+   1.692
+  ],
+  "cuota_compra_con_nucleo_y_demanda_externa": [
+   -4.368,
+   1.524
+  ]
+ },
+ "p_ajustado": {
+  "cuota_compra_con_nucleo_holm": 1.0,
+  "familia": "137 especificaciones de inmigración"
+ },
+ "nivel_evidencia": "EXPLORATORIO (C4); ANALIZADA, NO CONCLUYENTE; sin lenguaje causal",
+ "diagnosticos": {
+  "primera_etapa_F_base_38_provincias": 3.52,
+  "vif_cuota_poblacion": 1.79,
+  "pip_bic_compra": 0.827,
+  "pip_bic_alquiler": 0.058,
+  "islas_en_entrenamiento": 0,
+  "dimension_que_mueve": "método (2SLS/MCO) y control por población; medida de alquiler"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "K2 no usa evaluación sellada ni predicción: fuera_muestra no aplica.",
+  "No se reproduce la muestra de 49 provincias de v2 (las 11 provincias selladas de v6 no se usan); primera etapa débil en las provincias de entrenamiento.",
+  "Notariado sin panel provincial; IPV solo CCAA; municipio con regresor provincial unido.",
+  "Conclusión: Con los datos de entrenamiento (provincias de entrenamiento de v6; 38 con datos de v2) la asociación de la inmigración con el precio de compra y con el alquiler de stock no tiene un signo ni un orden entre mercados estables: cambia con el método, con la medida de alquiler y, sobre todo, con el control por población. (1) Método: la base de v2 (flujo/población, 2SLS shift-share, 2009-2021) da 2,66 [0,27; 5,05] %/pp en alquiler (IPC) y 0,09 [-5,69; 5,87] en valor tasado; con MCO y los mismos EF da 0,76 [0,10; 1,43] y 4,58 [2,60; 6,57]: el orden alquiler > compra de v2 corresponde al 2SLS y el orden compra > alquiler de v6 al MCO (ya presente en la columna MCO de v2). La primera etapa en estas provincias es débil (F = 3,5 frente a 14,4 en las 49 provincias de v2; las 11 provincias selladas de v6 no se usan). (2) Población: la cuota de extranjeros (t-1) y el ln de la población (t-1) se correlacionan 0,66 dentro de provincia (0,14 en conjunta); al añadir la población, el coeficiente sobre el valor tasado pasa de 3,15 a -2,23 %/pp (IC95 [-4,67; 0,20]) y el de SERPAVI de 2,62 a 0,30. (3) Medida de alquiler: en la muestra común 2012-2021 el coeficiente es 3,59 [2,33; 4,85] con SERPAVI y 0,97 [0,14; 1,79] con IPC. (4) Demanda externa: sin población, los controles costa×año, vivienda no principal×año y compras de extranjeros residentes (MIVAU) reducen el coeficiente de 4,26 a 1,60 %/pp (valor tasado) y de 2,67 a 1,55 (SERPAVI), compatible con que la cuota recoja en parte provincias de costa; con población (o con el núcleo de M2) el coeficiente apenas cambia (-1,31 a -1,42 en valor tasado; 0,18 a 0,30 en SERPAVI). Las tres provincias insulares están en la parte sellada de v6, así que las islas no se pueden contrastar. Con el BMA aproximado (BIC) la probabilidad de inclusión de la cuota es 0,83 en compra y 0,06 en alquiler (v6/M2: 0,77 y 0,06), pero la media posterior en compra es -1,34 %/pp: una inclusión alta no implica signo positivo. Capa C4; veredicto «ANALIZADA, NO CONCLUYENTE»; asociación, sin lectura causal."
+ ]
+}

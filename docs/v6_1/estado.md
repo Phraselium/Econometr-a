@@ -25,3 +25,14 @@
   - Los dos altos están corregidos: K4a-01, redondeo de recuentos, y K4a-02, fianzas de Incasòl. Ambos van en ERRATA.
   - 31 tests nuevos.
 - K2 lanzado (econometrician).
+- K2 terminado (unos 240.000 tokens). El cambio de inmigración lo mueven tres dimensiones: método (2SLS frente a MCO), control de población (correlación 0,66 dentro de provincia) y medida de alquiler. Conclusión única: C4, «ANALIZADA, NO CONCLUYENTE». k2_inmigracion entra en make y es determinista.
+
+## Consumo acumulado de subagentes
+- K1: 90.376
+- K4b: 170.138
+- K4a: 234.566
+- K2: 240.357
+- Total: 735.437 de 1.400.000 (53 %).
+- Margen hasta el corte del 80 %: 384.563 tokens.
+
+Plan de ahorro (D7): revisor post-K2 ≤60.000, K3 ≤70.000, K4c/K4d ≤90.000, K5 ≤120.000, revisor final ≤60.000. K6 y la consolidación de la auditoría las hace el orquestador.

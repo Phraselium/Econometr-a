@@ -1,0 +1,160 @@
+[
+ {
+  "id": "K2-CUOTA-COMPRA-SIN",
+  "indicador": "Cuota de extranjeros (t-1) y valor tasado MIVAU, EF dobles, con nucleo de controles (poblacion incluida), sin controles de demanda externa",
+  "valor": -1.308,
+  "min": -4.308,
+  "max": 1.692,
+  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
+  "cobertura": "342 observaciones provincia-año; medida_precio: valor tasado MIVAU",
+  "fuentes": [
+   "output/v6_1/K2/registro_holm.csv",
+   "output/v6/M0/paneles/prov_compra_anual_train.csv.gz"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K2-CUOTA-COMPRA-EXT",
+  "indicador": "Idem con controles de demanda externa (costa x anio, vivienda no principal x anio, compras de extranjeros residentes)",
+  "valor": -1.422,
+  "min": -4.368,
+  "max": 1.524,
+  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
+  "cobertura": "342 observaciones provincia-año; medida_precio: valor tasado MIVAU",
+  "fuentes": [
+   "output/v6_1/K2/registro_holm.csv",
+   "output/v6/M0/paneles/prov_compra_anual_train.csv.gz"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K2-CUOTA-COMPRA-SINPOB-SIN",
+  "indicador": "Cuota de extranjeros (t-1) y valor tasado MIVAU, EF dobles, sin controles (sin poblacion) y sin demanda externa",
+  "valor": 4.264,
+  "min": 2.115,
+  "max": 6.412,
+  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
+  "cobertura": "342 observaciones provincia-año; medida_precio: valor tasado MIVAU",
+  "fuentes": [
+   "output/v6_1/K2/registro_holm.csv",
+   "output/v6/M0/paneles/prov_compra_anual_train.csv.gz"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K2-CUOTA-COMPRA-SINPOB-EXT",
+  "indicador": "Idem sin poblacion, con controles de demanda externa",
+  "valor": 1.6,
+  "min": -0.788,
+  "max": 3.988,
+  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
+  "cobertura": "342 observaciones provincia-año; medida_precio: valor tasado MIVAU",
+  "fuentes": [
+   "output/v6_1/K2/registro_holm.csv",
+   "output/v6/M0/paneles/prov_compra_anual_train.csv.gz"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K2-CUOTA-ALQ-SINPOB-SIN",
+  "indicador": "Cuota de extranjeros (t-1) y alquiler de stock SERPAVI, EF dobles, sin controles y sin demanda externa",
+  "valor": 2.673,
+  "min": 1.308,
+  "max": 4.037,
+  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
+  "cobertura": "282 observaciones provincia-año; alquiler de stock SERPAVI",
+  "fuentes": [
+   "output/v6_1/K2/registro_holm.csv",
+   "output/v6/M0/paneles/prov_compra_anual_train.csv.gz"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K2-CUOTA-ALQ-SINPOB-EXT",
+  "indicador": "Idem con controles de demanda externa",
+  "valor": 1.551,
+  "min": 0.052,
+  "max": 3.049,
+  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
+  "cobertura": "282 observaciones provincia-año; alquiler de stock SERPAVI",
+  "fuentes": [
+   "output/v6_1/K2/registro_holm.csv",
+   "output/v6/M0/paneles/prov_compra_anual_train.csv.gz"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K2-CUOTA-ALQ-NUCLEO-SIN",
+  "indicador": "Cuota de extranjeros (t-1) y alquiler SERPAVI, EF dobles, con nucleo (poblacion incluida), sin demanda externa",
+  "valor": 0.178,
+  "min": -1.476,
+  "max": 1.832,
+  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
+  "cobertura": "282 observaciones provincia-año; alquiler de stock SERPAVI",
+  "fuentes": [
+   "output/v6_1/K2/registro_holm.csv",
+   "output/v6/M0/paneles/prov_compra_anual_train.csv.gz"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K2-CUOTA-ALQ-NUCLEO-EXT",
+  "indicador": "Idem con controles de demanda externa",
+  "valor": 0.301,
+  "min": -1.302,
+  "max": 1.904,
+  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
+  "cobertura": "282 observaciones provincia-año; alquiler de stock SERPAVI",
+  "fuentes": [
+   "output/v6_1/K2/registro_holm.csv",
+   "output/v6/M0/paneles/prov_compra_anual_train.csv.gz"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K2-CORR-POB-DENTRO",
+  "indicador": "Correlacion dentro de provincia (EF dobles) entre la cuota de extranjeros (t-1) y el ln de la poblacion (t-1)",
+  "valor": 0.664,
+  "min": null,
+  "max": null,
+  "unidad": "correlacion",
+  "periodo": "2016-2024",
+  "cobertura": "369 observaciones provincia-año; 41 provincias de entrenamiento",
+  "fuentes": [
+   "output/v6_1/K2/diag.json"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "K2-CORR-POB-CONJUNTA",
+  "indicador": "Correlacion conjunta entre la cuota de extranjeros (t-1) y el ln de la poblacion (t-1)",
+  "valor": 0.138,
+  "min": null,
+  "max": null,
+  "unidad": "correlacion",
+  "periodo": "2016-2024",
+  "cobertura": "369 observaciones provincia-año; 41 provincias de entrenamiento",
+  "fuentes": [
+   "output/v6_1/K2/diag.json"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ }
+]

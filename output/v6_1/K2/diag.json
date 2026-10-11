@@ -1,0 +1,138 @@
+{
+ "col": {
+  "v6_share_vs_ln_pob": {
+   "pooled": 0.13773804952393312,
+   "entre": 0.13843472278043648,
+   "dentro": 0.6638160616864973,
+   "N": 369
+  },
+  "v6_vif_share_pob": {
+   "l1_share_ext_pob": 1.7877950357178987,
+   "l1_ln_pob": 1.7877950357178982,
+   "N": 369
+  },
+  "v6_vif_nucleo": {
+   "l1_share_ext_pob": 2.5329906236812043,
+   "l1_ln_pob": 3.6317400120752885,
+   "l1_ln_pib_pc": 1.1558778032334345,
+   "l1_paro_tasa": 2.4309680180152027,
+   "l1_ln_ocupados_miles": 2.8381039810823094,
+   "l1_ln_terminadas_libres": 1.1647619421948514,
+   "l1_ln_iniciadas_libres": 1.200950154976595,
+   "l1_ln_hip_viv_num": 1.3366696318705051,
+   "N": 342
+  },
+  "v2_flujo_vs_ln_pob": {
+   "pooled": 0.2387675580420786,
+   "entre": 0.291709758422177,
+   "dentro": 0.10161003739139102,
+   "N": 494
+  },
+  "v2_dstock_vs_ln_pob": {
+   "pooled": -0.02310297455112406,
+   "entre": -0.05728074712514636,
+   "dentro": -0.09558676388892592,
+   "N": 494
+  },
+  "v2_dcuota_vs_ln_pob": {
+   "pooled": -0.047677004483361554,
+   "entre": -0.1598033074196148,
+   "dentro": -0.04015465753568641,
+   "N": 494
+  },
+  "corr_cuota_costa": {
+   "entre": 0.4896715138767738,
+   "N": 38
+  },
+  "corr_cuota_no_principal": {
+   "entre": 0.09678187978816798,
+   "N": 38
+  },
+  "corr_cuota_no_residentes_1516": {
+   "entre": 0.6709004672578197,
+   "N": 38
+  },
+  "corr_cuota_compra_ext_residentes": {
+   "pooled": 0.8785857605450293,
+   "entre": 0.9044223097416578,
+   "dentro": -0.04980841420011958,
+   "N": 342
+  }
+ },
+ "bma": {
+  "compra|nucleo_M2": {
+   "pip": 0.8270211144520336,
+   "media": -1.3399788015350864,
+   "pip_pob": 1.0000000000000004,
+   "N": 342,
+   "modelos": 256,
+   "todos": {
+    "l1_share_ext_pob": 0.8270211144520336,
+    "l1_ln_pob": 1.0000000000000004,
+    "l1_ln_pib_pc": 0.6039048704795039,
+    "l1_paro_tasa": 0.20435511464958642,
+    "l1_ln_ocupados_miles": 0.07402060816393202,
+    "l1_ln_terminadas_libres": 0.602332144288075,
+    "l1_ln_iniciadas_libres": 0.05532600620881784,
+    "l1_ln_hip_viv_num": 0.24384353102372391
+   }
+  },
+  "compra|nucleo+demanda_externa": {
+   "pip": 0.9385789695499772,
+   "media": -1.64130590717513,
+   "pip_pob": 1.0000000000000004,
+   "N": 342,
+   "modelos": 2048,
+   "todos": {
+    "l1_share_ext_pob": 0.9385789695499772,
+    "l1_ln_pob": 1.0000000000000004,
+    "l1_ln_pib_pc": 0.6057855226889128,
+    "l1_paro_tasa": 0.10346850187657917,
+    "l1_ln_ocupados_miles": 0.07491306110955871,
+    "l1_ln_terminadas_libres": 0.5883326324146249,
+    "l1_ln_iniciadas_libres": 0.053306135181871654,
+    "l1_ln_hip_viv_num": 0.0859416897962278,
+    "l1_share_compra_ext_res_pct": 0.4532823847040435,
+    "tend_costa": 0.9956627349418237,
+    "tend_nop": 0.14676818582688816
+   }
+  },
+  "alquiler|nucleo_M2": {
+   "pip": 0.05844602331676317,
+   "media": 0.0023276627064180992,
+   "pip_pob": 0.9999999999999999,
+   "N": 282,
+   "modelos": 256,
+   "todos": {
+    "l1_share_ext_pob": 0.05844602331676317,
+    "l1_ln_pob": 0.9999999999999999,
+    "l1_ln_pib_pc": 0.1516934158345533,
+    "l1_paro_tasa": 0.16772196049132007,
+    "l1_ln_ocupados_miles": 0.15422171864721076,
+    "l1_ln_terminadas_libres": 0.05679009199911728,
+    "l1_ln_iniciadas_libres": 0.8926534924556135,
+    "l1_ln_hip_viv_num": 0.931910502831578
+   }
+  },
+  "alquiler|nucleo+demanda_externa": {
+   "pip": 0.06153210592342556,
+   "media": 0.004135921848928314,
+   "pip_pob": 0.9999999999999993,
+   "N": 282,
+   "modelos": 2048,
+   "todos": {
+    "l1_share_ext_pob": 0.06153210592342556,
+    "l1_ln_pob": 0.9999999999999993,
+    "l1_ln_pib_pc": 0.0787232670997641,
+    "l1_paro_tasa": 0.33704606894516836,
+    "l1_ln_ocupados_miles": 0.19678288563920288,
+    "l1_ln_terminadas_libres": 0.12884806289979242,
+    "l1_ln_iniciadas_libres": 0.9823076101041142,
+    "l1_ln_hip_viv_num": 0.9457581877861436,
+    "l1_share_compra_ext_res_pct": 0.2640150571263917,
+    "tend_costa": 0.5387817207998342,
+    "tend_nop": 0.9848751983173955
+   }
+  }
+ }
+}

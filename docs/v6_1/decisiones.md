@@ -13,3 +13,9 @@
 - **D5 · K4b en make.** k4b_run.py lee el CSV versionado de Catastro (.csv.gz) y no el descomprimido. El resultado es idéntico.
   - k4b_comparar.py se ejecuta tras cifras_clave.
 - **D6 · Hallazgos medios y bajos de K4a (03-10).** Pasan al backlog de v6.1 con su coste. Se resuelven en K6 si son baratos.
+- **D7 · Recorte de presupuesto.** K4a, K4b y K2 consumieron casi lo previsto, y K2 llegó a su tope de 0,25 M.
+  - Topes reducidos para no pasar del 80 % más la reserva: revisor ≤60.000, K3 ≤70.000, K4c/K4d ≤90.000, K5 ≤120.000 y revisor final ≤60.000.
+  - K6 y la consolidación de auditoria.md las hace el orquestador sin subagentes.
+- **D8 · Alcance de K2.** K2 reestima con las 41 provincias de entrenamiento de v6, sin las 11 selladas, así que no reproduce la muestra de 49 provincias de v2.
+  - En ella la primera etapa del 2SLS es débil (F=3,5).
+  - Corrección del planteamiento: en v1-v3 la asociación de la inmigración aparece sobre todo con el ALQUILER, no con el precio de compra. Se documenta así en el historial.

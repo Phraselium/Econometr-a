@@ -84,6 +84,22 @@
   "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; T1 y T2 de v5.1 (ejecución 2026-10-11)"
  },
  {
+  "id": "T3-H5b",
+  "indicador": "Necesidad anual de vivienda 2026-2035, base sin la sensibilidad X (A+R+V+F-M-K; no resta liberadas)",
+  "valor": 210424.4,
+  "min": 99388.2,
+  "max": 292082.8,
+  "unidad": "viviendas/año",
+  "periodo": "2026-2035",
+  "cobertura": "España (52 provincias)",
+  "fuentes": [
+   "B1",
+   "T1"
+  ],
+  "capa": "C4",
+  "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; T1 y T2 de v5.1 (ejecución 2026-10-11)"
+ },
+ {
   "id": "T3-H6",
   "indicador": "Liberadas por envejecimiento que no llegan al mercado (componente que suma), por año",
   "valor": 35564.2,
@@ -130,13 +146,13 @@
  },
  {
   "id": "T3-H9",
-  "indicador": "Veces que cabe la producción actual (media de 72.264-94.426) en la necesidad anual (territorio común; mínimo, central, máximo)",
-  "valor": 3.0,
-  "min": 1.5,
-  "max": 4.1,
+  "indicador": "Veces que cabe la producción actual (terminadas nacionales con País Vasco y Navarra, media 2019-2024) en la necesidad anual con sensibilidad X (mínimo, central, máximo)",
+  "valor": 2.7,
+  "min": 1.4,
+  "max": 3.8,
   "unidad": "veces",
   "periodo": "2019-2024 (producción)",
-  "cobertura": "territorio común",
+  "cobertura": "España (52 provincias)",
   "fuentes": [
    "M0",
    "T3"

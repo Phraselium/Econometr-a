@@ -387,8 +387,8 @@ def escribe(out, niveles, etapas_df, n5, n10, old, dir_nac, T_nac, F_nac, B_nac,
     txt_dir = {"empeora": "empeora", "mejora": "mejora", "indeterminado": "no tiene un signo único"}[dir_nac[5]]
     if dir_nac[5] == "empeora":
         ver_txt = ("El déficit nacional 2025-2030 empeora en todos los escenarios de la rejilla (dirección C2); por tanto la afirmación «se cerrará en pocos años» "
-                   "no se sostiene en ninguno de ellos. La magnitud del aumento es C4.")
-        veredicto, capa = "PARCIALMENTE", "C2"
+                   "no se sostiene en ninguno de ellos. La dirección C2 depende de que el rango plausible esté en la rejilla: unas terminadas sostenidas muy por encima del optimista o unos hogares claramente por debajo de la proyección baja del INE podrían cambiarla (umbrales en docs/v5_1/revision.md). La magnitud del aumento es C4.")
+        veredicto, capa = "NO RESPALDADA", "C2"   # revisión v5.1 (B2): la afirmación falla en todos los escenarios de la rejilla
     else:
         ver_txt = ("El signo nacional del cambio del déficit no es único en la rejilla (dirección C4): la dirección y la magnitud quedan en C4.")
         veredicto, capa = "ANALIZADA, NO CONCLUYENTE", "C4"

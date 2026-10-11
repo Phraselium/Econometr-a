@@ -6,7 +6,7 @@
   "mort": "INE tabla 67235, mortalidad por provincia 2024 (mod. 2025-11)",
   "pob": "INE tabla 36726, Proyecciones de Poblacion 2024-2074 (corto plazo), 2026-2041",
   "hog": "INE tabla 54562, Proyeccion de Hogares (mod. 2026-06-17)",
-  "censo": "INE Censo 2021 (1-nov-2021), secciones",
+  "censo": "INE Censo 2021 (referencia 1-ene-2021), secciones",
   "ecv": "INE ECV tabla 9994, tenencia por edad de la persona de referencia, 2025",
   "her": "INE ETDP tabla 6154, viviendas transmitidas por titulo (herencia), 2014-2025"
  },

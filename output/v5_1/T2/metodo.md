@@ -33,7 +33,7 @@ Provincias A4 clase 1-2 (necesidad): 97 % de las liberadas. Municipios clase 1-2
 Como L no se resta de la necesidad, la parte que no llega al mercado (X × L) se lee como un **aumento posible de la necesidad efectiva** respecto a la que el INE da por absorbida: 24.548-46.580 viviendas/año (central 35.564), un 11-22 % de la necesidad central de B1 (214.868/año). Prueba de estrés X = 50 % (sin dato): 43 %.
 
 ## Fechas de datos
-INE 54562 (mod. 2026-06-17); INE 36726 (2026-2041); INE 67235 (2024, mod. 2025-11); Censo 2021 (2021-11-01); ECV 9994 (2025); ETDP 6154 (2014-2025). A4 y B1 de output/v5.
+INE 54562 (mod. 2026-06-17); INE 36726 (2026-2041); INE 67235 (2024, mod. 2025-11); Censo 2021 (referencia 1-ene-2021); ECV 9994 (2025); ETDP 6154 (2014-2025). A4 y B1 de output/v5.
 
 ## Entregables
 tablas/liberadas_provincia.csv (52 provincias × 3 tipos × 2 periodos; liberadas del periodo, no anuales), tablas/liberadas_detalle.csv, resultado.json, hechos.json, fichas_verificador.json, control_sumas.json, registro.csv (Registry; sin contrastes, p no aplica, Holm/BH no aplica).

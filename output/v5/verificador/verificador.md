@@ -2,7 +2,7 @@
 
 Generado por `make verificador`. Cada ficha evalúa la afirmación, nunca a quien la formula, y se aplican las mismas reglas a todas. Capas: C1 hechos (≥2 fuentes independientes), C2 cotas con supuestos explícitos, C3 efectos identificados (ninguno) y C4 exploratorio. Con C4 el veredicto es como máximo «ANALIZADA, NO CONCLUYENTE». «NO ANALIZADA: FALTAN DATOS» quiere decir que no hay datos para analizar la afirmación, no que sea falsa.
 
-Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 28; PARCIALMENTE: 4; NO ANALIZADA: FALTAN DATOS: 3; CONTRADICHA: 1.
+Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 28; NO ANALIZADA: FALTAN DATOS: 3; PARCIALMENTE: 3; CONTRADICHA: 1; NO RESPALDADA: 1.
 
 | Id | Afirmación | Veredicto | Capa |
 |---|---|---|---|
@@ -41,7 +41,7 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 28; PARCIALMENTE: 4; NO ANALI
 | T1-V1 | En España apenas se derriban viviendas / las bajas del parque son despreciables. | ANALIZADA, NO CONCLUYENTE | C4 |
 | T2-V1 | El envejecimiento resolvera el problema de la vivienda. | ANALIZADA, NO CONCLUYENTE | C4 |
 | T2-V2 | Las herencias liberaran vivienda suficiente. | ANALIZADA, NO CONCLUYENTE | C4 |
-| T4-V1 | Al ritmo actual el déficit se cerrará en pocos años. | PARCIALMENTE | C2 |
+| T4-V1 | Al ritmo actual el déficit se cerrará en pocos años. | NO RESPALDADA | C2 |
 
 ## Fichas sustituidas en v5
 
@@ -629,9 +629,9 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 28; PARCIALMENTE: 4; NO ANALI
 
 | Campo | Contenido |
 |---|---|
-| Veredicto | **PARCIALMENTE** |
+| Veredicto | **NO RESPALDADA** |
 | Capa de la evidencia | C2 |
-| Magnitud | Dirección nacional 2025-2030 (C2): empeora en 180 escenarios (terminadas: ritmo actual, cartera, tendencia, mínimo y optimista; hogares bajos, central y altos; bajas 0, central y máxima de T1; liberadas que no llegan al mercado: ninguna, mín., central y máx.). Magnitud (C4): el déficit pasa de 763.416 (2025, central: media de las fuentes con y sin protegida más bajas centrales de T1; 700.934 sin bajas y con protegida) a 1.349.025 a fin de 2030 al ritmo 2023-2025 (rango de la rejilla 788.180 a 1.773.555); cambio 585.609 (rango 87.246 a 946.852). Para no empeorar harían falta unas 211.772 terminadas al año frente a 94.650 del ritmo actual y 146.435 del escenario optimista. Provincias: 15 empeoran, 0 mejoran y 37 indeterminadas (B2: 20 / 5 / 27). El déficit nacional 2025-2030 empeora en todos los escenarios de la rejilla (dirección C2); por tanto la afirmación «se cerrará en pocos años» no se sostiene en ninguno de ellos. La magnitud del aumento es C4. |
+| Magnitud | Dirección nacional 2025-2030 (C2): empeora en 180 escenarios (terminadas: ritmo actual, cartera, tendencia, mínimo y optimista; hogares bajos, central y altos; bajas 0, central y máxima de T1; liberadas que no llegan al mercado: ninguna, mín., central y máx.). Magnitud (C4): el déficit pasa de 763.416 (2025, central: media de las fuentes con y sin protegida más bajas centrales de T1; 700.934 sin bajas y con protegida) a 1.349.025 a fin de 2030 al ritmo 2023-2025 (rango de la rejilla 788.180 a 1.773.555); cambio 585.609 (rango 87.246 a 946.852). Para no empeorar harían falta unas 211.772 terminadas al año frente a 94.650 del ritmo actual y 146.435 del escenario optimista. Provincias: 15 empeoran, 0 mejoran y 37 indeterminadas (B2: 20 / 5 / 27). El déficit nacional 2025-2030 empeora en todos los escenarios de la rejilla (dirección C2); por tanto la afirmación «se cerrará en pocos años» no se sostiene en ninguno de ellos. La dirección C2 depende de que el rango plausible esté en la rejilla: unas terminadas sostenidas muy por encima del optimista o unos hogares claramente por debajo de la proyección baja del INE podrían cambiarla (umbrales en docs/v5_1/revision.md). La magnitud del aumento es C4. |
 | Intervalo | cambio del déficit 2025-2030: 87.246 a 946.852 viviendas (C4); dirección nacional C2 |
 | Cota | Dirección C2 solo si el signo es único en toda la rejilla; magnitud siempre C4 |
 | Literatura | — |

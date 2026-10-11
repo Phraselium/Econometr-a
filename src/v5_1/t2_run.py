@@ -47,7 +47,7 @@ FECHAS = {
     "mort": "INE tabla 67235, mortalidad por provincia 2024 (mod. 2025-11)",
     "pob": "INE tabla 36726, Proyecciones de Poblacion 2024-2074 (corto plazo), 2026-2041",
     "hog": "INE tabla 54562, Proyeccion de Hogares (mod. 2026-06-17)",
-    "censo": "INE Censo 2021 (1-nov-2021), secciones",
+    "censo": "INE Censo 2021 (referencia 1-ene-2021), secciones",
     "ecv": "INE ECV tabla 9994, tenencia por edad de la persona de referencia, 2025",
     "her": "INE ETDP tabla 6154, viviendas transmitidas por titulo (herencia), 2014-2025",
 }
@@ -142,7 +142,7 @@ def entregables(res, bp, t, ten, h65, ctrl) -> None:
     h("T2-H6", "Viviendas liberadas que llegan al mercado (venta o alquiler), al ano", a["mercado_central"], a["mercado_min"],
       a["mercado_max"], "viviendas/ano", "2026-2035", "52 provincias", "C4", "2026-06-17")
     h("T2-H7", "Viviendas liberadas que NO llegan al mercado al ano (X data-based: vacias y secundarias del Censo 2021)",
-      a["no_llega_central"], x_lo, x_hi, "viviendas/ano", "2026-2035", "52 provincias", "C4", "2021-11-01")
+      a["no_llega_central"], x_lo, x_hi, "viviendas/ano", "2026-2035", "52 provincias", "C4", "2021-01-01")
     h("T2-H8", "Aumento posible de la necesidad efectiva (no_llega / necesidad central B1)", 100 * a["no_llega_central"] / need,
       100 * x_lo / need, 100 * x_hi / need, "%", "2026-2035", "52 provincias", "C4", "2026-06-17")
     h("T2-H9", "Prueba de estres X=50 % (sin dato): aumento posible de la necesidad", 100 * stress / need, 100 * stress / need,

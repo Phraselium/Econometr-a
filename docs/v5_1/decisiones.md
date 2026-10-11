@@ -37,9 +37,19 @@
   - Las liberadas nunca se restan; check_v5 lo controla con control_liberadas.json.
 - **Descomposición de la amplitud.** Movilizables 34 %, flujo futuro 22 %, atraso 21 %, liberadas que no llegan 10 %, reposición 6,5 %, vacancia 5,5 % y cartera 1 %. El supuesto que más pesa es la fracción de vacías movilizables.
 - **Frente a las terminadas actuales** (72.000-94.000 al año en el territorio común): la necesidad equivale a 1,5 / 3,0 / 4,1 veces la producción media.
-- **T4, dirección y magnitud.** Rejilla de 180 escenarios: los de B2, uno optimista (146.435 terminadas al año, suma de máximos provinciales, por encima de cualquier año nacional observado), bajas 0, hogares bajos y liberadas.
+- **T4, dirección y magnitud.** Rejilla de 180 escenarios: los de B2, uno optimista (146.435 terminadas al año, suma de máximos provinciales, por encima de cualquier año nacional desde 2008, aunque muy por debajo de 2006-2007), bajas 0, hogares bajos y liberadas.
   - Dirección nacional 2026-2030: EMPEORA en los 180 escenarios, así que pasa a **C2**. La magnitud (cambio de +87.000 a +947.000) es C4.
   - Provincias: 15 empeoran, 0 mejoran y 37 son indeterminadas (en v5: 20 / 5 / 27).
   - A 2035, la dirección nacional es indeterminada (C4).
   - El envejecimiento libera 870.000 viviendas en 2026-2030 y 987.000 en 2031-2035 (centrales, C4).
 - **Verificador.** La ficha T4-V1 sustituye a B2-V1. verificador.py admite ya sustituciones de fichas v5 por fichas v5.1.
+
+## Revisión de v5.1 (T1-T5): REHACER acotado (B1-B2) → corregido por el orquestador
+- **B1.** La frase frente a las terminadas usa ahora la misma cobertura que la necesidad: terminadas nacionales con País Vasco y Navarra, 78.810-100.980 al año en 2019-2024. Resultado: 1,4 / 2,7 / 3,8 veces (antes 1,5 / 3,0 / 4,1 con el territorio común) y decimales con coma.
+- **B2.** T4-V1 pasa a NO RESPALDADA (C2): la afirmación «se cerrará en pocos años» falla en todos los escenarios. La regla dice qué podría romper la dirección C2; los umbrales están en docs/v5_1/revision.md.
+- **No bloqueantes.**
+  - Los titulares de los entregables usan la necesidad BASE (sin X: 99.000 / 210.000 / 292.000) y dan X como sensibilidad que SUMA (124.000 / 246.000 / 339.000). X es un flujo bruto hacia la vacancia y sesga al alza.
+  - El 0,052 % se rotula «máximo de las demoliciones con licencia», no «máximo de las bajas».
+  - T2 fecha el Censo 2021 en el 1-ene-2021.
+  - Pendientes, por impacto bajo: la cuota de referencia del desajuste territorial, que L en T3 venga de B1 y el carácter casi tautológico del control de liberadas.
+- Son las correcciones que propuso el revisor y no cambian estimaciones: v5.1 (T1-T5) queda APROBADA.

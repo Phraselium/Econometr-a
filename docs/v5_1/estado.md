@@ -9,7 +9,8 @@
 | T4 dirección frente a magnitud | hecho | dirección C2 (2030), magnitud C4 | empeora en los 180 escenarios a 2030; provincias 15/0/37; 2035 indeterminado | — |
 | T5 matices de lectura | hecho | — | traslado de las ayudas siempre por clase, con literatura en cada extremo; nota de pre-registro y versiones en 10 entregables | 0 (orquestador) |
 | T6 backlog secundario | hecho (sin datos) | NO ANALIZADA: FALTAN DATOS | temporada y habitaciones: ninguna fuente oficial con la duración del contrato (INE, Registro Único 403, Incasòl, GVA, Euskadi, ayuntamientos); MESVAL no replicable (datos privados); ampliar los artículos queda en el backlog (tarea del autor) | 45.061 |
+| Revisión T1-T5 | REHACER acotado (B1-B2) → corregido; APROBADA | — | docs/v5_1/revision.md; 1,4/2,7/3,8 veces; T4-V1 NO RESPALDADA (C2) | 61.371 |
 
 **Hecho:** setup, T1-T5.
-**Siguiente:** revisión T1-T5 → T7 → cierre.
-**Tokens de subagentes v5.1:** 434.801 / 1.000.000 (corte 800.000; reserva 100.000).
+**Siguiente:** T7 (entregables) → cierre.
+**Tokens de subagentes v5.1:** 496.172 / 1.000.000 (corte 800.000; reserva 100.000).

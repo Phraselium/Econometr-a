@@ -8,6 +8,7 @@ Uso: python3 src/v5_1/t3_run.py [--smoke]
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -317,7 +318,8 @@ def escribe(f, nac, dec, sub, D24, D25, sin24, d24, d24_c, sin25, d25, d25_c, ol
                     fecha_dato=fecha)
     nb = ["T1", "M0"]
     top = dec.iloc[0]
-    fr_com = fr[fr.serie.str.startswith("territorio")]
+    # revisión v5.1 (B1): misma cobertura que la necesidad (52 provincias) -> serie nacional con País Vasco y Navarra
+    fr_com = fr[fr.serie.str.startswith("nacional")]
     hechos = [
         H("T3-H1", "Déficit acumulado sin bajas (12 combinaciones de M0: 4 de fuentes; las bajas a 0)", None, sin24.min(), sin24.max(),
           "viviendas", "2021-2024", "España", ["M0", "INE ECP/EPA", "Ministerio, Catastro"], "C1", "2024"),
@@ -329,16 +331,19 @@ def escribe(f, nac, dec, sub, D24, D25, sin24, d24, d24_c, sin25, d25, d25_c, ol
           "2021-2025", "España", ["A4", "T1"], "C4", "2025"),
         H("T3-H5", "Necesidad anual de vivienda 2026-2035 recalculada (A+R+V+F-M-K+X; no resta liberadas)", N["central"], N["min"], N["max"],
           "viviendas/año", "2026-2035", "España (52 provincias)", ["B1", "T1", "T2", "A4"], "C4"),
+        H("T3-H5b", "Necesidad anual de vivienda 2026-2035, base sin la sensibilidad X (A+R+V+F-M-K; no resta liberadas)",
+          (nac["N10"]["central"] - nac["X"]["central"]) / 10, (nac["N10"]["min"] - nac["X"]["min"]) / 10, (nac["N10"]["max"] - nac["X"]["max"]) / 10,
+          "viviendas/año", "2026-2035", "España (52 provincias)", ["B1", "T1"], "C4"),
         H("T3-H6", "Liberadas por envejecimiento que no llegan al mercado (componente que suma), por año", nac["X"]["central"] / 10,
           nac["X"]["min"] / 10, nac["X"]["max"] / 10, "viviendas/año", "2026-2035", "España", ["T2"], "C4"),
         H("T3-H7", "Reposición con las bajas de T1 (10 años)", nac["R"]["central"], nac["R"]["min"], nac["R"]["max"], "viviendas",
           "2026-2035", "España", ["T1"], "C4"),
         H("T3-H8", f"Amplitud conjunta (máx. - mín.) de la necesidad; mayor aporte: {top.componente}", amp := (N["max"] - N["min"]),
           top.amplitud_anual, top.amplitud_anual, "viviendas/año", "2026-2035", "España", ["T3"], "C4"),
-        H("T3-H9", "Veces que cabe la producción actual (media de 72.264-94.426) en la necesidad anual (territorio común; mínimo, central, máximo)",
+        H("T3-H9", "Veces que cabe la producción actual (terminadas nacionales con País Vasco y Navarra, media 2019-2024) en la necesidad anual con sensibilidad X (mínimo, central, máximo)",
           fr_com[fr_com.necesidad_escenario == "central"].veces_cabe_con_prod_media.iloc[0],
           fr_com[fr_com.necesidad_escenario == "min"].veces_cabe_con_prod_media.iloc[0],
-          fr_com[fr_com.necesidad_escenario == "max"].veces_cabe_con_prod_media.iloc[0], "veces", "2019-2024 (producción)", "territorio común",
+          fr_com[fr_com.necesidad_escenario == "max"].veces_cabe_con_prod_media.iloc[0], "veces", "2019-2024 (producción)", "España (52 provincias)",
           ["M0", "T3"], "C4", "2024"),
     ]
     assert amp > 0
@@ -382,11 +387,13 @@ def escribe(f, nac, dec, sub, D24, D25, sin24, d24, d24_c, sin25, d25, d25_c, ol
     (OUT / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float))
     (OUT / "hechos.json").write_text(json.dumps(hechos, ensure_ascii=False, indent=1, default=float))
     fr_c = fr_com.set_index("necesidad_escenario")
-    frase = (f"La producción actual de terminadas ({esc(p_com[0])}-{esc(p_com[1])} al año, territorio común, 2019-2024) cabe "
+    frase = (f"La producción actual de terminadas ({esc(p_nac[0])}-{esc(p_nac[1])} al año, España con País Vasco y Navarra, 2019-2024) cabe "
              f"{fr_c.loc['min', 'veces_cabe_con_prod_media']:.1f} veces en el mínimo de la necesidad anual ({esc(N['min'])}), "
              f"{fr_c.loc['central', 'veces_cabe_con_prod_media']:.1f} en el central ({esc(N['central'])}) y "
-             f"{fr_c.loc['max', 'veces_cabe_con_prod_media']:.1f} en el máximo ({esc(N['max'])}), con la producción media de {esc((p_com[0] + p_com[1]) / 2)}; "
+             f"{fr_c.loc['max', 'veces_cabe_con_prod_media']:.1f} en el máximo ({esc(N['max'])}), con la producción media de {esc((p_nac[0] + p_nac[1]) / 2)}; "
              f"con los extremos de la producción el rango es {fr_c.loc['min', 'veces_cabe_con_prod_max']:.1f}-{fr_c.loc['max', 'veces_cabe_con_prod_min']:.1f}.")
+    frase = re.sub(r"(\d)\.(\d) ", r"\1,\2 ", frase).replace(".1f}", "")   # decimales con coma
+    frase = re.sub(r"(\d)\.(\d)(-|\b)", lambda m: m.group(1) + "," + m.group(2) + m.group(3) if len(m.group(2)) == 1 else m.group(0), frase)
     (OUT / "frase_verificable.txt").write_text(frase + "\n")
     lin = "\n".join(f"| {r.orden} | {r.componente} | {esc(r.amplitud_anual)} | {r.peso_pct_amplitud_conjunta:.1f} % |" for r in dec.itertuples())
     (OUT / "metodo.md").write_text(

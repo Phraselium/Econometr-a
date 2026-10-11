@@ -339,7 +339,6 @@ def predecir_modelo(modelo_id, extra_sellado):
     cols = ficha["variables"]
     fam = ficha["familia"]
     if fam in ("rf", "gb"):
-        obj["pred"], _ = None, None
         m = joblib.load(OUT / ficha["ruta_modelo"])
         X = obj[cols].to_numpy(float)
         X = np.nan_to_num(X, nan=-9.0) if fam == "rf" else X

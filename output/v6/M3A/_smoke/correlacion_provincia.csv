@@ -1,0 +1,9 @@
+,ln_pob,share_ext_pob,ln_pib_pc,ln_vut,ln_terminadas_libres,ln_iniciadas_libres,n_mun_tensionados,n_mun_topes_cat
+ln_pob,1.0,0.235,-0.096,0.806,0.888,0.87,,0.379
+share_ext_pob,0.235,1.0,0.299,0.54,0.346,0.323,,0.208
+ln_pib_pc,-0.096,0.299,1.0,0.007,-0.073,0.006,,0.225
+ln_vut,0.806,0.54,0.007,1.0,0.748,0.702,,0.292
+ln_terminadas_libres,0.888,0.346,-0.073,0.748,1.0,0.91,,0.332
+ln_iniciadas_libres,0.87,0.323,0.006,0.702,0.91,1.0,,0.306
+n_mun_tensionados,,,,,,,,
+n_mun_topes_cat,0.379,0.208,0.225,0.292,0.332,0.306,,1.0

@@ -1,0 +1,40 @@
+{
+ "id": "alquiler_provincia_rf",
+ "mercado": "alquiler de stock (SERPAVI)",
+ "nivel": "provincia",
+ "medida": "ln_alq_m2_serpavi_vc",
+ "familia": "rf",
+ "variables": [
+  "y_lag1",
+  "dy_lag1",
+  "dy_lag2",
+  "dy_lag1_prov",
+  "y_lag1_rel_prov",
+  "ln_pob",
+  "share_ext_pob",
+  "ln_pib_pc",
+  "ln_vut",
+  "ln_terminadas_libres",
+  "ln_iniciadas_libres",
+  "n_mun_tensionados",
+  "n_mun_topes_cat"
+ ],
+ "objetivo": "dy = y - y_lag1 (prediccion = y_lag1 + modelo)",
+ "hiperparametros": {
+  "n_estimators": 200,
+  "max_depth": 12,
+  "min_samples_leaf": 1,
+  "max_features": 0.3,
+  "max_samples": 0.3
+ },
+ "semilla": 20261010,
+ "ruta_modelo": "modelos/alquiler_provincia_rf.joblib",
+ "entrenamiento": "anios <= 2023, N=305",
+ "rmse_bloques_espaciotemporales": 0.011459018859016401,
+ "funcion_prediccion": "src/v6/m3a_lib.predecir_modelo(id, {nombre: DataFrame sellado})",
+ "nombres_paneles": [
+  "prov_alquiler_anual",
+  "prov_compra_anual"
+ ],
+ "nulos": "RF: NaN->-9; LightGBM: NaN nativo"
+}

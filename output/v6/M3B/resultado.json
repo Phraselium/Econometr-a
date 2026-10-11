@@ -35,10 +35,10 @@
    "rmse_pct_ECMv1": null,
    "DL": {
     "DL_MLP_tabular": {
-     "rmse_pct": Infinity,
+     "rmse_pct": 5.186,
      "bate_GB_rmse": false,
-     "dm_vs_GB": 1.0002587515790478,
-     "p_dm_vs_GB": 0.363103797367886
+     "dm_vs_GB": 0.8105945172576108,
+     "p_dm_vs_GB": 0.45443508932502197
     },
     "DL_GCN_espacial": {
      "rmse_pct": 8.311,

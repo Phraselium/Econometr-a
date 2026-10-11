@@ -39,3 +39,12 @@
 - **No hay segunda revisión de M0.** Las correcciones son exactamente las que pidió el revisor y no se ha estimado nada. El revisor final comprobará el pre-registro.
 - **m0_run.py entra en `make all` (V6_ORDEN).** En un clon limpio regenera el sellado (data/sealed no está versionado) y check_v6 verifica que su sha256 coincide con output/v6/M0/sellado_info.json.
 - **Pre-registro.** La etiqueta `prereg-v6` se pone en este commit, antes de cualquier estimación. Es local; el remoto rechaza etiquetas (tarea del autor).
+
+## M1, M2 y M3 (subagentes)
+- **Ningún resultado pasa de C4.**
+  - Ninguna hipótesis confirmatoria sobrevive a Holm en la especificación pre-registrada: N pequeño (41 provincias de entrenamiento) y regresores en t−1.
+  - La identificación (shift-share de un solo choque F=6; topes con pretendencias rechazadas) no alcanza C3.
+- **Sustitutos declarados:** BART por un bosque con bootstrap bayesiano, y PyMC por MixedLM (no instalados).
+- **Deep learning:** resultado negativo en el alquiler (distrito) y en la compra (municipio). Ninguna red bate a gradient boosting.
+- **Compra trimestral:** la persistencia (1,91 %) iguala o mejora a ML y econometría. Es un resultado negativo para el valor añadido de los modelos frente a la inercia.
+- **Determinismo:** los .csv.gz se escriben con mtime=0 en M2, M3a y M3b.

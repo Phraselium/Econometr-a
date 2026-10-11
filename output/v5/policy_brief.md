@@ -36,7 +36,7 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 | Reducción de tributos a la promoción (I29) | parcial, literatura no verificada | [C4] | no determinado |
 | Agilización urbanística y de licencias (I13, N1) | no evaluable sin identificación | [C4] | provincias donde falta vivienda y construir es rentable |
 
-[C4] Según D1, la parte de una ayuda general que se traslada al precio va de 27,8 % a 81,8 % en las provincias donde falta vivienda y construir es rentable (método A), y llega a 100,0 % donde la oferta no responde.
+[C4] Según D1, la parte de una ayuda general que se traslada al precio, por clase territorial (A4, método A, rejilla de elasticidades de demanda): clase `1`, falta y es rentable, 27,8-81,8 %; clase `2`, la oferta no responde, 88,1-100,0 %; clase `3`, no rentable, 50,1-89,8 % [C4]. El extremo bajo se apoya en la literatura con oferta elástica (Eriksen y Ross, 2015) y el alto en la de oferta rígida (Gibbons y Manning, 2006; Hilber y Turner, 2014).
 
 [C4] Según D2, la construcción adicional planificada cubriría 29,1 % de la necesidad de las provincias donde falta vivienda y construir es rentable, y las vacías movilizables 30,2 %; ambas cifras son condicionales a los supuestos de B1.
 
@@ -66,3 +66,5 @@ Las solicitudes de docs/v5/solicitudes.md, por orden de prioridad:
 ## Neutralidad
 
 Se evalúan afirmaciones e instrumentos, nunca a quienes los proponen. Todos los instrumentos se miden con la misma rúbrica y las cifras proceden de output/v5/cifras_clave.csv, con su periodo, fuente y capa. Cuando dos métodos discrepan se dan los dos.
+
+**Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.

@@ -50,7 +50,7 @@ Con supuestos débiles y explícitos (sustitución completa, traspaso completo),
 - [C4] El crédito vivo a la construcción y a las actividades inmobiliarias cayó de 471,8 miles de millones de euros a 97,6 miles de millones de euros. Su asociación con las viviendas iniciadas es débil: de las pruebas realizadas, solo una sobrevive al ajuste por comparaciones múltiples (ficha `CA-V2`).
 - [C4] No se puede saber con certeza qué parte de las compras se paga al contado. Según el INE se firman 70,0 hipotecas por 100 compraventas sobre vivienda. Según qué parte de ellas financie una compra, el contado va desde un mínimo de 30,0 % de compraventas hacia arriba. Comprar al contado tampoco equivale a comprar como inversión.
 - [C4] El peso de los compradores extranjeros no residentes bajó de 9,9 % en 2015 a 6,8 % en 2025. Entre provincias, su peso inicial se asocia con la subida del precio, pero la asociación deja de distinguirse de cero al tener en cuenta la renta, la población y la costa (ficha `R1A-V1`).
-- [C4] Las ayudas generales a la demanda pueden trasladarse al precio en una proporción que depende de la elasticidad de la oferta: entre 58,4 % y 100,0 % según la clase de provincia en la rejilla de supuestos.
+- [C4] Las ayudas generales a la demanda pueden trasladarse al precio en una proporción que depende de la elasticidad de la oferta, por clase territorial (A4, método A, rejilla de elasticidades de demanda): clase `1`, falta y es rentable, 27,8-81,8 %; clase `2`, la oferta no responde, 88,1-100,0 %; clase `3`, no rentable, 50,1-89,8 % [C4]. El extremo bajo se apoya en la literatura con oferta elástica (Eriksen y Ross, 2015) y el alto en la de oferta rígida (Gibbons y Manning, 2006; Hilber y Turner, 2014).
 
 ## Recuadro: lo que NO se puede afirmar con estos datos
 
@@ -83,3 +83,5 @@ Cada cifra de este artículo lleva su periodo, sus fuentes, la fecha del dato y 
 *Borja Romero, economista.*
 
 *Nota de independencia y método.* Trabajo individual e independiente, sin financiación externa ni vínculo con partidos. El análisis se hizo con agentes de inteligencia artificial bajo la supervisión del autor, que es el responsable del contenido. El código y los datos permiten reproducir cada cifra.
+
+**Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.

@@ -36,7 +36,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - [C4] Las cuatro fuentes de precio comparten un factor común que recoge {{A23-P10:valor}} de la varianza; el IPV del INE acumula {{A23-P1}} en 2015-2025.
 - [C4] Compraventas con comprador extranjero en 2025: {{compradores_extranjeros}}; no residentes: {{compradores_no_residentes}}.
 - [C4] Compraventas con comprador persona jurídica en 2024: {{R1C-004:valor}}.
-- [C4] La parte de una ayuda general que se traslada al precio va de {{D1-H11:min}} a {{D1-H11:max}} en las provincias donde falta vivienda y construir es rentable, y llega a {{D1-H12:valor}} donde la oferta no responde.
+- [C4] La parte de una ayuda general que se traslada al precio, por clase territorial (A4, método A, rejilla de elasticidades de demanda): clase `1`, falta y es rentable, {{D1-H11:rango}}; clase `2`, la oferta no responde, {{D1-H12:rango}}; clase `3`, no rentable, {{D1-H13:rango}} [C4]. El extremo bajo se apoya en la literatura con oferta elástica (Eriksen y Ross, 2015) y el alto en la de oferta rígida (Gibbons y Manning, 2006; Hilber y Turner, 2014).
 - [C4] En Europa (Eurostat): tenencia en propiedad en España de {{CA-EU-propiedad-nivel:num}} % de la población en 2025, dentro del rango intercuartílico de la Unión Europea; precio real de la vivienda {{CA-EU-hpi_real-crecimiento:valor}}.
 - [C4] Crédito a construcción y actividades inmobiliarias: {{CA-CR-saldo-caida}} desde su máximo de 2008.
 
@@ -54,3 +54,5 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - [C1] Desde 2021 los hogares crecen más que las viviendas terminadas, y el precio de compra y el alquiler suben con varias fuentes.
 - [C2] Signo estable en toda la rejilla simulada: movilización de vacías y más construcción donde hay presión. La vivienda pública lo tiene de forma débil (signo no positivo o nulo si desplaza a la promoción privada). Las ayudas a la demanda mejoran al beneficiario como grupo.
 - [C4] Signo no estable: topes, regulación de turísticos y traslado al precio de las ayudas a la demanda. La matriz completa está en output/v5/D1/matriz_instrumentos.md y la política por territorio, condicional, en output/v5/D2/politica_territorio.md.
+
+**Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.

@@ -87,7 +87,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## Instrumentos con signo no estable o no evaluable [C4]
 
-- Una ayuda general a la demanda podría trasladarse al precio: {{D1-H11:valor}} a {{D1-H12:valor}} según la clase [C4]
+- Una ayuda general a la demanda podría trasladarse al precio según la clase: clase `1`: {{D1-H11:rango}}; clase `2`: {{D1-H12:rango}}; clase `3`: {{D1-H13:rango}} [C4]
 
 ---
 

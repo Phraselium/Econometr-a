@@ -33,7 +33,7 @@
 - Las diferencias de precios entre provincias se describen, no se atribuyen: el pre-registro de B3 tenía potencia insuficiente y el resultado es «descriptivo honesto» [C4].
 - No se dispone de datos públicos sobre la distribución del parque por tipo de propietario (personas jurídicas, grandes tenedores); las afirmaciones del debate sobre ese punto quedan sin analizar por falta de datos.
 
-**Instrumentos.** Con la misma rúbrica se evalúan 36 instrumentos; en 18 instrumentos el signo no es evaluable con la evidencia disponible [C4]. Donde la oferta no responde (clase `2` de A4), una ayuda general a la demanda se trasladaría al precio en 100,0 % según la rejilla de elasticidades [C4]. Lo que aparece con signo estable en la rejilla de v3 es más construcción donde falta y la movilización de vacías [C2 en el signo; C4 en la magnitud].
+**Instrumentos.** Con la misma rúbrica se evalúan 36 instrumentos; en 18 instrumentos el signo no es evaluable con la evidencia disponible [C4]. La parte de una ayuda general a la demanda que se trasladaría al precio depende de la clase territorial: clase `1`, 27,8-81,8 %; clase `2`, 88,1-100,0 %; clase `3`, 50,1-89,8 % [C4]. Lo que aparece con signo estable en la rejilla de v3 es más construcción donde falta y la movilización de vacías [C2 en el signo; C4 en la magnitud].
 
 **Convergencia.** Frente a BdE, Ministerio, INE, OCDE y Eurostat, y solo cuando concepto, periodo y cobertura son comparables, las cifras del proyecto coinciden en 2 y difieren en 1; otras 6 son comparables solo en parte (otro periodo o concepto), 4 comparten fuente primaria con el proyecto y no cuentan, y 9 no son comparables [C4]. Las diferencias se describen por periodo, concepto o bajas del parque.
 
@@ -410,7 +410,7 @@ Los dos métodos discrepan en la clase `1` y se dan ambos.
 - **Con signo estable en la rejilla de v3 [C2 en el signo, C4 en la magnitud].** Más construcción donde falta (`P1`) y movilización de vivienda vacía (`I10`, `I27`, `N7`).
 - **Con literatura verificada de otros países.** Edificabilidad (`N2`: Büchler y Lutz, 2024; Greenaway-McGrevy y Phillips, 2023) y licencias (`N1`, `I13`: Ball, 2011, solo asociación). Sin evaluación en España.
 - **Regulación de precios del alquiler (`I01`).** El resultado propio de v3 (`H3-3`) queda fuera de C3 por la contaminación de la validación; la réplica de García-López y otros no se reproduce con los datos de stock (sección de limitaciones). La literatura verificada da resultados de distinto signo según la oferta. Signo no estable.
-- **Ayudas a la demanda (`I06`-`I09`, `N9`).** Su traslado al precio depende de la respuesta de la oferta: alto donde la oferta no responde.
+- **Ayudas a la demanda (`I06`-`I09`, `N9`).** Su traslado al precio depende de la respuesta de la oferta, por clase territorial (A4, método A, rejilla de elasticidades de demanda): clase `1`, falta y es rentable, 27,8-81,8 %; clase `2`, la oferta no responde, 88,1-100,0 %; clase `3`, no rentable, 50,1-89,8 % [C4]. El extremo bajo se apoya en la literatura con oferta elástica (Eriksen y Ross, 2015) y el alto en la de oferta rígida (Gibbons y Manning, 2006; Hilber y Turner, 2014).
 - **Parque público (`I02`).** Signo menor o igual que cero en la rejilla (posiblemente nulo) si desplaza construcción privada.
 - **No evaluables.** Rehabilitación, industrialización, seguridad jurídica, fiscalidad de arrendadores, entre otros: sin literatura verificada con magnitud ni simulación propia.
 
@@ -598,3 +598,5 @@ Licencias: `docs/v5/licencias_datos.md`. Fuentes fallidas: `docs/v5/fuentes_fall
 ## Declaración de independencia y uso de inteligencia artificial
 
 Este informe es un trabajo individual e independiente de Borja Romero, economista, sin financiación externa ni vínculo con partidos políticos. Evalúa afirmaciones e instrumentos, nunca partidos ni personas. El análisis, el código y los borradores se elaboraron con agentes de inteligencia artificial (Claude), bajo la supervisión del autor, que revisa y asume la responsabilidad del contenido. El detalle está en el apéndice C del working paper y en README_REPLICACION.md. Las correcciones se publican en ERRATA.md.
+
+**Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.

@@ -87,7 +87,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## Instrumentos con signo no estable o no evaluable [C4]
 
-- Una ayuda general a la demanda podría trasladarse al precio: 58,4 % a 100,0 % según la clase [C4]
+- Una ayuda general a la demanda podría trasladarse al precio según la clase: clase `1`: 27,8-81,8 %; clase `2`: 88,1-100,0 %; clase `3`: 50,1-89,8 % [C4]
 
 ---
 

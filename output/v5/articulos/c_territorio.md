@@ -72,3 +72,5 @@ Las diferencias territoriales de precios en 2015-2025 se asocian sobre todo con 
 - *Papers in Regional Science* — cuartil no verificado (fuentes secundarias indican Q1; no comprobado en Scimago).
 - *Investigaciones Regionales – Journal of Regional Research* — cuartil no verificado.
 - *SERIEs – Journal of the Spanish Economic Association* — cuartil no verificado.
+
+**Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.

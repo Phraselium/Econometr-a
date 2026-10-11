@@ -14,3 +14,13 @@
   - Los parámetros de residencias no tienen dato verificado.
   - NO se restan de la necesidad.
 - **Para T3.** El déficit 2021-2024 debe combinar las 12 combinaciones de fuentes de M0 (C1 sin bajas: 562.692-688.692) con la tasa de bajas de T1. T1 dio 562.692-618.144 con una combinación, y no debe estrechar el rango C1 de fuentes.
+
+## T5 (orquestador)
+- **Ayudas a la demanda.** El traslado al precio aparece SIEMPRE desglosado por clase territorial (clases 1, 2 y 3; A4, método A) en el informe técnico, el WP, el brief, lo que sabemos, el artículo del Colegio, la ponencia y LinkedIn, con la literatura que fija cada extremo:
+  - extremo bajo, oferta elástica: Eriksen y Ross (2015);
+  - extremo alto, oferta rígida: Gibbons y Manning (2006) y Hilber y Turner (2014).
+  Ya no aparecen rangos que mezclen clases.
+- **Pre-registro y versiones.** Diez entregables llevan una nota en la metodología:
+  - `prereg-v5` y `v5.0` se crearon en local el 10 de octubre de 2026;
+  - la fecha de publicación remota queda «pendiente» (campo que completa el autor);
+  - una etiqueta local no es un sello de tiempo externo, así que en el futuro se depositará en OSF o Zenodo antes de estimar.

@@ -18,3 +18,5 @@
 > - Que los topes al alquiler reduzcan los precios o la oferta.
 > - Que haya una burbuja: la exuberancia estadística no la identifica.
 > - La necesidad total de vivienda para 2026-2035 como hecho: depende de supuestos sobre el parque y queda como exploratoria.
+
+**Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.

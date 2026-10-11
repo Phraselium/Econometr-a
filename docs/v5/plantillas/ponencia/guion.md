@@ -26,8 +26,10 @@ Regla del ponente: cada cifra se dice con su periodo y su capa; los veredictos s
 
 ## Bloque 4 · Qué funcionaría y qué no (15:30-19:00; diapositivas 13-14) <!-- check:cifra-libre -->
 - Matriz de instrumentos (D1): muchos instrumentos no son evaluables en el signo con los datos disponibles ({{D1-H02}} de {{D1-H01}}) [C4].
-- Las ayudas generales a la demanda podrían trasladarse al precio en una parte que depende de la elasticidad de la oferta ({{D1-H11:valor}} a {{D1-H12:valor}} según la clase de provincia) [C4].
+- Las ayudas generales a la demanda podrían trasladarse al precio en una parte que depende de la elasticidad de la oferta : clase `1`: {{D1-H11:rango}}; clase `2`: {{D1-H12:rango}}; clase `3`: {{D1-H13:rango}} [C4]; el extremo bajo corresponde a la literatura con oferta elástica y el alto a la de oferta rígida.
 - La política por territorio (D2): la construcción adicional planificada cubriría en torno a {{D2-H11:valor}} de la necesidad [C4]; donde construir no es rentable, el instrumento sería distinto del que serviría donde hay freno de suelo.
 
 ## Bloque 5 · Cierre (19:00-20:00; diapositiva 15) <!-- check:cifra-libre -->
 - Lo que no se puede afirmar. Dónde están los datos y el código. Preguntas.
+
+**Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.

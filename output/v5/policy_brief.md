@@ -49,6 +49,17 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 
 [C4] Con datos públicos por provincia, municipio y distrito, los modelos de árboles predicen el alquiler de stock (SERPAVI) y el precio de compra (valor tasado) en provincias que no vieron mejor que la simple inercia: en el alquiler provincial, 1,6 % de error frente a 4,2 %. Pero predecir no es explicar: ninguna variable es «relevante con seguridad», ninguna hipótesis confirmatoria pasa la corrección de Holm y, en el volumen trimestral de compraventas del último año, nada bate a la inercia. La población se asocia con los dos mercados y el PIB por habitante solo con la compra. Precio y alquiler se mueven juntos sin señales de exuberancia en ninguna de las 11 CCAA contrastadas. Para decidir, estos resultados orientan dónde mirar, no qué instrumento funciona.
 
+## Qué cambió entre versiones y por qué (v6.1)
+
+- [C4] **Inmigración.** v2 la asociaba más con el alquiler y v6 con la compra. El orden depende del método, de la medida de alquiler y de los controles, no de un resultado estable que se haya invertido.
+  - Con valor tasado, la asociación de la cuota de extranjeros es 4,3 % por +1 pp de cuota de extranjeros (t-1) sin controles.
+  - Baja a 1,6 % por +1 pp de cuota de extranjeros (t-1) con controles de costa y demanda externa.
+  - Pasa a -1,3 % por +1 pp de cuota de extranjeros (t-1) controlando por población, que puede ser mediadora.
+  - «ANALIZADA, NO CONCLUYENTE»: no se puede afirmar un efecto.
+- [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en 6,0 tareas de las tareas: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.
+- [C4] **Iniciadas y alquiler.** La asociación es del mismo año. No hay orden temporal detectable, y no indica que construir suba el alquiler.
+- **Correcciones** (ERRATA.md): los contratos nuevos de la Comunitat Valenciana pasan a 27,7 % (24,6-30,8 %) por un error de ponderación; otros redondeos son menores. Ninguna conclusión cambia.
+
 ## Qué falta para decidir mejor
 
 Las solicitudes de docs/v5/solicitudes.md, por orden de prioridad:

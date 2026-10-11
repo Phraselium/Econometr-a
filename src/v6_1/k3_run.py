@@ -172,12 +172,12 @@ def main():
 
     def hecho(i, ind, v, mn, mx, per, fu):
         return dict(id=i, indicador=ind, valor=round(float(v), 4), min=round(float(mn), 4), max=round(float(mx), 4),
-                    unidad="años de alquiler" if "ratio" in i else "coef. (viv./1.000 hab. → Δln alquiler)",
+                    unidad="años de alquiler" if "RATIO" in i else "coef. (viv./1.000 hab. → Δln alquiler)",
                     periodo=per, cobertura="38-39 provincias de entrenamiento", fuentes=fu, capa="C4",
                     fecha_dato="2023 (anual)")
-    H = [hecho("K3-RATIO-2015", "Ratio precio/alquiler, medida v6 (tasado/stock)", M.loc[2015, cols[0]], lo15, hi15, "2015",
+    H = [hecho("K3-RATIO-2015", "Ratio precio/alquiler, medida v6 (tasado/stock); min-max con las demás medidas de precio provinciales", M.loc[2015, cols[0]], lo15, hi15, "2015",
                "MIVAU tasado; SERPAVI; Registradores; Notariado"),
-         hecho("K3-RATIO-2023", "Ratio precio/alquiler, medida v6 (tasado/stock)", M.loc[2023, cols[0]], lo23, hi23, "2023",
+         hecho("K3-RATIO-2023", "Ratio precio/alquiler, medida v6 (tasado/stock); min-max con las demás medidas de precio provinciales", M.loc[2023, cols[0]], lo23, hi23, "2023",
                "MIVAU tasado; SERPAVI; Registradores; Notariado")]
     for x, r in A.items():
         H.append(hecho(f"K3-INI-A-{x}", f"Iniciadas {x} sobre Δln alquiler (EF)", r.coef, r.ic_lo, r.ic_hi, "2016-2023",

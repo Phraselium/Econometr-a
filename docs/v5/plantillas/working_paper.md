@@ -225,6 +225,19 @@ La validación v6 es **espacial nueva** y **temporal ya vista**: el último año
 
 ---
 
+### 6.1 Qué cambió entre versiones y por qué (v6.1)
+
+- [C4] **Inmigración.** v2 la asociaba más con el alquiler y v6 con la compra. El orden depende del método, de la medida de alquiler y de los controles, no de un resultado estable que se haya invertido.
+  - Con valor tasado, la asociación de la cuota de extranjeros es {{K2-CUOTA-COMPRA-SINPOB-SIN:valor}} sin controles.
+  - Baja a {{K2-CUOTA-COMPRA-SINPOB-EXT:valor}} con controles de costa y demanda externa.
+  - Pasa a {{K2-CUOTA-COMPRA-SIN:valor}} controlando por población, que puede ser mediadora.
+  - «ANALIZADA, NO CONCLUYENTE»: no se puede afirmar un efecto.
+- [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en {{K1-N-MEJOR:valor}} de las tareas: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.
+- [C4] **Iniciadas y alquiler.** La asociación es del mismo año. No hay orden temporal detectable, y no indica que construir suba el alquiler.
+- **Correcciones** (ERRATA.md): los contratos nuevos de la Comunitat Valenciana pasan a {{A23-A10:valor}} ({{A23-A10:rango}}) por un error de ponderación; otros redondeos son menores. Ninguna conclusión cambia.
+
+El detalle está en el informe técnico, §12, y en docs/v6_1/historial_conclusiones.md. <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
+
 ## 7. Conclusiones
 
 1. Entre 2021 y 2024 el aumento de hogares superó al de viviendas terminadas en {{deficit_2124_c1:rango}} [C1]: es la cifra de déficit que se sostiene con dos fuentes. El extremo inferior combina la ECP con las terminadas del Ministerio. El superior depende de una corrección constante de la EPA, que es un supuesto, y las dos series de terminadas son variantes del Ministerio (con y sin protegida); el Catastro solo valida.

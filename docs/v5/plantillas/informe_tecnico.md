@@ -636,6 +636,31 @@ Fuente: `output/v6/M4/mejor_modelo.csv` y `output/v6/M4/tabla_modelos.md`. El me
 
 **Lectura.** Los árboles predicen mejor el alquiler de stock y el precio provincial que la inercia, en provincias que no vieron. En el precio municipal y con Registradores, la econometría heredada (ECM v1) basta. Predecir mejor no identifica por qué sube el precio.
 
+### 11.3 bis Frente a la línea base más exigente (v6.1) [C4]
+
+En v6.1 la comparación se repite en la misma validación sellada, con tres líneas base más exigentes que la persistencia: <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
+- el último valor provincial multiplicado por el crecimiento nacional;
+- un AR provincial con factor común;
+- efectos fijos de provincia y año.
+
+Solo cuentan como «predice mejor» los modelos que superan a la línea base con menor error en DM-HLN y en una permutación exacta sobre las provincias selladas, ambas con Holm. El modelo predice mejor que la base más exigente en {{K1-N-MEJOR:valor}} de las tareas.
+
+| Mercado | Nivel | Error del mejor modelo (aprox. %) | Base más exigente (aprox. %) | Cociente | Clase |
+|---|---|---|---|---|---|
+| Alquiler de stock (SERPAVI) | provincia | {{K1-RMSE-alq_provincia:num}} | {{K1-BASE-alq_provincia:num}} (AR con factor común) | {{K1-RATIO-alq_provincia:num}} | predice mejor |
+| Alquiler de stock (SERPAVI) | municipio | {{K1-RMSE-alq_municipio:num}} | {{K1-BASE-alq_municipio:num}} (AR con factor común) | {{K1-RATIO-alq_municipio:num}} | predice mejor |
+| Alquiler de stock (SERPAVI) | distrito | {{K1-RMSE-alq_distrito:num}} | {{K1-BASE-alq_distrito:num}} (ECM v1) | {{K1-RATIO-alq_distrito:num}} | predice mejor |
+| Compra, valor tasado | provincia anual | {{K1-RMSE-PROV_PRECIO_ANUAL:num}} | {{K1-BASE-PROV_PRECIO_ANUAL:num}} (ECM v1) | {{K1-RATIO-PROV_PRECIO_ANUAL:num}} | predice mejor, frágil (el DM por periodo no es significativo) |
+| Compra, valor tasado | provincia trimestral | {{K1-RMSE-PROV_PRECIO_TRIM:num}} | {{K1-BASE-PROV_PRECIO_TRIM:num}} (AR con factor común) | {{K1-RATIO-PROV_PRECIO_TRIM:num}} | predice mejor |
+| Compra, valor tasado | municipio anual | {{K1-RMSE-MUN_PRECIO_ANUAL:num}} | {{K1-BASE-MUN_PRECIO_ANUAL:num}} (ECM v1) | {{K1-RATIO-MUN_PRECIO_ANUAL:num}} | no distinguible |
+| Compra, Registradores | provincia anual | {{K1-RMSE-PROV_PRECIO_ANUAL_REGISTRADORES:num}} | {{K1-BASE-PROV_PRECIO_ANUAL_REGISTRADORES:num}} (ECM v1) | {{K1-RATIO-PROV_PRECIO_ANUAL_REGISTRADORES:num}} | no distinguible |
+| Compra, volumen (ETDP) | provincia anual | {{K1-RMSE-PROV_VOL_ANUAL:num}} | {{K1-BASE-PROV_VOL_ANUAL:num}} (ECM v1) | {{K1-RATIO-PROV_VOL_ANUAL:num}} | no distinguible |
+| Compra, volumen (ETDP) | provincia trimestral | {{K1-RMSE-PROV_VOL_TRIM:num}} | {{K1-BASE-PROV_VOL_TRIM:num}} (AR con factor común) | {{K1-RATIO-PROV_VOL_TRIM:num}} | predice mejor en la parte espacial; peor en la temporal |
+
+Fuente: `output/v6_1/K1/tabla_modelos_k1.md`. Error del grupo espacial sellado. Es una segunda mirada a la misma muestra sellada, pero solo para comparadores nuevos: las predicciones de los modelos de v6 no cambian. Con pocas provincias selladas, «no distinguible» no significa equivalencia.
+
+**Lectura v6.1.** Frente a la línea base más exigente, la ventaja de los árboles se mantiene en el alquiler de stock y en el precio trimestral de tasación. En el precio provincial anual es frágil. Desaparece en el precio municipal, con Registradores y en el volumen anual. Lo que en v6 se leía como «predice mejor que la inercia» queda acotado a estas tareas. <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
+
 ### 11.4 Peso predictivo de cada variable en alquiler y en compra [C4]
 
 Dos lecturas complementarias, ambas asociativas:
@@ -686,6 +711,35 @@ Es una descripción de lo que comparten las provincias caras o con subidas mayor
 Fuentes: `output/v6/M1A`, `output/v6/M1B`, `output/v6/M2/peso_variables.md`, `output/v6/M3A`, `output/v6/M3B` y `output/v6/M4`; decisiones en `docs/v6/decisiones.md`.
 
 ---
+
+## 12. Qué cambió entre versiones y por qué (v6.1) [C4]
+
+El historial completo, con versión, variable, medida, nivel, periodo, método, signo, magnitud, capa y estado, está en `docs/v6_1/historial_conclusiones.md`.
+
+**Inmigración.**
+- En v2, el flujo de inmigración, instrumentado con las cuotas de 2002, se asociaba más con el alquiler que con el precio de compra.
+- En v6, la cuota de extranjeros aparece en más modelos de compra que de alquiler.
+- Al repetir la comparación cambiando una sola dimensión cada vez, el orden entre mercados depende del método (mínimos cuadrados en dos etapas frente a MCO) y de la medida de alquiler (SERPAVI frente a IPC).
+- Con valor tasado y sin controles, la cuota de extranjeros se asocia con {{K2-CUOTA-COMPRA-SINPOB-SIN:valor}} ({{K2-CUOTA-COMPRA-SINPOB-SIN:rango}}).
+  - Con controles de demanda externa (costa, vivienda no principal y compras de extranjeros residentes) baja a {{K2-CUOTA-COMPRA-SINPOB-EXT:valor}} ({{K2-CUOTA-COMPRA-SINPOB-EXT:rango}}). Esto es compatible con que la cuota recoja en parte provincias de costa.
+  - Controlando además por población, que dentro de cada provincia tiene una correlación de {{K2-CORR-POB-DENTRO:valor}} con la cuota, pasa a {{K2-CUOTA-COMPRA-SIN:valor}} ({{K2-CUOTA-COMPRA-SIN:rango}}). La población puede ser mediadora o un término mecánico de la propia inmigración: controlarla estima otra magnitud y no prueba que la cuota no importe.
+- Las islas no se pueden contrastar porque están en la muestra sellada.
+- **Conclusión única [C4], «ANALIZADA, NO CONCLUYENTE».** Las diferencias entre versiones se explican por cambios de método, de controles y de medida, no por un resultado estable que se haya invertido. No se puede afirmar un efecto de la inmigración sobre el precio ni sobre el alquiler.
+
+**Otras conclusiones que cambiaron.** Empleo, renta, iniciadas y turísticos cambian de signo o de mercado según la medida, el método y los controles, y ningún intervalo de la especificación final excluye el cero (`output/v6_1/K2/otros_cambios.md`).
+- Las iniciadas se asocian en el mismo año con el alquiler. Ni sus retardos ni sus adelantos se distinguen de cero (`output/v6_1/K3/iniciadas.md`): la asociación no indica que construir suba el alquiler.
+
+**Modelos.** Frente a la línea base más exigente (§11.3 bis), la ventaja predictiva queda acotada al alquiler de stock y al precio trimestral de tasación. <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
+
+**Ratio precio/alquiler.** Según la medida de precio, el ratio va de {{K3-RATIO-2015:rango}} años en 2015 a {{K3-RATIO-2023:rango}} en 2023 (provincias de entrenamiento). Con contratos nuevos donde existen, es menor (`output/v6_1/K3/ratio_pa.md`).
+
+**Errores corregidos en v6.1** (ERRATA.md): <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
+- el redondeo de los recuentos de más de un millón, de unas pocas unidades;
+- las fianzas de Incasòl, que solo afectaban a un descriptivo;
+- el peso de Valencia en los contratos nuevos de la Comunitat Valenciana, que cambia esa cifra;
+- la descripción de las fuentes del déficit.
+
+Ninguna corrección cambia una conclusión.
 
 ## Anexo A. Datos y fuentes
 

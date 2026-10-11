@@ -2,7 +2,7 @@
 
 Generado por `make verificador`. Cada ficha evalúa la afirmación, nunca a quien la formula, y se aplican las mismas reglas a todas. Capas: C1 hechos (≥2 fuentes independientes), C2 cotas con supuestos explícitos, C3 efectos identificados (ninguno) y C4 exploratorio. Con C4 el veredicto es como máximo «ANALIZADA, NO CONCLUYENTE». «NO ANALIZADA: FALTAN DATOS» quiere decir que no hay datos para analizar la afirmación, no que sea falsa.
 
-Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 30; NO ANALIZADA: FALTAN DATOS: 3; PARCIALMENTE: 3; CONTRADICHA: 1; NO RESPALDADA: 1.
+Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 32; NO ANALIZADA: FALTAN DATOS: 3; PARCIALMENTE: 3; CONTRADICHA: 1; NO RESPALDADA: 1.
 
 | Id | Afirmación | Veredicto | Capa |
 |---|---|---|---|
@@ -44,6 +44,8 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 30; NO ANALIZADA: FALTAN DATO
 | T4-V1 | Al ritmo actual el déficit se cerrará en pocos años. | NO RESPALDADA | C2 |
 | M4-V3 | El alquiler y la compra se mueven por los mismos factores. | ANALIZADA, NO CONCLUYENTE | C4 |
 | M4-V4 | La ratio precio/alquiler indica sobrevaloracion. | ANALIZADA, NO CONCLUYENTE | C4 |
+| K1-V1 | Los modelos de inteligencia artificial predicen el precio y el alquiler mejor que los métodos sencillos. | ANALIZADA, NO CONCLUYENTE | C4 |
+| K2-V1 | La llegada de inmigrantes sube el precio de la vivienda o el alquiler. | ANALIZADA, NO CONCLUYENTE | C4 |
 
 ## Fichas sustituidas en v5
 
@@ -294,7 +296,7 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 30; NO ANALIZADA: FALTAN DATO
 |---|---|
 | Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C4 |
-| Magnitud | IPVA contrato nuevo 2015-2024 +37.0 % (nacional). Incasòl renta media 2015-2025 +54.5 % (Cataluña). GVA mediana de fianza 2020-2025 +58.0 % (C. Valenciana). 2021-2024: Cataluña 16.6-17.2 %, C. Valenciana 22.4-30.8 %. Municipios con renta de fianzas x2 o más: 1 de 261 (Cataluña, 2015-2025) y 2 de 103 (C. Valenciana, 2020-2025). |
+| Magnitud | IPVA contrato nuevo 2015-2024 +37.0 % (nacional). Incasòl renta media 2015-2025 +54.5 % (Cataluña). GVA mediana de fianza 2020-2025 +58.0 % (C. Valenciana). 2021-2024: Cataluña 16.6-17.2 %, C. Valenciana 24.6-30.8 %. Municipios con renta de fianzas x2 o más: 1 de 261 (Cataluña, 2015-2025) y 2 de 103 (C. Valenciana, 2020-2025). |
 | Intervalo | [37.0; 54.5] % en 2015-2024/25 |
 | Cota | Dirección C1 en Cataluña y C. Valenciana (IPVA, Incasòl y GVA, grupos independientes, mismo signo); cuantía nacional C4 (fuentes de cobertura distinta). |
 | Literatura | No aplica. |
@@ -672,3 +674,35 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 30; NO ANALIZADA: FALTAN DATO
 | Regla del veredicto | La ratio es una descripcion (C4) sin umbral de equilibrio validado; el contraste GSADF tiene pocas provincias por CCAA. |
 | Límites | Validacion espacial nueva (11 provincias nunca usadas como validacion); temporal ya vista en v2 (otras provincias) y de forma descriptiva en v4-v5; el ultimo anio cae en la ventana sellada de v2. Las conclusiones se apoyan en la parte espacial. Las provincias selladas no entran en la ratio; precio tasado frente a alquiler de stock (no contratos nuevos). |
 | Evidencia | output/v6/M1B/tablas/ratio_ult.csv, output/v6/M1B/tablas/gsadf.csv |
+
+## K1-V1 · Predicción del precio y del alquiler
+
+**Afirmación:** Los modelos de inteligencia artificial predicen el precio y el alquiler mejor que los métodos sencillos.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | En la validación sellada v6, el mejor modelo supera a la línea base más exigente en 6 de 9 tareas (alquiler de stock en provincia, municipio y distrito; precio de tasación trimestral y, frágil, anual; volumen trimestral espacial). Alquiler provincial: 1,61 % frente a 2,20 % (AR con factor común). |
+| Intervalo | DM-HLN y permutación exacta por provincias, Holm (output/v6_1/K1/tabla_modelos_k1.md) |
+| Cota | — |
+| Literatura | Harvey, Leybourne y Newbold (1997) para el contraste. |
+| Regla del veredicto | Con capa C4 el veredicto es como máximo ANALIZADA, NO CONCLUYENTE. La ventaja solo aparece en las tareas en que se supera a la base más exigente; no distinguible en precio municipal, Registradores y volumen anual. Predicción, no causalidad. |
+| Límites | Segunda mirada a la muestra sellada para comparadores nuevos; 11 provincias selladas; poca potencia. |
+| Evidencia | output/v6_1/K1/tabla_modelos_k1.md, output/v6_1/K1/notas.md |
+
+## K2-V1 · Inmigración
+
+**Afirmación:** La llegada de inmigrantes sube el precio de la vivienda o el alquiler.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | Cuota de extranjeros (t-1), EF dobles, provincias de entrenamiento: valor tasado 4,26 % por pp sin controles [2,12; 6,41]; con demanda externa 1,60 [-0,79; 3,99]; con población -1,31 [-4,31; 1,69]. Alquiler de stock sin controles 2,67 [1,31; 4,04]. Correlación dentro de provincia cuota-población 0,66. |
+| Intervalo | IC95 agrupados por provincia (output/v6_1/K2/inmigracion.md) |
+| Cota | — |
+| Literatura | Saiz (2007); Sá (2015): orientan el signo; ver docs/literatura.md (cuartil según marca). |
+| Regla del veredicto | Con capa C4 el veredicto es como máximo ANALIZADA, NO CONCLUYENTE. El signo y el mercado cambian con el método (2SLS/MCO), la medida de alquiler y los controles; la población puede ser mediadora. |
+| Límites | 41 provincias de entrenamiento (sin las 11 selladas, incluidas las islas); no reproduce la muestra de 49 provincias de v2; primera etapa débil del instrumento en esta muestra. |
+| Evidencia | output/v6_1/K2/inmigracion.md, output/v6_1/K2/pasos_inmigracion.csv, docs/v6_1/historial_conclusiones.md |

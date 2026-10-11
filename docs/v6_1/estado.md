@@ -61,3 +61,11 @@ Plan de ahorro (D7): revisor post-K2 ≤60.000, K3 ≤70.000, K4c/K4d ≤90.000,
 - K6 (parcial, orquestador): docs/v6_1/backlog.md y docs/v6_1/tareas_autor.md (definitivo) escritos; K4a-07 cerrado (0 de 30 pliegues omitidos).
 
 - 2026-10-11 K5 (revisión por pares simulada): hecho: docs/v6_1/informe_arbitro_academico.md (revisión mayor), informe_arbitro_politica.md (revisión menor), carta_respuesta.md; 18 cambios de texto en plantillas (3 parciales), 11 objeciones a limitaciones (A-14 ya cerrada en K6) (WP y IT §10.4); render/check_texto/check_v5 0 errores. Siguiente: commit por el orquestador; muestra sellada nueva y reestimaciones de limitaciones. Tokens subagente K5: ~75.000.
+- K5 terminado (72.773 tokens). Árbitro académico: revisión mayor (15 objeciones). Árbitro de política: revisión menor (12). Se aplicaron 18 cambios de texto; 11 objeciones pasan a limitaciones.
+- K6 (orquestador):
+  - nueva sección §11.3 bis en el informe con la tabla frente a la base exigente;
+  - §12 «Qué cambió entre versiones y por qué» en el informe, y sección corta en el working paper (§6.1), lo que sabemos, el policy brief y una página;
+  - fichas del verificador K1-V1 y K2-V1 (k6_fichas en make);
+  - unidad del ratio de K3 corregida;
+  - docs/v6_1/auditoria.md consolidada.
+- Acumulado de subagentes: 1.081.587 tokens (77 %). Queda el revisor final, a cargo de la reserva.

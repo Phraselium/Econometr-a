@@ -1,0 +1,20 @@
+[
+ {
+  "id": "K2-V1",
+  "tema": "Inmigración",
+  "enunciado": "La llegada de inmigrantes sube el precio de la vivienda o el alquiler.",
+  "capa": "C4",
+  "magnitud": "Cuota de extranjeros (t-1), EF dobles, provincias de entrenamiento: valor tasado 4,26 % por pp sin controles [2,12; 6,41]; con demanda externa 1,60 [-0,79; 3,99]; con población -1,31 [-4,31; 1,69]. Alquiler de stock sin controles 2,67 [1,31; 4,04]. Correlación dentro de provincia cuota-población 0,66.",
+  "intervalo": "IC95 agrupados por provincia (output/v6_1/K2/inmigracion.md)",
+  "cota": "—",
+  "literatura": "Saiz (2007); Sá (2015): orientan el signo; ver docs/literatura.md (cuartil según marca).",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Con capa C4 el veredicto es como máximo ANALIZADA, NO CONCLUYENTE. El signo y el mercado cambian con el método (2SLS/MCO), la medida de alquiler y los controles; la población puede ser mediadora.",
+  "limites": "41 provincias de entrenamiento (sin las 11 selladas, incluidas las islas); no reproduce la muestra de 49 provincias de v2; primera etapa débil del instrumento en esta muestra.",
+  "evidencia": [
+   "output/v6_1/K2/inmigracion.md",
+   "output/v6_1/K2/pasos_inmigracion.csv",
+   "docs/v6_1/historial_conclusiones.md"
+  ]
+ }
+]

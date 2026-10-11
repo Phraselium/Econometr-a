@@ -11,6 +11,11 @@
 7. [C2] **La próxima década.** Crecimiento de hogares proyectado por el INE: {{E-B1-F:cita}}.
 8. [C1] **La mayoría de los hogares es propietaria.** Hogares con vivienda principal en propiedad: {{R1C-001:cita}}.
 
+**Qué cambió entre versiones (v6.1).** <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
+- La asociación de la inmigración con precio o alquiler cambia de mercado según el método, la medida y los controles: es «analizada, no concluyente» [C4].
+- Frente a la línea base más exigente, los modelos predicen mejor en {{K1-N-MEJOR:valor}} de las tareas [C4].
+- Las correcciones están en ERRATA.md.
+
 > **Lo que NO se puede afirmar con estos datos**
 >
 > - Que un único factor (turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas) sea la causa principal de la subida.

@@ -1,11 +1,11 @@
 [
  {
   "id": "K3-RATIO-2015",
-  "indicador": "Ratio precio/alquiler, medida v6 (tasado/stock)",
+  "indicador": "Ratio precio/alquiler, medida v6 (tasado/stock); min-max con las demás medidas de precio provinciales",
   "valor": 20.3257,
   "min": 18.931,
   "max": 20.3257,
-  "unidad": "coef. (viv./1.000 hab. → Δln alquiler)",
+  "unidad": "años de alquiler",
   "periodo": "2015",
   "cobertura": "38-39 provincias de entrenamiento",
   "fuentes": "MIVAU tasado; SERPAVI; Registradores; Notariado",
@@ -14,11 +14,11 @@
  },
  {
   "id": "K3-RATIO-2023",
-  "indicador": "Ratio precio/alquiler, medida v6 (tasado/stock)",
+  "indicador": "Ratio precio/alquiler, medida v6 (tasado/stock); min-max con las demás medidas de precio provinciales",
   "valor": 17.1196,
   "min": 17.1196,
   "max": 17.7306,
-  "unidad": "coef. (viv./1.000 hab. → Δln alquiler)",
+  "unidad": "años de alquiler",
   "periodo": "2023",
   "cobertura": "38-39 provincias de entrenamiento",
   "fuentes": "MIVAU tasado; SERPAVI; Registradores; Notariado",

@@ -1,0 +1,17 @@
+{
+ "id": "K1-V1",
+ "tema": "Predicción del precio y del alquiler",
+ "enunciado": "Los modelos de inteligencia artificial predicen el precio y el alquiler mejor que los métodos sencillos.",
+ "capa": "C4",
+ "magnitud": "En la validación sellada v6, el mejor modelo supera a la línea base más exigente en 6 de 9 tareas (alquiler de stock en provincia, municipio y distrito; precio de tasación trimestral y, frágil, anual; volumen trimestral espacial). Alquiler provincial: 1,61 % frente a 2,20 % (AR con factor común).",
+ "intervalo": "DM-HLN y permutación exacta por provincias, Holm (output/v6_1/K1/tabla_modelos_k1.md)",
+ "cota": "—",
+ "literatura": "Harvey, Leybourne y Newbold (1997) para el contraste.",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "Con capa C4 el veredicto es como máximo ANALIZADA, NO CONCLUYENTE. La ventaja solo aparece en las tareas en que se supera a la base más exigente; no distinguible en precio municipal, Registradores y volumen anual. Predicción, no causalidad.",
+ "limites": "Segunda mirada a la muestra sellada para comparadores nuevos; 11 provincias selladas; poca potencia.",
+ "evidencia": [
+  "output/v6_1/K1/tabla_modelos_k1.md",
+  "output/v6_1/K1/notas.md"
+ ]
+}

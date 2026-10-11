@@ -67,6 +67,17 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - (v6) Que los modelos de aprendizaje profundo predigan mejor que el gradient boosting, o que algún modelo bata a la inercia en el volumen trimestral de compraventas del último año: no lo hacen.
 - El resultado de bajar impuestos a la compra o a la construcción, de la seguridad jurídica frente a la ocupación ilegal o de limitar compras de no residentes: no hay diseño ni datos.
 
+## Qué cambió entre versiones y por qué (v6.1)
+
+- [C4] **Inmigración.** v2 la asociaba más con el alquiler y v6 con la compra. El orden depende del método, de la medida de alquiler y de los controles, no de un resultado estable que se haya invertido.
+  - Con valor tasado, la asociación de la cuota de extranjeros es 4,3 % por +1 pp de cuota de extranjeros (t-1) sin controles.
+  - Baja a 1,6 % por +1 pp de cuota de extranjeros (t-1) con controles de costa y demanda externa.
+  - Pasa a -1,3 % por +1 pp de cuota de extranjeros (t-1) controlando por población, que puede ser mediadora.
+  - «ANALIZADA, NO CONCLUYENTE»: no se puede afirmar un efecto.
+- [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en 6,0 tareas de las tareas: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.
+- [C4] **Iniciadas y alquiler.** La asociación es del mismo año. No hay orden temporal detectable, y no indica que construir suba el alquiler.
+- **Correcciones** (ERRATA.md): los contratos nuevos de la Comunitat Valenciana pasan a 27,7 % (24,6-30,8 %) por un error de ponderación; otros redondeos son menores. Ninguna conclusión cambia.
+
 ## Problema y opciones con signo estable
 
 - [C1] Desde 2021 los hogares crecen más que las viviendas terminadas, y el precio de compra y el alquiler suben con varias fuentes.

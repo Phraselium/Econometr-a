@@ -11,6 +11,11 @@
 7. [C2] **La próxima década.** Crecimiento de hogares proyectado por el INE: 1.720.537 hogares (1.308.531-1.772.410 hogares) (2026-2035; INE Proyección de Hogares (tabla 54562); dato de 2026; C2).
 8. [C1] **La mayoría de los hogares es propietaria.** Hogares con vivienda principal en propiedad: 74,5 % de hogares (72,1-75,9 % de hogares) (2021-2022; BdE EFF; INE ECV; INE Censo 2021; dato de 2021-11 (Censo) / 2022 (EFF, ECV); C1).
 
+**Qué cambió entre versiones (v6.1).** <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
+- La asociación de la inmigración con precio o alquiler cambia de mercado según el método, la medida y los controles: es «analizada, no concluyente» [C4].
+- Frente a la línea base más exigente, los modelos predicen mejor en 6,0 tareas de las tareas [C4].
+- Las correcciones están en ERRATA.md.
+
 > **Lo que NO se puede afirmar con estos datos**
 >
 > - Que un único factor (turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas) sea la causa principal de la subida.

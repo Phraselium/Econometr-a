@@ -1,0 +1,93 @@
+[
+ {
+  "id": "M0-prov_compra_anual",
+  "indicador": "Panel de modelización prov_compra_anual: unidades y años de entrenamiento",
+  "valor": 410,
+  "min": null,
+  "max": null,
+  "unidad": "filas (entrenamiento)",
+  "periodo": "2015-2024",
+  "cobertura": "41 de 52 unidades (sellado: 11)",
+  "fuentes": "ver docs/v6/diccionario.md",
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "M0-prov_alquiler_anual",
+  "indicador": "Panel de modelización prov_alquiler_anual: unidades y años de entrenamiento",
+  "valor": 369,
+  "min": null,
+  "max": null,
+  "unidad": "filas (entrenamiento)",
+  "periodo": "2015-2023",
+  "cobertura": "41 de 52 unidades (sellado: 11)",
+  "fuentes": "ver docs/v6/diccionario.md",
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "M0-prov_contratos_nuevos_anual",
+  "indicador": "Panel de modelización prov_contratos_nuevos_anual: unidades y años de entrenamiento",
+  "valor": 410,
+  "min": null,
+  "max": null,
+  "unidad": "filas (entrenamiento)",
+  "periodo": "2015-2024",
+  "cobertura": "41 de 52 unidades (sellado: 11)",
+  "fuentes": "ver docs/v6/diccionario.md",
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "M0-prov_trim_compra",
+  "indicador": "Panel de modelización prov_trim_compra: unidades y años de entrenamiento",
+  "valor": 1672,
+  "min": null,
+  "max": null,
+  "unidad": "filas (entrenamiento)",
+  "periodo": "2015-2025",
+  "cobertura": "38 de 43 unidades (sellado: 5)",
+  "fuentes": "ver docs/v6/diccionario.md",
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "M0-mun_anual",
+  "indicador": "Panel de modelización mun_anual: unidades y años de entrenamiento",
+  "valor": 20530,
+  "min": null,
+  "max": null,
+  "unidad": "filas (entrenamiento)",
+  "periodo": "2015-2024",
+  "cobertura": "2470 de 3063 unidades (sellado: 593)",
+  "fuentes": "ver docs/v6/diccionario.md",
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "M0-dis_alquiler_anual",
+  "indicador": "Panel de modelización dis_alquiler_anual: unidades y años de entrenamiento",
+  "valor": 40673,
+  "min": null,
+  "max": null,
+  "unidad": "filas (entrenamiento)",
+  "periodo": "2011-2023",
+  "cobertura": "6766 de 10552 unidades (sellado: 3786)",
+  "fuentes": "ver docs/v6/diccionario.md",
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "M0-SELLADO",
+  "indicador": "Filas selladas (no abiertas) por panel",
+  "valor": 41568,
+  "min": null,
+  "max": null,
+  "unidad": "filas",
+  "periodo": "ver output/v6/M0/sellado.md",
+  "cobertura": "validación v6 (holdout.sellar_v6)",
+  "fuentes": "holdout.py",
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ }
+]

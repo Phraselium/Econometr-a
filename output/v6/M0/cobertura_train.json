@@ -1,0 +1,470 @@
+{
+ "prov_compra_anual": {
+  "ln_pm2_tasado": {
+   "n": 380,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_pm2_registradores": {
+   "n": 410,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_cv_etdp": {
+   "n": 410,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_cv_registradores": {
+   "n": 410,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "share_nueva_etdp": {
+   "n": 410,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_hip_viv_num": {
+   "n": 410,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "share_contado_proxy": {
+   "n": 399,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "share_compra_ext_res_pct": {
+   "n": 380,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "no_res_share_R1A_pct": {
+   "n": 76,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2016"
+   ]
+  },
+  "ln_pob": {
+   "n": 410,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "share_ext_pob": {
+   "n": 410,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "share_20_34": {
+   "n": 410,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "jefatura_proxy_pct": {
+   "n": 164,
+   "unidades": 41,
+   "anios": [
+    "2021",
+    "2024"
+   ]
+  },
+  "paro_tasa": {
+   "n": 410,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_ocupados_miles": {
+   "n": 410,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_pib_pc": {
+   "n": 410,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_vut": {
+   "n": 205,
+   "unidades": 41,
+   "anios": [
+    "2020",
+    "2024"
+   ]
+  },
+  "ln_terminadas_libres": {
+   "n": 380,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_iniciadas_libres": {
+   "n": 380,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "bajas_tasa_C_amplia_pct": {
+   "n": 410,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_suelo_pm2_m50k": {
+   "n": 147,
+   "unidades": 25,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_llegada_total_ext": {
+   "n": 287,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2021"
+   ]
+  },
+  "ln_llegada_esp_ext": {
+   "n": 287,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2021"
+   ]
+  },
+  "ln_llegada_ext_ext": {
+   "n": 287,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2021"
+   ]
+  }
+ },
+ "prov_alquiler_anual": {
+  "ln_alq_m2_serpavi_vc": {
+   "n": 344,
+   "unidades": 39,
+   "anios": [
+    "2015",
+    "2023"
+   ]
+  },
+  "ln_alq_mes_serpavi_vc": {
+   "n": 344,
+   "unidades": 39,
+   "anios": [
+    "2015",
+    "2023"
+   ]
+  },
+  "ln_n_contratos_serpavi_vc": {
+   "n": 344,
+   "unidades": 39,
+   "anios": [
+    "2015",
+    "2023"
+   ]
+  },
+  "ln_ipc_alq_idx": {
+   "n": 369,
+   "unidades": 41,
+   "anios": [
+    "2015",
+    "2023"
+   ]
+  },
+  "d_ln_ipc_alq": {
+   "n": 328,
+   "unidades": 41,
+   "anios": [
+    "2016",
+    "2023"
+   ]
+  },
+  "ln_ratio_precio_alquiler": {
+   "n": 317,
+   "unidades": 36,
+   "anios": [
+    "2015",
+    "2023"
+   ]
+  },
+  "rentabilidad_bruta_pct": {
+   "n": 317,
+   "unidades": 36,
+   "anios": [
+    "2015",
+    "2023"
+   ]
+  },
+  "ln_vut": {
+   "n": 164,
+   "unidades": 41,
+   "anios": [
+    "2020",
+    "2023"
+   ]
+  },
+  "n_mun_tensionados": {
+   "n": 344,
+   "unidades": 39,
+   "anios": [
+    "2015",
+    "2023"
+   ]
+  },
+  "n_mun_topes_cat": {
+   "n": 344,
+   "unidades": 39,
+   "anios": [
+    "2015",
+    "2023"
+   ]
+  }
+ },
+ "prov_contratos_nuevos_anual": {
+  "ln_fianza_media_gva_eur": {
+   "n": 15,
+   "unidades": 3,
+   "anios": [
+    "2020",
+    "2024"
+   ]
+  },
+  "ln_n_fianzas_gva": {
+   "n": 15,
+   "unidades": 3,
+   "anios": [
+    "2020",
+    "2024"
+   ]
+  },
+  "pct_fianzas_600_incasol": {
+   "n": 16,
+   "unidades": 4,
+   "anios": [
+    "2021",
+    "2024"
+   ]
+  },
+  "ln_n_fianzas_incasol": {
+   "n": 40,
+   "unidades": 4,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_ipva_nuevo_idx": {
+   "n": 152,
+   "unidades": 38,
+   "anios": [
+    "2021",
+    "2024"
+   ]
+  }
+ },
+ "prov_trim_compra": {
+  "ln_pm2_tasado": {
+   "n": 1672,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2025"
+   ]
+  },
+  "ln_cv_etdp": {
+   "n": 1672,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2025"
+   ]
+  },
+  "ln_ipc_alq_idx": {
+   "n": 1672,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2025"
+   ]
+  },
+  "ln_hip_viv_num": {
+   "n": 1672,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2025"
+   ]
+  },
+  "pm2_tasado": {
+   "n": 1672,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2025"
+   ]
+  },
+  "cv_etdp": {
+   "n": 1672,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2025"
+   ]
+  },
+  "ipc_alq_idx": {
+   "n": 1672,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2025"
+   ]
+  },
+  "hip_viv_num": {
+   "n": 1672,
+   "unidades": 38,
+   "anios": [
+    "2015",
+    "2025"
+   ]
+  }
+ },
+ "mun_anual": {
+  "ln_pm2_tasado_mun": {
+   "n": 1909,
+   "unidades": 200,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_alq_m2_serpavi_mun": {
+   "n": 16633,
+   "unidades": 2021,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "ln_n_fianzas_gva_mun": {
+   "n": 1374,
+   "unidades": 281,
+   "anios": [
+    "2020",
+    "2024"
+   ]
+  },
+  "ln_fianza_media_gva_mun_eur": {
+   "n": 1142,
+   "unidades": 272,
+   "anios": [
+    "2020",
+    "2024"
+   ]
+  },
+  "ln_n_fianzas_incasol_mun": {
+   "n": 8419,
+   "unidades": 943,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "pct_fianzas_600_incasol_mun": {
+   "n": 1719,
+   "unidades": 623,
+   "anios": [
+    "2021",
+    "2024"
+   ]
+  },
+  "tensionada_mun": {
+   "n": 20530,
+   "unidades": 2470,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  },
+  "tope_cat_mun": {
+   "n": 20530,
+   "unidades": 2470,
+   "anios": [
+    "2015",
+    "2024"
+   ]
+  }
+ },
+ "dis_alquiler_anual": {
+  "ln_alq_m2_serpavi_dis": {
+   "n": 27578,
+   "unidades": 2501,
+   "anios": [
+    "2011",
+    "2023"
+   ]
+  },
+  "ln_vut_plazas_dis": {
+   "n": 13523,
+   "unidades": 4950,
+   "anios": [
+    "2021",
+    "2023"
+   ]
+  }
+ }
+}

@@ -1,0 +1,107 @@
+[
+ {
+  "paso": "cache_sellado",
+  "n": 2136,
+  "nota": "distritos v3 excluidos; provincias v6=['07', '22', '26', '28', '30', '31', '33', '35', '38', '44', '50']"
+ },
+ {
+  "paso": "tasado_prov_filas",
+  "n": 5402,
+  "nota": "sin cod=0 | provincias=43"
+ },
+ {
+  "paso": "tasado_prov_anual",
+  "n": 1324,
+  "nota": "media de 4 trimestres completos"
+ },
+ {
+  "paso": "pib_unidad",
+  "n": 1000,
+  "nota": "unidad original: miles de euros (inferido; fk_unidad=7)"
+ },
+ {
+  "paso": "tasado_mun",
+  "n": 22490,
+  "nota": "municipios con código por nombre único: 277"
+ },
+ {
+  "paso": "serpavi_dis_percentiles",
+  "n": 2,
+  "nota": "25,75"
+ },
+ {
+  "paso": "ultimo_anio_trim",
+  "n": 2026,
+  "nota": "último año con valor tasado trimestral"
+ },
+ {
+  "paso": "panel_total_prov_compra_anual",
+  "n": 572,
+  "nota": "unidades=52"
+ },
+ {
+  "paso": "panel_total_prov_alquiler_anual",
+  "n": 572,
+  "nota": "unidades=52"
+ },
+ {
+  "paso": "panel_total_prov_contratos_nuevos_anual",
+  "n": 572,
+  "nota": "unidades=52"
+ },
+ {
+  "paso": "panel_total_prov_trim_compra",
+  "n": 1978,
+  "nota": "unidades=43"
+ },
+ {
+  "paso": "panel_total_mun_anual",
+  "n": 26845,
+  "nota": "unidades=3063"
+ },
+ {
+  "paso": "panel_total_dis_alquiler_anual",
+  "n": 75093,
+  "nota": "unidades=10552"
+ },
+ {
+  "paso": "train_prov_compra_anual",
+  "n": 410,
+  "nota": "ult=2025 sellado=162"
+ },
+ {
+  "paso": "train_prov_alquiler_anual",
+  "n": 369,
+  "nota": "ult=2024 sellado=203"
+ },
+ {
+  "paso": "train_prov_contratos_nuevos_anual",
+  "n": 410,
+  "nota": "ult=2025 sellado=162"
+ },
+ {
+  "paso": "train_prov_trim_compra",
+  "n": 1672,
+  "nota": "ult=2026 sellado=306"
+ },
+ {
+  "paso": "sin_dato_mun_anual",
+  "n": 1,
+  "nota": "ln_vut_viviendas_mun"
+ },
+ {
+  "paso": "train_mun_anual",
+  "n": 20530,
+  "nota": "ult=2025 sellado=6315"
+ },
+ {
+  "paso": "train_dis_alquiler_anual",
+  "n": 40673,
+  "nota": "ult=2024 sellado=34420"
+ },
+ {
+  "paso": "estatico_prov",
+  "n": 43,
+  "nota": "costa/isla (R1A), distancia mediana al mayor municipio (A4+centroides), censo 2021"
+ }
+]

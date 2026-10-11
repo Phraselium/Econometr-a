@@ -1,0 +1,140 @@
+[
+ {
+  "panel": "prov_compra_anual",
+  "nivel": "provincia",
+  "ultimo_anio": 2025,
+  "filas_total": 572,
+  "filas_train": 410,
+  "filas_sealed": 162,
+  "unidades_total": 52,
+  "unidades_train": 41,
+  "unidades_sealed": 11,
+  "anios_total": [
+   2015,
+   2025
+  ],
+  "anios_train": [
+   2015,
+   2024
+  ],
+  "anios_sealed": [
+   2025,
+   2025
+  ]
+ },
+ {
+  "panel": "prov_alquiler_anual",
+  "nivel": "provincia",
+  "ultimo_anio": 2024,
+  "filas_total": 572,
+  "filas_train": 369,
+  "filas_sealed": 203,
+  "unidades_total": 52,
+  "unidades_train": 41,
+  "unidades_sealed": 11,
+  "anios_total": [
+   2015,
+   2025
+  ],
+  "anios_train": [
+   2015,
+   2023
+  ],
+  "anios_sealed": [
+   2024,
+   2025
+  ]
+ },
+ {
+  "panel": "prov_contratos_nuevos_anual",
+  "nivel": "provincia",
+  "ultimo_anio": 2025,
+  "filas_total": 572,
+  "filas_train": 410,
+  "filas_sealed": 162,
+  "unidades_total": 52,
+  "unidades_train": 41,
+  "unidades_sealed": 11,
+  "anios_total": [
+   2015,
+   2025
+  ],
+  "anios_train": [
+   2015,
+   2024
+  ],
+  "anios_sealed": [
+   2025,
+   2025
+  ]
+ },
+ {
+  "panel": "prov_trim_compra",
+  "nivel": "provincia",
+  "ultimo_anio": 2026,
+  "filas_total": 1978,
+  "filas_train": 1672,
+  "filas_sealed": 306,
+  "unidades_total": 43,
+  "unidades_train": 38,
+  "unidades_sealed": 5,
+  "anios_total": [
+   2015,
+   2026
+  ],
+  "anios_train": [
+   2015,
+   2025
+  ],
+  "anios_sealed": [
+   2026,
+   2026
+  ]
+ },
+ {
+  "panel": "mun_anual",
+  "nivel": "municipio",
+  "ultimo_anio": 2025,
+  "filas_total": 26845,
+  "filas_train": 20530,
+  "filas_sealed": 6315,
+  "unidades_total": 3063,
+  "unidades_train": 2470,
+  "unidades_sealed": 593,
+  "anios_total": [
+   2015,
+   2025
+  ],
+  "anios_train": [
+   2015,
+   2024
+  ],
+  "anios_sealed": [
+   2025,
+   2025
+  ]
+ },
+ {
+  "panel": "dis_alquiler_anual",
+  "nivel": "distrito",
+  "ultimo_anio": 2024,
+  "filas_total": 75093,
+  "filas_train": 40673,
+  "filas_sealed": 34420,
+  "unidades_total": 10552,
+  "unidades_train": 6766,
+  "unidades_sealed": 3786,
+  "anios_total": [
+   2011,
+   2024
+  ],
+  "anios_train": [
+   2011,
+   2023
+  ],
+  "anios_sealed": [
+   2024,
+   2024
+  ]
+ }
+]

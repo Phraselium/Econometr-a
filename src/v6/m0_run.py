@@ -79,8 +79,12 @@ for _n, _c in PROV_MAP.items():
     NOMBRE_PROV.setdefault(_c, _n)
 
 
+SINONIMOS_PROV = {"guipuzcoa": "20", "vizcaya": "48"}  # nombres de MIVAU/SERPAVI no presentes en el alias de ETDP
+
+
 def cod_prov(nombre) -> str | None:
-    return PROV_MAP.get(norm(nombre))
+    s = re.sub(r"\s*\(\d+\)\s*$", "", str(nombre)).strip()  # notas al pie tipo «Extremadura (1)»
+    return PROV_MAP.get(norm(s)) or SINONIMOS_PROV.get(norm(s))
 
 
 def trim(fecha: pd.Series) -> pd.Series:
@@ -202,8 +206,8 @@ def share_600(f: pd.DataFrame, keys: list[str]) -> pd.Series:
 def zonas_vigentes(df: pd.DataFrame, col_mun: str, ini: str, fin: str, anios) -> pd.DataFrame:
     """Municipio vigente en el año Y si ini <= 31/12/Y y (fin vacío o fin >= 01/01/Y)."""
     d = df.copy()
-    d["ini"] = pd.to_datetime(d[ini], dayfirst=True, errors="coerce")
-    d["fin"] = pd.to_datetime(d[fin], dayfirst=True, errors="coerce") if fin in d else pd.NaT
+    d["ini"] = pd.to_datetime(d[ini], errors="coerce")
+    d["fin"] = pd.to_datetime(d[fin], errors="coerce") if fin in d else pd.NaT
     d[col_mun] = d[col_mun].astype(str).str.zfill(5)
     rows = []
     for y in anios:
@@ -305,7 +309,7 @@ def construir_provincial():
     vu["cod"] = vu.codigo.str.zfill(2)
     vu["valor"] = num(vu.valor)
     vu["anio"] = anio_de(vu.fecha)
-    A["vut_viviendas"] = S(vu, ["cod", "anio"], "mean", 12)
+    A["vut_viviendas"] = S(vu, ["cod", "anio"], "mean", 1)  # INE VTE: 1-2 meses publicados por año
 
     tt = rd("mivau_v2_iniciadas_terminadas_prov.csv", usecols=["fecha", "valor", "serie", "territorio", "nivel"], dtype=str)
     tt = tt[tt.nivel == "provincia"].copy()
@@ -451,7 +455,7 @@ def construir_municipal(a4_names: dict):
     vu["cod_mun"] = vu.codigo.str.zfill(5)
     vu["valor"] = num(vu.valor)
     vu["anio"] = anio_de(vu.fecha)
-    vu_a = S(vu, ["cod_mun", "anio"], "mean", 12).rename("vut_viviendas_mun")
+    vu_a = S(vu, ["cod_mun", "anio"], "mean", 1).rename("vut_viviendas_mun")
 
     gv = gva_fianzas()
     gv_a = gv.groupby(["cod_mun", "anio"]).agg(n_fianzas_gva_mun=("valor", "size"), fianza_media_gva_mun_eur=("valor", "mean"))
@@ -490,15 +494,17 @@ def construir_distrito():
     sd["valor"] = num(sd.valor)
     sd["anio"] = anio_de(sd.fecha)
     pct = sorted(sd.percentil.unique())
-    log("serpavi_dis_percentiles", len(pct), ",".join(pct))
-    med = sd[sd.percentil == "50"] if "50" in pct else sd[sd.percentil == pct[0]]
-    D = med.groupby(["distrito", "anio"]).valor.mean().rename("alq_m2_serpavi_dis").reset_index()
+    log("serpavi_dis_percentiles", len(pct), ",".join(pct))  # v3 solo trae p25 y p75: no hay mediana de distrito
+    p = sd.pivot_table(index=["distrito", "anio"], columns="percentil", values="valor", aggfunc="mean").reset_index()
+    p = p.rename(columns={"25": "alq_m2_p25_dis", "75": "alq_m2_p75_dis"})
+    p["alq_m2_serpavi_dis"] = (p.alq_m2_p25_dis + p.alq_m2_p75_dis) / 2  # punto medio p25-p75 (aproximación de la mediana)
+    D = p[["distrito", "anio", "alq_m2_serpavi_dis", "alq_m2_p25_dis", "alq_m2_p75_dis"]]
     vs = pd.read_csv(RAW / "v3" / "ine_v3_vut_seccion.csv.gz", usecols=["serie", "valor", "fecha"], low_memory=False)
     vs = vs[vs.serie.str.match(r"VUT_distrito_\d{7}_plazas$")].copy()
     vs["distrito"] = vs.serie.str.extract(r"VUT_distrito_(\d{7})_")[0]
     vs["valor"] = num(vs.valor)
     vs["anio"] = anio_de(vs.fecha)
-    v_a = S(vs, ["distrito", "anio"], "mean", 12).rename("vut_plazas_dis").reset_index()
+    v_a = S(vs, ["distrito", "anio"], "mean", 1).rename("vut_plazas_dis").reset_index()
     D = D.merge(v_a, on=["distrito", "anio"], how="outer")
     D["cod_prov"] = D.distrito.str[:2]
     D = D[D.anio.between(2011, ULT_SERPAVI)]
@@ -715,9 +721,36 @@ def mde(N: int, clusters: int, icc: float, K: int, alpha: float = 0.05, power: f
     return rho_iid, rho_cl, deff, neff
 
 
+def cache_sellado():
+    """Mismas reglas que holdout.distrito_sellado_v6 / municipio_sellado_v6, con las listas calculadas UNA vez.
+    Sin esto, holdout relee el VUT (1,6 M filas) por cada distrito único y el proceso no termina.
+    Se verifica la igualdad con las funciones originales sobre una muestra de códigos."""
+    dv3 = frozenset(holdout.distritos_sellados_v3())
+    pv6 = frozenset(holdout.provincias_selladas_v6())
+
+    def dist_v6(cod):
+        d = str(cod).zfill(7)
+        if d in dv3:
+            return None
+        return d[:2] in pv6
+
+    def mun_v6(cod):
+        return str(cod).zfill(5)[:2] in pv6
+
+    muestra = ["0100101", "0200201", "2800101", "4400101", "3300101"]
+    for d in muestra:
+        assert dist_v6(d) == holdout.distrito_sellado_v6(d), d
+    for c in ["01001", "07001", "22001", "50001", "03001"]:
+        assert mun_v6(c) == holdout.municipio_sellado_v6(c), c
+    holdout.distrito_sellado_v6 = dist_v6
+    holdout.municipio_sellado_v6 = mun_v6
+    log("cache_sellado", len(dv3), f"distritos v3 excluidos; provincias v6={sorted(pv6)}")
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     PAN.mkdir(parents=True, exist_ok=True)
+    cache_sellado()
     P, tas = construir_provincial_completo()
     P = derivadas(P)
 
@@ -739,6 +772,7 @@ def main():
     Q["ln_cv_etdp"] = np.log(Q.cv_etdp.where(Q.cv_etdp > 0))
     Q["ln_ipc_alq_idx"] = np.log(Q.ipc_alq_idx.where(Q.ipc_alq_idx > 0))
     Q["ln_hip_viv_num"] = np.log(Q.hip_viv_num.where(Q.hip_viv_num > 0))
+    Q = Q[Q.anio >= INI_PROV]
     ult_trim = int(Q.anio[Q.pm2_tasado.notna()].max())
     log("ultimo_anio_trim", ult_trim, "último año con valor tasado trimestral")
 
@@ -786,6 +820,11 @@ def main():
     for nombre, df, nivel, ult, kw in PANELES:
         df = df.copy()
         tr, info = sellar_panel(df, nombre, nivel, "anio", ult, **kw)
+        vacias = [c for c in tr.columns if c not in ("cod", "cod_mun", "distrito", "anio", "t", "provincia", "cod_prov")
+                  and tr[c].notna().sum() == 0]
+        if vacias:
+            log(f"sin_dato_{nombre}", len(vacias), ",".join(vacias))
+            tr = tr.drop(columns=vacias)
         infos.append(info)
         trains[nombre] = tr
         escribir_train(tr, nombre)
@@ -821,7 +860,108 @@ def main():
         json.dump(resumen_cob, f, ensure_ascii=False, indent=1, default=str)
     with open(OUT / "log_construccion.json", "w", encoding="utf-8") as f:
         json.dump(LOG, f, ensure_ascii=False, indent=1)
+    pot = potencia_y_hechos()
+    escribir_potencia_md(pot)
+    escribir_resultado_hechos(pot, infos)
     print("OK", {i["panel"]: (i["filas_train"], i["filas_sealed"]) for i in infos})
+
+
+ESPECIFICACIONES_POT = [
+    # (panel, desenlace, mercado, nivel, K = variables candidatas del panel, unidad_clúster, fuente)
+    ("prov_compra_anual", "ln_pm2_tasado", "precio de compra", "provincia", 22, "cod", "valor tasado MIVAU (anual)"),
+    ("prov_compra_anual", "ln_cv_etdp", "volumen de compra", "provincia", 22, "cod", "compraventas INE ETDP"),
+    ("prov_trim_compra", "ln_pm2_tasado", "precio de compra", "provincia (trimestral)", 4, "cod", "valor tasado MIVAU (trimestral)"),
+    ("prov_trim_compra", "ln_cv_etdp", "volumen de compra", "provincia (trimestral)", 4, "cod", "compraventas INE ETDP"),
+    ("prov_alquiler_anual", "ln_alq_m2_serpavi_vc", "alquiler de stock", "provincia", 10, "cod", "SERPAVI mediana VC"),
+    ("prov_contratos_nuevos_anual", "ln_fianza_media_gva_eur", "alquiler de contratos nuevos", "provincia (solo CV)", 5, "cod", "fianzas GVA (€ depósito)"),
+    ("mun_anual", "ln_pm2_tasado_mun", "precio de compra", "municipio (>25.000 hab., por nombre único)", 9, "cod_prov", "valor tasado MIVAU municipal"),
+    ("mun_anual", "ln_alq_m2_serpavi_mun", "alquiler de stock", "municipio", 9, "cod_prov", "SERPAVI municipal mediana VC"),
+    ("dis_alquiler_anual", "ln_alq_m2_serpavi_dis", "alquiler de stock", "distrito (aprox. mediana p25-p75)", 2, "cod_prov", "SERPAVI distritos v3"),
+]
+
+
+def potencia_y_hechos():
+    """Potencia (efecto mínimo detectable) con el N de entrenamiento de cada panel, agrupación por CCAA (ICC supuesto)
+    y Holm por el número de variables (cota Bonferroni, peor caso de Holm). Solo sobre la parte de entrenamiento."""
+    from holdout import CCAA_PROV
+    tr = {n: pd.read_csv(PAN / f"{n}_train.csv.gz", dtype={"cod": str, "cod_mun": str, "cod_prov": str, "distrito": str},
+                         low_memory=False) for n in ["prov_compra_anual", "prov_trim_compra", "prov_alquiler_anual",
+                                                       "prov_contratos_nuevos_anual", "mun_anual", "dis_alquiler_anual"]}
+    icc = 0.3
+    filas = []
+    for panel, y, mercado, nivel, K, cl, fuente in ESPECIFICACIONES_POT:
+        d = tr[panel]
+        dd = d[d[y].notna()].copy()
+        if "cod" in dd and cl == "cod_prov":
+            dd["cod_prov"] = dd.cod_prov.astype(str).str.zfill(2) if "cod_prov" in dd else dd.cod.str[:2]
+        ccaa = dd[cl].astype(str).str.zfill(2).map(lambda c: CCAA_PROV.get(c, "x")) if cl != "cod" else \
+            dd.cod.astype(str).str.zfill(2).map(lambda c: CCAA_PROV.get(c, "x"))
+        N = len(dd)
+        n_cl = int(ccaa.nunique())
+        sd_y = float(dd[y].std())
+        rho_iid, rho_cl, deff, neff = mde(N, n_cl, icc, K)
+        filas.append({"panel": panel, "desenlace": y, "mercado": mercado, "nivel": nivel, "K_variables_panel": K,
+                      "N_train": N, "n_agrupaciones_CCAA": n_cl, "sd_desenlace_train": round(sd_y, 4),
+                      "rho_min_iid": round(rho_iid, 4), "rho_min_cluster_ICC0.3": round(rho_cl, 4),
+                      "deff": round(deff, 2), "N_eff": round(neff, 1),
+                      "efecto_pct_1DE_iid": round(100 * (math.exp(rho_iid * sd_y) - 1), 2),
+                      "efecto_pct_1DE_cluster": round(100 * (math.exp(rho_cl * sd_y) - 1), 2) if not math.isnan(rho_cl) else None,
+                      "fuente": fuente})
+    pot = pd.DataFrame(filas)
+    pot.to_csv(OUT / "potencia.csv", index=False)
+    return pot
+
+
+def escribir_potencia_md(pot: pd.DataFrame):
+    cab = ("| panel | desenlace (mercado) | nivel | K | N train | CCAA (clusters) | sd(y) | ρ mín. iid | ρ mín. clúster (ICC 0,3) | "
+           "efecto mín. % por 1 DE de x (iid / clúster) |")
+    lin = ["|---|---|---|---|---|---|---|---|---|---|"]
+    for _, r in pot.iterrows():
+        ef_cl = "n.d." if r["efecto_pct_1DE_cluster"] is None else f"{r['efecto_pct_1DE_cluster']:.2f}"
+        lin.append(f"| {r['panel']} | {r['desenlace']} ({r['mercado']}) | {r['nivel']} | {r['K_variables_panel']} | {r['N_train']} | "
+                   f"{r['n_agrupaciones_CCAA']} | {r['sd_desenlace_train']:.3f} | {r['rho_min_iid']:.3f} | "
+                   f"{r['rho_min_cluster_ICC0.3']:.3f} | {r['efecto_pct_1DE_iid']:.2f} / {ef_cl} |")
+    txt = ("# Potencia v6 (M0): efecto mínimo detectable\n\n"
+           f"Fecha del cálculo: {FECHA}. Parte de entrenamiento únicamente (N = filas con desenlace no nulo en *_train).\n\n"
+           "Método: ρ mín. = tanh((z_{1-α/(2K)} + z_{1-β}) / √(N_eff − 3)), con α = 0,05, β = 0,20 y K = número de variables "
+           "candidatas del panel (cota Bonferroni, que es el peor caso de Holm sobre K contrastes). La columna «iid» usa N; la "
+           "columna «clúster» usa N_eff = N / (1 + (m − 1)·ICC), con m = N / nº de CCAA y ICC = 0,3 SUPUESTO (no estimado). "
+           "Con 17 CCAA como clústeres, la inferencia clúster robusta es poco fiable: la columna clúster es orientativa.\n\n"
+           "El efecto mínimo en % se obtiene como 100·(exp(ρ·sd(ln y)) − 1): cambio de y por cada desviación típica de x.\n\n"
+           + "\n".join([cab] + lin) + "\n\n"
+           "Lectura: ninguna especificación con N de entrenamiento inferior a ~400 puede detectar efectos pequeños con seguridad "
+           "tras Holm; el panel municipal y distrital tienen más N pero menos cobertura por unidad y sesgo de muestra "
+           "(solo municipios con valor tasado por nombre único y distritos con SERPAVI).\n")
+    (DOCS / "potencia.md").write_text(txt, encoding="utf-8")
+
+
+def escribir_resultado_hechos(pot: pd.DataFrame, infos: list):
+    hechos = []
+    for i in infos:
+        hechos.append({"id": f"M0-{i['panel']}", "indicador": f"Panel de modelización {i['panel']}: unidades y años de entrenamiento",
+                       "valor": i["filas_train"], "min": None, "max": None, "unidad": "filas (entrenamiento)",
+                       "periodo": f"{i['anios_train'][0]}-{i['anios_train'][1]}" if i["anios_train"] else None,
+                       "cobertura": f"{i['unidades_train']} de {i['unidades_total']} unidades (sellado: {i['unidades_sealed']})",
+                       "fuentes": "ver docs/v6/diccionario.md", "capa": "C4", "fecha_dato": FECHA})
+    hechos.append({"id": "M0-SELLADO", "indicador": "Filas selladas (no abiertas) por panel", "valor": sum(i["filas_sealed"] for i in infos),
+                   "min": None, "max": None, "unidad": "filas", "periodo": "ver output/v6/M0/sellado.md",
+                   "cobertura": "validación v6 (holdout.sellar_v6)", "fuentes": "holdout.py", "capa": "C4", "fecha_dato": FECHA})
+    with open(OUT / "hechos.json", "w", encoding="utf-8") as f:
+        json.dump(hechos, f, ensure_ascii=False, indent=1, default=str)
+    res = {
+        "rama": "r6/main", "pregunta": "M0: datos, paneles, diccionario, sellado v6, hipótesis y potencia (sin estimación)",
+        "capa": "C4", "datos": "output/v6/M0/paneles/*_train.csv.gz (ver docs/v6/diccionario.md)",
+        "N": int(sum(i["filas_train"] for i in infos)), "metodo": "construcción de paneles; sellado v6; potencia por Fisher-z",
+        "estimacion": None, "ic95": None, "p_ajustado": None, "nivel_evidencia": "DESCRIPTIVO",
+        "medida_precio": "valor tasado MIVAU (provincia y municipio); Registradores (provincia, pm2 anual); índice triangulado A23 (nacional); IPV INE solo CCAA",
+        "diagnosticos": {"sellado": infos, "potencia": pot[["panel", "desenlace", "N_train", "rho_min_iid"]].to_dict("records")},
+        "fuera_muestra": None,
+        "notas": "M0 no estima modelos. Validación sellada v6 contaminada descriptivamente por usos v4-v5 (decisiones.md). "
+                 "Sin interpolación; ver docs/v6/diccionario.md para sin-dato y cobertura parcial.",
+        "fecha_dato": FECHA,
+    }
+    with open(OUT / "resultado.json", "w", encoding="utf-8") as f:
+        json.dump(res, f, ensure_ascii=False, indent=1, default=str)
 
 
 if __name__ == "__main__":

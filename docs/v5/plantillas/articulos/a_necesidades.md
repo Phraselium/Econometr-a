@@ -85,7 +85,7 @@ La necesidad se concentra en las provincias con presión. De las provincias espa
 
 En la Comunitat Valenciana la necesidad central anual es de {{E-B1-anual-Valencia}} en la provincia de Valencia, {{E-B1-anual-Alicante}} en la de Alicante y {{E-B1-anual-Castellon}} en la de Castellón [C4]. Como comparación, Madrid registra {{E-B1-anual-Madrid}} y Barcelona {{E-B1-anual-Barcelona}} [C4].
 
-![Necesidad anual de vivienda por provincia, 2026-2035 (C4)](B1/figuras/B1_mapa_necesidad.png)
+![Necesidad anual de vivienda por provincia, 2026-2035 (C4)](../B1/figuras/B1_mapa_necesidad.png)
 
 La tabla provincial completa, con mínimo, central y máximo de cada componente, está en `output/v5/B1/tablas/B1_tabla_provincial.csv`.
 
@@ -97,7 +97,7 @@ Con el rango completo de B2, el déficit empeoraba en {{E-B2-empeora}}, mejoraba
 
 **Proyección 2026-2030 (`T4`).** En una rejilla de escenarios que incluye los de B2, uno de construcción optimista ({{T4-H7:num}} terminadas al año, por encima de cualquier año nacional desde 2008), bajas nulas, hogares bajos y las liberadas, el déficit nacional empeora de 2025 a 2030 en todos los escenarios: la dirección es [C2]. La magnitud es [C4]: el aumento está en el intervalo {{T4-H2:rango}} y el déficit a fin de 2030 queda en {{T4-H1}}. Por provincias, {{T4-H3:valor}} empeoran, {{T4-H3:min}} mejoran y {{T4-H3:max}} quedan indeterminadas (en `v5`: {{T4-H4:valor}}, {{T4-H4:min}} y {{T4-H4:max}}). A 2035 la dirección nacional es indeterminada [C4], con un déficit a fin de 2035 entre {{T4-H5:min}} y {{T4-H5:max}}: el envejecimiento libera {{T4-H8:min}} en 2026-2030 y {{T4-H8:valor}} en 2031-2035, de modo que pesa más después de 2030. Mantener constante el déficit en 2026-2030 exigiría {{T4-H6:num}} terminadas al año [C4].
 
-![Signo del cambio del déficit 2025-2030 por provincia (C4)](B2/figuras/B2_mapa_signo.png)
+![Signo del cambio del déficit 2025-2030 por provincia (C4)](../B2/figuras/B2_mapa_signo.png)
 
 ## Robustez
 

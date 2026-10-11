@@ -85,7 +85,7 @@ La necesidad se concentra en las provincias con presión. De las provincias espa
 
 En la Comunitat Valenciana la necesidad central anual es de 16.993 viviendas/año (13.241-22.407 viviendas/año) en la provincia de Valencia, 14.264 viviendas/año (10.484-18.624 viviendas/año) en la de Alicante y 4.267 viviendas/año (2.788-5.685 viviendas/año) en la de Castellón [C4]. Como comparación, Madrid registra 47.228 viviendas/año (36.705-59.722 viviendas/año) y Barcelona 30.963 viviendas/año (21.166-45.466 viviendas/año) [C4].
 
-![Necesidad anual de vivienda por provincia, 2026-2035 (C4)](B1/figuras/B1_mapa_necesidad.png)
+![Necesidad anual de vivienda por provincia, 2026-2035 (C4)](../B1/figuras/B1_mapa_necesidad.png)
 
 La tabla provincial completa, con mínimo, central y máximo de cada componente, está en `output/v5/B1/tablas/B1_tabla_provincial.csv`.
 
@@ -97,7 +97,7 @@ Con el rango completo de B2, el déficit empeoraba en 20 provincias, mejoraba en
 
 **Proyección 2026-2030 (`T4`).** En una rejilla de escenarios que incluye los de B2, uno de construcción optimista (146.435 terminadas al año, por encima de cualquier año nacional desde 2008), bajas nulas, hogares bajos y las liberadas, el déficit nacional empeora de 2025 a 2030 en todos los escenarios: la dirección es [C2]. La magnitud es [C4]: el aumento está en el intervalo 87.246-946.852 viviendas y el déficit a fin de 2030 queda en 1.349.025 viviendas (788.180-1.773.555 viviendas). Por provincias, 15 provincias empeoran, 0 provincias mejoran y 37 provincias quedan indeterminadas (en `v5`: 20 provincias, 5 provincias y 27 provincias). A 2035 la dirección nacional es indeterminada [C4], con un déficit a fin de 2035 entre 482.095 viviendas y 2.400.412 viviendas: el envejecimiento libera 869.654 viviendas (5 años) en 2026-2030 y 986.777 viviendas (5 años) en 2031-2035, de modo que pesa más después de 2030. Mantener constante el déficit en 2026-2030 exigiría 211.772 terminadas al año [C4].
 
-![Signo del cambio del déficit 2025-2030 por provincia (C4)](B2/figuras/B2_mapa_signo.png)
+![Signo del cambio del déficit 2025-2030 por provincia (C4)](../B2/figuras/B2_mapa_signo.png)
 
 ## Robustez
 

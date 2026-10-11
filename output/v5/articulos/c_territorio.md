@@ -42,9 +42,9 @@ Todas las filas son [C4]. El empleo y la población tienen el signo esperado, pe
 
 **Ajuste fuera de muestra.** El error cuadrático medio dejando una fuera es 0,07 log-puntos, frente a 0,16 log-puntos del modelo de solo media [C4]. El modelo describe bien la geografía de precios, pero eso no identifica qué característica la produce.
 
-![Variación del precio por provincia, 2015-2025](B3/figuras/mapa_P1.png)
+![Variación del precio por provincia, 2015-2025](../B3/figuras/mapa_P1.png)
 
-![Cuotas de Shapley del R² con dos fuentes de precio](B3/figuras/shapley.png)
+![Cuotas de Shapley del R² con dos fuentes de precio](../B3/figuras/shapley.png)
 
 ## Robustez
 

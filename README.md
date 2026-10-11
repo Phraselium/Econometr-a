@@ -1,6 +1,6 @@
 # Vivienda en España: base de evidencia reproducible
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión vigente:** v5.1 (11 de octubre de 2026). **En curso:** v6 (alquiler y compraventa; docs/v6/plan.md).
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** v6.1 (borrador, pendiente de cierre; 11 de octubre de 2026). Última versión cerrada: v6.0 (alquiler y compraventa; docs/v6/plan.md). Plan de v6.1: docs/v6_1/plan.md.
 
 ## Qué es
 Una base de evidencia sobre la vivienda en España, por provincias y con un módulo para València: precios y alquileres triangulados, déficit y necesidad de vivienda 2026-2035, diferencias territoriales, comparación europea, una matriz de instrumentos de política y un verificador de afirmaciones del debate público. Todo se reproduce con los datos incluidos en el repositorio y sin conexión a la red.
@@ -32,7 +32,7 @@ Detalle (software, tiempos, orden de los programas, correspondencia entre salida
 ## Cómo citar
 Metadatos en [CITATION.cff](CITATION.cff) y .zenodo.json. DOI: pendiente (depósito en Zenodo).
 
-> Romero, B. (2026). *Vivienda en España: base de evidencia reproducible* (versión 5.1) [software y datos].
+> Romero, B. (2026). *Vivienda en España: base de evidencia reproducible* (versión 6.1, borrador) [software y datos].
 
 ## Licencias
 - Código (src/, tests/, Makefile): MIT.
@@ -42,7 +42,7 @@ Metadatos en [CITATION.cff](CITATION.cff) y .zenodo.json. DOI: pendiente (depós
 Texto completo en [LICENSE](LICENSE).
 
 ## Uso de IA
-El código y los borradores se elaboraron con agentes de IA (Claude) bajo la supervisión del autor, que revisa y responde del contenido. La declaración completa está en el apéndice C de output/v5/working_paper.md y en README_REPLICACION.md §5.
+El código y los borradores se elaboraron con agentes de IA (Claude) bajo la supervisión del autor, que revisa y responde del contenido. La declaración completa está en [DECLARACION_IA.md](DECLARACION_IA.md) (también en el apéndice C de output/v5/working_paper.md y en README_REPLICACION.md §5).
 
 ## Erratas y cambios
 - Correcciones de resultados publicados: [ERRATA.md](ERRATA.md).

@@ -1,0 +1,35 @@
+{
+ "rama": "v6.1/K4c-K4d",
+ "pregunta": "¿Es coherente cada cifra de los entregables con output/v5/cifras_clave.csv y está la documentación completa, enlazada y versionada?",
+ "capa": "C4",
+ "datos": "output/v5/*.md, articulos/, ponencia/, linkedin/, verificador/, archive/, README*, docs/v5 públicos; todos los .md fuera de data/; docs/literatura.md",
+ "N": 1916,
+ "metodo": "Extracción determinista de cifras (src/v6_1/k4c_cifras.py) y comprobación de enlaces, versión y marcas de referencias (src/v6_1/k4d_docs.py)",
+ "estimacion": {
+  "cifras_por_clase": {
+   "EN_CIFRAS_CLAVE": 797,
+   "SIN_FECHA": 585,
+   "HISTORICA_MARCADA": 503,
+   "HUERFANA": 26,
+   "CONTRADICTORIA": 5
+  },
+  "enlaces_rotos_antes": 32,
+  "enlaces_rotos_despues": 0,
+  "referencias_sin_marca_antes": 60,
+  "referencias_sin_marca_despues": 0
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "huerfanas_en_entregables_principales": 0,
+  "contradicciones_reales": 0,
+  "huerfanas_verificador": 26
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Las 5 CONTRADICTORIA heurísticas son del verificador y se revisaron a mano (4 falsos positivos, 1 redondeo). Constante 242.400 de la EPA: excepción documentada."
+}

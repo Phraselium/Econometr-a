@@ -6,8 +6,8 @@ Cifras significativas analizadas: 1916. Fuente de verdad: output/v5/cifras_clave
 
 | clase | n |
 |---|---|
-| EN_CIFRAS_CLAVE | 796 |
-| HISTORICA_MARCADA | 504 |
+| EN_CIFRAS_CLAVE | 797 |
+| HISTORICA_MARCADA | 503 |
 | SIN_FECHA | 585 |
 | HUERFANA | 26 |
 | CONTRADICTORIA | 5 |
@@ -16,7 +16,7 @@ Cifras significativas analizadas: 1916. Fuente de verdad: output/v5/cifras_clave
 
 | fichero | EN_CIFRAS_CLAVE | HISTORICA_MARCADA | SIN_FECHA | HUERFANA | CONTRADICTORIA | total |
 |---|---|---|---|---|---|---|
-| README.md | 0 | 1 | 0 | 0 | 0 | 1 |
+| README.md | 1 | 0 | 0 | 0 | 0 | 1 |
 | README_REPLICACION.md | 0 | 5 | 2 | 0 | 0 | 7 |
 | archive/output/v3/articulo.md | 0 | 160 | 0 | 0 | 0 | 160 |
 | archive/output/v3/informe_politica.md | 0 | 69 | 0 | 0 | 0 | 69 |

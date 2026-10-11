@@ -26,6 +26,7 @@ Qué hay en cada carpeta y qué es **VIGENTE** (lo que se cita y se mantiene) fr
 | src/v5/ | v5 | VIGENTE | Módulos R, A, B, C, D, E; `cifras_clave.py`, `render.py`, `verificador.py`, `check_v5.py` |
 | src/v5_1/ | v5.1 | VIGENTE | T1-T4 (bajas, liberadas por envejecimiento, rangos, dirección); se ejecutan dentro de `V5_ORDEN` |
 | src/v6/ | v6 | EN CURSO | `check_v6.py` |
+| src/v6_1/ | v6.1 | EN CURSO | scripts K1-K4 de v6.1 (sin check propio; los controla `make check`) |
 
 ## data/
 | Ruta | Contenido |
@@ -44,6 +45,7 @@ Qué hay en cada carpeta y qué es **VIGENTE** (lo que se cita y se mantiene) fr
 | output/v5/{R1*, A*, B*, C*, D*, E} | VIGENTE | Salidas de los módulos v5 (resultado.json, tablas, figuras) |
 | output/v5_1/T1-T4, T6 | **VIGENTE** | Salidas de v5.1 |
 | output/v6/ | EN CURSO | v6 |
+| output/v6_1/ | EN CURSO | v6.1 (borrador): K1 líneas base, K2 inmigración, K3, K4a-K4d (auditoría de cifras, paneles, documentación) |
 | output/v4/ | HISTÓRICO | M0-M7 (los leen scripts de v5), verificador v4, informe_tecnico.md y lo_que_sabemos.md (citados por las plantillas v5) |
 | output/v3/ | HISTÓRICO | PA, PB, POT, GL, C1, C3, PD, verificador v3 (los leen scripts de v4 y v5) |
 | output/v2/ | HISTÓRICO | Ramas v2 e informe_v2.md |
@@ -56,6 +58,7 @@ Qué hay en cada carpeta y qué es **VIGENTE** (lo que se cita y se mantiene) fr
 | docs/v5/ | VIGENTE | Decisiones, backlog, pre-registro B3, licencias de datos, revisión humana (15 cifras), solicitudes, tareas del autor |
 | docs/v5_1/ | VIGENTE | Plan, estado, decisiones y revisión de v5.1 |
 | docs/v6/ | EN CURSO | Plan, estado, decisiones, auditoría y tareas del autor de v6 |
+| docs/v6_1/ | EN CURSO | Plan, estado, decisiones y auditorías (K4a, K4c-K4d) de v6.1 |
 | docs/v2/, docs/v3/, docs/v4/ | HISTÓRICO | Planes, decisiones, revisiones, fuentes fallidas e hipótesis de cada versión |
 | docs/*.md (raíz de docs), docs/fallidas/ | HISTÓRICO | v1: decisiones, revisiones F1-F7, literatura, fuentes fallidas |
 | docs/MAPA.md | VIGENTE | Este fichero |

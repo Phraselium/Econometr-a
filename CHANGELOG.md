@@ -2,6 +2,14 @@
 
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
+## v6.1 (borrador, pendiente de cierre)
+
+Borrador: se cierra al terminar K5 y K6. Contenido provisional (detalle en docs/v6_1/estado.md y docs/v6_1/decisiones.md):
+- K1 líneas base y K2 inmigración (una dimensión cada vez); K3 iniciadas y léxico predictivo/asociativo; K4a-K4b paneles y catastro.
+- K4c: coherencia de cifras entre entregables y output/v5/cifras_clave.csv (`src/v6_1/k4c_cifras.py`, test `tests/test_k4c_cifras.py`); avisos «histórico» en archive/; enlaces de figuras de los artículos corregidos.
+- K4d: DECLARACION_IA.md, versión 6.1 en CITATION.cff y .zenodo.json, marcas de cuartil en docs/literatura.md, comprobación de enlaces (`src/v6_1/k4d_docs.py`).
+- Las correcciones que cambian cifras publicadas van en ERRATA.md.
+
 ## v6.0 (2026-10-11)
 
 Alquiler y compraventa: qué explica y qué predice (módulos M0-M4; decisiones en docs/v6/decisiones.md). Todo es C4; ninguna cifra existente cambia de valor ni de capa.

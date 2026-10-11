@@ -163,7 +163,7 @@ La demografía contribuye de forma negativa en 2014-2019 por composición, no po
 > — `output/v2/BD/resumen.md`
 
 
-![Contribuciones por periodo](BS/contribuciones_periodo.png)
+![Contribuciones por periodo](contribuciones_periodo.png)
 
 *Figura: `output/v2/BS/contribuciones_periodo.png` (datos: `output/v2/BD/tabla_resumen.csv`).*
 

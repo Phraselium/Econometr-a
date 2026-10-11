@@ -1,0 +1,16 @@
+{
+ "enlaces_rotos": 0,
+ "md_revisados": 384,
+ "referencias_por_estado": {
+  "NO_VERIFICADA_MARCADA": 76,
+  "VERIFICADA_COMPLETA": 103,
+  "VERIFICADA_CUARTIL_NO_VERIFICADO": 11
+ },
+ "versiones": {
+  ".zenodo.json": "6.1",
+  "CHANGELOG.md (primera sección)": "6.1",
+  "CITATION.cff": "6.1",
+  "README.md": "6.1",
+  "README_REPLICACION.md": "6.1"
+ }
+}

@@ -41,7 +41,7 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 
 [C4] Según D1, la parte de una ayuda general que se traslada al precio, por clase territorial (A4, método A, rejilla de elasticidades de demanda): clase `1`, falta y es rentable, 27,8-81,8 %; clase `2`, la oferta no responde, 88,1-100,0 %; clase `3`, no rentable, 50,1-89,8 % [C4]. El extremo bajo se apoya en la literatura con oferta elástica (Eriksen y Ross, 2015) y el alto en la de oferta rígida (Gibbons y Manning, 2006; Hilber y Turner, 2014).
 
-[C4] Según D2, la construcción adicional planificada cubriría 29,1 % de la necesidad de las provincias donde falta vivienda y construir es rentable, y las vacías movilizables 30,2 %; ambas cifras son condicionales a los supuestos de B1 (versión v5 de la necesidad, no la recalculada en v5.1; ver informe técnico, D2).
+[C4] Según D2, la construcción adicional planificada cubriría 29,1 % de la necesidad de las provincias donde falta vivienda y construir es rentable, y las vacías movilizables 30,2 %; ambas cifras son condicionales a los supuestos de B1 (versión v5 de la necesidad, no la recalculada en v5.1; ver informe técnico, D2). <!-- check:cifra-libre (etiquetas de versión) -->
 
 [C2] El aumento de viviendas turísticas de 2020 a 2024 equivale como máximo a 2,7 % del stock de alquiler (2,4-2,7 % del stock de alquiler).
 

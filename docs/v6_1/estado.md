@@ -43,3 +43,18 @@ Plan de ahorro (D7): revisor post-K2 ≤60.000, K3 ≤70.000, K4c/K4d ≤90.000,
 - Revisor tras K2 (unos 74.000 tokens) y K2 rehecho una vez, solo el texto (unos 10.000 tokens): ver D9.
 - K4c y K4d en curso.
 - Acumulado: unos 920.000 tokens (K1 90k, K4b 170k, K4a 235k, K2 250k, revisor 74k, K3 50k, más K4c/K4d en curso).
+
+## K4c y K4d (terminados, unos 85.000 tokens)
+- Hecho: coherencia de cifras (0 huérfanas ni contradictorias reales en output/v5/*.md; 26 huérfanas de ficha en el verificador), enlaces (0 rotos), versión 6.1, DECLARACION_IA.md, marcas de cuartil en docs/literatura.md. Detalle: docs/v6_1/auditoria_K4cd.md.
+- Siguiente: commit de estos cambios (hacen pasar `make check` en check_v5); en el cierre, `make all` y verificar con red los cuartiles pendientes.
+- K4c/K4d terminado (139.884 tokens, por encima de su tope de 90.000).
+  - Entregables principales: 0 cifras huérfanas y 0 contradicciones reales.
+  - 32 enlaces rotos corregidos.
+  - Versión 6.1 en CITATION, .zenodo.json y README.
+  - DECLARACION_IA.md creada.
+  - 50 referencias marcadas «cuartil no verificado».
+  - k4c y k4d entran en make.
+- **Consumo acumulado de subagentes: 1.008.814 de 1.400.000 (72 %).**
+  - Hasta el corte del 80 % quedan unos 111.000 tokens, para K5 (≤100.000).
+  - El revisor final (≤60.000) sale de la reserva de cierre del 10 %.
+  - K6 lo hace el orquestador.

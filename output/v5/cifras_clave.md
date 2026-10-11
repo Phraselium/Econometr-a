@@ -282,9 +282,9 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 | E-E1-VLC-serpavi-med | Mediana entre distritos de la renta mediana SERPAVI 2024 | 8.03 | 5.87–10.9 | €/m²/mes | 2024 | 19 distritos de València | SERPAVI (MIVAU) | C4 | 2026-10-10 |
 | E-E1-VLC-serpavi-min | Renta mediana SERPAVI 2024, distrito Poblats Del Nord | 5.87 |  | €/m²/mes | 2024 | distrito Poblats Del Nord | SERPAVI (MIVAU) | C4 | 2026-10-10 |
 | E-E1-nprov | Provincias (y ciudades autónomas) de la contabilidad provincial B1/B2 | 52 |  | provincias | 2026-2035 | España | B2 | C4 | 2026-10-10 |
-| E-E1-ver-anc | Afirmaciones con veredicto «ANALIZADA, NO CONCLUYENTE» | 30 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
+| E-E1-ver-anc | Afirmaciones con veredicto «ANALIZADA, NO CONCLUYENTE» | 32 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
 | E-E1-ver-contr | Afirmaciones con veredicto «CONTRADICHA» | 1 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
-| E-E1-ver-n | Afirmaciones del debate evaluadas en el verificador v5 | 38 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
+| E-E1-ver-n | Afirmaciones del debate evaluadas en el verificador v5 | 40 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
 | E-E1-ver-nafd | Afirmaciones con veredicto «NO ANALIZADA: FALTAN DATOS» | 3 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
 | E-E1-ver-nresp | Afirmaciones con veredicto «NO RESPALDADA» | 1 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
 | E-E1-ver-parc | Afirmaciones con veredicto «PARCIALMENTE» | 3 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |

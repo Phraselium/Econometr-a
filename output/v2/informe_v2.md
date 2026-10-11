@@ -545,7 +545,7 @@ La prioridad es un ordenamiento de BS según su efecto sobre la inferencia; el t
 
 ## 12. Referencias (marca de verificación)
 
-Estado según `docs/literatura.md` (DOI comprobado en Crossref; cuartil leído de resultados de búsqueda de Scimago o de agregadores, en la mayoría de la edición 2025, no del año de publicación: «año publ. no comprobado»). No se inventa ninguna referencia: las **NO VERIFICADAS** son 2 y las de **cuartil no verificado**, 2.
+Estado según `docs/literatura.md` (DOI comprobado en Crossref; cuartil leído de resultados de búsqueda de Scimago o de agregadores, en la mayoría de la edición 2025, no del año de publicación: «año publ. no comprobado»). No se inventa ninguna referencia: las **NO VERIFICADAS** son 2 y las de **cuartil no verificado**, 3.
 
 | Referencia | DOI | Revista | Cuartil | Estado |
 |---|---|---|---|---|
@@ -581,7 +581,7 @@ Estado según `docs/literatura.md` (DOI comprobado en Crossref; cuartil leído d
 | Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916 | 10.1016/j.regsciurbeco.2023.103916 | Regional Science and Urban Economics | cuartil no verificado | VERIFICADA |
 | Banco de España (2026), Informe Anual 2025 | 10.53479/43565 | Banco de España (informe institucional) | n/a (informe) | VERIFICADA |
 
-NO VERIFICADAS: Lundberg y Lee (2017), NeurIPS 30 (SHAP), «A Unified Approach to Interpreting Model Predictions»; Ke et al. (2017), NeurIPS 30 (LightGBM), «LightGBM: A Highly Efficient Gradient Boosting Decision Tree». Cuartil no verificado: Roodman, Nielsen, MacKinnon y Webb (2019), 19(1), 4-60; Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916.
+NO VERIFICADAS: Lundberg y Lee (2017), NeurIPS 30 (SHAP), «A Unified Approach to Interpreting Model Predictions»; Ke et al. (2017), NeurIPS 30 (LightGBM), «LightGBM: A Highly Efficient Gradient Boosting Decision Tree». Cuartil no verificado: Roodman, Nielsen, MacKinnon y Webb (2019), 19(1), 4-60; Cavalleri, Cournède y Özsöğüt (2019), OECD ECO WP; Jofre-Monseny, Martínez-Mazza y Segú (2023), RSUE 101, 103916.
 
 *Fuente: `output/v2/tablas/referencias_v2.csv`; `docs/literatura.md`.*
 

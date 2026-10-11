@@ -523,32 +523,32 @@ De las 3.483 de F2, 1.728 son la búsqueda de corto plazo nominal y 1.728 la rea
 
 Marca según `docs/literatura.md`: VERIFICADA (comprobada contra Crossref/IDEAS/PDF oficial), PARCIAL (DOI, páginas o versión sin comprobar) y NO VERIFICADA. Se listan solo las referencias citadas en este informe o en los resúmenes de `output/`.
 
-Total: 55 (VERIFICADA: 42; PARCIAL: 11; NO VERIFICADA: 2).
+Total: 55 (VERIFICADA: 28; PARCIAL: 25; NO VERIFICADA: 2).
 
 - [VERIFICADA] Accetturo et al. (2014). Don't stand so close to me: The urban impact of immigration
 - [VERIFICADA] Bai y Perron (1998). Estimating and testing linear models with multiple structural changes
 - [VERIFICADA] Bai y Perron (2003). Computation and analysis of multiple structural change models
 - [PARCIAL] Banco de España (2025). Informe de Estabilidad Financiera, otoño 2025
 - [VERIFICADA] Banco de España (2026). Informe Anual 2025
-- [VERIFICADA] Banerjee, Dolado y Mestre (1998)
+- [PARCIAL] Banerjee, Dolado y Mestre (1998)
 - [PARCIAL] Bover y Jimeno (2007). House prices and employment reallocation: International evidence
-- [VERIFICADA] Breusch (1978)
+- [PARCIAL] Breusch (1978)
 - [PARCIAL] Breusch y Pagan (1979)
-- [VERIFICADA] Brown, Durbin y Evans (1975)
+- [PARCIAL] Brown, Durbin y Evans (1975)
 - [NO VERIFICADA] Caldera y Johansson (2013). The price responsiveness of housing supply in OECD countries
-- [VERIFICADA] Cameron, Gelbach y Miller (2008)
+- [PARCIAL] Cameron, Gelbach y Miller (2008)
 - [VERIFICADA] Card (2001). Immigrant inflows, native outflows, and the local labor market impacts of higher immigration
 - [NO VERIFICADA] Cavalleri et al. (2019). How responsive are housing markets in the OECD? OECD Economics Department Working Papers 1589
 - [PARCIAL] Chow (1960)
-- [VERIFICADA] Dickey y Fuller (1979)
+- [PARCIAL] Dickey y Fuller (1979)
 - [VERIFICADA] Diebold y Mariano (1995)
-- [VERIFICADA] Driscoll y Kraay (1998)
-- [VERIFICADA] Durbin y Watson (1950)
+- [PARCIAL] Driscoll y Kraay (1998)
+- [PARCIAL] Durbin y Watson (1950)
 - [VERIFICADA] Engle y Granger (1987). Co-integration and error correction: Representation, estimation, and testing
 - [VERIFICADA] Glaeser y Gyourko (2005). Urban decline and durable housing
 - [VERIFICADA] Glaeser y Gyourko (2018). The economic implications of housing supply
 - [PARCIAL] Godfrey (1978a)
-- [VERIFICADA] Godfrey (1978b)
+- [PARCIAL] Godfrey (1978b)
 - [VERIFICADA] Goldsmith-Pinkham et al. (2020). Bartik instruments: What, when, why, and how
 - [VERIFICADA] González y Ortega (2013). Immigration and housing booms: Evidence from Spain
 - [VERIFICADA] Hilber y Vermeulen (2016). The impact of supply constraints on house prices in England
@@ -558,22 +558,22 @@ Total: 55 (VERIFICADA: 42; PARCIAL: 11; NO VERIFICADA: 2).
 - [VERIFICADA] Johansen (1988). Statistical analysis of cointegration vectors
 - [VERIFICADA] Johansen (1991). Estimation and hypothesis testing of cointegration vectors in Gaussian vector autoregressive models
 - [VERIFICADA] Jordà (2005). Estimation and inference of impulse responses by local projections
-- [VERIFICADA] Juodis y Reese (2022)
-- [VERIFICADA] Kwiatkowski, Phillips, Schmidt y Shin (1992)
+- [PARCIAL] Juodis y Reese (2022)
+- [PARCIAL] Kwiatkowski, Phillips, Schmidt y Shin (1992)
 - [VERIFICADA] Leamer (1983)
 - [PARCIAL] MacKinnon (1996)
-- [VERIFICADA] MacKinnon y Webb (2018)
+- [PARCIAL] MacKinnon y Webb (2018)
 - [PARCIAL] Martínez Pagés y Maza (2003). Análisis del precio de la vivienda en España
 - [VERIFICADA] Mian y Sufi (2009). The consequences of mortgage credit expansion: Evidence from the U.S
 - [VERIFICADA] Mian y Sufi (2011). House prices, home equity-based borrowing, and the US household leverage crisis
 - [VERIFICADA] Newey y West (1987). A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent covariance matrix
 - [PARCIAL] Pesaran (2004)
 - [VERIFICADA] Pesaran (2006). Estimation and inference in large heterogeneous panels with a multifactor error structure
-- [VERIFICADA] Pesaran (2007)
-- [VERIFICADA] Pesaran (2015)
+- [PARCIAL] Pesaran (2007)
+- [PARCIAL] Pesaran (2015)
 - [VERIFICADA] Pesaran et al. (2001). Bounds testing approaches to the analysis of level relationships
 - [VERIFICADA] Poterba (1984). Tax subsidies to owner-occupied housing: An asset-market approach
-- [VERIFICADA] Ramsey (1969)
+- [PARCIAL] Ramsey (1969)
 - [VERIFICADA] Saiz (2007). Immigration and housing rents in American cities
 - [VERIFICADA] Saiz (2010). The geographic determinants of housing supply
 - [PARCIAL] Stock y Watson (1993)

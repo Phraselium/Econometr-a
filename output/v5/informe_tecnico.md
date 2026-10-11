@@ -548,7 +548,7 @@ La tabla completa, con documento y página de cada organismo, está en [output/v
 
 ### 10.2 Verificador de afirmaciones
 
-Se evalúan 38 afirmaciones del debate público: 30 afirmaciones quedan «analizada, no concluyente», 3 afirmaciones «parcialmente», 3 afirmaciones «no analizada: faltan datos» y 1 afirmaciones «contradicha» [C4]. Detalle en [output/v5/verificador/verificador.md](verificador/verificador.md).
+Se evalúan 40 afirmaciones del debate público: 32 afirmaciones quedan «analizada, no concluyente», 3 afirmaciones «parcialmente», 3 afirmaciones «no analizada: faltan datos» y 1 afirmaciones «contradicha» [C4]. Detalle en [output/v5/verificador/verificador.md](verificador/verificador.md).
 
 ### 10.3 Limitaciones de datos y método
 

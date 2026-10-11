@@ -431,7 +431,7 @@
  {
   "id": "E-E1-ver-n",
   "indicador": "Afirmaciones del debate evaluadas en el verificador v5",
-  "valor": 38,
+  "valor": 40,
   "min": null,
   "max": null,
   "unidad": "afirmaciones",
@@ -444,7 +444,7 @@
  {
   "id": "E-E1-ver-anc",
   "indicador": "Afirmaciones con veredicto «ANALIZADA, NO CONCLUYENTE»",
-  "valor": 30,
+  "valor": 32,
   "min": null,
   "max": null,
   "unidad": "afirmaciones",

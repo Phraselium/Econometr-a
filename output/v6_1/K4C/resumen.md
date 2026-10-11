@@ -1,6 +1,6 @@
 # K4c · Coherencia de cifras (resumen)
 
-Cifras significativas analizadas: 1989. Fuente de verdad: output/v5/cifras_clave.csv.
+Cifras significativas analizadas: 1991. Fuente de verdad: output/v5/cifras_clave.csv.
 
 ## Recuentos globales
 
@@ -9,7 +9,7 @@ Cifras significativas analizadas: 1989. Fuente de verdad: output/v5/cifras_clave
 | EN_CIFRAS_CLAVE | 818 |
 | HISTORICA_MARCADA | 503 |
 | SIN_FECHA | 637 |
-| HUERFANA | 26 |
+| HUERFANA | 28 |
 | CONTRADICTORIA | 5 |
 
 ## Recuentos por fichero
@@ -17,7 +17,7 @@ Cifras significativas analizadas: 1989. Fuente de verdad: output/v5/cifras_clave
 | fichero | EN_CIFRAS_CLAVE | HISTORICA_MARCADA | SIN_FECHA | HUERFANA | CONTRADICTORIA | total |
 |---|---|---|---|---|---|---|
 | README.md | 1 | 0 | 0 | 0 | 0 | 1 |
-| README_REPLICACION.md | 0 | 5 | 2 | 0 | 0 | 7 |
+| README_REPLICACION.md | 0 | 5 | 2 | 2 | 0 | 9 |
 | archive/output/v3/articulo.md | 0 | 160 | 0 | 0 | 0 | 160 |
 | archive/output/v3/informe_politica.md | 0 | 69 | 0 | 0 | 0 | 69 |
 | archive/output/v3/lo_que_sabemos.md | 0 | 59 | 0 | 0 | 0 | 59 |
@@ -86,3 +86,5 @@ Cifras significativas analizadas: 1989. Fuente de verdad: output/v5/cifras_clave
 - output/v5/verificador/verificador.md:579 · 200 ·  · «| Límites | Muestra 2007Q1-2026Q2 (T=78) corta para el ciclo; ADF con un rezago; el valor de descuento fija g=»
 - output/v5/verificador/verificador.md:638 · 180 ·  · «| Magnitud | Dirección nacional 2025-2030 (C2): empeora en 180 escenarios (terminadas: ritmo actual, cartera, »
 - output/v5/verificador/verificador.md:671 · 3,79 ·  · «| Intervalo | Brecha rentabilidad menos coste de uso (g=2 %): mediana 1,56 pp, rango -0,07 a 3,79 pp |»
+- README_REPLICACION.md:12 · 7.498 ·  · «| Tiempo | ≈2 min por ejecución completa ( , v1-v6, un solo hilo); medido dos veces en un clon limpio: 7.564 s»
+- README_REPLICACION.md:12 · 6.947 ·  · «| Tiempo | ≈2 min por ejecución completa ( , v1-v6, un solo hilo); medido dos veces en un clon limpio: 7.564 s»

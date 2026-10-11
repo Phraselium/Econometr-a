@@ -71,3 +71,24 @@ Plan de ahorro (D7): revisor post-K2 ≤60.000, K3 ≤70.000, K4c/K4d ≤90.000,
 - Acumulado de subagentes: 1.081.587 tokens (77 %). Queda el revisor final, a cargo de la reserva.
 - Revisor final (50.799 tokens): REHACER solo de texto (hallazgos 1-6), aplicado. Total de subagentes: 1.132.386 de 1.400.000 (81 %; el revisor final sale de la reserva de cierre).
 - Siguiente: `make check` y `make all` ×2 sin red en un clon limpio; después, cierre (CHANGELOG, CITATION y etiqueta local v6.1).
+
+## Cierre v6.1
+- Hecho `make all` ×2 sin red en un clon limpio de 8869886, con 7.498 s y 6.947 s; rc=0 las dos veces.
+  - Los md5 son idénticos salvo output/v2/BM/tiempos.json; como en v6, docs/v2/fallidas/ine.md depende del entorno.
+  - El clon regeneró 12 salidas propagadas (referencias de v2 tras D10, verificador con 40 afirmaciones, D3 con el redondeo K4a-01). Se copian al repositorio.
+- Hecho `make check`: 0 errores, con los tests K4a/K4c y check_texto, check_v5 y check_v6.
+- Tokens de subagentes, total 1.132.386 de 1.400.000 (81 %):
+
+  | Módulo | Tokens |
+  |---|---|
+  | K1 | 90.376 |
+  | K4b | 170.138 |
+  | K4a | 234.566 |
+  | K2 (incluido el texto rehecho) | 250.168 |
+  | Revisor tras K2 | 73.790 |
+  | K3 | 49.892 |
+  | K4c/K4d | 139.884 |
+  | K5 | 72.773 |
+  | Revisor final | 50.799 |
+
+- La etiqueta local v6.1 apunta al commit de cierre. El remoto rechaza las etiquetas (403): ver docs/v6_1/tareas_autor.md §1.

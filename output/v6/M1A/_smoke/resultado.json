@@ -1,0 +1,56 @@
+{
+ "rama": "v6/M1a",
+ "mercado": "alquiler de stock (SERPAVI; IPC como robustez)",
+ "pregunta": "Que variables se asocian con el alquiler de stock en provincia, municipio y distrito (regresores en t-1)?",
+ "capa": "C4",
+ "medida_precio": "SERPAVI mediana VC (EUR/m2/mes); distritos: punto medio p25-p75; IPC alquiler (robustez)",
+ "datos": "output/v6/M0/paneles/{prov,mun,dis}_alquiler_anual_train.csv.gz + regresores de prov_compra_anual_train; solo entrenamiento (provincias <= 2023); centroides data/raw/v5",
+ "N": {
+  "provincia_S0": {
+   "N": 105,
+   "unidades": 35
+  },
+  "municipio_S0": {
+   "N": 743,
+   "unidades": 251
+  },
+  "distrito_S0": {
+   "N": 638,
+   "unidades": 319
+  }
+ },
+ "metodo": "TWFE (EF unidad y anio) con y sin tendencias; wild cluster bootstrap Webb y Rademacher B=99 por CCAA; Driscoll-Kraay; Conley (distritos); CCEP/CCEMG, MG, SDM 2SLS, DML RF; exposicion tipo BHJ; event study + RR; Oster y Cinelli-Hazlett",
+ "estimacion": "ver tabla_coeficientes.csv y tabla_magnitudes_eur_mes.csv",
+ "ic95": "IC t(G-1) con EE por clúster CCAA en tabla_coeficientes.csv (p = wild bootstrap)",
+ "p_ajustado": "Holm en S0 de cada nivel; BH en el resto (tabla_coeficientes.csv)",
+ "nivel_evidencia": "EXPLORATORIO / ASOCIACION ROBUSTA segun variable (columna nivel_evidencia); ninguna es CAUSAL",
+ "diagnosticos": "diagnosticos.json",
+ "fuera_muestra": {
+  "modelo": "M1 (EF de unidad + tendencia comun + regresores t-1, S1)",
+  "rmse": 0.02257917319805964,
+  "rmse_ar4": 0.09151062208416821,
+  "rmse_ecm_v1_aprox": 0.022131333814075276,
+  "dm_vs_ar4": {
+   "DM_HLN": -12.181222517465233,
+   "p": 7.364275341218465e-19,
+   "n": 70
+  },
+  "dm_vs_ecm_v1": {
+   "DM_HLN": 0.22582839168495486,
+   "p": 0.822002478711833,
+   "n": 70
+  },
+  "origen": 2020,
+  "embargo": "2021",
+  "validacion": "2022-2023",
+  "unidades": 38,
+  "nota": "un solo origen (T corto: AR(4) exige 4 retardos); errores agrupados por provincia-anio; regresores t-1 observados (prediccion condicional); ECM v1 aproximado (Delta y sobre y(t-1) y X(t-1), MCO agrupado); no usa la parte sellada"
+ },
+ "contratos_nuevos": {
+  "mercado": "contratos nuevos (fianzas)",
+  "capa": "C4",
+  "nivel_evidencia": "DESCRIPTIVO",
+  "nota": "GVA 12 obs y Incasol 12 obs en provincia: sin potencia, descriptivo (contratos_descriptivo.csv); IPVA nuevo contrato TWFE exploratorio (N~100)"
+ },
+ "notas": "Predictores y asociaciones; sin lenguaje causal. Desviaciones: desviaciones.md. Cifras con fecha del dato 2023."
+}

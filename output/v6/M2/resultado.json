@@ -1,0 +1,359 @@
+{
+  "rama": "v6/M2",
+  "capa": "C4",
+  "nivel_evidencia": "EXPLORATORIO",
+  "pregunta": "Incertidumbre de modelo en alquiler (stock) y compra (precio y volumen): PIP, PDS y multiverso.",
+  "metodo": "BMA (enumeración, g=max(N,K²), uniforme y beta-binomial), elastic net + PDS con CV en bloques y embargo 1 año, multiverso de especificaciones; FE de unidad y año; BH q=0,10 sobre el registro.",
+  "datos": "output/v6/M0/paneles/*_train.csv.gz (provincia anual; municipio y distrito con regresores provinciales unidos)",
+  "N": {
+    "alquiler_prov_completa": 106,
+    "compra_prov_completa": 64
+  },
+  "estimacion": {
+    "alquiler_prov": [
+      {
+        "variable": "ln_pob",
+        "pip": 1.0,
+        "bma_media_pct": 10.0697,
+        "mv_mediana_pct": 5.3119,
+        "mv_pct_mismo_signo": 82.5
+      },
+      {
+        "variable": "share_ext_pob",
+        "pip": 0.2971,
+        "bma_media_pct": 0.3811,
+        "mv_mediana_pct": 0.2366,
+        "mv_pct_mismo_signo": 66.6667
+      },
+      {
+        "variable": "ln_pib_pc",
+        "pip": 0.0972,
+        "bma_media_pct": 0.0106,
+        "mv_mediana_pct": 0.0635,
+        "mv_pct_mismo_signo": 55.0
+      },
+      {
+        "variable": "ln_vut",
+        "pip": 0.116,
+        "bma_media_pct": -0.0117,
+        "mv_mediana_pct": 0.0092,
+        "mv_pct_mismo_signo": 62.5
+      },
+      {
+        "variable": "ln_terminadas_libres",
+        "pip": 0.1688,
+        "bma_media_pct": -0.0054,
+        "mv_mediana_pct": 0.0013,
+        "mv_pct_mismo_signo": 54.1667
+      },
+      {
+        "variable": "ln_iniciadas_libres",
+        "pip": 0.0891,
+        "bma_media_pct": -0.0002,
+        "mv_mediana_pct": 0.0023,
+        "mv_pct_mismo_signo": 64.5833
+      },
+      {
+        "variable": "n_mun_topes_cat",
+        "pip": 0.2313,
+        "bma_media_pct": 0.0066,
+        "mv_mediana_pct": 0.0005,
+        "mv_pct_mismo_signo": 54.1667
+      }
+    ],
+    "compra_precio_prov": [
+      {
+        "variable": "ln_pob",
+        "pip": 0.7633,
+        "bma_media_pct": 14.2356,
+        "mv_mediana_pct": 6.0628,
+        "mv_pct_mismo_signo": 71.875
+      },
+      {
+        "variable": "share_ext_pob",
+        "pip": 0.3083,
+        "bma_media_pct": 1.2086,
+        "mv_mediana_pct": 1.0554,
+        "mv_pct_mismo_signo": 60.9375
+      },
+      {
+        "variable": "ln_pib_pc",
+        "pip": 0.8436,
+        "bma_media_pct": 3.773,
+        "mv_mediana_pct": -0.0482,
+        "mv_pct_mismo_signo": 51.25
+      },
+      {
+        "variable": "paro_tasa",
+        "pip": 0.1314,
+        "bma_media_pct": 0.0532,
+        "mv_mediana_pct": 0.0487,
+        "mv_pct_mismo_signo": 50.0
+      },
+      {
+        "variable": "ln_ocupados_miles",
+        "pip": 0.1964,
+        "bma_media_pct": 0.6031,
+        "mv_mediana_pct": 0.7683,
+        "mv_pct_mismo_signo": 87.5
+      },
+      {
+        "variable": "ln_terminadas_libres",
+        "pip": 0.1163,
+        "bma_media_pct": -0.0124,
+        "mv_mediana_pct": 0.0125,
+        "mv_pct_mismo_signo": 56.25
+      },
+      {
+        "variable": "ln_iniciadas_libres",
+        "pip": 0.1236,
+        "bma_media_pct": 0.0149,
+        "mv_mediana_pct": 0.0027,
+        "mv_pct_mismo_signo": 55.0
+      },
+      {
+        "variable": "ln_suelo_pm2_m50k",
+        "pip": 0.1448,
+        "bma_media_pct": 0.031,
+        "mv_mediana_pct": 0.0175,
+        "mv_pct_mismo_signo": 56.25
+      },
+      {
+        "variable": "ln_vut",
+        "pip": 0.0954,
+        "bma_media_pct": -0.0048,
+        "mv_mediana_pct": 0.0764,
+        "mv_pct_mismo_signo": 56.25
+      },
+      {
+        "variable": "ln_hip_viv_num",
+        "pip": 0.1217,
+        "bma_media_pct": 0.093,
+        "mv_mediana_pct": 0.0504,
+        "mv_pct_mismo_signo": 62.5
+      }
+    ],
+    "compra_volumen_prov": [
+      {
+        "variable": "ln_pob",
+        "pip": 0.0976,
+        "bma_media_pct": -0.1011,
+        "mv_mediana_pct": -11.4141,
+        "mv_pct_mismo_signo": 68.75
+      },
+      {
+        "variable": "share_ext_pob",
+        "pip": 0.1115,
+        "bma_media_pct": 0.2641,
+        "mv_mediana_pct": 2.8728,
+        "mv_pct_mismo_signo": 67.1875
+      },
+      {
+        "variable": "ln_pib_pc",
+        "pip": 0.0926,
+        "bma_media_pct": 0.0557,
+        "mv_mediana_pct": 0.1533,
+        "mv_pct_mismo_signo": 55.0
+      },
+      {
+        "variable": "paro_tasa",
+        "pip": 0.2237,
+        "bma_media_pct": -0.3292,
+        "mv_mediana_pct": -0.053,
+        "mv_pct_mismo_signo": 53.125
+      },
+      {
+        "variable": "ln_ocupados_miles",
+        "pip": 0.1017,
+        "bma_media_pct": -0.006,
+        "mv_mediana_pct": -1.2433,
+        "mv_pct_mismo_signo": 62.5
+      },
+      {
+        "variable": "ln_terminadas_libres",
+        "pip": 0.1128,
+        "bma_media_pct": -0.0319,
+        "mv_mediana_pct": -0.0411,
+        "mv_pct_mismo_signo": 63.75
+      },
+      {
+        "variable": "ln_iniciadas_libres",
+        "pip": 0.9774,
+        "bma_media_pct": -1.4585,
+        "mv_mediana_pct": -0.2181,
+        "mv_pct_mismo_signo": 52.5
+      },
+      {
+        "variable": "ln_suelo_pm2_m50k",
+        "pip": 0.0961,
+        "bma_media_pct": 0.0186,
+        "mv_mediana_pct": -0.4654,
+        "mv_pct_mismo_signo": 87.5
+      },
+      {
+        "variable": "ln_vut",
+        "pip": 0.1384,
+        "bma_media_pct": 0.1219,
+        "mv_mediana_pct": -0.9173,
+        "mv_pct_mismo_signo": 70.0
+      },
+      {
+        "variable": "ln_hip_viv_num",
+        "pip": 0.0913,
+        "bma_media_pct": -0.025,
+        "mv_mediana_pct": 0.6625,
+        "mv_pct_mismo_signo": 64.5833
+      }
+    ]
+  },
+  "ic95": {
+    "alquiler_prov": {
+      "ln_pob": [
+        6.855,
+        12.991
+      ],
+      "share_ext_pob": [
+        0.0,
+        2.262
+      ],
+      "ln_pib_pc": [
+        -0.046,
+        0.277
+      ],
+      "ln_vut": [
+        -0.243,
+        0.034
+      ],
+      "ln_terminadas_libres": [
+        -0.06,
+        0.0
+      ],
+      "ln_iniciadas_libres": [
+        -0.02,
+        0.016
+      ],
+      "n_mun_topes_cat": [
+        0.0,
+        0.054
+      ]
+    },
+    "compra_precio_prov": {
+      "ln_pob": [
+        0.0,
+        26.548
+      ],
+      "share_ext_pob": [
+        0.0,
+        6.508
+      ],
+      "ln_pib_pc": [
+        0.0,
+        7.434
+      ],
+      "paro_tasa": [
+        -0.124,
+        0.847
+      ],
+      "ln_ocupados_miles": [
+        0.0,
+        5.89
+      ],
+      "ln_terminadas_libres": [
+        -0.254,
+        0.019
+      ],
+      "ln_iniciadas_libres": [
+        0.0,
+        0.258
+      ],
+      "ln_suelo_pm2_m50k": [
+        -0.009,
+        0.407
+      ],
+      "ln_vut": [
+        -0.258,
+        0.233
+      ],
+      "ln_hip_viv_num": [
+        0.0,
+        1.696
+      ]
+    }
+  },
+  "p_ajustado": {
+    "metodo": "BH q=0,10 sobre registro (multiverso + PDS)",
+    "n_contrastes": 4586,
+    "n_rechazos": 323,
+    "archivo": "output/v6/M2/registro_bh.csv"
+  },
+  "diagnosticos": {
+    "top_pip_alquiler": [
+      {
+        "variable": "ln_pob",
+        "pip": 1.0
+      },
+      {
+        "variable": "share_ext_pob",
+        "pip": 0.297
+      },
+      {
+        "variable": "n_mun_topes_cat",
+        "pip": 0.231
+      }
+    ],
+    "top_pip_compra_precio": [
+      {
+        "variable": "ln_pib_pc",
+        "pip": 0.844
+      },
+      {
+        "variable": "ln_pob",
+        "pip": 0.763
+      },
+      {
+        "variable": "share_ext_pob",
+        "pip": 0.308
+      }
+    ],
+    "top_pip_compra_volumen": [
+      {
+        "variable": "ln_iniciadas_libres",
+        "pip": 0.977
+      },
+      {
+        "variable": "paro_tasa",
+        "pip": 0.224
+      },
+      {
+        "variable": "ln_vut",
+        "pip": 0.138
+      }
+    ],
+    "discrepancias_mercados": [
+      {
+        "variable": "share_ext_pob",
+        "discrepancia_mercados": "pesa en COMPRA y no en ALQUILER (núcleo)"
+      },
+      {
+        "variable": "ln_pib_pc",
+        "discrepancia_mercados": "pesa en COMPRA y no en ALQUILER (set completo)"
+      },
+      {
+        "variable": "ln_iniciadas_libres",
+        "discrepancia_mercados": "pesa en ALQUILER y no en COMPRA (núcleo)"
+      }
+    ]
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "mercado": [
+    "alquiler de stock (SERPAVI)",
+    "precio de compra",
+    "volumen de compra"
+  ],
+  "medida_precio": "valor tasado MIVAU (provincia y municipio); robustez: Registradores",
+  "notas": "Sin modelo de contratos nuevos (N≈15, pre-registro §3). Fuera de muestra no evaluado en M2 (se hace en M4 con evaluate_v6). PIP mide soporte asociativo; nada causal. Ver desviaciones.md."
+}

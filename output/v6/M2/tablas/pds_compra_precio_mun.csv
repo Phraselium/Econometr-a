@@ -1,0 +1,19 @@
+variable,seleccion_enet,n_controles_sel,sel_y,sel_x,coef_pds,ic_lo,ic_hi,p_pds,muestra,n
+ln_pob,True,7,"['share_ext_pob', 'ln_pib_pc', 'paro_tasa', 'ln_ocupados_miles', 'ln_vut']","['share_ext_pob', 'ln_pib_pc', 'ln_ocupados_miles', 'ln_iniciadas_libres', 'ln_suelo_pm2_m50k', 'ln_vut']",-0.5848365812998205,-2.6626059259492476,1.4929327633496068,0.5867230934657424,completa,574
+share_ext_pob,True,8,"['ln_pob', 'ln_pib_pc', 'ln_vut']","['ln_pob', 'ln_pib_pc', 'ln_ocupados_miles', 'ln_terminadas_libres', 'ln_iniciadas_libres', 'ln_suelo_pm2_m50k', 'ln_vut', 'ln_hip_viv_num']",0.04455731405165835,-0.010634368108570338,0.09974899621188704,0.127841650136308,completa,574
+ln_pib_pc,True,4,"['ln_pob', 'share_ext_pob', 'paro_tasa', 'ln_vut']",[],0.5216466035706754,0.2111364914134603,0.8321567157278904,0.00331876910948308,completa,574
+paro_tasa,True,7,"['ln_pob', 'share_ext_pob', 'ln_pib_pc', 'ln_vut']","['ln_pob', 'share_ext_pob', 'ln_ocupados_miles', 'ln_terminadas_libres', 'ln_iniciadas_libres', 'ln_vut']",0.020690365997657452,0.010971891312754292,0.03040884068256061,0.0003956442729330973,completa,574
+ln_ocupados_miles,False,5,"['ln_pob', 'share_ext_pob', 'ln_pib_pc', 'paro_tasa', 'ln_vut']","['ln_pob', 'share_ext_pob', 'paro_tasa']",1.0130462437833172,0.3874051147961699,1.6386873727704645,0.004396375819732388,completa,574
+ln_terminadas_libres,False,6,"['ln_pob', 'share_ext_pob', 'ln_pib_pc', 'paro_tasa', 'ln_vut']","['share_ext_pob', 'ln_pib_pc', 'ln_iniciadas_libres', 'ln_vut']",0.012039178864492768,-0.018641561507111153,0.042719919236096686,0.4500082722012103,completa,574
+ln_iniciadas_libres,False,5,"['ln_pob', 'share_ext_pob', 'ln_pib_pc', 'paro_tasa', 'ln_vut']",[],0.015838570828649055,-0.018489579401129955,0.050166721058428065,0.37562300523223585,completa,574
+ln_suelo_pm2_m50k,False,5,"['ln_pob', 'share_ext_pob', 'ln_pib_pc', 'paro_tasa', 'ln_vut']","['paro_tasa', 'ln_vut']",0.010023191686350191,-0.03393210599026491,0.053978489362965294,0.6592861366626924,completa,574
+ln_vut,True,4,"['ln_pob', 'ln_pib_pc']","['share_ext_pob', 'ln_suelo_pm2_m50k']",0.08585618425158402,0.036969432171810916,0.13474293633135712,0.002324679222977737,completa,574
+ln_hip_viv_num,False,5,"['ln_pob', 'share_ext_pob', 'ln_pib_pc', 'paro_tasa', 'ln_vut']",[],0.007498497951965667,-0.12130397867423423,0.13630097457816556,0.9101892060029806,completa,574
+ln_pob,True,5,"['share_ext_pob', 'ln_terminadas_libres']","['share_ext_pob', 'paro_tasa', 'ln_ocupados_miles', 'ln_terminadas_libres', 'ln_hip_viv_num']",2.0006123844481305,0.685057806538951,3.3161669623573102,0.005282989023485983,nucleo,1673
+share_ext_pob,False,3,"['ln_pob', 'ln_terminadas_libres']","['ln_pob', 'paro_tasa']",0.009282842164854517,-0.015008702288093626,0.03357438661780266,0.45900792410822944,nucleo,1673
+ln_pib_pc,False,5,['ln_pob'],"['ln_pob', 'share_ext_pob', 'paro_tasa', 'ln_ocupados_miles', 'ln_iniciadas_libres']",0.24392478884839996,-0.062087964543333984,0.5499375422401339,0.12747154866606134,nucleo,1673
+paro_tasa,False,4,['ln_pob'],"['ln_pob', 'share_ext_pob', 'ln_ocupados_miles', 'ln_iniciadas_libres']",-0.002172575568943307,-0.007940071173858018,0.0035949200359714035,0.46538707685786945,nucleo,1673
+ln_ocupados_miles,False,3,['ln_pob'],"['ln_pob', 'share_ext_pob', 'paro_tasa']",-0.15269306867916999,-0.5516911623301701,0.2463050249718302,0.45836899365795103,nucleo,1673
+ln_terminadas_libres,False,2,['ln_pob'],"['ln_pob', 'ln_iniciadas_libres']",0.024055315053215134,0.007275363965380217,0.040835266141050056,0.008161890201170538,nucleo,1673
+ln_iniciadas_libres,False,4,"['ln_pob', 'ln_terminadas_libres']","['paro_tasa', 'ln_terminadas_libres', 'ln_hip_viv_num']",0.014230414033147634,-0.004477738607820303,0.03293856667411557,0.14521313707657343,nucleo,1673
+ln_hip_viv_num,False,3,['ln_pob'],"['ln_pob', 'ln_ocupados_miles', 'ln_iniciadas_libres']",-0.014434235842329127,-0.15190593499170446,0.12303746330704622,0.8381776967260487,nucleo,1673

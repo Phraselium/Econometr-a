@@ -1,0 +1,14 @@
+variable,seleccion_enet,n_controles_sel,sel_y,sel_x,coef_pds,ic_lo,ic_hi,p_pds,muestra,n
+ln_pob,True,6,"['share_ext_pob', 'ln_pib_pc', 'ln_vut', 'ln_terminadas_libres', 'ln_iniciadas_libres', 'n_mun_topes_cat']","['share_ext_pob', 'ln_vut', 'ln_terminadas_libres', 'ln_iniciadas_libres']",0.8750191628954094,0.3935482920983282,1.3564900336924905,0.0010845574150475023,completa,106
+share_ext_pob,True,1,['ln_pob'],['ln_pob'],0.013048916270344102,-0.010117383000661277,0.03621521554134948,0.2771204727310671,completa,106
+ln_pib_pc,False,2,"['ln_pob', 'share_ext_pob']",[],0.015668324020722317,-0.0501018608440929,0.08143850888553752,0.6434454128643686,completa,106
+ln_vut,False,6,"['ln_pob', 'share_ext_pob']","['ln_pob', 'share_ext_pob', 'ln_pib_pc', 'ln_terminadas_libres', 'ln_iniciadas_libres', 'n_mun_topes_cat']",-0.021591327098868206,-0.0665334883848494,0.023350834187112993,0.3528351335068877,completa,106
+ln_terminadas_libres,False,2,"['ln_pob', 'share_ext_pob']",[],-0.0035459304050422594,-0.007829364067438525,0.0007375032573540075,0.11366338707428185,completa,106
+ln_iniciadas_libres,False,2,"['ln_pob', 'share_ext_pob']",[],0.0005612822486220631,-0.0067483275084337215,0.007870892005677848,0.881232357513785,completa,106
+n_mun_topes_cat,False,2,"['ln_pob', 'share_ext_pob']",[],0.00022006141407650138,4.454005060708827e-05,0.0003955827775459145,0.019094197421593448,completa,106
+ln_pob,True,5,"['share_ext_pob', 'ln_terminadas_libres', 'ln_iniciadas_libres', 'n_mun_topes_cat']","['share_ext_pob', 'ln_pib_pc', 'ln_terminadas_libres', 'ln_iniciadas_libres', 'n_mun_topes_cat']",1.04011774485017,0.6630912855049591,1.4171442041953808,4.672630432571822e-06,nucleo,281
+share_ext_pob,False,3,"['ln_pob', 'ln_iniciadas_libres']","['ln_pob', 'n_mun_topes_cat']",-0.0002676618150489393,-0.015316667604092228,0.014781343973994351,0.9723889709952448,nucleo,281
+ln_pib_pc,False,4,"['ln_pob', 'ln_iniciadas_libres']","['ln_pob', 'share_ext_pob', 'ln_terminadas_libres', 'ln_iniciadas_libres']",0.042760502313812794,-0.02623934477424985,0.11176034940187543,0.23263154175329828,nucleo,281
+ln_terminadas_libres,False,2,"['ln_pob', 'ln_iniciadas_libres']",['ln_pob'],-0.0002563202540711093,-0.008210525537831134,0.007697885029688915,0.9499984260531071,nucleo,281
+ln_iniciadas_libres,True,1,['ln_pob'],[],0.010350122873592766,0.0010152236681462874,0.019685022079039244,0.0366222433580238,nucleo,281
+n_mun_topes_cat,False,4,"['ln_pob', 'ln_iniciadas_libres']","['ln_pob', 'share_ext_pob', 'ln_pib_pc', 'ln_iniciadas_libres']",-0.00021881743216680747,-0.0006975785560550826,0.00025994369172146765,0.3764707642152268,nucleo,281

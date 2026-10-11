@@ -1,0 +1,563 @@
+[
+ {
+  "id": "m1a_provincia_S0_ln_pob",
+  "indicador": "Alquiler de stock (provincia): +10.000 habitantes; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 4.63,
+  "min": 1.13,
+  "max": 8.16,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "35 unidades, N=105",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S0_share_ext_pob",
+  "indicador": "Alquiler de stock (provincia): +1 punto de población extranjera; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 5.45,
+  "min": -4.32,
+  "max": 15.44,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "35 unidades, N=105",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S0_ln_pib_pc",
+  "indicador": "Alquiler de stock (provincia): +1.000 EUR de PIB por habitante; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 0.05,
+  "min": -1.7,
+  "max": 1.8,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "35 unidades, N=105",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S0_ln_vut",
+  "indicador": "Alquiler de stock (provincia): +1.000 viviendas turísticas; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": -1.58,
+  "min": -6.62,
+  "max": 3.53,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "35 unidades, N=105",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S0_ln_terminadas_libres",
+  "indicador": "Alquiler de stock (provincia): +1.000 viviendas libres terminadas; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": -0.85,
+  "min": -1.98,
+  "max": 0.28,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "35 unidades, N=105",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S0_ln_iniciadas_libres",
+  "indicador": "Alquiler de stock (provincia): +1.000 viviendas libres iniciadas; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": -0.17,
+  "min": -1.98,
+  "max": 1.65,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "35 unidades, N=105",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S0_n_mun_tensionados",
+  "indicador": "Alquiler de stock (provincia): +1 municipio tensionado; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 0.0,
+  "min": 0.0,
+  "max": 0.0,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "35 unidades, N=105",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S0_n_mun_topes_cat",
+  "indicador": "Alquiler de stock (provincia): +1 municipio con tope; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 0.18,
+  "min": -0.11,
+  "max": 0.48,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "35 unidades, N=105",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S1_ln_pob",
+  "indicador": "Alquiler de stock (provincia): +10.000 habitantes; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 5.07,
+  "min": 3.1,
+  "max": 7.04,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "35 unidades, N=280",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S1_share_ext_pob",
+  "indicador": "Alquiler de stock (provincia): +1 punto de población extranjera; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 0.05,
+  "min": -6.47,
+  "max": 6.68,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "35 unidades, N=280",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S1_ln_pib_pc",
+  "indicador": "Alquiler de stock (provincia): +1.000 EUR de PIB por habitante; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 0.75,
+  "min": -0.99,
+  "max": 2.5,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "35 unidades, N=280",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S1_ln_terminadas_libres",
+  "indicador": "Alquiler de stock (provincia): +1.000 viviendas libres terminadas; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 0.05,
+  "min": -4.01,
+  "max": 4.16,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "35 unidades, N=280",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S1_ln_iniciadas_libres",
+  "indicador": "Alquiler de stock (provincia): +1.000 viviendas libres iniciadas; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 2.21,
+  "min": -2.32,
+  "max": 6.79,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "35 unidades, N=280",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S1_n_mun_tensionados",
+  "indicador": "Alquiler de stock (provincia): +1 municipio tensionado; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 0.0,
+  "min": 0.0,
+  "max": 0.0,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "35 unidades, N=280",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_provincia_S1_n_mun_topes_cat",
+  "indicador": "Alquiler de stock (provincia): +1 municipio con tope; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": -0.09,
+  "min": -0.37,
+  "max": 0.19,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "35 unidades, N=280",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S0_ln_pob",
+  "indicador": "Alquiler de stock (municipio): +10.000 habitantes; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 1.24,
+  "min": -1.11,
+  "max": 3.59,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "251 unidades, N=743",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S0_share_ext_pob",
+  "indicador": "Alquiler de stock (municipio): +1 punto de población extranjera; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 13.87,
+  "min": -9.83,
+  "max": 39.1,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "251 unidades, N=743",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S0_ln_pib_pc",
+  "indicador": "Alquiler de stock (municipio): +1.000 EUR de PIB por habitante; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 0.62,
+  "min": -1.91,
+  "max": 3.16,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "251 unidades, N=743",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S0_ln_vut",
+  "indicador": "Alquiler de stock (municipio): +1.000 viviendas turísticas; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": -0.78,
+  "min": -2.99,
+  "max": 1.44,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "251 unidades, N=743",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S0_ln_terminadas_libres",
+  "indicador": "Alquiler de stock (municipio): +1.000 viviendas libres terminadas; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 1.75,
+  "min": 0.16,
+  "max": 3.34,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "251 unidades, N=743",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S0_ln_iniciadas_libres",
+  "indicador": "Alquiler de stock (municipio): +1.000 viviendas libres iniciadas; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": -0.34,
+  "min": -3.13,
+  "max": 2.48,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "251 unidades, N=743",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S0_tensionada_mun",
+  "indicador": "Alquiler de stock (municipio): municipio pasa a zona tensionada; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 0.0,
+  "min": 0.0,
+  "max": 0.0,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "251 unidades, N=743",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S0_tope_cat_mun",
+  "indicador": "Alquiler de stock (municipio): municipio pasa a tope; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 5.9,
+  "min": 0.94,
+  "max": 10.92,
+  "unidad": "EUR/mes",
+  "periodo": "2021.0-2023.0",
+  "cobertura": "251 unidades, N=743",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S1_ln_pob",
+  "indicador": "Alquiler de stock (municipio): +10.000 habitantes; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 1.61,
+  "min": 0.5,
+  "max": 2.73,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "251 unidades, N=1882",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S1_share_ext_pob",
+  "indicador": "Alquiler de stock (municipio): +1 punto de población extranjera; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 3.09,
+  "min": -1.01,
+  "max": 7.25,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "251 unidades, N=1882",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S1_ln_pib_pc",
+  "indicador": "Alquiler de stock (municipio): +1.000 EUR de PIB por habitante; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 1.83,
+  "min": -0.97,
+  "max": 4.67,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "251 unidades, N=1882",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S1_ln_terminadas_libres",
+  "indicador": "Alquiler de stock (municipio): +1.000 viviendas libres terminadas; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 0.76,
+  "min": -0.87,
+  "max": 2.4,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "251 unidades, N=1882",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S1_ln_iniciadas_libres",
+  "indicador": "Alquiler de stock (municipio): +1.000 viviendas libres iniciadas; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 0.76,
+  "min": -0.51,
+  "max": 2.03,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "251 unidades, N=1882",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S1_tensionada_mun",
+  "indicador": "Alquiler de stock (municipio): municipio pasa a zona tensionada; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 0.0,
+  "min": 0.0,
+  "max": 0.0,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "251 unidades, N=1882",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_municipio_S1_tope_cat_mun",
+  "indicador": "Alquiler de stock (municipio): municipio pasa a tope; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": 1.47,
+  "min": -1.6,
+  "max": 4.58,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "251 unidades, N=1882",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_distrito_S0_ln_vut_plazas_dis",
+  "indicador": "Alquiler de stock (distrito): +100 plazas turísticas en el distrito; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": -0.12,
+  "min": -1.47,
+  "max": 1.23,
+  "unidad": "EUR/mes",
+  "periodo": "2022.0-2023.0",
+  "cobertura": "319 unidades, N=638",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_distrito_S0_ln_pib_pc",
+  "indicador": "Alquiler de stock (distrito): +1.000 EUR de PIB por habitante; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": -0.66,
+  "min": -5.68,
+  "max": 4.42,
+  "unidad": "EUR/mes",
+  "periodo": "2022.0-2023.0",
+  "cobertura": "319 unidades, N=638",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ },
+ {
+  "id": "m1a_distrito_S1_ln_pib_pc",
+  "indicador": "Alquiler de stock (distrito): +1.000 EUR de PIB por habitante; asociacion con el alquiler SERPAVI, regresor en t-1",
+  "valor": -1.43,
+  "min": -4.37,
+  "max": 1.53,
+  "unidad": "EUR/mes",
+  "periodo": "2016.0-2023.0",
+  "cobertura": "379 unidades, N=2768",
+  "fuentes": [
+   "MIVAU-SERPAVI",
+   "INE",
+   "MIVAU"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2023 (SERPAVI)"
+ }
+]

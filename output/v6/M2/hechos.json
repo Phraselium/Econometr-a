@@ -1,0 +1,407 @@
+[
+ {
+  "id": "m2_pip_alq_ln_pob",
+  "indicador": "PIP BMA de ln_pob, alquiler de stock (SERPAVI), provincia",
+  "valor": 1.0,
+  "min": 1.0,
+  "max": 1.0,
+  "unidad": "probabilidad",
+  "periodo": "2015-2023",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_alq_share_ext_pob",
+  "indicador": "PIP BMA de share_ext_pob, alquiler de stock (SERPAVI), provincia",
+  "valor": 0.2971,
+  "min": 0.062,
+  "max": 0.1531,
+  "unidad": "probabilidad",
+  "periodo": "2015-2023",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_alq_ln_pib_pc",
+  "indicador": "PIP BMA de ln_pib_pc, alquiler de stock (SERPAVI), provincia",
+  "valor": 0.0972,
+  "min": 0.1881,
+  "max": 0.0481,
+  "unidad": "probabilidad",
+  "periodo": "2015-2023",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_alq_ln_vut",
+  "indicador": "PIP BMA de ln_vut, alquiler de stock (SERPAVI), provincia",
+  "valor": 0.116,
+  "min": null,
+  "max": 0.0551,
+  "unidad": "probabilidad",
+  "periodo": "2015-2023",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_alq_ln_terminadas_libres",
+  "indicador": "PIP BMA de ln_terminadas_libres, alquiler de stock (SERPAVI), provincia",
+  "valor": 0.1688,
+  "min": 0.0566,
+  "max": 0.0834,
+  "unidad": "probabilidad",
+  "periodo": "2015-2023",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_alq_ln_iniciadas_libres",
+  "indicador": "PIP BMA de ln_iniciadas_libres, alquiler de stock (SERPAVI), provincia",
+  "valor": 0.0891,
+  "min": 0.9698,
+  "max": 0.0441,
+  "unidad": "probabilidad",
+  "periodo": "2015-2023",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_alq_n_mun_topes_cat",
+  "indicador": "PIP BMA de n_mun_topes_cat, alquiler de stock (SERPAVI), provincia",
+  "valor": 0.2313,
+  "min": 0.0946,
+  "max": 0.1152,
+  "unidad": "probabilidad",
+  "periodo": "2015-2023",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cp_ln_pob",
+  "indicador": "PIP BMA de ln_pob, precio de compra (tasado MIVAU), provincia",
+  "valor": 0.7633,
+  "min": 1.0,
+  "max": 0.7941,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cp_share_ext_pob",
+  "indicador": "PIP BMA de share_ext_pob, precio de compra (tasado MIVAU), provincia",
+  "valor": 0.3083,
+  "min": 0.772,
+  "max": 0.2308,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cp_ln_pib_pc",
+  "indicador": "PIP BMA de ln_pib_pc, precio de compra (tasado MIVAU), provincia",
+  "valor": 0.8436,
+  "min": 0.4702,
+  "max": 0.5872,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cp_paro_tasa",
+  "indicador": "PIP BMA de paro_tasa, precio de compra (tasado MIVAU), provincia",
+  "valor": 0.1314,
+  "min": 0.1881,
+  "max": 0.0497,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cp_ln_ocupados_miles",
+  "indicador": "PIP BMA de ln_ocupados_miles, precio de compra (tasado MIVAU), provincia",
+  "valor": 0.1964,
+  "min": 0.0684,
+  "max": 0.0773,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cp_ln_terminadas_libres",
+  "indicador": "PIP BMA de ln_terminadas_libres, precio de compra (tasado MIVAU), provincia",
+  "valor": 0.1163,
+  "min": 0.485,
+  "max": 0.0523,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cp_ln_iniciadas_libres",
+  "indicador": "PIP BMA de ln_iniciadas_libres, precio de compra (tasado MIVAU), provincia",
+  "valor": 0.1236,
+  "min": 0.0557,
+  "max": 0.0547,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cp_ln_suelo_pm2_m50k",
+  "indicador": "PIP BMA de ln_suelo_pm2_m50k, precio de compra (tasado MIVAU), provincia",
+  "valor": 0.1448,
+  "min": null,
+  "max": 0.0607,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cp_ln_vut",
+  "indicador": "PIP BMA de ln_vut, precio de compra (tasado MIVAU), provincia",
+  "valor": 0.0954,
+  "min": null,
+  "max": 0.0391,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cp_ln_hip_viv_num",
+  "indicador": "PIP BMA de ln_hip_viv_num, precio de compra (tasado MIVAU), provincia",
+  "valor": 0.1217,
+  "min": 0.1803,
+  "max": 0.0481,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cv_ln_pob",
+  "indicador": "PIP BMA de ln_pob, volumen de compra (INE ETDP), provincia",
+  "valor": 0.0976,
+  "min": 0.3518,
+  "max": 0.025,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cv_share_ext_pob",
+  "indicador": "PIP BMA de share_ext_pob, volumen de compra (INE ETDP), provincia",
+  "valor": 0.1115,
+  "min": 0.8117,
+  "max": 0.0276,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cv_ln_pib_pc",
+  "indicador": "PIP BMA de ln_pib_pc, volumen de compra (INE ETDP), provincia",
+  "valor": 0.0926,
+  "min": 0.056,
+  "max": 0.024,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cv_paro_tasa",
+  "indicador": "PIP BMA de paro_tasa, volumen de compra (INE ETDP), provincia",
+  "valor": 0.2237,
+  "min": 0.0601,
+  "max": 0.06,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cv_ln_ocupados_miles",
+  "indicador": "PIP BMA de ln_ocupados_miles, volumen de compra (INE ETDP), provincia",
+  "valor": 0.1017,
+  "min": 0.0609,
+  "max": 0.0272,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cv_ln_terminadas_libres",
+  "indicador": "PIP BMA de ln_terminadas_libres, volumen de compra (INE ETDP), provincia",
+  "valor": 0.1128,
+  "min": 0.0719,
+  "max": 0.0293,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cv_ln_iniciadas_libres",
+  "indicador": "PIP BMA de ln_iniciadas_libres, volumen de compra (INE ETDP), provincia",
+  "valor": 0.9774,
+  "min": 0.7905,
+  "max": 0.8332,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cv_ln_suelo_pm2_m50k",
+  "indicador": "PIP BMA de ln_suelo_pm2_m50k, volumen de compra (INE ETDP), provincia",
+  "valor": 0.0961,
+  "min": null,
+  "max": 0.025,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cv_ln_vut",
+  "indicador": "PIP BMA de ln_vut, volumen de compra (INE ETDP), provincia",
+  "valor": 0.1384,
+  "min": null,
+  "max": 0.0362,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "m2_pip_cv_ln_hip_viv_num",
+  "indicador": "PIP BMA de ln_hip_viv_num, volumen de compra (INE ETDP), provincia",
+  "valor": 0.0913,
+  "min": 0.9877,
+  "max": 0.024,
+  "unidad": "probabilidad",
+  "periodo": "2015-2024",
+  "cobertura": "provincias con datos en el panel de entrenamiento",
+  "fuentes": [
+   "output/v6/M0/paneles"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ }
+]

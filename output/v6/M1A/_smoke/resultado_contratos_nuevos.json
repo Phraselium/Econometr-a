@@ -1,0 +1,23 @@
+{
+ "rama": "v6/M1a",
+ "mercado": "contratos nuevos (fianzas)",
+ "pregunta": "Evolucion de fianzas de contratos nuevos (descriptivo)",
+ "capa": "C4",
+ "datos": "prov_contratos_nuevos_anual_train",
+ "N": {
+  "gva": 12,
+  "incasol": 12
+ },
+ "metodo": "descriptivo",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": null,
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Sin modelo: N sin potencia"
+}

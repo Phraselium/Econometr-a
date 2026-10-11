@@ -1,9 +1,12 @@
 {
  "provincia|S0 pre-registrada (TWFE, caso completo)": {
   "n": 105,
+  "excluidas_sin_variacion": [
+   "n_mun_tensionados"
+  ],
   "unidades": 35,
   "clusters": 7,
-  "r2_within": 0.5598846276668068,
+  "r2_within": 0.559884627666807,
   "anios": [
    2021,
    2023
@@ -12,17 +15,23 @@
  },
  "provincia|S0 + tendencias por unidad": {
   "n": 105,
+  "excluidas_sin_variacion": [
+   "n_mun_tensionados"
+  ],
   "unidades": 35,
   "clusters": 7,
-  "r2_within": 0.39140765507478037,
+  "r2_within": 0.39140765507478026,
   "anios": [
    2021,
    2023
   ],
-  "seg": 0.0
+  "seg": 0.1
  },
  "provincia|S1 muestra larga sin ln_vut (TWFE)": {
   "n": 280,
+  "excluidas_sin_variacion": [
+   "n_mun_tensionados"
+  ],
   "unidades": 35,
   "clusters": 7,
   "r2_within": 0.6305698389909475,
@@ -34,9 +43,12 @@
  },
  "provincia|S1 + tendencias por unidad": {
   "n": 280,
+  "excluidas_sin_variacion": [
+   "n_mun_tensionados"
+  ],
   "unidades": 35,
   "clusters": 7,
-  "r2_within": 0.17589330977431394,
+  "r2_within": 0.17589330977431417,
   "anios": [
    2016,
    2023
@@ -45,6 +57,9 @@
  },
  "provincia|S1 desenlace EUR/mes": {
   "n": 280,
+  "excluidas_sin_variacion": [
+   "n_mun_tensionados"
+  ],
   "unidades": 35,
   "clusters": 7,
   "r2_within": 0.38982814429829715,
@@ -56,9 +71,12 @@
  },
  "provincia|S1 desenlace IPC alquiler (indice)": {
   "n": 280,
+  "excluidas_sin_variacion": [
+   "n_mun_tensionados"
+  ],
   "unidades": 35,
   "clusters": 7,
-  "r2_within": 0.3243596137040755,
+  "r2_within": 0.3243596137040754,
   "anios": [
    2016,
    2023
@@ -67,6 +85,9 @@
  },
  "provincia|S1 primeras diferencias": {
   "n": 245,
+  "excluidas_sin_variacion": [
+   "d_n_mun_tensionados"
+  ],
   "unidades": 35,
   "clusters": 7,
   "r2_within": 0.09811969219792205,
@@ -77,32 +98,41 @@
   "seg": 0.0
  },
  "municipio|S0 pre-registrada (TWFE, caso completo)": {
-  "n": 743,
-  "unidades": 251,
+  "n": 4865,
+  "excluidas_sin_variacion": [
+   "tensionada_mun"
+  ],
+  "unidades": 1643,
   "clusters": 7,
-  "r2_within": 0.04275652787846629,
+  "r2_within": 0.02830082069519091,
   "anios": [
    2021,
    2023
   ],
-  "seg": 0.0
+  "seg": 0.1
  },
  "municipio|S0 + tendencias por unidad": {
-  "n": 743,
-  "unidades": 251,
+  "n": 4865,
+  "excluidas_sin_variacion": [
+   "tensionada_mun"
+  ],
+  "unidades": 1643,
   "clusters": 7,
-  "r2_within": 0.030118389167968496,
+  "r2_within": 0.006799239543281321,
   "anios": [
    2021,
    2023
   ],
-  "seg": 0.0
+  "seg": 0.1
  },
  "municipio|S1 muestra larga sin ln_vut (TWFE)": {
-  "n": 1882,
-  "unidades": 251,
+  "n": 12228,
+  "excluidas_sin_variacion": [
+   "tensionada_mun"
+  ],
+  "unidades": 1652,
   "clusters": 7,
-  "r2_within": 0.06281542195718615,
+  "r2_within": 0.06987580264283866,
   "anios": [
    2016,
    2023
@@ -110,70 +140,81 @@
   "seg": 0.1
  },
  "municipio|S1 + tendencias por unidad": {
-  "n": 1882,
-  "unidades": 251,
+  "n": 12228,
+  "excluidas_sin_variacion": [
+   "tensionada_mun"
+  ],
+  "unidades": 1652,
   "clusters": 7,
-  "r2_within": 0.009702666923735004,
+  "r2_within": 0.00748838098998017,
   "anios": [
    2016,
    2023
   ],
-  "seg": 0.1
+  "seg": 0.2
  },
  "distrito|S0 pre-registrada (TWFE, caso completo)": {
-  "n": 638,
-  "unidades": 319,
+  "n": 4116,
+  "excluidas_sin_variacion": [],
+  "unidades": 2058,
   "clusters": 11,
-  "r2_within": 0.0006015848853131445,
+  "r2_within": 4.4192006488308344e-05,
   "anios": [
    2022,
    2023
   ],
-  "seg": 0.0
+  "seg": 0.4
  },
  "distrito|S0 + tendencias por unidad": {
-  "n": 638,
-  "unidades": 319,
+  "n": 4116,
+  "excluidas_sin_variacion": [
+   "ln_vut_plazas_dis",
+   "ln_pib_pc"
+  ],
+  "unidades": 2058,
   "clusters": 11,
   "r2_within": NaN,
   "anios": [
    2022,
    2023
   ],
-  "seg": 0.0
+  "seg": 0.1
  },
  "distrito|S1 muestra larga solo ln_pib_pc": {
-  "n": 2768,
-  "unidades": 379,
+  "n": 17909,
+  "excluidas_sin_variacion": [],
+  "unidades": 2434,
   "clusters": 11,
-  "r2_within": 0.0018149004303411598,
+  "r2_within": 0.0006920426349368292,
   "anios": [
    2016,
    2023
   ],
-  "seg": 0.0
+  "seg": 0.3
  },
  "distrito|S1 desenlace p25": {
-  "n": 2768,
-  "unidades": 379,
+  "n": 17909,
+  "excluidas_sin_variacion": [],
+  "unidades": 2434,
   "clusters": 11,
-  "r2_within": 0.001301827804254696,
+  "r2_within": 0.00030525472100217943,
   "anios": [
    2016,
    2023
   ],
-  "seg": 0.0
+  "seg": 0.3
  },
  "distrito|S1 desenlace p75": {
-  "n": 2768,
-  "unidades": 379,
+  "n": 17909,
+  "excluidas_sin_variacion": [],
+  "unidades": 2434,
   "clusters": 11,
-  "r2_within": 0.0013277152923805158,
+  "r2_within": 0.000632345410126578,
   "anios": [
    2016,
    2023
   ],
-  "seg": 0.0
+  "seg": 0.2
  },
  "provincia|SDM": {
   "rho": 1.1335142966418308,
@@ -181,13 +222,14 @@
   "n": 304,
   "G": 10.0,
   "W": "5 vecinos mas cercanos por anio, estandarizada por filas",
-  "estimador": "2SLS (instrumentos W2X, W3X)"
+  "estimador": "2SLS (instrumentos W2X, W3X)",
+  "impactos": "no reportados: |rho|>=0,98 (serie de impactos no convergente)"
  },
  "municipio|SDM": {
-  "rho": -0.40841307581910036,
-  "rho_se": 1.4029836990483404,
-  "n": 1914,
-  "G": 8.0,
+  "rho": 0.30792312516857734,
+  "rho_se": 0.5564456613900111,
+  "n": 12592,
+  "G": 10.0,
   "W": "5 vecinos mas cercanos por anio, estandarizada por filas",
   "estimador": "2SLS (instrumentos W2X, W3X)"
  },
@@ -202,73 +244,74 @@
   "veredicto": "placebo no rechazado; C3 requiere ademas exclusion plausible, no demostrada"
  },
  "municipio|event_study_tope_cat": {
-  "tratados": 8,
-  "controles": 270,
+  "tratados": 61,
+  "controles": 1827,
   "cohortes": [
    2020
   ],
   "coef_evento": {
    "-5": [
-    -0.043873180409999366,
-    0.012552412767641135
+    -0.05281101806709257,
+    0.006575020862027765
    ],
    "-4": [
-    -0.04249466401297781,
-    0.010543047208942504
+    -0.04871623540010563,
+    0.005564358549419437
    ],
    "-3": [
-    -0.030469306810707166,
-    0.006562415024917294
+    -0.035342605062506305,
+    0.004539203053349221
    ],
    "-2": [
-    -0.016757768176872957,
-    0.004569450204911191
+    -0.012980378730067644,
+    0.0024951046673333853
    ],
    "0": [
-    0.0042274516085693105,
-    0.0036252096434314634
+    0.0025693589692408524,
+    0.0021726328940652523
    ],
    "1": [
-    0.004923290697279724,
-    0.005839260136760041
+    -0.0013031661969656536,
+    0.003731870949275025
    ],
    "2": [
-    0.0025494902946499223,
-    0.00742995832087607
+    -0.007229466010899726,
+    0.00532211558606899
    ],
    "3": [
-    -0.01356310180631855,
-    0.015432125127823357
+    -0.015570192133442339,
+    0.007594918464401227
    ]
   },
-  "p_conjunta_pretendencias": 0.00017099826499896836,
+  "p_conjunta_pretendencias": 4.8565135781470894e-17,
   "RR_relative_magnitudes_conjunto_k0": {
    "0.5": [
-    -0.004151432479867168,
-    0.01260633569700579
+    -0.008611754196978478,
+    0.013750472135460181
    ],
    "1.0": [
-    -0.012530316568303647,
-    0.020985219785442266
+    -0.019792867363197807,
+    0.02493158530167951
    ],
    "1.5": [
-    -0.020909200656740127,
-    0.029364103873878746
+    -0.030973980529417137,
+    0.03611269846789884
    ],
    "2.0": [
-    -0.029288084745176603,
-    0.037742987962315226
+    -0.04215509369563646,
+    0.04729381163411817
    ]
   },
-  "RR_M_breakdown_plugin": 0.25226817580658073,
-  "max_salto_pre": 0.016757768176872957,
-  "placebo_fecha_ficticia_p": 0.0006377519586441736,
-  "clusters_provincia": 37,
+  "RR_M_breakdown_plugin": 0.11489727950359481,
+  "max_salto_pre": 0.02236222633243866,
+  "placebo_fecha_ficticia_p": 7.979256261116074e-10,
+  "clusters_provincia": 39,
   "nota": "RR simplificado: conjunto identificado plug-in con las estimaciones puntuales (sin IC de longitud fija); tratados en 4 provincias de una CCAA; tope vigente 2020-2021 (anulado)",
   "criterios_C3_cumplidos": false
  },
  "provincia|IPVA nuevo contrato TWFE (exploratorio)": {
   "n": 114,
+  "excluidas_sin_variacion": [],
   "unidades": 38,
   "clusters": 10,
   "r2_within": 0.5912177491508774,

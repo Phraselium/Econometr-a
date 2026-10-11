@@ -424,7 +424,7 @@ def b_var(cal, ca, al):
             Phi = A_t @ Phi
         # acumulado: Δ -> niveles
         return np.cumsum(out, axis=0)
-    base = {o: irf(A, cov, o) for o in ([0, 1], [1, 0])}
+    base = {o: irf(A, cov, list(o)) for o in ((0, 1), (1, 0))}
     boots = {o: [] for o in base}
     Bn = min(B, 499) if not SMOKE else 49
     byprov = {c: dd[dd.cod == c] for c in provs}
@@ -435,7 +435,7 @@ def b_var(cal, ca, al):
         cb = Eb.T @ Eb / len(Eb)
         try:
             for o in base:
-                boots[o].append(irf(Ab, cb, o))
+                boots[o].append(irf(Ab, cb, list(o)))
         except np.linalg.LinAlgError:
             continue
     pv = []

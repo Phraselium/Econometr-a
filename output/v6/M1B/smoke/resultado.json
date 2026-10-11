@@ -1,0 +1,323 @@
+{
+ "rama": "v6/M1b",
+ "modulo": "M1b",
+ "smoke": true,
+ "pregunta": "¿Qué variables se asocian con el precio y el volumen de la compraventa por provincia y municipio, y cómo se relacionan los mercados de compra y alquiler?",
+ "mercado": [
+  "compra (precio)",
+  "compra (volumen)",
+  "relación compra-alquiler"
+ ],
+ "medida_precio": {
+  "principal": "valor tasado MIVAU (provincia, municipio)",
+  "robustez": [
+   "Registradores (provincia anual)"
+  ],
+  "no_usadas": "Notariado (solo Comunitat Valenciana, sin panel M0); índice triangulado A23 y IPV INE: sin desagregación provincial (solo nacional/CCAA)"
+ },
+ "capa": "C4",
+ "datos": "output/v6/M0/paneles/*_train (prov_compra_anual, prov_trim_compra, mun_compra_anual, prov_alquiler_anual) y nacional_trim_desc; sin parte sellada",
+ "N": {
+  "prov_anual_S1_prereg": 64,
+  "prov_anual_S2_nucleo8": 342,
+  "prov_trim": 1599,
+  "municipal": 1673,
+  "var_panel": 266,
+  "provincias_train": 41,
+  "clusters_CCAA": 8
+ },
+ "metodo": "FE unidad+año (pre-registrada) y unidad+tendencia; wild cluster bootstrap Webb restringido por CCAA (B=99); Driscoll-Kraay; CCEP/CCEMG/MG; Durbin espacial (W 4 vecinos por centroides); exposición tipo shift-share y 2SLS; DML-PLR (RF, pliegues por provincia); Oster; Cinelli-Hazlett; SUR y PVAR Anderson-Hsiao; proyecciones locales por exposición; DOLS; GSADF bootstrap AR(p); validación por bloques con embargo y DM-HLN.",
+ "estimacion": {
+  "confirmatorias_S1_Holm": [
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_pm2_tasado|ln_pob",
+    "coef": 0.5989,
+    "p_wcb": 0.55,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_pm2_tasado|share_ext_pob",
+    "coef": 0.0218,
+    "p_wcb": 0.43,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_pm2_tasado|ln_pib_pc",
+    "coef": 0.5,
+    "p_wcb": 0.44,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_pm2_tasado|paro_tasa",
+    "coef": 0.0074,
+    "p_wcb": 0.2,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_pm2_tasado|ln_ocupados_miles",
+    "coef": 0.4301,
+    "p_wcb": 0.23,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_pm2_tasado|ln_terminadas_libres",
+    "coef": -0.0039,
+    "p_wcb": 0.77,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_pm2_tasado|ln_iniciadas_libres",
+    "coef": 0.0093,
+    "p_wcb": 0.79,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_pm2_tasado|ln_suelo_pm2_m50k",
+    "coef": 0.0205,
+    "p_wcb": 0.61,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_pm2_tasado|ln_vut",
+    "coef": 0.0086,
+    "p_wcb": 0.86,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_pm2_tasado|ln_hip_viv_num",
+    "coef": 0.0722,
+    "p_wcb": 0.79,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_cv_etdp|ln_pob",
+    "coef": -1.3911,
+    "p_wcb": 0.77,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_cv_etdp|ln_pib_pc",
+    "coef": 0.13,
+    "p_wcb": 0.84,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_cv_etdp|paro_tasa",
+    "coef": -0.0225,
+    "p_wcb": 0.09,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_cv_etdp|ln_ocupados_miles",
+    "coef": -0.7358,
+    "p_wcb": 0.22,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_cv_etdp|ln_terminadas_libres",
+    "coef": -0.0131,
+    "p_wcb": 0.88,
+    "p_holm": 1.0
+   },
+   {
+    "id": "A_fe_prov_anual|S1_prereg_10|ln_cv_etdp|ln_iniciadas_libres",
+    "coef": -0.1708,
+    "p_wcb": 0.04,
+    "p_holm": 0.64
+   }
+  ],
+  "n_confirmatorias_Holm_p<0.05": 0,
+  "n_BH_q10_exploratorias": 52,
+  "n_especificaciones_registradas": 304,
+  "elasticidad_precio_alquiler": [
+   {
+    "nivel": "anual",
+    "esp": "FE_unidad+año",
+    "elasticidad": 1.3324,
+    "se": 0.2658,
+    "p_wcb": 0.01
+   },
+   {
+    "nivel": "anual",
+    "esp": "FE_unidad+tendencia",
+    "elasticidad": 0.594,
+    "se": 0.0792,
+    "p_wcb": 0.01
+   },
+   {
+    "nivel": "anual",
+    "esp": "FE_unidad+año",
+    "elasticidad": 1.3127,
+    "se": 0.1953,
+    "p_wcb": 0.01
+   },
+   {
+    "nivel": "anual",
+    "esp": "FE_unidad+tendencia",
+    "elasticidad": 0.434,
+    "se": 0.131,
+    "p_wcb": 0.02
+   },
+   {
+    "nivel": "trimestral",
+    "esp": "DOLS_FE_unidad+tendencia",
+    "elasticidad": 2.1201,
+    "se": 0.1401,
+    "p_wcb": 0.01
+   },
+   {
+    "nivel": "trimestral",
+    "esp": "DOLS_FE_unidad+trimestre(entre provincias)",
+    "elasticidad": 1.6237,
+    "se": 0.2297,
+    "p_wcb": 0.01
+   }
+  ],
+  "ratio_precio_alquiler_mediana_anios": {
+   "2015": 20.33,
+   "2023": 17.12
+  },
+  "gsadf_ccaa_p<0.05": 0,
+  "gsadf_ccaa_total": 11,
+  "sdm_rho": {
+   "ln_cv_etdp": 0.1175,
+   "ln_pm2_tasado": 0.2753
+  }
+ },
+ "ic95": "por coeficiente en tablas/fe_prov.csv (se CR1), tablas/sdm.csv (simulación) y IRF en tablas/b2_pvar_irf_precio_alquiler.csv; no hay IC único",
+ "p_ajustado": {
+  "Holm_min": 0.64,
+  "BH_min": 0.0
+ },
+ "nivel_evidencia": "EXPLORATORIO (C4). Ningún contraste cumple los criterios de C3 en M1b; asociaciones, sin lenguaje causal. Veredicto máximo: ANALIZADA, NO CONCLUYENTE.",
+ "diagnosticos": {
+  "clusters": "8 CCAA en entrenamiento provincial (7 en municipal, 11 en trimestral): inferencia por wild cluster bootstrap Webb",
+  "S1_pre_registrada": "los 10 regresores juntos dejan N=64: ln_vut (2020-2024) y ln_suelo (25 provincias) recortan la muestra; se añade el núcleo de 8 (N=342)",
+  "potencia": "docs/v6/potencia.md: efectos mínimos detectables 2,5 % (precio) y 5 % (volumen) por 1 DE within con clúster",
+  "balance_exposicion": {
+   "corr_E_nivel2015": 0.4413766424752591,
+   "corr_E_crecimiento_2016_2019": 0.0725726898563208,
+   "n_prov": 41
+  },
+  "shiftshare_poblacion_F1a": [
+   2.42
+  ],
+  "cointegracion_trimestral": {
+   "fisher": {
+    "precio": [
+     55.345312701743886,
+     0.9895257512942953
+    ],
+    "alquiler": [
+     80.44477153318594,
+     0.5279225288181617
+    ],
+    "engle_granger": [
+     172.2068075392133,
+     2.2839706903324262e-08
+    ]
+   },
+   "n_prov": 41,
+   "n_rej_5pct": 9
+  },
+  "gsadf_tamano_MC": {
+   "T": 40,
+   "R": 30,
+   "nboot_interno": 49,
+   "phi0.0": 0.0,
+   "phi0.5": 0.0
+  },
+  "no_ejecutados": "Rambachan-Roth (sin evento de compra identificable en train); Bartik de empleo (sin composición sectorial provincial); Pedroni/Westerlund (T anual=9)"
+ },
+ "fuera_muestra": {
+  "modelo": "M1b_ADL (AR(4)+regresores t-1) frente a AR(4) y ECM v1; trimestral provincial, orígenes 2018/2020/2022, embargo 4 trimestres, h=1, misma muestra",
+  "rmse": {
+   "ln_pm2_tasado": {
+    "AR4": 3.55,
+    "ECMv1": 3.87,
+    "M1b_ADL": 3.51
+   },
+   "ln_cv_etdp": {
+    "AR4": 53.85,
+    "ECMv1": 52.69,
+    "M1b_ADL": 67.79
+   }
+  },
+  "dm_vs_ar4": {
+   "ln_pm2_tasado": -0.2607,
+   "ln_cv_etdp": 2.8676
+  },
+  "p_dm_vs_ar4": {
+   "ln_pm2_tasado": 0.7966,
+   "ln_cv_etdp": 0.0087
+  },
+  "detalle": {
+   "ln_pm2_tasado": {
+    "AR4": {
+     "rmse_ln": 0.0348,
+     "rmse_pct": 3.55,
+     "rmse_abs": 44.0,
+     "dm_vs_ar4": null,
+     "p_dm_vs_ar4": null,
+     "dm_vs_ecm_v1": -2.7189,
+     "p_dm_vs_ecm_v1": 0.0122
+    },
+    "ECMv1": {
+     "rmse_ln": 0.038,
+     "rmse_pct": 3.87,
+     "rmse_abs": 48.0,
+     "dm_vs_ar4": 2.7189,
+     "p_dm_vs_ar4": 0.0122,
+     "dm_vs_ecm_v1": null,
+     "p_dm_vs_ecm_v1": null
+    },
+    "M1b_ADL": {
+     "rmse_ln": 0.0345,
+     "rmse_pct": 3.51,
+     "rmse_abs": 43.5,
+     "dm_vs_ar4": -0.2607,
+     "p_dm_vs_ar4": 0.7966,
+     "dm_vs_ecm_v1": -3.5389,
+     "p_dm_vs_ecm_v1": 0.0018
+    }
+   },
+   "ln_cv_etdp": {
+    "AR4": {
+     "rmse_ln": 0.4308,
+     "rmse_pct": 53.85,
+     "rmse_abs": 967.8,
+     "dm_vs_ar4": null,
+     "p_dm_vs_ar4": null,
+     "dm_vs_ecm_v1": 0.1537,
+     "p_dm_vs_ecm_v1": 0.8792
+    },
+    "ECMv1": {
+     "rmse_ln": 0.4232,
+     "rmse_pct": 52.69,
+     "rmse_abs": 950.8,
+     "dm_vs_ar4": -0.1537,
+     "p_dm_vs_ar4": 0.8792,
+     "dm_vs_ecm_v1": null,
+     "p_dm_vs_ecm_v1": null
+    },
+    "M1b_ADL": {
+     "rmse_ln": 0.5175,
+     "rmse_pct": 67.79,
+     "rmse_abs": 1162.6,
+     "dm_vs_ar4": 2.8676,
+     "p_dm_vs_ar4": 0.0087,
+     "dm_vs_ecm_v1": 1.4383,
+     "p_dm_vs_ecm_v1": 0.1638
+    }
+   }
+  },
+  "nota": "RMSE en % (exp(rmse_ln)-1). Validación temporal dentro de entrenamiento; la muestra sellada la abre solo M4"
+ },
+ "notas": "Validación espacial nueva; temporal ya vista en v2 (otras provincias) y de forma descriptiva en v4-v5. Magnitudes: regresores en logs, por +10 %; en niveles, por +1 pp; € /m² al precio medio del entrenamiento. La tasa hipotecaria es nacional (no provincial); el crédito provincial no existe en M0: se usa hipotecas sobre vivienda (ETDP/HPT) como proxy.",
+ "ficheros": {
+  "registro": "registro.csv",
+  "p_ajustados": "tablas/multiplicidad_p_ajustados.csv",
+  "tablas": "tablas/",
+  "desviaciones": "desviaciones.md"
+ }
+}

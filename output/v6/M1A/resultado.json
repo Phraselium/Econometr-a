@@ -11,15 +11,15 @@
    "unidades": 35
   },
   "municipio_S0": {
-   "N": 743,
-   "unidades": 251
+   "N": 4865,
+   "unidades": 1643
   },
   "distrito_S0": {
-   "N": 638,
-   "unidades": 319
+   "N": 4116,
+   "unidades": 2058
   }
  },
- "metodo": "TWFE (EF unidad y anio) con y sin tendencias; wild cluster bootstrap Webb y Rademacher B=99 por CCAA; Driscoll-Kraay; Conley (distritos); CCEP/CCEMG, MG, SDM 2SLS, DML RF; exposicion tipo BHJ; event study + RR; Oster y Cinelli-Hazlett",
+ "metodo": "TWFE (EF unidad y anio) con y sin tendencias; wild cluster bootstrap Webb y Rademacher B=999 por CCAA; Driscoll-Kraay; Conley (distritos); CCEP/CCEMG, MG, SDM 2SLS, DML RF; exposicion tipo BHJ; event study + RR; Oster y Cinelli-Hazlett",
  "estimacion": "ver tabla_coeficientes.csv y tabla_magnitudes_eur_mes.csv",
  "ic95": "IC t(G-1) con EE por clúster CCAA en tabla_coeficientes.csv (p = wild bootstrap)",
  "p_ajustado": "Holm en S0 de cada nivel; BH en el resto (tabla_coeficientes.csv)",

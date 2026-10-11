@@ -301,6 +301,11 @@ def hetero_block(df, nivel, xy_col=True, sdm=True):
             DIAG[f"{nivel}|SDM"] = {"rho": float(r["rho"]), "rho_se": r["rho_se"], "n": r["n"], "G": r["G"],
                                     "W": "5 vecinos mas cercanos por anio, estandarizada por filas",
                                     "estimador": "2SLS (instrumentos W2X, W3X)"}
+            if abs(r["rho"]) >= 0.98:
+                DIAG[f"{nivel}|SDM"]["impactos"] = "no reportados: |rho|>=0,98 (serie de impactos no convergente)"
+                reg.log("M1a", f"{nivel}|SC SDM", "SDM 2SLS", "", "", r["n"], np.nan, np.nan, np.nan, np.nan, r["rho"], np.nan,
+                        "rho fuera de rango; impactos no reportados")
+                continue
             for j, x in enumerate(SC):
                 for k_, nm in (("dir", "directo"), ("ind", "indirecto"), ("tot", "total")):
                     bb, ss = float(r[k_][j]), float(r[k_ + "_se"][j])
@@ -527,12 +532,14 @@ n_inc = int(con.pct_fianzas_600_incasol.notna().sum())
 R = pd.DataFrame(ROWS)
 R["p_ajustado"], R["ajuste"] = np.nan, ""
 conf = (R.familia == "confirmatoria") & (R.metodo == "TWFE")
-for nivel in R.nivel.unique():
-    m = conf & (R.nivel == nivel) & (R.spec.str.startswith("S0 pre-registrada"))
+R["grupo"] = np.where(R.mercado.str.startswith("contratos"), "contratos", "stock")
+for nivel in (R.grupo + "|" + R.nivel).unique():
+    gsel = (R.grupo + "|" + R.nivel) == nivel
+    m = conf & gsel & (R.spec.str.startswith("S0 pre-registrada"))
     if m.sum():
         R.loc[m, "p_ajustado"] = L.holm_adj(R.loc[m, "p"].to_numpy())
         R.loc[m, "ajuste"] = "Holm (familia: variables de hipotesis.md §2, mercado principal, este nivel)"
-    m2 = (~m) & (R.nivel == nivel) & R.p.notna()
+    m2 = (~m) & gsel & R.p.notna()
     if m2.sum():
         R.loc[m2, "p_ajustado"] = L.bh_adj(R.loc[m2, "p"].to_numpy())
         R.loc[m2, "ajuste"] = "BH q=0,10 (robustez/exploratorio, este nivel)"
@@ -544,7 +551,7 @@ for i, r in R[R.spec.str.startswith(("S0 pre-reg", "S1 muestra larga", "S1 desen
     sg = np.sign(r.b)
     oth = R[(R.nivel == r.nivel) & (R["var"] == r["var"]) & (R.y.isin(["ln_alq_m2", "ln_alq_mes_serpavi_vc"])) &
             (R.index != i) & (R.mercado == MS) & (R.metodo.isin(mset + ["SDM 2SLS (directo)"]))]
-    ok_sig = (r.p_ajustado < 0.10) and (r.p_dk < 0.10 if pd.notna(r.get("p_dk")) else True)
+    ok_sig = bool(r.p_ajustado < 0.10)  # Driscoll-Kraay no se usa para decidir: T=2-8 es insuficiente
     if ok_sig and len(oth) >= 2 and (np.sign(oth.b) == sg).all():
         R.loc[i, "nivel_evidencia"] = "ASOCIACION ROBUSTA"
     elif not ok_sig:

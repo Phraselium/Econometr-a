@@ -20,7 +20,7 @@ OUT = ROOT / "output" / "v5"
 MARC = re.compile(r"\{\{([A-Za-z0-9_.\-]+)(?::([a-z_]+))?\}\}")
 
 
-CONTEOS = {"instrumentos", "referencias", "afirmaciones", "distritos", "documentos", "medidas", "especificaciones",
+CONTEOS = {"instrumentos", "variables", "hipótesis", "CCAA", "referencias", "afirmaciones", "distritos", "documentos", "medidas", "especificaciones",
            "series", "entidades", "clase", "declarantes", "hechos/anio", "procedimientos/anio", "lanzamientos/anio"}
 
 

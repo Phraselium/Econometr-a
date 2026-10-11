@@ -13,7 +13,8 @@
 | M3a predicción y ML del alquiler | hecho | C4 (interpretación) | validación interna: RF/GB baten a AR y persistencia en los tres niveles; frente a ECM v1, solo en municipio; MLP y GraphSAGE no superan a GB (negativo); BART no disponible; jerárquico con MixedLM | 120.059 |
 | M3b predicción y ML de la compra | hecho | C4 (interpretación) | precio trimestral: ML 1,93 % frente a AR(4) 3,55 % (DM p=0,0007), pero la persistencia da 1,91 % y el ML no la bate; volumen: persistencia ≈ ML; DL municipal no bate a GB (negativo); BART y PyMC sustituidos | 112.530 |
 | M4 evaluación sellada y síntesis | hecho | C4 | 53 aperturas (una por modelo); mejor modelo: GB/RF en alquiler (provincia 1,61 frente a 4,21 de la persistencia), bosque en precio provincial (2,48) y trimestral (1,61), ECM v1 en precio municipal y Registradores; ninguna variable «relevante con seguridad» | 186.120 |
+| Entregables v6 | hecho | — | informe técnico §11, WP §4.5 y §5.5, lo que sabemos, brief, una página, CHANGELOG v6.0, verificador | 182.300 |
 
-**Hecho:** setup, G, M0, M1a, M1b, M2, M3a, M3b, M4.
+**Hecho:** setup, G, M0-M4, entregables.
 **Siguiente:** entregables (informe, lo que sabemos, verificador, CHANGELOG) → revisión final → cierre.
-**Tokens de subagentes v6:** 1.240.750 / 2.200.000 (corte 1.760.000; reserva 220.000).
+**Tokens de subagentes v6:** 1.423.050 / 2.200.000 (corte 1.760.000; reserva 220.000).

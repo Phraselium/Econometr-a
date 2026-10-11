@@ -10,8 +10,7 @@
   "anios": [
    2021,
    2023
-  ],
-  "seg": 0.1
+  ]
  },
  "provincia|S0 + tendencias por unidad": {
   "n": 105,
@@ -24,8 +23,7 @@
   "anios": [
    2021,
    2023
-  ],
-  "seg": 0.1
+  ]
  },
  "provincia|S1 muestra larga sin ln_vut (TWFE)": {
   "n": 280,
@@ -38,8 +36,7 @@
   "anios": [
    2016,
    2023
-  ],
-  "seg": 0.0
+  ]
  },
  "provincia|S1 + tendencias por unidad": {
   "n": 280,
@@ -52,8 +49,7 @@
   "anios": [
    2016,
    2023
-  ],
-  "seg": 0.0
+  ]
  },
  "provincia|S1 desenlace EUR/mes": {
   "n": 280,
@@ -66,8 +62,7 @@
   "anios": [
    2016,
    2023
-  ],
-  "seg": 0.0
+  ]
  },
  "provincia|S1 desenlace IPC alquiler (indice)": {
   "n": 280,
@@ -80,8 +75,7 @@
   "anios": [
    2016,
    2023
-  ],
-  "seg": 0.0
+  ]
  },
  "provincia|S1 primeras diferencias": {
   "n": 245,
@@ -94,8 +88,7 @@
   "anios": [
    2017,
    2023
-  ],
-  "seg": 0.0
+  ]
  },
  "municipio|S0 pre-registrada (TWFE, caso completo)": {
   "n": 4865,
@@ -108,8 +101,7 @@
   "anios": [
    2021,
    2023
-  ],
-  "seg": 0.1
+  ]
  },
  "municipio|S0 + tendencias por unidad": {
   "n": 4865,
@@ -122,8 +114,7 @@
   "anios": [
    2021,
    2023
-  ],
-  "seg": 0.1
+  ]
  },
  "municipio|S1 muestra larga sin ln_vut (TWFE)": {
   "n": 12228,
@@ -136,8 +127,7 @@
   "anios": [
    2016,
    2023
-  ],
-  "seg": 0.1
+  ]
  },
  "municipio|S1 + tendencias por unidad": {
   "n": 12228,
@@ -150,8 +140,7 @@
   "anios": [
    2016,
    2023
-  ],
-  "seg": 0.2
+  ]
  },
  "distrito|S0 pre-registrada (TWFE, caso completo)": {
   "n": 4116,
@@ -162,8 +151,7 @@
   "anios": [
    2022,
    2023
-  ],
-  "seg": 0.4
+  ]
  },
  "distrito|S0 + tendencias por unidad": {
   "n": 4116,
@@ -177,8 +165,7 @@
   "anios": [
    2022,
    2023
-  ],
-  "seg": 0.1
+  ]
  },
  "distrito|S1 muestra larga solo ln_pib_pc": {
   "n": 17909,
@@ -189,8 +176,7 @@
   "anios": [
    2016,
    2023
-  ],
-  "seg": 0.3
+  ]
  },
  "distrito|S1 desenlace p25": {
   "n": 17909,
@@ -201,8 +187,7 @@
   "anios": [
    2016,
    2023
-  ],
-  "seg": 0.3
+  ]
  },
  "distrito|S1 desenlace p75": {
   "n": 17909,
@@ -213,8 +198,7 @@
   "anios": [
    2016,
    2023
-  ],
-  "seg": 0.2
+  ]
  },
  "provincia|SDM": {
   "rho": 1.1335142966418308,
@@ -318,7 +302,6 @@
   "anios": [
    2021,
    2023
-  ],
-  "seg": 0.0
+  ]
  }
 }

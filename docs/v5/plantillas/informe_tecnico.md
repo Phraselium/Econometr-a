@@ -544,6 +544,7 @@ La tabla completa, con documento y página de cada organismo, está en [output/v
 - **Que las viviendas turísticas suban el alquiler nacional.** La asociación de v3 no se distingue de cero ({{E-v3-H3-1}}, p ajustado {{E-v3-H3-1-p:valor}}); la cota de cantidad es {{B4-v3-vut-cantidad:valor}} [C2].
 - **Que haya una burbuja.** Las pruebas de exuberancia (GSADF) con tamaño corregido detectan episodios en algunas razones de precio y no en otras; una exuberancia estadística no es una burbuja (sección de robustez del working paper).
 - **Que el pre-registro de B3 confirme una hipótesis.** Su potencia era insuficiente; el resultado es descriptivo.
+- **Que alguna variable sea «relevante con seguridad» para el alquiler o la compra (v6).** Ninguna cumple los criterios pre-registrados ({{V6-M4-N-REL:num}} variables) y ninguna hipótesis confirmatoria pasa Holm; las importancias de los modelos de predicción son descriptivas (véase la sección sobre alquiler y compraventa) [C4].
 
 ### 10.2 Verificador de afirmaciones
 
@@ -578,6 +579,95 @@ Del backlog (`docs/v5/backlog.md`) quedan abiertos o parciales:
 - **Microdatos de transacciones con residencia del comprador por provincia** (Notariado y Registradores): elevarían la capa de las cifras sobre no residentes.
 
 Las solicitudes a organismos están en `docs/v5/solicitudes.md`. Ninguna conclusión de este informe depende de datos privados.
+
+---
+
+## 11. Alquiler y compraventa: qué explica y qué predice (v6)
+
+**Pregunta.** ¿Qué variables se asocian con el alquiler y con la compraventa por provincia, municipio y distrito, qué modelo los predice mejor fuera de muestra y en qué se parecen y se diferencian los dos mercados? Todo el apartado es C4: predicción y asociación, sin lenguaje causal.
+
+### 11.1 Medidas
+
+- **Alquiler de stock.** SERPAVI (MIVAU), mediana del valor central en €/m²/mes por provincia, municipio y distrito; el IPC de alquiler entra solo como robustez. Es el alquiler de todos los contratos vigentes declarados, no el de los nuevos.
+- **Contratos nuevos.** Se tratan por separado y solo de forma descriptiva: las fianzas con desglose por provincia cubren muy pocas provincias (Cataluña y la Comunitat Valenciana) y no admiten un modelo.
+- **Compraventa, precio.** Medida declarada: valor tasado del MIVAU en €/m² (provincia anual y trimestral, municipio anual). Registradores entra como robustez.
+- **Compraventa, volumen.** Compraventas de vivienda de la estadística de transmisiones del INE (ETDP), anual y trimestral por provincia.
+- **Paneles.** {{E-V6-NPROV-TRAIN:num}} provincias de entrenamiento ({{M0-prov_compra_anual:periodo}} en compra y {{M0-prov_alquiler_anual:periodo}} en alquiler); regresores en `t-1` con efectos fijos de unidad y año (pre-registro `prereg-v6`).
+
+### 11.2 Validación sellada nueva y su limitación
+
+- **Qué es nuevo.** Se sellaron {{E-V6-NPROV-SELL:num}} provincias por bloques completos de CCAA (Baleares, Aragón, La Rioja, Madrid, Murcia, Navarra, Asturias y Canarias), con sus municipios y distritos, más el último año de cada panel. Esas provincias no se habían usado nunca como validación. Cada modelo se evaluó una sola vez en la muestra sellada, sin reajustarlo.
+- **Qué no es nuevo.** El último año (2025 en compra, 2024 en alquiler) cae dentro de la ventana sellada de v2, abierta para otras provincias, y todas las provincias se usaron de forma descriptiva en v4-v5. La validación es **espacial nueva; temporal ya vista**. Las conclusiones se apoyan en la parte espacial.
+- **Limitación de la comparación.** En provincias nuevas, el AR por unidad, el ECM v1 y la econometría de M1 no tienen efecto fijo y quedan reducidos a la persistencia.
+
+### 11.3 Mejor modelo por mercado, medida y nivel
+
+Error en la parte espacial sellada (RMSE en log-puntos multiplicados por cien, aproximadamente en %), frente a la persistencia (el último valor observado) en la misma muestra [C4]:
+
+| Mercado | Medida | Nivel | Mejor modelo | Error sellado (aprox. %) | Persistencia (aprox. %) | Mejora a la persistencia |
+|---|---|---|---|---|---|---|
+| Alquiler de stock | SERPAVI | provincia | gradient boosting | {{V6-M4-RMSE-alq_provincia:num}} | {{V6-M4-PERS-alq_provincia:num}} | sí (DM-HLN, Holm) |
+| Alquiler de stock | SERPAVI | municipio | random forest | {{V6-M4-RMSE-alq_municipio:num}} | {{V6-M4-PERS-alq_municipio:num}} | sí (DM-HLN, Holm) |
+| Alquiler de stock | SERPAVI | distrito | gradient boosting | {{V6-M4-RMSE-alq_distrito:num}} | {{V6-M4-PERS-alq_distrito:num}} | sí (DM-HLN, Holm) |
+| Compra, precio | valor tasado MIVAU | provincia anual | random forest | {{V6-M4-RMSE-PROV_PRECIO_ANUAL:num}} | {{V6-M4-PERS-PROV_PRECIO_ANUAL:num}} | sí (DM-HLN, Holm) |
+| Compra, precio | valor tasado MIVAU | provincia trimestral | bosque con bootstrap bayesiano | {{V6-M4-RMSE-PROV_PRECIO_TRIM:num}} | {{V6-M4-PERS-PROV_PRECIO_TRIM:num}} | sí (DM-HLN, Holm) |
+| Compra, precio | valor tasado MIVAU | municipio anual | ECM v1 (línea base) | {{V6-M4-RMSE-MUN_PRECIO_ANUAL:num}} | {{V6-M4-PERS-MUN_PRECIO_ANUAL:num}} | sí, pero el ML no mejora la línea base |
+| Compra, precio | Registradores (robustez) | provincia anual | ECM v1 (línea base) | {{V6-M4-RMSE-PROV_PRECIO_ANUAL_REGISTRADORES:num}} | {{V6-M4-PERS-PROV_PRECIO_ANUAL_REGISTRADORES:num}} | sí, pero el ML no mejora la línea base |
+| Compra, volumen | ETDP (INE) | provincia anual | bosque con bootstrap bayesiano | {{V6-M4-RMSE-PROV_VOL_ANUAL:num}} | {{V6-M4-PERS-PROV_VOL_ANUAL:num}} | sí (DM-HLN, Holm) |
+| Compra, volumen | ETDP (INE) | provincia trimestral | bosque con bootstrap bayesiano | {{V6-M4-RMSE-PROV_VOL_TRIM:num}} | {{V6-M4-PERS-PROV_VOL_TRIM:num}} | en la parte espacial sí; en la temporal no |
+
+Fuente: `output/v6/M4/mejor_modelo.csv` y `output/v6/M4/tabla_modelos.md`. El mejor modelo se elige por el error espacial sellado y la estabilidad entre periodos, nunca por el R². En el precio municipal y en Registradores el bosque no mejora al ECM v1 en más de un 5 % del error, y se queda la línea base.<!-- check:cifra-libre -->
+
+**Lectura.** Los árboles predicen mejor el alquiler de stock y el precio provincial que la inercia, en provincias que no vieron. En el precio municipal y con Registradores, la econometría heredada (ECM v1) basta. Predecir mejor no identifica por qué sube el precio.
+
+### 11.4 Peso de cada variable en alquiler y en compra [C4]
+
+Dos lecturas complementarias, ambas asociativas:
+- **M2 (incertidumbre de modelo).** Probabilidad de inclusión posterior (PIP) del promedio bayesiano de modelos (BMA), con el multiverso y la doble selección (PDS) como contraste. El BMA completo solo usa las observaciones con viviendas turísticas y suelo; el «núcleo» prescinde de esas dos variables y tiene más observaciones.
+- **M4 (síntesis).** Una variable sería «relevante con seguridad» solo si pasara los criterios pre-registrados en las tres familias (econometría, incertidumbre de modelo y predicción). Ninguna lo hace ({{V6-M4-N-REL:num}}).
+
+| Variable | PIP alquiler (completo / núcleo) | PIP compra, precio (completo / núcleo) | Síntesis M4 |
+|---|---|---|---|
+| Población | {{m2_pip_alq_ln_pob:num}} / {{E-V6-M2-PIPN-ALQ-ln_pob:num}} | {{m2_pip_cp_ln_pob:num}} / {{E-V6-M2-PIPN-COMPRA-ln_pob:num}} | apoyo en una familia en los dos mercados |
+| Población extranjera | {{m2_pip_alq_share_ext_pob:num}} / {{E-V6-M2-PIPN-ALQ-share_ext_pob:num}} | {{m2_pip_cp_share_ext_pob:num}} / {{E-V6-M2-PIPN-COMPRA-share_ext_pob:num}} | apoyo en una familia en alquiler; sin apoyo en compra |
+| PIB por habitante | {{m2_pip_alq_ln_pib_pc:num}} / {{E-V6-M2-PIPN-ALQ-ln_pib_pc:num}} | {{m2_pip_cp_ln_pib_pc:num}} / {{E-V6-M2-PIPN-COMPRA-ln_pib_pc:num}} | apoyo en una familia en compra; sin apoyo en alquiler |
+| Viviendas libres iniciadas | {{m2_pip_alq_ln_iniciadas_libres:num}} / {{E-V6-M2-PIPN-ALQ-ln_iniciadas_libres:num}} | {{m2_pip_cp_ln_iniciadas_libres:num}} / {{E-V6-M2-PIPN-COMPRA-ln_iniciadas_libres:num}} | sin apoyo suficiente |
+| Viviendas libres terminadas | {{m2_pip_alq_ln_terminadas_libres:num}} | {{m2_pip_cp_ln_terminadas_libres:num}} | sin apoyo suficiente |
+| Viviendas turísticas | {{m2_pip_alq_ln_vut:num}} | {{m2_pip_cp_ln_vut:num}} | sin apoyo suficiente |
+| Municipios con tope de alquiler | {{m2_pip_alq_n_mun_topes_cat:num}} | — | sin apoyo suficiente |
+
+**Lo que pesa en un mercado y no en el otro (C4, con discrepancias declaradas).**
+- **Población:** pesa en los dos mercados con los dos métodos.
+- **PIB por habitante:** pesa en la compra y no en el alquiler con el BMA completo y con la síntesis de M4; en el núcleo la diferencia se reduce.
+- **Población extranjera: los métodos discrepan.** En el núcleo de M2 pesa en la compra (PIP {{E-V6-M2-PIPN-COMPRA-share_ext_pob:num}}) y no en el alquiler (PIP {{E-V6-M2-PIPN-ALQ-share_ext_pob:num}}); en la síntesis de M4 tiene apoyo en el alquiler (familia de predicción) y no en la compra. Se dan las dos lecturas y ninguna se elige.
+- **Viviendas iniciadas: los métodos discrepan.** En el núcleo de M2 pesan en el alquiler y no en la compra; en el BMA completo y en la síntesis de M4 no pesan en ninguno. En el volumen de compraventas el BMA les da una PIP de {{m2_pip_cv_ln_iniciadas_libres:num}}, con signo negativo.
+- **Viviendas turísticas y topes:** no tienen apoyo suficiente en ningún mercado.
+
+En la econometría de M1, la población es la variable con la asociación más clara con el alquiler de stock provincial ({{m1a_provincia_S0_ln_pob}} por cada diez mil habitantes, en 2021-2023), pero no sobrevive a Holm y los métodos de contraste discrepan [C4].
+
+Las importancias, los SHAP y los ALE de los modelos de predicción (`output/v6/M3A`, `output/v6/M3B`) son descriptivos: dicen qué variables usa el modelo para predecir, no qué ocurriría si una variable cambiara.
+
+### 11.5 Relación entre el mercado de compra y el de alquiler [C4]
+
+- **Elasticidad precio-alquiler.** Un uno por ciento más de alquiler de stock se asocia con entre un {{m1b_elasticidad_anual_FE_unidad_tendencia:num}} % (anual, {{m1b_elasticidad_anual_FE_unidad_tendencia:periodo}}, efectos fijos de provincia y tendencia) y un {{m1b_elasticidad_trimestral_DOLS_FE_unidad_tendencia:num}} % (trimestral, {{m1b_elasticidad_trimestral_DOLS_FE_unidad_tendencia:periodo}}, DOLS) más de valor tasado. La magnitud depende de la especificación y se dan los dos extremos. Es una asociación entre dos precios que se mueven juntos, no una transmisión de uno a otro.
+- **Ratio precio/alquiler.** La mediana provincial pasa de {{m1b_ratio_precio_alquiler_mediana_2015:num}} años de alquiler en {{m1b_ratio_precio_alquiler_mediana_2015:periodo}} a {{m1b_ratio_precio_alquiler_mediana:num}} en {{m1b_ratio_precio_alquiler_mediana:periodo}}: el alquiler de stock ha subido más que el valor tasado. La rentabilidad bruta mediana es {{m1b_rentabilidad_bruta_mediana}}, frente a un coste de uso de {{m1b_coste_uso_g2}}, este último con supuestos explícitos.
+- **Exuberancia.** El GSADF con tamaño corregido sobre el ratio precio/IPC de alquiler no detecta exuberancia en ninguna CCAA: {{E-V6-M1B-GSADF-SIG:num}} de {{E-V6-M1B-GSADF-TOT:num}} CCAA contrastadas ({{E-V6-M1B-GSADF-TOT:periodo}}). No detectar exuberancia no prueba que no la haya; las series son cortas.
+
+### 11.6 Qué separa a unas provincias de otras según los modelos [C4, descriptivo]
+
+- **Alquiler.** Las provincias con más población y, según la familia de predicción, con más población extranjera son las que los modelos asocian con alquileres más altos y subidas mayores.
+- **Compra.** En el precio, la población y el PIB por habitante concentran el apoyo.
+- **Vecindad.** El precio de una provincia se parece al de sus vecinas (autocorrelación espacial de {{m1b_sdm_rho_ln_pm2_tasado:num}}); el volumen apenas ({{m1b_sdm_rho_ln_cv_etdp:num}}).
+Es una descripción de lo que comparten las provincias caras o con subidas mayores, no una atribución de la subida a esos factores. El verificador recoge estas dos preguntas (fichas `M4-V1` y `M4-V2`) con el veredicto «analizada, no concluyente».
+
+### 11.7 Resultados negativos
+
+- **Ninguna variable «relevante con seguridad».** {{V6-M4-N-REL:num}} variables cumplen los criterios pre-registrados. En la especificación pre-registrada pasan Holm {{E-V6-M1A-HOLM:num}} de {{E-V6-M1A-NCONF:num}} hipótesis confirmatorias de alquiler y {{E-V6-M1B-HOLM:num}} de las de compra: con solo {{E-V6-NPROV-TRAIN:num}} provincias de entrenamiento y regresores en `t-1`, la potencia es baja.
+- **El deep learning no bate al gradient boosting.** En el alquiler por distrito (validación interna), el MLP ({{E-V6-M3A-DL-mlp:num}} %) y GraphSAGE ({{E-V6-M3A-DL-gnn:num}} %) quedan a la par del gradient boosting ({{E-V6-M3A-GB-dis:num}} %), sin diferencia significativa (p de {{E-V6-M3A-DLp-mlp:num}} y {{E-V6-M3A-DLp-gnn:num}} en el contraste DM-HLN). En el precio municipal, el MLP ({{E-V6-M3B-DL_MLP_tabular:num}} %) y la red espacial ({{E-V6-M3B-DL_GCN_espacial:num}} %) tienen más error que el mejor bosque ({{m3b_MUN_PRECIO_ANUAL_rmse_pct_mejor_ML:num}} %).
+- **La persistencia no se bate en el volumen trimestral.** En la parte temporal sellada ({{E-V6-M4-TEMP-PROV_VOL_TRIM:fecha_dato}}), el bosque da {{E-V6-M4-TEMP-PROV_VOL_TRIM:num}} % de error frente a {{E-V6-M4-TEMPPERS-PROV_VOL_TRIM:num}} % de la persistencia. En la validación interna, la persistencia iguala al ML en el volumen trimestral ({{E-V6-M3B-PERS-PROV_VOL_TRIM:num}} % frente a {{m3b_PROV_VOL_TRIM_rmse_pct_mejor_ML:num}} %) y en el precio trimestral ({{E-V6-M3B-PERS-PROV_PRECIO_TRIM:num}} % frente a {{m3b_PROV_PRECIO_TRIM_rmse_pct_mejor_ML:num}} %), aunque los dos baten con claridad al AR(4) ({{m3b_PROV_PRECIO_TRIM_rmse_pct_AR:num}} % en el precio). La inercia es la referencia difícil de batir en la compra trimestral.
+- **Ninguna hipótesis confirmatoria pasa Holm**, ni en alquiler ni en compra. La identificación disponible (un solo choque de exposición y topes con pretendencias rechazadas) no alcanza C3.
+
+Fuentes: `output/v6/M1A`, `output/v6/M1B`, `output/v6/M2/peso_variables.md`, `output/v6/M3A`, `output/v6/M3B` y `output/v6/M4`; decisiones en `docs/v6/decisiones.md`.
 
 ---
 

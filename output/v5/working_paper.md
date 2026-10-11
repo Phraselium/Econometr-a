@@ -142,6 +142,10 @@ Toda especificación probada se registra (`registro.csv` de cada módulo). Las f
 
 Las contribuciones contables al precio de compra en 2015-2025 (v2) son: demografía -7,0 pp de Δln acumulado, renta y empleo 1,1 pp de Δln acumulado, financiación 1,1 pp de Δln acumulado, oferta 0,09 pp de Δln acumulado y residuo 3,6 pp de Δln acumulado [C4]. Entre provincias (B3), el reparto del R² da oferta y suelo 25,9 % del R2, demografía 23,6 % del R2, turismo y no residentes 18,4 % del R2, financiación 11,3 % del R2 y renta 9,8 % del R2 [C4]. La tau de Kendall mínima del orden de las familias es -0,71 tau (4 familias) [C4]: las contribuciones no son estables. Las viviendas turísticas desplazaron como máximo 2,7 % del stock de alquiler [C2].
 
+### 4.5 Alquiler y compraventa: qué explica y qué predice (v6)
+
+Medidas: alquiler de stock (SERPAVI, €/m²/mes) por provincia, municipio y distrito; los contratos nuevos van aparte y solo de forma descriptiva, por falta de cobertura provincial. Compraventa: precio medido con el valor tasado del MIVAU (Registradores como robustez) y volumen con la ETDP del INE. En la validación sellada espacial (11 provincias nunca usadas como validación), los árboles predicen mejor que la persistencia el alquiler provincial (1,6 % de error frente a 4,2 %), municipal y por distrito, y el precio provincial (2,5 % frente a 4,0 %); en el precio municipal y con Registradores el mejor es el ECM v1 heredado [C4]. Ninguna variable es «relevante con seguridad» (0). La población pesa en los dos mercados (PIP 1,0 en alquiler y 0,76 en compra) y el PIB por habitante en la compra y no en el alquiler (0,84 frente a 0,10); en la población extranjera y en las viviendas iniciadas los métodos discrepan y se dan las dos lecturas [C4]. La elasticidad precio-alquiler va de 0,59 a 2,1 según la especificación (asociación); la ratio precio/alquiler mediana baja de 20,3 a 17,1 años (2015-2023) y el GSADF no detecta exuberancia en ninguna de las 11 CCAA [C4]. Detalle en la sección sobre alquiler y compraventa del informe técnico.
+
 ---
 
 ## 5. Robustez
@@ -192,6 +196,10 @@ El pre-registro (`docs/v5/prereg_B3.md`, etiqueta git `prereg-v5`) fijó antes d
 7. Validación dejando una provincia fuera en lugar de AR(4) y ECM, que no aplican a un corte transversal.
 8. Control añadido del error de medida del precio inicial con otra fuente.
 9. Parámetro de Oster acotado a uno.
+
+### 5.5 Validación sellada v6 y resultados negativos
+
+La validación v6 es **espacial nueva** y **temporal ya vista**: el último año cae en la ventana sellada de v2 (otras provincias) y todas las provincias se usaron de forma descriptiva en v4-v5. Cada modelo se evaluó una vez, sin reajuste, y en provincias nuevas el AR, el ECM y la econometría de M1 quedan reducidos a la persistencia. Resultados negativos [C4]: ninguna hipótesis confirmatoria pasa Holm (0 de 16 en alquiler; 0 en compra); el deep learning no bate al gradient boosting (MLP 4,8 % frente a 4,8 % en distritos, p 0,63); y la persistencia no se bate en el volumen trimestral (parte temporal sellada: 12,0 % del bosque frente a 11,3 %). Las importancias y los SHAP son descriptivos: no dicen qué pasaría si una variable cambiara.
 
 ---
 

@@ -2,7 +2,23 @@
 
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
-## v6 (en curso)
+## v6.0 (2026-10-11)
+
+Alquiler y compraventa: qué explica y qué predice (módulos M0-M4; decisiones en docs/v6/decisiones.md). Todo es C4; ninguna cifra existente cambia de valor ni de capa.
+
+Cifras nuevas en output/v5/cifras_clave.csv:
+- Leídas de output/v6/*/hechos.json: `M0-*` (paneles y sellado), `m1a_*` (asociaciones con el alquiler de stock en €/mes), `m1b_*` (elasticidad precio-alquiler, ratio precio/alquiler, rentabilidad bruta y coste de uso, GSADF por CCAA, Durbin espacial), `m2_pip_*` (PIP del BMA por mercado), `m3a_*` y `m3b_*` (validación interna) y `V6-M4-*` (error sellado del mejor modelo y de la persistencia, variables «relevantes con seguridad»).
+- Auxiliares nuevas en `src/v5/e_hechos_v6.py` (ids `E-V6-`): provincias selladas y de entrenamiento, PIP del BMA núcleo, deep learning frente a gradient boosting (M3a y M3b), persistencia en la validación interna trimestral, parte temporal sellada del volumen trimestral, recuentos de confirmatorias que pasan Holm y de CCAA con exuberancia GSADF.
+
+Capas: todos los resultados v6 son C4 (predicción y asociación). Ninguna hipótesis confirmatoria pasa Holm (`E-V6-M1A-HOLM`, `E-V6-M1B-HOLM`); ninguna variable es «relevante con seguridad» (`V6-M4-N-REL`); la identificación disponible no alcanza C3. Validación sellada espacial nueva (11 provincias) y temporal ya vista en v2 y de forma descriptiva en v4-v5.
+
+Entregables:
+- informe_tecnico: sección nueva 11, «Alquiler y compraventa: qué explica y qué predice (v6)» (medidas, validación sellada y su limitación, mejor modelo por mercado, medida y nivel, peso de cada variable con las discrepancias M2/M4, relación entre mercados, diferencias provinciales y resultados negativos); punto nuevo en 10.1.
+- working_paper: subsecciones 4.5 (resultados) y 5.5 (validación sellada y negativos).
+- lo_que_sabemos: tres ítems v6 en «Probable pero no demostrado (C4)» y dos en «No se puede afirmar». «Afirmable con seguridad» no cambia (solo C1 y C2).
+- policy_brief: párrafo «Alquiler y compraventa: qué predice y qué no (v6)» y punto en «Lo que este brief no afirma».
+- una_pagina: línea nueva en «Lo que NO se puede afirmar».
+- `src/v5/render.py`: los recuentos en «variables», «hipótesis» y «CCAA» se muestran como enteros.
 
 Auditoría del repositorio para su publicación (módulo G, 2026-10-11; detalle en docs/v6/auditoria.md):
 - README.md principal y docs/MAPA.md (vigente frente a histórico).

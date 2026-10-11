@@ -17,6 +17,7 @@
 > - Qué parte de las viviendas o del alquiler está en manos de empresas o grandes tenedores: no hay datos de titularidad.
 > - Que los topes al alquiler reduzcan los precios o la oferta.
 > - Que haya una burbuja: la exuberancia estadística no la identifica.
+> - Qué variable mueve el alquiler o el precio de compra: en v6 ninguna es «relevante con seguridad» y ninguna hipótesis confirmatoria pasa Holm; que un modelo prediga bien no identifica por qué sube el precio [C4].
 > - La necesidad total de vivienda para 2026-2035 como hecho: depende de supuestos sobre el parque y queda como exploratoria ({{T3-H5b:cita}}). Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 > - Cuánto empeora el déficit a 2030 ({{T4-H2:rango}}, [C4]) y si empeora a 2035 (indeterminado, [C4]).
 > - Cuántas viviendas salen del parque cada año: las identidades de stock no miden bajas, y las demoliciones con licencia son {{E-T7-demol-2024:rango}} en 2024 [C4].

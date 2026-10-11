@@ -187,7 +187,7 @@ def fit(df, y, xs, nivel, mercado, spec, familia, trend=False, conley=False, sen
         reg.log("M1a", f"{nivel}|{spec}|{x}", f"{y} ~ {x} | {','.join(xs)} +FE", d.anio.min(), d.anio.max(), len(d), np.nan,
                 np.nan, np.nan, np.nan, b[j], pw, f"{familia}; {out['metodo']}; p wild Webb B={B}; {nota}")
     DIAG[f"{nivel}|{spec}"] = {"n": int(len(d)), "excluidas_sin_variacion": const, "unidades": int(nu), "clusters": int(G), "r2_within": float(r2l),
-                               "anios": [int(d.anio.min()), int(d.anio.max())], "seg": round(time.time() - t0, 1)}
+                               "anios": [int(d.anio.min()), int(d.anio.max())]}
     return dict(d=d, u=u, t=t, cl=cl, ya=ya, Xa=Xa, b=b, V=V, G=G)
 
 

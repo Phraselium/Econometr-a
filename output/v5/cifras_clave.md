@@ -282,9 +282,9 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 | E-E1-VLC-serpavi-med | Mediana entre distritos de la renta mediana SERPAVI 2024 | 8.03 | 5.87–10.9 | €/m²/mes | 2024 | 19 distritos de València | SERPAVI (MIVAU) | C4 | 2026-10-10 |
 | E-E1-VLC-serpavi-min | Renta mediana SERPAVI 2024, distrito Poblats Del Nord | 5.87 |  | €/m²/mes | 2024 | distrito Poblats Del Nord | SERPAVI (MIVAU) | C4 | 2026-10-10 |
 | E-E1-nprov | Provincias (y ciudades autónomas) de la contabilidad provincial B1/B2 | 52 |  | provincias | 2026-2035 | España | B2 | C4 | 2026-10-10 |
-| E-E1-ver-anc | Afirmaciones con veredicto «ANALIZADA, NO CONCLUYENTE» | 28 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
+| E-E1-ver-anc | Afirmaciones con veredicto «ANALIZADA, NO CONCLUYENTE» | 30 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
 | E-E1-ver-contr | Afirmaciones con veredicto «CONTRADICHA» | 1 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
-| E-E1-ver-n | Afirmaciones del debate evaluadas en el verificador v5 | 36 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
+| E-E1-ver-n | Afirmaciones del debate evaluadas en el verificador v5 | 38 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
 | E-E1-ver-nafd | Afirmaciones con veredicto «NO ANALIZADA: FALTAN DATOS» | 3 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
 | E-E1-ver-nresp | Afirmaciones con veredicto «NO RESPALDADA» | 1 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
 | E-E1-ver-parc | Afirmaciones con veredicto «PARCIALMENTE» | 3 |  | afirmaciones | 2026-10 | España | verificador v5 | C4 | 2026-10-10 |
@@ -304,6 +304,34 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 | E-T7-peso-V | Peso en la amplitud de la necesidad anual 2026-2035: vacancia friccional (V) | 5.465 |  | % | 2026-2035 | España (52 provincias) | T3 (v5.1) | C4 | 2026-10-11 |
 | E-T7-peso-X | Peso en la amplitud de la necesidad anual 2026-2035: liberadas que no llegan al mercado (X) | 10.26 |  | % | 2026-2035 | España (52 provincias) | T3 (v5.1) | C4 | 2026-10-11 |
 | E-T7-prod | Viviendas terminadas al año, España con País Vasco y Navarra (mín. y máx. anual) |  | 7.881e+04–1.01e+05 | viviendas/año | 2019-2024 | España (52 provincias) | MIVAU terminadas libres y protegidas | C1 | 2024-12-31 |
+| E-V6-M1A-HOLM | Hipótesis confirmatorias de alquiler que pasan Holm (p<0,05) | 0 |  | hipótesis | 2021-2023 | provincias, municipios y distritos de entrenamiento | MIVAU-SERPAVI; INE | C4 | 2023 |
+| E-V6-M1A-NCONF | Hipótesis confirmatorias de alquiler contrastadas con Holm | 16 |  | hipótesis | 2021-2023 | provincias, municipios y distritos de entrenamiento | MIVAU-SERPAVI; INE | C4 | 2023 |
+| E-V6-M1B-GSADF-SIG | CCAA con exuberancia GSADF (p<0,05) en el ratio precio/alquiler | 0 |  | CCAA | 2015T1-2024T4 | CCAA con provincias de entrenamiento | MIVAU valor tasado; INE IPC alquiler | C4 | 2026-10-11 |
+| E-V6-M1B-GSADF-TOT | CCAA contrastadas con GSADF | 11 |  | CCAA | 2015T1-2024T4 | CCAA con provincias de entrenamiento | MIVAU valor tasado; INE IPC alquiler | C4 | 2026-10-11 |
+| E-V6-M1B-HOLM | Hipótesis confirmatorias de compra que pasan Holm (p<0,05) | 0 |  | hipótesis | 2016-2024 | 41 provincias de entrenamiento | MIVAU; INE | C4 | 2026-10-11 |
+| E-V6-M2-PIPN-ALQ-ln_iniciadas_libres | PIP BMA núcleo (sin VUT ni suelo) de viviendas libres iniciadas, alquiler de stock (SERPAVI), provincia | 0.9698 |  | probabilidad | 2015-2023 | provincias de entrenamiento | output/v6/M2 (paneles M0) | C4 | 2026-10-11 |
+| E-V6-M2-PIPN-ALQ-ln_pib_pc | PIP BMA núcleo (sin VUT ni suelo) de PIB por habitante, alquiler de stock (SERPAVI), provincia | 0.1881 |  | probabilidad | 2015-2023 | provincias de entrenamiento | output/v6/M2 (paneles M0) | C4 | 2026-10-11 |
+| E-V6-M2-PIPN-ALQ-ln_pob | PIP BMA núcleo (sin VUT ni suelo) de población, alquiler de stock (SERPAVI), provincia | 1 |  | probabilidad | 2015-2023 | provincias de entrenamiento | output/v6/M2 (paneles M0) | C4 | 2026-10-11 |
+| E-V6-M2-PIPN-ALQ-share_ext_pob | PIP BMA núcleo (sin VUT ni suelo) de población extranjera, alquiler de stock (SERPAVI), provincia | 0.06198 |  | probabilidad | 2015-2023 | provincias de entrenamiento | output/v6/M2 (paneles M0) | C4 | 2026-10-11 |
+| E-V6-M2-PIPN-COMPRA-ln_iniciadas_libres | PIP BMA núcleo (sin VUT ni suelo) de viviendas libres iniciadas, precio de compra (tasado MIVAU), provincia | 0.05571 |  | probabilidad | 2015-2024 | provincias de entrenamiento | output/v6/M2 (paneles M0) | C4 | 2026-10-11 |
+| E-V6-M2-PIPN-COMPRA-ln_pib_pc | PIP BMA núcleo (sin VUT ni suelo) de PIB por habitante, precio de compra (tasado MIVAU), provincia | 0.4702 |  | probabilidad | 2015-2024 | provincias de entrenamiento | output/v6/M2 (paneles M0) | C4 | 2026-10-11 |
+| E-V6-M2-PIPN-COMPRA-ln_pob | PIP BMA núcleo (sin VUT ni suelo) de población, precio de compra (tasado MIVAU), provincia | 1 |  | probabilidad | 2015-2024 | provincias de entrenamiento | output/v6/M2 (paneles M0) | C4 | 2026-10-11 |
+| E-V6-M2-PIPN-COMPRA-share_ext_pob | PIP BMA núcleo (sin VUT ni suelo) de población extranjera, precio de compra (tasado MIVAU), provincia | 0.772 |  | probabilidad | 2015-2024 | provincias de entrenamiento | output/v6/M2 (paneles M0) | C4 | 2026-10-11 |
+| E-V6-M3A-DL-gnn | RMSE de validación interna, GraphSAGE, alquiler de stock (distrito) | 4.801 |  | log-puntos x100 (aprox. %) | 2018-2023 (pliegues) | distritos de entrenamiento | SERPAVI (MIVAU) | C4 | 2023 |
+| E-V6-M3A-DL-mlp | RMSE de validación interna, MLP con embeddings, alquiler de stock (distrito) | 4.802 |  | log-puntos x100 (aprox. %) | 2018-2023 (pliegues) | distritos de entrenamiento | SERPAVI (MIVAU) | C4 | 2023 |
+| E-V6-M3A-DLp-gnn | p DM-HLN de GraphSAGE frente a gradient boosting, alquiler de stock (distrito) | 0.6058 |  | p | 2018-2023 (pliegues) | distritos de entrenamiento | SERPAVI (MIVAU) | C4 | 2023 |
+| E-V6-M3A-DLp-mlp | p DM-HLN de MLP con embeddings frente a gradient boosting, alquiler de stock (distrito) | 0.6334 |  | p | 2018-2023 (pliegues) | distritos de entrenamiento | SERPAVI (MIVAU) | C4 | 2023 |
+| E-V6-M3A-GB-dis | RMSE de validación interna, gradient boosting, alquiler de stock (distrito) | 4.811 |  | log-puntos x100 (aprox. %) | 2018-2023 (pliegues) | distritos de entrenamiento | SERPAVI (MIVAU) | C4 | 2023 |
+| E-V6-M3B-DL_GCN_espacial | RMSE % de GCN espacial, precio municipal anual, validación por bloques con embargo | 8.311 |  | % (RMSE de ln) | orígenes 2018/2020/2022 | municipios de entrenamiento | MIVAU/INE ETDP (paneles M0 train) | C4 | 2024 |
+| E-V6-M3B-DL_MLP_tabular | RMSE % de MLP tabular, precio municipal anual, validación por bloques con embargo | 5.186 |  | % (RMSE de ln) | orígenes 2018/2020/2022 | municipios de entrenamiento | MIVAU/INE ETDP (paneles M0 train) | C4 | 2024 |
+| E-V6-M3B-PERS-PROV_PRECIO_TRIM | RMSE % de la persistencia, precio provincial trimestral, validación por bloques con embargo | 1.907 |  | % (RMSE de ln) | orígenes 2018/2020/2022 | provincias de entrenamiento | MIVAU/INE ETDP (paneles M0 train) | C4 | 2024T4 |
+| E-V6-M3B-PERS-PROV_VOL_TRIM | RMSE % de la persistencia, volumen provincial trimestral, validación por bloques con embargo | 25.75 |  | % (RMSE de ln) | orígenes 2018/2020/2022 | provincias de entrenamiento | MIVAU/INE ETDP (paneles M0 train) | C4 | 2024T4 |
+| E-V6-M3Bp-DL_GCN_espacial | p DM-HLN de GCN espacial frente a gradient boosting, precio municipal anual | 0.06341 |  | p | orígenes 2018/2020/2022 | municipios de entrenamiento | MIVAU/INE ETDP (paneles M0 train) | C4 | 2024 |
+| E-V6-M3Bp-DL_MLP_tabular | p DM-HLN de MLP tabular frente a gradient boosting, precio municipal anual | 0.4544 |  | p | orígenes 2018/2020/2022 | municipios de entrenamiento | MIVAU/INE ETDP (paneles M0 train) | C4 | 2024 |
+| E-V6-M4-TEMP-PROV_VOL_TRIM | RMSE temporal sellado del mejor modelo (bosque), volumen provincial trimestral | 12 |  | log-puntos x100 (aprox. %) | último año (temporal ya visto en v2) | provincias de entrenamiento, último año | INE ETDP | C4 | 2025 |
+| E-V6-M4-TEMPPERS-PROV_VOL_TRIM | RMSE temporal sellado de la persistencia, volumen provincial trimestral | 11.29 |  | log-puntos x100 (aprox. %) | último año (temporal ya visto en v2) | provincias de entrenamiento, último año | INE ETDP | C4 | 2025 |
+| E-V6-NPROV-SELL | Provincias selladas en la validación v6 (bloques de CCAA) | 11 |  | provincias | 2015-2025 | 52 provincias | holdout.py (sellar_v6) | C4 | 2026-10-11 |
+| E-V6-NPROV-TRAIN | Provincias de entrenamiento en v6 | 41 |  | provincias | 2015-2024 | 52 provincias | holdout.py (sellar_v6) | C4 | 2026-10-11 |
 | E-v3-H3-1 | VUT por 100 viviendas y alquiler SERPAVI (FE sección, nacional), coeficiente v3 | 0.2599 | -0.7442–1.264 | milésimas de log-punto por VUT/100 viv. | 2021-2024 | Secciones censales | INE VUT; SERPAVI | C4 | 2024 |
 | E-v3-H3-1-p | p Holm de H3-1 (v3) | 46.66 |  | % (valor p) | 2021-2024 | Secciones censales | INE VUT; SERPAVI | C4 | 2024 |
 | E-v3-H3-3a-CS | Topes v3 (renta), DiD Callaway-Sant'Anna en entrenamiento; reportado como C4 | -5.412 | -7.09–-3.703 | % | 2018-2022 | Municipios sujetos de Cataluña | SERPAVI; Incasòl | C4 | 2022 |

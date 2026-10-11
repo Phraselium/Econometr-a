@@ -142,6 +142,10 @@ Toda especificación probada se registra (`registro.csv` de cada módulo). Las f
 
 Las contribuciones contables al precio de compra en 2015-2025 (v2) son: demografía {{B4-v2-compra-2015-2025-demografica:valor}}, renta y empleo {{B4-v2-compra-2015-2025-renta_empleo:valor}}, financiación {{B4-v2-compra-2015-2025-financiacion_tipos:valor}}, oferta {{B4-v2-compra-2015-2025-oferta_suelo:valor}} y residuo {{B4-v2-compra-2015-2025-residuo:valor}} [C4]. Entre provincias (B3), el reparto del R² da oferta y suelo {{B4-b3-shapley-oferta_suelo:valor}}, demografía {{B4-b3-shapley-demografica:valor}}, turismo y no residentes {{B4-b3-shapley-turismo_no_residentes:valor}}, financiación {{B4-b3-shapley-financiacion_tipos:valor}} y renta {{B4-b3-shapley-renta_empleo:valor}} [C4]. La tau de Kendall mínima del orden de las familias es {{B4-estabilidad-tau-min:valor}} [C4]: las contribuciones no son estables. Las viviendas turísticas desplazaron como máximo {{B4-v3-vut-cantidad:valor}} [C2].
 
+### 4.5 Alquiler y compraventa: qué explica y qué predice (v6)
+
+Medidas: alquiler de stock (SERPAVI, €/m²/mes) por provincia, municipio y distrito; los contratos nuevos van aparte y solo de forma descriptiva, por falta de cobertura provincial. Compraventa: precio medido con el valor tasado del MIVAU (Registradores como robustez) y volumen con la ETDP del INE. En la validación sellada espacial ({{E-V6-NPROV-SELL:num}} provincias nunca usadas como validación), los árboles predicen mejor que la persistencia el alquiler provincial ({{V6-M4-RMSE-alq_provincia:num}} % de error frente a {{V6-M4-PERS-alq_provincia:num}} %), municipal y por distrito, y el precio provincial ({{V6-M4-RMSE-PROV_PRECIO_ANUAL:num}} % frente a {{V6-M4-PERS-PROV_PRECIO_ANUAL:num}} %); en el precio municipal y con Registradores el mejor es el ECM v1 heredado [C4]. Ninguna variable es «relevante con seguridad» ({{V6-M4-N-REL:num}}). La población pesa en los dos mercados (PIP {{m2_pip_alq_ln_pob:num}} en alquiler y {{m2_pip_cp_ln_pob:num}} en compra) y el PIB por habitante en la compra y no en el alquiler ({{m2_pip_cp_ln_pib_pc:num}} frente a {{m2_pip_alq_ln_pib_pc:num}}); en la población extranjera y en las viviendas iniciadas los métodos discrepan y se dan las dos lecturas [C4]. La elasticidad precio-alquiler va de {{m1b_elasticidad_anual_FE_unidad_tendencia:num}} a {{m1b_elasticidad_trimestral_DOLS_FE_unidad_tendencia:num}} según la especificación (asociación); la ratio precio/alquiler mediana baja de {{m1b_ratio_precio_alquiler_mediana_2015:num}} a {{m1b_ratio_precio_alquiler_mediana:num}} años ({{m1b_ratio_precio_alquiler_mediana_2015:periodo}}-{{m1b_ratio_precio_alquiler_mediana:periodo}}) y el GSADF no detecta exuberancia en ninguna de las {{E-V6-M1B-GSADF-TOT:num}} CCAA [C4]. Detalle en la sección sobre alquiler y compraventa del informe técnico.
+
 ---
 
 ## 5. Robustez
@@ -192,6 +196,10 @@ El pre-registro (`docs/v5/prereg_B3.md`, etiqueta git `prereg-v5`) fijó antes d
 7. Validación dejando una provincia fuera en lugar de AR(4) y ECM, que no aplican a un corte transversal.
 8. Control añadido del error de medida del precio inicial con otra fuente.
 9. Parámetro de Oster acotado a uno.
+
+### 5.5 Validación sellada v6 y resultados negativos
+
+La validación v6 es **espacial nueva** y **temporal ya vista**: el último año cae en la ventana sellada de v2 (otras provincias) y todas las provincias se usaron de forma descriptiva en v4-v5. Cada modelo se evaluó una vez, sin reajuste, y en provincias nuevas el AR, el ECM y la econometría de M1 quedan reducidos a la persistencia. Resultados negativos [C4]: ninguna hipótesis confirmatoria pasa Holm ({{E-V6-M1A-HOLM:num}} de {{E-V6-M1A-NCONF:num}} en alquiler; {{E-V6-M1B-HOLM:num}} en compra); el deep learning no bate al gradient boosting (MLP {{E-V6-M3A-DL-mlp:num}} % frente a {{E-V6-M3A-GB-dis:num}} % en distritos, p {{E-V6-M3A-DLp-mlp:num}}); y la persistencia no se bate en el volumen trimestral (parte temporal sellada: {{E-V6-M4-TEMP-PROV_VOL_TRIM:num}} % del bosque frente a {{E-V6-M4-TEMPPERS-PROV_VOL_TRIM:num}} %). Las importancias y los SHAP son descriptivos: no dicen qué pasaría si una variable cambiara.
 
 ---
 

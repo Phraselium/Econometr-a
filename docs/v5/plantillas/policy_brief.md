@@ -45,6 +45,10 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 
 [C2] El aumento de viviendas turísticas de 2020 a 2024 equivale como máximo a {{B4-v3-vut-cantidad}}.
 
+## Alquiler y compraventa: qué predice y qué no (v6)
+
+[C4] Con datos públicos por provincia, municipio y distrito, los modelos de árboles predicen el alquiler de stock (SERPAVI) y el precio de compra (valor tasado) en provincias que no vieron mejor que la simple inercia: en el alquiler provincial, {{V6-M4-RMSE-alq_provincia:num}} % de error frente a {{V6-M4-PERS-alq_provincia:num}} %. Pero predecir no es explicar: ninguna variable es «relevante con seguridad», ninguna hipótesis confirmatoria pasa la corrección de Holm y, en el volumen trimestral de compraventas del último año, nada bate a la inercia. La población se asocia con los dos mercados y el PIB por habitante solo con la compra. Precio y alquiler se mueven juntos sin señales de exuberancia en ninguna de las {{E-V6-M1B-GSADF-TOT:num}} CCAA contrastadas. Para decidir, estos resultados orientan dónde mirar, no qué instrumento funciona.
+
 ## Qué falta para decidir mejor
 
 Las solicitudes de docs/v5/solicitudes.md, por orden de prioridad:
@@ -65,6 +69,7 @@ Las solicitudes de docs/v5/solicitudes.md, por orden de prioridad:
 - No atribuye la subida de precios a un factor principal: turísticos, inmigración, oferta, tipos, compradores extranjeros o empresas.
 - No afirma que los topes al alquiler reduzcan precios u oferta: su resultado queda en [C4].
 - No afirma que haya una burbuja.
+- No afirma que ninguna variable determine el alquiler o el precio de compra: las importancias de los modelos de predicción de v6 son descriptivas.
 
 ## Neutralidad
 

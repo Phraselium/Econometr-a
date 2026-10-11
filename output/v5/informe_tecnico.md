@@ -544,10 +544,11 @@ La tabla completa, con documento y página de cada organismo, está en [output/v
 - **Que las viviendas turísticas suban el alquiler nacional.** La asociación de v3 no se distingue de cero (0,26 milésimas de log-punto por VUT/100 viv. (-0,74-1,3 milésimas de log-punto por VUT/100 viv.), p ajustado 46,7 % (valor p)); la cota de cantidad es 2,7 % del stock de alquiler [C2].
 - **Que haya una burbuja.** Las pruebas de exuberancia (GSADF) con tamaño corregido detectan episodios en algunas razones de precio y no en otras; una exuberancia estadística no es una burbuja (sección de robustez del working paper).
 - **Que el pre-registro de B3 confirme una hipótesis.** Su potencia era insuficiente; el resultado es descriptivo.
+- **Que alguna variable sea «relevante con seguridad» para el alquiler o la compra (v6).** Ninguna cumple los criterios pre-registrados (0 variables) y ninguna hipótesis confirmatoria pasa Holm; las importancias de los modelos de predicción son descriptivas (véase la sección sobre alquiler y compraventa) [C4].
 
 ### 10.2 Verificador de afirmaciones
 
-Se evalúan 36 afirmaciones del debate público: 28 afirmaciones quedan «analizada, no concluyente», 3 afirmaciones «parcialmente», 3 afirmaciones «no analizada: faltan datos» y 1 afirmaciones «contradicha» [C4]. Detalle en [output/v5/verificador/verificador.md](verificador/verificador.md).
+Se evalúan 38 afirmaciones del debate público: 30 afirmaciones quedan «analizada, no concluyente», 3 afirmaciones «parcialmente», 3 afirmaciones «no analizada: faltan datos» y 1 afirmaciones «contradicha» [C4]. Detalle en [output/v5/verificador/verificador.md](verificador/verificador.md).
 
 ### 10.3 Limitaciones de datos y método
 
@@ -578,6 +579,95 @@ Del backlog (`docs/v5/backlog.md`) quedan abiertos o parciales:
 - **Microdatos de transacciones con residencia del comprador por provincia** (Notariado y Registradores): elevarían la capa de las cifras sobre no residentes.
 
 Las solicitudes a organismos están en `docs/v5/solicitudes.md`. Ninguna conclusión de este informe depende de datos privados.
+
+---
+
+## 11. Alquiler y compraventa: qué explica y qué predice (v6)
+
+**Pregunta.** ¿Qué variables se asocian con el alquiler y con la compraventa por provincia, municipio y distrito, qué modelo los predice mejor fuera de muestra y en qué se parecen y se diferencian los dos mercados? Todo el apartado es C4: predicción y asociación, sin lenguaje causal.
+
+### 11.1 Medidas
+
+- **Alquiler de stock.** SERPAVI (MIVAU), mediana del valor central en €/m²/mes por provincia, municipio y distrito; el IPC de alquiler entra solo como robustez. Es el alquiler de todos los contratos vigentes declarados, no el de los nuevos.
+- **Contratos nuevos.** Se tratan por separado y solo de forma descriptiva: las fianzas con desglose por provincia cubren muy pocas provincias (Cataluña y la Comunitat Valenciana) y no admiten un modelo.
+- **Compraventa, precio.** Medida declarada: valor tasado del MIVAU en €/m² (provincia anual y trimestral, municipio anual). Registradores entra como robustez.
+- **Compraventa, volumen.** Compraventas de vivienda de la estadística de transmisiones del INE (ETDP), anual y trimestral por provincia.
+- **Paneles.** 41 provincias de entrenamiento (2015-2024 en compra y 2015-2023 en alquiler); regresores en `t-1` con efectos fijos de unidad y año (pre-registro `prereg-v6`).
+
+### 11.2 Validación sellada nueva y su limitación
+
+- **Qué es nuevo.** Se sellaron 11 provincias por bloques completos de CCAA (Baleares, Aragón, La Rioja, Madrid, Murcia, Navarra, Asturias y Canarias), con sus municipios y distritos, más el último año de cada panel. Esas provincias no se habían usado nunca como validación. Cada modelo se evaluó una sola vez en la muestra sellada, sin reajustarlo.
+- **Qué no es nuevo.** El último año (2025 en compra, 2024 en alquiler) cae dentro de la ventana sellada de v2, abierta para otras provincias, y todas las provincias se usaron de forma descriptiva en v4-v5. La validación es **espacial nueva; temporal ya vista**. Las conclusiones se apoyan en la parte espacial.
+- **Limitación de la comparación.** En provincias nuevas, el AR por unidad, el ECM v1 y la econometría de M1 no tienen efecto fijo y quedan reducidos a la persistencia.
+
+### 11.3 Mejor modelo por mercado, medida y nivel
+
+Error en la parte espacial sellada (RMSE en log-puntos multiplicados por cien, aproximadamente en %), frente a la persistencia (el último valor observado) en la misma muestra [C4]:
+
+| Mercado | Medida | Nivel | Mejor modelo | Error sellado (aprox. %) | Persistencia (aprox. %) | Mejora a la persistencia |
+|---|---|---|---|---|---|---|
+| Alquiler de stock | SERPAVI | provincia | gradient boosting | 1,6 | 4,2 | sí (DM-HLN, Holm) |
+| Alquiler de stock | SERPAVI | municipio | random forest | 5,1 | 6,5 | sí (DM-HLN, Holm) |
+| Alquiler de stock | SERPAVI | distrito | gradient boosting | 5,6 | 7,0 | sí (DM-HLN, Holm) |
+| Compra, precio | valor tasado MIVAU | provincia anual | random forest | 2,5 | 4,0 | sí (DM-HLN, Holm) |
+| Compra, precio | valor tasado MIVAU | provincia trimestral | bosque con bootstrap bayesiano | 1,6 | 1,9 | sí (DM-HLN, Holm) |
+| Compra, precio | valor tasado MIVAU | municipio anual | ECM v1 (línea base) | 3,9 | 6,3 | sí, pero el ML no mejora la línea base |
+| Compra, precio | Registradores (robustez) | provincia anual | ECM v1 (línea base) | 4,7 | 6,0 | sí, pero el ML no mejora la línea base |
+| Compra, volumen | ETDP (INE) | provincia anual | bosque con bootstrap bayesiano | 13,0 | 15,9 | sí (DM-HLN, Holm) |
+| Compra, volumen | ETDP (INE) | provincia trimestral | bosque con bootstrap bayesiano | 11,3 | 18,5 | en la parte espacial sí; en la temporal no |
+
+Fuente: `output/v6/M4/mejor_modelo.csv` y `output/v6/M4/tabla_modelos.md`. El mejor modelo se elige por el error espacial sellado y la estabilidad entre periodos, nunca por el R². En el precio municipal y en Registradores el bosque no mejora al ECM v1 en más de un 5 % del error, y se queda la línea base.<!-- check:cifra-libre -->
+
+**Lectura.** Los árboles predicen mejor el alquiler de stock y el precio provincial que la inercia, en provincias que no vieron. En el precio municipal y con Registradores, la econometría heredada (ECM v1) basta. Predecir mejor no identifica por qué sube el precio.
+
+### 11.4 Peso de cada variable en alquiler y en compra [C4]
+
+Dos lecturas complementarias, ambas asociativas:
+- **M2 (incertidumbre de modelo).** Probabilidad de inclusión posterior (PIP) del promedio bayesiano de modelos (BMA), con el multiverso y la doble selección (PDS) como contraste. El BMA completo solo usa las observaciones con viviendas turísticas y suelo; el «núcleo» prescinde de esas dos variables y tiene más observaciones.
+- **M4 (síntesis).** Una variable sería «relevante con seguridad» solo si pasara los criterios pre-registrados en las tres familias (econometría, incertidumbre de modelo y predicción). Ninguna lo hace (0).
+
+| Variable | PIP alquiler (completo / núcleo) | PIP compra, precio (completo / núcleo) | Síntesis M4 |
+|---|---|---|---|
+| Población | 1,0 / 1,0 | 0,76 / 1,0 | apoyo en una familia en los dos mercados |
+| Población extranjera | 0,30 / 0,06 | 0,31 / 0,77 | apoyo en una familia en alquiler; sin apoyo en compra |
+| PIB por habitante | 0,10 / 0,19 | 0,84 / 0,47 | apoyo en una familia en compra; sin apoyo en alquiler |
+| Viviendas libres iniciadas | 0,09 / 0,97 | 0,12 / 0,06 | sin apoyo suficiente |
+| Viviendas libres terminadas | 0,17 | 0,12 | sin apoyo suficiente |
+| Viviendas turísticas | 0,12 | 0,10 | sin apoyo suficiente |
+| Municipios con tope de alquiler | 0,23 | — | sin apoyo suficiente |
+
+**Lo que pesa en un mercado y no en el otro (C4, con discrepancias declaradas).**
+- **Población:** pesa en los dos mercados con los dos métodos.
+- **PIB por habitante:** pesa en la compra y no en el alquiler con el BMA completo y con la síntesis de M4; en el núcleo la diferencia se reduce.
+- **Población extranjera: los métodos discrepan.** En el núcleo de M2 pesa en la compra (PIP 0,77) y no en el alquiler (PIP 0,06); en la síntesis de M4 tiene apoyo en el alquiler (familia de predicción) y no en la compra. Se dan las dos lecturas y ninguna se elige.
+- **Viviendas iniciadas: los métodos discrepan.** En el núcleo de M2 pesan en el alquiler y no en la compra; en el BMA completo y en la síntesis de M4 no pesan en ninguno. En el volumen de compraventas el BMA les da una PIP de 0,98, con signo negativo.
+- **Viviendas turísticas y topes:** no tienen apoyo suficiente en ningún mercado.
+
+En la econometría de M1, la población es la variable con la asociación más clara con el alquiler de stock provincial (4,6 EUR/mes (1,1-8,1 EUR/mes) por cada diez mil habitantes, en 2021-2023), pero no sobrevive a Holm y los métodos de contraste discrepan [C4].
+
+Las importancias, los SHAP y los ALE de los modelos de predicción (`output/v6/M3A`, `output/v6/M3B`) son descriptivos: dicen qué variables usa el modelo para predecir, no qué ocurriría si una variable cambiara.
+
+### 11.5 Relación entre el mercado de compra y el de alquiler [C4]
+
+- **Elasticidad precio-alquiler.** Un uno por ciento más de alquiler de stock se asocia con entre un 0,59 % (anual, 2015-2023, efectos fijos de provincia y tendencia) y un 2,1 % (trimestral, 2015T1-2024T4, DOLS) más de valor tasado. La magnitud depende de la especificación y se dan los dos extremos. Es una asociación entre dos precios que se mueven juntos, no una transmisión de uno a otro.
+- **Ratio precio/alquiler.** La mediana provincial pasa de 20,3 años de alquiler en 2015 a 17,1 en 2023: el alquiler de stock ha subido más que el valor tasado. La rentabilidad bruta mediana es 5,8 % del valor tasado, frente a un coste de uso de 4,3 % del valor, este último con supuestos explícitos.
+- **Exuberancia.** El GSADF con tamaño corregido sobre el ratio precio/IPC de alquiler no detecta exuberancia en ninguna CCAA: 0 de 11 CCAA contrastadas (2015T1-2024T4). No detectar exuberancia no prueba que no la haya; las series son cortas.
+
+### 11.6 Qué separa a unas provincias de otras según los modelos [C4, descriptivo]
+
+- **Alquiler.** Las provincias con más población y, según la familia de predicción, con más población extranjera son las que los modelos asocian con alquileres más altos y subidas mayores.
+- **Compra.** En el precio, la población y el PIB por habitante concentran el apoyo.
+- **Vecindad.** El precio de una provincia se parece al de sus vecinas (autocorrelación espacial de 0,28); el volumen apenas (0,12).
+Es una descripción de lo que comparten las provincias caras o con subidas mayores, no una atribución de la subida a esos factores. El verificador recoge estas dos preguntas (fichas `M4-V1` y `M4-V2`) con el veredicto «analizada, no concluyente».
+
+### 11.7 Resultados negativos
+
+- **Ninguna variable «relevante con seguridad».** 0 variables cumplen los criterios pre-registrados. En la especificación pre-registrada pasan Holm 0 de 16 hipótesis confirmatorias de alquiler y 0 de las de compra: con solo 41 provincias de entrenamiento y regresores en `t-1`, la potencia es baja.
+- **El deep learning no bate al gradient boosting.** En el alquiler por distrito (validación interna), el MLP (4,8 %) y GraphSAGE (4,8 %) quedan a la par del gradient boosting (4,8 %), sin diferencia significativa (p de 0,63 y 0,61 en el contraste DM-HLN). En el precio municipal, el MLP (5,2 %) y la red espacial (8,3 %) tienen más error que el mejor bosque (5,0 %).
+- **La persistencia no se bate en el volumen trimestral.** En la parte temporal sellada (2025), el bosque da 12,0 % de error frente a 11,3 % de la persistencia. En la validación interna, la persistencia iguala al ML en el volumen trimestral (25,7 % frente a 25,7 %) y en el precio trimestral (1,9 % frente a 1,9 %), aunque los dos baten con claridad al AR(4) (3,5 % en el precio). La inercia es la referencia difícil de batir en la compra trimestral.
+- **Ninguna hipótesis confirmatoria pasa Holm**, ni en alquiler ni en compra. La identificación disponible (un solo choque de exposición y topes con pretendencias rechazadas) no alcanza C3.
+
+Fuentes: `output/v6/M1A`, `output/v6/M1B`, `output/v6/M2/peso_variables.md`, `output/v6/M3A`, `output/v6/M3B` y `output/v6/M4`; decisiones en `docs/v6/decisiones.md`.
 
 ---
 

@@ -57,3 +57,4 @@
   - En el volumen trimestral del último año, la persistencia no se bate.
 - **Ninguna variable cumple el criterio pre-registrado de «relevante con seguridad».** La familia econométrica nunca pasa Holm. Todo queda en C4.
 - **Limitación de la comparación espacial.** En provincias nuevas, AR, ECM y M1 caen a persistencia, porque no tienen efecto fijo. La red de M3a no admitía provincias nuevas y M4 usa la media de los embeddings (declarado).
+- Se elimina de output/v6/M1A/diagnosticos.json el campo «seg» (tiempo de ejecución), que impedía que dos ejecuciones dieran md5 idénticos.

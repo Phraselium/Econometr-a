@@ -19,3 +19,12 @@ def test_sin_huerfanas_en_entregables_principales():
     malas = principal[principal.clase.isin(["HUERFANA", "CONTRADICTORIA"])]
     nuevas = [(r.fichero, r.cifra, r.linea) for r in malas.itertuples() if (r.fichero, r.cifra) not in EXCEPCIONES_TEST]
     assert not nuevas, f"cifras fuera de cifras_clave.csv: {nuevas[:10]}"
+
+
+def test_tablas_literatura_cerradas():
+    """v6.1: toda fila de tabla de docs/literatura.md termina en «|» (bs_tablas de v2 la parsea por columnas)."""
+    from pathlib import Path
+    raiz = Path(__file__).resolve().parents[1]
+    malas = [i + 1 for i, ln in enumerate((raiz / "docs" / "literatura.md").read_text().splitlines())
+             if ln.rstrip().startswith("|") and not ln.rstrip().endswith("|")]
+    assert not malas, f"filas de tabla sin cerrar en docs/literatura.md: {malas[:10]}"

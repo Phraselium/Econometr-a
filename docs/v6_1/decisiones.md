@@ -30,3 +30,8 @@
   - **R-09.** Sin hallazgo: Notariado está versionado.
   - **R-10.** Corregida la descripción de fuentes del déficit y declarada la constante EPA.
   - **K2.** La población puede ser mediadora; tres filas del historial pasan a «Se mantiene».
+- **D10 · Fallo de `make all` en el clon limpio** (primera tanda de cierre).
+  - Causa: K4d añadió la marca de cuartil como texto tras la última «|» en 26 filas de tabla de docs/literatura.md, y src/v2/bs_tablas.py dejó de encontrar Cavalleri et al. (2019).
+  - Corrección: la marca entra en la última columna.
+  - Test nuevo `test_tablas_literatura_cerradas`.
+  - Se repite `make all` ×2.

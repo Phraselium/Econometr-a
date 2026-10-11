@@ -28,8 +28,7 @@ TS = ("a", "b", "c", "lo", "opt")        # terminadas: ritmo actual, cartera, te
 FS = ("min", "central", "max")           # hogares
 BS = ("min", "central", "max")           # bajas T1 (tasa 0 / central / máx.)
 XS = ("0", "min", "central", "max")      # liberadas que no llegan al mercado (0 = sin variante)
-FECHA = ("INE Proyección de Hogares 54562 (mod. 2026-06-17, base 1-ene-2026); INE Proyecciones de Población 36726; "
-         "MIVAU hasta 2025; A4; T1 y T2 de v5.1 (ejecución 2026-10-11)")
+FECHA = "2025 (ECP y MIVAU); proyecciones INE 54562 y 36726 de 2026-06-17"
 
 
 def series_t(cods, nombres):

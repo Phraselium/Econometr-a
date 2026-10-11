@@ -128,6 +128,8 @@ En las tres provincias valencianas, el registro de VUT de la GVA cuenta más viv
 
 La serie de anuncios de 2012-2016 por barrio y el instrumento del original permitirían separar periodo y método. Un acceso a contratos nuevos con fianza por sección permitiría estimar con un flujo. Ambos quedan en el backlog del proyecto.
 
+**Nota de la versión `v5.1`.** Este artículo no estima la necesidad de vivienda, pero comparte datos con el que sí lo hace. En `v5.1` esa necesidad base es de 210.424 viviendas/año (99.388-292.083 viviendas/año) en 2026-2035 [C4]. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares. Las bajas del parque no se miden con las identidades de stock; las demoliciones con licencia son 0,02-0,04 % del parque en 2024 [C4].
+
 ## Conclusión
 
 La replicación conceptual no reproduce el resultado de García-López et al. (2020) en 2021-2024 con datos de stock: el coeficiente es -4,2 milésimas de log-punto por punto de VUT/parque (-7,8--0,54 milésimas de log-punto por punto de VUT/parque) [C4] y no se distingue de cero tras Holm. La diferencia entre stock y flujo justifica una magnitud menor, no un cambio de signo; periodo y método no se pueden contrastar. Los topes al alquiler no se pueden evaluar como efecto con el protocolo aplicado porque la validación quedó contaminada; sus estimaciones se reportan como [C4]. Lo que sí se puede afirmar con supuestos débiles es una cota: como máximo 2,7 % del stock de alquiler (2,4-2,7 % del stock de alquiler) desplazado por VUT [C2].

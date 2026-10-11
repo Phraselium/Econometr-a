@@ -5,20 +5,23 @@
 ## Mensajes principales
 
 1. [C1] Entre 2021 y 2025 el número de hogares aumentó en {{dh_2125}}, con dos fuentes de hogares (ECP y EPA corregida) que coinciden en orden de magnitud.
-2. [C1] En 2021-2024 los hogares crecieron más que las viviendas terminadas: el balance acumulado es de {{deficit_2124_c1:rango}} sin contar bajas del parque. [C2] Con bajas supuestas del parque, la cota alcanza {{deficit_2124_c2:max}}.
+2. [C1] En 2021-2024 los hogares crecieron más que las viviendas terminadas: el balance acumulado es de {{deficit_2124_c1:rango}} sin contar bajas del parque. [C4] Con las bajas del parque estimadas, llegaría como máximo a {{T3-H2:max}}.
 3. [C1] Las viviendas terminadas fueron de {{terminadas_1924:rango}} en 2019-2024 (territorio común), con el Ministerio y el Catastro de acuerdo.
 4. [C1] El precio de compra subió {{A23-P2}} en 2015-2025 según el núcleo Ministerio-Notariado-Registradores. [C1] El alquiler de los contratos vigentes subió {{A23-A2:rango}} en 2015-2024; el de los contratos nuevos crece más deprisa, pero esa brecha es [C4].
 5. [C2] La proyección del INE añade {{B1-H4}} en 2026-2035: es la parte de la necesidad que no depende de supuestos propios sobre el parque.
-6. [C2] La demanda latente de los jóvenes, medida por la convivencia con los padres frente a 2008, queda en {{latente_convivencia:rango}}.
+6. [C2] Hasta 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista; cuánto empeora es [C4].
+7. [C2] La demanda latente de los jóvenes, medida por la convivencia con los padres frente a 2008, queda en {{latente_convivencia:rango}}.
 
 ## Necesidad y proyección
 
 La necesidad de vivienda para 2026-2035 se construye por componentes. El crecimiento de hogares proyectado es [C2]. El resto (atraso, reposición, vacancia friccional, vacías movilizables, cartera en construcción) depende de supuestos y queda en [C4]:
 
-- [C4] Necesidad total por año, suma de provincias: {{B1-H1}}.
+- [C4] Necesidad total por año, suma de provincias (base): {{T3-H5b}}. Si una parte de las viviendas liberadas no llega al mercado, la necesidad efectiva sube a {{T3-H5}}. Equivale a {{T3-H9:min}}, {{T3-H9:valor}} y {{T3-H9:max}} la producción actual ({{E-T7-prod:rango}} terminadas en {{E-T7-prod:periodo}}, España con País Vasco y Navarra). El supuesto que más pesa es la fracción de vacías movilizables.
+- [C4] Viviendas liberadas por envejecimiento en 2026-2035: {{T2-H1}}, de las que llegan al mercado {{T2-H6:num}} viviendas al año, sobre todo fuera de las capitales ({{E-T7-lib-resto:valor}} en el resto de municipios frente a {{E-T7-lib-capital:valor}} en las capitales). Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
+- [C4] Bajas del parque: las identidades de stock no las miden, y las demoliciones con licencia son {{E-T7-demol-2024:rango}} en 2024.
 - [C4] Atraso a absorber: déficit 2021-2025 de {{E-B1-A1:valor}} y emancipación retrasada de {{E-B1-A2:valor}}.
 - [C4] Vacías movilizables en zonas con presión: {{B1-H6}}; reposición del parque: {{B1-H3}}.
-- [C4] Proyección a 2030: el déficit acumulado nacional quedaría en {{E-E1-B2-D2030-b:valor}} si la cartera actual se termina con su retardo, y en {{E-E1-B2-D2030-a:valor}} al ritmo actual de terminaciones. Se dan los dos escenarios porque discrepan.
+- [C2] Proyección a 2030: el déficit empeora en todos los escenarios. [C4] La magnitud del aumento es {{T4-H2}}. Provincias: {{T4-H3:valor}} empeoran, {{T4-H3:min}} mejoran y {{T4-H3:max}} quedan indeterminadas. A 2035 la dirección es indeterminada [C4]: el envejecimiento libera más viviendas después de 2030.
 
 ![](B1/figuras/B1_mapa_necesidad.png)
 

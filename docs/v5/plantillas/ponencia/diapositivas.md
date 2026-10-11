@@ -42,12 +42,14 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 ## «Faltan cientos de miles de viviendas»
 
 - **PARCIALMENTE** [C1]: el déficit 2021-2024 está entre {{deficit_2124_c1:rango}} con bajas nulas
+- Con las bajas estimadas, como máximo {{T3-H2:max}} [C4]; demoliciones con licencia: {{E-T7-demol-2024:rango}}
 
 ---
 
-## «La vivienda que dejan los mayores lo resolverá»
+## «El envejecimiento resolverá el problema» (`T2-V1`)
 
-- **ANALIZADA, NO CONCLUYENTE** [C4]: {{E-B1-L:valor}} en diez años, ya descontadas en la proyección de hogares
+- **ANALIZADA, NO CONCLUYENTE** [C4]: {{T2-H1:valor}} en 2026-2035; llegan al mercado {{T2-H6:num}} viviendas al año
+- Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 
 ---
 
@@ -65,7 +67,9 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## Necesidad anual, con rango
 
-- {{B1-H1:cita}}
+- Base: {{T3-H5b:cita}}
+- Si parte de las liberadas no llega al mercado: {{T3-H5:valor}}
+- Entre {{T3-H9:min}} y {{T3-H9:max}} la producción actual [C4]
 
 ![](../B1/figuras/B1_mapa_necesidad.png)
 
@@ -74,7 +78,8 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 ## València al ritmo actual
 
 - Provincia de Valencia: {{E-B1-anual-Valencia:valor}} al año [C4]
-- A 2030 el déficit empeora en {{E-B2-empeora}} en todo el rango [C4]
+- A 2030 el déficit nacional empeora en todos los escenarios [C2] (`T4-V1`); cuánto, [C4]
+- Provincias: {{T4-H3:valor}} empeoran, {{T4-H3:min}} mejoran, {{T4-H3:max}} indeterminadas [C4]
 
 ---
 

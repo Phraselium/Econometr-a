@@ -130,7 +130,7 @@ def entregables(res, bp, t, ten, h65, ctrl) -> None:
                       cobertura=cob, fuentes=f, capa=capa, fecha_dato=fecha))
     h("T2-H1", "Viviendas liberadas por fallecimiento del ultimo miembro y traslado a residencia, acumuladas", r1["liberadas_central"],
       r1["liberadas_min"], r1["liberadas_max"], "viviendas", "2026-2035", "52 provincias", "C4", "2026-06-17")
-    h("T2-H2", "Viviendas liberadas al ano (media)", a["liberadas_central"], a["liberadas_min"], a["liberadas_max"], "viviendas/ano",
+    h("T2-H2", "Viviendas liberadas al ano (media)", a["liberadas_central"], a["liberadas_min"], a["liberadas_max"], "viviendas/año",
       "2026-2035", "52 provincias", "C4", "2026-06-17")
     h("T2-H3", "Viviendas liberadas por fallecimiento (formula B1 con correccion por muertes en residencia), acumuladas",
       r1["via_fallecimiento_central"], r1["via_fallecimiento_central"], r1["via_fallecimiento_central"], "viviendas", "2026-2035",
@@ -140,9 +140,9 @@ def entregables(res, bp, t, ten, h65, ctrl) -> None:
     h("T2-H5", "Escenario: viviendas liberadas acumuladas", r2["liberadas_central"], r2["liberadas_min"], r2["liberadas_max"],
       "viviendas", "2036-2040", "52 provincias (escenario, mortalidad 2024 constante)", "C4", "2026-06-17")
     h("T2-H6", "Viviendas liberadas que llegan al mercado (venta o alquiler), al ano", a["mercado_central"], a["mercado_min"],
-      a["mercado_max"], "viviendas/ano", "2026-2035", "52 provincias", "C4", "2026-06-17")
+      a["mercado_max"], "viviendas/año", "2026-2035", "52 provincias", "C4", "2026-06-17")
     h("T2-H7", "Viviendas liberadas que NO llegan al mercado al ano (X data-based: vacias y secundarias del Censo 2021)",
-      a["no_llega_central"], x_lo, x_hi, "viviendas/ano", "2026-2035", "52 provincias", "C4", "2021-01-01")
+      a["no_llega_central"], x_lo, x_hi, "viviendas/año", "2026-2035", "52 provincias", "C4", "2021-01-01")
     h("T2-H8", "Aumento posible de la necesidad efectiva (no_llega / necesidad central B1)", 100 * a["no_llega_central"] / need,
       100 * x_lo / need, 100 * x_hi / need, "%", "2026-2035", "52 provincias", "C4", "2026-06-17")
     h("T2-H9", "Prueba de estres X=50 % (sin dato): aumento posible de la necesidad", 100 * stress / need, 100 * stress / need,
@@ -157,10 +157,10 @@ def entregables(res, bp, t, ten, h65, ctrl) -> None:
     h("T2-H12", "Cuota de las liberadas en municipios sin clase A4 (sin precio)", 100 * r1["en_mun_sin_clase_central"] / r1["liberadas_central"],
       100 * r1["en_mun_sin_clase_central"] / r1["liberadas_central"], 100 * r1["en_mun_sin_clase_central"] / r1["liberadas_central"], "%",
       "2026-2035", "municipios sin clasificar", "C4", "2026-06-17")
-    h("T2-H13", "Herencias de vivienda inscritas al ano (media 2023-2025)", herencia, herencia, herencia, "viviendas/ano", "2023-2025",
+    h("T2-H13", "Herencias de vivienda inscritas al ano (media 2023-2025)", herencia, herencia, herencia, "viviendas/año", "2023-2025",
       "52 provincias", "C4", "2025-12-31", ["INE ETDP 6154"])
     h("T2-H14", "Liberadas por fallecimiento en vivienda en propiedad al ano (modelo)", prop_muerte, prop_muerte, prop_muerte,
-      "viviendas/ano", "2026-2035", "52 provincias", "C4", "2026-06-17")
+      "viviendas/año", "2026-2035", "52 provincias", "C4", "2026-06-17")
     h("T2-H15", "Liberadas al ano frente a la necesidad central B1 (no se resta de ella)", 100 * a["liberadas_central"] / need,
       100 * a["liberadas_min"] / need_hi, 100 * a["liberadas_max"] / need_lo, "%", "2026-2035", "52 provincias", "C4", "2026-06-17",
       ["output/v5/B1"])
@@ -198,19 +198,19 @@ def entregables(res, bp, t, ten, h65, ctrl) -> None:
     json.dump(res_json, open(OUT / "resultado.json", "w"), indent=1, ensure_ascii=False)
     fic = [
         {"id": "T2-V1", "tema": "Envejecimiento", "enunciado": "El envejecimiento resolvera el problema de la vivienda.", "capa": "C4",
-         "magnitud": f"Liberadas por fallecimiento y traslado a residencia: {a['liberadas_central']:.0f} viviendas/ano central (rango {a['liberadas_min']:.0f}-{a['liberadas_max']:.0f}) en 2026-2035, "
-                     f"frente a una necesidad central de {need:.0f} viviendas/ano (B1). Ya estan descontadas en la proyeccion de hogares del INE, asi que no restan necesidad. "
+         "magnitud": f"Liberadas por fallecimiento y traslado a residencia: {a['liberadas_central']:.0f} viviendas/año central (rango {a['liberadas_min']:.0f}-{a['liberadas_max']:.0f}) en 2026-2035, "
+                     f"frente a una necesidad central de {need:.0f} viviendas/año (B1). Ya estan descontadas en la proyeccion de hogares del INE, asi que no restan necesidad. "
                      f"Llegan al mercado {a['mercado_central']:.0f}/ano ({a['mercado_min']:.0f}-{a['mercado_max']:.0f}). {100*r1['en_prov_clase12_central']/r1['liberadas_central']:.0f} % en provincias A4 clase 1-2.",
-         "intervalo": f"{a['liberadas_min']:.0f} a {a['liberadas_max']:.0f} viviendas/ano (C4)", "cota": "—", "literatura": "—",
+         "intervalo": f"{a['liberadas_min']:.0f} a {a['liberadas_max']:.0f} viviendas/año (C4)", "cota": "—", "literatura": "—",
          "veredicto": "ANALIZADA, NO CONCLUYENTE",
          "regla": "Capa C4: parametros de residencias sin dato propio y destino de la vivienda liberada sin dato. Cifra de orden de magnitud; no se resta de la necesidad.",
          "limites": "Solo 75+; reparto municipal por poblacion 65+; mortalidad 2024 constante; no contrasta la calidad ni la ubicacion de la vivienda.",
          "evidencia": ["output/v5_1/T2/tablas/liberadas_provincia.csv", "output/v5_1/T2/resultado.json"]},
         {"id": "T2-V2", "tema": "Herencias", "enunciado": "Las herencias liberaran vivienda suficiente.", "capa": "C4",
-         "magnitud": f"Herencias inscritas: {herencia:.0f} viviendas/ano (2023-2025, INE ETDP, fuente unica: C4). Liberadas por fallecimiento en propiedad: {prop_muerte:.0f}/ano (modelo, C4). "
+         "magnitud": f"Herencias inscritas: {herencia:.0f} viviendas/año (2023-2025, INE ETDP, fuente unica: C4). Liberadas por fallecimiento en propiedad: {prop_muerte:.0f}/ano (modelo, C4). "
                      f"Fraccion que llega al mercado {100*a['mercado_min']/a['liberadas_min']:.0f}-{100*a['mercado_max']/a['liberadas_max']:.0f} % (supuesto C4: X entre vacias y vacias+secundarias del Censo 2021). "
-                     f"No llegan {x_lo:.0f}-{x_hi:.0f} viviendas/ano, un aumento posible de la necesidad efectiva de {100*x_lo/need:.0f}-{100*x_hi/need:.0f} % (prueba de estres X=50 %: {100*stress/need:.0f} %).",
-         "intervalo": f"{a['mercado_min']:.0f} a {a['mercado_max']:.0f} viviendas/ano al mercado (C4)", "cota": "—", "literatura": "—",
+                     f"No llegan {x_lo:.0f}-{x_hi:.0f} viviendas/año, un aumento posible de la necesidad efectiva de {100*x_lo/need:.0f}-{100*x_hi/need:.0f} % (prueba de estres X=50 %: {100*stress/need:.0f} %).",
+         "intervalo": f"{a['mercado_min']:.0f} a {a['mercado_max']:.0f} viviendas/año al mercado (C4)", "cota": "—", "literatura": "—",
          "veredicto": "ANALIZADA, NO CONCLUYENTE",
          "regla": "El dato registral de las herencias es de fuente unica (INE) y el destino posterior (venta, alquiler, uso familiar, vacia) no tiene dato: la cifra de mercado es C4 por la menor capa de sus componentes. La suficiencia depende de ese destino.",
          "limites": "Una inscripcion de herencia puede incluir segundas viviendas o vacias; no hay seguimiento de la vivienda heredada.",

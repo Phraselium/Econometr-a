@@ -15,14 +15,14 @@ Regla del ponente: cada cifra se dice con su periodo y su capa; los veredictos s
 ## Bloque 2 · Mitos del verificador (6:00-11:00; diapositivas 6-9) <!-- check:cifra-libre -->
 - Recordar: se evalúa la afirmación; las mismas reglas para todas.
 - «El alquiler se ha duplicado»: CONTRADICHA para el stock [C1].
-- «Faltan cientos de miles de viviendas»: PARCIALMENTE [C1]; depende del periodo y de las bajas.
-- «La vivienda que dejan los mayores lo resolverá»: ANALIZADA, NO CONCLUYENTE [C4]; ya está descontada en la proyección de hogares.
+- «Faltan cientos de miles de viviendas»: PARCIALMENTE [C1]; depende del periodo y de las bajas, que nadie mide bien: las demoliciones con licencia son {{E-T7-demol-2024:rango}} [C4].
+- «El envejecimiento resolverá el problema» (ficha `T2-V1`): ANALIZADA, NO CONCLUYENTE [C4]; {{T2-H1:valor}} liberadas en 2026-2035, la mayoría fuera de las capitales. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 - «Los topes bajan los alquileres» y «los topes reducen la oferta»: ANALIZADA, NO CONCLUYENTE [C4]; la validación quedó contaminada.
 
 ## Bloque 3 · Necesidades por territorio (11:00-15:30; diapositivas 10-12) <!-- check:cifra-libre -->
 - Crecimiento de hogares {{B1-H4:valor}} en {{B1-H4:periodo}} [C2].
-- Necesidad anual central {{B1-H1:valor}} [C4], con rango; concentrada en provincias con presión.
-- València: {{E-B1-anual-Valencia:valor}} al año en la provincia [C4]; al ritmo actual el déficit empeora a 2030 en {{E-B2-empeora}} [C4].
+- Necesidad anual base {{T3-H5b:valor}} [C4], con rango; si parte de las liberadas no llega al mercado, {{T3-H5:valor}}. Entre {{T3-H9:min}} y {{T3-H9:max}} la producción actual. Lo que más pesa: cuántas vacías se pueden movilizar.
+- València: {{E-B1-anual-Valencia:valor}} al año en la provincia [C4]; a 2030 el déficit nacional empeora en todos los escenarios [C2] (ficha `T4-V1`); por provincias empeora en {{T4-H3:valor}}, mejora en {{T4-H3:min}} y en {{T4-H3:max}} es indeterminado [C4]. A 2035, indeterminado [C4].
 
 ## Bloque 4 · Qué funcionaría y qué no (15:30-19:00; diapositivas 13-14) <!-- check:cifra-libre -->
 - Matriz de instrumentos (D1): muchos instrumentos no son evaluables en el signo con los datos disponibles ({{D1-H02}} de {{D1-H01}}) [C4].

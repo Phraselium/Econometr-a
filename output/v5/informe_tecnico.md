@@ -16,7 +16,7 @@
 **Qué hace este informe.** Ordena lo que se puede afirmar sobre la vivienda en España con datos públicos y con qué seguridad. Cada afirmación lleva una capa de evidencia: [C1] hecho confirmado por al menos dos fuentes independientes; [C2] cota con supuestos explícitos; [C4] exploratorio o de fuente única. En esta versión no hay ninguna afirmación de tipo C3 (efecto identificado con todos los controles): ningún resultado nuevo de v5 los supera.
 
 **Lo que se sostiene con dos fuentes [C1].**
-- Entre 2021 y 2024 el número de hogares creció más que el de viviendas terminadas: la diferencia está en 562.692-688.692 viviendas [C1]. Con bajas del parque supuestas, el rango se amplía a 562.692-902.808 viviendas [C2].
+- Entre 2021 y 2024 el número de hogares creció más que el de viviendas terminadas: la diferencia está en 562.692-688.692 viviendas [C1]. Con las bajas del parque estimadas, llega como máximo a 744.144 viviendas [C4].
 - Los hogares aumentaron en 997.586 hogares (981.823-1.013.350 hogares) entre 2021 y 2025 [C1].
 - Se terminaron 72.264-94.426 viviendas/año en 2019-2024 (territorio común) [C1].
 - El precio de compra subió 47,2 % (44,2-56,1 %) en 2015-2025 según el núcleo de tres fuentes (Ministerio, Notariado y Registradores) [C1]; el índice del INE marca 79,9 % [C4]. Los dos se dan siempre juntos.
@@ -24,8 +24,10 @@
 - Los hogares con vivienda principal en propiedad son 74,5 % de hogares (72,1-75,9 % de hogares) [C1].
 
 **Lo que es una proyección o una contabilidad con supuestos [C4].**
-- Necesidad de vivienda 2026-2035: 214.868 viviendas/año (93.628-309.921 viviendas/año) de media anual, suma de 52 provincias [C4]. El mayor componente es el crecimiento de hogares proyectado por el INE (1.720.540 hogares en diez años, [C2]).
-- Déficit acumulado a fin de 2030 si se mantiene el ritmo actual de terminadas: 1.296.670 viviendas (872.529-1.447.950 viviendas) [C4], partiendo de 700.934 viviendas en 2021-2025. En el rango completo de supuestos, 20 provincias empeoran, 5 provincias mejoran y 27 provincias quedan indeterminadas [C4].
+- Necesidad de vivienda 2026-2035 (base): 210.424 viviendas/año (99.388-292.083 viviendas/año) de media, suma de 52 provincias [C4]. Si una parte de las viviendas liberadas no llega al mercado, la necesidad efectiva sube a 245.989 viviendas/año (123.936-338.663 viviendas/año) [C4]. Equivale a 1,4 veces, 2,7 veces y 3,8 veces la producción actual con la misma cobertura. El mayor componente es el crecimiento de hogares proyectado por el INE (1.720.540 hogares en diez años, [C2]). El supuesto que más pesa en el rango es la fracción de vacías movilizables. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
+- Viviendas liberadas por envejecimiento en 2026-2035: 1.856.430 viviendas (936.056-3.168.590 viviendas); llegan al mercado 150.079 viviendas al año [C4].
+- Bajas del parque: las identidades de stock no las miden; las demoliciones con licencia son 0,02-0,04 % del parque en 2024 [C4].
+- [C2] De 2025 a 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista. La magnitud es [C4]: un aumento de 585.609 viviendas (87.246-946.852 viviendas), hasta 1.349.020 viviendas (788.180-1.773.550 viviendas) a fin de 2030. Por provincias, 15 provincias empeoran, 0 provincias mejoran y 37 provincias quedan indeterminadas. A 2035 la dirección es indeterminada [C4].
 - El déficit está concentrado: 6 provincias suman la mitad del déficit positivo de 2021-2025 [C4].
 
 **Lo que no se puede afirmar.**
@@ -69,7 +71,9 @@ Reglas que se aplican en todo el informe:
 
 **2021-2024 [C1].** Con dos fuentes independientes en cada componente (hogares: ECP y EPA corregida por la ruptura de 2021; terminadas: Ministerio y Catastro), el déficit está entre 562.692-688.692 viviendas. Es la única ventana en la que todos los componentes pasan la regla de dos fuentes (562.692-688.692 viviendas (2021-2024; hogares: ECP y EPA corregida; terminadas: Ministerio y Catastro; dato de 2024; C1)).
 
-**Con bajas del parque [C2].** Si se suponen bajas anuales del parque en el rango declarado en v4, el déficit 2021-2024 queda entre 562.692-902.808 viviendas [C2]. La cota inferior es la cifra sin bajas; la superior, la de bajas máximas.
+**Con bajas del parque estimadas [C4].** Al combinar las combinaciones de fuentes del déficit sin bajas con la tasa de bajas de `T1`, el déficit 2021-2024 queda en 653.097 viviendas (562.692-744.144 viviendas) [C4]. Sustituye a la cota C2 anterior, que llegaba a 902.808 viviendas con un supuesto de bajas que nada observado respalda. Con 2025, 763.416 viviendas (700.934-826.703 viviendas) [C4].
+
+**Bajas del parque (`T1`) [C4].** Las identidades de stock no miden bajas: Censos 2011-2021 y Catastro dan tasas negativas (-0,33 % del parque al año y -0,18 % del parque al año), que reflejan altas no certificadas o afloramientos. Las demoliciones con licencia son 0,02-0,04 % del parque en 2024 y no cubren ruina, cambios de uso ni agregaciones. La tasa usada es C4 (mínimo, central y máximo de las demoliciones con licencia: 0,00 % del parque al año, 0,03 % del parque al año y 0,05 % del parque al año), salvo la cota física cero, que es C2. Sustituye al supuesto de bajas de v4, que queda por encima de todo lo observado.
 
 **2021-2025 [C4].** Al añadir 2025, uno de los componentes pasa a depender de una sola fuente y el resultado baja a C4: 700.934 viviendas (700.934-700.934 viviendas) con bajas nulas [C4]. Por provincias, la mediana entre combinaciones de fuentes reparte ese total con un rango por provincia (`output/v5/A4/clasificacion_provincias.csv`).
 
@@ -185,12 +189,17 @@ Decisiones de método:
 
 ### 2.2 Resultado de B1
 
-- Necesidad total: 214.868 viviendas/año (93.628-309.921 viviendas/año) de media anual en 2026-2035, suma de 52 provincias [C4].
-- En diez años: 2.148.680 viviendas (936.278-3.099.210 viviendas) [C4].
+- Necesidad total (`v5.1`, base): 210.424 viviendas/año (99.388-292.083 viviendas/año) de media en 2026-2035, suma de 52 provincias [C4]; con la sensibilidad X, 245.989 viviendas/año (123.936-338.663 viviendas/año) [C4]. Las cifras provinciales de abajo son de B1 (`v5`).
 - Las provincias con presión (clases `1` a `3` de A4) son 48 provincias; concentran 2.110.220 viviendas de la necesidad a diez años [C4].
 - Las cuatro mayores necesidades anuales: Madrid 47.228 viviendas/año, Barcelona 30.963 viviendas/año, València 16.993 viviendas/año y Alicante 14.264 viviendas/año [C4].
 
 ![Necesidad anual de vivienda por provincia, 2026-2035](B1/figuras/B1_mapa_necesidad.png)
+
+**Necesidad (`v5.1`) [C4].** Con la reposición basada en las bajas estimadas (`T1`) en lugar del supuesto de v4, la necesidad base (A + R + V + F − M − K) es de 210.424 viviendas/año (99.388-292.083 viviendas/año) de media en 2026-2035 [C4]. Si una parte de las viviendas liberadas no llega al mercado y queda vacía o como secundaria (componente X, que suma), la necesidad efectiva sube a 245.989 viviendas/año (123.936-338.663 viviendas/año) [C4]. X es un flujo bruto hacia la vacancia y sesga al alza; por eso la cifra de referencia es la base. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares. Frente a la producción con la misma cobertura (terminadas en España con País Vasco y Navarra, 78.810-100.980 viviendas/año en 2019-2024), la necesidad con X equivale a 1,4 veces, 2,7 veces y 3,8 veces la producción media (mínimo, central y máximo) [C4].
+
+**Descomposición del rango [C4].** La amplitud de la necesidad anual (máximo menos mínimo) es de 214.727 viviendas/año. Se reparte así entre los supuestos: vacías movilizables 34,2 %, flujo futuro de hogares 21,6 %, atraso 20,7 %, liberadas que no llegan al mercado 10,3 %, reposición 6,5 %, vacancia friccional 5,5 % y cartera 1,3 %. El supuesto que más pesa es la fracción de vacías movilizables.
+
+**Viviendas liberadas por envejecimiento (`T2`) [C4].** En 2026-2035 se liberarían 1.856.430 viviendas (936.056-3.168.590 viviendas) por fallecimiento del último miembro del hogar o por traslado a una residencia; llegan al mercado (venta o alquiler) 150.079 viviendas al año. Por tipo de municipio (central): 619.768 viviendas en las capitales de provincia, 137.395 viviendas en el entorno de las grandes ciudades y 1.099.270 viviendas en el resto de municipios. Hay desajuste territorial: 28,4 % de las liberadas está en municipios sin clase A4 (sin precio de referencia); entre los clasificados, 65,5 % cae en municipios de clase `1` o `2`. Los parámetros de traslado a residencias no tienen dato verificado. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 
 **Lectura.** La necesidad está concentrada donde ya hay déficit: las provincias con más necesidad anual son las mismas que encabezan el déficit contable de 2021-2025. Fuera de las provincias con presión, la necesidad procede sobre todo de la reposición y del crecimiento de hogares, y es pequeña.
 
@@ -206,7 +215,11 @@ El rango de cada provincia combina el mínimo y el máximo de F, la envolvente d
 
 ### 2.4 Resultado de B2
 
-- Déficit nacional a fin de 2030 en el escenario (a): 1.296.670 viviendas (872.529-1.447.950 viviendas) [C4]. En el escenario (b), 1.136.180 viviendas; en el (c), 1.276.240 viviendas [C4].
+**Proyección 2026-2030 (`T4`).** En una rejilla de escenarios que incluye los de B2, uno de construcción optimista (146.435 terminadas al año, por encima de cualquier año nacional desde 2008), bajas nulas, hogares bajos y las liberadas, el déficit nacional empeora de 2025 a 2030 en todos los escenarios: la dirección es [C2]. La magnitud es [C4]: el aumento está en el intervalo 87.246-946.852 viviendas y el déficit a fin de 2030 queda en 1.349.020 viviendas (788.180-1.773.550 viviendas). Por provincias, 15 provincias empeoran, 0 provincias mejoran y 37 provincias quedan indeterminadas (en `v5`: 20 provincias, 5 provincias y 27 provincias). A 2035 la dirección nacional es indeterminada [C4], con un déficit a fin de 2035 entre 482.095 viviendas y 2.400.410 viviendas: el envejecimiento libera 869.654 viviendas (5 años) en 2026-2030 y 986.777 viviendas (5 años) en 2031-2035, de modo que pesa más después de 2030. Mantener constante el déficit en 2026-2030 exigiría 211.772 terminadas al año [C4].
+
+Los escenarios de B2 (`v5`), que la rejilla de `T4` incluye:
+
+- En el escenario (b), 1.136.180 viviendas; en el (c), 1.276.240 viviendas [C4].
 - En el escenario central (a) empeoran 45 provincias; en el (b), 40 provincias; en el (c), 41 provincias [C4].
 - Con el rango completo: empeoran 20 provincias, mejoran 5 provincias y quedan indeterminadas 27 provincias [C4]. El signo central coincide en los tres escenarios en 46 provincias.
 
@@ -534,7 +547,7 @@ La tabla completa, con documento y página de cada organismo, está en [output/v
 
 ### 10.2 Verificador de afirmaciones
 
-Se evalúan 33 afirmaciones del debate público: 26 afirmaciones quedan «analizada, no concluyente», 3 afirmaciones «parcialmente», 3 afirmaciones «no analizada: faltan datos» y 1 afirmaciones «contradicha» [C4]. Detalle en [output/v5/verificador/verificador.md](verificador/verificador.md).
+Se evalúan 36 afirmaciones del debate público: 28 afirmaciones quedan «analizada, no concluyente», 3 afirmaciones «parcialmente», 3 afirmaciones «no analizada: faltan datos» y 1 afirmaciones «contradicha» [C4]. Detalle en [output/v5/verificador/verificador.md](verificador/verificador.md).
 
 ### 10.3 Limitaciones de datos y método
 

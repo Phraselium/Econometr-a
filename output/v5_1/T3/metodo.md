@@ -18,4 +18,4 @@ Descomposición: cada supuesto entre su mínimo y su máximo con los demás en e
 
 Frase: La producción actual de terminadas (78.810-100.980 al año, España con País Vasco y Navarra, 2019-2024) cabe 1,4 veces en el mínimo de la necesidad anual (123.936), 2,7 en el central (245.989) y 3,8 en el máximo (338.663), con la producción media de 89.895; con los extremos de la producción el rango es 1,2-4,3.
 
-Capa: sin bajas C1 (562.692-688.692); con bajas y necesidad C4. Fechas de datos: INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; T1 y T2 de v5.1 (ejecución 2026-10-11).
+Capa: sin bajas C1 (562.692-688.692); con bajas y necesidad C4. Fechas de datos: 2025 (ECP y MIVAU); proyección INE 54562 de 2026-06-17.

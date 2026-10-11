@@ -6,15 +6,15 @@ Pocas discusiones económicas generan tantas cifras contradictorias como la de l
 
 ## Los hogares crecen más deprisa que las viviendas terminadas [C1]
 
-El número de hogares aumentó en {{dh_2125:cita}}. Por su parte, en un periodo casi coincidente, las viviendas terminadas al año en el territorio común estuvieron entre {{terminadas_1924:rango}} ({{terminadas_1924:periodo}}; {{terminadas_1924:fuentes}}; dato de {{terminadas_1924:fecha_dato}}; {{terminadas_1924:capa}}). La diferencia es un déficit acumulado: con bajas del parque nulas, el déficit 2021-2024 está entre {{deficit_2124_c1:rango}} ({{deficit_2124_c1:periodo}}; {{deficit_2124_c1:fuentes}}; dato de {{deficit_2124_c1:fecha_dato}}; {{deficit_2124_c1:capa}}); con bajas supuestas del parque, la cota está entre {{deficit_2124_c2:rango}} ({{deficit_2124_c2:periodo}}; {{deficit_2124_c2:fuentes}}; dato de {{deficit_2124_c2:fecha_dato}}; {{deficit_2124_c2:capa}}).
+El número de hogares aumentó en {{dh_2125:cita}}. Por su parte, en un periodo casi coincidente, las viviendas terminadas al año en el territorio común estuvieron entre {{terminadas_1924:rango}} ({{terminadas_1924:periodo}}; {{terminadas_1924:fuentes}}; dato de {{terminadas_1924:fecha_dato}}; {{terminadas_1924:capa}}). La diferencia es un déficit acumulado: con bajas del parque nulas, el déficit 2021-2024 está entre {{deficit_2124_c1:rango}} ({{deficit_2124_c1:periodo}}; {{deficit_2124_c1:fuentes}}; dato de {{deficit_2124_c1:fecha_dato}}; {{deficit_2124_c1:capa}}); con las bajas del parque estimadas, llega como máximo a {{T3-H2:max}} [C4]: las identidades de stock no miden bajas y las demoliciones con licencia son {{E-T7-demol-2024:rango}} en 2024.
 
 Hay que leer bien esta cifra. No dice que falten viviendas en todas partes: según el reparto provincial, que es exploratorio [C4], el déficit está concentrado: un número pequeño de provincias suma la mitad del déficit positivo ({{A4-conc50-2021-2025:cita}}). Tampoco dice qué hay que hacer: es un hecho contable.
 
 ## El crecimiento de hogares previsto para la próxima década es grande [C2]
 
-El INE proyecta un crecimiento de hogares de {{B1-H4:cita}}. Es la pieza más sólida de cualquier cálculo de necesidades. Sobre ella, una contabilidad por componentes (atraso, reposición, vacancia, vacías movilizables y cartera en construcción) sitúa la necesidad anual en {{B1-H1:cita}}, con un rango amplio porque varios componentes dependen de supuestos. Para la provincia de Valencia, el valor central es de {{E-B1-anual-Valencia:cita}}; para Alicante, {{E-B1-anual-Alicante:cita}}; para Castellón, {{E-B1-anual-Castellon:cita}}.
+El INE proyecta un crecimiento de hogares de {{B1-H4:cita}}. Es la pieza más sólida de cualquier cálculo de necesidades. Sobre ella, una contabilidad por componentes (atraso, reposición, vacancia, vacías movilizables y cartera en construcción) sitúa la necesidad anual base en {{T3-H5b:cita}}, con un rango amplio porque varios componentes dependen de supuestos; si una parte de las viviendas liberadas no llega al mercado, sube a {{T3-H5:valor}}. Para la provincia de Valencia, el valor central es de {{E-B1-anual-Valencia:cita}}; para Alicante, {{E-B1-anual-Alicante:cita}}; para Castellón, {{E-B1-anual-Castellon:cita}}.
 
-Un punto que suele confundirse: la vivienda que liberará el envejecimiento de la población, {{E-B1-L:cita}}, ya está descontada en la proyección de hogares del INE, que es neta de disoluciones. Restarla otra vez supondría contarla dos veces.
+Un punto que suele confundirse es la vivienda que liberará el envejecimiento de la población: {{T2-H1:cita}}. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares. Restarlas otra vez supondría contarlas dos veces.
 
 ## El alquiler no se ha duplicado en el stock [C1]
 
@@ -43,7 +43,7 @@ Con supuestos débiles y explícitos (sustitución completa, traspaso completo),
 
 ## Lo probable pero no demostrado
 
-- [C4] Al ritmo de terminación de 2023-2025, el déficit empeora a 2030 en {{E-B2-empeora}} y mejora en {{E-B2-mejora}}; en el resto depende de los supuestos.
+- [C2] El déficit nacional empeora a 2030 en todos los escenarios estudiados; cuánto es [C4]. Por provincias empeora en {{T4-H3:valor}}, mejora en {{T4-H3:min}} y en el resto depende de los supuestos [C4].
 - [C4] Entre provincias, la única regularidad que sobrevive al ajuste por comparaciones múltiples es la convergencia: crecieron menos las provincias que partían de precios más altos, y una parte es compatible con error de medida.
 - [C4] La sobrecarga por coste de la vivienda afecta al {{CC-C7a-ten-RENT_MKT:num}} % de los inquilinos a precio de mercado, frente al {{CC-C7a-ten-OWN_L:num}} % de los propietarios con hipoteca (Eurostat, 2025).
 - [C4] Frente a la Unión Europea, el precio real de la vivienda en España creció {{CA-EU-hpi_real-crecimiento:valor}}, dentro del rango intercuartílico de los países. El alquiler real, medido con el IPCA, varió {{CA-EU-alq_real-crecimiento:valor}}, porque esa medida sigue el stock de contratos. Lo que más aleja a España de la mediana europea es la emancipación tardía y la caída de la propiedad, no el precio.

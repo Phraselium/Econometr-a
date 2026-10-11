@@ -28,8 +28,7 @@ RAW = RAIZ / "data" / "raw"
 OUT = RAIZ / "output" / "v5_1" / "T3"
 SMOKE = "--smoke" in sys.argv
 S3 = ("min", "central", "max")
-FECHA_DATO = ("INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; "
-              "T1 y T2 de v5.1 (ejecución 2026-10-11)")
+FECHA_DATO = "2025 (ECP y MIVAU); proyección INE 54562 de 2026-06-17"
 
 
 # ------------------------------------------------------------------ insumos compartidos con T4

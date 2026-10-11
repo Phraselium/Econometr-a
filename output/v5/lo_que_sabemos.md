@@ -12,9 +12,9 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 **Hogares y viviendas**
 - [C1] Entre 2021 y 2025 los hogares aumentaron en 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (corregida por la ruptura de 2021); dato de 2025T1; C1).
 - [C1] En 2021-2024 los hogares crecieron más que las viviendas terminadas: balance de 562.692-688.692 viviendas (2021-2024; hogares: ECP y EPA corregida; terminadas: Ministerio y Catastro; dato de 2024; C1).
-  - [C2] Con bajas del parque supuestas, la cota llega a 902.808 viviendas (2021-2024).
 - [C1] Viviendas terminadas al año en el territorio común: 72.264-94.426 viviendas/año (2019-2024; Ministerio (fin de obra) y Catastro (altas), dentro de ±15 %; dato de 2024; C1).
 - [C2] Demanda latente de los jóvenes por convivencia con los padres, frente a 2008: 188.000-506.000 hogares (2008-2025; INE EPA y ECV (tasa de convivencia con los padres); dato de 2025; C2).
+- [C2] Hasta 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista (2025-2030; C2). Por provincias: 15 provincias empeoran, 0 provincias mejoran y 37 provincias quedan indeterminadas.
 - [C2] Crecimiento de hogares proyectado por el INE para 2026-2035: 1.720.540 hogares (1.308.530-1.772.410 hogares) (2026-2035; INE Proyección de Hogares (tabla 54562); dato de 2026; C2); para 2026-2030: 1.024.160 hogares (819.421-1.060.360 hogares) (1-ene-2026 a 1-ene-2031; INE; dato de INE 2026-06-17; C2).
 
 **Precios y alquileres**
@@ -30,8 +30,12 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 
 ## Probable pero no demostrado (C4)
 
-- [C4] Necesidad de vivienda 2026-2035, suma de provincias: 214.868 viviendas/año (93.628-309.921 viviendas/año). Depende de supuestos de reposición, vacancia y movilización de vacías.
-- [C4] Déficit nacional a fin de 2030: 1.136.180 viviendas (cartera con retardo) o 1.296.670 viviendas (ritmo actual). Los dos escenarios discrepan y se dan ambos.
+- [C4] Con las bajas del parque estimadas, el balance 2021-2024 llega como máximo a 744.144 viviendas (2021-2024). Sustituye a la cota anterior, que suponía unas bajas que nada observado respalda.
+- [C4] Necesidad de vivienda 2026-2035, suma de provincias (base): 210.424 viviendas/año (99.388-292.083 viviendas/año). Si una parte de las viviendas liberadas no llega al mercado, la necesidad efectiva sube a 245.989 viviendas/año (123.936-338.663 viviendas/año). El supuesto que más pesa en el rango es la fracción de vacías movilizables (34,2 % de la amplitud). Equivale a 1,4 veces, 2,7 veces y 3,8 veces la producción actual (78.810-100.980 viviendas/año terminadas en 2019-2024, con la misma cobertura).
+- [C4] Viviendas liberadas por envejecimiento en 2026-2035: 1.856.430 viviendas (936.056-3.168.590 viviendas); llegan al mercado 150.079 viviendas al año. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
+- [C4] Cuánto empeora el déficit de 2025 a 2030: 585.609 viviendas (87.246-946.852 viviendas). A 2035 la dirección es indeterminada: el envejecimiento libera más viviendas en 2031-2035 (986.777 viviendas (5 años)) que en 2026-2030 (869.654 viviendas (5 años)).
+- [C4] Bajas del parque: las identidades de stock no las miden (dan bajas negativas), y las demoliciones con licencia son 0,02-0,04 % del parque en 2024.
+- [C4] Déficit nacional a fin de 2030: 1.349.020 viviendas (788.180-1.773.550 viviendas) según la rejilla de escenarios (mínimo, ritmo actual y máximo).
 - [C4] Contratos nuevos frente a vigentes: la brecha en el IPVA es de 13,6 % en 2024, con fuente única.
 - [C4] Las cuatro fuentes de precio comparten un factor común que recoge 89,2 % de la varianza; el IPV del INE acumula 79,9 % en 2015-2025.
 - [C4] Compraventas con comprador extranjero en 2025: 16,9 % (16,9-18,8 %); no residentes: 6,8 %.

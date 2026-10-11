@@ -16,7 +16,7 @@
 **Qué hace este informe.** Ordena lo que se puede afirmar sobre la vivienda en España con datos públicos y con qué seguridad. Cada afirmación lleva una capa de evidencia: [C1] hecho confirmado por al menos dos fuentes independientes; [C2] cota con supuestos explícitos; [C4] exploratorio o de fuente única. En esta versión no hay ninguna afirmación de tipo C3 (efecto identificado con todos los controles): ningún resultado nuevo de v5 los supera.
 
 **Lo que se sostiene con dos fuentes [C1].**
-- Entre 2021 y 2024 el número de hogares creció más que el de viviendas terminadas: la diferencia está en {{deficit_2124_c1:rango}} [C1]. Con bajas del parque supuestas, el rango se amplía a {{deficit_2124_c2:rango}} [C2].
+- Entre 2021 y 2024 el número de hogares creció más que el de viviendas terminadas: la diferencia está en {{deficit_2124_c1:rango}} [C1]. Con las bajas del parque estimadas, llega como máximo a {{T3-H2:max}} [C4].
 - Los hogares aumentaron en {{dh_2125}} entre 2021 y 2025 [C1].
 - Se terminaron {{terminadas_1924:rango}} en 2019-2024 (territorio común) [C1].
 - El precio de compra subió {{A23-P2}} en 2015-2025 según el núcleo de tres fuentes (Ministerio, Notariado y Registradores) [C1]; el índice del INE marca {{A23-P1:valor}} [C4]. Los dos se dan siempre juntos.
@@ -24,8 +24,10 @@
 - Los hogares con vivienda principal en propiedad son {{R1C-001}} [C1].
 
 **Lo que es una proyección o una contabilidad con supuestos [C4].**
-- Necesidad de vivienda 2026-2035: {{B1-H1}} de media anual, suma de {{E-E1-nprov:valor}} [C4]. El mayor componente es el crecimiento de hogares proyectado por el INE ({{B1-H4:valor}} en diez años, [C2]).
-- Déficit acumulado a fin de 2030 si se mantiene el ritmo actual de terminadas: {{B2-H1}} [C4], partiendo de {{B2-H2:valor}} en 2021-2025. En el rango completo de supuestos, {{E-E1-B2-empeora:valor}} empeoran, {{E-E1-B2-mejora:valor}} mejoran y {{E-E1-B2-indeterminado:valor}} quedan indeterminadas [C4].
+- Necesidad de vivienda 2026-2035 (base): {{T3-H5b}} de media, suma de {{E-E1-nprov:valor}} [C4]. Si una parte de las viviendas liberadas no llega al mercado, la necesidad efectiva sube a {{T3-H5}} [C4]. Equivale a {{T3-H9:min}}, {{T3-H9:valor}} y {{T3-H9:max}} la producción actual con la misma cobertura. El mayor componente es el crecimiento de hogares proyectado por el INE ({{B1-H4:valor}} en diez años, [C2]). El supuesto que más pesa en el rango es la fracción de vacías movilizables. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
+- Viviendas liberadas por envejecimiento en 2026-2035: {{T2-H1}}; llegan al mercado {{T2-H6:num}} viviendas al año [C4].
+- Bajas del parque: las identidades de stock no las miden; las demoliciones con licencia son {{E-T7-demol-2024:rango}} en 2024 [C4].
+- [C2] De 2025 a 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista. La magnitud es [C4]: un aumento de {{T4-H2}}, hasta {{T4-H1}} a fin de 2030. Por provincias, {{T4-H3:valor}} empeoran, {{T4-H3:min}} mejoran y {{T4-H3:max}} quedan indeterminadas. A 2035 la dirección es indeterminada [C4].
 - El déficit está concentrado: {{A4-conc50-2021-2025:valor}} suman la mitad del déficit positivo de 2021-2025 [C4].
 
 **Lo que no se puede afirmar.**
@@ -69,7 +71,9 @@ Reglas que se aplican en todo el informe:
 
 **2021-2024 [C1].** Con dos fuentes independientes en cada componente (hogares: ECP y EPA corregida por la ruptura de 2021; terminadas: Ministerio y Catastro), el déficit está entre {{deficit_2124_c1:rango}}. Es la única ventana en la que todos los componentes pasan la regla de dos fuentes ({{deficit_2124_c1:cita}}).
 
-**Con bajas del parque [C2].** Si se suponen bajas anuales del parque en el rango declarado en v4, el déficit 2021-2024 queda entre {{deficit_2124_c2:rango}} [C2]. La cota inferior es la cifra sin bajas; la superior, la de bajas máximas.
+**Con bajas del parque estimadas [C4].** Al combinar las combinaciones de fuentes del déficit sin bajas con la tasa de bajas de `T1`, el déficit 2021-2024 queda en {{T3-H2}} [C4]. Sustituye a la cota C2 anterior, que llegaba a {{T3-H3:max}} con un supuesto de bajas que nada observado respalda. Con 2025, {{T3-H4}} [C4].
+
+**Bajas del parque (`T1`) [C4].** Las identidades de stock no miden bajas: Censos 2011-2021 y Catastro dan tasas negativas ({{T1-H2:valor}} y {{T1-H4:valor}}), que reflejan altas no certificadas o afloramientos. Las demoliciones con licencia son {{E-T7-demol-2024:rango}} en 2024 y no cubren ruina, cambios de uso ni agregaciones. La tasa usada es C4 (mínimo, central y máximo de las demoliciones con licencia: {{T1-H8:min}}, {{T1-H8:valor}} y {{T1-H8:max}}), salvo la cota física cero, que es C2. Sustituye al supuesto de bajas de v4, que queda por encima de todo lo observado.
 
 **2021-2025 [C4].** Al añadir 2025, uno de los componentes pasa a depender de una sola fuente y el resultado baja a C4: {{B2-H2}} con bajas nulas [C4]. Por provincias, la mediana entre combinaciones de fuentes reparte ese total con un rango por provincia (`output/v5/A4/clasificacion_provincias.csv`).
 
@@ -185,12 +189,17 @@ Decisiones de método:
 
 ### 2.2 Resultado de B1
 
-- Necesidad total: {{B1-H1}} de media anual en 2026-2035, suma de {{E-E1-nprov:valor}} [C4].
-- En diez años: {{E-B1-N10}} [C4].
+- Necesidad total (`v5.1`, base): {{T3-H5b}} de media en 2026-2035, suma de {{E-E1-nprov:valor}} [C4]; con la sensibilidad X, {{T3-H5}} [C4]. Las cifras provinciales de abajo son de B1 (`v5`).
 - Las provincias con presión (clases `1` a `3` de A4) son {{E-B1-npresion:valor}}; concentran {{E-B1-N10_solo_presion_central:valor}} de la necesidad a diez años [C4].
 - Las cuatro mayores necesidades anuales: Madrid {{E-B1-anual-Madrid:valor}}, Barcelona {{E-B1-anual-Barcelona:valor}}, València {{E-B1-anual-Valencia:valor}} y Alicante {{E-B1-anual-Alicante:valor}} [C4].
 
 ![Necesidad anual de vivienda por provincia, 2026-2035](B1/figuras/B1_mapa_necesidad.png)
+
+**Necesidad (`v5.1`) [C4].** Con la reposición basada en las bajas estimadas (`T1`) en lugar del supuesto de v4, la necesidad base (A + R + V + F − M − K) es de {{T3-H5b}} de media en 2026-2035 [C4]. Si una parte de las viviendas liberadas no llega al mercado y queda vacía o como secundaria (componente X, que suma), la necesidad efectiva sube a {{T3-H5}} [C4]. X es un flujo bruto hacia la vacancia y sesga al alza; por eso la cifra de referencia es la base. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares. Frente a la producción con la misma cobertura (terminadas en España con País Vasco y Navarra, {{E-T7-prod:rango}} en {{E-T7-prod:periodo}}), la necesidad con X equivale a {{T3-H9:min}}, {{T3-H9:valor}} y {{T3-H9:max}} la producción media (mínimo, central y máximo) [C4].
+
+**Descomposición del rango [C4].** La amplitud de la necesidad anual (máximo menos mínimo) es de {{T3-H8:valor}}. Se reparte así entre los supuestos: vacías movilizables {{E-T7-peso-M}}, flujo futuro de hogares {{E-T7-peso-F}}, atraso {{E-T7-peso-A}}, liberadas que no llegan al mercado {{E-T7-peso-X}}, reposición {{E-T7-peso-R}}, vacancia friccional {{E-T7-peso-V}} y cartera {{E-T7-peso-K}}. El supuesto que más pesa es la fracción de vacías movilizables.
+
+**Viviendas liberadas por envejecimiento (`T2`) [C4].** En 2026-2035 se liberarían {{T2-H1}} por fallecimiento del último miembro del hogar o por traslado a una residencia; llegan al mercado (venta o alquiler) {{T2-H6:num}} viviendas al año. Por tipo de municipio (central): {{E-T7-lib-capital}} en las capitales de provincia, {{E-T7-lib-entorno}} en el entorno de las grandes ciudades y {{E-T7-lib-resto}} en el resto de municipios. Hay desajuste territorial: {{T2-H12:valor}} de las liberadas está en municipios sin clase A4 (sin precio de referencia); entre los clasificados, {{T2-H11:valor}} cae en municipios de clase `1` o `2`. Los parámetros de traslado a residencias no tienen dato verificado. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 
 **Lectura.** La necesidad está concentrada donde ya hay déficit: las provincias con más necesidad anual son las mismas que encabezan el déficit contable de 2021-2025. Fuera de las provincias con presión, la necesidad procede sobre todo de la reposición y del crecimiento de hogares, y es pequeña.
 
@@ -206,7 +215,11 @@ El rango de cada provincia combina el mínimo y el máximo de F, la envolvente d
 
 ### 2.4 Resultado de B2
 
-- Déficit nacional a fin de 2030 en el escenario (a): {{B2-H1}} [C4]. En el escenario (b), {{E-E1-B2-D2030-b:valor}}; en el (c), {{E-E1-B2-D2030-c:valor}} [C4].
+**Proyección 2026-2030 (`T4`).** En una rejilla de escenarios que incluye los de B2, uno de construcción optimista ({{T4-H7:num}} terminadas al año, por encima de cualquier año nacional desde 2008), bajas nulas, hogares bajos y las liberadas, el déficit nacional empeora de 2025 a 2030 en todos los escenarios: la dirección es [C2]. La magnitud es [C4]: el aumento está en el intervalo {{T4-H2:rango}} y el déficit a fin de 2030 queda en {{T4-H1}}. Por provincias, {{T4-H3:valor}} empeoran, {{T4-H3:min}} mejoran y {{T4-H3:max}} quedan indeterminadas (en `v5`: {{T4-H4:valor}}, {{T4-H4:min}} y {{T4-H4:max}}). A 2035 la dirección nacional es indeterminada [C4], con un déficit a fin de 2035 entre {{T4-H5:min}} y {{T4-H5:max}}: el envejecimiento libera {{T4-H8:min}} en 2026-2030 y {{T4-H8:valor}} en 2031-2035, de modo que pesa más después de 2030. Mantener constante el déficit en 2026-2030 exigiría {{T4-H6:num}} terminadas al año [C4].
+
+Los escenarios de B2 (`v5`), que la rejilla de `T4` incluye:
+
+- En el escenario (b), {{E-E1-B2-D2030-b:valor}}; en el (c), {{E-E1-B2-D2030-c:valor}} [C4].
 - En el escenario central (a) empeoran {{E-E1-B2-empeora-a:valor}}; en el (b), {{E-E1-B2-empeora-b:valor}}; en el (c), {{E-E1-B2-empeora-c:valor}} [C4].
 - Con el rango completo: empeoran {{E-E1-B2-empeora:valor}}, mejoran {{E-E1-B2-mejora:valor}} y quedan indeterminadas {{E-E1-B2-indeterminado:valor}} [C4]. El signo central coincide en los tres escenarios en {{E-E1-B2-estable3:valor}}.
 

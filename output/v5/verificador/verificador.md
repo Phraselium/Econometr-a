@@ -599,8 +599,8 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 28; NO ANALIZADA: FALTAN DATO
 |---|---|
 | Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C4 |
-| Magnitud | Liberadas por fallecimiento y traslado a residencia: 185643 viviendas/ano central (rango 93606-316859) en 2026-2035, frente a una necesidad central de 214868 viviendas/ano (B1). Ya estan descontadas en la proyeccion de hogares del INE, asi que no restan necesidad. Llegan al mercado 150079/ano (70096-275008). 97 % en provincias A4 clase 1-2. |
-| Intervalo | 93606 a 316859 viviendas/ano (C4) |
+| Magnitud | Liberadas por fallecimiento y traslado a residencia: 185643 viviendas/año central (rango 93606-316859) en 2026-2035, frente a una necesidad central de 214868 viviendas/año (B1). Ya estan descontadas en la proyeccion de hogares del INE, asi que no restan necesidad. Llegan al mercado 150079/ano (70096-275008). 97 % en provincias A4 clase 1-2. |
+| Intervalo | 93606 a 316859 viviendas/año (C4) |
 | Cota | — |
 | Literatura | — |
 | Regla del veredicto | Capa C4: parametros de residencias sin dato propio y destino de la vivienda liberada sin dato. Cifra de orden de magnitud; no se resta de la necesidad. |
@@ -615,8 +615,8 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 28; NO ANALIZADA: FALTAN DATO
 |---|---|
 | Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C4 |
-| Magnitud | Herencias inscritas: 203393 viviendas/ano (2023-2025, INE ETDP, fuente unica: C4). Liberadas por fallecimiento en propiedad: 118075/ano (modelo, C4). Fraccion que llega al mercado 75-87 % (supuesto C4: X entre vacias y vacias+secundarias del Censo 2021). No llegan 24548-46580 viviendas/ano, un aumento posible de la necesidad efectiva de 11-22 % (prueba de estres X=50 %: 43 %). |
-| Intervalo | 70096 a 275008 viviendas/ano al mercado (C4) |
+| Magnitud | Herencias inscritas: 203393 viviendas/año (2023-2025, INE ETDP, fuente unica: C4). Liberadas por fallecimiento en propiedad: 118075/ano (modelo, C4). Fraccion que llega al mercado 75-87 % (supuesto C4: X entre vacias y vacias+secundarias del Censo 2021). No llegan 24548-46580 viviendas/año, un aumento posible de la necesidad efectiva de 11-22 % (prueba de estres X=50 %: 43 %). |
+| Intervalo | 70096 a 275008 viviendas/año al mercado (C4) |
 | Cota | — |
 | Literatura | — |
 | Regla del veredicto | El dato registral de las herencias es de fuente unica (INE) y el destino posterior (venta, alquiler, uso familiar, vacia) no tiene dato: la cifra de mercado es C4 por la menor capa de sus componentes. La suficiencia depende de ese destino. |

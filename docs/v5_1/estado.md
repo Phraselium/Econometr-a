@@ -10,7 +10,7 @@
 | T5 matices de lectura | hecho | — | traslado de las ayudas siempre por clase, con literatura en cada extremo; nota de pre-registro y versiones en 10 entregables | 0 (orquestador) |
 | T6 backlog secundario | hecho (sin datos) | NO ANALIZADA: FALTAN DATOS | temporada y habitaciones: ninguna fuente oficial con la duración del contrato (INE, Registro Único 403, Incasòl, GVA, Euskadi, ayuntamientos); MESVAL no replicable (datos privados); ampliar los artículos queda en el backlog (tarea del autor) | 45.061 |
 | Revisión T1-T5 | REHACER acotado (B1-B2) → corregido; APROBADA | — | docs/v5_1/revision.md; 1,4/2,7/3,8 veces; T4-V1 NO RESPALDADA (C2) | 61.371 |
-
-**Hecho:** setup, T1-T5.
-**Siguiente:** T7 (entregables) → cierre.
-**Tokens de subagentes v5.1:** 496.172 / 1.000.000 (corte 800.000; reserva 100.000).
+| T7 entregables (redactor) | hecho | C1/C2/C4 | 16 plantillas actualizadas (T1-T4), src/v5/e_hechos_t7.py (ids E-T7-), CHANGELOG v5.1; render 0 sin resolver, check_v5 y check_texto 0 errores | 164.688 |
+**Hecho:** setup, T1-T5, T7.
+**Siguiente:** cierre (make all ×2 sin red en clon limpio, etiqueta v5.1).
+**Tokens de subagentes v5.1:** 660.860 / 1.000.000 (corte 800.000; reserva 100.000).

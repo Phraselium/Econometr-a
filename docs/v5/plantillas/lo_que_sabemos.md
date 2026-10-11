@@ -12,9 +12,9 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 **Hogares y viviendas**
 - [C1] Entre 2021 y 2025 los hogares aumentaron en {{dh_2125:cita}}.
 - [C1] En 2021-2024 los hogares crecieron más que las viviendas terminadas: balance de {{deficit_2124_c1:rango}} ({{deficit_2124_c1:periodo}}; {{deficit_2124_c1:fuentes}}; dato de {{deficit_2124_c1:fecha_dato}}; {{deficit_2124_c1:capa}}).
-  - [C2] Con bajas del parque supuestas, la cota llega a {{deficit_2124_c2:max}} ({{deficit_2124_c2:periodo}}).
 - [C1] Viviendas terminadas al año en el territorio común: {{terminadas_1924:rango}} ({{terminadas_1924:periodo}}; {{terminadas_1924:fuentes}}; dato de {{terminadas_1924:fecha_dato}}; {{terminadas_1924:capa}}).
 - [C2] Demanda latente de los jóvenes por convivencia con los padres, frente a 2008: {{latente_convivencia:rango}} ({{latente_convivencia:periodo}}; {{latente_convivencia:fuentes}}; dato de {{latente_convivencia:fecha_dato}}; {{latente_convivencia:capa}}).
+- [C2] Hasta 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista ({{T4-H3:periodo}}; {{T4-H3:capa}}). Por provincias: {{T4-H3:valor}} empeoran, {{T4-H3:min}} mejoran y {{T4-H3:max}} quedan indeterminadas.
 - [C2] Crecimiento de hogares proyectado por el INE para 2026-2035: {{E-B1-F:cita}}; para 2026-2030: {{B2-H3}} ({{B2-H3:periodo}}; INE; dato de {{B2-H3:fecha_dato}}; {{B2-H3:capa}}).
 
 **Precios y alquileres**
@@ -30,8 +30,12 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 
 ## Probable pero no demostrado (C4)
 
-- [C4] Necesidad de vivienda 2026-2035, suma de provincias: {{B1-H1}}. Depende de supuestos de reposición, vacancia y movilización de vacías.
-- [C4] Déficit nacional a fin de 2030: {{E-E1-B2-D2030-b:valor}} (cartera con retardo) o {{E-E1-B2-D2030-a:valor}} (ritmo actual). Los dos escenarios discrepan y se dan ambos.
+- [C4] Con las bajas del parque estimadas, el balance 2021-2024 llega como máximo a {{T3-H2:max}} ({{T3-H2:periodo}}). Sustituye a la cota anterior, que suponía unas bajas que nada observado respalda.
+- [C4] Necesidad de vivienda 2026-2035, suma de provincias (base): {{T3-H5b}}. Si una parte de las viviendas liberadas no llega al mercado, la necesidad efectiva sube a {{T3-H5}}. El supuesto que más pesa en el rango es la fracción de vacías movilizables ({{E-T7-peso-M}} de la amplitud). Equivale a {{T3-H9:min}}, {{T3-H9:valor}} y {{T3-H9:max}} la producción actual ({{E-T7-prod:rango}} terminadas en {{E-T7-prod:periodo}}, con la misma cobertura).
+- [C4] Viviendas liberadas por envejecimiento en 2026-2035: {{T2-H1}}; llegan al mercado {{T2-H6:num}} viviendas al año. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
+- [C4] Cuánto empeora el déficit de 2025 a 2030: {{T4-H2}}. A 2035 la dirección es indeterminada: el envejecimiento libera más viviendas en 2031-2035 ({{T4-H8:valor}}) que en 2026-2030 ({{T4-H8:min}}).
+- [C4] Bajas del parque: las identidades de stock no las miden (dan bajas negativas), y las demoliciones con licencia son {{E-T7-demol-2024:rango}} en 2024.
+- [C4] Déficit nacional a fin de 2030: {{T4-H1}} según la rejilla de escenarios (mínimo, ritmo actual y máximo).
 - [C4] Contratos nuevos frente a vigentes: la brecha en el IPVA es de {{A23-A6}} en 2024, con fuente única.
 - [C4] Las cuatro fuentes de precio comparten un factor común que recoge {{A23-P10:valor}} de la varianza; el IPV del INE acumula {{A23-P1}} en 2015-2025.
 - [C4] Compraventas con comprador extranjero en 2025: {{compradores_extranjeros}}; no residentes: {{compradores_no_residentes}}.

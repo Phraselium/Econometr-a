@@ -53,3 +53,14 @@
   - T2 fecha el Censo 2021 en el 1-ene-2021.
   - Pendientes, por impacto bajo: la cuota de referencia del desajuste territorial, que L en T3 venga de B1 y el carácter casi tautológico del control de liberadas.
 - Son las correcciones que propuso el revisor y no cambian estimaciones: v5.1 (T1-T5) queda APROBADA.
+
+## T7 (redactor y orquestador)
+- Los 16 entregables usan las cifras de v5.1 (CHANGELOG, sección v5.1):
+  - déficit con bajas estimadas (C4) en lugar de la cota C2 basada en supuestos;
+  - necesidad base y necesidad con sensibilidad;
+  - dirección C2 frente a magnitud C4;
+  - liberadas por tipo de municipio, con la frase de que no se restan.
+- El redactor superó su límite (165.000 tokens frente a 100.000). El total de v5.1 queda en 660.860, por debajo del corte de 800.000.
+- **Orquestador.**
+  - T2: la unidad «viviendas/ano» pasa a «viviendas/año».
+  - T3 y T4: la fecha del dato pasa a ser una fecha breve; antes era una lista de fuentes que salía como «dato de INE…».

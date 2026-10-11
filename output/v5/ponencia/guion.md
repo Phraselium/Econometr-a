@@ -15,14 +15,14 @@ Regla del ponente: cada cifra se dice con su periodo y su capa; los veredictos s
 ## Bloque 2 · Mitos del verificador (6:00-11:00; diapositivas 6-9) <!-- check:cifra-libre -->
 - Recordar: se evalúa la afirmación; las mismas reglas para todas.
 - «El alquiler se ha duplicado»: CONTRADICHA para el stock [C1].
-- «Faltan cientos de miles de viviendas»: PARCIALMENTE [C1]; depende del periodo y de las bajas.
-- «La vivienda que dejan los mayores lo resolverá»: ANALIZADA, NO CONCLUYENTE [C4]; ya está descontada en la proyección de hogares.
+- «Faltan cientos de miles de viviendas»: PARCIALMENTE [C1]; depende del periodo y de las bajas, que nadie mide bien: las demoliciones con licencia son 0,02-0,04 % del parque [C4].
+- «El envejecimiento resolverá el problema» (ficha `T2-V1`): ANALIZADA, NO CONCLUYENTE [C4]; 1.856.430 viviendas liberadas en 2026-2035, la mayoría fuera de las capitales. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 - «Los topes bajan los alquileres» y «los topes reducen la oferta»: ANALIZADA, NO CONCLUYENTE [C4]; la validación quedó contaminada.
 
 ## Bloque 3 · Necesidades por territorio (11:00-15:30; diapositivas 10-12) <!-- check:cifra-libre -->
 - Crecimiento de hogares 1.720.540 hogares en 2026-2035 [C2].
-- Necesidad anual central 214.868 viviendas/año [C4], con rango; concentrada en provincias con presión.
-- València: 16.993 viviendas/año al año en la provincia [C4]; al ritmo actual el déficit empeora a 2030 en 20 provincias [C4].
+- Necesidad anual base 210.424 viviendas/año [C4], con rango; si parte de las liberadas no llega al mercado, 245.989 viviendas/año. Entre 1,4 veces y 3,8 veces la producción actual. Lo que más pesa: cuántas vacías se pueden movilizar.
+- València: 16.993 viviendas/año al año en la provincia [C4]; a 2030 el déficit nacional empeora en todos los escenarios [C2] (ficha `T4-V1`); por provincias empeora en 15 provincias, mejora en 0 provincias y en 37 provincias es indeterminado [C4]. A 2035, indeterminado [C4].
 
 ## Bloque 4 · Qué funcionaría y qué no (15:30-19:00; diapositivas 13-14) <!-- check:cifra-libre -->
 - Matriz de instrumentos (D1): muchos instrumentos no son evaluables en el signo con los datos disponibles (18 instrumentos de 36 instrumentos) [C4].

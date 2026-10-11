@@ -17,4 +17,4 @@ Criterio: la dirección (empeora o mejora) es C2 solo si el signo es el mismo en
 | 2035 | E3 + terminadas optimistas | 45 | indeterminado | 14 / 5 / 33 |
 | 2035 | E4 + liberadas que no llegan (completa) | 180 | indeterminado | 14 / 0 / 38 |
 
-Envejecimiento: liberadas centrales 869.654 en 2026-2030 y 986.777 en 2031-2035 (T2 repartido por defunciones de 75+: 1.557.728 y 1.767.377). Fechas de datos: INE Proyección de Hogares 54562 (mod. 2026-06-17, base 1-ene-2026); INE Proyecciones de Población 36726; MIVAU hasta 2025; A4; T1 y T2 de v5.1 (ejecución 2026-10-11).
+Envejecimiento: liberadas centrales 869.654 en 2026-2030 y 986.777 en 2031-2035 (T2 repartido por defunciones de 75+: 1.557.728 y 1.767.377). Fechas de datos: 2025 (ECP y MIVAU); proyecciones INE 54562 y 36726 de 2026-06-17.

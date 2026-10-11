@@ -81,7 +81,7 @@
    "A4"
   ],
   "capa": "C4",
-  "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; T1 y T2 de v5.1 (ejecución 2026-10-11)"
+  "fecha_dato": "2025 (ECP y MIVAU); proyección INE 54562 de 2026-06-17"
  },
  {
   "id": "T3-H5b",
@@ -97,7 +97,7 @@
    "T1"
   ],
   "capa": "C4",
-  "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; T1 y T2 de v5.1 (ejecución 2026-10-11)"
+  "fecha_dato": "2025 (ECP y MIVAU); proyección INE 54562 de 2026-06-17"
  },
  {
   "id": "T3-H6",
@@ -112,7 +112,7 @@
    "T2"
   ],
   "capa": "C4",
-  "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; T1 y T2 de v5.1 (ejecución 2026-10-11)"
+  "fecha_dato": "2025 (ECP y MIVAU); proyección INE 54562 de 2026-06-17"
  },
  {
   "id": "T3-H7",
@@ -127,7 +127,7 @@
    "T1"
   ],
   "capa": "C4",
-  "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; T1 y T2 de v5.1 (ejecución 2026-10-11)"
+  "fecha_dato": "2025 (ECP y MIVAU); proyección INE 54562 de 2026-06-17"
  },
  {
   "id": "T3-H8",
@@ -142,7 +142,7 @@
    "T3"
   ],
   "capa": "C4",
-  "fecha_dato": "INE Proyección de Hogares 54562 (mod. 2026-06-17); INE ECP 2021-2025; MIVAU hasta 2025; Censo 2021; T1 y T2 de v5.1 (ejecución 2026-10-11)"
+  "fecha_dato": "2025 (ECP y MIVAU); proyección INE 54562 de 2026-06-17"
  },
  {
   "id": "T3-H9",

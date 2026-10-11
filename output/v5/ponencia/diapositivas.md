@@ -42,12 +42,14 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 ## «Faltan cientos de miles de viviendas»
 
 - **PARCIALMENTE** [C1]: el déficit 2021-2024 está entre 562.692-688.692 viviendas con bajas nulas
+- Con las bajas estimadas, como máximo 744.144 viviendas [C4]; demoliciones con licencia: 0,02-0,04 % del parque
 
 ---
 
-## «La vivienda que dejan los mayores lo resolverá»
+## «El envejecimiento resolverá el problema» (`T2-V1`)
 
-- **ANALIZADA, NO CONCLUYENTE** [C4]: 1.415.260 viviendas en diez años, ya descontadas en la proyección de hogares
+- **ANALIZADA, NO CONCLUYENTE** [C4]: 1.856.430 viviendas en 2026-2035; llegan al mercado 150.079 viviendas al año
+- Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 
 ---
 
@@ -65,7 +67,9 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## Necesidad anual, con rango
 
-- 214.868 viviendas/año (93.628-309.921 viviendas/año) (2026-2035; A4/M1; INE 54562; Censo 2021; MIVAU; Catastro; dato de 2026-10-10 (descarga); INE proyecciones 2026-06; Censo 2021-11; MIVAU/Catastro hasta 2025; C4)
+- Base: 210.424 viviendas/año (99.388-292.083 viviendas/año) (2026-2035; B1; T1; dato de 2025 (ECP y MIVAU); proyección INE 54562 de 2026-06-17; C4)
+- Si parte de las liberadas no llega al mercado: 245.989 viviendas/año
+- Entre 1,4 veces y 3,8 veces la producción actual [C4]
 
 ![](../B1/figuras/B1_mapa_necesidad.png)
 
@@ -74,7 +78,8 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 ## València al ritmo actual
 
 - Provincia de Valencia: 16.993 viviendas/año al año [C4]
-- A 2030 el déficit empeora en 20 provincias en todo el rango [C4]
+- A 2030 el déficit nacional empeora en todos los escenarios [C2] (`T4-V1`); cuánto, [C4]
+- Provincias: 15 provincias empeoran, 0 provincias mejoran, 37 provincias indeterminadas [C4]
 
 ---
 

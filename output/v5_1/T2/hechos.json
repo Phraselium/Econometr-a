@@ -25,7 +25,7 @@
   "valor": 185643.1,
   "min": 93605.6,
   "max": 316859.0,
-  "unidad": "viviendas/ano",
+  "unidad": "viviendas/año",
   "periodo": "2026-2035",
   "cobertura": "52 provincias",
   "fuentes": [
@@ -105,7 +105,7 @@
   "valor": 150078.8,
   "min": 70095.9,
   "max": 275008.4,
-  "unidad": "viviendas/ano",
+  "unidad": "viviendas/año",
   "periodo": "2026-2035",
   "cobertura": "52 provincias",
   "fuentes": [
@@ -125,7 +125,7 @@
   "valor": 35564.2,
   "min": 24548.2,
   "max": 46580.2,
-  "unidad": "viviendas/ano",
+  "unidad": "viviendas/año",
   "periodo": "2026-2035",
   "cobertura": "52 provincias",
   "fuentes": [
@@ -237,7 +237,7 @@
   "valor": 203393.3,
   "min": 203393.3,
   "max": 203393.3,
-  "unidad": "viviendas/ano",
+  "unidad": "viviendas/año",
   "periodo": "2023-2025",
   "cobertura": "52 provincias",
   "fuentes": [
@@ -252,7 +252,7 @@
   "valor": 118074.5,
   "min": 118074.5,
   "max": 118074.5,
-  "unidad": "viviendas/ano",
+  "unidad": "viviendas/año",
   "periodo": "2026-2035",
   "cobertura": "52 provincias",
   "fuentes": [

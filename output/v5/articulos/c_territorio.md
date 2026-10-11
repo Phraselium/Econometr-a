@@ -54,6 +54,8 @@ Con el precio de Registradores el R² es 0,82 proporción [C4]. Las especificaci
 
 El artículo muestra lo que un panel de 50 provincias puede y no puede decir. Puede describir: la geografía de los precios es muy predecible con características observables. No puede atribuir: con el tamaño mínimo detectable calculado de antemano, las asociaciones de magnitud plausible de la demanda no se distinguen del ruido tras ajustar por comparaciones múltiples. La convergencia es la única regularidad robusta al ajuste y es en parte compatible con error de medida. Las comparaciones con organismos se recogen en `output/v5/D3/convergencia.md` (2 coinciden y 1 difieren) [C4].
 
+**Nota de la versión `v5.1`.** Este artículo no estima la necesidad de vivienda, pero comparte datos con el que sí lo hace. En `v5.1` esa necesidad base es de 210.424 viviendas/año (99.388-292.083 viviendas/año) en 2026-2035 [C4]. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares. Las bajas del parque no se miden con las identidades de stock; las demoliciones con licencia son 0,02-0,04 % del parque en 2024 [C4].
+
 ## Conclusión
 
 Las diferencias territoriales de precios en 2015-2025 se asocian sobre todo con el nivel de partida [C4], en parte por error de medida. Ni el empleo ni la población se distinguen de cero tras Holm [C4], y la importancia relativa de las familias no es estable [C4]. El valor del ejercicio está en el diseño: pre-registro, potencia previa y negativos reportados.

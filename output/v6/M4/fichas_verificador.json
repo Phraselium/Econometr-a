@@ -2,7 +2,7 @@
  {
   "id": "M4-V1",
   "tema": "Diferencias entre provincias en la subida del alquiler",
-  "enunciado": "Que explica que unas provincias suban mas que otras en alquiler.",
+  "enunciado": "Que variables ayudan a predecir que unas provincias suban mas que otras en alquiler.",
   "capa": "C4",
   "magnitud": "Alquiler de stock (SERPAVI), 41 provincias de entrenamiento y 11 selladas, datos hasta 2023-2024. Variables con apoyo en al menos una familia: ln_pob, share_ext_pob; con PIP>=0,5: ln_pob. 'Relevante con seguridad' (criterio A y B): ninguna. Mejor modelo en la validacion espacial sellada: alquiler_provincia_gb (RMSE 0,0161 log-puntos, 1,61 % aprox.; persistencia 0,0421).",
   "intervalo": "RMSE espacial 0,0161; cobertura empirica del intervalo al 95 %: 0,89",
@@ -20,7 +20,7 @@
  {
   "id": "M4-V2",
   "tema": "Diferencias entre provincias en la subida de la compra",
-  "enunciado": "Que explica que unas provincias suban mas que otras en compra.",
+  "enunciado": "Que variables ayudan a predecir que unas provincias suban mas que otras en compra.",
   "capa": "C4",
   "magnitud": "Compra, precio (valor tasado MIVAU, EUR/m2), provincias, datos hasta 2024-2025. Variables con apoyo en al menos una familia: ln_pob, ln_pib_pc; con PIP>=0,5: ln_pob, ln_pib_pc. 'Relevante con seguridad': ninguna. Mejor modelo en la validacion espacial sellada: PROV_PRECIO_ANUAL__random_forest (RMSE 0,0248 log-puntos; persistencia 0,0396; bate a la persistencia con Holm).",
   "intervalo": "RMSE espacial 0,0248; cobertura empirica al 95 %: 0,97",

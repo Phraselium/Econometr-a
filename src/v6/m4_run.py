@@ -311,7 +311,7 @@ def sintesis(T):
                 int(np.sign(sum(x for x in (r["signo_F1"], r["signo_F2"], r["signo_F3"] if not pd.isna(r["signo_F3"]) else 0)))) ]
             out.append(r)
     S = pd.DataFrame(out)
-    # lo que pesa en un mercado y no en el otro (variables comunes alquiler / compra-precio)
+    # lo que se asocia (PIP) en un mercado y no en el otro (variables comunes alquiler / compra-precio)
     S["pesa"] = (S.n_familias_ok >= 1) | (S.PIP.fillna(0) >= 0.5)
     comp = []
     for v in sorted(set(EXP["alq"]) & set(EXP["cp"])):
@@ -319,8 +319,8 @@ def sintesis(T):
         c = S[(S.variable == v) & S.mercado.str.startswith("compra (precio")].iloc[0]
         comp.append(dict(variable=v, pesa_alquiler=bool(a.pesa), pesa_compra=bool(c.pesa), PIP_alq=a.PIP, PIP_compra=c.PIP,
                          dir_alq=a.direccion, dir_compra=c.direccion,
-                         lectura=("pesa en ambos" if a.pesa and c.pesa else "pesa en alquiler y no en compra" if a.pesa
-                                  else "pesa en compra y no en alquiler" if c.pesa else "no pesa en ninguno")))
+                         lectura=("se asocia en ambos" if a.pesa and c.pesa else "se asocia con alquiler y no con compra" if a.pesa
+                                  else "se asocia con compra y no con alquiler" if c.pesa else "no se asocia en ninguno")))
     return S, pd.DataFrame(comp)
 
 
@@ -353,7 +353,7 @@ def fichas(T, M, S, C):
     ficha = []
     ficha.append(dict(
         id="M4-V1", tema="Diferencias entre provincias en la subida del alquiler",
-        enunciado="Que explica que unas provincias suban mas que otras en alquiler.", capa="C4",
+        enunciado="Que variables ayudan a predecir que unas provincias suban mas que otras en alquiler.", capa="C4",
         magnitud=(f"Alquiler de stock (SERPAVI), 41 provincias de entrenamiento y 11 selladas, datos hasta 2023-2024. Variables con apoyo en al menos una familia: "
                   f"{', '.join(ap) or 'ninguna'}; con PIP>=0,5: {', '.join(pib_a) or 'ninguna'}. 'Relevante con seguridad' (criterio A y B): "
                   f"{', '.join(a_rel) or 'ninguna'}. Mejor modelo en la validacion espacial sellada: {ma.mejor_modelo} "
@@ -366,7 +366,7 @@ def fichas(T, M, S, C):
         limites=LIM + " Solo 41 provincias de entrenamiento; regresores en t-1.", evidencia=ev))
     ficha.append(dict(
         id="M4-V2", tema="Diferencias entre provincias en la subida de la compra",
-        enunciado="Que explica que unas provincias suban mas que otras en compra.", capa="C4",
+        enunciado="Que variables ayudan a predecir que unas provincias suban mas que otras en compra.", capa="C4",
         magnitud=(f"Compra, precio (valor tasado MIVAU, EUR/m2), provincias, datos hasta 2024-2025. Variables con apoyo en al menos una familia: "
                   f"{', '.join(cp) or 'ninguna'}; con PIP>=0,5: {', '.join(pip_c) or 'ninguna'}. 'Relevante con seguridad': "
                   f"{', '.join(c_rel) or 'ninguna'}. Mejor modelo en la validacion espacial sellada: {mc.mejor_modelo} "
@@ -378,9 +378,9 @@ def fichas(T, M, S, C):
         regla="Capa C4: ninguna hipotesis confirmatoria sobrevive a Holm; la persistencia es una referencia dificil de batir en compra.",
         limites=LIM + " La medida de precio es el valor tasado (Registradores como robustez).", evidencia=ev))
     comp = C
-    ambos = comp[comp.lectura == "pesa en ambos"].variable.tolist()
-    solo_a = comp[comp.lectura == "pesa en alquiler y no en compra"].variable.tolist()
-    solo_c = comp[comp.lectura == "pesa en compra y no en alquiler"].variable.tolist()
+    ambos = comp[comp.lectura == "se asocia en ambos"].variable.tolist()
+    solo_a = comp[comp.lectura == "se asocia con alquiler y no con compra"].variable.tolist()
+    solo_c = comp[comp.lectura == "se asocia con compra y no con alquiler"].variable.tolist()
     ficha.append(dict(
         id="M4-V3", tema="Factores comunes a alquiler y compra",
         enunciado="El alquiler y la compra se mueven por los mismos factores.", capa="C4",

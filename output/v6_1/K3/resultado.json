@@ -1,0 +1,82 @@
+{
+ "rama": "K3",
+ "pregunta": "¿Las iniciadas preceden o siguen al crecimiento del alquiler? ¿Rango del ratio P/A según medida?",
+ "capa": "C4",
+ "datos": "output/v6/M0/paneles (alquiler SERPAVI stock; iniciadas MIVAU; valor tasado)",
+ "N": 175,
+ "metodo": "OLS con EF provincia y año, cluster por provincia; Holm; ratio por medida",
+ "estimacion": {
+  "A_ini_l2": -0.0013081943171877842,
+  "A_ini_l1": -0.000691213509165902,
+  "A_ini_1000": 0.0026712382304902565,
+  "A_ini_f1": -0.00016522129840236628,
+  "A_ini_f2": 0.0007467916783581409,
+  "B_dlna_l1": 0.028363648329505435,
+  "B_dlna_l2": 2.921885115043086
+ },
+ "ic95": {
+  "A_ini_l2": [
+   -0.004046929915924381,
+   0.001430541281548812
+  ],
+  "A_ini_l1": [
+   -0.00351239545612212,
+   0.0021299684377903156
+  ],
+  "A_ini_1000": [
+   0.00011075617536648657,
+   0.005231720285614026
+  ],
+  "A_ini_f1": [
+   -0.0016847287108943654,
+   0.0013542861140896328
+  ],
+  "A_ini_f2": [
+   -0.0016398500103207568,
+   0.003133433367037039
+  ],
+  "B_dlna_l1": [
+   -14.426123601835586,
+   14.482850898494599
+  ],
+  "B_dlna_l2": [
+   -8.931899697294934,
+   14.775669927381106
+  ]
+ },
+ "p_ajustado": {
+  "A_conjunta|ini_l2": 1.0,
+  "A_conjunta|ini_l1": 1.0,
+  "A_conjunta|ini_1000": 0.5723212267538296,
+  "A_conjunta|ini_f1": 1.0,
+  "A_conjunta|ini_f2": 1.0,
+  "A_ini_l2|ini_l2": 1.0,
+  "A_ini_l1|ini_l1": 1.0,
+  "A_ini_1000|ini_1000": 0.5996522329528869,
+  "A_ini_f1|ini_f1": 1.0,
+  "A_ini_f2|ini_f2": 1.0,
+  "B_inversa|dlna_l1": 1.0,
+  "B_inversa|dlna_l2": 1.0,
+  "B_dlna_l1|dlna_l1": 1.0,
+  "B_dlna_l2|dlna_l2": 1.0
+ },
+ "nivel_evidencia": "EXPLORATORIO (C4): ANALIZADA, NO CONCLUYENTE",
+ "medida_precio": "valor tasado MIVAU (ratio: + Registradores, Notariado)",
+ "diagnosticos": {
+  "rango_ratio_2015": [
+   18.930997837059294,
+   20.32570033078524
+  ],
+  "rango_ratio_2023": [
+   17.11958877395161,
+   17.730624641134934
+  ],
+  "seed": 20261010
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Descriptivo del orden temporal; sin lenguaje causal; contratos nuevos solo GVA."
+}

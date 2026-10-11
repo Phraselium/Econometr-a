@@ -1,0 +1,56 @@
+# K3: cambios de texto (antes → después)
+
+- `docs/v5/plantillas/informe_tecnico.md`
+  - antes: ## 11. Alquiler y compraventa: qué explica y qué predice (v6)
+  - después: ## 11. Alquiler y compraventa: qué se asocia y qué predice (v6)
+- `docs/v5/plantillas/working_paper.md`
+  - antes: ### 4.5 Alquiler y compraventa: qué explica y qué predice (v6)
+  - después: ### 4.5 Alquiler y compraventa: qué se asocia y qué predice (v6)
+- `docs/v5/plantillas/informe_tecnico.md`
+  - antes: ### 11.4 Peso de cada variable en alquiler y en compra [C4]
+  - después: ### 11.4 Peso predictivo de cada variable en alquiler y en compra [C4]
+- `docs/v5/plantillas/informe_tecnico.md`
+  - antes: **Lo que pesa en un mercado y no en el otro (C4, con discrepancias declaradas).**
+  - después: **Variables que aparecen en más modelos (PIP) en un mercado y no en el otro (C4, con discrepancias declaradas).**
+- `docs/v5/plantillas/informe_tecnico.md`
+  - antes: - **Población:** pesa en los dos mercados con los dos métodos.
+  - después: - **Población:** se asocia con los dos mercados (aparece en más modelos, PIP alta) con los dos métodos.
+- `docs/v5/plantillas/informe_tecnico.md`
+  - antes: - **PIB por habitante:** pesa en la compra y no en el alquiler con
+  - después: - **PIB por habitante:** se asocia con la compra y no con el alquiler (aparece en más modelos) con
+- `docs/v5/plantillas/informe_tecnico.md`
+  - antes: En el núcleo de M2 pesa en la compra (PIP
+  - después: En el núcleo de M2 se asocia con la compra (PIP
+- `docs/v5/plantillas/informe_tecnico.md`
+  - antes: En el núcleo de M2 pesan en el alquiler y no en la compra; en el BMA completo y en la síntesis de M4 no pesan en ninguno.
+  - después: En el núcleo de M2 aparecen en más modelos (PIP) del alquiler que de la compra; en el BMA completo y en la síntesis de M4 no ayudan a predecir ninguno de los dos. Esa asociación con el alquiler no indica que construir suba el alquiler: en el análisis de orden temporal de K3 (`output/v6_1/K3/iniciadas.md`, provincias de entrenamiento, C4) ni los retardos ni los adelantos de las iniciadas se distinguen de cero respecto al crecimiento del alquiler, y el crecimiento previo del alquiler tampoco predice las iniciadas tras ajustar por comparaciones múltiples. Solo el contemporáneo es positivo y no sobrevive a Holm; es compatible con que la construcción se dirija a mercados con alquileres ya tensionados, sin que la muestra permita ordenar los hechos en el tiempo.
+- `docs/v5/plantillas/informe_tecnico.md`
+  - antes: dicen qué variables usa el modelo para predecir, no qué ocurriría
+  - después: dicen qué variables ayudan al modelo a predecir, no qué ocurriría
+- `docs/v5/plantillas/lo_que_sabemos.md`
+  - antes: Las importancias de los modelos de predicción describen qué usa el modelo,
+  - después: Las importancias de los modelos de predicción describen qué variables ayudan a predecir,
+- `docs/v5/plantillas/lo_que_sabemos.md`
+  - antes: En la población extranjera y en las viviendas iniciadas los métodos discrepan.
+  - después: En la población extranjera y en las viviendas iniciadas los métodos discrepan; la asociación de las iniciadas con el alquiler no indica que construir suba el alquiler (el orden temporal con el crecimiento del alquiler no se distingue de cero, C4).
+- `docs/v5/plantillas/working_paper.md`
+  - antes: La población pesa en los dos mercados (PIP
+  - después: La población se asocia con los dos mercados (aparece en más modelos; PIP
+- `docs/v5/plantillas/working_paper.md`
+  - antes: en la población extranjera y en las viviendas iniciadas los métodos discrepan y se dan las dos lecturas [C4].
+  - después: en la población extranjera y en las viviendas iniciadas los métodos discrepan y se dan las dos lecturas; la asociación de las iniciadas con el alquiler no indica que construir suba el alquiler: retardos y adelantos de las iniciadas no se distinguen de cero respecto al crecimiento del alquiler (K3) [C4].
+- `output/v6/M2/peso_variables.md`
+  - antes: # Peso de cada variable (M2, provincia) — C4, asociativo
+  - después: # Peso predictivo de cada variable (M2, provincia) — C4, asociativo
+- `output/v6/M2/peso_variables.md`
+  - antes: ## Variables que pesan en un mercado y no en el otro (PIP
+  - después: ## Variables que aparecen en más modelos (PIP) en un mercado y no en el otro (PIP
+- `output/v6/M2/peso_variables.md`
+  - antes: - **share_ext_pob**: pesa en COMPRA y no en ALQUILER
+  - después: - **share_ext_pob**: se asocia con COMPRA y no con ALQUILER
+- `output/v6/M2/peso_variables.md`
+  - antes: - **ln_pib_pc**: pesa en COMPRA y no en ALQUILER
+  - después: - **ln_pib_pc**: se asocia con COMPRA y no con ALQUILER
+- `output/v6/M2/peso_variables.md`
+  - antes: - **ln_iniciadas_libres**: pesa en ALQUILER y no en COMPRA (núcleo).
+  - después: - **ln_iniciadas_libres**: se asocia con ALQUILER y no con COMPRA (núcleo); el orden temporal con el crecimiento del alquiler no se distingue de cero (K3, C4): la asociación no indica que construir suba el alquiler.

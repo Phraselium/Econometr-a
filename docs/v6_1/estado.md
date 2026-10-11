@@ -36,3 +36,7 @@
 - Margen hasta el corte del 80 %: 384.563 tokens.
 
 Plan de ahorro (D7): revisor post-K2 ≤60.000, K3 ≤70.000, K4c/K4d ≤90.000, K5 ≤120.000, revisor final ≤60.000. K6 y la consolidación de la auditoría las hace el orquestador.
+- K3 terminado (unos 50.000 tokens).
+  - Iniciadas: ni los retardos ni los adelantos se distinguen de cero, y no se detecta orden temporal.
+  - Léxico: 18 frases corregidas en las plantillas; también en m2_tablas.py y m4_run.py, para que make no las revierta.
+  - Ratio precio/alquiler: 2015 entre 18,9 y 20,3 años; 2023 entre 17,1 y 17,7 años (provincial). Con contratos nuevos el ratio sale 3-6 años menor.

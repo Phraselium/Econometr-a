@@ -1,4 +1,4 @@
-# Peso de cada variable (M2, provincia) — C4, asociativo
+# Peso predictivo de cada variable (M2, provincia) — C4, asociativo
 
 Fecha: 2026-10-11. PIP = soporte predictivo/asociativo dentro del espacio de modelos, NO efecto causal. Datos: paneles *_train de M0 (anual, provincia); variables en t−1 con FE de unidad y año fuera del promedio. g-prior g = max(N, K²); prior uniforme (columna PIP) y beta-binomial(1,1) (PIP bb). «PIP núcleo» = BMA sin ln_vut ni ln_suelo (más observaciones). Rango BMA = intervalo creíble 95 %; mult. = mediana [p25; p75] del multiverso. Unidad: +10 % en variables ln_, +1 pp en share_/paro, +1 municipio en contadores. ALQUILER = stock SERPAVI, €/m²/mes → %, y €/mes con el alquiler medio del panel (413 €/mes). COMPRA = valor tasado MIVAU → %, y €/m² con el precio medio del panel (1257 €/m²). Mismo signo = % de especificaciones con el signo de la mediana. Sel. enet = elastic net conjunto (CV en bloques, embargo 1 año).
 
@@ -44,10 +44,10 @@ Fecha: 2026-10-11. PIP = soporte predictivo/asociativo dentro del espacio de mod
 | ln_vut | +10 % | 0.14 | 0.04 | – | 0.12 [0.00; 1.71] | -0.92 [-1.40; 0.52] | 70 | no | 1.13 [-0.04; 2.31] | C4 |
 | ln_hip_viv_num | +10 % | 0.09 | 0.02 | 0.99 | -0.03 [-1.88; 1.42] | 0.66 [-0.41; 4.24] | 65 | no | -0.34 [-4.02; 3.34] | C4 |
 
-## Variables que pesan en un mercado y no en el otro (PIP ≥ 0,5 en uno y < 0,2 en el otro)
+## Variables que aparecen en más modelos (PIP) en un mercado y no en el otro (PIP ≥ 0,5 en uno y < 0,2 en el otro)
 
-- **share_ext_pob**: pesa en COMPRA y no en ALQUILER (núcleo). PIP alquiler 0.30 (núcleo 0.06), PIP compra 0.31 (núcleo 0.77).
-- **ln_pib_pc**: pesa en COMPRA y no en ALQUILER (set completo). PIP alquiler 0.10 (núcleo 0.19), PIP compra 0.84 (núcleo 0.47).
-- **ln_iniciadas_libres**: pesa en ALQUILER y no en COMPRA (núcleo). PIP alquiler 0.09 (núcleo 0.97), PIP compra 0.12 (núcleo 0.06).
+- **share_ext_pob**: se asocia con COMPRA y no con ALQUILER (núcleo). PIP alquiler 0.30 (núcleo 0.06), PIP compra 0.31 (núcleo 0.77).
+- **ln_pib_pc**: se asocia con COMPRA y no con ALQUILER (set completo). PIP alquiler 0.10 (núcleo 0.19), PIP compra 0.84 (núcleo 0.47).
+- **ln_iniciadas_libres**: se asocia con ALQUILER y no con COMPRA (núcleo); el orden temporal con el crecimiento del alquiler no se distingue de cero (K3, C4): la asociación no indica que construir suba el alquiler. PIP alquiler 0.09 (núcleo 0.97), PIP compra 0.12 (núcleo 0.06).
 
 Lectura: C4 en todas las filas; veredicto máximo «ANALIZADA, NO CONCLUYENTE». Sin lenguaje causal. El BMA completo usa solo observaciones con ln_vut y ln_suelo disponibles (alquiler N=106, compra N=64), por lo que su potencia es baja.

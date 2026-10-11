@@ -44,7 +44,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - [C4] En Europa (Eurostat): tenencia en propiedad en España de 73,6 % de la población en 2025, dentro del rango intercuartílico de la Unión Europea; precio real de la vivienda 42,6 % acumulado desde 2015.
 - [C4] Crédito a construcción y actividades inmobiliarias: -79,3 % desde su máximo de 2008.
 - [C4] (v6) En provincias que los modelos no vieron, los árboles predicen el alquiler de stock con menos error que la persistencia: 1,6 % frente a 4,2 % en la provincia (SERPAVI, último año disponible). En el precio de compra (valor tasado) provincial: 2,5 % frente a 4,0 %. Predecir mejor no dice por qué sube el precio.
-- [C4] (v6) La población se asocia con el alquiler y con la compra; el PIB por habitante, con la compra y no con el alquiler (probabilidad de inclusión 0,84 frente a 0,10). En la población extranjera y en las viviendas iniciadas los métodos discrepan.
+- [C4] (v6) La población se asocia con el alquiler y con la compra; el PIB por habitante, con la compra y no con el alquiler (probabilidad de inclusión 0,84 frente a 0,10). En la población extranjera y en las viviendas iniciadas los métodos discrepan; la asociación de las iniciadas con el alquiler no indica que construir suba el alquiler (el orden temporal con el crecimiento del alquiler no se distingue de cero, C4).
 - [C4] (v6) Precio y alquiler se mueven juntos: elasticidad de 0,59 a 2,1 según la especificación (asociación). La ratio precio/alquiler mediana bajó de 20,3 a 17,1 años de alquiler entre 2015 y 2023, y el GSADF no detecta exuberancia en ninguna de las 11 CCAA contrastadas.
 
 ## No se puede afirmar con estos datos
@@ -54,7 +54,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - Que alguno de estos factores sea la causa principal de la subida: turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas.
 - Que los topes al alquiler reduzcan los precios o la oferta: su resultado queda en C4.
 - Que haya una burbuja: la exuberancia estadística no la identifica.
-- (v6) Que alguna variable sea «relevante con seguridad» para el alquiler o la compra: ninguna cumple los criterios pre-registrados y ninguna hipótesis confirmatoria pasa Holm. Las importancias de los modelos de predicción describen qué usa el modelo, no qué pasaría si una variable cambiara.
+- (v6) Que alguna variable sea «relevante con seguridad» para el alquiler o la compra: ninguna cumple los criterios pre-registrados y ninguna hipótesis confirmatoria pasa Holm. Las importancias de los modelos de predicción describen qué variables ayudan a predecir, no qué pasaría si una variable cambiara.
 - (v6) Que los modelos de aprendizaje profundo predigan mejor que el gradient boosting, o que algún modelo bata a la inercia en el volumen trimestral de compraventas del último año: no lo hacen.
 - El resultado de bajar impuestos a la compra o a la construcción, de la seguridad jurídica frente a la ocupación ilegal o de limitar compras de no residentes: no hay diseño ni datos.
 

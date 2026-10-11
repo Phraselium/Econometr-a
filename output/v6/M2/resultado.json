@@ -332,15 +332,15 @@
     "discrepancias_mercados": [
       {
         "variable": "share_ext_pob",
-        "discrepancia_mercados": "pesa en COMPRA y no en ALQUILER (núcleo)"
+        "discrepancia_mercados": "se asocia con COMPRA y no con ALQUILER (núcleo)"
       },
       {
         "variable": "ln_pib_pc",
-        "discrepancia_mercados": "pesa en COMPRA y no en ALQUILER (set completo)"
+        "discrepancia_mercados": "se asocia con COMPRA y no con ALQUILER (set completo)"
       },
       {
         "variable": "ln_iniciadas_libres",
-        "discrepancia_mercados": "pesa en ALQUILER y no en COMPRA (núcleo)"
+        "discrepancia_mercados": "se asocia con ALQUILER y no con COMPRA (núcleo)"
       }
     ]
   },

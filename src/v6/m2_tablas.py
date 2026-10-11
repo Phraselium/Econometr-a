@@ -86,13 +86,13 @@ def main():
         an, cn = r.ALQ_pip_nucleo, r.COMPRA_pip_nucleo
         f = []
         if a >= .5 and c < .2:
-            f.append("pesa en ALQUILER y no en COMPRA (set completo)")
+            f.append("se asocia con ALQUILER y no con COMPRA (set completo)")
         if c >= .5 and a < .2:
-            f.append("pesa en COMPRA y no en ALQUILER (set completo)")
+            f.append("se asocia con COMPRA y no con ALQUILER (set completo)")
         if an >= .5 and cn < .2:
-            f.append("pesa en ALQUILER y no en COMPRA (núcleo)")
+            f.append("se asocia con ALQUILER y no con COMPRA (núcleo)")
         if cn >= .5 and an < .2:
-            f.append("pesa en COMPRA y no en ALQUILER (núcleo)")
+            f.append("se asocia con COMPRA y no con ALQUILER (núcleo)")
         return "; ".join(f) if f else "sin discrepancia"
     W["discrepancia_mercados"] = W.apply(disc, axis=1)
     W["capa"] = "C4"
@@ -100,7 +100,7 @@ def main():
 
     def f(x, n=2):
         return "–" if pd.isna(x) else f"{x:.{n}f}"
-    L = ["# Peso de cada variable (M2, provincia) — C4, asociativo", "",
+    L = ["# Peso predictivo de cada variable (M2, provincia) — C4, asociativo", "",
          f"Fecha: {FECHA}. PIP = soporte predictivo/asociativo dentro del espacio de modelos, NO efecto causal. "
          "Datos: paneles *_train de M0 (anual, provincia); variables en t−1 con FE de unidad y año fuera del promedio. "
          "g-prior g = max(N, K²); prior uniforme (columna PIP) y beta-binomial(1,1) (PIP bb). "
@@ -124,12 +124,14 @@ def main():
                      f"{f(r.mv_pct_mismo_signo, 0)} | {'sí' if r.pds_seleccion_enet else 'no'} | "
                      f"{f(r.pds_coef_pct)} [{f(r.pds_ic_lo_pct)}; {f(r.pds_ic_hi_pct)}] | C4 |")
         L.append("")
-    L += ["## Variables que pesan en un mercado y no en el otro (PIP ≥ 0,5 en uno y < 0,2 en el otro)", ""]
-    ds = W[W.discrepancia_mercados.str.startswith("pesa")]
+    L += ["## Variables que aparecen en más modelos (PIP) en un mercado y no en el otro (PIP ≥ 0,5 en uno y < 0,2 en el otro)", ""]
+    ds = W[W.discrepancia_mercados.str.startswith("se asocia")]
     if ds.empty:
         L.append("Ninguna variable común cumple el criterio.")
     for _, r in ds.iterrows():
-        L.append(f"- **{r.variable}**: {r.discrepancia_mercados}. PIP alquiler {f(r.ALQ_pip)} (núcleo {f(r.ALQ_pip_nucleo)}), "
+        nota = ("; el orden temporal con el crecimiento del alquiler no se distingue de cero (K3, C4): la asociación no indica "
+                "que construir suba el alquiler") if r.variable == "ln_iniciadas_libres" else ""  # v6.1 K3
+        L.append(f"- **{r.variable}**: {r.discrepancia_mercados}{nota}. PIP alquiler {f(r.ALQ_pip)} (núcleo {f(r.ALQ_pip_nucleo)}), "
                  f"PIP compra {f(r.COMPRA_pip)} (núcleo {f(r.COMPRA_pip_nucleo)}).")
     L += ["", "Lectura: C4 en todas las filas; veredicto máximo «ANALIZADA, NO CONCLUYENTE». Sin lenguaje causal. "
           "El BMA completo usa solo observaciones con ln_vut y ln_suelo disponibles (alquiler N=" +

@@ -582,7 +582,7 @@ Las solicitudes a organismos están en `docs/v5/solicitudes.md`. Ninguna conclus
 
 ---
 
-## 11. Alquiler y compraventa: qué explica y qué predice (v6)
+## 11. Alquiler y compraventa: qué se asocia y qué predice (v6)
 
 **Pregunta.** ¿Qué variables se asocian con el alquiler y con la compraventa por provincia, municipio y distrito, qué modelo los predice mejor fuera de muestra y en qué se parecen y se diferencian los dos mercados? Todo el apartado es C4: predicción y asociación, sin lenguaje causal.
 
@@ -620,7 +620,7 @@ Fuente: `output/v6/M4/mejor_modelo.csv` y `output/v6/M4/tabla_modelos.md`. El me
 
 **Lectura.** Los árboles predicen mejor el alquiler de stock y el precio provincial que la inercia, en provincias que no vieron. En el precio municipal y con Registradores, la econometría heredada (ECM v1) basta. Predecir mejor no identifica por qué sube el precio.
 
-### 11.4 Peso de cada variable en alquiler y en compra [C4]
+### 11.4 Peso predictivo de cada variable en alquiler y en compra [C4]
 
 Dos lecturas complementarias, ambas asociativas:
 - **M2 (incertidumbre de modelo).** Probabilidad de inclusión posterior (PIP) del promedio bayesiano de modelos (BMA), con el multiverso y la doble selección (PDS) como contraste. El BMA completo solo usa las observaciones con viviendas turísticas y suelo; el «núcleo» prescinde de esas dos variables y tiene más observaciones.
@@ -636,16 +636,16 @@ Dos lecturas complementarias, ambas asociativas:
 | Viviendas turísticas | {{m2_pip_alq_ln_vut:num}} | {{m2_pip_cp_ln_vut:num}} | sin apoyo suficiente |
 | Municipios con tope de alquiler | {{m2_pip_alq_n_mun_topes_cat:num}} | — | sin apoyo suficiente |
 
-**Lo que pesa en un mercado y no en el otro (C4, con discrepancias declaradas).**
-- **Población:** pesa en los dos mercados con los dos métodos.
-- **PIB por habitante:** pesa en la compra y no en el alquiler con el BMA completo y con la síntesis de M4; en el núcleo la diferencia se reduce.
-- **Población extranjera: los métodos discrepan.** En el núcleo de M2 pesa en la compra (PIP {{E-V6-M2-PIPN-COMPRA-share_ext_pob:num}}) y no en el alquiler (PIP {{E-V6-M2-PIPN-ALQ-share_ext_pob:num}}); en la síntesis de M4 tiene apoyo en el alquiler (familia de predicción) y no en la compra. Se dan las dos lecturas y ninguna se elige.
-- **Viviendas iniciadas: los métodos discrepan.** En el núcleo de M2 pesan en el alquiler y no en la compra; en el BMA completo y en la síntesis de M4 no pesan en ninguno. En el volumen de compraventas el BMA les da una PIP de {{m2_pip_cv_ln_iniciadas_libres:num}}, con signo negativo.
+**Variables que aparecen en más modelos (PIP) en un mercado y no en el otro (C4, con discrepancias declaradas).**
+- **Población:** se asocia con los dos mercados (aparece en más modelos, PIP alta) con los dos métodos.
+- **PIB por habitante:** se asocia con la compra y no con el alquiler (aparece en más modelos) con el BMA completo y con la síntesis de M4; en el núcleo la diferencia se reduce.
+- **Población extranjera: los métodos discrepan.** En el núcleo de M2 se asocia con la compra (PIP {{E-V6-M2-PIPN-COMPRA-share_ext_pob:num}}) y no en el alquiler (PIP {{E-V6-M2-PIPN-ALQ-share_ext_pob:num}}); en la síntesis de M4 tiene apoyo en el alquiler (familia de predicción) y no en la compra. Se dan las dos lecturas y ninguna se elige.
+- **Viviendas iniciadas: los métodos discrepan.** En el núcleo de M2 aparecen en más modelos (PIP) del alquiler que de la compra; en el BMA completo y en la síntesis de M4 no ayudan a predecir ninguno de los dos. Esa asociación con el alquiler no indica que construir suba el alquiler: en el análisis de orden temporal de K3 (`output/v6_1/K3/iniciadas.md`, provincias de entrenamiento, C4) ni los retardos ni los adelantos de las iniciadas se distinguen de cero respecto al crecimiento del alquiler, y el crecimiento previo del alquiler tampoco predice las iniciadas tras ajustar por comparaciones múltiples. Solo el contemporáneo es positivo y no sobrevive a Holm; es compatible con que la construcción se dirija a mercados con alquileres ya tensionados, sin que la muestra permita ordenar los hechos en el tiempo. En el volumen de compraventas el BMA les da una PIP de {{m2_pip_cv_ln_iniciadas_libres:num}}, con signo negativo.
 - **Viviendas turísticas y topes:** no tienen apoyo suficiente en ningún mercado.
 
 En la econometría de M1, la población es la variable con la asociación más clara con el alquiler de stock provincial ({{m1a_provincia_S0_ln_pob}} por cada diez mil habitantes, en 2021-2023), pero no sobrevive a Holm y los métodos de contraste discrepan [C4].
 
-Las importancias, los SHAP y los ALE de los modelos de predicción (`output/v6/M3A`, `output/v6/M3B`) son descriptivos: dicen qué variables usa el modelo para predecir, no qué ocurriría si una variable cambiara.
+Las importancias, los SHAP y los ALE de los modelos de predicción (`output/v6/M3A`, `output/v6/M3B`) son descriptivos: dicen qué variables ayudan al modelo a predecir, no qué ocurriría si una variable cambiara.
 
 ### 11.5 Relación entre el mercado de compra y el de alquiler [C4]
 

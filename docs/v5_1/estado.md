@@ -8,8 +8,8 @@
 | T3 rangos de necesidad y déficit | hecho | C1 (sin bajas) / C4 | déficit 2021-24: 562.692-744.144 (antes hasta 902.808); necesidad 124.000/246.000/339.000 al año con sensibilidad T2 (base 99.000/210.000/292.000); amplitud: movilizables 34 %; 1,5-4,1 veces las terminadas | 155.449 (T3+T4) |
 | T4 dirección frente a magnitud | hecho | dirección C2 (2030), magnitud C4 | empeora en los 180 escenarios a 2030; provincias 15/0/37; 2035 indeterminado | — |
 | T5 matices de lectura | hecho | — | traslado de las ayudas siempre por clase, con literatura en cada extremo; nota de pre-registro y versiones en 10 entregables | 0 (orquestador) |
-| T6 backlog secundario | hecho (sin datos) | NO ANALIZADA: FALTAN DATOS | temporada y habitaciones: ninguna fuente oficial con la duración del contrato (INE, Registro Único 403, Incasòl, GVA, Euskadi, ayuntamientos); MESVAL no replicable (datos privados); ampliar los artículos queda en el backlog (tarea del autor) | ≈30.000 |
+| T6 backlog secundario | hecho (sin datos) | NO ANALIZADA: FALTAN DATOS | temporada y habitaciones: ninguna fuente oficial con la duración del contrato (INE, Registro Único 403, Incasòl, GVA, Euskadi, ayuntamientos); MESVAL no replicable (datos privados); ampliar los artículos queda en el backlog (tarea del autor) | 45.061 |
 
 **Hecho:** setup, T1-T5.
 **Siguiente:** revisión T1-T5 → T7 → cierre.
-**Tokens de subagentes v5.1:** 419.740 / 1.000.000 (corte 800.000; reserva 100.000).
+**Tokens de subagentes v5.1:** 434.801 / 1.000.000 (corte 800.000; reserva 100.000).

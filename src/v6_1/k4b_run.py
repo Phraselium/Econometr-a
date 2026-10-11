@@ -71,7 +71,7 @@ R["terminadas_1924"]["serie"] = serie_c
 
 # ---------------- deficit ----------------
 T_min = sum(term(y) for y in range(2021, 2025))
-cat = rd("catastro_urbana_municipios.csv")
+cat = rd("catastro_urbana_municipios.csv.gz").assign(ejercicio=lambda d: d.periodo.astype(int))  # versionado; periodo = ejercicio
 cs = cat[cat.serie.str.startswith("catastro_uu_res")].groupby("ejercicio").valor.sum()
 # altas Catastro del anio Y = stock(ejercicio Y+1) - stock(ejercicio Y) (ejercicio = 1 de enero)
 T_cat = float(sum(cs[y + 1] - cs[y] for y in range(2021, 2025)))

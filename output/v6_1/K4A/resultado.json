@@ -1,0 +1,35 @@
+{
+ "rama": "v6_1/K4A",
+ "pregunta": "¿Hay errores de código o estadística en los scripts que producen cifras de entregables?",
+ "capa": "C4",
+ "datos": "src/v5, src/v5_1, src/v6, holdout, econ_utils; output/v5/cifras_clave.csv; output/v6/M0/paneles",
+ "N": 11,
+ "metodo": "auditoría dirigida con consultas a los datos y tests",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "hallazgos_por_severidad": {
+   "critica": 0,
+   "alta": 2,
+   "media": 3,
+   "baja": 6
+  },
+  "corregidos": [
+   "K4a-01",
+   "K4a-02"
+  ],
+  "cambio_max_unidades": 5,
+  "tests_nuevos": 31,
+  "bloqueos_sellado": 0,
+  "filas_cifras_clave_cambiadas": 24,
+  "campos_cifras_clave_cambiados": 33
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Ver docs/v6_1/auditoria_K4a.md. K4a-01 (formato %.6g) y K4a-02 (Incasòl: periodos acumulados y unidades mezcladas) corregidos y re-ejecutados."
+}

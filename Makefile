@@ -7,7 +7,7 @@ V4_ORDEN := m0_run m2_run m1_run m3_run m4_run m7_run m5_run
 V5_ORDEN := r1t_run r1c_run r1a_run r1b_run a23_run a4_run a5_run a5_validacion a5_hechos b1_run b2_run b3_potencia b3_run b4_run ca_run cb_run cc_run d1_run d2_run ../v5_1/t1_run ../v5_1/t2_run ../v5_1/t3_run ../v5_1/t4_run e_hechos cifras_clave d3_run cifras_clave render
 V6_ORDEN := m0_run m1a_run m1b_run m2_run m3a_run m3a_bayes m3a_dl m3a_informe m3b_run m4_run
 # v6.1: reanálisis (lee JSON versionados) y, al final, cifras_clave + render para recoger hechos de v6/v6.1
-V6_1_ORDEN := k1_run ../v5/cifras_clave ../v5/render
+V6_1_ORDEN := k1_run k4b_run ../v5/cifras_clave ../v5/render k4b_comparar
 FETCH  := $(sort $(wildcard src/fetch_*.py)) $(sort $(wildcard src/extract_*.py))
 MODELS := $(sort $(wildcard src/f[2-6]_*.py)) $(foreach r,ba_run bv_main bi_run bo_run bp_main bm_run bd_run bs_run,$(wildcard src/v2/$(r).py))
 # v3: puntos de entrada en orden (se añaden al aprobarse cada diseño); el verificador y los informes al final

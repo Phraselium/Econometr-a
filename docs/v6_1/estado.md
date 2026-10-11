@@ -21,3 +21,7 @@
     - la segunda fuente de terminadas es MIVAU con y sin protegida, no Catastro;
     - las ventanas de hogares difieren.
   - Ver docs/v6_1/doble_implementacion.md.
+- K4a terminado (unos 235.000 tokens): 11 hallazgos (0 críticos, 2 altos, 3 medios, 6 bajos).
+  - Los dos altos están corregidos: K4a-01, redondeo de recuentos, y K4a-02, fianzas de Incasòl. Ambos van en ERRATA.
+  - 31 tests nuevos.
+- K2 lanzado (econometrician).

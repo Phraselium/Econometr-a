@@ -26,3 +26,8 @@ Lista de comprobación de lo que no pueden hacer los agentes. Se marca cada casi
 ## Datos
 - [ ] Presentar las solicitudes S1-S10 en el orden de docs/v5/solicitudes.md (sede electrónica de cada organismo) y anotar fecha y registro en la tabla de seguimiento.
 - [ ] Reclamar ante el Consejo de Transparencia si no hay respuesta en plazo.
+
+## v5.1
+- [ ] Publicar la etiqueta `v5.1` (creada en local el 11 de octubre de 2026; el remoto de la sesión rechaza las etiquetas): `git push origin v5.1`, junto con `prereg-v5` y `v5.0`.
+- [ ] Completar en los entregables la fecha de publicación remota de las etiquetas (campo «[fecha de publicación: pendiente]»).
+- [ ] Ampliar el artículo del Colegio (unas 1.740 palabras de prosa) y los tres artículos antes de enviarlos (backlog BK-E3).

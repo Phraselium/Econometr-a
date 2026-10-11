@@ -12,5 +12,5 @@
 | Revisión T1-T5 | REHACER acotado (B1-B2) → corregido; APROBADA | — | docs/v5_1/revision.md; 1,4/2,7/3,8 veces; T4-V1 NO RESPALDADA (C2) | 61.371 |
 | T7 entregables (redactor) | hecho | C1/C2/C4 | 16 plantillas actualizadas (T1-T4), src/v5/e_hechos_t7.py (ids E-T7-), CHANGELOG v5.1; render 0 sin resolver, check_v5 y check_texto 0 errores | 164.688 |
 **Hecho:** setup, T1-T5, T7.
-**Siguiente:** cierre (make all ×2 sin red en clon limpio, etiqueta v5.1).
+**Siguiente:** v5.1 CERRADA. Tareas del autor en docs/v5/tareas_autor.md.
 **Tokens de subagentes v5.1:** 660.860 / 1.000.000 (corte 800.000; reserva 100.000).

@@ -64,3 +64,18 @@
 - **Orquestador.**
   - T2: la unidad «viviendas/ano» pasa a «viviendas/año».
   - T3 y T4: la fecha del dato pasa a ser una fecha breve; antes era una lista de fuentes que salía como «dato de INE…».
+
+## Cierre v5.1
+- Doble ejecución de `make all` sin red en un clon limpio de ddc1d8e:
+  - rc=0 las dos veces (3.215 s y 3.232 s);
+  - md5 idénticos salvo `output/v2/BM/tiempos.json`;
+  - todas las salidas coinciden con lo versionado.
+- La etiqueta `v5.1` se crea en local. El remoto rechaza etiquetas, así que queda anotado en docs/v5/tareas_autor.md.
+- Tokens de subagentes por tarea, 660.860 de 1.000.000 en total:
+  - T1: 140.806
+  - T2: 93.485
+  - T3+T4: 155.449
+  - T6: 45.061
+  - Revisión: 61.371
+  - T7: 164.688
+  - T5: 0, la hizo el orquestador.

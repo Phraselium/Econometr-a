@@ -109,12 +109,12 @@ def escribir(U, meta, CTX, FILAS, cadena, col, dem, bma, REG, OUT, smoke):
     concl = (
         f"Con los datos de entrenamiento (provincias de entrenamiento de v6; {meta['n_v2']} con datos de v2) la asociación de la inmigración con el "
         f"precio de compra y con el alquiler de stock **no tiene un signo ni un orden entre mercados estables**: cambia con el método, con la "
-        f"medida de alquiler y, sobre todo, con el control por población. "
+        f"medida de alquiler y con el control por población (que puede ser mediador o término mecánico de la inmigración y estima otra magnitud). "
         f"(1) Método: la base de v2 (flujo/población, 2SLS shift-share, 2009-2021) da {_ic(p0a)} %/pp en alquiler (IPC) y {_ic(p0c)} en valor "
         f"tasado; con MCO y los mismos EF da {_ic(p1a)} y {_ic(p1c)}: el orden alquiler > compra de v2 corresponde al 2SLS y el orden compra > alquiler de v6 al MCO "
         f"(ya presente en la columna MCO de v2). La primera etapa en estas provincias es débil (F = {_f(p0a['F1'], 1)} frente a 14,4 en las 49 provincias de v2; "
         f"las 11 provincias selladas de v6 no se usan). "
-        f"(2) Población: la cuota de extranjeros (t-1) y el ln de la población (t-1) se correlacionan {_f(co['v6_share_vs_ln_pob']['dentro'])} dentro de provincia "
+        f"(2) Población (sensibilidad, en pie de igualdad con la lectura sin población; no prueba que la cuota no importe): la cuota de extranjeros (t-1) y el ln de la población (t-1) se correlacionan {_f(co['v6_share_vs_ln_pob']['dentro'])} dentro de provincia "
         f"({_f(co['v6_share_vs_ln_pob']['pooled'])} en conjunta); al añadir la población, el coeficiente sobre el valor tasado pasa de {_f(c_comp_sin)} a "
         f"{_f(c_comp['coef'])} %/pp (IC95 [{_f(c_comp['lo'])}; {_f(c_comp['hi'])}]) y el de SERPAVI de {_f(c_alq['coef_anterior_misma_muestra'])} a {_f(c_alq['coef'])}. "
         f"(3) Medida de alquiler: en la muestra común 2012-2021 el coeficiente es {_ic(ser)} con SERPAVI y {_ic(ipc)} con IPC. "
@@ -126,6 +126,15 @@ def escribir(U, meta, CTX, FILAS, cadena, col, dem, bma, REG, OUT, smoke):
         f"(v6/M2: 0,77 y 0,06), pero la media posterior en compra es {_f(bma[('compra', 'nucleo_M2')]['media'], 2)} %/pp: una inclusión alta no implica signo positivo. "
         f"**Capa C4; veredicto «ANALIZADA, NO CONCLUYENTE»; asociación, sin lectura causal.**")
     CTX["concl"] = concl
+    FSEC = f'''## F. Qué dimensión mueve el resultado entre v1-v3 y v6
+Aviso sobre la población: la inmigración aumenta la población (es componente del flujo y denominador de la cuota), de modo que la población puede ser mediadora o un término mecánico. Controlar por ella estima otra magnitud y puede absorber el canal; no prueba que la cuota no importe. Las lecturas sin y con población se presentan en pie de igualdad (paso P8 y tabla D).
+Dimensiones que se pueden afirmar sin esa salvedad:
+1. **Método** (2SLS frente a MCO): invierte el orden entre mercados (paso P1: cambio {_f(p1a['coef'] - p0a['coef'])} en alquiler y {_f(p1c['coef'] - p0c['coef'])} en compra).
+2. **Medida de alquiler** (IPC frente a SERPAVI): multiplica el coeficiente en alquiler por {_f(ser['coef'] / ipc['coef'], 1)} en la muestra común.
+3. Definición (flujo, stock, cuota), periodo, nivel y fuente de datos (v2/v6, idénticas: r≈1) mueven la magnitud pero no explican el cambio de orden. Medida de precio en 2016-2021: valor tasado {_ic(tas)}, Registradores {_ic(reg)}, IPV {_ic(ipv)} (intervalos solapados).
+Sensibilidad (otra magnitud, no «la dimensión principal»): al añadir la población el coeficiente sobre el valor tasado pasa de {_f(c_comp_sin)} a {_f(c_comp['coef'])} y el de SERPAVI se anula; ambas lecturas son compatibles con los datos.
+
+'''
     txt = f"""# K2 · Inmigración: análisis de especificación «una dimensión cada vez» (v6.1)
 
 Fecha del dato: {FECHA}. Capa **C4** (exploratorio, asociación; nada causal). Script: `src/v6_1/k2_inmigracion.py` (SEED 20261010, un hilo, sin red).
@@ -159,13 +168,7 @@ Cada fila cambia una dimensión respecto de la anterior; «anterior» es el coef
 ## E. BMA aproximado (BIC)
 {_md(tb)}
 
-## F. Qué dimensión mueve el resultado entre v1-v3 y v6
-1. **Método** (2SLS frente a MCO): invierte el orden entre mercados (paso P1: cambio {_f(p1a['coef'] - p0a['coef'])} en alquiler y {_f(p1c['coef'] - p0c['coef'])} en compra).
-2. **Población como control** (paso P8): cambia el signo en compra ({_f(c_comp_sin)} a {_f(c_comp['coef'])}) y anula la asociación en alquiler.
-3. **Medida de alquiler** (IPC frente a SERPAVI): multiplica el coeficiente en alquiler por {_f(ser['coef'] / ipc['coef'], 1)} en la muestra común.
-4. Definición (flujo, stock, cuota), periodo, nivel y fuente de datos (v2/v6, idénticas: r≈1) mueven la magnitud pero no son la causa del cambio de orden. Medida de precio en 2016-2021: valor tasado {_ic(tas)}, Registradores {_ic(reg)}, IPV {_ic(ipv)} (comparable, intervalos solapados).
-
-## G. Conclusión única (C4)
+{FSEC}## G. Conclusión única (C4)
 {concl}
 """
     (OUT / "inmigracion.md").write_text(txt)
@@ -204,7 +207,7 @@ Cada fila cambia una dimensión respecto de la anterior; «anterior» es el coef
 
 Las versiones v1-v3 y v6 no estiman la misma asociación de la inmigración con la vivienda. Esta sección compara las especificaciones, una dimensión cada vez, sobre las provincias de entrenamiento (C4; datos de 2009-2023; fecha {FECHA}).
 
-**Inmigración.** En v2 el flujo de inmigración, instrumentado con cuotas de 2002, se asociaba más con el alquiler (IPC) que con el precio de compra. En v6 la cuota de extranjeros tiene probabilidad de inclusión alta en compra (0,77) y baja en alquiler (0,06). Al repetir la comparación, el orden depende del método: con 2SLS el coeficiente es {_f(p0a['coef'])} %/pp en alquiler y {_f(p0c['coef'])} en valor tasado; con MCO, {_f(p1a['coef'])} y {_f(p1c['coef'])}. La población, correlacionada {_f(co['v6_share_vs_ln_pob']['dentro'])} con la cuota dentro de cada provincia, cambia el signo del coeficiente en compra ({_f(c_comp_sin)} a {_f(c_comp['coef'])} %/pp) y lo anula en alquiler. La medida de alquiler también importa: en la misma muestra, {_f(ser['coef'])} con SERPAVI y {_f(ipc['coef'])} con IPC. Los controles de costa, vivienda no principal y compras de extranjeros residentes reducen el coeficiente sin población ({_f(cs0['coef'])} a {_f(cs1['coef'])} en compra), compatible con que la cuota recoja en parte provincias de costa; las islas no se pueden contrastar porque están en la muestra sellada. Una probabilidad de inclusión alta no implica signo positivo: la media posterior en compra es {_f(bma[('compra', 'nucleo_M2')]['media'], 2)} %/pp.
+**Inmigración.** En v2 el flujo de inmigración, instrumentado con cuotas de 2002, se asociaba más con el alquiler (IPC) que con el precio de compra. En v6 la cuota de extranjeros tiene probabilidad de inclusión alta en compra (0,77) y baja en alquiler (0,06). Al repetir la comparación, el orden depende del método: con 2SLS el coeficiente es {_f(p0a['coef'])} %/pp en alquiler y {_f(p0c['coef'])} en valor tasado; con MCO, {_f(p1a['coef'])} y {_f(p1c['coef'])}. Como sensibilidad, la población (puede ser mediadora o término mecánico de la inmigración, así que estima otra magnitud y no prueba que la cuota no importe; ambas lecturas son compatibles con los datos), correlacionada {_f(co['v6_share_vs_ln_pob']['dentro'])} con la cuota dentro de cada provincia, cambia el signo del coeficiente en compra ({_f(c_comp_sin)} a {_f(c_comp['coef'])} %/pp) y lo anula en alquiler. La medida de alquiler también importa: en la misma muestra, {_f(ser['coef'])} con SERPAVI y {_f(ipc['coef'])} con IPC. Los controles de costa, vivienda no principal y compras de extranjeros residentes reducen el coeficiente sin población ({_f(cs0['coef'])} a {_f(cs1['coef'])} en compra), compatible con que la cuota recoja en parte provincias de costa; las islas no se pueden contrastar porque están en la muestra sellada. Una probabilidad de inclusión alta no implica signo positivo: la media posterior en compra es {_f(bma[('compra', 'nucleo_M2')]['media'], 2)} %/pp.
 
 **Otros cambios.** Empleo, renta, iniciadas y turísticos cambian de signo o de mercado según la medida de alquiler, el método y los controles; ningún intervalo de la especificación final excluye el cero.
 

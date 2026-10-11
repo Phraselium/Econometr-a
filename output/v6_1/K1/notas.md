@@ -10,7 +10,7 @@
 
 ## Reanalisis (src/v6_1/k1_run.py, entra en make)
 - Base exigente = menor RMSE espacial entre persistencia, AR por unidad, ECM v1, M1 econ y las tres nuevas factibles. Oraculos aparte, nunca definen la base exigente.
-- DM-HLN (h=1, celdas provincia-periodo; version por periodo en tabla_largo_k1.csv) y permutacion por inversion de signo por provincia (10.000, SEED=20261010), una cola; Holm por tarea y grupo. Con 11 provincias hay 2.048 patrones de signo: el p minimo de permutacion es ~0,0005.
+- DM-HLN (h=1, celdas provincia-periodo; version por periodo en tabla_largo_k1.csv) y permutacion por inversion de signo por provincia, EXACTA (los 2^11 = 2.048 patrones; p minimo 1/2.048 = 0,00049), una cola; Holm por tarea y grupo (revision R-03).
 - Clase por grupo espacial; los demas grupos se reportan sin modificar la clase.
 
 ## Limitaciones
@@ -18,3 +18,8 @@
 - 11 provincias selladas (10 con datos municipales): poca potencia; "no distinguible" no es equivalencia.
 - El mejor modelo se elige por RMSE sellado (optimista). Prediccion no es causalidad: nada causal desde importancias.
 - Temporal y conjunta: ultimo periodo solo (1 anio o 4 trimestres), validacion ya vista en parte en v2.
+- (Revision R-01) El DM-HLN por celdas trata como independientes provincias del mismo periodo, que estan correlacionadas; es anticonservador. Por eso la tabla principal incluye el DM por periodo (p_dm_hln_per_holm) y la clase exige ademas la permutacion por provincia.
+- (Revision R-02) Una tarea en «predice mejor» cuyo DM por periodo no es significativo se rotula «fragil» (PROV_PRECIO_ANUAL).
+- (Revision R-04) Las clases «peor» de los grupos temporal, conjunta y total heredan el sesgo de elegir la base mirando el sellado; no se interpretan como inferioridad demostrada.
+- (Revision R-05) En m4_lineas_base.py el factor se calcula antes de filtrar anio < corte. Hoy no tiene efecto (tr solo contiene entrenamiento). El script no se puede re-ejecutar (aperturas unicas), asi que solo se anota.
+- (Revision R-06) Sensibilidad con Holm sobre las 9 tareas en tabla_modelos_k1.md.

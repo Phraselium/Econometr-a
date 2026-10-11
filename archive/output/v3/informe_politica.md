@@ -1,3 +1,5 @@
+> **Documento histórico (v3/v4), superado por v5: sus cifras no son vigentes. Las cifras vigentes están en `output/v5/cifras_clave.csv`.**
+
 # Informe de política de vivienda (v3), con módulo València
 
 Este documento presenta los resultados del proyecto v3 para quienes diseñan o evalúan políticas de vivienda. No recomienda opciones por preferencia: indica qué medidas mejoran el acceso en todo el rango de supuestos simulado y cuáles dependen de supuestos inciertos. Cada cifra lleva su capa de evidencia (C1 hecho, C2 cota, C3 efecto identificado, C4 exploratorio). Ningún efecto alcanzó C3.

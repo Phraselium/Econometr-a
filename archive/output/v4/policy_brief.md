@@ -1,3 +1,5 @@
+> **Documento histórico (v3/v4), superado por v5: sus cifras no son vigentes. Las cifras vigentes están en `output/v5/cifras_clave.csv`.**
+
 # Vivienda en España: diagnóstico e instrumentos (policy brief, v4)
 
 ## Mensajes principales

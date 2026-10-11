@@ -47,8 +47,12 @@ _SIGNOS = {}
 
 
 def signos(n):
+    """Patrones de signo: enumeracion EXACTA de los 2^n si n <= 16 (revision R-03); si no, NPERM al azar con SEED."""
     if n not in _SIGNOS:
-        _SIGNOS[n] = np.random.default_rng(SEED).choice(np.array([-1.0, 1.0]), size=(NPERM, n))
+        if n <= 16:
+            _SIGNOS[n] = 1.0 - 2.0 * ((np.arange(2 ** n)[:, None] >> np.arange(n)) & 1)
+        else:
+            _SIGNOS[n] = np.random.default_rng(SEED).choice(np.array([-1.0, 1.0]), size=(NPERM, n))
     return _SIGNOS[n]
 
 
@@ -73,9 +77,14 @@ def perm_prov(c):
     if k < 3 or np.allclose(dp, 0):
         return k, np.nan, np.nan
     obs = dp.mean()
-    pm = (signos(k) @ dp) / k
-    p_mejor = (1 + np.sum(pm <= obs + 1e-15)) / (1 + NPERM)
-    p_peor = (1 + np.sum(pm >= obs - 1e-15)) / (1 + NPERM)
+    sg = signos(k)
+    pm = (sg @ dp) / k
+    if k <= 16:  # exacto: la identidad esta entre los 2^k patrones
+        p_mejor = float(np.mean(pm <= obs + 1e-15))
+        p_peor = float(np.mean(pm >= obs - 1e-15))
+    else:
+        p_mejor = (1 + np.sum(pm <= obs + 1e-15)) / (1 + NPERM)
+        p_peor = (1 + np.sum(pm >= obs - 1e-15)) / (1 + NPERM)
     return k, float(p_mejor), float(p_peor)
 
 
@@ -215,6 +224,13 @@ def main():
     LG = pd.DataFrame(largo)
     LG.to_csv(K1 / "tabla_largo_k1.csv", index=False)
     R = pd.DataFrame(resumen)
+    # Revision R-02: fragil si el DM por periodo (robusto a dependencia transversal) no es significativo
+    R["fragil_dm_periodo"] = (R.clase == CL_MEJOR) & ~(R.p_dm_hln_per_holm < 0.05)
+    R["clase_rotulo"] = np.where(R.fragil_dm_periodo, R.clase + " (fragil: DM por periodo no significativo)", R.clase)
+    # Revision R-06: Holm sobre las 9 tareas (grupo espacial) como sensibilidad
+    R["p_dm_hln_holm_9tareas"] = holm(R.p_dm_hln_holm.to_numpy(float) * 1.0)
+    R["p_perm_holm_9tareas"] = holm(R.p_perm_holm.to_numpy(float) * 1.0)
+    R["clase_holm_9tareas"] = np.where((R.ratio < 1) & (R.p_dm_hln_holm_9tareas < 0.05) & (R.p_perm_holm_9tareas < 0.05), CL_MEJOR, CL_NO)
     R.to_csv(K1 / "tabla_modelos_k1.csv", index=False)
     escribir_md(R, LG)
     escribir_json(R, mod, tareas)
@@ -229,7 +245,9 @@ def escribir_md(R, LG):
           "M1 econ y las tres nuevas en su variante factible. DM-HLN y permutacion de una cola (a favor del modelo), Holm por tarea y grupo; "
           "11 provincias selladas: poca potencia.\n", "## Resultado por tarea (grupo espacial)\n",
           md_tabla(R, ["tarea", "medida_precio", "mejor_modelo", "base_exigente", "rmse_pct_modelo", "rmse_pct_base", "ratio",
-                       "p_dm_hln_holm", "p_perm_holm", "clase"]),
+                       "p_dm_hln_holm", "p_dm_hln_per_holm", "p_perm_holm", "clase_rotulo"]),
+          "Sensibilidad (revision R-06): Holm sobre las 9 tareas del grupo espacial.\n",
+          md_tabla(R, ["tarea", "p_dm_hln_holm_9tareas", "p_perm_holm_9tareas", "clase_holm_9tareas"]),
           "## Otros grupos (mejor modelo espacial contra su base exigente espacial)\n",
           md_tabla(R, ["tarea", "ratio_temporal", "clase_temporal", "ratio_conjunta", "clase_conjunta", "ratio_total", "clase_total"]),
           "## Variante oraculo (factor del periodo objetivo, no conocible al predecir; solo informativa)\n",
@@ -252,8 +270,8 @@ def escribir_json(R, mod, tareas):
         datos="output/v6/M4/sellado_*.json y output/v6_1/K1/sellado_*.json (evaluate_v6, ids k1_*)",
         N={"tareas": int(len(R)), "provincias_selladas": 11, "celdas_espaciales_min": int(R.n_celdas.min())},
         metodo=("RMSE, DM-HLN (celdas provincia-periodo y agregado por periodo), permutacion por inversion de signo por provincia "
-                "(10.000, SEED=20261010) y Holm; base exigente = menor RMSE espacial entre 7 bases factibles."),
-        estimacion=R[["tarea", "mejor_modelo", "base_exigente", "rmse_pct_modelo", "rmse_pct_base", "ratio", "clase"]].to_dict("records"),
+                "(exacta, 2^11 patrones) y Holm; base exigente = menor RMSE espacial entre 7 bases factibles."),
+        estimacion=R[["tarea", "mejor_modelo", "base_exigente", "rmse_pct_modelo", "rmse_pct_base", "ratio", "clase", "fragil_dm_periodo"]].to_dict("records"),
         ic95=None, p_ajustado="Holm por tarea y grupo (DM-HLN y permutacion; tabla_largo_k1.csv)",
         nivel_evidencia="EXPLORATORIO (C4): prediccion, no causalidad",
         diagnosticos={"clases": R.clase.value_counts().to_dict(), "n_tareas_mejor_que_base_exigente": n_mej,

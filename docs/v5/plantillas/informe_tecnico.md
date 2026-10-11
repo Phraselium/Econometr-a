@@ -69,7 +69,7 @@ Reglas que se aplican en todo el informe:
 
 **Definición.** El déficit contable es el aumento del número de hogares menos las viviendas terminadas en el mismo periodo. No incluye la demanda latente (jóvenes que no se emancipan) ni la vivienda que sale del parque, salvo que se diga.
 
-**2021-2024 [C1].** Con dos fuentes independientes en cada componente (hogares: ECP y EPA corregida por la ruptura de 2021; terminadas: Ministerio y Catastro), el déficit está entre {{deficit_2124_c1:rango}}. Es la única ventana en la que todos los componentes pasan la regla de dos fuentes ({{deficit_2124_c1:cita}}).
+**2021-2024 [C1].** Con dos fuentes independientes en cada componente (hogares: ECP y EPA corregida por la ruptura de 2021; terminadas: Ministerio, validado con Catastro dentro de ±15 %) [nota v6.1, K4b: el rango combina hogares ECP o EPA, terminadas del Ministerio con o sin protegida y bajas de 0, 0,1 o 0,2 % anual; la corrección de la EPA es una constante de 242.400 hogares fijada en v1 (informe v1, §5.1), no derivada de los datos en esta versión], el déficit está entre {{deficit_2124_c1:rango}}. Es la única ventana en la que todos los componentes pasan la regla de dos fuentes ({{deficit_2124_c1:cita}}).
 
 **Con bajas del parque estimadas [C4].** Al combinar las combinaciones de fuentes del déficit sin bajas con la tasa de bajas de `T1`, el déficit 2021-2024 queda en {{T3-H2}} [C4]. Sustituye a la cota C2 anterior, que llegaba a {{T3-H3:max}} con un supuesto de bajas que nada observado respalda. Con 2025, {{T3-H4}} [C4].
 
@@ -435,7 +435,7 @@ Los dos métodos discrepan en la clase `1` y se dan ambos.
 
 ## 7. Política por territorio (D2), en lenguaje condicional
 
-D2 cruza la necesidad de B1, la clase de A4 y la matriz de D1. Todo es C4: no hay efectos estimados por clase en España. El texto completo está en [output/v5/D2/politica_territorio.md](D2/politica_territorio.md).
+D2 cruza la necesidad de B1, la clase de A4 y la matriz de D1. Aviso de definición (v6.1, K4a-03): D2 reparte la necesidad en su versión v5 (B1, {{B1-H1:valor}}, suma de 52 provincias), no en la versión v5.1 del titular (T3, {{T3-H5b:valor}} sin la sensibilidad X), que recalcula las bajas con T1; son dos versiones de la misma magnitud A+R+V+F−M−K y el reparto por clase solo es comparable con la primera. Todo es C4: no hay efectos estimados por clase en España. El texto completo está en [output/v5/D2/politica_territorio.md](D2/politica_territorio.md).
 
 **Clase `1` ({{E-E1-D2-nprov-1:valor}}, {{E-E1-D2-nrob-1:num}} robustas).**
 - Necesidad: {{D2-H01}} [C4].

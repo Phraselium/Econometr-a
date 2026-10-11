@@ -4,7 +4,7 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 
 | id | indicador | valor | rango | unidad | periodo | cobertura | fuentes | capa | fecha del dato |
 |---|---|---|---|---|---|---|---|---|---|
-| A23-A10 | Contratos nuevos Comunitat Valenciana 2021-2024: IPVA nuevo y fianzas GVA | 26.6 | 22.4–30.8 | % | 2021-2024 | Comunitat Valenciana | INE IPVA (AEAT); GVA fianzas | C1 | 2024 |
+| A23-A10 | Contratos nuevos Comunitat Valenciana 2021-2024: IPVA nuevo y fianzas GVA | 27.7 | 24.6–30.8 | % | 2021-2024 | Comunitat Valenciana | INE IPVA (AEAT); GVA fianzas | C1 | 2024 |
 | A23-A11 | Rotación Cataluña: fianzas Incasòl / contratos vigentes SERPAVI | 25 | 25–43.2 | % | 2015-2024 | Cataluña | Incasòl; SERPAVI | C4 | 2024 |
 | A23-A12 | Rotación Comunitat Valenciana: fianzas GVA / contratos vigentes SERPAVI | 13.5 | 13.5–15.8 | % | 2020-2024 | Comunitat Valenciana | GVA; SERPAVI | C4 | 2024 |
 | A23-A13 | Municipios con renta media de fianzas x2 o más (Incasòl 2015-2025, >=30 fianzas) | 1 |  | municipios | 2015-2025 | 261 municipios de Cataluña | Incasòl | C4 | 2025 |

@@ -41,7 +41,7 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 
 [C4] Según D1, la parte de una ayuda general que se traslada al precio, por clase territorial (A4, método A, rejilla de elasticidades de demanda): clase `1`, falta y es rentable, {{D1-H11:rango}}; clase `2`, la oferta no responde, {{D1-H12:rango}}; clase `3`, no rentable, {{D1-H13:rango}} [C4]. El extremo bajo se apoya en la literatura con oferta elástica (Eriksen y Ross, 2015) y el alto en la de oferta rígida (Gibbons y Manning, 2006; Hilber y Turner, 2014).
 
-[C4] Según D2, la construcción adicional planificada cubriría {{D2-H11:valor}} de la necesidad de las provincias donde falta vivienda y construir es rentable, y las vacías movilizables {{E-E1-D2-covvac-1:valor}}; ambas cifras son condicionales a los supuestos de B1.
+[C4] Según D2, la construcción adicional planificada cubriría {{D2-H11:valor}} de la necesidad de las provincias donde falta vivienda y construir es rentable, y las vacías movilizables {{E-E1-D2-covvac-1:valor}}; ambas cifras son condicionales a los supuestos de B1 (versión v5 de la necesidad, no la recalculada en v5.1; ver informe técnico, D2).
 
 [C2] El aumento de viviendas turísticas de 2020 a 2024 equivale como máximo a {{B4-v3-vut-cantidad}}.
 

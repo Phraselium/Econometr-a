@@ -4,17 +4,31 @@ Fecha: 2026-10-11. Segunda mirada a la misma muestra sellada para NUEVOS compara
 
 ## Resultado por tarea (grupo espacial)
 
-| tarea | medida_precio | mejor_modelo | base_exigente | rmse_pct_modelo | rmse_pct_base | ratio | p_dm_hln_holm | p_perm_holm | clase |
-|---|---|---|---|---|---|---|---|---|---|
-| MUN_PRECIO_ANUAL | valor tasado MIVAU municipal | MUN_PRECIO_ANUAL__bosque_bootstrap_bayesiano | ecm_v1 | 4.1270 | 3.9328 | 1.0494 | 0.8959 | 0.7563 | no distinguible |
-| PROV_PRECIO_ANUAL | valor tasado MIVAU | PROV_PRECIO_ANUAL__random_forest | ecm_v1 | 2.4782 | 2.8178 | 0.8795 | 0.0025 | 0.0004 | predice mejor que la base mas exigente |
-| PROV_PRECIO_ANUAL_REGISTRADORES | Registradores (robustez) | PROV_PRECIO_ANUAL_REGISTRADORES__bosque_bootstrap_bayesiano | ecm_v1 | 4.6995 | 4.6759 | 1.0050 | 0.5710 | 0.5388 | no distinguible |
-| PROV_PRECIO_TRIM | valor tasado MIVAU | PROV_PRECIO_TRIM__bosque_bootstrap_bayesiano | ar_factor_fac | 1.6140 | 1.8174 | 0.8881 | 0.0000 | 0.0004 | predice mejor que la base mas exigente |
-| PROV_VOL_ANUAL |  | PROV_VOL_ANUAL__bosque_bootstrap_bayesiano | ecm_v1 | 13.0447 | 13.6984 | 0.9523 | 0.1190 | 0.1676 | no distinguible |
-| PROV_VOL_TRIM |  | PROV_VOL_TRIM__bosque_bootstrap_bayesiano | ar_factor_fac | 11.3011 | 16.7389 | 0.6751 | 0.0000 | 0.0004 | predice mejor que la base mas exigente |
-| alq_distrito |  | alquiler_distrito_gb | ecm_v1 | 5.6027 | 6.1217 | 0.9152 | 0.0000 | 0.0044 | predice mejor que la base mas exigente |
-| alq_municipio |  | alquiler_municipio_gb | ar_factor_fac | 5.0543 | 5.4319 | 0.9305 | 0.0000 | 0.0012 | predice mejor que la base mas exigente |
-| alq_provincia |  | alquiler_provincia_gb | ar_factor_fac | 1.6066 | 2.2031 | 0.7292 | 0.0000 | 0.0012 | predice mejor que la base mas exigente |
+| tarea | medida_precio | mejor_modelo | base_exigente | rmse_pct_modelo | rmse_pct_base | ratio | p_dm_hln_holm | p_dm_hln_per_holm | p_perm_holm | clase_rotulo |
+|---|---|---|---|---|---|---|---|---|---|---|
+| MUN_PRECIO_ANUAL | valor tasado MIVAU municipal | MUN_PRECIO_ANUAL__bosque_bootstrap_bayesiano | ecm_v1 | 4.1270 | 3.9328 | 1.0494 | 0.8959 | 0.8630 | 0.7549 | no distinguible |
+| PROV_PRECIO_ANUAL | valor tasado MIVAU | PROV_PRECIO_ANUAL__random_forest | ecm_v1 | 2.4782 | 2.8178 | 0.8795 | 0.0025 | 0.1308 | 0.0005 | predice mejor que la base mas exigente (fragil: DM por periodo no significativo) |
+| PROV_PRECIO_ANUAL_REGISTRADORES | Registradores (robustez) | PROV_PRECIO_ANUAL_REGISTRADORES__bosque_bootstrap_bayesiano | ecm_v1 | 4.6995 | 4.6759 | 1.0050 | 0.5710 | 0.5549 | 0.5435 | no distinguible |
+| PROV_PRECIO_TRIM | valor tasado MIVAU | PROV_PRECIO_TRIM__bosque_bootstrap_bayesiano | ar_factor_fac | 1.6140 | 1.8174 | 0.8881 | 0.0000 | 0.0000 | 0.0005 | predice mejor que la base mas exigente |
+| PROV_VOL_ANUAL |  | PROV_VOL_ANUAL__bosque_bootstrap_bayesiano | ecm_v1 | 13.0447 | 13.6984 | 0.9523 | 0.1190 | 0.3303 | 0.1665 | no distinguible |
+| PROV_VOL_TRIM |  | PROV_VOL_TRIM__bosque_bootstrap_bayesiano | ar_factor_fac | 11.3011 | 16.7389 | 0.6751 | 0.0000 | 0.0452 | 0.0005 | predice mejor que la base mas exigente |
+| alq_distrito |  | alquiler_distrito_gb | ecm_v1 | 5.6027 | 6.1217 | 0.9152 | 0.0000 | 0.0284 | 0.0059 | predice mejor que la base mas exigente |
+| alq_municipio |  | alquiler_municipio_gb | ar_factor_fac | 5.0543 | 5.4319 | 0.9305 | 0.0000 | 0.0289 | 0.0015 | predice mejor que la base mas exigente |
+| alq_provincia |  | alquiler_provincia_gb | ar_factor_fac | 1.6066 | 2.2031 | 0.7292 | 0.0000 | 0.0262 | 0.0015 | predice mejor que la base mas exigente |
+
+Sensibilidad (revision R-06): Holm sobre las 9 tareas del grupo espacial.
+
+| tarea | p_dm_hln_holm_9tareas | p_perm_holm_9tareas | clase_holm_9tareas |
+|---|---|---|---|
+| MUN_PRECIO_ANUAL | 1.0000 | 1.0000 | no distinguible |
+| PROV_PRECIO_ANUAL | 0.0102 | 0.0044 | predice mejor que la base mas exigente |
+| PROV_PRECIO_ANUAL_REGISTRADORES | 1.0000 | 1.0000 | no distinguible |
+| PROV_PRECIO_TRIM | 0.0000 | 0.0044 | predice mejor que la base mas exigente |
+| PROV_VOL_ANUAL | 0.3570 | 0.4995 | no distinguible |
+| PROV_VOL_TRIM | 0.0000 | 0.0044 | predice mejor que la base mas exigente |
+| alq_distrito | 0.0000 | 0.0234 | predice mejor que la base mas exigente |
+| alq_municipio | 0.0002 | 0.0088 | predice mejor que la base mas exigente |
+| alq_provincia | 0.0002 | 0.0088 | predice mejor que la base mas exigente |
 
 ## Otros grupos (mejor modelo espacial contra su base exigente espacial)
 

@@ -21,7 +21,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 ## El alquiler del stock no se ha duplicado
 
 - Contratos vigentes: entre 10,9 % y 22,9 % en 2015-2024 [C1]
-- Contratos nuevos, Comunitat Valenciana: 26,6 % (22,4-30,8 %) (2021-2024; INE IPVA (AEAT); GVA fianzas; dato de 2024; C1)
+- Contratos nuevos, Comunitat Valenciana: 27,7 % (24,6-30,8 %) (2021-2024; INE IPVA (AEAT); GVA fianzas; dato de 2024; C1)
 
 ---
 

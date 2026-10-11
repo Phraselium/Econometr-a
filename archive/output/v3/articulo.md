@@ -1,3 +1,5 @@
+> **Documento histórico (v3/v4), superado por v5: sus cifras no son vigentes. Las cifras vigentes están en `output/v5/cifras_clave.csv`.**
+
 # ¿Qué se puede afirmar sobre el problema de la vivienda en España? Hechos, cotas y efectos con datos públicos (v3)
 
 **Resumen.** Clasificamos la evidencia sobre el mercado de la vivienda en España en cuatro capas:

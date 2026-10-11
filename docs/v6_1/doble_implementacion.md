@@ -27,3 +27,13 @@ Aviso de independencia: el valor central de `dh_2125` (variante de ventana) y la
 ## Conclusión de reproducibilidad
 - Ninguna diferencia apunta a un error de dato. La diferencia relevante es la cifra 3 (y por arrastre la 4): una constante de corrección de la EPA fijada en el código (242.400) y una descripción de fuentes («Ministerio y Catastro») que no corresponde a las combinaciones calculadas (Ministerio con y sin protegida). Severidad media-baja; el rango publicado se reproduce con las definiciones reales del código.
 - 5 de 15 cifras (las de modelo o de necesidad: D1-H11, D1-H12, B1-H1, latente_convivencia, B4-vut) no se pueden reconstruir con el texto publicado; es un hallazgo de reproducibilidad en sí mismo.
+
+## Resolución tras la revisión R-08, R-09 y R-10 (orquestador, v6.1)
+- **A23-A10.** Error del original. En a23_run.py, `fillna(1.0)` dejaba a Valencia, sin dato SERPAVI 2024, con peso 1 frente a 76.825 de Alicante.
+  - Corregido: ahora se rellena con la media de la CCAA.
+  - El mínimo pasa de 22,4 % a 24,6 %; la K4b independiente daba 24,7 %. Ahora coincide.
+  - Anotado en ERRATA.md.
+- **A23-P2.** La serie de Notariado nacional SÍ está versionada en data/raw/pdf/notariado_cgn_extranjeros_semestral.csv; la K4b no la encontró. No hay lectura de ficheros no versionados. La diferencia del central se explica porque falta esa fuente en la K4b.
+- **Déficit (cifras 3 y 4).** La constante EPA de 242.400 es un criterio de v1 (informe v1, §5.1), no está derivada de los datos de esta versión, y el salto observado en la serie actual es de −207.800. Se declara en el informe técnico.
+  - La descripción de fuentes de terminadas queda corregida: el rango usa el Ministerio con y sin protegida, y el Catastro solo valida.
+  - Anotado en ERRATA.md.

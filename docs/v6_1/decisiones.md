@@ -19,3 +19,14 @@
 - **D8 · Alcance de K2.** K2 reestima con las 41 provincias de entrenamiento de v6, sin las 11 selladas, así que no reproduce la muestra de 49 provincias de v2.
   - En ella la primera etapa del 2SLS es débil (F=3,5).
   - Corrección del planteamiento: en v1-v3 la asociación de la inmigración aparece sobre todo con el ALQUILER, no con el precio de compra. Se documenta así en el historial.
+- **D9 · Revisión tras K2** (docs/v6_1/revision_K2.md): K1, K4a y K4b se aprueban con condiciones; K2 se rehízo una vez (solo el texto). Correcciones aplicadas:
+  - **K1.**
+    - Permutación exacta con los 2^11 patrones.
+    - Columna de DM por periodo; PROV_PRECIO_ANUAL rotulado «frágil».
+    - Sensibilidad con Holm sobre 9 tareas.
+    - Notas R-01 a R-06. Ninguna clase cambia.
+  - **K4a-03** sube a alta. Se corrige con un rótulo de definición (B1 de v5 frente a T3 de v5.1) en el informe técnico y el policy brief; el recálculo de D2 sobre T3 va al backlog.
+  - **R-08.** Error real en a23_run.py: la provincia de Valencia quedaba sin peso. Corregido; cambia A23-A10, anotado en ERRATA.
+  - **R-09.** Sin hallazgo: Notariado está versionado.
+  - **R-10.** Corregida la descripción de fuentes del déficit y declarada la constante EPA.
+  - **K2.** La población puede ser mediadora; tres filas del historial pasan a «Se mantiene».

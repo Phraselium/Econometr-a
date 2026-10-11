@@ -1,3 +1,5 @@
+> **Documento histórico (v3/v4), superado por v5: sus cifras no son vigentes. Las cifras vigentes están en `output/v5/cifras_clave.csv`.**
+
 # Dónde falta vivienda en España, por qué y qué instrumentos funcionarían: hechos, cotas y efectos con datos públicos
 
 *Documento de trabajo, v4. Proyecto reproducible: `make all` sin red.*

@@ -40,3 +40,6 @@ Plan de ahorro (D7): revisor post-K2 ≤60.000, K3 ≤70.000, K4c/K4d ≤90.000,
   - Iniciadas: ni los retardos ni los adelantos se distinguen de cero, y no se detecta orden temporal.
   - Léxico: 18 frases corregidas en las plantillas; también en m2_tablas.py y m4_run.py, para que make no las revierta.
   - Ratio precio/alquiler: 2015 entre 18,9 y 20,3 años; 2023 entre 17,1 y 17,7 años (provincial). Con contratos nuevos el ratio sale 3-6 años menor.
+- Revisor tras K2 (unos 74.000 tokens) y K2 rehecho una vez, solo el texto (unos 10.000 tokens): ver D9.
+- K4c y K4d en curso.
+- Acumulado: unos 920.000 tokens (K1 90k, K4b 170k, K4a 235k, K2 250k, revisor 74k, K3 50k, más K4c/K4d en curso).

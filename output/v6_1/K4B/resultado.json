@@ -6,8 +6,8 @@
  "N": 15,
  "metodo": "doble implementacion independiente (src/v6_1/k4b_run.py)",
  "estimacion": {
-  "coinciden": 5,
-  "parciales": 5,
+  "coinciden": 6,
+  "parciales": 4,
   "no_reconstruibles": 5,
   "no_coinciden": 0
  },
@@ -24,7 +24,7 @@
   "A23-P2": "parcial",
   "B4-v3-vut-cantidad": "no_reconstruible",
   "D1-H12": "no_reconstruible",
-  "A23-A10": "parcial",
+  "A23-A10": "si",
   "E-B1-F": "si",
   "latente_convivencia": "no_reconstruible",
   "B1-H1": "no_reconstruible",

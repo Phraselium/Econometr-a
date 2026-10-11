@@ -1,3 +1,5 @@
+> **Documento histórico (v3/v4), superado por v5: sus cifras no son vigentes. Las cifras vigentes están en `output/v5/cifras_clave.csv`.**
+
 # Vivienda en España: lo que sabemos y lo que no (v3)
 
 Resumen en dos páginas del proyecto v3: datos públicos, `make all` reproducible sin red y revisión independiente por oleadas. Cada afirmación lleva su capa de evidencia:

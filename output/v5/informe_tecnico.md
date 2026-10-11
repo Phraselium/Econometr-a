@@ -69,7 +69,7 @@ Reglas que se aplican en todo el informe:
 
 **Definición.** El déficit contable es el aumento del número de hogares menos las viviendas terminadas en el mismo periodo. No incluye la demanda latente (jóvenes que no se emancipan) ni la vivienda que sale del parque, salvo que se diga.
 
-**2021-2024 [C1].** Con dos fuentes independientes en cada componente (hogares: ECP y EPA corregida por la ruptura de 2021; terminadas: Ministerio y Catastro), el déficit está entre 562.692-688.692 viviendas. Es la única ventana en la que todos los componentes pasan la regla de dos fuentes (562.692-688.692 viviendas (2021-2024; hogares: ECP y EPA corregida; terminadas: Ministerio y Catastro; dato de 2024; C1)).
+**2021-2024 [C1].** Con dos fuentes independientes en cada componente (hogares: ECP y EPA corregida por la ruptura de 2021; terminadas: Ministerio, validado con Catastro dentro de ±15 %) [nota v6.1, K4b: el rango combina hogares ECP o EPA, terminadas del Ministerio con o sin protegida y bajas de 0, 0,1 o 0,2 % anual; la corrección de la EPA es una constante de 242.400 hogares fijada en v1 (informe v1, §5.1), no derivada de los datos en esta versión], el déficit está entre 562.692-688.692 viviendas. Es la única ventana en la que todos los componentes pasan la regla de dos fuentes (562.692-688.692 viviendas (2021-2024; hogares: ECP y EPA corregida; terminadas: Ministerio y Catastro; dato de 2024; C1)).
 
 **Con bajas del parque estimadas [C4].** Al combinar las combinaciones de fuentes del déficit sin bajas con la tasa de bajas de `T1`, el déficit 2021-2024 queda en 653.097 viviendas (562.692-744.144 viviendas) [C4]. Sustituye a la cota C2 anterior, que llegaba a 902.808 viviendas con un supuesto de bajas que nada observado respalda. Con 2025, 763.416 viviendas (700.934-826.703 viviendas) [C4].
 
@@ -124,7 +124,7 @@ Reglas que se aplican en todo el informe:
 
 - **Stock de contratos (todos los vigentes).** El núcleo IPC de alquiler e IPVA de contratos existentes da 10,9-22,9 % en 2015-2024 [C1]. SERPAVI, con composición constante, da 43,0 % [C4].
 - **Contratos nuevos.** El IPVA de nuevo contrato sube 37,0 % en 2015-2024 [C4]; en Cataluña (Incasòl) 54,5 % en 2015-2025 [C4]; en la Comunitat Valenciana (fianzas de la GVA) 58,0 % en 2020-2025 [C4].
-- **Dos fuentes por territorio [C1].** Cataluña 2021-2024: 16,9 % (16,6-17,2 %) (IPVA nuevo e Incasòl) [C1]; Comunitat Valenciana 2021-2024: 26,6 % (22,4-30,8 %) (IPVA nuevo y fianzas) [C1].
+- **Dos fuentes por territorio [C1].** Cataluña 2021-2024: 16,9 % (16,6-17,2 %) (IPVA nuevo e Incasòl) [C1]; Comunitat Valenciana 2021-2024: 27,7 % (24,6-30,8 %) (IPVA nuevo y fianzas) [C1].
 - **Brecha.** En 2024 los contratos nuevos están 13,6 % por encima de los existentes (IPVA) [C4]. La cuota implícita de contratos nuevos en el índice es 16,0 % (13,9-17,6 %) [C4].
 - **Rotación.** Fianzas sobre contratos vigentes: 25,0 % en Cataluña y 13,5 % en la Comunitat Valenciana [C4].
 - **Actualización.** Si todo contrato vigente se hubiese actualizado con el HICP, el stock habría subido 7,2 % más en 2022-2024 [C4]: es una contabilidad con supuestos, no un contrafactual de una norma.
@@ -435,7 +435,7 @@ Los dos métodos discrepan en la clase `1` y se dan ambos.
 
 ## 7. Política por territorio (D2), en lenguaje condicional
 
-D2 cruza la necesidad de B1, la clase de A4 y la matriz de D1. Todo es C4: no hay efectos estimados por clase en España. El texto completo está en [output/v5/D2/politica_territorio.md](D2/politica_territorio.md).
+D2 cruza la necesidad de B1, la clase de A4 y la matriz de D1. Aviso de definición (v6.1, K4a-03): D2 reparte la necesidad en su versión v5 (B1, 214.868 viviendas/año, suma de 52 provincias), no en la versión v5.1 del titular (T3, 210.424 viviendas/año sin la sensibilidad X), que recalcula las bajas con T1; son dos versiones de la misma magnitud A+R+V+F−M−K y el reparto por clase solo es comparable con la primera. Todo es C4: no hay efectos estimados por clase en España. El texto completo está en [output/v5/D2/politica_territorio.md](D2/politica_territorio.md).
 
 **Clase `1` (37 provincias, 8 robustas).**
 - Necesidad: 189.335 viviendas/año (91.656-268.728 viviendas/año) [C4].
@@ -492,7 +492,7 @@ La tabla completa por distrito, con nombre, renta mediana de 2015 y 2024, contra
 ### 8.4 Fianzas de la GVA (A23)
 
 - Mediana de la fianza depositada: 500 € en 2020 y 790 € en 2025 [C4], con 35.079 contratos fianzas en 2025.
-- La renta de contratos nuevos (mediana de la fianza) sube 58,0 % en 2020-2025 [C4]; con el IPVA de nuevo contrato, el rango 2021-2024 de la Comunitat Valenciana es 26,6 % (22,4-30,8 %) [C1].
+- La renta de contratos nuevos (mediana de la fianza) sube 58,0 % en 2020-2025 [C4]; con el IPVA de nuevo contrato, el rango 2021-2024 de la Comunitat Valenciana es 27,7 % (24,6-30,8 %) [C1].
 - Rotación (fianzas sobre contratos vigentes): 13,5 % (13,5-15,8 %) [C4].
 - Municipios con mediana de fianza que se duplica: 2 municipios [C4].
 - Las fianzas no traen la duración del contrato: el alquiler de temporada y por habitaciones sigue sin fuente (`BK-014`).

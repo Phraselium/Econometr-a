@@ -417,8 +417,10 @@ def alquiler(nac, pan):
     tc.to_csv(TAB / "brecha_nuevo_stock_ccaa.csv", index=False)
     cat_p = tp[tp.ccaa == "Cataluña"]
     cv_p = tp[tp.ccaa == "Comunitat Valenciana"]
-    wc = cat_p.contratos_serpavi_2024.fillna(1.0)
-    wv_ = cv_p.contratos_serpavi_2024.fillna(1.0)
+    # v6.1 (revisión R-08 / K4b): antes fillna(1.0) daba peso 1 a la provincia sin dato SERPAVI 2024 (Valencia) frente a
+    # decenas de miles de las demás y la excluía de hecho; se rellena con la media de la CCAA, como en la tabla por CCAA.
+    wc = cat_p.contratos_serpavi_2024.fillna(cat_p.contratos_serpavi_2024.mean())
+    wv_ = cv_p.contratos_serpavi_2024.fillna(cv_p.contratos_serpavi_2024.mean())
     nuevos_cat_cv = {"Cataluña": {"IPVA_nuevo": float(np.average(cat_p.var_nuevo_2021_2024_pct, weights=wc)) / 100,
                                   "Incasol": cum(incm, 2021, 2024),
                                   "IPVA_existente": float(np.average(cat_p.var_existente_2021_2024_pct, weights=wc)) / 100,

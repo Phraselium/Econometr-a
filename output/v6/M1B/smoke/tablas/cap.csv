@@ -1,7 +1,0 @@
-nivel,y,esp,elasticidad,se,p_wcb,n
-anual,ln_pm2_tasado,FE_unidad+año,1.3324057089294032,0.265791440452325,0.01,344
-anual,ln_pm2_tasado,FE_unidad+tendencia,0.5939654687676771,0.0792078507781023,0.01,344
-anual,ln_pm2_registradores,FE_unidad+año,1.3126686563616405,0.19531633573283277,0.01,344
-anual,ln_pm2_registradores,FE_unidad+tendencia,0.4340054608111553,0.1310485490690308,0.02,344
-trimestral,ln_pm2_tasado,DOLS_FE_unidad+tendencia,2.1201113737377812,0.1400882243704509,0.01,1435
-trimestral,ln_pm2_tasado,DOLS_FE_unidad+trimestre(entre provincias),1.6236531797103493,0.22971646722541783,0.01,1435

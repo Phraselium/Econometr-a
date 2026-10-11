@@ -18,3 +18,16 @@
   - las etiquetas;
   - la release y el DOI;
   - la autoría de los commits.
+
+## Revisión de M0: REHACER (B1-B5)
+- **B5, declaración** (orquestador). El corte temporal de v6 (el último año: 2025 en compra y 2024 en alquiler) cae dentro de la ventana sellada de v2 (2024Q3-2026Q2). Esa ventana se abrió 8 veces para las hipótesis confirmatorias de v2, y siempre para las 3 provincias selladas de v2 (11, 16 y 45).
+  - Consecuencias:
+    - el año de validación v6 NO es nuevo en el tiempo;
+    - lo nuevo es la combinación de año y provincias: las 11 provincias v6 no se usaron nunca como validación;
+    - las variables y especificaciones de v6 no se eligieron mirando su error en esa muestra.
+  - Se declara en hipotesis.md y en todo resultado de M3/M4 como «validación espacial nueva; temporal ya vista en v2 (otras provincias) y de forma descriptiva en v4-v5».
+- **B1-B4 y determinismo.** Los corrige el agente de M0:
+  - un mismo corte temporal por mercado en todos los niveles;
+  - las CCAA uniprovinciales se asignan a su provincia;
+  - el pre-registro se cierra sin grados de libertad;
+  - gzip con mtime=0.

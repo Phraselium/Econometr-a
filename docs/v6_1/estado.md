@@ -59,3 +59,5 @@ Plan de ahorro (D7): revisor post-K2 ≤60.000, K3 ≤70.000, K4c/K4d ≤90.000,
   - El revisor final (≤60.000) sale de la reserva de cierre del 10 %.
   - K6 lo hace el orquestador.
 - K6 (parcial, orquestador): docs/v6_1/backlog.md y docs/v6_1/tareas_autor.md (definitivo) escritos; K4a-07 cerrado (0 de 30 pliegues omitidos).
+
+- 2026-10-11 K5 (revisión por pares simulada): hecho: docs/v6_1/informe_arbitro_academico.md (revisión mayor), informe_arbitro_politica.md (revisión menor), carta_respuesta.md; 18 cambios de texto en plantillas (3 parciales), 11 objeciones a limitaciones (A-14 ya cerrada en K6) (WP y IT §10.4); render/check_texto/check_v5 0 errores. Siguiente: commit por el orquestador; muestra sellada nueva y reestimaciones de limitaciones. Tokens subagente K5: ~75.000.

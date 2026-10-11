@@ -9,7 +9,7 @@
 3. [C1] Las viviendas terminadas fueron de 72.264-94.426 viviendas/año en 2019-2024 (territorio común), con el Ministerio y el Catastro de acuerdo.
 4. [C1] El precio de compra subió 47,2 % (44,2-56,1 %) en 2015-2025 según el núcleo Ministerio-Notariado-Registradores. [C1] El alquiler de los contratos vigentes subió 10,9-22,9 % en 2015-2024; el de los contratos nuevos crece más deprisa, pero esa brecha es [C4].
 5. [C2] La proyección del INE añade 1.720.537 hogares (1.308.531-1.772.410 hogares) en 2026-2035: es la parte de la necesidad que no depende de supuestos propios sobre el parque.
-6. [C2] Hasta 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista; cuánto empeora es [C4].
+6. [C2] Hasta 2030 el déficit nacional empeora en todos los escenarios de la rejilla (definida por el autor), incluido uno de construcción optimista; cuánto empeora es [C4].
 7. [C2] La demanda latente de los jóvenes, medida por la convivencia con los padres frente a 2008, queda en 188.000-506.000 hogares.
 
 ## Necesidad y proyección
@@ -29,11 +29,11 @@ La necesidad de vivienda para 2026-2035 se construye por componentes. El crecimi
 
 La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, distribución) a cada instrumento. La política por territorio (D2) es condicional: solo indica qué tipo de instrumento es compatible con cada clase de provincia, dado el diagnóstico de esa clase.
 
-| Instrumento (D1) | Signo sobre el acceso | Capa del signo | Dónde sería compatible (D2, condicional) |
+| Instrumento (D1) | Signo sobre el acceso (condicional a la rejilla de supuestos; no es un efecto estimado en España) | Capa del signo | Dónde sería compatible (D2, condicional) |
 |---|---|---|---|
 | Movilización de vivienda vacía (I10, I27) | mejora, estable en la rejilla | [C2] | provincias con presión y vacías movilizables |
 | Parque público o social a gran escala (I02) | mejora débil o nula si desplaza promoción privada | [C2] | provincias con presión, condicionado al desplazamiento |
-| Ayudas a la demanda (I06, I07, I08) | el beneficiario mejora; parte se traslada al precio | [C2] por grupo; traslado [C4] | donde la oferta responde; con oferta rígida el traslado es mayor |
+| Ayudas a la demanda (I06, I07, I08) | el beneficiario mejora; según la rejilla, parte se trasladaría al precio | [C2] por grupo; traslado [C4] | donde la oferta responde; con oferta rígida el traslado es mayor |
 | Regulación de precios del alquiler (I01) | no estable: depende de la respuesta de la oferta | [C4] | no determinado con estos datos |
 | Alquiler turístico y de temporada (I16) | no estable en precio | [C4] | zonas con alta densidad de viviendas turísticas |
 | Reducción de tributos a la promoción (I29) | parcial, literatura no verificada | [C4] | no determinado |
@@ -64,11 +64,20 @@ Las solicitudes de docs/v5/solicitudes.md, por orden de prioridad:
 - **S6.** Registro único de arrendamientos: contratos de corta duración y de temporada.
 - **S9.** Portales e Inside Airbnb: series de oferta para replicar estudios previos.
 
+**Cómo citar estas cifras (revisión por pares simulada).**
+
+- Dé el rango antes que el valor central. Los rangos [C1] son el mínimo y el máximo entre combinaciones de fuentes, no intervalos de confianza.
+- El precio de compra se cita con las dos medidas juntas: el núcleo de registros y el índice oficial.
+- Las cotas y las direcciones [C2] valen dentro de la rejilla de escenarios definida por el autor. Cite la rejilla junto con la conclusión.
+- Solo es citable la versión vigente. Las cifras de versiones anteriores se sustituyeron por nuevas fuentes, muestras o correcciones, y el motivo de cada cambio consta en el historial de conclusiones y en la fe de erratas.
+- [C4] no indica baja calidad: incluye estadísticas oficiales de fuente única y resultados exploratorios.
+
 ## Lo que este brief no afirma
 
 - No atribuye la subida de precios a un factor principal: turísticos, inmigración, oferta, tipos, compradores extranjeros o empresas.
 - No afirma que los topes al alquiler reduzcan precios u oferta: su resultado queda en [C4].
 - No afirma que haya una burbuja.
+- No afirma que la inmigración suba o baje los precios: el signo de la asociación cambia con el control de población, la medida de precio y el nivel territorial [C4].
 - No afirma que ninguna variable determine el alquiler o el precio de compra: las importancias de los modelos de predicción de v6 son descriptivas.
 
 ## Neutralidad

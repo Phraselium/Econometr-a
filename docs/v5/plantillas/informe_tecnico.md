@@ -582,6 +582,22 @@ Las solicitudes a organismos están en `docs/v5/solicitudes.md`. Ninguna conclus
 
 ---
 
+### 10.4 Limitaciones (revisión por pares simulada v6.1) <!-- check:cifra-libre (etiqueta de versión pedida en el título) -->
+
+Objeciones de la revisión por pares simulada (informes del árbitro académico y del revisor de política pública) que no se pueden resolver sin nuevas estimaciones. Cada punto indica el motivo y el coste.
+
+- **Capa del déficit acumulado.** El extremo superior depende de una corrección constante de la EPA, y las terminadas son dos variantes del Ministerio. Para mantener la etiqueta [C1] con fuentes independientes en sentido fuerte habría que recalcular el rango con las altas del Catastro como segunda fuente de terminadas, o rebajar la capa en cifras_clave. Exige recalcular el módulo y regenerar las cifras.
+- **Validación sellada.** La comparación con líneas base nuevas fue una segunda mirada a la muestra sellada, y la parte temporal ya se había visto. Una validación confirmatoria limpia exige una muestra nueva (el año siguiente), que todavía no existe.
+- **Inferencia con once provincias selladas.** Dar como criterio principal el DM por periodo o agrupado por comunidad, y el efecto mínimo detectable, exige reejecutar las comparaciones.
+- **Multiplicidad entre versiones.** La relación entre inmigración y precios se ha reestimado en varias versiones con correcciones dentro de cada módulo, no conjuntas. Un recuento conjunto con su p ajustado exige reconstruir los registros de todas las versiones. Hasta entonces, ningún p de una versión aislada debe leerse como confirmatorio.
+- **Pocos conglomerados.** Generalizar el wild cluster bootstrap a todas las tablas con pocos grupos, y retirar los paneles municipales con regresor provincial, exige reestimar los módulos afectados.
+- **Instrumento débil.** Los intervalos de Anderson-Rubin y la inferencia específica de diseños shift-share exigen reestimar. Las cifras de dos etapas quedan solo como historial.
+- **Reproducibilidad del método de traslado y de la necesidad.** Varias cifras de modelo no se reconstruyen solo con el texto. Publicar las ecuaciones y parámetros de la rejilla exige extraerlos del código y verificarlos.
+- **Utilidad para la decisión.** La tabla de instrumentos no da costes ni magnitudes por euro, y el reparto territorial usa una definición de necesidad distinta de la del titular. Las dos cosas exigen nuevos datos o recalcular el módulo de política por territorio.
+- **Fecha de publicación** de las etiquetas del pre-registro: queda pendiente hasta su publicación en el repositorio remoto.
+
+---
+
 ## 11. Alquiler y compraventa: qué se asocia y qué predice (v6)
 
 **Pregunta.** ¿Qué variables se asocian con el alquiler y con la compraventa por provincia, municipio y distrito, qué modelo los predice mejor fuera de muestra y en qué se parecen y se diferencian los dos mercados? Todo el apartado es C4: predicción y asociación, sin lenguaje causal.

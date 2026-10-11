@@ -4,8 +4,8 @@
 
 1. [C1] **Hay más hogares.** El número de hogares aumentó en {{dh_2125:cita}}.
 2. [C1] **Se terminan menos viviendas de las que se forman hogares.** Balance acumulado 2021-2024 sin bajas del parque: {{deficit_2124_c1:rango}} ({{deficit_2124_c1:periodo}}; {{deficit_2124_c1:fuentes}}; dato de {{deficit_2124_c1:fecha_dato}}; {{deficit_2124_c1:capa}}).
-3. [C2] **Hasta 2030 el balance empeora en todos los escenarios.** Con los ritmos de construcción considerados, incluido uno optimista, el déficit nacional 2025-2030 crece en toda la rejilla de escenarios ({{T4-H3:periodo}}; Ministerio e INE; {{T4-H3:capa}}). Cuánto crece no es un hecho (ver el recuadro).
-4. [C1] **Se construye poco.** Viviendas terminadas al año: {{terminadas_1924:rango}} ({{terminadas_1924:periodo}}; {{terminadas_1924:fuentes}}; dato de {{terminadas_1924:fecha_dato}}; {{terminadas_1924:capa}}).
+3. [C2] **Hasta 2030 el balance empeora en todos los escenarios.** Con los ritmos de construcción considerados, incluido uno optimista, el déficit nacional 2025-2030 crece en toda la rejilla de escenarios, definida por el autor ({{T4-H3:periodo}}; Ministerio e INE; {{T4-H3:capa}}). Cuánto crece no es un hecho (ver el recuadro).
+4. [C1] **Viviendas terminadas.** Viviendas terminadas al año: {{terminadas_1924:rango}} ({{terminadas_1924:periodo}}; {{terminadas_1924:fuentes}}; dato de {{terminadas_1924:fecha_dato}}; {{terminadas_1924:capa}}).
 5. [C1] **El precio de compra sube.** Variación acumulada según el núcleo de tres fuentes: {{A23-P2:cita}}.
 6. [C1] **El alquiler de los contratos vigentes sube menos que el de los nuevos.** Contratos vigentes: {{A23-A2:rango}} ({{A23-A2:periodo}}; {{A23-A2:fuentes}}; dato de {{A23-A2:fecha_dato}}; {{A23-A2:capa}}). Contratos nuevos en la Comunitat Valenciana: {{A23-A10:cita}}.
 7. [C2] **La próxima década.** Crecimiento de hogares proyectado por el INE: {{E-B1-F:cita}}.
@@ -21,5 +21,13 @@
 > - La necesidad total de vivienda para 2026-2035 como hecho: depende de supuestos sobre el parque y queda como exploratoria ({{T3-H5b:cita}}). Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 > - Cuánto empeora el déficit a 2030 ({{T4-H2:rango}}, [C4]) y si empeora a 2035 (indeterminado, [C4]).
 > - Cuántas viviendas salen del parque cada año: las identidades de stock no miden bajas, y las demoliciones con licencia son {{E-T7-demol-2024:rango}} en 2024 [C4].
+
+**Cómo citar estas cifras (revisión por pares simulada).**
+
+- Dé el rango antes que el valor central. Los rangos [C1] son el mínimo y el máximo entre combinaciones de fuentes, no intervalos de confianza.
+- El precio de compra se cita con las dos medidas juntas: el núcleo de registros y el índice oficial.
+- Las cotas y las direcciones [C2] valen dentro de la rejilla de escenarios definida por el autor. Cite la rejilla junto con la conclusión.
+- Solo es citable la versión vigente. Las cifras de versiones anteriores se sustituyeron por nuevas fuentes, muestras o correcciones, y el motivo de cada cambio consta en el historial de conclusiones y en la fe de erratas.
+- [C4] no indica baja calidad: incluye estadísticas oficiales de fuente única y resultados exploratorios.
 
 **Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.

@@ -20,6 +20,10 @@ This paper measures housing need in Spain and its territorial distribution using
 
 ---
 
+*Note on figures:* numbers are rendered from the Spanish key-figures file, so they use the Spanish decimal comma and Spanish units (viviendas = dwellings; viviendas/año = dwellings per year; veces = times).
+
+---
+
 ## 1. Introducción
 
 **Pregunta.** ¿Qué se puede afirmar, y con qué grado de seguridad, sobre cuántas viviendas faltan en España, dónde faltan, cuánto han subido los precios y alquileres, qué factores se asocian con la subida y qué instrumentos tienen evidencia a favor en cada territorio?
@@ -199,7 +203,7 @@ El pre-registro (`docs/v5/prereg_B3.md`, etiqueta git `prereg-v5`) fijó antes d
 
 ### 5.5 Validación sellada v6 y resultados negativos
 
-La validación v6 es **espacial nueva** y **temporal ya vista**: el último año cae en la ventana sellada de v2 (otras provincias) y todas las provincias se usaron de forma descriptiva en v4-v5. Cada modelo se evaluó una vez, sin reajuste, y en provincias nuevas el AR, el ECM y la econometría de M1 quedan reducidos a la persistencia. Resultados negativos [C4]: ninguna hipótesis confirmatoria pasa Holm (0 de 16 en alquiler; 0 en compra); el deep learning no bate al gradient boosting (MLP 4,8 % frente a 4,8 % en distritos, p 0,63); y la persistencia no se bate en el volumen trimestral (parte temporal sellada: 12,0 % del bosque frente a 11,3 %). Las importancias y los SHAP son descriptivos: no dicen qué pasaría si una variable cambiara.
+La validación v6 es **espacial nueva** y **temporal ya vista**: el último año cae en la ventana sellada de v2 (otras provincias) y todas las provincias se usaron de forma descriptiva en v4-v5. Cada modelo se evaluó una vez, sin reajuste, y en provincias nuevas el AR, el ECM y la econometría de M1 quedan reducidos a la persistencia. Resultados negativos [C4]: ninguna hipótesis confirmatoria pasa Holm (0 de 16 en alquiler; 0 en compra); el deep learning no bate al gradient boosting (MLP 4,8 % frente a 4,8 % en distritos, p 0,63); y la persistencia no se bate en el volumen trimestral (parte temporal sellada: 12,0 % del bosque frente a 11,3 %). Las importancias y los SHAP son descriptivos: no dicen qué pasaría si una variable cambiara. La comparación posterior con líneas base más exigentes es una segunda mirada a la misma muestra sellada y no es confirmatoria. Con once provincias selladas y errores correlacionados en el espacio, los p del DM-HLN calculados por provincia sobrestiman la precisión. El criterio prudente es el DM por periodo, y con él la ventaja en el precio provincial anual no es significativa.
 
 ---
 
@@ -209,11 +213,13 @@ La validación v6 es **espacial nueva** y **temporal ya vista**: el último año
 
 **Territorio.** El déficit está concentrado y la clasificación separa dos situaciones con implicaciones distintas: donde construir es rentable y la oferta responde, y donde el precio supera holgadamente coste y suelo pero la oferta no responde. En el segundo caso, la literatura verificada de otros países apunta al suelo y a la tramitación; en España no hay evaluación comparable. La clasificación es exploratoria y depende del coste oficial.
 
-**Precios.** La discrepancia entre índices no es un error de nadie: el índice oficial y los registros miden cosas distintas (método hedónico frente a medias, calidad, tamaño, cobertura). Citar una sola cifra sin su definición produce desacuerdos aparentes. El alquiler de stock y el de contratos nuevos también miden cosas distintas.
+**Alcance de la aportación.** La aportación es de medición y de método. Reconcilia medidas de precio y contabilidades del déficit con una escala de evidencia explícita y valida predicciones en una muestra sellada. No aporta ninguna estimación identificada. Los estudios citados de otros países fijan los extremos de las rejillas, y sus resultados no se trasladan a España como evidencia propia.
+
+**Precios.** La discrepancia entre índices no indica que ninguna de las dos fuentes esté mal medida: el índice oficial y los registros miden cosas distintas (método hedónico frente a medias, calidad, tamaño, cobertura). Citar una sola cifra sin su definición produce desacuerdos aparentes. El alquiler de stock y el de contratos nuevos también miden cosas distintas.
 
 **Contribuciones.** La falta de estabilidad de las contribuciones es un resultado, no una carencia del análisis. Con las series y los cortes disponibles, la pregunta «qué factor explica la subida» no tiene una respuesta robusta. Un diseño de identificación requeriría variación exógena que los datos públicos no ofrecen en el periodo estudiado.
 
-**Instrumentos.** La condición que más pesa en la evaluación de instrumentos es la respuesta de la oferta: el traslado de las ayudas a la demanda al precio, por clase territorial (A4, método A, rejilla de elasticidades de demanda): clase `1`, falta y es rentable, 27,8-81,8 %; clase `2`, la oferta no responde, 88,1-100,0 %; clase `3`, no rentable, 50,1-89,8 % [C4]. El extremo bajo se apoya en la literatura con oferta elástica (Eriksen y Ross, 2015) y el alto en la de oferta rígida (Gibbons y Manning, 2006; Hilber y Turner, 2014). Con el método B, la clase `1` baja a 30,9 %. Los instrumentos con signo estable en la rejilla de v3 son la construcción adicional donde falta y la movilización de vacías [C2 en el signo]. Las evaluaciones son condicionales y no sustituyen a evaluaciones con diseño de identificación en España.
+**Instrumentos.** La condición que más pesa en la evaluación de instrumentos es la respuesta de la oferta, que entra como parámetro supuesto y no como efecto estimado en España: la fracción de las ayudas a la demanda que se trasladaría al precio según la rejilla, por clase territorial (A4, método A, rejilla de elasticidades de demanda): clase `1`, falta y es rentable, 27,8-81,8 %; clase `2`, la oferta no responde, 88,1-100,0 %; clase `3`, no rentable, 50,1-89,8 % [C4]. El extremo bajo se apoya en la literatura con oferta elástica (Eriksen y Ross, 2015) y el alto en la de oferta rígida (Gibbons y Manning, 2006; Hilber y Turner, 2014). Con el método B, la clase `1` baja a 30,9 %. Los instrumentos con signo estable en la rejilla de v3 son la construcción adicional donde falta y la movilización de vacías [C2 en el signo]. Las evaluaciones son condicionales y no sustituyen a evaluaciones con diseño de identificación en España.
 
 **Convergencia.** Las cifras del proyecto coinciden con las de los organismos cuando concepto y periodo son comparables, y las diferencias se explican por definiciones. Las coincidencias con fuentes que comparten insumos primarios no elevan la capa.
 
@@ -221,12 +227,28 @@ La validación v6 es **espacial nueva** y **temporal ya vista**: el último año
 
 ## 7. Conclusiones
 
-1. Entre 2021 y 2024 el aumento de hogares superó al de viviendas terminadas en 562.692-688.692 viviendas [C1]: es la cifra de déficit que se sostiene con dos fuentes.
+1. Entre 2021 y 2024 el aumento de hogares superó al de viviendas terminadas en 562.692-688.692 viviendas [C1]: es la cifra de déficit que se sostiene con dos fuentes. El extremo inferior combina la ECP con las terminadas del Ministerio. El superior depende de una corrección constante de la EPA, que es un supuesto, y las dos series de terminadas son variantes del Ministerio (con y sin protegida); el Catastro solo valida.
 2. La necesidad 2026-2035 y el déficit a 2030 son contabilidades con supuestos [C4]; su rango es amplio y depende de hogares y vacías.
 3. El déficit se concentra en pocas provincias, y la clase territorial condiciona qué instrumentos tienen signo estable [C4].
 4. El precio de compra subió 47,2 % según los registros [C1] y 79,9 % según el índice oficial [C4]; las dos cifras deben darse juntas.
 5. No se puede atribuir la subida a una familia de factores: las contribuciones contables no son estables.
-6. El pre-registro funcionó como estaba previsto: declaró la falta de potencia antes de ver los resultados y limitó las conclusiones a lo descriptivo.
+6. El pre-registro declaró la falta de potencia antes de ver los resultados, y las conclusiones de ese análisis se limitan a lo descriptivo.
+
+---
+
+## Limitaciones (revisión por pares simulada v6.1) <!-- check:cifra-libre (etiqueta de versión pedida en el título) -->
+
+Objeciones de la revisión por pares simulada (informes del árbitro académico y del revisor de política pública) que no se pueden resolver sin nuevas estimaciones. Cada punto indica el motivo y el coste.
+
+- **Capa del déficit acumulado.** El extremo superior depende de una corrección constante de la EPA, y las terminadas son dos variantes del Ministerio. Para mantener la etiqueta [C1] con fuentes independientes en sentido fuerte habría que recalcular el rango con las altas del Catastro como segunda fuente de terminadas, o rebajar la capa en cifras_clave. Exige recalcular el módulo y regenerar las cifras.
+- **Validación sellada.** La comparación con líneas base nuevas fue una segunda mirada a la muestra sellada, y la parte temporal ya se había visto. Una validación confirmatoria limpia exige una muestra nueva (el año siguiente), que todavía no existe.
+- **Inferencia con once provincias selladas.** Dar como criterio principal el DM por periodo o agrupado por comunidad, y el efecto mínimo detectable, exige reejecutar las comparaciones.
+- **Multiplicidad entre versiones.** La relación entre inmigración y precios se ha reestimado en varias versiones con correcciones dentro de cada módulo, no conjuntas. Un recuento conjunto con su p ajustado exige reconstruir los registros de todas las versiones. Hasta entonces, ningún p de una versión aislada debe leerse como confirmatorio.
+- **Pocos conglomerados.** Generalizar el wild cluster bootstrap a todas las tablas con pocos grupos, y retirar los paneles municipales con regresor provincial, exige reestimar los módulos afectados.
+- **Instrumento débil.** Los intervalos de Anderson-Rubin y la inferencia específica de diseños shift-share exigen reestimar. Las cifras de dos etapas quedan solo como historial.
+- **Reproducibilidad del método de traslado y de la necesidad.** Varias cifras de modelo no se reconstruyen solo con el texto. Publicar las ecuaciones y parámetros de la rejilla exige extraerlos del código y verificarlos.
+- **Utilidad para la decisión.** La tabla de instrumentos no da costes ni magnitudes por euro, y el reparto territorial usa una definición de necesidad distinta de la del titular. Las dos cosas exigen nuevos datos o recalcular el módulo de política por territorio.
+- **Fecha de publicación** de las etiquetas del pre-registro: queda pendiente hasta su publicación en el repositorio remoto.
 
 ---
 

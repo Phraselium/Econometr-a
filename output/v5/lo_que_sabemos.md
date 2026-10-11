@@ -5,6 +5,14 @@ Actualización de output/v4/lo_que_sabemos.md con las salidas de v5. Cada afirma
 - **C2**: cota con supuestos explícitos.
 - **C4**: exploratorio o de fuente única.
 
+**Cómo citar estas cifras (revisión por pares simulada).**
+
+- Dé el rango antes que el valor central. Los rangos [C1] son el mínimo y el máximo entre combinaciones de fuentes, no intervalos de confianza.
+- El precio de compra se cita con las dos medidas juntas: el núcleo de registros y el índice oficial.
+- Las cotas y las direcciones [C2] valen dentro de la rejilla de escenarios definida por el autor. Cite la rejilla junto con la conclusión.
+- Solo es citable la versión vigente. Las cifras de versiones anteriores se sustituyeron por nuevas fuentes, muestras o correcciones, y el motivo de cada cambio consta en el historial de conclusiones y en la fe de erratas.
+- [C4] no indica baja calidad: incluye estadísticas oficiales de fuente única y resultados exploratorios.
+
 La capa de un hecho es la menor de las de sus componentes. Ningún resultado alcanza la capa de identificación causal.
 
 ## Afirmable con seguridad
@@ -54,6 +62,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - Que alguno de estos factores sea la causa principal de la subida: turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas.
 - Que los topes al alquiler reduzcan los precios o la oferta: su resultado queda en C4.
 - Que haya una burbuja: la exuberancia estadística no la identifica.
+- Que la inmigración suba o baje los precios o el alquiler. Hay especificaciones con intervalos que excluyen el cero y otras que no. El signo cambia con el control de población, la medida de precio, el método y el nivel territorial, y ninguna especificación aislada es la de referencia. Todo queda en C4, sin lectura causal.
 - (v6) Que alguna variable sea «relevante con seguridad» para el alquiler o la compra: ninguna cumple los criterios pre-registrados y ninguna hipótesis confirmatoria pasa Holm. Las importancias de los modelos de predicción describen qué variables ayudan a predecir, no qué pasaría si una variable cambiara.
 - (v6) Que los modelos de aprendizaje profundo predigan mejor que el gradient boosting, o que algún modelo bata a la inercia en el volumen trimestral de compraventas del último año: no lo hacen.
 - El resultado de bajar impuestos a la compra o a la construcción, de la seguridad jurídica frente a la ocupación ilegal o de limitar compras de no residentes: no hay diseño ni datos.

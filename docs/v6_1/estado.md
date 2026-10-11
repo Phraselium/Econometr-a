@@ -9,3 +9,7 @@
 ## Tokens de subagentes (presupuesto 1,4 M; corte al 80 %: 1,12 M)
 | Módulo | Tokens |
 |---|---|
+
+## En curso
+- K1 (ml-engineer), K4a (sonnet) y K4b (sonnet), lanzados en paralelo.
+- Para K4b se preparó docs/v6_1/k4b_especificacion.md: las 15 cifras sin referencias al código original.

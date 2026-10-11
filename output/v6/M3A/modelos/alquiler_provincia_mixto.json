@@ -1,0 +1,46 @@
+{
+ "id": "alquiler_provincia_mixto",
+ "mercado": "alquiler de stock (SERPAVI)",
+ "nivel": "provincia",
+ "medida": "ln_alq_m2_serpavi_vc",
+ "familia": "mixto",
+ "variables": [
+  "ccaa",
+  "dy_lag1",
+  "ln_iniciadas_libres",
+  "ln_pib_pc",
+  "ln_pob",
+  "ln_terminadas_libres",
+  "n_mun_topes_cat",
+  "share_ext_pob",
+  "y_lag1"
+ ],
+ "objetivo": "dy; prediccion = y_lag1 + fijos + BLUP territorio",
+ "hiperparametros": {
+  "fijos": [
+   "y_lag1",
+   "dy_lag1",
+   "ln_pob",
+   "share_ext_pob",
+   "ln_pib_pc",
+   "ln_terminadas_libres",
+   "ln_iniciadas_libres",
+   "n_mun_topes_cat"
+  ],
+  "pendientes_aleatorias": [
+   "y_lag1",
+   "ln_pob"
+  ],
+  "grupo": "ccaa"
+ },
+ "semilla": 20261010,
+ "ruta_modelo": "modelos/alquiler_provincia_mixto.pkl",
+ "convergido": true,
+ "n": 245,
+ "sustituto": "MixedLM (REML) en lugar de PyMC/NumPyro (no instalados)",
+ "funcion_prediccion": "src/v6/m3a_lib.predecir_modelo(id, {nombre: DataFrame sellado})",
+ "nombres_paneles": [
+  "prov_alquiler_anual",
+  "prov_compra_anual"
+ ]
+}

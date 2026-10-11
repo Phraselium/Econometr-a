@@ -1,0 +1,37 @@
+{
+ "id": "alquiler_distrito_mixto",
+ "mercado": "alquiler de stock (SERPAVI)",
+ "nivel": "distrito",
+ "medida": "ln_alq_m2_serpavi_dis",
+ "familia": "mixto",
+ "variables": [
+  "cod_prov",
+  "dy_lag1",
+  "ln_pib_pc",
+  "y_lag1"
+ ],
+ "objetivo": "dy; prediccion = y_lag1 + fijos + BLUP territorio",
+ "hiperparametros": {
+  "fijos": [
+   "y_lag1",
+   "dy_lag1",
+   "ln_pib_pc"
+  ],
+  "pendientes_aleatorias": [
+   "y_lag1",
+   "dy_lag1"
+  ],
+  "grupo": "cod_prov"
+ },
+ "semilla": 20261010,
+ "ruta_modelo": "modelos/alquiler_distrito_mixto.pkl",
+ "convergido": true,
+ "n": 16874,
+ "sustituto": "MixedLM (REML) en lugar de PyMC/NumPyro (no instalados)",
+ "funcion_prediccion": "src/v6/m3a_lib.predecir_modelo(id, {nombre: DataFrame sellado})",
+ "nombres_paneles": [
+  "dis_alquiler_anual",
+  "prov_alquiler_anual",
+  "prov_compra_anual"
+ ]
+}

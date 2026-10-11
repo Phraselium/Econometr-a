@@ -10,7 +10,8 @@
 | M2 incertidumbre de modelo | hecho | C4 | BMA, PDS y multiverso; población pesa en ambos mercados; renta y extranjeros pesan en compra y no en alquiler; oferta (iniciadas) pesa en alquiler y no en precio; contratos nuevos sin N | 63.186 |
 | M1a econometría del alquiler | hecho | C4 | ninguna variable sobrevive a Holm en la especificación pre-registrada; sin VUT, población p=0,026 (+5 €/mes por 10.000 hab.) pero los métodos discrepan; VUT −1,6 €/mes por 1.000 (no concluyente); topes: pretendencias rechazadas; contratos nuevos descriptivos | 121.862 |
 | M1b econometría de la compra y relación entre mercados | hecho | C4 | ninguna confirmatoria sobrevive a Holm; elasticidad precio-alquiler 0,6-2,1 (asociación); ratio P/A 20,3 → 17,1 años (2015-2023); sin exuberancia en 11 CCAA; fuera de muestra el ADL no bate a AR(4) | 140.295 |
+| M3a predicción y ML del alquiler | hecho | C4 (interpretación) | validación interna: RF/GB baten a AR y persistencia en los tres niveles; frente a ECM v1, solo en municipio; MLP y GraphSAGE no superan a GB (negativo); BART no disponible; jerárquico con MixedLM | 120.059 |
 
-**Hecho:** setup, G, M0, M1a, M1b, M2.
+**Hecho:** setup, G, M0, M1a, M1b, M2, M3a.
 **Siguiente:** M3a (en curso), M3b → M4.
-**Tokens de subagentes v6:** 822.041 / 2.200.000 (corte 1.760.000; reserva 220.000).
+**Tokens de subagentes v6:** 942.100 / 2.200.000 (corte 1.760.000; reserva 220.000).

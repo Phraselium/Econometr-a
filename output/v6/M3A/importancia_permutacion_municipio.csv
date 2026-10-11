@@ -1,0 +1,8 @@
+,2020,2022,p95_nulo_desenlace_permutado,media,por_encima_del_ruido
+autorregresivo,0.000246,0.000204,2.2e-05,0.000225,True
+espacial,8e-06,1e-06,9e-06,4e-06,False
+oferta,2.4e-05,2.8e-05,5e-06,2.6e-05,True
+poblacion,8e-06,3.7e-05,1e-05,2.3e-05,True
+regulacion,0.0,0.0,0.0,0.0,False
+renta,2e-06,-0.0,6e-06,1e-06,False
+turismo_vut,0.0,0.0,0.0,0.0,False

@@ -1,0 +1,183 @@
+{
+ "rama": "v6/M3a",
+ "mercado": "alquiler",
+ "pregunta": "Predice mejor el alquiler de stock (SERPAVI) un modelo de ML que AR por unidad, ECM v1 y el mejor econometrico de M1A, en validacion interna con embargo de 1 anio?",
+ "capa": "C4",
+ "nivel_evidencia": "EXPLORATORIO (prediccion; las interpretaciones SHAP, ALE e importancias son descriptivas, no causales)",
+ "medida_precio": "SERPAVI mediana VC EUR/m2/mes (provincia, municipio); distrito: punto medio p25-p75. Contratos nuevos (fianzas): no modelizable (N~15)",
+ "datos": "output/v6/M0/paneles/{prov,mun,dis}_alquiler_anual_train.csv.gz y prov_compra_anual_train (regresores provinciales); solo entrenamiento; datos hasta 2023",
+ "N": {
+  "muestra_comun_sin_DL": {
+   "distrito": 8554,
+   "municipio": 5855,
+   "provincia": 140
+  },
+  "muestra_comun_con_DL_distrito": 8554
+ },
+ "metodo": "Random forest y LightGBM (30 configuraciones por familia y nivel, busqueda aleatoria, bloques espacio-temporales de 4 grupos de CCAA con embargo de 1 anio); mixto jerarquico (MixedLM, sustituto declarado de PyMC/NumPyro); MLP con embeddings y GraphSAGE propio solo en distrito. BART: no realizado (sin libreria). Objetivo: variacion anual de ln(EUR/m2/mes); regresores en t-1.",
+ "estimacion": {
+  "provincia": {
+   "modelo": "rf",
+   "rmse": 0.010452334650894696,
+   "mae": 0.00832337285561461,
+   "N": 140,
+   "rmse_AR": 0.03031305131110289,
+   "rmse_ECM_v1_aprox": 0.011008717056589424,
+   "rmse_M1A_TWFE": 0.04105436308962559,
+   "rmse_persistencia": 0.03811996870782706,
+   "dm_vs_ar4": {
+    "DM_HLN": -11.981790846410968,
+    "p": 3.636944884444015e-23,
+    "p_holm": 4.0006393728884164e-22,
+    "p_medias_anuales": 0.09535119337341631
+   },
+   "dm_vs_ecm_v1": {
+    "DM_HLN": -1.0612054433548084,
+    "p": 0.2904369240644507,
+    "p_holm": 0.5808738481289014
+   },
+   "dm_vs_m1a_twfe": {
+    "DM_HLN": -9.562047187070862,
+    "p": 5.86834177411922e-17
+   }
+  },
+  "municipio": {
+   "modelo": "gb",
+   "rmse": 0.04641711895816008,
+   "mae": 0.03156074514895794,
+   "N": 5855,
+   "rmse_AR": 0.07614428946471091,
+   "rmse_ECM_v1_aprox": 0.04730616540145574,
+   "rmse_M1A_TWFE": 0.07856288396457248,
+   "rmse_persistencia": 0.06091999604660353,
+   "dm_vs_ar4": {
+    "DM_HLN": -16.2945251004179,
+    "p": 2.051374714164058e-58,
+    "p_holm": 1.6410997713312464e-57,
+    "p_medias_anuales": 0.2273939785197319
+   },
+   "dm_vs_ecm_v1": {
+    "DM_HLN": -4.470336626805023,
+    "p": 7.956991625373607e-06,
+    "p_holm": 3.182796650149443e-05
+   },
+   "dm_vs_m1a_twfe": {
+    "DM_HLN": -28.56826080636876,
+    "p": 3.6635699077791325e-168
+   }
+  },
+  "distrito": {
+   "modelo": "gb",
+   "rmse": 0.04811434681951466,
+   "mae": 0.03223879288291118,
+   "N": 8554,
+   "rmse_AR": 0.10523508408518407,
+   "rmse_ECM_v1_aprox": 0.0485121004416611,
+   "rmse_M1A_TWFE": 0.08548911680129341,
+   "rmse_persistencia": 0.062195773670780996,
+   "dm_vs_ar4": {
+    "DM_HLN": -33.58756356763522,
+    "p": 1.973432279297546e-232,
+    "p_holm": 1.9734322792975457e-231,
+    "p_medias_anuales": 0.14362156938922369
+   },
+   "dm_vs_ecm_v1": {
+    "DM_HLN": -1.2904226435687403,
+    "p": 0.19693883759986822,
+    "p_holm": 0.5039154526754405
+   },
+   "dm_vs_m1a_twfe": {
+    "DM_HLN": -36.29846920490168,
+    "p": 1.8674156886291402e-268
+   }
+  }
+ },
+ "ic95": null,
+ "p_ajustado": "Holm y BH dentro de cada nivel y muestra: ver dm_hln_validacion_interna.csv",
+ "diagnosticos": {
+  "interpretacion": "interpretacion.json",
+  "metricas": "metricas_validacion_interna.csv",
+  "dl_vs_gradient_boosting": {
+   "mlp": {
+    "rmse": 0.048021396040189936,
+    "rmse_gb": 0.04811434681951466,
+    "DM_HLN_vs_gb": -0.47689815805739255,
+    "p": 0.633446827698304,
+    "p_medias_anuales": 0.9292454382753719,
+    "veredicto": "NO supera a gradient boosting: resultado negativo"
+   },
+   "gnn": {
+    "rmse": 0.04800944595130509,
+    "rmse_gb": 0.04811434681951466,
+    "DM_HLN_vs_gb": -0.5161600453884768,
+    "p": 0.6057559765353424,
+    "p_medias_anuales": 0.9206912474772738,
+    "veredicto": "NO supera a gradient boosting: resultado negativo"
+   }
+  },
+  "colinealidad": {
+   "provincia": {
+    "ln_pob": 9.8356379211078,
+    "share_ext_pob": 2.1290196337395106,
+    "ln_pib_pc": 1.2831514851607926,
+    "ln_vut": 4.84732731556311,
+    "ln_terminadas_libres": 8.147413019205832,
+    "ln_iniciadas_libres": 7.134933896388071,
+    "n_mun_tensionados": NaN,
+    "n_mun_topes_cat": 1.3210181122619613
+   },
+   "municipio": {
+    "ln_pob": 17.271353487303735,
+    "share_ext_pob": 5.443334068200549,
+    "ln_pib_pc": 3.7484480212999913,
+    "ln_vut": 5.336844477370628,
+    "ln_terminadas_libres": 13.662941944707043,
+    "ln_iniciadas_libres": 13.323535173876799,
+    "tensionada_mun": NaN,
+    "tope_cat_mun": 1.0748651382558159,
+    "x_m": 5.224337704730945,
+    "y_m": 2.8084629740419857
+   },
+   "distrito": {
+    "ln_vut_plazas_dis": 1.003385555247019,
+    "ln_pib_pc": 3.963358946325157,
+    "x_m": 2.0078802405800675,
+    "y_m": 2.6278350165951365
+   }
+  }
+ },
+ "fuera_muestra": {
+  "modelo": {
+   "provincia": "rf",
+   "municipio": "gb",
+   "distrito": "gb"
+  },
+  "rmse": {
+   "provincia": 0.010452334650894696,
+   "municipio": 0.04641711895816008,
+   "distrito": 0.04811434681951466
+  },
+  "dm_vs_ar4": {
+   "provincia": {
+    "DM_HLN": -11.981790846410968,
+    "p": 3.636944884444015e-23,
+    "p_holm": 4.0006393728884164e-22,
+    "p_medias_anuales": 0.09535119337341631
+   },
+   "municipio": {
+    "DM_HLN": -16.2945251004179,
+    "p": 2.051374714164058e-58,
+    "p_holm": 1.6410997713312464e-57,
+    "p_medias_anuales": 0.2273939785197319
+   },
+   "distrito": {
+    "DM_HLN": -33.58756356763522,
+    "p": 1.973432279297546e-232,
+    "p_holm": 1.9734322792975457e-231,
+    "p_medias_anuales": 0.14362156938922369
+   }
+  },
+  "validacion": "interna (origenes 2018/2020/2022; embargo 1 anio); la evaluacion sellada la hace M4"
+ },
+ "notas": "Prediccion no es causalidad. Contratos nuevos (fianzas): no modelizable (3 provincias GVA y 4 Incasol, N~15). AR por unidad con T corto: p elegido por AIC entre 1 y 4, persistencia si T insuficiente. Optimismo declarado: la eleccion de hiperparametros y la validacion comparten anios de entrenamiento. Horizonte h=2 no evaluado. El DM de observaciones agrupadas (N grande) ignora la correlacion transversal dentro de cada anio y es anticonservador; el conservador es DM_HLN_medias_anuales (pocos anios, baja potencia). Las lineas base AR y M1A-TWFE se re-estiman en cada pliegue (entrenamiento hasta o-2), por lo que su RMSE difiere del de M1A, que valida 2022-2023 con entrenamiento hasta 2020. El GNN y el MLP se seleccionan con un solo origen (2020) y 6 configuraciones. Las figuras SHAP y ALE y las importancias son descriptivas (C4), no causales. Cifras con fecha del dato 2023."
+}

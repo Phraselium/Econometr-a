@@ -1,0 +1,26 @@
+[
+ {
+  "id": "alquiler_provincia_mixto",
+  "nivel": "provincia",
+  "medida": "ln_alq_m2_serpavi_vc",
+  "familia": "mixto",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_provincia_mixto.json"
+ },
+ {
+  "id": "alquiler_municipio_mixto",
+  "nivel": "municipio",
+  "medida": "ln_alq_m2_serpavi_mun",
+  "familia": "mixto",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_municipio_mixto.json"
+ },
+ {
+  "id": "alquiler_distrito_mixto",
+  "nivel": "distrito",
+  "medida": "ln_alq_m2_serpavi_dis",
+  "familia": "mixto",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_distrito_mixto.json"
+ }
+]

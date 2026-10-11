@@ -1,0 +1,43 @@
+{
+ "id": "alquiler_municipio_rf",
+ "mercado": "alquiler de stock (SERPAVI)",
+ "nivel": "municipio",
+ "medida": "ln_alq_m2_serpavi_mun",
+ "familia": "rf",
+ "variables": [
+  "y_lag1",
+  "dy_lag1",
+  "dy_lag2",
+  "dy_lag1_prov",
+  "y_lag1_rel_prov",
+  "ln_pob",
+  "share_ext_pob",
+  "ln_pib_pc",
+  "ln_vut",
+  "ln_terminadas_libres",
+  "ln_iniciadas_libres",
+  "tensionada_mun",
+  "tope_cat_mun",
+  "x_m",
+  "y_m"
+ ],
+ "objetivo": "dy = y - y_lag1 (prediccion = y_lag1 + modelo)",
+ "hiperparametros": {
+  "n_estimators": 100,
+  "max_depth": 4,
+  "min_samples_leaf": 10,
+  "max_features": 1.0,
+  "max_samples": 0.3
+ },
+ "semilla": 20261010,
+ "ruta_modelo": "modelos/alquiler_municipio_rf.joblib",
+ "entrenamiento": "anios <= 2023, N=12682",
+ "rmse_bloques_espaciotemporales": 0.05398372916888945,
+ "funcion_prediccion": "src/v6/m3a_lib.predecir_modelo(id, {nombre: DataFrame sellado})",
+ "nombres_paneles": [
+  "mun_alquiler_anual",
+  "prov_alquiler_anual",
+  "prov_compra_anual"
+ ],
+ "nulos": "RF: NaN->-9; LightGBM: NaN nativo"
+}

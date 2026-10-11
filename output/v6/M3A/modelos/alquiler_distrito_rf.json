@@ -1,0 +1,38 @@
+{
+ "id": "alquiler_distrito_rf",
+ "mercado": "alquiler de stock (SERPAVI)",
+ "nivel": "distrito",
+ "medida": "ln_alq_m2_serpavi_dis",
+ "familia": "rf",
+ "variables": [
+  "y_lag1",
+  "dy_lag1",
+  "dy_lag2",
+  "dy_lag1_prov",
+  "y_lag1_rel_prov",
+  "ln_vut_plazas_dis",
+  "ln_pib_pc",
+  "dy_lag1_mun",
+  "x_m",
+  "y_m"
+ ],
+ "objetivo": "dy = y - y_lag1 (prediccion = y_lag1 + modelo)",
+ "hiperparametros": {
+  "n_estimators": 100,
+  "max_depth": 4,
+  "min_samples_leaf": 10,
+  "max_features": 1.0,
+  "max_samples": 0.3
+ },
+ "semilla": 20261010,
+ "ruta_modelo": "modelos/alquiler_distrito_rf.joblib",
+ "entrenamiento": "anios <= 2023, N=24852",
+ "rmse_bloques_espaciotemporales": 0.061256705425585506,
+ "funcion_prediccion": "src/v6/m3a_lib.predecir_modelo(id, {nombre: DataFrame sellado})",
+ "nombres_paneles": [
+  "dis_alquiler_anual",
+  "prov_alquiler_anual",
+  "prov_compra_anual"
+ ],
+ "nulos": "RF: NaN->-9; LightGBM: NaN nativo"
+}

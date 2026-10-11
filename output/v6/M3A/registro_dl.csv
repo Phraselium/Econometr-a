@@ -1,0 +1,13 @@
+nivel,familia,config_id,config,rmse_bloques_espaciotemporales,n_bloques,estado
+distrito,mlp,0,"{""drop"": 0.1, ""epochs"": 60, ""hidden"": 64, ""lr"": 0.003, ""wd"": 0.001}",0.054159692069306445,4,especificacion probada (cuenta en el Registry); origen 2020 solo
+distrito,mlp,1,"{""drop"": 0.1, ""epochs"": 60, ""hidden"": 64, ""lr"": 0.001, ""wd"": 0.001}",0.053848938801453056,4,especificacion probada (cuenta en el Registry); origen 2020 solo
+distrito,mlp,2,"{""drop"": 0.1, ""epochs"": 30, ""hidden"": 64, ""lr"": 0.003, ""wd"": 0.0001}",0.054657764352140696,4,especificacion probada (cuenta en el Registry); origen 2020 solo
+distrito,mlp,3,"{""drop"": 0.1, ""epochs"": 60, ""hidden"": 32, ""lr"": 0.001, ""wd"": 0.0001}",0.05516194201794039,4,especificacion probada (cuenta en el Registry); origen 2020 solo
+distrito,mlp,4,"{""drop"": 0.1, ""epochs"": 30, ""hidden"": 64, ""lr"": 0.003, ""wd"": 0.001}",0.054655455301409375,4,especificacion probada (cuenta en el Registry); origen 2020 solo
+distrito,mlp,5,"{""drop"": 0.2, ""epochs"": 30, ""hidden"": 16, ""lr"": 0.003, ""wd"": 0.001}",0.05572602561730879,4,especificacion probada (cuenta en el Registry); origen 2020 solo
+distrito,gnn,0,"{""drop"": 0.1, ""epochs"": 60, ""hidden"": 64, ""lr"": 0.003, ""wd"": 0.001}",0.05587627454468514,4,especificacion probada (cuenta en el Registry); origen 2020 solo
+distrito,gnn,1,"{""drop"": 0.1, ""epochs"": 60, ""hidden"": 64, ""lr"": 0.001, ""wd"": 0.001}",0.0545807276356899,4,especificacion probada (cuenta en el Registry); origen 2020 solo
+distrito,gnn,2,"{""drop"": 0.1, ""epochs"": 30, ""hidden"": 64, ""lr"": 0.003, ""wd"": 0.0001}",0.05429839520370778,4,especificacion probada (cuenta en el Registry); origen 2020 solo
+distrito,gnn,3,"{""drop"": 0.1, ""epochs"": 60, ""hidden"": 32, ""lr"": 0.001, ""wd"": 0.0001}",0.05383220890446057,4,especificacion probada (cuenta en el Registry); origen 2020 solo
+distrito,gnn,4,"{""drop"": 0.1, ""epochs"": 30, ""hidden"": 64, ""lr"": 0.003, ""wd"": 0.001}",0.054294622209654794,4,especificacion probada (cuenta en el Registry); origen 2020 solo
+distrito,gnn,5,"{""drop"": 0.2, ""epochs"": 30, ""hidden"": 16, ""lr"": 0.003, ""wd"": 0.001}",0.05433716309485391,4,especificacion probada (cuenta en el Registry); origen 2020 solo

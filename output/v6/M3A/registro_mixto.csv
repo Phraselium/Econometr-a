@@ -1,0 +1,4 @@
+nivel,familia,config_id,config,rmse_bloques_espaciotemporales,n_bloques,estado
+provincia,mixto,0,"{""fijos"": [""y_lag1"", ""dy_lag1"", ""ln_pob"", ""share_ext_pob"", ""ln_pib_pc"", ""ln_terminadas_libres"", ""ln_iniciadas_libres"", ""n_mun_topes_cat""], ""pendientes_aleatorias"": [""y_lag1"", ""ln_pob""], ""grupo"": ""ccaa""}",,0,1 especificacion (sin busqueda); cuenta en el Registry
+municipio,mixto,0,"{""fijos"": [""y_lag1"", ""dy_lag1"", ""ln_pob"", ""share_ext_pob"", ""ln_pib_pc"", ""ln_terminadas_libres"", ""ln_iniciadas_libres"", ""tensionada_mun"", ""tope_cat_mun""], ""pendientes_aleatorias"": [""y_lag1"", ""dy_lag1""], ""grupo"": ""cod_prov""}",,0,1 especificacion (sin busqueda); cuenta en el Registry
+distrito,mixto,0,"{""fijos"": [""y_lag1"", ""dy_lag1"", ""ln_pib_pc""], ""pendientes_aleatorias"": [""y_lag1"", ""dy_lag1""], ""grupo"": ""cod_prov""}",,0,1 especificacion (sin busqueda); cuenta en el Registry

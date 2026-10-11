@@ -1,0 +1,80 @@
+[
+ {
+  "id": "m3a_rmse_provincia",
+  "indicador": "RMSE de validacion interna del mejor modelo de ML (rf), alquiler de stock, provincia (variacion anual de ln EUR/m2)",
+  "valor": 0.01045,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos",
+  "periodo": "2018-2023 (pliegues)",
+  "cobertura": "N=140 observaciones",
+  "fuentes": "SERPAVI (MIVAU)",
+  "capa": "C4",
+  "fecha_dato": "2023"
+ },
+ {
+  "id": "m3a_rmse_ar_provincia",
+  "indicador": "RMSE de AR por unidad, misma muestra, provincia",
+  "valor": 0.03031,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos",
+  "periodo": "2018-2023 (pliegues)",
+  "cobertura": "N=140",
+  "fuentes": "SERPAVI (MIVAU)",
+  "capa": "C4",
+  "fecha_dato": "2023"
+ },
+ {
+  "id": "m3a_rmse_municipio",
+  "indicador": "RMSE de validacion interna del mejor modelo de ML (gb), alquiler de stock, municipio (variacion anual de ln EUR/m2)",
+  "valor": 0.04642,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos",
+  "periodo": "2018-2023 (pliegues)",
+  "cobertura": "N=5855 observaciones",
+  "fuentes": "SERPAVI (MIVAU)",
+  "capa": "C4",
+  "fecha_dato": "2023"
+ },
+ {
+  "id": "m3a_rmse_ar_municipio",
+  "indicador": "RMSE de AR por unidad, misma muestra, municipio",
+  "valor": 0.07614,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos",
+  "periodo": "2018-2023 (pliegues)",
+  "cobertura": "N=5855",
+  "fuentes": "SERPAVI (MIVAU)",
+  "capa": "C4",
+  "fecha_dato": "2023"
+ },
+ {
+  "id": "m3a_rmse_distrito",
+  "indicador": "RMSE de validacion interna del mejor modelo de ML (gb), alquiler de stock, distrito (variacion anual de ln EUR/m2)",
+  "valor": 0.04811,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos",
+  "periodo": "2018-2023 (pliegues)",
+  "cobertura": "N=8554 observaciones",
+  "fuentes": "SERPAVI (MIVAU)",
+  "capa": "C4",
+  "fecha_dato": "2023"
+ },
+ {
+  "id": "m3a_rmse_ar_distrito",
+  "indicador": "RMSE de AR por unidad, misma muestra, distrito",
+  "valor": 0.10524,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos",
+  "periodo": "2018-2023 (pliegues)",
+  "cobertura": "N=8554",
+  "fuentes": "SERPAVI (MIVAU)",
+  "capa": "C4",
+  "fecha_dato": "2023"
+ }
+]

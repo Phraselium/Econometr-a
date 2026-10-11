@@ -1,0 +1,18 @@
+[
+ {
+  "id": "alquiler_distrito_mlp",
+  "nivel": "distrito",
+  "medida": "ln_alq_m2_serpavi_dis",
+  "familia": "dl_mlp",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_distrito_mlp.json"
+ },
+ {
+  "id": "alquiler_distrito_gnn",
+  "nivel": "distrito",
+  "medida": "ln_alq_m2_serpavi_dis",
+  "familia": "dl_gnn",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_distrito_gnn.json"
+ }
+]

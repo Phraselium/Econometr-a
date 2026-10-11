@@ -1,0 +1,90 @@
+[
+ {
+  "id": "alquiler_provincia_rf",
+  "nivel": "provincia",
+  "medida": "ln_alq_m2_serpavi_vc",
+  "familia": "rf",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_provincia_rf.json"
+ },
+ {
+  "id": "alquiler_provincia_gb",
+  "nivel": "provincia",
+  "medida": "ln_alq_m2_serpavi_vc",
+  "familia": "gb",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_provincia_gb.json"
+ },
+ {
+  "id": "alquiler_municipio_rf",
+  "nivel": "municipio",
+  "medida": "ln_alq_m2_serpavi_mun",
+  "familia": "rf",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_municipio_rf.json"
+ },
+ {
+  "id": "alquiler_municipio_gb",
+  "nivel": "municipio",
+  "medida": "ln_alq_m2_serpavi_mun",
+  "familia": "gb",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_municipio_gb.json"
+ },
+ {
+  "id": "alquiler_distrito_rf",
+  "nivel": "distrito",
+  "medida": "ln_alq_m2_serpavi_dis",
+  "familia": "rf",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_distrito_rf.json"
+ },
+ {
+  "id": "alquiler_distrito_gb",
+  "nivel": "distrito",
+  "medida": "ln_alq_m2_serpavi_dis",
+  "familia": "gb",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_distrito_gb.json"
+ },
+ {
+  "id": "alquiler_provincia_mixto",
+  "nivel": "provincia",
+  "medida": "ln_alq_m2_serpavi_vc",
+  "familia": "mixto",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_provincia_mixto.json"
+ },
+ {
+  "id": "alquiler_municipio_mixto",
+  "nivel": "municipio",
+  "medida": "ln_alq_m2_serpavi_mun",
+  "familia": "mixto",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_municipio_mixto.json"
+ },
+ {
+  "id": "alquiler_distrito_mixto",
+  "nivel": "distrito",
+  "medida": "ln_alq_m2_serpavi_dis",
+  "familia": "mixto",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_distrito_mixto.json"
+ },
+ {
+  "id": "alquiler_distrito_mlp",
+  "nivel": "distrito",
+  "medida": "ln_alq_m2_serpavi_dis",
+  "familia": "dl_mlp",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_distrito_mlp.json"
+ },
+ {
+  "id": "alquiler_distrito_gnn",
+  "nivel": "distrito",
+  "medida": "ln_alq_m2_serpavi_dis",
+  "familia": "dl_gnn",
+  "mercado": "alquiler",
+  "ruta": "output/v6/M3A/modelos/alquiler_distrito_gnn.json"
+ }
+]

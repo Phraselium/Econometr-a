@@ -2,13 +2,33 @@
 
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
-## v6.1 (borrador, pendiente de cierre)
+## v6.1 (2026-10-11) — cierre, auditoría crítica y consolidación
 
-Borrador: se cierra al terminar K5 y K6. Contenido provisional (detalle en docs/v6_1/estado.md y docs/v6_1/decisiones.md):
-- K1 líneas base y K2 inmigración (una dimensión cada vez); K3 iniciadas y léxico predictivo/asociativo; K4a-K4b paneles y catastro.
-- K4c: coherencia de cifras entre entregables y output/v5/cifras_clave.csv (`src/v6_1/k4c_cifras.py`, test `tests/test_k4c_cifras.py`); avisos «histórico» en archive/; enlaces de figuras de los artículos corregidos.
-- K4d: DECLARACION_IA.md, versión 6.1 en CITATION.cff y .zenodo.json, marcas de cuartil en docs/literatura.md, comprobación de enlaces (`src/v6_1/k4d_docs.py`).
-- Las correcciones que cambian cifras publicadas van en ERRATA.md.
+**Líneas base exigentes (K1).** La comparación de modelos de v6 se repite en la misma validación sellada, con tres bases nuevas: último valor × crecimiento nacional, AR con factor común y efectos fijos dobles. Se abrieron 27 veces, una por base y tarea. El contraste es DM-HLN más permutación exacta por provincias, con Holm.
+- El mejor modelo supera a la base más exigente en 6 de 9 tareas: alquiler de stock en sus tres niveles, precio de tasación trimestral, precio provincial anual (frágil) y volumen trimestral (solo en la parte espacial).
+- No es distinguible en precio municipal, con Registradores y en volumen anual.
+
+**Reconciliación (K2).** docs/v6_1/historial_conclusiones.md. Para la inmigración, el cambio entre v2 y v6 lo mueven el método (2SLS frente a MCO), la medida de alquiler y los controles; la población puede ser mediadora. Conclusión única: C4, «ANALIZADA, NO CONCLUYENTE».
+
+**Interpretación (K3).**
+- Las iniciadas se asocian con el alquiler solo en el mismo año; sus retardos y adelantos no se distinguen de cero.
+- Léxico predictivo y asociativo en lugar de «pesa», «explica» o «importa».
+- Ratio precio/alquiler con un rango por medida.
+
+**Auditoría (K4).** Hallazgos: 0 críticos, 5 altos (corregidos), 13 medios y 12 bajos. Ver docs/v6_1/auditoria.md.
+- Doble implementación de las 15 cifras: 6 coinciden, 4 parciales explicadas y 5 no reconstruibles solo con el texto.
+- 32 tests nuevos; k4c y k4d entran en make.
+
+**Revisión por pares simulada (K5).** Árbitro académico: revisión mayor. Árbitro de política: revisión menor. Se aplicaron 18 cambios de texto y 11 objeciones pasan a limitaciones (docs/v6_1/carta_respuesta.md).
+
+**Cierre (K6).**
+- Sección «Qué cambió entre versiones y por qué» en los entregables.
+- Fichas del verificador K1-V1 y K2-V1.
+- docs/v6_1/backlog.md y docs/v6_1/tareas_autor.md, que es la lista definitiva.
+
+**Cifras publicadas que cambian** (ERRATA.md):
+- contratos nuevos de la Comunitat Valenciana: de 26,6 % (22,4-30,8) a 27,7 % (24,6-30,8);
+- recuentos de 1.000.000 o más: hasta 5 unidades.
 
 ## v6.0 (2026-10-11)
 

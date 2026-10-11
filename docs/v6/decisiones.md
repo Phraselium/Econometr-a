@@ -48,3 +48,12 @@
 - **Deep learning:** resultado negativo en el alquiler (distrito) y en la compra (municipio). Ninguna red bate a gradient boosting.
 - **Compra trimestral:** la persistencia (1,91 %) iguala o mejora a ML y econometría. Es un resultado negativo para el valor añadido de los modelos frente a la inercia.
 - **Determinismo:** los .csv.gz se escriben con mtime=0 en M2, M3a y M3b.
+
+## M4 (subagente)
+- **Evaluación sellada.** src/v6/m4_sellado.py la ejecuta una sola vez, fuera de make: 53 aperturas, una por modelo, con fn probada antes sobre un sellado falso. Los resultados se versionan en output/v6/M4/sellado_*.json. m4_run.py (en make) solo lee esos JSON, así que `make all` no reabre el sellado.
+- **«Mejor modelo».** Se elige por el RMSE espacial en la sellada y por la estabilidad.
+  - Los árboles (GB y RF) ganan en alquiler y en el precio provincial.
+  - El ECM v1 gana en el precio municipal y en Registradores, con empate técnico.
+  - En el volumen trimestral del último año, la persistencia no se bate.
+- **Ninguna variable cumple el criterio pre-registrado de «relevante con seguridad».** La familia econométrica nunca pasa Holm. Todo queda en C4.
+- **Limitación de la comparación espacial.** En provincias nuevas, AR, ECM y M1 caen a persistencia, porque no tienen efecto fijo. La red de M3a no admitía provincias nuevas y M4 usa la media de los embeddings (declarado).

@@ -1,0 +1,17 @@
+{
+ "id": "M4-V4",
+ "tema": "Ratio precio/alquiler y sobrevaloracion",
+ "enunciado": "La ratio precio/alquiler indica sobrevaloracion.",
+ "capa": "C4",
+ "magnitud": "Ratio precio/alquiler anual (valor tasado / SERPAVI), 39 provincias de entrenamiento, 2023: mediana 17,1 anos de alquiler (rango 12,4-23,8); rentabilidad bruta mediana 5,84 %. Contraste de burbuja GSADF por CCAA: 0 de 11 con episodio explosivo (p BH<0,05). No existe un nivel de referencia identificado con el que la ratio senale sobrevaloracion.",
+ "intervalo": "Brecha rentabilidad menos coste de uso (g=2 %): mediana 1,56 pp, rango -0,07 a 3,79 pp",
+ "cota": "—",
+ "literatura": "No aplica.",
+ "veredicto": "ANALIZADA, NO CONCLUYENTE",
+ "regla": "La ratio es una descripcion (C4) sin umbral de equilibrio validado; el contraste GSADF tiene pocas provincias por CCAA.",
+ "limites": "Validacion espacial nueva (11 provincias nunca usadas como validacion); temporal ya vista en v2 (otras provincias) y de forma descriptiva en v4-v5; el ultimo anio cae en la ventana sellada de v2. Las conclusiones se apoyan en la parte espacial. Las provincias selladas no entran en la ratio; precio tasado frente a alquiler de stock (no contratos nuevos).",
+ "evidencia": [
+  "output/v6/M1B/tablas/ratio_ult.csv",
+  "output/v6/M1B/tablas/gsadf.csv"
+ ]
+}

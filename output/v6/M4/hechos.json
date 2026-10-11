@@ -1,0 +1,287 @@
+[
+ {
+  "id": "V6-M4-RMSE-MUN_PRECIO_ANUAL",
+  "indicador": "RMSE espacial sellado del mejor modelo (MUN_PRECIO_ANUAL__ecm_v1), compra (precio), municipio (anual), medida ln_pm2_tasado_mun (valor tasado MIVAU municipal)",
+  "valor": 3.933,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias, 2016-2025)",
+  "cobertura": "678 observaciones",
+  "fuentes": [
+   "MIVAU valor tasado / INE ETDP / Registradores"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-PERS-MUN_PRECIO_ANUAL",
+  "indicador": "RMSE espacial sellado de la persistencia, compra (precio), municipio (anual)",
+  "valor": 6.326,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias)",
+  "cobertura": "678 observaciones",
+  "fuentes": [
+   "output/v6/M4/mejor_modelo.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-RMSE-PROV_PRECIO_ANUAL",
+  "indicador": "RMSE espacial sellado del mejor modelo (PROV_PRECIO_ANUAL__random_forest), compra (precio), provincia (anual), medida ln_pm2_tasado (valor tasado MIVAU)",
+  "valor": 2.478,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias, 2016-2025)",
+  "cobertura": "95 observaciones",
+  "fuentes": [
+   "MIVAU valor tasado / INE ETDP / Registradores"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-PERS-PROV_PRECIO_ANUAL",
+  "indicador": "RMSE espacial sellado de la persistencia, compra (precio), provincia (anual)",
+  "valor": 3.964,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias)",
+  "cobertura": "95 observaciones",
+  "fuentes": [
+   "output/v6/M4/mejor_modelo.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-RMSE-PROV_PRECIO_ANUAL_REGISTRADORES",
+  "indicador": "RMSE espacial sellado del mejor modelo (PROV_PRECIO_ANUAL_REGISTRADORES__ecm_v1), compra (precio), provincia (anual), medida ln_pm2_registradores (Registradores (robustez))",
+  "valor": 4.676,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias, 2016-2025)",
+  "cobertura": "99 observaciones",
+  "fuentes": [
+   "MIVAU valor tasado / INE ETDP / Registradores"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-PERS-PROV_PRECIO_ANUAL_REGISTRADORES",
+  "indicador": "RMSE espacial sellado de la persistencia, compra (precio), provincia (anual)",
+  "valor": 6.032,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias)",
+  "cobertura": "99 observaciones",
+  "fuentes": [
+   "output/v6/M4/mejor_modelo.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-RMSE-PROV_PRECIO_TRIM",
+  "indicador": "RMSE espacial sellado del mejor modelo (PROV_PRECIO_TRIM__bosque_bootstrap_bayesiano), compra (precio), provincia (trimestral), medida ln_pm2_tasado (valor tasado MIVAU)",
+  "valor": 1.614,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias, 2016-2025)",
+  "cobertura": "380 observaciones",
+  "fuentes": [
+   "MIVAU valor tasado / INE ETDP / Registradores"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-PERS-PROV_PRECIO_TRIM",
+  "indicador": "RMSE espacial sellado de la persistencia, compra (precio), provincia (trimestral)",
+  "valor": 1.931,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias)",
+  "cobertura": "380 observaciones",
+  "fuentes": [
+   "output/v6/M4/mejor_modelo.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-RMSE-PROV_VOL_ANUAL",
+  "indicador": "RMSE espacial sellado del mejor modelo (PROV_VOL_ANUAL__bosque_bootstrap_bayesiano), compra (volumen), provincia (anual), medida ln_cv_etdp (nan)",
+  "valor": 13.045,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias, 2016-2025)",
+  "cobertura": "99 observaciones",
+  "fuentes": [
+   "MIVAU valor tasado / INE ETDP / Registradores"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-PERS-PROV_VOL_ANUAL",
+  "indicador": "RMSE espacial sellado de la persistencia, compra (volumen), provincia (anual)",
+  "valor": 15.861,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias)",
+  "cobertura": "99 observaciones",
+  "fuentes": [
+   "output/v6/M4/mejor_modelo.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-RMSE-PROV_VOL_TRIM",
+  "indicador": "RMSE espacial sellado del mejor modelo (PROV_VOL_TRIM__bosque_bootstrap_bayesiano), compra (volumen), provincia (trimestral), medida ln_cv_etdp (nan)",
+  "valor": 11.301,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias, 2016-2025)",
+  "cobertura": "380 observaciones",
+  "fuentes": [
+   "MIVAU valor tasado / INE ETDP / Registradores"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-PERS-PROV_VOL_TRIM",
+  "indicador": "RMSE espacial sellado de la persistencia, compra (volumen), provincia (trimestral)",
+  "valor": 18.457,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias)",
+  "cobertura": "380 observaciones",
+  "fuentes": [
+   "output/v6/M4/mejor_modelo.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-RMSE-alq_distrito",
+  "indicador": "RMSE espacial sellado del mejor modelo (alquiler_distrito_gb), alquiler de stock (SERPAVI), distrito, medida ln_alq_m2_serpavi_dis (nan)",
+  "valor": 5.603,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias, 2016-2025)",
+  "cobertura": "7256 observaciones",
+  "fuentes": [
+   "SERPAVI (MIVAU)"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-PERS-alq_distrito",
+  "indicador": "RMSE espacial sellado de la persistencia, alquiler de stock (SERPAVI), distrito",
+  "valor": 6.98,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias)",
+  "cobertura": "7256 observaciones",
+  "fuentes": [
+   "output/v6/M4/mejor_modelo.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-RMSE-alq_municipio",
+  "indicador": "RMSE espacial sellado del mejor modelo (alquiler_municipio_rf), alquiler de stock (SERPAVI), municipio, medida ln_alq_m2_serpavi_mun (nan)",
+  "valor": 5.065,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias, 2016-2025)",
+  "cobertura": "3815 observaciones",
+  "fuentes": [
+   "SERPAVI (MIVAU)"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-PERS-alq_municipio",
+  "indicador": "RMSE espacial sellado de la persistencia, alquiler de stock (SERPAVI), municipio",
+  "valor": 6.506,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias)",
+  "cobertura": "3815 observaciones",
+  "fuentes": [
+   "output/v6/M4/mejor_modelo.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-RMSE-alq_provincia",
+  "indicador": "RMSE espacial sellado del mejor modelo (alquiler_provincia_gb), alquiler de stock (SERPAVI), provincia, medida ln_alq_m2_serpavi_vc (nan)",
+  "valor": 1.607,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias, 2016-2025)",
+  "cobertura": "82 observaciones",
+  "fuentes": [
+   "SERPAVI (MIVAU)"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-PERS-alq_provincia",
+  "indicador": "RMSE espacial sellado de la persistencia, alquiler de stock (SERPAVI), provincia",
+  "valor": 4.21,
+  "min": null,
+  "max": null,
+  "unidad": "log-puntos x100 (aprox. %)",
+  "periodo": "validacion sellada v6 (11 provincias)",
+  "cobertura": "82 observaciones",
+  "fuentes": [
+   "output/v6/M4/mejor_modelo.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ },
+ {
+  "id": "V6-M4-N-REL",
+  "indicador": "Variables 'relevante con seguridad' (criterios A y B pre-registrados), alquiler y compra",
+  "valor": 0,
+  "min": null,
+  "max": null,
+  "unidad": "variables",
+  "periodo": "entrenamiento 2015-2024 y sellado v6",
+  "cobertura": "3 mercados, 24 combinaciones variable-mercado",
+  "fuentes": [
+   "output/v6/M4/sintesis_variables.csv"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-11"
+ }
+]

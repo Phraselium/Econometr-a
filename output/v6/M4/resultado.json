@@ -1,0 +1,120 @@
+{
+ "rama": "v6/M4",
+ "modulo": "M4",
+ "pregunta": "Que modelo predice mejor, en la validacion sellada, el alquiler de stock y la compra (precio y volumen), y que variables se sostienen en las tres familias?",
+ "mercado": [
+  "alquiler de stock (SERPAVI)",
+  "compra (precio)",
+  "compra (volumen)"
+ ],
+ "capa": "C4",
+ "medida_precio": {
+  "principal": "valor tasado MIVAU (provincia, municipio)",
+  "robustez": [
+   "Registradores (provincia anual)"
+  ],
+  "no_usadas": "Notariado (solo Comunitat Valenciana), indice triangulado A23 e IPV INE (sin desagregacion provincial)"
+ },
+ "datos": "output/v6/M4/sellado_*.json (evaluacion unica por modelo con holdout.evaluate_v6) y resultados versionados de M1A, M1B, M2, M3A y M3B",
+ "N": {
+  "modelos_evaluados": 53,
+  "tareas": 9,
+  "filas_espaciales_prov_alquiler": 82
+ },
+ "metodo": "Prediccion a un paso con modelos ya ajustados (sin reajustar con el sellado); RMSE, MAE, cobertura del intervalo; DM-HLN (una cola, celdas provincia-periodo) con Holm frente a persistencia, AR por unidad y ECM v1; mejor modelo por RMSE espacial y estabilidad, nunca por R2.",
+ "estimacion": [
+  {
+   "tarea": "MUN_PRECIO_ANUAL",
+   "mejor_modelo": "MUN_PRECIO_ANUAL__ecm_v1",
+   "rmse_espacial": 0.039327762309530806,
+   "rmse_persistencia_espacial": 0.06325611848598264,
+   "bate_persistencia": false
+  },
+  {
+   "tarea": "PROV_PRECIO_ANUAL",
+   "mejor_modelo": "PROV_PRECIO_ANUAL__random_forest",
+   "rmse_espacial": 0.024781560123428397,
+   "rmse_persistencia_espacial": 0.03963772393356721,
+   "bate_persistencia": true
+  },
+  {
+   "tarea": "PROV_PRECIO_ANUAL_REGISTRADORES",
+   "mejor_modelo": "PROV_PRECIO_ANUAL_REGISTRADORES__ecm_v1",
+   "rmse_espacial": 0.04675937870401568,
+   "rmse_persistencia_espacial": 0.060321217521716625,
+   "bate_persistencia": false
+  },
+  {
+   "tarea": "PROV_PRECIO_TRIM",
+   "mejor_modelo": "PROV_PRECIO_TRIM__bosque_bootstrap_bayesiano",
+   "rmse_espacial": 0.01613956221837991,
+   "rmse_persistencia_espacial": 0.019310030487671364,
+   "bate_persistencia": true
+  },
+  {
+   "tarea": "PROV_VOL_ANUAL",
+   "mejor_modelo": "PROV_VOL_ANUAL__bosque_bootstrap_bayesiano",
+   "rmse_espacial": 0.13044732237851386,
+   "rmse_persistencia_espacial": 0.15860959265274735,
+   "bate_persistencia": true
+  },
+  {
+   "tarea": "PROV_VOL_TRIM",
+   "mejor_modelo": "PROV_VOL_TRIM__bosque_bootstrap_bayesiano",
+   "rmse_espacial": 0.1130114523644434,
+   "rmse_persistencia_espacial": 0.18457129904178896,
+   "bate_persistencia": true
+  },
+  {
+   "tarea": "alq_distrito",
+   "mejor_modelo": "alquiler_distrito_gb",
+   "rmse_espacial": 0.05602688597896718,
+   "rmse_persistencia_espacial": 0.0698013434812394,
+   "bate_persistencia": true
+  },
+  {
+   "tarea": "alq_municipio",
+   "mejor_modelo": "alquiler_municipio_rf",
+   "rmse_espacial": 0.050645308566293464,
+   "rmse_persistencia_espacial": 0.06506432000568406,
+   "bate_persistencia": true
+  },
+  {
+   "tarea": "alq_provincia",
+   "mejor_modelo": "alquiler_provincia_gb",
+   "rmse_espacial": 0.016065669415163825,
+   "rmse_persistencia_espacial": 0.042098051976034806,
+   "bate_persistencia": true
+  }
+ ],
+ "ic95": null,
+ "p_ajustado": "Holm dentro de cada tarea y grupo (tabla_modelos.csv)",
+ "nivel_evidencia": "EXPLORATORIO (C4): prediccion, no causalidad; ninguna variable pasa de C4",
+ "diagnosticos": {
+  "variables_relevantes_con_seguridad": [],
+  "n_relevantes_con_seguridad": 0,
+  "limitacion_validacion": "Validacion espacial nueva (11 provincias nunca usadas como validacion); temporal ya vista en v2 (otras provincias) y de forma descriptiva en v4-v5; el ultimo anio cae en la ventana sellada de v2. Las conclusiones se apoyan en la parte espacial.",
+  "persistencia_no_batida": [
+   {
+    "tarea": "PROV_VOL_TRIM",
+    "grupo": "conjunta"
+   },
+   {
+    "tarea": "PROV_VOL_TRIM",
+    "grupo": "temporal"
+   }
+  ],
+  "fallbacks": "unidades nuevas sin efecto fijo -> persistencia (columna n_fallback_persistencia)"
+ },
+ "fuera_muestra": {
+  "modelo": "alquiler_provincia_gb",
+  "rmse": 0.016065669415163825,
+  "dm_vs_ar4": {
+   "DM_HLN": -9.393597914596105,
+   "p_holm": 7.953373426734678e-14,
+   "grupo": "espacial sellado (AR por unidad = persistencia en unidades nuevas)",
+   "alquiler_provincia": true
+  }
+ },
+ "notas": "Capa C4. Alquiler (stock) y contratos nuevos van separados; contratos nuevos sin modelo. Validacion espacial nueva (11 provincias nunca usadas como validacion); temporal ya vista en v2 (otras provincias) y de forma descriptiva en v4-v5; el ultimo anio cae en la ventana sellada de v2. Las conclusiones se apoyan en la parte espacial. Fecha de la evaluacion: 2026-10-11"
+}

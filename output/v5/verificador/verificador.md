@@ -2,7 +2,7 @@
 
 Generado por `make verificador`. Cada ficha evalúa la afirmación, nunca a quien la formula, y se aplican las mismas reglas a todas. Capas: C1 hechos (≥2 fuentes independientes), C2 cotas con supuestos explícitos, C3 efectos identificados (ninguno) y C4 exploratorio. Con C4 el veredicto es como máximo «ANALIZADA, NO CONCLUYENTE». «NO ANALIZADA: FALTAN DATOS» quiere decir que no hay datos para analizar la afirmación, no que sea falsa.
 
-Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 28; NO ANALIZADA: FALTAN DATOS: 3; PARCIALMENTE: 3; CONTRADICHA: 1; NO RESPALDADA: 1.
+Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 30; NO ANALIZADA: FALTAN DATOS: 3; PARCIALMENTE: 3; CONTRADICHA: 1; NO RESPALDADA: 1.
 
 | Id | Afirmación | Veredicto | Capa |
 |---|---|---|---|
@@ -42,6 +42,8 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 28; NO ANALIZADA: FALTAN DATO
 | T2-V1 | El envejecimiento resolvera el problema de la vivienda. | ANALIZADA, NO CONCLUYENTE | C4 |
 | T2-V2 | Las herencias liberaran vivienda suficiente. | ANALIZADA, NO CONCLUYENTE | C4 |
 | T4-V1 | Al ritmo actual el déficit se cerrará en pocos años. | NO RESPALDADA | C2 |
+| M4-V3 | El alquiler y la compra se mueven por los mismos factores. | ANALIZADA, NO CONCLUYENTE | C4 |
+| M4-V4 | La ratio precio/alquiler indica sobrevaloracion. | ANALIZADA, NO CONCLUYENTE | C4 |
 
 ## Fichas sustituidas en v5
 
@@ -638,3 +640,35 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 28; NO ANALIZADA: FALTAN DATO
 | Regla del veredicto | Criterio T4: la dirección sube a C2 solo si el signo se mantiene en TODOS los escenarios que cubren el rango plausible de terminadas, hogares, bajas y liberadas; si no, C4. La magnitud es siempre C4 (con C4 el veredicto es como máximo «ANALIZADA, NO CONCLUYENTE»). Actualiza B2-V1: misma afirmación. |
 | Límites | Terminadas aproximadas con libres terminadas más calificaciones definitivas de protegida; el retardo de la cartera es nacional; el escenario de 2006-2007 queda fuera del rango plausible y se informa aparte; las bajas y las liberadas son C4 de fuente única; los rangos no son intervalos de confianza. |
 | Evidencia | output/v5_1/T4/tablas/recuento_por_etapas.csv, output/v5_1/T4/tablas/direccion_provincial_2030.csv, output/v5_1/T4/resultado.json |
+
+## M4-V3 · Factores comunes a alquiler y compra
+
+**Afirmación:** El alquiler y la compra se mueven por los mismos factores.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | Variables comunes (6): pesan en ambos mercados ln_pob; solo en alquiler share_ext_pob; solo en compra ln_pib_pc (criterio: apoyo en al menos una familia o PIP>=0,5). Alquiler (stock SERPAVI) y compra (valor tasado) se comparan por separado; no hay contratos nuevos en el contraste. |
+| Intervalo | Ver sintesis_variables.csv (PIP, IC de M1 y rango del multiverso por mercado) |
+| Cota | — |
+| Literatura | No aplica. |
+| Regla del veredicto | Una coincidencia parcial de variables con apoyo debil (C4) no permite afirmar ni negar que ambos mercados compartan factores. |
+| Límites | Validacion espacial nueva (11 provincias nunca usadas como validacion); temporal ya vista en v2 (otras provincias) y de forma descriptiva en v4-v5; el ultimo anio cae en la ventana sellada de v2. Las conclusiones se apoyan en la parte espacial. Las dos medidas tienen distinta cobertura temporal y frecuencia. |
+| Evidencia | output/v6/M4/tabla_modelos.csv, output/v6/M4/mejor_modelo.csv, output/v6/M4/sintesis_variables.csv, output/v6/M4/comparacion_mercados.csv |
+
+## M4-V4 · Ratio precio/alquiler y sobrevaloracion
+
+**Afirmación:** La ratio precio/alquiler indica sobrevaloracion.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **ANALIZADA, NO CONCLUYENTE** |
+| Capa de la evidencia | C4 |
+| Magnitud | Ratio precio/alquiler anual (valor tasado / SERPAVI), 39 provincias de entrenamiento, 2023: mediana 17,1 anos de alquiler (rango 12,4-23,8); rentabilidad bruta mediana 5,84 %. Contraste de burbuja GSADF por CCAA: 0 de 11 con episodio explosivo (p BH<0,05). No existe un nivel de referencia identificado con el que la ratio senale sobrevaloracion. |
+| Intervalo | Brecha rentabilidad menos coste de uso (g=2 %): mediana 1,56 pp, rango -0,07 a 3,79 pp |
+| Cota | — |
+| Literatura | No aplica. |
+| Regla del veredicto | La ratio es una descripcion (C4) sin umbral de equilibrio validado; el contraste GSADF tiene pocas provincias por CCAA. |
+| Límites | Validacion espacial nueva (11 provincias nunca usadas como validacion); temporal ya vista en v2 (otras provincias) y de forma descriptiva en v4-v5; el ultimo anio cae en la ventana sellada de v2. Las conclusiones se apoyan en la parte espacial. Las provincias selladas no entran en la ratio; precio tasado frente a alquiler de stock (no contratos nuevos). |
+| Evidencia | output/v6/M1B/tablas/ratio_ult.csv, output/v6/M1B/tablas/gsadf.csv |

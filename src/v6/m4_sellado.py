@@ -203,14 +203,14 @@ def pred_dl_m4(ruta, ficha, P, obj):
 
 
 def fe_base(trn, val, xs, tgt):
-    """EF de unidad con pendientes comunes (como m3b_lib.fe_baseline); unidades nuevas -> intercepto medio."""
+    """EF de unidad con pendientes comunes (como m3b_lib.fe_baseline); unidades nuevas -> NaN (el EF no esta identificado)."""
     A_ = trn[xs + [tgt]].to_numpy(float)
     u = pd.factorize(trn.unit)[0]
     Mt = A_ - pd.DataFrame(A_).groupby(u).transform("mean").to_numpy()
     b = np.linalg.lstsq(Mt[:, :-1], Mt[:, -1], rcond=None)[0]
     mu = trn.groupby("unit")[xs + [tgt]].mean()
     a_i = mu[tgt] - mu[xs].to_numpy() @ b
-    ai = val.unit.map(a_i).fillna(float(a_i.mean())).to_numpy()
+    ai = val.unit.map(a_i).to_numpy(float)  # unidad nueva -> NaN -> persistencia en `resumir` (declarado)
     pr = ai + val[xs].to_numpy(float) @ b
     return pr + val["y1"].to_numpy(float) if tgt == "dy" else pr
 
@@ -344,7 +344,8 @@ def s_ref_de(tid, rol, mid):
         m = m[(m.nivel == TAREAS[tid]["nivel"]) & (m.muestra == ("con_DL" if TAREAS[tid]["nivel"] == "distrito" else "sin_DL"))]
         nombre = {"persistencia": "persistencia", "ar_unidad": "AR_unidad", "ecm_v1": "ECM_v1_aprox", "m1_econ": "M1A_TWFE_tendencia"}.get(mid)
         if rol == "modelo":
-            return float(json.loads((RAIZ / "output/v6/M3A/modelos" / f"{mid}.json").read_text()).get("rmse_bloques_espaciotemporales"))
+            fam = mid.split("_", 2)[2]
+            return float(m[m.modelo == {"mixto": "mixto_jerarquico"}.get(fam, fam)].rmse.iloc[0])
         return float(m[m.modelo == nombre].rmse.iloc[0])
     m = pd.read_csv(RAIZ / "output/v6/M3B/tablas/modelos_metricas.csv")
     m = m[m.setting == tid]

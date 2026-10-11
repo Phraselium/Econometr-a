@@ -1,0 +1,7 @@
+variable,pesa_alquiler,pesa_compra,PIP_alq,PIP_compra,dir_alq,dir_compra,lectura
+ln_iniciadas_libres,False,False,0.0890654,0.123584,negativa,positiva,no pesa en ninguno
+ln_pib_pc,False,True,0.0971737,0.843649,positiva,positiva,pesa en compra y no en alquiler
+ln_pob,True,True,0.999995,0.763327,positiva,positiva,pesa en ambos
+ln_terminadas_libres,False,False,0.168819,0.116285,negativa,negativa,no pesa en ninguno
+ln_vut,False,False,0.116037,0.0954112,negativa,positiva,no pesa en ninguno
+share_ext_pob,True,False,0.297113,0.308326,positiva,positiva,pesa en alquiler y no en compra

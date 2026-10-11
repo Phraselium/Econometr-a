@@ -1,12 +1,12 @@
-# Vivienda España — v5.1 ajuste fino (V1-V5 cerradas: no rehacer lo aprobado; v5.1 en docs/v5_1, src/v5_1, output/v5_1; entregables en output/v5)
+# Vivienda España — v6 alquiler y compraventa (V1-V5.1 cerradas: no rehacer lo aprobado; v6 en docs/v6, src/v6, output/v6; entregables en output/v5)
 
 - Idioma: español. `make all` reproducible SIN red; SEED=20261010 en todo lo aleatorio.
-- Al empezar: leer docs/v5_1/estado.md, docs/v5_1/plan.md, docs/v5_1/decisiones.md y docs/v5/backlog.md.
+- Al empezar: leer docs/v6/estado.md, docs/v6/plan.md, docs/v6/decisiones.md, docs/v6/hipotesis.md y docs/MAPA.md.
 - Capas v3: C1 HECHOS (≥2 fuentes) · C2 COTAS (Manski, supuestos explícitos) · C3 EFECTOS (pretendencias, placebos, sensibilidad, sellado) · C4 EXPLORATORIO. Nunca promover de capa.
 - Neutralidad: veredicto sobre la afirmación, nunca sobre quién la dice; se evalúan afirmaciones e instrumentos, nunca partidos ni personas; sin lenguaje valorativo ni partidista. `make check` en cada puerta.
-- Tras cada tarea: actualizar docs/v5_1/estado.md (hecho / siguiente / tokens de subagentes).
-- Decisiones → docs/v5_1/decisiones.md; bloqueos reales → docs/v5_1/bloqueos.md; fuentes inaccesibles → docs/v5_1/fuentes_fallidas.md (endpoint, edición y fecha verificados).
-- Subagentes devuelven: rutas + resumen ≤200 palabras + output/v5_1/<tarea>/resultado.json. Nunca datos crudos.
+- Tras cada tarea: actualizar docs/v6/estado.md (hecho / siguiente / tokens de subagentes).
+- Decisiones → docs/v6/decisiones.md; bloqueos reales → docs/v6/bloqueos.md; fuentes inaccesibles → docs/v6/fuentes_fallidas.md (endpoint, edición y fecha verificados).
+- Subagentes devuelven: rutas + resumen ≤200 palabras + output/v6/<módulo>/resultado.json. Nunca datos crudos.
 - resultado.json: {rama, pregunta, capa, datos, N, metodo, estimacion, ic95, p_ajustado, nivel_evidencia, diagnosticos, fuera_muestra{modelo, rmse, dm_vs_ar4}, notas}.
 - data/raw: solo lectura. data/sealed: SOLO vía src/holdout.py (registra cada acceso; una evaluación por hipótesis confirmatoria).
 - Ficheros >50 MB: LFS o .gitignore con checksum en data/CHECKSUMS.sha256.
@@ -14,9 +14,10 @@
 - Comparar siempre en la MISMA muestra contra AR(4) y ECM v1; validación temporal en bloques con embargo.
 - Escala de evidencia: CAUSAL > ASOCIACIÓN ROBUSTA > EXPLORATORIO > DESCRIPTIVO. Sin lenguaje causal por debajo de CAUSAL.
 - Referencias: VERIFICADA (DOI Crossref + cuartil Scimago) o NO VERIFICADA / «cuartil no verificado».
-- Ramas: worktree ../wt-<rama> (r5.1/<rama>, data/ enlazada; máx. 3); src/econ_utils.py y data/ son solo lectura para las ramas.
+- Ramas: worktree ../wt-<rama> (r6/<rama>, data/ enlazada; máx. 3); src/econ_utils.py y data/ son solo lectura para las ramas.
 - Interpolaciones y fuentes no validadas se marcan y solo entran en robustez; si dos métodos discrepan, se reportan ambos.
 - Push solo a la rama remota designada (claude/housing-price-spain-econometric-95dhj3).
 - v5: toda cifra de entregables sale de output/v5/cifras_clave.csv (con fecha del dato); ningún script lee ficheros no versionados; nada no oficial en recuentos; suma provincial = nacional.
 - Autor: Borja Romero, economista (firma individual, independiente). Resúmenes también en inglés en working paper y artículos.
 - v5.1: las viviendas liberadas por envejecimiento NUNCA se restan de la necesidad (la proyección de hogares del INE ya las descuenta); `make check` lo comprueba.
+- v6: validación sellada NUEVA (src/holdout.py: sellar_v6, evaluate_v6; último año + 11 provincias por bloques de CCAA); predicción ≠ causalidad: nada causal desde SHAP o importancias; cada resultado de compra declara su medida de precio.

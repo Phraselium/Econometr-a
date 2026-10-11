@@ -359,9 +359,109 @@ def _log_md(utc, hipotesis, rama, paneles, texto):
         f.write(f"| {utc} | {hipotesis} | {rama} | {', '.join(paneles)} | {texto} |\n")
 
 
+# ============================================================================== v6
+# Validación sellada NUEVA de v6 (docs/v6/decisiones.md, docs/v6/hipotesis.md), distinta de v2 y v3:
+# - temporal: el último año disponible de cada panel (lo indica la rama al sellar);
+# - transversal, por bloques espaciales: 20 % de las provincias, por bloques completos de CCAA, excluidas las CCAA con
+#   provincias selladas en v2; los municipios y distritos de esas provincias quedan sellados (≈20 % en cada nivel; una
+#   sola partición espacial, sin fuga entre niveles); los distritos sellados en v3 se excluyen de todo uso.
+SEED_V6 = SEED + 6
+FRACCION_V6 = 0.20
+CCAA_PROV = {"01": "16", "02": "08", "03": "10", "04": "01", "05": "07", "06": "11", "07": "04", "08": "09", "09": "07",
+             "10": "11", "11": "01", "12": "10", "13": "08", "14": "01", "15": "12", "16": "08", "17": "09", "18": "01",
+             "19": "08", "20": "16", "21": "01", "22": "02", "23": "01", "24": "07", "25": "09", "26": "17", "27": "12",
+             "28": "13", "29": "01", "30": "14", "31": "15", "32": "12", "33": "03", "34": "07", "35": "05", "36": "12",
+             "37": "07", "38": "05", "39": "06", "40": "07", "41": "01", "42": "07", "43": "09", "44": "02", "45": "08",
+             "46": "10", "47": "07", "48": "16", "49": "07", "50": "02"}
+CCAA_PROV.update({"51": "18", "52": "19"})
+
+
+def provincias_selladas_v6() -> list[str]:
+    """20 % de las 52 provincias por bloques completos de CCAA (orden aleatorio con SEED_V6), sin CCAA que contengan
+    provincias selladas en v2 ni Ceuta/Melilla. Se añaden bloques mientras no se supere el 20 % en más de 2 provincias."""
+    excl = {CCAA_PROV[p] for p in provincias_selladas()} | {"18", "19"}
+    bloques: dict[str, list[str]] = {}
+    for prov, cc in sorted(CCAA_PROV.items()):
+        if cc not in excl:
+            bloques.setdefault(cc, []).append(prov)
+    objetivo = FRACCION_V6 * len(PROVINCIAS)
+    rng = np.random.default_rng(SEED_V6)
+    sel: list[str] = []
+    claves = sorted(bloques)
+    for i in rng.permutation(len(claves)):
+        b = bloques[claves[i]]
+        if len(sel) >= objetivo:
+            break
+        if len(sel) + len(b) <= objetivo + 2:
+            sel += b
+    return sorted(sel)
+
+
+def municipio_sellado_v6(cod_mun: str) -> bool:
+    """Municipio (5 dígitos) sellado si su provincia lo está: una sola partición espacial para todos los niveles
+    (≈20 % de provincias, municipios y distritos), sin fuga entre niveles en modelos jerárquicos."""
+    return str(cod_mun).zfill(5)[:2] in set(provincias_selladas_v6())
+
+
+def distrito_sellado_v6(cod_dist: str) -> bool | None:
+    """Distrito (7 dígitos) sellado si su provincia lo está. None si fue sellado en v3: se EXCLUYE de todo uso en v6."""
+    d = str(cod_dist).zfill(7)
+    if d in set(distritos_sellados_v3()):
+        return None
+    return d[:2] in set(provincias_selladas_v6())
+
+
+def sellar_v6(df: pd.DataFrame, nombre: str, nivel: str, col_anio: str, ultimo_anio: int,
+              col_prov: str | None = None, col_mun: str | None = None, col_dist: str | None = None) -> pd.DataFrame:
+    """Separa un panel v6: escribe la parte sellada en data/sealed/v6_<nombre>.csv (sin devolverla) y devuelve SOLO la
+    de entrenamiento. Sellado = año >= ultimo_anio, o unidad sellada según el nivel ('provincia', 'municipio',
+    'distrito'/'seccion'). Los distritos sellados en v3 se descartan de ambas partes."""
+    a = pd.to_numeric(df[col_anio], errors="coerce") >= ultimo_anio
+    if nivel == "provincia":
+        u = df[col_prov].astype(str).str.zfill(2).isin(set(provincias_selladas_v6()))
+        fuera = pd.Series(False, index=df.index)
+    elif nivel == "municipio":
+        u = df[col_mun].astype(str).str.zfill(5).map(municipio_sellado_v6).astype(bool)
+        fuera = pd.Series(False, index=df.index)
+    elif nivel in ("distrito", "seccion"):
+        dd = df[col_dist].astype(str).str.zfill(10 if nivel == "seccion" else 7).str[:7]
+        r = dd.map({d: distrito_sellado_v6(d) for d in dd.unique()})
+        fuera = r.isna()
+        u = r.fillna(False).astype(bool)
+    else:
+        raise ValueError(nivel)
+    m = (a | u) & ~fuera
+    SEALED.mkdir(parents=True, exist_ok=True)
+    df[m].to_csv(SEALED / f"v6_{nombre}.csv", index=False)
+    return df[~m & ~fuera].copy()
+
+
+def evaluate_v6(modelo_id: str, fn, rama: str, nombres: list[str]):
+    """Abre los paneles v6 sellados UNA vez por modelo/hipótesis (registrado antes de leer). fn(dict) -> dict."""
+    clave = f"v6:{modelo_id}"
+    if any(a["hipotesis"] == clave for a in _accesos()):
+        raise PermissionError(f"{clave} ya abrió la muestra sellada v6 (una sola vez).")
+    apertura = {"utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "evento": "apertura",
+                "hipotesis": clave, "rama": rama, "paneles": [f"v6_{n}" for n in nombres]}
+    with open(LOG, "a") as f:
+        f.write(json.dumps(apertura, ensure_ascii=False) + "\n")
+    _log_md(apertura["utc"], clave, rama, apertura["paneles"], "APERTURA (antes de leer)")
+    sellado = {n: pd.read_csv(SEALED / f"v6_{n}.csv", dtype={c: str for c in ("codigo", "cod_prov", "cod_mun", "distrito",
+                                                                           "seccion", "cusec")}) for n in nombres}
+    res = fn(sellado)
+    reg = {**apertura, "utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "evento": "evaluacion",
+           "resultado": res}
+    with open(LOG, "a") as f:
+        f.write(json.dumps(reg, ensure_ascii=False, default=str) + "\n")
+    _log_md(reg["utc"], clave, rama, apertura["paneles"], json.dumps(res, ensure_ascii=False, default=str)[:300])
+    return res
+
+
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         print(json.dumps(build(), indent=2, ensure_ascii=False))
+    elif len(sys.argv) > 1 and sys.argv[1] == "provincias_v6":
+        print(provincias_selladas_v6())
     elif len(sys.argv) > 1 and sys.argv[1] == "provincias":
         print(provincias_selladas())
     else:

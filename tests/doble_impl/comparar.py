@@ -31,6 +31,25 @@ FUNCIONES = {
 }
 
 
+DIAG = {
+    "dh_2125": "Reproduce. Sin huecos relevantes.",
+    "terminadas_1924": "Reproduce. Hueco menor: protegidas ausentes se tratan como 0 (no declarado).",
+    "L3-DEF-2124-SINBAJAS": "Reproduce (8 variantes x 3 fuentes). Hueco menor: el Catastro se suma sin filtrar por regimen (solo se dice 'valor por periodo').",
+    "L3-DEF-2124-CONBAJAS": "Reproduce. Bajas = 0,2 % x suma parque 2020-2023 = 214.115,8 (el anexo redondea a 214.116).",
+    "A23-A2": "Reproduce. Hueco menor: base del IPVA 'Contrato existente' (2021=100) solo implicita en '/100'; criterio de empate del nucleo no definido.",
+    "A23-P2": "Reproduce. Hueco: el conjunto de candidatos del nucleo no se define; se asume que el IPV queda fuera por la frase del anexo.",
+    "A23-A10": "Reproduce (28,46 -> 28,5). Pesos por clave normalizada (sin acentos, antes de '/'): sin ella 'Valencia/Valencia' no cruza.",
+    "R1C-001": "Reproduce. Sin huecos relevantes.",
+    "B4-v3-vut-cantidad": "Reproduce. Hueco: los nombres de serie ECV para 'alquiler a precio de mercado' e 'inferior' no se dan.",
+    "latente_convivencia": "Reproduce. Hueco: no se dice que la serie JSON tiene un dato por anyo (FK_Periodo 28) ni que el redondeo a miles es round() sobre extremos.",
+    "B1-H4": "Reproduce. Las colisiones de clave (Navarra, Madrid, Asturias, Murcia, Rioja) se resuelven con 'primera fila por clave y anyo'.",
+    "E-B1-F": "Reproduce (mismo calculo que B1-H4).",
+    "D1-H11": "Reproduce. Hueco: metodo de percentil (lineal, numpy por defecto) no declarado; la clase se toma de clase_2021_2025.",
+    "D1-H12": "Reproduce. Mismo hueco de percentil; con recorte a >=0.",
+    "B1-H1": "Reproduce desde B1_nacional.csv. Hueco menor: nombres de columnas de la tabla (componente,min,central,max) no se indican.",
+}
+
+
 def _num(x):
     try:
         v = float(x)
@@ -68,7 +87,7 @@ def comparar() -> pd.DataFrame:
             clase = "no coincide"
         filas.append({
             "id": id_, "pub_valor": pv, "pub_min": pl, "pub_max": ph,
-            "l2_valor": v, "l2_min": lo, "l2_max": hi, "clase": clase, "diagnostico": "",
+            "l2_valor": v, "l2_min": lo, "l2_max": hi, "clase": clase, "diagnostico": DIAG[id_],
         })
     return pd.DataFrame(filas)
 

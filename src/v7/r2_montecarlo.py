@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT / "src" / "v7"))
 import panel_tools as pt  # noqa: E402
 
 SEED = pt.SEED
+ESTS = ["MG", "PMG", "PMG_sandwich", "PMG_boot", "DFE", "CS-ARDL", "CS-DL", "MG_dm", "PMG_dm"]
 N, T = 17, 78
 TH = np.array([1.0, -0.5])
 SCEN = {  # coint, factor, theta heterogeneo
@@ -56,8 +57,9 @@ def simulate(rng, coint=True, factor=False, hetero=False, N=N, T=T):
     ys = np.zeros((N, TT))  # serie estacionaria (potencia de CIPS)
     for t in range(1, TT):
         ys[:, t] = 0.7 * ys[:, t - 1] + (ky * f[t] if factor else 0) + rng.standard_normal(N)
+    yrw = np.cumsum(rng.standard_normal((N, TT)) + (ky[:, None] * f[None, :] if factor else 0), 1)  # RW puro (tamano CIPS)
     sl = slice(BURN, None)
-    return y[:, sl], x[:, sl, :], ys[:, sl], phi, th
+    return y[:, sl], x[:, sl, :], ys[:, sl], phi, th, yrw[:, sl]
 
 
 _SIM = {}
@@ -74,9 +76,19 @@ def one_rep(args):
     scen, r, B, sims = args
     coint, factor, hetero = SCEN[scen]
     rng = np.random.default_rng([SEED, r, list(SCEN).index(scen)])
-    y, X, ys, phi, th = simulate(rng, coint, factor, hetero)
+    y, X, ys, phi, th, yrw = simulate(rng, coint, factor, hetero)
     out = {"scen": scen, "r": r}
-    res = {"MG": pt.mg(y, X), "PMG": pt.pmg(y, X), "DFE": pt.dfe(y, X), "CS-ARDL": pt.cs_ardl(y, X)}
+    pm = pt.pmg(y, X)
+    res = {"MG": pt.mg(y, X), "PMG": pm, "DFE": pt.dfe(y, X), "CS-ARDL": pt.cs_ardl(y, X), "CS-DL": pt.cs_dl(y, X),
+           "PMG_sandwich": dict(pm, se_theta=np.sqrt(np.diag(pm["V_sandwich"])))}
+    if coint and not factor and not hetero or scen.startswith("B"):
+        if r < 100:
+            res["PMG_boot"] = dict(pm, se_theta=pt.pmg_bootstrap(y, X, B=49, seed=SEED + r)["se_theta"])
+    yd, Xd = pt.cs_demean(y, X)
+    pmd = pt.pmg(yd, Xd)
+    res["MG_dm"], res["PMG_dm"] = pt.mg(yd, Xd), pmd
+    out["MG_jk_phi"] = pt.jackknife_phi(pt.mg, y, X)
+    out["DFE_jk_phi"] = pt.jackknife_phi(pt.dfe, y, X)
     truth = th.mean(0)
     for m, o in res.items():
         for j in range(2):
@@ -85,14 +97,16 @@ def one_rep(args):
         out[f"{m}_phi"] = o["phi"]
     out["phi_true"] = phi.mean()
     out["th_true0"], out["th_true1"] = truth
-    h = pt.hausman_mg_pmg(res["MG"], res["PMG"])
-    out["haus_p"] = h["p"]
+    out["haus_p"] = pt.hausman_mg_pmg(res["MG"], pm, "info", "difference")["p"]
+    out["haus_sw_p"] = pt.hausman_mg_pmg(res["MG"], pm, "sandwich", "difference")["p"]
+    out["haus_vmg_p"] = pt.hausman_mg_pmg(res["MG"], pm, "info", "mg")["p"]
     w = pt.westerlund(y, X, 1, B, seed=SEED + r)
     for k_, v in w["p"].items():
         out[f"WL_{k_}_p"] = v
     ped = pt.pedroni(y, X, 1, sim=sims[1])
     out["PED_panel_p"], out["PED_group_p"] = ped["p"]["panel_adf"], ped["p"]["group_adf"]
     out["CIPS_p"] = pt.sim_pvalue(pt.cips(y, 1), sims[0])
+    out["CIPS_rw_p"] = pt.sim_pvalue(pt.cips(yrw, 1), sims[0])
     out["CIPS_stat_p"] = pt.sim_pvalue(pt.cips(ys, 1), sims[0])  # potencia sobre serie estacionaria
     return out
 
@@ -110,9 +124,11 @@ def summarize(df):
     recs = []
     for s, g in df.groupby("scen"):
         coint, factor, hetero = SCEN[s]
-        for m in ["MG", "PMG", "DFE", "CS-ARDL"]:
-            if not coint:
+        g0 = g
+        for m in ESTS:
+            if not coint or f"{m}_th0" not in g0 or g0[f"{m}_th0"].isna().all():
                 continue
+            g = g0.dropna(subset=[f"{m}_th0"])
             for j in range(2):
                 est, se, tr = g[f"{m}_th{j}"], g[f"{m}_se{j}"], g[f"th_true{j}"]
                 err = est - tr
@@ -121,15 +137,23 @@ def summarize(df):
                                  sesgo=err.mean(), sesgo_rel=err.mean() / abs(tr.mean()), rmse=np.sqrt((err ** 2).mean()),
                                  cobertura=cov, tasa_rechazo=np.nan))
             e = g[f"{m}_phi"] - g["phi_true"]
+            if m in ("MG", "DFE"):
+                ej = g[f"{m}_jk_phi"] - g["phi_true"]
+                recs.append(dict(scen=s, herramienta=m + "_jackknife", metrica="phi_media", valor_verdadero=g["phi_true"].mean(),
+                                 sesgo=ej.mean(), sesgo_rel=ej.mean() / abs(g["phi_true"].mean()), rmse=np.sqrt((ej ** 2).mean())))
             recs.append(dict(scen=s, herramienta=m, metrica="phi_media", valor_verdadero=g["phi_true"].mean(),
                              sesgo=e.mean(), sesgo_rel=e.mean() / abs(g["phi_true"].mean()),
                              rmse=np.sqrt((e ** 2).mean()), cobertura=np.nan, tasa_rechazo=np.nan))
+        g = g0
         tests = {"Westerlund_Gt": "WL_Gt_p", "Westerlund_Ga": "WL_Ga_p", "Westerlund_Pt": "WL_Pt_p",
                  "Westerlund_Pa": "WL_Pa_p", "Pedroni_panelADF": "PED_panel_p", "Pedroni_groupADF": "PED_group_p",
-                 "Hausman_MG_PMG": "haus_p"}
+                 "Hausman_info": "haus_p", "Hausman_sandwich": "haus_sw_p",
+                 "Hausman_VMG": "haus_vmg_p"}
         for nm, c in tests.items():
             recs.append(dict(scen=s, herramienta=nm, metrica="rechazo_5%", tasa_rechazo=(g[c] < 0.05).mean()))
-        recs.append(dict(scen=s, herramienta="CIPS_sobre_y_I(1)", metrica="rechazo_5%",
+        recs.append(dict(scen=s, herramienta="CIPS_RW_puro", metrica="rechazo_5%",
+                         tasa_rechazo=(g["CIPS_rw_p"] < 0.05).mean()))
+        recs.append(dict(scen=s, herramienta="CIPS_sobre_y_del_DGP", metrica="rechazo_5%",
                          tasa_rechazo=(g["CIPS_p"] < 0.05).mean()))
         recs.append(dict(scen=s, herramienta="CIPS_sobre_serie_estacionaria", metrica="rechazo_5%",
                          tasa_rechazo=(g["CIPS_stat_p"] < 0.05).mean()))
@@ -147,31 +171,36 @@ def veredictos(sm):
     que 0,10 pero <= 0,10 + 1 EE-MC (0,015) o menor que 0,02 con potencia >= 0,90 -> 'apta con reservas'; mas
     alejado -> 'no apta'."""
     v = {}
-    for m in ["MG", "PMG", "DFE", "CS-ARDL"]:
+    for m in ESTS:
         g = sm[(sm.herramienta == m) & sm.scen.isin(EST_OK) & sm.metrica.str.startswith("theta")]
+        if g.empty:
+            continue
         bias = g.sesgo_rel.abs().max()
         cov = g.cobertura
-        e = sm[(sm.herramienta == m) & (sm.scen == "E_coint_theta_heterogeneo") & (sm.metrica == "theta1")].iloc[0]
+        e = sm[(sm.herramienta == m) & (sm.scen == "E_coint_theta_heterogeneo") & (sm.metrica == "theta1")]
         ph = sm[(sm.herramienta == m) & sm.scen.isin(EST_OK) & (sm.metrica == "phi_media")].sesgo_rel.abs().max()
         txt = (f"max|sesgo rel| theta={bias:.3f}, cobertura {cov.min():.3f}-{cov.max():.3f}, "
-               f"max|sesgo rel| media phi={ph:.3f}; con theta_i heterogeneo (E): sesgo rel theta1={e.sesgo_rel:.3f}, "
-               f"cobertura={e.cobertura:.3f}")
+               f"max|sesgo rel| media phi={ph:.3f}")
+        if len(e):
+            txt += f"; con theta_i heterogeneo (E): sesgo rel theta1={e.iloc[0].sesgo_rel:.3f}, cobertura={e.iloc[0].cobertura:.3f}"
         if bias > 0.10:
             v[m] = f"no apta: sesgo relativo de theta fuera de +-10 % ({txt})"
         elif ((cov < 0.90) | (cov > 0.98)).any():
             v[m] = f"apta con reservas: punto apto pero IC95 infra/sobre-cubre ({txt})"
         else:
             v[m] = f"apta ({txt})"
-        if m != "CS-ARDL" and ph > 0.10:
-            v[m] += f". Reserva adicional: sesgo de la media de phi > 10 % ({ph:.3f})"
+        if m in ("MG", "DFE") and ph > 0.10:
+            j = sm[(sm.herramienta == m + "_jackknife") & sm.scen.isin(EST_OK)].sesgo_rel.abs().max()
+            v[m] += (f". Sesgo de muestra finita CONOCIDO de phi (Hurwicz-Nickell, T=78): {ph:.3f}; "
+                     f"con jackknife por mitades temporales {j:.3f}")
     def power(h, scs):
         return sm[(sm.herramienta == h) & sm.scen.isin(scs) & (sm.metrica == "rechazo_5%")].tasa_rechazo
     h0 = ["C_sin_coint_sin_factor", "D_sin_coint_con_factor"]
     h1 = ["A_coint_sin_factor", "B_coint_con_factor", "E_coint_theta_heterogeneo"]
-    for h in sorted(set(sm.herramienta) - {"MG", "PMG", "DFE", "CS-ARDL"}):
+    for h in sorted(set(sm.herramienta) - set(ESTS) - {"MG_jackknife", "DFE_jackknife"}):
         if h.startswith("Hausman"):
             siz, pw = power(h, EST_OK), power(h, ["E_coint_theta_heterogeneo"])
-        elif h == "CIPS_sobre_serie_estacionaria":
+        elif h in ("CIPS_sobre_serie_estacionaria", "CIPS_sobre_y_del_DGP"):
             continue
         elif h.startswith("CIPS"):
             siz, pw = power(h, list(SCEN)), power("CIPS_sobre_serie_estacionaria", list(SCEN))
@@ -184,7 +213,8 @@ def veredictos(sm):
         elif hi <= 0.10 + MCSE and lo >= 0.02 - 1e-9 or (hi <= 0.10 and pw.min() >= 0.90):
             v[h] = f"apta con reservas: {'conservador' if hi <= 0.10 else 'tamano algo > 0,10'} ({txt})"
         else:
-            v[h] = f"no apta: tamano fuera de [0,02; 0,10] ({txt})"
+            v[h] = (f"solo diagnostico (tamano fuera de [0,02; 0,10]; {txt})" if h.startswith("Hausman")
+                    else f"no apta: tamano fuera de [0,02; 0,10] ({txt})")
     return v
 
 
@@ -221,16 +251,23 @@ def escribir_doc(sm, tiempo=None):
         L.append("")
     L += ["## Juicio de aptitud por herramienta", "", "| herramienta | veredicto |", "|---|---|"]
     L += [f"| {k} | {x} |" for k, x in v.items()]
-    L += ["", "## Lectura y limites",
-          "- Rechazo en C/D = tamano; rechazo en A/B/E = potencia. Para CIPS, potencia = rechazo sobre una serie AR(0,7) estacionaria.",
-          "- En el DGP la y de A, B y E es I(1) pero con un componente estacionario grande: CIPS (p=1, solo constante) sobre-rechaza ahi; "
-          "no se probaron retardos mayores ni la version con tendencia.",
-          "- Westerlund y Pedroni: p por simulacion/bootstrap, no por momentos tabulados. Westerlund usa una variante "
-          "(pooled ponderado 1/sigma_i^2, sin leads de dx), no el codigo original; en estos DGP queda conservador.",
-          "- PMG: EE de theta por informacion; infracubre incluso con theta comun (T=78, phi_i heterogeneo, ARDL(2,1)). Con theta_i heterogeneo (E) "
-          "el PMG sesga y el Hausman tiene potencia limitada.",
-          "- CS-ARDL con p_T=floor(T^{1/3})=4 anade 3x5=15+ regresores a ~73 observaciones por unidad: coste de grados de libertad.",
-          "- Resultados de simulacion con dos parametros y 200 replicas; no extrapolar a otros DGP. Ninguna cifra procede de datos reales.", ""]
+    L += ["", "## Lectura y limites (revision tras correcciones)",
+          "- Rechazo en C/D = tamano; en A/B/E = potencia. CIPS: tamano sobre un paseo aleatorio puro (N=17, T=78; con y sin factor) = 0,055-0,080 "
+          "(apta). Sobre la y del DGP (I(1) mas un componente estacionario grande) rechaza 0,11-0,56: no es un problema de CIPS sino de ese DGP, "
+          "y se informa como `CIPS_sobre_y_del_DGP` solo a titulo informativo. Potencia: serie AR(0,7). No se probaron truncacion K1/K2 ni tendencia.",
+          "- PMG: EE por informacion cubre 0,86-0,885; el sandwich Huber-White cubre peor (0,79-0,84); el bootstrap por unidades (B=49, solo 100 replicas "
+          "en A y B) cubre 0,87-0,92: el mas cercano a [0,90; 0,98] pero sin cumplirlo en B. Para inferencia con datos reales: `pmg_bootstrap` con B>=199 "
+          "y tratar el IC como aproximado (reserva). Con theta_i heterogeneo (E) el PMG sesga 16-43 % y cubre 0,17-0,39: usar MG si el Hausman rechaza.",
+          "- CS-ARDL y CS-DL: la revision de la implementacion (p_T=floor(T^(1/3))=4, theta_i=-b_x/phi, media MG) no halla error; ambas sesgan theta2 un 17-22 % "
+          "(coste de grados de libertad con T=78 y ~20 regresores) y cubren 0,72-0,84: NO APTAS. No usar. La dependencia transversal se trata con "
+          "demeaning transversal (`cs_demean`): MG_dm tiene sesgo <=7 % y cobertura 0,87-0,94 (apta con reservas); PMG_dm cubre 0,83-0,87. "
+          "En este DGP el factor es estacionario y MG/PMG sin ajuste ya tienen sesgo <=6 %.",
+          "- Hausman: la version V_MG - V_PMG (info o sandwich) sobre-rechaza (0,065-0,135): SOLO DIAGNOSTICO. La version con la varianza no parametrica de MG "
+          "(`var_diff='mg'`, defecto) tiene tamano 0,03-0,06 pero potencia moderada (0,61 con theta_i sd 0,5): apta, conservadora. No se implemento el bootstrap de la diferencia.",
+          "- Sesgo de phi en MG y DFE: sesgo de muestra finita conocido (Hurwicz-Nickell; ~-19 % MG, +4 % a +19 % DFE). El jackknife por mitades "
+          "temporales (`jackknife_phi`) no lo corrige de forma fiable (MG: +7 % en A, +13 % en B; DFE empeora): NO se aplica; se reporta el sesgo.",
+          "- Westerlund y Pedroni: p por bootstrap/simulacion, no por momentos tabulados. Westerlund es una variante (pooled ponderado 1/sigma_i^2, sin leads de dx), conservadora aqui.",
+          "- Resultados de simulacion con 200 replicas por escenario; no extrapolar a otros DGP. Ninguna cifra procede de datos reales.", ""]
     (ROOT / "docs" / "v7" / "validacion_herramientas.md").write_text("\n".join(L), encoding="utf-8")
     return v
 

@@ -94,14 +94,21 @@ def mg(y, X, p=2, q=1, cs=False, pT=None):
                 phi=ph.mean(), se_phi=ph.std(ddof=1) / np.sqrt(N), phi_i=ph, se_phi_i=np.array(sph))
 
 
+def cs_demean(y, X):
+    """Demeaning transversal: resta en cada t la media entre unidades de y y de x (alternativa a CS-ARDL/CS-DL)."""
+    return y - y.mean(0, keepdims=True), X - X.mean(0, keepdims=True)
+
+
 def cs_ardl(y, X, p=2, q=1, pT=None):
     """CS-ARDL / CCE-ECM (Chudik-Pesaran 2015), largo plazo MG. Atajo de mg(cs=True)."""
     return mg(y, X, p, q, cs=True, pT=pT)
 
 
-def pmg(y, X, p=2, q=1, theta0=None, tol=1e-10):
+def pmg(y, X, p=2, q=1, theta0=None, se="info"):
     """PMG (Pesaran-Shin-Smith 1999) por maxima verosimilitud concentrada en theta (BFGS; equivalente a la
-    retrosustitucion de PSS). EE de theta por informacion: [sum phi_i^2/sig_i^2 X~_i'X~_i]^-1.
+    retrosustitucion de PSS). EE de theta: se='info' (defecto; informacion) o 'sandwich' (Huber-White de las puntuaciones por unidad;
+    en el MC cubre peor que 'info'; para inferencia usar pmg_bootstrap) (informacion
+    [sum phi_i^2/sig_i^2 X~_i'X~_i]^-1); ambas matrices se devuelven (V_info, V_sandwich).
     phi_i y EE por unidad condicionales en theta-hat."""
     N, T = y.shape
     k = X.shape[2]
@@ -123,6 +130,13 @@ def pmg(y, X, p=2, q=1, theta0=None, tol=1e-10):
     r = minimize(prof, start, method="BFGS", options=dict(gtol=1e-8))
     th = r.x
     ph, sph, info = [], [], np.zeros((k, k))
+    scores = []
+    for dt, yl, Xl, n in parts:
+        def li(t, dt=dt, yl=yl, Xl=Xl, n=n):
+            xi_ = yl - Xl @ t
+            return -0.5 * n * np.log(max(dt @ dt - (xi_ @ dt) ** 2 / (xi_ @ xi_), 1e-12) / n)
+        h = 1e-5
+        scores.append(np.array([(li(th + h * np.eye(k)[j]) - li(th - h * np.eye(k)[j])) / (2 * h) for j in range(k)]))
     for dt, yl, Xl, n in parts:
         xi = yl - Xl @ th
         f = (xi @ dt) / (xi @ xi)
@@ -131,10 +145,56 @@ def pmg(y, X, p=2, q=1, theta0=None, tol=1e-10):
         ph.append(f)
         sph.append(np.sqrt(rss / (n - 1 - k) / (xi @ xi)))
         info += f ** 2 / s2 * (Xl.T @ Xl)
-    V = np.linalg.pinv(info)
+    Vi = np.linalg.pinv(info)
+    Sc = np.array(scores)
+    Vsw = Vi @ (Sc.T @ Sc) @ Vi * N / (N - 1)  # sandwich Huber-White por unidad sobre la verosimilitud concentrada
+    V = Vsw if se == "sandwich" else Vi
     ph = np.array(ph)
-    return dict(theta=th, se_theta=np.sqrt(np.diag(V)), V_theta=V, phi=ph.mean(), se_phi=ph.std(ddof=1) / np.sqrt(N),
+    return dict(theta=th, se_theta=np.sqrt(np.diag(V)), V_theta=V, V_info=Vi, V_sandwich=Vsw, phi=ph.mean(), se_phi=ph.std(ddof=1) / np.sqrt(N),
                 phi_i=ph, se_phi_i=np.array(sph), converged=bool(r.success), loglik_prof=-r.fun / 2)
+
+
+def pmg_bootstrap(y, X, p=2, q=1, B=199, seed=SEED):
+    """Bootstrap por unidades (pairs cluster: se remuestrean las N unidades con reposicion) del PMG.
+    Devuelve EE y matriz de covarianza de theta."""
+    rng = np.random.default_rng(seed)
+    N = y.shape[0]
+    th0 = pmg(y, X, p, q)["theta"]
+    ths = []
+    for _ in range(B):
+        i = rng.integers(0, N, N)
+        ths.append(pmg(y[i], X[i], p, q, theta0=th0)["theta"])
+    V = np.atleast_2d(np.cov(np.array(ths).T))
+    return dict(se_theta=np.sqrt(np.diag(V)), V_theta=V)
+
+
+def cs_dl(y, X, pT=None):
+    """CS-DL (Chudik-Mohaddes-Pesaran-Raissi 2016): y_it = a_i + theta_i'x_it + sum_{j=0}^{pT} g_ij'dx_{i,t-j}
+    + medias transversales (y, x) y sus pT retardos + e. Largo plazo = MG de theta_i (sin cociente phi)."""
+    N, T, k = X.shape
+    pT = int(np.floor(T ** (1 / 3))) if pT is None else pT
+    Z = np.column_stack([y.mean(0)] + [X[:, :, j].mean(0) for j in range(k)])
+    t = np.arange(pT + 1, T)
+    th = []
+    ex = np.hstack([Z[t - j] for j in range(pT + 1)])
+    for i in range(N):
+        dX = np.diff(X[i], axis=0)
+        cols = [np.ones((len(t), 1)), X[i][t]] + [dX[t - 1 - j] for j in range(pT + 1) if (t - 1 - j).min() >= 0]
+        Zm = np.hstack(cols + [ex])
+        b, _, _ = _ols(y[i][t], Zm)
+        th.append(b[1:1 + k])
+    th = np.array(th)
+    return dict(theta=th.mean(0), se_theta=th.std(0, ddof=1) / np.sqrt(N), V_theta=np.atleast_2d(np.cov(th.T)) / N,
+                theta_i=th, phi=np.nan)
+
+
+def jackknife_phi(fn, y, X, **kw):
+    """Corrector de sesgo de muestra finita de phi: 2*phi_total - media(phi en mitades temporales)."""
+    T = y.shape[1]
+    h = T // 2
+    ph = fn(y, X, **kw)["phi"]
+    a, b = fn(y[:, :h], X[:, :h], **kw)["phi"], fn(y[:, T - h:], X[:, T - h:], **kw)["phi"]
+    return 2 * ph - 0.5 * (a + b)
 
 
 def dfe(y, X, p=2, q=1):
@@ -156,7 +216,17 @@ def dfe(y, X, p=2, q=1):
     return dict(theta=th, se_theta=np.sqrt(np.diag(Vt)), V_theta=Vt, phi=b[0], se_phi=np.sqrt(V[0, 0]))
 
 
-def hausman_mg_pmg(mgres, pmgres):
+def hausman_mg_pmg(mgres, pmgres, vpmg="info", var_diff="mg"):
+    """Variantes: var_diff='mg' (defecto) usa solo la varianza no parametrica de MG (conservador; unica variante con
+    tamano en [0,02; 0,10] en el MC); var_diff='difference' usa V_MG - V_PMG con vpmg in {'info','sandwich'}."""
+    pm = dict(pmgres)
+    pm["V_theta"] = pmgres["V_info" if vpmg == "info" else "V_sandwich"]
+    if var_diff == "mg":
+        pm["V_theta"] = np.zeros_like(pm["V_theta"])
+    return _hausman(mgres, pm)
+
+
+def _hausman(mgres, pmgres):
     """Hausman sobre theta: H=(th_MG-th_PMG)'[V_MG-V_PMG]^-1(..) ~ chi2(k) bajo H0 (PMG eficiente).
     Si V_MG-V_PMG no es definida positiva se usa la pseudo-inversa y se marca pd=False."""
     dth = mgres["theta"] - pmgres["theta"]

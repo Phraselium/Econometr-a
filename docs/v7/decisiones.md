@@ -32,3 +32,13 @@
   - No aptas: CS-ARDL, CIPS y el Hausman.
   - Se pide una segunda ronda de corrección al mismo subagente, con un tope adicional de 55.000 tokens: EE sándwich o bootstrap en PMG, revisión de CS-ARDL (o CS-DL), revisión de CIPS y Hausman por bootstrap.
   - No se estima nada con datos reales hasta el veredicto del revisor sobre R2.
+- **V10 · R2, aptitud final y elección de estimadores (antes del revisor).**
+  - **Principal: MG con demeaning transversal (MG_dm).** Es apto con reservas: sesgo pequeño y cobertura 0,87-0,94. Es robusto a un θ_i heterogéneo y trata la dependencia transversal sin CS-ARDL, que no es apto (sesgo de θ₂ del 17-22 %).
+  - **PMG (con demeaning).** Se reporta con IC por bootstrap de unidades (B≥199). Su cobertura es de 0,87-0,92, así que los IC se rotulan «aproximados, cobertura simulada de unos 0,88».
+  - **Hausman.** Con la varianza no paramétrica del MG, apto y conservador. Si no rechaza, PMG es preferible por eficiencia; si rechaza, se usa MG.
+  - **Otras herramientas.**
+    - DFE: robustez.
+    - Westerlund: conservador; un rechazo es informativo.
+    - Pedroni: apto.
+    - CIPS: apto.
+  - **Desviaciones del pre-registro.** CS-ARDL se sustituye por el demeaning transversal y el MG pasa a ser el principal. Se anotan en docs/v7/hipotesis.md antes de etiquetarlo, no en desviaciones.md, porque aún no se ha estimado nada.

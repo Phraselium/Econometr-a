@@ -21,7 +21,7 @@ def _panel(r, scen="A_coint_sin_factor"):
 def test_mg_pmg_recuperan_theta():
     est = {"MG": [], "PMG": []}
     for r in range(R):
-        y, X, _, _, _ = _panel(r)
+        y, X, *_ = _panel(r)
         est["MG"].append(pt.mg(y, X)["theta"])
         est["PMG"].append(pt.pmg(y, X)["theta"])
     for m, v in est.items():
@@ -29,7 +29,7 @@ def test_mg_pmg_recuperan_theta():
 
 
 def test_dfe_cs_ejecutan():
-    y, X, _, phi, _ = _panel(0)
+    y, X, *_ = _panel(0)
     assert np.allclose(pt.dfe(y, X)["theta"], mc.TH, atol=0.3)
     cs = pt.cs_ardl(y, X)
     assert cs["theta"].shape == (2,) and np.all(np.isfinite(cs["se_theta"]))
@@ -80,3 +80,13 @@ def test_pocos_clusters():
     assert pt.wild_cluster_boot(y2, x[:, None], cl, 0, B=199)["p_boot"] < 0.05
     dk = pt.driscoll_kraay(rng.standard_normal(17 * 40), rng.standard_normal((17 * 40, 1)), 17, 40)
     assert np.isfinite(dk["se"]).all()
+
+
+def test_pmg_bootstrap_cs_dl_demean():
+    y, X, *_ = _panel(3)
+    b = pt.pmg_bootstrap(y, X, B=9)
+    assert b["se_theta"].shape == (2,) and np.all(b["se_theta"] > 0)
+    assert np.all(np.isfinite(pt.cs_dl(y, X)["theta"]))
+    yd, Xd = pt.cs_demean(y, X)
+    assert abs(yd.mean(0)).max() < 1e-9
+    assert np.allclose(pt.pmg(y, X)["theta"], mc.TH, atol=0.15)

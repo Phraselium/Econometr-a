@@ -35,7 +35,7 @@ Todas las variables van en logaritmos salvo las tasas. La dependencia transversa
 
 | id | Mercado | Hipótesis (H1 unilateral) | Estimador principal | Familia |
 |---|---|---|---|---|
-| H7-A1 | Alquiler | θ(ln ocupados) > 0 | PMG (spec. A) | F-A |
+| H7-A1 | Alquiler | θ(ln ocupados) > 0 | MG con demeaning transversal; PMG con IC bootstrap como contraste | F-A |
 | H7-A2 | Alquiler | θ(ln población) > 0 | PMG (spec. A) | F-A |
 | H7-A3 | Alquiler | θ(tasa de paro) < 0 | PMG (spec. B) | F-A |
 | H7-C1 | Compra | θ(ln ocupados) > 0 | PMG (spec. A) | F-C |
@@ -62,7 +62,13 @@ Cómo se juzga cada hipótesis:
 
 ## 5. Potencia (Monte Carlo de R2, docs/v7/validacion_herramientas.md)
 
-Se toma del escenario N = 17, T = 78 del Monte Carlo, validado antes de estimar. Si la potencia para detectar θ de la magnitud del ejercicio es menor de 0,8, se declara que un resultado nulo no es evidencia de ausencia.
+Escenario N = 17, T = 78:
+- MG_dm: sesgo de θ pequeño, cobertura 0,87-0,94.
+- PMG: cobertura de 0,86 a 0,92, según el EE.
+- Westerlund: potencia de 0,99-1 con cointegración y tamaño conservador.
+- Hausman: potencia de 0,61 frente a θ_i heterogéneo.
+
+Si la potencia para el θ del ejercicio es menor de 0,8, un resultado nulo no es evidencia de ausencia. Los IC de PMG se rotulan «aproximados».
 
 ## 6. Validación limpia diferida
 

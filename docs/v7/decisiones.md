@@ -26,3 +26,9 @@
   - El tope catalán tiene dos ventanas (fin en 2022-04-08 según el evento E09 y en 2021-09-21 según v3); se reportan ambas.
   - Las dos listas de zonas tensionadas (v2 y v3) son idénticas, así que cuentan como una sola fuente (C4).
 - **V8 · Sin renta por CCAA en data/raw.** Solo el PIB, sumando las provincias del CRE. La renta disponible por CCAA queda como dato pendiente.
+- **V9 · R2, primera ronda.** Resultado de la validación Monte Carlo:
+  - Aptas con reservas: MG, PMG (cobertura baja), DFE y Westerlund.
+  - Apta: Pedroni.
+  - No aptas: CS-ARDL, CIPS y el Hausman.
+  - Se pide una segunda ronda de corrección al mismo subagente, con un tope adicional de 55.000 tokens: EE sándwich o bootstrap en PMG, revisión de CS-ARDL (o CS-DL), revisión de CIPS y Hausman por bootstrap.
+  - No se estima nada con datos reales hasta el veredicto del revisor sobre R2.

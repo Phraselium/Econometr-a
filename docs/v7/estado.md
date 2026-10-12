@@ -12,3 +12,4 @@
 |---|---|---|
 | R0 (subagente D2 + verificador) | 60.000 | 96.591 (excedido; V5) |
 | R1 panel | 120.000 | 96.994 |
+| R2 herramientas (ronda 1) | 130.000 | 60.561 |

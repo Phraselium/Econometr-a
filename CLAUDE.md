@@ -1,11 +1,11 @@
-# Vivienda España — v6.1 cierre, auditoría y consolidación (V1-V6 cerradas: solo se corrigen errores hallados en la auditoría; v6.1 en docs/v6_1, src/v6_1, output/v6_1; entregables en output/v5)
+# Vivienda España — v6.2 cierre final para revisión externa (V1-V6.1 cerradas: solo se corrigen errores; v6.2 en docs/v6_2, src/v6_2, output/v6_2; entregables en output/v5)
 
 - Idioma: español. `make all` reproducible SIN red; SEED=20261010 en todo lo aleatorio.
-- Al empezar: leer docs/v6_1/estado.md, docs/v6_1/plan.md y docs/v6_1/decisiones.md (y, si hace falta, docs/v6/*, docs/v6/hipotesis.md y docs/MAPA.md).
+- Al empezar: leer docs/v6_2/estado.md, docs/v6_2/plan.md y docs/v6_2/decisiones.md (y, si hace falta, docs/v6_1/*, docs/v6/* y docs/MAPA.md).
 - Capas v3: C1 HECHOS (≥2 fuentes) · C2 COTAS (Manski, supuestos explícitos) · C3 EFECTOS (pretendencias, placebos, sensibilidad, sellado) · C4 EXPLORATORIO. Nunca promover de capa.
 - Neutralidad: veredicto sobre la afirmación, nunca sobre quién la dice; se evalúan afirmaciones e instrumentos, nunca partidos ni personas; sin lenguaje valorativo ni partidista. `make check` en cada puerta.
-- Tras cada tarea: actualizar docs/v6_1/estado.md (hecho / siguiente / tokens de subagentes).
-- Decisiones → docs/v6_1/decisiones.md; bloqueos reales → docs/v6_1/bloqueos.md; fuentes inaccesibles → docs/v6/fuentes_fallidas.md (endpoint, edición y fecha verificados).
+- Tras cada tarea: actualizar docs/v6_2/estado.md (hecho / siguiente / tokens de subagentes).
+- Decisiones → docs/v6_2/decisiones.md; bloqueos reales → docs/v6_2/bloqueos.md; fuentes inaccesibles → docs/v6/fuentes_fallidas.md (endpoint, edición y fecha verificados).
 - Subagentes devuelven: rutas + resumen ≤200 palabras + output/v6/<módulo>/resultado.json. Nunca datos crudos.
 - resultado.json: {rama, pregunta, capa, datos, N, metodo, estimacion, ic95, p_ajustado, nivel_evidencia, diagnosticos, fuera_muestra{modelo, rmse, dm_vs_ar4}, notas}.
 - data/raw: solo lectura. data/sealed: SOLO vía src/holdout.py (registra cada acceso; una evaluación por hipótesis confirmatoria).
@@ -22,3 +22,4 @@
 - v5.1: las viviendas liberadas por envejecimiento NUNCA se restan de la necesidad (la proyección de hogares del INE ya las descuenta); `make check` lo comprueba.
 - v6: validación sellada NUEVA (src/holdout.py: sellar_v6, evaluate_v6; último año + 11 provincias por bloques de CCAA); predicción ≠ causalidad: nada causal desde SHAP o importancias; cada resultado de compra declara su medida de precio.
 - v6.1: un modelo solo «predice mejor» si supera a la línea base más exigente (K1); todo error que cambie una cifra publicada va a ERRATA.md.
+- v6.2: cada cifra publicable tiene ficha en output/v6_2/anexo_metodologico.md, reconstruible solo con el anexo y data/raw (test en tests/doble_impl).

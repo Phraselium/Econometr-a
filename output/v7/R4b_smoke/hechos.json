@@ -1,0 +1,34 @@
+[
+ {
+  "id": "V7-R4b-L-alquiler-tipo-pico",
+  "indicador": "Mayor efecto diferencial |coef| de shock tipo hipotecario x exposicion, alquiler (h=8)",
+  "valor": 0.015454713429733665,
+  "min": -0.0266333542602398,
+  "max": 0.057542781119707134,
+  "unidad": "puntos % por DT de exposicion",
+  "periodo": "2008-2026",
+  "cobertura": "17 CCAA",
+  "fuentes": [
+   "INE",
+   "BdE/BCE"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ },
+ {
+  "id": "V7-R4b-L-compra-tipo-pico",
+  "indicador": "Mayor efecto diferencial |coef| de shock tipo hipotecario x exposicion, compra (h=7)",
+  "valor": -0.14536468665891217,
+  "min": -0.4282472197331886,
+  "max": 0.13751784641536424,
+  "unidad": "puntos % por DT de exposicion",
+  "periodo": "2008-2026",
+  "cobertura": "17 CCAA",
+  "fuentes": [
+   "INE",
+   "BdE/BCE"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-10"
+ }
+]

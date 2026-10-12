@@ -1,0 +1,10 @@
+mercado,spec,v1,v2,corr_demeaned
+compra,A,ln_ocupados,ln_hip_importe,0.9531894927814776
+compra,A,ln_ocupados,ln_pob_total,0.9956061399539273
+compra,A,ln_hip_importe,ln_pob_total,0.936652683166717
+compra,A,ln_ocupados,VIF_poblacional_demeaned,188.97209604727954
+compra,A,ln_hip_importe,VIF_poblacional_demeaned,13.506373798617583
+compra,A,ln_pob_total,VIF_poblacional_demeaned,140.83332737772997
+compra,B,tasa_paro_epa,ln_hip_importe,0.09396338929886637
+compra,B,tasa_paro_epa,VIF_poblacional_demeaned,1.008907766252599
+compra,B,ln_hip_importe,VIF_poblacional_demeaned,1.008907766252599

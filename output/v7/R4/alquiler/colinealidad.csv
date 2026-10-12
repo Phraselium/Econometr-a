@@ -1,0 +1,5 @@
+mercado,spec,v1,v2,corr_demeaned
+alquiler,A,ln_ocupados,ln_pob_total,0.9956061399539273
+alquiler,A,ln_ocupados,VIF_poblacional_demeaned,114.04570885765712
+alquiler,A,ln_pob_total,VIF_poblacional_demeaned,114.04570885765712
+alquiler,B,tasa_paro_epa,VIF_poblacional_demeaned,1.0

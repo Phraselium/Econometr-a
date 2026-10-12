@@ -1,0 +1,100 @@
+{
+ "rama": "V7-R4a",
+ "pregunta": "Asociacion de largo plazo entre precios (alquiler IPC; compra IPV) y ocupacion, poblacion, paro e hipotecas en 17 CCAA",
+ "capa": "C4",
+ "datos": "data/processed/v7/panel_ccaa_q_v7.csv (2007T1-2026T2; spec A con poblacion hasta 2025T1)",
+ "N": 17,
+ "metodo": "ECM de panel: MG con demeaning transversal (principal), PMG_dm (bootstrap B=199), CS-DL (pT=4), DFE; Holm por familia; triangulacion V12",
+ "estimacion": {
+  "H7-A1": {
+   "MG_dm": 0.08829249638417414,
+   "PMG_dm": 0.026886086000412462,
+   "CS_DL": 0.003019097843207419,
+   "veredicto": "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)"
+  },
+  "H7-A2": {
+   "MG_dm": 0.8941466971875027,
+   "PMG_dm": 0.8436533748123107,
+   "CS_DL": 0.17651264470837572,
+   "veredicto": "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)"
+  },
+  "H7-A3": {
+   "MG_dm": -0.004051449534726796,
+   "PMG_dm": 0.004099136492354827,
+   "CS_DL": 0.0004369005957238887,
+   "veredicto": "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)"
+  },
+  "H7-C1": {
+   "MG_dm": -0.45973178471380555,
+   "PMG_dm": -0.24585902342478444,
+   "CS_DL": -0.06185082170893164,
+   "veredicto": "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)"
+  },
+  "H7-C2": {
+   "MG_dm": 0.3039032666827642,
+   "PMG_dm": -0.031591323612730364,
+   "CS_DL": -0.006729385420746492,
+   "veredicto": "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)"
+  },
+  "H7-C3": {
+   "MG_dm": -1.9566812072245545,
+   "PMG_dm": -1.2797714208330426,
+   "CS_DL": 3.608257606406422,
+   "veredicto": "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)"
+  },
+  "H7-C4": {
+   "MG_dm": -0.015336769696427189,
+   "PMG_dm": -0.018218898160035565,
+   "CS_DL": 0.006305075933048155,
+   "veredicto": "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)"
+  }
+ },
+ "ic95": {
+  "H7-A1": [
+   -1.7438827929875873,
+   1.9204677857559358
+  ],
+  "H7-A2": [
+   -1.0293768751937018,
+   2.8176702695687075
+  ],
+  "H7-A3": [
+   -0.016756914947761603,
+   0.00865401587830801
+  ],
+  "H7-C1": [
+   -2.331092242817523,
+   1.4116286733899117
+  ],
+  "H7-C2": [
+   -0.15360930200332223,
+   0.7614158353688506
+  ],
+  "H7-C3": [
+   -8.06531543454091,
+   4.1519530200918
+  ],
+  "H7-C4": [
+   -0.0677134898600567,
+   0.03703995046720232
+  ]
+ },
+ "p_ajustado": {
+  "H7-A1": 0.5087047849026218,
+  "H7-A2": 0.5086185452112645,
+  "H7-A3": 0.5087047849026218,
+  "H7-C1": 1.0,
+  "H7-C2": 0.356441236043682,
+  "H7-C3": 1.0,
+  "H7-C4": 0.8152657634978892
+ },
+ "nivel_evidencia": "EXPLORATORIO (C4): asociacion de largo plazo; confirmadas bajo regla de triangulacion: ninguna",
+ "diagnosticos": "ver diagnosticos_region.csv, cointegracion.csv, integracion.csv, bai_perron.csv, hipotesis_E.csv",
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "medida_precio": "compra: IPV INE (CCAA) como dependiente; magnitudes en EUR/m2 con valor tasado; alquiler: IPC alquiler (stock), EUR/mes SERPAVI",
+ "notas": "informativo, muestra ya vista en v1. Sin evaluacion fuera de muestra en R4a (corresponde a R5). Dummies de quiebre aplicadas como pulsos en diferencias (ver desviaciones). Controles de corto plazo solo en ECM por region."
+}

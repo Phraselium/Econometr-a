@@ -1,0 +1,47 @@
+spec,rezago,N,T,periodo,nivel,test,estadistico,p,decision,nota,codigo_ine_ccaa
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,tipo Westerlund Gt,-1.6388966310847897,0.54,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,tipo Westerlund Ga,-5.101924392419141,0.905,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,tipo Westerlund Pt,-4.381497012788452,0.67,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,tipo Westerlund Pa,-2.1274882314114536,0.84,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,Pedroni panel_adf,-7.462413555567177,0.9500998003992016,,p simulado con paseos aleatorios independientes; contraste principal de E1,
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,Pedroni group_adf,-8.569516920949692,0.9760479041916168,,p simulado con paseos aleatorios independientes; contraste principal de E1,
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",18.5189322521817,,cointegra,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),01
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",16.478773826687213,,cointegra,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),02
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",7.75128055959636,,cointegra,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),03
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",2.518146655079994,,sin cointegracion,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),04
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",17.390671523325878,,cointegra,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),05
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",0.8492644856090371,,sin cointegracion,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),06
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",3.467856777408956,,sin cointegracion,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),07
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",3.9380172068145876,,inconcluso,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),08
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",34.0546675715405,,cointegra,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),09
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",8.922330512581906,,cointegra,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),10
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",14.371856429651066,,cointegra,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),11
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",2.5281279169192223,,sin cointegracion,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),12
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",15.41612159439147,,cointegra,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),13
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",2.172609257742893,,sin cointegracion,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),14
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",10.682642848720702,,cointegra,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),15
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",24.28943282557984,,cointegra,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),16
+A,"(1,1)",17,73,2007Q1-2025Q1,region,"ARDL bounds F (PSS 2001, caso III)",11.028797187230557,,cointegra,cotas 5 % simuladas I0=3.77 I1=4.98 (no tabuladas de PSS),17
+B,"(2,1)",17,78,2007Q1-2026Q2,panel,tipo Westerlund Gt,-1.2564477455337681,0.35,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",
+B,"(2,1)",17,78,2007Q1-2026Q2,panel,tipo Westerlund Ga,-2.4355976750263615,0.82,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",
+B,"(2,1)",17,78,2007Q1-2026Q2,panel,tipo Westerlund Pt,-3.4847032079540514,0.375,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",
+B,"(2,1)",17,78,2007Q1-2026Q2,panel,tipo Westerlund Pa,-1.109099141297584,0.535,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",
+B,"(2,1)",17,78,2007Q1-2026Q2,panel,Pedroni panel_adf,-6.342564432467033,0.8183632734530938,,p simulado con paseos aleatorios independientes; contraste principal de E1,
+B,"(2,1)",17,78,2007Q1-2026Q2,panel,Pedroni group_adf,-7.433284233754628,0.872255489021956,,p simulado con paseos aleatorios independientes; contraste principal de E1,
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",18.17242007941528,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),01
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",10.141402893241576,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),02
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",9.08025423581481,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),03
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",3.279718424499437,,sin cointegracion,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),04
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",20.455398403905,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),05
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",9.990615869786094,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),06
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",8.825759196925615,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),07
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",11.831316564120728,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),08
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",5.298837004745552,,inconcluso,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),09
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",15.05545858130435,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),10
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",11.184469342085782,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),11
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",10.514961512845948,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),12
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",11.87597539406179,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),13
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",10.710821984770707,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),14
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",21.737848603129223,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),15
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",11.102184566604139,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),16
+B,"(2,1)",17,78,2007Q1-2026Q2,region,"ARDL bounds F (PSS 2001, caso III)",10.978273127383524,,cointegra,cotas 5 % simuladas I0=5.25 I1=5.45 (no tabuladas de PSS),17

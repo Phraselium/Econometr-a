@@ -1,0 +1,313 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+R4-integracion,UR_ln_ipc_alquiler_01,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.9852013304538144,0.29733773940222613,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_02,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.9556000980486239,0.08706154241034625,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_03,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.9877016731052894,0.34704919361789666,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_04,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.9954367951014647,0.05809886320713974,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_05,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.97773834612314,0.42339312813008817,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_06,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.5284346461752369,0.24732423365868905,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_07,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.9917111583652563,0.36393375112546805,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_08,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.9588762197602695,0.381122712633496,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_09,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.9880049785036852,0.00022549056881372866,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_10,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.9934637441131757,0.4791668961447279,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_11,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.8580249988475783,0.2809618348910897,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_12,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.9980566500825798,0.30615869489325165,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_13,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.983757249642157,0.2993945690693528,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_14,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.946884601775246,0.3017568341483156,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_15,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.964851677748212,0.04127282947639693,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_16,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.9233920107155739,0.15496903446083504,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipc_alquiler_17,ADF/KPSS/ZA ln_ipc_alquiler,2007Q1,2026Q2,78,,,,,0.825379912958584,0.5004489153505808,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_01,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.7699444566627731,0.7480593115001521,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_02,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.4250657466166424,0.8783569792557147,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_03,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.6311319277809051,0.8204331287549689,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_04,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.9657113616078831,0.40602911222662685,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_05,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.9183745014867404,0.590066856656046,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_06,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.412064995662276,0.7811559268200023,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_07,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.4251319710457218,0.7108152165528439,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_08,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.2888056305581598,0.71414597728708,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_09,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.8354082503649352,0.5296131120837103,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_10,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.9341965181885583,0.3315849228518901,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_11,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.49548962939074004,0.6125005440164789,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_12,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.5493597019076848,0.7761773762291797,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_13,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.9397644674412198,0.07910259487533372,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_14,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.7046979278483021,0.6514120598667352,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_15,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.163677701860228,0.7963550458959987,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_16,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.49769051425759475,0.6488673326538376,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ipv_17,ADF/KPSS/ZA ln_ipv,2007Q1,2026Q2,78,,,,,0.6450932216213914,0.8842138125059699,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_01,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.9813740408105307,6.1661104168290926e-15,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_02,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.4633391466448437,0.05036906869059229,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_03,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.5371980278897723,9.168155151413455e-15,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_04,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.9766202888325528,0.003152799312314972,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_05,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.9194600109924953,8.643476592310688e-12,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_06,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.5539168361926631,0.0011391001087379712,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_07,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.12438682661971867,0.02220506149793444,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_08,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.8332416380153882,0.07022049104971279,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_09,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.9705118904536948,3.447650615850857e-10,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_10,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.972595042785672,5.5093519649868425e-15,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_11,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.9092953422460696,3.8065696786812115e-21,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_12,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.10681016806245186,0.3720353458637134,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_13,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.9919923951971179,9.757156650681643e-13,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_14,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.9835662014708498,2.43773323961096e-16,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_15,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.8032419214381614,6.56448633189097e-19,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_16,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.567011220385895,3.3754654582528274e-20,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_ocupados_17,ADF/KPSS/ZA ln_ocupados,2007Q1,2026Q2,78,,,,,0.7830016849274086,5.441789190138786e-20,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_01,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.3853209632059117,0.04919351739931679,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_02,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.22381871864862346,0.11753495647635781,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_03,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.601557295882502,1.1588940443778786e-16,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_04,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.4702285217985975,0.022776042879204688,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_05,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.6854468648710526,9.819822418858179e-12,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_06,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.686002064888952,1.227528206211122e-16,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_07,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.3060013555992543,0.23118363310101425,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_08,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.5520618983980633,0.18257347320686435,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_09,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.7019574657192472,8.94802206471358e-09,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_10,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.6793198583633715,0.21939342100212839,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_11,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.5762645072940962,0.47779553828747856,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_12,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.22188236685252455,0.3833113921168263,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_13,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.6449112440917657,1.1247039454376436e-12,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_14,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.2828440707051163,0.20406586179515268,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_15,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.29092236232723534,1.9827718518479352e-17,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_16,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.6375267086991085,1.1989029952828864e-14,p ADF nivel/dif; informativo
+R4-integracion,UR_tasa_paro_epa_17,ADF/KPSS/ZA tasa_paro_epa,2007Q1,2026Q2,78,,,,,0.4608797703330193,2.6488298017885633e-19,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_01,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.9645738184304314,0.057012702043547775,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_02,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.6248192625790194,0.06027388102387935,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_03,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.0706711722973066,0.6681713604615833,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_04,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.9901321369570547,0.037265544583879026,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_05,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.9680084317102274,0.059658522036917155,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_06,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.19763554174894943,0.1035196561176332,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_07,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.0741563091455184,0.1896669317888584,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_08,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.5457557438790683,0.0602200183529128,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_09,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.9933497365876863,0.21425247184019025,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_10,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.9983180188497249,0.347428476942513,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_11,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.375569334951802,0.18432238952865787,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_12,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.060036178855589435,0.5133557474873921,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_13,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.9941015131543581,0.18387341073547758,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_14,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.9976301233900438,0.07030782537373646,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_15,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.9835487216553164,0.07942805982331236,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_16,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.9759727272974406,0.24013886708433352,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_total_17,ADF/KPSS/ZA ln_pob_total,2007Q1,2026Q2,73,,,,,0.7932839008656687,0.028060831439814873,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_01,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.9890534762932378,0.08214993508456137,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_02,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.7691120382563974,0.036941750398657276,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_03,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.9455254560645507,0.2796741634909543,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_04,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.8495024799431576,0.09704830793006886,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_05,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.9260904532384133,0.1285954184026732,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_06,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.8228961019361856,0.12176390699261558,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_07,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.7887803997926892,0.07547069880389116,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_08,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.6619572994234011,0.053655338134611014,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_09,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.7822107549186943,0.26506013145587143,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_10,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.8943736994289324,0.35584252817786366,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_11,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.8492923053910809,0.08189757321187185,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_12,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.9776889049072959,0.42629606506670675,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_13,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.26228947055292906,0.38338087295608536,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_14,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.6826350101859672,0.10395858469978408,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_15,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.7349761380243524,0.22302932025428757,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_16,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.9369787808937515,0.21797239305276805,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_pob_extranj_17,ADF/KPSS/ZA ln_pob_extranj,2007Q1,2026Q2,73,,,,,0.22181208987009587,0.11422214201032138,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_01,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.14783435537494338,1.4267686824755028e-14,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_02,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.09803287246067888,1.488007436698448e-22,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_03,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.2050710110210971,1.4671200402962655e-18,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_04,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.19092447850447902,5.230136496665711e-19,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_05,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.07937747340436369,6.980023833541232e-16,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_06,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.21348855309572873,2.0697711694495844e-17,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_07,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.17766603071370884,0.09632391299366821,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_08,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.15342507063540994,4.823615567438575e-18,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_09,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.33406675388208595,0.05036104355073747,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_10,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.09438365497293733,1.1006210935535178e-13,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_11,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.2730484187987072,5.0126848429017664e-20,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_12,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.28262877629865596,3.835579742741411e-18,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_13,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.4497633490190688,2.6516110196203982e-20,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_14,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.1090863031677986,4.7958663936825186e-05,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_15,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.08419832328754961,0.0005038822266150178,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_16,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.39259869424664046,0.015036123403914647,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_hip_importe_17,ADF/KPSS/ZA ln_hip_importe,2007Q1,2026Q2,78,,,,,0.2170820931049094,1.0810642067374735e-25,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_01,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.3596488016442311,1.3426015710878235e-23,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_02,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.2812903433222196,2.6259125302479315e-25,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_03,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.39604844344027057,1.994412289422884e-25,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_04,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.12014024986226657,9.142363961460065e-20,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_05,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.05021185188884129,2.8068505709841932e-24,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_06,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.4048341115375288,1.3552703361408686e-21,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_07,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.3398309356513323,9.696220956339458e-25,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_08,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.477196991749114,2.0476037115804693e-25,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_09,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.7057684649524943,0.0013210912983822912,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_10,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.44695397867719877,6.673063456510998e-23,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_11,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.4161064179073857,7.260115966755095e-23,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_12,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.29011896056069303,2.9806403026859065e-22,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_13,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.2620445270793492,0.003090045087563876,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_14,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.39145155807780246,1.534012703103427e-28,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_15,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.35578708335010795,7.333070050209725e-14,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_16,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.498072733330554,0.0024879958331320627,p ADF nivel/dif; informativo
+R4-integracion,UR_ln_compraventas_17,ADF/KPSS/ZA ln_compraventas,2007Q1,2026Q2,78,,,,,0.10855281545458528,2.911275447706907e-29,p ADF nivel/dif; informativo
+R4-cointegracion,alquiler_A_tipo Westerlund Gt,tipo Westerlund Gt,2007Q1,2025Q1,1241,,,,,-1.6388966310847897,0.54,"informativo, muestra ya vista en v1"
+R4-cointegracion,alquiler_A_tipo Westerlund Ga,tipo Westerlund Ga,2007Q1,2025Q1,1241,,,,,-5.101924392419141,0.905,"informativo, muestra ya vista en v1"
+R4-cointegracion,alquiler_A_tipo Westerlund Pt,tipo Westerlund Pt,2007Q1,2025Q1,1241,,,,,-4.381497012788452,0.67,"informativo, muestra ya vista en v1"
+R4-cointegracion,alquiler_A_tipo Westerlund Pa,tipo Westerlund Pa,2007Q1,2025Q1,1241,,,,,-2.1274882314114536,0.84,"informativo, muestra ya vista en v1"
+R4-cointegracion,alquiler_A_Pedroni panel_adf,Pedroni panel_adf,2007Q1,2025Q1,1241,,,,,-7.462413555567177,0.9500998003992016,"informativo, muestra ya vista en v1"
+R4-cointegracion,alquiler_A_Pedroni group_adf,Pedroni group_adf,2007Q1,2025Q1,1241,,,,,-8.569516920949692,0.9760479041916168,"informativo, muestra ya vista en v1"
+R4-largo-plazo,"alquiler_A_SBC=(1,1)_MG_dm_ln_ocupados","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(1, 1) MG_dm",2007Q1,2025Q1,1241,,,,,0.08829249638417414,0.9199004685913649,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"alquiler_A_SBC=(1,1)_MG_dm_ln_pob_total","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(1, 1) MG_dm",2007Q1,2025Q1,1241,,,,,0.8941466971875027,0.339079030140843,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"alquiler_A_SBC=(1,1)_PMG_dm_ln_ocupados","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(1, 1) PMG_dm",2007Q1,2025Q1,1241,,,,,0.026886086000412462,0.9997561460886218,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE bootstrap B=199 (puede inflarse por replicas extremas: PMG inestable con ajuste lento)"
+R4-largo-plazo,"alquiler_A_SBC=(1,1)_PMG_dm_ln_pob_total","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(1, 1) PMG_dm",2007Q1,2025Q1,1241,,,,,0.8436533748123107,0.9931575891630019,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE bootstrap B=199 (puede inflarse por replicas extremas: PMG inestable con ajuste lento)"
+R4-largo-plazo,"alquiler_A_SBC=(1,1)_DFE_ln_ocupados","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(1, 1) DFE",2007Q1,2025Q1,1241,,,,,0.14902990161330168,0.1661715413056016,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"alquiler_A_SBC=(1,1)_DFE_ln_pob_total","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(1, 1) DFE",2007Q1,2025Q1,1241,,,,,0.3835644086300795,0.2083879560365742,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"alquiler_A_(1,1)_MG_dm_ln_ocupados","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(1, 1) MG_dm",2007Q1,2025Q1,1241,,,,,0.08829249638417414,0.9199004685913649,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"alquiler_A_(1,1)_MG_dm_ln_pob_total","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(1, 1) MG_dm",2007Q1,2025Q1,1241,,,,,0.8941466971875027,0.339079030140843,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"alquiler_A_(1,1)_PMG_dm_ln_ocupados","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(1, 1) PMG_dm",2007Q1,2025Q1,1241,,,,,0.026886086000412462,0.38630697964486505,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"alquiler_A_(1,1)_PMG_dm_ln_pob_total","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(1, 1) PMG_dm",2007Q1,2025Q1,1241,,,,,0.8436533748123107,5.885850857133067e-10,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"alquiler_A_(1,1)_DFE_ln_ocupados","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(1, 1) DFE",2007Q1,2025Q1,1241,,,,,0.14902990161330168,0.1661715413056016,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"alquiler_A_(1,1)_DFE_ln_pob_total","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(1, 1) DFE",2007Q1,2025Q1,1241,,,,,0.3835644086300795,0.2083879560365742,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"alquiler_A_(2,2)_MG_dm_ln_ocupados","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(2, 2) MG_dm",2007Q1,2025Q1,1241,,,,,0.7660405102442835,0.04022526341899064,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"alquiler_A_(2,2)_MG_dm_ln_pob_total","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(2, 2) MG_dm",2007Q1,2025Q1,1241,,,,,-0.13831716062556854,0.7470610731679265,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"alquiler_A_(2,2)_PMG_dm_ln_ocupados","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(2, 2) PMG_dm",2007Q1,2025Q1,1241,,,,,0.01258078332245175,0.7004082599826265,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"alquiler_A_(2,2)_PMG_dm_ln_pob_total","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(2, 2) PMG_dm",2007Q1,2025Q1,1241,,,,,0.7985254508007532,1.190149875852093e-10,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"alquiler_A_(2,2)_DFE_ln_ocupados","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(2, 2) DFE",2007Q1,2025Q1,1241,,,,,0.17694884460765137,0.21396299648225492,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"alquiler_A_(2,2)_DFE_ln_pob_total","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(2, 2) DFE",2007Q1,2025Q1,1241,,,,,0.2650138966361684,0.3862286250423231,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,alquiler_A_CS-DL_ln_ocupados,ln_ipc_alquiler CS-DL pT=4,2007Q1,2025Q1,1241,,,,,0.003019097843207419,0.9466324481571446,"informativo, muestra ya vista en v1"
+R4-largo-plazo,alquiler_A_CS-DL_ln_pob_total,ln_ipc_alquiler CS-DL pT=4,2007Q1,2025Q1,1241,,,,,0.17651264470837572,0.5130256456501904,"informativo, muestra ya vista en v1"
+R4-E2,alquiler_A_phi,"t_MG(phi) vs -8,83",2007Q1,2025Q1,1241,,,,,-0.048283482699238454,,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_01,"ECM ln_ipc_alquiler region 01 ARDL(1, 1)",2007Q1,2025Q1,72,-0.04714420601508951,-744.7834360694575,-728.8467732363451,,0.01708716587054889,0.7074797566028348,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_02,"ECM ln_ipc_alquiler region 02 ARDL(1, 1)",2007Q1,2025Q1,72,0.35696675769786834,-733.5628317372355,-717.6261689041231,,-0.10426317790686969,0.016903398114977018,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_03,"ECM ln_ipc_alquiler region 03 ARDL(1, 1)",2007Q1,2025Q1,72,0.1636220636541147,-699.5921044461634,-683.655441613051,,0.022297902807945212,0.38583733707325557,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_04,"ECM ln_ipc_alquiler region 04 ARDL(1, 1)",2007Q1,2025Q1,72,0.021499693075307635,-707.1958318478208,-691.2591690147085,,-0.08696383092678166,0.06007187313232592,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_05,"ECM ln_ipc_alquiler region 05 ARDL(1, 1)",2007Q1,2025Q1,72,0.27012871276742956,-764.987040594911,-749.0503777617987,,-0.14021288194186626,0.0009410753994211324,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_06,"ECM ln_ipc_alquiler region 06 ARDL(1, 1)",2007Q1,2025Q1,72,0.19367848897507356,-625.6459773710563,-609.709314537944,,-0.09910721582887264,0.00024769895834775735,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_07,"ECM ln_ipc_alquiler region 07 ARDL(1, 1)",2007Q1,2025Q1,72,0.37244997246719735,-760.9390219706925,-745.0023591375801,,-0.006731332149437047,0.7621447095508495,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_08,"ECM ln_ipc_alquiler region 08 ARDL(1, 1)",2007Q1,2025Q1,72,0.11001151404910303,-736.2091239721835,-720.2724611390712,,-0.1319593126560672,0.0038851147621998473,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_09,"ECM ln_ipc_alquiler region 09 ARDL(1, 1)",2007Q1,2025Q1,72,0.3780593477601282,-741.4146750115589,-725.4780121784465,,0.008806347152570277,0.39182684759229985,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_10,"ECM ln_ipc_alquiler region 10 ARDL(1, 1)",2007Q1,2025Q1,72,0.23903870034578334,-723.0302753470579,-707.0936125139456,,-0.1470290395605776,0.008831473747881284,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_11,"ECM ln_ipc_alquiler region 11 ARDL(1, 1)",2007Q1,2025Q1,72,0.014189939898037185,-682.3037267197407,-666.3670638866283,,-0.04413441513770773,0.3784995260460069,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_12,"ECM ln_ipc_alquiler region 12 ARDL(1, 1)",2007Q1,2025Q1,72,0.05798637764482695,-705.754813408092,-689.8181505749797,,0.013768774634992046,0.6652737828361884,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_13,"ECM ln_ipc_alquiler region 13 ARDL(1, 1)",2007Q1,2025Q1,72,0.34488644004669566,-711.9108276580987,-695.9741648249864,,0.05271471441496266,0.010800661350650298,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_14,"ECM ln_ipc_alquiler region 14 ARDL(1, 1)",2007Q1,2025Q1,72,-0.020859738163274022,-625.0679281449584,-609.131265311846,,-0.041296369614765044,0.2459673522974004,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_15,"ECM ln_ipc_alquiler region 15 ARDL(1, 1)",2007Q1,2025Q1,72,0.28519178652189714,-652.3301758844201,-636.3935130513078,,-0.03243138227814101,0.11019727315873318,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_16,"ECM ln_ipc_alquiler region 16 ARDL(1, 1)",2007Q1,2025Q1,72,0.1911828804262472,-712.937646697411,-697.0009838642986,,0.00451779374109623,0.9113283991188346,"informativo, muestra ya vista en v1"
+R4-region,alquiler_A_17,"ECM ln_ipc_alquiler region 17 ARDL(1, 1)",2007Q1,2025Q1,72,0.2596858560620049,-687.6158847571976,-671.6792219240853,,-0.09922392408277877,3.4790422166300497e-06,"informativo, muestra ya vista en v1"
+R4-cointegracion,alquiler_B_tipo Westerlund Gt,tipo Westerlund Gt,2007Q1,2026Q2,1326,,,,,-1.2564477455337681,0.35,"informativo, muestra ya vista en v1"
+R4-cointegracion,alquiler_B_tipo Westerlund Ga,tipo Westerlund Ga,2007Q1,2026Q2,1326,,,,,-2.4355976750263615,0.82,"informativo, muestra ya vista en v1"
+R4-cointegracion,alquiler_B_tipo Westerlund Pt,tipo Westerlund Pt,2007Q1,2026Q2,1326,,,,,-3.4847032079540514,0.375,"informativo, muestra ya vista en v1"
+R4-cointegracion,alquiler_B_tipo Westerlund Pa,tipo Westerlund Pa,2007Q1,2026Q2,1326,,,,,-1.109099141297584,0.535,"informativo, muestra ya vista en v1"
+R4-cointegracion,alquiler_B_Pedroni panel_adf,Pedroni panel_adf,2007Q1,2026Q2,1326,,,,,-6.342564432467033,0.8183632734530938,"informativo, muestra ya vista en v1"
+R4-cointegracion,alquiler_B_Pedroni group_adf,Pedroni group_adf,2007Q1,2026Q2,1326,,,,,-7.433284233754628,0.872255489021956,"informativo, muestra ya vista en v1"
+R4-largo-plazo,"alquiler_B_SBC=(2,1)_MG_dm_tasa_paro_epa","ln_ipc_alquiler ~ tasa_paro_epa | ARDL(2, 1) MG_dm",2007Q1,2026Q2,1326,,,,,-0.004051449534726796,0.5087047849026218,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"alquiler_B_SBC=(2,1)_PMG_dm_tasa_paro_epa","ln_ipc_alquiler ~ tasa_paro_epa | ARDL(2, 1) PMG_dm",2007Q1,2026Q2,1326,,,,,0.004099136492354827,0.9998063126656637,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE bootstrap B=199 (puede inflarse por replicas extremas: PMG inestable con ajuste lento)"
+R4-largo-plazo,"alquiler_B_SBC=(2,1)_DFE_tasa_paro_epa","ln_ipc_alquiler ~ tasa_paro_epa | ARDL(2, 1) DFE",2007Q1,2026Q2,1326,,,,,-0.0029353129927127426,0.2824708296202132,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"alquiler_B_(1,1)_MG_dm_tasa_paro_epa","ln_ipc_alquiler ~ tasa_paro_epa | ARDL(1, 1) MG_dm",2007Q1,2026Q2,1326,,,,,-0.015766367642280357,0.6168656161405384,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"alquiler_B_(1,1)_PMG_dm_tasa_paro_epa","ln_ipc_alquiler ~ tasa_paro_epa | ARDL(1, 1) PMG_dm",2007Q1,2026Q2,1326,,,,,-86.87339264430676,6.266515335855307e-10,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"alquiler_B_(1,1)_DFE_tasa_paro_epa","ln_ipc_alquiler ~ tasa_paro_epa | ARDL(1, 1) DFE",2007Q1,2026Q2,1326,,,,,-0.0017148265656892678,0.5342851681127379,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"alquiler_B_(2,2)_MG_dm_tasa_paro_epa","ln_ipc_alquiler ~ tasa_paro_epa | ARDL(2, 2) MG_dm",2007Q1,2026Q2,1326,,,,,-0.0038927014587121123,0.5449627619283791,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"alquiler_B_(2,2)_PMG_dm_tasa_paro_epa","ln_ipc_alquiler ~ tasa_paro_epa | ARDL(2, 2) PMG_dm",2007Q1,2026Q2,1326,,,,,0.0048077860551988556,0.0006512031738301745,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"alquiler_B_(2,2)_DFE_tasa_paro_epa","ln_ipc_alquiler ~ tasa_paro_epa | ARDL(2, 2) DFE",2007Q1,2026Q2,1326,,,,,-0.0031387803460578723,0.2792748472242961,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,alquiler_B_CS-DL_tasa_paro_epa,ln_ipc_alquiler CS-DL pT=4,2007Q1,2026Q2,1326,,,,,0.0004369005957238887,0.7702473776517377,"informativo, muestra ya vista en v1"
+R4-E2,alquiler_B_phi,"t_MG(phi) vs -8,83",2007Q1,2026Q2,1326,,,,,-0.02957878473706134,,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_01,"ECM ln_ipc_alquiler region 01 ARDL(2, 1)",2007Q1,2026Q2,76,-0.019491119166641813,-789.8051655648849,-775.8207655231669,,-0.03381607099071533,0.20966895546639708,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_02,"ECM ln_ipc_alquiler region 02 ARDL(2, 1)",2007Q1,2026Q2,76,0.44763035595456113,-789.5904210471572,-775.6060210054392,,-0.13428834779967622,1.2728931679662281e-08,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_03,"ECM ln_ipc_alquiler region 03 ARDL(2, 1)",2007Q1,2026Q2,76,0.07972300026737211,-742.5921748903942,-728.6077748486762,,-0.013387566722883245,0.45233437241796615,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_04,"ECM ln_ipc_alquiler region 04 ARDL(2, 1)",2007Q1,2026Q2,76,-0.009541738297507152,-746.425604189122,-732.441204147404,,0.011218826277666284,0.10766244742198375,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_05,"ECM ln_ipc_alquiler region 05 ARDL(2, 1)",2007Q1,2026Q2,76,0.0580001367829347,-783.5144615852834,-769.5300615435654,,-0.1052045252616858,0.06364818024157205,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_06,"ECM ln_ipc_alquiler region 06 ARDL(2, 1)",2007Q1,2026Q2,76,0.20529987117289272,-666.5307528499437,-652.5463528082257,,-0.12431635277916317,7.789871538748439e-06,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_07,"ECM ln_ipc_alquiler region 07 ARDL(2, 1)",2007Q1,2026Q2,76,0.35823553975729494,-798.3414599305994,-784.3570598888814,,-0.028879697744458917,0.15057976756178448,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_08,"ECM ln_ipc_alquiler region 08 ARDL(2, 1)",2007Q1,2026Q2,76,-0.018031579631198502,-770.4321578650575,-756.4477578233395,,-0.02069711046274214,0.31169241963487215,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_09,"ECM ln_ipc_alquiler region 09 ARDL(2, 1)",2007Q1,2026Q2,76,0.43201277166295815,-788.384392458202,-774.399992416484,,0.01175400920181357,0.42133057344715036,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_10,"ECM ln_ipc_alquiler region 10 ARDL(2, 1)",2007Q1,2026Q2,76,0.3451993140906827,-768.1718148924767,-754.1874148507587,,0.019137006572818863,0.23171282420681524,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_11,"ECM ln_ipc_alquiler region 11 ARDL(2, 1)",2007Q1,2026Q2,76,0.1022832008426301,-734.7356304759992,-720.7512304342812,,-0.004411288658765909,0.7201091210091289,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_12,"ECM ln_ipc_alquiler region 12 ARDL(2, 1)",2007Q1,2026Q2,76,0.33424730552735094,-782.7156330648618,-768.7312330231438,,0.030546116881294046,0.02477527296977801,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_13,"ECM ln_ipc_alquiler region 13 ARDL(2, 1)",2007Q1,2026Q2,76,0.5228740304173237,-782.9094448953693,-768.9250448536513,,-0.015922454669963865,0.24215194116752722,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_14,"ECM ln_ipc_alquiler region 14 ARDL(2, 1)",2007Q1,2026Q2,76,0.13625573028128812,-679.3434691086422,-665.3590690669242,,-0.0056763251604920965,0.5933600853971717,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_15,"ECM ln_ipc_alquiler region 15 ARDL(2, 1)",2007Q1,2026Q2,76,0.3811707016486794,-716.0441863359498,-702.0597862942318,,-0.039025150254316535,8.152360099547306e-05,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_16,"ECM ln_ipc_alquiler region 16 ARDL(2, 1)",2007Q1,2026Q2,76,0.28245183567942334,-753.5989518043214,-739.6145517626034,,-0.027542704230705897,0.21902216173774836,"informativo, muestra ya vista en v1"
+R4-region,alquiler_B_17,"ECM ln_ipc_alquiler region 17 ARDL(2, 1)",2007Q1,2026Q2,76,0.06196742091623231,-708.1139108648953,-694.1295108231773,,-0.013677493829298275,0.13274785736263414,"informativo, muestra ya vista en v1"
+R4-cointegracion,compra_A_tipo Westerlund Gt,tipo Westerlund Gt,2007Q1,2025Q1,1241,,,,,-2.2924852591058764,0.3,"informativo, muestra ya vista en v1"
+R4-cointegracion,compra_A_tipo Westerlund Ga,tipo Westerlund Ga,2007Q1,2025Q1,1241,,,,,-10.588796294830441,0.59,"informativo, muestra ya vista en v1"
+R4-cointegracion,compra_A_tipo Westerlund Pt,tipo Westerlund Pt,2007Q1,2025Q1,1241,,,,,-7.963648171338719,0.195,"informativo, muestra ya vista en v1"
+R4-cointegracion,compra_A_tipo Westerlund Pa,tipo Westerlund Pa,2007Q1,2025Q1,1241,,,,,-6.1243970641413075,0.4,"informativo, muestra ya vista en v1"
+R4-cointegracion,compra_A_Pedroni panel_adf,Pedroni panel_adf,2007Q1,2025Q1,1241,,,,,-10.521247418282838,0.5209580838323353,"informativo, muestra ya vista en v1"
+R4-cointegracion,compra_A_Pedroni group_adf,Pedroni group_adf,2007Q1,2025Q1,1241,,,,,-11.164968662584453,0.7065868263473054,"informativo, muestra ya vista en v1"
+R4-largo-plazo,"compra_A_SBC=(1,1)_MG_dm_ln_ocupados","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) MG_dm",2007Q1,2025Q1,1241,,,,,-0.45973178471380555,0.6096447997504252,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_A_SBC=(1,1)_MG_dm_ln_hip_importe","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) MG_dm",2007Q1,2025Q1,1241,,,,,0.3039032666827642,0.178220618021841,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_A_SBC=(1,1)_MG_dm_ln_pob_total","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) MG_dm",2007Q1,2025Q1,1241,,,,,-1.9566812072245545,0.506819983318604,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_A_SBC=(1,1)_PMG_dm_ln_ocupados","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) PMG_dm",2007Q1,2025Q1,1241,,,,,-0.24585902342478444,0.9992512388576164,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE bootstrap B=199 (puede inflarse por replicas extremas: PMG inestable con ajuste lento)"
+R4-largo-plazo,"compra_A_SBC=(1,1)_PMG_dm_ln_hip_importe","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) PMG_dm",2007Q1,2025Q1,1241,,,,,-0.031591323612730364,0.999927510687775,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE bootstrap B=199 (puede inflarse por replicas extremas: PMG inestable con ajuste lento)"
+R4-largo-plazo,"compra_A_SBC=(1,1)_PMG_dm_ln_pob_total","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) PMG_dm",2007Q1,2025Q1,1241,,,,,-1.2797714208330426,0.996940498258234,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE bootstrap B=199 (puede inflarse por replicas extremas: PMG inestable con ajuste lento)"
+R4-largo-plazo,"compra_A_SBC=(1,1)_DFE_ln_ocupados","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) DFE",2007Q1,2025Q1,1241,,,,,0.13041616473257794,0.7382783921770246,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_A_SBC=(1,1)_DFE_ln_hip_importe","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) DFE",2007Q1,2025Q1,1241,,,,,0.2037199098853719,0.01861007929228021,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_A_SBC=(1,1)_DFE_ln_pob_total","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) DFE",2007Q1,2025Q1,1241,,,,,1.3459197963875085,0.05534210810376965,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_A_(1,1)_MG_dm_ln_ocupados","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) MG_dm",2007Q1,2025Q1,1241,,,,,-0.45973178471380555,0.6096447997504252,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_A_(1,1)_MG_dm_ln_hip_importe","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) MG_dm",2007Q1,2025Q1,1241,,,,,0.3039032666827642,0.178220618021841,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_A_(1,1)_MG_dm_ln_pob_total","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) MG_dm",2007Q1,2025Q1,1241,,,,,-1.9566812072245545,0.506819983318604,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_A_(1,1)_PMG_dm_ln_ocupados","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) PMG_dm",2007Q1,2025Q1,1241,,,,,-0.24585902342478444,0.23432733561709848,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"compra_A_(1,1)_PMG_dm_ln_hip_importe","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) PMG_dm",2007Q1,2025Q1,1241,,,,,-0.031591323612730364,0.26381805758500015,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"compra_A_(1,1)_PMG_dm_ln_pob_total","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) PMG_dm",2007Q1,2025Q1,1241,,,,,-1.2797714208330426,0.003506910734227022,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"compra_A_(1,1)_DFE_ln_ocupados","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) DFE",2007Q1,2025Q1,1241,,,,,0.13041616473257794,0.7382783921770246,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_A_(1,1)_DFE_ln_hip_importe","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) DFE",2007Q1,2025Q1,1241,,,,,0.2037199098853719,0.01861007929228021,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_A_(1,1)_DFE_ln_pob_total","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(1, 1) DFE",2007Q1,2025Q1,1241,,,,,1.3459197963875085,0.05534210810376965,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_A_(2,2)_MG_dm_ln_ocupados","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(2, 2) MG_dm",2007Q1,2025Q1,1241,,,,,2.634448020820958,0.2537200945182515,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_A_(2,2)_MG_dm_ln_hip_importe","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(2, 2) MG_dm",2007Q1,2025Q1,1241,,,,,-0.055276657493129266,0.7224930684236364,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_A_(2,2)_MG_dm_ln_pob_total","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(2, 2) MG_dm",2007Q1,2025Q1,1241,,,,,1.6346350881461689,0.678733595178081,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_A_(2,2)_PMG_dm_ln_ocupados","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(2, 2) PMG_dm",2007Q1,2025Q1,1241,,,,,-0.03859621110771686,0.6055561831050269,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"compra_A_(2,2)_PMG_dm_ln_hip_importe","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(2, 2) PMG_dm",2007Q1,2025Q1,1241,,,,,0.08236537945891002,1.0510395092403038e-05,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"compra_A_(2,2)_PMG_dm_ln_pob_total","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(2, 2) PMG_dm",2007Q1,2025Q1,1241,,,,,0.9286239331475066,7.589634751592687e-07,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"compra_A_(2,2)_DFE_ln_ocupados","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(2, 2) DFE",2007Q1,2025Q1,1241,,,,,-0.28073251972861984,0.3281986766619736,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_A_(2,2)_DFE_ln_hip_importe","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(2, 2) DFE",2007Q1,2025Q1,1241,,,,,0.22143740557776043,0.013868852938891507,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_A_(2,2)_DFE_ln_pob_total","ln_ipv ~ ln_ocupados+ln_hip_importe+ln_pob_total | ARDL(2, 2) DFE",2007Q1,2025Q1,1241,,,,,1.7668271379893132,0.005323055838987352,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,compra_A_CS-DL_ln_ocupados,ln_ipv CS-DL pT=4,2007Q1,2025Q1,1241,,,,,-0.06185082170893164,0.6540895529031546,"informativo, muestra ya vista en v1"
+R4-largo-plazo,compra_A_CS-DL_ln_hip_importe,ln_ipv CS-DL pT=4,2007Q1,2025Q1,1241,,,,,-0.006729385420746492,0.7502363135488755,"informativo, muestra ya vista en v1"
+R4-largo-plazo,compra_A_CS-DL_ln_pob_total,ln_ipv CS-DL pT=4,2007Q1,2025Q1,1241,,,,,3.608257606406422,0.0018220747551638775,"informativo, muestra ya vista en v1"
+R4-E2,compra_A_phi,"t_MG(phi) vs -8,83",2007Q1,2025Q1,1241,,,,,-0.16770331208681646,,"informativo, muestra ya vista en v1"
+R4-region,compra_A_01,"ECM ln_ipv region 01 ARDL(1, 1)",2007Q1,2025Q1,72,0.08885652742506245,-521.870236506176,-501.38024143503145,,-0.008309196781170945,0.7809201902115039,"informativo, muestra ya vista en v1"
+R4-region,compra_A_02,"ECM ln_ipv region 02 ARDL(1, 1)",2007Q1,2025Q1,72,0.25931656642883383,-492.98685325332497,-472.49685818218046,,-0.210795446327912,0.00027535531105754286,"informativo, muestra ya vista en v1"
+R4-region,compra_A_03,"ECM ln_ipv region 03 ARDL(1, 1)",2007Q1,2025Q1,72,0.2009739850311223,-479.3226577442854,-458.8326626731409,,-0.23481289531205762,0.0004503827125566442,"informativo, muestra ya vista en v1"
+R4-region,compra_A_04,"ECM ln_ipv region 04 ARDL(1, 1)",2007Q1,2025Q1,72,0.28528223933237307,-447.2218189626798,-426.73182389153527,,-0.011778041853895698,0.8412010642419562,"informativo, muestra ya vista en v1"
+R4-region,compra_A_05,"ECM ln_ipv region 05 ARDL(1, 1)",2007Q1,2025Q1,72,0.1370438040603369,-465.9372607705087,-445.4472656993642,,-0.3175240548992504,0.0010821978817774052,"informativo, muestra ya vista en v1"
+R4-region,compra_A_06,"ECM ln_ipv region 06 ARDL(1, 1)",2007Q1,2025Q1,72,0.012490960185392641,-438.5455206807335,-418.055525609589,,-0.08955019591088341,0.20298622279308504,"informativo, muestra ya vista en v1"
+R4-region,compra_A_07,"ECM ln_ipv region 07 ARDL(1, 1)",2007Q1,2025Q1,72,0.23802209636641214,-510.92343692010104,-490.43344184895653,,-0.36816456157736177,0.0003204103272346647,"informativo, muestra ya vista en v1"
+R4-region,compra_A_08,"ECM ln_ipv region 08 ARDL(1, 1)",2007Q1,2025Q1,72,0.19192501550939722,-483.2344465269133,-462.7444514557688,,-0.04471660867489778,0.2001550491683436,"informativo, muestra ya vista en v1"
+R4-region,compra_A_09,"ECM ln_ipv region 09 ARDL(1, 1)",2007Q1,2025Q1,72,0.2887105846629173,-476.21666798624983,-455.7266729151053,,-0.1108375152162731,0.0002601469567607195,"informativo, muestra ya vista en v1"
+R4-region,compra_A_10,"ECM ln_ipv region 10 ARDL(1, 1)",2007Q1,2025Q1,72,0.16406883847998388,-503.2941192269666,-482.8041241558221,,-0.188179653637761,0.004176557455120227,"informativo, muestra ya vista en v1"
+R4-region,compra_A_11,"ECM ln_ipv region 11 ARDL(1, 1)",2007Q1,2025Q1,72,0.20061577599468716,-426.991012632525,-406.5010175613805,,-0.15628936714400915,0.0022293885259613965,"informativo, muestra ya vista en v1"
+R4-region,compra_A_12,"ECM ln_ipv region 12 ARDL(1, 1)",2007Q1,2025Q1,72,0.27330292486698793,-506.279750373355,-485.7897553022105,,-0.21922758721095742,0.0013536817883337583,"informativo, muestra ya vista en v1"
+R4-region,compra_A_13,"ECM ln_ipv region 13 ARDL(1, 1)",2007Q1,2025Q1,72,0.34480478871627207,-438.6939855378139,-418.2039904666694,,-0.08042938744505891,0.0112407099530114,"informativo, muestra ya vista en v1"
+R4-region,compra_A_14,"ECM ln_ipv region 14 ARDL(1, 1)",2007Q1,2025Q1,72,0.18371840824452967,-471.65710645506465,-451.16711138392014,,-0.06754085138224816,0.28753395667359144,"informativo, muestra ya vista en v1"
+R4-region,compra_A_15,"ECM ln_ipv region 15 ARDL(1, 1)",2007Q1,2025Q1,72,0.1819493528989099,-441.6139485021822,-421.1239534310377,,-0.27143298466218047,0.0005423270910413141,"informativo, muestra ya vista en v1"
+R4-region,compra_A_16,"ECM ln_ipv region 16 ARDL(1, 1)",2007Q1,2025Q1,72,0.09319430861184275,-451.088784759704,-430.5987896885595,,-0.27221437571416307,0.004272904116556239,"informativo, muestra ya vista en v1"
+R4-region,compra_A_17,"ECM ln_ipv region 17 ARDL(1, 1)",2007Q1,2025Q1,72,0.10725945736558251,-465.2877349056613,-444.7977398345168,,-0.1785111402105758,0.013526084136589747,"informativo, muestra ya vista en v1"
+R4-cointegracion,compra_B_tipo Westerlund Gt,tipo Westerlund Gt,2007Q1,2026Q2,1326,,,,,-2.312685099967417,0.025,"informativo, muestra ya vista en v1"
+R4-cointegracion,compra_B_tipo Westerlund Ga,tipo Westerlund Ga,2007Q1,2026Q2,1326,,,,,-6.18898908884316,0.36,"informativo, muestra ya vista en v1"
+R4-cointegracion,compra_B_tipo Westerlund Pt,tipo Westerlund Pt,2007Q1,2026Q2,1326,,,,,-7.732748716712976,0.05,"informativo, muestra ya vista en v1"
+R4-cointegracion,compra_B_tipo Westerlund Pa,tipo Westerlund Pa,2007Q1,2026Q2,1326,,,,,-3.3757179170031844,0.225,"informativo, muestra ya vista en v1"
+R4-cointegracion,compra_B_Pedroni panel_adf,Pedroni panel_adf,2007Q1,2026Q2,1326,,,,,-9.510225297309175,0.3013972055888224,"informativo, muestra ya vista en v1"
+R4-cointegracion,compra_B_Pedroni group_adf,Pedroni group_adf,2007Q1,2026Q2,1326,,,,,-11.473341147532732,0.04790419161676647,"informativo, muestra ya vista en v1"
+R4-largo-plazo,"compra_B_SBC=(1,1)_MG_dm_tasa_paro_epa","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(1, 1) MG_dm",2007Q1,2026Q2,1326,,,,,-0.015336769696427189,0.5435105089985928,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_B_SBC=(1,1)_MG_dm_ln_hip_importe","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(1, 1) MG_dm",2007Q1,2026Q2,1326,,,,,0.4492514445196627,0.2971507309076749,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_B_SBC=(1,1)_PMG_dm_tasa_paro_epa","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(1, 1) PMG_dm",2007Q1,2026Q2,1326,,,,,-0.018218898160035565,0.9999557116605127,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE bootstrap B=199 (puede inflarse por replicas extremas: PMG inestable con ajuste lento)"
+R4-largo-plazo,"compra_B_SBC=(1,1)_PMG_dm_ln_hip_importe","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(1, 1) PMG_dm",2007Q1,2026Q2,1326,,,,,0.6181642820197483,0.9997576285575653,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE bootstrap B=199 (puede inflarse por replicas extremas: PMG inestable con ajuste lento)"
+R4-largo-plazo,"compra_B_SBC=(1,1)_DFE_tasa_paro_epa","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(1, 1) DFE",2007Q1,2026Q2,1326,,,,,-0.009106748999208245,0.3294730587457468,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_B_SBC=(1,1)_DFE_ln_hip_importe","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(1, 1) DFE",2007Q1,2026Q2,1326,,,,,0.2939441118606375,0.014956631372334923,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_B_(1,1)_MG_dm_tasa_paro_epa","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(1, 1) MG_dm",2007Q1,2026Q2,1326,,,,,-0.015336769696427189,0.5435105089985928,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_B_(1,1)_MG_dm_ln_hip_importe","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(1, 1) MG_dm",2007Q1,2026Q2,1326,,,,,0.4492514445196627,0.2971507309076749,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_B_(1,1)_PMG_dm_tasa_paro_epa","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(1, 1) PMG_dm",2007Q1,2026Q2,1326,,,,,-0.018218898160035565,0.012075118405668906,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"compra_B_(1,1)_PMG_dm_ln_hip_importe","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(1, 1) PMG_dm",2007Q1,2026Q2,1326,,,,,0.6181642820197483,1.605330838025053e-08,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"compra_B_(1,1)_DFE_tasa_paro_epa","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(1, 1) DFE",2007Q1,2026Q2,1326,,,,,-0.009106748999208245,0.3294730587457468,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_B_(1,1)_DFE_ln_hip_importe","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(1, 1) DFE",2007Q1,2026Q2,1326,,,,,0.2939441118606375,0.014956631372334923,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_B_(2,2)_MG_dm_tasa_paro_epa","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(2, 2) MG_dm",2007Q1,2026Q2,1326,,,,,-0.024150628718747447,0.48354437538329736,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_B_(2,2)_MG_dm_ln_hip_importe","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(2, 2) MG_dm",2007Q1,2026Q2,1326,,,,,0.5141657283604169,0.23435305021979952,"informativo, muestra ya vista en v1; asociacion de largo plazo"
+R4-largo-plazo,"compra_B_(2,2)_PMG_dm_tasa_paro_epa","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(2, 2) PMG_dm",2007Q1,2026Q2,1326,,,,,0.005916265331136432,0.02655428867415198,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"compra_B_(2,2)_PMG_dm_ln_hip_importe","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(2, 2) PMG_dm",2007Q1,2026Q2,1326,,,,,0.22521327298936375,6.971743613361156e-12,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
+R4-largo-plazo,"compra_B_(2,2)_DFE_tasa_paro_epa","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(2, 2) DFE",2007Q1,2026Q2,1326,,,,,-0.0036359502247783997,0.642712033968902,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,"compra_B_(2,2)_DFE_ln_hip_importe","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(2, 2) DFE",2007Q1,2026Q2,1326,,,,,0.31433874983658383,0.011063233252045718,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
+R4-largo-plazo,compra_B_CS-DL_tasa_paro_epa,ln_ipv CS-DL pT=4,2007Q1,2026Q2,1326,,,,,0.006305075933048155,0.023297278240660614,"informativo, muestra ya vista en v1"
+R4-largo-plazo,compra_B_CS-DL_ln_hip_importe,ln_ipv CS-DL pT=4,2007Q1,2026Q2,1326,,,,,0.07540863046302976,0.04378019624810332,"informativo, muestra ya vista en v1"
+R4-E2,compra_B_phi,"t_MG(phi) vs -8,83",2007Q1,2026Q2,1326,,,,,-0.08770744238436377,,"informativo, muestra ya vista en v1"
+R4-region,compra_B_01,"ECM ln_ipv region 01 ARDL(1, 1)",2007Q1,2026Q2,77,0.09354932033355634,-559.4906206822131,-543.0839827292374,,-0.052744394225012564,0.011877912745406826,"informativo, muestra ya vista en v1"
+R4-region,compra_B_02,"ECM ln_ipv region 02 ARDL(1, 1)",2007Q1,2026Q2,77,0.21514005793643576,-524.5131679210075,-508.1065299680317,,-0.07011109840534806,0.0007481574375151238,"informativo, muestra ya vista en v1"
+R4-region,compra_B_03,"ECM ln_ipv region 03 ARDL(1, 1)",2007Q1,2026Q2,77,0.05850165939039098,-503.63667868829805,-487.23004073532223,,-0.07946892390116947,0.05495556468090659,"informativo, muestra ya vista en v1"
+R4-region,compra_B_04,"ECM ln_ipv region 04 ARDL(1, 1)",2007Q1,2026Q2,77,0.19084993473428769,-475.6198309929915,-459.2131930400157,,-0.016724245844998546,0.6212612436605357,"informativo, muestra ya vista en v1"
+R4-region,compra_B_05,"ECM ln_ipv region 05 ARDL(1, 1)",2007Q1,2026Q2,77,0.05509585628784197,-492.5117444396907,-476.1051064867149,,-0.10169990893877795,0.009705381380404967,"informativo, muestra ya vista en v1"
+R4-region,compra_B_06,"ECM ln_ipv region 06 ARDL(1, 1)",2007Q1,2026Q2,77,0.09155713463725701,-479.66753178232386,-463.26089382934805,,-0.14910746502194197,0.01869121834267749,"informativo, muestra ya vista en v1"
+R4-region,compra_B_07,"ECM ln_ipv region 07 ARDL(1, 1)",2007Q1,2026Q2,77,0.17420798834687867,-544.5510242783521,-528.1443863253763,,-0.17408215761598136,0.010818033165831686,"informativo, muestra ya vista en v1"
+R4-region,compra_B_08,"ECM ln_ipv region 08 ARDL(1, 1)",2007Q1,2026Q2,77,0.13237185764192494,-516.1729394011587,-499.7663014481829,,0.005990140760814589,0.6368525887335492,"informativo, muestra ya vista en v1"
+R4-region,compra_B_09,"ECM ln_ipv region 09 ARDL(1, 1)",2007Q1,2026Q2,77,0.29499911749439256,-513.6529109834668,-497.24627303049095,,-0.06060043712686001,0.007477518498614987,"informativo, muestra ya vista en v1"
+R4-region,compra_B_10,"ECM ln_ipv region 10 ARDL(1, 1)",2007Q1,2026Q2,77,0.15013641279528134,-543.2868440297439,-526.8802060767681,,-0.1725986001982252,0.004765536743725577,"informativo, muestra ya vista en v1"
+R4-region,compra_B_11,"ECM ln_ipv region 11 ARDL(1, 1)",2007Q1,2026Q2,77,0.1287052499831901,-455.6895988448257,-439.2829608918499,,-0.0013138872242984862,0.9460043181340633,"informativo, muestra ya vista en v1"
+R4-region,compra_B_12,"ECM ln_ipv region 12 ARDL(1, 1)",2007Q1,2026Q2,77,0.2776332419931874,-548.1821521384027,-531.7755141854269,,-0.17253868643006195,4.41970782240076e-06,"informativo, muestra ya vista en v1"
+R4-region,compra_B_13,"ECM ln_ipv region 13 ARDL(1, 1)",2007Q1,2026Q2,77,0.3849141671025119,-481.01936039864586,-464.61272244567004,,-0.08760233453931122,0.00015118702870316658,"informativo, muestra ya vista en v1"
+R4-region,compra_B_14,"ECM ln_ipv region 14 ARDL(1, 1)",2007Q1,2026Q2,77,0.15950236659085448,-508.59337058752885,-492.18673263455304,,-0.07178633057240907,0.10839812239489625,"informativo, muestra ya vista en v1"
+R4-region,compra_B_15,"ECM ln_ipv region 15 ARDL(1, 1)",2007Q1,2026Q2,77,0.058576260846237904,-467.71370871438876,-451.30707076141294,,-0.06533660276100602,0.003801172385475919,"informativo, muestra ya vista en v1"
+R4-region,compra_B_16,"ECM ln_ipv region 16 ARDL(1, 1)",2007Q1,2026Q2,77,0.07264948531708226,-486.9646700620598,-470.55803210908397,,-0.13403140014348122,0.031816234538209906,"informativo, muestra ya vista en v1"
+R4-region,compra_B_17,"ECM ln_ipv region 17 ARDL(1, 1)",2007Q1,2026Q2,77,0.03113411901354668,-495.83745699248766,-479.43081903951185,,-0.06643462997897658,0.08795432462928118,"informativo, muestra ya vista en v1"

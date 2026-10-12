@@ -1,0 +1,13 @@
+spec,rezago,N,T,periodo,nivel,test,estadistico,p,decision,nota,codigo_ine_ccaa,p_holm,mercado
+A,"(1,1)",6,73,2007Q1-2025Q1,panel,tipo Westerlund Gt,-2.6971685577017452,0.2,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,0.8,alquiler
+A,"(1,1)",6,73,2007Q1-2025Q1,panel,tipo Westerlund Ga,-8.890183364581096,0.4,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,0.8,alquiler
+A,"(1,1)",6,73,2007Q1-2025Q1,panel,tipo Westerlund Pt,-6.1543428263603746,0.25,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,0.8,alquiler
+A,"(1,1)",6,73,2007Q1-2025Q1,panel,tipo Westerlund Pa,-7.600861071229597,0.35,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,0.8,alquiler
+A,"(1,1)",6,73,2007Q1-2025Q1,panel,Pedroni panel_adf,-6.887519066213302,0.0784313725490196,,p simulado con paseos aleatorios independientes; contraste principal de E1,,0.39215686274509803,alquiler
+A,"(1,1)",6,73,2007Q1-2025Q1,panel,Pedroni group_adf,-7.578585931825207,0.058823529411764705,,p simulado con paseos aleatorios independientes; contraste principal de E1,,0.3529411764705882,alquiler
+A,"(3,1)",6,73,2007Q1-2025Q1,panel,tipo Westerlund Gt,-1.979061352882109,0.6,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,1.0,compra
+A,"(3,1)",6,73,2007Q1-2025Q1,panel,tipo Westerlund Ga,-10.348879041873841,0.6,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,1.0,compra
+A,"(3,1)",6,73,2007Q1-2025Q1,panel,tipo Westerlund Pt,-3.926984217837254,0.6,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,1.0,compra
+A,"(3,1)",6,73,2007Q1-2025Q1,panel,tipo Westerlund Pa,-5.201710470544229,0.65,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,1.0,compra
+A,"(3,1)",6,73,2007Q1-2025Q1,panel,Pedroni panel_adf,-6.529923511209195,0.5098039215686274,,p simulado con paseos aleatorios independientes; contraste principal de E1,,1.0,compra
+A,"(3,1)",6,73,2007Q1-2025Q1,panel,Pedroni group_adf,-7.337965856136269,0.3333333333333333,,p simulado con paseos aleatorios independientes; contraste principal de E1,,1.0,compra

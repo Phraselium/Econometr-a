@@ -1,0 +1,21 @@
+spec,variable,forma,test,estadistico,p,nota
+A,ln_ipc_alquiler,nivel,CIPS_p1,-0.9892748971613865,0.9803921568627451,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+A,ln_ipc_alquiler,nivel,CIPS_SBC,-1.8288853836626808,0.5686274509803921,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+A,ln_ipc_alquiler,dif,CIPS_p1,-4.878908141291913,0.0196078431372549,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+A,ln_ipc_alquiler,dif,CIPS_SBC,-5.012847173421949,0.0196078431372549,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+A,ln_ocupados,nivel,CIPS_p1,-1.8615067337070021,0.5490196078431373,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+A,ln_ocupados,nivel,CIPS_SBC,-1.9839646612245578,0.4117647058823529,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+A,ln_ocupados,dif,CIPS_p1,-7.726170652990388,0.0196078431372549,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+A,ln_ocupados,dif,CIPS_SBC,-9.133203618266153,0.0196078431372549,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+A,ln_pob_total,nivel,CIPS_p1,-1.0293658807360115,0.9803921568627451,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+A,ln_pob_total,nivel,CIPS_SBC,-1.0438130644124055,0.9803921568627451,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+A,ln_pob_total,dif,CIPS_p1,-2.0118474873422953,0.29411764705882354,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+A,ln_pob_total,dif,CIPS_SBC,-1.7889363944826124,0.5882352941176471,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+B,ln_ipc_alquiler,nivel,CIPS_p1,-1.1663644028918863,0.9019607843137255,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+B,ln_ipc_alquiler,nivel,CIPS_SBC,-1.9798971568672314,0.45098039215686275,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+B,ln_ipc_alquiler,dif,CIPS_p1,-5.021713145150042,0.0196078431372549,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+B,ln_ipc_alquiler,dif,CIPS_SBC,-5.192013502260188,0.0196078431372549,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+B,tasa_paro_epa,nivel,CIPS_p1,-3.752790305948254,0.0196078431372549,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+B,tasa_paro_epa,nivel,CIPS_SBC,-2.8193014350219783,0.0196078431372549,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+B,tasa_paro_epa,dif,CIPS_p1,-8.453077198737803,0.0196078431372549,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies
+B,tasa_paro_epa,dif,CIPS_SBC,-8.705475658984188,0.0196078431372549,apoyo; sobrerrechaza con componente I(0) grande (V12); series ajustadas por dummies

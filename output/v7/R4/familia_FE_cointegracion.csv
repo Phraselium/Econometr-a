@@ -1,0 +1,13 @@
+spec,rezago,N,T,periodo,nivel,test,estadistico,p,decision,nota,codigo_ine_ccaa,p_holm,mercado
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,tipo Westerlund Gt,-1.6388966310847897,0.54,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,1.0,alquiler
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,tipo Westerlund Ga,-5.101924392419141,0.905,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,1.0,alquiler
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,tipo Westerlund Pt,-4.381497012788452,0.67,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,1.0,alquiler
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,tipo Westerlund Pa,-2.1274882314114536,0.84,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,1.0,alquiler
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,Pedroni panel_adf,-7.462413555567177,0.9500998003992016,,p simulado con paseos aleatorios independientes; contraste principal de E1,,1.0,alquiler
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,Pedroni group_adf,-8.569516920949692,0.9760479041916168,,p simulado con paseos aleatorios independientes; contraste principal de E1,,1.0,alquiler
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,tipo Westerlund Gt,-2.2924852591058764,0.3,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,1.0,compra
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,tipo Westerlund Ga,-10.588796294830441,0.59,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,1.0,compra
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,tipo Westerlund Pt,-7.963648171338719,0.195,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,1.0,compra
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,tipo Westerlund Pa,-6.1243970641413075,0.4,,"baja potencia con ajuste lento (0,06-0,29): no rechazo no es evidencia de ausencia; datos con demeaning",,1.0,compra
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,Pedroni panel_adf,-10.521247418282838,0.5209580838323353,,p simulado con paseos aleatorios independientes; contraste principal de E1,,1.0,compra
+A,"(1,1)",17,73,2007Q1-2025Q1,panel,Pedroni group_adf,-11.164968662584453,0.7065868263473054,,p simulado con paseos aleatorios independientes; contraste principal de E1,,1.0,compra

@@ -10,3 +10,4 @@
 ## Tokens de subagentes (presupuesto 1,3 M; corte 1,04 M)
 | Módulo | Tope | Usado |
 |---|---|---|
+| R0 (subagente D2 + verificador) | 60.000 | 96.591 (excedido; V5) |

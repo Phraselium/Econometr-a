@@ -8,7 +8,7 @@ D1-H11,58.4,27.8,81.8,,,,,no_reconstruible,"NO RECONSTRUIBLE: Requiere clases A4
 A23-P2,47.2,44.2,56.1,50.17246218971515,44.222817245119295,56.12210713431101,0.063,parcial,SOLO 2 de 3 fuentes: valor tasado MIVAU y Registradores EUR/m2 (media anual 2025/2015). Notariado: serie nacional 2015-2025 no esta en data/raw
 B4-v3-vut-cantidad,2.746,2.423,2.746,,,,,no_reconstruible,NO RECONSTRUIBLE: Requiere stock de alquiler y conversion VUT->viviendas desplazadas (cota de v3) no descrita en el texto
 D1-H12,100.0,88.1,100.0,,,,,no_reconstruible,NO RECONSTRUIBLE: Idem D1-H11
-A23-A10,27.7,24.6,30.8,27.77492278899574,24.70872408266439,30.841121495327094,0.0044,si,IPVA nuevo contrato CV 2024/2021 y mediana de la fianza GVA 2024/2021
+A23-A10,28.5,26.1,30.8,27.77492278899574,24.70872408266439,30.841121495327094,0.0533,parcial,IPVA nuevo contrato CV 2024/2021 y mediana de la fianza GVA 2024/2021
 E-B1-F,1720537.0,1308531.1,1772410.4,1720537.0,,,0.0,si,idem B1-H4
 latente_convivencia,,188000.0,506000.0,,,,,no_reconstruible,NO RECONSTRUIBLE: Requiere tasa de convivencia con padres 2008 por edad y poblacion joven; la fuente (EPA/ECV/Eurostat) y la edad no estan precisadas en el texto
 B1-H1,214867.8,93627.8,309920.8,,,,,no_reconstruible,"NO RECONSTRUIBLE: Requiere A (atraso+emancipacion), R (bajas T1), V, M (vacias movilizables por provincia), K, por 52 provincias; parametros de rejilla v3 no publicados en el texto"

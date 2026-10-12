@@ -20,7 +20,9 @@ IMG = re.compile(r"\!\[[^\]]*\]\(([^)\s]+)\)")
 
 
 def mds() -> list[Path]:
-    fs = [p for p in ROOT.rglob("*.md") if not any(p.relative_to(ROOT).as_posix().startswith(e) for e in EXCL)]
+    # v6.2: se excluyen las cachés no versionadas (.pytest_cache, .ruff_cache), para que el recuento no dependa del entorno
+    fs = [p for p in ROOT.rglob("*.md") if not any(p.relative_to(ROOT).as_posix().startswith(e) for e in EXCL)
+          and not any(part in (".pytest_cache", ".ruff_cache") for part in p.relative_to(ROOT).parts)]
     return sorted(fs)
 
 

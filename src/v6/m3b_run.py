@@ -576,7 +576,7 @@ def figura_global(T):
 
 
 def salidas(T, finales, interp, hp, settings):
-    hoy = str(date.today())
+    hoy = "2026-10-11"  # v6.2: fecha fija de la ejecución de v6 (antes date.today(): la salida cambiaba según el día)
     h = T[T.setting == "PROV_PRECIO_TRIM"].set_index("modelo")
     best = h.loc[[m for m in h.index if m in ("RF", "GB", "BBF")]].rmse_ln.idxmin()
     ar4 = h.loc["AR"]

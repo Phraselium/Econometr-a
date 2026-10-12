@@ -30,3 +30,18 @@
 - L1 (general-purpose) y L3 (econometrician) en curso.
 
 ## Tokens de subagentes (presupuesto 0,6 M; corte 0,48 M)
+
+## Cierre v6.2
+- `make check`: 89 tests, más check_texto, check_v5 y check_v6, todo con 0 errores.
+- `make all` ×2 sin red en un clon limpio de d585b1e: 7.928 s y 8.054 s, con md5 idénticos salvo tiempos.json. Diferencias frente a lo versionado explicadas en E8.
+- Tokens de subagentes, total 462.880 de 600.000 (77 %):
+
+  | Módulo | Tokens |
+  |---|---|
+  | L1 | 223.573 |
+  | L2 | 129.888 |
+  | L3 | 55.691 |
+  | Revisor | 53.728 |
+
+  L4, L5, L6 y la ronda REHACER las hizo el orquestador.
+- La etiqueta local v6.2 apunta al commit de cierre. El remoto rechaza las etiquetas (HTTP 403); ver tareas_autor §1.

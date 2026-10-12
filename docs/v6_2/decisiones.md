@@ -28,3 +28,10 @@
   - **H7.** «Siete alternativas más la constante de v1».
   - **H8.** Los trimestres de la EPA de A1 no se tabulan: se reconstruyen desde raw con el filtro de la ficha. Pasa al backlog.
   - **H9.** Las cifras históricas van en una sección aparte de cifras_publicables. SUPERADOS se amplía; la comparación literal de cadenas es una limitación declarada.
+- **E8 · Diferencias del clon limpio** (`make all` ×2 sin red sobre d585b1e: 7.928 s y 8.054 s, rc=0; md5 idénticos entre ejecuciones salvo output/v2/BM/tiempos.json). Frente a lo versionado:
+  1. **output/v6/M3B/resultado.json.** Una nota con la «fecha de ejecución» tomada de `date.today()`; la salida cambiaba según el día. Se fija la fecha de la ejecución de v6 (2026-10-11) en src/v6/m3b_run.py, de modo que la salida vuelve a ser la versionada. No es una cifra.
+  2. **output/v6_1/K4B/comparacion.csv y resultado.json.** La comparación de la doble implementación de v6.1 no se había vuelto a ejecutar tras corregir A23-A10 en v6.2. Ahora A23-A10 publicado (28,5; 26,1-30,8) difiere de la réplica K4b de v6.1 (24,7 de mínimo) y pasa a «parcial»: 5 coinciden y 5 son parciales. Es un artefacto de auditoría histórico; la doble implementación vigente es L2, con 15/15. Se copia la versión del clon.
+  3. **output/v6_1/K4D/resumen.json.** md_revisados era 404 en el repositorio de trabajo y 403 en el clon: contaba .pytest_cache/README.md, que no está versionado. k4d_docs.py excluye ahora las cachés y da 403.
+  4. **docs/v2/fallidas/ine.md y tiempos.json.** Dependen del entorno, como en v6 y v6.1; no se copian.
+  - Ninguna diferencia afecta a una cifra publicada, así que no hay entrada en ERRATA.
+  - Los dos cambios de código (fecha fija y exclusión de cachés) solo hacen que la salida coincida con la del clon. No se repite `make all` por ellos.

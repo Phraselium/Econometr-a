@@ -2,6 +2,24 @@
 
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
+## v6.2 (2026-10-12) — cierre final para revisión externa
+
+**Anexo metodológico (L1).** output/v6_2/anexo_metodologico.md tiene una ficha por cifra publicable: 17 completas y 49 breves, con fuente, filtros, fórmula, supuestos, capa y script.
+
+**Segunda doble implementación (L2).** Escrita solo con el anexo y data/raw, reproduce 15 de 15 cifras. Se ejecuta en `make check` (tests/doble_impl), y sus 11 precisiones se incorporaron al anexo.
+
+**Déficit (L3).** Se recalculó con siete correcciones del salto de la EPA en 2021 y dos fuentes de terminadas. El déficit 2021-2024 pasa de C1 a cota C2: 344.803-710.542 viviendas sin bajas. La ficha V05 se sustituye por L3-V1 y se responde a la objeción A-01.
+
+**Inmigración (L4).** Se separan la asociación total (sin controlar por población) y la directa (a igual población); controlar por población es un mal control. Sigue en C4, «analizada, no concluyente».
+
+**Coherencia de cifras (L5).** docs/v6_2/cifras_publicables.md y un test contra cifras superadas.
+
+**Revisión (L6).** docs/v6_2/guia_revisor.md y docs/v6_2/tareas_autor.md.
+
+**Cifras publicadas que cambian** (ERRATA.md):
+- déficit 2021-2024: de C1 562.692-688.692 a C2 344.803-710.542;
+- contratos nuevos de la Comunitat Valenciana: de 27,7 % a 28,5 % (26,1-30,8), por la grafía «Valéncia».
+
 ## v6.1 (2026-10-11) — cierre, auditoría crítica y consolidación
 
 **Líneas base exigentes (K1).** La comparación de modelos de v6 se repite en la misma validación sellada, con tres bases nuevas: último valor × crecimiento nacional, AR con factor común y efectos fijos dobles. Se abrieron 27 veces, una por base y tarea. El contraste es DM-HLN más permutación exacta por provincias, con Holm.

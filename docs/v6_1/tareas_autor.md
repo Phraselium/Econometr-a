@@ -1,5 +1,7 @@
 # Tareas del autor para la publicación (definitivas, v6.1)
 
+> **Sustituido por docs/v6_2/tareas_autor.md (v6.2).**
+
 Este fichero sustituye a docs/v6/tareas_autor.md y a docs/v5/tareas_autor.md. Recoge solo lo que no pueden hacer los agentes. Marca cada casilla al terminar.
 
 ## 1. Etiquetas, releases y fechas reales

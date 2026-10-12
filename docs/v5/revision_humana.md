@@ -92,7 +92,7 @@ Nota: B4-v3-vut-cantidad se lee de `output/v3/PB/cotas.json` (cota C2 de cantida
 - **Capa:** C2
 - **Script y línea:** `src/v5/b4_run.py:310` (lee la cota de `output/v3/PB/cotas.json`, producida por v3 PB)
 - **Origen registrado en cifras_clave:** `output/v5/B4/hechos.json:B4-v3-vut-cantidad`
-- **Script de origen (adaptador de v4/v3):** `src/v3/pb_run.py:379` (output/v3/PB/tablas/b2_nacional_sensibilidad.csv; heredado de v3, no de v4)
+- **Script de origen (adaptador de v4/v3):** `src/v3/pb_run.py:379` (output/v3/PB/tablas/b1_nacional_sensibilidad.csv; heredado de v3, no de v4; corregido en v6.2: antes decía b2)
 - **Fichero de salida:** `output/v5/B4/hechos.json`
 - **Comando:** `python3 src/v3/pb_run.py && python3 src/v5/b4_run.py`
 - **Replicado por el autor (fecha, firma):** ☐ ____________________

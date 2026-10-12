@@ -315,6 +315,7 @@ PROV_CCAA = {
 PROV2CC = {p: c for c, ps in PROV_CCAA.items() for p in ps}
 # nombres SERPAVI provincial -> IPVA
 SERP2IPVA = {"Alicante": "Alicante/Alacant", "Castellón": "Castellón/Castelló", "Valencia": "Valencia/València",
+             "Valencia/Valéncia": "Valencia/València",  # v6.2 (L1): SERPAVI escribe «Valéncia»; sin esta línea Valencia quedaba sin peso
              "A Coruña": "Coruña, A", "Illes Balears": "Balears, Illes", "Las Palmas": "Palmas, Las",
              "Santa Cruz de Tenerife": "Santa Cruz de Tenerife", "La Rioja": "Rioja, La",
              "Asturias": "Asturias", "Principado de Asturias": "Asturias"}

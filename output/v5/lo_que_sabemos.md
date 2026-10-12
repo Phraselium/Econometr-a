@@ -28,7 +28,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 **Precios y alquileres**
 - [C1] Precio de compra, núcleo Ministerio-Notariado-Registradores: 47,2 % (44,2-56,1 %) (2015-2025 (media anual); MIVAU valor tasado; Notariado CGN; Registradores opendata; dato de 2025 (anual); C1).
 - [C1] Alquiler de los contratos vigentes (IPC de alquiler e IPVA): 10,9-22,9 % (2015-2024; INE IPC (encuesta); INE IPVA (datos tributarios AEAT); dato de 2024; C1).
-- [C1] Alquiler de los contratos nuevos, con dos fuentes por comunidad: Cataluña 16,9 % (16,6-17,2 %) (2021-2024; INE IPVA (AEAT); Incasòl; dato de 2024; C1); Comunitat Valenciana 27,7 % (24,6-30,8 %) (2021-2024; INE IPVA (AEAT); GVA fianzas; dato de 2024; C1).
+- [C1] Alquiler de los contratos nuevos, con dos fuentes por comunidad: Cataluña 16,9 % (16,6-17,2 %) (2021-2024; INE IPVA (AEAT); Incasòl; dato de 2024; C1); Comunitat Valenciana 28,5 % (26,1-30,8 %) (2021-2024; INE IPVA (AEAT); GVA fianzas; dato de 2024; C1).
 
 **Tenencia**
 - [C1] Hogares con vivienda principal en propiedad: 74,5 % de hogares (72,1-75,9 % de hogares) (2021-2022; BdE EFF; INE ECV; INE Censo 2021; dato de 2021-11 (Censo) / 2022 (EFF, ECV); C1).
@@ -76,7 +76,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
   - «ANALIZADA, NO CONCLUYENTE»: no se puede afirmar un efecto.
 - [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en 6 de las 9 tareas: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.
 - [C4] **Iniciadas y alquiler.** La asociación es del mismo año. No hay orden temporal detectable, y no indica que construir suba el alquiler.
-- **Correcciones** (ERRATA.md): los contratos nuevos de la Comunitat Valenciana pasan a 27,7 % (24,6-30,8 %) por un error de ponderación; otros redondeos son menores. Ninguna conclusión cambia.
+- **Correcciones** (ERRATA.md): los contratos nuevos de la Comunitat Valenciana pasan a 28,5 % (26,1-30,8 %) por un error de ponderación; otros redondeos son menores. Ninguna conclusión cambia.
 
 ## Problema y opciones con signo estable
 

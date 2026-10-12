@@ -136,7 +136,7 @@ Toda especificación probada se registra (`registro.csv` de cada módulo). Las f
 
 **Compra.** Núcleo de tres registros: 47,2 % (44,2-56,1 %) en 2015-2025 [C1]. IPV del INE: 79,9 % [C4]. Las cuatro fuentes comparten un factor común que recoge 89,2 % de la varianza de las variaciones anuales [C4]. La reponderación geográfica no reduce la diferencia: con pesos provinciales, Registradores sube 66,8 % [C4]. Queda un residuo no identificado de -30,9 pp [C4].
 
-**Alquiler.** Stock de contratos: 10,9-22,9 % en 2015-2024 [C1]. Contratos nuevos con dos fuentes: Cataluña 16,9 % (16,6-17,2 %) y Comunitat Valenciana 27,7 % (24,6-30,8 %) en 2021-2024 [C1]. En 2024 los contratos nuevos están 13,6 % por encima de los existentes [C4].
+**Alquiler.** Stock de contratos: 10,9-22,9 % en 2015-2024 [C1]. Contratos nuevos con dos fuentes: Cataluña 16,9 % (16,6-17,2 %) y Comunitat Valenciana 28,5 % (26,1-30,8 %) en 2021-2024 [C1]. En 2024 los contratos nuevos están 13,6 % por encima de los existentes [C4].
 
 **Europa.** El precio real de la vivienda en España creció 42,6 % acumulado desde 2015 y el alquiler real del IPCA -10,3 % acumulado desde 2015 [C4]; la tasa de sobrecarga de coste varió -3,1 puntos desde 2015 [C4].
 
@@ -234,7 +234,7 @@ La validación v6 es **espacial nueva** y **temporal ya vista**: el último año
   - «ANALIZADA, NO CONCLUYENTE»: no se puede afirmar un efecto.
 - [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en 6 de las 9 tareas: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.
 - [C4] **Iniciadas y alquiler.** La asociación es del mismo año. No hay orden temporal detectable, y no indica que construir suba el alquiler.
-- **Correcciones** (ERRATA.md): los contratos nuevos de la Comunitat Valenciana pasan a 27,7 % (24,6-30,8 %) por un error de ponderación; otros redondeos son menores. Ninguna conclusión cambia.
+- **Correcciones** (ERRATA.md): los contratos nuevos de la Comunitat Valenciana pasan a 28,5 % (26,1-30,8 %) por un error de ponderación; otros redondeos son menores. Ninguna conclusión cambia.
 
 El detalle está en el informe técnico, §12, y en docs/v6_1/historial_conclusiones.md. <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
 

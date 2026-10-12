@@ -28,7 +28,7 @@
   "capa": "C4",
   "periodo": "2015-2024 (IPVA nuevo), 2015-2025 (Incasòl, Cataluña), 2020-2025 (GVA, C. Valenciana)",
   "fuente": "INE IPVA contrato nuevo (AEAT); Incasòl fianzas; GVA registro de fianzas",
-  "magnitud": "IPVA contrato nuevo 2015-2024 +37.0 % (nacional). Incasòl renta media 2015-2025 +54.5 % (Cataluña). GVA mediana de fianza 2020-2025 +58.0 % (C. Valenciana). 2021-2024: Cataluña 16.6-17.2 %, C. Valenciana 24.6-30.8 %. Municipios con renta de fianzas x2 o más: 1 de 261 (Cataluña, 2015-2025) y 2 de 103 (C. Valenciana, 2020-2025).",
+  "magnitud": "IPVA contrato nuevo 2015-2024 +37.0 % (nacional). Incasòl renta media 2015-2025 +54.5 % (Cataluña). GVA mediana de fianza 2020-2025 +58.0 % (C. Valenciana). 2021-2024: Cataluña 16.6-17.2 %, C. Valenciana 26.1-30.8 %. Municipios con renta de fianzas x2 o más: 1 de 261 (Cataluña, 2015-2025) y 2 de 103 (C. Valenciana, 2020-2025).",
   "intervalo": "[37.0; 54.5] % en 2015-2024/25",
   "cota": "Dirección C1 en Cataluña y C. Valenciana (IPVA, Incasòl y GVA, grupos independientes, mismo signo); cuantía nacional C4 (fuentes de cobertura distinta).",
   "literatura": "No aplica.",

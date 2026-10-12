@@ -124,7 +124,7 @@ Reglas que se aplican en todo el informe:
 
 - **Stock de contratos (todos los vigentes).** El núcleo IPC de alquiler e IPVA de contratos existentes da 10,9-22,9 % en 2015-2024 [C1]. SERPAVI, con composición constante, da 43,0 % [C4].
 - **Contratos nuevos.** El IPVA de nuevo contrato sube 37,0 % en 2015-2024 [C4]; en Cataluña (Incasòl) 54,5 % en 2015-2025 [C4]; en la Comunitat Valenciana (fianzas de la GVA) 58,0 % en 2020-2025 [C4].
-- **Dos fuentes por territorio [C1].** Cataluña 2021-2024: 16,9 % (16,6-17,2 %) (IPVA nuevo e Incasòl) [C1]; Comunitat Valenciana 2021-2024: 27,7 % (24,6-30,8 %) (IPVA nuevo y fianzas) [C1].
+- **Dos fuentes por territorio [C1].** Cataluña 2021-2024: 16,9 % (16,6-17,2 %) (IPVA nuevo e Incasòl) [C1]; Comunitat Valenciana 2021-2024: 28,5 % (26,1-30,8 %) (IPVA nuevo y fianzas) [C1].
 - **Brecha.** En 2024 los contratos nuevos están 13,6 % por encima de los existentes (IPVA) [C4]. La cuota implícita de contratos nuevos en el índice es 16,0 % (13,9-17,6 %) [C4].
 - **Rotación.** Fianzas sobre contratos vigentes: 25,0 % en Cataluña y 13,5 % en la Comunitat Valenciana [C4].
 - **Actualización.** Si todo contrato vigente se hubiese actualizado con el HICP, el stock habría subido 7,2 % más en 2022-2024 [C4]: es una contabilidad con supuestos, no un contrafactual de una norma.
@@ -492,7 +492,7 @@ La tabla completa por distrito, con nombre, renta mediana de 2015 y 2024, contra
 ### 8.4 Fianzas de la GVA (A23)
 
 - Mediana de la fianza depositada: 500 € en 2020 y 790 € en 2025 [C4], con 35.079 contratos fianzas en 2025.
-- La renta de contratos nuevos (mediana de la fianza) sube 58,0 % en 2020-2025 [C4]; con el IPVA de nuevo contrato, el rango 2021-2024 de la Comunitat Valenciana es 27,7 % (24,6-30,8 %) [C1].
+- La renta de contratos nuevos (mediana de la fianza) sube 58,0 % en 2020-2025 [C4]; con el IPVA de nuevo contrato, el rango 2021-2024 de la Comunitat Valenciana es 28,5 % (26,1-30,8 %) [C1].
 - Rotación (fianzas sobre contratos vigentes): 13,5 % (13,5-15,8 %) [C4].
 - Municipios con mediana de fianza que se duplica: 2 municipios [C4].
 - Las fianzas no traen la duración del contrato: el alquiler de temporada y por habitaciones sigue sin fuente (`BK-014`).

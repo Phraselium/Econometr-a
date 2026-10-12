@@ -149,9 +149,10 @@ vc = v[(v.nivel == "provincia") & (v.tabla == 59005) & (v.medida == "IPVA_indice
 vc = vc.pivot_table(index="periodo", columns="territorio", values="valor")
 sp = rd("pdf/serpavi_provincias.csv")
 w = sp[(sp.variable == "n_contratos") & (sp.tipologia == "VC") & (sp.periodo == 2024)]
-# cruce POR NOMBRE, como el código publicado (SERP2IPVA): «Alicante» -> Alicante/Alacant; «Castellón/Castelló» igual;
-# la fila de Valencia se llama «Valencia/Valéncia» (tilde aguda) y NO cruza -> NaN -> media de la CCAA (corrección v6.1)
-w = w.set_index(w.nombre.replace({"Alicante": "Alicante/Alacant", "Castellón": "Castellón/Castelló", "Valencia": "Valencia/València"})).valor
+# cruce por nombre como el código publicado (SERP2IPVA), incluida la grafía «Valencia/Valéncia» de SERPAVI (corrección v6.2);
+# si faltara alguna provincia, relleno con la media de la CCAA (corrección v6.1)
+w = w.set_index(w.nombre.replace({"Alicante": "Alicante/Alacant", "Castellón": "Castellón/Castelló", "Valencia": "Valencia/València",
+                                  "Valencia/Valéncia": "Valencia/València"})).valor
 prov = {"Alicante/Alacant": 3, "Castellón/Castelló": 12, "Valencia/València": 46}
 wv = pd.Series({t: w.get(t, np.nan) for t in prov})
 w_cod = sp[(sp.variable == "n_contratos") & (sp.tipologia == "VC") & (sp.periodo == 2024)].set_index("codigo").valor

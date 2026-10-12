@@ -8,6 +8,6 @@ puente,nueva_usada,Δcuota nueva × prima nueva/usada (Registradores 2025),2015,
 puente,puente_total,INE IPV -> mediana núcleo,2015,2025,11,,,,,0.3269921246875105,,INE 79.9% ; núcleo 47.2% ; residuo -30.9 pp
 tri,nucleo_2015_2025,mayor conjunto a <=15 % en nivel con >=2 grupos,2015,2025,4,,,,,0.47205438066465266,,"['MIVAU_tasado', 'Notariado', 'Registradores']; C1=True"
 nuevos,dir_cat,IPVA nuevo + Incasòl 2021-2024,2021,2024,2,,,,,,,"{'IPVA_nuevo': 0.17217375759261366, 'Incasol': 0.16639951332610248, 'IPVA_existente': 0.0749918439987245, 'IPC_alquiler': 0.04788053915767265}"
-nuevos,dir_cv,IPVA nuevo + GVA fianzas 2021-2024,2021,2024,2,,,,,,,"{'IPVA_nuevo': 0.24583254142421343, 'GVA_fianzas': 0.30841121495327095, 'GVA_fianzas_pesos_prov': 0.37813098799299705, 'IPVA_existente': 0.0933991485825444, 'IPC_alquiler': 0.07196071728484066}"
+nuevos,dir_cv,IPVA nuevo + GVA fianzas 2021-2024,2021,2024,2,,,,,,,"{'IPVA_nuevo': 0.26080440659379245, 'GVA_fianzas': 0.30841121495327095, 'GVA_fianzas_pesos_prov': 0.37813098799299705, 'IPVA_existente': 0.10035703092192064, 'IPC_alquiler': 0.07196071728484066}"
 expl,cuota_nuevos,(T-E)/(N-E) IPVA 2021-2024,2021,2024,4,,,,,,,"{2021: 0.176, 2022: 0.165, 2023: 0.159, 2024: 0.139}"
 expl,tope_contrafactico,E_cf = E2021 * prod(1+HICP),2022,2024,3,,,,,0.07248307170538859,,stock +7.2% adicional si todo se actualizase al HICP

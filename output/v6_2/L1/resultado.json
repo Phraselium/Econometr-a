@@ -1,0 +1,40 @@
+{
+ "rama": "L1",
+ "pregunta": "¿Se puede reconstruir cada cifra publicada solo con el anexo metodológico y data/raw?",
+ "capa": "C4",
+ "datos": "data/raw (ficheros citados en cada ficha); tablas intermedias versionadas: output/v5/A4/clasificacion_provincias.csv, output/v5/B1/tablas/B1_nacional.csv",
+ "N": 17,
+ "metodo": "Fichas completas (15 de la revisión humana + 2 L3) y breves (49, agrupadas por módulo); recálculo literal en src/v6_2/l1_verifica.py y comparación con cifras_clave.csv y L3/hechos.json (±0,05 en %, ±1 en recuentos)",
+ "estimacion": {
+  "fichas_completas": 17,
+  "fichas_breves_cifras": 49,
+  "fichas_breves_grupos": 10,
+  "reproducidas_l1_verifica": 17,
+  "de_15_revision_humana": 15,
+  "solo_raw": 14,
+  "con_tabla_intermedia": 3,
+  "no_reconstruibles_15": 0,
+  "breves_no_reconstruibles": [
+   "D3-coincide",
+   "D3-comparable_en_parte",
+   "D3-difiere",
+   "K1-N-MEJOR",
+   "K1-N-TAREAS",
+   "V6-M4-RMSE-alq_provincia",
+   "V6-M4-PERS-alq_provincia"
+  ]
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "ruff": "limpio",
+  "fallos": []
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "deficit_2124_c1/c2 se mantienen como históricas (v6.1), sustituidas por L3-DEF-2124-SINBAJAS/CONBAJAS (reproducidas). Hallazgo nuevo: en A23-A10 el peso SERPAVI 2024 de Valencia no cruza por nombre ('Valencia/Valéncia'); con el cruce por código el rango sería 26,1-30,8 % (central 28,5 %) frente a 24,6-30,8 % (27,7 %) publicado; decisión y, si procede, ERRATA para el orquestador."
+}

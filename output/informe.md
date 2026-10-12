@@ -435,7 +435,7 @@ Prioridad según su efecto sobre la inferencia de P1-P5 (1 = invalida lecturas c
 
 **Prioridad 1 (estabilidad y selección de P1/P5; precio real) · F2 — bloque de precio real (condición de la re-revisión, cumplida)**
 
-- Ecuación real: el término de corrección del error es significativo en toda la muestra (−0,106, EE 0,035) pero cambia de signo en la muestra pre-COVID (hasta 2019Q4: +0,010, p=0,72); en la submuestra 2014Q1+ con el ect de la muestra completa sigue siendo significativo (−0,112, p<0,001). La corrección hacia el equilibrio depende del periodo: no es estable. (Corrección: una versión anterior de este documento atribuía al ECM real el −0,068 del nominal; detectado en docs/revision_f7.md.)
+- Ecuación real: el término de corrección del error es significativo en toda la muestra (−0,106, EE 0,035) pero cambia de signo en la muestra pre-COVID (hasta 2019Q4: +0,010, p=0,72); en la submuestra 2014Q1+ con el ect de la muestra completa sigue siendo significativo (−0,112, p<0,001). La corrección hacia el equilibrio depende del periodo: no es estable. (Corrección: una versión anterior de este documento atribuía al ECM real el −0,068 del nominal; detectado en historico/docs/revision_f7.md.)
 - Costes reales con signo negativo en el largo plazo (−0,66) y tipo real ≈0: relación estadística, no estructural. DOLS real con BG, RESET y VIF (17) que fallan.
 - Ningún término del corto plazo real sobrevive a Bonferroni (K=576-1.728); el preferido rara vez gana en el bootstrap de la selección; no mejora al AR(4) fuera de muestra.
 

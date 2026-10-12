@@ -1,14 +1,14 @@
 # K4c · Coherencia de cifras (resumen)
 
-Cifras significativas analizadas: 2071. Fuente de verdad: output/v5/cifras_clave.csv.
+Cifras significativas analizadas: 5785. Fuente de verdad: output/v5/cifras_clave.csv.
 
 ## Recuentos globales
 
 | clase | n |
 |---|---|
-| EN_CIFRAS_CLAVE | 836 |
-| HISTORICA_MARCADA | 516 |
-| SIN_FECHA | 699 |
+| EN_CIFRAS_CLAVE | 838 |
+| HISTORICA_MARCADA | 4099 |
+| SIN_FECHA | 828 |
 | HUERFANA | 16 |
 | CONTRADICTORIA | 4 |
 
@@ -16,22 +16,75 @@ Cifras significativas analizadas: 2071. Fuente de verdad: output/v5/cifras_clave
 
 | fichero | EN_CIFRAS_CLAVE | HISTORICA_MARCADA | SIN_FECHA | HUERFANA | CONTRADICTORIA | total |
 |---|---|---|---|---|---|---|
-| README.md | 1 | 0 | 0 | 0 | 0 | 1 |
-| README_REPLICACION.md | 0 | 6 | 2 | 2 | 0 | 10 |
-| archive/output/v3/articulo.md | 0 | 160 | 0 | 0 | 0 | 160 |
-| archive/output/v3/informe_politica.md | 0 | 69 | 0 | 0 | 0 | 69 |
-| archive/output/v3/lo_que_sabemos.md | 0 | 59 | 0 | 0 | 0 | 59 |
-| archive/output/v4/policy_brief.md | 0 | 24 | 0 | 0 | 0 | 24 |
-| archive/output/v4/working_paper.md | 0 | 63 | 0 | 0 | 0 | 63 |
+| README.md | 0 | 1 | 0 | 0 | 0 | 1 |
+| README_REPLICACION.md | 0 | 5 | 2 | 2 | 0 | 9 |
 | docs/v5/calendario_publicacion.md | 0 | 0 | 1 | 0 | 0 | 1 |
 | docs/v5/licencias_datos.md | 2 | 2 | 0 | 0 | 0 | 4 |
 | docs/v5/literatura_instrumentos.md | 11 | 1 | 1 | 0 | 0 | 13 |
+| historico/docs/preguntas.md | 0 | 2 | 0 | 0 | 0 | 2 |
+| historico/docs/revision_f2.md | 0 | 214 | 0 | 0 | 0 | 214 |
+| historico/docs/revision_f4.md | 0 | 197 | 0 | 0 | 0 | 197 |
+| historico/docs/revision_f5.md | 0 | 201 | 0 | 0 | 0 | 201 |
+| historico/docs/revision_f6.md | 0 | 163 | 0 | 0 | 0 | 163 |
+| historico/docs/revision_f7.md | 0 | 115 | 0 | 0 | 0 | 115 |
+| historico/docs/v2/estado.md | 0 | 35 | 0 | 0 | 0 | 35 |
+| historico/docs/v2/eventos_politica.md | 0 | 76 | 0 | 0 | 0 | 76 |
+| historico/docs/v2/plan.md | 0 | 4 | 0 | 0 | 0 | 4 |
+| historico/docs/v2/revision_BA.md | 0 | 71 | 0 | 0 | 0 | 71 |
+| historico/docs/v2/revision_BD.md | 0 | 117 | 0 | 0 | 0 | 117 |
+| historico/docs/v2/revision_BI.md | 0 | 206 | 0 | 0 | 0 | 206 |
+| historico/docs/v2/revision_BM.md | 0 | 92 | 0 | 0 | 0 | 92 |
+| historico/docs/v2/revision_BO.md | 0 | 144 | 0 | 0 | 0 | 144 |
+| historico/docs/v2/revision_BP.md | 0 | 145 | 0 | 0 | 0 | 145 |
+| historico/docs/v2/revision_BV.md | 0 | 69 | 0 | 0 | 0 | 69 |
+| historico/docs/v2/revision_final.md | 0 | 168 | 0 | 0 | 0 | 168 |
+| historico/docs/v3/estado.md | 0 | 89 | 0 | 0 | 0 | 89 |
+| historico/docs/v3/plan.md | 0 | 5 | 0 | 0 | 0 | 5 |
+| historico/docs/v3/revision_oleada1.md | 0 | 120 | 0 | 0 | 0 | 120 |
+| historico/docs/v3/revision_oleada2.md | 0 | 125 | 0 | 0 | 0 | 125 |
+| historico/docs/v3/revision_oleada3.md | 0 | 260 | 0 | 0 | 0 | 260 |
+| historico/docs/v4/estado.md | 0 | 61 | 0 | 0 | 0 | 61 |
+| historico/docs/v4/plan.md | 0 | 9 | 0 | 0 | 0 | 9 |
+| historico/docs/v4/preguntas_abiertas.md | 0 | 5 | 0 | 0 | 0 | 5 |
+| historico/docs/v4/revision_oleadaA.md | 0 | 81 | 0 | 0 | 0 | 81 |
+| historico/docs/v4/revision_oleadaB.md | 0 | 73 | 0 | 0 | 0 | 73 |
+| historico/docs/v4/revision_oleadaC.md | 0 | 132 | 0 | 0 | 0 | 132 |
+| historico/docs/v4/revision_oleadaC_it2.md | 0 | 17 | 0 | 0 | 0 | 17 |
+| historico/docs/v5_1/estado.md | 0 | 34 | 0 | 0 | 0 | 34 |
+| historico/docs/v5_1/fuentes_fallidas.md | 0 | 6 | 0 | 0 | 0 | 6 |
+| historico/docs/v5_1/instrucciones_subagentes.md | 0 | 2 | 0 | 0 | 0 | 2 |
+| historico/docs/v5_1/plan.md | 0 | 18 | 0 | 0 | 0 | 18 |
+| historico/docs/v6/auditoria.md | 0 | 20 | 0 | 0 | 0 | 20 |
+| historico/docs/v6/estado.md | 0 | 47 | 0 | 0 | 0 | 47 |
+| historico/docs/v6/instrucciones_subagentes.md | 0 | 2 | 0 | 0 | 0 | 2 |
+| historico/docs/v6/plan.md | 0 | 18 | 0 | 0 | 0 | 18 |
+| historico/docs/v6/revision_final.md | 0 | 61 | 0 | 0 | 0 | 61 |
+| historico/docs/v6_1/auditoria.md | 0 | 16 | 0 | 0 | 0 | 16 |
+| historico/docs/v6_1/carta_respuesta.md | 0 | 21 | 0 | 0 | 0 | 21 |
+| historico/docs/v6_1/estado.md | 0 | 84 | 0 | 0 | 0 | 84 |
+| historico/docs/v6_1/informe_arbitro_academico.md | 0 | 21 | 0 | 0 | 0 | 21 |
+| historico/docs/v6_1/informe_arbitro_politica.md | 0 | 2 | 0 | 0 | 0 | 2 |
+| historico/docs/v6_1/instrucciones_subagentes.md | 0 | 2 | 0 | 0 | 0 | 2 |
+| historico/docs/v6_1/k4b_especificacion.md | 0 | 33 | 0 | 0 | 0 | 33 |
+| historico/docs/v6_1/plan.md | 0 | 14 | 0 | 0 | 0 | 14 |
+| historico/docs/v6_1/revision_K2.md | 0 | 53 | 0 | 0 | 0 | 53 |
+| historico/docs/v6_1/revision_final.md | 0 | 27 | 0 | 0 | 0 | 27 |
+| historico/docs/v6_1/tareas_autor.md | 0 | 14 | 0 | 0 | 0 | 14 |
+| historico/docs/v6_2/estado.md | 0 | 41 | 0 | 0 | 0 | 41 |
+| historico/docs/v6_2/instrucciones_subagentes.md | 0 | 2 | 0 | 0 | 0 | 2 |
+| historico/docs/v6_2/plan.md | 0 | 14 | 0 | 0 | 0 | 14 |
+| historico/docs/v6_2/revision.md | 0 | 33 | 0 | 0 | 0 | 33 |
+| historico/output/v3/articulo.md | 0 | 160 | 0 | 0 | 0 | 160 |
+| historico/output/v3/informe_politica.md | 0 | 69 | 0 | 0 | 0 | 69 |
+| historico/output/v3/lo_que_sabemos.md | 0 | 59 | 0 | 0 | 0 | 59 |
+| historico/output/v4/policy_brief.md | 0 | 24 | 0 | 0 | 0 | 24 |
+| historico/output/v4/working_paper.md | 0 | 63 | 0 | 0 | 0 | 63 |
 | output/v5/articulo_colegio.md | 37 | 3 | 14 | 0 | 0 | 54 |
 | output/v5/articulos/a_necesidades.md | 50 | 16 | 86 | 0 | 0 | 152 |
 | output/v5/articulos/b_replicacion.md | 19 | 12 | 34 | 0 | 0 | 65 |
 | output/v5/articulos/c_territorio.md | 6 | 0 | 56 | 0 | 0 | 62 |
 | output/v5/correo_coev.md | 0 | 0 | 2 | 0 | 0 | 2 |
-| output/v5/informe_tecnico.md | 225 | 50 | 260 | 0 | 0 | 535 |
+| output/v5/informe_tecnico.md | 223 | 50 | 259 | 0 | 0 | 532 |
 | output/v5/linkedin/01.md | 2 | 0 | 2 | 0 | 0 | 4 |
 | output/v5/linkedin/02.md | 3 | 0 | 0 | 0 | 0 | 3 |
 | output/v5/linkedin/03.md | 2 | 0 | 4 | 0 | 0 | 6 |
@@ -42,11 +95,14 @@ Cifras significativas analizadas: 2071. Fuente de verdad: output/v5/cifras_clave
 | output/v5/linkedin/08.md | 1 | 0 | 0 | 0 | 0 | 1 |
 | output/v5/linkedin/09.md | 0 | 0 | 3 | 0 | 0 | 3 |
 | output/v5/linkedin/10.md | 2 | 0 | 0 | 0 | 0 | 2 |
-| output/v5/lo_que_sabemos.md | 51 | 2 | 33 | 0 | 0 | 86 |
-| output/v5/policy_brief.md | 26 | 2 | 36 | 0 | 0 | 64 |
-| output/v5/ponencia/diapositivas.md | 17 | 0 | 13 | 0 | 0 | 30 |
-| output/v5/ponencia/guion.md | 11 | 0 | 22 | 0 | 0 | 33 |
-| output/v5/una_pagina.md | 20 | 0 | 0 | 0 | 0 | 20 |
+| output/v5/linkedin/11.md | 0 | 0 | 3 | 0 | 0 | 3 |
+| output/v5/lo_que_sabemos.md | 51 | 2 | 32 | 0 | 0 | 85 |
+| output/v5/nota_metodologica.md | 3 | 0 | 89 | 0 | 0 | 92 |
+| output/v5/policy_brief.md | 26 | 3 | 35 | 0 | 0 | 64 |
+| output/v5/ponencia/diapositivas.md | 17 | 0 | 17 | 0 | 0 | 34 |
+| output/v5/ponencia/guion.md | 11 | 0 | 23 | 0 | 0 | 34 |
+| output/v5/que_cambio.md | 2 | 1 | 32 | 0 | 0 | 35 |
+| output/v5/una_pagina.md | 20 | 0 | 3 | 0 | 0 | 23 |
 | output/v5/verificador/verificador.md | 265 | 23 | 8 | 14 | 4 | 314 |
 | output/v5/working_paper.md | 71 | 24 | 120 | 0 | 0 | 215 |
 

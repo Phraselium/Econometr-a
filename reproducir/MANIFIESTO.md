@@ -8,4 +8,4 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | entorno.md | requirements.lock | `7987cfdc115ca2a36fc66a07cd8ab671620c574f8e5f7de547c7b2e96fbc1c77` |
 | evaluacion_2027.md | docs/v7_1/evaluacion_2027.md | `bc4bd7902366f2f10c29d3976974af37a8ddce01ea326e02efd26684d778b484` |
 | instrucciones.md | README_REPLICACION.md | `0110e0811bcb155c7d5d9372f9faed80213e48fb9d6185c5dd2ef21951c3e678` |
-| tiempos.md | docs/v7_1/tiempos.md | `c4193178c9cf0e9f43195a4696585ba61f8712469af7653435cc305f2f665594` |
+| tiempos.md | docs/v7_1/tiempos.md | `1f6b14d768d2ed430e8253d87142af9c2b80ed28b198a9c950db122855613201` |

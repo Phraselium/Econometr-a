@@ -1,6 +1,6 @@
 # Vivienda en España: base de evidencia reproducible
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión de referencia:** v7.1 (consolidación y estructura para publicación; 12 de octubre de 2026). Versiones cerradas: v1-v7.0. La v6.2 pasa a histórica ([historico/INDICE.md](historico/INDICE.md)).
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** v7.1, versión de referencia (consolidación y estructura para publicación; 12 de octubre de 2026). Versiones cerradas: v1-v7.0. La v6.2 pasa a histórica ([historico/INDICE.md](historico/INDICE.md)).
 
 **Empiece por [LEEME_PRIMERO.md](LEEME_PRIMERO.md)**, que propone itinerarios de lectura para ciudadanos, periodistas, revisores y técnicos.
 

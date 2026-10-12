@@ -1,6 +1,6 @@
 # Notas de publicación (para pegar en GitHub)
 
-Generado por `src/v7_1/s6_paquete.py` desde docs/v7_1/plantillas/release_notes.md. Las cifras salen de output/v5/cifras_clave.csv. Hay una sección por release: péguela tal cual en la descripción de cada una.
+Generado por `src/v7_1/s6_paquete.py` desde docs/v7_1/plantillas/release_notes.md. Las cifras salen de output/v5/cifras_clave.csv. Hay una sección por release: péguela tal cual en la descripción de cada una. Las rutas son del repositorio (una release no resuelve enlaces relativos).
 
 ---
 
@@ -16,7 +16,7 @@ Generado por `src/v7_1/s6_paquete.py` desde docs/v7_1/plantillas/release_notes.m
 **Por qué importa la fecha.** La fecha de esta release, o la de su DOI en Zenodo, es la fecha verificable del pre-registro. Los datos publicados después son la muestra limpia.
 
 **Ficheros:**
-- [docs/v7/hipotesis.md](../v7/hipotesis.md), también en [metodologia/preregistro_v7.md](../../metodologia/preregistro_v7.md);
+- `docs/v7/hipotesis.md`, también en `metodologia/preregistro_v7.md`;
 - docs/v7/desviaciones.md;
 - docs/v7/validacion_herramientas.md (validación por Monte Carlo anterior a la estimación).
 
@@ -36,7 +36,7 @@ Generado por `src/v7_1/s6_paquete.py` desde docs/v7_1/plantillas/release_notes.m
 - **Predicción.** El mejor modelo bate a la base más exigente en 6 de 17 comunidades en alquiler y en 5 de 17 en compra, con selección en muestra. Los modelos se congelaron con sha256 `93795a94…0a9a0646`.
 - **Simulación de traslado a diez años.** La movilización de vacías baja el alquiler de mercado -3,8 % (mediana). Las ayudas a la demanda suben el precio de mercado 4,4 %. El signo lo fija la fórmula de incidencia.
 
-**Enlaces:** output/v7/atlas_resumen.md y output/v7/atlas/; versión ampliada en [publicacion/atlas_regional/](../../publicacion/atlas_regional/atlas_resumen.md).
+**Enlaces:** output/v7/atlas_resumen.md y output/v7/atlas/; versión ampliada en publicacion/atlas_regional/ (`publicacion/atlas_regional/atlas_resumen.md`).
 
 ---
 
@@ -57,11 +57,11 @@ Generado por `src/v7_1/s6_paquete.py` desde docs/v7_1/plantillas/release_notes.m
 - **Ensayo de `make evaluate_v7`** con datos futuros simulados: superado (reproducir/ensayo_evaluate_v7.md).
 
 **Enlaces:**
-- [LEEME_PRIMERO.md](../../LEEME_PRIMERO.md)
-- [publicacion/](../../publicacion/MANIFIESTO.md), con [cifras_clave.csv](../../publicacion/cifras_clave.csv)
-- [metodologia/](../../metodologia/MANIFIESTO.md)
-- [reproducir/](../../reproducir/MANIFIESTO.md)
-- [nota metodológica](../../publicacion/nota_metodologica.md)
-- [qué cambió](../../publicacion/que_cambio.md)
+- `LEEME_PRIMERO.md`
+- publicacion/ (`publicacion/MANIFIESTO.md`), con cifras_clave.csv (`publicacion/cifras_clave.csv`)
+- metodologia/ (`metodologia/MANIFIESTO.md`)
+- reproducir/ (`reproducir/MANIFIESTO.md`)
+- nota metodológica (`publicacion/nota_metodologica.md`)
+- qué cambió (`publicacion/que_cambio.md`)
 
 **Cambios en cifras publicadas:** ninguno (ERRATA.md sin entradas nuevas).

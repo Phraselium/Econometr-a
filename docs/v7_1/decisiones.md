@@ -37,3 +37,16 @@
   - Las rutas que citaban los ficheros movidos se actualizan solo textualmente en 22 documentos, entre ellos README, CHANGELOG, MAPA y los skills de .claude.
   - k4c_cifras (v6.1) lee historico/ en lugar de archive/, que es un cambio solo de ruta. Sus salidas de `make all` cambiarán por ello.
 - **W15.** publicacion/, metodologia/ y reproducir/ se generan siempre con `make publicacion`, que escribe una cabecera «no editar» y un manifiesto sha256. tests/v7_1/test_publicacion.py los regenera en un directorio temporal y exige identidad byte a byte. Los enlaces relativos se reescriben hacia la copia publicada o, si no se publica, hacia la ruta del repositorio. Las LinkedIn y los artículos de difusión no se publican en publicacion/, porque el encargo no los lista; siguen en output/v5.
+- **W16. Cierre: diferencias con lo versionado.**
+  - **`make v7` ×2 en un clon limpio (76683a9):** 523 ficheros con md5 idénticos y ninguna diferencia con lo versionado (git status vacío). `make check` rc=0.
+  - **`make all` en otro clon:** rc=0 y `make check` rc=0. Nueve ficheros difieren:
+    1. docs/v2/fallidas/ine.md: solo la marca de tiempo de la descarga, sin red. No se copia (ocurría ya en cierres anteriores).
+    2. output/v2/BM/tiempos.json: tiempos de reloj. No se copia.
+    3. output/informe.md (v1): cita la ruta nueva de revision_f7.md en historico/. Se copia.
+    4. output/v6_1/K4C/* y output/v6_1/K4D/*: cambian por el traslado a historico/ (k4c lee historico/, k4d cuenta más .md) y por los ficheros nuevos de V7.1. Se regeneran en el repositorio.
+  - **Ajustes antes de regenerar K4C y K4D, porque K4D detectó 15 enlaces rotos y una versión sin leer:**
+    - los enlaces relativos de la plantilla de release notes pasan a rutas, que es lo correcto en una release de GitHub;
+    - los README de output/v3 y output/v4 apuntan a historico/;
+    - README.md vuelve a declarar «**Versión:** v7.1».
+  - **Resultado:** 0 enlaces rotos y 580 .md revisados, igual que en el clon limpio. Se borran las carpetas ignoradas output/v7/*_smoke del repositorio de trabajo, que contaban de más.
+  - **Ninguna cifra publicada cambia.** ERRATA no tiene entradas nuevas.

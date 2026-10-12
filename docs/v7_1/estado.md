@@ -24,8 +24,15 @@
 
 - **Control.** Revisor único (opus): APROBAR CON CORRECCIONES, sin hallazgos de severidad alta; 13 hallazgos corregidos (docs/v7_1/revision_control.md). Tests de V7.1, k4a, k4c y l5, check_v5 y check_texto en verde.
 
+- **Cierre.**
+  - `make v7` ×2 en un clon limpio sin red: 2.926 s y 2.969 s, con md5 idénticos en 523 ficheros y sin diferencias con lo versionado.
+  - `make publicacion` y `make check`: rc=0.
+  - `make all`: rc=0 en 8.683 s. Las diferencias están explicadas en W16; se copian las ligadas al traslado a historico/ y no las marcas de tiempo.
+  - `make check` final en el repositorio: 118 tests superados, sin errores en check_v5, check_v6 ni check_texto.
+  - Etiqueta local v7.1. El remoto rechaza las etiquetas.
+
 ## Siguiente
-- Cierre: `make v7` ×2 en un clon limpio sin red, `make publicacion` y `make check`; `make all` ×1 en otro clon; explicar las diferencias; etiqueta local v7.1.
+- V7.1 cerrada. Tareas del autor en docs/v7_1/tareas_autor.md (la más urgente: releases y Zenodo antes del 4-12-2026).
 
 ## Tokens de subagentes (de 0,65 M)
 

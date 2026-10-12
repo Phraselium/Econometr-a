@@ -8,7 +8,7 @@ V5_ORDEN := r1t_run r1c_run r1a_run r1b_run a23_run a4_run a5_run a5_validacion 
 V6_ORDEN := m0_run m1a_run m1b_run m2_run m3a_run m3a_bayes m3a_dl m3a_informe m3b_run m4_run
 # v6.1: reanálisis (lee JSON versionados) y, al final, cifras_clave + render para recoger hechos de v6/v6.1
 # v6.2: déficit con correcciones alternativas de la EPA (L3) y su ficha; van antes de V6_1 (que cierra con cifras_clave y render)
-V6_2_ORDEN := l3_deficit l3_ficha l1_verifica
+V6_2_ORDEN := l3_deficit l3_ficha l1_verifica ../v6_3/ver_hechos
 V6_1_ORDEN := k1_run k2_inmigracion k3_run k6_fichas k4b_run ../v5/cifras_clave ../v5/render k4b_comparar k4c_cifras k4d_docs ../v6_2/l5_publicables
 FETCH  := $(sort $(wildcard src/fetch_*.py)) $(sort $(wildcard src/extract_*.py))
 MODELS := $(sort $(wildcard src/f[2-6]_*.py)) $(foreach r,ba_run bv_main bi_run bo_run bp_main bm_run bd_run bs_run,$(wildcard src/v2/$(r).py))

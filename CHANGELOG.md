@@ -2,6 +2,13 @@
 
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
+## v6.3 (2026-10-12): correcciones de los pendientes de v6.2 (R0 de V7)
+
+- **D2** reparte ahora la necesidad de T3 (v5.1, base sin X) en lugar de la de B1 (v5). Cobertura de P-D: del 29,1 % (11,6-46,5) al 29,7 % (11,9-47,5); necesidad de la clase 1: de 189.335 a 185.283 viviendas/año. Detalle en ERRATA.md.
+- **8 de las 26 cifras del verificador** que no estaban en cifras_clave se incorporan (output/v6_3/VER); las demás son parámetros de diseño o no tienen origen trazable.
+- **cifras_clave** incluye la columna `sentido_min_max`: 70 filas cuyo min/max no es un rango.
+- **Nuevo test** de cruces territoriales por código INE.
+
 ## v6.2 (2026-10-12) — cierre final para revisión externa
 
 **Anexo metodológico (L1).** output/v6_2/anexo_metodologico.md tiene una ficha por cifra publicable: 17 completas y 49 breves, con fuente, filtros, fórmula, supuestos, capa y script.

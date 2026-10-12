@@ -74,3 +74,7 @@
   - posible I(2) de ln IPV y Holm sobre las cotas ARDL;
   - sensibilidad al orden de retardos y Bai-Perron;
   - descomposición histórica (contabilidad descriptiva con el residuo visible) y tablas por región.
+- **V14 · Los revisores exceden su tope.**
+  - R2: 48.945 frente a 40.000.
+  - R4: 65.590 frente a 45.000; declaró unos 37.000.
+  - Por la regla de disciplina del encargo («si un subagente supera su tope, no vuelvas a delegar ese tipo de tarea y hazla tú»), la **revisión final la hace el orquestador**, con la misma lista de comprobación del revisor (interpretación, propuestas, neutralidad), y la documenta en docs/v7/revision_final.md. Se declara como desviación del control pedido (revisor opus al final).

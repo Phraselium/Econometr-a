@@ -50,3 +50,20 @@
     - **H7.** El Hausman (potencia de unos 0,61) no se usa como prueba de homogeneidad: si no rechaza, se reportan MG y PMG sin declarar homogeneidad. La variante con la varianza del MG se eligió a posteriori, por ser la única con tamaño válido.
   - **Lo hace el subagente de R2** (con un tope adicional de 70.000 tokens): el código y el Monte Carlo de los hallazgos 1, 2, 4, 8, 9, 10, 11 y 12.
   - El estimador principal se decide tras esta ronda. Si un factor I(1) con cargas heterogéneas sesga MG_dm, será CS-ARDL o CS-DL corregido si resulta apto.
+- **V12 · R2 cerrado tras el REHACER (sin una segunda ronda del revisor).** Sus hallazgos 1-12 están atendidos; se documentan dos pendientes parciales (H8: escenarios K y L con aptitud parcial; H10a: sin una implementación de referencia de Stata o R). Resultado y regla de uso:
+  - **Factor I(1) con cargas heterogéneas** (escenario F, el relevante para la vivienda): ningún estimador es apto.
+    - CS-DL con p_T = 4: sesgo ≤11 %, cobertura 0,86-0,90.
+    - MG_dm: sesgo de unos 20 %.
+    - PMG_dm: sesgo del 16 %, cobertura bootstrap 0,90-0,94.
+    - MG y PMG sin ajuste: sesgo superior al 40 %.
+  - **Con cargas homogéneas** (escenario G), MG_dm es apto.
+  - **Regla de triangulación** (fijada antes de estimar):
+    - Una hipótesis de largo plazo solo «se confirma» con p de Holm < 0,05 en MG_dm **y** el mismo signo en PMG_dm (IC bootstrap, B=199, demeaning reaplicado; cobertura 0,95-0,97 en A/B) **y** en CS-DL (p_T=4).
+    - La magnitud se publica como el **rango entre los tres estimadores**, nunca como un punto.
+    - Si no coinciden los signos, la hipótesis queda «no concluyente».
+  - **Valores críticos e indicadores de los tests:**
+    - φ̄: valor crítico simulado al 5 % de −8,83 (bajo no cointegración, escenarios C y D); el −1,645 no es válido.
+    - Cointegración: el «tipo Westerlund» tiene una potencia de 0,06-0,29 con ajuste lento (φ entre −0,1 y −0,02). Por eso su no rechazo no es informativo, y Pedroni se usa como contraste.
+    - CIPS sobrerrechaza en series I(1) con un componente I(0) grande. El orden de integración se juzga por ADF, KPSS y Zivot-Andrews por región, con CIPS solo como apoyo.
+    - SBC acierta el orden ARDL(2,1) el 52 % de las veces, así que se reportan también ARDL(1,1) y (2,2).
+    - PMG es inestable con retroalimentación, roturas o ajuste lento: se trata como contraste, no como principal.

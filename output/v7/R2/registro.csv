@@ -1,145 +1,367 @@
 fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
-R2_MC,A_coint_sin_factor|MG|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0129002000756446,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|MG|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0313373947215914,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|MG_jackknife|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0167962015329681,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|MG|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0473023968571779,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|PMG|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.002190990973702,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|PMG|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0048072784819392,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|PMG|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0217647980117127,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|PMG_sandwich|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.002190990973702,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|PMG_sandwich|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0048072784819392,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|PMG_sandwich|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0217647980117127,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|PMG_boot|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.004237766401208,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|PMG_boot|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0027103210177782,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|PMG_boot|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0224851549287758,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|DFE|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0039588039386587,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|DFE|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0111317788528493,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|DFE_jackknife|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0303404266609885,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|DFE|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0096532360257855,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|CS-ARDL|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0488212908940335,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|CS-ARDL|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.1089335244647169,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|CS-ARDL|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.1044623670668932,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|CS-DL|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.059665665510214,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|CS-DL|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.1120504915016809,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|CS-DL|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|MG_dm|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.01529599931134,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|MG_dm|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0364186487575389,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|MG_dm|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0461837124506638,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|PMG_dm|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0008402388253243,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|PMG_dm|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0076727356426812,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|PMG_dm|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0193803556377384,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|Westerlund_Gt|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|Westerlund_Ga|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|Westerlund_Pt|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|Westerlund_Pa|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|Pedroni_panelADF|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|Pedroni_groupADF|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|Hausman_info|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.135,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|Hausman_sandwich|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.13,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|Hausman_VMG|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.06,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|CIPS_RW_puro|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.08,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|CIPS_sobre_y_del_DGP|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.38,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,A_coint_sin_factor|CIPS_sobre_serie_estacionaria|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|MG|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0256313778455849,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|MG|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0105771086451068,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|MG_jackknife|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0332209456186329,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|MG|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0170703687072086,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|PMG|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0074333036455969,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|PMG|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0001391648202807,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|PMG|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0002632706437963,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|PMG_sandwich|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0074333036455969,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|PMG_sandwich|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0001391648202807,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|PMG_sandwich|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0002632706437963,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|PMG_boot|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.009687910394317,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|PMG_boot|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0016314330040129,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|PMG_boot|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-6.926080782166388e-06,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|DFE|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0121279161005747,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|DFE|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0155719251801769,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|DFE_jackknife|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0666216262542999,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|DFE|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0488770882868152,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|CS-ARDL|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0637548939075258,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|CS-ARDL|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0855325723959513,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|CS-ARDL|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.1080322732364821,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|CS-DL|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0785436629530151,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|CS-DL|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0920366298312078,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|CS-DL|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|MG_dm|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0019585914914852,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|MG_dm|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0147016541004309,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|MG_dm|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0131014464544944,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|PMG_dm|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0007309438033226,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|PMG_dm|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0080115380897178,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|PMG_dm|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0131486440672452,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|Westerlund_Gt|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|Westerlund_Ga|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|Westerlund_Pt|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|Westerlund_Pa|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.99,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|Pedroni_panelADF|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.98,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|Pedroni_groupADF|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.985,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|Hausman_info|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.08,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|Hausman_sandwich|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.065,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|Hausman_VMG|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.03,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|CIPS_RW_puro|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.06,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|CIPS_sobre_y_del_DGP|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.555,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,B_coint_con_factor|CIPS_sobre_serie_estacionaria|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,C_sin_coint_sin_factor|Westerlund_Gt|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.005,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,C_sin_coint_sin_factor|Westerlund_Ga|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.005,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,C_sin_coint_sin_factor|Westerlund_Pt|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.01,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,C_sin_coint_sin_factor|Westerlund_Pa|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.01,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,C_sin_coint_sin_factor|Pedroni_panelADF|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.03,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,C_sin_coint_sin_factor|Pedroni_groupADF|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.035,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,C_sin_coint_sin_factor|Hausman_info|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.275,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,C_sin_coint_sin_factor|Hausman_sandwich|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.28,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,C_sin_coint_sin_factor|Hausman_VMG|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.235,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,C_sin_coint_sin_factor|CIPS_RW_puro|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.06,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,C_sin_coint_sin_factor|CIPS_sobre_y_del_DGP|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.11,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,C_sin_coint_sin_factor|CIPS_sobre_serie_estacionaria|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,D_sin_coint_con_factor|Westerlund_Gt|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.005,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,D_sin_coint_con_factor|Westerlund_Ga|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,D_sin_coint_con_factor|Westerlund_Pt|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.01,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,D_sin_coint_con_factor|Westerlund_Pa|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.005,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,D_sin_coint_con_factor|Pedroni_panelADF|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.08,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,D_sin_coint_con_factor|Pedroni_groupADF|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.08,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,D_sin_coint_con_factor|Hausman_info|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.26,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,D_sin_coint_con_factor|Hausman_sandwich|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.24,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,D_sin_coint_con_factor|Hausman_VMG|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.245,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,D_sin_coint_con_factor|CIPS_RW_puro|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.075,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,D_sin_coint_con_factor|CIPS_sobre_y_del_DGP|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.115,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,D_sin_coint_con_factor|CIPS_sobre_serie_estacionaria|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|MG|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0150581125306743,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|MG|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0262552821606926,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|MG_jackknife|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0153524702720948,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|MG|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0456919186874109,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|PMG|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.1599805784140596,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|PMG|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.2122638736384446,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|PMG|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.085061822701756,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|PMG_sandwich|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.1599805784140596,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|PMG_sandwich|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.2122638736384446,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|PMG_sandwich|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.085061822701756,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|DFE|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.1201999168795699,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|DFE|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.1017597700724186,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|DFE_jackknife|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.183149416791896,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|DFE|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.1266233343697702,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|CS-ARDL|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0488960015535459,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|CS-ARDL|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0858588999382637,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|CS-ARDL|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0976134151464746,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|CS-DL|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0664504107986884,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|CS-DL|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.09213897275188,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|CS-DL|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|MG_dm|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0113922481958108,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|MG_dm|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.005250216031976,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|MG_dm|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.0179146606649585,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|PMG_dm|theta1,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.1631537750833957,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|PMG_dm|theta2,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,-0.1927777925458924,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|PMG_dm|phi_media,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.0883017018815756,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|Westerlund_Gt|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|Westerlund_Ga|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|Westerlund_Pt|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|Westerlund_Pa|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|Pedroni_panelADF|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|Pedroni_groupADF|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|Hausman_info|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.63,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|Hausman_sandwich|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.685,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|Hausman_VMG|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.605,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|CIPS_RW_puro|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.055,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|CIPS_sobre_y_del_DGP|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,0.43,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
-R2_MC,E_coint_theta_heterogeneo|CIPS_sobre_serie_estacionaria|rechazo_5%,simulacion N=17 T=78 200 rep,sim,sim,200,,,,,1.0,,sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica
+R2_MC3,A|CS-ARDL_pT1|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0574214456512291,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-ARDL_pT1|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.1495497669940525,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-ARDL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0125385289923782,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-ARDL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,500,,,,,-0.0332917390476257,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-ARDL_pT2|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0625180385752737,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-ARDL_pT2|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.1602407260981508,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-ARDL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0179111210853875,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-ARDL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,500,,,,,-0.0923211226159302,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-ARDL_pT4|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.1110448432488482,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-ARDL_pT4|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.1379401638110371,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-ARDL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.7885662674900881,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-ARDL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,500,,,,,-2.2136022000994946,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-DL_pT1|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.1522666633576828,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-DL_pT1|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.4226092798874887,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-DL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0736835665132146,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-DL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.2060295694337783,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-DL_pT2|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.1169470999919563,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-DL_pT2|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.3222691219834184,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-DL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0535510104858129,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-DL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.1460886048461704,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-DL_pT4|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0728465649897676,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-DL_pT4|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.1971442953649886,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-DL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0240301953232997,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CS-DL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.0740128393216776,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|MG|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0188778419591832,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|MG|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.0501812808283723,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|MG_dm|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0191586582814533,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|MG_dm|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.0504031222473668,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|MG_sbc|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0077997767931551,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|MG_sbc|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0140213585234982,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|PMG|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0030877777508414,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|PMG|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.0008232232734696,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|PMG_dm|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0025717819445213,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|PMG_dm|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.0014392778194495,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|PMG_dm_boot|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0033243888092049,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|PMG_dm_boot|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0028354751585425,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|WL_Gt|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,1.0,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|WL_Ga|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,1.0,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|WL_Pt|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,1.0,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|WL_Pa|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,1.0,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CIPS_RW|base|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.042,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CIPS_Y|base|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.35,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CIPS_RW|sbc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.04,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CIPS_Y|sbc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.144,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CIPS_RW|trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.042,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CIPS_Y|trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.35,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CIPS_RW|trend|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.076,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CIPS_Y|trend|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.422,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CIPS_RW|sbc_trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.04,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|CIPS_Y|sbc_trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.144,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|MG_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,500,,,,,-16.287261677695703,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,A|MG_dm_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,500,,,,,-16.5311437520715,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,"A|SBC_elige_(2,1)|frecuencia",simulacion N=17 T=78,sim,sim,200,,,,,0.52,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-ARDL_pT1|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0394731493949104,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-ARDL_pT1|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1386977557722009,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-ARDL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0004381790614474,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-ARDL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.1154394903985666,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-ARDL_pT2|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0695973633730638,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-ARDL_pT2|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1772848613685477,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-ARDL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.306439021006207,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-ARDL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,4.968976711813897,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-ARDL_pT4|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0838633875641137,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-ARDL_pT4|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.2028898261396945,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-ARDL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.2320516982114982,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-ARDL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.5711328681031784,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-DL_pT1|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.1485427049073469,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-DL_pT1|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.4091374334815564,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-DL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0587840583837471,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-DL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1514430323653842,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-DL_pT2|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.1132245559093235,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-DL_pT2|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.3172374892640858,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-DL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0361966866307036,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-DL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1175339684171146,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-DL_pT4|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.07202444552399,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-DL_pT4|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1981331344186335,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-DL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0276221647435962,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CS-DL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.112854902137327,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|MG|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0220869680896381,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|MG|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0479518944993606,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|MG_dm|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0158434155870339,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|MG_dm|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.0148307034335068,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|PMG|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0024584751735454,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|PMG|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0044004617118728,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|PMG_dm|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.002927965771361,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|PMG_dm|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.0214521927826799,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|PMG_dm_boot|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.002927965771361,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|PMG_dm_boot|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.0214521927826799,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CIPS_RW|base|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.06,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CIPS_Y|base|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.615,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CIPS_RW|sbc|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.065,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CIPS_Y|sbc|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.6,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CIPS_RW|trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.06,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CIPS_Y|trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.615,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CIPS_RW|trend|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.09,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CIPS_Y|trend|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.61,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CIPS_RW|sbc_trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.065,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|CIPS_Y|sbc_trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.59,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|MG_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,200,,,,,-15.87714388630272,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,B|MG_dm_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,200,,,,,-14.956625278739551,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,"B|SBC_elige_(2,1)|frecuencia",simulacion N=17 T=78,sim,sim,0,,,,,,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|WL_Gt|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.004,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|WL_Ga|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.002,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|WL_Pt|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.006,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|WL_Pa|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.006,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|CIPS_RW|base|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.034,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|CIPS_Y|base|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.092,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|CIPS_RW|sbc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.038,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|CIPS_Y|sbc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.036,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|CIPS_RW|trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.034,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|CIPS_Y|trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.092,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|CIPS_RW|trend|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.064,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|CIPS_Y|trend|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.07,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|CIPS_RW|sbc_trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.038,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|CIPS_Y|sbc_trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.036,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|MG_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,500,,,,,-8.44479597553078,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,C|MG_dm_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,500,,,,,-8.580829384886417,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,"C|SBC_elige_(2,1)|frecuencia",simulacion N=17 T=78,sim,sim,0,,,,,,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|WL_Gt|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.002,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|WL_Ga|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.002,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|WL_Pt|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.016,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|WL_Pa|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.008,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|CIPS_RW|base|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.064,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|CIPS_Y|base|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.092,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|CIPS_RW|sbc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.076,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|CIPS_Y|sbc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.052,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|CIPS_RW|trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.064,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|CIPS_Y|trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.092,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|CIPS_RW|trend|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.084,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|CIPS_Y|trend|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.096,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|CIPS_RW|sbc_trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.076,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|CIPS_Y|sbc_trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.052,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|MG_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,500,,,,,-8.826261923299215,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,D|MG_dm_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,500,,,,,-8.22282006263419,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,"D|SBC_elige_(2,1)|frecuencia",simulacion N=17 T=78,sim,sim,0,,,,,,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-ARDL_pT1|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.03159714503318,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-ARDL_pT1|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1202086554542939,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-ARDL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.1090291127522657,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-ARDL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.2746184448225428,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-ARDL_pT2|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0491943863026149,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-ARDL_pT2|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.055530224667688,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-ARDL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.1302429348105187,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-ARDL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.2587021659112294,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-ARDL_pT4|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0530780343611407,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-ARDL_pT4|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1612450153533547,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-ARDL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.4096972604473057,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-ARDL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.6215590083815605,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-DL_pT1|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.154058339440677,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-DL_pT1|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.4303357620677656,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-DL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0716367279423275,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-DL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.2152249770066218,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-DL_pT2|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.1178094132168681,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-DL_pT2|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.3283885743667952,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-DL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0523870104962649,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-DL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1441645266032902,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-DL_pT4|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0728255355149477,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-DL_pT4|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.2002739340360524,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-DL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0493991886593723,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CS-DL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0497127148393912,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|MG|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0072073266090376,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|MG|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0248552708278735,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|MG_dm|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0037371666840897,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|MG_dm|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.0107467034284483,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|PMG|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1630931820414749,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|PMG|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.406971851221752,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|PMG_dm|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1459379332256608,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|PMG_dm|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.3870162047780072,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|PMG_dm_boot|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1459379332256608,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|PMG_dm_boot|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.3870162047780072,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CIPS_RW|base|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.065,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CIPS_Y|base|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.435,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CIPS_RW|sbc|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.045,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CIPS_Y|sbc|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.215,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CIPS_RW|trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.065,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CIPS_Y|trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.435,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CIPS_RW|trend|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.095,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CIPS_Y|trend|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.45,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CIPS_RW|sbc_trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.045,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|CIPS_Y|sbc_trunc|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.215,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|MG_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,200,,,,,-15.415776995014486,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,E|MG_dm_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,200,,,,,-16.43204308383096,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,"E|SBC_elige_(2,1)|frecuencia",simulacion N=17 T=78,sim,sim,0,,,,,,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-ARDL_pT1|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.0232717966250111,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-ARDL_pT1|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.1165026766112316,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-ARDL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.0143278110971319,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-ARDL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.0140758031367981,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-ARDL_pT2|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.0065968913084981,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-ARDL_pT2|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.1530601985895511,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-ARDL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,500,,,,,-0.1944697077166491,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-ARDL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.0386810785971233,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-ARDL_pT4|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.0112362108402548,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-ARDL_pT4|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.1680755246996201,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-ARDL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.393692566558613,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-ARDL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.1392609821395468,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-DL_pT1|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.1070816860696824,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-DL_pT1|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.2155511734096625,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-DL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.0530811733930289,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-DL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.1131706196684098,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-DL_pT2|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.085873900758216,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-DL_pT2|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.172823655841888,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-DL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.0456038422235022,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-DL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.0888536144806947,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-DL_pT4|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.0563916237973264,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-DL_pT4|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.1087589672725915,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-DL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.0388321913377053,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|CS-DL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.0537768160235854,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|MG|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.2192034049675071,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|MG|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.5391807557550193,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|MG_dm|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.0608594964261779,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|MG_dm|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.2027799763838276,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|PMG|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.2552789754285405,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|PMG|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.4383464137811295,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|PMG_dm|theta1,simulacion N=17 T=78,sim,sim,500,,,,,0.0422761688394817,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|PMG_dm|theta2,simulacion N=17 T=78,sim,sim,500,,,,,0.1367760461585693,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|PMG_dm_boot|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0358448437673054,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|PMG_dm_boot|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1580352197752742,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|WL_Gt|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.93,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|WL_Ga|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.86,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|WL_Pt|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.924,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|WL_Pa|rechazo_5%,simulacion N=17 T=78,sim,sim,500,,,,,0.912,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|MG_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,500,,,,,-13.858508792150117,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,F|MG_dm_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,500,,,,,-14.430675119168455,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,"F|SBC_elige_(2,1)|frecuencia",simulacion N=17 T=78,sim,sim,0,,,,,,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-ARDL_pT1|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0197195923060765,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-ARDL_pT1|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1057737753437551,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-ARDL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0528441410150989,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-ARDL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.1157622690582432,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-ARDL_pT2|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0131593689923837,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-ARDL_pT2|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.0892886955868082,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-ARDL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.015515473992301,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-ARDL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.8136216609320883,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-ARDL_pT4|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0075188125892069,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-ARDL_pT4|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.154415472598832,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-ARDL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.3118363371198346,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-ARDL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-2.285857200433171,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-DL_pT1|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1095561707629174,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-DL_pT1|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.2307813353024247,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-DL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0553408525355801,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-DL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1110131625692757,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-DL_pT2|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0873086977642723,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-DL_pT2|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1832037979602944,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-DL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0414442705062535,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-DL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0905603343347665,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-DL_pT4|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0577924801005505,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-DL_pT4|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1172776913494892,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-DL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.03125396402941,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|CS-DL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0314078968522619,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|MG|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.305408859800734,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|MG|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.5404540824732489,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|MG_dm|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0121683883993937,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|MG_dm|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0659623957922311,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|PMG|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.2452970211464833,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|PMG|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.5703582948353433,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|PMG_dm|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0130252885686359,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|PMG_dm|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0336908384499092,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|MG_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,200,,,,,-13.772835397023986,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,G|MG_dm_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,200,,,,,-15.085845902232029,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,"G|SBC_elige_(2,1)|frecuencia",simulacion N=17 T=78,sim,sim,0,,,,,,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-ARDL_pT1|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1807413490667132,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-ARDL_pT1|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.2705452509095761,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-ARDL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,11.94290647732518,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-ARDL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-6.721969234128292,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-ARDL_pT2|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1267590688842913,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-ARDL_pT2|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.2042970520339282,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-ARDL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0889343561164498,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-ARDL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.2403347991537782,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-ARDL_pT4|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1360919723396643,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-ARDL_pT4|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.5209064012497291,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-ARDL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.4889274703682653,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-ARDL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.7135024735553371,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-DL_pT1|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.2632042049684973,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-DL_pT1|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.4972374194762368,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-DL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.2213672850343661,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-DL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.4167395536957127,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-DL_pT2|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.2513950720604018,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-DL_pT2|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.47401971778064,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-DL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.2119555203894419,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-DL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.3988412983375936,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-DL_pT4|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.2270503159581791,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-DL_pT4|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.4433309168108232,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-DL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.217317613507387,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|CS-DL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.4091560567326891,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|MG|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.1554897942052452,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|MG|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0542634577722023,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|MG_dm|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-1.1035151732718207,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|MG_dm|theta2,simulacion N=17 T=78,sim,sim,200,,,,,1.1134270840734837,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|PMG|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0363252954539847,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|PMG|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1750741980891174,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|PMG_dm|theta1,simulacion N=17 T=78,sim,sim,200,,,,,16.477956452986156,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|PMG_dm|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-2.303345798312467,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|WL_Gt|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.095,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|WL_Ga|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.06,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|WL_Pt|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.18,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|WL_Pa|rechazo_5%,simulacion N=17 T=78,sim,sim,200,,,,,0.285,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|MG_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,200,,,,,-10.995491111111669,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,J|MG_dm_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,200,,,,,-10.854602632834691,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,"J|SBC_elige_(2,1)|frecuencia",simulacion N=17 T=78,sim,sim,0,,,,,,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-ARDL_pT1|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1876768508867679,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-ARDL_pT1|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.4789337603028009,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-ARDL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0019122733637685,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-ARDL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.3651922165788928,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-ARDL_pT2|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1885470917695946,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-ARDL_pT2|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.4967975550750904,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-ARDL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1004023451398865,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-ARDL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.3045512153982384,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-ARDL_pT4|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.2271547617864421,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-ARDL_pT4|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.5549909899670274,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-ARDL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.2392048943796915,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-ARDL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.4235411004091899,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-DL_pT1|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1550857702902424,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-DL_pT1|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.3146543040839596,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-DL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0787868473509663,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-DL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.140579430758105,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-DL_pT2|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1529178250376431,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-DL_pT2|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.307099118823042,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-DL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0657922229072801,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-DL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1162899206928472,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-DL_pT4|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1582332861930702,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-DL_pT4|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.3143497696526899,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-DL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0497306082920366,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|CS-DL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0470214637799877,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|MG|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.121751391660367,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|MG|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.3084986642719245,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|MG_dm|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.1244402450474192,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|MG_dm|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.3419638393139671,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|PMG|theta1,simulacion N=17 T=78,sim,sim,200,,,,,115.92050635255804,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|PMG|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-2336.0994325390307,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|PMG_dm|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0505000913162508,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|PMG_dm|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1438257020775384,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|MG_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,200,,,,,-14.568859841175977,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,K|MG_dm_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,200,,,,,-14.86846828580237,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,"K|SBC_elige_(2,1)|frecuencia",simulacion N=17 T=78,sim,sim,0,,,,,,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-ARDL_pT1|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0060654350478539,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-ARDL_pT1|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1632385173124264,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-ARDL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-2.4930026364013584,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-ARDL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,5.296128618522227,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-ARDL_pT2|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0042363570990867,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-ARDL_pT2|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1821037808991912,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-ARDL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0672837872652482,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-ARDL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0651288076128005,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-ARDL_pT4|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.015384271614689,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-ARDL_pT4|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.2040549546011349,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-ARDL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.1553738800086774,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-ARDL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,-0.0476447430410551,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-DL_pT1|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.097310545661454,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-DL_pT1|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.2122021055011317,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-DL_pT1_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0605566781780244,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-DL_pT1_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1202895723333435,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-DL_pT2|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0762108280967718,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-DL_pT2|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1709204834732916,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-DL_pT2_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.046048403157496,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-DL_pT2_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0871009594443162,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-DL_pT4|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0507068713706332,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-DL_pT4|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1214596034125334,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-DL_pT4_jk|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0405785185049732,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|CS-DL_pT4_jk|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1009972984565999,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|MG|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0127744790988795,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|MG|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1250333419839047,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|MG_dm|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.0123142060014425,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|MG_dm|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0625631197040727,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|PMG|theta1,simulacion N=17 T=78,sim,sim,200,,,,,0.0521453000351909,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|PMG|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.1928994487847027,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|PMG_dm|theta1,simulacion N=17 T=78,sim,sim,200,,,,,-0.016540374407886,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|PMG_dm|theta2,simulacion N=17 T=78,sim,sim,200,,,,,0.0175910674024793,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|MG_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,200,,,,,-14.655580454577272,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,L|MG_dm_t_phi|cuantil5%,simulacion N=17 T=78,sim,sim,200,,,,,-15.396949009436137,,sin contraste de hipotesis; FDR no aplica
+R2_MC3,"L|SBC_elige_(2,1)|frecuencia",simulacion N=17 T=78,sim,sim,0,,,,,,,sin contraste de hipotesis; FDR no aplica

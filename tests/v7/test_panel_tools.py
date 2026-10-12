@@ -90,3 +90,28 @@ def test_pmg_bootstrap_cs_dl_demean():
     yd, Xd = pt.cs_demean(y, X)
     assert abs(yd.mean(0)).max() < 1e-9
     assert np.allclose(pt.pmg(y, X)["theta"], mc.TH, atol=0.15)
+
+
+def test_wild_cluster_tamano_17_clusters():
+    rng = np.random.default_rng(pt.SEED)
+    G, n = 17, 8
+    cl = np.repeat(np.arange(G), n)
+    rej = 0
+    R_ = 250
+    for _ in range(R_):
+        x = rng.standard_normal(G * n) + rng.standard_normal(G)[cl]
+        y = rng.standard_normal(G)[cl] * (1 + 0.5 * x * 0) + rng.standard_normal(G * n)
+        rej += pt.wild_cluster_boot(y, x[:, None], cl, 0, B=79, seed=int(rng.integers(1e9)))["p_boot"] < 0.05
+    assert 0.02 <= rej / R_ <= 0.10, rej / R_
+
+
+def test_veredictos_reproducen_tabla_y_son_deterministas():
+    import pandas as pd
+
+    import r2_mc3 as m3
+    a, b = m3.one_rep(("G", 0, 19, None)), m3.one_rep(("G", 0, 19, None))
+    assert all(np.allclose(a[k], b[k], equal_nan=True) for k in a if k != "scen")
+    csv = ROOT / "output" / "v7" / "R2" / "montecarlo_r3.csv"
+    doc = (ROOT / "docs" / "v7" / "validacion_herramientas.md").read_text(encoding="utf-8")
+    if csv.exists():
+        assert m3._md(m3.aptitud(pd.read_csv(csv))) in doc

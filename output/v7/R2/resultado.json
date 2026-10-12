@@ -1,43 +1,203 @@
 {
  "rama": "R2",
- "pregunta": "Son aptas las herramientas de panel (MG, PMG, DFE, CS-ARDL, Hausman, CIPS, Westerlund, Pedroni) en N=17, T=78 con dependencia transversal?",
+ "pregunta": "Aptitud de herramientas de panel (MG, MG_dm, PMG, PMG_dm, CS-ARDL, CS-DL, tipo Westerlund, CIPS) con factor I(1)",
  "capa": "C4",
- "datos": "simulados (SEED=20261010); sin datos reales",
+ "datos": "simulados (SEED=20261010)",
  "N": {
   "unidades": 17,
-  "T": 78,
-  "replicas_por_escenario": 200
+  "T": 78
  },
- "metodo": "Monte Carlo, 5 escenarios (ver docs/v7/validacion_herramientas.md)",
+ "metodo": "Monte Carlo, escenarios A-G, J, K, L",
  "estimacion": null,
  "ic95": null,
  "p_ajustado": null,
- "nivel_evidencia": "DESCRIPTIVO (validacion metodologica por simulacion)",
+ "nivel_evidencia": "DESCRIPTIVO (validacion por simulacion)",
  "diagnosticos": {
-  "MG": "apta con reservas: punto apto pero IC95 infra/sobre-cubre (max|sesgo rel| theta=0.063, cobertura 0.895-0.920, max|sesgo rel| media phi=0.189; con theta_i heterogeneo (E): sesgo rel theta1=-0.015, cobertura=1.000). Sesgo de muestra finita CONOCIDO de phi (Hurwicz-Nickell, T=78): 0.189; con jackknife por mitades temporales 0.132",
-  "PMG": "apta con reservas: punto apto pero IC95 infra/sobre-cubre (max|sesgo rel| theta=0.010, cobertura 0.860-0.885, max|sesgo rel| media phi=0.087; con theta_i heterogeneo (E): sesgo rel theta1=0.160, cobertura=0.275)",
-  "PMG_sandwich": "apta con reservas: punto apto pero IC95 infra/sobre-cubre (max|sesgo rel| theta=0.010, cobertura 0.790-0.835, max|sesgo rel| media phi=0.087; con theta_i heterogeneo (E): sesgo rel theta1=0.160, cobertura=0.385)",
-  "PMG_boot": "apta con reservas: punto apto pero IC95 infra/sobre-cubre (max|sesgo rel| theta=0.010, cobertura 0.870-0.920, max|sesgo rel| media phi=0.089)",
-  "DFE": "apta con reservas: punto apto pero IC95 infra/sobre-cubre (max|sesgo rel| theta=0.031, cobertura 0.850-0.915, max|sesgo rel| media phi=0.194; con theta_i heterogeneo (E): sesgo rel theta1=0.121, cobertura=0.915). Sesgo de muestra finita CONOCIDO de phi (Hurwicz-Nickell, T=78): 0.194; con jackknife por mitades temporales 0.265",
-  "CS-ARDL": "no apta: sesgo relativo de theta fuera de +-10 % (max|sesgo rel| theta=0.218, cobertura 0.715-0.850, max|sesgo rel| media phi=0.430; con theta_i heterogeneo (E): sesgo rel theta1=-0.049, cobertura=0.970)",
-  "CS-DL": "no apta: sesgo relativo de theta fuera de +-10 % (max|sesgo rel| theta=0.224, cobertura 0.765-0.840, max|sesgo rel| media phi=nan; con theta_i heterogeneo (E): sesgo rel theta1=-0.067, cobertura=0.950)",
-  "MG_dm": "apta con reservas: punto apto pero IC95 infra/sobre-cubre (max|sesgo rel| theta=0.073, cobertura 0.870-0.940, max|sesgo rel| media phi=0.184; con theta_i heterogeneo (E): sesgo rel theta1=0.011, cobertura=1.000)",
-  "PMG_dm": "apta con reservas: punto apto pero IC95 infra/sobre-cubre (max|sesgo rel| theta=0.016, cobertura 0.830-0.865, max|sesgo rel| media phi=0.077; con theta_i heterogeneo (E): sesgo rel theta1=0.164, cobertura=0.300)",
-  "CIPS_RW_puro": "apta (tamano 0.055-0.080; potencia 1.000-1.000)",
-  "Hausman_VMG": "apta (tamano 0.030-0.060; potencia 0.605-0.605)",
-  "Hausman_info": "solo diagnostico (tamano fuera de [0,02; 0,10]; tamano 0.080-0.135; potencia 0.630-0.630)",
-  "Hausman_sandwich": "solo diagnostico (tamano fuera de [0,02; 0,10]; tamano 0.065-0.130; potencia 0.685-0.685)",
-  "Pedroni_groupADF": "apta (tamano 0.035-0.080; potencia 0.985-1.000)",
-  "Pedroni_panelADF": "apta (tamano 0.030-0.080; potencia 0.980-1.000)",
-  "Westerlund_Ga": "apta con reservas: conservador (tamano 0.000-0.005; potencia 1.000-1.000)",
-  "Westerlund_Gt": "apta con reservas: conservador (tamano 0.005-0.005; potencia 1.000-1.000)",
-  "Westerlund_Pa": "apta con reservas: conservador (tamano 0.005-0.010; potencia 0.990-1.000)",
-  "Westerlund_Pt": "apta con reservas: conservador (tamano 0.010-0.010; potencia 1.000-1.000)"
+  "CS-ARDL_pT1": {
+   "A": "no apta (b=0.15; cob 0.81-0.87±0.02)",
+   "B": "no apta (b=0.14; cob 0.83-0.90±0.03)",
+   "F": "no apta (b=0.12; cob 0.87-0.90±0.01)",
+   "G": "no apta (b=0.11; cob 0.82-0.94±0.03)",
+   "E": "no apta (b=0.12; cob 0.97-0.98±0.01)",
+   "J": "no apta (b=0.27; cob 0.70-0.90±0.03)",
+   "K": "no apta (b=0.48; cob 0.17-0.38±0.03)",
+   "L": "no apta (b=0.16; cob 0.80-0.95±0.03)"
+  },
+  "CS-ARDL_pT1_jk": {
+   "A": "reservas (b=0.03; cob 0.61-0.63±0.02)",
+   "B": "no apta (b=0.12; cob 0.57-0.59±0.04)",
+   "F": "reservas (b=0.01; cob 0.63-0.65±0.02)",
+   "G": "no apta (b=0.12; cob 0.64-0.65±0.03)",
+   "E": "no apta (b=0.27; cob 0.80-0.81±0.03)",
+   "J": "no apta (b=11.94; cob 0.51-0.56±0.04)",
+   "K": "no apta (b=0.37; cob 0.52-0.53±0.04)",
+   "L": "no apta (b=5.30; cob 0.59-0.66±0.03)"
+  },
+  "CS-ARDL_pT2": {
+   "A": "no apta (b=0.16; cob 0.82-0.85±0.02)",
+   "B": "no apta (b=0.18; cob 0.77-0.83±0.03)",
+   "F": "no apta (b=0.15; cob 0.82-0.91±0.02)",
+   "G": "reservas (b=0.09; cob 0.78-0.95±0.03)",
+   "E": "reservas (b=0.06; cob 0.97-0.98±0.01)",
+   "J": "no apta (b=0.20; cob 0.70-0.90±0.03)",
+   "K": "no apta (b=0.50; cob 0.20-0.36±0.03)",
+   "L": "no apta (b=0.18; cob 0.80-0.95±0.03)"
+  },
+  "CS-ARDL_pT2_jk": {
+   "A": "reservas (b=0.09; cob 0.56-0.57±0.02)",
+   "B": "no apta (b=4.97; cob 0.53-0.56±0.04)",
+   "F": "no apta (b=0.19; cob 0.58-0.62±0.02)",
+   "G": "no apta (b=0.81; cob 0.59-0.64±0.03)",
+   "E": "no apta (b=0.26; cob 0.75-0.79±0.03)",
+   "J": "no apta (b=0.24; cob 0.47-0.51±0.04)",
+   "K": "no apta (b=0.30; cob 0.49-0.53±0.04)",
+   "L": "reservas (b=0.07; cob 0.57-0.62±0.03)"
+  },
+  "CS-ARDL_pT4": {
+   "A": "no apta (b=0.14; cob 0.79-0.84±0.02)",
+   "B": "no apta (b=0.20; cob 0.78-0.80±0.03)",
+   "F": "no apta (b=0.17; cob 0.81-0.91±0.02)",
+   "G": "no apta (b=0.15; cob 0.82-0.94±0.03)",
+   "E": "no apta (b=0.16; cob 0.94-0.97±0.02)",
+   "J": "no apta (b=0.52; cob 0.70-0.90±0.03)",
+   "K": "no apta (b=0.55; cob 0.21-0.44±0.04)",
+   "L": "no apta (b=0.20; cob 0.78-0.95±0.03)"
+  },
+  "CS-ARDL_pT4_jk": {
+   "A": "no apta (b=2.21; cob 0.40-0.41±0.02)",
+   "B": "no apta (b=0.57; cob 0.39-0.43±0.04)",
+   "F": "no apta (b=0.39; cob 0.44-0.47±0.02)",
+   "G": "no apta (b=2.29; cob 0.48-0.48±0.04)",
+   "E": "no apta (b=0.62; cob 0.56-0.61±0.04)",
+   "J": "no apta (b=0.71; cob 0.43-0.46±0.04)",
+   "K": "no apta (b=0.42; cob 0.41-0.46±0.04)",
+   "L": "no apta (b=0.16; cob 0.39-0.52±0.04)"
+  },
+  "CS-DL_pT1": {
+   "A": "no apta (b=0.42; cob 0.19-0.47±0.02)",
+   "B": "no apta (b=0.41; cob 0.23-0.50±0.04)",
+   "F": "no apta (b=0.22; cob 0.59-0.62±0.02)",
+   "G": "no apta (b=0.23; cob 0.53-0.57±0.04)",
+   "E": "no apta (b=0.43; cob 0.60-0.81±0.03)",
+   "J": "no apta (b=0.50; cob 0.38-0.46±0.04)",
+   "K": "no apta (b=0.31; cob 0.23-0.26±0.03)",
+   "L": "no apta (b=0.21; cob 0.60-0.69±0.03)"
+  },
+  "CS-DL_pT1_jk": {
+   "A": "no apta (b=0.21; cob 0.59-0.67±0.02)",
+   "B": "no apta (b=0.15; cob 0.69-0.70±0.03)",
+   "F": "no apta (b=0.11; cob 0.70-0.71±0.02)",
+   "G": "no apta (b=0.11; cob 0.68-0.68±0.03)",
+   "E": "no apta (b=0.22; cob 0.83-0.89±0.03)",
+   "J": "no apta (b=0.42; cob 0.47-0.51±0.04)",
+   "K": "no apta (b=0.14; cob 0.60-0.66±0.03)",
+   "L": "no apta (b=0.12; cob 0.70-0.73±0.03)"
+  },
+  "CS-DL_pT2": {
+   "A": "no apta (b=0.32; cob 0.46-0.66±0.02)",
+   "B": "no apta (b=0.32; cob 0.47-0.67±0.04)",
+   "F": "no apta (b=0.17; cob 0.75-0.77±0.02)",
+   "G": "no apta (b=0.18; cob 0.67-0.73±0.03)",
+   "E": "no apta (b=0.33; cob 0.81-0.91±0.03)",
+   "J": "no apta (b=0.47; cob 0.47-0.56±0.04)",
+   "K": "no apta (b=0.31; cob 0.33-0.36±0.03)",
+   "L": "no apta (b=0.17; cob 0.76-0.81±0.03)"
+  },
+  "CS-DL_pT2_jk": {
+   "A": "no apta (b=0.15; cob 0.66-0.68±0.02)",
+   "B": "no apta (b=0.12; cob 0.66-0.73±0.03)",
+   "F": "reservas (b=0.09; cob 0.66-0.68±0.02)",
+   "G": "reservas (b=0.09; cob 0.64-0.67±0.03)",
+   "E": "no apta (b=0.14; cob 0.83-0.91±0.03)",
+   "J": "no apta (b=0.40; cob 0.53-0.56±0.04)",
+   "K": "no apta (b=0.12; cob 0.64-0.65±0.03)",
+   "L": "reservas (b=0.09; cob 0.72-0.74±0.03)"
+  },
+  "CS-DL_pT4": {
+   "A": "no apta (b=0.20; cob 0.82-0.85±0.02)",
+   "B": "no apta (b=0.20; cob 0.77-0.88±0.03)",
+   "F": "no apta (b=0.11; cob 0.86-0.90±0.02)",
+   "G": "no apta (b=0.12; cob 0.88-0.90±0.02)",
+   "E": "no apta (b=0.20; cob 0.94-0.98±0.02)",
+   "J": "no apta (b=0.44; cob 0.65-0.69±0.03)",
+   "K": "no apta (b=0.31; cob 0.50-0.52±0.04)",
+   "L": "no apta (b=0.12; cob 0.86-0.92±0.02)"
+  },
+  "CS-DL_pT4_jk": {
+   "A": "reservas (b=0.07; cob 0.50-0.52±0.02)",
+   "B": "no apta (b=0.11; cob 0.40-0.50±0.04)",
+   "F": "reservas (b=0.05; cob 0.47-0.49±0.02)",
+   "G": "reservas (b=0.03; cob 0.49-0.51±0.04)",
+   "E": "reservas (b=0.05; cob 0.74-0.78±0.03)",
+   "J": "no apta (b=0.41; cob 0.51-0.53±0.04)",
+   "K": "reservas (b=0.05; cob 0.49-0.53±0.04)",
+   "L": "no apta (b=0.10; cob 0.48-0.54±0.04)"
+  },
+  "MG": {
+   "A": "apta (b=0.05; cob 0.91-0.92±0.01)",
+   "B": "apta (b=0.05; cob 0.90-0.92±0.02)",
+   "F": "no apta (b=0.54; cob 0.34-0.40±0.02)",
+   "G": "no apta (b=0.54; cob 0.28-0.39±0.03)",
+   "E": "reservas (b=0.02; cob 1.00-1.00±0.00)",
+   "J": "no apta (b=0.16; cob 0.92-0.95±0.02)",
+   "K": "no apta (b=0.31; cob 0.32-0.58±0.03)",
+   "L": "no apta (b=0.13; cob 0.83-0.93±0.03)"
+  },
+  "MG_dm": {
+   "A": "apta (b=0.05; cob 0.95-0.95±0.01)",
+   "B": "apta (b=0.02; cob 0.95-0.97±0.01)",
+   "F": "no apta (b=0.20; cob 0.85-0.93±0.02)",
+   "G": "apta (b=0.07; cob 0.94-0.95±0.02)",
+   "E": "reservas (b=0.01; cob 1.00-1.00±0.00)",
+   "J": "no apta (b=1.11; cob 0.94-0.96±0.02)",
+   "K": "no apta (b=0.34; cob 0.39-0.63±0.03)",
+   "L": "apta (b=0.06; cob 0.93-0.95±0.02)"
+  },
+  "MG_sbc": {
+   "A": "apta (b=0.01; cob 0.90-0.94±0.02)",
+   "B": "-",
+   "F": "-",
+   "G": "-",
+   "E": "-",
+   "J": "-",
+   "K": "-",
+   "L": "-"
+  },
+  "PMG": {
+   "A": "reservas (b=0.00; cob 0.87-0.88±0.02)",
+   "B": "reservas (b=0.00; cob 0.88-0.90±0.02)",
+   "F": "no apta (b=0.44; cob 0.11-0.14±0.02)",
+   "G": "no apta (b=0.57; cob 0.07-0.09±0.02)",
+   "E": "no apta (b=0.41; cob 0.23-0.24±0.03)",
+   "J": "no apta (b=0.18; cob 0.56-0.57±0.04)",
+   "K": "no apta (b=2336.10; cob 0.44-0.59±0.04)",
+   "L": "no apta (b=0.19; cob 0.31-0.44±0.04)"
+  },
+  "PMG_dm": {
+   "A": "reservas (b=0.00; cob 0.85-0.85±0.02)",
+   "B": "reservas (b=0.02; cob 0.78-0.78±0.03)",
+   "F": "no apta (b=0.14; cob 0.51-0.57±0.02)",
+   "G": "reservas (b=0.03; cob 0.81-0.81±0.03)",
+   "E": "no apta (b=0.39; cob 0.24-0.24±0.03)",
+   "J": "no apta (b=16.48; cob 0.51-0.55±0.04)",
+   "K": "no apta (b=0.14; cob 0.36-0.56±0.04)",
+   "L": "reservas (b=0.02; cob 0.82-0.84±0.03)"
+  },
+  "PMG_dm_boot": {
+   "A": "apta (b=0.00; cob 0.96-0.97±0.01)",
+   "B": "apta (b=0.02; cob 0.95-0.97±0.01)",
+   "F": "no apta (b=0.16; cob 0.90-0.94±0.02)",
+   "G": "-",
+   "E": "no apta (b=0.39; cob 0.91-0.92±0.02)",
+   "J": "-",
+   "K": "-",
+   "L": "-"
+  }
  },
  "fuera_muestra": {
   "modelo": null,
   "rmse": null,
   "dm_vs_ar4": null
  },
- "notas": "Medias/varianzas tabuladas de Pedroni no verificadas ni usadas (p simulados). Referencias NO VERIFICADAS."
+ "notas": "Ver docs/v7/validacion_herramientas.md. Referencias NO VERIFICADAS."
 }

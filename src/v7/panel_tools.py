@@ -115,15 +115,16 @@ def pmg(y, X, p=2, q=1, theta0=None, se="info"):
     parts = []
     for d, L, W in _units(y, X, p, q, False, 0):
         Mw = np.eye(len(d)) - W @ np.linalg.pinv(W)
-        parts.append((Mw @ d, Mw @ L[:, 0], Mw @ L[:, 1:], len(d)))
+        parts.append((Mw @ d, Mw @ L[:, 0], Mw @ L[:, 1:], len(d), W.shape[1]))
 
-    def prof(th):
-        out = 0.0
-        for dt, yl, Xl, n in parts:
-            xi = yl - Xl @ th
-            rss = dt @ dt - (xi @ dt) ** 2 / (xi @ xi)
-            out += n * np.log(max(rss, 1e-12) / n)
-        return out
+    DT, YL, XL = (np.array([a[i] for a in parts]) for i in range(3))  # (N,n), (N,n), (N,n,k)
+    n_ = parts[0][3]
+    dtdt = (DT * DT).sum(1)
+
+    def prof(th):  # verosimilitud concentrada vectorizada
+        xi = YL - XL @ th
+        rss = dtdt - (xi * DT).sum(1) ** 2 / (xi * xi).sum(1)
+        return float(n_ * np.log(np.maximum(rss, 1e-12) / n_).sum())
 
     start = mg(y, X, p, q)["theta"] if theta0 is None else np.asarray(theta0, float)
     start = np.clip(start, -10, 10)
@@ -131,19 +132,19 @@ def pmg(y, X, p=2, q=1, theta0=None, se="info"):
     th = r.x
     ph, sph, info = [], [], np.zeros((k, k))
     scores = []
-    for dt, yl, Xl, n in parts:
+    for dt, yl, Xl, n, _w in parts:
         def li(t, dt=dt, yl=yl, Xl=Xl, n=n):
             xi_ = yl - Xl @ t
             return -0.5 * n * np.log(max(dt @ dt - (xi_ @ dt) ** 2 / (xi_ @ xi_), 1e-12) / n)
         h = 1e-5
         scores.append(np.array([(li(th + h * np.eye(k)[j]) - li(th - h * np.eye(k)[j])) / (2 * h) for j in range(k)]))
-    for dt, yl, Xl, n in parts:
+    for dt, yl, Xl, n, nw in parts:
         xi = yl - Xl @ th
         f = (xi @ dt) / (xi @ xi)
         rss = dt @ dt - f * (xi @ dt)
         s2 = rss / n
         ph.append(f)
-        sph.append(np.sqrt(rss / (n - 1 - k) / (xi @ xi)))
+        sph.append(np.sqrt(rss / (n - nw - 1) / (xi @ xi)))
         info += f ** 2 / s2 * (Xl.T @ Xl)
     Vi = np.linalg.pinv(info)
     Sc = np.array(scores)
@@ -154,16 +155,18 @@ def pmg(y, X, p=2, q=1, theta0=None, se="info"):
                 phi_i=ph, se_phi_i=np.array(sph), converged=bool(r.success), loglik_prof=-r.fun / 2)
 
 
-def pmg_bootstrap(y, X, p=2, q=1, B=199, seed=SEED):
+def pmg_bootstrap(y, X, p=2, q=1, B=199, seed=SEED, demean=False):
     """Bootstrap por unidades (pairs cluster: se remuestrean las N unidades con reposicion) del PMG.
-    Devuelve EE y matriz de covarianza de theta."""
+    Con demean=True las unidades se remuestrean sobre los datos BRUTOS y el demeaning se re-aplica en cada
+    remuestra. Devuelve EE y matriz de covarianza de theta."""
     rng = np.random.default_rng(seed)
     N = y.shape[0]
-    th0 = pmg(y, X, p, q)["theta"]
+    th0 = pmg(*(cs_demean(y, X) if demean else (y, X)), p, q)["theta"]
     ths = []
     for _ in range(B):
         i = rng.integers(0, N, N)
-        ths.append(pmg(y[i], X[i], p, q, theta0=th0)["theta"])
+        yy, XX = (cs_demean(y[i], X[i]) if demean else (y[i], X[i]))  # demeaning re-aplicado en cada remuestra
+        ths.append(pmg(yy, XX, p, q, theta0=th0)["theta"])
     V = np.atleast_2d(np.cov(np.array(ths).T))
     return dict(se_theta=np.sqrt(np.diag(V)), V_theta=V)
 
@@ -179,7 +182,7 @@ def cs_dl(y, X, pT=None):
     ex = np.hstack([Z[t - j] for j in range(pT + 1)])
     for i in range(N):
         dX = np.diff(X[i], axis=0)
-        cols = [np.ones((len(t), 1)), X[i][t]] + [dX[t - 1 - j] for j in range(pT + 1) if (t - 1 - j).min() >= 0]
+        cols = [np.ones((len(t), 1)), X[i][t]] + [dX[t - 1 - j] for j in range(pT + 1)]
         Zm = np.hstack(cols + [ex])
         b, _, _ = _ols(y[i][t], Zm)
         th.append(b[1:1 + k])
@@ -238,23 +241,45 @@ def _hausman(mgres, pmgres):
 
 
 # ------------------------------------------------------------------ CIPS
-def cips(y, p=1):
-    """CIPS (Pesaran 2007), solo constante. Media de los t de CADF_i. Rechaza (raiz unitaria) con valores BAJOS."""
+K1, K2 = 6.19, 2.61  # truncacion de Pesaran (2007), caso con constante: NO VERIFICADOS
+
+
+def cips(y, p=1, trend=False, trunc=False, sbc=False, pmax=4):
+    """CIPS (Pesaran 2007). trend: constante y tendencia; trunc: CIPS* (t_i truncado a [-K1, K2]);
+    sbc: retardos de cada CADF por SBC (0..pmax). Rechaza (raiz unitaria) con valores BAJOS."""
     N, T = y.shape
     yb = y.mean(0)
     dyb = np.diff(yb)
     ts = []
     for i in range(N):
         dy = np.diff(y[i])
-        t = np.arange(p + 1, T)
-        cols = [np.ones(len(t)), y[i][t - 1], yb[t - 1], dyb[t - 1]]
-        for j in range(1, p + 1):
-            cols += [dy[t - 1 - j], dyb[t - 1 - j]]
-        Z = np.column_stack(cols)
-        d = dy[t - 1]
-        b, e, ZtZi = _ols(d, Z)
-        ts.append(b[1] / np.sqrt(ZtZi[1, 1] * (e @ e) / (len(d) - Z.shape[1])))
-    return float(np.mean(ts))
+        best = None
+        for pp in (range(pmax + 1) if sbc else [p]):
+            t = np.arange(pmax + 1 if sbc else pp + 1, T)
+            cols = [np.ones(len(t))] + ([t.astype(float)] if trend else [])
+            k0 = len(cols)
+            cols += [y[i][t - 1], yb[t - 1], dyb[t - 1]]
+            for j in range(1, pp + 1):
+                cols += [dy[t - 1 - j], dyb[t - 1 - j]]
+            Z = np.column_stack(cols)
+            d = dy[t - 1]
+            b, e, ZtZi = _ols(d, Z)
+            n = len(d)
+            tst = b[k0] / np.sqrt(ZtZi[k0, k0] * (e @ e) / (n - Z.shape[1]))
+            crit = n * np.log(e @ e / n) + Z.shape[1] * np.log(n)
+            if best is None or crit < best[0]:
+                best = (crit, tst)
+        ts.append(best[1])
+    ts = np.array(ts)
+    if trunc:
+        ts = np.clip(ts, -K1, K2)
+    return float(ts.mean())
+
+
+def cips_critical_values(N, T, p=1, reps=1000, seed=SEED, **kw):
+    """Valores criticos simulados (cuantiles 1, 5, 10 %) y muestra nula completa de CIPS."""
+    sim = sim_null(lambda y: cips(y, p, **kw), N, T, reps, seed)
+    return dict(cv={q: float(np.quantile(sim, q)) for q in (.01, .05, .10)}, sim=sim)
 
 
 def sim_null(fn, N, T, reps=1000, seed=SEED, k=0):
@@ -269,12 +294,6 @@ def sim_null(fn, N, T, reps=1000, seed=SEED, k=0):
         else:
             out.append(fn(y))
     return np.array(out)
-
-
-def cips_critical_values(N, T, p=1, reps=1000, seed=SEED):
-    """Valores criticos simulados (cuantiles 1, 5, 10 %) y muestra nula completa de CIPS."""
-    sim = sim_null(lambda y: cips(y, p), N, T, reps, seed)
-    return dict(cv={q: float(np.quantile(sim, q)) for q in (.01, .05, .10)}, sim=sim)
 
 
 def sim_pvalue(stat, sim):
@@ -315,7 +334,7 @@ def _wl_stats(y, X, p):
 
 
 def westerlund(y, X, p=1, B=199, block=None, seed=SEED):
-    """Westerlund (2007): Gt, Ga, Pt, Pa (rechazo de H0 sin cointegracion con valores BAJOS). p por bootstrap
+    """Test tipo Westerlund (2007; variante, no el estadistico original): Gt, Ga, Pt, Pa (rechazo de H0 sin cointegracion con valores BAJOS). p por bootstrap
     por bloques circulares de las DIFERENCIAS (mismos bloques temporales en todas las unidades: conserva la
     dependencia transversal y la dinamica corta; H0 impuesta porque y*, x* son I(1) sin ECM).
     Variante: pooled ponderado por 1/sigma_i^2, parcializando tambien x_{t-1}; sin leads de dx."""
@@ -442,3 +461,38 @@ def driscoll_kraay(y, X, N, T, maxlag=None):
     V = XtXi @ S @ XtXi
     se = np.sqrt(np.diag(V))
     return dict(coef=b, se=se, t=b / se)
+
+
+def mg_dm_jackknife(y, X, p=2, q=1):
+    """MG con demeaning transversal y EE por jackknife de unidades (dejar una unidad fuera y RE-aplicar el demeaning)."""
+    N = y.shape[0]
+    full = mg(*cs_demean(y, X), p, q)["theta"]
+    lo = np.array([mg(*cs_demean(np.delete(y, i, 0), np.delete(X, i, 0)), p, q)["theta"] for i in range(N)])
+    V = (N - 1) / N * ((lo - lo.mean(0)).T @ (lo - lo.mean(0)))
+    return dict(theta=full, se_theta=np.sqrt(np.diag(np.atleast_2d(V))))
+
+
+def jackknife_theta(fn, y, X, **kw):
+    """Jackknife de mitades temporales sobre theta: 2*theta_total - media(theta en mitades)."""
+    T = y.shape[1]
+    h = T // 2
+    a, b = fn(y[:, :h], X[:, :h], **kw)["theta"], fn(y[:, T - h:], X[:, T - h:], **kw)["theta"]
+    return 2 * fn(y, X, **kw)["theta"] - 0.5 * (a + b)
+
+
+def select_lags_sbc(y, X, pmax=4, qmax=4):
+    """Seleccion de (p, q) por SBC sumado entre unidades, muestra comun (s = max(pmax, qmax)); p>=1, q>=1."""
+    s = max(pmax, qmax)
+    best = (np.inf, None)
+    for p in range(1, pmax + 1):
+        for q in range(1, qmax + 1):
+            tot = 0.0
+            for i in range(y.shape[0]):
+                d, L, W = _build(y[i], X[i], p, q, s)
+                Z = np.hstack([L, W])
+                _, e, _ = _ols(d, Z)
+                n = len(d)
+                tot += n * np.log(e @ e / n) + Z.shape[1] * np.log(n)
+            if tot < best[0]:
+                best = (tot, (p, q))
+    return best[1]

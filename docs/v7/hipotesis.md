@@ -43,11 +43,14 @@ Todas las variables van en logaritmos salvo las tasas. La dependencia transversa
 | H7-C3 | Compra | θ(ln población) > 0 | MG con demeaning transversal (spec. A); PMG como contraste | F-C |
 | H7-C4 | Compra | θ(tasa de paro) < 0 | MG con demeaning transversal (spec. B); PMG como contraste | F-C |
 | H7-E1 | Ambos | Existe cointegración de panel | «Tipo Westerlund» Gt/Pt con bootstrap, más Pedroni panel/group-ADF (contraste principal de cointegración) | F-E |
-| H7-E2 | Ambos | Velocidad de ajuste media φ̄ < 0 | t de MG frente al valor crítico **simulado bajo no cointegración** (R2); si no está disponible, EXPLORATORIO. El sesgo de φ en muestra finita va a favor de H1 y se declara | F-E |
+| H7-E2 | Ambos | Velocidad de ajuste media φ̄ < 0 | t de MG frente al valor crítico simulado bajo no cointegración: **−8,83** (5 %, R2); el sesgo de φ en muestra finita se declara | F-E |
 
 Cómo se juzga cada hipótesis:
 - **Ajuste.** Holm dentro de cada familia F-A, F-C y F-E.
-- **Para decir «se confirma»:** p de Holm < 0,05 con el MG con demeaning transversal y el mismo signo con PMG (IC bootstrap aproximado) y DFE. CS-ARDL no se usa: la validación de R2 lo declaró no apto.
+- **Para decir «se confirma»** (regla de triangulación de R2, V12): p de Holm < 0,05 con el **MG con demeaning transversal** y el mismo signo con **PMG con demeaning** (IC bootstrap, B=199) y con **CS-DL** (p_T=4).
+  - La magnitud se publica como el **rango entre los tres**.
+  - Si los signos no coinciden, la hipótesis es «no concluyente».
+  - Motivo: con un factor común I(1) de cargas heterogéneas ningún estimador es apto (sesgo de 11-20 %).
 - **Hausman** (varianza no paramétrica del MG; variante elegida a posteriori en R2, con potencia de unos 0,61).
   - Si rechaza, se declara la heterogeneidad del largo plazo.
   - Si no rechaza, se reportan MG y PMG **sin** afirmar homogeneidad.
@@ -62,7 +65,11 @@ Cómo se juzga cada hipótesis:
   - Solo exploratorio. No hay un diseño causal nuevo; v3 ya halló pretendencias fallidas.
 - **F-P · Provincia anual.** FE y CCE con flujos de padrón, EPA, ETDP, hipotecas e iniciadas, solo como complemento.
 
-## 5. Potencia (Monte Carlo de R2, docs/v7/validacion_herramientas.md)
+## 5. Potencia
+
+Tras el REHACER de R2 (V12): el «tipo Westerlund» tiene una potencia de 0,06-0,29 con ajuste lento (φ entre −0,1 y −0,02), así que un no rechazo no es evidencia de ausencia de cointegración. CIPS sobrerrechaza con series I(1) que tienen un componente I(0) grande.
+
+### Detalle (ronda 1) (Monte Carlo de R2, docs/v7/validacion_herramientas.md)
 
 Escenario N = 17, T = 78:
 - MG_dm: sesgo de θ pequeño, cobertura 0,87-0,94.

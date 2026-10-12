@@ -44,7 +44,7 @@ def ficheros() -> list[Path]:
     fs = [f for f in fs if f.name != "cifras_clave.md"]
     for sub in ("articulos", "ponencia", "linkedin", "verificador"):
         fs += sorted((V5 / sub).glob("*.md"))
-    fs += sorted((ROOT / "archive").rglob("*.md"))
+    fs += sorted((ROOT / "historico").rglob("*.md"))   # v7.1: archive/ pasa a historico/
     fs += [ROOT / "README.md", ROOT / "README_REPLICACION.md"]
     fs += [ROOT / "docs" / "v5" / n for n in PUB_DOCS if (ROOT / "docs" / "v5" / n).exists()]
     return [f for f in fs if f.exists()]
@@ -149,7 +149,7 @@ def escanear() -> pd.DataFrame:
     filas = []
     for f in ficheros():
         rel = f.relative_to(ROOT).as_posix()
-        es_arch = rel.startswith("archive/")
+        es_arch = rel.startswith(("archive/", "historico/"))
         txt = f.read_text(encoding="utf-8")
         lineas = limpiar(txt)
         for k, (n, ln) in enumerate(lineas):

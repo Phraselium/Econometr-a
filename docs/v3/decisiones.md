@@ -74,7 +74,7 @@ La decisión queda condicionada a la revisión de la oleada 1.
 - Errata en data/raw/v3/zonas_tensionadas_v3.csv (no editado): Rubí aparece con 08085 (Font-rubí) en lugar de 08184; Mont-roig del Camp con 17110 (Mont-ras) en lugar de 43092. La salida usa los códigos validados en Incasòl y en el texto BOE.
 - Ley 12/2023: la relación trimestral la publica la Secretaría de Estado de Vivienda y Agenda Urbana (Resolución, no orden ministerial). Cataluña: 140 (BOE-A-2024-5214, TER/800/2024) y 131 (BOE-A-2024-20576, TER/2408/2024). Sin declaraciones catalanas en 2025 en el BOE consultado; la ampliación a 302 (julio 2026) solo figura en prensa.
 
-## Revisión de la oleada 1: REHACER (iteración 1) — docs/v3/revision_oleada1.md
+## Revisión de la oleada 1: REHACER (iteración 1) — historico/docs/v3/revision_oleada1.md
 - **O1, incidencias de sellado, declaradas:**
   - (i) El subagente de potencia y GL ejecutó un `describe()` global sobre el fichero de VUT por sección (todas las unidades y oleadas, incluida la 2026M05) antes de recibir la orden de sellado. Fueron estadísticos marginales del tratamiento, sin el resultado. Contaminación baja.
   - (ii) `pot_run.pc3` estimó P-C3 (topes y zonas, fianzas municipales) con todos los municipios, incluidos los que el sellado v3 deja fuera, y publicó los coeficientes: topes −0,022 / +0,002; zonas −0,047 / −0,203.
@@ -87,7 +87,7 @@ La decisión queda condicionada a la revisión de la oleada 1.
   - Ventana de los topes: 2020Q4-2022Q1 (vigencia efectiva hasta la STC 37/2022, BOE 08/04/2022), con sensibilidad de fin en 2021Q3.
 
 ## Pre-registro v3 (2026-10-10)
-- La oleada 1 se aprobó en la iteración 2 (docs/v3/revision_oleada1.md). Lo que persiste está en docs/v3/limitaciones.md.
+- La oleada 1 se aprobó en la iteración 2 (historico/docs/v3/revision_oleada1.md). Lo que persiste está en docs/v3/limitaciones.md.
 - `prereg-v3`: tag local en el commit 204c073. El push del tag lo rechaza el proxy, igual que en v2. **El ancla del pre-registro es el SHA 204c073 en la rama remota.** Cualquier cambio posterior de docs/v3/hipotesis.md es una desviación y se anota aquí.
 - Sellado v3 operativo:
   - `holdout.sellar_v3`: separa las unidades selladas al construir el panel, y la rama solo recibe el entrenamiento.

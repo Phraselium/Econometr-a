@@ -1727,7 +1727,7 @@
    "Diagnósticos": "CD de Pesaran: FE −2,54 (p 0,011); CCE-MG −0,80 (p 0,42); CCE-P −2,32 (p 0,021); CIPS (ver nota)",
    "Fuera de muestra (RMSE; base; DM)": "n/t",
    "Estado": "matizado (revisión_f5: el CD negativo es artefacto; CCE-MG no valida CCE)",
-   "Ruta": "output/f5/tabla_cce.md; cd_pesaran.md; docs/revision_f5.md §3.5-3.6"
+   "Ruta": "output/f5/tabla_cce.md; cd_pesaran.md; historico/docs/revision_f5.md §3.5-3.6"
   },
   {
    "version_bloque": "v1-v4",

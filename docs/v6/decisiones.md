@@ -11,7 +11,7 @@
 - `evaluate_v6` abre la muestra sellada UNA vez por modelo o hipótesis, y queda registrado en docs/v2/holdout_accesos.md.
 
 ## G (subagente)
-- Pasan a archive/ (con git mv) los entregables de v3 y v4 que ningún script ni plantilla cita. informe_tecnico y lo_que_sabemos de v4 se quedan, porque las plantillas v5 los citan.
+- Pasan a historico/ (con git mv) los entregables de v3 y v4 que ningún script ni plantilla cita. informe_tecnico y lo_que_sabemos de v4 se quedan, porque las plantillas v5 los citan.
 - Makefile: se añaden `a5_validacion` y `b3_potencia`, que producen ficheros versionados que leen otros scripts. Reproducen sus salidas byte a byte.
 - Quedan pendientes para el autor (docs/v6/tareas_autor.md):
   - tres scripts de datos auxiliares fuera de `make data`;
@@ -65,7 +65,7 @@
 - N4: la desviación de las variables nacionales en el ML trimestral de compra queda declarada en M3B/desviaciones.md.
 - N5-N6 y N8: las notas de M4/resultado.json recogen los embeddings medios, los sustitutos de BART y PyMC, el sesgo de selección del ganador mirado en el sellado y la divergencia del AR municipal.
 - N13-N15: M1A deja de decir «ASOCIACIÓN ROBUSTA»; M1B dice «variación asociada»; la elasticidad precio-alquiler se da como rango de 0,4 a 2,1 según la especificación; la fecha del dato es la de los datos.
-- El resto de no bloqueantes queda en docs/v6/revision_final.md, sin impacto en las conclusiones.
+- El resto de no bloqueantes queda en historico/docs/v6/revision_final.md, sin impacto en las conclusiones.
 
 ## Cierre v6
 - Doble ejecución de `make all` sin red en un clon limpio de 6592b95, cada una en un proceso desacoplado porque supera el límite de 2 h de los comandos en segundo plano:

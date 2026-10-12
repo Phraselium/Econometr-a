@@ -1,6 +1,6 @@
 # Tareas del autor para la publicación (v6.2)
 
-Este fichero sustituye a docs/v6_1/tareas_autor.md, docs/v6/tareas_autor.md y docs/v5/tareas_autor.md. Recoge solo lo que no pueden hacer los agentes. Marca cada casilla al terminar.
+Este fichero sustituye a historico/docs/v6_1/tareas_autor.md, docs/v6/tareas_autor.md y docs/v5/tareas_autor.md. Recoge solo lo que no pueden hacer los agentes. Marca cada casilla al terminar.
 
 ## 1. Etiquetas, releases y fechas reales
 
@@ -37,11 +37,11 @@ Tareas:
 - [ ] Enviar a los dos revisores docs/v6_2/guia_revisor.md (qué se afirma, dónde mirar, cómo reproducir y las 8 preguntas concretas) junto con el anexo output/v6_2/anexo_metodologico.md.
 - [ ] Revisión por dos economistas externos, con los perfiles de docs/v6/tareas_autor.md §3.
   - Hay que enviarles el informe técnico y estos documentos:
-    - docs/v6_1/auditoria.md
+    - historico/docs/v6_1/auditoria.md
     - docs/v6_1/doble_implementacion.md
-    - docs/v6_1/informe_arbitro_academico.md
-    - docs/v6_1/informe_arbitro_politica.md
-    - docs/v6_1/carta_respuesta.md
+    - historico/docs/v6_1/informe_arbitro_academico.md
+    - historico/docs/v6_1/informe_arbitro_politica.md
+    - historico/docs/v6_1/carta_respuesta.md
   - Las objeciones de los árbitros simulados no sustituyen a una revisión humana.
 - [ ] **Replicación de las 15 cifras** de docs/v5/revision_humana.md, firmando la tabla.
   - La segunda doble implementación de v6.2 (L2), hecha por un agente solo con el anexo, reproduce 15 de 15 (tests/doble_impl). La réplica humana con el anexo sigue siendo necesaria.
@@ -61,7 +61,7 @@ Tareas:
 
 ## 7. Repositorio
 - [ ] Pasar un escáner de secretos (p. ej., `gitleaks detect`) antes de hacer público el repositorio. Decidir sobre la autoría de los commits (noreply).
-- [ ] Scripts de datos fuera de `make data` (docs/v6/auditoria.md): renombrar con prefijo `fetch_` o documentarlos.
+- [ ] Scripts de datos fuera de `make data` (historico/docs/v6/auditoria.md): renombrar con prefijo `fetch_` o documentarlos.
 
 ## 8. Referencias
 - [ ] Verificar en Scimago el cuartil de las 50 referencias marcadas «cuartil no verificado» y de las 76 NO VERIFICADA con DOI (output/v6_1/K4D/referencias.csv). Desde la sesión, Scimago devuelve 403.

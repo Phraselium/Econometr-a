@@ -1,6 +1,6 @@
-# Paquete de replicación: vivienda en España (v1-v5)
+# Paquete de replicación: vivienda en España (v1-v7.1)
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** 7.0 (atlas regional; `make v7`, 2 ejecuciones idénticas de unos 50 min). **Cita:** CITATION.cff. **DOI:** pendiente (Zenodo; .zenodo.json). **Licencia:** MIT para el código y CC BY 4.0 para los textos propios (LICENSE); los datos de terceros conservan su licencia (docs/v5/licencias_datos.md).
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** 7.1, versión de referencia (consolidación: `make v7` incluye `make v7_1`; `make publicacion` genera publicacion/, metodologia/ y reproducir/). **Cita:** CITATION.cff. **DOI:** pendiente (Zenodo; .zenodo.json). **Licencia:** MIT para el código y CC BY 4.0 para los textos propios (LICENSE); los datos de terceros conservan su licencia (docs/v5/licencias_datos.md).
 
 Este README sigue el modelo de los editores de datos (AEA Data Editor / Social Science Data Editors). Explica cómo reproducir **todas** las tablas, figuras y documentos del proyecto a partir de los datos incluidos y sin conexión a la red.
 
@@ -52,6 +52,14 @@ Las hipótesis confirmatorias de B3 (diferencias entre provincias) están en doc
 - v2 y v3 reservan una muestra sellada para la evaluación confirmatoria. Solo se accede a ella a través de `src/holdout.py`, que registra cada acceso. La copia versionada del registro es docs/v2/holdout_accesos.md.
 - Las evaluaciones ya hechas se leen de los ficheros `*_sellado*.json` versionados: `make all` **no** reabre la muestra sellada.
 
+### Versión de referencia v7.1 (después de `make all`)
+```bash
+make v7            # atlas regional V7 (R1-R7) y V7.1 (dosis y coste, cifras de difusión, ensayo de evaluate_v7, cifras_clave, render)
+make publicacion   # copia lo vigente a publicacion/, metodologia/ y reproducir/ con manifiesto sha256 (nunca a mano)
+make check         # incluye tests/v7_1: regeneración idéntica de publicacion/, enlaces y cifras difundibles
+```
+Tiempos medidos: reproducir/tiempos.md. Evaluación diferida (2027, con red, una sola vez): reproducir/evaluacion_2027.md.
+
 ## 3. Datos: fuentes, acceso y licencias
 El inventario completo, con fichero, fuente, número de series, fechas y fecha de descarga, está en `data/raw/_manifest.csv` (110 ficheros). Resumen por organismo:
 
@@ -78,9 +86,9 @@ El inventario completo, con fichero, fuente, número de series, fechas y fecha d
 |---|---|
 | output/informe.md (v1) | src/report.py, src/f*_*.py |
 | output/v2/informe_v2.md | src/v2/bs_run.py |
-| archive/output/v3/{lo_que_sabemos, articulo, informe_politica}.md (histórico; trasladados en v6, archive/README.md) | redactados a partir de output/v3/*/ (PA, PB, C1, C3, GL, PD) |
+| archive/output/v3/{lo_que_sabemos, articulo, informe_politica}.md (histórico; trasladados en v6, historico/archivo_v6_README.md) | redactados a partir de output/v3/*/ (PA, PB, C1, C3, GL, PD) |
 | output/v4/{informe_tecnico, lo_que_sabemos}.md y archive/output/v4/{working_paper, policy_brief}.md (histórico) | redactados a partir de output/v4/M0-M7 |
-| output/v4/M0 … M7 | src/v4/m0_run.py … m7_run.py (M6 = docs/v4/preguntas_abiertas.md, solicitudes.md) |
+| output/v4/M0 … M7 | src/v4/m0_run.py … m7_run.py (M6 = historico/docs/v4/preguntas_abiertas.md, solicitudes.md) |
 | output/v5/cifras_clave.{csv,md} (tabla única de cifras v5) | src/v5/cifras_clave.py |
 | output/v5/{R1A,R1B,R1C,R1T,A23,A4,A5,A6,B1,B2,B3,B4,CA,CB,CC,D1,D2,D3} | src/v5/<módulo en minúsculas>_run.py (A6: nota de consolidación) |
 | output/v5/{informe_tecnico, working_paper, policy_brief, lo_que_sabemos, una_pagina, articulo_colegio}.md, articulos/, ponencia/, linkedin/ | docs/v5/plantillas/ + src/v5/render.py |
@@ -99,4 +107,4 @@ Los documentos de síntesis (.md) se redactan a partir de las salidas. Las cifra
 ## 5. Independencia, contacto y uso de IA
 El trabajo es individual e independiente: no hay financiación externa ni vínculo con partidos. Si algo cambiara, se declararía aquí. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas. Las correcciones se publican en ERRATA.md y los cambios en CHANGELOG.md.
 
-El proyecto se ejecutó con agentes de IA (Claude) bajo supervisión de la persona responsable del repositorio. El uso de IA se declara en archive/output/v3/articulo.md §10, en archive/output/v4/working_paper.md (apéndice C) y en output/v5/working_paper.md (apéndice C). El autor es responsable del contenido. Antes de publicar, el autor replica a mano las 15 cifras de docs/v5/revision_humana.md.
+El proyecto se ejecutó con agentes de IA (Claude) bajo supervisión de la persona responsable del repositorio. El uso de IA se declara en historico/output/v3/articulo.md §10, en historico/output/v4/working_paper.md (apéndice C) y en output/v5/working_paper.md (apéndice C). El autor es responsable del contenido. Antes de publicar, el autor replica a mano las 15 cifras de docs/v5/revision_humana.md.

@@ -29,3 +29,11 @@
 - **W11.** Las unidades de normalización («diez mil viviendas», «cien millones») se escriben en palabras en las plantillas, para que los controles de cifras huérfanas (k4c) no las confundan con resultados. Las réplicas y el número de remuestras de la nota también van en palabras.
 - **W12.** Ensayo de evaluate_v7 (S4): se recorre el camino NO simulado del script, sustituyendo solo la descarga (ficheros simulados con el formato de data/raw), el registro de accesos y la carpeta de salida (temporales). No se escribe en data/raw ni en docs/v7/evaluate_v7_accesos.md, y el script comprueba que el registro real queda intacto.
 - **W13.** Alquiler 2026T3: dos de sus tres meses se publicaron antes del pre-registro. Se declara antes de abrir una sensibilidad sin 2026T3 (docs/v7/desviaciones.md). La evaluación principal no cambia.
+- **W14.** historico/ se construye con el criterio de la carpeta archive/ de v6.1: se mueven con `git mv`, sin modificarlos, solo los documentos de versiones cerradas que no lee ningún script, test, plantilla ni el Makefile.
+  - Se movieron 60 documentos: planes, estados, bloqueos, revisiones, auditorías y arbitrajes de v1-v6.2.
+  - Se movieron también los 5 de archive/.
+  - **No se mueven las salidas de los modelos (output/v1-v7).** `make all` y `make v7` las regeneran en su ruta, y cifras_clave y los entregables vigentes leen de ellas. Moverlas obligaría a reescribir rutas en cientos de scripts cerrados y pondría en riesgo la reproducibilidad.
+  - historico/INDICE.md indica dónde está cada versión.
+  - Las rutas que citaban los ficheros movidos se actualizan solo textualmente en 22 documentos, entre ellos README, CHANGELOG, MAPA y los skills de .claude.
+  - k4c_cifras (v6.1) lee historico/ en lugar de archive/, que es un cambio solo de ruta. Sus salidas de `make all` cambiarán por ello.
+- **W15.** publicacion/, metodologia/ y reproducir/ se generan siempre con `make publicacion`, que escribe una cabecera «no editar» y un manifiesto sha256. tests/v7_1/test_publicacion.py los regenera en un directorio temporal y exige identidad byte a byte. Los enlaces relativos se reescriben hacia la copia publicada o, si no se publica, hacia la ruta del repositorio. Las LinkedIn y los artículos de difusión no se publican en publicacion/, porque el encargo no los lista; siguen en output/v5.

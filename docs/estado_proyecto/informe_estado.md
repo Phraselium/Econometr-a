@@ -98,7 +98,7 @@ Fecha de la consulta: 2026-10-12. Tarea de solo lectura: no se han ejecutado mod
 
 
 
-**Estructura.** `src/` tiene los módulos de v1 y v2 en la raíz (`build_dataset*.py`, `fetch_*.py`, `f2_nacional.py`…, `holdout.py`, `econ_utils.py`) y una subcarpeta por versión (`v2`, `v3`, `v4`, `v5`, `v5_1`, `v6`, `v6_1`, `v6_2`). `output/` tiene subcarpetas `v2` a `v6_2` más `tablas/`, `f2`–`f6` y los registros de búsqueda. `docs/` tiene `v2` a `v6_2` (con `v5_1`), más `estado_proyecto/` (solo `_notas_entorno.md` antes de esta nota). `archive/` contiene solo `README.md` y `output/`. El árbol de trabajo estaba limpio en el momento de la consulta.
+**Estructura.** `src/` tiene los módulos de v1 y v2 en la raíz (`build_dataset*.py`, `fetch_*.py`, `f2_nacional.py`…, `holdout.py`, `econ_utils.py`) y una subcarpeta por versión (`v2`, `v3`, `v4`, `v5`, `v5_1`, `v6`, `v6_1`, `v6_2`). `output/` tiene subcarpetas `v2` a `v6_2` más `tablas/`, `f2`–`f6` y los registros de búsqueda. `docs/` tiene `v2` a `v6_2` (con `v5_1`), más `estado_proyecto/` (solo `_notas_entorno.md` antes de esta nota). `historico/` contiene solo `README.md` y `output/`. El árbol de trabajo estaba limpio en el momento de la consulta.
 
 **Commits de cierre** (`git log --oneline | grep -i cerrad`):
 
@@ -145,7 +145,7 @@ No hay commit «cerrada» para v2 ni v3 con ese patrón.
 - V6_2: `l3_deficit l3_ficha l1_verifica`. El Makefile lo sitúa antes de V6_1.
 - V6_1: `k1_run k2_inmigracion k3_run k6_fichas k4b_run ../v5/cifras_clave ../v5/render k4b_comparar k4c_cifras k4d_docs ../v6_2/l5_publicables`.
 
-**Tiempos de `make all`.** README_REPLICACION.md dice «≈2 h 10 min» y registra 7.564 s y 7.776 s (v6.0), 7.498 s y 6.947 s (v6.1). docs/v6_2/estado.md registra 7.928 s y 8.054 s. Usa el punto como separador de miles, así que «7.564 s» son unos 7.564 segundos, unas 2 h 6 min. Con esa lectura coincide con «≈2 h 10 min». Conviene escribirlo sin ambigüedad. La mayor parte del tiempo es v6 M3 (ML y deep learning).
+**Tiempos de `make all`.** README_REPLICACION.md dice «≈2 h 10 min» y registra 7.564 s y 7.776 s (v6.0), 7.498 s y 6.947 s (v6.1). historico/docs/v6_2/estado.md registra 7.928 s y 8.054 s. Usa el punto como separador de miles, así que «7.564 s» son unos 7.564 segundos, unas 2 h 6 min. Con esa lectura coincide con «≈2 h 10 min». Conviene escribirlo sin ambigüedad. La mayor parte del tiempo es v6 M3 (ML y deep learning).
 
 **Tests.** `tests/` tiene 52 funciones `test_` en 10 ficheros, más `tests/doble_impl/` con 3:
 - `test_ba_h1_dryrun.py` (1): simulacro de H1.
@@ -487,7 +487,7 @@ Leyenda de estado: vigente = se mantiene tal cual; matizado = se mantiene con re
 | v1 | f4 OLS / 2SLS oferta | Mismo, por otros estimadores | oferta | nacional | 2009T4-2025T4, N=63 | igual | igual; instrumento de renta | MCO estático; Δ4; 2SLS niveles | HAC | MCO estático 1,34 (0,27); 2SLS 2,22 (0,66), IC95 [0,93; 3,52], p 0,007 | Johansen/EG/ARDL en f4/cointegracion.md | n/t | matizado | output/f4/ols_estatico.md; iv_resultados.md |
 | v1 | f4 déficit contable | Déficit acumulado 2021-2025 | vivienda (flujo) | nacional | 2021-2025 | viviendas (hogares − terminadas) | contable | descomposición contable | n/a | 866.100 (EPA corregida); 810.936 (ECP) | contraste con BdE (output/f4/contraste_bde.md) | n/a | retirado en esa cifra (v5.1 sin bajas 700.934-757.257; con bajas 763.416) | output/f4/deficit_anual_principal.md; output/informe.md §5.1 |
 | v1 | f5 P4 FE | Δ ln IPV vs flujo y cuota de extranjeros | precio (IPV) | CCAA (17) | 2009-2025, N=289 | Δ ln IPV | b1 Δ ln ocupados; b2 Δ cuota extranjeros (pp); b3 Δ ln pob. española; b4 terminadas/1000 hab (t-1) | FE CCAA + año | cluster CCAA; Driscoll-Kraay; wild bootstrap | b2 0,0011 (0,0040), p cluster 0,777, p WCB 0,774; b3 2,170 (1,021), p 0,034; b4 0,0026 (0,0011), p 0,021 | Tendencias (output/f5/tabla_fe_tendencias.md), poolability | n/t | matizado (no concluyente en cuota) | output/f5/tabla_fe_principal.md; output/informe.md §6.1 |
-| v1 | f5 CCE | Mismo modelo con factores comunes | precio | CCAA (17) | N=289 | Δ ln IPV | b1-b4 como arriba | CCE-MG y CCE-P (Pesaran 2006) | Pesaran 2006 | CCE-MG b2 0,025 (0,014), p 0,072; CCE-P b2 0,022 (0,011), p 0,040 (sin ajuste; no sobrevive a corrección por búsqueda según revisión) | CD de Pesaran: FE −2,54 (p 0,011); CCE-MG −0,80 (p 0,42); CCE-P −2,32 (p 0,021); CIPS (ver nota) | n/t | matizado (revisión_f5: el CD negativo es artefacto; CCE-MG no valida CCE) | output/f5/tabla_cce.md; cd_pesaran.md; docs/revision_f5.md §3.5-3.6 |
+| v1 | f5 CCE | Mismo modelo con factores comunes | precio | CCAA (17) | N=289 | Δ ln IPV | b1-b4 como arriba | CCE-MG y CCE-P (Pesaran 2006) | Pesaran 2006 | CCE-MG b2 0,025 (0,014), p 0,072; CCE-P b2 0,022 (0,011), p 0,040 (sin ajuste; no sobrevive a corrección por búsqueda según revisión) | CD de Pesaran: FE −2,54 (p 0,011); CCE-MG −0,80 (p 0,42); CCE-P −2,32 (p 0,021); CIPS (ver nota) | n/t | matizado (revisión_f5: el CD negativo es artefacto; CCE-MG no valida CCE) | output/f5/tabla_cce.md; cd_pesaran.md; historico/docs/revision_f5.md §3.5-3.6 |
 | v1 | f5 CIPS | Raíz unitaria de panel (CIPS, Pesaran 2007) por CCAA | variables de panel | CCAA (17), N=17, T=18 | 2008-2025 | ln IPV, ln ocupados, cuota extranjera (niveles y 1ª dif.) | retardos 0 y 1 | CIPS (test de raíz, no cointegración) | simulado | ln IPV en 1ª dif. CIPS −3,293 (p sim 0,000); ln ocupados 1ª dif. −4,544 (0,000); cuota extranjera en nivel no rechaza | n/a | n/a | matizado | output/f5/cips.md |
 | v1 | f6 València | Beta de Δ4 frente a comparadores (valor tasado) | compra (valor tasado) | municipio/provincia València | N≥40 | Δ4 ln valor tasado | comparadores | TWFE / beta por municipios | n/t | n/t (output/f6/beta_todos.md; beta_valencia_vs_comparadores.md) | Chow, Bai-Perron (f6) | n/t | matizado | output/f6/beta_todos.md |
 | v2 | BA | Crecimiento del alquiler provincial (H1 demográfica) | alquiler IPC | provincia (49) | 2008T1-2024T2, N=3.185 (H1 trim.) | Δ4 ln IPC alquiler | Δ4 ln pob 20-34; Δ4 ln pob extranjera; Δ4 ln ocupados | MCO FE provincia + trimestre | cluster provincia; WCB Webb 9.999 | pob 20-34 0,149 [0,046; 0,252], p bruto 0,008; pob extranjera −0,018 [−0,054; 0,017], p 0,300; ocupados −0,001, p 0,778. Holm-7 H1 = 1,0 (BS) | Población interpolada (marcada) | RMSE 0,01169 vs AR(4) 0,01244 (DM 0,46); vs ECM v1 0,01417 | matizado (EXPLORATORIO; H1 pasa por Holm 1,0 en BS) | output/v2/BA/resultado.json |
@@ -522,7 +522,7 @@ Leyenda de estado: vigente = se mantiene tal cual; matizado = se mantiene con re
 2. v3 C3, H3-3b: el IC95 [−9,93; 0,47] incluye 0 mientras que p ajustado = 0,0002. Es inconsistente con el JSON; conviene revisar la unidad o la fuente de cada campo.
 3. v2 BP: la corrección Holm-7 figura como «pendiente» en el JSON; BS no la reporta.
 4. v2 BM: el JSON no especifica la base de comparación de B y C; no es posible leer el DM de estos modelos sin el registro.
-5. v1 CCE: el p = 0,040 de CCE-P no sobrevive a la corrección por búsqueda según docs/revision_f5.md; el CD no es interpretable sobre residuos de FE bidireccional (Juodis-Reese 2022).
+5. v1 CCE: el p = 0,040 de CCE-P no sobrevive a la corrección por búsqueda según historico/docs/revision_f5.md; el CD no es interpretable sobre residuos de FE bidireccional (Juodis-Reese 2022).
 
 ### Respuesta explícita: PMG, MG, DFE, cointegración de panel y CIPS
 
@@ -533,7 +533,7 @@ Búsqueda (grep -rnw en src/, docs/, output/, por PMG, MG, DFE, CIPS, CCE, CCE-M
 - **MG (Mean Group, Pesaran-Smith)**: sí, pero solo en v6, como robustez. Ruta: src/v6/m1a_run.py (MG y CCEMG), src/v6/m1b_run.py línea 195, output/v6/M1B/tablas/cce_mg.csv. Ejemplo: MG Δ ln pm2 tasado ~ ln_pib_pc = 0,248 (EE 0,022), N unidades 41. Versión v6, fuera del alcance v1-v4, pero citado por completitud.
 - **CCE-MG y CCE-P (Pesaran 2006)**: sí, en v1 (f5) y v6. Rutas: src/f5_panel.py (líneas 173-212), output/f5/tabla_cce.csv, output/f5/cd_pesaran.csv. Resultado en la tabla 1 (fila v1 f5 CCE).
 - **CIPS (Pesaran 2007)**: sí, en v1 f5, como test de raíz unitaria de panel por CCAA (N=17, T=18), no como test de cointegración. Ruta: src/f5_panel.py (líneas 235-272), output/f5/cips.md y cips.csv. Resultado: ln IPV en 1ª diferencia rechaza raíz unitaria (CIPS −3,293, p 0,000); ln IPV en nivel no rechaza.
-- **Pedroni y Westerlund (cointegración de panel)**: no se estimaron. Aparecen solo como no ejecutados: output/v6/M1B (campo «no_ejecutados», src/v6/m1b_salidas.py línea 70), con la razón «T anual=9». En v1, docs/revision_f2.md y docs/literatura.md los citan.
+- **Pedroni y Westerlund (cointegración de panel)**: no se estimaron. Aparecen solo como no ejecutados: output/v6/M1B (campo «no_ejecutados», src/v6/m1b_salidas.py línea 70), con la razón «T anual=9». En v1, historico/docs/revision_f2.md y docs/literatura.md los citan.
 - **«Cointegración de panel»**: no se estimó en v1-v4 (la cointegración de v1 es de series nacionales: EG, Johansen y ARDL en output/f2/cointegracion.md).
 
 ### Notas de la tarea
@@ -833,7 +833,7 @@ Ojo: los periodos de entrenamiento anteriores a las ventanas (2008–2024 según
 11. v5: referencia a una tabla equivocada en la cifra 8 de la revisión humana.
 
 **Hallazgos pendientes.**
-- `docs/v6_1/auditoria.md`, medios abiertos (ver `docs/v6_1/backlog.md`): K4a-04 (min/max con otro sentido en 48 filas), K4a-05 (fianza GVA bruta frente a truncada; cambiaría paneles sellados de v6, coste S), K4c-03 (26 cifras del verificador; el backlog lo llama K4c-26), K4d-07 (cuartiles, tarea del autor).
+- `historico/docs/v6_1/auditoria.md`, medios abiertos (ver `docs/v6_1/backlog.md`): K4a-04 (min/max con otro sentido en 48 filas), K4a-05 (fianza GVA bruta frente a truncada; cambiaría paneles sellados de v6, coste S), K4c-03 (26 cifras del verificador; el backlog lo llama K4c-26), K4d-07 (cuartiles, tarea del autor).
 - Bajos abiertos en la auditoría: K4a-06, K4a-08, K4a-10, R-04, R-05, R-06, K4c-04 y K4c-07.
 - `docs/v6_1/backlog.md`, abiertos: K4a-03b (recalcular D2, M), K4b-NR (5 cifras no reconstruibles solo con el texto; anexo metodológico), K4b-dh (mezcla de stock y media anual, S), K4d-ref (50 referencias «cuartil no verificado» y 76 NO VERIFICADA; Scimago devuelve 403, la verifica el autor, S), K2-49 (reestimar inmigración con 49 provincias; exige mirar provincias selladas en v6, L), BK-E3 (ampliar artículos, M), BK-014 y BK-017 (temporada, habitaciones y MESVAL; sin datos oficiales, L).
 - `docs/v5/backlog.md`: tabla de unas 90 filas. Ejemplos con coste de datos: BK-003 (titularidad del parque; Catastro no publica), BK-008 (coste de construcción sin fuente verificable), BK-009 (empleo de construcción por territorio), BK-010 (plazos de licencias), BK-011 (SIU inaccesible por el proxy).
@@ -844,8 +844,8 @@ Ojo: los periodos de entrenamiento anteriores a las ventanas (2008–2024 según
 - Sección Limitaciones del working paper: `docs/v5/plantillas/working_paper.md` y `output/v5/working_paper.md`.
 
 **Objeciones de revisores sin resolver.**
-- `docs/v6_1/carta_respuesta.md`, «No viable» (solo se declaran como limitación): A-04 (recuento de especificaciones entre versiones), A-05 (WCB y paneles municipales), A-06 (intervalos Anderson-Rubin y shift-share), A-09 (publicar ecuaciones del método de traslado), A-13 (muestra futura), P-10 (costes y magnitudes por euro), P-11 (recalcular D2 con T3), P-12 (fecha de publicación de etiquetas). A-02 y A-03 están «aceptadas en parte» con limitación.
-- `docs/v6_2/revision.md`, H8 (baja, anexo): A1 no tabula los 8 trimestres de la EPA de 2021 y 2025; A16 depende de la clase A4, que no se reconstruye desde la ficha. Pasa al backlog.
+- `historico/docs/v6_1/carta_respuesta.md`, «No viable» (solo se declaran como limitación): A-04 (recuento de especificaciones entre versiones), A-05 (WCB y paneles municipales), A-06 (intervalos Anderson-Rubin y shift-share), A-09 (publicar ecuaciones del método de traslado), A-13 (muestra futura), P-10 (costes y magnitudes por euro), P-11 (recalcular D2 con T3), P-12 (fecha de publicación de etiquetas). A-02 y A-03 están «aceptadas en parte» con limitación.
+- `historico/docs/v6_2/revision.md`, H8 (baja, anexo): A1 no tabula los 8 trimestres de la EPA de 2021 y 2025; A16 depende de la clase A4, que no se reconstruye desde la ficha. Pasa al backlog.
 
 **Tipos de error recurrentes** (de ERRATA y las auditorías):
 - Cruces por nombre con tildes o grafías distintas (SERP2IPVA, Valencia/Valéncia, Incasòl).

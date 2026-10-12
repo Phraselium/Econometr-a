@@ -18,7 +18,7 @@
     - que el fichero coincide con lo generado;
     - que ningún entregable, post, ficha del verificador ni el anexo cita una cifra sustituida que figure en ERRATA (lista cerrada de valores superados), salvo en líneas marcadas «histórico» o «v6.1»;
     - que las plantillas no usan ids históricos fuera de frases rotuladas como históricas.
-- **E7 · Revisión tras L3: REHACER, ronda 1 de 2** (docs/v6_2/revision.md). Lo corrige el orquestador sin subagentes, para no pasar del 80 % del presupuesto.
+- **E7 · Revisión tras L3: REHACER, ronda 1 de 2** (historico/docs/v6_2/revision.md). Lo corrige el orquestador sin subagentes, para no pasar del 80 % del presupuesto.
   - **H1.** Nueva cifra L3-DEF-2124-BAJAST1 (C4), que sustituye a T3-H2 en todos los entregables. Va a ERRATA y a SUPERADOS.
   - **H2.** Véase E5.
   - **H3.** La ventana de la ECP va de 2021T1 a 2025T1, a 1 de enero. El mínimo pasa de 344.803 a 389.361; la capa sigue en C2. Actualizados el anexo, l1_verifica, tests/doble_impl, la ficha, la carta, ERRATA y CHANGELOG.

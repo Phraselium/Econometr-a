@@ -4,7 +4,7 @@ Fecha de la consulta: 2026-10-12. Tarea de solo lectura: no se han ejecutado mod
 
 ## A. Repositorio
 
-**Estructura.** `src/` tiene los módulos de v1 y v2 en la raíz (`build_dataset*.py`, `fetch_*.py`, `f2_nacional.py`…, `holdout.py`, `econ_utils.py`) y una subcarpeta por versión (`v2`, `v3`, `v4`, `v5`, `v5_1`, `v6`, `v6_1`, `v6_2`). `output/` tiene subcarpetas `v2` a `v6_2` más `tablas/`, `f2`–`f6` y los registros de búsqueda. `docs/` tiene `v2` a `v6_2` (con `v5_1`), más `estado_proyecto/` (solo `_notas_entorno.md` antes de esta nota). `archive/` contiene solo `README.md` y `output/`. El árbol de trabajo estaba limpio en el momento de la consulta.
+**Estructura.** `src/` tiene los módulos de v1 y v2 en la raíz (`build_dataset*.py`, `fetch_*.py`, `f2_nacional.py`…, `holdout.py`, `econ_utils.py`) y una subcarpeta por versión (`v2`, `v3`, `v4`, `v5`, `v5_1`, `v6`, `v6_1`, `v6_2`). `output/` tiene subcarpetas `v2` a `v6_2` más `tablas/`, `f2`–`f6` y los registros de búsqueda. `docs/` tiene `v2` a `v6_2` (con `v5_1`), más `estado_proyecto/` (solo `_notas_entorno.md` antes de esta nota). `historico/` contiene solo `README.md` y `output/`. El árbol de trabajo estaba limpio en el momento de la consulta.
 
 **Commits de cierre** (`git log --oneline | grep -i cerrad`):
 
@@ -51,7 +51,7 @@ No hay commit «cerrada» para v2 ni v3 con ese patrón.
 - V6_2: `l3_deficit l3_ficha l1_verifica`. El Makefile lo sitúa antes de V6_1.
 - V6_1: `k1_run k2_inmigracion k3_run k6_fichas k4b_run ../v5/cifras_clave ../v5/render k4b_comparar k4c_cifras k4d_docs ../v6_2/l5_publicables`.
 
-**Tiempos de `make all`.** README_REPLICACION.md dice «≈2 h 10 min» y registra 7.564 s y 7.776 s (v6.0), 7.498 s y 6.947 s (v6.1). docs/v6_2/estado.md registra 7.928 s y 8.054 s. Usa el punto como separador de miles, así que «7.564 s» son unos 7.564 segundos, unas 2 h 6 min. Con esa lectura coincide con «≈2 h 10 min». Conviene escribirlo sin ambigüedad. La mayor parte del tiempo es v6 M3 (ML y deep learning).
+**Tiempos de `make all`.** README_REPLICACION.md dice «≈2 h 10 min» y registra 7.564 s y 7.776 s (v6.0), 7.498 s y 6.947 s (v6.1). historico/docs/v6_2/estado.md registra 7.928 s y 8.054 s. Usa el punto como separador de miles, así que «7.564 s» son unos 7.564 segundos, unas 2 h 6 min. Con esa lectura coincide con «≈2 h 10 min». Conviene escribirlo sin ambigüedad. La mayor parte del tiempo es v6 M3 (ML y deep learning).
 
 **Tests.** `tests/` tiene 52 funciones `test_` en 10 ficheros, más `tests/doble_impl/` con 3:
 - `test_ba_h1_dryrun.py` (1): simulacro de H1.
@@ -113,7 +113,7 @@ Ojo: los periodos de entrenamiento anteriores a las ventanas (2008–2024 según
 11. v5: referencia a una tabla equivocada en la cifra 8 de la revisión humana.
 
 **Hallazgos pendientes.**
-- `docs/v6_1/auditoria.md`, medios abiertos (ver `docs/v6_1/backlog.md`): K4a-04 (min/max con otro sentido en 48 filas), K4a-05 (fianza GVA bruta frente a truncada; cambiaría paneles sellados de v6, coste S), K4c-03 (26 cifras del verificador; el backlog lo llama K4c-26), K4d-07 (cuartiles, tarea del autor).
+- `historico/docs/v6_1/auditoria.md`, medios abiertos (ver `docs/v6_1/backlog.md`): K4a-04 (min/max con otro sentido en 48 filas), K4a-05 (fianza GVA bruta frente a truncada; cambiaría paneles sellados de v6, coste S), K4c-03 (26 cifras del verificador; el backlog lo llama K4c-26), K4d-07 (cuartiles, tarea del autor).
 - Bajos abiertos en la auditoría: K4a-06, K4a-08, K4a-10, R-04, R-05, R-06, K4c-04 y K4c-07.
 - `docs/v6_1/backlog.md`, abiertos: K4a-03b (recalcular D2, M), K4b-NR (5 cifras no reconstruibles solo con el texto; anexo metodológico), K4b-dh (mezcla de stock y media anual, S), K4d-ref (50 referencias «cuartil no verificado» y 76 NO VERIFICADA; Scimago devuelve 403, la verifica el autor, S), K2-49 (reestimar inmigración con 49 provincias; exige mirar provincias selladas en v6, L), BK-E3 (ampliar artículos, M), BK-014 y BK-017 (temporada, habitaciones y MESVAL; sin datos oficiales, L).
 - `docs/v5/backlog.md`: tabla de unas 90 filas. Ejemplos con coste de datos: BK-003 (titularidad del parque; Catastro no publica), BK-008 (coste de construcción sin fuente verificable), BK-009 (empleo de construcción por territorio), BK-010 (plazos de licencias), BK-011 (SIU inaccesible por el proxy).
@@ -124,8 +124,8 @@ Ojo: los periodos de entrenamiento anteriores a las ventanas (2008–2024 según
 - Sección Limitaciones del working paper: `docs/v5/plantillas/working_paper.md` y `output/v5/working_paper.md`.
 
 **Objeciones de revisores sin resolver.**
-- `docs/v6_1/carta_respuesta.md`, «No viable» (solo se declaran como limitación): A-04 (recuento de especificaciones entre versiones), A-05 (WCB y paneles municipales), A-06 (intervalos Anderson-Rubin y shift-share), A-09 (publicar ecuaciones del método de traslado), A-13 (muestra futura), P-10 (costes y magnitudes por euro), P-11 (recalcular D2 con T3), P-12 (fecha de publicación de etiquetas). A-02 y A-03 están «aceptadas en parte» con limitación.
-- `docs/v6_2/revision.md`, H8 (baja, anexo): A1 no tabula los 8 trimestres de la EPA de 2021 y 2025; A16 depende de la clase A4, que no se reconstruye desde la ficha. Pasa al backlog.
+- `historico/docs/v6_1/carta_respuesta.md`, «No viable» (solo se declaran como limitación): A-04 (recuento de especificaciones entre versiones), A-05 (WCB y paneles municipales), A-06 (intervalos Anderson-Rubin y shift-share), A-09 (publicar ecuaciones del método de traslado), A-13 (muestra futura), P-10 (costes y magnitudes por euro), P-11 (recalcular D2 con T3), P-12 (fecha de publicación de etiquetas). A-02 y A-03 están «aceptadas en parte» con limitación.
+- `historico/docs/v6_2/revision.md`, H8 (baja, anexo): A1 no tabula los 8 trimestres de la EPA de 2021 y 2025; A16 depende de la clase A4, que no se reconstruye desde la ficha. Pasa al backlog.
 
 **Tipos de error recurrentes** (de ERRATA y las auditorías):
 - Cruces por nombre con tildes o grafías distintas (SERP2IPVA, Valencia/Valéncia, Incasòl).
@@ -154,7 +154,7 @@ Ojo: los periodos de entrenamiento anteriores a las ventanas (2008–2024 según
 **Tiempos de ejecución:** `make all` tarda unas 2 h 6–2 h 12 (ver A). v6.2 registra 7.928 s y 8.054 s.
 
 **Discrepancias detectadas en este inventario:**
-1. `tests/doble_impl/test_doble_impl.py` tiene 3 funciones `test_`, pero `docs/v6_2/estado.md` habla de 17 tests. Puede deberse a parametrización; no se ha comprobado.
+1. `tests/doble_impl/test_doble_impl.py` tiene 3 funciones `test_`, pero `historico/docs/v6_2/estado.md` habla de 17 tests. Puede deberse a parametrización; no se ha comprobado.
 2. El nombre del pendiente de 26 cifras del verificador es K4c-03 en la auditoría y K4c-26 en el backlog.
 3. En `docs/v2/holdout_accesos.md` no aparecen aperturas propias de v3. El control se apoya en `evaluate_v3` y en el sellado por distrito, por lo que el log no registra la muestra v3.
 4. «Unidades selladas» de `dis_alquiler_anual` (3.786 de 10.552) mezcla unidades y observaciones según el campo.

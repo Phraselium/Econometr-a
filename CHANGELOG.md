@@ -2,6 +2,29 @@
 
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
+## v7.1 (2026-10-12): consolidación final y estructura para publicación (versión de referencia)
+- **Sin análisis nuevo.** No se estima ningún modelo nuevo ni se abre ninguna muestra sellada. La v7.1 pasa a ser la versión de referencia y la v6.2, histórica.
+- **S1 · Dosis y coste** (output/v7_1/S1). Para cada instrumento de R6 y cada CCAA:
+  - dosis (viviendas o compraventas), horizonte y coste fiscal anual cuando hay base;
+  - coste por punto de reducción, con rango;
+  - efecto por cada diez mil viviendas y por cada cien millones de euros anuales.
+  
+  Donde no hay base, «coste no estimable» y su motivo. Se actualizan el atlas (sección 6 bis), el Excel (3 hojas con colores de entrada, cálculo y enlace) y el verificador (V7-V2).
+- **S2 · Nota metodológica** (publicacion/nota_metodologica.md): estimadores de panel regional con un factor común no estacionario. Literatura con DOI verificado; cuartiles no verificados (Scimago 403).
+- **S3 · Consolidación.**
+  - cifras_clave incorpora V7 y V7.1, solo con filas nuevas.
+  - Entregables actualizados con el componente común, la ausencia de largo plazo regional, el traslado de las ayudas y del ITP/IVA (C4) y la dosis y el coste.
+  - Sección única «Qué cambió entre versiones y por qué».
+  - Pendientes de auditoría de redacción resueltos (docs/v7_1/pendientes_auditoria.md).
+  - Test de cifras difundibles.
+- **S4 · Ensayo de `make evaluate_v7`** con datos futuros simulados: superado. Protocolo de 2027 con el calendario del INE (docs/v7_1/evaluacion_2027.md). Desviación declarada antes de abrir: alquiler 2026T3.
+- **S5 · Estructura para el lector.**
+  - publicacion/, metodologia/ y reproducir/ se generan con `make publicacion` y un test lo comprueba.
+  - historico/ recibe, con `git mv`, los documentos de versiones cerradas que no lee ningún script, más archive/.
+  - LEEME_PRIMERO.md con itinerarios; README y MAPA actualizados; test de enlaces.
+- **S6 · Paquete de publicación:** release notes, tareas del autor y guía del revisor (docs/v7_1).
+- **Cambios en cifras publicadas: ninguno.** La cifra dh_2125 declara en sus fuentes que la ECP es un stock a 1 de enero y la EPA una media anual (K4b-dh); el número no cambia.
+
 ## v7.0 (2026-10-12): atlas econométrico regional
 
 **Panel y herramientas.**
@@ -63,16 +86,16 @@ Formato: versión, fecha y cambios principales. Las correcciones de resultados y
 - Léxico predictivo y asociativo en lugar de «pesa», «explica» o «importa».
 - Ratio precio/alquiler con un rango por medida.
 
-**Auditoría (K4).** Hallazgos: 0 críticos, 5 altos (corregidos), 13 medios y 12 bajos. Ver docs/v6_1/auditoria.md.
+**Auditoría (K4).** Hallazgos: 0 críticos, 5 altos (corregidos), 13 medios y 12 bajos. Ver historico/docs/v6_1/auditoria.md.
 - Doble implementación de las 15 cifras: 6 coinciden, 4 parciales explicadas y 5 no reconstruibles solo con el texto.
 - 32 tests nuevos; k4c y k4d entran en make.
 
-**Revisión por pares simulada (K5).** Árbitro académico: revisión mayor. Árbitro de política: revisión menor. Se aplicaron 18 cambios de texto y 11 objeciones pasan a limitaciones (docs/v6_1/carta_respuesta.md).
+**Revisión por pares simulada (K5).** Árbitro académico: revisión mayor. Árbitro de política: revisión menor. Se aplicaron 18 cambios de texto y 11 objeciones pasan a limitaciones (historico/docs/v6_1/carta_respuesta.md).
 
 **Cierre (K6).**
 - Sección «Qué cambió entre versiones y por qué» en los entregables.
 - Fichas del verificador K1-V1 y K2-V1.
-- docs/v6_1/backlog.md y docs/v6_1/tareas_autor.md, que es la lista definitiva.
+- docs/v6_1/backlog.md y historico/docs/v6_1/tareas_autor.md, que es la lista definitiva.
 
 **Cifras publicadas que cambian** (ERRATA.md):
 - contratos nuevos de la Comunitat Valenciana: de 26,6 % (22,4-30,8) a 27,7 % (24,6-30,8);
@@ -96,9 +119,9 @@ Entregables:
 - una_pagina: línea nueva en «Lo que NO se puede afirmar».
 - `src/v5/render.py`: los recuentos en «variables», «hipótesis» y «CCAA» se muestran como enteros.
 
-Auditoría del repositorio para su publicación (módulo G, 2026-10-11; detalle en docs/v6/auditoria.md):
+Auditoría del repositorio para su publicación (módulo G, 2026-10-11; detalle en historico/docs/v6/auditoria.md):
 - README.md principal y docs/MAPA.md (vigente frente a histórico).
-- Salidas superadas de v3 y v4 trasladadas a archive/ con `git mv` (registro en archive/README.md): output/v3/{articulo, informe_politica, lo_que_sabemos}.md y output/v4/{working_paper, policy_brief}.md. Ninguna cifra cambia.
+- Salidas superadas de v3 y v4 trasladadas a historico/ con `git mv` (registro en historico/archivo_v6_README.md): output/v3/{articulo, informe_politica, lo_que_sabemos}.md y output/v4/{working_paper, policy_brief}.md. Ninguna cifra cambia.
 - Makefile: `src/v5/a5_validacion.py` y `src/v5/b3_potencia.py` entran en `V5_ORDEN`; ya generaban salidas versionadas y reproducen los mismos ficheros byte a byte.
 - CITATION.cff, .zenodo.json y README_REPLICACION.md pasan a la versión 5.1.
 - Rutas locales absolutas eliminadas de documentos internos (docs/v2, docs/v5, docs/v5_1, docs/fallidas).
@@ -136,4 +159,4 @@ Cifras y capas cambiadas en los entregables (todas desde output/v5/cifras_clave.
 Geografía del déficit, descomposición de hogares, factibilidad, parque frente a mercado, evaluación de instrumentos, preguntas abiertas y verificador ampliado.
 
 ## v3, v2, v1
-Véanse docs/v3/estado.md, docs/v2 y output/informe.md.
+Véanse historico/docs/v3/estado.md, docs/v2 y output/informe.md.

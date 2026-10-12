@@ -17,7 +17,7 @@
   En V01 la convención B da NO RESPALDADA; en V03 y V12, PARCIALMENTE.
 - **Topes (H3-3), contaminación declarada.** El cálculo de potencia de v3 estimó P-C3 con municipios que luego quedaron sellados (O1), y la validación por fuente (SERPAVI) mide el mismo mercado en los mismos municipios. Por eso H3-3 queda fuera de C3 de forma definitiva, aunque los criterios a-c se cumplieran en una reestimación. Se dice en las fichas V06 y V07 y en el texto v4.
 
-## Revisión de la oleada A: REHACER (docs/v4/revision_oleadaA.md)
+## Revisión de la oleada A: REHACER (historico/docs/v4/revision_oleadaA.md)
 - A2, corregido por el orquestador. La convención B compara la cota de precio con la subida OBSERVADA del periodo: la afirmación queda NO RESPALDADA solo si la cota es inferior al 50 % de esa subida. El borrador anterior comparaba con el 50 % en niveles, y era un error. Resultado:
   - V01 con B: ANALIZADA, NO CONCLUYENTE. La cota es el 133 % de la subida con |ε|=0,33; con |ε|=1 sería el 44 %.
   - V03 con B: ANALIZADA, NO CONCLUYENTE (79 % de la subida de compra).
@@ -42,7 +42,7 @@
 - Vacías y esporádicas (consumo eléctrico, INE) son fuente única → C4; turísticas (INE y GVA discrepan 1,5-2,2 veces; GVA solo 3 provincias) → C4; tenencia (fuente única) → C4; extranjeros → C4 (MIVAU y Notariado no independientes, Registradores difiere más de 15 %). Ficha M4-V3 ANALIZADA, NO CONCLUYENTE en C4 (RESPALDADA exigiría C1).
 - Airbnb solo robustez: anuncios no son viviendas.
 
-## Revisión de la oleada B: REHACER (docs/v4/revision_oleadaB.md)
+## Revisión de la oleada B: REHACER (historico/docs/v4/revision_oleadaB.md)
 - **Reglas comunes nuevas**, aplicadas en `check_texto` y en el verificador v4:
   - (B5) la capa de un hecho es la MENOR de las de sus componentes; un componente de fuente única impide la C2 y la C1;
   - (B4) con capa C4, el veredicto es como máximo «ANALIZADA, NO CONCLUYENTE».

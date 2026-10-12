@@ -52,7 +52,7 @@ Las afirmaciones centrales son:
 | Reconstruir una cifra sin leer código | `output/v6_2/anexo_metodologico.md` (una ficha por cifra; L2 lo validó con 15 de 15 reproducidas a ciegas) |
 | Ver todas las cifras con su capa y fecha | `output/v5/cifras_clave.csv` |
 | Ver qué cambió entre versiones y por qué | `docs/v6_1/historial_conclusiones.md` (con las adendas v6.2) |
-| Auditoría de código y estadística | `docs/v6_1/auditoria.md`, `docs/v6_1/doble_implementacion.md`, `output/v6_2/L2/comparacion.csv` |
+| Auditoría de código y estadística | `historico/docs/v6_1/auditoria.md`, `docs/v6_1/doble_implementacion.md`, `output/v6_2/L2/comparacion.csv` |
 | Erratas (cifras publicadas que cambiaron) | `ERRATA.md` |
 | Informe técnico y working paper | `output/v5/informe_tecnico.md`, `output/v5/working_paper.md` |
 | Pre-registro y validación sellada | `docs/v6/hipotesis.md`, `docs/v2/holdout_accesos.md`, `output/v6_1/K1/tabla_modelos_k1.md` |
@@ -72,7 +72,7 @@ Dos ejecuciones de `make all` en un clon limpio dan ficheros idénticos (md5), s
 
 ## 5. Objeciones ya recibidas y respuesta
 
-En v6.1 hubo una revisión por pares simulada con dos árbitros: uno académico y otro de política pública. La hicieron agentes de IA, **no sustituye a la suya**. Los documentos son `docs/v6_1/informe_arbitro_academico.md`, `docs/v6_1/informe_arbitro_politica.md` y `docs/v6_1/carta_respuesta.md`, con una adenda de v6.2.
+En v6.1 hubo una revisión por pares simulada con dos árbitros: uno académico y otro de política pública. La hicieron agentes de IA, **no sustituye a la suya**. Los documentos son `historico/docs/v6_1/informe_arbitro_academico.md`, `historico/docs/v6_1/informe_arbitro_politica.md` y `historico/docs/v6_1/carta_respuesta.md`, con una adenda de v6.2.
 
 | Objeción | Respuesta |
 |---|---|

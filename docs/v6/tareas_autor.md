@@ -1,6 +1,6 @@
 # Tareas del autor para la publicación (v6)
 
-> **Sustituido por docs/v6_1/tareas_autor.md (v6.1).**
+> **Sustituido por historico/docs/v6_1/tareas_autor.md (v6.1).**
 
 Lo que no pueden hacer los agentes. Sustituye a docs/v5/tareas_autor.md como lista de trabajo; las casillas pendientes de v5 se copian aquí. Se marca cada casilla al terminar.
 
@@ -42,7 +42,7 @@ El remoto de la sesión rechaza las etiquetas; a 11 de octubre de 2026, `git ls-
 - [ ] Presentar las solicitudes S1-S10 de docs/v5/solicitudes.md y anotar fecha y registro.
 - [ ] Reclamar ante el Consejo de Transparencia si no hay respuesta en plazo.
 
-## 7. Decisiones abiertas de la auditoría (docs/v6/auditoria.md)
+## 7. Decisiones abiertas de la auditoría (historico/docs/v6/auditoria.md)
 - [ ] Scripts de datos fuera de `make data`: `src/build_eventos.py`, `src/v3/build_zonas_eventos_v3.py` y `src/v3/pa_fetch_aux.py`. Propuesta: renombrarlos con el prefijo `fetch_` o documentarlos en README_REPLICACION.md §2 junto a los demás scripts de descarga que no entran en `make all`.
 - [ ] Historial git: la auditoría buscó en todo el historial los patrones habituales (ghp_, github_pat_, sk-, AKIA, xox, claves privadas) sin coincidencias; antes de hacer público el repositorio, conviene pasar además un escáner dedicado (p. ej., `gitleaks detect`). Los 332 commits figuran con el correo noreply@anthropic.com como autor: decidir si se reescribe la autoría o se deja (la firma del trabajo está en CITATION.cff).
 

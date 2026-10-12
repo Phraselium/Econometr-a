@@ -19,7 +19,7 @@
 - **D8 · Alcance de K2.** K2 reestima con las 41 provincias de entrenamiento de v6, sin las 11 selladas, así que no reproduce la muestra de 49 provincias de v2.
   - En ella la primera etapa del 2SLS es débil (F=3,5).
   - Corrección del planteamiento: en v1-v3 la asociación de la inmigración aparece sobre todo con el ALQUILER, no con el precio de compra. Se documenta así en el historial.
-- **D9 · Revisión tras K2** (docs/v6_1/revision_K2.md): K1, K4a y K4b se aprueban con condiciones; K2 se rehízo una vez (solo el texto). Correcciones aplicadas:
+- **D9 · Revisión tras K2** (historico/docs/v6_1/revision_K2.md): K1, K4a y K4b se aprueban con condiciones; K2 se rehízo una vez (solo el texto). Correcciones aplicadas:
   - **K1.**
     - Permutación exacta con los 2^11 patrones.
     - Columna de DM por periodo; PROV_PRECIO_ANUAL rotulado «frágil».

@@ -5,9 +5,9 @@ Criterio del encargo:
 - el resto pasa al backlog con su coste (S = horas, M = días, L = semanas o datos nuevos).
 
 Fuentes revisadas:
-- docs/v6_1/auditoria.md y docs/v6_1/backlog.md;
+- historico/docs/v6_1/auditoria.md y docs/v6_1/backlog.md;
 - docs/estado_proyecto/informe_estado.md (incidencias del inventario);
-- docs/v6_1/carta_respuesta.md (objeciones «no viable»).
+- historico/docs/v6_1/carta_respuesta.md (objeciones «no viable»).
 
 ## Resueltos en v7.1 (redacción o coherencia)
 

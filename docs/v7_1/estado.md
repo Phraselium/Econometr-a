@@ -15,8 +15,13 @@
 - **S4.** src/v7_1/s4_ensayo.py recorre el camino real de evaluate_v7 con datos futuros simulados: SUPERADO (formatos, sha256, apertura, negativa a repetir, sha alterado, sin datos nuevos; el registro real queda intacto). Protocolo en docs/v7_1/evaluacion_2027.md, con el calendario oficial del INE de 2026 y 2027 estimado. Desviación declarada antes de la apertura: alquiler 2026T3.
 - **make check tras S3.** Dos fallos corregidos: cifras huérfanas «10.000» (normalización en palabras) y cifras_publicables desactualizado (l5_publicables pasa a `make v7_1`).
 
+- **S5.** `make publicacion` (src/v7_1/publicacion.py) genera publicacion/ (36 ficheros), metodologia/ (7) y reproducir/ (5), con MANIFIESTO sha256 y enlaces reescritos.
+  - historico/: 60 documentos de v1-v6.2 que ningún script lee, más archive/, movidos con `git mv`; índice en historico/INDICE.md (W14).
+  - LEEME_PRIMERO.md; README, MAPA, README_REPLICACION, CITATION, .zenodo.json y CHANGELOG en v7.1.
+  - Tests: test_publicacion (regeneración byte a byte), test_enlaces y test_cifras_difundibles.
+
 ## Siguiente
-- S5: generar publicacion/, metodologia/, reproducir/ e historico/; LEEME_PRIMERO, README y MAPA; tests de publicación y de enlaces.
+- Control: revisor único (opus, tope 80k) sobre S3 y S5. Después S6 y cierre.
 
 ## Tokens de subagentes (de 0,65 M)
 

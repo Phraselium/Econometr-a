@@ -1,56 +1,66 @@
 # Vivienda en España: base de evidencia reproducible
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** v7.0 (atlas econométrico regional; 12 de octubre de 2026; v6.2 es la versión de referencia congelada, con correcciones v6.3 en ERRATA). Versiones cerradas anteriores: v6.1 (auditoría y consolidación) y v6.0 (alquiler y compraventa). Guía del revisor: docs/v6_2/guia_revisor.md.
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión de referencia:** v7.1 (consolidación y estructura para publicación; 12 de octubre de 2026). Versiones cerradas: v1-v7.0. La v6.2 pasa a histórica ([historico/INDICE.md](historico/INDICE.md)).
+
+**Empiece por [LEEME_PRIMERO.md](LEEME_PRIMERO.md)**, que propone itinerarios de lectura para ciudadanos, periodistas, revisores y técnicos.
 
 ## Qué es
-Una base de evidencia sobre la vivienda en España, por provincias y con un módulo para València: precios y alquileres triangulados, déficit y necesidad de vivienda 2026-2035, diferencias territoriales, comparación europea, una matriz de instrumentos de política y un verificador de afirmaciones del debate público. Todo se reproduce con los datos incluidos en el repositorio y sin conexión a la red.
+Una base de evidencia sobre la vivienda en España, por provincias, por comunidades autónomas y con un módulo para València. Incluye:
+- precios y alquileres triangulados;
+- déficit y necesidad de vivienda 2026-2035;
+- un atlas econométrico regional;
+- simulaciones condicionales de instrumentos, con su dosis y su coste;
+- una nota metodológica sobre paneles regionales;
+- un verificador de afirmaciones del debate público.
 
-Cada resultado se clasifica en una de cuatro capas de evidencia:
+Todo se reproduce sin red con los datos incluidos.
+
+Cada resultado se clasifica en una capa de evidencia ([metodologia/capas.md](metodologia/capas.md)):
 - **C1 hechos:** al menos dos fuentes;
-- **C2 cotas:** intervalos con supuestos explícitos (Manski);
-- **C3 efectos:** identificados, con pretendencias, placebos, sensibilidad y muestra sellada;
+- **C2 cotas:** supuestos explícitos;
+- **C3 efectos:** identificados; ninguno alcanzado;
 - **C4 exploratorio.**
 
-Ningún resultado se presenta en una capa superior a la que alcanza. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas.
+Se evalúan afirmaciones e instrumentos, nunca partidos ni personas.
 
-## Qué se puede afirmar
-- Resumen por capas: [output/v5/lo_que_sabemos.md](output/v5/lo_que_sabemos.md).
-- Una página: [output/v5/una_pagina.md](output/v5/una_pagina.md).
-- Informe técnico, working paper y policy brief: output/v5/. Todas las cifras de estos documentos salen de [output/v5/cifras_clave.csv](output/v5/cifras_clave.csv), con la fecha de cada dato.
-- Verificador de afirmaciones: output/v5/verificador/.
+## Estructura
 
-El mapa de carpetas, con lo vigente y lo histórico, está en [docs/MAPA.md](docs/MAPA.md).
+| Carpeta | Qué contiene | Cómo se mantiene |
+|---|---|---|
+| [publicacion/](publicacion/MANIFIESTO.md) | Lo vigente: una página, lo que sabemos, policy brief, informe técnico, working paper, nota metodológica, artículo del Colegio, ponencia, atlas regional, verificador y cifras_clave.csv | `make publicacion`; nunca a mano (lo comprueba un test) |
+| [metodologia/](metodologia/MANIFIESTO.md) | Anexo metodológico, guía del revisor, capas, historial de conclusiones, validación Monte Carlo, pre-registro V7, dosis y coste | `make publicacion` |
+| [reproducir/](reproducir/MANIFIESTO.md) | Instrucciones, entorno y versiones, tiempos, ensayo y protocolo de `make evaluate_v7` | `make publicacion` |
+| [historico/](historico/INDICE.md) | Documentos de versiones superadas e índice por versión | `git mv`, sin modificar |
+| src/, tests/, output/, docs/, data/ | Código, pruebas, salidas de cada versión, documentación de trabajo y datos | `make all`, `make v7`, `make check` |
 
-## Atlas regional (V7)
-
-Una ficha por CCAA con ecuaciones, diagnósticos, backtest y propuestas condicionales: [output/v7/atlas_resumen.md](output/v7/atlas_resumen.md) y [output/v7/atlas/](output/v7/atlas/). Guía para no especialistas: [output/v7/guia_lectura.md](output/v7/guia_lectura.md). Todo es C4: no se confirmó ninguna relación de largo plazo.
+El mapa detallado está en [docs/MAPA.md](docs/MAPA.md).
 
 ## Cómo reproducir
-
-Para reconstruir una cifra sin leer el código: [output/v6_2/anexo_metodologico.md](output/v6_2/anexo_metodologico.md). La guía para revisores externos está en [docs/v6_2/guia_revisor.md](docs/v6_2/guia_revisor.md).
 ```bash
 python3 -m pip install -r requirements.lock
-make all     # datos en caché → paneles → modelos v1-v5.1 → entregables → verificador
-make check   # ruff, tests y controles de texto, cifras y capas
+make all           # v1-v6.3 sin red (unas 2 h)
+make v7            # atlas regional y V7.1 (unos 50 min)
+make publicacion   # publicacion/, metodologia/ y reproducir/
+make check         # ruff, tests, controles de texto, cifras y capas
 ```
-Detalle (software, tiempos, orden de los programas, correspondencia entre salidas y scripts, fuentes): [README_REPLICACION.md](README_REPLICACION.md).
+Detalle: [reproducir/instrucciones.md](reproducir/instrucciones.md). La validación limpia de V7 es diferida (2027): [reproducir/evaluacion_2027.md](reproducir/evaluacion_2027.md).
 
 ## Cómo citar
 Metadatos en [CITATION.cff](CITATION.cff) y .zenodo.json. DOI: pendiente (depósito en Zenodo).
 
-> Romero, B. (2026). *Vivienda en España: base de evidencia reproducible* (versión 7.0) [software y datos].
+> Romero, B. (2026). *Vivienda en España: base de evidencia reproducible* (versión 7.1) [software y datos].
 
 ## Licencias
 - Código (src/, tests/, Makefile): MIT.
-- Textos, tablas y figuras propios (docs/, output/): CC BY 4.0.
+- Textos, tablas y figuras propios (docs/, output/, publicacion/, metodologia/, reproducir/, historico/): CC BY 4.0.
 - Datos de terceros (data/raw/): conservan la licencia de su fuente; véase [docs/v5/licencias_datos.md](docs/v5/licencias_datos.md).
 
 Texto completo en [LICENSE](LICENSE).
 
 ## Uso de IA
-El código y los borradores se elaboraron con agentes de IA (Claude) bajo la supervisión del autor, que revisa y responde del contenido. La declaración completa está en [DECLARACION_IA.md](DECLARACION_IA.md) (también en el apéndice C de output/v5/working_paper.md y en README_REPLICACION.md §5).
+El código y los borradores se elaboraron con agentes de IA (Claude) bajo la supervisión del autor, que revisa y responde del contenido. La declaración completa está en [DECLARACION_IA.md](DECLARACION_IA.md) (también en el apéndice C del [working paper](publicacion/working_paper.md) y en README_REPLICACION.md §5).
 
 ## Erratas y cambios
 - Correcciones de resultados publicados: [ERRATA.md](ERRATA.md).
 - Cambios por versión: [CHANGELOG.md](CHANGELOG.md).
-- Salidas superadas de v3 y v4: [archive/](archive/README.md).
+- Versiones superadas: [historico/INDICE.md](historico/INDICE.md).

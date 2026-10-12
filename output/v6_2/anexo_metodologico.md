@@ -6,6 +6,9 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
 
 **Comprobación automática.** `python3 src/v6_2/l1_verifica.py` sigue literalmente las fichas A1-A17. Lee `data/raw` y, solo donde la ficha lo declara, una tabla intermedia versionada. Compara con `output/v5/cifras_clave.csv` (L3: `output/v6_2/L3/hechos.json`) y escribe `output/v6_2/L1/verificacion.csv`. **Resultado: se reproducen las 15 cifras de la revisión humana y las 2 de L3** (17 de 17). De las 15, 12 se reproducen solo desde `data/raw` y 3 con tabla intermedia versionada (D1-H11, D1-H12 y B1-H1).
 
+
+> **Validación (v6.2, L2).** Una segunda implementación independiente, escrita solo con este anexo y data/raw (tests/doble_impl), reproduce **15 de 15** cifras dentro del redondeo publicado. Se ejecuta en `make check`. Las precisiones que pidió se han incorporado como «Precisión añadida tras L2».
+
 ## Índice
 
 - [0. Convenciones](#0-convenciones)
@@ -100,6 +103,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
 - **Fórmula.** Para cada año y: (libres + protegidas) nacional − (libres + protegidas) de País Vasco y Navarra. Resultado: 2019 = 72.264; 2020 = 81.496; 2021 = 87.741; 2022 = 82.361; 2023 = 82.847; 2024 = 94.426. mín = 72.264 (2019); máx = 94.426 (2024); sin valor central.
 - **Capa.** C1 (MIVAU y Catastro dentro de ±15 % en 2019-2024).
 - **Script.** `src/v4/m0_run.py:terminadas`, columna `comun_mivau_bruto_sin_PV_NA` → `src/v5/cifras_clave.py:v4_adaptadores`.
+- **Precisión añadida tras L2.** «Si una serie protegida no tiene dato en un año, se toma 0.»
 - **Reconstruible: sí.** Verificado.
 
 ### A3. deficit_2124_c1: déficit acumulado 2021-2024 sin bajas (HISTÓRICA, v6.1; sustituida en v6.2 por A5)
@@ -158,6 +162,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
 - **Sensibilidad.** Si se quitan las variantes a y d1, que conservan el salto, el rango se estrecha, pero la capa sigue siendo C2.
 - **Resultado.** 527.672 (344.803-710.542) viviendas, C2.
 - **Script.** `src/v6_2/l3_deficit.py:hogares, terminadas, ventana, main` → `output/v6_2/L3/hechos.json`.
+- **Precisión añadida tras L2.** «UU(año) = suma de `valor` de todas las filas de `unidades_urbanas_residenciales` con ese `periodo`, sin filtro adicional de régimen ni de municipios.»
 - **Reconstruible: sí.** Verificado.
 
 ### A6. L3-DEF-2124-CONBAJAS: déficit 2021-2024 con bajas supuestas (v6.2)
@@ -169,6 +174,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
 - **Bajas estimadas.** Las de v5.1 T1 (`output/v5_1/T1/tablas/deficit_con_bajas_estimadas.csv`) se calculan y se registran, pero no entran en esta cifra.
 - **Capa.** C2: el supuesto de bajas no es un hecho.
 - **Resultado.** 634.730 (344.803-924.658) viviendas.
+- **Precisión añadida tras L2.** «Las bajas exactas son 0,002 × 107.057.889 = 214.115,8; el 214.116 es solo la cifra redondeada.»
 - **Reconstruible: sí.** Verificado.
 
 (L3-DEF-2125, C4, sigue el mismo método con fin en 2025T4 y terminadas de 2021-2025. La terminada de 2025 es C4 frágil. No se verifica aquí.)
@@ -187,6 +193,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
 - **Capa.** C1: ≥2 fuentes de ≥2 grupos (INE encuesta e IRPF).
 - **Resultado.** — (10,9-22,9 %), 2015-2024.
 - **Script.** `src/v5/a23_run.py:alquiler, nucleo, escribir`.
+- **Precisión añadida tras L2.** «El IPVA `Contrato existente` (tabla 59005) tiene base 2021 = 100 y solo cubre 2021-2024; por eso se divide entre 100. El IPVA `Total` es la tabla 59058 (base 2015 = 100). Si dos subconjuntos empatan en tamaño, gana el de menor amplitud.»
 - **Reconstruible: sí.** Verificado.
 
 ### A8. A23-P2: precio de compra, variación 2015-2025 (núcleo MIVAU, Notariado y Registradores)
@@ -201,6 +208,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
   3. mín = 44,2 %; máx = 56,1 %; central = **mediana de las tres = 47,2 %** (Notariado).
 - **Medida de precio.** Valor tasado, precio escriturado y precio registral (€/m²). Capa C1.
 - **Script.** `src/v5/a23_run.py:precio`.
+- **Precisión añadida tras L2.** «Los candidatos son MIVAU, Notariado y Registradores; el IPV (A23-P1) se excluye de antemano porque su amplitud respecto al resto supera el 15 %.»
 - **Reconstruible: sí** (la serie de Notariado está versionada). Verificado.
 
 ### A9. A23-A10: contratos nuevos en la Comunitat Valenciana, 2021-2024
@@ -220,6 +228,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
   - v6.2: 28,5 % (26,1-30,8). L1 detectó que la grafía «Valéncia» impedía el cruce y se corrigió (ERRATA).
 - **Capa.** C1. Medida: contratos nuevos (no stock).
 - **Script.** `src/v5/a23_run.py:alquiler, gva_series`.
+- **Precisión añadida tras L2.** «La clave de cruce es el nombre sin acentos, en minúsculas y cortado en "/" (`Valencia/Valéncia` y `Valencia/València` dan `valencia`). `devuelta` no se filtra.»
 - **Reconstruible: sí.** Verificado con l1_verifica.py.
 
 ### A10. R1C-001: hogares con vivienda principal en propiedad
@@ -243,6 +252,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
 - **Fórmula.** Cota = 100 × ΔVUT / stock: Censo **2,746 %**; ECV × ECP 2,423 %. Valor = Censo (especificación principal); mín = 2,423; máx = 2,746.
 - **Supuestos y capa.** Sustitución 1:1 y traspaso completo; stock constante. C2 (cota de Manski). No es un efecto.
 - **Script.** `src/v3/pb_run.py:b1` (cota `B1-nac-cantidad` en `output/v3/PB/cotas.json`) → `src/v5/b4_run.py`. (La revisión humana cita `b2`; la tabla real es `b1_nacional_sensibilidad.csv`.)
+- **Precisión añadida tras L2.** `ecv_pct_hogares_tenencia|Alquiler a precio de mercado|edad_persona_referencia=Total|sexo=Ambos sexos` y `…|Alquiler inferior al precio de mercado|…` en `data/raw/v3/ine_ecv_tenencia_edad_v3.csv`, `periodo == 2021` (15,2 + 2,8).
 - **Reconstruible: sí.** Verificado.
 
 ### A12. latente_convivencia: demanda latente de jóvenes por convivencia con los padres
@@ -254,6 +264,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
 - **Fórmula.** Latente = (tasa 2025 − tasa 2008)/100 × 5.579.800 / personas por hogar joven, con 2 fuentes × {1,5; 2,0} = 4 escenarios: 505.902; 379.426; 250.607; 187.956. mín = 188.000; máx = 506.000 (redondeo a miles); sin valor central.
 - **Supuestos y capa.** La tasa de 2008 es el contrafactual; 1,5-2 personas por hogar joven. C2.
 - **Script.** `src/v3/pa_a23.py:a2` (serie) → `src/v4/m1_run.py:latente` → `output/v4/M2/hechos.json:M2-C1` (texto «188-506 mil») → `src/v5/cifras_clave.py`.
+- **Precisión añadida tras L2.** «En `ine_t65944.json` cada serie tiene un dato por año (`Anyo`, `FK_Periodo` 28); se suman los dos tramos de edad (25-29 y 30-34) por separado para Total e Hijo/a. Los extremos se redondean con `round(x, -3)`.»
 - **Reconstruible: sí.** Verificado.
 
 ### A13-A14. B1-H4 y E-B1-F: crecimiento de hogares proyectado, 2026-2035
@@ -270,6 +281,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
   - mín = Σ min(F_ine, F_alt) = **1.308.531**; máx = Σ max(F_ine, F_alt) = **1.772.410**.
 - **Capa.** C2 (proyección con supuesto de jefatura). Periodo: de 1-1-2026 a 1-1-2036.
 - **Script.** `src/v5/b1_run.py:lee_proy_hogares, lee_proy_pob, main` (F_*) → `output/v5/B1/hechos.json:B1-H4` → `src/v5/e_hechos_e2.py` (E-B1-F).
+- **Precisión añadida tras L2.** «Las colisiones de clave (Navarra, Madrid, Asturias, Murcia, La Rioja: fila de CCAA y de provincia) se resuelven con la primera fila del fichero; ambas son idénticas. La lista de 52 claves sale de aplicar la clave a `clasificacion_provincias.csv:provincia`.»
 - **Reconstruible: sí.** Verificado. El intento de K4b falló porque excluía las provincias uniprovinciales.
 
 ### A15. B1-H1: necesidad total de vivienda por año, 2026-2035 (versión v5)
@@ -294,6 +306,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
   - máx = 309.920,8.
 - **Capa.** C4. Nota: el informe vigente cita la versión v5.1 (T3-H5b = 210.424), con las bajas estimadas de T1; esta ficha documenta la de cifras_clave (v5).
 - **Script.** `src/v5/b1_run.py:main, escribe_json`.
+- **Precisión añadida tras L2.** «Las columnas de `B1_nacional.csv` son `componente,min,central,max`; la fila `N10` de esa tabla incluye L y no se usa.»
 - **Reconstruible: con tabla intermedia versionada.** Verificado. Cada componente sigue hasta `data/raw` en `B1_provincias.csv` (columnas `*_min/central/max`).
 
 ### A16-A17. D1-H11 y D1-H12: parte de una ayuda general que se traslada al precio, clases A4 1 y 2 (método A)
@@ -317,6 +330,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
   - Clase 2: los valores negativos se recortan a 0, así que εs = 0 / 0 / 0,041. mín = 0,3/0,341 = 88,1 %; máx = central = **100 %**.
 - **Capa.** C4. Es una cota superior para una ayuda focalizada y no hay lenguaje causal.
 - **Script.** `src/v5/d1_run.py:es_por_clase, incidencia_clase, main`; la clase sale de `src/v5/a4_run.py:clasificar, respuesta_oferta`.
+- **Precisión añadida tras L2.** «Los percentiles son interpolación lineal (numpy por defecto). La clase es la columna `clase_2021_2025`. D1-H11 = clase 1; D1-H12 = clase 2.»
 - **Reconstruible: con tabla intermedia versionada** (lista de provincias por clase). Verificado.
 
 ---

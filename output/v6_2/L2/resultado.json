@@ -1,0 +1,27 @@
+{
+  "rama": "v6_2/L2",
+  "pregunta": "¿Se reproducen a ciegas, solo con el anexo metodológico y data/raw, las 15 cifras de las fichas completas?",
+  "capa": "C4",
+  "datos": "data/raw (solo lectura) + tablas intermedias citadas por el anexo (B1_nacional.csv, clasificacion_provincias.csv); comparación con output/v5/cifras_clave.csv",
+  "N": 15,
+  "metodo": "Segunda doble implementación independiente (tests/doble_impl/calculos.py), sin leer src/; tolerancia 0,5 % o redondeo publicado",
+  "estimacion": {
+    "coinciden": 15,
+    "dentro_del_rango": 0,
+    "no_coinciden": 0
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "DESCRIPTIVO",
+  "diagnosticos": {
+    "huecos_anexo": "ver huecos_anexo.md (11 huecos, ninguno bloquea la reproducción)",
+    "errores_en_cifras_publicadas": 0,
+    "pytest": "17 passed (~18 s)"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": "Sustituye deficit_2124_c1/c2 por L3-DEF-2124-SINBAJAS/CONBAJAS. Redondeos: B4 ya coincide; latente se redondea a miles. SEED=20261010 (sin componente aleatoria)."
+}

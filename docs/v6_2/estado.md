@@ -20,7 +20,8 @@
   - Los rangos del déficit se dan en una sola marca.
 - Anexo enlazado desde el README, el informe y el working paper.
 - L5 hecho (orquestador): docs/v6_2/cifras_publicables.md generado desde cifras_clave (9 cifras aptas y 13 que no deben citarse fuera de contexto) y tests/test_l5_cifras.py (cifras superadas, ids históricos y publicables al día). l1_verifica y l5_publicables entran en make.
-- L2 en curso.
+- L2 terminado (129.888 tokens): 15 de 15 cifras reproducidas a ciegas. 11 precisiones incorporadas al anexo. tests/doble_impl entra en `make check` (17 tests, unos 17 s).
+- Acumulado: 409.152 tokens (68 %). Siguiente: revisor (≤50.000).
 
 ## Siguiente
 - L1 (general-purpose) y L3 (econometrician) en curso.

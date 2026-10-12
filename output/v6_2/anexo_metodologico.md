@@ -115,7 +115,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
   - Las ventanas no coinciden: la EPA empieza en 2020T4 y la ECP en 2021T1.
   - La «segunda fuente de terminadas» es el Ministerio con y sin protegida, no el Catastro (ERRATA R-10).
 - **Capa publicada.** C1. En v6.2, L3 la rebaja a C2: ver A5.
-- **Resultado.** — (562.692-688.692) viviendas.
+- **Resultado.** — (562.692-688.692) viviendas. Cifra histórica (v6.1), sustituida en v6.2 por L3-DEF-2124-SINBAJAS.
 - **Script.** `src/v4/m0_run.py:deficit_2021_2024` → `output/v4/M0/resultado.json:deficit_2021_2024.c1_sin_bajas`.
 - **Reconstruible: sí.** Verificado.
 
@@ -126,7 +126,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
   - Déficit = hogares − (terminadas − bajas).
   - mín = 562.692 (ECP, con protegida, bajas 0); máx = 688.692 + 214.116 = **902.808**.
 - **Capa.** C2: la tasa de bajas es un supuesto.
-- **Resultado.** — (562.692-902.808) viviendas. Script: el de A3 (`c2_con_bajas`).
+- **Resultado.** — (562.692-902.808) viviendas. Script: el de A3 (`c2_con_bajas`). Cifra histórica (v6.1), sustituida en v6.2 por L3-DEF-2124-CONBAJAS.
 - **Reconstruible: sí.** Verificado.
 
 ### A5. L3-DEF-2124-SINBAJAS: déficit 2021-2024 sin bajas, todas las variantes (v6.2)
@@ -215,7 +215,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
   3. Fianzas: se conservan los importes entre 100 y 5.000 €. Mediana por año: 2021 = 535 €; 2024 = 700 €. Variación = **30,84 %**.
   4. Núcleo (±15 % en nivel): las dos fuentes. mín = 26,1 %; máx = 30,8 %; central = media de los dos = **28,5 %**.
 - **Historial.**
-  - v5: 26,6 % (22,4-30,8), con Valencia con peso 1.
+  - v5 (histórico): 26,6 % (22,4-30,8), con Valencia con peso 1.
   - v6.1: 27,7 % (24,6-30,8), con Valencia rellenada con la media de la CCAA.
   - v6.2: 28,5 % (26,1-30,8). L1 detectó que la grafía «Valéncia» impedía el cruce y se corrigió (ERRATA).
 - **Capa.** C1. Medida: contratos nuevos (no stock).

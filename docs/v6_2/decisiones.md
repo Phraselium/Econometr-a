@@ -11,3 +11,10 @@
   - El verificador sustituye V05 por L3-V1.
   - En ERRATA se anota como reclasificación de capa con cambio de rango.
   - La regla de decisión de L3 se pre-declaró antes de mirar los resultados finales. La sensibilidad sin las variantes que conservan el quiebre (551.813-710.542, 12,6 %) se reporta, pero no cambia la capa.
+- **E5 · dh_2125 y la EPA.** El aumento de hogares 2021-2025 (dh_2125, C1, 981.823-1.013.350) también usa la EPA corregida con la constante de v1. Se somete al revisor tras L3 si debe seguir el mismo tratamiento que el déficit. Mientras tanto se mantiene C1, porque el extremo bajo es la ECP sola, que no depende de la corrección.
+- **E6 · L5.**
+  - docs/v6_2/cifras_publicables.md se genera desde cifras_clave (src/v6_2/l5_publicables.py, en make). Las cotas C2 se dan solo como rango.
+  - El test tests/test_l5_cifras.py comprueba tres cosas:
+    - que el fichero coincide con lo generado;
+    - que ningún entregable, post, ficha del verificador ni el anexo cita una cifra sustituida que figure en ERRATA (lista cerrada de valores superados), salvo en líneas marcadas «histórico» o «v6.1»;
+    - que las plantillas no usan ids históricos fuera de frases rotuladas como históricas.

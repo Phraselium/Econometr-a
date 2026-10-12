@@ -19,6 +19,7 @@
   - Los rangos con mínimo negativo usan « a ».
   - Los rangos del déficit se dan en una sola marca.
 - Anexo enlazado desde el README, el informe y el working paper.
+- L5 hecho (orquestador): docs/v6_2/cifras_publicables.md generado desde cifras_clave (9 cifras aptas y 13 que no deben citarse fuera de contexto) y tests/test_l5_cifras.py (cifras superadas, ids históricos y publicables al día). l1_verifica y l5_publicables entran en make.
 - L2 en curso.
 
 ## Siguiente

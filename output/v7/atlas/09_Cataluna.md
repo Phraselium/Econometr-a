@@ -1,0 +1,222 @@
+# Atlas regional: Cataluña (09)
+
+*Capa C4 (fuente única INE a nivel de CCAA; informativo, muestra ya vista en v1). Asociación, sin lectura causal. Datos hasta 2026Q2; panel_ccaa_q_v7.*
+
+## 1. Qué subió y cuánto
+
+| serie | periodo | inicio | valor inicio | fin | valor fin | variación |
+|---|---|---|---|---|---|---|
+| IPV (INE) | 2014T1-2019T4 | 2014Q1 | 49,99 | 2019Q4 | 71,98 | +44,0 % |
+| IPV (INE) | 2020T1-2022T2 | 2020Q1 | 72,46 | 2022Q2 | 80,61 | +11,2 % |
+| IPV (INE) | 2022T3-último | 2022Q3 | 82,34 | 2026Q2 | 109,05 | +32,4 % |
+| IPC alquiler (INE) | 2014T1-2019T4 | 2014Q1 | 88,67 | 2019Q4 | 92,49 | +4,3 % |
+| IPC alquiler (INE) | 2020T1-2022T2 | 2020Q1 | 92,78 | 2022Q2 | 95,09 | +2,5 % |
+| IPC alquiler (INE) | 2022T3-último | 2022Q3 | 95,44 | 2026Q2 | 101,70 | +6,6 % |
+
+Variación = valor fin / valor inicio − 1, sobre el índice trimestral de cada fecha. El IPC de alquiler mide el stock de contratos; no es el alquiler de contratos nuevos.
+
+## 2. Ecuación y tabla de cada modelo (ECM regional)
+
+Los coeficientes de corto plazo tienen inferencia con control BH (q = 0,10). La velocidad de ajuste (φ), la semivida y θ se muestran como estimaciones **sin inferencia válida**: R4 no confirmó ninguna de las 7 hipótesis de largo plazo.
+
+### Mercado: alquiler
+
+#### Especificacion A (N de la region = 72 observaciones; periodo 2007Q1-2025Q1; ARDL(1,1))
+
+$$\Delta\text{ln\_ipc\_alquiler}_t = +0.105 +0.009\,(\text{ln\_ipc\_alquiler}_{t-1} - [3.603\,\text{ln\_ocupados}_{t-1} + 4.596\,\text{ln\_pob\_total}_{t-1}]) -0.016\,\text{d\_ln\_ocupados\_L0} -0.533\,\text{d\_ln\_pob\_total\_L0} -0.000\,\text{d\_ln\_hip\_importe}$$
+
+Velocidad de ajuste estimada phi_i = 0.009; semivida = NA trimestres. **Sin inferencia valida** (no hay IC ni p de phi_i; la comparacion valida es la del promedio con -8,83). theta_i estimado (sin inferencia valida): ln_ocupados = 3.603, ln_pob_total = 4.596.
+
+| coeficiente de corto plazo | estimacion | EE | t | p | q (BH, q=0,10) | IC95 |
+|---|---|---|---|---|---|---|
+| d_ln_ocupados_L0 | -0.0158 | 0.0234 | -0.67 | 0.503 | 0.856 | [-0.0626, 0.0310] |
+| d_ln_pob_total_L0 | -0.5327 | 0.2709 | -1.97 | 0.054 | 0.396 | [-1.0738, 0.0084] |
+| d_ln_hip_importe | -0.0005 | 0.0015 | -0.32 | 0.754 | 0.937 | [-0.0034, 0.0025] |
+
+Diagnosticos: BG_p = 0.019; BP_p = 0.039; JB_p = 0.000; RESET_p = 0.890; CUSUM_stat = 0.700; CUSUM_p = 0.711; VIF_max = 1.680; r2_adj = 0.378; phi_mitad1 = 0.008; phi_mitad2 = 0.103; CUSUM rechaza al 5 %: False; cambio de signo de phi entre mitades: False.
+
+#### Especificacion B (N de la region = 76 observaciones; periodo 2007Q1-2026Q2; ARDL(2,1))
+
+$$\Delta\text{ln\_ipc\_alquiler}_t = +0.002 +0.012\,(\text{ln\_ipc\_alquiler}_{t-1} - [-0.052\,\text{tasa\_paro\_epa}_{t-1}]) +0.000\,\text{d\_tasa\_paro\_epa\_L0} +0.529\,\text{d\_y\_L1} -0.000\,\text{d\_ln\_hip\_importe}$$
+
+Velocidad de ajuste estimada phi_i = 0.012; semivida = NA trimestres. **Sin inferencia valida** (no hay IC ni p de phi_i; la comparacion valida es la del promedio con -8,83). theta_i estimado (sin inferencia valida): tasa_paro_epa = -0.052.
+
+| coeficiente de corto plazo | estimacion | EE | t | p | q (BH, q=0,10) | IC95 |
+|---|---|---|---|---|---|---|
+| d_tasa_paro_epa_L0 | 0.0003 | 0.0003 | 0.79 | 0.432 | 0.711 | [-0.0004, 0.0009] |
+| d_y_L1 | 0.5294 | 0.0920 | 5.75 | 0.000 | 0.000 | [0.3458, 0.7129] |
+| d_ln_hip_importe | -0.0004 | 0.0014 | -0.27 | 0.791 | 0.858 | [-0.0032, 0.0024] |
+
+Diagnosticos: BG_p = 0.825; BP_p = 0.035; JB_p = 0.142; RESET_p = 0.541; CUSUM_stat = 0.867; CUSUM_p = 0.440; VIF_max = 1.000; r2_adj = 0.432; phi_mitad1 = 0.029; phi_mitad2 = 0.064; CUSUM rechaza al 5 %: False; cambio de signo de phi entre mitades: False.
+
+| spec | φ (sin inferencia válida) | semivida (trim.) |
+|---|---|---|
+| A | 0,009 | NA |
+| B | 0,012 | NA |
+
+### Mercado: compra
+
+#### Especificacion A (N de la region = 72 observaciones; periodo 2007Q1-2025Q1; ARDL(1,1))
+
+$$\Delta\text{ln\_ipv}_t = +0.548 -0.111\,(\text{ln\_ipv}_{t-1} - [-1.536\,\text{ln\_ocupados}_{t-1} + 0.279\,\text{ln\_hip\_importe}_{t-1} + -2.336\,\text{ln\_pob\_total}_{t-1}]) +0.084\,\text{d\_ln\_ocupados\_L0} +0.030\,\text{d\_ln\_hip\_importe\_L0} +6.163\,\text{d\_ln\_pob\_total\_L0} -0.006\,\text{d\_ln\_compraventas}$$
+
+Velocidad de ajuste estimada phi_i = -0.111; semivida = 5.9 trimestres. **Sin inferencia valida** (no hay IC ni p de phi_i; la comparacion valida es la del promedio con -8,83). theta_i estimado (sin inferencia valida): ln_ocupados = -1.536, ln_hip_importe = 0.279, ln_pob_total = -2.336.
+
+| coeficiente de corto plazo | estimacion | EE | t | p | q (BH, q=0,10) | IC95 |
+|---|---|---|---|---|---|---|
+| d_ln_ocupados_L0 | 0.0844 | 0.1525 | 0.55 | 0.582 | 0.860 | [-0.2203, 0.3891] |
+| d_ln_hip_importe_L0 | 0.0299 | 0.0123 | 2.43 | 0.018 | 0.123 | [0.0053, 0.0545] |
+| d_ln_pob_total_L0 | 6.1626 | 1.9555 | 3.15 | 0.002 | 0.050 | [2.2549, 10.0704] |
+| d_ln_compraventas | -0.0055 | 0.0179 | -0.31 | 0.759 | 0.900 | [-0.0412, 0.0302] |
+
+Diagnosticos: BG_p = 0.005; BP_p = 0.012; JB_p = 0.776; RESET_p = 0.000; CUSUM_stat = 1.322; CUSUM_p = 0.061; VIF_max = 9.369; r2_adj = 0.289; phi_mitad1 = -0.154; phi_mitad2 = -0.106; CUSUM rechaza al 5 %: False; cambio de signo de phi entre mitades: False.
+
+#### Especificacion B (N de la region = 77 observaciones; periodo 2007Q1-2026Q2; ARDL(1,1))
+
+$$\Delta\text{ln\_ipv}_t = -0.010 -0.061\,(\text{ln\_ipv}_{t-1} - [-0.121\,\text{tasa\_paro\_epa}_{t-1} + -0.084\,\text{ln\_hip\_importe}_{t-1}]) -0.005\,\text{d\_tasa\_paro\_epa\_L0} +0.004\,\text{d\_ln\_hip\_importe\_L0} +0.011\,\text{d\_ln\_compraventas}$$
+
+Velocidad de ajuste estimada phi_i = -0.061; semivida = 11.1 trimestres. **Sin inferencia valida** (no hay IC ni p de phi_i; la comparacion valida es la del promedio con -8,83). theta_i estimado (sin inferencia valida): tasa_paro_epa = -0.121, ln_hip_importe = -0.084.
+
+| coeficiente de corto plazo | estimacion | EE | t | p | q (BH, q=0,10) | IC95 |
+|---|---|---|---|---|---|---|
+| d_tasa_paro_epa_L0 | -0.0055 | 0.0019 | -2.83 | 0.006 | 0.085 | [-0.0094, -0.0016] |
+| d_ln_hip_importe_L0 | 0.0044 | 0.0119 | 0.37 | 0.712 | 0.894 | [-0.0194, 0.0282] |
+| d_ln_compraventas | 0.0113 | 0.0172 | 0.66 | 0.514 | 0.894 | [-0.0231, 0.0456] |
+
+Diagnosticos: BG_p = 0.008; BP_p = 0.001; JB_p = 0.605; RESET_p = 0.068; CUSUM_stat = 1.205; CUSUM_p = 0.110; VIF_max = 4.619; r2_adj = 0.295; phi_mitad1 = -0.115; phi_mitad2 = -0.144; CUSUM rechaza al 5 %: False; cambio de signo de phi entre mitades: False.
+
+| spec | φ (sin inferencia válida) | semivida (trim.) |
+|---|---|---|
+| A | -0,111 | 5,9 |
+| B | -0,061 | 11,1 |
+
+## 3. Diagnósticos
+
+| mercado | spec | Breusch-Godfrey p | Breusch-Pagan p | Jarque-Bera p | RESET p | CUSUM p | VIF máx | R² aj. | φ mitad 1 | φ mitad 2 | cambio de signo de φ |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| alquiler | A | 0,019 | 0,039 | 0,000 | 0,890 | 0,711 | 1,68 | 0,38 | 0,008 | 0,103 | False |
+| alquiler | B | 0,825 | 0,035 | 0,142 | 0,541 | 0,440 | 1,00 | 0,43 | 0,029 | 0,064 | False |
+| compra | A | 0,005 | 0,012 | 0,776 | 0,000 | 0,061 | 9,37 | 0,29 | -0,154 | -0,106 | False |
+| compra | B | 0,008 | 0,001 | 0,605 | 0,068 | 0,110 | 4,62 | 0,29 | -0,115 | -0,144 | False |
+
+Un p bajo en Breusch-Godfrey indica autocorrelación residual; en ese caso los errores estándar de la tabla de corto plazo son menos fiables.
+
+## 4. Descomposición por periodo (contabilidad descriptiva, con residuo)
+
+Coeficientes no confirmados: la magnitud se da como rango entre estimadores (MG, PMG, CS-DL) y es asociación. Variación en log. «no atribuible = True»: el residuo domina o el rango abarca la variación.
+
+**alquiler, especificación A**
+
+| periodo | componente | rango mín. | rango máx. | variación observada | no atribuible |
+|---|---|---|---|---|---|
+| 2014T1-2019T4 | theta*d(ln_ocupados) | 0,0000 | 0,0012 | 0,0239 | False |
+| 2014T1-2019T4 | theta*d(ln_pob_total) | 0,0046 | 0,0233 | 0,0239 | False |
+| 2014T1-2019T4 | residuo no explicado | -0,0006 | 0,0193 | 0,0239 | False |
+| 2014T1-2019T4 | ECM propio de la region: suma ajustada (corto plazo + correccion) | 0,0249 | 0,0249 | 0,0239 | False |
+| 2014T1-2019T4 | ECM propio: residuo | -0,0009 | -0,0009 | 0,0239 | False |
+| 2020T1-2022T2 | theta*d(ln_ocupados) | -0,0005 | -0,0000 | -0,0002 | True |
+| 2020T1-2022T2 | theta*d(ln_pob_total) | 0,0012 | 0,0061 | -0,0002 | True |
+| 2020T1-2022T2 | residuo no explicado | -0,0058 | -0,0014 | -0,0002 | True |
+| 2020T1-2022T2 | ECM propio de la region: suma ajustada (corto plazo + correccion) | -0,0005 | -0,0005 | -0,0002 | True |
+| 2020T1-2022T2 | ECM propio: residuo | 0,0003 | 0,0003 | -0,0002 | True |
+| 2022T3-ultimo | theta*d(ln_ocupados) | 0,0001 | 0,0021 | -0,0119 | True |
+| 2022T3-ultimo | theta*d(ln_pob_total) | 0,0029 | 0,0145 | -0,0119 | True |
+| 2022T3-ultimo | residuo no explicado | -0,0285 | -0,0149 | -0,0119 | True |
+| 2022T3-ultimo | ECM propio de la region: suma ajustada (corto plazo + correccion) | -0,0121 | -0,0121 | -0,0119 | True |
+| 2022T3-ultimo | ECM propio: residuo | 0,0002 | 0,0002 | -0,0119 | True |
+
+**compra, especificación A**
+
+| periodo | componente | rango mín. | rango máx. | variación observada | no atribuible |
+|---|---|---|---|---|---|
+| 2014T1-2019T4 | theta*d(ln_ocupados) | -0,0062 | -0,0008 | 0,1680 | True |
+| 2014T1-2019T4 | theta*d(ln_hip_importe) | -0,0125 | 0,1199 | 0,1680 | True |
+| 2014T1-2019T4 | theta*d(ln_pob_total) | -0,0510 | 0,0940 | 0,1680 | True |
+| 2014T1-2019T4 | residuo no explicado | 0,0774 | 0,2171 | 0,1680 | True |
+| 2014T1-2019T4 | ECM propio de la region: suma ajustada (corto plazo + correccion) | 0,0630 | 0,0630 | 0,1680 | True |
+| 2014T1-2019T4 | ECM propio: residuo | 0,1049 | 0,1049 | 0,1680 | True |
+| 2020T1-2022T2 | theta*d(ln_ocupados) | 0,0003 | 0,0024 | -0,0034 | True |
+| 2020T1-2022T2 | theta*d(ln_hip_importe) | -0,0193 | 0,1855 | -0,0034 | True |
+| 2020T1-2022T2 | theta*d(ln_pob_total) | -0,0133 | 0,0245 | -0,0034 | True |
+| 2020T1-2022T2 | residuo no explicado | -0,1779 | 0,0233 | -0,0034 | True |
+| 2020T1-2022T2 | ECM propio de la region: suma ajustada (corto plazo + correccion) | -0,0011 | -0,0011 | -0,0034 | True |
+| 2020T1-2022T2 | ECM propio: residuo | -0,0023 | -0,0023 | -0,0034 | True |
+| 2022T3-ultimo | theta*d(ln_ocupados) | -0,0111 | -0,0015 | -0,0071 | True |
+| 2022T3-ultimo | theta*d(ln_hip_importe) | -0,0334 | 0,0035 | -0,0071 | True |
+| 2022T3-ultimo | theta*d(ln_pob_total) | -0,0317 | 0,0584 | -0,0071 | True |
+| 2022T3-ultimo | residuo no explicado | -0,0648 | 0,0692 | -0,0071 | True |
+| 2022T3-ultimo | ECM propio de la region: suma ajustada (corto plazo + correccion) | 0,0269 | 0,0269 | -0,0071 | True |
+| 2022T3-ultimo | ECM propio: residuo | -0,0340 | -0,0340 | -0,0071 | True |
+
+Las tablas completas (incluida la descomposición del ECM propio de la región) están en output/v7/R4/<mercado>/region_09.md.
+
+## 5. Backtest (R5)
+
+| mercado | mejor modelo | RMSE ×100 | base fuerte | ¿bate a la base fuerte? | base más exigente | ¿bate a la más exigente? |
+|---|---|---|---|---|---|---|
+| alquiler | pmg | 0,292 | 0,276 | no | 0,276 | no |
+| compra | ar4 | 2,542 | 4,888 | sí | 2,841 | sí |
+
+Origen móvil 2016Q1-2026Q1, h = 1-4 agrupados. informativo, muestra ya vista en v1; la selección del mejor modelo es en muestra (optimista). Solo "predice mejor" quien bate a la base más exigente.
+
+## 6. Propuestas (R6; condicional, C4)
+
+«Si se hiciera X, con estos supuestos…». Mediana e intervalo al 90 % (p5-p95) de la variación %, a 2, 5 y 10 años, con la elasticidad de oferta de la rejilla (v5). Esfuerzo = variación % del esfuerzo neto del beneficiario. Robusto = esfuerzo baja en todo el Monte Carlo y el precio de mercado no sube en ninguna extracción.
+
+| instrumento | mercado | h | precio o alquiler de mercado: mediana [p5, p95] | esfuerzo: mediana [p5, p95] | robusto |
+|---|---|---|---|---|---|
+| a_construccion | alquiler | 2 | -0,0 % [-0,0 %, -0,0 %] | -0,0 % [-0,0 %, -0,0 %] | no |
+| a_construccion | alquiler | 5 | -0,0 % [-0,1 %, -0,0 %] | -0,0 % [-0,1 %, -0,0 %] | no |
+| a_construccion | alquiler | 10 | -0,1 % [-0,3 %, -0,1 %] | -0,1 % [-0,3 %, -0,1 %] | no |
+| a_construccion | precio | 2 | -0,0 % [-0,0 %, -0,0 %] | -0,0 % [-0,0 %, -0,0 %] | no |
+| a_construccion | precio | 5 | -0,0 % [-0,1 %, -0,0 %] | -0,0 % [-0,1 %, -0,0 %] | no |
+| a_construccion | precio | 10 | -0,1 % [-0,2 %, -0,1 %] | -0,1 % [-0,2 %, -0,1 %] | no |
+| b_vacias | alquiler | 2 | -0,2 % [-0,3 %, -0,1 %] | -0,2 % [-0,3 %, -0,1 %] | sí |
+| b_vacias | alquiler | 5 | -1,0 % [-2,2 %, -0,5 %] | -1,0 % [-2,2 %, -0,5 %] | sí |
+| b_vacias | alquiler | 10 | -2,7 % [-5,8 %, -1,3 %] | -2,7 % [-5,8 %, -1,3 %] | sí |
+| b_vacias | precio | 2 | -0,1 % [-0,1 %, -0,0 %] | -0,1 % [-0,1 %, -0,0 %] | sí |
+| b_vacias | precio | 5 | -0,4 % [-0,7 %, -0,2 %] | -0,4 % [-0,7 %, -0,2 %] | sí |
+| b_vacias | precio | 10 | -1,0 % [-1,9 %, -0,6 %] | -1,0 % [-1,9 %, -0,6 %] | sí |
+| c_vivienda_publica | alquiler | 2 | -0,2 % [-0,5 %, -0,1 %] | -0,2 % [-0,5 %, -0,1 %] | sí |
+| c_vivienda_publica | alquiler | 5 | -1,5 % [-3,4 %, -0,7 %] | -1,5 % [-3,4 %, -0,7 %] | sí |
+| c_vivienda_publica | alquiler | 10 | -4,1 % [-9,1 %, -1,8 %] | -4,1 % [-9,1 %, -1,8 %] | sí |
+| c_vivienda_publica | precio | 2 | -0,0 % [-0,1 %, -0,0 %] | -0,0 % [-0,1 %, -0,0 %] | sí |
+| c_vivienda_publica | precio | 5 | -0,3 % [-0,7 %, -0,1 %] | -0,3 % [-0,7 %, -0,1 %] | sí |
+| c_vivienda_publica | precio | 10 | -0,8 % [-1,7 %, -0,4 %] | -0,8 % [-1,7 %, -0,4 %] | sí |
+| d_turisticos | alquiler | 2 | -0,3 % [-0,7 %, -0,1 %] | -0,3 % [-0,7 %, -0,1 %] | sí |
+| d_turisticos | alquiler | 5 | -0,5 % [-1,2 %, -0,2 %] | -0,5 % [-1,2 %, -0,2 %] | sí |
+| d_turisticos | alquiler | 10 | -0,6 % [-1,4 %, -0,2 %] | -0,6 % [-1,4 %, -0,2 %] | sí |
+| d_turisticos | precio | 2 | -0,1 % [-0,1 %, -0,0 %] | -0,1 % [-0,1 %, -0,0 %] | no |
+| d_turisticos | precio | 5 | -0,1 % [-0,2 %, -0,0 %] | -0,1 % [-0,2 %, -0,0 %] | no |
+| d_turisticos | precio | 10 | -0,1 % [-0,2 %, -0,0 %] | -0,1 % [-0,2 %, -0,0 %] | no |
+| e_ayuda_demanda | alquiler | 2 | +2,2 % [+0,9 %, +4,4 %] | -2,7 % [-4,9 %, -1,2 %] | no |
+| e_ayuda_demanda | alquiler | 5 | +3,6 % [+1,6 %, +7,0 %] | -4,5 % [-8,0 %, -2,1 %] | no |
+| e_ayuda_demanda | alquiler | 10 | +4,2 % [+1,9 %, +8,2 %] | -5,3 % [-9,4 %, -2,5 %] | no |
+| e_ayuda_demanda | precio | 2 | +2,2 % [+0,9 %, +4,4 %] | -2,7 % [-4,9 %, -1,2 %] | no |
+| e_ayuda_demanda | precio | 5 | +3,6 % [+1,6 %, +7,0 %] | -4,5 % [-8,0 %, -2,1 %] | no |
+| e_ayuda_demanda | precio | 10 | +4,2 % [+1,9 %, +8,2 %] | -5,3 % [-9,4 %, -2,5 %] | no |
+| f1_rebaja_ITP_IVA_vivienda_nueva | precio | 2 | +0,5 % [+0,2 %, +1,1 %] | -0,6 % [-1,3 %, -0,2 %] | no |
+| f1_rebaja_ITP_IVA_vivienda_nueva | precio | 5 | +0,9 % [+0,3 %, +1,8 %] | -1,0 % [-2,0 %, -0,4 %] | no |
+| f1_rebaja_ITP_IVA_vivienda_nueva | precio | 10 | +1,1 % [+0,4 %, +2,1 %] | -1,2 % [-2,4 %, -0,5 %] | no |
+| f2_impuestos_construccion | alquiler | 2 | -0,5 % [-1,1 %, -0,2 %] | -0,5 % [-1,1 %, -0,2 %] | sí |
+| f2_impuestos_construccion | alquiler | 5 | -0,9 % [-1,7 %, -0,4 %] | -0,9 % [-1,7 %, -0,4 %] | sí |
+| f2_impuestos_construccion | alquiler | 10 | -1,1 % [-2,0 %, -0,5 %] | -1,1 % [-2,0 %, -0,5 %] | sí |
+| f2_impuestos_construccion | precio | 2 | -0,5 % [-1,1 %, -0,2 %] | -0,5 % [-1,1 %, -0,2 %] | sí |
+| f2_impuestos_construccion | precio | 5 | -0,9 % [-1,7 %, -0,4 %] | -0,9 % [-1,7 %, -0,4 %] | sí |
+| f2_impuestos_construccion | precio | 10 | -1,1 % [-2,0 %, -0,5 %] | -1,1 % [-2,0 %, -0,5 %] | sí |
+
+**Combinaciones robustas en esta región:** b_vacias (alquiler; robusto solo con rejilla (regional no utilizable)); b_vacias (precio; robusto solo con rejilla (regional no utilizable)); c_vivienda_publica (alquiler; robusto solo con rejilla (regional no utilizable)); c_vivienda_publica (precio; robusto solo con rejilla (regional no utilizable)); d_turisticos (alquiler; robusto solo con rejilla (regional no utilizable)); f2_impuestos_construccion (alquiler; robusto solo con rejilla (regional no utilizable)); f2_impuestos_construccion (precio; robusto solo con rejilla (regional no utilizable)).
+
+Con la elasticidad regional (DOLS) el resultado puede diferir; esa elasticidad no pasó diagnósticos en 0 de 17 CCAA, de modo que se mantiene la rejilla y se reportan ambas en impactos.csv.
+
+## 7. Qué no se puede afirmar
+
+- Que haya una relación de largo plazo estable entre precios o alquileres y empleo, población, hipotecas o paro: ninguna hipótesis confirmatoria de R4 se confirmó (p de Holm ≥ 0,05).
+- Que la velocidad de ajuste de la región sea distinta de cero o de la del resto: no hay inferencia válida individual.
+- Que la descomposición atribuya la variación a un factor: el residuo domina y los coeficientes no están confirmados.
+- Que el mejor modelo del backtest vaya a predecir mejor en el futuro: muestra ya vista en v1 y selección en muestra.
+- Que una propuesta produzca los impactos de la tabla: son escenarios condicionales con supuestos (C4), no estimaciones identificadas.
+- Nada de lo anterior es causal: la evidencia queda por debajo del nivel CAUSAL.
+
+---
+*Capas: variaciones de índices C4 (fuente única regional); ECM, descomposición y backtest C4; propuestas C4 condicional. informativo, muestra ya vista en v1. Validación diferida pendiente: los modelos están congelados (R5) y se evaluarán con `make evaluate_v7` sobre datos posteriores.*

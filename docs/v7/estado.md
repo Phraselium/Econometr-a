@@ -28,3 +28,4 @@
 
 Acumulado: unos 743.500 tokens (57 %). Topes reducidos: R6 150.000 y R7 80.000.
 | R6 propuestas | 150.000 | 72.700 |
+| R7 atlas | 80.000 | (pendiente del aviso del sistema) |

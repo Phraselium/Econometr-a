@@ -16,3 +16,4 @@ El pre-registro de V7 (docs/v7/hipotesis.md) y la congelación de los modelos de
 ## Datos de la congelación (los rellena el cierre de R5)
 sha256_modelos_congelados: PENDIENTE
 fecha_verificable: PENDIENTE
+prereg_v7_commit_local: 3fad305 (etiqueta local `prereg-v7`; el remoto rechaza etiquetas)

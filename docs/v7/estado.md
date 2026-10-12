@@ -8,7 +8,7 @@
 - Acumulado de subagentes: unos 366.000 tokens (28 %).
 
 ## Siguiente
-- R4: modelos explicativos.
+- R4a (núcleo: MG_dm, PMG_dm, CS-DL, DFE, ecuaciones y diagnósticos) y R4b (jerárquico, LP, regulación, provincia) en curso.
 - R0 (subagente D2 + verificador), R1 (panel) y R2 (herramientas + Monte Carlo) en curso; R0 del orquestador hecho (V2).
 
 ## Tokens de subagentes (presupuesto 1,3 M; corte 1,04 M)

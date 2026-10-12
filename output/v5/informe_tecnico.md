@@ -16,7 +16,7 @@
 **Qué hace este informe.** Ordena lo que se puede afirmar sobre la vivienda en España con datos públicos y con qué seguridad. Cada afirmación lleva una capa de evidencia: [C1] hecho confirmado por al menos dos fuentes independientes; [C2] cota con supuestos explícitos; [C4] exploratorio o de fuente única. En esta versión no hay ninguna afirmación de tipo C3 (efecto identificado con todos los controles): ningún resultado nuevo de v5 los supera.
 
 **Lo que se sostiene con dos fuentes [C1].**
-- Entre 2021 y 2024 el número de hogares creció más que el de viviendas terminadas: la diferencia está en el rango 344.803-710.542 viviendas [C2: cota; la cuantía depende de cómo se corrija el salto de la EPA en 2021]. Con las bajas del parque estimadas, llega como máximo a 744.144 viviendas [C4].
+- Entre 2021 y 2024 el número de hogares creció más que el de viviendas terminadas: la diferencia está en el rango 389.361-710.542 viviendas (sin las dos correcciones que conservan el salto de la EPA, 596.371-710.542 viviendas) [C2: cota; la cuantía depende de cómo se corrija el salto de la EPA en 2021]. Con las bajas del parque estimadas, llega como máximo a 765.994 viviendas [C4].
 - Los hogares aumentaron en 997.586 hogares (981.823-1.013.350 hogares) entre 2021 y 2025 [C1].
 - Se terminaron 72.264-94.426 viviendas/año en 2019-2024 (territorio común) [C1].
 - El precio de compra subió 47,2 % (44,2-56,1 %) en 2015-2025 según el núcleo de tres fuentes (Ministerio, Notariado y Registradores) [C1]; el índice del INE marca 79,9 % [C4]. Los dos se dan siempre juntos.
@@ -69,9 +69,9 @@ Reglas que se aplican en todo el informe:
 
 **Definición.** El déficit contable es el aumento del número de hogares menos las viviendas terminadas en el mismo periodo. No incluye la demanda latente (jóvenes que no se emancipan) ni la vivienda que sale del parque, salvo que se diga.
 
-**2021-2024 [C2 desde v6.2; antes C1].** Con dos fuentes independientes en cada componente (hogares: ECP y EPA corregida por la ruptura de 2021; terminadas: Ministerio, validado con Catastro dentro de ±15 %) [nota v6.1, K4b: el rango combina hogares ECP o EPA, terminadas del Ministerio con o sin protegida y bajas de 0, 0,1 o 0,2 % anual; la corrección de la EPA es una constante de 242.400 hogares fijada en v1 (informe v1, §5.1), no derivada de los datos en esta versión], el déficit publicado en v6.1 estaba entre 562.692-688.692 viviendas (histórico). En v6.2 (L3) se recalcula con siete correcciones alternativas del salto de la EPA (sin corrección, trimestres vecinos, variación nula, enlace con la ECP, solo ECP y la constante de v1): sin bajas, el rango es 344.803 viviendas-710.542 viviendas, y con bajas supuestas 344.803 viviendas-924.658 viviendas. Las fuentes coinciden, pero la amplitud supera la tolerancia de C1 (±15 %), de modo que la cifra pasa a cota C2 (527.672 viviendas (344.803-710.542 viviendas) (2021-2024; hogares: EPA (varias correcciones) y ECP; terminadas: MIVAU y Catastro; dato de 2024T4; C2)). Detalle en `output/v6_2/L3/deficit_alternativas.md`. <!-- check:cifra-libre (parámetros de método ±15 %, bajas 0-0,2 % y constante EPA 242.400 de v1, declarados en la nota K4b; etiquetas de versión) -->
+**2021-2024 [C2 desde v6.2; antes C1].** Con dos fuentes independientes en cada componente (hogares: ECP y EPA corregida por la ruptura de 2021; terminadas: Ministerio, validado con Catastro dentro de ±15 %) [nota v6.1, K4b: el rango combina hogares ECP o EPA, terminadas del Ministerio con o sin protegida y bajas de 0, 0,1 o 0,2 % anual; la corrección de la EPA es una constante de 242.400 hogares fijada en v1 (informe v1, §5.1), no derivada de los datos en esta versión], el déficit publicado en v6.1 estaba entre 562.692-688.692 viviendas (histórico). En v6.2 (L3) se recalcula con siete correcciones alternativas del salto de la EPA más la constante de v1 (ocho variantes: sin corrección, trimestres vecinos con dos y cuatro trimestres, variación nula, dos enlaces con la ECP, solo ECP y la constante): sin bajas, el rango es 389.361 viviendas-710.542 viviendas, y con bajas supuestas 389.361 viviendas-924.658 viviendas. Las fuentes coinciden, pero la amplitud supera la tolerancia de C1 (±15 %), de modo que la cifra pasa a cota C2 (549.952 viviendas (389.361-710.542 viviendas) (2021-2024; hogares: EPA (varias correcciones) y ECP; terminadas: MIVAU y Catastro; dato de 2024T4; C2)). Detalle en `output/v6_2/L3/deficit_alternativas.md`. <!-- check:cifra-libre (parámetros de método ±15 %, bajas 0-0,2 % y constante EPA 242.400 de v1, declarados en la nota K4b; etiquetas de versión) -->
 
-**Con bajas del parque estimadas [C4].** Al combinar las combinaciones de fuentes del déficit sin bajas con la tasa de bajas de `T1`, el déficit 2021-2024 queda en 653.097 viviendas (562.692-744.144 viviendas) [C4]. Sustituye a la cota C2 anterior, que llegaba a 902.808 viviendas con un supuesto de bajas que nada observado respalda. Con 2025, 763.416 viviendas (700.934-826.703 viviendas) [C4].
+**Con bajas del parque estimadas [C4].** Al combinar todas las variantes del déficit sin bajas (siete alternativas más la constante de v1, con tres fuentes de terminadas) con las tasas de bajas estimadas en `T1`, el déficit 2021-2024 queda en 654.646 viviendas (389.361-765.994 viviendas) [C4]. Con bajas supuestas del 0,1-0,2 % anual, que nada observado respalda, el máximo llegaría a 924.658 viviendas. Con 2025 y sin bajas, 523.606-887.950 viviendas [C4]. <!-- check:cifra-libre (parámetros de método) -->
 
 **Bajas del parque (`T1`) [C4].** Las identidades de stock no miden bajas: Censos 2011-2021 y Catastro dan tasas negativas (-0,33 % del parque al año y -0,18 % del parque al año), que reflejan altas no certificadas o afloramientos. Las demoliciones con licencia son 0,02-0,04 % del parque en 2024 y no cubren ruina, cambios de uso ni agregaciones. La tasa usada es C4 (mínimo, central y máximo de las demoliciones con licencia: 0,00 % del parque al año, 0,03 % del parque al año y 0,05 % del parque al año), salvo la cota física cero, que es C2. Sustituye al supuesto de bajas de v4, que queda por encima de todo lo observado.
 
@@ -83,7 +83,7 @@ Reglas que se aplican en todo el informe:
 
 ### 1.2 Hogares
 
-- Entre 2021 y 2025 los hogares aumentaron en 997.586 hogares (981.823-1.013.350 hogares) [C1] (INE ECP y EPA corregida por la ruptura de 2021).
+- Entre 2021 y 2025 los hogares aumentaron en 997.586 hogares (981.823-1.013.350 hogares) [C1] (INE ECP y EPA; la EPA sin corrección, porque las medias de 2021 y 2025 son posteriores a la ruptura).
 - La demanda latente de jóvenes que viven con sus padres, frente a la tasa de convivencia de 2008, está entre 188.000-506.000 hogares [C2]. Es una cota: supone que la tasa de 2008 es la de referencia.
 - El INE proyecta 1.720.537 hogares más en 2026-2035 [C2] y 1.024.156 hogares en 2026-2030 [C2]. Es un escenario del INE: no reacciona a la oferta ni a los precios.
 - La descomposición contable de v4 (población por nacionalidad, edad y jefatura) se mantiene sin cambios en v5 y es C4 en los componentes de fuente única (`output/v4/M2`).
@@ -721,11 +721,11 @@ El historial completo, con versión, variable, medida, nivel, periodo, método, 
 - En v6, la cuota de extranjeros aparece en más modelos de compra que de alquiler.
 - Al repetir la comparación cambiando una sola dimensión cada vez, el orden entre mercados depende del método (mínimos cuadrados en dos etapas frente a MCO) y de la medida de alquiler (SERPAVI frente a IPC).
 - Separando la lectura total de la directa (0,66 correlacion de correlación entre cuota y población dentro de cada provincia):
-  - **Asociación total** (sin controlar por población, que es uno de los canales de la inmigración):
+  - **Asociación total** (sin controlar por población; la inmigración es un componente contable del crecimiento de la población según la Estadística de Migraciones del INE):
     - con valor tasado, 4,3 % por pp (2,1-6,4 % por pp); con controles de costa y demanda externa, 1,6 % por pp (-0,79 a 4,0 % por pp);
     - en el alquiler de stock, 2,7 % por pp (1,3-4,0 % por pp); con demanda externa, 1,6 % por pp (0,05-3,0 % por pp).
   - **Asociación directa** (a igual población): compra, -1,3 % por pp (-4,3 a 1,7 % por pp); alquiler, 0,18 % por pp (-1,5 a 1,8 % por pp).
-  - **Por qué la directa puede engañar.** La población crece en buena parte por la propia inmigración. Controlar por ella es un mal control: elimina ese canal y compara provincias con la misma población y distinta composición.
+  - **Por qué ninguna de las dos basta.** La población crece en buena parte por la propia inmigración, de modo que controlar por ella es un mal control: compara provincias con la misma población y distinta composición. A su vez, la total puede recoger otros factores asociados al crecimiento de la población (empleo, costa, demanda externa); por eso baja al controlar por demanda externa.
     - Por eso el signo negativo en compra no significa que la inmigración abarate la vivienda. Solo indica que, a igual población, más cuota de extranjeros no se asocia con más precio.
   - «ANALIZADA, NO CONCLUYENTE» [C4]: ninguna de las dos lecturas identifica un efecto.
 - Las islas no se pueden contrastar porque están en la muestra sellada.
@@ -750,7 +750,7 @@ Ninguna corrección cambia una conclusión.
 
 | Bloque | Fuentes | Ruta |
 |---|---|---|
-| Hogares | INE ECP, EPA (corregida por la ruptura de 2021), proyecciones de hogares | `output/v5/B1`, `output/v5/B2` |
+| Hogares | INE ECP, EPA (ruptura de 2021 tratada según la ventana; anexo metodológico), proyecciones de hogares | `output/v5/B1`, `output/v5/B2` |
 | Terminadas e iniciadas | Ministerio (certificados de fin de obra, visados), Catastro (altas) | `output/v5/B2`, `output/v5/R1C` |
 | Precio de compra | INE IPV; Ministerio (valor tasado); Notariado; Registradores | `output/v5/A23` |
 | Alquiler | INE IPC e IPVA; SERPAVI; Incasòl; fianzas de la GVA | `output/v5/A23`, `output/v5/R1T` |

@@ -10,15 +10,16 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[1]
 # Valores superados (ERRATA.md): déficit C1 de v4-v6.1, A23-A10 de v5 y v6.1, recuentos redondeados de K4a-01
 SUPERADOS = ["562.692-688.692", "562.692-902.808", "26,6 % (22,4-30,8", "27,7 % (24,6-30,8", "22,4-30,8 %", "24,6-30,8 %",
-             "1.720.540", "1.024.160", "2.148.680", "1.447.950", "1.296.670", "1.415.260", "3.262.030", "1.349.020"]
-PERMITIDO = re.compile(r"hist[oó]ric|v6\.1|ERRATA|antes|publicado en|sustituid", re.I)
+             "1.720.540", "1.024.160", "562.692-744.144", "344.803", "2.148.680", "1.447.950", "1.296.670", "1.415.260", "3.262.030", "1.349.020"]
+PERMITIDO = re.compile(r"hist[oó]ric|v6\.1|ERRATA|antes|publicado en|sustituid|^\| (deficit_2124_c[12]|T3-H2) \|", re.I)
 
 
 def ficheros():
     fs = [p for p in (RAIZ / "output" / "v5").rglob("*.md") if not p.name.startswith("cifras_clave")]
     fs += list((RAIZ / "output" / "v5" / "verificador" / "fichas").glob("*.json"))
     fs += [RAIZ / "output" / "v6_2" / "anexo_metodologico.md", RAIZ / "README.md"]
-    fs += [p for p in (RAIZ / "docs" / "v6_2").glob("*.md")]
+    # documentos para el lector externo (los registros internos de proceso -estado, revisión, decisiones- citan valores anteriores a propósito)
+    fs += [RAIZ / "docs" / "v6_2" / n for n in ("guia_revisor.md", "cifras_publicables.md", "tareas_autor.md")]
     return [f for f in fs if f.exists()]
 
 

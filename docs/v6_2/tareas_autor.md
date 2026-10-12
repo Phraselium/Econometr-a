@@ -67,5 +67,5 @@ Tareas:
 - [ ] Verificar en Scimago el cuartil de las 50 referencias marcadas «cuartil no verificado» y de las 76 NO VERIFICADA con DOI (output/v6_1/K4D/referencias.csv). Desde la sesión, Scimago devuelve 403.
 
 ## 9. Decisiones abiertas para la revisión (v6.2)
-- [ ] dh_2125 (aumento de hogares 2021-2025, C1) usa la EPA corregida con la constante de v1; ver docs/v6_2/revision.md y la pregunta 2 de la guía del revisor.
+- [ ] dh_2125 (aumento de hogares 2021-2025, C1) mezcla la diferencia de medias anuales de la EPA (sin corrección) con una diferencia de stocks de la ECP; ver la pregunta 2 de la guía del revisor.
 - [ ] Difusión: usar solo las cifras de docs/v6_2/cifras_publicables.md, sección «Aptas»; el déficit, siempre como rango (cota C2).

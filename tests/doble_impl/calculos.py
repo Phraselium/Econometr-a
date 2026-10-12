@@ -99,12 +99,12 @@ def _hogares_variantes() -> dict[str, float]:
     d = epa.diff()
     b = base - salto + np.mean([d["2020T4"], d["2021T2"]])
     b4 = base - salto + np.mean([d["2020T3"], d["2020T4"], d["2021T2"], d["2021T3"]])
-    d1 = ecp["2024T4"] - epa["2020T4"] * (ecp["2021T1"] / epa["2021T1"])
+    d1 = ecp["2025T1"] - epa["2020T4"] * (ecp["2021T1"] / epa["2021T1"])
     m2020 = np.mean([d[f"2020T{q}"] for q in range(1, 5)])
-    d2 = ecp["2024T4"] - (ecp["2021T1"] - m2020)
+    d2 = ecp["2025T1"] - (ecp["2021T1"] - m2020)
     return {
         "v1": base + 242400.0, "a": base, "b": b, "b4": b4, "c": base - salto,
-        "d1": d1, "d2": d2, "e": ecp["2024T4"] - ecp["2021T1"],
+        "d1": d1, "d2": d2, "e": ecp["2025T1"] - ecp["2021T1"],
     }
 
 

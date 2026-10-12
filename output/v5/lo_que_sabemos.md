@@ -18,8 +18,8 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 ## Afirmable con seguridad
 
 **Hogares y viviendas**
-- [C1] Entre 2021 y 2025 los hogares aumentaron en 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (corregida por la ruptura de 2021); dato de 2025T1; C1).
-- [C2] En 2021-2024 los hogares crecieron más que las viviendas terminadas: balance en el rango 344.803-710.542 viviendas (2021-2024; hogares: EPA (varias correcciones) y ECP; terminadas: MIVAU y Catastro; dato de 2024T4; C2). Que es positivo lo confirman dos fuentes; la cuantía es una cota porque depende de la corrección del salto de la EPA en 2021.
+- [C1] Entre 2021 y 2025 los hogares aumentaron en 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021); dato de 2025T1; C1).
+- [C2] En 2021-2024 los hogares crecieron más que las viviendas terminadas: balance en el rango 389.361-710.542 viviendas (sin las dos correcciones que conservan el salto de la EPA, 596.371-710.542 viviendas) (2021-2024; hogares: EPA (varias correcciones) y ECP; terminadas: MIVAU y Catastro; dato de 2024T4; C2). Que es positivo lo confirman dos fuentes; la cuantía es una cota porque depende de la corrección del salto de la EPA en 2021.
 - [C1] Viviendas terminadas al año en el territorio común: 72.264-94.426 viviendas/año (2019-2024; Ministerio (fin de obra) y Catastro (altas), dentro de ±15 %; dato de 2024; C1).
 - [C2] Demanda latente de los jóvenes por convivencia con los padres, frente a 2008: 188.000-506.000 hogares (2008-2025; INE EPA y ECV (tasa de convivencia con los padres); dato de 2025; C2).
 - [C2] Hasta 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista (2025-2030; C2). Por provincias: 15 provincias empeoran, 0 provincias mejoran y 37 provincias quedan indeterminadas.
@@ -38,7 +38,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 
 ## Probable pero no demostrado (C4)
 
-- [C4] Con las bajas del parque estimadas, el balance 2021-2024 llega como máximo a 744.144 viviendas (2021-2024). Sustituye a la cota anterior, que suponía unas bajas que nada observado respalda.
+- [C4] Con las bajas del parque estimadas, el balance 2021-2024 llega como máximo a 765.994 viviendas (2021-2024). Sustituye a la cota anterior, que suponía unas bajas que nada observado respalda.
 - [C4] Necesidad de vivienda 2026-2035, suma de provincias (base): 210.424 viviendas/año (99.388-292.083 viviendas/año). Si una parte de las viviendas liberadas no llega al mercado, la necesidad efectiva sube a 245.989 viviendas/año (123.936-338.663 viviendas/año). El supuesto que más pesa en el rango es la fracción de vacías movilizables (34,2 % de la amplitud). Equivale a 1,4 veces, 2,7 veces y 3,8 veces la producción actual (78.810-100.980 viviendas/año terminadas en 2019-2024, con la misma cobertura).
 - [C4] Viviendas liberadas por envejecimiento en 2026-2035: 1.856.430 viviendas (936.056-3.168.590 viviendas); llegan al mercado 150.079 viviendas al año. Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 - [C4] Cuánto empeora el déficit de 2025 a 2030: 585.609 viviendas (87.246-946.852 viviendas). A 2035 la dirección es indeterminada: el envejecimiento libera más viviendas en 2031-2035 (986.777 viviendas (5 años)) que en 2026-2030 (869.654 viviendas (5 años)).
@@ -62,7 +62,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - Que alguno de estos factores sea la causa principal de la subida: turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas.
 - Que los topes al alquiler reduzcan los precios o la oferta: su resultado queda en C4.
 - Que haya una burbuja: la exuberancia estadística no la identifica.
-- Que la inmigración suba o baje los precios o el alquiler. Hay especificaciones con intervalos que excluyen el cero y otras que no. El signo cambia con el control de población, la medida de precio, el método y el nivel territorial, y ninguna especificación aislada es la de referencia. La asociación total (sin controlar por población) es positiva; la directa (a igual población) no, pero controlar por población es un mal control porque la población crece por la propia inmigración. Todo queda en C4, sin lectura causal.
+- Que la inmigración suba o baje los precios o el alquiler. Hay especificaciones con intervalos que excluyen el cero y otras que no. El signo cambia con el control de población, la medida de precio, el método y el nivel territorial, y ninguna especificación aislada es la de referencia. La asociación total (sin controlar por población) es positiva, pero puede recoger otros factores ligados al crecimiento de la población; la directa (a igual población) no lo es, pero controlar por población es un mal control porque la población crece por la propia inmigración. Todo queda en C4, sin lectura causal.
 - (v6) Que alguna variable sea «relevante con seguridad» para el alquiler o la compra: ninguna cumple los criterios pre-registrados y ninguna hipótesis confirmatoria pasa Holm. Las importancias de los modelos de predicción describen qué variables ayudan a predecir, no qué pasaría si una variable cambiara.
 - (v6) Que los modelos de aprendizaje profundo predigan mejor que el gradient boosting, o que algún modelo bata a la inercia en el volumen trimestral de compraventas del último año: no lo hacen.
 - El resultado de bajar impuestos a la compra o a la construcción, de la seguridad jurídica frente a la ocupación ilegal o de limitar compras de no residentes: no hay diseño ni datos.
@@ -70,11 +70,11 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 ## Qué cambió entre versiones y por qué (v6.1)
 
 - [C4] **Inmigración.** v2 la asociaba más con el alquiler y v6 con la compra. El orden depende del método, de la medida de alquiler y de los controles, no de un resultado estable que se haya invertido.
-  - **Asociación total** (sin controlar por población, que es uno de los canales de la inmigración):
+  - **Asociación total** (sin controlar por población; la inmigración es un componente contable del crecimiento de la población según la Estadística de Migraciones del INE):
     - con valor tasado, 4,3 % por pp (2,1-6,4 % por pp); con controles de costa y demanda externa, 1,6 % por pp (-0,79 a 4,0 % por pp);
     - en el alquiler de stock, 2,7 % por pp (1,3-4,0 % por pp); con demanda externa, 1,6 % por pp (0,05-3,0 % por pp).
   - **Asociación directa** (a igual población): compra, -1,3 % por pp (-4,3 a 1,7 % por pp); alquiler, 0,18 % por pp (-1,5 a 1,8 % por pp).
-  - **Por qué la directa puede engañar.** La población crece en buena parte por la propia inmigración. Controlar por ella es un mal control: elimina ese canal y compara provincias con la misma población y distinta composición.
+  - **Por qué ninguna de las dos basta.** La población crece en buena parte por la propia inmigración, de modo que controlar por ella es un mal control: compara provincias con la misma población y distinta composición. A su vez, la total puede recoger otros factores asociados al crecimiento de la población (empleo, costa, demanda externa); por eso baja al controlar por demanda externa.
     - Por eso el signo negativo en compra no significa que la inmigración abarate la vivienda. Solo indica que, a igual población, más cuota de extranjeros no se asocia con más precio.
   - «ANALIZADA, NO CONCLUYENTE» [C4]: ninguna de las dos lecturas identifica un efecto.
 - [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en 6 de las 9 tareas: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.

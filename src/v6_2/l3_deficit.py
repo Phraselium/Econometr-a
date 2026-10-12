@@ -55,7 +55,10 @@ def hogares(q: pd.DataFrame, fin: str) -> dict[str, dict]:
     t4 = float(np.mean([var["2020Q3"], var["2020Q4"], var["2021Q2"], var["2021Q3"]]))
     r = float(ecp["2021Q1"] / epa["2021Q1"])
     pre = float(np.mean([var[k] for k in ("2020Q1", "2020Q2", "2020Q3", "2020Q4")]))
-    ecp_fin = float(ecp[fin])
+    # v6.2 (revisión H3): la ventana de años naturales 2021-<fin> va de la ECP a 1-ene-2021 (2021T1) a la ECP a 1-ene-<fin+1>
+    # ((fin+1)T1); si ese trimestre aún no existe, se usa <fin>T4 (un trimestre menos) y se declara.
+    sig = f"{int(fin[:4]) + 1}Q1"
+    ecp_fin = float(ecp[sig]) if sig in ecp.index and pd.notna(ecp[sig]) else float(ecp[fin])
     return {
         "v1_constante": dict(dh=base + CORR_V1, fuente="EPA", desc="EPA + constante 242.400 (criterio v1)"),
         "a_sin_correccion": dict(dh=base, fuente="EPA", desc="EPA 2020T4-fin sin retirar el salto"),
@@ -66,7 +69,7 @@ def hogares(q: pd.DataFrame, fin: str) -> dict[str, dict]:
                                    desc="EPA 2020T4 x (ECP/EPA en 2021T1); conserva el salto en escala ECP"),
         "d2_enlace_ecp_retropolada": dh_d2(ecp, ecp_fin, pre),
         "e_ecp": dict(dh=ecp_fin - float(ecp["2021Q1"]), fuente="ECP",
-                      desc="ECP 2021T1-fin (ventana un trimestre más corta; publicado en v4)"),
+                      desc="ECP 1-ene-2021 a 1-ene del año siguiente al final (2021T1 a (fin+1)T1)"),
     }
 
 
@@ -162,6 +165,9 @@ def main() -> None:
     capa5 = "C4"  # la menor de sus componentes: terminadas 2025 = C4 frágil en M0 (no se promueve)
     capa4_cb = "C2"
     capa5_cb = "C4"
+    t4 = full[full.periodo == "2021-2024"]
+    t4e = t4[t4.tipo_bajas == "estimada v5.1 (C4)"]
+    sens = t4[(t4.bajas_escenario == "0") & ~t4.hogares.isin(["a_sin_correccion", "d1_enlace_cociente"])]
     hechos = [
         dict(id="L3-DEF-2124-SINBAJAS", indicador="Déficit acumulado 2021-2024 sin bajas (todas las variantes de corrección EPA y de terminadas)",
              valor=round(r4["punto_medio"]), min=round(r4["min_sb"]), max=round(r4["max_sb"]), unidad="viviendas", periodo="2021-2024",
@@ -171,6 +177,14 @@ def main() -> None:
              valor=round((r4["min_sb"] + r4["max_cb_supuesto"]) / 2), min=round(r4["min_sb"]), max=round(r4["max_cb_supuesto"]),
              unidad="viviendas", periodo="2021-2024", cobertura="España", fuentes="ídem, con bajas supuestas", capa=capa4_cb,
              fecha_dato="2024T4"),
+        dict(id="L3-DEF-2124-BAJAST1", indicador="Déficit acumulado 2021-2024 con las bajas del parque estimadas en v5.1 (T1), todas las variantes",
+             valor=round(float(t4e.deficit.median())), min=round(float(t4e.deficit.min())), max=round(float(t4e.deficit.max())),
+             unidad="viviendas", periodo="2021-2024", cobertura="España", fuentes="ídem, con bajas estimadas en v5.1 (T1)", capa="C4",
+             fecha_dato="2024T4"),
+        dict(id="L3-DEF-2124-SENS", indicador="Sensibilidad: déficit 2021-2024 sin bajas sin las dos variantes que conservan el salto de la EPA (a y d1)",
+             valor=round((float(sens.deficit.min()) + float(sens.deficit.max())) / 2), min=round(float(sens.deficit.min())),
+             max=round(float(sens.deficit.max())), unidad="viviendas", periodo="2021-2024", cobertura="España",
+             fuentes="ídem, sin variantes a y d1", capa="C2", fecha_dato="2024T4"),
         dict(id="L3-DEF-2125", indicador="Déficit acumulado 2021-2025 sin bajas (todas las variantes)", valor=round(r5["punto_medio"]),
              min=round(r5["min_sb"]), max=round(r5["max_sb"]), unidad="viviendas", periodo="2021-2025", cobertura="España",
              fuentes="hogares: EPA y ECP; terminadas: MIVAU y Catastro (2025 frágil)", capa=capa5, fecha_dato="2025T4",

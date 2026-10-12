@@ -107,8 +107,8 @@ t4 = float(np.mean([var["2020T3"], var["2020T4"], var["2021T2"], var["2021T3"]])
 rr = float(ECP["2021T1"] / EPA["2021T1"])
 pre = float(np.mean([var[k] for k in ("2020T1", "2020T2", "2020T3", "2020T4")]))
 H = {"v1": base + CORR, "a": base, "b": base - salto + t2, "b4": base - salto + t4, "c": base - salto,
-     "d1": float(ECP["2024T4"]) - float(EPA["2020T4"]) * rr, "d2": float(ECP["2024T4"]) - (float(ECP["2021T1"]) - pre),
-     "e": float(ECP["2024T4"] - ECP["2021T1"])}
+     "d1": float(ECP["2025T1"]) - float(EPA["2020T4"]) * rr, "d2": float(ECP["2025T1"]) - (float(ECP["2021T1"]) - pre),
+     "e": float(ECP["2025T1"] - ECP["2021T1"])}
 T = {"con": T_con, "sin": T_sin, "cat": T_cat}
 sb3 = [H[k] - T[t] for k in H for t in T]
 cb3 = [H[k] - (T[t] - float(np.nansum(b * PARK0))) for k in H for t in T for b in (0.001, 0.002)]

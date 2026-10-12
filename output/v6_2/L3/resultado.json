@@ -7,11 +7,11 @@
  "metodo": "Recálculo determinista de dH - (terminadas - bajas) bajo 8 correcciones de hogares x 3 fuentes de terminadas x 6 escenarios de bajas; regla de decisión pre-declarada",
  "estimacion": {
   "2021-2024_sin_bajas": [
-   344803.0,
+   389361.0,
    710542.0
   ],
   "2021-2025_sin_bajas": [
-   469927.0,
+   523606.0,
    887950.0
   ]
  },
@@ -20,15 +20,15 @@
  "nivel_evidencia": "DESCRIPTIVO (contabilidad del déficit; rango por supuestos, no intervalo de confianza)",
  "diagnosticos": {
   "2024": {
-   "min_sb": 344803.0,
+   "min_sb": 389361.0,
    "max_sb": 710542.0,
-   "punto_medio": 527672.5,
-   "amplitud": 0.3465587082897062,
-   "dif_hogares_epa_ecp": 0.10549720427608059,
+   "punto_medio": 549951.5,
+   "amplitud": 0.29200847711116346,
+   "dif_hogares_epa_ecp": 0.059132985713177294,
    "dif_terminadas_catastro_mivau_comun": 0.03083490049303529,
    "indep": true,
    "c1": false,
-   "min_cb": 344803.0,
+   "min_cb": 389361.0,
    "max_cb": 924658.0,
    "max_cb_supuesto": 924658.0,
    "por_hogares": {
@@ -53,29 +53,29 @@
      654092.0
     ],
     "d1_enlace_cociente": [
-     344803.0,
-     399147.0
+     389361.0,
+     443705.0
     ],
     "d2_enlace_ecp_retropolada": [
-     569538.0,
-     623882.0
+     614096.0,
+     668440.0
     ],
     "e_ecp": [
-     551813.0,
-     606157.0
+     596371.0,
+     650715.0
     ]
    },
    "por_terminadas": {
     "MIVAU_con_protegida": [
-     355682.0,
+     400240.0,
      667077.0
     ],
     "MIVAU_sin_protegida": [
-     399147.0,
+     443705.0,
      710542.0
     ],
     "Catastro_completado": [
-     344803.0,
+     389361.0,
      656198.0
     ]
    },
@@ -85,9 +85,9 @@
     "b_vecinos2": 1041650.0,
     "b4_vecinos4": 1037775.0,
     "c_variacion_cero": 985200.0,
-    "d1_enlace_cociente": 730255.2987963483,
-    "d2_enlace_ecp_retropolada": 954990.0,
-    "e_ecp": 937265.0
+    "d1_enlace_cociente": 774813.2987963483,
+    "d2_enlace_ecp_retropolada": 999548.0,
+    "e_ecp": 981823.0
    },
    "bajas_estimadas": {
     "v5.1_min": 0.0,
@@ -97,15 +97,15 @@
    "n_cb": 120
   },
   "2025": {
-   "min_sb": 469927.0,
+   "min_sb": 523606.0,
    "max_sb": 887950.0,
-   "punto_medio": 678938.5,
-   "amplitud": 0.30785041649575035,
-   "dif_hogares_epa_ecp": 0.10586685254436298,
+   "punto_medio": 705778.0,
+   "amplitud": 0.2581151580241946,
+   "dif_hogares_epa_ecp": 0.061057143061007194,
    "dif_terminadas_catastro_mivau_comun": 0.05371298237210515,
    "indep": true,
    "c1": false,
-   "min_cb": 469927.0,
+   "min_cb": 523606.0,
    "max_cb": 1156075.0,
    "max_cb_supuesto": 1156075.0,
    "por_hogares": {
@@ -130,29 +130,29 @@
      831500.0
     ],
     "d1_enlace_cociente": [
-     469927.0,
-     550247.0
+     523606.0,
+     603926.0
     ],
     "d2_enlace_ecp_retropolada": [
-     694662.0,
-     774982.0
+     748341.0,
+     828661.0
     ],
     "e_ecp": [
-     676937.0,
-     757257.0
+     730616.0,
+     810936.0
     ]
    },
    "por_terminadas": {
     "MIVAU_con_protegida": [
-     493924.0,
+     547603.0,
      831627.0
     ],
     "MIVAU_sin_protegida": [
-     550247.0,
+     603926.0,
      887950.0
     ],
     "Catastro_completado": [
-     469927.0,
+     523606.0,
      807630.0
     ]
    },
@@ -162,9 +162,9 @@
     "b_vecinos2": 1299850.0,
     "b4_vecinos4": 1295975.0,
     "c_variacion_cero": 1243400.0,
-    "d1_enlace_cociente": 962147.2987963483,
-    "d2_enlace_ecp_retropolada": 1186882.0,
-    "e_ecp": 1169157.0
+    "d1_enlace_cociente": 1015826.2987963483,
+    "d2_enlace_ecp_retropolada": 1240561.0,
+    "e_ecp": 1222836.0
    },
    "bajas_estimadas": {
     "v5.1_min": 0.0,

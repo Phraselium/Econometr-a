@@ -700,10 +700,10 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 32; NO ANALIZADA: FALTAN DATO
 |---|---|
 | Veredicto | **PARCIALMENTE** |
 | Capa de la evidencia | C2 |
-| Magnitud | Déficit acumulado 2021-2024 (aumento de hogares menos viviendas terminadas), sin bajas del parque: 344.803-710.542 viviendas según la corrección del salto de la EPA en 2021 (siete variantes) y la fuente de terminadas (Ministerio o Catastro); con bajas supuestas, 344.803-924.658. 2021-2025: 469.927-887.950 (C4: terminadas de 2025 frágiles). |
-| Intervalo | cota 344.803-710.542 viviendas (sin bajas) |
+| Magnitud | Déficit acumulado 2021-2024 (aumento de hogares menos viviendas terminadas), sin bajas del parque: 389.361-710.542 viviendas según la corrección del salto de la EPA en 2021 (siete alternativas más la constante de v1) y la fuente de terminadas (Ministerio o Catastro); sin las dos correcciones que conservan el salto, 596.371-710.542. Con las bajas estimadas en v5.1, 389.361-765.994 (C4); con bajas supuestas, 389.361-924.658. 2021-2025: 523.606-887.950 (C4: terminadas de 2025 frágiles). |
+| Intervalo | cota 389.361-710.542 viviendas (sin bajas) |
 | Cota | C2: supuestos explícitos sobre la corrección de la EPA |
 | Literatura | Banco de España (2024, 2025): estimaciones de 375.000-600.000 viviendas en periodos parecidos (output/v5/D3/convergencia.md). |
 | Regla del veredicto | El signo (más hogares que viviendas terminadas) lo confirman dos fuentes de hogares y dos de terminadas en todas las variantes; la cuantía es una cota porque la amplitud entre correcciones de la EPA supera la tolerancia de C1 (±15 %). «Cientos de miles» se cumple en todas las variantes; una cifra puntual no es defendible. |
-| Límites | Sin bajas del parque observadas; la EPA cambió de metodología en 2021T1; las terminadas de 2025 son frágiles. |
+| Límites | Sin bajas del parque observadas; la EPA cambió de metodología en 2021T1; las terminadas de 2025 son frágiles. El mínimo lo fija no retirar el salto (d1) con Catastro; el máximo, trimestres vecinos (b) con Ministerio sin protegida. La regla de capa se escribió en el mismo commit que los resultados: su anterioridad no consta en git. |
 | Evidencia | output/v6_2/L3/deficit_alternativas.md, output/v6_2/L3/resultado.json, output/v6_2/anexo_metodologico.md |

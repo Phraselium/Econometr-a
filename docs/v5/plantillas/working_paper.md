@@ -6,7 +6,7 @@
 
 ## Resumen
 
-Este trabajo mide la necesidad de vivienda en España y su distribución territorial con registros públicos y clasifica cada resultado en una escala de evidencia: hechos con dos fuentes independientes, cotas con supuestos explícitos y resultados exploratorios. Entre 2021 y 2024 los hogares crecieron más que las viviendas terminadas, en el rango {{L3-DEF-2124-SINBAJAS:rango}} según la corrección del salto de la EPA [C2]. El precio de compra subió {{A23-P2:valor}} en 2015-2025 según tres registros, frente a {{A23-P1:valor}} del índice oficial; un puente contable reconcilia ambas medidas salvo un residuo de método. Una contabilidad stock-flujo provincial da una necesidad base de {{T3-H5b:valor}} al año en 2026-2035 ({{T3-H5b:rango}}), entre {{T3-H9:min}} y {{T3-H9:max}} la producción actual [C4]; el supuesto que más pesa es la fracción de vacías movilizables. Las viviendas liberadas por el envejecimiento no se restan, porque la proyección de hogares del INE ya descuenta las disoluciones. De 2025 a 2030 el déficit empeora en todos los escenarios considerados [C2], aunque la magnitud es exploratoria [C4]; a 2035 la dirección es indeterminada. El déficit se concentra en pocas provincias, y una clasificación con un coste de construcción oficial separa dónde falta vivienda y es rentable construir de dónde la oferta no responde. Un análisis pre-registrado de las diferencias provinciales de precios resulta descriptivo por falta de potencia, y las contribuciones contables de los factores a la subida no son estables entre métodos ni periodos. Ningún resultado nuevo alcanza la capa de efectos identificados.
+Este trabajo mide la necesidad de vivienda en España y su distribución territorial con registros públicos y clasifica cada resultado en una escala de evidencia: hechos con dos fuentes independientes, cotas con supuestos explícitos y resultados exploratorios. Entre 2021 y 2024 los hogares crecieron más que las viviendas terminadas, en el rango {{L3-DEF-2124-SINBAJAS:rango}} (sin las dos correcciones que conservan el salto de la EPA, {{L3-DEF-2124-SENS:rango}}) según la corrección del salto de la EPA [C2]. El precio de compra subió {{A23-P2:valor}} en 2015-2025 según tres registros, frente a {{A23-P1:valor}} del índice oficial; un puente contable reconcilia ambas medidas salvo un residuo de método. Una contabilidad stock-flujo provincial da una necesidad base de {{T3-H5b:valor}} al año en 2026-2035 ({{T3-H5b:rango}}), entre {{T3-H9:min}} y {{T3-H9:max}} la producción actual [C4]; el supuesto que más pesa es la fracción de vacías movilizables. Las viviendas liberadas por el envejecimiento no se restan, porque la proyección de hogares del INE ya descuenta las disoluciones. De 2025 a 2030 el déficit empeora en todos los escenarios considerados [C2], aunque la magnitud es exploratoria [C4]; a 2035 la dirección es indeterminada. El déficit se concentra en pocas provincias, y una clasificación con un coste de construcción oficial separa dónde falta vivienda y es rentable construir de dónde la oferta no responde. Un análisis pre-registrado de las diferencias provinciales de precios resulta descriptivo por falta de potencia, y las contribuciones contables de los factores a la subida no son estables entre métodos ni periodos. Ningún resultado nuevo alcanza la capa de efectos identificados.
 
 ## Abstract
 
@@ -51,7 +51,7 @@ This paper measures housing need in Spain and its territorial distribution using
 ## 2. Datos
 
 **Fuentes.** Todas son públicas y se descargan con scripts separados de la reconstrucción (`make all` funciona sin red):
-- **Hogares:** INE, Encuesta Continua de Población (ECP) y EPA corregida por la ruptura metodológica de 2021; proyecciones de hogares del INE para 2026-2035.
+- **Hogares:** INE, Encuesta Continua de Población (ECP) y EPA (con la ruptura metodológica de 2021 tratada según la ventana: ver anexo metodológico); proyecciones de hogares del INE para 2026-2035.
 - **Producción de vivienda:** Ministerio de Vivienda (certificados de fin de obra, iniciadas, calificaciones de vivienda protegida) y Catastro (altas de inmuebles).
 - **Precio de compra:** INE (IPV), Ministerio (valor tasado), Notariado (Consejo General) y Registradores (datos abiertos).
 - **Alquiler:** INE (IPC de alquiler e IPVA de la AEAT), SERPAVI del Ministerio, Incasòl (Cataluña) y registro de fianzas de la GVA (Comunitat Valenciana).
@@ -97,7 +97,7 @@ Toda especificación probada se registra (`registro.csv` de cada módulo). Las f
 
 ### 4.1 Necesidad
 
-**Déficit pasado.** El déficit 2021-2024 está en el rango {{L3-DEF-2124-SINBAJAS:rango}} [C2: cota según la corrección del salto de la EPA en 2021]; con las bajas del parque estimadas, {{T3-H2}} [C4], frente al máximo C2 anterior de {{T3-H3:max}}, que se basaba en un supuesto de bajas no respaldado por lo observado. El de 2021-2025, con bajas nulas, es {{B2-H2:valor}} [C4]. Los hogares crecieron {{dh_2125:valor}} en 2021-2025 [C1] y se terminaron {{terminadas_1924:rango}} en 2019-2024 [C1]. La demanda latente por convivencia con los padres está entre {{latente_convivencia:rango}} [C2].
+**Déficit pasado.** El déficit 2021-2024 está en el rango {{L3-DEF-2124-SINBAJAS:rango}} [C2: cota según la corrección del salto de la EPA en 2021]; con las bajas del parque estimadas, {{L3-DEF-2124-BAJAST1}} [C4]; con bajas supuestas, sin respaldo observado, el máximo llegaría a {{L3-DEF-2124-CONBAJAS:max}} [C2]. El de 2021-2025, con bajas nulas, es {{B2-H2:valor}} [C4]. Los hogares crecieron {{dh_2125:valor}} en 2021-2025 [C1] y se terminaron {{terminadas_1924:rango}} en 2019-2024 [C1]. La demanda latente por convivencia con los padres está entre {{latente_convivencia:rango}} [C2].
 
 **Bajas del parque (`T1`) [C4].** Las identidades de stock no miden bajas: Censos 2011-2021 y Catastro dan tasas negativas ({{T1-H2:valor}} y {{T1-H4:valor}}), que reflejan altas no certificadas o afloramientos. Las demoliciones con licencia son {{E-T7-demol-2024:rango}} en 2024 y no cubren ruina, cambios de uso ni agregaciones. La tasa usada es C4 (mínimo, central y máximo de las demoliciones con licencia: {{T1-H8:min}}, {{T1-H8:valor}} y {{T1-H8:max}}), salvo la cota física cero, que es C2. Sustituye al supuesto de bajas de v4, que queda por encima de todo lo observado.
 
@@ -228,11 +228,11 @@ La validación v6 es **espacial nueva** y **temporal ya vista**: el último año
 ### 6.1 Qué cambió entre versiones y por qué (v6.1)
 
 - [C4] **Inmigración.** v2 la asociaba más con el alquiler y v6 con la compra. El orden depende del método, de la medida de alquiler y de los controles, no de un resultado estable que se haya invertido.
-  - **Asociación total** (sin controlar por población, que es uno de los canales de la inmigración):
+  - **Asociación total** (sin controlar por población; la inmigración es un componente contable del crecimiento de la población según la Estadística de Migraciones del INE):
     - con valor tasado, {{K2-CUOTA-COMPRA-SINPOB-SIN}}; con controles de costa y demanda externa, {{K2-CUOTA-COMPRA-SINPOB-EXT}};
     - en el alquiler de stock, {{K2-CUOTA-ALQ-SINPOB-SIN}}; con demanda externa, {{K2-CUOTA-ALQ-SINPOB-EXT}}.
   - **Asociación directa** (a igual población): compra, {{K2-CUOTA-COMPRA-SIN}}; alquiler, {{K2-CUOTA-ALQ-NUCLEO-SIN}}.
-  - **Por qué la directa puede engañar.** La población crece en buena parte por la propia inmigración. Controlar por ella es un mal control: elimina ese canal y compara provincias con la misma población y distinta composición.
+  - **Por qué ninguna de las dos basta.** La población crece en buena parte por la propia inmigración, de modo que controlar por ella es un mal control: compara provincias con la misma población y distinta composición. A su vez, la total puede recoger otros factores asociados al crecimiento de la población (empleo, costa, demanda externa); por eso baja al controlar por demanda externa.
     - Por eso el signo negativo en compra no significa que la inmigración abarate la vivienda. Solo indica que, a igual población, más cuota de extranjeros no se asocia con más precio.
   - «ANALIZADA, NO CONCLUYENTE» [C4]: ninguna de las dos lecturas identifica un efecto.
 - [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en {{K1-N-MEJOR:num}} de las {{K1-N-TAREAS:valor}}: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.
@@ -243,7 +243,7 @@ El detalle está en el informe técnico, §12, y en docs/v6_1/historial_conclusi
 
 ## 7. Conclusiones
 
-1. Entre 2021 y 2024 el aumento de hogares superó al de viviendas terminadas en una cantidad en el rango {{L3-DEF-2124-SINBAJAS:rango}} [C2]. Que el balance es positivo lo confirman dos fuentes de hogares y dos de terminadas; la cuantía es una cota porque depende de cómo se corrija el salto metodológico de la EPA en 2021 (siete variantes).
+1. Entre 2021 y 2024 el aumento de hogares superó al de viviendas terminadas en una cantidad en el rango {{L3-DEF-2124-SINBAJAS:rango}} [C2]. Que el balance es positivo lo confirman dos fuentes de hogares y dos de terminadas; la cuantía es una cota porque depende de cómo se corrija el salto metodológico de la EPA en 2021 (siete alternativas más la constante de v1).
 2. La necesidad 2026-2035 y el déficit a 2030 son contabilidades con supuestos [C4]; su rango es amplio y depende de hogares y vacías.
 3. El déficit se concentra en pocas provincias, y la clase territorial condiciona qué instrumentos tienen signo estable [C4].
 4. El precio de compra subió {{A23-P2:valor}} según los registros [C1] y {{A23-P1:valor}} según el índice oficial [C4]; las dos cifras deben darse juntas.

@@ -35,7 +35,7 @@ Las fuentes son públicas y se descargan con fecha de consulta registrada (`outp
 - **Bajas del parque.** Censo 2011-2021 y Catastro (estadísticas urbanas, ejercicios 2012-2025), cada uno combinado con las terminadas del MIVAU.
 - **Déficit de partida.** Módulo A4 del proyecto (déficit 2021-2025 por provincia, con bajas nulas) y clasificación de presión de las provincias.
 
-El déficit agregado de partida se apoya en el aumento de hogares de 2021-2025, 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (corregida por la ruptura de 2021); dato de 2025T1; C1), y en la conciliación de v4 entre las cifras de distintos organismos. Los componentes de hogares compartidos, hacinamiento y habitaciones compartidas no tienen dato provincial accesible y quedan fuera; el rango es, por tanto, incompleto por arriba.
+El déficit agregado de partida se apoya en el aumento de hogares de 2021-2025, 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021); dato de 2025T1; C1), y en la conciliación de v4 entre las cifras de distintos organismos. Los componentes de hogares compartidos, hacinamiento y habitaciones compartidas no tienen dato provincial accesible y quedan fuera; el rango es, por tanto, incompleto por arriba.
 
 ## Método
 

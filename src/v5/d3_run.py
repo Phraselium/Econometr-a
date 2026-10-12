@@ -39,7 +39,7 @@ METODO_PROY = {
     "L3-DEF-2124-SINBAJAS": "proyecto (v6.2): aumento de hogares (EPA con varias correcciones del salto de 2021 y ECP) menos terminadas (Ministerio y Catastro), sin bajas; cota C2",
     "deficit_2124_c1": "proyecto: aumento de hogares (ECP y EPA corregida) menos terminadas (Ministerio y Catastro), sin bajas",
     "B2-H2": "proyecto: déficit 2021-2025 de partida con bajas del parque = 0",
-    "dh_2125": "proyecto: aumento de hogares ECP y EPA corregida por la ruptura de 2021",
+    "dh_2125": "proyecto: aumento de hogares ECP y EPA (medias anuales 2021 y 2025, posteriores a la ruptura de la EPA; sin corrección)",
     "terminadas_1924": "proyecto: rango Ministerio (fin de obra) y Catastro (altas), territorio común",
     "B1-H1": "proyecto: necesidad total A+R+V+F-M-K, suma provincial",
     "B2-H1": "proyecto: déficit acumulado a fin de 2030, suma de 52 provincias",

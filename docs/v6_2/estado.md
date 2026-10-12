@@ -21,7 +21,9 @@
 - Anexo enlazado desde el README, el informe y el working paper.
 - L5 hecho (orquestador): docs/v6_2/cifras_publicables.md generado desde cifras_clave (9 cifras aptas y 13 que no deben citarse fuera de contexto) y tests/test_l5_cifras.py (cifras superadas, ids históricos y publicables al día). l1_verifica y l5_publicables entran en make.
 - L2 terminado (129.888 tokens): 15 de 15 cifras reproducidas a ciegas. 11 precisiones incorporadas al anexo. tests/doble_impl entra en `make check` (17 tests, unos 17 s).
-- Acumulado: 409.152 tokens (68 %). Revisor en curso.
+- Acumulado: 409.152 tokens (68 %). Revisor tras L3 (53.728 tokens): REHACER, aplicado por el orquestador (E7).
+  - Déficit 2021-2024 C2: 389.361-710.542 (sensibilidad 596.371-710.542); con bajas estimadas, 389.361-765.994 (C4).
+  - Acumulado de subagentes: 462.880 tokens (77 %).
 - L6 hecho (orquestador): docs/v6_2/guia_revisor.md, docs/v6_2/tareas_autor.md (sustituye al de v6.1), versión 6.2 en CITATION, Zenodo y README, CHANGELOG v6.2.
 
 ## Siguiente

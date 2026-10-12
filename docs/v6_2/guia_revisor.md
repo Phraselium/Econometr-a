@@ -83,8 +83,8 @@ En v6.1 hubo una revisión por pares simulada con dos árbitros: uno académico 
 
 ## 6. Preguntas concretas para el revisor
 
-1. **Déficit.** ¿Le parece adecuada la cota C2 de siete correcciones del salto de la EPA? ¿Excluiría alguna variante, o añadiría el Censo 2021 como ancla?
-2. **Aumento de hogares 2021-2025.** El aumento de hogares (C1) usa también la EPA corregida con una constante. ¿Debería tratarse como el déficit?
+1. **Déficit.** ¿Le parece adecuada la cota C2, que combina siete correcciones del salto de la EPA más la constante de v1? ¿Excluiría las dos variantes que conservan el salto? Sin ellas, el rango se estrecha (L3-DEF-2124-SENS). ¿Añadiría el Censo 2021 como ancla?
+2. **Aumento de hogares 2021-2025.** El aumento de hogares (C1) usa la EPA sin corrección, porque las medias de 2021 y 2025 son posteriores a la ruptura, y la compara con la ECP, un stock a 1 de enero. ¿Le parece aceptable mezclar una diferencia de medias anuales con una de stocks?
 3. **Necesidad 2026-2035.** ¿Son razonables los componentes A+R+V+F−M−K y sus rangos? ¿Falta alguno o hay doble cómputo con la proyección del INE?
 4. **Inmigración.** ¿Es correcta la lectura de la asociación total frente a la directa? ¿Hay un diseño identificable con datos públicos que debiéramos intentar?
 5. **Validación sellada.** ¿Es suficiente la comparación con la línea base más exigente (AR con factor común, efectos fijos, crecimiento nacional) para decir «predice mejor»?

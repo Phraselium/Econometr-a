@@ -26,9 +26,9 @@ Respuesta a la objeción A-01 del informe del árbitro. Datos: INE EPA (2020T4-2
 | b_vecinos2 | EPA | 1.041.650 | variación 2021T1 = media de 2020T4 y 2021T2 |
 | b4_vecinos4 | EPA | 1.037.775 | variación 2021T1 = media de 2020T3, T4, 2021T2, T3 |
 | c_variacion_cero | EPA | 985.200 | variación 2021T1 = 0 |
-| d1_enlace_cociente | EPA+ECP | 730.255 | EPA 2020T4 x (ECP/EPA en 2021T1); conserva el salto en escala ECP |
-| d2_enlace_ecp_retropolada | ECP | 954.990 | ECP con nivel 2020T4 retropolado con la variación media de 2020 (ventana completa) |
-| e_ecp | ECP | 937.265 | ECP 2021T1-fin (ventana un trimestre más corta; publicado en v4) |
+| d1_enlace_cociente | EPA+ECP | 774.813 | EPA 2020T4 x (ECP/EPA en 2021T1); conserva el salto en escala ECP |
+| d2_enlace_ecp_retropolada | ECP | 999.548 | ECP con nivel 2020T4 retropolado con la variación media de 2020 (ventana completa) |
+| e_ecp | ECP | 981.823 | ECP 1-ene-2021 a 1-ene del año siguiente al final (2021T1 a (fin+1)T1) |
 
 ### Cambio de hogares hasta 2025T4 (viviendas)
 
@@ -39,9 +39,9 @@ Respuesta a la objeción A-01 del informe del árbitro. Datos: INE EPA (2020T4-2
 | b_vecinos2 | EPA | 1.299.850 | variación 2021T1 = media de 2020T4 y 2021T2 |
 | b4_vecinos4 | EPA | 1.295.975 | variación 2021T1 = media de 2020T3, T4, 2021T2, T3 |
 | c_variacion_cero | EPA | 1.243.400 | variación 2021T1 = 0 |
-| d1_enlace_cociente | EPA+ECP | 962.147 | EPA 2020T4 x (ECP/EPA en 2021T1); conserva el salto en escala ECP |
-| d2_enlace_ecp_retropolada | ECP | 1.186.882 | ECP con nivel 2020T4 retropolado con la variación media de 2020 (ventana completa) |
-| e_ecp | ECP | 1.169.157 | ECP 2021T1-fin (ventana un trimestre más corta; publicado en v4) |
+| d1_enlace_cociente | EPA+ECP | 1.015.826 | EPA 2020T4 x (ECP/EPA en 2021T1); conserva el salto en escala ECP |
+| d2_enlace_ecp_retropolada | ECP | 1.240.561 | ECP con nivel 2020T4 retropolado con la variación media de 2020 (ventana completa) |
+| e_ecp | ECP | 1.222.836 | ECP 1-ene-2021 a 1-ene del año siguiente al final (2021T1 a (fin+1)T1) |
 
 Censo 2021 como ancla: no hay una cifra nacional de hogares del Censo versionada en data/raw; la ECP ya está rebasada sobre el Censo 2021, de modo que no añade una medida independiente del cambio de hogares.
 
@@ -49,8 +49,8 @@ Censo 2021 como ancla: no hay una cifra nacional de hogares del Censo versionada
 
 | periodo | mín | máx | punto medio | amplitud rel. | EPA vs ECP (máx. dif.) | Catastro vs MIVAU común | >=2 fuentes | capa |
 |---|---|---|---|---|---|---|---|---|
-| 2021-2024 | 344.803 | 710.542 | 527.672 | 34.7 % | 10.5 % | 3.1 % | sí | C2 |
-| 2021-2025 | 469.927 | 887.950 | 678.938 | 30.8 % | 10.6 % | 5.4 % | sí | C4 |
+| 2021-2024 | 389.361 | 710.542 | 549.952 | 29.2 % | 5.9 % | 3.1 % | sí | C2 |
+| 2021-2025 | 523.606 | 887.950 | 705.778 | 25.8 % | 6.1 % | 5.4 % | sí | C4 |
 
 Rango sin bajas por variante de hogares (mín-máx entre las 3 fuentes de terminadas):
 
@@ -61,17 +61,17 @@ Rango sin bajas por variante de hogares (mín-máx entre las 3 fuentes de termin
 | b_vecinos2 | 656.198 - 710.542 | 807.630 - 887.950 |
 | b4_vecinos4 | 652.323 - 706.667 | 803.755 - 884.075 |
 | c_variacion_cero | 599.748 - 654.092 | 751.180 - 831.500 |
-| d1_enlace_cociente | 344.803 - 399.147 | 469.927 - 550.247 |
-| d2_enlace_ecp_retropolada | 569.538 - 623.882 | 694.662 - 774.982 |
-| e_ecp | 551.813 - 606.157 | 676.937 - 757.257 |
+| d1_enlace_cociente | 389.361 - 443.705 | 523.606 - 603.926 |
+| d2_enlace_ecp_retropolada | 614.096 - 668.440 | 748.341 - 828.661 |
+| e_ecp | 596.371 - 650.715 | 730.616 - 810.936 |
 
 Rango sin bajas por fuente de terminadas (mín-máx entre variantes de hogares):
 
 | terminadas | 2021-2024 | 2021-2025 |
 |---|---|---|
-| MIVAU_con_protegida | 355.682 - 667.077 | 493.924 - 831.627 |
-| MIVAU_sin_protegida | 399.147 - 710.542 | 550.247 - 887.950 |
-| Catastro_completado | 344.803 - 656.198 | 469.927 - 807.630 |
+| MIVAU_con_protegida | 400.240 - 667.077 | 547.603 - 831.627 |
+| MIVAU_sin_protegida | 443.705 - 710.542 | 603.926 - 887.950 |
+| Catastro_completado | 389.361 - 656.198 | 523.606 - 807.630 |
 
 Terminadas acumuladas (viviendas): 2021-2024: MIVAU_con_protegida 374.573, MIVAU_sin_protegida 331.108, Catastro_completado 385.452; 2021-2025: MIVAU_con_protegida 468.223, MIVAU_sin_protegida 411.900, Catastro_completado 492.220.
 
@@ -83,17 +83,17 @@ Bajas supuestas 0,1 y 0,2 % anual del parque del año anterior; bajas estimadas 
 
 | periodo | mín con bajas (cualquier escenario) | máx con supuestos 0,1-0,2 % | máx con cualquier escenario |
 |---|---|---|---|
-| 2021-2024 | 344.803 | 924.658 | 924.658 |
-| 2021-2025 | 469.927 | 1.156.075 | 1.156.075 |
+| 2021-2024 | 389.361 | 924.658 | 924.658 |
+| 2021-2025 | 523.606 | 1.156.075 | 1.156.075 |
 
 ## Aplicación de la regla
 
-- Amplitud relativa 2021-2024 sin bajas: 34.7 % (umbral 15 %): NO cumple.
-- EPA corregida vs ECP: máxima diferencia 10.5 %; Catastro vs MIVAU (común, 2021-2024): 3.1 %.
-- Capa final 2021-2024 sin bajas: **C2**, rango 344.803-710.542 viviendas. Con bajas supuestas: **C2**, 344.803-924.658.
-- 2021-2025: 469.927-887.950 sin bajas, capa C4 (la terminadas 2025 es C4 frágil en M0; no se promueve).
+- Amplitud relativa 2021-2024 sin bajas: 29.2 % (umbral 15 %): NO cumple.
+- EPA corregida vs ECP: máxima diferencia 5.9 %; Catastro vs MIVAU (común, 2021-2024): 3.1 %.
+- Capa final 2021-2024 sin bajas: **C2**, rango 389.361-710.542 viviendas. Con bajas supuestas: **C2**, 389.361-924.658.
+- 2021-2025: 523.606-887.950 sin bajas, capa C4 (la terminadas 2025 es C4 frágil en M0; no se promueve).
 
-Sensibilidad (posterior a la regla, no la sustituye): sin las variantes a y d1, que conservan el quiebre metodológico de la EPA, el rango 2021-2024 sin bajas es 551.813-710.542 (amplitud 12.6 %). La regla pre-declarada incluía todas las variantes; la capa C2 se mantiene. Lo que decide es qué variantes se aceptan, es decir, un supuesto sobre el salto.
+Sensibilidad (posterior a la regla, no la sustituye): sin las variantes a y d1, que conservan el quiebre metodológico de la EPA, el rango 2021-2024 sin bajas es 596.371-710.542 (amplitud 8.7 %). La regla pre-declarada incluía todas las variantes; la capa C2 se mantiene. Lo que decide es qué variantes se aceptan, es decir, un supuesto sobre el salto.
 
 Tabla completa: deficit_alternativas.csv (288 filas).
 

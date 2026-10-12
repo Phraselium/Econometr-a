@@ -8,7 +8,7 @@ Formato: versión, fecha y cambios principales. Las correcciones de resultados y
 
 **Segunda doble implementación (L2).** Escrita solo con el anexo y data/raw, reproduce 15 de 15 cifras. Se ejecuta en `make check` (tests/doble_impl), y sus 11 precisiones se incorporaron al anexo.
 
-**Déficit (L3).** Se recalculó con siete correcciones del salto de la EPA en 2021 y dos fuentes de terminadas. El déficit 2021-2024 pasa de C1 a cota C2: 344.803-710.542 viviendas sin bajas. La ficha V05 se sustituye por L3-V1 y se responde a la objeción A-01.
+**Déficit (L3).** Se recalculó con siete correcciones del salto de la EPA en 2021 y dos fuentes de terminadas. El déficit 2021-2024 pasa de C1 a cota C2: 389.361-710.542 viviendas sin bajas (596.371-710.542 sin las variantes que conservan el salto). Con las bajas estimadas, 389.361-765.994 (C4). La ficha V05 se sustituye por L3-V1 y se responde a la objeción A-01.
 
 **Inmigración (L4).** Se separan la asociación total (sin controlar por población) y la directa (a igual población); controlar por población es un mal control. Sigue en C4, «analizada, no concluyente».
 
@@ -17,7 +17,7 @@ Formato: versión, fecha y cambios principales. Las correcciones de resultados y
 **Revisión (L6).** docs/v6_2/guia_revisor.md y docs/v6_2/tareas_autor.md.
 
 **Cifras publicadas que cambian** (ERRATA.md):
-- déficit 2021-2024: de C1 562.692-688.692 a C2 344.803-710.542;
+- déficit 2021-2024: de C1 562.692-688.692 a C2 389.361-710.542; con bajas estimadas, de 562.692-744.144 a 389.361-765.994;
 - contratos nuevos de la Comunitat Valenciana: de 27,7 % a 28,5 % (26,1-30,8), por la grafía «Valéncia».
 
 ## v6.1 (2026-10-11) — cierre, auditoría crítica y consolidación

@@ -13,7 +13,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## Los hogares crecen más que las terminadas
 
-- 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (corregida por la ruptura de 2021); dato de 2025T1; C1)
+- 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021); dato de 2025T1; C1)
 - Terminadas al año: 72.264-94.426 viviendas/año (2019-2024) [C1]
 
 ---
@@ -41,8 +41,8 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## «Faltan cientos de miles de viviendas»
 
-- **PARCIALMENTE** [C2]: el déficit 2021-2024 está en el rango 344.803-710.542 viviendas con bajas nulas (cota según la corrección de la EPA)
-- Con las bajas estimadas, como máximo 744.144 viviendas [C4]; demoliciones con licencia: 0,02-0,04 % del parque
+- **PARCIALMENTE** [C2]: el déficit 2021-2024 está en el rango 389.361-710.542 viviendas (sin las dos correcciones que conservan el salto de la EPA, 596.371-710.542 viviendas) con bajas nulas (cota según la corrección de la EPA)
+- Con las bajas estimadas, como máximo 765.994 viviendas [C4]; demoliciones con licencia: 0,02-0,04 % del parque
 
 ---
 

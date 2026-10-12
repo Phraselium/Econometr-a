@@ -11,10 +11,20 @@
   - El verificador sustituye V05 por L3-V1.
   - En ERRATA se anota como reclasificación de capa con cambio de rango.
   - La regla de decisión de L3 se pre-declaró antes de mirar los resultados finales. La sensibilidad sin las variantes que conservan el quiebre (551.813-710.542, 12,6 %) se reporta, pero no cambia la capa.
-- **E5 · dh_2125 y la EPA.** El aumento de hogares 2021-2025 (dh_2125, C1, 981.823-1.013.350) también usa la EPA corregida con la constante de v1. Se somete al revisor tras L3 si debe seguir el mismo tratamiento que el déficit. Mientras tanto se mantiene C1, porque el extremo bajo es la ECP sola, que no depende de la corrección.
+- **E5 · dh_2125 y la EPA** (corregida tras la revisión H2). La premisa era falsa: dh_2125 no usa la constante, porque las medias anuales de la EPA de 2021 y 2025 son posteriores a la ruptura. Se mantiene C1 sin el tratamiento de L3, y el rótulo de la fuente pasa a «EPA (sin corrección…)» en cifras_clave, D3 y las plantillas.
 - **E6 · L5.**
   - docs/v6_2/cifras_publicables.md se genera desde cifras_clave (src/v6_2/l5_publicables.py, en make). Las cotas C2 se dan solo como rango.
   - El test tests/test_l5_cifras.py comprueba tres cosas:
     - que el fichero coincide con lo generado;
     - que ningún entregable, post, ficha del verificador ni el anexo cita una cifra sustituida que figure en ERRATA (lista cerrada de valores superados), salvo en líneas marcadas «histórico» o «v6.1»;
     - que las plantillas no usan ids históricos fuera de frases rotuladas como históricas.
+- **E7 · Revisión tras L3: REHACER, ronda 1 de 2** (docs/v6_2/revision.md). Lo corrige el orquestador sin subagentes, para no pasar del 80 % del presupuesto.
+  - **H1.** Nueva cifra L3-DEF-2124-BAJAST1 (C4), que sustituye a T3-H2 en todos los entregables. Va a ERRATA y a SUPERADOS.
+  - **H2.** Véase E5.
+  - **H3.** La ventana de la ECP va de 2021T1 a 2025T1, a 1 de enero. El mínimo pasa de 344.803 a 389.361; la capa sigue en C2. Actualizados el anexo, l1_verifica, tests/doble_impl, la ficha, la carta, ERRATA y CHANGELOG.
+  - **H4.** La advertencia de inmigración es ahora simétrica y se retira la palabra «canal».
+  - **H5.** Sensibilidad L3-DEF-2124-SENS (596.371-710.542) junto al rango en todos los entregables. Se declara en ERRATA, la ficha y la carta que la anterioridad de la regla no consta en git, y qué fija cada extremo.
+  - **H6.** Tolerancia de medio paso del redondeo publicado (0,5 % solo con percentiles); la independencia parcial de B1 y D1 queda marcada. Siguen siendo 15/15.
+  - **H7.** «Siete alternativas más la constante de v1».
+  - **H8.** Los trimestres de la EPA de A1 no se tabulan: se reconstruyen desde raw con el filtro de la ficha. Pasa al backlog.
+  - **H9.** Las cifras históricas van en una sección aparte de cifras_publicables. SUPERADOS se amplía; la comparación literal de cadenas es una limitación declarada.

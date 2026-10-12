@@ -87,7 +87,7 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
 - **Definición.** Variación del número de hogares entre 2021 y 2025 según dos fuentes del INE.
 - **Fuentes.** H-EPA y H-ECP. Fecha del dato: 2025T1 (ECP) y 2025T4 (EPA). Cobertura: España.
 - **Fórmula.**
-  1. EPA = media de 2025T1-T4 − media de 2021T1-T4 = **1.013.350**. Las dos medias quedan después de la ruptura, así que no hay corrección (la «EPA corregida» del rótulo coincide aquí con la EPA sin corregir).
+  1. EPA = media de 2025T1-T4 − media de 2021T1-T4 = **1.013.350**. Las dos medias quedan después de la ruptura, así que no hay corrección (la EPA se usa sin corregir: el rótulo anterior «EPA corregida» era impreciso y se cambió en v6.2).
   2. ECP = ECP(2025T1) − ECP(2021T1) = 19.521.046 − 18.539.223 = **981.823**.
   3. mín = 981.823; máx = 1.013.350; central = punto medio = **997.586,5**.
 - **Armonización.** La cifra mezcla un stock a 1 de enero (ECP, 4 años exactos) con una diferencia de medias anuales (EPA). Es una diferencia de definición y queda declarada (doble implementación K4b). Si la ECP también se tomara en media anual, daría 970.670.
@@ -146,21 +146,24 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
 | b | base − salto + media(ΔEPA 2020T4, ΔEPA 2021T2) = 777.400 + 207.800 + 56.450 | 1.041.650 |
 | b4 | base − salto + media(ΔEPA 2020T3, 2020T4, 2021T2, 2021T3) = … + 52.575 | 1.037.775 |
 | c | base − salto (variación 2021T1 = 0) | 985.200 |
-| d1 | ECP(2024T4) − EPA(2020T4) × [ECP(2021T1)/EPA(2021T1)] (cociente 0,996197) | 730.255 |
-| d2 | ECP(2024T4) − [ECP(2021T1) − media(ΔEPA 2020T1-T4) = 17.725] | 954.990 |
-| e | ECP(2024T4) − ECP(2021T1) | 937.265 |
+| d1 | ECP(2025T1) − EPA(2020T4) × [ECP(2021T1)/EPA(2021T1)] (cociente 0,996197) | 774.813 |
+| d2 | ECP(2025T1) − [ECP(2021T1) − media(ΔEPA 2020T1-T4) = 17.725] | 999.548 |
+| e | ECP(2025T1) − ECP(2021T1) (stocks a 1 de enero de 2021 y de 2025: los cuatro años naturales) | 981.823 |
 
 - **Terminadas.** MIVAU con protegida 374.573; MIVAU sin protegida 331.108; Catastro completado 385.452 (T-CAT).
 - **Fórmula.**
   - Déficit = Δhogares − terminadas, en las 8 × 3 = 24 combinaciones.
-  - mín = d1 − Catastro completado = **344.803**; máx = b − MIVAU sin protegida = **710.542**.
-  - Central = punto medio = **527.672**.
+  - mín = d1 − Catastro completado = **389.361**; máx = b − MIVAU sin protegida = **710.542**.
+  - Central = punto medio = **549.952**.
+  - Ventana ECP (corrección tras la revisión H3 de v6.2): la ECP es un stock a 1 de enero, de modo que 2021-2024 va de 2021T1 a 2025T1. Antes se usaba 2024T4, un trimestre menos, y el mínimo era 344.803 (histórico).
 - **Regla de capa** (declarada antes de ver los resultados):
-  1. Amplitud = (máx − mín)/(máx + mín) = 34,7 %, mayor que el umbral del 15 %.
+  1. Amplitud = (máx − mín)/(máx + mín) = 29,2 %, mayor que el umbral del 15 %.
   2. Independencia. (i) Las variantes EPA b, b4 y c deben coincidir con la ECP (e) dentro de ±15 %. (ii) Catastro y MIVAU deben coincidir dentro de ±15 % en territorio común en 2021-2024.
   3. C1 solo si se cumplen 1 y 2. Como falla la amplitud, la capa es **C2**: una cota con dos supuestos explícitos, la corrección del salto y la fuente de terminadas.
-- **Sensibilidad.** Si se quitan las variantes a y d1, que conservan el salto, el rango se estrecha, pero la capa sigue siendo C2.
-- **Resultado.** 527.672 (344.803-710.542) viviendas, C2.
+- **Sensibilidad (L3-DEF-2124-SENS).** Sin las variantes a y d1, que conservan el salto, el rango es 596.371-710.542 (amplitud 8,7 %). La capa se mantiene en C2, porque excluirlas es un supuesto sobre el salto.
+  - Qué fija cada extremo: el mínimo, no retirar el salto (d1, en escala ECP) con Catastro; el máximo, la variación de 2021T1 igual a la media de los trimestres vecinos (b) con MIVAU sin protegida.
+  - La regla de capa está en src/v6_2/l3_deficit.py (REGLA), pero entró en el mismo commit que los resultados: su anterioridad no consta en git.
+- **Resultado.** 389.361-710.542 viviendas, C2. Se cita solo el rango.
 - **Script.** `src/v6_2/l3_deficit.py:hogares, terminadas, ventana, main` → `output/v6_2/L3/hechos.json`.
 - **Precisión añadida tras L2.** «UU(año) = suma de `valor` de todas las filas de `unidades_urbanas_residenciales` con ese `periodo`, sin filtro adicional de régimen ni de municipios.»
 - **Reconstruible: sí.** Verificado.
@@ -168,16 +171,16 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
 ### A6. L3-DEF-2124-CONBAJAS: déficit 2021-2024 con bajas supuestas (v6.2)
 
 - **Fórmula.** Las 24 combinaciones de A5 × bajas supuestas {0,1; 0,2 % anual} (107.058 y 214.116, como en T-MIV).
-  - mín = mínimo sin bajas = 344.803.
+  - mín = mínimo sin bajas = 389.361.
   - máx = 710.542 + 214.116 = **924.658**.
-  - Central = (344.803 + 924.658)/2 = **634.730**.
-- **Bajas estimadas.** Las de v5.1 T1 (`output/v5_1/T1/tablas/deficit_con_bajas_estimadas.csv`) se calculan y se registran, pero no entran en esta cifra.
+  - Central = (389.361 + 924.658)/2 = **657.010**.
+- **Bajas estimadas (L3-DEF-2124-BAJAST1, C4).** Las 24 combinaciones de A5 × las bajas estimadas de v5.1 T1 (`output/v5_1/T1/tablas/deficit_con_bajas_estimadas.csv`: escenarios estimada_tasa_min, central y max del periodo 2021-2024) dan 389.361-765.994. La mediana, 654.646, es el valor central. Sustituye a T3-H2 (562.692-744.144, histórico).
 - **Capa.** C2: el supuesto de bajas no es un hecho.
-- **Resultado.** 634.730 (344.803-924.658) viviendas.
+- **Resultado.** 389.361-924.658 viviendas (cota C2).
 - **Precisión añadida tras L2.** «Las bajas exactas son 0,002 × 107.057.889 = 214.115,8; el 214.116 es solo la cifra redondeada.»
 - **Reconstruible: sí.** Verificado.
 
-(L3-DEF-2125, C4, sigue el mismo método con fin en 2025T4 y terminadas de 2021-2025. La terminada de 2025 es C4 frágil. No se verifica aquí.)
+(L3-DEF-2125, C4, sigue el mismo método con fin en 2025T4 (la ECP de 2026T1 aún no existe: se usa 2025T4, un trimestre menos) y terminadas de 2021-2025. La terminada de 2025 es C4 frágil. No se verifica aquí.)
 
 ### A7. A23-A2: alquiler de stock, variación 2015-2024 (núcleo)
 

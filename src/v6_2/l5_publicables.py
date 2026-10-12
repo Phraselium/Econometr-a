@@ -39,8 +39,13 @@ NO_FUERA = [
     ("K1-N-MEJOR", "Predicción, no causalidad; solo frente a la base más exigente."),
     ("latente_convivencia", "Demanda latente: cota con supuestos sobre preferencias."),
     ("B4-v3-vut-cantidad", "Cota máxima del stock desplazado por viviendas turísticas; no es el efecto en el precio."),
-    ("deficit_2124_c1", "HISTÓRICA (v6.1): sustituida por L3-DEF-2124-SINBAJAS. No citar."),
-    ("deficit_2124_c2", "HISTÓRICA (v6.1): sustituida por L3-DEF-2124-CONBAJAS. No citar."),
+    ("L3-DEF-2124-BAJAST1", "Con bajas estimadas en v5.1 (C4)."),
+    ("L3-DEF-2124-SENS", "Sensibilidad del déficit: citarla junto al rango completo, nunca sola."),
+]
+HISTORICAS = [
+    ("deficit_2124_c1", "Sustituida en v6.2 por L3-DEF-2124-SINBAJAS. No citar."),
+    ("deficit_2124_c2", "Sustituida en v6.2 por L3-DEF-2124-CONBAJAS. No citar."),
+    ("T3-H2", "Sustituida en v6.2 por L3-DEF-2124-BAJAST1. No citar."),
 ]
 
 
@@ -57,7 +62,8 @@ def generar() -> str:
          "Generado por src/v6_2/l5_publicables.py desde output/v5/cifras_clave.csv; no editar a mano. "
          "Toda cifra se cita con su rango, periodo, fuente, fecha del dato y capa.", "",
          "## Aptas para difusión (C1 o cota C2)", "", cab] + [fila(c, i, n) for i, n in APTAS] + [
-         "", "## No citar fuera de contexto (C4, supuestos o históricas)", "", cab] + [fila(c, i, n) for i, n in NO_FUERA] + [""]
+         "", "## No citar fuera de contexto (C4 o dependientes de supuestos)", "", cab] + [fila(c, i, n) for i, n in NO_FUERA] + [
+         "", "## Históricas: no citar (sustituidas; ver ERRATA.md)", "", cab] + [fila(c, i, n) for i, n in HISTORICAS] + [""]
     return "\n".join(L)
 
 

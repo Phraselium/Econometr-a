@@ -54,6 +54,21 @@ Agradezco a los dos revisores sus objeciones. Respondo una a una. «Aceptada —
 
 La parte que en v6.1 era «no viable» se ejecutó en v6.2 (tarea L3).
 
-**A-01 (C1 del déficit 2021-2024).** Objeción: el extremo alto usa una corrección de la EPA fijada en el código (242.400 hogares) y las terminadas proceden de un solo organismo, con lo que no hay dos fuentes independientes en sentido fuerte. Qué se hizo: se recalculó el déficit con ocho tratamientos del salto de la EPA en 2021T1 (constante de v1; sin corrección; variación de ese trimestre igual a la media de los vecinos, con 2 y con 4; igual a cero; enlace por cociente con la ECP; ECP con ventana completa; ECP publicada), tres fuentes de terminadas (Ministerio con y sin protegida; Catastro completado con el Ministerio para País Vasco y Navarra) y bajas de 0, 0,1, 0,2 % anual y las estimadas de v5.1 (src/v6_2/l3_deficit.py; regla de decisión pre-declarada). Resultado: sin bajas, el déficit 2021-2024 queda entre 344.803 y 710.542 viviendas (amplitud 34,7 % sobre el punto medio, frente al 15 % de tolerancia), aunque EPA corregida y ECP coinciden dentro del 10,5 % y Catastro y Ministerio dentro del 3,1 %. Las variantes sin corrección y con enlace por cociente conservan el quiebre de la EPA y fijan el extremo bajo; sin ellas el rango sería 551.813-710.542 (12,6 %), pero esa exclusión es un supuesto sobre el salto, no un hecho. Capa final: el déficit 2021-2024 sin bajas pasa de C1 a C2 (cota con supuestos explícitos: tratamiento del salto y fuente de terminadas); con bajas supuestas sigue en C2 (hasta 924.658). 2021-2025: 469.927-887.950 sin bajas, C4 (la terminadas 2025 es C4 frágil).
+**A-01 (capa C1 del déficit 2021-2024).** Objeción: el extremo alto usa una corrección de la EPA fijada en el código (242.400 hogares), y las terminadas proceden de un solo organismo, de modo que no hay dos fuentes independientes en sentido fuerte.
 
-Entregables y verificador actualizados: el déficit se cita como cota C2. La ficha V05 se sustituye por L3-V1.
+Qué se hizo (v6.2, L3; src/v6_2/l3_deficit.py):
+- Se recalculó el déficit con siete tratamientos alternativos del salto de la EPA en 2021T1, más la constante de v1: sin corrección; variación de ese trimestre igual a la media de los trimestres vecinos, con dos y con cuatro; igual a cero; enlace por cociente con la ECP; ECP retropolada; ECP publicada.
+- Se cruzaron con tres fuentes de terminadas: Ministerio con y sin protegida, y Catastro completado con el Ministerio en País Vasco y Navarra.
+- Se aplicaron bajas de 0 %, 0,1 % y 0,2 % anual, además de las estimadas en v5.1.
+- Tras la revisión de v6.2, la ventana de la ECP va de 1-ene-2021 a 1-ene-2025.
+
+Resultado:
+- Sin bajas, el déficit 2021-2024 queda entre 389.361 y 710.542 viviendas. La amplitud es del 29,2 % del punto medio, frente a una tolerancia del 15 %, aunque la EPA corregida y la ECP coinciden dentro del 10,5 %, y el Catastro y el Ministerio dentro del 3,1 %.
+- El mínimo lo fijan las variantes que conservan el quiebre de la EPA. Sin ellas, el rango sería 596.371-710.542, pero excluirlas es un supuesto sobre el salto.
+
+Capa final: el déficit 2021-2024 sin bajas pasa de C1 a C2, una cota con supuestos explícitos sobre el tratamiento del salto y la fuente de terminadas.
+- Con bajas estimadas: 389.361-765.994 (C4).
+- Con bajas supuestas: hasta 924.658 (C2).
+- La regla de capa se escribió en el mismo commit que los resultados, así que su anterioridad no consta en git.
+
+Entregables y verificador actualizados: el déficit se cita como cota C2, con la sensibilidad al lado. La ficha V05 se sustituye por L3-V1.

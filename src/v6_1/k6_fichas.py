@@ -24,8 +24,8 @@ def main():
         id="K2-V1", tema="Inmigración",
         enunciado="La llegada de inmigrantes sube el precio de la vivienda o el alquiler.",
         capa="C4",
-        magnitud=(f"Cuota de extranjeros (t-1), EF dobles, provincias de entrenamiento. Asociación TOTAL (sin controlar por población, que es un canal "
-                  f"de la inmigración): valor tasado {es(s['valor'])} % por pp [{es(s['min'])}; {es(s['max'])}], con demanda externa {es(e['valor'])} "
+        magnitud=(f"Cuota de extranjeros (t-1), EF dobles, provincias de entrenamiento. Asociación TOTAL (sin controlar por población; la inmigración "
+                  f"es un componente contable de su crecimiento): valor tasado {es(s['valor'])} % por pp [{es(s['min'])}; {es(s['max'])}], con demanda externa {es(e['valor'])} "
                   f"[{es(e['min'])}; {es(e['max'])}]; alquiler de stock {es(a['valor'])} [{es(a['min'])}; {es(a['max'])}]. Asociación DIRECTA (a igual "
                   f"población): valor tasado {es(p['valor'])} [{es(p['min'])}; {es(p['max'])}]. Correlación cuota-población dentro de provincia "
                   f"{es(k2['K2-CORR-POB-DENTRO']['valor'])}."),
@@ -34,7 +34,8 @@ def main():
         veredicto="ANALIZADA, NO CONCLUYENTE",
         regla=("Con capa C4 el veredicto es como máximo ANALIZADA, NO CONCLUYENTE. El signo y el mercado cambian con el método (2SLS/MCO), "
                "la medida de alquiler y los controles. Controlar por población es un mal control (la población crece por la propia inmigración): "
-               "el signo negativo de la asociación directa en compra no significa que la inmigración abarate la vivienda."),
+               "el signo negativo de la asociación directa en compra no significa que la inmigración abarate la vivienda. A su vez, la total "
+               "puede recoger otros factores ligados al crecimiento de la población; ninguna de las dos identifica un efecto."),
         limites=("41 provincias de entrenamiento (sin las 11 selladas, incluidas las islas); no reproduce la muestra de 49 provincias de v2; "
                  "primera etapa débil del instrumento en esta muestra."),
         evidencia=["output/v6_1/K2/inmigracion.md", "output/v6_1/K2/pasos_inmigracion.csv", "docs/v6_1/historial_conclusiones.md"]),

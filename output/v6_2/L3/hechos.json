@@ -2,8 +2,8 @@
  {
   "id": "L3-DEF-2124-SINBAJAS",
   "indicador": "Déficit acumulado 2021-2024 sin bajas (todas las variantes de corrección EPA y de terminadas)",
-  "valor": 527672,
-  "min": 344803,
+  "valor": 549952,
+  "min": 389361,
   "max": 710542,
   "unidad": "viviendas",
   "periodo": "2021-2024",
@@ -11,13 +11,13 @@
   "fuentes": "hogares: EPA (varias correcciones) y ECP; terminadas: MIVAU y Catastro",
   "capa": "C2",
   "fecha_dato": "2024T4",
-  "amplitud_rel": 0.3466
+  "amplitud_rel": 0.292
  },
  {
   "id": "L3-DEF-2124-CONBAJAS",
   "indicador": "Déficit acumulado 2021-2024 con bajas supuestas 0,1-0,2 % anual (cota)",
-  "valor": 634730,
-  "min": 344803,
+  "valor": 657010,
+  "min": 389361,
   "max": 924658,
   "unidad": "viviendas",
   "periodo": "2021-2024",
@@ -27,10 +27,36 @@
   "fecha_dato": "2024T4"
  },
  {
+  "id": "L3-DEF-2124-BAJAST1",
+  "indicador": "Déficit acumulado 2021-2024 con las bajas del parque estimadas en v5.1 (T1), todas las variantes",
+  "valor": 654646,
+  "min": 389361,
+  "max": 765994,
+  "unidad": "viviendas",
+  "periodo": "2021-2024",
+  "cobertura": "España",
+  "fuentes": "ídem, con bajas estimadas en v5.1 (T1)",
+  "capa": "C4",
+  "fecha_dato": "2024T4"
+ },
+ {
+  "id": "L3-DEF-2124-SENS",
+  "indicador": "Sensibilidad: déficit 2021-2024 sin bajas sin las dos variantes que conservan el salto de la EPA (a y d1)",
+  "valor": 653456,
+  "min": 596371,
+  "max": 710542,
+  "unidad": "viviendas",
+  "periodo": "2021-2024",
+  "cobertura": "España",
+  "fuentes": "ídem, sin variantes a y d1",
+  "capa": "C2",
+  "fecha_dato": "2024T4"
+ },
+ {
   "id": "L3-DEF-2125",
   "indicador": "Déficit acumulado 2021-2025 sin bajas (todas las variantes)",
-  "valor": 678938,
-  "min": 469927,
+  "valor": 705778,
+  "min": 523606,
   "max": 887950,
   "unidad": "viviendas",
   "periodo": "2021-2025",
@@ -38,6 +64,6 @@
   "fuentes": "hogares: EPA y ECP; terminadas: MIVAU y Catastro (2025 frágil)",
   "capa": "C4",
   "fecha_dato": "2025T4",
-  "amplitud_rel": 0.3079
+  "amplitud_rel": 0.2581
  }
 ]

@@ -63,12 +63,21 @@ def _dec(txt) -> int:
     return len(s.split(".")[1]) if "." in s else 0
 
 
-def coincide(l2, pub, txt) -> bool:
-    """True si ambos NaN, o |dif| <= 0,5 % o <= medio paso del redondeo publicado."""
+# v6.2 (revisión H6): tolerancia = medio paso del redondeo publicado; el 0,5 % relativo solo donde hay percentiles interpolados
+CON_PERCENTILES = {"D1-H11", "D1-H12", "latente_convivencia"}
+# Cifras cuya doble implementación lee una tabla intermedia del código original (no es plenamente independiente)
+DEPENDIENTES = {"B1-H1": "lee B1_nacional.csv (componentes de B1)", "B1-H4": "lee clasificacion_provincias.csv (lista de claves)",
+                "E-B1-F": "lee clasificacion_provincias.csv (lista de claves)", "D1-H11": "lee clasificacion_provincias.csv (clase A4)",
+                "D1-H12": "lee clasificacion_provincias.csv (clase A4)"}
+
+
+def coincide(l2, pub, txt, id_=None) -> bool:
+    """True si ambos NaN, o |dif| <= medio paso del redondeo publicado (o 0,5 % si la cifra usa percentiles interpolados)."""
     if math.isnan(pub) or math.isnan(l2):
         return math.isnan(pub) and math.isnan(l2)
     paso = 0.5 * 10 ** (-_dec(txt))
-    return abs(l2 - pub) <= max(paso, 0.005 * abs(pub)) + 1e-9
+    rel = 0.005 * abs(pub) if id_ in CON_PERCENTILES else 0.0
+    return abs(l2 - pub) <= max(paso, rel) + 1e-9
 
 
 def comparar() -> pd.DataFrame:
@@ -78,7 +87,7 @@ def comparar() -> pd.DataFrame:
         v, lo, hi = (float(x) for x in f())
         r = ck.loc[id_]
         pv, pl, ph = (_num(r[k]) for k in ("valor", "min", "max"))
-        ok = [coincide(a, b, r[k]) for a, b, k in ((v, pv, "valor"), (lo, pl, "min"), (hi, ph, "max"))]
+        ok = [coincide(a, b, r[k], id_) for a, b, k in ((v, pv, "valor"), (lo, pl, "min"), (hi, ph, "max"))]
         if all(ok):
             clase = "coincide"
         elif (not math.isnan(v) and not math.isnan(pl) and pl - 1e-9 <= v <= ph + 1e-9) or (math.isnan(v) and math.isnan(pv)):
@@ -87,7 +96,7 @@ def comparar() -> pd.DataFrame:
             clase = "no coincide"
         filas.append({
             "id": id_, "pub_valor": pv, "pub_min": pl, "pub_max": ph,
-            "l2_valor": v, "l2_min": lo, "l2_max": hi, "clase": clase, "diagnostico": DIAG[id_],
+            "l2_valor": v, "l2_min": lo, "l2_max": hi, "clase": clase, "diagnostico": DIAG[id_], "independencia": DEPENDIENTES.get(id_, "plena (solo anexo y data/raw)"),
         })
     return pd.DataFrame(filas)
 

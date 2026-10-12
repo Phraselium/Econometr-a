@@ -1,0 +1,62 @@
+# Diccionario V7 (R1: paneles regionales)
+
+Generado por `src/v7/r1_panel.py`. Variables heredadas del panel v1-v6 (ipv, ocupados, etc.): ver `docs/diccionario_variables.md`. Capa: C1 solo si hay >=2 fuentes; C4 si una. Prefijos `ln_`, `d_ln_`, `d4_ln_` para logaritmos y diferencias (no listados uno a uno).
+
+| variable | definición | unidad | fuente (fichero y serie) | descarga/edición | nivel | frec. | periodo | método | capa | % NaN |
+|---|---|---|---|---|---|---|---|---|---|---|
+| parados_epa | Parados EPA, suma de provincias de la CCAA | miles de personas | INE EPA tabla 65345, medida EPA_parados | ine_v2_epa_prov.csv: 2026-10-10 | CCAA | T | 2007Q1-2026Q2 | agregado | C4 | 0.0 % (panel_ccaa_q_v7) |
+| ocupados_epa_prov | Ocupados EPA, suma de provincias (contraste con ocupados CCAA) | miles de personas | INE EPA 65345 EPA_ocupados | ine_v2_epa_prov.csv: 2026-10-10 | CCAA | T | 2007Q1-2026Q2 | agregado | C1 | 0.0 % (panel_ccaa_q_v7) |
+| tasa_paro_epa | Parados/(parados+ocupados) provinciales agregados | % | INE EPA 65345 | ine_v2_epa_prov.csv: 2026-10-10 | CCAA | T | 2007Q1-2026Q2 | agregado | C4 | 0.0 % (panel_ccaa_q_v7) |
+| hip_n | Hipotecas constituidas sobre viviendas, número | número | INE Hipotecas, serie HPT por provincia, hipotecas_viviendas_numero | ine_v2_hipotecas_prov.csv: 2026-10-10 | CCAA | T (de M) | 2007Q1-2026Q2 | agregado: suma 3 meses y provincias; NaN si falta un mes o provincia | C4 | 0.0 % (panel_ccaa_q_v7) |
+| hip_importe | Importe de hipotecas sobre viviendas | miles de euros | INE Hipotecas, hipotecas_viviendas_importe | ine_v2_hipotecas_prov.csv: 2026-10-10 | CCAA | T (de M) | 2007Q1-2026Q2 | agregado (idem) | C4 | 0.0 % (panel_ccaa_q_v7) |
+| zt_n_municipios | Municipios en zona tensionada vigente al cierre del trimestre (alcance parcial cuenta como municipio) | número | Resoluciones de zonas tensionadas, v3/zonas_tensionadas_v3.csv (fecha_efecto, fecha_fin_prevista) | v3/zonas_tensionadas_v3.csv: 2026-10-10 | CCAA | T | 2007Q1-2026Q2 | observado (evento) | C4 | 0.0 % (panel_ccaa_q_v7) |
+| zt_cuota_municipios | Municipios en zona tensionada / municipios de la CCAA (diccionario INE 2026) | proporción | idem + ine_diccionario_municipios_2026.xlsx | v3/zonas_tensionadas_v3.csv: 2026-10-10; ine_diccionario_municipios_2026.xlsx: no consta  | CCAA | T | 2007Q1-2026Q2 | observado/derivado | C4 | 0.0 % (panel_ccaa_q_v7) |
+| zt_declarada | Al menos un municipio en zona tensionada vigente (Ley 12/2023, art. 18) | 0/1 | idem | v3/zonas_tensionadas_v3.csv: 2026-10-10 | CCAA | T | 2007Q1-2026Q2 | observado (evento) | C4 | 0.0 % (panel_ccaa_q_v7) |
+| tope_rentas_ccaa | Tope de rentas autonómico vigente al cierre del trimestre (E09: Ley catalana 11/2020, 2020-09-22 a 2022-04-08, anulación parcial STC 37/2022) | 0/1 | v2_eventos_politica.csv, E09 (BOE) | v2_eventos_politica.csv: 2026-10-10 | CCAA | T | 2007Q1-2026Q2 | observado (evento) | C4 | 0.0 % (panel_ccaa_q_v7) |
+| tope_rentas_ccaa_frac | Fracción de días del trimestre con tope vigente (E09) | proporción | idem | v2_eventos_politica.csv: 2026-10-10 | CCAA | T | 2007Q1-2026Q2 | derivado | C4 | 0.0 % (panel_ccaa_q_v7) |
+| tope_rentas_ccaa_alt_v3 | Tope vigente con la ventana de la ley según cataluna_contencion_rentas_v3 (hasta 2021-09-21); se reporta junto a E09 porque las ventanas difieren | 0/1 | v3/cataluna_contencion_rentas_v3.csv | v3/cataluna_contencion_rentas_v3.csv: 2026-10-10 | CCAA | T | 2007Q1-2026Q2 | observado (evento) | C4 | 0.0 % (panel_ccaa_q_v7) |
+| vut_regulacion_ccaa | Norma autonómica de viviendas de uso turístico vigente (E23 Cataluña 2023-11-09, E24 C. Valenciana 2024-08-08, E25 Baleares 2025-04-16, E26 Canarias 2025-12-13) | 0/1 | v2_eventos_politica.csv | v2_eventos_politica.csv: 2026-10-10 | CCAA | T | 2007Q1-2026Q2 | observado (evento) | C4 | 0.0 % (panel_ccaa_q_v7) |
+| ley12_2023_nac | Ley 12/2023 en vigor (2023-05-26) [COMÚN nacional] | 0/1 | v2_eventos_politica E14 y v3/eventos_v3 | v2_eventos_politica.csv: 2026-10-10; v3/eventos_v3.csv: no consta  | Nacional | T | 2007Q1-2026Q2 | observado (evento) | C1 | 0.0 % (panel_ccaa_q_v7) |
+| tope_actualiz_rentas_nac | Tope a la actualización anual de rentas (E11, 2022-03-31 a 2024-12-31) [COMÚN nacional] | 0/1 | v2_eventos_politica E11 | v2_eventos_politica.csv: 2026-10-10 | Nacional | T | 2007Q1-2026Q2 | observado (evento) | C4 | 0.0 % (panel_ccaa_q_v7) |
+| registro_unico_arrend_nac | Registro Único de Arrendamientos (RD 1312/2024, en vigor 2025-01-02) [COMÚN nacional] | 0/1 | v2_eventos_politica E22 | v2_eventos_politica.csv: 2026-10-10 | Nacional | T | 2007Q1-2026Q2 | observado (evento) | C1 | 0.0 % (panel_ccaa_q_v7) |
+| pib_ccaa_anual | PIB a precios corrientes, suma de provincias (CRE 80109); control; el valor anual se repite en los 4 trimestres sin interpolar | miles de euros | INE CRE 80109 PIB_precios_corrientes | ine_v2_cre.csv: 2026-10-10 | CCAA | A | 2007Q1-2025Q4 | agregado | C4 | 5.6 % (panel_ccaa_q_v7) |
+| pib_ccaa_q | PIB trimestralizado: ancla en T3, log-lineal entre anclas, sin extrapolar (huecos tras el último ancla); solo robustez | miles de euros | idem | ine_v2_cre.csv: 2026-10-10 | CCAA | A->T | 2007Q1-2025Q3 | interpolado (ver pib_ccaa_q_metodo / _interp) | C4 | 6.9 % (panel_ccaa_q_v7) |
+| vut_viviendas | Viviendas turísticas (INE experimental), suma de provincias; interpolación lineal entre fechas observadas; sin extrapolar | número | INE VUT tabla 39364 viviendas_turisticas | ine_v2_vut.csv: 2026-10-10 | CCAA | S/irregular -> T | 2020Q3-2026Q2 | observado en fechas de publicación; interpolado entre ellas (vut_viviendas_interp) | C4 | 69.2 % (panel_ccaa_q_v7) |
+| exp_hip_importe_pib_1519 | Exposición: importe medio anual de hipotecas / PIB medio, 2015-2019 (predeterminada, constante en el tiempo)  | % | INE Hipotecas / CRE | ine_v2_hipotecas_prov.csv: 2026-10-10; ine_v2_cre.csv: 2026-10-10 | CCAA | const. | 2007Q1-2026Q2 | derivado | C4 | 0.0 % (panel_ccaa_q_v7) |
+| exp_hip_n_1000hab_1519 | Exposición: hipotecas anuales medias por 1.000 habitantes (padrón 1 ene), 2015-2019 | número | INE Hipotecas / padrón ECP | ine_v2_hipotecas_prov.csv: 2026-10-10; ine_v2_padron_prov_pais.csv: 2026-10-10 | CCAA | const. | 2007Q1-2026Q2 | derivado | C4 | 0.0 % (panel_ccaa_q_v7) |
+| nac_tipo_hip | COMÚN: tipo hipotecario nacional (nacional_q). No usar como regresor regional sin interacción | % | nacional_q.csv (BdE/BCE) | bde_tipo_hipotecario_referencia.csv: 2026-10-09; ecb_tipo_hipotecario_es.csv: 2026-10-09 | Nacional | T | 2007Q1-2026Q2 | heredado (ver nac_*_interp) | C1 | 0.0 % (panel_ccaa_q_v7) |
+| nac_euribor | COMÚN: Euribor 12m. Sin interacción no es regresor regional | % | nacional_q.csv (BCE) | ecb_euribor1y.csv: 2026-10-09 | Nacional | T | 2007Q1-2026Q2 | heredado | C4 | 0.0 % (panel_ccaa_q_v7) |
+| nac_credito_nuevo | COMÚN: crédito nuevo a vivienda. Sin interacción no es regresor regional | según nacional_q | nacional_q.csv (BCE) | ecb_nuevo_credito_vivienda_es.csv: 2026-10-09 | Nacional | T | 2007Q1-2026Q2 | heredado | C4 | 0.0 % (panel_ccaa_q_v7) |
+| nac_tipo_bce | COMÚN: tipo oficial BCE. Sin interacción no es regresor regional | % | nacional_q.csv (BCE) | ecb_tipo_oficial.csv: 2026-10-09 | Nacional | T | 2007Q1-2026Q2 | heredado | C4 | 0.0 % (panel_ccaa_q_v7) |
+| ocupados_epa, parados_epa | Ocupados y parados EPA provinciales (anual = media de 4 trimestres) | miles de personas | INE EPA 65345 | ine_v2_epa_prov.csv: 2026-10-10 | Provincia | T / A | 2002Q1-2026Q2 | observado / media | C4 | 0.0 % (panel_prov_q_v7 y panel_prov_a_v7) |
+| hip_n, hip_importe | Hipotecas sobre vivienda, número e importe (anual = suma de 4 trimestres) | número / miles de euros | INE Hipotecas | ine_v2_hipotecas_prov.csv: 2026-10-10 | Provincia | M->T->A | 2003Q1-2026Q2 | agregado | C4 | 4.1 % (ambos) |
+| compraventas | Compraventas de viviendas ETDP, total (anual = suma) | número | INE ETDP 6150, desglose total | ine_v2_etdp_prov.csv: 2026-10-10 | Provincia | M->T->A | 2007Q1-2026Q2 | agregado | C4 | 20.4 % (ambos) |
+| iniciadas, terminadas | Viviendas libres iniciadas y terminadas (MIVAU; mensual->T, y anual de tabla anual 3.1/3.2) | viviendas | MIVAU sedal 32100500/32101000 (mensual) y 32200500/32201000 (anual) | mivau_v2_iniciadas_terminadas_prov.csv: 2026-10-10 | Provincia | M->T->A | 2008Q1-2026Q2 | agregado; casadas por puente de nombres (sin código en origen) | C4 | 39.3 % (ambos) |
+| iniciadas_anual_tabla, terminadas_anual_tabla | Idem, tabla anual oficial (contraste con la suma mensual) | viviendas | MIVAU sedal 32200500/32201000 | mivau_v2_iniciadas_terminadas_prov.csv: 2026-10-10 | Provincia | A | 2002-2024 | observado | C4 | 17.3 % (panel_prov_a_v7) |
+| valor_tasado | Valor tasado medio vivienda libre (anual = media de 4 trimestres) | euros/m2 | MIVAU sedal 35101000 | mivau_valor_tasado_nacional_ccaa_prov.csv: 2026-10-09 | Provincia | T / A | 2002Q1-2026Q2 | observado / media; puente de nombres | C4 | 17.6 % (ambos) |
+| ipc_alquiler_indice, ipc_alquiler_yoy | IPC alquiler de vivienda: índice y variación anual (media del periodo); stock de alquileres, no contratos nuevos | índice / % | INE IPC tabla 76142 | ine_v2_ipc_alquiler_prov.csv: 2026-10-10 | Provincia | M->T->A | 2002Q1-2026Q2 | media | C4 | 0.0 % (ambos) |
+| pob_total, pob_extranj | Población residente a 1 de enero, total y extranjera (ECP/padrón) | personas | INE ECP 77023 | ine_v2_padron_prov_pais.csv: 2026-10-10 | Provincia | A | 2002-2024 | observado | C4 | 0.0 % (panel_prov_a_v7) |
+| pib_miles_eur | PIB a precios corrientes (CRE 80109) | miles de euros | INE CRE 80109 | ine_v2_cre.csv: 2026-10-10 | Provincia | A | 2002-2024 | observado | C4 | 0.0 % (panel_prov_a_v7) |
+| ipva_indice | Índice de precios de vivienda en alquiler (IPVA, base SERPAVI), total; 48 provincias, desde 2011; stock | índice | INE IPVA, IPVA_indice Total | ine_v2_ipva.csv: 2026-10-10 | Provincia | A | 2011-2024 | observado | C4 | 43.8 % (panel_prov_a_v7) |
+| vut_viviendas | Viviendas turísticas, media de las fechas publicadas en el año; desde 2020 | número | INE VUT 39364 | ine_v2_vut.csv: 2026-10-10 | Provincia | A | 2020-2024 | media de observaciones | C4 | 78.3 % (panel_prov_a_v7) |
+
+## Interpolaciones y agregaciones temporales (regla 4)
+
+- `pib_ccaa_q` (`pib_ccaa_q_metodo`, `pib_ccaa_q_interp`): PIB anual CRE; ancla en el T3, interpolación log-lineal entre anclas; sin extrapolación (NaN antes del primer ancla y tras 2025T3). Solo robustez. Renta de los hogares por CCAA: no existe en data/raw (solo nacional CNT y Eurostat nacional): hueco.
+- `vut_viviendas` CCAA: interpolación lineal entre fechas publicadas (2020M08...2026M05); `vut_viviendas_interp` marca las filas interpoladas; NaN fuera del rango.
+- Hipotecas, parados, compraventas, iniciadas, terminadas: suma mensual->trimestral->anual solo con todos los meses/trimestres presentes; sin interpolación (`*_interp` = False).
+- Las variables `nac_*` conservan los indicadores `_interp` de `nacional_q.csv`.
+
+## Eventos regulatorios (fecha de entrada en vigor; verificación en v2_eventos_politica.csv, 2026-10-10)
+
+- Ley 12/2023: inicio v2 2023-05-26, v3 2023-05-26 (coinciden: True).
+- Convención de dummies: vigente el último día del trimestre; la columna `_frac` da la fracción de días. Con ello el tope catalán (E09, 2020-09-22 a 2022-04-08) vale 1 en 2020T3-2022T1; con la ventana de la ley (v3, 2020-09-22 a 2021-09-21) la variante `_alt_v3` vale 1 en 2020T3-2021T2. Se reportan ambas.
+- Zonas tensionadas: v2 y v3 son la misma relación (True): una sola fuente (C4).
+
+## Nota de contaminación de validaciones selladas
+
+`panel_prov_a_v7.csv`/`panel_prov_q_v7.csv` incluyen las 52 provincias, también las selladas en v2 ['11', '16', '45'] y en v6 ['07', '22', '26', '28', '30', '31', '33', '35', '38', '44', '50'], y 2024 (año de embargo de v2). Se construyen solo desde data/raw (no desde los paneles de entrenamiento) y no abren data/sealed. Es correcto usarlos solo si V7 no reutiliza esas provincias/años para evaluar hipótesis confirmatorias de v2 o v6; las columnas `prov_sellada_v2`, `prov_sellada_v6` y `anio_embargo_v2` permiten excluirlas. Para hipótesis nuevas de V7 hace falta un sellado propio. Los backtests con el panel CCAA: «informativo, muestra ya vista en v1».
+
+## Puente de nombres MIVAU
+
+Provincias sin casar (sin código en origen): {"mivau_iniciadas_mensual": [], "mivau_terminadas_mensual": ["Extremadura (1)"], "mivau_iniciadas_anual": [], "mivau_terminadas_anual": [], "mivau_valor_tasado": []}

@@ -1,0 +1,208 @@
+{
+ "rama": "v7/R1",
+ "pregunta": "Construcción del panel regional (17 CCAA x trimestre) y provincial (52 prov. x año/trimestre) para V7",
+ "capa": "C4",
+ "datos": [
+  "panel_ccaa_q_v7.csv",
+  "panel_prov_a_v7.csv",
+  "panel_prov_q_v7.csv"
+ ],
+ "N": {
+  "ccaa_q": 1326,
+  "prov_a": 1196,
+  "prov_q": 5096
+ },
+ "metodo": "agregación por código INE; interpolación declarada",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "cobertura_ccaa": {
+   "ocupados_epa_prov": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "parados_epa": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "tasa_paro_epa": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "hip_n": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "hip_importe": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "zt_n_municipios": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "zt_cuota_municipios": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "zt_declarada": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "tope_rentas_ccaa": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "tope_rentas_ccaa_frac": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "tope_rentas_ccaa_alt_v3": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "vut_regulacion_ccaa": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "ley12_2023_nac": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "tope_actualiz_rentas_nac": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "registro_unico_arrend_nac": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "pib_ccaa_q": {
+    "pct_nan": 6.9,
+    "desde": "2007Q1",
+    "hasta": "2025Q3"
+   },
+   "vut_viviendas": {
+    "pct_nan": 69.2,
+    "desde": "2020Q3",
+    "hasta": "2026Q2"
+   },
+   "exp_hip_importe_pib_1519": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "exp_hip_n_1000hab_1519": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "pib_ccaa_anual": {
+    "pct_nan": 5.6,
+    "desde": "2007Q1",
+    "hasta": "2025Q4"
+   },
+   "nac_tipo_hip": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "nac_euribor": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "nac_credito_nuevo": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   },
+   "nac_tipo_bce": {
+    "pct_nan": 0.0,
+    "desde": "2007Q1",
+    "hasta": "2026Q2"
+   }
+  },
+  "pct_nan_prov_anual": {
+   "cod_prov": 0.0,
+   "anio": 0.0,
+   "pob_extranj": 0.0,
+   "pob_total": 0.0,
+   "hip_n": 4.3,
+   "hip_importe": 4.3,
+   "compraventas": 21.7,
+   "iniciadas": 46.1,
+   "terminadas": 38.9,
+   "ocupados_epa": 0.0,
+   "parados_epa": 0.0,
+   "valor_tasado": 18.1,
+   "ipc_alquiler_indice": 0.0,
+   "ipc_alquiler_yoy": 0.0,
+   "iniciadas_anual_tabla": 17.3,
+   "terminadas_anual_tabla": 17.3,
+   "pib_miles_eur": 0.0,
+   "ipva_indice": 43.8,
+   "vut_viviendas": 78.3,
+   "cod_ccaa": 0.0,
+   "prov_sellada_v2": 0.0,
+   "prov_sellada_v6": 0.0,
+   "anio_embargo_v2": 0.0
+  },
+  "eventos": {
+   "ley12_2023_inicio_v2": "2023-05-26",
+   "ley12_2023_inicio_v3": "2023-05-26",
+   "ley12_coincide_v2_v3": true,
+   "zonas_v2_igual_v3": true,
+   "tope_rentas_cat_v3_ventana": "2020-09-22 a 2021-09-21"
+  },
+  "provincias_selladas": {
+   "v2": [
+    "11",
+    "16",
+    "45"
+   ],
+   "v6": [
+    "07",
+    "22",
+    "26",
+    "28",
+    "30",
+    "31",
+    "33",
+    "35",
+    "38",
+    "44",
+    "50"
+   ]
+  },
+  "provincias_sin_casar_mivau": {
+   "mivau_iniciadas_mensual": [],
+   "mivau_terminadas_mensual": [
+    "Extremadura (1)"
+   ],
+   "mivau_iniciadas_anual": [],
+   "mivau_terminadas_anual": [],
+   "mivau_valor_tasado": []
+  }
+ },
+ "fuera_muestra": null,
+ "medida_precio": "no aplica (panel de datos)",
+ "notas": "Panel CCAA no sellado y ya usado en v1: backtests informativos. Panel provincial incluye provincias selladas v2/v6; ver docs/v7/diccionario.md."
+}

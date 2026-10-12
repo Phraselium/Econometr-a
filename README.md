@@ -22,6 +22,8 @@ Ningún resultado se presenta en una capa superior a la que alcanza. Se evalúan
 El mapa de carpetas, con lo vigente y lo histórico, está en [docs/MAPA.md](docs/MAPA.md).
 
 ## Cómo reproducir
+
+Para reconstruir una cifra sin leer el código: [output/v6_2/anexo_metodologico.md](output/v6_2/anexo_metodologico.md). La guía para revisores externos está en [docs/v6_2/guia_revisor.md](docs/v6_2/guia_revisor.md).
 ```bash
 python3 -m pip install -r requirements.lock
 make all     # datos en caché → paneles → modelos v1-v5.1 → entregables → verificador

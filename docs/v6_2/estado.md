@@ -13,6 +13,14 @@
   - Corregida la referencia de tabla en revision_humana.
 - Acumulado: 279.264 tokens (47 %).
 
+- L4 hecho por el orquestador.
+  - Asociación total frente a directa en el informe §12, el working paper §6.1, lo que sabemos, el policy brief, la ficha K2-V1 y el historial.
+  - Unidad corta «% por pp».
+  - Los rangos con mínimo negativo usan « a ».
+  - Los rangos del déficit se dan en una sola marca.
+- Anexo enlazado desde el README, el informe y el working paper.
+- L2 en curso.
+
 ## Siguiente
 - L1 (general-purpose) y L3 (econometrician) en curso.
 

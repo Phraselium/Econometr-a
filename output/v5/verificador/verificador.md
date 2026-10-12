@@ -281,7 +281,7 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 32; NO ANALIZADA: FALTAN DATO
 |---|---|
 | Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C4 |
-| Magnitud | IPVA contrato nuevo 2015-2024 +37.0 % (nacional). Incasòl renta media 2015-2025 +54.5 % (Cataluña). GVA mediana de fianza 2020-2025 +58.0 % (C. Valenciana). 2021-2024: Cataluña 16.6-17.2 %, C. Valenciana 24.6-30.8 %. Municipios con renta de fianzas x2 o más: 1 de 261 (Cataluña, 2015-2025) y 2 de 103 (C. Valenciana, 2020-2025). |
+| Magnitud | IPVA contrato nuevo 2015-2024 +37.0 % (nacional). Incasòl renta media 2015-2025 +54.5 % (Cataluña). GVA mediana de fianza 2020-2025 +58.0 % (C. Valenciana). 2021-2024: Cataluña 16.6-17.2 %, C. Valenciana 26.1-30.8 %. Municipios con renta de fianzas x2 o más: 1 de 261 (Cataluña, 2015-2025) y 2 de 103 (C. Valenciana, 2020-2025). |
 | Intervalo | [37.0; 54.5] % en 2015-2024/25 |
 | Cota | Dirección C1 en Cataluña y C. Valenciana (IPVA, Incasòl y GVA, grupos independientes, mismo signo); cuantía nacional C4 (fuentes de cobertura distinta). |
 | Literatura | No aplica. |
@@ -684,11 +684,11 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 32; NO ANALIZADA: FALTAN DATO
 |---|---|
 | Veredicto | **ANALIZADA, NO CONCLUYENTE** |
 | Capa de la evidencia | C4 |
-| Magnitud | Cuota de extranjeros (t-1), EF dobles, provincias de entrenamiento: valor tasado 4,26 % por pp sin controles [2,12; 6,41]; con demanda externa 1,60 [-0,79; 3,99]; con población -1,31 [-4,31; 1,69]. Alquiler de stock sin controles 2,67 [1,31; 4,04]. Correlación dentro de provincia cuota-población 0,66. |
+| Magnitud | Cuota de extranjeros (t-1), EF dobles, provincias de entrenamiento. Asociación TOTAL (sin controlar por población, que es un canal de la inmigración): valor tasado 4,26 % por pp [2,12; 6,41], con demanda externa 1,60 [-0,79; 3,99]; alquiler de stock 2,67 [1,31; 4,04]. Asociación DIRECTA (a igual población): valor tasado -1,31 [-4,31; 1,69]. Correlación cuota-población dentro de provincia 0,66. |
 | Intervalo | IC95 agrupados por provincia (output/v6_1/K2/inmigracion.md) |
 | Cota | — |
 | Literatura | Saiz (2007); Sá (2015): orientan el signo; ver docs/literatura.md (cuartil según marca). |
-| Regla del veredicto | Con capa C4 el veredicto es como máximo ANALIZADA, NO CONCLUYENTE. El signo y el mercado cambian con el método (2SLS/MCO), la medida de alquiler y los controles; la población puede ser mediadora. |
+| Regla del veredicto | Con capa C4 el veredicto es como máximo ANALIZADA, NO CONCLUYENTE. El signo y el mercado cambian con el método (2SLS/MCO), la medida de alquiler y los controles. Controlar por población es un mal control (la población crece por la propia inmigración): el signo negativo de la asociación directa en compra no significa que la inmigración abarate la vivienda. |
 | Límites | 41 provincias de entrenamiento (sin las 11 selladas, incluidas las islas); no reproduce la muestra de 49 provincias de v2; primera etapa débil del instrumento en esta muestra. |
 | Evidencia | output/v6_1/K2/inmigracion.md, output/v6_1/K2/pasos_inmigracion.csv, docs/v6_1/historial_conclusiones.md |
 

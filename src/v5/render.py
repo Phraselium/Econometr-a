@@ -42,17 +42,22 @@ def fmt_num(x: float, unidad: str = "") -> str:
     return s
 
 
+def _guion(a) -> str:
+    """Separador de rango: « a » si el mínimo es negativo (v6.2: «-4,3-1,7» se leía mal)."""
+    return " a " if pd.notna(a) and float(a) < 0 else "-"
+
+
 def texto(r: pd.Series, campo: str | None) -> str:
     u = r.unidad if isinstance(r.unidad, str) else ""
     sep = " " if u and u != "%" else (" " if u == "%" else "")
     if pd.isna(r.valor) and pd.notna(r["min"]) and campo in (None, "valor", "valor_rango", "cita"):
         # sin valor central: se da el rango (revisión E, B2)
-        rango = f"{fmt_num(r['min'], u)}-{fmt_num(r['max'], u)}{sep}{u}".strip()
+        rango = f"{fmt_num(r['min'], u)}{_guion(r['min'])}{fmt_num(r['max'], u)}{sep}{u}".strip()
         return rango if campo != "cita" else f"{rango} ({r.periodo}; {r.fuentes}; dato de {r.fecha_dato}; {r.capa})"
     if campo in (None, "valor_rango"):
         base = f"{fmt_num(r.valor, u)}{sep}{u}".strip()
         if campo is None and pd.notna(r["min"]) and pd.notna(r["max"]):
-            base += f" ({fmt_num(r['min'], u)}-{fmt_num(r['max'], u)}{sep}{u})".rstrip()
+            base += f" ({fmt_num(r['min'], u)}{_guion(r['min'])}{fmt_num(r['max'], u)}{sep}{u})".rstrip()
         return base
     if campo == "valor":
         return f"{fmt_num(r.valor, u)}{sep}{u}".strip()
@@ -61,7 +66,7 @@ def texto(r: pd.Series, campo: str | None) -> str:
     if campo in ("min", "max"):
         return f"{fmt_num(r[campo], u)}{sep}{u}".strip()
     if campo == "rango":
-        return f"{fmt_num(r['min'], u)}-{fmt_num(r['max'], u)}{sep}{u}".strip()
+        return f"{fmt_num(r['min'], u)}{_guion(r['min'])}{fmt_num(r['max'], u)}{sep}{u}".strip()
     if campo == "cita":
         return f"{texto(r, None)} ({r.periodo}; {r.fuentes}; dato de {r.fecha_dato}; {r.capa})"
     return str(r[campo])

@@ -41,7 +41,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## «Faltan cientos de miles de viviendas»
 
-- **PARCIALMENTE** [C2]: el déficit 2021-2024 está entre {{L3-DEF-2124-SINBAJAS:min}} y {{L3-DEF-2124-SINBAJAS:max}} con bajas nulas (cota según la corrección de la EPA)
+- **PARCIALMENTE** [C2]: el déficit 2021-2024 está en el rango {{L3-DEF-2124-SINBAJAS:rango}} con bajas nulas (cota según la corrección de la EPA)
 - Con las bajas estimadas, como máximo {{T3-H2:max}} [C4]; demoliciones con licencia: {{E-T7-demol-2024:rango}}
 
 ---

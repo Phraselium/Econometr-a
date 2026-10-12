@@ -24,15 +24,17 @@ def main():
         id="K2-V1", tema="Inmigración",
         enunciado="La llegada de inmigrantes sube el precio de la vivienda o el alquiler.",
         capa="C4",
-        magnitud=(f"Cuota de extranjeros (t-1), EF dobles, provincias de entrenamiento: valor tasado {es(s['valor'])} % por pp sin controles "
-                  f"[{es(s['min'])}; {es(s['max'])}]; con demanda externa {es(e['valor'])} [{es(e['min'])}; {es(e['max'])}]; con población "
-                  f"{es(p['valor'])} [{es(p['min'])}; {es(p['max'])}]. Alquiler de stock sin controles {es(a['valor'])} [{es(a['min'])}; {es(a['max'])}]. "
-                  f"Correlación dentro de provincia cuota-población {es(k2['K2-CORR-POB-DENTRO']['valor'])}."),
+        magnitud=(f"Cuota de extranjeros (t-1), EF dobles, provincias de entrenamiento. Asociación TOTAL (sin controlar por población, que es un canal "
+                  f"de la inmigración): valor tasado {es(s['valor'])} % por pp [{es(s['min'])}; {es(s['max'])}], con demanda externa {es(e['valor'])} "
+                  f"[{es(e['min'])}; {es(e['max'])}]; alquiler de stock {es(a['valor'])} [{es(a['min'])}; {es(a['max'])}]. Asociación DIRECTA (a igual "
+                  f"población): valor tasado {es(p['valor'])} [{es(p['min'])}; {es(p['max'])}]. Correlación cuota-población dentro de provincia "
+                  f"{es(k2['K2-CORR-POB-DENTRO']['valor'])}."),
         intervalo="IC95 agrupados por provincia (output/v6_1/K2/inmigracion.md)", cota="—",
         literatura="Saiz (2007); Sá (2015): orientan el signo; ver docs/literatura.md (cuartil según marca).",
         veredicto="ANALIZADA, NO CONCLUYENTE",
         regla=("Con capa C4 el veredicto es como máximo ANALIZADA, NO CONCLUYENTE. El signo y el mercado cambian con el método (2SLS/MCO), "
-               "la medida de alquiler y los controles; la población puede ser mediadora."),
+               "la medida de alquiler y los controles. Controlar por población es un mal control (la población crece por la propia inmigración): "
+               "el signo negativo de la asociación directa en compra no significa que la inmigración abarate la vivienda."),
         limites=("41 provincias de entrenamiento (sin las 11 selladas, incluidas las islas); no reproduce la muestra de 49 provincias de v2; "
                  "primera etapa débil del instrumento en esta muestra."),
         evidencia=["output/v6_1/K2/inmigracion.md", "output/v6_1/K2/pasos_inmigracion.csv", "docs/v6_1/historial_conclusiones.md"]),

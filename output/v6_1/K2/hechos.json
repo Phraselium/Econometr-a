@@ -5,7 +5,7 @@
   "valor": -1.308,
   "min": -4.308,
   "max": 1.692,
-  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "unidad": "% por pp",
   "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
   "cobertura": "342 observaciones provincia-año; medida_precio: valor tasado MIVAU",
   "fuentes": [
@@ -21,7 +21,7 @@
   "valor": -1.422,
   "min": -4.368,
   "max": 1.524,
-  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "unidad": "% por pp",
   "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
   "cobertura": "342 observaciones provincia-año; medida_precio: valor tasado MIVAU",
   "fuentes": [
@@ -37,7 +37,7 @@
   "valor": 4.264,
   "min": 2.115,
   "max": 6.412,
-  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "unidad": "% por pp",
   "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
   "cobertura": "342 observaciones provincia-año; medida_precio: valor tasado MIVAU",
   "fuentes": [
@@ -53,7 +53,7 @@
   "valor": 1.6,
   "min": -0.788,
   "max": 3.988,
-  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "unidad": "% por pp",
   "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
   "cobertura": "342 observaciones provincia-año; medida_precio: valor tasado MIVAU",
   "fuentes": [
@@ -69,7 +69,7 @@
   "valor": 2.673,
   "min": 1.308,
   "max": 4.037,
-  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "unidad": "% por pp",
   "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
   "cobertura": "282 observaciones provincia-año; alquiler de stock SERPAVI",
   "fuentes": [
@@ -85,7 +85,7 @@
   "valor": 1.551,
   "min": 0.052,
   "max": 3.049,
-  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "unidad": "% por pp",
   "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
   "cobertura": "282 observaciones provincia-año; alquiler de stock SERPAVI",
   "fuentes": [
@@ -101,7 +101,7 @@
   "valor": 0.178,
   "min": -1.476,
   "max": 1.832,
-  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "unidad": "% por pp",
   "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
   "cobertura": "282 observaciones provincia-año; alquiler de stock SERPAVI",
   "fuentes": [
@@ -117,7 +117,7 @@
   "valor": 0.301,
   "min": -1.302,
   "max": 1.904,
-  "unidad": "% por +1 pp de cuota de extranjeros (t-1)",
+  "unidad": "% por pp",
   "periodo": "2016-2024 (compra), 2016-2023 (alquiler)",
   "cobertura": "282 observaciones provincia-año; alquiler de stock SERPAVI",
   "fuentes": [

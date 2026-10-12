@@ -19,7 +19,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 
 **Hogares y viviendas**
 - [C1] Entre 2021 y 2025 los hogares aumentaron en {{dh_2125:cita}}.
-- [C2] En 2021-2024 los hogares crecieron más que las viviendas terminadas: balance entre {{L3-DEF-2124-SINBAJAS:min}} y {{L3-DEF-2124-SINBAJAS:max}} ({{L3-DEF-2124-SINBAJAS:periodo}}; {{L3-DEF-2124-SINBAJAS:fuentes}}; dato de {{L3-DEF-2124-SINBAJAS:fecha_dato}}; {{L3-DEF-2124-SINBAJAS:capa}}). Que es positivo lo confirman dos fuentes; la cuantía es una cota porque depende de la corrección del salto de la EPA en 2021.
+- [C2] En 2021-2024 los hogares crecieron más que las viviendas terminadas: balance en el rango {{L3-DEF-2124-SINBAJAS:rango}} ({{L3-DEF-2124-SINBAJAS:periodo}}; {{L3-DEF-2124-SINBAJAS:fuentes}}; dato de {{L3-DEF-2124-SINBAJAS:fecha_dato}}; {{L3-DEF-2124-SINBAJAS:capa}}). Que es positivo lo confirman dos fuentes; la cuantía es una cota porque depende de la corrección del salto de la EPA en 2021.
 - [C1] Viviendas terminadas al año en el territorio común: {{terminadas_1924:rango}} ({{terminadas_1924:periodo}}; {{terminadas_1924:fuentes}}; dato de {{terminadas_1924:fecha_dato}}; {{terminadas_1924:capa}}).
 - [C2] Demanda latente de los jóvenes por convivencia con los padres, frente a 2008: {{latente_convivencia:rango}} ({{latente_convivencia:periodo}}; {{latente_convivencia:fuentes}}; dato de {{latente_convivencia:fecha_dato}}; {{latente_convivencia:capa}}).
 - [C2] Hasta 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista ({{T4-H3:periodo}}; {{T4-H3:capa}}). Por provincias: {{T4-H3:valor}} empeoran, {{T4-H3:min}} mejoran y {{T4-H3:max}} quedan indeterminadas.
@@ -62,7 +62,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - Que alguno de estos factores sea la causa principal de la subida: turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas.
 - Que los topes al alquiler reduzcan los precios o la oferta: su resultado queda en C4.
 - Que haya una burbuja: la exuberancia estadística no la identifica.
-- Que la inmigración suba o baje los precios o el alquiler. Hay especificaciones con intervalos que excluyen el cero y otras que no. El signo cambia con el control de población, la medida de precio, el método y el nivel territorial, y ninguna especificación aislada es la de referencia. Todo queda en C4, sin lectura causal.
+- Que la inmigración suba o baje los precios o el alquiler. Hay especificaciones con intervalos que excluyen el cero y otras que no. El signo cambia con el control de población, la medida de precio, el método y el nivel territorial, y ninguna especificación aislada es la de referencia. La asociación total (sin controlar por población) es positiva; la directa (a igual población) no, pero controlar por población es un mal control porque la población crece por la propia inmigración. Todo queda en C4, sin lectura causal.
 - (v6) Que alguna variable sea «relevante con seguridad» para el alquiler o la compra: ninguna cumple los criterios pre-registrados y ninguna hipótesis confirmatoria pasa Holm. Las importancias de los modelos de predicción describen qué variables ayudan a predecir, no qué pasaría si una variable cambiara.
 - (v6) Que los modelos de aprendizaje profundo predigan mejor que el gradient boosting, o que algún modelo bata a la inercia en el volumen trimestral de compraventas del último año: no lo hacen.
 - El resultado de bajar impuestos a la compra o a la construcción, de la seguridad jurídica frente a la ocupación ilegal o de limitar compras de no residentes: no hay diseño ni datos.
@@ -70,10 +70,13 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 ## Qué cambió entre versiones y por qué (v6.1)
 
 - [C4] **Inmigración.** v2 la asociaba más con el alquiler y v6 con la compra. El orden depende del método, de la medida de alquiler y de los controles, no de un resultado estable que se haya invertido.
-  - Con valor tasado, la asociación de la cuota de extranjeros es {{K2-CUOTA-COMPRA-SINPOB-SIN:valor}} sin población ni controles de demanda externa.
-  - Baja a {{K2-CUOTA-COMPRA-SINPOB-EXT:valor}} con controles de costa y demanda externa.
-  - Pasa a {{K2-CUOTA-COMPRA-SIN:valor}} controlando por población, que puede ser mediadora.
-  - «ANALIZADA, NO CONCLUYENTE»: no se puede afirmar un efecto.
+  - **Asociación total** (sin controlar por población, que es uno de los canales de la inmigración):
+    - con valor tasado, {{K2-CUOTA-COMPRA-SINPOB-SIN}}; con controles de costa y demanda externa, {{K2-CUOTA-COMPRA-SINPOB-EXT}};
+    - en el alquiler de stock, {{K2-CUOTA-ALQ-SINPOB-SIN}}; con demanda externa, {{K2-CUOTA-ALQ-SINPOB-EXT}}.
+  - **Asociación directa** (a igual población): compra, {{K2-CUOTA-COMPRA-SIN}}; alquiler, {{K2-CUOTA-ALQ-NUCLEO-SIN}}.
+  - **Por qué la directa puede engañar.** La población crece en buena parte por la propia inmigración. Controlar por ella es un mal control: elimina ese canal y compara provincias con la misma población y distinta composición.
+    - Por eso el signo negativo en compra no significa que la inmigración abarate la vivienda. Solo indica que, a igual población, más cuota de extranjeros no se asocia con más precio.
+  - «ANALIZADA, NO CONCLUYENTE» [C4]: ninguna de las dos lecturas identifica un efecto.
 - [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en {{K1-N-MEJOR:num}} de las {{K1-N-TAREAS:valor}}: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.
 - [C4] **Iniciadas y alquiler.** La asociación es del mismo año. No hay orden temporal detectable, y no indica que construir suba el alquiler.
 - **Correcciones** (ERRATA.md): los contratos nuevos de la Comunitat Valenciana pasan a {{A23-A10:valor}} ({{A23-A10:rango}}) por un error de ponderación; otros redondeos son menores. Ninguna conclusión cambia.

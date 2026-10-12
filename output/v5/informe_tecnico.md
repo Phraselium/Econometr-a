@@ -16,7 +16,7 @@
 **Qué hace este informe.** Ordena lo que se puede afirmar sobre la vivienda en España con datos públicos y con qué seguridad. Cada afirmación lleva una capa de evidencia: [C1] hecho confirmado por al menos dos fuentes independientes; [C2] cota con supuestos explícitos; [C4] exploratorio o de fuente única. En esta versión no hay ninguna afirmación de tipo C3 (efecto identificado con todos los controles): ningún resultado nuevo de v5 los supera.
 
 **Lo que se sostiene con dos fuentes [C1].**
-- Entre 2021 y 2024 el número de hogares creció más que el de viviendas terminadas: la diferencia está entre 344.803 viviendas y 710.542 viviendas [C2: cota; la cuantía depende de cómo se corrija el salto de la EPA en 2021]. Con las bajas del parque estimadas, llega como máximo a 744.144 viviendas [C4].
+- Entre 2021 y 2024 el número de hogares creció más que el de viviendas terminadas: la diferencia está en el rango 344.803-710.542 viviendas [C2: cota; la cuantía depende de cómo se corrija el salto de la EPA en 2021]. Con las bajas del parque estimadas, llega como máximo a 744.144 viviendas [C4].
 - Los hogares aumentaron en 997.586 hogares (981.823-1.013.350 hogares) entre 2021 y 2025 [C1].
 - Se terminaron 72.264-94.426 viviendas/año en 2019-2024 (territorio común) [C1].
 - El precio de compra subió 47,2 % (44,2-56,1 %) en 2015-2025 según el núcleo de tres fuentes (Ministerio, Notariado y Registradores) [C1]; el índice del INE marca 79,9 % [C4]. Los dos se dan siempre juntos.
@@ -271,9 +271,9 @@ Los escenarios de B2 (`v5`), que la rejilla de `T4` incluye:
 
 **Resultados [C4].**
 - El modelo de ocho familias tiene un R² de 0,91 proporción con el valor tasado.
-- `H-B3-6` (precio inicial): -16,0 puntos logarítmicos (≈ %) por DT (-23,8--8,2 puntos logarítmicos (≈ %) por DT), p ajustado 0,00 probabilidad. Las provincias que partían de precios más bajos subieron más. Con el precio inicial de Registradores, para controlar el error de medida, el coeficiente baja a -9,0 puntos logarítmicos (≈ %) por DT y el p a 0,06 probabilidad: la asociación se mantiene en signo, pero parte de ella es mecánica (el error de medida del precio inicial empuja el coeficiente hacia valores negativos).
-- `H-B3-1` (demanda sectorial tipo Bartik): 2,4 puntos logarítmicos (≈ %) por DT (-0,06-4,8 puntos logarítmicos (≈ %) por DT), p ajustado 0,33 probabilidad. No se distingue de cero.
-- `H-B3-2` (crecimiento de la población): 3,5 puntos logarítmicos (≈ %) por DT (-0,74-7,8 puntos logarítmicos (≈ %) por DT), p ajustado 0,41 probabilidad. No se distingue de cero tras el ajuste.
+- `H-B3-6` (precio inicial): -16,0 puntos logarítmicos (≈ %) por DT (-23,8 a -8,2 puntos logarítmicos (≈ %) por DT), p ajustado 0,00 probabilidad. Las provincias que partían de precios más bajos subieron más. Con el precio inicial de Registradores, para controlar el error de medida, el coeficiente baja a -9,0 puntos logarítmicos (≈ %) por DT y el p a 0,06 probabilidad: la asociación se mantiene en signo, pero parte de ella es mecánica (el error de medida del precio inicial empuja el coeficiente hacia valores negativos).
+- `H-B3-1` (demanda sectorial tipo Bartik): 2,4 puntos logarítmicos (≈ %) por DT (-0,06 a 4,8 puntos logarítmicos (≈ %) por DT), p ajustado 0,33 probabilidad. No se distingue de cero.
+- `H-B3-2` (crecimiento de la población): 3,5 puntos logarítmicos (≈ %) por DT (-0,74 a 7,8 puntos logarítmicos (≈ %) por DT), p ajustado 0,41 probabilidad. No se distingue de cero tras el ajuste.
 - La validación cruzada dejando una provincia fuera da un RMSE de 0,07 log-puntos frente a 0,16 log-puntos del modelo de solo media [C4].
 
 **Desviaciones del pre-registro.** Están todas en `output/v5/B3/desviaciones.md` y son exploratorias: renta medida con el PIB per cápita provincial en lugar de la renta por hogar; ventanas más cortas en alquiler y renta; validación por exclusión de una provincia en lugar de AR(4); acotación del parámetro de Oster.
@@ -353,7 +353,7 @@ El parque es el conjunto de viviendas existentes y sus ocupantes; el mercado son
 
 - Peso de los compradores extranjeros no residentes: 6,8 % en 2025 frente a 9,9 % en 2015 [C4]. Con residentes, los compradores extranjeros son 16,9 % [C4].
 - Entre provincias va de 0,07-32,5 % [C4].
-- Asociación entre el peso inicial de no residentes y la subida del precio 2015-2025: bivariada 0,96 % de precio por punto de peso inicial (0,46-1,5 % de precio por punto de peso inicial); con renta, población, costa e islas, 0,02 % de precio por punto de peso inicial (-0,55-0,59 % de precio por punto de peso inicial) [C4]. Con controles el coeficiente no se distingue de cero, pero el intervalo no excluye una asociación de una parte apreciable de la bivariada. No se atribuye la subida a los no residentes ni se descarta.
+- Asociación entre el peso inicial de no residentes y la subida del precio 2015-2025: bivariada 0,96 % de precio por punto de peso inicial (0,46-1,5 % de precio por punto de peso inicial); con renta, población, costa e islas, 0,02 % de precio por punto de peso inicial (-0,55 a 0,59 % de precio por punto de peso inicial) [C4]. Con controles el coeficiente no se distingue de cero, pero el intervalo no excluye una asociación de una parte apreciable de la bivariada. No se atribuye la subida a los no residentes ni se descarta.
 
 **Lectura.** Los no residentes son una parte pequeña de las compraventas nacionales, pero muy desigual entre provincias: en algunas del litoral y los archipiélagos pesan mucho más que en el interior. La asociación con la subida de precios es frágil a los controles. No se puede afirmar que los no residentes sean un factor principal de la subida nacional ni que sean irrelevantes en las provincias donde su peso es alto.
 
@@ -449,7 +449,7 @@ D2 cruza la necesidad de B1, la clase de A4 y la matriz de D1. Aviso de definici
 - Construcción adicional: 11,6-46,5 % de la necesidad; vacías: 16.125 viviendas/año (8.063-24.188 viviendas/año), el 74,3 % en el central [C4].
 - Una ayuda general a la demanda se trasladaría al precio en 88,1-100,0 % [C4].
 
-**Clase `3`.** Necesidad: 3.130 viviendas/año (-111,0-3.971 viviendas/año) [C4]. Si construir no es rentable con el coste oficial, los instrumentos de oferta privada tendrían poco recorrido sin cambios en coste o suelo.
+**Clase `3`.** Necesidad: 3.130 viviendas/año (-111,0 a 3.971 viviendas/año) [C4]. Si construir no es rentable con el coste oficial, los instrumentos de oferta privada tendrían poco recorrido sin cambios en coste o suelo.
 
 **Clase `9`.** Necesidad: 716,0 viviendas/año (105,0-842,0 viviendas/año) [C4]. Sin clase: no evaluable.
 
@@ -540,8 +540,8 @@ La tabla completa, con documento y página de cada organismo, está en [output/v
 
 - **Que una familia de factores «explique» la subida de precios.** Las contribuciones contables no son estables entre métodos ni periodos [C4].
 - **Que los grandes tenedores o los fondos determinen los precios.** No hay datos públicos del parque por tipo de propietario. El verificador lo deja en «no analizada: faltan datos».
-- **Que los topes al alquiler bajen o suban las rentas en España.** El resultado de v3 está fuera de C3 por contaminación de la validación; la réplica de García-López y otros no se reproduce (coeficiente propio -4,2 milésimas de log-punto por punto de VUT/parque (-7,8--0,54 milésimas de log-punto por punto de VUT/parque), p ajustado 26,9 % (valor p)) porque el stock de SERPAVI recoge solo 55,1 % de la variación del flujo [C4].
-- **Que las viviendas turísticas suban el alquiler nacional.** La asociación de v3 no se distingue de cero (0,26 milésimas de log-punto por VUT/100 viv. (-0,74-1,3 milésimas de log-punto por VUT/100 viv.), p ajustado 46,7 % (valor p)); la cota de cantidad es 2,7 % del stock de alquiler [C2].
+- **Que los topes al alquiler bajen o suban las rentas en España.** El resultado de v3 está fuera de C3 por contaminación de la validación; la réplica de García-López y otros no se reproduce (coeficiente propio -4,2 milésimas de log-punto por punto de VUT/parque (-7,8 a -0,54 milésimas de log-punto por punto de VUT/parque), p ajustado 26,9 % (valor p)) porque el stock de SERPAVI recoge solo 55,1 % de la variación del flujo [C4].
+- **Que las viviendas turísticas suban el alquiler nacional.** La asociación de v3 no se distingue de cero (0,26 milésimas de log-punto por VUT/100 viv. (-0,74 a 1,3 milésimas de log-punto por VUT/100 viv.), p ajustado 46,7 % (valor p)); la cota de cantidad es 2,7 % del stock de alquiler [C2].
 - **Que haya una burbuja.** Las pruebas de exuberancia (GSADF) con tamaño corregido detectan episodios en algunas razones de precio y no en otras; una exuberancia estadística no es una burbuja (sección de robustez del working paper).
 - **Que el pre-registro de B3 confirme una hipótesis.** Su potencia era insuficiente; el resultado es descriptivo.
 - **Que alguna variable sea «relevante con seguridad» para el alquiler o la compra (v6).** Ninguna cumple los criterios pre-registrados (0 variables) y ninguna hipótesis confirmatoria pasa Holm; las importancias de los modelos de predicción son descriptivas (véase la sección sobre alquiler y compraventa) [C4].
@@ -720,9 +720,14 @@ El historial completo, con versión, variable, medida, nivel, periodo, método, 
 - En v2, el flujo de inmigración, instrumentado con las cuotas de 2002, se asociaba más con el alquiler que con el precio de compra.
 - En v6, la cuota de extranjeros aparece en más modelos de compra que de alquiler.
 - Al repetir la comparación cambiando una sola dimensión cada vez, el orden entre mercados depende del método (mínimos cuadrados en dos etapas frente a MCO) y de la medida de alquiler (SERPAVI frente a IPC).
-- Con valor tasado, sin población ni controles de demanda externa, la cuota de extranjeros se asocia con 4,3 % por +1 pp de cuota de extranjeros (t-1) (2,1-6,4 % por +1 pp de cuota de extranjeros (t-1)).
-  - Con controles de demanda externa (costa, vivienda no principal y compras de extranjeros residentes) baja a 1,6 % por +1 pp de cuota de extranjeros (t-1) (-0,79-4,0 % por +1 pp de cuota de extranjeros (t-1)). Esto es compatible con que la cuota recoja en parte provincias de costa.
-  - Controlando además por población, que dentro de cada provincia tiene una correlación de 0,66 correlacion con la cuota, pasa a -1,3 % por +1 pp de cuota de extranjeros (t-1) (-4,3-1,7 % por +1 pp de cuota de extranjeros (t-1)). La población puede ser mediadora o un término mecánico de la propia inmigración: controlarla estima otra magnitud y no prueba que la cuota no importe.
+- Separando la lectura total de la directa (0,66 correlacion de correlación entre cuota y población dentro de cada provincia):
+  - **Asociación total** (sin controlar por población, que es uno de los canales de la inmigración):
+    - con valor tasado, 4,3 % por pp (2,1-6,4 % por pp); con controles de costa y demanda externa, 1,6 % por pp (-0,79 a 4,0 % por pp);
+    - en el alquiler de stock, 2,7 % por pp (1,3-4,0 % por pp); con demanda externa, 1,6 % por pp (0,05-3,0 % por pp).
+  - **Asociación directa** (a igual población): compra, -1,3 % por pp (-4,3 a 1,7 % por pp); alquiler, 0,18 % por pp (-1,5 a 1,8 % por pp).
+  - **Por qué la directa puede engañar.** La población crece en buena parte por la propia inmigración. Controlar por ella es un mal control: elimina ese canal y compara provincias con la misma población y distinta composición.
+    - Por eso el signo negativo en compra no significa que la inmigración abarate la vivienda. Solo indica que, a igual población, más cuota de extranjeros no se asocia con más precio.
+  - «ANALIZADA, NO CONCLUYENTE» [C4]: ninguna de las dos lecturas identifica un efecto.
 - Las islas no se pueden contrastar porque están en la muestra sellada.
 - **Conclusión única [C4], «ANALIZADA, NO CONCLUYENTE».** Las diferencias entre versiones se explican por cambios de método, de controles y de medida, no por un resultado estable que se haya invertido. No se puede afirmar un efecto de la inmigración sobre el precio ni sobre el alquiler.
 
@@ -762,6 +767,7 @@ Licencias: `docs/v5/licencias_datos.md`. Fuentes fallidas: `docs/v5/fuentes_fall
 
 ## Anexo B. Replicación
 
+- **Anexo metodológico** ([output/v6_2/anexo_metodologico.md](../v6_2/anexo_metodologico.md)): una ficha por cifra publicable, con definición, fuente y fichero de data/raw, filtros, fórmula paso a paso, supuestos, capa y script. Permite reconstruir cada cifra sin leer el código; una segunda implementación independiente, escrita solo con el anexo, se comprueba en `make check` (tests/doble_impl). <!-- check:cifra-libre (ruta de versión) -->
 - `make all` reconstruye todo sin red; las descargas están en los scripts `*_fetch.py`, fuera de `make all`.
 - `make check` ejecuta `src/v5/check_v5.py` (cifras fuera de marcador, sumas provinciales iguales al total nacional, capas válidas) y `src/v3/check_texto.py` (léxico valorativo o partidista y lenguaje causal por debajo de C3).
 - Este informe se genera con `python3 src/v5/render.py` desde `docs/v5/plantillas/informe_tecnico.md`.

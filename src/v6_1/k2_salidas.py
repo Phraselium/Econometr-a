@@ -223,7 +223,7 @@ Las versiones v1-v3 y v6 no estiman la misma asociación de la inmigración con 
                     unidad=unidad, periodo=per, cobertura=f"{int(r['N'])} observaciones provincia-año; {cob}",
                     fuentes=["output/v6_1/K2/registro_holm.csv", "output/v6/M0/paneles/prov_compra_anual_train.csv.gz"],
                     capa="C4", fecha_dato=FECHA)
-    u = "% por +1 pp de cuota de extranjeros (t-1)"
+    u = "% por pp"  # v6.2: unidad corta (por +1 punto porcentual de cuota de extranjeros en t-1)
     hechos = [
         hecho("K2-CUOTA-COMPRA-SIN", "Cuota de extranjeros (t-1) y valor tasado MIVAU, EF dobles, con nucleo de controles (poblacion incluida), sin controles de demanda externa", cp0, u, "medida_precio: valor tasado MIVAU"),
         hecho("K2-CUOTA-COMPRA-EXT", "Idem con controles de demanda externa (costa x anio, vivienda no principal x anio, compras de extranjeros residentes)", cp1, u, "medida_precio: valor tasado MIVAU"),

@@ -5,7 +5,7 @@
 ## Mensajes principales
 
 1. [C1] Entre 2021 y 2025 el número de hogares aumentó en {{dh_2125}}, con dos fuentes de hogares (ECP y EPA corregida) que coinciden en orden de magnitud.
-2. [C2] En 2021-2024 los hogares crecieron más que las viviendas terminadas: el balance acumulado está entre {{L3-DEF-2124-SINBAJAS:min}} y {{L3-DEF-2124-SINBAJAS:max}} sin contar bajas del parque (cota: depende de la corrección del salto de la EPA en 2021). [C4] Con las bajas del parque estimadas, llegaría como máximo a {{T3-H2:max}}.
+2. [C2] En 2021-2024 los hogares crecieron más que las viviendas terminadas: el balance acumulado está en el rango {{L3-DEF-2124-SINBAJAS:rango}} sin contar bajas del parque (cota: depende de la corrección del salto de la EPA en 2021). [C4] Con las bajas del parque estimadas, llegaría como máximo a {{T3-H2:max}}.
 3. [C1] Las viviendas terminadas fueron de {{terminadas_1924:rango}} en 2019-2024 (territorio común), con el Ministerio y el Catastro de acuerdo.
 4. [C1] El precio de compra subió {{A23-P2}} en 2015-2025 según el núcleo Ministerio-Notariado-Registradores. [C1] El alquiler de los contratos vigentes subió {{A23-A2:rango}} en 2015-2024; el de los contratos nuevos crece más deprisa, pero esa brecha es [C4].
 5. [C2] La proyección del INE añade {{B1-H4}} en 2026-2035: es la parte de la necesidad que no depende de supuestos propios sobre el parque.
@@ -52,10 +52,13 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 ## Qué cambió entre versiones y por qué (v6.1)
 
 - [C4] **Inmigración.** v2 la asociaba más con el alquiler y v6 con la compra. El orden depende del método, de la medida de alquiler y de los controles, no de un resultado estable que se haya invertido.
-  - Con valor tasado, la asociación de la cuota de extranjeros es {{K2-CUOTA-COMPRA-SINPOB-SIN:valor}} sin población ni controles de demanda externa.
-  - Baja a {{K2-CUOTA-COMPRA-SINPOB-EXT:valor}} con controles de costa y demanda externa.
-  - Pasa a {{K2-CUOTA-COMPRA-SIN:valor}} controlando por población, que puede ser mediadora.
-  - «ANALIZADA, NO CONCLUYENTE»: no se puede afirmar un efecto.
+  - **Asociación total** (sin controlar por población, que es uno de los canales de la inmigración):
+    - con valor tasado, {{K2-CUOTA-COMPRA-SINPOB-SIN}}; con controles de costa y demanda externa, {{K2-CUOTA-COMPRA-SINPOB-EXT}};
+    - en el alquiler de stock, {{K2-CUOTA-ALQ-SINPOB-SIN}}; con demanda externa, {{K2-CUOTA-ALQ-SINPOB-EXT}}.
+  - **Asociación directa** (a igual población): compra, {{K2-CUOTA-COMPRA-SIN}}; alquiler, {{K2-CUOTA-ALQ-NUCLEO-SIN}}.
+  - **Por qué la directa puede engañar.** La población crece en buena parte por la propia inmigración. Controlar por ella es un mal control: elimina ese canal y compara provincias con la misma población y distinta composición.
+    - Por eso el signo negativo en compra no significa que la inmigración abarate la vivienda. Solo indica que, a igual población, más cuota de extranjeros no se asocia con más precio.
+  - «ANALIZADA, NO CONCLUYENTE» [C4]: ninguna de las dos lecturas identifica un efecto.
 - [C4] **Modelos.** Frente a la línea base más exigente, la ventaja predictiva se mantiene en {{K1-N-MEJOR:num}} de las {{K1-N-TAREAS:valor}}: alquiler de stock y precio de tasación, frágil en el anual. Desaparece en el precio municipal, con Registradores y en el volumen anual.
 - [C4] **Iniciadas y alquiler.** La asociación es del mismo año. No hay orden temporal detectable, y no indica que construir suba el alquiler.
 - **Correcciones** (ERRATA.md): los contratos nuevos de la Comunitat Valenciana pasan a {{A23-A10:valor}} ({{A23-A10:rango}}) por un error de ponderación; otros redondeos son menores. Ninguna conclusión cambia.
@@ -88,7 +91,7 @@ Las solicitudes de docs/v5/solicitudes.md, por orden de prioridad:
 - No atribuye la subida de precios a un factor principal: turísticos, inmigración, oferta, tipos, compradores extranjeros o empresas.
 - No afirma que los topes al alquiler reduzcan precios u oferta: su resultado queda en [C4].
 - No afirma que haya una burbuja.
-- No afirma que la inmigración suba o baje los precios: el signo de la asociación cambia con el control de población, la medida de precio y el nivel territorial [C4].
+- No afirma que la inmigración suba o baje los precios: el signo de la asociación cambia con el control de población, la medida de precio y el nivel territorial [C4]. El signo negativo a igual población no indica que la inmigración abarate la vivienda: controlar por población elimina el canal principal.
 - No afirma que ninguna variable determine el alquiler o el precio de compra: las importancias de los modelos de predicción de v6 son descriptivas.
 
 ## Neutralidad

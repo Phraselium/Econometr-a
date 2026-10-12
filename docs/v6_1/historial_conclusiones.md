@@ -42,3 +42,9 @@ Fecha: 2026-10-11. Una fila por conclusión relevante. Capa: las versiones v1-v2
 | v1 | Predicción | RMSE fuera de muestra | Nacional | 2008-2026 | ECM preferido | n/a | no mejora al AR(4) (DM p 0,509) | C4 | **Se mantiene** como línea base | output/informe.md |
 | v2/BA | Demografía (20-34) | Alquiler y su predicción | Provincia | 2008-2024 | Modelo H1, muestra sellada | + | RMSE 0,0108 frente a 0,0122 del AR(4) (DM-HLN p 0,005) | C4 | **Se mantiene** (hecho predictivo, no asociación robusta) | output/v2/informe_v2.md §1 |
 | v6/M4 | Modelos de ML | RMSE sellado (11 provincias, último año) | Provincia, municipio | 2024-2025 | RF, GB, bosque | n/a | mejor modelo: alquiler provincia 1,61 frente a 4,21 de la persistencia; ninguna variable «relevante con seguridad» | C4 | **Se mantiene**; K1 añade líneas base más exigentes | output/v6/M4; output/v6_1/K1 |
+
+
+## Adenda v6.2 (L4): inmigración, asociación total frente a directa
+- **Asociación total** (sin controlar por población; la población es un canal de la propia inmigración): positiva en compra (valor tasado, unos 4,3 % por punto de cuota) y en alquiler de stock (unos 2,7 %). Con controles de costa y demanda externa baja (1,6 y 1,6) y el intervalo de compra incluye el cero.
+- **Asociación directa** (a igual población): compra −1,3 (IC −4,3 a 1,7) y alquiler 0,18 (IC −1,5 a 1,8). Controlar por población es un mal control: el signo negativo no significa que la inmigración abarate la vivienda.
+- **Estado.** Se mantiene la conclusión única de K2: C4, «ANALIZADA, NO CONCLUYENTE». Cambia la redacción en todos los entregables y en la ficha K2-V1. Las cifras vigentes están en output/v5/cifras_clave.csv (K2-CUOTA-*).

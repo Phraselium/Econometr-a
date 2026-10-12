@@ -16,7 +16,7 @@
 **Qué hace este informe.** Ordena lo que se puede afirmar sobre la vivienda en España con datos públicos y con qué seguridad. Cada afirmación lleva una capa de evidencia: [C1] hecho confirmado por al menos dos fuentes independientes; [C2] cota con supuestos explícitos; [C4] exploratorio o de fuente única. En esta versión no hay ninguna afirmación de tipo C3 (efecto identificado con todos los controles): ningún resultado nuevo de v5 los supera.
 
 **Lo que se sostiene con dos fuentes [C1].**
-- Entre 2021 y 2024 el número de hogares creció más que el de viviendas terminadas: la diferencia está entre {{L3-DEF-2124-SINBAJAS:min}} y {{L3-DEF-2124-SINBAJAS:max}} [C2: cota; la cuantía depende de cómo se corrija el salto de la EPA en 2021]. Con las bajas del parque estimadas, llega como máximo a {{T3-H2:max}} [C4].
+- Entre 2021 y 2024 el número de hogares creció más que el de viviendas terminadas: la diferencia está en el rango {{L3-DEF-2124-SINBAJAS:rango}} [C2: cota; la cuantía depende de cómo se corrija el salto de la EPA en 2021]. Con las bajas del parque estimadas, llega como máximo a {{T3-H2:max}} [C4].
 - Los hogares aumentaron en {{dh_2125}} entre 2021 y 2025 [C1].
 - Se terminaron {{terminadas_1924:rango}} en 2019-2024 (territorio común) [C1].
 - El precio de compra subió {{A23-P2}} en 2015-2025 según el núcleo de tres fuentes (Ministerio, Notariado y Registradores) [C1]; el índice del INE marca {{A23-P1:valor}} [C4]. Los dos se dan siempre juntos.
@@ -720,9 +720,14 @@ El historial completo, con versión, variable, medida, nivel, periodo, método, 
 - En v2, el flujo de inmigración, instrumentado con las cuotas de 2002, se asociaba más con el alquiler que con el precio de compra.
 - En v6, la cuota de extranjeros aparece en más modelos de compra que de alquiler.
 - Al repetir la comparación cambiando una sola dimensión cada vez, el orden entre mercados depende del método (mínimos cuadrados en dos etapas frente a MCO) y de la medida de alquiler (SERPAVI frente a IPC).
-- Con valor tasado, sin población ni controles de demanda externa, la cuota de extranjeros se asocia con {{K2-CUOTA-COMPRA-SINPOB-SIN:valor}} ({{K2-CUOTA-COMPRA-SINPOB-SIN:rango}}).
-  - Con controles de demanda externa (costa, vivienda no principal y compras de extranjeros residentes) baja a {{K2-CUOTA-COMPRA-SINPOB-EXT:valor}} ({{K2-CUOTA-COMPRA-SINPOB-EXT:rango}}). Esto es compatible con que la cuota recoja en parte provincias de costa.
-  - Controlando además por población, que dentro de cada provincia tiene una correlación de {{K2-CORR-POB-DENTRO:valor}} con la cuota, pasa a {{K2-CUOTA-COMPRA-SIN:valor}} ({{K2-CUOTA-COMPRA-SIN:rango}}). La población puede ser mediadora o un término mecánico de la propia inmigración: controlarla estima otra magnitud y no prueba que la cuota no importe.
+- Separando la lectura total de la directa ({{K2-CORR-POB-DENTRO:valor}} de correlación entre cuota y población dentro de cada provincia):
+  - **Asociación total** (sin controlar por población, que es uno de los canales de la inmigración):
+    - con valor tasado, {{K2-CUOTA-COMPRA-SINPOB-SIN}}; con controles de costa y demanda externa, {{K2-CUOTA-COMPRA-SINPOB-EXT}};
+    - en el alquiler de stock, {{K2-CUOTA-ALQ-SINPOB-SIN}}; con demanda externa, {{K2-CUOTA-ALQ-SINPOB-EXT}}.
+  - **Asociación directa** (a igual población): compra, {{K2-CUOTA-COMPRA-SIN}}; alquiler, {{K2-CUOTA-ALQ-NUCLEO-SIN}}.
+  - **Por qué la directa puede engañar.** La población crece en buena parte por la propia inmigración. Controlar por ella es un mal control: elimina ese canal y compara provincias con la misma población y distinta composición.
+    - Por eso el signo negativo en compra no significa que la inmigración abarate la vivienda. Solo indica que, a igual población, más cuota de extranjeros no se asocia con más precio.
+  - «ANALIZADA, NO CONCLUYENTE» [C4]: ninguna de las dos lecturas identifica un efecto.
 - Las islas no se pueden contrastar porque están en la muestra sellada.
 - **Conclusión única [C4], «ANALIZADA, NO CONCLUYENTE».** Las diferencias entre versiones se explican por cambios de método, de controles y de medida, no por un resultado estable que se haya invertido. No se puede afirmar un efecto de la inmigración sobre el precio ni sobre el alquiler.
 
@@ -762,6 +767,7 @@ Licencias: `docs/v5/licencias_datos.md`. Fuentes fallidas: `docs/v5/fuentes_fall
 
 ## Anexo B. Replicación
 
+- **Anexo metodológico** ([output/v6_2/anexo_metodologico.md](../v6_2/anexo_metodologico.md)): una ficha por cifra publicable, con definición, fuente y fichero de data/raw, filtros, fórmula paso a paso, supuestos, capa y script. Permite reconstruir cada cifra sin leer el código; una segunda implementación independiente, escrita solo con el anexo, se comprueba en `make check` (tests/doble_impl). <!-- check:cifra-libre (ruta de versión) -->
 - `make all` reconstruye todo sin red; las descargas están en los scripts `*_fetch.py`, fuera de `make all`.
 - `make check` ejecuta `src/v5/check_v5.py` (cifras fuera de marcador, sumas provinciales iguales al total nacional, capas válidas) y `src/v3/check_texto.py` (léxico valorativo o partidista y lenguaje causal por debajo de C3).
 - Este informe se genera con `python3 src/v5/render.py` desde `docs/v5/plantillas/informe_tecnico.md`.

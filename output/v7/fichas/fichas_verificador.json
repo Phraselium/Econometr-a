@@ -1,0 +1,54 @@
+[
+ {
+  "id": "V7-V1",
+  "tema": "Determinantes regionales de largo plazo",
+  "enunciado": "En cada comunidad autónoma, el precio y el alquiler dependen a largo plazo sobre todo del empleo y de la población.",
+  "magnitud": "Paneles de 17 CCAA, 2007T1-2026T2 (MG con demeaning, PMG y CS-DL). Ninguna de las 7 hipótesis de largo plazo se confirma tras Holm y triangulación. Rango del coeficiente del empleo en alquiler: 0,003 a 0,088; en compra: -0,46 a -0,06. La velocidad de ajuste no es significativa frente al valor crítico simulado.",
+  "intervalo": "rango entre estimadores (output/v7/R4/*/hipotesis.csv)",
+  "literatura": "Pesaran, Shin y Smith (1999); Chudik y Pesaran (2015).",
+  "limites": "Con un factor común I(1) de cargas heterogéneas ningún estimador es apto en el Monte Carlo (R2); I(2) no descartado en 8 de 17 CCAA.",
+  "evidencia": [
+   "output/v7/R4/alquiler/resumen.md",
+   "output/v7/R4/compra/resumen.md",
+   "docs/v7/validacion_herramientas.md"
+  ],
+  "capa": "C4",
+  "cota": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Con capa C4 el veredicto es como máximo ANALIZADA, NO CONCLUYENTE. Muestra regional ya vista en v1; la validación limpia es diferida (make evaluate_v7)."
+ },
+ {
+  "id": "V7-V2",
+  "tema": "Ayudas a la compra",
+  "enunciado": "Las ayudas directas a la compra abaratan la vivienda.",
+  "magnitud": "Simulación de traslado (rejilla de elasticidades de v5, C4), a 10 años, mediana entre CCAA: el esfuerzo neto del beneficiario varía -5,3 %, pero el precio de mercado sube 4,4 % (afecta a quien no recibe la ayuda).",
+  "intervalo": "p5-p95 del esfuerzo: -9,4 a -2,5 %",
+  "literatura": "Incidencia según elasticidades de oferta y demanda (rejilla de v5; ver docs/literatura.md).",
+  "limites": "Elasticidad de oferta regional no utilizable (DOLS fuera de [0; 5]); parámetros supuestos.",
+  "evidencia": [
+   "output/v7/R6/impactos.csv",
+   "output/v7/R6/metodo.md"
+  ],
+  "capa": "C4",
+  "cota": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Con capa C4 el veredicto es como máximo ANALIZADA, NO CONCLUYENTE. Muestra regional ya vista en v1; la validación limpia es diferida (make evaluate_v7)."
+ },
+ {
+  "id": "V7-V3",
+  "tema": "Tipos de interés y regiones",
+  "enunciado": "Las subidas de los tipos de interés abaratan la vivienda más en las regiones con más hipotecas.",
+  "magnitud": "Proyecciones locales de panel (17 CCAA) con exposición hipotecaria 2015-2019: en compra, 2 horizontes con q de BH < 0,10 que no resisten a Driscoll-Kraay; en alquiler, ninguno. El signo depende de cómo se construye el shock.",
+  "intervalo": "output/v7/R4b/lp_*.csv",
+  "literatura": "Jordà (2005), proyecciones locales.",
+  "limites": "Shock = residuo AR(2) del tipo nacional (desviación declarada); 17 unidades.",
+  "evidencia": [
+   "output/v7/R4b/lp_compra.csv",
+   "output/v7/R4b/resumen.md"
+  ],
+  "capa": "C4",
+  "cota": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Con capa C4 el veredicto es como máximo ANALIZADA, NO CONCLUYENTE. Muestra regional ya vista en v1; la validación limpia es diferida (make evaluate_v7)."
+ }
+]

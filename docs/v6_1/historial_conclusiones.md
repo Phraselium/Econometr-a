@@ -52,3 +52,17 @@ Fecha: 2026-10-11. Una fila por conclusión relevante. Capa: las versiones v1-v2
 
 ## Adenda V7 (R0)
 - **v1, predicción.** El DM del ECM frente al AR(4) es p = 0,509 con el precio real y p = 0,290 con el precio nominal. Son dos modelos distintos, no un error (output/f2/real_oos_dm.md y oos_dm.md). En ninguno de los dos el ECM predice mejor que el AR(4).
+
+## Adenda V7 (atlas econométrico regional, 2026-10-12): qué añade, qué confirma y qué matiza respecto a v6.2
+
+| Tema | V7 (CCAA trimestral, 2007-2026) | Relación con v6.2 | Capa |
+|---|---|---|---|
+| Largo plazo precio y alquiler con empleo, población, hipotecas y paro | Ninguna de las 7 hipótesis pre-registradas se confirma (MG con demeaning, PMG y CS-DL; Holm; triangulación). Los signos cambian entre estimadores y órdenes de retardo | **Confirma** la falta de efectos «relevantes con seguridad» de v6 y v1, ahora con paneles dinámicos heterogéneos | C4 |
+| Cointegración y velocidad de ajuste | No se establece cointegración: el tipo Westerlund tiene baja potencia y Pedroni rechaza solo en una especificación. φ̄ no supera el valor crítico simulado (−8,83). Ajuste aparente más lento en alquiler (semivida de unos 6-9 trimestres) que en compra (unos 3,5) | **Añade** (nuevo) | C4 |
+| Tipos de interés por exposición regional | Proyecciones locales sin respuesta diferencial robusta | **Confirma** v1 y v2 (sin efecto robusto de tipos y crédito) | C4 |
+| Zonas tensionadas y topes | Asociación de corto plazo de las zonas tensionadas que pasa BH, pero con pretendencia no descartada; topes no significativos | **Confirma** el C4 de v2 y v3 | C4 |
+| Predicción regional | El mejor modelo por región bate a la base más exigente en 6 de 17 CCAA en alquiler y en 5 de 17 en compra (selección en muestra, optimista); PMG no la bate | **Matiza** K1 (6 de 9 tareas provinciales en v6.1) | C4 |
+| Propuestas | Robustas (sin subida del precio de mercado): movilización de vacías, vivienda pública e impuestos a la construcción en la mayoría de CCAA; turísticos y construcción adicional en pocas. Las ayudas a la demanda y la rebaja de ITP/IVA reducen el esfuerzo neto del beneficiario pero suben el precio de mercado | **Añade** la evaluación de ITP/IVA e impuestos a la construcción, que estaba sin evaluar en v4 y v5 | C4 |
+| Muestra | Todo es «informativo, muestra ya vista en v1»; la validación limpia es diferida (`make evaluate_v7`) | Nuevo protocolo | — |
+
+Especificaciones registradas acumuladas, de v1 a V7: output/v7/cuenta_especificaciones.md.

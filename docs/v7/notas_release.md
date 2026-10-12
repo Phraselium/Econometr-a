@@ -14,6 +14,6 @@ El pre-registro de V7 (docs/v7/hipotesis.md) y la congelación de los modelos de
 7. Publica el resultado (output/v7/evaluate/resultado.json), sea favorable o no.
 
 ## Datos de la congelación (los rellena el cierre de R5)
-sha256_modelos_congelados: PENDIENTE
+sha256_modelos_congelados: 93795a9480eccf03f382bc20253561dd37e240287921453fd0d1add40a9a0646
 fecha_verificable: PENDIENTE
 prereg_v7_commit_local: 3fad305 (etiqueta local `prereg-v7`; el remoto rechaza etiquetas)

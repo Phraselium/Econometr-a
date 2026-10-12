@@ -23,3 +23,7 @@
 | R4a núcleo | 220.000 | 105.239 |
 | R4b jerárquico, LP, regulación y provincia | 150.000 | 89.369 |
 | Revisor R4 | 45.000 | 65.590 (excedido) |
+| R4a (total, con el REHACER) | 290.000 | 138.307 |
+| R5 predicción | 100.000 | 84.167 |
+
+Acumulado: unos 743.500 tokens (57 %). Topes reducidos: R6 150.000 y R7 80.000.

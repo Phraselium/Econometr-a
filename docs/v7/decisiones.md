@@ -86,3 +86,12 @@
   - Signos estables entre retardos en solo 8 de 40 combinaciones.
   - Descomposición histórica con el residuo dominante.
   - **Conclusión de R4 (C4, informativa, muestra ya vista en v1).** Con los datos regionales trimestrales de 2007-2026 no se identifica una relación de largo plazo estable ni común entre precios o alquileres y empleo, población, hipotecas o paro. La velocidad de ajuste no es significativa frente al valor crítico simulado. Lo que se observa son diferencias regionales de corto plazo y de velocidad de ajuste, sin inferencia válida individual.
+- **V16 · R5.** El mejor modelo por región bate a la base más exigente en 6 de 17 CCAA en alquiler y en 5 de 17 en compra. PMG no la bate en ningún mercado.
+  - La selección del mejor modelo es en muestra, así que el resultado es optimista.
+  - Los modelos quedan congelados (sha256 en docs/v7/notas_release.md) para `make evaluate_v7`.
+  - Desviaciones declaradas en output/v7/R5/resumen.md:
+    - ECM v1 nacional con ajuste por nivel;
+    - PMG sin demeaning;
+    - regresores futuros con dX = 0;
+    - LightGBM con una sola configuración.
+- **V17 · Presupuesto restante** (en torno al 57 % consumido). R6 queda con un tope de 150.000 y R7 con 80.000. La revisión final la hace el orquestador (V14).

@@ -67,3 +67,10 @@
     - CIPS sobrerrechaza en series I(1) con un componente I(0) grande. El orden de integración se juzga por ADF, KPSS y Zivot-Andrews por región, con CIPS solo como apoyo.
     - SBC acierta el orden ARDL(2,1) el 52 % de las veces, así que se reportan también ARDL(1,1) y (2,2).
     - PMG es inestable con retroalimentación, roturas o ajuste lento: se trata como contraste, no como principal.
+- **V13 · Revisión de R4: REHACER parcial, ronda 1 de 2** (docs/v7/revision_R4.md). Se mantiene lo esencial: ninguna de las 7 hipótesis confirmatorias se confirma, y E1 y E2 no rechazan (Holm verificado a mano por el revisor). Correcciones encargadas al subagente de R4a (tope adicional de 70.000):
+  - magnitudes ×100: crítica;
+  - IC y p de φ sin valor crítico válido;
+  - interpretación del Hausman: un rechazo sin cointegración no indica heterogeneidad;
+  - posible I(2) de ln IPV y Holm sobre las cotas ARDL;
+  - sensibilidad al orden de retardos y Bai-Perron;
+  - descomposición histórica (contabilidad descriptiva con el residuo visible) y tablas por región.

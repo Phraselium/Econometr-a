@@ -1,6 +1,6 @@
 # Paquete de replicación: vivienda en España (v1-v5)
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** 6.2 (cierre para revisión externa). **Cita:** CITATION.cff. **DOI:** pendiente (Zenodo; .zenodo.json). **Licencia:** MIT para el código y CC BY 4.0 para los textos propios (LICENSE); los datos de terceros conservan su licencia (docs/v5/licencias_datos.md).
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** 7.0 (atlas regional; `make v7`, 2 ejecuciones idénticas de unos 50 min). **Cita:** CITATION.cff. **DOI:** pendiente (Zenodo; .zenodo.json). **Licencia:** MIT para el código y CC BY 4.0 para los textos propios (LICENSE); los datos de terceros conservan su licencia (docs/v5/licencias_datos.md).
 
 Este README sigue el modelo de los editores de datos (AEA Data Editor / Social Science Data Editors). Explica cómo reproducir **todas** las tablas, figuras y documentos del proyecto a partir de los datos incluidos y sin conexión a la red.
 

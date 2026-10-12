@@ -2,6 +2,29 @@
 
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
+## v7.0 (2026-10-12): atlas econométrico regional
+
+**Panel y herramientas.**
+- Panel trimestral de las 17 CCAA (2007T1-2026T2), ampliado con paro, hipotecas, dummies regulatorias, exposición regional y shocks nacionales comunes.
+- Panel provincial de las 52 provincias.
+- MG, PMG, DFE, CS-ARDL y CS-DL, CIPS, «tipo Westerlund», Pedroni y Hausman, validados con Monte Carlo (docs/v7/validacion_herramientas.md). Con un factor común I(1) de cargas heterogéneas ningún estimador es apto, de ahí la regla de triangulación entre MG_dm, PMG_dm y CS-DL.
+
+**Pre-registro.** Etiqueta local `prereg-v7`. Validación limpia diferida con `make evaluate_v7` y modelos congelados (sha256 en docs/v7/notas_release.md).
+
+**Resultados** (C4; informativos, porque la muestra ya se vio en v1):
+- Ninguna de las 7 hipótesis de largo plazo se confirma y no se establece cointegración.
+- La velocidad de ajuste no es significativa frente al valor crítico simulado.
+- I(2) no se descarta en 8 de 17 CCAA.
+- Las proyecciones locales no dan una respuesta robusta a los tipos.
+- Zonas tensionadas: asociación de corto plazo, sin descartar pretendencia.
+- Backtest: el mejor modelo bate a la base más exigente en 6 de 17 CCAA en alquiler y en 5 de 17 en compra.
+
+**Propuestas** (condicionales, C4). Robustas, es decir, sin subida del precio de mercado: movilización de vacías, vivienda pública e impuestos a la construcción en la mayoría de CCAA. Las ayudas a la demanda y la rebaja de ITP/IVA reducen el esfuerzo del beneficiario pero suben el precio de mercado.
+
+**Entregables.** output/v7/atlas (17 fichas), atlas_resumen.md, tablas_regionales.xlsx, anexo de ecuaciones, guía de lectura y verificador V7 aparte.
+
+**Reproducibilidad.** `make v7`, ejecutado dos veces en un clon limpio, da md5 idénticos.
+
 ## v6.3 (2026-10-12): correcciones de los pendientes de v6.2 (R0 de V7)
 
 - **D2** reparte ahora la necesidad de T3 (v5.1, base sin X) en lugar de la de B1 (v5). Cobertura de P-D: del 29,1 % (11,6-46,5) al 29,7 % (11,9-47,5); necesidad de la clase 1: de 189.335 a 185.283 viviendas/año. Detalle en ERRATA.md.

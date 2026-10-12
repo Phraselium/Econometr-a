@@ -114,3 +114,13 @@
   - **R2** (montecarlo.csv, registro.csv y una cifra de validacion_herramientas.md). La potencia del Hausman con sándwich pasa de 0,24 a 0,235. Las salidas versionadas se generaron en el entorno del subagente, con varios hilos; el clon, con un solo hilo, es reproducible y es la referencia. Ningún veredicto de aptitud cambia.
   - **R4b resultado.json.** La nota «Veredicto: ANALIZADA, NO CONCLUYENTE» solo estaba en el fichero versionado y no en el código; ahora la escribe el código.
   - Se hace una segunda ronda de `make v7` ×2 con las correcciones, y sus salidas se copian.
+- **V20 · Cierre de V7.**
+  - **Segunda ronda de `make v7` ×2** en un clon limpio de 74ed3e2: 3.053 s y 3.044 s, rc=0, **md5 idénticos en los 168 ficheros**. Las salidas de R2 de ese clon, con un solo hilo, sustituyen a las versionadas (V19).
+  - **`make all` completo** en un clon limpio de 5d3ac40: 7.435 s, rc=0. Diferencias frente a lo versionado:
+    - las de R2 y R4b ya explicadas (V19);
+    - la propagación de v6.3 a las coberturas E-E1-D2 (anotada en ERRATA);
+    - K4C y K4D, que dependen de los documentos y de la versión;
+    - tiempos.json e ine.md, que dependen del entorno.
+  - La cadena de v5 regenerada en local es idéntica a la del clon.
+  - **Versión 7.0** en CITATION, Zenodo, README y CHANGELOG.
+  - Etiquetas locales `prereg-v7` y `v7.0`: el remoto las rechaza; ver docs/v7/tareas_autor.md.

@@ -108,7 +108,7 @@ Valor critico al 5 % para H7-E2 (cuantil 5 % del t de MG para phi-bar bajo H0, e
 |---|---|---|---|---|---|
 | Hausman_VMG | 0.06 | 0.03 | 0.235 | 0.245 | 0.605 |
 | Hausman_info | 0.135 | 0.08 | 0.275 | 0.26 | 0.63 |
-| Hausman_sandwich | 0.13 | 0.065 | 0.28 | 0.24 | 0.685 |
+| Hausman_sandwich | 0.13 | 0.065 | 0.28 | 0.235 | 0.685 |
 | Pedroni_groupADF | 1.0 | 0.985 | 0.035 | 0.08 | 1.0 |
 | Pedroni_panelADF | 1.0 | 0.98 | 0.03 | 0.08 | 1.0 |
 

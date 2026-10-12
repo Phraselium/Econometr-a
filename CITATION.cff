@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: "Si usa este trabajo, cítelo así."
-title: "Vivienda en España: base de evidencia reproducible (v6.2)"
+title: "Vivienda en España: base de evidencia reproducible (v7.0)"
 type: software
 authors:
   - family-names: Romero
     given-names: Borja
     affiliation: "Economista independiente"
-version: "6.2"
+version: "7.0"
 date-released: "2026-10-11"
 license:
   - MIT

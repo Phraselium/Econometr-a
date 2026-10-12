@@ -314,7 +314,7 @@
  {
   "id": "E-E1-D2-covvac-1",
   "indicador": "Cobertura de la necesidad por vacías movilizables, clase A4 1 (central)",
-  "valor": 30.23,
+  "valor": 30.89,
   "min": null,
   "max": null,
   "unidad": "%",
@@ -327,9 +327,9 @@
  {
   "id": "E-E1-D2-cobpd-1",
   "indicador": "Cobertura de la necesidad por la construcción adicional de P-D, clase A4 1",
-  "valor": 29.085,
-  "min": 11.63,
-  "max": 46.54,
+  "valor": 29.700000000000003,
+  "min": 11.88,
+  "max": 47.52,
   "unidad": "%",
   "periodo": "2026-2035",
   "cobertura": "clase A4",
@@ -379,7 +379,7 @@
  {
   "id": "E-E1-D2-covvac-2",
   "indicador": "Cobertura de la necesidad por vacías movilizables, clase A4 2 (central)",
-  "valor": 74.35,
+  "valor": 76.22,
   "min": null,
   "max": null,
   "unidad": "%",
@@ -392,9 +392,9 @@
  {
   "id": "E-E1-D2-cobpd-2",
   "indicador": "Cobertura de la necesidad por la construcción adicional de P-D, clase A4 2",
-  "valor": 29.085,
-  "min": 11.63,
-  "max": 46.54,
+  "valor": 29.700000000000003,
+  "min": 11.88,
+  "max": 47.52,
   "unidad": "%",
   "periodo": "2026-2035",
   "cobertura": "clase A4",

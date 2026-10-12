@@ -1,6 +1,6 @@
 # Vivienda en España: base de evidencia reproducible
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** v6.2 (cierre para revisión externa; 12 de octubre de 2026). Versiones cerradas anteriores: v6.1 (auditoría y consolidación) y v6.0 (alquiler y compraventa). Guía del revisor: docs/v6_2/guia_revisor.md.
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** v7.0 (atlas econométrico regional; 12 de octubre de 2026; v6.2 es la versión de referencia congelada, con correcciones v6.3 en ERRATA). Versiones cerradas anteriores: v6.1 (auditoría y consolidación) y v6.0 (alquiler y compraventa). Guía del revisor: docs/v6_2/guia_revisor.md.
 
 ## Qué es
 Una base de evidencia sobre la vivienda en España, por provincias y con un módulo para València: precios y alquileres triangulados, déficit y necesidad de vivienda 2026-2035, diferencias territoriales, comparación europea, una matriz de instrumentos de política y un verificador de afirmaciones del debate público. Todo se reproduce con los datos incluidos en el repositorio y sin conexión a la red.
@@ -21,6 +21,10 @@ Ningún resultado se presenta en una capa superior a la que alcanza. Se evalúan
 
 El mapa de carpetas, con lo vigente y lo histórico, está en [docs/MAPA.md](docs/MAPA.md).
 
+## Atlas regional (V7)
+
+Una ficha por CCAA con ecuaciones, diagnósticos, backtest y propuestas condicionales: [output/v7/atlas_resumen.md](output/v7/atlas_resumen.md) y [output/v7/atlas/](output/v7/atlas/). Guía para no especialistas: [output/v7/guia_lectura.md](output/v7/guia_lectura.md). Todo es C4: no se confirmó ninguna relación de largo plazo.
+
 ## Cómo reproducir
 
 Para reconstruir una cifra sin leer el código: [output/v6_2/anexo_metodologico.md](output/v6_2/anexo_metodologico.md). La guía para revisores externos está en [docs/v6_2/guia_revisor.md](docs/v6_2/guia_revisor.md).
@@ -34,7 +38,7 @@ Detalle (software, tiempos, orden de los programas, correspondencia entre salida
 ## Cómo citar
 Metadatos en [CITATION.cff](CITATION.cff) y .zenodo.json. DOI: pendiente (depósito en Zenodo).
 
-> Romero, B. (2026). *Vivienda en España: base de evidencia reproducible* (versión 6.2) [software y datos].
+> Romero, B. (2026). *Vivienda en España: base de evidencia reproducible* (versión 7.0) [software y datos].
 
 ## Licencias
 - Código (src/, tests/, Makefile): MIT.

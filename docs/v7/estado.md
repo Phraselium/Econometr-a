@@ -33,3 +33,24 @@ Acumulado: unos 743.500 tokens (57 %). Topes reducidos: R6 150.000 y R7 80.000.
 - R6, R7 y revisión final (orquestador) hechos. Correcciones F1-F6 aplicadas: robustez sin subida del precio de mercado, variación relativa rotulada, nombres de instrumentos, verificador aparte y extensión de las fichas.
 - **Total de subagentes: 923.400 tokens de 1.300.000 (71 %).** Sin más subagentes.
 - Siguiente: `make check`; `make v7` ×2 y `make all` ×1 en un clon limpio; cierre.
+
+## Cierre V7
+- `make v7` ×2 en un clon limpio: md5 idénticos en 168 ficheros (3.053 s y 3.044 s).
+- `make all` completo: rc=0 en 7.435 s; diferencias explicadas en V19 y V20.
+- `make check`: 108 tests, más check_texto, check_v5 y check_v6, con 0 errores.
+- **Tokens de subagentes por módulo (según el sistema)**, total 923.400 de 1.300.000 (71 %):
+
+  | Módulo | Tokens |
+  |---|---|
+  | R0 | 96.591 |
+  | R1 | 96.994 |
+  | R2 | 123.485 |
+  | Revisor de R2 | 48.945 |
+  | R4a | 138.307 |
+  | R4b | 89.369 |
+  | Revisor de R4 | 65.590 |
+  | R5 | 84.167 |
+  | R6 | 72.700 |
+  | R7 | 107.215 |
+
+  R3, la revisión final y el cierre los hizo el orquestador.

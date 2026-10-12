@@ -440,13 +440,13 @@ D2 cruza la necesidad de T3, la clase de A4 y la matriz de D1. Desde v6.3, D2 us
 **Clase `1` (37 provincias, 8 robustas).**
 - Necesidad: 185.283 viviendas/año (96.224-251.870 viviendas/año) [C4].
 - Si el objetivo fuese cubrir esa necesidad, los instrumentos con signo estable serían más construcción y movilización de vacías.
-- La construcción adicional de la rejilla de v3, repartida por cuota de necesidad, cubriría 11,6-46,5 % de la necesidad; las vacías movilizables, 57.230 viviendas/año (28.615-85.845 viviendas/año), el 30,2 % en el central [C4].
+- La construcción adicional de la rejilla de v3, repartida por cuota de necesidad, cubriría 11,9-47,5 % de la necesidad; las vacías movilizables, 57.230 viviendas/año (28.615-85.845 viviendas/año), el 30,9 % en el central [C4].
 - Una ayuda general a la demanda sin más oferta se trasladaría al precio en 27,8-81,8 % (método A) [C4].
 
 **Clase `2` (11 provincias, 3 robustas).**
 - Necesidad: 21.155 viviendas/año (2.983-35.113 viviendas/año) [C4].
 - La clase se define porque la oferta no responde: si el cuello de botella es de suelo o de tramitación, los instrumentos que actúan sobre él (edificabilidad, licencias) serían los aplicables según la literatura verificada de otros países.
-- Construcción adicional: 11,6-46,5 % de la necesidad; vacías: 16.125 viviendas/año (8.063-24.188 viviendas/año), el 74,3 % en el central [C4].
+- Construcción adicional: 11,9-47,5 % de la necesidad; vacías: 16.125 viviendas/año (8.063-24.188 viviendas/año), el 76,2 % en el central [C4].
 - Una ayuda general a la demanda se trasladaría al precio en 88,1-100,0 % [C4].
 
 **Clase `3`.** Necesidad: 3.260 viviendas/año (-112,0 a 4.185 viviendas/año) [C4]. Si construir no es rentable con el coste oficial, los instrumentos de oferta privada tendrían poco recorrido sin cambios en coste o suelo.

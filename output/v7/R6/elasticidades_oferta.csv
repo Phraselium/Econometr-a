@@ -1,0 +1,18 @@
+cc,ccaa,es_dols,ee,ic95_lo,ic95_hi,p,p_coint_EG,p_ljungbox4,ic_en_0_5,diag_ok,p_BH,p_Holm,usable,clase_modal,provincias_por_clase,cods_prov,rej_lo,rej_hi,fuente_usada,n
+01,Andalucía,-0.226,0.2832,-0.7811,0.3291,0.4249,0.8623,0.0,False,False,0.6019,1.0,False,1,"{""1"": 7, ""3"": 1}",04 11 14 18 21 23 29 41,0.3265,1.6905,rejilla v5 por clase A4,33
+02,Aragón,-0.3012,0.1242,-0.5447,-0.0577,0.0153,0.0012,0.346,False,True,0.0869,0.2301,False,1,"{""1"": 2, ""2"": 1}",22 44 50,0.3125,1.64,rejilla v5 por clase A4,33
+03,Asturias,-0.5126,0.1964,-0.8975,-0.1277,0.009,0.0082,0.0084,False,False,0.0841,0.1538,False,1,"{""1"": 1}",33,0.334,1.75,rejilla v5 por clase A4,33
+04,Illes Balears,0.181,0.3083,-0.4233,0.7853,0.5571,0.5009,0.0,False,False,0.7285,1.0,False,1,"{""1"": 1}",07,0.334,1.75,rejilla v5 por clase A4,33
+05,Canarias,-0.117,0.2815,-0.6687,0.4347,0.6777,0.8677,0.0,False,False,0.8229,1.0,False,1,"{""1"": 1, ""2"": 1}",35 38,0.1773,0.9482,rejilla v5 por clase A4,33
+06,Cantabria,-0.3076,0.1673,-0.6356,0.0203,0.066,0.1609,0.0002,False,False,0.2242,0.8574,False,1,"{""1"": 1}",39,0.334,1.75,rejilla v5 por clase A4,33
+07,Castilla y León,-0.1614,0.1109,-0.3788,0.056,0.1457,0.1722,0.0,False,False,0.3095,1.0,False,1,"{""1"": 6, ""2"": 3}",05 09 24 34 37 40 42 47 49,0.2614,1.3786,rejilla v5 por clase A4,33
+08,Castilla-La Mancha,-0.2528,0.098,-0.4448,-0.0607,0.0099,0.7677,0.0,False,False,0.0841,0.1582,False,1,"{""1"": 4, ""3"": 1}",02 13 16 19 45,0.309,1.5506,rejilla v5 por clase A4,33
+09,Cataluña,-0.0709,0.2669,-0.594,0.4522,0.7904,0.7425,0.0,False,False,0.8958,1.0,False,1,"{""1"": 4}",08 17 25 43,0.334,1.75,rejilla v5 por clase A4,33
+10,Comunitat Valenciana,-0.2502,0.2339,-0.7087,0.2083,0.2848,0.1892,0.0,False,False,0.538,1.0,False,1,"{""1"": 2, ""2"": 1}",03 12 46,0.2028,1.0786,rejilla v5 por clase A4,33
+11,Extremadura,-0.1295,0.0797,-0.2857,0.0267,0.1042,0.0058,0.147,False,True,0.253,1.0,False,2,"{""2"": 1, ""1"": 1}",06 10,0.0425,0.2582,rejilla v5 por clase A4,33
+12,Galicia,0.0096,0.065,-0.1178,0.1371,0.8824,0.5327,0.0128,False,False,0.9376,1.0,False,1,"{""1"": 2, ""2"": 2}",15 27 32 36,0.248,1.3098,rejilla v5 por clase A4,33
+13,Comunidad de Madrid,0.381,0.4487,-0.4984,1.2605,0.3958,0.2456,0.0,False,False,0.6019,1.0,False,1,"{""1"": 1}",28,0.334,1.75,rejilla v5 por clase A4,33
+14,Región de Murcia,-0.4688,0.2239,-0.9078,-0.0299,0.0363,0.5201,0.0,False,False,0.1542,0.508,False,1,"{""1"": 1}",30,0.334,1.75,rejilla v5 por clase A4,33
+15,Comunidad Foral de Navarra,-0.0099,0.2392,-0.4787,0.4589,0.9669,0.2248,0.0,False,False,0.9669,1.0,False,1,"{""1"": 1}",31,0.334,1.75,rejilla v5 por clase A4,33
+16,País Vasco,0.2554,0.1544,-0.0472,0.558,0.098,0.0,0.8565,False,True,0.253,1.0,False,2,"{""2"": 2, ""1"": 1}",01 20 48,0.0711,0.4044,rejilla v5 por clase A4,33
+17,La Rioja,-0.2001,0.214,-0.6196,0.2194,0.3498,0.0053,0.332,False,True,0.5947,1.0,False,1,"{""1"": 1}",26,0.334,1.75,rejilla v5 por clase A4,33

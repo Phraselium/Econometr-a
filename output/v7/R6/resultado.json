@@ -1,0 +1,124 @@
+{
+ "rama": "R6",
+ "pregunta": "Si se aplicasen distintos instrumentos por CCAA, que variacion de precio, alquiler y esfuerzo cabria esperar (traslado), y cuales son robustos?",
+ "capa": "C4",
+ "datos": [
+  "data/processed/v7/panel_ccaa_q_v7.csv",
+  "output/v5/A4/clasificacion_provincias.csv",
+  "output/v5_1/T3/tablas/necesidad_provincial.csv",
+  "output/v5/R1C/vacias_esporadicas_municipio_censo2021.csv",
+  "output/v7/R4 (velocidad_ajuste_region)",
+  "data/raw/eu_hicp.csv"
+ ],
+ "N": {
+  "ccaa": 17,
+  "extracciones_MC": 4000,
+  "combinaciones": 221
+ },
+ "metodo": "incidencia |ed|/(es+|ed|); MC sobre es (regional DOLS o rejilla A4), ed U(0,3;1,5) y tamano del instrumento; senda por semivida R4 (supuesto)",
+ "estimacion": {
+  "robustas_por_instrumento_ccaa": {
+   "a_construccion": [
+    "13",
+    "15",
+    "16"
+   ],
+   "b_vacias": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17"
+   ],
+   "c_vivienda_publica": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17"
+   ],
+   "d_turisticos": [
+    "01",
+    "03",
+    "04",
+    "05",
+    "06",
+    "09",
+    "10",
+    "17"
+   ],
+   "e_ayuda_demanda": [],
+   "f1_rebaja_ITP_IVA_vivienda_nueva": [],
+   "f2_impuestos_construccion": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "12",
+    "13",
+    "14",
+    "15",
+    "17"
+   ]
+  },
+  "n_robustas": 107,
+  "n_combinaciones": 221,
+  "esfuerzo_10a_precio_mediana_min_max": [
+   -5.461811707392117,
+   0.0
+  ],
+  "MG_es": [
+   -0.12829769436901792,
+   0.05786204570813018
+  ],
+  "ccaa_es_regional_utilizable": 0
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO (C4); escenarios condicionales, sin lenguaje causal",
+ "diagnosticos": {
+  "es_regional": "IC95 en [0;5] y Engle-Granger p<0,10 y Ljung-Box(4) p>0,05; BH y Holm sobre los 17 p de DOLS",
+  "semivida_trim_R4": [
+   6.097743461903477,
+   10.25838850797304
+  ],
+  "umbral_materialidad_pct": -0.1,
+  "rotulo": "informativo, muestra ya vista en v1"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Parametros son supuestos; sin tipos ITP/IVA por CCAA en data/raw; coste solo en compra; R4 sin largo plazo identificado."
+}

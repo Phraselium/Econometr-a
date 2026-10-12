@@ -60,7 +60,7 @@ distclean:
 	rm -rf data/processed/* output/*
 
 # V7: atlas econométrico regional (sin red; determinista). Orden en V7_ORDEN (src/v7/<modulo>.py).
-V7_ORDEN := r1_panel r2_montecarlo r2_mc3 r4a_run r4b_run r5_prediccion
+V7_ORDEN := r1_panel r2_montecarlo r2_mc3 r4a_run r4b_run r5_prediccion r6_propuestas
 v7:
 	@for r in $(V7_ORDEN); do echo ">> src/v7/$$r.py"; $(PY) src/v7/$$r.py || exit 1; done
 

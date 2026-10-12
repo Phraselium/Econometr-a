@@ -1,0 +1,222 @@
+cc,ccaa,instrumento,mercado,robusto_rejilla,regional_utilizable,robusto_regional,robusto,tipo
+01,Andalucía,a_construccion,alquiler,False,False,,False,no robusto
+01,Andalucía,a_construccion,precio,False,False,,False,no robusto
+01,Andalucía,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+01,Andalucía,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+01,Andalucía,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+01,Andalucía,c_vivienda_publica,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+01,Andalucía,d_turisticos,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+01,Andalucía,d_turisticos,precio,False,False,,False,no robusto
+01,Andalucía,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+01,Andalucía,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+01,Andalucía,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+01,Andalucía,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+01,Andalucía,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+02,Aragón,a_construccion,alquiler,False,False,,False,no robusto
+02,Aragón,a_construccion,precio,False,False,,False,no robusto
+02,Aragón,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+02,Aragón,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+02,Aragón,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+02,Aragón,c_vivienda_publica,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+02,Aragón,d_turisticos,alquiler,False,False,,False,no robusto
+02,Aragón,d_turisticos,precio,False,False,,False,no robusto
+02,Aragón,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+02,Aragón,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+02,Aragón,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+02,Aragón,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+02,Aragón,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+03,Asturias,a_construccion,alquiler,False,False,,False,no robusto
+03,Asturias,a_construccion,precio,False,False,,False,no robusto
+03,Asturias,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+03,Asturias,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+03,Asturias,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+03,Asturias,c_vivienda_publica,precio,False,False,,False,no robusto
+03,Asturias,d_turisticos,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+03,Asturias,d_turisticos,precio,False,False,,False,no robusto
+03,Asturias,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+03,Asturias,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+03,Asturias,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+03,Asturias,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+03,Asturias,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+04,Illes Balears,a_construccion,alquiler,False,False,,False,no robusto
+04,Illes Balears,a_construccion,precio,False,False,,False,no robusto
+04,Illes Balears,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+04,Illes Balears,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+04,Illes Balears,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+04,Illes Balears,c_vivienda_publica,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+04,Illes Balears,d_turisticos,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+04,Illes Balears,d_turisticos,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+04,Illes Balears,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+04,Illes Balears,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+04,Illes Balears,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+04,Illes Balears,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+04,Illes Balears,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+05,Canarias,a_construccion,alquiler,False,False,,False,no robusto
+05,Canarias,a_construccion,precio,False,False,,False,no robusto
+05,Canarias,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+05,Canarias,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+05,Canarias,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+05,Canarias,c_vivienda_publica,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+05,Canarias,d_turisticos,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+05,Canarias,d_turisticos,precio,False,False,,False,no robusto
+05,Canarias,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+05,Canarias,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+05,Canarias,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+05,Canarias,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+05,Canarias,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+06,Cantabria,a_construccion,alquiler,False,False,,False,no robusto
+06,Cantabria,a_construccion,precio,False,False,,False,no robusto
+06,Cantabria,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+06,Cantabria,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+06,Cantabria,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+06,Cantabria,c_vivienda_publica,precio,False,False,,False,no robusto
+06,Cantabria,d_turisticos,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+06,Cantabria,d_turisticos,precio,False,False,,False,no robusto
+06,Cantabria,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+06,Cantabria,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+06,Cantabria,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+06,Cantabria,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+06,Cantabria,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+07,Castilla y León,a_construccion,alquiler,False,False,,False,no robusto
+07,Castilla y León,a_construccion,precio,False,False,,False,no robusto
+07,Castilla y León,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+07,Castilla y León,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+07,Castilla y León,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+07,Castilla y León,c_vivienda_publica,precio,False,False,,False,no robusto
+07,Castilla y León,d_turisticos,alquiler,False,False,,False,no robusto
+07,Castilla y León,d_turisticos,precio,False,False,,False,no robusto
+07,Castilla y León,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+07,Castilla y León,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+07,Castilla y León,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+07,Castilla y León,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+07,Castilla y León,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+08,Castilla-La Mancha,a_construccion,alquiler,False,False,,False,no robusto
+08,Castilla-La Mancha,a_construccion,precio,False,False,,False,no robusto
+08,Castilla-La Mancha,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+08,Castilla-La Mancha,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+08,Castilla-La Mancha,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+08,Castilla-La Mancha,c_vivienda_publica,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+08,Castilla-La Mancha,d_turisticos,alquiler,False,False,,False,no robusto
+08,Castilla-La Mancha,d_turisticos,precio,False,False,,False,no robusto
+08,Castilla-La Mancha,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+08,Castilla-La Mancha,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+08,Castilla-La Mancha,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+08,Castilla-La Mancha,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+08,Castilla-La Mancha,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+09,Cataluña,a_construccion,alquiler,False,False,,False,no robusto
+09,Cataluña,a_construccion,precio,False,False,,False,no robusto
+09,Cataluña,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+09,Cataluña,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+09,Cataluña,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+09,Cataluña,c_vivienda_publica,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+09,Cataluña,d_turisticos,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+09,Cataluña,d_turisticos,precio,False,False,,False,no robusto
+09,Cataluña,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+09,Cataluña,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+09,Cataluña,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+09,Cataluña,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+09,Cataluña,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+10,Comunitat Valenciana,a_construccion,alquiler,False,False,,False,no robusto
+10,Comunitat Valenciana,a_construccion,precio,False,False,,False,no robusto
+10,Comunitat Valenciana,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+10,Comunitat Valenciana,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+10,Comunitat Valenciana,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+10,Comunitat Valenciana,c_vivienda_publica,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+10,Comunitat Valenciana,d_turisticos,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+10,Comunitat Valenciana,d_turisticos,precio,False,False,,False,no robusto
+10,Comunitat Valenciana,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+10,Comunitat Valenciana,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+10,Comunitat Valenciana,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+10,Comunitat Valenciana,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+10,Comunitat Valenciana,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+11,Extremadura,a_construccion,alquiler,False,False,,False,no robusto
+11,Extremadura,a_construccion,precio,False,False,,False,no robusto
+11,Extremadura,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+11,Extremadura,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+11,Extremadura,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+11,Extremadura,c_vivienda_publica,precio,False,False,,False,no robusto
+11,Extremadura,d_turisticos,alquiler,False,False,,False,no robusto
+11,Extremadura,d_turisticos,precio,False,False,,False,no robusto
+11,Extremadura,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+11,Extremadura,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+11,Extremadura,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto
+11,Extremadura,f2_impuestos_construccion,alquiler,False,False,,False,no robusto
+11,Extremadura,f2_impuestos_construccion,precio,False,False,,False,no robusto
+12,Galicia,a_construccion,alquiler,False,False,,False,no robusto
+12,Galicia,a_construccion,precio,False,False,,False,no robusto
+12,Galicia,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+12,Galicia,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+12,Galicia,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+12,Galicia,c_vivienda_publica,precio,False,False,,False,no robusto
+12,Galicia,d_turisticos,alquiler,False,False,,False,no robusto
+12,Galicia,d_turisticos,precio,False,False,,False,no robusto
+12,Galicia,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+12,Galicia,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+12,Galicia,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+12,Galicia,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+12,Galicia,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+13,Comunidad de Madrid,a_construccion,alquiler,False,False,,False,no robusto
+13,Comunidad de Madrid,a_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+13,Comunidad de Madrid,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+13,Comunidad de Madrid,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+13,Comunidad de Madrid,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+13,Comunidad de Madrid,c_vivienda_publica,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+13,Comunidad de Madrid,d_turisticos,alquiler,False,False,,False,no robusto
+13,Comunidad de Madrid,d_turisticos,precio,False,False,,False,no robusto
+13,Comunidad de Madrid,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+13,Comunidad de Madrid,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+13,Comunidad de Madrid,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+13,Comunidad de Madrid,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+13,Comunidad de Madrid,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+14,Región de Murcia,a_construccion,alquiler,False,False,,False,no robusto
+14,Región de Murcia,a_construccion,precio,False,False,,False,no robusto
+14,Región de Murcia,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+14,Región de Murcia,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+14,Región de Murcia,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+14,Región de Murcia,c_vivienda_publica,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+14,Región de Murcia,d_turisticos,alquiler,False,False,,False,no robusto
+14,Región de Murcia,d_turisticos,precio,False,False,,False,no robusto
+14,Región de Murcia,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+14,Región de Murcia,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+14,Región de Murcia,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+14,Región de Murcia,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+14,Región de Murcia,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+15,Comunidad Foral de Navarra,a_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+15,Comunidad Foral de Navarra,a_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+15,Comunidad Foral de Navarra,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+15,Comunidad Foral de Navarra,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+15,Comunidad Foral de Navarra,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+15,Comunidad Foral de Navarra,c_vivienda_publica,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+15,Comunidad Foral de Navarra,d_turisticos,alquiler,False,False,,False,no robusto
+15,Comunidad Foral de Navarra,d_turisticos,precio,False,False,,False,no robusto
+15,Comunidad Foral de Navarra,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+15,Comunidad Foral de Navarra,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+15,Comunidad Foral de Navarra,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+15,Comunidad Foral de Navarra,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+15,Comunidad Foral de Navarra,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+16,País Vasco,a_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+16,País Vasco,a_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+16,País Vasco,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+16,País Vasco,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+16,País Vasco,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+16,País Vasco,c_vivienda_publica,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+16,País Vasco,d_turisticos,alquiler,False,False,,False,no robusto
+16,País Vasco,d_turisticos,precio,False,False,,False,no robusto
+16,País Vasco,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+16,País Vasco,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+16,País Vasco,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto
+16,País Vasco,f2_impuestos_construccion,alquiler,False,False,,False,no robusto
+16,País Vasco,f2_impuestos_construccion,precio,False,False,,False,no robusto
+17,La Rioja,a_construccion,alquiler,False,False,,False,no robusto
+17,La Rioja,a_construccion,precio,False,False,,False,no robusto
+17,La Rioja,b_vacias,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+17,La Rioja,b_vacias,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+17,La Rioja,c_vivienda_publica,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+17,La Rioja,c_vivienda_publica,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)
+17,La Rioja,d_turisticos,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+17,La Rioja,d_turisticos,precio,False,False,,False,no robusto
+17,La Rioja,e_ayuda_demanda,alquiler,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+17,La Rioja,e_ayuda_demanda,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+17,La Rioja,f1_rebaja_ITP_IVA_vivienda_nueva,precio,False,False,,False,no robusto: reduce el esfuerzo neto del beneficiario pero sube el precio de mercado
+17,La Rioja,f2_impuestos_construccion,alquiler,True,False,,True,robusto solo con rejilla (regional no utilizable)
+17,La Rioja,f2_impuestos_construccion,precio,True,False,,True,robusto solo con rejilla (regional no utilizable)

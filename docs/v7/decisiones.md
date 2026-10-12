@@ -95,3 +95,13 @@
     - regresores futuros con dX = 0;
     - LightGBM con una sola configuración.
 - **V17 · Presupuesto restante** (en torno al 57 % consumido). R6 queda con un tope de 150.000 y R7 con 80.000. La revisión final la hace el orquestador (V14).
+- **V18 · R6, criterio de robustez corregido por el orquestador.** Tal como venía, la «ayuda a la demanda» y la «rebaja de ITP/IVA» salían como robustas por reducir el esfuerzo **neto del beneficiario**. Sin embargo, con traslado al precio suben el precio de mercado (mediana a 10 años: +4,4 % y +1,1 %), es decir, encarecen la vivienda al resto.
+  - Desde ahora, una propuesta solo es robusta si el esfuerzo baja en todo el Monte Carlo **y** el precio o alquiler de mercado no sube en ninguna extracción (p95 de dprecio ≤ 0).
+  - Resultado (CCAA × mercado):
+    - vacías 34;
+    - impuestos a la construcción 30;
+    - vivienda pública 29;
+    - turísticos 9;
+    - construcción adicional 5;
+    - ayudas a la demanda 0 y rebaja de ITP/IVA 0, con el rótulo «reduce el esfuerzo neto del beneficiario pero sube el precio de mercado».
+  - **La elasticidad de oferta regional no es utilizable en ninguna CCAA** (DOLS, IC fuera de [0; 5]), así que todo descansa en la rejilla de v5 y es C4.

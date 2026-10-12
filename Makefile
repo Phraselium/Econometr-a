@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-.PHONY: all data clean models report distclean check verificador
+.PHONY: all data clean models report distclean check verificador v7 evaluate_v7
 
 all: data clean models report
 
@@ -58,3 +58,12 @@ verificador:
 
 distclean:
 	rm -rf data/processed/* output/*
+
+# V7: atlas econométrico regional (sin red; determinista). Orden en V7_ORDEN (src/v7/<modulo>.py).
+V7_ORDEN := r1_panel
+v7:
+	@for r in $(V7_ORDEN); do echo ">> src/v7/$$r.py"; $(PY) src/v7/$$r.py || exit 1; done
+
+# Validación limpia diferida de V7: CON red, UNA sola vez, tras la release del pre-registro (docs/v7/notas_release.md)
+evaluate_v7:
+	$(PY) src/v7/evaluate_v7.py

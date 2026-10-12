@@ -15,7 +15,7 @@ import pandas as pd
 import requests
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "data" / "raw"
+RAW = Path(os.environ["RAW_DIR"]) if os.environ.get("RAW_DIR") else ROOT / "data" / "raw"   # V7: RAW_DIR para evaluate_v7 (por defecto, data/raw)
 MANIFEST = RAW / "_manifest.csv"
 COLS = ["fecha", "periodo", "serie", "valor", "unidad", "fuente", "url"]
 FORCE = os.environ.get("FORCE") == "1"

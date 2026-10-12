@@ -66,11 +66,16 @@ v7:
 	@$(MAKE) --no-print-directory v7_1
 
 # V7.1: consolidación (sin análisis nuevo): dosis y coste sobre R6 y entregables; después cifras_clave y render
-V7_1_ORDEN := s1_dosis_coste s1_atlas s3_hechos
+V7_1_ORDEN := s1_dosis_coste s1_atlas s3_hechos s4_ensayo
 v7_1:
 	@for r in $(V7_1_ORDEN); do echo ">> src/v7_1/$$r.py"; $(PY) src/v7_1/$$r.py || exit 1; done
 	$(PY) src/v5/cifras_clave.py
 	$(PY) src/v5/render.py
+	$(PY) src/v6_2/l5_publicables.py
+
+# V7.1: publicacion/, metodologia/ y reproducir/ se generan desde output/ y docs/ (nunca a mano; tests/v7_1/test_publicacion.py)
+publicacion:
+	$(PY) src/v7_1/publicacion.py
 
 # Validación limpia diferida de V7: CON red, UNA sola vez, tras la release del pre-registro (docs/v7/notas_release.md)
 evaluate_v7:

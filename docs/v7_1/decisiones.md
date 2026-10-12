@@ -22,3 +22,10 @@
   - las líneas con parámetros del diseño, el tamaño del panel, constantes o referencias llevan «check:cifra-libre» con su motivo;
   - render escribe sin unidad las proporciones (unidad «proporción») y con dos decimales los estadísticos t.
 - **W9.** En la nota se cambian «conservador» e «izquierda», en su sentido estadístico, por sinónimos neutros, para no disparar el control de neutralidad.
+- **W10.** Sección única «Qué cambió» (docs/v5/plantillas/que_cambio.md, renderizada en output/v5/que_cambio.md):
+  - absorbe el bloque v6.1, que estaba repetido en cinco entregables, y el detalle propio del §12 del informe técnico;
+  - los entregables enlazan a ella;
+  - el artículo del Colegio solo recibe una nota para el autor (comentario HTML) y dos enlaces, sin prosa nueva, como pide el encargo.
+- **W11.** Las unidades de normalización («diez mil viviendas», «cien millones») se escriben en palabras en las plantillas, para que los controles de cifras huérfanas (k4c) no las confundan con resultados. Las réplicas y el número de remuestras de la nota también van en palabras.
+- **W12.** Ensayo de evaluate_v7 (S4): se recorre el camino NO simulado del script, sustituyendo solo la descarga (ficheros simulados con el formato de data/raw), el registro de accesos y la carpeta de salida (temporales). No se escribe en data/raw ni en docs/v7/evaluate_v7_accesos.md, y el script comprueba que el registro real queda intacto.
+- **W13.** Alquiler 2026T3: dos de sus tres meses se publicaron antes del pre-registro. Se declara antes de abrir una sensibilidad sin 2026T3 (docs/v7/desviaciones.md). La evaluación principal no cambia.

@@ -1,0 +1,98 @@
+{
+ "ensayo_superado": true,
+ "sha256_congelacion": "93795a9480eccf03f382bc20253561dd37e240287921453fd0d1add40a9a0646",
+ "casos": {
+  "formatos": {
+   "periodos_nuevos": [
+    "2026Q3",
+    "2026Q4",
+    "2027Q1",
+    "2027Q2"
+   ],
+   "ccaa_por_mercado": {
+    "alquiler": 17,
+    "compra": 17
+   }
+  },
+  "apertura": {
+   "rc": 0,
+   "apertura_registrada": true,
+   "evaluacion_registrada": true,
+   "apertura_antes_de_evaluar": true,
+   "sha_en_registro": true
+  },
+  "segunda_ejecucion": {
+   "rc": 3,
+   "mensaje": "evaluate_v7: la validación diferida ya se abrió una vez (docs/v7/evaluate_v7_accesos.md)."
+  },
+  "sha_alterado": {
+   "rc": 2,
+   "mensaje": "evaluate_v7: el sha256 de la congelación no coincide con docs/v7/notas_release.md: no se evalúa.",
+   "registro_creado": false
+  },
+  "sin_datos_nuevos": {
+   "rc": 0,
+   "mensaje": "evaluate_v7: aún no hay periodos posteriores a 2026T2; no se registra apertura.",
+   "registro_creado": false
+  },
+  "registro_real_intacto": true
+ },
+ "metricas_simuladas": {
+  "etiqueta": "diferida",
+  "periodos_objetivo": [
+   "2026Q3",
+   "2026Q4",
+   "2027Q1",
+   "2027Q2"
+  ],
+  "n_ccaa": 17,
+  "rmse_h1_x100": [
+   {
+    "modelo": "ar4",
+    "alquiler": 0.342,
+    "compra": 1.615
+   },
+   {
+    "modelo": "ar_factor",
+    "alquiler": 0.296,
+    "compra": 1.212
+   },
+   {
+    "modelo": "ecm_v1",
+    "alquiler": 0.379,
+    "compra": 1.195
+   },
+   {
+    "modelo": "gbm",
+    "alquiler": 0.284,
+    "compra": 1.661
+   },
+   {
+    "modelo": "mejor_regional",
+    "alquiler": 0.306,
+    "compra": 1.705
+   },
+   {
+    "modelo": "mixto",
+    "alquiler": 0.333,
+    "compra": 1.476
+   },
+   {
+    "modelo": "persistencia",
+    "alquiler": 0.866,
+    "compra": 2.02
+   },
+   {
+    "modelo": "pmg",
+    "alquiler": 0.453,
+    "compra": 1.416
+   },
+   {
+    "modelo": "ult_crec_nac",
+    "alquiler": 0.232,
+    "compra": 2.341
+   }
+  ]
+ },
+ "nota": "Datos futuros SIMULADOS (paseo aleatorio, SEED). Las métricas no informan de la capacidad predictiva real."
+}

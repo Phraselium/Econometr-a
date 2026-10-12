@@ -6,7 +6,7 @@ Generado por src/v6_2/l5_publicables.py desde output/v5/cifras_clave.csv; no edi
 
 | id | Indicador | Valor (rango) | Capa | Periodo | Fecha del dato | Fuentes | Cómo citarla |
 |---|---|---|---|---|---|---|---|
-| dh_2125 | Aumento del número de hogares | 997.586 hogares (981.823-1.013.350 hogares) | C1 | 2021-2025 | 2025T1 | INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021) | Citar con periodo y las dos fuentes (ECP y EPA). |
+| dh_2125 | Aumento del número de hogares | 997.586 hogares (981.823-1.013.350 hogares) | C1 | 2021-2025 | 2025T1 | INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021; ventanas distintas: stock a 1 de enero en la ECP y media anual en la EPA, v7.1 K4b-dh) | Citar con periodo y las dos fuentes (ECP y EPA). |
 | terminadas_1924 | Viviendas terminadas al año (territorio común: sin País Vasco ni Navarra) | 72.264-94.426 viviendas/año | C1 | 2019-2024 | 2024 | Ministerio (fin de obra) y Catastro (altas), dentro de ±15 % | Rango anual del territorio común; no extrapolar a País Vasco y Navarra. |
 | L3-DEF-2124-SINBAJAS | Déficit acumulado 2021-2024 sin bajas (todas las variantes de corrección EPA y de terminadas) | 389.361-710.542 viviendas | C2 | 2021-2024 | 2024T4 | hogares: EPA (varias correcciones) y ECP; terminadas: MIVAU y Catastro | Es una cota: citar siempre el rango completo, nunca un punto ni el extremo alto solo. |
 | A23-P2 | Precio de compra, núcleo MIVAU/Notariado/Registradores 2015-2025 | 47,2 % (44,2-56,1 %) | C1 | 2015-2025 (media anual) | 2025 (anual) | MIVAU valor tasado; Notariado CGN; Registradores opendata | Variación del precio de compra con tres fuentes; no confundir con el IPV del INE. |

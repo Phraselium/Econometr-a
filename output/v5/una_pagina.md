@@ -1,8 +1,8 @@
-# Vivienda en España en una página (v5)
+# Vivienda en España en una página (versión de referencia v7.1)
 
 **Borja Romero, economista.** Solo hechos con al menos dos fuentes [C1] o cotas con supuestos explícitos [C2]. Cada cifra lleva periodo, fuente, fecha del dato y capa.
 
-1. [C1] **Hay más hogares.** El número de hogares aumentó en 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021); dato de 2025T1; C1).
+1. [C1] **Hay más hogares.** El número de hogares aumentó en 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021; ventanas distintas: stock a 1 de enero en la ECP y media anual en la EPA, v7.1 K4b-dh); dato de 2025T1; C1).
 2. [C2] **Se terminan menos viviendas de las que se forman hogares.** Balance acumulado 2021-2024 sin bajas del parque: en el rango 389.361-710.542 viviendas (sin las dos correcciones que conservan el salto de la EPA, 596.371-710.542 viviendas) (2021-2024; hogares: EPA (varias correcciones) y ECP; terminadas: MIVAU y Catastro; dato de 2024T4; C2: el rango depende de cómo se corrija el salto de la EPA en 2021, y es una cota, no una estimación puntual).
 3. [C2] **Hasta 2030 el balance empeora en todos los escenarios.** Con los ritmos de construcción considerados, incluido uno optimista, el déficit nacional 2025-2030 crece en toda la rejilla de escenarios, definida por el autor (2025-2030; Ministerio e INE; C2). Cuánto crece no es un hecho (ver el recuadro).
 4. [C1] **Viviendas terminadas.** Viviendas terminadas al año: 72.264-94.426 viviendas/año (2019-2024; Ministerio (fin de obra) y Catastro (altas), dentro de ±15 %; dato de 2024; C1).
@@ -11,10 +11,10 @@
 7. [C2] **La próxima década.** Crecimiento de hogares proyectado por el INE: 1.720.537 hogares (1.308.531-1.772.410 hogares) (2026-2035; INE Proyección de Hogares (tabla 54562); dato de 2026; C2).
 8. [C1] **La mayoría de los hogares es propietaria.** Hogares con vivienda principal en propiedad: 74,5 % de hogares (72,1-75,9 % de hogares) (2021-2022; BdE EFF; INE ECV; INE Censo 2021; dato de 2021-11 (Censo) / 2022 (EFF, ECV); C1).
 
-**Qué cambió entre versiones (v6.1).** <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
-- La asociación de la inmigración con precio o alquiler cambia de mercado según el método, la medida y los controles: es «analizada, no concluyente» [C4].
-- Frente a la línea base más exigente, los modelos predicen mejor en 6 de las 9 tareas [C4].
-- Las correcciones están en ERRATA.md.
+**Qué añade la versión de referencia v7.1 [C4].** Los cambios entre versiones, y por qué, están en una sección única: [Qué cambió entre versiones y por qué](que_cambio.md).
+- Los precios de las comunidades se mueven sobre todo juntos: la variación de cada una acompaña en gran medida a la media de las 17 (R² mediano de 93,6 % en compra).
+- No se confirma ninguna relación regional de largo plazo con el empleo, la población, las hipotecas o el paro (0 de siete hipótesis).
+- En la simulación, las ayudas a la demanda reducen el precio neto de quien las recibe, pero el precio de mercado sube (4,4 % a diez años). Su coste y su dosis están declarados; en los instrumentos de oferta, el coste no es estimable.
 
 > **Lo que NO se puede afirmar con estos datos**
 >

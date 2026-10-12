@@ -74,8 +74,11 @@ El proyecto compara sus cifras clave con las publicadas por el Banco de España,
 
 Cada cifra de este artículo lleva su periodo, sus fuentes, la fecha del dato y su capa. Cuando un número se presenta sin rango, sin periodo o sin fuente, conviene pedirlos. Y conviene distinguir entre hechos, cotas y estimaciones: un hecho dice qué ha pasado, una cota dice hasta dónde puede llegar algo con supuestos, y solo una estimación con pruebas exigentes permite hablar de efectos.
 
+<!-- NOTA PARA EL AUTOR (v7.1; no forma parte del texto): la prosa la amplía el autor. Puntos de V7 que pueden incorporarse, con sus marcadores en que_cambio.md: componente común dominante, ningún largo plazo regional confirmado, traslado al precio de las ayudas a la demanda y de la rebaja de ITP/IVA (C4, signo dado por la fórmula), dosis y coste. -->
+
 ## Para saber más
 
+- Qué cambió entre versiones y por qué: [sección única](que_cambio.md). Nota metodológica sobre los paneles regionales: [nota](nota_metodologica.md).
 - Informe técnico: [output/v5/informe_tecnico.md](informe_tecnico.md) (DOI pendiente).
 - Repositorio con datos, código y verificador de afirmaciones: [github.com/Phraselium/Econometr-a](https://github.com/Phraselium/Econometr-a).
 - Verificador: [verificador](verificador/verificador.md). Evalúa afirmaciones, nunca a quien las formula.

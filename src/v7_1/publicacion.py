@@ -1,0 +1,135 @@
+"""V7.1-S5 · `make publicacion`: genera publicacion/, metodologia/ y reproducir/ desde output/ y docs/. Nunca se editan a mano.
+
+- Copia cada fichero desde su fuente versionada (tabla FUENTES), con una cabecera «generado; no editar» en los .md.
+- Reescribe los enlaces relativos de los .md: si el destino también se publica, apunta a la copia publicada; si no, a
+  la ruta del repositorio. Los anclajes (#…) se conservan.
+- Escribe un MANIFIESTO.md por carpeta con la fuente y el sha256 de cada fichero.
+Determinista y sin red. tests/v7_1/test_publicacion.py lo regenera en un directorio temporal y compara byte a byte.
+"""
+from __future__ import annotations
+
+import hashlib
+import os
+import re
+import shutil
+import sys
+from pathlib import Path
+
+RAIZ = Path(__file__).resolve().parents[2]
+CARPETAS = ("publicacion", "metodologia", "reproducir")
+ATLAS = sorted(p.relative_to(RAIZ).as_posix() for p in (RAIZ / "output" / "v7_1" / "atlas").glob("*") if p.is_file())
+
+# destino -> fuente (rutas relativas a la raíz del repositorio)
+FUENTES: dict[str, str] = {
+    "publicacion/una_pagina.md": "output/v5/una_pagina.md",
+    "publicacion/lo_que_sabemos.md": "output/v5/lo_que_sabemos.md",
+    "publicacion/policy_brief.md": "output/v5/policy_brief.md",
+    "publicacion/informe_tecnico.md": "output/v5/informe_tecnico.md",
+    "publicacion/working_paper.md": "output/v5/working_paper.md",
+    "publicacion/nota_metodologica.md": "output/v5/nota_metodologica.md",
+    "publicacion/articulo_colegio.md": "output/v5/articulo_colegio.md",
+    "publicacion/que_cambio.md": "output/v5/que_cambio.md",
+    "publicacion/ponencia/diapositivas.md": "output/v5/ponencia/diapositivas.md",
+    "publicacion/ponencia/guion.md": "output/v5/ponencia/guion.md",
+    **{f"publicacion/atlas_regional/{Path(a).name}": a for a in ATLAS},
+    "publicacion/verificador/verificador.md": "output/v5/verificador/verificador.md",
+    "publicacion/verificador/verificador_v7_1.md": "output/v7_1/verificador_v7_1.md",
+    "publicacion/verificador/fichas_v7_1.json": "output/v7_1/fichas/fichas_verificador.json",
+    "publicacion/cifras_clave.csv": "output/v5/cifras_clave.csv",
+    "publicacion/dosis_coste.csv": "output/v7_1/S1/dosis_coste.csv",
+    "metodologia/anexo_metodologico.md": "output/v6_2/anexo_metodologico.md",
+    "metodologia/guia_revisor.md": "docs/v7_1/guia_revisor.md",
+    "metodologia/capas.md": "docs/v7_1/capas.md",
+    "metodologia/historial_conclusiones.md": "docs/v6_1/historial_conclusiones.md",
+    "metodologia/validacion_montecarlo.md": "docs/v7/validacion_herramientas.md",
+    "metodologia/preregistro_v7.md": "docs/v7/hipotesis.md",
+    "metodologia/dosis_coste.md": "output/v7_1/S1/resumen.md",
+    "reproducir/instrucciones.md": "README_REPLICACION.md",
+    "reproducir/tiempos.md": "docs/v7_1/tiempos.md",
+    "reproducir/evaluacion_2027.md": "docs/v7_1/evaluacion_2027.md",
+    "reproducir/ensayo_evaluate_v7.md": "output/v7_1/S4/ensayo.md",
+}
+CLAVE_LIBS = ("numpy", "pandas", "scipy", "statsmodels", "linearmodels", "arch", "scikit-learn", "lightgbm", "xgboost", "pymc",
+              "torch", "openpyxl", "matplotlib", "pytest", "ruff")
+ENLACE = re.compile(r"(\]\()([^)\s]+)(\))")
+CAB = "<!-- Generado por `make publicacion` desde {src}. No editar a mano: se regenera y un test lo comprueba. -->\n\n"
+
+
+def _sha(b: bytes) -> str:
+    return hashlib.sha256(b).hexdigest()
+
+
+def _reescribir(txt: str, src: str, dst: str) -> str:
+    inverso = {v: k for k, v in FUENTES.items()}
+    sdir, ddir = (RAIZ / src).parent, (RAIZ / dst).parent
+
+    def rep(m):
+        t = m.group(2)
+        if re.match(r"^(?:[a-z]+:|#|/)", t):
+            return m.group(0)
+        ruta, _, ancla = t.partition("#")
+        if not ruta:
+            return m.group(0)
+        abs_ = (sdir / ruta).resolve()
+        try:
+            rel_repo = abs_.relative_to(RAIZ).as_posix()
+        except ValueError:
+            return m.group(0)
+        destino = RAIZ / inverso[rel_repo] if rel_repo in inverso else abs_
+        if rel_repo not in inverso and not abs_.exists():
+            return m.group(0)   # enlace ya roto en la fuente: se deja igual (lo detecta el test de enlaces)
+        nuevo = os.path.relpath(destino, ddir).replace(os.sep, "/")
+        return f"{m.group(1)}{nuevo}{'#' + ancla if ancla else ''}{m.group(3)}"
+    return ENLACE.sub(rep, txt)
+
+
+def _entorno() -> str:
+    libs = {}
+    for ln in (RAIZ / "requirements.lock").read_text(encoding="utf-8").splitlines():
+        if "==" in ln:
+            n, v = ln.split("==", 1)
+            libs[n.strip().lower()] = v.strip()
+    L = ["# Entorno y versiones de las bibliotecas", "", "Python 3.13 (un solo hilo: OMP_NUM_THREADS = OPENBLAS_NUM_THREADS = MKL_NUM_THREADS = 1; "
+         "SEED = 20261010). Lista completa y fijada: [requirements.lock](../requirements.lock).", "",
+         "| Biblioteca | Versión |", "|---|---|"]
+    L += [f"| {n} | {libs[n]} |" for n in CLAVE_LIBS if n in libs]
+    L += ["", "Programa del sistema: `pdftotext` (poppler-utils). Instalación: `python3 -m pip install -r requirements.lock`.", ""]
+    return "\n".join(L)
+
+
+def construir(base: Path) -> dict[str, list[tuple[str, str, str]]]:
+    man: dict[str, list[tuple[str, str, str]]] = {c: [] for c in CARPETAS}
+    for dst, src in FUENTES.items():
+        p = RAIZ / src
+        if not p.exists():
+            raise SystemExit(f"publicacion: falta la fuente {src} (ejecute antes make v7_1 / la tarea que la genera)")
+        out = base / dst
+        out.parent.mkdir(parents=True, exist_ok=True)
+        if p.suffix == ".md":
+            b = (CAB.format(src=src) + _reescribir(p.read_text(encoding="utf-8"), src, dst)).encode("utf-8")
+        else:
+            b = p.read_bytes()
+        out.write_bytes(b)
+        man[dst.split("/")[0]].append((dst, src, _sha(b)))
+    ent = (CAB.format(src="requirements.lock") + _entorno()).encode("utf-8")
+    (base / "reproducir" / "entorno.md").write_bytes(ent)
+    man["reproducir"].append(("reproducir/entorno.md", "requirements.lock", _sha(ent)))
+    for c, filas in man.items():
+        L = [f"# Manifiesto de {c}/", "", "Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de esta carpeta se edita a mano.", "",
+             "| Fichero | Fuente | sha256 |", "|---|---|---|"]
+        L += [f"| {Path(d).relative_to(c).as_posix()} | {s} | `{h}` |" for d, s, h in sorted(filas)]
+        (base / c / "MANIFIESTO.md").write_text("\n".join(L) + "\n", encoding="utf-8")
+    return man
+
+
+def main() -> int:
+    for c in CARPETAS:
+        if (RAIZ / c).exists():
+            shutil.rmtree(RAIZ / c)
+    man = construir(RAIZ)
+    print("publicacion: " + ", ".join(f"{c}/ {len(v)} ficheros" for c, v in man.items()))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

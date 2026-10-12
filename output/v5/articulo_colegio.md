@@ -6,7 +6,7 @@ Pocas discusiones económicas generan tantas cifras contradictorias como la de l
 
 ## Los hogares crecen más deprisa que las viviendas terminadas [C1]
 
-El número de hogares aumentó en 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021); dato de 2025T1; C1). Por su parte, en un periodo casi coincidente, las viviendas terminadas al año en el territorio común estuvieron entre 72.264-94.426 viviendas/año (2019-2024; Ministerio (fin de obra) y Catastro (altas), dentro de ±15 %; dato de 2024; C1). La diferencia es un déficit acumulado: con bajas del parque nulas, el déficit 2021-2024 está en el rango 389.361-710.542 viviendas (sin las dos correcciones que conservan el salto de la EPA, 596.371-710.542 viviendas) (2021-2024; hogares: EPA (varias correcciones) y ECP; terminadas: MIVAU y Catastro; dato de 2024T4; C2, una cota que depende de cómo se corrija el salto de la EPA en 2021); con las bajas del parque estimadas, llega como máximo a 765.994 viviendas [C4]: las identidades de stock no miden bajas y las demoliciones con licencia son 0,02-0,04 % del parque en 2024.
+El número de hogares aumentó en 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021; ventanas distintas: stock a 1 de enero en la ECP y media anual en la EPA, v7.1 K4b-dh); dato de 2025T1; C1). Por su parte, en un periodo casi coincidente, las viviendas terminadas al año en el territorio común estuvieron entre 72.264-94.426 viviendas/año (2019-2024; Ministerio (fin de obra) y Catastro (altas), dentro de ±15 %; dato de 2024; C1). La diferencia es un déficit acumulado: con bajas del parque nulas, el déficit 2021-2024 está en el rango 389.361-710.542 viviendas (sin las dos correcciones que conservan el salto de la EPA, 596.371-710.542 viviendas) (2021-2024; hogares: EPA (varias correcciones) y ECP; terminadas: MIVAU y Catastro; dato de 2024T4; C2, una cota que depende de cómo se corrija el salto de la EPA en 2021); con las bajas del parque estimadas, llega como máximo a 765.994 viviendas [C4]: las identidades de stock no miden bajas y las demoliciones con licencia son 0,02-0,04 % del parque en 2024.
 
 Hay que leer bien esta cifra. No dice que falten viviendas en todas partes: según el reparto provincial, que es exploratorio [C4], el déficit está concentrado: un número pequeño de provincias suma la mitad del déficit positivo (6 provincias (6-6 provincias) (2021-2025; ECP INE; MIVAU fin de obra (bajas 0); dato de 2025; C4)). Tampoco dice qué hay que hacer: es un hecho contable.
 
@@ -74,8 +74,11 @@ El proyecto compara sus cifras clave con las publicadas por el Banco de España,
 
 Cada cifra de este artículo lleva su periodo, sus fuentes, la fecha del dato y su capa. Cuando un número se presenta sin rango, sin periodo o sin fuente, conviene pedirlos. Y conviene distinguir entre hechos, cotas y estimaciones: un hecho dice qué ha pasado, una cota dice hasta dónde puede llegar algo con supuestos, y solo una estimación con pruebas exigentes permite hablar de efectos.
 
+<!-- NOTA PARA EL AUTOR (v7.1; no forma parte del texto): la prosa la amplía el autor. Puntos de V7 que pueden incorporarse, con sus marcadores en que_cambio.md: componente común dominante, ningún largo plazo regional confirmado, traslado al precio de las ayudas a la demanda y de la rebaja de ITP/IVA (C4, signo dado por la fórmula), dosis y coste. -->
+
 ## Para saber más
 
+- Qué cambió entre versiones y por qué: [sección única](que_cambio.md). Nota metodológica sobre los paneles regionales: [nota](nota_metodologica.md).
 - Informe técnico: [output/v5/informe_tecnico.md](informe_tecnico.md) (DOI pendiente).
 - Repositorio con datos, código y verificador de afirmaciones: [github.com/Phraselium/Econometr-a](https://github.com/Phraselium/Econometr-a).
 - Verificador: [verificador](verificador/verificador.md). Evalúa afirmaciones, nunca a quien las formula.

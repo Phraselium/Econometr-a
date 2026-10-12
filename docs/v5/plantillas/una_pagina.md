@@ -1,4 +1,4 @@
-# Vivienda en España en una página (v5)
+# Vivienda en España en una página (versión de referencia v7.1)
 
 **Borja Romero, economista.** Solo hechos con al menos dos fuentes [C1] o cotas con supuestos explícitos [C2]. Cada cifra lleva periodo, fuente, fecha del dato y capa.
 
@@ -11,10 +11,10 @@
 7. [C2] **La próxima década.** Crecimiento de hogares proyectado por el INE: {{E-B1-F:cita}}.
 8. [C1] **La mayoría de los hogares es propietaria.** Hogares con vivienda principal en propiedad: {{R1C-001:cita}}.
 
-**Qué cambió entre versiones (v6.1).** <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
-- La asociación de la inmigración con precio o alquiler cambia de mercado según el método, la medida y los controles: es «analizada, no concluyente» [C4].
-- Frente a la línea base más exigente, los modelos predicen mejor en {{K1-N-MEJOR:num}} de las {{K1-N-TAREAS:valor}} [C4].
-- Las correcciones están en ERRATA.md.
+**Qué añade la versión de referencia v7.1 [C4].** Los cambios entre versiones, y por qué, están en una sección única: [Qué cambió entre versiones y por qué](que_cambio.md).
+- Los precios de las comunidades se mueven sobre todo juntos: la variación de cada una acompaña en gran medida a la media de las 17 (R² mediano de {{V71-S3-comun-r2-compra:valor}} en compra).
+- No se confirma ninguna relación regional de largo plazo con el empleo, la población, las hipotecas o el paro ({{V71-S3-largo-confirmadas:num}} de siete hipótesis).
+- En la simulación, las ayudas a la demanda reducen el precio neto de quien las recibe, pero el precio de mercado sube ({{V71-S3-R6-e_ayuda_demanda-compra-precio10a:valor}} a diez años). Su coste y su dosis están declarados; en los instrumentos de oferta, el coste no es estimable.
 
 > **Lo que NO se puede afirmar con estos datos**
 >

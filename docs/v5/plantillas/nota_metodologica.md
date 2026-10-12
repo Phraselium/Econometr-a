@@ -95,8 +95,8 @@ Para la raíz unitaria con dependencia transversal se usa el CIPS de Pesaran (20
 | L | rotura en el nivel hacia $T/3$ | cambios estructurales |
 
 **Réplicas.**
-- 500 en los escenarios A, C, D y F; 200 en el resto. <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
-- Bootstrap del PMG con B = 199 remuestras. <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
+- quinientas en los escenarios A, C, D y F; doscientas en el resto. <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
+- Bootstrap del PMG con ciento noventa y nueve remuestras. <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
 - Contraste tipo Westerlund con 99 remuestras. <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
 
 **Criterio de aptitud** (declarado antes de ver los resultados):
@@ -144,7 +144,7 @@ Cuando $\theta_i$ es heterogéneo (E), su sesgo sube a {{V71-S3-MC-DFE-E-sesgo:v
 
 **Cointegración.** El contraste tipo Westerlund rechaza menos de lo nominal: sin cointegración queda por debajo del límite inferior de tamaño. Con ajuste lento su potencia es baja: {{V71-S3-MC-WL-potencia-J:valor}} de mediana entre las cuatro variantes ({{V71-S3-MC-WL-potencia-J:rango}}). Por tanto, un no rechazo en datos reales no es evidencia de ausencia de cointegración. Los contrastes de Pedroni tienen tamaño correcto sin factor y potencia alta con ajuste rápido.
 
-**Velocidad de ajuste media.** El estadístico t del MG para $\bar\phi$ no sigue una normal bajo no cointegración. Su distribución es de tipo Dickey-Fuller y está muy desplazada hacia valores negativos. El valor crítico simulado al 5 % es {{V71-S3-MC-phi-critico:valor}}, frente al −1,645 de la normal. Usar el valor normal llevaría a declarar ajuste hacia el equilibrio en paneles que no lo tienen. <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
+**Velocidad de ajuste media.** El estadístico t del MG para $\bar\phi$ no sigue una normal bajo no cointegración. Su distribución es de tipo Dickey-Fuller y está muy desplazada hacia valores negativos. El valor crítico simulado al 5 % es {{V71-S3-MC-phi-critico:valor}}, frente al valor crítico de la distribución normal. Usar el valor normal llevaría a declarar ajuste hacia el equilibrio en paneles que no lo tienen. <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
 
 **Raíz unitaria.** El CIPS tiene tamaño correcto sobre un paseo aleatorio puro. Sobrerrechaza cuando la serie es I(1) con un componente I(0) grande: en el escenario con factor estacionario rechaza más de la mitad de las veces. En ese caso, un rechazo del CIPS no prueba estacionariedad.
 
@@ -263,12 +263,12 @@ Estado: «DOI verificado» significa que se ha comprobado en Crossref el 12 de o
 
 ## Revistas propuestas para el envío
 
-| Revista | ISSN (comprobado en Crossref) | Cuartil Scimago | Encaje |
-|---|---|---|---|
-| Journal of Housing Economics | 1051-1377 | cuartil no verificado | vivienda aplicada con paneles de precios | <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
-| Regional Science and Urban Economics | 0166-0462 | cuartil no verificado | paneles regionales y dependencia espacial | <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
-| Empirical Economics | 0377-7332 | cuartil no verificado | metodología de panel y simulación | <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
+| Revista | Cuartil Scimago | Encaje |
+|---|---|---|
+| Journal of Housing Economics | cuartil no verificado | vivienda aplicada con paneles de precios | <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
+| Regional Science and Urban Economics | cuartil no verificado | paneles regionales y dependencia espacial | <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
+| Empirical Economics | cuartil no verificado | metodología de panel y simulación | <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
 
-El cuartil de las tres revistas está pendiente de lectura en Scimago (docs/v7_1/tareas_autor.md). No se debe enviar sin verificarlo. <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
+Los ISSN, comprobados en Crossref, están en docs/v7_1/literatura_nota.md. El cuartil de las tres revistas está pendiente de lectura en Scimago (docs/v7_1/tareas_autor.md). No se debe enviar sin verificarlo. <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->
 
 *Declaración: el código y los textos se elaboraron con asistencia de una herramienta de IA bajo la dirección y la revisión del autor (ver docs/v7_1/tareas_autor.md, licencias y declaración de IA).* <!-- check:cifra-libre (parámetro del diseño, tamaño del panel, constante de referencia, ruta o referencia bibliográfica; no es una cifra de resultado) -->

@@ -13,7 +13,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## Los hogares crecen más que las terminadas
 
-- 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021); dato de 2025T1; C1)
+- 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021; ventanas distintas: stock a 1 de enero en la ECP y media anual en la EPA, v7.1 K4b-dh); dato de 2025T1; C1)
 - Terminadas al año: 72.264-94.426 viviendas/año (2019-2024) [C1]
 
 ---
@@ -93,6 +93,15 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 ## Instrumentos con signo no estable o no evaluable [C4]
 
 - Una ayuda general a la demanda podría trasladarse al precio según la clase: clase `1`: 27,8-81,8 %; clase `2`: 88,1-100,0 %; clase `3`: 50,1-89,8 % [C4]
+
+---
+
+## Qué añade la versión de referencia v7.1 [C4]
+
+- Los precios de las comunidades se mueven sobre todo juntos: R² mediano de 93,6 % frente a la media de las 17 (compra)
+- Ninguna relación regional de largo plazo confirmada (0 de siete hipótesis)
+- Ayudas a la demanda: el precio neto del beneficiario baja, el de mercado sube 4,4 % a diez años (escenario; signo dado por la fórmula)
+- Coste anual mediano por comunidad de esas ayudas: 378,2 M€/año; en los instrumentos de oferta, no estimable
 
 ---
 

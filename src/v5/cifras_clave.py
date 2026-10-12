@@ -53,7 +53,7 @@ def v4_adaptadores() -> list[dict]:
     h0 = {x["periodo"]: x for x in json.loads((V4 / "M2" / "hechos.json").read_text())[0]["magnitud"]}["2021-2025"]
     lo, hi = sorted([h0["dH_EPA_hogares_corregida"], h0["dH_ECP_o_censo"]])
     f.append(_f("dh_2125", "Aumento del número de hogares", (lo + hi) / 2, lo, hi, "hogares", "2021-2025", "España",
-                "INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021)", "C1", "2025T1", "V03", "output/v4/M2/hechos.json:M2-H0"))
+                "INE ECP y EPA (sin corrección: los dos extremos son posteriores a la ruptura de 2021; ventanas distintas: stock a 1 de enero en la ECP y media anual en la EPA, v7.1 K4b-dh)", "C1", "2025T1", "V03", "output/v4/M2/hechos.json:M2-H0"))
     t = pd.read_csv(V4 / "M0" / "terminadas_triangulacion.csv")
     t = t[(t.anio >= 2019) & (t.anio <= 2024)]
     f.append(_f("terminadas_1924", "Viviendas terminadas al año (territorio común: sin País Vasco ni Navarra)", None,

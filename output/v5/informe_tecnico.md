@@ -1,6 +1,6 @@
 # Vivienda en España: necesidad, territorio, precios e instrumentos con datos públicos
 
-## Informe técnico v5
+## Informe técnico (versión de referencia v7.1)
 
 - **Autor:** Borja Romero, economista (independiente).
 - **Fecha:** 10 de octubre de 2026.
@@ -712,39 +712,21 @@ Fuentes: `output/v6/M1A`, `output/v6/M1B`, `output/v6/M2/peso_variables.md`, `ou
 
 ---
 
-## 12. Qué cambió entre versiones y por qué (v6.1) [C4]
+## 11 bis. Qué añade la versión de referencia v7.1 (atlas regional) [C4]
 
-El historial completo, con versión, variable, medida, nivel, periodo, método, signo, magnitud, capa y estado, está en `docs/v6_1/historial_conclusiones.md`.
+- **Domina el componente común.** La variación interanual del precio de cada comunidad acompaña en gran medida a la media de las 17: el R² mediano es 93,6 % en compra y 86,1 % en alquiler. Es una descripción, no un modelo.
+- **No hay un largo plazo regional confirmado.** Se confirman 0 de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en 8 de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
+- **Traslado al precio de las ayudas a la demanda y de la rebaja de ITP/IVA** (escenario condicional). Reducen el precio neto que paga el beneficiario: su esfuerzo varía un -5,3 % con la ayuda. Pero el precio de mercado sube un 4,4 % con la ayuda y un 1,1 % con la rebaja, a diez años (mediana entre comunidades). *Nota:* el signo lo fija en gran parte la fórmula de incidencia; lo informativo son las magnitudes relativas.
+- **Dosis y coste.**
+  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año.
+  - Coste anual por punto de reducción del precio neto: 76,4 M€/año por punto y 82,4 M€/año por punto.
+  - Construcción, vacías, vivienda pública y turísticos no tienen coste estimable, porque no hay coste unitario verificado. Se comparan por su efecto por cada diez mil viviendas: en alquiler, -1,7 puntos % con vacías y -3,2 puntos % con vivienda pública (mediana). <!-- check:cifra-libre (unidad de normalización «diez mil viviendas», no son cifras de resultado) -->
+  - Robustez: la movilización de vacías es robusta en 17 de 17 comunidades en alquiler; las ayudas a la demanda, en 0.
+- Detalle por comunidad: atlas regional (atlas_regional/). Método: [nota metodológica](nota_metodologica.md). Afirmaciones evaluadas: verificador V7.
 
-**Inmigración.**
-- En v2, el flujo de inmigración, instrumentado con las cuotas de 2002, se asociaba más con el alquiler que con el precio de compra.
-- En v6, la cuota de extranjeros aparece en más modelos de compra que de alquiler.
-- Al repetir la comparación cambiando una sola dimensión cada vez, el orden entre mercados depende del método (mínimos cuadrados en dos etapas frente a MCO) y de la medida de alquiler (SERPAVI frente a IPC).
-- Separando la lectura total de la directa (0,66 correlacion de correlación entre cuota y población dentro de cada provincia):
-  - **Asociación total** (sin controlar por población; la inmigración es un componente contable del crecimiento de la población según la Estadística de Migraciones del INE):
-    - con valor tasado, 4,3 % por pp (2,1-6,4 % por pp); con controles de costa y demanda externa, 1,6 % por pp (-0,79 a 4,0 % por pp);
-    - en el alquiler de stock, 2,7 % por pp (1,3-4,0 % por pp); con demanda externa, 1,6 % por pp (0,05-3,0 % por pp).
-  - **Asociación directa** (a igual población): compra, -1,3 % por pp (-4,3 a 1,7 % por pp); alquiler, 0,18 % por pp (-1,5 a 1,8 % por pp).
-  - **Por qué ninguna de las dos basta.** La población crece en buena parte por la propia inmigración, de modo que controlar por ella es un mal control: compara provincias con la misma población y distinta composición. A su vez, la total puede recoger otros factores asociados al crecimiento de la población (empleo, costa, demanda externa); por eso baja al controlar por demanda externa.
-    - Por eso el signo negativo en compra no significa que la inmigración abarate la vivienda. Solo indica que, a igual población, más cuota de extranjeros no se asocia con más precio.
-  - «ANALIZADA, NO CONCLUYENTE» [C4]: ninguna de las dos lecturas identifica un efecto.
-- Las islas no se pueden contrastar porque están en la muestra sellada.
-- **Conclusión única [C4], «ANALIZADA, NO CONCLUYENTE».** Las diferencias entre versiones se explican por cambios de método, de controles y de medida, no por un resultado estable que se haya invertido. No se puede afirmar un efecto de la inmigración sobre el precio ni sobre el alquiler.
+## 12. Qué cambió entre versiones y por qué
 
-**Otras conclusiones que cambiaron.** Empleo, renta, iniciadas y turísticos cambian de signo o de mercado según la medida, el método y los controles, y ningún intervalo de la especificación final excluye el cero (`output/v6_1/K2/otros_cambios.md`).
-- Las iniciadas se asocian en el mismo año con el alquiler. Ni sus retardos ni sus adelantos se distinguen de cero (`output/v6_1/K3/iniciadas.md`): la asociación no indica que construir suba el alquiler.
-
-**Modelos.** Frente a la línea base más exigente (§11.3 bis), la ventaja predictiva queda acotada al alquiler de stock y al precio trimestral de tasación. <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
-
-**Ratio precio/alquiler.** Según la medida de precio, el ratio va de 18,9-20,3 años de alquiler años en 2015 a 17,1-17,7 años de alquiler en 2023 (provincias de entrenamiento). Con contratos nuevos donde existen, es menor (`output/v6_1/K3/ratio_pa.md`).
-
-**Errores corregidos en v6.1** (ERRATA.md): <!-- check:cifra-libre (etiqueta de versión o referencia a sección) -->
-- el redondeo de los recuentos de más de un millón, de unas pocas unidades;
-- las fianzas de Incasòl, que solo afectaban a un descriptivo;
-- el peso de Valencia en los contratos nuevos de la Comunitat Valenciana, que cambia esa cifra;
-- la descripción de las fuentes del déficit.
-
-Ninguna corrección cambia una conclusión.
+Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.1).
 
 ## Anexo A. Datos y fuentes
 

@@ -96,6 +96,15 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ---
 
+## Qué añade la versión de referencia v7.1 [C4]
+
+- Los precios de las comunidades se mueven sobre todo juntos: R² mediano de {{V71-S3-comun-r2-compra:valor}} frente a la media de las 17 (compra)
+- Ninguna relación regional de largo plazo confirmada ({{V71-S3-largo-confirmadas:num}} de siete hipótesis)
+- Ayudas a la demanda: el precio neto del beneficiario baja, el de mercado sube {{V71-S3-R6-e_ayuda_demanda-compra-precio10a:valor}} a diez años (escenario; signo dado por la fórmula)
+- Coste anual mediano por comunidad de esas ayudas: {{V71-S1-e_ayuda_demanda-compra-coste_anual_meur:valor}}; en los instrumentos de oferta, no estimable
+
+---
+
 ## Lo que no se puede afirmar
 
 - Que los topes, los turísticos, la inmigración o los tipos sean «la» razón de la subida

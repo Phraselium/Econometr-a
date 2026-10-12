@@ -16,3 +16,9 @@
   - Muestra común 2007T3-2025T1, porque ln_pob_total no tiene datos al final.
   - Los modelos de alquiler A y compra A no convergen (R-hat ≈ 1,5) y no se interpretan.
 - **F-P.** No es viable el CCE con flujos de ETDP e iniciadas: 13 años por provincia para 12 parámetros.
+
+## Desviación declarada en V7.1 (12-10-2026), antes de la apertura de la validación diferida
+- **Alquiler 2026T3.** Los meses de julio y agosto de 2026 del IPC de alquiler se publicaron antes de la fecha del pre-registro. Ningún modelo los usó, porque R5 se estimó hasta 2026T2.
+  - La evaluación principal sigue siendo la pre-registrada (2026T3-2027T2).
+  - Se añade, como sensibilidad, la del alquiler con 2026T4-2027T2. Si discrepan, se publican las dos.
+  - Detalle en docs/v7_1/evaluacion_2027.md §2.

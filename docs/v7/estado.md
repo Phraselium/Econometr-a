@@ -20,3 +20,4 @@
 | R2 herramientas (ronda 2) | +55.000 | ~30.000 (declarado; ver aviso) |
 | Revisor R2 | 40.000 | 48.945 (excedido) |
 | R2 (total de las 3 rondas, según el sistema) | 150.000 (módulo) | 123.485 |
+| R4a núcleo | 220.000 | 105.239 |

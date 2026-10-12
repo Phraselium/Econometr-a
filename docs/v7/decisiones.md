@@ -78,3 +78,11 @@
   - R2: 48.945 frente a 40.000.
   - R4: 65.590 frente a 45.000; declaró unos 37.000.
   - Por la regla de disciplina del encargo («si un subagente supera su tope, no vuelvas a delegar ese tipo de tarea y hazla tú»), la **revisión final la hace el orquestador**, con la misma lista de comprobación del revisor (interpretación, propuestas, neutralidad), y la documenta en docs/v7/revision_final.md. Se declara como desviación del control pedido (revisor opus al final).
+- **V15 · R4 cerrado tras el REHACER** (sin una segunda ronda del revisor; las correcciones son las que pidió).
+  - Magnitudes corregidas: ilustrativas y no publicables.
+  - Inferencia de φ solo con el valor crítico simulado.
+  - El Hausman de compra A no indica heterogeneidad.
+  - I(2) no se descarta en 8 de 17 CCAA (ln IPV), con sensibilidad en crecimientos.
+  - Signos estables entre retardos en solo 8 de 40 combinaciones.
+  - Descomposición histórica con el residuo dominante.
+  - **Conclusión de R4 (C4, informativa, muestra ya vista en v1).** Con los datos regionales trimestrales de 2007-2026 no se identifica una relación de largo plazo estable ni común entre precios o alquileres y empleo, población, hipotecas o paro. La velocidad de ajuste no es significativa frente al valor crítico simulado. Lo que se observa son diferencias regionales de corto plazo y de velocidad de ajuste, sin inferencia válida individual.

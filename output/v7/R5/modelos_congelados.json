@@ -1,0 +1,156 @@
+{
+ "base_fuerte": "ar_factor",
+ "comparadores": [
+  "ar_factor",
+  "ar4",
+  "ecm_v1"
+ ],
+ "ficheros_versionados_sha256": {
+  "output/v7/R5/congelacion/ar4_alquiler.json": "4e1ecef3bcc0a58d29eed04bb5247d0061b127ca3e311933f2a48138af2a94d3",
+  "output/v7/R5/congelacion/ar4_compra.json": "4c9332778cf60d27f52eb5c4d6ce2dc334baef7ec7ef47378e2546d83e31936a",
+  "output/v7/R5/congelacion/ar_factor_alquiler.json": "c495dc9e463ec10cb9e3363de49ed6975e1b4c5eb386c30c51d3aef0300ff8fe",
+  "output/v7/R5/congelacion/ar_factor_compra.json": "f880fdc4774cfe1e4671f0c0db6360174d79fe08490a9f6e5d0fb52ddde3e26f",
+  "output/v7/R5/congelacion/ecm_v1_alquiler.json": "fb166317a99c66ece535e4c0f1df44f4d232cd2743877d667f4e8de7f15d9c52",
+  "output/v7/R5/congelacion/ecm_v1_compra.json": "1308737787af5179465750eff76c0a44a69339d4cbe657eab38c570f5e03da35",
+  "output/v7/R5/congelacion/gbm_alquiler.json": "fc1691503a009d12a5c8e0165144cfed5d33a51bac9dc801112cd37f036fbb3f",
+  "output/v7/R5/congelacion/gbm_alquiler_h1.txt": "d27e2f4ba9bf602dc01134888912f0ddd02ef7f18bc57ceff1000c23961a3448",
+  "output/v7/R5/congelacion/gbm_alquiler_h2.txt": "a685042f71c29687a2e484771cd11daafb6a689c11f31084642421ab3b2aa5f3",
+  "output/v7/R5/congelacion/gbm_alquiler_h3.txt": "b40952c3cfcb56fa8ef7ec9727742bce5f46047ac58dcb1d868371f218e35303",
+  "output/v7/R5/congelacion/gbm_alquiler_h4.txt": "fb11339bc0c1e31f3ceb84e769731aa12bfa4989f118f89648037a3d559a3bfb",
+  "output/v7/R5/congelacion/gbm_compra.json": "fc1691503a009d12a5c8e0165144cfed5d33a51bac9dc801112cd37f036fbb3f",
+  "output/v7/R5/congelacion/gbm_compra_h1.txt": "a63eaae271a0fa3724d76659f450ebc4fa53f62de1914dbb70b950180b97c2e0",
+  "output/v7/R5/congelacion/gbm_compra_h2.txt": "698721781c1fea53a0b8b6f07bb30c6ca378c889a66f073779c2d852242f09e8",
+  "output/v7/R5/congelacion/gbm_compra_h3.txt": "ca923ac0afe78df9d59c6c2789aab577bfa02ff1f19c0b1ffd9206951abed172",
+  "output/v7/R5/congelacion/gbm_compra_h4.txt": "82e0a8903004903157d6b4f3a70578b89a56410400be1e8d67d20a5194cb5cb7",
+  "output/v7/R5/congelacion/mixto_alquiler.json": "3b2076168063b9bf56132bfc4ccfe57df8d0ee8553781b88226338d60bedd8be",
+  "output/v7/R5/congelacion/mixto_compra.json": "ded96f657e48b490f7c94538aa334a0c51cfc61085301df98b8df5e1632e66e1",
+  "output/v7/R5/congelacion/persistencia_alquiler.json": "e9e5da6b3c942668b2405c18730dbead26751879cc833493d24cee3ba26a1500",
+  "output/v7/R5/congelacion/persistencia_compra.json": "e9e5da6b3c942668b2405c18730dbead26751879cc833493d24cee3ba26a1500",
+  "output/v7/R5/congelacion/pmg_alquiler.json": "65c69bba8684fcf99aa68ad893fb354d0a3e0ffe1b9560e6c220e4114014b20c",
+  "output/v7/R5/congelacion/pmg_compra.json": "7b2e58aef8a946489545dd68e20a28cfab38060af1650f7b7344f0ecba3e514c",
+  "output/v7/R5/congelacion/ult_crec_nac_alquiler.json": "08aea6be3c09c46510cd238722d66f422137ad908734b78740152e2b8d305ead",
+  "output/v7/R5/congelacion/ult_crec_nac_compra.json": "08aea6be3c09c46510cd238722d66f422137ad908734b78740152e2b8d305ead"
+ },
+ "hilos": 1,
+ "mejor_regional": {
+  "alquiler|01": "gbm",
+  "alquiler|02": "gbm",
+  "alquiler|03": "gbm",
+  "alquiler|04": "mixto",
+  "alquiler|05": "gbm",
+  "alquiler|06": "gbm",
+  "alquiler|07": "gbm",
+  "alquiler|08": "gbm",
+  "alquiler|09": "pmg",
+  "alquiler|10": "gbm",
+  "alquiler|11": "ecm_v1",
+  "alquiler|12": "gbm",
+  "alquiler|13": "gbm",
+  "alquiler|14": "gbm",
+  "alquiler|15": "gbm",
+  "alquiler|16": "mixto",
+  "alquiler|17": "gbm",
+  "compra|01": "ar4",
+  "compra|02": "ar4",
+  "compra|03": "gbm",
+  "compra|04": "ar4",
+  "compra|05": "ar4",
+  "compra|06": "ar4",
+  "compra|07": "gbm",
+  "compra|08": "pmg",
+  "compra|09": "ar4",
+  "compra|10": "pmg",
+  "compra|11": "gbm",
+  "compra|12": "gbm",
+  "compra|13": "ar4",
+  "compra|14": "pmg",
+  "compra|15": "ar4",
+  "compra|16": "gbm",
+  "compra|17": "ar4"
+ },
+ "mercados": {
+  "alquiler": {
+   "x_especificacion_A": [
+    "ln_ocupados",
+    "ln_pob_total"
+   ],
+   "y": "ln_ipc_alquiler"
+  },
+  "compra": {
+   "x_especificacion_A": [
+    "ln_ocupados",
+    "ln_hip_importe",
+    "ln_pob_total"
+   ],
+   "y": "ln_ipv"
+  }
+ },
+ "modelos": {
+  "ar4": {
+   "especificacion": "dy_i,t=a_i+sum_{j=1..4} b_ij dy_i,t-j por CCAA; recursivo",
+   "hiperparametros": null
+  },
+  "ar_factor": {
+   "especificacion": "base fuerte K1 factible: dy_i,t=a_i+b_i dy_i,t-1+c_i f_t-1; f=AR(1) del crecimiento medio; recursivo",
+   "hiperparametros": null
+  },
+  "ecm_v1": {
+   "especificacion": "ECM nacional (p=2,q=1, spec A; ver r5_prediccion.m_ecm_v1) + ajuste por nivel; no hay ECM v1 por CCAA",
+   "hiperparametros": null
+  },
+  "gbm": {
+   "especificacion": "LightGBM directo por h; rasgos: 4 dy, d4y, brecha a la media, factor, dX_t, dX_t-1, d4X",
+   "hiperparametros": {
+    "colsample_bytree": 0.8,
+    "deterministic": true,
+    "force_row_wise": true,
+    "learning_rate": 0.05,
+    "min_child_samples": 15,
+    "n_estimators": 120,
+    "n_jobs": 1,
+    "num_leaves": 5,
+    "random_state": 20261010,
+    "reg_lambda": 1.0,
+    "subsample": 0.8,
+    "subsample_freq": 1,
+    "verbose": -1
+   }
+  },
+  "mejor_regional": {
+   "especificacion": "para cada (mercado, CCAA) el modelo candidato de menor RMSE en el backtest (selección en muestra)",
+   "hiperparametros": null
+  },
+  "mixto": {
+   "especificacion": "MixedLM dy_t~1+dy_t-1+dy_t-2, aleatorios (1, dy_t-1) por CCAA (o intercepto / MCO si no converge)",
+   "hiperparametros": null
+  },
+  "persistencia": {
+   "especificacion": "y_{T+h}=y_T",
+   "hiperparametros": null
+  },
+  "pmg": {
+   "especificacion": "PMG (panel_tools.pmg, p=2,q=1, spec A, sin demeaning) + coeficientes por unidad con theta fijo; dX futuro=0",
+   "hiperparametros": null
+  },
+  "ult_crec_nac": {
+   "especificacion": "y_{T+h}=y_T+(ybar_T-ybar_{T-h}), ybar=media de 17 CCAA (factible)",
+   "hiperparametros": null
+  }
+ },
+ "origen_estimacion": "2026Q2",
+ "periodos_prediccion": [
+  "2026Q3",
+  "2026Q4",
+  "2027Q1",
+  "2027Q2"
+ ],
+ "predicciones": {
+  "fichero": "output/v7/R5/predicciones_congeladas.csv",
+  "sha256": "ca53967486f0dcc2e581025ea00a24bc015311b922749623b481683be9140608"
+ },
+ "presupuesto_hiperparametros": "1 configuración fija de LightGBM; sin búsqueda; 8 modelos x 2 mercados = 16 especificaciones",
+ "rama": "R5",
+ "regla_reestimacion": "expansiva, trimestral: en cada origen se reestima con todos los datos hasta ese trimestre; la congelación reestima con datos hasta 2026Q2; en la evaluación diferida NO se reestima",
+ "rotulo": "informativo, muestra ya vista en v1",
+ "semilla": 20261010
+}

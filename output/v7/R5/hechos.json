@@ -1,0 +1,68 @@
+[
+ {
+  "id": "V7-R5-001",
+  "indicador": "CCAA donde el mejor candidato bate a la base fuerte (alquiler), h=1-4",
+  "valor": 12,
+  "min": 0,
+  "max": 17,
+  "unidad": "CCAA de 17",
+  "periodo": "origenes 2016Q1-2026Q1",
+  "cobertura": "17 CCAA",
+  "fuentes": [
+   "INE IPV 80270",
+   "INE IPC alquiler",
+   "R1 panel"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-12"
+ },
+ {
+  "id": "V7-R5-003",
+  "indicador": "RMSE x100 de la base fuerte a h=1 (alquiler)",
+  "valor": 0.21739797251316642,
+  "min": 0.13498476255103573,
+  "max": 0.3126937931621254,
+  "unidad": "puntos log x100",
+  "periodo": "origenes 2016Q1-2026Q1",
+  "cobertura": "17 CCAA",
+  "fuentes": [
+   "INE IPV 80270",
+   "INE IPC alquiler"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-12"
+ },
+ {
+  "id": "V7-R5-002",
+  "indicador": "CCAA donde el mejor candidato bate a la base fuerte (compra), h=1-4",
+  "valor": 17,
+  "min": 0,
+  "max": 17,
+  "unidad": "CCAA de 17",
+  "periodo": "origenes 2016Q1-2026Q1",
+  "cobertura": "17 CCAA",
+  "fuentes": [
+   "INE IPV 80270",
+   "INE IPC alquiler",
+   "R1 panel"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-12"
+ },
+ {
+  "id": "V7-R5-004",
+  "indicador": "RMSE x100 de la base fuerte a h=1 (compra)",
+  "valor": 1.7425995756082324,
+  "min": 1.3312496813303507,
+  "max": 2.2092002890164855,
+  "unidad": "puntos log x100",
+  "periodo": "origenes 2016Q1-2026Q1",
+  "cobertura": "17 CCAA",
+  "fuentes": [
+   "INE IPV 80270",
+   "INE IPC alquiler"
+  ],
+  "capa": "C4",
+  "fecha_dato": "2026-10-12"
+ }
+]

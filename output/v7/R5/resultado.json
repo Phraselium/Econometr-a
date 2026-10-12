@@ -1,0 +1,48 @@
+{
+ "rama": "R5",
+ "pregunta": "¿Algún modelo regional bate fuera de muestra (origen móvil, h=1-4) a la base fuerte K1, a AR(4) y a ECM v1 en 17 CCAA?",
+ "capa": "C4",
+ "datos": "data/processed/v7/panel_ccaa_q_v7.csv (17 CCAA, 2007Q1-2026Q2); medida_precio: IPV del INE (CCAA) y IPC alquiler (stock)",
+ "N": 42976,
+ "metodo": "backtest de origen móvil con reestimación; DM-HLN y permutación de signo sobre 17 CCAA; Holm; informativo, muestra ya vista en v1",
+ "estimacion": {
+  "alquiler": 12,
+  "compra": 17
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "alquiler|h1|ar_factor": 0.04076696010970264,
+  "alquiler|h1|ar4": 0.0008763789401771079,
+  "alquiler|h2|ar_factor": 0.015557074044213038,
+  "alquiler|h2|ar4": 0.0003908084768271885,
+  "alquiler|h3|ar_factor": 0.0342332800301971,
+  "alquiler|h3|ar4": 0.0003908084768271885,
+  "alquiler|h4|ar_factor": 0.07793388937342458,
+  "alquiler|h4|ar4": 0.0009777714852477282,
+  "compra|h1|ar_factor": 0.0001598482959962975,
+  "compra|h1|ar4": 0.07793388937342458,
+  "compra|h2|ar_factor": 3.8216788008020113e-07,
+  "compra|h2|ar4": 0.05123956025574559,
+  "compra|h3|ar_factor": 1.0827663322237102e-07,
+  "compra|h3|ar4": 0.025960648705534703,
+  "compra|h4|ar_factor": 5.425234789397635e-08,
+  "compra|h4|ar4": 0.027307411059608433
+ },
+ "nivel_evidencia": "EXPLORATORIO",
+ "diagnosticos": {
+  "n_regiones": 17,
+  "congelacion_sha256": "93795a9480eccf03f382bc20253561dd37e240287921453fd0d1add40a9a0646"
+ },
+ "fuera_muestra": {
+  "modelo": "mejor_regional (selección en muestra)",
+  "rmse": {
+   "alquiler": 0.19673802994590434,
+   "compra": 1.3380857945585896
+  },
+  "dm_vs_ar4": {
+   "alquiler": 8.763789401771079e-05,
+   "compra": 0.06745659969998827
+  }
+ },
+ "notas": "Informativo, muestra ya vista en v1; la prueba honesta es la validación diferida (H7-P1). Sin lenguaje causal."
+}

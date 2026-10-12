@@ -109,6 +109,14 @@ def integracion(d, outdir):
                     r[f"za_p_{lab}"], r[f"za_break_{lab}"] = za[1], int(za[4])
                 except Exception:
                     r[f"za_p_{lab}"], r[f"za_break_{lab}"] = np.nan, -1
+            dz = np.diff(s)
+            r["adf_ct_p_dif_aic"] = adfuller(dz, regression="ct", autolag="AIC")[1]
+            r["adf_ct_p_dif_bic"] = adfuller(dz, regression="ct", autolag="BIC")[1]
+            try:
+                r["kpss_ct_p_dif"] = kpss(dz, regression="ct", nlags="auto")[1]
+            except Exception:
+                r["kpss_ct_p_dif"] = np.nan
+            r["i2_no_descartado"] = bool(min(r["adf_ct_p_dif_aic"], r["adf_ct_p_dif_bic"], r["adf_c_p_dif"]) >= .05)
             n_ = r["adf_c_p_nivel"] >= .05 and r["kpss_c_p_nivel"] < .05
             i0 = r["adf_c_p_nivel"] < .05 and r["kpss_c_p_nivel"] >= .05
             dif = r["adf_c_p_dif"] < .05
@@ -149,6 +157,7 @@ def bounds_cv(k, n, reps, seed=SEED):
             X = np.cumsum(X, 0) if cum else X
             fs.append(bounds_F(y, X, 1, 1, 1, s=1)[0])
         out[lab] = float(np.quantile(fs, .95))
+        out["sim_" + lab] = np.array(fs)
     return out
 
 
@@ -180,13 +189,18 @@ def cointegracion(S, p, q, cvb):
                          nota="p simulado con paseos aleatorios independientes; contraste principal de E1"))
     key = (k, T)
     if key not in cvb:
-        cvb[key] = bounds_cv(k, T - max(p, q, 1) - 1, REPS)
+        cvb[key] = bounds_cv(k, T - max(p, q, 1) - 1, 40 if SMOKE else 2000)
     cv = cvb[key]
+    fs = [bounds_F(S["y"][i], S["X"][i], p, q)[0] for i in range(N)]
+    sim = cv["sim_I1"]
+    pv = np.array([(1 + (sim >= f).sum()) / (len(sim) + 1) for f in fs])
+    ph_ = multipletests(pv, method="holm")[1]
     for i, cod in enumerate(S["codes"]):
-        f, _ = bounds_F(S["y"][i], S["X"][i], p, q)
-        dec = "cointegra" if f > cv["I1"] else ("sin cointegracion" if f < cv["I0"] else "inconcluso")
-        rows.append(dict(nivel="region", codigo_ine_ccaa=cod, test="ARDL bounds F (PSS 2001, caso III)", estadistico=f, p=np.nan,
-                         decision=dec, nota=f"cotas 5 % simuladas I0={cv['I0']:.2f} I1={cv['I1']:.2f} (no tabuladas de PSS)"))
+        f = fs[i]
+        bruta = "cota superior superada" if f > cv["I1"] else ("bajo cota inferior" if f < cv["I0"] else "inconcluso")
+        dec = "cointegra (Holm<0,05)" if ph_[i] < .05 else "no se rechaza sin cointegracion tras Holm"
+        rows.append(dict(nivel="region", codigo_ine_ccaa=cod, test="ARDL bounds F (PSS 2001, caso III)", estadistico=f, p=pv[i], p_holm=ph_[i], decision=dec,
+                         nota=f"diagnostico C4 no validado en R2; p simulado con cota I(1) (2000 reps); Holm en las {N} regiones; sin Holm: {bruta} (I0={cv['I0']:.2f}, I1={cv['I1']:.2f}); invalido si hay I(2)"))
     return rows, wl, pe
 
 
@@ -233,6 +247,8 @@ def dfe_inferencia(S, p, q):
     dk = pt.driscoll_kraay(D, Z, N, n)
     rows = []
     for j, nm in enumerate(["phi"] + [f"b_{v}" for v in S["xv"]]):
+        if j == 0:
+            continue  # sin inferencia valida para phi (Webb/DK no reproducen la nula de no cointegracion)
         w = pt.wild_cluster_boot(D, Z, cl, j=j, B=B_WILD)
         pdk = 2 * stats.t.sf(abs(dk["t"][j]), n - 1)
         rows.append(dict(coef_ecm=nm, coef=w["coef"], t_cluster=w["t"], p_wild_webb=w["p_boot"], ee_dk=dk["se"][j], t_dk=dk["t"][j], p_dk=pdk,
@@ -259,7 +275,7 @@ def region_ecm(S, i, ys, Xs, p, q):
     th, Vt = pt._theta_delta(bhat, res.cov_params(), k)
     r = dict(codigo_ine_ccaa=S["codes"][i], n=len(d))
     ph = bhat[0]
-    r.update(phi=ph, ee_phi=se[0], semivida_trim=(np.log(.5) / np.log(1 + ph) if -1 < ph < 0 else np.nan))
+    r.update(phi=ph, inferencia_phi="sin inferencia valida", semivida_trim=(np.log(.5) / np.log(1 + ph) if -1 < ph < 0 else np.nan))
     for j, v in enumerate(S["xv"]):
         r[f"theta_{v}"] = th[j]
         r[f"ee_theta_{v}"] = np.sqrt(Vt[j, j])
@@ -285,12 +301,14 @@ def region_ecm(S, i, ys, Xs, p, q):
     for j, v in enumerate(S["xv"]):
         diag[f"VIF_{v}"] = vif[j]
         diag[f"theta_{v}_m1"], diag[f"theta_{v}_m2"] = halves[0][1][j], halves[1][1][j]
-    corto = [dict(codigo_ine_ccaa=S["codes"][i], coef=nm, estimacion=bhat[j], ee=se[j], t=bhat[j] / se[j], p=res.pvalues[j])
+    tq = stats.t.ppf(.975, res.df_resid)
+    corto = [dict(codigo_ine_ccaa=S["codes"][i], coef=nm, estimacion=bhat[j], ee=(np.nan if nm == "phi" else se[j]), t=(np.nan if nm == "phi" else bhat[j] / se[j]),
+                  p=(np.nan if nm == "phi" else res.pvalues[j]), ic95_lo=(np.nan if nm == "phi" else bhat[j] - tq * se[j]), ic95_hi=(np.nan if nm == "phi" else bhat[j] + tq * se[j]))
              for j, nm in enumerate(names) if nm.startswith("d_") or nm == "phi"]
     return r, diag, corto, dict(names=names, b=bhat, se=se, theta=th, res=res)
 
 
-def bai_perron(yb, Xb, qs, mmax=3, trim=.15):
+def bai_perron(yb, Xb, qs, mmax=5, trim=.15):
     T = len(yb)
     h = max(int(trim * T), Xb.shape[1] + 3)
     Zf = np.column_stack([np.ones(T), Xb])
@@ -315,7 +333,7 @@ def bai_perron(yb, Xb, qs, mmax=3, trim=.15):
             best[m] = dp[(m, T)]
     bic = {m: T * np.log(v[0] / T) + ((m + 1) * kk + m) * np.log(T) for m, v in best.items()}
     mb = min(bic, key=bic.get)
-    return dict(m_bic=mb, fechas=[qs[a] for a in best[mb][1]], bic={m: float(v) for m, v in bic.items()},
+    return dict(m_max_probado=max(best), m_en_limite=bool(mb == max(best)), m_bic=mb, fechas=[qs[a] for a in best[mb][1]], bic={m: float(v) for m, v in bic.items()},
                 fechas_m1=[qs[a] for a in best[1][1]] if 1 in best else [])
 
 
@@ -337,7 +355,7 @@ def main():
     ur = integracion(d, OUT)
     cvcache, cvb = {}, {}
     lp_all, hip_rows, e2_rows, res_json = [], [], [], {}
-    region_tables = {m: dict(corto=[], diag=[], coint=[], dfe=[], ur=[], eq=[], bp=[], reg_phi=[]) for m in ("alquiler", "compra")}
+    region_tables = {m: dict(corto=[], diag=[], coint=[], dfe=[], ur=[], eq=[], bp=[], reg_phi=[], desc=[]) for m in ("alquiler", "compra")}
     est_main = {}
     for (m, sp), _v in SPECS.items():
         S = build(d, m, sp)
@@ -387,6 +405,18 @@ def main():
             lp_all.append(dict(mercado=m, spec=sp, rezago="pT=4", estimador="CS-DL", variable=v, hipotesis=hs[0] if hs else "", coef=th, ee=se, t=t, p_bilateral=p2,
                                p_H1=p1, ic95_lo=lo, ic95_hi=hi, N=N, T=T, periodo=S["per"], nota=f"{ROT}; asociacion; sin demeaning (medias transversales y 4 retardos)"))
             reg.log("R4-largo-plazo", f"{m}_{sp}_CS-DL_{v}", f"{S['yv']} CS-DL pT=4", S["qs"][0], S["qs"][-1], N * T, np.nan, np.nan, np.nan, np.nan, th, p2, ROT)
+        Sg = dict(S, y=np.diff(S["y"], axis=1), X=S["X"][:, 1:], ctrl=S["ctrl"][:, 1:], qs=S["qs"][1:])
+        ysg, Xsg = pt.cs_demean(Sg["y"], Sg["X"])
+        pg, qg = pt.select_lags_sbc(ysg, Xsg)
+        Eg = estimar(Sg, pg, qg, False)
+        csg = pt.cs_dl(Sg["y"], Sg["X"], pT=4)
+        for est, R_ in (("MG_dm", Eg["MG_dm"]), ("PMG_dm", Eg["PMG_dm"]), ("DFE", Eg["DFE"]), ("CS-DL", dict(theta=csg["theta"], se=csg["se_theta"]))):
+            for j, v in enumerate(S["xv"]):
+                t, p2, p1, lo, hi = tinfo(R_["theta"][j], R_["se"][j], N)
+                lp_all.append(dict(mercado=m, spec=sp + "_g", rezago=(f"SBC=({pg},{qg})" if est != "CS-DL" else "pT=4"), estimador=est, variable=v, hipotesis="", coef=R_["theta"][j],
+                                   ee=R_["se"][j], t=t, p_bilateral=p2, p_H1=np.nan, ic95_lo=lo, ic95_hi=hi, N=N, T=T - 1, periodo=f"{Sg['qs'][0]}-{Sg['qs'][-1]}",
+                                   nota=f"SENSIBILIDAD ante posible I(2): y = diferencia de ln y (crecimiento), x en nivel; EE PMG de informacion; no confirmatoria; {ROT}"))
+                reg.log("R4-sens-I2", f"{m}_{sp}_g_{est}_{v}", f"d{S['yv']} ~ {v} {est}", Sg["qs"][0], Sg["qs"][-1], N * (T - 1), np.nan, np.nan, np.nan, np.nan, R_["theta"][j], p2, "sensibilidad crecimiento")
         E = ests["SBC"]
         # Hausman, E2
         tphi = E["MG_dm"]["phi"] / E["MG_dm"]["se_phi"]
@@ -409,6 +439,26 @@ def main():
             T_["eq"].append((sp, i, ex, S, p, q))
             reg.log("R4-region", f"{m}_{sp}_{S['codes'][i]}", f"ECM {S['yv']} region {S['codes'][i]} ARDL{(p, q)}", S["qs"][0], S["qs"][-1], r["n"], ex["res"].rsquared_adj,
                     ex["res"].aic, ex["res"].bic, np.nan, r["phi"], ex["res"].pvalues[0], ROT)
+        thetas = {"MG_dm": ests["SBC"]["MG_dm"]["theta"], "PMG_dm": ests["SBC"]["PMG_dm"]["theta"], "CS_DL": cs["theta"]}
+        s0 = pt._start(p, q)
+        for (s_, i, ex, *_r) in [e_ for e_ in T_["eq"] if e_[0] == sp]:
+            for lab, a_, b_ in (("2014T1-2019T4", "2014Q1", "2019Q4"), ("2020T1-2022T2", "2020Q1", "2022Q2"), ("2022T3-ultimo", "2022Q3", S["qs"][-1])):
+                i0, i1 = S["qs"].index(a_) - 1, S["qs"].index(b_)
+                dy = ys[i, i1] - ys[i, i0]
+                dxs = Xs[i, i1] - Xs[i, i0]
+                con = {k_: th_ * dxs for k_, th_ in thetas.items()}
+                res_ = {k_: dy - c_.sum() for k_, c_ in con.items()}
+                fit = ex["res"].fittedvalues[i0 + 1 - s0:i1 - s0 + 1].sum()
+                noat = bool(abs(res_["MG_dm"]) > abs(dy) / 2 or any(len({np.sign(con[k_][j]) for k_ in con}) > 1 for j in range(len(dxs))))
+                base = dict(mercado=m, spec=sp, codigo_ine_ccaa=S["codes"][i], periodo=lab, dy_obs=dy, no_atribuible=noat,
+                            rotulo="contabilidad con coeficientes no confirmados (H7 no confirmada); asociacion, sin lectura causal; magnitud como rango; y relativa a la media de CCAA y ajustada por pulsos")
+                for j, v in enumerate(S["xv"]):
+                    vals = [con[k_][j] for k_ in con]
+                    T_.setdefault("desc", []).append(base | dict(componente=f"theta*d({v})", MG_dm=con["MG_dm"][j], PMG_dm=con["PMG_dm"][j], CS_DL=con["CS_DL"][j], rango_min=min(vals), rango_max=max(vals)))
+                vals = list(res_.values())
+                T_["desc"].append(base | dict(componente="residuo no explicado", MG_dm=res_["MG_dm"], PMG_dm=res_["PMG_dm"], CS_DL=res_["CS_DL"], rango_min=min(vals), rango_max=max(vals)))
+                T_["desc"].append(base | dict(componente="ECM propio de la region: suma ajustada (corto plazo + correccion)", MG_dm=fit, PMG_dm=np.nan, CS_DL=np.nan, rango_min=fit, rango_max=fit))
+                T_["desc"].append(base | dict(componente="ECM propio: residuo", MG_dm=dy - fit, PMG_dm=np.nan, CS_DL=np.nan, rango_min=dy - fit, rango_max=dy - fit))
         agg_y = S["y"].mean(0)
         agg_X = S["X"].mean(0)
         T_["bp"].append(dict(spec=sp, periodo=S["per"]) | {k_: str(v_) for k_, v_ in bai_perron(agg_y, agg_X, S["qs"]).items()})
@@ -426,7 +476,8 @@ def main():
         mgr, pmr, csr = g.loc["MG_dm"], g.loc["PMG_dm"], g.loc["CS-DL"]
         sig = mgr.p_holm < .05
         same = np.sign(mgr.coef) == np.sign(pmr.coef) == np.sign(csr.coef)
-        ver = ("CONFIRMADA (asociacion C4)" if sig and same else ("NO CONCLUYENTE (signos discrepantes)" if sig else "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)"))
+        ver = ("CONFIRMADA (asociacion C4)" if sig and same else ("NO CONCLUYENTE (signos discrepantes)" if sig else
+               ("NO CONFIRMADA; signos discrepantes entre estimadores (p de Holm de MG_dm >= 0,05)" if not same else "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)")))
         vals = [mgr.coef, pmr.coef, csr.coef]
         hip.append(dict(id=h, mercado=m, familia=FAM[m], spec=sp, variable=v, signo_H1=sg, MG_dm=mgr.coef, PMG_dm=pmr.coef, CS_DL=csr.coef, rango_min=min(vals), rango_max=max(vals),
                         p_H1_MG=mgr.p_H1, p_holm_MG=mgr.p_holm, p_holm_PMG=pmr.p_holm, p_holm_CSDL=csr.p_holm, signos_coinciden=bool(same), veredicto=ver, periodo=mgr.periodo,
@@ -444,10 +495,10 @@ def main():
     fe = pd.concat(fe)
     # ------------- magnitudes
     mag = []
-    for _, r in lp[lp.rezago.str.startswith("SBC") | (lp.rezago == "pT=4")].iterrows():
-        pct = r.coef * 100.0
+    for _, r in lp[(lp.rezago.str.startswith("SBC") | (lp.rezago == "pT=4")) & ~lp.spec.str.endswith("_g")].iterrows():
+        pct = r.coef * (100.0 if r.variable == "tasa_paro_epa" else 1.0)  # log-log: +1 % de x se asocia a coef % de y; paro en pp: 100*coef %
         niv = np.mean([alq[c] for c in alq if c in set(d.codigo_ine_ccaa)]) if r.mercado == "alquiler" else np.mean([cmp_[c] for c in cmp_])
-        mag.append(dict(mercado=r.mercado, spec=r.spec, estimador=r.estimador, variable=r.variable, pct_y_por_unidad=pct, unidad="por +1 % de x" if r.variable != "tasa_paro_epa" else "por +1 pp de paro",
+        mag.append(dict(mercado=r.mercado, spec=r.spec, estimador=r.estimador, variable=r.variable, pct_y_por_unidad=pct, estado="ilustrativa; no publicable (ninguna hipotesis confirmada)", unidad="% de y por +1 % de x" if r.variable != "tasa_paro_epa" else "por +1 pp de paro",
                         nivel_medio_regional=niv, eur_por_unidad=niv * pct / 100.0,
                         unidad_eur="EUR/mes (SERPAVI VC mediana 2024)" if r.mercado == "alquiler" else "EUR/m2 (valor tasado medio 2025; supuesto: % del IPV aplicado al valor tasado)"))
     mag = pd.DataFrame(mag)
@@ -472,10 +523,10 @@ def main():
         # F-H: BH por (mercado, spec)
         cor["q_bh"] = np.nan
         for sp in cor.spec.unique():
-            mk = cor.spec == sp
+            mk = (cor.spec == sp) & (cor.coef != "phi")
             cor.loc[mk, "q_bh"] = multipletests(cor.loc[mk, "p"].to_numpy(), method="fdr_bh")[1]
         cor["rechaza_bh10"] = cor.q_bh < .10
-        cor["familia"] = "F-H (exploratoria, BH q=0,10); t convencional: aproximado para phi (distribucion no estandar)"
+        cor["familia"] = "F-H (exploratoria, BH q=0,10) solo sobre coeficientes de corto plazo; phi_i sin inferencia valida (solo estimacion)"
         cor.to_csv(D / "corto_plazo_region.csv", index=False)
         ph.to_csv(D / "velocidad_ajuste_region.csv", index=False)
         pd.DataFrame(Tm["diag"]).to_csv(D / "diagnosticos_region.csv", index=False)
@@ -494,6 +545,16 @@ def main():
                 colrows.append(dict(mercado=m, spec=sp, v1=nm, v2="VIF_poblacional_demeaned", corr_demeaned=Ci[a, a]))
         pd.DataFrame(colrows).to_csv(D / "colinealidad.csv", index=False)
         write_eq(D / "ecuaciones.md", m, Tm["eq"], est_main, hip, ph)
+        dsc = pd.DataFrame(Tm["desc"])
+        dsc.to_csv(D / "descomposicion.csv", index=False)
+        figura_desc(D / "descomposicion.png", m, dsc)
+        for r_ in lp[lp.mercado == m].pivot_table(index=["spec", "variable", "estimador"], columns="rezago", values="coef").reset_index().to_dict("records"):
+            pass
+        sg = lp[(lp.mercado == m)].pivot_table(index=["spec", "variable", "estimador"], columns="rezago", values="coef")
+        sg["signo_estable_entre_rezagos"] = [len({np.sign(v_) for k_, v_ in row.items() if k_ in ("(1,1)", "(2,2)") or str(k_).startswith("SBC")}) == 1 for _, row in sg.iterrows()]
+        sg.to_csv(D / "signos_rezago.csv")
+        for cod in sorted(set(ph.codigo_ine_ccaa)):
+            write_region_md(D / f"region_{cod}.md", m, cod, Tm, cor, ph, dsc, est_main)
         summaries[m] = (cor, ph, pd.DataFrame(Tm["diag"]))
     # colinealidad pob/extranjeros/ocupados (niveles, panel entero, demeaning)
     qs = [q for q in sorted(d.trimestre.unique()) if d[d.trimestre == q][["ln_ocupados", "ln_pob_total", "ln_pob_extranj"]].notna().all().all()]
@@ -535,6 +596,62 @@ def write_eq(path, m, eqs, est_main, hip, ph):
     path.write_text("\n".join(L), encoding="utf-8")
 
 
+def figura_desc(path, m, dsc):
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    sp = "B"
+    fig, axs = plt.subplots(1, 3, figsize=(15, 6), sharey=True)
+    for ax, per in zip(axs, dsc.periodo.unique()):
+        x = dsc[(dsc.spec == sp) & (dsc.periodo == per)]
+        o = x[x.componente == "residuo no explicado"].set_index("codigo_ine_ccaa")
+        cods = list(o.index)
+        yy = np.arange(len(cods))
+        ax.barh(yy - .2, o.dy_obs, .4, label="variacion observada de y (relativa)")
+        ax.barh(yy + .2, o.MG_dm, .4, label="residuo no explicado (MG_dm)")
+        ax.set_yticks(yy)
+        ax.set_yticklabels(cods)
+        ax.set_title(per)
+        ax.axvline(0, color="k", lw=.5)
+    axs[0].legend(fontsize=7, loc="lower left")
+    fig.suptitle(f"{m}, spec B: descomposicion historica (contabilidad descriptiva C4; coeficientes no confirmados; {ROT})", fontsize=9)
+    fig.savefig(path, dpi=110, bbox_inches="tight")
+    plt.close(fig)
+
+
+def write_region_md(path, m, cod, Tm, cor, ph, dsc, est_main):
+    tex = lambda s_: s_.replace("_", r"\_")  # noqa: E731
+    L = [f"# Region {cod}, mercado {m} ({ROT}; capa C4; asociacion, sin lectura causal)\n"]
+    for sp in ("A", "B"):
+        E, cs, S, (p, q) = est_main[(m, sp)]
+        i = S["codes"].index(cod)
+        ex = [e_ for e_ in Tm["eq"] if e_[0] == sp and e_[1] == i][0][2]
+        r = ph[(ph.spec == sp) & (ph.codigo_ine_ccaa == cod)].iloc[0]
+        dg = pd.DataFrame(Tm["diag"])
+        dg = dg[(dg.spec == sp) & (dg.codigo_ine_ccaa == cod)].iloc[0]
+        yv, xv = S["yv"], S["xv"]
+        nm, b = ex["names"], ex["b"]
+        lr = " + ".join(f"{ex['theta'][j]:.3f}\\,\\text{{{tex(v)}}}_{{t-1}}" for j, v in enumerate(xv))
+        sr = " ".join(f"{b[j]:+.3f}\\,\\text{{{tex(n_)}}}" for j, n_ in enumerate(nm) if n_.startswith("d_"))
+        L += [f"## Especificacion {sp} (N de la region = {r.n} observaciones; periodo {S['per']}; ARDL({p},{q}))\n",
+              f"$$\\Delta\\text{{{tex(yv)}}}_t = {b[nm.index('const')]:+.3f} {b[0]:+.3f}\\,(\\text{{{tex(yv)}}}_{{t-1}} - [{lr}]) {sr}$$\n",
+              f"Velocidad de ajuste estimada phi_i = {r.phi:.3f}; semivida = {fmt(r.semivida_trim, 1)} trimestres. **Sin inferencia valida** (no hay IC ni p de phi_i; la comparacion valida es la del promedio con -8,83). theta_i estimado (sin inferencia valida): "
+              + ", ".join(f"{v} = {r['theta_' + v]:.3f}" for v in xv) + ".\n",
+              "| coeficiente de corto plazo | estimacion | EE | t | p | q (BH, q=0,10) | IC95 |", "|---|---|---|---|---|---|---|"]
+        c_ = cor[(cor.spec == sp) & (cor.codigo_ine_ccaa == cod) & (cor.coef != "phi")]
+        for _, z in c_.iterrows():
+            L.append(f"| {z.coef} | {z.estimacion:.4f} | {z.ee:.4f} | {z.t:.2f} | {z.p:.3f} | {fmt(z.q_bh)} | [{z.ic95_lo:.4f}, {z.ic95_hi:.4f}] |")
+        L += ["", "Diagnosticos: " + "; ".join(f"{k_} = {fmt(dg[k_], 3)}" for k_ in ("BG_p", "BP_p", "JB_p", "RESET_p", "CUSUM_stat", "CUSUM_p", "VIF_max", "r2_adj", "phi_mitad1", "phi_mitad2"))
+              + f"; CUSUM rechaza al 5 %: {dg.CUSUM_rechaza5}; cambio de signo de phi entre mitades: {dg.cambio_signo_phi}.", ""]
+        dd = dsc[(dsc.spec == sp) & (dsc.codigo_ine_ccaa == cod)]
+        L += ["Descomposicion historica (contabilidad descriptiva; coeficientes no confirmados; rango entre MG_dm, PMG_dm y CS-DL):", "",
+              "| periodo | componente | MG_dm | PMG_dm | CS-DL | variacion observada | no atribuible |", "|---|---|---|---|---|---|---|"]
+        for _, z in dd.iterrows():
+            L.append(f"| {z.periodo} | {z.componente} | {fmt(z.MG_dm)} | {fmt(z.PMG_dm)} | {fmt(z.CS_DL)} | {fmt(z.dy_obs)} | {z.no_atribuible} |")
+        L.append("")
+    path.write_text("\n".join(L), encoding="utf-8")
+
+
 def fmt(x, n=3):
     return "NA" if pd.isna(x) else f"{x:.{n}f}"
 
@@ -553,16 +670,33 @@ def write_resumen(summ, hip, e2, fe, lp, ur, est_main):
         for sp in ("A", "B"):
             x = ph[ph.spec == sp]
             L.append(f"\nHeterogeneidad de phi_i, spec {sp}: media {fmt(x.phi.mean())}, mediana {fmt(x.phi.median())}, DE {fmt(x.phi.std())}, min {fmt(x.phi.min())}, max {fmt(x.phi.max())}; "
-                     f"phi_i<0 en {int((x.phi < 0).sum())}/{len(x)}; semivida mediana {fmt(x.semivida_trim.median(), 1)} trimestres; BH q<0,10 en phi_i: "
-                     f"{int(cor[(cor.spec == sp) & (cor.coef == 'phi')].rechaza_bh10.sum())}/{len(x)} (t convencional, aproximado).")
+                     f"phi_i<0 en {int((x.phi < 0).sum())}/{len(x)}; semivida mediana {fmt(x.semivida_trim.median(), 1)} trimestres. phi_i SIN INFERENCIA VALIDA (solo estimacion; sin IC, p ni BH; "
+                     f"la comparacion valida de la media es el t de MG frente a -8,83).")
             dd = dg[dg.spec == sp]
             L.append(f"Diagnosticos spec {sp}: BG p<0,05 en {int((dd.BG_p < .05).sum())}, BP en {int((dd.BP_p < .05).sum())}, JB en {int((dd.JB_p < .05).sum())}, RESET en {int((dd.RESET_p < .05).sum())}, "
                      f"CUSUM rechaza en {int(dd.CUSUM_rechaza5.sum())} de {len(dd)}; cambio de signo de phi entre mitades en {int(dd.cambio_signo_phi.sum())}.")
         vs = ["ln_ipc_alquiler" if m == "alquiler" else "ln_ipv"] + sorted({v for k_, z in SPECS.items() if k_[0] == m for v in z[1]})
+        if m == "compra":
+            L += ["", "## Hausman", "El Hausman de compra A rechaza (p = 0,001), pero NO indica heterogeneidad del largo plazo: sin cointegracion rechaza ~24 % de las veces (validacion R2, escenarios C y D), Pedroni no rechaza en A y la relacion de largo plazo no esta establecida. En alquiler no rechaza y no se afirma homogeneidad."]
+        else:
+            L += ["", "## Hausman", "No rechaza en alquiler (potencia ~0,61): se reportan MG y PMG sin afirmar homogeneidad; la relacion de largo plazo no esta establecida."]
+        cc = pd.read_csv(OUT / m / "cointegracion.csv")
+        cr = cc[cc.nivel == "region"]
+        L += ["", "## Cotas ARDL por region (diagnostico C4, no validado en R2, invalido si hay I(2))"]
+        for sp in ("A", "B"):
+            c2 = cr[cr.spec == sp]
+            L.append(f"- Spec {sp}: {int(c2.decision.str.startswith('cointegra').sum())}/{len(c2)} regiones rechazan la ausencia de cointegracion tras Holm (p simulado con cota I(1)); sin ajuste, {int(c2.nota.str.contains('cota superior superada').sum())}/{len(c2)} superan la cota superior. Discrepancia con Pedroni/Westerlund del panel: ver cointegracion.csv.")
+        sg = pd.read_csv(OUT / m / "signos_rezago.csv")
+        L += ["", "## Sensibilidad del signo al orden de rezagos (signos_rezago.csv)",
+              f"El signo de theta NO es estable al orden ARDL: signo estable entre SBC, (1,1) y (2,2) en {int(sg.signo_estable_entre_rezagos.sum())}/{len(sg)} combinaciones spec-variable-estimador. Un PMG degenerado (EE enormes) es un fallo numerico, no un resultado."]
+        bpf = pd.read_csv(OUT / m / "bai_perron.csv")
+        for _, z in bpf.iterrows():
+            L.append(f"- Bai-Perron spec {z.spec} (relacion agregada, mmax = {z.m_max_probado}): m por BIC = {z.m_bic}, fechas {z.fechas}; en el limite de m: {z.m_en_limite}.")
         L += ["", "## Orden de integracion por CCAA (ADF c + KPSS c; I(1) si ADF no rechaza en nivel, KPSS rechaza y ADF rechaza en diferencias)\n"]
         for v in vs:
             c_ = ur[ur.variable == v].clasif.value_counts().to_dict()
-            L.append(f"- {v}: {c_} (ver integracion.csv: ADF, KPSS, Zivot-Andrews)")
+            L.append(f"- {v}: {c_}; I(2) no descartado (ADF en diferencias con constante y tendencia, AIC y BIC) en {int(ur[ur.variable == v].i2_no_descartado.sum())}/17 CCAA (ver integracion.csv)")
+        L.append("Si I(2) no se descarta para y, ARDL/PMG y las cotas PSS no son validas con ese regresando: se anade la sensibilidad con la diferencia de ln y (specs A_g y B_g en largo_plazo.csv); no es confirmatoria.")
         L += ["", "Ver largo_plazo.csv (todos los estimadores y rezagos), cointegracion.csv (Westerlund tipo, Pedroni, bounds por region), integracion.csv, corto_plazo_region.csv, diagnosticos_region.csv, dfe_inferencia.csv, bai_perron.csv, magnitudes.csv.",
               "Aviso de potencia: el tipo Westerlund tiene potencia 0,06-0,29 con ajuste lento; un no rechazo no prueba ausencia de cointegracion. PMG: IC aproximados. Con factor I(1) de cargas heterogeneas ningun estimador es apto (sesgo MG_dm ~20 %)."]
         (OUT / m / "resumen.md").write_text("\n".join(L), encoding="utf-8")
@@ -572,13 +706,13 @@ def write_json(hip, e2, lp, ur, summ, est_main, fe):
     facts = []
     for _, r in hip.iterrows():
         pr = "valor tasado (magnitud) / IPV INE CCAA (dependiente)" if r.mercado == "compra" else "IPC alquiler INE (stock)"
-        facts.append(dict(id=f"V7-R4-{r['id']}", indicador=f"Coef. largo plazo {r.variable} ({r.mercado}, spec {r.spec}), MG_dm; veredicto: {r.veredicto}", valor=r.MG_dm, min=r.rango_min, max=r.rango_max,
+        facts.append(dict(id=f"V7-R4-{r['id']}", indicador=f"Coef. largo plazo {r.variable} ({r.mercado}, spec {r.spec}), MG_dm; veredicto: {r.veredicto}", valor=None, min=r.rango_min, max=r.rango_max,
                           unidad="d ln y por d ln x" if r.variable != "tasa_paro_epa" else "d ln y por pp de paro", periodo=r.periodo, cobertura="17 CCAA", fuentes="INE (IPV, IPC, EPA, padron, hipotecas); panel_ccaa_q_v7",
                           capa="C4", fecha_dato=FECHA, medida_precio=pr if r.mercado == "compra" else "no aplica (alquiler: IPC alquiler, stock)", sentido_min_max="rango entre MG_dm, PMG_dm y CS-DL"))
     for _, r in e2.iterrows():
-        facts.append(dict(id=f"V7-R4-PHI-{r.mercado.upper()}-{r.spec}", indicador=f"Velocidad de ajuste media phi (MG_dm), {r.mercado} spec {r.spec}", valor=r.phi_MG, min=r.phi_MG - 1.96 * r.ee,
-                          max=r.phi_MG + 1.96 * r.ee, unidad="por trimestre", periodo=est_main[(r.mercado, r.spec)][2]["per"], cobertura="17 CCAA", fuentes="INE; panel_ccaa_q_v7", capa="C4", fecha_dato=FECHA,
-                          medida_precio="IPV INE CCAA" if r.mercado == "compra" else "no aplica (IPC alquiler)", sentido_min_max="IC95 normal"))
+        facts.append(dict(id=f"V7-R4-PHI-{r.mercado.upper()}-{r.spec}", indicador=f"Velocidad de ajuste media phi (MG_dm), {r.mercado} spec {r.spec}", valor=r.phi_MG, min=None,
+                          max=None, unidad=f"por trimestre; t de MG = {r.t_MG:.2f} frente al valor critico simulado -8,83 (no rechaza); sin IC valido", periodo=est_main[(r.mercado, r.spec)][2]["per"], cobertura="17 CCAA", fuentes="INE; panel_ccaa_q_v7", capa="C4", fecha_dato=FECHA,
+                          medida_precio="IPV INE CCAA" if r.mercado == "compra" else "no aplica (IPC alquiler)", sentido_min_max="sin rango: phi sin inferencia valida"))
     (OUT / "hechos.json").write_text(json.dumps(facts, ensure_ascii=False, indent=1, default=float), encoding="utf-8")
     conf = hip[hip.veredicto.str.startswith("CONFIRMADA")]["id"].tolist()
     res = dict(rama="V7-R4a", pregunta="Asociacion de largo plazo entre precios (alquiler IPC; compra IPV) y ocupacion, poblacion, paro e hipotecas en 17 CCAA", capa="C4",

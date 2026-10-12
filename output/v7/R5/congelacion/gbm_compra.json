@@ -1,0 +1,38 @@
+{
+ "cods_ccaa": [
+  "01",
+  "02",
+  "03",
+  "04",
+  "05",
+  "06",
+  "07",
+  "08",
+  "09",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17"
+ ],
+ "fin_estimacion": "2026Q2",
+ "hiperparametros": {
+  "colsample_bytree": 0.8,
+  "deterministic": true,
+  "force_row_wise": true,
+  "learning_rate": 0.05,
+  "min_child_samples": 15,
+  "n_estimators": 120,
+  "n_jobs": 1,
+  "num_leaves": 5,
+  "random_state": 20261010,
+  "reg_lambda": 1.0,
+  "subsample": 0.8,
+  "subsample_freq": 1,
+  "verbose": -1
+ },
+ "inicio_estimacion": "2007Q1"
+}

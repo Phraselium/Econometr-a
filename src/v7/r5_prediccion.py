@@ -64,7 +64,10 @@ def carga_panel():
     data = {}
     for m, (yv, xs) in MERC.items():
         piv = lambda v: d.pivot(index="codigo_ine_ccaa", columns="trimestre", values=v).loc[cods, qs].to_numpy(float)  # noqa: E731
-        data[m] = (piv(yv), np.stack([piv(v) for v in xs], axis=2))
+        X = np.stack([piv(v) for v in xs], axis=2)
+        for i in range(X.shape[0]):   # los regresores no publicados al final (desde 2025T2) se arrastran con su último valor
+            X[i] = pd.DataFrame(X[i]).ffill().to_numpy()
+        data[m] = (piv(yv), X)
     return qs, cods, data
 
 
@@ -152,13 +155,14 @@ def _ecm_unit(y, X, theta=None):
         Z = np.hstack([L, W])
         b = _ols(Z, d)
         k = X.shape[1]
-        phi = min(b[0], 0.0)
-        th = -b[1:1 + k] / b[0] if b[0] < -1e-6 else np.zeros(k)
-        coef = np.concatenate([[phi], b[1 + k:]])
-        return coef, th
+        if b[0] >= -1e-3:   # sin corrección de error significativa: se reestima en diferencias (phi=0), sin deriva espuria
+            return np.concatenate([[0.0], _ols(W, d)]), np.zeros(k)
+        th = -b[1:1 + k] / b[0]
+        return np.concatenate([[b[0]], b[1 + k:]]), th
     ec = L[:, 0] - L[:, 1:] @ theta
     b = _ols(np.column_stack([ec, W]), d)
-    b[0] = min(b[0], 0.0)
+    if b[0] >= -1e-3:   # phi_i no negativo: se reestima en diferencias (phi=0)
+        b = np.concatenate([[0.0], _ols(W, d)])
     return b, theta
 
 
@@ -559,7 +563,9 @@ def main(smoke=False):
         mejor[(m, c)] = b
         filas.append(dict(mercado=m, codigo_ine_ccaa=c, mejor_modelo=b, rmse_mejor_x100=100 * np.sqrt(cand.min()),
                           rmse_base_fuerte_x100=100 * np.sqrt(r[BASE]), rmse_ar4_x100=100 * np.sqrt(r["ar4"]),
-                          bate_base_fuerte=bool(cand.min() < r[BASE]), rotulo=ROT + "; h=1-4 agrupados; selección en muestra"))
+                          bate_base_fuerte=bool(cand.min() < r[BASE]),
+                          rmse_base_exigente_x100=100 * np.sqrt(r[["persistencia", "ult_crec_nac", BASE]].min()),
+                          bate_base_exigente=bool(cand.min() < r[["persistencia", "ult_crec_nac", BASE]].min()), rotulo=ROT + "; h=1-4 agrupados; selección en muestra"))
     MB = pd.DataFrame(filas)
     MB.to_csv(OUT / "mejor_por_region.csv", index=False)
     # DM + permutación + Holm por mercado y horizonte (comparadores: base fuerte, AR(4), ECM v1)
@@ -596,14 +602,15 @@ def escribe_salidas(E, B, MB, R, H7, qs, P):
     pr = {}
     for m in MERC:
         s = MB[MB.mercado == m]
-        pr[m] = dict(bate=int(s.bate_base_fuerte.sum()), n=len(s))
+        pr[m] = dict(bate=int(s.bate_base_fuerte.sum()), n=len(s), exig=int(s.bate_base_exigente.sum()))
     rm1 = E[E.h == 1].groupby(["mercado", "modelo"])["e2"].mean().pipe(lambda s: 100 * np.sqrt(s)).unstack("modelo")
     lines = [f"# R5 · Predicción regional y congelación ({ROT})", "",
              f"Capa C4 (predicción, no causalidad). Backtest de origen móvil {ORIGEN_INI}..{qs[-2]}, h=1-4, estimación solo con datos "
              f"hasta cada origen. Datos hasta {qs[-1]} (panel_ccaa_q_v7). RMSE en puntos log x100 (aprox. %).", "",
              "## Mejor candidato por región frente a la base fuerte (AR con factor común), h=1-4 agrupados", ""]
     for m, v in pr.items():
-        lines.append(f"- {m}: el mejor candidato bate a la base fuerte en {v['bate']} de {v['n']} CCAA (selección en muestra: optimista).")
+        lines.append(f"- {m}: el mejor candidato bate a la base fuerte en {v['bate']} de {v['n']} CCAA; frente a la más exigente "
+                     f"(mín. de persistencia, ult_crec_nac y ar_factor): {v['exig']} de {v['n']} (selección en muestra: optimista).")
     lines += ["", "## RMSE x100 a h=1 (17 CCAA, todos los orígenes)", "", rm1.round(3).to_markdown(), "",
               "## H7-P1 (mejor regional vs base fuerte, agregado de 17 CCAA; en muestra, con Holm)", "",
               H7.round(4).to_markdown(index=False), "",

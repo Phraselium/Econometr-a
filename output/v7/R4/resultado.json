@@ -22,7 +22,7 @@
    "MG_dm": -0.004051449534726796,
    "PMG_dm": 0.004099136492354827,
    "CS_DL": 0.0004369005957238887,
-   "veredicto": "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)"
+   "veredicto": "NO CONFIRMADA; signos discrepantes entre estimadores (p de Holm de MG_dm >= 0,05)"
   },
   "H7-C1": {
    "MG_dm": -0.45973178471380555,
@@ -34,19 +34,19 @@
    "MG_dm": 0.3039032666827642,
    "PMG_dm": -0.031591323612730364,
    "CS_DL": -0.006729385420746492,
-   "veredicto": "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)"
+   "veredicto": "NO CONFIRMADA; signos discrepantes entre estimadores (p de Holm de MG_dm >= 0,05)"
   },
   "H7-C3": {
    "MG_dm": -1.9566812072245545,
    "PMG_dm": -1.2797714208330426,
    "CS_DL": 3.608257606406422,
-   "veredicto": "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)"
+   "veredicto": "NO CONFIRMADA; signos discrepantes entre estimadores (p de Holm de MG_dm >= 0,05)"
   },
   "H7-C4": {
    "MG_dm": -0.015336769696427189,
    "PMG_dm": -0.018218898160035565,
    "CS_DL": 0.006305075933048155,
-   "veredicto": "NO CONFIRMADA (p de Holm de MG_dm >= 0,05)"
+   "veredicto": "NO CONFIRMADA; signos discrepantes entre estimadores (p de Holm de MG_dm >= 0,05)"
   }
  },
  "ic95": {

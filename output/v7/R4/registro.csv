@@ -161,6 +161,14 @@ R4-largo-plazo,"alquiler_A_(2,2)_DFE_ln_ocupados","ln_ipc_alquiler ~ ln_ocupados
 R4-largo-plazo,"alquiler_A_(2,2)_DFE_ln_pob_total","ln_ipc_alquiler ~ ln_ocupados+ln_pob_total | ARDL(2, 2) DFE",2007Q1,2025Q1,1241,,,,,0.2650138966361684,0.3862286250423231,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
 R4-largo-plazo,alquiler_A_CS-DL_ln_ocupados,ln_ipc_alquiler CS-DL pT=4,2007Q1,2025Q1,1241,,,,,0.003019097843207419,0.9466324481571446,"informativo, muestra ya vista en v1"
 R4-largo-plazo,alquiler_A_CS-DL_ln_pob_total,ln_ipc_alquiler CS-DL pT=4,2007Q1,2025Q1,1241,,,,,0.17651264470837572,0.5130256456501904,"informativo, muestra ya vista en v1"
+R4-sens-I2,alquiler_A_g_MG_dm_ln_ocupados,dln_ipc_alquiler ~ ln_ocupados MG_dm,2007Q2,2025Q1,1224,,,,,0.00036626170787074455,0.9643999626563104,sensibilidad crecimiento
+R4-sens-I2,alquiler_A_g_MG_dm_ln_pob_total,dln_ipc_alquiler ~ ln_pob_total MG_dm,2007Q2,2025Q1,1224,,,,,0.013330776719439214,0.2734609297830498,sensibilidad crecimiento
+R4-sens-I2,alquiler_A_g_PMG_dm_ln_ocupados,dln_ipc_alquiler ~ ln_ocupados PMG_dm,2007Q2,2025Q1,1224,,,,,0.0030066613237468664,0.11357814949003427,sensibilidad crecimiento
+R4-sens-I2,alquiler_A_g_PMG_dm_ln_pob_total,dln_ipc_alquiler ~ ln_pob_total PMG_dm,2007Q2,2025Q1,1224,,,,,0.006140572032991439,0.1279026503565082,sensibilidad crecimiento
+R4-sens-I2,alquiler_A_g_DFE_ln_ocupados,dln_ipc_alquiler ~ ln_ocupados DFE,2007Q2,2025Q1,1224,,,,,0.0038609255410041884,0.2548081757683347,sensibilidad crecimiento
+R4-sens-I2,alquiler_A_g_DFE_ln_pob_total,dln_ipc_alquiler ~ ln_pob_total DFE,2007Q2,2025Q1,1224,,,,,0.006104194396363608,0.45781980088672913,sensibilidad crecimiento
+R4-sens-I2,alquiler_A_g_CS-DL_ln_ocupados,dln_ipc_alquiler ~ ln_ocupados CS-DL,2007Q2,2025Q1,1224,,,,,0.007613962356532176,0.5585342941103898,sensibilidad crecimiento
+R4-sens-I2,alquiler_A_g_CS-DL_ln_pob_total,dln_ipc_alquiler ~ ln_pob_total CS-DL,2007Q2,2025Q1,1224,,,,,0.04407301588151527,0.020594420265523418,sensibilidad crecimiento
 R4-E2,alquiler_A_phi,"t_MG(phi) vs -8,83",2007Q1,2025Q1,1241,,,,,-0.048283482699238454,,"informativo, muestra ya vista en v1"
 R4-region,alquiler_A_01,"ECM ln_ipc_alquiler region 01 ARDL(1, 1)",2007Q1,2025Q1,72,-0.04714420601508951,-744.7834360694575,-728.8467732363451,,0.01708716587054889,0.7074797566028348,"informativo, muestra ya vista en v1"
 R4-region,alquiler_A_02,"ECM ln_ipc_alquiler region 02 ARDL(1, 1)",2007Q1,2025Q1,72,0.35696675769786834,-733.5628317372355,-717.6261689041231,,-0.10426317790686969,0.016903398114977018,"informativo, muestra ya vista en v1"
@@ -195,6 +203,10 @@ R4-largo-plazo,"alquiler_B_(2,2)_MG_dm_tasa_paro_epa","ln_ipc_alquiler ~ tasa_pa
 R4-largo-plazo,"alquiler_B_(2,2)_PMG_dm_tasa_paro_epa","ln_ipc_alquiler ~ tasa_paro_epa | ARDL(2, 2) PMG_dm",2007Q1,2026Q2,1326,,,,,0.0048077860551988556,0.0006512031738301745,"informativo, muestra ya vista en v1; asociacion de largo plazo; IC aproximado (cobertura simulada ~0,88); EE informacion (sin bootstrap)"
 R4-largo-plazo,"alquiler_B_(2,2)_DFE_tasa_paro_epa","ln_ipc_alquiler ~ tasa_paro_epa | ARDL(2, 2) DFE",2007Q1,2026Q2,1326,,,,,-0.0031387803460578723,0.2792748472242961,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
 R4-largo-plazo,alquiler_B_CS-DL_tasa_paro_epa,ln_ipc_alquiler CS-DL pT=4,2007Q1,2026Q2,1326,,,,,0.0004369005957238887,0.7702473776517377,"informativo, muestra ya vista en v1"
+R4-sens-I2,alquiler_B_g_MG_dm_tasa_paro_epa,dln_ipc_alquiler ~ tasa_paro_epa MG_dm,2007Q2,2026Q2,1309,,,,,-6.692234955974258e-05,0.6427209021228765,sensibilidad crecimiento
+R4-sens-I2,alquiler_B_g_PMG_dm_tasa_paro_epa,dln_ipc_alquiler ~ tasa_paro_epa PMG_dm,2007Q2,2026Q2,1309,,,,,-4.1415661047965806e-05,0.1670487511192798,sensibilidad crecimiento
+R4-sens-I2,alquiler_B_g_DFE_tasa_paro_epa,dln_ipc_alquiler ~ tasa_paro_epa DFE,2007Q2,2026Q2,1309,,,,,-5.330036778251407e-05,0.3956214343478247,sensibilidad crecimiento
+R4-sens-I2,alquiler_B_g_CS-DL_tasa_paro_epa,dln_ipc_alquiler ~ tasa_paro_epa CS-DL,2007Q2,2026Q2,1309,,,,,-6.753713773315534e-06,0.9598740828564022,sensibilidad crecimiento
 R4-E2,alquiler_B_phi,"t_MG(phi) vs -8,83",2007Q1,2026Q2,1326,,,,,-0.02957878473706134,,"informativo, muestra ya vista en v1"
 R4-region,alquiler_B_01,"ECM ln_ipc_alquiler region 01 ARDL(2, 1)",2007Q1,2026Q2,76,-0.019491119166641813,-789.8051655648849,-775.8207655231669,,-0.03381607099071533,0.20966895546639708,"informativo, muestra ya vista en v1"
 R4-region,alquiler_B_02,"ECM ln_ipc_alquiler region 02 ARDL(2, 1)",2007Q1,2026Q2,76,0.44763035595456113,-789.5904210471572,-775.6060210054392,,-0.13428834779967622,1.2728931679662281e-08,"informativo, muestra ya vista en v1"
@@ -249,6 +261,18 @@ R4-largo-plazo,"compra_A_(2,2)_DFE_ln_pob_total","ln_ipv ~ ln_ocupados+ln_hip_im
 R4-largo-plazo,compra_A_CS-DL_ln_ocupados,ln_ipv CS-DL pT=4,2007Q1,2025Q1,1241,,,,,-0.06185082170893164,0.6540895529031546,"informativo, muestra ya vista en v1"
 R4-largo-plazo,compra_A_CS-DL_ln_hip_importe,ln_ipv CS-DL pT=4,2007Q1,2025Q1,1241,,,,,-0.006729385420746492,0.7502363135488755,"informativo, muestra ya vista en v1"
 R4-largo-plazo,compra_A_CS-DL_ln_pob_total,ln_ipv CS-DL pT=4,2007Q1,2025Q1,1241,,,,,3.608257606406422,0.0018220747551638775,"informativo, muestra ya vista en v1"
+R4-sens-I2,compra_A_g_MG_dm_ln_ocupados,dln_ipv ~ ln_ocupados MG_dm,2007Q2,2025Q1,1224,,,,,-0.01709487738473578,0.6748903259241177,sensibilidad crecimiento
+R4-sens-I2,compra_A_g_MG_dm_ln_hip_importe,dln_ipv ~ ln_hip_importe MG_dm,2007Q2,2025Q1,1224,,,,,0.008503410163921142,0.08960425154178063,sensibilidad crecimiento
+R4-sens-I2,compra_A_g_MG_dm_ln_pob_total,dln_ipv ~ ln_pob_total MG_dm,2007Q2,2025Q1,1224,,,,,-0.051512399419012526,0.2609654037290786,sensibilidad crecimiento
+R4-sens-I2,compra_A_g_PMG_dm_ln_ocupados,dln_ipv ~ ln_ocupados PMG_dm,2007Q2,2025Q1,1224,,,,,0.005425707083371827,0.5633383344411838,sensibilidad crecimiento
+R4-sens-I2,compra_A_g_PMG_dm_ln_hip_importe,dln_ipv ~ ln_hip_importe PMG_dm,2007Q2,2025Q1,1224,,,,,0.0032981794340099777,0.07093982527176144,sensibilidad crecimiento
+R4-sens-I2,compra_A_g_PMG_dm_ln_pob_total,dln_ipv ~ ln_pob_total PMG_dm,2007Q2,2025Q1,1224,,,,,0.007165345882875879,0.6856501337583308,sensibilidad crecimiento
+R4-sens-I2,compra_A_g_DFE_ln_ocupados,dln_ipv ~ ln_ocupados DFE,2007Q2,2025Q1,1224,,,,,0.007953198185231863,0.6589362632178085,sensibilidad crecimiento
+R4-sens-I2,compra_A_g_DFE_ln_hip_importe,dln_ipv ~ ln_hip_importe DFE,2007Q2,2025Q1,1224,,,,,0.006401747144187159,0.05711034503635145,sensibilidad crecimiento
+R4-sens-I2,compra_A_g_DFE_ln_pob_total,dln_ipv ~ ln_pob_total DFE,2007Q2,2025Q1,1224,,,,,-0.005862212626443674,0.8725360441897166,sensibilidad crecimiento
+R4-sens-I2,compra_A_g_CS-DL_ln_ocupados,dln_ipv ~ ln_ocupados CS-DL,2007Q2,2025Q1,1224,,,,,0.010737446339205004,0.9039323779399762,sensibilidad crecimiento
+R4-sens-I2,compra_A_g_CS-DL_ln_hip_importe,dln_ipv ~ ln_hip_importe CS-DL,2007Q2,2025Q1,1224,,,,,0.008714527768713717,0.5492982169699432,sensibilidad crecimiento
+R4-sens-I2,compra_A_g_CS-DL_ln_pob_total,dln_ipv ~ ln_pob_total CS-DL,2007Q2,2025Q1,1224,,,,,0.260555635031872,0.2112330968728663,sensibilidad crecimiento
 R4-E2,compra_A_phi,"t_MG(phi) vs -8,83",2007Q1,2025Q1,1241,,,,,-0.16770331208681646,,"informativo, muestra ya vista en v1"
 R4-region,compra_A_01,"ECM ln_ipv region 01 ARDL(1, 1)",2007Q1,2025Q1,72,0.08885652742506245,-521.870236506176,-501.38024143503145,,-0.008309196781170945,0.7809201902115039,"informativo, muestra ya vista en v1"
 R4-region,compra_A_02,"ECM ln_ipv region 02 ARDL(1, 1)",2007Q1,2025Q1,72,0.25931656642883383,-492.98685325332497,-472.49685818218046,,-0.210795446327912,0.00027535531105754286,"informativo, muestra ya vista en v1"
@@ -293,6 +317,14 @@ R4-largo-plazo,"compra_B_(2,2)_DFE_tasa_paro_epa","ln_ipv ~ tasa_paro_epa+ln_hip
 R4-largo-plazo,"compra_B_(2,2)_DFE_ln_hip_importe","ln_ipv ~ tasa_paro_epa+ln_hip_importe | ARDL(2, 2) DFE",2007Q1,2026Q2,1326,,,,,0.31433874983658383,0.011063233252045718,"informativo, muestra ya vista en v1; asociacion de largo plazo; robustez; EE agrupados por unidad"
 R4-largo-plazo,compra_B_CS-DL_tasa_paro_epa,ln_ipv CS-DL pT=4,2007Q1,2026Q2,1326,,,,,0.006305075933048155,0.023297278240660614,"informativo, muestra ya vista en v1"
 R4-largo-plazo,compra_B_CS-DL_ln_hip_importe,ln_ipv CS-DL pT=4,2007Q1,2026Q2,1326,,,,,0.07540863046302976,0.04378019624810332,"informativo, muestra ya vista en v1"
+R4-sens-I2,compra_B_g_MG_dm_tasa_paro_epa,dln_ipv ~ tasa_paro_epa MG_dm,2007Q2,2026Q2,1309,,,,,-0.0006117767630272145,0.2594947744077647,sensibilidad crecimiento
+R4-sens-I2,compra_B_g_MG_dm_ln_hip_importe,dln_ipv ~ ln_hip_importe MG_dm,2007Q2,2026Q2,1309,,,,,0.003968252300351533,0.29185715514853017,sensibilidad crecimiento
+R4-sens-I2,compra_B_g_PMG_dm_tasa_paro_epa,dln_ipv ~ tasa_paro_epa PMG_dm,2007Q2,2026Q2,1309,,,,,-9.30771331285517e-05,0.49202516250976885,sensibilidad crecimiento
+R4-sens-I2,compra_B_g_PMG_dm_ln_hip_importe,dln_ipv ~ ln_hip_importe PMG_dm,2007Q2,2026Q2,1309,,,,,0.0033698288886948053,0.034336885294416586,sensibilidad crecimiento
+R4-sens-I2,compra_B_g_DFE_tasa_paro_epa,dln_ipv ~ tasa_paro_epa DFE,2007Q2,2026Q2,1309,,,,,-0.000356649879935019,0.2814504863445063,sensibilidad crecimiento
+R4-sens-I2,compra_B_g_DFE_ln_hip_importe,dln_ipv ~ ln_hip_importe DFE,2007Q2,2026Q2,1309,,,,,0.0049733793423737726,0.09730128165385256,sensibilidad crecimiento
+R4-sens-I2,compra_B_g_CS-DL_tasa_paro_epa,dln_ipv ~ tasa_paro_epa CS-DL,2007Q2,2026Q2,1309,,,,,-0.00010731874036784387,0.8660680705613343,sensibilidad crecimiento
+R4-sens-I2,compra_B_g_CS-DL_ln_hip_importe,dln_ipv ~ ln_hip_importe CS-DL,2007Q2,2026Q2,1309,,,,,0.0071874287117496905,0.34358261799904144,sensibilidad crecimiento
 R4-E2,compra_B_phi,"t_MG(phi) vs -8,83",2007Q1,2026Q2,1326,,,,,-0.08770744238436377,,"informativo, muestra ya vista en v1"
 R4-region,compra_B_01,"ECM ln_ipv region 01 ARDL(1, 1)",2007Q1,2026Q2,77,0.09354932033355634,-559.4906206822131,-543.0839827292374,,-0.052744394225012564,0.011877912745406826,"informativo, muestra ya vista en v1"
 R4-region,compra_B_02,"ECM ln_ipv region 02 ARDL(1, 1)",2007Q1,2026Q2,77,0.21514005793643576,-524.5131679210075,-508.1065299680317,,-0.07011109840534806,0.0007481574375151238,"informativo, muestra ya vista en v1"

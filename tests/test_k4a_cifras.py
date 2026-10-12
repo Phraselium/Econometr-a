@@ -20,7 +20,7 @@ CK = RAIZ / "output" / "v5" / "cifras_clave.csv"
 RANGO_OTRO_SENTIDO = ("CA-EU-", "R1B-G-", "R1B-S-", "m2_pip_", "E-E1-VLC-contratos", "T1-H1", "T3-H8", "CC-C7b-jov-",
                       "CA-CT-ratio-triang-")
 # Filas con unidad «%» que son variaciones o log-puntos (pueden ser negativas)
-PCT_CAMBIO = ("CA-CR-", "E-v3-H3-", "V7-R6-")   # v7.1: variaciones % de escenarios R6 (pueden ser negativas)
+PCT_CAMBIO = ("CA-CR-", "E-v3-H3-", "V7-R6-", "V71-S3-R6-")   # v7.1: variaciones % de escenarios R6 (pueden ser negativas)
 
 
 @pytest.fixture(scope="module")

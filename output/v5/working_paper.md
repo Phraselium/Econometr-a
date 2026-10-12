@@ -128,7 +128,7 @@ Toda especificación probada se registra (`registro.csv` de cada módulo). Las f
 
 **Clases.** Con el coste oficial (677,0 EUR/m2 construido (422,0-932,0 EUR/m2 construido)), en 2021-2025 hay 37 provincias en la clase `1` (falta y es rentable), 11 provincias en la clase `2` (falta y la oferta no responde pese a que el precio supera coste y suelo), 2 provincias en la clase `3` (falta y no es rentable) y 0 provincias en la clase `4` (no falta) [C4]. En 2012-2025 la clase `4` reúne 20 provincias [C4]. Todas las clases son C4.
 
-**Diferencias provinciales (B3).** El modelo de ocho familias alcanza un R² de 0,91 proporción [C4]. La única asociación que sobrevive a Holm es la del precio inicial (`H-B3-6`): -16,0 puntos logarítmicos (≈ %) por DT (-23,8 a -8,2 puntos logarítmicos (≈ %) por DT), p ajustado 0,00 probabilidad; con el precio inicial de otra fuente, -9,0 puntos logarítmicos (≈ %) por DT y p 0,06 probabilidad [C4]. La demanda sectorial (`H-B3-1`, 2,4 puntos logarítmicos (≈ %) por DT, p ajustado 0,33 probabilidad) y el crecimiento de la población (`H-B3-2`, 3,5 puntos logarítmicos (≈ %) por DT, p ajustado 0,41 probabilidad) no se distinguen de cero [C4].
+**Diferencias provinciales (B3).** El modelo de ocho familias alcanza un R² de 0,91 [C4]. La única asociación que sobrevive a Holm es la del precio inicial (`H-B3-6`): -16,0 puntos logarítmicos (≈ %) por DT (-23,8 a -8,2 puntos logarítmicos (≈ %) por DT), p ajustado 0,00 probabilidad; con el precio inicial de otra fuente, -9,0 puntos logarítmicos (≈ %) por DT y p 0,06 probabilidad [C4]. La demanda sectorial (`H-B3-1`, 2,4 puntos logarítmicos (≈ %) por DT, p ajustado 0,33 probabilidad) y el crecimiento de la población (`H-B3-2`, 3,5 puntos logarítmicos (≈ %) por DT, p ajustado 0,41 probabilidad) no se distinguen de cero [C4].
 
 ![Variación del precio por provincia](B3/figuras/mapa_P1.png)
 
@@ -158,7 +158,7 @@ Medidas: alquiler de stock (SERPAVI, €/m²/mes) por provincia, municipio y dis
 
 - **B3.** 32 especificaciones por hipótesis confirmatoria. El signo de la principal se mantiene en 100,0 % de las especificaciones para `H-B3-6`, en 100,0 % para `H-B3-2` y en 62,5 % para `H-B3-1` [C4]. La proporción de especificaciones con p nominal por debajo del umbral convencional es 46,9 %, 59,4 % y 3,1 %, respectivamente.
 - **Diseños de v2 (`R1B`).** En la forma reducida del alquiler sobre el instrumento (BI), la proporción de especificaciones con el mismo signo que la base es 0,96 proporción (min = significativas tras Holm; max = significativas nominales) [C4]. En el diseño de control sintético (BP H5), 0,79 proporción (min = Holm; B=200 permutaciones, resolución limitada) [C4].
-- **Efecto donut (`R1B`).** El cambio de pendiente del gradiente de crecimiento con la distancia al centro, antes y después de 2019, es 0,16 pp de crecimiento anual por cada 10 km en el alquiler y -0,04 pp de crecimiento anual por cada 10 km en el valor tasado; ninguna especificación es significativa tras Holm (0,00 proporción y 0,00 proporción) [C4].
+- **Efecto donut (`R1B`).** El cambio de pendiente del gradiente de crecimiento con la distancia al centro, antes y después de 2019, es 0,16 pp de crecimiento anual por cada 10 km en el alquiler y -0,04 pp de crecimiento anual por cada 10 km en el valor tasado; ninguna especificación es significativa tras Holm (0,00 y 0,00) [C4].
 
 ### 5.2 Oster y Cinelli-Hazlett
 

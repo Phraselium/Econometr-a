@@ -25,7 +25,8 @@ MARC = re.compile(r"\{\{[^}]+\}\}")
 # cifras permitidas fuera de marcadores: años, capas, numeración, rutas, identificadores y horas de guion
 LIBRE = [r"`[^`]*`", r"\]\([^)]*\)", r"https?://\S+", r"\b(?:19|20)\d{2}(?:T[1-4]|-\d{2})?\b", r"\b[CEABDR]\d{1,2}\b",
          r"\b(?:BK|S|V|H|I|N|M|P)\d{1,3}(?:-\d+)?\b", r"^\s*\d+[.)]\s", r"^#+.*$", r"\b\d{1,2}:\d{2}\b", r"\bv\d\b",
-         r"\b(?:Q[1-4]|ODS ?\d+)\b", r"<!--.*?-->", r"\bLey \d+/\d{4}\b", r"\b\d{1,2} de \w+\b", r"\(\d+\)"]
+         r"\b(?:Q[1-4]|ODS ?\d+)\b", r"<!--.*?-->", r"\bLey \d+/\d{4}\b", r"\b\d{1,2} de \w+\b", r"\(\d+\)",
+         r"\$[^$]+\$"]   # v7.1: fórmulas LaTeX en línea (parámetros y notación, no cifras difundibles)
 
 
 def _sin_libres(linea: str) -> str:

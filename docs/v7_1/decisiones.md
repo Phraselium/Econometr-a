@@ -11,3 +11,14 @@
   - **Dosis de f1:** todas las compraventas, igual que en R6. Es una cota superior, porque el escenario es de vivienda nueva.
 - **W5.** Los costes de los instrumentos de cantidad (construcción, vacías, vivienda pública, turísticos) y el de las ayudas al alquiler quedan como «coste no estimable», con su motivo. Se da una regla de lectura: efecto por 100 M€ = efecto por 10.000 viviendas × 10.000 / u, para un coste por vivienda u. No se publica ningún u.
 - **W6.** Literatura de la nota (S2): Scimago devolvió 403. Ninguna referencia queda «VERIFICADA» completa; todas figuran como «DOI verificado, cuartil no verificado» (docs/v7_1/literatura_nota.md). Las 3 revistas propuestas también quedan con «cuartil no verificado» y pasan a las tareas del autor.
+- **W7.** El mensaje «domina el factor común» se apoya en una contabilidad DESCRIPTIVA, no en un modelo nuevo: el R² de la variación interanual de cada CCAA sobre la media de las 17, y la correlación media entre pares (src/v7_1/s3_hechos.py). Se declaran tres cosas:
+  - la media incluye a la propia CCAA;
+  - la medida no mide cargas estructurales;
+  - es C4 por ser de fuente única (INE).
+  
+  Las demás cifras de V7 que se difunden (hipótesis confirmadas, I(2), predicción frente a la base más exigente, Monte Carlo, precio de mercado de R6 y CCAA robustas) entran en cifras_clave mediante output/v7_1/S3/hechos.json.
+- **W8.** La nota metodológica es una plantilla de render (docs/v5/plantillas/nota_metodologica.md), así que cumple la regla «toda cifra sale de cifras_clave» que comprueba check_v5. Cambios asociados:
+  - check_v5 admite fórmulas LaTeX en línea;
+  - las líneas con parámetros del diseño, el tamaño del panel, constantes o referencias llevan «check:cifra-libre» con su motivo;
+  - render escribe sin unidad las proporciones (unidad «proporción») y con dos decimales los estadísticos t.
+- **W9.** En la nota se cambian «conservador» e «izquierda», en su sentido estadístico, por sinónimos neutros, para no disparar el control de neutralidad.

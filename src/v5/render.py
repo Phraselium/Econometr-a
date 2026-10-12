@@ -31,7 +31,7 @@ def fmt_num(x: float, unidad: str = "") -> str:
     # recuentos (instrumentos, referencias, afirmaciones...): enteros sin decimales
     if x.is_integer() and str(unidad).split(" ")[0] in CONTEOS:
         return f"{x:,.0f}".replace(",", ".")
-    if unidad == "cociente":  # v6.1: cocientes de error con dos decimales (1,05 no debe leerse 1,0)
+    if unidad in ("cociente", "estadístico t"):  # v6.1: cocientes con dos decimales (1,05 no debe leerse 1,0); v7.1: t simulados
         return f"{x:.2f}".replace(".", ",")
     if unidad in ("viviendas", "hogares", "personas", "contratos", "€", "€/m²", "€/mes", "municipios", "provincias") or abs(x) >= 1000:
         s = f"{x:,.0f}".replace(",", ".")
@@ -49,6 +49,8 @@ def _guion(a) -> str:
 
 def texto(r: pd.Series, campo: str | None) -> str:
     u = r.unidad if isinstance(r.unidad, str) else ""
+    if u == "proporción":   # v7.1: coberturas, correlaciones y tasas de rechazo (0-1) se escriben sin unidad
+        u = ""
     sep = " " if u and u != "%" else (" " if u == "%" else "")
     if pd.isna(r.valor) and pd.notna(r["min"]) and campo in (None, "valor", "valor_rango", "cita"):
         # sin valor central: se da el rango (revisión E, B2)

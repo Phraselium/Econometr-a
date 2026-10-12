@@ -270,7 +270,7 @@ Los escenarios de B2 (`v5`), que la rejilla de `T4` incluye:
 **Diseño.** Corte transversal de 50 provincias (sin Ceuta ni Melilla), variación del precio 2015-2025, ocho familias de factores a la vez, errores `HC3` y Conley, inferencia por aleatorización y Holm.
 
 **Resultados [C4].**
-- El modelo de ocho familias tiene un R² de 0,91 proporción con el valor tasado.
+- El modelo de ocho familias tiene un R² de 0,91 con el valor tasado.
 - `H-B3-6` (precio inicial): -16,0 puntos logarítmicos (≈ %) por DT (-23,8 a -8,2 puntos logarítmicos (≈ %) por DT), p ajustado 0,00 probabilidad. Las provincias que partían de precios más bajos subieron más. Con el precio inicial de Registradores, para controlar el error de medida, el coeficiente baja a -9,0 puntos logarítmicos (≈ %) por DT y el p a 0,06 probabilidad: la asociación se mantiene en signo, pero parte de ella es mecánica (el error de medida del precio inicial empuja el coeficiente hacia valores negativos).
 - `H-B3-1` (demanda sectorial tipo Bartik): 2,4 puntos logarítmicos (≈ %) por DT (-0,06 a 4,8 puntos logarítmicos (≈ %) por DT), p ajustado 0,33 probabilidad. No se distingue de cero.
 - `H-B3-2` (crecimiento de la población): 3,5 puntos logarítmicos (≈ %) por DT (-0,74 a 7,8 puntos logarítmicos (≈ %) por DT), p ajustado 0,41 probabilidad. No se distingue de cero tras el ajuste.

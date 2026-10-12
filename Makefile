@@ -66,7 +66,7 @@ v7:
 	@$(MAKE) --no-print-directory v7_1
 
 # V7.1: consolidación (sin análisis nuevo): dosis y coste sobre R6 y entregables; después cifras_clave y render
-V7_1_ORDEN := s1_dosis_coste s1_atlas
+V7_1_ORDEN := s1_dosis_coste s1_atlas s3_hechos
 v7_1:
 	@for r in $(V7_1_ORDEN); do echo ">> src/v7_1/$$r.py"; $(PY) src/v7_1/$$r.py || exit 1; done
 	$(PY) src/v5/cifras_clave.py

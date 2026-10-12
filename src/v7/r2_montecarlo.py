@@ -301,6 +301,6 @@ if __name__ == "__main__":
         df = run(200)
         sm = summarize(df)
         sm.to_csv(out / "montecarlo.csv", index=False)
-        df.to_csv(out / "montecarlo_replicas.csv.gz", index=False)
+        df.to_csv(out / "montecarlo_replicas.csv.gz", index=False, compression={"method": "gzip", "mtime": 0})  # determinista
     escribir_resto(sm, escribir_doc(sm))
     print(f"{time.time() - t0:.0f}s")

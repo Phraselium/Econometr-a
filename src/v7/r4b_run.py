@@ -483,7 +483,7 @@ def main():
                N="17 CCAA x ~75 T; 52 provincias x <=23 anios", metodo="ECM jerarquico pymc NUTS + MixedLM; LP de panel con EF, Driscoll-Kraay y wild Webb; FE/CCE",
                estimacion=RES, ic95="ver csv por modelo", p_ajustado="BH por familia (q=0,10), ver csv", nivel_evidencia="EXPLORATORIO",
                diagnosticos="R-hat/ESS/divergencias en resumen_numerico.json", fuera_muestra=dict(modelo=None, rmse=None, dm_vs_ar4=None),
-               notas="Asociaciones, sin lenguaje causal. Sin validacion fuera de muestra en este encargo. " + ROT)
+               notas="Asociaciones, sin lenguaje causal. Sin validacion fuera de muestra en este encargo. " + ROT + " Veredicto: ANALIZADA, NO CONCLUYENTE. Ver resumen.md.")
     (OUT / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float))
 
 

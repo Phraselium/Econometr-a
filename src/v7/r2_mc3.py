@@ -288,7 +288,7 @@ if __name__ == "__main__":
         df = run()
         sm = summarize(df)
         sm.to_csv(out / "montecarlo_r3.csv", index=False)
-        df.to_csv(out / "montecarlo_r3_replicas.csv.gz", index=False)
+        df.to_csv(out / "montecarlo_r3_replicas.csv.gz", index=False, compression={"method": "gzip", "mtime": 0})  # determinista
     escribir_doc(sm)
     escribir_json(sm)
     print(f"{time.time() - t0:.0f}s")

@@ -105,3 +105,12 @@
     - construcción adicional 5;
     - ayudas a la demanda 0 y rebaja de ITP/IVA 0, con el rótulo «reduce el esfuerzo neto del beneficiario pero sube el precio de mercado».
   - **La elasticidad de oferta regional no es utilizable en ninguna CCAA** (DOLS, IC fuera de [0; 5]), así que todo descansa en la rejilla de v5 y es C4.
+- **V19 · Cierre, primera ronda de `make v7` ×2** (clon limpio de 5d3ac40: 2.602 s y 2.559 s, rc=0). Tres ficheros difieren entre las dos ejecuciones:
+  - las réplicas del Monte Carlo .csv.gz, por la fecha en la cabecera gzip;
+  - tablas_regionales.xlsx, por las fechas de openpyxl dentro del zip y de docProps/core.xml.
+  Se corrigen con mtime=0 en gzip y con fecha fija en las entradas del zip y en core.xml.
+
+  Frente a lo versionado, el clon también regenera:
+  - **R2** (montecarlo.csv, registro.csv y una cifra de validacion_herramientas.md). La potencia del Hausman con sándwich pasa de 0,24 a 0,235. Las salidas versionadas se generaron en el entorno del subagente, con varios hilos; el clon, con un solo hilo, es reproducible y es la referencia. Ningún veredicto de aptitud cambia.
+  - **R4b resultado.json.** La nota «Veredicto: ANALIZADA, NO CONCLUYENTE» solo estaba en el fichero versionado y no en el código; ahora la escribe el código.
+  - Se hace una segunda ronda de `make v7` ×2 con las correcciones, y sus salidas se copian.

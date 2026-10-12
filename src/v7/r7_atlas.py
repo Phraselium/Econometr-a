@@ -192,6 +192,21 @@ INSTR = {"a_construccion": "construcción adicional", "b_vacias": "movilización
          "f1_rebaja_ITP_IVA_vivienda_nueva": "rebaja de ITP/IVA (vivienda nueva)", "f2_impuestos_construccion": "rebaja de impuestos y costes de construcción"}
 
 
+def _zip_determinista(p):
+    """Reescribe el .xlsx (zip) con fecha fija en cada entrada y orden estable: md5 idéntico entre ejecuciones."""
+    import zipfile
+    with zipfile.ZipFile(p) as z:
+        items = [(i.filename, z.read(i.filename)) for i in z.infolist()]
+    import re as _re   # openpyxl fija «modified» a la hora de guardado: se normaliza en docProps/core.xml
+    items = [(n, _re.sub(rb"(<dcterms:(?:created|modified)[^>]*>)[^<]*(<)", rb"\g<1>2026-10-12T00:00:00Z\g<2>", d) if n == "docProps/core.xml" else d)
+             for n, d in items]
+    with zipfile.ZipFile(p, "w", zipfile.ZIP_DEFLATED) as z:
+        for nombre, datos in items:
+            zi = zipfile.ZipInfo(nombre, date_time=(1980, 1, 1, 0, 0, 0))
+            zi.compress_type = zipfile.ZIP_DEFLATED
+            z.writestr(zi, datos)
+
+
 def provincial(d, a):
     a("### Apartado provincial: provincias de Alicante (03), Castellón (12) y Valencia (46), y València ciudad\n")
     a("Coeficientes de R4b (provincia_valencia.csv; 21 observaciones, "
@@ -286,7 +301,11 @@ def xlsx(d, nombres):
                         "panel_ccaa_q_v7.csv (INE). " + ROT)
     for ws in wb.worksheets:
         ws.freeze_panes = None
+    import datetime as _dt
+    fijo = _dt.datetime(2026, 10, 12)
+    wb.properties.created = wb.properties.modified = fijo   # v7: metadatos fijos (determinismo)
     wb.save(O / "tablas_regionales.xlsx")
+    _zip_determinista(O / "tablas_regionales.xlsx")
 
 
 def resumen(d, nombres):

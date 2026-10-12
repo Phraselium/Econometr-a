@@ -33,7 +33,10 @@ DUPLICADO_DE = {"R06": "R05"}
 MISMOS_INSUMOS = {"R03", "R04"}
 
 # Contexto de método del proyecto que explica diferencias (no valora a los organismos).
+# v6.2 (L3): el déficit 2021-2024 publicado pasa a la cota C2 de L3; las referencias de data/raw/v5 siguen citando el id antiguo
+SUSTITUYE_ID = {"deficit_2124_c1": "L3-DEF-2124-SINBAJAS"}
 METODO_PROY = {
+    "L3-DEF-2124-SINBAJAS": "proyecto (v6.2): aumento de hogares (EPA con varias correcciones del salto de 2021 y ECP) menos terminadas (Ministerio y Catastro), sin bajas; cota C2",
     "deficit_2124_c1": "proyecto: aumento de hogares (ECP y EPA corregida) menos terminadas (Ministerio y Catastro), sin bajas",
     "B2-H2": "proyecto: déficit 2021-2025 de partida con bajas del parque = 0",
     "dh_2125": "proyecto: aumento de hogares ECP y EPA corregida por la ruptura de 2021",
@@ -56,6 +59,10 @@ def num(x: str) -> float | None:
         return float(x)
     except ValueError:
         return None
+
+
+def _miles(x):
+    return f"{float(x):,.0f}".replace(",", ".")
 
 
 def intervalo(valor, mn, mx):
@@ -104,6 +111,7 @@ def main() -> None:
 
     filas = []
     for r in refs:
+        r = {**r, "id_cifra": SUSTITUYE_ID.get(r["id_cifra"], r["id_cifra"])}
         c = cif.get(r["id_cifra"])
         if c is None:
             raise SystemExit(f"id_cifra ausente en cifras_clave: {r['id_cifra']}")
@@ -196,9 +204,9 @@ def main() -> None:
         "- Varias referencias de Eurostat (sobrecarga, emancipación, IPV, IPCA alquiler) proceden de la misma fuente "
         "primaria que la cifra del proyecto: su coincidencia es un control de transcripción, no una confirmación independiente.",
         "- La cifra de 600.000 de la OCDE (2022-2025) es la estimación del Banco de España citada por la OCDE (R06 = R05, una sola cifra).",
-        "- Tensión interna declarada: R01/R02 comparan la cifra C1 de 2021-2024 (aumento de hogares con ECP y EPA corregida, 562.692-688.692), mientras que R03-R05 usan B2-H2 (2021-2025, solo ECP, 700.934): "
-        "son dos construcciones distintas. Con el aumento de hogares de 2025 (240.000, BdE) y las terminadas de 2025 (92.000), 562.692 + (240.000 − 92.000) ≈ 710.692 supera 700.934; "
-        "la diferencia (≈ 9.800 viviendas, 1,4 %) puede deberse a las dos construcciones (EPA corregida frente a solo ECP; terminadas de cada fuente) y no se ha descompuesto en D3. "
+        "- Tensión interna declarada: R01/R02 comparan el déficit 2021-2024 del proyecto, que en v6.2 es una cota C2 "
+        f"({_miles(cif['L3-DEF-2124-SINBAJAS']['min'])}-{_miles(cif['L3-DEF-2124-SINBAJAS']['max'])} viviendas, según la corrección del salto de la EPA en 2021), "
+        "mientras que R03-R05 usan B2-H2 (2021-2025, solo ECP): son dos construcciones distintas y la diferencia no se ha descompuesto en D3. "
         "Esta tensión no afecta al recuento de coincidencias, que usa B2-H2 para R03-R05.",
         "- R09 y R10 son paráfrasis de docs/literatura.md, no citas literales; R04 no tiene URL de documento localizada (véase la referencia).",
         "- La coincidencia numérica no cambia la capa de la cifra del proyecto (sin promoción de capa).",

@@ -1,0 +1,183 @@
+{
+ "rama": "L3",
+ "pregunta": "¿Depende la capa C1 del déficit 2021-2024 de la constante de corrección del salto EPA 2021T1 y de una sola fuente de terminadas? (A-01)",
+ "capa": "C2",
+ "datos": "INE EPA hogares y ECP (trimestral, hasta 2025T4), MIVAU terminadas libres y protegida, Catastro unidades urbanas residenciales, bajas v5.1 T1",
+ "N": 288,
+ "metodo": "Recálculo determinista de dH - (terminadas - bajas) bajo 8 correcciones de hogares x 3 fuentes de terminadas x 6 escenarios de bajas; regla de decisión pre-declarada",
+ "estimacion": {
+  "2021-2024_sin_bajas": [
+   344803.0,
+   710542.0
+  ],
+  "2021-2025_sin_bajas": [
+   469927.0,
+   887950.0
+  ]
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO (contabilidad del déficit; rango por supuestos, no intervalo de confianza)",
+ "diagnosticos": {
+  "2024": {
+   "min_sb": 344803.0,
+   "max_sb": 710542.0,
+   "punto_medio": 527672.5,
+   "amplitud": 0.3465587082897062,
+   "dif_hogares_epa_ecp": 0.10549720427608059,
+   "dif_terminadas_catastro_mivau_comun": 0.03083490049303529,
+   "indep": true,
+   "c1": false,
+   "min_cb": 344803.0,
+   "max_cb": 924658.0,
+   "max_cb_supuesto": 924658.0,
+   "por_hogares": {
+    "v1_constante": [
+     634348.0,
+     688692.0
+    ],
+    "a_sin_correccion": [
+     391948.0,
+     446292.0
+    ],
+    "b_vecinos2": [
+     656198.0,
+     710542.0
+    ],
+    "b4_vecinos4": [
+     652323.0,
+     706667.0
+    ],
+    "c_variacion_cero": [
+     599748.0,
+     654092.0
+    ],
+    "d1_enlace_cociente": [
+     344803.0,
+     399147.0
+    ],
+    "d2_enlace_ecp_retropolada": [
+     569538.0,
+     623882.0
+    ],
+    "e_ecp": [
+     551813.0,
+     606157.0
+    ]
+   },
+   "por_terminadas": {
+    "MIVAU_con_protegida": [
+     355682.0,
+     667077.0
+    ],
+    "MIVAU_sin_protegida": [
+     399147.0,
+     710542.0
+    ],
+    "Catastro_completado": [
+     344803.0,
+     656198.0
+    ]
+   },
+   "dh": {
+    "v1_constante": 1019800.0,
+    "a_sin_correccion": 777400.0,
+    "b_vecinos2": 1041650.0,
+    "b4_vecinos4": 1037775.0,
+    "c_variacion_cero": 985200.0,
+    "d1_enlace_cociente": 730255.2987963483,
+    "d2_enlace_ecp_retropolada": 954990.0,
+    "e_ecp": 937265.0
+   },
+   "bajas_estimadas": {
+    "v5.1_min": 0.0,
+    "v5.1_central": 27404.854874688863,
+    "v5.1_max": 55452.32494374429
+   },
+   "n_cb": 120
+  },
+  "2025": {
+   "min_sb": 469927.0,
+   "max_sb": 887950.0,
+   "punto_medio": 678938.5,
+   "amplitud": 0.30785041649575035,
+   "dif_hogares_epa_ecp": 0.10586685254436298,
+   "dif_terminadas_catastro_mivau_comun": 0.05371298237210515,
+   "indep": true,
+   "c1": false,
+   "min_cb": 469927.0,
+   "max_cb": 1156075.0,
+   "max_cb_supuesto": 1156075.0,
+   "por_hogares": {
+    "v1_constante": [
+     785780.0,
+     866100.0
+    ],
+    "a_sin_correccion": [
+     543380.0,
+     623700.0
+    ],
+    "b_vecinos2": [
+     807630.0,
+     887950.0
+    ],
+    "b4_vecinos4": [
+     803755.0,
+     884075.0
+    ],
+    "c_variacion_cero": [
+     751180.0,
+     831500.0
+    ],
+    "d1_enlace_cociente": [
+     469927.0,
+     550247.0
+    ],
+    "d2_enlace_ecp_retropolada": [
+     694662.0,
+     774982.0
+    ],
+    "e_ecp": [
+     676937.0,
+     757257.0
+    ]
+   },
+   "por_terminadas": {
+    "MIVAU_con_protegida": [
+     493924.0,
+     831627.0
+    ],
+    "MIVAU_sin_protegida": [
+     550247.0,
+     887950.0
+    ],
+    "Catastro_completado": [
+     469927.0,
+     807630.0
+    ]
+   },
+   "dh": {
+    "v1_constante": 1278000.0,
+    "a_sin_correccion": 1035600.0,
+    "b_vecinos2": 1299850.0,
+    "b4_vecinos4": 1295975.0,
+    "c_variacion_cero": 1243400.0,
+    "d1_enlace_cociente": 962147.2987963483,
+    "d2_enlace_ecp_retropolada": 1186882.0,
+    "e_ecp": 1169157.0
+   },
+   "bajas_estimadas": {
+    "v5.1_min": 0.0,
+    "v5.1_central": 34320.08509765051,
+    "v5.1_max": 69445.8153480606
+   },
+   "n_cb": 120
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Capa 2021-2024 sin bajas: C2. Capa 2021-2025: C4. Censo 2021 como ancla: no disponible como cifra de hogares nacional versionada; la ECP ya está anclada a él."
+}

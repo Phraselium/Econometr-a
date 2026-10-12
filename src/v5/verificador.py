@@ -34,13 +34,14 @@ SUSTITUCIONES = {
     "V04": ("B4-V3", "triangulación de B3, v2 y A4"),
     "V12": ("B4-V4", "triangulación de B3, v2 y la cota de v3"),
     "B2-V1": ("T4-V1", "v5.1: dirección y magnitud separadas en una rejilla de 180 escenarios"),
+    "V05": ("L3-V1", "v6.2: déficit 2021-2024 con siete correcciones del salto de la EPA; pasa de C1 a cota C2"),
 }
 VEREDICTOS_C4 = {"ANALIZADA, NO CONCLUYENTE", "NO ANALIZADA: FALTAN DATOS"}
 
 
 def _v5() -> list[dict]:
     out = []
-    for p in sorted((RAIZ / "output" / "v5").glob("*/fichas_verificador.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/fichas_verificador.json")) + sorted((RAIZ / "output" / "v6").glob("*/fichas_verificador.json")) + sorted((RAIZ / "output" / "v6_1").glob("*/fichas_verificador.json")):
+    for p in sorted((RAIZ / "output" / "v5").glob("*/fichas_verificador.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/fichas_verificador.json")) + sorted((RAIZ / "output" / "v6").glob("*/fichas_verificador.json")) + sorted((RAIZ / "output" / "v6_1").glob("*/fichas_verificador.json")) + sorted((RAIZ / "output" / "v6_2").glob("*/fichas_verificador.json")):
         if p.parent.name == "verificador":
             continue
         out += json.loads(p.read_text(encoding="utf-8"))

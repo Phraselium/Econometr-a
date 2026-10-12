@@ -3,7 +3,7 @@
 **Borja Romero, economista.** Solo hechos con al menos dos fuentes [C1] o cotas con supuestos explícitos [C2]. Cada cifra lleva periodo, fuente, fecha del dato y capa.
 
 1. [C1] **Hay más hogares.** El número de hogares aumentó en {{dh_2125:cita}}.
-2. [C1] **Se terminan menos viviendas de las que se forman hogares.** Balance acumulado 2021-2024 sin bajas del parque: {{deficit_2124_c1:rango}} ({{deficit_2124_c1:periodo}}; {{deficit_2124_c1:fuentes}}; dato de {{deficit_2124_c1:fecha_dato}}; {{deficit_2124_c1:capa}}).
+2. [C2] **Se terminan menos viviendas de las que se forman hogares.** Balance acumulado 2021-2024 sin bajas del parque: entre {{L3-DEF-2124-SINBAJAS:min}} y {{L3-DEF-2124-SINBAJAS:max}} ({{L3-DEF-2124-SINBAJAS:periodo}}; {{L3-DEF-2124-SINBAJAS:fuentes}}; dato de {{L3-DEF-2124-SINBAJAS:fecha_dato}}; {{L3-DEF-2124-SINBAJAS:capa}}: el rango depende de cómo se corrija el salto de la EPA en 2021, y es una cota, no una estimación puntual).
 3. [C2] **Hasta 2030 el balance empeora en todos los escenarios.** Con los ritmos de construcción considerados, incluido uno optimista, el déficit nacional 2025-2030 crece en toda la rejilla de escenarios, definida por el autor ({{T4-H3:periodo}}; Ministerio e INE; {{T4-H3:capa}}). Cuánto crece no es un hecho (ver el recuadro).
 4. [C1] **Viviendas terminadas.** Viviendas terminadas al año: {{terminadas_1924:rango}} ({{terminadas_1924:periodo}}; {{terminadas_1924:fuentes}}; dato de {{terminadas_1924:fecha_dato}}; {{terminadas_1924:capa}}).
 5. [C1] **El precio de compra sube.** Variación acumulada según el núcleo de tres fuentes: {{A23-P2:cita}}.

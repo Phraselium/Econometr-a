@@ -5,7 +5,7 @@
 ## Mensajes principales
 
 1. [C1] Entre 2021 y 2025 el número de hogares aumentó en {{dh_2125}}, con dos fuentes de hogares (ECP y EPA corregida) que coinciden en orden de magnitud.
-2. [C1] En 2021-2024 los hogares crecieron más que las viviendas terminadas: el balance acumulado es de {{deficit_2124_c1:rango}} sin contar bajas del parque. [C4] Con las bajas del parque estimadas, llegaría como máximo a {{T3-H2:max}}.
+2. [C2] En 2021-2024 los hogares crecieron más que las viviendas terminadas: el balance acumulado está entre {{L3-DEF-2124-SINBAJAS:min}} y {{L3-DEF-2124-SINBAJAS:max}} sin contar bajas del parque (cota: depende de la corrección del salto de la EPA en 2021). [C4] Con las bajas del parque estimadas, llegaría como máximo a {{T3-H2:max}}.
 3. [C1] Las viviendas terminadas fueron de {{terminadas_1924:rango}} en 2019-2024 (territorio común), con el Ministerio y el Catastro de acuerdo.
 4. [C1] El precio de compra subió {{A23-P2}} en 2015-2025 según el núcleo Ministerio-Notariado-Registradores. [C1] El alquiler de los contratos vigentes subió {{A23-A2:rango}} en 2015-2024; el de los contratos nuevos crece más deprisa, pero esa brecha es [C4].
 5. [C2] La proyección del INE añade {{B1-H4}} en 2026-2035: es la parte de la necesidad que no depende de supuestos propios sobre el parque.

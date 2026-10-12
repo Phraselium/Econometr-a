@@ -5,7 +5,7 @@
 ## Mensajes principales
 
 1. [C1] Entre 2021 y 2025 el número de hogares aumentó en 997.586 hogares (981.823-1.013.350 hogares), con dos fuentes de hogares (ECP y EPA corregida) que coinciden en orden de magnitud.
-2. [C1] En 2021-2024 los hogares crecieron más que las viviendas terminadas: el balance acumulado es de 562.692-688.692 viviendas sin contar bajas del parque. [C4] Con las bajas del parque estimadas, llegaría como máximo a 744.144 viviendas.
+2. [C2] En 2021-2024 los hogares crecieron más que las viviendas terminadas: el balance acumulado está entre 344.803 viviendas y 710.542 viviendas sin contar bajas del parque (cota: depende de la corrección del salto de la EPA en 2021). [C4] Con las bajas del parque estimadas, llegaría como máximo a 744.144 viviendas.
 3. [C1] Las viviendas terminadas fueron de 72.264-94.426 viviendas/año en 2019-2024 (territorio común), con el Ministerio y el Catastro de acuerdo.
 4. [C1] El precio de compra subió 47,2 % (44,2-56,1 %) en 2015-2025 según el núcleo Ministerio-Notariado-Registradores. [C1] El alquiler de los contratos vigentes subió 10,9-22,9 % en 2015-2024; el de los contratos nuevos crece más deprisa, pero esa brecha es [C4].
 5. [C2] La proyección del INE añade 1.720.537 hogares (1.308.531-1.772.410 hogares) en 2026-2035: es la parte de la necesidad que no depende de supuestos propios sobre el parque.

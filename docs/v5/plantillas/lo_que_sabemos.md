@@ -19,7 +19,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 
 **Hogares y viviendas**
 - [C1] Entre 2021 y 2025 los hogares aumentaron en {{dh_2125:cita}}.
-- [C1] En 2021-2024 los hogares crecieron más que las viviendas terminadas: balance de {{deficit_2124_c1:rango}} ({{deficit_2124_c1:periodo}}; {{deficit_2124_c1:fuentes}}; dato de {{deficit_2124_c1:fecha_dato}}; {{deficit_2124_c1:capa}}).
+- [C2] En 2021-2024 los hogares crecieron más que las viviendas terminadas: balance entre {{L3-DEF-2124-SINBAJAS:min}} y {{L3-DEF-2124-SINBAJAS:max}} ({{L3-DEF-2124-SINBAJAS:periodo}}; {{L3-DEF-2124-SINBAJAS:fuentes}}; dato de {{L3-DEF-2124-SINBAJAS:fecha_dato}}; {{L3-DEF-2124-SINBAJAS:capa}}). Que es positivo lo confirman dos fuentes; la cuantía es una cota porque depende de la corrección del salto de la EPA en 2021.
 - [C1] Viviendas terminadas al año en el territorio común: {{terminadas_1924:rango}} ({{terminadas_1924:periodo}}; {{terminadas_1924:fuentes}}; dato de {{terminadas_1924:fecha_dato}}; {{terminadas_1924:capa}}).
 - [C2] Demanda latente de los jóvenes por convivencia con los padres, frente a 2008: {{latente_convivencia:rango}} ({{latente_convivencia:periodo}}; {{latente_convivencia:fuentes}}; dato de {{latente_convivencia:fecha_dato}}; {{latente_convivencia:capa}}).
 - [C2] Hasta 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista ({{T4-H3:periodo}}; {{T4-H3:capa}}). Por provincias: {{T4-H3:valor}} empeoran, {{T4-H3:min}} mejoran y {{T4-H3:max}} quedan indeterminadas.

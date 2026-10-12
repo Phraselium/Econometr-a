@@ -41,7 +41,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## «Faltan cientos de miles de viviendas»
 
-- **PARCIALMENTE** [C1]: el déficit 2021-2024 está entre 562.692-688.692 viviendas con bajas nulas
+- **PARCIALMENTE** [C2]: el déficit 2021-2024 está entre 344.803 viviendas y 710.542 viviendas con bajas nulas (cota según la corrección de la EPA)
 - Con las bajas estimadas, como máximo 744.144 viviendas [C4]; demoliciones con licencia: 0,02-0,04 % del parque
 
 ---

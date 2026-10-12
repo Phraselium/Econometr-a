@@ -19,7 +19,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 
 **Hogares y viviendas**
 - [C1] Entre 2021 y 2025 los hogares aumentaron en 997.586 hogares (981.823-1.013.350 hogares) (2021-2025; INE ECP y EPA (corregida por la ruptura de 2021); dato de 2025T1; C1).
-- [C1] En 2021-2024 los hogares crecieron más que las viviendas terminadas: balance de 562.692-688.692 viviendas (2021-2024; hogares: ECP y EPA corregida; terminadas: Ministerio y Catastro; dato de 2024; C1).
+- [C2] En 2021-2024 los hogares crecieron más que las viviendas terminadas: balance entre 344.803 viviendas y 710.542 viviendas (2021-2024; hogares: EPA (varias correcciones) y ECP; terminadas: MIVAU y Catastro; dato de 2024T4; C2). Que es positivo lo confirman dos fuentes; la cuantía es una cota porque depende de la corrección del salto de la EPA en 2021.
 - [C1] Viviendas terminadas al año en el territorio común: 72.264-94.426 viviendas/año (2019-2024; Ministerio (fin de obra) y Catastro (altas), dentro de ±15 %; dato de 2024; C1).
 - [C2] Demanda latente de los jóvenes por convivencia con los padres, frente a 2008: 188.000-506.000 hogares (2008-2025; INE EPA y ECV (tasa de convivencia con los padres); dato de 2025; C2).
 - [C2] Hasta 2030 el déficit nacional empeora en todos los escenarios de la rejilla, incluido uno de construcción optimista (2025-2030; C2). Por provincias: 15 provincias empeoran, 0 provincias mejoran y 37 provincias quedan indeterminadas.

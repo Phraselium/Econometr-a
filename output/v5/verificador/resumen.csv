@@ -1,6 +1,5 @@
 id,tema,enunciado,veredicto,capa
 V02,Grandes tenedores,Los fondos de inversión y los grandes tenedores son los responsables de la subida de precios y alquileres.,NO ANALIZADA: FALTAN DATOS,C4
-V05,Déficit,Faltan cientos de miles de viviendas en España.,PARCIALMENTE,C1
 V06,Topes de alquiler,Los topes al precio del alquiler bajan los alquileres.,"ANALIZADA, NO CONCLUYENTE",C4
 V07,Topes de alquiler,Los topes al precio del alquiler reducen la oferta de vivienda en alquiler.,"ANALIZADA, NO CONCLUYENTE",C4
 V08,Viviendas vacías,Hay millones de viviendas vacías que se podrían movilizar para resolver el problema.,"ANALIZADA, NO CONCLUYENTE",C4
@@ -39,3 +38,4 @@ M4-V3,Factores comunes a alquiler y compra,El alquiler y la compra se mueven por
 M4-V4,Ratio precio/alquiler y sobrevaloracion,La ratio precio/alquiler indica sobrevaloracion.,"ANALIZADA, NO CONCLUYENTE",C4
 K1-V1,Predicción del precio y del alquiler,Los modelos de inteligencia artificial predicen el precio y el alquiler mejor que los métodos sencillos.,"ANALIZADA, NO CONCLUYENTE",C4
 K2-V1,Inmigración,La llegada de inmigrantes sube el precio de la vivienda o el alquiler.,"ANALIZADA, NO CONCLUYENTE",C4
+L3-V1,Déficit,Faltan cientos de miles de viviendas en España.,PARCIALMENTE,C2

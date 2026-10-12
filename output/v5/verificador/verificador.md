@@ -7,7 +7,6 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 32; NO ANALIZADA: FALTAN DATO
 | Id | Afirmación | Veredicto | Capa |
 |---|---|---|---|
 | V02 | Los fondos de inversión y los grandes tenedores son los responsables de la subida de precios y alquileres. | NO ANALIZADA: FALTAN DATOS | C4 |
-| V05 | Faltan cientos de miles de viviendas en España. | PARCIALMENTE | C1 |
 | V06 | Los topes al precio del alquiler bajan los alquileres. | ANALIZADA, NO CONCLUYENTE | C4 |
 | V07 | Los topes al precio del alquiler reducen la oferta de vivienda en alquiler. | ANALIZADA, NO CONCLUYENTE | C4 |
 | V08 | Hay millones de viviendas vacías que se podrían movilizar para resolver el problema. | ANALIZADA, NO CONCLUYENTE | C4 |
@@ -46,6 +45,7 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 32; NO ANALIZADA: FALTAN DATO
 | M4-V4 | La ratio precio/alquiler indica sobrevaloracion. | ANALIZADA, NO CONCLUYENTE | C4 |
 | K1-V1 | Los modelos de inteligencia artificial predicen el precio y el alquiler mejor que los métodos sencillos. | ANALIZADA, NO CONCLUYENTE | C4 |
 | K2-V1 | La llegada de inmigrantes sube el precio de la vivienda o el alquiler. | ANALIZADA, NO CONCLUYENTE | C4 |
+| L3-V1 | Faltan cientos de miles de viviendas en España. | PARCIALMENTE | C2 |
 
 ## Fichas sustituidas en v5
 
@@ -61,6 +61,7 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 32; NO ANALIZADA: FALTAN DATO
 | V04 | B4-V3 | triangulación de B3, v2 y A4 |
 | V12 | B4-V4 | triangulación de B3, v2 y la cota de v3 |
 | B2-V1 | T4-V1 | v5.1: dirección y magnitud separadas en una rejilla de 180 escenarios |
+| V05 | L3-V1 | v6.2: déficit 2021-2024 con siete correcciones del salto de la EPA; pasa de C1 a cota C2 |
 
 ## V02 · Grandes tenedores
 
@@ -77,22 +78,6 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 32; NO ANALIZADA: FALTAN DATO
 | Regla del veredicto | Sin datos de la cuota de grandes tenedores no se puede acotar su contribución. v4: Faltan datos de titularidad por tamaño de tenedor (solicitud al Catastro pendiente). |
 | Límites | La ingesta está preparada; la cota se calculará con el esquema de B1 cuando lleguen los datos. |
 | Evidencia | docs/v3/solicitudes_transparencia.md, output/v3/PB/grandes_tenedores.json |
-
-## V05 · Déficit
-
-**Afirmación:** Faltan cientos de miles de viviendas en España.
-
-| Campo | Contenido |
-|---|---|
-| Veredicto | **PARCIALMENTE** |
-| Capa de la evidencia | C1 |
-| Magnitud | 2021-2025: 701.187 viviendas; rango entre fuentes [559.752; 969.059]. 2012-2021: signo no determinado ([-1.015.321; 689.037]). v4 (M0): déficit 2021-2024 sin bajas = [562.692; 688.692] viviendas (C1: todos los componentes medidos con dos fuentes); con bajas supuestas del 0,1-0,2 % anual, hasta 902.808 (C2). La cifra 2021-2025 de v3 queda en C4 porque las terminadas de 2025 son frágiles. |
-| Intervalo | [559.752; 969.059] viviendas |
-| Cota | — |
-| Literatura | Banco de España, Informe Anual 2025 (NO VERIFICADA: DOI no comprobado): ≈750 mil, dentro del rango. |
-| Regla del veredicto | Criterio de periodo común a todas las fichas: una afirmación sin periodo se juzga en todas las ventanas C1 disponibles. Respaldada en 2021-2025 (todas las combinaciones dan cientos de miles, C1) y no determinada con 2012 como base: PARCIALMENTE. Las ventanas C1 se eligieron tras ver la disponibilidad de fuentes (docs/v3/limitaciones.md, 7). |
-| Límites | Depende del periodo de partida: con 2012 como base el signo no está determinado. «Faltan» se refiere al balance contable, no a una necesidad normativa. |
-| Evidencia | output/v3/PA/hechos.json#A1_nacional_2021-2025 |
 
 ## V06 · Topes de alquiler
 
@@ -706,3 +691,19 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 32; NO ANALIZADA: FALTAN DATO
 | Regla del veredicto | Con capa C4 el veredicto es como máximo ANALIZADA, NO CONCLUYENTE. El signo y el mercado cambian con el método (2SLS/MCO), la medida de alquiler y los controles; la población puede ser mediadora. |
 | Límites | 41 provincias de entrenamiento (sin las 11 selladas, incluidas las islas); no reproduce la muestra de 49 provincias de v2; primera etapa débil del instrumento en esta muestra. |
 | Evidencia | output/v6_1/K2/inmigracion.md, output/v6_1/K2/pasos_inmigracion.csv, docs/v6_1/historial_conclusiones.md |
+
+## L3-V1 · Déficit
+
+**Afirmación:** Faltan cientos de miles de viviendas en España.
+
+| Campo | Contenido |
+|---|---|
+| Veredicto | **PARCIALMENTE** |
+| Capa de la evidencia | C2 |
+| Magnitud | Déficit acumulado 2021-2024 (aumento de hogares menos viviendas terminadas), sin bajas del parque: 344.803-710.542 viviendas según la corrección del salto de la EPA en 2021 (siete variantes) y la fuente de terminadas (Ministerio o Catastro); con bajas supuestas, 344.803-924.658. 2021-2025: 469.927-887.950 (C4: terminadas de 2025 frágiles). |
+| Intervalo | cota 344.803-710.542 viviendas (sin bajas) |
+| Cota | C2: supuestos explícitos sobre la corrección de la EPA |
+| Literatura | Banco de España (2024, 2025): estimaciones de 375.000-600.000 viviendas en periodos parecidos (output/v5/D3/convergencia.md). |
+| Regla del veredicto | El signo (más hogares que viviendas terminadas) lo confirman dos fuentes de hogares y dos de terminadas en todas las variantes; la cuantía es una cota porque la amplitud entre correcciones de la EPA supera la tolerancia de C1 (±15 %). «Cientos de miles» se cumple en todas las variantes; una cifra puntual no es defendible. |
+| Límites | Sin bajas del parque observadas; la EPA cambió de metodología en 2021T1; las terminadas de 2025 son frágiles. |
+| Evidencia | output/v6_2/L3/deficit_alternativas.md, output/v6_2/L3/resultado.json, output/v6_2/anexo_metodologico.md |

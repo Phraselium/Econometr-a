@@ -1,0 +1,289 @@
+periodo,hogares,fuente_hogares,delta_hogares,terminadas_fuente,terminadas,bajas_escenario,bajas,deficit,tipo_bajas
+2021-2024,v1_constante,EPA,1019800,MIVAU_con_protegida,374573,0,0,645227,ninguna
+2021-2024,v1_constante,EPA,1019800,MIVAU_con_protegida,374573,"0,1 % anual",107058,752285,supuesto
+2021-2024,v1_constante,EPA,1019800,MIVAU_con_protegida,374573,"0,2 % anual",214116,859343,supuesto
+2021-2024,v1_constante,EPA,1019800,MIVAU_con_protegida,374573,v5.1_min,0,645227,estimada v5.1 (C4)
+2021-2024,v1_constante,EPA,1019800,MIVAU_con_protegida,374573,v5.1_central,27405,672632,estimada v5.1 (C4)
+2021-2024,v1_constante,EPA,1019800,MIVAU_con_protegida,374573,v5.1_max,55452,700679,estimada v5.1 (C4)
+2021-2024,v1_constante,EPA,1019800,MIVAU_sin_protegida,331108,0,0,688692,ninguna
+2021-2024,v1_constante,EPA,1019800,MIVAU_sin_protegida,331108,"0,1 % anual",107058,795750,supuesto
+2021-2024,v1_constante,EPA,1019800,MIVAU_sin_protegida,331108,"0,2 % anual",214116,902808,supuesto
+2021-2024,v1_constante,EPA,1019800,MIVAU_sin_protegida,331108,v5.1_min,0,688692,estimada v5.1 (C4)
+2021-2024,v1_constante,EPA,1019800,MIVAU_sin_protegida,331108,v5.1_central,27405,716097,estimada v5.1 (C4)
+2021-2024,v1_constante,EPA,1019800,MIVAU_sin_protegida,331108,v5.1_max,55452,744144,estimada v5.1 (C4)
+2021-2024,v1_constante,EPA,1019800,Catastro_completado,385452,0,0,634348,ninguna
+2021-2024,v1_constante,EPA,1019800,Catastro_completado,385452,"0,1 % anual",107058,741406,supuesto
+2021-2024,v1_constante,EPA,1019800,Catastro_completado,385452,"0,2 % anual",214116,848464,supuesto
+2021-2024,v1_constante,EPA,1019800,Catastro_completado,385452,v5.1_min,0,634348,estimada v5.1 (C4)
+2021-2024,v1_constante,EPA,1019800,Catastro_completado,385452,v5.1_central,27405,661753,estimada v5.1 (C4)
+2021-2024,v1_constante,EPA,1019800,Catastro_completado,385452,v5.1_max,55452,689800,estimada v5.1 (C4)
+2021-2024,a_sin_correccion,EPA,777400,MIVAU_con_protegida,374573,0,0,402827,ninguna
+2021-2024,a_sin_correccion,EPA,777400,MIVAU_con_protegida,374573,"0,1 % anual",107058,509885,supuesto
+2021-2024,a_sin_correccion,EPA,777400,MIVAU_con_protegida,374573,"0,2 % anual",214116,616943,supuesto
+2021-2024,a_sin_correccion,EPA,777400,MIVAU_con_protegida,374573,v5.1_min,0,402827,estimada v5.1 (C4)
+2021-2024,a_sin_correccion,EPA,777400,MIVAU_con_protegida,374573,v5.1_central,27405,430232,estimada v5.1 (C4)
+2021-2024,a_sin_correccion,EPA,777400,MIVAU_con_protegida,374573,v5.1_max,55452,458279,estimada v5.1 (C4)
+2021-2024,a_sin_correccion,EPA,777400,MIVAU_sin_protegida,331108,0,0,446292,ninguna
+2021-2024,a_sin_correccion,EPA,777400,MIVAU_sin_protegida,331108,"0,1 % anual",107058,553350,supuesto
+2021-2024,a_sin_correccion,EPA,777400,MIVAU_sin_protegida,331108,"0,2 % anual",214116,660408,supuesto
+2021-2024,a_sin_correccion,EPA,777400,MIVAU_sin_protegida,331108,v5.1_min,0,446292,estimada v5.1 (C4)
+2021-2024,a_sin_correccion,EPA,777400,MIVAU_sin_protegida,331108,v5.1_central,27405,473697,estimada v5.1 (C4)
+2021-2024,a_sin_correccion,EPA,777400,MIVAU_sin_protegida,331108,v5.1_max,55452,501744,estimada v5.1 (C4)
+2021-2024,a_sin_correccion,EPA,777400,Catastro_completado,385452,0,0,391948,ninguna
+2021-2024,a_sin_correccion,EPA,777400,Catastro_completado,385452,"0,1 % anual",107058,499006,supuesto
+2021-2024,a_sin_correccion,EPA,777400,Catastro_completado,385452,"0,2 % anual",214116,606064,supuesto
+2021-2024,a_sin_correccion,EPA,777400,Catastro_completado,385452,v5.1_min,0,391948,estimada v5.1 (C4)
+2021-2024,a_sin_correccion,EPA,777400,Catastro_completado,385452,v5.1_central,27405,419353,estimada v5.1 (C4)
+2021-2024,a_sin_correccion,EPA,777400,Catastro_completado,385452,v5.1_max,55452,447400,estimada v5.1 (C4)
+2021-2024,b_vecinos2,EPA,1041650,MIVAU_con_protegida,374573,0,0,667077,ninguna
+2021-2024,b_vecinos2,EPA,1041650,MIVAU_con_protegida,374573,"0,1 % anual",107058,774135,supuesto
+2021-2024,b_vecinos2,EPA,1041650,MIVAU_con_protegida,374573,"0,2 % anual",214116,881193,supuesto
+2021-2024,b_vecinos2,EPA,1041650,MIVAU_con_protegida,374573,v5.1_min,0,667077,estimada v5.1 (C4)
+2021-2024,b_vecinos2,EPA,1041650,MIVAU_con_protegida,374573,v5.1_central,27405,694482,estimada v5.1 (C4)
+2021-2024,b_vecinos2,EPA,1041650,MIVAU_con_protegida,374573,v5.1_max,55452,722529,estimada v5.1 (C4)
+2021-2024,b_vecinos2,EPA,1041650,MIVAU_sin_protegida,331108,0,0,710542,ninguna
+2021-2024,b_vecinos2,EPA,1041650,MIVAU_sin_protegida,331108,"0,1 % anual",107058,817600,supuesto
+2021-2024,b_vecinos2,EPA,1041650,MIVAU_sin_protegida,331108,"0,2 % anual",214116,924658,supuesto
+2021-2024,b_vecinos2,EPA,1041650,MIVAU_sin_protegida,331108,v5.1_min,0,710542,estimada v5.1 (C4)
+2021-2024,b_vecinos2,EPA,1041650,MIVAU_sin_protegida,331108,v5.1_central,27405,737947,estimada v5.1 (C4)
+2021-2024,b_vecinos2,EPA,1041650,MIVAU_sin_protegida,331108,v5.1_max,55452,765994,estimada v5.1 (C4)
+2021-2024,b_vecinos2,EPA,1041650,Catastro_completado,385452,0,0,656198,ninguna
+2021-2024,b_vecinos2,EPA,1041650,Catastro_completado,385452,"0,1 % anual",107058,763256,supuesto
+2021-2024,b_vecinos2,EPA,1041650,Catastro_completado,385452,"0,2 % anual",214116,870314,supuesto
+2021-2024,b_vecinos2,EPA,1041650,Catastro_completado,385452,v5.1_min,0,656198,estimada v5.1 (C4)
+2021-2024,b_vecinos2,EPA,1041650,Catastro_completado,385452,v5.1_central,27405,683603,estimada v5.1 (C4)
+2021-2024,b_vecinos2,EPA,1041650,Catastro_completado,385452,v5.1_max,55452,711650,estimada v5.1 (C4)
+2021-2024,b4_vecinos4,EPA,1037775,MIVAU_con_protegida,374573,0,0,663202,ninguna
+2021-2024,b4_vecinos4,EPA,1037775,MIVAU_con_protegida,374573,"0,1 % anual",107058,770260,supuesto
+2021-2024,b4_vecinos4,EPA,1037775,MIVAU_con_protegida,374573,"0,2 % anual",214116,877318,supuesto
+2021-2024,b4_vecinos4,EPA,1037775,MIVAU_con_protegida,374573,v5.1_min,0,663202,estimada v5.1 (C4)
+2021-2024,b4_vecinos4,EPA,1037775,MIVAU_con_protegida,374573,v5.1_central,27405,690607,estimada v5.1 (C4)
+2021-2024,b4_vecinos4,EPA,1037775,MIVAU_con_protegida,374573,v5.1_max,55452,718654,estimada v5.1 (C4)
+2021-2024,b4_vecinos4,EPA,1037775,MIVAU_sin_protegida,331108,0,0,706667,ninguna
+2021-2024,b4_vecinos4,EPA,1037775,MIVAU_sin_protegida,331108,"0,1 % anual",107058,813725,supuesto
+2021-2024,b4_vecinos4,EPA,1037775,MIVAU_sin_protegida,331108,"0,2 % anual",214116,920783,supuesto
+2021-2024,b4_vecinos4,EPA,1037775,MIVAU_sin_protegida,331108,v5.1_min,0,706667,estimada v5.1 (C4)
+2021-2024,b4_vecinos4,EPA,1037775,MIVAU_sin_protegida,331108,v5.1_central,27405,734072,estimada v5.1 (C4)
+2021-2024,b4_vecinos4,EPA,1037775,MIVAU_sin_protegida,331108,v5.1_max,55452,762119,estimada v5.1 (C4)
+2021-2024,b4_vecinos4,EPA,1037775,Catastro_completado,385452,0,0,652323,ninguna
+2021-2024,b4_vecinos4,EPA,1037775,Catastro_completado,385452,"0,1 % anual",107058,759381,supuesto
+2021-2024,b4_vecinos4,EPA,1037775,Catastro_completado,385452,"0,2 % anual",214116,866439,supuesto
+2021-2024,b4_vecinos4,EPA,1037775,Catastro_completado,385452,v5.1_min,0,652323,estimada v5.1 (C4)
+2021-2024,b4_vecinos4,EPA,1037775,Catastro_completado,385452,v5.1_central,27405,679728,estimada v5.1 (C4)
+2021-2024,b4_vecinos4,EPA,1037775,Catastro_completado,385452,v5.1_max,55452,707775,estimada v5.1 (C4)
+2021-2024,c_variacion_cero,EPA,985200,MIVAU_con_protegida,374573,0,0,610627,ninguna
+2021-2024,c_variacion_cero,EPA,985200,MIVAU_con_protegida,374573,"0,1 % anual",107058,717685,supuesto
+2021-2024,c_variacion_cero,EPA,985200,MIVAU_con_protegida,374573,"0,2 % anual",214116,824743,supuesto
+2021-2024,c_variacion_cero,EPA,985200,MIVAU_con_protegida,374573,v5.1_min,0,610627,estimada v5.1 (C4)
+2021-2024,c_variacion_cero,EPA,985200,MIVAU_con_protegida,374573,v5.1_central,27405,638032,estimada v5.1 (C4)
+2021-2024,c_variacion_cero,EPA,985200,MIVAU_con_protegida,374573,v5.1_max,55452,666079,estimada v5.1 (C4)
+2021-2024,c_variacion_cero,EPA,985200,MIVAU_sin_protegida,331108,0,0,654092,ninguna
+2021-2024,c_variacion_cero,EPA,985200,MIVAU_sin_protegida,331108,"0,1 % anual",107058,761150,supuesto
+2021-2024,c_variacion_cero,EPA,985200,MIVAU_sin_protegida,331108,"0,2 % anual",214116,868208,supuesto
+2021-2024,c_variacion_cero,EPA,985200,MIVAU_sin_protegida,331108,v5.1_min,0,654092,estimada v5.1 (C4)
+2021-2024,c_variacion_cero,EPA,985200,MIVAU_sin_protegida,331108,v5.1_central,27405,681497,estimada v5.1 (C4)
+2021-2024,c_variacion_cero,EPA,985200,MIVAU_sin_protegida,331108,v5.1_max,55452,709544,estimada v5.1 (C4)
+2021-2024,c_variacion_cero,EPA,985200,Catastro_completado,385452,0,0,599748,ninguna
+2021-2024,c_variacion_cero,EPA,985200,Catastro_completado,385452,"0,1 % anual",107058,706806,supuesto
+2021-2024,c_variacion_cero,EPA,985200,Catastro_completado,385452,"0,2 % anual",214116,813864,supuesto
+2021-2024,c_variacion_cero,EPA,985200,Catastro_completado,385452,v5.1_min,0,599748,estimada v5.1 (C4)
+2021-2024,c_variacion_cero,EPA,985200,Catastro_completado,385452,v5.1_central,27405,627153,estimada v5.1 (C4)
+2021-2024,c_variacion_cero,EPA,985200,Catastro_completado,385452,v5.1_max,55452,655200,estimada v5.1 (C4)
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,MIVAU_con_protegida,374573,0,0,355682,ninguna
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,MIVAU_con_protegida,374573,"0,1 % anual",107058,462740,supuesto
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,MIVAU_con_protegida,374573,"0,2 % anual",214116,569798,supuesto
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,MIVAU_con_protegida,374573,v5.1_min,0,355682,estimada v5.1 (C4)
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,MIVAU_con_protegida,374573,v5.1_central,27405,383087,estimada v5.1 (C4)
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,MIVAU_con_protegida,374573,v5.1_max,55452,411135,estimada v5.1 (C4)
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,MIVAU_sin_protegida,331108,0,0,399147,ninguna
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,MIVAU_sin_protegida,331108,"0,1 % anual",107058,506205,supuesto
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,MIVAU_sin_protegida,331108,"0,2 % anual",214116,613263,supuesto
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,MIVAU_sin_protegida,331108,v5.1_min,0,399147,estimada v5.1 (C4)
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,MIVAU_sin_protegida,331108,v5.1_central,27405,426552,estimada v5.1 (C4)
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,MIVAU_sin_protegida,331108,v5.1_max,55452,454600,estimada v5.1 (C4)
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,Catastro_completado,385452,0,0,344803,ninguna
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,Catastro_completado,385452,"0,1 % anual",107058,451861,supuesto
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,Catastro_completado,385452,"0,2 % anual",214116,558919,supuesto
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,Catastro_completado,385452,v5.1_min,0,344803,estimada v5.1 (C4)
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,Catastro_completado,385452,v5.1_central,27405,372208,estimada v5.1 (C4)
+2021-2024,d1_enlace_cociente,EPA+ECP,730255,Catastro_completado,385452,v5.1_max,55452,400256,estimada v5.1 (C4)
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,MIVAU_con_protegida,374573,0,0,580417,ninguna
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,MIVAU_con_protegida,374573,"0,1 % anual",107058,687475,supuesto
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,MIVAU_con_protegida,374573,"0,2 % anual",214116,794533,supuesto
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,MIVAU_con_protegida,374573,v5.1_min,0,580417,estimada v5.1 (C4)
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,MIVAU_con_protegida,374573,v5.1_central,27405,607822,estimada v5.1 (C4)
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,MIVAU_con_protegida,374573,v5.1_max,55452,635869,estimada v5.1 (C4)
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,MIVAU_sin_protegida,331108,0,0,623882,ninguna
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,MIVAU_sin_protegida,331108,"0,1 % anual",107058,730940,supuesto
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,MIVAU_sin_protegida,331108,"0,2 % anual",214116,837998,supuesto
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,MIVAU_sin_protegida,331108,v5.1_min,0,623882,estimada v5.1 (C4)
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,MIVAU_sin_protegida,331108,v5.1_central,27405,651287,estimada v5.1 (C4)
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,MIVAU_sin_protegida,331108,v5.1_max,55452,679334,estimada v5.1 (C4)
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,Catastro_completado,385452,0,0,569538,ninguna
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,Catastro_completado,385452,"0,1 % anual",107058,676596,supuesto
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,Catastro_completado,385452,"0,2 % anual",214116,783654,supuesto
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,Catastro_completado,385452,v5.1_min,0,569538,estimada v5.1 (C4)
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,Catastro_completado,385452,v5.1_central,27405,596943,estimada v5.1 (C4)
+2021-2024,d2_enlace_ecp_retropolada,ECP,954990,Catastro_completado,385452,v5.1_max,55452,624990,estimada v5.1 (C4)
+2021-2024,e_ecp,ECP,937265,MIVAU_con_protegida,374573,0,0,562692,ninguna
+2021-2024,e_ecp,ECP,937265,MIVAU_con_protegida,374573,"0,1 % anual",107058,669750,supuesto
+2021-2024,e_ecp,ECP,937265,MIVAU_con_protegida,374573,"0,2 % anual",214116,776808,supuesto
+2021-2024,e_ecp,ECP,937265,MIVAU_con_protegida,374573,v5.1_min,0,562692,estimada v5.1 (C4)
+2021-2024,e_ecp,ECP,937265,MIVAU_con_protegida,374573,v5.1_central,27405,590097,estimada v5.1 (C4)
+2021-2024,e_ecp,ECP,937265,MIVAU_con_protegida,374573,v5.1_max,55452,618144,estimada v5.1 (C4)
+2021-2024,e_ecp,ECP,937265,MIVAU_sin_protegida,331108,0,0,606157,ninguna
+2021-2024,e_ecp,ECP,937265,MIVAU_sin_protegida,331108,"0,1 % anual",107058,713215,supuesto
+2021-2024,e_ecp,ECP,937265,MIVAU_sin_protegida,331108,"0,2 % anual",214116,820273,supuesto
+2021-2024,e_ecp,ECP,937265,MIVAU_sin_protegida,331108,v5.1_min,0,606157,estimada v5.1 (C4)
+2021-2024,e_ecp,ECP,937265,MIVAU_sin_protegida,331108,v5.1_central,27405,633562,estimada v5.1 (C4)
+2021-2024,e_ecp,ECP,937265,MIVAU_sin_protegida,331108,v5.1_max,55452,661609,estimada v5.1 (C4)
+2021-2024,e_ecp,ECP,937265,Catastro_completado,385452,0,0,551813,ninguna
+2021-2024,e_ecp,ECP,937265,Catastro_completado,385452,"0,1 % anual",107058,658871,supuesto
+2021-2024,e_ecp,ECP,937265,Catastro_completado,385452,"0,2 % anual",214116,765929,supuesto
+2021-2024,e_ecp,ECP,937265,Catastro_completado,385452,v5.1_min,0,551813,estimada v5.1 (C4)
+2021-2024,e_ecp,ECP,937265,Catastro_completado,385452,v5.1_central,27405,579218,estimada v5.1 (C4)
+2021-2024,e_ecp,ECP,937265,Catastro_completado,385452,v5.1_max,55452,607265,estimada v5.1 (C4)
+2021-2025,v1_constante,EPA,1278000,MIVAU_con_protegida,468223,0,0,809777,ninguna
+2021-2025,v1_constante,EPA,1278000,MIVAU_con_protegida,468223,"0,1 % anual",134063,943840,supuesto
+2021-2025,v1_constante,EPA,1278000,MIVAU_con_protegida,468223,"0,2 % anual",268125,1077902,supuesto
+2021-2025,v1_constante,EPA,1278000,MIVAU_con_protegida,468223,v5.1_min,0,809777,estimada v5.1 (C4)
+2021-2025,v1_constante,EPA,1278000,MIVAU_con_protegida,468223,v5.1_central,34320,844097,estimada v5.1 (C4)
+2021-2025,v1_constante,EPA,1278000,MIVAU_con_protegida,468223,v5.1_max,69446,879223,estimada v5.1 (C4)
+2021-2025,v1_constante,EPA,1278000,MIVAU_sin_protegida,411900,0,0,866100,ninguna
+2021-2025,v1_constante,EPA,1278000,MIVAU_sin_protegida,411900,"0,1 % anual",134063,1000163,supuesto
+2021-2025,v1_constante,EPA,1278000,MIVAU_sin_protegida,411900,"0,2 % anual",268125,1134225,supuesto
+2021-2025,v1_constante,EPA,1278000,MIVAU_sin_protegida,411900,v5.1_min,0,866100,estimada v5.1 (C4)
+2021-2025,v1_constante,EPA,1278000,MIVAU_sin_protegida,411900,v5.1_central,34320,900420,estimada v5.1 (C4)
+2021-2025,v1_constante,EPA,1278000,MIVAU_sin_protegida,411900,v5.1_max,69446,935546,estimada v5.1 (C4)
+2021-2025,v1_constante,EPA,1278000,Catastro_completado,492220,0,0,785780,ninguna
+2021-2025,v1_constante,EPA,1278000,Catastro_completado,492220,"0,1 % anual",134063,919843,supuesto
+2021-2025,v1_constante,EPA,1278000,Catastro_completado,492220,"0,2 % anual",268125,1053905,supuesto
+2021-2025,v1_constante,EPA,1278000,Catastro_completado,492220,v5.1_min,0,785780,estimada v5.1 (C4)
+2021-2025,v1_constante,EPA,1278000,Catastro_completado,492220,v5.1_central,34320,820100,estimada v5.1 (C4)
+2021-2025,v1_constante,EPA,1278000,Catastro_completado,492220,v5.1_max,69446,855226,estimada v5.1 (C4)
+2021-2025,a_sin_correccion,EPA,1035600,MIVAU_con_protegida,468223,0,0,567377,ninguna
+2021-2025,a_sin_correccion,EPA,1035600,MIVAU_con_protegida,468223,"0,1 % anual",134063,701440,supuesto
+2021-2025,a_sin_correccion,EPA,1035600,MIVAU_con_protegida,468223,"0,2 % anual",268125,835502,supuesto
+2021-2025,a_sin_correccion,EPA,1035600,MIVAU_con_protegida,468223,v5.1_min,0,567377,estimada v5.1 (C4)
+2021-2025,a_sin_correccion,EPA,1035600,MIVAU_con_protegida,468223,v5.1_central,34320,601697,estimada v5.1 (C4)
+2021-2025,a_sin_correccion,EPA,1035600,MIVAU_con_protegida,468223,v5.1_max,69446,636823,estimada v5.1 (C4)
+2021-2025,a_sin_correccion,EPA,1035600,MIVAU_sin_protegida,411900,0,0,623700,ninguna
+2021-2025,a_sin_correccion,EPA,1035600,MIVAU_sin_protegida,411900,"0,1 % anual",134063,757763,supuesto
+2021-2025,a_sin_correccion,EPA,1035600,MIVAU_sin_protegida,411900,"0,2 % anual",268125,891825,supuesto
+2021-2025,a_sin_correccion,EPA,1035600,MIVAU_sin_protegida,411900,v5.1_min,0,623700,estimada v5.1 (C4)
+2021-2025,a_sin_correccion,EPA,1035600,MIVAU_sin_protegida,411900,v5.1_central,34320,658020,estimada v5.1 (C4)
+2021-2025,a_sin_correccion,EPA,1035600,MIVAU_sin_protegida,411900,v5.1_max,69446,693146,estimada v5.1 (C4)
+2021-2025,a_sin_correccion,EPA,1035600,Catastro_completado,492220,0,0,543380,ninguna
+2021-2025,a_sin_correccion,EPA,1035600,Catastro_completado,492220,"0,1 % anual",134063,677443,supuesto
+2021-2025,a_sin_correccion,EPA,1035600,Catastro_completado,492220,"0,2 % anual",268125,811505,supuesto
+2021-2025,a_sin_correccion,EPA,1035600,Catastro_completado,492220,v5.1_min,0,543380,estimada v5.1 (C4)
+2021-2025,a_sin_correccion,EPA,1035600,Catastro_completado,492220,v5.1_central,34320,577700,estimada v5.1 (C4)
+2021-2025,a_sin_correccion,EPA,1035600,Catastro_completado,492220,v5.1_max,69446,612826,estimada v5.1 (C4)
+2021-2025,b_vecinos2,EPA,1299850,MIVAU_con_protegida,468223,0,0,831627,ninguna
+2021-2025,b_vecinos2,EPA,1299850,MIVAU_con_protegida,468223,"0,1 % anual",134063,965690,supuesto
+2021-2025,b_vecinos2,EPA,1299850,MIVAU_con_protegida,468223,"0,2 % anual",268125,1099752,supuesto
+2021-2025,b_vecinos2,EPA,1299850,MIVAU_con_protegida,468223,v5.1_min,0,831627,estimada v5.1 (C4)
+2021-2025,b_vecinos2,EPA,1299850,MIVAU_con_protegida,468223,v5.1_central,34320,865947,estimada v5.1 (C4)
+2021-2025,b_vecinos2,EPA,1299850,MIVAU_con_protegida,468223,v5.1_max,69446,901073,estimada v5.1 (C4)
+2021-2025,b_vecinos2,EPA,1299850,MIVAU_sin_protegida,411900,0,0,887950,ninguna
+2021-2025,b_vecinos2,EPA,1299850,MIVAU_sin_protegida,411900,"0,1 % anual",134063,1022013,supuesto
+2021-2025,b_vecinos2,EPA,1299850,MIVAU_sin_protegida,411900,"0,2 % anual",268125,1156075,supuesto
+2021-2025,b_vecinos2,EPA,1299850,MIVAU_sin_protegida,411900,v5.1_min,0,887950,estimada v5.1 (C4)
+2021-2025,b_vecinos2,EPA,1299850,MIVAU_sin_protegida,411900,v5.1_central,34320,922270,estimada v5.1 (C4)
+2021-2025,b_vecinos2,EPA,1299850,MIVAU_sin_protegida,411900,v5.1_max,69446,957396,estimada v5.1 (C4)
+2021-2025,b_vecinos2,EPA,1299850,Catastro_completado,492220,0,0,807630,ninguna
+2021-2025,b_vecinos2,EPA,1299850,Catastro_completado,492220,"0,1 % anual",134063,941693,supuesto
+2021-2025,b_vecinos2,EPA,1299850,Catastro_completado,492220,"0,2 % anual",268125,1075755,supuesto
+2021-2025,b_vecinos2,EPA,1299850,Catastro_completado,492220,v5.1_min,0,807630,estimada v5.1 (C4)
+2021-2025,b_vecinos2,EPA,1299850,Catastro_completado,492220,v5.1_central,34320,841950,estimada v5.1 (C4)
+2021-2025,b_vecinos2,EPA,1299850,Catastro_completado,492220,v5.1_max,69446,877076,estimada v5.1 (C4)
+2021-2025,b4_vecinos4,EPA,1295975,MIVAU_con_protegida,468223,0,0,827752,ninguna
+2021-2025,b4_vecinos4,EPA,1295975,MIVAU_con_protegida,468223,"0,1 % anual",134063,961815,supuesto
+2021-2025,b4_vecinos4,EPA,1295975,MIVAU_con_protegida,468223,"0,2 % anual",268125,1095877,supuesto
+2021-2025,b4_vecinos4,EPA,1295975,MIVAU_con_protegida,468223,v5.1_min,0,827752,estimada v5.1 (C4)
+2021-2025,b4_vecinos4,EPA,1295975,MIVAU_con_protegida,468223,v5.1_central,34320,862072,estimada v5.1 (C4)
+2021-2025,b4_vecinos4,EPA,1295975,MIVAU_con_protegida,468223,v5.1_max,69446,897198,estimada v5.1 (C4)
+2021-2025,b4_vecinos4,EPA,1295975,MIVAU_sin_protegida,411900,0,0,884075,ninguna
+2021-2025,b4_vecinos4,EPA,1295975,MIVAU_sin_protegida,411900,"0,1 % anual",134063,1018138,supuesto
+2021-2025,b4_vecinos4,EPA,1295975,MIVAU_sin_protegida,411900,"0,2 % anual",268125,1152200,supuesto
+2021-2025,b4_vecinos4,EPA,1295975,MIVAU_sin_protegida,411900,v5.1_min,0,884075,estimada v5.1 (C4)
+2021-2025,b4_vecinos4,EPA,1295975,MIVAU_sin_protegida,411900,v5.1_central,34320,918395,estimada v5.1 (C4)
+2021-2025,b4_vecinos4,EPA,1295975,MIVAU_sin_protegida,411900,v5.1_max,69446,953521,estimada v5.1 (C4)
+2021-2025,b4_vecinos4,EPA,1295975,Catastro_completado,492220,0,0,803755,ninguna
+2021-2025,b4_vecinos4,EPA,1295975,Catastro_completado,492220,"0,1 % anual",134063,937818,supuesto
+2021-2025,b4_vecinos4,EPA,1295975,Catastro_completado,492220,"0,2 % anual",268125,1071880,supuesto
+2021-2025,b4_vecinos4,EPA,1295975,Catastro_completado,492220,v5.1_min,0,803755,estimada v5.1 (C4)
+2021-2025,b4_vecinos4,EPA,1295975,Catastro_completado,492220,v5.1_central,34320,838075,estimada v5.1 (C4)
+2021-2025,b4_vecinos4,EPA,1295975,Catastro_completado,492220,v5.1_max,69446,873201,estimada v5.1 (C4)
+2021-2025,c_variacion_cero,EPA,1243400,MIVAU_con_protegida,468223,0,0,775177,ninguna
+2021-2025,c_variacion_cero,EPA,1243400,MIVAU_con_protegida,468223,"0,1 % anual",134063,909240,supuesto
+2021-2025,c_variacion_cero,EPA,1243400,MIVAU_con_protegida,468223,"0,2 % anual",268125,1043302,supuesto
+2021-2025,c_variacion_cero,EPA,1243400,MIVAU_con_protegida,468223,v5.1_min,0,775177,estimada v5.1 (C4)
+2021-2025,c_variacion_cero,EPA,1243400,MIVAU_con_protegida,468223,v5.1_central,34320,809497,estimada v5.1 (C4)
+2021-2025,c_variacion_cero,EPA,1243400,MIVAU_con_protegida,468223,v5.1_max,69446,844623,estimada v5.1 (C4)
+2021-2025,c_variacion_cero,EPA,1243400,MIVAU_sin_protegida,411900,0,0,831500,ninguna
+2021-2025,c_variacion_cero,EPA,1243400,MIVAU_sin_protegida,411900,"0,1 % anual",134063,965563,supuesto
+2021-2025,c_variacion_cero,EPA,1243400,MIVAU_sin_protegida,411900,"0,2 % anual",268125,1099625,supuesto
+2021-2025,c_variacion_cero,EPA,1243400,MIVAU_sin_protegida,411900,v5.1_min,0,831500,estimada v5.1 (C4)
+2021-2025,c_variacion_cero,EPA,1243400,MIVAU_sin_protegida,411900,v5.1_central,34320,865820,estimada v5.1 (C4)
+2021-2025,c_variacion_cero,EPA,1243400,MIVAU_sin_protegida,411900,v5.1_max,69446,900946,estimada v5.1 (C4)
+2021-2025,c_variacion_cero,EPA,1243400,Catastro_completado,492220,0,0,751180,ninguna
+2021-2025,c_variacion_cero,EPA,1243400,Catastro_completado,492220,"0,1 % anual",134063,885243,supuesto
+2021-2025,c_variacion_cero,EPA,1243400,Catastro_completado,492220,"0,2 % anual",268125,1019305,supuesto
+2021-2025,c_variacion_cero,EPA,1243400,Catastro_completado,492220,v5.1_min,0,751180,estimada v5.1 (C4)
+2021-2025,c_variacion_cero,EPA,1243400,Catastro_completado,492220,v5.1_central,34320,785500,estimada v5.1 (C4)
+2021-2025,c_variacion_cero,EPA,1243400,Catastro_completado,492220,v5.1_max,69446,820626,estimada v5.1 (C4)
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,MIVAU_con_protegida,468223,0,0,493924,ninguna
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,MIVAU_con_protegida,468223,"0,1 % anual",134063,627987,supuesto
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,MIVAU_con_protegida,468223,"0,2 % anual",268125,762050,supuesto
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,MIVAU_con_protegida,468223,v5.1_min,0,493924,estimada v5.1 (C4)
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,MIVAU_con_protegida,468223,v5.1_central,34320,528244,estimada v5.1 (C4)
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,MIVAU_con_protegida,468223,v5.1_max,69446,563370,estimada v5.1 (C4)
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,MIVAU_sin_protegida,411900,0,0,550247,ninguna
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,MIVAU_sin_protegida,411900,"0,1 % anual",134063,684310,supuesto
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,MIVAU_sin_protegida,411900,"0,2 % anual",268125,818373,supuesto
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,MIVAU_sin_protegida,411900,v5.1_min,0,550247,estimada v5.1 (C4)
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,MIVAU_sin_protegida,411900,v5.1_central,34320,584567,estimada v5.1 (C4)
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,MIVAU_sin_protegida,411900,v5.1_max,69446,619693,estimada v5.1 (C4)
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,Catastro_completado,492220,0,0,469927,ninguna
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,Catastro_completado,492220,"0,1 % anual",134063,603990,supuesto
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,Catastro_completado,492220,"0,2 % anual",268125,738053,supuesto
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,Catastro_completado,492220,v5.1_min,0,469927,estimada v5.1 (C4)
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,Catastro_completado,492220,v5.1_central,34320,504247,estimada v5.1 (C4)
+2021-2025,d1_enlace_cociente,EPA+ECP,962147,Catastro_completado,492220,v5.1_max,69446,539373,estimada v5.1 (C4)
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,MIVAU_con_protegida,468223,0,0,718659,ninguna
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,MIVAU_con_protegida,468223,"0,1 % anual",134063,852722,supuesto
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,MIVAU_con_protegida,468223,"0,2 % anual",268125,986784,supuesto
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,MIVAU_con_protegida,468223,v5.1_min,0,718659,estimada v5.1 (C4)
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,MIVAU_con_protegida,468223,v5.1_central,34320,752979,estimada v5.1 (C4)
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,MIVAU_con_protegida,468223,v5.1_max,69446,788105,estimada v5.1 (C4)
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,MIVAU_sin_protegida,411900,0,0,774982,ninguna
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,MIVAU_sin_protegida,411900,"0,1 % anual",134063,909045,supuesto
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,MIVAU_sin_protegida,411900,"0,2 % anual",268125,1043107,supuesto
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,MIVAU_sin_protegida,411900,v5.1_min,0,774982,estimada v5.1 (C4)
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,MIVAU_sin_protegida,411900,v5.1_central,34320,809302,estimada v5.1 (C4)
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,MIVAU_sin_protegida,411900,v5.1_max,69446,844428,estimada v5.1 (C4)
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,Catastro_completado,492220,0,0,694662,ninguna
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,Catastro_completado,492220,"0,1 % anual",134063,828725,supuesto
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,Catastro_completado,492220,"0,2 % anual",268125,962787,supuesto
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,Catastro_completado,492220,v5.1_min,0,694662,estimada v5.1 (C4)
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,Catastro_completado,492220,v5.1_central,34320,728982,estimada v5.1 (C4)
+2021-2025,d2_enlace_ecp_retropolada,ECP,1186882,Catastro_completado,492220,v5.1_max,69446,764108,estimada v5.1 (C4)
+2021-2025,e_ecp,ECP,1169157,MIVAU_con_protegida,468223,0,0,700934,ninguna
+2021-2025,e_ecp,ECP,1169157,MIVAU_con_protegida,468223,"0,1 % anual",134063,834997,supuesto
+2021-2025,e_ecp,ECP,1169157,MIVAU_con_protegida,468223,"0,2 % anual",268125,969059,supuesto
+2021-2025,e_ecp,ECP,1169157,MIVAU_con_protegida,468223,v5.1_min,0,700934,estimada v5.1 (C4)
+2021-2025,e_ecp,ECP,1169157,MIVAU_con_protegida,468223,v5.1_central,34320,735254,estimada v5.1 (C4)
+2021-2025,e_ecp,ECP,1169157,MIVAU_con_protegida,468223,v5.1_max,69446,770380,estimada v5.1 (C4)
+2021-2025,e_ecp,ECP,1169157,MIVAU_sin_protegida,411900,0,0,757257,ninguna
+2021-2025,e_ecp,ECP,1169157,MIVAU_sin_protegida,411900,"0,1 % anual",134063,891320,supuesto
+2021-2025,e_ecp,ECP,1169157,MIVAU_sin_protegida,411900,"0,2 % anual",268125,1025382,supuesto
+2021-2025,e_ecp,ECP,1169157,MIVAU_sin_protegida,411900,v5.1_min,0,757257,estimada v5.1 (C4)
+2021-2025,e_ecp,ECP,1169157,MIVAU_sin_protegida,411900,v5.1_central,34320,791577,estimada v5.1 (C4)
+2021-2025,e_ecp,ECP,1169157,MIVAU_sin_protegida,411900,v5.1_max,69446,826703,estimada v5.1 (C4)
+2021-2025,e_ecp,ECP,1169157,Catastro_completado,492220,0,0,676937,ninguna
+2021-2025,e_ecp,ECP,1169157,Catastro_completado,492220,"0,1 % anual",134063,811000,supuesto
+2021-2025,e_ecp,ECP,1169157,Catastro_completado,492220,"0,2 % anual",268125,945062,supuesto
+2021-2025,e_ecp,ECP,1169157,Catastro_completado,492220,v5.1_min,0,676937,estimada v5.1 (C4)
+2021-2025,e_ecp,ECP,1169157,Catastro_completado,492220,v5.1_central,34320,711257,estimada v5.1 (C4)
+2021-2025,e_ecp,ECP,1169157,Catastro_completado,492220,v5.1_max,69446,746383,estimada v5.1 (C4)

@@ -77,9 +77,13 @@ def v4_adaptadores() -> list[dict]:
     return f
 
 
+def V7_HECHOS() -> list[Path]:   # v7.1 (W2): hechos de V7 (R4, R4b, R5, R6) y de V7.1 (S1, S3); nunca los _smoke
+    return [p for v in ("v7", "v7_1") for p in sorted((RAIZ / "output" / v).glob("*/hechos.json")) if "_smoke" not in p.parent.name]
+
+
 def v5_hechos() -> list[dict]:
     f = []
-    for p in sorted(V5.glob("*/hechos.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_2").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_3").glob("*/hechos.json")):   # v5.1, v6, v6.1, v6.2 y v6.3
+    for p in sorted(V5.glob("*/hechos.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_2").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_3").glob("*/hechos.json")) + V7_HECHOS():   # v5.1, v6, v6.1, v6.2, v6.3, v7 y v7.1
         h = json.loads(p.read_text())
         if not isinstance(h, list):
             continue

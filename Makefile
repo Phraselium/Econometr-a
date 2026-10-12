@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-.PHONY: all data clean models report distclean check verificador v7 evaluate_v7
+.PHONY: all data clean models report distclean check verificador v7 v7_1 evaluate_v7 publicacion
 
 all: data clean models report
 
@@ -63,6 +63,14 @@ distclean:
 V7_ORDEN := r1_panel r2_montecarlo r2_mc3 r4a_run r4b_run r5_prediccion r6_propuestas r7_fichas r7_atlas
 v7:
 	@for r in $(V7_ORDEN); do echo ">> src/v7/$$r.py"; $(PY) src/v7/$$r.py || exit 1; done
+	@$(MAKE) --no-print-directory v7_1
+
+# V7.1: consolidación (sin análisis nuevo): dosis y coste sobre R6 y entregables; después cifras_clave y render
+V7_1_ORDEN := s1_dosis_coste s1_atlas
+v7_1:
+	@for r in $(V7_1_ORDEN); do echo ">> src/v7_1/$$r.py"; $(PY) src/v7_1/$$r.py || exit 1; done
+	$(PY) src/v5/cifras_clave.py
+	$(PY) src/v5/render.py
 
 # Validación limpia diferida de V7: CON red, UNA sola vez, tras la release del pre-registro (docs/v7/notas_release.md)
 evaluate_v7:

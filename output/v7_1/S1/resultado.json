@@ -1,0 +1,19 @@
+{
+ "rama": "V7.1-S1",
+ "pregunta": "Dosis, coste y efecto normalizado de los instrumentos de R6",
+ "capa": "C4",
+ "datos": "output/v7/R6 (reproducido); panel_ccaa_q_v7",
+ "N": 17,
+ "metodo": "contabilidad sobre las extracciones de Monte Carlo de R6 (4.000 por CCAA)",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO",
+ "diagnosticos": "reproducción de impactos.csv < 1e-3",
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Sin análisis nuevo; costes de oferta no estimables sin base; signos dados por la fórmula de incidencia."
+}

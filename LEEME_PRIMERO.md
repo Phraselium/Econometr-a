@@ -21,6 +21,11 @@ Toda cifra difundible sale de una única tabla, [publicacion/cifras_clave.csv](p
 2. [Cifras clave](publicacion/cifras_clave.csv): valor, rango, periodo, fuentes, capa y fecha de cada dato. Cite el rango y la capa.
 3. Limitaciones: el recuadro «Lo que NO se puede afirmar» de [una página](publicacion/una_pagina.md), la sección 10 del [informe técnico](publicacion/informe_tecnico.md) y [qué cambió entre versiones y por qué](publicacion/que_cambio.md).
 
+### Gestor público o responsable de decisiones (1-2 horas)
+1. [Policy brief](publicacion/policy_brief.md): necesidad, datos e instrumentos con la misma vara.
+2. [Atlas regional](publicacion/atlas_regional/atlas_resumen.md) y la ficha de su comunidad en [atlas_regional/](publicacion/atlas_regional/atlas_resumen.md). Lea la sección 6 bis: dosis y coste de cada instrumento, siempre en condicional (C4).
+3. Para exponer: [ponencia](publicacion/ponencia/diapositivas.md) con su [guion](publicacion/ponencia/guion.md) y el [artículo del Colegio](publicacion/articulo_colegio.md).
+
 ### Revisor (medio día)
 1. [Guía del revisor](metodologia/guia_revisor.md).
 2. [Anexo metodológico](metodologia/anexo_metodologico.md): una ficha por cifra publicable.

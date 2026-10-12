@@ -1,6 +1,6 @@
 # Verificador V7.1 (fichas de V7, con dosis y coste en V7-V2)
 
-Fichas añadidas en V7, actualizadas en v7.1. Complementan el verificador de v6.2 (output/v5/verificador), cuyos recuentos no cambian.
+Fichas añadidas en V7, actualizadas en v7.1. Complementan el verificador principal (fichas v5-v6.3, vigentes en v7.1; output/v5/verificador), cuyos recuentos no cambian.
 
 ## V7-V1 · Determinantes regionales de largo plazo
 

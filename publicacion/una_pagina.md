@@ -16,7 +16,7 @@
 **Qué añade la versión de referencia v7.1 [C4].** Los cambios entre versiones, y por qué, están en una sección única: [Qué cambió entre versiones y por qué](que_cambio.md).
 - Los precios de las comunidades se mueven sobre todo juntos: la variación de cada una acompaña en gran medida a la media de las 17 (R² mediano de 93,6 % en compra).
 - No se confirma ninguna relación regional de largo plazo con el empleo, la población, las hipotecas o el paro (0 de siete hipótesis).
-- En la simulación, las ayudas a la demanda reducen el precio neto de quien las recibe, pero el precio de mercado sube (4,4 % a diez años). Su coste y su dosis están declarados; en los instrumentos de oferta, el coste no es estimable.
+- En una simulación condicional, las ayudas a la demanda reducen el precio neto de quien las recibe, pero el precio de mercado sube (4,4 % a diez años; el signo lo fija en gran parte la fórmula de incidencia). Su dosis y su coste en compra están declarados. En los instrumentos de cantidad (construcción, vacías, vivienda pública, turísticos) el coste no es estimable.
 
 > **Lo que NO se puede afirmar con estos datos**
 >

@@ -10,6 +10,7 @@ Escribe:
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -78,6 +79,7 @@ def fichas_atlas(t: pd.DataFrame) -> None:
         txt = p.read_text(encoding="utf-8")
         marca = "## 7. Qué no se puede afirmar"
         assert marca in txt, p
+        txt = re.sub(r"^\| ([^|]+) \| precio \| (2|5|10) \|", r"| \1 | compra | \2 |", txt, flags=re.M)   # v7.1 (H10): etiqueta interna «precio» = compra
         txt = txt.replace(marca, seccion(t, cc) + "\n" + marca, 1)
         txt = txt.replace("- Que una propuesta produzca los impactos de la tabla:",
                           "- Que un instrumento sea «más eficiente por euro» que otro: los costes de los instrumentos de cantidad no son estimables y los "
@@ -171,7 +173,7 @@ def verificador(t: pd.DataFrame) -> None:
     out.mkdir(parents=True, exist_ok=True)
     (out / "fichas_verificador.json").write_text(json.dumps(f, ensure_ascii=False, indent=1), encoding="utf-8")
     ver = ["# Verificador V7.1 (fichas de V7, con dosis y coste en V7-V2)", "",
-           "Fichas añadidas en V7, actualizadas en v7.1. Complementan el verificador de v6.2 (output/v5/verificador), cuyos recuentos no cambian.", ""]
+           "Fichas añadidas en V7, actualizadas en v7.1. Complementan el verificador principal (fichas v5-v6.3, vigentes en v7.1; output/v5/verificador), cuyos recuentos no cambian.", ""]
     for x in f:
         ver += [f"## {x['id']} · {x['tema']}", "", f"**Afirmación evaluada:** {x['enunciado']}", "", f"**Veredicto:** {x['veredicto']} ({x['capa']})", "",
                 f"**Magnitud:** {x['magnitud']}", "", f"**Intervalo:** {x['intervalo']}", "", f"**Límites:** {x['limites']}", "",

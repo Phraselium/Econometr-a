@@ -106,7 +106,10 @@ def construir(base: Path) -> dict[str, list[tuple[str, str, str]]]:
         out = base / dst
         out.parent.mkdir(parents=True, exist_ok=True)
         if p.suffix == ".md":
-            b = (CAB.format(src=src) + _reescribir(p.read_text(encoding="utf-8"), src, dst)).encode("utf-8")
+            txt = _reescribir(p.read_text(encoding="utf-8"), src, dst)
+            if dst == "publicacion/verificador/verificador.md":   # v7.1 (H12): título coherente con la versión de referencia
+                txt = re.sub(r"^(# Verificador de afirmaciones[^\n]*?)\s*\(v5\)", r"\1 (fichas v5-v6.3, vigentes en v7.1)", txt, count=1)
+            b = (CAB.format(src=src) + txt).encode("utf-8")
         else:
             b = p.read_bytes()
         out.write_bytes(b)

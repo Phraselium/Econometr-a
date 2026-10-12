@@ -29,8 +29,8 @@ En cada caso se dice cuál fue la razón.
   - El signo negativo en compra no significa que la inmigración abarate la vivienda. Solo indica que, a igual población, más cuota de extranjeros no se asocia con más precio.
   - «ANALIZADA, NO CONCLUYENTE» [C4]: ninguna de las dos lecturas identifica un efecto.
 - [C4] **Iniciadas y alquiler.** La asociación es del mismo año. No hay orden temporal detectable, y no indica que construir suba el alquiler.
-- [C4] **Otras conclusiones que cambiaron.** Empleo, renta, iniciadas y turísticos cambian de signo o de mercado según la medida, el método y los controles. Ningún intervalo de la especificación final excluye el cero (`output/v6_1/K2/otros_cambios.md`). La correlación entre cuota de extranjeros y población dentro de cada provincia es 0,66 correlacion; las islas no se pueden contrastar porque están en la muestra sellada.
-- [C4] **Ratio precio/alquiler.** Según la medida de precio, va de 18,9-20,3 años de alquiler años en 2015 a 17,1-17,7 años de alquiler en 2023 (provincias de entrenamiento).
+- [C4] **Otras conclusiones que cambiaron.** Empleo, renta, iniciadas y turísticos cambian de signo o de mercado según la medida, el método y los controles. Ningún intervalo de la especificación final excluye el cero (`output/v6_1/K2/otros_cambios.md`). La correlación entre cuota de extranjeros y población dentro de cada provincia es 0,66; las islas no se pueden contrastar porque están en la muestra sellada.
+- [C4] **Ratio precio/alquiler.** Según la medida de precio, va de 18,9-20,3 años de alquiler en 2015 a 17,1-17,7 años de alquiler en 2023 (provincias de entrenamiento).
 - **Correcciones** (ERRATA.md). Los contratos nuevos de la Comunitat Valenciana pasan a 28,5 % (26,1-30,8 %) por un error de ponderación del peso de Valencia. También se corrigieron el redondeo de los recuentos de más de un millón, las fianzas de Incasòl (solo un descriptivo) y la descripción de las fuentes del déficit. Ninguna conclusión cambia.
 
 ## v6.2 y v6.3: el déficit pasa de hecho a cota, y propagación de correcciones
@@ -48,7 +48,7 @@ En cada caso se dice cuál fue la razón.
 ## v7.1: dosis, coste y versión de referencia
 
 - [C4] **Dosis y coste.** Cada instrumento simulado declara a qué cantidad se aplica, a qué horizonte y, cuando hay base, su coste fiscal aproximado:
-  - Coste anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año.
-  - Construcción, vacías, vivienda pública y turísticos: el coste no es estimable, porque no hay coste unitario verificado.
-  - Los instrumentos de cantidad se comparan por su efecto por cada diez mil viviendas, que en compra es de -0,61 puntos % (mediana; igual en los cuatro instrumentos por construcción de la fórmula). <!-- check:cifra-libre (unidad de normalización, no es una cifra de resultado) -->
+  - Coste anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año; rebaja de impuestos y costes de construcción, 14,6 M€/año. El efecto por euro de esta última está sobrestimado por construcción del escenario: no debe leerse como el instrumento más eficiente por euro.
+  - Construcción, vacías, vivienda pública y turísticos: coste no estimable (no hay coste unitario verificado). Tampoco lo es el de las ayudas al alquiler.
+  - Los instrumentos de cantidad se comparan por su efecto por cada diez mil viviendas. En compra es -0,61 puntos % en vacías, vivienda pública y turísticos (igual por construcción de la fórmula) y -0,78 puntos % en construcción adicional (mediana entre comunidades).
 - **Versión de referencia.** La v7.1 reúne todo lo vigente en publicacion/. La v6.2 pasa a histórica (historico/INDICE.md). No se añadió ningún análisis: solo ordenación, dosis y coste, y la nota metodológica.

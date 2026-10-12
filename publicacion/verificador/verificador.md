@@ -1,6 +1,6 @@
 <!-- Generado por `make publicacion` desde output/v5/verificador/verificador.md. No editar a mano: se regenera y un test lo comprueba. -->
 
-# Verificador de afirmaciones sobre la vivienda en España (v5)
+# Verificador de afirmaciones sobre la vivienda en España (fichas v5-v6.3, vigentes en v7.1)
 
 Generado por `make verificador`. Cada ficha evalúa la afirmación, nunca a quien la formula, y se aplican las mismas reglas a todas. Capas: C1 hechos (≥2 fuentes independientes), C2 cotas con supuestos explícitos, C3 efectos identificados (ninguno) y C4 exploratorio. Con C4 el veredicto es como máximo «ANALIZADA, NO CONCLUYENTE». «NO ANALIZADA: FALTAN DATOS» quiere decir que no hay datos para analizar la afirmación, no que sea falsa.
 

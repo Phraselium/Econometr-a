@@ -33,7 +33,7 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 |---|---|---|---|
 | Movilización de vivienda vacía (I10, I27) | mejora, estable en la rejilla | [C2] | provincias con presión y vacías movilizables |
 | Parque público o social a gran escala (I02) | mejora débil o nula si desplaza promoción privada | [C2] | provincias con presión, condicionado al desplazamiento |
-| Ayudas a la demanda (I06, I07, I08) | el beneficiario mejora; según la rejilla, parte se trasladaría al precio | [C2] por grupo; traslado [C4] | donde la oferta responde; con oferta rígida el traslado es mayor |
+| Ayudas a la demanda (I06, I07, I08) | el beneficiario mejora; según la rejilla, parte se trasladaría al precio | [C2] por grupo (signo en la rejilla de v5); traslado [C4] (magnitudes de la simulación v7.1) | donde la oferta responde; con oferta rígida el traslado es mayor |
 | Regulación de precios del alquiler (I01) | no estable: depende de la respuesta de la oferta | [C4] | no determinado con estos datos |
 | Alquiler turístico y de temporada (I16) | no estable en precio | [C4] | zonas con alta densidad de viviendas turísticas |
 | Reducción de tributos a la promoción (I29) | parcial, literatura no verificada | [C4] | no determinado |
@@ -41,7 +41,7 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 
 [C4] Según D1, la parte de una ayuda general que se traslada al precio, por clase territorial (A4, método A, rejilla de elasticidades de demanda): clase `1`, falta y es rentable, {{D1-H11:rango}}; clase `2`, la oferta no responde, {{D1-H12:rango}}; clase `3`, no rentable, {{D1-H13:rango}} [C4]. El extremo bajo se apoya en la literatura con oferta elástica (Eriksen y Ross, 2015) y el alto en la de oferta rígida (Gibbons y Manning, 2006; Hilber y Turner, 2014).
 
-[C4] Según D2, la construcción adicional planificada cubriría {{D2-H11:valor}} de la necesidad de las provincias donde falta vivienda y construir es rentable, y las vacías movilizables {{E-E1-D2-covvac-1:valor}}; ambas cifras son condicionales a los supuestos de B1 (versión v5 de la necesidad, no la recalculada en v5.1; ver informe técnico, D2). <!-- check:cifra-libre (etiquetas de versión) -->
+[C4] Según D2, la construcción adicional planificada cubriría {{D2-H11:valor}} de la necesidad de las provincias donde falta vivienda y construir es rentable, y las vacías movilizables {{E-E1-D2-covvac-1:valor}}; ambas cifras son condicionales a los supuestos de B1 (desde v6.3, con la necesidad de v5.1 T3; la cobertura de la construcción adicional va de {{D2-H11:rango}} según el escenario; ver informe técnico, D2). <!-- check:cifra-libre (etiquetas de versión) -->
 
 [C2] El aumento de viviendas turísticas de 2020 a 2024 equivale como máximo a {{B4-v3-vut-cantidad}}.
 
@@ -55,10 +55,10 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 - **No hay un largo plazo regional confirmado.** Se confirman {{V71-S3-largo-confirmadas:num}} de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en {{V71-S3-i2-compra:num}} de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
 - **Traslado al precio de las ayudas a la demanda y de la rebaja de ITP/IVA** (escenario condicional). Reducen el precio neto que paga el beneficiario: su esfuerzo varía un {{V7-R6-e_ayuda_demanda-esfuerzo10a:valor}} con la ayuda. Pero el precio de mercado sube un {{V71-S3-R6-e_ayuda_demanda-compra-precio10a:valor}} con la ayuda y un {{V71-S3-R6-f1_rebaja_ITP_IVA_vivienda_nueva-compra-precio10a:valor}} con la rebaja, a diez años (mediana entre comunidades). *Nota:* el signo lo fija en gran parte la fórmula de incidencia; lo informativo son las magnitudes relativas.
 - **Dosis y coste.**
-  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, {{V71-S1-e_ayuda_demanda-compra-coste_anual_meur:valor}}; rebaja de ITP/IVA, {{V71-S1-f1_rebaja_ITP_IVA_vivienda_nueva-compra-coste_anual_meur:valor}}.
+  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, {{V71-S1-e_ayuda_demanda-compra-coste_anual_meur:valor}}; rebaja de ITP/IVA, {{V71-S1-f1_rebaja_ITP_IVA_vivienda_nueva-compra-coste_anual_meur:valor}}; rebaja de impuestos y costes de construcción, {{V71-S1-f2_impuestos_construccion-compra-coste_anual_meur:valor}} (su efecto por euro está sobrestimado por construcción del escenario; no es «el más eficiente»).
   - Coste anual por punto de reducción del precio neto: {{V71-S1-e_ayuda_demanda-compra-coste_por_punto_meur:valor}} y {{V71-S1-f1_rebaja_ITP_IVA_vivienda_nueva-compra-coste_por_punto_meur:valor}}.
   - Construcción, vacías, vivienda pública y turísticos no tienen coste estimable, porque no hay coste unitario verificado. Se comparan por su efecto por cada diez mil viviendas: en alquiler, {{V71-S1-b_vacias-alquiler-efecto_10k:valor}} con vacías y {{V71-S1-c_vivienda_publica-alquiler-efecto_10k:valor}} con vivienda pública (mediana). <!-- check:cifra-libre (unidad de normalización «diez mil viviendas», no son cifras de resultado) -->
-  - Robustez: la movilización de vacías es robusta en {{V71-S3-R6-b_vacias-alquiler-robustas:num}} de 17 comunidades en alquiler; las ayudas a la demanda, en {{V71-S3-R6-e_ayuda_demanda-compra-robustas:num}}.
+  - Robustez en la rejilla simulada (C4; no es robustez estadística): la movilización de vacías es robusta en {{V71-S3-R6-b_vacias-alquiler-robustas:num}} de 17 comunidades en alquiler; las ayudas a la demanda, en {{V71-S3-R6-e_ayuda_demanda-compra-robustas:num}}.
 - Detalle por comunidad: atlas regional (atlas_regional/). Método: [nota metodológica](nota_metodologica.md). Afirmaciones evaluadas: verificador V7.
 
 ## Qué cambió entre versiones y por qué

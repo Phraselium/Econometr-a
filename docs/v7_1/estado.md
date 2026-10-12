@@ -22,12 +22,15 @@
 
 - **S6.** docs/v7_1/release_notes.md (prereg-v7, v7.0 y v7.1), renderizada desde una plantilla con cifras de cifras_clave (src/v7_1/s6_paquete.py, en `make v7_1`). docs/v7_1/tareas_autor.md (7 tareas por urgencia). Guía del revisor v7.1 en metodologia/; la de v6.2 se marca histórica.
 
+- **Control.** Revisor único (opus): APROBAR CON CORRECCIONES, sin hallazgos de severidad alta; 13 hallazgos corregidos (docs/v7_1/revision_control.md). Tests de V7.1, k4a, k4c y l5, check_v5 y check_texto en verde.
+
 ## Siguiente
-- Control: revisor único (opus, tope 80k) en curso. Después, correcciones y cierre.
+- Cierre: `make v7` ×2 en un clon limpio sin red, `make publicacion` y `make check`; `make all` ×1 en otro clon; explicar las diferencias; etiqueta local v7.1.
 
 ## Tokens de subagentes (de 0,65 M)
 
 | Módulo | Tokens |
 |---|---|
 | S2 lit-researcher | 29.834 |
-| **Total** | **29.834** |
+| Revisor de control (opus) | 68.170 |
+| **Total** | **98.004** (15 % de 0,65 M) |

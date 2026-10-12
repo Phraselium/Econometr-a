@@ -73,10 +73,10 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - **No hay un largo plazo regional confirmado.** Se confirman 0 de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en 8 de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
 - **Traslado al precio de las ayudas a la demanda y de la rebaja de ITP/IVA** (escenario condicional). Reducen el precio neto que paga el beneficiario: su esfuerzo varía un -5,3 % con la ayuda. Pero el precio de mercado sube un 4,4 % con la ayuda y un 1,1 % con la rebaja, a diez años (mediana entre comunidades). *Nota:* el signo lo fija en gran parte la fórmula de incidencia; lo informativo son las magnitudes relativas.
 - **Dosis y coste.**
-  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año.
+  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año; rebaja de impuestos y costes de construcción, 14,6 M€/año (su efecto por euro está sobrestimado por construcción del escenario; no es «el más eficiente»).
   - Coste anual por punto de reducción del precio neto: 76,4 M€/año por punto y 82,4 M€/año por punto.
   - Construcción, vacías, vivienda pública y turísticos no tienen coste estimable, porque no hay coste unitario verificado. Se comparan por su efecto por cada diez mil viviendas: en alquiler, -1,7 puntos % con vacías y -3,2 puntos % con vivienda pública (mediana). <!-- check:cifra-libre (unidad de normalización «diez mil viviendas», no son cifras de resultado) -->
-  - Robustez: la movilización de vacías es robusta en 17 de 17 comunidades en alquiler; las ayudas a la demanda, en 0.
+  - Robustez en la rejilla simulada (C4; no es robustez estadística): la movilización de vacías es robusta en 17 de 17 comunidades en alquiler; las ayudas a la demanda, en 0.
 - Detalle por comunidad: atlas regional (atlas_regional/). Método: [nota metodológica](nota_metodologica.md). Afirmaciones evaluadas: verificador V7.
 
 ## Qué cambió entre versiones y por qué
@@ -86,7 +86,7 @@ Sección única del proyecto: [Qué cambió entre versiones y por qué](que_camb
 ## Problema y opciones con signo estable
 
 - [C1] Desde 2021 los hogares crecen más que las viviendas terminadas, y el precio de compra y el alquiler suben con varias fuentes.
-- [C2] Signo estable en toda la rejilla simulada: movilización de vacías y más construcción donde hay presión. La vivienda pública lo tiene de forma débil (signo no positivo o nulo si desplaza a la promoción privada). Las ayudas a la demanda mejoran al beneficiario como grupo.
+- [C2] Signo estable en toda la rejilla simulada: movilización de vacías y más construcción donde hay presión. La vivienda pública lo tiene de forma débil (signo no positivo o nulo si desplaza a la promoción privada). Las ayudas a la demanda mejoran al beneficiario como grupo. (Signo en la rejilla de v5, C2; las magnitudes de la simulación v7.1 son C4.)
 - [C4] Signo no estable: topes, regulación de turísticos y traslado al precio de las ayudas a la demanda. La matriz completa está en output/v5/D1/matriz_instrumentos.md y la política por territorio, condicional, en output/v5/D2/politica_territorio.md.
 
 **Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.

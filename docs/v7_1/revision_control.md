@@ -62,3 +62,20 @@ Correcciones antes de difundir, por prioridad:
 4. **H5 y H7-H13.** Formato y precisión.
 
 Recomendación adicional: restringir `check:cifra-libre` a unidades de normalización sin valor numérico de resultado. H1 se coló por esa exención.
+
+## Resolución (orquestador, 12-10-2026)
+
+El revisor terminó dentro de su tope (68.170 de 80.000 tokens). Los 13 hallazgos se han corregido en las fuentes (plantillas y scripts de V7.1) y se ha regenerado con render y `make publicacion`.
+
+| id | Corrección |
+|---|---|
+| H1 | El efecto por diez mil viviendas se cita por instrumento: igual en vacías, vivienda pública y turísticos, y distinto en construcción. Las dos cifras salen de marcadores; ya no hay `cifra-libre`. |
+| H2, H3 | En una página: «instrumentos de cantidad» en lugar de «de oferta», el coste solo «en compra», la palabra «condicional» y la nota de la fórmula de incidencia. |
+| H4 | El policy brief dice ahora que D2 usa la necesidad de v5.1 T3 desde v6.3 y cita el rango de D2-H11. La cifra no cambia: es la vigente en cifras_clave, así que no hay ERRATA. |
+| H5 | Se añade la rebaja de impuestos y costes de construcción, con su coste y la advertencia de sobrestimación, en que_cambio y en los bloques V7 de cuatro entregables. |
+| H6 | LEEME_PRIMERO tiene un itinerario «Gestor público» con el policy brief, el atlas, la ponencia y el artículo. |
+| H7-H9 | Unidades duplicadas y formato: marcadores `:num` y unidades quitadas del texto. |
+| H10 | La tabla R6 del atlas v7.1 rotula «compra» en lugar de «precio». |
+| H11 | «Robustez en la rejilla simulada (C4; no es robustez estadística)». |
+| H12 | Títulos del verificador: «fichas v5-v6.3, vigentes en v7.1». |
+| H13 | Se distingue el signo en la rejilla de v5 (C2) de las magnitudes v7.1 (C4). |

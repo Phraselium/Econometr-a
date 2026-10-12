@@ -136,18 +136,18 @@ Origen móvil 2016Q1-2026Q1, h = 1-4 agrupados. informativo, muestra ya vista en
 | instrumento | mercado | h | precio o alquiler de mercado: mediana [p5, p95] | esfuerzo: mediana [p5, p95] | robusto |
 |---|---|---|---|---|---|
 | construcción adicional | alquiler | 10 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
-| construcción adicional | precio | 10 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
+| construcción adicional | compra | 10 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
 | movilización de vacías | alquiler | 10 | -4,0 % [-8,6 %, -2,0 %] | -4,0 % [-8,6 %, -2,0 %] | sí |
-| movilización de vacías | precio | 10 | -1,4 % [-2,8 %, -0,8 %] | -1,4 % [-2,8 %, -0,8 %] | sí |
+| movilización de vacías | compra | 10 | -1,4 % [-2,8 %, -0,8 %] | -1,4 % [-2,8 %, -0,8 %] | sí |
 | vivienda pública o asequible | alquiler | 10 | -2,3 % [-4,8 %, -1,0 %] | -2,3 % [-4,8 %, -1,0 %] | sí |
-| vivienda pública o asequible | precio | 10 | -0,4 % [-0,9 %, -0,2 %] | -0,4 % [-0,9 %, -0,2 %] | sí |
+| vivienda pública o asequible | compra | 10 | -0,4 % [-0,9 %, -0,2 %] | -0,4 % [-0,9 %, -0,2 %] | sí |
 | regulación local de turísticos | alquiler | 10 | -0,2 % [-0,5 %, -0,1 %] | -0,2 % [-0,5 %, -0,1 %] | no |
-| regulación local de turísticos | precio | 10 | -0,0 % [-0,1 %, -0,0 %] | -0,0 % [-0,1 %, -0,0 %] | no |
+| regulación local de turísticos | compra | 10 | -0,0 % [-0,1 %, -0,0 %] | -0,0 % [-0,1 %, -0,0 %] | no |
 | ayudas a la demanda | alquiler | 10 | +4,4 % [+1,9 %, +8,3 %] | -5,3 % [-9,5 %, -2,4 %] | no |
-| ayudas a la demanda | precio | 10 | +4,4 % [+1,9 %, +8,3 %] | -5,3 % [-9,5 %, -2,4 %] | no |
-| rebaja de ITP/IVA (vivienda nueva) | precio | 10 | +1,1 % [+0,4 %, +2,2 %] | -1,2 % [-2,3 %, -0,5 %] | no |
+| ayudas a la demanda | compra | 10 | +4,4 % [+1,9 %, +8,3 %] | -5,3 % [-9,5 %, -2,4 %] | no |
+| rebaja de ITP/IVA (vivienda nueva) | compra | 10 | +1,1 % [+0,4 %, +2,2 %] | -1,2 % [-2,3 %, -0,5 %] | no |
 | rebaja de impuestos y costes de construcción | alquiler | 10 | -1,0 % [-2,0 %, -0,4 %] | -1,0 % [-2,0 %, -0,4 %] | sí |
-| rebaja de impuestos y costes de construcción | precio | 10 | -1,0 % [-2,0 %, -0,4 %] | -1,0 % [-2,0 %, -0,4 %] | sí |
+| rebaja de impuestos y costes de construcción | compra | 10 | -1,0 % [-2,0 %, -0,4 %] | -1,0 % [-2,0 %, -0,4 %] | sí |
 
 **Combinaciones robustas en esta región:** movilización de vacías (alquiler); movilización de vacías (precio); vivienda pública o asequible (alquiler); vivienda pública o asequible (precio); rebaja de impuestos y costes de construcción (alquiler); rebaja de impuestos y costes de construcción (precio) (con la rejilla de elasticidades; la elasticidad regional no fue utilizable).
 

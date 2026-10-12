@@ -35,7 +35,7 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 |---|---|---|---|
 | Movilización de vivienda vacía (I10, I27) | mejora, estable en la rejilla | [C2] | provincias con presión y vacías movilizables |
 | Parque público o social a gran escala (I02) | mejora débil o nula si desplaza promoción privada | [C2] | provincias con presión, condicionado al desplazamiento |
-| Ayudas a la demanda (I06, I07, I08) | el beneficiario mejora; según la rejilla, parte se trasladaría al precio | [C2] por grupo; traslado [C4] | donde la oferta responde; con oferta rígida el traslado es mayor |
+| Ayudas a la demanda (I06, I07, I08) | el beneficiario mejora; según la rejilla, parte se trasladaría al precio | [C2] por grupo (signo en la rejilla de v5); traslado [C4] (magnitudes de la simulación v7.1) | donde la oferta responde; con oferta rígida el traslado es mayor |
 | Regulación de precios del alquiler (I01) | no estable: depende de la respuesta de la oferta | [C4] | no determinado con estos datos |
 | Alquiler turístico y de temporada (I16) | no estable en precio | [C4] | zonas con alta densidad de viviendas turísticas |
 | Reducción de tributos a la promoción (I29) | parcial, literatura no verificada | [C4] | no determinado |
@@ -43,7 +43,7 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 
 [C4] Según D1, la parte de una ayuda general que se traslada al precio, por clase territorial (A4, método A, rejilla de elasticidades de demanda): clase `1`, falta y es rentable, 27,8-81,8 %; clase `2`, la oferta no responde, 88,1-100,0 %; clase `3`, no rentable, 50,1-89,8 % [C4]. El extremo bajo se apoya en la literatura con oferta elástica (Eriksen y Ross, 2015) y el alto en la de oferta rígida (Gibbons y Manning, 2006; Hilber y Turner, 2014).
 
-[C4] Según D2, la construcción adicional planificada cubriría 29,7 % de la necesidad de las provincias donde falta vivienda y construir es rentable, y las vacías movilizables 30,9 %; ambas cifras son condicionales a los supuestos de B1 (versión v5 de la necesidad, no la recalculada en v5.1; ver informe técnico, D2). <!-- check:cifra-libre (etiquetas de versión) -->
+[C4] Según D2, la construcción adicional planificada cubriría 29,7 % de la necesidad de las provincias donde falta vivienda y construir es rentable, y las vacías movilizables 30,9 %; ambas cifras son condicionales a los supuestos de B1 (desde v6.3, con la necesidad de v5.1 T3; la cobertura de la construcción adicional va de 11,9-47,5 % según el escenario; ver informe técnico, D2). <!-- check:cifra-libre (etiquetas de versión) -->
 
 [C2] El aumento de viviendas turísticas de 2020 a 2024 equivale como máximo a 2,7 % del stock de alquiler (2,4-2,7 % del stock de alquiler).
 
@@ -57,10 +57,10 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 - **No hay un largo plazo regional confirmado.** Se confirman 0 de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en 8 de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
 - **Traslado al precio de las ayudas a la demanda y de la rebaja de ITP/IVA** (escenario condicional). Reducen el precio neto que paga el beneficiario: su esfuerzo varía un -5,3 % con la ayuda. Pero el precio de mercado sube un 4,4 % con la ayuda y un 1,1 % con la rebaja, a diez años (mediana entre comunidades). *Nota:* el signo lo fija en gran parte la fórmula de incidencia; lo informativo son las magnitudes relativas.
 - **Dosis y coste.**
-  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año.
+  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año; rebaja de impuestos y costes de construcción, 14,6 M€/año (su efecto por euro está sobrestimado por construcción del escenario; no es «el más eficiente»).
   - Coste anual por punto de reducción del precio neto: 76,4 M€/año por punto y 82,4 M€/año por punto.
   - Construcción, vacías, vivienda pública y turísticos no tienen coste estimable, porque no hay coste unitario verificado. Se comparan por su efecto por cada diez mil viviendas: en alquiler, -1,7 puntos % con vacías y -3,2 puntos % con vivienda pública (mediana). <!-- check:cifra-libre (unidad de normalización «diez mil viviendas», no son cifras de resultado) -->
-  - Robustez: la movilización de vacías es robusta en 17 de 17 comunidades en alquiler; las ayudas a la demanda, en 0.
+  - Robustez en la rejilla simulada (C4; no es robustez estadística): la movilización de vacías es robusta en 17 de 17 comunidades en alquiler; las ayudas a la demanda, en 0.
 - Detalle por comunidad: atlas regional (atlas_regional/). Método: [nota metodológica](nota_metodologica.md). Afirmaciones evaluadas: verificador V7.
 
 ## Qué cambió entre versiones y por qué

@@ -42,13 +42,15 @@ Todas las variables van en logaritmos salvo las tasas. La dependencia transversa
 | H7-C2 | Compra | θ(ln hipotecas) > 0 | MG con demeaning transversal (spec. A); PMG como contraste | F-C |
 | H7-C3 | Compra | θ(ln población) > 0 | MG con demeaning transversal (spec. A); PMG como contraste | F-C |
 | H7-C4 | Compra | θ(tasa de paro) < 0 | MG con demeaning transversal (spec. B); PMG como contraste | F-C |
-| H7-E1 | Ambos | Existe cointegración de panel | Westerlund Gt/Pt con bootstrap (y Pedroni como contraste) | F-E |
-| H7-E2 | Ambos | Velocidad de ajuste media φ̄ < 0 | MG con demeaning transversal (sesgo de φ de −19 % declarado en R2); PMG como contraste | F-E |
+| H7-E1 | Ambos | Existe cointegración de panel | «Tipo Westerlund» Gt/Pt con bootstrap, más Pedroni panel/group-ADF (contraste principal de cointegración) | F-E |
+| H7-E2 | Ambos | Velocidad de ajuste media φ̄ < 0 | t de MG frente al valor crítico **simulado bajo no cointegración** (R2); si no está disponible, EXPLORATORIO. El sesgo de φ en muestra finita va a favor de H1 y se declara | F-E |
 
 Cómo se juzga cada hipótesis:
 - **Ajuste.** Holm dentro de cada familia F-A, F-C y F-E.
 - **Para decir «se confirma»:** p de Holm < 0,05 con el MG con demeaning transversal y el mismo signo con PMG (IC bootstrap aproximado) y DFE. CS-ARDL no se usa: la validación de R2 lo declaró no apto.
-- **Hausman** (varianza no paramétrica del MG). Si no rechaza, se reporta PMG como estimación eficiente del largo plazo común. Si rechaza, se declara la heterogeneidad del largo plazo.
+- **Hausman** (varianza no paramétrica del MG; variante elegida a posteriori en R2, con potencia de unos 0,61).
+  - Si rechaza, se declara la heterogeneidad del largo plazo.
+  - Si no rechaza, se reportan MG y PMG **sin** afirmar homogeneidad.
 - **Capa máxima: C4.** Son asociaciones de largo plazo, no efectos causales: no hay variación exógena.
 
 ## 4. Familias exploratorias (BH, q = 0,10)

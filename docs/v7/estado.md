@@ -14,3 +14,4 @@
 | R1 panel | 120.000 | 96.994 |
 | R2 herramientas (ronda 1) | 130.000 | 60.561 |
 | R2 herramientas (ronda 2) | +55.000 | ~30.000 (declarado; ver aviso) |
+| Revisor R2 | 40.000 | 48.945 (excedido) |

@@ -42,3 +42,11 @@
     - Pedroni: apto.
     - CIPS: apto.
   - **Desviaciones del pre-registro.** CS-ARDL se sustituye por el demeaning transversal y el MG pasa a ser el principal. Se anotan en docs/v7/hipotesis.md antes de etiquetarlo, no en desviaciones.md, porque aún no se ha estimado nada.
+- **V11 · Revisión de R2: REHACER, ronda 1 de 2** (docs/v7/revision_R2.md; revisor: 48.945 tokens).
+  - **Lo hace el orquestador (documentación):**
+    - **H3.** El criterio de CIPS cambió entre rondas: «tamaño con paseo aleatorio puro» frente a «tamaño con la y I(1) del DGP». Fue un cambio a posteriori; desde ahora se reportan los dos y CIPS solo se usa «con reservas» para series con un componente I(0) grande.
+    - **H5.** H7-E2 (φ̄<0) pasa a usar un valor crítico simulado bajo no cointegración; si no está disponible, queda como EXPLORATORIO. Westerlund (E1) es el contraste principal de cointegración.
+    - **H6.** Se rotula «tipo Westerlund»: su α_i(1) y sus Pt y Pa no son los estándar.
+    - **H7.** El Hausman (potencia de unos 0,61) no se usa como prueba de homogeneidad: si no rechaza, se reportan MG y PMG sin declarar homogeneidad. La variante con la varianza del MG se eligió a posteriori, por ser la única con tamaño válido.
+  - **Lo hace el subagente de R2** (con un tope adicional de 70.000 tokens): el código y el Monte Carlo de los hallazgos 1, 2, 4, 8, 9, 10, 11 y 12.
+  - El estimador principal se decide tras esta ronda. Si un factor I(1) con cargas heterogéneas sesga MG_dm, será CS-ARDL o CS-DL corregido si resulta apto.

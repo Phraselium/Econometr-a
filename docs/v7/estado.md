@@ -28,4 +28,8 @@
 
 Acumulado: unos 743.500 tokens (57 %). Topes reducidos: R6 150.000 y R7 80.000.
 | R6 propuestas | 150.000 | 72.700 |
-| R7 atlas | 80.000 | (pendiente del aviso del sistema) |
+| R7 atlas | 80.000 | 107.215 (excedido) |
+
+- R6, R7 y revisión final (orquestador) hechos. Correcciones F1-F6 aplicadas: robustez sin subida del precio de mercado, variación relativa rotulada, nombres de instrumentos, verificador aparte y extensión de las fichas.
+- **Total de subagentes: 923.400 tokens de 1.300.000 (71 %).** Sin más subagentes.
+- Siguiente: `make check`; `make v7` ×2 y `make all` ×1 en un clon limpio; cierre.

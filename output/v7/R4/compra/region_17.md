@@ -17,7 +17,7 @@ Diagnosticos: BG_p = 0.565; BP_p = 0.001; JB_p = 0.987; RESET_p = 0.524; CUSUM_s
 
 Descomposicion historica (contabilidad descriptiva; coeficientes no confirmados; rango entre MG_dm, PMG_dm y CS-DL):
 
-| periodo | componente | MG_dm | PMG_dm | CS-DL | variacion observada | no atribuible |
+| periodo | componente | MG_dm | PMG_dm | CS-DL | variacion relativa a la media de las CCAA (log, demeaning) | no atribuible |
 |---|---|---|---|---|---|---|
 | 2014T1-2019T4 | theta*d(ln_ocupados) | 0.010 | 0.005 | 0.001 | -0.036 | True |
 | 2014T1-2019T4 | theta*d(ln_hip_importe) | -0.063 | 0.007 | 0.001 | -0.036 | True |
@@ -54,7 +54,7 @@ Diagnosticos: BG_p = 0.171; BP_p = 0.011; JB_p = 0.866; RESET_p = 0.909; CUSUM_s
 
 Descomposicion historica (contabilidad descriptiva; coeficientes no confirmados; rango entre MG_dm, PMG_dm y CS-DL):
 
-| periodo | componente | MG_dm | PMG_dm | CS-DL | variacion observada | no atribuible |
+| periodo | componente | MG_dm | PMG_dm | CS-DL | variacion relativa a la media de las CCAA (log, demeaning) | no atribuible |
 |---|---|---|---|---|---|---|
 | 2014T1-2019T4 | theta*d(tasa_paro_epa) | -0.008 | -0.010 | 0.003 | -0.036 | True |
 | 2014T1-2019T4 | theta*d(ln_hip_importe) | -0.094 | -0.129 | -0.016 | -0.036 | True |

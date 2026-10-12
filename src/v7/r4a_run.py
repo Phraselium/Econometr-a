@@ -607,7 +607,7 @@ def figura_desc(path, m, dsc):
         o = x[x.componente == "residuo no explicado"].set_index("codigo_ine_ccaa")
         cods = list(o.index)
         yy = np.arange(len(cods))
-        ax.barh(yy - .2, o.dy_obs, .4, label="variacion observada de y (relativa)")
+        ax.barh(yy - .2, o.dy_obs, .4, label="variacion de y relativa a la media de las CCAA")
         ax.barh(yy + .2, o.MG_dm, .4, label="residuo no explicado (MG_dm)")
         ax.set_yticks(yy)
         ax.set_yticklabels(cods)
@@ -645,7 +645,7 @@ def write_region_md(path, m, cod, Tm, cor, ph, dsc, est_main):
               + f"; CUSUM rechaza al 5 %: {dg.CUSUM_rechaza5}; cambio de signo de phi entre mitades: {dg.cambio_signo_phi}.", ""]
         dd = dsc[(dsc.spec == sp) & (dsc.codigo_ine_ccaa == cod)]
         L += ["Descomposicion historica (contabilidad descriptiva; coeficientes no confirmados; rango entre MG_dm, PMG_dm y CS-DL):", "",
-              "| periodo | componente | MG_dm | PMG_dm | CS-DL | variacion observada | no atribuible |", "|---|---|---|---|---|---|---|"]
+              "| periodo | componente | MG_dm | PMG_dm | CS-DL | variacion relativa a la media de las CCAA (log, demeaning) | no atribuible |", "|---|---|---|---|---|---|---|"]
         for _, z in dd.iterrows():
             L.append(f"| {z.periodo} | {z.componente} | {fmt(z.MG_dm)} | {fmt(z.PMG_dm)} | {fmt(z.CS_DL)} | {fmt(z.dy_obs)} | {z.no_atribuible} |")
         L.append("")

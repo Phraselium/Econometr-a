@@ -105,48 +105,16 @@ Un p bajo en Breusch-Godfrey indica autocorrelación residual; en ese caso los e
 
 Coeficientes no confirmados: la magnitud se da como rango entre estimadores (MG, PMG, CS-DL) y es asociación. Variación en log. «no atribuible = True»: el residuo domina o el rango abarca la variación.
 
-**alquiler, especificación A**
+**Ojo:** la descomposición se hace sobre datos con demeaning transversal, así que la variación es **relativa a la media de las 17 CCAA** (log; positiva si la región subió más que la media). Las subidas absolutas están en la sección 1.
 
-| periodo | componente | rango mín. | rango máx. | variación observada | no atribuible |
-|---|---|---|---|---|---|
-| 2014T1-2019T4 | theta*d(ln_ocupados) | -0,0031 | -0,0001 | -0,0084 | True |
-| 2014T1-2019T4 | theta*d(ln_pob_total) | -0,0422 | -0,0083 | -0,0084 | True |
-| 2014T1-2019T4 | residuo no explicado | -0,0000 | 0,0369 | -0,0084 | True |
-| 2014T1-2019T4 | ECM propio de la region: suma ajustada (corto plazo + correccion) | -0,0068 | -0,0068 | -0,0084 | True |
-| 2014T1-2019T4 | ECM propio: residuo | -0,0016 | -0,0016 | -0,0084 | True |
-| 2020T1-2022T2 | theta*d(ln_ocupados) | -0,0016 | -0,0001 | -0,0019 | True |
-| 2020T1-2022T2 | theta*d(ln_pob_total) | -0,0141 | -0,0028 | -0,0019 | True |
-| 2020T1-2022T2 | residuo no explicado | 0,0009 | 0,0138 | -0,0019 | True |
-| 2020T1-2022T2 | ECM propio de la region: suma ajustada (corto plazo + correccion) | -0,0005 | -0,0005 | -0,0019 | True |
-| 2020T1-2022T2 | ECM propio: residuo | -0,0015 | -0,0015 | -0,0019 | True |
-| 2022T3-ultimo | theta*d(ln_ocupados) | -0,0015 | -0,0001 | -0,0070 | True |
-| 2022T3-ultimo | theta*d(ln_pob_total) | -0,0135 | -0,0027 | -0,0070 | True |
-| 2022T3-ultimo | residuo no explicado | -0,0043 | 0,0080 | -0,0070 | True |
-| 2022T3-ultimo | ECM propio de la region: suma ajustada (corto plazo + correccion) | -0,0064 | -0,0064 | -0,0070 | True |
-| 2022T3-ultimo | ECM propio: residuo | -0,0006 | -0,0006 | -0,0070 | True |
-
-**compra, especificación A**
-
-| periodo | componente | rango mín. | rango máx. | variación observada | no atribuible |
-|---|---|---|---|---|---|
-| 2014T1-2019T4 | theta*d(ln_ocupados) | 0,0022 | 0,0163 | -0,0486 | True |
-| 2014T1-2019T4 | theta*d(ln_hip_importe) | -0,0640 | 0,0067 | -0,0486 | True |
-| 2014T1-2019T4 | theta*d(ln_pob_total) | -0,1704 | 0,0924 | -0,0486 | True |
-| 2014T1-2019T4 | residuo no explicado | -0,1244 | 0,1182 | -0,0486 | True |
-| 2014T1-2019T4 | ECM propio de la region: suma ajustada (corto plazo + correccion) | -0,0486 | -0,0486 | -0,0486 | True |
-| 2014T1-2019T4 | ECM propio: residuo | 0,0000 | 0,0000 | -0,0486 | True |
-| 2020T1-2022T2 | theta*d(ln_ocupados) | 0,0011 | 0,0085 | -0,0301 | True |
-| 2020T1-2022T2 | theta*d(ln_hip_importe) | -0,0012 | 0,0001 | -0,0301 | True |
-| 2020T1-2022T2 | theta*d(ln_pob_total) | -0,0570 | 0,0309 | -0,0301 | True |
-| 2020T1-2022T2 | residuo no explicado | -0,0683 | 0,0257 | -0,0301 | True |
-| 2020T1-2022T2 | ECM propio de la region: suma ajustada (corto plazo + correccion) | -0,0355 | -0,0355 | -0,0301 | True |
-| 2020T1-2022T2 | ECM propio: residuo | 0,0053 | 0,0053 | -0,0301 | True |
-| 2022T3-ultimo | theta*d(ln_ocupados) | 0,0010 | 0,0078 | -0,0073 | True |
-| 2022T3-ultimo | theta*d(ln_hip_importe) | -0,0019 | 0,0183 | -0,0073 | True |
-| 2022T3-ultimo | theta*d(ln_pob_total) | -0,0544 | 0,0295 | -0,0073 | True |
-| 2022T3-ultimo | residuo no explicado | -0,0629 | 0,0464 | -0,0073 | True |
-| 2022T3-ultimo | ECM propio de la region: suma ajustada (corto plazo + correccion) | -0,0044 | -0,0044 | -0,0073 | True |
-| 2022T3-ultimo | ECM propio: residuo | -0,0029 | -0,0029 | -0,0073 | True |
+| mercado | periodo | variación relativa a la media de las CCAA (log) | residuo no explicado [rango] | ¿no atribuible? |
+|---|---|---|---|---|
+| alquiler | 2014T1-2019T4 | -0,0084 | [-0,0000; 0,0369] | sí |
+| alquiler | 2020T1-2022T2 | -0,0019 | [0,0009; 0,0138] | sí |
+| alquiler | 2022T3-ultimo | -0,0070 | [-0,0043; 0,0080] | sí |
+| compra | 2014T1-2019T4 | -0,0486 | [-0,1244; 0,1182] | sí |
+| compra | 2020T1-2022T2 | -0,0301 | [-0,0683; 0,0257] | sí |
+| compra | 2022T3-ultimo | -0,0073 | [-0,0629; 0,0464] | sí |
 
 Las tablas completas (incluida la descomposición del ECM propio de la región) están en output/v7/R4/<mercado>/region_07.md.
 
@@ -161,53 +129,27 @@ Origen móvil 2016Q1-2026Q1, h = 1-4 agrupados. informativo, muestra ya vista en
 
 ## 6. Propuestas (R6; condicional, C4)
 
-«Si se hiciera X, con estos supuestos…». Mediana e intervalo al 90 % (p5-p95) de la variación %, a 2, 5 y 10 años, con la elasticidad de oferta de la rejilla (v5). Esfuerzo = variación % del esfuerzo neto del beneficiario. Robusto = esfuerzo baja en todo el Monte Carlo y el precio de mercado no sube en ninguna extracción.
+«Si se hiciera X, con estos supuestos…». Mediana e intervalo al 90 % (p5-p95) de la variación %, a 10 años (2 y 5 años en output/v7/R6/impactos.csv), con la elasticidad de oferta de la rejilla (v5). Esfuerzo = variación % del esfuerzo neto del beneficiario. Robusto = esfuerzo baja en todo el Monte Carlo y el precio de mercado no sube en ninguna extracción.
 
 | instrumento | mercado | h | precio o alquiler de mercado: mediana [p5, p95] | esfuerzo: mediana [p5, p95] | robusto |
 |---|---|---|---|---|---|
-| a_construccion | alquiler | 2 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
-| a_construccion | alquiler | 5 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
-| a_construccion | alquiler | 10 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
-| a_construccion | precio | 2 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
-| a_construccion | precio | 5 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
-| a_construccion | precio | 10 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
-| b_vacias | alquiler | 2 | -0,3 % [-0,7 %, -0,2 %] | -0,3 % [-0,7 %, -0,2 %] | sí |
-| b_vacias | alquiler | 5 | -2,1 % [-4,6 %, -1,0 %] | -2,1 % [-4,6 %, -1,0 %] | sí |
-| b_vacias | alquiler | 10 | -5,6 % [-12,1 %, -2,7 %] | -5,6 % [-12,1 %, -2,7 %] | sí |
-| b_vacias | precio | 2 | -0,1 % [-0,2 %, -0,1 %] | -0,1 % [-0,2 %, -0,1 %] | sí |
-| b_vacias | precio | 5 | -0,7 % [-1,4 %, -0,4 %] | -0,7 % [-1,4 %, -0,4 %] | sí |
-| b_vacias | precio | 10 | -2,0 % [-3,8 %, -1,1 %] | -2,0 % [-3,8 %, -1,1 %] | sí |
-| c_vivienda_publica | alquiler | 2 | -0,0 % [-0,1 %, -0,0 %] | -0,0 % [-0,1 %, -0,0 %] | sí |
-| c_vivienda_publica | alquiler | 5 | -0,2 % [-0,5 %, -0,1 %] | -0,2 % [-0,5 %, -0,1 %] | sí |
-| c_vivienda_publica | alquiler | 10 | -0,6 % [-1,4 %, -0,3 %] | -0,6 % [-1,4 %, -0,3 %] | sí |
-| c_vivienda_publica | precio | 2 | -0,0 % [-0,0 %, -0,0 %] | -0,0 % [-0,0 %, -0,0 %] | no |
-| c_vivienda_publica | precio | 5 | -0,0 % [-0,1 %, -0,0 %] | -0,0 % [-0,1 %, -0,0 %] | no |
-| c_vivienda_publica | precio | 10 | -0,1 % [-0,3 %, -0,1 %] | -0,1 % [-0,3 %, -0,1 %] | no |
-| d_turisticos | alquiler | 2 | -0,1 % [-0,3 %, -0,0 %] | -0,1 % [-0,3 %, -0,0 %] | no |
-| d_turisticos | alquiler | 5 | -0,2 % [-0,4 %, -0,1 %] | -0,2 % [-0,4 %, -0,1 %] | no |
-| d_turisticos | alquiler | 10 | -0,2 % [-0,5 %, -0,1 %] | -0,2 % [-0,5 %, -0,1 %] | no |
-| d_turisticos | precio | 2 | -0,0 % [-0,0 %, -0,0 %] | -0,0 % [-0,0 %, -0,0 %] | no |
-| d_turisticos | precio | 5 | -0,0 % [-0,1 %, -0,0 %] | -0,0 % [-0,1 %, -0,0 %] | no |
-| d_turisticos | precio | 10 | -0,0 % [-0,1 %, -0,0 %] | -0,0 % [-0,1 %, -0,0 %] | no |
-| e_ayuda_demanda | alquiler | 2 | +2,4 % [+1,1 %, +4,7 %] | -2,4 % [-4,7 %, -1,1 %] | no |
-| e_ayuda_demanda | alquiler | 5 | +4,0 % [+1,8 %, +7,5 %] | -4,1 % [-7,7 %, -1,9 %] | no |
-| e_ayuda_demanda | alquiler | 10 | +4,6 % [+2,1 %, +8,7 %] | -4,9 % [-9,1 %, -2,3 %] | no |
-| e_ayuda_demanda | precio | 2 | +2,4 % [+1,1 %, +4,7 %] | -2,4 % [-4,7 %, -1,1 %] | no |
-| e_ayuda_demanda | precio | 5 | +4,0 % [+1,8 %, +7,5 %] | -4,1 % [-7,7 %, -1,9 %] | no |
-| e_ayuda_demanda | precio | 10 | +4,6 % [+2,1 %, +8,7 %] | -4,9 % [-9,1 %, -2,3 %] | no |
-| f1_rebaja_ITP_IVA_vivienda_nueva | precio | 2 | +0,6 % [+0,2 %, +1,2 %] | -0,6 % [-1,2 %, -0,2 %] | no |
-| f1_rebaja_ITP_IVA_vivienda_nueva | precio | 5 | +1,0 % [+0,4 %, +2,0 %] | -0,9 % [-1,9 %, -0,4 %] | no |
-| f1_rebaja_ITP_IVA_vivienda_nueva | precio | 10 | +1,2 % [+0,5 %, +2,3 %] | -1,1 % [-2,2 %, -0,4 %] | no |
-| f2_impuestos_construccion | alquiler | 2 | -0,5 % [-1,0 %, -0,2 %] | -0,5 % [-1,0 %, -0,2 %] | sí |
-| f2_impuestos_construccion | alquiler | 5 | -0,8 % [-1,6 %, -0,3 %] | -0,8 % [-1,6 %, -0,3 %] | sí |
-| f2_impuestos_construccion | alquiler | 10 | -1,0 % [-1,9 %, -0,4 %] | -1,0 % [-1,9 %, -0,4 %] | sí |
-| f2_impuestos_construccion | precio | 2 | -0,5 % [-1,0 %, -0,2 %] | -0,5 % [-1,0 %, -0,2 %] | sí |
-| f2_impuestos_construccion | precio | 5 | -0,8 % [-1,6 %, -0,3 %] | -0,8 % [-1,6 %, -0,3 %] | sí |
-| f2_impuestos_construccion | precio | 10 | -1,0 % [-1,9 %, -0,4 %] | -1,0 % [-1,9 %, -0,4 %] | sí |
+| construcción adicional | alquiler | 10 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
+| construcción adicional | precio | 10 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
+| movilización de vacías | alquiler | 10 | -5,6 % [-12,1 %, -2,7 %] | -5,6 % [-12,1 %, -2,7 %] | sí |
+| movilización de vacías | precio | 10 | -2,0 % [-3,8 %, -1,1 %] | -2,0 % [-3,8 %, -1,1 %] | sí |
+| vivienda pública o asequible | alquiler | 10 | -0,6 % [-1,4 %, -0,3 %] | -0,6 % [-1,4 %, -0,3 %] | sí |
+| vivienda pública o asequible | precio | 10 | -0,1 % [-0,3 %, -0,1 %] | -0,1 % [-0,3 %, -0,1 %] | no |
+| regulación local de turísticos | alquiler | 10 | -0,2 % [-0,5 %, -0,1 %] | -0,2 % [-0,5 %, -0,1 %] | no |
+| regulación local de turísticos | precio | 10 | -0,0 % [-0,1 %, -0,0 %] | -0,0 % [-0,1 %, -0,0 %] | no |
+| ayudas a la demanda | alquiler | 10 | +4,6 % [+2,1 %, +8,7 %] | -4,9 % [-9,1 %, -2,3 %] | no |
+| ayudas a la demanda | precio | 10 | +4,6 % [+2,1 %, +8,7 %] | -4,9 % [-9,1 %, -2,3 %] | no |
+| rebaja de ITP/IVA (vivienda nueva) | precio | 10 | +1,2 % [+0,5 %, +2,3 %] | -1,1 % [-2,2 %, -0,4 %] | no |
+| rebaja de impuestos y costes de construcción | alquiler | 10 | -1,0 % [-1,9 %, -0,4 %] | -1,0 % [-1,9 %, -0,4 %] | sí |
+| rebaja de impuestos y costes de construcción | precio | 10 | -1,0 % [-1,9 %, -0,4 %] | -1,0 % [-1,9 %, -0,4 %] | sí |
 
-**Combinaciones robustas en esta región:** b_vacias (alquiler; robusto solo con rejilla (regional no utilizable)); b_vacias (precio; robusto solo con rejilla (regional no utilizable)); c_vivienda_publica (alquiler; robusto solo con rejilla (regional no utilizable)); f2_impuestos_construccion (alquiler; robusto solo con rejilla (regional no utilizable)); f2_impuestos_construccion (precio; robusto solo con rejilla (regional no utilizable)).
+**Combinaciones robustas en esta región:** movilización de vacías (alquiler); movilización de vacías (precio); vivienda pública o asequible (alquiler); rebaja de impuestos y costes de construcción (alquiler); rebaja de impuestos y costes de construcción (precio) (con la rejilla de elasticidades; la elasticidad regional no fue utilizable).
 
-Con la elasticidad regional (DOLS) el resultado puede diferir; esa elasticidad no pasó diagnósticos en 0 de 17 CCAA, de modo que se mantiene la rejilla y se reportan ambas en impactos.csv.
+Con la elasticidad regional (DOLS) el resultado puede diferir; esa elasticidad no pasó los diagnósticos en ninguna de las 17 CCAA, de modo que se mantiene la rejilla y se reportan ambas en impactos.csv.
 
 ## 7. Qué no se puede afirmar
 

@@ -130,15 +130,16 @@ def ficha(d, cc, nombre):
     a("## 4. Descomposición por periodo (contabilidad descriptiva, con residuo)\n")
     a("Coeficientes no confirmados: la magnitud se da como rango entre estimadores (MG, PMG, CS-DL) y es "
       "asociación. Variación en log. «no atribuible = True»: el residuo domina o el rango abarca la variación.\n")
-    for m in MERC:
+    a("**Ojo:** la descomposición se hace sobre datos con demeaning transversal, así que la variación es **relativa a la media de las 17 CCAA** "
+      "(log; positiva si la región subió más que la media). Las subidas absolutas están en la sección 1.\n")
+    a("| mercado | periodo | variación relativa a la media de las CCAA (log) | residuo no explicado [rango] | ¿no atribuible? |\n|---|---|---|---|---|")
+    for m in MERC:   # v7 (orquestador): solo observado y residuo, para fichas de 2-4 páginas; el detalle en region_<cod>.md
         g = d["des"][m]
-        g = g[(g.codigo_ine_ccaa == cc) & (g.spec == "A")]
-        a(f"**{m}, especificación A**\n\n| periodo | componente | rango mín. | rango máx. | variación observada | no atribuible |\n"
-          "|---|---|---|---|---|---|")
+        g = g[(g.codigo_ine_ccaa == cc) & (g.spec == "A") & (g.componente == "residuo no explicado")]
         for _, r in g.iterrows():
-            a(f"| {r.periodo} | {r.componente} | {num(r.rango_min, 4)} | {num(r.rango_max, 4)} | "
-              f"{num(r.dy_obs, 4)} | {r.no_atribuible} |")
-        a("")
+            a(f"| {m} | {r.periodo} | {num(r.dy_obs, 4)} | [{num(r.rango_min, 4)}; {num(r.rango_max, 4)}] | "
+              f"{'sí' if r.no_atribuible else 'no'} |")
+    a("")
     a("Las tablas completas (incluida la descomposición del ECM propio de la región) están en "
       f"output/v7/R4/<mercado>/region_{cc}.md.\n")
     a("## 5. Backtest (R5)\n")
@@ -153,21 +154,22 @@ def ficha(d, cc, nombre):
       "(optimista). Solo \"predice mejor\" quien bate a la base más exigente.\n")
     a("## 6. Propuestas (R6; condicional, C4)\n")
     a("«Si se hiciera X, con estos supuestos…». Mediana e intervalo al 90 % (p5-p95) de la variación %, "
-      "a 2, 5 y 10 años, con la elasticidad de oferta de la rejilla (v5). Esfuerzo = variación % del esfuerzo "
+      "a 10 años (2 y 5 años en output/v7/R6/impactos.csv), con la elasticidad de oferta de la rejilla (v5). Esfuerzo = variación % del esfuerzo "
       "neto del beneficiario. Robusto = esfuerzo baja en todo el Monte Carlo y el precio de mercado no sube "
       "en ninguna extracción.\n")
     im = d["imp"][(d["imp"].cc == cc) & (d["imp"].fuente_es == "rejilla")]
     rb = d["rob"][d["rob"].cc == cc]
     a("| instrumento | mercado | h | precio o alquiler de mercado: mediana [p5, p95] | esfuerzo: mediana [p5, p95] | robusto |\n"
       "|---|---|---|---|---|---|")
-    for _, r in im.sort_values(["instrumento", "mercado", "horizonte"]).iterrows():
-        a(f"| {r.instrumento} | {r.mercado} | {r.horizonte} | {pct(r.dprecio_med)} [{pct(r.dprecio_p5)}, {pct(r.dprecio_p95)}] | "
+    for _, r in im[im.horizonte == 10].sort_values(["instrumento", "mercado"]).iterrows():   # 2 y 5 años en impactos.csv
+        a(f"| {INSTR.get(r.instrumento, r.instrumento)} | {r.mercado} | {r.horizonte} | {pct(r.dprecio_med)} [{pct(r.dprecio_p5)}, {pct(r.dprecio_p95)}] | "
           f"{pct(r.esfuerzo_med)} [{pct(r.esfuerzo_p5)}, {pct(r.esfuerzo_p95)}] | {'sí' if r.robusto else 'no'} |")
     ro = rb[rb.robusto]
     a("\n**Combinaciones robustas en esta región:** "
-      + ("; ".join(f"{r.instrumento} ({r.mercado}; {r.tipo})" for _, r in ro.iterrows()) or "ninguna") + ".\n")
-    a("Con la elasticidad regional (DOLS) el resultado puede diferir; esa elasticidad no pasó diagnósticos en "
-      "0 de 17 CCAA, de modo que se mantiene la rejilla y se reportan ambas en impactos.csv.\n")
+      + ("; ".join(f"{INSTR.get(r.instrumento, r.instrumento)} ({r.mercado})" for _, r in ro.iterrows()) or "ninguna")
+      + " (con la rejilla de elasticidades; la elasticidad regional no fue utilizable).\n")
+    a("Con la elasticidad regional (DOLS) el resultado puede diferir; esa elasticidad no pasó los diagnósticos en "
+      "ninguna de las 17 CCAA, de modo que se mantiene la rejilla y se reportan ambas en impactos.csv.\n")
     if cc == "10":
         provincial(d, a)
     a("## 7. Qué no se puede afirmar\n")
@@ -183,6 +185,11 @@ def ficha(d, cc, nombre):
       f"propuestas C4 condicional. {ROT}. Validación diferida pendiente: los modelos están congelados "
       "(R5) y se evaluarán con `make evaluate_v7` sobre datos posteriores.*")
     return "\n".join(L) + "\n"
+
+
+INSTR = {"a_construccion": "construcción adicional", "b_vacias": "movilización de vacías", "c_vivienda_publica": "vivienda pública o asequible",
+         "d_turisticos": "regulación local de turísticos", "e_ayuda_demanda": "ayudas a la demanda",
+         "f1_rebaja_ITP_IVA_vivienda_nueva": "rebaja de ITP/IVA (vivienda nueva)", "f2_impuestos_construccion": "rebaja de impuestos y costes de construcción"}
 
 
 def provincial(d, a):
@@ -310,8 +317,9 @@ def resumen(d, nombres):
         c = c[c.coef != "phi"]
         a(f"- {m}: {int(c.rechaza_bh10.sum())} de {len(c)} coeficientes de corto plazo región × spec × variable "
           "con q BH < 0,10 (el resto sin señal).")
-    a("\nVariación observada (log) y rango del residuo no explicado entre estimadores, 2022T3-último, especificación A:\n")
-    a("| CCAA | mercado | variación observada | residuo mín. | residuo máx. |\n|---|---|---|---|---|")
+    a("\nRango del residuo no explicado entre estimadores, 2022T3-último, especificación A:\n")
+    a("Variación **relativa a la media de las 17 CCAA** (datos con demeaning transversal; log). No es la subida absoluta, que está en cada ficha (sección 1).\n")
+    a("| CCAA | mercado | variación relativa a la media | residuo mín. | residuo máx. |\n|---|---|---|---|---|")
     for cc, nom in nombres:
         for m in MERC:
             g = d["des"][m]
@@ -333,7 +341,7 @@ def resumen(d, nombres):
     a("| CCAA | alquiler | compra |\n|---|---|---|")
     for cc, nom in nombres:
         r = d["rob"][(d["rob"].cc == cc) & d["rob"].robusto]
-        f = [", ".join(sorted(r[r.mercado == m].instrumento)) or "ninguno" for m in ("alquiler", "precio")]
+        f = [", ".join(sorted(INSTR.get(i, i) for i in r[r.mercado == m].instrumento)) or "ninguno" for m in ("alquiler", "precio")]
         a(f"| {nom} | {f[0]} | {f[1]} |")
     a("\n## English summary (about 150 words)\n")
     a("This atlas compares 17 Spanish regions using quarterly panel data to 2026Q2. It is informative only: "

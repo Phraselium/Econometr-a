@@ -45,9 +45,11 @@ Semivida en trimestres; NA si φ ≥ 0. Solo la comparación del promedio con el
 - alquiler: 9 de 102 coeficientes de corto plazo región × spec × variable con q BH < 0,10 (el resto sin señal).
 - compra: 8 de 119 coeficientes de corto plazo región × spec × variable con q BH < 0,10 (el resto sin señal).
 
-Variación observada (log) y rango del residuo no explicado entre estimadores, 2022T3-último, especificación A:
+Rango del residuo no explicado entre estimadores, 2022T3-último, especificación A:
 
-| CCAA | mercado | variación observada | residuo mín. | residuo máx. |
+Variación **relativa a la media de las 17 CCAA** (datos con demeaning transversal; log). No es la subida absoluta, que está en cada ficha (sección 1).
+
+| CCAA | mercado | variación relativa a la media | residuo mín. | residuo máx. |
 |---|---|---|---|---|
 | Andalucía | alquiler | 0,011 | 0,012 | 0,017 |
 | Andalucía | compra | 0,038 | 0,012 | 0,068 |
@@ -95,23 +97,23 @@ Robusto: esfuerzo a la baja en todo el Monte Carlo y precio de mercado sin subid
 
 | CCAA | alquiler | compra |
 |---|---|---|
-| Andalucía | b_vacias, c_vivienda_publica, d_turisticos, f2_impuestos_construccion | b_vacias, c_vivienda_publica, f2_impuestos_construccion |
-| Aragón | b_vacias, c_vivienda_publica, f2_impuestos_construccion | b_vacias, c_vivienda_publica, f2_impuestos_construccion |
-| Asturias | b_vacias, c_vivienda_publica, d_turisticos, f2_impuestos_construccion | b_vacias, f2_impuestos_construccion |
-| Illes Balears | b_vacias, c_vivienda_publica, d_turisticos, f2_impuestos_construccion | b_vacias, c_vivienda_publica, d_turisticos, f2_impuestos_construccion |
-| Canarias | b_vacias, c_vivienda_publica, d_turisticos, f2_impuestos_construccion | b_vacias, c_vivienda_publica, f2_impuestos_construccion |
-| Cantabria | b_vacias, c_vivienda_publica, d_turisticos, f2_impuestos_construccion | b_vacias, f2_impuestos_construccion |
-| Castilla y León | b_vacias, c_vivienda_publica, f2_impuestos_construccion | b_vacias, f2_impuestos_construccion |
-| Castilla-La Mancha | b_vacias, c_vivienda_publica, f2_impuestos_construccion | b_vacias, c_vivienda_publica, f2_impuestos_construccion |
-| Cataluña | b_vacias, c_vivienda_publica, d_turisticos, f2_impuestos_construccion | b_vacias, c_vivienda_publica, f2_impuestos_construccion |
-| Comunitat Valenciana | b_vacias, c_vivienda_publica, d_turisticos, f2_impuestos_construccion | b_vacias, c_vivienda_publica, f2_impuestos_construccion |
-| Extremadura | b_vacias, c_vivienda_publica | b_vacias |
-| Galicia | b_vacias, c_vivienda_publica, f2_impuestos_construccion | b_vacias, f2_impuestos_construccion |
-| Comunidad de Madrid | b_vacias, c_vivienda_publica, f2_impuestos_construccion | a_construccion, b_vacias, c_vivienda_publica, f2_impuestos_construccion |
-| Región de Murcia | b_vacias, c_vivienda_publica, f2_impuestos_construccion | b_vacias, c_vivienda_publica, f2_impuestos_construccion |
-| Comunidad Foral de Navarra | a_construccion, b_vacias, c_vivienda_publica, f2_impuestos_construccion | a_construccion, b_vacias, c_vivienda_publica, f2_impuestos_construccion |
-| País Vasco | a_construccion, b_vacias, c_vivienda_publica | a_construccion, b_vacias, c_vivienda_publica |
-| La Rioja | b_vacias, c_vivienda_publica, d_turisticos, f2_impuestos_construccion | b_vacias, c_vivienda_publica, f2_impuestos_construccion |
+| Andalucía | movilización de vacías, rebaja de impuestos y costes de construcción, regulación local de turísticos, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible |
+| Aragón | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible |
+| Asturias | movilización de vacías, rebaja de impuestos y costes de construcción, regulación local de turísticos, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción |
+| Illes Balears | movilización de vacías, rebaja de impuestos y costes de construcción, regulación local de turísticos, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción, regulación local de turísticos, vivienda pública o asequible |
+| Canarias | movilización de vacías, rebaja de impuestos y costes de construcción, regulación local de turísticos, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible |
+| Cantabria | movilización de vacías, rebaja de impuestos y costes de construcción, regulación local de turísticos, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción |
+| Castilla y León | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción |
+| Castilla-La Mancha | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible |
+| Cataluña | movilización de vacías, rebaja de impuestos y costes de construcción, regulación local de turísticos, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible |
+| Comunitat Valenciana | movilización de vacías, rebaja de impuestos y costes de construcción, regulación local de turísticos, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible |
+| Extremadura | movilización de vacías, vivienda pública o asequible | movilización de vacías |
+| Galicia | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción |
+| Comunidad de Madrid | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible | construcción adicional, movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible |
+| Región de Murcia | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible |
+| Comunidad Foral de Navarra | construcción adicional, movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible | construcción adicional, movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible |
+| País Vasco | construcción adicional, movilización de vacías, vivienda pública o asequible | construcción adicional, movilización de vacías, vivienda pública o asequible |
+| La Rioja | movilización de vacías, rebaja de impuestos y costes de construcción, regulación local de turísticos, vivienda pública o asequible | movilización de vacías, rebaja de impuestos y costes de construcción, vivienda pública o asequible |
 
 ## English summary (about 150 words)
 

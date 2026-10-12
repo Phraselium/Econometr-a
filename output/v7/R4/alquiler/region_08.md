@@ -16,7 +16,7 @@ Diagnosticos: BG_p = 0.191; BP_p = 0.052; JB_p = 0.231; RESET_p = 0.715; CUSUM_s
 
 Descomposicion historica (contabilidad descriptiva; coeficientes no confirmados; rango entre MG_dm, PMG_dm y CS-DL):
 
-| periodo | componente | MG_dm | PMG_dm | CS-DL | variacion observada | no atribuible |
+| periodo | componente | MG_dm | PMG_dm | CS-DL | variacion relativa a la media de las CCAA (log, demeaning) | no atribuible |
 |---|---|---|---|---|---|---|
 | 2014T1-2019T4 | theta*d(ln_ocupados) | 0.000 | 0.000 | 0.000 | -0.016 | False |
 | 2014T1-2019T4 | theta*d(ln_pob_total) | -0.021 | -0.020 | -0.004 | -0.016 | False |
@@ -50,7 +50,7 @@ Diagnosticos: BG_p = 0.339; BP_p = 0.008; JB_p = 0.259; RESET_p = 0.119; CUSUM_s
 
 Descomposicion historica (contabilidad descriptiva; coeficientes no confirmados; rango entre MG_dm, PMG_dm y CS-DL):
 
-| periodo | componente | MG_dm | PMG_dm | CS-DL | variacion observada | no atribuible |
+| periodo | componente | MG_dm | PMG_dm | CS-DL | variacion relativa a la media de las CCAA (log, demeaning) | no atribuible |
 |---|---|---|---|---|---|---|
 | 2014T1-2019T4 | theta*d(tasa_paro_epa) | 0.006 | -0.006 | -0.001 | -0.016 | True |
 | 2014T1-2019T4 | residuo no explicado | -0.022 | -0.010 | -0.015 | -0.016 | True |

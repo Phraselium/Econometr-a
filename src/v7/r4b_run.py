@@ -129,9 +129,12 @@ def fit_pymc(F, tag):
     import pymc as pm
     N = len(F["ids"])
     k = F["Xlag"].shape[1]
-    draws, tune = (100, 100) if SMOKE else (800, 800)
+    sdx = F["Xlag"].std(0)
+    th0 = np.linalg.lstsq(F["Xlag"] / sdx, F["ylag"], rcond=None)[0]
+    Xs = F["Xlag"] / sdx
+    draws, tune = (100, 100) if SMOKE else (700, 1000)
     with pm.Model():
-        phib = pm.Normal("phi_bar", -0.1, 0.15)
+        phib = pm.Normal("phi_bar", -0.05, 0.05)
         sphi = pm.HalfNormal("sd_phi", 0.1)
         zp = pm.Normal("z_phi", 0, 1, shape=N)
         phi = pm.Deterministic("phi_i", phib + sphi * zp)
@@ -143,17 +146,18 @@ def fit_pymc(F, tag):
         sa = pm.HalfNormal("sd_alpha", 0.01)
         za = pm.Normal("z_alpha", 0, 1, shape=N)
         al = ab + sa * za
-        theta = pm.Normal("theta", 0, 2, shape=k)
+        theta_s = pm.Normal("theta_s", 0, 0.15, shape=k)
+        theta = pm.Deterministic("theta", theta_s / sdx)
         lam = pm.Normal("lam", 0, 0.5)
         c1 = pm.Normal("c_covid", 0, 0.05)
         c2 = pm.Normal("c_epa21", 0, 0.05)
         sig = pm.HalfNormal("sigma_i", 0.02, shape=N)
         g = F["g"]
-        ect = F["ylag"] - pm.math.dot(F["Xlag"], theta)
+        ect = F["ylag"] - pm.math.dot(Xs, theta_s)
         mu = al[g] + phi[g] * ect + dl[g] * F["dX"] + lam * F["dylag"] + c1 * F["covid"] + c2 * F["epa21"]
         pm.Normal("obs", mu, sig[g], observed=F["dy"])
-        idata = pm.sample(draws=draws, tune=tune, chains=4, cores=1, random_seed=SEED, target_accept=0.92,
-                          progressbar=False)
+        idata = pm.sample(draws=draws, tune=tune, chains=4, cores=1, random_seed=SEED, target_accept=0.95,
+                          progressbar=False, initvals={"theta_s": th0})
     import time
     print("pymc", tag, time.strftime("%X"), flush=True)
     vars_ = ["phi_bar", "sd_phi", "delta_bar", "sd_delta", "theta", "lam", "sd_alpha"]

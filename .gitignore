@@ -23,3 +23,4 @@ data/raw/v3/cartografia/
 data/raw/v3_orig/
 data/raw/gva_vut_municipio.csv
 output/v6/M2/.tmp_*
+output/v7/*_smoke/

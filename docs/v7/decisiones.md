@@ -18,3 +18,5 @@
      - En el código heredado congela el recuento actual: un solo caso, R1C, en src/v5/r1c_run.py:220, C4 descriptivo, que declara las filas no cruzadas.
      - Los diccionarios de nombres heredados, como SERP2IPVA, no los detecta el patrón; se revisaron en K4a y L1.
   5. **D2 con T3 y las 26 cifras del verificador.** Las hace un subagente R0 y se publican como v6.3.
+- **V3 · Panel V7 aparte.** El panel ampliado va en data/processed/v7/, generado por src/v7/r1_panel.py. No se modifica data/processed/panel_ccaa_q.csv (v1), para no alterar las salidas cerradas. El panel provincial de V7 incluye las 52 provincias. Las selladas en v2 y v6 entran como datos, pero V7 no vuelve a evaluar las hipótesis de v2 ni de v6, y su validación limpia es diferida.
+- **V4 · Paralelismo.** R0 (D2 y verificador), R1 (panel) y R2 (herramientas sobre datos simulados) se ejecutan a la vez porque no comparten ficheros. Ninguna estimación con datos reales se hace antes de que R2 valide las herramientas y el revisor lo apruebe.

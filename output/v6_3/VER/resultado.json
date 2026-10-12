@@ -1,0 +1,28 @@
+{
+ "rama": "VER",
+ "pregunta": "¿Qué cifras de las fichas del verificador sin fila en cifras_clave tienen origen trazable en ficheros versionados?",
+ "capa": "C4",
+ "datos": [
+  "output/v4/M4",
+  "output/v4/M3",
+  "output/v4/M2",
+  "output/v3/PB",
+  "output/v5/A23"
+ ],
+ "N": {
+  "cifras_incorporadas": 8,
+  "huerfanas_k4c": 26
+ },
+ "metodo": "lectura determinista de hechos.json/cotas.json/calculos.json; sin estimación",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": null,
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Fuera por no trazables o ser parámetros/constantes de diseño (no resultados): 277 y 1.806 municipios (V08), 10.000 y 104.000 (V11, dosis y brecha), 249 municipios con excedente y 53 (M5-V2/V3), 200 réplicas bootstrap, 180 escenarios (T4, recuento de rejilla), 3,79 pp (M4-V4), 7.498 y 6.947 s (tiempos de README_REPLICACION, medidos fuera del repo). Cada ficha cita la cifra en texto sin clave estructurada en un fichero versionado."
+}

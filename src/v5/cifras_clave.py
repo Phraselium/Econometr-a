@@ -15,6 +15,23 @@ import pandas as pd
 RAIZ = Path(__file__).resolve().parents[2]
 V4, V5 = RAIZ / "output" / "v4", RAIZ / "output" / "v5"
 COLS = ["id", "indicador", "valor", "min", "max", "unidad", "periodo", "cobertura", "fuentes", "capa", "fecha_dato", "ficha", "origen"]
+# v6.3 (R0 de V7, pendiente K4a-04): sentido de min/max cuando NO es un rango del valor. Las cifras no cambian; la columna
+# «sentido_min_max» lo declara y los tests exigen min <= valor <= max solo cuando es «rango».
+SENTIDO_MIN_MAX = {
+    "CA-EU-": "min = mediana de la UE-27; max = percentil 75 de la UE-27 (referencia, no rango del valor)",
+    "R1B-G-": "min = valor crítico al 95 %; max = estadístico observado (GSADF)",
+    "R1B-S-": "min = umbral de referencia; max = valor observado (Cinelli-Hazlett)",
+    "m2_pip_": "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)",
+    "E-E1-VLC-contratos": "min y max = contratos del distrito con menos y con más contratos (extremos por distrito; valor = total)",
+    "T1-H1": "min = bajas implícitas con signo invertido (referencia); max = valor (identidad negativa)",
+    "T3-H8": "min = max = aporte del componente con mayor amplitud (valor = amplitud conjunta)",
+    "CC-C7b-jov-": "min = valor del año base; max = valor del último año (no rango)",
+    "CA-CT-ratio-triang-": "min = ratio INE; max = ratio Registradores (dos fuentes; valor redondeado del titular)",
+}
+
+
+def sentido(i: str) -> str:
+    return next((v for k, v in SENTIDO_MIN_MAX.items() if str(i).startswith(k)), "rango")
 
 
 def _f(i, ind, val, mn, mx, uni, per, cob, fue, capa, fecha, ficha, origen) -> dict:
@@ -62,7 +79,7 @@ def v4_adaptadores() -> list[dict]:
 
 def v5_hechos() -> list[dict]:
     f = []
-    for p in sorted(V5.glob("*/hechos.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_2").glob("*/hechos.json")):   # v5.1, v6, v6.1 y v6.2
+    for p in sorted(V5.glob("*/hechos.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_2").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_3").glob("*/hechos.json")):   # v5.1, v6, v6.1, v6.2 y v6.3
         h = json.loads(p.read_text())
         if not isinstance(h, list):
             continue
@@ -82,6 +99,7 @@ def main() -> None:
     ck["capa"] = ck.capa.astype(str)
     ck = ck.sort_values("id", kind="stable")
     # K4a-01: «%.6g» redondeaba a 6 cifras significativas los recuentos >= 1e6 (1.720.537 -> 1.720.540); «%.10g» es exacto hasta 1e10
+    ck["sentido_min_max"] = ck.id.map(sentido)
     ck.to_csv(V5 / "cifras_clave.csv", index=False, float_format="%.10g")
     md = ["# Cifras clave v5", "",
           "Tabla única de la que leen todos los entregables. Una fila por indicador y periodo. Generada por src/v5/cifras_clave.py.", "",

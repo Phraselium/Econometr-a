@@ -47,12 +47,14 @@ def test_valores_finitos(ck):
 
 
 def test_min_valor_max(ck):
-    ok = ck[~ck.id.str.startswith(RANGO_OTRO_SENTIDO)]
+    assert set(ck[ck.id.str.startswith(RANGO_OTRO_SENTIDO)].sentido_min_max) - {"rango"}, "las filas de otro sentido deben declararlo"
+    assert (ck[~ck.id.str.startswith(RANGO_OTRO_SENTIDO)].sentido_min_max == "rango").all()
+    ok = ck[ck.sentido_min_max == "rango"]
     ok = ok[ok.valor.notna() & ok["min"].notna() & ok["max"].notna()]
     mal = ok[(ok.valor < ok["min"] - 1e-9 * ok.valor.abs().clip(lower=1)) | (ok.valor > ok["max"] + 1e-9 * ok.valor.abs().clip(lower=1))]
     assert mal.empty, mal[["id", "valor", "min", "max"]].to_string()
     # min <= max siempre, salvo las filas documentadas
-    r = ck[~ck.id.str.startswith(RANGO_OTRO_SENTIDO) & ck["min"].notna() & ck["max"].notna()]
+    r = ck[(ck.sentido_min_max == "rango") & ck["min"].notna() & ck["max"].notna()]
     assert (r["min"] <= r["max"]).all(), r[r["min"] > r["max"]].id.tolist()
 
 

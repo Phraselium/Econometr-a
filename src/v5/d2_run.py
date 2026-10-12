@@ -51,8 +51,17 @@ def main() -> dict:
     a = pd.read_csv(RAIZ / "output" / "v5" / "A4" / "clasificacion_provincias.csv", dtype={"cod_prov": int})
     b = pd.read_csv(RAIZ / "output" / "v5" / "B1" / "tablas" / "B1_tabla_provincial.csv")
     b2 = pd.read_csv(RAIZ / "output" / "v5" / "B2" / "tablas" / "B2_deficit_2030_provincial.csv")
-    nac = pd.read_csv(RAIZ / "output" / "v5" / "B1" / "tablas" / "B1_nacional.csv").set_index("componente")
+    # v6.3: referencia nacional de T3 (M de necesidad_nacional.csv; N anual sin X de reconciliacion_con_B1.csv)
+    nac = pd.read_csv(RAIZ / "output" / "v5_1" / "T3" / "tablas" / "necesidad_nacional.csv").set_index("componente")
+    rec = pd.read_csv(RAIZ / "output" / "v5_1" / "T3" / "tablas" / "reconciliacion_con_B1.csv")
     ic = pd.read_csv(RAIZ / "output" / "v5" / "D1" / "incidencia_ayudas_por_clase.csv")
+    # v6.3 (K4a-03b): la necesidad provincial sale de v5.1 T3 en su base SIN la sensibilidad X (N_anual - X/10; suma central 210.424 = T3-H5b),
+    # en lugar de B1 (v5, 214.868). La clase A4 se conserva de B1 (mismo cod_prov) y la suma provincial sigue igualando al nacional de T3.
+    t3 = pd.read_csv(RAIZ / "output" / "v5_1" / "T3" / "tablas" / "necesidad_provincial.csv", dtype={"cod_prov": str})
+    t3["cod_prov"] = t3.cod_prov.astype(int)
+    for s_ in ("min", "central", "max"):
+        t3[f"N_anual_{s_}"] = t3[f"N_anual_{s_}"] - t3[f"X_{s_}"] / 10
+    b = b[["cod_prov", "clase_A4"]].merge(t3[["cod_prov", "provincia", "N_anual_min", "N_anual_central", "N_anual_max", "M_min", "M_central", "M_max", "V_central"]], on="cod_prov")
     d = b[["cod_prov", "provincia", "clase_A4", "N_anual_min", "N_anual_central", "N_anual_max", "M_min", "M_central", "M_max", "V_central"]].merge(
         a[["cod_prov", "robusta_diagnostico"]], on="cod_prov").merge(b2[["cod_prov", "D2025", "D2030_min", "D2030_central", "D2030_max"]], on="cod_prov")
     tot = d.N_anual_central.sum()
@@ -107,7 +116,7 @@ def main() -> dict:
     g["cob_vac_pct"] = 100 * g.vac_central / g.N_central
     g.round(2).to_csv(OUT / "resumen_por_clase.csv", index=False)
     # controles de suma
-    nac_n = float(nac.loc["N10", "central"]) / 10
+    nac_n = float(rec.loc[rec.paso.str.startswith("T3 sin X"), "N_anual_central"].iloc[0])  # v6.3: T3 sin X
     ctrl = [dict(tabla="N_anual_central_provincias_vs_N10_nacional_div10", suma_provincial=float(tot), nacional=nac_n, tolerancia_rel=1e-3, ok=bool(abs(tot - nac_n) / nac_n < 1e-3)),
             dict(tabla="N_anual_central_suma_clases", suma_provincial=float(g.N_central.sum()), nacional=float(tot), tolerancia_rel=1e-9, ok=bool(abs(g.N_central.sum() - tot) < 1e-6)),
             dict(tabla="M_central_provincias_vs_B1_nacional", suma_provincial=float(d.M_central.sum()), nacional=float(nac.loc["M", "central"]), tolerancia_rel=1e-3,
@@ -122,10 +131,10 @@ def main() -> dict:
         return f"{x:,.0f}".replace(",", ".")
     nac_pd = (PD_LO, PD_HI)
     md = ["# Política por territorio (D2, v5)\n",
-          f"Fecha: {FECHA}. Cruce de la necesidad anual de B1 (central y rango), la clase de A4 y la matriz de D1. **Capa C4**: las clases de A4 son C4, de modo que ningún resultado "
+          f"Fecha: {FECHA}. Cruce de la necesidad anual de v5.1 T3 sin la sensibilidad X (v6.3; central y rango), la clase de A4 y la matriz de D1. **Capa C4**: las clases de A4 son C4, de modo que ningún resultado "
           "por clase se promueve. El lenguaje es condicional y sin causalidad: lo que se describe son instrumentos con signo estable en la rejilla de P-D v3 (C2, nacional) o con "
           "literatura verificada de otros países; no hay efecto estimado por clase en España. Se evalúan instrumentos, no actores.\n",
-          f"Referencia nacional (B1, {FECHA}): necesidad total {f0(nac_n)} viviendas/año (rango {f0(d.N_anual_min.sum())}-{f0(d.N_anual_max.sum())}), suma de 52 provincias; "
+          f"Referencia nacional (T3 sin X, {FECHA}): necesidad total {f0(nac_n)} viviendas/año (rango {f0(d.N_anual_min.sum())}-{f0(d.N_anual_max.sum())}), suma de 52 provincias; "
           f"construcción adicional de P-D v3: +{f0(PD_LO)} a +{f0(PD_HI)} viviendas/año (C2 en signo; reparto por provincia proporcional a la necesidad, supuesto C4); "
           "vacías movilizables: 10-30 % de las vacías en provincias con presión (clases 1-2), repartidas en 10 años. Contexto: B2 proyecta 1.296.672 viviendas de déficit a fin de 2030 "
           "(escenario a, C4) con el ritmo actual de terminadas (≈94.650/año, 2023-2025).\n",
@@ -156,19 +165,19 @@ def main() -> dict:
                f"- {x['ne']}.\n"]
     md += ["## Lectura transversal (C4)\n",
            f"- Con la construcción adicional de P-D (+{f0(PD_LO)} a +{f0(PD_HI)}/año) el porcentaje de cobertura es igual en todas las clases por construcción del reparto proporcional (supuesto): solo la cifra absoluta distingue las clases. Cubre una fracción de la necesidad central nacional ({f0(nac_n)}/año), no su totalidad.",
-           "- La movilización de vacías sí difiere por clase, porque depende de las vacías de cada provincia con presión: en el central cubre un 30 % de la necesidad en la clase 1 y un 74 % en la clase 2 (con 10-30 % de movilización; rango en la tabla). En las clases 3 y 9 B1 no asigna movilización (sin presión).",
+           "- La movilización de vacías sí difiere por clase, porque depende de las vacías de cada provincia con presión: en el central cubre un 31 % de la necesidad en la clase 1 y un 76 % en la clase 2 (con 10-30 % de movilización; rango en la tabla). En las clases 3 y 9 B1 no asigna movilización (sin presión).",
            "- La necesidad se concentra en la clase 1 (88 % del total), donde la respuesta de oferta de A4 es mayor; en la clase 2 la combinación de signo estable es la misma, pero con una oferta sin respuesta el cuello de botella es de suelo o regulatorio, sobre el que solo hay literatura verificada de otros países.",
            "- Limitaciones: B1 en C4; la clase y la respuesta de oferta de A4 son C4; el reparto proporcional de P-D es un supuesto; las vacías de B1 no se asignan a clases sin presión; la literatura es de otros países y su magnitud proviene de resúmenes secundarios.\n",
            "Tabla por provincia: `output/v5/D2/politica_territorio.csv`; suma provincial = nacional comprobada en `control_sumas.json`."]
     (OUT / "politica_territorio.md").write_text("\n".join(md), encoding="utf-8")
     hechos = []
     for r in g.itertuples():
-        hechos.append(dict(id=f"D2-H0{r.clase}", indicador=f"Necesidad anual de vivienda, provincias de clase A4 {r.clase} (B1)", valor=round(r.N_central), min=round(r.N_min), max=round(r.N_max),
-                           unidad="viviendas/año", periodo="2026-2035", cobertura=f"{r.n} provincias", fuentes="output/v5/B1; output/v5/A4", capa="C4", fecha_dato=FECHA))
+        hechos.append(dict(id=f"D2-H0{r.clase}", indicador=f"Necesidad anual de vivienda, provincias de clase A4 {r.clase} (T3 sin X, v6.3)", valor=round(r.N_central), min=round(r.N_min), max=round(r.N_max),
+                           unidad="viviendas/año", periodo="2026-2035", cobertura=f"{r.n} provincias", fuentes="output/v5_1/T3; output/v5/A4", capa="C4", fecha_dato=FECHA))
         if r.clase != 9:
             hechos.append(dict(id=f"D2-H1{r.clase}", indicador=f"Cobertura de la necesidad por la construcción adicional de P-D (+25-100 mil/año repartidas por cuota), clase {r.clase}",
                                valor=round((r.cob_pd_min_pct + r.cob_pd_max_pct) / 2, 1), min=round(r.cob_pd_min_pct, 1), max=round(r.cob_pd_max_pct, 1), unidad="%", periodo="2026-2035",
-                               cobertura=f"{r.n} provincias", fuentes="output/v3/PD; output/v5/B1; output/v5/A4", capa="C4", fecha_dato=FECHA))
+                               cobertura=f"{r.n} provincias", fuentes="output/v3/PD; output/v5_1/T3; output/v5/A4", capa="C4", fecha_dato=FECHA))
     (OUT / "hechos.json").write_text(json.dumps(hechos, ensure_ascii=False, indent=1))
     res = {"rama": "D2", "pregunta": "¿Qué combinación de instrumentos tiene signo estable o evidencia verificada aplicable en cada clase de provincia, y qué parte de la necesidad cubre?",
            "capa": "C4", "datos": ["output/v5/B1", "output/v5/B2", "output/v5/A4", "output/v5/D1", "output/v3/PD"], "N": {"provincias": int(len(d))},

@@ -86,7 +86,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 ## Instrumentos con signo estable según el territorio [C2 en el signo; C4 por clase]
 
 - Donde falta y construir es rentable, la oferta respondería; donde no es rentable, haría falta otro instrumento [C4]
-- La construcción adicional planificada cubriría en torno a 29,1 % de la necesidad [C4]
+- La construcción adicional planificada cubriría en torno a 29,7 % de la necesidad [C4]
 
 ---
 

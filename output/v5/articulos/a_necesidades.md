@@ -81,7 +81,7 @@ Como referencia del ritmo actual, las terminadas al año en el territorio común
 
 ### Distribución provincial
 
-La necesidad se concentra en las provincias con presión. De las provincias españolas, 48 provincias se clasifican con presión en A4, y en ellas se acumula una necesidad de 2.110.221 viviendas en diez años [C4], prácticamente todo el total. Por clases de A4, las provincias donde falta vivienda y construir es rentable suman 189.335 viviendas/año (91.656-268.728 viviendas/año) [C4]; aquellas donde falta y hay freno regulatorio o de suelo, 21.689 viviendas/año (1.979-36.383 viviendas/año) [C4]; y aquellas donde falta y construir no es rentable, 3.130 viviendas/año (-111,0 a 3.971 viviendas/año) [C4].
+La necesidad se concentra en las provincias con presión. De las provincias españolas, 48 provincias se clasifican con presión en A4, y en ellas se acumula una necesidad de 2.110.221 viviendas en diez años [C4], prácticamente todo el total. Por clases de A4, las provincias donde falta vivienda y construir es rentable suman 185.283 viviendas/año (96.224-251.870 viviendas/año) [C4]; aquellas donde falta y hay freno regulatorio o de suelo, 21.155 viviendas/año (2.983-35.113 viviendas/año) [C4]; y aquellas donde falta y construir no es rentable, 3.260 viviendas/año (-112,0 a 4.185 viviendas/año) [C4].
 
 En la Comunitat Valenciana la necesidad central anual es de 16.993 viviendas/año (13.241-22.407 viviendas/año) en la provincia de Valencia, 14.264 viviendas/año (10.484-18.624 viviendas/año) en la de Alicante y 4.267 viviendas/año (2.788-5.685 viviendas/año) en la de Castellón [C4]. Como comparación, Madrid registra 47.228 viviendas/año (36.705-59.722 viviendas/año) y Barcelona 30.963 viviendas/año (21.166-45.466 viviendas/año) [C4].
 

@@ -48,3 +48,7 @@ Fecha: 2026-10-11. Una fila por conclusión relevante. Capa: las versiones v1-v2
 - **Asociación total** (sin controlar por población; la inmigración es un componente contable del crecimiento de la población). Puede recoger otros factores ligados a ese crecimiento: positiva en compra (valor tasado, unos 4,3 % por punto de cuota) y en alquiler de stock (unos 2,7 %). Con controles de costa y demanda externa baja (1,6 y 1,6) y el intervalo de compra incluye el cero.
 - **Asociación directa** (a igual población): compra −1,3 (IC −4,3 a 1,7) y alquiler 0,18 (IC −1,5 a 1,8). Controlar por población es un mal control: el signo negativo no significa que la inmigración abarate la vivienda.
 - **Estado.** Se mantiene la conclusión única de K2: C4, «ANALIZADA, NO CONCLUYENTE». Cambia la redacción en todos los entregables y en la ficha K2-V1. Las cifras vigentes están en output/v5/cifras_clave.csv (K2-CUOTA-*).
+
+
+## Adenda V7 (R0)
+- **v1, predicción.** El DM del ECM frente al AR(4) es p = 0,509 con el precio real y p = 0,290 con el precio nominal. Son dos modelos distintos, no un error (output/f2/real_oos_dm.md y oos_dm.md). En ninguno de los dos el ECM predice mejor que el AR(4).

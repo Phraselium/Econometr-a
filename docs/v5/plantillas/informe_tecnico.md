@@ -435,7 +435,7 @@ Los dos métodos discrepan en la clase `1` y se dan ambos.
 
 ## 7. Política por territorio (D2), en lenguaje condicional
 
-D2 cruza la necesidad de B1, la clase de A4 y la matriz de D1. Aviso de definición (v6.1, K4a-03): D2 reparte la necesidad en su versión v5 (B1, {{B1-H1:valor}}, suma de 52 provincias), no en la versión v5.1 del titular (T3, {{T3-H5b:valor}} sin la sensibilidad X), que recalcula las bajas con T1; son dos versiones de la misma magnitud A+R+V+F−M−K y el reparto por clase solo es comparable con la primera. Todo es C4: no hay efectos estimados por clase en España. El texto completo está en [output/v5/D2/politica_territorio.md](D2/politica_territorio.md). <!-- check:cifra-libre (etiquetas de versión y módulo) -->
+D2 cruza la necesidad de T3, la clase de A4 y la matriz de D1. Desde v6.3, D2 usa la misma necesidad provincial que el titular (v5.1 T3, {{T3-H5b:valor}} viviendas/año sin la sensibilidad X; suma de 52 provincias), no la de B1 (v5). Todo es C4: no hay efectos estimados por clase en España. El texto completo está en [output/v5/D2/politica_territorio.md](D2/politica_territorio.md). <!-- check:cifra-libre (etiquetas de versión y módulo) -->
 
 **Clase `1` ({{E-E1-D2-nprov-1:valor}}, {{E-E1-D2-nrob-1:num}} robustas).**
 - Necesidad: {{D2-H01}} [C4].

@@ -14,37 +14,37 @@
  },
  "metodo": "cruce de tablas; reparto de P-D por cuota de necesidad (supuesto); vacías de B1 a 10 años",
  "estimacion": {
-  "necesidad_anual_nacional": 214867.78999999998,
+  "necesidad_anual_nacional": 210424.0,
   "por_clase": {
    "1": {
-    "necesidad": 189335.0,
+    "necesidad": 185282.8,
     "cobertura_pd_pct": [
-     11.634942057988553,
-     46.53976823195421
+     11.880774056191312,
+     47.52309622476525
     ],
-    "cobertura_vacias_pct": 30.22663532891436
+    "cobertura_vacias_pct": 30.887702474271762
    },
    "2": {
-    "necesidad": 21689.0,
+    "necesidad": 21155.2,
     "cobertura_pd_pct": [
-     11.634942057988551,
-     46.539768231954206
+     11.88077405619131,
+     47.52309622476524
     ],
-    "cobertura_vacias_pct": 74.34782608695652
+    "cobertura_vacias_pct": 76.22381258508545
    },
    "3": {
-    "necesidad": 3130.0,
+    "necesidad": 3259.6,
     "cobertura_pd_pct": [
-     11.634942057988551,
-     46.539768231954206
+     11.88077405619131,
+     47.52309622476524
     ],
     "cobertura_vacias_pct": 0.0
    },
    "9": {
-    "necesidad": 716.0,
+    "necesidad": 726.4,
     "cobertura_pd_pct": [
-     11.634942057988551,
-     46.539768231954206
+     11.880774056191308,
+     47.52309622476523
     ],
     "cobertura_vacias_pct": 0.0
    }

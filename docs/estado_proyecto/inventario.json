@@ -1,0 +1,3301 @@
+{
+ "meta": {
+  "fecha": "2026-10-12",
+  "commit": "462ebf1",
+  "rama": "r6.2/main",
+  "autor_proyecto": "Borja Romero, economista",
+  "metodo": "inventario de solo lectura; 4 escáneres haiku + síntesis del orquestador; no se ejecutaron modelos ni se leyó data/sealed",
+  "aviso": "cifras transcritas de resultado.json y docs; la fuente única de cifras publicadas es output/v5/cifras_clave.csv"
+ },
+ "repositorio": {
+  "commits_cierre": [
+   {
+    "Versión": "v4",
+    "Commit": "9673a4c",
+    "Mensaje (resumen)": "cerrada: make all ×2 sin red en clon limpio"
+   },
+   {
+    "Versión": "v5.0",
+    "Commit": "cc69e02",
+    "Mensaje (resumen)": "cerrada: make all ×2, md5 idénticos salvo tiempos.json"
+   },
+   {
+    "Versión": "v5.1",
+    "Commit": "bac2fda",
+    "Mensaje (resumen)": "cerrada: make all ×2, tareas del autor"
+   },
+   {
+    "Versión": "v6.0",
+    "Commit": "08d7629",
+    "Mensaje (resumen)": "cerrada: make all ×2, md5 idénticos"
+   },
+   {
+    "Versión": "v6.1",
+    "Commit": "7a63f9f",
+    "Mensaje (resumen)": "cerrada: make all ×2, salidas propagadas"
+   },
+   {
+    "Versión": "v6.2",
+    "Commit": "462ebf1",
+    "Mensaje (resumen)": "cerrada: make all ×2 en clon limpio; diferencias explicadas"
+   }
+  ],
+  "etiquetas_locales": [
+   {
+    "Etiqueta": "prereg-v2",
+    "Commit": "910c42a"
+   },
+   {
+    "Etiqueta": "prereg-v3",
+    "Commit": "204c073"
+   },
+   {
+    "Etiqueta": "prereg-v5",
+    "Commit": "8803f04"
+   },
+   {
+    "Etiqueta": "prereg-v6",
+    "Commit": "a33c167"
+   },
+   {
+    "Etiqueta": "v5.0",
+    "Commit": "cc69e02"
+   },
+   {
+    "Etiqueta": "v5.1",
+    "Commit": "bac2fda"
+   },
+   {
+    "Etiqueta": "v6.0",
+    "Commit": "08d7629"
+   },
+   {
+    "Etiqueta": "v6.1",
+    "Commit": "7a63f9f"
+   },
+   {
+    "Etiqueta": "v6.2",
+    "Commit": "462ebf1"
+   }
+  ],
+  "etiquetas_remotas": 0,
+  "makefile": {
+   "objetivos": [
+    "all",
+    "data",
+    "clean",
+    "models",
+    "report",
+    "check",
+    "verificador",
+    "distclean"
+   ],
+   "make_all_segundos": {
+    "v6.0": [
+     7564,
+     7776
+    ],
+    "v6.1": [
+     7498,
+     6947
+    ],
+    "v6.2": [
+     7928,
+     8054
+    ]
+   },
+   "make_check": "unos 6 min; 89 tests de pytest (52 funciones + doble_impl parametrizada) + check_texto + check_v5 + check_v6"
+  },
+  "utilidades": {
+   "src/econ_utils.py": "load_nacional, common_sample, ols_hac, dols, diagnostics, chow, bai_perron, dm_test, holm; clase Registry",
+   "src/holdout.py": "provincias_selladas, build, load_train, evaluate, load_full, sellar_v3, evaluate_v3, provincias_selladas_v6, sellar_v6, evaluate_v6 (registra accesos)",
+   "src/v3/check_texto.py": "léxico valorativo/causal y capas",
+   "src/v5/check_v5.py": "cifras fuera de marcador, sumas provinciales, campos de cifras_clave",
+   "src/v6/check_v6.py": "integridad del sellado v6, nada causal desde SHAP, medida_precio",
+   "src/v5/render.py": "plantillas → entregables desde cifras_clave",
+   "src/v5/cifras_clave.py": "tabla única de cifras",
+   "src/v5/verificador.py": "fichas del verificador (40)"
+  },
+  "librerias": {
+   "python": "3.13.16",
+   "statsmodels": "0.15.0",
+   "linearmodels": "7.0",
+   "lightgbm": "4.7.0",
+   "xgboost": "3.4.1",
+   "shap": "0.53.0",
+   "econml": "0.17.0",
+   "doubleml": "0.11.4",
+   "torch": "2.14.1+cpu",
+   "scikit-learn": "1.9.1",
+   "pandas": "3.0.5",
+   "numpy": "2.5.3",
+   "scipy": "1.18.1",
+   "no_instaladas": [
+    "pymc",
+    "arviz",
+    "numpyro",
+    "jax",
+    "arch",
+    "torch_geometric",
+    "bartpy",
+    "pysal",
+    "libpysal",
+    "spreg"
+   ]
+  }
+ },
+ "datasets": [
+  {
+   "Fichero": "ine_ipv_80270.csv",
+   "Fuente": "INE IPV tabla 80270",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac, CCAA",
+   "Frec.": "T",
+   "Periodo": "2007Q1–2026Q2",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_ine, build_dataset"
+  },
+  {
+   "Fichero": "ine_ipv_25171.csv",
+   "Fuente": "INE IPV tabla 25171 (base 2015)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac, CCAA",
+   "Frec.": "T",
+   "Periodo": "2007Q1–2025Q4",
+   "Método": "API",
+   "Validado": "sí (robustez)",
+   "Scripts (src/)": "fetch_ine, ca_run"
+  },
+  {
+   "Fichero": "eurostat_hpi.csv / eu_hpi.csv",
+   "Fuente": "Eurostat prc_hpi_q",
+   "Descarga (UTC)": "2026-10-09 / 10-10",
+   "Nivel": "Nac / UE",
+   "Frec.": "T",
+   "Periodo": "2005Q4–2026Q2",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_eurostat, build_dataset_v2"
+  },
+  {
+   "Fichero": "mivau_valor_tasado_nacional_ccaa_prov.csv",
+   "Fuente": "MIVAU Boletín (tabla 35101000)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac, CCAA, prov",
+   "Frec.": "T",
+   "Periodo": "1995Q1–2026Q2",
+   "Método": "XLS",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_mivau, build_dataset"
+  },
+  {
+   "Fichero": "mivau_valor_tasado_municipios.csv",
+   "Fuente": "MIVAU Boletín",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Municipio (309 series)",
+   "Frec.": "T",
+   "Periodo": "2005–2026T1",
+   "Método": "XLS",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_mivau, build_dataset_v2"
+  },
+  {
+   "Fichero": "bde_precio_vivienda_libre.csv",
+   "Fuente": "BdE be2507",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "T",
+   "Periodo": "1995Q1–2026Q2",
+   "Método": "descarga CSV",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_bde, build_dataset"
+  },
+  {
+   "Fichero": "vlc_precio_vivienda_libre.csv",
+   "Fuente": "Ajuntament de València (CKAN)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Municipio (València)",
+   "Frec.": "T",
+   "Periodo": "2021Q2–2022Q1",
+   "Método": "API",
+   "Validado": "no consta (fuente primaria sin indicar)",
+   "Scripts (src/)": "fetch_valencia"
+  },
+  {
+   "Fichero": "bis_rpp.csv",
+   "Fuente": "BIS",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Países",
+   "Frec.": "T",
+   "Periodo": "2000–2026T1",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ue_v2"
+  },
+  {
+   "Fichero": "oecd_house_prices.csv",
+   "Fuente": "OCDE",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Países",
+   "Frec.": "T",
+   "Periodo": "2000–2026-07",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "build_dataset_v2"
+  },
+  {
+   "Fichero": "ine_epa_ocupados.csv / _ccaa.csv",
+   "Fuente": "INE EPA 65302 / EPA387796",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac / CCAA (420 series)",
+   "Frec.": "T",
+   "Periodo": "2002–2026T1",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_ine, build_dataset"
+  },
+  {
+   "Fichero": "ine_epa_hogares.csv",
+   "Fuente": "INE EPA 65269",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "T",
+   "Periodo": "2002–2026T1",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_ine, k4b_run"
+  },
+  {
+   "Fichero": "ine_epa_poblacion_ccaa.csv",
+   "Fuente": "INE EPA",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "CCAA",
+   "Frec.": "T",
+   "Periodo": "2002–2026T1",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine"
+  },
+  {
+   "Fichero": "ine_v2_epa_prov.csv",
+   "Fuente": "INE EPA tabla 65345 (ocupados y parados)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Provincia (106 series)",
+   "Frec.": "T",
+   "Periodo": "2002–2026T1",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine_v2, build_dataset_v2"
+  },
+  {
+   "Fichero": "ine_etdp_compraventas.csv",
+   "Fuente": "INE ETDP tabla 6150",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac, CCAA (360 series)",
+   "Frec.": "M",
+   "Periodo": "2007-01–2026-07",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_ine, build_dataset"
+  },
+  {
+   "Fichero": "ine_v2_etdp_prov.csv",
+   "Fuente": "INE ETDP (régimen y estado)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Provincia (265 series)",
+   "Frec.": "M",
+   "Periodo": "2007-01–2026-07",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine_v2"
+  },
+  {
+   "Fichero": "ine_ipc_alquiler.csv",
+   "Fuente": "INE IPC 290887",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "M",
+   "Periodo": "2002-01–2026-08",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_ine, build_dataset"
+  },
+  {
+   "Fichero": "ine_v2_ipc_alquiler_prov.csv",
+   "Fuente": "INE IPC subgrupo alquiler (tabla 76142)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Provincia (106)",
+   "Frec.": "M",
+   "Periodo": "2002-01–2026-08",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine_v2"
+  },
+  {
+   "Fichero": "ine_ipva_nacional_ccaa.csv",
+   "Fuente": "INE IPVA (59058…)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac, CCAA",
+   "Frec.": "A",
+   "Periodo": "2011–2024",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine"
+  },
+  {
+   "Fichero": "ine_ipva_municipal.csv",
+   "Fuente": "INE IPVA",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Municipio (1.530)",
+   "Frec.": "A",
+   "Periodo": "2011–2024",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine, extract_serpavi"
+  },
+  {
+   "Fichero": "ine_v2_ipva.csv",
+   "Fuente": "INE IPVA",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Prov. (3.420 series)",
+   "Frec.": "A",
+   "Periodo": "2011–2024",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine_v2"
+  },
+  {
+   "Fichero": "ine_cnt_pib_oferta_corrientes.csv / _volumen.csv",
+   "Fuente": "INE CNT",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "T",
+   "Periodo": "1995Q1–2026T1",
+   "Método": "API",
+   "Validado": "sí (deflactor)",
+   "Scripts (src/)": "fetch_ine"
+  },
+  {
+   "Fichero": "ine_cnt_demanda_corrientes.csv / _volumen.csv",
+   "Fuente": "INE CNT",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "T",
+   "Periodo": "1995Q1–2026T1",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine"
+  },
+  {
+   "Fichero": "ine_cnt_renta_disponible.csv",
+   "Fuente": "INE CNT",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "T",
+   "Periodo": "1999Q1–2026T1",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine"
+  },
+  {
+   "Fichero": "ine_v2_cre.csv",
+   "Fuente": "INE CRE tabla 80109 (PIB corrientes)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "CCAA y provincia (53)",
+   "Frec.": "A",
+   "Periodo": "2000–2025",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine_v2, build_dataset_v2"
+  },
+  {
+   "Fichero": "ine_ecp_nacional.csv",
+   "Fuente": "INE ECP 77023 / 320, 701",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "S (hasta 2020), T (2021+)",
+   "Periodo": "1971–2026-07",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_ine, build_dataset"
+  },
+  {
+   "Fichero": "ine_ecp_56936.csv / 59585.csv",
+   "Fuente": "INE ECP",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "T",
+   "Periodo": "2002–2025 / 2025Q2–2026Q3",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine"
+  },
+  {
+   "Fichero": "ine_ecp_ccaa_paises.csv / _nacionalidad.csv",
+   "Fuente": "INE ECP 77023",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "CCAA (17)",
+   "Frec.": "A / 1 ene",
+   "Periodo": "2002–2025",
+   "Método": "API",
+   "Validado": "sí (suma 17 CCAA)",
+   "Scripts (src/)": "fetch_ine, build_dataset"
+  },
+  {
+   "Fichero": "ine_v2_padron_prov_pais.csv / _edad_nac.csv",
+   "Fuente": "INE ECP (padrón)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Provincia",
+   "Frec.": "A",
+   "Periodo": "2002–2026-01",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine_v2, m0_run"
+  },
+  {
+   "Fichero": "ine_v2_migraciones_prov.csv",
+   "Fuente": "INE EM/EMCR 24420-24421",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Provincia (3.922)",
+   "Frec.": "S/A",
+   "Periodo": "2008–2022",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine_v2, m2_run"
+  },
+  {
+   "Fichero": "ine_migraciones_total_anual.csv",
+   "Fuente": "INE EMCR 69687",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "A",
+   "Periodo": "2021–2024",
+   "Método": "API",
+   "Validado": "sí (inmig_anual)",
+   "Scripts (src/)": "fetch_ine"
+  },
+  {
+   "Fichero": "ine_migraciones_nacionalidad.csv / _ccaa_nacionalidad.csv",
+   "Fuente": "INE EMCR",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac / CCAA",
+   "Frec.": "S",
+   "Periodo": "2023S1–2026S1",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine"
+  },
+  {
+   "Fichero": "ine_hogares_60131.csv",
+   "Fuente": "INE ECP 60131",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "T",
+   "Periodo": "2021Q1–2026Q3",
+   "Método": "API",
+   "Validado": "sí (hogares_ecp)",
+   "Scripts (src/)": "fetch_ine, cb_run"
+  },
+  {
+   "Fichero": "ine_v2_hogares_prov.csv",
+   "Fuente": "INE ECP hogares",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Provincia (265)",
+   "Frec.": "T",
+   "Periodo": "2021–2026",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine_v2, a4_run"
+  },
+  {
+   "Fichero": "ine_v2_hipotecas_prov.csv",
+   "Fuente": "INE HPT 76317 (hipotecas constituidas)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Provincia (106)",
+   "Frec.": "M",
+   "Periodo": "2003–2026-07",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine_v2, ca_run"
+  },
+  {
+   "Fichero": "ine_vut_nacional_ccaa_prov.csv",
+   "Fuente": "INE Estadística experimental VTE 39364",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac, CCAA, prov (268)",
+   "Frec.": "M (feb/ago hasta 2024; mayo desde 2024-11)",
+   "Periodo": "2020-08–2026-05",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_mivau, build_dataset"
+  },
+  {
+   "Fichero": "ine_v2_vut.csv",
+   "Fuente": "INE VTE 39363/39364",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Provincia (8.310 series)",
+   "Frec.": "M",
+   "Periodo": "2020-08–2026-05",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ine_v2, r1a_run"
+  },
+  {
+   "Fichero": "ine_vut_valencia_municipio.csv / _provincia.csv",
+   "Fuente": "INE VTE",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Municipio/prov. València",
+   "Frec.": "M",
+   "Periodo": "2020-08–2026-05",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_mivau"
+  },
+  {
+   "Fichero": "mivau_visados.csv",
+   "Fuente": "MIVAU Boletín 32100500 (PROXY viv. libres iniciadas)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac, CCAA",
+   "Frec.": "M",
+   "Periodo": "2008-01–2026-06",
+   "Método": "XLS",
+   "Validado": "sí (plausibilidad)",
+   "Scripts (src/)": "fetch_mivau, build_dataset"
+  },
+  {
+   "Fichero": "mivau_fin_obra.csv",
+   "Fuente": "MIVAU Boletín 32101000 (PROXY viv. libres terminadas)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "M",
+   "Periodo": "2008-01–2026-06",
+   "Método": "XLS",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_mivau, build_dataset"
+  },
+  {
+   "Fichero": "mivau_v2_iniciadas_terminadas_prov.csv",
+   "Fuente": "MIVAU Boletín (iniciadas/terminadas)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "CCAA (18), prov.",
+   "Frec.": "M/A",
+   "Periodo": "1991–2026-06",
+   "Método": "XLS",
+   "Validado": "no consta",
+   "Scripts (src/)": "t1_run, t4_run, build_dataset_v2"
+  },
+  {
+   "Fichero": "mivau_v2_protegida.csv",
+   "Fuente": "MIVAU Boletín (protegida)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "CCAA (19), prov.",
+   "Frec.": "M/A",
+   "Periodo": "1991–2026-06",
+   "Método": "XLS",
+   "Validado": "no consta",
+   "Scripts (src/)": "t1_run, t4_run"
+  },
+  {
+   "Fichero": "mivau_v2_suelo.csv",
+   "Fuente": "MIVAU Boletín (suelo)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "CCAA (18)",
+   "Frec.": "T",
+   "Periodo": "2004–2026-04",
+   "Método": "XLS",
+   "Validado": "no consta",
+   "Scripts (src/)": "build_dataset_v2, m3_run"
+  },
+  {
+   "Fichero": "mivau_parque.csv",
+   "Fuente": "MIVAU Boletín (parque)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac, CCAA",
+   "Frec.": "A",
+   "Periodo": "2001–2025",
+   "Método": "XLS",
+   "Validado": "no consta",
+   "Scripts (src/)": "t1_run, t3_run"
+  },
+  {
+   "Fichero": "mivau_fin_obra / mivau_transacciones_* / mivau_transacciones_municipios.csv",
+   "Fuente": "MIVAU Boletín (tx notarios: 34010110, 340101i0, 340101j0/k0)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac, CCAA (17), municipio (305)",
+   "Frec.": "T",
+   "Periodo": "2004–2026T1 (total), 2007–2026T1 (extranjeros, residencia)",
+   "Método": "XLS",
+   "Validado": "sí (total, extranjeros)",
+   "Scripts (src/)": "fetch_mivau, build_dataset"
+  },
+  {
+   "Fichero": "eurostat_costes.csv",
+   "Fuente": "Eurostat sts_copi_q (índice 2021=100)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "T",
+   "Periodo": "1980–2026T1",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_eurostat"
+  },
+  {
+   "Fichero": "eurostat_produccion_construccion.csv",
+   "Fuente": "Eurostat sts_copr_q",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "T",
+   "Periodo": "2005–2026T1",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_eurostat, m3_run"
+  },
+  {
+   "Fichero": "eurostat_permisos.csv",
+   "Fuente": "Eurostat sts_cobp_q",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "T",
+   "Periodo": "2000–2026T1",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_eurostat"
+  },
+  {
+   "Fichero": "eurostat_renta_hogares.csv",
+   "Fuente": "Eurostat nasq_10_nf_tr",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "T",
+   "Periodo": "1999–2026T1",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_eurostat"
+  },
+  {
+   "Fichero": "eurostat_empleo_nuts2.csv",
+   "Fuente": "Eurostat (empleo NUTS2)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "NUTS2 (19)",
+   "Frec.": "A",
+   "Periodo": "2008–2025",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_eurostat"
+  },
+  {
+   "Fichero": "eurostat_inmigracion_anual.csv",
+   "Fuente": "Eurostat migr_imm1ctz",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "A",
+   "Periodo": "1998–2024",
+   "Método": "API",
+   "Validado": "sí (inmig_anual_eurostat)",
+   "Scripts (src/)": "fetch_eurostat, m2_run"
+  },
+  {
+   "Fichero": "eu_hicp.csv, eu_hicp_rent.csv, eu_income_emp.csv, eu_migr_pop.csv, eu_permits.csv, eu_rates.csv",
+   "Fuente": "Eurostat (UE)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Países",
+   "Frec.": "A/T/M",
+   "Periodo": "2000–2026",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_ue_v2, ca_run"
+  },
+  {
+   "Fichero": "ecb_tipo_hipotecario_es.csv",
+   "Fuente": "BCE MIR (nuevas op. vivienda)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "M",
+   "Periodo": "2003-01–2026-08",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_ecb, build_dataset"
+  },
+  {
+   "Fichero": "ecb_nuevo_credito_vivienda_es.csv / ecb_stock_credito_vivienda_es.csv",
+   "Fuente": "BCE MIR / BSI",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "M",
+   "Periodo": "2003-01–2026-08",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_ecb, build_dataset"
+  },
+  {
+   "Fichero": "ecb_euribor1y.csv",
+   "Fuente": "BCE Euribor 1 año",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Euro área",
+   "Frec.": "M",
+   "Periodo": "1994-01–2026-09",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_ecb"
+  },
+  {
+   "Fichero": "ecb_tipo_oficial.csv",
+   "Fuente": "BCE MRR (cambios de tipo)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Euro área",
+   "Frec.": "cambios (48)",
+   "Periodo": "1999–2026-09",
+   "Método": "API",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_ecb"
+  },
+  {
+   "Fichero": "ecb_hicp_es.csv",
+   "Fuente": "BCE IAPC España",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "M",
+   "Periodo": "1996-01–2025-12",
+   "Método": "API",
+   "Validado": "no consta (serie termina 2025-12)",
+   "Scripts (src/)": "fetch_ecb, m0_run"
+  },
+  {
+   "Fichero": "bde_tipo_hipotecario_referencia.csv",
+   "Fuente": "BdE be1901",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Nac",
+   "Frec.": "M",
+   "Periodo": "1973-01–2026-09",
+   "Método": "descarga",
+   "Validado": "sí",
+   "Scripts (src/)": "fetch_bde"
+  },
+  {
+   "Fichero": "bde_tipos_hipotecas_nuevas.csv",
+   "Fuente": "BdE (tipos hipotecas nuevas)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Nac (6 series)",
+   "Frec.": "M",
+   "Periodo": "2003-01–2026-08",
+   "Método": "descarga",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_bde_v2"
+  },
+  {
+   "Fichero": "bde_credito_finalidad.csv",
+   "Fuente": "BdE (crédito por finalidad)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Nac (14 series)",
+   "Frec.": "M",
+   "Periodo": "1992-12–2026-08",
+   "Método": "descarga",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_bde_v2, m0_run"
+  },
+  {
+   "Fichero": "gva_vut_municipio.csv",
+   "Fuente": "Generalitat Valenciana registro turismo (CKAN)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Municipio (495)",
+   "Frec.": "M",
+   "Periodo": "2010–2026-10",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_gva, r1a_run"
+  },
+  {
+   "Fichero": "gva_padron_extranjeros_municipio.csv",
+   "Fuente": "IVE padrón (CKAN, distritos/municipio)",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Municipio (543)",
+   "Frec.": "A",
+   "Periodo": "2005–2022",
+   "Método": "API",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_gva"
+  },
+  {
+   "Fichero": "ine_padron_valencia.csv / ine_padron_vlc_nacionalidad.csv",
+   "Fuente": "INE padrón València",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "Municipio (València)",
+   "Frec.": "A",
+   "Periodo": "1996–2026-07 / 1998–2022",
+   "Método": "API / PC-Axis",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_padron_valencia"
+  },
+  {
+   "Fichero": "ine_diccionario_municipios_2026.xlsx",
+   "Fuente": "INE diccionario de municipios",
+   "Descarga (UTC)": "—",
+   "Nivel": "—",
+   "Frec.": "—",
+   "Periodo": "2026",
+   "Método": "descarga",
+   "Validado": "—",
+   "Scripts (src/)": "build_dataset_v2"
+  },
+  {
+   "Fichero": "catastro_urbana_municipios.csv (+ .gz)",
+   "Fuente": "Catastro, Datos municipios (Urbano)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Municipio (7.610), prov.",
+   "Frec.": "A",
+   "Periodo": "2011-12–2025-12",
+   "Método": "descarga",
+   "Validado": "no consta",
+   "Scripts (src/)": "build_dataset_v2, k4b_run"
+  },
+  {
+   "Fichero": "v2_eventos_politica.csv",
+   "Fuente": "BOE / boletines (41 eventos)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "CCAA, prov., municipio",
+   "Frec.": "evento",
+   "Periodo": "2013-06–2026-07",
+   "Método": "manual",
+   "Validado": "no consta",
+   "Scripts (src/)": "build_dataset_v2, build_eventos"
+  },
+  {
+   "Fichero": "v2_zonas_tensionadas.csv",
+   "Fuente": "BOE/CCAA (318 declaraciones)",
+   "Descarga (UTC)": "2026-10-10",
+   "Nivel": "Municipio",
+   "Frec.": "evento",
+   "Periodo": "2024-03–2026-07",
+   "Método": "manual",
+   "Validado": "no consta",
+   "Scripts (src/)": "build_dataset_v2, build_eventos"
+  },
+  {
+   "Fichero": "pdf/notariado_cgn_extranjeros_semestral.csv",
+   "Fuente": "Consejo General del Notariado (CIEN, XLSX)",
+   "Descarga (UTC)": "—",
+   "Nivel": "Nac (categoría extranjero)",
+   "Frec.": "S",
+   "Periodo": "2007S1–2025S2",
+   "Método": "PDF/XLSX extraído",
+   "Validado": "sí (validacion)",
+   "Scripts (src/)": "extract_notariado"
+  },
+  {
+   "Fichero": "pdf/notariado_cv_prov_trimestral.csv",
+   "Fuente": "Notariado (PDF, CV)",
+   "Descarga (UTC)": "—",
+   "Nivel": "Provincia (solo CV)",
+   "Frec.": "T",
+   "Periodo": "2018Q1–2025Q4",
+   "Método": "PDF extraído",
+   "Validado": "sí",
+   "Scripts (src/)": "extract_notariado"
+  },
+  {
+   "Fichero": "pdf/notariado_cv_municipios_anual.csv",
+   "Fuente": "Notariado (PDF, CV)",
+   "Descarga (UTC)": "—",
+   "Nivel": "Municipio (solo CV)",
+   "Frec.": "A",
+   "Periodo": "2021–2025",
+   "Método": "PDF extraído",
+   "Validado": "sí",
+   "Scripts (src/)": "extract_notariado"
+  },
+  {
+   "Fichero": "pdf/notariado_cv_actos_mensual.csv",
+   "Fuente": "Notariado (PDF, CV)",
+   "Descarga (UTC)": "—",
+   "Nivel": "CV",
+   "Frec.": "M",
+   "Periodo": "2019-01–2026-03",
+   "Método": "PDF extraído",
+   "Validado": "sí",
+   "Scripts (src/)": "extract_notariado"
+  },
+  {
+   "Fichero": "pdf/registradores_opendata_anual.csv",
+   "Fuente": "Colegio de Registradores (OpenData)",
+   "Descarga (UTC)": "—",
+   "Nivel": "Nac",
+   "Frec.": "A",
+   "Periodo": "2007–2025",
+   "Método": "CKAN/PDF",
+   "Validado": "sí (validacion)",
+   "Scripts (src/)": "extract_registradores"
+  },
+  {
+   "Fichero": "pdf/registradores_opendata_compraventas.csv",
+   "Fuente": "Registradores (ventanas)",
+   "Descarga (UTC)": "—",
+   "Nivel": "nivel no verificado",
+   "Frec.": "T",
+   "Periodo": "2007Q1–2026Q1",
+   "Método": "CKAN",
+   "Validado": "sí",
+   "Scripts (src/)": "extract_registradores"
+  },
+  {
+   "Fichero": "pdf/registradores_eri_anuario.csv",
+   "Fuente": "Registradores, Anuario ERI",
+   "Descarga (UTC)": "—",
+   "Nivel": "Nac (% extranjeros)",
+   "Frec.": "A",
+   "Periodo": "2016–2025",
+   "Método": "PDF extraído",
+   "Validado": "sí",
+   "Scripts (src/)": "extract_registradores"
+  },
+  {
+   "Fichero": "pdf/serpavi_esp_agregado.csv / serpavi_ccaa.csv / serpavi_provincias.csv",
+   "Fuente": "MIVAU-SERPAVI (AEAT IRPF), XLSX",
+   "Descarga (UTC)": "—",
+   "Nivel": "Nac, CCAA, prov.",
+   "Frec.": "A",
+   "Periodo": "2011–2024",
+   "Método": "XLSX extraído",
+   "Validado": "sí (validacion)",
+   "Scripts (src/)": "extract_serpavi"
+  },
+  {
+   "Fichero": "pdf/serpavi_municipios_46.csv / serpavi_v2_municipios.csv (+ .gz)",
+   "Fuente": "SERPAVI",
+   "Descarga (UTC)": "—",
+   "Nivel": "Municipio (46 / 32.402 series)",
+   "Frec.": "A",
+   "Periodo": "2011–2024",
+   "Método": "XLSX extraído",
+   "Validado": "sí / no consta",
+   "Scripts (src/)": "extract_serpavi, extract_serpavi_v2"
+  },
+  {
+   "Fichero": "pdf/serpavi_valencia_distritos / secciones.csv",
+   "Fuente": "SERPAVI",
+   "Descarga (UTC)": "—",
+   "Nivel": "Distrito / sección (València)",
+   "Frec.": "A",
+   "Periodo": "2011–2024",
+   "Método": "XLSX extraído",
+   "Validado": "sí",
+   "Scripts (src/)": "extract_serpavi_v2"
+  },
+  {
+   "Fichero": "v2_orig/ (catastro, mivau), gva_orig/ (padrón distritos 2005–2022 zip; VUT histórico 2025; vut_lista_actual)",
+   "Fuente": "Originales sin procesar",
+   "Descarga (UTC)": "—",
+   "Nivel": "—",
+   "Frec.": "—",
+   "Periodo": "—",
+   "Método": "—",
+   "Validado": "—",
+   "Scripts (src/)": "solo entrada"
+  },
+  {
+   "Fichero": "mivau_xls/ (11 XLS: 32100500, 32101000, 33100500, 34010110, 340101d0/i0/j0/k0, 34010210, 35101000, 35103500)",
+   "Fuente": "MIVAU Boletín",
+   "Descarga (UTC)": "2026-10-09",
+   "Nivel": "—",
+   "Frec.": "—",
+   "Periodo": "—",
+   "Método": "origen de los CSV anteriores",
+   "Validado": "—",
+   "Scripts (src/)": "fetch_mivau"
+  },
+  {
+   "Fichero": "ine_padron_pcaxis/ (51 ficheros PC-Axis 1998–2019; 00046004/5 y 00046002/3)",
+   "Fuente": "INE padrón (PC-Axis)",
+   "Descarga (UTC)": "—",
+   "Nivel": "Municipio/València (alcance no verificado)",
+   "Frec.": "A",
+   "Periodo": "1998–2019",
+   "Método": "PC-Axis",
+   "Validado": "no consta",
+   "Scripts (src/)": "fetch_padron_valencia"
+  },
+  {
+   "Carpeta": "v3/ (23)",
+   "Contenido principal": "airbnb_insideairbnb_agregados (2025-12–2026-09, anuncios activos); hut_registro_turismo_cat (Catalunya, snapshot 2026-10); incasol_fianzas_municipio (138.315 filas, 2007–2026-01, por banda); eff_tenencia_edad (BdE EFF, 2002–2022); ine_ecv_tenencia_edad (2004–2025); eurostat_emancipacion (2004–2025); ine_v3_censo2021 (municipio y sección, 2021); ine_v3_vut_municipio_pct (2020-08–2026-05); ine_v3_vut_seccion (145.101 filas, 2021-02–2026-05); ine_v3_gis_seccion (ADRH/censo, 2019–2025); serpavi_distritos/secciones_nacional (2011–2024); madrid_alquiler_cp (2023–2024, origen no verificado); zonas_tensionadas_v3 (BOE/CCAA); eventos_v3 (8 eventos); cataluna_contencion_rentas_v3 (2020-09–2024-10)",
+   "Fuente": "Mixta: INE, BdE, Eurostat, Incasòl (Socrata), HUT Catalunya, Inside Airbnb, BOE",
+   "Periodo": "—",
+   "Scripts": "k4b_run, l1_verifica, m0_run, r1a_run, fetch_*_v3"
+  },
+  {
+   "Carpeta": "v4/ (6)",
+   "Contenido principal": "catastro_solares_municipios (114.065 filas, 2012–2026, municipio); ine_v4_t50256, t50272, t59523, t59529 (INE Tempus); medidas_programas",
+   "Fuente": "Catastro, INE",
+   "Periodo": "2006–2026",
+   "Scripts": "m3_fetch, m3_run, l1_verifica"
+  },
+  {
+   "Carpeta": "v5/ (57)",
+   "Contenido principal": "Tablas CA (ca_*: BdE be0418, ECB, Eurostat demo/ilc), cb_* (AEAT IRPF 2019–2024 y IRPFviv 2024; CGPJ lanzamientos 2013–2025 y series TSJ 1T2026; INE ECV t9997; t59953), cc_* (BOE legislación 1992–2026; Eurostat ilc_lvho07b/c, lvho28), gva_fianzas_2020–2022, a4_mbc_rd1020 y d3_referencias",
+   "Fuente": "Mixta",
+   "Periodo": "Variable",
+   "Scripts": "ca_run, cb_run, cc_run, d3"
+  },
+  {
+   "Carpeta": "v5_1/ (2)",
+   "Contenido principal": "ine_t2_t6154.csv (ETDP 6154, transmisiones por título); t1/",
+   "Fuente": "INE",
+   "Periodo": "—",
+   "Scripts": "T1/T2"
+  },
+  {
+   "Carpeta": "v3_orig/ (10)",
+   "Contenido principal": "Originales (C2021 indicadores, censo API, Eurostat json, ine_t39366, ine_t59525, madrid_alquiler_cp_1934258, vut_seccion, GIS)",
+   "Fuente": "—",
+   "Periodo": "—",
+   "Scripts": "—"
+  },
+  {
+   "Carpeta": "vlc_fuente/ (1)",
+   "Contenido principal": "precio_vivienda-cas.csv (fuente de vlc_precio_vivienda_libre)",
+   "Fuente": "Ajuntament València",
+   "Periodo": "2021–2022",
+   "Scripts": "fetch_valencia"
+  }
+ ],
+ "paneles_procesados": [
+  {
+   "Fichero": "data/processed/nacional_q.csv",
+   "Dimensiones": "127 × 195 (T)",
+   "Periodo": "1995Q1–2026Q3",
+   "Columnas (resumen)": "ipv, ipv_nueva/usada, ipv15, p_tasado, p_bde, hpi_eurostat, ocupados(_sa), renta_hog(_real), deflactor, ipc_alquiler(_yoy), credito_nuevo/stock, permisos, costes, prod_constr, visados, terminadas, compraventas(_sa), trans_total/extranjeros, pob_total/extranj, hogares_epa/ecp, tipo_hip, euribor, tipo_bce, tipo_hip_real, inflacion_deflactor, inmig_anual, registradores_*, notariado_cgn_extranj, serpavi",
+   "% NaN relevantes": "ipv 39; hpi_eurostat 35; visados 43; terminadas 42; compraventas 39; prod_constr 32; credito 26; ocupados 23; renta_hog 13; resto ≤1"
+  },
+  {
+   "Fichero": "data/processed/nacional_a.csv",
+   "Dimensiones": "28 × 44 (A)",
+   "Periodo": "1998–2025",
+   "Columnas (resumen)": "ipv, ocupados, pob_extranj, hogares_epa, terminadas, visados, inmig_anual_eurostat, inmig_anual, quiebres 2021, ln_/d_ln_",
+   "% NaN relevantes": "inmig_anual 86; visados 43; terminadas 36; ipv 32"
+  },
+  {
+   "Fichero": "data/processed/panel_ccaa_q.csv",
+   "Dimensiones": "2.142 × 78 (17 CCAA × 126 T)",
+   "Periodo": "1995Q1–2026Q2",
+   "Columnas (resumen)": "ipv(_nueva/_usada), p_tasado, ocupados, compraventas, trans_total/extranjeros, visados, terminadas, ipc_alquiler, pob_total/extranj/espanola (+_metodo, _interp), epa_pob_total, ln_/d_/d4_",
+   "% NaN relevantes": "ipv 38; compraventas 38; trans_extranjeros 38; visados 43; terminadas 41; pob_* 26 (sobre el total); ocupados 22"
+  },
+  {
+   "Fichero": "data/processed/panel_ccaa_a.csv",
+   "Dimensiones": "408 × 104 (17 × 24)",
+   "Periodo": "2002–2025",
+   "Columnas (resumen)": "pob_* por origen (total, extranj., española, continentes, UE), ipv, p_tasado, ocupados, compraventas, trans, visados, terminadas, ipc_alquiler, serpavi_vc_mediana, notariado_cgn_extranj, registradores_extranj_pct, *_metodo, *_interp",
+   "% NaN relevantes": "ipv 21; visados 33; terminadas 25; serpavi 47; registradores_extranj_pct 58"
+  },
+  {
+   "Fichero": "data/processed/panel_ccaa_nacionalidad.csv",
+   "Dimensiones": "5.610 × 9 (T, CCAA × nacionalidad)",
+   "Periodo": "2002Q1–2026Q3",
+   "Columnas (resumen)": "inmig_flujo, pob_stock, tipo_registro, serie_ine",
+   "% NaN relevantes": "inmig_flujo 87; pob_stock 13"
+  },
+  {
+   "Fichero": "data/processed/valencia.csv",
+   "Dimensiones": "3.610 × 10 (formato largo: territorio, variable, valor, origen, rol, validado, metodo, interp)",
+   "Periodo": "1995Q1–2026Q2",
+   "Columnas (resumen)": "23 territorios",
+   "% NaN relevantes": "sin NaN"
+  },
+  {
+   "Fichero": "data/processed/validacion_gva.csv",
+   "Dimensiones": "12 × 8 (controles)",
+   "Periodo": "—",
+   "Columnas (resumen)": "bloque, check, error_max",
+   "% NaN relevantes": "error_max 42% (esperado)"
+  },
+  {
+   "Fichero": "data/processed/v2/train/nacional_q_v2.csv",
+   "Dimensiones": "118 × 239 (T)",
+   "Periodo": "1995Q1–2024Q2",
+   "Columnas (resumen)": "versión v2 de nacional_q",
+   "% NaN relevantes": "ipv 41; visados 46; terminadas 44"
+  },
+  {
+   "Fichero": "data/processed/v2/train/panel_prov_q.csv",
+   "Dimensiones": "4.410 × 182 (49 cód. prov. × T)",
+   "Periodo": "2002Q1–2024Q2",
+   "Columnas (resumen)": "p_tasado(_suelo), ipc_alquiler, compraventas_*, hipotecas, iniciadas, terminadas, pob, paro, etc. (+_metodo/_interp)",
+   "% NaN relevantes": "p_tasado 1; p_suelo 13; compraventas 22"
+  },
+  {
+   "Fichero": "data/processed/v2/train/panel_prov_a.csv",
+   "Dimensiones": "1.078 × 182 (49 cód. × A)",
+   "Periodo": "2002–2023",
+   "Columnas (resumen)": "p_tasado, p_suelo, ipc_alquiler, ocupados, parados, compraventas_*, hipotecas_*, iniciadas/terminadas_libres, protegida, pob_*, vut_*",
+   "% NaN relevantes": "zona_tensionada_share 100; iniciadas 39; terminadas 30; protegida 30; compraventas 23; p_suelo 14"
+  },
+  {
+   "Fichero": "data/processed/v2/train/panel_muni_a.csv",
+   "Dimensiones": "71.720 × 38 (3.258 municipios × A)",
+   "Periodo": "2002–2023",
+   "Columnas (resumen)": "serpavi_mediana_vc/vu, serpavi_n_*, p_tasado, trans_total, vut_viviendas, uu_residenciales, ipva_*, zona_tensionada, metodo_*, ln_*",
+   "% NaN relevantes": "zona_tensionada 100; ipva 88–89; p_tasado 93; trans 92; serpavi_vc 65"
+  },
+  {
+   "Fichero": "data/processed/v2/train/panel_ue_a.csv",
+   "Dimensiones": "682 × 77 (31 países × A)",
+   "Periodo": "2002–2023",
+   "Columnas (resumen)": "hpi (BIS, OCDE), precio/ingreso, precio/alquiler, alquiler HICP, permisos, inmig_por_1000",
+   "% NaN relevantes": "hpi 25; hpi_oecd 22; precio_ingreso 22"
+  },
+  {
+   "Fichero": "data/processed/v2/train/panel_ue_q.csv, eventos_q.csv, nacional_q_v2",
+   "Dimensiones": "—",
+   "Periodo": "—",
+   "Columnas (resumen)": "eventos_q: 3.150 filas (trimestre × evento, 2002Q1–2024Q2, dummy_vigente)",
+   "% NaN relevantes": "codigos_ine_* 57 (ámbito nacional)"
+  },
+  {
+   "Fichero": "data/processed/v3/sellado_v3.json",
+   "Dimensiones": "Metadatos de partición v3 (fracción 0,2; semilla 20261010; última oleada 2026M05)",
+   "Periodo": "—",
+   "Columnas (resumen)": "—",
+   "% NaN relevantes": "—"
+  },
+  {
+   "Fichero": "nacional_trim_desc.csv / nacional_anual_a23_desc.csv",
+   "Dimensiones": "nacional, desc.",
+   "Periodo": "—",
+   "Columnas": "—",
+   "% NaN": "— (no leídos en esta pasada)"
+  },
+  {
+   "Fichero": "ccaa_ipv_anual_desc.csv, ccaa_seguridad_juridica_transversal_desc.csv",
+   "Dimensiones": "CCAA, desc.",
+   "Periodo": "—",
+   "Columnas": "—",
+   "% NaN": "— (no leídos)"
+  },
+  {
+   "Fichero": "prov_compra_anual_train.csv.gz",
+   "Dimensiones": "410 × 27 (41 prov. × 10 A)",
+   "Periodo": "2015–2024",
+   "Columnas": "ln_pm2_tasado, ln_pm2_registradores, ln_cv_etdp, ln_cv_registradores, share_nueva_etdp, ln_hip_viv_num, share_contado_proxy, share_compra_ext_res_pct, no_res_share_R1A_pct, ln_pob, share_ext_pob, share_20_34, jefatura_proxy_pct, paro_tasa, ln_ocupados_miles, ln_pib_pc, ln_vut, ln_terminadas_libres, ln_iniciadas_libres, bajas_tasa_C_amplia_pct, ln_suelo_pm2_m50k, ln_llegada_total_ext",
+   "% NaN": "no_res_share_R1A 81; jefatura_proxy 60; ln_suelo 64; ln_vut 50; ln_llegada_total_ext 30"
+  },
+  {
+   "Fichero": "prov_alquiler_anual_train.csv.gz",
+   "Dimensiones": "369 × 13 (41 × 9)",
+   "Periodo": "2015–2023",
+   "Columnas": "ln_alq_m2_serpavi_vc, ln_alq_mes_serpavi_vc, ln_n_contratos_serpavi_vc, ln_ipc_alq_idx, d_ln_ipc_alq, ln_ratio_precio_alquiler, rentabilidad_bruta_pct, ln_vut, n_mun_tensionados, n_mun_topes_cat",
+   "% NaN": "ln_vut 56; d_ln_ipc 11; resto ≈7"
+  },
+  {
+   "Fichero": "prov_contratos_nuevos_anual_train.csv.gz",
+   "Dimensiones": "369 × 8",
+   "Periodo": "2015–2023",
+   "Columnas": "ln_fianza_media_gva_eur, ln_n_fianzas_gva, pct_fianzas_600_incasol, ln_n_fianzas_incasol, ln_ipva_nuevo_idx",
+   "% NaN": "69–97"
+  },
+  {
+   "Fichero": "prov_trim_compra_train.csv.gz",
+   "Dimensiones": "1.640 × 12 (41 × 4 T × 10 A)",
+   "Periodo": "2015–2024",
+   "Columnas": "ln_pm2_tasado, ln_cv_etdp, ln_ipc_alq_idx, ln_hip_viv_num (+ niveles)",
+   "% NaN": "ninguna"
+  },
+  {
+   "Fichero": "mun_compra_anual_train.csv.gz",
+   "Dimensiones": "20.530 × 4",
+   "Periodo": "2015–2024",
+   "Columnas": "ln_pm2_tasado_mun",
+   "% NaN": "91"
+  },
+  {
+   "Fichero": "mun_alquiler_anual_train.csv.gz",
+   "Dimensiones": "18.181 × 6",
+   "Periodo": "2015–2023",
+   "Columnas": "ln_alq_m2_serpavi_mun, tensionada_mun, tope_cat_mun",
+   "% NaN": "19"
+  },
+  {
+   "Fichero": "mun_contratos_anual_train.csv.gz",
+   "Dimensiones": "18.181 × 7",
+   "Periodo": "2015–2023",
+   "Columnas": "ln_fianza_media_gva_mun, ln_n_fianzas_gva/incasol, pct_fianzas_600_incasol",
+   "% NaN": "58–95"
+  },
+  {
+   "Fichero": "dis_alquiler_anual_train.csv.gz",
+   "Dimensiones": "40.673 × 7 (distrito, 41 prov.)",
+   "Periodo": "2011–2023",
+   "Columnas": "ln_alq_m2_serpavi_dis, p25/p75, ln_vut_plazas_dis",
+   "% NaN": "serpavi 32; vut 67"
+  },
+  {
+   "Fichero": "prov_estatico.csv, mun_estatico.csv, potencia.csv, cobertura_train.json, hechos.json",
+   "Dimensiones": "estáticos / metadatos",
+   "Periodo": "—",
+   "Columnas": "—",
+   "% NaN": "—"
+  }
+ ],
+ "cobertura_variable_nivel": [
+  {
+   "Variable": "Precio IPV (INE)",
+   "Nacional": "T 2007Q1–2026Q2",
+   "CCAA": "T 2007Q1–2026Q2 (17)",
+   "Provincia": "—",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Valor tasado MIVAU (p_tasado)",
+   "Nacional": "T 1995Q1–2026Q2",
+   "CCAA": "T 1995Q1–2026Q2",
+   "Provincia": "A 2002–2023 (panel_prov_a)",
+   "Municipio": "T 2005–2026T1 (309 series)",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Precio BdE (p_bde)",
+   "Nacional": "T 1995Q1–2026Q2",
+   "CCAA": "—",
+   "Provincia": "—",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Notariado (CGN)",
+   "Nacional": "S 2007S1–2025S2 (extranj.)",
+   "CCAA": "— (CV: M 2019–2026-03)",
+   "Provincia": "CV: T 2018–2025T4",
+   "Municipio": "CV: A 2021–2025",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Registradores (compraventas, anual)",
+   "Nacional": "A 2007–2025",
+   "CCAA": "—",
+   "Provincia": "—",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Registradores (ventanas trimestrales)",
+   "Nacional": "T 2007Q1–2026Q1 (nivel no verificado)",
+   "CCAA": "—",
+   "Provincia": "—",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Registradores (ERI, % extranjeros)",
+   "Nacional": "A 2016–2025",
+   "CCAA": "—",
+   "Provincia": "—",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "IPC alquiler",
+   "Nacional": "M 2002-01–2026-08; T 2002Q1–2026Q2",
+   "CCAA": "T 2002Q1–2026Q2 (17)",
+   "Provincia": "M 2002–2026-08 (ine_v2)",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "SERPAVI (alquiler, €/m²)",
+   "Nacional": "A 2011–2024",
+   "CCAA": "A 2011–2024",
+   "Provincia": "A 2011–2024",
+   "Municipio": "A 2011–2024 (32.402 series; 46 mun. en CSV aparte)",
+   "Distrito / Sección": "Distritos A 2011–2024 (València y nacional); secciones A 2011–2024 (nacional, 398k filas)"
+  },
+  {
+   "Variable": "IPVA (índice alquiler INE)",
+   "Nacional": "A 2011–2024",
+   "CCAA": "A 2011–2024",
+   "Provincia": "A 2011–2024",
+   "Municipio": "A 2011–2024 (1.530)",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Fianzas de alquiler",
+   "Nacional": "—",
+   "CCAA": "CAT (Incasòl, 2007–2026-01); CV (GVA, 2020–2026); MAD, EUS, BAL no disponible",
+   "Provincia": "CV/CAT derivado A 2015–2023",
+   "Municipio": "CV/CAT A 2007–2026 (Incasòl por banda)",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Empleo (ocupados)",
+   "Nacional": "T 2002Q1–2026Q1 (EPA); desest. (_sa)",
+   "CCAA": "T 2002Q1–2026Q1 (17)",
+   "Provincia": "T 2002Q1–2026Q1 (106, ine_v2_epa)",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Paro (parados)",
+   "Nacional": "nac: derivable de EPA (no verificado en el raw); T",
+   "CCAA": "CCAA: no verificado",
+   "Provincia": "A 2002–2023 (panel_prov_a, parados)",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Renta de hogares",
+   "Nacional": "T 1999Q1–2026Q1 (Eurostat); INE renta disponible T 1999Q1–2026Q1",
+   "CCAA": "—",
+   "Provincia": "—",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "PIB",
+   "Nacional": "T 1995Q1–2026Q1 (INE CNT corr./vol.)",
+   "CCAA": "A 2000–2025 (ine_v2_cre, 17 CCAA)",
+   "Provincia": "A 2000–2025 (ine_v2_cre, 53 cód.)",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Población",
+   "Nacional": "T 2002–2025 (ECP, 2021+ trimestral; 1 ene/jul antes); A 1971–2026",
+   "CCAA": "T 2002–2025 (ECP 77023, 1 ene; interp. T2–T4); EPA T 2002–2026T1",
+   "Provincia": "A 2002–2026-01 (ine_v2_padron_prov_pais)",
+   "Municipio": "Valencia A 1996–2026 (ine_padron_valencia)",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Llegada neta / inmigración",
+   "Nacional": "A 2021–2024 (EMCR 69687); A 1998–2024 (Eurostat); S 2023S1–2026S1 (nacionalidad)",
+   "CCAA": "S 2023S1–2026S1 (ccaa × nacionalidad)",
+   "Provincia": "A 2008–2022 (ine_v2_migraciones, 3.922 series)",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Extranjeros (stock)",
+   "Nacional": "T 2002–2025 (ECP701, interp. desde 2021)",
+   "CCAA": "T 2002–2025 (ECP701 por CCAA, 17)",
+   "Provincia": "A 2002–2026-01 (padrón por país)",
+   "Municipio": "A 2005–2022 (GVA, 543 mun.); València A 1998–2022",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Hogares",
+   "Nacional": "T 2002Q1–2026Q1 (EPA; serie principal); T 2021Q1–2026Q3 (ECP 60131, solo nacional, sin retropolación)",
+   "CCAA": "— (no trimestral CCAA)",
+   "Provincia": "T/A 2021–2026 (ine_v2_hogares_prov)",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Tipo hipotecario",
+   "Nacional": "M 2003-01–2026-08 (BCE MIR); M 1973–2026-09 (BdE); T mediana (agregado)",
+   "CCAA": "—",
+   "Provincia": "—",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Nuevas hipotecas / crédito",
+   "Nacional": "M 2003-01–2026-08 (crédito nuevo y stock BCE); M 1992-12–2026-08 (BdE finalidad, 14 series); M 2003–2026-08 (BdE tipos)",
+   "CCAA": "—",
+   "Provincia": "M 2003–2026-07 (ine_v2_hipotecas, constituidas)",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Compraventas (total)",
+   "Nacional": "M 2007-01–2026-07 (ETDP); T agregado",
+   "CCAA": "M 2007-01–2026-07 (17 CCAA, ETDP 6150)",
+   "Provincia": "M 2007–2026-07 (ine_v2_etdp, 265 series)",
+   "Municipio": "— (Notariado/MIVAU municipal, no ETDP)",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Compraventas extranjeros",
+   "Nacional": "T 2007Q1–2026Q1 (MIVAU tx extranjeros); Notariado S 2007–2025",
+   "CCAA": "T 2007Q1–2026Q2 (17)",
+   "Provincia": "—",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Compraventas al contado",
+   "Nacional": "— (no hay serie nativa; proxy `share_contado_proxy` en panel prov. anual, NaN 3%)",
+   "CCAA": "—",
+   "Provincia": "proxy A 2015–2024",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Terminadas (PROXY libres)",
+   "Nacional": "M 2008-01–2026-06 (fin_obra); T 2008Q1–2026Q2",
+   "CCAA": "T 2008Q1–2026Q2 (17)",
+   "Provincia": "M/A 1991–2026-06 (iniciadas_terminadas_prov)",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Iniciadas (PROXY, visados)",
+   "Nacional": "M 2008-01–2026-06 (visados); T 2008Q1–2026Q2",
+   "CCAA": "T 2008Q1–2026Q2 (17)",
+   "Provincia": "M/A 1991–2026-06 (iniciadas_terminadas_prov)",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Licencias de obra (tabla MIVAU)",
+   "Nacional": "— (fallido; sin serie nacional reciente)",
+   "CCAA": "Endpoint identificado (1002NN30, hasta 2022); no descargado",
+   "Provincia": "— (endpoint provincial, sin dato)",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Costes de construcción",
+   "Nacional": "T 1980Q1–2026Q1 (Eurostat sts_copi_q, 2021=100); sin ICC INE",
+   "CCAA": "—",
+   "Provincia": "—",
+   "Municipio": "—",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "VUT (viviendas turísticas)",
+   "Nacional": "M 2020-08–2026-05 (INE experimental)",
+   "CCAA": "M 2020-08–2026-05 (17)",
+   "Provincia": "M 2020-08–2026-05 (ine_v2_vut, 8.310 series); GVA registro M 2010–2026-10",
+   "Municipio": "Municipio: INE 2020-08–2026-05 (8.207 filas); GVA 2010–2026 (495 mun.); HUT Catalunya snapshot 2026-10",
+   "Distrito / Sección": "Sección: INE 2021-02–2026-05 (145k filas); distrito València VUT plazas (SERPAVI-dis)"
+  },
+  {
+   "Variable": "Eventos regulatorios",
+   "Nacional": "v2_eventos_politica (41, 2013–2026-07, ámbito nac./CCAA/prov.)",
+   "CCAA": "Id. (CCAA en v2_eventos)",
+   "Provincia": "Codigos INE provincia (12 códigos en eventos)",
+   "Municipio": "v2_zonas_tensionadas (318 declaraciones, 2024-03–2026-07; municipio)",
+   "Distrito / Sección": "—"
+  },
+  {
+   "Variable": "Catastro",
+   "Nacional": "A 2011-12–2025-12 (agregado)",
+   "CCAA": "A 2011–2025 (por CCAA, derivable)",
+   "Provincia": "A 2011–2025 (derivable, catastro_urbana)",
+   "Municipio": "A 2011–2025 (7.610 cód.); solares A 2012–2026 (v4)",
+   "Distrito / Sección": "—"
+  }
+ ],
+ "panel_ccaa_trimestral_2007": {
+  "fichero": "data/processed/panel_ccaa_q.csv",
+  "unidades": 17,
+  "periodo": "2007Q1-2026Q2",
+  "completas": [
+   "ipv",
+   "ipv_nueva",
+   "ipv_usada",
+   "ocupados",
+   "compraventas",
+   "trans_extranjeros",
+   "ipc_alquiler",
+   "epa_pob_total"
+  ],
+  "huecos_menores": {
+   "p_tasado": "1%",
+   "trans_total": "2% (hasta 2026Q1)",
+   "terminadas": "5% (desde 2008)",
+   "visados": "8% (desde 2008)"
+  },
+  "interpoladas": {
+   "pob_total": "loglineal desde dato anual; hasta 2025Q1",
+   "pob_extranj": "ídem"
+  },
+  "no_existen_trimestral_ccaa": [
+   "PIB",
+   "renta",
+   "hogares",
+   "tipo hipotecario (solo nacional)",
+   "crédito/hipotecas (provincial mensual en raw, sin agregar)",
+   "paro (no integrado)",
+   "costes",
+   "licencias",
+   "SERPAVI/IPVA (anual)",
+   "compraventas al contado",
+   "VUT antes de 2020",
+   "llegada neta (semestral desde 2023)",
+   "eventos regulatorios como dummy CCAA"
+  ]
+ },
+ "panel_provincial_anual": {
+  "fichero": "data/processed/v2/train/panel_prov_a.csv",
+  "provincias": "49 (excluye las 3 selladas de v2: 11, 16, 45)",
+  "periodo": "2002-2023",
+  "paneles_v6_M0": "41 provincias (excluye las 11 selladas de v6), 2015-2024"
+ },
+ "modelos": [
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f2 P1 DOLS ±2",
+   "Pregunta": "Ecuación de largo plazo del precio real",
+   "Mercado": "precio (IPV real)",
+   "Nivel": "nacional",
+   "Muestra y N": "2008T1-2025T4, N=72",
+   "Variable dependiente y transformación": "ln IPV real (nivel)",
+   "Regresores principales y retardos": "ln ocupados; tipo hipotecario real; ln permisos (ret. 4); ln costes real; dummies trimestrales; adelantos/retardos DOLS ±2",
+   "Estimador": "DOLS",
+   "EE": "HAC",
+   "Coeficientes principales (p bruto / ajustado)": "ln ocupados 1,482 (EE 0,330), p<0,001, Holm <0,001; ln costes −0,660 (0,251), p 0,009, Holm 0,052; tipo 0,002 p 0,782; permisos_l4 0,032 p 0,272",
+   "Diagnósticos": "n/t",
+   "Fuera de muestra (RMSE; base; DM)": "n/t",
+   "Estado": "matizado (cambia el signo del empleo según medida; «no concluyente»)",
+   "Ruta": "output/informe.md §3.1; output/f2/*.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f2 P1 ECM",
+   "Pregunta": "Corrección de error de corto plazo",
+   "Mercado": "precio",
+   "Nivel": "nacional",
+   "Muestra y N": "2008-2025, N=72",
+   "Variable dependiente y transformación": "Δ ln IPV real",
+   "Regresores principales y retardos": "ect_l1; Δ ln ocupados; Δ ln costes; Δ ln renta; Δ ln IPV_l1; estacionales",
+   "Estimador": "ECM (preferido por R² aj.)",
+   "EE": "HAC",
+   "Coeficientes principales (p bruto / ajustado)": "ect_l1 −0,097 (0,031), p 0,002; Δ ocupados 0,474 (0,174), p 0,006; Δ costes −0,105 (0,054), p 0,054",
+   "Diagnósticos": "Chow, Bai-Perron, CUSUM (output/f2/chow.md, bai_perron.md, cusum.png); estabilidad del ECT",
+   "Fuera de muestra (RMSE; base; DM)": "Preferido: RMSE 0,01317; DM vs AR4+q 1,076, p 0,290 (oos_dm.md). Historial dice DM p 0,509: **discrepancia a revisar**",
+   "Estado": "matizado (línea base; no mejora AR(4))",
+   "Ruta": "output/f2/ecm_preferido.md; oos_dm.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f2 cointegración",
+   "Pregunta": "Cointegración (EG, Johansen, ARDL bounds)",
+   "Mercado": "precio",
+   "Nivel": "nacional",
+   "Muestra y N": "2008-2025",
+   "Variable dependiente y transformación": "niveles en log",
+   "Regresores principales y retardos": "sistemas definidos en cointegracion.md",
+   "Estimador": "EG, Johansen (traza/maxeig), ARDL bounds",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "n/t (decisión en output/f2/cointegracion.md)",
+   "Diagnósticos": "Johansen y ARDL con rechazos listados",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "matizado",
+   "Ruta": "output/f2/cointegracion.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f2 DOLS subperiodos",
+   "Pregunta": "Estabilidad del DOLS por subperiodo",
+   "Mercado": "precio",
+   "Nivel": "nacional",
+   "Muestra y N": "subperiodos",
+   "Variable dependiente y transformación": "ln IPV real",
+   "Regresores principales y retardos": "ln ocupados, tipo hip., ln permisos_l4, ln costes",
+   "Estimador": "DOLS vs EG",
+   "EE": "HAC",
+   "Coeficientes principales (p bruto / ajustado)": "ocupados 1,298 (0,419) DOLS / 0,866 (0,329) EG (2008-2025)",
+   "Diagnósticos": "n/t",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "matizado",
+   "Ruta": "output/f2/dols_subperiodos.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f3 P2 panel IV",
+   "Pregunta": "Inmigración → precio y alquiler (shift-share)",
+   "Mercado": "alquiler stock y precio",
+   "Nivel": "CCAA (17)",
+   "Muestra y N": "N 306 (IPV), 386 (tasado), 198 (SERPAVI), 391 (IPC alq.)",
+   "Variable dependiente y transformación": "IPV; valor tasado; alquiler SERPAVI; IPC alquiler (Δ/nivel según fuente)",
+   "Regresores principales y retardos": "flujo o cuota de inmigración; FE CCAA y año",
+   "Estimador": "MCO y 2SLS shift-share",
+   "EE": "cluster CCAA (17)",
+   "Coeficientes principales (p bruto / ajustado)": "IPC alquiler MCO 0,534 (0,167), p WCB 0,004; 2SLS 0,437 (0,293), p WCB 0,119; IPV MCO −0,454 (0,503); 2SLS −1,615 (1,078), p WCB 0,210",
+   "Diagnósticos": "F 1ª etapa 10,6-54,4; Rotemberg, pretendencias, J de sobreidentificación (output/f3)",
+   "Fuera de muestra (RMSE; base; DM)": "n/t en esta pasada",
+   "Estado": "matizado (signo + en alquiler, C4; con población no se distingue de 0)",
+   "Ruta": "output/informe.md §4.1; output/f3/panel_principal.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f3 serie nacional",
+   "Pregunta": "Inmigración y precio nacional",
+   "Mercado": "alquiler, precio",
+   "Nivel": "nacional",
+   "Muestra y N": "serie trimestral/anual",
+   "Variable dependiente y transformación": "niveles y Δ",
+   "Regresores principales y retardos": "flujo y stock de inmigración; LP",
+   "Estimador": "proyecciones locales (LP); HAC",
+   "EE": "HAC",
+   "Coeficientes principales (p bruto / ajustado)": "n/t (output/f3/nacional_lp.md, nacional_anual.md)",
+   "Diagnósticos": "separabilidad, diagnósticos LP",
+   "Fuera de muestra (RMSE; base; DM)": "n/t",
+   "Estado": "matizado",
+   "Ruta": "output/f3/nacional_lp.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f4 P3 DOLS oferta",
+   "Pregunta": "Elasticidad de la oferta (iniciadas) al precio real",
+   "Mercado": "oferta (iniciadas libres)",
+   "Nivel": "nacional",
+   "Muestra y N": "2009T4-2025T4, N=63",
+   "Variable dependiente y transformación": "ln iniciadas (código visados)",
+   "Regresores principales y retardos": "precio real retardado (k=4); ±2 DOLS",
+   "Estimador": "DOLS ±2",
+   "EE": "HAC",
+   "Coeficientes principales (p bruto / ajustado)": "β 1,44 (0,21), IC95 [1,04; 1,85], p H0=0,45 <0,001; terminadas 4,26; permisos 3,11",
+   "Diagnósticos": "n/t",
+   "Fuera de muestra (RMSE; base; DM)": "n/t",
+   "Estado": "matizado (descriptivo)",
+   "Ruta": "output/informe.md §5.2; output/f4/dols_resultados.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f4 OLS / 2SLS oferta",
+   "Pregunta": "Mismo, por otros estimadores",
+   "Mercado": "oferta",
+   "Nivel": "nacional",
+   "Muestra y N": "2009T4-2025T4, N=63",
+   "Variable dependiente y transformación": "igual",
+   "Regresores principales y retardos": "igual; instrumento de renta",
+   "Estimador": "MCO estático; Δ4; 2SLS niveles",
+   "EE": "HAC",
+   "Coeficientes principales (p bruto / ajustado)": "MCO estático 1,34 (0,27); 2SLS 2,22 (0,66), IC95 [0,93; 3,52], p 0,007",
+   "Diagnósticos": "Johansen/EG/ARDL en f4/cointegracion.md",
+   "Fuera de muestra (RMSE; base; DM)": "n/t",
+   "Estado": "matizado",
+   "Ruta": "output/f4/ols_estatico.md; iv_resultados.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f4 déficit contable",
+   "Pregunta": "Déficit acumulado 2021-2025",
+   "Mercado": "vivienda (flujo)",
+   "Nivel": "nacional",
+   "Muestra y N": "2021-2025",
+   "Variable dependiente y transformación": "viviendas (hogares − terminadas)",
+   "Regresores principales y retardos": "contable",
+   "Estimador": "descomposición contable",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "866.100 (EPA corregida); 810.936 (ECP)",
+   "Diagnósticos": "contraste con BdE (output/f4/contraste_bde.md)",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "retirado en esa cifra (v5.1 sin bajas 700.934-757.257; con bajas 763.416)",
+   "Ruta": "output/f4/deficit_anual_principal.md; output/informe.md §5.1"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f5 P4 FE",
+   "Pregunta": "Δ ln IPV vs flujo y cuota de extranjeros",
+   "Mercado": "precio (IPV)",
+   "Nivel": "CCAA (17)",
+   "Muestra y N": "2009-2025, N=289",
+   "Variable dependiente y transformación": "Δ ln IPV",
+   "Regresores principales y retardos": "b1 Δ ln ocupados; b2 Δ cuota extranjeros (pp); b3 Δ ln pob. española; b4 terminadas/1000 hab (t-1)",
+   "Estimador": "FE CCAA + año",
+   "EE": "cluster CCAA; Driscoll-Kraay; wild bootstrap",
+   "Coeficientes principales (p bruto / ajustado)": "b2 0,0011 (0,0040), p cluster 0,777, p WCB 0,774; b3 2,170 (1,021), p 0,034; b4 0,0026 (0,0011), p 0,021",
+   "Diagnósticos": "Tendencias (output/f5/tabla_fe_tendencias.md), poolability",
+   "Fuera de muestra (RMSE; base; DM)": "n/t",
+   "Estado": "matizado (no concluyente en cuota)",
+   "Ruta": "output/f5/tabla_fe_principal.md; output/informe.md §6.1"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f5 CCE",
+   "Pregunta": "Mismo modelo con factores comunes",
+   "Mercado": "precio",
+   "Nivel": "CCAA (17)",
+   "Muestra y N": "N=289",
+   "Variable dependiente y transformación": "Δ ln IPV",
+   "Regresores principales y retardos": "b1-b4 como arriba",
+   "Estimador": "CCE-MG y CCE-P (Pesaran 2006)",
+   "EE": "Pesaran 2006",
+   "Coeficientes principales (p bruto / ajustado)": "CCE-MG b2 0,025 (0,014), p 0,072; CCE-P b2 0,022 (0,011), p 0,040 (sin ajuste; no sobrevive a corrección por búsqueda según revisión)",
+   "Diagnósticos": "CD de Pesaran: FE −2,54 (p 0,011); CCE-MG −0,80 (p 0,42); CCE-P −2,32 (p 0,021); CIPS (ver nota)",
+   "Fuera de muestra (RMSE; base; DM)": "n/t",
+   "Estado": "matizado (revisión_f5: el CD negativo es artefacto; CCE-MG no valida CCE)",
+   "Ruta": "output/f5/tabla_cce.md; cd_pesaran.md; docs/revision_f5.md §3.5-3.6"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f5 CIPS",
+   "Pregunta": "Raíz unitaria de panel (CIPS, Pesaran 2007) por CCAA",
+   "Mercado": "variables de panel",
+   "Nivel": "CCAA (17), N=17, T=18",
+   "Muestra y N": "2008-2025",
+   "Variable dependiente y transformación": "ln IPV, ln ocupados, cuota extranjera (niveles y 1ª dif.)",
+   "Regresores principales y retardos": "retardos 0 y 1",
+   "Estimador": "CIPS (test de raíz, no cointegración)",
+   "EE": "simulado",
+   "Coeficientes principales (p bruto / ajustado)": "ln IPV en 1ª dif. CIPS −3,293 (p sim 0,000); ln ocupados 1ª dif. −4,544 (0,000); cuota extranjera en nivel no rechaza",
+   "Diagnósticos": "n/a",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "matizado",
+   "Ruta": "output/f5/cips.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v1",
+   "id/rama": "f6 València",
+   "Pregunta": "Beta de Δ4 frente a comparadores (valor tasado)",
+   "Mercado": "compra (valor tasado)",
+   "Nivel": "municipio/provincia València",
+   "Muestra y N": "N≥40",
+   "Variable dependiente y transformación": "Δ4 ln valor tasado",
+   "Regresores principales y retardos": "comparadores",
+   "Estimador": "TWFE / beta por municipios",
+   "EE": "n/t",
+   "Coeficientes principales (p bruto / ajustado)": "n/t (output/f6/beta_todos.md; beta_valencia_vs_comparadores.md)",
+   "Diagnósticos": "Chow, Bai-Perron (f6)",
+   "Fuera de muestra (RMSE; base; DM)": "n/t",
+   "Estado": "matizado",
+   "Ruta": "output/f6/beta_todos.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v2",
+   "id/rama": "BA",
+   "Pregunta": "Crecimiento del alquiler provincial (H1 demográfica)",
+   "Mercado": "alquiler IPC",
+   "Nivel": "provincia (49)",
+   "Muestra y N": "2008T1-2024T2, N=3.185 (H1 trim.)",
+   "Variable dependiente y transformación": "Δ4 ln IPC alquiler",
+   "Regresores principales y retardos": "Δ4 ln pob 20-34; Δ4 ln pob extranjera; Δ4 ln ocupados",
+   "Estimador": "MCO FE provincia + trimestre",
+   "EE": "cluster provincia; WCB Webb 9.999",
+   "Coeficientes principales (p bruto / ajustado)": "pob 20-34 0,149 [0,046; 0,252], p bruto 0,008; pob extranjera −0,018 [−0,054; 0,017], p 0,300; ocupados −0,001, p 0,778. Holm-7 H1 = 1,0 (BS)",
+   "Diagnósticos": "Población interpolada (marcada)",
+   "Fuera de muestra (RMSE; base; DM)": "RMSE 0,01169 vs AR(4) 0,01244 (DM 0,46); vs ECM v1 0,01417",
+   "Estado": "matizado (EXPLORATORIO; H1 pasa por Holm 1,0 en BS)",
+   "Ruta": "output/v2/BA/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v2",
+   "id/rama": "BD",
+   "Pregunta": "Descomposición de crecimiento acumulado (alquiler y compra)",
+   "Mercado": "alquiler y precio real de compra",
+   "Nivel": "provincia (49)",
+   "Muestra y N": "N alquiler 3.185; compra 3.156",
+   "Variable dependiente y transformación": "Δ acumulado",
+   "Regresores principales y retardos": "familias de variables; coste de uso",
+   "Estimador": "MCO FE M1 y M2, contribuciones",
+   "EE": "IC por descomposición",
+   "Coeficientes principales (p bruto / ajustado)": "alquiler P3-P4 observado 5,66 [4,81; 6,58]; demografía 20-34 0,34 [−0,11; 0,85] (descriptivo)",
+   "Diagnósticos": "Sin contrastes",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "EXPLORATORIO (descriptivo)",
+   "Ruta": "output/v2/BD/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v2",
+   "id/rama": "BI (H3)",
+   "Pregunta": "Inmigración vs alquiler/compra (shift-share 2002)",
+   "Mercado": "alquiler y compra",
+   "Nivel": "provincia (49)",
+   "Muestra y N": "2009-2021, N=621",
+   "Variable dependiente y transformación": "alquiler IPC; valor tasado real",
+   "Regresores principales y retardos": "flujo/población de inmigración instrumentada",
+   "Estimador": "2SLS FE provincia + año",
+   "EE": "cluster provincia; WCB Webb 9.999",
+   "Coeficientes principales (p bruto / ajustado)": "alquiler 3,06 [1,14; 4,98]; compra −1,04 [−6,08; 4,00]; dif. 4,10 [−0,33; 8,52]; p IUT 0,029; Holm-7 H3 = 0,176 (BS)",
+   "Diagnósticos": "F 1ª etapa 14,4 en 49 prov. (3,5 en entrenamiento de v6); AR CI alquiler [1,35; 6,0]",
+   "Fuera de muestra (RMSE; base; DM)": "RMSE 0,00941 vs AR(4) 0,0107; DM 1,43",
+   "Estado": "matizado: «cambia la lectura» (MCO invierte el orden; 1ª etapa débil)",
+   "Ruta": "output/v2/BI/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v2",
+   "id/rama": "BM (H7)",
+   "Pregunta": "¿Algún modelo de ML/TVP supera AR(4) y ECM v1 a 4 trimestres?",
+   "Mercado": "alquiler (Δ4)",
+   "Nivel": "nacional y provincia",
+   "Muestra y N": "orígenes 2012T1-2023T2; A=38, B=2.254, C=2.209; 63 configuraciones",
+   "Variable dependiente y transformación": "ln precio/alquiler (Δ)",
+   "Regresores principales y retardos": "elastic net, post-lasso, RF, LightGBM, ARDL, ECM umbral, BVAR, TVP-VAR",
+   "Estimador": "validación en bloques con embargo (h=4)",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "mejor A: TVPVAR RMSE 0,0726 vs AR(4) 0,0699 (no supera); p BH vs AR(4) 0,76",
+   "Diagnósticos": "Embargo 4; BH por objetivo",
+   "Fuera de muestra (RMSE; base; DM)": "B LGBM 0,0124; C EN 0,0528 (base de comparación no especificada en el JSON)",
+   "Estado": "matizado (no supera la base; EXPLORATORIO)",
+   "Ruta": "output/v2/BM/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v2",
+   "id/rama": "BO (H4)",
+   "Pregunta": "Elasticidad de iniciadas libres al precio real; interacción con suelo",
+   "Mercado": "oferta (iniciadas libres)",
+   "Nivel": "provincia (47)",
+   "Muestra y N": "2005-2023, N=879",
+   "Variable dependiente y transformación": "ln iniciadas",
+   "Regresores principales y retardos": "precio real; precio × suelo",
+   "Estimador": "MCO FE provincia + año",
+   "EE": "cluster provincia; WCB Webb 9.999",
+   "Coeficientes principales (p bruto / ajustado)": "precio 0,794 [0,110; 1,479], p IUT 0,011 (uni); interacción −0,616 [−1,29; 0,06], p IUT 0,046; Holm-7 H4 = 0,232 (BS)",
+   "Diagnósticos": "Intersección-unión; robustez 2SLS",
+   "Fuera de muestra (RMSE; base; DM)": "P3 iniciadas/suelo: RMSE 0,0586 vs AR(4) 0,0394 (DM −1,39, p 0,18)",
+   "Estado": "matizado: H4 no sobrevive a Holm-7",
+   "Ruta": "output/v2/BO/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v2",
+   "id/rama": "BP (H5)",
+   "Pregunta": "Efecto del tope de rentas catalán (Ley 11/2020) sobre alquiler",
+   "Mercado": "alquiler IPC (stock)",
+   "Nivel": "provincia (4 tratadas + 45 donantes)",
+   "Muestra y N": "2016T1-2023T4, N=32 trim.",
+   "Variable dependiente y transformación": "ln IPC alquiler",
+   "Regresores principales y retardos": "tratamiento 2020T4-2022T1",
+   "Estimador": "Synthetic DiD (propio)",
+   "EE": "permutación espacial, B=1000",
+   "Coeficientes principales (p bruto / ajustado)": "efecto 0,0037 [−0,0002; 0,0076]; p permutación 0,065; Holm-m6 0,325; Holm-7 pendiente en BS",
+   "Diagnósticos": "Falla pretendencias",
+   "Fuera de muestra (RMSE; base; DM)": "pseudo-OOS RMSE 0,00626; DM −0,71 (no aplica a política)",
+   "Estado": "matizado (no concluyente)",
+   "Ruta": "output/v2/BP/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v2",
+   "id/rama": "BV (H2)",
+   "Pregunta": "Precio real de compra vs crédito nuevo y coste de uso",
+   "Mercado": "precio (compra)",
+   "Nivel": "provincia (49)",
+   "Muestra y N": "2004T1-2024T2, N=3.981",
+   "Variable dependiente y transformación": "Δ4 ln precio real (tasado − deflactor)",
+   "Regresores principales y retardos": "Δ4 ln hipotecas importe; coste de uso × exposición; Δ4 ln ocupados",
+   "Estimador": "MCO FE provincia + trimestre",
+   "EE": "cluster provincia; WCB 9.999",
+   "Coeficientes principales (p bruto / ajustado)": "crédito 0,00873 [0,0033; 0,0141], p Holm-m2 0,0018; coste de uso × exposición −0,00441 [−0,0058; −0,0030], p Holm-m2 <0,001; Holm-7 H2 = 0,779 (BS)",
+   "Diagnósticos": "Holm/BH intra-H2 (m=2)",
+   "Fuera de muestra (RMSE; base; DM)": "RMSE 0,0605 vs AR(4) 0,0418 (DM −1,60)",
+   "Estado": "matizado: asociación sin valor predictivo en sellado",
+   "Ruta": "output/v2/BV/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v2",
+   "id/rama": "BS (síntesis)",
+   "Pregunta": "Holm-7 de las 7 confirmatorias y evaluación sellada",
+   "Mercado": "varios",
+   "Nivel": "varios",
+   "Muestra y N": "52 prov. sellado 2024T3-2026T2",
+   "Variable dependiente y transformación": "(H1) Δ alquiler",
+   "Regresores principales y retardos": "(H1) AR(4) + demografía",
+   "Estimador": "Holm-7 y DM sellado",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "Holm-7: H1 1,0; H2 0,779; H3 0,176; H4 0,232; H5 1,0; H6 0,098; H7 1,0",
+   "Diagnósticos": "Sellado: H1 RMSE 0,01079; DM 3,98; p 0,005",
+   "Fuera de muestra (RMSE; base; DM)": "H1 vs AR(4) sellado",
+   "Estado": "matizado (H1 supera AR(4) en sellado, sin Holm-7 en el resto)",
+   "Ruta": "output/v2/BS/resultado.json; output/v2/informe_v2.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v2",
+   "id/rama": "docs/v2 (revisiones)",
+   "Pregunta": "Revisión por rama (BA, BD, BI, BM, BO, BP, BS, BV)",
+   "Mercado": "varios",
+   "Nivel": "varios",
+   "Muestra y N": "varios",
+   "Variable dependiente y transformación": "varios",
+   "Regresores principales y retardos": "varios",
+   "Estimador": "varios",
+   "EE": "varios",
+   "Coeficientes principales (p bruto / ajustado)": "varios",
+   "Diagnósticos": "revision_*.md",
+   "Fuera de muestra (RMSE; base; DM)": "varios",
+   "Estado": "n/a",
+   "Ruta": "docs/v2/revision_*.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v3",
+   "id/rama": "C1 (H3-1, H3-2)",
+   "Pregunta": "Turísticos (VUT por 100 viviendas) y alquiler SERPAVI",
+   "Mercado": "alquiler SERPAVI",
+   "Nivel": "sección censal",
+   "Muestra y N": "2016-2024, N=70.628",
+   "Variable dependiente y transformación": "Δ alquiler SERPAVI (VC, mediana €/m²)",
+   "Regresores principales y retardos": "VUT por 100 viviendas; shift-share leave-one-out",
+   "Estimador": "MCO FE sección + año×municipio; 2SLS shift-share LOO",
+   "EE": "cluster distrito",
+   "Coeficientes principales (p bruto / ajustado)": "H3-1 0,00026 [−0,00074; 0,00126], p aj. 0,467; H3-2 p aj. 0,501",
+   "Diagnósticos": "No aplica OOS",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "matizado (no concluyente; capa C4)",
+   "Ruta": "output/v3/C1/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v3",
+   "id/rama": "C3 (H3-3a, H3-3b)",
+   "Pregunta": "Topes de renta (Ley 11/2020): renta y contratos nuevos",
+   "Mercado": "renta y contratos nuevos (fianzas)",
+   "Nivel": "municipio (61 sujetos)",
+   "Muestra y N": "2019T1-2023T4, N=191",
+   "Variable dependiente y transformación": "renta (H3-3a); nº contratos nuevos (H3-3b)",
+   "Regresores principales y retardos": "tratamiento 2020T4",
+   "Estimador": "DiD Callaway-Sant'Anna (un solo momento); TWFE; DID_M",
+   "EE": "cluster municipio",
+   "Coeficientes principales (p bruto / ajustado)": "H3-3a CS −5,41 % [−7,09; −3,70] (−37 €/mes), p aj. 0,048; H3-3b ic95 [−9,93; 0,47] p aj. 0,0002 (**inconsistencia a revisar**)",
+   "Diagnósticos": "Falla criterios a y c; placebos P3; Rambachan-Roth; Oster",
+   "Fuera de muestra (RMSE; base; DM)": "No aplica (efecto de política)",
+   "Estado": "matizado: C4; cambia de mercado (contratos, no stock)",
+   "Ruta": "output/v3/C3/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v3",
+   "id/rama": "GL",
+   "Pregunta": "Réplica de García-López (2020) en Barcelona",
+   "Mercado": "alquiler SERPAVI",
+   "Nivel": "sección/distrito Barcelona",
+   "Muestra y N": "2021-2024, N=3.260",
+   "Variable dependiente y transformación": "Δ alquiler SERPAVI",
+   "Regresores principales y retardos": "VUT por 100 viviendas",
+   "Estimador": "MCO FE sección + año (réplica sin IV)",
+   "EE": "cluster distrito",
+   "Coeficientes principales (p bruto / ajustado)": "−0,00417 [−0,00779; −0,00054], p aj. 0,269",
+   "Diagnósticos": "n/a",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "matizado (no reproduce con p ajustado)",
+   "Ruta": "output/v3/GL/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v3",
+   "id/rama": "PA",
+   "Pregunta": "Hechos contables del problema de la vivienda",
+   "Mercado": "vivienda (varios)",
+   "Nivel": "nacional/provincia/municipio",
+   "Muestra y N": "52 provincias; 3.139 municipios vacancia",
+   "Variable dependiente y transformación": "varias",
+   "Regresores principales y retardos": "sin regresores",
+   "Estimador": "descriptivo (rango entre fuentes)",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "24 hechos; A1 2002-2007 −792.283 viviendas",
+   "Diagnósticos": "n/a",
+   "Fuera de muestra (RMSE; base; DM)": "C1 no predice",
+   "Estado": "vigente (C1/C2 descriptivo)",
+   "Ruta": "output/v3/PA/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v3",
+   "id/rama": "PB",
+   "Pregunta": "Cotas de atribución de precios y alquileres",
+   "Mercado": "precio y alquiler (cota de cantidad)",
+   "Nivel": "nacional / municipio (3.479)",
+   "Muestra y N": "52 provincias; B1 3.479 municipios",
+   "Variable dependiente y transformación": "% de subida explicada",
+   "Regresores principales y retardos": "turísticos, inmigración, tipos, grandes tenedores",
+   "Estimador": "Cotas de Manski (identificación parcial)",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "B1 precio mín. 8,33 %; central 2,75 %; no explicado 25,03 %; B2 cuota máx. 100 % (no informativa)",
+   "Diagnósticos": "Supuestos explícitos",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "vigente (cota C2; no causal)",
+   "Ruta": "output/v3/PB/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v3",
+   "id/rama": "PD",
+   "Pregunta": "Políticas contrafactuales de acceso a la vivienda",
+   "Mercado": "oferta / esfuerzo de acceso",
+   "Nivel": "nacional",
+   "Muestra y N": "317.520 escenarios",
+   "Variable dependiente y transformación": "simulación stock-flujo",
+   "Regresores principales y retardos": "parámetros de rejilla",
+   "Estimador": "simulación; dominancia y minimax regret",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "P1 necesarias mediana 261.346 (rango 103.560-413.004)",
+   "Diagnósticos": "n/a",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "EXPLORATORIO (sin contraste)",
+   "Ruta": "output/v3/PD/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v3",
+   "id/rama": "POT",
+   "Pregunta": "Potencia de los diseños P-C",
+   "Mercado": "varios",
+   "Nivel": "sección/distrito",
+   "Muestra y N": "N=70.628",
+   "Variable dependiente y transformación": "n/a",
+   "Regresores principales y retardos": "n/a",
+   "Estimador": "EMD y WCB (500 réplicas)",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "sin estimación",
+   "Diagnósticos": "potencia",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "DESCRIPTIVO",
+   "Ruta": "output/v3/POT/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v3",
+   "id/rama": "docs/v3",
+   "Pregunta": "Plan, hipótesis, revisiones de oleada",
+   "Mercado": "varios",
+   "Nivel": "varios",
+   "Muestra y N": "varios",
+   "Variable dependiente y transformación": "varios",
+   "Regresores principales y retardos": "varios",
+   "Estimador": "varios",
+   "EE": "varios",
+   "Coeficientes principales (p bruto / ajustado)": "varios",
+   "Diagnósticos": "revision_oleada1-3.md",
+   "Fuera de muestra (RMSE; base; DM)": "varios",
+   "Estado": "n/a",
+   "Ruta": "docs/v3/*.md"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v4",
+   "id/rama": "M0",
+   "Pregunta": "Conciliación del déficit 2021-2025 y terminadas",
+   "Mercado": "vivienda (flujo)",
+   "Nivel": "nacional",
+   "Muestra y N": "2021-2025",
+   "Variable dependiente y transformación": "viviendas",
+   "Regresores principales y retardos": "descomposición aditiva",
+   "Estimador": "contable; triangulación MIVAU-Catastro (±15 %)",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "700.934 [559.752; 969.059]",
+   "Diagnósticos": "n/a",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "matizado (conciliación; sustituye cifras de v1)",
+   "Ruta": "output/v4/M0/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v4",
+   "id/rama": "M1",
+   "Pregunta": "Concentración del déficit (hogares − altas)",
+   "Mercado": "vivienda (déficit)",
+   "Nivel": "nacional, provincia (52), municipio (703)",
+   "Muestra y N": "2021-2025",
+   "Variable dependiente y transformación": "déficit",
+   "Regresores principales y retardos": "altas netas; hogares",
+   "Estimador": "contable (4 combinaciones; bajas 0-0,2 %)",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "mediana nacional 744.100 [657.059; 933.231]",
+   "Diagnósticos": "signo único",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "matizado (rango; C4)",
+   "Ruta": "output/v4/M1/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v4",
+   "id/rama": "M2",
+   "Pregunta": "Por qué se crean hogares (Shapley)",
+   "Mercado": "hogares (demanda)",
+   "Nivel": "nacional y provincia",
+   "Muestra y N": "2006-2025, 5 periodos",
+   "Variable dependiente y transformación": "Δ hogares",
+   "Regresores principales y retardos": "tamaño nativos, tamaño extranjeros, estructura edad, tasa de jefatura",
+   "Estimador": "descomposición Shapley (4 factores)",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "2006-2007: ΔH 446.014 (extranjeros 37 %; nativos 21,5 %)",
+   "Diagnósticos": "n/a",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "matizado (descriptivo; 53-76 % de ΔH en 2020-2025 según corrección EPA)",
+   "Ruta": "output/v4/M2/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v4",
+   "id/rama": "M3",
+   "Pregunta": "¿Se puede construir donde falta? (brecha Glaeser-Gyourko)",
+   "Mercado": "oferta (suelo)",
+   "Nivel": "provincia (52), municipio (703)",
+   "Muestra y N": "324 especificaciones",
+   "Variable dependiente y transformación": "brecha precio-coste",
+   "Regresores principales y retardos": "suelo, precio, coste supuesto",
+   "Estimador": "brecha con coste supuesto; multiverso",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "brecha provincial central −734 a 2.208 (coste supuesto)",
+   "Diagnósticos": "Estabilidad de clase modal",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "EXPLORATORIO (C4; sin lenguaje causal)",
+   "Ruta": "output/v4/M3/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v4",
+   "id/rama": "M4",
+   "Pregunta": "Peso de PJ y extranjeros en stock y flujos",
+   "Mercado": "parque de vivienda",
+   "Nivel": "provincia (52), ciudades (7)",
+   "Muestra y N": "19 años de extranjeros",
+   "Variable dependiente y transformación": "cuotas y ratios",
+   "Regresores principales y retardos": "sin regresores",
+   "Estimador": "descriptivo",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "stock nacional 26.623.708 viviendas (principal 18.536.616)",
+   "Diagnósticos": "n/a",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "DESCRIPTIVO",
+   "Ruta": "output/v4/M4/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v4",
+   "id/rama": "M5",
+   "Pregunta": "Qué instrumentos funcionarían (rúbrica)",
+   "Mercado": "política",
+   "Nivel": "instrumentos (23 filas)",
+   "Muestra y N": "23 instrumentos",
+   "Variable dependiente y transformación": "signo esperado",
+   "Regresores principales y retardos": "rejilla de elasticidades",
+   "Estimador": "rúbrica idéntica; incidencia",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "signo estable estricto: P1, I10/I27/N7",
+   "Diagnósticos": "n/a",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "EXPLORATORIO (C4); C2 de P-D",
+   "Ruta": "output/v4/M5/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v4",
+   "id/rama": "M7",
+   "Pregunta": "Exuberancia de precios (GSADF)",
+   "Mercado": "precio/alquiler",
+   "Nivel": "nacional y 11 CCAA",
+   "Muestra y N": "2015T1-2024T4, N=78",
+   "Variable dependiente y transformación": "ratio precio/alquiler (IPV, valor tasado)",
+   "Regresores principales y retardos": "sin regresores",
+   "Estimador": "GSADF con valores críticos por simulación y WCB (499)",
+   "EE": "n/a",
+   "Coeficientes principales (p bruto / ajustado)": "IPV/IPC alquiler nacional 3,097 (p 0,014); valor tasado/IPC 4,344 (p 0,008)",
+   "Diagnósticos": "No reverificado en v6_1 para nacional",
+   "Fuera de muestra (RMSE; base; DM)": "n/a",
+   "Estado": "matizado (CCAA: ninguna supera en v6; test de exuberancia no identifica burbujas)",
+   "Ruta": "output/v4/M7/resultado.json"
+  },
+  {
+   "version_bloque": "v1-v4",
+   "Versión": "v4",
+   "id/rama": "docs/v4",
+   "Pregunta": "Plan y revisiones (A, B, C, C_it2)",
+   "Mercado": "varios",
+   "Nivel": "varios",
+   "Muestra y N": "varios",
+   "Variable dependiente y transformación": "varios",
+   "Regresores principales y retardos": "varios",
+   "Estimador": "varios",
+   "EE": "varios",
+   "Coeficientes principales (p bruto / ajustado)": "varios",
+   "Diagnósticos": "revision_oleada*.md",
+   "Fuera de muestra (RMSE; base; DM)": "varios",
+   "Estado": "n/a",
+   "Ruta": "docs/v4/*.md"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "R1A",
+   "Pregunta": "Peso inicial de no residentes extranjeros y subida de precio provincial 2015-2025; conciliación VUT",
+   "Mercado / nivel": "Compra; provincia (corte)",
+   "N": "50 unidades BK-002 (43 provincias)",
+   "Dependiente y transformación": "Δln precio provincial",
+   "Regresores / retardos": "Peso no residentes (pp); controles en E2",
+   "Estimador": "MCO corte transversal, 8 especificaciones, bootstrap 2000",
+   "EE": "HC3",
+   "Coeficientes principales, p bruto / ajustado": "Bivariada 0,0096 por pp, IC [0,0046; 0,0147], p ajustado Holm 0,0015. Con controles 0,0002, p ajustado 1,0.",
+   "Diagnósticos": "R2 aj. 0,60; Pearson 0,56; Spearman 0,56",
+   "FM (RMSE, base, DM)": "No aplica (corte)",
+   "Estado": "Cerrado; C4",
+   "Ruta": "`output/v5/R1A/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "R1B",
+   "Pregunta": "Donut post-COVID (BK-041); multiverso (BK-040); GSADF con tamaño corregido (BK-023)",
+   "Mercado / nivel": "Municipal (306 municipios >25k hab. tasado; 2.668 SERPAVI)",
+   "N": "Donut 128 y 6; multiverso 320",
+   "Dependiente y transformación": "Crecimiento anual de precio; GSADF sobre ratio",
+   "Regresores / retardos": "Distancia a área (FE)",
+   "Estimador": "Diferencia de pendientes; GSADF",
+   "EE": "Agrupados por área",
+   "Coeficientes principales, p bruto / ajustado": "Multiverso: 77 % de especificaciones con diferencia positiva; ninguna significativa tras Holm (320 espec.)",
+   "Diagnósticos": "Permutaciones B=200",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; C4",
+   "Ruta": "`output/v5/R1B/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "R1C",
+   "Pregunta": "Propiedad de la vivienda; capacidad de construcción",
+   "Mercado / nivel": "Nacional y CCAA (34 celdas)",
+   "N": "34",
+   "Dependiente y transformación": "Tabulación; ratio ocupados/iniciadas",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Descriptivo, Spearman entre CCAA",
+   "EE": "No aplica",
+   "Coeficientes principales, p bruto / ajustado": "Tenencia total 74,5 % (C1); Spearman Holm 0,0055",
+   "Diagnósticos": "8 celdas sin dato",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; C1 (tenencia) / C4 (resto)",
+   "Ruta": "`output/v5/R1C/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "R1T",
+   "Pregunta": "Pendientes técnicos (cruce SERPAVI-distritos)",
+   "Mercado / nivel": "Valencia, distritos",
+   "N": "19",
+   "Dependiente y transformación": "No aplica",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Cruce de códigos",
+   "EE": "No aplica",
+   "Coeficientes principales, p bruto / ajustado": "No aplica",
+   "Diagnósticos": "Supuesto: distritos censales = distritos municipales",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Técnico",
+   "Ruta": "`output/v5/R1T/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "A23",
+   "Pregunta": "Conciliación precio: IPV INE frente a núcleo MIVAU/Notariado/Registradores; alquiler (A2, A3)",
+   "Mercado / nivel": "Nacional, CCAA y provincia",
+   "N": "11 años de precio; 17 CCAA",
+   "Dependiente y transformación": "Variación acumulada de medias anuales",
+   "Regresores / retardos": "No aplica (puente)",
+   "Estimador": "Puente en log con pesos Laspeyres",
+   "EE": "No aplica",
+   "Coeficientes principales, p bruto / ajustado": "IPV +79,9 %; núcleo +44,2 a +56,1 % (mediana 47,2 %); efecto nueva/usada 0,004 pp",
+   "Diagnósticos": "Independencia entre fuentes documentada",
+   "FM (RMSE, base, DM)": "No aplica (descriptivo)",
+   "Estado": "Cerrado; C1 (núcleo) / C4",
+   "Ruta": "`output/v5/A23/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "A4",
+   "Pregunta": "Dónde falta vivienda y es rentable construir con el coste oficial",
+   "Mercado / nivel": "Provincia (52) y municipio (703)",
+   "N": "52 / 703",
+   "Dependiente y transformación": "Clase por rejilla coste × margen × tipo × edificabilidad × suelo",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Clasificación determinista (MBC 1993 actualizado con Eurostat)",
+   "EE": "No aplica",
+   "Coeficientes principales, p bruto / ajustado": "Rango coste 421,8-932,1 €/m²; provincias 2021-2025 por clase: clase 1 = 37 (8 robustas), clase 2 = 11 (3), clase 3 = 2, clase 9 = 2",
+   "Diagnósticos": "Reconciliación provincia-nacional cuadra",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; C4 (regla B5)",
+   "Ruta": "`output/v5/A4/` (`clasificacion_provincias.csv`, `clasificacion_municipios.csv`)"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "A5",
+   "Pregunta": "Instrumentos en documentos oficiales programáticos y normativos",
+   "Mercado / nivel": "Documentos (22)",
+   "N": "22 documentos, 1.099 coincidencias",
+   "Dependiente y transformación": "Recuento de palabras clave",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Recuento con diccionario trilingüe",
+   "EE": "No aplica",
+   "Coeficientes principales, p bruto / ajustado": "No aplica (recuento, no medida validada)",
+   "Diagnósticos": "Validación de precisión parcial",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; C4",
+   "Ruta": "`output/v5/A5/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "A6",
+   "Pregunta": "Topes fuera de C3; no replicación de García-López",
+   "Mercado / nivel": "Nacional",
+   "N": "n/d",
+   "Dependiente y transformación": "Stock frente a flujo",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Consolidación documental de v4 M0",
+   "EE": "No aplica",
+   "Coeficientes principales, p bruto / ajustado": "Atenuación stock-flujo 0,55-0,75; β −0,0042, IC [−0,0078; −0,0005], p ajustado 0,27",
+   "Diagnósticos": "No aplica",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; C4",
+   "Ruta": "`output/v5/A6/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "B1",
+   "Pregunta": "Necesidad de vivienda 2026-2035 (A+R+V+F−M−K; L ya neta en F)",
+   "Mercado / nivel": "Provincia (52) y nacional",
+   "N": "52",
+   "Dependiente y transformación": "Necesidad anual en viviendas, rango min-central-max",
+   "Regresores / retardos": "Componentes de fuente",
+   "Estimador": "Suma por componentes",
+   "EE": "Rango, no EE",
+   "Coeficientes principales, p bruto / ajustado": "Central nacional 214.868 viviendas/año (93.628-309.921); 48 provincias con presión; 4 con R en un solo método",
+   "Diagnósticos": "Control de sumas sin fallos",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; C4",
+   "Ruta": "`output/v5/B1/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "B2",
+   "Pregunta": "Déficit 2021-2030 por provincia (D2030 = D2025 + F − T + B)",
+   "Mercado / nivel": "Provincia (52) y nacional",
+   "N": "52",
+   "Dependiente y transformación": "Déficit en viviendas",
+   "Regresores / retardos": "F, T (3 escenarios), B",
+   "Estimador": "Proyección contable",
+   "EE": "Rango",
+   "Coeficientes principales, p bruto / ajustado": "Déficit 2025 nacional 700.934; 2030 central 1.296.672 (872.529-1.447.953)",
+   "Diagnósticos": "Control de sumas",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; C4",
+   "Ruta": "`output/v5/B2/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "B3",
+   "Pregunta": "Ocho familias de determinantes a la vez (Bartik, población, etc.)",
+   "Mercado / nivel": "Transversal, provincia/municipio",
+   "N": "50 (principal Y1-P1); 46-47 otros",
+   "Dependiente y transformación": "Δ log de precio por unidad de DT",
+   "Regresores / retardos": "13 regresores estandarizados",
+   "Estimador": "MCO conjunto; Shapley",
+   "EE": "HC3 y Conley (100 y 200 km)",
+   "Coeficientes principales, p bruto / ajustado": "H-B3-1 (Bartik) b 0,0236 por DT; IC [−0,0006; 0,0479]; Holm 8 familias 0,335; Holm 3 confirmatorias 0,112",
+   "Diagnósticos": "R2 0,912; R2 aj. 0,880; LOO-CV RMSE 0,066",
+   "FM (RMSE, base, DM)": "LOO-CV (no aplica embargo)",
+   "Estado": "Cerrado; C4 (descriptivo)",
+   "Ruta": "`output/v5/B3/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "B4",
+   "Pregunta": "Triangulación de salidas v2, B3 y otras (contribuciones)",
+   "Mercado / nivel": "Nacional y CCAA",
+   "N": "71 entradas, 29 huecos",
+   "Dependiente y transformación": "Pp de Δln, cuotas de R2",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Triangulación",
+   "EE": "No aplica",
+   "Coeficientes principales, p bruto / ajustado": "Contribuciones no estables entre ventanas",
+   "Diagnósticos": "Ventanas desplazadas",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; C4",
+   "Ruta": "`output/v5/B4/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "CA",
+   "Pregunta": "Posición de España en la UE-27 y regresiones descriptivas de precio; ADL(4) para predicción",
+   "Mercado / nivel": "Europa (10 indicadores), crédito (6 trimestres)",
+   "N": "10 / 6",
+   "Dependiente y transformación": "Percentil y desviación frente a la mediana",
+   "Regresores / retardos": "ADL(4) + crédito construcción + inmob. (retardo 4)",
+   "Estimador": "Descriptivo; ADL 1 paso, ventana expansiva, embargo 4",
+   "EE": "No aplica",
+   "Coeficientes principales, p bruto / ajustado": "Holm sobre 36 pruebas, mínimo 0,032",
+   "Diagnósticos": "RMSE 0,141 frente a AR(4)",
+   "FM (RMSE, base, DM)": "ADL frente a AR(4) (DM)",
+   "Estado": "Cerrado; C4",
+   "Ruta": "`output/v5/CA/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "CB",
+   "Pregunta": "Correlación de usurpación con alquiler (Spearman, permutación 10.000)",
+   "Mercado / nivel": "CCAA (17) y secciones censales (36.333)",
+   "N": "17",
+   "Dependiente y transformación": "Spearman (ρ)",
+   "Regresores / retardos": "Usurpación por 100k; porcentaje de alquiler",
+   "Estimador": "Spearman con permutación",
+   "EE": "No aplica",
+   "Coeficientes principales, p bruto / ajustado": "C5-S2 ρ 0,66, p 0,006, p Holm 0,038; C5-S1 ρ 0,57, p Holm 0,074",
+   "Diagnósticos": "Seed 20261010; fechas distintas Censo/AEAT/ECV",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; C4",
+   "Ruta": "`output/v5/CB/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "CC",
+   "Pregunta": "Sobrecarga de costes y cotas de salidas 2026-2035 (plazo-calificación)",
+   "Mercado / nivel": "Grupos de hogares",
+   "N": "11 años de sobrecarga",
+   "Dependiente y transformación": "Cambio en pp 2015-2025; cota de salidas",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Descriptivo + convolución en 3 escenarios",
+   "EE": "No aplica",
+   "Coeficientes principales, p bruto / ajustado": "Cambio 2015-2025 pp: QU1 −13,2; RENT_MKT −16,5; OWN_L −5,3",
+   "Diagnósticos": "Cuadre suma CCAA-nacional máx. 6.024",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; C7 descriptivo, C2 cota",
+   "Ruta": "`output/v5/CC/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "D2",
+   "Pregunta": "Cruce de necesidad, déficit y política por territorio",
+   "Mercado / nivel": "Provincia y clase",
+   "N": "52",
+   "Dependiente y transformación": "Cobertura de P-D y vacías (%)",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Cruce de tablas; reparto por cuota de necesidad (supuesto)",
+   "EE": "No aplica",
+   "Coeficientes principales, p bruto / ajustado": "Clase 1: cobertura P-D 11,6-46,5 %; vacías 30,2 %. Necesidad anual 214.868",
+   "Diagnósticos": "Control de sumas: todo OK",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; C4",
+   "Ruta": "`output/v5/D2/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "D3",
+   "Pregunta": "Comparación de rangos con referencias externas",
+   "Mercado / nivel": "Nacional",
+   "N": "22",
+   "Dependiente y transformación": "Coincide / difiere",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Regla de solape o diferencia ≤15 %",
+   "EE": "No aplica",
+   "Coeficientes principales, p bruto / ajustado": "Coincide 2; difiere 1; comparable en parte 6; no comparable 9",
+   "Diagnósticos": "4 referencias no localizadas",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; descriptivo",
+   "Ruta": "`output/v5/D3/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "T1",
+   "Pregunta": "Bajas netas del parque 2011-2025 (4 fuentes: identidad censal, Catastro, demoliciones)",
+   "Mercado / nivel": "Provincia (52)",
+   "N": "52 provincias; 13 años B",
+   "Dependiente": "Tasa anual de bajas",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Cálculo contable; t de una muestra con Holm (solo descriptivo)",
+   "EE": "No aplica",
+   "Resultados principales": "Tasa nacional 2015-2024: central 2,56 %/año (rango 0,00-5,18 %); identidad censal −0,33 % (por discrepancia de signo, no concluyente)",
+   "Diagnósticos": "Las fuentes no coinciden dentro del margen",
+   "FM": "No aplica (AR(4) y ECM no aplican)",
+   "Estado": "C4",
+   "Ruta": "`output/v5_1/T1/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "T2",
+   "Pregunta": "Viviendas liberadas por envejecimiento 2026-2035 (defunciones, residencias, traslado)",
+   "Mercado / nivel": "Provincia (52)",
+   "N": "52",
+   "Dependiente": "Liberadas por año",
+   "Regresores / retardos": "Parámetros de residencia (4-8 % de 75+), estancia 2,5-4 años, 30-60 % solos, sobremortalidad ×2",
+   "Estimador": "Contabilidad de flujo por provincia",
+   "EE": "No aplica (rangos de supuestos)",
+   "Resultados principales": "Liberadas 2026-2035 central 1.856.431 (936.056-3.168.590); 185.643 por año",
+   "Diagnósticos": "Control de sumas por tipos",
+   "FM": "No aplica",
+   "Estado": "C4",
+   "Ruta": "`output/v5_1/T2/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "T3",
+   "Pregunta": "Déficit 2021-2025 y necesidad 2026-2035 con bajas (T1) y liberadas no llegadas al mercado (T2)",
+   "Mercado / nivel": "Provincia (52)",
+   "N": "52",
+   "Dependiente": "Déficit y necesidad",
+   "Regresores / retardos": "Bajas T1 y liberadas X",
+   "Estimador": "Contabilidad con rangos",
+   "EE": "Rango",
+   "Resultados principales": "Déficit 2021-2024 sin bajas 562.692-688.692; con bajas T1 central 653.097 (562.692-744.144); máximo antiguo 902.808",
+   "Diagnósticos": "Control de sumas y de liberadas",
+   "FM": "No aplica",
+   "Estado": "C4 (el déficit sin bajas es C1)",
+   "Ruta": "`output/v5_1/T3/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "T4",
+   "Pregunta": "Dirección del déficit 2026-2030 en todos los escenarios (rejilla 5 × 3 × 3 × 4)",
+   "Mercado / nivel": "Provincia (52)",
+   "N": "52; 180 escenarios por horizonte",
+   "Dependiente": "Déficit 2030",
+   "Regresores / retardos": "dD = F − T + B + X",
+   "Estimador": "Rejilla de escenarios",
+   "EE": "Rango",
+   "Resultados principales": "Déficit 2030 nacional central 1.349.025 (788.180-1.773.555); con X 1.516.129",
+   "Diagnósticos": "Recuento por etapas",
+   "FM": "No aplica",
+   "Estado": "C4 en magnitud; dirección C2",
+   "Ruta": "`output/v5_1/T4/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "T6",
+   "Pregunta": "¿Hay datos abiertos de alquiler de temporada o por habitaciones (BK-014) y MESVAL (BK-017)?",
+   "Mercado / nivel": "Nacional",
+   "N": "n/d",
+   "Dependiente": "No aplica",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Prueba de fuentes",
+   "EE": "No aplica",
+   "Resultados principales": "Ninguna fuente probada contiene duración del contrato ni modalidad de temporada",
+   "Diagnósticos": "Fecha de prueba 2026-10-11",
+   "FM": "No aplica",
+   "Estado": "Técnico",
+   "Ruta": "`output/v5_1/T6/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "M0",
+   "Pregunta": "Construcción de paneles, sellado v6 y potencia (Fisher-z)",
+   "Mercado / nivel": "Compra, alquiler (provincia y municipio); índice tasado",
+   "N": "100.353",
+   "Dependiente y transformación": "No aplica",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Descriptivo",
+   "EE": "No aplica",
+   "Resultados principales (p bruto / ajustado)": "No estima modelos. Validación sellada contaminada descriptivamente por usos v4-v5",
+   "Diagnósticos": "Sellado `sellar_v6`",
+   "FM (RMSE, base, DM)": "No aplica",
+   "Estado": "Cerrado; C4",
+   "Ruta": "`output/v6/M0/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "M1A",
+   "Pregunta": "Efecto de la cuota de extranjeros, de la población, del PIB y de la oferta sobre el alquiler SERPAVI (TWFE)",
+   "Mercado / nivel": "Alquiler de stock; provincia (105 obs, 35 unidades) y municipio (4.865)",
+   "N": "105 / 4.865",
+   "Dependiente y transformación": "Log del alquiler €/m²/mes",
+   "Regresores / retardos": "Regresores en t−1",
+   "Estimador": "TWFE con y sin tendencias",
+   "EE": "Wild cluster bootstrap Webb (B=999), por CCAA; Driscoll-Kraay; Conley",
+   "Resultados principales (p bruto / ajustado)": "ln_pob: b 0,875, p 0,026, p ajustado 0,182 (provincia); municipio b 0,972, p 0,023, p ajustado 0,161. Resto de variables p ajustado 1,0.",
+   "Diagnósticos": "RMSE 0,023 frente a 0,092 del AR(4)",
+   "FM (RMSE, base, DM)": "Frente a M1 y AR(4) (EF)",
+   "Estado": "EXPLORATORIO (C4); ningún coeficiente significativo tras ajuste",
+   "Ruta": "`output/v6/M1A/` (`tabla_coeficientes.csv`, 121 filas)"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "M1B",
+   "Pregunta": "Compra: precio, volumen y relación compra-alquiler; FE unidad+año (preregistrada) y unidad+tendencia",
+   "Mercado / nivel": "Compra; provincia y municipio; valor tasado MIVAU",
+   "N": "64 (S1 prereg) y otras",
+   "Dependiente y transformación": "Log del precio tasado",
+   "Regresores / retardos": "Regresores en t−1; ln_pob, share_ext_pob",
+   "Estimador": "MCO con EF; SDM",
+   "EE": "WCB restringido por CCAA (B=999); CR1",
+   "Resultados principales (p bruto / ajustado)": "S1 Holm: ln_pob b 0,599, p wild 0,517, p Holm 1,0. Holm mín. 0,496; BH mín. 0,0",
+   "Diagnósticos": "Clusters: 8 CCAA (provincial)",
+   "FM (RMSE, base, DM)": "M1b-ADL frente a AR(4) y ECM v1; orígenes 2018/2020/2022",
+   "Estado": "EXPLORATORIO; ningún contraste cumple",
+   "Ruta": "`output/v6/M1B/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "M2",
+   "Pregunta": "Peso predictivo de cada variable (BMA, elastic net, PDS)",
+   "Mercado / nivel": "Provincia; alquiler (106 obs. completas) y compra",
+   "N": "106 / más",
+   "Dependiente y transformación": "Log, % de efecto",
+   "Regresores / retardos": "Variables en t−1 con FE",
+   "Estimador": "BMA (g = max(N, K²), uniforme y beta-binomial), elastic net + PDS, multiverso",
+   "EE": "Intervalo creíble 95 %",
+   "Resultados principales (p bruto / ajustado)": "PIP alquiler: ln_pob 1,00; share_ext_pob 0,30. PIP compra núcleo de share_ext 0,77 (completo). BH q=0,10 sobre 4.586 contrastes",
+   "Diagnósticos": "PIP = soporte asociativo, no causal",
+   "FM (RMSE, base, DM)": "No aplica (FM en M4)",
+   "Estado": "EXPLORATORIO; nada causal",
+   "Ruta": "`output/v6/M2/` (`peso_variables.md`, `peso_variables.csv`)"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "M3A",
+   "Pregunta": "Predicción de alquiler con RF y LightGBM (30 configuraciones por familia y nivel)",
+   "Mercado / nivel": "Alquiler; provincia, municipio, distrito",
+   "N": "8.554 (distrito, muestra común)",
+   "Dependiente y transformación": "Log del alquiler",
+   "Regresores / retardos": "AR por unidad (p por AIC 1-4)",
+   "Estimador": "RF y gradient boosting; búsqueda aleatoria",
+   "EE": "No aplica",
+   "Resultados principales (p bruto / ajustado)": "Mejor provincia RF: RMSE 0,0105 (AR 0,0303; ECM v1 aprox. 0,0110)",
+   "Diagnósticos": "Bloques espacio-temporal; DM-HLN Holm y BH en `dm_hln_validacion_interna.csv`",
+   "FM (RMSE, base, DM)": "Validación interna; mejor provincia RF RMSE 0,0105",
+   "Estado": "EXPLORATORIO (predicción)",
+   "Ruta": "`output/v6/M3A/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "M3B",
+   "Pregunta": "Predicción de compra: RF, LightGBM, BART sustituido por bosque bootstrap bayesiano, MixedLM (sustituto de PyMC), MLP y GCN (solo municipio)",
+   "Mercado / nivel": "Compra (precio y volumen); provincia trimestral y municipio anual",
+   "N": "1.476 (trimestral)",
+   "Dependiente y transformación": "Log del precio tasado",
+   "Regresores / retardos": "Ver `registro_*.csv`",
+   "Estimador": "ML, BART sustituto, MLP y GCN",
+   "EE": "No aplica",
+   "Resultados principales (p bruto / ajustado)": "MUN_PRECIO_ANUAL: mejor ML BBF, RMSE 4,98 % frente a 8,95 % del AR; DM −1,56, p 0,178. PROV_PRECIO_TRIM: RMSE 1,93 %",
+   "Diagnósticos": "Top SHAP: tipo hipotecario t−1, crédito; SHAP descriptivo",
+   "FM (RMSE, base, DM)": "Validación en bloques",
+   "Estado": "EXPLORATORIO; SHAP sin lectura causal",
+   "Ruta": "`output/v6/M3B/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "M4",
+   "Pregunta": "Predicción a un paso con modelos ajustados en la validación sellada",
+   "Mercado / nivel": "Alquiler, compra precio y volumen; provincia y municipio",
+   "N": "53 modelos, 9 tareas",
+   "Dependiente y transformación": "Log, RMSE en %",
+   "Regresores / retardos": "Modelos ya ajustados",
+   "Estimador": "Evaluación de 53 modelos; `evaluate_v6`",
+   "EE": "No aplica",
+   "Resultados principales (p bruto / ajustado)": "Alquiler provincia GB: RMSE 1,61 % frente a persistencia 4,21 % (DM-HLN −9,39; p Holm en `tabla_modelos.md`); MUN_PRECIO_ANUAL: mejor = ECM v1, RMSE 3,93 %; persistencia 6,33 %",
+   "Diagnósticos": "0 variables relevantes con seguridad",
+   "FM (RMSE, base, DM)": "DM-HLN en `dm_hln` y p Holm dentro de tarea",
+   "Estado": "EXPLORATORIO; predicción",
+   "Ruta": "`output/v6/M4/` (`tabla_modelos.md`, `mejor_modelo.csv`)"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "K1",
+   "Pregunta": "¿Predice algún modelo mejor que la base más exigente? (K1)",
+   "Mercado / nivel": "9 tareas (provincia, municipio) sellado v6",
+   "N": "9 tareas; 11 provincias selladas",
+   "Dependiente": "RMSE en %",
+   "Regresores / retardos": "Modelos de M1-M4, ECM v1 como base",
+   "Estimador": "DM-HLN y permutación por inversión de signo; Holm por tarea y grupo",
+   "EE": "No aplica",
+   "Resultados principales": "Predice mejor que la base en 6 tareas; no distinguible en 3. MUN_PRECIO_ANUAL: el mejor (bosque bayesiano) 4,13 % frente a ECM v1 3,93 %: no la supera",
+   "Diagnósticos": "Clasificación de clases",
+   "FM": "Frente a ECM v1 y AR(4)",
+   "Estado": "EXPLORATORIO (C4): predicción",
+   "Ruta": "`output/v6_1/K1/` (`tabla_modelos_k1.md/.csv`)"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "K2",
+   "Pregunta": "Inmigración y precio/alquiler: MCO/2SLS con EF provincia-año; cuota de extranjeros y población",
+   "Mercado / nivel": "Provincia y CCAA",
+   "N": "328 (compra), 1 familia de 137 especificaciones",
+   "Dependiente": "% por +1 pp de cuota",
+   "Regresores / retardos": "Cuota (t−1), población, demanda externa",
+   "Estimador": "MCO/2SLS; BMA aproximado (BIC)",
+   "EE": "Agrupados",
+   "Resultados principales": "Cuota compra sin población 4,26 %/pp; con núcleo −1,31 % (IC [−4,31; 1,69]); p Holm 1,0. Primera etapa F 3,52 (38 provincias)",
+   "Diagnósticos": "VIF 1,79",
+   "FM": "No aplica",
+   "Estado": "ANALIZADA, NO CONCLUYENTE; C4",
+   "Ruta": "`output/v6_1/K2/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "K3",
+   "Pregunta": "Tipo de «ratio» de precio/alquiler: OLS con EF provincia-año",
+   "Mercado / nivel": "Provincia",
+   "N": "175",
+   "Dependiente": "Ratios precio/alquiler",
+   "Regresores / retardos": "Variables de precio inicial y rezagos",
+   "Estimador": "OLS, cluster por provincia",
+   "EE": "Cluster provincia",
+   "Resultados principales": "Coeficientes A_conjunta: p ajustado 1,0 (ini_l2, ini_l1); ini_1000 p ajustado 0,57",
+   "Diagnósticos": "Rango de ratio 2015 [18,9; 20,3]",
+   "FM": "No aplica",
+   "Estado": "ANALIZADA; C4",
+   "Ruta": "`output/v6_1/K3/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "K4A",
+   "Pregunta": "Auditoría dirigida con consultas y tests",
+   "Mercado / nivel": "Proyecto",
+   "N": "11",
+   "Dependiente": "No aplica",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Auditoría",
+   "EE": "No aplica",
+   "Resultados principales": "11 hallazgos: 0 críticos, 2 altos, 3 medios, 6 bajos",
+   "Diagnósticos": "No aplica",
+   "FM": "No aplica",
+   "Estado": "Técnico",
+   "Ruta": "`output/v6_1/K4A/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "K4B",
+   "Pregunta": "Doble implementación independiente",
+   "Mercado / nivel": "Proyecto",
+   "N": "15",
+   "Dependiente": "No aplica",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Recalculo",
+   "EE": "No aplica",
+   "Resultados principales": "Coinciden 5; parciales 5; no reconstruibles 5; no coinciden 0",
+   "Diagnósticos": "No aplica",
+   "FM": "No aplica",
+   "Estado": "Técnico",
+   "Ruta": "`output/v6_1/K4B/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "K4C",
+   "Pregunta": "Extracción determinista de cifras y comprobación de enlaces",
+   "Mercado / nivel": "Entregables",
+   "N": "1.916",
+   "Dependiente": "No aplica",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Extracción",
+   "EE": "No aplica",
+   "Resultados principales": "Enlaces rotos 32 → 0; 5 contradicciones (corregidas)",
+   "Diagnósticos": "No aplica",
+   "FM": "No aplica",
+   "Estado": "Técnico",
+   "Ruta": "`output/v6_1/K4C/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "L1",
+   "Pregunta": "Verificación de fichas y reproducción literal",
+   "Mercado / nivel": "Entregables",
+   "N": "17 fichas completas; 49 breves",
+   "Dependiente": "No aplica",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Recálculo literal",
+   "EE": "No aplica",
+   "Resultados principales": "17 fichas reproducidas; 15 de la revisión humana",
+   "Diagnósticos": "ruff limpio, sin fallos",
+   "FM": "No aplica",
+   "Estado": "Técnico",
+   "Ruta": "`output/v6_2/L1/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "L2",
+   "Pregunta": "Segunda doble implementación independiente (sin leer src)",
+   "Mercado / nivel": "Entregables",
+   "N": "15",
+   "Dependiente": "No aplica",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Recálculo",
+   "EE": "No aplica",
+   "Resultados principales": "Coinciden 15 de 15",
+   "Diagnósticos": "11 huecos en anexo, ninguno bloquea",
+   "FM": "No aplica",
+   "Estado": "Técnico",
+   "Ruta": "`output/v6_2/L2/`"
+  },
+  {
+   "version_bloque": "v5-v6.2",
+   "Familia": "L3",
+   "Pregunta": "Déficit 2021-2025 sin bajas bajo 8 correcciones de hogares × 3 fuentes de terminadas",
+   "Mercado / nivel": "Nacional",
+   "N": "288 combinaciones",
+   "Dependiente": "Déficit en viviendas",
+   "Regresores / retardos": "No aplica",
+   "Estimador": "Contable determinista",
+   "EE": "No aplica",
+   "Resultados principales": "2021-2024 sin bajas 389.361-710.542 (punto medio 549.952); 2021-2025 sin bajas 523.606-887.950",
+   "Diagnósticos": "Por año y corrección",
+   "FM": "No aplica",
+   "Estado": "C2 (sin bajas) / C4 (con bajas)",
+   "Ruta": "`output/v6_2/L3/` (`deficit_alternativas.csv`)"
+  }
+ ],
+ "modelos_no_estimados": {
+  "PMG": "no",
+  "DFE": "no",
+  "Pedroni": "no (citado como no ejecutado en v6 M1B por T anual = 9)",
+  "Westerlund": "no",
+  "MG": "solo v6 (robustez; output/v6/M1B/tablas/cce_mg.csv)",
+  "CIPS": "sí, v1 f5, raíz unitaria por CCAA (output/f5/cips.md)",
+  "CCE": "v1 f5 (CCE-MG, CCE-P) y v6"
+ },
+ "validaciones": [
+  {
+   "Versión": "v2",
+   "Unidades selladas": "3 provincias (11 Cádiz, 16 Cuenca, 45 Toledo): CCAA 01 y 08. Todas las provincias en la ventana temporal",
+   "Periodos sellados": "2024Q3–2026Q2; anuales ≥ 2025",
+   "Nº de aperturas (log)": "8 aperturas: H1, H2, H3-1, H3-2, H3-3a, H3-3b, H6, H7",
+   "Contaminación o segundas miradas": "Notas de BA, BV y BM desactualizadas (ERRATA)."
+  },
+  {
+   "Versión": "v3",
+   "Unidades selladas": "Distritos: 20 % (lista en data/processed/v3/sellado_v3). Municipios con ≥ 50 % de distritos sellados. Última oleada VUT 2026M05",
+   "Periodos sellados": "2026M05 y periodos de la oleada sellada",
+   "Nº de aperturas (log)": "0 entradas propias en el log. Se usa `load_full`, que exige las 4 evaluaciones de v2",
+   "Contaminación o segundas miradas": "O1 (decisiones v3): `describe()` global sobre el VUT incluyó 2026M05; `pot_run` estimó P-C3 con municipios sellados. P-C3 no tiene muestra sellada espacial limpia"
+  },
+  {
+   "Versión": "v6",
+   "Unidades selladas": "11 provincias: 07, 22, 26, 28, 30, 31, 33, 35, 38, 44, 50 (CCAA 02, 03, 04, 05, 13, 14, 15, 17). Municipios: 593 de 3.063 (compra) y 722 de 3.063 (alquiler). Distritos: 2.136 excluidos de ambos lados",
+   "Periodos sellados": "Temporal: compra 2025 (y 2026 en trimestral), alquiler 2024",
+   "Nº de aperturas (log)": "80 aperturas: 53 de M4 y 27 de K1 (D3)",
+   "Contaminación o segundas miradas": "B5 (docs/v6/hipotesis.md): el corte temporal cae en la ventana ya abierta en v2 (8 contrastes). M4 separa (i) provincias selladas en años de entrenamiento y (ii) último año. K1 reabre la muestra v6 con una evaluación por línea base (D3, segunda mirada no confirmatoria). D4: la corrección de Incasòl cambió el sha256 de `prov_contratos_nuevos_anual` y `mun_contratos_anual` (sellados, no evaluados)"
+  }
+ ],
+ "validacion_limpia_v7": {
+  "limpia": "solo datos publicados después del pre-registro de V7 (2026T3+ trimestral; 2026 anual)",
+  "no_limpia_informativa": "CCAA nunca selladas: Cantabria, Castilla y León, Cataluña, C. Valenciana, Extremadura, Galicia, País Vasco; provincias no selladas (vistas en entrenamiento)",
+  "panel_ccaa_q": "nunca sellado; usado entero en v1 (2008-2025)"
+ },
+ "resultados": {
+  "historial": [
+   {
+    "Tema": "Inmigración → alquiler (CCAA, v1)",
+    "Conclusión vigente": "Signo positivo, no robusto a todos los niveles",
+    "Capa": "C4",
+    "Estado": "Se mantiene (asociación)"
+   },
+   {
+    "Tema": "Inmigración → precio (CCAA, v1)",
+    "Conclusión vigente": "No concluyente",
+    "Capa": "C4",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Cuota de extranjeros → precio (CCAA, v1)",
+    "Conclusión vigente": "No concluyente",
+    "Capa": "C4",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Inmigración → alquiler y compra (provincia, v2/BI)",
+    "Conclusión vigente": "Alquiler +3,06 %/pp [1,14; 4,98]; compra n.s.",
+    "Capa": "C4",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Población extranjera → alquiler (v2/BA)",
+    "Conclusión vigente": "Negativo n.s.",
+    "Capa": "C4",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Cotas Manski de cantidad de hogares extranjeros (v3/PB)",
+    "Conclusión vigente": "Cota no informativa (100 %)",
+    "Capa": "C2",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Nacionalidad y hogares creados (v4/M2)",
+    "Conclusión vigente": "53-76 % de ΔH según corrección EPA",
+    "Capa": "C4",
+    "Estado": "Se mantiene (descriptivo)"
+   },
+   {
+    "Tema": "Peso de no residentes y precio (v5/R1A)",
+    "Conclusión vigente": "No concluyente",
+    "Capa": "C4",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Cuota de extranjeros → alquiler/compra (v6/M1, v6/M2)",
+    "Conclusión vigente": "Cambia la lectura: PIP alta en compra con núcleo, baja en alquiler. K2 lo reclasifica como «analizada, no concluyente»",
+    "Capa": "C4",
+    "Estado": "Cambia; K2 analizada"
+   },
+   {
+    "Tema": "Inmigración → empleo (v1, v2/BV, v6)",
+    "Conclusión vigente": "Signo según método; no concluyente",
+    "Capa": "C4",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Renta → alquiler y compra (v1, v6)",
+    "Conclusión vigente": "Cero en alquiler, positivo en compra (p 0,13), sin concluir",
+    "Capa": "C4",
+    "Estado": "Cambia de mercado; no concluyente"
+   },
+   {
+    "Tema": "Oferta (iniciadas) → precio (v2/BO, v6)",
+    "Conclusión vigente": "Oferta responde al precio (β 0,79); otra dirección según medida",
+    "Capa": "C4",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Turísticos (VUT) → alquiler (v3/C1, v6)",
+    "Conclusión vigente": "Signo no estable; n.s.",
+    "Capa": "C4",
+    "Estado": "Se mantiene (no concluyente)"
+   },
+   {
+    "Tema": "Turísticos: cota de stock desplazado (v3/PB)",
+    "Conclusión vigente": "Máximo 2,4-2,75 % del stock de alquiler",
+    "Capa": "C2",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Topes de renta (v2/BP; v3/C3)",
+    "Conclusión vigente": "Efecto −5,4 % en contratos nuevos (fianzas); falla pretendencias",
+    "Capa": "C4",
+    "Estado": "Cambia de mercado (contratos nuevos, no stock)"
+   },
+   {
+    "Tema": "Zonas tensionadas (v2/BS)",
+    "Conclusión vigente": "τ −0,0117, Holm 0,098",
+    "Capa": "C4",
+    "Estado": "Se mantiene; no estimable en v6"
+   },
+   {
+    "Tema": "Tipos hipotecarios → precio (v1)",
+    "Conclusión vigente": "Sin efecto de largo plazo",
+    "Capa": "C4",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Crédito y coste de uso (v2/BV, v3/PB)",
+    "Conclusión vigente": "Sin valor predictivo en sellado",
+    "Capa": "C4 / C2",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Déficit acumulado 2021-2025 (v1)",
+    "Conclusión vigente": "Cambió: v5.1 sin bajas 700.934-757.257 (C1); con bajas C4 central 763.416",
+    "Capa": "C1/C4",
+    "Estado": "Cambia (v5.1)"
+   },
+   {
+    "Tema": "Déficit 2021-2024 sin bajas (v6.2/L3)",
+    "Conclusión vigente": "389.361-710.542 viviendas",
+    "Capa": "C2",
+    "Estado": "Vigente"
+   },
+   {
+    "Tema": "Bajas y déficit con bajas (v4→v5.1)",
+    "Conclusión vigente": "Supuesto de 902.808 (C2) → T1 hasta 744.144 (C4)",
+    "Capa": "C2 → C4",
+    "Estado": "Cambia (corregido en v5.1)"
+   },
+   {
+    "Tema": "Necesidad 2026-2035 (v5→v5.1)",
+    "Conclusión vigente": "99.000-292.000 viviendas/año; dirección 2026-2030 «empeora» (C2)",
+    "Capa": "C4",
+    "Estado": "Cambia; liberadas no se restan"
+   },
+   {
+    "Tema": "Exuberancia GSADF (v4/M7, v6/M1B)",
+    "Conclusión vigente": "Ninguna CCAA supera el valor crítico",
+    "Capa": "C4",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Precio de compra: IPV frente a núcleo (v5/A23)",
+    "Conclusión vigente": "IPV +79,9 %; núcleo +44,2 a +56,1 %",
+    "Capa": "C1 (núcleo) / C4",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Elasticidad precio-alquiler (v6/M1B)",
+    "Conclusión vigente": "0,43-1,33 (FE); 1,6-2,1 (DOLS); depende de la especificación",
+    "Capa": "C4",
+    "Estado": "Se mantiene"
+   },
+   {
+    "Tema": "Predicción frente a AR(4) (v1)",
+    "Conclusión vigente": "ECM no mejora al AR(4) (DM p 0,509)",
+    "Capa": "C4",
+    "Estado": "Se mantiene (línea base)"
+   },
+   {
+    "Tema": "Demografía 20-34 (v2/BA)",
+    "Conclusión vigente": "RMSE 0,0108 frente a 0,0122 del AR(4)",
+    "Capa": "C4",
+    "Estado": "Se mantiene (predictivo, no robusto)"
+   },
+   {
+    "Tema": "ML sellado (v6/M4, v6.1/K1)",
+    "Conclusión vigente": "Alquiler provincia: 1,61 % frente a 4,21 % (persistencia); 6 de 9 tareas predicen mejor que la base; ninguna variable relevante con seguridad",
+    "Capa": "C4",
+    "Estado": "Se mantiene (predicción)"
+   },
+   {
+    "Tema": "Inmigración (v6.2/L4): asociación total y directa",
+    "Conclusión vigente": "Total: compra +4,3 %/pp; directa (con población): compra −1,3 (IC −4,3; 1,7), alquiler 0,18 (IC −1,5; 1,8). Controlar población es mal control",
+    "Capa": "C4",
+    "Estado": "Se mantiene K2: analizada, no concluyente"
+   }
+  ],
+  "cifras_publicables": {
+   "aptas": [
+    {
+     "id": "dh_2125",
+     "Indicador": "Aumento de hogares",
+     "Valor (rango)": "997.586 (981.823-1.013.350)",
+     "Capa": "C1",
+     "Periodo": "2021-2025"
+    },
+    {
+     "id": "terminadas_1924",
+     "Indicador": "Viviendas terminadas/año (territorio común)",
+     "Valor (rango)": "72.264-94.426",
+     "Capa": "C1",
+     "Periodo": "2019-2024"
+    },
+    {
+     "id": "L3-DEF-2124-SINBAJAS",
+     "Indicador": "Déficit 2021-2024 sin bajas",
+     "Valor (rango)": "389.361-710.542",
+     "Capa": "C2",
+     "Periodo": "2021-2024"
+    },
+    {
+     "id": "A23-P2",
+     "Indicador": "Precio de compra, núcleo 2015-2025",
+     "Valor (rango)": "47,2 % (44,2-56,1 %)",
+     "Capa": "C1",
+     "Periodo": "2015-2025"
+    },
+    {
+     "id": "A23-A2",
+     "Indicador": "Alquiler de stock 2015-2024",
+     "Valor (rango)": "10,9-22,9 %",
+     "Capa": "C1",
+     "Periodo": "2015-2024"
+    },
+    {
+     "id": "A23-A10",
+     "Indicador": "Contratos nuevos Comunitat Valenciana 2021-2024",
+     "Valor (rango)": "28,5 % (26,1-30,8 %)",
+     "Capa": "C1",
+     "Periodo": "2021-2024"
+    },
+    {
+     "id": "A23-A9",
+     "Indicador": "Contratos nuevos Cataluña 2021-2024",
+     "Valor (rango)": "16,9 % (16,6-17,2 %)",
+     "Capa": "C1",
+     "Periodo": "2021-2024"
+    },
+    {
+     "id": "E-B1-F",
+     "Indicador": "Crecimiento de hogares proyectado (10 años)",
+     "Valor (rango)": "1.308.531-1.772.410",
+     "Capa": "C2",
+     "Periodo": "2026-2035"
+    },
+    {
+     "id": "R1C-001",
+     "Indicador": "Hogares propietarios de vivienda principal",
+     "Valor (rango)": "74,5 % (72,1-75,9 %)",
+     "Capa": "C1",
+     "Periodo": "2021-2022"
+    }
+   ],
+   "no_fuera_de_contexto": [
+    {
+     "id": "L3-DEF-2124-CONBAJAS",
+     "Indicador": "Déficit 2021-2024 con bajas 0,1-0,2 %",
+     "Valor (rango)": "389.361-924.658",
+     "Capa": "C2"
+    },
+    {
+     "id": "T3-H5b",
+     "Indicador": "Necesidad anual 2026-2035 (base sin X)",
+     "Valor (rango)": "210.424 (99.388-292.083)",
+     "Capa": "C4"
+    },
+    {
+     "id": "T3-H5",
+     "Indicador": "Necesidad anual 2026-2035 (con X)",
+     "Valor (rango)": "245.989 (123.936-338.663)",
+     "Capa": "C4"
+    },
+    {
+     "id": "B1-H1",
+     "Indicador": "Necesidad total por año (52 provincias)",
+     "Valor (rango)": "214.868 (93.628-309.921)",
+     "Capa": "C4"
+    },
+    {
+     "id": "D1-H11",
+     "Indicador": "Traslado a precio, clase A4 1 (método A)",
+     "Valor (rango)": "58,4 % (27,8-81,8 %)",
+     "Capa": "C4"
+    },
+    {
+     "id": "D1-H12",
+     "Indicador": "Traslado a precio, clase A4 2 (método A)",
+     "Valor (rango)": "100,0 % (88,1-100,0 %)",
+     "Capa": "C4"
+    },
+    {
+     "id": "K2-CUOTA-COMPRA-SINPOB-SIN",
+     "Indicador": "Cuota de extranjeros (compra, sin población)",
+     "Valor (rango)": "4,3 % por pp (2,1-6,4 %)",
+     "Capa": "C4"
+    },
+    {
+     "id": "K2-CUOTA-COMPRA-SIN",
+     "Indicador": "Cuota de extranjeros (compra, con núcleo)",
+     "Valor (rango)": "−1,3 % por pp (−4,3 a 1,7 %)",
+     "Capa": "C4"
+    },
+    {
+     "id": "K1-N-MEJOR",
+     "Indicador": "Tareas donde el mejor modelo supera la base exigente",
+     "Valor (rango)": "6 tareas",
+     "Capa": "C4"
+    },
+    {
+     "id": "latente_convivencia",
+     "Indicador": "Demanda latente de jóvenes por convivencia",
+     "Valor (rango)": "188.000-506.000 hogares",
+     "Capa": "C2"
+    },
+    {
+     "id": "B4-v3-vut-cantidad",
+     "Indicador": "Stock de alquiler desplazado por VUT (máximo)",
+     "Valor (rango)": "2,4-2,7 %",
+     "Capa": "C2"
+    },
+    {
+     "id": "L3-DEF-2124-BAJAST1",
+     "Indicador": "Déficit 2021-2024 con bajas T1",
+     "Valor (rango)": "654.646 (389.361-765.994)",
+     "Capa": "C4"
+    },
+    {
+     "id": "L3-DEF-2124-SENS",
+     "Indicador": "Sensibilidad sin variantes a y d1",
+     "Valor (rango)": "596.371-710.542",
+     "Capa": "C2"
+    }
+   ],
+   "historicas": [
+    {
+     "id": "deficit_2124_c1",
+     "Indicador": "Déficit 2021-2024 sin bajas",
+     "Valor (rango)": "562.692-688.692",
+     "Capa": "C1",
+     "Sustituida por": "L3-DEF-2124-SINBAJAS"
+    },
+    {
+     "id": "deficit_2124_c2",
+     "Indicador": "Déficit 2021-2024 con bajas supuestas (cota)",
+     "Valor (rango)": "562.692-902.808",
+     "Capa": "C2",
+     "Sustituida por": "L3-DEF-2124-CONBAJAS"
+    },
+    {
+     "id": "T3-H2",
+     "Indicador": "Déficit 2021-2024 con bajas T1",
+     "Valor (rango)": "653.097 (562.692-744.144)",
+     "Capa": "C4",
+     "Sustituida por": "L3-DEF-2124-BAJAST1"
+    }
+   ]
+  }
+ },
+ "politica": {
+  "metodo": "incidencia |εd|/(εs+|εd|) por clase territorial A4; rejilla εd 0,3-1,5; determinista",
+  "instrumentos_matriz": "output/v5/D1/matriz_instrumentos.csv (37 filas); 18 sin signo evaluable; I17 e I23 sin definición",
+  "traslado_por_clase": [
+   {
+    "Clase A4": "1",
+    "Min": "27,8 %",
+    "Central": "58,4 %",
+    "Max": "81,8 %"
+   },
+   {
+    "Clase A4": "2",
+    "Min": "88,1 %",
+    "Central": "100 %",
+    "Max": "100 %"
+   },
+   {
+    "Clase A4": "3",
+    "Min": "50,1 %",
+    "Central": "76,4 %",
+    "Max": "89,8 %"
+   }
+  ]
+ },
+ "calidad": {
+  "errata_entradas": 11,
+  "tipos_error_recurrentes": [
+   "cruces por nombre con tildes",
+   "fillna silenciosos",
+   "redondeo %.6g",
+   "fechas de ejecución/edición como texto",
+   "ventanas desalineadas (stock 1-ene vs media anual)",
+   "dobles conteos de agregados",
+   "notas desactualizadas tras sellado"
+  ],
+  "incidencias_inventario": [
+   "v1 ECM DM p 0,290 vs 0,509",
+   "v3 C3 H3-3b IC incluye 0 con p aj. 0,0002",
+   "v2 BP Holm-7 pendiente",
+   "K4c-03 = K4c-26"
+  ]
+ },
+ "consumo_tokens": [
+  {
+   "Versión": "v2",
+   "Total": "4.909.395",
+   "Desglose (módulo u oleada)": "sin desglose en la línea de resumen"
+  },
+  {
+   "Versión": "v3",
+   "Total": "2.106.329 (de 3,5 M)",
+   "Desglose (módulo u oleada)": "por tarea"
+  },
+  {
+   "Versión": "v4",
+   "Total": "1.475.500 (de 2,5 M)",
+   "Desglose (módulo u oleada)": "A 408.598; B 439.886; C 589.719; sin asignar 37.297"
+  },
+  {
+   "Versión": "v5",
+   "Total": "3.093.637 (de 4,2 M)",
+   "Desglose (módulo u oleada)": "R 601.209; A 471.653; B 523.477; C 416.137; D 499.772; E 511.524"
+  },
+  {
+   "Versión": "v5.1",
+   "Total": "660.860 (de 1 M)",
+   "Desglose (módulo u oleada)": "por tarea"
+  },
+  {
+   "Versión": "v6",
+   "Total": "1.541.747 (de 2,2 M)",
+   "Desglose (módulo u oleada)": "por tarea (M0–M4; M3 el mayor)"
+  },
+  {
+   "Versión": "v6.1",
+   "Total": "1.132.386 (de 1,4 M)",
+   "Desglose (módulo u oleada)": "K1 ≈90k; K4b ≈175k; K4a ≈235k; K2 ≈250k; revisor ≈74k; K3 ≈50k; K4c/K4d 139.884; K5 72.773; revisor final 50.799"
+  },
+  {
+   "Versión": "v6.2",
+   "Total": "462.880 (de 0,6 M)",
+   "Desglose (módulo u oleada)": "L1 223.573; L2 129.888; L3 55.691; revisor 53.728"
+  }
+ ],
+ "consumo_inventario": {
+  "tokens": 512221,
+  "presupuesto": 250000,
+  "exceso": 262221
+ }
+}

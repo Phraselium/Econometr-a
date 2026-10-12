@@ -136,13 +136,134 @@ def summarize(df):
     return pd.DataFrame(recs)
 
 
+MCSE = float(np.sqrt(0.05 * 0.95 / 200))  # error MC de una tasa en torno a 0,05 con 200 replicas
+EST_OK = ["A_coint_sin_factor", "B_coint_con_factor"]  # DGP bajo el que se juzgan los estimadores (theta comun)
+
+
+def veredictos(sm):
+    """Aplica los criterios declarados. Estimadores (escenarios A y B, theta1 y theta2): |sesgo rel| <= 10 % Y
+    cobertura en [0,90; 0,98]. Punto apto pero cobertura fuera -> 'apta con reservas'; sesgo fuera -> 'no apta'.
+    Tests: tamano en [0,02; 0,10] en TODOS los escenarios con H0 verdadera (para Hausman: A y B). Tamano mayor
+    que 0,10 pero <= 0,10 + 1 EE-MC (0,015) o menor que 0,02 con potencia >= 0,90 -> 'apta con reservas'; mas
+    alejado -> 'no apta'."""
+    v = {}
+    for m in ["MG", "PMG", "DFE", "CS-ARDL"]:
+        g = sm[(sm.herramienta == m) & sm.scen.isin(EST_OK) & sm.metrica.str.startswith("theta")]
+        bias = g.sesgo_rel.abs().max()
+        cov = g.cobertura
+        e = sm[(sm.herramienta == m) & (sm.scen == "E_coint_theta_heterogeneo") & (sm.metrica == "theta1")].iloc[0]
+        ph = sm[(sm.herramienta == m) & sm.scen.isin(EST_OK) & (sm.metrica == "phi_media")].sesgo_rel.abs().max()
+        txt = (f"max|sesgo rel| theta={bias:.3f}, cobertura {cov.min():.3f}-{cov.max():.3f}, "
+               f"max|sesgo rel| media phi={ph:.3f}; con theta_i heterogeneo (E): sesgo rel theta1={e.sesgo_rel:.3f}, "
+               f"cobertura={e.cobertura:.3f}")
+        if bias > 0.10:
+            v[m] = f"no apta: sesgo relativo de theta fuera de +-10 % ({txt})"
+        elif ((cov < 0.90) | (cov > 0.98)).any():
+            v[m] = f"apta con reservas: punto apto pero IC95 infra/sobre-cubre ({txt})"
+        else:
+            v[m] = f"apta ({txt})"
+        if m != "CS-ARDL" and ph > 0.10:
+            v[m] += f". Reserva adicional: sesgo de la media de phi > 10 % ({ph:.3f})"
+    def power(h, scs):
+        return sm[(sm.herramienta == h) & sm.scen.isin(scs) & (sm.metrica == "rechazo_5%")].tasa_rechazo
+    h0 = ["C_sin_coint_sin_factor", "D_sin_coint_con_factor"]
+    h1 = ["A_coint_sin_factor", "B_coint_con_factor", "E_coint_theta_heterogeneo"]
+    for h in sorted(set(sm.herramienta) - {"MG", "PMG", "DFE", "CS-ARDL"}):
+        if h.startswith("Hausman"):
+            siz, pw = power(h, EST_OK), power(h, ["E_coint_theta_heterogeneo"])
+        elif h == "CIPS_sobre_serie_estacionaria":
+            continue
+        elif h.startswith("CIPS"):
+            siz, pw = power(h, list(SCEN)), power("CIPS_sobre_serie_estacionaria", list(SCEN))
+        else:
+            siz, pw = power(h, h0), power(h, h1)
+        lo, hi = siz.min(), siz.max()
+        txt = f"tamano {lo:.3f}-{hi:.3f}; potencia {pw.min():.3f}-{pw.max():.3f}"
+        if 0.02 <= lo and hi <= 0.10:
+            v[h] = f"apta ({txt})"
+        elif hi <= 0.10 + MCSE and lo >= 0.02 - 1e-9 or (hi <= 0.10 and pw.min() >= 0.90):
+            v[h] = f"apta con reservas: {'conservador' if hi <= 0.10 else 'tamano algo > 0,10'} ({txt})"
+        else:
+            v[h] = f"no apta: tamano fuera de [0,02; 0,10] ({txt})"
+    return v
+
+
+def escribir_doc(sm, tiempo=None):
+    v = veredictos(sm)
+    L = ["# Validacion Monte Carlo de las herramientas de panel (V7-R2)", "",
+         "Capa C4 (metodologica). Datos SOLO simulados; sin datos reales. SEED=20261010; 200 replicas por escenario; "
+         f"N={N}, T={T}; Westerlund con 99 remuestras por bloques; CIPS y Pedroni con valores nulos simulados "
+         "(500 replicas, paseos aleatorios independientes; medias/varianzas tabuladas de Pedroni NO VERIFICADAS y no usadas). "
+         "Script: src/v7/r2_montecarlo.py; datos: output/v7/R2/montecarlo.csv.", "",
+         "## DGP", "ECM por unidad con phi_i~U(-0,4;-0,1); theta=(1,0; -0,5) comun; efectos fijos en el nivel (c_i~N(0,4)); "
+         "corto plazo heterogeneo (delta_ik~U(0;0,6), lambda_i~U(0;0,3)); x_k con deriva 0,05. Factor comun AR(0,5) en dx e y "
+         "(cargas N(1;0,25)) en los escenarios con factor. Estimacion: ARDL(2,1) en forma ECM.",
+         "- A: cointegrado, sin factor. B: cointegrado, con factor (dependencia transversal).",
+         "- C: sin cointegracion (phi=0), sin factor. D: sin cointegracion, con factor (tamano de los tests).",
+         "- E: cointegrado con theta_i heterogeneo (sd 0,5), sin factor (potencia del Hausman; PMG mal especificado).", "",
+         "## Criterios declarados",
+         "- |sesgo relativo| <= 10 %; cobertura IC95 de theta en [0,90; 0,98]; tamano nominal 5 % en [0,02; 0,10].",
+         f"- Tolerancia: 1 error estandar MC de una tasa en 5 % con 200 replicas = {MCSE:.3f}. Reglas de veredicto en "
+         "`veredictos()`: estimadores juzgados en A y B (theta1 y theta2); tests en todos los escenarios con H0 verdadera "
+         "(Hausman: A y B; CIPS: y es I(1) en los cinco escenarios).", ""]
+    for s in SCEN:
+        g = sm[sm.scen == s]
+        L += [f"## Escenario {s}", ""]
+        e = g[g.metrica.str.startswith(("theta", "phi"))]
+        if len(e):
+            e = e.drop(columns=["scen", "tasa_rechazo"]).round(3)
+            L += ["| herramienta | metrica | verdadero | sesgo | sesgo rel | RMSE | cobertura |", "|---|---|---|---|---|---|---|"]
+            L += [f"| {r.herramienta} | {r.metrica} | {r.valor_verdadero} | {r.sesgo} | {r.sesgo_rel} | {r.rmse} | {r.cobertura} |"
+                  for r in e.itertuples()]
+            L.append("")
+        t = g[g.metrica == "rechazo_5%"].round(3)
+        L += ["| test | tasa de rechazo al 5 % |", "|---|---|"] + [f"| {r.herramienta} | {r.tasa_rechazo} |" for r in t.itertuples()]
+        L.append("")
+    L += ["## Juicio de aptitud por herramienta", "", "| herramienta | veredicto |", "|---|---|"]
+    L += [f"| {k} | {x} |" for k, x in v.items()]
+    L += ["", "## Lectura y limites",
+          "- Rechazo en C/D = tamano; rechazo en A/B/E = potencia. Para CIPS, potencia = rechazo sobre una serie AR(0,7) estacionaria.",
+          "- En el DGP la y de A, B y E es I(1) pero con un componente estacionario grande: CIPS (p=1, solo constante) sobre-rechaza ahi; "
+          "no se probaron retardos mayores ni la version con tendencia.",
+          "- Westerlund y Pedroni: p por simulacion/bootstrap, no por momentos tabulados. Westerlund usa una variante "
+          "(pooled ponderado 1/sigma_i^2, sin leads de dx), no el codigo original; en estos DGP queda conservador.",
+          "- PMG: EE de theta por informacion; infracubre incluso con theta comun (T=78, phi_i heterogeneo, ARDL(2,1)). Con theta_i heterogeneo (E) "
+          "el PMG sesga y el Hausman tiene potencia limitada.",
+          "- CS-ARDL con p_T=floor(T^{1/3})=4 anade 3x5=15+ regresores a ~73 observaciones por unidad: coste de grados de libertad.",
+          "- Resultados de simulacion con dos parametros y 200 replicas; no extrapolar a otros DGP. Ninguna cifra procede de datos reales.", ""]
+    (ROOT / "docs" / "v7" / "validacion_herramientas.md").write_text("\n".join(L), encoding="utf-8")
+    return v
+
+
+def escribir_resto(sm, v):
+    import json
+    from econ_utils import Registry
+    out = ROOT / "output" / "v7" / "R2"
+    reg = Registry(out / "registro.csv")
+    for r in sm.itertuples():
+        reg.log("R2_MC", f"{r.scen}|{r.herramienta}|{r.metrica}", "simulacion N=17 T=78 200 rep", "sim", "sim", 200,
+                np.nan, np.nan, np.nan, coef_interes=r.sesgo if r.metrica.startswith(("theta", "phi")) else r.tasa_rechazo,
+                p_interes=np.nan, notas="sesgo (estimadores) o tasa de rechazo (tests); sin contraste de hipotesis -> FDR no aplica")
+    reg.flush()
+    res = dict(rama="R2", pregunta="Son aptas las herramientas de panel (MG, PMG, DFE, CS-ARDL, Hausman, CIPS, Westerlund, Pedroni) "
+               "en N=17, T=78 con dependencia transversal?", capa="C4", datos="simulados (SEED=20261010); sin datos reales",
+               N=dict(unidades=N, T=T, replicas_por_escenario=200), metodo="Monte Carlo, 5 escenarios (ver docs/v7/validacion_herramientas.md)",
+               estimacion=None, ic95=None, p_ajustado=None, nivel_evidencia="DESCRIPTIVO (validacion metodologica por simulacion)",
+               diagnosticos=v, fuera_muestra=dict(modelo=None, rmse=None, dm_vs_ar4=None),
+               notas="Medias/varianzas tabuladas de Pedroni no verificadas ni usadas (p simulados). Referencias NO VERIFICADAS.")
+    (out / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 if __name__ == "__main__":
     t0 = time.time()
-    reps = int(sys.argv[1]) if len(sys.argv) > 1 else 200
-    df = run(reps)
     out = ROOT / "output" / "v7" / "R2"
     out.mkdir(parents=True, exist_ok=True)
-    sm = summarize(df)
-    sm.to_csv(out / "montecarlo.csv", index=False)
-    df.to_csv(out / "montecarlo_replicas.csv.gz", index=False)
+    if len(sys.argv) > 1 and sys.argv[1] == "doc":
+        sm = pd.read_csv(out / "montecarlo.csv")
+    else:
+        df = run(200)
+        sm = summarize(df)
+        sm.to_csv(out / "montecarlo.csv", index=False)
+        df.to_csv(out / "montecarlo_replicas.csv.gz", index=False)
+    escribir_resto(sm, escribir_doc(sm))
     print(f"{time.time() - t0:.0f}s")

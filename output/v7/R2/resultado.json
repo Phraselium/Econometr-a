@@ -1,0 +1,36 @@
+{
+ "rama": "R2",
+ "pregunta": "Son aptas las herramientas de panel (MG, PMG, DFE, CS-ARDL, Hausman, CIPS, Westerlund, Pedroni) en N=17, T=78 con dependencia transversal?",
+ "capa": "C4",
+ "datos": "simulados (SEED=20261010); sin datos reales",
+ "N": {
+  "unidades": 17,
+  "T": 78,
+  "replicas_por_escenario": 200
+ },
+ "metodo": "Monte Carlo, 5 escenarios (ver docs/v7/validacion_herramientas.md)",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO (validacion metodologica por simulacion)",
+ "diagnosticos": {
+  "MG": "apta con reservas: punto apto pero IC95 infra/sobre-cubre (max|sesgo rel| theta=0.063, cobertura 0.895-0.920, max|sesgo rel| media phi=0.189; con theta_i heterogeneo (E): sesgo rel theta1=-0.015, cobertura=1.000). Reserva adicional: sesgo de la media de phi > 10 % (0.189)",
+  "PMG": "apta con reservas: punto apto pero IC95 infra/sobre-cubre (max|sesgo rel| theta=0.010, cobertura 0.860-0.885, max|sesgo rel| media phi=0.087; con theta_i heterogeneo (E): sesgo rel theta1=0.160, cobertura=0.275)",
+  "DFE": "apta con reservas: punto apto pero IC95 infra/sobre-cubre (max|sesgo rel| theta=0.031, cobertura 0.850-0.915, max|sesgo rel| media phi=0.194; con theta_i heterogeneo (E): sesgo rel theta1=0.121, cobertura=0.915). Reserva adicional: sesgo de la media de phi > 10 % (0.194)",
+  "CS-ARDL": "no apta: sesgo relativo de theta fuera de +-10 % (max|sesgo rel| theta=0.218, cobertura 0.715-0.850, max|sesgo rel| media phi=0.430; con theta_i heterogeneo (E): sesgo rel theta1=-0.049, cobertura=0.970)",
+  "CIPS_sobre_y_I(1)": "no apta: tamano fuera de [0,02; 0,10] (tamano 0.110-0.555; potencia 1.000-1.000)",
+  "Hausman_MG_PMG": "no apta: tamano fuera de [0,02; 0,10] (tamano 0.080-0.135; potencia 0.630-0.630)",
+  "Pedroni_groupADF": "apta (tamano 0.035-0.080; potencia 0.985-1.000)",
+  "Pedroni_panelADF": "apta (tamano 0.030-0.080; potencia 0.980-1.000)",
+  "Westerlund_Ga": "apta con reservas: conservador (tamano 0.000-0.005; potencia 1.000-1.000)",
+  "Westerlund_Gt": "apta con reservas: conservador (tamano 0.005-0.005; potencia 1.000-1.000)",
+  "Westerlund_Pa": "apta con reservas: conservador (tamano 0.005-0.010; potencia 0.990-1.000)",
+  "Westerlund_Pt": "apta con reservas: conservador (tamano 0.010-0.010; potencia 1.000-1.000)"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Medias/varianzas tabuladas de Pedroni no verificadas ni usadas (p simulados). Referencias NO VERIFICADAS."
+}

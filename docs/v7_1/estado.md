@@ -20,8 +20,10 @@
   - LEEME_PRIMERO.md; README, MAPA, README_REPLICACION, CITATION, .zenodo.json y CHANGELOG en v7.1.
   - Tests: test_publicacion (regeneración byte a byte), test_enlaces y test_cifras_difundibles.
 
+- **S6.** docs/v7_1/release_notes.md (prereg-v7, v7.0 y v7.1), renderizada desde una plantilla con cifras de cifras_clave (src/v7_1/s6_paquete.py, en `make v7_1`). docs/v7_1/tareas_autor.md (7 tareas por urgencia). Guía del revisor v7.1 en metodologia/; la de v6.2 se marca histórica.
+
 ## Siguiente
-- Control: revisor único (opus, tope 80k) sobre S3 y S5. Después S6 y cierre.
+- Control: revisor único (opus, tope 80k) en curso. Después, correcciones y cierre.
 
 ## Tokens de subagentes (de 0,65 M)
 

@@ -1,5 +1,7 @@
 # Guía para el revisor externo (v6.2)
 
+> **Histórica (v6.2).** La guía vigente es [metodologia/guia_revisor.md](../../metodologia/guia_revisor.md) (versión de referencia v7.1).
+
 **Autor:** Borja Romero, economista (firma individual e independiente).
 
 **Versión:** 6.2 (cierre para revisión externa).

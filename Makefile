@@ -72,6 +72,7 @@ v7_1:
 	$(PY) src/v5/cifras_clave.py
 	$(PY) src/v5/render.py
 	$(PY) src/v6_2/l5_publicables.py
+	$(PY) src/v7_1/s6_paquete.py
 
 # V7.1: publicacion/, metodologia/ y reproducir/ se generan desde output/ y docs/ (nunca a mano; tests/v7_1/test_publicacion.py)
 publicacion:

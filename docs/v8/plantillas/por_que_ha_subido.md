@@ -10,7 +10,7 @@ La respuesta principal es negativa y precisa. Con la regla pre-registrada, **nin
 
 Lo que sí se sostiene es más modesto:
 
-- El precio real de compra subió {{V8-OBS-c-P1}} en la expansión de 1995-2007, cayó {{V8-OBS-c-P2}} en la crisis de 2008-2013 y ha subido {{V8-OBS-c-P5}} desde mediados de 2022. El alquiler real (IPC de alquiler deflactado por el IPC general) ha variado mucho menos: {{V8-OBS-a-P5}} en el mismo periodo reciente. Esa cifra mide el parque de contratos vivos (IPC de alquiler), no los contratos nuevos; para estos hay cifras C1 con dos fuentes por comunidad en 2021-2024 (variación nominal de la renta de los contratos nuevos, medida y periodo distintos, no comparables cifra a cifra con el alquiler real de P5): Cataluña {{A23-A9:cita}}; Comunitat Valenciana {{A23-A10:cita}}.
+- El precio real de compra subió {{V8-OBS-c-P1}} en la expansión de 1995-2007, varió {{V8-OBS-c-P2}} en la crisis de 2008-2013 y ha subido {{V8-OBS-c-P5}} desde mediados de 2022. El alquiler real (IPC de alquiler deflactado por el IPC general) ha variado mucho menos: {{V8-OBS-a-P5}} en el mismo periodo reciente. Esa cifra mide el parque de contratos vivos (IPC de alquiler), no los contratos nuevos; para estos hay cifras C1 con dos fuentes por comunidad en 2021-2024 (variación nominal de la renta de los contratos nuevos, medida y periodo distintos, no comparables cifra a cifra con el alquiler real de P5): Cataluña {{A23-A9:cita}}; Comunitat Valenciana {{A23-A10:cita}}.
 - En 1995-2007, el shock de actividad y renta es el único componente con una banda que excluye el cero en la descomposición histórica del SVAR: {{V8-SVAR-c-P1-empleo_renta-media}} de la subida del precio de compra [C3s, condicionado a las restricciones de signo y de cero]. No se designa porque los otros tres métodos se abstienen.
 - La subida reciente es **muy común a todas las comunidades autónomas**: el componente común explica {{V8-M1-cuota-c-P5}} de la varianza del crecimiento interanual del precio de compra en 2022-2026, frente a {{V8-M1-cuota-c-P2}} en 2008-2013 [C4].
 - El factor común español **acompaña** al precio de la vivienda de la zona euro: correlación {{V8-H8-9-est}}, p ajustado por Holm {{V8-H8-9-pholm:num}} [C4, asociación].
@@ -98,7 +98,7 @@ Lectura: bajo las restricciones del SVAR, la expansión del precio de compra en 
 
 ### P2 (2008-2013): crisis
 
-El precio real de compra cayó {{V8-OBS-c-P2}}.
+El precio real de compra varió {{V8-OBS-c-P2}}.
 
 - Actividad y renta: {{V8-SVAR-c-P2-empleo_renta-media}}.
 - Crédito y tipos: {{V8-SVAR-c-P2-credito_tipos-media}}.

@@ -30,12 +30,12 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | dosis_coste.csv | output/v7_1/S1/dosis_coste.csv | `6e7c2b8fa8ada5992399be00de87309a274ccc607a7aba04c88f3f0590c6f822` |
 | informe_econometrico_v8.md | output/v8/informe_econometrico.md | `689599422d9eff15d6a4b2b567808ccfe75b8ba65c65fa85307e94dc72f5a8ee` |
 | informe_tecnico.md | output/v5/informe_tecnico.md | `62a2978a8338904a0bdf1f3e46fa066038e6a5314af319a2f61c6a2b75beef15` |
-| lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `5f2b10f3bb2f793029f1254cf09d9fac233bb45eb45946c58a6e4f481c6f93c5` |
+| lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `6365ad417984103f68a25ffdacc68a43a62ac3f54172461dbdeff41e0d5ffedb` |
 | nota_metodologica.md | output/v5/nota_metodologica.md | `42a718ba6ef57a976b84c757885d65fccef9295f58838854bff2794ad084a9b4` |
 | policy_brief.md | output/v5/policy_brief.md | `5ccb8276df6576967fc9e121a7a2b20fc8a6937f45b52066a3bcbdb2f1d0f762` |
 | ponencia/diapositivas.md | output/v5/ponencia/diapositivas.md | `01826b2ab116beea72ce49937f263631e4644defbbf7439e389f5b8419787742` |
 | ponencia/guion.md | output/v5/ponencia/guion.md | `e7340de67107954fdaea292a5821ca2af43572a5330f687247b513df99413d35` |
-| por_que_ha_subido.md | output/v8/por_que_ha_subido.md | `620807213b94512a039b6eee5f46a25d0c96cb7334730ecd1309c550d2bf4f6c` |
+| por_que_ha_subido.md | output/v8/por_que_ha_subido.md | `03de7f79bd575f6d5ce71c58c584dba5503dcf784f9c6b78a4be69d545f7364d` |
 | que_cambio.md | output/v5/que_cambio.md | `b5b4ce8021db9bedf378195704d031c6f123e386e96273e869ad965a91e97091` |
 | tablas_modelos_destacados.csv | output/v8/tablas_modelos_destacados.csv | `b70730be9a7924f4ea71426a2ef04a50287c82b8a45dfd802ea61b2480277495` |
 | tablas_modelos_destacados.md | output/v8/tablas_modelos_destacados.md | `650cd6505b65d0e622e2c3916848664cb8c93b4cdb1aac86a1de2e6dc918590c` |

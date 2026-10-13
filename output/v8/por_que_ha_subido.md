@@ -10,7 +10,7 @@ La respuesta principal es negativa y precisa. Con la regla pre-registrada, **nin
 
 Lo que sí se sostiene es más modesto:
 
-- El precio real de compra subió 75,4 pp en la expansión de 1995-2007, cayó -44,0 pp en la crisis de 2008-2013 y ha subido 18,4 pp desde mediados de 2022. El alquiler real (IPC de alquiler deflactado por el IPC general) ha variado mucho menos: -1,8 pp en el mismo periodo reciente. Esa cifra mide el parque de contratos vivos (IPC de alquiler), no los contratos nuevos; para estos hay cifras C1 con dos fuentes por comunidad en 2021-2024 (variación nominal de la renta de los contratos nuevos, medida y periodo distintos, no comparables cifra a cifra con el alquiler real de P5): Cataluña 16,9 % (16,6-17,2 %) (2021-2024; INE IPVA (AEAT); Incasòl; dato de 2024; C1); Comunitat Valenciana 28,5 % (26,1-30,8 %) (2021-2024; INE IPVA (AEAT); GVA fianzas; dato de 2024; C1).
+- El precio real de compra subió 75,4 pp en la expansión de 1995-2007, varió -44,0 pp en la crisis de 2008-2013 y ha subido 18,4 pp desde mediados de 2022. El alquiler real (IPC de alquiler deflactado por el IPC general) ha variado mucho menos: -1,8 pp en el mismo periodo reciente. Esa cifra mide el parque de contratos vivos (IPC de alquiler), no los contratos nuevos; para estos hay cifras C1 con dos fuentes por comunidad en 2021-2024 (variación nominal de la renta de los contratos nuevos, medida y periodo distintos, no comparables cifra a cifra con el alquiler real de P5): Cataluña 16,9 % (16,6-17,2 %) (2021-2024; INE IPVA (AEAT); Incasòl; dato de 2024; C1); Comunitat Valenciana 28,5 % (26,1-30,8 %) (2021-2024; INE IPVA (AEAT); GVA fianzas; dato de 2024; C1).
 - En 1995-2007, el shock de actividad y renta es el único componente con una banda que excluye el cero en la descomposición histórica del SVAR: 31,8 pp (9,0-54,6 pp) de la subida del precio de compra [C3s, condicionado a las restricciones de signo y de cero]. No se designa porque los otros tres métodos se abstienen.
 - La subida reciente es **muy común a todas las comunidades autónomas**: el componente común explica 92,8 % (86,7-94,9 %) de la varianza del crecimiento interanual del precio de compra en 2022-2026, frente a 45,3 % (42,0-54,2 %) en 2008-2013 [C4].
 - El factor común español **acompaña** al precio de la vivienda de la zona euro: correlación 0,60 (0,14-0,86), p ajustado por Holm 0,020 [C4, asociación].
@@ -98,7 +98,7 @@ Lectura: bajo las restricciones del SVAR, la expansión del precio de compra en 
 
 ### P2 (2008-2013): crisis
 
-El precio real de compra cayó -44,0 pp.
+El precio real de compra varió -44,0 pp.
 
 - Actividad y renta: -10,6 pp (-23,5 a 0,66 pp).
 - Crédito y tipos: -8,6 pp (-18,9 a 0,54 pp).

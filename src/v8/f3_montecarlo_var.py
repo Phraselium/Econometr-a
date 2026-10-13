@@ -738,26 +738,34 @@ UMBRALES = ("Reglas (definidas por el ejecutor, algunas DESPUES de ver las cifra
 
 
 def etiq_prereg(df, tag):
-    """apta / con reservas / no apta / inviable para una configuracion pre-registrada, con reglas explicitas."""
+    """Tres etiquetas por configuracion pre-registrada, con reglas explicitas: (viabilidad y mecanica, signo del impacto no restringido, DH por tramos)."""
     fth = V(df, "prereg", tag, T_PRE, "frac_theta_con_aceptada")
     if fth < 0.01 or not hay(df, "prereg", tag, "ESS_medio"):
-        return "inviable (fraccion de theta con aceptada < 1 %)"
+        return "inviable (fraccion de theta con aceptada < 1 %)", "n/d", "n/d"
     ess = V(df, "prereg", tag, T_PRE, "ESS_medio")
+    essmin = V(df, "prereg", tag, T_PRE, "ESS_minimo")
     z = V(df, "prereg", tag, T_PRE, "restricciones_cumplidas_max_abs_cero")
     hd = V(df, "prereg", tag, T_PRE, "descomposicion_historica_error_max_con_exogenas")
     sg = V(df, "prereg", tag, T_PRE, "signo_impacto_recuperado_no_restringidas")
     c90 = V(df, "prereg", tag, T_PRE, "DH_cobertura_90_total")
     if not (z < 1e-10 and hd < 1e-8):
-        return "no apta (mecanica: ceros o identidad de la descomposicion historica)"
-    if ess < 30:
-        return f"con reservas (ESS medio {ess:.0f} < 30)"
-    if sg >= 0.90 and 0.85 <= c90 <= 0.98:
-        return "apta"
-    if sg >= 0.90 and c90 > 0.98:
-        return "con reservas (bandas de la descomposicion historica conservadoras: cobertura 90 % > 0,98)"
-    if sg >= 0.90 and c90 >= 0.80:
-        return f"con reservas (cobertura 90 % de la descomposicion historica {c90:.2f} < 0,85)"
-    return f"no apta (signo del impacto {sg:.2f} o cobertura de la DH {c90:.2f} fuera de reglas)"
+        mec = "no apta (ceros o identidad de la descomposicion historica)"
+    elif ess < 30:
+        mec = f"con reservas (ESS medio {ess:.0f} < 30)"
+    elif essmin < 30:
+        mec = f"apta (viable: theta con aceptada {fth:.2f}, ESS medio {ess:.0f}; con reservas por replicas con ESS minimo {essmin:.0f} < 30)"
+    else:
+        mec = f"apta (viable: theta con aceptada {fth:.2f}, ESS medio {ess:.0f})"
+    sig = "apta" if sg >= 0.90 else f"no apta (signo del impacto no restringido recuperado en {sg:.2f} < 0,90)"
+    if 0.85 <= c90 <= 0.98:
+        dh = f"apta en cobertura (90 % = {c90:.2f}), pero ver poder de la banda (excluye 0 en pocas celdas)"
+    elif c90 > 0.98:
+        dh = f"con reservas (bandas conservadoras: cobertura 90 % = {c90:.2f} > 0,98)"
+    elif c90 >= 0.80:
+        dh = f"con reservas (cobertura 90 % = {c90:.2f} < 0,85)"
+    else:
+        dh = f"no apta (cobertura 90 % = {c90:.2f} < 0,80)"
+    return mec, sig, dh
 
 
 def etiq_reg5(df):
@@ -775,19 +783,24 @@ def etiq_reg5(df):
 def etiquetas(df):
     """Etiquetas apta / con reservas / no apta con reglas declaradas (ver validacion.md)."""
     E = {}
-    # BVAR (GLP, delta = 0 por defecto): todas las celdas GLP y GLP_delta_mixto
-    cel = [(e, T, "GLP") for e in BVAR_ESC for T in (120, 60)] + [("tasas", T, "GLP_delta_mixto") for T in (120, 60)]
-    cov = [V(df, "BVAR", f"{e}|{m}", T, "cobertura_90") for e, T, m in cel]
-    ses = [V(df, "BVAR", f"{e}|{m}", T, "sesgo_rel_IRF_h1-12") for e, T, m in cel]
-    atn = [V(df, "BVAR", f"{e}|GLP", T, "atenuacion_firmada_rel_h1-12") for e in BVAR_ESC for T in (120, 60)]
+    # BVAR-GLP. Celdas segun el tipo de variable: tasas (delta 0 o mixto) y nivel casi paseo aleatorio (delta 1)
     ml_ok = _todo(df[(df.escenario.str.startswith("logml_vs_"))]["cumple"])
-    if ml_ok and all(0.85 <= c <= 0.98 for c in cov) and all(s_ <= 0.10 for s_ in ses):
-        E["BVAR-GLP (6 celdas GLP + 2 delta mixto)"] = "apta"
-    elif ml_ok and all(0.80 <= c <= 0.99 for c in cov) and all(s_ <= 0.30 for s_ in ses):
-        E["BVAR-GLP (6 celdas GLP + 2 delta mixto)"] = "con reservas"
-    else:
-        E["BVAR-GLP (6 celdas GLP + 2 delta mixto)"] = "no apta"
-    E["BVAR-GLP (direccion del sesgo de las IRF)"] = ("atenuadas hacia cero (atenuacion firmada > 0 en todas las celdas GLP)" if all(a > 0 for a in atn)
+
+    def etq_bvar(cel):
+        cov = [V(df, "BVAR", f"{e}|{m}", T, "cobertura_90") for e, T, m in cel]
+        ses = [V(df, "BVAR", f"{e}|{m}", T, "sesgo_rel_IRF_h1-12") for e, T, m in cel]
+        if ml_ok and all(0.85 <= c <= 0.98 for c in cov) and all(s_ <= 0.10 for s_ in ses):
+            return "apta"
+        if ml_ok and all(0.80 <= c <= 0.99 for c in cov) and all(s_ <= 0.30 for s_ in ses):
+            return "con reservas"
+        return f"no apta (cobertura 90 % {min(cov):.2f}-{max(cov):.2f}; sesgo absoluto relativo hasta {max(ses):.2f})"
+    cel_tasas = [(e, T, m) for (e, m) in (("denso", "GLP"), ("tasas", "GLP"), ("tasas", "GLP_delta_mixto")) for T in (120, 60)]
+    cel_nivel = [("casi_RW", T, "GLP_delta1") for T in (120, 60)]
+    E["BVAR-GLP en tasas (delta 0 o mixto; DGP denso y tasas; T = 60 y 120)"] = etq_bvar(cel_tasas)
+    E["BVAR-GLP en nivel casi paseo aleatorio (delta 1; T = 60 y 120)"] = etq_bvar(cel_nivel)
+    E["BVAR-GLP casi paseo aleatorio con delta 0 (uso NO previsto; sensibilidad)"] = etq_bvar([("casi_RW", T, "GLP") for T in (120, 60)])
+    atn = [V(df, "BVAR", f"{e}|{m}", T, "atenuacion_firmada_rel_h1-12") for (e, T, m) in cel_tasas + cel_nivel]
+    E["BVAR-GLP (direccion del sesgo de las IRF)"] = ("atenuadas hacia cero (atenuacion firmada > 0 en todas las celdas de uso previsto)" if all(a_ > 0 for a_ in atn)
                                                       else "direccion no uniforme")
     # signos 4 variables: mecanica
     hd = max(V(df, "signos", f"{e}|T{T}", T, "descomposicion_historica_error_max") for e, T in S4)
@@ -807,8 +820,11 @@ def etiquetas(df):
     else:
         E[k4] = "no apta (signo del impacto < 90 % o cobertura < 0,85)"
     # configuracion pre-registrada
-    E["signos/ceros PRE-REGISTRADO (7 var, T=88, h=0-1, 4 ceros): principal"] = etiq_prereg(df, "principal")
-    E["signos/ceros PRE-REGISTRADO: variante V3 (solo impacto, sin q)"] = etiq_prereg(df, "V3_solo_impacto")
+    for tag, nom in (("principal", "principal (7 var, T=88, h=0-1, 4 ceros)"), ("V3_solo_impacto", "variante V3 (solo impacto, sin q)")):
+        mec, sig, dh = etiq_prereg(df, tag)
+        E[f"signos PRE-REGISTRADO {nom}: viabilidad y mecanica"] = mec
+        E[f"signos PRE-REGISTRADO {nom}: signo del impacto no restringido"] = sig
+        E[f"signos PRE-REGISTRADO {nom}: descomposicion historica por tramos"] = dh
     # TVP
     def tv(e, m):
         return V(df, "TVP", e, 120, m)
@@ -893,17 +909,20 @@ def informe(df, seg, tiempos):
               f"{g('BVAR', 'logml_vs_cuadratura_n1', '', 'error_abs_logml'):.1e} (cuadratura 2-D, n=1, p=1) y "
               f"{g('BVAR', 'logml_vs_cadena_predictiva_n3_dummies', '', 'error_abs_logml'):.1e} (cadena predictiva t multivariante, n=3, p=2, con dummies de suma de coeficientes y de observacion inicial).\n")
     glp = [(e, T) for e in BVAR_ESC for T in (120, 60)]
-    c90 = [g("BVAR", f"{e}|GLP", T, "cobertura_90") for e, T in glp]
-    c68 = [g("BVAR", f"{e}|GLP", T, "cobertura_68") for e, T in glp]
-    sb = [g("BVAR", f"{e}|GLP", T, "sesgo_rel_IRF_h1-12") for e, T in glp]
-    at = [g("BVAR", f"{e}|GLP", T, "atenuacion_firmada_rel_h1-12") for e, T in glp]
-    fr = [g("BVAR", f"{e}|GLP", T, "frac_celdas_atenuadas_(|IRF|>=0.05)") for e, T in glp]
-    mejor_pl = sum(g("BVAR", f"{e}|GLP", T, "sesgo_rel_IRF_h1-12") < g("BVAR", f"{e}|plano_lam100", T, "sesgo_rel_IRF_h1-12") for e, T in glp)
-    mejor_d1 = sum(g("BVAR", f"{e}|GLP", T, "sesgo_rel_IRF_h1-12") < g("BVAR", f"{e}|GLP_delta1", T, "sesgo_rel_IRF_h1-12") for e, T in glp)
-    md.append(f"Lectura (cifras del csv, modo GLP con delta = 0, seis celdas): cobertura del 90 % entre {rango(c90, '{:.3f}')} y del 68 % entre {rango(c68, '{:.3f}')}; "
-              f"sesgo absoluto relativo entre {rango(sb, '{:.3f}')}; atenuacion firmada entre {rango(at, '{:+.3f}')} (celdas atenuadas: {rango(fr)}). "
-              f"El sesgo absoluto de GLP es menor que el del prior casi plano en {mejor_pl} de 6 celdas y menor que el de GLP con delta = 1 en {mejor_d1} de 6. "
-              "La atenuacion firmada separa el sesgo sistematico (hacia cero) del error de Monte Carlo por celda, que si se promedia en valor absoluto lo infla.\n")
+    uso = [(e, T, m) for (e, m) in (("denso", "GLP"), ("tasas", "GLP"), ("tasas", "GLP_delta_mixto"), ("casi_RW", "GLP_delta1")) for T in (120, 60)]
+    c90 = [g("BVAR", f"{e}|{m}", T, "cobertura_90") for e, T, m in uso]
+    c68 = [g("BVAR", f"{e}|{m}", T, "cobertura_68") for e, T, m in uso]
+    sb = [g("BVAR", f"{e}|{m}", T, "sesgo_rel_IRF_h1-12") for e, T, m in uso]
+    at = [g("BVAR", f"{e}|{m}", T, "atenuacion_firmada_rel_h1-12") for e, T, m in uso]
+    fr = [g("BVAR", f"{e}|{m}", T, "frac_celdas_atenuadas_(|IRF|>=0.05)") for e, T, m in uso]
+    mejor_g = sum(g("BVAR", f"{e}|GLP", T, "sesgo_rel_IRF_h1-12") < g("BVAR", f"{e}|plano_lam100", T, "sesgo_rel_IRF_h1-12") for e, T in glp)
+    mejor_d1 = sum(g("BVAR", f"{e}|GLP_delta1", T, "sesgo_rel_IRF_h1-12") < g("BVAR", f"{e}|plano_lam100", T, "sesgo_rel_IRF_h1-12") for e, T in glp)
+    cr0, cr1 = g("BVAR", "casi_RW|GLP", 120, "cobertura_90"), g("BVAR", "casi_RW|GLP_delta1", 120, "cobertura_90")
+    md.append(f"Lectura (cifras del csv; celdas de uso previsto: denso, tasas con delta 0 y mixto, y casi_RW con delta 1; T = 60 y 120): cobertura del 90 % entre {rango(c90, '{:.3f}')} y del 68 % entre {rango(c68, '{:.3f}')}; "
+              f"sesgo absoluto relativo entre {rango(sb, '{:.3f}')}; atenuacion firmada entre {rango(at, '{:+.3f}')} (fraccion de celdas atenuadas: {rango(fr)}). "
+              f"El sesgo absoluto es menor que el del prior casi plano en {mejor_g} de 6 celdas con GLP delta 0 y en {mejor_d1} de 6 con GLP delta 1. "
+              f"En el DGP casi_RW, delta 0 da cobertura del 90 % de {cr0:.2f} (T = 120) frente a {cr1:.2f} con delta 1: delta 0 no es adecuado para variables en nivel casi integradas. "
+              "La atenuacion firmada separa el sesgo sistematico (hacia cero) del error de Monte Carlo por celda, que promediado en valor absoluto lo infla; crece con el horizonte en los DGP persistentes.\n")
     # ------------------------------------------------------------------ Signos 4 var
     md.append("## 2. Signos y ceros (RWZ / ARW): DGP de 4 variables, solo impacto\n")
     md.append("DGP estructural de 4 shocks (oferta, demanda, credito, monetario) sobre 4 variables (y, pi, cred, tipo). Restricciones de signo en el impacto: "
@@ -986,6 +1005,18 @@ def informe(df, seg, tiempos):
     md.append(f"\nViabilidad de la principal: con M = {M_PRE} la fraccion de theta con alguna rotacion aceptada es {fth:.3f} "
               f"({'>=' if fth >= 0.01 else '<'} 1 %, regla de viabilidad) y el ESS medio {g('prereg', 'principal', T_PRE, 'ESS_medio') if hay(df, 'prereg', 'principal', 'ESS_medio') else float('nan'):.1f}. "
               "Se reportan ambas configuraciones (principal y V3) con cifras; la eleccion entre ellas y la fijacion de M y del numero de sorteos de theta corresponden al orquestador.\n")
+    if hay(df, "prereg", "principal", "ESS_medio"):
+        sgp, sg3 = g("prereg", "principal", T_PRE, "signo_impacto_recuperado_no_restringidas"), g("prereg", "V3_solo_impacto", T_PRE, "signo_impacto_recuperado_no_restringidas")
+        dhp, dh3 = g("prereg", "principal", T_PRE, "DH_cobertura_90_total"), g("prereg", "V3_solo_impacto", T_PRE, "DH_cobertura_90_total")
+        exp_, ex3 = (g("prereg", c, T_PRE, "DH_banda90_excluye_0_con_signo_correcto_(|contrib|>=0.5)") for c in cols)
+        md.append(f"Lectura (cifras del csv): la principal tiene aceptacion {g('prereg', 'principal', T_PRE, 'aceptacion_por_rotacion'):.1e} por rotacion y, con M = {M_PRE}, el {100 * fth:.0f} % de los theta aporta alguna rotacion aceptada "
+                  f"(minimo entre replicas {100 * g('prereg', 'principal', T_PRE, 'frac_theta_con_aceptada_minimo_replicas'):.0f} %); V3, {g('prereg', 'V3_solo_impacto', T_PRE, 'aceptacion_por_rotacion'):.1e} y "
+                  f"{100 * g('prereg', 'V3_solo_impacto', T_PRE, 'frac_theta_con_aceptada'):.0f} %. La cobertura de la DH por tramos es {dhp:.2f} (principal) y {dh3:.2f} (V3) al 90 %, pero la banda del 90 % solo excluye el cero en "
+                  f"{100 * exp_:.1f} % y {100 * ex3:.1f} % de las celdas con contribucion verdadera grande: las bandas cubren porque son anchas (conjunto identificado), no porque la DH discrimine el signo de la contribucion por tramos. "
+                  f"El signo del impacto de los elementos no restringidos se recupera por la mediana en {sgp:.2f} (principal) y {sg3:.2f} (V3) de las replicas; con 7 variables y 86 observaciones no alcanza el 0,90 de las reglas. "
+                  f"Fraccion de celdas con banda que excluye el cero con signo erroneo: {g('prereg', 'principal', T_PRE, 'DH_banda90_excluye_0_con_signo_ERRONEO_(|contrib|>=0.5)'):.3f} (principal), "
+                  f"{g('prereg', 'V3_solo_impacto', T_PRE, 'DH_banda90_excluye_0_con_signo_ERRONEO_(|contrib|>=0.5)'):.3f} (V3). Ficticias exogenas estimadas (principal): COVID sobre e "
+                  f"{g('prereg', 'principal', T_PRE, 'coef_COVID_sobre_e_estimado_(verdad_-2.0)'):+.2f} (verdad -2,0) y EPA {g('prereg', 'principal', T_PRE, 'coef_EPA_sobre_e_estimado_(verdad_1.5)'):+.2f} (verdad +1,5).\n")
     # ------------------------------------------------------------------ TVP
     md.append("## 3. TVP-VAR con volatilidad estocastica\n")
     md.append("DGP: VAR(2) de 3 variables, un coeficiente (primer retardo propio de la ecuacion 1) pasa de 0,4 a 0,8 a mitad de la muestra efectiva; volatilidad 0,5 constante. "
@@ -1062,9 +1093,9 @@ def informe(df, seg, tiempos):
                "cobertura de la DH por tramos, viabilidad del muestreo (fraccion de theta con aceptada, ESS), deteccion de cambio de coeficiente",
         estimacion={"etiquetas": E,
                     "reglas": UMBRALES,
-                    "BVAR_GLP_cobertura90": {f"{e}|T{T}": g("BVAR", f"{e}|GLP", T, "cobertura_90") for e in BVAR_ESC for T in (120, 60)},
-                    "BVAR_GLP_sesgo_rel": {f"{e}|T{T}": g("BVAR", f"{e}|GLP", T, "sesgo_rel_IRF_h1-12") for e in BVAR_ESC for T in (120, 60)},
-                    "BVAR_GLP_atenuacion_firmada_rel": {f"{e}|T{T}": g("BVAR", f"{e}|GLP", T, "atenuacion_firmada_rel_h1-12") for e in BVAR_ESC for T in (120, 60)},
+                    "BVAR_cobertura90": {f"{e}|{m}|T{T}": g("BVAR", f"{e}|{m}", T, "cobertura_90") for e in BVAR_ESC for m in ("GLP", "GLP_delta1", "plano_lam100") for T in (120, 60)},
+                    "BVAR_sesgo_rel": {f"{e}|{m}|T{T}": g("BVAR", f"{e}|{m}", T, "sesgo_rel_IRF_h1-12") for e in BVAR_ESC for m in ("GLP", "GLP_delta1", "plano_lam100") for T in (120, 60)},
+                    "BVAR_atenuacion_firmada_rel": {f"{e}|{m}|T{T}": g("BVAR", f"{e}|{m}", T, "atenuacion_firmada_rel_h1-12") for e in BVAR_ESC for m in ("GLP", "GLP_delta1", "plano_lam100") for T in (120, 60)},
                     "BVAR_tasas_delta_mixto_cobertura90": {f"T{T}": g("BVAR", "tasas|GLP_delta_mixto", T, "cobertura_90") for T in (120, 60)},
                     "signos_4var_signo_impacto": sig4,
                     "signos_prereg": pre,

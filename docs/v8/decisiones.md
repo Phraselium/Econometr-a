@@ -50,3 +50,8 @@
 - J7 (ECM v1 canónico): un único comparador, la especificación A de v7 (`src/v7/r5_prediccion.py:m_ecm_v1`, importada), en una tabla común de F5 con una muestra de prueba fija (5 bloques de 8 trimestres con embargo 4, hasta 2026T1). Los módulos remiten a esa tabla.
 - Cambio de herramienta posterior a F3: `regimenes.ms_fit` fija la semilla de la búsqueda de arranques (213ac84). Las salidas de M0 son idénticas tras el cambio.
 - J22: los tiempos de ejecución salen de resultado.json/resumen.md a tiempos.json, para que dos ejecuciones den md5 idénticos.
+
+## Y10 — M2 corregido: colas pesadas de la posterior (2026-10-13)
+- Tras J1, la parte determinista de P5 en compra es +0,9 en mediana y +5,4 en media. La posterior de las contribuciones tiene colas pesadas: en actividad de P5 compra, media 7,2 frente a mediana 1,1.
+- En F5, la contribución puntual es la media posterior, porque es la única aditiva (J2). Se publican siempre la media y la mediana, con bandas del 68 % y del 90 %.
+- El voto de `svar_hd` (R2) usa P(f es el mayor) calculada sorteo a sorteo, que no depende de las colas. Si el factor de mayor media no coincide con el de mayor P(f*), se rotula «ranking incierto (media y mediana discrepan)» y vota el de mayor P(f*). Se fija antes de calcular F5.

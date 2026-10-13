@@ -1,0 +1,38 @@
+# Vivienda en España: base de evidencia reproducible
+
+> Base de evidencia sobre precios, alquileres, déficit y necesidad de vivienda en España, con un análisis de por qué ha subido (V8: factores, periodos y factor común). Cada resultado lleva una capa de evidencia (C1, C2, C3, C3s, C4); la causalidad solo se admite en C3 y C3s. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas. Autor: Borja Romero, economista (firma individual, independiente). Versión de consulta 8.1.
+
+Generado por `make consulta`; no editar a mano. Empieza por la guía para asistentes y cita solo cifras de cifras_clave con su id y su fecha.
+
+## Empieza aquí
+
+- [Guía para asistentes](consulta/LEEME_ASISTENTE.md): versión vigente, capas, reglas para responder y mapa «si te preguntan X, mira Y»
+- [Preguntas frecuentes](consulta/preguntas_frecuentes.md): respuestas breves con cifra, capa y fuente
+- [Registro de hallazgos](consulta/hallazgos.md): todos los hallazgos vigentes, superados y retirados (también [JSON](consulta/hallazgos.json))
+- [Glosario](consulta/glosario.md): términos técnicos
+- [Índice de ficheros](consulta/indice_ficheros.md): mapa de carpetas y ficheros clave
+- [Versión y pendientes](consulta/version.json): versión, commit de contenido, DOI y tareas del autor
+
+## Cifras y resultados
+
+- [cifras_clave.csv](output/v5/cifras_clave.csv): única fuente de cifras difundibles, con id, capa y fecha del dato
+- [cifras_superadas.csv](output/v5/cifras_superadas.csv): cifras que no deben citarse y su sustituta
+- [Por qué ha subido la vivienda (V8)](publicacion/por_que_ha_subido.md): ensayo principal
+- [Informe econométrico V8](publicacion/informe_econometrico_v8.md): detalle técnico de V8
+- [Cierre de V8](docs/v8/cierre_proyecto.md): qué responde, qué no pudo hacerse y qué falta
+- [Lo que sabemos](publicacion/lo_que_sabemos.md): déficit y necesidad de vivienda por capa
+- [Verificador V8](publicacion/verificador/verificador_v8.md): fichas para evaluar afirmaciones concretas
+
+## Metodología
+
+- [Capas de evidencia](metodologia/capas.md)
+- [Anexo metodológico](metodologia/anexo_metodologico.md)
+- [Historial de conclusiones](metodologia/historial_conclusiones.md)
+- [Pre-registro de V8](metodologia/preregistro_v8.md)
+
+## Optional
+
+- [Reproducir](reproducir/instrucciones.md)
+- [Errata](ERRATA.md)
+- [Cómo citar](CITATION.cff)
+- [Mapa del repositorio](docs/MAPA.md)

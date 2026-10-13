@@ -1,0 +1,20 @@
+{
+ "_generado": "Generado por `make consulta` (src/consulta/generar.py). No editar a mano.",
+ "version": "8.1",
+ "referencia_modelizacion": "V8",
+ "referencia_deficit_y_necesidad": "v7.1 con correcciones de v7.2",
+ "commit": "2c7d9b3",
+ "commit_nota": "commit del último cambio de contenido de output/ (git log -1 --format=%h -- output), no HEAD: HEAD cambia con cada commit y rompería la comparación con lo versionado",
+ "fecha": "2026-10-13",
+ "doi": "pendiente",
+ "fecha_verificable": "PENDIENTE",
+ "pendientes": [
+  "Etiquetas, releases y Zenodo (urgente: antes de que se publique 2026T3)",
+  "Revisión humana antes de difundir (docs/v8/cierre_proyecto.md, punto 4)",
+  "Evaluación diferida en 2027",
+  "Fase de propuestas y publicaciones"
+ ],
+ "n_cifras_clave": 1064,
+ "sha256_cifras_clave": "e00b93e13117c483f69c3f0a6f6453b585042abc8e2194ebc7d7316725ae67f3",
+ "autor": "Borja Romero, economista (firma individual, independiente)"
+}

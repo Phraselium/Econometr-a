@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8
+.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta
 
 all: data clean models report
 
@@ -90,6 +90,10 @@ evaluate_v7:
 
 # V8: datos (F1) y, al añadirse, herramientas y modelos. Orden en V8_ORDEN (src/v8/<modulo>.py); añadir módulos al final de la lista.
 V8_ORDEN := f1_paneles m0_periodos m1_factor_comun m2_svar m3_periodos_var m4_largo_plazo m5_lpiv m6_colinealidad m7_multiverso m8_regional m9_ml f5_atribucion f6_congelar f6_tablas f6_hechos f6_verificador
+# V8.1: capa de consulta (consulta/ y llms.txt; nunca a mano; tests en tests/consulta)
+consulta:
+	$(PY) src/consulta/generar.py
+
 # Validación limpia diferida de V8: CON red, UNA sola vez, tras la release del pre-registro (docs/v8/notas_release.md)
 evaluate_v8:
 	$(PY) src/v8/evaluate_v8.py

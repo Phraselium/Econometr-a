@@ -40,6 +40,7 @@ CAPAS = {"C1", "C2", "C3", "C4"}
 def _ficheros() -> list[Path]:
     out = [p for v in ("v3", "v4", "v5", "v5_1", "v6") for p in sorted((RAIZ / "output" / v).rglob("*.md"))]
     out += sorted((RAIZ / "docs" / "v5" / "plantillas").rglob("*.md"))   # v5: plantillas de entregables
+    out += sorted((RAIZ / "consulta").glob("*.md"))   # V8.1: capa de consulta (generada)
     h = RAIZ / "docs" / "v3" / "hipotesis.md"
     return out + ([h] if h.exists() else [])
 

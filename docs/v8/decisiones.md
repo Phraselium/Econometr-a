@@ -59,3 +59,8 @@
 ## Y11 — F6: congelación y evaluación diferida (2026-10-13)
 - Se congela el mejor (y único) modelo de cada familia de la tabla común de F5: ar4, ar_fc, ecm_v1 y bvar_m2 (este último por referencia, sin recalcular). Bandas de ar4/ar_fc por simulación gaussiana sin incertidumbre de parámetros; ecm_v1 sin bandas; dhpi futuro de ar_fc con AR(4).
 - `evaluate_v8` solo registra la apertura si las tres series traen los cuatro objetivos 2026T3-2027T2 (más estricto que «algún periodo > 2026T2»: evita gastar la única evaluación con datos parciales). DM-HLN con h=1 porque con n=4 y h=4 la corrección HLN se anula; los p son descriptivos.
+
+## Y12 — Revisión final y cierre (2026-10-13)
+- Revisión final independiente (docs/v8/revision_final.md): APROBAR CON CORRECCIONES, sin hallazgos bloqueantes. Se aplicaron K1-K16: textos (K2-K8, K11-K16), hechos (K1, K5, K6), check_v8 (K9, con los casos fabricados de la revisión como tests) y guardas de congelación y de `evaluate_v8` (K10). Ninguna designación de F5 cambia.
+- `make v8` en un clon limpio sin red (commit 01146a9, 18 min 45 s): rc = 0 y salidas idénticas a las versionadas salvo `tiempos.json` y el diccionario. El diccionario perdía la sección de M5 al regenerarse; ahora f1_paneles.py la incorpora desde docs/v8/diccionario_m5.md, y el resultado es idéntico. La cadena F5-F6 se volvió a ejecutar tras las correcciones, sin diferencias.
+- Etiqueta local `v8.0` sobre el commit de cierre. El remoto rechaza las etiquetas: queda como tarea del autor (docs/v8/tareas_autor.md).

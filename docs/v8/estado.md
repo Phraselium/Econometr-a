@@ -20,25 +20,13 @@
   Diccionario en docs/v8/diccionario.md y tests en tests/v8/test_f1_paneles.py. `make v8` arranca con f1_paneles.
 - **F2.** Pre-registro docs/v8/hipotesis.md, cerrado con la etiqueta local `prereg-v8` (91e618b). El push de la etiqueta falla (el remoto rechaza etiquetas): queda como tarea del autor (docs/v8/notas_release.md).
 
-## En curso
-- F4 y F5 cerradas. F5: ningún factor designado en las diez celdas; AR(4) es la base más exigente.
-- F6 hecha:
-  - congelación (sha256 en notas_release) y `make evaluate_v8`;
-  - tablas md, csv y xlsx (fórmulas recalculadas con LibreOffice, sin errores);
-  - 287 hechos V8 en cifras_clave (las 716 filas previas son idénticas a las del cierre de v7.2);
-  - verificador V8 y adenda del historial;
-  - entregables por_que_ha_subido.md e informe_econometrico.md desde plantillas;
-  - check_v8 en `make check` (277 passed y 0 errores);
-  - `make publicacion`;
-  - cierre_proyecto, ideas_futuras y tareas_autor.
-- En curso: `make v8` en un clon limpio sin red y el revisor final (opus, docs/v8/revision_final.md).
+## Estado: V8 CERRADA (2026-10-13)
+- F0-F6 cerradas. Revisores: F3, F4 (M2 REHACER una vez) y final (APROBAR CON CORRECCIONES; K1-K16 aplicadas).
+- `make check` rc = 0 (287 passed; check_texto, check_v5, check_v6 y check_v8 con 0 errores). `make v8` en clon limpio sin red: idéntico salvo tiempos (Y12). `make publicacion` hecho.
+- Resultado: ningún factor designado como el más relevante (0 de 10). Solo H8-9 se sostiene tras Holm (C4). Ver docs/v8/cierre_proyecto.md.
 
 ## Siguiente paso exacto
-- Comparar las salidas del clon con las versionadas.
-- Aplicar las correcciones del revisor final (como máximo 2 REHACER).
-- `make publicacion` y `make check`.
-- Fusionar r8/main con la rama designada; commit y push.
-- Resumen final de 400 palabras como máximo.
+- Ninguno de modelización: V8 es la última versión de modelización. Las tareas del autor están en docs/v8/tareas_autor.md: etiquetas y release, revisión humana y `make evaluate_v8` en 2027.
 
 ## Tokens por módulo
 
@@ -66,6 +54,8 @@
 | F6 tablas y Excel | 109.030 | ~5k |
 | F6 cifras_clave, verificador y publicación | 250.775 | ~5k |
 | F6 entregables, check_v8 y cierre (orquestador) | 0 | ~60k |
+| F6 revisor final | 244.386 | ~10k |
+| F6 correcciones de la revisión final | 198.754 | ~20k |
 
 ## M2 (SVAR con signos y ceros), hecho
 - `src/v8/m2_svar.py` (`--rapido`), `tests/v8/test_m2.py`, salidas en `output/v8/M2/` (irf, fevd, hd_periodos, atribucion, hipotesis_m2, predicciones_congeladas + congelacion.json, resultado.json, resumen.md, registro.csv).

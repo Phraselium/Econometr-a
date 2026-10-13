@@ -10,11 +10,13 @@ La respuesta principal es negativa y precisa. Con la regla pre-registrada, **nin
 
 Lo que sí se sostiene es más modesto:
 
-- El precio real de compra subió 75,4 pp en la expansión de 1995-2007, cayó -44,0 pp en la crisis de 2008-2013 y ha subido 18,4 pp desde mediados de 2022. El alquiler real (IPC de alquiler deflactado por el IPC general) ha variado mucho menos: -1,8 pp en el mismo periodo reciente.
+- El precio real de compra subió 75,4 pp en la expansión de 1995-2007, cayó -44,0 pp en la crisis de 2008-2013 y ha subido 18,4 pp desde mediados de 2022. El alquiler real (IPC de alquiler deflactado por el IPC general) ha variado mucho menos: -1,8 pp en el mismo periodo reciente. Esa cifra mide el parque de contratos vivos (IPC de alquiler), no los contratos nuevos; para estos hay cifras C1 con dos fuentes por comunidad en 2021-2024 (variación nominal de la renta de los contratos nuevos, medida y periodo distintos, no comparables cifra a cifra con el alquiler real de P5): Cataluña 16,9 % (16,6-17,2 %) (2021-2024; INE IPVA (AEAT); Incasòl; dato de 2024; C1); Comunitat Valenciana 28,5 % (26,1-30,8 %) (2021-2024; INE IPVA (AEAT); GVA fianzas; dato de 2024; C1).
 - En 1995-2007, el shock de actividad y renta es el único componente con una banda que excluye el cero en la descomposición histórica del SVAR: 31,8 pp (9,0-54,6 pp) de la subida del precio de compra [C3s, condicionado a las restricciones de signo y de cero]. No se designa porque los otros tres métodos se abstienen.
 - La subida reciente es **muy común a todas las comunidades autónomas**: el componente común explica 92,8 % (86,7-94,9 %) de la varianza del crecimiento interanual del precio de compra en 2022-2026, frente a 45,3 % (42,0-54,2 %) en 2008-2013 [C4].
 - El factor común español **acompaña** al precio de la vivienda de la zona euro: correlación 0,60 (0,14-0,86), p ajustado por Holm 0,020 [C4, asociación].
 - Ningún modelo predice mejor fuera de muestra que un AR(4) sencillo.
+- En la compra de 2022-2026, 9,5 pp de los 18,4 pp observados quedan sin atribuir a los shocks identificados (banda del 68 %: -14,6 a 24,1 pp; la banda incluye el cero y la parte no atribuida no es un factor más) [C3s, condicionado a las restricciones de signo y de cero].
+- El multiverso se lee de dos maneras que no deben confundirse. Por familias de factores, 2 de 74 combinaciones cumplen la regla (signo estable en al menos el 80 % y significativo tras BH en al menos el 50 %). Por variables, 18 de 200 combinaciones de mercado, periodo y variable la cumplen (apartado «Lectura por variables del multiverso»); son asociaciones, sin identificación [C4].
 
 ## Abstract (English)
 
@@ -121,7 +123,7 @@ Nueve trimestres no bastan para separar factores. Todas las contribuciones son p
 
 El precio real de compra ha subido 18,4 pp y el alquiler real ha variado -1,8 pp.
 
-- **Crédito y tipos.** En el SVAR, la media es -0,47 pp (-2,8 a 12,8 pp) y la mediana 3,4 pp: la posterior es muy asimétrica y el signo no está determinado. La hipótesis H8-2 (crédito y tipos restaron al precio en P5) no se sostiene (p de Holm 0,987). En el multiverso, la familia de crédito y tipos (orientada para que «más crédito o menos tipo» cuente igual) no llega al 80 %. La variable principal, el tipo real hipotecario, sí tiene un signo estable, pero en sentido contrario al canal expansivo: un tipo real más alto va con más crecimiento del precio. Es una asociación sin identificación [C4].
+- **Crédito y tipos.** En el SVAR, la media es -0,47 pp (-2,8 a 12,8 pp) y la mediana 3,4 pp: la posterior es muy asimétrica y el signo no está determinado. La hipótesis H8-2 (crédito y tipos restaron al precio en P5) no se sostiene (p de Holm 0,987). En el multiverso, la familia de crédito y tipos (orientada para que «más crédito o menos tipo» cuente igual) no llega al 80 %. La variable principal, el tipo real hipotecario, sí tiene un signo estable, pero en sentido contrario al canal expansivo: un tipo real más alto va con más crecimiento del precio. Es una asociación sin identificación [C4], y su signo positivo con el precio no se interpreta como un efecto del tipo: la inflación entra en las dos medidas (resta al tipo real y es el deflactor del precio real), lo que induce por construcción un comovimiento positivo, y tampoco se descarta el sentido inverso (el ciclo del precio acompañando al del tipo), porque ambos pueden responder a un mismo ciclo.
 - **Actividad y renta.** Media 7,2 pp (-4,7 a 11,2 pp), mediana 1,1 pp.
 - **Demografía.** En el precio de compra, 0,65 pp (-4,1 a 5,8 pp). En el alquiler, 0,07 pp (-1,9 a 2,1 pp). La hipótesis H8-1 (el shock demográfico empujó el alquiler en P5) no se sostiene (p de Holm 0,987). La contabilidad hogares-viviendas sí vota por demografía en la compra: en P5 se formaron más hogares que viviendas libres terminadas (la serie no incluye las protegidas).
 - **Oferta.** 1,9 pp (-3,3 a 9,0 pp) en la compra.
@@ -135,7 +137,7 @@ El empuje migratorio, instrumentado con la emigración de cada país de origen h
 
 Esta sección reúne, para cada familia, lo que dicen todos los métodos a la vez. Recuerda la capa de cada cifra: solo la descomposición del SVAR es C3s; todo lo demás es C4.
 
-**Demografía.** En el alquiler es la única familia que podía reunir tres votos, y no los reúne en ningún periodo. En el SVAR, sus contribuciones son pequeñas y con bandas que incluyen el cero: 0,65 pp (-4,1 a 5,8 pp) en el precio de compra de P5 y 0,07 pp (-1,9 a 2,1 pp) en el alquiler. Por otro lado, es la única familia con una asociación robusta en el multiverso: positiva en el alquiler durante la crisis y en la muestra completa [C4]. La contabilidad hogares-viviendas también apunta en esa dirección en la compra de P3 y P5, cuando la formación de hogares superó a las viviendas terminadas. La lectura prudente: la presión demográfica acompaña a los precios en varios métodos, pero ninguno la identifica como el factor dominante, y el instrumento migratorio es demasiado débil para estimar su efecto.
+**Demografía.** En el alquiler es la única familia que podía reunir tres votos, y no los reúne en ningún periodo. En el SVAR, sus contribuciones son pequeñas y con bandas que incluyen el cero: 0,65 pp (-4,1 a 5,8 pp) en el precio de compra de P5 y 0,07 pp (-1,9 a 2,1 pp) en el alquiler. Por otro lado, es la única familia que cumple la regla del multiverso en la lectura por familias: positiva en el alquiler durante la crisis y en la muestra completa [C4]. **Aviso de colinealidad.** La población total y la población extranjera se mueven casi a la par: la correlación entre sus crecimientos interanuales es 0,91 en la muestra completa, 0,98 en P2 (VIF del par 24,89) y 0,78 en P5. Que las dos cumplan la regla en la misma celda no son dos pruebas independientes, y este análisis no separa su contribución. En M6, que usa una variable por familia, el VIF máximo es 18,38 y el de la población total llega a 7,44. La contabilidad hogares-viviendas también apunta en esa dirección en la compra de P3 y P5, cuando la formación de hogares superó a las viviendas terminadas. La lectura prudente: la presión demográfica acompaña a los precios en varios métodos, pero ninguno la identifica como el factor dominante, y el instrumento migratorio es demasiado débil para estimar su efecto.
 
 **Empleo y renta.** Es el primer factor del SVAR en la compra de P1, P2 y P3, y en P1 es la única contribución del SVAR con banda que excluye el cero, aunque en el multiverso el signo estable es el contrario (31,8 pp (9,0-54,6 pp)) [C3s, condicionado a las restricciones de signo y de cero]. En P5 la media posterior es alta (7,2 pp (-4,7 a 11,2 pp)) pero la mediana es pequeña (1,1 pp): la evidencia reciente depende de unas pocas extracciones de la posterior. El instrumento sectorial del empleo es débil.
 
@@ -176,7 +178,7 @@ Precio real de compra en P5 (2022-2026) [C4, descriptivo y asociación]:
 | Valencia (46) | 29,4 pp | 17,4 pp | 12,2 pp (5,6-18,2 pp) | 98,0 % |
 | València ciudad | 43,5 pp | sin dato | 13,0 pp (5,1-19,9 pp) | 77,2 % |
 
-La parte asociada al factor común se estima sobre la media interanual del periodo (una aproximación de la variación acumulada), por eso no se resta directamente de la columna observada. En la provincia de Valencia las dos fuentes de precio discrepan, y se dan ambas.
+La parte asociada al factor común se estima sobre la media interanual del periodo (una aproximación de la variación acumulada), por eso no se resta directamente de la columna observada. En la provincia de Valencia las dos fuentes de precio discrepan: el valor tasado da 29,4 pp frente a 17,4 pp de Registradores, y no se elige una. En València ciudad solo existe el valor tasado (43,5 pp), sin segunda fuente con la que contrastarlo; la cifra de la ciudad no se corrobora.
 
 - En las tres provincias, las fluctuaciones del crecimiento reciente van casi enteras con las del conjunto de España (R² muy alto) [C4].
 - La parte del aumento asociada al factor común es menor que el aumento observado en Alicante y en Valencia, y en Castellón es del orden de lo observado.
@@ -190,10 +192,37 @@ No hay SVAR regional, así que no se designa ningún factor por debajo del nivel
 
 El pre-registro pedía ecuaciones por periodo significativas y robustas, sin hallazgos por azar. El balance es escaso:
 
-- **Efectos por periodo (M0).** 2 de 70 coeficientes cumplen la regla de periodo (signo coincidente en el análisis principal y en una confirmación, permutación de fechas y medida alternativa de precio). Ninguno sobrevive a la corrección por comparaciones múltiples (BH). Se reportan como exploratorios.
-- **Multiverso (M7).** De 37.980 especificaciones, 32.424 se pudieron estimar. Solo 2 de 74 combinaciones de mercado, periodo y factor tienen un signo estable en al menos el 80 % y significativo en al menos la mitad: las dos son la demografía en el alquiler (crisis y muestra completa), con signo positivo [C4].
+- **Efectos por periodo (M0).** 2 de 70 coeficientes cumplen la regla de periodo (signo coincidente en el análisis principal y en una confirmación, permutación de fechas y medida alternativa de precio), pero solo 30 son evaluables: los otros 40 quedan «no evaluable» (de ellos, 35 son del alquiler). En el alquiler la regla de periodo es «no evaluable» porque no hay medida alternativa trimestral nacional del alquiler; no es un incumplimiento. Ninguno de los coeficientes que la cumplen sobrevive a la corrección por comparaciones múltiples (BH). Se reportan como exploratorios.
+- **Multiverso (M7).** De 37.980 especificaciones, 32.424 se pudieron estimar. Solo 2 de 74 combinaciones de mercado, periodo y factor tienen un signo estable en al menos el 80 % y significativo en al menos la mitad: las dos son la demografía en el alquiler (crisis y muestra completa), con signo positivo [C4]. Esa es la lectura por **familias**; la lectura por **variables** (siguiente apartado) es más amplia y no la sustituye.
 - **Largo plazo (M4).** No se demuestra una relación de cointegración estable: el contraste de cotas ARDL, con su contraste t, la acepta en 2 de 9 especificaciones (ambas del precio de compra, ninguna del alquiler), y los contrastes de Engle-Granger y Gregory-Hansen no la aceptan en ninguna.
 - **Ningún modelo ha sido elegido por su p.** Los modelos destacados se eligen por su error fuera de muestra y, como ninguno cumple a la vez la regla de periodo y la del multiverso, todos van marcados «no cumple la regla» (`output/v8/tablas_modelos_destacados.md`).
+
+### Lectura por variables del multiverso [C4]
+
+Misma regla (signo orientado estable en al menos el 80 % de las especificaciones y significativo tras BH en al menos el 50 %), aplicada a cada variable por separado en lugar de a la familia entera: cumplen 18 de 200 combinaciones de mercado, periodo y variable. Un mismo factor puede tener una variable que cumple y otra que no, de modo que la lectura por familias (dos combinaciones) y la lectura por variables no se contradicen: miden cosas distintas. Con las especificaciones fallidas contadas como «no cumple», 15 siguen cumpliéndola; las marcadas con † (alquiler en P4 y tipo real en la compra de P1) tienen el multiverso truncado y dejan de cumplir en ese recuento. Signo orientado: positivo = más presión al alza; para el tipo real, un tipo más bajo cuenta como presión al alza.
+
+| Mercado | Periodo | Variable | Familia | Signo orientado y lectura | % con el mismo signo | % significativas tras BH |
+|---|---|---|---|---|---|---|
+| Alquiler | P2 | Hogares (EPA) | Demografía | positivo: más de la variable con más crecimiento | 100,0 | 75,0 |
+| Alquiler | P2 | Población extranjera (INE) | Demografía | positivo: más de la variable con más crecimiento | 100,0 | 77,1 |
+| Alquiler | P2 | Población total | Demografía | positivo: más de la variable con más crecimiento | 100,0 | 82,3 |
+| Alquiler | P4 † | Tipo hipotecario real | Crédito y tipos | negativo: tipo real más alto con más crecimiento | 83,3 | 54,2 |
+| Alquiler | P4 † | Población extranjera (INE) | Demografía | positivo: más de la variable con más crecimiento | 80,0 | 52,5 |
+| Alquiler | Muestra completa | Saldo de crédito real | Crédito y tipos | positivo: más de la variable con más crecimiento | 93,8 | 52,6 |
+| Alquiler | Muestra completa | Tipo hipotecario real | Crédito y tipos | negativo: tipo real más alto con más crecimiento | 100,0 | 72,9 |
+| Alquiler | Muestra completa | Población extranjera (INE) | Demografía | positivo: más de la variable con más crecimiento | 99,0 | 62,5 |
+| Alquiler | Muestra completa | Población total | Demografía | positivo: más de la variable con más crecimiento | 100,0 | 69,3 |
+| Compra | P1 † | Tipo hipotecario real | Crédito y tipos | positivo: tipo real más bajo con más crecimiento | 95,8 | 65,6 |
+| Compra | P5 | Saldo de crédito real | Crédito y tipos | positivo: más de la variable con más crecimiento | 92,7 | 64,1 |
+| Compra | P5 | Tipo hipotecario real | Crédito y tipos | negativo: tipo real más alto con más crecimiento | 87,5 | 50,0 |
+| Compra | P5 | Precio real de la vivienda de otros países (BIS) | Factor europeo | positivo: más de la variable con más crecimiento | 94,8 | 58,9 |
+| Compra | Muestra completa | Crédito nuevo real | Crédito y tipos | positivo: más de la variable con más crecimiento | 87,0 | 54,9 |
+| Compra | Muestra completa | Ocupados (EPA) | Empleo y renta | positivo: más de la variable con más crecimiento | 97,4 | 51,3 |
+| Compra | Muestra completa | Precio real de la vivienda de otros países (BIS) | Factor europeo | positivo: más de la variable con más crecimiento | 99,0 | 64,3 |
+| Compra | Muestra completa | Viviendas terminadas | Oferta | positivo: más de la variable con más crecimiento | 95,3 | 52,6 |
+| Compra | Muestra completa | Visados de obra nueva | Oferta | positivo: más de la variable con más crecimiento | 97,9 | 74,7 |
+
+Son asociaciones [C4] entre el crecimiento de cada variable y el del precio o el alquiler: no identifican un efecto ni ordenan las variables por relevancia. Varias variables de una misma familia se mueven juntas (véase el aviso de colinealidad de la población), de modo que sus filas no son pruebas independientes. El signo positivo del tipo real hipotecario con el precio de compra en P5 y con el alquiler (en P4 y en la muestra completa) tiene el aviso de inflación y de sentido inverso del apartado de P5 (crédito y tipos).
 
 ## 7. Predicción
 

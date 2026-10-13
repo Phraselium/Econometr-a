@@ -8,7 +8,7 @@ We decompose real house-price and rent growth in Spain (1995-2026) into seven pr
 
 ## 1. Diseño
 
-- **Pre-registro.** `docs/v8/hipotesis.md` (etiqueta local `prereg-v8`), escrito antes de cualquier estimación con datos reales. Desviaciones con fecha y motivo en `docs/v8/desviaciones.md`; decisiones en `docs/v8/decisiones.md` (Y0-Y11).
+- **Pre-registro.** `docs/v8/hipotesis.md` (etiqueta local `prereg-v8`), escrito antes de cualquier estimación con datos reales. Desviaciones con fecha y motivo en `docs/v8/desviaciones.md`; decisiones en `docs/v8/decisiones.md` (Y0-Y12).
 - **Herramientas.** Validadas por Monte Carlo antes de usarse (F3; `output/v8/F3/*/validacion.md`): BVAR normal-Wishart con hiperparámetros por verosimilitud marginal, restricciones de signo y de cero, Bai-Perron y umbral con bootstrap sieve-AR, Markov switching, DFM/PCA, LP y LP-IV con intervalos de Anderson-Rubin, dominancia LMG, permutación de fechas, SHAP agrupado y multiverso con registro.
 - **Control del azar.** Holm dentro de las tres familias confirmatorias ({H8-1…H8-4}, {H8-5…H8-7}, {H8-8, H8-9}); BH (q = 0,10) en todo lo exploratorio. Toda especificación probada está en el Registry (`output/v8/*/registro.csv`).
 - **Capas.** C3s para la descomposición histórica del SVAR (condicionada a las restricciones); C4 para todo lo demás. Ningún resultado alcanza C3.
@@ -60,7 +60,7 @@ Solo H8-9 se sostiene tras Holm, y es una asociación. En H8-5 a H8-7 los p unil
 | No atribuido (banda aproximada) | -1,2 pp (-7,5 a 5,2 pp) | -4,6 pp (-11,6 a 2,9 pp) | -3,2 pp (-8,1 a 1,4 pp) | -2,0 pp (-7,9 a 3,6 pp) |
 | Observado | -2,7 pp | -1,1 pp | -9,3 pp | -1,8 pp |
 
-La media es la única medida aditiva (las contribuciones más la parte no atribuida suman lo observado en cada extracción). La posterior tiene colas largas: en la compra de P5, la mediana de crédito y tipos es 3,4 pp y la de actividad y renta 1,1 pp. Por eso el voto del SVAR en la regla se basa en la probabilidad, extracción a extracción, de que cada shock sea el mayor (decisión Y10). Magnitudes posiblemente atenuadas por el prior (sesgo documentado en F3).
+En síntesis, en la compra de 2022-2026 9,5 pp de los 18,4 pp observados quedan sin atribuir a los shocks identificados (banda del 68 %: -14,6 a 24,1 pp, que incluye el cero) [C3s, condicionado a las restricciones de signo y de cero]. La media es la única medida aditiva (las contribuciones más la parte no atribuida suman lo observado en cada extracción). La posterior tiene colas largas: en la compra de P5, la mediana de crédito y tipos es 3,4 pp y la de actividad y renta 1,1 pp. Por eso el voto del SVAR en la regla se basa en la probabilidad, extracción a extracción, de que cada shock sea el mayor (decisión Y10). Magnitudes posiblemente atenuadas por el prior (sesgo documentado en F3).
 
 ## 4. Instrumentos externos (M5)
 
@@ -74,14 +74,16 @@ En el alquiler, LP-IV se abstiene en la regla del factor más relevante (F por d
 
 ## 5. Periodos (M0), coeficientes por periodo (M3) y largo plazo (M4)
 
-- **M0.** Los periodos pre-registrados se contrastan con Bai-Perron, Markov switching (número de regímenes por BIC) y umbral de Hansen (tipo real, crédito y paro), detectando solo con series de crédito, tipos y actividad. 2 de 70 coeficientes cumplen la regla del efecto por periodo; tras BH sobre los p de permutación, ninguno. El alquiler no tiene medida alternativa trimestral y su regla queda «no evaluable».
+- **M0.** Los periodos pre-registrados se contrastan con Bai-Perron, Markov switching (número de regímenes por BIC) y umbral de Hansen (tipo real, crédito y paro), detectando solo con series de crédito, tipos y actividad. 2 de 70 coeficientes cumplen la regla del efecto por periodo, y solo 30 son evaluables; tras BH sobre los p de permutación, ninguno. El alquiler no tiene medida alternativa trimestral y su regla queda «no evaluable» (35 coeficientes del alquiler dentro de los 40 no evaluables): es una regla que no se puede aplicar, no una regla incumplida.
 - **M3.** Proyecciones locales con interacción por periodo (principal) y VAR por regímenes (contraste, no apto según F3). Diferencias significativas tras BH en una minoría de los contrastes; P4 impreciso. C4.
 - **M4.** DOLS, FMOLS y ARDL-bounds con rupturas. El ARDL rechaza la ausencia de cointegración, exigiendo también el contraste t, en 2 de 9 especificaciones; Engle-Granger y Gregory-Hansen en ninguna. Las contribuciones de largo plazo se etiquetan «sin cointegración demostrada» y no votan. La contabilidad hogares-viviendas (brecha entre hogares nuevos y viviendas terminadas, en unidades físicas) vota por demografía en 2 casos (compra de P3 y P5).
 
 ## 6. Colinealidad, dominancia y multiverso (M6 y M7)
 
 - **M6.** VIF y diagnóstico de Belsley por periodo; dominancia LMG con bandas bootstrap por bloques «básicas» (algunos puntos quedan fuera de su banda del 68 % por el sesgo del R² remuestreado); ortogonalización en todos los órdenes; índice compuesto; Granger y LP (predictivos, no causales); BMA y ridge o red elástica con validación temporal con embargo. La dominancia reparte el R² (no la variación) y vota por el factor de mayor cuota cuya contribución parcial tiene el signo de la variación observada.
-- **M7.** Rejilla de 37.980 especificaciones (32.424 estimadas; las fallidas, registradas). Con signos orientados (un tipo más bajo cuenta como presión al alza), 2 de 74 combinaciones de mercado, periodo y factor cumplen la regla del multiverso (signo estable en al menos el 80 % y significativo tras BH en al menos el 50 %): demografía en el alquiler, en P2 y en la muestra completa, con signo positivo.
+- **Aviso de colinealidad (M6).** La población total y la población extranjera (INE) comparten gran parte de su variación: correlación de sus crecimientos interanuales 0,91 en la muestra completa, 0,98 en P2 (VIF del par 24,89) y 0,78 en P5. M6 usa una variable por familia (VIF máximo 18,38; población total, hasta 7,44), de modo que el diagnóstico de Belsley no recoge el par; las filas de ambas variables en M7 no son pruebas independientes.
+- **M7.** Rejilla de 37.980 especificaciones (32.424 estimadas; las fallidas, registradas). Con signos orientados (un tipo más bajo cuenta como presión al alza), 2 de 74 combinaciones de mercado, periodo y factor cumplen la regla del multiverso (signo estable en al menos el 80 % y significativo tras BH en al menos el 50 %): demografía en el alquiler, en P2 y en la muestra completa, con signo positivo (lectura por **familias**). Por **variables**, la misma regla la cumplen 18 de 200 combinaciones de mercado, periodo y variable (15 si las especificaciones fallidas cuentan como «no cumple»); la lista completa, con el porcentaje de mismo signo y de significativas tras BH, está en `output/v8/por_que_ha_subido.md` (apartado «Lectura por variables del multiverso»). Son asociaciones [C4].
+- **Signo del tipo real.** El tipo real hipotecario tiene un signo positivo con el crecimiento del precio de compra en P5 y con el del alquiler (P4 y muestra completa). No se interpreta como efecto del tipo: la inflación resta al tipo real y deflacta el precio real, lo que induce un comovimiento positivo por construcción, y tampoco se descarta el sentido inverso (el ciclo del precio acompañando al del tipo).
 
 ## 7. Factor común (M1) y análisis regional (M8)
 
@@ -96,6 +98,10 @@ Cuota de la varianza del crecimiento interanual común a las diecisiete comunida
 | P5 | 92,8 % (86,7-94,9 %) | 97,5 % (86,1-98,7 %) | 93,6 % | 98,2 % |
 
 Con pocos trimestres por periodo, la cuota del primer componente está sesgada al alza; como H8-8 no se rechaza, la conclusión es prudente. Parte del crecimiento nacional asociada a la zona euro: 7,4 pp (4,7-8,7 pp) en el tramo final de P1 (la serie de la zona euro empieza en 2006), -15,3 pp (-21,7 a -7,6 pp) en P2, 0,81 pp (-4,4 a 4,0 pp) en P3, 1,4 pp (-1,8 a 3,4 pp) en P4 y -3,3 pp (-7,0 a 1,8 pp) en P5 (C4). En el panel regional, la pendiente del factor común es mecánicamente próxima a uno y no compite en la regla.
+
+**Medida del alquiler y contratos nuevos.** El alquiler real (-1,8 pp en P5) es el IPC de alquiler, que sigue el parque de contratos vivos. Los contratos nuevos suben más, según cifras C1 con dos fuentes por comunidad en 2021-2024 (medida y periodo distintos, no comparables cifra a cifra): Cataluña 16,9 % (16,6-17,2 %) (2021-2024; INE IPVA (AEAT); Incasòl; dato de 2024; C1); Comunitat Valenciana 28,5 % (26,1-30,8 %) (2021-2024; INE IPVA (AEAT); GVA fianzas; dato de 2024; C1).
+
+**València.** En la provincia de Valencia el valor tasado (29,4 pp) y Registradores (17,4 pp) discrepan en P5 y se publican ambos; la ciudad solo tiene valor tasado (43,5 pp), sin contraste con una segunda fuente [C4].
 
 ## 8. Aprendizaje automático interpretable (M9, solo contraste)
 

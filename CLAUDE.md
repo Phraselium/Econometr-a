@@ -1,4 +1,4 @@
-# Vivienda España — V8 por qué ha subido (factores, periodos, factor común). V1-V7.1 cerradas; v7.1 referencia (+v7.2 correcciones); trabajo en docs/v8, src/v8, output/v8
+# Vivienda España — V8.1 coherencia, consulta y publicación de V8 (por qué ha subido). V1-V8 cerradas; v8 referencia (v7.2 anterior); trabajo en docs/v8_1, src/v8, output/v8
 
 - Idioma: español. `make all` reproducible SIN red; SEED=20261010 en todo lo aleatorio.
 - Al empezar: leer docs/v8/estado.md, docs/v8/plan.md, docs/v8/decisiones.md, docs/v7_1/decisiones.md y docs/estado_proyecto/informe_estado.md (inventario v1-v6.2).

@@ -1,6 +1,6 @@
 <!-- Generado por `make publicacion` desde output/v5/una_pagina.md. No editar a mano: se regenera y un test lo comprueba. -->
 
-# Vivienda en España en una página (versión de referencia v7.2)
+# Vivienda en España en una página (versión de referencia v8)
 
 **Borja Romero, economista.** Solo hechos con al menos dos fuentes [C1] o cotas con supuestos explícitos [C2]. Cada cifra lleva periodo, fuente, fecha del dato y capa.
 
@@ -17,6 +17,13 @@
 - Los precios de las comunidades se mueven sobre todo juntos: la variación de cada una acompaña en gran medida a la media de las 17 (R² mediano de 93,6 % en compra).
 - No se confirma ninguna relación regional de largo plazo con el empleo, la población, las hipotecas o el paro (0 de siete hipótesis).
 - En una simulación condicional, las ayudas a la demanda reducen el precio neto de quien las recibe, pero el precio de mercado sube (4,4 % a diez años; el signo lo fija en gran parte la fórmula de incidencia). Su dosis y su coste en compra están declarados. En los instrumentos de cantidad (construcción, vacías, vivienda pública, turísticos) el coste no es estimable.
+
+**Qué añade la versión de referencia v8: por qué ha subido [C4].** Detalle en [¿Por qué ha subido el precio de la vivienda?](por_que_ha_subido.md); afirmaciones evaluadas: [verificador V8](verificador/verificador_v8.md).
+- Ningún factor puede designarse como el más relevante en ninguno de los diez casos (mercado por periodo): el máximo de métodos coincidentes es 2,0 de cuatro y la regla exige tres.
+- El precio real de compra ha subido 18,4 pp desde mediados de 2022; 9,5 pp de los 18,4 pp quedan sin atribuir a los shocks identificados (banda del 68 %: -14,6 a 24,1 pp) [C3s, condicionado a las restricciones de signo y de cero]. <!-- check:cifra-libre (umbral pre-registrado) -->
+- El alquiler real (-1,8 pp) mide el parque de contratos vivos; los contratos nuevos [C1] suben más: Cataluña 16,9 % (16,6-17,2 %) (2021-2024; INE IPVA (AEAT); Incasòl; dato de 2024; C1); Comunitat Valenciana 28,5 % (26,1-30,8 %) (2021-2024; INE IPVA (AEAT); GVA fianzas; dato de 2024; C1).
+- La subida reciente es muy común a las diecisiete comunidades (92,8 % (86,7-94,9 %) de la varianza) y acompaña a la de la zona euro (correlación 0,60 (0,14-0,86)); es una asociación.
+- Ningún modelo predice mejor fuera de muestra que un AR(4) sencillo.
 
 > **Lo que NO se puede afirmar con estos datos**
 >

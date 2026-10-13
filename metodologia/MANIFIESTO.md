@@ -9,7 +9,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | desviaciones_v8.md | docs/v8/desviaciones.md | `f7fc104d2eed9fd0e1c63b4a0835ae8e8cbf350af8895a08e413bb2dffc4850f` |
 | dosis_coste.md | output/v7_1/S1/resumen.md | `a68795fea92cb1ff1bfa94c12bf578bcb06a464be65f11a06e7bdf67e0fb6e39` |
 | guia_revisor.md | docs/v7_1/guia_revisor.md | `2b1997b4242c3757bafa2bc25278571b842244a7efd46ca01b5be7303d9f032b` |
-| historial_conclusiones.md | docs/v6_1/historial_conclusiones.md | `78c235c389a228b9673f84dcdbb95b1eec79ee113719046538bdfb69cc0f061e` |
+| historial_conclusiones.md | docs/v6_1/historial_conclusiones.md | `978582715009a673b90bf5337a702f1264e715c14952087e61f2516408b6a166` |
 | preregistro_v7.md | docs/v7/hipotesis.md | `bde3d6680557a2f0dc720c824730186abd44dbb76c4fd7d57c2d4dcbecb4af80` |
 | preregistro_v8.md | docs/v8/hipotesis.md | `5e5f53df7b30adc1d39b98620529892760a2e40abf06278861035f8cc2f268a7` |
 | revision_v8_F4.md | docs/v8/revision_F4.md | `f1b06d5f52a70daa1388bc80275ff2d010d84f2c33606df6561d6c5a84039e9f` |

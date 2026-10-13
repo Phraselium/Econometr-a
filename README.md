@@ -1,6 +1,6 @@
 # Vivienda en España: base de evidencia reproducible
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** v7.2, versión de referencia (v7.1 con correcciones previas a la release; 13 de octubre de 2026). Versiones cerradas: v1-v7.0. La v6.2 pasa a histórica ([historico/INDICE.md](historico/INDICE.md)).
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** v8, versión de referencia (por qué ha subido el precio de la vivienda; 13 de octubre de 2026); v8.1 en curso (coherencia de redacción y tablas, sin análisis nuevo). Versiones cerradas: v1-v8.0. La v7.2 queda como referencia anterior y la v6.2 es histórica ([historico/INDICE.md](historico/INDICE.md)).
 
 **Empiece por [LEEME_PRIMERO.md](LEEME_PRIMERO.md)**, que propone itinerarios de lectura para ciudadanos, periodistas, revisores y técnicos.
 
@@ -11,9 +11,16 @@ Una base de evidencia sobre la vivienda en España, por provincias, por comunida
 - un atlas econométrico regional;
 - simulaciones condicionales de instrumentos, con su dosis y su coste;
 - una nota metodológica sobre paneles regionales;
-- un verificador de afirmaciones del debate público.
+- un verificador de afirmaciones del debate público;
+- una atribución por factores y periodos del precio real de compra y del alquiler real (V8), con su informe econométrico y su verificador.
 
 Todo se reproduce sin red con los datos incluidos.
+
+## Versión vigente: v8 (por qué ha subido)
+
+- **Lectura no técnica:** [¿Por qué ha subido el precio de la vivienda?](publicacion/por_que_ha_subido.md). **Informe econométrico:** [informe_econometrico_v8.md](publicacion/informe_econometrico_v8.md). **Verificador vigente:** [verificador V8](publicacion/verificador/verificador_v8.md) (las fichas de v5-v7.1 siguen en el [verificador anterior](publicacion/verificador/verificador.md)).
+- **Resultado principal:** con las reglas fijadas antes de estimar, ningún factor puede designarse como el más relevante en ninguno de los diez casos (mercado por periodo). Ningún resultado de V8 alcanza C3; la descomposición del SVAR es C3s (condicionada a sus restricciones) y el resto, C4.
+- Una página y «lo que sabemos» incluyen un apartado V8, regenerados con `make publicacion`.
 
 Cada resultado se clasifica en una capa de evidencia ([metodologia/capas.md](metodologia/capas.md)):
 - **C1 hechos:** al menos dos fuentes;
@@ -27,7 +34,7 @@ Se evalúan afirmaciones e instrumentos, nunca partidos ni personas.
 
 | Carpeta | Qué contiene | Cómo se mantiene |
 |---|---|---|
-| [publicacion/](publicacion/MANIFIESTO.md) | Lo vigente: una página, lo que sabemos, policy brief, informe técnico, working paper, nota metodológica, artículo del Colegio, ponencia, atlas regional, verificador y cifras_clave.csv | `make publicacion`; nunca a mano (lo comprueba un test) |
+| [publicacion/](publicacion/MANIFIESTO.md) | Lo vigente: una página, lo que sabemos, policy brief, informe técnico, working paper, nota metodológica, artículo del Colegio, ponencia, atlas regional, por qué ha subido (V8), informe econométrico V8, verificadores y cifras_clave.csv | `make publicacion`; nunca a mano (lo comprueba un test) |
 | [metodologia/](metodologia/MANIFIESTO.md) | Anexo metodológico, guía del revisor, capas, historial de conclusiones, validación Monte Carlo, pre-registro V7, dosis y coste | `make publicacion` |
 | [reproducir/](reproducir/MANIFIESTO.md) | Instrucciones, entorno y versiones, tiempos, ensayo y protocolo de `make evaluate_v7` | `make publicacion` |
 | [historico/](historico/INDICE.md) | Documentos de versiones superadas e índice por versión | `git mv`, sin modificar |
@@ -40,6 +47,7 @@ El mapa detallado está en [docs/MAPA.md](docs/MAPA.md).
 python3 -m pip install -r requirements.lock
 make all           # v1-v6.3 sin red (unas 2 h)
 make v7            # atlas regional y V7.1 (unos 50 min)
+make v8            # por qué ha subido (V8): paneles, modelos, atribución, tablas y entregables (unos 20 min)
 make publicacion   # publicacion/, metodologia/ y reproducir/
 make check         # ruff, tests, controles de texto, cifras y capas
 ```

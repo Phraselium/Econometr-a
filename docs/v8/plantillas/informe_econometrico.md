@@ -8,7 +8,7 @@ We decompose real house-price and rent growth in Spain (1995-2026) into seven pr
 
 ## 1. Diseño
 
-- **Pre-registro.** `docs/v8/hipotesis.md` (etiqueta local `prereg-v8`), escrito antes de cualquier estimación con datos reales. Desviaciones con fecha y motivo en `docs/v8/desviaciones.md`; decisiones en `docs/v8/decisiones.md` (Y0-Y11).
+- **Pre-registro.** `docs/v8/hipotesis.md` (etiqueta local `prereg-v8`), escrito antes de cualquier estimación con datos reales. Desviaciones con fecha y motivo en `docs/v8/desviaciones.md`; decisiones en `docs/v8/decisiones.md` (Y0-Y12).
 - **Herramientas.** Validadas por Monte Carlo antes de usarse (F3; `output/v8/F3/*/validacion.md`): BVAR normal-Wishart con hiperparámetros por verosimilitud marginal, restricciones de signo y de cero, Bai-Perron y umbral con bootstrap sieve-AR, Markov switching, DFM/PCA, LP y LP-IV con intervalos de Anderson-Rubin, dominancia LMG, permutación de fechas, SHAP agrupado y multiverso con registro.
 - **Control del azar.** Holm dentro de las tres familias confirmatorias ({H8-1…H8-4}, {H8-5…H8-7}, {H8-8, H8-9}); BH (q = 0,10) en todo lo exploratorio. Toda especificación probada está en el Registry (`output/v8/*/registro.csv`).
 - **Capas.** C3s para la descomposición histórica del SVAR (condicionada a las restricciones); C4 para todo lo demás. Ningún resultado alcanza C3.
@@ -60,7 +60,7 @@ Solo H8-9 se sostiene tras Holm, y es una asociación. En H8-5 a H8-7 los p unil
 | No atribuido (banda aproximada) | {{V8-QNA-pp-a-P2}} | {{V8-QNA-pp-a-P3}} | {{V8-QNA-pp-a-P4}} | {{V8-QNA-pp-a-P5}} |
 | Observado | {{V8-OBS-a-P2}} | {{V8-OBS-a-P3}} | {{V8-OBS-a-P4}} | {{V8-OBS-a-P5}} |
 
-La media es la única medida aditiva (las contribuciones más la parte no atribuida suman lo observado en cada extracción). La posterior tiene colas largas: en la compra de P5, la mediana de crédito y tipos es {{V8-SVAR-c-P5-credito_tipos-mediana:valor}} y la de actividad y renta {{V8-SVAR-c-P5-empleo_renta-mediana:valor}}. Por eso el voto del SVAR en la regla se basa en la probabilidad, extracción a extracción, de que cada shock sea el mayor (decisión Y10). Magnitudes posiblemente atenuadas por el prior (sesgo documentado en F3).
+En síntesis, en la compra de 2022-2026 {{V8-QNA-pp-c-P5:valor}} de los {{V8-OBS-c-P5:valor}} observados quedan sin atribuir a los shocks identificados (banda del 68 %: {{V8-QNA-pp-c-P5:rango}}, que incluye el cero) [C3s, condicionado a las restricciones de signo y de cero]. La media es la única medida aditiva (las contribuciones más la parte no atribuida suman lo observado en cada extracción). La posterior tiene colas largas: en la compra de P5, la mediana de crédito y tipos es {{V8-SVAR-c-P5-credito_tipos-mediana:valor}} y la de actividad y renta {{V8-SVAR-c-P5-empleo_renta-mediana:valor}}. Por eso el voto del SVAR en la regla se basa en la probabilidad, extracción a extracción, de que cada shock sea el mayor (decisión Y10). Magnitudes posiblemente atenuadas por el prior (sesgo documentado en F3).
 
 ## 4. Instrumentos externos (M5)
 
@@ -74,14 +74,16 @@ En el alquiler, LP-IV se abstiene en la regla del factor más relevante (F por d
 
 ## 5. Periodos (M0), coeficientes por periodo (M3) y largo plazo (M4)
 
-- **M0.** Los periodos pre-registrados se contrastan con Bai-Perron, Markov switching (número de regímenes por BIC) y umbral de Hansen (tipo real, crédito y paro), detectando solo con series de crédito, tipos y actividad. {{V8-M0-cumplen:num}} de {{V8-M0-coef:num}} coeficientes cumplen la regla del efecto por periodo; tras BH sobre los p de permutación, ninguno. El alquiler no tiene medida alternativa trimestral y su regla queda «no evaluable».
+- **M0.** Los periodos pre-registrados se contrastan con Bai-Perron, Markov switching (número de regímenes por BIC) y umbral de Hansen (tipo real, crédito y paro), detectando solo con series de crédito, tipos y actividad. {{V8-M0-cumplen:num}} de {{V8-M0-coef:num}} coeficientes cumplen la regla del efecto por periodo, y solo {{V8-M0-evaluables:num}} son evaluables; tras BH sobre los p de permutación, ninguno. El alquiler no tiene medida alternativa trimestral y su regla queda «no evaluable» ({{V8-M0-no-evaluable-alquiler:num}} coeficientes del alquiler dentro de los {{V8-M0-no-evaluable:num}} no evaluables): es una regla que no se puede aplicar, no una regla incumplida.
 - **M3.** Proyecciones locales con interacción por periodo (principal) y VAR por regímenes (contraste, no apto según F3). Diferencias significativas tras BH en una minoría de los contrastes; P4 impreciso. C4.
 - **M4.** DOLS, FMOLS y ARDL-bounds con rupturas. El ARDL rechaza la ausencia de cointegración, exigiendo también el contraste t, en {{V8-M4-ardl-rechaza:num}} de {{V8-M4-ardl-total:num}} especificaciones; Engle-Granger y Gregory-Hansen en ninguna. Las contribuciones de largo plazo se etiquetan «sin cointegración demostrada» y no votan. La contabilidad hogares-viviendas (brecha entre hogares nuevos y viviendas terminadas, en unidades físicas) vota por demografía en {{V8-M4-voto-demografia:num}} casos (compra de P3 y P5).
 
 ## 6. Colinealidad, dominancia y multiverso (M6 y M7)
 
 - **M6.** VIF y diagnóstico de Belsley por periodo; dominancia LMG con bandas bootstrap por bloques «básicas» (algunos puntos quedan fuera de su banda del 68 % por el sesgo del R² remuestreado); ortogonalización en todos los órdenes; índice compuesto; Granger y LP (predictivos, no causales); BMA y ridge o red elástica con validación temporal con embargo. La dominancia reparte el R² (no la variación) y vota por el factor de mayor cuota cuya contribución parcial tiene el signo de la variación observada.
-- **M7.** Rejilla de {{V8-M7-rejilla:num}} especificaciones ({{V8-M7-ajustadas:num}} estimadas; las fallidas, registradas). Con signos orientados (un tipo más bajo cuenta como presión al alza), {{V8-M7-cumplen:num}} de {{V8-M7-combinaciones:num}} combinaciones de mercado, periodo y factor cumplen la regla del multiverso (signo estable en al menos el 80 % y significativo tras BH en al menos el 50 %): demografía en el alquiler, en P2 y en la muestra completa, con signo positivo.
+- **Aviso de colinealidad (M6).** La población total y la población extranjera (INE) comparten gran parte de su variación: correlación de sus crecimientos interanuales {{V8-M6-colpob-completo-corr}} en la muestra completa, {{V8-M6-colpob-P2-corr}} en P2 (VIF del par {{V8-M6-colpob-P2-vif:num}}) y {{V8-M6-colpob-P5-corr}} en P5. M6 usa una variable por familia (VIF máximo {{V8-M6-vif-max:num}}; población total, hasta {{V8-M6-vif-pob_total-max:num}}), de modo que el diagnóstico de Belsley no recoge el par; las filas de ambas variables en M7 no son pruebas independientes.
+- **M7.** Rejilla de {{V8-M7-rejilla:num}} especificaciones ({{V8-M7-ajustadas:num}} estimadas; las fallidas, registradas). Con signos orientados (un tipo más bajo cuenta como presión al alza), {{V8-M7-cumplen:num}} de {{V8-M7-combinaciones:num}} combinaciones de mercado, periodo y factor cumplen la regla del multiverso (signo estable en al menos el 80 % y significativo tras BH en al menos el 50 %): demografía en el alquiler, en P2 y en la muestra completa, con signo positivo (lectura por **familias**). Por **variables**, la misma regla la cumplen {{V8-M7-var-cumplen:num}} de {{V8-M7-var-total:num}} combinaciones de mercado, periodo y variable ({{V8-M7-var-cumplen-rejilla:num}} si las especificaciones fallidas cuentan como «no cumple»); la lista completa, con el porcentaje de mismo signo y de significativas tras BH, está en `output/v8/por_que_ha_subido.md` (apartado «Lectura por variables del multiverso»). Son asociaciones [C4].
+- **Signo del tipo real.** El tipo real hipotecario tiene un signo positivo con el crecimiento del precio de compra en P5 y con el del alquiler (P4 y muestra completa). No se interpreta como efecto del tipo: la inflación resta al tipo real y deflacta el precio real, lo que induce un comovimiento positivo por construcción, y tampoco se descarta el sentido inverso (el ciclo del precio acompañando al del tipo).
 
 ## 7. Factor común (M1) y análisis regional (M8)
 
@@ -96,6 +98,10 @@ Cuota de la varianza del crecimiento interanual común a las diecisiete comunida
 | P5 | {{V8-M1-cuota-c-P5}} | {{V8-M1-cuota-a-P5}} | {{V8-M8-comun-c-P5}} | {{V8-M8-comun-a-P5}} |
 
 Con pocos trimestres por periodo, la cuota del primer componente está sesgada al alza; como H8-8 no se rechaza, la conclusión es prudente. Parte del crecimiento nacional asociada a la zona euro: {{V8-M1-eur-c-P1}} en el tramo final de P1 (la serie de la zona euro empieza en 2006), {{V8-M1-eur-c-P2}} en P2, {{V8-M1-eur-c-P3}} en P3, {{V8-M1-eur-c-P4}} en P4 y {{V8-M1-eur-c-P5}} en P5 (C4). En el panel regional, la pendiente del factor común es mecánicamente próxima a uno y no compite en la regla.
+
+**Medida del alquiler y contratos nuevos.** El alquiler real ({{V8-OBS-a-P5}} en P5) es el IPC de alquiler, que sigue el parque de contratos vivos. Los contratos nuevos suben más, según cifras C1 con dos fuentes por comunidad en 2021-2024 (medida y periodo distintos, no comparables cifra a cifra): Cataluña {{A23-A9:cita}}; Comunitat Valenciana {{A23-A10:cita}}.
+
+**València.** En la provincia de Valencia el valor tasado ({{V8-M8-cv-p46-P5-acum-mivau}}) y Registradores ({{V8-M8-cv-p46-P5-acum-alt}}) discrepan en P5 y se publican ambos; la ciudad solo tiene valor tasado ({{V8-M8-cv-vlc-P5-acum-mivau}}), sin contraste con una segunda fuente [C4].
 
 ## 8. Aprendizaje automático interpretable (M9, solo contraste)
 

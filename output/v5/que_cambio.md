@@ -1,4 +1,4 @@
-# Qué cambió entre versiones y por qué (sección única, versión de referencia v7.2)
+# Qué cambió entre versiones y por qué (sección única, versión de referencia v8)
 
 **Borja Romero, economista.** Esta es la única sección del proyecto sobre los cambios entre versiones. Los demás entregables remiten aquí. El detalle, conclusión por conclusión, está en el historial de conclusiones (`docs/v6_1/historial_conclusiones.md`). Los errores que cambiaron una cifra publicada están en la fe de erratas (ERRATA.md). Solo es citable la versión de referencia: hoy, la v7.1.
 
@@ -58,3 +58,8 @@ En cada caso se dice cuál fue la razón.
 - **Construcción adicional.** Dosis no nula por comunidad (ver arriba). La rebaja de impuestos y costes de construcción deja de difundirse: su escenario sobrestima el efecto por diseño.
 - **Predicción regional.** Cada tabla indica su comparador: base fuerte (AR con factor común) o base más exigente.
 - **Burbuja.** El GSADF nacional se reverificó con el mismo método y la misma semilla (14 de 14 series idénticas). No se puede afirmar que haya una burbuja ni que no la haya (ficha V72-BURBUJA). <!-- check:cifra-libre (número de series del diseño) -->
+
+## v8 y v8.1: por qué ha subido, y coherencia de la versión
+
+- **Qué añade v8.** Atribución del precio real de compra y del alquiler real por factores y periodos, con reglas fijadas antes de estimar. Resultado: ningún factor puede designarse como el más relevante en ninguno de los diez casos (máximo de métodos coincidentes: 2,0 de cuatro). La subida reciente es muy común a las comunidades (92,8 % (86,7-94,9 %) de la varianza) y acompaña a la zona euro [C4, asociación]. Detalle en [lo que sabemos](lo_que_sabemos.md).
+- **v8.1, bloque A (coherencia de redacción y tablas).** No se añade ningún análisis ni se cambia ninguna cifra publicada de v1-v8.0. Se añade la lectura del multiverso por variables (18,0 de 200,0 combinaciones, frente a 2,0 de 74,0 por familias), el aviso de colinealidad entre población total y extranjera, el aviso sobre el signo del tipo real, la remisión a las cifras C1 de contratos nuevos y el aviso sobre las dos fuentes de València.

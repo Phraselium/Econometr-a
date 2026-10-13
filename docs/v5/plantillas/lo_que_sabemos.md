@@ -1,4 +1,4 @@
-# Vivienda en España: lo que sabemos y lo que no (versión de referencia v7.2)
+# Vivienda en España: lo que sabemos y lo que no (versión de referencia v8)
 
 Actualización de output/v4/lo_que_sabemos.md con las salidas de v5. Cada afirmación lleva su capa:
 - **C1**: hecho con al menos dos fuentes independientes, con todos sus componentes en C1.
@@ -79,9 +79,22 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
   - Robustez en la rejilla simulada (C4; no es robustez estadística): la movilización de vacías es robusta en {{V71-S3-R6-b_vacias-alquiler-robustas:num}} de 17 comunidades en alquiler; las ayudas a la demanda, en {{V71-S3-R6-e_ayuda_demanda-compra-robustas:num}}.
 - Detalle por comunidad: atlas regional (atlas_regional/). Método: [nota metodológica](nota_metodologica.md). Afirmaciones evaluadas: verificador V7.
 
+## Qué añade la versión de referencia v8 (por qué ha subido) [C4]
+
+V8 pregunta cuánto pesa cada factor en el precio real de compra y en el alquiler real en cada periodo de 1995 a 2026, y qué parte es común a todas las comunidades y a la zona euro. Las reglas se fijaron antes de estimar. Detalle: [¿Por qué ha subido el precio de la vivienda?](../v8/por_que_ha_subido.md) (lectura no técnica) e [informe econométrico](../v8/informe_econometrico.md). Verificador de afirmaciones vigente: [verificador V8](../v8/verificador_v8.md).
+
+- **Ningún factor puede designarse como el más relevante** en ninguno de los diez casos (dos mercados por cinco periodos): el máximo de métodos que coinciden es {{V8-VOTOS-c-P5:num}} de cuatro y la regla exige tres. Los métodos discrepan y los tres instrumentos externos son débiles ({{V8-M5-c3:num}} de tres llegan a C3). Ningún resultado de V8 alcanza C3.
+- [C4, descriptivo] El precio real de compra subió {{V8-OBS-c-P1}} en 1995-2007, cayó {{V8-OBS-c-P2}} en 2008-2013 y ha subido {{V8-OBS-c-P5}} desde mediados de 2022. En la compra de 2022-2026, {{V8-QNA-pp-c-P5:valor}} de los {{V8-OBS-c-P5:valor}} observados quedan sin atribuir a los shocks identificados (banda del 68 %: {{V8-QNA-pp-c-P5:rango}}) [C3s, condicionado a las restricciones de signo y de cero]. <!-- check:cifra-libre (umbrales pre-registrados) -->
+- [C4] El alquiler real ({{V8-OBS-a-P5}} en el mismo periodo) es el IPC de alquiler, que sigue el parque de contratos vivos. Para los contratos nuevos, las cifras con dos fuentes por comunidad en 2021-2024 [C1] son: Cataluña {{A23-A9:cita}}; Comunitat Valenciana {{A23-A10:cita}} (medida y periodo distintos, no comparables cifra a cifra con el alquiler real).
+- [C4, asociación] La subida reciente es muy común a las diecisiete comunidades: el componente común explica {{V8-M1-cuota-c-P5}} de la varianza del crecimiento interanual del precio de compra en 2022-2026. El factor común español acompaña al de la zona euro: correlación {{V8-H8-9-est}}, p ajustado por Holm {{V8-H8-9-pholm:num}}.
+- [C4] Multiverso de especificaciones. Por familias de factores, {{V8-M7-cumplen:num}} de {{V8-M7-combinaciones:num}} combinaciones cumplen la regla (signo estable en al menos el 80 % y significativo tras BH en al menos el 50 %); por variables, {{V8-M7-var-cumplen:num}} de {{V8-M7-var-total:num}}. La regla de periodo de M0 es «no evaluable» en el alquiler (no hay medida alternativa trimestral), no incumplida. <!-- check:cifra-libre (umbrales pre-registrados) -->
+- [C4] Avisos de lectura. La población total y la extranjera se mueven casi a la par (correlación {{V8-M6-colpob-completo-corr}} en la muestra completa), por lo que no son pruebas independientes. El signo positivo del tipo real con el precio no se lee como efecto del tipo: la inflación entra en el tipo real y en el deflactor del precio, y no se descarta el sentido inverso.
+- [C4] València: en la provincia, el valor tasado ({{V8-M8-cv-p46-P5-acum-mivau}}) y Registradores ({{V8-M8-cv-p46-P5-acum-alt}}) discrepan en 2022-2026 y se publican ambos; la ciudad solo tiene valor tasado.
+- [C4] Ningún modelo predice mejor fuera de muestra que un AR(4) sencillo.
+
 ## Qué cambió entre versiones y por qué
 
-Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.2).
+Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v8).
 
 ## Problema y opciones con signo estable
 

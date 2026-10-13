@@ -12,7 +12,7 @@ Generado por `src/v8/f6_verificador.py`. Cada ficha evalúa una afirmación, nun
 
 **Intervalo:** Bandas del 68 % de la contribución (por periodo); intervalo al 95 % de H8-2: -15,4 a 27,4 pp
 
-**Límites:** Las magnitudes del SVAR pueden estar atenuadas (solo restricciones de impacto en V3); el instrumento monetario es débil; no se designa ningún factor como el más relevante en ningún periodo.
+**Límites:** Las magnitudes del SVAR pueden estar atenuadas (solo restricciones de impacto en V3); el instrumento monetario es débil; el signo positivo del tipo real con el precio en el multiverso no se lee como efecto (la inflación entra en el tipo real y en el deflactor del precio, y no se descarta el sentido inverso); no se designa ningún factor como el más relevante en ningún periodo.
 
 **Regla:** Con capa C3s los resultados valen solo condicionado a las restricciones de signo y de cero de M2; ninguna regla de V8 designa un factor (0 de 10 celdas), de modo que la afirmación no se puede ni respaldar ni descartar con este diseño.
 
@@ -28,11 +28,11 @@ Generado por `src/v8/f6_verificador.py`. Cada ficha evalúa una afirmación, nun
 
 **Veredicto:** ANALIZADA, NO CONCLUYENTE (C3s)
 
-**Magnitud:** SVAR (C3s, condicionado a las restricciones de signo y de cero de M2): contribución de la demografía a la variación del alquiler real, media y banda del 68 %: P2 0,33 pp (-1,9 a 2,7 pp); P3 0,00 pp (-2,9 a 2,7 pp); P5 0,07 pp (-1,9 a 2,1 pp). H8-1 (en P5, contribución positiva de la demografía al alquiler): p de Holm 0,987, no respaldada. Multiverso (C4, asociación): 2 de 74 combinaciones cumplen la regla, ambas de demografía en el alquiler (periodo P2 y periodo completo, signo positivo). Instrumento de empuje migratorio (H8-7): F efectivo 0,05, no cumple C3. Contabilidad hogares-viviendas (asociación): vota a favor de la demografía en 2 celdas (compra P3 y P5).
+**Magnitud:** SVAR (C3s, condicionado a las restricciones de signo y de cero de M2): contribución de la demografía a la variación del alquiler real, media y banda del 68 %: P2 0,33 pp (-1,9 a 2,7 pp); P3 0,00 pp (-2,9 a 2,7 pp); P5 0,07 pp (-1,9 a 2,1 pp). H8-1 (en P5, contribución positiva de la demografía al alquiler): p de Holm 0,987, no respaldada. Multiverso (C4, asociación): 2 de 74 combinaciones cumplen la regla por familias, ambas de demografía en el alquiler (periodo P2 y periodo completo, signo positivo); por variables, 18 de 200. La población total y la extranjera son casi colineales (correlación 0,91 en la muestra completa), de modo que sus filas no son pruebas independientes. Instrumento de empuje migratorio (H8-7): F efectivo 0,05, no cumple C3. Contabilidad hogares-viviendas (asociación): vota a favor de la demografía en 2 celdas (compra P3 y P5).
 
 **Intervalo:** Bandas del 68 % de la contribución (las tres citadas incluyen el 0)
 
-**Límites:** Demografía y oferta no se separan en la contabilidad; el instrumento migratorio tiene 20 observaciones anuales y F muy bajo; la asociación del multiverso no distingue causa de comovimiento.
+**Límites:** Demografía y oferta no se separan en la contabilidad; población total y extranjera colineales; el instrumento migratorio tiene 20 observaciones anuales y F muy bajo; la asociación del multiverso no distingue causa de comovimiento.
 
 **Regla:** Con capa C3s los resultados valen solo condicionado a las restricciones de signo y de cero de M2; ninguna regla de V8 designa un factor (0 de 10 celdas), de modo que la afirmación no se puede ni respaldar ni descartar con este diseño.
 
@@ -40,7 +40,7 @@ Generado por `src/v8/f6_verificador.py`. Cada ficha evalúa una afirmación, nun
 
 **Evidencia:** output/v8/M2/resumen.md; output/v8/M5/resumen.md; output/v8/M7/resumen.md; output/v8/M4/resumen.md; output/v8/F6/hechos.json; docs/v8/plantillas/README.md
 
-**Ids de cifras:** V8-H8-1-pholm, V8-H8-7-F, V8-M4-voto-demografia, V8-M7-combinaciones, V8-M7-cumplen, V8-SVAR-a-P2-demografia-media, V8-SVAR-a-P3-demografia-media, V8-SVAR-a-P5-demografia-media
+**Ids de cifras:** V8-H8-1-pholm, V8-H8-7-F, V8-M4-voto-demografia, V8-M6-colpob-completo-corr, V8-M7-combinaciones, V8-M7-cumplen, V8-M7-var-cumplen, V8-M7-var-total, V8-SVAR-a-P2-demografia-media, V8-SVAR-a-P3-demografia-media, V8-SVAR-a-P5-demografia-media
 
 ## V8-V3 · Viviendas turísticas
 
@@ -108,7 +108,7 @@ Generado por `src/v8/f6_verificador.py`. Cada ficha evalúa una afirmación, nun
 
 **Veredicto:** ANALIZADA, NO CONCLUYENTE (C3s)
 
-**Magnitud:** SVAR (C3s, condicionado a las restricciones de signo y de cero de M2): empleo y renta es el factor con mayor contribución media en compra P1 (versión larga): 31,8 pp (9,0-54,6 pp), con P(f*) = 71,7 % y 1 de 4 votos; en P5 7,2 pp (-4,7 a 11,2 pp). H8-3 (en P3, contribución positiva de actividad y renta a la compra): estimación 7,7 pp (-22,8 a 40,0 pp) y p de Holm 0,838, no respaldada. M0 (exploratorio): 2 de 70 coeficientes cumplen la regla de §8 y ninguno sobrevive a BH.
+**Magnitud:** SVAR (C3s, condicionado a las restricciones de signo y de cero de M2): empleo y renta es el factor con mayor contribución media en compra P1 (versión larga): 31,8 pp (9,0-54,6 pp), con P(f*) = 71,7 % y 1 de 4 votos; en P5 7,2 pp (-4,7 a 11,2 pp). H8-3 (en P3, contribución positiva de actividad y renta a la compra): estimación 7,7 pp (-22,8 a 40,0 pp) y p de Holm 0,838, no respaldada. M0 (exploratorio): 2 de 70 coeficientes cumplen la regla de §8 (30 evaluables; la del alquiler es «no evaluable», no incumplida) y ninguno sobrevive a BH.
 
 **Intervalo:** Bandas del 68 % de la contribución; intervalo al 95 % de H8-3: -22,8 a 40,0 pp
 
@@ -120,7 +120,7 @@ Generado por `src/v8/f6_verificador.py`. Cada ficha evalúa una afirmación, nun
 
 **Evidencia:** output/v8/M2/resumen.md; output/v8/M0/resumen.md; output/v8/F5/fichas.md; output/v8/F6/hechos.json; docs/v8/plantillas/README.md
 
-**Ids de cifras:** V8-H8-3-est, V8-H8-3-pholm, V8-M0-coef, V8-M0-cumplen, V8-PFSTAR-c-P1, V8-SVAR-c-P1-empleo_renta-media, V8-SVAR-c-P5-empleo_renta-media, V8-VOTOS-c-P1
+**Ids de cifras:** V8-H8-3-est, V8-H8-3-pholm, V8-M0-coef, V8-M0-cumplen, V8-M0-evaluables, V8-PFSTAR-c-P1, V8-SVAR-c-P1-empleo_renta-media, V8-SVAR-c-P5-empleo_renta-media, V8-VOTOS-c-P1
 
 ## V8-V7 · Factor europeo
 

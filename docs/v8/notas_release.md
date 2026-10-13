@@ -7,6 +7,6 @@ El pre-registro de V8 (docs/v8/hipotesis.md) solo tiene fecha verificable cuando
 3. Anota aquí la fecha del DOI en `fecha_verificable: AAAA-MM-DD`.
 4. Antes de la release, F4 congela las predicciones (`sha256_predicciones_v8`, más abajo). `make evaluate_v8` las evaluará una sola vez con los datos 2026T3-2027T2.
 
-prereg_v8_commit_local: (lo rellena el commit del pre-registro)
+prereg_v8_commit_local: 91e618b (etiqueta local `prereg-v8`)
 fecha_verificable: PENDIENTE
 sha256_predicciones_v8: PENDIENTE (lo rellena F4)

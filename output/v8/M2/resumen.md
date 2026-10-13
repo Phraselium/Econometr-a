@@ -8,7 +8,7 @@ Capa C3s: la identificacion vale solo bajo las restricciones de signo y de cero 
 - Las bandas de la descomposicion historica casi nunca excluyen el cero con T de unos 88 (Y6): una contribucion cuya banda incluye el cero se lee como «no distinguible de cero».
 - Los dos shocks sin identificar quedan sin restricciones; sus resultados no se interpretan. Los elementos no restringidos solo se leen si su banda excluye el cero (Y4).
 - Los pesos de importancia (ceros) son una derivacion propia NO VERIFICADA frente al articulo (Y4).
-- Muestra efectiva (V3): 2004Q2-2026Q1 (N=88); la compraventas MIVAU (tx_total) acaba en 2026T1, por lo que P5 cubre 2022T3-2026T1 (15 trimestres) en el principal y 2022T3-2026T2 en la larga.
+- Muestra efectiva (V3): 2004Q2-2026Q1 (N=88); la compraventas MIVAU (tx_total) acaba en 2026T1, por lo que P5 cubre 2022T3-2026T1 (15 trimestres) en las variantes de 7 variables y 2022T3-2026T2 en la larga.
 - `pob_total` es una interpolacion lineal entre fechas semestrales hasta 2020 (marcada en el panel): la dinamica de n es suave por construccion; las conclusiones sobre el shock demografico dependen de ello.
 - Contribuciones en puntos log x100 de la variacion acumulada del periodo (precio y alquiler reales, deflactor IPC); %: contribucion / variacion observada del periodo (inestable si la variacion observada es cercana a cero). `determinista` = condiciones iniciales + constante + ficticias (COVID, EPA 2021T1).
 
@@ -139,7 +139,7 @@ Lectura: cada p es 1 - P(posterior del signo esperado); resolucion minima de p =
 | robust_sin_covid | 647 | 0.5 (P=0.65) | -0.3 (P=0.53) | 5.8 (P=0.74) | -16.7 (P=0.91) |
 | robust_deflactor_pib | 598 | 0.1 (P=0.55) | -0.3 (P=0.55) | 0.7 (P=0.60) | -9.0 (P=0.88) |
 
-V1 y V3 y robustez comparten la misma lectura; en V1 el shock «credito» no incluye el monetario (H8-2/H8-4 con V1 usan solo `credito`; ver hd_periodos.csv para `monetario`). n.c. = periodo no cubierto o factor no definido en esa variante.
+Celdas: mediana de la contribucion conjunta en pp (P = probabilidad posterior del signo esperado). En V1 el shock «credito» no incluye el monetario (H8-2/H8-4 con V1 usan solo `credito`; `monetario` esta en hd_periodos.csv). V1, V2 y la robustez usan la identificacion operativa solo de impacto. n.c. = periodo no cubierto o factor no definido en esa variante.
 
 ## Version larga (4 variables, 1995T2-2026T2): contribucion a la variacion del precio real de compra (pp)
 

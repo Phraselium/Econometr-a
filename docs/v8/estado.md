@@ -39,3 +39,9 @@
 | F3 revisor | 163.223 | ~10k |
 | F3 correcciones (VAR) | 226.757 | ~5k |
 | F3 correcciones (resto) | 254.317 | ~5k |
+
+## M2 (SVAR con signos y ceros), hecho
+- `src/v8/m2_svar.py` (`--rapido`), `tests/v8/test_m2.py`, salidas en `output/v8/M2/` (irf, fevd, hd_periodos, atribucion, hipotesis_m2, predicciones_congeladas + congelacion.json, resultado.json, resumen.md, registro.csv).
+- La identificación principal pre-registrada es INVIABLE con datos reales (0 aceptadas en 9·10^6 rotaciones); operativa = V3 (solo impacto), ESS 671. H8-1…H8-4: ninguna respaldada tras Holm. Desviaciones en desviaciones.md; bloqueo en bloqueos.md.
+- Siguiente: revisión de M2 por el orquestador; M3, M0, M4, M6, M7.
+- Tokens de subagente (M2): no medidos por el subagente.

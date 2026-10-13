@@ -1,38 +1,38 @@
 {
  "V3": {
-  "identificacion": 32.27401566505432,
-  "total": 33.612706899642944
+  "identificacion": 31.44805121421814,
+  "total": 32.622507095336914
  },
  "V1": {
-  "identificacion": 115.4491491317749,
-  "total": 117.05270028114319
+  "identificacion": 112.60675287246704,
+  "total": 114.08626866340637
  },
  "V2": {
-  "identificacion": 36.55542325973511,
-  "total": 39.27498912811279
+  "identificacion": 34.09960699081421,
+  "total": 36.42467951774597
  },
  "robust_p1": {
-  "identificacion": 33.262574911117554,
-  "total": 34.3962504863739
+  "identificacion": 33.39952993392944,
+  "total": 34.47071862220764
  },
  "robust_p4": {
-  "identificacion": 31.7189462184906,
-  "total": 32.772369623184204
+  "identificacion": 30.994215488433838,
+  "total": 32.03577256202698
  },
  "robust_prior_fijo": {
-  "identificacion": 31.897242069244385,
-  "total": 33.08681583404541
+  "identificacion": 31.950786590576172,
+  "total": 33.1076500415802
  },
  "robust_sin_covid": {
-  "identificacion": 38.87001323699951,
-  "total": 40.03250527381897
+  "identificacion": 35.0771541595459,
+  "total": 36.12734651565552
  },
  "robust_deflactor_pib": {
-  "identificacion": 24.52608346939087,
-  "total": 25.509254932403564
+  "identificacion": 23.689189195632935,
+  "total": 24.68147349357605
  },
  "larga": {
-  "identificacion": 12.34521222114563,
-  "total": 20.256116151809692
+  "identificacion": 11.07420039176941,
+  "total": 19.318927764892578
  }
 }

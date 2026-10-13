@@ -10,15 +10,27 @@
   - test de cifras superadas sobre cifras_clave.
 - F0, en esta versión: el marcador «[fecha de publicación: pendiente]» se rotula como pendiente del autor (las etiquetas no se pueden publicar desde el entorno).
 
+## Hecho (continuación)
+- **F1.** Paneles en data/processed/v8:
+  - nacional_q_v8: 1995T1-2026T2, 251 columnas;
+  - panel_ccaa_q_v8;
+  - cv_prov_q_v8 y cv_prov_a_v8;
+  - valencia_ciudad_v8.
+  
+  Diccionario en docs/v8/diccionario.md y tests en tests/v8/test_f1_paneles.py. `make v8` arranca con f1_paneles.
+- **F2.** Pre-registro docs/v8/hipotesis.md, cerrado con la etiqueta local `prereg-v8` (91e618b). El push de la etiqueta falla (el remoto rechaza etiquetas): queda como tarea del autor (docs/v8/notas_release.md).
+
 ## En curso
-- F0: clones limpios de v7.2 (`make v7_2` + `make v7` y `make all`) en marcha.
-- F1: descarga hecha (data/raw/v8, commit 7b951fe). Paneles y diccionario en construcción (subagente data-cleaner, src/v8/f1_paneles.py).
-- F3: herramientas en implementación con Monte Carlo sobre datos simulados (2 subagentes: familia VAR y resto).
-- F2: borrador de pre-registro en docs/v8/hipotesis.md (sin etiqueta).
+- F0: clones limpios de v7.2.
+- F3: dos subagentes con Monte Carlo (familia VAR y resto).
 
 ## Siguiente paso exacto
-- Al terminar los clones de v7.2: comparar con lo versionado, cerrar F0 (ERRATA y CHANGELOG si procede) y hacer commit.
-- Al terminar la descarga: construir los paneles de F1 (src/v8/f1_paneles.py) y el diccionario.
+- Cuando terminen los subagentes de F3:
+  1. revisar las aptitudes;
+  2. hacer commit;
+  3. lanzar el revisor de F3 (opus);
+  4. `make check`;
+  5. empezar F4 con M0 y M1.
 
 ## Tokens por módulo
 
@@ -26,3 +38,5 @@
 |---|---|---|
 | F0 | 0 | ~40k |
 | F1 descarga | 121.258 | ~15k |
+| F1 paneles | 214.088 | ~10k |
+| F2 | 0 | ~25k |

@@ -21,11 +21,19 @@
 - **F2.** Pre-registro docs/v8/hipotesis.md, cerrado con la etiqueta local `prereg-v8` (91e618b). El push de la etiqueta falla (el remoto rechaza etiquetas): queda como tarea del autor (docs/v8/notas_release.md).
 
 ## En curso
-- F3 cerrada: correcciones aplicadas (Y6, Y7 en decisiones.md); puerta `make check` rc=0 (168 passed; check_texto, check_v5 y check_v6 con 0 errores).
-- F4: en curso con subagentes: M2 (SVAR; principal inviable → V3 operativa, ver desviaciones), M3, M0+M4, M6+M7 y M5.
+- F3 cerrada (Y6, Y7; `make check` rc=0, 168 passed).
+- F4: los diez módulos M0-M9 están hechos y en `make v8` (V8_ORDEN). `ms_fit` corregido en la herramienta: ahora es determinista (M0 re-ejecutado, mismas salidas). Corriendo en paralelo: la puerta `make check` y el revisor opus de F4 (docs/v8/revision_F4.md).
+- Resumen F4 (todo C4 salvo M2, que es C3s):
+  - M2: H8-1…H8-4 no respaldadas (p Holm 0,43-0,82). En P5 compra domina la parte determinista (Y8).
+  - M5: instrumentos débiles; H8-5…H8-7 no rechazadas.
+  - M1: H8-8 no rechazada; H8-9 rechazada (r = 0,60; p Holm 0,020).
+  - M0: 2 de 70 efectos por periodo cumplen la regla, 0 tras BH.
+  - M7: 3 de 74 combinaciones cumplen el multiverso.
+  - M9: ningún ML supera a la base más exigente.
 
 ## Siguiente paso exacto
-- Al terminar M2/M3/M0/M4/M6/M7/M5: revisar salidas contra el contrato y lanzar M1+M8 (factor común y regional) y M9 (ML interpretable, GLMGam en lugar de EBM). Siguiendo docs/v8/contrato_salidas.md.
+- Leer docs/v8/revision_F4.md. Aplicar las correcciones (≤2 REHACER) y, si cambia algo, volver a pasar `make check`. Después, commit y push de la puerta F4.
+- Luego F5: script `src/v8/f5_atribucion.py` → `output/v8/F5/` (atribución combinada y regla del §9 con la regla operativa que proponga el revisor).
 
 ## Tokens por módulo
 
@@ -38,7 +46,14 @@
 | F3 herramientas | 384.763 | ~20k |
 | F3 revisor | 163.223 | ~10k |
 | F3 correcciones (VAR) | 226.757 | ~5k |
-| F3 correcciones (resto) | 254.317 | ~5k |
+| F3 correcciones (resto) | 257.872 | ~5k |
+| F4 M2 | 222.214 | ~8k |
+| F4 M3 | 68.180 | ~3k |
+| F4 M0+M4 | 222.386 | ~4k |
+| F4 M6+M7 | 170.542 | ~4k |
+| F4 M5 | 183.171 | ~4k |
+| F4 M1+M8 | 138.463 | ~4k |
+| F4 M9 | 101.170 | ~4k |
 
 ## M2 (SVAR con signos y ceros), hecho
 - `src/v8/m2_svar.py` (`--rapido`), `tests/v8/test_m2.py`, salidas en `output/v8/M2/` (irf, fevd, hd_periodos, atribucion, hipotesis_m2, predicciones_congeladas + congelacion.json, resultado.json, resumen.md, registro.csv).
@@ -58,6 +73,6 @@
 
 ## M0 (periodos) y M4 (largo plazo), hecho (2026-10-13)
 - **Hecho:** `src/v8/m0_periodos.py` (~2,5 min) y `src/v8/m4_largo_plazo.py` (~50 s); salidas en `output/v8/M0/` y `output/v8/M4/` (coeficientes, registro, resultado.json, resumen.md; M0: periodos_detectados, regla_m0, heterogeneidad_Q, replica_segunda_particion; M4: atribucion `contabilidad_lp` y `contabilidad`, cointegracion, discrepancias_dols_fmols, fuera_muestra, raices_unitarias, contabilidad_hogares_*). Tests `tests/v8/test_m0.py` y `test_m4.py`. Desviaciones (tasa de paro no disponible, representantes de familia, estadistico de permutacion por periodo, definicion de confirmacion, SERPAVI no evaluable) en desviaciones.md.
-- **Aviso de herramienta:** `herramientas/regimenes.ms_fit` no es determinista con statsmodels 0.15 (la busqueda de arranques usa un generador sin semilla; `np.random.seed` no basta). M0 lo fija con un parche local de `check_random_state`; conviene corregirlo en la herramienta.
+- **Aviso de herramienta (resuelto):** `ms_fit` no era determinista con statsmodels 0.15; corregido en la herramienta (commit 213ac84).
 - **Siguiente:** integrar `atribucion.csv` de M4 (`contabilidad_lp`, `contabilidad`) y `regla_m0.csv` en la sintesis; ECM v1 no replicable en la misma muestra (declarado).
 - Tokens de subagente: no medidos por el subagente.

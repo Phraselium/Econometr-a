@@ -1,0 +1,9 @@
+herramienta,config,escenario,metrica,tipo,rol,valor,objetivo,cumple,laxo,reps,B,n,nota
+dfm_baing,IC_p2,"T=120,N=40,r=2",% IC_p2 elige r verdadero,acierto,referencia,1.0,>= 0.9,True,True,200,,120,
+dfm_baing,IC_p2,"T=120,N=10,r=2",% IC_p2 elige r verdadero,acierto,referencia,0.0,>= 0.9,False,False,200,,120,con N pequeño el criterio tiende a elegir kmax
+dfm_baing,IC_p2,"T=110,N=17,r=1",% IC_p2 elige r verdadero,acierto,principal,0.99,>= 0.9,True,True,200,,110,con N pequeño el criterio tiende a elegir kmax
+dfm_baing,IC_p2,"T=126,N=17,r=1",% IC_p2 elige r verdadero,acierto,principal,1.0,>= 0.9,True,True,200,,126,con N pequeño el criterio tiende a elegir kmax
+dfm_baing,IC_p2,"T=110,N=17,r=2",% IC_p2 elige r verdadero,acierto,principal,0.875,>= 0.9,False,True,200,,110,con N pequeño el criterio tiende a elegir kmax
+dfm_pca,PCA_r1,"T=110,N=17,r=1 (factor AR(0,7))",sesgo medio de la varianza explicada por el 1.er factor (estimada - verdadera),error,principal,-0.02760565278387269,< 0.05,True,True,200,,110,verdadera media 0.577; estimada media 0.549; error absoluto medio 0.046
+dfm_ml,ML_r1,"T=100,N=8,r=1",error absoluto medio del R2 por variable,error,referencia,0.054593894890158194,< 0.1,True,True,15,,100,
+dfm_ml,ML_r1,"T=110,N=17,r=1",error absoluto medio del R2 por variable,error,principal,0.0424042106303178,< 0.1,True,True,15,,110,

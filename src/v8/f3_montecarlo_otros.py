@@ -42,11 +42,12 @@ RAPIDO = False
 REGLAS = {
     "tamano": ("[0,02; 0,10]", "<= 0,15"),
     "cobertura": ("[0,90; 0,98]", "[0,80; 0,99]"),
+    "cobertura_inf": ("[0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil)", "[0,80; 1]"),
     "potencia": (">= 0,80", ">= 0,50"),
     "acierto": (">= umbral de la fila", ">= 0,50"),
     "error": ("< umbral de la fila", "< 1,5 x umbral de la fila"),
 }
-TIPOS_VALIDEZ = ("tamano", "cobertura", "acierto", "error")
+TIPOS_VALIDEZ = ("tamano", "cobertura", "cobertura_inf", "acierto", "error")
 
 
 def evaluar(tipo, v, umbral):
@@ -55,6 +56,8 @@ def evaluar(tipo, v, umbral):
         return REGLAS[tipo][0], bool(0.02 <= v <= 0.10), bool(v <= 0.15)
     if tipo == "cobertura":
         return REGLAS[tipo][0], bool(0.90 <= v <= 0.98), bool(0.80 <= v <= 0.99)
+    if tipo == "cobertura_inf":
+        return REGLAS[tipo][0], bool(v >= 0.90), bool(v >= 0.80)
     if tipo == "potencia":
         return REGLAS[tipo][0], bool(v >= 0.80), bool(v >= 0.50)
     if tipo == "acierto":
@@ -336,7 +339,7 @@ def mc_lpiv(R=300, hs=(0, 4, 8, 12)):
                 ca["4-8"].append(row.ar_lo <= ver_agr <= row.ar_hi)
             nota = f"F robusto mediano {np.median(Fm):.1f}; % AR no acotado {100 * (1 - np.mean(acot)):.0f}"
             for h in cn:
-                reg("lp_iv", "AR", f"{nm}, n={n}, h={h}", "cobertura IC Anderson-Rubin", np.mean(ca[h]), "cobertura", R, "", n, nota=nota)
+                reg("lp_iv", "AR", f"{nm}, n={n}, h={h}", "cobertura IC Anderson-Rubin", np.mean(ca[h]), "cobertura_inf", R, "", n, nota=nota)
                 reg("lp_iv", "IC_normal", f"{nm}, n={n}, h={h}", "cobertura IC normal 2SLS", np.mean(cn[h]), "cobertura", R, "", n, nota=nota,
                     rol="principal" if nm == "instrumento_fuerte" else "referencia")
 
@@ -344,7 +347,7 @@ def mc_lpiv(R=300, hs=(0, 4, 8, 12)):
 def mc_lpiv_inf(R=300):
     """p-valor AR unilateral (H8-5/H8-6), pretendencias y placebo de permutacion del instrumento (H7)."""
     R = nR(R)
-    n, rho = 110, 0.5
+    n, rho = 110, 0.9  # persistencia alta: el efecto verdadero a h=4-8 (beta*rho^h) no es despreciable
     # (1) tamaño y potencia de la AR unilateral a h=4 y agregado 4-8; efecto verdadero -1 (potencia) o 0 (tamaño); IV fuerte
     for beta, etq in ((0.0, "efecto nulo"), (-1.0, "efecto -1")):
         rej_h4, rej_agr, rej_dos = [], [], []
@@ -648,7 +651,26 @@ def merge():
         L.append(f"| {r.herramienta} | {r.config} | **{r.validez}** | **{r.potencia}** | {r.rango_tamano} | {r.rango_cobertura} | {r.rango_potencia} | {str(r.incumple).replace('|', '/')} |")
     for k, v in HERRAMIENTAS_SIN_MC.items():
         L.append(f"| {k} | - | no evaluada por MC | - | | | | {v} |")
-    L += ["", "## Resultados por prueba", "", "| Herramienta | Config. | Escenario | Métrica | Valor | Objetivo | Cumple | Rol | Réplicas | B | n |", "|---|---|---|---|---|---|---|---|---|---|---|"]
+    def _v(h, c, esc, met):
+        m = df[(df.herramienta == h) & (df.config == c) & df.escenario.str.contains(esc, regex=False) & df.metrica.str.contains(met, regex=False)]
+        return "n/d" if m.empty else _fmt(float(m.valor.iloc[0]))
+    L += ["", "## Restricciones de uso (cifras generadas desde montecarlo.csv)", "",
+          f"- **Bai-Perron (H5).** Tamaño de UDmax con errores AR(0,85): wild {_v('bai_perron', 'wild', 'H0 n=100 | errores AR(0.85)', 'tamaño UDmax')}, bloque Politis-White "
+          f"{_v('bai_perron', 'bloque_pw', 'H0 n=100 | errores AR(0.85)', 'tamaño UDmax')}, bloque fijo 8 {_v('bai_perron', 'bloque_8', 'H0 n=100 | errores AR(0.85)', 'tamaño UDmax')}, "
+          f"sieve {_v('bai_perron', 'sieve', 'H0 n=100 | errores AR(0.85)', 'tamaño UDmax')} (n=100) y {_v('bai_perron', 'sieve', 'H0 n=126 | errores AR(0.85)', 'tamaño UDmax')} (n=126). "
+          f"Con AR(0,5): sieve {_v('bai_perron', 'sieve', 'H0 n=100 | errores AR(0.5)', 'tamaño UDmax')}. Uso: solo `boot='sieve'` con series persistentes; "
+          f"su potencia con salto de 2σ y AR(0,85) es {_v('bai_perron', 'sieve', 'salto 2.0σ (σ marginal) n=100 | errores AR(0.85)', 'potencia')} (n=100) y "
+          f"{_v('bai_perron', 'sieve', 'salto 2.0σ (σ marginal) n=126 | errores AR(0.85)', 'potencia')} (n=126): un no rechazo con series muy persistentes NO es evidencia de ausencia de ruptura.",
+          f"- **Umbral de Hansen (H6).** Con errores AR(0,5) y q AR(0,9), n=100: tamaño wild {_v('umbral_hansen', 'wild', 'H0 | errores AR(0.5)', 'tamaño')}, bloque {_v('umbral_hansen', 'bloque_pw', 'H0 | errores AR(0.5)', 'tamaño')}, "
+          f"sieve {_v('umbral_hansen', 'sieve', 'H0 | errores AR(0.5)', 'tamaño')}; con AR(0,85): wild {_v('umbral_hansen', 'wild', 'H0 | errores AR(0.85)', 'tamaño')}, bloque {_v('umbral_hansen', 'bloque_pw', 'H0 | errores AR(0.85)', 'tamaño')}, "
+          f"sieve {_v('umbral_hansen', 'sieve', 'H0 | errores AR(0.85)', 'tamaño')}. Uso: `boot='wild'` solo con errores sin autocorrelación; con errores autocorrelacionados, `boot='sieve'`.",
+          "- **LP-OLS (H8).** Ver filas `lp_ols`: la cobertura NW(h+1) cae por debajo de 0,90 en varios horizontes con n=90-110 y ρ=0,9 (mínimo "
+          f"{_fmt(df[df.herramienta == 'lp_ols'][df.config == 'NW_h+1'].valor.min())}); EWC ({_fmt(df[df.herramienta == 'lp_ols'][df.config == 'EWC'].valor.min())} mínimo) es la menos mala; "
+          f"el ancho de banda mayor NW(2h+2) empeora ({_fmt(df[df.herramienta == 'lp_ols'][df.config == 'NW_2h+2'].valor.min())}). LP-OLS no se usa como evidencia de C3.",
+          "- **LP-IV.** El IC Anderson-Rubin cubre entre "
+          f"{_fmt(df[(df.herramienta == 'lp_iv') & (df.config == 'AR')].valor.min())} y {_fmt(df[(df.herramienta == 'lp_iv') & (df.config == 'AR')].valor.max())}; "
+          "el p unilateral, las pretendencias y el placebo de permutación se resumen en las filas de `lp_iv` (potencia del placebo baja).", "",
+          "## Resultados por prueba", "", "| Herramienta | Config. | Escenario | Métrica | Valor | Objetivo | Cumple | Rol | Réplicas | B | n |", "|---|---|---|---|---|---|---|---|---|---|---|"]
     for r in df.itertuples():
         c = "" if pd.isna(r.cumple) else ("sí" if str(r.cumple) == "True" else "NO")
         esc_, met_, obj_ = (str(x).replace("|", "/") for x in (r.escenario, r.metrica, r.objetivo))

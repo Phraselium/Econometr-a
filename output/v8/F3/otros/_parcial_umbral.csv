@@ -1,0 +1,23 @@
+herramienta,config,escenario,metrica,tipo,rol,valor,objetivo,cumple,laxo,reps,B,n,nota
+umbral_hansen,wild,H0_iid (errores sin autocorrelación),tamaño (rechazo al 5%),tamano,principal,0.043333333333333335,"[0,02; 0,10]",True,True,300,299,120,
+umbral_hansen,wild,H0_heterocedastico (errores sin autocorrelación),tamaño (rechazo al 5%),tamano,principal,0.04,"[0,02; 0,10]",True,True,300,299,120,
+umbral_hansen,wild,H1_salto_pendiente (errores sin autocorrelación),potencia (rechazo al 5%),potencia,principal,0.89,">= 0,80",True,True,300,299,120,
+umbral_hansen,IC_LR,H1_salto_pendiente (errores sin autocorrelación),cobertura IC95 del umbral por inversión de LR,cobertura,principal,0.9366666666666666,"[0,90; 0,98]",True,True,300,299,120,gamma verdadero = 0
+umbral_hansen,IC_LR,H1_salto_pendiente (errores sin autocorrelación),sesgo mediano del umbral,error,principal,-0.013063868005547012,< 0.15,True,True,300,299,120,
+umbral_hansen,wild,"H0 | errores AR(0.5), q AR(0,9)",tamaño (rechazo al 5%),tamano,referencia,0.17,"[0,02; 0,10]",False,False,300,299,100,
+umbral_hansen,bloque_pw,"H0 | errores AR(0.5), q AR(0,9)",tamaño (rechazo al 5%),tamano,principal,0.07,"[0,02; 0,10]",True,True,300,299,100,
+umbral_hansen,sieve,"H0 | errores AR(0.5), q AR(0,9)",tamaño (rechazo al 5%),tamano,principal,0.03333333333333333,"[0,02; 0,10]",True,True,300,299,100,
+umbral_hansen,wild,"H0 | errores AR(0.5), q AR(0,9)",tamaño (rechazo al 5%),tamano,referencia,0.15333333333333332,"[0,02; 0,10]",False,False,300,299,126,
+umbral_hansen,bloque_pw,"H0 | errores AR(0.5), q AR(0,9)",tamaño (rechazo al 5%),tamano,principal,0.06666666666666667,"[0,02; 0,10]",True,True,300,299,126,
+umbral_hansen,sieve,"H0 | errores AR(0.5), q AR(0,9)",tamaño (rechazo al 5%),tamano,principal,0.03666666666666667,"[0,02; 0,10]",True,True,300,299,126,
+umbral_hansen,wild,"H0 | errores AR(0.85), q AR(0,9)",tamaño (rechazo al 5%),tamano,referencia,0.51,"[0,02; 0,10]",False,False,300,299,110,
+umbral_hansen,bloque_pw,"H0 | errores AR(0.85), q AR(0,9)",tamaño (rechazo al 5%),tamano,principal,0.15666666666666668,"[0,02; 0,10]",False,False,300,299,110,
+umbral_hansen,sieve,"H0 | errores AR(0.85), q AR(0,9)",tamaño (rechazo al 5%),tamano,principal,0.07666666666666666,"[0,02; 0,10]",True,True,300,299,110,
+umbral_hansen,bloque_pw,"H1 salto 0.8 | errores AR(0.5), q AR(0,9)",potencia (rechazo al 5%),potencia,principal,0.6633333333333333,">= 0,80",False,True,300,299,100,
+umbral_hansen,IC_LR,"H1 salto 0.8 | errores AR(0.5), q AR(0,9) | boot=bloque",cobertura IC95 del umbral por inversión de LR,cobertura,referencia,0.9,"[0,90; 0,98]",True,True,300,299,100,IC por inversión de LR homocedástico (no depende del bootstrap)
+umbral_hansen,sieve,"H1 salto 0.8 | errores AR(0.5), q AR(0,9)",potencia (rechazo al 5%),potencia,principal,0.5866666666666667,">= 0,80",False,True,300,299,100,
+umbral_hansen,IC_LR,"H1 salto 0.8 | errores AR(0.5), q AR(0,9) | boot=sieve",cobertura IC95 del umbral por inversión de LR,cobertura,principal,0.9,"[0,90; 0,98]",True,True,300,299,100,IC por inversión de LR homocedástico (no depende del bootstrap)
+umbral_hansen,bloque_pw,"H1 salto 0.8 | errores AR(0.5), q AR(0,9)",potencia (rechazo al 5%),potencia,principal,0.8033333333333333,">= 0,80",True,True,300,299,126,
+umbral_hansen,IC_LR,"H1 salto 0.8 | errores AR(0.5), q AR(0,9) | boot=bloque",cobertura IC95 del umbral por inversión de LR,cobertura,referencia,0.9133333333333333,"[0,90; 0,98]",True,True,300,299,126,IC por inversión de LR homocedástico (no depende del bootstrap)
+umbral_hansen,sieve,"H1 salto 0.8 | errores AR(0.5), q AR(0,9)",potencia (rechazo al 5%),potencia,principal,0.7366666666666667,">= 0,80",False,True,300,299,126,
+umbral_hansen,IC_LR,"H1 salto 0.8 | errores AR(0.5), q AR(0,9) | boot=sieve",cobertura IC95 del umbral por inversión de LR,cobertura,principal,0.9133333333333333,"[0,90; 0,98]",True,True,300,299,126,IC por inversión de LR homocedástico (no depende del bootstrap)

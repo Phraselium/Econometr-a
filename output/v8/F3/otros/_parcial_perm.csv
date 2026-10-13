@@ -1,0 +1,11 @@
+herramienta,config,escenario,metrica,tipo,rol,valor,objetivo,cumple,laxo,reps,B,n,nota
+permutacion_fechas,t_studentizado_2tramos,H0_iid (n=100),tamaño (5%),tamano,principal,0.048,"[0,02; 0,10]",True,True,250,2000,100,
+permutacion_fechas,dif_sin_studentizar_2tramos,H0_iid (n=100),tamaño (5%),tamano,principal,0.036,"[0,02; 0,10]",True,True,250,2000,100,
+permutacion_fechas,t_studentizado_2tramos,H0_AR0.5 (n=100),tamaño (5%),tamano,principal,0.036,"[0,02; 0,10]",True,True,250,2000,100,
+permutacion_fechas,dif_sin_studentizar_2tramos,H0_AR0.5 (n=100),tamaño (5%),tamano,principal,0.024,"[0,02; 0,10]",True,True,250,2000,100,
+permutacion_fechas,t_studentizado_2tramos,H1_ruptura_pendiente (n=100),potencia (5%),potencia,principal,0.316,">= 0,80",False,False,250,2000,100,
+permutacion_fechas,dif_sin_studentizar_2tramos,H1_ruptura_pendiente (n=100),potencia (5%),potencia,principal,0.244,">= 0,80",False,False,250,2000,100,
+permutacion_fechas,t_studentizado_2tramos,"H0_iid salto 1,0 (n=200)",tamaño (5%),tamano,referencia,0.04,"[0,02; 0,10]",True,True,250,2000,200,
+permutacion_fechas,dif_sin_studentizar_2tramos,"H0_iid salto 1,0 (n=200)",tamaño (5%),tamano,referencia,0.02,"[0,02; 0,10]",True,True,250,2000,200,
+permutacion_fechas,t_studentizado_2tramos,"H1_ruptura_pendiente salto 1,0 (n=200)",potencia (5%),potencia,referencia,0.8,">= 0,80",True,True,250,2000,200,
+permutacion_fechas,dif_sin_studentizar_2tramos,"H1_ruptura_pendiente salto 1,0 (n=200)",potencia (5%),potencia,referencia,0.732,">= 0,80",False,True,250,2000,200,

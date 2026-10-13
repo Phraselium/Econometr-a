@@ -1,43 +1,165 @@
 {
  "rama": "v8/F3/otros",
- "pregunta": "¿Las herramientas no-VAR (regímenes, DFM, LP/LP-IV, dominancia, permutación de fechas, SHAP agrupado, multiverso) tienen tamaño, potencia y cobertura aceptables en DGP conocidos?",
+ "pregunta": "¿Las herramientas no-VAR (regímenes, DFM, LP/LP-IV, dominancia, permutación de fechas, SHAP agrupado, multiverso) tienen tamaño, potencia y cobertura aceptables en DGP conocidos, con T≈90-126 y persistencia alta?",
  "capa": "C4 (validación metodológica con datos simulados; sin resultados sobre vivienda)",
  "datos": "SIMULADOS (SEED=20261010)",
  "N": 400,
- "metodo": "Monte Carlo por herramienta (ver montecarlo.csv)",
+ "metodo": "Monte Carlo por herramienta y configuración (ver montecarlo.csv); etiquetas derivadas de REGLAS (etiquetas.csv)",
  "estimacion": {
-  "umbral_hansen": "apta",
-  "bai_perron_boot": "apta con bootstrap wild solo si los errores no están autocorrelacionados; con autocorrelación usar boot='block' (con reservas)",
-  "markov_switching": "con reservas",
-  "dfm_baing_pca": "apta si N≥~30; no apta con N pequeño",
-  "dfm_ml": "apta (reservas: solo 1 factor AR(1) validado)",
-  "lp_ols": "apta",
-  "lp_iv_ar": "apta (AR); el IC normal NO es fiable con instrumento débil",
-  "dominancia": "apta",
-  "permutacion_fechas": "con reservas",
-  "shap_grupos": "apta para ranking de familias cuando la separación es clara; con reservas si hay familias de importancia similar",
-  "multiverso": "apta (tests unitarios; sin Monte Carlo)"
+  "bai_perron[bloque_8]": {
+   "validez": "no apta",
+   "potencia": "apta"
+  },
+  "bai_perron[sieve]": {
+   "validez": "apta",
+   "potencia": "no apta"
+  },
+  "bai_perron[wild]": {
+   "validez": "con reservas",
+   "potencia": "sin datos"
+  },
+  "bai_perron[bloque_pw]": {
+   "validez": "no apta",
+   "potencia": "sin datos"
+  },
+  "dfm_baing[IC_p2]": {
+   "validez": "con reservas",
+   "potencia": "sin datos"
+  },
+  "dfm_pca[PCA_r1]": {
+   "validez": "apta",
+   "potencia": "sin datos"
+  },
+  "dfm_ml[ML_r1]": {
+   "validez": "apta",
+   "potencia": "sin datos"
+  },
+  "dominancia[filas]": {
+   "validez": "con reservas",
+   "potencia": "sin datos"
+  },
+  "dominancia[bloque_8]": {
+   "validez": "no apta",
+   "potencia": "sin datos"
+  },
+  "lp_ols[NW_h+1]": {
+   "validez": "no apta",
+   "potencia": "sin datos"
+  },
+  "lp_ols[NW_2h+2]": {
+   "validez": "no apta",
+   "potencia": "sin datos"
+  },
+  "lp_ols[EWC]": {
+   "validez": "con reservas",
+   "potencia": "sin datos"
+  },
+  "lp_iv[AR]": {
+   "validez": "no apta",
+   "potencia": "sin datos"
+  },
+  "lp_iv[IC_normal]": {
+   "validez": "con reservas",
+   "potencia": "sin datos"
+  },
+  "lp_iv[AR_unilateral]": {
+   "validez": "apta",
+   "potencia": "con reservas"
+  },
+  "lp_iv[pretendencias]": {
+   "validez": "apta",
+   "potencia": "apta"
+  },
+  "lp_iv[placebo_permutacion]": {
+   "validez": "apta",
+   "potencia": "no apta"
+  },
+  "markov_switching[bootstrap_LR_1v2]": {
+   "validez": "con reservas",
+   "potencia": "no apta"
+  },
+  "markov_switching[BIC]": {
+   "validez": "no apta",
+   "potencia": "sin datos"
+  },
+  "permutacion_fechas[t_studentizado_2tramos]": {
+   "validez": "apta",
+   "potencia": "no apta"
+  },
+  "permutacion_fechas[dif_sin_studentizar_2tramos]": {
+   "validez": "apta",
+   "potencia": "no apta"
+  },
+  "permutacion_fechas[Q_homo_5tramos]": {
+   "validez": "con reservas",
+   "potencia": "no apta"
+  },
+  "permutacion_fechas[maxt_homo_5tramos]": {
+   "validez": "apta",
+   "potencia": "no apta"
+  },
+  "permutacion_fechas[Q_hac_5tramos]": {
+   "validez": "con reservas",
+   "potencia": "no apta"
+  },
+  "umbral_hansen[wild]": {
+   "validez": "apta",
+   "potencia": "apta"
+  },
+  "umbral_hansen[IC_LR]": {
+   "validez": "apta",
+   "potencia": "sin datos"
+  },
+  "umbral_hansen[bloque_pw]": {
+   "validez": "no apta",
+   "potencia": "con reservas"
+  },
+  "umbral_hansen[sieve]": {
+   "validez": "apta",
+   "potencia": "con reservas"
+  },
+  "multiverso": {
+   "validez": "no evaluada por MC",
+   "potencia": "-"
+  }
  },
  "ic95": null,
  "p_ajustado": null,
  "nivel_evidencia": "DESCRIPTIVO (validación de herramientas; no es evidencia sobre el mercado de vivienda)",
  "diagnosticos": {
-  "umbral_hansen": "tamaño 0.043 (iid) y 0.040 (heteroced.); potencia 0.890; cobertura IC umbral 0.937. Solo con regresores exógenos/fijos y errores sin autocorrelación; todos los coeficientes conmutan.",
-  "bai_perron_boot": "tamaño UDmax 0.068 (iid), 0.052 (heteroced.), AR(0,5): 0.596 con wild (NO apta) vs 0.044 con bloques; potencia salto 1,0σ 1.000, 0,6σ 0.800. Fechas de los cortes solo orientativas.",
-  "markov_switching": "H0_1reg_test_1v2: tamaño del bootstrap LR 1 vs 2 (5%) = 0.05 (R=20, B=39.0); H1_2reg_test_1v2: potencia del bootstrap LR 1 vs 2 (5%) = 0.40 (R=20, B=39.0); 2reg_test_2v3: rechazo bootstrap LR 2 vs 3 (5%) = 0.00 (R=6, B=19.0); 3reg_test_2v3: rechazo bootstrap LR 2 vs 3 (5%) = 0.00 (R=6, B=19.0); verdadero_1reg: % BIC elige k verdadero = 0.97 (R=30, B=nan); verdadero_2reg: % BIC elige k verdadero = 0.97 (R=30, B=nan); verdadero_3reg: % BIC elige k verdadero = 0.80 (R=30, B=nan). Réplicas pequeñas por coste (bootstrap parametrico: cada réplica reajusta el modelo): validación INDICATIVA, no concluyente; LR sin distribución estándar.",
-  "dfm_baing_pca": "IC_p2 acierta r=1.000 con N=40 y 0.000 con N=10 (tiende a kmax).",
-  "dfm_ml": "error absoluto medio del R2 por variable 0.051 (R=15).",
-  "lp_ols": "cobertura IC95 NW entre 0.910 y 0.950 en h=0,1,4,8.",
-  "lp_iv_ar": "cobertura AR entre 0.925 y 0.975 (F fuerte y débil); ver nota de cada fila para F mediano y % no acotado. Panel FE: solo test de humo (sin Monte Carlo de cobertura).",
-  "dominancia": "error medio phi 0.014, cobertura IC bootstrap 0.903, acierto de las 2 dominantes 0.933. Descriptivo, no causal.",
-  "permutacion_fechas": "tamaño entre 0.024 y 0.056 (studentizado ≈ nominal; sin studentizar conservador); potencia 0.65 (H1_ruptura_pendiente (n=200, salto 1,0); estadístico sin studentizar), 0.73 (H1_ruptura_pendiente (n=200, salto 1,0); estadístico studentizado), 0.32 (H1_ruptura_pendiente; estadístico sin studentizar), 0.41 (H1_ruptura_pendiente; estadístico studentizado). Con pocos conjuntos de fechas posibles el p mínimo y la potencia están acotados.",
-  "shap_grupos": "DGP aditivo+interacción (orden verdadero F1>F2>F3>F4): % ranking correcto de familias = 1.00; DGP claro: % réplicas bootstrap con ranking completo igual (media) = 1.00; DGP claro: % pliegues temporales con ranking completo igual (media) = 1.00; DGP duro (F1≈F2): % réplicas bootstrap con ranking completo igual (media) = 0.83; DGP duro (F1≈F2): % pliegues temporales con ranking completo igual (media) = 0.75; ALE de c vs sin(2c) centrado: correlación = 0.95",
-  "multiverso": "Registra todas las especificaciones en Registry; resumen con BH sobre toda la rejilla; tope configurable con muestreo determinista."
+  "bai_perron[bloque_8]": "H0 n=100 | errores AR(0.85): tamaño UDmax (5%) = 0,336; H0 n=126 | errores AR(0.85): tamaño UDmax (5%) = 0,412",
+  "bai_perron[sieve]": "H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.85): potencia UDmax (5%) = 0,316; H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.85): potencia UDmax (5%) = 0,420",
+  "bai_perron[wild]": "H0 n=100 | errores AR(0): tamaño UDmax (5%) = 0,012",
+  "bai_perron[bloque_pw]": "H0 n=100 | errores AR(0): tamaño UDmax (5%) = 0,012; H0 n=100 | errores AR(0.5): tamaño UDmax (5%) = 0,156; H0 n=100 | errores AR(0.85): tamaño UDmax (5%) = 0,196",
+  "dfm_baing[IC_p2]": "T=110,N=17,r=2: % IC_p2 elige r verdadero = 0,875",
+  "dfm_pca[PCA_r1]": "todas las filas principales cumplen",
+  "dfm_ml[ML_r1]": "todas las filas principales cumplen",
+  "dominancia[filas]": "p=5 colineal, n=100, regresores AR(0.0), errores AR(0.0): % acierto en las 2 variables dominantes (orden) = 0,667; p=5 colineal, n=100, regresores AR(0.0), errores AR(0.0): error relativo máx del VIF = 0,216",
+  "dominancia[bloque_8]": "p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5): error absoluto medio de phi (R2) = 0,038; p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5): cobertura IC95 bootstrap de phi = 0,857; p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5): % acierto en las 2 variables dominantes (orden) = 0,367; p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5): error relativo máx del VIF = 0,654; p=5 colineal, n=126, regresores AR(0.8), errores AR(0.5): error absoluto medio de phi (R2) = 0,033; (+3 filas más, ver montecarlo.csv; 8 de 8 filas principales no cumplen)",
+  "lp_ols[NW_h+1]": "ρ=0.6, n=90, h=4: cobertura IC95 = 0,897; ρ=0.6, n=90, h=4-8: cobertura IC95 = 0,877; ρ=0.9, n=90, h=4: cobertura IC95 = 0,850; ρ=0.9, n=90, h=8: cobertura IC95 = 0,845; ρ=0.9, n=90, h=12: cobertura IC95 = 0,823; (+7 filas más, ver montecarlo.csv; 12 de 28 filas principales no cumplen)",
+  "lp_ols[NW_2h+2]": "ρ=0.6, n=90, h=4: cobertura IC95 = 0,873; ρ=0.6, n=90, h=8: cobertura IC95 = 0,868; ρ=0.6, n=90, h=12: cobertura IC95 = 0,843; ρ=0.6, n=90, h=-4 (pretendencia: efecto verdadero 0): cobertura IC95 = 0,890; ρ=0.6, n=90, h=4-8: cobertura IC95 = 0,825; (+11 filas más, ver montecarlo.csv; 16 de 28 filas principales no cumplen)",
+  "lp_ols[EWC]": "ρ=0.9, n=90, h=4: cobertura IC95 = 0,887; ρ=0.9, n=90, h=8: cobertura IC95 = 0,882; ρ=0.9, n=90, h=4-8: cobertura IC95 = 0,838; ρ=0.9, n=110, h=8: cobertura IC95 = 0,880; ρ=0.9, n=110, h=12: cobertura IC95 = 0,880; (+1 filas más, ver montecarlo.csv; 6 de 28 filas principales no cumplen)",
+  "lp_iv[AR]": "instrumento_fuerte, n=90, h=12: cobertura IC Anderson-Rubin = 0,990; instrumento_debil, n=90, h=4: cobertura IC Anderson-Rubin = 0,997; instrumento_debil, n=90, h=8: cobertura IC Anderson-Rubin = 0,990; instrumento_debil, n=90, h=12: cobertura IC Anderson-Rubin = 1,000; instrumento_debil, n=90, h=4-8: cobertura IC Anderson-Rubin = 0,997; (+14 filas más, ver montecarlo.csv; 19 de 30 filas principales no cumplen)",
+  "lp_iv[IC_normal]": "instrumento_fuerte, n=90, h=4: cobertura IC normal 2SLS = 0,863; instrumento_fuerte, n=90, h=4-8: cobertura IC normal 2SLS = 0,850; instrumento_fuerte, n=110, h=4: cobertura IC normal 2SLS = 0,863; instrumento_fuerte, n=110, h=12: cobertura IC normal 2SLS = 0,897; instrumento_fuerte, n=110, h=4-8: cobertura IC normal 2SLS = 0,887",
+  "lp_iv[AR_unilateral]": "efecto -1, IV fuerte, n=110, agregado 4-8: potencia AR unilateral (H1: β<0) al 5% = 0,673",
+  "lp_iv[pretendencias]": "todas las filas principales cumplen",
+  "lp_iv[placebo_permutacion]": "efecto 1, IV fuerte, n=110, h=4 (permutación libre): potencia (p_perm < 0,05) = 0,353; efecto 1, IV fuerte, n=110, agregado 4-8 (desplazamiento circular): potencia (p_perm < 0,05) = 0,213",
+  "markov_switching[bootstrap_LR_1v2]": "H0_1reg (T=110): tamaño del bootstrap LR 1 vs 2 (5%) = 0,000; H1_2reg (T=110): potencia del bootstrap LR 1 vs 2 (5%) = 0,400",
+  "markov_switching[BIC]": "verdadero_2reg (T=110): % BIC elige k verdadero = 0,567; verdadero_3reg (T=110): % BIC elige k verdadero = 0,367",
+  "permutacion_fechas[t_studentizado_2tramos]": "H1_ruptura_pendiente (n=100): potencia (5%) = 0,316",
+  "permutacion_fechas[dif_sin_studentizar_2tramos]": "H1_ruptura_pendiente (n=100): potencia (5%) = 0,244",
+  "permutacion_fechas[Q_homo_5tramos]": "H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.8): tamaño (5%) = 0,015; H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.0): potencia (5%) = 0,315; H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.8): potencia (5%) = 0,240",
+  "permutacion_fechas[maxt_homo_5tramos]": "H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.0): potencia (5%) = 0,135; H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.8): potencia (5%) = 0,110",
+  "permutacion_fechas[Q_hac_5tramos]": "H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.0): tamaño (5%) = 0,015; H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.8): tamaño (5%) = 0,000; H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.0): potencia (5%) = 0,080; H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.8): potencia (5%) = 0,075",
+  "umbral_hansen[wild]": "todas las filas principales cumplen",
+  "umbral_hansen[IC_LR]": "todas las filas principales cumplen",
+  "umbral_hansen[bloque_pw]": "H0 | errores AR(0.85), q AR(0,9): tamaño (rechazo al 5%) = 0,157; H1 salto 0.8 | errores AR(0.5), q AR(0,9): potencia (rechazo al 5%) = 0,663",
+  "umbral_hansen[sieve]": "H1 salto 0.8 | errores AR(0.5), q AR(0,9): potencia (rechazo al 5%) = 0,587; H1 salto 0.8 | errores AR(0.5), q AR(0,9): potencia (rechazo al 5%) = 0,737"
  },
  "fuera_muestra": {
   "modelo": null,
   "rmse": null,
   "dm_vs_ar4": null
  },
- "notas": "Réplicas por prueba en montecarlo.csv (columna reps/B). Tiempos de bloque (s): {\"ms12\": 1073.1, \"ms23\": 1015.7, \"msbic\": 175.7, \"perm2\": 21.9, \"resto\": 793.2}"
+ "notas": "Reglas de «con reservas» definidas tras ver las cifras de la primera pasada. Réplicas en montecarlo.csv. Tiempos de bloque (s): {\"bp_pot\": 1068.4, \"bp_size\": 1080.2, \"dfm\": 12.0, \"dom\": 26.3, \"lp\": 461.7, \"lpiv\": 316.1, \"lpiv_inf\": 65.0, \"ms12\": 1536.1, \"ms23\": 935.8, \"msbic\": 600.0, \"perm\": 29.5, \"perm_multi\": 413.8, \"shap\": 44.8, \"umbral\": 205.4}"
 }

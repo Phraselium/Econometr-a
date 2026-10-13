@@ -1,0 +1,5 @@
+herramienta,config,escenario,metrica,tipo,rol,valor,objetivo,cumple,laxo,reps,B,n,nota
+markov_switching,bootstrap_LR_1v2,H0_1reg (T=200),tamaño del bootstrap LR 1 vs 2 (5%),tamano,referencia,0.0,"[0,02; 0,10]",False,True,20,39,200,R pequeño: IC binomial 95% ~ ±0.10
+markov_switching,bootstrap_LR_1v2,H1_2reg (T=200),potencia del bootstrap LR 1 vs 2 (5%),potencia,referencia,0.8,">= 0,80",True,True,20,39,200,
+markov_switching,bootstrap_LR_1v2,H0_1reg (T=110),tamaño del bootstrap LR 1 vs 2 (5%),tamano,principal,0.0,"[0,02; 0,10]",False,True,20,39,110,R pequeño: IC binomial 95% ~ ±0.10
+markov_switching,bootstrap_LR_1v2,H1_2reg (T=110),potencia del bootstrap LR 1 vs 2 (5%),potencia,principal,0.4,">= 0,80",False,False,20,39,110,

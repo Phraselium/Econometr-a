@@ -1,0 +1,13 @@
+herramienta,config,escenario,metrica,tipo,rol,valor,objetivo,cumple,laxo,reps,B,n,nota
+permutacion_fechas,Q_homo_5tramos,"H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.0)",tamaño (5%),tamano,principal,0.025,"[0,02; 0,10]",True,True,200,499,126,
+permutacion_fechas,maxt_homo_5tramos,"H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.0)",tamaño (5%),tamano,principal,0.025,"[0,02; 0,10]",True,True,200,499,126,
+permutacion_fechas,Q_hac_5tramos,"H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.0)",tamaño (5%),tamano,principal,0.015,"[0,02; 0,10]",False,True,200,499,126,
+permutacion_fechas,Q_homo_5tramos,"H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.0)",potencia (5%),potencia,principal,0.315,">= 0,80",False,False,200,499,126,
+permutacion_fechas,maxt_homo_5tramos,"H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.0)",potencia (5%),potencia,principal,0.135,">= 0,80",False,False,200,499,126,
+permutacion_fechas,Q_hac_5tramos,"H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.0)",potencia (5%),potencia,principal,0.08,">= 0,80",False,False,200,499,126,
+permutacion_fechas,Q_homo_5tramos,"H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.8)",tamaño (5%),tamano,principal,0.015,"[0,02; 0,10]",False,True,200,499,126,
+permutacion_fechas,maxt_homo_5tramos,"H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.8)",tamaño (5%),tamano,principal,0.02,"[0,02; 0,10]",True,True,200,499,126,
+permutacion_fechas,Q_hac_5tramos,"H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.8)",tamaño (5%),tamano,principal,0.0,"[0,02; 0,10]",False,True,200,499,126,
+permutacion_fechas,Q_homo_5tramos,"H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.8)",potencia (5%),potencia,principal,0.24,">= 0,80",False,False,200,499,126,
+permutacion_fechas,maxt_homo_5tramos,"H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.8)",potencia (5%),potencia,principal,0.11,">= 0,80",False,False,200,499,126,
+permutacion_fechas,Q_hac_5tramos,"H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.8)",potencia (5%),potencia,principal,0.075,">= 0,80",False,False,200,499,126,

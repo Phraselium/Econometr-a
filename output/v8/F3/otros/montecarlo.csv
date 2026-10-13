@@ -1,66 +1,339 @@
-herramienta,escenario,metrica,valor,objetivo,cumple,reps,B,n,nota
-markov_switching,H0_1reg_test_1v2,tamaño del bootstrap LR 1 vs 2 (5%),0.05,"[0,02;0,10] (R pequeño: IC amplio)",True,20,39.0,200,IC binomial 95% ~ ±0.10
-markov_switching,H1_2reg_test_1v2,potencia del bootstrap LR 1 vs 2 (5%),0.4,">=0,80",False,20,39.0,200,
-markov_switching,2reg_test_2v3,rechazo bootstrap LR 2 vs 3 (5%),0.0,"tamaño ≤0,10 (2reg) / potencia ≥0,80 (3reg)",,6,19.0,250,"NO CONCLUYENTE: B=19 => p minimo 0,05 y el criterio p<0,05 no puede rechazar; R=6"
-markov_switching,3reg_test_2v3,rechazo bootstrap LR 2 vs 3 (5%),0.0,"tamaño ≤0,10 (2reg) / potencia ≥0,80 (3reg)",,6,19.0,250,"NO CONCLUYENTE: B=19 => p minimo 0,05 y el criterio p<0,05 no puede rechazar; R=6"
-markov_switching,verdadero_1reg,% BIC elige k verdadero,0.9666666666666668,">=0,70",True,30,,250,
-markov_switching,verdadero_2reg,% BIC elige k verdadero,0.9666666666666668,">=0,70",True,30,,250,
-markov_switching,verdadero_3reg,% BIC elige k verdadero,0.8,">=0,70",True,30,,250,
-permutacion_fechas,"H0_iid (n=200, salto 1,0) | estadístico sin studentizar",tamaño (5%),0.024,"≈0,05 ([0,02;0,10])",True,250,2000.0,200,
-permutacion_fechas,"H0_iid (n=200, salto 1,0) | estadístico studentizado",tamaño (5%),0.056,"≈0,05 ([0,02;0,10])",True,250,2000.0,200,
-permutacion_fechas,"H1_ruptura_pendiente (n=200, salto 1,0) | estadístico sin studentizar",potencia (5%),0.648,">=0,80",False,250,2000.0,200,
-permutacion_fechas,"H1_ruptura_pendiente (n=200, salto 1,0) | estadístico studentizado",potencia (5%),0.728,">=0,80",False,250,2000.0,200,
-umbral_hansen,H0_iid,tamaño (rechazo al 5%),0.0433333333333333,"[0,02;0,10]",True,300,299.0,120,
-umbral_hansen,H0_heterocedastico,tamaño (rechazo al 5%),0.04,"[0,02;0,10]",True,300,299.0,120,
-umbral_hansen,H1_salto_pendiente,potencia (rechazo al 5%),0.89,">=0,80",True,300,299.0,120,
-umbral_hansen,H1_salto_pendiente,cobertura IC95 del umbral por inversión de LR,0.9366666666666666,"[0,90;0,98]",True,300,299.0,120,gamma verdadero = 0
-umbral_hansen,H1_salto_pendiente,sesgo mediano del umbral,-0.013063868005547,"|.|<0,15",True,300,299.0,120,
-bai_perron_boot,H0_iid_wild,tamaño UDmax (5%),0.068,"[0,02;0,10]",True,250,199.0,120,
-bai_perron_boot,H0_iid_wild,tamaño supF(1) (5%),0.056,"[0,02;0,10]",True,250,199.0,120,
-bai_perron_boot,H0_iid_wild,P(BIC elige >=1 corte | nula),0.036,informativo,,250,199.0,120,
-bai_perron_boot,H0_heterocedastico_wild,tamaño UDmax (5%),0.052,"[0,02;0,10]",True,250,199.0,120,
-bai_perron_boot,H0_heterocedastico_wild,tamaño supF(1) (5%),0.048,"[0,02;0,10]",True,250,199.0,120,
-bai_perron_boot,H0_heterocedastico_wild,P(BIC elige >=1 corte | nula),0.096,informativo,,250,199.0,120,
-bai_perron_boot,H0_AR0.5_wild,tamaño UDmax (5%),0.596,"[0,02;0,10]",False,250,199.0,120,
-bai_perron_boot,H0_AR0.5_wild,tamaño supF(1) (5%),0.448,"[0,02;0,10]",False,250,199.0,120,
-bai_perron_boot,H0_AR0.5_wild,P(BIC elige >=1 corte | nula),0.492,informativo,,250,199.0,120,
-bai_perron_boot,H0_AR0.5_bloque,tamaño UDmax (5%),0.044,"[0,02;0,10]",True,250,199.0,120,
-bai_perron_boot,H0_AR0.5_bloque,tamaño supF(1) (5%),0.048,"[0,02;0,10]",True,250,199.0,120,
-bai_perron_boot,H0_AR0.5_bloque,P(BIC elige >=1 corte | nula),0.492,informativo,,250,199.0,120,
-bai_perron_boot,H1_salto1.0_wild,potencia UDmax (5%),1.0,">=0,80",True,250,199.0,120,
-bai_perron_boot,H1_salto1.0_wild,error absoluto mediano de la fecha (obs.),2.0,informativo,,250,199.0,120,
-bai_perron_boot,H1_salto0.6_wild,potencia UDmax (5%),0.8,informativo,,250,199.0,120,
-bai_perron_boot,H1_salto0.6_wild,error absoluto mediano de la fecha (obs.),6.5,informativo,,250,199.0,120,
-lp_ols_NW,h=0,cobertura IC95,0.95,"[0,90;0,98]",True,400,,200,
-lp_ols_NW,h=1,cobertura IC95,0.91,"[0,90;0,98]",True,400,,200,
-lp_ols_NW,h=4,cobertura IC95,0.925,"[0,90;0,98]",True,400,,200,
-lp_ols_NW,h=8,cobertura IC95,0.9375,"[0,90;0,98]",True,400,,200,
-lp_iv_AR,instrumento_fuerte_h=0,cobertura IC normal 2SLS,0.9275,"[0,90;0,98] (referencia)",True,400,,200,F robusto mediano 204.0
-lp_iv_AR,instrumento_fuerte_h=0,cobertura IC Anderson-Rubin,0.925,"[0,90;0,98]",True,400,,200,F robusto mediano 204.0; % AR no acotado 0
-lp_iv_AR,instrumento_fuerte_h=2,cobertura IC normal 2SLS,0.92,"[0,90;0,98] (referencia)",True,400,,200,F robusto mediano 204.0
-lp_iv_AR,instrumento_fuerte_h=2,cobertura IC Anderson-Rubin,0.94,"[0,90;0,98]",True,400,,200,F robusto mediano 204.0; % AR no acotado 0
-lp_iv_AR,instrumento_debil_h=0,cobertura IC normal 2SLS,0.92,"[0,90;0,98] (referencia)",True,400,,200,F robusto mediano 3.1
-lp_iv_AR,instrumento_debil_h=0,cobertura IC Anderson-Rubin,0.975,"[0,90;0,98]",True,400,,200,F robusto mediano 3.1; % AR no acotado 62
-lp_iv_AR,instrumento_debil_h=2,cobertura IC normal 2SLS,0.9975,"[0,90;0,98] (referencia)",False,400,,200,F robusto mediano 3.1
-lp_iv_AR,instrumento_debil_h=2,cobertura IC Anderson-Rubin,0.975,"[0,90;0,98]",True,400,,200,F robusto mediano 3.1; % AR no acotado 62
-dominancia,p=5 colineal,|Johnson - LMG| máx (en R2),0.0229825319919882,"<0,05",True,1,,300,
-dominancia,p=5 colineal,error absoluto medio de phi (R2),0.01358949396477,"<0,03",True,60,100.0,300,"phi verdadero=[0.269, 0.294, 0.136, 0.03, 0.022]"
-dominancia,p=5 colineal,cobertura IC95 bootstrap de phi,0.9033333333333332,"[0,90;0,98]",True,60,100.0,300,
-dominancia,p=5 colineal,% acierto en las 2 variables dominantes (orden),0.9333333333333332,">=0,80",True,60,100.0,300,
-dominancia,p=5 colineal,error relativo máx del VIF,0.1266713626278585,"<0,20",True,60,,300,
-permutacion_fechas,H0_iid | estadístico sin studentizar,tamaño (5%),0.032,"≈0,05 ([0,02;0,10])",True,250,2000.0,100,
-permutacion_fechas,H0_iid | estadístico studentizado,tamaño (5%),0.052,"≈0,05 ([0,02;0,10])",True,250,2000.0,100,
-permutacion_fechas,H0_AR0.5 | estadístico sin studentizar,tamaño (5%),0.032,"≈0,05 ([0,02;0,10])",True,250,2000.0,100,
-permutacion_fechas,H0_AR0.5 | estadístico studentizado,tamaño (5%),0.048,"≈0,05 ([0,02;0,10])",True,250,2000.0,100,
-permutacion_fechas,H1_ruptura_pendiente | estadístico sin studentizar,potencia (5%),0.316,">=0,80",False,250,2000.0,100,
-permutacion_fechas,H1_ruptura_pendiente | estadístico studentizado,potencia (5%),0.408,">=0,80",False,250,2000.0,100,
-shap_grupos,DGP aditivo+interacción (orden verdadero F1>F2>F3>F4),% ranking correcto de familias,1.0,">=0,90",True,30,,400,
-shap_grupos,DGP claro,% réplicas bootstrap con ranking completo igual (media),1.0,">=0,80 si claro; informativo si duro",True,10,20.0,400,
-shap_grupos,DGP claro,% pliegues temporales con ranking completo igual (media),1.0,informativo,,10,4.0,400,
-shap_grupos,DGP duro (F1≈F2),% réplicas bootstrap con ranking completo igual (media),0.835,">=0,80 si claro; informativo si duro",,10,20.0,400,
-shap_grupos,DGP duro (F1≈F2),% pliegues temporales con ranking completo igual (media),0.75,informativo,,10,4.0,400,
-shap_grupos,arbol sustituto prof.3,fidelidad R2,0.7528338350835911,informativo,,1,,400,
-shap_grupos,ALE de c vs sin(2c) centrado,correlación,0.9499300890016332,">=0,90",True,1,,400,
-dfm_baing,"T=120,N=40,r=2",% IC_p2 elige r verdadero,1.0,">=0,90",True,200,,120,
-dfm_baing,"T=120,N=10,r=2",% IC_p2 elige r verdadero,0.0,">=0,90",False,200,,120,con N pequeño el criterio tiende a elegir kmax
-dfm_ml,"T=100,N=8,r=1",error absoluto medio del R2 por variable,0.051348906825297,"<0,10",True,15,,100,
+herramienta,config,escenario,metrica,tipo,rol,valor,objetivo,cumple,laxo,reps,B,n,nota
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0),potencia UDmax (5%),potencia,referencia,0.952,">= 0,80",True,True,250,199.0,100,bloque mediano 8
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,1.0,informativo,,,250,199.0,100,
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0),potencia UDmax (5%),potencia,principal,1.0,">= 0,80",True,True,250,199.0,100,bloque mediano 8
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199.0,100,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0),potencia UDmax (5%),potencia,referencia,0.94,">= 0,80",True,True,250,199.0,100,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,1.0,informativo,,,250,199.0,100,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0),potencia UDmax (5%),potencia,principal,0.94,">= 0,80",True,True,250,199.0,100,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199.0,100,
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.5),potencia UDmax (5%),potencia,referencia,0.644,">= 0,80",False,True,250,199.0,100,bloque mediano 8
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,4.0,informativo,,,250,199.0,100,
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.5),potencia UDmax (5%),potencia,principal,0.996,">= 0,80",True,True,250,199.0,100,bloque mediano 8
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199.0,100,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.5),potencia UDmax (5%),potencia,referencia,0.48,">= 0,80",False,False,250,199.0,100,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,4.0,informativo,,,250,199.0,100,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.5),potencia UDmax (5%),potencia,principal,0.892,">= 0,80",True,True,250,199.0,100,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199.0,100,
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.85),potencia UDmax (5%),potencia,referencia,0.596,">= 0,80",False,True,250,199.0,100,bloque mediano 8
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,11.5,informativo,,,250,199.0,100,
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.85),potencia UDmax (5%),potencia,principal,0.932,">= 0,80",True,True,250,199.0,100,bloque mediano 8
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,1.0,informativo,,,250,199.0,100,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.85),potencia UDmax (5%),potencia,referencia,0.108,">= 0,80",False,False,250,199.0,100,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,11.5,informativo,,,250,199.0,100,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.85),potencia UDmax (5%),potencia,principal,0.316,">= 0,80",False,False,250,199.0,100,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,1.0,informativo,,,250,199.0,100,
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0),potencia UDmax (5%),potencia,referencia,0.992,">= 0,80",True,True,250,199.0,126,bloque mediano 8
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,2.0,informativo,,,250,199.0,126,
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0),potencia UDmax (5%),potencia,principal,1.0,">= 0,80",True,True,250,199.0,126,bloque mediano 8
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199.0,126,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0),potencia UDmax (5%),potencia,referencia,0.932,">= 0,80",True,True,250,199.0,126,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,2.0,informativo,,,250,199.0,126,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0),potencia UDmax (5%),potencia,principal,0.956,">= 0,80",True,True,250,199.0,126,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199.0,126,
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.5),potencia UDmax (5%),potencia,referencia,0.752,">= 0,80",False,True,250,199.0,126,bloque mediano 8
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,5.0,informativo,,,250,199.0,126,
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.5),potencia UDmax (5%),potencia,principal,1.0,">= 0,80",True,True,250,199.0,126,bloque mediano 8
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199.0,126,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.5),potencia UDmax (5%),potencia,referencia,0.624,">= 0,80",False,True,250,199.0,126,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,5.0,informativo,,,250,199.0,126,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.5),potencia UDmax (5%),potencia,principal,0.984,">= 0,80",True,True,250,199.0,126,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199.0,126,
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.85),potencia UDmax (5%),potencia,referencia,0.688,">= 0,80",False,True,250,199.0,126,bloque mediano 8
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,13.0,informativo,,,250,199.0,126,
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.85),potencia UDmax (5%),potencia,principal,0.992,">= 0,80",True,True,250,199.0,126,bloque mediano 8
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,1.0,informativo,,,250,199.0,126,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.85),potencia UDmax (5%),potencia,referencia,0.104,">= 0,80",False,False,250,199.0,126,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,13.0,informativo,,,250,199.0,126,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.85),potencia UDmax (5%),potencia,principal,0.42,">= 0,80",False,False,250,199.0,126,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,1.0,informativo,,,250,199.0,126,
+bai_perron,wild,H0_iid n=120 (errores sin autocorrelación),tamaño UDmax (5%),tamano,principal,0.068,"[0,02; 0,10]",True,True,250,199.0,120,
+bai_perron,wild,H0_iid n=120 (errores sin autocorrelación),tamaño supF(1) (5%),tamano,principal,0.056,"[0,02; 0,10]",True,True,250,199.0,120,
+bai_perron,wild,H0_heterocedastico n=120 (errores sin autocorrelación),tamaño UDmax (5%),tamano,principal,0.052,"[0,02; 0,10]",True,True,250,199.0,120,
+bai_perron,wild,H0_heterocedastico n=120 (errores sin autocorrelación),tamaño supF(1) (5%),tamano,principal,0.048,"[0,02; 0,10]",True,True,250,199.0,120,
+bai_perron,wild,H0 n=100 | errores AR(0),tamaño UDmax (5%),tamano,principal,0.012,"[0,02; 0,10]",False,True,250,199.0,100,
+bai_perron,wild,H0 n=100 | errores AR(0),tamaño supF(1) (5%),tamano,referencia,0.028,"[0,02; 0,10]",True,True,250,199.0,100,
+bai_perron,bloque_pw,H0 n=100 | errores AR(0),tamaño UDmax (5%),tamano,principal,0.012,"[0,02; 0,10]",False,True,250,199.0,100,bloque mediano 2
+bai_perron,bloque_pw,H0 n=100 | errores AR(0),tamaño supF(1) (5%),tamano,referencia,0.016,"[0,02; 0,10]",False,True,250,199.0,100,bloque mediano 2
+bai_perron,bloque_8,H0 n=100 | errores AR(0),tamaño UDmax (5%),tamano,principal,0.02,"[0,02; 0,10]",True,True,250,199.0,100,bloque mediano 8
+bai_perron,bloque_8,H0 n=100 | errores AR(0),tamaño supF(1) (5%),tamano,referencia,0.02,"[0,02; 0,10]",True,True,250,199.0,100,bloque mediano 8
+bai_perron,sieve,H0 n=100 | errores AR(0),tamaño UDmax (5%),tamano,principal,0.024,"[0,02; 0,10]",True,True,250,199.0,100,
+bai_perron,sieve,H0 n=100 | errores AR(0),tamaño supF(1) (5%),tamano,referencia,0.024,"[0,02; 0,10]",True,True,250,199.0,100,
+bai_perron,wild,H0 n=100 | errores AR(0.5),tamaño UDmax (5%),tamano,referencia,0.62,"[0,02; 0,10]",False,False,250,199.0,100,
+bai_perron,wild,H0 n=100 | errores AR(0.5),tamaño supF(1) (5%),tamano,referencia,0.524,"[0,02; 0,10]",False,False,250,199.0,100,
+bai_perron,bloque_pw,H0 n=100 | errores AR(0.5),tamaño UDmax (5%),tamano,principal,0.156,"[0,02; 0,10]",False,False,250,199.0,100,bloque mediano 3
+bai_perron,bloque_pw,H0 n=100 | errores AR(0.5),tamaño supF(1) (5%),tamano,referencia,0.136,"[0,02; 0,10]",False,True,250,199.0,100,bloque mediano 3
+bai_perron,bloque_8,H0 n=100 | errores AR(0.5),tamaño UDmax (5%),tamano,principal,0.076,"[0,02; 0,10]",True,True,250,199.0,100,bloque mediano 8
+bai_perron,bloque_8,H0 n=100 | errores AR(0.5),tamaño supF(1) (5%),tamano,referencia,0.072,"[0,02; 0,10]",True,True,250,199.0,100,bloque mediano 8
+bai_perron,sieve,H0 n=100 | errores AR(0.5),tamaño UDmax (5%),tamano,principal,0.056,"[0,02; 0,10]",True,True,250,199.0,100,
+bai_perron,sieve,H0 n=100 | errores AR(0.5),tamaño supF(1) (5%),tamano,referencia,0.052,"[0,02; 0,10]",True,True,250,199.0,100,
+bai_perron,wild,H0 n=100 | errores AR(0.85),tamaño UDmax (5%),tamano,referencia,0.992,"[0,02; 0,10]",False,False,250,199.0,100,
+bai_perron,wild,H0 n=100 | errores AR(0.85),tamaño supF(1) (5%),tamano,referencia,0.944,"[0,02; 0,10]",False,False,250,199.0,100,
+bai_perron,bloque_pw,H0 n=100 | errores AR(0.85),tamaño UDmax (5%),tamano,principal,0.196,"[0,02; 0,10]",False,False,250,199.0,100,bloque mediano 10
+bai_perron,bloque_pw,H0 n=100 | errores AR(0.85),tamaño supF(1) (5%),tamano,referencia,0.208,"[0,02; 0,10]",False,False,250,199.0,100,bloque mediano 10
+bai_perron,bloque_8,H0 n=100 | errores AR(0.85),tamaño UDmax (5%),tamano,principal,0.336,"[0,02; 0,10]",False,False,250,199.0,100,bloque mediano 8
+bai_perron,bloque_8,H0 n=100 | errores AR(0.85),tamaño supF(1) (5%),tamano,referencia,0.288,"[0,02; 0,10]",False,False,250,199.0,100,bloque mediano 8
+bai_perron,sieve,H0 n=100 | errores AR(0.85),tamaño UDmax (5%),tamano,principal,0.064,"[0,02; 0,10]",True,True,250,199.0,100,
+bai_perron,sieve,H0 n=100 | errores AR(0.85),tamaño supF(1) (5%),tamano,referencia,0.056,"[0,02; 0,10]",True,True,250,199.0,100,
+bai_perron,bloque_8,H0 n=126 | errores AR(0),tamaño UDmax (5%),tamano,principal,0.032,"[0,02; 0,10]",True,True,250,199.0,126,bloque mediano 8
+bai_perron,bloque_8,H0 n=126 | errores AR(0),tamaño supF(1) (5%),tamano,referencia,0.036,"[0,02; 0,10]",True,True,250,199.0,126,bloque mediano 8
+bai_perron,sieve,H0 n=126 | errores AR(0),tamaño UDmax (5%),tamano,principal,0.036,"[0,02; 0,10]",True,True,250,199.0,126,
+bai_perron,sieve,H0 n=126 | errores AR(0),tamaño supF(1) (5%),tamano,referencia,0.028,"[0,02; 0,10]",True,True,250,199.0,126,
+bai_perron,bloque_8,H0 n=126 | errores AR(0.5),tamaño UDmax (5%),tamano,principal,0.068,"[0,02; 0,10]",True,True,250,199.0,126,bloque mediano 8
+bai_perron,bloque_8,H0 n=126 | errores AR(0.5),tamaño supF(1) (5%),tamano,referencia,0.064,"[0,02; 0,10]",True,True,250,199.0,126,bloque mediano 8
+bai_perron,sieve,H0 n=126 | errores AR(0.5),tamaño UDmax (5%),tamano,principal,0.04,"[0,02; 0,10]",True,True,250,199.0,126,
+bai_perron,sieve,H0 n=126 | errores AR(0.5),tamaño supF(1) (5%),tamano,referencia,0.04,"[0,02; 0,10]",True,True,250,199.0,126,
+bai_perron,bloque_8,H0 n=126 | errores AR(0.85),tamaño UDmax (5%),tamano,principal,0.412,"[0,02; 0,10]",False,False,250,199.0,126,bloque mediano 8
+bai_perron,bloque_8,H0 n=126 | errores AR(0.85),tamaño supF(1) (5%),tamano,referencia,0.34,"[0,02; 0,10]",False,False,250,199.0,126,bloque mediano 8
+bai_perron,sieve,H0 n=126 | errores AR(0.85),tamaño UDmax (5%),tamano,principal,0.048,"[0,02; 0,10]",True,True,250,199.0,126,
+bai_perron,sieve,H0 n=126 | errores AR(0.85),tamaño supF(1) (5%),tamano,referencia,0.056,"[0,02; 0,10]",True,True,250,199.0,126,
+dfm_baing,IC_p2,"T=120,N=40,r=2",% IC_p2 elige r verdadero,acierto,referencia,1.0,>= 0.9,True,True,200,,120,
+dfm_baing,IC_p2,"T=120,N=10,r=2",% IC_p2 elige r verdadero,acierto,referencia,0.0,>= 0.9,False,False,200,,120,con N pequeño el criterio tiende a elegir kmax
+dfm_baing,IC_p2,"T=110,N=17,r=1",% IC_p2 elige r verdadero,acierto,principal,0.99,>= 0.9,True,True,200,,110,con N pequeño el criterio tiende a elegir kmax
+dfm_baing,IC_p2,"T=126,N=17,r=1",% IC_p2 elige r verdadero,acierto,principal,1.0,>= 0.9,True,True,200,,126,con N pequeño el criterio tiende a elegir kmax
+dfm_baing,IC_p2,"T=110,N=17,r=2",% IC_p2 elige r verdadero,acierto,principal,0.875,>= 0.9,False,True,200,,110,con N pequeño el criterio tiende a elegir kmax
+dfm_pca,PCA_r1,"T=110,N=17,r=1 (factor AR(0,7))",sesgo medio de la varianza explicada por el 1.er factor (estimada - verdadera),error,principal,-0.0276056527838726,< 0.05,True,True,200,,110,verdadera media 0.577; estimada media 0.549; error absoluto medio 0.046
+dfm_ml,ML_r1,"T=100,N=8,r=1",error absoluto medio del R2 por variable,error,referencia,0.0545938948901581,< 0.1,True,True,15,,100,
+dfm_ml,ML_r1,"T=110,N=17,r=1",error absoluto medio del R2 por variable,error,principal,0.0424042106303178,< 0.1,True,True,15,,110,
+dominancia,filas,"p=5 colineal, n=300",|Johnson - LMG| máx (en R2),error,referencia,0.0227163418047218,< 0.05,True,True,1,,300,
+dominancia,filas,"p=5 colineal, n=300, regresores AR(0.0), errores AR(0.0)",error absoluto medio de phi (R2),error,referencia,0.0126132763185273,< 0.03,True,True,60,100.0,300,"phi verdadero=[0.269, 0.294, 0.136, 0.03, 0.022]"
+dominancia,filas,"p=5 colineal, n=300, regresores AR(0.0), errores AR(0.0)",cobertura IC95 bootstrap de phi,cobertura,referencia,0.9433333333333334,"[0,90; 0,98]",True,True,60,100.0,300,
+dominancia,filas,"p=5 colineal, n=300, regresores AR(0.0), errores AR(0.0)",% acierto en las 2 variables dominantes (orden),acierto,referencia,0.9,>= 0.8,True,True,60,100.0,300,
+dominancia,filas,"p=5 colineal, n=300, regresores AR(0.0), errores AR(0.0)",error relativo máx del VIF,error,referencia,0.1246844668546953,< 0.2,True,True,60,,300,
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.0), errores AR(0.0)",error absoluto medio de phi (R2),error,principal,0.0216746471856925,< 0.03,True,True,60,100.0,100,"phi verdadero=[0.269, 0.294, 0.136, 0.03, 0.022]"
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.0), errores AR(0.0)",cobertura IC95 bootstrap de phi,cobertura,principal,0.9366666666666666,"[0,90; 0,98]",True,True,60,100.0,100,
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.0), errores AR(0.0)",% acierto en las 2 variables dominantes (orden),acierto,principal,0.6666666666666666,>= 0.8,False,True,60,100.0,100,
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.0), errores AR(0.0)",error relativo máx del VIF,error,principal,0.2157478130298898,< 0.2,False,True,60,,100,
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",error absoluto medio de phi (R2),error,referencia,0.0377829935840402,< 0.03,False,True,60,100.0,100,"phi verdadero=[0.269, 0.294, 0.136, 0.03, 0.022]"
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",cobertura IC95 bootstrap de phi,cobertura,referencia,0.7133333333333334,"[0,90; 0,98]",False,False,60,100.0,100,
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",% acierto en las 2 variables dominantes (orden),acierto,referencia,0.3666666666666666,>= 0.8,False,False,60,100.0,100,
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",error relativo máx del VIF,error,referencia,0.654258333233955,< 0.2,False,False,60,,100,
+dominancia,bloque_8,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",error absoluto medio de phi (R2),error,principal,0.0377829935840402,< 0.03,False,True,60,100.0,100,"phi verdadero=[0.269, 0.294, 0.136, 0.03, 0.022]"
+dominancia,bloque_8,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",cobertura IC95 bootstrap de phi,cobertura,principal,0.8566666666666667,"[0,90; 0,98]",False,True,60,100.0,100,
+dominancia,bloque_8,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",% acierto en las 2 variables dominantes (orden),acierto,principal,0.3666666666666666,>= 0.8,False,False,60,100.0,100,
+dominancia,bloque_8,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",error relativo máx del VIF,error,principal,0.654258333233955,< 0.2,False,False,60,,100,
+dominancia,bloque_8,"p=5 colineal, n=126, regresores AR(0.8), errores AR(0.5)",error absoluto medio de phi (R2),error,principal,0.0325296284267281,< 0.03,False,True,60,100.0,126,"phi verdadero=[0.269, 0.294, 0.136, 0.03, 0.022]"
+dominancia,bloque_8,"p=5 colineal, n=126, regresores AR(0.8), errores AR(0.5)",cobertura IC95 bootstrap de phi,cobertura,principal,0.8933333333333333,"[0,90; 0,98]",False,True,60,100.0,126,
+dominancia,bloque_8,"p=5 colineal, n=126, regresores AR(0.8), errores AR(0.5)",% acierto en las 2 variables dominantes (orden),acierto,principal,0.5833333333333334,>= 0.8,False,True,60,100.0,126,
+dominancia,bloque_8,"p=5 colineal, n=126, regresores AR(0.8), errores AR(0.5)",error relativo máx del VIF,error,principal,0.4738765363148136,< 0.2,False,False,60,,126,
+lp_ols,NW_h+1,"ρ=0.6, n=90, h=0",cobertura IC95,cobertura,principal,0.9175,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.6, n=90, h=4",cobertura IC95,cobertura,principal,0.8975,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.6, n=90, h=8",cobertura IC95,cobertura,principal,0.9,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.6, n=90, h=12",cobertura IC95,cobertura,principal,0.91,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.6, n=90, h=-4 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.93,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.6, n=90, h=-2 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.935,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.6, n=90, h=4-8",cobertura IC95,cobertura,principal,0.8775,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,NW_2h+2,"ρ=0.6, n=90, h=0",cobertura IC95,cobertura,principal,0.915,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_2h+2,"ρ=0.6, n=90, h=4",cobertura IC95,cobertura,principal,0.8725,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,NW_2h+2,"ρ=0.6, n=90, h=8",cobertura IC95,cobertura,principal,0.8675,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,NW_2h+2,"ρ=0.6, n=90, h=12",cobertura IC95,cobertura,principal,0.8425,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,NW_2h+2,"ρ=0.6, n=90, h=-4 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.89,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,NW_2h+2,"ρ=0.6, n=90, h=-2 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.92,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_2h+2,"ρ=0.6, n=90, h=4-8",cobertura IC95,cobertura,principal,0.825,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,EWC,"ρ=0.6, n=90, h=0",cobertura IC95,cobertura,principal,0.9175,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,EWC,"ρ=0.6, n=90, h=4",cobertura IC95,cobertura,principal,0.9075,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,EWC,"ρ=0.6, n=90, h=8",cobertura IC95,cobertura,principal,0.9425,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,EWC,"ρ=0.6, n=90, h=12",cobertura IC95,cobertura,principal,0.9475,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,EWC,"ρ=0.6, n=90, h=-4 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.93,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,EWC,"ρ=0.6, n=90, h=-2 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.935,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,EWC,"ρ=0.6, n=90, h=4-8",cobertura IC95,cobertura,principal,0.9125,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.9, n=90, h=0",cobertura IC95,cobertura,principal,0.9375,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.9, n=90, h=4",cobertura IC95,cobertura,principal,0.85,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.9, n=90, h=8",cobertura IC95,cobertura,principal,0.845,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.9, n=90, h=12",cobertura IC95,cobertura,principal,0.8225,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.9, n=90, h=-4 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9275,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.9, n=90, h=-2 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9275,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.9, n=90, h=4-8",cobertura IC95,cobertura,principal,0.7825,"[0,90; 0,98]",False,False,400,,90,
+lp_ols,NW_2h+2,"ρ=0.9, n=90, h=0",cobertura IC95,cobertura,principal,0.9275,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_2h+2,"ρ=0.9, n=90, h=4",cobertura IC95,cobertura,principal,0.8325,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,NW_2h+2,"ρ=0.9, n=90, h=8",cobertura IC95,cobertura,principal,0.8075,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,NW_2h+2,"ρ=0.9, n=90, h=12",cobertura IC95,cobertura,principal,0.735,"[0,90; 0,98]",False,False,400,,90,
+lp_ols,NW_2h+2,"ρ=0.9, n=90, h=-4 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9025,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_2h+2,"ρ=0.9, n=90, h=-2 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.925,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,NW_2h+2,"ρ=0.9, n=90, h=4-8",cobertura IC95,cobertura,principal,0.7625,"[0,90; 0,98]",False,False,400,,90,
+lp_ols,EWC,"ρ=0.9, n=90, h=0",cobertura IC95,cobertura,principal,0.9375,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,EWC,"ρ=0.9, n=90, h=4",cobertura IC95,cobertura,principal,0.8875,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,EWC,"ρ=0.9, n=90, h=8",cobertura IC95,cobertura,principal,0.8825,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,EWC,"ρ=0.9, n=90, h=12",cobertura IC95,cobertura,principal,0.91,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,EWC,"ρ=0.9, n=90, h=-4 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9375,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,EWC,"ρ=0.9, n=90, h=-2 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9475,"[0,90; 0,98]",True,True,400,,90,
+lp_ols,EWC,"ρ=0.9, n=90, h=4-8",cobertura IC95,cobertura,principal,0.8375,"[0,90; 0,98]",False,True,400,,90,
+lp_ols,NW_h+1,"ρ=0.6, n=110, h=0",cobertura IC95,cobertura,principal,0.9275,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.6, n=110, h=4",cobertura IC95,cobertura,principal,0.9225,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.6, n=110, h=8",cobertura IC95,cobertura,principal,0.905,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.6, n=110, h=12",cobertura IC95,cobertura,principal,0.87,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.6, n=110, h=-4 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9225,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.6, n=110, h=-2 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.935,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.6, n=110, h=4-8",cobertura IC95,cobertura,principal,0.8775,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.6, n=110, h=0",cobertura IC95,cobertura,principal,0.9275,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.6, n=110, h=4",cobertura IC95,cobertura,principal,0.9,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.6, n=110, h=8",cobertura IC95,cobertura,principal,0.87,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.6, n=110, h=12",cobertura IC95,cobertura,principal,0.83,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.6, n=110, h=-4 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9175,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.6, n=110, h=-2 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.92,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.6, n=110, h=4-8",cobertura IC95,cobertura,principal,0.85,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,EWC,"ρ=0.6, n=110, h=0",cobertura IC95,cobertura,principal,0.9375,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,EWC,"ρ=0.6, n=110, h=4",cobertura IC95,cobertura,principal,0.9375,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,EWC,"ρ=0.6, n=110, h=8",cobertura IC95,cobertura,principal,0.9325,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,EWC,"ρ=0.6, n=110, h=12",cobertura IC95,cobertura,principal,0.92,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,EWC,"ρ=0.6, n=110, h=-4 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9425,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,EWC,"ρ=0.6, n=110, h=-2 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9325,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,EWC,"ρ=0.6, n=110, h=4-8",cobertura IC95,cobertura,principal,0.915,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.9, n=110, h=0",cobertura IC95,cobertura,principal,0.935,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.9, n=110, h=4",cobertura IC95,cobertura,principal,0.8775,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.9, n=110, h=8",cobertura IC95,cobertura,principal,0.865,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.9, n=110, h=12",cobertura IC95,cobertura,principal,0.82,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.9, n=110, h=-4 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9275,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.9, n=110, h=-2 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9425,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_h+1,"ρ=0.9, n=110, h=4-8",cobertura IC95,cobertura,principal,0.8125,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.9, n=110, h=0",cobertura IC95,cobertura,principal,0.925,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.9, n=110, h=4",cobertura IC95,cobertura,principal,0.8525,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.9, n=110, h=8",cobertura IC95,cobertura,principal,0.8125,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.9, n=110, h=12",cobertura IC95,cobertura,principal,0.76,"[0,90; 0,98]",False,False,400,,110,
+lp_ols,NW_2h+2,"ρ=0.9, n=110, h=-4 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9075,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.9, n=110, h=-2 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9325,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,NW_2h+2,"ρ=0.9, n=110, h=4-8",cobertura IC95,cobertura,principal,0.7825,"[0,90; 0,98]",False,False,400,,110,
+lp_ols,EWC,"ρ=0.9, n=110, h=0",cobertura IC95,cobertura,principal,0.9475,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,EWC,"ρ=0.9, n=110, h=4",cobertura IC95,cobertura,principal,0.9075,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,EWC,"ρ=0.9, n=110, h=8",cobertura IC95,cobertura,principal,0.88,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,EWC,"ρ=0.9, n=110, h=12",cobertura IC95,cobertura,principal,0.88,"[0,90; 0,98]",False,True,400,,110,
+lp_ols,EWC,"ρ=0.9, n=110, h=-4 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.93,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,EWC,"ρ=0.9, n=110, h=-2 (pretendencia: efecto verdadero 0)",cobertura IC95,cobertura,principal,0.9475,"[0,90; 0,98]",True,True,400,,110,
+lp_ols,EWC,"ρ=0.9, n=110, h=4-8",cobertura IC95,cobertura,principal,0.845,"[0,90; 0,98]",False,True,400,,110,
+lp_iv,AR,"instrumento_fuerte, n=90, h=0",cobertura IC Anderson-Rubin,cobertura,principal,0.97,"[0,90; 0,98]",True,True,300,,90,F robusto mediano 91.3; % AR no acotado 0
+lp_iv,IC_normal,"instrumento_fuerte, n=90, h=0",cobertura IC normal 2SLS,cobertura,principal,0.9533333333333334,"[0,90; 0,98]",True,True,300,,90,F robusto mediano 91.3; % AR no acotado 0
+lp_iv,AR,"instrumento_fuerte, n=90, h=4",cobertura IC Anderson-Rubin,cobertura,principal,0.9333333333333332,"[0,90; 0,98]",True,True,300,,90,F robusto mediano 91.3; % AR no acotado 0
+lp_iv,IC_normal,"instrumento_fuerte, n=90, h=4",cobertura IC normal 2SLS,cobertura,principal,0.8633333333333333,"[0,90; 0,98]",False,True,300,,90,F robusto mediano 91.3; % AR no acotado 0
+lp_iv,AR,"instrumento_fuerte, n=90, h=8",cobertura IC Anderson-Rubin,cobertura,principal,0.9666666666666668,"[0,90; 0,98]",True,True,300,,90,F robusto mediano 91.3; % AR no acotado 0
+lp_iv,IC_normal,"instrumento_fuerte, n=90, h=8",cobertura IC normal 2SLS,cobertura,principal,0.9,"[0,90; 0,98]",True,True,300,,90,F robusto mediano 91.3; % AR no acotado 0
+lp_iv,AR,"instrumento_fuerte, n=90, h=12",cobertura IC Anderson-Rubin,cobertura,principal,0.99,"[0,90; 0,98]",False,True,300,,90,F robusto mediano 91.3; % AR no acotado 0
+lp_iv,IC_normal,"instrumento_fuerte, n=90, h=12",cobertura IC normal 2SLS,cobertura,principal,0.9066666666666666,"[0,90; 0,98]",True,True,300,,90,F robusto mediano 91.3; % AR no acotado 0
+lp_iv,AR,"instrumento_fuerte, n=90, h=4-8",cobertura IC Anderson-Rubin,cobertura,principal,0.9533333333333334,"[0,90; 0,98]",True,True,300,,90,F robusto mediano 91.3; % AR no acotado 0
+lp_iv,IC_normal,"instrumento_fuerte, n=90, h=4-8",cobertura IC normal 2SLS,cobertura,principal,0.85,"[0,90; 0,98]",False,True,300,,90,F robusto mediano 91.3; % AR no acotado 0
+lp_iv,AR,"instrumento_debil, n=90, h=0",cobertura IC Anderson-Rubin,cobertura,principal,0.97,"[0,90; 0,98]",True,True,300,,90,F robusto mediano 1.5; % AR no acotado 87
+lp_iv,IC_normal,"instrumento_debil, n=90, h=0",cobertura IC normal 2SLS,cobertura,referencia,0.8866666666666667,"[0,90; 0,98]",False,True,300,,90,F robusto mediano 1.5; % AR no acotado 87
+lp_iv,AR,"instrumento_debil, n=90, h=4",cobertura IC Anderson-Rubin,cobertura,principal,0.9966666666666668,"[0,90; 0,98]",False,False,300,,90,F robusto mediano 1.5; % AR no acotado 87
+lp_iv,IC_normal,"instrumento_debil, n=90, h=4",cobertura IC normal 2SLS,cobertura,referencia,0.9933333333333332,"[0,90; 0,98]",False,False,300,,90,F robusto mediano 1.5; % AR no acotado 87
+lp_iv,AR,"instrumento_debil, n=90, h=8",cobertura IC Anderson-Rubin,cobertura,principal,0.99,"[0,90; 0,98]",False,True,300,,90,F robusto mediano 1.5; % AR no acotado 87
+lp_iv,IC_normal,"instrumento_debil, n=90, h=8",cobertura IC normal 2SLS,cobertura,referencia,0.9866666666666668,"[0,90; 0,98]",False,True,300,,90,F robusto mediano 1.5; % AR no acotado 87
+lp_iv,AR,"instrumento_debil, n=90, h=12",cobertura IC Anderson-Rubin,cobertura,principal,1.0,"[0,90; 0,98]",False,False,300,,90,F robusto mediano 1.5; % AR no acotado 87
+lp_iv,IC_normal,"instrumento_debil, n=90, h=12",cobertura IC normal 2SLS,cobertura,referencia,0.99,"[0,90; 0,98]",False,True,300,,90,F robusto mediano 1.5; % AR no acotado 87
+lp_iv,AR,"instrumento_debil, n=90, h=4-8",cobertura IC Anderson-Rubin,cobertura,principal,0.9966666666666668,"[0,90; 0,98]",False,False,300,,90,F robusto mediano 1.5; % AR no acotado 87
+lp_iv,IC_normal,"instrumento_debil, n=90, h=4-8",cobertura IC normal 2SLS,cobertura,referencia,0.99,"[0,90; 0,98]",False,True,300,,90,F robusto mediano 1.5; % AR no acotado 87
+lp_iv,AR,"instrumento_debil_rho0.8, n=90, h=0",cobertura IC Anderson-Rubin,cobertura,principal,0.99,"[0,90; 0,98]",False,True,300,,90,F robusto mediano 1.2; % AR no acotado 86
+lp_iv,IC_normal,"instrumento_debil_rho0.8, n=90, h=0",cobertura IC normal 2SLS,cobertura,referencia,0.9233333333333332,"[0,90; 0,98]",True,True,300,,90,F robusto mediano 1.2; % AR no acotado 86
+lp_iv,AR,"instrumento_debil_rho0.8, n=90, h=4",cobertura IC Anderson-Rubin,cobertura,principal,0.99,"[0,90; 0,98]",False,True,300,,90,F robusto mediano 1.2; % AR no acotado 86
+lp_iv,IC_normal,"instrumento_debil_rho0.8, n=90, h=4",cobertura IC normal 2SLS,cobertura,referencia,0.99,"[0,90; 0,98]",False,True,300,,90,F robusto mediano 1.2; % AR no acotado 86
+lp_iv,AR,"instrumento_debil_rho0.8, n=90, h=8",cobertura IC Anderson-Rubin,cobertura,principal,1.0,"[0,90; 0,98]",False,False,300,,90,F robusto mediano 1.2; % AR no acotado 86
+lp_iv,IC_normal,"instrumento_debil_rho0.8, n=90, h=8",cobertura IC normal 2SLS,cobertura,referencia,0.9833333333333332,"[0,90; 0,98]",False,True,300,,90,F robusto mediano 1.2; % AR no acotado 86
+lp_iv,AR,"instrumento_debil_rho0.8, n=90, h=12",cobertura IC Anderson-Rubin,cobertura,principal,0.9966666666666668,"[0,90; 0,98]",False,False,300,,90,F robusto mediano 1.2; % AR no acotado 86
+lp_iv,IC_normal,"instrumento_debil_rho0.8, n=90, h=12",cobertura IC normal 2SLS,cobertura,referencia,0.9633333333333334,"[0,90; 0,98]",True,True,300,,90,F robusto mediano 1.2; % AR no acotado 86
+lp_iv,AR,"instrumento_debil_rho0.8, n=90, h=4-8",cobertura IC Anderson-Rubin,cobertura,principal,0.9966666666666668,"[0,90; 0,98]",False,False,300,,90,F robusto mediano 1.2; % AR no acotado 86
+lp_iv,IC_normal,"instrumento_debil_rho0.8, n=90, h=4-8",cobertura IC normal 2SLS,cobertura,referencia,0.98,"[0,90; 0,98]",True,True,300,,90,F robusto mediano 1.2; % AR no acotado 86
+lp_iv,AR,"instrumento_fuerte, n=110, h=0",cobertura IC Anderson-Rubin,cobertura,principal,0.96,"[0,90; 0,98]",True,True,300,,110,F robusto mediano 117.9; % AR no acotado 0
+lp_iv,IC_normal,"instrumento_fuerte, n=110, h=0",cobertura IC normal 2SLS,cobertura,principal,0.9366666666666666,"[0,90; 0,98]",True,True,300,,110,F robusto mediano 117.9; % AR no acotado 0
+lp_iv,AR,"instrumento_fuerte, n=110, h=4",cobertura IC Anderson-Rubin,cobertura,principal,0.9133333333333332,"[0,90; 0,98]",True,True,300,,110,F robusto mediano 117.9; % AR no acotado 0
+lp_iv,IC_normal,"instrumento_fuerte, n=110, h=4",cobertura IC normal 2SLS,cobertura,principal,0.8633333333333333,"[0,90; 0,98]",False,True,300,,110,F robusto mediano 117.9; % AR no acotado 0
+lp_iv,AR,"instrumento_fuerte, n=110, h=8",cobertura IC Anderson-Rubin,cobertura,principal,0.96,"[0,90; 0,98]",True,True,300,,110,F robusto mediano 117.9; % AR no acotado 0
+lp_iv,IC_normal,"instrumento_fuerte, n=110, h=8",cobertura IC normal 2SLS,cobertura,principal,0.91,"[0,90; 0,98]",True,True,300,,110,F robusto mediano 117.9; % AR no acotado 0
+lp_iv,AR,"instrumento_fuerte, n=110, h=12",cobertura IC Anderson-Rubin,cobertura,principal,0.9833333333333332,"[0,90; 0,98]",False,True,300,,110,F robusto mediano 117.9; % AR no acotado 0
+lp_iv,IC_normal,"instrumento_fuerte, n=110, h=12",cobertura IC normal 2SLS,cobertura,principal,0.8966666666666666,"[0,90; 0,98]",False,True,300,,110,F robusto mediano 117.9; % AR no acotado 0
+lp_iv,AR,"instrumento_fuerte, n=110, h=4-8",cobertura IC Anderson-Rubin,cobertura,principal,0.9533333333333334,"[0,90; 0,98]",True,True,300,,110,F robusto mediano 117.9; % AR no acotado 0
+lp_iv,IC_normal,"instrumento_fuerte, n=110, h=4-8",cobertura IC normal 2SLS,cobertura,principal,0.8866666666666667,"[0,90; 0,98]",False,True,300,,110,F robusto mediano 117.9; % AR no acotado 0
+lp_iv,AR,"instrumento_debil, n=110, h=0",cobertura IC Anderson-Rubin,cobertura,principal,0.9633333333333334,"[0,90; 0,98]",True,True,300,,110,F robusto mediano 1.8; % AR no acotado 84
+lp_iv,IC_normal,"instrumento_debil, n=110, h=0",cobertura IC normal 2SLS,cobertura,referencia,0.9133333333333332,"[0,90; 0,98]",True,True,300,,110,F robusto mediano 1.8; % AR no acotado 84
+lp_iv,AR,"instrumento_debil, n=110, h=4",cobertura IC Anderson-Rubin,cobertura,principal,0.99,"[0,90; 0,98]",False,True,300,,110,F robusto mediano 1.8; % AR no acotado 84
+lp_iv,IC_normal,"instrumento_debil, n=110, h=4",cobertura IC normal 2SLS,cobertura,referencia,0.9933333333333332,"[0,90; 0,98]",False,False,300,,110,F robusto mediano 1.8; % AR no acotado 84
+lp_iv,AR,"instrumento_debil, n=110, h=8",cobertura IC Anderson-Rubin,cobertura,principal,0.9933333333333332,"[0,90; 0,98]",False,False,300,,110,F robusto mediano 1.8; % AR no acotado 84
+lp_iv,IC_normal,"instrumento_debil, n=110, h=8",cobertura IC normal 2SLS,cobertura,referencia,0.9866666666666668,"[0,90; 0,98]",False,True,300,,110,F robusto mediano 1.8; % AR no acotado 84
+lp_iv,AR,"instrumento_debil, n=110, h=12",cobertura IC Anderson-Rubin,cobertura,principal,0.9966666666666668,"[0,90; 0,98]",False,False,300,,110,F robusto mediano 1.8; % AR no acotado 84
+lp_iv,IC_normal,"instrumento_debil, n=110, h=12",cobertura IC normal 2SLS,cobertura,referencia,0.97,"[0,90; 0,98]",True,True,300,,110,F robusto mediano 1.8; % AR no acotado 84
+lp_iv,AR,"instrumento_debil, n=110, h=4-8",cobertura IC Anderson-Rubin,cobertura,principal,0.9833333333333332,"[0,90; 0,98]",False,True,300,,110,F robusto mediano 1.8; % AR no acotado 84
+lp_iv,IC_normal,"instrumento_debil, n=110, h=4-8",cobertura IC normal 2SLS,cobertura,referencia,0.9833333333333332,"[0,90; 0,98]",False,True,300,,110,F robusto mediano 1.8; % AR no acotado 84
+lp_iv,AR,"instrumento_debil_rho0.8, n=110, h=0",cobertura IC Anderson-Rubin,cobertura,principal,0.98,"[0,90; 0,98]",True,True,300,,110,F robusto mediano 1.6; % AR no acotado 84
+lp_iv,IC_normal,"instrumento_debil_rho0.8, n=110, h=0",cobertura IC normal 2SLS,cobertura,referencia,0.93,"[0,90; 0,98]",True,True,300,,110,F robusto mediano 1.6; % AR no acotado 84
+lp_iv,AR,"instrumento_debil_rho0.8, n=110, h=4",cobertura IC Anderson-Rubin,cobertura,principal,0.9966666666666668,"[0,90; 0,98]",False,False,300,,110,F robusto mediano 1.6; % AR no acotado 84
+lp_iv,IC_normal,"instrumento_debil_rho0.8, n=110, h=4",cobertura IC normal 2SLS,cobertura,referencia,0.9966666666666668,"[0,90; 0,98]",False,False,300,,110,F robusto mediano 1.6; % AR no acotado 84
+lp_iv,AR,"instrumento_debil_rho0.8, n=110, h=8",cobertura IC Anderson-Rubin,cobertura,principal,0.9933333333333332,"[0,90; 0,98]",False,False,300,,110,F robusto mediano 1.6; % AR no acotado 84
+lp_iv,IC_normal,"instrumento_debil_rho0.8, n=110, h=8",cobertura IC normal 2SLS,cobertura,referencia,0.9733333333333334,"[0,90; 0,98]",True,True,300,,110,F robusto mediano 1.6; % AR no acotado 84
+lp_iv,AR,"instrumento_debil_rho0.8, n=110, h=12",cobertura IC Anderson-Rubin,cobertura,principal,1.0,"[0,90; 0,98]",False,False,300,,110,F robusto mediano 1.6; % AR no acotado 84
+lp_iv,IC_normal,"instrumento_debil_rho0.8, n=110, h=12",cobertura IC normal 2SLS,cobertura,referencia,0.9833333333333332,"[0,90; 0,98]",False,True,300,,110,F robusto mediano 1.6; % AR no acotado 84
+lp_iv,AR,"instrumento_debil_rho0.8, n=110, h=4-8",cobertura IC Anderson-Rubin,cobertura,principal,0.9966666666666668,"[0,90; 0,98]",False,False,300,,110,F robusto mediano 1.6; % AR no acotado 84
+lp_iv,IC_normal,"instrumento_debil_rho0.8, n=110, h=4-8",cobertura IC normal 2SLS,cobertura,referencia,0.9833333333333332,"[0,90; 0,98]",False,True,300,,110,F robusto mediano 1.6; % AR no acotado 84
+lp_iv,AR_unilateral,"efecto nulo, IV fuerte, n=110, h=4",tamaño AR unilateral (H1: β<0) al 5%,tamano,principal,0.0566666666666666,"[0,02; 0,10]",True,True,300,,110,
+lp_iv,AR_unilateral,"efecto nulo, IV fuerte, n=110, agregado 4-8",tamaño AR unilateral (H1: β<0) al 5%,tamano,principal,0.06,"[0,02; 0,10]",True,True,300,,110,
+lp_iv,AR_unilateral,"efecto nulo, IV fuerte, n=110, h=4",tamaño AR bilateral al 5%,tamano,referencia,0.0333333333333333,"[0,02; 0,10]",True,True,300,,110,
+lp_iv,AR_unilateral,"efecto -1, IV fuerte, n=110, h=4",potencia AR unilateral (H1: β<0) al 5%,potencia,principal,0.8533333333333334,">= 0,80",True,True,300,,110,
+lp_iv,AR_unilateral,"efecto -1, IV fuerte, n=110, agregado 4-8",potencia AR unilateral (H1: β<0) al 5%,potencia,principal,0.6733333333333333,">= 0,80",False,True,300,,110,
+lp_iv,AR_unilateral,"efecto -1, IV fuerte, n=110, h=4",potencia AR bilateral al 5%,potencia,referencia,0.74,">= 0,80",False,True,300,,110,
+lp_iv,pretendencias,"IV válido, n=110, h=-1","tamaño (p AR bilateral < 0,05)",tamano,principal,0.04,"[0,02; 0,10]",True,True,300,,110,
+lp_iv,pretendencias,"IV válido, n=110, algún h en -4..-1","tamaño (p AR bilateral < 0,05 en algún h)",info,referencia,0.1433333333333333,informativo,,,300,,110,"4 contrastes sin ajuste: el tamaño 'algún h' puede llegar a ~0,19"
+lp_iv,pretendencias,"IV contaminado, n=110, h=-1","detección (p AR bilateral < 0,05)",potencia,principal,0.9933333333333332,">= 0,80",True,True,300,,110,
+lp_iv,pretendencias,"IV contaminado, n=110, algún h en -4..-1","detección (p AR bilateral < 0,05 en algún h)",potencia,referencia,0.9933333333333332,">= 0,80",True,True,300,,110,
+lp_iv,placebo_permutacion,"efecto nulo, IV fuerte, n=110, h=4 (permutación libre)","tamaño (p_perm < 0,05)",tamano,principal,0.0633333333333333,"[0,02; 0,10]",True,True,300,199.0,110,
+lp_iv,placebo_permutacion,"efecto nulo, IV fuerte, n=110, agregado 4-8 (desplazamiento circular)","tamaño (p_perm < 0,05)",tamano,principal,0.09,"[0,02; 0,10]",True,True,300,199.0,110,
+lp_iv,placebo_permutacion,"efecto 1, IV fuerte, n=110, h=4 (permutación libre)","potencia (p_perm < 0,05)",potencia,principal,0.3533333333333333,">= 0,80",False,False,300,199.0,110,
+lp_iv,placebo_permutacion,"efecto 1, IV fuerte, n=110, agregado 4-8 (desplazamiento circular)","potencia (p_perm < 0,05)",potencia,principal,0.2133333333333333,">= 0,80",False,False,300,199.0,110,
+markov_switching,bootstrap_LR_1v2,H0_1reg (T=200),tamaño del bootstrap LR 1 vs 2 (5%),tamano,referencia,0.0,"[0,02; 0,10]",False,True,20,39.0,200,R pequeño: IC binomial 95% ~ ±0.10
+markov_switching,bootstrap_LR_1v2,H1_2reg (T=200),potencia del bootstrap LR 1 vs 2 (5%),potencia,referencia,0.8,">= 0,80",True,True,20,39.0,200,
+markov_switching,bootstrap_LR_1v2,H0_1reg (T=110),tamaño del bootstrap LR 1 vs 2 (5%),tamano,principal,0.0,"[0,02; 0,10]",False,True,20,39.0,110,R pequeño: IC binomial 95% ~ ±0.10
+markov_switching,bootstrap_LR_1v2,H1_2reg (T=110),potencia del bootstrap LR 1 vs 2 (5%),potencia,principal,0.4,">= 0,80",False,False,20,39.0,110,
+markov_switching,bootstrap_LR_2v3,2reg_test_2v3 (T=250),rechazo bootstrap LR 2 vs 3 (5%),info,referencia,0.0,informativo,,,6,19.0,250,"NO CONCLUYENTE: B=19 => p mínimo 0,05 y el criterio p<0,05 no puede rechazar; R muy pequeño"
+markov_switching,bootstrap_LR_2v3,3reg_test_2v3 (T=250),rechazo bootstrap LR 2 vs 3 (5%),info,referencia,0.0,informativo,,,6,19.0,250,"NO CONCLUYENTE: B=19 => p mínimo 0,05 y el criterio p<0,05 no puede rechazar; R muy pequeño"
+markov_switching,BIC,verdadero_1reg (T=250),% BIC elige k verdadero,acierto,referencia,1.0,>= 0.7,True,True,30,,250,
+markov_switching,BIC,verdadero_2reg (T=250),% BIC elige k verdadero,acierto,referencia,0.8,>= 0.7,True,True,30,,250,
+markov_switching,BIC,verdadero_3reg (T=250),% BIC elige k verdadero,acierto,referencia,0.7,>= 0.7,True,True,30,,250,
+markov_switching,BIC,verdadero_1reg (T=110),% BIC elige k verdadero,acierto,principal,0.9666666666666668,>= 0.7,True,True,30,,110,
+markov_switching,BIC,verdadero_2reg (T=110),% BIC elige k verdadero,acierto,principal,0.5666666666666667,>= 0.7,False,True,30,,110,
+markov_switching,BIC,verdadero_3reg (T=110),% BIC elige k verdadero,acierto,principal,0.3666666666666666,>= 0.7,False,False,30,,110,
+permutacion_fechas,t_studentizado_2tramos,H0_iid (n=100),tamaño (5%),tamano,principal,0.048,"[0,02; 0,10]",True,True,250,2000.0,100,
+permutacion_fechas,dif_sin_studentizar_2tramos,H0_iid (n=100),tamaño (5%),tamano,principal,0.036,"[0,02; 0,10]",True,True,250,2000.0,100,
+permutacion_fechas,t_studentizado_2tramos,H0_AR0.5 (n=100),tamaño (5%),tamano,principal,0.036,"[0,02; 0,10]",True,True,250,2000.0,100,
+permutacion_fechas,dif_sin_studentizar_2tramos,H0_AR0.5 (n=100),tamaño (5%),tamano,principal,0.024,"[0,02; 0,10]",True,True,250,2000.0,100,
+permutacion_fechas,t_studentizado_2tramos,H1_ruptura_pendiente (n=100),potencia (5%),potencia,principal,0.316,">= 0,80",False,False,250,2000.0,100,
+permutacion_fechas,dif_sin_studentizar_2tramos,H1_ruptura_pendiente (n=100),potencia (5%),potencia,principal,0.244,">= 0,80",False,False,250,2000.0,100,
+permutacion_fechas,t_studentizado_2tramos,"H0_iid salto 1,0 (n=200)",tamaño (5%),tamano,referencia,0.04,"[0,02; 0,10]",True,True,250,2000.0,200,
+permutacion_fechas,dif_sin_studentizar_2tramos,"H0_iid salto 1,0 (n=200)",tamaño (5%),tamano,referencia,0.02,"[0,02; 0,10]",True,True,250,2000.0,200,
+permutacion_fechas,t_studentizado_2tramos,"H1_ruptura_pendiente salto 1,0 (n=200)",potencia (5%),potencia,referencia,0.8,">= 0,80",True,True,250,2000.0,200,
+permutacion_fechas,dif_sin_studentizar_2tramos,"H1_ruptura_pendiente salto 1,0 (n=200)",potencia (5%),potencia,referencia,0.732,">= 0,80",False,True,250,2000.0,200,
+permutacion_fechas,Q_homo_5tramos,"H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.0)",tamaño (5%),tamano,principal,0.025,"[0,02; 0,10]",True,True,200,499.0,126,
+permutacion_fechas,maxt_homo_5tramos,"H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.0)",tamaño (5%),tamano,principal,0.025,"[0,02; 0,10]",True,True,200,499.0,126,
+permutacion_fechas,Q_hac_5tramos,"H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.0)",tamaño (5%),tamano,principal,0.015,"[0,02; 0,10]",False,True,200,499.0,126,
+permutacion_fechas,Q_homo_5tramos,"H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.0)",potencia (5%),potencia,principal,0.315,">= 0,80",False,False,200,499.0,126,
+permutacion_fechas,maxt_homo_5tramos,"H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.0)",potencia (5%),potencia,principal,0.135,">= 0,80",False,False,200,499.0,126,
+permutacion_fechas,Q_hac_5tramos,"H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.0)",potencia (5%),potencia,principal,0.08,">= 0,80",False,False,200,499.0,126,
+permutacion_fechas,Q_homo_5tramos,"H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.8)",tamaño (5%),tamano,principal,0.015,"[0,02; 0,10]",False,True,200,499.0,126,
+permutacion_fechas,maxt_homo_5tramos,"H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.8)",tamaño (5%),tamano,principal,0.02,"[0,02; 0,10]",True,True,200,499.0,126,
+permutacion_fechas,Q_hac_5tramos,"H0 pendiente constante, 5 tramos no contiguos, n=126, min 8, AR(0.8)",tamaño (5%),tamano,principal,0.0,"[0,02; 0,10]",False,True,200,499.0,126,
+permutacion_fechas,Q_homo_5tramos,"H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.8)",potencia (5%),potencia,principal,0.24,">= 0,80",False,False,200,499.0,126,
+permutacion_fechas,maxt_homo_5tramos,"H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.8)",potencia (5%),potencia,principal,0.11,">= 0,80",False,False,200,499.0,126,
+permutacion_fechas,Q_hac_5tramos,"H1 pendientes (0,3; 0,3; 1,2; 1,2; 0,3), 5 tramos no contiguos, n=126, min 8, AR(0.8)",potencia (5%),potencia,principal,0.075,">= 0,80",False,False,200,499.0,126,
+shap_grupos,ranking_familias,DGP aditivo+interacción (orden verdadero F1>F2>F3>F4),% ranking correcto de familias,acierto,referencia,1.0,>= 0.9,True,True,30,,400,
+shap_grupos,estabilidad_bootstrap,DGP claro,% réplicas bootstrap con ranking completo igual (media),acierto,referencia,1.0,>= 0.8,True,True,10,20.0,400,
+shap_grupos,estabilidad_pliegues,DGP claro,% pliegues temporales con ranking completo igual (media),info,referencia,1.0,informativo,,,10,4.0,400,
+shap_grupos,estabilidad_bootstrap,DGP duro (F1≈F2),% réplicas bootstrap con ranking completo igual (media),info,referencia,0.835,informativo,,,10,20.0,400,
+shap_grupos,estabilidad_pliegues,DGP duro (F1≈F2),% pliegues temporales con ranking completo igual (media),info,referencia,0.75,informativo,,,10,4.0,400,
+shap_grupos,sustituto,arbol sustituto prof.3,fidelidad R2,info,principal,0.7528338350835911,informativo,,,1,,400,
+shap_grupos,ALE,ALE de c vs sin(2c) centrado,correlación,acierto,referencia,0.9499300890016332,>= 0.9,True,True,1,,400,
+umbral_hansen,wild,H0_iid (errores sin autocorrelación),tamaño (rechazo al 5%),tamano,principal,0.0433333333333333,"[0,02; 0,10]",True,True,300,299.0,120,
+umbral_hansen,wild,H0_heterocedastico (errores sin autocorrelación),tamaño (rechazo al 5%),tamano,principal,0.04,"[0,02; 0,10]",True,True,300,299.0,120,
+umbral_hansen,wild,H1_salto_pendiente (errores sin autocorrelación),potencia (rechazo al 5%),potencia,principal,0.89,">= 0,80",True,True,300,299.0,120,
+umbral_hansen,IC_LR,H1_salto_pendiente (errores sin autocorrelación),cobertura IC95 del umbral por inversión de LR,cobertura,principal,0.9366666666666666,"[0,90; 0,98]",True,True,300,299.0,120,gamma verdadero = 0
+umbral_hansen,IC_LR,H1_salto_pendiente (errores sin autocorrelación),sesgo mediano del umbral,error,principal,-0.013063868005547,< 0.15,True,True,300,299.0,120,
+umbral_hansen,wild,"H0 | errores AR(0.5), q AR(0,9)",tamaño (rechazo al 5%),tamano,referencia,0.17,"[0,02; 0,10]",False,False,300,299.0,100,
+umbral_hansen,bloque_pw,"H0 | errores AR(0.5), q AR(0,9)",tamaño (rechazo al 5%),tamano,principal,0.07,"[0,02; 0,10]",True,True,300,299.0,100,
+umbral_hansen,sieve,"H0 | errores AR(0.5), q AR(0,9)",tamaño (rechazo al 5%),tamano,principal,0.0333333333333333,"[0,02; 0,10]",True,True,300,299.0,100,
+umbral_hansen,wild,"H0 | errores AR(0.5), q AR(0,9)",tamaño (rechazo al 5%),tamano,referencia,0.1533333333333333,"[0,02; 0,10]",False,False,300,299.0,126,
+umbral_hansen,bloque_pw,"H0 | errores AR(0.5), q AR(0,9)",tamaño (rechazo al 5%),tamano,principal,0.0666666666666666,"[0,02; 0,10]",True,True,300,299.0,126,
+umbral_hansen,sieve,"H0 | errores AR(0.5), q AR(0,9)",tamaño (rechazo al 5%),tamano,principal,0.0366666666666666,"[0,02; 0,10]",True,True,300,299.0,126,
+umbral_hansen,wild,"H0 | errores AR(0.85), q AR(0,9)",tamaño (rechazo al 5%),tamano,referencia,0.51,"[0,02; 0,10]",False,False,300,299.0,110,
+umbral_hansen,bloque_pw,"H0 | errores AR(0.85), q AR(0,9)",tamaño (rechazo al 5%),tamano,principal,0.1566666666666666,"[0,02; 0,10]",False,False,300,299.0,110,
+umbral_hansen,sieve,"H0 | errores AR(0.85), q AR(0,9)",tamaño (rechazo al 5%),tamano,principal,0.0766666666666666,"[0,02; 0,10]",True,True,300,299.0,110,
+umbral_hansen,bloque_pw,"H1 salto 0.8 | errores AR(0.5), q AR(0,9)",potencia (rechazo al 5%),potencia,principal,0.6633333333333333,">= 0,80",False,True,300,299.0,100,
+umbral_hansen,IC_LR,"H1 salto 0.8 | errores AR(0.5), q AR(0,9) | boot=bloque",cobertura IC95 del umbral por inversión de LR,cobertura,referencia,0.9,"[0,90; 0,98]",True,True,300,299.0,100,IC por inversión de LR homocedástico (no depende del bootstrap)
+umbral_hansen,sieve,"H1 salto 0.8 | errores AR(0.5), q AR(0,9)",potencia (rechazo al 5%),potencia,principal,0.5866666666666667,">= 0,80",False,True,300,299.0,100,
+umbral_hansen,IC_LR,"H1 salto 0.8 | errores AR(0.5), q AR(0,9) | boot=sieve",cobertura IC95 del umbral por inversión de LR,cobertura,principal,0.9,"[0,90; 0,98]",True,True,300,299.0,100,IC por inversión de LR homocedástico (no depende del bootstrap)
+umbral_hansen,bloque_pw,"H1 salto 0.8 | errores AR(0.5), q AR(0,9)",potencia (rechazo al 5%),potencia,principal,0.8033333333333333,">= 0,80",True,True,300,299.0,126,
+umbral_hansen,IC_LR,"H1 salto 0.8 | errores AR(0.5), q AR(0,9) | boot=bloque",cobertura IC95 del umbral por inversión de LR,cobertura,referencia,0.9133333333333332,"[0,90; 0,98]",True,True,300,299.0,126,IC por inversión de LR homocedástico (no depende del bootstrap)
+umbral_hansen,sieve,"H1 salto 0.8 | errores AR(0.5), q AR(0,9)",potencia (rechazo al 5%),potencia,principal,0.7366666666666667,">= 0,80",False,True,300,299.0,126,
+umbral_hansen,IC_LR,"H1 salto 0.8 | errores AR(0.5), q AR(0,9) | boot=sieve",cobertura IC95 del umbral por inversión de LR,cobertura,principal,0.9133333333333332,"[0,90; 0,98]",True,True,300,299.0,126,IC por inversión de LR homocedástico (no depende del bootstrap)

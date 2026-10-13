@@ -1,0 +1,8 @@
+herramienta,config,escenario,metrica,tipo,rol,valor,objetivo,cumple,laxo,reps,B,n,nota
+shap_grupos,ranking_familias,DGP aditivo+interacción (orden verdadero F1>F2>F3>F4),% ranking correcto de familias,acierto,referencia,1.0,>= 0.9,True,True,30,,400,
+shap_grupos,estabilidad_bootstrap,DGP claro,% réplicas bootstrap con ranking completo igual (media),acierto,referencia,1.0,>= 0.8,True,True,10,20,400,
+shap_grupos,estabilidad_pliegues,DGP claro,% pliegues temporales con ranking completo igual (media),info,referencia,1.0,informativo,,,10,4,400,
+shap_grupos,estabilidad_bootstrap,DGP duro (F1≈F2),% réplicas bootstrap con ranking completo igual (media),info,referencia,0.835,informativo,,,10,20,400,
+shap_grupos,estabilidad_pliegues,DGP duro (F1≈F2),% pliegues temporales con ranking completo igual (media),info,referencia,0.75,informativo,,,10,4,400,
+shap_grupos,sustituto,arbol sustituto prof.3,fidelidad R2,info,principal,0.7528338350835911,informativo,,,1,,400,
+shap_grupos,ALE,ALE de c vs sin(2c) centrado,correlación,acierto,referencia,0.9499300890016332,>= 0.9,True,True,1,,400,

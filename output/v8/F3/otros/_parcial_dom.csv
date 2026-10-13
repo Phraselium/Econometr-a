@@ -1,0 +1,22 @@
+herramienta,config,escenario,metrica,tipo,rol,valor,objetivo,cumple,laxo,reps,B,n,nota
+dominancia,filas,"p=5 colineal, n=300",|Johnson - LMG| máx (en R2),error,referencia,0.022716341804721873,< 0.05,True,True,1,,300,
+dominancia,filas,"p=5 colineal, n=300, regresores AR(0.0), errores AR(0.0)",error absoluto medio de phi (R2),error,referencia,0.012613276318527324,< 0.03,True,True,60,100,300,"phi verdadero=[0.269, 0.294, 0.136, 0.03, 0.022]"
+dominancia,filas,"p=5 colineal, n=300, regresores AR(0.0), errores AR(0.0)",cobertura IC95 bootstrap de phi,cobertura,referencia,0.9433333333333334,"[0,90; 0,98]",True,True,60,100,300,
+dominancia,filas,"p=5 colineal, n=300, regresores AR(0.0), errores AR(0.0)",% acierto en las 2 variables dominantes (orden),acierto,referencia,0.9,>= 0.8,True,True,60,100,300,
+dominancia,filas,"p=5 colineal, n=300, regresores AR(0.0), errores AR(0.0)",error relativo máx del VIF,error,referencia,0.12468446685469532,< 0.2,True,True,60,,300,
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.0), errores AR(0.0)",error absoluto medio de phi (R2),error,principal,0.02167464718569254,< 0.03,True,True,60,100,100,"phi verdadero=[0.269, 0.294, 0.136, 0.03, 0.022]"
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.0), errores AR(0.0)",cobertura IC95 bootstrap de phi,cobertura,principal,0.9366666666666666,"[0,90; 0,98]",True,True,60,100,100,
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.0), errores AR(0.0)",% acierto en las 2 variables dominantes (orden),acierto,principal,0.6666666666666666,>= 0.8,False,True,60,100,100,
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.0), errores AR(0.0)",error relativo máx del VIF,error,principal,0.21574781302988982,< 0.2,False,True,60,,100,
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",error absoluto medio de phi (R2),error,referencia,0.03778299358404022,< 0.03,False,True,60,100,100,"phi verdadero=[0.269, 0.294, 0.136, 0.03, 0.022]"
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",cobertura IC95 bootstrap de phi,cobertura,referencia,0.7133333333333334,"[0,90; 0,98]",False,False,60,100,100,
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",% acierto en las 2 variables dominantes (orden),acierto,referencia,0.36666666666666664,>= 0.8,False,False,60,100,100,
+dominancia,filas,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",error relativo máx del VIF,error,referencia,0.654258333233955,< 0.2,False,False,60,,100,
+dominancia,bloque_8,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",error absoluto medio de phi (R2),error,principal,0.03778299358404022,< 0.03,False,True,60,100,100,"phi verdadero=[0.269, 0.294, 0.136, 0.03, 0.022]"
+dominancia,bloque_8,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",cobertura IC95 bootstrap de phi,cobertura,principal,0.8566666666666667,"[0,90; 0,98]",False,True,60,100,100,
+dominancia,bloque_8,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",% acierto en las 2 variables dominantes (orden),acierto,principal,0.36666666666666664,>= 0.8,False,False,60,100,100,
+dominancia,bloque_8,"p=5 colineal, n=100, regresores AR(0.8), errores AR(0.5)",error relativo máx del VIF,error,principal,0.654258333233955,< 0.2,False,False,60,,100,
+dominancia,bloque_8,"p=5 colineal, n=126, regresores AR(0.8), errores AR(0.5)",error absoluto medio de phi (R2),error,principal,0.0325296284267281,< 0.03,False,True,60,100,126,"phi verdadero=[0.269, 0.294, 0.136, 0.03, 0.022]"
+dominancia,bloque_8,"p=5 colineal, n=126, regresores AR(0.8), errores AR(0.5)",cobertura IC95 bootstrap de phi,cobertura,principal,0.8933333333333333,"[0,90; 0,98]",False,True,60,100,126,
+dominancia,bloque_8,"p=5 colineal, n=126, regresores AR(0.8), errores AR(0.5)",% acierto en las 2 variables dominantes (orden),acierto,principal,0.5833333333333334,>= 0.8,False,True,60,100,126,
+dominancia,bloque_8,"p=5 colineal, n=126, regresores AR(0.8), errores AR(0.5)",error relativo máx del VIF,error,principal,0.47387653631481363,< 0.2,False,False,60,,126,

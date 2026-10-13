@@ -1,0 +1,49 @@
+herramienta,config,escenario,metrica,tipo,rol,valor,objetivo,cumple,laxo,reps,B,n,nota
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0),potencia UDmax (5%),potencia,referencia,0.952,">= 0,80",True,True,250,199,100,bloque mediano 8
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,1.0,informativo,,,250,199,100,
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0),potencia UDmax (5%),potencia,principal,1.0,">= 0,80",True,True,250,199,100,bloque mediano 8
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199,100,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0),potencia UDmax (5%),potencia,referencia,0.94,">= 0,80",True,True,250,199,100,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,1.0,informativo,,,250,199,100,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0),potencia UDmax (5%),potencia,principal,0.94,">= 0,80",True,True,250,199,100,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199,100,
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.5),potencia UDmax (5%),potencia,referencia,0.644,">= 0,80",False,True,250,199,100,bloque mediano 8
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,4.0,informativo,,,250,199,100,
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.5),potencia UDmax (5%),potencia,principal,0.996,">= 0,80",True,True,250,199,100,bloque mediano 8
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199,100,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.5),potencia UDmax (5%),potencia,referencia,0.48,">= 0,80",False,False,250,199,100,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,4.0,informativo,,,250,199,100,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.5),potencia UDmax (5%),potencia,principal,0.892,">= 0,80",True,True,250,199,100,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199,100,
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.85),potencia UDmax (5%),potencia,referencia,0.596,">= 0,80",False,True,250,199,100,bloque mediano 8
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,11.5,informativo,,,250,199,100,
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.85),potencia UDmax (5%),potencia,principal,0.932,">= 0,80",True,True,250,199,100,bloque mediano 8
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,1.0,informativo,,,250,199,100,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.85),potencia UDmax (5%),potencia,referencia,0.108,">= 0,80",False,False,250,199,100,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=100 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,11.5,informativo,,,250,199,100,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.85),potencia UDmax (5%),potencia,principal,0.316,">= 0,80",False,False,250,199,100,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=100 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,1.0,informativo,,,250,199,100,
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0),potencia UDmax (5%),potencia,referencia,0.992,">= 0,80",True,True,250,199,126,bloque mediano 8
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,2.0,informativo,,,250,199,126,
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0),potencia UDmax (5%),potencia,principal,1.0,">= 0,80",True,True,250,199,126,bloque mediano 8
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199,126,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0),potencia UDmax (5%),potencia,referencia,0.932,">= 0,80",True,True,250,199,126,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,2.0,informativo,,,250,199,126,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0),potencia UDmax (5%),potencia,principal,0.956,">= 0,80",True,True,250,199,126,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199,126,
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.5),potencia UDmax (5%),potencia,referencia,0.752,">= 0,80",False,True,250,199,126,bloque mediano 8
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,5.0,informativo,,,250,199,126,
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.5),potencia UDmax (5%),potencia,principal,1.0,">= 0,80",True,True,250,199,126,bloque mediano 8
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199,126,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.5),potencia UDmax (5%),potencia,referencia,0.624,">= 0,80",False,True,250,199,126,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,5.0,informativo,,,250,199,126,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.5),potencia UDmax (5%),potencia,principal,0.984,">= 0,80",True,True,250,199,126,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.5),error absoluto mediano de la fecha (obs.),info,principal,0.0,informativo,,,250,199,126,
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.85),potencia UDmax (5%),potencia,referencia,0.688,">= 0,80",False,True,250,199,126,bloque mediano 8
+bai_perron,bloque_8,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,13.0,informativo,,,250,199,126,
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.85),potencia UDmax (5%),potencia,principal,0.992,">= 0,80",True,True,250,199,126,bloque mediano 8
+bai_perron,bloque_8,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,1.0,informativo,,,250,199,126,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.85),potencia UDmax (5%),potencia,referencia,0.104,">= 0,80",False,False,250,199,126,
+bai_perron,sieve,H1 salto 1.0σ (σ marginal) n=126 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,13.0,informativo,,,250,199,126,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.85),potencia UDmax (5%),potencia,principal,0.42,">= 0,80",False,False,250,199,126,
+bai_perron,sieve,H1 salto 2.0σ (σ marginal) n=126 | errores AR(0.85),error absoluto mediano de la fecha (obs.),info,principal,1.0,informativo,,,250,199,126,

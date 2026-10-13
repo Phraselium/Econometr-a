@@ -88,3 +88,8 @@
 - **Hecho:** `src/v8/f6_congelar.py` (AR(4), AR + factor común, ECM v1 con datos hasta 2026T2; BVAR de M2 por referencia con sha256), salidas en `output/v8/congelacion/` (predicciones_congeladas.csv, congelacion.json, manifiesto.json, ensayo_evaluate.md); `sha256_predicciones_v8` rellenado en `docs/v8/notas_release.md` (`fecha_verificable` sigue PENDIENTE); `src/v8/evaluate_v8.py` (+ `--simular`), `docs/v8/evaluate_v8_accesos.md` (sin aperturas); `tests/v8/test_f6_congelar.py`.
 - **Siguiente:** añadir `f6_congelar` a V8_ORDEN y el target `evaluate_v8` en el Makefile; publicar la release (autor) y, con datos 2026T3-2027T2, ejecutar `make evaluate_v8` una sola vez.
 - Tokens de subagente (F6): no medidos por el subagente.
+
+## F6 (tablas de modelos destacados), hecho (2026-10-13)
+- **Hecho:** `src/v8/f6_tablas.py` (~5 s) -> `output/v8/tablas_modelos_destacados.{md,csv}`, `output/v8/tablas_v8.xlsx` (9 hojas, colores azul/negro/verde, sin paneles, sha256 determinista), `output/v8/F6/resultado.json`; `tests/v8/test_f6_tablas.py`. Resultado: 0 modelos cumplen la regla de §8 y la del multiverso a la vez; 18 modelos destacados por (b) (error fuera de muestra), todos «NO CUMPLE LA REGLA».
+- **Siguiente:** añadir `f6_tablas` a V8_ORDEN.
+- Tokens de subagente (F6 tablas): no medidos por el subagente.

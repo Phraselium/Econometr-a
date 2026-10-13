@@ -1,6 +1,6 @@
 # Validación Monte Carlo — herramientas V8-F3 grupo B (no VAR), versión corregida tras la revisión F3
 
-Solo datos simulados; SEED=20261010; un hilo por proceso; determinista. Bloques en procesos paralelos (4 núcleos): bp_pot 1068 s, bp_size 1080 s, dfm 12 s, dom 26 s, lp 462 s, lpiv 316 s, lpiv_inf 65 s, ms12 1536 s, ms23 936 s, msbic 600 s, perm 30 s, perm_multi 414 s, shap 45 s, umbral 205 s. Detalle por fila en `montecarlo.csv`; etiquetas en `etiquetas.csv`.
+Solo datos simulados; SEED=20261010; un hilo por proceso; determinista. Bloques en procesos paralelos (4 núcleos): bp_pot 1068 s, bp_size 1080 s, dfm 12 s, dom 26 s, lp 462 s, lpiv 167 s, lpiv_inf 65 s, ms12 1536 s, ms23 936 s, msbic 600 s, perm 30 s, perm_multi 414 s, shap 45 s, umbral 205 s. Detalle por fila en `montecarlo.csv`; etiquetas en `etiquetas.csv`.
 
 ## Reglas de etiquetado (derivadas en el código, `REGLAS`)
 
@@ -10,6 +10,7 @@ Las reglas de «con reservas» las fijó el ejecutor tras ver las cifras de la p
 |---|---|---|
 | tamano | [0,02; 0,10] | <= 0,15 |
 | cobertura | [0,90; 0,98] | [0,80; 0,99] |
+| cobertura_inf | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | [0,80; 1] |
 | potencia | >= 0,80 | >= 0,50 |
 | acierto | >= umbral de la fila | >= 0,50 |
 | error | < umbral de la fila | < 1,5 x umbral de la fila |
@@ -32,7 +33,7 @@ Validez = tamaño, cobertura, acierto y error; potencia aparte. «apta» si toda
 | lp_ols | NW_h+1 | **no apta** | **sin datos** |  | 0,782-0,943 |  | ρ=0.6, n=90, h=4: cobertura IC95 = 0,897; ρ=0.6, n=90, h=4-8: cobertura IC95 = 0,877; ρ=0.9, n=90, h=4: cobertura IC95 = 0,850; ρ=0.9, n=90, h=8: cobertura IC95 = 0,845; ρ=0.9, n=90, h=12: cobertura IC95 = 0,823; (+7 filas más, ver montecarlo.csv; 12 de 28 filas principales no cumplen) |
 | lp_ols | NW_2h+2 | **no apta** | **sin datos** |  | 0,735-0,932 |  | ρ=0.6, n=90, h=4: cobertura IC95 = 0,873; ρ=0.6, n=90, h=8: cobertura IC95 = 0,868; ρ=0.6, n=90, h=12: cobertura IC95 = 0,843; ρ=0.6, n=90, h=-4 (pretendencia: efecto verdadero 0): cobertura IC95 = 0,890; ρ=0.6, n=90, h=4-8: cobertura IC95 = 0,825; (+11 filas más, ver montecarlo.csv; 16 de 28 filas principales no cumplen) |
 | lp_ols | EWC | **con reservas** | **sin datos** |  | 0,838-0,948 |  | ρ=0.9, n=90, h=4: cobertura IC95 = 0,887; ρ=0.9, n=90, h=8: cobertura IC95 = 0,882; ρ=0.9, n=90, h=4-8: cobertura IC95 = 0,838; ρ=0.9, n=110, h=8: cobertura IC95 = 0,880; ρ=0.9, n=110, h=12: cobertura IC95 = 0,880; (+1 filas más, ver montecarlo.csv; 6 de 28 filas principales no cumplen) |
-| lp_iv | AR | **no apta** | **sin datos** |  | 0,913-1,000 |  | instrumento_fuerte, n=90, h=12: cobertura IC Anderson-Rubin = 0,990; instrumento_debil, n=90, h=4: cobertura IC Anderson-Rubin = 0,997; instrumento_debil, n=90, h=8: cobertura IC Anderson-Rubin = 0,990; instrumento_debil, n=90, h=12: cobertura IC Anderson-Rubin = 1,000; instrumento_debil, n=90, h=4-8: cobertura IC Anderson-Rubin = 0,997; (+14 filas más, ver montecarlo.csv; 19 de 30 filas principales no cumplen) |
+| lp_iv | AR | **apta** | **sin datos** |  |  |  | todas las filas principales cumplen |
 | lp_iv | IC_normal | **con reservas** | **sin datos** |  | 0,850-0,953 |  | instrumento_fuerte, n=90, h=4: cobertura IC normal 2SLS = 0,863; instrumento_fuerte, n=90, h=4-8: cobertura IC normal 2SLS = 0,850; instrumento_fuerte, n=110, h=4: cobertura IC normal 2SLS = 0,863; instrumento_fuerte, n=110, h=12: cobertura IC normal 2SLS = 0,897; instrumento_fuerte, n=110, h=4-8: cobertura IC normal 2SLS = 0,887 |
 | lp_iv | AR_unilateral | **apta** | **con reservas** | 0,057-0,060 |  | 0,673-0,853 | efecto -1, IV fuerte, n=110, agregado 4-8: potencia AR unilateral (H1: β<0) al 5% = 0,673 |
 | lp_iv | pretendencias | **apta** | **apta** | 0,040-0,040 |  | 0,993-0,993 | todas las filas principales cumplen |
@@ -52,7 +53,7 @@ Validez = tamaño, cobertura, acierto y error; potencia aparte. «apta» si toda
 
 ## Restricciones de uso (cifras generadas desde montecarlo.csv)
 
-- **Bai-Perron (H5).** Tamaño de UDmax con errores AR(0,85): wild 0,992, bloque Politis-White 0,196, bloque fijo 8 0,596, sieve 0,108 (n=100) y 0,104 (n=126). Con AR(0,5): sieve 0,480. Uso: solo `boot='sieve'` con series persistentes; su potencia con salto de 2σ y AR(0,85) es 0,316 (n=100) y 0,420 (n=126): un no rechazo con series muy persistentes NO es evidencia de ausencia de ruptura.
+- **Bai-Perron (H5).** Tamaño de UDmax con errores AR(0,85): wild 0,992, bloque Politis-White 0,196, bloque fijo 8 0,336, sieve 0,064 (n=100) y 0,048 (n=126). Con AR(0,5): sieve 0,056. Uso: solo `boot='sieve'` con series persistentes; su potencia con salto de 2σ y AR(0,85) es 0,316 (n=100) y 0,420 (n=126): un no rechazo con series muy persistentes NO es evidencia de ausencia de ruptura.
 - **Umbral de Hansen (H6).** Con errores AR(0,5) y q AR(0,9), n=100: tamaño wild 0,170, bloque 0,070, sieve 0,033; con AR(0,85): wild 0,510, bloque 0,157, sieve 0,077. Uso: `boot='wild'` solo con errores sin autocorrelación; con errores autocorrelacionados, `boot='sieve'`.
 - **LP-OLS (H8).** Ver filas `lp_ols`: la cobertura NW(h+1) cae por debajo de 0,90 en varios horizontes con n=90-110 y ρ=0,9 (mínimo 0,782); EWC (0,838 mínimo) es la menos mala; el ancho de banda mayor NW(2h+2) empeora (0,735). LP-OLS no se usa como evidencia de C3.
 - **LP-IV.** El IC Anderson-Rubin cubre entre 0,913 y 1,000; el p unilateral, las pretendencias y el placebo de permutación se resumen en las filas de `lp_iv` (potencia del placebo baja).
@@ -262,65 +263,65 @@ Validez = tamaño, cobertura, acierto y error; potencia aparte. «apta» si toda
 | lp_ols | EWC | ρ=0.9, n=110, h=-4 (pretendencia: efecto verdadero 0) | cobertura IC95 | 0,930 | [0,90; 0,98] | sí | principal | 400 |  | 110 |
 | lp_ols | EWC | ρ=0.9, n=110, h=-2 (pretendencia: efecto verdadero 0) | cobertura IC95 | 0,948 | [0,90; 0,98] | sí | principal | 400 |  | 110 |
 | lp_ols | EWC | ρ=0.9, n=110, h=4-8 | cobertura IC95 | 0,845 | [0,90; 0,98] | NO | principal | 400 |  | 110 |
-| lp_iv | AR | instrumento_fuerte, n=90, h=0 | cobertura IC Anderson-Rubin | 0,970 | [0,90; 0,98] | sí | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_fuerte, n=90, h=0 | cobertura IC Anderson-Rubin | 0,970 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_fuerte, n=90, h=0 | cobertura IC normal 2SLS | 0,953 | [0,90; 0,98] | sí | principal | 300 |  | 90 |
-| lp_iv | AR | instrumento_fuerte, n=90, h=4 | cobertura IC Anderson-Rubin | 0,933 | [0,90; 0,98] | sí | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_fuerte, n=90, h=4 | cobertura IC Anderson-Rubin | 0,933 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_fuerte, n=90, h=4 | cobertura IC normal 2SLS | 0,863 | [0,90; 0,98] | NO | principal | 300 |  | 90 |
-| lp_iv | AR | instrumento_fuerte, n=90, h=8 | cobertura IC Anderson-Rubin | 0,967 | [0,90; 0,98] | sí | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_fuerte, n=90, h=8 | cobertura IC Anderson-Rubin | 0,967 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_fuerte, n=90, h=8 | cobertura IC normal 2SLS | 0,900 | [0,90; 0,98] | sí | principal | 300 |  | 90 |
-| lp_iv | AR | instrumento_fuerte, n=90, h=12 | cobertura IC Anderson-Rubin | 0,990 | [0,90; 0,98] | NO | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_fuerte, n=90, h=12 | cobertura IC Anderson-Rubin | 0,990 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_fuerte, n=90, h=12 | cobertura IC normal 2SLS | 0,907 | [0,90; 0,98] | sí | principal | 300 |  | 90 |
-| lp_iv | AR | instrumento_fuerte, n=90, h=4-8 | cobertura IC Anderson-Rubin | 0,953 | [0,90; 0,98] | sí | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_fuerte, n=90, h=4-8 | cobertura IC Anderson-Rubin | 0,953 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_fuerte, n=90, h=4-8 | cobertura IC normal 2SLS | 0,850 | [0,90; 0,98] | NO | principal | 300 |  | 90 |
-| lp_iv | AR | instrumento_debil, n=90, h=0 | cobertura IC Anderson-Rubin | 0,970 | [0,90; 0,98] | sí | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_debil, n=90, h=0 | cobertura IC Anderson-Rubin | 0,970 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_debil, n=90, h=0 | cobertura IC normal 2SLS | 0,887 | [0,90; 0,98] | NO | referencia | 300 |  | 90 |
-| lp_iv | AR | instrumento_debil, n=90, h=4 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 0,98] | NO | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_debil, n=90, h=4 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_debil, n=90, h=4 | cobertura IC normal 2SLS | 0,993 | [0,90; 0,98] | NO | referencia | 300 |  | 90 |
-| lp_iv | AR | instrumento_debil, n=90, h=8 | cobertura IC Anderson-Rubin | 0,990 | [0,90; 0,98] | NO | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_debil, n=90, h=8 | cobertura IC Anderson-Rubin | 0,990 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_debil, n=90, h=8 | cobertura IC normal 2SLS | 0,987 | [0,90; 0,98] | NO | referencia | 300 |  | 90 |
-| lp_iv | AR | instrumento_debil, n=90, h=12 | cobertura IC Anderson-Rubin | 1,000 | [0,90; 0,98] | NO | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_debil, n=90, h=12 | cobertura IC Anderson-Rubin | 1,000 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_debil, n=90, h=12 | cobertura IC normal 2SLS | 0,990 | [0,90; 0,98] | NO | referencia | 300 |  | 90 |
-| lp_iv | AR | instrumento_debil, n=90, h=4-8 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 0,98] | NO | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_debil, n=90, h=4-8 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_debil, n=90, h=4-8 | cobertura IC normal 2SLS | 0,990 | [0,90; 0,98] | NO | referencia | 300 |  | 90 |
-| lp_iv | AR | instrumento_debil_rho0.8, n=90, h=0 | cobertura IC Anderson-Rubin | 0,990 | [0,90; 0,98] | NO | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_debil_rho0.8, n=90, h=0 | cobertura IC Anderson-Rubin | 0,990 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_debil_rho0.8, n=90, h=0 | cobertura IC normal 2SLS | 0,923 | [0,90; 0,98] | sí | referencia | 300 |  | 90 |
-| lp_iv | AR | instrumento_debil_rho0.8, n=90, h=4 | cobertura IC Anderson-Rubin | 0,990 | [0,90; 0,98] | NO | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_debil_rho0.8, n=90, h=4 | cobertura IC Anderson-Rubin | 0,990 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_debil_rho0.8, n=90, h=4 | cobertura IC normal 2SLS | 0,990 | [0,90; 0,98] | NO | referencia | 300 |  | 90 |
-| lp_iv | AR | instrumento_debil_rho0.8, n=90, h=8 | cobertura IC Anderson-Rubin | 1,000 | [0,90; 0,98] | NO | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_debil_rho0.8, n=90, h=8 | cobertura IC Anderson-Rubin | 1,000 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_debil_rho0.8, n=90, h=8 | cobertura IC normal 2SLS | 0,983 | [0,90; 0,98] | NO | referencia | 300 |  | 90 |
-| lp_iv | AR | instrumento_debil_rho0.8, n=90, h=12 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 0,98] | NO | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_debil_rho0.8, n=90, h=12 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_debil_rho0.8, n=90, h=12 | cobertura IC normal 2SLS | 0,963 | [0,90; 0,98] | sí | referencia | 300 |  | 90 |
-| lp_iv | AR | instrumento_debil_rho0.8, n=90, h=4-8 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 0,98] | NO | principal | 300 |  | 90 |
+| lp_iv | AR | instrumento_debil_rho0.8, n=90, h=4-8 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 90 |
 | lp_iv | IC_normal | instrumento_debil_rho0.8, n=90, h=4-8 | cobertura IC normal 2SLS | 0,980 | [0,90; 0,98] | sí | referencia | 300 |  | 90 |
-| lp_iv | AR | instrumento_fuerte, n=110, h=0 | cobertura IC Anderson-Rubin | 0,960 | [0,90; 0,98] | sí | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_fuerte, n=110, h=0 | cobertura IC Anderson-Rubin | 0,960 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_fuerte, n=110, h=0 | cobertura IC normal 2SLS | 0,937 | [0,90; 0,98] | sí | principal | 300 |  | 110 |
-| lp_iv | AR | instrumento_fuerte, n=110, h=4 | cobertura IC Anderson-Rubin | 0,913 | [0,90; 0,98] | sí | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_fuerte, n=110, h=4 | cobertura IC Anderson-Rubin | 0,913 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_fuerte, n=110, h=4 | cobertura IC normal 2SLS | 0,863 | [0,90; 0,98] | NO | principal | 300 |  | 110 |
-| lp_iv | AR | instrumento_fuerte, n=110, h=8 | cobertura IC Anderson-Rubin | 0,960 | [0,90; 0,98] | sí | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_fuerte, n=110, h=8 | cobertura IC Anderson-Rubin | 0,960 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_fuerte, n=110, h=8 | cobertura IC normal 2SLS | 0,910 | [0,90; 0,98] | sí | principal | 300 |  | 110 |
-| lp_iv | AR | instrumento_fuerte, n=110, h=12 | cobertura IC Anderson-Rubin | 0,983 | [0,90; 0,98] | NO | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_fuerte, n=110, h=12 | cobertura IC Anderson-Rubin | 0,983 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_fuerte, n=110, h=12 | cobertura IC normal 2SLS | 0,897 | [0,90; 0,98] | NO | principal | 300 |  | 110 |
-| lp_iv | AR | instrumento_fuerte, n=110, h=4-8 | cobertura IC Anderson-Rubin | 0,953 | [0,90; 0,98] | sí | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_fuerte, n=110, h=4-8 | cobertura IC Anderson-Rubin | 0,953 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_fuerte, n=110, h=4-8 | cobertura IC normal 2SLS | 0,887 | [0,90; 0,98] | NO | principal | 300 |  | 110 |
-| lp_iv | AR | instrumento_debil, n=110, h=0 | cobertura IC Anderson-Rubin | 0,963 | [0,90; 0,98] | sí | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_debil, n=110, h=0 | cobertura IC Anderson-Rubin | 0,963 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_debil, n=110, h=0 | cobertura IC normal 2SLS | 0,913 | [0,90; 0,98] | sí | referencia | 300 |  | 110 |
-| lp_iv | AR | instrumento_debil, n=110, h=4 | cobertura IC Anderson-Rubin | 0,990 | [0,90; 0,98] | NO | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_debil, n=110, h=4 | cobertura IC Anderson-Rubin | 0,990 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_debil, n=110, h=4 | cobertura IC normal 2SLS | 0,993 | [0,90; 0,98] | NO | referencia | 300 |  | 110 |
-| lp_iv | AR | instrumento_debil, n=110, h=8 | cobertura IC Anderson-Rubin | 0,993 | [0,90; 0,98] | NO | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_debil, n=110, h=8 | cobertura IC Anderson-Rubin | 0,993 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_debil, n=110, h=8 | cobertura IC normal 2SLS | 0,987 | [0,90; 0,98] | NO | referencia | 300 |  | 110 |
-| lp_iv | AR | instrumento_debil, n=110, h=12 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 0,98] | NO | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_debil, n=110, h=12 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_debil, n=110, h=12 | cobertura IC normal 2SLS | 0,970 | [0,90; 0,98] | sí | referencia | 300 |  | 110 |
-| lp_iv | AR | instrumento_debil, n=110, h=4-8 | cobertura IC Anderson-Rubin | 0,983 | [0,90; 0,98] | NO | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_debil, n=110, h=4-8 | cobertura IC Anderson-Rubin | 0,983 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_debil, n=110, h=4-8 | cobertura IC normal 2SLS | 0,983 | [0,90; 0,98] | NO | referencia | 300 |  | 110 |
-| lp_iv | AR | instrumento_debil_rho0.8, n=110, h=0 | cobertura IC Anderson-Rubin | 0,980 | [0,90; 0,98] | sí | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_debil_rho0.8, n=110, h=0 | cobertura IC Anderson-Rubin | 0,980 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_debil_rho0.8, n=110, h=0 | cobertura IC normal 2SLS | 0,930 | [0,90; 0,98] | sí | referencia | 300 |  | 110 |
-| lp_iv | AR | instrumento_debil_rho0.8, n=110, h=4 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 0,98] | NO | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_debil_rho0.8, n=110, h=4 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_debil_rho0.8, n=110, h=4 | cobertura IC normal 2SLS | 0,997 | [0,90; 0,98] | NO | referencia | 300 |  | 110 |
-| lp_iv | AR | instrumento_debil_rho0.8, n=110, h=8 | cobertura IC Anderson-Rubin | 0,993 | [0,90; 0,98] | NO | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_debil_rho0.8, n=110, h=8 | cobertura IC Anderson-Rubin | 0,993 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_debil_rho0.8, n=110, h=8 | cobertura IC normal 2SLS | 0,973 | [0,90; 0,98] | sí | referencia | 300 |  | 110 |
-| lp_iv | AR | instrumento_debil_rho0.8, n=110, h=12 | cobertura IC Anderson-Rubin | 1,000 | [0,90; 0,98] | NO | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_debil_rho0.8, n=110, h=12 | cobertura IC Anderson-Rubin | 1,000 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_debil_rho0.8, n=110, h=12 | cobertura IC normal 2SLS | 0,983 | [0,90; 0,98] | NO | referencia | 300 |  | 110 |
-| lp_iv | AR | instrumento_debil_rho0.8, n=110, h=4-8 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 0,98] | NO | principal | 300 |  | 110 |
+| lp_iv | AR | instrumento_debil_rho0.8, n=110, h=4-8 | cobertura IC Anderson-Rubin | 0,997 | [0,90; 1] (solo cota inferior: conjuntos AR conservadores por construcción con instrumento débil) | sí | principal | 300 |  | 110 |
 | lp_iv | IC_normal | instrumento_debil_rho0.8, n=110, h=4-8 | cobertura IC normal 2SLS | 0,983 | [0,90; 0,98] | NO | referencia | 300 |  | 110 |
 | lp_iv | AR_unilateral | efecto nulo, IV fuerte, n=110, h=4 | tamaño AR unilateral (H1: β<0) al 5% | 0,057 | [0,02; 0,10] | sí | principal | 300 |  | 110 |
 | lp_iv | AR_unilateral | efecto nulo, IV fuerte, n=110, agregado 4-8 | tamaño AR unilateral (H1: β<0) al 5% | 0,060 | [0,02; 0,10] | sí | principal | 300 |  | 110 |

@@ -21,16 +21,12 @@
 - **F2.** Pre-registro docs/v8/hipotesis.md, cerrado con la etiqueta local `prereg-v8` (91e618b). El push de la etiqueta falla (el remoto rechaza etiquetas): queda como tarea del autor (docs/v8/notas_release.md).
 
 ## En curso
-- F0: `make all` de v7.2 en su clon (`make v7` ya cerrado: coincide salvo el recuento de especificaciones, copiado).
-- F3: revisión hecha, APROBAR CON CORRECCIONES (docs/v8/revision_F3.md); desviaciones y aclaraciones en docs/v8/desviaciones.md. Dos subagentes corrigen el código: familia VAR (H1, H2, H4, H9, H10, H12) y resto (H5-H8, H13-H15, H17, H18).
+- F3 cerrada: correcciones aplicadas (Y6, Y7 en decisiones.md); puerta `make check` rc=0 (168 passed; check_texto, check_v5 y check_v6 con 0 errores).
+- F4: M2 (SVAR con restricciones de signo) en curso con un subagente.
 
 ## Siguiente paso exacto
-- Al terminar las correcciones de F3:
-  1. comprobar las cifras;
-  2. decidir entre la principal y V3 si la aceptación de 7 variables es inviable;
-  3. hacer commit;
-  4. `make check`.
-- Después, empezar F4. Primera tanda: M2 y M3 (SVAR y regímenes), M0 y M4 (periodos y largo plazo), M6 y M7 (colinealidad y multiverso). Segunda tanda: M1 y M8 (factor común y regional), M5 (LP-IV) y M9 (ML). Siguiendo docs/v8/contrato_salidas.md.
+- Lanzar F4, primera tanda junto a M2: M3 (LP dependiente del periodo, Y6), M0 y M4 (periodos y largo plazo), M6 y M7 (colinealidad y multiverso).
+- Segunda tanda: M1 y M8 (factor común y regional), M5 (LP-IV) y M9 (ML). Siguiendo docs/v8/contrato_salidas.md.
 
 ## Tokens por módulo
 
@@ -42,3 +38,5 @@
 | F2 | 0 | ~25k |
 | F3 herramientas | 384.763 | ~20k |
 | F3 revisor | 163.223 | ~10k |
+| F3 correcciones (VAR) | 226.757 | ~5k |
+| F3 correcciones (resto) | 254.317 | ~5k |

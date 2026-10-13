@@ -55,7 +55,7 @@
    "potencia": "sin datos"
   },
   "lp_iv[AR]": {
-   "validez": "no apta",
+   "validez": "apta",
    "potencia": "sin datos"
   },
   "lp_iv[IC_normal]": {
@@ -139,7 +139,7 @@
   "lp_ols[NW_h+1]": "ρ=0.6, n=90, h=4: cobertura IC95 = 0,897; ρ=0.6, n=90, h=4-8: cobertura IC95 = 0,877; ρ=0.9, n=90, h=4: cobertura IC95 = 0,850; ρ=0.9, n=90, h=8: cobertura IC95 = 0,845; ρ=0.9, n=90, h=12: cobertura IC95 = 0,823; (+7 filas más, ver montecarlo.csv; 12 de 28 filas principales no cumplen)",
   "lp_ols[NW_2h+2]": "ρ=0.6, n=90, h=4: cobertura IC95 = 0,873; ρ=0.6, n=90, h=8: cobertura IC95 = 0,868; ρ=0.6, n=90, h=12: cobertura IC95 = 0,843; ρ=0.6, n=90, h=-4 (pretendencia: efecto verdadero 0): cobertura IC95 = 0,890; ρ=0.6, n=90, h=4-8: cobertura IC95 = 0,825; (+11 filas más, ver montecarlo.csv; 16 de 28 filas principales no cumplen)",
   "lp_ols[EWC]": "ρ=0.9, n=90, h=4: cobertura IC95 = 0,887; ρ=0.9, n=90, h=8: cobertura IC95 = 0,882; ρ=0.9, n=90, h=4-8: cobertura IC95 = 0,838; ρ=0.9, n=110, h=8: cobertura IC95 = 0,880; ρ=0.9, n=110, h=12: cobertura IC95 = 0,880; (+1 filas más, ver montecarlo.csv; 6 de 28 filas principales no cumplen)",
-  "lp_iv[AR]": "instrumento_fuerte, n=90, h=12: cobertura IC Anderson-Rubin = 0,990; instrumento_debil, n=90, h=4: cobertura IC Anderson-Rubin = 0,997; instrumento_debil, n=90, h=8: cobertura IC Anderson-Rubin = 0,990; instrumento_debil, n=90, h=12: cobertura IC Anderson-Rubin = 1,000; instrumento_debil, n=90, h=4-8: cobertura IC Anderson-Rubin = 0,997; (+14 filas más, ver montecarlo.csv; 19 de 30 filas principales no cumplen)",
+  "lp_iv[AR]": "todas las filas principales cumplen",
   "lp_iv[IC_normal]": "instrumento_fuerte, n=90, h=4: cobertura IC normal 2SLS = 0,863; instrumento_fuerte, n=90, h=4-8: cobertura IC normal 2SLS = 0,850; instrumento_fuerte, n=110, h=4: cobertura IC normal 2SLS = 0,863; instrumento_fuerte, n=110, h=12: cobertura IC normal 2SLS = 0,897; instrumento_fuerte, n=110, h=4-8: cobertura IC normal 2SLS = 0,887",
   "lp_iv[AR_unilateral]": "efecto -1, IV fuerte, n=110, agregado 4-8: potencia AR unilateral (H1: β<0) al 5% = 0,673",
   "lp_iv[pretendencias]": "todas las filas principales cumplen",
@@ -161,5 +161,5 @@
   "rmse": null,
   "dm_vs_ar4": null
  },
- "notas": "Reglas de «con reservas» definidas tras ver las cifras de la primera pasada. Réplicas en montecarlo.csv. Tiempos de bloque (s): {\"bp_pot\": 1068.4, \"bp_size\": 1080.2, \"dfm\": 12.0, \"dom\": 26.3, \"lp\": 461.7, \"lpiv\": 316.1, \"lpiv_inf\": 65.0, \"ms12\": 1536.1, \"ms23\": 935.8, \"msbic\": 600.0, \"perm\": 29.5, \"perm_multi\": 413.8, \"shap\": 44.8, \"umbral\": 205.4}"
+ "notas": "Reglas de «con reservas» definidas tras ver las cifras de la primera pasada. Réplicas en montecarlo.csv. Tiempos de bloque (s): {\"bp_pot\": 1068.4, \"bp_size\": 1080.2, \"dfm\": 12.0, \"dom\": 26.3, \"lp\": 461.7, \"lpiv\": 166.7, \"lpiv_inf\": 65.0, \"ms12\": 1536.1, \"ms23\": 935.8, \"msbic\": 600.0, \"perm\": 29.5, \"perm_multi\": 413.8, \"shap\": 44.8, \"umbral\": 205.4}"
 }

@@ -1,0 +1,91 @@
+{
+ "rama": "M1",
+ "pregunta": "Explica un componente comun de las 17 CCAA mas del 50 % de la varianza del crecimiento del precio real en cada periodo, y covaria con el HPI de la zona euro?",
+ "capa": "C4",
+ "datos": "panel_ccaa_q_v8.csv (valor_tasado_ccaa real, ipv, ipc_alquiler por CCAA, cruce por codigo INE); nacional_q_v8.csv; eurostat_prc_hpi_q_multi.csv",
+ "N": {
+  "compra_tasado": 122,
+  "ipv": 74,
+  "alquiler": 74,
+  "h89": 82
+ },
+ "metodo": "PCA 1 factor (sens. 2) y DFM-ML; bootstrap por bloques circulares; Holm {H8-8, H8-9}; BH en lo exploratorio; regresion con retardos para la parte europea",
+ "estimacion": {
+  "H8-8_cuota_por_periodo": {
+   "P1": 0.6474,
+   "P2": 0.4527,
+   "P3": 0.5958,
+   "P4": 0.455,
+   "P5": 0.9279
+  },
+  "H8-9_correlacion": 0.5976,
+  "atribucion_europea_pp": {
+   "P1": 7.37,
+   "P2": -15.33,
+   "P3": 0.81,
+   "P4": 1.39,
+   "P5": -3.32
+  }
+ },
+ "ic95": {
+  "H8-9": [
+   0.135,
+   0.8578
+  ],
+  "H8-8": {
+   "P1": [
+    0.4612,
+    0.7646
+   ],
+   "P2": [
+    0.3687,
+    0.6164
+   ],
+   "P3": [
+    0.3836,
+    0.7232
+   ],
+   "P4": [
+    0.3425,
+    0.6168
+   ],
+   "P5": [
+    0.7406,
+    0.9668
+   ]
+  }
+ },
+ "p_ajustado": {
+  "H8-8": 0.669,
+  "H8-9": 0.02,
+  "metodo": "Holm",
+  "p_crudo": {
+   "H8-8": 0.669,
+   "H8-9": 0.01
+  }
+ },
+ "nivel_evidencia": "EXPLORATORIO (C4)",
+ "diagnosticos": {
+  "cuota_azar": "ver cuota_varianza.csv (cuota_azar_media): con N=17 y T=9-48 la cuota sin factor real es alta",
+  "bloque": "L=8 (H8-9), 2-4 (cuotas)",
+  "B": 999,
+  "rapido": false,
+  "avisos": [
+   "Alquiler por CCAA: IPC alquiler (2007T1+); P1 sin datos de alquiler. Un solo indicador de alquiler por CCAA (C4)."
+  ],
+  "dfm_converge": {
+   "compra_tasado_k1": true,
+   "compra_tasado_k2": true,
+   "compra_ipv_k1": true,
+   "compra_ipv_k2": true,
+   "alquiler_ipc_k1": true,
+   "alquiler_ipc_k2": true
+  }
+ },
+ "fuera_muestra": {
+  "modelo": "no aplica",
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "C4: asociacion estadistica; el factor es un resumen de comovimiento, sin interpretacion causal ni estructural. Muestras por periodo cortas (P4 = 9 trimestres): con N = 17 y T pequeno la cuota del 1.er componente esta sesgada al alza incluso sin factor comun real. Zona euro sin Espana oficial no construible; proxy DE/FR/IT/NL/PT. Fuera de muestra: M1 no es un modelo predictivo (sin comparacion con AR(4)/ECM v1)."
+}

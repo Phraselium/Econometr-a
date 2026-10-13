@@ -5,7 +5,7 @@ Analisis principal: ecuaciones por tramo (P1-P5 pre-registrados) del crecimiento
 (valor tasado MIVAU) y del alquiler real (IPC) sobre representantes de las familias de factores; EE HAC. Sin busqueda.
 Confirmaciones (deteccion SOLO con series nacionales de credito, tipos y actividad): Bai-Perron (bootstrap sieve-AR),
 Markov switching (k por BIC; bootstrap LR informativo), umbral de Hansen (bootstrap sieve-AR). Permutacion de fechas
-(2.000 conjuntos). Capa C4 siempre (asociacion); nivel «ASOCIACION ROBUSTA» solo si cumple la regla completa.
+(2.000 conjuntos). Capa C4 siempre (asociacion); nivel EXPLORATORIO (C4) para todo; la etiqueta «cumple la regla de §8; no sobrevive a BH» se aplica donde corresponda.
 Uso: python3 src/v8/m0_periodos.py [--rapido] [--salida DIR]
 """
 from __future__ import annotations
@@ -65,7 +65,7 @@ EXTRA = {
     "d4_turistas": ("turismo", "d4_ln_turistas", "d4_ln*100", ["P4", "P5"]),
 }
 TH_Q = {"tipo_hip_real": "tipo_hip_real_bde", "d4_credito_nuevo_real": "d4_ln_credito_nuevo_real",
-        "d4_ocupados_SUSTITUTO_paro": "d4_ln_ocupados"}
+        "tasa_paro": "tasa_paro_epa", "d4_ocupados_sensibilidad": "d4_ln_ocupados"}
 DET_SERIES = {"d4_credito_vivienda_real": "d4_ln_credito_stock_bde_real", "tipo_hip_real": "tipo_hip_real_bde",
               "d4_pib_vol": "d4_ln_pib_vol_idx"}
 MERCADOS = {"compra": ("d4_ln_p_tasado_real", "valor tasado MIVAU, real (IPC general)", "d4_ln_ipv_real"),
@@ -175,7 +175,7 @@ def q_global(E, var, n_perm, seed):
 
 # ------------------------------------------------------------------ deteccion de regimenes
 def serie_det(d, col):
-    return (d[col] if col == "tipo_hip_real_bde" else 100 * d[col]).dropna()
+    return (d[col] if col in ("tipo_hip_real_bde", "tasa_paro_epa") else 100 * d[col]).dropna()
 
 
 def etiquetas_contiguas(idx, cortes):
@@ -264,7 +264,9 @@ def detectar(d, B_bp, B_th, B_ms, hasta=None, desde=None, ventana="completa", fi
             filas.append({"metodo": "umbral_hansen", "particion": ventana, "serie": nom, "observable_umbral": qn, "detectado": det,
                           "n_regimenes": 2 if det else 1, "corte_o_regimen": f"gamma={r['gamma']:.3f} (bajo n={r['n_bajo']}, alto n={r['n_alto']})" if det else "lineal",
                           "fechas": f"{Z.index[0]}..{Z.index[-1]}", "ic": f"[{r['ic_gamma'][0]:.3f}, {r['ic_gamma'][1]:.3f}] (LR, Hansen 2000)",
-                          "p": r["p_linealidad"], "notas": ("observable SUSTITUTA de la tasa de paro (no pre-registrada); " if "SUSTITUTO" in qn else "") + f"supLR={r['sup_LR']:.2f}, cv95 boot={r['cv95_boot']:.2f}; boot sieve-AR"})
+                          "p": r["p_linealidad"], "notas": ("SENSIBILIDAD (ocupados; no es la observable pre-registrada): no entra en las confirmaciones; " if "sensibilidad" in qn else "") + f"supLR={r['sup_LR']:.2f}, cv95 boot={r['cv95_boot']:.2f}; boot sieve-AR"})
+            if "sensibilidad" in qn:
+                continue    # J8: ocupados solo como sensibilidad; no vota en las confirmaciones de la regla
             regs.append({"metodo": "UMBRAL", "serie": f"{nom}|{qn}", "detectado": det, "etiquetas": et, "ventana": ventana,
                          "gamma": r["gamma"], "qcol": qcol, "ycol": col})
     return filas, regs
@@ -518,6 +520,10 @@ def main(argv=None):
     _ok = regla["p_perm"].notna()
     regla["p_perm_BH_informativo"] = np.nan
     regla.loc[_ok, "p_perm_BH_informativo"] = _fdc(regla.loc[_ok, "p_perm"].values, method="bh")
+    regla["lectura"] = ""
+    _c = regla["cumple"] == "si"
+    regla.loc[_c, "lectura"] = np.where(regla.loc[_c, "p_perm_BH_informativo"] < 0.10, "cumple la regla de §8; sobrevive a BH (C4, exploratorio)",
+                                        "cumple la regla de §8; no sobrevive a BH (C4, exploratorio)")
     # BH (q = 0,10) sobre todos los p de coeficientes (familia exploratoria); sin const
     from scipy.stats import false_discovery_control
     coef["p_ajustado"] = false_discovery_control(coef["p"].fillna(1).values, method="bh")
@@ -557,10 +563,10 @@ def main(argv=None):
         "N": {"compra": int(ecs[("base", "compra")]["S"].shape[0]), "alquiler": int(ecs[("base", "alquiler")]["S"].shape[0])},
         "metodo": "OLS por tramo con EE HAC (principal); confirmaciones Bai-Perron/MS/umbral con bootstrap sieve-AR; permutacion de fechas (2.000); BH q=0,10",
         "estimacion": {"n_coeficientes": int(len(coef)), "n_efectos_cumplen_regla": int(len(cumplen)), "n_no_evaluable": nev,
-                       "cumplen": cumplen[["mercado", "periodo", "variable"]].to_dict("records")},
+                       "cumplen": cumplen[["mercado", "periodo", "variable", "p_perm", "p_perm_BH_informativo", "lectura"]].to_dict("records")},
         "ic95": "ver coeficientes.csv (ic95_lo, ic95_hi por tramo)",
         "p_ajustado": {"metodo": "BH q=0,10", "n_coef_sig_bh": int(len(sig_bh)), "de": int(len(coef))},
-        "nivel_evidencia": "ASOCIACION ROBUSTA solo para los efectos que cumplen la regla; el resto EXPLORATORIO. Sin lenguaje causal.",
+        "nivel_evidencia": "EXPLORATORIO (C4) para todo, incluidos los efectos que cumplen la regla de §8. Sin lenguaje causal; nunca «asociación robusta» (§7: BH en todo lo exploratorio).",
         "diagnosticos": {"detecciones_significativas": det_ok[["metodo", "serie", "observable_umbral", "p"]].to_dict("records"),
                          "nota_potencia": "BP 0,32-0,42 y permutacion con 5 tramos conservadora (Y7): un no rechazo no prueba ausencia; P4 (9 trimestres) imprecisa"},
         "fuera_muestra": {"modelo": "ecuacion por periodo (AR1+X por periodo) y X comun frente a AR(4), bloques con embargo (condicional, X contemporaneo)",
@@ -568,13 +574,14 @@ def main(argv=None):
                           "detalle": {mk: {k: fm[mk][k] for k in ("n", "bloques", "embargo", "muestra")} for mk in fm},
                           "ecm_v1": "no evaluable en M0 (no es un modelo de prediccion); M4 contiene el ECM de largo plazo"},
         "notas": "Capa C4 siempre (asociacion). Variables: demografia=d4 poblacion (interpolada), empleo_renta=d4 PIB vol, credito_tipos=tipo real + d4 credito vivienda, oferta=d4 terminadas (1995-2007 anual/4). "
-                 "Tasa de paro no disponible: sustituta d4 ocupados (exploratoria). SERPAVI nacional trimestral no existe: alquiler `no_evaluable` en la regla. Ver docs/v8/desviaciones.md.",
-        "segundos": round(time.time() - t0, 1), "rapido": rapido,
+                 "Umbral de Hansen con la tasa de paro EPA (observable pre-registrada; nacional_q_v8.tasa_paro_epa); d4 ocupados queda como sensibilidad y no vota. SERPAVI nacional trimestral no existe: alquiler `no_evaluable` en la regla. Ver docs/v8/desviaciones.md.",
+        "rapido": rapido,
     }
+    (out / "tiempos.json").write_text(json.dumps({"segundos": round(time.time() - t0, 1)}))
     (out / "resultado.json").write_text(json.dumps(res, indent=2, ensure_ascii=False, default=str))
-    rb = regla[regla.especificacion == "base"][["mercado", "periodo", "variable", "signo_principal", "n_confirmaciones", "p_perm", "alt_mismo_signo", "cumple"]]
+    rb = regla[regla.especificacion == "base"][["mercado", "periodo", "variable", "signo_principal", "n_confirmaciones", "p_perm", "alt_mismo_signo", "cumple", "lectura"]]
     md = [f"# M0 periodos (C4, asociación; {'RÁPIDO' if rapido else 'completo'})", "",
-          f"Muestras: compra {res['N']['compra']} trimestres, alquiler {res['N']['alquiler']}. Efectos que cumplen la regla de §8: **{len(cumplen)}** de {len(regla)} evaluados; "
+          f"Muestras: compra {res['N']['compra']} trimestres, alquiler {res['N']['alquiler']}. Efectos que cumplen la regla de §8 (todos C4 exploratorio; ver columna `lectura` de la tabla y el control BH): **{len(cumplen)}** de {len(regla)} evaluados; "
           f"{nev} `no_evaluable` (alquiler: SERPAVI anual; extras sin IPV). Sin lenguaje causal; C4 siempre.", "",
           "## Detecciones significativas (serie nacional de crédito, tipos o actividad)", "",
           md_tabla(det_ok[["metodo", "serie", "observable_umbral", "n_regimenes", "corte_o_regimen", "p"]]) if len(det_ok) else "Ninguna.", "",

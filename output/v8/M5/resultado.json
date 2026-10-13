@@ -13,25 +13,40 @@
  "estimacion": {
   "hipotesis": {
    "H8-5": {
-    "estimacion": -8.77607142672617,
-    "ar_p_unilateral": 0.2756127899887624,
-    "p_holm": 0.8268383699662871,
+    "beta_descriptivo": -8.77607142672617,
+    "signo_forma_reducida": 1,
+    "t_forma_reducida": 0.5959246276697178,
+    "pi": -0.9304581961492173,
+    "t_pi": -1.3533893144080609,
+    "F_efectivo": 1.831662636353921,
+    "ar_p_unilateral_signo_apriori": 0.7243872100112376,
+    "p_holm": 1.0,
     "capa": "C4",
     "cumple_c3": false,
     "lectura": "no respaldada tras Holm (instrumento no supera C3)"
    },
    "H8-6": {
-    "estimacion": -2.9120668207617553,
-    "ar_p_unilateral": 0.36506095422171814,
-    "p_holm": 0.8268383699662871,
+    "beta_descriptivo": -2.9120668207617553,
+    "signo_forma_reducida": 1,
+    "t_forma_reducida": 0.34496337049955245,
+    "pi": -0.4861100221299521,
+    "t_pi": -0.8750525774603368,
+    "F_efectivo": 0.7657170133199788,
+    "ar_p_unilateral_signo_apriori": 0.6349390457782819,
+    "p_holm": 1.0,
     "capa": "C4",
     "cumple_c3": false,
     "lectura": "no respaldada tras Holm (instrumento no supera C3)"
    },
    "H8-7": {
-    "estimacion": -0.5111800089209866,
-    "ar_p_unilateral": 0.5363709418045447,
-    "p_holm": 0.8268383699662871,
+    "beta_descriptivo": -0.5111800089209866,
+    "signo_forma_reducida": -1,
+    "t_forma_reducida": -0.0912950936738855,
+    "pi": 0.26493341351533867,
+    "t_pi": 0.21889499585658787,
+    "F_efectivo": 0.047915019211055614,
+    "ar_p_unilateral_signo_apriori": 0.5363709418045447,
+    "p_holm": 1.0,
     "capa": "C4",
     "cumple_c3": false,
     "lectura": "no respaldada tras Holm (instrumento no supera C3)"
@@ -46,19 +61,19 @@
     ],
     "ar_acotado": false,
     "F_efectivo": 1.831662636353921,
-    "p_ar_menor": 0.2756127899887624,
+    "p_ar_menor": 0.7243872100112376,
     "p_ar_dos": 0.5512255799775247,
     "pretendencias_ar_p": {
      "-4": 0.5299871970930226,
      "-3": 0.5549511821982214,
      "-2": 0.41251207204372464
     },
-    "placebo_p_perm": 0.61,
+    "perm_instrumento_p_perm": 0.61,
     "n": 102,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -70,19 +85,19 @@
     ],
     "ar_acotado": false,
     "F_efectivo": 0.7657170133199788,
-    "p_ar_menor": 0.36506095422171814,
+    "p_ar_menor": 0.6349390457782819,
     "p_ar_dos": 0.7301219084434364,
     "pretendencias_ar_p": {
      "-4": 0.29664626067333544,
      "-3": 0.30802407977223967,
      "-2": 0.27435202075298176
     },
-    "placebo_p_perm": 0.798,
+    "perm_instrumento_p_perm": 0.798,
     "n": 88,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -94,19 +109,19 @@
     ],
     "ar_acotado": false,
     "F_efectivo": 2.358348853196405,
-    "p_ar_menor": 0.2939631927216382,
+    "p_ar_menor": 0.7060368072783618,
     "p_ar_dos": 0.5879263854432762,
     "pretendencias_ar_p": {
      "-4": 0.5419559674907704,
      "-3": 0.5170197460109758,
      "-2": 0.430160893337898
     },
-    "placebo_p_perm": 0.646,
+    "perm_instrumento_p_perm": 0.646,
     "n": 102,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -118,19 +133,19 @@
     ],
     "ar_acotado": false,
     "F_efectivo": 1.1434137576906522,
-    "p_ar_menor": 0.37551946083538834,
+    "p_ar_menor": 0.6244805391646117,
     "p_ar_dos": 0.7510389216707767,
     "pretendencias_ar_p": {
      "-4": 0.3907479479443139,
      "-3": 0.4520169939724068,
      "-2": 0.22289917749291663
     },
-    "placebo_p_perm": 0.812,
+    "perm_instrumento_p_perm": 0.812,
     "n": 88,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -149,12 +164,12 @@
      "-3": 0.7624093950611706,
      "-2": 0.21839090353349921
     },
-    "placebo_p_perm": 0.766,
+    "perm_instrumento_p_perm": 0.766,
     "n": 68,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -166,19 +181,19 @@
     ],
     "ar_acotado": false,
     "F_efectivo": 1.7961326177638364,
-    "p_ar_menor": 0.2656221056917659,
+    "p_ar_menor": 0.7343778943082341,
     "p_ar_dos": 0.5312442113835316,
     "pretendencias_ar_p": {
      "-4": 0.5541799545807731,
      "-3": 0.5698756391626888,
      "-2": 0.4249018115483336
     },
-    "placebo_p_perm": 0.58,
+    "perm_instrumento_p_perm": 0.58,
     "n": 102,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    }
@@ -191,13 +206,13 @@
     5774.308988875754
    ],
    "F_efectivo": 0.047915019211055614,
-   "placebo_p_perm": 1.0,
+   "perm_instrumento_p_perm": 1.0,
    "n_origenes": 39,
    "n_destinos": 19,
    "f_ok": false,
    "ar_excluye_0": false,
    "pretendencias_ok": true,
-   "placebo_ok": false,
+   "perm_instrumento_ok": false,
    "cumple_c3": false,
    "c3_laxo": false
   },
@@ -206,11 +221,11 @@
    "F_efectivo": 2.096201874143158,
    "p_ar_mayor": 0.7298026618355513,
    "ar_acotado": false,
-   "placebo_p_perm": 0.45,
+   "perm_instrumento_p_perm": 0.45,
    "f_ok": false,
    "ar_excluye_0": false,
    "pretendencias_ok": true,
-   "placebo_ok": false,
+   "perm_instrumento_ok": false,
    "cumple_c3": false,
    "c3_laxo": false
   },
@@ -228,7 +243,7 @@
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -245,7 +260,7 @@
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -262,7 +277,7 @@
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -279,7 +294,7 @@
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -296,7 +311,7 @@
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -313,7 +328,7 @@
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -330,7 +345,7 @@
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -347,7 +362,7 @@
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -364,7 +379,7 @@
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -381,7 +396,7 @@
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -398,7 +413,7 @@
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -415,7 +430,7 @@
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
-    "placebo_ok": false,
+    "perm_instrumento_ok": false,
     "cumple_c3": false,
     "c3_laxo": false
    },
@@ -459,16 +474,26 @@
  },
  "ic95_nota": "Intervalo Anderson-Rubin al 95 %; null = extremo no acotado (la rejilla llega al borde: instrumento debil, intervalo no informativo)",
  "p_ajustado": {
-  "H8-5": 0.8268383699662871,
-  "H8-6": 0.8268383699662871,
-  "H8-7": 0.8268383699662871
+  "H8-5": 1.0,
+  "H8-6": 1.0,
+  "H8-7": 1.0
  },
- "nivel_evidencia": "C3 solo en las filas con cumple_c3=True; el resto C4 (asociacion, sin lenguaje causal). Capa C3 solo si cumple los cuatro requisitos de §6 (F efectivo >= 10, AR que excluye el 0, pretendencias no significativas, placebo); si no, C4 y sin lenguaje causal. Placebo de baja potencia (Y7). Exclusion del instrumento no verificable con los datos.",
+ "nivel_evidencia": "C3 solo en las filas con cumple_c3=True; el resto C4 (asociacion, sin lenguaje causal). Capa C3 solo si cumple los cuatro requisitos de §6 (F efectivo >= 10, AR que excluye el 0, pretendencias no significativas, permutacion del instrumento); si no, C4 y sin lenguaje causal. La permutacion del instrumento (antes «placebo») es un contraste de significacion de la forma reducida de baja potencia (Y7), no una prueba independiente de exogeneidad; pretendencias y permutacion son condiciones necesarias, no suficientes. Exclusion del instrumento no verificable con los datos. Los p unilaterales de AR usan el signo A PRIORI de la primera etapa (pi > 0), no el estimado.",
  "diagnosticos": {
   "primera_etapa_IV1": {
-   "pi": -1.402399184662193,
-   "t": -1.655079673183596,
-   "nota": "signo esperado > 0 para un shock contractivo (sube el Euribor); signo contrario o t pequeno = instrumento dudoso"
+   "compra": {
+    "pi": -0.9304581961492173,
+    "t_pi": -1.3533893144080609,
+    "F": 1.831662636353921,
+    "t_rf": 0.5959246276697178
+   },
+   "alquiler": {
+    "pi": -0.4861100221299521,
+    "t_pi": -0.8750525774603368,
+    "F": 0.7657170133199788,
+    "t_rf": 0.34496337049955245
+   },
+   "nota": "misma regresion agregada h=4-8 que el F y el AR; signo a priori pi > 0 (shock contractivo sube el Euribor); el p AR unilateral usa ese signo, no el estimado"
   },
   "F_efectivo_agregado": {
    "M5_IV1_compra_euribor_ln_p_tasado_real": 1.831662636353921,
@@ -488,5 +513,5 @@
   "dm_vs_ar4": null,
   "nota": "No aplica: modulo de identificacion (efectos), no de prediccion; no se compara con AR(4) ni ECM v1."
  },
- "notas": "Fallido = no rechazada en Holm. Muestras: IV1 precio 1999Q2-2025Q3 menos horizontes, alquiler desde 2002Q3; IV2 anual 2003-2024; IV3 17 CCAA 2009-2025. Cuotas IV2 = stock de residentes por ciudadania a 1-1-2002 (no flujo). Eurostat LFS NUTS2: posibles rupturas de serie no tratadas. Tiempo: 52 s. Modo rapido=False."
+ "notas": "Fallido = no rechazada en Holm. Muestras: IV1 precio 1999Q2-2025Q3 menos horizontes, alquiler desde 2002Q3; IV2 anual 2003-2024; IV3 17 CCAA 2009-2025. Cuotas IV2 = stock de residentes por ciudadania a 1-1-2002 (no flujo). Eurostat LFS NUTS2: posibles rupturas de serie no tratadas. IV2b (instrumento sin normalizar): anadida tras construir el instrumento, exploratoria, fuera de Holm. Permutacion del instrumento (antes «placebo»): contraste de significacion de la forma reducida, no prueba independiente. Modo rapido=False."
 }

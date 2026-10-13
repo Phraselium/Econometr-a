@@ -2,3 +2,4 @@ metodo,serie,dif_media_train,dif_media_test,t_hac_test,mismo_signo,n_bajo_test,n
 markov_switching,tipo_hip_real,,,,False,29,21
 markov_switching,d4_pib_vol,,,,True,10,40
 umbral_hansen,d4_pib_vol|d4_credito_nuevo_real,,,,,1,49
+umbral_hansen,d4_pib_vol|tasa_paro,-4.2541311911745865,-1.6630030354325973,-1.0592936299516118,True,19,31

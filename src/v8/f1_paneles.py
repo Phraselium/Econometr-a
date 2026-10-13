@@ -479,6 +479,16 @@ def derivadas_nacional(N: pd.DataFrame) -> pd.DataFrame:
         N[p] = ((N.index >= pd.Period(a, "Q")) & (N.index <= pd.Period(b, "Q"))).astype(int)
     N["P_transicion"] = (N[list(rangos)].sum(axis=1) == 0).astype(int)
     N["periodo_h8"] = np.select([N[p] == 1 for p in rangos], list(rangos), default="T")
+    # Tasa de paro nacional EPA (revisión F4, J8): se AÑADE al final; el resto de columnas no cambia
+    ep = rd("ine_v2_epa_prov.csv", dtype={"codigo": str})
+    ep = ep[(ep["codigo"] == "00") & (ep["nivel"] == "nacional")]
+    par = pd.Series(ep.loc[ep["medida"] == "EPA_parados", "valor"].to_numpy(float),
+                    index=per_q(ep.loc[ep["medida"] == "EPA_parados", "fecha"])).sort_index()
+    ocu = pd.Series(ep.loc[ep["medida"] == "EPA_ocupados", "valor"].to_numpy(float),
+                    index=per_q(ep.loc[ep["medida"] == "EPA_ocupados", "fecha"])).sort_index()
+    N["tasa_paro_epa"] = (par / (par + ocu) * 100).reindex(PER)
+    reg("tasa_paro_epa", "Tasa de paro nacional EPA = parados/(parados+ocupados)×100 (código INE 00)", "%", "ine_v2_epa_prov.csv (EPA_parados, EPA_ocupados)",
+        rupturas="2021T1: cambio de base poblacional y metodología de la EPA (epa2021)")
     return N
 
 

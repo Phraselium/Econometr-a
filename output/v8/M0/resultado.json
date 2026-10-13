@@ -16,12 +16,18 @@
       {
         "mercado": "compra",
         "periodo": "P2",
-        "variable": "d4_pib_vol"
+        "variable": "d4_pib_vol",
+        "p_perm": 0.0399800099950025,
+        "p_perm_BH_informativo": 0.8888148518333425,
+        "lectura": "cumple la regla de §8; no sobrevive a BH (C4, exploratorio)"
       },
       {
         "mercado": "compra",
         "periodo": "P4",
-        "variable": "d4_terminadas"
+        "variable": "d4_terminadas",
+        "p_perm": 0.04997501249375312,
+        "p_perm_BH_informativo": 0.8888148518333425,
+        "lectura": "cumple la regla de §8; no sobrevive a BH (C4, exploratorio)"
       }
     ]
   },
@@ -31,7 +37,7 @@
     "n_coef_sig_bh": 35,
     "de": 70
   },
-  "nivel_evidencia": "ASOCIACION ROBUSTA solo para los efectos que cumplen la regla; el resto EXPLORATORIO. Sin lenguaje causal.",
+  "nivel_evidencia": "EXPLORATORIO (C4) para todo, incluidos los efectos que cumplen la regla de §8. Sin lenguaje causal; nunca «asociación robusta» (§7: BH en todo lo exploratorio).",
   "diagnosticos": {
     "detecciones_significativas": [
       {
@@ -61,7 +67,7 @@
       {
         "metodo": "umbral_hansen",
         "serie": "tipo_hip_real",
-        "observable_umbral": "d4_ocupados_SUSTITUTO_paro",
+        "observable_umbral": "d4_ocupados_sensibilidad",
         "p": 0.006666666666666667
       },
       {
@@ -69,6 +75,12 @@
         "serie": "d4_pib_vol",
         "observable_umbral": "",
         "p": 0.03333333333333333
+      },
+      {
+        "metodo": "umbral_hansen",
+        "serie": "d4_pib_vol",
+        "observable_umbral": "tasa_paro",
+        "p": 0.016666666666666666
       }
     ],
     "nota_potencia": "BP 0,32-0,42 y permutacion con 5 tramos conservadora (Y7): un no rechazo no prueba ausencia; P4 (9 trimestres) imprecisa"
@@ -129,7 +141,6 @@
     },
     "ecm_v1": "no evaluable en M0 (no es un modelo de prediccion); M4 contiene el ECM de largo plazo"
   },
-  "notas": "Capa C4 siempre (asociacion). Variables: demografia=d4 poblacion (interpolada), empleo_renta=d4 PIB vol, credito_tipos=tipo real + d4 credito vivienda, oferta=d4 terminadas (1995-2007 anual/4). Tasa de paro no disponible: sustituta d4 ocupados (exploratoria). SERPAVI nacional trimestral no existe: alquiler `no_evaluable` en la regla. Ver docs/v8/desviaciones.md.",
-  "segundos": 136.2,
+  "notas": "Capa C4 siempre (asociacion). Variables: demografia=d4 poblacion (interpolada), empleo_renta=d4 PIB vol, credito_tipos=tipo real + d4 credito vivienda, oferta=d4 terminadas (1995-2007 anual/4). Umbral de Hansen con la tasa de paro EPA (observable pre-registrada; nacional_q_v8.tasa_paro_epa); d4 ocupados queda como sensibilidad y no vota. SERPAVI nacional trimestral no existe: alquiler `no_evaluable` en la regla. Ver docs/v8/desviaciones.md.",
   "rapido": false
 }

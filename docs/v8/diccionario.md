@@ -304,6 +304,7 @@ Huecos intermedios: visados 2016T2 y 2017T2 (faltan meses en el origen; no se co
 | `P5` | Indicador del periodo pre-registrado 2022T3-2026T2 subida de tipos y presión demográfica (hipotesis.md §3) | 0/1 | construida | 1995Q1–2026Q2 (N=126) | no aplica (variable construida) | original (sin transformación) | — |
 | `P_transicion` | Indicador de trimestres fuera de todo periodo (2008T1-2008T2 y 2020T1): se reportan, no entran en la atribución | 0/1 | construida | 1995Q1–2026Q2 (N=126) | no aplica (variable construida) | original (sin transformación) | — |
 | `periodo_h8` | Etiqueta del periodo pre-registrado (P1..P5; T = transición) | texto | construida | 1995Q1–2026Q2 (N=126) | no aplica (variable construida) | original (sin transformación) | — |
+| `tasa_paro_epa` | Tasa de paro nacional EPA = parados/(parados+ocupados)×100 (código INE 00) | % | ine_v2_epa_prov.csv (EPA_parados, EPA_ocupados) | 2002Q1–2026Q2 (N=98) | C4 (fuente única) | original (sin transformación) | 2021T1: cambio de base poblacional y metodología de la EPA (epa2021) |
 
 ## panel_ccaa_q_v8.csv (clave: codigo_ine_ccaa, trimestre)
 

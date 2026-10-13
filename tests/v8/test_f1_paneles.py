@@ -112,3 +112,15 @@ def test_sin_cruces_por_nombre_en_src_v8():
     spec.loader.exec_module(m)
     malos = [str(p.relative_to(RAIZ)) for p in (RAIZ / "src" / "v8").rglob("*.py") if m.cruces_por_nombre(p, nuevo=True)]
     assert not malos, malos
+
+
+def test_tasa_paro_epa(N):
+    """J8: tasa de paro = parados/(parados+ocupados)x100 desde data/raw, 2002T1-2026T2, coherente con el panel de CCAA."""
+    i = N.set_index("trimestre")["tasa_paro_epa"]
+    v = i.dropna()
+    assert v.index[0] == "2002Q1" and v.index[-1] == "2026Q2" and len(v) == 98
+    assert v.between(5, 30).all()
+    raw = pd.read_csv(RAIZ / "data" / "raw" / "ine_v2_epa_prov.csv", dtype={"codigo": str})
+    r = raw[raw["codigo"] == "00"].pivot_table(index="periodo", columns="medida", values="valor")
+    esp = (r["EPA_parados"] / (r["EPA_parados"] + r["EPA_ocupados"]) * 100)
+    assert np.allclose(v.to_numpy(), esp.reindex([x.replace("Q", "T") for x in v.index]).to_numpy())

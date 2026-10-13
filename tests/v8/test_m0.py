@@ -104,3 +104,19 @@ def test_senales_signos_y_confirmacion():
     s = m0.signos_en_regimen(E, et, "P1")
     assert s == {"x": 1}
     assert m0.signos_en_regimen(E, et, "P3") == {"x": -1}
+
+
+def test_umbral_con_tasa_de_paro_y_nivel_exploratorio(corrida):
+    """J8/J9/J22: la observable del umbral es la tasa de paro (ocupados solo sensibilidad); nivel EXPLORATORIO; tiempos fuera de resultado.json."""
+    assert m0.TH_Q["tasa_paro"] == "tasa_paro_epa" and "d4_ocupados_sensibilidad" in m0.TH_Q
+    assert not any("SUSTITUTO" in k for k in m0.TH_Q)
+    d = pd.read_csv(corrida / "periodos_detectados.csv")
+    assert {"tasa_paro", "d4_ocupados_sensibilidad"} <= set(d.observable_umbral)
+    j = json.loads((corrida / "resultado.json").read_text())
+    assert j["nivel_evidencia"].startswith("EXPLORATORIO") and "ASOCIACION ROBUSTA" not in j["nivel_evidencia"].upper().replace("«ASOCIACIÓN ROBUSTA»", "")
+    assert "segundos" not in j and (corrida / "tiempos.json").exists()
+    r = pd.read_csv(corrida / "regla_m0.csv")
+    si = r[r.cumple == "si"]
+    assert si["lectura"].str.startswith("cumple la regla de §8").all()
+    assert (si["lectura"].str.contains("no sobrevive a BH") == (si["p_perm_BH_informativo"] >= 0.10)).all()
+    assert "segundos" not in (corrida / "resumen.md").read_text()

@@ -118,3 +118,54 @@ def test_salidas_contrato():
         assert k in res
     reg = pd.read_csv(OUT / "registro.csv")
     assert len(reg) >= len(coef) - 12 and (OUT / "resumen.md").exists()
+
+
+def _sintetico(signo_real=1.0, n=140, seed=5):
+    rng = np.random.default_rng(seed)
+    z = rng.normal(size=n)
+    x = signo_real * 0.8 * z + rng.normal(size=n)
+    y = -0.5 * x + rng.normal(size=n)
+    return y, x, z
+
+
+def test_p_unilateral_con_signo_apriori_y_etapa_unica():
+    """J3: con pi estimado > 0 el p a priori coincide con el de la herramienta; con pi estimado < 0 es el complementario."""
+    from herramientas import lp as LP
+    y, x, z = _sintetico(+1.0)
+    por_h = LP.lp_iv(y, x, z, controles=None, H=2, rezagos=1, acumulado=True)
+    pa = m5.p_uni_apriori(y, x, z, "menor", None, 1, True, h=1)
+    assert pa == pytest.approx(float(por_h.loc[por_h.h == 1, "ar_p_menor"].iloc[0]))
+    y2, x2, z2 = _sintetico(-1.0)       # primera etapa con signo contrario al a priori
+    ag = LP.lp_iv_agregado(y2, x2, z2, hs=(1, 2), rezagos=1, acumulado=True).iloc[0]
+    pa2 = m5.p_uni_apriori(y2, x2, z2, "menor", None, 1, True, agregado=(1, 2))
+    assert pa2 == pytest.approx(1 - float(ag["ar_p_menor"]), abs=1e-9) and pa2 > 0.5
+    # una sola regresion: F de etapa_agregada = F del contraste agregado; t_pi^2 = F; signo de pi
+    e = m5.etapa_agregada(y2, x2, z2, None, 1, True, (1, 2))
+    assert e["F"] == pytest.approx(float(ag["F_robusto"])) and e["t_pi"] ** 2 == pytest.approx(e["F"]) and e["pi"] < 0 and e["t_pi"] < 0
+
+
+def test_voto_s9_y_pct_total():
+    assert m5.voto_s9(5.0, False)[0] == "no" and "F=5.00" in m5.voto_s9(5.0, False)[1]
+    assert m5.voto_s9(5.0, True)[0] == "si" and m5.voto_s9(12.0, False)[0] == "si"
+    assert m5.voto_s9(50.0, True, "ccaa_panel")[0] == "no"
+    assert np.isnan(m5.pct_total(3.0, 0.01)) and m5.pct_total(5.0, 10.0) == pytest.approx(50.0)
+
+
+@pytest.mark.skipif(not (OUT / "resultado.json").exists(), reason="requiere ejecutar m5_lpiv.py")
+def test_salidas_correcciones_f4():
+    atr = pd.read_csv(OUT / "atribucion.csv")
+    assert list(atr.columns[-4:]) == ["variante", "principal", "vota_s9", "motivo_vota_s9"]
+    assert not atr.duplicated(["metodo", "mercado", "ambito", "periodo", "factor", "variante"]).any()
+    no = atr[atr.vota_s9 == "no"]
+    assert no["motivo_vota_s9"].notna().all()
+    assert (atr[atr.vota_s9 == "si"].b68_lo.notna()).all()      # vota solo con F >= 10 o AR 68 % acotado
+    hip = pd.read_csv(OUT / "hipotesis_m5.csv")
+    assert {"pi_primera_etapa", "t_primera_etapa", "signo_forma_reducida", "t_forma_reducida", "perm_instrumento_ok"} <= set(hip.columns)
+    assert "estimacion" not in hip.columns and "placebo_ok" not in hip.columns
+    coef = pd.read_csv(OUT / "coeficientes.csv")
+    c = coef[coef.p.notna()]
+    assert c.p_ajustado.notna().all() and set(c.metodo_ajuste) <= {"Holm", "BH"}
+    j = json.loads((OUT / "resultado.json").read_text())
+    assert "segundos" not in json.dumps(j) and "Tiempo" not in j["notas"] and (OUT / "tiempos.json").exists()
+    assert "Tiempo" not in (OUT / "resumen.md").read_text()
+    assert "IV2b" in j["notas"] and "tras construir el instrumento" in j["notas"]

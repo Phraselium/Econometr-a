@@ -49,7 +49,7 @@ def test_bartik_leave_one_out_sintetico():
     sec2 = sec.copy()
     sec2.loc[(sec2.geo == "ES30") & (sec2.nace_r2 == "F") & (sec2.anio == 2010), "valor"] *= 3
     B2, *_ = m5.construye_bartik(sec2)
-    assert B2.loc["ES30", 2010] == pytest.approx(B.loc["ES30", 2010]) or abs(B2.loc["ES30", 2010] - B.loc["ES30", 2010]) < 1e-9
+    assert abs(B2.loc["ES30", 2010] - B.loc["ES30", 2010]) < 1e-9
     assert abs(B2.loc["ES11", 2010] - B.loc["ES11", 2010]) > 1e-6
 
 
@@ -63,18 +63,21 @@ def test_panel_iv_coincide_con_ajuste_directo_y_lp_panel():
     x = 0.9 * z + rng.normal(size=N * T)
     y = 0.5 * x + rng.normal(size=N * T)
     d = pd.DataFrame({"ent": ent, "t": t, "y": y, "x": x, "z": z})
-    r = m5.panel_iv(d, "y", 1, 2, grid_n=801)
+    r = m5.panel_iv(d, "y", 0, 1, grid_n=801)
     assert r["F_robusto"] > 10 and r["beta"] == pytest.approx(0.5, abs=0.5)
     # reducida en b0 = 0 igual que lp_panel (misma especificacion con rezago 1 y efectos de tiempo)
-    ref = LP.lp_panel(d.rename(columns={"z": "zz"}).assign(z=d["z"]), "y", "z", "ent", "t", H=1, rezagos=1, efectos_tiempo=True)
-    assert r["pi_y"] == pytest.approx(ref.loc[ref.h == 1, "beta"].iloc[0], rel=1e-6, abs=1e-6)
+    ref = LP.lp_panel(d.rename(columns={"z": "zz"}).assign(z=d["z"]), "y", "z", "ent", "t", H=0, rezagos=1, efectos_tiempo=True)
+    dd0 = m5._diseno(d, "y", 0)
+    b0_, se0_, _ = m5._ajusta(dd0, "dep", ["z", "yl", "zl"], 1)   # lp_panel no incluye el rezago de x
+    assert b0_ == pytest.approx(ref.loc[ref.h == 0, "beta"].iloc[0], rel=1e-6, abs=1e-6)
+    assert se0_ == pytest.approx(ref.loc[ref.h == 0, "se"].iloc[0], rel=1e-4, abs=1e-6)
     # varianza cuadratica en b0: contraste con un ajuste directo en b0 = 0,5
-    dd = m5._diseno(d, "y", 1)
+    dd = m5._diseno(d, "y", 0)
     dd["w"] = dd["dep"] - 0.5 * dd["x"]
-    b, se, _ = m5._ajusta(dd, "w", ["z", "yl", "xl", "zl"], 2)
+    b, se, _ = m5._ajusta(dd, "w", ["z", "yl", "xl", "zl"], 1)
     assert b == pytest.approx(r["pi_y"] - 0.5 * r["pi_x"], rel=1e-6, abs=1e-8)
     # el beta verdadero (0,5) cae en el conjunto AR 95
-    assert r["ar_lo95"] <= 0.5 * 2 and r["ar_hi95"] >= 0.0
+    assert r["ar_lo95"] <= 0.5 <= r["ar_hi95"]
 
 
 def test_iv2_construccion_sintetica():

@@ -1,0 +1,22 @@
+{
+ "compra/ccaa_panel": {
+  "fidelidad_r2": 0.7786511660487527,
+  "reglas": "|--- bis_hpi_real <= 0.34\n|   |--- ocupados <= 0.38\n|   |   |--- hip_importe_real <= -23.66\n|   |   |   |--- value: [-8.34]\n|   |   |--- hip_importe_real >  -23.66\n|   |   |   |--- value: [-5.34]\n|   |--- ocupados >  0.38\n|   |   |--- tasa_paro <= 18.28\n|   |   |   |--- value: [0.24]\n|   |   |--- tasa_paro >  18.28\n|   |   |   |--- value: [-3.66]\n|--- bis_hpi_real >  0.34\n|   |--- tasa_paro <= 8.92\n|   |   |--- tipo_hip_real <= 0.68\n|   |   |   |--- value: [8.12]\n|   |   |--- tipo_hip_real >  0.68\n|   |   |   |--- value: [4.86]\n|   |--- tasa_paro >  8.92\n|   |   |--- hpi_ea20 <= 5.37\n|   |   |   |--- value: [1.15]\n|   |   |--- hpi_ea20 >  5.37\n|   |   |   |--- value: [-2.31]\n",
+  "max_corr_abs_entre_variables": 0.9642303587568822
+ },
+ "compra/nacional": {
+  "fidelidad_r2": 0.9165062962160796,
+  "reglas": "|--- rdb_real <= 0.98\n|   |--- terminadas <= -27.19\n|   |   |--- rdb_real <= -3.13\n|   |   |   |--- value: [-9.81]\n|   |   |--- rdb_real >  -3.13\n|   |   |   |--- value: [-6.28]\n|   |--- terminadas >  -27.19\n|   |   |--- value: [-2.79]\n|--- rdb_real >  0.98\n|   |--- pob_extranj_ine <= 15.85\n|   |   |--- credito_stock_real <= -1.60\n|   |   |   |--- value: [1.16]\n|   |   |--- credito_stock_real >  -1.60\n|   |   |   |--- value: [5.84]\n|   |--- pob_extranj_ine >  15.85\n|   |   |--- value: [11.95]\n",
+  "max_corr_abs_entre_variables": 0.9319091566068113
+ },
+ "alquiler/ccaa_panel": {
+  "fidelidad_r2": 0.8815763001034609,
+  "reglas": "|--- hpi_ea20 <= 6.22\n|   |--- tipo_hip_real <= 3.65\n|   |   |--- bis_hpi_real <= -0.11\n|   |   |   |--- value: [-1.48]\n|   |   |--- bis_hpi_real >  -0.11\n|   |   |   |--- value: [-0.18]\n|   |--- tipo_hip_real >  3.65\n|   |   |--- tipo_hip_real <= 3.92\n|   |   |   |--- value: [3.57]\n|   |   |--- tipo_hip_real >  3.92\n|   |   |   |--- value: [1.91]\n|--- hpi_ea20 >  6.22\n|   |--- hpi_ea20 <= 8.81\n|   |   |--- tipo_hip_real <= -1.46\n|   |   |   |--- value: [-4.80]\n|   |   |--- tipo_hip_real >  -1.46\n|   |   |   |--- value: [-2.77]\n|   |--- hpi_ea20 >  8.81\n|   |   |--- salario_real <= -3.08\n|   |   |   |--- value: [-7.63]\n|   |   |--- salario_real >  -3.08\n|   |   |   |--- value: [-6.85]\n",
+  "max_corr_abs_entre_variables": 0.9642303587568822
+ },
+ "alquiler/nacional": {
+  "fidelidad_r2": 0.7807374466487186,
+  "reglas": "|--- tipo_hip_real <= -0.37\n|   |--- value: [-3.97]\n|--- tipo_hip_real >  -0.37\n|   |--- pob_total <= 0.54\n|   |   |--- salario_real <= -1.58\n|   |   |   |--- value: [-1.98]\n|   |   |--- salario_real >  -1.58\n|   |   |   |--- value: [-0.46]\n|   |--- pob_total >  0.54\n|   |   |--- tipo_hip_real <= 1.89\n|   |   |   |--- value: [0.34]\n|   |   |--- tipo_hip_real >  1.89\n|   |   |   |--- value: [1.87]\n",
+  "max_corr_abs_entre_variables": 0.9344838148109261
+ }
+}

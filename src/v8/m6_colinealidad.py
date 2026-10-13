@@ -188,7 +188,7 @@ def diagnosticos_ols(res, A):
     from statsmodels.stats.diagnostic import acorr_breusch_godfrey, breaks_cusumolsresid, het_breuschpagan, linear_reset
     from statsmodels.stats.stattools import jarque_bera
     out = dict(bg_p=np.nan, bp_p=np.nan, jb_p=np.nan, reset_p=np.nan, cusum_estable=np.nan)
-    for k, f in (("bg_p", lambda: acorr_breusch_godfrey(res, nlags=min(4, max(1, res.nobs // 6)))[1]),
+    for k, f in (("bg_p", lambda: acorr_breusch_godfrey(res, nlags=int(min(4, max(1, res.nobs // 6))), store=False, result_object=False)[1]),
                  ("bp_p", lambda: het_breuschpagan(res.resid, A)[1]),
                  ("jb_p", lambda: jarque_bera(res.resid)[1]),
                  ("reset_p", lambda: float(linear_reset(res, power=2, use_f=True).pvalue)),

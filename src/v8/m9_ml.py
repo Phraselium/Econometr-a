@@ -333,7 +333,7 @@ def tablas_shap(res, mercado, ambito, metodo="shap", fams=None, nota_extra=""):
             atr.append(dict(metodo=metodo, mercado=mercado, ambito=ambito, periodo=pr, factor=f, contribucion_pp=float(c[f]),
                             pct_total=float(100 * ab[f] / tot) if tot > 0 else np.nan, b68_lo=q[1], b68_hi=q[2], b90_lo=q[0], b90_hi=q[3],
                             capa="C4", notas=f"{NOTA_C4}; contribucion media a la tasa interanual (pp) en el periodo; pct_total = cuota de |SHAP| medio; "
-                                             f"bandas = bootstrap de bloques de 4 trimestres (B={len(reps)}), reajuste del modelo{nota_extra}"))
+                                             f"bandas = percentiles del bootstrap de bloques de 4 trimestres (B={len(reps)}), reajuste del modelo; pueden no contener el punto (sesgo de la replica){nota_extra}"))
         qr = np.quantile([r[2] for r in reps], [0.05, 0.16, 0.84, 0.95])
         atr.append(dict(metodo=metodo, mercado=mercado, ambito=ambito, periodo=pr, factor="residuo", contribucion_pp=float(rs), pct_total=np.nan,
                         b68_lo=qr[1], b68_hi=qr[2], b90_lo=qr[0], b90_hi=qr[3], capa="C4",

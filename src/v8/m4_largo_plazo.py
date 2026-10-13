@@ -296,7 +296,7 @@ def ecm_lambda(G, yc, ect, xs):
 
 
 # ------------------------------------------------------------------ fuera de muestra
-def fuera_de_muestra(G, mk, xs, rupturas, K=5, embargo=4):
+def fuera_de_muestra(G, mk, xs, rupturas, K=5, embargo=4, comunes=()):
     yc = "y_" + mk
     fj = fijas_de(xs, rupturas)
     base = G[[yc] + xs + fj].copy()
@@ -307,10 +307,11 @@ def fuera_de_muestra(G, mk, xs, rupturas, K=5, embargo=4):
     for x in xs:
         cols[f"{x}_d1"] = base[x].diff().shift(1) * 100
     Z = pd.concat([base, pd.DataFrame(cols)], axis=1)
+    Z = pd.concat([Z, G[list(comunes)].add_prefix('_c_'), G[list(comunes)].diff().shift(1).add_prefix('_cd_')], axis=1) if comunes else Z
     Z = Z.loc[INICIO[mk]:].dropna()
     n = len(Z)
     cort = np.linspace(0, n, K + 1).astype(int)
-    lagc = [f"dy{j}" for j in range(1, 3)] + [f"{x}_d1" for x in xs]
+    lagc = [f"dy{j}" for j in range(1, 5)] + [f"{x}_d1" for x in xs]
     err = {"AR4": np.full(n, np.nan), "SR (dy, dX rezagados)": np.full(n, np.nan), "ECM (SR + ECT)": np.full(n, np.nan)}
     yv = Z["dy"].values
     L = np.column_stack([np.ones(n)] + [Z[f"dy{j}"].values for j in range(1, 5)])
@@ -377,7 +378,7 @@ def serie_ajustada(G, v):
         dxs = s.diff()
         j = list(s.index).index("2021Q1")
         dxs.iloc[j] = np.nanmean([dxs.iloc[j - 1], dxs.iloc[j + 1]])
-        s = s.iloc[0] + dxs.fillna(0).cumsum()
+        s = s.loc[s.first_valid_index()] + dxs.fillna(0).cumsum()
         s[G[v].isna()] = np.nan
     return s
 
@@ -461,6 +462,7 @@ def contabilidad_hogares(G, d, B, rng):
     brecha_q = dH - term
     gap_pct = 100 * brecha_q / H.shift(1)           # % del stock de hogares
     gap4 = gap_pct.rolling(4).sum()
+    G = G.loc["2002Q1":]
     p = G["y_compra"].diff() * 100
     a = G["y_alquiler"].diff() * 100
     filas, res_f = [], []
@@ -503,7 +505,7 @@ def contabilidad_hogares(G, d, B, rng):
             q = np.nanquantile(dr, [0.05, 0.16, 0.84, 0.95])
             ass.append({"mercado": mk, "periodo": P, "n": n, "b": bb, "ee": float(r.bse["g"]), "p": float(r.pvalues["g"]), "contrib_pp": bb * Xv.sum(),
                         "b68_lo": q[1], "b68_hi": q[2], "b90_lo": q[0], "b90_hi": q[3],
-                        "nota": "dy_q = b gap4_{t-1}; contrib = b * suma de gap4 rezagado en el periodo"})
+                        "nota": "dy_q = b gap4_{t-1}; contrib = b * suma de gap4 rezagado en el periodo" + ("; n<12: inferencia HAC no fiable" if n < 12 else "")})
     asc = pd.DataFrame(ass)
     for r in asc[asc.periodo != "completo"].itertuples():
         if r.b == r.b:
@@ -613,8 +615,8 @@ def main(argv=None):
     # ---- fuera de muestra (todas las especificaciones, sin y con rupturas)
     for mk, specs in SPECS.items():
         for sn, xs in specs.items():
-            for rup in (False, True):
-                o = fuera_de_muestra(G, mk, xs, rup)
+            for rup in (False,):   # con escalones no es identificable por bloques (un escalon cae entero en un bloque): se omite, ver notas
+                o = fuera_de_muestra(G, mk, xs, rup, comunes=SPECS[mk][COMPLETA[mk]])
                 oos_f.append({"mercado": mk, "spec": sn, "rupturas": "con_rupturas" if rup else "sin_rupturas", "n": o["n"], "muestra": o["muestra"],
                               **{f"rmse_{k}": v for k, v in o["rmse"].items()},
                               **{f"dm_p_{k}": v["p"] for k, v in o["dm_vs_ar4"].items()}, **{f"dm_{k}": v["DM_HLN"] for k, v in o["dm_vs_ar4"].items()}})

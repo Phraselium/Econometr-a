@@ -49,3 +49,9 @@
 ## F4 M1 y M8 (2026-10-13)
 - **Hecho:** M1 (factor comun; H8-8 p Holm 0,669 no rechaza: P2 y P4 por debajo del 50 %; H8-9 r = 0,60, p Holm 0,020) y M8 (regional: 17 CCAA, panel FE-DK, LP panel, CV por provincia y Valencia ciudad). Scripts `src/v8/m1_factor_comun.py`, `src/v8/m8_regional.py`; salidas en `output/v8/M1/` y `output/v8/M8/`; tests `tests/v8/test_m1.py`, `test_m8.py`. Ejecucion completa ~20 s cada uno. Desviaciones anotadas en `docs/v8/desviaciones.md`.
 - **Siguiente:** integracion de M1/M8 en la sintesis (atribucion con `factor_europeo`, `factor_comun`).
+
+## M5 (instrumentos externos IV1-IV3), hecho (2026-10-13)
+- Hecho: `src/v8/fetch_m5.py` (descarga única Eurostat a data/raw/v8/eurostat_migr/), `src/v8/m5_lpiv.py` (52 s), salidas en output/v8/M5/, tests/v8/test_m5.py (6 tests). Desviaciones y aclaraciones en desviaciones.md (IV1, IV2, IV2b, IV3); datos nuevos en diccionario.md.
+- Resultado: instrumentos débiles (F efectivo 0,05-2,4 en IV1/IV2; ≤ 8 en IV3), AR no acotado; H8-5, H8-6 y H8-7 no rechazadas (p Holm 0,83); todo C4, sin lectura causal. Primera etapa de IV1 con signo contrario al esperado (π < 0).
+- Siguiente: integrar atribucion.csv (metodo `lpiv`, C4, bandas vacías donde AR no acotado) en la síntesis M0/M6.
+- Tokens de subagente: no registrados por el propio subagente.

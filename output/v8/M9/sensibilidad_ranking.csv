@@ -1,0 +1,89 @@
+mercado,ambito,variante,factor,imp_abs_pp,rango,spearman_vs_principal
+compra,ccaa_panel,A_sin_monotonia,factor_europeo,1.7803484749985228,1,0.942857142857143
+compra,ccaa_panel,A_sin_monotonia,empleo_renta,1.4401710278180209,2,0.942857142857143
+compra,ccaa_panel,A_sin_monotonia,credito_tipos,1.0517280949789585,3,0.942857142857143
+compra,ccaa_panel,A_sin_monotonia,demografia,0.6847958081703654,4,0.942857142857143
+compra,ccaa_panel,A_sin_monotonia,oferta,0.4267522636233367,5,0.942857142857143
+compra,ccaa_panel,A_sin_monotonia,demanda_externa,0.2539591135003559,6,0.942857142857143
+compra,ccaa_panel,B_monotono,factor_europeo,1.9719693255765447,1,1.0
+compra,ccaa_panel,B_monotono,empleo_renta,1.6211635178529604,2,1.0
+compra,ccaa_panel,B_monotono,demografia,0.7001215109159099,3,1.0
+compra,ccaa_panel,B_monotono,credito_tipos,0.6712402455555361,4,1.0
+compra,ccaa_panel,B_monotono,oferta,0.43280799255635244,5,1.0
+compra,ccaa_panel,B_monotono,demanda_externa,0.21946271856268937,6,1.0
+compra,ccaa_panel,B_sin_monotonia,factor_europeo,1.7331652889742115,1,0.942857142857143
+compra,ccaa_panel,B_sin_monotonia,empleo_renta,1.5402029563016975,2,0.942857142857143
+compra,ccaa_panel,B_sin_monotonia,credito_tipos,0.9762920465834911,3,0.942857142857143
+compra,ccaa_panel,B_sin_monotonia,demografia,0.7185943740278967,4,0.942857142857143
+compra,ccaa_panel,B_sin_monotonia,oferta,0.41879476950364497,5,0.942857142857143
+compra,ccaa_panel,B_sin_monotonia,demanda_externa,0.2219408327686921,6,0.942857142857143
+compra,ccaa_panel,A_monotono (principal),factor_europeo,2.1741090495305015,1,1.0
+compra,ccaa_panel,A_monotono (principal),empleo_renta,1.5523718491529688,2,1.0
+compra,ccaa_panel,A_monotono (principal),demografia,0.6938236425210466,3,1.0
+compra,ccaa_panel,A_monotono (principal),credito_tipos,0.6017603494094734,4,1.0
+compra,ccaa_panel,A_monotono (principal),oferta,0.44861446606031025,5,1.0
+compra,ccaa_panel,A_monotono (principal),demanda_externa,0.2582960223471162,6,1.0
+compra,nacional,A_sin_monotonia,empleo_renta,2.73837394112026,1,0.9999999999999999
+compra,nacional,A_sin_monotonia,factor_europeo,1.503958009256614,2,0.9999999999999999
+compra,nacional,A_sin_monotonia,demografia,1.3848535298627267,3,0.9999999999999999
+compra,nacional,A_sin_monotonia,credito_tipos,1.0552629059564331,4,0.9999999999999999
+compra,nacional,A_sin_monotonia,oferta,0.48536645911563014,5,0.9999999999999999
+compra,nacional,B_monotono,empleo_renta,2.888818442175071,1,0.8999999999999998
+compra,nacional,B_monotono,demografia,1.3549188710336488,2,0.8999999999999998
+compra,nacional,B_monotono,factor_europeo,1.1087451219726743,3,0.8999999999999998
+compra,nacional,B_monotono,credito_tipos,1.1020416962318038,4,0.8999999999999998
+compra,nacional,B_monotono,oferta,0.7525034674096528,5,0.8999999999999998
+compra,nacional,B_sin_monotonia,empleo_renta,2.854865746492263,1,0.7
+compra,nacional,B_sin_monotonia,demografia,1.3567864219502412,2,0.7
+compra,nacional,B_sin_monotonia,credito_tipos,1.1365584776151552,3,0.7
+compra,nacional,B_sin_monotonia,factor_europeo,1.1123113363392623,4,0.7
+compra,nacional,B_sin_monotonia,oferta,0.7250255747594154,5,0.7
+compra,nacional,A_monotono (principal),empleo_renta,2.7581565625026796,1,1.0
+compra,nacional,A_monotono (principal),factor_europeo,1.4826297823468153,2,1.0
+compra,nacional,A_monotono (principal),demografia,1.355393367187626,3,1.0
+compra,nacional,A_monotono (principal),credito_tipos,1.057025342621629,4,1.0
+compra,nacional,A_monotono (principal),oferta,0.5196018076023067,5,1.0
+alquiler,ccaa_panel,A_sin_monotonia,credito_tipos,0.815988225918383,1,-0.028571428571428574
+alquiler,ccaa_panel,A_sin_monotonia,factor_europeo,0.6121390909365456,2,-0.028571428571428574
+alquiler,ccaa_panel,A_sin_monotonia,empleo_renta,0.1543417902023351,3,-0.028571428571428574
+alquiler,ccaa_panel,A_sin_monotonia,demografia,0.12791446383197935,4,-0.028571428571428574
+alquiler,ccaa_panel,A_sin_monotonia,oferta,0.04274849651447805,5,-0.028571428571428574
+alquiler,ccaa_panel,A_sin_monotonia,demanda_externa,0.03958360538626356,6,-0.028571428571428574
+alquiler,ccaa_panel,B_monotono,factor_europeo,1.0489650771885726,1,0.942857142857143
+alquiler,ccaa_panel,B_monotono,empleo_renta,0.3223129293928863,2,0.942857142857143
+alquiler,ccaa_panel,B_monotono,demografia,0.08422152224802087,3,0.942857142857143
+alquiler,ccaa_panel,B_monotono,demanda_externa,0.06682630821322483,4,0.942857142857143
+alquiler,ccaa_panel,B_monotono,oferta,0.030032520926734328,5,0.942857142857143
+alquiler,ccaa_panel,B_monotono,credito_tipos,0.026430301377045187,6,0.942857142857143
+alquiler,ccaa_panel,B_sin_monotonia,credito_tipos,0.7066289729588426,1,-0.028571428571428574
+alquiler,ccaa_panel,B_sin_monotonia,factor_europeo,0.6632799468372534,2,-0.028571428571428574
+alquiler,ccaa_panel,B_sin_monotonia,empleo_renta,0.18406420132073661,3,-0.028571428571428574
+alquiler,ccaa_panel,B_sin_monotonia,demografia,0.14576785317646615,4,-0.028571428571428574
+alquiler,ccaa_panel,B_sin_monotonia,oferta,0.02437509396246405,5,-0.028571428571428574
+alquiler,ccaa_panel,B_sin_monotonia,demanda_externa,0.024111316346380054,6,-0.028571428571428574
+alquiler,ccaa_panel,A_monotono (principal),factor_europeo,1.1079616840584414,1,1.0
+alquiler,ccaa_panel,A_monotono (principal),empleo_renta,0.27853050815684305,2,1.0
+alquiler,ccaa_panel,A_monotono (principal),demanda_externa,0.0950705361236239,3,1.0
+alquiler,ccaa_panel,A_monotono (principal),demografia,0.08499498256173406,4,1.0
+alquiler,ccaa_panel,A_monotono (principal),oferta,0.04214233895789758,5,1.0
+alquiler,ccaa_panel,A_monotono (principal),credito_tipos,0.04053910733999073,6,1.0
+alquiler,nacional,A_sin_monotonia,demografia,0.7099286331946408,1,0.7
+alquiler,nacional,A_sin_monotonia,credito_tipos,0.5308876566684854,2,0.7
+alquiler,nacional,A_sin_monotonia,empleo_renta,0.5170036588222016,3,0.7
+alquiler,nacional,A_sin_monotonia,oferta,0.21939291332549588,4,0.7
+alquiler,nacional,A_sin_monotonia,factor_europeo,0.15374392488191763,5,0.7
+alquiler,nacional,B_monotono,empleo_renta,0.6975416693793269,1,0.9999999999999999
+alquiler,nacional,B_monotono,demografia,0.5308477131699048,2,0.9999999999999999
+alquiler,nacional,B_monotono,credito_tipos,0.3646533348317543,3,0.9999999999999999
+alquiler,nacional,B_monotono,oferta,0.2869494253407058,4,0.9999999999999999
+alquiler,nacional,B_monotono,factor_europeo,0.05482646719155648,5,0.9999999999999999
+alquiler,nacional,B_sin_monotonia,demografia,0.7021423380135997,1,0.7
+alquiler,nacional,B_sin_monotonia,credito_tipos,0.5945419964270677,2,0.7
+alquiler,nacional,B_sin_monotonia,empleo_renta,0.45159509741931964,3,0.7
+alquiler,nacional,B_sin_monotonia,oferta,0.2848577689822775,4,0.7
+alquiler,nacional,B_sin_monotonia,factor_europeo,0.1489425493073148,5,0.7
+alquiler,nacional,A_monotono (principal),empleo_renta,0.6867016996833354,1,1.0
+alquiler,nacional,A_monotono (principal),demografia,0.5709824857802205,2,1.0
+alquiler,nacional,A_monotono (principal),credito_tipos,0.32502574795459965,3,1.0
+alquiler,nacional,A_monotono (principal),oferta,0.28018226391032675,4,1.0
+alquiler,nacional,A_monotono (principal),factor_europeo,0.10555313863115687,5,1.0

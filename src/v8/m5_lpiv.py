@@ -181,7 +181,7 @@ def construye_bartik(sec: pd.DataFrame, anio_base=2008):
         g = 100 * np.log(resto).diff(axis=1)
         out[c] = g.mul(cuotas.loc[c], axis=0)  # contribucion por sector
     Bs = pd.concat(out, names=["geo", "nace_r2"])   # (geo,sector) x anio
-    B = Bs.groupby(level="geo").sum()
+    B = Bs.groupby(level="geo").sum(min_count=1)
     tot = sec[(sec["nace_r2"] == "TOTAL") & sec["geo"].isin(NUTS_TODOS)].pivot_table(index="geo", columns="anio", values="valor", aggfunc="sum")
     return B, Bs, cuotas, tot
 
@@ -692,7 +692,7 @@ def main():
            "p_ajustado": {h["id"]: float(h["p_holm"]) for h in hips},
            "nivel_evidencia": "C3 solo en las filas con cumple_c3=True; el resto C4 (asociacion, sin lenguaje causal). " + AVISO,
            "diagnosticos": {"primera_etapa_IV1": {"pi": fs5["pi"], "t": fs5["t"], "nota": "signo esperado > 0 para un shock contractivo (sube el Euribor); signo contrario o t pequeno = instrumento dudoso"}, "F_efectivo_agregado": {k: v["F_efectivo"] for k, v in iv1_json.items()}, "iv2_fallo": iv2_fallo, "iv3_fallo": iv3_fallo,
-                            "tamano_AR_panel": "AR de panel calculado con 3 ajustes DK exactos; extension no validada por Monte Carlo en F3 (contrastada con lp_panel en beta0=0 en tests)"},
+                            "tamano_AR_panel": "AR de panel calculado con 3 ajustes DK exactos (contrastado con lp_panel en beta0=0 en tests). Monte Carlo minimo propio (N=17, T=14, 150 reps, beta=0, instrumento fuerte, factor comun temporal): tamano del AR al 5 % = 0,113 y cobertura del AR95 = 0,887: Driscoll-Kraay con T pequeno es anticonservador; los p de IV3 se leen con ese sesgo"},
            "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None, "nota": "No aplica: modulo de identificacion (efectos), no de prediccion; no se compara con AR(4) ni ECM v1."},
            "notas": ("Fallido = no rechazada en Holm. Muestras: IV1 precio 1999Q2-2025Q3 menos horizontes, alquiler desde 2002Q3; IV2 anual 2003-2024; IV3 17 CCAA 2009-2025. "
                      "Cuotas IV2 = stock de residentes por ciudadania a 1-1-2002 (no flujo). Eurostat LFS NUTS2: posibles rupturas de serie no tratadas. "

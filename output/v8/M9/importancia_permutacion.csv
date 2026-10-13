@@ -1,0 +1,23 @@
+factor,delta_rmse,mercado,ambito,nota
+empleo_renta,0.06288743603230118,compra,ccaa_panel,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+oferta,0.03176572821898452,compra,ccaa_panel,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+demografia,0.12932945815406902,compra,ccaa_panel,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+factor_europeo,-0.04481732395177547,compra,ccaa_panel,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+demanda_externa,0.0012598235462286842,compra,ccaa_panel,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+credito_tipos,-0.01511922604844818,compra,ccaa_panel,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+credito_tipos,0.005136768994277218,compra,nacional,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+demografia,0.0009427474145796144,compra,nacional,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+empleo_renta,0.03480546810171733,compra,nacional,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+oferta,-0.06411415693952867,compra,nacional,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+factor_europeo,-0.16738907369904035,compra,nacional,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+empleo_renta,0.030019655571077532,alquiler,ccaa_panel,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+demanda_externa,0.0085531464037473,alquiler,ccaa_panel,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+factor_europeo,-0.029513493230050137,alquiler,ccaa_panel,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+oferta,-0.0015740618434755584,alquiler,ccaa_panel,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+demografia,0.0023012808924514788,alquiler,ccaa_panel,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+credito_tipos,-0.006859254080974209,alquiler,ccaa_panel,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+empleo_renta,0.007945002629714804,alquiler,nacional,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+demografia,0.07745262164362712,alquiler,nacional,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+oferta,-0.04808279842486807,alquiler,nacional,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+credito_tipos,-0.0633158839579877,alquiler,nacional,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas
+factor_europeo,2.0724577474755603e-05,alquiler,nacional,permutacion agrupada fuera de muestra (media de los bloques de prueba); aviso: familias correlacionadas

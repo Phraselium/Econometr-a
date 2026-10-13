@@ -155,7 +155,7 @@ def correr(d, celdas, desc, reg, max_specs=MAX_SPECS, seed=SEED):
         specs["p_bh"] = np.nan
         for _, g in specs.groupby(["mercado", "periodo"]):
             specs.loc[g.index, "p_bh"] = C.bh(g["p"].values, Q_BH)
-    return specs, pd.DataFrame(fallidas), truncado, n_rej
+    return specs, pd.DataFrame(fallidas, columns=["id", "mercado", "periodo", "factor", "variable", "estado", "motivo"]), truncado, n_rej
 
 
 def _resumir(g, merc, per, f, var):

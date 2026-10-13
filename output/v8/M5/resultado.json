@@ -1,0 +1,492 @@
+{
+ "rama": "M5",
+ "pregunta": "Efecto de un shock monetario del BCE (IV1), del empuje migratorio (IV2) y del empleo regional (IV3) sobre el precio real de compra y el alquiler real",
+ "capa": "C4",
+ "datos": "data/processed/v8/nacional_q_v8.csv, panel_ccaa_q_v8.csv; data/raw/v8/eurostat_migr (migr_imm1ctz, lfst_r_lfe2en2, descargados con src/v8/fetch_m5.py); data/raw/v8/eurostat_migr_pop1ctz_es.csv",
+ "N": {
+  "IV1_compra": 102,
+  "IV1_alquiler": 88,
+  "IV2": 20,
+  "IV3": 238
+ },
+ "metodo": "LP-IV acumulado (2SLS por horizonte, F efectivo Olea-Pflueger, intervalos Anderson-Rubin HAC), agregado h=4-8 (IV1) y h=1-2 anual (IV2, IV3); panel Driscoll-Kraay con AR exacto (IV3); Holm en {H8-5, H8-6, H8-7}; BH (q=0,10) en lo exploratorio",
+ "estimacion": {
+  "hipotesis": {
+   "H8-5": {
+    "estimacion": -8.77607142672617,
+    "ar_p_unilateral": 0.2756127899887624,
+    "p_holm": 0.8268383699662871,
+    "capa": "C4",
+    "cumple_c3": false,
+    "lectura": "no respaldada tras Holm (instrumento no supera C3)"
+   },
+   "H8-6": {
+    "estimacion": -2.9120668207617553,
+    "ar_p_unilateral": 0.36506095422171814,
+    "p_holm": 0.8268383699662871,
+    "capa": "C4",
+    "cumple_c3": false,
+    "lectura": "no respaldada tras Holm (instrumento no supera C3)"
+   },
+   "H8-7": {
+    "estimacion": -0.5111800089209866,
+    "ar_p_unilateral": 0.5363709418045447,
+    "p_holm": 0.8268383699662871,
+    "capa": "C4",
+    "cumple_c3": false,
+    "lectura": "no respaldada tras Holm (instrumento no supera C3)"
+   }
+  },
+  "IV1": {
+   "M5_IV1_compra_euribor_ln_p_tasado_real": {
+    "beta_h4_8": -8.77607142672617,
+    "ar95": [
+     -20977.886915619263,
+     20960.334772765807
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 1.831662636353921,
+    "p_ar_menor": 0.2756127899887624,
+    "p_ar_dos": 0.5512255799775247,
+    "pretendencias_ar_p": {
+     "-4": 0.5299871970930226,
+     "-3": 0.5549511821982214,
+     "-2": 0.41251207204372464
+    },
+    "placebo_p_perm": 0.61,
+    "n": 102,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "M5_IV1_alquiler_euribor_ln_ipc_alquiler_real": {
+    "beta_h4_8": -2.9120668207617553,
+    "ar95": [
+     -12187.44069518722,
+     12181.616561545698
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 0.7657170133199788,
+    "p_ar_menor": 0.36506095422171814,
+    "p_ar_dos": 0.7301219084434364,
+    "pretendencias_ar_p": {
+     "-4": 0.29664626067333544,
+     "-3": 0.30802407977223967,
+     "-2": 0.27435202075298176
+    },
+    "placebo_p_perm": 0.798,
+    "n": 88,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "M5_IV1_compra_hip_bde_ln_p_tasado_real": {
+    "beta_h4_8": -13.161101297770731,
+    "ar95": [
+     -37084.65937061278,
+     37058.337168017235
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 2.358348853196405,
+    "p_ar_menor": 0.2939631927216382,
+    "p_ar_dos": 0.5879263854432762,
+    "pretendencias_ar_p": {
+     "-4": 0.5419559674907704,
+     "-3": 0.5170197460109758,
+     "-2": 0.430160893337898
+    },
+    "placebo_p_perm": 0.646,
+    "n": 102,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "M5_IV1_alquiler_hip_bde_ln_ipc_alquiler_real": {
+    "beta_h4_8": -3.5292208840415378,
+    "ar95": [
+     -16662.75554294593,
+     16655.69710117785
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 1.1434137576906522,
+    "p_ar_menor": 0.37551946083538834,
+    "p_ar_dos": 0.7510389216707767,
+    "pretendencias_ar_p": {
+     "-4": 0.3907479479443139,
+     "-3": 0.4520169939724068,
+     "-2": 0.22289917749291663
+    },
+    "placebo_p_perm": 0.812,
+    "n": 88,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "M5_IV1_compra_euribor_ln_ipv_real": {
+    "beta_h4_8": 142.48802210489302,
+    "ar95": [
+     -2565316.249156182,
+     2565601.225200392
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 0.007097796684827513,
+    "p_ar_menor": 0.6594004111700453,
+    "p_ar_dos": 0.6811991776599093,
+    "pretendencias_ar_p": {
+     "-4": 0.1483712950915274,
+     "-3": 0.7624093950611706,
+     "-2": 0.21839090353349921
+    },
+    "placebo_p_perm": 0.766,
+    "n": 68,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "M5_IV1_compra_euribor_sin_covid_ln_p_tasado_real": {
+    "beta_h4_8": -9.393853504029073,
+    "ar95": [
+     -21553.391861753098,
+     21534.60415474504
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 1.7961326177638364,
+    "p_ar_menor": 0.2656221056917659,
+    "p_ar_dos": 0.5312442113835316,
+    "pretendencias_ar_p": {
+     "-4": 0.5541799545807731,
+     "-3": 0.5698756391626888,
+     "-2": 0.4249018115483336
+    },
+    "placebo_p_perm": 0.58,
+    "n": 102,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   }
+  },
+  "IV2": {
+   "estado": "ok",
+   "beta_h1_2": -0.5111800089209866,
+   "ar95": [
+    -5775.3313488935955,
+    5774.308988875754
+   ],
+   "F_efectivo": 0.047915019211055614,
+   "placebo_p_perm": 1.0,
+   "n_origenes": 39,
+   "n_destinos": 19,
+   "f_ok": false,
+   "ar_excluye_0": false,
+   "pretendencias_ok": true,
+   "placebo_ok": false,
+   "cumple_c3": false,
+   "c3_laxo": false
+  },
+  "IV2b_sin_normalizar": {
+   "beta_h1_2": -1.0065022594497661,
+   "F_efectivo": 2.096201874143158,
+   "p_ar_mayor": 0.7298026618355513,
+   "ar_acotado": false,
+   "placebo_p_perm": 0.45,
+   "f_ok": false,
+   "ar_excluye_0": false,
+   "pretendencias_ok": true,
+   "placebo_ok": false,
+   "cumple_c3": false,
+   "c3_laxo": false
+  },
+  "IV3": {
+   "l_precio_h0": {
+    "beta": 0.11341310158165457,
+    "ar95": [
+     -44347.40548579806,
+     44347.63231200122
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 2.3128849146073374,
+    "p_ar_dos": 0.840832245127248,
+    "n": 272,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "l_precio_h1": {
+    "beta": -0.0548784889675498,
+    "ar95": [
+     -104414.11388030542,
+     104414.00412332748
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 2.0620313308685168,
+    "p_ar_dos": 0.9659069346432395,
+    "n": 255,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "l_precio_h2": {
+    "beta": -1.7589661142547461,
+    "ar95": [
+     -396097.0204369512,
+     396093.5025047227
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 0.578560688521668,
+    "p_ar_dos": 0.6360421350931718,
+    "n": 238,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "l_precio_h1-2": {
+    "beta": -1.41276810040932,
+    "ar95": [
+     -310875.8770143159,
+     310873.05147811514
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 0.578560688521668,
+    "p_ar_dos": 0.6490993962077704,
+    "n": 238,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "l_alq_h0": {
+    "beta": -0.030761770012491717,
+    "ar95": [
+     -12215.314779685708,
+     12215.253256145683
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 2.746280493339769,
+    "p_ar_dos": 0.8318104634253309,
+    "n": 272,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "l_alq_h1": {
+    "beta": -0.12295425168917294,
+    "ar95": [
+     -15351.538480642092,
+     15351.292572138715
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 2.553040282830079,
+    "p_ar_dos": 0.4547437083782241,
+    "n": 255,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "l_alq_h2": {
+    "beta": -0.461065459668051,
+    "ar95": [
+     -56708.69980764999,
+     56707.77767673065
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 0.9858480966865856,
+    "p_ar_dos": 0.3058541943390176,
+    "n": 238,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "l_alq_h1-2": {
+    "beta": -0.4254896169269434,
+    "ar95": [
+     -46856.542416906595,
+     46855.691437672736
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 0.9858480966865856,
+    "p_ar_dos": 0.19735183988936134,
+    "n": 238,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "l_ipv_h0": {
+    "beta": 0.2707732656883939,
+    "ar95": [
+     -56718.318312250216,
+     56718.85985878159
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 2.839537723672097,
+    "p_ar_dos": 0.6793611110900089,
+    "n": 272,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "l_ipv_h1": {
+    "beta": 1.3003165292893395,
+    "ar95": [
+     -114871.58505101902,
+     114874.1856840776
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 2.672767851556951,
+    "p_ar_dos": 0.24179896683547564,
+    "n": 255,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "l_ipv_h2": {
+    "beta": 1.8781922036975218,
+    "ar95": [
+     -205003.24669960048,
+     205007.00308400788
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 1.0681745204147504,
+    "p_ar_dos": 0.13664588103690473,
+    "n": 238,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "l_ipv_h1-2": {
+    "beta": 2.0403979400599654,
+    "ar95": [
+     -193136.80899049676,
+     193140.88978637688
+    ],
+    "ar_acotado": false,
+    "F_efectivo": 1.0681745204147504,
+    "p_ar_dos": 0.08668409238334174,
+    "n": 238,
+    "f_ok": false,
+    "ar_excluye_0": false,
+    "pretendencias_ok": true,
+    "placebo_ok": false,
+    "cumple_c3": false,
+    "c3_laxo": false
+   },
+   "rotemberg_top": [
+    {
+     "sector": "B-E",
+     "g_medio": -0.07812506374083417,
+     "alpha": 1.7466338594498612
+    },
+    {
+     "sector": "G-I",
+     "g_medio": 0.16161167119227016,
+     "alpha": -0.40960419242100954
+    },
+    {
+     "sector": "F",
+     "g_medio": -0.354248296038904,
+     "alpha": -0.3026517136467444
+    },
+    {
+     "sector": "A",
+     "g_medio": -0.028077593032690175,
+     "alpha": -0.2549377898426275
+    }
+   ]
+  }
+ },
+ "ic95": {
+  "H8-5": [
+   null,
+   null
+  ],
+  "H8-6": [
+   null,
+   null
+  ],
+  "H8-7": [
+   null,
+   null
+  ]
+ },
+ "ic95_nota": "Intervalo Anderson-Rubin al 95 %; null = extremo no acotado (la rejilla llega al borde: instrumento debil, intervalo no informativo)",
+ "p_ajustado": {
+  "H8-5": 0.8268383699662871,
+  "H8-6": 0.8268383699662871,
+  "H8-7": 0.8268383699662871
+ },
+ "nivel_evidencia": "C3 solo en las filas con cumple_c3=True; el resto C4 (asociacion, sin lenguaje causal). Capa C3 solo si cumple los cuatro requisitos de §6 (F efectivo >= 10, AR que excluye el 0, pretendencias no significativas, placebo); si no, C4 y sin lenguaje causal. Placebo de baja potencia (Y7). Exclusion del instrumento no verificable con los datos.",
+ "diagnosticos": {
+  "primera_etapa_IV1": {
+   "pi": -1.402399184662193,
+   "t": -1.655079673183596,
+   "nota": "signo esperado > 0 para un shock contractivo (sube el Euribor); signo contrario o t pequeno = instrumento dudoso"
+  },
+  "F_efectivo_agregado": {
+   "M5_IV1_compra_euribor_ln_p_tasado_real": 1.831662636353921,
+   "M5_IV1_alquiler_euribor_ln_ipc_alquiler_real": 0.7657170133199788,
+   "M5_IV1_compra_hip_bde_ln_p_tasado_real": 2.358348853196405,
+   "M5_IV1_alquiler_hip_bde_ln_ipc_alquiler_real": 1.1434137576906522,
+   "M5_IV1_compra_euribor_ln_ipv_real": 0.007097796684827513,
+   "M5_IV1_compra_euribor_sin_covid_ln_p_tasado_real": 1.7961326177638364
+  },
+  "iv2_fallo": null,
+  "iv3_fallo": null,
+  "tamano_AR_panel": "AR de panel calculado con 3 ajustes DK exactos (contrastado con lp_panel en beta0=0 en tests). Monte Carlo minimo propio (N=17, T=14, 150 reps, beta=0, instrumento fuerte, factor comun temporal): tamano del AR al 5 % = 0,113 y cobertura del AR95 = 0,887: Driscoll-Kraay con T pequeno es anticonservador; los p de IV3 se leen con ese sesgo"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "No aplica: modulo de identificacion (efectos), no de prediccion; no se compara con AR(4) ni ECM v1."
+ },
+ "notas": "Fallido = no rechazada en Holm. Muestras: IV1 precio 1999Q2-2025Q3 menos horizontes, alquiler desde 2002Q3; IV2 anual 2003-2024; IV3 17 CCAA 2009-2025. Cuotas IV2 = stock de residentes por ciudadania a 1-1-2002 (no flujo). Eurostat LFS NUTS2: posibles rupturas de serie no tratadas. Tiempo: 52 s. Modo rapido=False."
+}

@@ -1,0 +1,469 @@
+{
+ "rama": "M9",
+ "pregunta": "Que familias de variables usa un modelo de ML interpretable (LightGBM, GAM) para predecir el crecimiento real del precio de compra y del alquiler, y supera a AR(4)/ECM v1 fuera de muestra? (contraste, no causal)",
+ "capa": "C4",
+ "datos": "panel_ccaa_q_v8.csv (17 CCAA, codigo INE), nacional_q_v8.csv",
+ "N": {
+  "compra/ccaa_panel": 1122,
+  "compra/nacional": 93,
+  "alquiler/ccaa_panel": 1122,
+  "alquiler/nacional": 90
+ },
+ "metodo": "LightGBM (monotonia en tipos, empleo, poblacion; sensibilidad sin monotonia), GLMGam (splines), SHAP agrupado por familia, permutacion agrupada fuera de muestra, ALE/PDP, interacciones SHAP, sustituto depth 3, estabilidad por bootstrap de bloques, DML manual con cross-fitting por bloques con embargo (C4)",
+ "estimacion": {
+  "shap_contribucion_media_pp_panel": {
+   "compra/P2/demografia": -0.125,
+   "compra/P2/empleo_renta": -1.782,
+   "compra/P2/credito_tipos": -0.692,
+   "compra/P2/oferta": -0.443,
+   "compra/P2/demanda_externa": -0.079,
+   "compra/P2/factor_europeo": -2.672,
+   "compra/P3/demografia": -0.401,
+   "compra/P3/empleo_renta": 0.482,
+   "compra/P3/credito_tipos": 0.256,
+   "compra/P3/oferta": 0.137,
+   "compra/P3/demanda_externa": -0.045,
+   "compra/P3/factor_europeo": 1.308,
+   "compra/P4/demografia": 0.053,
+   "compra/P4/empleo_renta": -0.195,
+   "compra/P4/credito_tipos": 0.318,
+   "compra/P4/oferta": 0.165,
+   "compra/P4/demanda_externa": 0.041,
+   "compra/P4/factor_europeo": -0.098,
+   "compra/P5/demografia": 0.646,
+   "compra/P5/empleo_renta": 2.114,
+   "compra/P5/credito_tipos": 0.462,
+   "compra/P5/oferta": 0.229,
+   "compra/P5/demanda_externa": 0.147,
+   "compra/P5/factor_europeo": 0.78,
+   "alquiler/P2/demografia": -0.018,
+   "alquiler/P2/empleo_renta": -0.099,
+   "alquiler/P2/credito_tipos": -0.018,
+   "alquiler/P2/oferta": 0.018,
+   "alquiler/P2/demanda_externa": 0.051,
+   "alquiler/P2/factor_europeo": 0.17,
+   "alquiler/P3/demografia": -0.037,
+   "alquiler/P3/empleo_renta": 0.101,
+   "alquiler/P3/credito_tipos": 0.023,
+   "alquiler/P3/oferta": -0.019,
+   "alquiler/P3/demanda_externa": -0.033,
+   "alquiler/P3/factor_europeo": 0.615,
+   "alquiler/P4/demografia": -0.003,
+   "alquiler/P4/empleo_renta": -0.031,
+   "alquiler/P4/credito_tipos": 0.017,
+   "alquiler/P4/oferta": -0.004,
+   "alquiler/P4/demanda_externa": 0.03,
+   "alquiler/P4/factor_europeo": -1.19,
+   "alquiler/P5/demografia": 0.067,
+   "alquiler/P5/empleo_renta": 0.029,
+   "alquiler/P5/credito_tipos": 0.014,
+   "alquiler/P5/oferta": -0.013,
+   "alquiler/P5/demanda_externa": -0.053,
+   "alquiler/P5/factor_europeo": -0.425
+  },
+  "dml_theta_completo": {
+   "compra/tipo_hip_real": {
+    "beta": 0.0447,
+    "ee": 0.1258,
+    "p_BH": 0.804
+   },
+   "compra/epa_pob": {
+    "beta": -0.1724,
+    "ee": 0.2398,
+    "p_BH": 0.73
+   },
+   "alquiler/tipo_hip_real": {
+    "beta": 0.4516,
+    "ee": 0.0972,
+    "p_BH": 0.0
+   },
+   "alquiler/epa_pob": {
+    "beta": 0.0725,
+    "ee": 0.1254,
+    "p_BH": 0.789
+   }
+  }
+ },
+ "ic95": "bandas 68/90 % por bootstrap de bloques en atribucion.csv; IC95 de DML en coeficientes.csv",
+ "p_ajustado": {
+  "metodo": "BH",
+  "q": 0.1,
+  "dml": {
+   "tipo_hip_real/compra": 0.804,
+   "epa_pob/compra": 0.73,
+   "tipo_hip_real/alquiler": 0.0,
+   "epa_pob/alquiler": 0.789
+  }
+ },
+ "nivel_evidencia": "EXPLORATORIO (C4)",
+ "diagnosticos": {
+  "muestras": {
+   "compra/ccaa_panel": {
+    "n": 1122,
+    "trimestres": [
+     "2009Q2",
+     "2026Q2"
+    ],
+    "n_test": 680,
+    "bases": [
+     "ar4",
+     "ar4_fc"
+    ]
+   },
+   "compra/nacional": {
+    "n": 93,
+    "trimestres": [
+     "2003Q2",
+     "2026Q2"
+    ],
+    "n_test": 40,
+    "bases": [
+     "ar4",
+     "ecm_v1"
+    ]
+   },
+   "alquiler/ccaa_panel": {
+    "n": 1122,
+    "trimestres": [
+     "2009Q2",
+     "2026Q2"
+    ],
+    "n_test": 680,
+    "bases": [
+     "ar4",
+     "ar4_fc"
+    ]
+   },
+   "alquiler/nacional": {
+    "n": 90,
+    "trimestres": [
+     "2004Q1",
+     "2026Q2"
+    ],
+    "n_test": 40,
+    "bases": [
+     "ar4",
+     "ecm_v1"
+    ]
+   }
+  },
+  "sustituto_fidelidad_r2": {
+   "compra/ccaa_panel": 0.779,
+   "compra/nacional": 0.917,
+   "alquiler/ccaa_panel": 0.882,
+   "alquiler/nacional": 0.781
+  },
+  "estabilidad": "estabilidad_ranking.csv",
+  "retardos": "todos los predictores con retardo de 1 trimestre",
+  "presupuesto_hiperparametros": "LGBM 2 configs x 2 (monotonia) ; GAM 2 alfas; sin seleccion por error fuera de muestra"
+ },
+ "fuera_muestra": {
+  "alquiler/ccaa_panel": {
+   "modelo": "lgbm_ar_Am (principal predictivo); lgbm_fam_Am (principal explicativo); gam_ar_alfa10; gam_fam_alfa10",
+   "rmse": {
+    "ar4": 0.9308,
+    "ar4_fc": 0.934,
+    "lgbm_fam_Am": 2.3132,
+    "lgbm_ar_Am": 1.5664,
+    "lgbm_fam_An": 2.3007,
+    "lgbm_ar_An": 1.6591,
+    "lgbm_fam_Bm": 2.3075,
+    "lgbm_ar_Bm": 1.4978,
+    "lgbm_fam_Bn": 2.2329,
+    "lgbm_ar_Bn": 1.5782,
+    "gam_fam_alfa10": 2.4234,
+    "gam_ar_alfa10": 1.108,
+    "gam_fam_alfa100": 2.2686,
+    "gam_ar_alfa100": 1.0589
+   },
+   "dm_vs_ar4": {
+    "ar4_fc": {
+     "DM": 0.627,
+     "p": 0.5345
+    },
+    "lgbm_fam_Am": {
+     "DM": 1.833,
+     "p": 0.0744
+    },
+    "lgbm_ar_Am": {
+     "DM": 1.554,
+     "p": 0.1283
+    },
+    "lgbm_fam_An": {
+     "DM": 1.805,
+     "p": 0.0788
+    },
+    "lgbm_ar_An": {
+     "DM": 1.757,
+     "p": 0.0867
+    },
+    "lgbm_fam_Bm": {
+     "DM": 1.896,
+     "p": 0.0654
+    },
+    "lgbm_ar_Bm": {
+     "DM": 1.517,
+     "p": 0.1372
+    },
+    "lgbm_fam_Bn": {
+     "DM": 1.806,
+     "p": 0.0787
+    },
+    "lgbm_ar_Bn": {
+     "DM": 1.746,
+     "p": 0.0887
+    },
+    "gam_fam_alfa10": {
+     "DM": 1.47,
+     "p": 0.1495
+    },
+    "gam_ar_alfa10": {
+     "DM": 1.719,
+     "p": 0.0935
+    },
+    "gam_fam_alfa100": {
+     "DM": 1.572,
+     "p": 0.1241
+    },
+    "gam_ar_alfa100": {
+     "DM": 1.69,
+     "p": 0.099
+    }
+   },
+   "base_mas_exigente": "ar4",
+   "predice_mejor_que_la_base_mas_exigente": []
+  },
+  "alquiler/nacional": {
+   "modelo": "lgbm_ar_Am (principal predictivo); lgbm_fam_Am (principal explicativo); gam_ar_alfa10; gam_fam_alfa10",
+   "rmse": {
+    "ar4": 0.9469,
+    "ecm_v1": 1.6206,
+    "lgbm_fam_Am": 2.8193,
+    "lgbm_ar_Am": 2.4644,
+    "lgbm_fam_An": 2.7934,
+    "lgbm_ar_An": 2.4835,
+    "lgbm_fam_Bm": 2.8181,
+    "lgbm_ar_Bm": 2.4877,
+    "lgbm_fam_Bn": 2.7847,
+    "lgbm_ar_Bn": 2.4809,
+    "gam_fam_alfa10": 2.7026,
+    "gam_ar_alfa10": 1.8392,
+    "gam_fam_alfa100": 2.569,
+    "gam_ar_alfa100": 1.7324
+   },
+   "dm_vs_ar4": {
+    "ecm_v1": {
+     "DM": 2.268,
+     "p": 0.029
+    },
+    "lgbm_fam_Am": {
+     "DM": 1.68,
+     "p": 0.101
+    },
+    "lgbm_ar_Am": {
+     "DM": 1.562,
+     "p": 0.1265
+    },
+    "lgbm_fam_An": {
+     "DM": 1.736,
+     "p": 0.0905
+    },
+    "lgbm_ar_An": {
+     "DM": 1.561,
+     "p": 0.1266
+    },
+    "lgbm_fam_Bm": {
+     "DM": 1.702,
+     "p": 0.0967
+    },
+    "lgbm_ar_Bm": {
+     "DM": 1.593,
+     "p": 0.1193
+    },
+    "lgbm_fam_Bn": {
+     "DM": 1.739,
+     "p": 0.09
+    },
+    "lgbm_ar_Bn": {
+     "DM": 1.573,
+     "p": 0.1237
+    },
+    "gam_fam_alfa10": {
+     "DM": 1.788,
+     "p": 0.0815
+    },
+    "gam_ar_alfa10": {
+     "DM": 3.542,
+     "p": 0.001
+    },
+    "gam_fam_alfa100": {
+     "DM": 1.817,
+     "p": 0.077
+    },
+    "gam_ar_alfa100": {
+     "DM": 3.471,
+     "p": 0.0013
+    }
+   },
+   "base_mas_exigente": "ar4",
+   "predice_mejor_que_la_base_mas_exigente": []
+  },
+  "compra/ccaa_panel": {
+   "modelo": "lgbm_ar_Am (principal predictivo); lgbm_fam_Am (principal explicativo); gam_ar_alfa10; gam_fam_alfa10",
+   "rmse": {
+    "ar4": 2.471,
+    "ar4_fc": 2.1413,
+    "lgbm_fam_Am": 5.7536,
+    "lgbm_ar_Am": 3.0642,
+    "lgbm_fam_An": 5.9858,
+    "lgbm_ar_An": 3.1861,
+    "lgbm_fam_Bm": 5.5857,
+    "lgbm_ar_Bm": 3.0071,
+    "lgbm_fam_Bn": 5.6875,
+    "lgbm_ar_Bn": 3.0672,
+    "gam_fam_alfa10": 5.5153,
+    "gam_ar_alfa10": 2.5572,
+    "gam_fam_alfa100": 5.0954,
+    "gam_ar_alfa100": 2.4617
+   },
+   "dm_vs_ar4": {
+    "ar4_fc": {
+     "DM": -3.133,
+     "p": 0.0033
+    },
+    "lgbm_fam_Am": {
+     "DM": 3.746,
+     "p": 0.0006
+    },
+    "lgbm_ar_Am": {
+     "DM": 2.109,
+     "p": 0.0414
+    },
+    "lgbm_fam_An": {
+     "DM": 3.443,
+     "p": 0.0014
+    },
+    "lgbm_ar_An": {
+     "DM": 2.374,
+     "p": 0.0226
+    },
+    "lgbm_fam_Bm": {
+     "DM": 3.579,
+     "p": 0.0009
+    },
+    "lgbm_ar_Bm": {
+     "DM": 1.602,
+     "p": 0.1171
+    },
+    "lgbm_fam_Bn": {
+     "DM": 3.442,
+     "p": 0.0014
+    },
+    "lgbm_ar_Bn": {
+     "DM": 1.727,
+     "p": 0.092
+    },
+    "gam_fam_alfa10": {
+     "DM": 3.567,
+     "p": 0.001
+    },
+    "gam_ar_alfa10": {
+     "DM": 0.532,
+     "p": 0.598
+    },
+    "gam_fam_alfa100": {
+     "DM": 2.853,
+     "p": 0.0069
+    },
+    "gam_ar_alfa100": {
+     "DM": -0.069,
+     "p": 0.9451
+    }
+   },
+   "base_mas_exigente": "ar4_fc",
+   "predice_mejor_que_la_base_mas_exigente": []
+  },
+  "compra/nacional": {
+   "modelo": "lgbm_ar_Am (principal predictivo); lgbm_fam_Am (principal explicativo); gam_ar_alfa10; gam_fam_alfa10",
+   "rmse": {
+    "ar4": 1.0909,
+    "ecm_v1": 2.7574,
+    "lgbm_fam_Am": 4.8144,
+    "lgbm_ar_Am": 2.6174,
+    "lgbm_fam_An": 4.866,
+    "lgbm_ar_An": 2.8296,
+    "lgbm_fam_Bm": 4.5521,
+    "lgbm_ar_Bm": 2.7668,
+    "lgbm_fam_Bn": 4.642,
+    "lgbm_ar_Bn": 2.8901,
+    "gam_fam_alfa10": 6.5606,
+    "gam_ar_alfa10": 2.333,
+    "gam_fam_alfa100": 6.508,
+    "gam_ar_alfa100": 2.2411
+   },
+   "dm_vs_ar4": {
+    "ecm_v1": {
+     "DM": 1.068,
+     "p": 0.2922
+    },
+    "lgbm_fam_Am": {
+     "DM": 2.816,
+     "p": 0.0076
+    },
+    "lgbm_ar_Am": {
+     "DM": 4.112,
+     "p": 0.0002
+    },
+    "lgbm_fam_An": {
+     "DM": 2.952,
+     "p": 0.0053
+    },
+    "lgbm_ar_An": {
+     "DM": 5.181,
+     "p": 0.0
+    },
+    "lgbm_fam_Bm": {
+     "DM": 2.815,
+     "p": 0.0076
+    },
+    "lgbm_ar_Bm": {
+     "DM": 5.064,
+     "p": 0.0
+    },
+    "lgbm_fam_Bn": {
+     "DM": 2.98,
+     "p": 0.0049
+    },
+    "lgbm_ar_Bn": {
+     "DM": 5.626,
+     "p": 0.0
+    },
+    "gam_fam_alfa10": {
+     "DM": 3.353,
+     "p": 0.0018
+    },
+    "gam_ar_alfa10": {
+     "DM": 3.741,
+     "p": 0.0006
+    },
+    "gam_fam_alfa100": {
+     "DM": 3.215,
+     "p": 0.0026
+    },
+    "gam_ar_alfa100": {
+     "DM": 3.355,
+     "p": 0.0018
+    }
+   },
+   "base_mas_exigente": "ar4",
+   "predice_mejor_que_la_base_mas_exigente": []
+  }
+ },
+ "notas": [
+  "contraste, no causal (C4): el reparto SHAP describe como el modelo usa las familias; con familias correlacionadas no identifica efectos",
+  "Ningun modelo se presenta como explicacion si no supera a la base mas exigente; DML sin identificacion (C4)",
+  "Variables comunes en el tiempo (tipos, europeas) aportan T observaciones independientes efectivas, no 17xT",
+  "econml no usado: DML manual con bloques con embargo (docs/v8/desviaciones.md)"
+ ],
+ "tiempo_s": 91.9
+}

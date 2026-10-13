@@ -5,3 +5,5 @@ mc_lpiv 133.0 s
 mc_dominancia 14.9 s
 mc_perm 30.8 s
 mc_shap 100.6 s
+mc_dfm 12.6 s
+resto ok 793.2 s

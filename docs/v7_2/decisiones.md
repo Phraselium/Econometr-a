@@ -21,3 +21,9 @@
   - Necesita el panel completo de `make clean` (holdout.load_full); por eso va en `make v7_2`, y su salida versionada alimenta `make v7_1`.
   - La ficha V72-BURBUJA reúne el resultado nacional (cocientes 0 de 4 tras BH; niveles 2 de 2) y el regional (7 de 34 en v5; 0 de 11 en v6, con otra muestra).
 - **X7.** gsadf_reverifica importa src/v5/r1b_gsadf.py, cuyo Registry se escribe al salir (atexit) y vaciaba output/v5/R1B/registro_gsadf.csv. Se redirige a output/v7_2/gsadf/registro_reverificacion.csv, donde quedan registradas las 14 especificaciones reverificadas; output/v5 no cambia.
+- **X8. Cierre, clon limpio con `make clean`, `make v7_2` y `make v7`:**
+  - todo con rc = 0 y `make check` con rc = 0;
+  - la reverificación del GSADF y la reestimación de la construcción coinciden con lo versionado;
+  - la única diferencia es output/v7/cuenta_especificaciones.*, que añade la fila v7_2 (14 especificaciones de la reverificación); se copia.
+  
+  `make all` sigue en su clon.

@@ -14,3 +14,4 @@ Recuento de filas de los registros de especificaciones (econ_utils.Registry y re
 | v6_1 | 595 | 41.714 |
 | v6_2 | 288 | 42.002 |
 | v7 | 1.494 | 43.496 |
+| v7_2 | 14 | 43.510 |

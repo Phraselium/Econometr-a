@@ -1,0 +1,7 @@
+herramienta,config,escenario,metrica,tipo,rol,valor,objetivo,cumple,laxo,reps,B,n,nota
+markov_switching,BIC,verdadero_1reg (T=250),% BIC elige k verdadero,acierto,referencia,1.0,>= 0.7,True,True,30,,250,
+markov_switching,BIC,verdadero_2reg (T=250),% BIC elige k verdadero,acierto,referencia,0.8,>= 0.7,True,True,30,,250,
+markov_switching,BIC,verdadero_3reg (T=250),% BIC elige k verdadero,acierto,referencia,0.7,>= 0.7,True,True,30,,250,
+markov_switching,BIC,verdadero_1reg (T=110),% BIC elige k verdadero,acierto,principal,0.9666666666666667,>= 0.7,True,True,30,,110,
+markov_switching,BIC,verdadero_2reg (T=110),% BIC elige k verdadero,acierto,principal,0.5666666666666667,>= 0.7,False,True,30,,110,
+markov_switching,BIC,verdadero_3reg (T=110),% BIC elige k verdadero,acierto,principal,0.36666666666666664,>= 0.7,False,False,30,,110,

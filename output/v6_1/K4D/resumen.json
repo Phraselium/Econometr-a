@@ -1,16 +1,16 @@
 {
  "enlaces_rotos": 0,
- "md_revisados": 580,
+ "md_revisados": 597,
  "referencias_por_estado": {
   "NO_VERIFICADA_MARCADA": 92,
   "VERIFICADA_COMPLETA": 103,
   "VERIFICADA_CUARTIL_NO_VERIFICADO": 11
  },
  "versiones": {
-  ".zenodo.json": "7.1",
-  "CHANGELOG.md (primera sección)": "7.1",
-  "CITATION.cff": "7.1",
-  "README.md": "7.1",
-  "README_REPLICACION.md": "7.1"
+  ".zenodo.json": "7.2",
+  "CHANGELOG.md (primera sección)": "7.2",
+  "CITATION.cff": "7.2",
+  "README.md": "7.2",
+  "README_REPLICACION.md": "7.2"
  }
 }

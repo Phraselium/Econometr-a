@@ -1,16 +1,16 @@
 # K4c · Coherencia de cifras (resumen)
 
-Cifras significativas analizadas: 5785. Fuente de verdad: output/v5/cifras_clave.csv.
+Cifras significativas analizadas: 5787. Fuente de verdad: output/v5/cifras_clave.csv.
 
 ## Recuentos globales
 
 | clase | n |
 |---|---|
-| EN_CIFRAS_CLAVE | 838 |
-| HISTORICA_MARCADA | 4099 |
+| EN_CIFRAS_CLAVE | 827 |
+| HISTORICA_MARCADA | 4111 |
 | SIN_FECHA | 828 |
 | HUERFANA | 16 |
-| CONTRADICTORIA | 4 |
+| CONTRADICTORIA | 5 |
 
 ## Recuentos por fichero
 
@@ -84,7 +84,7 @@ Cifras significativas analizadas: 5785. Fuente de verdad: output/v5/cifras_clave
 | output/v5/articulos/b_replicacion.md | 19 | 12 | 34 | 0 | 0 | 65 |
 | output/v5/articulos/c_territorio.md | 6 | 0 | 56 | 0 | 0 | 62 |
 | output/v5/correo_coev.md | 0 | 0 | 2 | 0 | 0 | 2 |
-| output/v5/informe_tecnico.md | 223 | 50 | 259 | 0 | 0 | 532 |
+| output/v5/informe_tecnico.md | 220 | 50 | 256 | 0 | 0 | 526 |
 | output/v5/linkedin/01.md | 2 | 0 | 2 | 0 | 0 | 4 |
 | output/v5/linkedin/02.md | 3 | 0 | 0 | 0 | 0 | 3 |
 | output/v5/linkedin/03.md | 2 | 0 | 4 | 0 | 0 | 6 |
@@ -96,15 +96,15 @@ Cifras significativas analizadas: 5785. Fuente de verdad: output/v5/cifras_clave
 | output/v5/linkedin/09.md | 0 | 0 | 3 | 0 | 0 | 3 |
 | output/v5/linkedin/10.md | 2 | 0 | 0 | 0 | 0 | 2 |
 | output/v5/linkedin/11.md | 0 | 0 | 3 | 0 | 0 | 3 |
-| output/v5/lo_que_sabemos.md | 51 | 2 | 32 | 0 | 0 | 85 |
+| output/v5/lo_que_sabemos.md | 51 | 2 | 33 | 0 | 0 | 86 |
 | output/v5/nota_metodologica.md | 3 | 0 | 89 | 0 | 0 | 92 |
-| output/v5/policy_brief.md | 26 | 3 | 35 | 0 | 0 | 64 |
+| output/v5/policy_brief.md | 26 | 3 | 34 | 0 | 0 | 63 |
 | output/v5/ponencia/diapositivas.md | 17 | 0 | 17 | 0 | 0 | 34 |
 | output/v5/ponencia/guion.md | 11 | 0 | 23 | 0 | 0 | 34 |
-| output/v5/que_cambio.md | 2 | 1 | 32 | 0 | 0 | 35 |
-| output/v5/una_pagina.md | 20 | 0 | 3 | 0 | 0 | 23 |
-| output/v5/verificador/verificador.md | 265 | 23 | 8 | 14 | 4 | 314 |
-| output/v5/working_paper.md | 71 | 24 | 120 | 0 | 0 | 215 |
+| output/v5/que_cambio.md | 2 | 5 | 35 | 0 | 0 | 42 |
+| output/v5/una_pagina.md | 20 | 0 | 5 | 0 | 0 | 25 |
+| output/v5/verificador/verificador.md | 264 | 23 | 8 | 14 | 5 | 314 |
+| output/v5/working_paper.md | 64 | 32 | 118 | 0 | 0 | 214 |
 
 ## Contradictorias (prioridad 1)
 
@@ -112,6 +112,7 @@ Cifras significativas analizadas: 5785. Fuente de verdad: output/v5/cifras_clave
 - output/v5/verificador/verificador.md:348 · 2,26 · B4-v3-vut-cantidad · «| Magnitud | Cota C2: como máximo el 2,4-2,7 % del stock de alquiler (hasta 81.771 viviendas), 2020M08-2024M08» → REVISADA: huérfana de ficha: pp de la v2 (B4), no es el máximo de VUT
 - output/v5/verificador/verificador.md:412 · 470 · CA-CR-saldo-pico · «| Magnitud | El saldo de crédito a construcción y actividades inmobiliarias pasó de 470 mil millones de euros » → REVISADA: redondeo de 471,8 mil millones (CA-CR-saldo-pico); diferencia 0,4 %
 - output/v5/verificador/verificador.md:461 · 2.333.816 · CB-C6-03 · «| Magnitud | Personas fisicas declaran 2.333.816 viviendas equivalentes arrendadas como vivienda habitual ; el» → REVISADA: falso positivo: solo vivienda habitual; CB-C6-03 es habitual y otras
+- output/v5/verificador/verificador.md:623 · 763.416 · T4-H2 · «| Magnitud | Dirección nacional 2025-2030 (C2): empeora en 180 escenarios (terminadas: ritmo actual, cartera, »
 
 ## Huérfanas (prioridad 2; primeras 60)
 

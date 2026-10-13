@@ -27,3 +27,8 @@
   - la única diferencia es output/v7/cuenta_especificaciones.*, que añade la fila v7_2 (14 especificaciones de la reverificación); se copia.
   
   `make all` sigue en su clon.
+- **X9. Cierre, `make all` en clon limpio (e7bf435):**
+  - rc = 0 en 6.689 s y `make check` con rc = 0.
+  - Diferencias: marcas de tiempo (docs/v2/fallidas/ine.md y BM/tiempos.json), que no se copian, y las auditorías K4C y K4D, que reflejan los entregables y versiones de v7.2.
+  - K4C y K4D se regeneran en el repositorio (ya en la rama r8, con más .md): 0 enlaces rotos.
+  - Ninguna cifra publicada cambia salvo las retiradas en v7.2 (ERRATA).

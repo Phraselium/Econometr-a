@@ -1,83 +1,194 @@
 {
   "rama": "r8/F3/var",
-  "pregunta": "¿Son aptas, con datos simulados, las herramientas BVAR-GLP, signos/ceros (RWZ/ARW) y TVP-VAR-SV (o regimenes)?",
+  "pregunta": "¿Son aptas, con datos simulados, las herramientas BVAR-GLP (con exogenas y delta), signos/ceros (RWZ, configuracion pre-registrada), TVP-VAR-SV y VAR por regimenes (5 tramos)?",
   "capa": "C4",
   "datos": "Simulados (DGP del Monte Carlo; sin datos reales ni sellados)",
   "N": {
-    "BVAR": 300,
-    "signos": "100 (T=120), 80 (T=60), 80 (ceros)",
+    "BVAR": 500,
+    "signos_4var": "100 (T=120), 80 (T=60), 80 (ceros)",
+    "prereg": {
+      "principal": 30,
+      "V3_solo_impacto": 30
+    },
     "TVP": "30/12/12/10/8 segun escenario",
-    "regimenes": 300
+    "regimenes": 300,
+    "regimenes5": 300
   },
-  "metodo": "Monte Carlo (SEED 20261010): cobertura de bandas 68/90 de IRF, sesgo relativo, recuperacion del signo, ceros exactos, identidad de la descomposicion historica, deteccion de cambio de coeficiente",
+  "metodo": "Monte Carlo (SEED 20261010): cobertura de bandas 68/90 de IRF, sesgo absoluto y firmado relativo, recuperacion del signo, ceros exactos, identidad de la descomposicion historica con exogenas, cobertura de la DH por tramos, viabilidad del muestreo (fraccion de theta con aceptada, ESS), deteccion de cambio de coeficiente",
   "estimacion": {
     "etiquetas": {
-      "BVAR-GLP": "con reservas",
+      "BVAR-GLP (6 celdas GLP + 2 delta mixto)": "no apta",
+      "BVAR-GLP (direccion del sesgo de las IRF)": "atenuadas hacia cero (atenuacion firmada > 0 en todas las celdas GLP)",
       "signos/ceros (mecanica: restricciones, FEVD, descomposicion historica)": "apta",
-      "pesos de importancia ARW (derivados aqui; formula del articulo NO contrastada)": "apta (invariancia al orden)",
-      "signos/ceros (inferencia: bandas y signo del impacto)": "con reservas (bandas conservadoras: cobertura 90 % por encima de 0,98; set-identified)",
+      "pesos de importancia propios (Haar condicionado a los ceros; no se afirman iguales a ARW)": "apta (invariancia al orden)",
+      "signos/ceros, 4 variables solo impacto (inferencia: bandas y signo del impacto)": "apta",
+      "signos/ceros PRE-REGISTRADO (7 var, T=88, h=0-1, 4 ceros): principal": "no apta (signo del impacto 0.78 o cobertura de la DH 0.92 fuera de reglas)",
+      "signos/ceros PRE-REGISTRADO: variante V3 (solo impacto, sin q)": "no apta (signo del impacto 0.65 o cobertura de la DH 0.90 fuera de reglas)",
       "TVP-VAR-SV (convergencia y volatilidad)": "con reservas",
       "TVP-VAR-SV (deteccion de un cambio de coeficiente con T efectivo = 88)": "no apta (potencia y cobertura insuficientes con T efectivo = 88; ver kQ=0,10 y 0,30)",
-      "VAR por regimenes (ruptura CONOCIDA)": "con reservas"
+      "VAR por regimenes, 2 regimenes de 59 obs. (ruptura CONOCIDA)": "no apta",
+      "VAR por regimenes, 5 tramos reales (16, 22, 24, 9, 15; n=4, p=2; con huecos)": "no apta"
     },
+    "reglas": "Reglas (definidas por el ejecutor, algunas DESPUES de ver las cifras de F3; ver docs/v8/decisiones.md): cobertura 90 % en [0,85; 0,98] = nominal; [0,80; 0,99] = con reservas (BVAR) o >= 0,85 (signos); sesgo relativo IRF <= 10 % apta, <= 30 % con reservas; recuperacion del signo del impacto >= 90 %; deteccion >= 80 % y falsos positivos <= 15 %; viabilidad del muestreo: fraccion de theta con alguna rotacion aceptada >= 1 % y ESS >= 30.",
     "BVAR_GLP_cobertura90": {
-      "denso|T120": 0.957706,
-      "denso|T60": 0.965578,
-      "casi_RW|T120": 0.934092,
-      "casi_RW|T60": 0.907409
+      "denso|T120": 0.9016237623762376,
+      "denso|T60": 0.8728811881188119,
+      "casi_RW|T120": 0.7935643564356436,
+      "casi_RW|T60": 0.7439306930693069,
+      "tasas|T120": 0.879,
+      "tasas|T60": 0.8563465346534653
     },
     "BVAR_GLP_sesgo_rel": {
-      "denso|T120": 0.138096,
-      "denso|T60": 0.245637,
-      "casi_RW|T120": 0.142796,
-      "casi_RW|T60": 0.223971
+      "denso|T120": 0.21091492121739072,
+      "denso|T60": 0.3514848927940194,
+      "casi_RW|T120": 0.31934415757711276,
+      "casi_RW|T60": 0.5186029672962944,
+      "tasas|T120": 0.2883451857738571,
+      "tasas|T60": 0.45881554205191943
     },
-    "signos_signo_impacto": {
-      "signos|T120": 0.933333,
-      "signos|T60": 0.9125,
-      "signos+ceros|T120": 0.995833
+    "BVAR_GLP_atenuacion_firmada_rel": {
+      "denso|T120": 0.19746370456695408,
+      "denso|T60": 0.3414696198763778,
+      "casi_RW|T120": 0.30883606664105817,
+      "casi_RW|T60": 0.5016042755937417,
+      "tasas|T120": 0.2841677374344886,
+      "tasas|T60": 0.45411366991662094
     },
-    "signos_cobertura90_no_restringidas": {
-      "signos|T120": 0.993462,
-      "signos|T60": 0.990625,
-      "signos+ceros|T120": 0.989951
+    "BVAR_tasas_delta_mixto_cobertura90": {
+      "T120": 0.8825148514851485,
+      "T60": 0.8621089108910891
     },
+    "signos_4var_signo_impacto": {
+      "signos|T120": 0.9266666666666667,
+      "signos|T60": 0.9041666666666668,
+      "signos+ceros|T120": 0.9916666666666666
+    },
+    "signos_prereg": {
+      "principal": {
+        "aceptacion_por_rotacion": 9.943532598623746e-05,
+        "frac_theta_con_aceptada": 0.22212124791014312,
+        "rotaciones_por_aceptada": 20325.273028982694,
+        "ESS_medio": 147.3480509598223,
+        "signo_impacto_recuperado_no_restringidas": 0.78,
+        "DH_cobertura_68_total": 0.7251428571428572,
+        "DH_cobertura_90_total": 0.9171428571428573,
+        "DH_banda90_excluye_0_con_signo_ERRONEO_(|contrib|>=0.5)": 0.0,
+        "descomposicion_historica_error_max_con_exogenas": 1.5916157281026244e-12,
+        "DH_cobertura_90_por_tramo": {
+          "P0 (14)": 0.904761904761905,
+          "P2 (22)": 0.9200000000000002,
+          "P3 (24)": 0.9314285714285717,
+          "P4 (9)": 0.9095238095238097,
+          "P5 (14)": 0.9200000000000002
+        }
+      },
+      "V3_solo_impacto": {
+        "aceptacion_por_rotacion": 0.0028932114836336675,
+        "frac_theta_con_aceptada": 1.0,
+        "rotaciones_por_aceptada": 356.61727738538684,
+        "ESS_medio": 276.0709118935764,
+        "signo_impacto_recuperado_no_restringidas": 0.65,
+        "DH_cobertura_68_total": 0.676952380952381,
+        "DH_cobertura_90_total": 0.9003809523809523,
+        "DH_banda90_excluye_0_con_signo_ERRONEO_(|contrib|>=0.5)": 0.0,
+        "descomposicion_historica_error_max_con_exogenas": 2.1600499167107046e-12,
+        "DH_cobertura_90_por_tramo": {
+          "P0 (14)": 0.9038095238095241,
+          "P2 (22)": 0.9009523809523812,
+          "P3 (24)": 0.9104761904761907,
+          "P4 (9)": 0.8866666666666668,
+          "P5 (14)": 0.9000000000000002
+        }
+      }
+    },
+    "signos_prereg_M": 3000,
     "TVP_deteccion": {
-      "ruptura_kQ0.10": 0.166667,
-      "ruptura_kQ0.30": 0.166667,
+      "ruptura_kQ0.10": 0.16666666666666666,
+      "ruptura_kQ0.30": 0.16666666666666666,
       "ruptura_kQ0.01": 0.0
     },
-    "regimenes_deteccion": 0.636667
+    "regimenes_deteccion_2reg": 0.6566666666666666,
+    "regimenes5_GLP_cambios": {
+      "T1 (16)": {
+        "cob90": 0.83,
+        "ratio_ancho": 0.7536513887162964,
+        "rmse": 0.19201614348692828
+      },
+      "T2 (22)": {
+        "cob90": 0.25,
+        "ratio_ancho": 0.6956977046590469,
+        "rmse": 0.3743600268430196
+      },
+      "T3 (24)": {
+        "cob90": 0.6566666666666666,
+        "ratio_ancho": 0.6748974909812715,
+        "rmse": 0.2176546444469753
+      },
+      "T4 (9)": {
+        "cob90": 0.07666666666666666,
+        "ratio_ancho": 0.8122511416587126,
+        "rmse": 0.593201203461439
+      },
+      "T5 (15)": {
+        "cob90": 0.46,
+        "ratio_ancho": 0.7535900480743518,
+        "rmse": 0.3080424445371543
+      }
+    }
   },
   "ic95": null,
   "p_ajustado": null,
   "nivel_evidencia": "DESCRIPTIVO (validacion metodologica sobre datos simulados; sin lenguaje causal)",
   "diagnosticos": {
     "logml_vs_fuerza_bruta_error_abs": {
-      "logml_vs_cuadratura_n1": 2.04301e-09,
-      "logml_vs_cadena_predictiva_n3_dummies": 5.68434e-14
+      "logml_vs_cuadratura_n1": 5.68944003020988e-10,
+      "logml_vs_cadena_predictiva_n3_dummies": 5.684341886080802e-14
     },
-    "ceros_max_abs": 1.59426e-14,
-    "descomposicion_historica_error_max": 5.68434e-14,
-    "tiempo_computo_s": 748,
+    "ceros_max_abs": 1.648418396000214e-14,
+    "descomposicion_historica_error_max": 6.217248937900877e-15,
+    "tiempo_computo_s": 1621,
     "replicas_por_escenario": {
-      "BVAR|casi_RW|GLP|120": 300,
-      "BVAR|casi_RW|GLP|60": 300,
-      "BVAR|casi_RW|plano_lam100|120": 300,
-      "BVAR|casi_RW|plano_lam100|60": 300,
-      "BVAR|denso|GLP|120": 300,
-      "BVAR|denso|GLP|60": 300,
-      "BVAR|denso|plano_lam100|120": 300,
-      "BVAR|denso|plano_lam100|60": 300,
+      "BVAR|casi_RW|GLP|60": 500,
+      "BVAR|casi_RW|GLP|120": 500,
+      "BVAR|casi_RW|GLP_delta1|60": 500,
+      "BVAR|casi_RW|GLP_delta1|120": 500,
+      "BVAR|casi_RW|plano_lam100|60": 500,
+      "BVAR|casi_RW|plano_lam100|120": 500,
+      "BVAR|denso|GLP|60": 500,
+      "BVAR|denso|GLP|120": 500,
+      "BVAR|denso|GLP_delta1|60": 500,
+      "BVAR|denso|GLP_delta1|120": 500,
+      "BVAR|denso|plano_lam100|60": 500,
+      "BVAR|denso|plano_lam100|120": 500,
       "BVAR|logml_vs_cadena_predictiva_n3_dummies|": 1,
       "BVAR|logml_vs_cuadratura_n1|": 1,
+      "BVAR|tasas|GLP|60": 500,
+      "BVAR|tasas|GLP|120": 500,
+      "BVAR|tasas|GLP_delta1|60": 500,
+      "BVAR|tasas|GLP_delta1|120": 500,
+      "BVAR|tasas|GLP_delta_mixto|60": 500,
+      "BVAR|tasas|GLP_delta_mixto|120": 500,
+      "BVAR|tasas|plano_lam100|60": 500,
+      "BVAR|tasas|plano_lam100|120": 500,
       "TVP|ruptura_kQ0.01|120": 8,
       "TVP|ruptura_kQ0.10|120": 30,
       "TVP|ruptura_kQ0.30|120": 12,
       "TVP|sin_ruptura_kQ0.10|120": 12,
       "TVP|sin_ruptura_kQ0.30|120": 10,
+      "prereg|V3_solo_impacto|88": 30,
+      "prereg|principal|88": 30,
+      "prereg_M|M10000|88": 5,
+      "prereg_M|M1500|88": 5,
+      "prereg_M|M3000|88": 5,
+      "prereg_M|M500|88": 5,
       "regimenes|ruptura|120": 300,
       "regimenes|sin_ruptura|120": 300,
+      "regimenes5|cambios|GLP|88": 300,
+      "regimenes5|cambios|lam1|88": 300,
+      "regimenes5|cambios|plano_lam5|88": 300,
+      "regimenes5|sin_cambio|GLP|88": 300,
+      "regimenes5|sin_cambio|lam1|88": 300,
+      "regimenes5|sin_cambio|plano_lam5|88": 300,
       "signos|ARW_invariancia_al_orden|": 100000,
       "signos|signos+ceros|T120|120": 80,
       "signos|signos|T120|120": 100,
@@ -89,5 +200,5 @@
     "rmse": null,
     "dm_vs_ar4": null
   },
-  "notas": "Herramientas en src/v8/herramientas/{bvar,signos,tvp}.py. Referencias de metodo NO VERIFICADAS (sin Crossref). Pesos ARW propios, validados por invariancia al orden; formula del articulo no contrastada. TVP: ver validacion.md; el VAR por regimenes (ruptura conocida) se incluye como alternativa en tvp.py."
+  "notas": "Herramientas en src/v8/herramientas/{bvar,signos,tvp}.py. Referencias de metodo NO VERIFICADAS (sin Crossref). Pesos de importancia propios (no se afirma igualdad con ARW). Correcciones de la revision F3: H4 (exog), H10 (delta), H2 (muestreo con rotaciones fijas), H1/H16 (configuracion pre-registrada y V3), H9 (5 tramos), H12 (atenuacion firmada). La eleccion entre la configuracion principal y V3, M y el numero de sorteos de theta queda al orquestador."
 }

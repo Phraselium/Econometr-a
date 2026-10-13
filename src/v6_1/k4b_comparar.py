@@ -7,7 +7,8 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "output" / "v6_1" / "K4B"
 calc = json.load(open(OUT / "calculos.json"))
-ck = pd.read_csv(ROOT / "output" / "v5" / "cifras_clave.csv").set_index("id")
+ck = pd.concat([pd.read_csv(ROOT / "output" / "v5" / "cifras_clave.csv"),   # v7.2: las retiradas siguen comparándose
+                pd.read_csv(ROOT / "output" / "v5" / "cifras_superadas.csv")]).set_index("id")
 ORDEN = ["A23-A2", "terminadas_1924", "deficit_2124_c1", "deficit_2124_c2", "dh_2125", "D1-H11", "A23-P2",
          "B4-v3-vut-cantidad", "D1-H12", "A23-A10", "E-B1-F", "latente_convivencia", "B1-H1", "B1-H4", "R1C-001"]
 

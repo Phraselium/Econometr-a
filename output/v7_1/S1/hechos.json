@@ -2,9 +2,9 @@
  {
   "id": "V71-S1-a_construccion-compra-efecto_10k",
   "indicador": "Variación del precio por cada 10.000 viviendas, construcción adicional, compra, 10 años (mediana entre CCAA; rango entre CCAA)",
-  "valor": -0.784826535512233,
-  "min": -1.5071320978146785,
-  "max": -0.1272110728568679,
+  "valor": -0.6089974549863438,
+  "min": -2.352592737531681,
+  "max": -0.10799004949659839,
   "unidad": "puntos %",
   "periodo": "2026-2036 (escenario)",
   "cobertura": "17 CCAA",
@@ -16,9 +16,9 @@
  {
   "id": "V71-S1-a_construccion-alquiler-efecto_10k",
   "indicador": "Variación del precio por cada 10.000 viviendas, construcción adicional, alquiler, 10 años (mediana entre CCAA; rango entre CCAA)",
-  "valor": -0.9066670480678307,
-  "min": -1.7038273509360062,
-  "max": -0.14567772776008667,
+  "valor": -0.6960953541911352,
+  "min": -2.74013710691293,
+  "max": -0.12435865816760508,
   "unidad": "puntos %",
   "periodo": "2026-2036 (escenario)",
   "cobertura": "17 CCAA",
@@ -197,7 +197,7 @@
  },
  {
   "id": "V71-S1-f2_impuestos_construccion-compra-efecto_100meur_mercado",
-  "indicador": "Variación del precio de mercado por cada 100 M€ anuales, rebaja de impuestos y costes de construcción, compra, 10 años (mediana entre CCAA; rango entre CCAA)",
+  "indicador": "Variación del precio de mercado por cada 100 M€ anuales, rebaja de impuestos y costes de construcción (no difundible), compra, 10 años (mediana entre CCAA; rango entre CCAA)",
   "valor": -6.541728756596173,
   "min": -29.859395200177538,
   "max": -0.8232939933543024,
@@ -211,7 +211,7 @@
  },
  {
   "id": "V71-S1-f2_impuestos_construccion-compra-coste_anual_meur",
-  "indicador": "Coste fiscal anual aproximado, rebaja de impuestos y costes de construcción, compra, 10 años (mediana entre CCAA; rango entre CCAA)",
+  "indicador": "Coste fiscal anual aproximado, rebaja de impuestos y costes de construcción (no difundible), compra, 10 años (mediana entre CCAA; rango entre CCAA)",
   "valor": 14.562193373997271,
   "min": 3.7001182702575885,
   "max": 135.02929791227558,
@@ -225,7 +225,7 @@
  },
  {
   "id": "V71-S1-f2_impuestos_construccion-compra-coste_por_punto_meur",
-  "indicador": "Coste anual por punto de reducción del precio neto pagado, rebaja de impuestos y costes de construcción, compra, 10 años (mediana entre CCAA; rango entre CCAA)",
+  "indicador": "Coste anual por punto de reducción del precio neto pagado, rebaja de impuestos y costes de construcción (no difundible), compra, 10 años (mediana entre CCAA; rango entre CCAA)",
   "valor": 15.286479554123773,
   "min": 3.3490297451255335,
   "max": 121.46329690183273,

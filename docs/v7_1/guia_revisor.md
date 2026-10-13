@@ -1,4 +1,4 @@
-# Guía para el revisor externo (versión de referencia v7.1)
+# Guía para el revisor externo (versión de referencia v7.2)
 
 **Autor:** Borja Romero, economista (firma individual e independiente).
 

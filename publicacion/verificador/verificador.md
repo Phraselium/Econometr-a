@@ -702,7 +702,7 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 32; NO ANALIZADA: FALTAN DATO
 |---|---|
 | Veredicto | **PARCIALMENTE** |
 | Capa de la evidencia | C2 |
-| Magnitud | Déficit acumulado 2021-2024 (aumento de hogares menos viviendas terminadas), sin bajas del parque: 389.361-710.542 viviendas según la corrección del salto de la EPA en 2021 (siete alternativas más la constante de v1) y la fuente de terminadas (Ministerio o Catastro); sin las dos correcciones que conservan el salto, 596.371-710.542. Con las bajas estimadas en v5.1, 389.361-765.994 (C4); con bajas supuestas, 389.361-924.658. 2021-2025: 523.606-887.950 (C4: terminadas de 2025 frágiles). |
+| Magnitud | Déficit acumulado 2021-2024 (aumento de hogares menos viviendas terminadas), sin bajas del parque: 389.361-710.542 viviendas según la corrección del salto de la EPA en 2021 (siete alternativas más la constante de v1) y la fuente de terminadas (Ministerio o Catastro); sin las dos correcciones que conservan el salto, 596.371-710.542. Con las bajas estimadas en v5.1, 389.361-765.994 (C4; única cifra con bajas desde v7.2: el supuesto de bajas del 0,1-0,2 % se retira). 2021-2025: 523.606-887.950 (C4: terminadas de 2025 frágiles). |
 | Intervalo | cota 389.361-710.542 viviendas (sin bajas) |
 | Cota | C2: supuestos explícitos sobre la corrección de la EPA |
 | Literatura | Banco de España (2024, 2025): estimaciones de 375.000-600.000 viviendas en periodos parecidos (output/v5/D3/convergencia.md). |

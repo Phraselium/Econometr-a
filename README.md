@@ -1,6 +1,6 @@
 # Vivienda en España: base de evidencia reproducible
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** v7.1, versión de referencia (consolidación y estructura para publicación; 12 de octubre de 2026). Versiones cerradas: v1-v7.0. La v6.2 pasa a histórica ([historico/INDICE.md](historico/INDICE.md)).
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** v7.2, versión de referencia (v7.1 con correcciones previas a la release; 13 de octubre de 2026). Versiones cerradas: v1-v7.0. La v6.2 pasa a histórica ([historico/INDICE.md](historico/INDICE.md)).
 
 **Empiece por [LEEME_PRIMERO.md](LEEME_PRIMERO.md)**, que propone itinerarios de lectura para ciudadanos, periodistas, revisores y técnicos.
 
@@ -48,7 +48,7 @@ Detalle: [reproducir/instrucciones.md](reproducir/instrucciones.md). La validaci
 ## Cómo citar
 Metadatos en [CITATION.cff](CITATION.cff) y .zenodo.json. DOI: pendiente (depósito en Zenodo).
 
-> Romero, B. (2026). *Vivienda en España: base de evidencia reproducible* (versión 7.1) [software y datos].
+> Romero, B. (2026). *Vivienda en España: base de evidencia reproducible* (versión 7.2) [software y datos].
 
 ## Licencias
 - Código (src/, tests/, Makefile): MIT.

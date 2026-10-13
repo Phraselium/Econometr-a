@@ -11,7 +11,8 @@ S1 = RAIZ / "output" / "v7_1" / "S1"
 def test_reproduce_r6():
     t = pd.read_csv(S1 / "dosis_coste.csv", dtype={"cc": str})
     im = pd.read_csv(RAIZ / "output/v7/R6/impactos.csv", dtype={"cc": str})
-    im = im[im.fuente_es == "rejilla"]
+    im = im[(im.fuente_es == "rejilla") & (im.instrumento != "a_construccion")]   # v7.2: construcción reestimada con dosis no nula
+    t = t[t.instrumento != "a_construccion"]
     m = t.merge(im, on=["cc", "instrumento", "mercado", "horizonte"], suffixes=("", "_r6"))
     assert len(m) == len(t) == len(im)
     assert (m.dprecio_med - m.dprecio_med_r6).abs().max() < 1e-3

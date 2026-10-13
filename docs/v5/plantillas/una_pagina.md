@@ -1,4 +1,4 @@
-# Vivienda en España en una página (versión de referencia v7.1)
+# Vivienda en España en una página (versión de referencia v7.2)
 
 **Borja Romero, economista.** Solo hechos con al menos dos fuentes [C1] o cotas con supuestos explícitos [C2]. Cada cifra lleva periodo, fuente, fecha del dato y capa.
 
@@ -11,7 +11,7 @@
 7. [C2] **La próxima década.** Crecimiento de hogares proyectado por el INE: {{E-B1-F:cita}}.
 8. [C1] **La mayoría de los hogares es propietaria.** Hogares con vivienda principal en propiedad: {{R1C-001:cita}}.
 
-**Qué añade la versión de referencia v7.1 [C4].** Los cambios entre versiones, y por qué, están en una sección única: [Qué cambió entre versiones y por qué](que_cambio.md).
+**Qué añade la versión de referencia v7.2 [C4].** Los cambios entre versiones, y por qué, están en una sección única: [Qué cambió entre versiones y por qué](que_cambio.md).
 - Los precios de las comunidades se mueven sobre todo juntos: la variación de cada una acompaña en gran medida a la media de las 17 (R² mediano de {{V71-S3-comun-r2-compra:valor}} en compra).
 - No se confirma ninguna relación regional de largo plazo con el empleo, la población, las hipotecas o el paro ({{V71-S3-largo-confirmadas:num}} de siete hipótesis).
 - En una simulación condicional, las ayudas a la demanda reducen el precio neto de quien las recibe, pero el precio de mercado sube ({{V71-S3-R6-e_ayuda_demanda-compra-precio10a:valor}} a diez años; el signo lo fija en gran parte la fórmula de incidencia). Su dosis y su coste en compra están declarados. En los instrumentos de cantidad (construcción, vacías, vivienda pública, turísticos) el coste no es estimable.
@@ -21,7 +21,7 @@
 > - Que un único factor (turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas) sea la causa principal de la subida.
 > - Qué parte de las viviendas o del alquiler está en manos de empresas o grandes tenedores: no hay datos de titularidad.
 > - Que los topes al alquiler reduzcan los precios o la oferta.
-> - Que haya una burbuja: la exuberancia estadística no la identifica.
+> - Que haya una burbuja, ni que no la haya [C4]. En el ámbito nacional, los cocientes precio/renta y precio/alquiler son exuberantes sin ajuste en {{V72-GSADF-ratios-p05:num}} de cuatro, pero en {{V72-GSADF-ratios-bh:num}} tras el ajuste por comparaciones múltiples, y en {{V72-GSADF-tipos-p05:num}} frente a referencias con tipos de interés; los niveles de precio sí son explosivos ({{V72-GSADF-niveles-bh:num}} de dos). Por comunidades, {{V72-GSADF-ccaa-bh:num}} de 34 series tras el ajuste (y {{V72-GSADF-ccaa-v6:num}} de 11 en otra muestra). Una exuberancia estadística no identifica una burbuja, y su ausencia tampoco la descarta. <!-- check:cifra-libre (número de series del diseño) -->
 > - Qué variable mueve el alquiler o el precio de compra: en v6 ninguna es «relevante con seguridad» y ninguna hipótesis confirmatoria pasa Holm; que un modelo prediga bien no identifica por qué sube el precio [C4].
 > - La necesidad total de vivienda para 2026-2035 como hecho: depende de supuestos sobre el parque y queda como exploratoria ({{T3-H5b:cita}}). Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 > - Cuánto empeora el déficit a 2030 ({{T4-H2:rango}}, [C4]) y si empeora a 2035 (indeterminado, [C4]).

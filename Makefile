@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-.PHONY: all data clean models report distclean check verificador v7 v7_1 evaluate_v7 publicacion
+.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion
 
 all: data clean models report
 
@@ -66,13 +66,18 @@ v7:
 	@$(MAKE) --no-print-directory v7_1
 
 # V7.1: consolidación (sin análisis nuevo): dosis y coste sobre R6 y entregables; después cifras_clave y render
-V7_1_ORDEN := s1_dosis_coste s1_atlas s3_hechos s4_ensayo
+V7_1_ORDEN := ../v7_2/ficha_burbuja s1_dosis_coste s1_atlas s3_hechos s4_ensayo
 v7_1:
 	@for r in $(V7_1_ORDEN); do echo ">> src/v7_1/$$r.py"; $(PY) src/v7_1/$$r.py || exit 1; done
 	$(PY) src/v5/cifras_clave.py
 	$(PY) src/v5/render.py
 	$(PY) src/v6_2/l5_publicables.py
 	$(PY) src/v7_1/s6_paquete.py
+
+# V7.2: reverificación del GSADF nacional (mismo método y semilla que v5 R1B). Necesita el panel completo de `make clean`
+# (src/holdout.py load_full); su salida (output/v7_2/gsadf/reverificacion.csv) está versionada y la lee `make v7_1`.
+v7_2:
+	$(PY) src/v7_2/gsadf_reverifica.py
 
 # V7.1: publicacion/, metodologia/ y reproducir/ se generan desde output/ y docs/ (nunca a mano; tests/v7_1/test_publicacion.py)
 publicacion:

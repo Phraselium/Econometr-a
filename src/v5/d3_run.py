@@ -34,7 +34,7 @@ MISMOS_INSUMOS = {"R03", "R04"}
 
 # Contexto de método del proyecto que explica diferencias (no valora a los organismos).
 # v6.2 (L3): el déficit 2021-2024 publicado pasa a la cota C2 de L3; las referencias de data/raw/v5 siguen citando el id antiguo
-SUSTITUYE_ID = {"deficit_2124_c1": "L3-DEF-2124-SINBAJAS"}
+SUSTITUYE_ID = {"deficit_2124_c1": "L3-DEF-2124-SINBAJAS", "B1-H1": "T3-H5b"}   # v7.2: B1-H1 retirada (necesidad de v5)
 METODO_PROY = {
     "L3-DEF-2124-SINBAJAS": "proyecto (v6.2): aumento de hogares (EPA con varias correcciones del salto de 2021 y ECP) menos terminadas (Ministerio y Catastro), sin bajas; cota C2",
     "deficit_2124_c1": "proyecto: aumento de hogares (ECP y EPA corregida) menos terminadas (Ministerio y Catastro), sin bajas",

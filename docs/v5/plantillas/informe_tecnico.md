@@ -1,6 +1,6 @@
 # Vivienda en España: necesidad, territorio, precios e instrumentos con datos públicos
 
-## Informe técnico (versión de referencia v7.1)
+## Informe técnico (versión de referencia v7.2)
 
 - **Autor:** Borja Romero, economista (independiente).
 - **Fecha:** 10 de octubre de 2026.
@@ -69,9 +69,9 @@ Reglas que se aplican en todo el informe:
 
 **Definición.** El déficit contable es el aumento del número de hogares menos las viviendas terminadas en el mismo periodo. No incluye la demanda latente (jóvenes que no se emancipan) ni la vivienda que sale del parque, salvo que se diga.
 
-**2021-2024 [C2 desde v6.2; antes C1].** Con dos fuentes independientes en cada componente (hogares: ECP y EPA corregida por la ruptura de 2021; terminadas: Ministerio, validado con Catastro dentro de ±15 %) [nota v6.1, K4b: el rango combina hogares ECP o EPA, terminadas del Ministerio con o sin protegida y bajas de 0, 0,1 o 0,2 % anual; la corrección de la EPA es una constante de 242.400 hogares fijada en v1 (informe v1, §5.1), no derivada de los datos en esta versión], el déficit publicado en v6.1 estaba entre {{deficit_2124_c1:rango}} (histórico). En v6.2 (L3) se recalcula con siete correcciones alternativas del salto de la EPA más la constante de v1 (ocho variantes: sin corrección, trimestres vecinos con dos y cuatro trimestres, variación nula, dos enlaces con la ECP, solo ECP y la constante): sin bajas, el rango es {{L3-DEF-2124-SINBAJAS:min}}-{{L3-DEF-2124-SINBAJAS:max}}, y con bajas supuestas {{L3-DEF-2124-CONBAJAS:min}}-{{L3-DEF-2124-CONBAJAS:max}}. Las fuentes coinciden, pero la amplitud supera la tolerancia de C1 (±15 %), de modo que la cifra pasa a cota C2 ({{L3-DEF-2124-SINBAJAS:cita}}). Detalle en `output/v6_2/L3/deficit_alternativas.md`. <!-- check:cifra-libre (parámetros de método ±15 %, bajas 0-0,2 % y constante EPA 242.400 de v1, declarados en la nota K4b; etiquetas de versión) -->
+**2021-2024 [C2 desde v6.2; antes C1].** Con dos fuentes independientes en cada componente (hogares: ECP y EPA corregida por la ruptura de 2021; terminadas: Ministerio, validado con Catastro dentro de ±15 %) [la corrección de la EPA de v1 es una constante de 242.400 hogares fijada en v1 (informe v1, §5.1)], el rango C1 publicado hasta v6.1 está retirado (ERRATA.md; output/v5/cifras_superadas.csv). En v6.2 (L3) se recalcula con siete correcciones alternativas del salto de la EPA más la constante de v1 (ocho variantes: sin corrección, trimestres vecinos con dos y cuatro trimestres, variación nula, dos enlaces con la ECP, solo ECP y la constante): sin bajas, el rango es {{L3-DEF-2124-SINBAJAS:min}}-{{L3-DEF-2124-SINBAJAS:max}}. Las fuentes coinciden, pero la amplitud supera la tolerancia de C1 (±15 %), de modo que la cifra pasa a cota C2 ({{L3-DEF-2124-SINBAJAS:cita}}). Detalle en `output/v6_2/L3/deficit_alternativas.md`. <!-- check:cifra-libre (parámetros de método ±15 %, bajas 0-0,2 % y constante EPA 242.400 de v1, declarados en la nota K4b; etiquetas de versión) -->
 
-**Con bajas del parque estimadas [C4].** Al combinar todas las variantes del déficit sin bajas (siete alternativas más la constante de v1, con tres fuentes de terminadas) con las tasas de bajas estimadas en `T1`, el déficit 2021-2024 queda en {{L3-DEF-2124-BAJAST1}} [C4]. Con bajas supuestas del 0,1-0,2 % anual, que nada observado respalda, el máximo llegaría a {{L3-DEF-2124-CONBAJAS:max}}. Con 2025 y sin bajas, {{L3-DEF-2125:rango}} [C4]. <!-- check:cifra-libre (parámetros de método) -->
+**Con bajas del parque estimadas [C4]: una sola cifra.** Al combinar todas las variantes del déficit sin bajas (siete alternativas más la constante de v1, con tres fuentes de terminadas) con las tasas de bajas estimadas en `T1` (mínimo, central y máximo), el déficit 2021-2024 queda en {{L3-DEF-2124-BAJAST1}} [C4]. Es la única cifra de déficit con bajas que se publica desde v7.2. Las otras dos que circularon se retiran (ERRATA.md): el máximo de v5.1 con las bajas de `T1` sobre las cuatro combinaciones antiguas de fuentes (una sola corrección de la EPA), y el de las bajas supuestas del 0,1-0,2 % anual, que nada observado respalda. Con 2025 y sin bajas, {{L3-DEF-2125:rango}} [C4]. <!-- check:cifra-libre (parámetros de método) -->
 
 **Bajas del parque (`T1`) [C4].** Las identidades de stock no miden bajas: Censos 2011-2021 y Catastro dan tasas negativas ({{T1-H2:valor}} y {{T1-H4:valor}}), que reflejan altas no certificadas o afloramientos. Las demoliciones con licencia son {{E-T7-demol-2024:rango}} en 2024 y no cubren ruina, cambios de uso ni agregaciones. La tasa usada es C4 (mínimo, central y máximo de las demoliciones con licencia: {{T1-H8:min}}, {{T1-H8:valor}} y {{T1-H8:max}}), salvo la cota física cero, que es C2. Sustituye al supuesto de bajas de v4, que queda por encima de todo lo observado.
 
@@ -712,13 +712,13 @@ Fuentes: `output/v6/M1A`, `output/v6/M1B`, `output/v6/M2/peso_variables.md`, `ou
 
 ---
 
-## 11 bis. Qué añade la versión de referencia v7.1 (atlas regional) [C4]
+## 11 bis. Qué añade la versión de referencia v7.2 (atlas regional) [C4]
 
 - **Domina el componente común.** La variación interanual del precio de cada comunidad acompaña en gran medida a la media de las 17: el R² mediano es {{V71-S3-comun-r2-compra:valor}} en compra y {{V71-S3-comun-r2-alquiler:valor}} en alquiler. Es una descripción, no un modelo.
 - **No hay un largo plazo regional confirmado.** Se confirman {{V71-S3-largo-confirmadas:num}} de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en {{V71-S3-i2-compra:num}} de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
 - **Traslado al precio de las ayudas a la demanda y de la rebaja de ITP/IVA** (escenario condicional). Reducen el precio neto que paga el beneficiario: su esfuerzo varía un {{V7-R6-e_ayuda_demanda-esfuerzo10a:valor}} con la ayuda. Pero el precio de mercado sube un {{V71-S3-R6-e_ayuda_demanda-compra-precio10a:valor}} con la ayuda y un {{V71-S3-R6-f1_rebaja_ITP_IVA_vivienda_nueva-compra-precio10a:valor}} con la rebaja, a diez años (mediana entre comunidades). *Nota:* el signo lo fija en gran parte la fórmula de incidencia; lo informativo son las magnitudes relativas.
 - **Dosis y coste.**
-  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, {{V71-S1-e_ayuda_demanda-compra-coste_anual_meur:valor}}; rebaja de ITP/IVA, {{V71-S1-f1_rebaja_ITP_IVA_vivienda_nueva-compra-coste_anual_meur:valor}}; rebaja de impuestos y costes de construcción, {{V71-S1-f2_impuestos_construccion-compra-coste_anual_meur:valor}} (su efecto por euro está sobrestimado por construcción del escenario; no es «el más eficiente»).
+  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, {{V71-S1-e_ayuda_demanda-compra-coste_anual_meur:valor}}; rebaja de ITP/IVA, {{V71-S1-f1_rebaja_ITP_IVA_vivienda_nueva-compra-coste_anual_meur:valor}}. La rebaja de impuestos y costes de construcción no se difunde: su escenario sobrestima el efecto por diseño (traslada la rebaja a todo el mercado y el coste solo cubre la obra nueva).
   - Coste anual por punto de reducción del precio neto: {{V71-S1-e_ayuda_demanda-compra-coste_por_punto_meur:valor}} y {{V71-S1-f1_rebaja_ITP_IVA_vivienda_nueva-compra-coste_por_punto_meur:valor}}.
   - Construcción, vacías, vivienda pública y turísticos no tienen coste estimable, porque no hay coste unitario verificado. Se comparan por su efecto por cada diez mil viviendas: en alquiler, {{V71-S1-b_vacias-alquiler-efecto_10k:valor}} con vacías y {{V71-S1-c_vivienda_publica-alquiler-efecto_10k:valor}} con vivienda pública (mediana). <!-- check:cifra-libre (unidad de normalización «diez mil viviendas», no son cifras de resultado) -->
   - Robustez en la rejilla simulada (C4; no es robustez estadística): la movilización de vacías es robusta en {{V71-S3-R6-b_vacias-alquiler-robustas:num}} de 17 comunidades en alquiler; las ayudas a la demanda, en {{V71-S3-R6-e_ayuda_demanda-compra-robustas:num}}.
@@ -726,7 +726,7 @@ Fuentes: `output/v6/M1A`, `output/v6/M1B`, `output/v6/M2/peso_variables.md`, `ou
 
 ## 12. Qué cambió entre versiones y por qué
 
-Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.1).
+Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.2).
 
 ## Anexo A. Datos y fuentes
 

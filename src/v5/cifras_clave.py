@@ -30,6 +30,26 @@ SENTIDO_MIN_MAX = {
 }
 
 
+# v7.2 (correcciones previas a release): cifras RETIRADAS de la tabla vigente. Se conservan, con el motivo y su sustituta, en
+# output/v5/cifras_superadas.csv (trazabilidad, doble implementación y ERRATA); ningún entregable puede citarlas (render falla).
+RETIRADAS = {
+    "deficit_2124_c1": ("L3-DEF-2124-SINBAJAS", "superada en v6.2: rango C1 con una sola corrección de la EPA; pasa a cota C2 con 8 variantes"),
+    "T3-H1": ("L3-DEF-2124-SINBAJAS", "superada en v6.2: mismas 4 combinaciones de fuentes que deficit_2124_c1 (C1 retirado)"),
+    "deficit_2124_c2": ("L3-DEF-2124-BAJAST1", "superada: bajas SUPUESTAS del 0,1-0,2 % anual (v4) sin respaldo observado; máximo 902.808"),
+    "L3-DEF-2124-CONBAJAS": ("L3-DEF-2124-BAJAST1", "superada en v7.2: mismas variantes L3 con bajas SUPUESTAS del 0,1-0,2 % anual; máximo 924.658"),
+    "T3-H2": ("L3-DEF-2124-BAJAST1", "superada en v6.2: bajas estimadas T1 sobre las 4 combinaciones antiguas de M0; máximo 744.144"),
+    "T3-H3": ("L3-DEF-2124-BAJAST1", "superada: compara con el supuesto antiguo de bajas (902.808), ya retirado"),
+    "T3-H4": ("L3-DEF-2125", "retirada en v7.2: déficit 2021-2025 con bajas T1 sobre las combinaciones antiguas de M0 (solo ECP); se publica una sola cifra con bajas (2021-2024)"),
+    "B1-H1": ("T3-H5b", "superada en v5.1: necesidad de v5 (B1); la vigente es la recalculada en T3"),
+    "V7-R6-a_construccion-esfuerzo10a": ("V71-S3-R6-a_construccion-compra-precio10a", "superada en v7.2: dosis de construcción adicional nula en 14 CCAA; reestimada con dosis no nula"),
+    "V7-R6-n-robustas": ("V71-S3-R6-*-robustas", "superada en v7.2: incluía la construcción adicional con dosis nula y la rebaja de impuestos a la construcción (no difundible)"),
+}
+# v7.2: cifras NO DIFUNDIBLES por sobrestimación de diseño (rebaja de impuestos y costes de construcción, f2: la simulación traslada
+# la rebaja al precio de todo el mercado y el coste fiscal solo cubre la obra nueva). Se conservan en cifras_superadas.csv.
+NO_DIFUNDIBLE_PREFIJOS = ("V7-R6-f2_", "V71-S1-f2_", "V71-S3-R6-f2_")
+MOTIVO_F2 = ("—", "no difundible (v7.2): sobrestimación de diseño del escenario de rebaja de impuestos y costes de construcción")
+
+
 def sentido(i: str) -> str:
     return next((v for k, v in SENTIDO_MIN_MAX.items() if str(i).startswith(k)), "rango")
 
@@ -78,7 +98,7 @@ def v4_adaptadores() -> list[dict]:
 
 
 def V7_HECHOS() -> list[Path]:   # v7.1 (W2): hechos de V7 (R4, R4b, R5, R6) y de V7.1 (S1, S3); nunca los _smoke
-    return [p for v in ("v7", "v7_1") for p in sorted((RAIZ / "output" / v).glob("*/hechos.json")) if "_smoke" not in p.parent.name]
+    return [p for v in ("v7", "v7_1", "v7_2") for p in sorted((RAIZ / "output" / v).glob("*/hechos.json")) if "_smoke" not in p.parent.name]
 
 
 def v5_hechos() -> list[dict]:
@@ -104,6 +124,12 @@ def main() -> None:
     ck = ck.sort_values("id", kind="stable")
     # K4a-01: «%.6g» redondeaba a 6 cifras significativas los recuentos >= 1e6 (1.720.537 -> 1.720.540); «%.10g» es exacto hasta 1e10
     ck["sentido_min_max"] = ck.id.map(sentido)
+    fuera = ck.id.isin(RETIRADAS) | ck.id.str.startswith(NO_DIFUNDIBLE_PREFIJOS)
+    sup = ck[fuera].copy()
+    sup["sustituida_por"] = [RETIRADAS.get(i, MOTIVO_F2)[0] for i in sup.id]
+    sup["motivo"] = [RETIRADAS.get(i, MOTIVO_F2)[1] for i in sup.id]
+    sup.to_csv(V5 / "cifras_superadas.csv", index=False, float_format="%.10g")
+    ck = ck[~fuera]
     ck.to_csv(V5 / "cifras_clave.csv", index=False, float_format="%.10g")
     md = ["# Cifras clave v5", "",
           "Tabla única de la que leen todos los entregables. Una fila por indicador y periodo. Generada por src/v5/cifras_clave.py.", "",
@@ -124,7 +150,7 @@ def main() -> None:
            "Capa de la clase: C2 si se mantiene en todo el rango de costes, márgenes y holguras y el signo del déficit es estable; si no, C4. "
            "Los municipios son siempre C4. Véase output/v5/A4/resultado.json."]
     (V5 / "cifras_clave.md").write_text("\n".join(md) + "\n")
-    print(f"cifras_clave: {len(ck)} filas")
+    print(f"cifras_clave: {len(ck)} filas (retiradas o no difundibles: {len(sup)}, en cifras_superadas.csv)")
 
 
 if __name__ == "__main__":

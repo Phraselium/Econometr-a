@@ -28,10 +28,8 @@ APTAS = [
 ]
 # No citar fuera de contexto: C4, dependientes de supuestos o de un modelo, o con signo inestable.
 NO_FUERA = [
-    ("L3-DEF-2124-CONBAJAS", "Depende de bajas supuestas del parque."),
     ("T3-H5b", "Necesidad anual: contabilidad con supuestos (C4); citar el rango y la definición A+R+V+F−M−K."),
     ("T3-H5", "Necesidad con sensibilidad X (C4)."),
-    ("B1-H1", "Versión v5 de la necesidad; sustituida por T3 en el titular."),
     ("D1-H11", "Traslado a precio en una rejilla de elasticidades supuestas: no es una estimación."),
     ("D1-H12", "Ídem."),
     ("K2-CUOTA-COMPRA-SINPOB-SIN", "Inmigración, asociación total (C4): no es un efecto."),
@@ -39,13 +37,16 @@ NO_FUERA = [
     ("K1-N-MEJOR", "Predicción, no causalidad; solo frente a la base más exigente."),
     ("latente_convivencia", "Demanda latente: cota con supuestos sobre preferencias."),
     ("B4-v3-vut-cantidad", "Cota máxima del stock desplazado por viviendas turísticas; no es el efecto en el precio."),
-    ("L3-DEF-2124-BAJAST1", "Con bajas estimadas en v5.1 (C4)."),
+    ("L3-DEF-2124-BAJAST1", "Única cifra de déficit con bajas: bajas estimadas en v5.1 (T1) sobre las 8 variantes de L3 (C4)."),
     ("L3-DEF-2124-SENS", "Sensibilidad del déficit: citarla junto al rango completo, nunca sola."),
 ]
-HISTORICAS = [
+HISTORICAS = [   # v7.2: retiradas de cifras_clave.csv; se leen de cifras_superadas.csv
     ("deficit_2124_c1", "Sustituida en v6.2 por L3-DEF-2124-SINBAJAS. No citar."),
-    ("deficit_2124_c2", "Sustituida en v6.2 por L3-DEF-2124-CONBAJAS. No citar."),
+    ("T3-H1", "Sustituida en v6.2 por L3-DEF-2124-SINBAJAS. No citar."),
+    ("deficit_2124_c2", "Bajas supuestas sin respaldo; retirada en v7.2 (sustituta: L3-DEF-2124-BAJAST1). No citar."),
+    ("L3-DEF-2124-CONBAJAS", "Bajas supuestas sin respaldo; retirada en v7.2 (sustituta: L3-DEF-2124-BAJAST1). No citar."),
     ("T3-H2", "Sustituida en v6.2 por L3-DEF-2124-BAJAST1. No citar."),
+    ("B1-H1", "Necesidad de v5; sustituida por T3-H5b. No citar."),
 ]
 
 
@@ -56,7 +57,7 @@ def fila(c, i, nota):
 
 
 def generar() -> str:
-    c = pd.read_csv(RAIZ / "output" / "v5" / "cifras_clave.csv").set_index("id", drop=False)
+    c = pd.concat([pd.read_csv(RAIZ / "output" / "v5" / f) for f in ("cifras_clave.csv", "cifras_superadas.csv")]).set_index("id", drop=False)
     cab = "| id | Indicador | Valor (rango) | Capa | Periodo | Fecha del dato | Fuentes | Cómo citarla |\n|---|---|---|---|---|---|---|---|"
     L = ["# Cifras publicables (v6.2, L5)", "",
          "Generado por src/v6_2/l5_publicables.py desde output/v5/cifras_clave.csv; no editar a mano. "

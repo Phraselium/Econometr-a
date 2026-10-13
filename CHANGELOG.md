@@ -2,6 +2,16 @@
 
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
+## v7.2 (2026-10-13): correcciones previas a la release
+- **cifras_clave.** Se retiran 8 cifras superadas: deficit_2124_c1, T3-H1, deficit_2124_c2, T3-H2, T3-H3, T3-H4, L3-DEF-2124-CONBAJAS y B1-H1. Pasan a output/v5/cifras_superadas.csv con su sustituta y motivo.
+  - Queda una sola cifra de déficit con bajas: L3-DEF-2124-BAJAST1, con las bajas estimadas en v5.1. Se elimina el supuesto de bajas del 0,1-0,2 %.
+  - El test de cifras superadas revisa ahora también cifras_clave.csv.
+- **Construcción adicional.** Dosis no nula por CCAA: mínimo entre la necesidad T3 y la capacidad observada de visados 2007-2025. Se reestima con la misma fórmula e incertidumbre (output/v7_2/construccion). Tablas, atlas y Excel actualizados, con la hoja CONSTR_v72.
+- **Rebaja de impuestos y costes de construcción.** No difundible, por sobrestimación de diseño.
+- **R5.** Todas las tablas rotulan su comparador (columna comparador_tipo; base fuerte frente a base más exigente). Las cifras y la congelación no cambian (sha256 93795a94…).
+- **GSADF nacional.** Reverificado con el mismo método, la misma semilla y BH: 14 de 14 series idénticas. Ficha V72-BURBUJA, que reúne el resultado nacional y el regional; «no se puede afirmar» en ningún sentido.
+- **ERRATA:** 4 entradas.
+
 ## v7.1 (2026-10-12): consolidación final y estructura para publicación (versión de referencia)
 - **Sin análisis nuevo.** No se estima ningún modelo nuevo ni se abre ninguna muestra sellada. La v7.1 pasa a ser la versión de referencia y la v6.2, histórica.
 - **S1 · Dosis y coste** (output/v7_1/S1). Para cada instrumento de R6 y cada CCAA:

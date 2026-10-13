@@ -254,7 +254,7 @@ for c in (1, 2):
         "tabla intermedia (output/v5/A4/clasificacion_provincias.csv)", f"n={len(r)}; es={lo_:.3f}/{ce:.3f}/{hi_:.3f}")
 
 # ============ Comparación =====================================================
-ck = pd.read_csv(RAIZ / "output/v5/cifras_clave.csv").set_index("id")
+ck = pd.concat([pd.read_csv(RAIZ / "output/v5/cifras_clave.csv"), pd.read_csv(RAIZ / "output/v5/cifras_superadas.csv")]).set_index("id")   # v7.2
 l3 = {x["id"]: x for x in json.loads((RAIZ / "output/v6_2/L3/hechos.json").read_text())}
 
 

@@ -32,8 +32,8 @@ FECHA = "2026-10-12"
 NOMBRE_INSTR = {"a_construccion": "construcción adicional", "b_vacias": "movilización de vacías",
                 "c_vivienda_publica": "vivienda pública o asequible", "d_turisticos": "regulación local de turísticos",
                 "e_ayuda_demanda": "ayudas a la demanda", "f1_rebaja_ITP_IVA_vivienda_nueva": "rebaja de ITP/IVA (vivienda nueva)",
-                "f2_impuestos_construccion": "rebaja de impuestos y costes de construcción"}
-DOSIS_DEF = {"a_construccion": "viviendas adicionales acumuladas (llegan tras 1 año); 50-100 % del mínimo entre la necesidad anual T3 y el hueco de visados 2016-2025",
+                "f2_impuestos_construccion": "rebaja de impuestos y costes de construcción (no difundible)"}   # v7.2
+DOSIS_DEF = {"a_construccion": "viviendas adicionales acumuladas (llegan tras 1 año); 50-100 % del mínimo entre la necesidad anual T3 y la capacidad observada (máximo anual de visados 2007-2025 menos visados 2025; v7.2)",
              "b_vacias": "viviendas vacías movilizadas acumuladas; triangular(M_min, M_central, M_max) de T3 / 10 por año",
              "c_vivienda_publica": "viviendas públicas o asequibles netas de desplazamiento, acumuladas; 20 % × U(0,5; 1,5) de la necesidad anual, desplazamiento 0-50 %",
              "d_turisticos": "viviendas turísticas que vuelven al uso residencial (una vez); 5-30 % del stock VUT 2025T4",
@@ -56,7 +56,9 @@ def simular_s1(cc, b, rej, rng):
     Q = b.parque
     alq = rng.uniform(0.15, 0.20, n) * Q
     inc = ed / (es + ed)
-    cap = max(b.vis_max_2016_25 - b.vis_2025, 0.0)
+    # v7.2: dosis de construcción adicional NO nula. Capacidad observada = máximo anual de visados 2007-2025 menos visados de 2025
+    # (en R6 el máximo de 2016-2025 dejaba la dosis en 0 en 14 CCAA); dosis = 50-100 % del mínimo entre necesidad anual T3 y esa capacidad.
+    cap = max(b.vis_max_0725 - b.vis_2025, 0.0)
     a_anual = min(b.N_anual_central, cap) * rng.uniform(0.5, 1.0, n)
     b_anual = rng.triangular(b.M_min, b.M_central, b.M_max, n) / 10 if b.M_max > 0 else np.zeros(n)
     c_anual = 0.2 * b.N_anual_central * rng.uniform(0.5, 1.5, n) * (1 - rng.uniform(0, 0.5, n))
@@ -111,11 +113,14 @@ def main():
     pt = d[d.trimestre == "2025Q4"].set_index("cc").p_tasado
     bs["compraventas_2025"] = cv
     bs["valor_nuevas_meur"] = bs.vis_2025 * R6.M2 * pt / 1e6   # valor de mercado de la obra nueva anual (proxy: visados 2025)
+    bs["vis_max_0725"] = d[(d.anio >= 2007) & (d.anio <= 2025)].groupby(["cc", "anio"]).visados.sum().unstack().max(axis=1)   # v7.2
+    rob_a = []
     rng0 = np.random.default_rng(SEED)
     filas = []
     for cc in sorted(rej.index):
         seed = int(rng0.integers(1, 2**31))
         v = simular_s1(cc, bs.loc[cc], rej.loc[cc], np.random.default_rng(seed))
+        rob_a += robustez_construccion(cc, v, bs.loc[cc])
         for (inst, mer, h), x in v.items():
             con_coste = np.isfinite(x["coste"]).any()
             red = -x["neto"]   # reducción del precio neto pagado (puntos); en oferta = reducción del precio de mercado
@@ -144,6 +149,7 @@ def main():
                               coste_por_punto_meur_med=q(cpp)[0], coste_por_punto_meur_p5=q(cpp)[1], coste_por_punto_meur_p95=q(cpp)[2]))
     t = pd.DataFrame(filas)
     comprobar(t)
+    escribir_construccion(pd.DataFrame(rob_a))
     t.round(4).to_csv(OUT / "dosis_coste.csv", index=False)
     escribir(t)
 
@@ -151,12 +157,55 @@ def main():
 def comprobar(t: pd.DataFrame) -> None:
     im = pd.read_csv(ROOT / "output/v7/R6/impactos.csv", dtype={"cc": str})
     im = im[im.fuente_es == "rejilla"][["cc", "instrumento", "mercado", "horizonte", "dprecio_med", "coste_meur_med"]]
+    t = t[t.instrumento != "a_construccion"]   # v7.2: la construcción adicional se reestima con dosis nueva (no reproduce R6)
+    im = im[im.instrumento != "a_construccion"]
     m = t.merge(im, on=["cc", "instrumento", "mercado", "horizonte"], suffixes=("", "_r6"))
     assert len(m) == len(t) == len(im), (len(m), len(t), len(im))
     dif = (m.dprecio_med - m.dprecio_med_r6).abs().max()
     difc = (m.coste_anual_meur_med - m.coste_meur_med).abs().max()
     if not (dif < 1e-3 and (np.isnan(difc) or difc < 1e-2)):
         raise SystemExit(f"S1: la reproducción de R6 no coincide (precio {dif}, coste {difc})")
+
+
+def robustez_construccion(cc, v, b) -> list[dict]:
+    """v7.2: mismo criterio que R6 (V18) para la construcción adicional con la dosis nueva: el esfuerzo (= precio en oferta) baja en
+    TODAS las extracciones y horizontes, el p95 y el máximo a 10 años son < -0,1 % y el precio de mercado no sube (p95 <= 0)."""
+    out = []
+    for mer in ("precio", "alquiler"):
+        x = {h: v[("a_construccion", mer, h)]["dp"] for h in R6.HOR}
+        ok = (all(float(np.max(x[h])) < 0 for h in R6.HOR) and float(np.percentile(x[10], 95)) < R6.UMBRAL
+              and float(np.max(x[10])) < R6.UMBRAL and all(float(np.percentile(x[h], 95)) <= 1e-9 for h in R6.HOR))
+        for h in R6.HOR:
+            d = v[("a_construccion", mer, h)]
+            out.append(dict(cc=cc, ccaa=R6.NOMBRE[cc], instrumento="a_construccion", mercado=mer, horizonte=h, fuente_es="rejilla",
+                            visados_2025=float(b.vis_2025), visados_max_2007_2025=float(b.vis_max_0725),
+                            dosis_anual_max=float(min(b.N_anual_central, max(b.vis_max_0725 - b.vis_2025, 0.0))),
+                            necesidad_anual_T3=float(b.N_anual_central), capacidad_observada=float(max(b.vis_max_0725 - b.vis_2025, 0.0)),
+                            dosis_med=float(np.median(d["dosis"])), dprecio_med=float(np.median(d["dp"])),
+                            dprecio_p5=float(np.percentile(d["dp"], 5)), dprecio_p95=float(np.percentile(d["dp"], 95)),
+                            esfuerzo_max=float(np.max(d["dp"])), robusto=bool(ok)))
+    return out
+
+
+def escribir_construccion(r: pd.DataFrame) -> None:
+    o = ROOT / "output" / "v7_2" / "construccion"
+    o.mkdir(parents=True, exist_ok=True)
+    r.round(4).to_csv(o / "impactos_construccion.csv", index=False)
+    r10 = r[r.horizonte == 10]
+    L = ["# V7.2 · Construcción adicional con dosis no nula (escenario condicional, C4)", "",
+         "Misma fórmula, semilla, extracciones y rejilla de elasticidades que R6. Solo cambia la dosis: 50-100 % del mínimo entre la necesidad "
+         "anual central de T3 (v5.1) y la capacidad observada de construcción (máximo anual de visados 2007-2025 menos visados de 2025). En R6 la "
+         "capacidad se medía con el máximo de 2016-2025 y la dosis era 0 en 14 de 17 CCAA. El máximo de 2007-2025 incluye el auge de 2007-2008: "
+         "es una capacidad generosa, que acota por arriba.", "",
+         "| CCAA | necesidad anual T3 | capacidad observada | dosis anual máx. | mercado | Δ precio 10 años: mediana [p5, p95] | robusto |",
+         "|---|---|---|---|---|---|---|"]
+    for x in r10.itertuples():
+        L.append(f"| {x.ccaa} | {x.necesidad_anual_T3:,.0f} | {x.capacidad_observada:,.0f} | {x.dosis_anual_max:,.0f} | "
+                 f"{'compra' if x.mercado == 'precio' else 'alquiler'} | {x.dprecio_med:.2f} % [{x.dprecio_p5:.2f}; {x.dprecio_p95:.2f}] | {'sí' if x.robusto else 'no'} |"
+                 .replace(",", "X").replace(".", ",").replace("X", "."))
+    L += ["", f"Robusta en compra en {int(r10[r10.mercado == 'precio'].robusto.sum())} de 17 CCAA y en alquiler en "
+          f"{int(r10[r10.mercado == 'alquiler'].robusto.sum())} de 17 (criterio V18 de R6). Escenario condicional: no es un efecto estimado.", ""]
+    (o / "resumen.md").write_text("\n".join(L), encoding="utf-8")
 
 
 def nac(t, inst, mer, col, h=10):
@@ -212,11 +261,11 @@ def escribir(t: pd.DataFrame) -> None:
           "valor de compras. Son propiedades de la fórmula, no hallazgos.",
           "- Las ayudas a la demanda y la rebaja de ITP/IVA reducen el precio neto del beneficiario, pero suben el precio de mercado para el resto. "
           "Su coste por punto es de reducción del precio neto, no del precio de mercado.",
-          "- La rebaja de impuestos y costes de construcción es el único instrumento con coste estimado que baja el precio de mercado. Pero su efecto "
-          "por 100 M€ está sobrestimado por construcción: R6 traslada la rebaja al precio de todo el mercado, mientras que el coste fiscal solo cubre "
-          "la obra nueva (visados 2025). No debe leerse como «el instrumento más eficiente por euro».",
-          "- La construcción adicional tiene dosis mediana 0: en la mayoría de las CCAA los visados de 2025 ya igualan o superan el máximo de 2016-2025 "
-          "(el escenario de R6 solo añade el hueco).",
+          "- La rebaja de impuestos y costes de construcción es NO DIFUNDIBLE (v7.2): su escenario sobrestima el efecto por diseño (R6 traslada la "
+          "rebaja al precio de todo el mercado, mientras que el coste fiscal solo cubre la obra nueva). Sus filas se conservan para trazabilidad.",
+          "- Construcción adicional (v7.2): la dosis de R6 era 0 en la mayoría de las CCAA porque medía la capacidad con el máximo de visados de "
+          "2016-2025. Desde v7.2 la dosis es el mínimo entre la necesidad anual de T3 y la capacidad observada con el máximo de 2007-2025 "
+          "(output/v7_2/construccion/resumen.md); es una capacidad generosa, que incluye el auge de 2007-2008.",
           "- Todo es C4: los parámetros son supuestos de la rejilla. No se recomienda ningún instrumento; se comparan magnitudes condicionales.", ""]
     (OUT / "resumen.md").write_text("\n".join(L), encoding="utf-8")
     hechos = []

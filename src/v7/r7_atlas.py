@@ -262,7 +262,7 @@ def xlsx(d, nombres):
             ws[f"G{i}"].font = ng
             ws[f"G{i}"].number_format = "0.0%"
         ws.append([])
-        ws.append(["Mercado", "Mejor modelo", "RMSE mejor ×100", "RMSE base exigente ×100", "Diferencia", "¿Bate?", "Fuente"])
+        ws.append(["Mercado", "Mejor modelo", "RMSE mejor ×100", "RMSE base más exigente ×100", "Diferencia", "¿Bate a la base más exigente?", "Fuente"])
         r0 = ws.max_row + 1
         for k, m in enumerate(MERC):
             r = d["best"][(d["best"].codigo_ine_ccaa == cc) & (d["best"].mercado == m)].iloc[0]

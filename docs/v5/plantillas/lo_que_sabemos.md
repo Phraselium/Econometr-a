@@ -1,4 +1,4 @@
-# Vivienda en España: lo que sabemos y lo que no (versión de referencia v7.1)
+# Vivienda en España: lo que sabemos y lo que no (versión de referencia v7.2)
 
 Actualización de output/v4/lo_que_sabemos.md con las salidas de v5. Cada afirmación lleva su capa:
 - **C1**: hecho con al menos dos fuentes independientes, con todos sus componentes en C1.
@@ -61,19 +61,19 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - El coste de construcción en nivel: no hay fuente verificable (S5). La clasificación territorial queda en C4.
 - Que alguno de estos factores sea la causa principal de la subida: turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas.
 - Que los topes al alquiler reduzcan los precios o la oferta: su resultado queda en C4.
-- Que haya una burbuja: la exuberancia estadística no la identifica.
+- Que haya una burbuja, ni que no la haya [C4]. En el ámbito nacional, los cocientes precio/renta y precio/alquiler son exuberantes sin ajuste en {{V72-GSADF-ratios-p05:num}} de cuatro, pero en {{V72-GSADF-ratios-bh:num}} tras el ajuste por comparaciones múltiples, y en {{V72-GSADF-tipos-p05:num}} frente a referencias con tipos de interés; los niveles de precio sí son explosivos ({{V72-GSADF-niveles-bh:num}} de dos). Por comunidades, {{V72-GSADF-ccaa-bh:num}} de 34 series tras el ajuste (y {{V72-GSADF-ccaa-v6:num}} de 11 en otra muestra). Una exuberancia estadística no identifica una burbuja, y su ausencia tampoco la descarta. <!-- check:cifra-libre (número de series del diseño) -->
 - Que la inmigración suba o baje los precios o el alquiler. Hay especificaciones con intervalos que excluyen el cero y otras que no. El signo cambia con el control de población, la medida de precio, el método y el nivel territorial, y ninguna especificación aislada es la de referencia. La asociación total (sin controlar por población) es positiva, pero puede recoger otros factores ligados al crecimiento de la población; la directa (a igual población) no lo es, pero controlar por población es un mal control porque la población crece por la propia inmigración. Todo queda en C4, sin lectura causal.
 - (v6) Que alguna variable sea «relevante con seguridad» para el alquiler o la compra: ninguna cumple los criterios pre-registrados y ninguna hipótesis confirmatoria pasa Holm. Las importancias de los modelos de predicción describen qué variables ayudan a predecir, no qué pasaría si una variable cambiara.
 - (v6) Que los modelos de aprendizaje profundo predigan mejor que el gradient boosting, o que algún modelo bata a la inercia en el volumen trimestral de compraventas del último año: no lo hacen.
 - El resultado de bajar impuestos a la compra o a la construcción, de la seguridad jurídica frente a la ocupación ilegal o de limitar compras de no residentes: no hay diseño ni datos.
 
-## Qué añade la versión de referencia v7.1 (atlas regional) [C4]
+## Qué añade la versión de referencia v7.2 (atlas regional) [C4]
 
 - **Domina el componente común.** La variación interanual del precio de cada comunidad acompaña en gran medida a la media de las 17: el R² mediano es {{V71-S3-comun-r2-compra:valor}} en compra y {{V71-S3-comun-r2-alquiler:valor}} en alquiler. Es una descripción, no un modelo.
 - **No hay un largo plazo regional confirmado.** Se confirman {{V71-S3-largo-confirmadas:num}} de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en {{V71-S3-i2-compra:num}} de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
 - **Traslado al precio de las ayudas a la demanda y de la rebaja de ITP/IVA** (escenario condicional). Reducen el precio neto que paga el beneficiario: su esfuerzo varía un {{V7-R6-e_ayuda_demanda-esfuerzo10a:valor}} con la ayuda. Pero el precio de mercado sube un {{V71-S3-R6-e_ayuda_demanda-compra-precio10a:valor}} con la ayuda y un {{V71-S3-R6-f1_rebaja_ITP_IVA_vivienda_nueva-compra-precio10a:valor}} con la rebaja, a diez años (mediana entre comunidades). *Nota:* el signo lo fija en gran parte la fórmula de incidencia; lo informativo son las magnitudes relativas.
 - **Dosis y coste.**
-  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, {{V71-S1-e_ayuda_demanda-compra-coste_anual_meur:valor}}; rebaja de ITP/IVA, {{V71-S1-f1_rebaja_ITP_IVA_vivienda_nueva-compra-coste_anual_meur:valor}}; rebaja de impuestos y costes de construcción, {{V71-S1-f2_impuestos_construccion-compra-coste_anual_meur:valor}} (su efecto por euro está sobrestimado por construcción del escenario; no es «el más eficiente»).
+  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, {{V71-S1-e_ayuda_demanda-compra-coste_anual_meur:valor}}; rebaja de ITP/IVA, {{V71-S1-f1_rebaja_ITP_IVA_vivienda_nueva-compra-coste_anual_meur:valor}}. La rebaja de impuestos y costes de construcción no se difunde: su escenario sobrestima el efecto por diseño (traslada la rebaja a todo el mercado y el coste solo cubre la obra nueva).
   - Coste anual por punto de reducción del precio neto: {{V71-S1-e_ayuda_demanda-compra-coste_por_punto_meur:valor}} y {{V71-S1-f1_rebaja_ITP_IVA_vivienda_nueva-compra-coste_por_punto_meur:valor}}.
   - Construcción, vacías, vivienda pública y turísticos no tienen coste estimable, porque no hay coste unitario verificado. Se comparan por su efecto por cada diez mil viviendas: en alquiler, {{V71-S1-b_vacias-alquiler-efecto_10k:valor}} con vacías y {{V71-S1-c_vivienda_publica-alquiler-efecto_10k:valor}} con vivienda pública (mediana). <!-- check:cifra-libre (unidad de normalización «diez mil viviendas», no son cifras de resultado) -->
   - Robustez en la rejilla simulada (C4; no es robustez estadística): la movilización de vacías es robusta en {{V71-S3-R6-b_vacias-alquiler-robustas:num}} de 17 comunidades en alquiler; las ayudas a la demanda, en {{V71-S3-R6-e_ayuda_demanda-compra-robustas:num}}.
@@ -81,7 +81,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 
 ## Qué cambió entre versiones y por qué
 
-Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.1).
+Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.2).
 
 ## Problema y opciones con signo estable
 

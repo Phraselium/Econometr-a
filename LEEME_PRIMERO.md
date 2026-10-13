@@ -1,6 +1,6 @@
 # Léeme primero
 
-**Vivienda en España: base de evidencia reproducible.** Autor: Borja Romero, economista (firma individual, independiente). Versión de referencia: **v7.1** (12 de octubre de 2026).
+**Vivienda en España: base de evidencia reproducible.** Autor: Borja Romero, economista (firma individual, independiente). Versión de referencia: **v7.2** (13 de octubre de 2026; v7.1 con correcciones previas a la release).
 
 El repositorio tiene cuatro puertas de entrada:
 - [publicacion/](publicacion/MANIFIESTO.md): todo lo vigente para leer y difundir. Se genera con `make publicacion` y nunca se edita a mano.

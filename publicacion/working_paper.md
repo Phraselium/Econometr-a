@@ -2,13 +2,13 @@
 
 # Necesidad de vivienda, territorio y precios en España: hechos, cotas y exploración con datos públicos y una escala de evidencia
 
-*Borja Romero, economista (independiente). Documento de trabajo, versión de referencia `7.1`, 12 de octubre de 2026. DOI: pendiente.*
+*Borja Romero, economista (independiente). Documento de trabajo, versión de referencia `7.2`, 12 de octubre de 2026. DOI: pendiente.*
 
 *Proyecto reproducible: `make all` sin red; todas las cifras proceden de `output/v5/cifras_clave.csv`.*
 
 ## Resumen
 
-Este trabajo mide la necesidad de vivienda en España y su distribución territorial con registros públicos y clasifica cada resultado en una escala de evidencia: hechos con dos fuentes independientes, cotas con supuestos explícitos y resultados exploratorios. Entre 2021 y 2024 los hogares crecieron más que las viviendas terminadas, en el rango 389.361-710.542 viviendas (sin las dos correcciones que conservan el salto de la EPA, 596.371-710.542 viviendas) según la corrección del salto de la EPA [C2]. El precio de compra subió 47,2 % en 2015-2025 según tres registros, frente a 79,9 % del índice oficial; un puente contable reconcilia ambas medidas salvo un residuo de método. Una contabilidad stock-flujo provincial da una necesidad base de 210.424 viviendas/año al año en 2026-2035 (99.388-292.083 viviendas/año), entre 1,4 veces y 3,8 veces la producción actual [C4]; el supuesto que más pesa es la fracción de vacías movilizables. Las viviendas liberadas por el envejecimiento no se restan, porque la proyección de hogares del INE ya descuenta las disoluciones. De 2025 a 2030 el déficit empeora en todos los escenarios considerados [C2], aunque la magnitud es exploratoria [C4]; a 2035 la dirección es indeterminada. El déficit se concentra en pocas provincias, y una clasificación con un coste de construcción oficial separa dónde falta vivienda y es rentable construir de dónde la oferta no responde. Un análisis pre-registrado de las diferencias provinciales de precios resulta descriptivo por falta de potencia, y las contribuciones contables de los factores a la subida no son estables entre métodos ni periodos. Ningún resultado nuevo alcanza la capa de efectos identificados. La versión de referencia v7.1 añade un atlas regional [C4]: los precios de las comunidades se mueven sobre todo con su media común (R² mediano de 93,6 % en compra), no se confirma ninguna relación regional de largo plazo y, en una simulación de traslado con dosis y coste declarados, las ayudas a la demanda reducen el precio neto del beneficiario pero suben el precio de mercado.
+Este trabajo mide la necesidad de vivienda en España y su distribución territorial con registros públicos y clasifica cada resultado en una escala de evidencia: hechos con dos fuentes independientes, cotas con supuestos explícitos y resultados exploratorios. Entre 2021 y 2024 los hogares crecieron más que las viviendas terminadas, en el rango 389.361-710.542 viviendas (sin las dos correcciones que conservan el salto de la EPA, 596.371-710.542 viviendas) según la corrección del salto de la EPA [C2]. El precio de compra subió 47,2 % en 2015-2025 según tres registros, frente a 79,9 % del índice oficial; un puente contable reconcilia ambas medidas salvo un residuo de método. Una contabilidad stock-flujo provincial da una necesidad base de 210.424 viviendas/año al año en 2026-2035 (99.388-292.083 viviendas/año), entre 1,4 veces y 3,8 veces la producción actual [C4]; el supuesto que más pesa es la fracción de vacías movilizables. Las viviendas liberadas por el envejecimiento no se restan, porque la proyección de hogares del INE ya descuenta las disoluciones. De 2025 a 2030 el déficit empeora en todos los escenarios considerados [C2], aunque la magnitud es exploratoria [C4]; a 2035 la dirección es indeterminada. El déficit se concentra en pocas provincias, y una clasificación con un coste de construcción oficial separa dónde falta vivienda y es rentable construir de dónde la oferta no responde. Un análisis pre-registrado de las diferencias provinciales de precios resulta descriptivo por falta de potencia, y las contribuciones contables de los factores a la subida no son estables entre métodos ni periodos. Ningún resultado nuevo alcanza la capa de efectos identificados. La versión de referencia v7.2 añade un atlas regional [C4]: los precios de las comunidades se mueven sobre todo con su media común (R² mediano de 93,6 % en compra), no se confirma ninguna relación regional de largo plazo y, en una simulación de traslado con dosis y coste declarados, las ayudas a la demanda reducen el precio neto del beneficiario pero suben el precio de mercado.
 
 ## Abstract
 
@@ -99,7 +99,7 @@ Toda especificación probada se registra (`registro.csv` de cada módulo). Las f
 
 ### 4.1 Necesidad
 
-**Déficit pasado.** El déficit 2021-2024 está en el rango 389.361-710.542 viviendas [C2: cota según la corrección del salto de la EPA en 2021]; con las bajas del parque estimadas, 654.646 viviendas (389.361-765.994 viviendas) [C4]; con bajas supuestas, sin respaldo observado, el máximo llegaría a 924.658 viviendas [C2]. El de 2021-2025, con bajas nulas, es 700.934 viviendas [C4]. Los hogares crecieron 997.586 hogares en 2021-2025 [C1] y se terminaron 72.264-94.426 viviendas/año en 2019-2024 [C1]. La demanda latente por convivencia con los padres está entre 188.000-506.000 hogares [C2].
+**Déficit pasado.** El déficit 2021-2024 está en el rango 389.361-710.542 viviendas [C2: cota según la corrección del salto de la EPA en 2021]; con las bajas del parque estimadas, 654.646 viviendas (389.361-765.994 viviendas) [C4] (única cifra con bajas que se publica; el supuesto de bajas del 0,1-0,2 % anual de v4 se retira por falta de respaldo observado). <!-- check:cifra-libre (parámetros de método) --> El de 2021-2025, con bajas nulas, es 700.934 viviendas [C4]. Los hogares crecieron 997.586 hogares en 2021-2025 [C1] y se terminaron 72.264-94.426 viviendas/año en 2019-2024 [C1]. La demanda latente por convivencia con los padres está entre 188.000-506.000 hogares [C2].
 
 **Bajas del parque (`T1`) [C4].** Las identidades de stock no miden bajas: Censos 2011-2021 y Catastro dan tasas negativas (-0,33 % del parque al año y -0,18 % del parque al año), que reflejan altas no certificadas o afloramientos. Las demoliciones con licencia son 0,02-0,04 % del parque en 2024 y no cubren ruina, cambios de uso ni agregaciones. La tasa usada es C4 (mínimo, central y máximo de las demoliciones con licencia: 0,00 % del parque al año, 0,03 % del parque al año y 0,05 % del parque al año), salvo la cota física cero, que es C2. Sustituye al supuesto de bajas de v4, que queda por encima de todo lo observado.
 
@@ -209,13 +209,13 @@ La validación v6 es **espacial nueva** y **temporal ya vista**: el último año
 
 ---
 
-## 5 bis. Qué añade la versión de referencia v7.1 (atlas regional) [C4]
+## 5 bis. Qué añade la versión de referencia v7.2 (atlas regional) [C4]
 
 - **Domina el componente común.** La variación interanual del precio de cada comunidad acompaña en gran medida a la media de las 17: el R² mediano es 93,6 % en compra y 86,1 % en alquiler. Es una descripción, no un modelo.
 - **No hay un largo plazo regional confirmado.** Se confirman 0 de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en 8 de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
 - **Traslado al precio de las ayudas a la demanda y de la rebaja de ITP/IVA** (escenario condicional). Reducen el precio neto que paga el beneficiario: su esfuerzo varía un -5,3 % con la ayuda. Pero el precio de mercado sube un 4,4 % con la ayuda y un 1,1 % con la rebaja, a diez años (mediana entre comunidades). *Nota:* el signo lo fija en gran parte la fórmula de incidencia; lo informativo son las magnitudes relativas.
 - **Dosis y coste.**
-  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año; rebaja de impuestos y costes de construcción, 14,6 M€/año (su efecto por euro está sobrestimado por construcción del escenario; no es «el más eficiente»).
+  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año. La rebaja de impuestos y costes de construcción no se difunde: su escenario sobrestima el efecto por diseño (traslada la rebaja a todo el mercado y el coste solo cubre la obra nueva).
   - Coste anual por punto de reducción del precio neto: 76,4 M€/año por punto y 82,4 M€/año por punto.
   - Construcción, vacías, vivienda pública y turísticos no tienen coste estimable, porque no hay coste unitario verificado. Se comparan por su efecto por cada diez mil viviendas: en alquiler, -1,7 puntos % con vacías y -3,2 puntos % con vivienda pública (mediana). <!-- check:cifra-libre (unidad de normalización «diez mil viviendas», no son cifras de resultado) -->
   - Robustez en la rejilla simulada (C4; no es robustez estadística): la movilización de vacías es robusta en 17 de 17 comunidades en alquiler; las ayudas a la demanda, en 0.
@@ -241,7 +241,7 @@ La validación v6 es **espacial nueva** y **temporal ya vista**: el último año
 
 ### 6.1 Qué cambió entre versiones y por qué
 
-Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.1).
+Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.2).
 
 ## 7. Conclusiones
 

@@ -570,6 +570,7 @@ def main(smoke=False):
     MB.to_csv(OUT / "mejor_por_region.csv", index=False)
     # DM + permutación + Holm por mercado y horizonte (comparadores: base fuerte, AR(4), ECM v1)
     R = compara(E, BASE, [BASE, "ar4", "ecm_v1"], cods)
+    R.insert(R.columns.get_loc("comparador") + 1, "comparador_tipo", R.comparador.map(COMPARADOR))   # v7.2: rótulo del comparador
     R.to_csv(OUT / "dm_permutacion.csv", index=False)
     # mejor regional agregado (selección en muestra): pérdida de cada CCAA con su mejor modelo
     mj_rows = []
@@ -590,11 +591,16 @@ def main(smoke=False):
     for c in ("p_dm_mejor", "p_perm_mejor"):
         H7[c + "_holm"] = holm(H7[c].to_numpy())
     H7["nota"] = "selección en muestra (optimista); la validación honesta es la diferida (H7-P1)"
+    H7.insert(H7.columns.get_loc("comparador") + 1, "comparador_tipo", H7.comparador.map(COMPARADOR))   # v7.2: rótulo del comparador
     H7.to_csv(OUT / "h7_p1_mejor_regional.csv", index=False)
     P = congela(qs, cods, data, E, mejor)
     reg.flush()
     escribe_salidas(E, B, MB, R, H7, qs, P)
     return 0
+
+
+COMPARADOR = {"ar_factor": "base fuerte (AR con factor común; no es la más exigente)", "ar4": "AR(4)", "ecm_v1": "ECM v1 (nacional)",
+              "persistencia": "persistencia", "ult_crec_nac": "último crecimiento nacional"}
 
 
 def escribe_salidas(E, B, MB, R, H7, qs, P):
@@ -611,8 +617,10 @@ def escribe_salidas(E, B, MB, R, H7, qs, P):
     for m, v in pr.items():
         lines.append(f"- {m}: el mejor candidato bate a la base fuerte en {v['bate']} de {v['n']} CCAA; frente a la más exigente "
                      f"(mín. de persistencia, ult_crec_nac y ar_factor): {v['exig']} de {v['n']} (selección en muestra: optimista).")
-    lines += ["", "## RMSE x100 a h=1 (17 CCAA, todos los orígenes)", "", rm1.round(3).to_markdown(), "",
-              "## H7-P1 (mejor regional vs base fuerte, agregado de 17 CCAA; en muestra, con Holm)", "",
+    lines += ["", "**Comparadores (v7.2).** «Base fuerte» = ar_factor (AR con factor común). «Base más exigente» = el mínimo, por CCAA, de "
+              "persistencia, ult_crec_nac y ar_factor. Solo «predice mejor» quien bate a la más exigente.", "",
+              "## RMSE x100 a h=1 (17 CCAA, todos los orígenes; sin comparador: errores de cada modelo)", "", rm1.round(3).to_markdown(), "",
+              "## H7-P1 (mejor regional frente a cada comparador de la columna «comparador_tipo»: base fuerte o AR(4); agregado de 17 CCAA; en muestra, con Holm)", "",
               H7.round(4).to_markdown(index=False), "",
               "## Notas", "- ECM v1 no es replicable por CCAA: se usa un ECM nacional (spec A) con ajuste por nivel.",
               "- PMG sin demeaning ni ajuste de rupturas (se predice en niveles); dX futuro = 0.",
@@ -638,7 +646,7 @@ def escribe_salidas(E, B, MB, R, H7, qs, P):
     hechos = []
     for j, m in enumerate(MERC, 1):
         s = MB[MB.mercado == m]
-        hechos.append(dict(id=f"V7-R5-{j:03d}", indicador=f"CCAA donde el mejor candidato bate a la base fuerte ({m}), h=1-4",
+        hechos.append(dict(id=f"V7-R5-{j:03d}", indicador=f"CCAA donde el mejor candidato bate a la base fuerte ({m}), h=1-4 [comparador: base fuerte = AR con factor común; frente a la base más exigente, ver V71-S3-R5-exigente-{m}]",
                            valor=int(s.bate_base_fuerte.sum()), min=0, max=17, unidad="CCAA de 17",
                            periodo=f"origenes {ORIGEN_INI}-{qs[-2]}", cobertura="17 CCAA", fuentes=["INE IPV 80270", "INE IPC alquiler", "R1 panel"],
                            capa="C4", fecha_dato=FECHA))

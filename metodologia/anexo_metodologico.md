@@ -170,15 +170,15 @@ Vivienda España, v6.2 (tarea L1). Autor: Borja Romero, economista. Fecha: 12-10
 - **Precisión añadida tras L2.** «UU(año) = suma de `valor` de todas las filas de `unidades_urbanas_residenciales` con ese `periodo`, sin filtro adicional de régimen ni de municipios.»
 - **Reconstruible: sí.** Verificado.
 
-### A6. L3-DEF-2124-CONBAJAS: déficit 2021-2024 con bajas supuestas (v6.2)
+### A6. L3-DEF-2124-CONBAJAS: déficit 2021-2024 con bajas supuestas (v6.2; RETIRADA en v7.2, histórica: ver ERRATA.md)
 
 - **Fórmula.** Las 24 combinaciones de A5 × bajas supuestas {0,1; 0,2 % anual} (107.058 y 214.116, como en T-MIV).
   - mín = mínimo sin bajas = 389.361.
-  - máx = 710.542 + 214.116 = **924.658**.
-  - Central = (389.361 + 924.658)/2 = **657.010**.
+  - máx = 710.542 + 214.116 = **924.658** (histórico; retirada en v7.2).
+  - Central = (389.361 + 924.658)/2 = **657.010** (histórico; retirada en v7.2).
 - **Bajas estimadas (L3-DEF-2124-BAJAST1, C4).** Las 24 combinaciones de A5 × las bajas estimadas de v5.1 T1 (`output/v5_1/T1/tablas/deficit_con_bajas_estimadas.csv`: escenarios estimada_tasa_min, central y max del periodo 2021-2024) dan 389.361-765.994. La mediana, 654.646, es el valor central. Sustituye a T3-H2 (562.692-744.144, histórico).
 - **Capa.** C2: el supuesto de bajas no es un hecho.
-- **Resultado.** 389.361-924.658 viviendas (cota C2).
+- **Resultado.** 389.361-924.658 viviendas (cota C2 en v6.2; retirada en v7.2: la única cifra con bajas vigente es L3-DEF-2124-BAJAST1).
 - **Precisión añadida tras L2.** «Las bajas exactas son 0,002 × 107.057.889 = 214.115,8; el 214.116 es solo la cifra redondeada.»
 - **Reconstruible: sí.** Verificado.
 

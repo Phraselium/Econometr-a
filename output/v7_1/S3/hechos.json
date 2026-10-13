@@ -408,9 +408,9 @@
  {
   "id": "V71-S3-R6-a_construccion-alquiler-precio10a",
   "indicador": "Variación del alquiler de mercado a 10 años si se aplicase «construcción adicional» (escenario condicional; mediana entre CCAA; mín. y máx. de las medianas regionales)",
-  "valor": 0.0,
-  "min": -1.517,
-  "max": 0.0,
+  "valor": -1.5822,
+  "min": -4.3958,
+  "max": -0.3707,
   "unidad": "%",
   "periodo": "2026-2036 (escenario)",
   "cobertura": "17 CCAA",
@@ -422,7 +422,7 @@
  {
   "id": "V71-S3-R6-a_construccion-alquiler-robustas",
   "indicador": "CCAA en las que «construcción adicional» es robusta en alquiler (esfuerzo baja en todas las extracciones y el precio de mercado no sube)",
-  "valor": 2,
+  "valor": 16,
   "min": null,
   "max": null,
   "unidad": "CCAA de 17",
@@ -436,9 +436,9 @@
  {
   "id": "V71-S3-R6-a_construccion-compra-precio10a",
   "indicador": "Variación del precio de compra de mercado a 10 años si se aplicase «construcción adicional» (escenario condicional; mediana entre CCAA; mín. y máx. de las medianas regionales)",
-  "valor": 0.0,
-  "min": -1.3764,
-  "max": 0.0,
+  "valor": -1.4356,
+  "min": -3.9586,
+  "max": -0.3309,
   "unidad": "%",
   "periodo": "2026-2036 (escenario)",
   "cobertura": "17 CCAA",
@@ -450,7 +450,7 @@
  {
   "id": "V71-S3-R6-a_construccion-compra-robustas",
   "indicador": "CCAA en las que «construcción adicional» es robusta en compra (esfuerzo baja en todas las extracciones y el precio de mercado no sube)",
-  "valor": 3,
+  "valor": 17,
   "min": null,
   "max": null,
   "unidad": "CCAA de 17",

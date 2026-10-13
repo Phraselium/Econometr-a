@@ -52,7 +52,7 @@ def test_version_vigente():
     vieja = re.compile(r"versi[óo]n de referencia (?:congelada )?\(?v?6|v6\.2 es la versi[óo]n de referencia", re.I)
     for f in ("una_pagina.md", "lo_que_sabemos.md", "policy_brief.md", "informe_tecnico.md", "working_paper.md", "que_cambio.md"):
         t = (RAIZ / "publicacion" / f).read_text(encoding="utf-8")
-        assert "v7.1" in t or "`7.1`" in t, f
+        assert any(v in t for v in ("v7.1", "`7.1`", "v7.2", "`7.2`")), f
         assert not vieja.search(t), f
     for f in ("README.md", "LEEME_PRIMERO.md"):
         assert not vieja.search((RAIZ / f).read_text(encoding="utf-8")), f

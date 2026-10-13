@@ -1,7 +1,7 @@
 [
  {
   "id": "V7-R5-001",
-  "indicador": "CCAA donde el mejor candidato bate a la base fuerte (alquiler), h=1-4",
+  "indicador": "CCAA donde el mejor candidato bate a la base fuerte (alquiler), h=1-4 [comparador: base fuerte = AR con factor común; frente a la base más exigente, ver V71-S3-R5-exigente-alquiler]",
   "valor": 12,
   "min": 0,
   "max": 17,
@@ -34,7 +34,7 @@
  },
  {
   "id": "V7-R5-002",
-  "indicador": "CCAA donde el mejor candidato bate a la base fuerte (compra), h=1-4",
+  "indicador": "CCAA donde el mejor candidato bate a la base fuerte (compra), h=1-4 [comparador: base fuerte = AR con factor común; frente a la base más exigente, ver V71-S3-R5-exigente-compra]",
   "valor": 17,
   "min": 0,
   "max": 17,

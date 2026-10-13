@@ -81,7 +81,8 @@ def coincide(l2, pub, txt, id_=None) -> bool:
 
 
 def comparar() -> pd.DataFrame:
-    ck = pd.read_csv(RAIZ / "output" / "v5" / "cifras_clave.csv", dtype=str, keep_default_na=False).set_index("id")
+    ck = pd.concat([pd.read_csv(RAIZ / "output" / "v5" / f, dtype=str, keep_default_na=False)   # v7.2: incluye las retiradas
+                    for f in ("cifras_clave.csv", "cifras_superadas.csv")]).set_index("id")
     filas = []
     for id_, f in FUNCIONES.items():
         v, lo, hi = (float(x) for x in f())

@@ -135,8 +135,8 @@ Origen móvil 2016Q1-2026Q1, h = 1-4 agrupados. informativo, muestra ya vista en
 
 | instrumento | mercado | h | precio o alquiler de mercado: mediana [p5, p95] | esfuerzo: mediana [p5, p95] | robusto |
 |---|---|---|---|---|---|
-| construcción adicional | alquiler | 10 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
-| construcción adicional | compra | 10 | +0,0 % [-0,0 %, +0,0 %] | +0,0 % [-0,0 %, +0,0 %] | no |
+| construcción adicional (dosis v7.2) | alquiler | 10 | -0,9 % [-1,9 %, -0,4 %] | -0,9 % [-1,9 %, -0,4 %] | sí |
+| construcción adicional (dosis v7.2) | compra | 10 | -0,8 % [-1,5 %, -0,5 %] | -0,8 % [-1,5 %, -0,5 %] | sí |
 | movilización de vacías | alquiler | 10 | -3,8 % [-8,2 %, -1,9 %] | -3,8 % [-8,2 %, -1,9 %] | sí |
 | movilización de vacías | compra | 10 | -1,3 % [-2,6 %, -0,8 %] | -1,3 % [-2,6 %, -0,8 %] | sí |
 | vivienda pública o asequible | alquiler | 10 | -0,8 % [-1,8 %, -0,4 %] | -0,8 % [-1,8 %, -0,4 %] | sí |
@@ -146,10 +146,10 @@ Origen móvil 2016Q1-2026Q1, h = 1-4 agrupados. informativo, muestra ya vista en
 | ayudas a la demanda | alquiler | 10 | +4,1 % [+1,8 %, +8,3 %] | -5,4 % [-9,5 %, -2,5 %] | no |
 | ayudas a la demanda | compra | 10 | +4,1 % [+1,8 %, +8,3 %] | -5,4 % [-9,5 %, -2,5 %] | no |
 | rebaja de ITP/IVA (vivienda nueva) | compra | 10 | +1,0 % [+0,4 %, +2,1 %] | -1,2 % [-2,4 %, -0,5 %] | no |
-| rebaja de impuestos y costes de construcción | alquiler | 10 | -1,1 % [-2,1 %, -0,5 %] | -1,1 % [-2,1 %, -0,5 %] | sí |
-| rebaja de impuestos y costes de construcción | compra | 10 | -1,1 % [-2,1 %, -0,5 %] | -1,1 % [-2,1 %, -0,5 %] | sí |
+| rebaja de impuestos y costes de construcción (no difundible) | alquiler | 10 | -1,1 % [-2,1 %, -0,5 %] | -1,1 % [-2,1 %, -0,5 %] | sí |
+| rebaja de impuestos y costes de construcción (no difundible) | compra | 10 | -1,1 % [-2,1 %, -0,5 %] | -1,1 % [-2,1 %, -0,5 %] | sí |
 
-**Combinaciones robustas en esta región:** movilización de vacías (alquiler); movilización de vacías (precio); vivienda pública o asequible (alquiler); regulación local de turísticos (alquiler); rebaja de impuestos y costes de construcción (alquiler); rebaja de impuestos y costes de construcción (precio) (con la rejilla de elasticidades; la elasticidad regional no fue utilizable).
+**Combinaciones robustas en esta región:** construcción adicional (alquiler); construcción adicional (compra); movilización de vacías (alquiler); movilización de vacías (compra); vivienda pública o asequible (alquiler); regulación local de turísticos (alquiler); rebaja de impuestos y costes de construcción (no difundible) (alquiler); rebaja de impuestos y costes de construcción (no difundible) (compra) (con la rejilla de elasticidades; la elasticidad regional no fue utilizable).
 
 Con la elasticidad regional (DOLS) el resultado puede diferir; esa elasticidad no pasó los diagnósticos en ninguna de las 17 CCAA, de modo que se mantiene la rejilla y se reportan ambas en impactos.csv.
 
@@ -165,10 +165,10 @@ Misma simulación que la sección 6 (output/v7_1/S1/dosis_coste.csv, que reprodu
 | vivienda pública o asequible | alquiler | 2.090 | -0,8 % | no estimable | -3,81 pp [-7,25, -2,52] | — | — |
 | regulación local de turísticos | compra | 2.125 | -0,2 % | no estimable | -0,74 pp [-1,37, -0,51] | — | — |
 | regulación local de turísticos | alquiler | 2.125 | -0,9 % | no estimable | -4,25 pp [-7,99, -2,82] | — | — |
-| construcción adicional | compra | 0 | +0,0 % | no estimable | — | — | — |
-| construcción adicional | alquiler | 0 | +0,0 % | no estimable | — | — | — |
-| rebaja de impuestos y costes de construcción | compra | 3.096 | -1,1 % | 10 [5, 16] | — | -11,25 pp [-16,00, -5,87] | 9 [6, 17] |
-| rebaja de impuestos y costes de construcción | alquiler | 3.096 | -1,1 % | el de compra | — | — | — |
+| construcción adicional | compra | 10.814 | -0,8 % | no estimable | -0,74 pp [-1,37, -0,51] | — | — |
+| construcción adicional | alquiler | 10.814 | -0,9 % | no estimable | -0,84 pp [-1,73, -0,40] | — | — |
+| rebaja de impuestos y costes de construcción (no difundible) | compra | 3.096 | -1,1 % | 10 [5, 16] | — | -11,25 pp [-16,00, -5,87] | 9 [6, 17] |
+| rebaja de impuestos y costes de construcción (no difundible) | alquiler | 3.096 | -1,1 % | el de compra | — | — | — |
 | ayudas a la demanda | compra | 15.638 | +4,1 % | 233 [129, 341] | — | +1,89 pp [+0,96, +2,97] | 41 [31, 69] |
 | ayudas a la demanda | alquiler | 15.638 | +4,1 % | no estimable | — | — | — |
 | rebaja de ITP/IVA (vivienda nueva) | compra | 15.638 | +1,0 % | 58 [27, 90] | — | +1,89 pp [+0,96, +2,97] | 44 [31, 82] |

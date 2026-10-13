@@ -106,7 +106,9 @@ NOM = {"a_construccion": "construcción adicional", "b_vacias": "movilización d
 
 def propuestas() -> list[dict]:
     im = pd.read_csv(V7 / "R6" / "impactos.csv", dtype={"cc": str})
-    im = im[(im.fuente_es == "rejilla") & (im.horizonte == 10)]
+    im = im[(im.fuente_es == "rejilla") & (im.horizonte == 10) & (im.instrumento != "a_construccion")]
+    ac = pd.read_csv(RAIZ / "output" / "v7_2" / "construccion" / "impactos_construccion.csv", dtype={"cc": str})   # v7.2: dosis no nula
+    im = pd.concat([im, ac[ac.horizonte == 10]], ignore_index=True)
     out = []
     for (inst, mer), g in im.groupby(["instrumento", "mercado"]):
         ml = "compra" if mer == "precio" else "alquiler"

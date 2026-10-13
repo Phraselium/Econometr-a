@@ -1,4 +1,4 @@
-# Vivienda en España: lo que sabemos y lo que no (versión de referencia v7.1)
+# Vivienda en España: lo que sabemos y lo que no (versión de referencia v7.2)
 
 Actualización de output/v4/lo_que_sabemos.md con las salidas de v5. Cada afirmación lleva su capa:
 - **C1**: hecho con al menos dos fuentes independientes, con todos sus componentes en C1.
@@ -61,19 +61,19 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - El coste de construcción en nivel: no hay fuente verificable (S5). La clasificación territorial queda en C4.
 - Que alguno de estos factores sea la causa principal de la subida: turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas.
 - Que los topes al alquiler reduzcan los precios o la oferta: su resultado queda en C4.
-- Que haya una burbuja: la exuberancia estadística no la identifica.
+- Que haya una burbuja, ni que no la haya [C4]. En el ámbito nacional, los cocientes precio/renta y precio/alquiler son exuberantes sin ajuste en 3 de cuatro, pero en 0 tras el ajuste por comparaciones múltiples, y en 0 frente a referencias con tipos de interés; los niveles de precio sí son explosivos (2 de dos). Por comunidades, 7 de 34 series tras el ajuste (y 0 de 11 en otra muestra). Una exuberancia estadística no identifica una burbuja, y su ausencia tampoco la descarta. <!-- check:cifra-libre (número de series del diseño) -->
 - Que la inmigración suba o baje los precios o el alquiler. Hay especificaciones con intervalos que excluyen el cero y otras que no. El signo cambia con el control de población, la medida de precio, el método y el nivel territorial, y ninguna especificación aislada es la de referencia. La asociación total (sin controlar por población) es positiva, pero puede recoger otros factores ligados al crecimiento de la población; la directa (a igual población) no lo es, pero controlar por población es un mal control porque la población crece por la propia inmigración. Todo queda en C4, sin lectura causal.
 - (v6) Que alguna variable sea «relevante con seguridad» para el alquiler o la compra: ninguna cumple los criterios pre-registrados y ninguna hipótesis confirmatoria pasa Holm. Las importancias de los modelos de predicción describen qué variables ayudan a predecir, no qué pasaría si una variable cambiara.
 - (v6) Que los modelos de aprendizaje profundo predigan mejor que el gradient boosting, o que algún modelo bata a la inercia en el volumen trimestral de compraventas del último año: no lo hacen.
 - El resultado de bajar impuestos a la compra o a la construcción, de la seguridad jurídica frente a la ocupación ilegal o de limitar compras de no residentes: no hay diseño ni datos.
 
-## Qué añade la versión de referencia v7.1 (atlas regional) [C4]
+## Qué añade la versión de referencia v7.2 (atlas regional) [C4]
 
 - **Domina el componente común.** La variación interanual del precio de cada comunidad acompaña en gran medida a la media de las 17: el R² mediano es 93,6 % en compra y 86,1 % en alquiler. Es una descripción, no un modelo.
 - **No hay un largo plazo regional confirmado.** Se confirman 0 de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en 8 de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
 - **Traslado al precio de las ayudas a la demanda y de la rebaja de ITP/IVA** (escenario condicional). Reducen el precio neto que paga el beneficiario: su esfuerzo varía un -5,3 % con la ayuda. Pero el precio de mercado sube un 4,4 % con la ayuda y un 1,1 % con la rebaja, a diez años (mediana entre comunidades). *Nota:* el signo lo fija en gran parte la fórmula de incidencia; lo informativo son las magnitudes relativas.
 - **Dosis y coste.**
-  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año; rebaja de impuestos y costes de construcción, 14,6 M€/año (su efecto por euro está sobrestimado por construcción del escenario; no es «el más eficiente»).
+  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año. La rebaja de impuestos y costes de construcción no se difunde: su escenario sobrestima el efecto por diseño (traslada la rebaja a todo el mercado y el coste solo cubre la obra nueva).
   - Coste anual por punto de reducción del precio neto: 76,4 M€/año por punto y 82,4 M€/año por punto.
   - Construcción, vacías, vivienda pública y turísticos no tienen coste estimable, porque no hay coste unitario verificado. Se comparan por su efecto por cada diez mil viviendas: en alquiler, -1,7 puntos % con vacías y -3,2 puntos % con vivienda pública (mediana). <!-- check:cifra-libre (unidad de normalización «diez mil viviendas», no son cifras de resultado) -->
   - Robustez en la rejilla simulada (C4; no es robustez estadística): la movilización de vacías es robusta en 17 de 17 comunidades en alquiler; las ayudas a la demanda, en 0.
@@ -81,7 +81,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 
 ## Qué cambió entre versiones y por qué
 
-Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.1).
+Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.2).
 
 ## Problema y opciones con signo estable
 

@@ -80,7 +80,8 @@ def test_recuentos_sin_perdida_de_cifras(ck):
 
 
 def test_hechos_json_igual_a_cifras_clave(ck):
-    idx = ck.set_index("origen")
+    # v7.2: las cifras retiradas o no difundibles están en cifras_superadas.csv, no en la tabla vigente
+    idx = pd.concat([ck, pd.read_csv(RAIZ / "output" / "v5" / "cifras_superadas.csv")]).set_index("origen")
     n = 0
     for p in sorted(glob.glob(str(RAIZ / "output" / "v5" / "*" / "hechos.json")) + glob.glob(str(RAIZ / "output" / "v5_1" / "*" / "hechos.json"))
                     + glob.glob(str(RAIZ / "output" / "v6" / "*" / "hechos.json"))):

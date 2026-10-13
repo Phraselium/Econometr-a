@@ -1,6 +1,6 @@
 <!-- Generado por `make publicacion` desde docs/v7_1/guia_revisor.md. No editar a mano: se regenera y un test lo comprueba. -->
 
-# Guía para el revisor externo (versión de referencia v7.1)
+# Guía para el revisor externo (versión de referencia v7.2)
 
 **Autor:** Borja Romero, economista (firma individual e independiente).
 

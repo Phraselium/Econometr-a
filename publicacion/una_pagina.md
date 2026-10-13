@@ -1,6 +1,6 @@
 <!-- Generado por `make publicacion` desde output/v5/una_pagina.md. No editar a mano: se regenera y un test lo comprueba. -->
 
-# Vivienda en España en una página (versión de referencia v7.1)
+# Vivienda en España en una página (versión de referencia v7.2)
 
 **Borja Romero, economista.** Solo hechos con al menos dos fuentes [C1] o cotas con supuestos explícitos [C2]. Cada cifra lleva periodo, fuente, fecha del dato y capa.
 
@@ -13,7 +13,7 @@
 7. [C2] **La próxima década.** Crecimiento de hogares proyectado por el INE: 1.720.537 hogares (1.308.531-1.772.410 hogares) (2026-2035; INE Proyección de Hogares (tabla 54562); dato de 2026; C2).
 8. [C1] **La mayoría de los hogares es propietaria.** Hogares con vivienda principal en propiedad: 74,5 % de hogares (72,1-75,9 % de hogares) (2021-2022; BdE EFF; INE ECV; INE Censo 2021; dato de 2021-11 (Censo) / 2022 (EFF, ECV); C1).
 
-**Qué añade la versión de referencia v7.1 [C4].** Los cambios entre versiones, y por qué, están en una sección única: [Qué cambió entre versiones y por qué](que_cambio.md).
+**Qué añade la versión de referencia v7.2 [C4].** Los cambios entre versiones, y por qué, están en una sección única: [Qué cambió entre versiones y por qué](que_cambio.md).
 - Los precios de las comunidades se mueven sobre todo juntos: la variación de cada una acompaña en gran medida a la media de las 17 (R² mediano de 93,6 % en compra).
 - No se confirma ninguna relación regional de largo plazo con el empleo, la población, las hipotecas o el paro (0 de siete hipótesis).
 - En una simulación condicional, las ayudas a la demanda reducen el precio neto de quien las recibe, pero el precio de mercado sube (4,4 % a diez años; el signo lo fija en gran parte la fórmula de incidencia). Su dosis y su coste en compra están declarados. En los instrumentos de cantidad (construcción, vacías, vivienda pública, turísticos) el coste no es estimable.
@@ -23,7 +23,7 @@
 > - Que un único factor (turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas) sea la causa principal de la subida.
 > - Qué parte de las viviendas o del alquiler está en manos de empresas o grandes tenedores: no hay datos de titularidad.
 > - Que los topes al alquiler reduzcan los precios o la oferta.
-> - Que haya una burbuja: la exuberancia estadística no la identifica.
+> - Que haya una burbuja, ni que no la haya [C4]. En el ámbito nacional, los cocientes precio/renta y precio/alquiler son exuberantes sin ajuste en 3 de cuatro, pero en 0 tras el ajuste por comparaciones múltiples, y en 0 frente a referencias con tipos de interés; los niveles de precio sí son explosivos (2 de dos). Por comunidades, 7 de 34 series tras el ajuste (y 0 de 11 en otra muestra). Una exuberancia estadística no identifica una burbuja, y su ausencia tampoco la descarta. <!-- check:cifra-libre (número de series del diseño) -->
 > - Qué variable mueve el alquiler o el precio de compra: en v6 ninguna es «relevante con seguridad» y ninguna hipótesis confirmatoria pasa Holm; que un modelo prediga bien no identifica por qué sube el precio [C4].
 > - La necesidad total de vivienda para 2026-2035 como hecho: depende de supuestos sobre el parque y queda como exploratoria (210.424 viviendas/año (99.388-292.083 viviendas/año) (2026-2035; B1; T1; dato de 2025 (ECP y MIVAU); proyección INE 54562 de 2026-06-17; C4)). Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
 > - Cuánto empeora el déficit a 2030 (87.246-946.852 viviendas, [C4]) y si empeora a 2035 (indeterminado, [C4]).

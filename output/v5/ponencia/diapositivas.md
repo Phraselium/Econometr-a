@@ -96,7 +96,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ---
 
-## Qué añade la versión de referencia v7.1 [C4]
+## Qué añade la versión de referencia v7.2 [C4]
 
 - Los precios de las comunidades se mueven sobre todo juntos: R² mediano de 93,6 % frente a la media de las 17 (compra)
 - Ninguna relación regional de largo plazo confirmada (0 de siete hipótesis)

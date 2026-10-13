@@ -1,6 +1,6 @@
 <!-- Generado por `make publicacion` desde output/v5/policy_brief.md. No editar a mano: se regenera y un test lo comprueba. -->
 
-# Vivienda en España: necesidad, datos y opciones con la misma vara (policy brief, versión de referencia v7.1)
+# Vivienda en España: necesidad, datos y opciones con la misma vara (policy brief, versión de referencia v7.2)
 
 **Borja Romero, economista** (firma individual, independiente). Octubre de 2026. Cada afirmación lleva su capa: [C1] hecho con al menos dos fuentes independientes; [C2] cota con supuestos explícitos; [C4] exploratorio o de fuente única. Ningún resultado alcanza la capa de identificación causal, de modo que el texto describe asociaciones y cotas, no relaciones de causa.
 
@@ -51,13 +51,13 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 
 [C4] Con datos públicos por provincia, municipio y distrito, los modelos de árboles predicen el alquiler de stock (SERPAVI) y el precio de compra (valor tasado) en provincias que no vieron mejor que la simple inercia (y que la línea base más exigente en el alquiler de stock; en el precio anual, de forma frágil): en el alquiler provincial, 1,6 % de error frente a 4,2 %. Pero predecir no es explicar: ninguna variable es «relevante con seguridad», ninguna hipótesis confirmatoria pasa la corrección de Holm y, en el volumen trimestral de compraventas del último año, nada bate a la inercia. La población se asocia con los dos mercados y el PIB por habitante solo con la compra. Precio y alquiler se mueven juntos sin señales de exuberancia en ninguna de las 11 CCAA contrastadas. Para decidir, estos resultados orientan dónde mirar, no qué instrumento funciona.
 
-## Qué añade la versión de referencia v7.1 (atlas regional) [C4]
+## Qué añade la versión de referencia v7.2 (atlas regional) [C4]
 
 - **Domina el componente común.** La variación interanual del precio de cada comunidad acompaña en gran medida a la media de las 17: el R² mediano es 93,6 % en compra y 86,1 % en alquiler. Es una descripción, no un modelo.
 - **No hay un largo plazo regional confirmado.** Se confirman 0 de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en 8 de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
 - **Traslado al precio de las ayudas a la demanda y de la rebaja de ITP/IVA** (escenario condicional). Reducen el precio neto que paga el beneficiario: su esfuerzo varía un -5,3 % con la ayuda. Pero el precio de mercado sube un 4,4 % con la ayuda y un 1,1 % con la rebaja, a diez años (mediana entre comunidades). *Nota:* el signo lo fija en gran parte la fórmula de incidencia; lo informativo son las magnitudes relativas.
 - **Dosis y coste.**
-  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año; rebaja de impuestos y costes de construcción, 14,6 M€/año (su efecto por euro está sobrestimado por construcción del escenario; no es «el más eficiente»).
+  - Coste fiscal anual mediano por comunidad: ayudas a la demanda, 378,2 M€/año; rebaja de ITP/IVA, 93,3 M€/año. La rebaja de impuestos y costes de construcción no se difunde: su escenario sobrestima el efecto por diseño (traslada la rebaja a todo el mercado y el coste solo cubre la obra nueva).
   - Coste anual por punto de reducción del precio neto: 76,4 M€/año por punto y 82,4 M€/año por punto.
   - Construcción, vacías, vivienda pública y turísticos no tienen coste estimable, porque no hay coste unitario verificado. Se comparan por su efecto por cada diez mil viviendas: en alquiler, -1,7 puntos % con vacías y -3,2 puntos % con vivienda pública (mediana). <!-- check:cifra-libre (unidad de normalización «diez mil viviendas», no son cifras de resultado) -->
   - Robustez en la rejilla simulada (C4; no es robustez estadística): la movilización de vacías es robusta en 17 de 17 comunidades en alquiler; las ayudas a la demanda, en 0.
@@ -65,7 +65,7 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 
 ## Qué cambió entre versiones y por qué
 
-Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.1).
+Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.2).
 
 ## Qué falta para decidir mejor
 
@@ -94,7 +94,7 @@ Las solicitudes de docs/v5/solicitudes.md, por orden de prioridad:
 
 - No atribuye la subida de precios a un factor principal: turísticos, inmigración, oferta, tipos, compradores extranjeros o empresas.
 - No afirma que los topes al alquiler reduzcan precios u oferta: su resultado queda en [C4].
-- No afirma que haya una burbuja.
+- No afirma que haya una burbuja ni que no la haya: la exuberancia de los cocientes nacionales no sobrevive al ajuste múltiple, los niveles sí son explosivos y algunas series regionales también (ficha V72-BURBUJA del verificador).
 - No afirma que la inmigración suba o baje los precios: el signo de la asociación cambia con el control de población, la medida de precio y el nivel territorial [C4]. El signo negativo a igual población no indica que la inmigración abarate la vivienda: controlar por población, que crece por la propia inmigración, es un mal control.
 - No afirma que ninguna variable determine el alquiler o el precio de compra: las importancias de los modelos de predicción de v6 son descriptivas.
 

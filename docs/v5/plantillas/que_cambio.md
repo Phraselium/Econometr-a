@@ -1,4 +1,4 @@
-# Qué cambió entre versiones y por qué (sección única, versión de referencia v7.1)
+# Qué cambió entre versiones y por qué (sección única, versión de referencia v7.2)
 
 **Borja Romero, economista.** Esta es la única sección del proyecto sobre los cambios entre versiones. Los demás entregables remiten aquí. El detalle, conclusión por conclusión, está en el historial de conclusiones (`docs/v6_1/historial_conclusiones.md`). Los errores que cambiaron una cifra publicada están en la fe de erratas (ERRATA.md). Solo es citable la versión de referencia: hoy, la v7.1.
 
@@ -46,7 +46,15 @@ En cada caso se dice cuál fue la razón.
 ## v7.1: dosis, coste y versión de referencia
 
 - [C4] **Dosis y coste.** Cada instrumento simulado declara a qué cantidad se aplica, a qué horizonte y, cuando hay base, su coste fiscal aproximado:
-  - Coste anual mediano por comunidad: ayudas a la demanda, {{V71-S1-e_ayuda_demanda-compra-coste_anual_meur:valor}}; rebaja de ITP/IVA, {{V71-S1-f1_rebaja_ITP_IVA_vivienda_nueva-compra-coste_anual_meur:valor}}; rebaja de impuestos y costes de construcción, {{V71-S1-f2_impuestos_construccion-compra-coste_anual_meur:valor}}. El efecto por euro de esta última está sobrestimado por construcción del escenario: no debe leerse como el instrumento más eficiente por euro.
+  - Coste anual mediano por comunidad: ayudas a la demanda, {{V71-S1-e_ayuda_demanda-compra-coste_anual_meur:valor}}; rebaja de ITP/IVA, {{V71-S1-f1_rebaja_ITP_IVA_vivienda_nueva-compra-coste_anual_meur:valor}}. La rebaja de impuestos y costes de construcción no se difunde desde v7.2: su escenario sobrestima el efecto por diseño (traslada la rebaja a todo el mercado y el coste fiscal solo cubre la obra nueva).
   - Construcción, vacías, vivienda pública y turísticos: coste no estimable (no hay coste unitario verificado). Tampoco lo es el de las ayudas al alquiler.
-  - Los instrumentos de cantidad se comparan por su efecto por cada diez mil viviendas. En compra es {{V71-S1-b_vacias-compra-efecto_10k:valor}} en vacías, vivienda pública y turísticos (igual por construcción de la fórmula) y {{V71-S1-a_construccion-compra-efecto_10k:valor}} en construcción adicional (mediana entre comunidades).
+  - Los instrumentos de cantidad se comparan por su efecto por cada diez mil viviendas. En compra es {{V71-S1-b_vacias-compra-efecto_10k:valor}} (mediana entre comunidades) e idéntico en los cuatro instrumentos de cantidad por construcción de la fórmula. La construcción adicional tiene desde v7.2 una dosis no nula en todas las comunidades (mínimo entre la necesidad anual y la capacidad observada de construcción): baja el precio de compra un {{V71-S3-R6-a_construccion-compra-precio10a:valor}} a diez años y es robusta en {{V71-S3-R6-a_construccion-compra-robustas:num}} de 17 comunidades en compra (escenario condicional).
 - **Versión de referencia.** La v7.1 reúne todo lo vigente en publicacion/. La v6.2 pasa a histórica (historico/INDICE.md). No se añadió ningún análisis: solo ordenación, dosis y coste, y la nota metodológica.
+
+## v7.2: correcciones previas a la release
+
+- **Déficit: una sola cifra con bajas.** Se retiran de la tabla de cifras las del rango C1 anterior y las de bajas supuestas. Queda {{L3-DEF-2124-BAJAST1}} [C4], con las bajas estimadas en v5.1 sobre las ocho variantes de la EPA. El detalle de las cifras retiradas está en ERRATA.md y en output/v5/cifras_superadas.csv.
+- **Necesidad.** La cifra de necesidad de v5 se retira; la vigente es {{T3-H5b}} [C4].
+- **Construcción adicional.** Dosis no nula por comunidad (ver arriba). La rebaja de impuestos y costes de construcción deja de difundirse: su escenario sobrestima el efecto por diseño.
+- **Predicción regional.** Cada tabla indica su comparador: base fuerte (AR con factor común) o base más exigente.
+- **Burbuja.** El GSADF nacional se reverificó con el mismo método y la misma semilla ({{V72-GSADF-rev:num}} de 14 series idénticas). No se puede afirmar que haya una burbuja ni que no la haya (ficha V72-BURBUJA). <!-- check:cifra-libre (número de series del diseño) -->

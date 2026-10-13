@@ -26,6 +26,7 @@ sys.path.insert(0, str(RAIZ / "src" / "v7"))
 from r7_atlas import _zip_determinista  # noqa: E402
 
 V7 = RAIZ / "output" / "v7"
+V72C = RAIZ / "output" / "v7_2" / "construccion"
 S1 = RAIZ / "output" / "v7_1" / "S1"
 O = RAIZ / "output" / "v7_1" / "atlas"
 AZUL, VERDE, NEGRO = "FF0000FF", "FF008000", "FF000000"
@@ -72,7 +73,38 @@ def seccion(t: pd.DataFrame, cc: str) -> str:
     return "\n".join(L)
 
 
+F2 = "rebaja de impuestos y costes de construcción"
+F2_ND = F2 + " (no difundible)"
+NOMBRE = {"a_construccion": "construcción adicional", "b_vacias": "movilización de vacías", "c_vivienda_publica": "vivienda pública o asequible",
+          "d_turisticos": "regulación local de turísticos", "e_ayuda_demanda": "ayudas a la demanda",
+          "f1_rebaja_ITP_IVA_vivienda_nueva": "rebaja de ITP/IVA (vivienda nueva)", "f2_impuestos_construccion": F2_ND}
+
+
+def _robustas() -> pd.DataFrame:
+    """v7.2: robustez de R6 con la construcción adicional sustituida por la reestimación con dosis no nula (output/v7_2/construccion)."""
+    rb = pd.read_csv(V7 / "R6" / "robustas_por_ccaa.csv", dtype={"cc": str})
+    rb = rb[rb.instrumento != "a_construccion"][["cc", "ccaa", "instrumento", "mercado", "robusto"]]
+    a = pd.read_csv(V72C / "impactos_construccion.csv", dtype={"cc": str})
+    a = a[a.horizonte == 10][["cc", "ccaa", "instrumento", "mercado", "robusto"]]
+    return pd.concat([rb, a], ignore_index=True)
+
+
+def _lista(rb, cc, mer=None) -> str:
+    x = rb[(rb.cc == cc) & rb.robusto.astype(bool)]
+    if mer:
+        return ", ".join(sorted(NOMBRE[i] for i in x[x.mercado == mer].instrumento)) or "ninguno"
+    return "; ".join(f"{NOMBRE[r.instrumento]} ({'compra' if r.mercado == 'precio' else 'alquiler'})"
+                     for r in x.sort_values(["instrumento", "mercado"]).itertuples()) or "ninguna"
+
+
+def _pct(x):
+    return f"{x:+.1f} %".replace(".", ",")
+
+
 def fichas_atlas(t: pd.DataFrame) -> None:
+    rb = _robustas()
+    ac = pd.read_csv(V72C / "impactos_construccion.csv", dtype={"cc": str})
+    ac = ac[ac.horizonte == 10]
     O.mkdir(parents=True, exist_ok=True)
     for p in sorted((V7 / "atlas").glob("[0-9][0-9]_*.md")):
         cc = p.name[:2]
@@ -80,12 +112,25 @@ def fichas_atlas(t: pd.DataFrame) -> None:
         marca = "## 7. Qué no se puede afirmar"
         assert marca in txt, p
         txt = re.sub(r"^\| ([^|]+) \| precio \| (2|5|10) \|", r"| \1 | compra | \2 |", txt, flags=re.M)   # v7.1 (H10): etiqueta interna «precio» = compra
+        for r in ac[ac.cc == cc].itertuples():   # v7.2: construcción adicional con dosis no nula
+            ml = "compra" if r.mercado == "precio" else "alquiler"
+            celda = f"{_pct(r.dprecio_med)} [{_pct(r.dprecio_p5)}, {_pct(r.dprecio_p95)}]"
+            txt = re.sub(rf"^\| construcción adicional \| {ml} \| 10 \|[^\n]*$",
+                         f"| construcción adicional (dosis v7.2) | {ml} | 10 | {celda} | {celda} | {'sí' if r.robusto else 'no'} |", txt, flags=re.M)
+        txt = re.sub(r"^\*\*Combinaciones robustas en esta región:\*\* .*? \(con la rejilla",
+                     lambda m: f"**Combinaciones robustas en esta región:** {_lista(rb, cc)} (con la rejilla", txt, count=1, flags=re.M)
+        txt = re.sub(rf"(?<!\()({F2})(?! \(no difundible\))", F2_ND, txt)
         txt = txt.replace(marca, seccion(t, cc) + "\n" + marca, 1)
         txt = txt.replace("- Que una propuesta produzca los impactos de la tabla:",
                           "- Que un instrumento sea «más eficiente por euro» que otro: los costes de los instrumentos de cantidad no son estimables y los "
                           "demás dependen de supuestos (C4).\n- Que una propuesta produzca los impactos de la tabla:", 1)
         (O / p.name).write_text(txt, encoding="utf-8")
     r = (V7 / "atlas_resumen.md").read_text(encoding="utf-8")
+    nombres = dict(zip(rb.ccaa, rb.cc))
+    r = re.sub(r"^\| ([^|]+) \| ([^|]+) \| ([^|]+) \|$",
+               lambda m: (f"| {m.group(1)} | {_lista(rb, nombres[m.group(1).strip()], 'alquiler')} | {_lista(rb, nombres[m.group(1).strip()], 'precio')} |"
+                          if m.group(1).strip() in nombres and "," in m.group(2) + m.group(3) + "," else m.group(0)), r, flags=re.M)
+    r = re.sub(rf"(?<!\()({F2})(?! \(no difundible\))", F2_ND, r)
     s1 = (S1 / "resumen.md").read_text(encoding="utf-8").split("## Resumen nacional", 1)[1].split("## Dosis por instrumento", 1)[0]
     lect = (S1 / "resumen.md").read_text(encoding="utf-8").split("## Lectura", 1)[1]
     r += ("\n\n## Dosis y coste de las propuestas (v7.1; condicional, C4)\n\nMediana entre CCAA y rango entre CCAA" + s1.split("\n", 1)[1]
@@ -131,6 +176,32 @@ def excel(t: pd.DataFrame) -> None:
             c[f"{col}{k}"].font = vd
         for col in "EG":
             c[f"{col}{k}"].font = ng
+    # v7.2: hoja de la construcción adicional con dosis no nula (entradas en azul con fuente; cálculos en negro; vínculos en verde)
+    ac = pd.read_csv(V72C / "impactos_construccion.csv", dtype={"cc": str})
+    ac = ac[(ac.horizonte == 10) & (ac.mercado == "precio")].sort_values("cc")
+    k = wb.create_sheet("CONSTR_v72")
+    k.append(["Construcción adicional con dosis no nula (v7.2, C4). Entradas en azul (fuente en la nota), cálculos en negro, vínculos en verde."])
+    k.append(["CCAA (código INE)", "CCAA", "Necesidad anual T3 (viv./año)", "Visados 2025", "Máx. anual de visados 2007-2025",
+              "Capacidad observada", "Dosis anual máxima", "Dosis anual mínima (50 %)", "Δ precio de compra 10 años, mediana (%)", "Robusto"])
+    k["C2"].comment = Comment("Fuente: output/v5_1/T3/tablas/necesidad_provincial.csv (N_anual_central sumada por CCAA, cruce por código INE)", "V7.2")
+    k["D2"].comment = Comment("Fuente: data/processed/v7/panel_ccaa_q_v7.csv (visados, Ministerio), suma de 2025", "V7.2")
+    k["E2"].comment = Comment("Fuente: data/processed/v7/panel_ccaa_q_v7.csv (visados, Ministerio), máximo anual 2007-2025", "V7.2")
+    k["I2"].comment = Comment("Fuente: output/v7_2/construccion/impactos_construccion.csv (Monte Carlo, 4.000 extracciones, rejilla)", "V7.2")
+    for x in ac.itertuples():
+        i = k.max_row + 1
+        k.append([x.cc, x.ccaa, round(x.necesidad_anual_T3, 1), x.visados_2025, x.visados_max_2007_2025,
+                  f"=MAX(E{i}-D{i},0)", f"=MIN(C{i},F{i})", f"=0.5*G{i}", round(x.dprecio_med, 4), "sí" if x.robusto else "no"])
+        for col in "ABCDEIJ":
+            k[f"{col}{i}"].font = az
+        for col in "FGH":
+            k[f"{col}{i}"].font = ng
+    n_k = k.max_row
+    k.append([])
+    k.append(["Enlace a la mediana de DC_datos (construcción adicional, compra, Andalucía):", "", "", "", "", "", "", "",
+              "=DC_datos!F" + str(next(j for j in range(3, n_ult + 1) if d[f"A{j}"].value == ac.cc.iloc[0] and d[f"C{j}"].value == "construcción adicional" and d[f"D{j}"].value == "compra"))])
+    k[f"I{k.max_row}"].font = vd
+    k.append(["La rebaja de impuestos y costes de construcción es NO DIFUNDIBLE por sobrestimación de diseño (v7.2); sus filas de DC_datos se conservan solo para trazabilidad."])
+    del n_k
     r = wb.create_sheet("DC_resumen")
     r.append(["Resumen nacional a 10 años: mediana entre CCAA (cálculo en negro sobre enlaces a DC_datos)."])
     r.append(["Instrumento", "Mercado", "Dosis mediana", "Δ precio de mercado mediano (%)", "Coste anual mediano (M€)", "Efecto por 10.000 viv. (pp)",
@@ -169,10 +240,13 @@ def verificador(t: pd.DataFrame) -> None:
                               f"sube {es(e.efecto_100meur_mercado_med.median(), 2)} puntos (mediana). El signo lo fija la fórmula de incidencia (C4).")
             x["evidencia"] = x["evidencia"] + ["output/v7_1/S1/dosis_coste.csv", "output/v7_1/S1/resumen.md"]
             x["version"] = "v7.1"
+    fb = RAIZ / "output" / "v7_2" / "gsadf" / "ficha_burbuja.json"   # v7.2: ficha de burbuja (nacional y regional juntos)
+    if fb.exists():
+        f = f + json.loads(fb.read_text(encoding="utf-8"))
     out = RAIZ / "output" / "v7_1" / "fichas"
     out.mkdir(parents=True, exist_ok=True)
     (out / "fichas_verificador.json").write_text(json.dumps(f, ensure_ascii=False, indent=1), encoding="utf-8")
-    ver = ["# Verificador V7.1 (fichas de V7, con dosis y coste en V7-V2)", "",
+    ver = ["# Verificador V7.1 (fichas de V7, con dosis y coste en V7-V2; ficha de burbuja de v7.2)", "",
            "Fichas añadidas en V7, actualizadas en v7.1. Complementan el verificador principal (fichas v5-v6.3, vigentes en v7.1; output/v5/verificador), cuyos recuentos no cambian.", ""]
     for x in f:
         ver += [f"## {x['id']} · {x['tema']}", "", f"**Afirmación evaluada:** {x['enunciado']}", "", f"**Veredicto:** {x['veredicto']} ({x['capa']})", "",

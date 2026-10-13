@@ -1,0 +1,23 @@
+# Decisiones V7.2 (X = decisión de V7.2)
+
+- **X1. Cifras retiradas.** Se retiran de la tabla vigente, en lugar de marcarlas con una columna, para que ningún entregable pueda citarlas: render falla si una plantilla usa un id retirado.
+  - Se conservan con su sustituta y su motivo en output/v5/cifras_superadas.csv.
+  - Los programas de verificación (k4b, l1, doble implementación L2, l5) leen ambas tablas, porque las comparan a propósito.
+  - Además de las cuatro pedidas (T3-H1, deficit_2124_c1, deficit_2124_c2, B1-H1), se retiran las que hacían que hubiera más de una cifra de déficit con bajas: T3-H2, T3-H3, T3-H4 y L3-DEF-2124-CONBAJAS.
+  - También V7-R6-a_construccion-esfuerzo10a y V7-R6-n-robustas, que contienen la dosis nula de construcción.
+- **X2. Las tres cifras máximas del déficit con bajas.**
+  - **744.144** (T3-H2, v5.1): bajas estimadas T1 sobre las 4 combinaciones de M0, con una sola corrección constante de la EPA.
+  - **765.994** (L3-DEF-2124-BAJAST1): las mismas bajas T1 sobre las 8 variantes de corrección de la EPA de v6.2 y 3 fuentes de terminadas. **Única vigente.**
+  - **924.658** (L3-DEF-2124-CONBAJAS): bajas SUPUESTAS del 0,1-0,2 % anual de v4 sobre las variantes de L3, sin respaldo observado (con el rango C1 antiguo, 902.808). Se retira.
+- **X3. Construcción adicional.**
+  - Capacidad observada: máximo anual de visados 2007-2025 menos los visados de 2025. Con 2016-2025 era 0 en 14 CCAA.
+  - Dosis: 50-100 % de min(necesidad anual T3, capacidad). Incluye el auge de 2007-2008, así que es una capacidad generosa (cota superior), y se declara.
+  - Mismas extracciones y semilla que R6; el resto de instrumentos se reproduce exactamente (la comprobación frente a impactos.csv excluye solo a_construccion).
+  - Robustez con el criterio V18 de R6.
+- **X4. Rebaja de impuestos y costes de construcción (f2): no difundible.** Sus cifras salen de cifras_clave (cifras_superadas.csv, motivo «no difundible») y de los entregables. En el atlas, el Excel y las tablas se rotula «(no difundible)» y se conserva por trazabilidad.
+- **X5. R5.** Se añade la columna comparador_tipo a dm_permutacion.csv y h7_p1_mejor_regional.csv, junto con los rótulos en resumen.md, hechos.json y la hoja de Excel. Se volvió a ejecutar r5_prediccion: congelación sin cambios (sha256 93795a94…) y valores numéricos idénticos (comprobado).
+- **X6. GSADF.**
+  - La reverificación usa src/v5/r1b_gsadf.py: mismas funciones, NBOOT = 499, SEED + 500 + k y BH por familia. Coinciden 14 de 14.
+  - Necesita el panel completo de `make clean` (holdout.load_full); por eso va en `make v7_2`, y su salida versionada alimenta `make v7_1`.
+  - La ficha V72-BURBUJA reúne el resultado nacional (cocientes 0 de 4 tras BH; niveles 2 de 2) y el regional (7 de 34 en v5; 0 de 11 en v6, con otra muestra).
+- **X7.** gsadf_reverifica importa src/v5/r1b_gsadf.py, cuyo Registry se escribe al salir (atexit) y vaciaba output/v5/R1B/registro_gsadf.csv. Se redirige a output/v7_2/gsadf/registro_reverificacion.csv, donde quedan registradas las 14 especificaciones reverificadas; output/v5 no cambia.

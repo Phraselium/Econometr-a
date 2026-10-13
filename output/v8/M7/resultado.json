@@ -46,5 +46,5 @@
     "El BH usa todas las especificaciones (muy correlacionadas): es un criterio de sensibilidad, no una inferencia independiente.",
     "Los controles usan siempre la variable principal no interpolada de cada familia; la variable alternativa varia solo en el factor focal."
   ],
-  "tiempo_s": 182.8
+  "tiempo_s": 189.3
 }

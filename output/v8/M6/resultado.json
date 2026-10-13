@@ -173,5 +173,5 @@
     "Interpoladas excluidas de la muestra principal; familias sin datos suficientes excluidas y anotadas en muestras.csv.",
     "El ECM v1 se reconstruye de forma aproximada (ocupados, costes, renta, dy_{t-1}); no es el script original."
   ],
-  "tiempo_s": 49.4
+  "tiempo_s": 50.4
 }

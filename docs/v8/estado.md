@@ -21,18 +21,24 @@
 - **F2.** Pre-registro docs/v8/hipotesis.md, cerrado con la etiqueta local `prereg-v8` (91e618b). El push de la etiqueta falla (el remoto rechaza etiquetas): queda como tarea del autor (docs/v8/notas_release.md).
 
 ## En curso
-- F4 CERRADA. Revisión (APROBAR CON CORRECCIONES; M2 REHACER, 1 de 2) y todas las correcciones J1-J23 aplicadas. Puerta `make check` rc=0: 229 passed; check_texto, check_v5 y check_v6 con 0 errores.
-- Resultados tras las correcciones:
-  - M2: H8-1…H8-4 no rechazadas (p Holm 0,99, 0,99, 0,84, 0,34); determinista P5 compra +0,9 de mediana y +5,4 de media.
-  - M5: H8-5…H8-7 con p Holm 1,0.
-  - M1: H8-8 no rechazada (0,669); H8-9 rechazada (0,020).
-  - M7: 2 de 74 celdas cumplen el multiverso (alquiler P2 y completo, demografía +).
-  - M4: sin cointegración salvo compra C2-C3 por ARDL.
-  - Votos de contabilidad: demografía en compra P3 y P5.
+- F4 y F5 cerradas. F5: ningún factor designado en las diez celdas; AR(4) es la base más exigente.
+- F6 hecha:
+  - congelación (sha256 en notas_release) y `make evaluate_v8`;
+  - tablas md, csv y xlsx (fórmulas recalculadas con LibreOffice, sin errores);
+  - 287 hechos V8 en cifras_clave (las 716 filas previas son idénticas a las del cierre de v7.2);
+  - verificador V8 y adenda del historial;
+  - entregables por_que_ha_subido.md e informe_econometrico.md desde plantillas;
+  - check_v8 en `make check` (277 passed y 0 errores);
+  - `make publicacion`;
+  - cierre_proyecto, ideas_futuras y tareas_autor.
+- En curso: `make v8` en un clon limpio sin red y el revisor final (opus, docs/v8/revision_final.md).
 
 ## Siguiente paso exacto
-- F5: `src/v8/f5_atribucion.py` → `output/v8/F5/`. Aplica R0-R8 (desviaciones.md) e Y10: votos de svar_hd (prob_mayor), dominancia (voto_dominancia), lpiv (vota_s9) y contabilidad (voto_contabilidad); multiverso orientado; banda 68 %. Añade la tabla común AR(4)/ECM v1 (J7, Y9). Fichas por factor, mercado y periodo.
-- Después F6.
+- Comparar las salidas del clon con las versionadas.
+- Aplicar las correcciones del revisor final (como máximo 2 REHACER).
+- `make publicacion` y `make check`.
+- Fusionar r8/main con la rama designada; commit y push.
+- Resumen final de 400 palabras como máximo.
 
 ## Tokens por módulo
 
@@ -55,6 +61,11 @@
 | F4 M9 | 101.170 | ~4k |
 | F4 revisor | 237.962 | ~10k |
 | F4 correcciones (4 subagentes) | 543.811 | ~15k |
+| F5 | 171.139 | ~10k |
+| F6 congelación y evaluate_v8 | 79.284 | ~3k |
+| F6 tablas y Excel | 109.030 | ~5k |
+| F6 cifras_clave, verificador y publicación | 250.775 | ~5k |
+| F6 entregables, check_v8 y cierre (orquestador) | 0 | ~60k |
 
 ## M2 (SVAR con signos y ceros), hecho
 - `src/v8/m2_svar.py` (`--rapido`), `tests/v8/test_m2.py`, salidas en `output/v8/M2/` (irf, fevd, hd_periodos, atribucion, hipotesis_m2, predicciones_congeladas + congelacion.json, resultado.json, resumen.md, registro.csv).

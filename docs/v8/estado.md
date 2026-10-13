@@ -21,20 +21,18 @@
 - **F2.** Pre-registro docs/v8/hipotesis.md, cerrado con la etiqueta local `prereg-v8` (91e618b). El push de la etiqueta falla (el remoto rechaza etiquetas): queda como tarea del autor (docs/v8/notas_release.md).
 
 ## En curso
-- F3 cerrada (Y6, Y7; `make check` rc=0, 168 passed).
-- F4: los diez módulos M0-M9 están hechos y en `make v8` (V8_ORDEN). `ms_fit` corregido en la herramienta: ahora es determinista (M0 re-ejecutado, mismas salidas). Corriendo en paralelo: la puerta `make check` y el revisor opus de F4 (docs/v8/revision_F4.md).
-- Resumen F4 (todo C4 salvo M2, que es C3s):
-  - M2: H8-1…H8-4 no respaldadas (p Holm 0,43-0,82). En P5 compra domina la parte determinista (Y8).
-  - M5: instrumentos débiles; H8-5…H8-7 no rechazadas.
-  - M1: H8-8 no rechazada; H8-9 rechazada (r = 0,60; p Holm 0,020).
-  - M0: 2 de 70 efectos por periodo cumplen la regla, 0 tras BH.
-  - M7: 3 de 74 combinaciones cumplen el multiverso.
-  - M9: ningún ML supera a la base más exigente.
+- F4 CERRADA. Revisión (APROBAR CON CORRECCIONES; M2 REHACER, 1 de 2) y todas las correcciones J1-J23 aplicadas. Puerta `make check` rc=0: 229 passed; check_texto, check_v5 y check_v6 con 0 errores.
+- Resultados tras las correcciones:
+  - M2: H8-1…H8-4 no rechazadas (p Holm 0,99, 0,99, 0,84, 0,34); determinista P5 compra +0,9 de mediana y +5,4 de media.
+  - M5: H8-5…H8-7 con p Holm 1,0.
+  - M1: H8-8 no rechazada (0,669); H8-9 rechazada (0,020).
+  - M7: 2 de 74 celdas cumplen el multiverso (alquiler P2 y completo, demografía +).
+  - M4: sin cointegración salvo compra C2-C3 por ARDL.
+  - Votos de contabilidad: demografía en compra P3 y P5.
 
 ## Siguiente paso exacto
-- Revisión F4 hecha (docs/v8/revision_F4.md): APROBAR CON CORRECCIONES, M2 REHACER (J1: el escalón EPA creaba la «parte determinista» de P5). Desviaciones, Y9 y la regla operativa de F5 (R0-R8) anotadas antes de calcular F5.
-- En curso, cuatro subagentes de corrección: M2 (J1, J2, prob_mayor); F1+M0+M5 (J8, J9, J3, J4, J18); M3+M6+M7 (J5, J6, J15-J17); M1+M4+M8+M9 (J10-J13, J19, J23).
-- Al terminar: `make check`, commit y push de la puerta F4. Después F5 (`src/v8/f5_atribucion.py` con R0-R8 y la tabla común AR(4)/ECM v1 de J7).
+- F5: `src/v8/f5_atribucion.py` → `output/v8/F5/`. Aplica R0-R8 (desviaciones.md) e Y10: votos de svar_hd (prob_mayor), dominancia (voto_dominancia), lpiv (vota_s9) y contabilidad (voto_contabilidad); multiverso orientado; banda 68 %. Añade la tabla común AR(4)/ECM v1 (J7, Y9). Fichas por factor, mercado y periodo.
+- Después F6.
 
 ## Tokens por módulo
 
@@ -56,6 +54,7 @@
 | F4 M1+M8 | 138.463 | ~4k |
 | F4 M9 | 101.170 | ~4k |
 | F4 revisor | 237.962 | ~10k |
+| F4 correcciones (4 subagentes) | 543.811 | ~15k |
 
 ## M2 (SVAR con signos y ceros), hecho
 - `src/v8/m2_svar.py` (`--rapido`), `tests/v8/test_m2.py`, salidas en `output/v8/M2/` (irf, fevd, hd_periodos, atribucion, hipotesis_m2, predicciones_congeladas + congelacion.json, resultado.json, resumen.md, registro.csv).

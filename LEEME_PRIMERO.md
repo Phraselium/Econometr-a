@@ -14,7 +14,7 @@ Toda cifra difundible sale de una única tabla, [publicacion/cifras_clave.csv](p
 
 ### Ciudadano (15 minutos)
 1. [Una página](publicacion/una_pagina.md): los hechos y lo que no se puede afirmar.
-2. [Verificador](publicacion/verificador/verificador.md): afirmaciones del debate público con su veredicto. Las fichas de V7 están en el [verificador v7.1](publicacion/verificador/verificador_v7_1.md).
+2. [Verificador](publicacion/verificador/verificador.md): afirmaciones del debate público con su veredicto. Las fichas de V8 (por qué ha subido) están en el [verificador V8](publicacion/verificador/verificador_v8.md), vigente; las de V7, en el [verificador v7.1](publicacion/verificador/verificador_v7_1.md).
 
 ### Periodista (1 hora)
 1. [Lo que sabemos y lo que no](publicacion/lo_que_sabemos.md).

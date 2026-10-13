@@ -2,6 +2,14 @@
 
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
+## v8.1, bloque A (2026-10-13): coherencia de redacción y tablas de V8; V8 pasa a versión de referencia
+- **Sin análisis nuevo.** No se estima ningún modelo ni se abre ninguna muestra sellada. **Ninguna cifra publicada cambia**: las 716 filas de cifras_clave previas a V8 y las cifras de V8 (v8.0) son idénticas (src/v8/check_v8.py, `cifras_previas`). Por eso no hay entrada nueva en ERRATA.md. Solo se añaden cifras (ids nuevos, C4, leídos de output/v8/ en src/v8/f6_hechos.py) y se precisa la redacción.
+- **Lectura del multiverso por variables** (regla de §9 aplicada a cada variable): ids `V8-M7-var-…` (cumplen, total, y para cada combinación que cumple, % de mismo signo y % significativo tras BH). Se distingue de la lectura por familias. Se aclara que la regla de periodo de M0 en el alquiler es «no evaluable» (no hay medida alternativa trimestral), no incumplida (ids `V8-M0-evaluables`, `V8-M0-no-evaluable`, `V8-M0-no-evaluable-alquiler`).
+- **Avisos de lectura.** Colinealidad entre población total y extranjera (ids `V8-M6-vif-…` y `V8-M6-colpob-…`); signo del tipo real con el precio (inflación en el tipo real y en el deflactor, y sentido inverso no descartado), sin lectura causal.
+- **Remisiones.** El alquiler real (IPC, parque de contratos) remite a las cifras C1 de contratos nuevos A23-A9 y A23-A10 (vigentes; no figuran en cifras_superadas.csv). València: valor tasado y Registradores discrepan en la provincia y la ciudad solo tiene valor tasado. Frase de resumen sobre la parte no atribuida en la compra de 2022-2026.
+- **Entregables.** Apartado V8 en lo_que_sabemos y una_pagina (plantillas de v5) y en que_cambio; README, CLAUDE.md y LEEME_PRIMERO apuntan a v8 como referencia y al verificador V8 como vigente; la adenda V8 del historial se regenera con las cifras por variable. `make publicacion` regenera antes de copiar (render v5 y render v8).
+- **Tests.** tests/v8_1/test_v81.py: ningún entregable V8 ni de publicacion/ usa un id de cifras_superadas.csv ni cita una cifra superada.
+
 ## v7.2 (2026-10-13): correcciones previas a la release
 - **cifras_clave.** Se retiran 8 cifras superadas: deficit_2124_c1, T3-H1, deficit_2124_c2, T3-H2, T3-H3, T3-H4, L3-DEF-2124-CONBAJAS y B1-H1. Pasan a output/v5/cifras_superadas.csv con su sustituta y motivo.
   - Queda una sola cifra de déficit con bajas: L3-DEF-2124-BAJAST1, con las bajas estimadas en v5.1. Se elimina el supuesto de bajas del 0,1-0,2 %.

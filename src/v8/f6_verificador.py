@@ -71,7 +71,7 @@ def fichas() -> list[dict]:
         f"{c('V8-H8-2-pholm')}, no respaldada. Instrumento externo (shocks monetarios del BCE, H8-5): F efectivo {c('V8-H8-5-F')} (umbral 10), instrumentos que cumplen "
         f"las condiciones de C3: {c('V8-M5-c3', 'num')} de 3; sin lectura causal (C4).",
         "Bandas del 68 % de la contribución (por periodo); intervalo al 95 % de H8-2: " + c("V8-H8-2-est", "rango"),
-        "Las magnitudes del SVAR pueden estar atenuadas (solo restricciones de impacto en V3); el instrumento monetario es débil; no se designa ningún factor "
+        "Las magnitudes del SVAR pueden estar atenuadas (solo restricciones de impacto en V3); el instrumento monetario es débil; el signo positivo del tipo real con el precio en el multiverso no se lee como efecto (la inflación entra en el tipo real y en el deflactor del precio, y no se descarta el sentido inverso); no se designa ningún factor "
         "como el más relevante en ningún periodo.", "C3s", NC, REGLA_C3S,
         ["output/v8/M2/resumen.md", "output/v8/M5/resumen.md", "output/v8/F5/fichas.md", "docs/v8/hipotesis.md"], METODO_SVAR))
 
@@ -82,10 +82,10 @@ def fichas() -> list[dict]:
         f"SVAR (C3s, {COND}): contribución de la demografía a la variación del alquiler real, media y banda del 68 %: P2 {c('V8-SVAR-a-P2-demografia-media')}; "
         f"P3 {c('V8-SVAR-a-P3-demografia-media')}; P5 {c('V8-SVAR-a-P5-demografia-media')}. H8-1 (en P5, contribución positiva de la demografía al alquiler): "
         f"p de Holm {c('V8-H8-1-pholm')}, no respaldada. Multiverso (C4, asociación): {c('V8-M7-cumplen', 'num')} de {c('V8-M7-combinaciones', 'num')} combinaciones "
-        f"cumplen la regla, ambas de demografía en el alquiler (periodo P2 y periodo completo, signo positivo). Instrumento de empuje migratorio (H8-7): F efectivo "
+        f"cumplen la regla por familias, ambas de demografía en el alquiler (periodo P2 y periodo completo, signo positivo); por variables, {c('V8-M7-var-cumplen', 'num')} de {c('V8-M7-var-total', 'num')}. La población total y la extranjera son casi colineales (correlación {c('V8-M6-colpob-completo-corr')} en la muestra completa), de modo que sus filas no son pruebas independientes. Instrumento de empuje migratorio (H8-7): F efectivo "
         f"{c('V8-H8-7-F')}, no cumple C3. Contabilidad hogares-viviendas (asociación): vota a favor de la demografía en {c('V8-M4-voto-demografia', 'num')} celdas (compra P3 y P5).",
         "Bandas del 68 % de la contribución (las tres citadas incluyen el 0)",
-        "Demografía y oferta no se separan en la contabilidad; el instrumento migratorio tiene 20 observaciones anuales y F muy bajo; la asociación del multiverso "
+        "Demografía y oferta no se separan en la contabilidad; población total y extranjera colineales; el instrumento migratorio tiene 20 observaciones anuales y F muy bajo; la asociación del multiverso "
         "no distingue causa de comovimiento.", "C3s", NC, REGLA_C3S,
         ["output/v8/M2/resumen.md", "output/v8/M5/resumen.md", "output/v8/M7/resumen.md", "output/v8/M4/resumen.md"], METODO_SVAR))
 
@@ -127,7 +127,7 @@ def fichas() -> list[dict]:
         f"SVAR (C3s, {COND}): empleo y renta es el factor con mayor contribución media en compra P1 (versión larga): {c('V8-SVAR-c-P1-empleo_renta-media')}, con P(f*) = "
         f"{c('V8-PFSTAR-c-P1')} y {c('V8-VOTOS-c-P1', 'num')} de 4 votos; en P5 {c('V8-SVAR-c-P5-empleo_renta-media')}. H8-3 (en P3, contribución positiva de actividad y renta "
         f"a la compra): estimación {c('V8-H8-3-est')} y p de Holm {c('V8-H8-3-pholm')}, no respaldada. M0 (exploratorio): {c('V8-M0-cumplen', 'num')} de "
-        f"{c('V8-M0-coef', 'num')} coeficientes cumplen la regla de §8 y ninguno sobrevive a BH.",
+        f"{c('V8-M0-coef', 'num')} coeficientes cumplen la regla de §8 ({c('V8-M0-evaluables', 'num')} evaluables; la del alquiler es «no evaluable», no incumplida) y ninguno sobrevive a BH.",
         "Bandas del 68 % de la contribución; intervalo al 95 % de H8-3: " + c("V8-H8-3-est", "rango"),
         "Empleo y renta compite con demografía y crédito; P1 usa una versión de 4 variables desde 1995T2; no se designa factor en ningún periodo.", "C3s", NC,
         REGLA_C3S, ["output/v8/M2/resumen.md", "output/v8/M0/resumen.md", "output/v8/F5/fichas.md"], METODO_SVAR))
@@ -184,7 +184,7 @@ def historial() -> None:
         t = t[:t.index(MARC_INI)].rstrip("\n") + "\n"
     N = "nacional"
     F = [
-        ("Demografía e inmigración", "Alquiler real", f"P5 (2022T3-2026T2): {c('V8-SVAR-a-P5-demografia-media')}; multiverso: {c('V8-M7-cumplen', 'num')} de {c('V8-M7-combinaciones', 'num')} combinaciones",
+        ("Demografía e inmigración", "Alquiler real", f"P5 (2022T3-2026T2): {c('V8-SVAR-a-P5-demografia-media')}; multiverso: {c('V8-M7-cumplen', 'num')} de {c('V8-M7-combinaciones', 'num')} combinaciones por familias y {c('V8-M7-var-cumplen', 'num')} de {c('V8-M7-var-total', 'num')} por variables",
          "SVAR (C3s); multiverso (C4); IV migratorio (C4)", "+ en el multiverso (alquiler P2 y completo); 0 en el SVAR", "C3s / C4",
          "**Se mantiene** (no concluyente): la banda del SVAR incluye el 0 y el instrumento migratorio no tiene primera etapa (F " + c("V8-H8-7-F") + "); solo la asociación del multiverso es estable en alquiler"),
         ("Tipos de interés y crédito", "Precio real de compra", f"P5: {c('V8-SVAR-c-P5-credito_tipos-media')}; P2: {c('V8-SVAR-c-P2-credito_tipos-media')}", "SVAR (C3s); IV monetario (C4)",

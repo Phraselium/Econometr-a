@@ -49,7 +49,7 @@ def _ultimo_trim() -> str:
 def _fechas() -> dict[str, str]:
     """Último trimestre de dato usado por módulo, leído de sus salidas (rango «AAAAQn-AAAAQn» o ventana)."""
     base = _ultimo_trim()
-    f = {k: base for k in ("M0", "M1", "M7", "M8", "M9")}
+    f = {k: base for k in ("M0", "M1", "M6", "M7", "M8", "M9")}
 
     def ult(txt: str) -> str | None:
         m = sorted(re.findall(r"(20\d\d)Q([1-4])", txt))
@@ -208,6 +208,60 @@ def m7(F: dict) -> None:
     add("V8-M7-cumplen", "Combinaciones que cumplen la regla del multiverso (signo orientado estable en ≥ 80 % y significativo tras BH en ≥ 50 %)", e["n_cumplen_multiverso"],
         None, None, "combinaciones", "P1-P5 y completo", cob, fue, "C4", F["M7"])
 
+VAR_ETQ = {"credito_nuevo_real": "crédito nuevo real", "credito_stock_real": "saldo de crédito real", "tipo_hip_real": "tipo hipotecario real", "hogares_epa": "hogares (EPA)",
+           "pob_extranj_ine": "población extranjera (INE)", "pob_total": "población total", "ocupados": "ocupados (EPA)", "pib_vol": "PIB en volumen",
+           "bis_hpi_xm_real": "precio real de la vivienda de otros países (BIS)", "terminadas": "viviendas terminadas", "visados": "visados de obra nueva"}
+
+
+def m7_variables(F: dict) -> None:
+    """Lectura a nivel de VARIABLE del multiverso (regla §9: signo orientado >= 80 % y significativo tras BH >= 50 %). Complementa la lectura por familias."""
+    d = pd.read_csv(OUT / "M7" / "resumen_multiverso.csv")
+    v = d[d.variable != "TODAS"]
+    ok = v[v.cumple_multiverso.astype(str).str.lower() == "true"]
+    fue, cob = "M7 multiverso estructurado (lectura por variable)", "España (nacional)"
+    add("V8-M7-var-total", "Combinaciones (mercado, periodo, variable) evaluadas a nivel de variable en el multiverso", len(v), None, None, "combinaciones", "P1-P5 y completo", cob, fue,
+        "C4", F["M7"])
+    add("V8-M7-var-cumplen", "Combinaciones (mercado, periodo, variable) que cumplen la regla del multiverso a nivel de variable (signo orientado estable en >= 80 % y "
+        "significativo tras BH en >= 50 %)", len(ok), None, None, "combinaciones", "P1-P5 y completo", cob, fue, "C4", F["M7"])
+    rej = ok[ok.cumple_multiverso_rejilla.astype(str).str.lower() == "true"]
+    add("V8-M7-var-cumplen-rejilla", "De ellas, las que siguen cumpliendo si las especificaciones fallidas u omitidas cuentan como «no cumple» (P4 y compra P1: multiverso truncado)",
+        len(rej), None, None, "combinaciones", "P1-P5 y completo", cob, fue, "C4", F["M7"])
+    for r in ok.itertuples():
+        m, per = r.mercado, r.periodo
+        k = f"{m[0]}-{per}-{r.variable}"
+        pt = "muestra completa" if per == "completo" else per_txt(per, m)
+        ori = ("signo orientado " + r.signo_mayoritario + (" (un tipo más bajo cuenta como presión al alza)" if r.variable == "tipo_hip_real" else " (más de la variable, más presión al alza)"))
+        base = f"{VAR_ETQ.get(r.variable, r.variable)} ({FACTOR[r.factor]}), {MERC[m]}, {pt}"
+        add(f"V8-M7-var-{k}-signo", f"Multiverso por variable: % de especificaciones con el mismo signo, {base}; {ori}; asociación, sin lectura causal",
+            100 * r.pct_mismo_signo, None, None, "%", pt, cob, fue, "C4", F["M7"])
+        add(f"V8-M7-var-{k}-bh", f"Multiverso por variable: % de especificaciones significativas tras BH (q = 0,10), {base}; {ori}; asociación, sin lectura causal",
+            100 * r.pct_sig_bh, None, None, "%", pt, cob, fue, "C4", F["M7"])
+
+
+def m6_colinealidad(F: dict) -> None:
+    """Colinealidad entre población total y población extranjera: VIF/Belsley de M6 (una variable por familia) y correlación directa de los crecimientos interanuales."""
+    c = pd.read_csv(OUT / "M6" / "colinealidad.csv")
+    fue, cob = "M6 colinealidad (VIF y Belsley); nacional_q_v8", "España (nacional)"
+    add("V8-M6-vif-max", "VIF máximo de las ecuaciones de M6 (una variable por familia; ninguna ecuación incluye a la vez la población total y la extranjera)", c.vif.max(), None, None,
+        "cociente", "P1-P5", cob, fue, "C4", F["M6"])
+    pt = c[c.variable == "pob_total"].sort_values("vif").iloc[-1]
+    add("V8-M6-vif-pob_total-max", f"VIF máximo de la población total en las ecuaciones de M6 ({pt.periodo}, {pt.transformacion})", pt.vif, None, None, "cociente", per_txt(pt.periodo),
+        cob, fue, "C4", F["M6"])
+    n = pd.read_csv(RAIZ / "data" / "processed" / "v8" / "nacional_q_v8.csv", usecols=["trimestre", "d4_ln_pob_total", "d4_ln_pob_extranj_ine"])
+    n["trimestre"] = n.trimestre.astype(str).str.replace("Q", "T")
+    n = n.dropna()
+    ventanas = {"completo": (n.trimestre.iloc[0], n.trimestre.iloc[-1], "muestra completa")}
+    for p in ("P2", "P5"):
+        a, b = PER_ETQ[p].split("-")
+        ventanas[p] = (a, b, per_txt(p))
+    for k, (a, b, etq) in ventanas.items():
+        w = n[(n.trimestre >= a) & (n.trimestre <= b)]
+        r = float(w.d4_ln_pob_total.corr(w.d4_ln_pob_extranj_ine))
+        add(f"V8-M6-colpob-{k}-corr", f"Correlación entre el crecimiento interanual de la población total y el de la población extranjera (INE), {etq} (n = {len(w)} trimestres; diagnóstico descriptivo)",
+            r, None, None, "proporción", etq, cob, "nacional_q_v8 (d4_ln_pob_total, d4_ln_pob_extranj_ine)", "C4", F["M7"])
+        add(f"V8-M6-colpob-{k}-vif", f"VIF del par población total y población extranjera, {etq} (1 / (1 - r²) con dos variables; diagnóstico descriptivo)", 1 / (1 - r * r), None, None,
+            "cociente", etq, cob, "nacional_q_v8 (d4_ln_pob_total, d4_ln_pob_extranj_ine)", "C4", F["M7"])
+
 
 def oos(F: dict) -> None:
     o = pd.read_csv(OUT / "F5" / "fuera_muestra_comun.csv")
@@ -229,6 +283,13 @@ def m0_m4(F: dict) -> None:
     add("V8-M0-cumplen", "Efectos por periodo que cumplen la regla de §8 de M0 (ninguno sobrevive a BH; exploratorio)", e["n_efectos_cumplen_regla"], None, None, "efectos",
         "P1-P5", cob, fue, "C4", F["M0"])
     add("V8-M0-bh", "Coeficientes de M0 significativos tras BH (q = 0,10)", j["p_ajustado"]["n_coef_sig_bh"], None, None, "coeficientes", "P1-P5", cob, fue, "C4", F["M0"])
+    k0 = pd.read_csv(OUT / "M0" / "coeficientes.csv", low_memory=False)
+    ne = k0[k0.cumple_regla_m0 == "no_evaluable"]
+    add("V8-M0-no-evaluable", "Coeficientes de M0 cuya regla de periodo es «no evaluable» (falta la medida alternativa de precio o de periodo; no es un incumplimiento)", len(ne), None, None,
+        "coeficientes", "P1-P5", cob, fue, "C4", F["M0"])
+    add("V8-M0-no-evaluable-alquiler", "De ellos, los del alquiler (no hay medida alternativa trimestral nacional del alquiler: la regla es «no evaluable», no «incumplida»)",
+        int((ne.mercado == "alquiler").sum()), None, None, "coeficientes", "P1-P5", cob, fue, "C4", F["M0"])
+    add("V8-M0-evaluables", "Coeficientes de M0 con la regla de periodo evaluable (cumple o no cumple)", len(k0) - len(ne), None, None, "coeficientes", "P1-P5", cob, fue, "C4", F["M0"])
     c = pd.read_csv(OUT / "M4" / "cointegracion.csv")
     fue4 = "M4 largo plazo (DOLS, FMOLS, ARDL con cotas de Pesaran-Shin-Smith, Gregory-Hansen)"
     add("V8-M4-ardl-rechaza", "Especificaciones de largo plazo (compra y alquiler) en que el ARDL con cotas rechaza la no cointegración (sin rupturas)", int(c.ARDL_rechaza_sin.sum()), None, None,
@@ -318,6 +379,8 @@ def main() -> None:
     hipotesis(F)
     m1(F)
     m7(F)
+    m7_variables(F)
+    m6_colinealidad(F)
     oos(F)
     m0_m4(F)
     m8(F)

@@ -4,7 +4,7 @@
 - Reescribe los enlaces relativos de los .md: si el destino también se publica, apunta a la copia publicada; si no, a
   la ruta del repositorio. Los anclajes (#…) se conservan.
 - Escribe un MANIFIESTO.md por carpeta con la fuente y el sha256 de cada fichero.
-Determinista y sin red. tests/v7_1/test_publicacion.py lo regenera en un directorio temporal y compara byte a byte.
+Antes de copiar, regenera los entregables con render v5 y render v8 (V8.1). Determinista y sin red. tests/v7_1/test_publicacion.py lo regenera en un directorio temporal y compara byte a byte.
 """
 from __future__ import annotations
 
@@ -12,6 +12,7 @@ import hashlib
 import os
 import re
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -137,7 +138,17 @@ def construir(base: Path) -> dict[str, list[tuple[str, str, str]]]:
     return man
 
 
+def regenerar_entregables() -> None:
+    """V8.1: una_pagina, lo_que_sabemos y los entregables V8 se regeneran antes de copiarlos (render v5 y render v8; ambos leen output/v5/cifras_clave.csv).
+    `make v8` ya ejecuta cifras_clave y render_v8, pero no render v5: sin este paso, una_pagina y lo_que_sabemos podrían quedar con cifras de otra versión de cifras_clave."""
+    for scr in ("src/v5/render.py", "src/v8/render_v8.py"):
+        r = subprocess.run([sys.executable, str(RAIZ / scr)], cwd=RAIZ, capture_output=True, text=True)
+        if r.returncode != 0:
+            raise SystemExit(f"publicacion: falla {scr} (marcadores sin resolver o error):\n{r.stdout[-800:]}{r.stderr[-800:]}")
+
+
 def main() -> int:
+    regenerar_entregables()
     for c in CARPETAS:
         if (RAIZ / c).exists():
             shutil.rmtree(RAIZ / c)

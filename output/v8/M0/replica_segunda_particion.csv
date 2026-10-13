@@ -1,4 +1,5 @@
 metodo,serie,dif_media_train,dif_media_test,t_hac_test,mismo_signo,n_bajo_test,n_alto_test
-markov_switching,tipo_hip_real,,,,True,31,19
-markov_switching,d4_pib_vol,,,,True,10,40
+markov_switching,d4_credito_vivienda_real,,,,,50,0
+markov_switching,tipo_hip_real,,,,False,29,21
+markov_switching,d4_pib_vol,,,,True,7,43
 umbral_hansen,d4_pib_vol|d4_credito_nuevo_real,,,,,1,49

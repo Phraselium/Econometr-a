@@ -6,12 +6,12 @@ Muestras: compra 112 trimestres, alquiler 94. Efectos que cumplen la regla de §
 
 | metodo | serie | observable_umbral | n_regimenes | corte_o_regimen | p |
 |---|---|---|---|---|---|
-| bai_perron | d4_credito_vivienda_real |  | 4.000 | 2003Q4;2007Q4;2011Q4 | 0.013 |
-| markov_switching | d4_credito_vivienda_real |  | 3.000 | R0: mu=-4.01, dur=39.8; R1: mu=0.66, dur=12.1; R2: mu=14.92, dur=80.5 | 0.033 |
-| markov_switching | tipo_hip_real |  | 3.000 | R0: mu=0.63, dur=13.6; R1: mu=0.85, dur=13.4; R2: mu=2.81, dur=8.1 | 0.033 |
-| umbral_hansen | tipo_hip_real | d4_credito_nuevo_real | 2.000 | gamma=1.761 (bajo n=40, alto n=49) | 0.007 |
-| umbral_hansen | tipo_hip_real | d4_ocupados_SUSTITUTO_paro | 2.000 | gamma=3.386 (bajo n=71, alto n=22) | 0.007 |
-| markov_switching | d4_pib_vol |  | 3.000 | R0: mu=-1.36, dur=21.2; R1: mu=0.12, dur=10.7; R2: mu=3.25, dur=47.5 | 0.033 |
+| bai_perron | d4_credito_vivienda_real |  | 4 | 2003Q4;2007Q4;2011Q4 | 0.013 |
+| markov_switching | d4_credito_vivienda_real |  | 3 | R0: mu=-4.01, dur=39.8; R1: mu=0.66, dur=12.1; R2: mu=14.92, dur=80.5 | 0.033 |
+| markov_switching | tipo_hip_real |  | 3 | R0: mu=0.63, dur=13.6; R1: mu=0.85, dur=13.4; R2: mu=2.81, dur=8.1 | 0.033 |
+| umbral_hansen | tipo_hip_real | d4_credito_nuevo_real | 2 | gamma=1.761 (bajo n=40, alto n=49) | 0.007 |
+| umbral_hansen | tipo_hip_real | d4_ocupados_SUSTITUTO_paro | 2 | gamma=3.386 (bajo n=71, alto n=22) | 0.007 |
+| markov_switching | d4_pib_vol |  | 3 | R0: mu=-1.36, dur=21.2; R1: mu=0.12, dur=10.7; R2: mu=3.25, dur=47.5 | 0.033 |
 
 ## Regla por (mercado, periodo, variable) — ecuación base
 
@@ -85,4 +85,4 @@ Muestras: compra 112 trimestres, alquiler 94. Efectos que cumplen la regla de §
 }
 ```
 
-Límites: BP con potencia 0,32-0,42; permutación de 5 tramos conservadora; P4 tiene 9 trimestres y 3 gl (imprecisa); el signo de una confirmación no exige significación. Desviaciones: docs/v8/desviaciones.md (2026-10-13, M0).
+Control informativo de multiplicidad (BH sobre los 70 p de permutación; no forma parte de la regla de §8): de los 2 que cumplen la regla, 0 tienen p_perm BH < 0,10. Límites: BP con potencia 0,32-0,42; permutación de 5 tramos conservadora; P4 tiene 9 trimestres y 3 gl (imprecisa); el signo de una confirmación no exige significación. Desviaciones: docs/v8/desviaciones.md (2026-10-13, M0).

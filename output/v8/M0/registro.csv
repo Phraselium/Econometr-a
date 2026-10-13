@@ -18,22 +18,22 @@ M0_deteccion,umbral_hansen|completa|d4_pib_vol|tipo_hip_real,deteccion,,,0,,,,,,
 M0_deteccion,umbral_hansen|completa|d4_pib_vol|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.10666666666666667,detectado=False; lineal
 M0_deteccion,umbral_hansen|completa|d4_pib_vol|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.21333333333333335,detectado=False; lineal
 M0_deteccion,bai_perron|train_1995_2013|d4_credito_vivienda_real|,deteccion,,,0,,,,,,0.20666666666666667,detectado=False; sin_ruptura
-M0_deteccion,markov_switching|train_1995_2013|d4_credito_vivienda_real|,deteccion,,,0,,,,,,,detectado=False; fallo
+M0_deteccion,markov_switching|train_1995_2013|d4_credito_vivienda_real|,deteccion,,,0,,,,,,,"detectado=True; R0: mu=-1.71, dur=54.3; R1: mu=13.61, dur=20.6; R2: mu=22.86, dur=5.7"
 M0_deteccion,umbral_hansen|train_1995_2013|d4_credito_vivienda_real|tipo_hip_real,deteccion,,,0,,,,,,0.47333333333333333,detectado=False; lineal
 M0_deteccion,umbral_hansen|train_1995_2013|d4_credito_vivienda_real|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.4533333333333333,detectado=False; lineal
 M0_deteccion,umbral_hansen|train_1995_2013|d4_credito_vivienda_real|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.08,detectado=False; lineal
 M0_deteccion,bai_perron|train_1995_2013|tipo_hip_real|,deteccion,,,0,,,,,,0.18666666666666668,detectado=False; sin_ruptura
-M0_deteccion,markov_switching|train_1995_2013|tipo_hip_real|,deteccion,,,0,,,,,,,"detectado=True; R0: mu=0.65, dur=10.8; R1: mu=3.40, dur=15.8"
+M0_deteccion,markov_switching|train_1995_2013|tipo_hip_real|,deteccion,,,0,,,,,,,"detectado=True; R0: mu=0.51, dur=10.9; R1: mu=2.28, dur=7.0; R2: mu=4.68, dur=11.6"
 M0_deteccion,umbral_hansen|train_1995_2013|tipo_hip_real|tipo_hip_real,deteccion,,,0,,,,,,0.48,detectado=False; lineal
 M0_deteccion,umbral_hansen|train_1995_2013|tipo_hip_real|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.35333333333333333,detectado=False; lineal
 M0_deteccion,umbral_hansen|train_1995_2013|tipo_hip_real|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.9333333333333333,detectado=False; lineal
 M0_deteccion,bai_perron|train_1995_2013|d4_pib_vol|,deteccion,,,0,,,,,,0.013333333333333334,detectado=True; 2008Q3
-M0_deteccion,markov_switching|train_1995_2013|d4_pib_vol|,deteccion,,,0,,,,,,,"detectado=True; R0: mu=-1.52, dur=55.0; R1: mu=3.56, dur=81.6"
+M0_deteccion,markov_switching|train_1995_2013|d4_pib_vol|,deteccion,,,0,,,,,,,"detectado=True; R0: mu=-2.18, dur=9.7; R1: mu=0.02, dur=5.1; R2: mu=3.54, dur=81.2"
 M0_deteccion,umbral_hansen|train_1995_2013|d4_pib_vol|tipo_hip_real,deteccion,,,0,,,,,,0.7466666666666667,detectado=False; lineal
 M0_deteccion,umbral_hansen|train_1995_2013|d4_pib_vol|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.02666666666666667,"detectado=True; gamma=-46.374 (bajo n=8, alto n=31)"
 M0_deteccion,umbral_hansen|train_1995_2013|d4_pib_vol|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.3333333333333333,detectado=False; lineal
 M0_deteccion,bai_perron|test_2014_ult|d4_credito_vivienda_real|,deteccion,,,0,,,,,,0.21333333333333335,detectado=False; sin_ruptura
-M0_deteccion,markov_switching|test_2014_ult|d4_credito_vivienda_real|,deteccion,,,0,,,,,,,"detectado=True; R0: mu=-4.96, dur=16.4; R1: mu=-2.04, dur=7.6; R2: mu=0.45, dur=18.1"
+M0_deteccion,markov_switching|test_2014_ult|d4_credito_vivienda_real|,deteccion,,,0,,,,,,,"detectado=True; R0: mu=-4.96, dur=16.5; R1: mu=-2.04, dur=7.6; R2: mu=0.45, dur=18.1"
 M0_deteccion,umbral_hansen|test_2014_ult|d4_credito_vivienda_real|tipo_hip_real,deteccion,,,0,,,,,,0.09333333333333334,detectado=False; lineal
 M0_deteccion,umbral_hansen|test_2014_ult|d4_credito_vivienda_real|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.8533333333333334,detectado=False; lineal
 M0_deteccion,umbral_hansen|test_2014_ult|d4_credito_vivienda_real|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.18666666666666668,detectado=False; lineal

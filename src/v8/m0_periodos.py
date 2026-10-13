@@ -35,6 +35,13 @@ from herramientas import regimenes as reg  # noqa: E402
 
 warnings.filterwarnings("ignore")
 SEED = 20261010
+
+# statsmodels >= 0.15 usa un generador SIN semilla en la busqueda de arranques del Markov switching (ms_fit solo fija np.random.seed):
+# se fija aqui para que M0 sea determinista, sin tocar la herramienta (avisado en el informe de M0).
+import statsmodels.tsa.regime_switching.markov_switching as _mss  # noqa: E402
+
+_chk = _mss.check_random_state
+_mss.check_random_state = lambda rng=None: _chk(SEED if rng is None else rng)
 DATOS = RAIZ / "data" / "processed" / "v8" / "nacional_q_v8.csv"
 SCRIPT = "src/v8/m0_periodos.py"
 PERIODOS = {"P1": ("1995Q1", "2007Q4"), "P2": ("2008Q3", "2013Q4"), "P3": ("2014Q1", "2019Q4"),
@@ -507,6 +514,10 @@ def main(argv=None):
                     filas_q.append({"mercado": mk, "especificacion": nom, "variable": v, "Q": q_obs, "p_perm_Q": q_p})
     coef = pd.DataFrame(filas_coef)
     regla = pd.DataFrame(filas_regla)
+    from scipy.stats import false_discovery_control as _fdc
+    _ok = regla["p_perm"].notna()
+    regla["p_perm_BH_informativo"] = np.nan
+    regla.loc[_ok, "p_perm_BH_informativo"] = _fdc(regla.loc[_ok, "p_perm"].values, method="bh")
     # BH (q = 0,10) sobre todos los p de coeficientes (familia exploratoria); sin const
     from scipy.stats import false_discovery_control
     coef["p_ajustado"] = false_discovery_control(coef["p"].fillna(1).values, method="bh")
@@ -569,6 +580,7 @@ def main(argv=None):
           md_tabla(det_ok[["metodo", "serie", "observable_umbral", "n_regimenes", "corte_o_regimen", "p"]]) if len(det_ok) else "Ninguna.", "",
           "## Regla por (mercado, periodo, variable) — ecuación base", "", md_tabla(rb), "",
           "## Fuera de muestra (bloques con embargo, RMSE)", "", "```", json.dumps({mk: fm[mk]["rmse"] for mk in fm}, indent=1), "```", "",
+          f"Control informativo de multiplicidad (BH sobre los {int(_ok.sum())} p de permutación; no forma parte de la regla de §8): de los {len(cumplen)} que cumplen la regla, {int((cumplen.p_perm_BH_informativo < 0.10).sum())} tienen p_perm BH < 0,10. "
           "Límites: BP con potencia 0,32-0,42; permutación de 5 tramos conservadora; P4 tiene 9 trimestres y 3 gl (imprecisa); el signo de una confirmación no exige significación. "
           "Desviaciones: docs/v8/desviaciones.md (2026-10-13, M0)."]
     (out / "resumen.md").write_text("\n".join(md))

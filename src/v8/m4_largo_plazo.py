@@ -89,7 +89,8 @@ def preparar(d: pd.DataFrame) -> pd.DataFrame:
 def fijas_de(xs, rupturas):
     f = ["epa2021"] if "hogares" in xs else []
     if rupturas:
-        f = ["s_P2", "s_P3", "s_P4", "s_P5", "covid"] + f
+        # con hogares, COVID (2020T2-T4) = s_P4 - epa2021 exactamente: se omite para evitar colinealidad perfecta
+        f = ["s_P2", "s_P3", "s_P4", "s_P5"] + ([] if "hogares" in xs else ["covid"]) + f
     return f
 
 
@@ -149,7 +150,9 @@ def fmols(y, Z, X, bw=None):
     yplus = y1 - e @ (Oinv @ Oue)
     Dplus = De[0, 1:] - Oue @ Oinv @ De[1:, 1:]
     A = np.r_[np.zeros(Z.shape[1]), Dplus]
-    WtWi = np.linalg.inv(W1.T @ W1)
+    WtW = W1.T @ W1
+    Dg = 1.0 / np.sqrt(np.diag(WtW))
+    WtWi = (Dg[:, None] * np.linalg.inv(Dg[:, None] * WtW * Dg[None, :]) * Dg[None, :])   # inversa con columnas escaladas (mejor condicion)
     theta = WtWi @ (W1.T @ yplus - T * A)
     cov = Ouu_e * WtWi
     resid = y1 - W1 @ theta
@@ -574,9 +577,9 @@ def main(argv=None):
             cv = np.quantile(sim, [0.01, 0.05, 0.10])
             coint_f.append({"mercado": mk, "spec": sn, "variables": "+".join(xs), "ventana": f"{ini}..{fin}", "n": len(G.loc[ini:fin]),
                             "EG_p_mackinnon": est0["eg_p"], "GH_stat": g["stat"], "GH_fecha": g["fecha"], "GH_p_sim": gh_p, "GH_cv1": cv[0], "GH_cv5": cv[1], "GH_cv10": cv[2],
-                            "ARDL_F_sin_rupturas": est0["ardl"]["F"], "ARDL_p_sup_sin": est0["ardl"]["p_sup"], "ARDL_decision_5pct_sin": est0["ardl"]["decision"], "ARDL_cv95_sup": est0["ardl"]["cv95"][1],
+                            "ARDL_F_sin_rupturas": est0["ardl"]["F"], "ARDL_p_sup_sin": est0["ardl"]["p_sup"], "ARDL_decision_5pct_sin": est0["ardl"]["decision"], "ARDL_cv95_sup": est0["ardl"]["cv95"][1], "ARDL_t_yL1_sin": float(est0["ardl"]["fit"].tvalues["y_L1"]),
                             "ARDL_F_con_rupturas": ests[(mk, sn, "con_rupturas")]["ardl"]["F"], "ARDL_p_sup_con": ests[(mk, sn, "con_rupturas")]["ardl"]["p_sup"], "ARDL_decision_5pct_con": ests[(mk, sn, "con_rupturas")]["ardl"]["decision"],
-                            "nota": "ARDL p aproximado por interpolacion de la tabla de VC (acotado a [0,001; 0,10]); GH: cambio de nivel, retardos ADF fijos 4, VC simulados bajo la nula (paseos independientes, nsim=%d); EG: sin rupturas" % len(sim)})
+                            "nota": "ARDL: F propio con VC asintoticos de statsmodels (con escalones, aproximados); casos degenerados posibles: revisar t de y_L1 (debe ser negativo y significativo); p aproximado por interpolacion de la tabla de VC (acotado a [0,001; 0,10]); GH: cambio de nivel, retardos ADF fijos 4, VC simulados bajo la nula (paseos independientes, nsim=%d); EG: sin rupturas" % len(sim)})
             for rup in (False, True):
                 tag = "con_rupturas" if rup else "sin_rupturas"
                 est = ests[(mk, sn, tag)]

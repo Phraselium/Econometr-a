@@ -129,7 +129,7 @@
         "p_ajustado": 0.9548,
         "vel_ajuste": -0.0832,
         "semivida": 7.9782,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -140,7 +140,7 @@
         "p_ajustado": 0.2368,
         "vel_ajuste": -0.0832,
         "semivida": 7.9782,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -151,7 +151,7 @@
         "p_ajustado": 0.8994,
         "vel_ajuste": -0.0832,
         "semivida": 7.9782,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -162,7 +162,7 @@
         "p_ajustado": 0.7343,
         "vel_ajuste": -0.0832,
         "semivida": 7.9782,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -173,7 +173,7 @@
         "p_ajustado": 0.0866,
         "vel_ajuste": -0.0832,
         "semivida": 7.9782,
-        "coint_p": 0.0
+        "coint_p": 0.001
       }
     ],
     "compra|C4|con_rupturas": [
@@ -296,7 +296,7 @@
         "p_ajustado": 0.5653,
         "vel_ajuste": -0.0343,
         "semivida": 19.8514,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -307,7 +307,7 @@
         "p_ajustado": 0.7343,
         "vel_ajuste": -0.0343,
         "semivida": 19.8514,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -318,7 +318,7 @@
         "p_ajustado": 0.4971,
         "vel_ajuste": -0.0343,
         "semivida": 19.8514,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -329,7 +329,7 @@
         "p_ajustado": 0.5992,
         "vel_ajuste": -0.0343,
         "semivida": 19.8514,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -340,7 +340,7 @@
         "p_ajustado": 0.4975,
         "vel_ajuste": -0.0343,
         "semivida": 19.8514,
-        "coint_p": 0.0
+        "coint_p": 0.001
       }
     ],
     "alquiler|A4|sin_rupturas": [
@@ -463,7 +463,7 @@
         "p_ajustado": 0.8852,
         "vel_ajuste": 0.0117,
         "semivida": NaN,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -474,7 +474,7 @@
         "p_ajustado": 0.8852,
         "vel_ajuste": 0.0117,
         "semivida": NaN,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -485,7 +485,7 @@
         "p_ajustado": 0.9083,
         "vel_ajuste": 0.0117,
         "semivida": NaN,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -496,7 +496,7 @@
         "p_ajustado": 0.8852,
         "vel_ajuste": 0.0117,
         "semivida": NaN,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -507,7 +507,7 @@
         "p_ajustado": 0.9047,
         "vel_ajuste": 0.0117,
         "semivida": NaN,
-        "coint_p": 0.0
+        "coint_p": 0.001
       }
     ],
     "alquiler|A4|con_rupturas": [
@@ -573,8 +573,8 @@
         "ic95_lo": -0.0197,
         "ic95_hi": 0.1126,
         "p_ajustado": 0.3083,
-        "vel_ajuste": -0.0004,
-        "semivida": 1747.1478,
+        "vel_ajuste": -0.3761,
+        "semivida": 1.4691,
         "coint_p": 0.4278
       },
       {
@@ -584,8 +584,8 @@
         "ic95_lo": 0.0021,
         "ic95_hi": 0.0051,
         "p_ajustado": 0.0,
-        "vel_ajuste": -0.0004,
-        "semivida": 1747.1478,
+        "vel_ajuste": -0.3761,
+        "semivida": 1.4691,
         "coint_p": 0.4278
       },
       {
@@ -595,8 +595,8 @@
         "ic95_lo": -1.9223,
         "ic95_hi": -0.797,
         "p_ajustado": 0.0,
-        "vel_ajuste": -0.0004,
-        "semivida": 1747.1478,
+        "vel_ajuste": -0.3761,
+        "semivida": 1.4691,
         "coint_p": 0.4278
       },
       {
@@ -606,8 +606,8 @@
         "ic95_lo": -0.0407,
         "ic95_hi": 0.0888,
         "p_ajustado": 0.6444,
-        "vel_ajuste": -0.0004,
-        "semivida": 1747.1478,
+        "vel_ajuste": -0.3761,
+        "semivida": 1.4691,
         "coint_p": 0.4278
       },
       {
@@ -617,8 +617,8 @@
         "ic95_lo": 0.0952,
         "ic95_hi": 0.4462,
         "p_ajustado": 0.0097,
-        "vel_ajuste": -0.0004,
-        "semivida": 1747.1478,
+        "vel_ajuste": -0.3761,
+        "semivida": 1.4691,
         "coint_p": 0.4278
       },
       {
@@ -630,7 +630,7 @@
         "p_ajustado": 0.5992,
         "vel_ajuste": -0.0637,
         "semivida": 10.5262,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -641,7 +641,7 @@
         "p_ajustado": 0.5685,
         "vel_ajuste": -0.0637,
         "semivida": 10.5262,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -652,7 +652,7 @@
         "p_ajustado": 0.6076,
         "vel_ajuste": -0.0637,
         "semivida": 10.5262,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -663,7 +663,7 @@
         "p_ajustado": 0.9919,
         "vel_ajuste": -0.0637,
         "semivida": 10.5262,
-        "coint_p": 0.0
+        "coint_p": 0.001
       },
       {
         "metodo_lp": "ardl",
@@ -674,7 +674,7 @@
         "p_ajustado": 0.747,
         "vel_ajuste": -0.0637,
         "semivida": 10.5262,
-        "coint_p": 0.0
+        "coint_p": 0.001
       }
     ]
   },
@@ -691,7 +691,7 @@
         "GH_fecha": "2019Q2",
         "GH_p_sim": 0.9381,
         "ARDL_F_sin_rupturas": 1.9937,
-        "ARDL_p_sup_sin": 0.5399
+        "ARDL_p_sup_sin": 0.1
       },
       {
         "mercado": "compra",
@@ -701,7 +701,7 @@
         "GH_fecha": "2010Q3",
         "GH_p_sim": 0.9561,
         "ARDL_F_sin_rupturas": 8.4607,
-        "ARDL_p_sup_sin": 0.0
+        "ARDL_p_sup_sin": 0.001
       },
       {
         "mercado": "compra",
@@ -711,7 +711,7 @@
         "GH_fecha": "2009Q4",
         "GH_p_sim": 0.8403,
         "ARDL_F_sin_rupturas": 12.4277,
-        "ARDL_p_sup_sin": 0.0
+        "ARDL_p_sup_sin": 0.001
       },
       {
         "mercado": "compra",
@@ -721,7 +721,7 @@
         "GH_fecha": "2009Q4",
         "GH_p_sim": 0.8822,
         "ARDL_F_sin_rupturas": 12.6893,
-        "ARDL_p_sup_sin": 0.0
+        "ARDL_p_sup_sin": 0.001
       },
       {
         "mercado": "alquiler",
@@ -731,7 +731,7 @@
         "GH_fecha": "2020Q2",
         "GH_p_sim": 0.4471,
         "ARDL_F_sin_rupturas": 17.4319,
-        "ARDL_p_sup_sin": 0.0
+        "ARDL_p_sup_sin": 0.001
       },
       {
         "mercado": "alquiler",
@@ -740,8 +740,8 @@
         "GH_stat": -3.4624,
         "GH_fecha": "2020Q1",
         "GH_p_sim": 0.7186,
-        "ARDL_F_sin_rupturas": 28.178,
-        "ARDL_p_sup_sin": 0.0
+        "ARDL_F_sin_rupturas": 22.222,
+        "ARDL_p_sup_sin": 0.001
       },
       {
         "mercado": "alquiler",
@@ -751,7 +751,7 @@
         "GH_fecha": "2020Q1",
         "GH_p_sim": 0.8663,
         "ARDL_F_sin_rupturas": 24.7095,
-        "ARDL_p_sup_sin": 0.0
+        "ARDL_p_sup_sin": 0.001
       },
       {
         "mercado": "alquiler",
@@ -760,8 +760,8 @@
         "GH_stat": -4.1049,
         "GH_fecha": "2017Q1",
         "GH_p_sim": 0.4092,
-        "ARDL_F_sin_rupturas": 13.464,
-        "ARDL_p_sup_sin": 0.0
+        "ARDL_F_sin_rupturas": 12.0631,
+        "ARDL_p_sup_sin": 0.001
       },
       {
         "mercado": "alquiler",
@@ -770,8 +770,8 @@
         "GH_stat": -4.102,
         "GH_fecha": "2017Q1",
         "GH_p_sim": 0.5729,
-        "ARDL_F_sin_rupturas": 10.8445,
-        "ARDL_p_sup_sin": 0.0
+        "ARDL_F_sin_rupturas": 9.9942,
+        "ARDL_p_sup_sin": 0.001
       }
     ],
     "n_discrepancias_dols_fmols": 18,
@@ -828,6 +828,6 @@
     "ecm_v1": "no evaluable en la misma muestra (el ECM v1 usa IPV desde 2007 y permisos); este ECM es el comparador de largo plazo de V8"
   },
   "notas": "Especificación de cabecera fijada a priori: compra C4 y alquiler A4 (sin rupturas). Oferta = ln de terminadas acumuladas desde 1995 (proxy de stock; libres; 1995-2007 anual/4, marcada). Población interpolada (marcada). Contribuciones de largo plazo en atribucion.csv (contabilidad_lp) y brecha hogares-viviendas (contabilidad): C4, asociación. Bandas FMOLS: normal diagonal (no bootstrap).",
-  "segundos": 50.1,
+  "segundos": 44.6,
   "rapido": false
 }

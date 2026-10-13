@@ -1,71 +1,71 @@
-mercado,periodo,variable,signo_principal,conf_BP,conf_MS,conf_umbral,n_confirmaciones,p_perm,modo_perm,signo_alternativa,alternativa,alt_mismo_signo,segunda_particion,cumple,familia,especificacion,p_Q_global_variable
-compra,P1,d4_pob_total,-1,no,si,si,2,0.6521739130434783,monte_carlo,,IPV,no_evaluable,n/a (ventana de deteccion),no_evaluable,demografia,base,0.24187906046976512
-compra,P1,d4_pib_vol,-1,si,si,si,3,0.2013993003498251,monte_carlo,,IPV,no_evaluable,n/a (ventana de deteccion),no_evaluable,empleo_renta,base,0.0944527736131934
-compra,P1,tipo_hip_real,-1,no,si,si,2,0.0069965017491254375,monte_carlo,,IPV,no_evaluable,n/a (ventana de deteccion),no_evaluable,credito_tipos,base,0.2108945527236382
-compra,P1,d4_credito_vivienda_real,-1,si,no,no,1,0.11144427786106946,monte_carlo,,IPV,no_evaluable,n/a (ventana de deteccion),no_evaluable,credito_tipos,base,0.496751624187906
-compra,P1,d4_terminadas,-1,no,si,si,2,0.5567216391804098,monte_carlo,,IPV,no_evaluable,n/a (ventana de deteccion),no_evaluable,oferta,base,0.2698650674662669
-compra,P2,d4_pob_total,-1,si,no,no,1,0.31284357821089454,monte_carlo,-1.0,IPV,si,n/a (ventana de deteccion),no,demografia,base,0.24187906046976512
-compra,P2,d4_pib_vol,1,si,si,si,3,0.0399800099950025,monte_carlo,1.0,IPV,si,n/a (ventana de deteccion),si,empleo_renta,base,0.0944527736131934
-compra,P2,tipo_hip_real,1,si,si,si,3,0.16741629185407297,monte_carlo,-1.0,IPV,no,n/a (ventana de deteccion),no,credito_tipos,base,0.2108945527236382
-compra,P2,d4_credito_vivienda_real,1,si,si,si,3,0.8675662168915542,monte_carlo,1.0,IPV,si,n/a (ventana de deteccion),no,credito_tipos,base,0.496751624187906
-compra,P2,d4_terminadas,1,si,si,si,3,0.848575712143928,monte_carlo,1.0,IPV,si,n/a (ventana de deteccion),no,oferta,base,0.2698650674662669
-compra,P3,d4_pob_total,1,si,si,si,3,0.12393803098450774,monte_carlo,1.0,IPV,si,si,no,demografia,base,0.24187906046976512
-compra,P3,d4_pib_vol,1,si,si,si,3,0.20539730134932535,monte_carlo,1.0,IPV,si,si,no,empleo_renta,base,0.0944527736131934
-compra,P3,tipo_hip_real,1,si,no,si,2,0.8960519740129935,monte_carlo,-1.0,IPV,no,si,no,credito_tipos,base,0.2108945527236382
-compra,P3,d4_credito_vivienda_real,1,si,si,no,2,0.545727136431784,monte_carlo,1.0,IPV,si,si,no,credito_tipos,base,0.496751624187906
-compra,P3,d4_terminadas,-1,no,no,no,0,0.19590204897551225,monte_carlo,-1.0,IPV,si,si,no,oferta,base,0.2698650674662669
-compra,P4,d4_pob_total,1,si,si,si,3,0.8330834582708646,monte_carlo,1.0,IPV,si,si,no,demografia,base,0.24187906046976512
-compra,P4,d4_pib_vol,-1,no,no,no,0,0.07946026986506746,monte_carlo,-1.0,IPV,si,no,no,empleo_renta,base,0.0944527736131934
-compra,P4,tipo_hip_real,-1,no,no,no,0,0.3053473263368316,monte_carlo,-1.0,IPV,si,no,no,credito_tipos,base,0.2108945527236382
-compra,P4,d4_credito_vivienda_real,1,si,si,no,2,0.5802098950524738,monte_carlo,1.0,IPV,si,si,no,credito_tipos,base,0.496751624187906
-compra,P4,d4_terminadas,1,si,si,si,3,0.04997501249375312,monte_carlo,1.0,IPV,si,si,si,oferta,base,0.2698650674662669
-compra,P5,d4_pob_total,-1,no,no,no,0,0.09795102448775612,monte_carlo,-1.0,IPV,si,no,no,demografia,base,0.24187906046976512
-compra,P5,d4_pib_vol,-1,no,no,no,0,0.5167416291854073,monte_carlo,1.0,IPV,no,no,no,empleo_renta,base,0.0944527736131934
-compra,P5,tipo_hip_real,1,si,no,si,2,0.7326336831584208,monte_carlo,1.0,IPV,si,si,no,credito_tipos,base,0.2108945527236382
-compra,P5,d4_credito_vivienda_real,1,si,si,no,2,0.2908545727136432,monte_carlo,1.0,IPV,si,si,no,credito_tipos,base,0.496751624187906
-compra,P5,d4_terminadas,-1,no,no,no,0,0.6646676661669165,monte_carlo,-1.0,IPV,si,si,no,oferta,base,0.2698650674662669
-compra,P2,d4_hpi_ea19,1,si,si,si,3,0.9110444777611194,monte_carlo,1.0,IPV,si,n/a (ventana de deteccion),no,factor_europeo,ext_d4_hpi_ea19,0.9560219890054973
-compra,P3,d4_hpi_ea19,1,si,si,si,3,0.6691654172913544,monte_carlo,1.0,IPV,si,no,no,factor_europeo,ext_d4_hpi_ea19,0.9560219890054973
-compra,P4,d4_hpi_ea19,1,si,si,si,3,0.7991004497751124,monte_carlo,1.0,IPV,si,si,no,factor_europeo,ext_d4_hpi_ea19,0.9560219890054973
-compra,P5,d4_hpi_ea19,1,si,si,si,3,0.7556221889055472,monte_carlo,1.0,IPV,si,no,no,factor_europeo,ext_d4_hpi_ea19,0.9560219890054973
-compra,P2,d4_tx_extranj,-1,si,si,si,3,0.6596701649175413,monte_carlo,1.0,IPV,no,n/a (ventana de deteccion),no,demanda_externa,ext_d4_tx_extranj,0.7926036981509246
-compra,P3,d4_tx_extranj,1,no,si,no,1,0.4682658670664668,monte_carlo,1.0,IPV,si,no,no,demanda_externa,ext_d4_tx_extranj,0.7926036981509246
-compra,P4,d4_tx_extranj,-1,si,si,no,2,0.6681659170414792,monte_carlo,1.0,IPV,no,si,no,demanda_externa,ext_d4_tx_extranj,0.7926036981509246
-compra,P5,d4_tx_extranj,1,no,si,no,1,0.7491254372813593,monte_carlo,1.0,IPV,si,no,no,demanda_externa,ext_d4_tx_extranj,0.7926036981509246
-compra,P4,d4_turistas,1,si,si,si,3,0.9,enumeracion_completa,1.0,IPV,si,si,no,turismo,ext_d4_turistas,0.9
-compra,P5,d4_turistas,1,si,si,si,3,0.9,enumeracion_completa,-1.0,IPV,no,si,no,turismo,ext_d4_turistas,0.9
-alquiler,P1,d4_pob_total,-1,si,no,no,1,0.28735632183908044,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,demografia,base,0.6856571714142928
-alquiler,P1,d4_pib_vol,-1,si,si,si,3,0.26286856571714146,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,empleo_renta,base,0.2413793103448276
-alquiler,P1,tipo_hip_real,1,si,si,si,3,0.33683158420789605,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,credito_tipos,base,0.3818090954522739
-alquiler,P1,d4_credito_vivienda_real,1,si,si,si,3,0.52023988005997,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,credito_tipos,base,0.5857071464267866
-alquiler,P1,d4_terminadas,-1,si,no,no,1,0.6901549225387307,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,oferta,base,0.7476261869065467
-alquiler,P2,d4_pob_total,-1,si,no,no,1,0.3428285857071464,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,demografia,base,0.6856571714142928
-alquiler,P2,d4_pib_vol,-1,si,si,si,3,0.14992503748125938,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,empleo_renta,base,0.2413793103448276
-alquiler,P2,tipo_hip_real,1,si,si,si,3,0.2698650674662669,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,credito_tipos,base,0.3818090954522739
-alquiler,P2,d4_credito_vivienda_real,1,si,si,si,3,0.26436781609195403,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,credito_tipos,base,0.5857071464267866
-alquiler,P2,d4_terminadas,-1,no,no,no,0,0.9060469765117442,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,oferta,base,0.7476261869065467
-alquiler,P3,d4_pob_total,1,si,si,si,3,0.29185407296351823,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,demografia,base,0.6856571714142928
-alquiler,P3,d4_pib_vol,1,no,no,no,0,0.6416791604197901,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,empleo_renta,base,0.2413793103448276
-alquiler,P3,tipo_hip_real,1,si,si,si,3,0.48375812093953025,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,credito_tipos,base,0.3818090954522739
-alquiler,P3,d4_credito_vivienda_real,1,si,si,si,3,0.672663668165917,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,credito_tipos,base,0.5857071464267866
-alquiler,P3,d4_terminadas,1,si,si,si,3,0.3343328335832084,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,oferta,base,0.7476261869065467
-alquiler,P4,d4_pob_total,1,si,si,si,3,0.6686656671664168,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,demografia,base,0.6856571714142928
-alquiler,P4,d4_pib_vol,1,no,no,no,0,0.3353323338330835,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,empleo_renta,base,0.2413793103448276
-alquiler,P4,tipo_hip_real,1,si,si,si,3,0.19440279860069964,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,credito_tipos,base,0.3818090954522739
-alquiler,P4,d4_credito_vivienda_real,-1,no,no,no,0,0.47276361819090457,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,credito_tipos,base,0.5857071464267866
-alquiler,P4,d4_terminadas,-1,no,no,no,0,0.30684657671164417,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,oferta,base,0.7476261869065467
-alquiler,P5,d4_pob_total,1,si,si,si,3,0.9775112443778111,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,demografia,base,0.6856571714142928
-alquiler,P5,d4_pib_vol,1,no,no,no,0,0.8730634682658671,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,empleo_renta,base,0.2413793103448276
-alquiler,P5,tipo_hip_real,1,si,si,si,3,0.4542728635682159,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,credito_tipos,base,0.3818090954522739
-alquiler,P5,d4_credito_vivienda_real,1,si,si,si,3,0.44377811094452774,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,credito_tipos,base,0.5857071464267866
-alquiler,P5,d4_terminadas,1,si,si,si,3,0.42028985507246375,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,oferta,base,0.7476261869065467
-alquiler,P2,d4_hpi_ea19,1,no,si,si,2,0.9625187406296851,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,factor_europeo,ext_d4_hpi_ea19,0.711144427786107
-alquiler,P3,d4_hpi_ea19,1,si,si,si,3,0.5827086456771614,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,factor_europeo,ext_d4_hpi_ea19,0.711144427786107
-alquiler,P4,d4_hpi_ea19,-1,no,no,no,0,0.2608695652173913,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,factor_europeo,ext_d4_hpi_ea19,0.711144427786107
-alquiler,P5,d4_hpi_ea19,1,si,si,si,3,0.6451774112943528,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,factor_europeo,ext_d4_hpi_ea19,0.711144427786107
-alquiler,P2,d4_tx_extranj,1,no,si,si,2,0.9615192403798101,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,demanda_externa,ext_d4_tx_extranj,0.9325337331334332
-alquiler,P3,d4_tx_extranj,1,no,si,no,1,0.7296351824087957,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,demanda_externa,ext_d4_tx_extranj,0.9325337331334332
-alquiler,P4,d4_tx_extranj,1,no,no,no,0,0.8290854572713643,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,demanda_externa,ext_d4_tx_extranj,0.9325337331334332
-alquiler,P5,d4_tx_extranj,1,no,si,no,1,0.6721639180409795,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,demanda_externa,ext_d4_tx_extranj,0.9325337331334332
-alquiler,P4,d4_turistas,1,si,si,si,3,0.5,enumeracion_completa,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,turismo,ext_d4_turistas,0.5
-alquiler,P5,d4_turistas,-1,no,si,no,1,0.5,enumeracion_completa,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,turismo,ext_d4_turistas,0.5
+mercado,periodo,variable,signo_principal,conf_BP,conf_MS,conf_umbral,n_confirmaciones,p_perm,modo_perm,signo_alternativa,alternativa,alt_mismo_signo,segunda_particion,cumple,familia,especificacion,p_Q_global_variable,p_perm_BH_informativo
+compra,P1,d4_pob_total,-1,no,si,si,2,0.6521739130434783,monte_carlo,,IPV,no_evaluable,n/a (ventana de deteccion),no_evaluable,demografia,base,0.24187906046976512,0.923263858266945
+compra,P1,d4_pib_vol,-1,si,si,si,3,0.2013993003498251,monte_carlo,,IPV,no_evaluable,n/a (ventana de deteccion),no_evaluable,empleo_renta,base,0.0944527736131934,0.8888148518333425
+compra,P1,tipo_hip_real,-1,no,si,si,2,0.0069965017491254375,monte_carlo,,IPV,no_evaluable,n/a (ventana de deteccion),no_evaluable,credito_tipos,base,0.2108945527236382,0.4897551224387806
+compra,P1,d4_credito_vivienda_real,-1,si,no,no,1,0.11144427786106946,monte_carlo,,IPV,no_evaluable,n/a (ventana de deteccion),no_evaluable,credito_tipos,base,0.496751624187906,0.8888148518333425
+compra,P1,d4_terminadas,-1,no,si,si,2,0.5567216391804098,monte_carlo,,IPV,no_evaluable,n/a (ventana de deteccion),no_evaluable,oferta,base,0.2698650674662669,0.923263858266945
+compra,P2,d4_pob_total,-1,si,no,no,1,0.31284357821089454,monte_carlo,-1.0,IPV,si,n/a (ventana de deteccion),no,demografia,base,0.24187906046976512,0.8888148518333425
+compra,P2,d4_pib_vol,1,si,si,si,3,0.0399800099950025,monte_carlo,1.0,IPV,si,n/a (ventana de deteccion),si,empleo_renta,base,0.0944527736131934,0.8888148518333425
+compra,P2,tipo_hip_real,1,si,si,si,3,0.16741629185407297,monte_carlo,-1.0,IPV,no,n/a (ventana de deteccion),no,credito_tipos,base,0.2108945527236382,0.8888148518333425
+compra,P2,d4_credito_vivienda_real,1,si,si,si,3,0.8675662168915542,monte_carlo,1.0,IPV,si,n/a (ventana de deteccion),no,credito_tipos,base,0.496751624187906,0.9518375140787814
+compra,P2,d4_terminadas,1,si,si,si,3,0.848575712143928,monte_carlo,1.0,IPV,si,n/a (ventana de deteccion),no,oferta,base,0.2698650674662669,0.9518375140787814
+compra,P3,d4_pob_total,1,si,si,si,3,0.12393803098450774,monte_carlo,1.0,IPV,si,si,no,demografia,base,0.24187906046976512,0.8888148518333425
+compra,P3,d4_pib_vol,1,si,si,si,3,0.20539730134932535,monte_carlo,1.0,IPV,si,si,no,empleo_renta,base,0.0944527736131934,0.8888148518333425
+compra,P3,tipo_hip_real,1,si,no,si,2,0.8960519740129935,monte_carlo,-1.0,IPV,no,si,no,credito_tipos,base,0.2108945527236382,0.9518375140787814
+compra,P3,d4_credito_vivienda_real,1,si,si,no,2,0.545727136431784,monte_carlo,1.0,IPV,si,si,no,credito_tipos,base,0.496751624187906,0.923263858266945
+compra,P3,d4_terminadas,-1,no,no,no,0,0.19590204897551225,monte_carlo,-1.0,IPV,si,si,no,oferta,base,0.2698650674662669,0.8888148518333425
+compra,P4,d4_pob_total,1,si,si,si,3,0.8330834582708646,monte_carlo,1.0,IPV,si,si,no,demografia,base,0.24187906046976512,0.9518375140787814
+compra,P4,d4_pib_vol,-1,no,no,no,0,0.07946026986506746,monte_carlo,-1.0,IPV,si,no,no,empleo_renta,base,0.0944527736131934,0.8888148518333425
+compra,P4,tipo_hip_real,-1,no,no,no,0,0.3053473263368316,monte_carlo,-1.0,IPV,si,no,no,credito_tipos,base,0.2108945527236382,0.8888148518333425
+compra,P4,d4_credito_vivienda_real,1,si,si,no,2,0.5802098950524738,monte_carlo,1.0,IPV,si,si,no,credito_tipos,base,0.496751624187906,0.923263858266945
+compra,P4,d4_terminadas,1,si,si,si,3,0.04997501249375312,monte_carlo,1.0,IPV,si,no,si,oferta,base,0.2698650674662669,0.8888148518333425
+compra,P5,d4_pob_total,-1,no,no,no,0,0.09795102448775612,monte_carlo,-1.0,IPV,si,no,no,demografia,base,0.24187906046976512,0.8888148518333425
+compra,P5,d4_pib_vol,-1,no,no,no,0,0.5167416291854073,monte_carlo,1.0,IPV,no,no,no,empleo_renta,base,0.0944527736131934,0.923263858266945
+compra,P5,tipo_hip_real,1,si,no,si,2,0.7326336831584208,monte_carlo,1.0,IPV,si,si,no,credito_tipos,base,0.2108945527236382,0.944527736131934
+compra,P5,d4_credito_vivienda_real,1,si,si,no,2,0.2908545727136432,monte_carlo,1.0,IPV,si,si,no,credito_tipos,base,0.496751624187906,0.8888148518333425
+compra,P5,d4_terminadas,-1,no,no,no,0,0.6646676661669165,monte_carlo,-1.0,IPV,si,si,no,oferta,base,0.2698650674662669,0.923263858266945
+compra,P2,d4_hpi_ea19,1,si,si,si,3,0.9110444777611194,monte_carlo,1.0,IPV,si,n/a (ventana de deteccion),no,factor_europeo,ext_d4_hpi_ea19,0.9560219890054973,0.9518375140787814
+compra,P3,d4_hpi_ea19,1,si,si,si,3,0.6691654172913544,monte_carlo,1.0,IPV,si,no,no,factor_europeo,ext_d4_hpi_ea19,0.9560219890054973,0.923263858266945
+compra,P4,d4_hpi_ea19,1,si,si,si,3,0.7991004497751124,monte_carlo,1.0,IPV,si,no,no,factor_europeo,ext_d4_hpi_ea19,0.9560219890054973,0.9518375140787814
+compra,P5,d4_hpi_ea19,1,si,si,si,3,0.7556221889055472,monte_carlo,1.0,IPV,si,no,no,factor_europeo,ext_d4_hpi_ea19,0.9560219890054973,0.944527736131934
+compra,P2,d4_tx_extranj,-1,si,si,si,3,0.6596701649175413,monte_carlo,1.0,IPV,no,n/a (ventana de deteccion),no,demanda_externa,ext_d4_tx_extranj,0.7926036981509246,0.923263858266945
+compra,P3,d4_tx_extranj,1,no,si,no,1,0.4682658670664668,monte_carlo,1.0,IPV,si,no,no,demanda_externa,ext_d4_tx_extranj,0.7926036981509246,0.923263858266945
+compra,P4,d4_tx_extranj,-1,si,si,no,2,0.6681659170414792,monte_carlo,1.0,IPV,no,si,no,demanda_externa,ext_d4_tx_extranj,0.7926036981509246,0.923263858266945
+compra,P5,d4_tx_extranj,1,no,si,no,1,0.7491254372813593,monte_carlo,1.0,IPV,si,no,no,demanda_externa,ext_d4_tx_extranj,0.7926036981509246,0.944527736131934
+compra,P4,d4_turistas,1,si,si,si,3,0.9,enumeracion_completa,1.0,IPV,si,si,no,turismo,ext_d4_turistas,0.9,0.9518375140787814
+compra,P5,d4_turistas,1,si,si,si,3,0.9,enumeracion_completa,-1.0,IPV,no,si,no,turismo,ext_d4_turistas,0.9,0.9518375140787814
+alquiler,P1,d4_pob_total,-1,si,no,no,1,0.28735632183908044,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,demografia,base,0.6856571714142928,0.8888148518333425
+alquiler,P1,d4_pib_vol,-1,si,si,si,3,0.26286856571714146,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,empleo_renta,base,0.2413793103448276,0.8888148518333425
+alquiler,P1,tipo_hip_real,1,si,si,si,3,0.33683158420789605,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,credito_tipos,base,0.3818090954522739,0.8888148518333425
+alquiler,P1,d4_credito_vivienda_real,1,si,si,si,3,0.52023988005997,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,credito_tipos,base,0.5857071464267866,0.923263858266945
+alquiler,P1,d4_terminadas,-1,si,no,no,1,0.6901549225387307,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,oferta,base,0.7476261869065467,0.9290547034175222
+alquiler,P2,d4_pob_total,-1,si,no,no,1,0.3428285857071464,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,demografia,base,0.6856571714142928,0.8888148518333425
+alquiler,P2,d4_pib_vol,-1,si,si,si,3,0.14992503748125938,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,empleo_renta,base,0.2413793103448276,0.8888148518333425
+alquiler,P2,tipo_hip_real,1,si,si,si,3,0.2698650674662669,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,credito_tipos,base,0.3818090954522739,0.8888148518333425
+alquiler,P2,d4_credito_vivienda_real,1,si,si,si,3,0.26436781609195403,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,credito_tipos,base,0.5857071464267866,0.8888148518333425
+alquiler,P2,d4_terminadas,-1,no,no,no,0,0.9060469765117442,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,oferta,base,0.7476261869065467,0.9518375140787814
+alquiler,P3,d4_pob_total,1,si,si,si,3,0.29185407296351823,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,demografia,base,0.6856571714142928,0.8888148518333425
+alquiler,P3,d4_pib_vol,1,no,no,no,0,0.6416791604197901,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,empleo_renta,base,0.2413793103448276,0.923263858266945
+alquiler,P3,tipo_hip_real,1,si,si,si,3,0.48375812093953025,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,credito_tipos,base,0.3818090954522739,0.923263858266945
+alquiler,P3,d4_credito_vivienda_real,1,si,si,si,3,0.672663668165917,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,credito_tipos,base,0.5857071464267866,0.923263858266945
+alquiler,P3,d4_terminadas,1,si,si,si,3,0.3343328335832084,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,oferta,base,0.7476261869065467,0.8888148518333425
+alquiler,P4,d4_pob_total,1,si,si,si,3,0.6686656671664168,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,demografia,base,0.6856571714142928,0.923263858266945
+alquiler,P4,d4_pib_vol,1,no,no,no,0,0.3353323338330835,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,empleo_renta,base,0.2413793103448276,0.8888148518333425
+alquiler,P4,tipo_hip_real,1,si,si,si,3,0.19440279860069964,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,credito_tipos,base,0.3818090954522739,0.8888148518333425
+alquiler,P4,d4_credito_vivienda_real,-1,no,no,no,0,0.47276361819090457,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,credito_tipos,base,0.5857071464267866,0.923263858266945
+alquiler,P4,d4_terminadas,-1,no,no,no,0,0.30684657671164417,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,oferta,base,0.7476261869065467,0.8888148518333425
+alquiler,P5,d4_pob_total,1,si,si,si,3,0.9775112443778111,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,demografia,base,0.6856571714142928,0.9775112443778111
+alquiler,P5,d4_pib_vol,1,no,no,no,0,0.8730634682658671,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,empleo_renta,base,0.2413793103448276,0.9518375140787814
+alquiler,P5,tipo_hip_real,1,si,si,si,3,0.4542728635682159,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,credito_tipos,base,0.3818090954522739,0.923263858266945
+alquiler,P5,d4_credito_vivienda_real,1,si,si,si,3,0.44377811094452774,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,credito_tipos,base,0.5857071464267866,0.923263858266945
+alquiler,P5,d4_terminadas,1,si,si,si,3,0.42028985507246375,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,oferta,base,0.7476261869065467,0.923263858266945
+alquiler,P2,d4_hpi_ea19,1,no,si,si,2,0.9625187406296851,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,factor_europeo,ext_d4_hpi_ea19,0.711144427786107,0.9764682875953328
+alquiler,P3,d4_hpi_ea19,1,si,si,si,3,0.5827086456771614,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,factor_europeo,ext_d4_hpi_ea19,0.711144427786107,0.923263858266945
+alquiler,P4,d4_hpi_ea19,-1,no,no,no,0,0.2608695652173913,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,factor_europeo,ext_d4_hpi_ea19,0.711144427786107,0.8888148518333425
+alquiler,P5,d4_hpi_ea19,1,si,si,si,3,0.6451774112943528,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,factor_europeo,ext_d4_hpi_ea19,0.711144427786107,0.923263858266945
+alquiler,P2,d4_tx_extranj,1,no,si,si,2,0.9615192403798101,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,n/a (ventana de deteccion),no_evaluable,demanda_externa,ext_d4_tx_extranj,0.9325337331334332,0.9764682875953328
+alquiler,P3,d4_tx_extranj,1,no,si,no,1,0.7296351824087957,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,demanda_externa,ext_d4_tx_extranj,0.9325337331334332,0.944527736131934
+alquiler,P4,d4_tx_extranj,1,no,no,no,0,0.8290854572713643,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,demanda_externa,ext_d4_tx_extranj,0.9325337331334332,0.9518375140787814
+alquiler,P5,d4_tx_extranj,1,no,si,no,1,0.6721639180409795,monte_carlo,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,demanda_externa,ext_d4_tx_extranj,0.9325337331334332,0.923263858266945
+alquiler,P4,d4_turistas,1,si,si,si,3,0.5,enumeracion_completa,,SERPAVI (anual): no evaluable,no_evaluable,si,no_evaluable,turismo,ext_d4_turistas,0.5,0.923263858266945
+alquiler,P5,d4_turistas,-1,no,si,no,1,0.5,enumeracion_completa,,SERPAVI (anual): no evaluable,no_evaluable,no,no_evaluable,turismo,ext_d4_turistas,0.5,0.923263858266945

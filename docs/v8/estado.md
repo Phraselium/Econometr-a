@@ -12,7 +12,9 @@
 
 ## En curso
 - F0: clones limpios de v7.2 (`make v7_2` + `make v7` y `make all`) en marcha.
-- F1: descarga de las series nuevas (subagente data-fetcher) hacia data/raw/v8.
+- F1: descarga hecha (data/raw/v8, commit 7b951fe). Paneles y diccionario en construcción (subagente data-cleaner, src/v8/f1_paneles.py).
+- F3: herramientas en implementación con Monte Carlo sobre datos simulados (2 subagentes: familia VAR y resto).
+- F2: borrador de pre-registro en docs/v8/hipotesis.md (sin etiqueta).
 
 ## Siguiente paso exacto
 - Al terminar los clones de v7.2: comparar con lo versionado, cerrar F0 (ERRATA y CHANGELOG si procede) y hacer commit.
@@ -23,3 +25,4 @@
 | Módulo | Subagentes | Orquestador (estimación) |
 |---|---|---|
 | F0 | 0 | ~40k |
+| F1 descarga | 121.258 | ~15k |

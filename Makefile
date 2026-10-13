@@ -50,6 +50,7 @@ check:
 	$(PY) src/v3/check_texto.py
 	$(PY) src/v5/check_v5.py
 	$(PY) src/v6/check_v6.py
+	$(PY) src/v8/check_v8.py
 
 verificador:
 	@if [ -f src/v3/verificador.py ]; then $(PY) src/v3/verificador.py; fi

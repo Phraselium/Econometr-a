@@ -38,10 +38,9 @@ FUENTES: dict[str, str] = {
     # V8 (F6): verificador y fichas de V8 (texto y JSON generados por src/v8/f6_verificador.py)
     "publicacion/verificador/verificador_v8.md": "output/v8/verificador_v8.md",
     "publicacion/verificador/fichas_v8.json": "output/v8/fichas_verificador_v8.json",
-    # V8, PENDIENTES: esta función exige que exista cada fuente (SystemExit si falta); se activan al escribir el orquestador cada entregable
-    # y regenerar con `make publicacion` (tablas_v8.xlsx se copia en binario: los ficheros que no son .md se copian tal cual).
-    # "publicacion/por_que_ha_subido.md": "output/v8/por_que_ha_subido.md",
-    # "publicacion/informe_econometrico_v8.md": "output/v8/informe_econometrico.md",
+    # V8 (F6): entregables (tablas_v8.xlsx se copia en binario: los ficheros que no son .md se copian tal cual).
+    "publicacion/por_que_ha_subido.md": "output/v8/por_que_ha_subido.md",
+    "publicacion/informe_econometrico_v8.md": "output/v8/informe_econometrico.md",
     "publicacion/tablas_modelos_destacados.md": "output/v8/tablas_modelos_destacados.md",
     "publicacion/tablas_modelos_destacados.csv": "output/v8/tablas_modelos_destacados.csv",
     "publicacion/tablas_v8.xlsx": "output/v8/tablas_v8.xlsx",

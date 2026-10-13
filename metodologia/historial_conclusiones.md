@@ -2,6 +2,8 @@
 
 # Historial de conclusiones v1-v6 y estado en v6.1 (K2)
 
+Nota V8 (2026-10-13): este historial incluye V8; las filas de V8 están en la adenda «Adenda V8» del final, con la columna «Estado en V8 y porqué». Las filas anteriores no se modifican.
+
 Fecha: 2026-10-11. Una fila por conclusión relevante. Capa: las versiones v1-v2 usaban «asociación/exploratorio» (equivalente a C4); desde v3 rige C1-C4. «Estado» compara con la reconciliación de K2 (`output/v6_1/K2/inmigracion.md`, `otros_cambios.md`). Magnitudes tal como constan en las fuentes; sin lectura causal. Las cifras de K2 se estimaron sobre las provincias de entrenamiento de v6 (no se reproduce la muestra de 49 provincias de v2).
 
 | Versión | Variable | Medida de resultado | Nivel | Periodo | Método | Signo | Magnitud | Capa | Estado en v6.1 y porqué | Fuente |
@@ -68,3 +70,23 @@ Fecha: 2026-10-11. Una fila por conclusión relevante. Capa: las versiones v1-v2
 | Muestra | Todo es «informativo, muestra ya vista en v1»; la validación limpia es diferida (`make evaluate_v7`) | Nuevo protocolo | — |
 
 Especificaciones registradas acumuladas, de v1 a V7: output/v7/cuenta_especificaciones.md.
+
+<!-- V8:inicio (generado por src/v8/f6_verificador.py; no editar a mano) -->
+
+## Adenda V8 (por qué ha subido la vivienda: factores, periodos y factor común, 2026-10-13)
+
+Una fila por factor. Las cifras salen de `output/v5/cifras_clave.csv` (ids `V8-`); los resultados del SVAR (C3s) valen solo condicionados a las restricciones de signo y de cero de M2; el resto es asociación (C4). Sin lectura causal por debajo de C3/C3s.
+
+| Factor | Medida de resultado | Magnitud | Método | Signo | Capa | Estado en V8 y porqué | Fuente |
+|---|---|---|---|---|---|---|---|
+| Demografía e inmigración | Alquiler real | P5 (2022T3-2026T2): 0,07 pp (-1,9 a 2,1 pp); multiverso: 2 de 74 combinaciones | SVAR (C3s); multiverso (C4); IV migratorio (C4) | + en el multiverso (alquiler P2 y completo); 0 en el SVAR | C3s / C4 | **Se mantiene** (no concluyente): la banda del SVAR incluye el 0 y el instrumento migratorio no tiene primera etapa (F 0,05); solo la asociación del multiverso es estable en alquiler | output/v8/F6/hechos.json; output/v8/F5/resumen.md |
+| Tipos de interés y crédito | Precio real de compra | P5: -0,47 pp (-2,8 a 12,8 pp); P2: -8,6 pp (-18,9 a 0,54 pp) | SVAR (C3s); IV monetario (C4) | no distinguible de 0 | C3s / C4 | **Se mantiene** (no concluyente): H8-2 no respaldada (p de Holm 0,987) y el instrumento monetario es débil (F 1,83) | output/v8/F6/hechos.json; output/v8/F5/resumen.md |
+| Empleo y renta | Precio real de compra | P1 (larga): 31,8 pp (9,0-54,6 pp); P5: 7,2 pp (-4,7 a 11,2 pp) | SVAR (C3s); M0 (C4) | + en la media posterior, con banda que incluye el 0 salvo P1 | C3s / C4 | **Se mantiene** (no concluyente): es el factor con mayor media en compra P1 y P5, pero la regla del §9 no designa ninguno (1 de 4 votos en P1) | output/v8/F6/hechos.json; output/v8/F5/resumen.md |
+| Oferta | Precio real de compra | P5: 1,9 pp (-3,3 a 9,0 pp); P2: -4,8 pp (-13,3 a 2,5 pp) | SVAR (C3s); ARDL con cotas (C4) | signo según periodo | C3s / C4 | **Se mantiene** (no concluyente): bandas con el 0; cointegración solo en 2 de 9 especificaciones | output/v8/F6/hechos.json; output/v8/F5/resumen.md |
+| Turismo y viviendas turísticas | Alquiler real | SHAP P5: -0,44 pp (-0,67 a 0,23 pp); CCAA con datos: 6 de 17 | ML interpretable (C4, contraste) | no concluyente | C4 | **Se mantiene** (no concluyente): cobertura de turismo parcial y solo P4-P5; el SVAR no lo incluye | output/v8/F6/hechos.json; output/v8/F5/resumen.md |
+| Demanda externa y compradores extranjeros | Precio real de compra | SHAP P5: 0,51 pp (0,10-0,71 pp) | ML interpretable (C4, contraste) | + pequeño en P5 | C4 | **Se mantiene** (no concluyente): contribución pequeña en el contraste de aprendizaje automático y sin identificación | output/v8/F6/hechos.json; output/v8/F5/resumen.md |
+| Factor europeo (nuevo en V8) | Crecimiento del precio de compra | correlación con la zona euro 0,60 (0,14-0,86); parte europea en P2: -15,3 pp (-21,7 a -7,6 pp) | Factor común (PCA/DFM); bootstrap por bloques | + | C4 | **Nuevo**: asociación positiva (H8-9, p de Holm 0,020); el factor común no supera el 50 % de la varianza en todos los periodos (H8-8, p de Holm 0,669); sin lectura causal | output/v8/F6/hechos.json; output/v8/F5/resumen.md |
+| Un factor único (regla del §9) | Precio real de compra y alquiler real | 0 de 10 celdas designadas | Regla de 4 votos, multiverso y banda del SVAR | — | C3s / C4 | **Nuevo**: ningún factor se designa como el más relevante en ningún periodo; se publican rankings con incertidumbre | output/v8/F6/hechos.json; output/v8/F5/resumen.md |
+| Predicción fuera de muestra | Crecimiento trimestral real | RMSE compra: AR(4) 1,2 pp, ECM v1 2,6 pp, BVAR 1,4 pp | Diebold-Mariano con Holm | — | C4 | **Se mantiene** (K1): ningún modelo supera al AR(4) en la misma muestra | output/v8/F6/hechos.json; output/v8/F5/resumen.md |
+
+<!-- V8:fin -->

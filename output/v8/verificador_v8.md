@@ -48,7 +48,7 @@ Generado por `src/v8/f6_verificador.py`. Cada ficha evalúa una afirmación, nun
 
 **Veredicto:** ANALIZADA, NO CONCLUYENTE (C4)
 
-**Magnitud:** El factor de turismo no entra en el SVAR (M2). Solo hay datos utilizables en 6 de 17 CCAA y para P4 y P5. Sensibilidad no principal (NaN nativos), media de las 6 CCAA con datos de turismo; no comparable con la variación nacional. Contraste del modelo de aprendizaje automático (C4, no es un efecto): contribución SHAP media del turismo al alquiler, con banda del 68 %: P4 0,11 pp (-0,53 a 0,30 pp); P5 -0,44 pp (-0,67 a 0,23 pp); en la compra, P4 1,5 pp (0,13-2,2 pp) y P5 15,2 pp (8,1-14,8 pp). Ninguna de estas cifras es la variante principal.
+**Magnitud:** El factor de turismo no entra en el SVAR (M2). Solo hay datos utilizables en 6 de 17 CCAA y para P4 y P5. Sensibilidad no principal (valores ausentes nativos de LightGBM), media de las 6 CCAA con datos de turismo; no comparable con la variación nacional. Contraste del modelo de aprendizaje automático (C4, no es un efecto): contribución SHAP media del turismo al alquiler, con banda del 68 %: P4 0,11 pp (-0,53 a 0,30 pp); P5 -0,44 pp (-0,67 a 0,23 pp); en la compra, P4 1,5 pp (0,13-2,2 pp) y P5 15,2 pp (8,1-14,8 pp). Ninguna de estas cifras es la variante principal.
 
 **Intervalo:** Bandas del 68 % del bootstrap de bloques (el punto puede quedar fuera de la banda)
 

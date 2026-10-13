@@ -93,7 +93,7 @@ def fichas() -> list[dict]:
     f.append(ficha(
         "V8-V3", "Viviendas turísticas", "El turismo y las viviendas de uso turístico explican la subida del alquiler.",
         f"El factor de turismo no entra en el SVAR (M2). Solo hay datos utilizables en {c('V8-M9-turismo-ccaa', 'num')} de 17 CCAA y para P4 y P5. Sensibilidad no principal "
-        "(NaN nativos), media de las 6 CCAA con datos de turismo; no comparable con la variación nacional. Contraste del modelo de "
+        "(valores ausentes nativos de LightGBM), media de las 6 CCAA con datos de turismo; no comparable con la variación nacional. Contraste del modelo de "
         f"aprendizaje automático (C4, no es un efecto): contribución SHAP media del turismo al alquiler, con banda del 68 %: P4 {c('V8-M9-shap-a-P4-turismo')}; "
         f"P5 {c('V8-M9-shap-a-P5-turismo')}; en la compra, P4 {c('V8-M9-shap-c-P4-turismo')} y P5 {c('V8-M9-shap-c-P5-turismo')}. Ninguna de estas cifras es la variante principal.",
         "Bandas del 68 % del bootstrap de bloques (el punto puede quedar fuera de la banda)",

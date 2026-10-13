@@ -103,7 +103,7 @@ Gradient boosting con restricciones de monotonía, GAM, DML con cross-fitting po
 
 ## 9. Atribución y regla del factor más relevante (F5)
 
-Regla operativa fijada antes de calcular (R0-R8, `docs/v8/desviaciones.md`): unidad común (pp acumulados en la ventana del periodo); «mayor contribución» = la que más empuja en la dirección de lo observado; la parte no atribuida no compite; votos del SVAR (probabilidad de ser el mayor), de la dominancia (cuota de R² con signo), de LP-IV (solo con instrumento fuerte o Anderson-Rubin al 68 % acotado) y de la contabilidad (solo demografía); abstención = no apoya; P4 y el alquiler de P1, imprecisos.
+Regla operativa fijada antes de calcular (R0-R8, `docs/v8/desviaciones.md`): unidad común (pp acumulados en la ventana del periodo); «mayor contribución» = la de mayor contribución en la dirección de lo observado; la parte no atribuida no compite; votos del SVAR (probabilidad de ser el mayor), de la dominancia (cuota de R² con signo), de LP-IV (solo con instrumento fuerte o Anderson-Rubin al 68 % acotado) y de la contabilidad (solo demografía); abstención = no apoya; P4 y el alquiler de P1, imprecisos.
 
 Resultado: **ningún factor designado** en los diez casos; el máximo de votos coincidentes es dos. Probabilidad de que el primer factor del SVAR sea el mayor: compra 71,7 % (P1), 31,8 % (P2), 40,8 % (P3), 25,9 % (P4) y 29,7 % (P5); alquiler 38,8 % (P2), 32,6 % (P3), 24,5 % (P4) y 25,7 % (P5). Fichas: `output/v8/F5/fichas.md`.
 

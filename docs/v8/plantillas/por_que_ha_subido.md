@@ -167,16 +167,24 @@ Esta sección reúne, para cada familia, lo que dicen todos los métodos a la ve
 
 ## 5. Comunitat Valenciana y València ciudad
 
-Crecimiento acumulado del precio de compra en cada periodo y parte que acompaña al factor común nacional [C4, descriptivo]:
+Precio real de compra en P5 (2022-2026) [C4, descriptivo y asociación]:
 
-| Ámbito | P2 | P5 | Parte común en P5 |
-|---|---|---|---|
-| Alicante (03) | {{V8-M8-cv-p03-P2-total}} | {{V8-M8-cv-p03-P5-total}} | {{V8-M8-cv-p03-P5-cuota}} |
-| Castellón (12) | {{V8-M8-cv-p12-P2-total}} | {{V8-M8-cv-p12-P5-total}} | {{V8-M8-cv-p12-P5-cuota}} |
-| Valencia (46) | {{V8-M8-cv-p46-P2-total}} | {{V8-M8-cv-p46-P5-total}} | {{V8-M8-cv-p46-P5-cuota}} |
-| València ciudad | {{V8-M8-cv-vlc-P2-total}} | {{V8-M8-cv-vlc-P5-total}} | {{V8-M8-cv-vlc-P5-cuota}} |
+| Ámbito | Variación acumulada observada, valor tasado | Segunda fuente (Registradores) | Parte de la variación asociada al factor común nacional | Comovimiento con el factor común (R² del crecimiento interanual) |
+|---|---|---|---|---|
+| Alicante (03) | {{V8-M8-cv-p03-P5-acum-mivau}} | {{V8-M8-cv-p03-P5-acum-alt}} | {{V8-M8-cv-p03-P5-fcpp}} | {{V8-M8-cv-p03-P5-cuota}} |
+| Castellón (12) | {{V8-M8-cv-p12-P5-acum-mivau}} | {{V8-M8-cv-p12-P5-acum-alt}} | {{V8-M8-cv-p12-P5-fcpp}} | {{V8-M8-cv-p12-P5-cuota}} |
+| Valencia (46) | {{V8-M8-cv-p46-P5-acum-mivau}} | {{V8-M8-cv-p46-P5-acum-alt}} | {{V8-M8-cv-p46-P5-fcpp}} | {{V8-M8-cv-p46-P5-cuota}} |
+| València ciudad | {{V8-M8-cv-vlc-P5-acum-mivau}} | sin dato | {{V8-M8-cv-vlc-P5-fcpp}} | {{V8-M8-cv-vlc-P5-cuota}} |
 
-En las tres provincias, la subida reciente se explica casi entera por lo común a toda España. En València ciudad la subida de P5 es mayor que en las provincias y la parte común, algo menor: hay un componente propio de la ciudad que este análisis no atribuye a ningún factor. No hay SVAR regional, así que no se designa ningún factor por debajo del nivel nacional.
+La parte asociada al factor común se estima sobre la media interanual del periodo (una aproximación de la variación acumulada), por eso no se resta directamente de la columna observada. En la provincia de Valencia las dos fuentes de precio discrepan, y se dan ambas.
+
+- En las tres provincias, las fluctuaciones del crecimiento reciente van casi enteras con las del conjunto de España (R² muy alto) [C4].
+- La parte del aumento asociada al factor común es menor que el aumento observado en Alicante y en Valencia, y en Castellón es del orden de lo observado.
+- En València ciudad la subida de P5 es la mayor de los cuatro ámbitos y la parte asociada al factor común es una fracción menor de ella: hay un componente propio de la ciudad que este análisis no atribuye a ningún factor.
+
+Crisis (P2), variación aproximada (media interanual por la duración del periodo en años): Alicante {{V8-M8-cv-p03-P2-total}}, Castellón {{V8-M8-cv-p12-P2-total}}, Valencia {{V8-M8-cv-p46-P2-total}} y València ciudad {{V8-M8-cv-vlc-P2-total}}.
+
+No hay SVAR regional, así que no se designa ningún factor por debajo del nivel nacional.
 
 ## 6. Ecuaciones significativas y robustas
 

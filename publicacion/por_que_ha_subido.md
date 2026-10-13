@@ -8,7 +8,7 @@ Borja Romero, economista (firma individual, independiente). Documento generado p
 
 Este documento responde a tres preguntas sobre la vivienda en España entre 1995 y 2026: cuánto pesa cada factor en la variación del precio real de compra y del alquiler real en cada periodo, qué ecuaciones son significativas y robustas, y qué parte de la subida es común a todas las comunidades autónomas y a la zona euro. Las reglas de decisión se fijaron antes de estimar (pre-registro V8, `docs/v8/hipotesis.md`) y las desviaciones están anotadas en `docs/v8/desviaciones.md`.
 
-La respuesta principal es negativa y precisa. Con la regla pre-registrada, **ningún factor puede designarse como «el más relevante» en ninguno de los diez casos** (dos mercados por cinco periodos): el número máximo de métodos que coinciden es 2 de los cuatro exigidos en el periodo más reciente. Los métodos discrepan entre sí, las bandas de incertidumbre de la descomposición estructural incluyen el cero en casi todos los casos y ninguno de los tres instrumentos externos tiene fuerza suficiente para una lectura causal.
+La respuesta principal es negativa y precisa. Con la regla pre-registrada, **ningún factor puede designarse como «el más relevante» en ninguno de los diez casos** (dos mercados por cinco periodos): el número máximo de métodos que coinciden es 2 de cuatro cuando se exigen tres (ese máximo se alcanza en la compra de P3, P4 y P5 y en el alquiler de P2 y P5). Los métodos discrepan entre sí, las bandas de incertidumbre de la descomposición estructural incluyen el cero en casi todos los casos y ninguno de los tres instrumentos externos tiene fuerza suficiente para una lectura causal.
 
 Lo que sí se sostiene es más modesto:
 
@@ -56,7 +56,7 @@ El pre-registro exige tres condiciones a la vez para designar un factor como el 
 2. que su signo sea estable en al menos el 80 % del multiverso de especificaciones;
 3. que su banda del 68 % en la descomposición histórica no incluya el cero.
 
-Antes de calcular nada se fijó cómo vota cada método, cuándo se abstiene (una abstención cuenta como «no apoya») y que la parte no atribuida a ningún factor nunca compite (`docs/v8/desviaciones.md`, regla operativa de F5). Con los instrumentos débiles, el método LP-IV se abstiene casi siempre, y eso deja a la demografía como la única familia que, por construcción, podía reunir tres votos.
+Antes de calcular nada se fijó cómo vota cada método, cuándo se abstiene (una abstención cuenta como «no apoya») y que la parte no atribuida a ningún factor nunca compite (`docs/v8/desviaciones.md`, regla operativa de F5). En el alquiler, LP-IV se abstiene siempre (instrumento débil e intervalo de Anderson-Rubin al 68 % no acotado), de modo que allí solo la demografía podía reunir tres votos. En la compra, el intervalo de Anderson-Rubin al 68 % está acotado y LP-IV puede votar, pero solo por crédito y tipos; lo hace en P4, con una primera etapa débil (F efectivo 1,83) y de signo contrario al esperado.
 
 ### 2.2 El resultado
 
@@ -75,7 +75,7 @@ Antes de calcular nada se fijó cómo vota cada método, cuándo se abstiene (un
 
 **Por qué no se puede designar.** No es falta de cálculo; son tres razones concretas:
 
-- **Los métodos no coinciden.** En la compra de P5, el SVAR y la dominancia señalan crédito y tipos, y la contabilidad hogares-viviendas señala demografía. En el alquiler de P3, el SVAR señala demografía y la dominancia, demanda externa.
+- **Los métodos no coinciden.** En la compra de P5, crédito y tipos es el factor con más probabilidad de ser el mayor en el SVAR (29,7 %), aunque su media posterior es negativa y la mayor media es la de actividad y renta; la dominancia también vota crédito y tipos, y la contabilidad hogares-viviendas vota demografía. En el alquiler de P3, el SVAR señala demografía y la dominancia, demanda externa.
 - **La incertidumbre es grande.** En el SVAR, la probabilidad de que el primer factor sea de verdad el mayor va, en la compra, de 25,9 % a 71,7 % según el periodo, y en el alquiler de 24,5 % a 38,8 %. Solo en la compra de P1 supera la mitad.
 - **No hay identificación externa.** Los tres instrumentos (shocks monetarios de alta frecuencia del BCE, empuje migratorio desde el resto de la UE y composición sectorial del empleo) tienen una primera etapa débil: F efectivo de 1,83 para el primero y de 0,05 para el segundo, muy por debajo del umbral de diez. Ningún instrumento llega a C3 (0 de tres).
 
@@ -89,12 +89,12 @@ Las contribuciones del SVAR son medias posteriores acumuladas en el periodo, con
 
 El precio real de compra subió 75,4 pp. Para este periodo se usa la versión larga del SVAR (cuatro variables desde 1995: precio, tipo hipotecario, PIB en volumen y población), porque el crédito nuevo y las compraventas no existen antes de 2004.
 
-- Actividad y renta: 31,8 pp (9,0-54,6 pp). Es la única contribución de todo el estudio cuya banda del 68 % excluye el cero y cuyo signo es estable en el multiverso.
+- Actividad y renta: 31,8 pp (9,0-54,6 pp). Es la única contribución del SVAR cuya banda del 68 % excluye el cero. En el multiverso, el crecimiento del PIB tiene un signo estable pero **negativo**, casi nunca significativo tras BH, y deja de ser estable si se cuentan las especificaciones fallidas: la asociación por regresión no acompaña al signo del SVAR [C4].
 - Demografía: 8,9 pp (-5,0 a 24,8 pp).
 - Crédito y tipos: 3,0 pp (-7,2 a 14,0 pp).
-- Parte no atribuida a los shocks identificados: 31,6 pp (-6,0 a 74,1 pp).
+- Parte no atribuida a los shocks identificados: 31,6 pp (-6,0 a 74,1 pp) (banda aproximada).
 
-Lectura: bajo las restricciones del SVAR, la expansión del precio de compra en 1995-2007 se asocia sobre todo a shocks de actividad y renta [C3s]. No se designa porque la dominancia, LP-IV y la contabilidad se abstienen. El alquiler de P1 no tiene SVAR (la serie empieza en 2002).
+Lectura: bajo las restricciones del SVAR, la expansión del precio de compra en 1995-2007 se asocia sobre todo a shocks de actividad y renta [C3s, condicionado a las restricciones]. No se designa porque la dominancia, LP-IV y la contabilidad no lo votan y porque el multiverso no acompaña al signo. El alquiler de P1 no tiene SVAR (la serie empieza en 2002).
 
 ### P2 (2008-2013): crisis
 
@@ -105,9 +105,9 @@ El precio real de compra cayó -44,0 pp.
 - Demanda de vivienda: -7,4 pp (-17,9 a 2,0 pp).
 - Oferta: -4,8 pp (-13,3 a 2,5 pp).
 
-Las bandas de actividad y de crédito quedan muy cerca de excluir el cero, pero lo incluyen. La hipótesis pre-registrada de que crédito y actividad juntos empujaron a la baja (H8-4) inclina en ese sentido (-19,2 pp (-57,3 a 9,9 pp)) pero no se sostiene tras corregir por comparaciones múltiples (p de Holm 0,343).
+Las bandas de actividad y de crédito quedan muy cerca de excluir el cero, pero lo incluyen. La hipótesis pre-registrada de que crédito y actividad juntos empujaron a la baja (H8-4) inclina en ese sentido (intervalo al 95 %: -19,2 pp (-57,3 a 9,9 pp)) pero no se sostiene tras corregir por comparaciones múltiples (p de Holm 0,343).
 
-La parte del crecimiento del precio que acompaña al de la zona euro es de -15,3 pp (-21,7 a -7,6 pp) en P2 [C4]. Es el único periodo en que esa parte tiene una banda que excluye el cero: la caída española coincidió con la de otros mercados europeos, sin que eso identifique un efecto.
+La parte del crecimiento del precio que acompaña al de la zona euro es de -15,3 pp (-21,7 a -7,6 pp) en P2 [C4]. Con la del tramo final de P1 (desde 2006, cuando empieza la serie de la zona euro: 7,4 pp (4,7-8,7 pp)), es uno de los dos casos en que esa parte tiene una banda que excluye el cero; en P3, P4 y P5 la incluye. La caída española coincidió con la de otros mercados europeos, sin que eso identifique un efecto.
 
 ### P3 (2014-2019): recuperación
 
@@ -123,33 +123,33 @@ Nueve trimestres no bastan para separar factores. Todas las contribuciones son p
 
 El precio real de compra ha subido 18,4 pp y el alquiler real ha variado -1,8 pp.
 
-- **Crédito y tipos.** En el SVAR, la media es -0,47 pp (-2,8 a 12,8 pp) y la mediana 3,4 pp: la posterior es muy asimétrica y el signo no está determinado. La hipótesis H8-2 (crédito y tipos restaron al precio en P5) no se sostiene (p de Holm 0,987). En el multiverso, el signo de la familia de crédito y tipos, orientado para que «más crédito o menos tipo» cuente igual, solo es estable en una parte de las especificaciones y no llega al 80 %.
+- **Crédito y tipos.** En el SVAR, la media es -0,47 pp (-2,8 a 12,8 pp) y la mediana 3,4 pp: la posterior es muy asimétrica y el signo no está determinado. La hipótesis H8-2 (crédito y tipos restaron al precio en P5) no se sostiene (p de Holm 0,987). En el multiverso, la familia de crédito y tipos (orientada para que «más crédito o menos tipo» cuente igual) no llega al 80 %. La variable principal, el tipo real hipotecario, sí tiene un signo estable, pero en sentido contrario al canal expansivo: un tipo real más alto va con más crecimiento del precio. Es una asociación sin identificación [C4].
 - **Actividad y renta.** Media 7,2 pp (-4,7 a 11,2 pp), mediana 1,1 pp.
-- **Demografía.** En el precio de compra, 0,65 pp (-4,1 a 5,8 pp). En el alquiler, 0,07 pp (-1,9 a 2,1 pp). La hipótesis H8-1 (el shock demográfico empujó el alquiler en P5) no se sostiene (p de Holm 0,987). La contabilidad hogares-viviendas sí vota por demografía en la compra: en P5 se formaron más hogares que viviendas terminadas.
+- **Demografía.** En el precio de compra, 0,65 pp (-4,1 a 5,8 pp). En el alquiler, 0,07 pp (-1,9 a 2,1 pp). La hipótesis H8-1 (el shock demográfico empujó el alquiler en P5) no se sostiene (p de Holm 0,987). La contabilidad hogares-viviendas sí vota por demografía en la compra: en P5 se formaron más hogares que viviendas libres terminadas (la serie no incluye las protegidas).
 - **Oferta.** 1,9 pp (-3,3 a 9,0 pp) en la compra.
-- **Parte no atribuida.** 9,5 pp (-14,6 a 24,1 pp) en la compra.
+- **Parte no atribuida.** 9,5 pp (-14,6 a 24,1 pp) en la compra (banda aproximada).
 
 El empuje migratorio, instrumentado con la emigración de cada país de origen hacia el resto de la UE, es demasiado débil para estimar su efecto sobre el alquiler (H8-7, F efectivo 0,05).
 
-**Turismo (solo contraste).** El aprendizaje automático (gradient boosting con SHAP agrupado por familias) asigna al turismo 15,2 pp (8,1-14,8 pp) del crecimiento del precio de compra en P5 en el panel de las comunidades con datos (6 CCAA). Es un **contraste predictivo**, no una atribución: SHAP mide cuánto usa el modelo cada variable para predecir, no qué la mueve, y el turismo solo existe desde 2016, lo que lo confunde con el ciclo reciente. El mismo modelo no predice mejor que un AR(4). Además, el punto queda fuera de su propia banda bootstrap, otra señal de inestabilidad. La cifra no implica ninguna relación de causa [C4].
+**Turismo (solo contraste).** En una sensibilidad no principal, limitada a las 6 comunidades con datos de turismo, el aprendizaje automático (gradient boosting con SHAP agrupado por familias) asigna al turismo 15,2 pp (8,1-14,8 pp) del crecimiento del precio de compra de esas comunidades en P5. No es comparable con la variación nacional. Es un **contraste predictivo**, no una atribución: SHAP mide cuánto usa el modelo cada variable para predecir, y el turismo solo existe desde 2016, lo que lo confunde con el ciclo reciente. El mismo modelo no predice mejor que un AR(4), y el punto queda fuera de su propia banda bootstrap, otra señal de inestabilidad. La cifra no implica ninguna relación de causa [C4].
 
 ## 3 bis. Factor a factor
 
 Esta sección reúne, para cada familia, lo que dicen todos los métodos a la vez. Recuerda la capa de cada cifra: solo la descomposición del SVAR es C3s; todo lo demás es C4.
 
-**Demografía.** Es la única familia que podía reunir tres votos con los instrumentos débiles, y no los reúne en ningún periodo. En el SVAR, sus contribuciones son pequeñas y con bandas que incluyen el cero: 0,65 pp (-4,1 a 5,8 pp) en el precio de compra de P5 y 0,07 pp (-1,9 a 2,1 pp) en el alquiler. Por otro lado, es la única familia con una asociación robusta en el multiverso: positiva en el alquiler durante la crisis y en la muestra completa [C4]. La contabilidad hogares-viviendas también apunta en esa dirección en la compra de P3 y P5, cuando la formación de hogares superó a las viviendas terminadas. La lectura prudente: la presión demográfica acompaña a los precios en varios métodos, pero ninguno la identifica como el factor dominante, y el instrumento migratorio es demasiado débil para estimar su efecto.
+**Demografía.** En el alquiler es la única familia que podía reunir tres votos, y no los reúne en ningún periodo. En el SVAR, sus contribuciones son pequeñas y con bandas que incluyen el cero: 0,65 pp (-4,1 a 5,8 pp) en el precio de compra de P5 y 0,07 pp (-1,9 a 2,1 pp) en el alquiler. Por otro lado, es la única familia con una asociación robusta en el multiverso: positiva en el alquiler durante la crisis y en la muestra completa [C4]. La contabilidad hogares-viviendas también apunta en esa dirección en la compra de P3 y P5, cuando la formación de hogares superó a las viviendas terminadas. La lectura prudente: la presión demográfica acompaña a los precios en varios métodos, pero ninguno la identifica como el factor dominante, y el instrumento migratorio es demasiado débil para estimar su efecto.
 
-**Empleo y renta.** Es el primer factor del SVAR en la compra de P1, P2 y P3, y en P1 es la única contribución del estudio con banda que excluye el cero (31,8 pp (9,0-54,6 pp)) [C3s, condicionado a las restricciones de signo y de cero]. En P5 la media posterior es alta (7,2 pp (-4,7 a 11,2 pp)) pero la mediana es pequeña (1,1 pp): la evidencia reciente depende de unas pocas extracciones de la posterior. El instrumento sectorial del empleo es débil.
+**Empleo y renta.** Es el primer factor del SVAR en la compra de P1, P2 y P3, y en P1 es la única contribución del SVAR con banda que excluye el cero, aunque en el multiverso el signo estable es el contrario (31,8 pp (9,0-54,6 pp)) [C3s, condicionado a las restricciones de signo y de cero]. En P5 la media posterior es alta (7,2 pp (-4,7 a 11,2 pp)) pero la mediana es pequeña (1,1 pp): la evidencia reciente depende de unas pocas extracciones de la posterior. El instrumento sectorial del empleo es débil.
 
-**Crédito y tipos.** Es el primero en la dominancia de P4 y P5 y en el SVAR de P5, pero con un signo indeterminado: en P5 la media es -0,47 pp (-2,8 a 12,8 pp) y la mediana 3,4 pp. Los shocks monetarios del BCE no permiten estimar su efecto: la primera etapa es débil (F efectivo 1,83) y tiene el signo contrario al esperado. Las hipótesis H8-5 y H8-6 no se sostienen (p de Holm 1,000 y 1,000). En el multiverso, al orientar los tipos (un tipo más bajo cuenta como presión al alza), el signo deja de ser estable. Un modelo de aprendizaje automático doble (DML) asocia un tipo más alto con más alquiler (0,45), una asociación sin identificación [C4]. Una lectura compatible, no contrastada aquí, es que el encarecimiento del crédito desvíe demanda de la compra al alquiler.
+**Crédito y tipos.** Lo vota la dominancia en P4 y P5 (el primer factor cuya contribución parcial tiene el signo de la variación) y, en la compra de P5, el SVAR por probabilidad (29,7 %), no por media: en P5 la media es -0,47 pp (-2,8 a 12,8 pp) y la mediana 3,4 pp. Los shocks monetarios del BCE no permiten estimar su efecto: la primera etapa es débil (F efectivo 1,83) y tiene el signo contrario al esperado. Las hipótesis H8-5 y H8-6 no se sostienen (p de Holm 1,000 y 1,000). En el multiverso, la familia orientada no tiene un signo estable; el tipo real hipotecario sí, pero contrario al canal expansivo. Un modelo de aprendizaje automático doble (DML) asocia un tipo más alto con más alquiler (0,45), una asociación sin identificación [C4].
 
-**Oferta.** En el SVAR, su contribución es pequeña en todos los periodos (1,9 pp (-3,3 a 9,0 pp) en la compra de P5). Lo que la oferta sí muestra es su ausencia relativa: en P5 se formaron más hogares que viviendas terminadas, y por eso la contabilidad vota por demografía. Oferta y demografía son las dos caras de la misma brecha.
+**Oferta.** En el SVAR, su contribución es pequeña en todos los periodos (1,9 pp (-3,3 a 9,0 pp) en la compra de P5). Lo que la oferta sí muestra es su ausencia relativa: en P5 se formaron más hogares que viviendas libres terminadas (la serie no incluye las protegidas), y por eso la contabilidad vota por demografía. Oferta y demografía son las dos caras de la misma brecha.
 
 **Demanda externa (compradores extranjeros).** No es primer factor en ningún método salvo en la dominancia del alquiler de P3. En el aprendizaje automático, su peso en la compra de P5 es pequeño: 0,51 pp (0,10-0,71 pp) [C4].
 
 **Turismo.** Solo hay datos desde 2016 y para 6 comunidades. El contraste de aprendizaje automático le asigna un peso alto en la compra de P5, pero inestable y sin lectura causal (sección P5).
 
-**Factor europeo.** El factor común español acompaña al de la zona euro (0,60 (0,14-0,86)) y la parte europea del crecimiento español solo es distinta de cero en la crisis (-15,3 pp (-21,7 a -7,6 pp)). En P5 es -3,3 pp (-7,0 a 1,8 pp). La dominancia lo pone primero en la compra de P2 y en el alquiler de P1 [C4].
+**Factor europeo.** El factor común español acompaña al de la zona euro (0,60 (0,14-0,86)) y la parte europea del crecimiento español tiene una banda que excluye el cero en la crisis (-15,3 pp (-21,7 a -7,6 pp)) y en el tramo final de P1 (7,4 pp (4,7-8,7 pp)). En P5 es -3,3 pp (-7,0 a 1,8 pp). La dominancia lo vota (primer factor con el signo de la variación) en la compra de P2 y en el alquiler de P1 [C4].
 
 ## 4. El componente común: España y la zona euro
 
@@ -163,22 +163,30 @@ Esta sección reúne, para cada familia, lo que dicen todos los métodos a la ve
 | P4 | 45,5 % (42,7-53,1 %) | 99,5 % (99,3-99,7 %) |
 | P5 | 92,8 % (86,7-94,9 %) | 97,5 % (86,1-98,7 %) |
 
-[C4.] La subida reciente es la más sincronizada de las cinco etapas: lo que la mueve es, sobre todo, común a todo el país. La hipótesis H8-8 (más de la mitad de la varianza es común en **cada** periodo) no se sostiene (p de Holm 0,669), porque en la crisis y en la pandemia las comunidades se separaron más. El IPC de alquiler por comunidades es casi todo común, en parte porque mide el parque de contratos y se mueve despacio.
+[C4.] La subida reciente es la más sincronizada de las cinco etapas: sus fluctuaciones son, sobre todo, comunes a todo el país. La hipótesis H8-8 (más de la mitad de la varianza es común en **cada** periodo) no se sostiene (p de Holm 0,669), porque en la crisis y en la pandemia las comunidades se separaron más. El IPC de alquiler por comunidades es casi todo común, en parte porque mide el parque de contratos y se mueve despacio.
 
 **Con la zona euro.** El factor común español y el crecimiento del precio de la vivienda de la zona euro se mueven juntos: correlación 0,60 (0,14-0,86) (H8-9, p de Holm 0,020). Se mantiene con una aproximación de la zona euro sin España (media simple de Alemania, Francia, Italia, Países Bajos y Portugal). Es una asociación [C4]: tipos comunes del BCE, ciclos financieros comunes y demanda transfronteriza son explicaciones compatibles, y este análisis no las separa.
 
 ## 5. Comunitat Valenciana y València ciudad
 
-Crecimiento acumulado del precio de compra en cada periodo y parte que acompaña al factor común nacional [C4, descriptivo]:
+Precio real de compra en P5 (2022-2026) [C4, descriptivo y asociación]:
 
-| Ámbito | P2 | P5 | Parte común en P5 |
-|---|---|---|---|
-| Alicante (03) | -46,6 pp | 16,8 pp | 95,8 % |
-| Castellón (12) | -54,4 pp | 7,8 pp | 94,5 % |
-| Valencia (46) | -48,4 pp | 21,1 pp | 98,0 % |
-| València ciudad | -68,6 pp | 36,3 pp | 77,2 % |
+| Ámbito | Variación acumulada observada, valor tasado | Segunda fuente (Registradores) | Parte de la variación asociada al factor común nacional | Comovimiento con el factor común (R² del crecimiento interanual) |
+|---|---|---|---|---|
+| Alicante (03) | 25,1 pp | 20,3 pp | 11,2 pp (4,6-16,8 pp) | 95,8 % |
+| Castellón (12) | 18,6 pp | 10,9 pp | 14,6 pp (6,6-21,4 pp) | 94,5 % |
+| Valencia (46) | 29,4 pp | 17,4 pp | 12,2 pp (5,6-18,2 pp) | 98,0 % |
+| València ciudad | 43,5 pp | sin dato | 13,0 pp (5,1-19,9 pp) | 77,2 % |
 
-En las tres provincias, la subida reciente se explica casi entera por lo común a toda España. En València ciudad la subida de P5 es mayor que en las provincias y la parte común, algo menor: hay un componente propio de la ciudad que este análisis no atribuye a ningún factor. No hay SVAR regional, así que no se designa ningún factor por debajo del nivel nacional.
+La parte asociada al factor común se estima sobre la media interanual del periodo (una aproximación de la variación acumulada), por eso no se resta directamente de la columna observada. En la provincia de Valencia las dos fuentes de precio discrepan, y se dan ambas.
+
+- En las tres provincias, las fluctuaciones del crecimiento reciente van casi enteras con las del conjunto de España (R² muy alto) [C4].
+- La parte del aumento asociada al factor común es menor que el aumento observado en Alicante y en Valencia, y en Castellón es del orden de lo observado.
+- En València ciudad la subida de P5 es la mayor de los cuatro ámbitos y la parte asociada al factor común es una fracción menor de ella: hay un componente propio de la ciudad que este análisis no atribuye a ningún factor.
+
+Crisis (P2), variación aproximada (media interanual por la duración del periodo en años): Alicante -46,6 pp, Castellón -54,4 pp, Valencia -48,4 pp y València ciudad -68,6 pp.
+
+No hay SVAR regional, así que no se designa ningún factor por debajo del nivel nacional.
 
 ## 6. Ecuaciones significativas y robustas
 
@@ -200,7 +208,7 @@ Raíz del error cuadrático medio fuera de muestra (crecimiento trimestral real,
 | BVAR del SVAR (forma reducida) | 1,4 pp | 0,98 pp |
 | ECM v1 | 2,6 pp | 1,7 pp |
 
-El modelo más sencillo es el que menos se equivoca. Que un modelo con factores no prediga mejor no dice que los factores no importen: dice que, con un trimestre de antelación, la propia inercia del precio contiene casi toda la información útil. Las predicciones de 2026T3-2027T2 están congeladas con su huella sha256 y se evaluarán una sola vez con `make evaluate_v8` cuando se publiquen esos datos.
+El modelo más sencillo es el que menos se equivoca. Que un modelo con factores no prediga mejor no dice que los factores no importen: dice que, con un trimestre de antelación, la propia inercia del precio contiene más información útil que los modelos con factores probados aquí. Las predicciones de 2026T3-2027T2 están congeladas con su huella sha256 y se evaluarán una sola vez con `make evaluate_v8` cuando se publiquen esos datos.
 
 ## 8. Qué no se puede afirmar con esta evidencia
 

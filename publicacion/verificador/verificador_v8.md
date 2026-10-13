@@ -50,7 +50,7 @@ Generado por `src/v8/f6_verificador.py`. Cada ficha evalúa una afirmación, nun
 
 **Veredicto:** ANALIZADA, NO CONCLUYENTE (C4)
 
-**Magnitud:** El factor de turismo no entra en el SVAR (M2). Solo hay datos utilizables en 6 de 17 CCAA y para P4 y P5. Contraste del modelo de aprendizaje automático (C4, no es un efecto): contribución SHAP media del turismo al alquiler, con banda del 68 %: P4 0,11 pp (-0,53 a 0,30 pp); P5 -0,44 pp (-0,67 a 0,23 pp); en la compra, P4 1,5 pp (0,13-2,2 pp) y P5 15,2 pp (8,1-14,8 pp).
+**Magnitud:** El factor de turismo no entra en el SVAR (M2). Solo hay datos utilizables en 6 de 17 CCAA y para P4 y P5. Sensibilidad no principal (valores ausentes nativos de LightGBM), media de las 6 CCAA con datos de turismo; no comparable con la variación nacional. Contraste del modelo de aprendizaje automático (C4, no es un efecto): contribución SHAP media del turismo al alquiler, con banda del 68 %: P4 0,11 pp (-0,53 a 0,30 pp); P5 -0,44 pp (-0,67 a 0,23 pp); en la compra, P4 1,5 pp (0,13-2,2 pp) y P5 15,2 pp (8,1-14,8 pp). Ninguna de estas cifras es la variante principal.
 
 **Intervalo:** Bandas del 68 % del bootstrap de bloques (el punto puede quedar fuera de la banda)
 
@@ -70,7 +70,7 @@ Generado por `src/v8/f6_verificador.py`. Cada ficha evalúa una afirmación, nun
 
 **Veredicto:** ANALIZADA, NO CONCLUYENTE (C4)
 
-**Magnitud:** En V8 la demanda externa solo se contrasta con aprendizaje automático (C4, no es un efecto), en el panel de 17 CCAA: contribución SHAP media a la variación del precio real de compra, con banda del 68 %: P3 -0,24 pp (-0,44 a 0,09 pp); P5 0,51 pp (0,10-0,71 pp); al alquiler en P5 -0,22 pp (-0,21 a 0,01 pp). No es un shock identificado en el SVAR. El peso de las compraventas con comprador extranjero (cifra de v4, C4, id compradores_extranjeros en cifras_clave) no mide su efecto sobre el precio.
+**Magnitud:** En V8 la demanda externa solo se contrasta con aprendizaje automático (C4, no es un efecto), en el panel de 17 CCAA: contribución SHAP media a la variación del precio real de compra, con banda del 68 %: P3 -0,24 pp (-0,44 a 0,09 pp); P5 0,51 pp (0,10-0,71 pp); al alquiler en P5 -0,22 pp (-0,21 a 0,01 pp) (en el alquiler de P5 el punto queda fuera de su banda del 68 %: el punto SHAP no es el centro de la banda bootstrap). No es un shock identificado en el SVAR. El peso de las compraventas con comprador extranjero (cifra de v4, C4, id compradores_extranjeros en cifras_clave) no mide su efecto sobre el precio.
 
 **Intervalo:** Bandas del 68 % del bootstrap de bloques
 

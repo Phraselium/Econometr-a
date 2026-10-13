@@ -262,6 +262,10 @@ COLS_COMB = ["mercado", "ambito", "periodo", "factor", "metodo", "contribucion_p
              "b90_lo", "b90_hi", "capa", "compite", "vota", "variante", "delta_y_metodo_pp", "notas"]
 
 
+MOTIVO_SIN_BANDA = {"lpiv": "AR del 68 % no acotado o efecto relativo entre CCAA sin intervalo comparable", "dominancia": "cuota LMG sin banda en M6 para este factor",
+                    "contabilidad": "identidad contable sin banda", "svar_hd": "sin banda en M2"}
+
+
 def combinada(E: dict, R: pd.DataFrame) -> pd.DataFrame:
     dyr = dy_ref(E)
     votos = {(r.mercado, r.periodo): dict(svar_hd=r.voto_svar_hd, dominancia=r.voto_dominancia, lpiv=r.voto_lpiv, contabilidad=r.voto_contabilidad)
@@ -281,6 +285,8 @@ def combinada(E: dict, R: pd.DataFrame) -> pd.DataFrame:
                 v = "no_vota"
             else:
                 v = "abstiene" if vm == "abstiene" else ("si" if vm == r["factor"] else "no")
+        if compite and metodo in MOTIVO_SIN_BANDA and not (np.isfinite(r.get("b68_lo", np.nan)) and np.isfinite(r.get("b68_hi", np.nan))):
+            nota = (nota + "; " if nota else "") + f"sin banda ({MOTIVO_SIN_BANDA[metodo]})"
         filas.append(dict(mercado=r["mercado"], ambito=r["ambito"], periodo=r["periodo"], factor=r["factor"], metodo=metodo,
                           contribucion_pp=r["contribucion_pp"], media=media, mediana=mediana, pct_signo=s,
                           b68_lo=r.get("b68_lo", np.nan), b68_hi=r.get("b68_hi", np.nan), b90_lo=r.get("b90_lo", np.nan), b90_hi=r.get("b90_hi", np.nan),

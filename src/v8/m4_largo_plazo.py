@@ -274,15 +274,29 @@ def ardl_uecm(G, yc, xs, fj, W0, W1):
         se.append(float(np.sqrt(grad @ cov.values @ grad)))
     b, se = np.array(b), np.array(se)
     res.update({"b": b, "se": se, "p": 2 * stats.norm.sf(np.abs(b / se)), "ci": np.column_stack([b - 1.96 * se, b + 1.96 * se])})
-    # bounds test (statsmodels, caso 3: constante libre, sin tendencia)
+    # bounds test (caso 3: constante libre, sin tendencia). F propio (los `fixed` de UECM.bounds_test no se incorporan al F: verificado);
+    # valores criticos asintoticos de statsmodels (Pesaran-Shin-Smith / Kripfganz-Schneider) para k = len(xs) regresores I(1)
+    R = np.zeros((1 + len(xs), len(names)))
+    for k_, nme in enumerate(["y_L1"] + [x + "_L1" for x in xs]):
+        R[k_, names.index(nme)] = 1
+    F = float(fit.f_test(R).fvalue)
     try:
         from statsmodels.tsa.ardl import UECM
-        m = UECM(Sx[yc], 2, Sx[xs], 1, trend="c", fixed=Sx[fj] if fj else None)
-        bt = m.fit().bounds_test(case=3)
-        res.update({"F": float(bt.statistic), "p_inf": float(bt.pvalue["lower"]), "p_sup": float(bt.pvalue["upper"]),
-                    "cv95": (float(bt.critical_values.loc[95.0, "lower"]), float(bt.critical_values.loc[95.0, "upper"]))})
+        m = UECM(Sx[yc], 2, Sx[xs], 1, trend="c")
+        cvt = m.fit().bounds_test(case=3).critical_values
+        pct = np.array(cvt.index, float)
+        cu, cl = cvt["upper"].values, cvt["lower"].values
+        if F >= cu[-1]:
+            p_sup, nota = 0.001, "<0,001"
+        elif F < cu[0]:
+            p_sup, nota = 0.10, ">=0,10"
+        else:
+            p_sup = float(np.exp(np.interp(F, cu, np.log(1 - pct / 100)))), 
+            p_sup, nota = p_sup[0], "interpolado"
+        dec = "rechaza no-cointegracion (F > cota superior 5%)" if F > cvt.loc[95.0, "upper"] else ("no rechaza (F < cota inferior 5%)" if F < cvt.loc[95.0, "lower"] else "inconcluso (entre cotas 5%)")
+        res.update({"F": F, "p_inf": np.nan, "p_sup": p_sup, "p_nota": nota, "decision": dec, "cv95": (float(cvt.loc[95.0, "lower"]), float(cvt.loc[95.0, "upper"]))})
     except Exception as e:  # noqa: BLE001
-        res.update({"F": np.nan, "p_inf": np.nan, "p_sup": np.nan, "cv95": (np.nan, np.nan), "error": type(e).__name__})
+        res.update({"F": F, "p_inf": np.nan, "p_sup": np.nan, "p_nota": "", "decision": "", "cv95": (np.nan, np.nan), "error": type(e).__name__})
     return res
 
 
@@ -560,9 +574,9 @@ def main(argv=None):
             cv = np.quantile(sim, [0.01, 0.05, 0.10])
             coint_f.append({"mercado": mk, "spec": sn, "variables": "+".join(xs), "ventana": f"{ini}..{fin}", "n": len(G.loc[ini:fin]),
                             "EG_p_mackinnon": est0["eg_p"], "GH_stat": g["stat"], "GH_fecha": g["fecha"], "GH_p_sim": gh_p, "GH_cv1": cv[0], "GH_cv5": cv[1], "GH_cv10": cv[2],
-                            "ARDL_F_sin_rupturas": est0["ardl"]["F"], "ARDL_p_sup_sin": est0["ardl"]["p_sup"],
-                            "ARDL_F_con_rupturas": ests[(mk, sn, "con_rupturas")]["ardl"]["F"],
-                            "nota": "GH: cambio de nivel, retardos ADF fijos 4, VC simulados bajo la nula (paseos independientes, nsim=%d); EG: sin rupturas" % len(sim)})
+                            "ARDL_F_sin_rupturas": est0["ardl"]["F"], "ARDL_p_sup_sin": est0["ardl"]["p_sup"], "ARDL_decision_5pct_sin": est0["ardl"]["decision"], "ARDL_cv95_sup": est0["ardl"]["cv95"][1],
+                            "ARDL_F_con_rupturas": ests[(mk, sn, "con_rupturas")]["ardl"]["F"], "ARDL_p_sup_con": ests[(mk, sn, "con_rupturas")]["ardl"]["p_sup"], "ARDL_decision_5pct_con": ests[(mk, sn, "con_rupturas")]["ardl"]["decision"],
+                            "nota": "ARDL p aproximado por interpolacion de la tabla de VC (acotado a [0,001; 0,10]); GH: cambio de nivel, retardos ADF fijos 4, VC simulados bajo la nula (paseos independientes, nsim=%d); EG: sin rupturas" % len(sim)})
             for rup in (False, True):
                 tag = "con_rupturas" if rup else "sin_rupturas"
                 est = ests[(mk, sn, tag)]

@@ -55,3 +55,7 @@
 - Tras J1, la parte determinista de P5 en compra es +0,9 en mediana y +5,4 en media. La posterior de las contribuciones tiene colas pesadas: en actividad de P5 compra, media 7,2 frente a mediana 1,1.
 - En F5, la contribución puntual es la media posterior, porque es la única aditiva (J2). Se publican siempre la media y la mediana, con bandas del 68 % y del 90 %.
 - El voto de `svar_hd` (R2) usa P(f es el mayor) calculada sorteo a sorteo, que no depende de las colas. Si el factor de mayor media no coincide con el de mayor P(f*), se rotula «ranking incierto (media y mediana discrepan)» y vota el de mayor P(f*). Se fija antes de calcular F5.
+
+## Y11 — F6: congelación y evaluación diferida (2026-10-13)
+- Se congela el mejor (y único) modelo de cada familia de la tabla común de F5: ar4, ar_fc, ecm_v1 y bvar_m2 (este último por referencia, sin recalcular). Bandas de ar4/ar_fc por simulación gaussiana sin incertidumbre de parámetros; ecm_v1 sin bandas; dhpi futuro de ar_fc con AR(4).
+- `evaluate_v8` solo registra la apertura si las tres series traen los cuatro objetivos 2026T3-2027T2 (más estricto que «algún periodo > 2026T2»: evita gastar la única evaluación con datos parciales). DM-HLN con h=1 porque con n=4 y h=4 la corrección HLN se anula; los p son descriptivos.

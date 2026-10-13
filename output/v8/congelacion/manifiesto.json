@@ -1,0 +1,6 @@
+{
+ "referencias": {
+  "output/v8/M2/predicciones_congeladas.csv": "5009f0448646d1d8d8461aa09df5a41c9dfa1b4d2d66ff9ba2e4194e181aa99c"
+ },
+ "nota": "BVAR principal congelado en M2 (origen 2026Q1; evaluable=True <=> h 1..4 desde 2026T2); no se recalcula aqui."
+}

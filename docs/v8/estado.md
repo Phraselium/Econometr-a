@@ -83,3 +83,8 @@
 - **Resultado:** 0 factores designados de 10 celdas (compra y alquiler nacional, P1-P5). Ningún factor reúne 3 de 4 votos (máximo 2). Tabla común fuera de muestra: AR(4) es la base más exigente en ambos mercados; ECM v1 (v7 A) y BVAR de M2 no la superan.
 - **Siguiente:** revisión de F5 por el orquestador; síntesis.
 - Tokens de subagente (F5): no medidos por el subagente.
+
+## F6 (congelación de predicciones y `make evaluate_v8`), hecho (2026-10-13)
+- **Hecho:** `src/v8/f6_congelar.py` (AR(4), AR + factor común, ECM v1 con datos hasta 2026T2; BVAR de M2 por referencia con sha256), salidas en `output/v8/congelacion/` (predicciones_congeladas.csv, congelacion.json, manifiesto.json, ensayo_evaluate.md); `sha256_predicciones_v8` rellenado en `docs/v8/notas_release.md` (`fecha_verificable` sigue PENDIENTE); `src/v8/evaluate_v8.py` (+ `--simular`), `docs/v8/evaluate_v8_accesos.md` (sin aperturas); `tests/v8/test_f6_congelar.py`.
+- **Siguiente:** añadir `f6_congelar` a V8_ORDEN y el target `evaluate_v8` en el Makefile; publicar la release (autor) y, con datos 2026T3-2027T2, ejecutar `make evaluate_v8` una sola vez.
+- Tokens de subagente (F6): no medidos por el subagente.

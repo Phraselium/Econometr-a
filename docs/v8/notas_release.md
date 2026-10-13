@@ -9,4 +9,4 @@ El pre-registro de V8 (docs/v8/hipotesis.md) solo tiene fecha verificable cuando
 
 prereg_v8_commit_local: 91e618b (etiqueta local `prereg-v8`)
 fecha_verificable: PENDIENTE
-sha256_predicciones_v8: PENDIENTE (lo rellena F4)
+sha256_predicciones_v8: 89c5feb6913b52b424688daef7fd3363e11d64654179e8bf63c2de60bc664863

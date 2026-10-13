@@ -1,0 +1,25 @@
+modelo,familia,mercado,medida,origen,fecha_objetivo,h,punto,b68_lo,b68_hi,b90_lo,b90_hi,evaluable,nota
+ar4,ar4,compra,"tasa_trim_pp(log x100, real)",2026Q2,2026Q3,1,1.911007,0.85014708,3.0238192,0.13394686,3.7157969,True,AR(4) con constante
+ar4,ar4,compra,"tasa_trim_pp(log x100, real)",2026Q2,2026Q4,2,1.5250189,0.39232636,2.7076412,-0.30552787,3.4050817,True,AR(4) con constante
+ar4,ar4,compra,"tasa_trim_pp(log x100, real)",2026Q2,2027Q1,3,2.6364493,1.4758168,3.866622,0.69127363,4.5898025,True,AR(4) con constante
+ar4,ar4,compra,"tasa_trim_pp(log x100, real)",2026Q2,2027Q2,4,0.93860638,-0.22898359,2.122358,-1.0248412,2.8422589,True,AR(4) con constante
+ar_fc,ar_fc,compra,"tasa_trim_pp(log x100, real)",2026Q2,2026Q3,1,1.8710343,0.7848663,2.9510911,0.077148655,3.6820464,True,AR(4) + 2 retardos del HPI zona euro (dhpi); dhpi futuro con AR(4)
+ar_fc,ar_fc,compra,"tasa_trim_pp(log x100, real)",2026Q2,2026Q4,2,1.3635022,0.27812048,2.4174155,-0.50865257,3.1465187,True,AR(4) + 2 retardos del HPI zona euro (dhpi); dhpi futuro con AR(4)
+ar_fc,ar_fc,compra,"tasa_trim_pp(log x100, real)",2026Q2,2027Q1,3,2.4777325,1.2801058,3.7135184,0.46110583,4.4587414,True,AR(4) + 2 retardos del HPI zona euro (dhpi); dhpi futuro con AR(4)
+ar_fc,ar_fc,compra,"tasa_trim_pp(log x100, real)",2026Q2,2027Q2,4,0.82660592,-0.38086739,2.0227986,-1.1684415,2.8375626,True,AR(4) + 2 retardos del HPI zona euro (dhpi); dhpi futuro con AR(4)
+ecm_v1,ecm_v1,compra,"tasa_trim_pp(log x100, real)",2026Q2,2026Q3,1,1.305876,,,,,True,"ECM v1, especificacion A de v7 (dX futuro = 0)"
+ecm_v1,ecm_v1,compra,"tasa_trim_pp(log x100, real)",2026Q2,2026Q4,2,1.3550151,,,,,True,"ECM v1, especificacion A de v7 (dX futuro = 0)"
+ecm_v1,ecm_v1,compra,"tasa_trim_pp(log x100, real)",2026Q2,2027Q1,3,1.2867388,,,,,True,"ECM v1, especificacion A de v7 (dX futuro = 0)"
+ecm_v1,ecm_v1,compra,"tasa_trim_pp(log x100, real)",2026Q2,2027Q2,4,1.2106136,,,,,True,"ECM v1, especificacion A de v7 (dX futuro = 0)"
+ar4,ar4,alquiler,"tasa_trim_pp(log x100, real)",2026Q2,2026Q3,1,-0.10978301,-0.83920545,0.62364141,-1.35155,1.1245282,True,AR(4) con constante
+ar4,ar4,alquiler,"tasa_trim_pp(log x100, real)",2026Q2,2026Q4,2,-0.552105,-1.2997968,0.18105923,-1.7834624,0.7090714,True,AR(4) con constante
+ar4,ar4,alquiler,"tasa_trim_pp(log x100, real)",2026Q2,2027Q1,3,0.13180209,-0.66731,0.94794025,-1.1895994,1.4613865,True,AR(4) con constante
+ar4,ar4,alquiler,"tasa_trim_pp(log x100, real)",2026Q2,2027Q2,4,-0.52106264,-1.3872111,0.26904297,-1.9010646,0.79524996,True,AR(4) con constante
+ar_fc,ar_fc,alquiler,"tasa_trim_pp(log x100, real)",2026Q2,2026Q3,1,-0.097196906,-0.79860756,0.64483437,-1.3033804,1.1091846,True,AR(4) + 2 retardos del HPI zona euro (dhpi); dhpi futuro con AR(4)
+ar_fc,ar_fc,alquiler,"tasa_trim_pp(log x100, real)",2026Q2,2026Q4,2,-0.53911597,-1.2657767,0.21547389,-1.7369977,0.71707727,True,AR(4) + 2 retardos del HPI zona euro (dhpi); dhpi futuro con AR(4)
+ar_fc,ar_fc,alquiler,"tasa_trim_pp(log x100, real)",2026Q2,2027Q1,3,0.11702235,-0.67357686,0.96635121,-1.2120152,1.484186,True,AR(4) + 2 retardos del HPI zona euro (dhpi); dhpi futuro con AR(4)
+ar_fc,ar_fc,alquiler,"tasa_trim_pp(log x100, real)",2026Q2,2027Q2,4,-0.57720519,-1.4142087,0.26553019,-1.9076745,0.77751239,True,AR(4) + 2 retardos del HPI zona euro (dhpi); dhpi futuro con AR(4)
+ecm_v1,ecm_v1,alquiler,"tasa_trim_pp(log x100, real)",2026Q2,2026Q3,1,-0.22042278,,,,,True,"ECM v1, especificacion A de v7 (dX futuro = 0)"
+ecm_v1,ecm_v1,alquiler,"tasa_trim_pp(log x100, real)",2026Q2,2026Q4,2,-0.41814595,,,,,True,"ECM v1, especificacion A de v7 (dX futuro = 0)"
+ecm_v1,ecm_v1,alquiler,"tasa_trim_pp(log x100, real)",2026Q2,2027Q1,3,-0.33745855,,,,,True,"ECM v1, especificacion A de v7 (dX futuro = 0)"
+ecm_v1,ecm_v1,alquiler,"tasa_trim_pp(log x100, real)",2026Q2,2027Q2,4,-0.34832966,,,,,True,"ECM v1, especificacion A de v7 (dX futuro = 0)"

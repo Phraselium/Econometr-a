@@ -1,0 +1,35 @@
+{
+ "semilla": 20261010,
+ "fecha": "2026-10-13",
+ "capa": "C4 (prediccion no es causalidad)",
+ "muestra": "2007Q1-2026Q2 (ar4, ar_fc, ecm_v1); BVAR principal 2004Q2-2026Q1 (M2)",
+ "origen": {
+  "ar4/ar_fc/ecm_v1": "2026Q2",
+  "bvar_m2": "2026Q1 (h_desde_2026T2 = 1..4)"
+ },
+ "ultimo_dato_series": {
+  "p": "2026Q2",
+  "r": "2026Q2",
+  "dhpi": "2026Q2"
+ },
+ "objetivo": "2026T3-2027T2",
+ "medida": "tasa_trim_pp(log x100, real)",
+ "familias": "mejor (unico) modelo de cada familia de output/v8/F5/fuera_muestra_comun.csv: ar4, ar_fc, ecm_v1, bvar_m2",
+ "rmse_f5_por_mercado": {
+  "alquiler": {
+   "modelo": "ar4",
+   "rmse_pp": 0.803395
+  },
+  "compra": {
+   "modelo": "ar4",
+   "rmse_pp": 1.17566
+  }
+ },
+ "sha256_ficheros": {
+  "output/v8/congelacion/predicciones_congeladas.csv": "fc53f59dd26b69e2753be3dc3c1d3e5ae21f39bf3eb3468b9a3836d6d5b7828a",
+  "output/v8/congelacion/manifiesto.json": "1b17747fb841449f9d2cb765f5256f55e7fa1e10f0435e417441deb16cb45277",
+  "output/v8/M2/predicciones_congeladas.csv": "5009f0448646d1d8d8461aa09df5a41c9dfa1b4d2d66ff9ba2e4194e181aa99c"
+ },
+ "sha256_conjunto": "89c5feb6913b52b424688daef7fd3363e11d64654179e8bf63c2de60bc664863",
+ "regla_sha_conjunto": "sha256 de las lineas «ruta sha256» ordenadas, unidas con salto de linea"
+}

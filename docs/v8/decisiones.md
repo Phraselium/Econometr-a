@@ -42,3 +42,11 @@
 - La principal pre-registrada (signos h = 0-1 y 4 ceros) da 0 rotaciones aceptadas en 9·10^6. Por la regla de viabilidad de Y6 se usa V3 (solo impacto) como identificación operativa para H8-1…H8-4 y la atribución. Desviación anotada antes de ver las descomposiciones completas.
 - En P5 la parte determinista (constante, condiciones iniciales y ficticias) concentra gran parte de la variación del precio de compra (+17,8 pp [1,5; 34,1]). Se reporta como «crecimiento tendencial no atribuido a los shocks identificados», no como un factor. Se pide al revisor de F4 que lo examine. F5 lo trata como componente explícito («residuo») y no lo reparte entre factores.
 - H8-1…H8-4: ninguna rechaza la nula tras Holm (p Holm 0,43-0,82). Se reporta igual.
+
+## Y9 — Puerta F4: revisión y correcciones (2026-10-13)
+- Revisión independiente F4 (docs/v8/revision_F4.md): APROBAR CON CORRECCIONES; M2 REHACER (J1, primer REHACER de la puerta). Se aceptan todos los hallazgos J1-J23.
+- Y8 queda superada por J1: la «parte determinista» de P5 era un artefacto del escalón EPA.
+- Regla operativa de F5 = R0-R8 del revisor, anotada en desviaciones.md antes de calcular F5.
+- J7 (ECM v1 canónico): un único comparador, la especificación A de v7 (`src/v7/r5_prediccion.py:m_ecm_v1`, importada), en una tabla común de F5 con una muestra de prueba fija (5 bloques de 8 trimestres con embargo 4, hasta 2026T1). Los módulos remiten a esa tabla.
+- Cambio de herramienta posterior a F3: `regimenes.ms_fit` fija la semilla de la búsqueda de arranques (213ac84). Las salidas de M0 son idénticas tras el cambio.
+- J22: los tiempos de ejecución salen de resultado.json/resumen.md a tiempos.json, para que dos ejecuciones den md5 idénticos.

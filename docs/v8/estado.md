@@ -77,3 +77,9 @@
 - **Aviso de herramienta (resuelto):** `ms_fit` no era determinista con statsmodels 0.15; corregido en la herramienta (commit 213ac84).
 - **Siguiente:** integrar `atribucion.csv` de M4 (`contabilidad_lp`, `contabilidad`) y `regla_m0.csv` en la sintesis; ECM v1 no replicable en la misma muestra (declarado).
 - Tokens de subagente: no medidos por el subagente.
+
+## F5 (atribución y «factor más relevante»), hecho (2026-10-13)
+- **Hecho:** `src/v8/f5_atribucion.py` (~4 s), salidas en `output/v8/F5/` (atribucion_combinada, regla_s9, ranking, regional_ranking, fuera_muestra_comun, fichas.md, resultado.json, registro.csv, resumen.md, tiempos.json), `tests/v8/test_f5.py` (15 tests), `f5_atribucion` añadido a V8_ORDEN. Regla R0-R8 aplicada tal cual (desviaciones.md, dos filas nuevas con las precisiones de aplicación y el diseño de la tabla común J7 anotadas antes de calcular).
+- **Resultado:** 0 factores designados de 10 celdas (compra y alquiler nacional, P1-P5). Ningún factor reúne 3 de 4 votos (máximo 2). Tabla común fuera de muestra: AR(4) es la base más exigente en ambos mercados; ECM v1 (v7 A) y BVAR de M2 no la superan.
+- **Siguiente:** revisión de F5 por el orquestador; síntesis.
+- Tokens de subagente (F5): no medidos por el subagente.

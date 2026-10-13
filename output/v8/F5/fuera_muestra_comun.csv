@@ -1,0 +1,9 @@
+mercado,modelo,tipo,rmse_pp,n_test,n_trimestres,base_mas_exigente,evaluable,nota,mejor_que_exigente,dm_hln_vs_ar4,p_vs_ar4,p_holm_vs_ar4,p_holm_h4_vs_ar4,dm_hln_vs_exigente,p_vs_exigente,p_holm_vs_exigente,p_holm_h4_vs_exigente
+compra,ar4,base,1.17566,40,40,ar4,si,"pronostico a 1 paso, parametros hasta el inicio del bloque menos 4 trimestres",False,,,,,,,,
+compra,ecm_v1,base,2.61697,40,40,ar4,si,"pronostico a 1 paso, parametros hasta el inicio del bloque menos 4 trimestres",False,3.04904,0.00411144,0.0123343,0.317093,3.04904,0.00411144,0.0123343,0.317093
+compra,ar_fc,base,1.27348,40,40,ar4,si,"pronostico a 1 paso, parametros hasta el inicio del bloque menos 4 trimestres",False,1.89331,0.0657532,0.131506,0.317093,1.89331,0.0657532,0.131506,0.317093
+compra,bvar_m2,candidato,1.37361,40,40,ar4,si,"pronostico a 1 paso, parametros hasta el inicio del bloque menos 4 trimestres",False,1.54163,0.131239,0.131506,0.317093,1.54163,0.131239,0.131506,0.317093
+alquiler,ar4,base,0.803395,40,40,ar4,si,"pronostico a 1 paso, parametros hasta el inicio del bloque menos 4 trimestres",False,,,,,,,,
+alquiler,ecm_v1,base,1.69155,40,40,ar4,si,"pronostico a 1 paso, parametros hasta el inicio del bloque menos 4 trimestres",False,4.19959,0.000150091,0.000450274,0.0197269,4.19959,0.000150091,0.000450274,0.0197269
+alquiler,ar_fc,base,0.831795,40,40,ar4,si,"pronostico a 1 paso, parametros hasta el inicio del bloque menos 4 trimestres",False,0.535222,0.595535,0.595535,0.430646,0.535222,0.595535,0.595535,0.430646
+alquiler,bvar_m2,candidato,0.975851,40,40,ar4,si,"pronostico a 1 paso, parametros hasta el inicio del bloque menos 4 trimestres",False,1.91155,0.0633016,0.126603,0.20126,1.91155,0.0633016,0.126603,0.20126

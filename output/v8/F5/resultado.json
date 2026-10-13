@@ -1,0 +1,70 @@
+{
+ "rama": "F5",
+ "pregunta": "Cual es el factor mas relevante en la subida del precio de compra y del alquiler por periodo, segun la regla de §9, o por que no se puede designar?",
+ "capa": "C3s condicionada a supuestos para svar_hd (M2); C4 para el resto",
+ "datos": "output/v8/M0-M9 (variante principal, solo lectura); data/processed/v8/nacional_q_v8.csv y panel v7 para la tabla comun J7",
+ "N": {
+  "celdas_regla": 10,
+  "filas_combinada": 1588,
+  "filas_regional": 1196,
+  "test_oos": {
+   "n_pliegues": 5,
+   "prueba": "2016Q2-2026Q1",
+   "entrenamiento_desde": "2007Q1"
+  }
+ },
+ "metodo": "regla R0-R8 fijada en desviaciones.md; votos svar_hd/dominancia/lpiv/contabilidad; multiverso orientado M7; banda 68 % svar_hd; cuota no atribuida (R1); tabla comun fuera de muestra (5 bloques x 8, embargo 4) con AR(4), ECM v1 (v7 espec. A), BVAR M2, AR+factor comun; DM-HLN y Holm",
+ "estimacion": {
+  "designaciones": {
+   "compra_P1": "no designado",
+   "compra_P2": "no designado",
+   "compra_P3": "no designado",
+   "compra_P4": "no designado",
+   "compra_P5": "no designado",
+   "alquiler_P1": "no designado",
+   "alquiler_P2": "no designado",
+   "alquiler_P3": "no designado",
+   "alquiler_P4": "no designado",
+   "alquiler_P5": "no designado"
+  },
+  "n_designados": 0
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "C3s condicionada a supuestos (svar_hd); C4 para el resto: sin lenguaje causal fuera de C3s",
+ "diagnosticos": {
+  "imprecisos": [
+   "alquiler_P1",
+   "alquiler_P4",
+   "compra_P4"
+  ],
+  "umbral_multiverso": 0.8,
+  "periodo_completo": "no evaluado (M2 no lo cubre)",
+  "seed": 20261010
+ },
+ "fuera_muestra": {
+  "compra": {
+   "modelo": "BVAR M2 (forma reducida)",
+   "rmse": 1.3736,
+   "dm_vs_ar4": {
+    "DM": 1.542,
+    "p_holm": 0.1315
+   },
+   "base_mas_exigente": "ar4"
+  },
+  "alquiler": {
+   "modelo": "BVAR M2 (forma reducida)",
+   "rmse": 0.9759,
+   "dm_vs_ar4": {
+    "DM": 1.912,
+    "p_holm": 0.1266
+   },
+   "base_mas_exigente": "ar4"
+  }
+ },
+ "notas": [
+  "Los tiempos de ejecucion estan en tiempos.json.",
+  "demanda_vivienda (demanda especifica de M2) compite en svar_hd pero no es un factor pre-registrado.",
+  "Regional: sin designacion (no hay svar_hd regional); ranking C4 de M8."
+ ]
+}

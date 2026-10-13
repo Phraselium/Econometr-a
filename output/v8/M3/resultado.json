@@ -1,0 +1,71 @@
+{
+ "rama": "M3",
+ "pregunta": "Cambian por periodo (P1-P5) las asociaciones dinamicas entre precio/alquiler, tipo hipotecario, empleo/PIB y poblacion?",
+ "capa": "C4",
+ "datos": "data/processed/v8/nacional_q_v8.csv (tasas trimestrales log x100 reales; tipo en nivel); compra_larga: ['p', 'i', 'y', 'n']; compra_epa: ['p', 'i', 'e', 'n']; alquiler_epa: ['r', 'i', 'e', 'n']; alquiler_pib: ['r', 'i', 'y', 'n']",
+ "N": {
+  "compra_larga": 60,
+  "compra_epa": 60,
+  "alquiler_epa": 60,
+  "alquiler_pib": 60
+ },
+ "metodo": "LP-OLS con interaccion impulso x periodo (principal, Y6), EWC fixed-b; contraste VAR(2) bayesiano por regimenes (no apto F3)",
+ "estimacion": {
+  "n_diferencias": 480,
+  "n_sig_bh10": 60,
+  "n_sig_bh10_sin_P4": 24,
+  "ancho_b90_mediano_por_periodo": {
+   "alquiler_epa": {
+    "P1": 0.408,
+    "P2": 0.352,
+    "P3": 0.359,
+    "P4": 0.602,
+    "P5": 0.492
+   },
+   "alquiler_pib": {
+    "P1": 0.817,
+    "P2": 0.445,
+    "P3": 0.718,
+    "P4": 0.969,
+    "P5": 0.73
+   },
+   "compra_epa": {
+    "P1": 0.652,
+    "P2": 0.287,
+    "P3": 0.265,
+    "P4": 0.611,
+    "P5": 0.33
+   },
+   "compra_larga": {
+    "P1": 1.262,
+    "P2": 0.98,
+    "P3": 0.807,
+    "P4": 0.412,
+    "P5": 1.082
+   }
+  }
+ },
+ "ic95": "ver coeficientes.csv (ic95_lo, ic95_hi)",
+ "p_ajustado": "BH q=0,10 sobre coeficientes y sobre diferencias (diferencias_periodos.csv)",
+ "nivel_evidencia": "EXPLORATORIO (C4)",
+ "diagnosticos": {
+  "ewc_q": "q = floor(0,4 n^(2/3)), t(q)",
+  "cobertura_F3": "0,78-0,84 (LP-OLS con T 90-110)",
+  "var_regimenes": "no apto (cobertura 0,08 tramo 9 trim.); sin ficticias exogenas",
+  "P4": "impreciso (9 trimestres)",
+  "rapido": false
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "No aplica: M3 estima coeficientes por periodo, no predice; la comparacion con AR(4) y ECM v1 corresponde a M2/M9."
+ },
+ "notas": [
+  "C4: multiplicador condicional (impulso = variable observada, no shock identificado); asociacion, sin lectura causal. LP-OLS con T~90-110: cobertura F3 0,78-0,84 incluso con EWC, bandas aproximadas. P4 (9 trimestres) impreciso. Rezagos y ficticias comunes a todos los periodos.",
+  "Principal = LP periodo (Y6); contraste = VAR por regimenes. Resumen por periodo = media de h=4-8; perfiles en coef_periodo_h.csv.",
+  "Huecos 2008T1-T2 y 2020T1 fuera; la dependiente puede caer en el periodo siguiente.",
+  "Compra larga usa PIB en volumen (1995T2+); compra_epa y alquiler comparten muestra desde 2002T2.",
+  "tiempo_s=6"
+ ]
+}

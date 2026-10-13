@@ -10,6 +10,7 @@
 """
 from __future__ import annotations
 
+import csv
 import json
 import re
 import subprocess
@@ -108,9 +109,26 @@ def recuentos() -> list[str]:
 EXENTOS = {("src/v3/c1_geo.py", "Cartografia_secc.zip"): "caché versionada output/v3/C1/centroides.csv"}
 
 
+def retirados_con_descarga() -> set[str]:
+    """V8.1 C: nombres de ficheros retirados del índice por licencia (data/raw, en .gitignore) que están en
+    data/CHECKSUMS.sha256 y tienen script de descarga en docs/v8_1/inventario_licencias.csv. Se aceptan como lectura
+    legítima: `make datos_terceros` los regenera y verifica su sha256."""
+    inv, ck = RAIZ / "docs/v8_1/inventario_licencias.csv", RAIZ / "data/CHECKSUMS.sha256"
+    if not inv.exists() or not ck.exists():
+        return set()
+    en_ck = {l.split("  ", 1)[1].strip() for l in ck.read_text(encoding="utf-8").splitlines() if "  " in l}
+    out = set()
+    with inv.open(encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            scr = r["script_descarga"].split(";")[0]
+            if r["estado"].startswith("no claramente") and scr.startswith("src/") and r["fichero"] in en_ck:
+                out.add(Path(r["fichero"]).name)
+    return out
+
+
 def lecturas_no_versionadas() -> list[str]:
     vers = set(subprocess.run(["git", "ls-files", "data/raw"], cwd=RAIZ, capture_output=True, text=True).stdout.split())
-    nombres = {Path(v).name for v in vers}
+    nombres = {Path(v).name for v in vers} | retirados_con_descarga()
     err = []
     scripts = [p for p in RAIZ.joinpath("src").rglob("*.py") if not re.match(r"(fetch_|.*_fetch\.py$|extract_|check_v5)", p.name)]
     for p in scripts:

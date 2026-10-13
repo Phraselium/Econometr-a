@@ -6,13 +6,19 @@ Capa C4 (metodologico). Solo datos simulados; ningun dato real ni sellado. SEED 
 
 | Herramienta / componente | Etiqueta |
 |---|---|
-| BVAR-GLP (6 celdas GLP + 2 delta mixto) | **no apta** |
-| BVAR-GLP (direccion del sesgo de las IRF) | **atenuadas hacia cero (atenuacion firmada > 0 en todas las celdas GLP)** |
+| BVAR-GLP en tasas (delta 0 o mixto; DGP denso y tasas; T = 60 y 120) | **no apta (cobertura 90 % 0.86-0.90; sesgo absoluto relativo hasta 0.46)** |
+| BVAR-GLP en nivel casi paseo aleatorio (delta 1; T = 60 y 120) | **con reservas** |
+| BVAR-GLP casi paseo aleatorio con delta 0 (uso NO previsto; sensibilidad) | **no apta (cobertura 90 % 0.74-0.79; sesgo absoluto relativo hasta 0.52)** |
+| BVAR-GLP (direccion del sesgo de las IRF) | **atenuadas hacia cero (atenuacion firmada > 0 en todas las celdas de uso previsto)** |
 | signos/ceros (mecanica: restricciones, FEVD, descomposicion historica) | **apta** |
 | pesos de importancia propios (Haar condicionado a los ceros; no se afirman iguales a ARW) | **apta (invariancia al orden)** |
 | signos/ceros, 4 variables solo impacto (inferencia: bandas y signo del impacto) | **apta** |
-| signos/ceros PRE-REGISTRADO (7 var, T=88, h=0-1, 4 ceros): principal | **no apta (signo del impacto 0.78 o cobertura de la DH 0.92 fuera de reglas)** |
-| signos/ceros PRE-REGISTRADO: variante V3 (solo impacto, sin q) | **no apta (signo del impacto 0.65 o cobertura de la DH 0.90 fuera de reglas)** |
+| signos PRE-REGISTRADO principal (7 var, T=88, h=0-1, 4 ceros): viabilidad y mecanica | **apta (viable: theta con aceptada 0.22, ESS medio 147; con reservas por replicas con ESS minimo 22 < 30)** |
+| signos PRE-REGISTRADO principal (7 var, T=88, h=0-1, 4 ceros): signo del impacto no restringido | **no apta (signo del impacto no restringido recuperado en 0.78 < 0,90)** |
+| signos PRE-REGISTRADO principal (7 var, T=88, h=0-1, 4 ceros): descomposicion historica por tramos | **apta en cobertura (90 % = 0.92), pero ver poder de la banda (excluye 0 en pocas celdas)** |
+| signos PRE-REGISTRADO variante V3 (solo impacto, sin q): viabilidad y mecanica | **apta (viable: theta con aceptada 1.00, ESS medio 276)** |
+| signos PRE-REGISTRADO variante V3 (solo impacto, sin q): signo del impacto no restringido | **no apta (signo del impacto no restringido recuperado en 0.65 < 0,90)** |
+| signos PRE-REGISTRADO variante V3 (solo impacto, sin q): descomposicion historica por tramos | **apta en cobertura (90 % = 0.90), pero ver poder de la banda (excluye 0 en pocas celdas)** |
 | TVP-VAR-SV (convergencia y volatilidad) | **con reservas** |
 | TVP-VAR-SV (deteccion de un cambio de coeficiente con T efectivo = 88) | **no apta (potencia y cobertura insuficientes con T efectivo = 88; ver kQ=0,10 y 0,30)** |
 | VAR por regimenes, 2 regimenes de 59 obs. (ruptura CONOCIDA) | **no apta** |
@@ -33,28 +39,28 @@ Reglas (definidas por el ejecutor, algunas DESPUES de ver las cifras de F3; ver 
 
 | Herramienta | Escenario | T | Replicas |
 |---|---|---|---|
-| BVAR | casi_RW / GLP | 60 | 500 |
 | BVAR | casi_RW / GLP | 120 | 500 |
-| BVAR | casi_RW / GLP_delta1 | 60 | 500 |
+| BVAR | casi_RW / GLP | 60 | 500 |
 | BVAR | casi_RW / GLP_delta1 | 120 | 500 |
-| BVAR | casi_RW / plano_lam100 | 60 | 500 |
+| BVAR | casi_RW / GLP_delta1 | 60 | 500 |
 | BVAR | casi_RW / plano_lam100 | 120 | 500 |
-| BVAR | denso / GLP | 60 | 500 |
+| BVAR | casi_RW / plano_lam100 | 60 | 500 |
 | BVAR | denso / GLP | 120 | 500 |
-| BVAR | denso / GLP_delta1 | 60 | 500 |
+| BVAR | denso / GLP | 60 | 500 |
 | BVAR | denso / GLP_delta1 | 120 | 500 |
-| BVAR | denso / plano_lam100 | 60 | 500 |
+| BVAR | denso / GLP_delta1 | 60 | 500 |
 | BVAR | denso / plano_lam100 | 120 | 500 |
+| BVAR | denso / plano_lam100 | 60 | 500 |
 | BVAR | logml_vs_cadena_predictiva_n3_dummies |  | 1 |
 | BVAR | logml_vs_cuadratura_n1 |  | 1 |
-| BVAR | tasas / GLP | 60 | 500 |
 | BVAR | tasas / GLP | 120 | 500 |
-| BVAR | tasas / GLP_delta1 | 60 | 500 |
+| BVAR | tasas / GLP | 60 | 500 |
 | BVAR | tasas / GLP_delta1 | 120 | 500 |
-| BVAR | tasas / GLP_delta_mixto | 60 | 500 |
+| BVAR | tasas / GLP_delta1 | 60 | 500 |
 | BVAR | tasas / GLP_delta_mixto | 120 | 500 |
-| BVAR | tasas / plano_lam100 | 60 | 500 |
+| BVAR | tasas / GLP_delta_mixto | 60 | 500 |
 | BVAR | tasas / plano_lam100 | 120 | 500 |
+| BVAR | tasas / plano_lam100 | 60 | 500 |
 | TVP | ruptura_kQ0.01 | 120 | 8 |
 | TVP | ruptura_kQ0.10 | 120 | 30 |
 | TVP | ruptura_kQ0.30 | 120 | 12 |
@@ -119,7 +125,7 @@ Atenuacion firmada por horizonte (modo GLP):
 
 Verosimilitud marginal frente a fuerza bruta: error absoluto en log = 5.7e-10 (cuadratura 2-D, n=1, p=1) y 5.7e-14 (cadena predictiva t multivariante, n=3, p=2, con dummies de suma de coeficientes y de observacion inicial).
 
-Lectura (cifras del csv, modo GLP con delta = 0, seis celdas): cobertura del 90 % entre 0.744 a 0.902 y del 68 % entre 0.495 a 0.670; sesgo absoluto relativo entre 0.211 a 0.519; atenuacion firmada entre +0.197 a +0.502 (celdas atenuadas: 0.92 a 1.00). El sesgo absoluto de GLP es menor que el del prior casi plano en 0 de 6 celdas y menor que el de GLP con delta = 1 en 0 de 6. La atenuacion firmada separa el sesgo sistematico (hacia cero) del error de Monte Carlo por celda, que si se promedia en valor absoluto lo infla.
+Lectura (cifras del csv; celdas de uso previsto: denso, tasas con delta 0 y mixto, y casi_RW con delta 1; T = 60 y 120): cobertura del 90 % entre 0.856 a 0.930 y del 68 % entre 0.633 a 0.734; sesgo absoluto relativo entre 0.144 a 0.459; atenuacion firmada entre +0.087 a +0.454 (fraccion de celdas atenuadas: 0.92 a 1.00). El sesgo absoluto es menor que el del prior casi plano en 0 de 6 celdas con GLP delta 0 y en 5 de 6 con GLP delta 1. En el DGP casi_RW, delta 0 da cobertura del 90 % de 0.79 (T = 120) frente a 0.93 con delta 1: delta 0 no es adecuado para variables en nivel casi integradas. La atenuacion firmada separa el sesgo sistematico (hacia cero) del error de Monte Carlo por celda, que promediado en valor absoluto lo infla; crece con el horizonte en los DGP persistentes.
 
 ## 2. Signos y ceros (RWZ / ARW): DGP de 4 variables, solo impacto
 
@@ -187,6 +193,8 @@ Rotaciones por theta (M) frente a coste y rendimiento, configuracion principal (
 | 10000 | 0.547 | 224 | 204.8 | 1.12e-04 | 21.8 |
 
 Viabilidad de la principal: con M = 3000 la fraccion de theta con alguna rotacion aceptada es 0.222 (>= 1 %, regla de viabilidad) y el ESS medio 147.3. Se reportan ambas configuraciones (principal y V3) con cifras; la eleccion entre ellas y la fijacion de M y del numero de sorteos de theta corresponden al orquestador.
+
+Lectura (cifras del csv): la principal tiene aceptacion 9.9e-05 por rotacion y, con M = 3000, el 22 % de los theta aporta alguna rotacion aceptada (minimo entre replicas 4 %); V3, 2.9e-03 y 100 %. La cobertura de la DH por tramos es 0.92 (principal) y 0.90 (V3) al 90 %, pero la banda del 90 % solo excluye el cero en 0.1 % y 0.0 % de las celdas con contribucion verdadera grande: las bandas cubren porque son anchas (conjunto identificado), no porque la DH discrimine el signo de la contribucion por tramos. El signo del impacto de los elementos no restringidos se recupera por la mediana en 0.78 (principal) y 0.65 (V3) de las replicas; con 7 variables y 86 observaciones no alcanza el 0,90 de las reglas. Fraccion de celdas con banda que excluye el cero con signo erroneo: 0.000 (principal), 0.000 (V3). Ficticias exogenas estimadas (principal): COVID sobre e -2.42 (verdad -2,0) y EPA +0.85 (verdad +1,5).
 
 ## 3. TVP-VAR con volatilidad estocastica
 

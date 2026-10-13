@@ -1,0 +1,15 @@
+herramienta,config,escenario,metrica,tipo,rol,valor,objetivo,cumple,laxo,reps,B,n,nota
+lp_iv,AR_unilateral,"efecto nulo, IV fuerte, n=110, h=4",tamaño AR unilateral (H1: β<0) al 5%,tamano,principal,0.05,"[0,02; 0,10]",True,True,300,,110,
+lp_iv,AR_unilateral,"efecto nulo, IV fuerte, n=110, agregado 4-8",tamaño AR unilateral (H1: β<0) al 5%,tamano,principal,0.04,"[0,02; 0,10]",True,True,300,,110,
+lp_iv,AR_unilateral,"efecto nulo, IV fuerte, n=110, h=4",tamaño AR bilateral al 5%,tamano,referencia,0.043333333333333335,"[0,02; 0,10]",True,True,300,,110,
+lp_iv,AR_unilateral,"efecto -1, IV fuerte, n=110, h=4",potencia AR unilateral (H1: β<0) al 5%,potencia,principal,0.06333333333333334,">= 0,80",False,False,300,,110,
+lp_iv,AR_unilateral,"efecto -1, IV fuerte, n=110, agregado 4-8",potencia AR unilateral (H1: β<0) al 5%,potencia,principal,0.056666666666666664,">= 0,80",False,False,300,,110,
+lp_iv,AR_unilateral,"efecto -1, IV fuerte, n=110, h=4",potencia AR bilateral al 5%,potencia,referencia,0.04,">= 0,80",False,False,300,,110,
+lp_iv,pretendencias,"IV válido, n=110, h=-1","tamaño (p AR bilateral < 0,05)",tamano,principal,0.043333333333333335,"[0,02; 0,10]",True,True,300,,110,
+lp_iv,pretendencias,"IV válido, n=110, algún h en -4..-1","tamaño (p AR bilateral < 0,05 en algún h)",info,referencia,0.14333333333333334,informativo,,,300,,110,"4 contrastes sin ajuste: el tamaño 'algún h' puede llegar a ~0,19"
+lp_iv,pretendencias,"IV contaminado, n=110, h=-1","detección (p AR bilateral < 0,05)",potencia,principal,0.9933333333333333,">= 0,80",True,True,300,,110,
+lp_iv,pretendencias,"IV contaminado, n=110, algún h en -4..-1","detección (p AR bilateral < 0,05 en algún h)",potencia,referencia,0.9933333333333333,">= 0,80",True,True,300,,110,
+lp_iv,placebo_permutacion,"efecto nulo, IV fuerte, n=110, h=4 (permutación libre)","tamaño (p_perm < 0,05)",tamano,principal,0.043333333333333335,"[0,02; 0,10]",True,True,300,199,110,
+lp_iv,placebo_permutacion,"efecto nulo, IV fuerte, n=110, agregado 4-8 (desplazamiento circular)","tamaño (p_perm < 0,05)",tamano,principal,0.056666666666666664,"[0,02; 0,10]",True,True,300,199,110,
+lp_iv,placebo_permutacion,"efecto 1, IV fuerte, n=110, h=4 (permutación libre)","potencia (p_perm < 0,05)",potencia,principal,0.06,">= 0,80",False,False,300,199,110,
+lp_iv,placebo_permutacion,"efecto 1, IV fuerte, n=110, agregado 4-8 (desplazamiento circular)","potencia (p_perm < 0,05)",potencia,principal,0.06333333333333334,">= 0,80",False,False,300,199,110,

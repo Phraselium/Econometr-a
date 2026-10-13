@@ -126,7 +126,7 @@ def mc_ms_bic(R=30, n=250):
         ks = []
         for r in range(R):
             y = sim_ms(n, d["mu"], d["s2"], d["P"], rng_(3, r))
-            bic = {1: -2 * np.sum(-0.5 * np.log(2 * np.pi * y.var()) - 0.5) + 2 * np.log(n)}
+            bic = {1: -2 * n * (-0.5 * np.log(2 * np.pi * y.var()) - 0.5) + 2 * np.log(n)}
             for k in (2, 3):
                 try:
                     bic[k] = regimenes.ms_fit(y, k, search_reps=3, seed=SEED + r)["bic"]
@@ -155,6 +155,7 @@ def mc_ms12(R=20, B=39, n=200):
 
 
 def mc_ms23(R=6, B=19, n=250):
+    # OJO: con B=19 el p minimo es 0,05; el criterio p<.05 no puede rechazar (resultado no concluyente, ver merge)
     for nm, k0 in (("2reg", 2), ("3reg", 2)):
         d = DGP_MS[nm]
         ps = []
@@ -255,8 +256,9 @@ def mc_dominancia(R=60, n=300, B=100):
 
 
 # ----------------------------------------------------------------------------- permutacion de fechas
-def mc_perm(R=250, n=100, n_perm=2000):
-    for esc, rho, shift in (("H0_iid", 0, 0.0), ("H0_AR0.5", .5, 0.0), ("H1_ruptura_pendiente", 0, .8)):
+def mc_perm(R=250, n=100, n_perm=2000, min_len=15, shift_h1=.8, etq="", escs=(("H0_iid", 0, 0.0), ("H0_AR0.5", .5, 0.0), ("H1_ruptura_pendiente", 0, None))):
+    for esc, rho, shift in escs:
+        shift = shift_h1 if shift is None else shift
         rej_raw, rej_t = [], []
         for r in range(R):
             g = rng_(9, r)
@@ -271,13 +273,13 @@ def mc_perm(R=250, n=100, n_perm=2000):
             y = 1 + b * x + e
             X = np.column_stack([np.ones(n), x])
             for fabrica, lst in ((permutacion.stat_dif_coef, rej_raw), (permutacion.stat_t_dif_coef, rej_t)):
-                lst.append(permutacion.permutacion_cortes(fabrica(y, X, 1), n, (n // 2,), 15, n_perm=n_perm, seed=SEED + r)["p"] < .05)
+                lst.append(permutacion.permutacion_cortes(fabrica(y, X, 1), n, (n // 2,), min_len, n_perm=n_perm, seed=SEED + r)["p"] < .05)
         for nm, lst in (("estadístico sin studentizar", rej_raw), ("estadístico studentizado", rej_t)):
             v = np.mean(lst)
             if esc.startswith("H0"):
-                reg("permutacion_fechas", f"{esc} | {nm}", "tamaño (5%)", v, "≈0,05 ([0,02;0,10])", en(v, .02, .10), R, n_perm, n)
+                reg("permutacion_fechas", f"{esc}{etq} | {nm}", "tamaño (5%)", v, "≈0,05 ([0,02;0,10])", en(v, .02, .10), R, n_perm, n)
             else:
-                reg("permutacion_fechas", f"{esc} | {nm}", "potencia (5%)", v, ">=0,80", v >= .8, R, n_perm, n)
+                reg("permutacion_fechas", f"{esc}{etq} | {nm}", "potencia (5%)", v, ">=0,80", v >= .8, R, n_perm, n)
 
 
 # ----------------------------------------------------------------------------- SHAP agrupado, DFM
@@ -357,6 +359,10 @@ def mc_dfm(R=200):
     reg("dfm_ml", "T=100,N=8,r=1", "error absoluto medio del R2 por variable", np.mean(err), "<0,10", np.mean(err) < .10, Rm, "", 100)
 
 
+def mc_perm_n200():
+    mc_perm(R=250, n=200, min_len=20, shift_h1=1.0, etq=" (n=200, salto 1,0)", escs=(("H0_iid", 0, 0.0), ("H1_ruptura_pendiente", 0, None)))
+
+
 def bloque_resto():
     for f in (mc_umbral, mc_bp, mc_lp, mc_lpiv, mc_dominancia, mc_perm, mc_shap, mc_dfm):
         t0 = time.time()
@@ -364,16 +370,88 @@ def bloque_resto():
         print(f.__name__, round(time.time() - t0, 1), "s", flush=True)
 
 
-BLOQUES = {"ms12": [mc_ms12], "ms23": [mc_ms23], "msbic": [mc_ms_bic], "resto": [bloque_resto]}
+BLOQUES = {"ms12": [mc_ms12], "ms23": [mc_ms23], "msbic": [mc_ms_bic], "resto": [bloque_resto], "perm2": [mc_perm_n200]}
+
+
+def _v(df, herr, esc_contiene, metrica_contiene):
+    m = df[(df.herramienta == herr) & df.escenario.str.contains(esc_contiene, regex=False) & df.metrica.str.contains(metrica_contiene, regex=False)]
+    return None if m.empty else float(m.valor.iloc[0])
+
+
+def etiquetas(df):
+    """Etiqueta por herramienta (criterio explicito y cifras). Devuelve dict herramienta -> (etiqueta, justificacion)."""
+    E = {}
+    f = lambda x: "n/d" if x is None else f"{x:.3f}"  # noqa: E731
+    E["umbral_hansen"] = ("apta", f"tamaño {f(_v(df, 'umbral_hansen', 'H0_iid', 'tamaño'))} (iid) y {f(_v(df, 'umbral_hansen', 'H0_hetero', 'tamaño'))} (heteroced.); "
+                          f"potencia {f(_v(df, 'umbral_hansen', 'H1', 'potencia'))}; cobertura IC umbral {f(_v(df, 'umbral_hansen', 'H1', 'cobertura'))}. "
+                          "Solo con regresores exógenos/fijos y errores sin autocorrelación; todos los coeficientes conmutan.")
+    ta, tb = _v(df, "bai_perron_boot", "H0_iid", "UDmax"), _v(df, "bai_perron_boot", "AR0.5_wild", "UDmax")
+    E["bai_perron_boot"] = ("apta con bootstrap wild solo si los errores no están autocorrelacionados; con autocorrelación usar boot='block' (con reservas)",
+                            f"tamaño UDmax {f(ta)} (iid), {f(_v(df, 'bai_perron_boot', 'hetero', 'UDmax'))} (heteroced.), AR(0,5): {f(tb)} con wild (NO apta) vs "
+                            f"{f(_v(df, 'bai_perron_boot', 'AR0.5_bloque', 'UDmax'))} con bloques; potencia salto 1,0σ {f(_v(df, 'bai_perron_boot', 'salto1.0', 'potencia'))}, "
+                            f"0,6σ {f(_v(df, 'bai_perron_boot', 'salto0.6', 'potencia'))}. Fechas de los cortes solo orientativas.")
+    ms = df[df.herramienta == "markov_switching"]
+    E["markov_switching"] = ("con reservas", "; ".join(f"{r.escenario}: {r.metrica} = {r.valor:.2f} (R={r.reps}, B={r.B})" for r in ms.itertuples()) +
+                             ". Réplicas pequeñas por coste (bootstrap parametrico: cada réplica reajusta el modelo): validación INDICATIVA, no concluyente; LR sin distribución estándar.")
+    E["dfm_baing_pca"] = ("apta si N≥~30; no apta con N pequeño", f"IC_p2 acierta r={f(_v(df, 'dfm_baing', 'N=40', '%'))} con N=40 y {f(_v(df, 'dfm_baing', 'N=10', '%'))} con N=10 (tiende a kmax).")
+    E["dfm_ml"] = ("apta (reservas: solo 1 factor AR(1) validado)", f"error absoluto medio del R2 por variable {f(_v(df, 'dfm_ml', 'T=100', 'error'))} (R=15).")
+    E["lp_ols"] = ("apta", "cobertura IC95 NW entre " + f"{df[df.herramienta == 'lp_ols_NW'].valor.min():.3f} y {df[df.herramienta == 'lp_ols_NW'].valor.max():.3f} en h=0,1,4,8.")
+    ar = df[(df.herramienta == "lp_iv_AR") & df.metrica.str.contains("Anderson")]
+    E["lp_iv_ar"] = ("apta (AR); el IC normal NO es fiable con instrumento débil", f"cobertura AR entre {ar.valor.min():.3f} y {ar.valor.max():.3f} (F fuerte y débil); "
+                     "ver nota de cada fila para F mediano y % no acotado. Panel FE: solo test de humo (sin Monte Carlo de cobertura).")
+    E["dominancia"] = ("apta", f"error medio phi {f(_v(df, 'dominancia', 'colineal', 'error absoluto medio'))}, cobertura IC bootstrap {f(_v(df, 'dominancia', 'colineal', 'cobertura'))}, "
+                       f"acierto de las 2 dominantes {f(_v(df, 'dominancia', 'colineal', '% acierto'))}. Descriptivo, no causal.")
+    pa = df[(df.herramienta == "permutacion_fechas") & df.metrica.str.contains("potencia")]
+    pt = df[(df.herramienta == "permutacion_fechas") & df.metrica.str.contains("tamaño")]
+    pot = []
+    for r in pa.itertuples():
+        a_, b_ = r.escenario.split("|")[0].strip(), r.escenario.split("|")[1].strip()
+        pot.append(f"{r.valor:.2f} ({a_}; {b_})")
+    E["permutacion_fechas"] = ("con reservas", f"tamaño entre {pt.valor.min():.3f} y {pt.valor.max():.3f} (studentizado ≈ nominal; sin studentizar conservador); "
+                               "potencia " + ", ".join(pot) + ". Con pocos conjuntos de fechas posibles el p mínimo y la potencia están acotados.")
+    sh = df[df.herramienta == "shap_grupos"]
+    E["shap_grupos"] = ("apta para ranking de familias cuando la separación es clara; con reservas si hay familias de importancia similar",
+                        "; ".join(f"{r.escenario}: {r.metrica} = {r.valor:.2f}" for r in sh.itertuples() if "ranking" in r.metrica or "ALE" in r.escenario))
+    E["multiverso"] = ("apta (tests unitarios; sin Monte Carlo)", "Registra todas las especificaciones en Registry; resumen con BH sobre toda la rejilla; tope configurable con muestreo determinista.")
+    return E
 
 
 def merge():
     parc = sorted(OUT.glob("_parcial_*.csv"))
     df = pd.concat([pd.read_csv(p) for p in parc], ignore_index=True)
+    # con B=19 el p minimo es 1/20=0,05: el criterio p<0,05 no puede rechazar -> filas 2v3 NO concluyentes
+    m23 = df.escenario.str.endswith("test_2v3")
+    df.loc[m23, "cumple"] = np.nan
+    df.loc[m23, "nota"] = "NO CONCLUYENTE: B=19 => p minimo 0,05 y el criterio p<0,05 no puede rechazar; R=6"
     df.to_csv(OUT / "montecarlo.csv", index=False)
-    tiempos = {p.stem.replace("_parcial_", ""): json.loads((OUT / f"_tiempo_{p.stem.replace('_parcial_', '')}.json").read_text()) for p in parc}
-    print(df.to_string())
-    return df, tiempos
+    seg = {p.stem.replace("_parcial_", ""): json.loads((OUT / f"_tiempo_{p.stem.replace('_parcial_', '')}.json").read_text())["segundos"] for p in parc}
+    E = etiquetas(df)
+    L = ["# Validación Monte Carlo — herramientas V8-F3 grupo B (no VAR)", "",
+         "Solo datos simulados; SEED=20261010; un hilo por proceso; determinista. Bloques ejecutados en procesos paralelos (4 núcleos): "
+         + ", ".join(f"{k} {v:.0f} s" for k, v in seg.items()) + ". Detalle por fila en `montecarlo.csv`.", "",
+         "## Etiquetas", "", "| Herramienta | Etiqueta | Cifras |", "|---|---|---|"]
+    for k, (e, j) in E.items():
+        L.append(f"| {k} | **{e}** | {j} |")
+    L += ["", "## Resultados por prueba", "", "| Herramienta | Escenario | Métrica | Valor | Objetivo | Cumple | Réplicas | B | n |", "|---|---|---|---|---|---|---|---|---|"]
+    for r in df.itertuples():
+        c = "" if pd.isna(r.cumple) else ("sí" if str(r.cumple) == "True" else "NO")
+        esc_, met_, obj_ = (str(x).replace("|", "/") for x in (r.escenario, r.metrica, r.objetivo))
+        L.append(f"| {r.herramienta} | {esc_} | {met_} | {r.valor:.3f} | {obj_} | {c} | {r.reps} | {'' if pd.isna(r.B) else r.B} | {'' if pd.isna(r.n) else r.n} |")
+    L += ["", "## Notas y límites", "",
+          "- Con R réplicas el error de Monte Carlo del tamaño nominal 5 % es ±1,96·sqrt(0,05·0,95/R): ±0,027 con R=250, ±0,043 con R=100; con R<=30 las cifras de MS son orientativas.",
+          "- Markov switching: el bootstrap parametrico es costoso (cada réplica reajusta k0 y k1); el contraste 2 vs 3 solo se probó con R muy pequeño.",
+          "- Bai-Perron: el bootstrap wild no corrige autocorrelación; con errores AR(0,5) sobre-rechaza masivamente. Usar bloques o retardos.",
+          "- Coste: bloques en paralelo, el más largo (ms12) ~18 min de reloj; msbic y perm2 se relanzaron tras corregir un error del propio script de validación (BIC del modelo de 1 régimen mal escalado; ampliación de la prueba de permutación a n=200). Las filas 2 vs 3 de MS (B=19, p mínimo 0,05) son NO concluyentes.",
+          "- Ninguna herramienta se ha estimado con datos reales. Predicción != causalidad (SHAP, ALE, dominancia son descriptivos)."]
+    (OUT / "validacion.md").write_text("\n".join(L) + "\n", encoding="utf-8")
+    res = {"rama": "v8/F3/otros", "pregunta": "¿Las herramientas no-VAR (regímenes, DFM, LP/LP-IV, dominancia, permutación de fechas, SHAP agrupado, multiverso) tienen tamaño, potencia y cobertura aceptables en DGP conocidos?",
+           "capa": "C4 (validación metodológica con datos simulados; sin resultados sobre vivienda)", "datos": "SIMULADOS (SEED=20261010)",
+           "N": int(df.reps.max()), "metodo": "Monte Carlo por herramienta (ver montecarlo.csv)", "estimacion": {k: v[0] for k, v in E.items()},
+           "ic95": None, "p_ajustado": None, "nivel_evidencia": "DESCRIPTIVO (validación de herramientas; no es evidencia sobre el mercado de vivienda)",
+           "diagnosticos": {k: v[1] for k, v in E.items()}, "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None},
+           "notas": "Réplicas por prueba en montecarlo.csv (columna reps/B). Tiempos de bloque (s): " + json.dumps(seg)}
+    (OUT / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
+    print(df[["herramienta", "escenario", "metrica", "valor", "cumple", "reps"]].to_string())
 
 
 if __name__ == "__main__":

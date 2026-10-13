@@ -135,7 +135,7 @@ def test_orden_de_ceros_inadmisible():
     r = signos.Restricciones(VARS, SHOCKS)
     for i in range(3):
         r.cero(i, "oferta", 0)
-    r.cero(0, "demanda", 0).cero(1, "demanda", 0).cero(0, "credito", 0)
+        r.cero(i, "demanda", 0)
     try:
         r.orden_shocks()
         raise AssertionError("debia fallar")

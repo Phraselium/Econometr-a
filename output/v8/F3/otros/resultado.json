@@ -1,0 +1,43 @@
+{
+ "rama": "v8/F3/otros",
+ "pregunta": "¿Las herramientas no-VAR (regímenes, DFM, LP/LP-IV, dominancia, permutación de fechas, SHAP agrupado, multiverso) tienen tamaño, potencia y cobertura aceptables en DGP conocidos?",
+ "capa": "C4 (validación metodológica con datos simulados; sin resultados sobre vivienda)",
+ "datos": "SIMULADOS (SEED=20261010)",
+ "N": 400,
+ "metodo": "Monte Carlo por herramienta (ver montecarlo.csv)",
+ "estimacion": {
+  "umbral_hansen": "apta",
+  "bai_perron_boot": "apta con bootstrap wild solo si los errores no están autocorrelacionados; con autocorrelación usar boot='block' (con reservas)",
+  "markov_switching": "con reservas",
+  "dfm_baing_pca": "apta si N≥~30; no apta con N pequeño",
+  "dfm_ml": "apta (reservas: solo 1 factor AR(1) validado)",
+  "lp_ols": "apta",
+  "lp_iv_ar": "apta (AR); el IC normal NO es fiable con instrumento débil",
+  "dominancia": "apta",
+  "permutacion_fechas": "con reservas",
+  "shap_grupos": "apta para ranking de familias cuando la separación es clara; con reservas si hay familias de importancia similar",
+  "multiverso": "apta (tests unitarios; sin Monte Carlo)"
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO (validación de herramientas; no es evidencia sobre el mercado de vivienda)",
+ "diagnosticos": {
+  "umbral_hansen": "tamaño 0.043 (iid) y 0.040 (heteroced.); potencia 0.890; cobertura IC umbral 0.937. Solo con regresores exógenos/fijos y errores sin autocorrelación; todos los coeficientes conmutan.",
+  "bai_perron_boot": "tamaño UDmax 0.068 (iid), 0.052 (heteroced.), AR(0,5): 0.596 con wild (NO apta) vs 0.044 con bloques; potencia salto 1,0σ 1.000, 0,6σ 0.800. Fechas de los cortes solo orientativas.",
+  "markov_switching": "H0_1reg_test_1v2: tamaño del bootstrap LR 1 vs 2 (5%) = 0.05 (R=20, B=39.0); H1_2reg_test_1v2: potencia del bootstrap LR 1 vs 2 (5%) = 0.40 (R=20, B=39.0); 2reg_test_2v3: rechazo bootstrap LR 2 vs 3 (5%) = 0.00 (R=6, B=19.0); 3reg_test_2v3: rechazo bootstrap LR 2 vs 3 (5%) = 0.00 (R=6, B=19.0); verdadero_1reg: % BIC elige k verdadero = 0.97 (R=30, B=nan); verdadero_2reg: % BIC elige k verdadero = 0.97 (R=30, B=nan); verdadero_3reg: % BIC elige k verdadero = 0.80 (R=30, B=nan). Réplicas pequeñas por coste (bootstrap parametrico: cada réplica reajusta el modelo): validación INDICATIVA, no concluyente; LR sin distribución estándar.",
+  "dfm_baing_pca": "IC_p2 acierta r=1.000 con N=40 y 0.000 con N=10 (tiende a kmax).",
+  "dfm_ml": "error absoluto medio del R2 por variable 0.051 (R=15).",
+  "lp_ols": "cobertura IC95 NW entre 0.910 y 0.950 en h=0,1,4,8.",
+  "lp_iv_ar": "cobertura AR entre 0.925 y 0.975 (F fuerte y débil); ver nota de cada fila para F mediano y % no acotado. Panel FE: solo test de humo (sin Monte Carlo de cobertura).",
+  "dominancia": "error medio phi 0.014, cobertura IC bootstrap 0.903, acierto de las 2 dominantes 0.933. Descriptivo, no causal.",
+  "permutacion_fechas": "tamaño entre 0.024 y 0.056 (studentizado ≈ nominal; sin studentizar conservador); potencia 0.65 (H1_ruptura_pendiente (n=200, salto 1,0); estadístico sin studentizar), 0.73 (H1_ruptura_pendiente (n=200, salto 1,0); estadístico studentizado), 0.32 (H1_ruptura_pendiente; estadístico sin studentizar), 0.41 (H1_ruptura_pendiente; estadístico studentizado). Con pocos conjuntos de fechas posibles el p mínimo y la potencia están acotados.",
+  "shap_grupos": "DGP aditivo+interacción (orden verdadero F1>F2>F3>F4): % ranking correcto de familias = 1.00; DGP claro: % réplicas bootstrap con ranking completo igual (media) = 1.00; DGP claro: % pliegues temporales con ranking completo igual (media) = 1.00; DGP duro (F1≈F2): % réplicas bootstrap con ranking completo igual (media) = 0.83; DGP duro (F1≈F2): % pliegues temporales con ranking completo igual (media) = 0.75; ALE de c vs sin(2c) centrado: correlación = 0.95",
+  "multiverso": "Registra todas las especificaciones en Registry; resumen con BH sobre toda la rejilla; tope configurable con muestreo determinista."
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Réplicas por prueba en montecarlo.csv (columna reps/B). Tiempos de bloque (s): {\"ms12\": 1073.1, \"ms23\": 1015.7, \"msbic\": 175.7, \"perm2\": 21.9, \"resto\": 793.2}"
+}

@@ -1,0 +1,3 @@
+herramienta,escenario,metrica,valor,objetivo,cumple,reps,B,n,nota
+markov_switching,2reg_test_2v3,rechazo bootstrap LR 2 vs 3 (5%),0.0,"tamaño ≤0,10 (2reg) / potencia ≥0,80 (3reg)",True,6,19,250,"R muy pequeño: resultado INDICATIVO, no validación"
+markov_switching,3reg_test_2v3,rechazo bootstrap LR 2 vs 3 (5%),0.0,"tamaño ≤0,10 (2reg) / potencia ≥0,80 (3reg)",False,6,19,250,"R muy pequeño: resultado INDICATIVO, no validación"

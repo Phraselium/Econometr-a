@@ -22,7 +22,7 @@ sys.path.insert(0, str(ROOT / "src" / "v8"))
 from herramientas import bvar, signos, tvp  # noqa: E402
 
 SEED = 20261010
-OUT = ROOT / "output" / "v8" / "F3" / "var"
+OUT = Path(os.environ.get("F3_OUT", ROOT / "output" / "v8" / "F3" / "var"))
 RAPIDO = "--rapido" in sys.argv
 ROWS = []
 T0 = time.time()
@@ -382,6 +382,187 @@ def mc_regimenes(R):
         print(f"[REGIMENES {esc}] R={R} cov90={c90:.3f} det/FP={np.mean(det):.2f} dif={np.mean(dif):.2f} lam~{np.median(lams):.2f}", flush=True)
 
 
+def _todo(serie):
+    """True si todos los valores no vacios de `cumple` son verdaderos (acepta bool o texto del csv)."""
+    v = [x for x in serie if x is True or x is False or str(x) in ("True", "False")]
+    return len(v) > 0 and all(x is True or str(x) == "True" for x in v)
+
+
+def V(df, herr, esc, T, met):
+    m = df[(df.herramienta == herr) & (df.escenario == esc) & (df["metrica"] == met)]
+    if T != "":
+        m = m[m["T"].astype(str) == str(T)]
+    return float(m["valor"].iloc[0])
+
+
+def etiquetas(df):
+    """Etiquetas apta / con reservas / no apta con reglas declaradas (ver validacion.md)."""
+    E = {}
+    # BVAR (GLP)
+    cel = [(e, T) for e in ("denso", "casi_RW") for T in (120, 60)]
+    cov = [V(df, "BVAR", f"{e}|GLP", T, "cobertura_90") for e, T in cel]
+    ses = [V(df, "BVAR", f"{e}|GLP", T, "sesgo_rel_IRF_h1-12") for e, T in cel]
+    ml_ok = _todo(df[(df.escenario.str.startswith("logml_vs_"))]["cumple"])
+    if ml_ok and all(0.85 <= c <= 0.98 for c in cov) and all(s_ <= 0.10 for s_ in ses):
+        E["BVAR-GLP"] = "apta"
+    elif ml_ok and all(0.80 <= c <= 0.99 for c in cov) and all(s_ <= 0.30 for s_ in ses):
+        E["BVAR-GLP"] = "con reservas"
+    else:
+        E["BVAR-GLP"] = "no apta"
+    # signos: mecanica
+    hd = max(V(df, "signos", f"{e}|T{T}", T, "descomposicion_historica_error_max") for e, T in (("signos", 120), ("signos", 60), ("signos+ceros", 120)))
+    z = V(df, "signos", "signos+ceros|T120", 120, "restricciones_cumplidas_max_abs_cero")
+    inv = _todo(df[df.escenario == "ARW_invariancia_al_orden"]["cumple"])
+    E["signos/ceros (mecanica: restricciones, FEVD, descomposicion historica)"] = "apta" if (hd < 1e-8 and z < 1e-10) else "no apta"
+    E["pesos de importancia ARW (derivados aqui; formula del articulo NO contrastada)"] = "apta (invariancia al orden)" if inv else "con reservas"
+    sg = [V(df, "signos", f"{e}|T{T}", T, "signo_impacto_recuperado_no_restringidas") for e, T in (("signos", 120), ("signos", 60), ("signos+ceros", 120))]
+    c90r = [V(df, "signos", f"{e}|T{T}", T, "cobertura_90_IRF_restringidas") for e, T in (("signos", 120), ("signos", 60), ("signos+ceros", 120))]
+    c90l = [V(df, "signos", f"{e}|T{T}", T, "cobertura_90_IRF_no_restringidas") for e, T in (("signos", 120), ("signos", 60), ("signos+ceros", 120))]
+    todas = c90r + c90l
+    if all(x >= 0.90 for x in sg) and all(0.85 <= c <= 0.98 for c in todas):
+        E["signos/ceros (inferencia: bandas y signo del impacto)"] = "apta"
+    elif all(x >= 0.90 for x in sg) and all(0.85 <= c for c in todas):
+        E["signos/ceros (inferencia: bandas y signo del impacto)"] = "con reservas (bandas conservadoras: cobertura 90 % por encima de 0,98; set-identified)"
+    else:
+        E["signos/ceros (inferencia: bandas y signo del impacto)"] = "no apta (signo del impacto < 90 % o cobertura < 0,85)"
+    # TVP
+    def tv(e, m):
+        return V(df, "TVP", e, 120, m)
+    best = None
+    for kq in ("0.10", "0.30"):
+        c90 = tv(f"ruptura_kQ{kq}", "cobertura_90_coef_con_ruptura")
+        d = tv(f"ruptura_kQ{kq}", "deteccion_cambio_(banda90_late-early>0)")
+        fp = tv(f"sin_ruptura_kQ{kq}", "falsos_positivos_(banda90_late-early>0)")
+        if 0.85 <= c90 <= 0.98 and d >= 0.80 and fp <= 0.15:
+            best = ("apta", kq)
+            break
+        if best is None and c90 >= 0.75 and d >= 0.50 and fp <= 0.15:
+            best = ("con reservas", kq)
+    sig_ok = _todo(df[(df.herramienta == "TVP") & (df.metrica == "sigma_estimado_sobre_verdad_(0.5)")]["cumple"])
+    E["TVP-VAR-SV (convergencia y volatilidad)"] = "apta" if sig_ok else "con reservas"
+    E["TVP-VAR-SV (deteccion de un cambio de coeficiente con T efectivo = 88)"] = (f"{best[0]} (kQ={best[1]})" if best else "no apta (potencia y cobertura insuficientes con T efectivo = 88; ver kQ=0,10 y 0,30)")
+    # regimenes
+    c = V(df, "regimenes", "ruptura", 120, "cobertura_90_coef")
+    d = V(df, "regimenes", "ruptura", 120, "deteccion_cambio_(banda90_dif>0)")
+    fp = V(df, "regimenes", "sin_ruptura", 120, "falsos_positivos_(banda90_dif>0)")
+    E["VAR por regimenes (ruptura CONOCIDA)"] = "apta" if (0.85 <= c <= 0.98 and d >= 0.8 and fp <= 0.15) else ("con reservas" if (c >= 0.80 and d >= 0.5 and fp <= 0.15) else "no apta")
+    return E
+
+
+def informe(df, seg):
+    E = etiquetas(df)
+    g = lambda h, e, T, m: V(df, h, e, T, m)  # noqa: E731
+    md = []
+    md.append("# V8-F3 grupo A (familia VAR): validacion por Monte Carlo\n")
+    md.append("Capa C4 (metodologico). Solo datos simulados; ningun dato real ni sellado. SEED = 20261010, un hilo, determinista. "
+              f"Computo total de la ejecucion: {seg:.0f} s ({seg / 60:.1f} min). Reproducir: `python3 src/v8/f3_montecarlo_var.py`. "
+              "Resultados completos: `montecarlo.csv`. Referencias de metodo NO VERIFICADAS (sin acceso a Crossref).\n")
+    md.append("## Veredicto por herramienta\n")
+    md.append("| Herramienta / componente | Etiqueta |\n|---|---|")
+    for k, v in E.items():
+        md.append(f"| {k} | **{v}** |")
+    md.append("\nReglas declaradas. Criterios: sesgo relativo <= 10 % (IRF) o, en conjuntos identificados por signos, recuperacion del signo del impacto "
+              "en >= 90 % de replicas; cobertura de las bandas del 90 % en [0,85; 0,98]. «Apta»: cumple todos. «Con reservas»: la mecanica es exacta y "
+              "la cobertura 90 % esta en [0,80; 0,99] (BVAR; sesgo <= 30 %) o es conservadora (signos, >= 0,85). «No apta»: el resto. "
+              "Deteccion de cambios (TVP y regimenes): potencia >= 80 % y falsos positivos <= 15 % (criterio anadido por el ejecutor).\n")
+    md.append("## Replicas (las que caben en ~20 min)\n")
+    reps = df.groupby(["herramienta", "escenario", "T"])["replicas"].first().reset_index()
+    md.append("| Herramienta | Escenario | T | Replicas |\n|---|---|---|---|")
+    for _, r in reps.iterrows():
+        md.append(f"| {r.herramienta} | {str(r.escenario).replace('|', ' / ')} | {r['T']} | {int(r.replicas)} |")
+    md.append("\n## 1. BVAR normal-Wishart inversa (GLP)\n")
+    md.append("DGP: VAR(2) de 4 variables («denso»: radio espectral %.2f; «casi_RW»: 0,9 por variable). IRF de Cholesky; 300 sorteos de la posterior por replica; "
+              "cobertura medida sobre las celdas no triviales (se excluyen los ceros estructurales del impacto). `plano_lam100` es la referencia sin contraccion "
+              "(prior casi plano).\n" % radio(dgp_bvar("denso")[0]))
+    md.append("| Escenario | T | cob. 68 % | cob. 90 % | sesgo rel. IRF h=1-12 | lambda mediana |\n|---|---|---|---|---|---|")
+    for e in ("denso", "casi_RW"):
+        for T in (120, 60):
+            for modo in ("GLP", "plano_lam100"):
+                tag = f"{e}|{modo}"
+                lam = f"{g('BVAR', tag, T, 'lambda_mediana'):.2f}" if modo == "GLP" else "100 (fijo)"
+                md.append(f"| {tag.replace('|', ' / ')} | {T} | {g('BVAR', tag, T, 'cobertura_68'):.3f} | {g('BVAR', tag, T, 'cobertura_90'):.3f} | "
+                          f"{g('BVAR', tag, T, 'sesgo_rel_IRF_h1-12'):.3f} | {lam} |")
+    md.append("\nVerosimilitud marginal frente a fuerza bruta: error absoluto en log = "
+              f"{g('BVAR', 'logml_vs_cuadratura_n1', '', 'error_abs_logml'):.1e} (cuadratura 2-D, n=1, p=1) y "
+              f"{g('BVAR', 'logml_vs_cadena_predictiva_n3_dummies', '', 'error_abs_logml'):.1e} (cadena predictiva t multivariante, n=3, p=2, con dummies de suma de coeficientes y de observacion inicial).\n")
+    md.append("GLP elige lambda coherente con el DGP: menor en el paseo aleatorio (casi_RW) que en el VAR denso, y siempre dentro de [0,005; 20] sin tocar los limites.\n")
+    md.append("Lectura: la cobertura del 90 % es correcta; el sesgo relativo agregado supera el 10 % en parte de las celdas. Ese sesgo aparece tambien con el prior casi plano "
+              "(sesgo de muestra finita del VAR persistente y del orden de Cholesky), asi que no es atribuible a la contraccion; la contraccion GLP lo reduce en el DGP casi_RW "
+              "y mejora la cobertura. Por eso la etiqueta es «con reservas» y no «apta» segun el criterio de sesgo declarado.\n")
+    md.append("## 2. Signos y ceros (RWZ / ARW)\n")
+    md.append("DGP estructural de 4 shocks (oferta, demanda, credito, monetario) sobre 4 variables (y, pi, cred, tipo). Restricciones de signo en el impacto: "
+              "oferta (y+, pi-); demanda (y+, pi+, tipo+); credito (cred+, y+, pi+); monetario (tipo+, pi-, cred-, y-). Variante con ceros: el shock monetario no mueve y en el impacto y "
+              "el de oferta no mueve el tipo (sustituyen a la restriccion y- del monetario). 400 sorteos de la posterior, 150 rotaciones aceptadas por replica. "
+              "Cobertura medida en h = 0, 1, 4, 8. «Restringidas» = celdas con restriccion de signo; «no restringidas» = el resto (con verdad no nula).\n")
+    md.append("| Escenario | T | replicas | aceptacion/rotacion | ESS (de 150) | cob. 68 % restr. | cob. 68 % no restr. | cob. 90 % restr. | cob. 90 % no restr. | signo impacto recuperado (no restr.) | HD error max |\n|---|---|---|---|---|---|---|---|---|---|---|")
+    for e, T in (("signos", 120), ("signos", 60), ("signos+ceros", 120)):
+        t = f"{e}|T{T}"
+        md.append(f"| {e} | {T} | {int(df[(df.escenario == t)]['replicas'].iloc[0])} | {g('signos', t, T, 'aceptacion_por_rotacion'):.4f} | {g('signos', t, T, 'ESS_medio_de_150'):.0f} | "
+                  f"{g('signos', t, T, 'cobertura_68_IRF_restringidas'):.3f} | {g('signos', t, T, 'cobertura_68_IRF_no_restringidas'):.3f} | "
+                  f"{g('signos', t, T, 'cobertura_90_IRF_restringidas'):.3f} | {g('signos', t, T, 'cobertura_90_IRF_no_restringidas'):.3f} | "
+                  f"{g('signos', t, T, 'signo_impacto_recuperado_no_restringidas'):.3f} | {g('signos', t, T, 'descomposicion_historica_error_max'):.1e} |")
+    md.append(f"\nCeros: maximo |IRF| en las restricciones de cero = {g('signos', 'signos+ceros|T120', 120, 'restricciones_cumplidas_max_abs_cero'):.1e} (se cumplen exactamente). "
+              "Descomposicion historica: y_t = componente determinista + suma de contribuciones con error maximo < 1e-8 en todas las replicas comprobadas (6 por escenario, 20 sorteos cada una). "
+              "Las filas de la FEVD (h = 4, 8, 12, 20) suman 1 en todas las replicas.\n")
+    md.append(f"Pesos ARW: la formula exacta del articulo NO se pudo contrastar (sin acceso). Los pesos usados son una derivacion propia por coarea en el espacio (forma reducida, Q) "
+              f"(ver cabecera de signos.py). Diagnostico: la distribucion ponderada de Q debe ser invariante al orden de los shocks. Con {int(df[df.escenario == 'ARW_invariancia_al_orden']['replicas'].iloc[0])} "
+              f"sorteos, la diferencia maxima en E[Q^2] entre ordenes es {g('signos', 'ARW_invariancia_al_orden', '', 'max_dif_E[Q^2]_entre_ordenes_con_pesos'):.3f} con pesos frente a "
+              f"{g('signos', 'ARW_invariancia_al_orden', '', 'max_dif_E[Q^2]_entre_ordenes_sin_pesos'):.3f} sin pesos; el suelo de ruido (mismo orden, otra semilla) es "
+              f"{g('signos', 'ARW_invariancia_al_orden', '', 'suelo_de_ruido_(mismo_orden_otra_semilla)'):.3f} (ESS medio {g('signos', 'ARW_invariancia_al_orden', '', 'ESS_medio'):.0f} de {int(df[df.escenario == 'ARW_invariancia_al_orden']['replicas'].iloc[0])}). "
+              "La prueba rechaza pesos incorrectos pero no demuestra la igualdad con la formula de ARW.\n")
+    md.append("Lectura: las bandas por signos son anchas (la verdad cae en ellas mas a menudo que lo nominal: con un conjunto identificado la banda mezcla incertidumbre de parametros y de identificacion, "
+              "y la ‘cobertura’ no tiene el significado frecuentista habitual). Se informa de la cobertura y se etiqueta «con reservas»: las bandas son validas como cotas de credibilidad conservadoras, no calibradas al nivel nominal.\n")
+    md.append("## 3. TVP-VAR con volatilidad estocastica\n")
+    md.append("DGP: VAR(2) de 3 variables, un coeficiente (primer retardo propio de la ecuacion 1) pasa de 0,4 a 0,8 a mitad de la muestra efectiva; volatilidad 0,5 constante. "
+              "T = 120 con 30 observaciones de entrenamiento del prior (T efectivo = 88). Gibbs de 1200 iteraciones, 400 de calentamiento, adelgazado 4 (200 sorteos). "
+              "kQ es la escala del prior de Q (Primiceri usa 0,01). Control = coeficiente constante de otra ecuacion. «Deteccion» = la banda del 90 % de (media del ultimo cuarto - media del primer cuarto) excluye 0 por arriba.\n")
+    md.append("| Escenario | replicas | cob. 68 % coef. | cob. 90 % coef. | cob. 90 % control | deteccion / falsos positivos | cambio estimado (verdad 0,4) | RMSE senda | sigma est./verdad |\n|---|---|---|---|---|---|---|---|---|")
+    for e in ("ruptura_kQ0.10", "sin_ruptura_kQ0.10", "ruptura_kQ0.30", "sin_ruptura_kQ0.30", "ruptura_kQ0.01"):
+        r_ = int(df[(df.herramienta == "TVP") & (df.escenario == e)]["replicas"].iloc[0])
+        det = g("TVP", e, 120, "deteccion_cambio_(banda90_late-early>0)") if e.startswith("ruptura") else g("TVP", e, 120, "falsos_positivos_(banda90_late-early>0)")
+        dif = g("TVP", e, 120, "cambio_estimado_medio_(verdad_0.4_en_cuartiles_extremos)") if e.startswith("ruptura") else float("nan")
+        md.append(f"| {e} | {r_} | {g('TVP', e, 120, 'cobertura_68_coef_con_ruptura'):.3f} | {g('TVP', e, 120, 'cobertura_90_coef_con_ruptura'):.3f} | {g('TVP', e, 120, 'cobertura_90_coef_control_constante'):.3f} | "
+                  f"{det:.2f} | {dif:.2f} | {g('TVP', e, 120, 'RMSE_senda_coef_rupt'):.3f} | {g('TVP', e, 120, 'sigma_estimado_sobre_verdad_(0.5)'):.2f} |")
+    md.append("\nLectura: el muestreador converge (la volatilidad se recupera y la senda sigue al coeficiente), pero un salto de 0,4 en un solo coeficiente con 88 observaciones efectivas "
+              "se detecta con poca potencia: el paseo aleatorio suaviza el escalon y las bandas son anchas. kQ=0,01 (valor de Primiceri) ignora el cambio; subir kQ lo recupera en parte a costa de bandas mas anchas. "
+              "No se recomienda usarlo para fechar o atribuir cambios de coeficientes con muestras de este tamano; si sirve como descripcion exploratoria de la volatilidad.\n")
+    md.append("### Alternativa documentada: VAR por regimenes (prior comun, ruptura conocida)\n")
+    md.append("Misma DGP; coeficientes distintos por tramo con el mismo prior Minnesota (lambda comun por verosimilitud marginal). La fecha de ruptura se SUPONE conocida.\n")
+    md.append("| Escenario | replicas | cob. 68 % | cob. 90 % | deteccion / falsos positivos | cambio estimado |\n|---|---|---|---|---|---|")
+    for e in ("ruptura", "sin_ruptura"):
+        r_ = int(df[(df.herramienta == "regimenes") & (df.escenario == e)]["replicas"].iloc[0])
+        det = g("regimenes", e, 120, "deteccion_cambio_(banda90_dif>0)") if e == "ruptura" else g("regimenes", e, 120, "falsos_positivos_(banda90_dif>0)")
+        dif = g("regimenes", e, 120, "cambio_estimado_medio_(verdad_0.4)") if e == "ruptura" else float("nan")
+        md.append(f"| {e} | {r_} | {g('regimenes', e, 120, 'cobertura_68_coef'):.3f} | {g('regimenes', e, 120, 'cobertura_90_coef'):.3f} | {det:.2f} | {dif:.2f} |")
+    md.append("\n## Limitaciones\n")
+    md.append("- Un solo conjunto de DGP por herramienta; los resultados no se extrapolan a otras dinamicas.\n"
+              "- BVAR: psi de la muestra completa (no pre-muestra); no se optimiza la prior de la matriz de escala ni se imponen hiperpriors (maximo de la densidad marginal pura).\n"
+              "- Signos: cobertura de un conjunto identificado no es una propiedad frecuentista; los pesos ARW son propios (ver arriba).\n"
+              "- TVP: sin truncamiento de estabilidad; prior de entrenamiento con 30 observaciones; ruptura unica; ESS de Gibbs no reportado.\n"
+              "- Replicas pocas en TVP (8-30): los porcentajes tienen error de muestreo de varios puntos.\n")
+    (OUT / "validacion.md").write_text("\n".join(md) + "\n", encoding="utf-8")
+    res = dict(
+        rama="r8/F3/var", pregunta="¿Son aptas, con datos simulados, las herramientas BVAR-GLP, signos/ceros (RWZ/ARW) y TVP-VAR-SV (o regimenes)?",
+        capa="C4", datos="Simulados (DGP del Monte Carlo; sin datos reales ni sellados)", N=int(df["replicas"].max()),
+        metodo="Monte Carlo (SEED 20261010): cobertura de bandas 68/90 de IRF, sesgo relativo, recuperacion del signo, ceros exactos, identidad de la descomposicion historica, deteccion de cambio de coeficiente",
+        estimacion={"etiquetas": E,
+                    "BVAR_GLP_cobertura90": {f"{e}|T{T}": g("BVAR", f"{e}|GLP", T, "cobertura_90") for e in ("denso", "casi_RW") for T in (120, 60)},
+                    "BVAR_GLP_sesgo_rel": {f"{e}|T{T}": g("BVAR", f"{e}|GLP", T, "sesgo_rel_IRF_h1-12") for e in ("denso", "casi_RW") for T in (120, 60)},
+                    "signos_signo_impacto": {f"{e}|T{T}": g("signos", f"{e}|T{T}", T, "signo_impacto_recuperado_no_restringidas") for e, T in (("signos", 120), ("signos", 60), ("signos+ceros", 120))},
+                    "signos_cobertura90_no_restringidas": {f"{e}|T{T}": g("signos", f"{e}|T{T}", T, "cobertura_90_IRF_no_restringidas") for e, T in (("signos", 120), ("signos", 60), ("signos+ceros", 120))},
+                    "TVP_deteccion": {e: g("TVP", e, 120, "deteccion_cambio_(banda90_late-early>0)") for e in ("ruptura_kQ0.10", "ruptura_kQ0.30", "ruptura_kQ0.01")},
+                    "regimenes_deteccion": g("regimenes", "ruptura", 120, "deteccion_cambio_(banda90_dif>0)")},
+        ic95=None, p_ajustado=None, nivel_evidencia="DESCRIPTIVO (validacion metodologica sobre datos simulados; sin lenguaje causal)",
+        diagnosticos={"logml_vs_fuerza_bruta_error_abs": {k: g("BVAR", k, "", "error_abs_logml") for k in ("logml_vs_cuadratura_n1", "logml_vs_cadena_predictiva_n3_dummies")},
+                      "ceros_max_abs": g("signos", "signos+ceros|T120", 120, "restricciones_cumplidas_max_abs_cero"),
+                      "descomposicion_historica_error_max": max(g("signos", f"{e}|T{T}", T, "descomposicion_historica_error_max") for e, T in (("signos", 120), ("signos", 60), ("signos+ceros", 120))),
+                      "tiempo_computo_s": round(seg), "replicas_por_escenario": {f"{r.herramienta}|{r.escenario}|{r['T']}": int(r.replicas) for _, r in reps.iterrows()}},
+        fuera_muestra={"modelo": None, "rmse": None, "dm_vs_ar4": None},
+        notas="Herramientas en src/v8/herramientas/{bvar,signos,tvp}.py. Referencias de metodo NO VERIFICADAS (sin Crossref). Pesos ARW propios, validados por invariancia al orden; formula del articulo no contrastada. "
+              "TVP: ver validacion.md; el VAR por regimenes (ruptura conocida) se incluye como alternativa en tvp.py.")
+    (OUT / "resultado.json").write_text(json.dumps(res, indent=2, ensure_ascii=False, default=float) + "\n", encoding="utf-8")
+
+
 def main():
     if RAPIDO:
         R_reg = 6
@@ -392,6 +573,9 @@ def main():
         R_sg = {("signos", 120): 100, ("signos", 60): 80, ("signos+ceros", 120): 80}
         R_tvp = {"ruptura_kQ0.10": 30, "sin_ruptura_kQ0.10": 12, "ruptura_kQ0.30": 12, "sin_ruptura_kQ0.30": 10, "ruptura_kQ0.01": 8}
         it, bu, Nin = 1200, 400, 100000
+    if "--solo-informe" in sys.argv:
+        informe(pd.read_csv(OUT / "montecarlo.csv", keep_default_na=False, na_values=[]), float(sys.argv[sys.argv.index("--solo-informe") + 1]))
+        return None
     ml_fuerza_bruta()
     mc_bvar(R_bvar)
     mc_signos(R_sg)
@@ -400,9 +584,10 @@ def main():
     mc_regimenes(R_reg)
     df = pd.DataFrame(ROWS)
     OUT.mkdir(parents=True, exist_ok=True)
-    if not RAPIDO:
-        df.to_csv(OUT / "montecarlo.csv", index=False, float_format="%.6g")
-    print(f"tiempo total {time.time() - T0:.0f} s", flush=True)
+    seg = time.time() - T0
+    df.to_csv(OUT / "montecarlo.csv", index=False, float_format="%.6g")
+    informe(df, seg)
+    print(f"tiempo total {seg:.0f} s", flush=True)
     return df
 
 

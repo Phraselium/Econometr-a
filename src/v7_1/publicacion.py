@@ -35,6 +35,16 @@ FUENTES: dict[str, str] = {
     "publicacion/verificador/verificador.md": "output/v5/verificador/verificador.md",
     "publicacion/verificador/verificador_v7_1.md": "output/v7_1/verificador_v7_1.md",
     "publicacion/verificador/fichas_v7_1.json": "output/v7_1/fichas/fichas_verificador.json",
+    # V8 (F6): verificador y fichas de V8 (texto y JSON generados por src/v8/f6_verificador.py)
+    "publicacion/verificador/verificador_v8.md": "output/v8/verificador_v8.md",
+    "publicacion/verificador/fichas_v8.json": "output/v8/fichas_verificador_v8.json",
+    # V8, PENDIENTES: esta función exige que exista cada fuente (SystemExit si falta); se activan al escribir el orquestador cada entregable
+    # y regenerar con `make publicacion` (tablas_v8.xlsx se copia en binario: los ficheros que no son .md se copian tal cual).
+    # "publicacion/por_que_ha_subido.md": "output/v8/por_que_ha_subido.md",
+    # "publicacion/informe_econometrico_v8.md": "output/v8/informe_econometrico.md",
+    "publicacion/tablas_modelos_destacados.md": "output/v8/tablas_modelos_destacados.md",
+    "publicacion/tablas_modelos_destacados.csv": "output/v8/tablas_modelos_destacados.csv",
+    "publicacion/tablas_v8.xlsx": "output/v8/tablas_v8.xlsx",
     "publicacion/cifras_clave.csv": "output/v5/cifras_clave.csv",
     "publicacion/dosis_coste.csv": "output/v7_1/S1/dosis_coste.csv",
     "metodologia/anexo_metodologico.md": "output/v6_2/anexo_metodologico.md",
@@ -43,6 +53,9 @@ FUENTES: dict[str, str] = {
     "metodologia/historial_conclusiones.md": "docs/v6_1/historial_conclusiones.md",
     "metodologia/validacion_montecarlo.md": "docs/v7/validacion_herramientas.md",
     "metodologia/preregistro_v7.md": "docs/v7/hipotesis.md",
+    "metodologia/preregistro_v8.md": "docs/v8/hipotesis.md",
+    "metodologia/desviaciones_v8.md": "docs/v8/desviaciones.md",
+    "metodologia/revision_v8_F4.md": "docs/v8/revision_F4.md",
     "metodologia/dosis_coste.md": "output/v7_1/S1/resumen.md",
     "reproducir/instrucciones.md": "README_REPLICACION.md",
     "reproducir/tiempos.md": "docs/v7_1/tiempos.md",

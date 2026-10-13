@@ -8,6 +8,7 @@ Uso: python3 src/v8/render_v8.py
 from __future__ import annotations
 
 import sys
+from contextlib import contextmanager
 from pathlib import Path
 
 import pandas as pd
@@ -20,8 +21,9 @@ PLANT = RAIZ / "docs" / "v8" / "plantillas"
 OUT = RAIZ / "output" / "v8"
 CK = RAIZ / "output" / "v5" / "cifras_clave.csv"
 
-# Unidades de V8 que son recuentos (enteros sin decimales) y p-valores (3 decimales): se registran en el módulo de v5 sin modificarlo en disco.
-R.CONTEOS |= {"votos", "celdas", "combinaciones", "coeficientes", "efectos", "modelos", "designado"}
+# Unidades de V8 que son recuentos (enteros sin decimales). Los formatos de V8 solo rigen DENTRO de formato_v8(): el módulo de v5 no se modifica
+# ni en disco ni en memoria fuera de ese contexto (los entregables de v5-v7.2 se escriben igual que antes).
+CONTEOS_V8 = {"votos", "celdas", "combinaciones", "coeficientes", "efectos", "modelos", "designado"}
 _fmt_v5 = R.fmt_num
 _texto_v5 = R.texto
 
@@ -58,8 +60,27 @@ def _texto_v8(r: pd.Series, campo: str | None) -> str:
         R.fmt_num = _fmt_cero
 
 
-R.fmt_num = _fmt_cero
-R.texto = _texto_v8
+
+
+@contextmanager
+def formato_v8():
+    guardado = (R.fmt_num, R.texto, R.CONTEOS)
+    R.fmt_num, R.texto, R.CONTEOS = _fmt_cero, _texto_v8, R.CONTEOS | CONTEOS_V8
+    try:
+        yield
+    finally:
+        R.fmt_num, R.texto, R.CONTEOS = guardado
+
+
+def render(src: Path, ck: pd.DataFrame) -> tuple[str, list[str]]:
+    with formato_v8():
+        return R.render(src, ck)
+
+
+def texto(r: pd.Series, campo: str | None = None) -> str:
+    with formato_v8():
+        return R.texto(r, campo)
+
 
 README_CAB = """# Plantillas V8
 
@@ -89,7 +110,7 @@ def escribir_readme(ck: pd.DataFrame) -> int:
     v = ck[ck.index.str.startswith("V8-")]
     L = [README_CAB.format(n=len(v)), "| id | indicador | valor | capa | periodo |", "|---|---|---|---|---|"]
     for i, r in v.iterrows():
-        val = R.texto(r, None).replace("|", "/")
+        val = texto(r, None).replace("|", "/")
         L.append(f"| `{i}` | {str(r.indicador).replace('|', '/')} | {val} | {r.capa} | {r.periodo} |")
     (PLANT / "README.md").write_text("\n".join(L) + "\n", encoding="utf-8")
     return len(v)
@@ -103,7 +124,7 @@ def main() -> int:
     for p in sorted(PLANT.glob("**/*.md")):
         if p.name == "README.md":
             continue
-        txt, falta = R.render(p, ck)
+        txt, falta = render(p, ck)
         dest = OUT / p.relative_to(PLANT)
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(txt, encoding="utf-8")

@@ -34,7 +34,7 @@ METODO_SVAR = ("Método: SVAR bayesiano con restricciones de signo y de cero (Ru
 def c(i: str, campo: str | None = None) -> str:
     """Cifra formateada como en los entregables (src/v5/render.py) y registro del id usado."""
     USADOS.append(i)
-    return RV.R.texto(H.loc[i].rename(i).astype(object), campo)
+    return RV.texto(H.loc[i].rename(i).astype(object), campo)
 
 
 def incluye_cero(*ids: str) -> bool:
@@ -182,11 +182,11 @@ def historial() -> None:
     F = [
         ("Demografía e inmigración", "Alquiler real", f"P5 (2022T3-2026T2): {c('V8-SVAR-a-P5-demografia-media')}; multiverso: {c('V8-M7-cumplen', 'num')} de {c('V8-M7-combinaciones', 'num')} combinaciones",
          "SVAR (C3s); multiverso (C4); IV migratorio (C4)", "+ en el multiverso (alquiler P2 y completo); 0 en el SVAR", "C3s / C4",
-         "**Se mantiene** (no concluyente): la banda del SVAR incluye el 0 y el instrumento migratorio no tiene primera etapa (F ≈ 0,05); solo la asociación del multiverso es estable en alquiler"),
+         "**Se mantiene** (no concluyente): la banda del SVAR incluye el 0 y el instrumento migratorio no tiene primera etapa (F " + c("V8-H8-7-F") + "); solo la asociación del multiverso es estable en alquiler"),
         ("Tipos de interés y crédito", "Precio real de compra", f"P5: {c('V8-SVAR-c-P5-credito_tipos-media')}; P2: {c('V8-SVAR-c-P2-credito_tipos-media')}", "SVAR (C3s); IV monetario (C4)",
          "no distinguible de 0", "C3s / C4", "**Se mantiene** (no concluyente): H8-2 no respaldada (p de Holm " + c("V8-H8-2-pholm") + ") y el instrumento monetario es débil (F " + c("V8-H8-5-F") + ")"),
         ("Empleo y renta", "Precio real de compra", f"P1 (larga): {c('V8-SVAR-c-P1-empleo_renta-media')}; P5: {c('V8-SVAR-c-P5-empleo_renta-media')}", "SVAR (C3s); M0 (C4)", "+ en la media posterior, con banda que incluye el 0 salvo P1",
-         "C3s / C4", "**Se mantiene** (no concluyente): es el factor con mayor media en compra P1 y P5, pero la regla del §9 no designa ninguno (1 de 4 votos en P1)"),
+         "C3s / C4", "**Se mantiene** (no concluyente): es el factor con mayor media en compra P1 y P5, pero la regla del §9 no designa ninguno (" + c("V8-VOTOS-c-P1", "num") + " de 4 votos en P1)"),
         ("Oferta", "Precio real de compra", f"P5: {c('V8-SVAR-c-P5-oferta-media')}; P2: {c('V8-SVAR-c-P2-oferta-media')}", "SVAR (C3s); ARDL con cotas (C4)", "signo según periodo", "C3s / C4",
          "**Se mantiene** (no concluyente): bandas con el 0; cointegración solo en " + c("V8-M4-ardl-rechaza", "num") + " de " + c("V8-M4-ardl-total", "num") + " especificaciones"),
         ("Turismo y viviendas turísticas", "Alquiler real", f"SHAP P5: {c('V8-M9-shap-a-P5-turismo')}; CCAA con datos: {c('V8-M9-turismo-ccaa', 'num')} de 17", "ML interpretable (C4, contraste)", "no concluyente", "C4",

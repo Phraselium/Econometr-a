@@ -27,3 +27,12 @@ def test_contenido_minimo():
               "atlas_regional/tablas_regionales.xlsx", "verificador/verificador.md"):
         assert (pub / f).exists(), f
     assert len(list((pub / "atlas_regional").glob("[0-9][0-9]_*.md"))) == 17
+
+
+def test_contenido_v8():
+    """V8 (F6): verificador y metodología de V8 publicados; los entregables pendientes del orquestador están comentados en FUENTES."""
+    for d in ("publicacion/verificador/verificador_v8.md", "publicacion/verificador/fichas_v8.json", "metodologia/preregistro_v8.md",
+              "metodologia/desviaciones_v8.md", "metodologia/revision_v8_F4.md"):
+        assert d in P.FUENTES and (RAIZ / d).exists(), d
+    for d, src in P.FUENTES.items():
+        assert (RAIZ / src).exists(), f"{d}: falta la fuente {src}"

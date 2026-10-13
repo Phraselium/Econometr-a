@@ -93,3 +93,8 @@
 - **Hecho:** `src/v8/f6_tablas.py` (~5 s) -> `output/v8/tablas_modelos_destacados.{md,csv}`, `output/v8/tablas_v8.xlsx` (9 hojas, colores azul/negro/verde, sin paneles, sha256 determinista), `output/v8/F6/resultado.json`; `tests/v8/test_f6_tablas.py`. Resultado: 0 modelos cumplen la regla de §8 y la del multiverso a la vez; 18 modelos destacados por (b) (error fuera de muestra), todos «NO CUMPLE LA REGLA».
 - **Siguiente:** añadir `f6_tablas` a V8_ORDEN.
 - Tokens de subagente (F6 tablas): no medidos por el subagente.
+
+## F6 (integración en cifras y publicación), hecho (2026-10-13)
+- **Hecho:** `src/v8/f6_hechos.py` -> `output/v8/F6/hechos.json` (ids `V8-`, leídos de output/v8; capas C3s y C4); `src/v5/cifras_clave.py` recoge también `output/v8/*/hechos.json` (filas no V8 idénticas: diff = 0; `check_v5` y `tests/test_k4a_cifras.py` aceptan la capa `C3s` y la banda SHAP); `src/v8/render_v8.py` (reutiliza `src/v5/render.py`) + `docs/v8/plantillas/{README,ensayo}.md` (README con la lista generada de ids); `src/v8/f6_verificador.py` -> `output/v8/verificador_v8.md` y `fichas_verificador_v8.json` (9 fichas V8-V1..V9) y adenda V8 en `docs/v6_1/historial_conclusiones.md`; `src/v7_1/publicacion.py` con el verificador V8, las tablas y la metodología V8 (`por_que_ha_subido.md` e `informe_econometrico_v8.md` comentados hasta que existan). Tests: `tests/v8/test_f6_hechos.py`, `tests/v8/test_f6_verificador.py`, `tests/v7_1/test_publicacion.py`.
+- **Siguiente:** el orquestador escribe `docs/v8/plantillas/por_que_ha_subido.md` e `informe_econometrico.md` (ids en el README), activa sus líneas en `publicacion.py` y ejecuta `make publicacion`.
+- Tokens de subagente (F6 integración): no medidos por el subagente.

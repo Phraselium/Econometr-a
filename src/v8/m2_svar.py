@@ -373,7 +373,7 @@ def sondear(spec, D, M, clave, reg):
     diag = dict(variante=spec["nombre"], N_obs=int(Y.shape[0]), muestra_ini=Y.index[0], muestra_fin=Y.index[-1], p=p, lam=float(post["lam"]),
                 logml=float(post["logml"]), D_sorteos_theta=int(D), M_rotaciones=M, rotaciones_probadas=int(res["rot_total"]), n_aceptadas=N,
                 ess=float(res["ess"]), acept_por_rotacion=float(res["acept"]), frac_theta_acept=float(res["frac_theta_acept"]),
-                estado="INVIABLE" if N < 5 else "viable", nota="identificacion pre-registrada inviable con datos reales: ninguna rotacion cumple las 17 restricciones de signo y los 4 ceros" if N < 5 else "")
+                estado="INVIABLE" if N < 5 else "viable", nota="identificacion pre-registrada inviable con datos reales: ninguna rotacion cumple las 28 restricciones de signo (14 celdas x h=0-1) y los 4 ceros" if N < 5 else "")
     if reg is not None:
         reg.log("V8-M2", "M2_principal_sondeo", "BVAR-GLP(p,r,q,c,i,e,n; p=2) + signos h=0-1 + 4 ceros (sondeo de viabilidad)", Y.index[0], Y.index[-1], int(Y.shape[0]),
                 np.nan, np.nan, np.nan, notas=f"rotaciones={res['rot_total']}; aceptadas={N}; estado={diag['estado']}")

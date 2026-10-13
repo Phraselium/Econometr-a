@@ -41,6 +41,7 @@ PERIODOS = {"P1": ("1995Q1", "2007Q4"), "P2": ("2008Q3", "2013Q4"), "P3": ("2014
             "P4": ("2020Q2", "2022Q2"), "P5": ("2022Q3", "2026Q2")}
 FIN_TRAIN = "2013Q4"
 L_HAC = 4
+RIDGE = 10.0   # penalizacion fija (ridge) de las interacciones por periodo en la prediccion fuera de muestra
 MIN_LEN = 8
 
 # variable -> (familia, columna origen, transformacion, nota)
@@ -383,7 +384,11 @@ def fuera_de_muestra(F, ycol, xs, K=5, embargo=4):
         te = np.arange(a, b)
         tr = np.array([t for t in range(n) if t < a - embargo or t >= b + embargo])
         for k, M in disenos.items():
-            beta = np.linalg.lstsq(M[tr], y[tr], rcond=None)[0]
+            pen = np.zeros(M.shape[1])
+            if k.startswith("AR1+X_por_periodo"):
+                pen[1 + 1 + 5: 1 + 1 + 5 + 25 + 5] = RIDGE   # penaliza solo interacciones y dummies de periodo
+            A = M[tr].T @ M[tr] + np.diag(pen)
+            beta = np.linalg.solve(A, M[tr].T @ y[tr])
             err[k][te] = y[te] - M[te] @ beta
     out = {"n": n, "bloques": K, "embargo": embargo, "muestra": f"{Z.index[0]}..{Z.index[-1]}", "rmse": {}, "dm_vs_ar4": {}}
     for k in disenos:
@@ -461,13 +466,13 @@ def main(argv=None):
                 i = 1 + xs.index(v)
                 filas_coef.append({
                     "modelo_id": f"M0_{mk}_{nom}_{P}", "modulo": "M0", "familia_modelo": "ols_tramos_hac" if nom == "base" else f"ols_tramos_hac_ampliada({v})",
-                    "mercado": mk, "ambito": "nacional", "periodo": P, "dependiente": ycol, "transformacion": "d4_ln*100",
+                    "mercado": mk, "ambito": "nacional", "periodo": P, "dependiente": MERCADOS[mk][0], "transformacion": "d4_ln*100",
                     "medida_precio": MERCADOS[mk][1], "variable": v, "beta": float(fit.params[i]), "ee": float(fit.bse[i]),
                     "tipo_ee": f"HAC-NW({L_HAC}), t({int(fit.df_resid)})", "t": float(fit.tvalues[i]), "p": float(fit.pvalues[i]),
                     "ic95_lo": float(ci[i, 0]), "ic95_hi": float(ci[i, 1]),
                     "beta_std": float(fit.params[i] * X_.iloc[:, i].std() / sd_y) if sd_y == sd_y and sd_y > 0 else np.nan,
                     "n": int(fit.nobs), "r2": float(fit.rsquared), "r2_adj": float(fit.rsquared_adj), "aic": float(fit.aic), "bic": float(fit.bic),
-                    "capa": "C4", "_spec": nom})
+                    "capa": "C4", "spec_": nom})
                 # --- regla
                 sp = signo(fit.params[i])
                 pp, modo, st = p_perm_periodo(E, v, P, N_PERM, SEED)
@@ -508,7 +513,7 @@ def main(argv=None):
     coef["metodo_ajuste"] = "BH"
     # cumple_regla_m0 en coeficientes
     clave = regla.set_index(["mercado", "periodo", "variable", "especificacion"])["cumple"]
-    coef["cumple_regla_m0"] = [clave.get((r.mercado, r.periodo, r.variable, r._spec), "") for r in coef.itertuples()]
+    coef["cumple_regla_m0"] = [clave.get((r.mercado, r.periodo, r.variable, r.spec_), "") for r in coef.itertuples()]
     ORD = ["modelo_id", "modulo", "familia_modelo", "mercado", "ambito", "periodo", "dependiente", "transformacion", "medida_precio", "variable", "beta", "ee", "tipo_ee",
            "t", "p", "p_ajustado", "metodo_ajuste", "ic95_lo", "ic95_hi", "beta_std", "elasticidad", "n", "r2", "r2_adj", "aic", "bic", "vel_ajuste", "semivida",
            "coint_p", "bg_p", "bp_p", "jb_p", "reset_p", "cusum_estable", "vif_max", "f1_etapa", "ar_lo", "ar_hi", "capa", "n_multiverso", "pct_mismo_signo",

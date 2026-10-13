@@ -74,7 +74,7 @@
    "acept_por_rotacion": 0.0,
    "frac_theta_acept": 0.0,
    "estado": "INVIABLE",
-   "nota": "identificacion pre-registrada inviable con datos reales: ninguna rotacion cumple las 17 restricciones de signo y los 4 ceros"
+   "nota": "identificacion pre-registrada inviable con datos reales: ninguna rotacion cumple las 28 restricciones de signo (14 celdas x h=0-1) y los 4 ceros"
   },
   "estimaciones": {
    "V3": {

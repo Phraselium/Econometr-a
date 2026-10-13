@@ -37,3 +37,8 @@
   - **LP-OLS:** con T = 90-110 la cobertura queda en 0,78-0,84, incluso con EWC. Las LP sin instrumento (M3 y las de orden temporal de M6) usan EWC y son C4 con bandas aproximadas, declaradas como tales; nunca son evidencia de C3. Las LP-IV usan siempre el intervalo de Anderson-Rubin (cobertura de 0,91 a 1,00), y el placebo por permutación, por su baja potencia (0,21-0,35), se reporta como diagnóstico.
   - **Permutación de fechas con 5 tramos:** es conservadora y tiene poca potencia. Un p < 0,05 es exigente; un p ≥ 0,05 no descarta un efecto por periodo.
   - **Reglas de etiquetado** (H15): las bandas de «con reservas» (cobertura en [0,80; 0,99] y sesgo ≤ 30 %) se fijaron tras ver la primera pasada. Se declaran como tales: las etiquetas son descriptivas y no criterios pre-registrados.
+
+## Y8 — M2: identificación operativa V3 y lectura de la parte determinista (2026-10-13)
+- La principal pre-registrada (signos h = 0-1 y 4 ceros) da 0 rotaciones aceptadas en 9·10^6. Por la regla de viabilidad de Y6 se usa V3 (solo impacto) como identificación operativa para H8-1…H8-4 y la atribución. Desviación anotada antes de ver las descomposiciones completas.
+- En P5 la parte determinista (constante, condiciones iniciales y ficticias) concentra gran parte de la variación del precio de compra (+17,8 pp [1,5; 34,1]). Se reporta como «crecimiento tendencial no atribuido a los shocks identificados», no como un factor. Se pide al revisor de F4 que lo examine. F5 lo trata como componente explícito («residuo») y no lo reparte entre factores.
+- H8-1…H8-4: ninguna rechaza la nula tras Holm (p Holm 0,43-0,82). Se reporta igual.

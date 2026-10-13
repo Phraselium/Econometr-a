@@ -67,23 +67,23 @@ M8_ccaa,M8_ccaa14_compra_P4,y ~ 1 + F,2020Q2,2022Q2,9,0.3886217036443468,,,,1.69
 M8_ccaa,M8_ccaa15_compra_P4,y ~ 1 + F,2020Q2,2022Q2,9,-0.03924722010088244,,,,-0.22499835454096467,0.3188340872213038,compra P4 ccaa 15; NW L=2
 M8_ccaa,M8_ccaa16_compra_P4,y ~ 1 + F,2020Q2,2022Q2,9,0.5857138929317094,,,,1.6272779809836653,0.0005635495413507385,compra P4 ccaa 16; NW L=2
 M8_ccaa,M8_ccaa17_compra_P4,y ~ 1 + F,2020Q2,2022Q2,9,0.32527762056653775,,,,1.393585691052483,0.05720965652553489,compra P4 ccaa 17; NW L=2
-M8_ccaa,M8_ccaa1_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9753459827041924,,,,0.892951092445064,1.3894663197788759e-11,compra P5 ccaa 1; NW L=4
-M8_ccaa,M8_ccaa2_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9382438570484728,,,,1.1212553967454573,1.5007994846882866e-12,compra P5 ccaa 2; NW L=4
-M8_ccaa,M8_ccaa3_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9532391751663132,,,,1.2983001087405093,3.3937297416741785e-12,compra P5 ccaa 3; NW L=4
-M8_ccaa,M8_ccaa4_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.874267102366546,,,,0.8052745203552453,5.37088431906696e-06,compra P5 ccaa 4; NW L=4
-M8_ccaa,M8_ccaa5_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9386863688918735,,,,0.9560909297625781,1.9196758405115588e-08,compra P5 ccaa 5; NW L=4
-M8_ccaa,M8_ccaa6_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9301083650085824,,,,1.2454818382114916,8.373992610444247e-10,compra P5 ccaa 6; NW L=4
-M8_ccaa,M8_ccaa7_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.958640348644008,,,,1.1289356434386837,6.809002250918184e-10,compra P5 ccaa 7; NW L=4
-M8_ccaa,M8_ccaa8_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9639061023075354,,,,1.0731355558469051,1.4510614931850796e-12,compra P5 ccaa 8; NW L=4
-M8_ccaa,M8_ccaa9_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9742759068625708,,,,0.9336643170526026,6.141753772226366e-13,compra P5 ccaa 9; NW L=4
-M8_ccaa,M8_ccaa10_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9755232877999775,,,,1.1914593648619964,7.500666754367558e-13,compra P5 ccaa 10; NW L=4
-M8_ccaa,M8_ccaa11_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.8112224806833097,,,,0.6342299953113323,3.3332162132637677e-06,compra P5 ccaa 11; NW L=4
-M8_ccaa,M8_ccaa12_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9614168564402624,,,,0.9277504625997514,1.1102230246251565e-15,compra P5 ccaa 12; NW L=4
-M8_ccaa,M8_ccaa13_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9367667660404909,,,,1.037152386980031,1.4248979773867632e-10,compra P5 ccaa 13; NW L=4
-M8_ccaa,M8_ccaa14_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9049097739401372,,,,1.039017181879437,1.8390711176152763e-10,compra P5 ccaa 14; NW L=4
-M8_ccaa,M8_ccaa15_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.8518359426429636,,,,0.6930707100463892,5.14080489288915e-09,compra P5 ccaa 15; NW L=4
-M8_ccaa,M8_ccaa16_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9108667064402913,,,,0.9596860804365229,5.02158610471426e-07,compra P5 ccaa 16; NW L=4
-M8_ccaa,M8_ccaa17_compra_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.8258217443078305,,,,0.8437592306282872,1.0980341080824019e-09,compra P5 ccaa 17; NW L=4
+M8_ccaa,M8_ccaa1_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9721670919303158,,,,0.8891817010075348,2.352174011122088e-10,compra P5 ccaa 1; NW L=3
+M8_ccaa,M8_ccaa2_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9307574870607517,,,,1.1214447987153857,4.073608117494132e-11,compra P5 ccaa 2; NW L=3
+M8_ccaa,M8_ccaa3_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9517002216276632,,,,1.3206815420441984,2.5728308372663378e-11,compra P5 ccaa 3; NW L=3
+M8_ccaa,M8_ccaa4_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.8908984987083124,,,,0.8472283663973266,4.639692235519632e-06,compra P5 ccaa 4; NW L=3
+M8_ccaa,M8_ccaa5_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9314830089381125,,,,0.9577876072470678,1.4707015871806561e-07,compra P5 ccaa 5; NW L=3
+M8_ccaa,M8_ccaa6_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9276049711076823,,,,1.269936198537543,1.0670078598451482e-08,compra P5 ccaa 6; NW L=3
+M8_ccaa,M8_ccaa7_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9776010834419957,,,,1.068394922186408,4.133005049311578e-11,compra P5 ccaa 7; NW L=3
+M8_ccaa,M8_ccaa8_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9690156286958873,,,,1.0347058126115882,1.645350522494482e-13,compra P5 ccaa 8; NW L=3
+M8_ccaa,M8_ccaa9_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9812504220961276,,,,0.9627469884578622,6.024070131616099e-13,compra P5 ccaa 9; NW L=3
+M8_ccaa,M8_ccaa10_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.974832732081459,,,,1.2077081007863026,4.14845935381436e-12,compra P5 ccaa 10; NW L=3
+M8_ccaa,M8_ccaa11_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.8012251956257092,,,,0.589751377616924,2.4903515876362192e-05,compra P5 ccaa 11; NW L=3
+M8_ccaa,M8_ccaa12_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9604430342975332,,,,0.9433271525671085,7.66053886991358e-14,compra P5 ccaa 12; NW L=3
+M8_ccaa,M8_ccaa13_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9537500555490409,,,,1.0872460871409264,2.3929946912915057e-10,compra P5 ccaa 13; NW L=3
+M8_ccaa,M8_ccaa14_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.8950697013564798,,,,1.0087597540886009,1.7004380126195429e-09,compra P5 ccaa 14; NW L=3
+M8_ccaa,M8_ccaa15_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.8612864921112411,,,,0.7245753122092272,3.4009285387881505e-07,compra P5 ccaa 15; NW L=3
+M8_ccaa,M8_ccaa16_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.8993210192000124,,,,0.9496422364754318,3.4186320461149222e-06,compra P5 ccaa 16; NW L=3
+M8_ccaa,M8_ccaa17_compra_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.8035435585088494,,,,0.8180622479050293,3.763403766399165e-08,compra P5 ccaa 17; NW L=3
 M8_ccaa,M8_ccaa1_alquiler_P2,y ~ 1 + F,2008Q3,2013Q4,22,0.994120220218309,,,,1.0463157769709641,0.0,alquiler P2 ccaa 1; NW L=4
 M8_ccaa,M8_ccaa2_alquiler_P2,y ~ 1 + F,2008Q3,2013Q4,22,0.9697587933460512,,,,1.2514314940852163,0.0,alquiler P2 ccaa 2; NW L=4
 M8_ccaa,M8_ccaa3_alquiler_P2,y ~ 1 + F,2008Q3,2013Q4,22,0.9523908069107624,,,,0.9671680840237942,8.970602038971265e-14,alquiler P2 ccaa 3; NW L=4
@@ -135,23 +135,23 @@ M8_ccaa,M8_ccaa14_alquiler_P4,y ~ 1 + F,2020Q2,2022Q2,9,0.9965983158789907,,,,1.
 M8_ccaa,M8_ccaa15_alquiler_P4,y ~ 1 + F,2020Q2,2022Q2,9,0.9974890700856387,,,,1.1183049485467542,1.4187340191540443e-10,alquiler P4 ccaa 15; NW L=2
 M8_ccaa,M8_ccaa16_alquiler_P4,y ~ 1 + F,2020Q2,2022Q2,9,0.9980818480658257,,,,0.9369618145538543,6.697575827274704e-11,alquiler P4 ccaa 16; NW L=2
 M8_ccaa,M8_ccaa17_alquiler_P4,y ~ 1 + F,2020Q2,2022Q2,9,0.9985119357100857,,,,0.9966530183055339,2.0508483800085742e-11,alquiler P4 ccaa 17; NW L=2
-M8_ccaa,M8_ccaa1_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9922068438237805,,,,1.0592187924797385,0.0,alquiler P5 ccaa 1; NW L=4
-M8_ccaa,M8_ccaa2_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.991483001722425,,,,0.9763359961435243,0.0,alquiler P5 ccaa 2; NW L=4
-M8_ccaa,M8_ccaa3_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9783499575217529,,,,0.9941596695570629,4.440892098500626e-16,alquiler P5 ccaa 3; NW L=4
-M8_ccaa,M8_ccaa4_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9885092211578075,,,,1.1196329892905708,2.220446049250313e-16,alquiler P5 ccaa 4; NW L=4
-M8_ccaa,M8_ccaa5_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9794622654845776,,,,0.9808647158690379,4.440892098500626e-16,alquiler P5 ccaa 5; NW L=4
-M8_ccaa,M8_ccaa6_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9769358744945452,,,,1.0352588721148401,2.1538326677728037e-14,alquiler P5 ccaa 6; NW L=4
-M8_ccaa,M8_ccaa7_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9767158990209024,,,,0.9585097978881172,4.440892098500626e-15,alquiler P5 ccaa 7; NW L=4
-M8_ccaa,M8_ccaa8_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9954617891144875,,,,1.0243192377778882,0.0,alquiler P5 ccaa 8; NW L=4
-M8_ccaa,M8_ccaa9_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9805307812798878,,,,0.9070302850074032,3.219646771412954e-14,alquiler P5 ccaa 9; NW L=4
-M8_ccaa,M8_ccaa10_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9636621541309929,,,,1.1349374677354207,1.5059065106015623e-12,alquiler P5 ccaa 10; NW L=4
-M8_ccaa,M8_ccaa11_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9314428223725882,,,,1.0626745526865031,4.156852639880526e-11,alquiler P5 ccaa 11; NW L=4
-M8_ccaa,M8_ccaa12_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9847321163301977,,,,0.8970172562710966,0.0,alquiler P5 ccaa 12; NW L=4
-M8_ccaa,M8_ccaa13_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9780805479972973,,,,1.0872850320033218,1.1124434706744069e-13,alquiler P5 ccaa 13; NW L=4
-M8_ccaa,M8_ccaa14_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9513720263188817,,,,1.073519209332964,1.3322676295501878e-15,alquiler P5 ccaa 14; NW L=4
-M8_ccaa,M8_ccaa15_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9773481290431574,,,,0.9247899008976023,0.0,alquiler P5 ccaa 15; NW L=4
-M8_ccaa,M8_ccaa16_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.933647784441493,,,,0.8698807743255339,8.888045854860138e-11,alquiler P5 ccaa 16; NW L=4
-M8_ccaa,M8_ccaa17_alquiler_P5,y ~ 1 + F,2022Q3,2026Q2,16,0.9622501093543563,,,,0.8672935297469669,4.805045250577678e-13,alquiler P5 ccaa 17; NW L=4
+M8_ccaa,M8_ccaa1_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9956231229106939,,,,1.06547568086529,0.0,alquiler P5 ccaa 1; NW L=3
+M8_ccaa,M8_ccaa2_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9914346823496807,,,,0.9771680511214124,0.0,alquiler P5 ccaa 2; NW L=3
+M8_ccaa,M8_ccaa3_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9882082476426999,,,,0.9838993104988047,2.220446049250313e-15,alquiler P5 ccaa 3; NW L=3
+M8_ccaa,M8_ccaa4_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9886203802649658,,,,1.1175749524979086,4.440892098500626e-15,alquiler P5 ccaa 4; NW L=3
+M8_ccaa,M8_ccaa5_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9869936473784415,,,,0.989520063957349,1.9984014443252818e-15,alquiler P5 ccaa 5; NW L=3
+M8_ccaa,M8_ccaa6_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9775255599581714,,,,1.0317701206688827,2.4291679778798425e-13,alquiler P5 ccaa 6; NW L=3
+M8_ccaa,M8_ccaa7_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.976761155005231,,,,0.9602727400039484,1.4788170688007085e-13,alquiler P5 ccaa 7; NW L=3
+M8_ccaa,M8_ccaa8_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9954628815264983,,,,1.0251498143206732,0.0,alquiler P5 ccaa 8; NW L=3
+M8_ccaa,M8_ccaa9_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9809829017809513,,,,0.9093924427906849,1.5343282200319663e-13,alquiler P5 ccaa 9; NW L=3
+M8_ccaa,M8_ccaa10_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9631196132715191,,,,1.1337990370313704,9.997114247539685e-12,alquiler P5 ccaa 10; NW L=3
+M8_ccaa,M8_ccaa11_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9337170255040153,,,,1.068471294723157,1.7538637209213448e-10,alquiler P5 ccaa 11; NW L=3
+M8_ccaa,M8_ccaa12_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9847009393186147,,,,0.8955613326557903,8.881784197001252e-16,alquiler P5 ccaa 12; NW L=3
+M8_ccaa,M8_ccaa13_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.978485078945013,,,,1.0900787485294052,5.073719222536965e-13,alquiler P5 ccaa 13; NW L=3
+M8_ccaa,M8_ccaa14_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9722687718308881,,,,1.056925674497946,6.439293542825908e-15,alquiler P5 ccaa 14; NW L=3
+M8_ccaa,M8_ccaa15_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9815441492478757,,,,0.9309463705079916,2.220446049250313e-16,alquiler P5 ccaa 15; NW L=3
+M8_ccaa,M8_ccaa16_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9399789720652517,,,,0.8772300991682133,2.547755340032154e-10,alquiler P5 ccaa 16; NW L=3
+M8_ccaa,M8_ccaa17_alquiler_P5,y ~ 1 + F,2022Q3,2026Q1,15,0.9734902937474803,,,,0.8573880590350507,6.339373470609644e-13,alquiler P5 ccaa 17; NW L=3
 M8_panel,M8_panel_cov_compra_P1,y ~ F +  + FE,1996Q1,2007Q4,816,,,,,1.0085172501086754,0.0,"covariables usadas []; E=17, T=48; DK bw=4"
 M8_panel,M8_panel_cov_compra_P2,y ~ F + ocupados + paro + pob_total + pob_extranj + visados + tx_extranj + FE,2009Q1,2013Q4,340,,,,,0.8944667483754518,0.0,"covariables usadas ['ocupados', 'paro', 'pob_total', 'pob_extranj', 'visados', 'tx_extranj']; E=17, T=20; DK bw=4"
 M8_panel,M8_panel_cov_compra_P3,y ~ F + ocupados + paro + pob_total + pob_extranj + visados + tx_extranj + FE,2014Q1,2019Q4,357,,,,,0.972619443895269,0.0,"covariables usadas ['ocupados', 'paro', 'pob_total', 'pob_extranj', 'visados', 'tx_extranj']; E=17, T=21; DK bw=4"
@@ -173,10 +173,10 @@ M8_lp_panel,M8_lp_compra_P3_factor_comun,y_{t+h} ~ shock + y_{t-1} + shock_{t-1}
 M8_lp_panel,M8_lp_compra_P3_ocupados,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8056,8079,408,,,,,-0.08309411670438135,,LP panel Driscoll-Kraay h<= 8; C4
 M8_lp_panel,M8_lp_compra_P3_pob_total,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8056,8079,408,,,,,-9.973208550592242,,LP panel Driscoll-Kraay h<= 8; C4
 M8_lp_panel,M8_lp_compra_P3_tx_extranj,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8056,8079,408,,,,,-0.013453878297058844,,LP panel Driscoll-Kraay h<= 8; C4
-M8_lp_panel,M8_lp_compra_P5_factor_comun,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8105,272,,,,,4.47436015104866,,LP panel Driscoll-Kraay h<= 6; C4
-M8_lp_panel,M8_lp_compra_P5_ocupados,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8105,272,,,,,-0.0989120904482029,,LP panel Driscoll-Kraay h<= 6; C4
+M8_lp_panel,M8_lp_compra_P5_factor_comun,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8104,255,,,,,4.3182697399050785,,LP panel Driscoll-Kraay h<= 5; C4
+M8_lp_panel,M8_lp_compra_P5_ocupados,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8104,255,,,,,-0.06073893447301374,,LP panel Driscoll-Kraay h<= 5; C4
 M8_lp_panel,M8_lp_compra_P5_pob_total,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8100,187,,,,,-0.994048582306139,,LP panel Driscoll-Kraay h<= 3; C4
-M8_lp_panel,M8_lp_compra_P5_tx_extranj,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8105,272,,,,,0.08224500123882812,,LP panel Driscoll-Kraay h<= 6; C4
+M8_lp_panel,M8_lp_compra_P5_tx_extranj,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8104,255,,,,,0.08894094504243473,,LP panel Driscoll-Kraay h<= 5; C4
 M8_lp_panel,M8_lp_compra_completo_factor_comun,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,7981,8105,2125,,,,,4.5955359327807965,,LP panel Driscoll-Kraay h<= 8; C4
 M8_lp_panel,M8_lp_compra_completo_ocupados,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8028,8105,1326,,,,,0.1563373215932736,,LP panel Driscoll-Kraay h<= 8; C4
 M8_lp_panel,M8_lp_compra_completo_pob_total,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8028,8100,1241,,,,,13.995220451553907,,LP panel Driscoll-Kraay h<= 8; C4
@@ -189,10 +189,10 @@ M8_lp_panel,M8_lp_alquiler_P3_factor_comun,y_{t+h} ~ shock + y_{t-1} + shock_{t-
 M8_lp_panel,M8_lp_alquiler_P3_ocupados,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8056,8079,408,,,,,-0.02887073635430324,,LP panel Driscoll-Kraay h<= 8; C4
 M8_lp_panel,M8_lp_alquiler_P3_pob_total,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8056,8079,408,,,,,-11.66059832392095,,LP panel Driscoll-Kraay h<= 8; C4
 M8_lp_panel,M8_lp_alquiler_P3_tx_extranj,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8056,8079,408,,,,,-0.008898540852402598,,LP panel Driscoll-Kraay h<= 8; C4
-M8_lp_panel,M8_lp_alquiler_P5_factor_comun,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8105,272,,,,,0.5422311106575014,,LP panel Driscoll-Kraay h<= 6; C4
-M8_lp_panel,M8_lp_alquiler_P5_ocupados,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8105,272,,,,,-0.03607956878109328,,LP panel Driscoll-Kraay h<= 6; C4
+M8_lp_panel,M8_lp_alquiler_P5_factor_comun,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8104,255,,,,,0.41352830612788494,,LP panel Driscoll-Kraay h<= 5; C4
+M8_lp_panel,M8_lp_alquiler_P5_ocupados,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8104,255,,,,,-0.03441769129943091,,LP panel Driscoll-Kraay h<= 5; C4
 M8_lp_panel,M8_lp_alquiler_P5_pob_total,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8100,187,,,,,-1.8707988765357724,,LP panel Driscoll-Kraay h<= 3; C4
-M8_lp_panel,M8_lp_alquiler_P5_tx_extranj,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8105,272,,,,,-0.006723703058088489,,LP panel Driscoll-Kraay h<= 6; C4
+M8_lp_panel,M8_lp_alquiler_P5_tx_extranj,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8090,8104,255,,,,,-0.007655580066757351,,LP panel Driscoll-Kraay h<= 5; C4
 M8_lp_panel,M8_lp_alquiler_completo_factor_comun,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8029,8105,1309,,,,,1.698790768352863,,LP panel Driscoll-Kraay h<= 8; C4
 M8_lp_panel,M8_lp_alquiler_completo_ocupados,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8028,8105,1326,,,,,-0.10563118226059892,,LP panel Driscoll-Kraay h<= 8; C4
 M8_lp_panel,M8_lp_alquiler_completo_pob_total,y_{t+h} ~ shock + y_{t-1} + shock_{t-1} + FE,8028,8100,1241,,,,,1.3178210688335474,,LP panel Driscoll-Kraay h<= 8; C4
@@ -201,19 +201,19 @@ M8_cv,M8_cv_prov03_compra_P1,d4 p_real ~ 1 + F_nacional,1996Q1,2007Q4,48,0.60568
 M8_cv,M8_cv_prov03_compra_P2,d4 p_real ~ 1 + F_nacional,2008Q3,2013Q4,22,0.15210921652468767,,,,0.6279542135082266,0.060939334653019595,C4
 M8_cv,M8_cv_prov03_compra_P3,d4 p_real ~ 1 + F_nacional,2014Q1,2019Q4,24,0.3683940019337636,,,,0.5670888266885762,0.002489079181849707,C4
 M8_cv,M8_cv_prov03_compra_P4,d4 p_real ~ 1 + F_nacional,2020Q2,2022Q2,9,-0.04535812047977772,,,,0.45729198172967067,0.32159336012856343,C4
-M8_cv,M8_cv_prov03_compra_P5,d4 p_real ~ 1 + F_nacional,2022Q3,2026Q2,16,0.9532523585028415,,,,1.0922820291149302,2.7374325028972635e-11,C4
+M8_cv,M8_cv_prov03_compra_P5,d4 p_real ~ 1 + F_nacional,2022Q3,2026Q1,15,0.9549036516340575,,,,1.1189401004426889,4.3907322222480616e-11,C4
 M8_cv,M8_cv_prov12_compra_P1,d4 p_real ~ 1 + F_nacional,1996Q1,2007Q4,48,0.5710839088691406,,,,0.960976491659515,2.071655460511579e-07,C4
 M8_cv,M8_cv_prov12_compra_P2,d4 p_real ~ 1 + F_nacional,2008Q3,2013Q4,22,0.6961866912239159,,,,1.580593447952372,1.6996266871682764e-06,C4
 M8_cv,M8_cv_prov12_compra_P3,d4 p_real ~ 1 + F_nacional,2014Q1,2019Q4,24,0.7951711487752512,,,,1.6871254795603507,7.120748435340829e-12,C4
 M8_cv,M8_cv_prov12_compra_P4,d4 p_real ~ 1 + F_nacional,2020Q2,2022Q2,9,0.5126726606165273,,,,1.1905993993534794,0.005292935962692313,C4
-M8_cv,M8_cv_prov12_compra_P5,d4 p_real ~ 1 + F_nacional,2022Q3,2026Q2,16,0.9459543736790526,,,,1.4410691370512763,5.079721088208089e-10,C4
+M8_cv,M8_cv_prov12_compra_P5,d4 p_real ~ 1 + F_nacional,2022Q3,2026Q1,15,0.9409788440506741,,,,1.4536935712375627,4.143358101060812e-09,C4
 M8_cv,M8_cv_prov46_compra_P1,d4 p_real ~ 1 + F_nacional,1996Q1,2007Q4,48,0.7373013868172582,,,,0.8798672367069452,1.5798962138546813e-10,C4
 M8_cv,M8_cv_prov46_compra_P2,d4 p_real ~ 1 + F_nacional,2008Q3,2013Q4,22,0.5728765836734976,,,,1.495025685134259,0.006562857815421763,C4
 M8_cv,M8_cv_prov46_compra_P3,d4 p_real ~ 1 + F_nacional,2014Q1,2019Q4,24,0.6164930180913755,,,,1.2145307148979314,1.2676846168346856e-06,C4
 M8_cv,M8_cv_prov46_compra_P4,d4 p_real ~ 1 + F_nacional,2020Q2,2022Q2,9,0.27903315066809675,,,,0.9997043910718355,0.018945077130492205,C4
-M8_cv,M8_cv_prov46_compra_P5,d4 p_real ~ 1 + F_nacional,2022Q3,2026Q2,16,0.9802502757495569,,,,1.2136601292833102,1.021405182655144e-14,C4
+M8_cv,M8_cv_prov46_compra_P5,d4 p_real ~ 1 + F_nacional,2022Q3,2026Q1,15,0.9779951113813379,,,,1.2177658747457925,2.560174294785611e-13,C4
 M8_cv,M8_valencia_ciudad_compra_P1,d4 p_real ~ 1 + F_nacional,2006Q1,2007Q4,8,-0.024599963272507352,,,,0.5432780900991672,0.24546426925448062,C4
 M8_cv,M8_valencia_ciudad_compra_P2,d4 p_real ~ 1 + F_nacional,2008Q3,2013Q4,22,0.3612437822631168,,,,1.7540189948752092,0.0010489737673655686,C4
 M8_cv,M8_valencia_ciudad_compra_P3,d4 p_real ~ 1 + F_nacional,2014Q1,2019Q4,24,0.29761865857687775,,,,2.371531535989093,0.00868173459111432,C4
 M8_cv,M8_valencia_ciudad_compra_P4,d4 p_real ~ 1 + F_nacional,2020Q2,2022Q2,9,0.054106716860170434,,,,1.4321743068161876,0.04277399970925133,C4
-M8_cv,M8_valencia_ciudad_compra_P5,d4 p_real ~ 1 + F_nacional,2022Q3,2026Q2,16,0.7202919234291324,,,,1.2004624452139767,0.0004500091827330799,C4
+M8_cv,M8_valencia_ciudad_compra_P5,d4 p_real ~ 1 + F_nacional,2022Q3,2026Q1,15,0.7549788173802496,,,,1.293834608978872,0.00036672757630551445,C4

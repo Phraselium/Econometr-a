@@ -77,7 +77,17 @@ def cargar() -> pd.DataFrame:
             d[c] = d[c].astype(str).str.lower().eq("true")
     # 2026T1 y 2026T2 de tx_extranj repiten el mismo valor en el origen (diccionario): se anula 2026T2 como dato no valido
     d.loc["2026Q2", "ln_tx_extranj"] = np.nan
+    # J1/J17 (revision F4): la ficticia EPA 2021 es un salto de NIVEL en las variables EPA; en tasas es un IMPULSO.
+    # Interanual (d4): 1 en 2021T1-2021T4; trimestral (d1): 1 solo en 2021T1 (columna epa2021_q).
+    d = d.copy()
+    d["epa2021"] = d.index.isin(["2021Q1", "2021Q2", "2021Q3", "2021Q4"]).astype(int)
+    d["epa2021_q"] = (d.index == "2021Q1").astype(int)
     return d
+
+
+def col_epa(transf: str) -> str:
+    """Nombre de la columna de la ficticia EPA 2021 segun la transformacion (impulso de 4 trimestres en interanual; de 1 en trimestral)."""
+    return "epa2021" if transf == "interanual" else "epa2021_q"
 
 
 def transformar(s: pd.Series, tipo: str, transf: str) -> pd.Series:
@@ -176,11 +186,11 @@ def limitar_por_gl(dep, X, sel: dict, win, n_dummies=0):
         sel.pop(f)
 
 
-def dummies_relevantes(D: pd.DataFrame, d: pd.DataFrame, vars_epa: bool, k: int):
+def dummies_relevantes(D: pd.DataFrame, d: pd.DataFrame, vars_epa: bool, k: int, transf: str = "interanual"):
     """Ficticias COVID / EPA2021 que varian en la muestra y dejan GL >= GL_MIN."""
     out = []
     n = len(D)
-    for c, aplica in (("covid", True), ("epa2021", vars_epa)):
+    for c, aplica in (("covid", True), (col_epa(transf), vars_epa)):
         if aplica and d.loc[D.index, c].std() > 0 and n - (k + 1 + len(out) + 1) >= GL_MIN:
             out.append(c)
     return out

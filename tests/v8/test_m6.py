@@ -105,20 +105,35 @@ def test_gl_minimos_p4():
 def test_contrato_salidas(corridas):
     r = corridas[0]
     for f in ["coeficientes.csv", "atribucion.csv", "colinealidad.csv", "belsley.csv", "pesos_johnson.csv", "ortogonalizacion.csv", "indice_compuesto.csv",
-              "granger.csv", "lp_agregado.csv", "bma.csv", "penalizados.csv", "fuera_muestra.csv", "muestras.csv", "registro.csv", "resultado.json", "resumen.md"]:
+              "granger.csv", "lp_agregado.csv", "bma.csv", "penalizados.csv", "fuera_muestra.csv", "muestras.csv", "registro.csv", "resultado.json", "resumen.md", "voto_dominancia.csv", "tiempos.json"]:
         assert (r / f).exists(), f
+    assert "tiempo" not in (r / "resultado.json").read_text() and "tiempo" not in (r / "resumen.md").read_text()
     co = pd.read_csv(r / "coeficientes.csv")
     assert list(co.columns[:10]) == COLS_COEF and co["capa"].eq("C4").all() and co["tipo_ee"].eq("EWC").all()
     assert co["vif_max"].notna().all() and co["modulo"].eq("M6").all()
     at = pd.read_csv(r / "atribucion.csv")
-    assert list(at.columns) == ["metodo", "mercado", "ambito", "periodo", "factor", "contribucion_pp", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "capa", "notas"]
-    assert set(at["metodo"]) <= {"dominancia", "dominancia_trimestral"} and set(at["factor"]) <= FACTORES and at["capa"].eq("C4").all()
+    assert list(at.columns) == ["metodo", "mercado", "ambito", "periodo", "factor", "contribucion_pp", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "capa", "notas",
+                               "cuota_lmg", "r2", "delta_y_pp", "signo_parcial", "contrib_parcial_pp", "orientacion", "variante", "principal"]
+    assert not at.duplicated(["metodo", "mercado", "ambito", "periodo", "factor", "variante"]).any()
+    assert set(at["metodo"]) <= {"dominancia", "dominancia_trimestral"} and set(at["factor"]) <= FACTORES | {"residuo"} and at["capa"].eq("C4").all()
     ok = at[at["pct_total"].notna()]
     for _, g in ok.groupby(["metodo", "mercado", "periodo"]):
         assert abs(g["pct_total"].sum() - 100) < 1e-6
         assert (g["b90_lo"] <= g["b90_hi"] + 1e-12).all() and (g["b68_lo"] <= g["b68_hi"] + 1e-12).all()
         var = float(g["notas"].iloc[0].split("variacion acumulada (")[1].split(" pp")[0])
         assert abs(g["contribucion_pp"].sum() - var) < 0.06   # la variacion se imprime con 1 decimal
+    # J5: contribucion = cuota LMG x R2 x variacion; fila residuo = (1 - R2) x variacion; signo_parcial = signo de contrib_parcial_pp
+    fa = ok[ok["factor"] != "residuo"]
+    assert np.allclose(fa["contribucion_pp"], fa["cuota_lmg"] * fa["r2"] * fa["delta_y_pp"])
+    rs = ok[ok["factor"] == "residuo"]
+    assert len(rs) and np.allclose(rs["contribucion_pp"], (1 - rs["r2"]) * rs["delta_y_pp"])
+    assert (np.sign(fa["contrib_parcial_pp"]) == fa["signo_parcial"]).all()
+    vo = pd.read_csv(r / "voto_dominancia.csv")
+    assert {"mercado", "periodo", "factor_votado"} <= set(vo.columns)
+    for _, v in vo[vo["factor_votado"] != "abstiene"].iterrows():
+        g = fa[(fa["metodo"] == "dominancia") & (fa["mercado"] == v["mercado"]) & (fa["periodo"] == v["periodo"])]
+        elegible = g[g["signo_parcial"] == np.sign(g["delta_y_pp"])]
+        assert v["factor_votado"] == elegible.sort_values("cuota_lmg", ascending=False)["factor"].iloc[0]
     # las bandas del bootstrap por bloques rodean la estimacion puntual en la mayoria de los casos
     dentro = ((ok["contribucion_pp"] >= ok["b90_lo"] - 1e-9) & (ok["contribucion_pp"] <= ok["b90_hi"] + 1e-9)).mean()
     assert dentro > 0.8

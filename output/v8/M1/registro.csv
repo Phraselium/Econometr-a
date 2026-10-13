@@ -65,10 +65,12 @@ M1_cuota,M1_dfm_alquiler_ipc_completo_k1,DFM-ML k=1 cuota alquiler_ipc,2008Q1,20
 M1_cuota,M1_dfm_alquiler_ipc_completo_k2,DFM-ML k=2 cuota alquiler_ipc,2008Q1,2026Q2,74,,,,,0.9041588826671437,,"punto, sin bootstrap; factor ajustado a la muestra completa"
 M1_corr,M1_h89_principal_ea19_nominal,"corr(PC1, g_EA) principal_ea19_nominal",2006Q1,2026Q2,82,,,,,0.597579382097799,0.01,"HPI EA19 nominal interanual (Eurostat), incluye ES"
 M1_corr,M1_h89_ea19_real,"corr(PC1, g_EA) ea19_real",2006Q1,2026Q2,82,,,,,0.6130888275138116,0.004,HPI EA19 deflactado por IPC espanol (aprox.)
-M1_corr,M1_h89_ex_es_proxy,"corr(PC1, g_EA) ex_es_proxy",2006Q1,2026Q2,82,,,,,0.5846823778605306,0.013,"media simple DE, FR, IT, NL, PT (aprox. EA sin ES; NO es el agregado oficial)"
+M1_corr,M1_h89_ex_es_proxy,"corr(PC1, g_EA) ex_es_proxy",2006Q1,2026Q2,82,,,,,0.5846823778605306,0.013,"aproximacion de 5 paises, media simple (DE, FR, IT, NL, PT); NO es el agregado oficial de la zona euro sin Espana"
 M1_corr,M1_h89_factor_dfm_ea19,"corr(PC1, g_EA) factor_dfm_ea19",2006Q1,2026Q2,82,,,,,0.6050656716176651,0.014,factor DFM-ML (no re-estimado en bootstrap) con EA19 nominal
 M1_corr,M1_h89_ipv_ea19,"corr(PC1, g_EA) ipv_ea19",2006Q1,2026Q2,74,,,,,0.6215996182702492,0.011,factor del IPV real (2008T1+) con EA19 nominal
 M1_corr,M1_h89_alquiler_ea19,"corr(PC1, g_EA) alquiler_ea19",2006Q1,2026Q2,74,,,,,-0.35793935367750224,0.849,factor del alquiler real (2008T1+) con HPI EA19 (exploratorio: otro mercado)
+M1_corr,M1_h89_principal_ea19_nominal_L12,"corr(PC1, g_EA) principal_ea19_nominal_L12",2006Q1,2026Q2,82,,,,,0.597579382097799,0.028,sensibilidad J16: igual que la principal con bloque L=12 (interanuales muy persistentes)
+M1_corr,M1_h89_ex_es_proxy_L12,"corr(PC1, g_EA) ex_es_proxy_L12",2006Q1,2026Q2,82,,,,,0.5846823778605306,0.023,"sensibilidad J16 con L=12: aproximacion de 5 paises, media simple (DE, FR, IT, NL, PT); NO es el agregado oficial de la zona euro sin Espana"
 M1_corr_periodo,M1_corrper_ea19_nominal_P1,"corr(PC1 completo, g_EA) P1",2006Q1,2007Q4,8,,,,,0.9756677937639928,0.003,"exploratorio, BH; factor estimado en muestra completa"
 M1_corr_periodo,M1_corrper_ea19_nominal_P2,"corr(PC1 completo, g_EA) P2",2008Q3,2013Q4,22,,,,,0.39972423577935606,0.031,"exploratorio, BH; factor estimado en muestra completa"
 M1_corr_periodo,M1_corrper_ea19_nominal_P3,"corr(PC1 completo, g_EA) P3",2014Q1,2019Q4,24,,,,,0.48157633257744664,0.176,"exploratorio, BH; factor estimado en muestra completa"

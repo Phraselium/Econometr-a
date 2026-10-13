@@ -13,13 +13,13 @@ M9,m9_compra_ccaa_panel_gam_fam_alfa10,y_t ~ gam_fam_alfa10(X_(t-1)),2009Q2,2026
 M9,m9_compra_ccaa_panel_gam_ar_alfa10,y_t ~ gam_ar_alfa10(X_(t-1)),2009Q2,2026Q2,680,,,,2.557214347995804,,0.0032419645177652356,gam; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4_fc); p_vs_exigente en la columna p_interes; C4; contraste
 M9,m9_compra_ccaa_panel_gam_fam_alfa100,y_t ~ gam_fam_alfa100(X_(t-1)),2009Q2,2026Q2,680,,,,5.0954414197208955,,0.0042036915734533185,gam; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4_fc); p_vs_exigente en la columna p_interes; C4; contraste
 M9,m9_compra_ccaa_panel_gam_ar_alfa100,y_t ~ gam_ar_alfa100(X_(t-1)),2009Q2,2026Q2,680,,,,2.461652285839551,,0.01696010713994922,gam; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4_fc); p_vs_exigente en la columna p_interes; C4; contraste
-M9,m9_compra_ccaa_panel_shap_periodos,"SHAP agrupado, LGBM A monotono, solo familias",2009Q2,2026Q2,1122,,,,,,,bootstrap de bloques B=60; C4
+M9,m9_compra_ccaa_panel_shap_periodos,"SHAP agrupado, LGBM A monotono, solo familias",2009Q2,2026Q2,1122,,,,,,,bootstrap de bloques B=200; C4
 M9,m9_compra_ccaa_panel_sens_A_libre,SHAP agrupado sensibilidad,2009Q2,2026Q2,1122,,,,,,,sensibilidad al hiperparametro / monotonia
 M9,m9_compra_ccaa_panel_sens_B_mono,SHAP agrupado sensibilidad,2009Q2,2026Q2,1122,,,,,,,sensibilidad al hiperparametro / monotonia
 M9,m9_compra_ccaa_panel_sens_B_libre,SHAP agrupado sensibilidad,2009Q2,2026Q2,1122,,,,,,,sensibilidad al hiperparametro / monotonia
 M9,m9_compra_ccaa_panel_dml_tipo_hip_real,"DML parcial: y ~ theta*tipo_hip_real; nuisance HGB, cross-fitting por bloques con embargo 4",2009Q2,2026Q2,1122,,,,,0.044716907007110604,0.7233234556262453,C4: sin identificacion; EE cluster por trimestre
 M9,m9_compra_ccaa_panel_dml_epa_pob,"DML parcial: y ~ theta*epa_pob; nuisance HGB, cross-fitting por bloques con embargo 4",2009Q2,2026Q2,1122,,,,,-0.17238564273808385,0.47480684222166086,C4: sin identificacion; EE cluster por trimestre
-M9,m9_compra_ccaa_panel_sens_turismo,SHAP con turismo NaN nativo,2009Q2,2026Q2,1122,,,,,,,sensibilidad turismo; cobertura <70 %
+M9,m9_compra_ccaa_panel_sens_turismo,SHAP con turismo NaN nativo,2009Q2,2026Q2,1122,,,,,,,"sensibilidad turismo; panel de compra; periodos ['P4', 'P5']"
 M9,m9_compra_nacional_ar4,y_t ~ ar4(X_(t-1)),2003Q2,2026Q2,40,,,,1.0909422267309659,,,base; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
 M9,m9_compra_nacional_ecm_v1,y_t ~ ecm_v1(X_(t-1)),2003Q2,2026Q2,40,,,,2.757442425167889,,0.29220810164286043,base; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
 M9,m9_compra_nacional_lgbm_fam_Am,y_t ~ lgbm_fam_Am(X_(t-1)),2003Q2,2026Q2,40,,,,4.814423683870613,,0.007589325169863455,lightgbm; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
@@ -34,7 +34,7 @@ M9,m9_compra_nacional_gam_fam_alfa10,y_t ~ gam_fam_alfa10(X_(t-1)),2003Q2,2026Q2
 M9,m9_compra_nacional_gam_ar_alfa10,y_t ~ gam_ar_alfa10(X_(t-1)),2003Q2,2026Q2,40,,,,2.3329848726230247,,0.0005888012711546197,gam; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
 M9,m9_compra_nacional_gam_fam_alfa100,y_t ~ gam_fam_alfa100(X_(t-1)),2003Q2,2026Q2,40,,,,6.507987972706916,,0.002619001536355587,gam; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
 M9,m9_compra_nacional_gam_ar_alfa100,y_t ~ gam_ar_alfa100(X_(t-1)),2003Q2,2026Q2,40,,,,2.2410803472834604,,0.0017778239167404954,gam; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
-M9,m9_compra_nacional_shap_periodos,"SHAP agrupado, LGBM A monotono, solo familias",2003Q2,2026Q2,93,,,,,,,bootstrap de bloques B=60; C4
+M9,m9_compra_nacional_shap_periodos,"SHAP agrupado, LGBM A monotono, solo familias",2003Q2,2026Q2,93,,,,,,,bootstrap de bloques B=200; C4
 M9,m9_compra_nacional_sens_A_libre,SHAP agrupado sensibilidad,2003Q2,2026Q2,93,,,,,,,sensibilidad al hiperparametro / monotonia
 M9,m9_compra_nacional_sens_B_mono,SHAP agrupado sensibilidad,2003Q2,2026Q2,93,,,,,,,sensibilidad al hiperparametro / monotonia
 M9,m9_compra_nacional_sens_B_libre,SHAP agrupado sensibilidad,2003Q2,2026Q2,93,,,,,,,sensibilidad al hiperparametro / monotonia
@@ -52,13 +52,13 @@ M9,m9_alquiler_ccaa_panel_gam_fam_alfa10,y_t ~ gam_fam_alfa10(X_(t-1)),2009Q2,20
 M9,m9_alquiler_ccaa_panel_gam_ar_alfa10,y_t ~ gam_ar_alfa10(X_(t-1)),2009Q2,2026Q2,680,,,,1.108048397934729,,0.09349744350967949,gam; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
 M9,m9_alquiler_ccaa_panel_gam_fam_alfa100,y_t ~ gam_fam_alfa100(X_(t-1)),2009Q2,2026Q2,680,,,,2.268617811483764,,0.12413205741830866,gam; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
 M9,m9_alquiler_ccaa_panel_gam_ar_alfa100,y_t ~ gam_ar_alfa100(X_(t-1)),2009Q2,2026Q2,680,,,,1.05887865428908,,0.09895938134687206,gam; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
-M9,m9_alquiler_ccaa_panel_shap_periodos,"SHAP agrupado, LGBM A monotono, solo familias",2009Q2,2026Q2,1122,,,,,,,bootstrap de bloques B=60; C4
+M9,m9_alquiler_ccaa_panel_shap_periodos,"SHAP agrupado, LGBM A monotono, solo familias",2009Q2,2026Q2,1122,,,,,,,bootstrap de bloques B=200; C4
 M9,m9_alquiler_ccaa_panel_sens_A_libre,SHAP agrupado sensibilidad,2009Q2,2026Q2,1122,,,,,,,sensibilidad al hiperparametro / monotonia
 M9,m9_alquiler_ccaa_panel_sens_B_mono,SHAP agrupado sensibilidad,2009Q2,2026Q2,1122,,,,,,,sensibilidad al hiperparametro / monotonia
 M9,m9_alquiler_ccaa_panel_sens_B_libre,SHAP agrupado sensibilidad,2009Q2,2026Q2,1122,,,,,,,sensibilidad al hiperparametro / monotonia
 M9,m9_alquiler_ccaa_panel_dml_tipo_hip_real,"DML parcial: y ~ theta*tipo_hip_real; nuisance HGB, cross-fitting por bloques con embargo 4",2009Q2,2026Q2,1122,,,,,0.45160271014674125,1.708280189884127e-05,C4: sin identificacion; EE cluster por trimestre
 M9,m9_alquiler_ccaa_panel_dml_epa_pob,"DML parcial: y ~ theta*epa_pob; nuisance HGB, cross-fitting por bloques con embargo 4",2009Q2,2026Q2,1122,,,,,0.07249188035563979,0.5652794688669043,C4: sin identificacion; EE cluster por trimestre
-M9,m9_alquiler_ccaa_panel_sens_turismo,SHAP con turismo NaN nativo,2009Q2,2026Q2,1122,,,,,,,sensibilidad turismo; cobertura <70 %
+M9,m9_alquiler_ccaa_panel_sens_turismo,SHAP con turismo NaN nativo,2009Q2,2026Q2,1122,,,,,,,"sensibilidad turismo; panel de alquiler; periodos ['P4', 'P5']"
 M9,m9_alquiler_nacional_ar4,y_t ~ ar4(X_(t-1)),2004Q1,2026Q2,40,,,,0.9468801374922892,,,base; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
 M9,m9_alquiler_nacional_ecm_v1,y_t ~ ecm_v1(X_(t-1)),2004Q1,2026Q2,40,,,,1.6205753973617205,,0.028976284047820156,base; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
 M9,m9_alquiler_nacional_lgbm_fam_Am,y_t ~ lgbm_fam_Am(X_(t-1)),2004Q1,2026Q2,40,,,,2.8192522727126192,,0.10097176746996653,lightgbm; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
@@ -73,7 +73,7 @@ M9,m9_alquiler_nacional_gam_fam_alfa10,y_t ~ gam_fam_alfa10(X_(t-1)),2004Q1,2026
 M9,m9_alquiler_nacional_gam_ar_alfa10,y_t ~ gam_ar_alfa10(X_(t-1)),2004Q1,2026Q2,40,,,,1.8392029899947584,,0.0010481440005358517,gam; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
 M9,m9_alquiler_nacional_gam_fam_alfa100,y_t ~ gam_fam_alfa100(X_(t-1)),2004Q1,2026Q2,40,,,,2.5690207604073456,,0.07696185109669368,gam; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
 M9,m9_alquiler_nacional_gam_ar_alfa100,y_t ~ gam_ar_alfa100(X_(t-1)),2004Q1,2026Q2,40,,,,1.7323533385584804,,0.0012830496841041187,gam; fuera de muestra 5 bloques de 8 trimestres con embargo 4; DM-HLN h=4 frente a la base mas exigente (ar4); p_vs_exigente en la columna p_interes; C4; contraste
-M9,m9_alquiler_nacional_shap_periodos,"SHAP agrupado, LGBM A monotono, solo familias",2004Q1,2026Q2,90,,,,,,,bootstrap de bloques B=60; C4
+M9,m9_alquiler_nacional_shap_periodos,"SHAP agrupado, LGBM A monotono, solo familias",2004Q1,2026Q2,90,,,,,,,bootstrap de bloques B=200; C4
 M9,m9_alquiler_nacional_sens_A_libre,SHAP agrupado sensibilidad,2004Q1,2026Q2,90,,,,,,,sensibilidad al hiperparametro / monotonia
 M9,m9_alquiler_nacional_sens_B_mono,SHAP agrupado sensibilidad,2004Q1,2026Q2,90,,,,,,,sensibilidad al hiperparametro / monotonia
 M9,m9_alquiler_nacional_sens_B_libre,SHAP agrupado sensibilidad,2004Q1,2026Q2,90,,,,,,,sensibilidad al hiperparametro / monotonia

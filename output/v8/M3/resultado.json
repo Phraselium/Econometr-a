@@ -12,15 +12,15 @@
  "metodo": "LP-OLS con interaccion impulso x periodo (principal, Y6), EWC fixed-b; contraste VAR(2) bayesiano por regimenes (no apto F3)",
  "estimacion": {
   "n_diferencias": 480,
-  "n_sig_bh10": 60,
-  "n_sig_bh10_sin_P4": 24,
+  "n_sig_bh10": 52,
+  "n_sig_bh10_sin_P4": 23,
   "ancho_b90_mediano_por_periodo": {
    "alquiler_epa": {
-    "P1": 0.408,
-    "P2": 0.352,
-    "P3": 0.359,
-    "P4": 0.602,
-    "P5": 0.492
+    "P1": 0.421,
+    "P2": 0.36,
+    "P3": 0.37,
+    "P4": 0.628,
+    "P5": 0.47
    },
    "alquiler_pib": {
     "P1": 0.817,
@@ -30,11 +30,11 @@
     "P5": 0.73
    },
    "compra_epa": {
-    "P1": 0.652,
-    "P2": 0.287,
-    "P3": 0.265,
-    "P4": 0.611,
-    "P5": 0.33
+    "P1": 0.649,
+    "P2": 0.29,
+    "P3": 0.275,
+    "P4": 0.595,
+    "P5": 0.332
    },
    "compra_larga": {
     "P1": 1.262,
@@ -66,6 +66,6 @@
   "Principal = LP periodo (Y6); contraste = VAR por regimenes. Resumen por periodo = media de h=4-8; perfiles en coef_periodo_h.csv.",
   "Huecos 2008T1-T2 y 2020T1 fuera; la dependiente puede caer en el periodo siguiente.",
   "Compra larga usa PIB en volumen (1995T2+); compra_epa y alquiler comparten muestra desde 2002T2.",
-  "tiempo_s=6"
+  "Ficticia EPA 2021 = IMPULSO en 2021T1 (J1/J17; antes escalon desde 2021T1), control de las especificaciones con empleo EPA."
  ]
 }

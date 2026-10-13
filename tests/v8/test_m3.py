@@ -44,3 +44,15 @@ def test_salidas():
     assert di["p_ajustado"].between(0, 1).all() and (di["p_ajustado"] >= di["p"] - 1e-12).all()
     assert len(pd.read_csv(OUT / "registro.csv")) > 0
     assert "P4" in (OUT / "resumen.md").read_text()
+
+
+def test_ids_registro_y_ficticia():
+    co = pd.read_csv(OUT / "coeficientes.csv")
+    reg = pd.read_csv(OUT / "registro.csv")
+    assert set(co["modelo_id"]) <= set(reg["modelo_id"])        # J17: mismos ids
+    assert (OUT / "tiempos.json").exists() and "tiempo" not in (OUT / "resultado.json").read_text()
+    S = m.cargar()
+    assert S["epa2021"].sum() == 1 and S.loc["2021Q1", "epa2021"] == 1
+    for f in ("coeficientes", "coef_periodo", "coef_periodo_h", "diferencias_periodos"):
+        d = pd.read_csv(OUT / f"{f}.csv")
+        assert d["p"].notna().sum() == d["p_ajustado"].notna().sum()

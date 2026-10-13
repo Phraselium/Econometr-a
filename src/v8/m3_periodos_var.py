@@ -68,7 +68,8 @@ def cargar():
     S["n"] = dl(np.log(d["pob_total"]))
     S["y"] = dl(np.log(d["pib_vol_idx"]))
     S["covid"] = d["covid"].astype(float)
-    S["epa2021"] = d["epa2021"].astype(float)
+    # J1/J17: salto de nivel de la EPA en 2021T1 = IMPULSO en la tasa trimestral (no escalon desde 2021T1)
+    S["epa2021"] = (S.index == "2021Q1").astype(float)
     return S
 
 
@@ -215,9 +216,10 @@ def main():
                 for j, pr in enumerate(r["per"]):
                     bd = bandas_t(r["beta"][j], se[j], r["q"])
                     cph.append({"especificacion": sn, "mercado": mercado, "variable_origen": o, "variable_destino": d, "periodo": pr, "h": h,
-                                "mediana": r["beta"][j], **bd, "n": r["n"]})
-                    pv = 2 * stats.t.sf(abs(r["beta"][j] / se[j]), r["q"])
-                    reg.log("M3", f"{sn}|{o}>{d}|{pr}|h{h}", f"{d}(t+{h}) ~ {o}_t x {pr} + rezagos{REZ}", r["ini"], r["fin"], r["n"], r["r2_adj"],
+                                "mediana": r["beta"][j], **bd, "n": r["n"], "ee": se[j],
+                                "p": 2 * stats.t.sf(abs(r["beta"][j] / se[j]), r["q"])})
+                    pv = cph[-1]["p"]
+                    reg.log("M3", f"M3_lp_{sn}_{o}>{d}_{pr}_h{h}", f"{d}(t+{h}) ~ {o}_t x {pr} + rezagos{REZ}", r["ini"], r["fin"], r["n"], r["r2_adj"],
                             np.nan, np.nan, coef_interes=r["beta"][j], p_interes=pv, notas="LP periodo EWC C4")
             # resumen h=4-8
             r = lp_periodo(Ssub, vars_, o, d, None, agg=True)
@@ -227,7 +229,7 @@ def main():
                 t_ = r["beta"][j] / se[j]
                 p_ = 2 * stats.t.sf(abs(t_), r["q"])
                 cp.append({"especificacion": sn, "mercado": mercado, "variable_origen": o, "variable_destino": d, "periodo": pr,
-                           "mediana": r["beta"][j], **bd, "n_trim_periodo": r["n_per"][pr]})
+                           "mediana": r["beta"][j], **bd, "n_trim_periodo": r["n_per"][pr], "ee": se[j], "p": p_})
                 c95 = stats.t.ppf(0.975, r["q"])
                 coefs.append({"modelo_id": f"M3_lp_{sn}_{o}>{d}_{pr}_h4-8", "modulo": "M3", "familia_modelo": "lp_periodo", "mercado": mercado,
                               "ambito": "nacional", "periodo": pr, "dependiente": d,
@@ -235,7 +237,7 @@ def main():
                               "variable": f"{o}_t x {pr}", "beta": r["beta"][j], "ee": se[j], "tipo_ee": f"EWC fixed-b t({r['q']})", "t": t_,
                               "p": p_, "ic95_lo": r["beta"][j] - c95 * se[j], "ic95_hi": r["beta"][j] + c95 * se[j], "n": r["n"],
                               "r2": r["r2"], "r2_adj": r["r2_adj"], "capa": "C4", "script": "src/v8/m3_periodos_var.py"})
-                reg.log("M3", f"{sn}|{o}>{d}|{pr}|h4-8", f"mean y(t+4..8) ~ {o}_t x {pr} + rezagos{REZ}", r["ini"], r["fin"], r["n"], r["r2_adj"],
+                reg.log("M3", f"M3_lp_{sn}_{o}>{d}_{pr}_h4-8", f"mean y(t+4..8) ~ {o}_t x {pr} + rezagos{REZ}", r["ini"], r["fin"], r["n"], r["r2_adj"],
                         np.nan, np.nan, coef_interes=r["beta"][j], p_interes=p_, notas="LP periodo EWC C4 agregado h4-8")
             for ja, jb in itertools.combinations(range(len(r["per"])), 2):
                 dif = r["beta"][jb] - r["beta"][ja]
@@ -245,7 +247,7 @@ def main():
                 difs.append({"especificacion": sn, "mercado": mercado, "variable_origen": o, "variable_destino": d, "periodo_a": r["per"][ja],
                              "periodo_b": r["per"][jb], "dif_mediana": dif, "ee": sed, "t": t_, "p": 2 * stats.t.sf(abs(t_), r["q"]),
                              **bandas_t(dif, sed, r["q"]), "implica_P4": "P4" in (r["per"][ja], r["per"][jb])})
-                reg.log("M3", f"{sn}|{o}>{d}|{r['per'][jb]}-{r['per'][ja]}|h4-8", "diferencia de coeficientes de periodo", r["ini"], r["fin"],
+                reg.log("M3", f"M3_dif_{sn}_{o}>{d}_{r['per'][jb]}-{r['per'][ja]}_h4-8", "diferencia de coeficientes de periodo", r["ini"], r["fin"],
                         r["n"], np.nan, np.nan, np.nan, coef_interes=dif, p_interes=difs[-1]["p"], notas="diferencia entre periodos")
         # contraste VAR por regimenes
         rng = np.random.default_rng([SEED, len(cons)])
@@ -255,13 +257,18 @@ def main():
         dv.insert(0, "mercado", mercado)
         dv.insert(0, "especificacion", sn)
         cons.append((cv, dv))
-        reg.log("M3", f"{sn}|var_regimenes", f"VAR(2) por regimenes {vars_}", Ssub.index[0], Ssub.index[-1], len(Ssub), np.nan, np.nan, np.nan,
+        reg.log("M3", f"M3_var_{sn}", f"VAR(2) por regimenes {vars_}", Ssub.index[0], Ssub.index[-1], len(Ssub), np.nan, np.nan, np.nan,
                 notas=f"contraste NO APTO F3; lambda={lam:.3f}")
 
     cp = pd.DataFrame(cp)
     cph = pd.DataFrame(cph)
     co = pd.DataFrame(coefs)
     di = pd.DataFrame(difs)
+    di.insert(0, "modelo_id", [f"M3_dif_{r.especificacion}_{r.variable_origen}>{r.variable_destino}_{r.periodo_b}-{r.periodo_a}_h4-8"
+                               for r in di.itertuples()])
+    for t_ in (cp, cph):
+        t_["p_ajustado"] = bh(t_["p"].values)
+        t_["metodo_ajuste"] = "BH"
     co["p_ajustado"] = bh(co["p"].values)
     co["metodo_ajuste"] = "BH"
     di["p_ajustado"] = bh(di["p"].values)
@@ -285,6 +292,9 @@ def main():
                         "dependiente": r["variable_destino"], "transformacion": "coef. del retardo 1 (mediana posterior)",
                         "variable": f"{r['variable_origen']}_t-1", "beta": r["mediana"], "tipo_ee": "posterior (68/90 % en coef_periodo_var.csv)",
                         "ic95_lo": np.nan, "ic95_hi": np.nan, "n": r["n_trim"], "capa": "C4", "script": "src/v8/m3_periodos_var.py"})
+    for fv in filas_v:
+        reg.log("M3", fv["modelo_id"], f"VAR(2) por regimenes, coef. retardo 1 {fv['variable']} -> {fv['dependiente']}", "", "", fv["n"], np.nan,
+                np.nan, np.nan, coef_interes=fv["beta"], notas="contraste NO APTO F3, descriptivo (sin p: posterior)")
     allco = pd.concat([co, pd.DataFrame(filas_v)], ignore_index=True)
     for c in cols_contrato:
         if c not in allco:
@@ -292,7 +302,7 @@ def main():
     allco[cols_contrato].to_csv(out / "coeficientes.csv", index=False)
     cp.to_csv(out / "coef_periodo.csv", index=False,
               columns=["variable_origen", "variable_destino", "periodo", "mediana", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "especificacion", "mercado",
-                       "n_trim_periodo"])
+                       "n_trim_periodo", "ee", "p", "p_ajustado", "metodo_ajuste"])
     cph.to_csv(out / "coef_periodo_h.csv", index=False)
     di.to_csv(out / "diferencias_periodos.csv", index=False)
     cvs.to_csv(out / "coef_periodo_var.csv", index=False)
@@ -322,8 +332,9 @@ def main():
            "notas": [AVISO, "Principal = LP periodo (Y6); contraste = VAR por regimenes. Resumen por periodo = media de h=4-8; perfiles en coef_periodo_h.csv.",
                      "Huecos 2008T1-T2 y 2020T1 fuera; la dependiente puede caer en el periodo siguiente.",
                      "Compra larga usa PIB en volumen (1995T2+); compra_epa y alquiler comparten muestra desde 2002T2.",
-                     f"tiempo_s={time.time() - t0:.0f}"]}
+                     "Ficticia EPA 2021 = IMPULSO en 2021T1 (J1/J17; antes escalon desde 2021T1), control de las especificaciones con empleo EPA."]}
     (out / "resultado.json").write_text(json.dumps(res, indent=1, ensure_ascii=False, default=float))
+    (out / "tiempos.json").write_text(json.dumps({"segundos": round(time.time() - t0)}))
 
     def f(x):
         return f"{x:.2f}"

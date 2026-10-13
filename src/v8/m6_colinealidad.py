@@ -45,6 +45,30 @@ TRANSF = ["interanual", "trimestral"]
 B_BOOT = 499
 BLOQUE = 4
 ASOC = "asociacion (dominancia del R2), no causal"
+VENTANA_P5_FIN = "2026Q1"   # R0: ventana comun de P5 = 2022T3-2026T1 en todos los metodos
+ORIENTACION = {"tipo_hip_real": -1}   # tipos: expansivo = baja del tipo (x-1); el resto, «mas es mas presion»
+
+
+def boot_phi(X, y, B, bloque, seed):
+    """LMG absoluto (phi, suma = R2) y B remuestreos por bloques moviles. Devuelve (phi_hat, r2, draws[B, p])."""
+    Xv, yv = dominancia._prep(X.values if isinstance(X, pd.DataFrame) else X, y)
+    p = Xv.shape[1]
+    players = [[j] for j in range(p)]
+    cache = dominancia._r2_cache(Xv, yv, players)
+    phi = np.asarray(dominancia._shapley_from_cache(cache, p), float)
+    rng = np.random.default_rng(seed)
+    n = len(yv)
+    draws = np.empty((B, p))
+    for b in range(B):
+        idx = dominancia._boot_idx(n, bloque, rng)
+        draws[b] = dominancia._shapley_from_cache(dominancia._r2_cache(Xv[idx], yv[idx], players), p)
+    return phi, float(cache[frozenset(range(p))]), draws
+
+
+def banda_basica(theta, draws, alpha, lo_clip=0.0, hi_clip=1.0):
+    """Intervalo bootstrap «basico» centrado (2*theta - q_{1-a/2}, 2*theta - q_{a/2}), recortado a [lo_clip, hi_clip] (J16)."""
+    ql, qh = np.quantile(draws, [alpha / 2, 1 - alpha / 2], axis=0)
+    return np.clip(2 * theta - qh, lo_clip, hi_clip), np.clip(2 * theta - ql, lo_clip, hi_clip)
 
 
 def hhmm(t0):
@@ -74,11 +98,13 @@ def preparar_celda(d, dq_cache, mercado, medida, transf, periodo):
     if not sel:
         return out
     epa = any(v in C.EPA_VARS for v in sel.values())
-    nd = C.dummies_relevantes(D, d, epa, len(sel))
+    nd = C.dummies_relevantes(D, d, epa, len(sel), transf)
     out["dummies"] = nd
-    # variacion acumulada observada del periodo: suma de la tasa trimestral real en los trimestres de la muestra
+    # variacion acumulada observada del periodo (J5/R0): suma de la tasa trimestral real en la ventana comun W_P; P5 = 2022T3-2026T1
     dq = dq_cache[(mercado, medida)]
-    out["variacion"] = float(dq.loc[D.index].sum())
+    iw = [t for t in D.index if not (periodo == "P5" and t > VENTANA_P5_FIN)]
+    out["variacion"] = float(dq.loc[iw].sum())
+    out["nW"] = len(iw)
     out["span"] = (D.index[0], D.index[-1])
     return out
 
@@ -278,25 +304,47 @@ def main(argv=None):
                     bel_rows.append(bt)
                 # ---------------- dominancia / Johnson / ortogonalizacion
                 if k >= 2:
-                    s90 = dominancia.shapley_r2(Xr, y, B=B, bloque=BLOQUE, seed=SEED, alpha=0.10)
-                    s68 = dominancia.shapley_r2(Xr, y, B=B, bloque=BLOQUE, seed=SEED, alpha=0.32)
-                    r2 = s90.attrs["r2"]
+                    s90 = dominancia.shapley_r2(Xr, y)
+                    phi, r2, dr = boot_phi(Xr, y, B, BLOQUE, SEED)
                     var = cel["variacion"]
                     metodo = "dominancia" if transf == "interanual" else "dominancia_trimestral"
-                    for fam in sel:
-                        sh = float(s90.loc[fam, "share"])
-                        lo90, hi90 = sorted((s90.loc[fam, "share_lo"] * var, s90.loc[fam, "share_hi"] * var))
-                        lo68, hi68 = sorted((s68.loc[fam, "share_lo"] * var, s68.loc[fam, "share_hi"] * var))
+                    prin = "si" if transf == "interanual" else "no"
+                    var_lab = f"{transf}_ipc_{med}"
+                    escala = cel["nW"] / 4.0 if transf == "interanual" else float(cel["nW"])
+                    b68 = banda_basica(phi, dr, 0.32, 0.0, 1.0)
+                    b90 = banda_basica(phi, dr, 0.10, 0.0, 1.0)
+                    r2d = dr.sum(1)
+                    rb68 = banda_basica(np.array([1 - r2]), (1 - r2d)[:, None], 0.32)
+                    rb90 = banda_basica(np.array([1 - r2]), (1 - r2d)[:, None], 0.10)
+                    for j, fam in enumerate(sel):
+                        v_ = sel[fam]
+                        ew_b = ew["beta"][1 + j]
+                        dx = float(D[v_].mean()) - (float(cel["Xall"][v_].mean()) if C.POR_CLAVE[v_].tipo == "nivel" else 0.0)
+                        parc = float(ew_b * dx * escala)
+                        lo68, hi68 = sorted((b68[0][j] * var, b68[1][j] * var))
+                        lo90, hi90 = sorted((b90[0][j] * var, b90[1][j] * var))
                         attr_rows.append({"metodo": metodo, "mercado": merc, "ambito": "nacional", "periodo": per, "factor": fam,
-                                          "contribucion_pp": sh * var, "pct_total": 100 * sh, "b68_lo": lo68, "b68_hi": hi68,
+                                          "contribucion_pp": phi[j] * var, "pct_total": 100 * phi[j], "b68_lo": lo68, "b68_hi": hi68,
                                           "b90_lo": lo90, "b90_hi": hi90, "capa": "C4",
-                                          "notas": (f"{ASOC}; contribucion_pp = cuota del R2 x variacion acumulada ({var:.1f} pp log x100, suma de la tasa "
-                                                    f"trimestral real en los trimestres de la muestra); R2={r2:.3f}; variable={sel[fam]}; bandas: bootstrap por "
-                                                    f"bloques (B={B}, bloque {BLOQUE}) de la cuota; {transf}; {nota_base}")})
+                                          "notas": (f"{ASOC}; contribucion_pp = cuota LMG x R2 x variacion acumulada ({var:.1f} pp log x100, suma de la tasa "
+                                                    f"trimestral real en la ventana comun R0: {cel['nW']} trimestres); R2={r2:.3f}; variable={v_}; bandas: bootstrap "
+                                                    f"por bloques (B={B}, bloque {BLOQUE}) «basico» centrado (2*est - q) del LMG absoluto; {transf}; {nota_base}"),
+                                          "cuota_lmg": float(s90.loc[fam, "share"]), "r2": r2, "delta_y_pp": var,
+                                          "signo_parcial": int(np.sign(parc)), "contrib_parcial_pp": parc,
+                                          "orientacion": ORIENTACION.get(v_, 1), "variante": var_lab, "principal": prin})
+                    attr_rows.append({"metodo": metodo, "mercado": merc, "ambito": "nacional", "periodo": per, "factor": "residuo",
+                                      "contribucion_pp": (1 - r2) * var, "pct_total": 100 * (1 - r2),
+                                      "b68_lo": min(rb68[0][0] * var, rb68[1][0] * var), "b68_hi": max(rb68[0][0] * var, rb68[1][0] * var),
+                                      "b90_lo": min(rb90[0][0] * var, rb90[1][0] * var), "b90_hi": max(rb90[0][0] * var, rb90[1][0] * var), "capa": "C4",
+                                      "notas": f"{ASOC}; residuo = (1 - R2) x variacion; R2={r2:.3f}; nunca entra en el ranking (R1); {transf}; {nota_base}",
+                                      "cuota_lmg": np.nan, "r2": r2, "delta_y_pp": var, "signo_parcial": 0, "contrib_parcial_pp": np.nan,
+                                      "orientacion": 1, "variante": var_lab, "principal": prin})
                     for fam, why in cel["motivos"].items():
                         attr_rows.append({"metodo": metodo, "mercado": merc, "ambito": "nacional", "periodo": per, "factor": fam,
                                           "contribucion_pp": np.nan, "pct_total": np.nan, "b68_lo": np.nan, "b68_hi": np.nan, "b90_lo": np.nan,
-                                          "b90_hi": np.nan, "capa": "C4", "notas": f"EXCLUIDA: {why}; {transf}"})
+                                          "b90_hi": np.nan, "capa": "C4", "notas": f"EXCLUIDA: {why}; {transf}",
+                                          "cuota_lmg": np.nan, "r2": np.nan, "delta_y_pp": np.nan, "signo_parcial": 0, "contrib_parcial_pp": np.nan,
+                                          "orientacion": 1, "variante": var_lab, "principal": prin})
                     jw = dominancia.johnson_rw(Xr, y)
                     for fam in sel:
                         joh_rows.append({"mercado": merc, "transformacion": transf, "periodo": per, "factor": fam, "variable": sel[fam],
@@ -445,10 +493,8 @@ def main(argv=None):
     # --------------------------------------------------------------- ajustes BH y escritura
     coef = pd.DataFrame(coef_rows)
     if len(coef):
-        foc = coef["factor"].notna()
-        coef["p_ajustado"] = np.nan
-        coef.loc[foc, "p_ajustado"] = C.bh(coef.loc[foc, "p"].values)
-        coef["metodo_ajuste"] = np.where(foc, "BH", "")
+        coef["p_ajustado"] = C.bh(coef["p"].values)   # J21: BH sobre TODOS los p (constante y ficticias incluidas)
+        coef["metodo_ajuste"] = np.where(coef["p"].notna(), "BH", "")
         # cruce con el multiverso M7 si existe (por mercado, periodo, factor)
         rm = RAIZ / "output" / "v8" / "M7" / "resumen_multiverso.csv"
         if rm.exists() and not a.rapido:
@@ -468,7 +514,11 @@ def main(argv=None):
         coef = coef[ORD]
     coef.to_csv(out / "coeficientes.csv", index=False)
     atr = pd.DataFrame(attr_rows)
+    extras = ["cuota_lmg", "r2", "delta_y_pp", "signo_parcial", "contrib_parcial_pp", "orientacion"]
+    atr = atr[[c for c in atr.columns if c not in extras + ["variante", "principal"]] + extras + ["variante", "principal"]]
     atr.to_csv(out / "atribucion.csv", index=False)
+    voto = voto_dominancia(atr)
+    voto.to_csv(out / "voto_dominancia.csv", index=False)
     pd.DataFrame(vif_rows).to_csv(out / "colinealidad.csv", index=False)
     (pd.concat(bel_rows) if bel_rows else pd.DataFrame()).to_csv(out / "belsley.csv", index=False)
     pd.DataFrame(joh_rows).to_csv(out / "pesos_johnson.csv", index=False)
@@ -481,12 +531,16 @@ def main(argv=None):
             m = (gr["sentido"] == dire) & gr["p"].notna()
             gr.loc[m, "p_bh"] = C.bh(gr.loc[m, "p"].values)
         gr["capa"] = "C4"
+        gr["p_ajustado"] = gr["p_bh"]
+        gr["metodo_ajuste"] = np.where(gr["p"].notna(), "BH", "")
     gr.to_csv(out / "granger.csv", index=False)
     lpd = pd.DataFrame(lp_rows)
     if len(lpd):
         lpd["p_bh"] = np.nan
         m = lpd["p"].notna()
         lpd.loc[m, "p_bh"] = C.bh(lpd.loc[m, "p"].values)
+        lpd["p_ajustado"] = lpd["p_bh"]
+        lpd["metodo_ajuste"] = np.where(lpd["p"].notna(), "BH", "")
     lpd.to_csv(out / "lp_agregado.csv", index=False)
     pd.DataFrame(bma_rows).to_csv(out / "bma.csv", index=False)
     pd.DataFrame(pen_rows).to_csv(out / "penalizados.csv", index=False)
@@ -503,7 +557,7 @@ def main(argv=None):
 def escribir_resultado(out, a, atr, coef, oos, gr, lpd, bma, vif, ort, mue, seg, nreg):
     est = {}
     if len(atr):
-        base = atr[(atr["metodo"] == "dominancia") & atr["pct_total"].notna()]
+        base = atr[(atr["metodo"] == "dominancia") & atr["pct_total"].notna() & (atr["factor"] != "residuo")]
         for (merc, per), g in base.groupby(["mercado", "periodo"]):
             g = g.sort_values("pct_total", ascending=False)
             top = g.iloc[0]
@@ -513,6 +567,11 @@ def escribir_resultado(out, a, atr, coef, oos, gr, lpd, bma, vif, ort, mue, seg,
                                     "segundo": (seg2["factor"] if seg2 is not None else None),
                                     "cuota_segundo_pct": (round(float(seg2["pct_total"]), 1) if seg2 is not None else None),
                                     "bandas_se_solapan_con_el_segundo": bool(seg2 is not None and top["b90_lo"] <= seg2["b90_hi"] and seg2["b90_lo"] <= top["b90_hi"])}
+    fb = atr[atr["pct_total"].notna() & (atr["factor"] != "residuo")]
+    fuera68 = int(((fb["contribucion_pp"] < fb["b68_lo"] - 1e-9) | (fb["contribucion_pp"] > fb["b68_hi"] + 1e-9)).sum())
+    fuera90 = int(((fb["contribucion_pp"] < fb["b90_lo"] - 1e-9) | (fb["contribucion_pp"] > fb["b90_hi"] + 1e-9)).sum())
+    bandas_info = {"n_puntos": int(len(fb)), "fuera_b68": fuera68, "fuera_b90": fuera90,
+                                 "metodo": "bootstrap por bloques «basico» centrado (2*est - q) del LMG absoluto (J16); antes percentil: 22 de 128 fuera de b68"}
     fm = {"modelo": None, "rmse": None, "dm_vs_ar4": None}
     if len(oos) and "rmse" in oos:
         o = oos[(oos["mercado"] == "compra") & (oos["modelo"].isin(["ols_factores", "ridge", "enet", "ecm_v1"]))]
@@ -528,26 +587,31 @@ def escribir_resultado(out, a, atr, coef, oos, gr, lpd, bma, vif, ort, mue, seg,
          "metodo": "VIF y Belsley; dominancia LMG/Shapley del R2 con bootstrap por bloques (B=%d, bloque 4); Johnson; ortogonalizacion en todos los ordenes; "
                    "PC1; Granger y LP-OLS EWC (C4); BMA (BIC); ridge/enet con TimeSeriesSplit y embargo; OLS EWC por periodo" % (49 if a.rapido else B_BOOT),
          "estimacion": est,
-         "ic95": "bandas b68/b90 de la cuota del R2 por bootstrap por bloques en atribucion.csv; IC95 de OLS (EWC, t(q)) en coeficientes.csv",
+         "ic95": "bandas b68/b90 de la contribucion (cuota LMG x R2 x variacion) por bootstrap por bloques «basico» en atribucion.csv; IC95 de OLS (EWC, t(q)) en coeficientes.csv",
          "p_ajustado": {"metodo": "BH (q=0,10)", "coeficientes_BH_min": float(coef["p_ajustado"].min()) if len(coef) and coef["p_ajustado"].notna().any() else None,
                         "granger_BH_min": float(gr["p_bh"].min()) if len(gr) and "p_bh" in gr and gr["p_bh"].notna().any() else None,
                         "lp_BH_min": float(lpd["p_bh"].min()) if len(lpd) and "p_bh" in lpd and lpd["p_bh"].notna().any() else None},
          "nivel_evidencia": "EXPLORATORIO (asociacion; C4). Sin lenguaje causal: la dominancia descompone el R2, Granger es predictivo y las LP-OLS no estan identificadas",
          "diagnosticos": {"vif_max": float(vif["vif"].max()) if len(vif) else None, "n_celdas": int(len(mue)),
                           "n_celdas_con_dominancia": int(ort[["mercado", "transformacion", "periodo"]].drop_duplicates().shape[0]) if len(ort) else 0,
-                          "p4_impreciso": "P4 (9 trimestres): solo 3 familias por GL; declarado impreciso", "filas_registro": nreg},
+                          "bandas_dominancia": bandas_info, "p4_impreciso": "P4 (9 trimestres): solo 3 familias por GL; declarado impreciso", "filas_registro": nreg},
          "fuera_muestra": fm,
-         "notas": ["Las cuotas de dominancia describen la division del R2 entre variables colineales; no son efectos.",
+         "notas": ["contribucion_pp = cuota LMG x R2 x variacion acumulada (pp log x100, ventana comun R0; P5 = 2022T3-2026T1); fila `residuo` = (1-R2) x variacion; "
+                   "signo_parcial = signo de beta_f x dx_f (tasas: dx = media de la tasa del periodo; tipo real en nivel: media del periodo menos media historica), "
+                   "contrib_parcial_pp = beta_f x dx_f x (nW/4 interanual; nW trimestral); voto de la dominancia en voto_dominancia.csv (R2).",
+                   "Ficticia EPA 2021 = impulso (4 trimestres 2021T1-T4 en tasas interanuales; 2021T1 en trimestrales), J1/J17.",
+                   "Las cuotas de dominancia describen la division del R2 entre variables colineales; no son efectos.",
                    "Granger y LP-OLS (EWC) son C4; las bandas de LP-OLS tienen cobertura 0,78-0,84 en F3.",
                    "Interpoladas excluidas de la muestra principal; familias sin datos suficientes excluidas y anotadas en muestras.csv.",
                    "El ECM v1 se reconstruye de forma aproximada (ocupados, costes, renta, dy_{t-1}); no es el script original."],
-         "tiempo_s": round(seg, 1)}
+         }
+    (out / "tiempos.json").write_text(json.dumps({"segundos": round(seg, 1)}))
     (out / "resultado.json").write_text(json.dumps(j, ensure_ascii=False, indent=2, default=str))
     L = ["# M6 - colinealidad y peso relativo (capa C4: asociacion)", "",
          "Ecuacion del crecimiento nacional (log x 100) con una variable por familia; precio real de compra (valor tasado) y alquiler real (IPC alquiler). "
          "La dominancia (LMG/Shapley) reparte el R2 y NO es una atribucion causal.", "",
          "## Mayor cuota de R2 por mercado y periodo (interanual, bandas b90 de la contribucion en pp)", "",
-         "| mercado | periodo | factor | cuota R2 % | b90 contribucion pp | segundo (cuota %) | bandas solapadas |", "|---|---|---|---|---|---|---|"]
+         "| mercado | periodo | factor | cuota LMG x R2 % | b90 contribucion pp | segundo (cuota %) | bandas solapadas |", "|---|---|---|---|---|---|---|"]
     for k_, v in est.items():
         m_, p_ = k_.split("|")
         L.append(f"| {m_} | {p_} | {v['factor_mayor_cuota']} | {v['cuota_pct']} | {v['b90_contribucion_pp'][0]} a {v['b90_contribucion_pp'][1]} | "
@@ -558,6 +622,31 @@ def escribir_resultado(out, a, atr, coef, oos, gr, lpd, bma, vif, ort, mue, seg,
           f"Fuera de muestra (compra, trimestral, completo; bloques con embargo): {json.dumps(fm, ensure_ascii=False, default=str)}.",
           "Reglas: sin lenguaje causal; interpoladas fuera de la muestra principal; familias sin cobertura excluidas (muestras.csv)."]
     (out / "resumen.md").write_text("\n".join(L) + "\n")
+
+
+def voto_dominancia(atr):
+    """R2 (revision F4): vota el factor de mayor cuota LMG cuya contribucion parcial tenga el signo de la variacion de P_Y; si ninguno, abstiene.
+    Solo la dominancia interanual principal; P1-P5. Tipos orientados x-1: el signo del producto beta*dx no depende de la orientacion."""
+    filas = []
+    base = atr[(atr["metodo"] == "dominancia") & (atr["factor"] != "residuo") & atr["pct_total"].notna()]
+    for merc in ("compra", "alquiler"):
+        for per in ("P1", "P2", "P3", "P4", "P5"):
+            g = base[(base["mercado"] == merc) & (base["periodo"] == per)].sort_values("cuota_lmg", ascending=False)
+            if g.empty:
+                filas.append({"mercado": merc, "periodo": per, "factor_votado": "abstiene", "cuota_lmg": np.nan, "signo_delta_y": np.nan,
+                              "delta_y_pp": np.nan, "r2": np.nan, "n_factores": 0, "ranking_cuota": "", "impreciso": per == "P4" or (merc == "alquiler" and per == "P1"),
+                              "nota": "sin datos o sin dominancia en la celda"})
+                continue
+            sy = int(np.sign(g["delta_y_pp"].iloc[0]))
+            ok = g[g["signo_parcial"] == sy]
+            top = ok.iloc[0] if len(ok) else None
+            filas.append({"mercado": merc, "periodo": per, "factor_votado": (top["factor"] if top is not None else "abstiene"),
+                          "cuota_lmg": (float(top["cuota_lmg"]) if top is not None else np.nan), "signo_delta_y": sy,
+                          "delta_y_pp": float(g["delta_y_pp"].iloc[0]), "r2": float(g["r2"].iloc[0]), "n_factores": int(len(g)),
+                          "ranking_cuota": " > ".join(f"{r.factor}({r.cuota_lmg:.2f};{'+' if r.signo_parcial > 0 else '-'})" for r in g.itertuples()),
+                          "impreciso": per == "P4", "nota": ("el de mayor cuota tiene signo contrario: vota el siguiente" if top is not None and top["factor"] != g["factor"].iloc[0]
+                                                            else ("ningun factor con el signo de delta_y" if top is None else ""))})
+    return pd.DataFrame(filas)
 
 
 def resultado_num(x):

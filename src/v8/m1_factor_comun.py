@@ -42,7 +42,8 @@ COLS_COEF = ["modelo_id", "modulo", "familia_modelo", "mercado", "ambito", "peri
              "vif_max", "f1_etapa", "ar_lo", "ar_hi", "capa", "n_multiverso", "pct_mismo_signo", "pct_sig_bh", "cumple_regla_m0",
              "cumple_multiverso", "destacado", "motivo_destacado", "script"]
 COLS_ATR = ["metodo", "mercado", "ambito", "periodo", "factor", "contribucion_pp", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi",
-            "capa", "notas"]
+            "capa", "notas", "variante", "principal"]
+ROTULO_5P = "aproximacion de 5 paises, media simple (DE, FR, IT, NL, PT); NO es el agregado oficial de la zona euro sin Espana"
 AVISO = ("C4: asociacion estadistica; el factor es un resumen de comovimiento, sin interpretacion causal ni estructural. Muestras por "
          "periodo cortas (P4 = 9 trimestres): con N = 17 y T pequeno la cuota del 1.er componente esta sesgada al alza incluso sin factor comun real.")
 
@@ -230,6 +231,14 @@ def main(rapido=False, salida=None):
                 reg.log("M1_cuota", f"M1_dfm_{sid}_{pe}_k{k}", f"DFM-ML k={k} cuota {sid}", ix[0], ix[-1], T, np.nan, np.nan, np.nan,
                         coef_interes=cu, notas="punto, sin bootstrap; factor ajustado a la muestra completa")
     cuota = pd.DataFrame(filas_cuota)
+    cuota["p_ajustado"] = np.nan
+    cuota["metodo_ajuste"] = ""
+    mk = cuota["p_unilateral_gt50"].notna()
+    cuota.loc[mk, "p_ajustado"] = multipletests(cuota.loc[mk, "p_unilateral_gt50"], method="fdr_bh")[1]
+    cuota.loc[mk, "metodo_ajuste"] = "BH"
+    mk = cuota["p_vs_azar"].notna()
+    cuota["p_vs_azar_ajustado"] = np.nan
+    cuota.loc[mk, "p_vs_azar_ajustado"] = multipletests(cuota.loc[mk, "p_vs_azar"], method="fdr_bh")[1]
     cuota.to_csv(out / "cuota_varianza.csv", index=False)
 
     # H8-8: IUT sobre P1-P5, compra_tasado, PCA k=1
@@ -255,7 +264,7 @@ def main(rapido=False, salida=None):
     r0, bs = corr_boot(Z, g_ea.loc[comun].values, L8, B, rng)
     variantes["principal_ea19_nominal"] = (r0, bs, len(comun), "HPI EA19 nominal interanual (Eurostat), incluye ES")
     for nom, gg, desc in [("ea19_real", g_ea_real, "HPI EA19 deflactado por IPC espanol (aprox.)"),
-                          ("ex_es_proxy", g_exes, "media simple DE, FR, IT, NL, PT (aprox. EA sin ES; NO es el agregado oficial)")]:
+                          ("ex_es_proxy", g_exes, ROTULO_5P)]:
         ok = comun.intersection(gg.dropna().index)
         r1, b1 = corr_boot(Xc.loc[ok].values, gg.loc[ok].values, L8, B, rng)
         variantes[nom] = (r1, b1, len(ok), desc)
@@ -275,21 +284,36 @@ def main(rapido=False, salida=None):
     ok = Xa.index.intersection(g_ea.dropna().index)
     r4, b4 = corr_boot(Xa.loc[ok].values, g_ea.loc[ok].values, L8, B, rng)
     variantes["alquiler_ea19"] = (r4, b4, len(ok), "factor del alquiler real (2008T1+) con HPI EA19 (exploratorio: otro mercado)")
+    rng12 = np.random.default_rng(SEED + 12)
+    L12 = 12
+    r5, b5 = corr_boot(Z, g_ea.loc[comun].values, L12, B, rng12)
+    variantes["principal_ea19_nominal_L12"] = (r5, b5, len(comun), "sensibilidad J16: igual que la principal con bloque L=12 (interanuales muy persistentes)")
+    ok = comun.intersection(g_exes.dropna().index)
+    r6, b6 = corr_boot(Xc.loc[ok].values, g_exes.loc[ok].values, L12, B, rng12)
+    variantes["ex_es_proxy_L12"] = (r6, b6, len(ok), "sensibilidad J16 con L=12: " + ROTULO_5P)
     filas_h9 = []
     for nm, (r_, b_, n_, desc) in variantes.items():
         bd = bandas(b_)
         pv = p_unilat_mayor(b_, 0.0)
         filas_h9.append(dict(variante=nm, correlacion=r_, ic95_lo=bd["lo95"], ic95_hi=bd["hi95"], b68_lo=bd["b68_lo"], b68_hi=bd["b68_hi"],
-                             p_unilateral=pv, n=n_, bloque=L8, B=len(b_), descripcion=desc))
+                             p_unilateral=pv, n=n_, bloque=(L12 if nm.endswith("_L12") else L8), B=len(b_), descripcion=desc))
         reg.log("M1_corr", f"M1_h89_{nm}", f"corr(PC1, g_EA) {nm}", comun[0], comun[-1], n_, np.nan, np.nan, np.nan, coef_interes=r_,
                 p_interes=pv, notas=desc)
     h9 = pd.DataFrame(filas_h9)
+    # p ajustado: la principal entra en la familia Holm (se rellena mas abajo); el resto es exploratorio con BH
+    esp = h9["variante"] != "principal_ea19_nominal"
+    h9["p_ajustado"] = np.nan
+    h9["metodo_ajuste"] = ""
+    h9.loc[esp, "p_ajustado"] = multipletests(h9.loc[esp, "p_unilateral"], method="fdr_bh")[1]
+    h9.loc[esp, "metodo_ajuste"] = "BH"
     p89 = float(h9.loc[h9.variante == "principal_ea19_nominal", "p_unilateral"].iloc[0])
     r89 = float(h9.loc[h9.variante == "principal_ea19_nominal", "correlacion"].iloc[0])
 
     # Holm {H8-8, H8-9}
     ph = [p88 if np.isfinite(p88) else 1.0, p89]
     holm = multipletests(ph, method="holm")[1]
+    h9.loc[h9.variante == "principal_ea19_nominal", "p_ajustado"] = holm[1]
+    h9.loc[h9.variante == "principal_ea19_nominal", "metodo_ajuste"] = "Holm"
 
     # correlaciones por periodo (exploratorio, BH)
     rng = np.random.default_rng(SEED + 3)
@@ -312,6 +336,8 @@ def main(rapido=False, salida=None):
     if len(pp):
         pp["p_bh"] = multipletests(pp["p_unilateral"], method="fdr_bh")[1]
         pp["sig_bh_q10"] = pp["p_bh"] < 0.10
+        pp["p_ajustado"] = pp["p_bh"]
+        pp["metodo_ajuste"] = "BH"
     pp.to_csv(out / "correlaciones_periodo.csv", index=False)
     h9.to_csv(out / "correlaciones_h89.csv", index=False)
 
@@ -333,7 +359,7 @@ def main(rapido=False, salida=None):
     cargas = dfm.pca_factores(Xc.values, 1)["cargas"][:, 0]
     if cargas.mean() < 0:
         cargas = -cargas
-    pd.DataFrame({"codigo_ine_ccaa": Xc.columns, "carga_pca": cargas}).to_csv(out / "cargas_pca.csv", index=False)
+    pd.DataFrame({"codigo_ine_ccaa": [f"{int(c):02d}" for c in Xc.columns], "carga_pca": cargas}).to_csv(out / "cargas_pca.csv", index=False)
 
     # --- 3. atribucion: parte del crecimiento nacional asociada al crecimiento del HPI EA19 (regresion con retardos, C4)
     nac = pd.read_csv(NACIONAL).set_index("trimestre")
@@ -376,13 +402,15 @@ def main(rapido=False, salida=None):
         pct = c0 / tot if abs(tot) > 1e-9 else np.nan
         bd, bdr = bandas(bc), bandas(bres)
         atr.append(dict(metodo="factor_comun", mercado="compra", ambito="nacional", periodo=pe, factor="factor_europeo", contribucion_pp=c0,
-                        pct_total=pct, b68_lo=bd["b68_lo"], b68_hi=bd["b68_hi"], b90_lo=bd["b90_lo"], b90_hi=bd["b90_hi"], capa="C4",
+                        pct_total=100 * pct if np.isfinite(pct) else np.nan, b68_lo=bd["b68_lo"], b68_hi=bd["b68_hi"], b90_lo=bd["b90_lo"], b90_hi=bd["b90_hi"], capa="C4",
                         notas=f"regresion crec. trimestral del valor tasado real nacional sobre crec. HPI EA19 real (retardos 0-{NLAG}); "
                               f"n={n}; bootstrap por bloques B={B_att}; suma de variaciones trimestrales del periodo; asociacion, no causal; "
-                              "EA19 incluye ES; pct_total inestable si la variacion total es ~0"))
+                              "EA19 incluye ES; pct_total (en %) inestable si la variacion total es ~0",
+                        variante="ols_ea19_real_lag0-1", principal="si"))
         atr.append(dict(metodo="factor_comun", mercado="compra", ambito="nacional", periodo=pe, factor="residuo", contribucion_pp=tot - c0,
-                        pct_total=(tot - c0) / tot if abs(tot) > 1e-9 else np.nan, b68_lo=bdr["b68_lo"], b68_hi=bdr["b68_hi"],
-                        b90_lo=bdr["b90_lo"], b90_hi=bdr["b90_hi"], capa="C4", notas=f"resto (constante + residuos); total periodo {tot:.2f} pp"))
+                        pct_total=100 * (tot - c0) / tot if abs(tot) > 1e-9 else np.nan, b68_lo=bdr["b68_lo"], b68_hi=bdr["b68_hi"],
+                        b90_lo=bdr["b90_lo"], b90_hi=bdr["b90_hi"], capa="C4", notas=f"resto (constante + residuos); total periodo {tot:.2f} pp",
+                        variante="ols_ea19_real_lag0-1", principal="si"))
         for j, nm in enumerate(["const"] + [f"dEA_l{k}" for k in range(NLAG + 1)]):
             tt = be[j] / ee[j]
             from scipy import stats as st
@@ -397,7 +425,10 @@ def main(rapido=False, salida=None):
                 notas="contribucion acumulada (pp) de EA19; C4")
     atribucion = pd.DataFrame(atr, columns=COLS_ATR)
     atribucion.to_csv(out / "atribucion.csv", index=False)
-    pd.DataFrame(coefs, columns=COLS_COEF).to_csv(out / "coeficientes.csv", index=False)
+    cdf = pd.DataFrame(coefs, columns=COLS_COEF)
+    cdf["p_ajustado"] = multipletests(cdf["p"].astype(float), method="fdr_bh")[1]
+    cdf["metodo_ajuste"] = "BH"
+    cdf.to_csv(out / "coeficientes.csv", index=False)
 
     # --- hipotesis
     # robustez: sensibilidades coinciden?
@@ -409,7 +440,7 @@ def main(rapido=False, salida=None):
              nota=f"IUT: p = max de p(P1..P5), PCA 1 factor, bootstrap bloques; DFM-ML coincide (>50 % en todos): {cuota_sens_ok}. {AVISO}"),
         dict(id="H8-9", hipotesis="El factor comun espanol covaria positivamente con el crecimiento del HPI de la zona euro",
              estimacion=round(r89, 4), p=p89, p_holm=holm[1], metodo_ajuste="Holm", rechaza_H0_alfa05=bool(holm[1] < 0.05), capa="C4",
-             nota=f"principal EA19 nominal (incluye ES); sensibilidades EA19 real y proxy sin ES significativas: {sens_ok}. EA sin ES oficial no construible (sin pesos). {AVISO}"),
+             nota=f"principal EA19 nominal (incluye ES); sensibilidades EA19 real y aproximacion de 5 paises (media simple) significativas: {sens_ok}. EA sin ES oficial no construible (sin pesos). {AVISO}"),
     ])
     hip.to_csv(out / "hipotesis_m1.csv", index=False)
     for _, r in hip.iterrows():
@@ -433,7 +464,7 @@ def main(rapido=False, salida=None):
         diagnosticos={"cuota_azar": "ver cuota_varianza.csv (cuota_azar_media): con N=17 y T=9-48 la cuota sin factor real es alta", "bloque": "L=8 (H8-9), 2-4 (cuotas)",
                       "B": B, "rapido": rapido, "avisos": aviso_datos, "dfm_converge": {f"{k[0]}_k{k[1]}": (None if v is None else v["converge"]) for k, v in dfm_cache.items()}},
         fuera_muestra={"modelo": "no aplica", "rmse": None, "dm_vs_ar4": None},
-        notas=AVISO + " Zona euro sin Espana oficial no construible; proxy DE/FR/IT/NL/PT. Fuera de muestra: M1 no es un modelo predictivo (sin comparacion con AR(4)/ECM v1).",
+        notas=AVISO + " Zona euro sin Espana oficial no construible; aproximacion de 5 paises, media simple (DE/FR/IT/NL/PT). Fuera de muestra: M1 no es un modelo predictivo (sin comparacion con AR(4)/ECM v1).",
     )
     (out / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float))
     reg.flush()
@@ -443,7 +474,8 @@ def main(rapido=False, salida=None):
           f"**p Holm = {holm[0]:.4f}**. DFM-ML coincide en >50 %: {cuota_sens_ok}. Con N=17 y T pequeno la cuota esta sesgada al alza; "
           "ver `cuota_azar_media` y `p_vs_azar` en `cuota_varianza.csv`.", "",
           f"**H8-9** (corr. factor comun - HPI EA19 interanual, 2006T1+): r = {r89:.3f} (IC95 {h9.iloc[0]['ic95_lo']:.2f} a {h9.iloc[0]['ic95_hi']:.2f}); "
-          f"p = {p89:.4f}; **p Holm = {holm[1]:.4f}**. EA19 incluye Espana (sesgo al alza); proxy sin ES (DE, FR, IT, NL, PT) y EA19 real en `correlaciones_h89.csv`.", "",
+          f"p = {p89:.4f}; **p Holm = {holm[1]:.4f}**. EA19 incluye Espana (sesgo al alza); aproximacion de 5 paises, media simple (DE, FR, IT, NL, PT), EA19 real y sensibilidad con bloque L=12 en `correlaciones_h89.csv` "
+          f"(L=12: r = {r5:.3f}, p = {p_unilat_mayor(b5, 0.0):.4f}; 5 paises L=12: r = {r6:.3f}).", "",
           f"Cuota en ventanas de 40 trimestres: {ev_txt} (`evolucion_ventanas.csv`). Correlaciones por periodo (exploratorio, BH q=0,10): `correlaciones_periodo.csv`.", "",
           "**Parte europea del crecimiento nacional** (`atribucion.csv`, metodo factor_comun, C4, con bandas): " +
           "; ".join(f"{r['periodo']} {r['contribucion_pp']:.1f} pp [{r['b90_lo']:.1f}, {r['b90_hi']:.1f}]" for r in atr if r["factor"] == "factor_europeo") + ".", "",

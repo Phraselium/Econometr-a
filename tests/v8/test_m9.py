@@ -54,3 +54,28 @@ def test_salidas():
     assert len(reg) > 30
     est = pd.read_csv(OUT / "estabilidad_ranking.csv")
     assert (est["B"] >= 30).all()
+
+
+def test_j12_j13_j19_j21_j22():
+    a = pd.read_csv(OUT / "atribucion.csv")
+    assert not a.duplicated(["metodo", "mercado", "ambito", "periodo", "factor", "variante"]).any()
+    assert set(a["principal"]) <= {"si", "no"}
+    t = a[a["metodo"] == "shap_sens_turismo"]
+    # J13: el turismo de compra y el de alquiler ya no son identicos y solo hay periodos con cobertura (P2/P3 fuera)
+    assert not t["periodo"].isin(["P1", "P2", "P3"]).any()
+    c, al = t[t["mercado"] == "compra"], t[t["mercado"] == "alquiler"]
+    assert len(c) and len(al)
+    m = c.merge(al, on=["ambito", "periodo", "factor"], suffixes=("_c", "_a"))
+    assert not np.allclose(m["contribucion_pp_c"], m["contribucion_pp_a"])
+    # J12: el punto cae dentro de la banda del 90 % salvo una fraccion pequena
+    s = a[(a["metodo"] == "shap") & a["b90_lo"].notna()]
+    fuera = ((s["contribucion_pp"] < s["b90_lo"]) | (s["contribucion_pp"] > s["b90_hi"])).mean()
+    assert fuera < 0.15
+    coef = pd.read_csv(OUT / "coeficientes.csv")
+    assert list(coef.columns) == m_cols() and coef["p_ajustado"].notna().all()
+    r = (OUT / "resultado.json").read_text()
+    assert "tiempo_s" not in r and (OUT / "tiempos.json").exists()
+
+
+def m_cols():
+    return m.COLS_COEF

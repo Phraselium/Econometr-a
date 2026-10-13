@@ -7,53 +7,57 @@
  "metodo": "BVAR-GLP (p=2, delta 0 en tasas y 1 en i) + restricciones de signo (h=0-1) y 4 ceros (ARW, pesos propios); DH por periodos; Holm en {H8-1..H8-4}",
  "estimacion": {
   "H8-1": {
-   "contribucion_pp": 0.6670619784365893,
-   "prob_posterior": 0.6838736129018651,
-   "p_unilateral": 0.3161263870981349,
+   "contribucion_pp": 0.07392778986875448,
+   "mediana": 0.03806908162021886,
+   "prob_posterior": 0.5062502702087739,
+   "p_unilateral": 0.4937497297912261,
    "estado": "no respaldada tras Holm (inclina al signo esperado, p_unilateral < 0,5)"
   },
   "H8-2": {
-   "contribucion_pp": -0.41173377181419196,
-   "prob_posterior": 0.543106454100899,
-   "p_unilateral": 0.45689354589910103,
-   "estado": "no respaldada tras Holm (inclina al signo esperado, p_unilateral < 0,5)"
+   "contribucion_pp": -0.46935505165047386,
+   "mediana": 3.3669408163373706,
+   "prob_posterior": 0.29335795963964784,
+   "p_unilateral": 0.7066420403603522,
+   "estado": "no respaldada (la mediana apunta al signo contrario o no distingue)"
   },
   "H8-3": {
-   "contribucion_pp": 4.077824246861229,
-   "prob_posterior": 0.7278161521004042,
-   "p_unilateral": 0.2721838478995958,
+   "contribucion_pp": 7.7221817449224055,
+   "mediana": 5.2226430976790414,
+   "prob_posterior": 0.7207319834488022,
+   "p_unilateral": 0.2792680165511978,
    "estado": "no respaldada tras Holm (inclina al signo esperado, p_unilateral < 0,5)"
   },
   "H8-4": {
-   "contribucion_pp": -14.326988443166924,
-   "prob_posterior": 0.8930845507792711,
-   "p_unilateral": 0.10691544922072893,
+   "contribucion_pp": -19.23180358347216,
+   "mediana": -16.706838625220442,
+   "prob_posterior": 0.9143415841189366,
+   "p_unilateral": 0.08565841588106338,
    "estado": "no respaldada tras Holm (inclina al signo esperado, p_unilateral < 0,5)"
   }
  },
  "ic95": {
   "H8-1": [
-   -4.170755164076078,
-   5.7903211281725495
+   -4.506923298549442,
+   4.732835840538758
   ],
   "H8-2": [
-   -16.90580119255924,
-   13.480667742041122
+   -15.426699537794885,
+   27.438709650915467
   ],
   "H8-3": [
-   -14.689258115502188,
-   37.82477686548658
+   -22.80871132055906,
+   40.0109522651245
   ],
   "H8-4": [
-   -49.24750190917683,
-   7.438606452454813
+   -57.256674957527814,
+   9.878001850365925
   ]
  },
  "p_ajustado": {
-  "H8-1": 0.8165515436987875,
-  "H8-2": 0.8165515436987875,
-  "H8-3": 0.8165515436987875,
-  "H8-4": 0.4276617968829157
+  "H8-1": 0.9874994595824522,
+  "H8-2": 0.9874994595824522,
+  "H8-3": 0.8378040496535935,
+  "H8-4": 0.3426336635242535
  },
  "nivel_evidencia": "C3s: identificacion por supuestos; sin lenguaje causal incondicional (magnitudes posiblemente atenuadas, Y6)",
  "diagnosticos": {
@@ -64,15 +68,15 @@
    "muestra_ini": "2004Q2",
    "muestra_fin": "2026Q1",
    "p": 2,
-   "lam": 0.3711783723425523,
-   "logml": -1143.0906649539963,
+   "lam": 0.37411933424925375,
+   "logml": -1144.1207254220956,
    "D_sorteos_theta": 300,
    "M_rotaciones": 30000,
    "rotaciones_probadas": 9000000,
-   "n_aceptadas": 0,
-   "ess": 0.0,
-   "acept_por_rotacion": 0.0,
-   "frac_theta_acept": 0.0,
+   "n_aceptadas": 1,
+   "ess": 1.0,
+   "acept_por_rotacion": 1.1111111111111111e-07,
+   "frac_theta_acept": 0.0033333333333333335,
    "estado": "INVIABLE",
    "nota": "identificacion pre-registrada inviable con datos reales: ninguna rotacion cumple las 28 restricciones de signo (14 celdas x h=0-1) y los 4 ceros"
   },
@@ -83,22 +87,23 @@
     "muestra_ini": "2004Q2",
     "muestra_fin": "2026Q1",
     "p": 2,
-    "lam": 0.3711783723425523,
-    "logml": -1143.0906649539963,
-    "D_sorteos_theta": 738,
+    "lam": 0.37411933424925375,
+    "logml": -1144.1207254220956,
+    "D_sorteos_theta": 720,
     "intentos": 1,
-    "ess_piloto": 264.3117364645718,
+    "ess_piloto": 270.959995142241,
     "M_rotaciones": 3000,
-    "n_aceptadas": 730,
-    "ess": 671.1379838877684,
-    "acept_por_rotacion": 0.0003297199638663053,
-    "frac_theta_acept": 0.6178861788617886,
+    "n_aceptadas": 708,
+    "ess": 657.3701353605808,
+    "acept_por_rotacion": 0.0003277777777777778,
+    "frac_theta_acept": 0.6111111111111112,
     "objetivo_ess": 500,
     "cumple_ess": true,
-    "max_abs_cero": 6.329672981571145e-17,
+    "max_abs_cero": 4.053138474547507e-17,
     "frac_signos_cumplidos": 1.0,
-    "hd_error_max": 8.242295734817162e-13,
-    "cierre_hd_max": 2.5224267119483557e-12
+    "hd_error_max": 3.723243935382925e-12,
+    "cierre_hd_max": 6.401990049198503e-12,
+    "cierre_medias_max": 1.4210854715202004e-14
    },
    "V1": {
     "variante": "V1",
@@ -106,22 +111,23 @@
     "muestra_ini": "2004Q2",
     "muestra_fin": "2026Q1",
     "p": 2,
-    "lam": 0.3784020410692516,
-    "logml": -1151.2046382794401,
-    "D_sorteos_theta": 2647,
+    "lam": 0.3846729526929058,
+    "logml": -1156.7662906003206,
+    "D_sorteos_theta": 2502,
     "intentos": 1,
-    "ess_piloto": 73.66926372810636,
+    "ess_piloto": 77.94560215741853,
     "M_rotaciones": 3000,
-    "n_aceptadas": 736,
-    "ess": 643.386392339699,
-    "acept_por_rotacion": 9.26835411157285e-05,
-    "frac_theta_acept": 0.2376275028333963,
+    "n_aceptadas": 728,
+    "ess": 629.1057894131065,
+    "acept_por_rotacion": 9.698907540634159e-05,
+    "frac_theta_acept": 0.2509992006394884,
     "objetivo_ess": 500,
     "cumple_ess": true,
-    "max_abs_cero": 8.301369891463092e-17,
+    "max_abs_cero": 1.5640839699986717e-16,
     "frac_signos_cumplidos": 1.0,
-    "hd_error_max": 2.1884716261411086e-12,
-    "cierre_hd_max": 5.9330318435968366e-12
+    "hd_error_max": 5.093170329928398e-11,
+    "cierre_hd_max": 1.2860112974522053e-10,
+    "cierre_medias_max": 2.6290081223123707e-13
    },
    "V2": {
     "variante": "V2",
@@ -129,22 +135,23 @@
     "muestra_ini": "2005Q3",
     "muestra_fin": "2026Q1",
     "p": 2,
-    "lam": 0.35850509933450975,
-    "logml": -1187.5160602255537,
-    "D_sorteos_theta": 817,
+    "lam": 0.3612325767227083,
+    "logml": -1195.229060957076,
+    "D_sorteos_theta": 707,
     "intentos": 1,
-    "ess_piloto": 238.72724612268996,
+    "ess_piloto": 275.96574136102964,
     "M_rotaciones": 3000,
-    "n_aceptadas": 924,
-    "ess": 837.6402727822339,
-    "acept_por_rotacion": 0.0003769889840881273,
-    "frac_theta_acept": 0.6756425948592412,
+    "n_aceptadas": 766,
+    "ess": 701.9125583902888,
+    "acept_por_rotacion": 0.00036115040075436114,
+    "frac_theta_acept": 0.6181046676096181,
     "objetivo_ess": 500,
     "cumple_ess": true,
-    "max_abs_cero": 6.808326324226895e-17,
+    "max_abs_cero": 4.848889165032469e-17,
     "frac_signos_cumplidos": 1.0,
-    "hd_error_max": 5.7220458984375e-06,
-    "cierre_hd_max": 8.307276040397937e-06
+    "hd_error_max": 3.208697307854891e-09,
+    "cierre_hd_max": 7.571905769054865e-09,
+    "cierre_medias_max": 3.11928260998684e-12
    },
    "robust_p1": {
     "variante": "robust_p1",
@@ -152,22 +159,23 @@
     "muestra_ini": "2004Q2",
     "muestra_fin": "2026Q1",
     "p": 1,
-    "lam": 0.301817561304891,
-    "logml": -1181.3876401554082,
-    "D_sorteos_theta": 766,
+    "lam": 0.29641705288351233,
+    "logml": -1183.9984121302816,
+    "D_sorteos_theta": 809,
     "intentos": 1,
-    "ess_piloto": 254.6414266270493,
+    "ess_piloto": 241.06418399364628,
     "M_rotaciones": 3000,
-    "n_aceptadas": 719,
-    "ess": 660.5285506322701,
-    "acept_por_rotacion": 0.0003128807658833769,
-    "frac_theta_acept": 0.587467362924282,
+    "n_aceptadas": 750,
+    "ess": 691.512141506564,
+    "acept_por_rotacion": 0.00030902348578491963,
+    "frac_theta_acept": 0.5772558714462299,
     "objetivo_ess": 500,
     "cumple_ess": true,
-    "max_abs_cero": 5.381160064368381e-17,
+    "max_abs_cero": 7.173322752670692e-17,
     "frac_signos_cumplidos": 1.0,
-    "hd_error_max": 2.2737367544323206e-13,
-    "cierre_hd_max": 2.3803181647963356e-13
+    "hd_error_max": 1.7053025658242404e-13,
+    "cierre_hd_max": 7.602807272633072e-13,
+    "cierre_medias_max": 1.4210854715202004e-14
    },
    "robust_p4": {
     "variante": "robust_p4",
@@ -175,22 +183,23 @@
     "muestra_ini": "2004Q2",
     "muestra_fin": "2026Q1",
     "p": 4,
-    "lam": 0.3415962831915611,
-    "logml": -1109.632457125949,
-    "D_sorteos_theta": 760,
+    "lam": 0.3502065352198626,
+    "logml": -1114.1928935309336,
+    "D_sorteos_theta": 721,
     "intentos": 1,
-    "ess_piloto": 256.8570232841716,
+    "ess_piloto": 270.629428262065,
     "M_rotaciones": 3000,
-    "n_aceptadas": 676,
-    "ess": 613.3443971669876,
-    "acept_por_rotacion": 0.00029649122807017545,
-    "frac_theta_acept": 0.5763157894736842,
+    "n_aceptadas": 658,
+    "ess": 593.8701600452868,
+    "acept_por_rotacion": 0.0003042071197411003,
+    "frac_theta_acept": 0.5963938973647711,
     "objetivo_ess": 500,
     "cumple_ess": true,
-    "max_abs_cero": 3.727451737926474e-17,
+    "max_abs_cero": 4.229713307778056e-17,
     "frac_signos_cumplidos": 1.0,
-    "hd_error_max": 1.0231815394945443e-12,
-    "cierre_hd_max": 5.186961971048731e-13
+    "hd_error_max": 1.1368683772161603e-12,
+    "cierre_hd_max": 2.8208546609675977e-12,
+    "cierre_medias_max": 1.0658141036401503e-14
    },
    "robust_prior_fijo": {
     "variante": "robust_prior_fijo",
@@ -199,21 +208,22 @@
     "muestra_fin": "2026Q1",
     "p": 2,
     "lam": 0.2,
-    "logml": -1156.8994186370528,
-    "D_sorteos_theta": 771,
+    "logml": -1158.0081963469956,
+    "D_sorteos_theta": 764,
     "intentos": 1,
-    "ess_piloto": 253.22901267492543,
+    "ess_piloto": 255.46536353767928,
     "M_rotaciones": 3000,
-    "n_aceptadas": 731,
-    "ess": 677.6752216664597,
-    "acept_por_rotacion": 0.0003160397751837441,
-    "frac_theta_acept": 0.5836575875486382,
+    "n_aceptadas": 727,
+    "ess": 667.1868293402093,
+    "acept_por_rotacion": 0.00031719022687609074,
+    "frac_theta_acept": 0.5772251308900523,
     "objetivo_ess": 500,
     "cumple_ess": true,
-    "max_abs_cero": 6.801350343133716e-17,
+    "max_abs_cero": 2.6053569875702207e-16,
     "frac_signos_cumplidos": 1.0,
     "hd_error_max": 2.2026824808563106e-13,
-    "cierre_hd_max": 1.9895196601282805e-13
+    "cierre_hd_max": 3.481659405224491e-13,
+    "cierre_medias_max": 3.552713678800501e-15
    },
    "robust_sin_covid": {
     "variante": "robust_sin_covid",
@@ -221,22 +231,23 @@
     "muestra_ini": "2004Q2",
     "muestra_fin": "2026Q1",
     "p": 2,
-    "lam": 0.4378988483976098,
-    "logml": -1396.3240902513844,
-    "D_sorteos_theta": 882,
+    "lam": 0.4334891670348656,
+    "logml": -1350.0096756032144,
+    "D_sorteos_theta": 897,
     "intentos": 1,
-    "ess_piloto": 221.3353059648256,
+    "ess_piloto": 217.50059736622939,
     "M_rotaciones": 3000,
-    "n_aceptadas": 712,
-    "ess": 647.0866279011314,
-    "acept_por_rotacion": 0.0002690854119425548,
-    "frac_theta_acept": 0.5419501133786848,
+    "n_aceptadas": 714,
+    "ess": 650.0905442125428,
+    "acept_por_rotacion": 0.0002653288740245262,
+    "frac_theta_acept": 0.5540691192865106,
     "objetivo_ess": 500,
     "cumple_ess": true,
-    "max_abs_cero": 4.1298069424240873e-17,
+    "max_abs_cero": 3.731202515578163e-17,
     "frac_signos_cumplidos": 1.0,
-    "hd_error_max": 1.1368683772161603e-11,
-    "cierre_hd_max": 1.2896350654045818e-12
+    "hd_error_max": 1.5347723092418164e-12,
+    "cierre_hd_max": 7.183587058534613e-12,
+    "cierre_medias_max": 1.4210854715202004e-14
    },
    "robust_deflactor_pib": {
     "variante": "robust_deflactor_pib",
@@ -244,22 +255,23 @@
     "muestra_ini": "2004Q2",
     "muestra_fin": "2026Q1",
     "p": 2,
-    "lam": 0.3857040805210241,
-    "logml": -1128.7030029616294,
-    "D_sorteos_theta": 468,
+    "lam": 0.3682892013780938,
+    "logml": -1129.9029479519506,
+    "D_sorteos_theta": 486,
     "intentos": 1,
-    "ess_piloto": 417.3197420854284,
+    "ess_piloto": 401.9313257193275,
     "M_rotaciones": 3000,
-    "n_aceptadas": 646,
-    "ess": 597.6019504687072,
-    "acept_por_rotacion": 0.00046011396011396013,
-    "frac_theta_acept": 0.7200854700854701,
+    "n_aceptadas": 610,
+    "ess": 561.5834881594103,
+    "acept_por_rotacion": 0.00041838134430727025,
+    "frac_theta_acept": 0.7016460905349794,
     "objetivo_ess": 500,
     "cumple_ess": true,
-    "max_abs_cero": 7.10507522028633e-17,
+    "max_abs_cero": 6.850518381797497e-17,
     "frac_signos_cumplidos": 1.0,
-    "hd_error_max": 3.694822225952521e-13,
-    "cierre_hd_max": 8.526512829121202e-13
+    "hd_error_max": 2.4868995751603507e-13,
+    "cierre_hd_max": 1.3180567748349858e-12,
+    "cierre_medias_max": 5.329070518200751e-15
    },
    "larga": {
     "variante": "larga",
@@ -282,7 +294,8 @@
     "max_abs_cero": 6.865653956836265e-16,
     "frac_signos_cumplidos": 1.0,
     "hd_error_max": 5.453415496958769e-13,
-    "cierre_hd_max": 4.213518423057394e-12
+    "cierre_hd_max": 4.213518423057394e-12,
+    "cierre_medias_max": 2.1316282072803006e-14
    }
   }
  },
@@ -294,6 +307,7 @@
  },
  "notas": [
   "Aviso (Y6): el BVAR en tasas atenua sistematicamente las IRF hacia cero (sesgo absoluto hasta 0,46; cobertura del 90 % de 0,86-0,90 en F3); las magnitudes de las IRF y de la descomposicion historica se leen como cota inferior aproximada. Capa C3s: la identificacion vale solo bajo las restricciones de signo y de cero declaradas.",
+  "J1: ficticia EPA 2021 = impulso en 2021T1 (no escalon). opcion (b): impulso en 2021T1 en todas las ecuaciones (la opcion (a), solo en la ecuacion de e, exige tocar herramientas/bvar.py). COVID como pre-registrado (2020T2-T4, escalon de episodio); en predicciones futuras ambas valen 0. Se aplica a V3, V1, V2 y robustez; en 'sin 2020-2021' el impulso coincide con la ficticia d2021Q1 (se conserva una). La version larga no lleva EPA.",
   "La identificacion principal pre-registrada (7 variables, signos en h=0-1, 4 ceros) es INVIABLE con datos reales (sondeo: 0 aceptadas en 9.000.000 rotaciones); se usa V3 (solo impacto, sin q en demanda ni oferta; Y6) como identificacion operativa para H8-1..H8-4, atribucion y robustez. V1 se estima solo en el impacto (con h=0-1: 0 aceptadas).",
   "Muestra efectiva (7 variables) 2004T2-2026T1 (N=88, HD desde 2004T4): tx_total acaba en 2026T1 y las tasas empiezan en 2004T2; la muestra «2004T1-2026T2» del pre-registro se reduce por disponibilidad conjunta.",
   "Origen de la congelacion: 2026T1 (ultimo trimestre de la muestra comun); h=2..5 desde 2026T1 equivale a h=1..4 desde 2026T2 (2026T2 de p y r ya esta publicado y no se evalua).",
@@ -301,7 +315,73 @@
   "V2: el HPI de la zona euro (EA20) incluye a Espana (peso no verificado); entra como exogena contemporanea y con un retardo; 'factor_europeo' = su efecto estimado (directo y propagado).",
   "Robustez 'prior fijo': lambda = 0,2 sin optimizar; 'sin 2020-2021': ficticias de impulso 2020T1-2021T4 en lugar de la ficticia COVID; 'deflactor PIB' en p, r y c.",
   "Version larga: ficticia COVID como unica exogena (la EPA no entra); el shock 'residual' queda sin identificar y sin ceros.",
+  "J2: contribucion_pp = media posterior; determinista y no_identificados por separado; suma de medias = variacion observada (diagnosticos.cierre_medias_max).",
   "IRF para un shock de 1 desviacion tipica (columnas de A0inv = chol(Sigma) Q); irf_acumulada.csv acumula las IRF de las variables en tasa (nivel de p, r, q, c, e, n)."
  ],
- "rapido": false
+ "rapido": false,
+ "correccion_f4": {
+  "nota": "antes = especificacion erronea (escalon EPA; contribucion = mediana); despues = impulso EPA 2021T1 (contribucion = media posterior)",
+  "H8": {
+   "H8-1": {
+    "antes": {
+     "contribucion_pp": 0.66706198,
+     "prob_posterior": 0.68387361,
+     "p_holm": 0.81655154
+    },
+    "despues": {
+     "contribucion_pp": 0.07392778986875448,
+     "prob_posterior": 0.5062502702087739,
+     "p_holm": 0.9874994595824522
+    }
+   },
+   "H8-2": {
+    "antes": {
+     "contribucion_pp": -0.41173377,
+     "prob_posterior": 0.54310645,
+     "p_holm": 0.81655154
+    },
+    "despues": {
+     "contribucion_pp": -0.46935505165047386,
+     "prob_posterior": 0.29335795963964784,
+     "p_holm": 0.9874994595824522
+    }
+   },
+   "H8-3": {
+    "antes": {
+     "contribucion_pp": 4.0778242,
+     "prob_posterior": 0.72781615,
+     "p_holm": 0.81655154
+    },
+    "despues": {
+     "contribucion_pp": 7.7221817449224055,
+     "prob_posterior": 0.7207319834488022,
+     "p_holm": 0.8378040496535935
+    }
+   },
+   "H8-4": {
+    "antes": {
+     "contribucion_pp": -14.326988,
+     "prob_posterior": 0.89308455,
+     "p_holm": 0.4276618
+    },
+    "despues": {
+     "contribucion_pp": -19.23180358347216,
+     "prob_posterior": 0.9143415841189366,
+     "p_holm": 0.3426336635242535
+    }
+   }
+  },
+  "determinista_P5": {
+   "compra": {
+    "antes_mediana": 17.823031,
+    "despues_media": 5.35588731505462,
+    "despues_mediana": 0.9345098510121246
+   },
+   "alquiler": {
+    "antes_mediana": -8.3711796,
+    "despues_media": -3.5895671211237548,
+    "despues_mediana": -3.8072715962823933
+   }
+  }
+ }
 }

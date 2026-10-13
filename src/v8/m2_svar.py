@@ -101,9 +101,18 @@ def series_base(d: pd.DataFrame, defl: str = "ipc_general") -> pd.DataFrame:
     S["dif"] = d["dif_hip_euribor_bce"]
     S["dhpi"] = dl(np.log(d["hpi_ea20"]))
     S["covid"] = d["covid"].astype(float)
-    S["epa2021"] = d["epa2021"].astype(float)
+    # J1 (revision F4): la EPA 2021 es un salto de NIVEL en las variables EPA; en un VAR en tasas es un IMPULSO en 2021T1
+    # (no un escalon desde 2021T1). Se construye aqui por fecha (opcion b: impulso en todas las ecuaciones, ver IMPULSO_EPA).
+    S["epa2021"] = (S.index == "2021Q1").astype(float)
     return S
 
+
+# J1: opcion (a) (impulso solo en la ecuacion de e) NO es implementable con herramientas/bvar.py sin tocarla: el prior es
+# normal-Wishart inversa conjugado con los mismos regresores en las n ecuaciones, y anular un coeficiente por ecuacion rompe la
+# conjugacion (haria falta SUR restringido o un prior de varianza ~0 por coeficiente, que bvar.py no admite). Se usa la opcion (b):
+# impulso en 2021T1 en TODAS las ecuaciones (equivale a no usar la observacion de 2021T1 para estimar la dinamica y la media).
+IMPULSO_EPA = "opcion (b): impulso en 2021T1 en todas las ecuaciones (la opcion (a), solo en la ecuacion de e, exige tocar herramientas/bvar.py)"
+SHA256_ANTERIOR_RETIRADO = "bd23db78e3342c6865bb1285108d0943a70f0c0d4e1b5b07085491295f509a9e"
 
 # ------------------------------------------------------------------ restricciones
 SHOCKS7 = ["actividad", "demografico", "demanda", "oferta", "credito", "nid1", "nid2"]
@@ -184,7 +193,8 @@ def construir(nombre: str, d: pd.DataFrame) -> dict:
     if nombre == "robust_sin_covid":
         for k, t in enumerate(["2020Q1", "2020Q2", "2020Q3", "2020Q4", "2021Q1", "2021Q2", "2021Q3", "2021Q4"]):
             S[f"d{t}"] = (S.index == t).astype(float)
-        ex = ["epa2021"] + [c for c in S.columns if c.startswith("d20")]
+        # d2021Q1 coincide con el impulso EPA (colineal): se conserva una sola; COVID = impulsos 2020T1-2021T4 en lugar de la ficticia
+        ex = [c for c in S.columns if c.startswith("d20")]
     if nombre == "V2":
         S["dhpi_l1"] = S["dhpi"].shift(1)
         ex = ["covid", "epa2021", "dhpi", "dhpi_l1"]
@@ -254,6 +264,13 @@ def hd_por_tramos(res, Y, X, tramos, fechas, chunk=250, aislar_cols=None):
     return np.concatenate(C), np.concatenate(Dd), eur, err
 
 
+def principal_de(nombre, periodo):
+    """J20: V3 corregida = principal; la version larga es principal solo para P1 (unica fuente identificada en P1)."""
+    if nombre == OP:
+        return "si"
+    return "si" if (nombre == "larga" and periodo == "P1") else "no"
+
+
 def periodos_cubiertos(idx_hd):
     """Periodos P1-P5 cubiertos al menos en el 80 % de sus trimestres por la muestra de la DH: [(codigo, ini_i, fin_i, cobertura)]."""
     a, b = qidx(idx_hd[0]), qidx(idx_hd[-1])
@@ -267,9 +284,13 @@ def periodos_cubiertos(idx_hd):
     return out
 
 
+def media_pond(x, w):
+    return float(np.sum(np.asarray(w) * x) / np.sum(w))
+
+
 def banda_fila(x, w):
     b = bvar.bandas(x, 0, w)
-    return dict(mediana=float(b["med"]), b68_lo=float(b["lo68"]), b68_hi=float(b["hi68"]), b90_lo=float(b["lo90"]), b90_hi=float(b["hi90"]))
+    return dict(media=media_pond(x, w), mediana=float(b["med"]), b68_lo=float(b["lo68"]), b68_hi=float(b["hi68"]), b90_lo=float(b["lo90"]), b90_hi=float(b["hi90"]))
 
 
 def procesar(spec, objetivo, M, D0, Dmax, clave, rapido, reg, hs=HS_FEVD, tiempos=None):
@@ -344,13 +365,18 @@ def procesar(spec, objetivo, M, D0, Dmax, clave, rapido, reg, hs=HS_FEVD, tiempo
                 for fk, x in comp.items():
                     b = banda_fila(x, w)
                     bp = banda_fila(x / tot * 100.0, w) if abs(tot) > 1e-9 else {}
-                    hd_rows.append(dict(variante=nombre, mercado=mk, periodo=cod, factor=fk, contribucion_pp=b["mediana"],
-                                        pct_total=bp.get("mediana", np.nan), b68_lo=b["b68_lo"], b68_hi=b["b68_hi"], b90_lo=b["b90_lo"],
+                    hd_rows.append(dict(variante=nombre, mercado=mk, periodo=cod, factor=fk, contribucion_pp=b["media"], media=b["media"],
+                                        mediana=b["mediana"], pct_total=bp.get("media", np.nan), b68_lo=b["b68_lo"], b68_hi=b["b68_hi"], b90_lo=b["b90_lo"],
                                         b90_hi=b["b90_hi"], prob_pos=float(w[x > 0].sum()), n_trim=int(m.sum()), cobertura=cob, total_obs_pp=tot,
-                                        pct_b68_lo=bp.get("b68_lo", np.nan), pct_b68_hi=bp.get("b68_hi", np.nan)))
+                                        pct_b68_lo=bp.get("b68_lo", np.nan), pct_b68_hi=bp.get("b68_hi", np.nan),
+                                        principal=principal_de(nombre, cod)))
                 cerrado = sum(comp.values())
                 diag.setdefault("cierre_hd_max", 0.0)
                 diag["cierre_hd_max"] = max(diag["cierre_hd_max"], float(np.max(np.abs(cerrado - tot))))
+                # J2: aditividad de las MEDIAS (la media es lineal): suma de medias de todos los componentes = variacion observada
+                sm = sum(media_pond(x, w) for x in comp.values())
+                diag.setdefault("cierre_medias_max", 0.0)
+                diag["cierre_medias_max"] = max(diag["cierre_medias_max"], abs(sm - tot))
     hd = pd.DataFrame(hd_rows)
     out.update(irf=irf, irf_acum=irf_ac, fevd=fev, hd=hd, hdraw=hdraw)
     if reg is not None:
@@ -403,16 +429,19 @@ def hipotesis(out, reg):
         pr = float(w[x > 0].sum()) if sg > 0 else float(w[x < 0].sum())
         b = banda_fila(x, w)
         q95 = bvar.cuantiles(x, [0.025, 0.975], 0, w)
-        filas.append(dict(id=hid, hipotesis=txt, mercado=mk, periodo=per, factor="+".join(fac), signo_esperado=sg, contribucion_pp=b["mediana"],
+        filas.append(dict(id=hid, hipotesis=txt, mercado=mk, periodo=per, factor="+".join(fac), signo_esperado=sg, contribucion_pp=b["media"], mediana=b["mediana"],
                           b68_lo=b["b68_lo"], b68_hi=b["b68_hi"], b90_lo=b["b90_lo"], b90_hi=b["b90_hi"], ic95_lo=float(q95[0]), ic95_hi=float(q95[1]),
                           prob_posterior=pr, p_unilateral=1.0 - pr, resolucion_p=1.0 / ess))
     df = pd.DataFrame(filas)
     ok = df["p_unilateral"].notna()
     hp = holm({r["id"]: r["p_unilateral"] for _, r in df[ok].iterrows()})
     df["p_holm"] = df["id"].map(hp)
+    df["p_ajustado"] = df["p_holm"]
     df["metodo_ajuste"] = "Holm"
     df["rechaza_H0_alfa05"] = df["p_holm"] < 0.05
     df["capa"] = "C3s"
+    df["variante"] = OP
+    df["principal"] = "si"
     df["estado"] = np.where(df["rechaza_H0_alfa05"], "respaldada (P posterior alta tras Holm), condicionada a los supuestos",
                             np.where(df["p_unilateral"] < 0.5, "no respaldada tras Holm (inclina al signo esperado, p_unilateral < 0,5)",
                                      "no respaldada (la mediana apunta al signo contrario o no distingue)"))
@@ -427,7 +456,9 @@ def hipotesis(out, reg):
 
 # ------------------------------------------------------------------ atribucion
 def atribucion(out, tag):
-    """atribucion.csv (metodo=svar_hd) mapeando shocks a factores del contrato."""
+    """atribucion.csv (metodo=svar_hd). J2: contribucion_pp = MEDIA posterior (aditiva); mediana en columna aparte; `determinista` y
+    `no_identificados` son factores distintos (capa C4, nunca entran en el ranking). J21: pp log x100 de la variacion ACUMULADA del periodo
+    (suma de tasas trimestrales reales), pct_total = media / observado en %."""
     hd, w, spec = out["hdraw"], out["res"]["peso"], out["spec"]
     rows = []
     if not hd:
@@ -441,19 +472,48 @@ def atribucion(out, tag):
                 f = FACTOR[sh]
             elif sh == "factor_europeo":
                 f = "factor_europeo"
+            elif sh == "determinista":
+                f = "determinista"
             else:
-                f = "residuo"       # no_identificados + determinista (+ residual en la larga)
+                f = "no_identificados"       # nid1, nid2 (y `residual` en la larga)
             grupos[f] = grupos.get(f, 0.0) + x
         for f, x in grupos.items():
             b = banda_fila(x, w)
-            pct = x / tot * 100.0 if abs(tot) > 1e-9 else None
-            rows.append(dict(metodo="svar_hd", mercado=mk, ambito="nacional", periodo=per, factor=f if f != "demanda_vivienda" else "demanda_vivienda",
-                             contribucion_pp=b["mediana"], pct_total=float(np.median(pct)) if pct is not None else np.nan,
+            pct = b["media"] / tot * 100.0 if abs(tot) > 1e-9 else np.nan
+            rows.append(dict(metodo="svar_hd", mercado=mk, ambito="nacional", periodo=per, factor=f,
+                             contribucion_pp=b["media"], pct_total=pct,
                              b68_lo=b["b68_lo"], b68_hi=b["b68_hi"], b90_lo=b["b90_lo"], b90_hi=b["b90_hi"],
-                             capa="C4" if f == "residuo" else "C3s",
-                             notas=f"variante={tag}; total_observado_pp={tot:.3f}; cobertura_periodo={cob}; factor 'demanda_vivienda' = demanda especifica de vivienda "
-                                   "(no esta en la lista del contrato); residuo = no identificados + determinista; C3s condicionada a los supuestos; magnitudes posiblemente atenuadas (Y6)"))
+                             capa="C4" if f in ("determinista", "no_identificados") else "C3s",
+                             notas=f"variante={tag}; contribucion_pp = media posterior (aditiva; mediana en columna `mediana`); total_observado_pp={tot:.3f}; "
+                                   f"cobertura_periodo={cob}; factor 'demanda_vivienda' = demanda especifica de vivienda "
+                                   "(no esta en la lista del contrato); determinista = condiciones iniciales + constante + ficticias (COVID 2020T2-T4; impulso EPA 2021T1); "
+                                   "C3s condicionada a los supuestos; magnitudes posiblemente atenuadas (Y6)",
+                             media=b["media"], mediana=b["mediana"], variante=tag, principal=principal_de(tag, per)))
     return rows
+
+
+def prob_mayor(outs):
+    """F5 (regla R2): por (variante, mercado, periodo) y shock identificado f: media posterior de c_f * sign(DY) y P(f es el mayor
+    c * sign(DY) entre los identificados), calculada sorteo a sorteo con los pesos de importancia. Signo: c_f es la contribucion del shock
+    al precio (positiva = empuja al alza); los shocks de credito/tipos estan definidos como expansivos (i-, p+), de modo que 'expansivo' es
+    positivo; el shock monetario de V1 (Euribor +) se reporta con su contribucion real al precio."""
+    filas = []
+    for nom, o in outs.items():
+        if not o.get("hdraw"):
+            continue
+        w = np.asarray(o["res"]["peso"])
+        shocks = o["spec"]["shocks"]
+        ids = [sh for sh in shocks if not sh.startswith("nid") and sh != "residual"]
+        for (mk, per), dd in o["hdraw"].items():
+            tot = dd["total"]
+            sg = 1.0 if tot >= 0 else -1.0
+            M = np.stack([dd["comp"][sh] * sg for sh in ids], axis=1)
+            gan = np.argmax(M, axis=1)
+            for j, sh in enumerate(ids):
+                filas.append(dict(variante=nom, principal=principal_de(nom, per), mercado=mk, periodo=per, shock=sh, factor=FACTOR.get(sh, sh),
+                                  media_c_signo=media_pond(M[:, j], w), prob_mayor=float(w[gan == j].sum()), delta_y_obs_pp=tot,
+                                  n_identificados=len(ids), ess=float(o["diag"]["ess"])))
+    return pd.DataFrame(filas)
 
 
 # ------------------------------------------------------------------ congelacion
@@ -463,7 +523,7 @@ def congelar(out, d, salida: Path, rapido):
     H = 5
     rg = rng_para(77)
     nd = 400 if rapido else 5000
-    Xf = np.array([[0.0, 1.0]] * H)       # covid = 0, epa2021 = 1 (nivel desde 2021T1)
+    Xf = np.zeros((H, 2))                 # covid = 0, epa2021 = 0 (ambas son impulsos/ficticias de episodio: valen 0 hacia delante)
     pr = bvar.prediccion(post, h=H, ndraw=nd, rng=rg, exog_futuro=Xf)
     vars_ = spec["vars"]
     fin = qidx(spec["Y"].index[-1])
@@ -487,11 +547,14 @@ def congelar(out, d, salida: Path, rapido):
     fcsv = salida / "predicciones_congeladas.csv"
     df.to_csv(fcsv, index=False, float_format="%.10g")
     sha = hashlib.sha256(fcsv.read_bytes()).hexdigest()
-    meta = dict(fichero="predicciones_congeladas.csv", sha256=sha, modelo="BVAR-GLP principal (forma reducida, 7 variables, p=2, delta 0 en tasas y 1 en i)",
+    meta = dict(fichero="predicciones_congeladas.csv", sha256=sha, modelo="BVAR-GLP principal (forma reducida, 7 variables, p=2, delta 0 en tasas y 1 en i; EPA 2021 como impulso)",
                 origen=qstr(fin), objetivo_evaluate_v8="2026T3-2027T2 (h_desde_2026T2 = 1..4, filas evaluable=True)",
                 lam=out["diag"]["lam"], muestra=f"{spec['Y'].index[0]}-{spec['Y'].index[-1]}", ndraw=nd, seed=SEED,
                 nota=("tx_total (compraventas MIVAU) acaba en 2026T1, por lo que la muestra comun del BVAR principal acaba en 2026T1 y el origen es 2026T1 (no 2026T2): "
                       "h=1 (2026T2) ya es un dato y NO se evalua; las filas evaluables son h=2..5 desde 2026T1 = h=1..4 desde 2026T2 (docs/v8/desviaciones.md)."),
+                sha256_anterior_retirado=SHA256_ANTERIOR_RETIRADO,
+                correccion="J1: re-congelada tras corregir la ficticia EPA (impulso en 2021T1 en vez de escalon); exogenas futuras covid = epa2021 = 0; "
+                           + IMPULSO_EPA,
                 congelado_en="ver commit/etiqueta de la release (docs/v8/notas_release.md)")
     (salida / "congelacion.json").write_text(json.dumps(meta, indent=1, ensure_ascii=False))
     return df, meta
@@ -522,7 +585,11 @@ def escribir_resumen(salida, outs, hip, fev_all, hd_all, ess_tab, desv, meta, ra
     L.append("- `pob_total` es una interpolacion lineal entre fechas semestrales hasta 2020 (marcada en el panel): la dinamica de n es suave por construccion; "
              "las conclusiones sobre el shock demografico dependen de ello.")
     L.append("- Contribuciones en puntos log x100 de la variacion acumulada del periodo (precio y alquiler reales, deflactor IPC); %: contribucion / variacion observada del periodo "
-             "(inestable si la variacion observada es cercana a cero). `determinista` = condiciones iniciales + constante + ficticias (COVID, EPA 2021T1).\n")
+             "(inestable si la variacion observada es cercana a cero). La contribucion puntual es la MEDIA posterior (aditiva: la suma de las medias de todos los "
+             "componentes es la variacion observada; la mediana no lo es, J2); `determinista` (condiciones iniciales + constante + ficticias: COVID 2020T2-T4 e impulso EPA 2021T1) "
+             "y `no_identificados` son factores aparte y no compiten en el ranking.")
+    L.append(f"- J1 (revision F4): la ficticia EPA 2021 es un IMPULSO en 2021T1 (antes, un escalon desde 2021T1 en las 7 ecuaciones). {IMPULSO_EPA}. "
+             "En las predicciones, covid y epa2021 valen 0. La version anterior se conserva como retirada (hipotesis_m2_retirada.csv, hd_periodos_retirada.csv).\n")
     sd = meta["sondeo"]
     L.append("## Estado de la identificacion pre-registrada (principal, h = 0-1)\n")
     L.append(f"- Sondeo con datos reales: {sd['D_sorteos_theta']} sorteos de theta x {sd['M_rotaciones']} rotaciones = {sd['rotaciones_probadas']:,} rotaciones; "
@@ -551,8 +618,8 @@ def escribir_resumen(salida, outs, hip, fev_all, hd_all, ess_tab, desv, meta, ra
         h = hd_all[(hd_all.variante == OP) & (hd_all.mercado == mk)]
         if h.empty:
             continue
-        L.append(f"**{mk}** (pp log x100; mediana [68 %]; [90 %]; P(>0))\n")
-        h = h.assign(txt=lambda z: z.apply(lambda r: f"{r.contribucion_pp:.1f} [{r.b68_lo:.1f}; {r.b68_hi:.1f}] ({r.b90_lo:.1f}; {r.b90_hi:.1f}) p+={r.prob_pos:.2f}", axis=1))
+        L.append(f"**{mk}** (pp log x100; media [68 %]; [90 %]; P(>0))\n")
+        h = h.assign(txt=lambda z: z.apply(lambda r: f"{r.media:.1f} [{r.b68_lo:.1f}; {r.b68_hi:.1f}] ({r.b90_lo:.1f}; {r.b90_hi:.1f}) p+={r.prob_pos:.2f} (med {r.mediana:.1f})", axis=1))
         t = h.pivot(index="factor", columns="periodo", values="txt").reset_index()
         tot = h.groupby("periodo")["total_obs_pp"].first()
         L.append(md_tabla(t) + "\n")
@@ -561,7 +628,7 @@ def escribir_resumen(salida, outs, hip, fev_all, hd_all, ess_tab, desv, meta, ra
     t = hip[["id", "mercado", "periodo", "factor", "signo_esperado", "contribucion_pp", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "prob_posterior", "p_unilateral", "p_holm", "estado"]]
     L.append(md_tabla(t, "{:.3f}") + "\n")
     L.append("Lectura: cada p es 1 - P(posterior del signo esperado); resolucion minima de p = 1/ESS. Resultados bajo los supuestos de identificacion (C3s); magnitudes atenuadas (Y6).\n")
-    L.append("## Variantes y robustez: contribucion mediana de cada hipotesis (pp) y P(signo esperado)\n")
+    L.append("## Variantes y robustez: contribucion media de cada hipotesis (pp) y P(signo esperado)\n")
     filas = []
     for nom, o in outs.items():
         if nom == "larga" or not len(o["hd"]):
@@ -578,25 +645,63 @@ def escribir_resumen(salida, outs, hip, fev_all, hd_all, ess_tab, desv, meta, ra
                 continue
             w = o["res"]["peso"]
             pp = float(w[x > 0].sum() if sg > 0 else w[x < 0].sum())
-            row[hid] = f"{float(bvar.cuantiles(x, [0.5], 0, w)[0]):.1f} (P={pp:.2f})"
+            row[hid] = f"{media_pond(x, w):.1f} (P={pp:.2f})"
         filas.append(row)
     L.append(md_tabla(pd.DataFrame(filas), "{:.0f}") + "\n")
-    L.append("Celdas: mediana de la contribucion conjunta en pp (P = probabilidad posterior del signo esperado). En V1 el shock «credito» no incluye el monetario "
+    L.append("Celdas: media de la contribucion conjunta en pp (P = probabilidad posterior del signo esperado). En V1 el shock «credito» no incluye el monetario "
              "(H8-2/H8-4 con V1 usan solo `credito`; `monetario` esta en hd_periodos.csv). V1, V2 y la robustez usan la identificacion operativa solo de impacto. "
              "n.c. = periodo no cubierto o factor no definido en esa variante.\n")
     if "larga" in outs and len(outs["larga"]["hd"]):
         L.append("## Version larga (4 variables, 1995T2-2026T2): contribucion a la variacion del precio real de compra (pp)\n")
         h = hd_all[(hd_all.variante == "larga") & (hd_all.mercado == "compra")]
-        h = h.assign(txt=lambda z: z.apply(lambda r: f"{r.contribucion_pp:.1f} [{r.b68_lo:.1f}; {r.b68_hi:.1f}]", axis=1))
+        h = h.assign(txt=lambda z: z.apply(lambda r: f"{r.media:.1f} [{r.b68_lo:.1f}; {r.b68_hi:.1f}]", axis=1))
         L.append(md_tabla(h.pivot(index="factor", columns="periodo", values="txt").reset_index()) + "\n")
         L.append(f"ESS larga = {outs['larga']['diag']['ess']:.0f}. Es un contraste (C3s) con 4 variables; el shock `residual` no esta identificado.\n")
+    ret = RAIZ / "output" / "v8" / "M2" / "hipotesis_m2_retirada.csv"
+    if ret.exists() and not rapido:
+        r0 = pd.read_csv(ret)
+        t = hip[["id", "contribucion_pp", "prob_posterior", "p_holm"]].merge(r0[["id", "contribucion_pp", "prob_posterior", "p_holm"]], on="id", suffixes=("", "_retirada"))
+        L.append("## H8-1 a H8-4: version corregida (principal) frente a la retirada (especificacion erronea, escalon EPA)\n")
+        L.append(md_tabla(t[["id", "contribucion_pp", "contribucion_pp_retirada", "prob_posterior", "prob_posterior_retirada", "p_holm", "p_holm_retirada"]], "{:.3f}") + "\n")
+        L.append("La retirada usa la MEDIANA como contribucion; la corregida usa la MEDIA posterior (mediana en hipotesis_m2.csv, columna `mediana`).\n")
+        h0 = pd.read_csv(RAIZ / "output" / "v8" / "M2" / "hd_periodos_retirada.csv")
+        dd = []
+        for mk in ("compra", "alquiler"):
+            a = h0[(h0.variante == OP) & (h0.mercado == mk) & (h0.periodo == "P5") & (h0.factor == "determinista")]
+            b = hd_all[(hd_all.variante == OP) & (hd_all.mercado == mk) & (hd_all.periodo == "P5") & (hd_all.factor == "determinista")]
+            if len(a) and len(b):
+                dd.append(f"{mk}: {a.contribucion_pp.iloc[0]:.1f} (mediana, retirada) -> {b.media.iloc[0]:.1f} (media) / {b.mediana.iloc[0]:.1f} (mediana)")
+        L.append("Parte determinista de P5: " + "; ".join(dd) + ".\n")
     L.append("## Congelacion para evaluate_v8 (§10)\n")
-    L.append(f"- Fichero: output/v8/M2/predicciones_congeladas.csv; sha256 = `{meta['sha256']}` (congelacion.json).")
+    L.append(f"- Fichero: output/v8/M2/predicciones_congeladas.csv; sha256 = `{meta['sha256']}` (congelacion.json); sha256 anterior retirado = `{meta['sha256_anterior_retirado']}`.")
     L.append(f"- {meta['nota']}\n")
     L.append("## Desviaciones y decisiones de ejecucion\n")
     for s in desv:
         L.append(f"- {s}")
     (salida / "resumen.md").write_text("\n".join(L) + "\n", encoding="utf-8")
+
+
+def antes_despues(outs, hip):
+    """J1: cifras de la version retirada (escalon EPA) frente a la corregida (impulso). Retirada: output/v8/M2/*_retirada.csv."""
+    base = RAIZ / "output" / "v8" / "M2"
+    f1, f2 = base / "hipotesis_m2_retirada.csv", base / "hd_periodos_retirada.csv"
+    if not (f1.exists() and f2.exists()):
+        return None
+    r0, h0 = pd.read_csv(f1), pd.read_csv(f2)
+    out = dict(nota="antes = especificacion erronea (escalon EPA; contribucion = mediana); despues = impulso EPA 2021T1 (contribucion = media posterior)", H8={})
+    for _, r in hip.iterrows():
+        a = r0[r0.id == r["id"]].iloc[0]
+        out["H8"][r["id"]] = dict(antes=dict(contribucion_pp=float(a.contribucion_pp), prob_posterior=float(a.prob_posterior), p_holm=float(a.p_holm)),
+                                  despues=dict(contribucion_pp=float(r["contribucion_pp"]), prob_posterior=float(r["prob_posterior"]), p_holm=float(r["p_holm"])))
+    det = {}
+    for mk in ("compra", "alquiler"):
+        a = h0[(h0.variante == OP) & (h0.mercado == mk) & (h0.periodo == "P5") & (h0.factor == "determinista")]
+        b = outs[OP]["hd"]
+        b = b[(b.mercado == mk) & (b.periodo == "P5") & (b.factor == "determinista")]
+        if len(a) and len(b):
+            det[mk] = dict(antes_mediana=float(a.contribucion_pp.iloc[0]), despues_media=float(b.media.iloc[0]), despues_mediana=float(b.mediana.iloc[0]))
+    out["determinista_P5"] = det
+    return out
 
 
 # ------------------------------------------------------------------ main
@@ -638,9 +743,13 @@ def main(argv=None):
     fev.to_csv(salida / "fevd.csv", index=False, float_format=fm)
     cols_hd = ["variante", "mercado", "periodo", "factor", "contribucion_pp", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "prob_pos",
                "n_trim", "cobertura", "total_obs_pp", "pct_b68_lo", "pct_b68_hi"]
+    cols_hd = cols_hd[:5] + ["media", "mediana"] + cols_hd[5:] + ["principal"]
     hd[cols_hd].to_csv(salida / "hd_periodos.csv", index=False, float_format=fm)
     at = atribucion(outs[OP], OP) + atribucion(outs["larga"], "larga")
-    pd.DataFrame(at).to_csv(salida / "atribucion.csv", index=False, float_format=fm)
+    at = pd.DataFrame(at)
+    assert not at.duplicated(["metodo", "mercado", "ambito", "periodo", "factor", "variante"]).any()
+    at.to_csv(salida / "atribucion.csv", index=False, float_format=fm)
+    prob_mayor(outs).to_csv(salida / "prob_mayor.csv", index=False, float_format=fm)
     hip = hipotesis(outs[OP], reg)
     hip.to_csv(salida / "hipotesis_m2.csv", index=False, float_format=fm)
     _, meta_c = congelar(outs[OP], d, salida, rapido)
@@ -651,6 +760,8 @@ def main(argv=None):
                                  D_theta=o["diag"]["D_sorteos_theta"], aceptadas=o["diag"]["n_aceptadas"], ESS=o["diag"]["ess"],
                                  frac_theta=o["diag"]["frac_theta_acept"], lam=o["diag"]["lam"]) for n, o in outs.items()])
     desv = [
+        "J1: ficticia EPA 2021 = impulso en 2021T1 (no escalon). " + IMPULSO_EPA + ". COVID como pre-registrado (2020T2-T4, escalon de episodio); en predicciones futuras ambas valen 0. "
+        "Se aplica a V3, V1, V2 y robustez; en 'sin 2020-2021' el impulso coincide con la ficticia d2021Q1 (se conserva una). La version larga no lleva EPA.",
         "La identificacion principal pre-registrada (7 variables, signos en h=0-1, 4 ceros) es INVIABLE con datos reales (sondeo: 0 aceptadas en 9.000.000 rotaciones); se usa V3 (solo impacto, sin q en demanda ni oferta; Y6) como identificacion operativa para H8-1..H8-4, atribucion y robustez. V1 se estima solo en el impacto (con h=0-1: 0 aceptadas).",
         "Muestra efectiva (7 variables) 2004T2-2026T1 (N=88, HD desde 2004T4): tx_total acaba en 2026T1 y las tasas empiezan en 2004T2; la muestra «2004T1-2026T2» del pre-registro se reduce por disponibilidad conjunta.",
         "Origen de la congelacion: 2026T1 (ultimo trimestre de la muestra comun); h=2..5 desde 2026T1 equivale a h=1..4 desde 2026T2 (2026T2 de p y r ya esta publicado y no se evalua).",
@@ -658,12 +769,13 @@ def main(argv=None):
         "V2: el HPI de la zona euro (EA20) incluye a Espana (peso no verificado); entra como exogena contemporanea y con un retardo; 'factor_europeo' = su efecto estimado (directo y propagado).",
         "Robustez 'prior fijo': lambda = 0,2 sin optimizar; 'sin 2020-2021': ficticias de impulso 2020T1-2021T4 en lugar de la ficticia COVID; 'deflactor PIB' en p, r y c.",
         "Version larga: ficticia COVID como unica exogena (la EPA no entra); el shock 'residual' queda sin identificar y sin ceros.",
+        "J2: contribucion_pp = media posterior; determinista y no_identificados por separado; suma de medias = variacion observada (diagnosticos.cierre_medias_max).",
         "IRF para un shock de 1 desviacion tipica (columnas de A0inv = chol(Sigma) Q); irf_acumulada.csv acumula las IRF de las variables en tasa (nivel de p, r, q, c, e, n).",
     ]
     escribir_resumen(salida, outs, hip, fev, hd, ess_tab, desv, meta_c, rapido)
     # ---- resultado.json
     pr = outs[OP]
-    est = {r["id"]: dict(contribucion_pp=r.get("contribucion_pp"), prob_posterior=r.get("prob_posterior"), p_unilateral=r.get("p_unilateral"), estado=r.get("estado"))
+    est = {r["id"]: dict(contribucion_pp=r.get("contribucion_pp"), mediana=r.get("mediana"), prob_posterior=r.get("prob_posterior"), p_unilateral=r.get("p_unilateral"), estado=r.get("estado"))
            for _, r in hip.iterrows()}
     ic95 = {r["id"]: [r.get("ic95_lo"), r.get("ic95_hi")] for _, r in hip.iterrows()}
     ph = {r["id"]: r.get("p_holm") for _, r in hip.iterrows()}
@@ -675,7 +787,7 @@ def main(argv=None):
         diagnosticos=dict(operativa=OP, sondeo_principal=sondeo, estimaciones={n: o["diag"] for n, o in outs.items()}),
         fuera_muestra=dict(modelo="BVAR-GLP principal (forma reducida), predicciones congeladas", rmse=None, dm_vs_ar4=None,
                            nota="Diferido a make evaluate_v8 (hipotesis.md §10); sha256 en congelacion.json"),
-        notas=[AVISO_Y6] + desv, rapido=rapido)
+        notas=[AVISO_Y6] + desv, rapido=rapido, correccion_f4=antes_despues(outs, hip))
     (salida / "resultado.json").write_text(json.dumps(res_json, indent=1, ensure_ascii=False, default=lambda x: None if x != x else float(x)))
     (salida / "tiempos.json").write_text(json.dumps(tiempos, indent=1))
     return outs

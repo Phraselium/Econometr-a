@@ -1,45 +1,45 @@
-mercado,periodo,factor,variable,horizonte,beta,ee,ic95_lo,ic95_hi,p,n,capa,nota,p_bh
-compra,P1,empleo_renta,pib_vol,4-8,-9.898041568720826,1.8930931017882016,-15.154110644864385,-4.641972492577266,0.006390218826249416,41.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.047926641196870616
-compra,P1,credito_tipos,tipo_hip_real,4-8,-0.6363624952873128,1.5201834481600085,-4.857068388933872,3.5843433983592465,0.6970012706922528,38.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.879436124643279
-compra,P1,oferta,costes_constr,4-8,1.616508019980392,1.0708146470866298,-1.3565500654973839,4.589566105458168,0.20565283635819642,41.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.3855990681716183
-compra,P1,factor_europeo,jk_mp,4-8,47.42791351270729,6.6210822091124575,26.356674899337662,68.49915212607692,0.005603955567276,26.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.047926641196870616
-compra,P2,demografia,hogares_epa,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,
-compra,P2,empleo_renta,pib_vol,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,
-compra,P2,credito_tipos,tipo_hip_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,
-compra,P2,oferta,terminadas,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,
-compra,P2,demanda_externa,tx_extranj,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,
-compra,P2,factor_europeo,bis_hpi_xm_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,
-compra,P3,demografia,hogares_epa,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,
-compra,P3,empleo_renta,pib_vol,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,
-compra,P3,credito_tipos,tipo_hip_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,
-compra,P3,oferta,terminadas,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,
-compra,P3,demanda_externa,tx_extranj,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,
-compra,P3,factor_europeo,bis_hpi_xm_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,
-compra,completo,demografia,hogares_epa,4-8,-2.1916063822461314,3.5944769959040466,-10.691193858553216,6.307981094060953,0.5613122156097053,87.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.8419683234145581
-compra,completo,empleo_renta,pib_vol,4-8,0.48566271840509345,0.3426384971455558,-0.28943941216313784,1.2607648489733247,0.1900365730091968,115.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.3855990681716183
-compra,completo,credito_tipos,tipo_hip_real,4-8,0.795567127520119,0.5113738360657157,-0.3612408586035347,1.9523751136437728,0.1541923045096424,112.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.385480761274106
-compra,completo,oferta,terminadas,4-8,0.11294559212738299,0.05952668965769397,-0.02171313525943526,0.24760431951420125,0.0902633571645721,115.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.2707900714937163
-compra,completo,factor_europeo,bis_hpi_xm_real,4-8,0.23362387572630156,1.2025139282821542,-2.539378215532952,3.006625966985555,0.8507997244185449,95.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.879436124643279
-alquiler,P1,demografia,hogares_epa,4-8,,,,,,,C4,FALLIDA: ValueError: n=13 insuficiente,
-alquiler,P1,empleo_renta,pib_vol,4-8,,,,,,,C4,FALLIDA: ValueError: n=13 insuficiente,
-alquiler,P1,credito_tipos,tipo_hip_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=13 insuficiente,
-alquiler,P1,oferta,costes_constr,4-8,,,,,,,C4,FALLIDA: ValueError: n=13 insuficiente,
-alquiler,P1,factor_europeo,bis_hpi_xm_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=13 insuficiente,
-alquiler,P2,demografia,hogares_epa,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,
-alquiler,P2,empleo_renta,pib_vol,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,
-alquiler,P2,credito_tipos,tipo_hip_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,
-alquiler,P2,oferta,terminadas,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,
-alquiler,P2,demanda_externa,tx_extranj,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,
-alquiler,P2,factor_europeo,bis_hpi_xm_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,
-alquiler,P3,demografia,hogares_epa,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,
-alquiler,P3,empleo_renta,pib_vol,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,
-alquiler,P3,credito_tipos,tipo_hip_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,
-alquiler,P3,oferta,terminadas,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,
-alquiler,P3,demanda_externa,tx_extranj,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,
-alquiler,P3,factor_europeo,bis_hpi_xm_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,
-alquiler,completo,demografia,hogares_epa,4-8,0.9367608981461988,0.9828005478316766,-1.3871931117352574,3.260714908027655,0.37225731139516793,87.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.6204288523252799
-alquiler,completo,empleo_renta,pib_vol,4-8,0.015482524926729427,0.09841570116173382,-0.2172336287778145,0.24819867863127332,0.879436124643279,87.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.879436124643279
-alquiler,completo,credito_tipos,tipo_hip_real,4-8,1.093529143936788,0.5132920270838263,-0.12021363145484765,2.3072719193284237,0.07062606895775717,87.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.26655168481815567
-alquiler,completo,oferta,terminadas,4-8,0.00491269970929342,0.016395197719794405,-0.03385578242859114,0.04368118184717799,0.7731515471943504,87.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.879436124643279
-alquiler,completo,demanda_externa,tx_extranj,4-8,-0.03737573702912826,0.017066995980077607,-0.07913717175622387,0.0043856976979673445,0.07108044928484152,67.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.26655168481815567
-alquiler,completo,factor_europeo,bis_hpi_xm_real,4-8,-0.1063242118854544,0.42798272240099594,-1.1183425365375517,0.9056941127666429,0.810931684320326,87.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.879436124643279
+mercado,periodo,factor,variable,horizonte,beta,ee,ic95_lo,ic95_hi,p,n,capa,nota,p_bh,p_ajustado,metodo_ajuste
+compra,P1,empleo_renta,pib_vol,4-8,-9.898041568720826,1.8930931017882016,-15.154110644864385,-4.641972492577266,0.006390218826249416,41.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.047926641196870616,0.047926641196870616,BH
+compra,P1,credito_tipos,tipo_hip_real,4-8,-0.6363624952873128,1.5201834481600085,-4.857068388933872,3.5843433983592465,0.6970012706922528,38.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.879436124643279,0.879436124643279,BH
+compra,P1,oferta,costes_constr,4-8,1.616508019980392,1.0708146470866298,-1.3565500654973839,4.589566105458168,0.20565283635819642,41.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.3855990681716183,0.3855990681716183,BH
+compra,P1,factor_europeo,jk_mp,4-8,47.42791351270729,6.6210822091124575,26.356674899337662,68.49915212607692,0.005603955567276,26.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.047926641196870616,0.047926641196870616,BH
+compra,P2,demografia,hogares_epa,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,,,
+compra,P2,empleo_renta,pib_vol,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,,,
+compra,P2,credito_tipos,tipo_hip_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,,,
+compra,P2,oferta,terminadas,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,,,
+compra,P2,demanda_externa,tx_extranj,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,,,
+compra,P2,factor_europeo,bis_hpi_xm_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,,,
+compra,P3,demografia,hogares_epa,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,,,
+compra,P3,empleo_renta,pib_vol,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,,,
+compra,P3,credito_tipos,tipo_hip_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,,,
+compra,P3,oferta,terminadas,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,,,
+compra,P3,demanda_externa,tx_extranj,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,,,
+compra,P3,factor_europeo,bis_hpi_xm_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,,,
+compra,completo,demografia,hogares_epa,4-8,-2.1916063822461314,3.5944769959040466,-10.691193858553216,6.307981094060953,0.5613122156097053,87.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.8419683234145581,0.8419683234145581,BH
+compra,completo,empleo_renta,pib_vol,4-8,0.48566271840509345,0.3426384971455558,-0.28943941216313784,1.2607648489733247,0.1900365730091968,115.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.3855990681716183,0.3855990681716183,BH
+compra,completo,credito_tipos,tipo_hip_real,4-8,0.795567127520119,0.5113738360657157,-0.3612408586035347,1.9523751136437728,0.1541923045096424,112.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.385480761274106,0.385480761274106,BH
+compra,completo,oferta,terminadas,4-8,0.11294559212738299,0.05952668965769397,-0.02171313525943526,0.24760431951420125,0.0902633571645721,115.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.2707900714937163,0.2707900714937163,BH
+compra,completo,factor_europeo,bis_hpi_xm_real,4-8,0.23362387572630156,1.2025139282821542,-2.539378215532952,3.006625966985555,0.8507997244185449,95.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.879436124643279,0.879436124643279,BH
+alquiler,P1,demografia,hogares_epa,4-8,,,,,,,C4,FALLIDA: ValueError: n=13 insuficiente,,,
+alquiler,P1,empleo_renta,pib_vol,4-8,,,,,,,C4,FALLIDA: ValueError: n=13 insuficiente,,,
+alquiler,P1,credito_tipos,tipo_hip_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=13 insuficiente,,,
+alquiler,P1,oferta,costes_constr,4-8,,,,,,,C4,FALLIDA: ValueError: n=13 insuficiente,,,
+alquiler,P1,factor_europeo,bis_hpi_xm_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=13 insuficiente,,,
+alquiler,P2,demografia,hogares_epa,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,,,
+alquiler,P2,empleo_renta,pib_vol,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,,,
+alquiler,P2,credito_tipos,tipo_hip_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,,,
+alquiler,P2,oferta,terminadas,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,,,
+alquiler,P2,demanda_externa,tx_extranj,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,,,
+alquiler,P2,factor_europeo,bis_hpi_xm_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=12 insuficiente,,,
+alquiler,P3,demografia,hogares_epa,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,,,
+alquiler,P3,empleo_renta,pib_vol,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,,,
+alquiler,P3,credito_tipos,tipo_hip_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,,,
+alquiler,P3,oferta,terminadas,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,,,
+alquiler,P3,demanda_externa,tx_extranj,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,,,
+alquiler,P3,factor_europeo,bis_hpi_xm_real,4-8,,,,,,,C4,FALLIDA: ValueError: n=14 insuficiente,,,
+alquiler,completo,demografia,hogares_epa,4-8,0.9367608981461988,0.9828005478316766,-1.3871931117352574,3.260714908027655,0.37225731139516793,87.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.6204288523252799,0.6204288523252799,BH
+alquiler,completo,empleo_renta,pib_vol,4-8,0.015482524926729427,0.09841570116173382,-0.2172336287778145,0.24819867863127332,0.879436124643279,87.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.879436124643279,0.879436124643279,BH
+alquiler,completo,credito_tipos,tipo_hip_real,4-8,1.093529143936788,0.5132920270838263,-0.12021363145484765,2.3072719193284237,0.07062606895775717,87.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.26655168481815567,0.26655168481815567,BH
+alquiler,completo,oferta,terminadas,4-8,0.00491269970929342,0.016395197719794405,-0.03385578242859114,0.04368118184717799,0.7731515471943504,87.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.879436124643279,0.879436124643279,BH
+alquiler,completo,demanda_externa,tx_extranj,4-8,-0.03737573702912826,0.017066995980077607,-0.07913717175622387,0.0043856976979673445,0.07108044928484152,67.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.26655168481815567,0.26655168481815567,BH
+alquiler,completo,factor_europeo,bis_hpi_xm_real,4-8,-0.1063242118854544,0.42798272240099594,-1.1183425365375517,0.9056941127666429,0.810931684320326,87.0,C4,"LP-OLS EWC (cobertura 0,78-0,84 en F3): bandas aproximadas; asociacion dinamica, NO causal",0.879436124643279,0.879436124643279,BH

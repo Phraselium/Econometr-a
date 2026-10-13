@@ -17,14 +17,14 @@
     "P2": 0.961,
     "P3": 0.858,
     "P4": 0.998,
-    "P5": 0.98
+    "P5": 0.982
    },
    "compra": {
     "P1": 0.685,
     "P2": 0.462,
     "P3": 0.619,
     "P4": 0.465,
-    "P5": 0.942
+    "P5": 0.936
    }
   },
   "n_coef_ccaa_sig_bh10": "145 de 153",
@@ -58,5 +58,5 @@
   "rmse": null,
   "dm_vs_ar4": null
  },
- "notas": "C4: asociacion estadistica condicional; sin lectura causal. Ecuaciones por CCAA y periodo con pocos trimestres (P4 = 9): bandas aproximadas. El factor comun y las covariables regionales son colineales por construccion (VIF en coeficientes.csv). Fuera de muestra: M8 es descriptivo/asociativo, sin comparacion con AR(4)/ECM v1. Alquiler por CCAA solo desde 2008 (sin P1). Turismo solo en 6 CCAA (sensibilidad)."
+ "notas": "C4: asociacion estadistica condicional; sin lectura causal. Ecuaciones por CCAA y periodo con pocos trimestres (P4 = 9): bandas aproximadas. El factor comun y las covariables regionales son colineales por construccion (VIF en coeficientes.csv). La pendiente ~1 del factor comun es mecanica (el factor es la media transversal reescalada e incluye a la propia CCAA, 1/17) y los 'significativos tras BH' del factor comun tambien: es un resumen de comovimiento, no compite con los 7 factores en s9 (vota_s9 = no). contribucion_pp = media interanual x T/4, aproximacion de la variacion acumulada (suma de tasas trimestrales reales, log x100) del periodo; pct_total en %. Fuera de muestra: M8 es descriptivo/asociativo, sin comparacion con AR(4)/ECM v1. Alquiler por CCAA solo desde 2008 (sin P1). Turismo solo en 6 CCAA (sensibilidad)."
 }

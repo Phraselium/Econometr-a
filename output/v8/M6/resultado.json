@@ -11,43 +11,43 @@
   "estimacion": {
     "alquiler|P1": {
       "factor_mayor_cuota": "credito_tipos",
-      "cuota_pct": 67.7,
+      "cuota_pct": 63.9,
       "b90_contribucion_pp": [
-        2.03,
-        3.53
+        2.91,
+        4.4
       ],
       "segundo": "factor_europeo",
-      "cuota_segundo_pct": 14.0,
+      "cuota_segundo_pct": 13.2,
       "bandas_se_solapan_con_el_segundo": false
     },
     "alquiler|P2": {
       "factor_mayor_cuota": "credito_tipos",
-      "cuota_pct": 47.4,
+      "cuota_pct": 45.0,
       "b90_contribucion_pp": [
-        -1.5,
-        -0.84
+        -1.61,
+        -1.01
       ],
       "segundo": "demografia",
-      "cuota_segundo_pct": 27.4,
+      "cuota_segundo_pct": 26.0,
       "bandas_se_solapan_con_el_segundo": true
     },
     "alquiler|P3": {
       "factor_mayor_cuota": "credito_tipos",
-      "cuota_pct": 58.0,
+      "cuota_pct": 55.3,
       "b90_contribucion_pp": [
-        -0.65,
-        -0.35
+        -0.83,
+        -0.54
       ],
       "segundo": "demografia",
-      "cuota_segundo_pct": 21.7,
-      "bandas_se_solapan_con_el_segundo": true
+      "cuota_segundo_pct": 20.7,
+      "bandas_se_solapan_con_el_segundo": false
     },
     "alquiler|P4": {
       "factor_mayor_cuota": "credito_tipos",
       "cuota_pct": 70.2,
       "b90_contribucion_pp": [
-        -8.41,
-        -3.93
+        -9.19,
+        -4.72
       ],
       "segundo": "empleo_renta",
       "cuota_segundo_pct": 24.6,
@@ -55,97 +55,97 @@
     },
     "alquiler|P5": {
       "factor_mayor_cuota": "credito_tipos",
-      "cuota_pct": 31.2,
+      "cuota_pct": 31.1,
       "b90_contribucion_pp": [
-        -0.69,
-        -0.28
+        -0.88,
+        -0.46
       ],
       "segundo": "turismo",
-      "cuota_segundo_pct": 30.4,
+      "cuota_segundo_pct": 30.3,
       "bandas_se_solapan_con_el_segundo": true
     },
     "alquiler|completo": {
       "factor_mayor_cuota": "credito_tipos",
-      "cuota_pct": 74.3,
+      "cuota_pct": 71.0,
       "b90_contribucion_pp": [
-        -10.78,
-        -6.75
+        -13.17,
+        -8.79
       ],
       "segundo": "empleo_renta",
-      "cuota_segundo_pct": 11.3,
+      "cuota_segundo_pct": 10.8,
       "bandas_se_solapan_con_el_segundo": false
     },
     "compra|P1": {
       "factor_mayor_cuota": "credito_tipos",
-      "cuota_pct": 64.1,
+      "cuota_pct": 47.0,
       "b90_contribucion_pp": [
-        17.65,
-        52.6
+        31.37,
+        56.23
       ],
       "segundo": "demografia",
-      "cuota_segundo_pct": 27.9,
-      "bandas_se_solapan_con_el_segundo": true
+      "cuota_segundo_pct": 20.5,
+      "bandas_se_solapan_con_el_segundo": false
     },
     "compra|P2": {
       "factor_mayor_cuota": "credito_tipos",
-      "cuota_pct": 37.7,
+      "cuota_pct": 36.1,
       "b90_contribucion_pp": [
-        -19.81,
-        -4.89
+        -26.94,
+        -12.49
       ],
       "segundo": "factor_europeo",
-      "cuota_segundo_pct": 25.3,
+      "cuota_segundo_pct": 24.2,
       "bandas_se_solapan_con_el_segundo": true
     },
     "compra|P3": {
       "factor_mayor_cuota": "empleo_renta",
-      "cuota_pct": 28.5,
+      "cuota_pct": 26.0,
       "b90_contribucion_pp": [
-        0.76,
-        2.93
+        1.45,
+        3.63
       ],
       "segundo": "factor_europeo",
-      "cuota_segundo_pct": 27.8,
+      "cuota_segundo_pct": 25.4,
       "bandas_se_solapan_con_el_segundo": true
     },
     "compra|P4": {
       "factor_mayor_cuota": "credito_tipos",
-      "cuota_pct": 58.9,
+      "cuota_pct": 34.8,
       "b90_contribucion_pp": [
-        -3.12,
-        -0.26
+        -3.6,
+        -1.72
       ],
       "segundo": "demografia",
-      "cuota_segundo_pct": 29.0,
-      "bandas_se_solapan_con_el_segundo": true
+      "cuota_segundo_pct": 17.1,
+      "bandas_se_solapan_con_el_segundo": false
     },
     "compra|P5": {
       "factor_mayor_cuota": "factor_europeo",
-      "cuota_pct": 32.1,
+      "cuota_pct": 31.7,
       "b90_contribucion_pp": [
-        2.42,
-        7.12
+        4.65,
+        9.3
       ],
       "segundo": "turismo",
-      "cuota_segundo_pct": 29.3,
+      "cuota_segundo_pct": 28.9,
       "bandas_se_solapan_con_el_segundo": true
     },
     "compra|completo": {
       "factor_mayor_cuota": "factor_europeo",
-      "cuota_pct": 38.7,
+      "cuota_pct": 29.5,
       "b90_contribucion_pp": [
-        10.23,
-        18.6
+        7.64,
+        14.28
       ],
       "segundo": "demografia",
-      "cuota_segundo_pct": 29.8,
+      "cuota_segundo_pct": 22.7,
       "bandas_se_solapan_con_el_segundo": true
     }
   },
-  "ic95": "bandas b68/b90 de la cuota del R2 por bootstrap por bloques en atribucion.csv; IC95 de OLS (EWC, t(q)) en coeficientes.csv",
+  "ic95": "bandas b68/b90 de la contribucion (cuota LMG x R2 x variacion) por bootstrap por bloques «basico» en atribucion.csv; IC95 de OLS (EWC, t(q)) en coeficientes.csv",
   "p_ajustado": {
     "metodo": "BH (q=0,10)",
-    "coeficientes_BH_min": 1.5035078618414817e-05,
+    "coeficientes_BH_min": 1.855892516960579e-05,
     "granger_BH_min": 0.0005304990140738441,
     "lp_BH_min": 0.047926641196870616
   },
@@ -154,6 +154,12 @@
     "vif_max": 18.379481646719007,
     "n_celdas": 24,
     "n_celdas_con_dominancia": 24,
+    "bandas_dominancia": {
+      "n_puntos": 128,
+      "fuera_b68": 19,
+      "fuera_b90": 9,
+      "metodo": "bootstrap por bloques «basico» centrado (2*est - q) del LMG absoluto (J16); antes percentil: 22 de 128 fuera de b68"
+    },
     "p4_impreciso": "P4 (9 trimestres): solo 3 familias por GL; declarado impreciso",
     "filas_registro": 1559
   },
@@ -168,10 +174,11 @@
     }
   },
   "notas": [
+    "contribucion_pp = cuota LMG x R2 x variacion acumulada (pp log x100, ventana comun R0; P5 = 2022T3-2026T1); fila `residuo` = (1-R2) x variacion; signo_parcial = signo de beta_f x dx_f (tasas: dx = media de la tasa del periodo; tipo real en nivel: media del periodo menos media historica), contrib_parcial_pp = beta_f x dx_f x (nW/4 interanual; nW trimestral); voto de la dominancia en voto_dominancia.csv (R2).",
+    "Ficticia EPA 2021 = impulso (4 trimestres 2021T1-T4 en tasas interanuales; 2021T1 en trimestrales), J1/J17.",
     "Las cuotas de dominancia describen la division del R2 entre variables colineales; no son efectos.",
     "Granger y LP-OLS (EWC) son C4; las bandas de LP-OLS tienen cobertura 0,78-0,84 en F3.",
     "Interpoladas excluidas de la muestra principal; familias sin datos suficientes excluidas y anotadas en muestras.csv.",
     "El ECM v1 se reconstruye de forma aproximada (ocupados, costes, renta, dy_{t-1}); no es el script original."
-  ],
-  "tiempo_s": 50.4
+  ]
 }

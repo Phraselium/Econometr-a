@@ -54,10 +54,15 @@ PANEL_VARS = {
 TURISMO_VARS = {"turistas": "turismo", "vut": "turismo"}
 # monotonia solo donde el signo teorico es claro: tipos (-), empleo (+), poblacion (+)
 MONO = {"tipo_hip_real": -1, "ocupados": 1, "epa_pob": 1, "pob_total": 1}
+# columnas COMPLETAS del contrato (J13/J21): las que no aplican quedan vacias
 COLS_COEF = ["modelo_id", "modulo", "familia_modelo", "mercado", "ambito", "periodo", "dependiente", "transformacion", "medida_precio",
-             "variable", "beta", "ee", "tipo_ee", "t", "p", "p_ajustado", "metodo_ajuste", "ic95_lo", "ic95_hi", "n", "r2", "capa", "script"]
+             "variable", "beta", "ee", "tipo_ee", "t", "p", "p_ajustado", "metodo_ajuste", "ic95_lo", "ic95_hi", "beta_std", "elasticidad",
+             "n", "r2", "r2_adj", "aic", "bic", "vel_ajuste", "semivida", "coint_p", "bg_p", "bp_p", "jb_p", "reset_p", "cusum_estable",
+             "vif_max", "f1_etapa", "ar_lo", "ar_hi", "capa", "n_multiverso", "pct_mismo_signo", "pct_sig_bh", "cumple_regla_m0",
+             "cumple_multiverso", "destacado", "motivo_destacado", "script"]
 COLS_ATR = ["metodo", "mercado", "ambito", "periodo", "factor", "contribucion_pp", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi",
-            "capa", "notas"]
+            "capa", "notas", "variante", "principal"]
+ULTIMO_R0 = "2026Q1"   # R0 (revision F4): P5 = 2022T3-2026T1 en el resumen por periodo
 CFG = {"A": dict(num_leaves=8, n_estimators=150, learning_rate=0.05), "B": dict(num_leaves=4, n_estimators=300, learning_rate=0.03)}
 ALFAS = {"alfa10": 10.0, "alfa100": 100.0}
 
@@ -133,6 +138,22 @@ def periodo_de(t):
         if a <= t <= b:
             return k
     return "fuera"
+
+
+def periodo_r0(t):
+    """Periodo de un trimestre para el resumen SHAP: igual que periodo_de, pero P5 termina en 2026T1 (R0)."""
+    return "fuera" if t > ULTIMO_R0 else periodo_de(t)
+
+
+def bh(p, q=0.10):
+    """p ajustado BH sobre los valores finitos (NaN se conserva)."""
+    from scipy.stats import false_discovery_control
+    p = pd.Series(p, dtype=float).reset_index(drop=True)
+    out = pd.Series(np.nan, index=p.index)
+    m = p.notna()
+    if m.any():
+        out[m] = false_discovery_control(p[m].values, method="bh")
+    return out.values
 
 
 def folds_tiempo(quarters, n_splits=5, test_size=8, gap=4):
@@ -278,34 +299,44 @@ def bloques_tiempo(quarters_idx, T, L, rng):
     return (st[:, None] + np.arange(L)[None, :]).ravel()[:T]
 
 
-def shap_periodos(d, cols, grupos, B, cfg="A", mono=True, extra_label=""):
+def shap_periodos(d, cols, grupos, B, cfg="A", mono=True, mascara=None):
     """Ajusta en toda la muestra el modelo SOLO FAMILIAS (sin retardos de y), SHAP agrupado por familia, medias por periodo y
-    bandas por bootstrap de bloques de 4 trimestres (reajuste en cada replica; SHAP sobre la muestra original)."""
+    bandas por bootstrap de bloques de 4 trimestres (reajuste en cada replica). J12 (a): el SHAP de cada replica se evalua SOLO en sus
+    filas dentro de la bolsa (trimestres remuestreados, sin repetir), para que la banda quede centrada en el punto (sin atenuacion fuera de
+    la bolsa). `mascara` (opcional) restringe el resumen a las filas con dato (turismo)."""
     X = d[cols].reset_index(drop=True)
     y = d["y"].values
     tt = d["t"].values
-    per = np.array([periodo_de(t) for t in tt])
+    per = np.array([periodo_r0(t) for t in tt])
+    if mascara is not None:
+        per = np.where(np.asarray(mascara), per, "fuera")
     quarters = sorted(set(tt))
     qi = {q: np.where(tt == q)[0] for q in quarters}
+    Tper = {pr: len(set(tt[(per != "fuera") if pr == "completo" else (per == pr)])) for pr in PERS + ["completo"]}
     m0 = fit_lgbm(X, y, cfg, mono)
     sv0 = sg.shap_valores(m0, X)
     imp0, impvar, g0 = sg.shap_grupos(m0, X, grupos, sv=sv0)
     pred0 = m0.predict(X.values.astype(float))
     base0 = float(np.mean(pred0 - sv0.sum(1)))
 
-    def resumen(g, pred, base):
+    def resumen(g, pred, rows):
+        """g: DataFrame de SHAP por familia con indice = posicion global de `rows`."""
         out = {}
+        sel = np.zeros(len(y), bool)
+        sel[rows] = True
+        gg = g.copy()
+        gg.index = rows
         for pr in PERS + ["completo"]:
-            msk = per != "fuera" if pr == "completo" else per == pr
+            msk = sel & ((per != "fuera") if pr == "completo" else (per == pr))
             if msk.sum() == 0:
                 continue
-            c = g.loc[msk].mean()
-            ab = g.loc[msk].abs().mean()
-            res = float(np.mean(y[msk] - pred[msk]))
-            out[pr] = (c, ab, res)
+            idx = np.where(msk)[0]
+            gm = gg.loc[idx]
+            res = float(np.mean(y[idx] - pred[np.searchsorted(rows, idx)]))
+            out[pr] = (gm.mean(), gm.abs().mean(), res)
         return out
 
-    punt = resumen(g0, pred0, base0)
+    punt = resumen(g0, pred0, np.arange(len(y)))
     rng = np.random.default_rng(SEED)
     reps = []
     L = 4
@@ -313,31 +344,41 @@ def shap_periodos(d, cols, grupos, B, cfg="A", mono=True, extra_label=""):
         ib = bloques_tiempo(None, len(quarters), L, rng)
         rows = np.concatenate([qi[quarters[j]] for j in ib])
         mb = fit_lgbm(X.iloc[rows], y[rows], cfg, mono, seed=SEED + b + 1)
-        svb = sg.shap_valores(mb, X)
-        _, _, gb = sg.shap_grupos(mb, X, grupos, sv=svb)
-        predb = mb.predict(X.values.astype(float))
-        reps.append(resumen(gb, predb, float(np.mean(predb - svb.sum(1)))))
-    return {"punt": punt, "reps": reps, "base": base0, "imp": imp0, "modelo": m0, "X": X, "y": y, "per": per, "g": g0, "sv": sv0}
+        bag = np.unique(rows)                       # filas dentro de la bolsa, sin repetir
+        Xb = X.iloc[bag]
+        svb = sg.shap_valores(mb, Xb)
+        _, _, gb = sg.shap_grupos(mb, Xb, grupos, sv=svb)
+        reps.append(resumen(gb, mb.predict(Xb.values.astype(float)), bag))
+    return {"punt": punt, "reps": reps, "base": base0, "imp": imp0, "modelo": m0, "X": X, "y": y, "per": per, "g": g0, "sv": sv0, "T": Tper}
 
 
-def tablas_shap(res, mercado, ambito, metodo="shap", fams=None, nota_extra=""):
+def tablas_shap(res, mercado, ambito, metodo="shap", fams=None, nota_extra="", variante="lgbm_A_monotono", principal="si", periodos=None):
+    """contribucion_pp = media interanual de la contribucion SHAP x T/4 (aproximacion declarada de la variacion acumulada, suma de tasas
+    trimestrales reales log x100; T = trimestres del periodo en la muestra, P5 hasta 2026T1). Bandas = percentiles de las replicas (en bolsa)."""
     atr, rk = [], []
     fams = fams or list(res["g"].columns)
     for pr, (c, ab, rs) in res["punt"].items():
+        if periodos is not None and pr not in periodos:
+            continue
         reps = [r[pr] for r in res["reps"] if pr in r]
+        if not reps:
+            continue
+        esc = res["T"][pr] / 4.0
         C = pd.DataFrame([r[0] for r in reps])[fams]
         A = pd.DataFrame([r[1] for r in reps])[fams]
         tot = ab[fams].sum()
         for f in fams:
-            q = np.quantile(C[f], [0.05, 0.16, 0.84, 0.95])
-            atr.append(dict(metodo=metodo, mercado=mercado, ambito=ambito, periodo=pr, factor=f, contribucion_pp=float(c[f]),
+            q = np.quantile(C[f], [0.05, 0.16, 0.84, 0.95]) * esc
+            atr.append(dict(metodo=metodo, mercado=mercado, ambito=ambito, periodo=pr, factor=f, contribucion_pp=float(c[f]) * esc,
                             pct_total=float(100 * ab[f] / tot) if tot > 0 else np.nan, b68_lo=q[1], b68_hi=q[2], b90_lo=q[0], b90_hi=q[3],
-                            capa="C4", notas=f"{NOTA_C4}; contribucion media a la tasa interanual (pp) en el periodo; pct_total = cuota de |SHAP| medio; "
-                                             f"bandas = percentiles del bootstrap de bloques de 4 trimestres (B={len(reps)}), reajuste del modelo; pueden no contener el punto (sesgo de la replica){nota_extra}"))
-        qr = np.quantile([r[2] for r in reps], [0.05, 0.16, 0.84, 0.95])
-        atr.append(dict(metodo=metodo, mercado=mercado, ambito=ambito, periodo=pr, factor="residuo", contribucion_pp=float(rs), pct_total=np.nan,
-                        b68_lo=qr[1], b68_hi=qr[2], b90_lo=qr[0], b90_hi=qr[3], capa="C4",
-                        notas=f"{NOTA_C4}; residuo = tasa observada media - (base {res['base']:.2f} + suma de contribuciones); error de ajuste dentro de muestra"))
+                            capa="C4", variante=variante, principal=principal,
+                            notas=f"{NOTA_C4}; contribucion_pp = media interanual de la contribucion SHAP x T/4 (T={res['T'][pr]} trimestres; aproximacion declarada de la variacion acumulada); "
+                                  f"pct_total (%) = cuota de |SHAP| medio; bandas = percentiles del bootstrap de bloques de 4 trimestres (B={len(reps)}), reajuste del modelo, "
+                                  f"SHAP evaluado en las filas dentro de la bolsa (J12){nota_extra}"))
+        qr = np.quantile([r[2] for r in reps], [0.05, 0.16, 0.84, 0.95]) * esc
+        atr.append(dict(metodo=metodo, mercado=mercado, ambito=ambito, periodo=pr, factor="residuo", contribucion_pp=float(rs) * esc, pct_total=np.nan,
+                        b68_lo=qr[1], b68_hi=qr[2], b90_lo=qr[0], b90_hi=qr[3], capa="C4", variante=variante, principal=principal,
+                        notas=f"{NOTA_C4}; residuo = (tasa observada media - prediccion media) x T/4; error de ajuste dentro de muestra"))
         # ranking por |SHAP| medio de familia
         R = A.rank(axis=1, ascending=False, method="average")
         for f in fams:
@@ -345,6 +386,14 @@ def tablas_shap(res, mercado, ambito, metodo="shap", fams=None, nota_extra=""):
                            prob_primero=float((R[f] == R.min(axis=1)).mean()), imp_abs_pp=float(ab[f]), rango_punto=float(ab[fams].rank(ascending=False)[f]),
                            B=len(reps)))
     return pd.DataFrame(atr), pd.DataFrame(rk)
+
+
+def punto_en_banda(atr):
+    """J12: cuantos puntos caen fuera de su banda (68 y 90 %)."""
+    a = atr[atr["b68_lo"].notna()]
+    f68 = int(((a["contribucion_pp"] < a["b68_lo"]) | (a["contribucion_pp"] > a["b68_hi"])).sum())
+    f90 = int(((a["contribucion_pp"] < a["b90_lo"]) | (a["contribucion_pp"] > a["b90_hi"])).sum())
+    return {"filas": int(len(a)), "fuera_b68": f68, "fuera_b90": f90}
 
 
 # ------------------------------------------------------------------ DML manual con cross-fitting por bloques con embargo
@@ -446,14 +495,18 @@ def main(rapido=False, salida=None):
     out = Path(salida) if salida else RAIZ / "output" / "v8" / "M9"
     out.mkdir(parents=True, exist_ok=True)
     reg = Registry(out / "registro.csv")
-    B = 12 if rapido else 60
+    B = 12 if rapido else 200
     B_est = 6 if rapido else 30
     n_rep = 2 if rapido else 5
     atr_all, rk_all, oos_all, dml_all, ale_all, int_all, perm_all, est_all, sens_all, sus = [], [], [], [], [], [], [], [], [], {}
     diag = {}
     contexts = []
+    paneles = {}
+    turismo_diag = {}
+    banda_diag = {}
     for mercado in ("compra", "alquiler"):
         dfp = construir_panel(mercado)
+        paneles[mercado] = dfp          # J13: un panel por mercado (antes se reutilizaba el del ultimo bucle)
         cols_f = list(PANEL_VARS)
         d = dfp.dropna(subset=["y", "y1", "y2", "y3", "y4", "fc1", "fc2"] + cols_f).reset_index(drop=True)
         d["periodo"] = d["t"].map(periodo_de)
@@ -490,6 +543,7 @@ def main(rapido=False, salida=None):
         # ---- SHAP por periodo con bandas (modelo solo familias, config A con monotonia = principal)
         res = shap_periodos(d, cols, grupos, B, "A", True)
         atr, rk = tablas_shap(res, mercado, ambito, fams=list(grupos))
+        banda_diag[f"{mercado}/{ambito}"] = punto_en_banda(atr)
         atr_all.append(atr)
         rk_all.append(rk)
         reg.log("M9", f"m9_{mercado}_{ambito}_shap_periodos", "SHAP agrupado, LGBM A monotono, solo familias", d["t"].min(), d["t"].max(), len(d), np.nan, np.nan,
@@ -537,20 +591,32 @@ def main(rapido=False, salida=None):
                 r0 = R.iloc[0]
                 reg.log("M9", f"m9_{mercado}_{ambito}_dml_{treat}", f"DML parcial: y ~ theta*{treat}; nuisance HGB, cross-fitting por bloques con embargo 4",
                         d["t"].min(), d["t"].max(), int(r0["n"]), np.nan, np.nan, np.nan, np.nan, r0["beta"], r0["p"], "C4: sin identificacion; EE cluster por trimestre")
-            # sensibilidad con turismo (NaN nativos), solo atribucion
-            dt = dfp.dropna(subset=["y", "y1", "y2", "y3", "y4", "fc1", "fc2"] + cols).reset_index(drop=True)
+            # sensibilidad con turismo (NaN nativos), solo atribucion; panel DEL MERCADO (J13) y solo periodos con cobertura >= 70 %
+            dt = paneles[mercado].dropna(subset=["y", "y1", "y2", "y3", "y4", "fc1", "fc2"] + cols).reset_index(drop=True)
             colt = cols + list(TURISMO_VARS)
             fam_t = {**fam_of, **TURISMO_VARS}
             gt = {}
             for c in colt:
                 gt.setdefault(fam_t[c], []).append(c)
             gt = {k: gt[k] for k in FAMS if k in gt}
-            rt = shap_periodos(dt, colt, gt, max(B // 3, 8), "A", True)
-            at, rkt = tablas_shap(rt, mercado, ambito, metodo="shap_sens_turismo", fams=list(gt),
-                                  nota_extra="; sensibilidad con turismo (6 CCAA desde 2016T4, NaN nativos de LightGBM; SHAP de turismo solo informativo)")
+            tiene = dt["turistas"].notna().values
+            ccaa_t = set(dt.loc[tiene, "ccaa"])
+            per_t = np.array([periodo_r0(t) for t in dt["t"]])
+            cob_per = {}
+            for pr in PERS:
+                sel = (per_t == pr) & dt["ccaa"].isin(ccaa_t).values
+                cob_per[pr] = float(tiene[sel].mean()) if sel.sum() else 0.0
+            ok_per = [pr for pr in PERS if cob_per[pr] >= 0.70]
+            turismo_diag[mercado] = {"ccaa_con_turismo": len(ccaa_t), "cobertura_por_periodo": {k: round(v, 3) for k, v in cob_per.items()},
+                                                                   "periodos_reportados": ok_per}
+            rt = shap_periodos(dt, colt, gt, max(B // 3, 8), "A", True, mascara=tiene)
+            at, rkt = tablas_shap(rt, mercado, ambito, metodo="shap_sens_turismo", fams=list(gt), variante="lgbm_A_monotono_turismo_nan", principal="no",
+                                  periodos=ok_per,
+                                  nota_extra=f"; sensibilidad con turismo ({len(ccaa_t)} CCAA desde 2016T4, NaN nativos de LightGBM; resumen solo en filas con dato de turismo; "
+                                             "periodos con cobertura >= 70 %); SHAP de turismo solo informativo")
             atr_all.append(at[at["factor"].isin(["turismo"])])
             reg.log("M9", f"m9_{mercado}_{ambito}_sens_turismo", "SHAP con turismo NaN nativo", dt["t"].min(), dt["t"].max(), len(dt), np.nan, np.nan, np.nan,
-                    np.nan, np.nan, np.nan, "sensibilidad turismo; cobertura <70 %")
+                    np.nan, np.nan, np.nan, f"sensibilidad turismo; panel de {mercado}; periodos {ok_per}")
         print(f"[M9] {mercado}/{ambito} listo en {time.time() - ts:.0f}s", flush=True)
 
     # ---- escritura
@@ -558,6 +624,12 @@ def main(rapido=False, salida=None):
     ATR.to_csv(out / "atribucion.csv", index=False)
     pd.concat(rk_all, ignore_index=True).to_csv(out / "ranking_shap.csv", index=False)
     OOS = pd.concat(oos_all, ignore_index=True)
+    for c_ in [c for c in OOS.columns if c.startswith("p_vs_")]:
+        OOS[c_.replace("p_vs_", "p_ajustado_vs_")] = bh(OOS[c_].values)
+    OOS["metodo_ajuste"] = "BH"
+    be_ = OOS.groupby(["mercado", "ambito"]).apply(lambda g: g.loc[g["modelo"] == g["base_mas_exigente"].iloc[0], "rmse"].iloc[0])
+    OOS["predice_mejor_bh"] = [(m not in ("ar4", "ar4_fc", "ecm_v1")) and (r < be_[(mer, am)]) and (pa < 0.10) and (dm < 0)
+                               for m, r, pa, dm, mer, am in zip(OOS["modelo"], OOS["rmse"], OOS["p_ajustado_vs_exigente"], OOS["dm_vs_exigente"], OOS["mercado"], OOS["ambito"])]
     OOS.to_csv(out / "oos.csv", index=False)
     pd.DataFrame(est_all).to_csv(out / "estabilidad_ranking.csv", index=False)
     pd.DataFrame(sens_all).to_csv(out / "sensibilidad_ranking.csv", index=False)
@@ -576,7 +648,7 @@ def main(rapido=False, salida=None):
     D["medida_precio"] = np.where(D["mercado"] == "compra", "valor tasado real", "IPC alquiler real")
     D["t"] = D["beta"] / D["ee"]
     D["r2"] = np.nan
-    D.reindex(columns=COLS_COEF).to_csv(out / "coeficientes.csv", index=False)
+    D.reindex(columns=COLS_COEF).to_csv(out / "coeficientes.csv", index=False)   # columnas completas del contrato; vacias si no aplican
 
     # ---- resultado.json
     fm = {}
@@ -591,6 +663,7 @@ def main(rapido=False, salida=None):
                               "p": None if pd.isna(gi.loc[m, "p_vs_ar4"]) else round(float(gi.loc[m, "p_vs_ar4"]), 4)} for m in gi.index if m not in ("ar4",)},
             "base_mas_exigente": exig,
             "predice_mejor_que_la_base_mas_exigente": sorted(gi.index[gi["predice_mejor"]].tolist()),
+            "predice_mejor_con_p_BH": sorted(gi.index[gi["predice_mejor_bh"]].tolist()),
         }
     dml_est = {f"{r.mercado}/{r.variable}": {"beta": round(r.beta, 4), "ee": round(r.ee, 4), "p_BH": round(r.p_ajustado, 3)} for r in D[D["periodo"] == "completo"].itertuples()}
     per_atr = ATR[(ATR["metodo"] == "shap") & (ATR["periodo"].isin(PERS)) & (ATR["ambito"] == "ccaa_panel") & (ATR["factor"] != "residuo")]
@@ -611,9 +684,14 @@ def main(rapido=False, salida=None):
         "notas": [NOTA_C4, "Ningun modelo se presenta como explicacion si no supera a la base mas exigente; DML sin identificacion (C4)",
                   "Variables comunes en el tiempo (tipos, europeas) aportan T observaciones independientes efectivas, no 17xT",
                   "econml no usado: DML manual con bloques con embargo (docs/v8/desviaciones.md)"],
-        "tiempo_s": round(time.time() - t0, 1),
     }
+    res_json["diagnosticos"]["shap_punto_en_banda"] = banda_diag
+    res_json["diagnosticos"]["turismo_cobertura"] = turismo_diag
+    res_json["diagnosticos"]["B_shap"] = B
+    res_json["notas"].append("contribucion_pp de SHAP = media interanual x T/4 (aproximacion declarada de la variacion acumulada, log x100); P5 hasta 2026T1; "
+                             "bandas con SHAP evaluado dentro de la bolsa (J12); turismo solo en periodos con cobertura >= 70 % y con el panel de cada mercado (J13)")
     (out / "resultado.json").write_text(json.dumps(res_json, ensure_ascii=False, indent=1, default=float))
+    (out / "tiempos.json").write_text(json.dumps({"segundos": round(time.time() - t0, 1)}))
     escribir_resumen(out, OOS, ATR, D, sus, pd.DataFrame(est_all), res_json)
     reg.flush()
     print(f"[M9] terminado en {time.time() - t0:.0f}s")

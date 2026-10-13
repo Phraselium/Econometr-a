@@ -1,15 +1,15 @@
 fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
-V8-M2,M2_V3,"BVAR-GLP(p,r,q,c,i,e,n; p=2; exog=covid,epa2021) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.3712; logml=-1143.09; D=738; N=730; ESS=671.1; acept_theta=0.618; lam_fijo=None; defl=ipc_general
-V8-M2,M2_V1,"BVAR-GLP(p,r,q,c,eur,dif,e,n; p=2; exog=covid,epa2021) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.3784; logml=-1151.20; D=2647; N=736; ESS=643.4; acept_theta=0.238; lam_fijo=None; defl=ipc_general
-V8-M2,M2_V2,"BVAR-GLP(p,r,q,c,i,e,n; p=2; exog=covid,epa2021,dhpi,dhpi_l1) + signos/ceros h=0",2005Q3,2026Q1,83,,,,,,,lam=0.3585; logml=-1187.52; D=817; N=924; ESS=837.6; acept_theta=0.676; lam_fijo=None; defl=ipc_general
-V8-M2,M2_robust_p1,"BVAR-GLP(p,r,q,c,i,e,n; p=1; exog=covid,epa2021) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.3018; logml=-1181.39; D=766; N=719; ESS=660.5; acept_theta=0.587; lam_fijo=None; defl=ipc_general
-V8-M2,M2_robust_p4,"BVAR-GLP(p,r,q,c,i,e,n; p=4; exog=covid,epa2021) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.3416; logml=-1109.63; D=760; N=676; ESS=613.3; acept_theta=0.576; lam_fijo=None; defl=ipc_general
-V8-M2,M2_robust_prior_fijo,"BVAR-GLP(p,r,q,c,i,e,n; p=2; exog=covid,epa2021) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.2000; logml=-1156.90; D=771; N=731; ESS=677.7; acept_theta=0.584; lam_fijo=0.2; defl=ipc_general
-V8-M2,M2_robust_sin_covid,"BVAR-GLP(p,r,q,c,i,e,n; p=2; exog=epa2021,d2020Q1,d2020Q2,d2020Q3,d2020Q4,d2021Q1,d2021Q2,d2021Q3,d2021Q4) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.4379; logml=-1396.32; D=882; N=712; ESS=647.1; acept_theta=0.542; lam_fijo=None; defl=ipc_general
-V8-M2,M2_robust_deflactor_pib,"BVAR-GLP(p,r,q,c,i,e,n; p=2; exog=covid,epa2021) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.3857; logml=-1128.70; D=468; N=646; ESS=597.6; acept_theta=0.720; lam_fijo=None; defl=deflactor_pib
+V8-M2,M2_V3,"BVAR-GLP(p,r,q,c,i,e,n; p=2; exog=covid,epa2021) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.3741; logml=-1144.12; D=720; N=708; ESS=657.4; acept_theta=0.611; lam_fijo=None; defl=ipc_general
+V8-M2,M2_V1,"BVAR-GLP(p,r,q,c,eur,dif,e,n; p=2; exog=covid,epa2021) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.3847; logml=-1156.77; D=2502; N=728; ESS=629.1; acept_theta=0.251; lam_fijo=None; defl=ipc_general
+V8-M2,M2_V2,"BVAR-GLP(p,r,q,c,i,e,n; p=2; exog=covid,epa2021,dhpi,dhpi_l1) + signos/ceros h=0",2005Q3,2026Q1,83,,,,,,,lam=0.3612; logml=-1195.23; D=707; N=766; ESS=701.9; acept_theta=0.618; lam_fijo=None; defl=ipc_general
+V8-M2,M2_robust_p1,"BVAR-GLP(p,r,q,c,i,e,n; p=1; exog=covid,epa2021) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.2964; logml=-1184.00; D=809; N=750; ESS=691.5; acept_theta=0.577; lam_fijo=None; defl=ipc_general
+V8-M2,M2_robust_p4,"BVAR-GLP(p,r,q,c,i,e,n; p=4; exog=covid,epa2021) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.3502; logml=-1114.19; D=721; N=658; ESS=593.9; acept_theta=0.596; lam_fijo=None; defl=ipc_general
+V8-M2,M2_robust_prior_fijo,"BVAR-GLP(p,r,q,c,i,e,n; p=2; exog=covid,epa2021) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.2000; logml=-1158.01; D=764; N=727; ESS=667.2; acept_theta=0.577; lam_fijo=0.2; defl=ipc_general
+V8-M2,M2_robust_sin_covid,"BVAR-GLP(p,r,q,c,i,e,n; p=2; exog=d2020Q1,d2020Q2,d2020Q3,d2020Q4,d2021Q1,d2021Q2,d2021Q3,d2021Q4) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.4335; logml=-1350.01; D=897; N=714; ESS=650.1; acept_theta=0.554; lam_fijo=None; defl=ipc_general
+V8-M2,M2_robust_deflactor_pib,"BVAR-GLP(p,r,q,c,i,e,n; p=2; exog=covid,epa2021) + signos/ceros h=0",2004Q2,2026Q1,88,,,,,,,lam=0.3683; logml=-1129.90; D=486; N=610; ESS=561.6; acept_theta=0.702; lam_fijo=None; defl=deflactor_pib
 V8-M2,M2_larga,"BVAR-GLP(p,ib,y,n; p=2; exog=covid) + signos/ceros h=0-1",1995Q2,2026Q2,125,,,,,,,lam=0.3478; logml=-469.76; D=300; N=6732; ESS=6639.9; acept_theta=0.950; lam_fijo=None; defl=ipc_general
-V8-M2,M2_H8-1,"P(demografico > 0 | datos), alquiler P5",,,88,,,,,0.6670619784365893,0.3161263870981349,p_holm=0.8166; Holm en la familia {H8-1..H8-4}
-V8-M2,M2_H8-2,"P(credito < 0 | datos), compra P5",,,88,,,,,-0.41173377181419196,0.45689354589910103,p_holm=0.8166; Holm en la familia {H8-1..H8-4}
-V8-M2,M2_H8-3,"P(actividad > 0 | datos), compra P3",,,88,,,,,4.077824246861229,0.2721838478995958,p_holm=0.8166; Holm en la familia {H8-1..H8-4}
-V8-M2,M2_H8-4,"P(credito+actividad < 0 | datos), compra P2",,,88,,,,,-14.326988443166924,0.10691544922072893,p_holm=0.4277; Holm en la familia {H8-1..H8-4}
-V8-M2,M2_principal_sondeo,"BVAR-GLP(p,r,q,c,i,e,n; p=2) + signos h=0-1 + 4 ceros (sondeo de viabilidad)",2004Q2,2026Q1,88,,,,,,,rotaciones=9000000; aceptadas=0; estado=INVIABLE
+V8-M2,M2_H8-1,"P(demografico > 0 | datos), alquiler P5",,,88,,,,,0.07392778986875448,0.4937497297912261,p_holm=0.9875; Holm en la familia {H8-1..H8-4}
+V8-M2,M2_H8-2,"P(credito < 0 | datos), compra P5",,,88,,,,,-0.46935505165047386,0.7066420403603522,p_holm=0.9875; Holm en la familia {H8-1..H8-4}
+V8-M2,M2_H8-3,"P(actividad > 0 | datos), compra P3",,,88,,,,,7.7221817449224055,0.2792680165511978,p_holm=0.8378; Holm en la familia {H8-1..H8-4}
+V8-M2,M2_H8-4,"P(credito+actividad < 0 | datos), compra P2",,,88,,,,,-19.23180358347216,0.08565841588106338,p_holm=0.3426; Holm en la familia {H8-1..H8-4}
+V8-M2,M2_principal_sondeo,"BVAR-GLP(p,r,q,c,i,e,n; p=2) + signos h=0-1 + 4 ceros (sondeo de viabilidad)",2004Q2,2026Q1,88,,,,,,,rotaciones=9000000; aceptadas=1; estado=INVIABLE

@@ -87,5 +87,5 @@
   "rmse": null,
   "dm_vs_ar4": null
  },
- "notas": "C4: asociacion estadistica; el factor es un resumen de comovimiento, sin interpretacion causal ni estructural. Muestras por periodo cortas (P4 = 9 trimestres): con N = 17 y T pequeno la cuota del 1.er componente esta sesgada al alza incluso sin factor comun real. Zona euro sin Espana oficial no construible; proxy DE/FR/IT/NL/PT. Fuera de muestra: M1 no es un modelo predictivo (sin comparacion con AR(4)/ECM v1)."
+ "notas": "C4: asociacion estadistica; el factor es un resumen de comovimiento, sin interpretacion causal ni estructural. Muestras por periodo cortas (P4 = 9 trimestres): con N = 17 y T pequeno la cuota del 1.er componente esta sesgada al alza incluso sin factor comun real. Zona euro sin Espana oficial no construible; aproximacion de 5 paises, media simple (DE/FR/IT/NL/PT). Fuera de muestra: M1 no es un modelo predictivo (sin comparacion con AR(4)/ECM v1)."
 }

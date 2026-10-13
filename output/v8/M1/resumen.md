@@ -2,7 +2,7 @@
 
 **H8-8** (cuota del 1.er componente > 50 % en cada periodo; PCA, bootstrap por bloques; IUT): cuotas {'P1': 0.6474, 'P2': 0.4527, 'P3': 0.5958, 'P4': 0.455, 'P5': 0.9279}; p max = 0.6690; **p Holm = 0.6690**. DFM-ML coincide en >50 %: False. Con N=17 y T pequeno la cuota esta sesgada al alza; ver `cuota_azar_media` y `p_vs_azar` en `cuota_varianza.csv`.
 
-**H8-9** (corr. factor comun - HPI EA19 interanual, 2006T1+): r = 0.598 (IC95 0.14 a 0.86); p = 0.0100; **p Holm = 0.0200**. EA19 incluye Espana (sesgo al alza); proxy sin ES (DE, FR, IT, NL, PT) y EA19 real en `correlaciones_h89.csv`.
+**H8-9** (corr. factor comun - HPI EA19 interanual, 2006T1+): r = 0.598 (IC95 0.14 a 0.86); p = 0.0100; **p Holm = 0.0200**. EA19 incluye Espana (sesgo al alza); aproximacion de 5 paises, media simple (DE, FR, IT, NL, PT), EA19 real y sensibilidad con bloque L=12 en `correlaciones_h89.csv` (L=12: r = 0.598, p = 0.0280; 5 paises L=12: r = 0.585).
 
 Cuota en ventanas de 40 trimestres: 0.48-0.92 (`evolucion_ventanas.csv`). Correlaciones por periodo (exploratorio, BH q=0,10): `correlaciones_periodo.csv`.
 

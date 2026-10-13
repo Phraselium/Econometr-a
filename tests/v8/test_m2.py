@@ -19,8 +19,8 @@ _spec = importlib.util.spec_from_file_location("m2_svar", RAIZ / "src" / "v8" / 
 m2 = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(m2)
 
-FICHEROS = ["irf.csv", "fevd.csv", "hd_periodos.csv", "atribucion.csv", "hipotesis_m2.csv", "predicciones_congeladas.csv"]
-FACTORES = {"demografia", "empleo_renta", "credito_tipos", "oferta", "demanda_externa", "turismo", "factor_europeo", "residuo", "demanda_vivienda"}
+FICHEROS = ["irf.csv", "fevd.csv", "hd_periodos.csv", "atribucion.csv", "hipotesis_m2.csv", "predicciones_congeladas.csv", "prob_mayor.csv", "congelacion.json", "resultado.json"]
+FACTORES = {"demografia", "empleo_renta", "credito_tipos", "oferta", "demanda_externa", "turismo", "factor_europeo", "residuo", "demanda_vivienda", "determinista", "no_identificados"}
 
 
 @pytest.fixture(scope="module")
@@ -44,6 +44,7 @@ def test_identidad_dh_datos_reales(corridas):
         assert d["n_aceptadas"] >= 5, nom
         assert d["hd_error_max"] < 1e-8, (nom, d["hd_error_max"])      # y = det + sum(contrib) en cada trimestre
         assert d["cierre_hd_max"] < 1e-6, (nom, d["cierre_hd_max"])    # suma de factores por periodo = variacion observada
+        assert d["cierre_medias_max"] < 1e-6, (nom, d["cierre_medias_max"])   # J2: suma de MEDIAS de todos los componentes = observado
     assert j["diagnosticos"]["estimaciones"]["V3"]["max_abs_cero"] < 1e-9   # ceros exactos
 
 
@@ -58,11 +59,18 @@ def test_columnas_contrato(corridas):
     sumas = fe[fe.variante == "V3"].groupby(["variable", "h"])["mediana"].sum()
     assert fe.mediana.between(0, 1).all() and sumas.between(0.5, 1.3).all()   # medianas de cuotas: suman ~1 (no exacto)
     hd = pd.read_csv(r / "hd_periodos.csv")
-    assert list(hd.columns[:11]) == ["variante", "mercado", "periodo", "factor", "contribucion_pp", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "prob_pos"]
+    assert list(hd.columns[:13]) == ["variante", "mercado", "periodo", "factor", "contribucion_pp", "media", "mediana", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "prob_pos"]
+    assert hd.columns[-1] == "principal" and np.allclose(hd.contribucion_pp, hd.media)
+    assert {"determinista", "no_identificados"} <= set(hd.factor) and "residuo" not in set(hd.factor)
+    # J2: por (variante, mercado, periodo) la suma de medias = variacion observada
+    g = hd.groupby(["variante", "mercado", "periodo"]).agg(s=("media", "sum"), t=("total_obs_pp", "first"))
+    assert np.allclose(g.s, g.t, atol=1e-5)
+    assert set(hd[(hd.variante == "larga") & (hd.principal == "si")].periodo) == {"P1"} and set(hd[(hd.variante == "V3") & (hd.principal == "no")].periodo) == set()
     assert set(hd.mercado) == {"compra", "alquiler"} and {"P2", "P3", "P4", "P5"} <= set(hd.periodo)
     assert "P1" in set(hd[hd.variante == "larga"].periodo)
     at = pd.read_csv(r / "atribucion.csv")
-    assert list(at.columns) == ["metodo", "mercado", "ambito", "periodo", "factor", "contribucion_pp", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "capa", "notas"]
+    assert list(at.columns) == ["metodo", "mercado", "ambito", "periodo", "factor", "contribucion_pp", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "capa", "notas", "media", "mediana", "variante", "principal"]
+    assert not at.duplicated(["metodo", "mercado", "ambito", "periodo", "factor", "variante"]).any()
     assert set(at.metodo) == {"svar_hd"} and set(at.factor) <= FACTORES and set(at.ambito) == {"nacional"}
     hp = pd.read_csv(r / "hipotesis_m2.csv")
     assert list(hp.id) == ["H8-1", "H8-2", "H8-3", "H8-4"] and (hp.p_holm >= hp.p_unilateral - 1e-12).all()
@@ -71,6 +79,27 @@ def test_columnas_contrato(corridas):
     for k in ("rama", "pregunta", "capa", "datos", "N", "metodo", "estimacion", "ic95", "p_ajustado", "nivel_evidencia", "diagnosticos", "fuera_muestra", "notas"):
         assert k in j
     assert set(j["fuera_muestra"]) >= {"modelo", "rmse", "dm_vs_ar4"}
+
+
+def test_prob_mayor(corridas):
+    pm = pd.read_csv(corridas[0] / "prob_mayor.csv")
+    assert {"variante", "principal", "mercado", "periodo", "shock", "media_c_signo", "prob_mayor"} <= set(pm.columns)
+    s = pm.groupby(["variante", "mercado", "periodo"])["prob_mayor"].sum()
+    assert np.allclose(s, 1.0, atol=1e-9)
+    assert not pm.shock.str.startswith("nid").any() and "determinista" not in set(pm.shock)
+    assert "P1" in set(pm[pm.variante == "larga"].periodo)
+
+
+def test_impulso_epa_y_covid():
+    d = m2.cargar()
+    for nom in ("V3", "V1", "V2", "robust_sin_covid"):
+        X = m2.construir(nom, d)["X"]
+        if "epa2021" in X:
+            assert X["epa2021"].sum() == 1 and X.loc["2021Q1", "epa2021"] == 1       # impulso, no escalon
+    assert (m2.construir("V3", d)["X"]["covid"] == d.loc[m2.construir("V3", d)["X"].index, "covid"]).all()
+    assert set(d.index[d.covid == 1]) == {"2020Q2", "2020Q3", "2020Q4"}
+    X = m2.construir("robust_sin_covid", d)["X"]
+    assert not X.T.duplicated().any()
 
 
 def test_variables_y_muestra():
@@ -86,11 +115,12 @@ def test_congelacion(corridas):
     r = corridas[0]
     meta = json.loads((r / "congelacion.json").read_text())
     assert meta["sha256"] == sha(r / "predicciones_congeladas.csv")
+    assert meta["sha256_anterior_retirado"] == m2.SHA256_ANTERIOR_RETIRADO != meta["sha256"]
     pc = pd.read_csv(r / "predicciones_congeladas.csv")
     assert set(pc.variable) == {"p", "r"} and (pc[pc.evaluable].h_desde_2026T2.between(1, 4)).all()
 
 
 def test_determinismo(corridas):
     a, b = corridas
-    for f in FICHEROS + ["resumen.md", "registro.csv"]:
+    for f in FICHEROS + ["resumen.md", "registro.csv"]:   # tiempos.json queda fuera (J22)
         assert sha(a / f) == sha(b / f), f

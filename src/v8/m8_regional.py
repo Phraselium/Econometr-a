@@ -34,11 +34,19 @@ from m1_factor_comun import (COLS_ATR, COLS_COEF, PERS, bandas, cargar, fila_coe
 SEED = 20261010
 D = RAIZ / "data" / "processed" / "v8"
 SCRIPT = "src/v8/m8_regional.py"
+NOTA_J23 = ("La pendiente ~1 del factor comun es mecanica (el factor es la media transversal reescalada e incluye a la propia CCAA, 1/17) y los "
+            "'significativos tras BH' del factor comun tambien: es un resumen de comovimiento, no compite con los 7 factores en s9 (vota_s9 = no). "
+            "contribucion_pp = media interanual x T/4, aproximacion de la variacion acumulada (suma de tasas trimestrales reales, log x100) del periodo; pct_total en %.")
 AVISO = ("C4: asociacion estadistica condicional; sin lectura causal. Ecuaciones por CCAA y periodo con pocos trimestres "
          "(P4 = 9): bandas aproximadas. El factor comun y las covariables regionales son colineales por construccion (VIF en coeficientes.csv).")
 FACTOR_DE = {"ocupados": "empleo_renta", "paro": "empleo_renta", "pob_total": "demografia", "pob_extranj": "demografia",
              "visados": "oferta", "tx_extranj": "demanda_externa", "turismo": "turismo"}
 NOMBRES_CCAA = {}
+
+
+def cc2(c):
+    """Ambito de CCAA con codigo INE de dos digitos (J19)."""
+    return f"ccaa:{int(c):02d}"
 
 
 def qi(s):
@@ -111,7 +119,8 @@ def main(rapido=False, salida=None):
     avisos = []
     p = cargar()
     nombres = p[["codigo_ine_ccaa", "ccaa"]].drop_duplicates().set_index("codigo_ine_ccaa")["ccaa"].to_dict()
-    per = periodo_de(p)
+    per = periodo_de(p).copy()
+    per[per.index > "2026Q1"] = np.nan   # R0: P5 = 2022T3-2026T1 en todos los metodos
     ipc = p.groupby("trimestre")["ipc_general"].first()
     medida = {"compra": "valor tasado real por CCAA (valor_tasado_ccaa / IPC general)", "alquiler": "IPC alquiler real por CCAA (ipc_alquiler / IPC general)"}
     Y = {"compra": matriz(p, "valor_tasado_ccaa").dropna(), "alquiler": matriz(p, "ipc_alquiler").dropna()}
@@ -158,24 +167,24 @@ def main(rapido=False, salida=None):
                 t, pv = tidy_p(be[1], ee[1], n - 2)
                 tc = stats.t.ppf(0.975, n - 2)
                 mid = f"M8_ccaa{c}_{m}_{pe}"
-                coefs.append(fila_coef(modelo_id=mid, familia_modelo="ols_ccaa_factor", mercado=m, ambito=f"ccaa:{c}", periodo=pe,
+                coefs.append(fila_coef(modelo_id=mid, familia_modelo="ols_ccaa_factor", mercado=m, ambito=cc2(c), periodo=pe,
                                        dependiente="d4 ln precio real x100", transformacion="interanual", medida_precio=medida[m],
                                        variable="factor_comun", beta=be[1], ee=ee[1], tipo_ee=f"Newey-West L={L}", t=t, p=pv,
                                        ic95_lo=be[1] - tc * ee[1], ic95_hi=be[1] + tc * ee[1], n=n, r2=r2, r2_adj=r2a, capa="C4",
                                        beta_std=be[1] / max(1e-12, y.std())))
                 bd = bandas(bshare)
-                filas_cuota.append(dict(mercado=m, ambito=f"ccaa:{c}", ccaa=nombres[c], periodo=pe, n=n, cuota_comun=r2,
+                filas_cuota.append(dict(mercado=m, ambito=cc2(c), ccaa=nombres[c], periodo=pe, n=n, cuota_comun=r2,
                                         cuota_idiosincratica=1 - r2, b90_lo_comun=bd["b90_lo"], b90_hi_comun=bd["b90_hi"],
                                         carga=be[1], media_crec=float(y.mean())))
                 # atribucion regional (factor comun vs resto) por CCAA con bandas
                 tot = float(y.mean() * n / 4)
                 cf = float(be[1] * f.mean() * n / 4)
                 bt = bandas(bs)
-                atr.append(dict(metodo="regional_ccaa_ols", mercado=m, ambito=f"ccaa:{c}", periodo=pe, factor="factor_comun", contribucion_pp=cf,
-                                pct_total=cf / tot if abs(tot) > 1e-9 else np.nan, b68_lo=bt["b68_lo"], b68_hi=bt["b68_hi"], b90_lo=bt["b90_lo"],
+                atr.append(dict(metodo="regional_ccaa_ols", variante="ols_solo_factor", mercado=m, ambito=cc2(c), periodo=pe, factor="factor_comun", contribucion_pp=cf,
+                                pct_total=100 * cf / tot if abs(tot) > 1e-9 else np.nan, b68_lo=bt["b68_lo"], b68_hi=bt["b68_hi"], b90_lo=bt["b90_lo"],
                                 b90_hi=bt["b90_hi"], capa="C4", notas=f"ecuacion por CCAA y = a + b F (n={n}); variacion acumulada aprox. = media interanual x trimestres/4"))
-                atr.append(dict(metodo="regional_ccaa_ols", mercado=m, ambito=f"ccaa:{c}", periodo=pe, factor="residuo", contribucion_pp=tot - cf,
-                                pct_total=(tot - cf) / tot if abs(tot) > 1e-9 else np.nan, b68_lo=np.nan, b68_hi=np.nan, b90_lo=np.nan, b90_hi=np.nan,
+                atr.append(dict(metodo="regional_ccaa_ols", variante="ols_solo_factor", mercado=m, ambito=cc2(c), periodo=pe, factor="residuo", contribucion_pp=tot - cf,
+                                pct_total=100 * (tot - cf) / tot if abs(tot) > 1e-9 else np.nan, b68_lo=np.nan, b68_hi=np.nan, b90_lo=np.nan, b90_hi=np.nan,
                                 capa="C4", notas=f"idiosincratico (constante + residuo); total periodo {tot:.1f} pp; banda no calculada (resto)"))
                 reg.log("M8_ccaa", mid, "y ~ 1 + F", ix[0], ix[-1], n, r2a, np.nan, np.nan, coef_interes=be[1], p_interes=pv,
                         notas=f"{m} {pe} ccaa {c}; NW L={L}")
@@ -247,14 +256,14 @@ def main(rapido=False, salida=None):
                 vb = Cb[:, e, ks].sum(axis=1)
                 bd = bandas(vb)
                 suma0 += v0
-                atr.append(dict(metodo="regional_panel", mercado=m, ambito=f"ccaa:{c}", periodo=pe, factor=fac, contribucion_pp=v0,
-                                pct_total=v0 / tot0[e] if abs(tot0[e]) > 1e-9 else np.nan, b68_lo=bd["b68_lo"], b68_hi=bd["b68_hi"],
+                atr.append(dict(metodo="regional_panel", variante=("panel_covariables" if tag == "cov" else "panel_" + tag), mercado=m, ambito=cc2(c), periodo=pe, factor=fac, contribucion_pp=v0,
+                                pct_total=100 * v0 / tot0[e] if abs(tot0[e]) > 1e-9 else np.nan, b68_lo=bd["b68_lo"], b68_hi=bd["b68_hi"],
                                 b90_lo=bd["b90_lo"], b90_hi=bd["b90_hi"], capa="C4",
                                 notas=f"panel FE {tag} (covariables {usa}); gamma comun a las CCAA; contribucion = gamma x media regional x T/4"))
             rb = Tb[:, e] - Cb[:, e, :].sum(axis=1)
             bd = bandas(rb)
-            atr.append(dict(metodo="regional_panel", mercado=m, ambito=f"ccaa:{c}", periodo=pe, factor="residuo", contribucion_pp=float(tot0[e] - suma0),
-                            pct_total=(tot0[e] - suma0) / tot0[e] if abs(tot0[e]) > 1e-9 else np.nan, b68_lo=bd["b68_lo"], b68_hi=bd["b68_hi"],
+            atr.append(dict(metodo="regional_panel", variante=("panel_covariables" if tag == "cov" else "panel_" + tag), mercado=m, ambito=cc2(c), periodo=pe, factor="residuo", contribucion_pp=float(tot0[e] - suma0),
+                            pct_total=100 * (tot0[e] - suma0) / tot0[e] if abs(tot0[e]) > 1e-9 else np.nan, b68_lo=bd["b68_lo"], b68_hi=bd["b68_hi"],
                             b90_lo=bd["b90_lo"], b90_hi=bd["b90_hi"], capa="C4", notas=f"efecto fijo + residuo; panel FE {tag}; total {tot0[e]:.1f} pp"))
         return dict(modelo=mid, covs=usa, T=T, E=E)
 
@@ -324,6 +333,8 @@ def main(rapido=False, salida=None):
     if len(lp):
         lp["p_bh"] = multipletests(lp["p"].fillna(1), method="fdr_bh")[1]
         lp["sig_bh_q10"] = lp["p_bh"] < 0.10
+        lp["p_ajustado"] = lp["p_bh"]
+        lp["metodo_ajuste"] = "BH"
     lp.to_csv(out / "lp_panel.csv", index=False)
 
     # ------------------------------------------------------------ 4. Comunitat Valenciana: provincias y Valencia ciudad
@@ -400,11 +411,11 @@ def main(rapido=False, salida=None):
             reg.log("M8_cv", mid, "d4 p_real ~ 1 + F_nacional", ix[0], ix[-1], n, r2a, np.nan, np.nan, coef_interes=be[1], p_interes=pv,
                     notas="C4 con aviso" if n < 8 else "C4")
             aviso_n = " Muestra corta (<12 trimestres): bandas aproximadas." if n < 12 else ""
-            atr_all.append(dict(metodo="contabilidad", mercado="compra", ambito=amb, periodo=pe, factor="factor_comun", contribucion_pp=cf,
-                                pct_total=cf / tot if abs(tot) > 1e-9 else np.nan, b68_lo=bt["b68_lo"], b68_hi=bt["b68_hi"], b90_lo=bt["b90_lo"],
+            atr_all.append(dict(metodo="contabilidad", variante="ols_factor_nacional", mercado="compra", ambito=amb, periodo=pe, factor="factor_comun", contribucion_pp=cf,
+                                pct_total=100 * cf / tot if abs(tot) > 1e-9 else np.nan, b68_lo=bt["b68_lo"], b68_hi=bt["b68_hi"], b90_lo=bt["b90_lo"],
                                 b90_hi=bt["b90_hi"], capa="C4", notas=f"parte asociada al factor comun nacional (regresion, n={n}); total = media interanual x T/4.{aviso_n}"))
-            atr_all.append(dict(metodo="contabilidad", mercado="compra", ambito=amb, periodo=pe, factor="residuo", contribucion_pp=tot - cf,
-                                pct_total=(tot - cf) / tot if abs(tot) > 1e-9 else np.nan, b68_lo=np.nan, b68_hi=np.nan, b90_lo=np.nan, b90_hi=np.nan,
+            atr_all.append(dict(metodo="contabilidad", variante="ols_factor_nacional", mercado="compra", ambito=amb, periodo=pe, factor="residuo", contribucion_pp=tot - cf,
+                                pct_total=100 * (tot - cf) / tot if abs(tot) > 1e-9 else np.nan, b68_lo=np.nan, b68_hi=np.nan, b90_lo=np.nan, b90_hi=np.nan,
                                 capa="C4", notas=f"idiosincratico respecto al factor nacional; total {tot:.1f} pp; banda no calculada (resto)"))
             fila.update(total_pp=tot, cuota_factor_nacional=r2, cuota_adicional_ccaa_cv=(r2b - r2) if be2 is not None else np.nan,
                         nota_ccaa="la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico")
@@ -487,7 +498,13 @@ def main(rapido=False, salida=None):
     cf.loc[mask, "p_ajustado"] = multipletests(cf.loc[mask, "p"], method="fdr_bh")[1]
     cf.loc[mask, "metodo_ajuste"] = "BH"
     cf.to_csv(out / "coeficientes.csv", index=False)
-    atribucion = pd.DataFrame(atr_all, columns=COLS_ATR)
+    atribucion = pd.DataFrame(atr_all)
+    atribucion["principal"] = np.where(atribucion["variante"] == "panel_turismo_sens", "no", "si")
+    atribucion["vota_s9"] = "no"   # R6: M8 no vota en s9; factor_comun no compite con los 7 factores (J23)
+    atribucion["notas"] = atribucion["notas"] + np.where(atribucion["factor"] == "factor_comun",
+                                                         "; NO compite en s9: resumen de comovimiento, pendiente ~1 mecanica (media transversal que incluye a la propia CCAA, 1/17)", "")
+    atribucion = atribucion[COLS_ATR + ["vota_s9"]]
+    assert not atribucion.duplicated(["metodo", "mercado", "ambito", "periodo", "factor", "variante"]).any()
     atribucion.to_csv(out / "atribucion.csv", index=False)
     pd.DataFrame(resumen_paneles).assign(covs=lambda d: d["covs"].astype(str)).to_csv(out / "paneles_resumen.csv", index=False)
 
@@ -509,7 +526,7 @@ def main(rapido=False, salida=None):
         diagnosticos={"B": B, "rapido": rapido, "avisos": avisos[:30], "vif_max_paneles": float(np.nanmax(cf["vif_max"].astype(float))) if cf["vif_max"].notna().any() else None,
                       "heterogeneidad_por_periodo": "ajustes separados por periodo (no se contrasta igualdad de coeficientes)"},
         fuera_muestra={"modelo": "no aplica", "rmse": None, "dm_vs_ar4": None},
-        notas=AVISO + " Fuera de muestra: M8 es descriptivo/asociativo, sin comparacion con AR(4)/ECM v1. Alquiler por CCAA solo desde 2008 (sin P1). Turismo solo en 6 CCAA (sensibilidad).",
+        notas=AVISO + " " + NOTA_J23 + " Fuera de muestra: M8 es descriptivo/asociativo, sin comparacion con AR(4)/ECM v1. Alquiler por CCAA solo desde 2008 (sin P1). Turismo solo en 6 CCAA (sensibilidad).",
     )
     (out / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float))
     reg.flush()
@@ -523,6 +540,7 @@ def main(rapido=False, salida=None):
           "Contribuciones por CCAA con bandas bootstrap en `atribucion.csv` (metodo regional_panel; factores demografia, empleo_renta, oferta, demanda_externa, factor_comun, residuo)." + lpt, "",
           "**Comunitat Valenciana** (03, 12, 46) y **Valencia ciudad**: `cuota_cv.csv` (parte asociada al factor nacional y aporte adicional de la serie CV, cota superior porque incluye a la propia provincia), "
           "`cadena_territorial.csv` (identidad aritmetica Espana -> CV -> provincia -> ciudad), `descriptivo_cv.csv` (C1 solo con 2 fuentes concordantes). Muestras cortas (P4, P1 de Valencia ciudad desde 2006): C4 con aviso.", "",
+          "**Factor comun (J23).** " + NOTA_J23, "",
           "**Limites.** " + AVISO, "Turismo: 6 CCAA desde 2015T4 (sensibilidad). Alquiler por CCAA desde 2008 (sin P1)."]
     (out / "resumen.md").write_text("\n".join(md) + "\n")
     json.dump({"segundos": round(time.time() - t0, 1)}, open(out / "tiempos.json", "w"))

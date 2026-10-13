@@ -10,17 +10,24 @@
     "tope": 50000,
     "truncado": false
   },
-  "metodo": "OLS con errores HAC (Newey-West 4) o EWC; beta tipificado; BH q=0,10 por mercado y periodo sobre todas las especificaciones; cumple_multiverso = signo estable >=80 % y significativo tras BH >=50 %",
+  "metodo": "OLS con errores HAC (Newey-West 4) o EWC; beta tipificado; BH q=0,10 por mercado y periodo sobre todas las especificaciones; cumple_multiverso (R3) = signo ORIENTADO (tipos x-1) estable >=80 % y significativo tras BH >=50 % en la familia (TODAS) Y en su variable principal; pct_*_rejilla cuentan las fallidas como «no cumple»; P4 y compra P1 marcados «multiverso truncado»",
   "estimacion": {
     "n_factor_periodo_mercado": 74,
-    "n_cumplen_multiverso": 3,
+    "n_cumplen_multiverso": 2,
+    "n_cumplen_solo_familia_orientada": 2,
+    "n_cumplen_R3_rejilla_completa": 2,
+    "n_celdas_multiverso_truncado": 19,
+    "celdas_truncadas": [
+      "alquiler|P4",
+      "compra|P1",
+      "compra|P4"
+    ],
     "cumplen": [
       "alquiler|P2|demografia (positivo, signo 100%, BH 78%)",
-      "alquiler|completo|demografia (positivo, signo 98%, BH 59%)",
-      "compra|P5|credito_tipos (positivo, signo 88%, BH 51%)"
+      "alquiler|completo|demografia (positivo, signo 98%, BH 60%)"
     ],
-    "signo_estable_80": 8,
-    "sig_bh_50": 3
+    "signo_estable_80": 6,
+    "sig_bh_50": 2
   },
   "ic95": "cuantiles p05-p95 del beta tipificado por (mercado, periodo, factor, variable) en resumen_multiverso.csv",
   "p_ajustado": {
@@ -45,6 +52,5 @@
     "Alquiler: sin medida alternativa trimestral nacional (SERPAVI es anual; fianzas son regionales): una sola medida.",
     "El BH usa todas las especificaciones (muy correlacionadas): es un criterio de sensibilidad, no una inferencia independiente.",
     "Los controles usan siempre la variable principal no interpolada de cada familia; la variable alternativa varia solo en el factor focal."
-  ],
-  "tiempo_s": 189.3
+  ]
 }

@@ -100,7 +100,13 @@ def test_contrato_resumen(corridas):
     tod = res[res["variable"] == "TODAS"]
     assert len(tod) > 0 and set(tod["mercado"]) == {"compra", "alquiler"}
     assert not tod.duplicated(["mercado", "periodo", "factor"]).any()          # clave de cruce unica para M2/M5
-    assert (res["cumple_multiverso"] == ((res["pct_mismo_signo"] >= 0.8) & (res["pct_sig_bh"] >= 0.5))).all()
+    pv = res[res["variable"] != "TODAS"]
+    assert (pv["cumple_multiverso"] == ((pv["pct_mismo_signo"] >= 0.8) & (pv["pct_sig_bh"] >= 0.5))).all()
+    # R3: la familia cumple solo si cumplen la familia (orientada) y su variable principal
+    assert (tod["cumple_multiverso"] == tod["cumple_R3"]).all()
+    assert (tod["cumple_multiverso"].astype(bool) <= tod["cumple_multiverso_familia"].astype(bool)).all()
+    assert (res["n_rejilla"] >= res["n_multiverso"]).all() and (res["pct_mismo_signo_rejilla"] <= res["pct_mismo_signo"] + 1e-12).all()
+    assert "tiempo" not in (r / "resultado.json").read_text() and (r / "tiempos.json").exists()
     assert (res["p05"] <= res["beta_std_mediana"] + 1e-12).all() and (res["beta_std_mediana"] <= res["p95"] + 1e-12).all()
     # n de la fila TODAS = suma de las filas por variable
     s = res[res["variable"] != "TODAS"].groupby(["mercado", "periodo", "factor"])["n_multiverso"].sum()
@@ -127,3 +133,16 @@ def test_resultado_y_determinismo(corridas):
     assert j["N"]["tope"] == 50000 and j["N"]["truncado"] is False
     for f in ["resumen_multiverso.csv", "especificaciones.csv", "registro.csv"]:
         assert sha(corridas[0] / f) == sha(corridas[1] / f), f
+
+
+def test_orientacion_tipos():
+    filas = [dict(mercado="compra", periodo="P5", factor="credito_tipos", variable=v, interpolada=False, errores="HAC4",
+                  beta_std=b, p_bh=0.01) for v, b in (("tipo_hip_real", 0.4), ("tipo_hip_real", 0.5), ("credito_stock_real", -0.3), ("credito_stock_real", -0.2))]
+    r = m7._resumir(pd.DataFrame(filas), "compra", "P5", "credito_tipos", "TODAS", 6)
+    assert r["pct_mismo_signo"] == 1.0 and r["signo_mayoritario"] == "negativo"     # tipos x-1: los 4 coeficientes apuntan en la misma direccion
+    assert abs(r["pct_mismo_signo_rejilla"] - 4 / 6) < 1e-12 and r["cumple_multiverso_rejilla"] is False
+
+
+def test_ficticia_epa_impulso():
+    d = C.cargar()
+    assert d["epa2021"].sum() == 4 and d["epa2021_q"].sum() == 1 and d.loc["2021Q1", "epa2021_q"] == 1 and d.loc["2022Q1", "epa2021"] == 0

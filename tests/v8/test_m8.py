@@ -46,7 +46,11 @@ def test_salidas_contrato():
     for k in ["rama", "pregunta", "capa", "datos", "N", "metodo", "estimacion", "ic95", "p_ajustado", "nivel_evidencia", "diagnosticos", "fuera_muestra", "notas"]:
         assert k in r
     a = pd.read_csv(OUT / "atribucion.csv")
-    assert list(a.columns) == m1.COLS_ATR
+    assert list(a.columns) == m1.COLS_ATR + ["vota_s9"]
+    assert set(a["vota_s9"]) == {"no"} and not a.duplicated(["metodo", "mercado", "ambito", "periodo", "factor", "variante"]).any()
+    assert all(len(x.split(":")[1]) == 2 for x in set(a["ambito"]) if x.startswith("ccaa:"))
+    assert a["pct_total"].abs().max() > 1.5          # en % (J19), no en tanto por uno
+    assert a.loc[a.factor == "factor_comun", "notas"].str.contains("NO compite en s9").all()
     assert set(a["metodo"]) <= {"regional_panel", "regional_ccaa_ols", "contabilidad"}
     amb = set(a["ambito"])
     assert {"cv_prov:03", "cv_prov:12", "cv_prov:46", "valencia_ciudad"} <= amb and sum(x.startswith("ccaa:") for x in amb) == 17

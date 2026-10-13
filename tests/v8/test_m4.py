@@ -18,7 +18,7 @@ _spec = importlib.util.spec_from_file_location("m4_largo_plazo", RAIZ / "src" / 
 m4 = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(m4)
 
-COLS_ATR = ["metodo", "mercado", "ambito", "periodo", "factor", "contribucion_pp", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "capa", "notas"]
+COLS_ATR = ["metodo", "mercado", "ambito", "periodo", "factor", "contribucion_pp", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "capa", "notas", "variante", "principal", "vota_s9"]
 FACTORES = {"demografia", "empleo_renta", "credito_tipos", "oferta", "demanda_externa", "turismo", "factor_europeo", "residuo"}
 
 
@@ -39,8 +39,11 @@ def test_contrato(corrida):
     assert (lr.p_ajustado >= lr.p - 1e-12).all()
     ok = c[c.vel_ajuste.notna() & c.semivida.notna()]
     assert (ok.vel_ajuste < 0).all() and (ok.vel_ajuste > -1).all() and (ok.semivida > 0).all()
+    assert c.p_ajustado.notna().all() and (c.metodo_ajuste == "BH").all()
     a = pd.read_csv(corrida / "atribucion.csv")
-    assert list(a.columns) == COLS_ATR and set(a.metodo) == {"contabilidad_lp", "contabilidad"} and set(a.factor) <= FACTORES
+    assert list(a.columns) == COLS_ATR
+    assert set(a.vota_s9) == {"no"} and not a.duplicated(["metodo", "mercado", "ambito", "periodo", "factor", "variante"]).any()
+    assert a[a.metodo == "contabilidad_lp"].notas.str.contains("SIN COINTEGRACION DEMOSTRADA").all() and set(a.metodo) == {"contabilidad_lp", "contabilidad"} and set(a.factor) <= FACTORES
     assert (a.b90_lo <= a.b68_lo + 1e-9).all() and (a.b68_hi <= a.b90_hi + 1e-9).all()
     j = json.loads((corrida / "resultado.json").read_text())
     for k in ("rama", "pregunta", "capa", "datos", "N", "metodo", "estimacion", "ic95", "p_ajustado", "nivel_evidencia", "diagnosticos", "fuera_muestra", "notas"):
@@ -99,3 +102,22 @@ def test_semivida_y_vif():
     assert abs(m4.semivida(-0.5) - 1.0) < 1e-12 and np.isnan(m4.semivida(0.1))
     x = np.random.default_rng(0).standard_normal((50, 2))
     assert m4.vif_max(x) < 2
+
+
+def test_ardl_decision_exige_t(corrida):
+    c = pd.read_csv(corrida / "cointegracion.csv")
+    ok = c.ARDL_rechaza_sin
+    # rechaza solo si t < cota I(1) (J10); con t >= cota nunca rechaza
+    assert (c.loc[ok, "ARDL_t_yL1_sin"] < c.loc[ok, "ARDL_t_cota_I1_5"]).all()
+    assert (~ok[c.ARDL_t_yL1_sin >= c.ARDL_t_cota_I1_5]).all()
+    assert (c.loc[c.ARDL_decision_5pct_sin.str.startswith("rechaza"), "ARDL_rechaza_sin"]).all()
+
+
+def test_voto_contabilidad(corrida):
+    v = pd.read_csv(corrida / "voto_contabilidad.csv")
+    for col in ("mercado", "periodo", "ventana_R0", "brecha", "brecha_pct_stock_hogares", "signo_dY", "vota_demografia"):
+        assert col in v.columns
+    vv = v[v.vota_demografia == "si"]
+    assert (vv.brecha_pct_stock_hogares.abs() >= 0.5).all() and (vv.signo_brecha == vv.signo_dY).all()
+    assert (v.loc[v.vota_demografia == "no", "n_trim"] >= 0).all()
+    assert not (corrida / "resultado.json").read_text().count("segundos") and (corrida / "tiempos.json").exists()

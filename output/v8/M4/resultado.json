@@ -16,7 +16,7 @@
         "beta": 0.058,
         "ic95_lo": -0.2694,
         "ic95_hi": 0.3853,
-        "p_ajustado": 0.8314,
+        "p_ajustado": 0.8406,
         "vel_ajuste": -0.0147,
         "semivida": 46.8059,
         "coint_p": 0.814
@@ -27,7 +27,7 @@
         "beta": -0.0044,
         "ic95_lo": -0.0105,
         "ic95_hi": 0.0017,
-        "p_ajustado": 0.2956,
+        "p_ajustado": 0.2988,
         "vel_ajuste": -0.0147,
         "semivida": 46.8059,
         "coint_p": 0.814
@@ -60,7 +60,7 @@
         "beta": -0.0428,
         "ic95_lo": -0.1548,
         "ic95_hi": 0.0692,
-        "p_ajustado": 0.6395,
+        "p_ajustado": 0.6484,
         "vel_ajuste": -0.0147,
         "semivida": 46.8059,
         "coint_p": 0.814
@@ -82,7 +82,7 @@
         "beta": 0.0003,
         "ic95_lo": -0.0127,
         "ic95_hi": 0.0132,
-        "p_ajustado": 0.9856,
+        "p_ajustado": 0.9846,
         "vel_ajuste": -0.0153,
         "semivida": 44.844,
         "coint_p": 0.814
@@ -93,7 +93,7 @@
         "beta": -0.4173,
         "ic95_lo": -1.87,
         "ic95_hi": 1.0355,
-        "p_ajustado": 0.7343,
+        "p_ajustado": 0.7406,
         "vel_ajuste": -0.0153,
         "semivida": 44.844,
         "coint_p": 0.814
@@ -115,7 +115,7 @@
         "beta": -0.3105,
         "ic95_lo": -0.4968,
         "ic95_hi": -0.1243,
-        "p_ajustado": 0.0048,
+        "p_ajustado": 0.0044,
         "vel_ajuste": -0.0153,
         "semivida": 44.844,
         "coint_p": 0.814
@@ -126,7 +126,7 @@
         "beta": -0.0454,
         "ic95_lo": -1.1255,
         "ic95_hi": 1.0347,
-        "p_ajustado": 0.9548,
+        "p_ajustado": 0.9635,
         "vel_ajuste": -0.0832,
         "semivida": 7.9782,
         "coint_p": 0.001
@@ -137,7 +137,7 @@
         "beta": 0.0189,
         "ic95_lo": -0.0047,
         "ic95_hi": 0.0425,
-        "p_ajustado": 0.2368,
+        "p_ajustado": 0.2401,
         "vel_ajuste": -0.0832,
         "semivida": 7.9782,
         "coint_p": 0.001
@@ -148,7 +148,7 @@
         "beta": 0.2678,
         "ic95_lo": -2.6227,
         "ic95_hi": 3.1583,
-        "p_ajustado": 0.8994,
+        "p_ajustado": 0.9141,
         "vel_ajuste": -0.0832,
         "semivida": 7.9782,
         "coint_p": 0.001
@@ -159,7 +159,7 @@
         "beta": -0.1453,
         "ic95_lo": -0.6768,
         "ic95_hi": 0.3863,
-        "p_ajustado": 0.7343,
+        "p_ajustado": 0.7406,
         "vel_ajuste": -0.0832,
         "semivida": 7.9782,
         "coint_p": 0.001
@@ -170,7 +170,7 @@
         "beta": 0.6555,
         "ic95_lo": 0.0544,
         "ic95_hi": 1.2567,
-        "p_ajustado": 0.0866,
+        "p_ajustado": 0.0874,
         "vel_ajuste": -0.0832,
         "semivida": 7.9782,
         "coint_p": 0.001
@@ -183,7 +183,7 @@
         "beta": 0.8649,
         "ic95_lo": 0.1801,
         "ic95_hi": 1.5498,
-        "p_ajustado": 0.042,
+        "p_ajustado": 0.0411,
         "vel_ajuste": -0.0034,
         "semivida": 202.4649,
         "coint_p": 0.814
@@ -194,7 +194,7 @@
         "beta": 0.0042,
         "ic95_lo": -0.0036,
         "ic95_hi": 0.012,
-        "p_ajustado": 0.4704,
+        "p_ajustado": 0.4896,
         "vel_ajuste": -0.0034,
         "semivida": 202.4649,
         "coint_p": 0.814
@@ -205,7 +205,7 @@
         "beta": -0.3021,
         "ic95_lo": -2.1036,
         "ic95_hi": 1.4995,
-        "p_ajustado": 0.8325,
+        "p_ajustado": 0.8478,
         "vel_ajuste": -0.0034,
         "semivida": 202.4649,
         "coint_p": 0.814
@@ -227,7 +227,7 @@
         "beta": -0.2377,
         "ic95_lo": -0.4887,
         "ic95_hi": 0.0133,
-        "p_ajustado": 0.1474,
+        "p_ajustado": 0.1484,
         "vel_ajuste": -0.0034,
         "semivida": 202.4649,
         "coint_p": 0.814
@@ -249,7 +249,7 @@
         "beta": 0.0031,
         "ic95_lo": -0.0077,
         "ic95_hi": 0.0139,
-        "p_ajustado": 0.7343,
+        "p_ajustado": 0.7406,
         "vel_ajuste": -0.0074,
         "semivida": 93.6284,
         "coint_p": 0.814
@@ -260,7 +260,7 @@
         "beta": -0.9587,
         "ic95_lo": -2.816,
         "ic95_hi": 0.8987,
-        "p_ajustado": 0.4971,
+        "p_ajustado": 0.5222,
         "vel_ajuste": -0.0074,
         "semivida": 93.6284,
         "coint_p": 0.814
@@ -282,7 +282,7 @@
         "beta": -0.1855,
         "ic95_lo": -0.3481,
         "ic95_hi": -0.0229,
-        "p_ajustado": 0.0725,
+        "p_ajustado": 0.0714,
         "vel_ajuste": -0.0074,
         "semivida": 93.6284,
         "coint_p": 0.814
@@ -293,7 +293,7 @@
         "beta": -5.847,
         "ic95_lo": -18.6518,
         "ic95_hi": 6.9579,
-        "p_ajustado": 0.5653,
+        "p_ajustado": 0.5799,
         "vel_ajuste": -0.0343,
         "semivida": 19.8514,
         "coint_p": 0.001
@@ -304,7 +304,7 @@
         "beta": 0.0169,
         "ic95_lo": -0.0418,
         "ic95_hi": 0.0756,
-        "p_ajustado": 0.7343,
+        "p_ajustado": 0.7406,
         "vel_ajuste": -0.0343,
         "semivida": 19.8514,
         "coint_p": 0.001
@@ -315,7 +315,7 @@
         "beta": 13.0752,
         "ic95_lo": -12.3798,
         "ic95_hi": 38.5302,
-        "p_ajustado": 0.4971,
+        "p_ajustado": 0.523,
         "vel_ajuste": -0.0343,
         "semivida": 19.8514,
         "coint_p": 0.001
@@ -326,7 +326,7 @@
         "beta": -2.1101,
         "ic95_lo": -7.1499,
         "ic95_hi": 2.9297,
-        "p_ajustado": 0.5992,
+        "p_ajustado": 0.6165,
         "vel_ajuste": -0.0343,
         "semivida": 19.8514,
         "coint_p": 0.001
@@ -337,7 +337,7 @@
         "beta": 3.2032,
         "ic95_lo": -3.1229,
         "ic95_hi": 9.5294,
-        "p_ajustado": 0.4975,
+        "p_ajustado": 0.527,
         "vel_ajuste": -0.0343,
         "semivida": 19.8514,
         "coint_p": 0.001
@@ -350,7 +350,7 @@
         "beta": 0.0341,
         "ic95_lo": -0.1231,
         "ic95_hi": 0.1912,
-        "p_ajustado": 0.7917,
+        "p_ajustado": 0.8068,
         "vel_ajuste": -0.2127,
         "semivida": 2.8977,
         "coint_p": 0.4278
@@ -361,7 +361,7 @@
         "beta": 0.002,
         "ic95_lo": -0.001,
         "ic95_hi": 0.005,
-        "p_ajustado": 0.3503,
+        "p_ajustado": 0.3571,
         "vel_ajuste": -0.2127,
         "semivida": 2.8977,
         "coint_p": 0.4278
@@ -394,7 +394,7 @@
         "beta": 0.3966,
         "ic95_lo": 0.1679,
         "ic95_hi": 0.6253,
-        "p_ajustado": 0.0033,
+        "p_ajustado": 0.003,
         "vel_ajuste": -0.2127,
         "semivida": 2.8977,
         "coint_p": 0.4278
@@ -405,7 +405,7 @@
         "beta": -0.0975,
         "ic95_lo": -0.175,
         "ic95_hi": -0.02,
-        "p_ajustado": 0.0423,
+        "p_ajustado": 0.0416,
         "vel_ajuste": -0.2271,
         "semivida": 2.6909,
         "coint_p": 0.4278
@@ -416,7 +416,7 @@
         "beta": 0.0036,
         "ic95_lo": 0.0014,
         "ic95_hi": 0.0059,
-        "p_ajustado": 0.0055,
+        "p_ajustado": 0.0051,
         "vel_ajuste": -0.2271,
         "semivida": 2.6909,
         "coint_p": 0.4278
@@ -438,7 +438,7 @@
         "beta": -0.0398,
         "ic95_lo": -0.1109,
         "ic95_hi": 0.0313,
-        "p_ajustado": 0.4565,
+        "p_ajustado": 0.4707,
         "vel_ajuste": -0.2271,
         "semivida": 2.6909,
         "coint_p": 0.4278
@@ -460,7 +460,7 @@
         "beta": -3.0325,
         "ic95_lo": -30.5747,
         "ic95_hi": 24.5098,
-        "p_ajustado": 0.8852,
+        "p_ajustado": 0.9048,
         "vel_ajuste": 0.0117,
         "semivida": NaN,
         "coint_p": 0.001
@@ -471,7 +471,7 @@
         "beta": -0.248,
         "ic95_lo": -2.5632,
         "ic95_hi": 2.0671,
-        "p_ajustado": 0.8852,
+        "p_ajustado": 0.9048,
         "vel_ajuste": 0.0117,
         "semivida": NaN,
         "coint_p": 0.001
@@ -482,7 +482,7 @@
         "beta": 5.5023,
         "ic95_lo": -65.3284,
         "ic95_hi": 76.3331,
-        "p_ajustado": 0.9083,
+        "p_ajustado": 0.9238,
         "vel_ajuste": 0.0117,
         "semivida": NaN,
         "coint_p": 0.001
@@ -493,7 +493,7 @@
         "beta": 1.3671,
         "ic95_lo": -11.5349,
         "ic95_hi": 14.2692,
-        "p_ajustado": 0.8852,
+        "p_ajustado": 0.9048,
         "vel_ajuste": 0.0117,
         "semivida": NaN,
         "coint_p": 0.001
@@ -504,7 +504,7 @@
         "beta": -1.9589,
         "ic95_lo": -24.6771,
         "ic95_hi": 20.7593,
-        "p_ajustado": 0.9047,
+        "p_ajustado": 0.9187,
         "vel_ajuste": 0.0117,
         "semivida": NaN,
         "coint_p": 0.001
@@ -550,7 +550,7 @@
         "beta": 0.0675,
         "ic95_lo": 0.0058,
         "ic95_hi": 0.1293,
-        "p_ajustado": 0.0866,
+        "p_ajustado": 0.0873,
         "vel_ajuste": -0.24,
         "semivida": 2.5252,
         "coint_p": 0.4278
@@ -561,7 +561,7 @@
         "beta": 0.1582,
         "ic95_lo": -0.0093,
         "ic95_hi": 0.3258,
-        "p_ajustado": 0.1474,
+        "p_ajustado": 0.1491,
         "vel_ajuste": -0.24,
         "semivida": 2.5252,
         "coint_p": 0.4278
@@ -572,7 +572,7 @@
         "beta": 0.0464,
         "ic95_lo": -0.0197,
         "ic95_hi": 0.1126,
-        "p_ajustado": 0.3083,
+        "p_ajustado": 0.3134,
         "vel_ajuste": -0.3761,
         "semivida": 1.4691,
         "coint_p": 0.4278
@@ -605,7 +605,7 @@
         "beta": 0.0241,
         "ic95_lo": -0.0407,
         "ic95_hi": 0.0888,
-        "p_ajustado": 0.6444,
+        "p_ajustado": 0.6542,
         "vel_ajuste": -0.3761,
         "semivida": 1.4691,
         "coint_p": 0.4278
@@ -616,7 +616,7 @@
         "beta": 0.2707,
         "ic95_lo": 0.0952,
         "ic95_hi": 0.4462,
-        "p_ajustado": 0.0097,
+        "p_ajustado": 0.0091,
         "vel_ajuste": -0.3761,
         "semivida": 1.4691,
         "coint_p": 0.4278
@@ -627,7 +627,7 @@
         "beta": 0.539,
         "ic95_lo": -0.7497,
         "ic95_hi": 1.8277,
-        "p_ajustado": 0.5992,
+        "p_ajustado": 0.6165,
         "vel_ajuste": -0.0637,
         "semivida": 10.5262,
         "coint_p": 0.001
@@ -638,7 +638,7 @@
         "beta": 0.0395,
         "ic95_lo": -0.0484,
         "ic95_hi": 0.1274,
-        "p_ajustado": 0.5685,
+        "p_ajustado": 0.5867,
         "vel_ajuste": -0.0637,
         "semivida": 10.5262,
         "coint_p": 0.001
@@ -649,7 +649,7 @@
         "beta": -1.7583,
         "ic95_lo": -6.0751,
         "ic95_hi": 2.5585,
-        "p_ajustado": 0.6076,
+        "p_ajustado": 0.6166,
         "vel_ajuste": -0.0637,
         "semivida": 10.5262,
         "coint_p": 0.001
@@ -671,7 +671,7 @@
         "beta": 0.3591,
         "ic95_lo": -1.0072,
         "ic95_hi": 1.7254,
-        "p_ajustado": 0.747,
+        "p_ajustado": 0.7552,
         "vel_ajuste": -0.0637,
         "semivida": 10.5262,
         "coint_p": 0.001
@@ -825,9 +825,8 @@
         "muestra": "2003Q2..2026Q2"
       }
     },
-    "ecm_v1": "no evaluable en la misma muestra (el ECM v1 usa IPV desde 2007 y permisos); este ECM es el comparador de largo plazo de V8"
+    "ecm_v1": "no evaluable aquí; el comparador canónico (especificación A de v7) va en la tabla común de F5 (Y9, J7); este ECM es el comparador de largo plazo de V8"
   },
-  "notas": "Especificación de cabecera fijada a priori: compra C4 y alquiler A4 (sin rupturas). Oferta = ln de terminadas acumuladas desde 1995 (proxy de stock; libres; 1995-2007 anual/4, marcada). Población interpolada (marcada). Contribuciones de largo plazo en atribucion.csv (contabilidad_lp) y brecha hogares-viviendas (contabilidad): C4, asociación. Bandas FMOLS: normal diagonal (no bootstrap).",
-  "segundos": 44.6,
+  "notas": "Especificación de cabecera fijada a priori: compra C4 y alquiler A4 (sin rupturas). Oferta = ln de terminadas acumuladas desde 1995 (proxy de stock; libres; 1995-2007 anual/4, marcada). Población interpolada (marcada). Contribuciones de largo plazo en atribucion.csv (contabilidad_lp: SIN COINTEGRACION DEMOSTRADA, vota_s9 = no) y brecha hogares-viviendas (contabilidad): C4, asociación. Bandas FMOLS: normal diagonal (no bootstrap). Decisión ARDL (J10): rechaza solo si F > cota I(1) y t(y_L1) < cota I(1) (PSS 2001 caso III, tabla asintótica del t: 5 %, k=2 -3,53; k=3 -3,80; k=4 -4,01; I(0) -2,86; verificada por Monte Carlo). Voto de la contabilidad en §9 (J11): solo por el signo de la brecha física hogares nuevos - viviendas terminadas (voto_contabilidad.csv, umbral 0,5 % del stock de hogares); la regresión por periodo queda como C4 informativa. P5 = 2022T3-2026T1 (R0). Regresiones en niveles: el escalón epa2021 es de nivel (correcto), no hay que convertirlo en impulso (J1.6).",
   "rapido": false
 }

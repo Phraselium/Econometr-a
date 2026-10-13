@@ -39,7 +39,11 @@ SEED = 20261010
 DATOS = RAIZ / "data" / "processed" / "v8" / "nacional_q_v8.csv"
 SCRIPT = "src/v8/m4_largo_plazo.py"
 PERIODOS = {"P1": ("1995Q1", "2007Q4"), "P2": ("2008Q3", "2013Q4"), "P3": ("2014Q1", "2019Q4"),
-            "P4": ("2020Q2", "2022Q2"), "P5": ("2022Q3", "2026Q2")}
+            "P4": ("2020Q2", "2022Q2"), "P5": ("2022Q3", "2026Q1")}   # R0 (revision F4): P5 = 2022T3-2026T1 en todos los metodos
+# Cotas I(0)/I(1) del estadistico t de y_{t-1} en el UECM, PSS (2001) caso III (constante libre, sin tendencia), asintoticas, 5 % y 10 %:
+# k -> (I0_5, I1_5, I0_10, I1_10). Se contrastaron por Monte Carlo (T=100, 3000 paseos independientes): k=2 -3,54/-3,19; k=3 -3,77/-3,42; k=4 -4,02/-3,65.
+T_BOUNDS = {1: (-2.86, -3.22, -2.57, -2.91), 2: (-2.86, -3.53, -2.57, -3.21), 3: (-2.86, -3.80, -2.57, -3.46), 4: (-2.86, -4.01, -2.57, -3.66),
+            5: (-2.86, -4.19, -2.57, -3.86)}
 K_DOLS = 1
 HAC = 4
 BLOQUE = 8
@@ -61,6 +65,17 @@ INICIO = {"compra": "1997Q3", "alquiler": "2002Q1"}
 
 
 # ------------------------------------------------------------------ utilidades
+def bh(p):
+    """p ajustado BH (q=0,10) sobre los valores finitos; NaN se conserva."""
+    from scipy.stats import false_discovery_control
+    p = pd.Series(p, dtype=float)
+    out = pd.Series(np.nan, index=p.index)
+    m = p.notna()
+    if m.any():
+        out[m] = false_discovery_control(p[m].values, method="bh")
+    return out
+
+
 def md_tabla(df: pd.DataFrame, fmt: str = "{:.3f}") -> str:
     cols = [str(c) for c in df.columns]
     out = ["| " + " | ".join(cols) + " |", "|" + "|".join("---" for _ in cols) + "|"]
@@ -296,10 +311,21 @@ def ardl_uecm(G, yc, xs, fj, W0, W1):
         else:
             p_sup = float(np.exp(np.interp(F, cu, np.log(1 - pct / 100)))), 
             p_sup, nota = p_sup[0], "interpolado"
-        dec = "rechaza no-cointegracion (F > cota superior 5%)" if F > cvt.loc[95.0, "upper"] else ("no rechaza (F < cota inferior 5%)" if F < cvt.loc[95.0, "lower"] else "inconcluso (entre cotas 5%)")
-        res.update({"F": F, "p_inf": np.nan, "p_sup": p_sup, "p_nota": nota, "decision": dec, "cv95": (float(cvt.loc[95.0, "lower"]), float(cvt.loc[95.0, "upper"]))})
+        tst = float(fit.tvalues["y_L1"])
+        tb = T_BOUNDS[len(xs)]
+        fl, fu = float(cvt.loc[95.0, "lower"]), float(cvt.loc[95.0, "upper"])
+        # J10 (PSS): rechaza solo si F > cota I(1) Y t < cota I(1) del t
+        if F > fu and tst < tb[1]:
+            dec, rech = "rechaza no-cointegracion (F > cota I(1) y t < cota I(1), 5%)", True
+        elif F < fl or tst > tb[0]:
+            dec, rech = "no rechaza (F < cota I(0) o t > cota I(0))", False
+        else:
+            dec, rech = "inconcluso/no rechaza (F o t entre cotas, 5%): sin cointegracion demostrada", False
+        res.update({"F": F, "p_inf": np.nan, "p_sup": p_sup, "p_nota": nota, "decision": dec, "rechaza": rech, "t": tst, "t_cv95": (tb[0], tb[1]),
+                    "cv95": (fl, fu)})
     except Exception as e:  # noqa: BLE001
-        res.update({"F": F, "p_inf": np.nan, "p_sup": np.nan, "p_nota": "", "decision": "", "cv95": (np.nan, np.nan), "error": type(e).__name__})
+        res.update({"F": F, "p_inf": np.nan, "p_sup": np.nan, "p_nota": "", "decision": "", "rechaza": False, "t": np.nan, "t_cv95": (np.nan, np.nan),
+                    "cv95": (np.nan, np.nan), "error": type(e).__name__})
     return res
 
 
@@ -465,13 +491,16 @@ def contribuciones(G, mk, xs, rupturas, est, metodo, B, rng):
             q = np.nanquantile(dr, [0.05, 0.16, 0.84, 0.95])
             filas.append({"metodo": "contabilidad_lp", "mercado": mk, "ambito": "nacional", "periodo": P, "factor": f, "contribucion_pp": c,
                           "pct_total": 100 * c / dY[P] if abs(dY[P]) > 1e-9 else np.nan, "b68_lo": q[1], "b68_hi": q[2], "b90_lo": q[0], "b90_hi": q[3],
-                          "capa": "C4", "notas": f"{metodo.upper()}; spec {'/'.join(xs)}; {'con' if rupturas else 'sin'} escalones; variacion observada del periodo {dY[P]:.2f} pp log x100; "
+                          "capa": "C4", "variante": f"{metodo}_{'con' if rupturas else 'sin'}_escalones", "principal": "si" if (metodo == "dols" and not rupturas) else "no",
+                          "vota_s9": "no",
+                          "notas": f"SIN COINTEGRACION DEMOSTRADA (revision F4, J10; no vota en s9); {metodo.upper()}; spec {'/'.join(xs)}; {'con' if rupturas else 'sin'} escalones; variacion observada del periodo {dY[P]:.2f} pp log x100; "
                                                  f"escalones de ruptura incluidos en residuo ({dfix:.2f}); bandas: {metodo_banda}; ASOCIACION de largo plazo, no causal"})
     return filas
 
 
 # ------------------------------------------------------------------ contabilidad hogares-viviendas
 def contabilidad_hogares(G, d, B, rng):
+    from scipy.stats import false_discovery_control
     h = serie_ajustada(G, "hogares")                 # ln hogares (miles), sin salto EPA 2021
     H = np.exp(h)
     dH = H.diff()                                    # miles de hogares por trimestre
@@ -524,13 +553,51 @@ def contabilidad_hogares(G, d, B, rng):
                         "b68_lo": q[1], "b68_hi": q[2], "b90_lo": q[0], "b90_hi": q[3],
                         "nota": "dy_q = b gap4_{t-1}; contrib = b * suma de gap4 rezagado en el periodo" + ("; n<12: inferencia HAC no fiable" if n < 12 else "")})
     asc = pd.DataFrame(ass)
+    asc["p_ajustado"] = np.nan
+    asc["metodo_ajuste"] = ""
+    mp = asc["p"].notna()
+    if mp.any():
+        asc.loc[mp, "p_ajustado"] = false_discovery_control(asc.loc[mp, "p"].values, method="bh")
+        asc.loc[mp, "metodo_ajuste"] = "BH"
+    voto = voto_contabilidad(G, H, dH, term, brecha_q)
     for r in asc[asc.periodo != "completo"].itertuples():
         if r.b == r.b:
             filas.append({"metodo": "contabilidad", "mercado": r.mercado, "ambito": "nacional", "periodo": r.periodo, "factor": "demografia",
                           "contribucion_pp": r.contrib_pp, "pct_total": np.nan, "b68_lo": r.b68_lo, "b68_hi": r.b68_hi, "b90_lo": r.b90_lo, "b90_hi": r.b90_hi,
-                          "capa": "C4", "notas": f"brecha hogares nuevos - viviendas libres terminadas (demografia menos oferta, no separables); asociacion b={r.b:.3f} (p={r.p:.2f}, n={r.n}); "
-                                                  "bandas: bootstrap por bloques; no causal"})
-    return tab, asc, filas
+                          "capa": "C4", "variante": "pendiente_periodo_c4_informativa", "principal": "si", "vota_s9": "no",
+                          "notas": f"C4 informativa, NO vota en s9 (el voto sale de voto_contabilidad.csv por el signo de la brecha fisica); brecha hogares nuevos - viviendas libres terminadas "
+                                   f"(demografia menos oferta, no separables); asociacion b={r.b:.3f} (p={r.p:.2f}, n={r.n}); bandas: bootstrap por bloques; no causal"})
+    return tab, asc, filas, voto
+
+
+def voto_contabilidad(G, H, dH, term, brecha_q, umbral=0.5):
+    """J11: la contabilidad hogares-viviendas vota en s9 solo por el SIGNO de la brecha fisica (hogares nuevos - viviendas libres terminadas),
+    sin pendiente por periodo. Vota por `demografia` si |brecha| >= 0,5 % del stock de hogares (al inicio de la ventana) y su signo es el de dY.
+    Ventana R0: trimestres del periodo con hogares (EPA desde 2002T2 en diferencias), terminadas y precio; P5 termina en 2026T1."""
+    filas = []
+    for mk in ("compra", "alquiler"):
+        dy = G["y_" + mk].diff() * 100
+        for P, (a, b) in PERIODOS.items():
+            q = [t for t in dy.index if a <= t <= b and dy.get(t) == dy.get(t) and dH.get(t) == dH.get(t) and term.get(t) == term.get(t)]
+            if len(q) < 4:
+                filas.append({"mercado": mk, "periodo": P, "ventana_R0": "", "n_trim": len(q), "hogares_nuevos_miles": np.nan, "viviendas_terminadas_miles": np.nan,
+                              "brecha": np.nan, "brecha_pct_stock_hogares": np.nan, "delta_y_pp": np.nan, "signo_brecha": "", "signo_dY": "", "umbral_pct": umbral,
+                              "vota_demografia": "no", "nota": "sin cobertura suficiente (<4 trimestres con hogares, terminadas y precio)"})
+                continue
+            stock0 = float(H.shift(1).loc[q[0]])
+            br = float(brecha_q.loc[q].sum())
+            pct = 100 * br / stock0
+            dY = float(dy.loc[q].sum())
+            sb, sy = int(np.sign(br)), int(np.sign(dY))
+            vota = abs(pct) >= umbral and sb == sy and sy != 0
+            filas.append({"mercado": mk, "periodo": P, "ventana_R0": f"{q[0]}..{q[-1]}", "n_trim": len(q), "hogares_nuevos_miles": float(dH.loc[q].sum()),
+                          "viviendas_terminadas_miles": float(term.loc[q].sum()), "brecha": br, "brecha_pct_stock_hogares": pct, "delta_y_pp": dY,
+                          "signo_brecha": "+" if sb > 0 else "-" if sb < 0 else "0", "signo_dY": "+" if sy > 0 else "-" if sy < 0 else "0", "umbral_pct": umbral,
+                          "vota_demografia": "si" if vota else "no",
+                          "nota": "brecha en miles (viviendas LIBRES terminadas; faltan protegidas); % sobre el stock de hogares al inicio de la ventana; dY = suma de tasas "
+                                  "trimestrales reales (log x100) en la misma ventana; hogares EPA con salto 2021T1 neutralizado; no se restan viviendas liberadas (v5.1); "
+                                  "demografia menos oferta, no separables; asociacion, no causal"})
+    return pd.DataFrame(filas)
 
 
 # ------------------------------------------------------------------ principal
@@ -558,7 +625,10 @@ def main(argv=None):
                 raices.append({"variable": v, "orden": orden, "n": len(x), "adf_stat": st[0], "p": st[1], "rezagos": st[2], "nota": "ADF con constante, BIC"})
             except Exception:
                 pass
-    pd.DataFrame(raices).to_csv(out / "raices_unitarias.csv", index=False)
+    rdf = pd.DataFrame(raices)
+    rdf["p_ajustado"] = bh(rdf["p"])
+    rdf["metodo_ajuste"] = "BH"
+    rdf.to_csv(out / "raices_unitarias.csv", index=False)
     for mk, specs in SPECS.items():
         i0, i1 = ventana(G, mk)
         gh_cache = {}
@@ -577,9 +647,11 @@ def main(argv=None):
             cv = np.quantile(sim, [0.01, 0.05, 0.10])
             coint_f.append({"mercado": mk, "spec": sn, "variables": "+".join(xs), "ventana": f"{ini}..{fin}", "n": len(G.loc[ini:fin]),
                             "EG_p_mackinnon": est0["eg_p"], "GH_stat": g["stat"], "GH_fecha": g["fecha"], "GH_p_sim": gh_p, "GH_cv1": cv[0], "GH_cv5": cv[1], "GH_cv10": cv[2],
-                            "ARDL_F_sin_rupturas": est0["ardl"]["F"], "ARDL_p_sup_sin": est0["ardl"]["p_sup"], "ARDL_decision_5pct_sin": est0["ardl"]["decision"], "ARDL_cv95_sup": est0["ardl"]["cv95"][1], "ARDL_t_yL1_sin": float(est0["ardl"]["fit"].tvalues["y_L1"]),
+                            "ARDL_F_sin_rupturas": est0["ardl"]["F"], "ARDL_p_sup_sin": est0["ardl"]["p_sup"], "ARDL_decision_5pct_sin": est0["ardl"]["decision"], "ARDL_cv95_sup": est0["ardl"]["cv95"][1], "ARDL_t_yL1_sin": float(est0["ardl"]["fit"].tvalues["y_L1"]), "ARDL_t_cota_I0_5": est0["ardl"]["t_cv95"][0], "ARDL_t_cota_I1_5": est0["ardl"]["t_cv95"][1],
+                            "ARDL_rechaza_sin": est0["ardl"]["rechaza"], "ARDL_t_yL1_con": float(ests[(mk, sn, "con_rupturas")]["ardl"]["fit"].tvalues["y_L1"]),
+                            "ARDL_rechaza_con": ests[(mk, sn, "con_rupturas")]["ardl"]["rechaza"],
                             "ARDL_F_con_rupturas": ests[(mk, sn, "con_rupturas")]["ardl"]["F"], "ARDL_p_sup_con": ests[(mk, sn, "con_rupturas")]["ardl"]["p_sup"], "ARDL_decision_5pct_con": ests[(mk, sn, "con_rupturas")]["ardl"]["decision"],
-                            "nota": "ARDL: F propio con VC asintoticos de statsmodels (con escalones, aproximados); casos degenerados posibles: revisar t de y_L1 (debe ser negativo y significativo); p aproximado por interpolacion de la tabla de VC (acotado a [0,001; 0,10]); GH: cambio de nivel, retardos ADF fijos 4, VC simulados bajo la nula (paseos independientes, nsim=%d); EG: sin rupturas" % len(sim)})
+                            "nota": "ARDL (PSS caso III): decision = rechaza solo si F > cota I(1) Y t(y_L1) < cota I(1) del t (tabla PSS 2001 asintotica, 5 por ciento: k=2 -3,53; k=3 -3,80; k=4 -4,01; I(0) -2,86); F propio con VC asintoticos de statsmodels (con escalones, aproximados); p aproximado por interpolacion de la tabla de VC (acotado a [0,001; 0,10]); GH: cambio de nivel, retardos ADF fijos 4, VC simulados bajo la nula (paseos independientes, nsim=%d); EG: sin rupturas" % len(sim)})
             for rup in (False, True):
                 tag = "con_rupturas" if rup else "sin_rupturas"
                 est = ests[(mk, sn, tag)]
@@ -641,6 +713,9 @@ def main(argv=None):
                         np.nan, np.nan, np.nan, o["rmse"]["ECM (SR + ECT)"], np.nan, o["dm_vs_ar4"]["ECM (SR + ECT)"]["p"],
                         f"AR4 rmse={o['rmse']['AR4']:.3f}; bloques=5 embargo=4")
     oos = pd.DataFrame(oos_f)
+    for c_ in [c for c in oos.columns if c.startswith("dm_p_")]:
+        oos[c_ + "_ajustado"] = bh(oos[c_])
+    oos["metodo_ajuste"] = "BH"
     oos.to_csv(out / "fuera_muestra.csv", index=False)
     # ---- contribuciones (cabecera de cada mercado; DOLS y FMOLS; sin y con escalones)
     for mk, sn in COMPLETA.items():
@@ -649,20 +724,19 @@ def main(argv=None):
             e = ests[(mk, sn, tag)]
             for met in ("dols", "fmols"):
                 attr += contribuciones(G, mk, xs, rup, e, met, B, rng)
-    tab_h, ass_h, filas_h = contabilidad_hogares(G, d, B, rng)
+    tab_h, ass_h, filas_h, voto_h = contabilidad_hogares(G, d, B, rng)
+    voto_h.to_csv(out / "voto_contabilidad.csv", index=False)
     tab_h.to_csv(out / "contabilidad_hogares_viviendas.csv", index=False)
     ass_h.to_csv(out / "contabilidad_hogares_asociacion.csv", index=False)
     attr += filas_h
     at = pd.DataFrame(attr)
-    at = at[["metodo", "mercado", "ambito", "periodo", "factor", "contribucion_pp", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "capa", "notas"]]
+    at = at[["metodo", "mercado", "ambito", "periodo", "factor", "contribucion_pp", "pct_total", "b68_lo", "b68_hi", "b90_lo", "b90_hi", "capa", "notas", "variante", "principal", "vota_s9"]]
     at.to_csv(out / "atribucion.csv", index=False)
     # ---- coeficientes
     coef = pd.DataFrame(filas)
     from scipy.stats import false_discovery_control
-    lr = coef["variable"].str.startswith("ruptura:") == False  # noqa: E712
-    coef["p_ajustado"] = np.nan
-    coef.loc[lr, "p_ajustado"] = false_discovery_control(coef.loc[lr, "p"].fillna(1).values, method="bh")
-    coef["metodo_ajuste"] = np.where(lr, "BH", "")
+    coef["p_ajustado"] = false_discovery_control(coef["p"].fillna(1).values, method="bh")   # J21: todo p con p_ajustado BH (incluidas las rupturas)
+    coef["metodo_ajuste"] = "BH"
     ORD = ["modelo_id", "modulo", "familia_modelo", "mercado", "ambito", "periodo", "dependiente", "transformacion", "medida_precio", "variable", "beta", "ee", "tipo_ee",
            "t", "p", "p_ajustado", "metodo_ajuste", "ic95_lo", "ic95_hi", "beta_std", "elasticidad", "n", "r2", "r2_adj", "aic", "bic", "vel_ajuste", "semivida",
            "coint_p", "bg_p", "bp_p", "jb_p", "reset_p", "cusum_estable", "vif_max", "f1_etapa", "ar_lo", "ar_hi", "capa", "n_multiverso", "pct_mismo_signo",
@@ -673,6 +747,9 @@ def main(argv=None):
             coef[c] = np.nan
     coef[ORD + EXTRA].to_csv(out / "coeficientes.csv", index=False)
     cdf = pd.DataFrame(coint_f)
+    for c_ in ("EG_p_mackinnon", "GH_p_sim", "ARDL_p_sup_sin", "ARDL_p_sup_con"):
+        cdf[c_ + "_ajustado"] = bh(cdf[c_])
+    cdf["metodo_ajuste"] = "BH"
     cdf.to_csv(out / "cointegracion.csv", index=False)
     pd.DataFrame(discrep).to_csv(out / "discrepancias_dols_fmols.csv", index=False)
     REG.flush()
@@ -700,12 +777,16 @@ def main(argv=None):
         "fuera_muestra": {"modelo": "ECM de largo plazo (beta OLS estatico por pliegue + corrección de error) frente a AR(4) sobre dy trimestral x100, bloques con embargo (5 bloques, embargo 4)",
                           "rmse": {mk: cab[mk]["rmse"] for mk in cab}, "dm_vs_ar4": {mk: cab[mk]["dm_vs_ar4"] for mk in cab},
                           "detalle": {mk: {"spec": cab[mk]["spec"], "n": cab[mk]["n"], "muestra": cab[mk]["muestra"]} for mk in cab},
-                          "ecm_v1": "no evaluable en la misma muestra (el ECM v1 usa IPV desde 2007 y permisos); este ECM es el comparador de largo plazo de V8"},
+                          "ecm_v1": "no evaluable aquí; el comparador canónico (especificación A de v7) va en la tabla común de F5 (Y9, J7); este ECM es el comparador de largo plazo de V8"},
         "notas": "Especificación de cabecera fijada a priori: compra C4 y alquiler A4 (sin rupturas). Oferta = ln de terminadas acumuladas desde 1995 (proxy de stock; libres; 1995-2007 anual/4, marcada). Población interpolada (marcada). "
-                 "Contribuciones de largo plazo en atribucion.csv (contabilidad_lp) y brecha hogares-viviendas (contabilidad): C4, asociación. Bandas FMOLS: normal diagonal (no bootstrap).",
-        "segundos": round(time.time() - t0, 1), "rapido": bool(a.rapido),
+                 "Contribuciones de largo plazo en atribucion.csv (contabilidad_lp: SIN COINTEGRACION DEMOSTRADA, vota_s9 = no) y brecha hogares-viviendas (contabilidad): C4, asociación. Bandas FMOLS: normal diagonal (no bootstrap). "
+                 "Decisión ARDL (J10): rechaza solo si F > cota I(1) y t(y_L1) < cota I(1) (PSS 2001 caso III, tabla asintótica del t: 5 %, k=2 -3,53; k=3 -3,80; k=4 -4,01; I(0) -2,86; verificada por Monte Carlo). "
+                 "Voto de la contabilidad en §9 (J11): solo por el signo de la brecha física hogares nuevos - viviendas terminadas (voto_contabilidad.csv, umbral 0,5 % del stock de hogares); la regresión por periodo queda como C4 informativa. "
+                 "P5 = 2022T3-2026T1 (R0). Regresiones en niveles: el escalón epa2021 es de nivel (correcto), no hay que convertirlo en impulso (J1.6).",
+        "rapido": bool(a.rapido),
     }
     (out / "resultado.json").write_text(json.dumps(res, indent=2, ensure_ascii=False, default=str))
+    (out / "tiempos.json").write_text(json.dumps({"segundos": round(time.time() - t0, 1)}))
     # ---- resumen
     cc = cdf[["mercado", "spec", "EG_p_mackinnon", "GH_p_sim", "GH_fecha", "ARDL_F_sin_rupturas", "ARDL_p_sup_sin"]]
     cl = coef[(coef.spec.isin(list(COMPLETA.values()))) & (coef.rupturas == "sin_rupturas") & (~coef.variable.str.startswith("ruptura:"))][["mercado", "metodo_lp", "variable", "beta", "ic95_lo", "ic95_hi", "p_ajustado", "vel_ajuste", "semivida"]]
@@ -714,7 +795,8 @@ def main(argv=None):
           "## Coeficientes de largo plazo de la especificación de cabecera (sin rupturas)", "", md_tabla(cl), "",
           f"Discrepancias DOLS/FMOLS (signo o |z|>1,96): {ndisc} de {len(discrep)}; se reportan ambos (discrepancias_dols_fmols.csv).", "",
           "## Fuera de muestra (RMSE de dy x100; bloques con embargo; misma muestra)", "", "```", json.dumps({mk: cab[mk]["rmse"] for mk in cab}, indent=1), "```",
-          "", "Límites: asociación de largo plazo (no causal); potencia baja de los contrastes de cointegración; FMOLS con bandas normales; oferta y población son proxies marcadas; ECM v1 no replicable en la misma muestra."]
+          "", "Decisión ARDL (J10): rechaza solo con F > cota I(1) y t < cota I(1); `contabilidad_lp` = sin cointegración demostrada (vota_s9 = no). Voto de la contabilidad por el signo de la brecha física: `voto_contabilidad.csv`.", "",
+          "Límites: asociación de largo plazo (no causal); potencia baja de los contrastes de cointegración; FMOLS con bandas normales; oferta y población son proxies marcadas; ECM v1 no replicable en la misma muestra."]
     (out / "resumen.md").write_text("\n".join(md))
     print(f"M4 ok en {time.time() - t0:.0f}s")
     return res

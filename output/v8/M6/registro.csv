@@ -674,45 +674,45 @@ M6,M6_bma_compra_trimestral_P5_124,d_ln_tasado_real ~ demografia+empleo_renta+of
 M6,M6_bma_compra_trimestral_P5_125,d_ln_tasado_real ~ demografia+credito_tipos+oferta+demanda_externa+turismo+factor_europeo,2022Q3,2026Q1,15,,,-3.4479229236780604,,,,BMA peso=0.0007822
 M6,M6_bma_compra_trimestral_P5_126,d_ln_tasado_real ~ empleo_renta+credito_tipos+oferta+demanda_externa+turismo+factor_europeo,2022Q3,2026Q1,15,,,-2.7275059449328367,,,,BMA peso=0.0005456
 M6,M6_bma_compra_trimestral_P5_127,d_ln_tasado_real ~ demografia+empleo_renta+credito_tipos+oferta+demanda_externa+turismo+factor_europeo,2022Q3,2026Q1,15,,,-11.556771961128778,,,,BMA peso=0.04509
-M6,M6_ols_compra_trimestral_completo,d_ln_tasado_real ~ hogares_epa + pib_vol + tipo_hip_real + terminadas + bis_hpi_xm_real + covid + epa2021,2002Q2,2026Q1,96,0.4645325529095007,354.0266348191017,374.54142035084436,,,,OLS EWC; compra;trimestral;completo; capa C4
-M6,M6_dom_compra_trimestral_completo,shapley_r2(d_ln_tasado_real ~ hogares_epa+pib_vol+tipo_hip_real+terminadas+bis_hpi_xm_real),2002Q2,2026Q1,96,,,,,,,R2=0.4955;B=499
-M6,M6_bma_compra_trimestral_completo_000,d_ln_tasado_real ~ 1,2002Q2,2026Q1,96,,,4.564348191467836,,,,BMA peso=1.575e-12
-M6,M6_bma_compra_trimestral_completo_001,d_ln_tasado_real ~ demografia,2002Q2,2026Q1,96,,,1.2545886527175005,,,,BMA peso=8.239e-12
-M6,M6_bma_compra_trimestral_completo_002,d_ln_tasado_real ~ empleo_renta,2002Q2,2026Q1,96,,,4.71526013109171,,,,BMA peso=1.46e-12
-M6,M6_bma_compra_trimestral_completo_003,d_ln_tasado_real ~ credito_tipos,2002Q2,2026Q1,96,,,8.988675773286662,,,,BMA peso=1.724e-13
-M6,M6_bma_compra_trimestral_completo_004,d_ln_tasado_real ~ oferta,2002Q2,2026Q1,96,,,8.776863408777345,,,,BMA peso=1.916e-13
-M6,M6_bma_compra_trimestral_completo_005,d_ln_tasado_real ~ factor_europeo,2002Q2,2026Q1,96,,,-42.17412077300652,,,,BMA peso=0.0222
-M6,M6_bma_compra_trimestral_completo_006,d_ln_tasado_real ~ demografia+empleo_renta,2002Q2,2026Q1,96,,,1.6705519498585275,,,,BMA peso=6.692e-12
-M6,M6_bma_compra_trimestral_completo_007,d_ln_tasado_real ~ demografia+credito_tipos,2002Q2,2026Q1,96,,,4.587215138101891,,,,BMA peso=1.557e-12
-M6,M6_bma_compra_trimestral_completo_008,d_ln_tasado_real ~ demografia+oferta,2002Q2,2026Q1,96,,,5.647424562291068,,,,BMA peso=9.162e-13
-M6,M6_bma_compra_trimestral_completo_009,d_ln_tasado_real ~ demografia+factor_europeo,2002Q2,2026Q1,96,,,-48.69474109246007,,,,BMA peso=0.5784
-M6,M6_bma_compra_trimestral_completo_010,d_ln_tasado_real ~ empleo_renta+credito_tipos,2002Q2,2026Q1,96,,,9.003609592531836,,,,BMA peso=1.711e-13
-M6,M6_bma_compra_trimestral_completo_011,d_ln_tasado_real ~ empleo_renta+oferta,2002Q2,2026Q1,96,,,9.277948337304611,,,,BMA peso=1.492e-13
-M6,M6_bma_compra_trimestral_completo_012,d_ln_tasado_real ~ empleo_renta+factor_europeo,2002Q2,2026Q1,96,,,-39.62178780297379,,,,BMA peso=0.006195
-M6,M6_bma_compra_trimestral_completo_013,d_ln_tasado_real ~ credito_tipos+oferta,2002Q2,2026Q1,96,,,13.167769538063512,,,,BMA peso=2.133e-14
-M6,M6_bma_compra_trimestral_completo_014,d_ln_tasado_real ~ credito_tipos+factor_europeo,2002Q2,2026Q1,96,,,-37.64067326229432,,,,BMA peso=0.002301
-M6,M6_bma_compra_trimestral_completo_015,d_ln_tasado_real ~ oferta+factor_europeo,2002Q2,2026Q1,96,,,-38.438112871150814,,,,BMA peso=0.003428
-M6,M6_bma_compra_trimestral_completo_016,d_ln_tasado_real ~ demografia+empleo_renta+credito_tipos,2002Q2,2026Q1,96,,,4.6686126632313485,,,,BMA peso=1.495e-12
-M6,M6_bma_compra_trimestral_completo_017,d_ln_tasado_real ~ demografia+empleo_renta+oferta,2002Q2,2026Q1,96,,,6.2192072972288095,,,,BMA peso=6.884e-13
-M6,M6_bma_compra_trimestral_completo_018,d_ln_tasado_real ~ demografia+empleo_renta+factor_europeo,2002Q2,2026Q1,96,,,-45.93363937227045,,,,BMA peso=0.1454
-M6,M6_bma_compra_trimestral_completo_019,d_ln_tasado_real ~ demografia+credito_tipos+oferta,2002Q2,2026Q1,96,,,8.924519188836635,,,,BMA peso=1.78e-13
-M6,M6_bma_compra_trimestral_completo_020,d_ln_tasado_real ~ demografia+credito_tipos+factor_europeo,2002Q2,2026Q1,96,,,-45.22475083794421,,,,BMA peso=0.102
-M6,M6_bma_compra_trimestral_completo_021,d_ln_tasado_real ~ demografia+oferta+factor_europeo,2002Q2,2026Q1,96,,,-44.64526073572462,,,,BMA peso=0.07637
-M6,M6_bma_compra_trimestral_completo_022,d_ln_tasado_real ~ empleo_renta+credito_tipos+oferta,2002Q2,2026Q1,96,,,13.563256805836458,,,,BMA peso=1.75e-14
-M6,M6_bma_compra_trimestral_completo_023,d_ln_tasado_real ~ empleo_renta+credito_tipos+factor_europeo,2002Q2,2026Q1,96,,,-35.13765070297819,,,,BMA peso=0.0006582
-M6,M6_bma_compra_trimestral_completo_024,d_ln_tasado_real ~ empleo_renta+oferta+factor_europeo,2002Q2,2026Q1,96,,,-35.359630242497346,,,,BMA peso=0.0007355
-M6,M6_bma_compra_trimestral_completo_025,d_ln_tasado_real ~ credito_tipos+oferta+factor_europeo,2002Q2,2026Q1,96,,,-33.930846428082454,,,,BMA peso=0.00036
-M6,M6_bma_compra_trimestral_completo_026,d_ln_tasado_real ~ demografia+empleo_renta+credito_tipos+oferta,2002Q2,2026Q1,96,,,9.227125386994334,,,,BMA peso=1.53e-13
-M6,M6_bma_compra_trimestral_completo_027,d_ln_tasado_real ~ demografia+empleo_renta+credito_tipos+factor_europeo,2002Q2,2026Q1,96,,,-42.68229102454283,,,,BMA peso=0.02862
-M6,M6_bma_compra_trimestral_completo_028,d_ln_tasado_real ~ demografia+empleo_renta+oferta+factor_europeo,2002Q2,2026Q1,96,,,-41.5078136953402,,,,BMA peso=0.01591
-M6,M6_bma_compra_trimestral_completo_029,d_ln_tasado_real ~ demografia+credito_tipos+oferta+factor_europeo,2002Q2,2026Q1,96,,,-41.26495877137051,,,,BMA peso=0.01409
-M6,M6_bma_compra_trimestral_completo_030,d_ln_tasado_real ~ empleo_renta+credito_tipos+oferta+factor_europeo,2002Q2,2026Q1,96,,,-30.892262554227308,,,,BMA peso=7.879e-05
-M6,M6_bma_compra_trimestral_completo_031,d_ln_tasado_real ~ demografia+empleo_renta+credito_tipos+oferta+factor_europeo,2002Q2,2026Q1,96,,,-38.29144314930829,,,,BMA peso=0.003186
-M6,M6_pen_compra_trimestral_completo_demografia,ridge/enet d_ln_tasado_real ~ hogares_epa,2002Q2,2026Q1,96,,,,,0.08699986784948065,,coef ridge tipificado
-M6,M6_pen_compra_trimestral_completo_empleo_renta,ridge/enet d_ln_tasado_real ~ pib_vol,2002Q2,2026Q1,96,,,,,0.055135792580532486,,coef ridge tipificado
-M6,M6_pen_compra_trimestral_completo_credito_tipos,ridge/enet d_ln_tasado_real ~ tipo_hip_real,2002Q2,2026Q1,96,,,,,0.017877709101213814,,coef ridge tipificado
-M6,M6_pen_compra_trimestral_completo_oferta,ridge/enet d_ln_tasado_real ~ terminadas,2002Q2,2026Q1,96,,,,,0.01408220621111035,,coef ridge tipificado
-M6,M6_pen_compra_trimestral_completo_factor_europeo,ridge/enet d_ln_tasado_real ~ bis_hpi_xm_real,2002Q2,2026Q1,96,,,,,0.20147976062389023,,coef ridge tipificado
+M6,M6_ols_compra_trimestral_completo,d_ln_tasado_real ~ hogares_epa + pib_vol + tipo_hip_real + terminadas + bis_hpi_xm_real + covid + epa2021_q,2002Q2,2026Q1,96,0.4231805479915455,361.16799908644333,381.682784618186,,,,OLS EWC; compra;trimestral;completo; capa C4
+M6,M6_dom_compra_trimestral_completo,shapley_r2(d_ln_tasado_real ~ hogares_epa+pib_vol+tipo_hip_real+terminadas+bis_hpi_xm_real),2002Q2,2026Q1,96,,,,,,,R2=0.4630;B=499
+M6,M6_bma_compra_trimestral_completo_000,d_ln_tasado_real ~ 1,2002Q2,2026Q1,96,,,4.564348191467857,,,,BMA peso=2.501e-11
+M6,M6_bma_compra_trimestral_completo_001,d_ln_tasado_real ~ demografia,2002Q2,2026Q1,96,,,0.048600421835324426,,,,BMA peso=2.392e-10
+M6,M6_bma_compra_trimestral_completo_002,d_ln_tasado_real ~ empleo_renta,2002Q2,2026Q1,96,,,4.306940392478081,,,,BMA peso=2.845e-11
+M6,M6_bma_compra_trimestral_completo_003,d_ln_tasado_real ~ credito_tipos,2002Q2,2026Q1,96,,,9.070866475514867,,,,BMA peso=2.628e-12
+M6,M6_bma_compra_trimestral_completo_004,d_ln_tasado_real ~ oferta,2002Q2,2026Q1,96,,,8.727339411255093,,,,BMA peso=3.12e-12
+M6,M6_bma_compra_trimestral_completo_005,d_ln_tasado_real ~ factor_europeo,2002Q2,2026Q1,96,,,-38.065482195714196,,,,BMA peso=0.04519
+M6,M6_bma_compra_trimestral_completo_006,d_ln_tasado_real ~ demografia+empleo_renta,2002Q2,2026Q1,96,,,0.15675567951026892,,,,BMA peso=2.266e-10
+M6,M6_bma_compra_trimestral_completo_007,d_ln_tasado_real ~ demografia+credito_tipos,2002Q2,2026Q1,96,,,4.581748320278587,,,,BMA peso=2.479e-11
+M6,M6_bma_compra_trimestral_completo_008,d_ln_tasado_real ~ demografia+oferta,2002Q2,2026Q1,96,,,4.19468297061108,,,,BMA peso=3.009e-11
+M6,M6_bma_compra_trimestral_completo_009,d_ln_tasado_real ~ demografia+factor_europeo,2002Q2,2026Q1,96,,,-42.94304645441191,,,,BMA peso=0.5179
+M6,M6_bma_compra_trimestral_completo_010,d_ln_tasado_real ~ empleo_renta+credito_tipos,2002Q2,2026Q1,96,,,8.871286906397607,,,,BMA peso=2.903e-12
+M6,M6_bma_compra_trimestral_completo_011,d_ln_tasado_real ~ empleo_renta+oferta,2002Q2,2026Q1,96,,,8.869774207500292,,,,BMA peso=2.905e-12
+M6,M6_bma_compra_trimestral_completo_012,d_ln_tasado_real ~ empleo_renta+factor_europeo,2002Q2,2026Q1,96,,,-36.287098692736244,,,,BMA peso=0.01857
+M6,M6_bma_compra_trimestral_completo_013,d_ln_tasado_real ~ credito_tipos+oferta,2002Q2,2026Q1,96,,,13.256080010023478,,,,BMA peso=3.241e-13
+M6,M6_bma_compra_trimestral_completo_014,d_ln_tasado_real ~ credito_tipos+factor_europeo,2002Q2,2026Q1,96,,,-34.58977282318739,,,,BMA peso=0.007949
+M6,M6_bma_compra_trimestral_completo_015,d_ln_tasado_real ~ oferta+factor_europeo,2002Q2,2026Q1,96,,,-34.40152650086275,,,,BMA peso=0.007235
+M6,M6_bma_compra_trimestral_completo_016,d_ln_tasado_real ~ demografia+empleo_renta+credito_tipos,2002Q2,2026Q1,96,,,4.558780238322612,,,,BMA peso=2.508e-11
+M6,M6_bma_compra_trimestral_completo_017,d_ln_tasado_real ~ demografia+empleo_renta+oferta,2002Q2,2026Q1,96,,,4.715263382685404,,,,BMA peso=2.319e-11
+M6,M6_bma_compra_trimestral_completo_018,d_ln_tasado_real ~ demografia+empleo_renta+factor_europeo,2002Q2,2026Q1,96,,,-40.94378376832951,,,,BMA peso=0.1906
+M6,M6_bma_compra_trimestral_completo_019,d_ln_tasado_real ~ demografia+credito_tipos+oferta,2002Q2,2026Q1,96,,,8.705259053200596,,,,BMA peso=3.155e-12
+M6,M6_bma_compra_trimestral_completo_020,d_ln_tasado_real ~ demografia+credito_tipos+factor_europeo,2002Q2,2026Q1,96,,,-38.7768252172726,,,,BMA peso=0.0645
+M6,M6_bma_compra_trimestral_completo_021,d_ln_tasado_real ~ demografia+oferta+factor_europeo,2002Q2,2026Q1,96,,,-39.32600936623223,,,,BMA peso=0.08488
+M6,M6_bma_compra_trimestral_completo_022,d_ln_tasado_real ~ empleo_renta+credito_tipos+oferta,2002Q2,2026Q1,96,,,13.434121643524684,,,,BMA peso=2.965e-13
+M6,M6_bma_compra_trimestral_completo_023,d_ln_tasado_real ~ empleo_renta+credito_tipos+factor_europeo,2002Q2,2026Q1,96,,,-32.44973228551599,,,,BMA peso=0.002727
+M6,M6_bma_compra_trimestral_completo_024,d_ln_tasado_real ~ empleo_renta+oferta+factor_europeo,2002Q2,2026Q1,96,,,-31.98240897631797,,,,BMA peso=0.002158
+M6,M6_bma_compra_trimestral_completo_025,d_ln_tasado_real ~ credito_tipos+oferta+factor_europeo,2002Q2,2026Q1,96,,,-30.783582058562843,,,,BMA peso=0.001185
+M6,M6_bma_compra_trimestral_completo_026,d_ln_tasado_real ~ demografia+empleo_renta+credito_tipos+oferta,2002Q2,2026Q1,96,,,9.113148903436228,,,,BMA peso=2.573e-12
+M6,M6_bma_compra_trimestral_completo_027,d_ln_tasado_real ~ demografia+empleo_renta+credito_tipos+factor_europeo,2002Q2,2026Q1,96,,,-36.58081681572596,,,,BMA peso=0.02151
+M6,M6_bma_compra_trimestral_completo_028,d_ln_tasado_real ~ demografia+empleo_renta+oferta+factor_europeo,2002Q2,2026Q1,96,,,-36.68668418966626,,,,BMA peso=0.02268
+M6,M6_bma_compra_trimestral_completo_029,d_ln_tasado_real ~ demografia+credito_tipos+oferta+factor_europeo,2002Q2,2026Q1,96,,,-35.07053259527051,,,,BMA peso=0.01011
+M6,M6_bma_compra_trimestral_completo_030,d_ln_tasado_real ~ empleo_renta+credito_tipos+oferta+factor_europeo,2002Q2,2026Q1,96,,,-28.106205187958764,,,,BMA peso=0.0003108
+M6,M6_bma_compra_trimestral_completo_031,d_ln_tasado_real ~ demografia+empleo_renta+credito_tipos+oferta+factor_europeo,2002Q2,2026Q1,96,,,-32.30029478602859,,,,BMA peso=0.00253
+M6,M6_pen_compra_trimestral_completo_demografia,ridge/enet d_ln_tasado_real ~ hogares_epa,2002Q2,2026Q1,96,,,,,0.06771830180919282,,coef ridge tipificado
+M6,M6_pen_compra_trimestral_completo_empleo_renta,ridge/enet d_ln_tasado_real ~ pib_vol,2002Q2,2026Q1,96,,,,,0.04602294052048746,,coef ridge tipificado
+M6,M6_pen_compra_trimestral_completo_credito_tipos,ridge/enet d_ln_tasado_real ~ tipo_hip_real,2002Q2,2026Q1,96,,,,,-0.005447035733043537,,coef ridge tipificado
+M6,M6_pen_compra_trimestral_completo_oferta,ridge/enet d_ln_tasado_real ~ terminadas,2002Q2,2026Q1,96,,,,,0.012884270235099879,,coef ridge tipificado
+M6,M6_pen_compra_trimestral_completo_factor_europeo,ridge/enet d_ln_tasado_real ~ bis_hpi_xm_real,2002Q2,2026Q1,96,,,,,0.14654284907550685,,coef ridge tipificado
 M6,M6_oos_compra_ar4,oos ar4,1995Q1,2026Q2,40,,,,1.0382000028478129,,,OOS bloques+embargo
 M6,M6_oos_compra_ecm_v1,oos ecm_v1,1995Q1,2026Q2,40,,,,3.1078739378956177,,,OOS bloques+embargo
 M6,M6_oos_compra_ols_factores,oos ols_factores,1995Q1,2026Q2,40,,,,2.829694228318761,,,OOS bloques+embargo
@@ -1463,78 +1463,78 @@ M6,M6_bma_alquiler_trimestral_P5_124,d_ln_ipc_alquiler_real ~ demografia+empleo_
 M6,M6_bma_alquiler_trimestral_P5_125,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+oferta+demanda_externa+turismo+factor_europeo,2022Q3,2026Q1,15,,,7.79677859192549,,,,BMA peso=0.001686
 M6,M6_bma_alquiler_trimestral_P5_126,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+oferta+demanda_externa+turismo+factor_europeo,2022Q3,2026Q1,15,,,7.761674703571128,,,,BMA peso=0.001716
 M6,M6_bma_alquiler_trimestral_P5_127,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+oferta+demanda_externa+turismo+factor_europeo,2022Q3,2026Q1,15,,,10.468969130158634,,,,BMA peso=0.0004432
-M6,M6_ols_alquiler_trimestral_completo,d_ln_ipc_alquiler_real ~ hogares_epa + pib_vol + tipo_hip_real + terminadas + tx_extranj + bis_hpi_xm_real + covid + epa2021,2007Q2,2026Q1,76,0.36695985245384866,202.88441955762795,223.86101962020493,,,,OLS EWC; alquiler;trimestral;completo; capa C4
-M6,M6_dom_alquiler_trimestral_completo,shapley_r2(d_ln_ipc_alquiler_real ~ hogares_epa+pib_vol+tipo_hip_real+terminadas+tx_extranj+bis_hpi_xm_real),2007Q2,2026Q1,76,,,,,,,R2=0.4115;B=499
-M6,M6_bma_alquiler_trimestral_completo_000,d_ln_ipc_alquiler_real ~ 1,2007Q2,2026Q1,76,,,4.330733340286365,,,,BMA peso=1.85e-06
-M6,M6_bma_alquiler_trimestral_completo_001,d_ln_ipc_alquiler_real ~ demografia,2007Q2,2026Q1,76,,,7.748989082519236,,,,BMA peso=3.349e-07
-M6,M6_bma_alquiler_trimestral_completo_002,d_ln_ipc_alquiler_real ~ empleo_renta,2007Q2,2026Q1,76,,,8.492027502947392,,,,BMA peso=2.31e-07
-M6,M6_bma_alquiler_trimestral_completo_003,d_ln_ipc_alquiler_real ~ credito_tipos,2007Q2,2026Q1,76,,,-1.5446988960686827,,,,BMA peso=3.491e-05
-M6,M6_bma_alquiler_trimestral_completo_004,d_ln_ipc_alquiler_real ~ oferta,2007Q2,2026Q1,76,,,-3.699541259344157,,,,BMA peso=0.0001025
-M6,M6_bma_alquiler_trimestral_completo_005,d_ln_ipc_alquiler_real ~ demanda_externa,2007Q2,2026Q1,76,,,-9.8897264194636,,,,BMA peso=0.002265
-M6,M6_bma_alquiler_trimestral_completo_006,d_ln_ipc_alquiler_real ~ factor_europeo,2007Q2,2026Q1,76,,,-0.5354459990162486,,,,BMA peso=2.108e-05
-M6,M6_bma_alquiler_trimestral_completo_007,d_ln_ipc_alquiler_real ~ demografia+empleo_renta,2007Q2,2026Q1,76,,,11.890521140529533,,,,BMA peso=4.222e-08
-M6,M6_bma_alquiler_trimestral_completo_008,d_ln_ipc_alquiler_real ~ demografia+credito_tipos,2007Q2,2026Q1,76,,,2.458723357409884,,,,BMA peso=4.717e-06
-M6,M6_bma_alquiler_trimestral_completo_009,d_ln_ipc_alquiler_real ~ demografia+oferta,2007Q2,2026Q1,76,,,-0.3715449118064509,,,,BMA peso=1.942e-05
-M6,M6_bma_alquiler_trimestral_completo_010,d_ln_ipc_alquiler_real ~ demografia+demanda_externa,2007Q2,2026Q1,76,,,-7.033114181368072,,,,BMA peso=0.000543
-M6,M6_bma_alquiler_trimestral_completo_011,d_ln_ipc_alquiler_real ~ demografia+factor_europeo,2007Q2,2026Q1,76,,,3.7576605622440304,,,,BMA peso=2.464e-06
-M6,M6_bma_alquiler_trimestral_completo_012,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos,2007Q2,2026Q1,76,,,2.6925974681477083,,,,BMA peso=4.196e-06
-M6,M6_bma_alquiler_trimestral_completo_013,d_ln_ipc_alquiler_real ~ empleo_renta+oferta,2007Q2,2026Q1,76,,,0.3607695160958535,,,,BMA peso=1.347e-05
-M6,M6_bma_alquiler_trimestral_completo_014,d_ln_ipc_alquiler_real ~ empleo_renta+demanda_externa,2007Q2,2026Q1,76,,,-7.65473951444042,,,,BMA peso=0.0007409
-M6,M6_bma_alquiler_trimestral_completo_015,d_ln_ipc_alquiler_real ~ empleo_renta+factor_europeo,2007Q2,2026Q1,76,,,3.0509347269229963,,,,BMA peso=3.508e-06
-M6,M6_bma_alquiler_trimestral_completo_016,d_ln_ipc_alquiler_real ~ credito_tipos+oferta,2007Q2,2026Q1,76,,,-10.398964405197676,,,,BMA peso=0.002922
-M6,M6_bma_alquiler_trimestral_completo_017,d_ln_ipc_alquiler_real ~ credito_tipos+demanda_externa,2007Q2,2026Q1,76,,,-19.483867141635088,,,,BMA peso=0.2744
-M6,M6_bma_alquiler_trimestral_completo_018,d_ln_ipc_alquiler_real ~ credito_tipos+factor_europeo,2007Q2,2026Q1,76,,,-4.756360868432585,,,,BMA peso=0.0001739
-M6,M6_bma_alquiler_trimestral_completo_019,d_ln_ipc_alquiler_real ~ oferta+demanda_externa,2007Q2,2026Q1,76,,,-7.5734010876493,,,,BMA peso=0.0007114
-M6,M6_bma_alquiler_trimestral_completo_020,d_ln_ipc_alquiler_real ~ oferta+factor_europeo,2007Q2,2026Q1,76,,,-8.711377834715814,,,,BMA peso=0.001257
-M6,M6_bma_alquiler_trimestral_completo_021,d_ln_ipc_alquiler_real ~ demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-10.419861181402029,,,,BMA peso=0.002953
-M6,M6_bma_alquiler_trimestral_completo_022,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos,2007Q2,2026Q1,76,,,6.6856351310535285,,,,BMA peso=5.699e-07
-M6,M6_bma_alquiler_trimestral_completo_023,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+oferta,2007Q2,2026Q1,76,,,3.7106968969659544,,,,BMA peso=2.522e-06
-M6,M6_bma_alquiler_trimestral_completo_024,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+demanda_externa,2007Q2,2026Q1,76,,,-4.799016630531991,,,,BMA peso=0.0001777
-M6,M6_bma_alquiler_trimestral_completo_025,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+factor_europeo,2007Q2,2026Q1,76,,,7.34826401144349,,,,BMA peso=4.092e-07
-M6,M6_bma_alquiler_trimestral_completo_026,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+oferta,2007Q2,2026Q1,76,,,-6.439056233130515,,,,BMA peso=0.0004034
-M6,M6_bma_alquiler_trimestral_completo_027,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+demanda_externa,2007Q2,2026Q1,76,,,-15.792771390137496,,,,BMA peso=0.04334
-M6,M6_bma_alquiler_trimestral_completo_028,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+factor_europeo,2007Q2,2026Q1,76,,,-0.4359664731900921,,,,BMA peso=2.005e-05
-M6,M6_bma_alquiler_trimestral_completo_029,d_ln_ipc_alquiler_real ~ demografia+oferta+demanda_externa,2007Q2,2026Q1,76,,,-4.6449747358878,,,,BMA peso=0.0001645
-M6,M6_bma_alquiler_trimestral_completo_030,d_ln_ipc_alquiler_real ~ demografia+oferta+factor_europeo,2007Q2,2026Q1,76,,,-4.437484177808084,,,,BMA peso=0.0001483
-M6,M6_bma_alquiler_trimestral_completo_031,d_ln_ipc_alquiler_real ~ demografia+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-6.501959900046312,,,,BMA peso=0.0004163
-M6,M6_bma_alquiler_trimestral_completo_032,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+oferta,2007Q2,2026Q1,76,,,-6.513658451816099,,,,BMA peso=0.0004188
-M6,M6_bma_alquiler_trimestral_completo_033,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+demanda_externa,2007Q2,2026Q1,76,,,-18.382483566141033,,,,BMA peso=0.1582
-M6,M6_bma_alquiler_trimestral_completo_034,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+factor_europeo,2007Q2,2026Q1,76,,,-0.9532656573655878,,,,BMA peso=2.597e-05
-M6,M6_bma_alquiler_trimestral_completo_035,d_ln_ipc_alquiler_real ~ empleo_renta+oferta+demanda_externa,2007Q2,2026Q1,76,,,-5.583949405966241,,,,BMA peso=0.0002631
-M6,M6_bma_alquiler_trimestral_completo_036,d_ln_ipc_alquiler_real ~ empleo_renta+oferta+factor_europeo,2007Q2,2026Q1,76,,,-4.384767895631644,,,,BMA peso=0.0001444
-M6,M6_bma_alquiler_trimestral_completo_037,d_ln_ipc_alquiler_real ~ empleo_renta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-6.933287174093824,,,,BMA peso=0.0005165
-M6,M6_bma_alquiler_trimestral_completo_038,d_ln_ipc_alquiler_real ~ credito_tipos+oferta+demanda_externa,2007Q2,2026Q1,76,,,-16.873044528467375,,,,BMA peso=0.07439
-M6,M6_bma_alquiler_trimestral_completo_039,d_ln_ipc_alquiler_real ~ credito_tipos+oferta+factor_europeo,2007Q2,2026Q1,76,,,-13.767548954377116,,,,BMA peso=0.01574
-M6,M6_bma_alquiler_trimestral_completo_040,d_ln_ipc_alquiler_real ~ credito_tipos+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-18.35552549047204,,,,BMA peso=0.1561
-M6,M6_bma_alquiler_trimestral_completo_041,d_ln_ipc_alquiler_real ~ oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-9.160797847471699,,,,BMA peso=0.001573
-M6,M6_bma_alquiler_trimestral_completo_042,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+oferta,2007Q2,2026Q1,76,,,-2.5324571522643247,,,,BMA peso=5.721e-05
-M6,M6_bma_alquiler_trimestral_completo_043,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+demanda_externa,2007Q2,2026Q1,76,,,-14.665383969003948,,,,BMA peso=0.02467
-M6,M6_bma_alquiler_trimestral_completo_044,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+factor_europeo,2007Q2,2026Q1,76,,,3.3658633888259573,,,,BMA peso=2.997e-06
-M6,M6_bma_alquiler_trimestral_completo_045,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+oferta+demanda_externa,2007Q2,2026Q1,76,,,-2.652686269230365,,,,BMA peso=6.075e-05
-M6,M6_bma_alquiler_trimestral_completo_046,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+oferta+factor_europeo,2007Q2,2026Q1,76,,,-0.11140727379265414,,,,BMA peso=1.705e-05
-M6,M6_bma_alquiler_trimestral_completo_047,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-3.110083313082832,,,,BMA peso=7.637e-05
-M6,M6_bma_alquiler_trimestral_completo_048,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+oferta+demanda_externa,2007Q2,2026Q1,76,,,-13.146199261803545,,,,BMA peso=0.01154
-M6,M6_bma_alquiler_trimestral_completo_049,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+oferta+factor_europeo,2007Q2,2026Q1,76,,,-9.441657805174756,,,,BMA peso=0.00181
-M6,M6_bma_alquiler_trimestral_completo_050,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-14.144969358360292,,,,BMA peso=0.01901
-M6,M6_bma_alquiler_trimestral_completo_051,d_ln_ipc_alquiler_real ~ demografia+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-5.115104632012585,,,,BMA peso=0.0002081
-M6,M6_bma_alquiler_trimestral_completo_052,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+oferta+demanda_externa,2007Q2,2026Q1,76,,,-16.049073872463183,,,,BMA peso=0.04927
-M6,M6_bma_alquiler_trimestral_completo_053,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+oferta+factor_europeo,2007Q2,2026Q1,76,,,-9.49647133530101,,,,BMA peso=0.001861
-M6,M6_bma_alquiler_trimestral_completo_054,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-15.904946572856808,,,,BMA peso=0.04584
-M6,M6_bma_alquiler_trimestral_completo_055,d_ln_ipc_alquiler_real ~ empleo_renta+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-5.7450257409124,,,,BMA peso=0.0002851
-M6,M6_bma_alquiler_trimestral_completo_056,d_ln_ipc_alquiler_real ~ credito_tipos+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-16.572027689290998,,,,BMA peso=0.06399
-M6,M6_bma_alquiler_trimestral_completo_057,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+oferta+demanda_externa,2007Q2,2026Q1,76,,,-12.293469958247282,,,,BMA peso=0.007534
-M6,M6_bma_alquiler_trimestral_completo_058,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+oferta+factor_europeo,2007Q2,2026Q1,76,,,-5.1702130240325985,,,,BMA peso=0.0002139
-M6,M6_bma_alquiler_trimestral_completo_059,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-11.764117600974092,,,,BMA peso=0.005782
-M6,M6_bma_alquiler_trimestral_completo_060,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-1.780531082715843,,,,BMA peso=3.928e-05
-M6,M6_bma_alquiler_trimestral_completo_061,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-12.30556054494404,,,,BMA peso=0.00758
-M6,M6_bma_alquiler_trimestral_completo_062,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-14.196867043238516,,,,BMA peso=0.01951
-M6,M6_bma_alquiler_trimestral_completo_063,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-9.98379258418447,,,,BMA peso=0.002374
-M6,M6_pen_alquiler_trimestral_completo_demografia,ridge/enet d_ln_ipc_alquiler_real ~ hogares_epa,2007Q2,2026Q1,76,,,,,-0.030359928593186366,,coef ridge tipificado
-M6,M6_pen_alquiler_trimestral_completo_empleo_renta,ridge/enet d_ln_ipc_alquiler_real ~ pib_vol,2007Q2,2026Q1,76,,,,,0.04725341814430158,,coef ridge tipificado
-M6,M6_pen_alquiler_trimestral_completo_credito_tipos,ridge/enet d_ln_ipc_alquiler_real ~ tipo_hip_real,2007Q2,2026Q1,76,,,,,0.21178188198232126,,coef ridge tipificado
-M6,M6_pen_alquiler_trimestral_completo_oferta,ridge/enet d_ln_ipc_alquiler_real ~ terminadas,2007Q2,2026Q1,76,,,,,-0.15969353980743092,,coef ridge tipificado
-M6,M6_pen_alquiler_trimestral_completo_demanda_externa,ridge/enet d_ln_ipc_alquiler_real ~ tx_extranj,2007Q2,2026Q1,76,,,,,-0.23043712842663033,,coef ridge tipificado
-M6,M6_pen_alquiler_trimestral_completo_factor_europeo,ridge/enet d_ln_ipc_alquiler_real ~ bis_hpi_xm_real,2007Q2,2026Q1,76,,,,,0.14138676092091856,,coef ridge tipificado
+M6,M6_ols_alquiler_trimestral_completo,d_ln_ipc_alquiler_real ~ hogares_epa + pib_vol + tipo_hip_real + terminadas + tx_extranj + bis_hpi_xm_real + covid + epa2021_q,2007Q2,2026Q1,76,0.3708452409175217,202.41651962490675,223.39311968748373,,,,OLS EWC; alquiler;trimestral;completo; capa C4
+M6,M6_dom_alquiler_trimestral_completo,shapley_r2(d_ln_ipc_alquiler_real ~ hogares_epa+pib_vol+tipo_hip_real+terminadas+tx_extranj+bis_hpi_xm_real),2007Q2,2026Q1,76,,,,,,,R2=0.4366;B=499
+M6,M6_bma_alquiler_trimestral_completo_000,d_ln_ipc_alquiler_real ~ 1,2007Q2,2026Q1,76,,,4.330733340286365,,,,BMA peso=4.759e-07
+M6,M6_bma_alquiler_trimestral_completo_001,d_ln_ipc_alquiler_real ~ demografia,2007Q2,2026Q1,76,,,7.325973004419087,,,,BMA peso=1.064e-07
+M6,M6_bma_alquiler_trimestral_completo_002,d_ln_ipc_alquiler_real ~ empleo_renta,2007Q2,2026Q1,76,,,8.266517801229488,,,,BMA peso=6.651e-08
+M6,M6_bma_alquiler_trimestral_completo_003,d_ln_ipc_alquiler_real ~ credito_tipos,2007Q2,2026Q1,76,,,-4.303014644309881,,,,BMA peso=3.567e-05
+M6,M6_bma_alquiler_trimestral_completo_004,d_ln_ipc_alquiler_real ~ oferta,2007Q2,2026Q1,76,,,-4.162404923010207,,,,BMA peso=3.325e-05
+M6,M6_bma_alquiler_trimestral_completo_005,d_ln_ipc_alquiler_real ~ demanda_externa,2007Q2,2026Q1,76,,,-9.347979198970858,,,,BMA peso=0.0004445
+M6,M6_bma_alquiler_trimestral_completo_006,d_ln_ipc_alquiler_real ~ factor_europeo,2007Q2,2026Q1,76,,,-0.23647732724465342,,,,BMA peso=4.67e-06
+M6,M6_bma_alquiler_trimestral_completo_007,d_ln_ipc_alquiler_real ~ demografia+empleo_renta,2007Q2,2026Q1,76,,,11.265516633094217,,,,BMA peso=1.485e-08
+M6,M6_bma_alquiler_trimestral_completo_008,d_ln_ipc_alquiler_real ~ demografia+credito_tipos,2007Q2,2026Q1,76,,,-0.35381454384285504,,,,BMA peso=4.952e-06
+M6,M6_bma_alquiler_trimestral_completo_009,d_ln_ipc_alquiler_real ~ demografia+oferta,2007Q2,2026Q1,76,,,-2.2418964541108757,,,,BMA peso=1.273e-05
+M6,M6_bma_alquiler_trimestral_completo_010,d_ln_ipc_alquiler_real ~ demografia+demanda_externa,2007Q2,2026Q1,76,,,-7.664718537874107,,,,BMA peso=0.0001916
+M6,M6_bma_alquiler_trimestral_completo_011,d_ln_ipc_alquiler_real ~ demografia+factor_europeo,2007Q2,2026Q1,76,,,3.9796692611275084,,,,BMA peso=5.673e-07
+M6,M6_bma_alquiler_trimestral_completo_012,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos,2007Q2,2026Q1,76,,,-0.05147666273861873,,,,BMA peso=4.257e-06
+M6,M6_bma_alquiler_trimestral_completo_013,d_ln_ipc_alquiler_real ~ empleo_renta+oferta,2007Q2,2026Q1,76,,,0.050274198305487516,,,,BMA peso=4.046e-06
+M6,M6_bma_alquiler_trimestral_completo_014,d_ln_ipc_alquiler_real ~ empleo_renta+demanda_externa,2007Q2,2026Q1,76,,,-6.340097259531818,,,,BMA peso=9.879e-05
+M6,M6_bma_alquiler_trimestral_completo_015,d_ln_ipc_alquiler_real ~ empleo_renta+factor_europeo,2007Q2,2026Q1,76,,,2.9415116829745376,,,,BMA peso=9.533e-07
+M6,M6_bma_alquiler_trimestral_completo_016,d_ln_ipc_alquiler_real ~ credito_tipos+oferta,2007Q2,2026Q1,76,,,-12.981567883219546,,,,BMA peso=0.002734
+M6,M6_bma_alquiler_trimestral_completo_017,d_ln_ipc_alquiler_real ~ credito_tipos+demanda_externa,2007Q2,2026Q1,76,,,-22.059790709800737,,,,BMA peso=0.256
+M6,M6_bma_alquiler_trimestral_completo_018,d_ln_ipc_alquiler_real ~ credito_tipos+factor_europeo,2007Q2,2026Q1,76,,,-7.57650257882006,,,,BMA peso=0.0001833
+M6,M6_bma_alquiler_trimestral_completo_019,d_ln_ipc_alquiler_real ~ oferta+demanda_externa,2007Q2,2026Q1,76,,,-7.397205172982018,,,,BMA peso=0.0001676
+M6,M6_bma_alquiler_trimestral_completo_020,d_ln_ipc_alquiler_real ~ oferta+factor_europeo,2007Q2,2026Q1,76,,,-9.025861737889874,,,,BMA peso=0.0003784
+M6,M6_bma_alquiler_trimestral_completo_021,d_ln_ipc_alquiler_real ~ demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-9.704778036530394,,,,BMA peso=0.0005313
+M6,M6_bma_alquiler_trimestral_completo_022,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos,2007Q2,2026Q1,76,,,3.893316682245631,,,,BMA peso=5.923e-07
+M6,M6_bma_alquiler_trimestral_completo_023,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+oferta,2007Q2,2026Q1,76,,,1.932887078129177,,,,BMA peso=1.578e-06
+M6,M6_bma_alquiler_trimestral_completo_024,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+demanda_externa,2007Q2,2026Q1,76,,,-4.856899691044717,,,,BMA peso=4.706e-05
+M6,M6_bma_alquiler_trimestral_completo_025,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+factor_europeo,2007Q2,2026Q1,76,,,7.187935420841306,,,,BMA peso=1.141e-07
+M6,M6_bma_alquiler_trimestral_completo_026,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+oferta,2007Q2,2026Q1,76,,,-9.696478643876123,,,,BMA peso=0.0005291
+M6,M6_bma_alquiler_trimestral_completo_027,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+demanda_externa,2007Q2,2026Q1,76,,,-18.88208526961244,,,,BMA peso=0.05226
+M6,M6_bma_alquiler_trimestral_completo_028,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+factor_europeo,2007Q2,2026Q1,76,,,-3.264473404697412,,,,BMA peso=2.122e-05
+M6,M6_bma_alquiler_trimestral_completo_029,d_ln_ipc_alquiler_real ~ demografia+oferta+demanda_externa,2007Q2,2026Q1,76,,,-6.041601331012792,,,,BMA peso=8.509e-05
+M6,M6_bma_alquiler_trimestral_completo_030,d_ln_ipc_alquiler_real ~ demografia+oferta+factor_europeo,2007Q2,2026Q1,76,,,-5.244605977218114,,,,BMA peso=5.712e-05
+M6,M6_bma_alquiler_trimestral_completo_031,d_ln_ipc_alquiler_real ~ demografia+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-6.395786476637586,,,,BMA peso=0.0001016
+M6,M6_bma_alquiler_trimestral_completo_032,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+oferta,2007Q2,2026Q1,76,,,-9.167854737460377,,,,BMA peso=0.0004062
+M6,M6_bma_alquiler_trimestral_completo_033,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+demanda_externa,2007Q2,2026Q1,76,,,-21.08636218004029,,,,BMA peso=0.1573
+M6,M6_bma_alquiler_trimestral_completo_034,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+factor_europeo,2007Q2,2026Q1,76,,,-3.754909850368989,,,,BMA peso=2.712e-05
+M6,M6_bma_alquiler_trimestral_completo_035,d_ln_ipc_alquiler_real ~ empleo_renta+oferta+demanda_externa,2007Q2,2026Q1,76,,,-4.662426670836993,,,,BMA peso=4.27e-05
+M6,M6_bma_alquiler_trimestral_completo_036,d_ln_ipc_alquiler_real ~ empleo_renta+oferta+factor_europeo,2007Q2,2026Q1,76,,,-4.706272957007052,,,,BMA peso=4.364e-05
+M6,M6_bma_alquiler_trimestral_completo_037,d_ln_ipc_alquiler_real ~ empleo_renta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-5.765135340104823,,,,BMA peso=7.41e-05
+M6,M6_bma_alquiler_trimestral_completo_038,d_ln_ipc_alquiler_real ~ credito_tipos+oferta+demanda_externa,2007Q2,2026Q1,76,,,-19.39748426074295,,,,BMA peso=0.06762
+M6,M6_bma_alquiler_trimestral_completo_039,d_ln_ipc_alquiler_real ~ credito_tipos+oferta+factor_europeo,2007Q2,2026Q1,76,,,-16.63552488514508,,,,BMA peso=0.01699
+M6,M6_bma_alquiler_trimestral_completo_040,d_ln_ipc_alquiler_real ~ credito_tipos+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-21.06602985152422,,,,BMA peso=0.1557
+M6,M6_bma_alquiler_trimestral_completo_041,d_ln_ipc_alquiler_real ~ oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-8.951857032689329,,,,BMA peso=0.0003646
+M6,M6_bma_alquiler_trimestral_completo_042,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+oferta,2007Q2,2026Q1,76,,,-5.9101833149726595,,,,BMA peso=7.968e-05
+M6,M6_bma_alquiler_trimestral_completo_043,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+demanda_externa,2007Q2,2026Q1,76,,,-18.03529370584686,,,,BMA peso=0.03422
+M6,M6_bma_alquiler_trimestral_completo_044,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+factor_europeo,2007Q2,2026Q1,76,,,0.5506108215699221,,,,BMA peso=3.151e-06
+M6,M6_bma_alquiler_trimestral_completo_045,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+oferta+demanda_externa,2007Q2,2026Q1,76,,,-3.5634402991466985,,,,BMA peso=2.465e-05
+M6,M6_bma_alquiler_trimestral_completo_046,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+oferta+factor_europeo,2007Q2,2026Q1,76,,,-0.9161815989296542,,,,BMA peso=6.56e-06
+M6,M6_bma_alquiler_trimestral_completo_047,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-2.663268069670888,,,,BMA peso=1.571e-05
+M6,M6_bma_alquiler_trimestral_completo_048,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+oferta+demanda_externa,2007Q2,2026Q1,76,,,-16.43459267341416,,,,BMA peso=0.01537
+M6,M6_bma_alquiler_trimestral_completo_049,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+oferta+factor_europeo,2007Q2,2026Q1,76,,,-12.376425160636515,,,,BMA peso=0.002021
+M6,M6_bma_alquiler_trimestral_completo_050,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-17.042029242269507,,,,BMA peso=0.02083
+M6,M6_bma_alquiler_trimestral_completo_051,d_ln_ipc_alquiler_real ~ demografia+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-5.706109259331569,,,,BMA peso=7.195e-05
+M6,M6_bma_alquiler_trimestral_completo_052,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+oferta+demanda_externa,2007Q2,2026Q1,76,,,-18.749734958337882,,,,BMA peso=0.04891
+M6,M6_bma_alquiler_trimestral_completo_053,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+oferta+factor_europeo,2007Q2,2026Q1,76,,,-12.386817511573462,,,,BMA peso=0.002031
+M6,M6_bma_alquiler_trimestral_completo_054,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-18.678680200690295,,,,BMA peso=0.0472
+M6,M6_bma_alquiler_trimestral_completo_055,d_ln_ipc_alquiler_real ~ empleo_renta+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-5.100220922011605,,,,BMA peso=5.314e-05
+M6,M6_bma_alquiler_trimestral_completo_056,d_ln_ipc_alquiler_real ~ credito_tipos+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-19.304907993410893,,,,BMA peso=0.06456
+M6,M6_bma_alquiler_trimestral_completo_057,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+oferta+demanda_externa,2007Q2,2026Q1,76,,,-15.95529121683364,,,,BMA peso=0.0121
+M6,M6_bma_alquiler_trimestral_completo_058,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+oferta+factor_europeo,2007Q2,2026Q1,76,,,-8.13807135087188,,,,BMA peso=0.0002427
+M6,M6_bma_alquiler_trimestral_completo_059,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-14.877236356574283,,,,BMA peso=0.007055
+M6,M6_bma_alquiler_trimestral_completo_060,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-2.0913594181785484,,,,BMA peso=1.181e-05
+M6,M6_bma_alquiler_trimestral_completo_061,d_ln_ipc_alquiler_real ~ demografia+credito_tipos+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-15.328935026488107,,,,BMA peso=0.008843
+M6,M6_bma_alquiler_trimestral_completo_062,d_ln_ipc_alquiler_real ~ empleo_renta+credito_tipos+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-17.02240449237601,,,,BMA peso=0.02062
+M6,M6_bma_alquiler_trimestral_completo_063,d_ln_ipc_alquiler_real ~ demografia+empleo_renta+credito_tipos+oferta+demanda_externa+factor_europeo,2007Q2,2026Q1,76,,,-13.292801198267519,,,,BMA peso=0.003195
+M6,M6_pen_alquiler_trimestral_completo_demografia,ridge/enet d_ln_ipc_alquiler_real ~ hogares_epa,2007Q2,2026Q1,76,,,,,-0.047326226988546764,,coef ridge tipificado
+M6,M6_pen_alquiler_trimestral_completo_empleo_renta,ridge/enet d_ln_ipc_alquiler_real ~ pib_vol,2007Q2,2026Q1,76,,,,,0.027530714757592202,,coef ridge tipificado
+M6,M6_pen_alquiler_trimestral_completo_credito_tipos,ridge/enet d_ln_ipc_alquiler_real ~ tipo_hip_real,2007Q2,2026Q1,76,,,,,0.20024446951583708,,coef ridge tipificado
+M6,M6_pen_alquiler_trimestral_completo_oferta,ridge/enet d_ln_ipc_alquiler_real ~ terminadas,2007Q2,2026Q1,76,,,,,-0.14788371243666437,,coef ridge tipificado
+M6,M6_pen_alquiler_trimestral_completo_demanda_externa,ridge/enet d_ln_ipc_alquiler_real ~ tx_extranj,2007Q2,2026Q1,76,,,,,-0.19515085045379088,,coef ridge tipificado
+M6,M6_pen_alquiler_trimestral_completo_factor_europeo,ridge/enet d_ln_ipc_alquiler_real ~ bis_hpi_xm_real,2007Q2,2026Q1,76,,,,,0.12559606959074726,,coef ridge tipificado
 M6,M6_oos_alquiler_ar4,oos ar4,1995Q1,2026Q2,40,,,,0.8044245635443951,,,OOS bloques+embargo
 M6,M6_oos_alquiler_ecm_v1,oos ecm_v1,1995Q1,2026Q2,40,,,,2.373836650134331,,,OOS bloques+embargo
 M6,M6_oos_alquiler_ols_factores,oos ols_factores,1995Q1,2026Q2,40,,,,3.8393050885651925,,,OOS bloques+embargo

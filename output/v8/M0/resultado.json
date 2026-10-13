@@ -130,6 +130,6 @@
     "ecm_v1": "no evaluable en M0 (no es un modelo de prediccion); M4 contiene el ECM de largo plazo"
   },
   "notas": "Capa C4 siempre (asociacion). Variables: demografia=d4 poblacion (interpolada), empleo_renta=d4 PIB vol, credito_tipos=tipo real + d4 credito vivienda, oferta=d4 terminadas (1995-2007 anual/4). Tasa de paro no disponible: sustituta d4 ocupados (exploratoria). SERPAVI nacional trimestral no existe: alquiler `no_evaluable` en la regla. Ver docs/v8/desviaciones.md.",
-  "segundos": 135.6,
+  "segundos": 136.2,
   "rapido": false
 }

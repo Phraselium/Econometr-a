@@ -55,3 +55,9 @@
 - Resultado: instrumentos débiles (F efectivo 0,05-2,4 en IV1/IV2; ≤ 8 en IV3), AR no acotado; H8-5, H8-6 y H8-7 no rechazadas (p Holm 0,83); todo C4, sin lectura causal. Primera etapa de IV1 con signo contrario al esperado (π < 0).
 - Siguiente: integrar atribucion.csv (metodo `lpiv`, C4, bandas vacías donde AR no acotado) en la síntesis M0/M6.
 - Tokens de subagente: no registrados por el propio subagente.
+
+## M0 (periodos) y M4 (largo plazo), hecho (2026-10-13)
+- **Hecho:** `src/v8/m0_periodos.py` (~2,5 min) y `src/v8/m4_largo_plazo.py` (~50 s); salidas en `output/v8/M0/` y `output/v8/M4/` (coeficientes, registro, resultado.json, resumen.md; M0: periodos_detectados, regla_m0, heterogeneidad_Q, replica_segunda_particion; M4: atribucion `contabilidad_lp` y `contabilidad`, cointegracion, discrepancias_dols_fmols, fuera_muestra, raices_unitarias, contabilidad_hogares_*). Tests `tests/v8/test_m0.py` y `test_m4.py`. Desviaciones (tasa de paro no disponible, representantes de familia, estadistico de permutacion por periodo, definicion de confirmacion, SERPAVI no evaluable) en desviaciones.md.
+- **Aviso de herramienta:** `herramientas/regimenes.ms_fit` no es determinista con statsmodels 0.15 (la busqueda de arranques usa un generador sin semilla; `np.random.seed` no basta). M0 lo fija con un parche local de `check_random_state`; conviene corregirlo en la herramienta.
+- **Siguiente:** integrar `atribucion.csv` de M4 (`contabilidad_lp`, `contabilidad`) y `regla_m0.csv` en la sintesis; ECM v1 no replicable en la misma muestra (declarado).
+- Tokens de subagente: no medidos por el subagente.

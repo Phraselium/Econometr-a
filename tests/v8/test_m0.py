@@ -80,11 +80,11 @@ def test_permutacion_sintetica_detecta_cambio_de_pendiente():
     rng = np.random.default_rng(1)
     n = 90
     x = rng.standard_normal(n)
-    y = np.where(np.arange(n) < 30, 4.0, 0.0) * x + rng.standard_normal(n) * 0.5
+    y = np.where((np.arange(n) >= 30) & (np.arange(n) < 60), -4.0, 4.0) * x + rng.standard_normal(n) * 0.5
     X = np.column_stack([np.ones(n), x])
     E = {"y": pd.Series(y), "X": pd.DataFrame(X), "xs": ["x"], "tr": {"A": (0, 30), "B": (30, 60), "C": (60, 90)}}
-    p, modo, st = m0.p_perm_periodo(E, "x", "A", 300, 20261010)
-    assert p < 0.05                       # A (pendiente 4) frente a B/C (pendiente 0)
+    p, modo, st = m0.p_perm_periodo(E, "x", "B", 500, 20261010)
+    assert p < 0.05                       # B (pendiente -4) frente a A/C (pendiente +4): las fechas importan
     y0 = rng.standard_normal(n)
     E["y"] = pd.Series(y0)
     p0, _, _ = m0.p_perm_periodo(E, "x", "A", 300, 20261010)

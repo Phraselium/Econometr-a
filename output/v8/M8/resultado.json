@@ -1,0 +1,62 @@
+{
+ "rama": "M8",
+ "pregunta": "Cuanto del crecimiento del precio real por CCAA, y en la Comunitat Valenciana por provincia y ciudad, es comun frente a idiosincratico, y que variables regionales se asocian?",
+ "capa": "C4",
+ "datos": "panel_ccaa_q_v8.csv, cv_prov_q_v8.csv, cv_prov_a_v8.csv, valencia_ciudad_v8.csv, nacional_q_v8.csv (cruces por codigo INE)",
+ "N": {
+  "ccaa": 17,
+  "trimestres_compra": 122,
+  "trimestres_alquiler": 74,
+  "paneles": 12
+ },
+ "metodo": "ecuacion por CCAA y periodo sobre el factor comun (PCA, NW), panel FE con covariables regionales (Driscoll-Kraay), LP panel (DK), contabilidad CV con bandas bootstrap por bloques; BH q=0,10",
+ "estimacion": {
+  "cuota_comun_mediana_ccaa": {
+   "alquiler": {
+    "P1": NaN,
+    "P2": 0.961,
+    "P3": 0.858,
+    "P4": 0.998,
+    "P5": 0.98
+   },
+   "compra": {
+    "P1": 0.685,
+    "P2": 0.462,
+    "P3": 0.619,
+    "P4": 0.465,
+    "P5": 0.942
+   }
+  },
+  "n_coef_ccaa_sig_bh10": "145 de 153",
+  "beta_factor_panel": {
+   "compra_P1": 1.009,
+   "compra_P2": 0.894,
+   "compra_P3": 0.973,
+   "compra_P4": 1.177,
+   "compra_P5": 0.977,
+   "alquiler_P2": 0.961,
+   "alquiler_P3": 0.988,
+   "alquiler_P4": 1.003,
+   "alquiler_P5": 1.0
+  }
+ },
+ "ic95": "ver coeficientes.csv (ic95_lo, ic95_hi)",
+ "p_ajustado": "BH q=0,10 sobre todos los coeficientes (excluida la constante) y sobre lp_panel.csv",
+ "nivel_evidencia": "EXPLORATORIO (C4); C1 solo en descriptivo_cv.csv donde 2 fuentes concuerdan",
+ "diagnosticos": {
+  "B": 399,
+  "rapido": false,
+  "avisos": [
+   "alquiler P1: 0 trimestres (<8), sin ecuacion por CCAA",
+   "panel alquiler P1: sin trimestres suficientes"
+  ],
+  "vif_max_paneles": 12.485408038389627,
+  "heterogeneidad_por_periodo": "ajustes separados por periodo (no se contrasta igualdad de coeficientes)"
+ },
+ "fuera_muestra": {
+  "modelo": "no aplica",
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "C4: asociacion estadistica condicional; sin lectura causal. Ecuaciones por CCAA y periodo con pocos trimestres (P4 = 9): bandas aproximadas. El factor comun y las covariables regionales son colineales por construccion (VIF en coeficientes.csv). Fuera de muestra: M8 es descriptivo/asociativo, sin comparacion con AR(4)/ECM v1. Alquiler por CCAA solo desde 2008 (sin P1). Turismo solo en 6 CCAA (sensibilidad)."
+}

@@ -1,0 +1,135 @@
+{
+  "rama": "v8/M0",
+  "pregunta": "¿Hay efectos por periodo (P1-P5) de las familias de factores sobre el precio real de compra y el alquiler real que cumplan la regla de §8?",
+  "capa": "C4",
+  "datos": "data/processed/v8/nacional_q_v8.csv; compra 112 trimestres (1998Q3-2026Q2), alquiler 94 (2003Q1-2026Q2)",
+  "N": {
+    "compra": 112,
+    "alquiler": 94
+  },
+  "metodo": "OLS por tramo con EE HAC (principal); confirmaciones Bai-Perron/MS/umbral con bootstrap sieve-AR; permutacion de fechas (2.000); BH q=0,10",
+  "estimacion": {
+    "n_coeficientes": 70,
+    "n_efectos_cumplen_regla": 2,
+    "n_no_evaluable": 40,
+    "cumplen": [
+      {
+        "mercado": "compra",
+        "periodo": "P2",
+        "variable": "d4_pib_vol"
+      },
+      {
+        "mercado": "compra",
+        "periodo": "P4",
+        "variable": "d4_terminadas"
+      }
+    ]
+  },
+  "ic95": "ver coeficientes.csv (ic95_lo, ic95_hi por tramo)",
+  "p_ajustado": {
+    "metodo": "BH q=0,10",
+    "n_coef_sig_bh": 35,
+    "de": 70
+  },
+  "nivel_evidencia": "ASOCIACION ROBUSTA solo para los efectos que cumplen la regla; el resto EXPLORATORIO. Sin lenguaje causal.",
+  "diagnosticos": {
+    "detecciones_significativas": [
+      {
+        "metodo": "bai_perron",
+        "serie": "d4_credito_vivienda_real",
+        "observable_umbral": "",
+        "p": 0.013333333333333334
+      },
+      {
+        "metodo": "markov_switching",
+        "serie": "d4_credito_vivienda_real",
+        "observable_umbral": "",
+        "p": 0.03333333333333333
+      },
+      {
+        "metodo": "markov_switching",
+        "serie": "tipo_hip_real",
+        "observable_umbral": "",
+        "p": 0.03333333333333333
+      },
+      {
+        "metodo": "umbral_hansen",
+        "serie": "tipo_hip_real",
+        "observable_umbral": "d4_credito_nuevo_real",
+        "p": 0.006666666666666667
+      },
+      {
+        "metodo": "umbral_hansen",
+        "serie": "tipo_hip_real",
+        "observable_umbral": "d4_ocupados_SUSTITUTO_paro",
+        "p": 0.006666666666666667
+      },
+      {
+        "metodo": "markov_switching",
+        "serie": "d4_pib_vol",
+        "observable_umbral": "",
+        "p": 0.03333333333333333
+      }
+    ],
+    "nota_potencia": "BP 0,32-0,42 y permutacion con 5 tramos conservadora (Y7): un no rechazo no prueba ausencia; P4 (9 trimestres) imprecisa"
+  },
+  "fuera_muestra": {
+    "modelo": "ecuacion por periodo (AR1+X por periodo) y X comun frente a AR(4), bloques con embargo (condicional, X contemporaneo)",
+    "rmse": {
+      "compra": {
+        "AR4": 1.216435928195345,
+        "AR4+X_comun": 1.486484450890057,
+        "AR1+X_por_periodo": 1.8024443418980598
+      },
+      "alquiler": {
+        "AR4": 0.8000051159290653,
+        "AR4+X_comun": 1.7624595007711685,
+        "AR1+X_por_periodo": 1.8146095630086345
+      }
+    },
+    "dm_vs_ar4": {
+      "compra": {
+        "AR4+X_comun": {
+          "DM_HLN": 4.139787848617872,
+          "p": 6.798165416802818e-05,
+          "mean_d": 0.7299196553334435
+        },
+        "AR1+X_por_periodo": {
+          "DM_HLN": 5.216804774058858,
+          "p": 8.536784838858498e-07,
+          "mean_d": 1.7690892382358598
+        }
+      },
+      "alquiler": {
+        "AR4+X_comun": {
+          "DM_HLN": 3.7098731238953406,
+          "p": 0.00036050537570101083,
+          "mean_d": 2.4662553063458788
+        },
+        "AR1+X_por_periodo": {
+          "DM_HLN": 4.160789645891428,
+          "p": 7.29845450174214e-05,
+          "mean_d": 2.652799680649711
+        }
+      }
+    },
+    "detalle": {
+      "compra": {
+        "n": 112,
+        "bloques": 5,
+        "embargo": 4,
+        "muestra": "1998Q3..2026Q2"
+      },
+      "alquiler": {
+        "n": 90,
+        "bloques": 5,
+        "embargo": 4,
+        "muestra": "2004Q1..2026Q2"
+      }
+    },
+    "ecm_v1": "no evaluable en M0 (no es un modelo de prediccion); M4 contiene el ECM de largo plazo"
+  },
+  "notas": "Capa C4 siempre (asociacion). Variables: demografia=d4 poblacion (interpolada), empleo_renta=d4 PIB vol, credito_tipos=tipo real + d4 credito vivienda, oferta=d4 terminadas (1995-2007 anual/4). Tasa de paro no disponible: sustituta d4 ocupados (exploratoria). SERPAVI nacional trimestral no existe: alquiler `no_evaluable` en la regla. Ver docs/v8/desviaciones.md.",
+  "segundos": 146.1,
+  "rapido": false
+}

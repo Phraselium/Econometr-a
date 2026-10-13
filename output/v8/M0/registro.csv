@@ -1,0 +1,85 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+M0_deteccion,BP_completa_d4_credito_vivienda_real,deteccion de regimenes (serie nacional credito/tipos/actividad),1998Q3,2026Q2,112,,,,,,0.013333333333333334,m_udmax=3
+M0_deteccion,BP_completa_tipo_hip_real,deteccion de regimenes (serie nacional credito/tipos/actividad),1996Q1,2026Q2,122,,,,,,0.33,m_udmax=0
+M0_deteccion,BP_completa_d4_pib_vol,deteccion de regimenes (serie nacional credito/tipos/actividad),1996Q1,2026Q2,122,,,,,,0.20333333333333334,m_udmax=0
+M0_deteccion,bai_perron|completa|d4_credito_vivienda_real|,deteccion,,,0,,,,,,0.013333333333333334,detectado=True; 2003Q4;2007Q4;2011Q4
+M0_deteccion,markov_switching|completa|d4_credito_vivienda_real|,deteccion,,,0,,,,,,0.03333333333333333,"detectado=True; R0: mu=-4.01, dur=39.8; R1: mu=0.66, dur=12.1; R2: mu=14.92, dur=80.5"
+M0_deteccion,umbral_hansen|completa|d4_credito_vivienda_real|tipo_hip_real,deteccion,,,0,,,,,,0.3,detectado=False; lineal
+M0_deteccion,umbral_hansen|completa|d4_credito_vivienda_real|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.15,detectado=False; lineal
+M0_deteccion,umbral_hansen|completa|d4_credito_vivienda_real|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.22666666666666666,detectado=False; lineal
+M0_deteccion,bai_perron|completa|tipo_hip_real|,deteccion,,,0,,,,,,0.33,detectado=False; sin_ruptura
+M0_deteccion,markov_switching|completa|tipo_hip_real|,deteccion,,,0,,,,,,0.03333333333333333,"detectado=True; R0: mu=0.63, dur=13.6; R1: mu=0.85, dur=13.4; R2: mu=2.81, dur=8.1"
+M0_deteccion,umbral_hansen|completa|tipo_hip_real|tipo_hip_real,deteccion,,,0,,,,,,1.0,detectado=False; lineal
+M0_deteccion,umbral_hansen|completa|tipo_hip_real|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.006666666666666667,"detectado=True; gamma=1.761 (bajo n=40, alto n=49)"
+M0_deteccion,umbral_hansen|completa|tipo_hip_real|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.006666666666666667,"detectado=True; gamma=3.386 (bajo n=71, alto n=22)"
+M0_deteccion,bai_perron|completa|d4_pib_vol|,deteccion,,,0,,,,,,0.20333333333333334,detectado=False; sin_ruptura
+M0_deteccion,markov_switching|completa|d4_pib_vol|,deteccion,,,0,,,,,,0.03333333333333333,"detectado=True; R0: mu=-1.36, dur=21.2; R1: mu=0.12, dur=10.7; R2: mu=3.25, dur=47.5"
+M0_deteccion,umbral_hansen|completa|d4_pib_vol|tipo_hip_real,deteccion,,,0,,,,,,0.22666666666666666,detectado=False; lineal
+M0_deteccion,umbral_hansen|completa|d4_pib_vol|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.10666666666666667,detectado=False; lineal
+M0_deteccion,umbral_hansen|completa|d4_pib_vol|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.21333333333333335,detectado=False; lineal
+M0_deteccion,bai_perron|train_1995_2013|d4_credito_vivienda_real|,deteccion,,,0,,,,,,0.20666666666666667,detectado=False; sin_ruptura
+M0_deteccion,markov_switching|train_1995_2013|d4_credito_vivienda_real|,deteccion,,,0,,,,,,,detectado=False; fallo
+M0_deteccion,umbral_hansen|train_1995_2013|d4_credito_vivienda_real|tipo_hip_real,deteccion,,,0,,,,,,0.47333333333333333,detectado=False; lineal
+M0_deteccion,umbral_hansen|train_1995_2013|d4_credito_vivienda_real|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.4533333333333333,detectado=False; lineal
+M0_deteccion,umbral_hansen|train_1995_2013|d4_credito_vivienda_real|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.08,detectado=False; lineal
+M0_deteccion,bai_perron|train_1995_2013|tipo_hip_real|,deteccion,,,0,,,,,,0.18666666666666668,detectado=False; sin_ruptura
+M0_deteccion,markov_switching|train_1995_2013|tipo_hip_real|,deteccion,,,0,,,,,,,"detectado=True; R0: mu=0.65, dur=10.8; R1: mu=3.40, dur=15.8"
+M0_deteccion,umbral_hansen|train_1995_2013|tipo_hip_real|tipo_hip_real,deteccion,,,0,,,,,,0.48,detectado=False; lineal
+M0_deteccion,umbral_hansen|train_1995_2013|tipo_hip_real|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.35333333333333333,detectado=False; lineal
+M0_deteccion,umbral_hansen|train_1995_2013|tipo_hip_real|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.9333333333333333,detectado=False; lineal
+M0_deteccion,bai_perron|train_1995_2013|d4_pib_vol|,deteccion,,,0,,,,,,0.013333333333333334,detectado=True; 2008Q3
+M0_deteccion,markov_switching|train_1995_2013|d4_pib_vol|,deteccion,,,0,,,,,,,"detectado=True; R0: mu=-1.52, dur=55.0; R1: mu=3.56, dur=81.6"
+M0_deteccion,umbral_hansen|train_1995_2013|d4_pib_vol|tipo_hip_real,deteccion,,,0,,,,,,0.7466666666666667,detectado=False; lineal
+M0_deteccion,umbral_hansen|train_1995_2013|d4_pib_vol|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.02666666666666667,"detectado=True; gamma=-46.374 (bajo n=8, alto n=31)"
+M0_deteccion,umbral_hansen|train_1995_2013|d4_pib_vol|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.3333333333333333,detectado=False; lineal
+M0_deteccion,bai_perron|test_2014_ult|d4_credito_vivienda_real|,deteccion,,,0,,,,,,0.21333333333333335,detectado=False; sin_ruptura
+M0_deteccion,markov_switching|test_2014_ult|d4_credito_vivienda_real|,deteccion,,,0,,,,,,,"detectado=True; R0: mu=-4.96, dur=16.4; R1: mu=-2.04, dur=7.6; R2: mu=0.45, dur=18.1"
+M0_deteccion,umbral_hansen|test_2014_ult|d4_credito_vivienda_real|tipo_hip_real,deteccion,,,0,,,,,,0.09333333333333334,detectado=False; lineal
+M0_deteccion,umbral_hansen|test_2014_ult|d4_credito_vivienda_real|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.8533333333333334,detectado=False; lineal
+M0_deteccion,umbral_hansen|test_2014_ult|d4_credito_vivienda_real|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.18666666666666668,detectado=False; lineal
+M0_deteccion,bai_perron|test_2014_ult|tipo_hip_real|,deteccion,,,0,,,,,,0.15333333333333332,detectado=False; sin_ruptura
+M0_deteccion,markov_switching|test_2014_ult|tipo_hip_real|,deteccion,,,0,,,,,,,"detectado=True; R0: mu=-4.16, dur=6.9; R1: mu=0.59, dur=10.9; R2: mu=2.73, dur=9.9"
+M0_deteccion,umbral_hansen|test_2014_ult|tipo_hip_real|tipo_hip_real,deteccion,,,0,,,,,,0.98,detectado=False; lineal
+M0_deteccion,umbral_hansen|test_2014_ult|tipo_hip_real|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.006666666666666667,"detectado=True; gamma=1.761 (bajo n=13, alto n=36)"
+M0_deteccion,umbral_hansen|test_2014_ult|tipo_hip_real|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.006666666666666667,"detectado=True; gamma=3.144 (bajo n=41, alto n=8)"
+M0_deteccion,bai_perron|test_2014_ult|d4_pib_vol|,deteccion,,,0,,,,,,0.11333333333333333,detectado=False; sin_ruptura
+M0_deteccion,markov_switching|test_2014_ult|d4_pib_vol|,deteccion,,,0,,,,,,,"detectado=True; R0: mu=0.21, dur=9.9; R1: mu=2.71, dur=39.5"
+M0_deteccion,umbral_hansen|test_2014_ult|d4_pib_vol|tipo_hip_real,deteccion,,,0,,,,,,0.1,detectado=False; lineal
+M0_deteccion,umbral_hansen|test_2014_ult|d4_pib_vol|d4_credito_nuevo_real,deteccion,,,0,,,,,,0.5,detectado=False; lineal
+M0_deteccion,umbral_hansen|test_2014_ult|d4_pib_vol|d4_ocupados_SUSTITUTO_paro,deteccion,,,0,,,,,,0.9066666666666666,detectado=False; lineal
+M0_tramos,M0_compra_base_P1,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas,1998Q3,2007Q4,38,0.648635016633579,173.70026140192482,183.52577836028314,,-3.669546340597733,0.02099080963716041,HAC NW(4); gl=32
+M0_tramos,M0_compra_base_P2,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas,2008Q3,2013Q4,22,0.9176490213630838,53.42730781023189,59.973562530381784,,-1.8974049601975373,0.003034058280251972,HAC NW(4); gl=16
+M0_tramos,M0_compra_base_P3,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas,2014Q1,2019Q4,24,0.8597643939728887,55.98107477424126,63.04939775632893,,4.079180947383265,0.00014225214917122333,HAC NW(4); gl=18
+M0_tramos,M0_compra_base_P4,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas,2020Q2,2022Q2,9,0.7136285946527643,14.154509950973981,15.337857414991298,,0.19554701865173538,0.9535861128032141,HAC NW(4); gl=3; P4 imprecisa
+M0_tramos,M0_compra_base_P5,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas,2022Q3,2026Q2,16,0.9752370391380405,40.19501844780862,44.83055078124731,,-10.182186764846662,0.0005151576757244652,HAC NW(4); gl=10
+M0_tramos,M0_compra_ext_d4_hpi_ea19_P2,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_hpi_ea19,2008Q3,2013Q4,22,0.9178271142346238,53.959831452966,61.597128626474216,,-1.871320942335935,0.013705969239088147,HAC NW(4); gl=15
+M0_tramos,M0_compra_ext_d4_hpi_ea19_P3,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_hpi_ea19,2014Q1,2019Q4,24,0.89251987412314,50.22484196045523,58.47121877289085,,2.9932156027510555,6.947844204322791e-05,HAC NW(4); gl=17
+M0_tramos,M0_compra_ext_d4_hpi_ea19_P4,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_hpi_ea19,2020Q2,2022Q2,9,0.6470397651563138,14.386916294843687,15.767488336197223,,-1.7246959001699558,0.7108076106614022,HAC NW(4); gl=2; P4 imprecisa
+M0_tramos,M0_compra_ext_d4_hpi_ea19_P5,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_hpi_ea19,2022Q3,2026Q2,16,0.9732381899269786,41.751279810567034,47.159400866245505,,-10.581352622688009,0.0003878145031032241,HAC NW(4); gl=9
+M0_tramos,M0_compra_ext_d4_tx_extranj_P2,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_tx_extranj,2008Q3,2013Q4,22,0.9131376331075131,55.18082013325062,62.818117306758836,,-2.230287527762948,0.035511139032308965,HAC NW(4); gl=15
+M0_tramos,M0_compra_ext_d4_tx_extranj_P3,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_tx_extranj,2014Q1,2019Q4,24,0.873559344502355,54.12405276078606,62.37042957322168,,4.76778364771297,0.00045805459229614003,HAC NW(4); gl=17
+M0_tramos,M0_compra_ext_d4_tx_extranj_P4,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_tx_extranj,2020Q2,2022Q2,9,0.6426547843433217,14.498038428687785,15.878610470041322,,0.05341155675412019,0.9924853612766944,HAC NW(4); gl=2; P4 imprecisa
+M0_tramos,M0_compra_ext_d4_tx_extranj_P5,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_tx_extranj,2022Q3,2026Q2,16,0.9728778151018679,41.96529820977021,47.373419265448675,,-11.002681069848306,0.0015071530497569323,HAC NW(4); gl=9
+M0_tramos,M0_compra_ext_d4_turistas_P4,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_turistas,2020Q2,2022Q2,9,0.7051376270971801,12.76829611658641,14.148868157939946,,-8.562397025952142,0.2773180494838508,HAC NW(4); gl=2; P4 imprecisa
+M0_tramos,M0_compra_ext_d4_turistas_P5,y_compra ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_turistas,2022Q3,2026Q2,16,0.9727624082068659,42.03323495295185,47.44135600863032,,-10.454571819140035,0.004579944541917357,HAC NW(4); gl=9
+M0_tramos,M0_alquiler_base_P1,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas,2003Q1,2007Q4,20,0.7880792625614382,8.624344229042073,14.598737870366019,,-2.95841986417114,0.022760405275594798,HAC NW(4); gl=14
+M0_tramos,M0_alquiler_base_P2,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas,2008Q3,2013Q4,22,0.9675633095589384,25.03034670141922,31.576601421569116,,-1.4526680404650751,0.05297983583586912,HAC NW(4); gl=16
+M0_tramos,M0_alquiler_base_P3,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas,2014Q1,2019Q4,24,0.9577689211455059,-9.091843501687642,-2.023520519599966,,1.834395549278845,1.9498140404138072e-08,HAC NW(4); gl=18
+M0_tramos,M0_alquiler_base_P4,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas,2020Q2,2022Q2,9,0.9997903578799869,-25.090200035636258,-23.90685257161894,,0.10491992368230413,0.8828942690984369,HAC NW(4); gl=3; P4 imprecisa
+M0_tramos,M0_alquiler_base_P5,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas,2022Q3,2026Q2,16,0.9971731515968283,-19.524713292695992,-14.889180959257306,,1.1779268637266007,0.07387105807570545,HAC NW(4); gl=10
+M0_tramos,M0_alquiler_ext_d4_hpi_ea19_P2,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_hpi_ea19,2008Q3,2013Q4,22,0.9657871131375909,26.783367170490564,34.42066434399878,,-1.4469779876408748,0.05217018375826252,HAC NW(4); gl=15
+M0_tramos,M0_alquiler_ext_d4_hpi_ea19_P3,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_hpi_ea19,2014Q1,2019Q4,24,0.9694846616218337,-16.261892495036584,-8.015515682600963,,1.5342107677535022,1.3482614514285954e-08,HAC NW(4); gl=17
+M0_tramos,M0_alquiler_ext_d4_hpi_ea19_P4,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_hpi_ea19,2020Q2,2022Q2,9,0.9996879517035864,-23.159581239042126,-21.779009197688588,,0.14995477119527215,0.887763642605141,HAC NW(4); gl=2; P4 imprecisa
+M0_tramos,M0_alquiler_ext_d4_hpi_ea19_P5,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_hpi_ea19,2022Q3,2026Q2,16,0.9993220523236439,-42.05604346609556,-36.647922410417095,,0.8472854379739276,0.00018471818156727025,HAC NW(4); gl=9
+M0_tramos,M0_alquiler_ext_d4_tx_extranj_P2,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_tx_extranj,2008Q3,2013Q4,22,0.970426637183273,23.577343897201573,31.214641070709785,,-0.822289255521497,0.3048645923288272,HAC NW(4); gl=15
+M0_tramos,M0_alquiler_ext_d4_tx_extranj_P3,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_tx_extranj,2014Q1,2019Q4,24,0.9576494970643934,-8.39587229007946,-0.14949547764383908,,1.9403360347199765,2.390499988418233e-07,HAC NW(4); gl=17
+M0_tramos,M0_alquiler_ext_d4_tx_extranj_P4,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_tx_extranj,2020Q2,2022Q2,9,0.9999555243683855,-40.693530072151944,-39.312958030798406,,0.1412210326956113,0.6715621759048517,HAC NW(4); gl=2; P4 imprecisa
+M0_tramos,M0_alquiler_ext_d4_tx_extranj_P5,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_tx_extranj,2022Q3,2026Q2,16,0.9990078276170724,-35.96281540442851,-30.554694348750044,,0.2985815166804153,0.03712283697433123,HAC NW(4); gl=9
+M0_tramos,M0_alquiler_ext_d4_turistas_P4,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_turistas,2020Q2,2022Q2,9,0.9998483793964548,-29.65557064589575,-28.274998604542212,,-1.1670029622532965,0.055749521386536986,HAC NW(4); gl=2; P4 imprecisa
+M0_tramos,M0_alquiler_ext_d4_turistas_P5,y_alquiler ~ d4_pob_total + d4_pib_vol + tipo_hip_real + d4_credito_vivienda_real + d4_terminadas + d4_turistas,2022Q3,2026Q2,16,0.9971171842204152,-18.8968005014584,-13.488679445779933,,1.2983642319770343,0.05574384684343162,HAC NW(4); gl=9
+M0_oos,M0_oos_compra_AR4,AR4,1998Q3,2026Q2,112,,,,1.216435928195345,,,bloques con embargo; condicional (X contemporaneo)
+M0_oos,M0_oos_compra_AR4+X_comun,AR4+X_comun,1998Q3,2026Q2,112,,,,1.486484450890057,,6.798165416802818e-05,bloques con embargo; condicional (X contemporaneo)
+M0_oos,M0_oos_compra_AR1+X_por_periodo,AR1+X_por_periodo,1998Q3,2026Q2,112,,,,1.8024443418980598,,8.536784838858498e-07,bloques con embargo; condicional (X contemporaneo)
+M0_oos,M0_oos_alquiler_AR4,AR4,2004Q1,2026Q2,90,,,,0.8000051159290653,,,bloques con embargo; condicional (X contemporaneo)
+M0_oos,M0_oos_alquiler_AR4+X_comun,AR4+X_comun,2004Q1,2026Q2,90,,,,1.7624595007711685,,0.00036050537570101083,bloques con embargo; condicional (X contemporaneo)
+M0_oos,M0_oos_alquiler_AR1+X_por_periodo,AR1+X_por_periodo,2004Q1,2026Q2,90,,,,1.8146095630086345,,7.29845450174214e-05,bloques con embargo; condicional (X contemporaneo)

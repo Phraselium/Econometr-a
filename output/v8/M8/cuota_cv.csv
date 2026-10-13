@@ -1,0 +1,21 @@
+ambito,periodo,n_trim,total_pp,cuota_factor_nacional,cuota_adicional_ccaa_cv,nota_ccaa
+cv_prov:03,P1,48,94.90983602558747,0.6140719674495,0.19906517503479437,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:03,P2,22,-46.56207940330237,0.19248496811875027,0.4280046250772469,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:03,P3,24,4.212083155042436,0.39585513228446945,0.4206200866279226,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:03,P4,9,-1.1126924330594719,0.08531164458019447,0.858440730550538,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:03,P5,16,19.341017297522455,0.9563688679359854,0.03701261176634674,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:12,P1,48,98.19828951447496,0.5802097831485207,0.14387380188552723,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:12,P2,22,-54.37255354891856,0.7106539916418246,0.0006955118879778954,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:12,P3,24,-8.261761754741634,0.8040767510024142,4.8268572930831866e-06,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:12,P4,9,-3.644932605193418,0.5735885780394614,0.22355092409586308,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:12,P5,16,10.423865880135452,0.9495574154337824,0.02614928891597834,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:46,P1,48,85.8918548287026,0.7428907190126357,0.080710455887824,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:46,P2,22,-48.411277567466634,0.5932157939747595,0.3026094132806637,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:46,P3,24,4.469977704958055,0.6331672346960984,0.22794155877663203,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:46,P4,9,0.575472359363971,0.36915400683458466,0.5638237065522405,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+cv_prov:46,P5,16,24.37216174565569,0.9815669240329198,0.012246645226208663,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+valencia_ciudad,P1,8,17.216882898502433,0.12177146005213657,0.0811680708107233,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+valencia_ciudad,P2,22,-68.56325602987714,0.39166074501249226,0.08668645839809974,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+valencia_ciudad,P3,24,7.757374451624145,0.3281569777691874,0.117784076943248,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+valencia_ciudad,P4,9,6.273209729050166,0.17234337725264914,0.45693247954803307,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico
+valencia_ciudad,P5,16,39.44454672290877,0.7389391285338569,0.026819850944563628,la serie de la CCAA incluye a la propia provincia/ciudad: cota superior del aporte autonomico

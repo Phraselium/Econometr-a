@@ -1,0 +1,129 @@
+mercado,transformacion,periodo,factor,variable,vif,ci_max,n,dependencias_belsley
+compra,interanual,P1,demografia,pob_total,6.562281449386277,31.377563404848207,48,CI=31.4: const+demografia+empleo_renta+credito_tipos
+compra,interanual,P1,empleo_renta,pib_vol,2.9925829274560996,31.377563404848207,48,CI=31.4: const+demografia+empleo_renta+credito_tipos
+compra,interanual,P1,credito_tipos,tipo_hip_real,4.089806161732153,31.377563404848207,48,CI=31.4: const+demografia+empleo_renta+credito_tipos
+compra,interanual,P1,oferta,costes_constr,1.9468983124074781,31.377563404848207,48,CI=31.4: const+demografia+empleo_renta+credito_tipos
+compra,interanual,P2,demografia,pob_total,2.482554061375307,20.43164953831514,22,
+compra,interanual,P2,empleo_renta,pib_vol,12.861254544351745,20.43164953831514,22,
+compra,interanual,P2,credito_tipos,tipo_hip_real,1.828078340040697,20.43164953831514,22,
+compra,interanual,P2,oferta,terminadas,1.5400098055630538,20.43164953831514,22,
+compra,interanual,P2,demanda_externa,tx_extranj,4.818869240343243,20.43164953831514,22,
+compra,interanual,P2,factor_europeo,bis_hpi_xm_real,6.6161210570216715,20.43164953831514,22,
+compra,interanual,P3,demografia,pob_total,7.437473189893649,13.30748307106595,24,
+compra,interanual,P3,empleo_renta,pib_vol,2.0918028766712036,13.30748307106595,24,
+compra,interanual,P3,credito_tipos,tipo_hip_real,2.525222721060191,13.30748307106595,24,
+compra,interanual,P3,oferta,terminadas,2.8023537934711866,13.30748307106595,24,
+compra,interanual,P3,demanda_externa,tx_extranj,3.320883293672347,13.30748307106595,24,
+compra,interanual,P3,factor_europeo,bis_hpi_xm_real,3.3459295643890195,13.30748307106595,24,
+compra,interanual,P4,demografia,pob_total,2.8078469795094216,5.362095353617822,9,
+compra,interanual,P4,empleo_renta,pib_vol,4.864496662327861,5.362095353617822,9,
+compra,interanual,P4,credito_tipos,tipo_hip_real,2.3772062379783567,5.362095353617822,9,
+compra,interanual,P5,demografia,pob_total,6.173351710672449,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+compra,interanual,P5,empleo_renta,pib_vol,18.379481646719007,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+compra,interanual,P5,credito_tipos,tipo_hip_real,9.221685085810654,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+compra,interanual,P5,oferta,terminadas,2.033969695919459,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+compra,interanual,P5,demanda_externa,tx_extranj,5.635088567712389,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+compra,interanual,P5,turismo,turistas,15.912847171164572,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+compra,interanual,P5,factor_europeo,bis_hpi_xm_real,5.961727732654118,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+compra,interanual,completo,demografia,pob_total,1.078009825541259,3.6975705257030556,101,
+compra,interanual,completo,empleo_renta,pib_vol,1.3622990859350863,3.6975705257030556,101,
+compra,interanual,completo,credito_tipos,tipo_hip_real,1.1663653025502498,3.6975705257030556,101,
+compra,interanual,completo,oferta,terminadas,1.713887963085549,3.6975705257030556,101,
+compra,interanual,completo,factor_europeo,bis_hpi_xm_real,1.4854708953170273,3.6975705257030556,101,
+compra,trimestral,P1,empleo_renta,pib_vol,1.2274424428943,10.065062924974551,36,
+compra,trimestral,P1,credito_tipos,tipo_hip_real,1.0693350812024787,10.065062924974551,36,
+compra,trimestral,P1,oferta,costes_constr,1.0945930965631723,10.065062924974551,36,
+compra,trimestral,P1,factor_europeo,jk_mp,1.1388358037070174,10.065062924974551,36,
+compra,trimestral,P2,demografia,hogares_epa,1.1060810927628764,7.675435132868428,22,
+compra,trimestral,P2,empleo_renta,pib_vol,1.1590103923920039,7.675435132868428,22,
+compra,trimestral,P2,credito_tipos,tipo_hip_real,1.1030781894506403,7.675435132868428,22,
+compra,trimestral,P2,oferta,terminadas,2.1033754566099625,7.675435132868428,22,
+compra,trimestral,P2,demanda_externa,tx_extranj,2.597353990804343,7.675435132868428,22,
+compra,trimestral,P2,factor_europeo,bis_hpi_xm_real,1.3538305845290481,7.675435132868428,22,
+compra,trimestral,P3,demografia,hogares_epa,1.47143405792082,11.76507417782587,24,
+compra,trimestral,P3,empleo_renta,pib_vol,1.7015836706682965,11.76507417782587,24,
+compra,trimestral,P3,credito_tipos,tipo_hip_real,1.3254630668638099,11.76507417782587,24,
+compra,trimestral,P3,oferta,terminadas,1.853324245543148,11.76507417782587,24,
+compra,trimestral,P3,demanda_externa,tx_extranj,2.775877801011695,11.76507417782587,24,
+compra,trimestral,P3,factor_europeo,bis_hpi_xm_real,3.0010450950510172,11.76507417782587,24,
+compra,trimestral,P4,demografia,pob_total,1.7491482183559866,2.969962191093202,9,
+compra,trimestral,P4,empleo_renta,pib_vol,1.0258719945312262,2.969962191093202,9,
+compra,trimestral,P4,credito_tipos,tipo_hip_real,1.7833025102693667,2.969962191093202,9,
+compra,trimestral,P5,demografia,pob_total,2.6646800117961744,20.02086978270103,15,
+compra,trimestral,P5,empleo_renta,pib_vol,1.2360973354171816,20.02086978270103,15,
+compra,trimestral,P5,credito_tipos,tipo_hip_real,1.9629076167526396,20.02086978270103,15,
+compra,trimestral,P5,oferta,terminadas,1.8596291470101085,20.02086978270103,15,
+compra,trimestral,P5,demanda_externa,tx_extranj,1.889848359311847,20.02086978270103,15,
+compra,trimestral,P5,turismo,turistas,2.037458100201197,20.02086978270103,15,
+compra,trimestral,P5,factor_europeo,bis_hpi_xm_real,1.7563378083477543,20.02086978270103,15,
+compra,trimestral,completo,demografia,hogares_epa,1.0241434817413375,3.2580008913773884,96,
+compra,trimestral,completo,empleo_renta,pib_vol,1.1057623641177468,3.2580008913773884,96,
+compra,trimestral,completo,credito_tipos,tipo_hip_real,1.055312336259546,3.2580008913773884,96,
+compra,trimestral,completo,oferta,terminadas,1.0740078151555659,3.2580008913773884,96,
+compra,trimestral,completo,factor_europeo,bis_hpi_xm_real,1.035706727111172,3.2580008913773884,96,
+alquiler,interanual,P1,demografia,pob_total,2.592675469559711,78.8386543135428,20,CI=30.8: empleo_renta+oferta; CI=78.8: const+demografia
+alquiler,interanual,P1,empleo_renta,pib_vol,1.9435223443689509,78.8386543135428,20,CI=30.8: empleo_renta+oferta; CI=78.8: const+demografia
+alquiler,interanual,P1,credito_tipos,tipo_hip_real,2.6693235212093436,78.8386543135428,20,CI=30.8: empleo_renta+oferta; CI=78.8: const+demografia
+alquiler,interanual,P1,oferta,costes_constr,3.6395871832047852,78.8386543135428,20,CI=30.8: empleo_renta+oferta; CI=78.8: const+demografia
+alquiler,interanual,P1,factor_europeo,bis_hpi_xm_real,1.985715639660008,78.8386543135428,20,CI=30.8: empleo_renta+oferta; CI=78.8: const+demografia
+alquiler,interanual,P2,demografia,pob_total,2.482554061375307,20.43164953831514,22,
+alquiler,interanual,P2,empleo_renta,pib_vol,12.861254544351745,20.43164953831514,22,
+alquiler,interanual,P2,credito_tipos,tipo_hip_real,1.828078340040697,20.43164953831514,22,
+alquiler,interanual,P2,oferta,terminadas,1.5400098055630538,20.43164953831514,22,
+alquiler,interanual,P2,demanda_externa,tx_extranj,4.818869240343243,20.43164953831514,22,
+alquiler,interanual,P2,factor_europeo,bis_hpi_xm_real,6.6161210570216715,20.43164953831514,22,
+alquiler,interanual,P3,demografia,pob_total,7.437473189893649,13.30748307106595,24,
+alquiler,interanual,P3,empleo_renta,pib_vol,2.0918028766712036,13.30748307106595,24,
+alquiler,interanual,P3,credito_tipos,tipo_hip_real,2.525222721060191,13.30748307106595,24,
+alquiler,interanual,P3,oferta,terminadas,2.8023537934711866,13.30748307106595,24,
+alquiler,interanual,P3,demanda_externa,tx_extranj,3.320883293672347,13.30748307106595,24,
+alquiler,interanual,P3,factor_europeo,bis_hpi_xm_real,3.3459295643890195,13.30748307106595,24,
+alquiler,interanual,P4,demografia,pob_total,2.8078469795094216,5.362095353617822,9,
+alquiler,interanual,P4,empleo_renta,pib_vol,4.864496662327861,5.362095353617822,9,
+alquiler,interanual,P4,credito_tipos,tipo_hip_real,2.3772062379783567,5.362095353617822,9,
+alquiler,interanual,P5,demografia,pob_total,6.173351710672449,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+alquiler,interanual,P5,empleo_renta,pib_vol,18.379481646719007,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+alquiler,interanual,P5,credito_tipos,tipo_hip_real,9.221685085810654,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+alquiler,interanual,P5,oferta,terminadas,2.033969695919459,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+alquiler,interanual,P5,demanda_externa,tx_extranj,5.635088567712389,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+alquiler,interanual,P5,turismo,turistas,15.912847171164572,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+alquiler,interanual,P5,factor_europeo,bis_hpi_xm_real,5.961727732654118,99.83637874589999,15,CI=99.8: const+demografia+empleo_renta+demanda_externa
+alquiler,interanual,completo,demografia,pob_total,1.659803115544881,4.029825382538791,73,
+alquiler,interanual,completo,empleo_renta,pib_vol,1.6995697442763236,4.029825382538791,73,
+alquiler,interanual,completo,credito_tipos,tipo_hip_real,1.2795970008471615,4.029825382538791,73,
+alquiler,interanual,completo,oferta,terminadas,1.8707532151639736,4.029825382538791,73,
+alquiler,interanual,completo,demanda_externa,tx_extranj,1.6387893871414545,4.029825382538791,73,
+alquiler,interanual,completo,factor_europeo,bis_hpi_xm_real,1.6860189631657423,4.029825382538791,73,
+alquiler,trimestral,P1,demografia,hogares_epa,1.8179684615153504,53.45034750350831,23,CI=53.5: const+demografia
+alquiler,trimestral,P1,empleo_renta,pib_vol,1.3213686164098526,53.45034750350831,23,CI=53.5: const+demografia
+alquiler,trimestral,P1,credito_tipos,tipo_hip_real,1.3170631092850957,53.45034750350831,23,CI=53.5: const+demografia
+alquiler,trimestral,P1,oferta,costes_constr,2.0697321171135767,53.45034750350831,23,CI=53.5: const+demografia
+alquiler,trimestral,P1,factor_europeo,bis_hpi_xm_real,1.4435490869071863,53.45034750350831,23,CI=53.5: const+demografia
+alquiler,trimestral,P2,demografia,hogares_epa,1.1060810927628764,7.675435132868428,22,
+alquiler,trimestral,P2,empleo_renta,pib_vol,1.1590103923920039,7.675435132868428,22,
+alquiler,trimestral,P2,credito_tipos,tipo_hip_real,1.1030781894506403,7.675435132868428,22,
+alquiler,trimestral,P2,oferta,terminadas,2.1033754566099625,7.675435132868428,22,
+alquiler,trimestral,P2,demanda_externa,tx_extranj,2.597353990804343,7.675435132868428,22,
+alquiler,trimestral,P2,factor_europeo,bis_hpi_xm_real,1.3538305845290481,7.675435132868428,22,
+alquiler,trimestral,P3,demografia,hogares_epa,1.47143405792082,11.76507417782587,24,
+alquiler,trimestral,P3,empleo_renta,pib_vol,1.7015836706682965,11.76507417782587,24,
+alquiler,trimestral,P3,credito_tipos,tipo_hip_real,1.3254630668638099,11.76507417782587,24,
+alquiler,trimestral,P3,oferta,terminadas,1.853324245543148,11.76507417782587,24,
+alquiler,trimestral,P3,demanda_externa,tx_extranj,2.775877801011695,11.76507417782587,24,
+alquiler,trimestral,P3,factor_europeo,bis_hpi_xm_real,3.0010450950510172,11.76507417782587,24,
+alquiler,trimestral,P4,demografia,pob_total,1.7491482183559866,2.969962191093202,9,
+alquiler,trimestral,P4,empleo_renta,pib_vol,1.0258719945312262,2.969962191093202,9,
+alquiler,trimestral,P4,credito_tipos,tipo_hip_real,1.7833025102693667,2.969962191093202,9,
+alquiler,trimestral,P5,demografia,pob_total,2.6646800117961744,20.02086978270103,15,
+alquiler,trimestral,P5,empleo_renta,pib_vol,1.2360973354171816,20.02086978270103,15,
+alquiler,trimestral,P5,credito_tipos,tipo_hip_real,1.9629076167526396,20.02086978270103,15,
+alquiler,trimestral,P5,oferta,terminadas,1.8596291470101085,20.02086978270103,15,
+alquiler,trimestral,P5,demanda_externa,tx_extranj,1.889848359311847,20.02086978270103,15,
+alquiler,trimestral,P5,turismo,turistas,2.037458100201197,20.02086978270103,15,
+alquiler,trimestral,P5,factor_europeo,bis_hpi_xm_real,1.7563378083477543,20.02086978270103,15,
+alquiler,trimestral,completo,demografia,hogares_epa,1.1266338441252093,3.0428449103475526,76,
+alquiler,trimestral,completo,empleo_renta,pib_vol,1.2773653770259763,3.0428449103475526,76,
+alquiler,trimestral,completo,credito_tipos,tipo_hip_real,1.08161543919247,3.0428449103475526,76,
+alquiler,trimestral,completo,oferta,terminadas,1.5657326455457852,3.0428449103475526,76,
+alquiler,trimestral,completo,demanda_externa,tx_extranj,1.9622604625937177,3.0428449103475526,76,
+alquiler,trimestral,completo,factor_europeo,bis_hpi_xm_real,1.3197131793500787,3.0428449103475526,76,

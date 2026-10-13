@@ -1,0 +1,177 @@
+{
+  "rama": "M6",
+  "pregunta": "Peso relativo de los factores en el crecimiento del precio real de compra y del alquiler real (nacional), colinealidad y robustez de la atribucion al orden/forma de las variables",
+  "capa": "C4",
+  "datos": "data/processed/v8/nacional_q_v8.csv (una variable por familia; ver muestras.csv)",
+  "N": {
+    "min": 9,
+    "max": 101
+  },
+  "metodo": "VIF y Belsley; dominancia LMG/Shapley del R2 con bootstrap por bloques (B=499, bloque 4); Johnson; ortogonalizacion en todos los ordenes; PC1; Granger y LP-OLS EWC (C4); BMA (BIC); ridge/enet con TimeSeriesSplit y embargo; OLS EWC por periodo",
+  "estimacion": {
+    "alquiler|P1": {
+      "factor_mayor_cuota": "credito_tipos",
+      "cuota_pct": 67.7,
+      "b90_contribucion_pp": [
+        2.03,
+        3.53
+      ],
+      "segundo": "factor_europeo",
+      "cuota_segundo_pct": 14.0,
+      "bandas_se_solapan_con_el_segundo": false
+    },
+    "alquiler|P2": {
+      "factor_mayor_cuota": "credito_tipos",
+      "cuota_pct": 47.4,
+      "b90_contribucion_pp": [
+        -1.5,
+        -0.84
+      ],
+      "segundo": "demografia",
+      "cuota_segundo_pct": 27.4,
+      "bandas_se_solapan_con_el_segundo": true
+    },
+    "alquiler|P3": {
+      "factor_mayor_cuota": "credito_tipos",
+      "cuota_pct": 58.0,
+      "b90_contribucion_pp": [
+        -0.65,
+        -0.35
+      ],
+      "segundo": "demografia",
+      "cuota_segundo_pct": 21.7,
+      "bandas_se_solapan_con_el_segundo": true
+    },
+    "alquiler|P4": {
+      "factor_mayor_cuota": "credito_tipos",
+      "cuota_pct": 70.2,
+      "b90_contribucion_pp": [
+        -8.41,
+        -3.93
+      ],
+      "segundo": "empleo_renta",
+      "cuota_segundo_pct": 24.6,
+      "bandas_se_solapan_con_el_segundo": false
+    },
+    "alquiler|P5": {
+      "factor_mayor_cuota": "credito_tipos",
+      "cuota_pct": 31.2,
+      "b90_contribucion_pp": [
+        -0.69,
+        -0.28
+      ],
+      "segundo": "turismo",
+      "cuota_segundo_pct": 30.4,
+      "bandas_se_solapan_con_el_segundo": true
+    },
+    "alquiler|completo": {
+      "factor_mayor_cuota": "credito_tipos",
+      "cuota_pct": 74.3,
+      "b90_contribucion_pp": [
+        -10.78,
+        -6.75
+      ],
+      "segundo": "empleo_renta",
+      "cuota_segundo_pct": 11.3,
+      "bandas_se_solapan_con_el_segundo": false
+    },
+    "compra|P1": {
+      "factor_mayor_cuota": "credito_tipos",
+      "cuota_pct": 64.1,
+      "b90_contribucion_pp": [
+        17.65,
+        52.6
+      ],
+      "segundo": "demografia",
+      "cuota_segundo_pct": 27.9,
+      "bandas_se_solapan_con_el_segundo": true
+    },
+    "compra|P2": {
+      "factor_mayor_cuota": "credito_tipos",
+      "cuota_pct": 37.7,
+      "b90_contribucion_pp": [
+        -19.81,
+        -4.89
+      ],
+      "segundo": "factor_europeo",
+      "cuota_segundo_pct": 25.3,
+      "bandas_se_solapan_con_el_segundo": true
+    },
+    "compra|P3": {
+      "factor_mayor_cuota": "empleo_renta",
+      "cuota_pct": 28.5,
+      "b90_contribucion_pp": [
+        0.76,
+        2.93
+      ],
+      "segundo": "factor_europeo",
+      "cuota_segundo_pct": 27.8,
+      "bandas_se_solapan_con_el_segundo": true
+    },
+    "compra|P4": {
+      "factor_mayor_cuota": "credito_tipos",
+      "cuota_pct": 58.9,
+      "b90_contribucion_pp": [
+        -3.12,
+        -0.26
+      ],
+      "segundo": "demografia",
+      "cuota_segundo_pct": 29.0,
+      "bandas_se_solapan_con_el_segundo": true
+    },
+    "compra|P5": {
+      "factor_mayor_cuota": "factor_europeo",
+      "cuota_pct": 32.1,
+      "b90_contribucion_pp": [
+        2.42,
+        7.12
+      ],
+      "segundo": "turismo",
+      "cuota_segundo_pct": 29.3,
+      "bandas_se_solapan_con_el_segundo": true
+    },
+    "compra|completo": {
+      "factor_mayor_cuota": "factor_europeo",
+      "cuota_pct": 38.7,
+      "b90_contribucion_pp": [
+        10.23,
+        18.6
+      ],
+      "segundo": "demografia",
+      "cuota_segundo_pct": 29.8,
+      "bandas_se_solapan_con_el_segundo": true
+    }
+  },
+  "ic95": "bandas b68/b90 de la cuota del R2 por bootstrap por bloques en atribucion.csv; IC95 de OLS (EWC, t(q)) en coeficientes.csv",
+  "p_ajustado": {
+    "metodo": "BH (q=0,10)",
+    "coeficientes_BH_min": 1.5035078618414817e-05,
+    "granger_BH_min": 0.0005304990140738441,
+    "lp_BH_min": 0.047926641196870616
+  },
+  "nivel_evidencia": "EXPLORATORIO (asociacion; C4). Sin lenguaje causal: la dominancia descompone el R2, Granger es predictivo y las LP-OLS no estan identificadas",
+  "diagnosticos": {
+    "vif_max": 18.379481646719007,
+    "n_celdas": 24,
+    "n_celdas_con_dominancia": 24,
+    "p4_impreciso": "P4 (9 trimestres): solo 3 familias por GL; declarado impreciso",
+    "filas_registro": 1559
+  },
+  "fuera_muestra": {
+    "modelo": "enet (compra, trimestral, completo)",
+    "rmse": 1.4671610609537629,
+    "rmse_ar4": 1.0382000028478129,
+    "dm_vs_ar4": {
+      "DM_HLN": 3.054817670927112,
+      "p": 0.004048279917663811,
+      "p_holm": 0.02833795942364668
+    }
+  },
+  "notas": [
+    "Las cuotas de dominancia describen la division del R2 entre variables colineales; no son efectos.",
+    "Granger y LP-OLS (EWC) son C4; las bandas de LP-OLS tienen cobertura 0,78-0,84 en F3.",
+    "Interpoladas excluidas de la muestra principal; familias sin datos suficientes excluidas y anotadas en muestras.csv.",
+    "El ECM v1 se reconstruye de forma aproximada (ocupados, costes, renta, dy_{t-1}); no es el script original."
+  ],
+  "tiempo_s": 47.6
+}

@@ -1,0 +1,13 @@
+mercado,periodo,modelo,covs,T,E
+compra,P1,M8_panel_cov_compra_P1,[],48,17
+compra,P2,M8_panel_cov_compra_P2,"['ocupados', 'paro', 'pob_total', 'pob_extranj', 'visados', 'tx_extranj']",20,17
+compra,P3,M8_panel_cov_compra_P3,"['ocupados', 'paro', 'pob_total', 'pob_extranj', 'visados', 'tx_extranj']",21,17
+compra,P4,M8_panel_cov_compra_P4,"['ocupados', 'paro', 'pob_total', 'pob_extranj', 'visados', 'tx_extranj']",9,17
+compra,P5,M8_panel_cov_compra_P5,"['ocupados', 'paro', 'pob_total', 'pob_extranj', 'visados', 'tx_extranj']",11,17
+alquiler,P2,M8_panel_cov_alquiler_P2,"['ocupados', 'paro', 'pob_total', 'pob_extranj', 'visados', 'tx_extranj']",20,17
+alquiler,P3,M8_panel_cov_alquiler_P3,"['ocupados', 'paro', 'pob_total', 'pob_extranj', 'visados', 'tx_extranj']",21,17
+alquiler,P4,M8_panel_cov_alquiler_P4,"['ocupados', 'paro', 'pob_total', 'pob_extranj', 'visados', 'tx_extranj']",9,17
+alquiler,P5,M8_panel_cov_alquiler_P5,"['ocupados', 'paro', 'pob_total', 'pob_extranj', 'visados', 'tx_extranj']",11,17
+compra,P3,M8_panel_turismo_sens_compra_P3,"['ocupados', 'pob_total', 'tx_extranj']",24,6
+compra,P4,M8_panel_turismo_sens_compra_P4,"['ocupados', 'pob_total', 'tx_extranj', 'turismo']",9,6
+compra,P5,M8_panel_turismo_sens_compra_P5,"['ocupados', 'pob_total', 'tx_extranj', 'turismo']",11,6

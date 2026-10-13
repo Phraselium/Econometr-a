@@ -19,6 +19,7 @@ for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
 import argparse  # noqa: E402
 import itertools  # noqa: E402
 import json  # noqa: E402
+import math  # noqa: E402
 import sys  # noqa: E402
 import time  # noqa: E402
 import warnings  # noqa: E402
@@ -128,7 +129,7 @@ def penalizados(y, X, n_splits, test_size, gap, seed=SEED):
     Z = (X - mu) / sd
     cv = TimeSeriesSplit(n_splits=n_splits, test_size=test_size, gap=gap)
     rg = RidgeCV(alphas=np.logspace(-2, 3, 30), cv=cv).fit(Z, y - y.mean())
-    en = ElasticNetCV(l1_ratio=[0.2, 0.5, 0.8, 0.95], cv=cv, max_iter=20000, random_state=seed, n_alphas=40).fit(Z, y - y.mean())
+    en = ElasticNetCV(l1_ratio=[0.2, 0.5, 0.8, 0.95], cv=cv, max_iter=20000, random_state=seed, alphas=40).fit(Z, y - y.mean())
     return rg, en, sd
 
 
@@ -177,7 +178,7 @@ def oos_bloques(cell_y, Z, niv, ecm=True):
         icv = TimeSeriesSplit(n_splits=3, test_size=6, gap=4)
         rg = RidgeCV(alphas=np.logspace(-2, 3, 30), cv=icv).fit(Ztr, dtr["y"].values)
         errs["ridge"] += list(dte["y"].values - rg.predict(Zte))
-        en = ElasticNetCV(l1_ratio=[0.2, 0.5, 0.8, 0.95], cv=icv, max_iter=20000, random_state=SEED, n_alphas=30).fit(Ztr, dtr["y"].values)
+        en = ElasticNetCV(l1_ratio=[0.2, 0.5, 0.8, 0.95], cv=icv, max_iter=20000, random_state=SEED, alphas=30).fit(Ztr, dtr["y"].values)
         errs["enet"] += list(dte["y"].values - en.predict(Zte))
     errs = {k: np.array(v) for k, v in errs.items()}
     return errs, idx_test, n
@@ -304,7 +305,7 @@ def main(argv=None):
                     ort = dominancia.ortogonalizacion_secuencial(Xr, y, max_vars=7)["resumen"]
                     for fam in sel:
                         ort_rows.append({"mercado": merc, "transformacion": transf, "periodo": per, "factor": fam, "variable": sel[fam],
-                                         "n_ordenes": int(np.math.factorial(k)) if hasattr(np, "math") else int(np.prod(range(1, k + 1))),
+                                         "n_ordenes": math.factorial(k),
                                          "r2_inc_media": ort.loc[fam, "media"], "r2_inc_min": ort.loc[fam, "minimo"], "r2_inc_max": ort.loc[fam, "maximo"],
                                          "r2_primero": ort.loc[fam, "primero"], "r2_ultimo": ort.loc[fam, "ultimo"],
                                          "rango_minmax": ort.loc[fam, "maximo"] - ort.loc[fam, "minimo"], "r2_total": r2})
@@ -326,10 +327,11 @@ def main(argv=None):
                             pc = -pc
                         Xc = D[list(sel.values())].copy()
                         Xc[sel[fam]] = pc
-                        yc, Xcr = (y, Xc.values) if not nd else residualizar(D["dep"].values, Xc.values, d.loc[D.index, nd].values.astype(float))
+                        if nd:
+                            yc, Xcr = residualizar(D["dep"].values, Xc.values, d.loc[D.index, nd].values.astype(float))
+                        else:
+                            yc, Xcr = D["dep"].values, Xc.values
                         Xcr = pd.DataFrame(Xcr, index=D.index, columns=list(sel.keys()))
-                        if not nd:
-                            yc = D["dep"].values
                         sc = dominancia.shapley_r2(Xcr, yc)
                         vc = dominancia.colinealidad(Xcr.values, list(sel.keys()))
                         comp_rows.append({"mercado": merc, "transformacion": transf, "periodo": per, "factor": fam, "variables_pc1": ";".join(cand),
@@ -420,8 +422,6 @@ def main(argv=None):
                             reg.log("M6", f"M6_granger_{merc}_{per}_{fam}_{dire}", f"Granger {dire} {v}", Z.index[0], Z.index[-1], len(Z),
                                     np.nan, np.nan, np.nan, p_interes=float(ft.pvalue), notas="Granger (HC1); predictivo")
                         # LP-OLS con EWC, h=4-8, respuesta acumulada del nivel (log x100) a 1 pp de crecimiento trimestral del factor
-                        if v == "jk_mp" or C.POR_CLAVE[v].tipo == "nivel":
-                            pass
                         sub = pd.DataFrame({"yl": yl, "g": g, "x": xs}).loc[win]
                         ctrl = np.column_stack([sub["g"].shift(1), sub["g"].shift(2), sub["x"].shift(1), sub["x"].shift(2)])
                         try:
@@ -534,7 +534,7 @@ def escribir_resultado(out, a, atr, coef, oos, gr, lpd, bma, vif, ort, mue, seg,
                         "lp_BH_min": float(lpd["p_bh"].min()) if len(lpd) and "p_bh" in lpd and lpd["p_bh"].notna().any() else None},
          "nivel_evidencia": "EXPLORATORIO (asociacion; C4). Sin lenguaje causal: la dominancia descompone el R2, Granger es predictivo y las LP-OLS no estan identificadas",
          "diagnosticos": {"vif_max": float(vif["vif"].max()) if len(vif) else None, "n_celdas": int(len(mue)),
-                          "n_celdas_con_dominancia": int(len(ort)) // 1 if False else int(ort[["mercado", "transformacion", "periodo"]].drop_duplicates().shape[0]) if len(ort) else 0,
+                          "n_celdas_con_dominancia": int(ort[["mercado", "transformacion", "periodo"]].drop_duplicates().shape[0]) if len(ort) else 0,
                           "p4_impreciso": "P4 (9 trimestres): solo 3 familias por GL; declarado impreciso", "filas_registro": nreg},
          "fuera_muestra": fm,
          "notas": ["Las cuotas de dominancia describen la division del R2 entre variables colineales; no son efectos.",

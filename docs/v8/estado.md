@@ -45,3 +45,7 @@
 - La identificación principal pre-registrada es INVIABLE con datos reales (0 aceptadas en 9·10^6 rotaciones); operativa = V3 (solo impacto), ESS 671. H8-1…H8-4: ninguna respaldada tras Holm. Desviaciones en desviaciones.md; bloqueo en bloqueos.md.
 - Siguiente: revisión de M2 por el orquestador; M3, M0, M4, M6, M7.
 - Tokens de subagente (M2): no medidos por el subagente.
+
+## F4 M1 y M8 (2026-10-13)
+- **Hecho:** M1 (factor comun; H8-8 p Holm 0,669 no rechaza: P2 y P4 por debajo del 50 %; H8-9 r = 0,60, p Holm 0,020) y M8 (regional: 17 CCAA, panel FE-DK, LP panel, CV por provincia y Valencia ciudad). Scripts `src/v8/m1_factor_comun.py`, `src/v8/m8_regional.py`; salidas en `output/v8/M1/` y `output/v8/M8/`; tests `tests/v8/test_m1.py`, `test_m8.py`. Ejecucion completa ~20 s cada uno. Desviaciones anotadas en `docs/v8/desviaciones.md`.
+- **Siguiente:** integracion de M1/M8 en la sintesis (atribucion con `factor_europeo`, `factor_comun`).

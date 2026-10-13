@@ -1,0 +1,113 @@
+{
+  "rama": "r8/main",
+  "pregunta": "V8-F1: descarga de series nuevas en formato largo con validación (sin inferencia)",
+  "capa": "no aplica (descarga de datos, sin estimación)",
+  "datos": "data/raw/v8/ (10 ficheros nuevos; manifiesto _manifest.csv)",
+  "N": 59444,
+  "metodo": "Descarga por endpoints públicos (INE WS, BCE data-api, Eurostat JSON-stat, raw.githubusercontent) con caché (no rebaja si existe salvo FORCE=1); validación de fechas, NaN, duplicados y unidades",
+  "estimacion": null,
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "DESCRIPTIVO",
+  "diagnosticos": {
+    "ecb_bls_es_vivienda.csv": {
+      "n": 472,
+      "series": 6,
+      "nan": 0,
+      "duplicados": 0,
+      "fecha_min": "2003-01-01",
+      "fecha_max": "2026-07-01"
+    },
+    "ecb_tipos_euribor3m_depo.csv": {
+      "n": 462,
+      "series": 2,
+      "nan": 0,
+      "duplicados": 0,
+      "fecha_min": "1994-01-01",
+      "fecha_max": "2026-09-16"
+    },
+    "eurostat_migr_pop1ctz_es.csv": {
+      "n": 2063,
+      "series": 120,
+      "nan": 0,
+      "duplicados": 0,
+      "fecha_min": "1998-01-01",
+      "fecha_max": "2025-01-01"
+    },
+    "eurostat_prc_hpi_q_multi.csv": {
+      "n": 653,
+      "series": 8,
+      "nan": 0,
+      "duplicados": 0,
+      "fecha_min": "2005-01-01",
+      "fecha_max": "2026-04-01"
+    },
+    "ine_etcl_6067_nacional.csv": {
+      "n": 4032,
+      "series": 126,
+      "nan": 0,
+      "duplicados": 0,
+      "fecha_min": "2000-01-01",
+      "fecha_max": "2007-10-01"
+    },
+    "ine_etcl_79662_ccaa.csv": {
+      "n": 37296,
+      "series": 504,
+      "nan": 0,
+      "duplicados": 0,
+      "fecha_min": "2008-01-01",
+      "fecha_max": "2026-04-01"
+    },
+    "ine_frontur_10822_pais.csv": {
+      "n": 8094,
+      "series": 64,
+      "nan": 69,
+      "duplicados": 0,
+      "fecha_min": "2015-10-01",
+      "fecha_max": "2026-08-01"
+    },
+    "ine_frontur_10823_ccaa.csv": {
+      "n": 4144,
+      "series": 32,
+      "nan": 16,
+      "duplicados": 0,
+      "fecha_min": "2015-10-01",
+      "fecha_max": "2026-08-01"
+    },
+    "ine_ipc_24077_general.csv": {
+      "n": 296,
+      "series": 1,
+      "nan": 0,
+      "duplicados": 0,
+      "fecha_min": "2002-01-01",
+      "fecha_max": "2026-08-01"
+    },
+    "jk_shocks_ecb_mensual.csv": {
+      "n": 1932,
+      "series": 6,
+      "nan": 0,
+      "duplicados": 0,
+      "fecha_min": "1999-01-01",
+      "fecha_max": "2025-10-01"
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Series nuevas: JK shocks mensuales (1999-01 a 2025-10; sin fichero trimestral; licencia CC BY 4.0 de datos).",
+    "BLS España vivienda: 6 series 2003-Q1 a 2026-Q3 (RA desde 2015-Q2). Unidades: FNET = saldo neto %, DINX = índice de difusión.",
+    "Eurostat prc_hpi_q: EA20, EA19, ES, DE, FR, IT, PT, NL (TOTAL, I15_Q), 2005-Q1 a 2026-Q2, sin NaN.",
+    "FRONTUR (INE 10822 y 10823): 2015-09 a 2026-07 en el WS; 69 y 16 NaN marcados (Secreto o vacío). Anterior a 2015 no disponible por WS.",
+    "ETCL: 6067 nacional retrospectiva 2000-Q1 a 2007-Q3; 79662 (CCAA y nacional) 2008-Q1 a 2026-Q2. Discontinuidad sin empalme.",
+    "IPC general INE 24077: el WS devuelve solo 296 obs (2002-01 a 2026-08), no 1961+. Serie larga 1996+ = ecb_hicp_es.csv (IPCA, existente).",
+    "Eurostat migr_pop1ctz ES: 1998-2025, 120 ciudadanías. migr_imm1ctz no repetido (ya en eurostat_inmigracion_anual.csv, 1998-2024).",
+    "Reutilizados sin descargar: visados 1991-2026 (mivau_v2_iniciadas_terminadas_prov), INE migraciones nacionalidad, BIS RPP, IPCA BCE, MRO, Euríbor 1a, hipotecario BdE 1973.",
+    "Nuevos del BCE: Euríbor 3m mensual (1994-01 a 2026-09) y tipo depósito DFR diario (1999 a 2026-09-16).",
+    "Fuentes fallidas o con limitación anotadas en docs/v6/fuentes_fallidas.md (sección V8-F1).",
+    "No se actualizó docs/v7_1/estado.md: el encargo limitaba las escrituras a data/raw/v8, src/v8 y output/v8.",
+    "Ningún fichero existente de data/raw modificado; data/sealed no tocado."
+  ]
+}

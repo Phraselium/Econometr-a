@@ -7,8 +7,10 @@ trimestral log x100, objetivos 2026T3-2027T2.
 Pasos:
   1. Comprueba sha256 de cada fichero congelado y el conjunto frente a docs/v8/notas_release.md (la congelación es anterior).
   2. Si ya hay una apertura registrada en docs/v8/evaluate_v8_accesos.md, se niega (una sola evaluación).
-  3. Descarga (CON red) a data/raw/v8_eval/<fecha>/ con RAW_DIR (src/utils_fetch.py lo respeta; fetch_mivau.py, fetch_ine.py y
+  3. Descarga (CON red) a data/eval_v8/<fecha>/ (en .gitignore) con RAW_DIR (src/utils_fetch.py lo respeta; fetch_mivau.py, fetch_ine.py y
      fetch_v8.py lo usan vía utils_fetch), sin tocar data/raw.
+  3b. Antes de descargar exige que `fecha_verificable` de docs/v8/notas_release.md sea distinta de PENDIENTE y que la congelacion
+     (git log del fichero de predicciones) sea anterior a esa fecha; sin git avisa.
   4. Si no hay periodos > 2026T2, o no están los cuatro objetivos 2026T3-2027T2 en las tres series, sale SIN registrar apertura
      (evita gastar la única evaluación con datos parciales).
   5. Registra la apertura ANTES de evaluar; después RMSE h=1-4 frente a AR(4) y la base fuerte (AR con factor común), DM-HLN y Holm.
@@ -75,6 +77,30 @@ def verificar() -> tuple[bool, str, dict]:
     if sha_anotado() != cj["sha256_conjunto"]:
         return False, "el sha256 conjunto no coincide con docs/v8/notas_release.md", cj
     return True, "ok", cj
+
+
+def fecha_verificable() -> str | None:
+    if NOTAS.exists():
+        for ln in NOTAS.read_text(encoding="utf-8").splitlines():
+            if ln.strip().startswith("fecha_verificable:"):
+                v = ln.split(":", 1)[1].strip().split()[0] if ln.split(":", 1)[1].strip() else ""
+                return v or None
+    return None
+
+
+def congelacion_anterior(fecha: str) -> tuple[bool, str]:
+    """La congelacion (ultimo commit del fichero de predicciones) debe ser anterior a `fecha_verificable`. Sin git: aviso, no bloquea."""
+    rel = "output/v8/congelacion/predicciones_congeladas.csv"
+    try:
+        r = subprocess.run(["git", "log", "-1", "--format=%cI", "--", rel], cwd=RAIZ, capture_output=True, text=True, check=True)
+    except (OSError, subprocess.CalledProcessError):
+        return True, "AVISO: git no disponible; no se ha podido comprobar que la congelacion sea anterior a fecha_verificable"
+    iso = r.stdout.strip()
+    if not iso:
+        return True, f"AVISO: {rel} no figura en el historial de git; no se ha podido comprobar la fecha de congelacion"
+    if iso[:10] >= fecha[:10]:
+        return False, f"la congelacion ({iso}) no es anterior a fecha_verificable ({fecha})"
+    return True, f"congelacion {iso} anterior a fecha_verificable {fecha}"
 
 
 def descargar(destino: Path) -> None:
@@ -191,8 +217,16 @@ def main(sim: bool = False) -> int:
     if ya_abierto():
         print("evaluate_v8: la validacion diferida ya se abrio una vez (docs/v8/evaluate_v8_accesos.md).")
         return 3
+    fv = fecha_verificable()
+    if fv is None or fv.upper() == "PENDIENTE":
+        print("evaluate_v8: fecha_verificable sigue en PENDIENTE en docs/v8/notas_release.md; no se descarga ni se registra apertura.")
+        return 4
+    ok_f, msg_f = congelacion_anterior(fv)
+    print(f"evaluate_v8: {msg_f}")
+    if not ok_f:
+        return 5
     hoy = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    destino = RAIZ / "data" / "raw" / "v8_eval" / hoy[:10]
+    destino = RAIZ / "data" / "eval_v8" / hoy[:10]
     descargar(destino)
     try:
         obs = observados(destino)
@@ -215,12 +249,13 @@ def main(sim: bool = False) -> int:
     rmse = {f"{r['mercado']}|{r['modelo']}": r["rmse_pp"] for r in res["rmse"]}
     dm4 = {f"{r['mercado']}|{r['modelo']}|{r['ref']}": dict(dm_hln=r["dm_hln"], p=r["p"], p_holm=r["p_holm"]) for r in res["dm"]}
     out = dict(rama="v8/evaluate", pregunta="¿predicen mejor que AR(4) y que AR + factor comun las predicciones congeladas de V8 (h=1-4 desde 2026T2)?",
-               capa="C4", datos=f"data/raw/v8_eval/{hoy[:10]} (valor tasado MIVAU, IPC alquiler, IPC general; INE/MIVAU)", N=len(res["objetivos"]),
+               capa="C4", datos=f"data/eval_v8/{hoy[:10]} (valor tasado MIVAU, IPC alquiler, IPC general; INE/MIVAU)", N=len(res["objetivos"]),
                metodo="RMSE h=1-4, DM con correccion HLN (h=1) y Holm; una unica apertura", estimacion=rmse, ic95=None,
                p_ajustado={k: v["p_holm"] for k, v in dm4.items()}, nivel_evidencia="EXPLORATORIO (prediccion; no causal)",
                diagnosticos=dict(dm=dm4, rmse_por_h=res["rmse_por_h"], objetivos=res["objetivos"], sha256_conjunto=cj["sha256_conjunto"]),
                fuera_muestra=dict(modelo="mejor de cada familia (ar4, ar_fc, ecm_v1, bvar_m2)", rmse=rmse, dm_vs_ar4={k: v for k, v in dm4.items() if k.endswith("|ar4")}),
-               notas="n=4 objetivos y un solo origen: p descriptivos. Un modelo solo «predice mejor» si supera a la base mas exigente (AR con factor comun o AR(4)).")
+               notas="bvar_m2 se evalua con la MEDIANA posterior (columna mediana de M2/predicciones_congeladas.csv); el resto de modelos, con el punto (media/estimacion puntual). "
+                     "n=4 objetivos y un solo origen: p descriptivos. Un modelo solo «predice mejor» si supera a la base mas exigente (AR con factor comun o AR(4)).")
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "resultado.json").write_text(json.dumps(out, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
     with ACCESOS.open("a", encoding="utf-8") as f:

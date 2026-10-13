@@ -893,6 +893,9 @@ def escribe_dic(N: pd.DataFrame, P: pd.DataFrame, Q: pd.DataFrame, A: pd.DataFra
     for (var, fr), g_ in V.groupby(["variable", "frecuencia"]):
         L.append(f"| `{var}` | {fr[:10]} | N={len(g_)}, {g_['periodo'].min()}–{g_['periodo'].max()}, unidades: {g_['codigo_ine'].nunique()} | {g_['origen'].iloc[0]} |")
     DOC.parent.mkdir(parents=True, exist_ok=True)
+    extra = DOC.parent / "diccionario_m5.md"   # sección de los datos que descarga M5 (F4), mantenida aparte
+    if extra.exists():
+        L += [""] + [ln for ln in extra.read_text(encoding="utf-8").splitlines() if not ln.startswith("<!--")]
     DOC.write_text("\n".join(L) + "\n", encoding="utf-8")
 
 

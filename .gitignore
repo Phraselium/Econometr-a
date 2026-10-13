@@ -24,3 +24,5 @@ data/raw/v3_orig/
 data/raw/gva_vut_municipio.csv
 output/v6/M2/.tmp_*
 output/v7/*_smoke/
+# v8: descarga de la validacion diferida (evaluate_v8)
+data/eval_v8/

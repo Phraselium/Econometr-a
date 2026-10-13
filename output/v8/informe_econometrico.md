@@ -32,7 +32,7 @@ Solo H8-9 se sostiene tras Holm, y es una asociación. En H8-5 a H8-7 los p unil
 
 ## 3. SVAR bayesiano con restricciones de signo y de cero (M2)
 
-**Especificación.** Siete variables nacionales trimestrales (precio real de compra, alquiler real, compraventas, crédito nuevo real, tipo hipotecario, ocupados EPA y población), en tasas log ×100 salvo el tipo, 2004T2-2026T1, dos retardos, ficticias COVID (2020T2-2020T4) e impulso EPA en 2021T1 como exógenas. Para P1, versión larga de cuatro variables desde 1995 (precio, tipo, PIB en volumen y población).
+**Especificación.** Siete variables nacionales trimestrales (precio real de compra, alquiler real, compraventas, crédito nuevo real, tipo hipotecario, ocupados EPA y población), en tasas log ×100 salvo el tipo, 2004T2-2026T1, dos retardos, ficticias COVID (2020T2-2020T4) e impulso EPA en 2021T1 como exógenas. Para P1, versión larga de cuatro variables desde 1995 (precio, tipo, PIB en volumen y población), con tres shocks identificados (actividad y renta, demográfico, crédito y tipos).
 
 **Identificación.** La tabla pre-registrada (signos en el impacto y el trimestre siguiente más cuatro ceros en la población) no aceptó ninguna rotación entre varios millones de candidatas: los datos rechazan esa tabla conjunta. Se usa la variante pre-registrada V3 (solo impacto, sin la restricción de compraventas), con un tamaño muestral efectivo de los pesos de importancia por encima del objetivo. Variantes: V1 (Euríbor más diferencial, solo impacto) y V2 (factor europeo exógeno). Robustez: uno y cuatro retardos, prior fijo, sin COVID y deflactor alternativo.
 
@@ -45,7 +45,7 @@ Solo H8-9 se sostiene tras Holm, y es una asociación. En H8-5 a H8-7 los p unil
 | Crédito y tipos | 3,0 pp (-7,2 a 14,0 pp) | -8,6 pp (-18,9 a 0,54 pp) | -1,6 pp (-9,8 a 7,1 pp) | -1,3 pp (-4,7 a 4,4 pp) | -0,47 pp (-2,8 a 12,8 pp) |
 | Demanda de vivienda | — | -7,4 pp (-17,9 a 2,0 pp) | -0,41 pp (-7,2 a 9,0 pp) | -2,6 pp (-6,0 a 2,4 pp) | -0,30 pp (-2,9 a 11,0 pp) |
 | Oferta | — | -4,8 pp (-13,3 a 2,5 pp) | 0,38 pp (-7,3 a 8,0 pp) | -0,80 pp (-4,8 a 3,3 pp) | 1,9 pp (-3,3 a 9,0 pp) |
-| No atribuido | 31,6 pp (-6,0 a 74,1 pp) | -9,6 pp (-35,2 a 15,5 pp) | 1,9 pp (-25,2 a 27,6 pp) | -0,75 pp (-16,1 a 12,0 pp) | 9,5 pp (-14,6 a 24,1 pp) |
+| No atribuido (banda aproximada) | 31,6 pp (-6,0 a 74,1 pp) | -9,6 pp (-35,2 a 15,5 pp) | 1,9 pp (-25,2 a 27,6 pp) | -0,75 pp (-16,1 a 12,0 pp) | 9,5 pp (-14,6 a 24,1 pp) |
 | Observado | 75,4 pp | -44,0 pp | 8,2 pp | -5,5 pp | 18,4 pp |
 
 **Alquiler real:**
@@ -57,7 +57,7 @@ Solo H8-9 se sostiene tras Holm, y es una asociación. En H8-5 a H8-7 los p unil
 | Crédito y tipos | 0,26 pp (-1,5 a 2,1 pp) | 0,24 pp (-1,7 a 2,7 pp) | -1,5 pp (-3,2 a 0,30 pp) | -0,50 pp (-2,6 a 2,3 pp) |
 | Demanda de vivienda | -0,32 pp (-2,3 a 1,8 pp) | 0,66 pp (-1,4 a 2,9 pp) | -1,6 pp (-3,2 a 0,12 pp) | -0,30 pp (-2,0 a 2,0 pp) |
 | Oferta | -0,06 pp (-2,0 a 1,9 pp) | 0,87 pp (-1,1 a 3,2 pp) | -1,6 pp (-3,6 a 0,10 pp) | 0,37 pp (-1,8 a 2,6 pp) |
-| No atribuido | -1,2 pp (-7,5 a 5,2 pp) | -4,6 pp (-11,6 a 2,9 pp) | -3,2 pp (-8,1 a 1,4 pp) | -2,0 pp (-7,9 a 3,6 pp) |
+| No atribuido (banda aproximada) | -1,2 pp (-7,5 a 5,2 pp) | -4,6 pp (-11,6 a 2,9 pp) | -3,2 pp (-8,1 a 1,4 pp) | -2,0 pp (-7,9 a 3,6 pp) |
 | Observado | -2,7 pp | -1,1 pp | -9,3 pp | -1,8 pp |
 
 La media es la única medida aditiva (las contribuciones más la parte no atribuida suman lo observado en cada extracción). La posterior tiene colas largas: en la compra de P5, la mediana de crédito y tipos es 3,4 pp y la de actividad y renta 1,1 pp. Por eso el voto del SVAR en la regla se basa en la probabilidad, extracción a extracción, de que cada shock sea el mayor (decisión Y10). Magnitudes posiblemente atenuadas por el prior (sesgo documentado en F3).
@@ -70,7 +70,7 @@ Los tres instrumentos son débiles; ninguno alcanza C3 (0 de tres):
 - **Empuje migratorio** (llegadas predichas por la emigración de cada país de origen al resto de la UE, cuotas de 2002): F efectivo 0,05.
 - **Bartik sectorial** (cuotas de empleo de 2008 por comunidad): efecto relativo entre comunidades, no comparable con una contribución nacional; F efectivo por debajo de diez.
 
-Con F por debajo de diez y Anderson-Rubin no acotado, el método LP-IV se abstiene en la regla del factor más relevante (regla R2). Detalle: `output/v8/M5/resumen.md`.
+En el alquiler, LP-IV se abstiene en la regla del factor más relevante (F por debajo de diez y Anderson-Rubin al 68 % no acotado). En la compra, el Anderson-Rubin al 68 % está acotado y LP-IV vota cuando supera a todos los factores del SVAR: solo en P4, con una primera etapa de signo contrario al esperado (regla R2). Detalle: `output/v8/M5/resumen.md`.
 
 ## 5. Periodos (M0), coeficientes por periodo (M3) y largo plazo (M4)
 
@@ -80,7 +80,7 @@ Con F por debajo de diez y Anderson-Rubin no acotado, el método LP-IV se abstie
 
 ## 6. Colinealidad, dominancia y multiverso (M6 y M7)
 
-- **M6.** VIF y diagnóstico de Belsley por periodo; dominancia LMG con bandas bootstrap por bloques centradas; ortogonalización en todos los órdenes; índice compuesto; Granger y LP (predictivos, no causales); BMA y ridge o red elástica con validación temporal con embargo. La dominancia reparte el R² (no la variación) y vota por el factor de mayor cuota cuya contribución parcial tiene el signo de la variación observada.
+- **M6.** VIF y diagnóstico de Belsley por periodo; dominancia LMG con bandas bootstrap por bloques «básicas» (algunos puntos quedan fuera de su banda del 68 % por el sesgo del R² remuestreado); ortogonalización en todos los órdenes; índice compuesto; Granger y LP (predictivos, no causales); BMA y ridge o red elástica con validación temporal con embargo. La dominancia reparte el R² (no la variación) y vota por el factor de mayor cuota cuya contribución parcial tiene el signo de la variación observada.
 - **M7.** Rejilla de 37.980 especificaciones (32.424 estimadas; las fallidas, registradas). Con signos orientados (un tipo más bajo cuenta como presión al alza), 2 de 74 combinaciones de mercado, periodo y factor cumplen la regla del multiverso (signo estable en al menos el 80 % y significativo tras BH en al menos el 50 %): demografía en el alquiler, en P2 y en la muestra completa, con signo positivo.
 
 ## 7. Factor común (M1) y análisis regional (M8)
@@ -95,11 +95,11 @@ Cuota de la varianza del crecimiento interanual común a las diecisiete comunida
 | P4 | 45,5 % (42,7-53,1 %) | 99,5 % (99,3-99,7 %) | 46,5 % | 99,8 % |
 | P5 | 92,8 % (86,7-94,9 %) | 97,5 % (86,1-98,7 %) | 93,6 % | 98,2 % |
 
-Con pocos trimestres por periodo, la cuota del primer componente está sesgada al alza; como H8-8 no se rechaza, la conclusión es prudente. Parte del crecimiento nacional asociada a la zona euro: 7,4 pp (4,7-8,7 pp) en P1, -15,3 pp (-21,7 a -7,6 pp) en P2, 0,81 pp (-4,4 a 4,0 pp) en P3, 1,4 pp (-1,8 a 3,4 pp) en P4 y -3,3 pp (-7,0 a 1,8 pp) en P5 (C4). En el panel regional, la pendiente del factor común es mecánicamente próxima a uno y no compite en la regla.
+Con pocos trimestres por periodo, la cuota del primer componente está sesgada al alza; como H8-8 no se rechaza, la conclusión es prudente. Parte del crecimiento nacional asociada a la zona euro: 7,4 pp (4,7-8,7 pp) en el tramo final de P1 (la serie de la zona euro empieza en 2006), -15,3 pp (-21,7 a -7,6 pp) en P2, 0,81 pp (-4,4 a 4,0 pp) en P3, 1,4 pp (-1,8 a 3,4 pp) en P4 y -3,3 pp (-7,0 a 1,8 pp) en P5 (C4). En el panel regional, la pendiente del factor común es mecánicamente próxima a uno y no compite en la regla.
 
 ## 8. Aprendizaje automático interpretable (M9, solo contraste)
 
-Gradient boosting con restricciones de monotonía, GAM, DML con cross-fitting por bloques, SHAP agrupado, permutación agrupada, ALE/PDP, interacciones SHAP, modelo sustituto y estabilidad del ranking. Ningún modelo supera a la base más exigente: en el panel de compra, 2,5 pp frente a 2,1 pp. SHAP asigna al factor europeo 2,1 pp (-0,36 a 7,2 pp) y al turismo 15,2 pp (8,1-14,8 pp) en la compra de P5; el segundo queda fuera de su banda bootstrap y solo hay datos de turismo para 6 comunidades. El ranking completo se reproduce en una minoría de réplicas bootstrap. Nada causal se deduce de SHAP ni de las importancias.
+Gradient boosting con restricciones de monotonía, GAM, DML con cross-fitting por bloques, SHAP agrupado, permutación agrupada, ALE/PDP, interacciones SHAP, modelo sustituto y estabilidad del ranking. Ningún modelo supera a la base más exigente: en el panel de compra, 2,5 pp frente a 2,1 pp. SHAP asigna al factor europeo 2,1 pp (-0,36 a 7,2 pp) en la compra de P5. El turismo solo entra en una sensibilidad no principal limitada a las 6 comunidades con datos, no comparable con la variación nacional. El ranking completo se reproduce en una minoría de réplicas bootstrap. Nada causal se deduce de SHAP ni de las importancias.
 
 ## 9. Atribución y regla del factor más relevante (F5)
 

@@ -140,7 +140,7 @@ def cond2(E: dict, m: str, p: str, f: str) -> dict:
     t = E["m7"]
     fam = t[(t["mercado"] == m) & (t["periodo"] == p) & (t["factor"] == f) & (t["variable"] == "TODAS")]
     out = dict(pct_familia=np.nan, pct_variable=np.nan, pct_familia_fall=np.nan, pct_variable_fall=np.nan, variable_principal="", ok=False,
-               nota="")
+               nota="", signo_familia="", signo_variable="")
     if fam.empty:
         out["nota"] = "factor sin multiverso en esta celda"
         return out
@@ -152,10 +152,12 @@ def cond2(E: dict, m: str, p: str, f: str) -> dict:
     nf_fam, nf_var = len(fl), int((fl["variable"] == vp).sum())
     out["variable_principal"] = vp
     out["pct_familia"] = float(fam["pct_mismo_signo"])
+    out["signo_familia"] = str(fam["signo_mayoritario"])
     out["pct_familia_fall"] = float(fam["pct_mismo_signo"] * fam["n_multiverso"] / (fam["n_multiverso"] + nf_fam))
     if not var.empty:
         v = var.iloc[0]
         out["pct_variable"] = float(v["pct_mismo_signo"])
+        out["signo_variable"] = str(v["signo_mayoritario"])
         out["pct_variable_fall"] = float(v["pct_mismo_signo"] * v["n_multiverso"] / (v["n_multiverso"] + nf_var))
     out["ok"] = bool(out["pct_familia"] >= UMBRAL_MULTIVERSO and out["pct_variable"] >= UMBRAL_MULTIVERSO)
     out["nota"] = f"fallidas: {nf_fam} en la familia, {nf_var} en la variable principal"
@@ -204,7 +206,8 @@ def regla_s9(E: dict, reg: Registry) -> pd.DataFrame:
             nmax = cuenta.get(fmax, 0)
             c1 = nmax >= 3
             c2 = cond2(E, m, p, fmax) if fmax else dict(pct_familia=np.nan, pct_variable=np.nan, pct_familia_fall=np.nan,
-                                                         pct_variable_fall=np.nan, variable_principal="", ok=False, nota="")
+                                                         pct_variable_fall=np.nan, variable_principal="", ok=False, nota="",
+                                                         signo_familia="", signo_variable="")
             g2 = E["m2"][(E["m2"]["mercado"] == m) & (E["m2"]["periodo"] == p) & (E["m2"]["factor"] == fmax)]
             if g2.empty or not fmax:
                 c3, lo, hi = False, np.nan, np.nan
@@ -243,6 +246,7 @@ def regla_s9(E: dict, reg: Registry) -> pd.DataFrame:
                 cond1=c1, variable_principal_m7=c2["variable_principal"], pct_multiverso_familia=c2["pct_familia"],
                 pct_multiverso_variable=c2["pct_variable"], pct_multiverso_familia_con_fallidas=c2["pct_familia_fall"],
                 pct_multiverso_variable_con_fallidas=c2["pct_variable_fall"], cond2=c2["ok"], nota_cond2=c2["nota"],
+                signo_mayoritario_familia=c2["signo_familia"], signo_mayoritario_variable=c2["signo_variable"],
                 b68_lo_svar=lo, b68_hi_svar=hi, cond3=c3, R7_impreciso=r7,
                 Y10_ranking_incierto=bool(sv and sv["nota"]), resultado=res, motivo="; ".join(motivos),
                 capa=("C3s (condicionada)" if designado else "C4 (ranking; sin designacion)"),
@@ -520,7 +524,8 @@ def fichas(R: pd.DataFrame) -> str:
             L.append(f"- Aviso svar_hd: {r.nota_svar}.")
         L.append(f"- Multiverso orientado ({r.variable_principal_m7 or '-'}): familia {ppr(100 * r.pct_multiverso_familia, 0)} % "
                  f"({ppr(100 * r.pct_multiverso_familia_con_fallidas, 0)} % con fallidas); variable principal {ppr(100 * r.pct_multiverso_variable, 0)} % "
-                 f"({ppr(100 * r.pct_multiverso_variable_con_fallidas, 0)} % con fallidas).")
+                 f"({ppr(100 * r.pct_multiverso_variable_con_fallidas, 0)} % con fallidas). "
+                 f"Signo mayoritario (orientado): familia {r.signo_mayoritario_familia or '-'}; variable principal {r.signo_mayoritario_variable or '-'}.")
         L.append(f"- Banda 68 % de svar_hd del factor evaluado: [{ppr(r.b68_lo_svar)}; {ppr(r.b68_hi_svar)}] pp.")
         if np.isfinite(r.cuota_no_atribuida):
             L.append(f"- Cuota no atribuida (determinista + no identificados): {ppr(r.cuota_no_atribuida_pp)} pp = {ppr(100 * r.cuota_no_atribuida, 0)} % de dY "

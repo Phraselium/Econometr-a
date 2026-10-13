@@ -22,11 +22,10 @@
 
 ## En curso
 - F3 cerrada: correcciones aplicadas (Y6, Y7 en decisiones.md); puerta `make check` rc=0 (168 passed; check_texto, check_v5 y check_v6 con 0 errores).
-- F4: M2 (SVAR con restricciones de signo) en curso con un subagente.
+- F4: en curso con subagentes: M2 (SVAR; principal inviable → V3 operativa, ver desviaciones), M3, M0+M4, M6+M7 y M5.
 
 ## Siguiente paso exacto
-- Lanzar F4, primera tanda junto a M2: M3 (LP dependiente del periodo, Y6), M0 y M4 (periodos y largo plazo), M6 y M7 (colinealidad y multiverso).
-- Segunda tanda: M1 y M8 (factor común y regional), M5 (LP-IV) y M9 (ML). Siguiendo docs/v8/contrato_salidas.md.
+- Al terminar M2/M3/M0/M4/M6/M7/M5: revisar salidas contra el contrato y lanzar M1+M8 (factor común y regional) y M9 (ML interpretable, GLMGam en lugar de EBM). Siguiendo docs/v8/contrato_salidas.md.
 
 ## Tokens por módulo
 

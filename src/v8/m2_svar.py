@@ -354,7 +354,7 @@ def procesar(spec, objetivo, M, D0, Dmax, clave, rapido, reg, hs=HS_FEVD, tiempo
     hd = pd.DataFrame(hd_rows)
     out.update(irf=irf, irf_acum=irf_ac, fevd=fev, hd=hd, hdraw=hdraw)
     if reg is not None:
-        reg.log("V8-M2", f"M2_{nombre}", f"BVAR-GLP({','.join(vars_)}; p={p}; exog={','.join(X.columns)}) + signos/ceros h=0-{1 if not spec['solo_impacto'] else 0}",
+        reg.log("V8-M2", f"M2_{nombre}", f"BVAR-GLP({','.join(vars_)}; p={p}; exog={','.join(X.columns)}) + signos/ceros h={'0' if spec['solo_impacto'] else '0-1'}",
                 Y.index[0], Y.index[-1], int(Y.shape[0]), np.nan, np.nan, np.nan, notas=f"lam={diag['lam']:.4f}; logml={diag['logml']:.2f}; D={D}; N={N}; ESS={diag['ess']:.1f}; "
                 f"acept_theta={diag['frac_theta_acept']:.3f}; lam_fijo={spec['lam']}; defl={spec['defl']}")
     if tiempos is not None:
@@ -434,7 +434,7 @@ def atribucion(out, tag):
         return rows
     for (mk, per), dd in hd.items():
         comp, tot = dd["comp"], dd["total"]
-        cob = [c for (c, _, _, cb) in periodos_cubiertos(list(spec["Y"].index[spec["p"]:])) if c == per][0]
+        cob = [cb for (c, _, _, cb) in periodos_cubiertos(list(spec["Y"].index[spec["p"]:])) if c == per][0]
         grupos = {}
         for sh, x in comp.items():
             if sh in FACTOR:
@@ -451,7 +451,7 @@ def atribucion(out, tag):
                              contribucion_pp=b["mediana"], pct_total=float(np.median(pct)) if pct is not None else np.nan,
                              b68_lo=b["b68_lo"], b68_hi=b["b68_hi"], b90_lo=b["b90_lo"], b90_hi=b["b90_hi"],
                              capa="C4" if f == "residuo" else "C3s",
-                             notas=f"variante={tag}; total_observado_pp={tot:.3f}; cobertura={dd.get('cob', '')}{cob}; factor 'demanda_vivienda' = demanda especifica de vivienda "
+                             notas=f"variante={tag}; total_observado_pp={tot:.3f}; cobertura_periodo={cob}; factor 'demanda_vivienda' = demanda especifica de vivienda "
                                    "(no esta en la lista del contrato); residuo = no identificados + determinista; C3s condicionada a los supuestos; magnitudes posiblemente atenuadas (Y6)"))
     return rows
 
@@ -518,7 +518,7 @@ def escribir_resumen(salida, outs, hip, fev_all, hd_all, ess_tab, desv, meta, ra
     L.append("- Los dos shocks sin identificar quedan sin restricciones; sus resultados no se interpretan. Los elementos no restringidos solo se leen si su banda excluye el cero (Y4).")
     L.append("- Los pesos de importancia (ceros) son una derivacion propia NO VERIFICADA frente al articulo (Y4).")
     L.append(f"- Muestra efectiva ({OP}): {pr['diag']['muestra_ini']}-{pr['diag']['muestra_fin']} (N={pr['diag']['N_obs']}); "
-             "la compraventas MIVAU (tx_total) acaba en 2026T1, por lo que P5 cubre 2022T3-2026T1 (15 trimestres) en el principal y 2022T3-2026T2 en la larga.")
+             "la compraventas MIVAU (tx_total) acaba en 2026T1, por lo que P5 cubre 2022T3-2026T1 (15 trimestres) en las variantes de 7 variables y 2022T3-2026T2 en la larga.")
     L.append("- `pob_total` es una interpolacion lineal entre fechas semestrales hasta 2020 (marcada en el panel): la dinamica de n es suave por construccion; "
              "las conclusiones sobre el shock demografico dependen de ello.")
     L.append("- Contribuciones en puntos log x100 de la variacion acumulada del periodo (precio y alquiler reales, deflactor IPC); %: contribucion / variacion observada del periodo "
@@ -581,7 +581,8 @@ def escribir_resumen(salida, outs, hip, fev_all, hd_all, ess_tab, desv, meta, ra
             row[hid] = f"{float(bvar.cuantiles(x, [0.5], 0, w)[0]):.1f} (P={pp:.2f})"
         filas.append(row)
     L.append(md_tabla(pd.DataFrame(filas), "{:.0f}") + "\n")
-    L.append("V1 y V3 y robustez comparten la misma lectura; en V1 el shock «credito» no incluye el monetario (H8-2/H8-4 con V1 usan solo `credito`; ver hd_periodos.csv para `monetario`). "
+    L.append("Celdas: mediana de la contribucion conjunta en pp (P = probabilidad posterior del signo esperado). En V1 el shock «credito» no incluye el monetario "
+             "(H8-2/H8-4 con V1 usan solo `credito`; `monetario` esta en hd_periodos.csv). V1, V2 y la robustez usan la identificacion operativa solo de impacto. "
              "n.c. = periodo no cubierto o factor no definido en esa variante.\n")
     if "larga" in outs and len(outs["larga"]["hd"]):
         L.append("## Version larga (4 variables, 1995T2-2026T2): contribucion a la variacion del precio real de compra (pp)\n")

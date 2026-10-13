@@ -1,0 +1,13 @@
+{
+ "fichero": "predicciones_congeladas.csv",
+ "sha256": "bd23db78e3342c6865bb1285108d0943a70f0c0d4e1b5b07085491295f509a9e",
+ "modelo": "BVAR-GLP principal (forma reducida, 7 variables, p=2, delta 0 en tasas y 1 en i)",
+ "origen": "2026Q1",
+ "objetivo_evaluate_v8": "2026T3-2027T2 (h_desde_2026T2 = 1..4, filas evaluable=True)",
+ "lam": 0.3711783723425523,
+ "muestra": "2004Q2-2026Q1",
+ "ndraw": 5000,
+ "seed": 20261010,
+ "nota": "tx_total (compraventas MIVAU) acaba en 2026T1, por lo que la muestra comun del BVAR principal acaba en 2026T1 y el origen es 2026T1 (no 2026T2): h=1 (2026T2) ya es un dato y NO se evalua; las filas evaluables son h=2..5 desde 2026T1 = h=1..4 desde 2026T2 (docs/v8/desviaciones.md).",
+ "congelado_en": "ver commit/etiqueta de la release (docs/v8/notas_release.md)"
+}

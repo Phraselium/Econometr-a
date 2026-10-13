@@ -24,3 +24,6 @@
   - **Restricciones de signo y ceros.** La mecánica es apta: identidad de la descomposición histórica y ceros exactos. Las bandas de los elementos no restringidos son anchas (sobrecobertura): un resultado no restringido solo se lee si su banda excluye el cero.
   - **Pesos ARW.** Son una derivación propia, NO VERIFICADA frente al artículo. Pasan la prueba de invarianza al orden de los shocks. En la principal (signos y ceros) se usan con esa declaración; la variante V3 (solo signos) no los necesita.
   - **TVP-VAR-SV, no apta** para detectar cambios de coeficientes con T de unos 90 (detección del 17 %). M3 usa el VAR por regímenes con los periodos pre-registrados como fechas conocidas (con reservas: cobertura de 0,90 y potencia de 0,64), que es la alternativa prevista en el encargo. La senda TVP-SV se muestra solo para la volatilidad.
+- **Y5. Revisión F3: APROBAR CON CORRECCIONES** (docs/v8/revision_F3.md).
+  - Las aclaraciones del pre-registro (H11, H16, H10, H9) están en docs/v8/desviaciones.md, antes de estimar.
+  - Las correcciones de código (H1, H2, H4-H8, H12-H15, H17, H18) se encargan a dos subagentes. F4 no estima con datos reales hasta que estén hechas y validadas.

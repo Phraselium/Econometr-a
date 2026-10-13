@@ -32,8 +32,9 @@
   - M9: ningún ML supera a la base más exigente.
 
 ## Siguiente paso exacto
-- Leer docs/v8/revision_F4.md. Aplicar las correcciones (≤2 REHACER) y, si cambia algo, volver a pasar `make check`. Después, commit y push de la puerta F4.
-- Luego F5: script `src/v8/f5_atribucion.py` → `output/v8/F5/` (atribución combinada y regla del §9 con la regla operativa que proponga el revisor).
+- Revisión F4 hecha (docs/v8/revision_F4.md): APROBAR CON CORRECCIONES, M2 REHACER (J1: el escalón EPA creaba la «parte determinista» de P5). Desviaciones, Y9 y la regla operativa de F5 (R0-R8) anotadas antes de calcular F5.
+- En curso, cuatro subagentes de corrección: M2 (J1, J2, prob_mayor); F1+M0+M5 (J8, J9, J3, J4, J18); M3+M6+M7 (J5, J6, J15-J17); M1+M4+M8+M9 (J10-J13, J19, J23).
+- Al terminar: `make check`, commit y push de la puerta F4. Después F5 (`src/v8/f5_atribucion.py` con R0-R8 y la tabla común AR(4)/ECM v1 de J7).
 
 ## Tokens por módulo
 
@@ -54,6 +55,7 @@
 | F4 M5 | 183.171 | ~4k |
 | F4 M1+M8 | 138.463 | ~4k |
 | F4 M9 | 101.170 | ~4k |
+| F4 revisor | 237.962 | ~10k |
 
 ## M2 (SVAR con signos y ceros), hecho
 - `src/v8/m2_svar.py` (`--rapido`), `tests/v8/test_m2.py`, salidas en `output/v8/M2/` (irf, fevd, hd_periodos, atribucion, hipotesis_m2, predicciones_congeladas + congelacion.json, resultado.json, resumen.md, registro.csv).

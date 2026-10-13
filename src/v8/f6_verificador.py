@@ -162,6 +162,58 @@ def fichas() -> list[dict]:
     return f
 
 
+MARC_INI, MARC_FIN = "<!-- V8:inicio (generado por src/v8/f6_verificador.py; no editar a mano) -->", "<!-- V8:fin -->"
+NOTA_CAB = ("Nota V8 (2026-10-13): este historial incluye V8; las filas de V8 están en la adenda «Adenda V8» del final, con la columna «Estado en V8 y porqué». "
+            "Las filas anteriores no se modifican.")
+
+
+def historial() -> None:
+    """Añade (o refresca) la adenda V8 de docs/v6_1/historial_conclusiones.md, con cifras leídas de hechos.json."""
+    p = RAIZ / "docs" / "v6_1" / "historial_conclusiones.md"
+    t = p.read_text(encoding="utf-8")
+    if NOTA_CAB not in t:
+        lineas = t.split("\n")
+        lineas.insert(1, "")
+        lineas.insert(2, NOTA_CAB)
+        t = "\n".join(lineas)
+    if MARC_INI in t:
+        t = t[:t.index(MARC_INI)].rstrip("\n") + "\n"
+    N = "nacional"
+    F = [
+        ("Demografía e inmigración", "Alquiler real", f"P5 (2022T3-2026T2): {c('V8-SVAR-a-P5-demografia-media')}; multiverso: {c('V8-M7-cumplen', 'num')} de {c('V8-M7-combinaciones', 'num')} combinaciones",
+         "SVAR (C3s); multiverso (C4); IV migratorio (C4)", "+ en el multiverso (alquiler P2 y completo); 0 en el SVAR", "C3s / C4",
+         "**Se mantiene** (no concluyente): la banda del SVAR incluye el 0 y el instrumento migratorio no tiene primera etapa (F ≈ 0,05); solo la asociación del multiverso es estable en alquiler"),
+        ("Tipos de interés y crédito", "Precio real de compra", f"P5: {c('V8-SVAR-c-P5-credito_tipos-media')}; P2: {c('V8-SVAR-c-P2-credito_tipos-media')}", "SVAR (C3s); IV monetario (C4)",
+         "no distinguible de 0", "C3s / C4", "**Se mantiene** (no concluyente): H8-2 no respaldada (p de Holm " + c("V8-H8-2-pholm") + ") y el instrumento monetario es débil (F " + c("V8-H8-5-F") + ")"),
+        ("Empleo y renta", "Precio real de compra", f"P1 (larga): {c('V8-SVAR-c-P1-empleo_renta-media')}; P5: {c('V8-SVAR-c-P5-empleo_renta-media')}", "SVAR (C3s); M0 (C4)", "+ en la media posterior, con banda que incluye el 0 salvo P1",
+         "C3s / C4", "**Se mantiene** (no concluyente): es el factor con mayor media en compra P1 y P5, pero la regla del §9 no designa ninguno (1 de 4 votos en P1)"),
+        ("Oferta", "Precio real de compra", f"P5: {c('V8-SVAR-c-P5-oferta-media')}; P2: {c('V8-SVAR-c-P2-oferta-media')}", "SVAR (C3s); ARDL con cotas (C4)", "signo según periodo", "C3s / C4",
+         "**Se mantiene** (no concluyente): bandas con el 0; cointegración solo en " + c("V8-M4-ardl-rechaza", "num") + " de " + c("V8-M4-ardl-total", "num") + " especificaciones"),
+        ("Turismo y viviendas turísticas", "Alquiler real", f"SHAP P5: {c('V8-M9-shap-a-P5-turismo')}; CCAA con datos: {c('V8-M9-turismo-ccaa', 'num')} de 17", "ML interpretable (C4, contraste)", "no concluyente", "C4",
+         "**Se mantiene** (no concluyente): cobertura de turismo parcial y solo P4-P5; el SVAR no lo incluye"),
+        ("Demanda externa y compradores extranjeros", "Precio real de compra", f"SHAP P5: {c('V8-M9-shap-c-P5-demanda_externa')}", "ML interpretable (C4, contraste)", "+ pequeño en P5", "C4",
+         "**Se mantiene** (no concluyente): contribución pequeña en el contraste de aprendizaje automático y sin identificación"),
+        ("Factor europeo (nuevo en V8)", "Crecimiento del precio de compra", f"correlación con la zona euro {c('V8-H8-9-est')}; parte europea en P2: {c('V8-M1-eur-c-P2')}", "Factor común (PCA/DFM); bootstrap por bloques",
+         "+", "C4", "**Nuevo**: asociación positiva (H8-9, p de Holm " + c("V8-H8-9-pholm") + "); el factor común no supera el 50 % de la varianza en todos los periodos (H8-8, p de Holm " + c("V8-H8-8-pholm") + "); sin lectura causal"),
+        ("Un factor único (regla del §9)", "Precio real de compra y alquiler real", f"{n_des(c)} de 10 celdas designadas", "Regla de 4 votos, multiverso y banda del SVAR", "—", "C3s / C4",
+         "**Nuevo**: ningún factor se designa como el más relevante en ningún periodo; se publican rankings con incertidumbre"),
+        ("Predicción fuera de muestra", "Crecimiento trimestral real", f"RMSE compra: AR(4) {c('V8-OOS-c-ar4-rmse')}, ECM v1 {c('V8-OOS-c-ecm_v1-rmse')}, BVAR {c('V8-OOS-c-bvar_m2-rmse')}", "Diebold-Mariano con Holm",
+         "—", "C4", "**Se mantiene** (K1): ningún modelo supera al AR(4) en la misma muestra"),
+    ]
+    L = [MARC_INI, "", "## Adenda V8 (por qué ha subido la vivienda: factores, periodos y factor común, 2026-10-13)", "",
+         "Una fila por factor. Las cifras salen de `output/v5/cifras_clave.csv` (ids `V8-`); los resultados del SVAR (C3s) valen solo condicionados a las restricciones de signo y de "
+         "cero de M2; el resto es asociación (C4). Sin lectura causal por debajo de C3/C3s.", "",
+         "| Factor | Medida de resultado | Magnitud | Método | Signo | Capa | Estado en V8 y porqué | Fuente |", "|---|---|---|---|---|---|---|---|"]
+    for fac, med, mag, met, sig, capa, est, *_ in F:
+        L.append(f"| {fac} | {med} | {mag} | {met} | {sig} | {capa} | {est} | output/v8/F6/hechos.json; output/v8/F5/resumen.md |")
+    L += ["", MARC_FIN]
+    p.write_text(t.rstrip("\n") + "\n\n" + "\n".join(L) + "\n", encoding="utf-8")
+
+
+def n_des(cf) -> str:
+    return str(int(H.loc[[i for i in H.index if i.startswith("V8-REGLA-")], "valor"].sum()))
+
+
 def main() -> None:
     f = fichas()
     OUT.mkdir(parents=True, exist_ok=True)
@@ -175,7 +227,8 @@ def main() -> None:
                 f"**Magnitud:** {x['magnitud']}", "", f"**Intervalo:** {x['intervalo']}", "", f"**Límites:** {x['limites']}", "", f"**Regla:** {x['regla']}", "",
                 f"**Literatura:** {x['literatura']}", "", "**Evidencia:** " + "; ".join(x["evidencia"]), "", "**Ids de cifras:** " + ", ".join(x["ids_cifras"]), ""]
     (OUT / "verificador_v8.md").write_text("\n".join(ver), encoding="utf-8")
-    print(f"f6_verificador: {len(f)} fichas V8")
+    historial()
+    print(f"f6_verificador: {len(f)} fichas V8 y adenda V8 del historial")
 
 
 if __name__ == "__main__":

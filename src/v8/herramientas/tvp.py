@@ -199,3 +199,44 @@ def irf_en(res, t, H=12):
         A = _A_from_a(res["a"][dd, t][None], n)[0]
         imp[dd] = np.linalg.inv(A) * np.exp(res["h"][dd, t])[None, :]
     return Phi @ imp[:, None]
+
+
+# ------------------------------------------------------------ alternativa: VAR por regimenes (prior comun)
+def var_regimenes(Y, p, cortes, lam=None, delta=1.0, lam_lim=(0.005, 20.0)):
+    """VAR bayesiano con coeficientes distintos por tramo y PRIOR COMUN (Minnesota con el mismo lambda; psi de la muestra completa).
+    cortes: indices (sobre las observaciones efectivas yy = Y[p:]) donde empieza cada nuevo regimen, p. ej. [60] -> dos regimenes.
+    El fechado de las rupturas se SUPONE conocido (no se estima). lambda se elige maximizando la suma de las densidades marginales
+    de los tramos (GLP). Devuelve dict con 'regimenes': lista de posteriores NIW compatibles con bvar.muestrear."""
+    from scipy.optimize import minimize_scalar
+    Y = np.asarray(Y, float)
+    n = Y.shape[1]
+    yy, X = bvar.retardos(Y, p, True)
+    lim = [0, *cortes, yy.shape[0]]
+    segs = [(lim[i], lim[i + 1]) for i in range(len(lim) - 1)]
+    psi = bvar._psi_ar(Y, p)
+
+    def total(ll):
+        pr = bvar.prior_minnesota(n, p, np.exp(ll), psi, delta)
+        return sum(bvar.logml_prior(pr, yy[a:b], X[a:b]) for a, b in segs)
+    if lam is None:
+        grid = np.linspace(np.log(lam_lim[0]), np.log(lam_lim[1]), 25)
+        v = [-total(g) for g in grid]
+        i = int(np.argmin(v))
+        r = minimize_scalar(lambda x: -total(x), bounds=(grid[max(i - 1, 0)], grid[min(i + 1, 24)]), method="bounded")
+        lam = float(np.exp(r.x))
+    pr = bvar.prior_minnesota(n, p, lam, psi, delta)
+    regs = []
+    for a, b in segs:
+        po = bvar._actualizar(pr, yy[a:b], X[a:b])
+        regs.append(dict(B=po["B0"], Om=po["Om"], S=po["S0"], nu=po["nu0"], n=n, p=p, const=True, lam=lam, T=b - a, Y=Y))
+    return dict(regimenes=regs, lam=lam, segs=segs, n=n, p=p, k=n * p + 1)
+
+
+def diferencia_regimenes(res, i, j, ecuacion, variable, retardo=1, ndraw=500, rng=None):
+    """Sorteos de (coef. regimen j) - (coef. regimen i) del retardo `retardo` de y_variable en la ecuacion dada."""
+    rng = np.random.default_rng(SEED) if rng is None else rng
+    n = res["n"]
+    pos = (retardo - 1) * n + variable
+    Bi, _ = bvar.muestrear(res["regimenes"][i], ndraw, rng)
+    Bj, _ = bvar.muestrear(res["regimenes"][j], ndraw, rng)
+    return Bj[:, pos, ecuacion] - Bi[:, pos, ecuacion]

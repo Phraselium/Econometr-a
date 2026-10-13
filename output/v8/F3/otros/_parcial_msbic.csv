@@ -1,0 +1,4 @@
+herramienta,escenario,metrica,valor,objetivo,cumple,reps,B,n,nota
+markov_switching,verdadero_1reg,% BIC elige k verdadero,1.0,">=0,70",True,30,,250,
+markov_switching,verdadero_2reg,% BIC elige k verdadero,0.0,">=0,70",False,30,,250,
+markov_switching,verdadero_3reg,% BIC elige k verdadero,0.0,">=0,70",False,30,,250,

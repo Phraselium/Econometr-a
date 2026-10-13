@@ -1,0 +1,301 @@
+{
+ "rama": "v8/F1",
+ "pregunta": "Construcción de los paneles de datos V8: nacional trimestral 1995T1-2026T2, 17 CCAA, Comunitat Valenciana por provincias y València ciudad",
+ "capa": "C4",
+ "datos": [
+  "data/processed/v8/nacional_q_v8.csv",
+  "data/processed/v8/panel_ccaa_q_v8.csv",
+  "data/processed/v8/cv_prov_q_v8.csv",
+  "data/processed/v8/cv_prov_a_v8.csv",
+  "data/processed/v8/valencia_ciudad_v8.csv",
+  "docs/v8/diccionario.md"
+ ],
+ "N": {
+  "nacional_q": 126,
+  "ccaa_q": 2142,
+  "cv_prov_q": 378,
+  "cv_prov_a": 69,
+  "valencia_ciudad": 2463
+ },
+ "metodo": "reutiliza paneles v7; cruces por código INE (diccionarios nombre->código explícitos); interpolaciones marcadas *_interp",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "cobertura": {
+   "p_tasado": {
+    "desde": "1995Q1",
+    "hasta": "2026Q2",
+    "n": 126
+   },
+   "p_bde": {
+    "desde": "1995Q1",
+    "hasta": "2026Q2",
+    "n": 126
+   },
+   "ipv": {
+    "desde": "2007Q1",
+    "hasta": "2026Q2",
+    "n": 78
+   },
+   "ipc_alquiler": {
+    "desde": "2002Q1",
+    "hasta": "2026Q2",
+    "n": 98
+   },
+   "ocupados": {
+    "desde": "2002Q1",
+    "hasta": "2026Q2",
+    "n": 98
+   },
+   "pob_total": {
+    "desde": "1995Q1",
+    "hasta": "2026Q2",
+    "n": 126
+   },
+   "pob_extranj": {
+    "desde": "2002Q1",
+    "hasta": "2025Q1",
+    "n": 93
+   },
+   "hogares_epa": {
+    "desde": "2002Q1",
+    "hasta": "2026Q2",
+    "n": 98
+   },
+   "pib_nom": {
+    "desde": "1995Q1",
+    "hasta": "2026Q2",
+    "n": 126
+   },
+   "rdb": {
+    "desde": "1999Q1",
+    "hasta": "2026Q2",
+    "n": 110
+   },
+   "salario": {
+    "desde": "2000Q1",
+    "hasta": "2026Q2",
+    "n": 106
+   },
+   "tipo_hip_bde": {
+    "desde": "1995Q1",
+    "hasta": "2026Q2",
+    "n": 126
+   },
+   "tipo_hip_bce": {
+    "desde": "2003Q1",
+    "hasta": "2026Q2",
+    "n": 94
+   },
+   "euribor_1y": {
+    "desde": "1995Q1",
+    "hasta": "2026Q2",
+    "n": 126
+   },
+   "credito_nuevo": {
+    "desde": "2003Q1",
+    "hasta": "2026Q2",
+    "n": 94
+   },
+   "credito_stock_bde": {
+    "desde": "1997Q3",
+    "hasta": "2026Q2",
+    "n": 116
+   },
+   "credito_promotor": {
+    "desde": "1995Q1",
+    "hasta": "2026Q2",
+    "n": 126
+   },
+   "bls_criterios_neto": {
+    "desde": "2003Q1",
+    "hasta": "2026Q2",
+    "n": 94
+   },
+   "jk_mp": {
+    "desde": "1999Q1",
+    "hasta": "2025Q3",
+    "n": 107
+   },
+   "hpi_ea20": {
+    "desde": "2005Q1",
+    "hasta": "2026Q2",
+    "n": 86
+   },
+   "bis_hpi_xm_nom": {
+    "desde": "2000Q1",
+    "hasta": "2026Q1",
+    "n": 105
+   },
+   "tx_extranj": {
+    "desde": "2007Q1",
+    "hasta": "2026Q2",
+    "n": 78
+   },
+   "turistas": {
+    "desde": "2015Q4",
+    "hasta": "2026Q2",
+    "n": 43
+   },
+   "visados": {
+    "desde": "1995Q1",
+    "hasta": "2026Q2",
+    "n": 124
+   },
+   "terminadas": {
+    "desde": "1995Q1",
+    "hasta": "2026Q2",
+    "n": 126
+   },
+   "costes_constr": {
+    "desde": "1995Q1",
+    "hasta": "2026Q2",
+    "n": 126
+   },
+   "tx_total": {
+    "desde": "2004Q1",
+    "hasta": "2026Q1",
+    "n": 89
+   },
+   "compraventas_ine": {
+    "desde": "2007Q1",
+    "hasta": "2026Q2",
+    "n": 78
+   },
+   "vut_viviendas": {
+    "desde": "2020Q3",
+    "hasta": "2026Q2",
+    "n": 24
+   },
+   "ipc_general": {
+    "desde": "1995Q1",
+    "hasta": "2026Q2",
+    "n": 126
+   },
+   "deflactor_pib": {
+    "desde": "1995Q1",
+    "hasta": "2026Q2",
+    "n": 126
+   }
+  },
+  "interpolaciones": {
+   "ipc_general": {
+    "metodo": "retropolación 1995T1-2001T4 con tasas interanuales del IPCA de España (ecb_hicp_es); 2002+ índice INE",
+    "n": 28
+   },
+   "pob_total": {
+    "metodo": "interpolación lineal entre fechas observadas (semestrales hasta 2020, trimestrales después)",
+    "n": 52
+   },
+   "pob_extranj_ine": {
+    "metodo": "interpolación lineal entre fechas observadas (semestrales hasta 2020)",
+    "n": 38
+   },
+   "pob_extranj": {
+    "metodo": "interpolación lineal entre stocks anuales de 1 de enero (Q1)",
+    "n": 69
+   },
+   "inmig_anual": {
+    "metodo": "valor anual asignado a los 4 trimestres (escalón)",
+    "n": 108
+   },
+   "visados": {
+    "metodo": "anual/4 para 1995T1-2007T4 (tabla anual 3.1 del MIVAU); mensual agregado desde 2008",
+    "n": 52
+   },
+   "terminadas": {
+    "metodo": "anual/4 para 1995T1-2007T4 (tabla anual 3.2 del MIVAU); mensual agregado desde 2008",
+    "n": 52
+   },
+   "vut_viviendas": {
+    "metodo": "interpolación log-lineal entre cortes semestrales (2020-08 ... 2026-05); sin extrapolar",
+    "n": 11
+   },
+   "vut_plazas": {
+    "metodo": "interpolación log-lineal entre cortes semestrales (2020-08 ... 2026-05); sin extrapolar",
+    "n": 11
+   },
+   "cv_q:vut_viviendas": {
+    "metodo": "interpolación log-lineal entre cortes semestrales",
+    "n": 33
+   },
+   "cv_q:vut_plazas": {
+    "metodo": "interpolación log-lineal entre cortes semestrales",
+    "n": 33
+   }
+  },
+  "coincidencias": {
+   "p_tasado|p_bde": {
+    "valor": 0.0,
+    "criterio": "nivel (mediana |ln ratio|<0,05)",
+    "coincide": true
+   },
+   "tipo_hip_bde|tipo_hip_bce": {
+    "valor": 0.09133333333333349,
+    "criterio": "mediana |dif|<0,3 pp",
+    "coincide": true
+   },
+   "tipo_hip_bce|tipo_hip_nuevas_tae": {
+    "valor": 0.14304999999999968,
+    "criterio": "mediana |dif|<0,3 pp",
+    "coincide": true
+   },
+   "credito_stock_ecb|credito_stock_bde": {
+    "valor": 0.004927883079252172,
+    "criterio": "nivel (mediana |ln ratio|<0,05)",
+    "coincide": true
+   },
+   "pob_extranj|pob_extranj_ine": {
+    "valor": 0.002343103396428784,
+    "criterio": "nivel (mediana |ln ratio|<0,05)",
+    "coincide": true
+   },
+   "hogares_epa|hogares_ecp": {
+    "valor": 0.007779132479277312,
+    "criterio": "nivel (mediana |ln ratio|<0,05)",
+    "coincide": true
+   },
+   "tx_total|compraventas_ine": {
+    "valor": 0.10977585303538848,
+    "criterio": "nivel (mediana |ln ratio|<0,05)",
+    "coincide": false
+   },
+   "ipv|p_tasado": {
+    "valor": 0.938501184647692,
+    "criterio": "correlación de tasas interanuales >0,9 (índice frente a nivel)",
+    "coincide": true
+   },
+   "hpi_es_eurostat|bis_hpi_es_nom": {
+    "valor": 0.9991494289836473,
+    "criterio": "correlación de tasas interanuales >0,9",
+    "coincide": true
+   },
+   "registr_pm2_4tm|p_bde": {
+    "valor": 0.8587358559628637,
+    "criterio": "correlación de tasas interanuales >0,9",
+    "coincide": false
+   },
+   "ipc_general|hicp_yoy": {
+    "valor": 0.07750368291951726,
+    "criterio": "mediana |dif| de la inflación interanual <0,5 pp",
+    "coincide": true
+   }
+  },
+  "n_vars_nacional": 251,
+  "n_vars_ccaa": 174
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "sin estimación; solo datos",
+  "salarios ETCL sin solape: ruptura 2008T1 declarada",
+  "crédito a promotores desde v5/ca_bde_be0418_credito_actividad.csv",
+  "FRONTUR por CCAA solo 6 CCAA",
+  "ver docs/v8/diccionario.md"
+ ]
+}

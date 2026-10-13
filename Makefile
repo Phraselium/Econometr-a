@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion
+.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8
 
 all: data clean models report
 
@@ -86,3 +86,8 @@ publicacion:
 # Validación limpia diferida de V7: CON red, UNA sola vez, tras la release del pre-registro (docs/v7/notas_release.md)
 evaluate_v7:
 	$(PY) src/v7/evaluate_v7.py
+
+# V8: datos (F1) y, al añadirse, herramientas y modelos. Orden en V8_ORDEN (src/v8/<modulo>.py); añadir módulos al final de la lista.
+V8_ORDEN := f1_paneles
+v8:
+	@for r in $(V8_ORDEN); do echo ">> src/v8/$$r.py"; $(PY) src/v8/$$r.py || exit 1; done

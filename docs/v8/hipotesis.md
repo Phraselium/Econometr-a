@@ -49,7 +49,8 @@ Hay lenguaje causal solo en C3 y C3s; en C3s, condicionado a los supuestos. Ning
 
 - **Precio de compra.**
   - Medida principal: valor tasado del Ministerio (desde 1995T1).
-  - Alternativas: IPV del INE (desde 2007), Notariado y Registradores donde existan.
+  - Alternativas: IPV del INE (desde 2007); Registradores (media móvil de 4 trimestres) y Notariado (semestral), donde existan.
+  - El precio de vivienda libre del BdE coincide con el valor tasado (republicación): no cuenta como segunda fuente.
 - **Alquiler.**
   - Medida principal: IPC de alquiler (desde 2002).
   - Alternativas: SERPAVI anual, contratos nuevos (fianzas de Cataluña y de la Comunitat Valenciana).
@@ -103,13 +104,13 @@ Hay lenguaje causal solo en C3 y C3s; en C3s, condicionado a los supuestos. Ning
 
 **Robustez, que no cuenta como variante:** retardos 1 y 4, prior fijo frente a GLP, submuestras sin COVID y deflactor alternativo.
 
-**Muestra larga.** Para P1, la descomposición histórica no está disponible con 7 variables. Se usa una versión con 4 variables desde 1995T1 (p, i, e, n) con los shocks de actividad, demográfico, crédito y tipos y un residual, como contraste (C3s). En P1 la atribución principal combina esa versión, el largo plazo (M4) y la contabilidad hogares-viviendas.
+**Muestra larga.** Para P1, la descomposición histórica no está disponible con 7 variables. Se usa una versión con 4 variables desde 1995T2 (p, i, y = PIB en volumen, n; la EPA del panel empieza en 2002) con los shocks de actividad, demográfico, crédito y tipos y un residual, como contraste (C3s). En P1 la atribución principal combina esa versión, el largo plazo (M4) y la contabilidad hogares-viviendas.
 
 ## 6. Instrumentos externos (M5, candidatos a C3)
 
-- **IV1.** Shocks monetarios de alta frecuencia del BCE (Jarociński-Karadi, componente de política monetaria pura), agregados por trimestre. Instrumentan el Euríbor y el tipo hipotecario en LP-IV sobre el precio y el alquiler, a horizontes 0-12.
-- **IV2.** Empuje migratorio: llegadas a España por país de origen predichas con la variación de la emigración del país de origen al resto de la UE (excluida España) por la cuota inicial (2002) de cada origen. Instrumentan las llegadas y, a través de ellas, el alquiler y el precio. Panel provincial cuando haya cuotas por provincia; si no, nacional.
-- **IV3.** Bartik sectorial: cuotas sectoriales de empleo de 2008 por provincia por el crecimiento nacional sectorial (excluida la propia provincia). Instrumenta el empleo provincial.
+- **IV1.** Shocks monetarios de alta frecuencia del BCE (Jarociński-Karadi, componente de política monetaria pura), agregados por trimestre (1999T1-2025T3). Instrumentan el Euríbor y el tipo hipotecario en LP-IV sobre el precio y el alquiler, a horizontes 0-12.
+- **IV2.** Empuje migratorio: llegadas a España por país de origen predichas con la variación de la emigración del país de origen al resto de la UE (excluida España) por la cuota inicial (2002) de cada origen. Instrumentan las llegadas y, a través de ellas, el alquiler y el precio. Panel provincial cuando haya cuotas por provincia; si no, nacional. Los flujos por ciudadanía hacia otros países de la UE se descargan en F4 (Eurostat migr_pop1ctz y migr_imm1ctz). Si no están disponibles, IV2 se marca como fallido.
+- **IV3.** Bartik sectorial: cuotas sectoriales de empleo de 2008 por provincia por el crecimiento nacional sectorial (excluida la propia provincia). Instrumenta el empleo provincial. Si no hay empleo sectorial provincial, se usa el panel de CCAA (NUTS2, Eurostat).
 - **Requisitos de C3:**
   - F efectivo de primera etapa ≥ 10;
   - intervalo Anderson-Rubin que excluye el cero;

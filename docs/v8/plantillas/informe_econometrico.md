@@ -32,7 +32,7 @@ Solo H8-9 se sostiene tras Holm, y es una asociación. En H8-5 a H8-7 los p unil
 
 ## 3. SVAR bayesiano con restricciones de signo y de cero (M2)
 
-**Especificación.** Siete variables nacionales trimestrales (precio real de compra, alquiler real, compraventas, crédito nuevo real, tipo hipotecario, ocupados EPA y población), en tasas log ×100 salvo el tipo, 2004T2-2026T1, dos retardos, ficticias COVID (2020T2-2020T4) e impulso EPA en 2021T1 como exógenas. Para P1, versión larga de cuatro variables desde 1995 (precio, tipo, PIB en volumen y población).
+**Especificación.** Siete variables nacionales trimestrales (precio real de compra, alquiler real, compraventas, crédito nuevo real, tipo hipotecario, ocupados EPA y población), en tasas log ×100 salvo el tipo, 2004T2-2026T1, dos retardos, ficticias COVID (2020T2-2020T4) e impulso EPA en 2021T1 como exógenas. Para P1, versión larga de cuatro variables desde 1995 (precio, tipo, PIB en volumen y población), con tres shocks identificados (actividad y renta, demográfico, crédito y tipos).
 
 **Identificación.** La tabla pre-registrada (signos en el impacto y el trimestre siguiente más cuatro ceros en la población) no aceptó ninguna rotación entre varios millones de candidatas: los datos rechazan esa tabla conjunta. Se usa la variante pre-registrada V3 (solo impacto, sin la restricción de compraventas), con un tamaño muestral efectivo de los pesos de importancia por encima del objetivo. Variantes: V1 (Euríbor más diferencial, solo impacto) y V2 (factor europeo exógeno). Robustez: uno y cuatro retardos, prior fijo, sin COVID y deflactor alternativo.
 
@@ -45,7 +45,7 @@ Solo H8-9 se sostiene tras Holm, y es una asociación. En H8-5 a H8-7 los p unil
 | Crédito y tipos | {{V8-SVAR-c-P1-credito_tipos-media}} | {{V8-SVAR-c-P2-credito_tipos-media}} | {{V8-SVAR-c-P3-credito_tipos-media}} | {{V8-SVAR-c-P4-credito_tipos-media}} | {{V8-SVAR-c-P5-credito_tipos-media}} |
 | Demanda de vivienda | — | {{V8-SVAR-c-P2-demanda_vivienda-media}} | {{V8-SVAR-c-P3-demanda_vivienda-media}} | {{V8-SVAR-c-P4-demanda_vivienda-media}} | {{V8-SVAR-c-P5-demanda_vivienda-media}} |
 | Oferta | — | {{V8-SVAR-c-P2-oferta-media}} | {{V8-SVAR-c-P3-oferta-media}} | {{V8-SVAR-c-P4-oferta-media}} | {{V8-SVAR-c-P5-oferta-media}} |
-| No atribuido | {{V8-QNA-pp-c-P1}} | {{V8-QNA-pp-c-P2}} | {{V8-QNA-pp-c-P3}} | {{V8-QNA-pp-c-P4}} | {{V8-QNA-pp-c-P5}} |
+| No atribuido (banda aproximada) | {{V8-QNA-pp-c-P1}} | {{V8-QNA-pp-c-P2}} | {{V8-QNA-pp-c-P3}} | {{V8-QNA-pp-c-P4}} | {{V8-QNA-pp-c-P5}} |
 | Observado | {{V8-OBS-c-P1}} | {{V8-OBS-c-P2}} | {{V8-OBS-c-P3}} | {{V8-OBS-c-P4}} | {{V8-OBS-c-P5}} |
 
 **Alquiler real:**
@@ -57,7 +57,7 @@ Solo H8-9 se sostiene tras Holm, y es una asociación. En H8-5 a H8-7 los p unil
 | Crédito y tipos | {{V8-SVAR-a-P2-credito_tipos-media}} | {{V8-SVAR-a-P3-credito_tipos-media}} | {{V8-SVAR-a-P4-credito_tipos-media}} | {{V8-SVAR-a-P5-credito_tipos-media}} |
 | Demanda de vivienda | {{V8-SVAR-a-P2-demanda_vivienda-media}} | {{V8-SVAR-a-P3-demanda_vivienda-media}} | {{V8-SVAR-a-P4-demanda_vivienda-media}} | {{V8-SVAR-a-P5-demanda_vivienda-media}} |
 | Oferta | {{V8-SVAR-a-P2-oferta-media}} | {{V8-SVAR-a-P3-oferta-media}} | {{V8-SVAR-a-P4-oferta-media}} | {{V8-SVAR-a-P5-oferta-media}} |
-| No atribuido | {{V8-QNA-pp-a-P2}} | {{V8-QNA-pp-a-P3}} | {{V8-QNA-pp-a-P4}} | {{V8-QNA-pp-a-P5}} |
+| No atribuido (banda aproximada) | {{V8-QNA-pp-a-P2}} | {{V8-QNA-pp-a-P3}} | {{V8-QNA-pp-a-P4}} | {{V8-QNA-pp-a-P5}} |
 | Observado | {{V8-OBS-a-P2}} | {{V8-OBS-a-P3}} | {{V8-OBS-a-P4}} | {{V8-OBS-a-P5}} |
 
 La media es la única medida aditiva (las contribuciones más la parte no atribuida suman lo observado en cada extracción). La posterior tiene colas largas: en la compra de P5, la mediana de crédito y tipos es {{V8-SVAR-c-P5-credito_tipos-mediana:valor}} y la de actividad y renta {{V8-SVAR-c-P5-empleo_renta-mediana:valor}}. Por eso el voto del SVAR en la regla se basa en la probabilidad, extracción a extracción, de que cada shock sea el mayor (decisión Y10). Magnitudes posiblemente atenuadas por el prior (sesgo documentado en F3).
@@ -70,7 +70,7 @@ Los tres instrumentos son débiles; ninguno alcanza C3 ({{V8-M5-c3:num}} de tres
 - **Empuje migratorio** (llegadas predichas por la emigración de cada país de origen al resto de la UE, cuotas de 2002): F efectivo {{V8-H8-7-F:num}}.
 - **Bartik sectorial** (cuotas de empleo de 2008 por comunidad): efecto relativo entre comunidades, no comparable con una contribución nacional; F efectivo por debajo de diez.
 
-Con F por debajo de diez y Anderson-Rubin no acotado, el método LP-IV se abstiene en la regla del factor más relevante (regla R2). Detalle: `output/v8/M5/resumen.md`.
+En el alquiler, LP-IV se abstiene en la regla del factor más relevante (F por debajo de diez y Anderson-Rubin al 68 % no acotado). En la compra, el Anderson-Rubin al 68 % está acotado y LP-IV vota cuando supera a todos los factores del SVAR: solo en P4, con una primera etapa de signo contrario al esperado (regla R2). Detalle: `output/v8/M5/resumen.md`.
 
 ## 5. Periodos (M0), coeficientes por periodo (M3) y largo plazo (M4)
 
@@ -80,7 +80,7 @@ Con F por debajo de diez y Anderson-Rubin no acotado, el método LP-IV se abstie
 
 ## 6. Colinealidad, dominancia y multiverso (M6 y M7)
 
-- **M6.** VIF y diagnóstico de Belsley por periodo; dominancia LMG con bandas bootstrap por bloques centradas; ortogonalización en todos los órdenes; índice compuesto; Granger y LP (predictivos, no causales); BMA y ridge o red elástica con validación temporal con embargo. La dominancia reparte el R² (no la variación) y vota por el factor de mayor cuota cuya contribución parcial tiene el signo de la variación observada.
+- **M6.** VIF y diagnóstico de Belsley por periodo; dominancia LMG con bandas bootstrap por bloques «básicas» (algunos puntos quedan fuera de su banda del 68 % por el sesgo del R² remuestreado); ortogonalización en todos los órdenes; índice compuesto; Granger y LP (predictivos, no causales); BMA y ridge o red elástica con validación temporal con embargo. La dominancia reparte el R² (no la variación) y vota por el factor de mayor cuota cuya contribución parcial tiene el signo de la variación observada.
 - **M7.** Rejilla de {{V8-M7-rejilla:num}} especificaciones ({{V8-M7-ajustadas:num}} estimadas; las fallidas, registradas). Con signos orientados (un tipo más bajo cuenta como presión al alza), {{V8-M7-cumplen:num}} de {{V8-M7-combinaciones:num}} combinaciones de mercado, periodo y factor cumplen la regla del multiverso (signo estable en al menos el 80 % y significativo tras BH en al menos el 50 %): demografía en el alquiler, en P2 y en la muestra completa, con signo positivo.
 
 ## 7. Factor común (M1) y análisis regional (M8)
@@ -95,11 +95,11 @@ Cuota de la varianza del crecimiento interanual común a las diecisiete comunida
 | P4 | {{V8-M1-cuota-c-P4}} | {{V8-M1-cuota-a-P4}} | {{V8-M8-comun-c-P4}} | {{V8-M8-comun-a-P4}} |
 | P5 | {{V8-M1-cuota-c-P5}} | {{V8-M1-cuota-a-P5}} | {{V8-M8-comun-c-P5}} | {{V8-M8-comun-a-P5}} |
 
-Con pocos trimestres por periodo, la cuota del primer componente está sesgada al alza; como H8-8 no se rechaza, la conclusión es prudente. Parte del crecimiento nacional asociada a la zona euro: {{V8-M1-eur-c-P1}} en P1, {{V8-M1-eur-c-P2}} en P2, {{V8-M1-eur-c-P3}} en P3, {{V8-M1-eur-c-P4}} en P4 y {{V8-M1-eur-c-P5}} en P5 (C4). En el panel regional, la pendiente del factor común es mecánicamente próxima a uno y no compite en la regla.
+Con pocos trimestres por periodo, la cuota del primer componente está sesgada al alza; como H8-8 no se rechaza, la conclusión es prudente. Parte del crecimiento nacional asociada a la zona euro: {{V8-M1-eur-c-P1}} en el tramo final de P1 (la serie de la zona euro empieza en 2006), {{V8-M1-eur-c-P2}} en P2, {{V8-M1-eur-c-P3}} en P3, {{V8-M1-eur-c-P4}} en P4 y {{V8-M1-eur-c-P5}} en P5 (C4). En el panel regional, la pendiente del factor común es mecánicamente próxima a uno y no compite en la regla.
 
 ## 8. Aprendizaje automático interpretable (M9, solo contraste)
 
-Gradient boosting con restricciones de monotonía, GAM, DML con cross-fitting por bloques, SHAP agrupado, permutación agrupada, ALE/PDP, interacciones SHAP, modelo sustituto y estabilidad del ranking. Ningún modelo supera a la base más exigente: en el panel de compra, {{V8-M9-oos-c-panel-ml}} frente a {{V8-M9-oos-c-panel-base}}. SHAP asigna al factor europeo {{V8-M9-shap-c-P5-factor_europeo}} y al turismo {{V8-M9-shap-c-P5-turismo}} en la compra de P5; el segundo queda fuera de su banda bootstrap y solo hay datos de turismo para {{V8-M9-turismo-ccaa:num}} comunidades. El ranking completo se reproduce en una minoría de réplicas bootstrap. Nada causal se deduce de SHAP ni de las importancias.
+Gradient boosting con restricciones de monotonía, GAM, DML con cross-fitting por bloques, SHAP agrupado, permutación agrupada, ALE/PDP, interacciones SHAP, modelo sustituto y estabilidad del ranking. Ningún modelo supera a la base más exigente: en el panel de compra, {{V8-M9-oos-c-panel-ml}} frente a {{V8-M9-oos-c-panel-base}}. SHAP asigna al factor europeo {{V8-M9-shap-c-P5-factor_europeo}} en la compra de P5. El turismo solo entra en una sensibilidad no principal limitada a las {{V8-M9-turismo-ccaa:num}} comunidades con datos, no comparable con la variación nacional. El ranking completo se reproduce en una minoría de réplicas bootstrap. Nada causal se deduce de SHAP ni de las importancias.
 
 ## 9. Atribución y regla del factor más relevante (F5)
 

@@ -6,10 +6,10 @@ Fecha: 2026-10-13. Autor: Borja Romero, economista (firma individual, independie
 
 | Pregunta | Respuesta | Capa |
 |---|---|---|
-| Peso de cada factor por periodo y mercado | Descomposición histórica del SVAR con bandas del 68 % para cinco shocks (actividad y renta, demográfico, crédito y tipos, demanda de vivienda y oferta) en P1-P5; dominancia, LP-IV, contabilidad hogares-viviendas y SHAP como métodos adicionales o de contraste. Casi todas las bandas del SVAR incluyen el cero. | C3s (SVAR, condicionado a las restricciones de signo y de cero); C4 (resto) |
-| Factor más relevante | **No se designa en ninguno de los diez casos** (`V8-REGLA-*`): el máximo de métodos coincidentes es dos de cuatro (`V8-VOTOS-*`). El caso más próximo, actividad y renta en la compra de 1995-2007, tiene banda que excluye el cero (`V8-SVAR-c-P1-empleo_renta-media`) y signo estable en el multiverso, pero un solo voto. | C3s / C4 |
+| Peso de cada factor por periodo y mercado | Descomposición histórica del SVAR con bandas del 68 % para cinco shocks (actividad y renta, demográfico, crédito y tipos, demanda de vivienda y oferta) en P2-P5 y tres en P1 (versión larga); dominancia, LP-IV, contabilidad hogares-viviendas y SHAP como métodos adicionales o de contraste. Casi todas las bandas del SVAR incluyen el cero. | C3s (SVAR, condicionado a las restricciones de signo y de cero); C4 (resto) |
+| Factor más relevante | **No se designa en ninguno de los diez casos** (`V8-REGLA-*`): el máximo de métodos coincidentes es dos de cuatro (`V8-VOTOS-*`). El caso más próximo, actividad y renta en la compra de 1995-2007, tiene banda que excluye el cero (`V8-SVAR-c-P1-empleo_renta-media`), pero en el multiverso el signo estable es el contrario y un solo método vota por él. | C3s / C4 |
 | Ecuaciones significativas y robustas | Ningún modelo cumple a la vez la regla de periodo y la del multiverso. Dos combinaciones cumplen el multiverso (demografía en el alquiler, P2 y muestra completa; `V8-M7-cumplen`). Los efectos por periodo que cumplen la regla no sobreviven a BH (`V8-M0-cumplen`). | C4 |
-| Componente común | La subida de 2022-2026 es la más común entre comunidades (`V8-M1-cuota-c-P5`); H8-8 (más de la mitad en cada periodo) no se sostiene. El factor común español covaría con la zona euro (H8-9, `V8-H8-9-est`, `V8-H8-9-pholm`). La parte europea solo es distinta de cero en la crisis (`V8-M1-eur-c-P2`). | C4 |
+| Componente común | La subida de 2022-2026 es la más común entre comunidades (`V8-M1-cuota-c-P5`); H8-8 (más de la mitad en cada periodo) no se sostiene. El factor común español covaría con la zona euro (H8-9, `V8-H8-9-est`, `V8-H8-9-pholm`). La parte europea tiene banda que excluye el cero en la crisis (`V8-M1-eur-c-P2`) y en el tramo final de P1 (`V8-M1-eur-c-P1`); en P3-P5 la incluye. | C4 |
 | Hipótesis confirmatorias | Solo H8-9 se sostiene tras Holm. H8-1 a H8-8, no. | C3s / C4 |
 | Predicción | Ningún modelo mejora a un AR(4) en la muestra común (`V8-OOS-*`). Predicciones de 2026T3-2027T2 congeladas. | C4 |
 
@@ -17,7 +17,7 @@ Fecha: 2026-10-13. Autor: Borja Romero, economista (firma individual, independie
 
 - **Identificación principal del SVAR.** La tabla pre-registrada (signos en dos trimestres más cuatro ceros) no aceptó ninguna rotación con los datos reales; se usó la variante V3 pre-registrada (solo impacto). docs/v8/bloqueos.md.
 - **Lectura causal externa (C3).** Los tres instrumentos son débiles (`V8-H8-5-F`, `V8-H8-6-F`, `V8-H8-7-F`; `V8-M5-c3`). La primera etapa de los shocks del BCE tiene el signo contrario al esperado.
-- **Designar un factor.** Con LP-IV abstenido, solo la demografía podía reunir tres votos por construcción, y no los reúne.
+- **Designar un factor.** En el alquiler, con LP-IV abstenido, solo la demografía podía reunir tres votos, y no los reúne. En la compra, LP-IV solo puede votar crédito y tipos (lo hace en P4, con un instrumento débil); ningún factor pasa de dos votos.
 - **Regla de periodo para el alquiler.** No hay medida alternativa trimestral nacional; queda «no evaluable».
 - **Cointegración.** No se demuestra una relación de largo plazo estable (`V8-M4-ardl-rechaza`), así que la contabilidad de largo plazo no vota.
 - **Nivel regional.** Sin SVAR regional, no se designa factor por comunidad, provincia ni para València ciudad; las cifras regionales son descriptivas.
@@ -42,6 +42,7 @@ Fecha: 2026-10-13. Autor: Borja Romero, economista (firma individual, independie
 4. El contraste de turismo de M9: cifra alta, fuera de su banda, sin lectura causal. Comprobar que ningún texto derivado la presente como atribución.
 5. Las referencias marcadas NO VERIFICADA y la neutralidad de las fichas del verificador V8 (output/v8/verificador_v8.md).
 6. La release y la fecha verificable del pre-registro (docs/v8/tareas_autor.md).
+7. Los hallazgos K1-K16 de la revisión final (docs/v8/revision_final.md) y su corrección.
 
 ## 5. Qué necesitará la fase posterior de propuestas y publicaciones
 

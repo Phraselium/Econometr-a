@@ -51,6 +51,9 @@ def ficha(i, tema, enun, magnitud, intervalo, limites, capa, veredicto, regla, e
 
 def fichas() -> list[dict]:
     f = []
+    h = H.loc["V8-M9-shap-a-P5-demanda_externa"]
+    FUERA_A_P5 = ("" if h["min"] <= h["valor"] <= h["max"] else
+                  " (en el alquiler de P5 el punto queda fuera de su banda del 68 %: el punto SHAP no es el centro de la banda bootstrap)")
     R = [i for i in H.index if i.startswith("V8-REGLA-")]
     n_des = int(H.loc[R, "valor"].sum())
     for i in R:
@@ -89,9 +92,10 @@ def fichas() -> list[dict]:
     # V8-V3 · turismo
     f.append(ficha(
         "V8-V3", "Viviendas turísticas", "El turismo y las viviendas de uso turístico explican la subida del alquiler.",
-        f"El factor de turismo no entra en el SVAR (M2). Solo hay datos utilizables en {c('V8-M9-turismo-ccaa', 'num')} de 17 CCAA y para P4 y P5. Contraste del modelo de "
+        f"El factor de turismo no entra en el SVAR (M2). Solo hay datos utilizables en {c('V8-M9-turismo-ccaa', 'num')} de 17 CCAA y para P4 y P5. Sensibilidad no principal "
+        "(NaN nativos), media de las 6 CCAA con datos de turismo; no comparable con la variación nacional. Contraste del modelo de "
         f"aprendizaje automático (C4, no es un efecto): contribución SHAP media del turismo al alquiler, con banda del 68 %: P4 {c('V8-M9-shap-a-P4-turismo')}; "
-        f"P5 {c('V8-M9-shap-a-P5-turismo')}; en la compra, P4 {c('V8-M9-shap-c-P4-turismo')} y P5 {c('V8-M9-shap-c-P5-turismo')}.",
+        f"P5 {c('V8-M9-shap-a-P5-turismo')}; en la compra, P4 {c('V8-M9-shap-c-P4-turismo')} y P5 {c('V8-M9-shap-c-P5-turismo')}. Ninguna de estas cifras es la variante principal.",
         "Bandas del 68 % del bootstrap de bloques (el punto puede quedar fuera de la banda)",
         "Sin identificación, cobertura parcial y periodos P1-P3 sin datos de turismo; SHAP describe cómo el modelo usa la variable y no identifica efectos. "
         "Véanse las fichas anteriores sobre viviendas turísticas (v3, v6) para el análisis municipal.", "C4", NC, REGLA_C4,
@@ -102,7 +106,7 @@ def fichas() -> list[dict]:
         "V8-V4", "Compradores extranjeros", "La demanda de compradores extranjeros es el principal motor de la subida del precio de la vivienda.",
         f"En V8 la demanda externa solo se contrasta con aprendizaje automático (C4, no es un efecto), en el panel de 17 CCAA: contribución SHAP media a la variación del "
         f"precio real de compra, con banda del 68 %: P3 {c('V8-M9-shap-c-P3-demanda_externa')}; P5 {c('V8-M9-shap-c-P5-demanda_externa')}; al alquiler en P5 "
-        f"{c('V8-M9-shap-a-P5-demanda_externa')}. No es un shock identificado en el SVAR. El peso de las compraventas con comprador extranjero (cifra de v4, "
+        f"{c('V8-M9-shap-a-P5-demanda_externa')}{FUERA_A_P5}. No es un shock identificado en el SVAR. El peso de las compraventas con comprador extranjero (cifra de v4, "
         "C4, id compradores_extranjeros en cifras_clave) no mide su efecto sobre el precio.",
         "Bandas del 68 % del bootstrap de bloques", "Sin identificación; fuentes de compradores extranjeros no independientes entre sí; la demanda externa es colineal "
         "con tipos y actividad.", "C4", NC, REGLA_C4, ["output/v8/M9/resumen.md", "output/v8/F5/fichas.md"]))

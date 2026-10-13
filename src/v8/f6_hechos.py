@@ -75,6 +75,18 @@ def add(i, ind, val, mn, mx, uni, per, cob, fue, capa, fecha, sentido="rango"):
     HECHOS.append(r)
 
 
+def _retro(fin: str, n: int) -> str:
+    """Trimestre inicial de una ventana de n trimestres que termina en `fin` (AAAATq)."""
+    a, q = int(fin[:4]), int(fin[-1])
+    k = a * 4 + (q - 1) - (n - 1)
+    return f"{k // 4}T{k % 4 + 1}"
+
+
+def _n_per(p: str) -> int:
+    ini, fin = PER_ETQ[p].split("-")
+    return (int(fin[:4]) * 4 + int(fin[-1])) - (int(ini[:4]) * 4 + int(ini[-1])) + 1
+
+
 def per_txt(p: str, m: str | None = None) -> str:
     t = f"{p} ({PER_ETQ[p]})"
     if p == "P1" and m == "alquiler":
@@ -170,9 +182,18 @@ def m1(F: dict) -> None:
     a = pd.read_csv(OUT / "M1" / "atribucion.csv")
     a = a[(a.factor == "factor_europeo") & (a.principal == "si")]
     for r in a.itertuples():
-        add(f"V8-M1-eur-{'c' if r.mercado == 'compra' else 'a'}-{r.periodo}", f"Parte de la variación de {MERC[r.mercado]} en {r.periodo} asociada al precio de la vivienda de la zona euro "
-            f"(regresión con retardos 0-1; banda del 68 %; asociación, no causal; la zona euro incluye a España)", r.contribucion_pp, r.b68_lo, r.b68_hi, "pp",
-            per_txt(r.periodo, r.mercado), "España (nacional)", "M1 factor común; Eurostat (prc_hpi_q)", "C4", F["M1"])
+        mn = re.search(r"n=(\d+)", str(r.notas))
+        n = int(mn.group(1)) if mn else None
+        pt = per_txt(r.periodo, r.mercado)
+        ind = (f"Parte de la variación de {MERC[r.mercado]} en {r.periodo} asociada al precio de la vivienda de la zona euro "
+               f"(regresión con retardos 0-1; banda del 68 %; asociación, no causal; la zona euro incluye a España)")
+        if n is not None:
+            fin = PER_ETQ[r.periodo].split("-")[1]
+            ini = _retro(fin, n)
+            pt = f"{r.periodo} (ventana efectiva {ini}-{fin}, n = {n})" if n < _n_per(r.periodo) else pt
+            ind += f"; n = {n} trimestres"
+        add(f"V8-M1-eur-{'c' if r.mercado == 'compra' else 'a'}-{r.periodo}", ind, r.contribucion_pp, r.b68_lo, r.b68_hi, "pp",
+            pt, "España (nacional)", "M1 factor común; Eurostat (prc_hpi_q)", "C4", F["M1"])
 
 
 def m7(F: dict) -> None:
@@ -225,10 +246,26 @@ def m8(F: dict) -> None:
         a = AMB[r.ambito]
         k = r.ambito.replace("cv_prov:", "p").replace("valencia_ciudad", "vlc")
         fue = "M8 regional (provincias de la Comunitat Valenciana y València ciudad; cruce por código INE)"
-        add(f"V8-M8-cv-{k}-{r.periodo}-total", f"Variación observada del precio real de compra en {a} en {r.periodo} (pp, log×100)", r.total_pp, None, None, "pp",
-            per_txt(r.periodo), a, fue, "C4", F["M8"])
-        add(f"V8-M8-cv-{k}-{r.periodo}-cuota", f"Cuota de la variación de {a} en {r.periodo} que acompaña al componente común nacional (resumen de comovimiento, sin lectura causal)",
-            100 * r.cuota_factor_nacional, None, None, "%", per_txt(r.periodo), a, fue, "C4", F["M8"])
+        add(f"V8-M8-cv-{k}-{r.periodo}-total", f"Variación observada del precio real de compra en {a} en {r.periodo} (pp, log×100; media interanual × T/4: aproximación, "
+            "no es el acumulado observado)", r.total_pp, None, None, "pp", per_txt(r.periodo), a, fue, "C4", F["M8"])
+        add(f"V8-M8-cv-{k}-{r.periodo}-cuota", f"R² del crecimiento interanual de {a} en {r.periodo} sobre el factor común nacional (cuota de varianza; no es parte de la "
+            "variación acumulada; resumen de comovimiento, sin lectura causal)", 100 * r.cuota_factor_nacional, None, None, "%", per_txt(r.periodo), a, fue, "C4", F["M8"])
+    at = pd.read_csv(OUT / "M8" / "atribucion.csv")
+    at = at[(at.mercado == "compra") & (at.periodo == "P5") & (at.factor == "factor_comun") & (at.principal == "si") & at.ambito.isin(AMB)]
+    ds = pd.read_csv(OUT / "M8" / "descriptivo_cv.csv")
+    ds = ds[ds.periodo == "P5"].set_index("ambito")
+    fue = "M8 regional (provincias de la Comunitat Valenciana y València ciudad; cruce por código INE)"
+    for r in at.itertuples():
+        a = AMB[r.ambito]
+        k = r.ambito.replace("cv_prov:", "p").replace("valencia_ciudad", "vlc")
+        add(f"V8-M8-cv-{k}-P5-fcpp", f"Parte de la variación del precio real de compra de {a} en P5 asociada al factor común nacional (pp; regresión sobre el factor; banda del 68 %; "
+            "asociación, no causal)", r.contribucion_pp, r.b68_lo, r.b68_hi, "pp", per_txt("P5"), a, fue, "C4", F["M8"])
+        d = ds.loc[r.ambito]
+        add(f"V8-M8-cv-{k}-P5-acum-mivau", f"Variación acumulada observada del valor tasado real de compra en {a} en P5 ({d.fuente1}; pp log)", d.valor1, None, None, "pp",
+            per_txt("P5"), a, "M8 descriptivo; " + str(d.fuente1), str(d.capa), F["M8"])
+        if _fin(d.valor2):
+            add(f"V8-M8-cv-{k}-P5-acum-alt", f"Variación acumulada observada del precio real de compra en {a} en P5 con la segunda fuente ({d.fuente2}; pp log)", d.valor2, None, None,
+                "pp", per_txt("P5"), a, "M8 descriptivo; " + str(d.fuente2), str(d.capa), F["M8"])
     j = json.loads((OUT / "M8" / "resultado.json").read_text(encoding="utf-8"))
     for m, d in j["estimacion"]["cuota_comun_mediana_ccaa"].items():
         for p, v in d.items():
@@ -254,9 +291,15 @@ def m9(F: dict) -> None:
     a = pd.read_csv(OUT / "M9" / "atribucion.csv")
     a = a[a.metodo.isin(["shap", "shap_sens_turismo"]) & (a.ambito == "ccaa_panel") & a.factor.isin(["demanda_externa", "turismo", "factor_europeo"]) & a.periodo.isin(PERS)]
     for r in a.itertuples():
-        add(f"V8-M9-shap-{r.mercado[0]}-{r.periodo}-{r.factor}", f"Contribución SHAP media de {FACTOR[r.factor]} a la variación de {MERC[r.mercado]} en {r.periodo} en el panel de CCAA "
-            "(banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto)", r.contribucion_pp, r.b68_lo, r.b68_hi, "pp",
-            per_txt(r.periodo, r.mercado), "17 CCAA (panel); turismo solo donde la cobertura es ≥ 70 %", fue, "C4", F["M9"], sentido=SENTIDO_SHAP)
+        tur = r.factor == "turismo" or r.metodo == "shap_sens_turismo"
+        ind = (f"Contribución SHAP media de {FACTOR[r.factor]} a la variación de {MERC[r.mercado]} en {r.periodo} en el panel de CCAA "
+               "(banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto)")
+        cob = "17 CCAA (panel)"
+        if tur:
+            ind = ("Sensibilidad no principal (NaN nativos), media de las 6 CCAA con datos de turismo; no comparable con la variación nacional: " + ind)
+            cob = "Sensibilidad no principal (NaN nativos), media de las 6 CCAA con datos de turismo; no comparable con la variación nacional"
+        add(f"V8-M9-shap-{r.mercado[0]}-{r.periodo}-{r.factor}", ind, r.contribucion_pp, r.b68_lo, r.b68_hi, "pp",
+            per_txt(r.periodo, r.mercado), cob, fue, "C4", F["M9"], sentido=SENTIDO_SHAP)
     j = json.loads((OUT / "M9" / "resultado.json").read_text(encoding="utf-8"))
     tu = j["diagnosticos"]["turismo_cobertura"]["compra"]
     add("V8-M9-turismo-ccaa", "CCAA con datos de turismo (viviendas de uso turístico y turistas) utilizables en M9", tu["ccaa_con_turismo"], None, None, "CCAA",

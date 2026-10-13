@@ -17,7 +17,7 @@ con la misma ruta relativa. Cada cifra sale de `output/v5/cifras_clave.csv`; nin
 - `V8-REGLA-*`: 1 = designado, 0 = no designado (leer el campo `indicador` para el factor evaluado y el resultado).
 - Unidades de recuento (`votos`, `celdas`, `combinaciones`, `coeficientes`, `efectos`, `modelos`, `especificaciones`, `instrumentos`) se escriben sin decimales.
 
-## Ids V8 (generado por `src/v8/render_v8.py`; 266 ids)
+## Ids V8 (generado por `src/v8/render_v8.py`; 287 ids)
 
 
 | id | indicador | valor | capa | periodo |
@@ -30,15 +30,15 @@ con la misma ruta relativa. Cada cifra sale de `output/v5/cifras_clave.csv`; nin
 | `V8-H8-3-pholm` | H8-3: p ajustado por Holm (Prob. posterior unilateral; no respaldada tras Holm (inclina al signo esperado, p_unilateral < 0,5)) | 0,838 | C3s | P3 (2014T1-2019T4) |
 | `V8-H8-4-est` | H8-4: En P2, la contribucion conjunta de credito y tipos y de actividad y renta al precio real de compra es negativa (contribución acumulada del periodo, intervalo al 95 %; condicionado a las restricciones de signo y de cero de M2) | -19,2 pp (-57,3 a 9,9 pp) | C3s | P2 (2008T3-2013T4) |
 | `V8-H8-4-pholm` | H8-4: p ajustado por Holm (Prob. posterior unilateral; no respaldada tras Holm (inclina al signo esperado, p_unilateral < 0,5)) | 0,343 | C3s | P2 (2008T3-2013T4) |
-| `V8-H8-5-F` | H8-5: F efectivo de la primera etapa (Un shock monetario contractivo del BCE reduce el precio real de compra a h = 4-8; umbral C3: F ≥ 10) | 1,8 estadístico F | C4 | ver hipótesis |
+| `V8-H8-5-F` | H8-5: F efectivo de la primera etapa (Un shock monetario contractivo del BCE reduce el precio real de compra a h = 4-8; umbral C3: F ≥ 10) | 1,83 | C4 | ver hipótesis |
 | `V8-H8-5-pholm` | H8-5: p ajustado por Holm (no respaldada tras Holm (instrumento no supera C3)) | 1,000 | C4 | ver hipótesis |
-| `V8-H8-5-tFR` | H8-5: t de la forma reducida (signo esperado -1) | 0,60 estadístico t | C4 | ver hipótesis |
-| `V8-H8-6-F` | H8-6: F efectivo de la primera etapa (Un shock monetario contractivo del BCE reduce el alquiler real a h = 4-8; umbral C3: F ≥ 10) | 0,77 estadístico F | C4 | ver hipótesis |
+| `V8-H8-5-tFR` | H8-5: t de la forma reducida (signo esperado -1) | 0,60 | C4 | ver hipótesis |
+| `V8-H8-6-F` | H8-6: F efectivo de la primera etapa (Un shock monetario contractivo del BCE reduce el alquiler real a h = 4-8; umbral C3: F ≥ 10) | 0,77 | C4 | ver hipótesis |
 | `V8-H8-6-pholm` | H8-6: p ajustado por Holm (no respaldada tras Holm (instrumento no supera C3)) | 1,000 | C4 | ver hipótesis |
-| `V8-H8-6-tFR` | H8-6: t de la forma reducida (signo esperado -1) | 0,34 estadístico t | C4 | ver hipótesis |
-| `V8-H8-7-F` | H8-7: F efectivo de la primera etapa (El empuje migratorio aumenta el alquiler real; umbral C3: F ≥ 10) | 0,05 estadístico F | C4 | ver hipótesis |
+| `V8-H8-6-tFR` | H8-6: t de la forma reducida (signo esperado -1) | 0,34 | C4 | ver hipótesis |
+| `V8-H8-7-F` | H8-7: F efectivo de la primera etapa (El empuje migratorio aumenta el alquiler real; umbral C3: F ≥ 10) | 0,05 | C4 | ver hipótesis |
 | `V8-H8-7-pholm` | H8-7: p ajustado por Holm (no respaldada tras Holm (instrumento no supera C3)) | 1,000 | C4 | ver hipótesis |
-| `V8-H8-7-tFR` | H8-7: t de la forma reducida (signo esperado +1) | -0,09 estadístico t | C4 | ver hipótesis |
+| `V8-H8-7-tFR` | H8-7: t de la forma reducida (signo esperado +1) | -0,09 | C4 | ver hipótesis |
 | `V8-H8-8-est` | H8-8: cuota mínima del componente común de las 17 CCAA en la varianza del crecimiento interanual del precio real de compra (mínimo de los 5 periodos; prueba de unión-intersección) | 45,3 % | C4 | P1-P5 |
 | `V8-H8-8-pholm` | H8-8: p ajustado por Holm | 0,669 | C4 | P1-P5 |
 | `V8-H8-9-est` | H8-9: correlación del factor común español con el crecimiento interanual del precio de la vivienda de la zona euro (EA19; intervalo al 95 %) | 0,60 (0,14-0,86) | C4 | 1999-último dato |
@@ -131,6 +131,27 @@ con la misma ruta relativa. Cada cifra sale de `output/v5/cifras_clave.csv`; nin
 | `V8-M9-oos-c-panel-base` | RMSE fuera de muestra de la base más exigente (ar4_fc) para precio real de compra (crecimiento trimestral real, pp) | 2,1 pp | C4 | bloque de prueba de M9 |
 | `V8-M9-oos-c-panel-mejor` | Modelos de M9 que superan a la base más exigente tras BH en precio real de compra | 0 modelos | C4 | bloque de prueba de M9 |
 | `V8-M9-oos-c-panel-ml` | RMSE fuera de muestra del mejor modelo de aprendizaje automático en esa tabla (gam_ar_alfa100) para precio real de compra (pp; no se elige por p) | 2,5 pp | C4 | bloque de prueba de M9 |
+| `V8-M9-shap-a-P2-demanda_externa` | Contribución SHAP media de demanda externa a la variación de alquiler real en P2 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | 0,24 pp (-0,06 a 0,29 pp) | C4 | P2 (2008T3-2013T4) |
+| `V8-M9-shap-a-P2-factor_europeo` | Contribución SHAP media de factor europeo a la variación de alquiler real en P2 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | 0,81 pp (-2,2 a 2,5 pp) | C4 | P2 (2008T3-2013T4) |
+| `V8-M9-shap-a-P3-demanda_externa` | Contribución SHAP media de demanda externa a la variación de alquiler real en P3 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | -0,17 pp (-0,17 a 0,05 pp) | C4 | P3 (2014T1-2019T4) |
+| `V8-M9-shap-a-P3-factor_europeo` | Contribución SHAP media de factor europeo a la variación de alquiler real en P3 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | 3,2 pp (1,8-5,8 pp) | C4 | P3 (2014T1-2019T4) |
+| `V8-M9-shap-a-P4-demanda_externa` | Contribución SHAP media de demanda externa a la variación de alquiler real en P4 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | 0,07 pp (-0,05 a 0,15 pp) | C4 | P4 (2020T2-2022T2) |
+| `V8-M9-shap-a-P4-factor_europeo` | Contribución SHAP media de factor europeo a la variación de alquiler real en P4 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | -2,7 pp (-5,2 a 0,40 pp) | C4 | P4 (2020T2-2022T2) |
+| `V8-M9-shap-a-P4-turismo` | Contribución SHAP media de turismo a la variación de alquiler real en P4 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | 0,11 pp (-0,53 a 0,30 pp) | C4 | P4 (2020T2-2022T2) |
+| `V8-M9-shap-a-P5-demanda_externa` | Contribución SHAP media de demanda externa a la variación de alquiler real en P5 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | -0,22 pp (-0,21 a 0,01 pp) | C4 | P5 (2022T3-último dato) |
+| `V8-M9-shap-a-P5-factor_europeo` | Contribución SHAP media de factor europeo a la variación de alquiler real en P5 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | -1,8 pp (-3,6 a 0,23 pp) | C4 | P5 (2022T3-último dato) |
+| `V8-M9-shap-a-P5-turismo` | Contribución SHAP media de turismo a la variación de alquiler real en P5 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | -0,44 pp (-0,67 a 0,23 pp) | C4 | P5 (2022T3-último dato) |
+| `V8-M9-shap-c-P2-demanda_externa` | Contribución SHAP media de demanda externa a la variación de precio real de compra en P2 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | -0,37 pp (-0,81 a 0,12 pp) | C4 | P2 (2008T3-2013T4) |
+| `V8-M9-shap-c-P2-factor_europeo` | Contribución SHAP media de factor europeo a la variación de precio real de compra en P2 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | -12,7 pp (-17,2 a -6,5 pp) | C4 | P2 (2008T3-2013T4) |
+| `V8-M9-shap-c-P3-demanda_externa` | Contribución SHAP media de demanda externa a la variación de precio real de compra en P3 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | -0,24 pp (-0,44 a 0,09 pp) | C4 | P3 (2014T1-2019T4) |
+| `V8-M9-shap-c-P3-factor_europeo` | Contribución SHAP media de factor europeo a la variación de precio real de compra en P3 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | 6,9 pp (3,6-10,2 pp) | C4 | P3 (2014T1-2019T4) |
+| `V8-M9-shap-c-P4-demanda_externa` | Contribución SHAP media de demanda externa a la variación de precio real de compra en P4 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | 0,09 pp (-0,14 a 0,24 pp) | C4 | P4 (2020T2-2022T2) |
+| `V8-M9-shap-c-P4-factor_europeo` | Contribución SHAP media de factor europeo a la variación de precio real de compra en P4 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | -0,22 pp (-2,3 a 2,4 pp) | C4 | P4 (2020T2-2022T2) |
+| `V8-M9-shap-c-P4-turismo` | Contribución SHAP media de turismo a la variación de precio real de compra en P4 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | 1,5 pp (0,13-2,2 pp) | C4 | P4 (2020T2-2022T2) |
+| `V8-M9-shap-c-P5-demanda_externa` | Contribución SHAP media de demanda externa a la variación de precio real de compra en P5 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | 0,51 pp (0,10-0,71 pp) | C4 | P5 (2022T3-último dato) |
+| `V8-M9-shap-c-P5-factor_europeo` | Contribución SHAP media de factor europeo a la variación de precio real de compra en P5 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | 2,1 pp (-0,36 a 7,2 pp) | C4 | P5 (2022T3-último dato) |
+| `V8-M9-shap-c-P5-turismo` | Contribución SHAP media de turismo a la variación de precio real de compra en P5 en el panel de CCAA (banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto) | 15,2 pp (8,1-14,8 pp) | C4 | P5 (2022T3-último dato) |
+| `V8-M9-turismo-ccaa` | CCAA con datos de turismo (viviendas de uso turístico y turistas) utilizables en M9 | 6 CCAA | C4 | P4-P5 |
 | `V8-OBS-a-P1` | Variación observada de alquiler real en P1 (pp, log×100; unidad común R0) | 4,9 pp | C4 | P1 (sin datos de alquiler) |
 | `V8-OBS-a-P2` | Variación observada de alquiler real en P2 (pp, log×100; unidad común R0) | -2,7 pp | C4 | P2 (2008T3-2013T4) |
 | `V8-OBS-a-P3` | Variación observada de alquiler real en P3 (pp, log×100; unidad común R0) | -1,1 pp | C4 | P3 (2014T1-2019T4) |
@@ -206,7 +227,7 @@ con la misma ruta relativa. Cada cifra sale de `output/v5/cifras_clave.csv`; nin
 | `V8-SVAR-a-P3-credito_tipos-mediana` | Contribución de crédito y tipos a la variación de alquiler real en P3 (mediana posterior; banda del 68 %; pp log×100; condicionado a las restricciones de signo y de cero de M2) | 0,16 pp (-1,7 a 2,7 pp) | C3s | P3 (2014T1-2019T4) |
 | `V8-SVAR-a-P3-demanda_vivienda-media` | Contribución de demanda específica de vivienda (shock de M2, no pre-registrado como factor) a la variación de alquiler real en P3 (media posterior; banda del 68 %; pp log×100; condicionado a las restricciones de signo y de cero de M2) | 0,66 pp (-1,4 a 2,9 pp) | C3s | P3 (2014T1-2019T4) |
 | `V8-SVAR-a-P3-demanda_vivienda-mediana` | Contribución de demanda específica de vivienda (shock de M2, no pre-registrado como factor) a la variación de alquiler real en P3 (mediana posterior; banda del 68 %; pp log×100; condicionado a las restricciones de signo y de cero de M2) | 0,63 pp (-1,4 a 2,9 pp) | C3s | P3 (2014T1-2019T4) |
-| `V8-SVAR-a-P3-demografia-media` | Contribución de demografía a la variación de alquiler real en P3 (media posterior; banda del 68 %; pp log×100; condicionado a las restricciones de signo y de cero de M2) | -0,00 pp (-2,9 a 2,7 pp) | C3s | P3 (2014T1-2019T4) |
+| `V8-SVAR-a-P3-demografia-media` | Contribución de demografía a la variación de alquiler real en P3 (media posterior; banda del 68 %; pp log×100; condicionado a las restricciones de signo y de cero de M2) | 0,00 pp (-2,9 a 2,7 pp) | C3s | P3 (2014T1-2019T4) |
 | `V8-SVAR-a-P3-demografia-mediana` | Contribución de demografía a la variación de alquiler real en P3 (mediana posterior; banda del 68 %; pp log×100; condicionado a las restricciones de signo y de cero de M2) | -0,09 pp (-2,9 a 2,7 pp) | C3s | P3 (2014T1-2019T4) |
 | `V8-SVAR-a-P3-empleo_renta-media` | Contribución de empleo y renta a la variación de alquiler real en P3 (media posterior; banda del 68 %; pp log×100; condicionado a las restricciones de signo y de cero de M2) | 1,7 pp (-1,1 a 4,8 pp) | C3s | P3 (2014T1-2019T4) |
 | `V8-SVAR-a-P3-empleo_renta-mediana` | Contribución de empleo y renta a la variación de alquiler real en P3 (mediana posterior; banda del 68 %; pp log×100; condicionado a las restricciones de signo y de cero de M2) | 1,4 pp (-1,1 a 4,8 pp) | C3s | P3 (2014T1-2019T4) |

@@ -18,7 +18,7 @@ CK = RAIZ / "output" / "v5" / "cifras_clave.csv"
 # Filas cuyo «min»/«max» NO son el rango del valor (valor crítico, mediana UE, extremo de distritos, etc.). Documentado en
 # docs/v6_1/auditoria_K4a.md (K4a-06). Cualquier otra fila con valor fuera de [min, max] es un error.
 RANGO_OTRO_SENTIDO = ("CA-EU-", "R1B-G-", "R1B-S-", "m2_pip_", "E-E1-VLC-contratos", "T1-H1", "T3-H8", "CC-C7b-jov-",
-                      "CA-CT-ratio-triang-")
+                      "CA-CT-ratio-triang-", "V8-M9-shap-")   # V8: banda del bootstrap de SHAP
 # Filas con unidad «%» que son variaciones o log-puntos (pueden ser negativas)
 PCT_CAMBIO = ("CA-CR-", "E-v3-H3-", "V7-R6-", "V71-S3-R6-")   # v7.1: variaciones % de escenarios R6 (pueden ser negativas)
 

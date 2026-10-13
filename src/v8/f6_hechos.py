@@ -29,6 +29,7 @@ AMB = {"cv_prov:03": "provincia de Alicante (03)", "cv_prov:12": "provincia de C
        "valencia_ciudad": "València ciudad"}
 SVAR_FACTORES = ["empleo_renta", "demografia", "demanda_vivienda", "oferta", "credito_tipos"]
 NOTA_C3S = "condicionado a las restricciones de signo y de cero de M2"
+SENTIDO_SHAP = "min y max = banda del 68 % del bootstrap de bloques (el punto SHAP puede quedar fuera de la banda: no es rango del valor)"
 HECHOS: list[dict] = []
 
 
@@ -69,7 +70,7 @@ def add(i, ind, val, mn, mx, uni, per, cob, fue, capa, fecha, sentido="rango"):
     if r["valor"] is None and r["min"] is None and r["max"] is None:
         return
     assert i not in {h["id"] for h in HECHOS}, f"id duplicado {i}"
-    if r["valor"] is not None and r["min"] is not None and r["max"] is not None:
+    if sentido == "rango" and r["valor"] is not None and r["min"] is not None and r["max"] is not None:
         assert r["min"] - 1e-9 <= r["valor"] <= r["max"] + 1e-9, f"{i}: valor fuera de [min, max]"
     HECHOS.append(r)
 
@@ -250,7 +251,16 @@ def m9(F: dict) -> None:
             "bloque de prueba de M9", cob, fue, "C4", F["M9"])
         add(f"V8-M9-oos-{k}-mejor", f"Modelos de M9 que superan a la base más exigente tras BH en {MERC[m]}", int(g.predice_mejor_bh.astype(str).str.lower().eq("true").sum()), None, None,
             "modelos", "bloque de prueba de M9", cob, fue, "C4", F["M9"])
+    a = pd.read_csv(OUT / "M9" / "atribucion.csv")
+    a = a[a.metodo.isin(["shap", "shap_sens_turismo"]) & (a.ambito == "ccaa_panel") & a.factor.isin(["demanda_externa", "turismo", "factor_europeo"]) & a.periodo.isin(PERS)]
+    for r in a.itertuples():
+        add(f"V8-M9-shap-{r.mercado[0]}-{r.periodo}-{r.factor}", f"Contribución SHAP media de {FACTOR[r.factor]} a la variación de {MERC[r.mercado]} en {r.periodo} en el panel de CCAA "
+            "(banda del 68 % por bootstrap de bloques; contraste del modelo de aprendizaje automático, no es un efecto)", r.contribucion_pp, r.b68_lo, r.b68_hi, "pp",
+            per_txt(r.periodo, r.mercado), "17 CCAA (panel); turismo solo donde la cobertura es ≥ 70 %", fue, "C4", F["M9"], sentido=SENTIDO_SHAP)
     j = json.loads((OUT / "M9" / "resultado.json").read_text(encoding="utf-8"))
+    tu = j["diagnosticos"]["turismo_cobertura"]["compra"]
+    add("V8-M9-turismo-ccaa", "CCAA con datos de turismo (viviendas de uso turístico y turistas) utilizables en M9", tu["ccaa_con_turismo"], None, None, "CCAA",
+        "P4-P5", "17 CCAA (panel)", fue, "C4", F["M9"])
     for k, d in j["estimacion"]["dml_theta_completo"].items():
         m, v = k.split("/")
         if v == "tipo_hip_real":

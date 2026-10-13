@@ -27,6 +27,7 @@ SENTIDO_MIN_MAX = {
     "T3-H8": "min = max = aporte del componente con mayor amplitud (valor = amplitud conjunta)",
     "CC-C7b-jov-": "min = valor del año base; max = valor del último año (no rango)",
     "CA-CT-ratio-triang-": "min = ratio INE; max = ratio Registradores (dos fuentes; valor redondeado del titular)",
+    "V8-M9-shap-": "min y max = banda del 68 % del bootstrap de bloques (el punto SHAP puede quedar fuera de la banda: no es rango del valor)",   # V8
 }
 
 

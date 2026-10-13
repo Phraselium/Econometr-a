@@ -32,19 +32,33 @@ def _fmt_p(x: float, unidad: str = "") -> str:
     return "< 0,001" if float(x) < 0.001 else f"{float(x):.3f}".replace(".", ",")
 
 
+def _fmt_2(x: float, unidad: str = "") -> str:
+    return "—" if pd.isna(x) else f"{float(x):.2f}".replace(".", ",")
+
+
+def _fmt_cero(x: float, unidad: str = "") -> str:
+    s = _fmt_v5(x, unidad)
+    return "0,00" if s == "-0,00" else s   # un valor negativo minúsculo no se escribe «-0,00»
+
+
+FORMATO_SIN_UNIDAD = {"p-valor": _fmt_p, "estadístico F": _fmt_2, "estadístico t": _fmt_2}   # se escriben sin la palabra de la unidad
+
+
 def _texto_v8(r: pd.Series, campo: str | None) -> str:
-    """Los p-valores se escriben con 3 decimales y sin unidad; el resto, como en v5."""
-    if r.unidad != "p-valor":
+    """P-valores y estadísticos F y t: 3 o 2 decimales y sin unidad; el resto, como en v5."""
+    if r.unidad not in FORMATO_SIN_UNIDAD:
         return _texto_v5(r, campo)
+    fmt = FORMATO_SIN_UNIDAD[r.unidad]
     r = r.copy()
     r["unidad"] = "proporción"   # v5 no escribe la unidad «proporción»
-    R.fmt_num = _fmt_p
+    R.fmt_num = fmt
     try:
         return _texto_v5(r, campo)
     finally:
-        R.fmt_num = _fmt_v5
+        R.fmt_num = _fmt_cero
 
 
+R.fmt_num = _fmt_cero
 R.texto = _texto_v8
 
 README_CAB = """# Plantillas V8

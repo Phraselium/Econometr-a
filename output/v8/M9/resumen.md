@@ -11,8 +11,8 @@ Contraste, no causal: ningun resultado de SHAP, importancias ni DML se lee como 
 
 ## Atribucion SHAP (modelo solo familias, panel; contribucion media pp; ver atribucion.csv con bandas)
 
-- alquiler P5: factor_europeo -0.43 [-0.46, +0.15]; demografia +0.07 [+0.05, +0.11]; demanda_externa -0.05 [-0.04, +0.00]; empleo_renta +0.03 [-0.04, +0.09]; credito_tipos +0.01 [-0.01, +0.02]; oferta -0.01 [-0.02, +0.00]
-- compra P5: empleo_renta +2.11 [+0.89, +1.91]; factor_europeo +0.78 [-0.03, +0.92]; demografia +0.65 [+0.46, +0.99]; credito_tipos +0.46 [+0.16, +0.76]; oferta +0.23 [+0.13, +0.33]; demanda_externa +0.15 [-0.00, +0.17]
+- alquiler P5: factor_europeo -1.76 [-3.64, +0.23]; demografia +0.24 [+0.18, +0.32]; demanda_externa -0.22 [-0.21, +0.01]; empleo_renta +0.07 [-0.34, +0.33]; credito_tipos +0.05 [-0.07, +0.08]; oferta -0.05 [-0.07, +0.01]
+- compra P5: empleo_renta +7.96 [+3.26, +8.47]; demografia +2.30 [+1.55, +3.35]; factor_europeo +2.14 [-0.36, +7.19]; credito_tipos +1.58 [+0.60, +2.80]; oferta +0.83 [+0.49, +1.21]; demanda_externa +0.51 [+0.10, +0.71]
 
 ## DML manual (C4, sin identificacion)
 

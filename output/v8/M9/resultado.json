@@ -12,54 +12,54 @@
  "metodo": "LightGBM (monotonia en tipos, empleo, poblacion; sensibilidad sin monotonia), GLMGam (splines), SHAP agrupado por familia, permutacion agrupada fuera de muestra, ALE/PDP, interacciones SHAP, sustituto depth 3, estabilidad por bootstrap de bloques, DML manual con cross-fitting por bloques con embargo (C4)",
  "estimacion": {
   "shap_contribucion_media_pp_panel": {
-   "compra/P2/demografia": -0.125,
-   "compra/P2/empleo_renta": -1.782,
-   "compra/P2/credito_tipos": -0.692,
-   "compra/P2/oferta": -0.443,
-   "compra/P2/demanda_externa": -0.079,
-   "compra/P2/factor_europeo": -2.672,
-   "compra/P3/demografia": -0.401,
-   "compra/P3/empleo_renta": 0.482,
-   "compra/P3/credito_tipos": 0.256,
-   "compra/P3/oferta": 0.137,
-   "compra/P3/demanda_externa": -0.045,
-   "compra/P3/factor_europeo": 1.308,
-   "compra/P4/demografia": 0.053,
-   "compra/P4/empleo_renta": -0.195,
-   "compra/P4/credito_tipos": 0.318,
-   "compra/P4/oferta": 0.165,
-   "compra/P4/demanda_externa": 0.041,
-   "compra/P4/factor_europeo": -0.098,
-   "compra/P5/demografia": 0.646,
-   "compra/P5/empleo_renta": 2.114,
-   "compra/P5/credito_tipos": 0.462,
-   "compra/P5/oferta": 0.229,
-   "compra/P5/demanda_externa": 0.147,
-   "compra/P5/factor_europeo": 0.78,
-   "alquiler/P2/demografia": -0.018,
-   "alquiler/P2/empleo_renta": -0.099,
-   "alquiler/P2/credito_tipos": -0.018,
-   "alquiler/P2/oferta": 0.018,
-   "alquiler/P2/demanda_externa": 0.051,
-   "alquiler/P2/factor_europeo": 0.17,
-   "alquiler/P3/demografia": -0.037,
-   "alquiler/P3/empleo_renta": 0.101,
-   "alquiler/P3/credito_tipos": 0.023,
-   "alquiler/P3/oferta": -0.019,
-   "alquiler/P3/demanda_externa": -0.033,
-   "alquiler/P3/factor_europeo": 0.615,
-   "alquiler/P4/demografia": -0.003,
-   "alquiler/P4/empleo_renta": -0.031,
-   "alquiler/P4/credito_tipos": 0.017,
-   "alquiler/P4/oferta": -0.004,
-   "alquiler/P4/demanda_externa": 0.03,
-   "alquiler/P4/factor_europeo": -1.19,
-   "alquiler/P5/demografia": 0.067,
-   "alquiler/P5/empleo_renta": 0.029,
-   "alquiler/P5/credito_tipos": 0.014,
-   "alquiler/P5/oferta": -0.013,
-   "alquiler/P5/demanda_externa": -0.053,
-   "alquiler/P5/factor_europeo": -0.425
+   "compra/P2/demografia": -0.593,
+   "compra/P2/empleo_renta": -8.463,
+   "compra/P2/credito_tipos": -3.288,
+   "compra/P2/oferta": -2.106,
+   "compra/P2/demanda_externa": -0.373,
+   "compra/P2/factor_europeo": -12.694,
+   "compra/P3/demografia": -2.105,
+   "compra/P3/empleo_renta": 2.531,
+   "compra/P3/credito_tipos": 1.347,
+   "compra/P3/oferta": 0.72,
+   "compra/P3/demanda_externa": -0.237,
+   "compra/P3/factor_europeo": 6.865,
+   "compra/P4/demografia": 0.119,
+   "compra/P4/empleo_renta": -0.438,
+   "compra/P4/credito_tipos": 0.714,
+   "compra/P4/oferta": 0.371,
+   "compra/P4/demanda_externa": 0.091,
+   "compra/P4/factor_europeo": -0.22,
+   "compra/P5/demografia": 2.301,
+   "compra/P5/empleo_renta": 7.956,
+   "compra/P5/credito_tipos": 1.581,
+   "compra/P5/oferta": 0.834,
+   "compra/P5/demanda_externa": 0.51,
+   "compra/P5/factor_europeo": 2.138,
+   "alquiler/P2/demografia": -0.085,
+   "alquiler/P2/empleo_renta": -0.469,
+   "alquiler/P2/credito_tipos": -0.087,
+   "alquiler/P2/oferta": 0.085,
+   "alquiler/P2/demanda_externa": 0.241,
+   "alquiler/P2/factor_europeo": 0.806,
+   "alquiler/P3/demografia": -0.192,
+   "alquiler/P3/empleo_renta": 0.53,
+   "alquiler/P3/credito_tipos": 0.119,
+   "alquiler/P3/oferta": -0.097,
+   "alquiler/P3/demanda_externa": -0.171,
+   "alquiler/P3/factor_europeo": 3.229,
+   "alquiler/P4/demografia": -0.006,
+   "alquiler/P4/empleo_renta": -0.07,
+   "alquiler/P4/credito_tipos": 0.038,
+   "alquiler/P4/oferta": -0.01,
+   "alquiler/P4/demanda_externa": 0.067,
+   "alquiler/P4/factor_europeo": -2.678,
+   "alquiler/P5/demografia": 0.238,
+   "alquiler/P5/empleo_renta": 0.074,
+   "alquiler/P5/credito_tipos": 0.05,
+   "alquiler/P5/oferta": -0.05,
+   "alquiler/P5/demanda_externa": -0.218,
+   "alquiler/P5/factor_europeo": -1.757
   },
   "dml_theta_completo": {
    "compra/tipo_hip_real": {
@@ -155,7 +155,60 @@
   },
   "estabilidad": "estabilidad_ranking.csv",
   "retardos": "todos los predictores con retardo de 1 trimestre",
-  "presupuesto_hiperparametros": "LGBM 2 configs x 2 (monotonia) ; GAM 2 alfas; sin seleccion por error fuera de muestra"
+  "presupuesto_hiperparametros": "LGBM 2 configs x 2 (monotonia) ; GAM 2 alfas; sin seleccion por error fuera de muestra",
+  "shap_punto_en_banda": {
+   "compra/ccaa_panel": {
+    "filas": 35,
+    "fuera_b68": 0,
+    "fuera_b90": 0
+   },
+   "compra/nacional": {
+    "filas": 36,
+    "fuera_b68": 1,
+    "fuera_b90": 0
+   },
+   "alquiler/ccaa_panel": {
+    "filas": 35,
+    "fuera_b68": 2,
+    "fuera_b90": 0
+   },
+   "alquiler/nacional": {
+    "filas": 36,
+    "fuera_b68": 2,
+    "fuera_b90": 0
+   }
+  },
+  "turismo_cobertura": {
+   "compra": {
+    "ccaa_con_turismo": 6,
+    "cobertura_por_periodo": {
+     "P1": 0.0,
+     "P2": 0.0,
+     "P3": 0.476,
+     "P4": 1.0,
+     "P5": 1.0
+    },
+    "periodos_reportados": [
+     "P4",
+     "P5"
+    ]
+   },
+   "alquiler": {
+    "ccaa_con_turismo": 6,
+    "cobertura_por_periodo": {
+     "P1": 0.0,
+     "P2": 0.0,
+     "P3": 0.476,
+     "P4": 1.0,
+     "P5": 1.0
+    },
+    "periodos_reportados": [
+     "P4",
+     "P5"
+    ]
+   }
+  },
+  "B_shap": 200
  },
  "fuera_muestra": {
   "alquiler/ccaa_panel": {
@@ -231,7 +284,8 @@
     }
    },
    "base_mas_exigente": "ar4",
-   "predice_mejor_que_la_base_mas_exigente": []
+   "predice_mejor_que_la_base_mas_exigente": [],
+   "predice_mejor_con_p_BH": []
   },
   "alquiler/nacional": {
    "modelo": "lgbm_ar_Am (principal predictivo); lgbm_fam_Am (principal explicativo); gam_ar_alfa10; gam_fam_alfa10",
@@ -306,7 +360,8 @@
     }
    },
    "base_mas_exigente": "ar4",
-   "predice_mejor_que_la_base_mas_exigente": []
+   "predice_mejor_que_la_base_mas_exigente": [],
+   "predice_mejor_con_p_BH": []
   },
   "compra/ccaa_panel": {
    "modelo": "lgbm_ar_Am (principal predictivo); lgbm_fam_Am (principal explicativo); gam_ar_alfa10; gam_fam_alfa10",
@@ -381,7 +436,8 @@
     }
    },
    "base_mas_exigente": "ar4_fc",
-   "predice_mejor_que_la_base_mas_exigente": []
+   "predice_mejor_que_la_base_mas_exigente": [],
+   "predice_mejor_con_p_BH": []
   },
   "compra/nacional": {
    "modelo": "lgbm_ar_Am (principal predictivo); lgbm_fam_Am (principal explicativo); gam_ar_alfa10; gam_fam_alfa10",
@@ -456,14 +512,15 @@
     }
    },
    "base_mas_exigente": "ar4",
-   "predice_mejor_que_la_base_mas_exigente": []
+   "predice_mejor_que_la_base_mas_exigente": [],
+   "predice_mejor_con_p_BH": []
   }
  },
  "notas": [
   "contraste, no causal (C4): el reparto SHAP describe como el modelo usa las familias; con familias correlacionadas no identifica efectos",
   "Ningun modelo se presenta como explicacion si no supera a la base mas exigente; DML sin identificacion (C4)",
   "Variables comunes en el tiempo (tipos, europeas) aportan T observaciones independientes efectivas, no 17xT",
-  "econml no usado: DML manual con bloques con embargo (docs/v8/desviaciones.md)"
- ],
- "tiempo_s": 91.9
+  "econml no usado: DML manual con bloques con embargo (docs/v8/desviaciones.md)",
+  "contribucion_pp de SHAP = media interanual x T/4 (aproximacion declarada de la variacion acumulada, log x100); P5 hasta 2026T1; bandas con SHAP evaluado dentro de la bolsa (J12); turismo solo en periodos con cobertura >= 70 % y con el panel de cada mercado (J13)"
+ ]
 }

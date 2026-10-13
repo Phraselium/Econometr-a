@@ -154,3 +154,95 @@ def test_tvp_formas_y_semilla():
     assert tvp.trayectoria(a, 0, 0, 1).shape == (10, T) and np.all(tvp.volatilidad(a) > 0)
     assert tvp.irf_en(a, T - 1, 6).shape == (10, 7, 3, 3)
     assert np.all(np.isfinite(a["beta"]))
+
+
+# ------------------------------------------------------------ correcciones de la revision F3 (H2, H4, H9, H10)
+def _exog(T, idx):
+    X = np.zeros((T, len(idx)))
+    for k, ii in enumerate(idx):
+        X[ii, k] = 1.0
+    return X
+
+
+def test_exog_retardos_estimar_y_prediccion():
+    Y = _datos(70, 4, 31)
+    X = _exog(70, [[20, 21, 22], [40]])
+    Y = Y + X @ np.array([[2.0, 0, -1.5, 0], [0, 1.0, 0, 0.0]])
+    yy, XX = bvar.retardos(Y, 2, True, X)
+    assert XX.shape == (68, 4 * 2 + 2 + 1) and np.array_equal(XX[:, -1], np.ones(68)) and np.array_equal(XX[:, 8:10], X[2:])
+    post = bvar.estimar(Y, 2, exog=X)
+    assert post["B"].shape == (11, 4) and post["m"] == 2
+    # la ficticia recupera el efecto (prior laxo) y la constante sigue en la ultima fila
+    assert abs(post["B"][8, 0] - 2.0) < 1.0 and abs(post["B"][9, 1] - 1.0) < 1.5
+    assert abs(post["logml"] - bvar.logml(Y, 2, post["lam"], exog=X)) < 1e-9
+    A, c = bvar.coef_matrices(post["B"][None], 4, 2, 2)
+    assert np.allclose(c[0], post["B"][10]) and bvar.coef_exog(post["B"][None], 4, 2, 2).shape == (1, 2, 4)
+    pr = bvar.prediccion(post, 4, 20, np.random.default_rng(3), exog_futuro=np.zeros((4, 2)))
+    assert pr.shape == (20, 4, 4)
+    # con dummies SOC/IO el prior sigue siendo conjugado y la ml finita
+    assert np.isfinite(bvar.estimar(Y, 2, soc=True, io=True, exog=X)["logml"])
+
+
+def test_dh_identidad_con_exogenas():
+    Y = _datos(80, 4, 21, A0)
+    X = _exog(80, [[30, 31, 32], [50]])
+    Y = Y + X @ np.array([[3.0, 0, -2.0, 0], [0, 0, 1.0, 0.0]])
+    rg = np.random.default_rng(5)
+    post = bvar.estimar(Y, 2, exog=X)
+    B, S = bvar.muestrear(post, 100, rg)
+    r = _restr(False)
+    res = signos.identificar(B, S, 4, 2, r, H=10, n_objetivo=10, rng=rg)
+    hd = signos.descomposicion_historica(res, Y, exog=X)
+    assert hd["error"] < 1e-8 and hd["contrib"].shape[1] == 78
+    assert np.max(np.abs(hd["det_exog"])) > 0.1          # las exogenas entran en la parte determinista
+    # sin exogenas, det_exog es 0 y la identidad sigue valiendo
+    post0 = bvar.estimar(Y, 2)
+    B0, S0 = bvar.muestrear(post0, 100, rg)
+    res0 = signos.identificar(B0, S0, 4, 2, r, H=10, n_objetivo=10, rng=rg)
+    hd0 = signos.descomposicion_historica(res0, Y)
+    assert hd0["error"] < 1e-8 and np.all(hd0["det_exog"] == 0)
+
+
+def test_delta_vector_y_por_defecto_cero():
+    pr = bvar.prior_minnesota(3, 2, 0.5, np.ones(3), delta=np.array([0.0, 0.5, 1.0]))
+    assert np.allclose(np.diag(pr["B0"][:3]), [0.0, 0.5, 1.0])
+    assert np.all(bvar.prior_minnesota(3, 2, 0.5, np.ones(3))["B0"] == 0.0)
+    Y = _datos(60, 3, 7)
+    a, b = bvar.estimar(Y, 2, lam=0.3), bvar.estimar(Y, 2, lam=0.3, delta=np.array([0.0, 0.0, 0.0]))
+    assert np.allclose(a["B"], b["B"]) and abs(a["logml"] - b["logml"]) < 1e-12
+    c = bvar.estimar(Y, 2, lam=0.3, delta=np.array([0.0, 0.0, 1.0]))
+    assert not np.allclose(a["B"], c["B"]) and np.isfinite(c["logml"])
+
+
+def test_signos_rotaciones_fijas_por_theta():
+    Y = _datos(80, 4, 21, A0)
+    rg = np.random.default_rng(9)
+    post = bvar.estimar(Y, 2)
+    B, S = bvar.muestrear(post, 12, rg)
+    r = _restr(False)
+    res = signos.identificar(B, S, 4, 2, r, H=4, rotaciones=300, rng=rg)
+    assert res["rot_total"] == 12 * 300 and res["n_sorteos_usados"] == 12       # nunca reintenta hasta aceptar
+    assert 0.0 <= res["frac_theta_acept"] <= 1.0
+    # una sola rotacion por theta (sin reintentar): como mucho una aceptada por theta
+    r1 = signos.identificar(B, S, 4, 2, r, H=4, rotaciones=1, rng=np.random.default_rng(1))
+    assert r1["rot_total"] == 12 and len(r1["Q"]) <= 12
+    # con rotaciones suficientes un mismo theta puede aportar varias aceptadas
+    res2 = signos.identificar(B[:1], S[:1], 4, 2, r, H=4, rotaciones=20000, rng=np.random.default_rng(2))
+    assert len(res2["Q"]) > 1 and len(set(res2["idx"].tolist())) == 1
+
+
+def test_var_regimenes_tramos_con_huecos():
+    Y = _datos(90, 3, 4)
+    res = tvp.var_regimenes(Y, 2, tramos=[(0, 20), (22, 50), (55, 88)])
+    assert [r["T"] for r in res["regimenes"]] == [20, 28, 33] and res["segs"] == [(0, 20), (22, 50), (55, 88)]
+    # contiguo con tramos == con cortes
+    a = tvp.var_regimenes(Y, 2, tramos=[(0, 40), (40, 88)], lam=0.4)
+    b = tvp.var_regimenes(Y, 2, [40], lam=0.4)
+    assert np.allclose(a["regimenes"][1]["B"], b["regimenes"][1]["B"])
+    d = tvp.diferencia_regimenes(res, 0, 2, 0, 0, 1, 50, np.random.default_rng(1))
+    assert d.shape == (50,)
+    try:
+        tvp.var_regimenes(Y, 2, tramos=[(0, 30), (20, 50)])
+        raise AssertionError("debia fallar")
+    except AssertionError as e:
+        assert "solapados" in str(e)

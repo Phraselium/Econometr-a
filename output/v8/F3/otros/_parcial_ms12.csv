@@ -1,3 +1,0 @@
-herramienta,escenario,metrica,valor,objetivo,cumple,reps,B,n,nota
-markov_switching,H0_1reg_test_1v2,tamaño del bootstrap LR 1 vs 2 (5%),0.05,"[0,02;0,10] (R pequeño: IC amplio)",True,20,39,200,IC binomial 95% ~ ±0.10
-markov_switching,H1_2reg_test_1v2,potencia del bootstrap LR 1 vs 2 (5%),0.4,">=0,80",False,20,39,200,

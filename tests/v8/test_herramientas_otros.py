@@ -134,10 +134,10 @@ def test_permutacion_fechas():
     X = np.column_stack([np.ones(n), x])
     y = 1 + np.where(np.arange(n) >= 100, 2.0, .2) * x + r.normal(size=n)
     o = permutacion.permutacion_cortes(permutacion.stat_t_dif_coef(y, X, 1), n, (100,), 20, n_perm=2000)
-    assert o["p"] < .05 and o["modo"] == "enumeracion_exacta"
+    assert o["p"] < .05 and o["modo"] == "enumeracion_completa"
     assert permutacion.n_conjuntos(100, 2, 15) == 71
     o3 = permutacion.permutacion_cortes(permutacion.stat_dif_coef(y, X, 1), n, (33, 66), 10, n_perm=2000)
-    assert o3["modo"] == "monte_carlo_exacto" and o3["n_perm"] == 2000 and 0 < o3["p"] <= 1
+    assert o3["modo"] == "monte_carlo" and o3["n_perm"] == 2000 and 0 < o3["p"] <= 1
 
 
 def test_shap_grupos():
@@ -174,3 +174,170 @@ def test_multiverso_registra_todas(tmp_path):
     assert res.pct_mismo_signo.iloc[0] == 1.0 and 0.2 < res.mediana.iloc[0] < 0.8
     specs2, trunc2, _ = multiverso.correr_multiverso(df, op, registry=rg, max_specs=5)
     assert trunc2 and len(specs2) == 5 and len(rg.frame()) == 21
+
+
+# ----------------------------------------------------------------------------- correcciones F3 (H5-H7, H13, H17, H18)
+def test_bloque_pw_y_sieve():
+    r = g(11)
+    n = 200
+    e_iid = r.normal(size=n)
+    u = np.zeros(n)
+    for t in range(1, n):
+        u[t] = .85 * u[t - 1] + r.normal()
+    assert 2 <= regimenes.longitud_bloque_pw(e_iid) <= regimenes.longitud_bloque_pw(u) <= n // 4
+    phi, inn = regimenes.ar_sieve(u)
+    assert len(phi) >= 1 and abs(phi[0] - .85) < .15 and abs(inn.mean()) < 1e-10
+    z = regimenes.simula_sieve(phi, inn, 300, np.random.default_rng(SEED))
+    assert abs(np.corrcoef(z[1:], z[:-1])[0, 1] - .85) < .2
+
+
+def test_bai_perron_y_umbral_con_bootstrap_dependiente():
+    r = g(12)
+    n = 100
+    y = np.r_[r.normal(0, 1, 50), r.normal(2.5, 1, 50)]
+    for boot in ("bloque", "sieve"):
+        o = regimenes.bai_perron(y, max_cortes=2, B=49, boot=boot)
+        assert o["p_UDmax"] < .1 and o["boot"] == boot
+    assert regimenes.bai_perron(y, max_cortes=2, B=19, boot="block")["boot"] == "bloque"  # alias
+    x, q = r.normal(size=n), r.normal(size=n)
+    X = np.column_stack([np.ones(n), x])
+    yu = 1 + np.where(q > 0, 1.5, .1) * x + r.normal(size=n) * .6
+    for boot in ("bloque", "sieve"):
+        o = regimenes.umbral_hansen(yu, X, q, B=99, boot=boot)
+        assert o["p_linealidad"] < .1 and abs(o["gamma"]) < .6
+    # mismas semillas -> mismo resultado (determinismo)
+    a = regimenes.umbral_hansen(yu, X, q, B=49, boot="sieve", seed=5)["p_linealidad"]
+    assert a == regimenes.umbral_hansen(yu, X, q, B=49, boot="sieve", seed=5)["p_linealidad"]
+
+
+def _dgp_iv(seed, n=200, beta=1.0, contaminada=False):
+    r = g(seed)
+    N = n + 50
+    z, v = r.normal(size=N), r.normal(size=N)
+    u = .7 * v + .7 * r.normal(size=N)
+    if contaminada:
+        z = z + .8 * np.r_[0.0, u[:-1]]
+    x = z + v
+    y = np.zeros(N)
+    for t in range(1, N):
+        y[t] = .5 * y[t - 1] + beta * x[t] + u[t]
+    return y[50:], x[50:], z[50:]
+
+
+def test_lp_horizontes_negativos_y_agregado():
+    y, x, z = _dgp_iv(20)
+    o = lp.lp(y, x - 0.0, H=2, H_min=-3, rezagos=2)
+    assert list(o.h) == [-3, -2, -1, 0, 1, 2]
+    pre = o[o.h < 0]
+    assert (pre.beta.abs() / pre.se).max() < 3.5  # sin pretendencia en el DGP (instrumento exogeno; OLS tiene sesgo solo en h>=0)
+    oa = lp.lp(y, x, H=2, H_min=-3, rezagos=2, acumulado=True)
+    assert -1 not in list(oa.h)  # h=-1 acumulado es identicamente 0
+    iv = lp.lp_iv(y, x, z, H=1, H_min=-2, grid_n=401)
+    assert list(iv.h) == [-2, -1, 0, 1] and (iv.ar_p_dos.iloc[:2] > .01).all()
+    ag = lp.lp_agregado(y, x, hs=(4, 8))
+    ivag = lp.lp_iv_agregado(y, x, z, hs=(4, 8), grid_n=401)
+    assert ag.h.iloc[0] == "4-8" and ivag.ar_lo.iloc[0] <= np.mean([.5 ** h for h in range(4, 9)]) <= ivag.ar_hi.iloc[0] + .3
+    # EWC y ancho de banda mayor devuelven IC mas anchos que NW(h+1) o comparables, nunca mas estrechos que el 70 %
+    a = lp.lp(y, x, H=4, hac="h+1").se.values
+    assert (lp.lp(y, x, H=4, hac="2h+2").se.values > .7 * a).all() and (lp.lp(y, x, H=4, ewc=True).se.values > .5 * a).all()
+
+
+def test_ar_p_unilateral_y_consistencia():
+    y, x, z = _dgp_iv(21, beta=-1.0)
+    dos = lp.ar_p(y, x, z, 0, b0=0.0, lado="dos")
+    menor = lp.ar_p(y, x, z, 0, b0=0.0, lado="menor")
+    mayor = lp.ar_p(y, x, z, 0, b0=0.0, lado="mayor")
+    assert menor < 1e-4 and mayor > .99 and abs(menor + mayor - 1) < 1e-9 and dos < 1e-3  # efecto -1: rechaza H0 contra beta<0
+    # coherencia con el conjunto AR: b0 dentro del intervalo => p_dos > 0,05; fuera => < 0,05
+    row = lp.lp_iv(y, x, z, H=0, grid_n=801).iloc[0]
+    assert lp.ar_p(y, x, z, 0, b0=(row.ar_lo + row.ar_hi) / 2) > .05 and lp.ar_p(y, x, z, 0, b0=row.ar_hi + 1.0) < .05
+    assert abs(row.ar_p_dos - dos) < 1e-12 and abs(row.ar_p_menor - menor) < 1e-12
+    # agregado: misma funcion con `agregado`
+    pa = lp.ar_p(y, x, z, 0, b0=0.0, lado="menor", agregado=(4, 8))
+    assert 0 <= pa <= 1
+
+
+def test_placebo_permutacion_iv():
+    y, x, z = _dgp_iv(22, n=150)
+    o = lp.placebo_permutacion_iv(y, x, z, h=0, n_perm=199)
+    assert o["p_perm"] < .02 and o["beta_perm_q025"] < 0 < o["beta_perm_q975"]
+    y0, x0, z0 = _dgp_iv(23, n=150, beta=0.0)
+    assert lp.placebo_permutacion_iv(y0, x0, z0, h=0, n_perm=199)["p_perm"] > .05
+    o2 = lp.placebo_permutacion_iv(y, x, z, agregado=(4, 8), n_perm=99, modo="desplazamiento")
+    assert 0 < o2["p_perm"] <= 1 and o2["modo"] == "desplazamiento"
+    # determinista
+    assert lp.placebo_permutacion_iv(y, x, z, h=2, n_perm=49)["p_perm"] == lp.placebo_permutacion_iv(y, x, z, h=2, n_perm=49)["p_perm"]
+
+
+def test_permutacion_tramos_no_contiguos():
+    r = g(13)
+    n = 126
+    tr = ((0, 28), (32, 58), (58, 80), (80, 106), (108, 126))
+    assert permutacion.cortes_a_tramos((60,), 100) == ((0, 60), (60, 100))
+    assert permutacion.n_conjuntos_tramos(n, tr, 8) == __import__("math").comb(sum(b - a for a, b in tr) - 40 + 4, 4)
+    x = r.normal(size=n)
+    X = np.column_stack([np.ones(n), x])
+    b = np.full(n, .3)
+    b[58:106] = 1.5
+    y = 1 + b * x + r.normal(size=n) * .6
+    for fab in (permutacion.stat_Q_tramos, permutacion.stat_maxt_tramos):
+        o = permutacion.permutacion_tramos(fab(y, X, 1), n, tr, 8, n_perm=299)
+        assert o["modo"] == "monte_carlo" and o["n_perm"] == 299 and o["p"] <= 0.2
+    # los conjuntos aleatorios respetan huecos y longitud minima
+    vistos = []
+    permutacion.permutacion_tramos(lambda t: vistos.append(t) or 0.0, n, tr, 8, n_perm=50)
+    for t in vistos[1:]:
+        assert len(t) == 5 and all(b_ - a_ >= 8 for a_, b_ in t) and t[0][0] == 0
+        assert [t[i + 1][0] - t[i][1] for i in range(4)] == [4, 0, 0, 2] and t[-1][1] == 126 - 2 + 2 - 0
+    # H0 pequeno: enumeracion completa
+    o = permutacion.permutacion_tramos(permutacion.stat_Q_tramos(y, X, 1), 40, ((0, 15), (17, 40)), 10, n_perm=5000)
+    assert o["modo"] == "enumeracion_completa"
+    # el texto ya no afirma exactitud
+    assert "exacto" not in permutacion.__doc__.split("VALIDEZ")[0]
+    try:
+        permutacion.permutacion_tramos(lambda t: 0.0, n, tr, 25)
+        raise AssertionError("debia fallar: tramo observado mas corto que min_len")
+    except ValueError:
+        pass
+
+
+def test_multiverso_tope_y_fallidas(tmp_path):
+    from econ_utils import Registry
+    import inspect
+    assert inspect.signature(multiverso.correr_multiverso).parameters["max_specs"].default == 50_000
+    r = g(14)
+    n = 60
+    df = pd.DataFrame(r.normal(size=(n, 3)), columns=["y", "x", "c1"], index=pd.period_range("1990Q1", periods=n, freq="Q"))
+    rg = Registry(tmp_path / "reg.csv")
+    op = {"dep": ["y"], "x": ["x"], "controles": [[], ["c1"]], "muestra": [None, ("1990Q1", "1991Q4")], "hac": [2]}
+    specs, trunc, nrej = multiverso.correr_multiverso(df, op, registry=rg)
+    fal = specs.attrs["fallidas"]
+    assert nrej == 4 and len(specs) == 2 and len(fal) == 2 and not trunc
+    assert fal.motivo.str.contains("muestra insuficiente").all()
+    reg = rg.frame()
+    assert len(reg) == 4 and reg.notas.str.startswith("FALLIDA").sum() == 2
+
+
+def test_f3_out_redirige_salida(tmp_path, monkeypatch):
+    import importlib
+    monkeypatch.setenv("F3_OUT", str(tmp_path / "salida"))
+    m = importlib.import_module("src.v8.f3_montecarlo_otros")
+    m = importlib.reload(m)
+    assert m.OUT == tmp_path / "salida"
+
+
+def test_etiquetas_derivadas_por_reglas():
+    import importlib
+    m = importlib.import_module("src.v8.f3_montecarlo_otros")
+    m.FILAS.clear()
+    m.reg("h", "c1", "e", "m", 0.05, "tamano", 10)
+    m.reg("h", "c1", "e", "m2", 0.70, "potencia", 10)
+    m.reg("h", "c2", "e", "m", 0.12, "tamano", 10)
+    m.reg("h", "c3", "e", "m", 0.40, "tamano", 10)
+    m.reg("h", "c4", "e", "m", 0.40, "tamano", 10, rol="referencia")
+    df = pd.DataFrame(m.FILAS)
+    m.FILAS.clear()
+    E = m.etiquetas(df).set_index("config")
+    assert E.loc["c1", "validez"] == "apta" and E.loc["c1", "potencia"] == "con reservas"
+    assert E.loc["c2", "validez"] == "con reservas" and E.loc["c3", "validez"] == "no apta" and "c4" not in E.index
+    assert "0,400" in E.loc["c3", "incumple"]

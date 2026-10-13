@@ -10,6 +10,9 @@ actualizan el prior (sigue siendo normal-Wishart inversa). La densidad marginal 
   p(Y) = pi^(-nT/2) Gamma_n(nu1/2)/Gamma_n(nu0/2) |S0|^(nu0/2) |S1|^(-nu1/2) (|Om1|/|Om0|)^(n/2).
 Referencia (NO VERIFICADA: sin acceso a Crossref en esta sesion): Giannone, Lenza y Primiceri (2015, REStat); Banbura, Giannone y Reichlin (2010);
 Kadiyala y Karlsson (1997).
+Regresores exogenos (ficticias deterministas, p. ej. COVID y EPA 2021T1): X = [retardos, exogenas, constante]; las exogenas
+tienen la misma varianza a priori laxa que la constante (VAR_CONST) y media 0. Media a priori del primer retardo propio: `delta` por
+variable (vector o escalar), por defecto 0 (tasas de variacion); usar 1 solo para variables en nivel casi integradas.
 Convencion de IRF: arrays (..., h, variable, shock). Todo lo aleatorio recibe un Generator explicito (SEED = 20261010 por defecto).
 """
 from __future__ import annotations
@@ -22,11 +25,16 @@ SEED = 20261010
 VAR_CONST = 1e6
 
 
-def retardos(Y, p, const=True):
-    """Devuelve (yy, X): yy = Y[p:], X = [Y_{t-1},...,Y_{t-p}, 1]."""
+def retardos(Y, p, const=True, exog=None):
+    """Devuelve (yy, X): yy = Y[p:], X = [Y_{t-1},...,Y_{t-p}, exog_t, 1]. exog: (T, m) alineada con Y (T filas), o None."""
     Y = np.asarray(Y, float)
     T = Y.shape[0]
     X = np.hstack([Y[p - l - 1:T - l - 1] for l in range(p)])
+    if exog is not None:
+        ex = np.asarray(exog, float)
+        ex = ex[:, None] if ex.ndim == 1 else ex
+        assert ex.shape[0] == T, "exog debe tener las mismas filas que Y"
+        X = np.hstack([X, ex[p:]])
     if const:
         X = np.hstack([X, np.ones((T - p, 1))])
     return Y[p:], X
@@ -44,15 +52,18 @@ def _psi_ar(Y, p):
     return out
 
 
-def prior_minnesota(n, p, lam, psi, delta=1.0, alfa=2.0, const=True, nu0=None):
-    """Prior normal-Wishart inversa (B0, Om0inv, S0, nu0). Om0inv es la matriz de precision (diagonal)."""
-    k = n * p + int(const)
+def prior_minnesota(n, p, lam, psi, delta=0.0, alfa=2.0, const=True, nu0=None, m=0):
+    """Prior normal-Wishart inversa (B0, Om0inv, S0, nu0). Om0inv es la matriz de precision (diagonal).
+    delta: media a priori del primer retardo propio, escalar o vector (n,). m: numero de regresores exogenos."""
+    k = n * p + m + int(const)
     delta = np.broadcast_to(np.asarray(delta, float), (n,))
     B0 = np.zeros((k, n))
     B0[:n, :n] = np.diag(delta)
     om = np.empty(k)
     for l in range(1, p + 1):
         om[(l - 1) * n:l * n] = lam ** 2 / (l ** alfa * psi)
+    if m:
+        om[n * p:n * p + m] = VAR_CONST
     if const:
         om[-1] = VAR_CONST
     return dict(B0=B0, Oinv=np.diag(1.0 / om), S0=np.diag(psi), nu0=(n + 2.0) if nu0 is None else nu0)
@@ -69,26 +80,29 @@ def _actualizar(pr, Y, X):
     return dict(B0=B1, Oinv=Oinv1, S0=S1, nu0=pr["nu0"] + Y.shape[0], Om=Om1)
 
 
-def dummies(Y, p, mu=None, theta=None, delta=1.0, const=True):
-    """Observaciones ficticias de suma de coeficientes (mu) y observacion inicial (theta). Devuelve (Yd, Xd) o None."""
+def dummies(Y, p, mu=None, theta=None, delta=None, const=True, m=0):
+    """Observaciones ficticias de suma de coeficientes (mu) y observacion inicial (theta). Devuelve (Yd, Xd) o None.
+    y0 = media de las p primeras observaciones (GLP); `delta` se ignora (se conserva por compatibilidad de firma). Las columnas de las
+    exogenas valen 0 en las observaciones ficticias."""
     n = Y.shape[1]
-    y0 = Y[:p].mean(0) * np.broadcast_to(np.asarray(delta, float), (n,))
+    y0 = Y[:p].mean(0)
+    z = [np.zeros((1, m))] if m else []
     Ys, Xs = [], []
     if mu is not None:
         Ys.append(np.diag(y0) / mu)
-        Xs.append(np.hstack([np.tile(np.diag(y0), (1, p)) / mu] + ([np.zeros((n, 1))] if const else [])))
+        Xs.append(np.hstack([np.tile(np.diag(y0), (1, p)) / mu] + ([np.zeros((n, m))] if m else []) + ([np.zeros((n, 1))] if const else [])))
     if theta is not None:
         Ys.append((y0 / theta)[None, :])
-        Xs.append(np.hstack([np.tile(y0, p)[None, :] / theta] + ([np.array([[1.0 / theta]])] if const else [])))
+        Xs.append(np.hstack([np.tile(y0, p)[None, :] / theta] + z + ([np.array([[1.0 / theta]])] if const else [])))
     if not Ys:
         return None
     return np.vstack(Ys), np.vstack(Xs)
 
 
-def _prior_completo(Y, p, lam, mu, theta, delta, alfa, const, psi):
+def _prior_completo(Y, p, lam, mu, theta, delta, alfa, const, psi, m=0):
     n = Y.shape[1]
-    pr = prior_minnesota(n, p, lam, psi, delta, alfa, const)
-    d = dummies(Y, p, mu, theta, delta, const)
+    pr = prior_minnesota(n, p, lam, psi, delta, alfa, const, m=m)
+    d = dummies(Y, p, mu, theta, delta, const, m)
     if d is not None:
         pr = _actualizar(pr, *d)
     return pr
@@ -104,30 +118,36 @@ def logml_prior(pr, yy, X):
             + 0.5 * n * (-ld(post["Oinv"]) + ld(pr["Oinv"])))
 
 
-def logml(Y, p, lam, mu=None, theta=None, delta=1.0, alfa=2.0, const=True, psi=None):
-    """Log verosimilitud marginal p(Y_{p+1:T} | Y_{1:p}, lam, mu, theta)."""
+def n_k(Y, p, const):
+    return Y.shape[1] * p + int(const)
+
+
+def logml(Y, p, lam, mu=None, theta=None, delta=0.0, alfa=2.0, const=True, psi=None, exog=None):
+    """Log verosimilitud marginal p(Y_{p+1:T} | Y_{1:p}, exog, lam, mu, theta)."""
     Y = np.asarray(Y, float)
     psi = _psi_ar(Y, p) if psi is None else psi
-    yy, X = retardos(Y, p, const)
-    pr = _prior_completo(Y, p, lam, mu, theta, delta, alfa, const, psi)
+    yy, X = retardos(Y, p, const, exog)
+    m = X.shape[1] - n_k(Y, p, const)
+    pr = _prior_completo(Y, p, lam, mu, theta, delta, alfa, const, psi, m)
     return logml_prior(pr, yy, X)
 
 
-def estimar(Y, p, lam=None, mu=None, theta=None, soc=False, io=False, delta=1.0, alfa=2.0, const=True,
-            lam_lim=(0.005, 20.0), psi=None):
+def estimar(Y, p, lam=None, mu=None, theta=None, soc=False, io=False, delta=0.0, alfa=2.0, const=True,
+            lam_lim=(0.005, 20.0), psi=None, exog=None):
     """Estima el BVAR. Si lam es None se elige maximizando logml (GLP): rejilla en log(lam) + refinado acotado; si soc/io
     son True, mu y theta tambien se maximizan (Nelder-Mead sobre sus logaritmos) partiendo de 1.0 (o del valor dado).
     Devuelve dict con la posterior NIW: B (media), Om, S, nu, hiperparametros y logml."""
     Y = np.asarray(Y, float)
     n = Y.shape[1]
     psi = _psi_ar(Y, p) if psi is None else np.asarray(psi, float)
-    yy, X = retardos(Y, p, const)
+    yy, X = retardos(Y, p, const, exog)
+    m = X.shape[1] - n_k(Y, p, const)
     mu = (1.0 if mu is None else mu) if soc else None
     theta = (1.0 if theta is None else theta) if io else None
     opt = {}
 
-    def f_lam(ll, m, th):
-        return -logml(Y, p, np.exp(ll), m, th, delta, alfa, const, psi)
+    def f_lam(ll, mu_, th):
+        return -logml(Y, p, np.exp(ll), mu_, th, delta, alfa, const, psi, exog)
 
     if lam is None:
         lo, hi = np.log(lam_lim[0]), np.log(lam_lim[1])
@@ -140,9 +160,9 @@ def estimar(Y, p, lam=None, mu=None, theta=None, soc=False, io=False, delta=1.0,
         if soc or io:
             def f_all(v):
                 ll = np.clip(v[0], lo, hi)
-                m = np.exp(np.clip(v[1], -6, 6)) if soc else None
+                mu_ = np.exp(np.clip(v[1], -6, 6)) if soc else None
                 th = np.exp(np.clip(v[-1], -6, 6)) if io else None
-                return f_lam(ll, m, th)
+                return f_lam(ll, mu_, th)
             x0 = [np.log(lam)] + ([np.log(mu)] if soc else []) + ([np.log(theta)] if io else [])
             r2 = minimize(f_all, x0, method="Nelder-Mead", options=dict(xatol=1e-3, fatol=1e-4, maxiter=400))
             lam = float(np.exp(np.clip(r2.x[0], lo, hi)))
@@ -151,10 +171,10 @@ def estimar(Y, p, lam=None, mu=None, theta=None, soc=False, io=False, delta=1.0,
             if io:
                 theta = float(np.exp(np.clip(r2.x[-1], -6, 6)))
         opt["optimizado"] = True
-    pr = _prior_completo(Y, p, lam, mu, theta, delta, alfa, const, psi)
+    pr = _prior_completo(Y, p, lam, mu, theta, delta, alfa, const, psi, m)
     post = _actualizar(pr, yy, X)
-    res = dict(B=post["B0"], Om=post["Om"], S=post["S0"], nu=post["nu0"], lam=lam, mu=mu, theta=theta, p=p, n=n, const=const,
-               psi=psi, logml=logml_prior(pr, yy, X), T=yy.shape[0], Y=Y, **opt)
+    res = dict(B=post["B0"], Om=post["Om"], S=post["S0"], nu=post["nu0"], lam=lam, mu=mu, theta=theta, p=p, n=n, const=const, m=m,
+               exog=None if exog is None else np.asarray(exog, float), psi=psi, logml=logml_prior(pr, yy, X), T=yy.shape[0], Y=Y, **opt)
     res["resid"] = yy - X @ post["B0"]
     return res
 
@@ -183,11 +203,18 @@ def muestrear(post, ndraw, rng=None):
     return B, Sig
 
 
-def coef_matrices(B, n, p):
-    """A_l (D, p, n, n) con A_l[i, j] = efecto de y_j(t-l) sobre y_i(t), y constante (D, n)."""
+def coef_matrices(B, n, p, m=0, const=None):
+    """A_l (D, p, n, n) con A_l[i, j] = efecto de y_j(t-l) sobre y_i(t), y constante (D, n). m = numero de exogenas
+    (filas entre los retardos y la constante); const=None la infiere (hay constante si k > n*p + m)."""
     B = np.asarray(B)
     A = np.stack([B[:, l * n:(l + 1) * n, :].transpose(0, 2, 1) for l in range(p)], axis=1)
-    return A, B[:, n * p, :] if B.shape[1] > n * p else np.zeros((B.shape[0], n))
+    const = B.shape[1] > n * p + m if const is None else const
+    return A, B[:, n * p + m, :] if const else np.zeros((B.shape[0], n))
+
+
+def coef_exog(B, n, p, m):
+    """Coeficientes de las m exogenas: (D, m, n)."""
+    return np.asarray(B)[:, n * p:n * p + m, :]
 
 
 def ma_coefs(B, n, p, H):
@@ -252,8 +279,9 @@ def _estable(B, n, p):
     return np.max(np.abs(np.linalg.eigvals(comp))) < 1
 
 
-def prediccion(post, h=8, ndraw=500, rng=None, Y=None):
-    """Densidad predictiva (D, h, n): incertidumbre de parametros e innovaciones, condicionada a las ultimas p observaciones."""
+def prediccion(post, h=8, ndraw=500, rng=None, Y=None, exog_futuro=None):
+    """Densidad predictiva (D, h, n): incertidumbre de parametros e innovaciones, condicionada a las ultimas p observaciones.
+    exog_futuro: (h, m) valores futuros de las exogenas (por defecto 0)."""
     rng = np.random.default_rng(SEED) if rng is None else rng
     n, p = post["n"], post["p"]
     Y = post["Y"] if Y is None else np.asarray(Y, float)
@@ -261,8 +289,11 @@ def prediccion(post, h=8, ndraw=500, rng=None, Y=None):
     L = np.linalg.cholesky(Sig)
     hist = np.repeat(Y[-p:][None], ndraw, axis=0)  # (D, p, n), orden cronologico
     out = np.empty((ndraw, h, n))
+    m = post.get("m", 0)
+    ef = np.zeros((h, m)) if exog_futuro is None else np.asarray(exog_futuro, float).reshape(h, m)
     for s in range(h):
-        x = np.concatenate([hist[:, -1 - l, :] for l in range(p)] + ([np.ones((ndraw, 1))] if post["const"] else []), axis=1)
+        x = np.concatenate([hist[:, -1 - l, :] for l in range(p)] + ([np.repeat(ef[s][None], ndraw, 0)] if m else [])
+                           + ([np.ones((ndraw, 1))] if post["const"] else []), axis=1)
         mean = np.einsum("dk,dkn->dn", x, B)
         y = mean + np.einsum("dij,dj->di", L, rng.standard_normal((ndraw, n)))
         out[:, s] = y

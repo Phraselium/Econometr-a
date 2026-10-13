@@ -202,17 +202,27 @@ def irf_en(res, t, H=12):
 
 
 # ------------------------------------------------------------ alternativa: VAR por regimenes (prior comun)
-def var_regimenes(Y, p, cortes, lam=None, delta=1.0, lam_lim=(0.005, 20.0)):
+def var_regimenes(Y, p, cortes=None, lam=None, delta=0.0, lam_lim=(0.005, 20.0), tramos=None):
     """VAR bayesiano con coeficientes distintos por tramo y PRIOR COMUN (Minnesota con el mismo lambda; psi de la muestra completa).
-    cortes: indices (sobre las observaciones efectivas yy = Y[p:]) donde empieza cada nuevo regimen, p. ej. [60] -> dos regimenes.
+    Tramos sobre las observaciones efectivas yy = Y[p:] (indices base 0):
+      * cortes: indices donde empieza cada nuevo regimen, p. ej. [60] -> dos regimenes contiguos que cubren toda la muestra; o
+      * tramos: lista de (ini, fin) SEMIABIERTOS, no necesariamente contiguos: las observaciones fuera de todo tramo (huecos de
+        transicion) no entran en la estimacion como variable dependiente (siguen siendo retardos de las observaciones posteriores).
+    delta: media a priori del primer retardo propio (escalar o vector; por defecto 0).
     El fechado de las rupturas se SUPONE conocido (no se estima). lambda se elige maximizando la suma de las densidades marginales
     de los tramos (GLP). Devuelve dict con 'regimenes': lista de posteriores NIW compatibles con bvar.muestrear."""
     from scipy.optimize import minimize_scalar
     Y = np.asarray(Y, float)
     n = Y.shape[1]
     yy, X = bvar.retardos(Y, p, True)
-    lim = [0, *cortes, yy.shape[0]]
-    segs = [(lim[i], lim[i + 1]) for i in range(len(lim) - 1)]
+    if tramos is None:
+        assert cortes is not None, "indicar cortes o tramos"
+        lim = [0, *cortes, yy.shape[0]]
+        segs = [(lim[i], lim[i + 1]) for i in range(len(lim) - 1)]
+    else:
+        segs = [(int(a), int(b)) for a, b in tramos]
+        assert all(0 <= a < b <= yy.shape[0] for a, b in segs), "tramos fuera de la muestra efectiva"
+        assert all(segs[i][1] <= segs[i + 1][0] for i in range(len(segs) - 1)), "tramos solapados o desordenados"
     psi = bvar._psi_ar(Y, p)
 
     def total(ll):
@@ -229,7 +239,8 @@ def var_regimenes(Y, p, cortes, lam=None, delta=1.0, lam_lim=(0.005, 20.0)):
     for a, b in segs:
         po = bvar._actualizar(pr, yy[a:b], X[a:b])
         regs.append(dict(B=po["B0"], Om=po["Om"], S=po["S0"], nu=po["nu0"], n=n, p=p, const=True, lam=lam, T=b - a, Y=Y))
-    return dict(regimenes=regs, lam=lam, segs=segs, n=n, p=p, k=n * p + 1)
+    prior = dict(B=pr["B0"], Om=np.linalg.inv(pr["Oinv"]), S=pr["S0"], nu=pr["nu0"], n=n, p=p, const=True)
+    return dict(regimenes=regs, lam=lam, segs=segs, n=n, p=p, k=n * p + 1, prior=prior)
 
 
 def diferencia_regimenes(res, i, j, ecuacion, variable, retardo=1, ndraw=500, rng=None):

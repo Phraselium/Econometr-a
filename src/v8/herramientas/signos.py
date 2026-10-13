@@ -5,7 +5,11 @@
 * Signos + ceros: Arias, Rubio-Ramirez y Waggoner (2018): las columnas de Q se generan secuencialmente en el subespacio ortogonal
   a las filas de las restricciones de cero del shock y a las columnas ya fijadas (los shocks se ordenan por numero decreciente de
   ceros; se exige z_j <= n - j). Los ceros se cumplen exactamente por construccion.
-* PESOS DE IMPORTANCIA (ajuste ARW). La formula del articulo NO se ha podido contrastar (sin acceso). Los pesos implementados
+* MUESTREO (correccion H2): para CADA sorteo theta de la posterior se prueba un numero FIJO `rotaciones` de rotaciones y se conservan
+  TODAS las aceptadas (con `rotaciones=1` se prueba una sola por theta, sin reintentar). Asi la distribucion marginal de theta entre los
+  aceptados es proporcional a p(theta) P(S|theta), como exige la posterior condicionada a los signos. NO se reintenta hasta aceptar
+  (eso daria el mismo peso a todo theta con alguna aceptacion). Un theta sin aceptadas no aporta nada y cuenta en `frac_theta_acept`.
+* PESOS DE IMPORTANCIA PROPIOS (Haar condicionado a los ceros; NO se afirman identicos a los de ARW, ver revision F3 H3). La formula del articulo NO se ha podido contrastar (sin acceso). Los pesos implementados
   los he derivado por coarea en el espacio (forma reducida theta, Q): objetivo = p(theta) Haar(Q) condicionado a c(theta,Q)=0;
   muestreador = theta ~ p, Q secuencial uniforme. Resulta w ∝ 1 / ( J_Q * |det(P V)| ), con J_Q = sqrt(det(Dc Dc')) (derivada de las
   restricciones respecto de Q), V base ortonormal del nucleo de Dc y P la proyeccion a las coordenadas secuenciales. Si no hay ceros,
@@ -97,9 +101,12 @@ def _pesos_arw(Qp, Mp):
     return -logJ - np.linalg.slogdet(P @ V)[1]
 
 
-def identificar(B, Sigma, n, p, restr, H=20, n_objetivo=None, por_sorteo=1, max_rot=3000, lote=64, rng=None, pesos=True, orden=None):
+def identificar(B, Sigma, n, p, restr, H=20, n_objetivo=None, rotaciones=512, lote=256, rng=None, pesos=True, orden=None):
     """Aplica las restricciones a sorteos (B, Sigma) de la posterior (D,k,n), (D,n,n).
-    Devuelve dict: irf (N,H+1,n,n), Q, A0inv, B, Sigma, peso (suma 1), ess, acept (aceptadas/rotaciones), n_sorteos_usados, idx."""
+    Por cada theta prueba exactamente `rotaciones` rotaciones y conserva todas las aceptadas (ver cabecera). Si n_objetivo no es None,
+    se deja de recorrer thetas cuando se alcanzan n_objetivo aceptadas (al terminar el theta en curso).
+    Devuelve dict: irf (N,H+1,n,n), Q, A0inv, B, Sigma, peso (suma 1), ess, acept (aceptadas/rotaciones), n_sorteos_usados,
+    frac_theta_acept (thetas con alguna aceptada / thetas usados), rot_total, idx."""
     rng = np.random.default_rng(SEED) if rng is None else rng
     orden0, zc = restr.orden_shocks()
     if orden is None:
@@ -111,7 +118,7 @@ def identificar(B, Sigma, n, p, restr, H=20, n_objetivo=None, por_sorteo=1, max_
     P = np.linalg.cholesky(Sigma)
     out = dict(irf=[], Q=[], A0inv=[], B=[], Sigma=[], idx=[], logw=[])
     tried = acc = 0
-    usados = 0
+    usados = con_acept = 0
     for d in range(D):
         if n_objetivo is not None and len(out["Q"]) >= n_objetivo:
             break
@@ -119,9 +126,9 @@ def identificar(B, Sigma, n, p, restr, H=20, n_objetivo=None, por_sorteo=1, max_
         L = Phi[d] @ P[d]
         Zm = [np.array([L[h, i, :] for (i, s, h) in restr.ceros if s == j]).reshape(-1, n) for j in range(n)]
         Sm = [np.array([sg * L[h, i, :] for (i, s, sg, h) in restr.signos if s == j]).reshape(-1, n) for j in range(n)]
-        got, rots = 0, 0
-        while got < por_sorteo and rots < max_rot:
-            K = lote
+        rots, got = 0, 0
+        while rots < rotaciones:
+            K = min(lote, rotaciones - rots)
             rots += K
             Qp = np.zeros((K, n, n))
             for pos, j in enumerate(orden):
@@ -143,8 +150,6 @@ def identificar(B, Sigma, n, p, restr, H=20, n_objetivo=None, por_sorteo=1, max_
                 if Sm[j].shape[0]:
                     ok &= np.all(Sm[j] @ Qp[:, :, pos].T > 0, axis=0)  # (s_j, K)
             for kk in np.flatnonzero(ok):
-                if got >= por_sorteo:
-                    break
                 Qk = np.zeros((n, n))
                 for pos, j in enumerate(orden):
                     Qk[:, j] = Qp[kk, :, pos]
@@ -162,6 +167,7 @@ def identificar(B, Sigma, n, p, restr, H=20, n_objetivo=None, por_sorteo=1, max_
                 got += 1
             acc += int(ok.sum())
         tried += rots
+        con_acept += int(got > 0)
     res = {k: np.array(v) for k, v in out.items()}
     N = len(res["Q"])
     if N:
@@ -173,6 +179,8 @@ def identificar(B, Sigma, n, p, restr, H=20, n_objetivo=None, por_sorteo=1, max_
     res["ess"] = float(1.0 / np.sum(w ** 2)) if N else 0.0
     res["acept"] = acc / max(tried, 1)
     res["n_sorteos_usados"] = usados
+    res["frac_theta_acept"] = con_acept / max(usados, 1)
+    res["rot_total"] = tried
     res.pop("logw")
     res.update(n=n, p=p, H=H)
     return res
@@ -208,29 +216,40 @@ def remuestrear(res, n, rng=None):
 
 
 # ------------------------------------------------------------ descomposicion historica
-def descomposicion_historica(res, Y, const=True):
+def descomposicion_historica(res, Y, const=True, exog=None):
     """Contribucion de cada shock a cada variable en cada periodo, para cada sorteo aceptado.
-    Devuelve dict: contrib (N, Te, variable, shock), det (N, Te, n), eps (N, Te, n), y (Te, n), error (max |y - det - sum contrib|)."""
+    exog: (T, m) ficticias deterministas usadas al estimar (mismas filas que Y); su efecto (directo y propagado por los retardos) va en
+    la parte determinista `det`, junto con la constante y las condiciones iniciales. `det_exog` = parte de `det` debida a las exogenas.
+    Devuelve dict: contrib (N, Te, variable, shock), det (N, Te, n), det_exog, eps (N, Te, n), y (Te, n),
+    error (max |y - det - sum contrib|)."""
     n, p = res["n"], res["p"]
     Y = np.asarray(Y, float)
-    yy, X = bvar.retardos(Y, p, const)
+    yy, X = bvar.retardos(Y, p, const, exog)
+    m = 0 if exog is None else X.shape[1] - n * p - int(const)
     Te = yy.shape[0]
     B, A0 = res["B"], res["A0inv"]
     N = B.shape[0]
-    A, c = bvar.coef_matrices(B, n, p)
+    A, c = bvar.coef_matrices(B, n, p, m, const)
     U = yy[None] - np.einsum("tk,dkn->dtn", X, B)
     eps = np.einsum("dij,dtj->dti", np.linalg.inv(A0), U)
     Phi = bvar.ma_coefs(B, n, p, Te - 1)
     G = Phi @ A0[:, None]  # (N, Te, n, n)
-    # determinista: simulacion sin shocks desde las p primeras observaciones
-    hist = np.zeros((N, p + Te, n))
-    hist[:, :p] = Y[:p][None]
-    for t in range(Te):
-        d = c.copy()
-        for l in range(1, p + 1):
-            d = d + np.einsum("dij,dj->di", A[:, l - 1], hist[:, p + t - l])
-        hist[:, p + t] = d
-    det = hist[:, p:]
+    ex = np.zeros((Te, 0)) if m == 0 else X[:, n * p:n * p + m]
+    bx = bvar.coef_exog(B, n, p, m) if m else np.zeros((N, 0, n))
+
+    def det_path(con_exog):
+        hist = np.zeros((N, p + Te, n))
+        hist[:, :p] = Y[:p][None]
+        for t in range(Te):
+            d = c.copy()
+            if m and con_exog:
+                d = d + np.einsum("k,dkn->dn", ex[t], bx)
+            for l in range(1, p + 1):
+                d = d + np.einsum("dij,dj->di", A[:, l - 1], hist[:, p + t - l])
+            hist[:, p + t] = d
+        return hist[:, p:]
+    det = det_path(True)
+    det_exog = det - det_path(False) if m else np.zeros_like(det)
     idx = np.arange(Te)[:, None] - np.arange(Te)[None, :]
     mask = (idx >= 0)
     ic = np.clip(idx, 0, None)
@@ -239,7 +258,7 @@ def descomposicion_historica(res, Y, const=True):
         Gt = G[d_][ic] * mask[:, :, None, None]  # (t, s, i, j)
         contrib[d_] = np.einsum("tsij,sj->tij", Gt, eps[d_])
     error = float(np.max(np.abs(yy[None] - det - contrib.sum(-1))))
-    return dict(contrib=contrib, det=det, eps=eps, y=yy, error=error)
+    return dict(contrib=contrib, det=det, det_exog=det_exog, eps=eps, y=yy, error=error)
 
 
 def sumar_tramos(contrib, fechas, tramos):

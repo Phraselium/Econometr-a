@@ -3,9 +3,12 @@ modelo de umbral de Hansen (1996/2000) y Bai-Perron con sup-F cuyos valores crit
 (corrigen la busqueda de fechas).
 
 Limites declarados: (i) la LR de Markov switching no tiene distribucion chi2 (parametros no identificados bajo la nula):
-por eso el p-valor es bootstrap parametrico, que es una aproximacion (no exacta) y es costoso; (ii) el bootstrap de
-umbral/BP es de regresores fijos con residuos reescalados por N(0,1) (valido con heterocedasticidad, NO con
-autocorrelacion de los errores: para eso `boot="block"` en BP, o incluir retardos en X).
+por eso el p-valor es bootstrap parametrico, que es una aproximacion (no exacta) y es costoso; (ii) el bootstrap `wild`
+de umbral/BP es de regresores fijos con residuos reescalados por N(0,1) (valido con heterocedasticidad, NO con
+autocorrelacion de los errores); para errores autocorrelacionados hay dos alternativas, `boot="bloque"` (bloques
+circulares con longitud dependiente de los datos, Politis-White/Patton-Politis-White) y `boot="sieve"` (AR(p) de los
+residuos con p por BIC e innovaciones remuestreadas). Ambas son aproximaciones: con persistencia muy alta (AR 0,85-0,9)
+y n ~ 100 conservan un sesgo de tamano que se mide en output/v8/F3/otros/validacion.md (H5, H6 de la revision F3).
 """
 from __future__ import annotations
 
@@ -120,6 +123,98 @@ def ms_seleccionar_k(y, kmax=3, B=49, alpha=0.05, search_reps=3, seed=SEED):
     return {"k_secuencial": elegido, "k_bic": min(bic, key=bic.get), "tabla": pd.DataFrame(filas), "bic": bic}
 
 
+# =========================================================================== remuestreo para errores dependientes
+def longitud_bloque_pw(e, max_b=None):
+    """Longitud optima de bloque para el bootstrap de bloques circulares (Politis-White 2004 con la correccion de
+    Patton-Politis-White 2009): b = (2 G^2 / D_CB)^(1/3) n^(1/3), con D_CB = (4/3) g(0)^2, G = 2 sum lambda(k/M) k R(k),
+    g(0) = R(0) + 2 sum lambda(k/M) R(k), lambda = ventana plana (flat-top) y M = 2 m con m = primer retardo tal que las
+    kn autocorrelaciones siguientes son todas no significativas (|rho| < 2 sqrt(log10 n / n)). Devuelve entero en [2, max_b]
+    (max_b = n//4 por defecto)."""
+    e = np.asarray(e, float).ravel()
+    n = len(e)
+    e = e - e.mean()
+    kn = max(5, int(np.ceil(np.sqrt(np.log10(n)))))
+    mmax = int(np.ceil(np.sqrt(n))) + kn
+    mmax = min(mmax, n - 2)
+    R = np.array([e[: n - k] @ e[k:] / n for k in range(mmax + 1)])
+    rho = R / R[0]
+    thr = 2.0 * np.sqrt(np.log10(n) / n)
+    m = max(mmax - kn, 1)
+    for mm in range(0, mmax - kn + 1):
+        if np.all(np.abs(rho[mm + 1: mm + kn + 1]) < thr):
+            m = max(mm, 1)
+            break
+    M = min(2 * m, mmax)
+    k = np.arange(1, M + 1)
+    lam = np.where(k / M <= 0.5, 1.0, 2.0 * (1.0 - k / M))
+    g0 = R[0] + 2.0 * np.sum(lam * R[1: M + 1])
+    G = 2.0 * np.sum(lam * k * R[1: M + 1])
+    D = 4.0 / 3.0 * g0 ** 2
+    b = (2.0 * G ** 2 / D) ** (1.0 / 3.0) * n ** (1.0 / 3.0) if D > 0 else 2.0
+    return int(np.clip(round(b), 2, max_b or max(n // 4, 2)))
+
+
+def _remuestra_circular(e, b, rng):
+    """Bootstrap de bloques moviles CIRCULARES de longitud b (todas las posiciones de inicio, con envolvente)."""
+    n = len(e)
+    nb = int(np.ceil(n / b))
+    st = rng.integers(0, n, nb)
+    return e[((st[:, None] + np.arange(b)[None, :]) % n).ravel()[:n]]
+
+
+def ar_sieve(e, pmax=None):
+    """AR(p) de e (centrado) con p elegido por BIC en 0..pmax (pmax = min(8, n//10)). Devuelve (phi, innovaciones centradas)."""
+    e = np.asarray(e, float).ravel()
+    e = e - e.mean()
+    n = len(e)
+    pmax = min(8, max(n // 10, 1)) if pmax is None else pmax
+    best = (np.inf, np.zeros(0), e.copy())
+    for p in range(0, pmax + 1):
+        if p == 0:
+            phi, u = np.zeros(0), e
+        else:
+            Z = np.column_stack([e[p - j - 1: n - j - 1] for j in range(p)])
+            phi = np.linalg.lstsq(Z, e[p:], rcond=None)[0]
+            u = e[p:] - Z @ phi
+        bic = len(u) * np.log(u @ u / len(u)) + p * np.log(len(u))
+        if bic < best[0]:
+            best = (bic, phi, u)
+    phi, u = best[1], best[2]
+    return phi, u - u.mean()
+
+
+def simula_sieve(phi, innov, n, rng, quemado=100):
+    """Serie AR(phi) de longitud n con innovaciones remuestreadas con reemplazo de `innov`."""
+    p = len(phi)
+    u = innov[rng.integers(0, len(innov), n + quemado)]
+    x = np.zeros(n + quemado)
+    for t in range(n + quemado):
+        x[t] = u[t] + (sum(phi[j] * x[t - j - 1] for j in range(p) if t - j - 1 >= 0) if p else 0.0)
+    return x[quemado:]
+
+
+def _boot_errores(e, boot, rng, bloque):
+    """Un remuestreo de la serie de residuos e (orden temporal) segun `boot`: wild | bloque | sieve."""
+    n = len(e)
+    if boot == "wild":
+        return e * rng.standard_normal(n)
+    if boot == "bloque":
+        return _remuestra_circular(e, bloque, rng)
+    if boot == "sieve":
+        phi, u = bloque  # (phi, innovaciones) precalculados
+        return simula_sieve(phi, u, n, rng)
+    raise ValueError(f"boot desconocido: {boot}")
+
+
+def _prepara_boot(e_tiempo, boot, bloque):
+    """Parametros fijos del remuestreo: longitud de bloque (PW si 'auto'/None) o (phi, innovaciones) del sieve."""
+    if boot == "bloque":
+        return longitud_bloque_pw(e_tiempo) if bloque in (None, "auto") else int(bloque)
+    if boot == "sieve":
+        return ar_sieve(e_tiempo)
+    return None
+
+
 # =========================================================================== umbral de Hansen
 def _acum(Xs, ys):
     xx = np.einsum("ti,tj->tij", Xs, Xs).cumsum(0)
@@ -127,12 +222,16 @@ def _acum(Xs, ys):
     return xx, xy, float(ys @ ys)
 
 
-def umbral_hansen(y, X, q, trim=0.15, B=499, seed=SEED, nivel=0.95, min_obs=None):
+def umbral_hansen(y, X, q, trim=0.15, B=499, seed=SEED, nivel=0.95, min_obs=None, boot="wild", bloque="auto"):
     """Modelo de umbral con variable umbral observable `q` y TODOS los coeficientes conmutantes:
     y = X b1 1(q<=g) + X b2 1(q>g) + e. g por minimos cuadrados (rejilla = valores observados dentro del recorte).
 
     - Contraste de linealidad sup-LR (equivalente al sup-F/sup-Wald homocedastico): bootstrap de regresores fijos de
-      Hansen (1996) con residuos x N(0,1) (robusto a heterocedasticidad).
+      Hansen (1996). boot='wild' (por defecto): residuos x N(0,1), robusto a heterocedasticidad pero NO a autocorrelacion.
+      boot='bloque': residuos de la nula remuestreados en bloques circulares EN ORDEN TEMPORAL (longitud `bloque`, o
+      Politis-White si 'auto'); boot='sieve': AR(p) de los residuos temporales (p por BIC) con innovaciones remuestreadas.
+      'bloque' y 'sieve' son para errores autocorrelacionados (p. ej. crecimientos interanuales, MA(3) por construccion) y
+      variable umbral persistente: ver la validacion Monte Carlo para su tamano real.
     - IC de g por inversion de LR (Hansen 2000): {g: LR(g) <= c}, c = -2 ln(1 - sqrt(nivel)) (95%: 7,35); asume
       homocedasticidad (con heterocedasticidad es conservador/optimista segun el caso: reservas).
     """
@@ -172,8 +271,11 @@ def umbral_hansen(y, X, q, trim=0.15, B=499, seed=SEED, nivel=0.95, min_obs=None
     e0 = ys - Xs @ b0
     rng = np.random.default_rng(seed)
     sup_b = np.empty(B)
+    e_t = np.empty(n)
+    e_t[o] = e0  # residuos en orden temporal (para bloque/sieve)
+    par = _prepara_boot(e_t, boot, bloque)
     for b in range(B):
-        yb = e0 * rng.standard_normal(n)
+        yb = e0 * rng.standard_normal(n) if boot == "wild" else _boot_errores(e_t, boot, rng, par)[o]
         xyb = (Xs * yb[:, None]).cumsum(0)
         yyb = float(yb @ yb)
         b0b = np.linalg.solve(xx_t, xyb[-1])
@@ -191,7 +293,8 @@ def umbral_hansen(y, X, q, trim=0.15, B=499, seed=SEED, nivel=0.95, min_obs=None
     bh = np.linalg.solve(xx_t - xx[m_star - 1], xy_t - xy[m_star - 1])
     return {"gamma": gamma, "ic_gamma": ic, "c_LR": float(c), "sup_LR": float(lr_sup), "p_linealidad": p,
             "cv95_boot": float(np.quantile(sup_b, 0.95)), "coef_bajo": bl, "coef_alto": bh, "n_bajo": int(m_star),
-            "n_alto": int(n - m_star), "n": n, "grid": gam_grid, "lr_path": lr_path}
+            "n_alto": int(n - m_star), "n": n, "grid": gam_grid, "lr_path": lr_path, "boot": boot,
+            "bloque_usado": par if boot == "bloque" else None}
 
 
 # =========================================================================== Bai-Perron con sup-F bootstrap
@@ -244,12 +347,14 @@ class _BP:
         return res, cortes
 
 
-def bai_perron(y, X=None, max_cortes=3, trim=0.15, B=199, seed=SEED, boot="wild", bloque=8, ic_k=None):
+def bai_perron(y, X=None, max_cortes=3, trim=0.15, B=199, seed=SEED, boot="wild", bloque="auto", ic_k=None):
     """Bai-Perron (cambio estructural puro: todos los coeficientes cambian), minimos cuadrados globales por
     programacion dinamica. sup-F(m) de 0 vs m cortes y UDmax = max_m sup-F(m); p-valores y valores criticos por
     bootstrap de la nula SIN rupturas (corrigen la busqueda de fechas). Seleccion de m por BIC y por UDmax+secuencia.
 
-    boot='wild' (heterocedasticidad) o 'block' (bloques moviles de residuos, para autocorrelacion).
+    boot='wild' (heterocedasticidad, NO autocorrelacion), 'bloque' (bloques circulares de residuos; longitud `bloque` o
+    Politis-White si 'auto') o 'sieve' (AR(p) por BIC con innovaciones remuestreadas), ambos para autocorrelacion. 'block'
+    se admite como alias de 'bloque'. Con persistencia alta y n ~ 100 el tamano sigue inflado: ver validacion Monte Carlo.
     """
     y = np.asarray(y, float).ravel()
     n = len(y)
@@ -273,14 +378,10 @@ def bai_perron(y, X=None, max_cortes=3, trim=0.15, B=199, seed=SEED, boot="wild"
     e0 = y - X @ b0
     rng = np.random.default_rng(seed)
     sb = np.empty((B, M))
+    boot = "bloque" if boot == "block" else boot
+    par = _prepara_boot(e0, boot, bloque)
     for b in range(B):
-        if boot == "wild":
-            eb = e0 * rng.standard_normal(n)
-        else:
-            nb = int(np.ceil(n / bloque))
-            st = rng.integers(0, n - bloque + 1, nb)
-            eb = e0[(st[:, None] + np.arange(bloque)[None]).ravel()[:n]]
-        sb[b] = estad(eb)[0]
+        sb[b] = estad(_boot_errores(e0, boot, rng, par))[0]
     p_m = (1 + (sb >= supf[None]).sum(0)) / (1 + B)
     ud_b = sb.max(1)
     p_ud = float((1 + np.sum(ud_b >= ud)) / (1 + B))
@@ -290,7 +391,8 @@ def bai_perron(y, X=None, max_cortes=3, trim=0.15, B=199, seed=SEED, boot="wild"
     m_ud = 0 if p_ud >= 0.05 else int(1 + np.argmin(bic[1:]))
     return {"n": n, "k": k, "h": h, "supF": supf, "p_supF": p_m, "UDmax": ud, "p_UDmax": p_ud,
             "cv95_UDmax_boot": float(np.quantile(ud_b, 0.95)), "cv95_supF_boot": np.quantile(sb, 0.95, axis=0),
-            "ssr": res, "cortes": cortes, "bic": bic, "m_bic": m_bic, "m_udmax": m_ud, "M": M}
+            "ssr": res, "cortes": cortes, "bic": bic, "m_bic": m_bic, "m_udmax": m_ud, "M": M, "boot": boot,
+            "bloque_usado": par if boot == "bloque" else None}
 
 
 def bai_perron_ruptures(y, n_bkps, min_size=10):

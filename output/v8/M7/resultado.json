@@ -1,0 +1,50 @@
+{
+  "rama": "M7",
+  "pregunta": "¿Es estable el signo y la significacion del coeficiente de cada factor ante decisiones razonables del analista (medida, deflactor, transformacion, periodo, variable, controles, retardos, errores, ficticias)?",
+  "capa": "C4",
+  "datos": "data/processed/v8/nacional_q_v8.csv",
+  "N": {
+    "especificaciones_ajustadas": 32424,
+    "rejilla": 37980,
+    "fallidas_u_omitidas": 5556,
+    "tope": 50000,
+    "truncado": false
+  },
+  "metodo": "OLS con errores HAC (Newey-West 4) o EWC; beta tipificado; BH q=0,10 por mercado y periodo sobre todas las especificaciones; cumple_multiverso = signo estable >=80 % y significativo tras BH >=50 %",
+  "estimacion": {
+    "n_factor_periodo_mercado": 74,
+    "n_cumplen_multiverso": 3,
+    "cumplen": [
+      "alquiler|P2|demografia (positivo, signo 100%, BH 78%)",
+      "alquiler|completo|demografia (positivo, signo 98%, BH 59%)",
+      "compra|P5|credito_tipos (positivo, signo 88%, BH 51%)"
+    ],
+    "signo_estable_80": 8,
+    "sig_bh_50": 3
+  },
+  "ic95": "cuantiles p05-p95 del beta tipificado por (mercado, periodo, factor, variable) en resumen_multiverso.csv",
+  "p_ajustado": {
+    "metodo": "BH (q=0,10)",
+    "familia": "todas las especificaciones de cada (mercado, periodo)"
+  },
+  "nivel_evidencia": "EXPLORATORIO (C4): sensibilidad de asociaciones; sin lenguaje causal",
+  "diagnosticos": {
+    "filas_registro": 37980,
+    "celdas": 72,
+    "graf": true,
+    "nota_P4": "P4 (9 trimestres) casi no admite especificaciones (GL<5): fallidas registradas"
+  },
+  "fuera_muestra": {
+    "modelo": "no aplica (multiverso de sensibilidad, no predictivo)",
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Clave de cruce para M2/M5: (mercado, periodo, factor) con variable == 'TODAS'; las filas por variable muestran el detalle.",
+    "Las especificaciones con variables interpoladas se marcan (interpolada) y se resumen aparte (columnas *_sin_interp).",
+    "Alquiler: sin medida alternativa trimestral nacional (SERPAVI es anual; fianzas son regionales): una sola medida.",
+    "El BH usa todas las especificaciones (muy correlacionadas): es un criterio de sensibilidad, no una inferencia independiente.",
+    "Los controles usan siempre la variable principal no interpolada de cada familia; la variable alternativa varia solo en el factor focal."
+  ],
+  "tiempo_s": 182.8
+}

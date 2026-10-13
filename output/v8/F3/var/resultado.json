@@ -1,0 +1,93 @@
+{
+  "rama": "r8/F3/var",
+  "pregunta": "¿Son aptas, con datos simulados, las herramientas BVAR-GLP, signos/ceros (RWZ/ARW) y TVP-VAR-SV (o regimenes)?",
+  "capa": "C4",
+  "datos": "Simulados (DGP del Monte Carlo; sin datos reales ni sellados)",
+  "N": {
+    "BVAR": 300,
+    "signos": "100 (T=120), 80 (T=60), 80 (ceros)",
+    "TVP": "30/12/12/10/8 segun escenario",
+    "regimenes": 300
+  },
+  "metodo": "Monte Carlo (SEED 20261010): cobertura de bandas 68/90 de IRF, sesgo relativo, recuperacion del signo, ceros exactos, identidad de la descomposicion historica, deteccion de cambio de coeficiente",
+  "estimacion": {
+    "etiquetas": {
+      "BVAR-GLP": "con reservas",
+      "signos/ceros (mecanica: restricciones, FEVD, descomposicion historica)": "apta",
+      "pesos de importancia ARW (derivados aqui; formula del articulo NO contrastada)": "apta (invariancia al orden)",
+      "signos/ceros (inferencia: bandas y signo del impacto)": "con reservas (bandas conservadoras: cobertura 90 % por encima de 0,98; set-identified)",
+      "TVP-VAR-SV (convergencia y volatilidad)": "con reservas",
+      "TVP-VAR-SV (deteccion de un cambio de coeficiente con T efectivo = 88)": "no apta (potencia y cobertura insuficientes con T efectivo = 88; ver kQ=0,10 y 0,30)",
+      "VAR por regimenes (ruptura CONOCIDA)": "con reservas"
+    },
+    "BVAR_GLP_cobertura90": {
+      "denso|T120": 0.957706,
+      "denso|T60": 0.965578,
+      "casi_RW|T120": 0.934092,
+      "casi_RW|T60": 0.907409
+    },
+    "BVAR_GLP_sesgo_rel": {
+      "denso|T120": 0.138096,
+      "denso|T60": 0.245637,
+      "casi_RW|T120": 0.142796,
+      "casi_RW|T60": 0.223971
+    },
+    "signos_signo_impacto": {
+      "signos|T120": 0.933333,
+      "signos|T60": 0.9125,
+      "signos+ceros|T120": 0.995833
+    },
+    "signos_cobertura90_no_restringidas": {
+      "signos|T120": 0.993462,
+      "signos|T60": 0.990625,
+      "signos+ceros|T120": 0.989951
+    },
+    "TVP_deteccion": {
+      "ruptura_kQ0.10": 0.166667,
+      "ruptura_kQ0.30": 0.166667,
+      "ruptura_kQ0.01": 0.0
+    },
+    "regimenes_deteccion": 0.636667
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "DESCRIPTIVO (validacion metodologica sobre datos simulados; sin lenguaje causal)",
+  "diagnosticos": {
+    "logml_vs_fuerza_bruta_error_abs": {
+      "logml_vs_cuadratura_n1": 2.04301e-09,
+      "logml_vs_cadena_predictiva_n3_dummies": 5.68434e-14
+    },
+    "ceros_max_abs": 1.59426e-14,
+    "descomposicion_historica_error_max": 5.68434e-14,
+    "tiempo_computo_s": 748,
+    "replicas_por_escenario": {
+      "BVAR|casi_RW|GLP|120": 300,
+      "BVAR|casi_RW|GLP|60": 300,
+      "BVAR|casi_RW|plano_lam100|120": 300,
+      "BVAR|casi_RW|plano_lam100|60": 300,
+      "BVAR|denso|GLP|120": 300,
+      "BVAR|denso|GLP|60": 300,
+      "BVAR|denso|plano_lam100|120": 300,
+      "BVAR|denso|plano_lam100|60": 300,
+      "BVAR|logml_vs_cadena_predictiva_n3_dummies|": 1,
+      "BVAR|logml_vs_cuadratura_n1|": 1,
+      "TVP|ruptura_kQ0.01|120": 8,
+      "TVP|ruptura_kQ0.10|120": 30,
+      "TVP|ruptura_kQ0.30|120": 12,
+      "TVP|sin_ruptura_kQ0.10|120": 12,
+      "TVP|sin_ruptura_kQ0.30|120": 10,
+      "regimenes|ruptura|120": 300,
+      "regimenes|sin_ruptura|120": 300,
+      "signos|ARW_invariancia_al_orden|": 100000,
+      "signos|signos+ceros|T120|120": 80,
+      "signos|signos|T120|120": 100,
+      "signos|signos|T60|60": 80
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": "Herramientas en src/v8/herramientas/{bvar,signos,tvp}.py. Referencias de metodo NO VERIFICADAS (sin Crossref). Pesos ARW propios, validados por invariancia al orden; formula del articulo no contrastada. TVP: ver validacion.md; el VAR por regimenes (ruptura conocida) se incluye como alternativa en tvp.py."
+}

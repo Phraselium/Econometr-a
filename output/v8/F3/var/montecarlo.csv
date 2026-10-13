@@ -1,0 +1,159 @@
+herramienta,escenario,T,replicas,metrica,valor,criterio,cumple
+BVAR,logml_vs_cuadratura_n1,,1,error_abs_logml,2.04301e-09,<= 1e-6,True
+BVAR,logml_vs_cadena_predictiva_n3_dummies,,1,error_abs_logml,5.68434e-14,<= 1e-6,True
+BVAR,denso|GLP,120,300,cobertura_68,0.780693,,
+BVAR,denso|GLP,120,300,cobertura_90,0.957706,"[0.85, 0.98]",True
+BVAR,denso|GLP,120,300,sesgo_rel_IRF_h1-12,0.138096,<= 0.10,False
+BVAR,denso|GLP,120,300,sesgo_rel_h1,0.0879441,,
+BVAR,denso|GLP,120,300,sesgo_rel_h4,0.203528,,
+BVAR,denso|GLP,120,300,sesgo_rel_h8,0.127791,,
+BVAR,denso|GLP,120,300,sesgo_rel_h12,0.311223,,
+BVAR,denso|GLP,120,300,lambda_media,0.29887,,
+BVAR,denso|GLP,120,300,lambda_p05,0.260046,,
+BVAR,denso|GLP,120,300,lambda_mediana,0.297175,,
+BVAR,denso|GLP,120,300,lambda_p95,0.345482,,
+BVAR,denso|plano_lam100,120,300,cobertura_68,0.755479,,
+BVAR,denso|plano_lam100,120,300,cobertura_90,0.940033,"[0.85, 0.98]",True
+BVAR,denso|plano_lam100,120,300,sesgo_rel_IRF_h1-12,0.149356,<= 0.10,False
+BVAR,denso|plano_lam100,120,300,sesgo_rel_h1,0.0949311,,
+BVAR,denso|plano_lam100,120,300,sesgo_rel_h4,0.230756,,
+BVAR,denso|plano_lam100,120,300,sesgo_rel_h8,0.132578,,
+BVAR,denso|plano_lam100,120,300,sesgo_rel_h12,0.359197,,
+BVAR,denso|GLP,60,300,cobertura_68,0.848416,,
+BVAR,denso|GLP,60,300,cobertura_90,0.965578,"[0.85, 0.98]",True
+BVAR,denso|GLP,60,300,sesgo_rel_IRF_h1-12,0.245637,<= 0.10,False
+BVAR,denso|GLP,60,300,sesgo_rel_h1,0.175003,,
+BVAR,denso|GLP,60,300,sesgo_rel_h4,0.337165,,
+BVAR,denso|GLP,60,300,sesgo_rel_h8,0.172515,,
+BVAR,denso|GLP,60,300,sesgo_rel_h12,0.604174,,
+BVAR,denso|GLP,60,300,lambda_media,0.329508,,
+BVAR,denso|GLP,60,300,lambda_p05,0.266225,,
+BVAR,denso|GLP,60,300,lambda_mediana,0.331576,,
+BVAR,denso|GLP,60,300,lambda_p95,0.394231,,
+BVAR,denso|plano_lam100,60,300,cobertura_68,0.814769,,
+BVAR,denso|plano_lam100,60,300,cobertura_90,0.941799,"[0.85, 0.98]",True
+BVAR,denso|plano_lam100,60,300,sesgo_rel_IRF_h1-12,0.270352,<= 0.10,False
+BVAR,denso|plano_lam100,60,300,sesgo_rel_h1,0.2163,,
+BVAR,denso|plano_lam100,60,300,sesgo_rel_h4,0.366866,,
+BVAR,denso|plano_lam100,60,300,sesgo_rel_h8,0.156265,,
+BVAR,denso|plano_lam100,60,300,sesgo_rel_h12,0.916863,,
+BVAR,casi_RW|GLP,120,300,cobertura_68,0.743614,,
+BVAR,casi_RW|GLP,120,300,cobertura_90,0.934092,"[0.85, 0.98]",True
+BVAR,casi_RW|GLP,120,300,sesgo_rel_IRF_h1-12,0.142796,<= 0.10,False
+BVAR,casi_RW|GLP,120,300,sesgo_rel_h1,0.0397956,,
+BVAR,casi_RW|GLP,120,300,sesgo_rel_h4,0.1246,,
+BVAR,casi_RW|GLP,120,300,sesgo_rel_h8,0.205447,,
+BVAR,casi_RW|GLP,120,300,sesgo_rel_h12,0.264603,,
+BVAR,casi_RW|GLP,120,300,lambda_media,0.0702528,,
+BVAR,casi_RW|GLP,120,300,lambda_p05,0.0400444,,
+BVAR,casi_RW|GLP,120,300,lambda_mediana,0.0691503,,
+BVAR,casi_RW|GLP,120,300,lambda_p95,0.102943,,
+BVAR,casi_RW|plano_lam100,120,300,cobertura_68,0.570611,,
+BVAR,casi_RW|plano_lam100,120,300,cobertura_90,0.810132,"[0.85, 0.98]",False
+BVAR,casi_RW|plano_lam100,120,300,sesgo_rel_IRF_h1-12,0.308004,<= 0.10,False
+BVAR,casi_RW|plano_lam100,120,300,sesgo_rel_h1,0.115791,,
+BVAR,casi_RW|plano_lam100,120,300,sesgo_rel_h4,0.281539,,
+BVAR,casi_RW|plano_lam100,120,300,sesgo_rel_h8,0.428068,,
+BVAR,casi_RW|plano_lam100,120,300,sesgo_rel_h12,0.506488,,
+BVAR,casi_RW|GLP,60,300,cobertura_68,0.721122,,
+BVAR,casi_RW|GLP,60,300,cobertura_90,0.907409,"[0.85, 0.98]",True
+BVAR,casi_RW|GLP,60,300,sesgo_rel_IRF_h1-12,0.223971,<= 0.10,False
+BVAR,casi_RW|GLP,60,300,sesgo_rel_h1,0.10834,,
+BVAR,casi_RW|GLP,60,300,sesgo_rel_h4,0.221626,,
+BVAR,casi_RW|GLP,60,300,sesgo_rel_h8,0.287717,,
+BVAR,casi_RW|GLP,60,300,sesgo_rel_h12,0.310594,,
+BVAR,casi_RW|GLP,60,300,lambda_media,0.0907226,,
+BVAR,casi_RW|GLP,60,300,lambda_p05,0.0225294,,
+BVAR,casi_RW|GLP,60,300,lambda_mediana,0.0885429,,
+BVAR,casi_RW|GLP,60,300,lambda_p95,0.164636,,
+BVAR,casi_RW|plano_lam100,60,300,cobertura_68,0.513399,,
+BVAR,casi_RW|plano_lam100,60,300,cobertura_90,0.758366,"[0.85, 0.98]",False
+BVAR,casi_RW|plano_lam100,60,300,sesgo_rel_IRF_h1-12,0.508752,<= 0.10,False
+BVAR,casi_RW|plano_lam100,60,300,sesgo_rel_h1,0.266292,,
+BVAR,casi_RW|plano_lam100,60,300,sesgo_rel_h4,0.492062,,
+BVAR,casi_RW|plano_lam100,60,300,sesgo_rel_h8,0.646123,,
+BVAR,casi_RW|plano_lam100,60,300,sesgo_rel_h12,0.720984,,
+signos,signos|T120,120,100,aceptacion_por_rotacion,0.00131715,,
+signos,signos|T120,120,100,ESS_medio_de_150,150,,
+signos,signos|T120,120,100,restricciones_cumplidas_max_abs_cero,0,< 1e-10,True
+signos,signos|T120,120,100,cobertura_68_IRF_restringidas,0.82,,
+signos,signos|T120,120,100,cobertura_68_IRF_no_restringidas,0.942885,,
+signos,signos|T120,120,100,cobertura_90_IRF_restringidas,0.970833,"[0.85, 0.98]",True
+signos,signos|T120,120,100,cobertura_90_IRF_no_restringidas,0.993462,"[0.85, 0.98]",False
+signos,signos|T120,120,100,signo_impacto_recuperado_no_restringidas,0.933333,>= 0.90,True
+signos,signos|T120,120,100,banda90_excluye_cero_con_signo_correcto,0,,
+signos,signos|T120,120,100,sesgo_medio_mediana_no_restringidas,-0.0652108,,
+signos,signos|T120,120,100,descomposicion_historica_error_max,3.33067e-15,< 1e-8,True
+signos,signos|T60,60,80,aceptacion_por_rotacion,0.00115466,,
+signos,signos|T60,60,80,ESS_medio_de_150,150,,
+signos,signos|T60,60,80,restricciones_cumplidas_max_abs_cero,0,< 1e-10,True
+signos,signos|T60,60,80,cobertura_68_IRF_restringidas,0.796875,,
+signos,signos|T60,60,80,cobertura_68_IRF_no_restringidas,0.947837,,
+signos,signos|T60,60,80,cobertura_90_IRF_restringidas,0.945833,"[0.85, 0.98]",True
+signos,signos|T60,60,80,cobertura_90_IRF_no_restringidas,0.990625,"[0.85, 0.98]",False
+signos,signos|T60,60,80,signo_impacto_recuperado_no_restringidas,0.9125,>= 0.90,True
+signos,signos|T60,60,80,banda90_excluye_cero_con_signo_correcto,0,,
+signos,signos|T60,60,80,sesgo_medio_mediana_no_restringidas,-0.0625399,,
+signos,signos|T60,60,80,descomposicion_historica_error_max,5.68434e-14,< 1e-8,True
+signos,signos+ceros|T120,120,80,aceptacion_por_rotacion,0.00458974,,
+signos,signos+ceros|T120,120,80,ESS_medio_de_150,136.221,,
+signos,signos+ceros|T120,120,80,restricciones_cumplidas_max_abs_cero,1.59426e-14,< 1e-10,True
+signos,signos+ceros|T120,120,80,cobertura_68_IRF_restringidas,0.822727,,
+signos,signos+ceros|T120,120,80,cobertura_68_IRF_no_restringidas,0.923529,,
+signos,signos+ceros|T120,120,80,cobertura_90_IRF_restringidas,0.971591,"[0.85, 0.98]",True
+signos,signos+ceros|T120,120,80,cobertura_90_IRF_no_restringidas,0.989951,"[0.85, 0.98]",False
+signos,signos+ceros|T120,120,80,signo_impacto_recuperado_no_restringidas,0.995833,>= 0.90,True
+signos,signos+ceros|T120,120,80,banda90_excluye_cero_con_signo_correcto,0,,
+signos,signos+ceros|T120,120,80,sesgo_medio_mediana_no_restringidas,-0.051659,,
+signos,signos+ceros|T120,120,80,descomposicion_historica_error_max,2.66454e-15,< 1e-8,True
+signos,ARW_invariancia_al_orden,,100000,ESS_medio,2383.94,,
+signos,ARW_invariancia_al_orden,,100000,suelo_de_ruido_(mismo_orden_otra_semilla),0.0179455,,
+signos,ARW_invariancia_al_orden,,100000,max_dif_E[Q^2]_entre_ordenes_con_pesos,0.0164161,"<= max(0.04, 1.5*ruido) y < sin_pesos/4",True
+signos,ARW_invariancia_al_orden,,100000,max_dif_E[Q^2]_entre_ordenes_sin_pesos,0.104725,,
+TVP,ruptura_kQ0.10,120,30,cobertura_68_coef_con_ruptura,0.544697,,
+TVP,ruptura_kQ0.10,120,30,cobertura_90_coef_con_ruptura,0.76553,"[0.85, 0.98]",False
+TVP,ruptura_kQ0.10,120,30,cobertura_68_coef_control_constante,0.753409,,
+TVP,ruptura_kQ0.10,120,30,cobertura_90_coef_control_constante,0.995455,"[0.85, 0.98]",False
+TVP,ruptura_kQ0.10,120,30,deteccion_cambio_(banda90_late-early>0),0.166667,>= 0.80,False
+TVP,ruptura_kQ0.10,120,30,cambio_estimado_medio_(verdad_0.4_en_cuartiles_extremos),0.188016,sesgo rel. <= 0.10,False
+TVP,ruptura_kQ0.10,120,30,RMSE_senda_coef_rupt,0.179094,,
+TVP,ruptura_kQ0.10,120,30,sigma_estimado_sobre_verdad_(0.5),0.956649,"[0.9, 1.1]",True
+TVP,sin_ruptura_kQ0.10,120,12,cobertura_68_coef_con_ruptura,0.802083,,
+TVP,sin_ruptura_kQ0.10,120,12,cobertura_90_coef_con_ruptura,0.902462,"[0.85, 0.98]",True
+TVP,sin_ruptura_kQ0.10,120,12,cobertura_68_coef_control_constante,0.720644,,
+TVP,sin_ruptura_kQ0.10,120,12,cobertura_90_coef_control_constante,0.949811,"[0.85, 0.98]",True
+TVP,sin_ruptura_kQ0.10,120,12,falsos_positivos_(banda90_late-early>0),0,<= 0.15,True
+TVP,sin_ruptura_kQ0.10,120,12,RMSE_senda_coef_rupt,0.0989997,,
+TVP,sin_ruptura_kQ0.10,120,12,sigma_estimado_sobre_verdad_(0.5),0.981892,"[0.9, 1.1]",True
+TVP,ruptura_kQ0.30,120,12,cobertura_68_coef_con_ruptura,0.789773,,
+TVP,ruptura_kQ0.30,120,12,cobertura_90_coef_con_ruptura,0.949811,"[0.85, 0.98]",True
+TVP,ruptura_kQ0.30,120,12,cobertura_68_coef_control_constante,0.820076,,
+TVP,ruptura_kQ0.30,120,12,cobertura_90_coef_control_constante,0.996212,"[0.85, 0.98]",False
+TVP,ruptura_kQ0.30,120,12,deteccion_cambio_(banda90_late-early>0),0.166667,>= 0.80,False
+TVP,ruptura_kQ0.30,120,12,cambio_estimado_medio_(verdad_0.4_en_cuartiles_extremos),0.272082,sesgo rel. <= 0.10,False
+TVP,ruptura_kQ0.30,120,12,RMSE_senda_coef_rupt,0.176134,,
+TVP,ruptura_kQ0.30,120,12,sigma_estimado_sobre_verdad_(0.5),0.892579,"[0.9, 1.1]",False
+TVP,sin_ruptura_kQ0.30,120,10,cobertura_68_coef_con_ruptura,0.735227,,
+TVP,sin_ruptura_kQ0.30,120,10,cobertura_90_coef_con_ruptura,0.939773,"[0.85, 0.98]",True
+TVP,sin_ruptura_kQ0.30,120,10,cobertura_68_coef_control_constante,0.776136,,
+TVP,sin_ruptura_kQ0.30,120,10,cobertura_90_coef_control_constante,0.969318,"[0.85, 0.98]",True
+TVP,sin_ruptura_kQ0.30,120,10,falsos_positivos_(banda90_late-early>0),0,<= 0.15,True
+TVP,sin_ruptura_kQ0.30,120,10,RMSE_senda_coef_rupt,0.185807,,
+TVP,sin_ruptura_kQ0.30,120,10,sigma_estimado_sobre_verdad_(0.5),0.867481,"[0.9, 1.1]",False
+TVP,ruptura_kQ0.01,120,8,cobertura_68_coef_con_ruptura,0.125,,
+TVP,ruptura_kQ0.01,120,8,cobertura_90_coef_con_ruptura,0.453125,"[0.85, 0.98]",False
+TVP,ruptura_kQ0.01,120,8,cobertura_68_coef_control_constante,0.71875,,
+TVP,ruptura_kQ0.01,120,8,cobertura_90_coef_control_constante,1,"[0.85, 0.98]",False
+TVP,ruptura_kQ0.01,120,8,deteccion_cambio_(banda90_late-early>0),0,>= 0.80,False
+TVP,ruptura_kQ0.01,120,8,cambio_estimado_medio_(verdad_0.4_en_cuartiles_extremos),0.00844391,sesgo rel. <= 0.10,False
+TVP,ruptura_kQ0.01,120,8,RMSE_senda_coef_rupt,0.217985,,
+TVP,ruptura_kQ0.01,120,8,sigma_estimado_sobre_verdad_(0.5),1.0364,"[0.9, 1.1]",True
+regimenes,ruptura,120,300,cobertura_68_coef,0.658333,,
+regimenes,ruptura,120,300,cobertura_90_coef,0.9,"[0.85, 0.98]",True
+regimenes,ruptura,120,300,deteccion_cambio_(banda90_dif>0),0.636667,>= 0.80,False
+regimenes,ruptura,120,300,cambio_estimado_medio_(verdad_0.4),0.30762,sesgo rel. <= 0.10,False
+regimenes,ruptura,120,300,lambda_mediana,0.332327,,
+regimenes,sin_ruptura,120,300,cobertura_68_coef,0.701667,,
+regimenes,sin_ruptura,120,300,cobertura_90_coef,0.925,"[0.85, 0.98]",True
+regimenes,sin_ruptura,120,300,falsos_positivos_(banda90_dif>0),0.04,<= 0.15,True
+regimenes,sin_ruptura,120,300,lambda_mediana,0.348005,,

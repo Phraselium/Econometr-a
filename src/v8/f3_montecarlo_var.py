@@ -486,9 +486,10 @@ def informe(df, seg):
               f"{g('BVAR', 'logml_vs_cuadratura_n1', '', 'error_abs_logml'):.1e} (cuadratura 2-D, n=1, p=1) y "
               f"{g('BVAR', 'logml_vs_cadena_predictiva_n3_dummies', '', 'error_abs_logml'):.1e} (cadena predictiva t multivariante, n=3, p=2, con dummies de suma de coeficientes y de observacion inicial).\n")
     md.append("GLP elige lambda coherente con el DGP: menor en el paseo aleatorio (casi_RW) que en el VAR denso, y siempre dentro de [0,005; 20] sin tocar los limites.\n")
-    md.append("Lectura: la cobertura del 90 % es correcta; el sesgo relativo agregado supera el 10 % en parte de las celdas. Ese sesgo aparece tambien con el prior casi plano "
-              "(sesgo de muestra finita del VAR persistente y del orden de Cholesky), asi que no es atribuible a la contraccion; la contraccion GLP lo reduce en el DGP casi_RW "
-              "y mejora la cobertura. Por eso la etiqueta es «con reservas» y no «apta» segun el criterio de sesgo declarado.\n")
+    md.append("Lectura: la cobertura del 90 % con GLP esta dentro de [0,85; 0,98] en las cuatro celdas (las bandas del 68 % son anchas: 0,72-0,85 frente a 0,68 nominal). "
+              "El sesgo relativo agregado de la mediana de la IRF supera el 10 % (0,14 a 0,25). Ese sesgo aparece tambien con el prior casi plano (sesgo de muestra finita del VAR persistente), "
+              "asi que no es atribuible a la contraccion; en el DGP casi_RW la contraccion GLP lo reduce a la mitad (0,14 frente a 0,31 con T=120) y corrige la cobertura (0,93 frente a 0,81). "
+              "Por eso la etiqueta es «con reservas» y no «apta» segun el criterio de sesgo declarado (T=60: sesgo 0,22-0,25).\n")
     md.append("## 2. Signos y ceros (RWZ / ARW)\n")
     md.append("DGP estructural de 4 shocks (oferta, demanda, credito, monetario) sobre 4 variables (y, pi, cred, tipo). Restricciones de signo en el impacto: "
               "oferta (y+, pi-); demanda (y+, pi+, tipo+); credito (cred+, y+, pi+); monetario (tipo+, pi-, cred-, y-). Variante con ceros: el shock monetario no mueve y en el impacto y "
@@ -511,7 +512,9 @@ def informe(df, seg):
               f"{g('signos', 'ARW_invariancia_al_orden', '', 'suelo_de_ruido_(mismo_orden_otra_semilla)'):.3f} (ESS medio {g('signos', 'ARW_invariancia_al_orden', '', 'ESS_medio'):.0f} de {int(df[df.escenario == 'ARW_invariancia_al_orden']['replicas'].iloc[0])}). "
               "La prueba rechaza pesos incorrectos pero no demuestra la igualdad con la formula de ARW.\n")
     md.append("Lectura: las bandas por signos son anchas (la verdad cae en ellas mas a menudo que lo nominal: con un conjunto identificado la banda mezcla incertidumbre de parametros y de identificacion, "
-              "y la ‘cobertura’ no tiene el significado frecuentista habitual). Se informa de la cobertura y se etiqueta «con reservas»: las bandas son validas como cotas de credibilidad conservadoras, no calibradas al nivel nominal.\n")
+              "y la ‘cobertura’ no tiene el significado frecuentista habitual): la cobertura del 90 % de las celdas no restringidas es 0,99 (> 0,98) y la del 68 % es 0,92-0,95. "
+              "El signo del impacto de los elementos no restringidos se recupera en el 91-93 % de las replicas con solo signos (T=120 y 60) y en el 99,6 % con dos ceros, pero la banda del 90 % de esos elementos no excluye nunca el cero (0 % de las celdas): el signo de un impacto no restringido se recupera por la mediana, no por la banda, y no debe afirmarse como resultado. "
+              "Etiqueta «con reservas»: las bandas son cotas de credibilidad conservadoras, no calibradas al nivel nominal.\n")
     md.append("## 3. TVP-VAR con volatilidad estocastica\n")
     md.append("DGP: VAR(2) de 3 variables, un coeficiente (primer retardo propio de la ecuacion 1) pasa de 0,4 a 0,8 a mitad de la muestra efectiva; volatilidad 0,5 constante. "
               "T = 120 con 30 observaciones de entrenamiento del prior (T efectivo = 88). Gibbs de 1200 iteraciones, 400 de calentamiento, adelgazado 4 (200 sorteos). "
@@ -524,8 +527,8 @@ def informe(df, seg):
         md.append(f"| {e} | {r_} | {g('TVP', e, 120, 'cobertura_68_coef_con_ruptura'):.3f} | {g('TVP', e, 120, 'cobertura_90_coef_con_ruptura'):.3f} | {g('TVP', e, 120, 'cobertura_90_coef_control_constante'):.3f} | "
                   f"{det:.2f} | {dif:.2f} | {g('TVP', e, 120, 'RMSE_senda_coef_rupt'):.3f} | {g('TVP', e, 120, 'sigma_estimado_sobre_verdad_(0.5)'):.2f} |")
     md.append("\nLectura: el muestreador converge (la volatilidad se recupera y la senda sigue al coeficiente), pero un salto de 0,4 en un solo coeficiente con 88 observaciones efectivas "
-              "se detecta con poca potencia: el paseo aleatorio suaviza el escalon y las bandas son anchas. kQ=0,01 (valor de Primiceri) ignora el cambio; subir kQ lo recupera en parte a costa de bandas mas anchas. "
-              "No se recomienda usarlo para fechar o atribuir cambios de coeficientes con muestras de este tamano; si sirve como descripcion exploratoria de la volatilidad.\n")
+              "se detecta con poca potencia: el paseo aleatorio suaviza el escalon y las bandas son anchas. kQ=0,01 (valor de Primiceri) ignora el cambio (cobertura 0,45). kQ=0,30 corrige la cobertura (0,95) pero no la potencia (deteccion 17 %; cambio estimado 0,27 frente a 0,4); kQ=0,10 queda en 0,77 de cobertura. "
+              "Sin ruptura no hay falsos positivos. No se recomienda usarlo para fechar o atribuir cambios de coeficientes con muestras de este tamano; si sirve como descripcion exploratoria de la volatilidad.\n")
     md.append("### Alternativa documentada: VAR por regimenes (prior comun, ruptura conocida)\n")
     md.append("Misma DGP; coeficientes distintos por tramo con el mismo prior Minnesota (lambda comun por verosimilitud marginal). La fecha de ruptura se SUPONE conocida.\n")
     md.append("| Escenario | replicas | cob. 68 % | cob. 90 % | deteccion / falsos positivos | cambio estimado |\n|---|---|---|---|---|---|")
@@ -534,6 +537,8 @@ def informe(df, seg):
         det = g("regimenes", e, 120, "deteccion_cambio_(banda90_dif>0)") if e == "ruptura" else g("regimenes", e, 120, "falsos_positivos_(banda90_dif>0)")
         dif = g("regimenes", e, 120, "cambio_estimado_medio_(verdad_0.4)") if e == "ruptura" else float("nan")
         md.append(f"| {e} | {r_} | {g('regimenes', e, 120, 'cobertura_68_coef'):.3f} | {g('regimenes', e, 120, 'cobertura_90_coef'):.3f} | {det:.2f} | {dif:.2f} |")
+    md.append("\nLectura: con la ruptura conocida las bandas del 90 % cubren (0,90) y no hay falsos positivos relevantes (4 %), pero la potencia es 64 % y el cambio estimado (0,31 frente a 0,4) esta contraido por el prior; "
+              "queda «con reservas». Sirve cuando el fechado de la ruptura viene de fuera; no la estima.\n")
     md.append("\n## Limitaciones\n")
     md.append("- Un solo conjunto de DGP por herramienta; los resultados no se extrapolan a otras dinamicas.\n"
               "- BVAR: psi de la muestra completa (no pre-muestra); no se optimiza la prior de la matriz de escala ni se imponen hiperpriors (maximo de la densidad marginal pura).\n"
@@ -543,7 +548,7 @@ def informe(df, seg):
     (OUT / "validacion.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     res = dict(
         rama="r8/F3/var", pregunta="¿Son aptas, con datos simulados, las herramientas BVAR-GLP, signos/ceros (RWZ/ARW) y TVP-VAR-SV (o regimenes)?",
-        capa="C4", datos="Simulados (DGP del Monte Carlo; sin datos reales ni sellados)", N=int(df["replicas"].max()),
+        capa="C4", datos="Simulados (DGP del Monte Carlo; sin datos reales ni sellados)", N={"BVAR": 300, "signos": "100 (T=120), 80 (T=60), 80 (ceros)", "TVP": "30/12/12/10/8 segun escenario", "regimenes": 300},
         metodo="Monte Carlo (SEED 20261010): cobertura de bandas 68/90 de IRF, sesgo relativo, recuperacion del signo, ceros exactos, identidad de la descomposicion historica, deteccion de cambio de coeficiente",
         estimacion={"etiquetas": E,
                     "BVAR_GLP_cobertura90": {f"{e}|T{T}": g("BVAR", f"{e}|GLP", T, "cobertura_90") for e in ("denso", "casi_RW") for T in (120, 60)},

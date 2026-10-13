@@ -1,0 +1,29 @@
+{
+ "rama": "F6",
+ "pregunta": "Que modelos se destacan segun §9 y como se presentan en formato de revista?",
+ "capa": "C4 (asociacion) para los modelos de coeficientes; C3s solo H8-1..H8-4 (condicionada a las restricciones de signo)",
+ "datos": "output/v8/M0-M9 y output/v8/F5 (solo lectura)",
+ "N": {
+  "modelos_destacados": 18,
+  "filas_csv": 85,
+  "cumplen_a": 0
+ },
+ "metodo": "seleccion (a) regla §8 y multiverso; (b) mejor de cada familia por RMSE fuera de muestra (nunca por p)",
+ "estimacion": {
+  "cumplen_ambas_reglas": 0,
+  "destacados_b": 18
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "C4: sin lenguaje causal",
+ "diagnosticos": {
+  "sha256_xlsx": "8106b2caaf3e50861f50916683c5c6b607c75145e81f30a5cd29778d13a06c9e",
+  "seed": 20261010
+ },
+ "fuera_muestra": {
+  "modelo": "ver tablas_modelos_destacados.md",
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Ver el md: razones RMSE frente a AR(4) por modelo; ningun destacado cumple la regla (a)."
+}

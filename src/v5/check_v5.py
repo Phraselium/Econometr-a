@@ -62,7 +62,7 @@ def cifras() -> list[str]:
     for c in ("capa", "periodo", "cobertura", "fuentes", "fecha_dato"):
         mal = ck[ck[c].isna() | (ck[c].astype(str).str.strip() == "")]
         err += [f"cifras_clave: {r.id} sin «{c}»" for r in mal.itertuples()]
-    mal = ck[~ck.capa.astype(str).str.match(r"^C[1-4]\b")]
+    mal = ck[~ck.capa.astype(str).str.match(r"^C[1-4]s?\b")]
     err += [f"cifras_clave: {r.id} capa inválida {r.capa!r}" for r in mal.itertuples()]
     return err
 

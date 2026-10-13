@@ -36,7 +36,7 @@ def test_ids_unicos(ck):
 def test_campos_obligatorios(ck):
     for c in ("indicador", "unidad", "periodo", "cobertura", "fuentes", "capa", "fecha_dato"):
         assert ck[c].notna().all(), c
-    assert set(ck.capa.astype(str)) <= {"C1", "C2", "C3", "C4"}
+    assert set(ck.capa.astype(str)) <= {"C1", "C2", "C3", "C3s", "C4"}   # V8: C3s (restricciones de signo explícitas)
     assert ck[["valor", "min", "max"]].notna().any(axis=1).all()
 
 

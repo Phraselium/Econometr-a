@@ -30,15 +30,23 @@ def ms_fit(y, k=2, exog=None, ar=0, switching_variance=True, search_reps=5, seed
     """
     from statsmodels.tsa.regime_switching.markov_autoregression import MarkovAutoregression
     from statsmodels.tsa.regime_switching.markov_regression import MarkovRegression
+    import statsmodels.tsa.regime_switching.markov_switching as _mss
     y = np.asarray(y, float)
     np.random.seed(seed)
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")
-        if ar > 0:
-            mod = MarkovAutoregression(y, k_regimes=k, order=ar, trend="c", switching_variance=switching_variance)
-        else:
-            mod = MarkovRegression(y, k_regimes=k, trend="c", exog=exog, switching_variance=switching_variance)
-        res = mod.fit(search_reps=search_reps, disp=False)
+    # statsmodels >= 0.15 busca arranques con check_random_state(None) (generador sin semilla): se fija la semilla
+    # durante el ajuste y se restaura despues, para que el resultado sea determinista.
+    _chk = _mss.check_random_state
+    _mss.check_random_state = lambda rng=None: _chk(seed if rng is None else rng)
+    try:
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            if ar > 0:
+                mod = MarkovAutoregression(y, k_regimes=k, order=ar, trend="c", switching_variance=switching_variance)
+            else:
+                mod = MarkovRegression(y, k_regimes=k, trend="c", exog=exog, switching_variance=switching_variance)
+            res = mod.fit(search_reps=search_reps, disp=False)
+    finally:
+        _mss.check_random_state = _chk
     P = np.asarray(res.regime_transition)[:, :, 0] if np.asarray(res.regime_transition).ndim == 3 else np.asarray(res.regime_transition)
     par = dict(zip(mod.param_names, np.asarray(res.params)))
     return {"k": k, "loglik": float(res.llf), "aic": float(res.aic), "bic": float(res.bic), "params": par, "P": P,

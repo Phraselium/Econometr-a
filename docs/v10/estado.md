@@ -15,12 +15,13 @@ Rama local `r10/difusion` → remota `claude/housing-price-spain-econometric-95d
 - **B5, monitor** (D7): src/v10/monitor.py (12 series); .github/workflows/actualizar.yml.
 - **D5:** licencias de la capa pública corregidas (Registradores fuera).
 
+- **B6** (D8): paper/manuscrito.qmd; publicacion/tablas_atlas.xlsx.
+- **B7** (D9): 9 documentos a historico/; README, LEEME_PRIMERO, consulta/ y llms.txt actualizados; 28 cifras V10-ATL-* en cifras_clave.
+- **Tareas del autor:** docs/v10/tareas_autor.md.
+
 ## Siguiente paso exacto
-- **B6, paquete académico:**
-  - paper/ en Quarto (.qmd), con tablas y figuras de la base y la bibliografía de docs/v9_prep/referencias.bib;
-  - publicacion/tablas_atlas.xlsx, mediante output/v10/tablas_atlas.xlsx y `make publicacion`.
-- **B7, orden del repositorio:** historico/ e índice; README, LEEME_PRIMERO, llms.txt y consulta/.
-- **Cierre:** revisor y resumen.
+- Esperar el informe del revisor (docs/v10/revision_final.md), corregir los hallazgos bloqueantes e importantes y repetir `make check`.
+- Cierre en clon limpio: `make base`, `make figuras`, `make web` y `make check`. Después, commit y push.
 
 ## Subagentes
-- Ninguno.
+- Revisor (opus, tope de 100.000 tokens): en curso.

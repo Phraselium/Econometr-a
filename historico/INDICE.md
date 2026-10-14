@@ -96,3 +96,24 @@ Las etiquetas son locales: el remoto rechaza la subida de etiquetas. Publicarlas
 | archive/README.md | [historico/archivo_v6_README.md](archivo_v6_README.md) |
 
 El traslado anterior (v6.1, carpeta archive/) se documenta en [archivo_v6_README.md](archivo_v6_README.md): sus ficheros están ahora en historico/output/.
+
+## Ficheros trasladados en V10 (2026-10-14)
+
+Con el mismo criterio que en v7.1: se trasladan con `git mv` los documentos de proceso de versiones cerradas (planes, estados, bloqueos e instrucciones) que no lee ningún script, test ni el Makefile y que no enlaza ningún entregable vigente. Solo se han reescrito los enlaces relativos que, tras el traslado, ya no resolvían. Las salidas de modelos (output/v2-v8) no se mueven: sus scripts las regeneran en su ruta y los entregables vigentes las leen (cifras_clave, anexo, verificador).
+
+| Ruta original | Ruta nueva |
+|---|---|
+| docs/v7/bloqueos.md | historico/docs/v7/bloqueos.md |
+| docs/v7/estado.md | historico/docs/v7/estado.md |
+| docs/v7/plan.md | historico/docs/v7/plan.md |
+| docs/v7/instrucciones_subagentes.md | historico/docs/v7/instrucciones_subagentes.md |
+| docs/v7_1/bloqueos.md | historico/docs/v7_1/bloqueos.md |
+| docs/v7_1/estado.md | historico/docs/v7_1/estado.md |
+| docs/v7_1/plan.md | historico/docs/v7_1/plan.md |
+| docs/v7_1/revision_control.md | historico/docs/v7_1/revision_control.md |
+| docs/v7_2/estado.md | historico/docs/v7_2/estado.md |
+
+**Versión de referencia tras V10.**
+- La modelización de referencia sigue siendo V8.
+- V10 añade la base única (data/base), el atlas descriptivo (output/v10, publicacion/atlas_descriptivo.md), las figuras (figuras/), la web (web/) y el monitor.
+- Vigente en output/: v5 (cifras clave y entregables), v6_2 (anexo), v7 y v7_1 (regional y verificador), v8 (modelos) y v10. El resto se conserva porque `make all` lo regenera y los vigentes lo leen.

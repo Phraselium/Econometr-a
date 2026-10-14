@@ -142,3 +142,16 @@ Rama local `r10/difusion`, subida a la rama remota designada (`claude/housing-pr
   - sin paneles inmovilizados;
   - zip con fechas fijas (determinista);
   - fórmulas comprobadas con LibreOffice: sin errores; la brecha nacional del IPVA coincide con el atlas (16,404).
+
+## D9 — Orden del repositorio (bloque 7) y cifras del atlas
+- **Traslados a historico/.** Se trasladan con `git mv` 9 documentos de proceso de V7, V7.1 y V7.2 (planes, estados, bloqueos e instrucciones) que no lee ningún script, test ni el Makefile ni enlaza ningún entregable vigente; el detalle está en historico/INDICE.md.
+- **Lo que no se mueve.** Las salidas output/v2-v8 se quedan donde están: sus scripts las regeneran en su ruta y los entregables vigentes las leen (cifras_clave, anexo, verificador). Moverlas exigiría reescribir decenas de scripts y arriesgaría `make all`. El índice del histórico dice qué está vigente.
+- **Regla de V7.1** («toda cifra difundible sale de cifras_clave»):
+  - el atlas escribe output/v10/atlas/hechos.json y src/v5/cifras_clave.py lo incorpora, con 28 cifras `V10-ATL-*`;
+  - el texto cita cada id entre corchetes;
+  - se ha comprobado que ninguna de las 1.064 cifras previas cambia.
+- **Documentos actualizados.**
+  - README y LEEME_PRIMERO, a mano.
+  - consulta/ y llms.txt, con `make consulta`: entradas V10 en la guía para asistentes, el índice de ficheros y version.json (`difusion` y `web_prevista`). La versión sigue siendo 8.1 porque no se ha publicado ninguna release nueva.
+  - CHANGELOG.
+- **Orden de construcción:** `make base` → `make atlas` (actualiza hechos.json) → `src/v5/cifras_clave.py` → `make publicacion` → `make base` (vuelve a copiar cifras_clave) → `make consulta` → `make figuras` → `make web`. El flujo mensual sigue este mismo orden.

@@ -13,7 +13,7 @@
   "C3s",
   "C4"
  ],
- "n": 1192,
+ "n": 1220,
  "hallazgos": [
   {
    "id": "compradores_extranjeros",
@@ -29099,6 +29099,717 @@
    "estado": "retirada",
    "tipo": "hipotesis_retirada",
    "motivo": "especificación errónea (escalón EPA), retirada"
+  },
+  {
+   "id": "V10-ATL-A1",
+   "enunciado": "Sobrecarga del gasto en vivienda (>40 % de la renta), personas en alquiler de mercado",
+   "cifra": 26.7965,
+   "rango": [
+    24.4022,
+    29.1907
+   ],
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "alquiler",
+   "capa": "C1",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV (microdatos), cálculo propio; contraste Eurostat ilc_lvho07c",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "ECV 2025",
+   "cifra_texto": "26,8 % (24,4 a 29,19)",
+   "min_max": [
+    24.4022,
+    29.1907,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-A10",
+   "enunciado": "Personas de 30 a 34 años que viven con al menos uno de sus padres, primer año",
+   "cifra": 27.1416,
+   "rango": [
+    26.5358,
+    27.7475
+   ],
+   "unidad": "%",
+   "periodo": "2018",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE EPA (microdatos)",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2018",
+   "cifra_texto": "27,14 % (26,54 a 27,75)",
+   "min_max": [
+    26.5358,
+    27.7475,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-A11",
+   "enunciado": "Personas de 30 a 34 años que viven con al menos uno de sus padres, último año completo",
+   "cifra": 31.6787,
+   "rango": [
+    30.8368,
+    32.5206
+   ],
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE EPA (microdatos)",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "31,68 % (30,84 a 32,52)",
+   "min_max": [
+    30.8368,
+    32.5206,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-A2",
+   "enunciado": "Sobrecarga del gasto en vivienda (>40 % de la renta), total de la población",
+   "cifra": 7.172,
+   "rango": [
+    6.6701,
+    7.6739
+   ],
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C1",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV (microdatos); contraste Eurostat ilc_lvho07a",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "ECV 2025",
+   "cifra_texto": "7,17 % (6,67 a 7,67)",
+   "min_max": [
+    6.6701,
+    7.6739,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-A3",
+   "enunciado": "Sobrecarga del gasto en vivienda (>40 %), alquiler de mercado, primer año de la serie",
+   "cifra": 38.0701,
+   "rango": [
+    34.1477,
+    41.9925
+   ],
+   "unidad": "%",
+   "periodo": "2018",
+   "ambito": "España",
+   "mercado": "alquiler",
+   "capa": "C1",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV (microdatos); contraste Eurostat ilc_lvho07c",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "ECV 2018",
+   "cifra_texto": "38,07 % (34,15 a 41,99)",
+   "min_max": [
+    34.1477,
+    41.9925,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-A4",
+   "enunciado": "Sobrecarga del gasto en vivienda (>40 %), primer decil de renta equivalente",
+   "cifra": 43.8489,
+   "rango": [
+    40.275,
+    47.4228
+   ],
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV (microdatos)",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "ECV 2025",
+   "cifra_texto": "43,85 % (40,27 a 47,42)",
+   "min_max": [
+    40.275,
+    47.4228,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-A5",
+   "enunciado": "Sobrecarga del gasto en vivienda (>40 %), décimo decil de renta equivalente",
+   "cifra": 0.0567,
+   "rango": [
+    -0.009,
+    0.1224
+   ],
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV (microdatos)",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "ECV 2025",
+   "cifra_texto": "0,057 % (-0,009 a 0,122)",
+   "min_max": [
+    -0.009,
+    0.1224,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-A6",
+   "enunciado": "Sobrecarga del gasto en vivienda (>40 %), nacionalidad de fuera de la UE",
+   "cifra": 24.0502,
+   "rango": [
+    20.642,
+    27.4584
+   ],
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV (microdatos)",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "ECV 2025",
+   "cifra_texto": "24,05 % (20,64 a 27,46)",
+   "min_max": [
+    20.642,
+    27.4584,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-A7",
+   "enunciado": "Sobrecarga del gasto en vivienda (>40 %), nacionalidad española",
+   "cifra": 4.7123,
+   "rango": [
+    4.3818,
+    5.0428
+   ],
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV (microdatos)",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "ECV 2025",
+   "cifra_texto": "4,71 % (4,38 a 5,04)",
+   "min_max": [
+    4.3818,
+    5.0428,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-A8",
+   "enunciado": "Esfuerzo mediano de alquiler (alquiler anual / renta del hogar), 18-29 años, alquiler de mercado",
+   "cifra": 21.1352,
+   "rango": [
+    19.8103,
+    23.1608
+   ],
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV (microdatos); IC de Woodruff",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "ECV 2025",
+   "cifra_texto": "21,14 % (19,81 a 23,16)",
+   "min_max": [
+    19.8103,
+    23.1608,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-A9",
+   "enunciado": "Esfuerzo mediano de alquiler, 45-64 años, alquiler de mercado",
+   "cifra": 21.5002,
+   "rango": [
+    20.5335,
+    22.8688
+   ],
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV (microdatos); IC de Woodruff",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "ECV 2025",
+   "cifra_texto": "21,5 % (20,53 a 22,87)",
+   "min_max": [
+    20.5335,
+    22.8688,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-B1",
+   "enunciado": "Brecha IPVA contratos nuevos menos existentes (índices 2015=100)",
+   "cifra": 16.404,
+   "rango": null,
+   "unidad": "puntos de índice",
+   "periodo": "2024",
+   "ambito": "España",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPVA (59004)",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "16,4 puntos de índice",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-C1",
+   "enunciado": "València: porcentaje de población de nacionalidad extranjera",
+   "cifra": 19.4111,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "València (municipio 46250)",
+   "mercado": "no aplica",
+   "capa": "C1",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE censo anual (suma de secciones)",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025-01-01",
+   "cifra_texto": "19,41 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-C2",
+   "enunciado": "València: porcentaje de población de nacionalidad extranjera",
+   "cifra": 13.3068,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2021",
+   "ambito": "València (municipio 46250)",
+   "mercado": "no aplica",
+   "capa": "C1",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE censo anual (suma de secciones)",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021-01-01",
+   "cifra_texto": "13,31 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-C3",
+   "enunciado": "València: viviendas turísticas (INE, medición experimental)",
+   "cifra": 5393.0,
+   "rango": null,
+   "unidad": "viviendas",
+   "periodo": "2026-05",
+   "ambito": "València (municipio 46250)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, viviendas turísticas",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-05",
+   "cifra_texto": "5.393 viviendas",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-C4-462500101",
+   "enunciado": "Índice descriptivo de presión residencial, barrio La Seu",
+   "cifra": 1.4491,
+   "rango": null,
+   "unidad": "puntuación z media",
+   "periodo": "2019-2026",
+   "ambito": "València, barrio 462500101",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE; MIVAU SERPAVI; Ajuntament de València",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-05",
+   "cifra_texto": "1,45 puntuación z media",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-C4-462500104",
+   "enunciado": "Índice descriptivo de presión residencial, barrio El Pilar",
+   "cifra": 1.7284,
+   "rango": null,
+   "unidad": "puntuación z media",
+   "periodo": "2019-2026",
+   "ambito": "València, barrio 462500104",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE; MIVAU SERPAVI; Ajuntament de València",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-05",
+   "cifra_texto": "1,73 puntuación z media",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-C4-462500105",
+   "enunciado": "Índice descriptivo de presión residencial, barrio El Mercat",
+   "cifra": 2.2463,
+   "rango": null,
+   "unidad": "puntuación z media",
+   "periodo": "2019-2026",
+   "ambito": "València, barrio 462500105",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE; MIVAU SERPAVI; Ajuntament de València",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-05",
+   "cifra_texto": "2,25 puntuación z media",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-C4-462501006",
+   "enunciado": "Índice descriptivo de presión residencial, barrio La Punta",
+   "cifra": 1.5879,
+   "rango": null,
+   "unidad": "puntuación z media",
+   "periodo": "2019-2026",
+   "ambito": "València, barrio 462501006",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE; MIVAU SERPAVI; Ajuntament de València",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-05",
+   "cifra_texto": "1,59 puntuación z media",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-C4-462501102",
+   "enunciado": "Índice descriptivo de presión residencial, barrio Cabanyal-Canyamelar",
+   "cifra": 1.208,
+   "rango": null,
+   "unidad": "puntuación z media",
+   "periodo": "2019-2026",
+   "ambito": "València, barrio 462501102",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE; MIVAU SERPAVI; Ajuntament de València",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-05",
+   "cifra_texto": "1,21 puntuación z media",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-D1",
+   "enunciado": "Alquiler anual de 80 m² sobre la renta neta por persona, rango provincial",
+   "cifra": 42.2608,
+   "rango": [
+    28.5896,
+    66.8654
+   ],
+   "unidad": "%",
+   "periodo": "alquiler 2024; renta 2023",
+   "ambito": "52 provincias (valor: mediana; mín. y máx.: rango)",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI; INE ADRH y censo anual",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "42,26 % (28,59 a 66,87)",
+   "min_max": [
+    28.5896,
+    66.8654,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-D2",
+   "enunciado": "Variación del alquiler mediano 2019-2024, municipios de la Comunitat Valenciana con 20.000 hab. o más",
+   "cifra": 31.9347,
+   "rango": [
+    19.103,
+    48.5171
+   ],
+   "unidad": "%",
+   "periodo": "2019-2024",
+   "ambito": "68 municipios (valor: mediana; mín. y máx.: rango)",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI; INE censo anual",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "31,93 % (19,1 a 48,52)",
+   "min_max": [
+    19.103,
+    48.5171,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-E-03014",
+   "enunciado": "Variación del alquiler mediano 2019-2024, Alicante/Alacant",
+   "cifra": 31.2685,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2024",
+   "ambito": "Alicante/Alacant",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "31,27 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-E-07040",
+   "enunciado": "Variación del alquiler mediano 2019-2024, Palma",
+   "cifra": 24.5988,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2024",
+   "ambito": "Palma",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "24,6 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-E-29067",
+   "enunciado": "Variación del alquiler mediano 2019-2024, Málaga",
+   "cifra": 31.3556,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2024",
+   "ambito": "Málaga",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "31,36 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-E-41091",
+   "enunciado": "Variación del alquiler mediano 2019-2024, Sevilla",
+   "cifra": 21.381,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2024",
+   "ambito": "Sevilla",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "21,38 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-E-46250",
+   "enunciado": "Variación del alquiler mediano 2019-2024, València",
+   "cifra": 39.7714,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2024",
+   "ambito": "València",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "39,77 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V10-ATL-E-50297",
+   "enunciado": "Variación del alquiler mediano 2019-2024, Zaragoza",
+   "cifra": 21.3061,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2024",
+   "ambito": "Zaragoza",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI",
+   "ruta": "output/v10/atlas/hechos.json",
+   "version": "v10",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "21,31 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
   },
   {
    "id": "HIST-001",

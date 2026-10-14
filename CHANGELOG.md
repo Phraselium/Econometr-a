@@ -2,6 +2,24 @@
 
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
+
+## V10 (2026-10-14): difusión — base única, atlas descriptivo, figuras, web y monitor (sin modelos nuevos)
+
+- **Base de datos única** (`make base`):
+  - tabla larga en DuckDB y Parquet, con capa, fuente, edición, fecha, licencia y marcas `posterior_prereg` y `muestra_sellada_v6`;
+  - dimensiones territoriales con jerarquía y geometrías;
+  - capa pública solo redistribuible.
+- **Atlas descriptivo** (`make atlas`):
+  - quién soporta el coste de la vivienda: ECV y EPA con intervalos;
+  - entrar frente a quedarse: IPVA;
+  - València por sección y barrio, Comunitat Valenciana por municipio, provincias y ciudades comparables.
+  - Ids `V10-ATL-*` en cifras_clave: 28 cifras nuevas; ninguna cifra publicada cambia.
+- **Figuras** con estilo único y ficha (`make figuras`).
+- **Web estática** (`make web`; GitHub Pages) y **monitor** mensual: el monitor abre un pull request y no publica sin revisión.
+- **Manuscrito** en Quarto (las secciones de v9 están pendientes) y **Excel** del atlas.
+- **Orden del repositorio.** 9 documentos de proceso de V7-V7.2 pasan a historico/.
+- **Corrección de licencias** de la capa pública: la base intermedia de los commits bc0f83b y 4e0c4a8 incluía dos variables agregadas de Registradores (docs/v10/decisiones.md, D5).
+
 ## v8.1, bloque A (2026-10-13): coherencia de redacción y tablas de V8; V8 pasa a versión de referencia
 - **Sin análisis nuevo.** No se estima ningún modelo ni se abre ninguna muestra sellada. **Ninguna cifra publicada cambia**: las 716 filas de cifras_clave previas a V8 y las cifras de V8 (v8.0) son idénticas (src/v8/check_v8.py, `cifras_previas`). Por eso no hay entrada nueva en ERRATA.md. Solo se añaden cifras (ids nuevos, C4, leídos de output/v8/ en src/v8/f6_hechos.py) y se precisa la redacción.
 - **Lectura del multiverso por variables** (regla de §9 aplicada a cada variable): ids `V8-M7-var-…` (cumplen, total, y para cada combinación que cumple, % de mismo signo y % significativo tras BH). Se distingue de la lectura por familias. Se aclara que la regla de periodo de M0 en el alquiler es «no evaluable» (no hay medida alternativa trimestral), no incumplida (ids `V8-M0-evaluables`, `V8-M0-no-evaluable`, `V8-M0-no-evaluable-alquiler`).

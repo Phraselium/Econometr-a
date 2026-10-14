@@ -4,6 +4,13 @@
 
 **Repositorio:** https://github.com/Phraselium/vivienda-espana-evidencia (antes Phraselium/Econometr-a; GitHub redirige el nombre antiguo). **DOI:** pendiente (Zenodo).
 
+**Nuevo en V10 (difusión, sin modelos nuevos):**
+- una base de datos única: [diccionario](docs/v10/diccionario_base.md) y datos redistribuibles en `data/base/publica`;
+- un [atlas descriptivo](publicacion/atlas_descriptivo.md) de quién soporta el coste de la vivienda y dónde, con sus [tablas en Excel](publicacion/tablas_atlas.xlsx);
+- [figuras y mapas](figuras/README.md);
+- una [web pública](web/README.md) (prevista en https://phraselium.github.io/vivienda-espana-evidencia/) con panel, mapas, fichas territoriales, verificador y monitor de datos nuevos;
+- un [manuscrito en preparación](paper/README.md).
+
 **Empiece por [LEEME_PRIMERO.md](LEEME_PRIMERO.md)**, que propone itinerarios de lectura para ciudadanos, periodistas, revisores y técnicos.
 
 ## Qué es
@@ -40,6 +47,8 @@ Se evalúan afirmaciones e instrumentos, nunca partidos ni personas.
 | [metodologia/](metodologia/MANIFIESTO.md) | Anexo metodológico, guía del revisor, capas, historial de conclusiones, validación Monte Carlo, pre-registro V7, dosis y coste | `make publicacion` |
 | [reproducir/](reproducir/MANIFIESTO.md) | Instrucciones, entorno y versiones, tiempos, ensayo y protocolo de `make evaluate_v7` | `make publicacion` |
 | [historico/](historico/INDICE.md) | Documentos de versiones superadas e índice por versión | `git mv`, sin modificar |
+| data/base/ | Base única (V10): tabla larga, territorios, variables, geometrías; capa pública en data/base/publica | `make base` |
+| output/v10/, figuras/, web/, paper/ | Atlas, figuras con ficha, web estática y manuscrito (V10) | `make atlas`, `make figuras`, `make web` |
 | src/, tests/, output/, docs/, data/ | Código, pruebas, salidas de cada versión, documentación de trabajo y datos | `make all`, `make v7`, `make check` |
 
 El mapa detallado está en [docs/MAPA.md](docs/MAPA.md).
@@ -50,6 +59,10 @@ python3 -m pip install -r requirements.lock
 make all           # v1-v6.3 sin red (unas 2 h)
 make v7            # atlas regional y V7.1 (unos 50 min)
 make v8            # por qué ha subido (V8): paneles, modelos, atribución, tablas y entregables (unos 20 min)
+make base          # V10: base única (DuckDB y Parquet) y geometrías (unos 5 min)
+make atlas         # V10: atlas descriptivo (los microdatos se recalculan si están en disco)
+make figuras       # V10: figuras y mapas
+make web           # V10: web estática en web/_site
 make publicacion   # publicacion/, metodologia/ y reproducir/
 make check         # ruff, tests, controles de texto, cifras y capas
 ```

@@ -123,6 +123,19 @@ Mapa de carpetas y ficheros clave, con una línea por fichero. Los enlaces son r
 - [data/processed](../data/processed): Paneles construidos por make clean
 - [data/CHECKSUMS.sha256](../data/CHECKSUMS.sha256): Sumas de control de ficheros grandes
 
+## V10: base, atlas, figuras, web y paper
+
+- [data/base/publica](../data/base/publica): Capa pública de la base única (Parquet; redistribuible)
+- [docs/v10/diccionario_base.md](../docs/v10/diccionario_base.md): Diccionario de la base
+- [docs/v10/decisiones.md](../docs/v10/decisiones.md): Decisiones de V10
+- [output/v10/atlas](../output/v10/atlas): Tablas del atlas descriptivo
+- [publicacion/atlas_descriptivo.md](../publicacion/atlas_descriptivo.md): Atlas descriptivo (texto)
+- [publicacion/tablas_atlas.xlsx](../publicacion/tablas_atlas.xlsx): Tablas del atlas en Excel
+- [figuras/README.md](../figuras/README.md): Figuras con ficha
+- [web/README.md](../web/README.md): Web pública
+- [output/v10/monitor/monitor.csv](../output/v10/monitor/monitor.csv): Monitor de últimos datos
+- [paper/manuscrito.qmd](../paper/manuscrito.qmd): Manuscrito en Quarto
+
 ## historico/
 
 - [historico/INDICE.md](../historico/INDICE.md): Documentos de versiones superadas, por versión

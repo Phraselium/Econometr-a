@@ -36,8 +36,12 @@ jobs:
           python src/v9/datos_v9.py --solo-verificar || true
       - name: Geometrías de entrada (seccionado del INE, no versionado por tamaño)
         run: python src/v10/fetch_geo.py
-      - name: Reconstruir base, atlas, figuras y web
-        run: make base atlas figuras web
+      - name: Reconstruir base, atlas, cifras clave, publicación, consulta, figuras y web (orden de D9)
+        run: |
+          make base atlas
+          python src/v5/cifras_clave.py
+          make publicacion
+          make base consulta figuras web
       - name: make check
         id: check
         continue-on-error: true
@@ -65,6 +69,11 @@ jobs:
           commit-message: "Actualización mensual automática de series abiertas (monitor V10)"
           labels: datos, automatico
           add-paths: |
+            output/v5/cifras_clave.csv
+            output/v5/cifras_clave.md
+            publicacion/**
+            consulta/**
+            llms.txt
             data/raw/v9/**
             data/raw/v10/monitor/**
             data/base/publica/**

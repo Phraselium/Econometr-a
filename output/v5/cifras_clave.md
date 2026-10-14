@@ -478,6 +478,34 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 | T4-H6 | Terminadas por año necesarias para mantener constante el déficit 2026-2030 (hogares INE central + bajas T1 central) | 2.118e+05 | 1.639e+05–2.452e+05 | viviendas/año | 2026-2030 | España | B2; T1; T2; INE 54562; MIVAU | C4 | 2025 (ECP y MIVAU); proyecciones INE 54562 y 36726 de 2026-06-17 |
 | T4-H7 | Terminadas por año del escenario optimista (máximo plausible; media de provincias sumadas) | 1.464e+05 | 9.465e+04–1.464e+05 | viviendas/año | 2026-2030 | España | MIVAU | C4 | MIVAU hasta 2025 |
 | T4-H8 | Viviendas liberadas por envejecimiento, 2031-2035 frente a 2026-2030 (central, T2 repartido por defunciones de 75+) | 9.868e+05 | 8.697e+05–9.868e+05 | viviendas (5 años) | 2031-2035 (valor y max) / 2026-2030 (min) | España | T2; INE 36726; INE 67235 | C4 | 2025 (ECP y MIVAU); proyecciones INE 54562 y 36726 de 2026-06-17 |
+| V10-ATL-A1 | Sobrecarga del gasto en vivienda (>40 % de la renta), personas en alquiler de mercado | 26.8 | 24.4–29.19 | % | 2025 | España | INE ECV (microdatos), cálculo propio; contraste Eurostat ilc_lvho07c | C1 | ECV 2025 |
+| V10-ATL-A10 | Personas de 30 a 34 años que viven con al menos uno de sus padres, primer año | 27.14 | 26.54–27.75 | % | 2018 | España | INE EPA (microdatos) | C4 | 2018 |
+| V10-ATL-A11 | Personas de 30 a 34 años que viven con al menos uno de sus padres, último año completo | 31.68 | 30.84–32.52 | % | 2025 | España | INE EPA (microdatos) | C4 | 2025 |
+| V10-ATL-A2 | Sobrecarga del gasto en vivienda (>40 % de la renta), total de la población | 7.172 | 6.67–7.674 | % | 2025 | España | INE ECV (microdatos); contraste Eurostat ilc_lvho07a | C1 | ECV 2025 |
+| V10-ATL-A3 | Sobrecarga del gasto en vivienda (>40 %), alquiler de mercado, primer año de la serie | 38.07 | 34.15–41.99 | % | 2018 | España | INE ECV (microdatos); contraste Eurostat ilc_lvho07c | C1 | ECV 2018 |
+| V10-ATL-A4 | Sobrecarga del gasto en vivienda (>40 %), primer decil de renta equivalente | 43.85 | 40.27–47.42 | % | 2025 | España | INE ECV (microdatos) | C4 | ECV 2025 |
+| V10-ATL-A5 | Sobrecarga del gasto en vivienda (>40 %), décimo decil de renta equivalente | 0.0567 | -0.009–0.1224 | % | 2025 | España | INE ECV (microdatos) | C4 | ECV 2025 |
+| V10-ATL-A6 | Sobrecarga del gasto en vivienda (>40 %), nacionalidad de fuera de la UE | 24.05 | 20.64–27.46 | % | 2025 | España | INE ECV (microdatos) | C4 | ECV 2025 |
+| V10-ATL-A7 | Sobrecarga del gasto en vivienda (>40 %), nacionalidad española | 4.712 | 4.382–5.043 | % | 2025 | España | INE ECV (microdatos) | C4 | ECV 2025 |
+| V10-ATL-A8 | Esfuerzo mediano de alquiler (alquiler anual / renta del hogar), 18-29 años, alquiler de mercado | 21.14 | 19.81–23.16 | % | 2025 | España | INE ECV (microdatos); IC de Woodruff | C4 | ECV 2025 |
+| V10-ATL-A9 | Esfuerzo mediano de alquiler, 45-64 años, alquiler de mercado | 21.5 | 20.53–22.87 | % | 2025 | España | INE ECV (microdatos); IC de Woodruff | C4 | ECV 2025 |
+| V10-ATL-B1 | Brecha IPVA contratos nuevos menos existentes (índices 2015=100) | 16.4 |  | puntos de índice | 2024 | España | INE IPVA (59004) | C4 | 2024 |
+| V10-ATL-C1 | València: porcentaje de población de nacionalidad extranjera | 19.41 |  | % | 2025 | València (municipio 46250) | INE censo anual (suma de secciones) | C1 | 2025-01-01 |
+| V10-ATL-C2 | València: porcentaje de población de nacionalidad extranjera | 13.31 |  | % | 2021 | València (municipio 46250) | INE censo anual (suma de secciones) | C1 | 2021-01-01 |
+| V10-ATL-C3 | València: viviendas turísticas (INE, medición experimental) | 5393 |  | viviendas | 2026-05 | València (municipio 46250) | INE, viviendas turísticas | C4 | 2026-05 |
+| V10-ATL-C4-462500101 | Índice descriptivo de presión residencial, barrio La Seu | 1.449 |  | puntuación z media | 2019-2026 | València, barrio 462500101 | INE; MIVAU SERPAVI; Ajuntament de València | C4 | 2026-05 |
+| V10-ATL-C4-462500104 | Índice descriptivo de presión residencial, barrio El Pilar | 1.728 |  | puntuación z media | 2019-2026 | València, barrio 462500104 | INE; MIVAU SERPAVI; Ajuntament de València | C4 | 2026-05 |
+| V10-ATL-C4-462500105 | Índice descriptivo de presión residencial, barrio El Mercat | 2.246 |  | puntuación z media | 2019-2026 | València, barrio 462500105 | INE; MIVAU SERPAVI; Ajuntament de València | C4 | 2026-05 |
+| V10-ATL-C4-462501006 | Índice descriptivo de presión residencial, barrio La Punta | 1.588 |  | puntuación z media | 2019-2026 | València, barrio 462501006 | INE; MIVAU SERPAVI; Ajuntament de València | C4 | 2026-05 |
+| V10-ATL-C4-462501102 | Índice descriptivo de presión residencial, barrio Cabanyal-Canyamelar | 1.208 |  | puntuación z media | 2019-2026 | València, barrio 462501102 | INE; MIVAU SERPAVI; Ajuntament de València | C4 | 2026-05 |
+| V10-ATL-D1 | Alquiler anual de 80 m² sobre la renta neta por persona, rango provincial | 42.26 | 28.59–66.87 | % | alquiler 2024; renta 2023 | 52 provincias (valor: mediana; mín. y máx.: rango) | MIVAU SERPAVI; INE ADRH y censo anual | C4 | 2024 |
+| V10-ATL-D2 | Variación del alquiler mediano 2019-2024, municipios de la Comunitat Valenciana con 20.000 hab. o más | 31.93 | 19.1–48.52 | % | 2019-2024 | 68 municipios (valor: mediana; mín. y máx.: rango) | MIVAU SERPAVI; INE censo anual | C4 | 2024 |
+| V10-ATL-E-03014 | Variación del alquiler mediano 2019-2024, Alicante/Alacant | 31.27 |  | % | 2019-2024 | Alicante/Alacant | MIVAU SERPAVI | C4 | 2024 |
+| V10-ATL-E-07040 | Variación del alquiler mediano 2019-2024, Palma | 24.6 |  | % | 2019-2024 | Palma | MIVAU SERPAVI | C4 | 2024 |
+| V10-ATL-E-29067 | Variación del alquiler mediano 2019-2024, Málaga | 31.36 |  | % | 2019-2024 | Málaga | MIVAU SERPAVI | C4 | 2024 |
+| V10-ATL-E-41091 | Variación del alquiler mediano 2019-2024, Sevilla | 21.38 |  | % | 2019-2024 | Sevilla | MIVAU SERPAVI | C4 | 2024 |
+| V10-ATL-E-46250 | Variación del alquiler mediano 2019-2024, València | 39.77 |  | % | 2019-2024 | València | MIVAU SERPAVI | C4 | 2024 |
+| V10-ATL-E-50297 | Variación del alquiler mediano 2019-2024, Zaragoza | 21.31 |  | % | 2019-2024 | Zaragoza | MIVAU SERPAVI | C4 | 2024 |
 | V6-M4-N-REL | Variables 'relevante con seguridad' (criterios A y B pre-registrados), alquiler y compra | 0 |  | variables | entrenamiento 2015-2024 y sellado v6 | 3 mercados, 24 combinaciones variable-mercado | output/v6/M4/sintesis_variables.csv | C4 | 2026-10-11 |
 | V6-M4-PERS-MUN_PRECIO_ANUAL | RMSE espacial sellado de la persistencia, compra (precio), municipio (anual) | 6.326 |  | log-puntos x100 (aprox. %) | validacion sellada v6 (11 provincias) | 678 observaciones | output/v6/M4/mejor_modelo.csv | C4 | 2026-10-11 |
 | V6-M4-PERS-PROV_PRECIO_ANUAL | RMSE espacial sellado de la persistencia, compra (precio), provincia (anual) | 3.964 |  | log-puntos x100 (aprox. %) | validacion sellada v6 (11 provincias) | 95 observaciones | output/v6/M4/mejor_modelo.csv | C4 | 2026-10-11 |

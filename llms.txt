@@ -22,6 +22,9 @@ Generado por `make consulta`; no editar a mano. Empieza por la guía para asiste
 - [Cierre de V8](docs/v8/cierre_proyecto.md): qué responde, qué no pudo hacerse y qué falta
 - [Lo que sabemos](publicacion/lo_que_sabemos.md): déficit y necesidad de vivienda por capa
 - [Verificador V8](publicacion/verificador/verificador_v8.md): fichas para evaluar afirmaciones concretas
+- [Atlas descriptivo (V10)](publicacion/atlas_descriptivo.md): quién soporta el coste de la vivienda y dónde (ids V10-ATL en cifras_clave)
+- [Base de datos única (V10)](docs/v10/diccionario_base.md): diccionario; datos en data/base/publica
+- [Web pública (V10)](web/README.md): panel, mapas, fichas territoriales, verificador y monitor
 
 ## Metodología
 

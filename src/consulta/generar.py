@@ -553,6 +553,10 @@ MAPA: list[tuple[str, str]] = [
     ("Referencias bibliográficas y estado de verificación", "docs/literatura.md"),
     ("Pendientes del autor (DOI, etiquetas, revisión humana)", "docs/v8/tareas_autor.md"),
     ("Cualquier cifra concreta (id, valor, capa, fecha)", "output/v5/cifras_clave.csv"),
+    ("Quién soporta el coste y dónde (atlas)", "publicacion/atlas_descriptivo.md"),
+    ("La base de datos única", "docs/v10/diccionario_base.md"),
+    ("Figuras y mapas", "figuras/README.md"),
+    ("Web y monitor", "web/README.md"),
 ]
 
 
@@ -571,6 +575,7 @@ Estás ante una base de evidencia sobre la vivienda en España. Autor: Borja Rom
 
 - Versión de consulta: **{version['version']}** (sin estimaciones nuevas respecto a V8; solo redacción, tablas, capa de consulta y publicación). Metadatos en [version.json](version.json).
 - **V8** es la referencia de modelización: por qué ha subido la vivienda, factores, periodos y factor común (SVAR, factor común, instrumentos, multiverso, predicción).
+- **V10** (sin modelos nuevos): base única, atlas descriptivo (ids `V10-ATL-*`), figuras, web y monitor; los datos desde 2026T3 no se contrastan con predicciones.
 - **v7.1 y v7.2** son la referencia para el **déficit y la necesidad de vivienda**, las simulaciones de instrumentos (dosis y coste) y el atlas regional. v5 a v6.3 siguen vigentes en lo que no han sido superadas.
 - Repositorio: {version['repositorio']}. DOI: {version['doi']}. Fecha verificable del pre-registro: {version['fecha_verificable']} (también en [version.json](version.json)).
 - Una cifra **superada** no se cita nunca: las lista [output/v5/cifras_superadas.csv](../output/v5/cifras_superadas.csv) con su sustituta. El registro completo está en [hallazgos.md](hallazgos.md) y [hallazgos.json](hallazgos.json) (campo `estado`: vigente, superada o retirada).
@@ -702,6 +707,12 @@ INDICE: list[tuple[str, list[tuple[str, str]]]] = [
               ("src/v7_1/publicacion.py", "Generador de publicacion/, metodologia/ y reproducir/"), ("src/consulta/generar.py", "Generador de consulta/ y llms.txt"),
               ("src/v5/cifras_clave.py", "Generador de cifras_clave"), ("src/v3/check_texto.py", "Control de léxico, neutralidad y promoción de capa")]),
     ("data/", [("data/raw", "Datos brutos de solo lectura"), ("data/processed", "Paneles construidos por make clean"), ("data/CHECKSUMS.sha256", "Sumas de control de ficheros grandes")]),
+    ("V10: base, atlas, figuras, web y paper", [("data/base/publica", "Capa pública de la base única (Parquet; redistribuible)"),
+              ("docs/v10/diccionario_base.md", "Diccionario de la base"), ("docs/v10/decisiones.md", "Decisiones de V10"),
+              ("output/v10/atlas", "Tablas del atlas descriptivo"), ("publicacion/atlas_descriptivo.md", "Atlas descriptivo (texto)"),
+              ("publicacion/tablas_atlas.xlsx", "Tablas del atlas en Excel"), ("figuras/README.md", "Figuras con ficha"),
+              ("web/README.md", "Web pública"), ("output/v10/monitor/monitor.csv", "Monitor de últimos datos"),
+              ("paper/manuscrito.qmd", "Manuscrito en Quarto")]),
     ("historico/", [("historico/INDICE.md", "Documentos de versiones superadas, por versión")]),
 ]
 
@@ -746,7 +757,9 @@ def construir_version(cifras: dict[str, dict]) -> dict:
             "fecha": _git("log", "-1", "--format=%cs", "--", "output") or "desconocido", "doi": d.group(1) if d else "pendiente",
             "repositorio": REPOSITORIO,
             "fecha_verificable": m.group(1) if m else "desconocido", "pendientes": pend, "n_cifras_clave": len(cifras), "sha256_cifras_clave": sha,
-            "autor": "Borja Romero, economista (firma individual, independiente)"}
+            "autor": "Borja Romero, economista (firma individual, independiente)",
+            "difusion": "V10: base única, atlas descriptivo, figuras, web y monitor (sin modelos nuevos)",
+            "web_prevista": "https://phraselium.github.io/vivienda-espana-evidencia/"}
 
 
 def construir_llms() -> str:
@@ -776,6 +789,9 @@ Generado por `make consulta`; no editar a mano. Empieza por la guía para asiste
 - [Cierre de V8](docs/v8/cierre_proyecto.md): qué responde, qué no pudo hacerse y qué falta
 - [Lo que sabemos](publicacion/lo_que_sabemos.md): déficit y necesidad de vivienda por capa
 - [Verificador V8](publicacion/verificador/verificador_v8.md): fichas para evaluar afirmaciones concretas
+- [Atlas descriptivo (V10)](publicacion/atlas_descriptivo.md): quién soporta el coste de la vivienda y dónde (ids V10-ATL en cifras_clave)
+- [Base de datos única (V10)](docs/v10/diccionario_base.md): diccionario; datos en data/base/publica
+- [Web pública (V10)](web/README.md): panel, mapas, fichas territoriales, verificador y monitor
 
 ## Metodología
 

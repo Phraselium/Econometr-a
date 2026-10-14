@@ -4,7 +4,7 @@
 
 Un registro por hallazgo de las versiones vigentes (v5-V8, con v4 donde sigue en cifras_clave): cifras de `output/v5/cifras_clave.csv`, fichas del verificador, conclusiones del historial e hipótesis retiradas. Las superadas y retiradas están al final y **no se citan**. La versión legible por máquina es [hallazgos.json](hallazgos.json). Las capas se leen según [metodologia/capas.md](../metodologia/capas.md): causalidad solo en C3 y C3s.
 
-Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v1: 8; v2: 7; v3: 3. Total vigentes: 1160.
+Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v10: 28; v1: 8; v2: 7; v3: 3. Total vigentes: 1188.
 
 ## Versión v4
 
@@ -1215,6 +1215,39 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `HIST-017` | Oferta (iniciadas) · Elasticidad de la oferta | 1,44 (0,21); Δ4 1,39 (0,63), no rechaza 0,45 | C4 | 2008-2026 | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
 | `HIST-022` | Tipos hipotecarios · Precio (ECM) | tipo real ≈0 en el largo plazo real | C4 | 2008-2026 | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
 | `HIST-036` | Predicción · RMSE fuera de muestra | no mejora al AR(4) (DM p 0,509) | C4 | 2008-2026 | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+
+## Versión v10
+
+| id | enunciado | cifra | capa | periodo | origen |
+|---|---|---|---|---|---|
+| `V10-ATL-A1` | Sobrecarga del gasto en vivienda (>40 % de la renta), personas en alquiler de mercado | 26,8 % (24,4 a 29,19) | C1 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A10` | Personas de 30 a 34 años que viven con al menos uno de sus padres, primer año | 27,14 % (26,54 a 27,75) | C4 | 2018 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A11` | Personas de 30 a 34 años que viven con al menos uno de sus padres, último año completo | 31,68 % (30,84 a 32,52) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A2` | Sobrecarga del gasto en vivienda (>40 % de la renta), total de la población | 7,17 % (6,67 a 7,67) | C1 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A3` | Sobrecarga del gasto en vivienda (>40 %), alquiler de mercado, primer año de la serie | 38,07 % (34,15 a 41,99) | C1 | 2018 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A4` | Sobrecarga del gasto en vivienda (>40 %), primer decil de renta equivalente | 43,85 % (40,27 a 47,42) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A5` | Sobrecarga del gasto en vivienda (>40 %), décimo decil de renta equivalente | 0,057 % (-0,009 a 0,122) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A6` | Sobrecarga del gasto en vivienda (>40 %), nacionalidad de fuera de la UE | 24,05 % (20,64 a 27,46) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A7` | Sobrecarga del gasto en vivienda (>40 %), nacionalidad española | 4,71 % (4,38 a 5,04) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A8` | Esfuerzo mediano de alquiler (alquiler anual / renta del hogar), 18-29 años, alquiler de mercado | 21,14 % (19,81 a 23,16) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A9` | Esfuerzo mediano de alquiler, 45-64 años, alquiler de mercado | 21,5 % (20,53 a 22,87) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-B1` | Brecha IPVA contratos nuevos menos existentes (índices 2015=100) | 16,4 puntos de índice | C4 | 2024 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-C1` | València: porcentaje de población de nacionalidad extranjera | 19,41 % | C1 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-C2` | València: porcentaje de población de nacionalidad extranjera | 13,31 % | C1 | 2021 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-C3` | València: viviendas turísticas (INE, medición experimental) | 5.393 viviendas | C4 | 2026-05 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-C4-462500101` | Índice descriptivo de presión residencial, barrio La Seu | 1,45 puntuación z media | C4 | 2019-2026 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-C4-462500104` | Índice descriptivo de presión residencial, barrio El Pilar | 1,73 puntuación z media | C4 | 2019-2026 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-C4-462500105` | Índice descriptivo de presión residencial, barrio El Mercat | 2,25 puntuación z media | C4 | 2019-2026 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-C4-462501006` | Índice descriptivo de presión residencial, barrio La Punta | 1,59 puntuación z media | C4 | 2019-2026 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-C4-462501102` | Índice descriptivo de presión residencial, barrio Cabanyal-Canyamelar | 1,21 puntuación z media | C4 | 2019-2026 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-D1` | Alquiler anual de 80 m² sobre la renta neta por persona, rango provincial | 42,26 % (28,59 a 66,87) | C4 | alquiler 2024; renta 2023 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-D2` | Variación del alquiler mediano 2019-2024, municipios de la Comunitat Valenciana con 20.000 hab. o más | 31,93 % (19,1 a 48,52) | C4 | 2019-2024 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-E-03014` | Variación del alquiler mediano 2019-2024, Alicante/Alacant | 31,27 % | C4 | 2019-2024 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-E-07040` | Variación del alquiler mediano 2019-2024, Palma | 24,6 % | C4 | 2019-2024 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-E-29067` | Variación del alquiler mediano 2019-2024, Málaga | 31,36 % | C4 | 2019-2024 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-E-41091` | Variación del alquiler mediano 2019-2024, Sevilla | 21,38 % | C4 | 2019-2024 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-E-46250` | Variación del alquiler mediano 2019-2024, València | 39,77 % | C4 | 2019-2024 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-E-50297` | Variación del alquiler mediano 2019-2024, Zaragoza | 21,31 % | C4 | 2019-2024 | [hechos.json](../output/v10/atlas/hechos.json) |
 
 ## Versión v2
 

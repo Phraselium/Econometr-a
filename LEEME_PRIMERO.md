@@ -10,6 +10,12 @@ El repositorio tiene cuatro puertas de entrada:
 
 Toda cifra difundible sale de una única tabla, [publicacion/cifras_clave.csv](publicacion/cifras_clave.csv). Cada resultado lleva una capa de evidencia, de C1 (hecho con dos fuentes) a C4 (exploratorio); las definiciones están en [metodologia/capas.md](metodologia/capas.md). Ningún resultado es causal. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas.
 
+**V10 (difusión).**
+- [Atlas descriptivo](publicacion/atlas_descriptivo.md): quién soporta el coste de la vivienda (por renta, edad, nacionalidad y tenencia) y dónde (provincias, Comunitat Valenciana, barrios y secciones de València), sin lecturas causales.
+- Base de datos única ([diccionario](docs/v10/diccionario_base.md)).
+- [Figuras](figuras/README.md).
+- [Web pública](web/README.md) con panel, mapas y fichas territoriales.
+
 ## Itinerarios de lectura
 
 ### Ciudadano (15 minutos)
@@ -43,6 +49,7 @@ Toda cifra difundible sale de una única tabla, [publicacion/cifras_clave.csv](p
 python3 -m pip install -r requirements.lock
 make all           # v1-v6.3 sin red (unas 2 h)
 make v7            # atlas regional V7 y consolidación V7.1 (unos 50 min)
+make base atlas figuras web   # V10: base única, atlas, figuras y web
 make publicacion   # regenera publicacion/, metodologia/ y reproducir/
 make check         # ruff, tests y controles de texto, cifras y capas
 ```

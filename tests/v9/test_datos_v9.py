@@ -55,7 +55,8 @@ def test_versionados_existen():
     vers = subprocess.run(["git", "ls-files", "data/raw/v9"], cwd=RAIZ, capture_output=True, text=True).stdout.split()
     registrados = {r["fichero"] for r in _manifiesto()}
     sueltos = [v for v in vers if not v.endswith(("_manifest.csv", ".md", ".geojson")) and v not in registrados
-               and "/correspondencia" not in v and "/original" not in v]
+               and "/correspondencia" not in v and "/original" not in v
+               and "/boe_xml/" not in v]   # XML del BOE: caché de la que sale eventos_regulacion_v9.csv (registrado)
     assert not sueltos, sueltos
 
 

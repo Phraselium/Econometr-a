@@ -1,0 +1,572 @@
+"""V10-B1 · `make base`: base de datos única del proyecto (sin red; SEED no aplica: no hay nada aleatorio).
+
+Entradas (solo lectura): data/processed (paneles v1, v7 y v8; València), data/raw/v9 (descargas V9 con manifiesto),
+data/raw/v10/geo (geometrías), publicacion/cifras_clave.csv y los diccionarios de variables de docs/.
+
+Salidas:
+  data/base/hechos.parquet              tabla larga completa (todas las filas; incluye las no redistribuibles)
+  data/base/publica/hechos.parquet      solo filas redistribuibles (la que usa la web)
+  data/base/territorios.parquet         dimensión territorial con jerarquía (código INE como clave)
+  data/base/variables.parquet           dimensión de variables (definición, unidad, capa, fuente, licencia)
+  data/base/cifras_clave.parquet        copia tipada de publicacion/cifras_clave.csv (test de identidad)
+  data/base/regulacion_zonas.parquet    zonas tensionadas (v9) con fechas y alcance
+  data/base/vivienda.duckdb             todo lo anterior como tablas DuckDB (no versionado: se regenera)
+  data/base/geo/*.parquet y data/base/geo/web/*.geojson   (src/v10/geo.py)
+  docs/v10/diccionario_base.md          diccionario único generado
+
+Reglas:
+- clave única: (territorio_codigo, nivel, periodo, frecuencia, variable, desagregacion);
+- si la misma clave aparece en varios paneles, se queda la versión más reciente (v8 > v7 > v1) y se cuentan las
+  discrepancias (docs/v10/diccionario_base.md);
+- `posterior_prereg` = periodo que empieza el 2026-07-01 o después (evaluate_v7/evaluate_v8): esas filas se marcan y
+  no entran en ningún cálculo del atlas;
+- `muestra_sellada_v6` marca las provincias del sellado transversal de v6 (informativo; data/sealed no se lee);
+- solo descriptivo: no se estima nada.
+"""
+from __future__ import annotations
+
+import csv
+import re
+import sys
+import unicodedata
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+RAIZ = Path(__file__).resolve().parents[2]
+PROC = RAIZ / "data" / "processed"
+RAW = RAIZ / "data" / "raw"
+RAW9 = RAW / "v9"
+BASE = RAIZ / "data" / "base"
+PUB = BASE / "publica"
+DOCS = RAIZ / "docs" / "v10"
+
+COLS = ["territorio_codigo", "nivel", "periodo", "frecuencia", "variable", "desagregacion", "valor", "unidad", "fuente",
+        "edicion", "fecha_dato", "capa", "licencia", "redistribuible", "metodo_dato", "origen", "posterior_prereg",
+        "muestra_sellada_v6"]
+CLAVE = ["territorio_codigo", "nivel", "periodo", "frecuencia", "variable", "desagregacion"]
+
+CCAA = {"01": "Andalucía", "02": "Aragón", "03": "Asturias, Principado de", "04": "Balears, Illes", "05": "Canarias",
+        "06": "Cantabria", "07": "Castilla y León", "08": "Castilla-La Mancha", "09": "Cataluña",
+        "10": "Comunitat Valenciana", "11": "Extremadura", "12": "Galicia", "13": "Madrid, Comunidad de",
+        "14": "Murcia, Región de", "15": "Navarra, Comunidad Foral de", "16": "País Vasco", "17": "Rioja, La",
+        "18": "Ceuta", "19": "Melilla"}
+
+# Columnas que no son variables de nivel propias del territorio del panel (comunes nacionales, dummies de modelo,
+# exposiciones fijas, banderas de sellado)
+EXCLUIR_PREF = ("ln_", "d_ln_", "d4_ln_", "d_", "nac_", "jk_", "hpi_ea", "bis_", "quiebre_", "exp_", "prov_sellada",
+                "anio_embargo", "P_")
+EXCLUIR = {"covid", "epa2021", "etcl2008", "P1", "P2", "P3", "P4", "P5", "periodo_h8", "ley12_2023_nac",
+           "tope_actualiz_rentas_nac", "registro_unico_arrend_nac", "fianzas_parcial", "cod_ccaa", "codigo_ine_ccaa",
+           "ccaa", "cod_prov", "anio", "trimestre", "fecha", "deflactor_pib", "ipc_general", "hicp_yoy", "q1", "q2", "q3", "q4"}
+# Fuentes sin licencia abierta clara (docs/v8_1/inventario_licencias.csv, datos_retirados.md, v9 manifiestos)
+NO_REDISTRIBUIBLE = re.compile(r"^(registr_|notariado_|jk_|incasol_|airdna|idealista|fotocasa|cgn_)", re.I)
+
+
+# ----------------------------------------------------------------------------------------------- utilidades
+def norm(s: str) -> str:
+    s = unicodedata.normalize("NFKD", str(s)).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "_", s).strip("_")
+
+
+def periodo_y_frecuencia(p: str) -> tuple[str, str]:
+    p = str(p).strip()
+    if m := re.fullmatch(r"(\d{4})[QT]([1-4])", p):
+        return f"{m.group(1)}T{m.group(2)}", "T"
+    if m := re.fullmatch(r"(\d{4})-Q([1-4])", p):
+        return f"{m.group(1)}T{m.group(2)}", "T"
+    if re.fullmatch(r"\d{4}", p):
+        return p, "A"
+    if m := re.fullmatch(r"(\d{4})-?M?(\d{2})", p):
+        return f"{m.group(1)}-{m.group(2)}", "M"
+    if m := re.fullmatch(r"(\d{4})S([12])", p):
+        return f"{m.group(1)}S{m.group(2)}", "S"
+    if m := re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", p):
+        return p, "D"
+    return p, "?"
+
+
+def _inicio_fin(periodo: str, frec: str) -> tuple[str, str]:
+    t = None
+    if frec == "A":
+        t = pd.Period(periodo, freq="Y")
+    elif frec == "T":
+        t = pd.Period(periodo.replace("T", "Q"), freq="Q")
+    elif frec == "M":
+        t = pd.Period(periodo, freq="M")
+    elif frec == "S":
+        a, h = periodo.split("S")
+        ini = pd.Timestamp(f"{a}-{'01' if h == '1' else '07'}-01")
+        return ini.strftime("%Y-%m-%d"), (ini + pd.offsets.MonthEnd(6)).strftime("%Y-%m-%d")
+    elif frec == "D":
+        return periodo, periodo
+    if t is None:
+        return "", ""
+    return t.start_time.strftime("%Y-%m-%d"), t.end_time.strftime("%Y-%m-%d")
+
+
+# ----------------------------------------------------------------------------------------------- diccionarios
+def leer_tablas_md(ruta: Path) -> list[dict]:
+    filas, cab = [], None
+    for linea in ruta.read_text(encoding="utf-8").splitlines():
+        if not linea.startswith("|"):
+            cab = None
+            continue
+        celdas = [c.strip() for c in linea.strip().strip("|").split("|")]
+        if cab is None:
+            cab = [norm(c) for c in celdas]
+            continue
+        if set("".join(celdas)) <= set("-: "):
+            continue
+        if len(celdas) == len(cab):
+            filas.append(dict(zip(cab, celdas)))
+    return filas
+
+
+def metadatos_variables() -> dict[str, dict]:
+    """Definición, unidad, fuente y capa por variable desde los diccionarios del proyecto (v8 > v7 > v6 > v1)."""
+    meta: dict[str, dict] = {}
+    for rel in ("docs/diccionario_variables.md", "docs/v6/diccionario.md", "docs/v7/diccionario.md", "docs/v8/diccionario.md"):
+        for f in leer_tablas_md(RAIZ / rel):
+            var = f.get("variable", "").strip("`* ")
+            if not var or var.startswith("-") or " " in var:
+                continue
+            capa_txt = f.get("capa", "")
+            capa = re.search(r"C[1-4]s?", capa_txt).group(0) if re.search(r"C[1-4]s?", capa_txt) else ""
+            nuevo = {"definicion": f.get("definicion") or f.get("definicion_y_transformacion") or "",
+                     "unidad": f.get("unidad", ""),
+                     "fuente": f.get("fuente") or f.get("fuente_data_raw") or f.get("fuente_fichero_y_serie") or "",
+                     "capa": capa, "dic": rel}
+            previo = meta.get(var, {})
+            meta[var] = {k: (nuevo[k] if nuevo[k] and nuevo[k] != "—" else previo.get(k, "")) for k in nuevo}
+    return meta
+
+
+def estado_licencias() -> dict[str, str]:
+    inv = pd.read_csv(RAIZ / "docs/v8_1/inventario_licencias.csv", dtype=str)
+    return {Path(f).name.lower(): e for f, e in zip(inv.fichero, inv.estado)}
+
+
+# ----------------------------------------------------------------------------------------------- territorios
+def territorios() -> pd.DataFrame:
+    m = pd.read_excel(RAW / "ine_diccionario_municipios_2026.xlsx", dtype=str, header=1)
+    filas = [{"territorio_codigo": "00", "nivel": "nacional", "nombre": "España", "padre_codigo": "", "padre_nivel": "",
+              "cod_ccaa": "", "cod_provincia": "", "fuente": "INE"}]
+    filas += [{"territorio_codigo": c, "nivel": "ccaa", "nombre": n, "padre_codigo": "00", "padre_nivel": "nacional",
+               "cod_ccaa": c, "cod_provincia": "", "fuente": "INE (códigos de CCAA)"} for c, n in CCAA.items()]
+    prov_ccaa = m.drop_duplicates("CPRO").set_index("CPRO").CODAUTO
+    nombres_prov = provincias_nombres()
+    filas += [{"territorio_codigo": p, "nivel": "provincia", "nombre": nombres_prov.get(p, p), "padre_codigo": c,
+               "padre_nivel": "ccaa", "cod_ccaa": c, "cod_provincia": p, "fuente": "INE"} for p, c in prov_ccaa.items()]
+    filas += [{"territorio_codigo": r.CPRO + r.CMUN, "nivel": "municipio", "nombre": r.NOMBRE, "padre_codigo": r.CPRO,
+               "padre_nivel": "provincia", "cod_ccaa": r.CODAUTO, "cod_provincia": r.CPRO,
+               "fuente": "INE, relación de municipios 2026"} for r in m.itertuples()]
+    t = pd.DataFrame(filas)
+    geo = BASE / "geo"
+    if (geo / "secciones.parquet").exists():
+        import geopandas as gpd
+        s = gpd.read_parquet(geo / "secciones.parquet").drop(columns="geometry")
+        dist = s.drop_duplicates("cod_distrito")
+        extra = [pd.DataFrame({"territorio_codigo": dist.cod_distrito, "nivel": "distrito",
+                               "nombre": dist.cod_municipio.map(t[t.nivel == "municipio"].set_index("territorio_codigo").nombre) + " distrito " + dist.cod_distrito.str[-2:],
+                               "padre_codigo": dist.cod_municipio, "padre_nivel": "municipio", "cod_ccaa": dist.cod_ccaa,
+                               "cod_provincia": dist.cod_provincia, "fuente": "INE, seccionado 2025"}),
+                 pd.DataFrame({"territorio_codigo": s.cod_seccion, "nivel": "seccion", "nombre": "sección " + s.cod_seccion,
+                               "padre_codigo": s.cod_distrito, "padre_nivel": "distrito", "cod_ccaa": s.cod_ccaa,
+                               "cod_provincia": s.cod_provincia, "fuente": "INE, seccionado 2025"})]
+        if (geo / "barrios_valencia.parquet").exists():
+            b = gpd.read_parquet(geo / "barrios_valencia.parquet").drop(columns="geometry")
+            extra.append(pd.DataFrame({"territorio_codigo": b.cod_barrio, "nivel": "barrio", "nombre": b.nombre,
+                                       "padre_codigo": b.cod_distrito, "padre_nivel": "distrito", "cod_ccaa": "10",
+                                       "cod_provincia": "46", "fuente": "Ajuntament de València (CC BY 4.0)"}))
+        t = pd.concat([t, *extra], ignore_index=True)
+    return t.drop_duplicates(["territorio_codigo", "nivel"]).reset_index(drop=True)
+
+
+def provincias_nombres() -> dict[str, str]:
+    d = pd.read_csv(RAW9 / "ine_ipva/ipva_provincia_antiguedad.csv", dtype=str)
+    lab = d["Provincias"].dropna().unique()
+    out = {x[:2]: x[3:] for x in lab if re.match(r"^\d{2} ", x)}
+    out.setdefault("01", "Araba/Álava")
+    out.setdefault("20", "Gipuzkoa")
+    out.setdefault("31", "Navarra")
+    out.setdefault("48", "Bizkaia")
+    return out
+
+
+# ----------------------------------------------------------------------------------------------- cargadores
+def ancho_a_largo(ruta: Path, terr: str | None, nivel: str, per_col: str, origen: str) -> pd.DataFrame:
+    d = pd.read_csv(ruta, dtype={terr: str} if terr else None, low_memory=False)
+    vals = [c for c in d.columns if c not in EXCLUIR and not c.startswith(EXCLUIR_PREF)
+            and not c.endswith(("_metodo", "_interp")) and pd.api.types.is_numeric_dtype(d[c])
+            and not pd.api.types.is_bool_dtype(d[c])]
+    codigo = d[terr].astype(str).str.zfill(2 if nivel in ("ccaa", "provincia") else 5) if terr else pd.Series("00", index=d.index)
+    partes = []
+    for v in vals:
+        x = pd.DataFrame({"territorio_codigo": codigo, "periodo_raw": d[per_col].astype(str), "variable": v,
+                          "valor": d[v]})
+        if f"{v}_metodo" in d:
+            x["metodo_dato"] = d[f"{v}_metodo"].astype("string")
+        elif f"{v}_interp" in d:
+            x["metodo_dato"] = d[f"{v}_interp"].map({True: "interpolado", False: "observado"}).astype("string")
+        else:
+            x["metodo_dato"] = pd.NA
+        partes.append(x.dropna(subset=["valor"]))
+    out = pd.concat(partes, ignore_index=True)
+    out["nivel"], out["origen"], out["desagregacion"] = nivel, origen, ""
+    return out
+
+
+def procesados() -> pd.DataFrame:
+    p = PROC
+    fuentes = [  # (fichero, columna de territorio, nivel, columna de periodo, prioridad)
+        ("nacional_q.csv", None, "nacional", "trimestre", 1), ("nacional_a.csv", None, "nacional", "anio", 1),
+        ("panel_ccaa_q.csv", "codigo_ine_ccaa", "ccaa", "trimestre", 1), ("panel_ccaa_a.csv", "codigo_ine_ccaa", "ccaa", "anio", 1),
+        ("v7/panel_ccaa_q_v7.csv", "codigo_ine_ccaa", "ccaa", "trimestre", 2),
+        ("v7/panel_prov_q_v7.csv", "cod_prov", "provincia", "trimestre", 2),
+        ("v7/panel_prov_a_v7.csv", "cod_prov", "provincia", "anio", 2),
+        ("v8/nacional_q_v8.csv", None, "nacional", "trimestre", 3),
+        ("v8/panel_ccaa_q_v8.csv", "codigo_ine_ccaa", "ccaa", "trimestre", 3),
+        ("v8/cv_prov_q_v8.csv", "cod_prov", "provincia", "trimestre", 3),
+        ("v8/cv_prov_a_v8.csv", "cod_prov", "provincia", "anio", 3)]
+    partes = []
+    for f, terr, nivel, per, prio in fuentes:
+        x = ancho_a_largo(p / f, terr, nivel, per, f"data/processed/{f}")
+        x["prioridad"] = prio
+        partes.append(x)
+    # València (formato largo propio)
+    v = pd.read_csv(p / "valencia.csv", dtype=str)
+    mapa = {"España": ("00", "nacional"), "Comunitat Valenciana": ("10", "ccaa"), "Provincia de València": ("46", "provincia"),
+            "València (municipio)": ("46250", "municipio")}
+    cod = v.territorio.map(lambda t: mapa.get(t, (t.split()[-1], "distrito") if "distrito" in t else (None, None)))
+    v["territorio_codigo"], v["nivel"] = cod.str[0], cod.str[1]
+    v = v.dropna(subset=["territorio_codigo"])
+    partes.append(pd.DataFrame({"territorio_codigo": v.territorio_codigo, "periodo_raw": v.periodo, "variable": v.variable,
+                                "valor": pd.to_numeric(v.valor, errors="coerce"), "metodo_dato": v.metodo,
+                                "nivel": v.nivel, "origen": "data/processed/valencia.csv", "desagregacion": "",
+                                "prioridad": 1}).dropna(subset=["valor"]))
+    w = pd.read_csv(p / "v8/valencia_ciudad_v8.csv", dtype=str)
+    partes.append(pd.DataFrame({"territorio_codigo": w.codigo_ine, "periodo_raw": w.periodo, "variable": w.variable,
+                                "valor": pd.to_numeric(w.valor, errors="coerce"), "metodo_dato": w.metodo,
+                                "nivel": w.nivel.replace({"municipio": "municipio"}), "origen": "data/processed/v8/valencia_ciudad_v8.csv",
+                                "desagregacion": "", "prioridad": 3}).dropna(subset=["valor"]))
+    return pd.concat(partes, ignore_index=True)
+
+
+def v9() -> pd.DataFrame:
+    partes = []
+
+    def add(df, origen, prio=4):
+        df = df.copy()
+        df["origen"], df["prioridad"] = origen, prio
+        for c in ("metodo_dato", "desagregacion"):
+            if c not in df:
+                df[c] = "" if c == "desagregacion" else pd.NA
+        partes.append(df)
+
+    # Censo anual por sección y país de nacionalidad
+    c = pd.read_csv(RAW9 / "ine_censo_anual/censo_seccion_pais.csv.gz", dtype=str)
+    cod = np.where(c.nivel == "seccion", c.cod_seccion, np.where(c.nivel == "municipio", c.cod_municipio, c.cod_provincia))
+    add(pd.DataFrame({"territorio_codigo": cod, "nivel": c.nivel, "periodo_raw": c.edicion, "variable": "pob_censo_anual",
+                      "desagregacion": "nacionalidad=" + c.pais_nacionalidad, "valor": pd.to_numeric(c.poblacion),
+                      "metodo_dato": "observado"}), "data/raw/v9/ine_censo_anual/censo_seccion_pais.csv.gz")
+    # IPVA por antigüedad del contrato (CCAA y provincia) y por distritos de capitales
+    for f, col, nivel in (("ipva_ccaa_antiguedad", "Comunidades y Ciudades Autónomas", "ccaa"),
+                          ("ipva_provincia_antiguedad", "Provincias", "provincia")):
+        d = pd.read_csv(RAW9 / f"ine_ipva/{f}.csv", dtype=str)
+        terr = d[col].fillna("00 Total").str.split(" ").str[0]
+        niv = np.where(d[col].isna(), "nacional", nivel)
+        var = np.where(d["Tipo de dato"] == "Índice", "ipva_indice", "ipva_var_anual")
+        add(pd.DataFrame({"territorio_codigo": terr, "nivel": niv, "periodo_raw": d.periodo, "variable": var,
+                          "desagregacion": "contrato=" + d["Antigüedad del contrato de arrendamiento"],
+                          "valor": pd.to_numeric(d.valor, errors="coerce"), "metodo_dato": "observado"}).dropna(subset=["valor"]),
+            f"data/raw/v9/ine_ipva/{f}.csv")
+    d = pd.read_csv(RAW9 / "ine_ipva/ipva_distrito_capitales.csv", dtype=str).dropna(subset=["Distritos"])
+    add(pd.DataFrame({"territorio_codigo": d.Distritos.str.split(" ").str[0], "nivel": "distrito", "periodo_raw": d.periodo,
+                      "variable": np.where(d["Tipo de dato"] == "Índice", "ipva_indice", "ipva_var_anual"),
+                      "desagregacion": "contrato=Total", "valor": pd.to_numeric(d.valor, errors="coerce"),
+                      "metodo_dato": "observado"}).dropna(subset=["valor"]), "data/raw/v9/ine_ipva/ipva_distrito_capitales.csv")
+    # Registro de viviendas turísticas de la GVA (cortes = C1; mensual reconstruido = C4)
+    g = pd.read_csv(RAW9 / "gva_vut/gva_vut_panel_municipio.csv", dtype=str)
+    g = g[g.ine5 != "03000"]
+    add(pd.DataFrame({"territorio_codigo": g.ine5, "nivel": "municipio",
+                      "periodo_raw": np.where(g.tipo == "corte", g.fecha, g.fecha),
+                      "variable": np.where(g.tipo == "corte", "vut_registro_gva", "vut_registro_gva_reconstruido"),
+                      "valor": pd.to_numeric(g.stock), "metodo_dato": np.where(g.tipo == "corte", "observado", "reconstruido")}),
+        "data/raw/v9/gva_vut/gva_vut_panel_municipio.csv")
+    # EMAL Euskadi: filas municipales trimestrales
+    e = pd.read_csv(RAW9 / "emal/emal_largo.csv", dtype=str)
+    e = e[e.codigo_ine.notna() & e.periodo.str.fullmatch(r"\d{4}T[1-4]")]
+    add(pd.DataFrame({"territorio_codigo": e.codigo_ine, "nivel": "municipio", "periodo_raw": e.periodo,
+                      "variable": "emal_" + e.variable,
+                      "desagregacion": "hoja=" + e.hoja + "|grupo=" + e.grupo.fillna("") + "|contrato=" + e.tipo_contrato.fillna(""),
+                      "valor": pd.to_numeric(e.valor, errors="coerce"), "metodo_dato": "observado"}).dropna(subset=["valor"]),
+        "data/raw/v9/emal/emal_largo.csv")
+    # Inside Airbnb por sección (C4, no oficial)
+    a = pd.read_csv(RAW9 / "insideairbnb/insideairbnb_seccion.csv.gz", dtype=str)
+    num = [x for x in a.columns if x not in ("ciudad", "edicion", "cod_seccion") and pd.to_numeric(a[x], errors="coerce").notna().all()]
+    for x in num:
+        add(pd.DataFrame({"territorio_codigo": a.cod_seccion, "nivel": "seccion", "periodo_raw": a.edicion.str[:7],
+                          "variable": "iab_" + x, "valor": pd.to_numeric(a[x]), "metodo_dato": "agregado (join espacial)"}),
+            "data/raw/v9/insideairbnb/insideairbnb_seccion.csv.gz")
+    # BCE: tipos y volúmenes por país (nivel país, código ISO-2)
+    b = pd.read_csv(RAW9 / "bce_hipotecas/bce_mir_vivienda_zona_euro.csv.gz", dtype=str)
+    add(pd.DataFrame({"territorio_codigo": b.pais, "nivel": "pais", "periodo_raw": b.periodo,
+                      "variable": np.where(b.fijacion_codigo == "A_volumen", "bce_hip_volumen_nuevas", "bce_hip_tipo_nuevas"),
+                      "desagregacion": np.where(b.fijacion_codigo == "A_volumen", "", "fijacion=" + b.fijacion_codigo),
+                      "valor": pd.to_numeric(b.valor, errors="coerce"), "metodo_dato": "observado"}).dropna(subset=["valor"]),
+        "data/raw/v9/bce_hipotecas/bce_mir_vivienda_zona_euro.csv.gz")
+    # Eurostat: noches en alojamientos reservados por plataformas (NUTS 3, anual)
+    u = pd.read_csv(RAW9 / "eurostat_plataformas/tour_ce_oan3.csv.gz", dtype=str)
+    u = u[u.geo.str.startswith("ES")]
+    add(pd.DataFrame({"territorio_codigo": u.geo, "nivel": "nuts3", "periodo_raw": u.periodo,
+                      "variable": "eurostat_plataformas_noches", "desagregacion": "indicador=" + u.indicador,
+                      "valor": pd.to_numeric(u.valor, errors="coerce"), "metodo_dato": "observado"}).dropna(subset=["valor"]),
+        "data/raw/v9/eurostat_plataformas/tour_ce_oan3.csv.gz")
+    # Incasòl (no redistribuible; solo si está en disco)
+    inc = RAW9 / "incasol/incasol_qww9-bvhh_actual.csv.gz"
+    if inc.exists():
+        i = pd.read_csv(inc, dtype=str)
+        i = i[i.ambit_territorial.str.lower().str.startswith("municipi")]
+        i["periodo_iso"] = i.periodo_iso.str.replace("_gener-desembre", "", regex=False)
+        i = i[i.periodo_iso.str.fullmatch(r"\d{4}(T[1-4])?")]   # se descartan los acumulados parciales del año
+        for var, col in (("incasol_contratos", "habitatges"), ("incasol_renta_media", "renda")):
+            add(pd.DataFrame({"territorio_codigo": i.codi_territorial.str.zfill(5), "nivel": "municipio",
+                              "periodo_raw": i.periodo_iso, "variable": var, "desagregacion": "tramo=" + i.tram_preus.fillna("Total"),
+                              "valor": pd.to_numeric(i[col].str.replace(",", "."), errors="coerce"), "metodo_dato": "observado"}
+                             ).dropna(subset=["valor"]), "data/raw/v9/incasol/incasol_qww9-bvhh_actual.csv.gz")
+    out = pd.concat(partes, ignore_index=True)
+    return out
+
+
+def zonas_trimestrales() -> tuple[pd.DataFrame, pd.DataFrame]:
+    z = pd.read_csv(RAW9 / "regulacion/zonas_tensionadas_v9.csv", dtype=str)
+    filas = []
+    for t in pd.period_range("2024Q1", "2026Q3", freq="Q"):
+        fin = t.end_time.strftime("%Y-%m-%d")
+        vig = z[(z.fecha_efecto <= fin) & (z.fecha_fin_prevista > fin)]
+        for cod in sorted(set(vig.cod_ine_municipio)):
+            filas.append({"territorio_codigo": cod, "nivel": "municipio", "periodo_raw": f"{t.year}T{t.quarter}",
+                          "variable": "zt_vigente", "valor": 1.0, "metodo_dato": "evento (resolución BOE)",
+                          "desagregacion": "", "origen": "data/raw/v9/regulacion/zonas_tensionadas_v9.csv", "prioridad": 4})
+    return pd.DataFrame(filas), z
+
+
+# ----------------------------------------------------------------------------------------------- metadatos de filas
+META_V9 = {  # variable -> (unidad, fuente, capa, licencia, redistribuible)
+    "pob_censo_anual": ("personas", "INE, Censo anual de población (tablas por provincia)", "C1", "INE: reutilización con cita (Ley 37/2007)", True),
+    "ipva_indice": ("índice 2015=100", "INE, Índice de Precios de Vivienda en Alquiler (59004, 59005, 59061)", "C1", "INE: reutilización con cita", True),
+    "ipva_var_anual": ("%", "INE, IPVA", "C1", "INE: reutilización con cita", True),
+    "vut_registro_gva": ("viviendas", "GVA, Registro de Turismo de la Comunitat Valenciana (cortes)", "C1", "CC BY 4.0", True),
+    "vut_registro_gva_reconstruido": ("viviendas", "GVA, registro (altas y bajas fechadas; reconstrucción propia)", "C4", "CC BY 4.0", True),
+    "emal_n_fianzas": ("contratos", "Gobierno Vasco, EMAL (fianzas)", "C4", "CC BY 4.0", True),
+    "emal_renta_mensual_eur": ("€/mes", "Gobierno Vasco, EMAL", "C4", "CC BY 4.0", True),
+    "emal_renta_eur_m2_construido": ("€/m²/mes", "Gobierno Vasco, EMAL", "C4", "CC BY 4.0", True),
+    "bce_hip_tipo_nuevas": ("% anual", "BCE, MIR (nuevas operaciones de vivienda)", "C1", "BCE: reutilización con cita", True),
+    "bce_hip_volumen_nuevas": ("millones de euros", "BCE, MIR", "C1", "BCE: reutilización con cita", True),
+    "eurostat_plataformas_noches": ("noches", "Eurostat, tour_ce_oan3 (plataformas colaborativas)", "C1", "CC BY 4.0 (Eurostat)", True),
+    "incasol_contratos": ("contratos", "Incasòl, fianzas (Socrata qww9-bvhh)", "C1", "Términos de uso (no CC BY)", False),
+    "incasol_renta_media": ("€/mes", "Incasòl, fianzas", "C1", "Términos de uso (no CC BY)", False),
+    "zt_vigente": ("0/1", "BOE, resoluciones de la Secretaría de Estado de Vivienda (zonas tensionadas)", "C1", "BOE: reutilización con cita", True),
+}
+
+
+UNIDADES = {  # variables cuyo diccionario de origen no da unidad (comprobado en el diccionario y en el fichero raw)
+    "costes": "índice 2021=100", "hpi_eurostat": "índice 2015=100", "iniciadas": "viviendas",
+    "iniciadas_anual_tabla": "viviendas", "terminadas_anual_tabla": "viviendas", "ipc_alquiler_indice": "índice 2021=100",
+    "ocupados_epa": "miles de personas", "permisos": "viviendas (visados)", "prod_constr": "índice 2021=100",
+    "renta_hog": "millones de euros", "iab_disponibilidad_365_media": "días", "iab_resenas_ultimos_12m": "reseñas",
+}
+
+
+def completar(df: pd.DataFrame, meta: dict, lic: dict) -> pd.DataFrame:
+    per = df.periodo_raw.map(periodo_y_frecuencia)
+    df["periodo"], df["frecuencia"] = per.str[0], per.str[1]
+    pf = df[["periodo", "frecuencia"]].drop_duplicates()
+    pf[["ini", "fin"]] = [_inicio_fin(a, b) for a, b in zip(pf.periodo, pf.frecuencia)]
+    df = df.merge(pf, on=["periodo", "frecuencia"], how="left")
+    if (df.fin == "").any():
+        raise ValueError(f"periodos no reconocidos: {df.loc[df.fin == '', 'periodo_raw'].unique()[:10]}")
+    df["fecha_dato"] = df.fin
+    # periodo que incluye algún día desde 2026-07-01 (2026T3 en adelante; los anuales de 2026 también)
+    df["posterior_prereg"] = df.fin >= "2026-07-01"
+    # metadatos por variable
+    vars_ = df.variable.unique()
+    tabla = {}
+    for v in vars_:
+        if v.startswith("iab_"):
+            tabla[v] = ("anuncios" if "anuncios" in v or v.startswith("iab_n") else "", "Inside Airbnb (no oficial)", "C4", "CC BY 4.0", True)
+        elif v in META_V9:
+            tabla[v] = META_V9[v]
+        else:
+            m = meta.get(v, {})
+            fuente = m.get("fuente", "")
+            capa = m.get("capa") or "C4"
+            redis = not NO_REDISTRIBUIBLE.search(v)
+            for f in re.findall(r"[\w./-]+\.(?:csv|xlsx?|json|px)", fuente, re.I):
+                if lic.get(Path(f).name.lower(), "permitida") != "permitida":
+                    redis = False
+            licencia = "según organismo (docs/v8_1/inventario_licencias.csv)" if redis else "sin licencia abierta clara (no se redistribuye)"
+            tabla[v] = (m.get("unidad", ""), fuente or "ver diccionario del panel de origen", capa, licencia, redis)
+    t = pd.DataFrame.from_dict(tabla, orient="index", columns=["unidad", "fuente", "capa", "licencia", "redistribuible"])
+    vacia = t.unidad.fillna("") == ""
+    t.loc[vacia, "unidad"] = [UNIDADES.get(v, "personas" if v.startswith("pob_") else "") for v in t.index[vacia]]
+    df = df.join(t, on="variable")
+    df["edicion"] = df.origen.map(edicion_origen())
+    return df
+
+
+def edicion_origen() -> dict:
+    out = {}
+    for m in RAW9.glob("*/_manifest.csv"):
+        with open(m, encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                out[r["fichero"]] = f"{r['edicion']} (descarga {r['fecha_descarga']})"
+    for f in PROC.rglob("*.csv"):
+        out[str(f.relative_to(RAIZ))] = "panel procesado del proyecto (data/processed, construcción v1-v8; descargas hasta 2026-10-10)"
+    out["data/raw/v9/regulacion/zonas_tensionadas_v9.csv"] = "BOE hasta 2026-10-14"
+    return out
+
+
+def sellado_v6() -> set[str]:
+    d = pd.read_csv(PROC / "v7/panel_prov_a_v7.csv", dtype={"cod_prov": str})
+    return set(d.loc[d.prov_sellada_v6 == True, "cod_prov"].str.zfill(2))  # noqa: E712
+
+
+# ----------------------------------------------------------------------------------------------- construcción
+def construir() -> dict:
+    import duckdb
+    BASE.mkdir(parents=True, exist_ok=True)
+    PUB.mkdir(parents=True, exist_ok=True)
+    DOCS.mkdir(parents=True, exist_ok=True)
+    meta, lic = metadatos_variables(), estado_licencias()
+    zt, zonas = zonas_trimestrales()
+    bruto = pd.concat([procesados(), v9(), zt], ignore_index=True)
+    bruto["territorio_codigo"] = bruto.territorio_codigo.astype(str)
+    bruto = completar(bruto, meta, lic)
+    # cada serie (variable × nivel × territorio × desagregación) sale entera de UN panel: el más reciente que la tenga
+    # (v8 > v7 > v1). No se empalman paneles: evita mezclar definiciones o unidades (p. ej., hogares_ecp en miles en
+    # v8 y en unidades en v1). Se cuentan las claves en que los paneles discrepan.
+    dup = bruto.duplicated(CLAVE, keep=False)
+    g = bruto[dup].groupby(CLAVE, dropna=False).valor
+    rango = (g.max() - g.min()).abs()
+    escala = g.apply(lambda s: s.abs().max()).replace(0, 1)
+    discrepancias = int(((rango / escala) > 1e-6).sum())
+    serie = ["variable", "nivel", "territorio_codigo", "desagregacion"]
+    bruto = bruto[bruto.prioridad == bruto.groupby(serie).prioridad.transform("max")]
+    bruto = bruto.sort_values("prioridad", ascending=False, kind="stable")
+    hechos = bruto.drop_duplicates(CLAVE, keep="first").copy()
+    sell = sellado_v6()
+    hechos["muestra_sellada_v6"] = (hechos.nivel == "provincia") & hechos.territorio_codigo.isin(sell)
+    hechos["metodo_dato"] = hechos.metodo_dato.astype("string").fillna("observado")
+    hechos = hechos[COLS].sort_values(CLAVE).reset_index(drop=True)
+    hechos["redistribuible"] = hechos.redistribuible.astype(bool)
+    terr = territorios()
+    terr["vigente_2025"] = True
+    # secciones y distritos históricos (existen en el censo anual 2021-2024 pero no en el seccionado de 2025)
+    faltan = hechos.loc[hechos.nivel.isin(["seccion", "distrito"]), ["territorio_codigo", "nivel"]].drop_duplicates()
+    faltan = faltan.merge(terr[["territorio_codigo", "nivel"]], how="left", indicator=True)
+    faltan = faltan[faltan._merge == "left_only"].drop(columns="_merge")
+    if len(faltan):
+        mun = faltan.territorio_codigo.str[:5]
+        hist = pd.DataFrame({"territorio_codigo": faltan.territorio_codigo, "nivel": faltan.nivel,
+                             "nombre": faltan.nivel + " " + faltan.territorio_codigo + " (no vigente en 2025)",
+                             "padre_codigo": [c[:7] if n == "seccion" else c[:5] for c, n in zip(faltan.territorio_codigo, faltan.nivel)],
+                             "padre_nivel": ["distrito" if n == "seccion" else "municipio" for n in faltan.nivel],
+                             "cod_ccaa": mun.map(terr[terr.nivel == "municipio"].set_index("territorio_codigo").cod_ccaa),
+                             "cod_provincia": mun.str[:2], "fuente": "INE, censo anual (código histórico)",
+                             "vigente_2025": False})
+        terr = pd.concat([terr, hist], ignore_index=True)
+        # distritos padre que tampoco existan
+        pares = set(zip(terr.territorio_codigo, terr.nivel))
+        dpad = sorted({c[:7] for c, n in zip(hist.territorio_codigo, hist.nivel) if n == "seccion" and (c[:7], "distrito") not in pares})
+        if dpad:
+            terr = pd.concat([terr, pd.DataFrame({"territorio_codigo": dpad, "nivel": "distrito",
+                              "nombre": [f"distrito {d} (no vigente en 2025)" for d in dpad], "padre_codigo": [d[:5] for d in dpad],
+                              "padre_nivel": "municipio", "cod_ccaa": [terr[(terr.nivel == "municipio") & (terr.territorio_codigo == d[:5])].cod_ccaa.squeeze() for d in dpad],
+                              "cod_provincia": [d[:2] for d in dpad], "fuente": "INE, censo anual (código histórico)",
+                              "vigente_2025": False})], ignore_index=True)
+    # variables
+    vt = hechos.groupby("variable").agg(unidad=("unidad", "first"), fuente=("fuente", "first"), capa=("capa", "first"),
+                                        licencia=("licencia", "first"), redistribuible=("redistribuible", "first"),
+                                        niveles=("nivel", lambda s: ",".join(sorted(s.unique()))),
+                                        primer_periodo=("periodo", "min"), ultimo_periodo=("periodo", "max"),
+                                        n_filas=("valor", "size")).reset_index()
+    vt["definicion"] = vt.variable.map(lambda v: meta.get(v, {}).get("definicion", "")).fillna("")
+    vt.loc[vt.variable.isin(META_V9) & (vt.definicion == ""), "definicion"] = vt.variable.map(lambda v: META_V9.get(v, ("", ""))[1])
+    cifras = pd.read_csv(RAIZ / "publicacion/cifras_clave.csv", dtype=str, keep_default_na=False)
+    # escritura
+    opts = {"index": False, "compression": "zstd"}
+    hechos.to_parquet(BASE / "hechos.parquet", **opts)
+    hechos[hechos.redistribuible].to_parquet(PUB / "hechos.parquet", **opts)
+    terr.to_parquet(BASE / "territorios.parquet", **opts)
+    terr.to_parquet(PUB / "territorios.parquet", **opts)
+    vt.to_parquet(BASE / "variables.parquet", **opts)
+    vt[vt.redistribuible].to_parquet(PUB / "variables.parquet", **opts)
+    cifras.to_parquet(BASE / "cifras_clave.parquet", **opts)
+    cifras.to_parquet(PUB / "cifras_clave.parquet", **opts)
+    zonas.to_parquet(BASE / "regulacion_zonas.parquet", **opts)
+    zonas.to_parquet(PUB / "regulacion_zonas.parquet", **opts)
+    db = BASE / "vivienda.duckdb"
+    if db.exists():
+        db.unlink()
+    con = duckdb.connect(str(db))
+    for nombre in ("hechos", "territorios", "variables", "cifras_clave", "regulacion_zonas"):
+        con.execute(f"CREATE TABLE {nombre} AS SELECT * FROM read_parquet('{BASE / (nombre + '.parquet')}')")
+    con.execute("CREATE VIEW hechos_publica AS SELECT * FROM hechos WHERE redistribuible")
+    con.close()
+    resumen = {"filas": len(hechos), "filas_publica": int(hechos.redistribuible.sum()), "variables": len(vt),
+               "territorios": len(terr), "discrepancias_entre_paneles": discrepancias,
+               "filas_posterior_prereg": int(hechos.posterior_prereg.sum())}
+    escribir_diccionario(vt, hechos, resumen)
+    return resumen
+
+
+def escribir_diccionario(vt: pd.DataFrame, hechos: pd.DataFrame, resumen: dict) -> None:
+    niv = hechos.groupby("nivel").size()
+    lin = ["# Diccionario de la base única (V10)", "",
+           "Generado por `src/v10/base.py` (`make base`); no editar a mano.", "",
+           "## Tablas", "",
+           "| tabla | contenido |", "|---|---|",
+           "| hechos | tabla larga: una fila por territorio, periodo, variable y desagregación |",
+           "| territorios | dimensión territorial con jerarquía (padre_codigo, padre_nivel) |",
+           "| variables | definición, unidad, capa, fuente, licencia y cobertura de cada variable |",
+           "| cifras_clave | copia tipada de publicacion/cifras_clave.csv |",
+           "| regulacion_zonas | declaraciones de zona tensionada (data/raw/v9/regulacion) |",
+           "| hechos_publica (vista) | filas redistribuibles; es lo único que se publica en data/base/publica y en la web |", "",
+           "## Columnas de `hechos`", "",
+           "| columna | definición |", "|---|---|",
+           "| territorio_codigo | código INE (nacional 00; CCAA 2; provincia 2; municipio 5; distrito 7; barrio de València 9 = municipio + distrito + barrio; sección 10). Excepciones: `pais` (ISO-2) y `nuts3` (Eurostat) |",
+           "| nivel | nacional, ccaa, provincia, municipio, distrito, barrio, seccion, pais, nuts3 |",
+           "| periodo | AAAA (anual), AAAATn (trimestral), AAAA-MM (mensual), AAAASn (semestral), AAAA-MM-DD (corte) |",
+           "| frecuencia | A, T, M, S, D |",
+           "| variable | nombre de la variable (tabla `variables`) |",
+           "| desagregacion | dimensión adicional `clave=valor` (nacionalidad, antigüedad del contrato, fijación…); vacía si no hay |",
+           "| valor | valor numérico |",
+           "| unidad, fuente, capa, licencia, redistribuible | de la tabla `variables` |",
+           "| edicion | edición o fecha de descarga del fichero de origen |",
+           "| fecha_dato | último día del periodo al que se refiere el dato |",
+           "| metodo_dato | observado, interpolado, agregado, reconstruido… (banderas `_metodo` de los paneles) |",
+           "| origen | fichero de data/processed o data/raw/v9 del que sale la fila |",
+           "| posterior_prereg | True si el periodo empieza el 2026-07-01 o después (evaluate_v7/evaluate_v8): se muestra, pero no entra en cálculos |",
+           "| muestra_sellada_v6 | True en las provincias del sellado transversal de v6 (informativo) |", "",
+           "## Resumen", "",
+           *[f"- {k}: {v}" for k, v in resumen.items()],
+           "- filas por nivel: " + ", ".join(f"{k} {v}" for k, v in niv.items()), "",
+           "Las discrepancias entre paneles son claves presentes en varios ficheros procesados con valores distintos; se "
+           "conserva el panel más reciente (v8 > v7 > v1), que es el que usan las publicaciones vigentes.", "",
+           "## Variables", "",
+           "| variable | definición | unidad | capa | fuente | redistribuible | niveles | periodo |", "|---|---|---|---|---|---|---|---|"]
+    for r in vt.itertuples():
+        d = str(r.definicion).replace("|", "/")[:160]
+        f = str(r.fuente).replace("|", "/")[:120]
+        lin.append(f"| `{r.variable}` | {d} | {r.unidad} | {r.capa} | {f} | {'sí' if r.redistribuible else 'no'} | "
+                   f"{r.niveles} | {r.primer_periodo}–{r.ultimo_periodo} |")
+    (DOCS / "diccionario_base.md").write_text("\n".join(lin) + "\n", encoding="utf-8")
+
+
+if __name__ == "__main__":
+    import json
+    print(json.dumps(construir(), ensure_ascii=False, indent=1))
+    sys.exit(0)

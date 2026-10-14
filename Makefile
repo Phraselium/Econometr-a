@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9
+.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas
 
 all: data clean models report
 
@@ -111,3 +111,8 @@ v8:
 	@for r in $(V8_ORDEN); do echo ">> src/v8/$$r.py"; $(PY) src/v8/$$r.py || exit 1; done
 	$(PY) src/v5/cifras_clave.py
 	$(PY) src/v8/render_v8.py
+
+# V10: base única (sin red; las geometrías de entrada se descargan una vez con src/v10/fetch_geo.py)
+base:
+	$(PY) src/v10/geo.py
+	$(PY) src/v10/base.py

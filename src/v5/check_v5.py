@@ -106,7 +106,10 @@ def recuentos() -> list[str]:
 
 
 # lecturas con caché versionada: el script solo abre el fichero si falta la caché
-EXENTOS = {("src/v3/c1_geo.py", "Cartografia_secc.zip"): "caché versionada output/v3/C1/centroides.csv"}
+EXENTOS = {("src/v3/c1_geo.py", "Cartografia_secc.zip"): "caché versionada output/v3/C1/centroides.csv",
+           # V10: INE abierto pero >50 MB; sha256 en data/CHECKSUMS.sha256; descarga con src/v10/fetch_geo.py; sus
+           # derivados (data/base/geo/) están versionados
+           ("src/v10/geo.py", "seccionado_2025.zip"): "geometrías versionadas data/base/geo/"}
 
 
 def retirados_con_descarga() -> set[str]:

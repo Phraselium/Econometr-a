@@ -119,3 +119,8 @@ data/raw/v9/insideairbnb/listings_*.csv.gz
 data/raw/v9/incasol/*.csv.gz
 data/raw/v9/incasol/original/
 data/raw/v9/actualizaciones/original/
+# V10: base completa (incluye filas no redistribuibles) y DuckDB se regeneran con `make base`
+data/base/hechos.parquet
+data/base/vivienda.duckdb
+data/base/vivienda.duckdb.wal
+data/raw/v10/geo/seccionado_2025.zip

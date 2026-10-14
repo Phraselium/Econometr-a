@@ -332,7 +332,7 @@ def v9() -> pd.DataFrame:
     e = e[e.codigo_ine.notna() & e.periodo.str.fullmatch(r"\d{4}T[1-4]")]
     add(pd.DataFrame({"territorio_codigo": e.codigo_ine, "nivel": "municipio", "periodo_raw": e.periodo,
                       "variable": "emal_" + e.variable,
-                      "desagregacion": "hoja=" + e.hoja + "|grupo=" + e.grupo.fillna("") + "|contrato=" + e.tipo_contrato.fillna(""),
+                      "desagregacion": "libro=" + e.libro + "|ambito=" + e.nombre.fillna("") + "|hoja=" + e.hoja + "|grupo=" + e.grupo.fillna("") + "|contrato=" + e.tipo_contrato.fillna(""),
                       "valor": pd.to_numeric(e.valor, errors="coerce"), "metodo_dato": "observado"}).dropna(subset=["valor"]),
         "data/raw/v9/emal/emal_largo.csv")
     # Inside Airbnb por sección (C4, no oficial)
@@ -645,6 +645,11 @@ def construir() -> dict:
                    FROM bruto b JOIN pf USING (periodo_raw)""")
     con.execute("DROP TABLE bruto")
     clave = ", ".join(CLAVE)
+    # una misma fuente no puede traer dos filas con la misma clave: la elección sería arbitraria (no determinista)
+    dup_origen = con.execute(f"""SELECT origen, count(*) n FROM (SELECT origen, {clave} FROM b2 GROUP BY origen, {clave}
+        HAVING count(*) > 1 AND max(valor) <> min(valor)) GROUP BY origen""").fetchall()
+    if dup_origen:
+        raise ValueError(f"claves duplicadas con valores distintos dentro de una misma fuente: {dup_origen}")
     discrepancias = con.execute(f"""SELECT count(*) FROM (SELECT {clave} FROM b2 GROUP BY {clave}
         HAVING count(*) > 1 AND (max(valor) - min(valor)) / greatest(max(abs(valor)), 1e-12) > 1e-6)""").fetchone()[0]
     # un panel por serie (el de mayor prioridad) y una fila por clave
@@ -714,12 +719,15 @@ def construir() -> dict:
         con.unregister("tmp")
     con.execute("CREATE VIEW hechos_publica AS SELECT * FROM hechos WHERE redistribuible")
     n, npub, npost = con.execute("SELECT count(*), sum(redistribuible::INT), sum(posterior_prereg::INT) FROM hechos").fetchone()
-    niv = con.execute("SELECT nivel, count(*) FROM hechos GROUP BY nivel ORDER BY nivel").fetchall()
+    niv = con.execute("SELECT nivel, count(*) FROM hechos WHERE redistribuible GROUP BY nivel ORDER BY nivel").fetchall()
     con.execute("CHECKPOINT")
     con.close()
     resumen = {"filas": int(n), "filas_publica": int(npub), "variables": len(vt), "territorios": len(terr),
                "discrepancias_entre_paneles": int(discrepancias), "filas_posterior_prereg": int(npost)}
-    escribir_diccionario(vt, dict(niv), resumen)
+    # el diccionario versionado solo describe la capa pública: no depende de qué datos de terceros estén en disco
+    escribir_diccionario(vt[vt.redistribuible], dict(niv),
+                         {k: v for k, v in resumen.items() if k not in ("filas", "variables", "discrepancias_entre_paneles")}
+                         | {"variables_publicas": int(vt.redistribuible.sum())})
     return resumen
 
 
@@ -752,7 +760,7 @@ def escribir_diccionario(vt: pd.DataFrame, niv: dict, resumen: dict) -> None:
            "| muestra_sellada_v6 | True en las provincias del sellado transversal de v6 (informativo) |", "",
            "## Resumen", "",
            *[f"- {k}: {v}" for k, v in resumen.items()],
-           "- filas por nivel: " + ", ".join(f"{k} {v}" for k, v in niv.items()), "",
+           "- filas públicas por nivel: " + ", ".join(f"{k} {v}" for k, v in niv.items()), "",
            "Las discrepancias entre paneles son claves presentes en varios ficheros procesados con valores distintos; se "
            "conserva el panel más reciente (v8 > v7 > v1), que es el que usan las publicaciones vigentes.", "",
            "## Variables", "",

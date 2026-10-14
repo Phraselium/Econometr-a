@@ -34,13 +34,11 @@ Generado por `src/v10/base.py` (`make base`); no editar a mano.
 
 ## Resumen
 
-- filas: 10161126
-- filas_publica: 10104941
-- variables: 250
+- filas_publica: 10105031
 - territorios: 56510
-- discrepancias_entre_paneles: 203
 - filas_posterior_prereg: 50966
-- filas por nivel: ccaa 48473, distrito 578100, municipio 1575307, nacional 8202, nuts3 1440, pais 34354, provincia 75843, seccion 7839407
+- variables_publicas: 232
+- filas públicas por nivel: ccaa 47980, distrito 578100, municipio 1520977, nacional 7910, nuts3 1440, pais 34354, provincia 74863, seccion 7839407
 
 Las discrepancias entre paneles son claves presentes en varios ficheros procesados con valores distintos; se conserva el panel más reciente (v8 > v7 > v1), que es el que usan las publicaciones vigentes.
 
@@ -137,8 +135,6 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `iab_n_private_room` |  | anuncios | C4 | Inside Airbnb (no oficial) | sí | seccion | 2026-09–2026-09 |
 | `iab_n_shared_room` |  | anuncios | C4 | Inside Airbnb (no oficial) | sí | seccion | 2026-09–2026-09 |
 | `iab_resenas_ultimos_12m` |  | reseñas | C4 | Inside Airbnb (no oficial) | sí | seccion | 2026-09–2026-09 |
-| `incasol_contratos` | Incasòl, fianzas (Socrata qww9-bvhh) | contratos | C4 | Incasòl, fianzas (Socrata qww9-bvhh) | no | municipio | 2007–2026T1 |
-| `incasol_renta_media` | Incasòl, fianzas | €/mes | C4 | Incasòl, fianzas | no | municipio | 2007–2026T1 |
 | `ine_vut_plazas` | INE, viviendas turísticas (experimental) | plazas | C4 | INE, viviendas turísticas (experimental) | sí | distrito,seccion | 2021-02–2026-05 |
 | `ine_vut_porcentaje_vivienda_turistica` | INE, viviendas turísticas (experimental) | % de viviendas | C4 | INE, viviendas turísticas (experimental) | sí | distrito,seccion | 2021-02–2026-05 |
 | `ine_vut_vivienda_turistica` | INE, Medición del número de viviendas turísticas (experimental) | viviendas | C4 | INE, Medición del número de viviendas turísticas (experimental) | sí | distrito,seccion | 2021-02–2026-05 |
@@ -170,18 +166,6 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `monitor_tipo_hip_tae` | BCE, MIR | % anual | C4 | BCE, MIR | sí | nacional | 2022-01–2026-08 |
 | `monitor_tipo_hip_variable` | BCE, MIR | % anual | C4 | BCE, MIR | sí | nacional | 2022-01–2026-08 |
 | `monitor_vut_viviendas` | INE, VUT (VTE71) | viviendas | C4 | INE, VUT (VTE71) | sí | nacional | 2020-08–2026-05 |
-| `notariado_cgn_extranj` |  | operaciones | C4 | Consejo General del Notariado (CIEN) | no | ccaa,nacional | 2007–2025T4 |
-| `notariado_cuantia_esp_prov` |  | € | C4 | ver diccionario del panel de origen | no | provincia | 2018T1–2025T4 |
-| `notariado_cuantia_ext_prov` |  | € | C4 | ver diccionario del panel de origen | no | provincia | 2018T1–2025T4 |
-| `notariado_cuantia_media_esp` | Notariado CV, cuantia_media_esp (provincia) | euros | C4 | pdf/notariado_cv_prov_trimestral.csv | no | provincia | 2018T1–2025T4 |
-| `notariado_cuantia_media_ext` | Notariado CV, cuantia_media_ext (provincia) | euros | C4 | pdf/notariado_cv_prov_trimestral.csv | no | provincia | 2018T1–2025T4 |
-| `notariado_op_sem` | Operaciones de compraventa de vivienda libre ante notario, total, semestral (T2, T4) | número | C4 | pdf/notariado_cgn_extranjeros_semestral.csv (op_viv_libre) | no | nacional | 2007T2–2025T4 |
-| `notariado_pm2_sem` | Precio medio m2 de las compraventas de vivienda libre ante notario, total, dato semestral asignado al último trimestre del semestre (T2, T4) | euros/m2 | C4 | pdf/notariado_cgn_extranjeros_semestral.csv (precio_m2, Total general) | no | nacional | 2007T2–2025T4 |
-| `notariado_viv_esp_prov` |  | viviendas | C4 | ver diccionario del panel de origen | no | provincia | 2018T1–2025T4 |
-| `notariado_viv_ext_prov` |  | viviendas | C4 | ver diccionario del panel de origen | no | provincia | 2018T1–2025T4 |
-| `notariado_viv_extranj` |  | viviendas | C4 | ver diccionario del panel de origen | no | municipio | 2021–2025 |
-| `notariado_viv_vendidas_esp` | Notariado CV, viv_vendidas_esp (provincia) | viviendas | C4 | pdf/notariado_cv_prov_trimestral.csv | no | provincia | 2018T1–2025T4 |
-| `notariado_viv_vendidas_ext` | Notariado CV, viv_vendidas_ext (provincia) | viviendas | C4 | pdf/notariado_cv_prov_trimestral.csv | no | provincia | 2018T1–2025T4 |
 | `ocupados` | Ocupados EPA, total nacional (media del trimestre) | miles de personas | C4 | ine_epa_ocupados.csv (EPA387796) | sí | ccaa,nacional | 2002T1–2026T2 |
 | `ocupados_epa` |  | miles de personas | C4 | INE, EPA por provincia | sí | provincia | 2002–2026T2 |
 | `ocupados_epa_prov` | Ocupados EPA, suma de provincias (contraste con ocupados CCAA) | miles de personas | C1 | INE EPA 65345 EPA_ocupados | sí | ccaa | 2007T1–2026T2 |
@@ -225,10 +209,6 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `pob_vlc_reino_unido` |  | personas | C4 | INE, Padrón continuo (València por nacionalidad) | sí | municipio | 1998–2022 |
 | `prod_constr` |  | índice 2021=100 | C4 | Eurostat, sts_copr (producción de la construcción) | sí | nacional | 2005T1–2026T2 |
 | `rdb` | Renta disponible bruta del total de la economía, ajustada de estacionalidad (INE); NO es renta de los hogares | millones de euros | C4 | ine_cnt_renta_disponible.csv (CTNFSI11113) | sí | nacional | 1999T1–2026T2 |
-| `registr_num_4tm` | Compraventas de vivienda inscritas, suma móvil de 4 trimestres (Registradores) (provincia) | número | C4 | pdf/registradores_opendata_compraventas.csv | no | nacional,provincia | 2007T1–2026T2 |
-| `registr_pm2_4tm` | Precio medio m2 de las compraventas de vivienda inscritas, media móvil de 4 trimestres (Registradores) (provincia) | euros/m2 | C4 | pdf/registradores_opendata_compraventas.csv | no | nacional,provincia | 2007T1–2026T2 |
-| `registradores_compraventas_anual` |  | viviendas (año natural) | C4 | Colegio de Registradores, OpenData (compraventas viviendas, nacional) | no | nacional | 2007T4–2025T4 |
-| `registradores_extranj_pct` |  | % | C4 | Colegio de Registradores, Anuario ERI | no | ccaa,nacional | 2016–2025T4 |
 | `renta_hog` |  | millones de euros | C4 | INE, Contabilidad Nacional Trimestral | sí | nacional | 1999T1–2026T2 |
 | `renta_hog_real` |  | M€ a precios de 2020 | C4 | INE, CNT (renta real; cálculo propio) | sí | nacional | 1999T1–2026T2 |
 | `salario` | Coste salarial total por trabajador y mes, industria, construcción y servicios (ETCL, INE); 2000T1-2007T4 tabla 6067 y 2008T1+ tabla 79662 | euros/mes | C4 | v8/ine_etcl_6067_nacional.csv (ETCL5741) + v8/ine_etcl_79662_ccaa.csv (Total Nacional) | sí | nacional | 2000T1–2026T2 |

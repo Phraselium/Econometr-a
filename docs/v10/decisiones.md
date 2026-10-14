@@ -165,3 +165,12 @@ Rama local `r10/difusion`, subida a la rama remota designada (`claude/housing-pr
 - **R4, importante.** El lenguaje valorativo «quién lo sufre» / «quién sufre la subida» se sustituye por «quién soporta el coste de la vivienda» en el atlas, la navegación y las páginas.
 - **R5, importante.** Dependencia circular entre base, atlas y cifras_clave: el objetivo `make v10` fija el orden, y el flujo mensual lo usa.
 - **R6, importante.** El filtro de licencias pasa a denegar por defecto. Una variable solo entra en la capa pública si su fuente es de un organismo de una lista explícita (INE, Eurostat, BCE, BdE, MIVAU, GVA, Gobierno Vasco, Ajuntament, Catastro, BOE, resultados propios, Inside Airbnb) o si figura en `FUENTES_DOCUMENTADAS`, con la fuente comprobada en el script de su panel. En ningún caso puede coincidir con la lista de exclusión.
+
+## D11 — Cierre en clon limpio
+- **Fallo encontrado.** EMAL repetía claves: dos libros, y municipios partidos en ámbitos (Galdakao (1) y Galdakao (2)) por la declaración parcial de zona tensionada. DuckDB elegía una fila arbitraria, así que dos construcciones daban 42 valores públicos distintos.
+- **Corrección.**
+  - El libro y el ámbito entran en la desagregación.
+  - Un control aborta el montaje si una misma fuente trae claves duplicadas con valores distintos.
+  - Las «discrepancias entre paneles» bajan de 203 a 113, porque los duplicados de EMAL ya no cuentan.
+- **Diccionario.** El diccionario versionado (docs/v10/diccionario_base.md) solo describe la capa pública. Así no depende de qué datos de terceros no redistribuibles haya en disco.
+- **Reproducción en clon limpio.** El `make check` de un clon limpio necesita antes `make datos_terceros` (regla de V8.1; tests/doble_impl lee datos de terceros retirados). Es la vía documentada en el README.

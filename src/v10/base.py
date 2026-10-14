@@ -699,6 +699,8 @@ def construir() -> dict:
                           "cod_provincia": [m[:2] for m in viejos], "fuente": "INE (código histórico)", "vigente_2025": False})],
                          ignore_index=True)
     terr["cod_ccaa"] = terr.cod_ccaa.fillna("")
+    orden = {"nacional": 0, "ccaa": 1, "provincia": 2, "municipio": 3, "distrito": 4, "barrio": 5, "seccion": 6}
+    terr = terr.sort_values(["nivel", "territorio_codigo"], key=lambda c: c.map(orden) if c.name == "nivel" else c).reset_index(drop=True)
     # variables
     vt = con.execute("""SELECT variable, any_value(unidad) unidad, any_value(fuente) fuente, string_agg(DISTINCT capa, '/' ORDER BY capa) capa,
         any_value(licencia) licencia, bool_and(redistribuible) redistribuible, string_agg(DISTINCT nivel, ',' ORDER BY nivel) niveles,
@@ -706,8 +708,9 @@ def construir() -> dict:
     vt = vt.merge(vt_meta[["variable", "definicion"]], on="variable", how="left")
     cifras = pd.read_csv(RAIZ / "publicacion/cifras_clave.csv", dtype=str, keep_default_na=False)
     # escritura
-    con.execute(f"COPY (SELECT * FROM hechos) TO '{BASE / 'hechos.parquet'}' (FORMAT parquet, COMPRESSION zstd)")
-    con.execute(f"COPY (SELECT * FROM hechos WHERE redistribuible) TO '{PUB / 'hechos.parquet'}' (FORMAT parquet, COMPRESSION zstd)")
+    con.execute("SET preserve_insertion_order=true")   # escritura determinista (mismo orden de filas y de grupos)
+    con.execute(f"COPY (SELECT * FROM hechos ORDER BY {clave}) TO '{BASE / 'hechos.parquet'}' (FORMAT parquet, COMPRESSION zstd)")
+    con.execute(f"COPY (SELECT * FROM hechos WHERE redistribuible ORDER BY {clave}) TO '{PUB / 'hechos.parquet'}' (FORMAT parquet, COMPRESSION zstd)")
     opts = {"index": False, "compression": "zstd"}
     for nombre, df, pub in (("territorios", terr, terr), ("variables", vt, vt[vt.redistribuible]),
                             ("cifras_clave", cifras, cifras), ("regulacion_zonas", zonas, zonas),

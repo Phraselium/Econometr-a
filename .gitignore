@@ -106,3 +106,15 @@ data/raw/v8/jk_shocks_ecb_mensual.csv
 
 # V8.1: aplazado a la fase de propuestas (incluye copias no oficiales); se conserva la copia local del autor
 data/raw/v4/medidas_programas.csv
+
+# V9-DATOS (docs/v9/decisiones_datos.md, D3): no se versionan; sha256 en data/raw/v9/<fuente>/_manifest.csv; `make datos_v9` los descarga
+data/raw/v9/ine_microdatos/epa/
+data/raw/v9/ine_microdatos/ecv/
+data/raw/v9/ine_censo_anual/original/
+data/raw/v9/bce_hipotecas/original_csv/
+data/raw/v9/eurostat_plataformas/original_tsv/
+data/raw/v9/gva_fianzas/gva_fianzas_*.csv
+data/raw/v9/insideairbnb/listings_*.csv.gz
+# licencia sin redistribución clara («términos de uso»): también en `make datos_terceros`
+data/raw/v9/incasol/*.csv.gz
+data/raw/v9/incasol/original/

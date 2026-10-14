@@ -1,0 +1,2 @@
+fuente,fichero,url,fecha_descarga,edicion,periodo,nivel_territorial,n_filas,sha256,licencia,redistribuible,notas
+incasol,data/raw/v9/incasol/incasol_qww9-bvhh_actual.csv.gz,https://analisi.transparenciacatalunya.cat/resource/qww9-bvhh.csv?$limit=10000000,2026-10-14,Socrata qww9-bvhh (rowsUpdatedAt 1785409817),"('2007', 'gener-desembre')–('2026', 'gener-març')",municipio (código INE 5 dígitos),46105,8a3931f8678d4da12b927954d42b878783ef808b82b606a8dc11d948d3fe829c,See Terms of Use (metadatos Socrata; no CC BY),no,filas=46105; periodos_nuevos_vs_v3=[]; columna posterior_prereg

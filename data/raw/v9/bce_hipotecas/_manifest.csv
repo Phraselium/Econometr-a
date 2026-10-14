@@ -1,0 +1,2 @@
+fuente,fichero,url,fecha_descarga,edicion,periodo,nivel_territorial,n_filas,sha256,licencia,redistribuible,notas
+bce_hipotecas,data/raw/v9/bce_hipotecas/bce_mir_vivienda_zona_euro.csv.gz,https://data-api.ecb.europa.eu/service/data/MIR/M.{pais}.B.A2C.F+I+K+O+P+AM.R.A.2250.EUR.N?format=csvdata&startPeriod=2003-01,2026-10-14,"ECB Data Portal (MIR, API SDMX)",2003-01–2026-08,país (zona euro),36901,b988711281e0f9d2b6561845652deab2b012271789037f2ae30e3fe7729d8b04,BCE: reutilización con cita (ECB Data Portal),sí,filas=36901; países=21; fallos=ninguno

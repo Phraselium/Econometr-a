@@ -1,10 +1,16 @@
-"""V9-DATOS: Censo Anual de Población (INE, operación 463) por municipio, sexo y nacionalidad (España/extranjera).
+"""V9-DATOS · INE, Censo anual de población (operación CENSOP), ediciones 2021-2025.
 
-Fuente API: servicios.ine.es/wstempus/js/ES/DATOS_TABLA/<tabla>?nult=5
-  - 69343: Población por sexo y nacionalidad (española/extranjera), por municipio (ediciones 2021-último).
-  - 68065: Población según municipio y sexo (control: total nacional y total municipal).
-Códigos de municipio: diccionario INE de municipios a 1-1-2026 (data/raw/ine_diccionario_municipios_2026.xlsx).
-Sección censal: la API de tablas no ofrece sección con nacionalidad; no se descarga aquí (ver notas de la fila de manifiesto).
+Descarga (jaxiT3, CSV con códigos INE en la etiqueta) y convierte a formato largo con códigos INE como texto:
+  1. «Población por sexo y país de nacionalidad (principales países)»: una tabla por provincia (y una nacional), con
+     sección censal. Se guarda solo sexo = Total (los totales por sexo están en la tabla 68065):
+     censo_seccion_pais.csv.gz: edicion, cod_provincia, cod_municipio, cod_seccion (10 dígitos; vacío en filas de
+     municipio o provincia), nivel (provincia/municipio/seccion), pais_nacionalidad, poblacion.
+  2. Tabla 68065 «Población por sexo» por municipio: censo_municipio_sexo.csv.gz (edicion, cod_municipio, sexo,
+     poblacion).
+Cruces SOLO por código INE (el código va al principio de cada etiqueta: «44001 Ababuj», «4400101001 Ababuj sección …»);
+no se empareja por nombre. La nacionalidad es la agrupación de «principales países» del INE (22 categorías); no hay
+detalle por país completo a nivel de sección. Licencia: aviso legal del INE (reutilización con cita, Ley 37/2007).
+Uso: python3 src/v9/fetch_ine_censo_anual.py [--verificar]
 """
 from __future__ import annotations
 
@@ -13,148 +19,104 @@ import gzip
 import json
 import re
 import sys
-import unicodedata
 from pathlib import Path
 
-RAIZ = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(RAIZ))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import comun  # noqa: E402
 
-from src.v9.comun import RAW9, descargar, registrar, sha256  # noqa: E402
+def comun_gz(ruta):
+    return comun.abrir_gz_texto(ruta)
+
 
 FUENTE = "ine_censo_anual"
-DIR = RAW9 / FUENTE
-DIC = RAIZ / "data" / "raw" / "ine_diccionario_municipios_2026.xlsx"
-TABLAS = {"69343": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/69343?nult=5",
-          "68065": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/68065?nult=5"}
-LICENCIA = "Aviso legal INE: reutilización con cita (Ley 37/2007)"
-EDICIONES = range(2021, 2026)
-CAB = ["edicion", "cod_municipio", "municipio_nombre_ine", "sexo", "nacionalidad", "poblacion", "tabla", "id_serie"]
+DIR = comun.RAW9 / FUENTE
+ORIG = DIR / "original"
+URL_T = "https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/{}.csv?nocab=1"
+URL_OPS = "https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/CENSOP"
+NOMBRE_PAIS = "Población por sexo y país de nacionalidad (principales países)"
+LIC = "INE: reutilización con cita (aviso legal, Ley 37/2007)"
+FICH = {"seccion": DIR / "censo_seccion_pais.csv.gz", "municipio": DIR / "censo_municipio_sexo.csv.gz"}
 
 
-def norm(s: str) -> str:
-    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
-    return re.sub(r"[^a-z0-9]", "", s)
+def codigo(etiqueta: str) -> str:
+    m = re.match(r"^\s*(\d+)\s", etiqueta or "")
+    return m.group(1) if m else ""
 
 
-def variantes(nombre: str) -> set[str]:
-    """Claves de emparejamiento: nombre tal cual, con artículo final invertido (', El' -> 'El ') y partes separadas por '/'."""
-    out = {norm(nombre)}
-    m = re.match(r"^(.*), (el|la|los|las|l'|els|les|lo)$", nombre.strip(), re.I)
-    if m:
-        out.add(norm(f"{m.group(2)} {m.group(1)}"))
-    for p in nombre.split("/"):
-        out.add(norm(p))
-    return out
+def num(s: str) -> str:
+    return (s or "").replace(".", "").replace(",", ".").strip()
 
 
-def cargar_diccionario() -> dict[str, set[str]]:
-    import pandas as pd
-    df = pd.read_excel(DIC, sheet_name="dic25", header=None, dtype=str, skiprows=2)
-    df.columns = ["codauto", "cpro", "cmun", "dc", "nombre"]
-    idx: dict[str, set[str]] = {}
-    for _, r in df.dropna(subset=["cpro", "cmun", "nombre"]).iterrows():
-        cod = f"{r.cpro.zfill(2)}{r.cmun.zfill(3)}"
-        for k in variantes(r.nombre):
-            idx.setdefault(k, set()).add(cod)
-    return idx
+TABLA_NACIONAL = 65036   # tabla nacional con todas las secciones (duplica las provinciales y no cabe en memoria): se omite
 
 
-def parsear_serie(nombre: str):
-    n = re.sub(r"\.\s*Todas las edades\.\s*Dato base\.\s*$", "", nombre.strip())
-    partes = n.rsplit(". ", 2)
-    if len(partes) != 3:
-        return None
-    return partes  # municipio, sexo, nacionalidad
+def tablas_pais() -> list[int]:
+    dest = ORIG / "tablas_operacion_censop.json"
+    comun.descargar(URL_OPS, dest)
+    d = json.loads(dest.read_text(encoding="utf-8"))
+    return sorted(x["Id"] for x in d if x["Nombre"].strip() == NOMBRE_PAIS and x["Id"] != TABLA_NACIONAL)
+
+
+def leer(tid: int):
+    dest = ORIG / f"t{tid}.csv.gz"
+    if not dest.exists() or comun.FORCE:
+        crudo = ORIG / f"t{tid}.csv"
+        comun.descargar(URL_T.format(tid), crudo)
+        dest.write_bytes(gzip.compress(crudo.read_bytes(), mtime=0))
+        crudo.unlink()
+    with gzip.open(dest, "rt", encoding="utf-8-sig") as f:
+        yield from csv.DictReader(f, delimiter=";")
+
+
+def construir() -> None:
+    ORIG.mkdir(parents=True, exist_ok=True)
+    filas = set()
+    for tid in tablas_pais():
+        for r in leer(tid):
+            if r.get("Sexo") != "Total":
+                continue
+            prov, mun, sec = codigo(r.get("Provincias", "")), codigo(r.get("Municipios", "")), codigo(r.get("Secciones", ""))
+            if not prov and not mun:
+                continue   # fila nacional de la tabla nacional
+            nivel = "seccion" if sec else ("municipio" if mun else "provincia")
+            prov = prov or mun[:2]
+            filas.add((r["Periodo"], prov.zfill(2), mun.zfill(5) if mun else "", sec.zfill(10) if sec else "", nivel,
+                       r["País de nacionalidad"], num(r["Total"])))
+    filas = sorted(filas)
+    with comun_gz(FICH["seccion"]) as f:
+        w = csv.writer(f)
+        w.writerow(["edicion", "cod_provincia", "cod_municipio", "cod_seccion", "nivel", "pais_nacionalidad", "poblacion"])
+        w.writerows(filas)
+    mun = []
+    for r in leer(68065):
+        c = codigo(r.get("Municipios", ""))
+        if c:
+            mun.append((r["Periodo"], c.zfill(5), r["Sexo"], num(r["Total"])))
+    with comun_gz(FICH["municipio"]) as f:
+        w = csv.writer(f)
+        w.writerow(["edicion", "cod_municipio", "sexo", "poblacion"])
+        w.writerows(sorted(set(mun)))
+
+
+def verificar() -> int:
+    man = DIR / "_manifest.csv"
+    if not man.exists():
+        return 1
+    with open(man, encoding="utf-8") as f:
+        filas = list(csv.DictReader(f))
+    ok = [(comun.RAIZ / r["fichero"]).exists() and comun.sha256(comun.RAIZ / r["fichero"]) == r["sha256"] for r in filas]
+    return 0 if ok and all(ok) else 1
 
 
 def main(verificar: bool = False) -> int:
-    man = DIR / "_manifest.csv"
     if verificar:
-        if not man.exists():
-            print("sin manifiesto")
-            return 1
-        ok = True
-        with open(man, encoding="utf-8") as f:
-            for r in csv.DictReader(f):
-                p = RAIZ / r["fichero"]
-                if not p.exists() or sha256(p) != r["sha256"]:
-                    print("FALLO", r["fichero"])
-                    ok = False
-        return 0 if ok else 1
-
-    DIR.mkdir(parents=True, exist_ok=True)
-    orig = DIR / "original"
-    series = {}
-    for tabla, url in TABLAS.items():
-        bruto = descargar(url, orig / f"ine_t{tabla}_nult5.json")
-        gz = orig / f"ine_t{tabla}_nult5.json.gz"
-        with open(bruto, "rb") as fi, gzip.open(gz, "wb") as fo:
-            fo.write(fi.read())
-        bruto.unlink()
-        registrar(FUENTE, gz, url, "2021-2025", "1 de enero", "municipio", LICENCIA, True,
-                  f"Tabla INE {tabla} tal cual (JSON gzip)")
-        series[tabla] = json.loads(gzip.open(gz, "rt", encoding="utf-8").read())
-
-    dic = cargar_diccionario()
-    filas, sin_match, ambiguos, nombres = [], set(), set(), {}
-    for s in series["69343"]:
-        p = parsear_serie(s["Nombre"])
-        if p is None:
-            continue
-        mun, sexo, nac = p
-        if mun not in nombres:
-            cods = set()
-            for k in variantes(mun):
-                cods |= dic.get(k, set())
-            if len(cods) == 1:
-                nombres[mun] = (cods.pop(), "ok")
-            elif len(cods) > 1:
-                nombres[mun] = ("", "ambiguo")
-            else:
-                nombres[mun] = ("", "no_encontrado")
-        cod, estado = nombres[mun]
-        if estado == "no_encontrado":
-            sin_match.add(mun)
-        if estado == "ambiguo":
-            ambiguos.add(mun)
-        if not cod:
-            continue
-        for v in s["Data"]:
-            if v["Anyo"] in EDICIONES and not v.get("Secreto") and v["Valor"] is not None:
-                filas.append([v["Anyo"], cod, mun, sexo, nac, int(round(v["Valor"])), "69343", s["COD"]])
-
-    salida = DIR / "ine_censo_anual_municipio_sexo_nacionalidad.csv.gz"
-    with gzip.open(salida, "wt", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerow(CAB)
-        w.writerows(filas)
-    registrar(FUENTE, salida, TABLAS["69343"], "2021-2025", "1 de enero", "municipio", LICENCIA, True,
-              "Derivado de tabla 69343 (sexo x nacionalidad española/extranjera). Sin sección ni países.")
-
-    corr = DIR / "correspondencia_municipio_nombre_codigo.csv"
-    with open(corr, "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerow(["municipio_nombre_ine", "cod_municipio", "estado", "origen"])
-        for mun, (cod, est) in sorted(nombres.items()):
-            w.writerow([mun, cod, est, "data/raw/ine_diccionario_municipios_2026.xlsx (dic25, 1-1-2026); emparejamiento por nombre"])
-    registrar(FUENTE, corr, "https://www.ine.es/daco/daco42/codmun/codmun.htm", "1-1-2026", "1 de enero", "municipio",
-              "INE (diccionario de códigos)", True, "Correspondencia nombre->código por emparejamiento de texto")
-
-    # Control: total municipal (68065) frente a total nacional publicado por la misma tabla.
-    tot_mun = {}
-    nacional = {}
-    for s in series["68065"]:
-        if s["Nombre"].startswith("Total Nacional. Total. Total"):
-            nacional = {v["Anyo"]: v["Valor"] for v in s["Data"]}
-        elif s["Nombre"].endswith(". Total. Total. Todas las edades. Dato base.") or \
-                re.search(r"\. Total\. Total\. Todas las edades\. Dato base\.\s*$", s["Nombre"]):
-            for v in s["Data"]:
-                tot_mun[v["Anyo"]] = tot_mun.get(v["Anyo"], 0) + (v["Valor"] or 0)
-    print(f"filas={len(filas)} municipios_mapeados={len(nombres) - len(sin_match) - len(ambiguos)} "
-          f"no_encontrados={len(sin_match)} ambiguos={len(ambiguos)}")
-    for a in sorted(EDICIONES):
-        print(f"control {a}: total nacional INE (68065, Total Nacional)={nacional.get(a)} "
-              f"suma municipios={tot_mun.get(a)}")
+        return globals()["verificar"]()
+    construir()
+    comun.registrar(FUENTE, FICH["seccion"], URL_T.format("<tabla por provincia>"), "Censo anual 2021-2025 (CENSOP)", "2021-2025",
+                    "sección censal, municipio, provincia", LIC, True,
+                    "Principales países de nacionalidad (22 categorías); sexo = Total; códigos INE de la etiqueta")
+    comun.registrar(FUENTE, FICH["municipio"], URL_T.format(68065), "Censo anual 2021-2025 (CENSOP), tabla 68065", "2021-2025",
+                    "municipio", LIC, True, "Población por sexo")
     return 0
 
 

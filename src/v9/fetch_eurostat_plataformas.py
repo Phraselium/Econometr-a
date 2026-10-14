@@ -14,6 +14,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from src.v9.comun import RAW9, descargar, registrar, sha256  # noqa: E402
 
+def comun_gz(ruta):
+    from src.v9.comun import abrir_gz_texto
+    return abrir_gz_texto(ruta)
+
+
 FUENTE = "eurostat_plataformas"
 DIR = RAW9 / FUENTE
 BASE = "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/{ds}?format=TSV"
@@ -64,7 +69,7 @@ def main(verificar: bool = False) -> int:
             print("falta _manifest.csv"); return 1
         with open(man, encoding="utf-8") as f:
             for fila in csv.DictReader(f):
-                ruta = RAW9.parent.parent / fila["fichero"]
+                ruta = RAW9.parents[2] / fila["fichero"]
                 if not ruta.exists() or sha256(ruta) != fila["sha256"]:
                     print("FALLO", fila["fichero"]); return 1
         print("OK eurostat_plataformas"); return 0
@@ -76,7 +81,7 @@ def main(verificar: bool = False) -> int:
         filas = 0
         periodos = []
         geos = set()
-        with gzip.open(salida, "wt", encoding="utf-8", newline="") as g:
+        with comun_gz(salida) as g:
             w = csv.DictWriter(g, fieldnames=["dataset", "geo", "periodo", "indicador", "unidad", "valor", "bandera"])
             w.writeheader()
             for fila in leer_tsv_sdmx(bruto, ds):

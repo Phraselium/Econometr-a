@@ -13,6 +13,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from src.v9.comun import RAW9, descargar, registrar, sha256, marcar_posterior_prereg  # noqa: E402
 
+def comun_gz(ruta):
+    from src.v9.comun import abrir_gz_texto
+    return abrir_gz_texto(ruta)
+
+
 FUENTE = "incasol"
 DIR = RAW9 / FUENTE
 ID = "qww9-bvhh"
@@ -36,7 +41,7 @@ def main(verificar: bool = False) -> int:
             print("falta _manifest.csv"); return 1
         with open(man, encoding="utf-8") as f:
             for fila in csv.DictReader(f):
-                ruta = RAW9.parent.parent / fila["fichero"]
+                ruta = RAW9.parents[2] / fila["fichero"]
                 if not ruta.exists() or sha256(ruta) != fila["sha256"]:
                     print("FALLO", fila["fichero"]); return 1
         print("OK incasol"); return 0
@@ -47,11 +52,12 @@ def main(verificar: bool = False) -> int:
     previos = set()
     if V3.exists():
         with gzip.open(V3, "rt", encoding="utf-8") as g:
-            previos = {(r["any"], r["periode"]) for r in csv.DictReader(g)}
+            # la copia v3 está en formato largo: «periodo» = «<any> <periode>»
+            previos = {tuple(r["periodo"].split(" ", 1)) for r in csv.DictReader(g) if " " in r["periodo"]}
     nuevos = sorted({(r["any"], r["periode"]) for r in actual} - previos)
     cols = ["ambit_territorial", "codi_territorial", "nom_territori", "any", "periode", "periodo_iso",
             "habitatges", "renda", "tram_preus"]
-    with gzip.open(SALIDA, "wt", encoding="utf-8", newline="") as g:
+    with comun_gz(SALIDA) as g:
         w = csv.DictWriter(g, fieldnames=cols)
         w.writeheader()
         for r in actual:
@@ -59,7 +65,7 @@ def main(verificar: bool = False) -> int:
                         "periodo_iso": periodo_iso(r["any"], r["periode"])})
     import pandas as pd
     df = marcar_posterior_prereg(pd.read_csv(SALIDA, dtype=str, encoding="utf-8"), "periodo_iso")
-    df.to_csv(SALIDA, index=False, compression="gzip", encoding="utf-8")
+    df.to_csv(SALIDA, index=False, compression={"method": "gzip", "mtime": 0}, encoding="utf-8")
     periodos = sorted({(r["any"], r["periode"]) for r in actual})
     registrar(FUENTE, SALIDA, CSV_URL, edicion=f"Socrata {ID} (rowsUpdatedAt {meta.get('rowsUpdatedAt')})",
               periodo=f"{periodos[0]}–{periodos[-1]}", nivel_territorial="municipio (código INE 5 dígitos)",

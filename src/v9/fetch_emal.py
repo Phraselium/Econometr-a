@@ -83,16 +83,41 @@ def _mapa_columnas(ws_rows: list[tuple]) -> dict[int, str]:
     if fila_anio is None:
         return {}
     mapa, anio = {}, None
+    fila_fecha = None   # bloque «vigentes a fecha» (fechas dd/mm/aaaa en la fila siguiente a la de años)
+    fila_estad = None   # estadísticos del bloque vigente (Media, Mediana, Percentil 25, Percentil 75)
+    for r in ws_rows[:7]:
+        vals = [_txt(c) for c in r]
+        if fila_fecha is None and sum(bool(re.fullmatch(r"\d{2}/\d{2}/\d{4}", v)) for v in vals) >= 1:
+            fila_fecha = vals
+        if "Mediana" in vals:
+            fila_estad = vals
+    ultima_fecha = None
     for j, v in enumerate(fila_anio):
+        if j < 2:
+            continue
+        f = fila_fecha[j] if fila_fecha is not None and j < len(fila_fecha) else ""
+        e = fila_estad[j] if fila_estad is not None and j < len(fila_estad) else ""
+        e = "" if e.lower().startswith(("euros", "€", "m2", "m²")) else e
+        if re.fullmatch(r"\d{2}/\d{2}/\d{4}", f):
+            d, m, a = f.split("/")
+            ultima_fecha = f"{a}-{m}-{d}"
+            mapa[j] = f"vigente_{ultima_fecha}" + (f"_{e.lower().replace(' ', '')}" if e else "")
+            anio = None
+            continue
+        if ultima_fecha and e:
+            mapa[j] = f"vigente_{ultima_fecha}_{e.lower().replace(' ', '')}"
+            continue
+        if not v and not f and not e:
+            ultima_fecha = None
         if v in ANIOS:
             anio = v
-        if anio is None or j < 2:
-            continue
         if fila_trim is not None:
-            q = fila_trim[j]
-            if q in TRIM:
+            q = fila_trim[j] if j < len(fila_trim) else ""
+            if anio is not None and q in TRIM:
                 mapa[j] = f"{anio}T{TRIM[q]}"
-        else:
+            elif not q:
+                anio = None   # columna vacía: termina el bloque de años
+        elif v in ANIOS:
             mapa[j] = anio
     return mapa
 
@@ -124,8 +149,9 @@ def _filas_hoja(ws, hoja: str, titulo: str, nombre_fichero: str) -> list[dict]:
         for j, periodo in mapa.items():
             if j >= len(r) or not isinstance(r[j], (int, float)):
                 continue
+            tipo_j = "vigente" if periodo.startswith("vigente_") else tipo
             salida.append({"periodo": periodo, "nivel": nivel, "codigo_ine": codigo, "nombre": nombre,
-                           "grupo": grupo, "tipo_contrato": tipo, "variable": variable,
+                           "grupo": grupo, "tipo_contrato": tipo_j, "variable": variable,
                            "valor": r[j], "hoja": hoja, "libro": nombre_fichero})
     return salida
 

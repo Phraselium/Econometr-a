@@ -106,3 +106,13 @@ def marcar_posterior_prereg(df, col_fecha: str):
                        errors="coerce")
     df["posterior_prereg"] = f >= pd.Timestamp(INICIO_POSTERIOR)
     return df
+
+
+def abrir_gz_texto(ruta: Path):
+    """gzip de texto determinista (mtime = 0): dos ejecuciones dan el mismo sha256."""
+    import gzip
+    import io
+    return io.TextIOWrapper(gzip.GzipFile(filename="", mode="wb", fileobj=open(ruta, "wb"), mtime=0), encoding="utf-8", newline="")
+
+
+GZ_PANDAS = {"method": "gzip", "mtime": 0}

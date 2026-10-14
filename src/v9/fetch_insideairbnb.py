@@ -46,7 +46,7 @@ BARRIOS = {"valencia", "barcelona"}
 def _resumen_calendar(ruta: Path) -> pd.DataFrame:
     """Por listing y mes: noches registradas, noches disponibles y precio medio (sobre noches con precio)."""
     acum = []
-    cabecera = pd.read_csv(ruta, nrows=0, compression="gzip").columns.tolist()
+    cabecera = pd.read_csv(ruta, nrows=0, compression={"method": "gzip", "mtime": 0}).columns.tolist()
     con_precio = "price" in cabecera  # algunas ediciones públicas no traen precio en calendar
     cols = ["listing_id", "date", "available"] + (["price"] if con_precio else [])
     for ch in pd.read_csv(ruta, usecols=cols, dtype={c: str for c in cols}, chunksize=1_000_000):
@@ -140,7 +140,7 @@ def main(verificar: bool = False) -> int:
             res = _resumen_calendar(dest) if "calendar" in dest.name else _resumen_reviews(dest)
             nombre = "calendar_resumen" if "calendar" in dest.name else "reviews_resumen"
             salida = OUT / f"{nombre}_{ciudad}_{fecha}.csv.gz"
-            res.to_csv(salida, index=False, compression="gzip")
+            res.to_csv(salida, index=False, compression={"method": "gzip", "mtime": 0})
             registrar(FUENTE, salida, url, fecha, fecha, nivel, LICENCIA, True, nota)
             dest.unlink()
         puntos = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df["longitude"], df["latitude"]), crs=4326)
@@ -154,23 +154,24 @@ def main(verificar: bool = False) -> int:
             descargar(url_geo, ruta_geo)
             registrar(FUENTE, ruta_geo, url_geo, fecha, fecha, "barrio (Inside Airbnb; no es código INE)", LICENCIA,
                       True)
-            barrios = gpd.read_file(ruta_geo)[["neighbourhood", "geometry"]].to_crs(4326)
-            g_b, _, _ = _agregar(puntos, barrios, "neighbourhood")
+            barrios = gpd.read_file(ruta_geo)[["neighbourhood", "geometry"]].rename(
+                columns={"neighbourhood": "barrio_iab"}).to_crs(4326)
+            g_b, _, _ = _agregar(puntos, barrios, "barrio_iab")
             g_b.insert(0, "edicion", fecha)
             g_b.insert(0, "ciudad", ciudad)
-            barrio_filas.append(g_b.rename(columns={"neighbourhood": "barrio_iab"}))
+            barrio_filas.append(g_b)
         validacion.append({"ciudad": ciudad, "edicion": fecha, "filas_listings": len(df),
                            "filas_visualisations_listings": n_vis, "dentro_seccion": n_dentro,
                            "fuera_seccion": n_fuera, "sin_coordenadas": int(df["latitude"].isna().sum())})
         print(validacion[-1], flush=True)
     seccion = pd.concat(seccion_filas, ignore_index=True)
     ruta_sec = OUT / "insideairbnb_seccion.csv.gz"
-    seccion.to_csv(ruta_sec, index=False, compression="gzip")
+    seccion.to_csv(ruta_sec, index=False, compression={"method": "gzip", "mtime": 0})
     registrar(FUENTE, ruta_sec, INE_URL + " (secciones) + " + BASE, "2026", "2025-09 a 2026-09", "sección INE (CUSEC)",
               LICENCIA, True, f"join espacial con seccionado_2025.zip del INE (sha256 zip "
               f"{sha256(TMP / 'seccionado_2025.zip')}); solo provincias {', '.join(provincias)}")
     ruta_b = OUT / "insideairbnb_barrio.csv.gz"
-    pd.concat(barrio_filas, ignore_index=True).to_csv(ruta_b, index=False, compression="gzip")
+    pd.concat(barrio_filas, ignore_index=True).to_csv(ruta_b, index=False, compression={"method": "gzip", "mtime": 0})
     registrar(FUENTE, ruta_b, BASE, "2026", "2026-09", "barrio Inside Airbnb (no INE)", LICENCIA, True,
               "solo València y Barcelona")
     ruta_v = OUT / "validacion_insideairbnb.csv"

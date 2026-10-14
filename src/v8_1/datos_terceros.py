@@ -34,6 +34,7 @@ SCRIPTS = [
     ("src/v3/fetch_madrid_alquiler_cp_v3.py", [PY, "src/v3/fetch_madrid_alquiler_cp_v3.py"]),
     ("src/v3/fetch_d3_v3.py", [PY, "src/v3/fetch_d3_v3.py"]),
     ("src/v8/fetch_v8.py", [PY, "-c", JK_CMD]),
+    ("src/v9/fetch_incasol.py", [PY, "src/v9/fetch_incasol.py"]),   # V9-DATOS
 ]
 MANUALES = ("_p1.png", "_zoomA.png", "_zoomB.png",   # renders de validación hechos a mano con pdftoppm sobre el PDF original
             "v4/medidas_programas.csv")   # V8.1: transcripción manual de medidas de programas, aplazada a la fase de propuestas

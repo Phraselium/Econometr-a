@@ -139,3 +139,28 @@ def test_eurostat_y_bce_sin_duplicados():
     b = _leer("bce_hipotecas/bce_mir_vivienda_zona_euro.csv.gz")
     assert not b.duplicated(["pais", "fijacion_codigo", "periodo"]).any()
     assert {"F", "I", "O", "P", "A_volumen"} <= set(b.fijacion_codigo) and "ES" in set(b.pais)
+
+
+def _dicc_ine() -> set[str]:
+    m = pd.read_excel(RAIZ / "data/raw/ine_diccionario_municipios_2026.xlsx", dtype=str, header=1)
+    return set(m.CPRO + m.CMUN)
+
+
+def test_regulacion_zonas_y_eventos():
+    z = _leer("regulacion/zonas_tensionadas_v9.csv")
+    assert len(z) >= 318 and z.cod_ine_municipio.isin(_dicc_ine()).all()
+    assert not z.duplicated(["cod_ine_municipio", "resolucion_boe", "alcance"]).any()
+    assert (z.nombre_en_texto_boe == "sí").all()          # cada nombre aparece en el texto de su resolución del BOE
+    assert z.fecha_declaracion_v9.str.fullmatch(r"\d{4}-\d{2}-\d{2}").all()
+    assert (z.fecha_efecto < z.fecha_fin_prevista).all()
+    e = _leer("regulacion/eventos_regulacion_v9.csv")
+    assert not e.identificador.duplicated().any() and set(z.resolucion_boe) <= set(e.identificador)
+    a = _leer("regulacion/regimen_alcance_v9.csv")
+    assert a.identificador.isin(e.identificador).all()
+    assert ((a.hasta.isna()) | (a.desde <= a.hasta)).all()
+    assert (a.posterior_prereg == a.desde.ge("2026-07-01").map({True: "sí", False: "no"})).all()
+
+
+def test_actualizaciones_comparadas():
+    c = _leer("actualizaciones/comparacion_ediciones.csv")
+    assert c.ultimo_periodo_actual.notna().all() and set(c.novedad) <= {"sí", "no"}

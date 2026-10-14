@@ -67,3 +67,44 @@
 - **Fuentes y ficheros.** `make datos_v9 --solo-verificar`: 93 ficheros registrados en 11 fuentes, todos verificados.
   - Microdatos INE: EPA, 34 trimestres (2018T1-2026T2) más 2 diseños de registro; ECV, 8 años (2018-2025); unos 1,1 GB, no versionados.
 - **`make check`:** rc = 0, 319 tests aprobados (11 de V9); check_texto, check_v5, check_v6 y check_v8 con 0 errores.
+
+# V9-DATOS-COMPLETO (2026-10-14; sin subagentes, todas las descargas las hace el orquestador)
+
+## D7 — Bloque 0: regulación hasta octubre de 2026 e inventario
+- **Ficheros de partida** (solo lectura):
+  - data/raw/v3/zonas_tensionadas_v3.csv (318 declaraciones de 317 municipios; igual que data/raw/v2_zonas_tensionadas.csv);
+  - data/raw/v2_eventos_politica.csv (41 eventos);
+  - data/raw/v3/eventos_v3.csv (8);
+  - data/raw/v3/cataluna_contencion_rentas_v3.csv (332 municipios, régimen de la Ley 11/2020).
+- **Método** (src/v9/fetch_regulacion.py):
+  - se escanean los 1.239 sumarios diarios del BOE entre el 2023-05-25 y el 2026-10-14 (API de datos abiertos) con un patrón de términos de vivienda: 1.992 títulos;
+  - de la sección I y de las resoluciones de zonas tensionadas se descarga el XML de cada disposición (102 normas): metadatos, vigencia, derogación y referencias posteriores (convalidación o derogación);
+  - las normas catalanas que no están en el BOE se toman del conjunto abierto del DOGC (Portal Jurídic, n6hn-rmy7).
+- **Zonas tensionadas.**
+  - Las 10 resoluciones de la Secretaría de Estado de Vivienda publicadas en el BOE hasta el 2026-10-14 son exactamente las de v3: **no hay declaraciones nuevas** entre la de julio de 2026 (BOE-A-2026-16532) y la fecha de corte.
+  - El script falla si el conjunto difiere.
+  - Cada nombre de municipio de v3 aparece en el texto de su resolución (segunda fuente: el propio BOE; 318 de 318).
+  - La única corrección de erratas (BOE-A-2025-20246) solo cambia enlaces.
+  - Se completa la fecha de declaración de Navarra (vacía en v3) con el título de la Orden Foral 157E/2025 y queda marcada la fuente de la fecha.
+- **Alcance** (regimen_alcance_v9.csv; transcrito de la norma con su identificador): topes (art. 17.6 y 17.7 LAU), prórrogas, temporada y habitaciones.
+  - Cataluña:
+    - DL 6/2024: vigente del 2024-04-26 al 2024-05-27; derogado por no convalidación;
+    - DL 1/2025;
+    - DL 2/2025: convalidado por la Resolución 169/XV;
+    - Ley 11/2025, arts. 66 bis y 66 ter de la Ley 18/2007: vigente desde el 2026-01-01; recurso de inconstitucionalidad admitido, sin suspensión publicada.
+  - Navarra: LF 11/2026, de habitaciones.
+  - Estatal:
+    - RDL 8/2026: derogado;
+    - RDL 26/2026 y RDL 27/2026: derogados;
+    - RDL 28/2026 y RDL 29/2026: pendientes de convalidación a la fecha de corte.
+  - Las medidas que empiezan desde 2026T3 llevan `posterior_prereg = sí`.
+- **Banderas automáticas** de eventos_regulacion_v9.csv (`menciona_*`): búsqueda literal en el texto. Orientan la lectura, pero **no** sustituyen al articulado.
+- **DL 1/2025 catalán.** Su convalidación o derogación queda **NO VERIFICADA** (fuentes_fallidas.md).
+- **Inventario de series con edición nueva** (src/v9/fetch_actualizaciones.py, comparacion_ediciones.csv). Todas tienen a 2026-10-14 la misma última observación que el proyecto:
+  - suelo urbano (2026T2);
+  - VPO anual (2025) y mensual (2026-06);
+  - viviendas libres iniciadas y terminadas;
+  - crédito del BdE (2026-06 y 2026-08);
+  - shocks del BCE (2025-10);
+  - costes de construcción de Eurostat (2026T2).
+- **Copias.** De MIVAU no se guarda copia, porque duplicaría el proyecto. Los CSV originales del BdE sí se guardan, porque el proyecto solo tenía extractos.

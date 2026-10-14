@@ -1,0 +1,17 @@
+fuente,tabla,fichero_proyecto,ultimo_periodo_proyecto,ultimo_periodo_actual,primer_periodo_actual,fichero_v9,novedad
+MIVAU,36400500,data/raw/mivau_v2_suelo.csv,2026T2,2026T2,2004T1,(sin copia: misma última observación que el proyecto),no
+MIVAU,36403000,data/raw/mivau_v2_suelo.csv,2026T2,2026T2,2004T1,(sin copia: misma última observación que el proyecto),no
+MIVAU,31303000,data/raw/mivau_v2_protegida.csv,2025,2025,1991,(sin copia: misma última observación que el proyecto),no
+MIVAU,31306000,data/raw/mivau_v2_protegida.csv,2025,2025,1991,(sin copia: misma última observación que el proyecto),no
+MIVAU,31202000,data/raw/mivau_v2_protegida.csv,2026-06,2026-06,2008-01,(sin copia: misma última observación que el proyecto),no
+MIVAU,31205000,data/raw/mivau_v2_protegida.csv,2026-06,2026-06,2008-01,(sin copia: misma última observación que el proyecto),no
+MIVAU,32200500,data/raw/mivau_v2_iniciadas_terminadas_prov.csv,2025,2025,1991,(sin copia: misma última observación que el proyecto),no
+MIVAU,32201000,data/raw/mivau_v2_iniciadas_terminadas_prov.csv,2025,2025,1991,(sin copia: misma última observación que el proyecto),no
+MIVAU,32100500,data/raw/mivau_v2_iniciadas_terminadas_prov.csv,2026-06,2026-06,2008-01,(sin copia: misma última observación que el proyecto),no
+MIVAU,32101000,data/raw/mivau_v2_iniciadas_terminadas_prov.csv,2026-06,2026-06,2008-01,(sin copia: misma última observación que el proyecto),no
+Banco de España,be0819,data/raw/bde_credito_finalidad.csv,2026-06,2026-06,1992-12,data/raw/v9/actualizaciones/bde_be0819.csv,no
+Banco de España,be1911,data/raw/bde_credito_finalidad.csv,2026-08,2026-08,2003-01,data/raw/v9/actualizaciones/bde_be1911.csv,no
+Banco de España,be1916,data/raw/bde_credito_finalidad.csv,2026-08,2026-08,2003-01,data/raw/v9/actualizaciones/bde_be1916.csv,no
+Banco de España,be0418,data/raw/v5/ca_bde_be0418_credito_actividad.csv,2026-06,2026-06,1992-12,data/raw/v9/actualizaciones/bde_be0418.csv,no
+"Shocks BCE (Jarociński-Karadi, actualización)",shocks_ecb_mpd_me_m,data/raw/v8/jk_shocks_ecb_mensual.csv,2025-10,2025-10,1999-01,(sin copia: sin licencia explícita; v8 ya está al día),no
+"Eurostat (sts_copi_q, coste de construcción residencial)",sts_copi_q,data/raw/eurostat_costes.csv,2026-Q2,2026-Q2,1980-Q1,(sin copia: ninguna novedad),no

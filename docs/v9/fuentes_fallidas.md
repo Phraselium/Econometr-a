@@ -7,3 +7,9 @@
 | Inside Airbnb, ediciones históricas | https://insideairbnb.com/get-the-data/ | Solo es pública la última edición de cada ciudad (septiembre de 2026). Las anteriores se piden por formulario (una prueba con València 2025-09-20 dio 403). | Se descargó la edición pública de las cinco ciudades. Para el shock COVID de Cataluña hacen falta las ediciones 2019-2021: hay que pedirlas a Inside Airbnb. |
 | Aena, pasajeros mensuales por aeropuerto | https://www.aena.es/es/estadisticas/informes-mensuales.html | Las páginas de estadísticas cargan los informes con JavaScript; no hay enlaces de descarga directa estables. | Nada (fuente opcional). Alternativa: FRONTUR por CCAA (INE), ya en data/raw/v8. |
 | INE, viviendas turísticas, edición de noviembre de 2026 | https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/VTE | Aún no publicada: la última edición es la de mayo de 2026, actualizada el 2026-06-24. | Nada: el proyecto ya tiene la edición de mayo de 2026 (data/raw/v3 e ine_vut_*). |
+
+## V9-DATOS-COMPLETO
+
+| Fuente | URL o endpoint | Motivo | Qué se hizo en su lugar |
+|---|---|---|---|
+| Convalidación o derogación del Decreto ley catalán 1/2025 (contención de rentas) | https://portaljuridic.gencat.cat/eli/es-ct/dl/2025/01/28/1 (HTML, XML y Turtle); conjunto n6hn-rmy7 de analisi.transparenciacatalunya.cat; sumarios del BOE 2025-01 a 2026-10 | El BOE no lo ha publicado (sí el DOGC núm. 9339). El conjunto de normativa del DOGC no incluye las resoluciones del Parlament, y la ficha del Portal Jurídic no trae referencias posteriores. 3 intentos (2026-10-14). | Se registra con la publicación verificada y el estado NO VERIFICADO (eventos_regulacion_v9.csv y regimen_alcance_v9.csv). Segunda pasada en el bloque 9: buscador del Parlament o DOGC por fecha. |

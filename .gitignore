@@ -118,3 +118,4 @@ data/raw/v9/insideairbnb/listings_*.csv.gz
 # licencia sin redistribución clara («términos de uso»): también en `make datos_terceros`
 data/raw/v9/incasol/*.csv.gz
 data/raw/v9/incasol/original/
+data/raw/v9/actualizaciones/original/

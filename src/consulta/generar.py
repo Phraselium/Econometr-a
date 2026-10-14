@@ -572,7 +572,7 @@ Estás ante una base de evidencia sobre la vivienda en España. Autor: Borja Rom
 - Versión de consulta: **{version['version']}** (sin estimaciones nuevas respecto a V8; solo redacción, tablas, capa de consulta y publicación). Metadatos en [version.json](version.json).
 - **V8** es la referencia de modelización: por qué ha subido la vivienda, factores, periodos y factor común (SVAR, factor común, instrumentos, multiverso, predicción).
 - **v7.1 y v7.2** son la referencia para el **déficit y la necesidad de vivienda**, las simulaciones de instrumentos (dosis y coste) y el atlas regional. v5 a v6.3 siguen vigentes en lo que no han sido superadas.
-- DOI: pendiente (depósito en Zenodo). Fecha verificable del pre-registro: ver `fecha_verificable` en [version.json](version.json).
+- Repositorio: {version['repositorio']}. DOI: {version['doi']}. Fecha verificable del pre-registro: {version['fecha_verificable']} (también en [version.json](version.json)).
 - Una cifra **superada** no se cita nunca: las lista [output/v5/cifras_superadas.csv](../output/v5/cifras_superadas.csv) con su sustituta. El registro completo está en [hallazgos.md](hallazgos.md) y [hallazgos.json](hallazgos.json) (campo `estado`: vigente, superada o retirada).
 
 ## 2. Capas de evidencia y cómo citarlas
@@ -729,9 +729,13 @@ def _git(*args: str) -> str:
         return ""
 
 
+REPOSITORIO = "https://github.com/Phraselium/vivienda-espana-evidencia"   # V8.1: nombre nuevo (antes Phraselium/Econometr-a; GitHub redirige el antiguo)
+
+
 def construir_version(cifras: dict[str, dict]) -> dict:
     notas = (RAIZ / "docs/v8/notas_release.md").read_text(encoding="utf-8")
     m = re.search(r"^fecha_verificable:\s*(\S+)", notas, re.M)
+    d = re.search(r"^doi:\s*(\S+)", notas, re.M)
     tareas = (RAIZ / "docs/v8/tareas_autor.md").read_text(encoding="utf-8")
     pend = [re.sub(r"^\d+\.\s*", "", t.lstrip("# ").strip()) for t in tareas.splitlines() if t.startswith("## ")]
     sha = hashlib.sha256((RAIZ / "output/v5/cifras_clave.csv").read_bytes()).hexdigest()
@@ -739,7 +743,8 @@ def construir_version(cifras: dict[str, dict]) -> dict:
             "referencia_modelizacion": "V8", "referencia_deficit_y_necesidad": "v7.1 con correcciones de v7.2",
             "commit": _git("log", "-1", "--format=%h", "--", "output") or "desconocido",
             "commit_nota": "commit del último cambio de contenido de output/ (git log -1 --format=%h -- output), no HEAD: HEAD cambia con cada commit y rompería la comparación con lo versionado",
-            "fecha": _git("log", "-1", "--format=%cs", "--", "output") or "desconocido", "doi": "pendiente",
+            "fecha": _git("log", "-1", "--format=%cs", "--", "output") or "desconocido", "doi": d.group(1) if d else "pendiente",
+            "repositorio": REPOSITORIO,
             "fecha_verificable": m.group(1) if m else "desconocido", "pendientes": pend, "n_cifras_clave": len(cifras), "sha256_cifras_clave": sha,
             "autor": "Borja Romero, economista (firma individual, independiente)"}
 
@@ -749,7 +754,7 @@ def construir_llms() -> str:
         assert (RAIZ / r).exists() or r.startswith("consulta/"), r
     return """# Vivienda en España: base de evidencia reproducible
 
-> Base de evidencia sobre precios, alquileres, déficit y necesidad de vivienda en España, con un análisis de por qué ha subido (V8: factores, periodos y factor común). Cada resultado lleva una capa de evidencia (C1, C2, C3, C3s, C4); la causalidad solo se admite en C3 y C3s. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas. Autor: Borja Romero, economista (firma individual, independiente). Versión de consulta 8.1.
+> Base de evidencia sobre precios, alquileres, déficit y necesidad de vivienda en España, con un análisis de por qué ha subido (V8: factores, periodos y factor común). Cada resultado lleva una capa de evidencia (C1, C2, C3, C3s, C4); la causalidad solo se admite en C3 y C3s. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas. Autor: Borja Romero, economista (firma individual, independiente). Versión de consulta 8.1. Repositorio: https://github.com/Phraselium/vivienda-espana-evidencia.
 
 Generado por `make consulta`; no editar a mano. Empieza por la guía para asistentes y cita solo cifras de cifras_clave con su id y su fecha.
 

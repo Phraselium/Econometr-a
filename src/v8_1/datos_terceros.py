@@ -35,7 +35,8 @@ SCRIPTS = [
     ("src/v3/fetch_d3_v3.py", [PY, "src/v3/fetch_d3_v3.py"]),
     ("src/v8/fetch_v8.py", [PY, "-c", JK_CMD]),
 ]
-MANUALES = ("_p1.png", "_zoomA.png", "_zoomB.png")   # renders de validación hechos a mano con pdftoppm sobre el PDF original
+MANUALES = ("_p1.png", "_zoomA.png", "_zoomB.png",   # renders de validación hechos a mano con pdftoppm sobre el PDF original
+            "v4/medidas_programas.csv")   # V8.1: transcripción manual de medidas de programas, aplazada a la fase de propuestas
 
 
 def sha(p: Path) -> str:
@@ -109,7 +110,7 @@ def main() -> int:
         if e.startswith("OK"):
             n_ok += 1
         elif f.endswith(MANUALES) and e == "AUSENTE":
-            avisos.append((f, "render manual (pdftoppm del original)"))
+            avisos.append((f, "transcripción manual aplazada a la fase de propuestas (copia local del autor)" if f.endswith("medidas_programas.csv") else "render manual (pdftoppm del original)"))
         else:
             malos.append((f, e))
     print(f"[datos_terceros] {n_ok}/{len(items)} ficheros coinciden con data/CHECKSUMS.sha256")

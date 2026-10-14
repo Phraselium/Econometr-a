@@ -304,7 +304,7 @@ data/raw/v4/ine_v4_t50256.csv,INE,permitida,Reutilización libre con cita (Ley 3
 data/raw/v4/ine_v4_t50272.csv,INE,permitida,Reutilización libre con cita (Ley 37/2007),,b3e420f2a8527ebf50dd9d5f792879a7d9626aa1b187255b5ec6569e9b888923
 data/raw/v4/ine_v4_t59523.csv,INE,permitida,Reutilización libre con cita (Ley 37/2007),,88f9cd30fb974cf479f2d5d0ff9cd727bec843d828c7d42d5def62a5ae0b637d
 data/raw/v4/ine_v4_t59529.csv,INE,permitida,Reutilización libre con cita (Ley 37/2007),,fc51a8f9b8ced49e45e76449481695d6c7de1a7298ae1dba74d8e68e90302459
-data/raw/v4/medidas_programas.csv,Elaboración propia (citas breves de programas electorales),permitida,Codificación propia con citas literales breves (art. 32 TRLPI); sin script (transcripción manual). Revisar por el autor,(manual),d5d25de2db0f10b1d2103cdbc14d90724ef5b53edccf403bb0c4726fa14367f9
+data/raw/v4/medidas_programas.csv,Elaboración propia (citas breves de programas electorales),no claramente permitida / no consta,Aplazado a la fase de propuestas; incluye copias no oficiales (decisión del autor en V8.1); sin script (transcripción manual),(manual) transcripción del autor,d5d25de2db0f10b1d2103cdbc14d90724ef5b53edccf403bb0c4726fa14367f9
 data/raw/v5/a4_mbc_rd1020_1993.csv,BOE / elaboración propia,permitida,Codificación propia de normas del BOE (dominio público),src/v5/a4_fetch.py,3ba5903be0e874d7f7c65561bd155639f852b489d02577eedaf5ca80378b50f0
 data/raw/v5/ca_bde_be0418_credito_actividad.csv,Banco de España,permitida,Libre con cita (cuadros publicados),src/v5/ca_fetch.py,52f66e502943586a69508bffdc132a11f879f8bd43c77f373b797131146b16c4
 data/raw/v5/ca_ecb_bls_es.csv,BCE,permitida,Libre con cita,src/v5/ca_fetch.py,7c482bf202a33d84ab7931e0ef42f130013b3bf27647dc2fb81df3aefbdeee80

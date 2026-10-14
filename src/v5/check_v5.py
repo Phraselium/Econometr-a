@@ -126,9 +126,14 @@ def retirados_con_descarga() -> set[str]:
     return out
 
 
+# V8.1 Z5: retirado por decisión del autor sin script de descarga (transcripción manual, aplazada a la fase de propuestas);
+# lo leen v4 M5 y v5 A5, cuyas salidas siguen versionadas; `make datos_terceros` solo verifica su sha256 si existe.
+RETIRADOS_MANUALES = {"medidas_programas.csv": "docs/v8_1/datos_retirados.md (copia local del autor)"}
+
+
 def lecturas_no_versionadas() -> list[str]:
     vers = set(subprocess.run(["git", "ls-files", "data/raw"], cwd=RAIZ, capture_output=True, text=True).stdout.split())
-    nombres = {Path(v).name for v in vers} | retirados_con_descarga()
+    nombres = {Path(v).name for v in vers} | retirados_con_descarga() | set(RETIRADOS_MANUALES)
     err = []
     scripts = [p for p in RAIZ.joinpath("src").rglob("*.py") if not re.match(r"(fetch_|.*_fetch\.py$|extract_|check_v5)", p.name)]
     for p in scripts:

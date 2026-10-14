@@ -1,14 +1,14 @@
 {
-  "title": "Vivienda en España: base de evidencia reproducible (v7.2)",
+  "title": "Vivienda en España: base de evidencia reproducible (v8.1)",
   "upload_type": "software",
-  "description": "Base de evidencia independiente y reproducible sobre la vivienda en España, por provincias y con un módulo para València. Cada resultado se clasifica en una de cuatro capas: hechos con al menos dos fuentes, cotas, efectos identificados y resultados exploratorios. Incluye un informe técnico, un working paper, un verificador de afirmaciones y el código y los datos para reproducirlo todo sin conexión a la red con `make all`.",
+  "description": "Base de evidencia independiente y reproducible sobre la vivienda en España, por provincias y con un módulo para València. Cada resultado se clasifica en una de cuatro capas: hechos con al menos dos fuentes, cotas, efectos identificados y resultados exploratorios. Incluye una atribución por factores y periodos de la subida (V8), un informe técnico, un working paper, un verificador de afirmaciones y el código y los datos de redistribución abierta. Los datos de terceros sin redistribución clara no se incluyen: `make datos_terceros` los descarga y verifica (docs/v8_1/datos_retirados.md); después, `make all` reproduce sin red.",
   "creators": [
     {
       "name": "Romero, Borja",
       "affiliation": "Economista independiente"
     }
   ],
-  "version": "7.2",
+  "version": "8.1",
   "language": "spa",
   "license": "MIT",
   "keywords": [

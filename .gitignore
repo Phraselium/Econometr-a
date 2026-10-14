@@ -103,3 +103,6 @@ data/raw/v5/programas/pp_resumen.pdf
 data/raw/v5/programas/sumar.pdf
 data/raw/v5/programas/upn.pdf
 data/raw/v8/jk_shocks_ecb_mensual.csv
+
+# V8.1: aplazado a la fase de propuestas (incluye copias no oficiales); se conserva la copia local del autor
+data/raw/v4/medidas_programas.csv

@@ -9,7 +9,7 @@ Estás ante una base de evidencia sobre la vivienda en España. Autor: Borja Rom
 - Versión de consulta: **8.1** (sin estimaciones nuevas respecto a V8; solo redacción, tablas, capa de consulta y publicación). Metadatos en [version.json](version.json).
 - **V8** es la referencia de modelización: por qué ha subido la vivienda, factores, periodos y factor común (SVAR, factor común, instrumentos, multiverso, predicción).
 - **v7.1 y v7.2** son la referencia para el **déficit y la necesidad de vivienda**, las simulaciones de instrumentos (dosis y coste) y el atlas regional. v5 a v6.3 siguen vigentes en lo que no han sido superadas.
-- DOI: pendiente (depósito en Zenodo). Fecha verificable del pre-registro: ver `fecha_verificable` en [version.json](version.json).
+- Repositorio: https://github.com/Phraselium/vivienda-espana-evidencia. DOI: PENDIENTE. Fecha verificable del pre-registro: PENDIENTE (también en [version.json](version.json)).
 - Una cifra **superada** no se cita nunca: las lista [output/v5/cifras_superadas.csv](../output/v5/cifras_superadas.csv) con su sustituta. El registro completo está en [hallazgos.md](hallazgos.md) y [hallazgos.json](hallazgos.json) (campo `estado`: vigente, superada o retirada).
 
 ## 2. Capas de evidencia y cómo citarlas

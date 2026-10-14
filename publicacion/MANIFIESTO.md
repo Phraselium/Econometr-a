@@ -4,7 +4,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 
 | Fichero | Fuente | sha256 |
 |---|---|---|
-| articulo_colegio.md | output/v5/articulo_colegio.md | `26b3cb42b3a6a1741b3535afe3317a92a1d43e18a7fbe5a77c3863463faa5a94` |
+| articulo_colegio.md | output/v5/articulo_colegio.md | `eaf609ab92c8925c259f8a76ff9554a8c40782d4c7c440d899995910bbce281a` |
 | atlas_regional/01_Andalucia.md | output/v7_1/atlas/01_Andalucia.md | `38fd89bd7c7f081bee4821cbebc394346eeb343c20df17cb46e78aff25ef69a4` |
 | atlas_regional/02_Aragon.md | output/v7_1/atlas/02_Aragon.md | `b7d1fb6fe99fb9677945e484560b7fe6383b37c800472bfd6275be347ce94510` |
 | atlas_regional/03_Asturias.md | output/v7_1/atlas/03_Asturias.md | `2f64ae49d3a78d55f8170aaaec7a41894232b895c95aaeace9275598e7d36cb6` |
@@ -33,7 +33,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `6365ad417984103f68a25ffdacc68a43a62ac3f54172461dbdeff41e0d5ffedb` |
 | nota_metodologica.md | output/v5/nota_metodologica.md | `42a718ba6ef57a976b84c757885d65fccef9295f58838854bff2794ad084a9b4` |
 | policy_brief.md | output/v5/policy_brief.md | `5ccb8276df6576967fc9e121a7a2b20fc8a6937f45b52066a3bcbdb2f1d0f762` |
-| ponencia/diapositivas.md | output/v5/ponencia/diapositivas.md | `01826b2ab116beea72ce49937f263631e4644defbbf7439e389f5b8419787742` |
+| ponencia/diapositivas.md | output/v5/ponencia/diapositivas.md | `59b79f616e34f23c4b58688b85b0e5ca8839ef11afbadce8cb58feda3c355f65` |
 | ponencia/guion.md | output/v5/ponencia/guion.md | `e7340de67107954fdaea292a5821ca2af43572a5330f687247b513df99413d35` |
 | por_que_ha_subido.md | output/v8/por_que_ha_subido.md | `03de7f79bd575f6d5ce71c58c584dba5503dcf784f9c6b78a4be69d545f7364d` |
 | que_cambio.md | output/v5/que_cambio.md | `b5b4ce8021db9bedf378195704d031c6f123e386e96273e869ad965a91e97091` |

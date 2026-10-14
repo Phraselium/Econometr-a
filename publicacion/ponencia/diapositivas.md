@@ -2,7 +2,7 @@
 
 # Qué sabemos y qué no sobre la vivienda en España y València
 
-Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](https://github.com/Phraselium/Econometr-a)
+Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](https://github.com/Phraselium/vivienda-espana-evidencia)
 
 ---
 

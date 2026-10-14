@@ -124,5 +124,8 @@ def test_consulta_al_dia_con_sus_fuentes():
 
 def test_version_json():
     v = json.loads((RAIZ / "consulta/version.json").read_text(encoding="utf-8"))
-    assert v["version"] == "8.1" and v["doi"] == "pendiente"
+    notas = (RAIZ / "docs/v8/notas_release.md").read_text(encoding="utf-8")
+    m = re.search(r"^doi:\s*(\S+)", notas, re.M)
+    assert v["version"] == "8.1" and v["doi"] == (m.group(1) if m else "pendiente")
+    assert v["repositorio"].endswith("/vivienda-espana-evidencia")
     assert {"commit", "fecha", "fecha_verificable", "pendientes"} <= set(v) and isinstance(v["pendientes"], list) and v["pendientes"]

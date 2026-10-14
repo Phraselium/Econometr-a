@@ -29,14 +29,17 @@ claramente permitida según `docs/v5/licencias_datos.md`. Clasificación complet
 Los tres últimos organismos (Madrid, Registre de Turisme, Jarociński-Karadi) no figuran en la tabla v5: se retiran por
 precaución («no consta»). Si el autor verifica una licencia abierta (p. ej. CC BY 4.0) pueden reincorporarse.
 
-## Decisión pendiente del autor
+## Retirado por decisión del autor (V8.1, segunda ronda)
 
-`data/raw/v4/medidas_programas.csv` (codificación propia con citas literales breves de programas, art. 32 TRLPI, sin script
-de descarga) **se mantiene versionado**; no es copia de terceros pero contiene fragmentos. Confirmar que es admisible.
+| Fichero | Organismo | Motivo | Script de descarga | sha256 | Prueba de descarga |
+|---|---|---|---|---|---|
+| `data/raw/v4/medidas_programas.csv` | Elaboración propia (citas breves de programas electorales) | **Aplazado a la fase de propuestas; incluye copias no oficiales** | Ninguno: transcripción manual del autor (se conserva su copia local) | `d5d25de2db0f10b1d2103cdbc14d90724ef5b53edccf403bb0c4726fa14367f9` | No aplica (sin descarga) |
+
+Total retirado: **76** ficheros. Consecuencia: en un clon limpio, `make all` necesita la copia local del autor de este fichero para el módulo v5 A5 (`src/v5/a5_run.py`). Sus salidas (output/v5/A5/) siguen versionadas. `make datos_terceros` lo verifica si existe y, si falta, solo avisa.
 
 ## Qué cambia para quien clone el repositorio
 
-Sin red, `make all` desde un clon limpio necesita estos ficheros. Hay que ejecutar antes `make datos_terceros`
+Sin red, `make all` desde un clon limpio necesita estos ficheros (y la copia local de `data/raw/v4/medidas_programas.csv`). Hay que ejecutar antes `make datos_terceros`
 (ver abajo; `python3 src/v8_1/datos_terceros.py`): con red descarga lo que falta con los `fetch_*`/`extract_*` existentes y,
 siempre, verifica el sha256 contra `data/CHECKSUMS.sha256`. Sin red solo verifica. `src/v5/check_v5.py`
 (`lecturas_no_versionadas`) acepta la lectura de estos ficheros porque están en `data/CHECKSUMS.sha256` y tienen script de

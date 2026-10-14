@@ -6,7 +6,8 @@
  "commit": "c7253eb",
  "commit_nota": "commit del último cambio de contenido de output/ (git log -1 --format=%h -- output), no HEAD: HEAD cambia con cada commit y rompería la comparación con lo versionado",
  "fecha": "2026-10-13",
- "doi": "pendiente",
+ "doi": "PENDIENTE",
+ "repositorio": "https://github.com/Phraselium/vivienda-espana-evidencia",
  "fecha_verificable": "PENDIENTE",
  "pendientes": [
   "Etiquetas, releases y Zenodo (urgente: antes de que se publique 2026T3)",

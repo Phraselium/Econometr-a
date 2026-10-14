@@ -1,6 +1,8 @@
 # Vivienda en España: base de evidencia reproducible
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** v8, versión de referencia (por qué ha subido el precio de la vivienda; 13 de octubre de 2026); v8.1 en curso (coherencia de redacción y tablas, sin análisis nuevo). Versiones cerradas: v1-v8.0. La v7.2 queda como referencia anterior y la v6.2 es histórica ([historico/INDICE.md](historico/INDICE.md)).
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** v8.1 (14 de octubre de 2026): v8 es la versión de referencia de modelización (por qué ha subido el precio de la vivienda), con coherencia de redacción y tablas, capa de consulta ([consulta/](consulta/LEEME_ASISTENTE.md)) y retirada de datos de terceros, sin análisis nuevo. Versiones cerradas: v1-v8.0. La v7.2 queda como referencia anterior y la v6.2 es histórica ([historico/INDICE.md](historico/INDICE.md)).
+
+**Repositorio:** https://github.com/Phraselium/vivienda-espana-evidencia (antes Phraselium/Econometr-a; GitHub redirige el nombre antiguo). **DOI:** pendiente (Zenodo).
 
 **Empiece por [LEEME_PRIMERO.md](LEEME_PRIMERO.md)**, que propone itinerarios de lectura para ciudadanos, periodistas, revisores y técnicos.
 
@@ -14,7 +16,7 @@ Una base de evidencia sobre la vivienda en España, por provincias, por comunida
 - un verificador de afirmaciones del debate público;
 - una atribución por factores y periodos del precio real de compra y del alquiler real (V8), con su informe econométrico y su verificador.
 
-Todo se reproduce sin red con los datos incluidos.
+Todo se reproduce sin red tras descargar una vez los datos de terceros que no se redistribuyen (`make datos_terceros`; [docs/v8_1/datos_retirados.md](docs/v8_1/datos_retirados.md)).
 
 ## Versión vigente: v8 (por qué ha subido)
 

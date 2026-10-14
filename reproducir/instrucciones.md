@@ -19,7 +19,7 @@ Este README sigue el modelo de los editores de datos (AEA Data Editor / Social S
 
 ## 2. Cómo reproducir
 ```bash
-git clone <repositorio> && cd Econometr-a
+git clone https://github.com/Phraselium/vivienda-espana-evidencia.git && cd vivienda-espana-evidencia
 python3 -m pip install -r requirements.lock
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 make all          # reconstruye paneles, modelos v1-v4, informes y verificador

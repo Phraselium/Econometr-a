@@ -1,6 +1,6 @@
 # Léeme primero
 
-**Vivienda en España: base de evidencia reproducible.** Autor: Borja Romero, economista (firma individual, independiente). Versión de referencia: **v7.2** (13 de octubre de 2026; v7.1 con correcciones previas a la release).
+**Vivienda en España: base de evidencia reproducible.** Autor: Borja Romero, economista (firma individual, independiente). Versión de referencia: **v8** (por qué ha subido; publicada como v8.1 el 14 de octubre de 2026). Para el déficit y la necesidad de vivienda, la referencia sigue siendo v7.1 con las correcciones de v7.2. Repositorio: https://github.com/Phraselium/vivienda-espana-evidencia. Para asistentes y consultas rápidas: [consulta/LEEME_ASISTENTE.md](consulta/LEEME_ASISTENTE.md).
 
 El repositorio tiene cuatro puertas de entrada:
 - [publicacion/](publicacion/MANIFIESTO.md): todo lo vigente para leer y difundir. Se genera con `make publicacion` y nunca se edita a mano.

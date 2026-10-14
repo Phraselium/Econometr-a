@@ -125,3 +125,8 @@ atlas:
 
 figuras:
 	$(PY) src/v10/figuras.py
+
+# V10: web estática (GitHub Pages); se construye en web/_site (no versionado)
+web:
+	$(PY) src/v10/monitor.py --sin-red
+	$(PY) src/v10/web.py

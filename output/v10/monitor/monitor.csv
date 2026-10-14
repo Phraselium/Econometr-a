@@ -1,0 +1,13 @@
+id,etiqueta,territorio,periodo,valor,variacion,unidad,capa,fuente,posterior_prereg
+ipv_general,"Índice de precios de vivienda (IPV), general",España,2026T2,"111,09","+12,2 % interanual",índice,C1,"INE, IPV (serie IPV1209)",False
+ipc_alquiler,"IPC de alquiler de vivienda, índice",España,2026-09,"103,03","+2,5 % interanual",índice,C4,"INE, IPC (IPC290887)",True
+compraventas_libre,Compraventas de vivienda libre,España,2026-07,"57.607,00","-4,4 % interanual",operaciones,C4,"INE, ETDP (ETDP1823)",True
+compraventas_protegida,Compraventas de vivienda protegida,España,2026-07,"3.810,00","-14,4 % interanual",operaciones,C4,"INE, ETDP (ETDP1822)",True
+hipotecas_viviendas,"Hipotecas sobre viviendas, número",España,2026-07,"43.372,00","-3,5 % interanual",hipotecas,C4,"INE, hipotecas (HPT34618)",True
+vut_viviendas,Viviendas turísticas (medición experimental),España,2026-05,"341.001,00","-10,7 % interanual",viviendas,C4,"INE, VUT (VTE71)",False
+poblacion,Población residente,España,2026T3,"49.801.559,00","+0,9 % interanual",personas,C4,"INE, ECP (ECP320)",True
+hpi_eurostat,"Índice de precios de vivienda (Eurostat), España",España,2026T2,"200,60","+12,1 % interanual",índice 2015=100,C1,"Eurostat, prc_hpi_q",False
+plataformas_noches,"Noches en alojamientos reservados por plataformas, España",España,2025,"12.841.549,00","+5,3 % interanual",noches,C4,"Eurostat, tour_ce_omr",False
+tipo_hip_variable,"Tipo de nuevas hipotecas, variable o fijado ≤1 año",España,2026-08,"3,23","+0,28 puntos interanual",% anual,C4,"BCE, MIR",True
+tipo_hip_tae,Coste total de las nuevas hipotecas (TAE),España,2026-08,"3,04","+0,35 puntos interanual",% anual,C4,"BCE, MIR",True
+fianzas_gva,Fianzas de alquiler depositadas en la GVA,Comunitat Valenciana,2026 (acumulado parcial del año),"28.485,00",—,fianzas,C4,"Generalitat Valenciana, datos abiertos (CC BY 4.0)",True

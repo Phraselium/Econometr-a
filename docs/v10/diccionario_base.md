@@ -34,13 +34,13 @@ Generado por `src/v10/base.py` (`make base`); no editar a mano.
 
 ## Resumen
 
-- filas: 10160692
-- filas_publica: 10104699
-- variables: 238
+- filas: 10161126
+- filas_publica: 10104941
+- variables: 250
 - territorios: 56510
 - discrepancias_entre_paneles: 203
-- filas_posterior_prereg: 50954
-- filas por nivel: ccaa 48471, distrito 578100, municipio 1575307, nacional 7770, nuts3 1440, pais 34354, provincia 75843, seccion 7839407
+- filas_posterior_prereg: 50966
+- filas por nivel: ccaa 48473, distrito 578100, municipio 1575307, nacional 8202, nuts3 1440, pais 34354, provincia 75843, seccion 7839407
 
 Las discrepancias entre paneles son claves presentes en varios ficheros procesados con valores distintos; se conserva el panel más reciente (v8 > v7 > v1), que es el que usan las publicaciones vigentes.
 
@@ -158,6 +158,18 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `ipva` |  | índice | C4 | ver diccionario del panel de origen | sí | municipio | 2011–2024 |
 | `ipva_indice` | Índice de precios de vivienda en alquiler (IPVA, base SERPAVI), total; 48 provincias, desde 2011; stock | índice 2015=100 | C1 | INE, Índice de Precios de Vivienda en Alquiler (59004, 59005, 59061) | sí | ccaa,distrito,nacional,provincia | 2011–2024 |
 | `ipva_var_anual` | INE, IPVA | % | C1 | INE, IPVA | sí | ccaa,distrito,nacional,provincia | 2012–2024 |
+| `monitor_compraventas_libre` | INE, ETDP (ETDP1823) | operaciones | C4 | INE, ETDP (ETDP1823) | sí | nacional | 2023-08–2026-07 |
+| `monitor_compraventas_protegida` | INE, ETDP (ETDP1822) | operaciones | C4 | INE, ETDP (ETDP1822) | sí | nacional | 2023-08–2026-07 |
+| `monitor_fianzas_gva` | Generalitat Valenciana, datos abiertos (CC BY 4.0) | fianzas | C4 | Generalitat Valenciana, datos abiertos (CC BY 4.0) | sí | ccaa | 2025–2026 |
+| `monitor_hipotecas_viviendas` | INE, hipotecas (HPT34618) | hipotecas | C4 | INE, hipotecas (HPT34618) | sí | nacional | 2023-08–2026-07 |
+| `monitor_hpi_eurostat` | Eurostat, prc_hpi_q | índice 2015=100 | C1 | Eurostat, prc_hpi_q | sí | nacional | 2005T4–2026T2 |
+| `monitor_ipc_alquiler` | INE, IPC (IPC290887) | índice | C4 | INE, IPC (IPC290887) | sí | nacional | 2023-10–2026-09 |
+| `monitor_ipv_general` | INE, IPV (serie IPV1209) | índice | C1 | INE, IPV (serie IPV1209) | sí | nacional | 2017T3–2026T2 |
+| `monitor_plataformas_noches` | Eurostat, tour_ce_omr | noches | C4 | Eurostat, tour_ce_omr | sí | nacional | 2018–2025 |
+| `monitor_poblacion` | INE, ECP (ECP320) | personas | C4 | INE, ECP (ECP320) | sí | nacional | 2014T3–2026T3 |
+| `monitor_tipo_hip_tae` | BCE, MIR | % anual | C4 | BCE, MIR | sí | nacional | 2022-01–2026-08 |
+| `monitor_tipo_hip_variable` | BCE, MIR | % anual | C4 | BCE, MIR | sí | nacional | 2022-01–2026-08 |
+| `monitor_vut_viviendas` | INE, VUT (VTE71) | viviendas | C4 | INE, VUT (VTE71) | sí | nacional | 2020-08–2026-05 |
 | `notariado_cgn_extranj` |  | operaciones | C4 | Consejo General del Notariado (CIEN) | no | ccaa,nacional | 2007–2025T4 |
 | `notariado_cuantia_esp_prov` |  | € | C4 | ver diccionario del panel de origen | no | provincia | 2018T1–2025T4 |
 | `notariado_cuantia_ext_prov` |  | € | C4 | ver diccionario del panel de origen | no | provincia | 2018T1–2025T4 |
@@ -215,8 +227,8 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `rdb` | Renta disponible bruta del total de la economía, ajustada de estacionalidad (INE); NO es renta de los hogares | millones de euros | C4 | ine_cnt_renta_disponible.csv (CTNFSI11113) | sí | nacional | 1999T1–2026T2 |
 | `registr_num_4tm` | Compraventas de vivienda inscritas, suma móvil de 4 trimestres (Registradores) (provincia) | número | C4 | pdf/registradores_opendata_compraventas.csv | no | nacional,provincia | 2007T1–2026T2 |
 | `registr_pm2_4tm` | Precio medio m2 de las compraventas de vivienda inscritas, media móvil de 4 trimestres (Registradores) (provincia) | euros/m2 | C4 | pdf/registradores_opendata_compraventas.csv | no | nacional,provincia | 2007T1–2026T2 |
-| `registradores_compraventas_anual` |  | viviendas (año natural) | C4 | Colegio de Registradores, OpenData (compraventas viviendas, nacional) | sí | nacional | 2007T4–2025T4 |
-| `registradores_extranj_pct` |  | % | C4 | Colegio de Registradores, Anuario ERI | sí | ccaa,nacional | 2016–2025T4 |
+| `registradores_compraventas_anual` |  | viviendas (año natural) | C4 | Colegio de Registradores, OpenData (compraventas viviendas, nacional) | no | nacional | 2007T4–2025T4 |
+| `registradores_extranj_pct` |  | % | C4 | Colegio de Registradores, Anuario ERI | no | ccaa,nacional | 2016–2025T4 |
 | `renta_hog` |  | millones de euros | C4 | ver diccionario del panel de origen | sí | nacional | 1999T1–2026T2 |
 | `renta_hog_real` |  | M€ a precios de 2020 | C4 | Derivada | sí | nacional | 1999T1–2026T2 |
 | `salario` | Coste salarial total por trabajador y mes, industria, construcción y servicios (ETCL, INE); 2000T1-2007T4 tabla 6067 y 2008T1+ tabla 79662 | euros/mes | C4 | v8/ine_etcl_6067_nacional.csv (ETCL5741) + v8/ine_etcl_79662_ccaa.csv (Total Nacional) | sí | nacional | 2000T1–2026T2 |

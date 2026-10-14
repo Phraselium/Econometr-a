@@ -1,0 +1,78 @@
+# V10-B5: actualización mensual de las series abiertas que cambian. Descarga, reconstruye base, atlas, figuras y web,
+# pasa `make check` y abre un pull request con el resumen. Nunca publica ni fusiona sin revisión humana.
+# Los modelos congelados (evaluate_v7, evaluate_v8) no se tocan: los datos nuevos solo se muestran de forma descriptiva.
+name: actualizar
+
+on:
+  schedule:
+    - cron: "17 6 3 * *"   # día 3 de cada mes, 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements.lock
+      - name: Descargar series del monitor
+        run: python src/v10/monitor.py
+      - name: Refrescar fuentes abiertas de V9 (fianzas GVA, VUT GVA, censo anual, Eurostat, BCE)
+        env:
+          FORCE: "1"
+        run: |
+          for f in fetch_gva_fianzas fetch_gva_vut fetch_ine_censo_anual fetch_eurostat_plataformas fetch_bce_hipotecas; do
+            python src/v9/$f.py || echo "::warning::$f falló"
+          done
+          python src/v9/datos_v9.py --solo-verificar || true
+      - name: Geometrías de entrada (seccionado del INE, no versionado por tamaño)
+        run: python src/v10/fetch_geo.py
+      - name: Reconstruir base, atlas, figuras y web
+        run: make base atlas figuras web
+      - name: make check
+        id: check
+        continue-on-error: true
+        run: make check
+      - name: Resumen de cambios
+        run: |
+          {
+            echo "## Actualización mensual automática"
+            echo
+            echo "Resultado de \`make check\`: ${{ steps.check.outcome }}"
+            echo
+            echo "### Monitor"
+            python -c "import json; d=json.load(open('output/v10/monitor/monitor.json')); print('\n'.join(f\"- {r['etiqueta']}: {r['valor']} {r['unidad']} ({r['periodo']}; {r['variacion']}; capa {r['capa']}; posterior al pre-registro: {'sí' if r['posterior_prereg'] else 'no'})\" for r in d['filas'])); print(); print('Fallos: ' + ('; '.join(d['fallos']) or 'ninguno'))"
+            echo
+            echo "### Ficheros cambiados"
+            git status --short | head -100
+            echo
+            echo "Descriptivo: ninguna predicción congelada se contrasta con estos datos hasta ejecutar evaluate_v7/evaluate_v8."
+          } > resumen_actualizacion.md
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: actualizacion-mensual
+          title: "Actualización mensual de datos (monitor V10)"
+          body-path: resumen_actualizacion.md
+          commit-message: "Actualización mensual automática de series abiertas (monitor V10)"
+          labels: datos, automatico
+          add-paths: |
+            data/raw/v9/**
+            data/raw/v10/monitor/**
+            data/base/publica/**
+            data/base/territorios.parquet
+            data/base/variables.parquet
+            data/base/cifras_clave.parquet
+            data/base/regulacion_zonas.parquet
+            data/base/v8_atribucion.parquet
+            output/v10/**
+            figuras/**
+            docs/v10/diccionario_base.md

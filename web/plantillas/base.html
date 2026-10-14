@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{ lang|default('es') }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ titulo }} · Vivienda en España: evidencia</title>
+<meta name="description" content="{{ descripcion|default('Base de evidencia abierta sobre la vivienda en España: datos, atlas, mapas y verificador con capas de evidencia.') }}">
+<link rel="stylesheet" href="{{ raiz }}estilo.css">
+{% if leaflet %}<link rel="stylesheet" href="{{ raiz }}vendor/leaflet/leaflet.css">{% endif %}
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido · Botar al contingut</a>
+<header class="sitio"><div class="marco">
+  <a class="titulo" href="{{ raiz }}index.html">Vivienda en España: evidencia</a>
+  <nav class="principal" aria-label="Navegación principal"><ul>
+  {% for p in paginas %}<li><a href="{{ raiz }}{{ p.url }}"{% if p.url == actual %} aria-current="page"{% endif %}>{{ p.es }}{% if p.va %} <span class="va" lang="ca-valencia">· {{ p.va }}</span>{% endif %}</a></li>
+  {% endfor %}</ul></nav>
+</div></header>
+<main id="contenido">
+{% block contenido %}{% endblock %}
+</main>
+<footer class="sitio"><div class="marco">
+  <p>Borja Romero, economista (firma individual, independiente). Versión {{ version.version }} · datos a {{ version.fecha }} ·
+  DOI: {{ version.doi }} · <a href="{{ raiz }}metodologia.html#citar">Cómo citar</a> ·
+  <a href="{{ raiz }}metodologia.html#ia">Uso de IA</a> · <a href="{{ raiz }}metodologia.html#errata">ERRATA</a> ·
+  Código y datos propios: CC BY 4.0 salvo indicación; cada fuente conserva su licencia.</p>
+  <p>Capas de evidencia: <span class="capa C1">C1</span> hechos con ≥2 fuentes · <span class="capa C2">C2</span> cotas con supuestos explícitos ·
+  <span class="capa C3s">C3/C3s</span> efectos con diseño o restricciones de signo · <span class="capa C4">C4</span> exploratorio o fuente única.
+  Este sitio es descriptivo: no muestra predicciones contrastadas con datos posteriores al pre-registro (2026T3 en adelante).</p>
+</div></footer>
+<script src="{{ raiz }}vendor/d3.min.js"></script>
+<script src="{{ raiz }}vendor/plot.umd.min.js"></script>
+{% if leaflet %}<script src="{{ raiz }}vendor/leaflet/leaflet.js"></script>{% endif %}
+<script src="{{ raiz }}app.js"></script>
+{% block guion %}{% endblock %}
+</body>
+</html>

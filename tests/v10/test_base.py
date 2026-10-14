@@ -73,7 +73,8 @@ def test_posterior_prereg_marcado(pub):
 
 def test_publica_solo_redistribuible(pub):
     assert pub.redistribuible.all()
-    assert not pub.variable.str.match(r"^(registr_|notariado_|jk_|incasol_)").any()
+    assert not pub.variable.str.match(r"^(registr|notariado|jk_|incasol_)").any()
+    assert not pub.fuente.str.contains("Registradores|Notariado|Jaroci|Incasòl", case=False).any()
     v = _pq("publica/variables.parquet")
     assert v.redistribuible.all()
 

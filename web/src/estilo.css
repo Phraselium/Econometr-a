@@ -1,0 +1,52 @@
+/* Vivienda en España: evidencia. Estilo accesible (contraste AA, foco visible, sin dependencias externas). */
+:root {
+  --tinta: #1a1a1a; --suave: #4a4a4a; --fondo: #ffffff; --panel: #f4f5f7; --borde: #c9ccd1;
+  --acento: #0060a0; --acento2: #b35900; --c1: #00704a; --c2: #0060a0; --c3: #7a3e9d; --c4: #6b6b6b;
+  --max: 72rem;
+}
+* { box-sizing: border-box; }
+html { font-family: "DejaVu Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--tinta);
+       background: var(--fondo); line-height: 1.55; font-size: 100%; }
+body { margin: 0; }
+a { color: var(--acento); }
+a:focus, button:focus, select:focus, input:focus, summary:focus { outline: 3px solid var(--acento2); outline-offset: 2px; }
+.saltar { position: absolute; left: -999px; top: 0; background: var(--tinta); color: #fff; padding: .5rem 1rem; }
+.saltar:focus { left: 0; z-index: 1000; }
+header.sitio { background: #0b2a40; color: #fff; }
+header.sitio .marco { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem; padding: .75rem 1rem; }
+header.sitio .titulo { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.1rem; }
+nav.principal ul { list-style: none; display: flex; flex-wrap: wrap; gap: .25rem .9rem; margin: 0; padding: 0; }
+nav.principal a { color: #fff; text-decoration: none; font-size: .92rem; }
+nav.principal a[aria-current="page"], nav.principal a:hover { text-decoration: underline; }
+nav.principal .va { opacity: .8; font-size: .8rem; }
+.marco { max-width: var(--max); margin: 0 auto; }
+main { padding: 1rem; max-width: var(--max); margin: 0 auto; }
+h1 { font-size: 1.6rem; margin: .5rem 0 1rem; } h2 { font-size: 1.25rem; margin-top: 2rem; } h3 { font-size: 1.05rem; }
+.lema { color: var(--suave); }
+.capa { display: inline-block; font-size: .75rem; font-weight: 700; padding: .05rem .4rem; border-radius: .25rem;
+        color: #fff; vertical-align: middle; }
+.capa.C1 { background: var(--c1); } .capa.C2 { background: var(--c2); } .capa.C3, .capa.C3s { background: var(--c3); }
+.capa.C4 { background: var(--c4); }
+.meta { font-size: .82rem; color: var(--suave); }
+.panel { background: var(--panel); border: 1px solid var(--borde); border-radius: .4rem; padding: 1rem; margin: 1rem 0; }
+.controles { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; align-items: end; margin-bottom: .75rem; }
+.controles label { display: flex; flex-direction: column; font-size: .85rem; gap: .2rem; }
+select, input, button { font: inherit; padding: .3rem .5rem; border: 1px solid var(--borde); border-radius: .3rem; background: #fff; }
+button { cursor: pointer; background: var(--acento); color: #fff; border-color: var(--acento); }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; }
+th, td { border-bottom: 1px solid var(--borde); padding: .3rem .5rem; text-align: left; vertical-align: top; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.tabla-desplazable { max-height: 24rem; overflow: auto; border: 1px solid var(--borde); }
+.mapa { height: 34rem; border: 1px solid var(--borde); background: #fbfbfb; }
+.leyenda { background: #fff; padding: .4rem .6rem; border: 1px solid var(--borde); font-size: .8rem; line-height: 1.3; }
+.leyenda .barra { width: 12rem; height: .7rem; }
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: .75rem; }
+.tarjeta { border: 1px solid var(--borde); border-radius: .4rem; padding: .75rem; background: #fff; }
+.veredicto { font-weight: 700; }
+figure { margin: 1rem 0; } figure img { max-width: 100%; height: auto; border: 1px solid var(--borde); }
+figcaption { font-size: .85rem; color: var(--suave); }
+footer.sitio { border-top: 1px solid var(--borde); margin-top: 3rem; padding: 1rem; font-size: .82rem; color: var(--suave); }
+.aviso { border-left: 4px solid var(--acento2); padding: .5rem .75rem; background: #fff7ec; }
+details summary { cursor: pointer; font-weight: 600; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+@media (max-width: 40rem) { .mapa { height: 24rem; } h1 { font-size: 1.3rem; } }

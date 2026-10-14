@@ -87,3 +87,41 @@ Rama local `r10/difusion`, subida a la rama remota designada (`claude/housing-pr
   - figuras clave regeneradas desde la base: contratos nuevos frente a existentes (V5), déficit provincial (V5), factor común (V8), descomposición por periodo con bandas (V8) y cotas C2 (verificador).
 - **Ficha por figura** (figuras/fichas.json y README.md): título, fuente, fecha, capa, nota y texto alternativo.
   - Los textos alternativos describen la figura, no anticipan hallazgos.
+
+## D5 — Licencias de la capa pública (corrección)
+- **Fallo.** El filtro de no redistribuibles solo miraba el prefijo `registr_`. Por eso, en los commits bc0f83b y 4e0c4a8, la capa pública (data/base/publica/hechos.parquet) incluía dos variables agregadas del Colegio de Registradores: `registradores_extranj_pct` y `registradores_compraventas_anual`.
+- **Corrección.** El filtro mira ahora el prefijo (`registr`, `notariado`, `jk_`, `incasol_`…) y también el texto de la fuente. Un test lo impide en la capa pública y en la web.
+- **Historial.** No se reescribe: los dos commits siguen conteniendo esas filas en el historial de la rama. Se avisa al autor.
+
+## D6 — Web (bloque 4)
+- **Por qué no Quarto ni Observable Framework.** Quarto no está instalado en el entorno, y Observable Framework exige `npm install` al construir.
+  - Se usa un generador en Python (Jinja2 y markdown) con Observable Plot 0.6.17, D3 7.9.0 y Leaflet 1.9.4 vendorizados en web/vendor, con sus licencias (ISC, BSD y BSD-2).
+  - Así `make web` funciona sin red y el sitio no hace peticiones a terceros. Los mapas no usan teselas externas, por privacidad y licencia.
+- **Despliegue.** .github/workflows/pages.yml, en cada push a `main` que toque datos, salidas o web.
+  - Requiere que el autor active Pages con origen «GitHub Actions».
+  - URL prevista: https://phraselium.github.io/vivienda-espana-evidencia/.
+- **Contenido.**
+  - 9 secciones y 311 fichas territoriales: 19 CCAA, 52 provincias, municipios de 50.000 habitantes o más y 87 barrios de València.
+  - Navegación y textos clave en castellano y valenciano; metodología y resumen en inglés.
+- **Accesibilidad.**
+  - Enlace para saltar al contenido, foco visible y contraste AA.
+  - Texto alternativo en las figuras; cada mapa con una tabla equivalente y un CSV descargable; cada gráfico con su tabla.
+- **Datos.**
+  - Solo redistribuibles: la web publica data/base/publica y los agregados del atlas.
+  - El panel y los mapas excluyen los periodos desde 2026T3. Un test comprueba todo esto.
+
+## D7 — Monitor (bloque 5)
+- **Script** (src/v10/monitor.py): 12 series abiertas que cambian con frecuencia, con su último dato y la variación interanual (en puntos para los tipos).
+  - INE: IPV, IPC de alquiler, compraventas, hipotecas, VUT y población.
+  - Eurostat: HPI y plataformas.
+  - BCE: tipos MIR.
+  - GVA: fianzas.
+- **Fianzas de la GVA.** El año en curso es un acumulado parcial (el fichero no trae mes): se muestra sin variación.
+- **Posterior al pre-registro.** Se marca todo periodo que incluya algún mes desde 2026-07. Se muestra como dato, sin comparar con ninguna predicción.
+- **En la base.** Las series entran como variables `monitor_*`.
+- **Flujo mensual** (.github/workflows/actualizar.yml), los días 3 de cada mes:
+  1. descarga el monitor y refresca las fuentes abiertas de V9;
+  2. reconstruye base, atlas, figuras y web;
+  3. pasa `make check`;
+  4. abre un pull request con el resumen.
+- **Límites del flujo.** No publica ni fusiona sin revisión. No toca evaluate_v7 ni evaluate_v8.

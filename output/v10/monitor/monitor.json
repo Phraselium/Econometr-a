@@ -1,0 +1,151 @@
+{
+ "fecha": "2026-10-14",
+ "n": 12,
+ "filas": [
+  {
+   "id": "ipv_general",
+   "etiqueta": "Índice de precios de vivienda (IPV), general",
+   "territorio": "España",
+   "periodo": "2026T2",
+   "valor": "111,09",
+   "variacion": "+12,2 % interanual",
+   "unidad": "índice",
+   "capa": "C1",
+   "fuente": "INE, IPV (serie IPV1209)",
+   "posterior_prereg": false
+  },
+  {
+   "id": "ipc_alquiler",
+   "etiqueta": "IPC de alquiler de vivienda, índice",
+   "territorio": "España",
+   "periodo": "2026-09",
+   "valor": "103,03",
+   "variacion": "+2,5 % interanual",
+   "unidad": "índice",
+   "capa": "C4",
+   "fuente": "INE, IPC (IPC290887)",
+   "posterior_prereg": true
+  },
+  {
+   "id": "compraventas_libre",
+   "etiqueta": "Compraventas de vivienda libre",
+   "territorio": "España",
+   "periodo": "2026-07",
+   "valor": "57.607,00",
+   "variacion": "-4,4 % interanual",
+   "unidad": "operaciones",
+   "capa": "C4",
+   "fuente": "INE, ETDP (ETDP1823)",
+   "posterior_prereg": true
+  },
+  {
+   "id": "compraventas_protegida",
+   "etiqueta": "Compraventas de vivienda protegida",
+   "territorio": "España",
+   "periodo": "2026-07",
+   "valor": "3.810,00",
+   "variacion": "-14,4 % interanual",
+   "unidad": "operaciones",
+   "capa": "C4",
+   "fuente": "INE, ETDP (ETDP1822)",
+   "posterior_prereg": true
+  },
+  {
+   "id": "hipotecas_viviendas",
+   "etiqueta": "Hipotecas sobre viviendas, número",
+   "territorio": "España",
+   "periodo": "2026-07",
+   "valor": "43.372,00",
+   "variacion": "-3,5 % interanual",
+   "unidad": "hipotecas",
+   "capa": "C4",
+   "fuente": "INE, hipotecas (HPT34618)",
+   "posterior_prereg": true
+  },
+  {
+   "id": "vut_viviendas",
+   "etiqueta": "Viviendas turísticas (medición experimental)",
+   "territorio": "España",
+   "periodo": "2026-05",
+   "valor": "341.001,00",
+   "variacion": "-10,7 % interanual",
+   "unidad": "viviendas",
+   "capa": "C4",
+   "fuente": "INE, VUT (VTE71)",
+   "posterior_prereg": false
+  },
+  {
+   "id": "poblacion",
+   "etiqueta": "Población residente",
+   "territorio": "España",
+   "periodo": "2026T3",
+   "valor": "49.801.559,00",
+   "variacion": "+0,9 % interanual",
+   "unidad": "personas",
+   "capa": "C4",
+   "fuente": "INE, ECP (ECP320)",
+   "posterior_prereg": true
+  },
+  {
+   "id": "hpi_eurostat",
+   "etiqueta": "Índice de precios de vivienda (Eurostat), España",
+   "territorio": "España",
+   "periodo": "2026T2",
+   "valor": "200,60",
+   "variacion": "+12,1 % interanual",
+   "unidad": "índice 2015=100",
+   "capa": "C1",
+   "fuente": "Eurostat, prc_hpi_q",
+   "posterior_prereg": false
+  },
+  {
+   "id": "plataformas_noches",
+   "etiqueta": "Noches en alojamientos reservados por plataformas, España",
+   "territorio": "España",
+   "periodo": "2025",
+   "valor": "12.841.549,00",
+   "variacion": "+5,3 % interanual",
+   "unidad": "noches",
+   "capa": "C4",
+   "fuente": "Eurostat, tour_ce_omr",
+   "posterior_prereg": false
+  },
+  {
+   "id": "tipo_hip_variable",
+   "etiqueta": "Tipo de nuevas hipotecas, variable o fijado ≤1 año",
+   "territorio": "España",
+   "periodo": "2026-08",
+   "valor": "3,23",
+   "variacion": "+0,28 puntos interanual",
+   "unidad": "% anual",
+   "capa": "C4",
+   "fuente": "BCE, MIR",
+   "posterior_prereg": true
+  },
+  {
+   "id": "tipo_hip_tae",
+   "etiqueta": "Coste total de las nuevas hipotecas (TAE)",
+   "territorio": "España",
+   "periodo": "2026-08",
+   "valor": "3,04",
+   "variacion": "+0,35 puntos interanual",
+   "unidad": "% anual",
+   "capa": "C4",
+   "fuente": "BCE, MIR",
+   "posterior_prereg": true
+  },
+  {
+   "id": "fianzas_gva",
+   "etiqueta": "Fianzas de alquiler depositadas en la GVA",
+   "territorio": "Comunitat Valenciana",
+   "periodo": "2026 (acumulado parcial del año)",
+   "valor": "28.485,00",
+   "variacion": "—",
+   "unidad": "fianzas",
+   "capa": "C4",
+   "fuente": "Generalitat Valenciana, datos abiertos (CC BY 4.0)",
+   "posterior_prereg": true
+  }
+ ],
+ "fallos": []
+}

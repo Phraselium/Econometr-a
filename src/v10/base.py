@@ -61,7 +61,8 @@ EXCLUIR = {"covid", "epa2021", "etcl2008", "P1", "P2", "P3", "P4", "P5", "period
            "tope_actualiz_rentas_nac", "registro_unico_arrend_nac", "fianzas_parcial", "cod_ccaa", "codigo_ine_ccaa",
            "ccaa", "cod_prov", "anio", "trimestre", "fecha", "deflactor_pib", "ipc_general", "hicp_yoy", "q1", "q2", "q3", "q4"}
 # Fuentes sin licencia abierta clara (docs/v8_1/inventario_licencias.csv, datos_retirados.md, v9 manifiestos)
-NO_REDISTRIBUIBLE = re.compile(r"^(registr_|notariado_|jk_|incasol_|airdna|idealista|fotocasa|cgn_)", re.I)
+NO_REDISTRIBUIBLE = re.compile(r"^(registr|notariado|jk_|incasol_|airdna|idealista|fotocasa|cgn_)", re.I)
+FUENTE_NO_REDISTRIBUIBLE = re.compile(r"registradores|notariado|jaroci|incas[oò]l|airdna|idealista|fotocasa", re.I)
 
 
 # ----------------------------------------------------------------------------------------------- utilidades
@@ -416,6 +417,28 @@ def resultados_publicados() -> tuple[list[pd.DataFrame], pd.DataFrame]:
     return partes, atr
 
 
+def monitor_series() -> list[pd.DataFrame]:
+    """Series del monitor (src/v10/monitor.py): último tramo de series abiertas, variable `monitor_<id>`."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("monitor", Path(__file__).with_name("monitor.py"))
+    mon = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mon)
+    partes = []
+    for ident in mon.SERIES:
+        ruta = RAW / "v10" / "monitor" / f"{ident}.csv"
+        if not ruta.exists():
+            continue
+        d = pd.read_csv(ruta, dtype={"periodo": str})
+        terr, nivel = ("10", "ccaa") if ident == "fianzas_gva" else ("00", "nacional")
+        partes.append(pd.DataFrame({"territorio_codigo": terr, "nivel": nivel, "periodo_raw": d.periodo,
+                                    "variable": f"monitor_{ident}", "desagregacion": "", "valor": d.valor,
+                                    "metodo_dato": "observado (monitor)", "origen": f"data/raw/v10/monitor/{ident}.csv",
+                                    "prioridad": 6}))
+        _, _, _, unidad, capa, fuente = mon.SERIES[ident]
+        META_V9[f"monitor_{ident}"] = (unidad, fuente, capa, "reutilización con cita del organismo", True)
+    return partes
+
+
 def zonas_trimestrales() -> tuple[pd.DataFrame, pd.DataFrame]:
     z = pd.read_csv(RAW9 / "regulacion/zonas_tensionadas_v9.csv", dtype=str)
     filas = []
@@ -495,7 +518,7 @@ def tabla_variables(vars_: list[str], meta: dict, lic: dict) -> pd.DataFrame:
             m = meta.get(v, {})
             fuente = m.get("fuente", "")
             capa = m.get("capa") or "C4"
-            redis = not NO_REDISTRIBUIBLE.search(v)
+            redis = not NO_REDISTRIBUIBLE.search(v) and not FUENTE_NO_REDISTRIBUIBLE.search(fuente)
             for f in re.findall(r"[\w./-]+\.(?:csv|xlsx?|json|px)", fuente, re.I):
                 if lic.get(Path(f).name.lower(), "permitida") != "permitida":
                     redis = False
@@ -519,6 +542,8 @@ def edicion_origen() -> dict:
     out["data/raw/v9/regulacion/zonas_tensionadas_v9.csv"] = "BOE hasta 2026-10-14"
     out["output/v5/A4/clasificacion_provincias.csv"] = "V5 (publicado; cifras_clave A4)"
     out["output/v8/M1/factor_comun.csv"] = "V8 (congelado; M1)"
+    for f in (RAW / "v10" / "monitor").glob("*.csv"):
+        out[str(f.relative_to(RAIZ))] = "monitor V10 (fecha de descarga en output/v10/monitor/monitor.json)"
     return out
 
 
@@ -567,6 +592,7 @@ def construir() -> dict:
     insertar([zt])
     res_partes, atribucion = resultados_publicados()
     insertar(res_partes)
+    insertar(monitor_series())
     con.execute("UPDATE bruto SET desagregacion = coalesce(desagregacion, ''), "
                 "metodo_dato = CASE WHEN metodo_dato IS NULL OR metodo_dato IN ('', 'nan', '<NA>') THEN 'observado' ELSE metodo_dato END")
     # periodos y metadatos de variables (tablas pequeñas)

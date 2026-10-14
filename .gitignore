@@ -124,3 +124,4 @@ data/base/hechos.parquet
 data/base/vivienda.duckdb
 data/base/vivienda.duckdb.wal
 data/raw/v10/geo/seccionado_2025.zip
+web/_site/

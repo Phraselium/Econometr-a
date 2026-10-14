@@ -125,3 +125,20 @@ Rama local `r10/difusion`, subida a la rama remota designada (`claude/housing-pr
   3. pasa `make check`;
   4. abre un pull request con el resumen.
 - **Límites del flujo.** No publica ni fusiona sin revisión. No toca evaluate_v7 ni evaluate_v8.
+
+## D8 — Paquete académico (bloque 6)
+- **Manuscrito** (paper/manuscrito.qmd), en Quarto con estructura de revista:
+  - resumen y abstract;
+  - datos, método y resultados descriptivos;
+  - evidencia de V5-V8 regenerada desde la base;
+  - diseños de v9 marcados como [PENDIENTE];
+  - discusión;
+  - referencias desde docs/v9_prep/referencias.bib;
+  - apéndice de replicación.
+- **Cifras del manuscrito.** Ninguna se escribe a mano: se calculan con código en línea desde las tablas.
+- **Render.** Quarto no está instalado en el entorno, así que el manuscrito no se ha renderizado. Un test ejecuta sus bloques de código y su código en línea, y comprueba las figuras y las citas.
+- **Excel** (publicacion/tablas_atlas.xlsx; src/v10/tablas_excel.py):
+  - colores: datos de entrada en azul con fuente y fecha (cabecera y comentario); cálculos de la hoja en negro, como fórmulas recalculables; vínculos a otras pestañas en verde (índice con hipervínculos y fórmulas entre hojas);
+  - sin paneles inmovilizados;
+  - zip con fechas fijas (determinista);
+  - fórmulas comprobadas con LibreOffice: sin errores; la brecha nacional del IPVA coincide con el atlas (16,404).

@@ -122,6 +122,7 @@ atlas:
 	@if [ -d data/raw/v9/ine_microdatos/ecv ]; then $(PY) src/v10/atlas_microdatos.py; else echo "[atlas] sin microdatos en disco: se conservan output/v10/atlas/a_*"; fi
 	$(PY) src/v10/atlas.py
 	$(PY) src/v10/atlas_texto.py
+	$(PY) src/v10/tablas_excel.py
 
 figuras:
 	$(PY) src/v10/figuras.py

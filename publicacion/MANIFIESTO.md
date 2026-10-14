@@ -38,6 +38,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | ponencia/guion.md | output/v5/ponencia/guion.md | `e7340de67107954fdaea292a5821ca2af43572a5330f687247b513df99413d35` |
 | por_que_ha_subido.md | output/v8/por_que_ha_subido.md | `03de7f79bd575f6d5ce71c58c584dba5503dcf784f9c6b78a4be69d545f7364d` |
 | que_cambio.md | output/v5/que_cambio.md | `b5b4ce8021db9bedf378195704d031c6f123e386e96273e869ad965a91e97091` |
+| tablas_atlas.xlsx | output/v10/tablas_atlas.xlsx | `3967d28730861ee685e90d940acf1455cb2779197c05791072aa574dda1666d6` |
 | tablas_modelos_destacados.csv | output/v8/tablas_modelos_destacados.csv | `b70730be9a7924f4ea71426a2ef04a50287c82b8a45dfd802ea61b2480277495` |
 | tablas_modelos_destacados.md | output/v8/tablas_modelos_destacados.md | `650cd6505b65d0e622e2c3916848664cb8c93b4cdb1aac86a1de2e6dc918590c` |
 | tablas_v8.xlsx | output/v8/tablas_v8.xlsx | `14840ac35aca7c0d924cdb62e1791c897a5bc4464c8d331d4361af2c1499ed78` |

@@ -114,12 +114,12 @@ def hallazgos() -> tuple[list[str], dict]:
     pob21, pob25 = s.pob_2021.sum(), s.pob_2025.sum()
     ex21, ex25 = s.extranj_2021.sum(), s.extranj_2025.sum()
     d1_ = reg("V10-ATL-C1", "València: porcentaje de población de nacionalidad extranjera", 100 * ex25 / pob25, "%", "2025",
-              "València (municipio 46250)", "INE censo anual (suma de secciones)", "C1", "2025-01-01")
+              "València (municipio 46250)", "INE censo anual (suma de secciones)", "C4", "2025-01-01")
     d2_ = reg("V10-ATL-C2", "València: porcentaje de población de nacionalidad extranjera", 100 * ex21 / pob21, "%", "2021",
-              "València (municipio 46250)", "INE censo anual (suma de secciones)", "C1", "2021-01-01")
+              "València (municipio 46250)", "INE censo anual (suma de secciones)", "C4", "2021-01-01")
     h.append(f"- **València, población.** La ciudad pasa de {f(pob21, 0)} a {f(pob25, 0)} habitantes entre 2021 y 2025 "
              f"(suma de secciones del censo anual); la población de nacionalidad extranjera, de {f(ex21, 0)} a {f(ex25, 0)} "
-             f"({f(100 * ex21 / pob21)} % {d2_} → {f(100 * ex25 / pob25)} % {d1_}). *Capa C1 (recuento oficial del INE); censo anual.*")
+             f"({f(100 * ex21 / pob21)} % {d2_} → {f(100 * ex25 / pob25)} % {d1_}). *Capa C4 (fuente única: censo anual del INE).*")
     top = b.dropna(subset=["indice_presion_descriptivo"]).sort_values("indice_presion_descriptivo").tail(5)
     marcas = {r.cod_barrio: reg(f"V10-ATL-C4-{r.cod_barrio}", f"Índice descriptivo de presión residencial, barrio {r.nombre.title()}",
                                 r.indice_presion_descriptivo, "puntuación z media", "2019-2026", f"València, barrio {r.cod_barrio}",
@@ -170,7 +170,7 @@ def main() -> dict:
     h, _ = hallazgos()
     (A / "hechos.json").write_text(json.dumps(HECHOS, ensure_ascii=False, indent=1), encoding="utf-8")
     res = json.loads((A / "resumen.json").read_text(encoding="utf-8"))
-    lin = ["# Atlas descriptivo: quién sufre la subida y dónde (V10)", "",
+    lin = ["# Atlas descriptivo: quién soporta el coste de la vivienda y dónde (V10)", "",
            "Generado por `make atlas` (src/v10/atlas_texto.py) desde las tablas de output/v10/atlas/; no editar a mano. "
            "Solo descriptivo: ninguna frase atribuye causas. Cada hallazgo indica capa, fuente y fecha del dato. "
            "Las filas posteriores al pre-registro (desde 2026T3) no entran en ningún cálculo. Entre corchetes, el id de cada "

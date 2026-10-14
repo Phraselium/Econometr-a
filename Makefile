@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas
+.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10
 
 all: data clean models report
 
@@ -131,3 +131,11 @@ figuras:
 web:
 	$(PY) src/v10/monitor.py --sin-red
 	$(PY) src/v10/web.py
+
+# V10 completo en el orden correcto (D9/D10): la base lee publicacion/cifras_clave.csv, que incluye las cifras del atlas,
+# y el atlas lee la base; por eso la base se construye antes y después de regenerar cifras_clave y publicacion/.
+v10:
+	$(MAKE) base atlas
+	$(PY) src/v5/cifras_clave.py
+	$(MAKE) publicacion
+	$(MAKE) base consulta figuras web

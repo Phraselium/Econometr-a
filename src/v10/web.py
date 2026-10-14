@@ -35,7 +35,7 @@ PAGINAS = [
     {"url": "indicadores.html", "es": "Indicadores", "va": "Indicadors"},
     {"url": "mapas.html", "es": "Mapas", "va": "Mapes"},
     {"url": "fichas.html", "es": "Fichas territoriales", "va": "Fitxes territorials"},
-    {"url": "quien.html", "es": "Quién lo sufre", "va": "Qui ho patix"},
+    {"url": "quien.html", "es": "Quién soporta el coste", "va": "Qui en suporta el cost"},
     {"url": "verificador.html", "es": "Verificador", "va": "Verificador"},
     {"url": "monitor.html", "es": "Monitor", "va": "Monitor"},
     {"url": "metodologia.html", "es": "Metodología y datos", "va": "Metodologia i dades"},
@@ -84,8 +84,8 @@ MAPAS = {
                  ("precio_80m2_en_anios_renta_persona", "Precio 80 m² en años de renta por persona", "años", "C4", False),
                  ("var_alquiler_2015_2024_pct", "Variación del alquiler 2015-2024", "%", "C4", False),
                  ("var_valor_tasado_2015_2024_pct", "Variación del valor tasado 2015-2024", "%", "C4", False),
-                 ("pct_extranj_2025", "Población extranjera 2025", "%", "C1", False),
-                 ("var_pob_2021_2025_pct", "Variación de la población 2021-2025", "%", "C1", True),
+                 ("pct_extranj_2025", "Población extranjera 2025", "%", "C4", False),
+                 ("var_pob_2021_2025_pct", "Variación de la población 2021-2025", "%", "C4", True),
                  ("deficit_2021_2025_mediana", "Déficit de vivienda 2021-2025 (mediana)", "viviendas", "C4", True)]},
     "cv_municipios": {
         "titulo": "Comunitat Valenciana por municipio", "geo": "municipios.parquet", "clave_geo": "cod_municipio",
@@ -95,8 +95,8 @@ MAPAS = {
         "cols": [("var_alquiler_2019_2024_pct", "Variación del alquiler 2019-2024", "%", "C4", False),
                  ("alquiler_m2_2024", "Alquiler mediano 2024", "€/m²/mes", "C4", False),
                  ("vut_ine_por_100_inmuebles", "Viviendas turísticas (INE) por 100 inmuebles residenciales", "por 100", "C4", False),
-                 ("pct_extranj_2025", "Población extranjera 2025", "%", "C1", False),
-                 ("var_pob_2021_2025_pct", "Variación de la población 2021-2025", "%", "C1", True)]},
+                 ("pct_extranj_2025", "Población extranjera 2025", "%", "C4", False),
+                 ("var_pob_2021_2025_pct", "Variación de la población 2021-2025", "%", "C4", True)]},
     "valencia_barrios": {
         "titulo": "València por barrio", "geo": "barrios_valencia.parquet", "clave_geo": "cod_barrio",
         "tabla": "c_valencia_barrio.csv", "clave": "cod_barrio", "simplificar": 0.0001,
@@ -106,8 +106,8 @@ MAPAS = {
                  ("alquiler_m2_2024", "Alquiler mediano 2024", "€/m²/mes", "C4", False),
                  ("var_alquiler_2019_2024_pct", "Variación del alquiler 2019-2024", "%", "C4", False),
                  ("vut_por_100_viv", "Viviendas turísticas por 100 viviendas (2026-05)", "por 100", "C4", False),
-                 ("pct_extranj_2025", "Población extranjera 2025", "%", "C1", False),
-                 ("var_pct_extranj_pp", "Cambio del % de extranjeros 2021-2025", "puntos", "C1", True),
+                 ("pct_extranj_2025", "Población extranjera 2025", "%", "C4", False),
+                 ("var_pct_extranj_pp", "Cambio del % de extranjeros 2021-2025", "puntos", "C4", True),
                  ("renta_persona_2023", "Renta neta por persona 2023", "€", "C4", False)]},
     "valencia_secciones": {
         "titulo": "València por sección censal", "geo": "secciones.parquet", "clave_geo": "cod_seccion",
@@ -115,7 +115,7 @@ MAPAS = {
         "fuente": "INE (censo anual, ADRH, viviendas turísticas, Censo 2021); MIVAU SERPAVI", "fecha": "2019-2026 según indicador",
         "cols": [("vut_por_100_viv", "Viviendas turísticas por 100 viviendas (2026-05)", "por 100", "C4", False),
                  ("alquiler_m2_2024", "Alquiler mediano 2024", "€/m²/mes", "C4", False),
-                 ("pct_extranj_2025", "Población extranjera 2025", "%", "C1", False),
+                 ("pct_extranj_2025", "Población extranjera 2025", "%", "C4", False),
                  ("renta_persona_2023", "Renta neta por persona 2023", "€", "C4", False),
                  ("pct_viv_no_principales_2021", "Viviendas no principales (Censo 2021)", "%", "C4", False)]},
 }
@@ -270,8 +270,8 @@ def fichas_territoriales(env) -> list[dict]:
         del hijos
     for r in prov.itertuples():
         x = ip(r.cod_provincia, "provincia")
-        filas = [fila("Población 2025", r.pob_2025, "personas", "C1", "INE censo anual", "2025-01-01", 0),
-                 fila("Población extranjera 2025", r.pct_extranj_2025, "%", "C1", "INE censo anual", "2025-01-01"),
+        filas = [fila("Población 2025", r.pob_2025, "personas", "C4", "INE censo anual", "2025-01-01", 0),
+                 fila("Población extranjera 2025", r.pct_extranj_2025, "%", "C4", "INE censo anual", "2025-01-01"),
                  fila("Valor tasado 2024", r.valor_tasado_2024, "€/m²", "C4", "MIVAU", "2024"),
                  fila("Alquiler mediano 2024 (SERPAVI)", r.alquiler_m2_2024, "€/m²/mes", "C4", "MIVAU SERPAVI", "2024", 2),
                  fila("Alquiler de 80 m² / renta por persona", r.alquiler_anual_80m2_pct_renta_persona, "%", "C4", "SERPAVI; INE ADRH", "2023-2024"),
@@ -282,12 +282,12 @@ def fichas_territoriales(env) -> list[dict]:
     grandes = pob_mun[pob_mun >= 50000].index
     cvm_i = cvm.set_index("cod_municipio")
     for c in sorted(grandes):
-        filas = [fila("Población 2025", pob_mun.get(c), "personas", "C1", "INE censo anual", "2025-01-01", 0),
+        filas = [fila("Población 2025", pob_mun.get(c), "personas", "C4", "INE censo anual", "2025-01-01", 0),
                  fila("Alquiler mediano 2019 (SERPAVI)", alq_mun.at[c, "2019"] if c in alq_mun.index and "2019" in alq_mun else None, "€/m²/mes", "C4", "MIVAU SERPAVI", "2019", 2),
                  fila("Alquiler mediano 2024 (SERPAVI)", alq_mun.at[c, "2024"] if c in alq_mun.index and "2024" in alq_mun else None, "€/m²/mes", "C4", "MIVAU SERPAVI", "2024", 2)]
         if c in cvm_i.index:
             r = cvm_i.loc[c]
-            filas += [fila("Población extranjera 2025", r.pct_extranj_2025, "%", "C1", "INE censo anual", "2025-01-01"),
+            filas += [fila("Población extranjera 2025", r.pct_extranj_2025, "%", "C4", "INE censo anual", "2025-01-01"),
                       fila("Viviendas turísticas (INE) por 100 inmuebles", r.vut_ine_por_100_inmuebles, "por 100", "C4", "INE; Catastro", "2026-05")]
         lista.append({"tipo": "Municipio (≥50.000 hab.)", "codigo": c, "nombre": nom.get(("municipio", c), c),
                       "url": f"fichas/municipio_{c}.html", "filas": filas})
@@ -315,11 +315,11 @@ PLANTILLAS = {
 <p class="lema">Una base de evidencia abierta: datos oficiales, cotas y modelos con su capa de evidencia. Cada cifra indica su fuente, su fecha y su capa.</p>
 <p class="lema" lang="ca-valencia">Una base d'evidència oberta sobre l'habitatge: dades oficials, cotes i models amb la seua capa d'evidència. Cada xifra indica la font, la data i la capa.</p>
 <div class="panel">{{ una_pagina|safe }}</div>
-<h2>Atlas: quién sufre la subida y dónde <span lang="ca-valencia" class="meta">· Qui patix la pujada i on</span></h2>
+<h2>Atlas: quién soporta el coste de la vivienda y dónde <span lang="ca-valencia" class="meta">· Qui en suporta el cost i on</span></h2>
 <div class="panel">{{ atlas|safe }}</div>
 <h2>Figuras</h2>
 <div class="tarjetas">{% for f in figuras %}<figure class="tarjeta"><img src="figuras/{{ f.id }}.svg" alt="{{ f.texto_alternativo }}" loading="lazy">
-<figcaption>{{ f.titulo }} <span class="capa {{ f.capa.split(' ')[0] }}">{{ f.capa.split(' ')[0] }}</span><br>{{ f.fuente }} · {{ f.fecha_dato }}</figcaption></figure>{% endfor %}</div>
+<figcaption>{{ f.titulo }} <span class="capa {{ 'C4' if 'C4' in f.capa else f.capa.split(' ')[0] }}">{{ f.capa_corta }}</span><br>{{ f.fuente }} · {{ f.fecha_dato }}<br><span class="meta">Capa: {{ f.capa }}</span></figcaption></figure>{% endfor %}</div>
 {% endblock %}""",
 "indicadores.html": """{% extends "base.html" %}{% block contenido %}
 <h1>Indicadores <span class="meta" lang="ca-valencia">· Indicadors</span></h1>
@@ -405,7 +405,7 @@ document.getElementById("buscar").addEventListener("input", e => { const q = e.t
 <p class="meta">Descriptivo. Las afirmaciones sobre causas se evalúan en el <a href="../verificador.html">verificador</a>.</p>
 {% endblock %}""",
 "quien.html": """{% extends "base.html" %}{% block contenido %}
-<h1>Quién sufre la subida <span class="meta" lang="ca-valencia">· Qui patix la pujada</span></h1>
+<h1>Quién soporta el coste de la vivienda <span class="meta" lang="ca-valencia">· Qui en suporta el cost</span></h1>
 <p class="lema">Microdatos de la Encuesta de Condiciones de Vida (2018-2025) y de la EPA (2018-2026T2). Intervalos al 95 % (linealización; los ficheros públicos no traen estratos, así que los intervalos son algo estrechos).</p>
 <div class="panel"><div class="controles">
 <label>Indicador<select id="ind">{% for k, v in indicadores_ecv.items() %}<option value="{{ k }}">{{ v }}</option>{% endfor %}</select></label>
@@ -512,6 +512,8 @@ def construir() -> dict:
     mapas = datos_mapas()
     datos_quien()
     figuras = json.loads((RAIZ / "figuras" / "fichas.json").read_text(encoding="utf-8"))
+    for fg in figuras:   # etiqueta corta con todas las capas presentes (p. ej., «C1/C4»), nunca solo la primera
+        fg["capa_corta"] = "/".join(sorted(set(re.findall(r"C[1-4]s?", fg["capa"])))) or fg["capa"]
     una = (RAIZ / "publicacion" / "una_pagina.md").read_text(encoding="utf-8")
     atlas_md = (RAIZ / "publicacion" / "atlas_descriptivo.md").read_text(encoding="utf-8")
     hall = atlas_md.split("## Hallazgos", 1)[1].split("## Tablas", 1)[0] if "## Hallazgos" in atlas_md else atlas_md

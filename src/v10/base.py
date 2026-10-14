@@ -62,6 +62,36 @@ EXCLUIR = {"covid", "epa2021", "etcl2008", "P1", "P2", "P3", "P4", "P5", "period
            "ccaa", "cod_prov", "anio", "trimestre", "fecha", "deflactor_pib", "ipc_general", "hicp_yoy", "q1", "q2", "q3", "q4"}
 # Fuentes sin licencia abierta clara (docs/v8_1/inventario_licencias.csv, datos_retirados.md, v9 manifiestos)
 NO_REDISTRIBUIBLE = re.compile(r"^(registr|notariado|jk_|incasol_|airdna|idealista|fotocasa|cgn_)", re.I)
+# Por defecto NO se redistribuye: una variable entra en la capa pública solo si su fuente es de un organismo con
+# licencia abierta o reutilización con cita (lista explícita) o si figura en FUENTES_DOCUMENTADAS (revisión V10, R6).
+FUENTE_PERMITIDA = re.compile(r"\bINE\b|ine_|Eurostat|eurostat|\bBCE\b|\bECB\b|ecb_|Banco de España|\bBdE\b|bde_|MIVAU|mivau|"
+                              r"Ministerio de Vivienda|SERPAVI|serpavi|\bGVA\b|gva_|Generalitat Valenciana|Gobierno Vasco|EMAL|"
+                              r"Ajuntament|Catastro|catastro|\bBOE\b|Resultado publicado|elaboración propia|Inside Airbnb|\bBIS\b|OCDE")
+FUENTES_DOCUMENTADAS = {   # variables de paneles sin fila de diccionario: fuente comprobada en el script del panel
+    "costes": "Eurostat, sts_copi_q (coste de construcción residencial)", "hpi_eurostat": "Eurostat, prc_hpi_q",
+    "prod_constr": "Eurostat, sts_copr (producción de la construcción)", "renta_hog": "INE, Contabilidad Nacional Trimestral",
+    "permisos": "MIVAU, visados de dirección de obra", "iniciadas": "MIVAU, viviendas libres iniciadas",
+    "iniciadas_anual_tabla": "MIVAU, viviendas libres iniciadas (tabla anual)", "terminadas_anual_tabla": "MIVAU, viviendas libres terminadas (tabla anual)",
+    "ipc_alquiler_indice": "INE, IPC de alquiler por provincia", "ipva": "INE, IPVA municipal (59060)",
+    "ocupados_epa": "INE, EPA por provincia", "pob_extranjera": "INE, Padrón continuo", "pob_extranjera_gva": "GVA (IVE), Padrón municipal",
+    "vut_pct_sobre_total": "INE, viviendas turísticas (experimental)", "vut_plazas_por_vivienda": "INE, viviendas turísticas (experimental)",
+    "vut_viviendas_turisticas": "INE, viviendas turísticas (experimental)", "vut_stock_gva": "GVA, registro de turismo (CC BY 4.0)",
+    "serpavi_vc_dist_agg": "MIVAU, SERPAVI por distritos",
+    "compraventas_sa": "INE, ETDP (desestacionalización propia STL)", "ocupados_sa": "INE, EPA (desestacionalización propia STL)",
+    "dif_hip_euribor_bce": "BCE, MIR y Euríbor (diferencia propia)", "dif_hip_euribor_bde": "BdE, tipo hipotecario y Euríbor (diferencia propia)",
+    "inflacion_deflactor": "INE, CNT (deflactor; cálculo propio)", "inflacion_ipc_yoy": "INE, IPC (cálculo propio)",
+    "tipo_hip_real": "BdE e INE IPC (tipo real; cálculo propio)", "tipo_hip_real_bce": "BCE e INE IPC (tipo real; cálculo propio)",
+    "tipo_hip_real_bde": "BdE e INE IPC (tipo real; cálculo propio)", "renta_hog_real": "INE, CNT (renta real; cálculo propio)",
+    "pib_ccaa_q": "INE, Contabilidad Regional (trimestralización propia)", "pob_europa_sin_espana": "INE, Estadística Continua de Población (77019)",
+    "tope_rentas_ccaa_alt_v3": "BOE, Ley catalana 11/2020 (evento)", "tope_rentas_ccaa_frac": "BOE, Ley catalana 11/2020 (evento)",
+    "vut_regulacion_ccaa": "BOE, normas autonómicas de viviendas de uso turístico (evento)",
+    "zt_declarada": "BOE, resoluciones de zonas tensionadas (evento)", "zt_n_municipios": "BOE, resoluciones de zonas tensionadas (evento)", **{f"serpavi_dist_{t}_{e}": "MIVAU, SERPAVI por distritos"
+                                                              for t in ("vc", "vu") for e in ("mediana", "n_contratos", "p25", "p75")},
+    **{f"pob_{g}": "INE, Estadística Continua de Población por CCAA y grupo de nacionalidad (77019)" for g in
+       ("africa", "apatridas", "asia", "centroamerica_caribe", "europa_no_ue27", "europa_no_ue28", "norteamerica", "oceania",
+        "sudamerica", "ue27_sin_espana", "ue28_sin_espana")},
+    **{f"pob_vlc_{g}": "INE, Padrón continuo (València por nacionalidad)" for g in ("africa", "alemania", "america", "asia", "europa", "reino_unido")},
+}
 FUENTE_NO_REDISTRIBUIBLE = re.compile(r"registradores|notariado|jaroci|incas[oò]l|airdna|idealista|fotocasa", re.I)
 
 
@@ -141,6 +171,7 @@ def metadatos_variables() -> dict[str, dict]:
                      "capa": capa, "dic": rel}
             previo = meta.get(var, {})
             meta[var] = {k: (nuevo[k] if nuevo[k] and nuevo[k] != "—" else previo.get(k, "")) for k in nuevo}
+            meta[var]["dic_capa"] = rel if capa else previo.get("dic_capa", "")
     return meta
 
 
@@ -454,19 +485,19 @@ def zonas_trimestrales() -> tuple[pd.DataFrame, pd.DataFrame]:
 
 # ----------------------------------------------------------------------------------------------- metadatos de filas
 META_V9 = {  # variable -> (unidad, fuente, capa, licencia, redistribuible)
-    "pob_censo_anual": ("personas", "INE, Censo anual de población (tablas por provincia)", "C1", "INE: reutilización con cita (Ley 37/2007)", True),
-    "ipva_indice": ("índice 2015=100", "INE, Índice de Precios de Vivienda en Alquiler (59004, 59005, 59061)", "C1", "INE: reutilización con cita", True),
-    "ipva_var_anual": ("%", "INE, IPVA", "C1", "INE: reutilización con cita", True),
-    "vut_registro_gva": ("viviendas", "GVA, Registro de Turismo de la Comunitat Valenciana (cortes)", "C1", "CC BY 4.0", True),
+    "pob_censo_anual": ("personas", "INE, Censo anual de población (tablas por provincia)", "C4", "INE: reutilización con cita (Ley 37/2007)", True),
+    "ipva_indice": ("índice 2015=100", "INE, Índice de Precios de Vivienda en Alquiler (59004, 59005, 59061)", "C4", "INE: reutilización con cita", True),
+    "ipva_var_anual": ("%", "INE, IPVA", "C4", "INE: reutilización con cita", True),
+    "vut_registro_gva": ("viviendas", "GVA, Registro de Turismo de la Comunitat Valenciana (cortes)", "C4", "CC BY 4.0", True),
     "vut_registro_gva_reconstruido": ("viviendas", "GVA, registro (altas y bajas fechadas; reconstrucción propia)", "C4", "CC BY 4.0", True),
     "emal_n_fianzas": ("contratos", "Gobierno Vasco, EMAL (fianzas)", "C4", "CC BY 4.0", True),
     "emal_renta_mensual_eur": ("€/mes", "Gobierno Vasco, EMAL", "C4", "CC BY 4.0", True),
     "emal_renta_eur_m2_construido": ("€/m²/mes", "Gobierno Vasco, EMAL", "C4", "CC BY 4.0", True),
-    "bce_hip_tipo_nuevas": ("% anual", "BCE, MIR (nuevas operaciones de vivienda)", "C1", "BCE: reutilización con cita", True),
-    "bce_hip_volumen_nuevas": ("millones de euros", "BCE, MIR", "C1", "BCE: reutilización con cita", True),
-    "eurostat_plataformas_noches": ("noches", "Eurostat, tour_ce_oan3 (plataformas colaborativas)", "C1", "CC BY 4.0 (Eurostat)", True),
-    "incasol_contratos": ("contratos", "Incasòl, fianzas (Socrata qww9-bvhh)", "C1", "Términos de uso (no CC BY)", False),
-    "incasol_renta_media": ("€/mes", "Incasòl, fianzas", "C1", "Términos de uso (no CC BY)", False),
+    "bce_hip_tipo_nuevas": ("% anual", "BCE, MIR (nuevas operaciones de vivienda)", "C4", "BCE: reutilización con cita", True),
+    "bce_hip_volumen_nuevas": ("millones de euros", "BCE, MIR", "C4", "BCE: reutilización con cita", True),
+    "eurostat_plataformas_noches": ("noches", "Eurostat, tour_ce_oan3 (plataformas colaborativas)", "C4", "CC BY 4.0 (Eurostat)", True),
+    "incasol_contratos": ("contratos", "Incasòl, fianzas (Socrata qww9-bvhh)", "C4", "Términos de uso (no CC BY)", False),
+    "incasol_renta_media": ("€/mes", "Incasòl, fianzas", "C4", "Términos de uso (no CC BY)", False),
     "ine_vut_vivienda_turistica": ("viviendas", "INE, Medición del número de viviendas turísticas (experimental)", "C4", "INE: reutilización con cita", True),
     "ine_vut_plazas": ("plazas", "INE, viviendas turísticas (experimental)", "C4", "INE: reutilización con cita", True),
     "ine_vut_porcentaje_vivienda_turistica": ("% de viviendas", "INE, viviendas turísticas (experimental)", "C4", "INE: reutilización con cita", True),
@@ -477,7 +508,7 @@ META_V9 = {  # variable -> (unidad, fuente, capa, licencia, redistribuible)
     "catastro_unidades_urbanas_total": ("inmuebles", "Dirección General del Catastro, estadísticas catastrales (urbana)", "C4", "Catastro: reutilización con cita", True),
     "v5_deficit_2021_2025": ("viviendas", "Resultado publicado V5 (A4): déficit 2021-2025 por provincia (rango de variantes)", "C4", "elaboración propia (CC BY 4.0)", True),
     "v8_factor_comun_precios": ("unidades del componente (estandarizado)", "Resultado publicado V8 (M1): factor común de las fuentes de precio", "C4", "elaboración propia (CC BY 4.0)", True),
-    "zt_vigente": ("0/1", "BOE, resoluciones de la Secretaría de Estado de Vivienda (zonas tensionadas)", "C1", "BOE: reutilización con cita", True),
+    "zt_vigente": ("0/1", "BOE, resoluciones de la Secretaría de Estado de Vivienda (zonas tensionadas)", "C4", "BOE: reutilización con cita", True),
 }
 
 
@@ -516,9 +547,10 @@ def tabla_variables(vars_: list[str], meta: dict, lic: dict) -> pd.DataFrame:
             tabla[v] = META_V9[v]
         else:
             m = meta.get(v, {})
-            fuente = m.get("fuente", "")
+            fuente = m.get("fuente", "") if m.get("fuente") and m.get("fuente") not in ("idem", "Derivada", "derivada") else (FUENTES_DOCUMENTADAS.get(v) or m.get("fuente", ""))
             capa = m.get("capa") or "C4"
-            redis = not NO_REDISTRIBUIBLE.search(v) and not FUENTE_NO_REDISTRIBUIBLE.search(fuente)
+            redis = (not NO_REDISTRIBUIBLE.search(v) and not FUENTE_NO_REDISTRIBUIBLE.search(fuente)
+                     and bool(FUENTE_PERMITIDA.search(fuente) or v in FUENTES_DOCUMENTADAS))
             for f in re.findall(r"[\w./-]+\.(?:csv|xlsx?|json|px)", fuente, re.I):
                 if lic.get(Path(f).name.lower(), "permitida") != "permitida":
                     redis = False
@@ -527,6 +559,10 @@ def tabla_variables(vars_: list[str], meta: dict, lic: dict) -> pd.DataFrame:
     t = pd.DataFrame.from_dict(tabla, orient="index", columns=["unidad", "fuente", "capa", "licencia", "redistribuible"])
     vacia = t.unidad.fillna("") == ""
     t.loc[vacia, "unidad"] = [UNIDADES.get(v, "personas" if v.startswith("pob_") else "") for v in t.index[vacia]]
+    # C1 vale solo en el nivel territorial que documenta el diccionario que la asigna (revisión V10, R3): V8 → nacional,
+    # V7 → CCAA; cualquier otro nivel (o C1 sin diccionario que la documente) baja a C4 en la consulta de montaje.
+    t["nivel_c1"] = [{"docs/v8/diccionario.md": "nacional", "docs/v7/diccionario.md": "ccaa"}.get(meta.get(v, {}).get("dic_capa", ""), "")
+                     if t.at[v, "capa"] == "C1" else "" for v in t.index]
     t["definicion"] = [meta.get(v, {}).get("definicion", "") or (META_V9[v][1] if v in META_V9 else "") for v in t.index]
     return t.rename_axis("variable").reset_index()
 
@@ -616,7 +652,7 @@ def construir() -> dict:
         WITH s AS (SELECT *, max(prioridad) OVER (PARTITION BY variable, nivel, territorio_codigo, desagregacion) AS pmax FROM b2),
              u AS (SELECT *, row_number() OVER (PARTITION BY {clave} ORDER BY prioridad DESC, origen) AS rn FROM s WHERE prioridad = pmax)
         SELECT u.territorio_codigo, u.nivel, u.periodo, u.frecuencia, u.variable, u.desagregacion, u.valor,
-               vm.unidad, vm.fuente, coalesce(ed.edicion, 'proyecto') AS edicion, u.fin AS fecha_dato, vm.capa, vm.licencia,
+               vm.unidad, vm.fuente, coalesce(ed.edicion, 'proyecto') AS edicion, u.fin AS fecha_dato, CASE WHEN vm.capa = 'C1' AND u.nivel <> vm.nivel_c1 THEN 'C4' ELSE vm.capa END AS capa, vm.licencia,
                vm.redistribuible, u.metodo_dato, u.origen, u.fin >= '2026-07-01' AS posterior_prereg,
                (u.nivel = 'provincia' AND u.territorio_codigo IN (SELECT territorio_codigo FROM sell)) AS muestra_sellada_v6
         FROM u JOIN vmeta vm USING (variable) LEFT JOIN ed USING (origen) WHERE rn = 1
@@ -659,7 +695,7 @@ def construir() -> dict:
                          ignore_index=True)
     terr["cod_ccaa"] = terr.cod_ccaa.fillna("")
     # variables
-    vt = con.execute("""SELECT variable, any_value(unidad) unidad, any_value(fuente) fuente, any_value(capa) capa,
+    vt = con.execute("""SELECT variable, any_value(unidad) unidad, any_value(fuente) fuente, string_agg(DISTINCT capa, '/' ORDER BY capa) capa,
         any_value(licencia) licencia, bool_and(redistribuible) redistribuible, string_agg(DISTINCT nivel, ',' ORDER BY nivel) niveles,
         min(periodo) primer_periodo, max(periodo) ultimo_periodo, count(*) n_filas FROM hechos GROUP BY variable ORDER BY variable""").df()
     vt = vt.merge(vt_meta[["variable", "definicion"]], on="variable", how="left")

@@ -19,9 +19,10 @@ Rama local `r10/difusion` → remota `claude/housing-price-spain-econometric-95d
 - **B7** (D9): 9 documentos a historico/; README, LEEME_PRIMERO, consulta/ y llms.txt actualizados; 28 cifras V10-ATL-* en cifras_clave.
 - **Tareas del autor:** docs/v10/tareas_autor.md.
 
+- **Revisión independiente** (REHACER): 2 bloqueantes y 4 importantes, todos corregidos (D10). `make v10` reconstruye todo en orden.
+
 ## Siguiente paso exacto
-- Esperar el informe del revisor (docs/v10/revision_final.md), corregir los hallazgos bloqueantes e importantes y repetir `make check`.
-- Cierre en clon limpio: `make base`, `make figuras`, `make web` y `make check`. Después, commit y push.
+- Cierre en clon limpio: `make base figuras web check` (resultado en docs/v10/cierre.md). Después, commit, push y resumen final.
 
 ## Subagentes
-- Revisor (opus, tope de 100.000 tokens): en curso.
+- Revisor (opus): unos 90.600 tokens, dentro del tope de 100.000.

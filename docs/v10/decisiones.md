@@ -155,3 +155,13 @@ Rama local `r10/difusion`, subida a la rama remota designada (`claude/housing-pr
   - consulta/ y llms.txt, con `make consulta`: entradas V10 en la guía para asistentes, el índice de ficheros y version.json (`difusion` y `web_prevista`). La versión sigue siendo 8.1 porque no se ha publicado ninguna release nueva.
   - CHANGELOG.
 - **Orden de construcción:** `make base` → `make atlas` (actualiza hechos.json) → `src/v5/cifras_clave.py` → `make publicacion` → `make base` (vuelve a copiar cifras_clave) → `make consulta` → `make figuras` → `make web`. El flujo mensual sigue este mismo orden.
+
+## D10 — Correcciones de la revisión independiente (docs/v10/revision_final.md, veredicto REHACER)
+- **R1, bloqueante.** V10-ATL-C1 y V10-ATL-C2 (porcentaje de extranjeros en València) pasan de C1 a C4. Su única fuente es el censo anual del INE, y que cuadre con el total publicado no la convierte en una segunda fuente. También pasan a C4:
+  - la población y el porcentaje de extranjeros en los mapas y fichas de la web;
+  - las series de V9 de fuente única en la base: censo anual, IPVA, registro de la GVA, BCE, Eurostat de plataformas, Incasòl y zonas tensionadas.
+- **R2, bloqueante.** La web mostraba solo la primera capa de una figura con capas mixtas: F01 aparecía como «C1». Ahora muestra todas las capas presentes (p. ej., «C1/C4») y la etiqueta completa.
+- **R3, importante.** La capa de los paneles procesados se asignaba por variable, sin mirar el nivel territorial. Ahora C1 solo se conserva en el nivel que documenta el diccionario que la asigna (V8 → nacional; V7 → CCAA). En cualquier otro nivel baja a C4. Así `p_tasado` es C1 en España y C4 en las CCAA.
+- **R4, importante.** El lenguaje valorativo «quién lo sufre» / «quién sufre la subida» se sustituye por «quién soporta el coste de la vivienda» en el atlas, la navegación y las páginas.
+- **R5, importante.** Dependencia circular entre base, atlas y cifras_clave: el objetivo `make v10` fija el orden, y el flujo mensual lo usa.
+- **R6, importante.** El filtro de licencias pasa a denegar por defecto. Una variable solo entra en la capa pública si su fuente es de un organismo de una lista explícita (INE, Eurostat, BCE, BdE, MIVAU, GVA, Gobierno Vasco, Ajuntament, Catastro, BOE, resultados propios, Inside Airbnb) o si figura en `FUENTES_DOCUMENTADAS`, con la fuente comprobada en el script de su panel. En ningún caso puede coincidir con la lista de exclusión.

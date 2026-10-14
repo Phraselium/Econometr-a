@@ -1,4 +1,4 @@
-"""V10-B2a · Atlas «quién lo sufre»: indicadores descriptivos con microdatos ECV (2018-2025) y EPA (2018T1-2026T2).
+"""V10-B2a · Atlas «quién soporta el coste»: indicadores descriptivos con microdatos ECV (2018-2025) y EPA (2018T1-2026T2).
 
 Solo descriptivo (sin modelos). Entradas: data/raw/v9/ine_microdatos/{ecv,epa} (no versionados; `make datos_v9`).
 Salida: output/v10/atlas/a_quien_ecv.csv, a_quien_epa.csv y a_contraste_eurostat.csv.

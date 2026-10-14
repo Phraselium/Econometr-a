@@ -490,8 +490,8 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 | V10-ATL-A8 | Esfuerzo mediano de alquiler (alquiler anual / renta del hogar), 18-29 años, alquiler de mercado | 21.14 | 19.81–23.16 | % | 2025 | España | INE ECV (microdatos); IC de Woodruff | C4 | ECV 2025 |
 | V10-ATL-A9 | Esfuerzo mediano de alquiler, 45-64 años, alquiler de mercado | 21.5 | 20.53–22.87 | % | 2025 | España | INE ECV (microdatos); IC de Woodruff | C4 | ECV 2025 |
 | V10-ATL-B1 | Brecha IPVA contratos nuevos menos existentes (índices 2015=100) | 16.4 |  | puntos de índice | 2024 | España | INE IPVA (59004) | C4 | 2024 |
-| V10-ATL-C1 | València: porcentaje de población de nacionalidad extranjera | 19.41 |  | % | 2025 | València (municipio 46250) | INE censo anual (suma de secciones) | C1 | 2025-01-01 |
-| V10-ATL-C2 | València: porcentaje de población de nacionalidad extranjera | 13.31 |  | % | 2021 | València (municipio 46250) | INE censo anual (suma de secciones) | C1 | 2021-01-01 |
+| V10-ATL-C1 | València: porcentaje de población de nacionalidad extranjera | 19.41 |  | % | 2025 | València (municipio 46250) | INE censo anual (suma de secciones) | C4 | 2025-01-01 |
+| V10-ATL-C2 | València: porcentaje de población de nacionalidad extranjera | 13.31 |  | % | 2021 | València (municipio 46250) | INE censo anual (suma de secciones) | C4 | 2021-01-01 |
 | V10-ATL-C3 | València: viviendas turísticas (INE, medición experimental) | 5393 |  | viviendas | 2026-05 | València (municipio 46250) | INE, viviendas turísticas | C4 | 2026-05 |
 | V10-ATL-C4-462500101 | Índice descriptivo de presión residencial, barrio La Seu | 1.449 |  | puntuación z media | 2019-2026 | València, barrio 462500101 | INE; MIVAU SERPAVI; Ajuntament de València | C4 | 2026-05 |
 | V10-ATL-C4-462500104 | Índice descriptivo de presión residencial, barrio El Pilar | 1.728 |  | puntuación z media | 2019-2026 | València, barrio 462500104 | INE; MIVAU SERPAVI; Ajuntament de València | C4 | 2026-05 |

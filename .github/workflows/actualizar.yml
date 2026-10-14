@@ -37,11 +37,7 @@ jobs:
       - name: Geometrías de entrada (seccionado del INE, no versionado por tamaño)
         run: python src/v10/fetch_geo.py
       - name: Reconstruir base, atlas, cifras clave, publicación, consulta, figuras y web (orden de D9)
-        run: |
-          make base atlas
-          python src/v5/cifras_clave.py
-          make publicacion
-          make base consulta figuras web
+        run: make v10
       - name: make check
         id: check
         continue-on-error: true

@@ -5,7 +5,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | Fichero | Fuente | sha256 |
 |---|---|---|
 | articulo_colegio.md | output/v5/articulo_colegio.md | `eaf609ab92c8925c259f8a76ff9554a8c40782d4c7c440d899995910bbce281a` |
-| atlas_descriptivo.md | output/v10/atlas_descriptivo.md | `072071f65e0830753e5f563433cf927f6bca7066e504627469fe53d4414382cc` |
+| atlas_descriptivo.md | output/v10/atlas_descriptivo.md | `9708fb4459a3cef6e2c8af0d5534401a4cc3c10eae848a5d3bc48d76173dbd55` |
 | atlas_regional/01_Andalucia.md | output/v7_1/atlas/01_Andalucia.md | `38fd89bd7c7f081bee4821cbebc394346eeb343c20df17cb46e78aff25ef69a4` |
 | atlas_regional/02_Aragon.md | output/v7_1/atlas/02_Aragon.md | `b7d1fb6fe99fb9677945e484560b7fe6383b37c800472bfd6275be347ce94510` |
 | atlas_regional/03_Asturias.md | output/v7_1/atlas/03_Asturias.md | `2f64ae49d3a78d55f8170aaaec7a41894232b895c95aaeace9275598e7d36cb6` |
@@ -27,7 +27,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | atlas_regional/atlas_resumen.md | output/v7_1/atlas/atlas_resumen.md | `47a851d30ed16bfe1acbfdaddfdd71803bc5b9406ac77f779eae67c54b346c6f` |
 | atlas_regional/guia_lectura.md | output/v7_1/atlas/guia_lectura.md | `5c9b4b7374468d5d4598fc35c1e62742a23a85047163c2c703970fddd969c872` |
 | atlas_regional/tablas_regionales.xlsx | output/v7_1/atlas/tablas_regionales.xlsx | `566261bdf785de32fa6cf61b545bf0948eec59301aa82e463d1c7b76ab41de34` |
-| cifras_clave.csv | output/v5/cifras_clave.csv | `a16132cb93a20279cbdfe7aa5a74b5e2e5c20b49e1ffc2c205d45f30f132e362` |
+| cifras_clave.csv | output/v5/cifras_clave.csv | `767fe3b8ae2c451487fbb20fcede102190c6cd870053182003c47e805406a39e` |
 | dosis_coste.csv | output/v7_1/S1/dosis_coste.csv | `6e7c2b8fa8ada5992399be00de87309a274ccc607a7aba04c88f3f0590c6f822` |
 | informe_econometrico_v8.md | output/v8/informe_econometrico.md | `689599422d9eff15d6a4b2b567808ccfe75b8ba65c65fa85307e94dc72f5a8ee` |
 | informe_tecnico.md | output/v5/informe_tecnico.md | `62a2978a8338904a0bdf1f3e46fa066038e6a5314af319a2f61c6a2b75beef15` |

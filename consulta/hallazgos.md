@@ -1232,8 +1232,8 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `V10-ATL-A8` | Esfuerzo mediano de alquiler (alquiler anual / renta del hogar), 18-29 años, alquiler de mercado | 21,14 % (19,81 a 23,16) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
 | `V10-ATL-A9` | Esfuerzo mediano de alquiler, 45-64 años, alquiler de mercado | 21,5 % (20,53 a 22,87) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
 | `V10-ATL-B1` | Brecha IPVA contratos nuevos menos existentes (índices 2015=100) | 16,4 puntos de índice | C4 | 2024 | [hechos.json](../output/v10/atlas/hechos.json) |
-| `V10-ATL-C1` | València: porcentaje de población de nacionalidad extranjera | 19,41 % | C1 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
-| `V10-ATL-C2` | València: porcentaje de población de nacionalidad extranjera | 13,31 % | C1 | 2021 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-C1` | València: porcentaje de población de nacionalidad extranjera | 19,41 % | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-C2` | València: porcentaje de población de nacionalidad extranjera | 13,31 % | C4 | 2021 | [hechos.json](../output/v10/atlas/hechos.json) |
 | `V10-ATL-C3` | València: viviendas turísticas (INE, medición experimental) | 5.393 viviendas | C4 | 2026-05 | [hechos.json](../output/v10/atlas/hechos.json) |
 | `V10-ATL-C4-462500101` | Índice descriptivo de presión residencial, barrio La Seu | 1,45 puntuación z media | C4 | 2019-2026 | [hechos.json](../output/v10/atlas/hechos.json) |
 | `V10-ATL-C4-462500104` | Índice descriptivo de presión residencial, barrio El Pilar | 1,73 puntuación z media | C4 | 2019-2026 | [hechos.json](../output/v10/atlas/hechos.json) |

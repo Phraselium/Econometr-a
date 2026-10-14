@@ -1,0 +1,212 @@
+[
+ {
+  "id": "F01_sobrecarga_tenencia",
+  "titulo": "Sobrecarga del gasto en vivienda (>40 %) por tenencia, 2018-2025",
+  "fuente": "INE, ECV (microdatos), cálculo propio; contraste con Eurostat ilc_lvho07c",
+  "fecha_dato": "ECV 2018-2025 (renta del año anterior)",
+  "capa": "C1 en propiedad y alquiler de mercado (coinciden con Eurostat ≤0,5 p. todos los años); C4 en alquiler inferior al de mercado y cesión",
+  "nota": "Bandas: IC 95 % por linealización (sin estratos públicos).",
+  "texto_alternativo": "Líneas con bandas de confianza, una por régimen de tenencia, 2018-2025.",
+  "ficheros": [
+   "paper/F01_sobrecarga_tenencia.png",
+   "paper/F01_sobrecarga_tenencia.pdf",
+   "web/F01_sobrecarga_tenencia.svg",
+   "redes/F01_sobrecarga_tenencia.png"
+  ]
+ },
+ {
+  "id": "F02_esfuerzo_alquiler_grupos",
+  "titulo": "Esfuerzo mediano de alquiler por edad, nacionalidad y decil, 2025",
+  "fuente": "INE, ECV (microdatos), cálculo propio",
+  "fecha_dato": "ECV 2025",
+  "capa": "C4",
+  "nota": "Mediana ponderada; IC 95 % de Woodruff. Personas que viven en hogares de alquiler a precio de mercado. Línea: 30 %.",
+  "texto_alternativo": "Puntos con intervalos de confianza por grupo de edad, nacionalidad y decil de renta.",
+  "ficheros": [
+   "paper/F02_esfuerzo_alquiler_grupos.png",
+   "paper/F02_esfuerzo_alquiler_grupos.pdf",
+   "web/F02_esfuerzo_alquiler_grupos.svg",
+   "redes/F02_esfuerzo_alquiler_grupos.png"
+  ]
+ },
+ {
+  "id": "F03_ipva_brecha_ccaa",
+  "titulo": "Brecha entre contratos nuevos y existentes (IPVA) por CCAA",
+  "fuente": "INE, Índice de Precios de Vivienda en Alquiler (59004)",
+  "fecha_dato": "2024",
+  "capa": "C4",
+  "nota": "Índices encadenados: comparan crecimientos desde 2015, no niveles.",
+  "texto_alternativo": "Barras horizontales por comunidad; España en otro color.",
+  "ficheros": [
+   "paper/F03_ipva_brecha_ccaa.png",
+   "paper/F03_ipva_brecha_ccaa.pdf",
+   "web/F03_ipva_brecha_ccaa.svg",
+   "redes/F03_ipva_brecha_ccaa.png"
+  ]
+ },
+ {
+  "id": "F04_contratos_nuevos_existentes",
+  "titulo": "IPVA: contratos nuevos frente a existentes, España 2015-2024",
+  "fuente": "INE, IPVA (59004)",
+  "fecha_dato": "2015-2024",
+  "capa": "C4",
+  "nota": "Figura clave de V5 (contratos nuevos frente a vigentes), regenerada desde la base.",
+  "texto_alternativo": "Dos líneas de índice 2015=100, contratos nuevos y existentes, 2015-2024.",
+  "ficheros": [
+   "paper/F04_contratos_nuevos_existentes.png",
+   "paper/F04_contratos_nuevos_existentes.pdf",
+   "web/F04_contratos_nuevos_existentes.svg",
+   "redes/F04_contratos_nuevos_existentes.png"
+  ]
+ },
+ {
+  "id": "F05_mapa_provincias_alquiler_renta",
+  "titulo": "Alquiler de 80 m² sobre la renta neta por persona, 2024",
+  "fuente": "MIVAU SERPAVI; INE ADRH y censo anual",
+  "fecha_dato": "alquiler 2024; renta 2023",
+  "capa": "C4",
+  "nota": "Indicador comparativo (vivienda tipo de 80 m²; renta por persona). Canarias recolocada.",
+  "texto_alternativo": "Mapa coroplético de provincias; los valores por provincia están en output/v10/atlas/d_espana_provincias.csv.",
+  "ficheros": [
+   "paper/F05_mapa_provincias_alquiler_renta.png",
+   "paper/F05_mapa_provincias_alquiler_renta.pdf",
+   "web/F05_mapa_provincias_alquiler_renta.svg",
+   "redes/F05_mapa_provincias_alquiler_renta.png"
+  ]
+ },
+ {
+  "id": "F06_mapa_deficit_provincias",
+  "titulo": "Déficit de vivienda 2021-2025 por 1.000 habitantes (mediana)",
+  "fuente": "Resultado publicado V5 (A4) desde la base; INE censo anual",
+  "fecha_dato": "2021-2025",
+  "capa": "C4",
+  "nota": "Mediana de las variantes de A4; rango en la base (estadístico min/max). Figura clave de V5.",
+  "texto_alternativo": "Mapa de provincias con el déficit relativo; negativo = sin déficit.",
+  "ficheros": [
+   "paper/F06_mapa_deficit_provincias.png",
+   "paper/F06_mapa_deficit_provincias.pdf",
+   "web/F06_mapa_deficit_provincias.svg",
+   "redes/F06_mapa_deficit_provincias.png"
+  ]
+ },
+ {
+  "id": "F07_mapa_cv_alquiler",
+  "titulo": "Comunitat Valenciana: variación del alquiler 2019-2024",
+  "fuente": "MIVAU SERPAVI (stock de contratos)",
+  "fecha_dato": "2019-2024",
+  "capa": "C4",
+  "nota": "Mediana €/m² de vivienda colectiva; municipios sin dato en gris.",
+  "texto_alternativo": "Mapa coroplético de municipios de la Comunitat Valenciana; valores en output/v10/atlas/d_cv_municipios.csv.",
+  "ficheros": [
+   "paper/F07_mapa_cv_alquiler.png",
+   "paper/F07_mapa_cv_alquiler.pdf",
+   "web/F07_mapa_cv_alquiler.svg",
+   "redes/F07_mapa_cv_alquiler.png"
+  ]
+ },
+ {
+  "id": "F08_mapa_valencia_indice",
+  "titulo": "València: índice descriptivo de presión residencial por barrio",
+  "fuente": "INE (censo anual, viviendas turísticas, Censo 2021), MIVAU SERPAVI, Ajuntament de València",
+  "fecha_dato": "2019-2026",
+  "capa": "C4",
+  "nota": "Media de puntuaciones z de 4 componentes (alquiler 2024, su variación 2019-2024, viviendas turísticas por 100 viviendas y cambio del % de extranjeros). Solo descriptivo.",
+  "texto_alternativo": "Mapa de barrios de València.",
+  "ficheros": [
+   "paper/F08_mapa_valencia_indice.png",
+   "paper/F08_mapa_valencia_indice.pdf",
+   "web/F08_mapa_valencia_indice.svg",
+   "redes/F08_mapa_valencia_indice.png"
+  ]
+ },
+ {
+  "id": "F09_mapa_valencia_vut",
+  "titulo": "València: viviendas turísticas por 100 viviendas, mayo de 2026",
+  "fuente": "INE, medición experimental de viviendas turísticas; Censo 2021",
+  "fecha_dato": "2026-05",
+  "capa": "C4",
+  "nota": "Denominador: viviendas del Censo 2021. Escala truncada al percentil 98.",
+  "texto_alternativo": "Mapa de secciones censales.",
+  "ficheros": [
+   "paper/F09_mapa_valencia_vut.png",
+   "paper/F09_mapa_valencia_vut.pdf",
+   "web/F09_mapa_valencia_vut.svg",
+   "redes/F09_mapa_valencia_vut.png"
+  ]
+ },
+ {
+  "id": "F10_ciudades_alquiler",
+  "titulo": "Alquiler mediano 2015-2024: València y ciudades comparables",
+  "fuente": "MIVAU SERPAVI",
+  "fecha_dato": "2015-2024",
+  "capa": "C4",
+  "nota": "Bilbao solo 2024 (territorios forales). Sin inferencia causal.",
+  "texto_alternativo": "Líneas por ciudad.",
+  "ficheros": [
+   "paper/F10_ciudades_alquiler.png",
+   "paper/F10_ciudades_alquiler.pdf",
+   "web/F10_ciudades_alquiler.svg",
+   "redes/F10_ciudades_alquiler.png"
+  ]
+ },
+ {
+  "id": "F11_factor_comun",
+  "titulo": "Factor común de precios (V8 M1)",
+  "fuente": "Resultado publicado V8 (M1) desde la base",
+  "fecha_dato": "1996T1-2026T2",
+  "capa": "C4",
+  "nota": "Figura clave de V8 regenerada desde la base.",
+  "texto_alternativo": "Serie trimestral del factor común.",
+  "ficheros": [
+   "paper/F11_factor_comun.png",
+   "paper/F11_factor_comun.pdf",
+   "web/F11_factor_comun.svg",
+   "redes/F11_factor_comun.png"
+  ]
+ },
+ {
+  "id": "F12_descomposicion_periodos",
+  "titulo": "Descomposición por periodo (V8, atribución con bandas del 68 %)",
+  "fuente": "Resultado publicado V8 (F5, atribución combinada) desde la base",
+  "fecha_dato": "periodos P1-P5 de V8",
+  "capa": "C3s",
+  "nota": "C3s: condicionada a las restricciones de signo explícitas. Figura clave de V8.",
+  "texto_alternativo": "Barras por factor y periodo con bandas, para compra y alquiler.",
+  "ficheros": [
+   "paper/F12_descomposicion_periodos.png",
+   "paper/F12_descomposicion_periodos.pdf",
+   "web/F12_descomposicion_periodos.svg",
+   "redes/F12_descomposicion_periodos.png"
+  ]
+ },
+ {
+  "id": "F13_cotas_c2",
+  "titulo": "Cotas C2 publicadas (verificador)",
+  "fuente": "publicacion/cifras_clave.csv desde la base",
+  "fecha_dato": "según cada cifra",
+  "capa": "C2",
+  "nota": "Cotas de Manski con supuestos explícitos (ver la ficha de cada cifra).",
+  "texto_alternativo": "Puntos y rangos de las cotas.",
+  "ficheros": [
+   "paper/F13_cotas_c2.png",
+   "paper/F13_cotas_c2.pdf",
+   "web/F13_cotas_c2.svg",
+   "redes/F13_cotas_c2.png"
+  ]
+ },
+ {
+  "id": "F14_emancipacion_epa",
+  "titulo": "Jóvenes que viven con sus padres (EPA), 2018-2026",
+  "fuente": "INE, EPA (microdatos), cálculo propio",
+  "fecha_dato": "2018T1-2026T2 (2026: media de T1-T2)",
+  "capa": "C4",
+  "nota": "Media anual de trimestres; IC en la tabla del atlas.",
+  "texto_alternativo": "Líneas por tramo de edad y nacionalidad.",
+  "ficheros": [
+   "paper/F14_emancipacion_epa.png",
+   "paper/F14_emancipacion_epa.pdf",
+   "web/F14_emancipacion_epa.svg",
+   "redes/F14_emancipacion_epa.png"
+  ]
+ }
+]

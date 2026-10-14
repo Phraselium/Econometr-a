@@ -34,13 +34,13 @@ Generado por `src/v10/base.py` (`make base`); no editar a mano.
 
 ## Resumen
 
-- filas: 5267501
-- filas_publica: 5211508
-- variables: 187
-- territorios: 55664
+- filas: 10160692
+- filas_publica: 10104699
+- variables: 238
+- territorios: 56510
 - discrepancias_entre_paneles: 203
-- filas_posterior_prereg: 35734
-- filas por nivel: ccaa 48471, distrito 11544, municipio 1001005, nacional 7648, nuts3 1440, pais 34354, provincia 70239, seccion 4092800
+- filas_posterior_prereg: 50954
+- filas por nivel: ccaa 48471, distrito 578100, municipio 1575307, nacional 7770, nuts3 1440, pais 34354, provincia 75843, seccion 7839407
 
 Las discrepancias entre paneles son claves presentes en varios ficheros procesados con valores distintos; se conserva el panel más reciente (v8 > v7 > v1), que es el que usan las publicaciones vigentes.
 
@@ -48,6 +48,9 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 
 | variable | definición | unidad | capa | fuente | redistribuible | niveles | periodo |
 |---|---|---|---|---|---|---|---|
+| `adrh_gini` | INE, ADRH | índice | C4 | INE, ADRH | sí | seccion | 2019–2023 |
+| `adrh_renta_neta_hogar` | INE, ADRH | €/año | C4 | INE, ADRH | sí | seccion | 2019–2023 |
+| `adrh_renta_neta_persona` | INE, Atlas de distribución de renta de los hogares (ADRH) | €/año | C4 | INE, Atlas de distribución de renta de los hogares (ADRH) | sí | seccion | 2019–2023 |
 | `bce_hip_tipo_nuevas` | BCE, MIR (nuevas operaciones de vivienda) | % anual | C1 | BCE, MIR (nuevas operaciones de vivienda) | sí | pais | 2003-01–2026-08 |
 | `bce_hip_volumen_nuevas` | BCE, MIR | millones de euros | C1 | BCE, MIR | sí | pais | 2003-01–2026-08 |
 | `bls_criterios_dif` | Encuesta de préstamos bancarios (BLS), préstamos a hogares para vivienda, criterios de concesión (oferta), índice de difusión | puntos | C4 | v8/ecb_bls_es_vivienda.csv (Q.ES.ALL.Z.H.H.B3.ST.S.DINX) | sí | nacional | 2003T1–2026T2 |
@@ -56,6 +59,44 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `bls_demanda_neto` | Encuesta de préstamos bancarios (BLS), préstamos a hogares para vivienda, demanda de préstamos, porcentaje neto | puntos | C4 | v8/ecb_bls_es_vivienda.csv (Q.ES.ALL.Z.H.H.B3.ZZ.D.FNET) | sí | nacional | 2003T1–2026T2 |
 | `bls_rechazo_dif` | Encuesta de préstamos bancarios (BLS), préstamos a hogares para vivienda, solicitudes rechazadas, índice de difusión (desde 2015T2) | puntos | C4 | v8/ecb_bls_es_vivienda.csv (Q.ES.ALL.Z.H.H.B3.RA.D.DINX) | sí | nacional | 2015T2–2026T2 |
 | `bls_rechazo_neto` | Encuesta de préstamos bancarios (BLS), préstamos a hogares para vivienda, solicitudes rechazadas, porcentaje neto (desde 2015T2) | puntos | C4 | v8/ecb_bls_es_vivienda.csv (Q.ES.ALL.Z.H.H.B3.RA.D.FNET) | sí | nacional | 2015T2–2026T2 |
+| `catastro_unidades_urbanas_residenciales` | Dirección General del Catastro, estadísticas catastrales (urbana) | inmuebles | C4 | Dirección General del Catastro, estadísticas catastrales (urbana) | sí | municipio | 2012–2026 |
+| `catastro_unidades_urbanas_total` | Dirección General del Catastro, estadísticas catastrales (urbana) | inmuebles | C4 | Dirección General del Catastro, estadísticas catastrales (urbana) | sí | municipio | 2012–2026 |
+| `censo2021_t10_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t11_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t12_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t13_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t14_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t15_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t16_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t17_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t17_2` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t17_3` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t17_4` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t17_5` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t18_1` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t19_1` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t19_2` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t1_1` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t20_1` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t20_2` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t20_3` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t21_1` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t22_1` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t22_2` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t22_3` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t22_4` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t22_5` |  | viviendas u hogares | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t2_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t2_2` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t3_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t4_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t4_2` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t4_3` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t5_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t6_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t7_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t8_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
+| `censo2021_t9_1` |  | % | C4 | INE, Censo de Población y Viviendas 2021 (indicadores por sección) | sí | seccion | 2021–2021 |
 | `compraventas` | Compraventas de viviendas ETDP, total (anual = suma) | número | C4 | INE ETDP 6150, desglose total | sí | ccaa,nacional,provincia | 2007–2026T2 |
 | `compraventas_ine` | Compraventas de vivienda, total nacional (ETDP, INE), suma trimestral | número | C4 | ine_etdp_compraventas.csv (ETDP1826) | sí | nacional | 2007T1–2026T2 |
 | `compraventas_sa` |  | número (SA) | C4 | Derivada (STL) | sí | nacional | 2007T1–2026T2 |
@@ -98,6 +139,9 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `iab_resenas_ultimos_12m` |  | reseñas | C4 | Inside Airbnb (no oficial) | sí | seccion | 2026-09–2026-09 |
 | `incasol_contratos` | Incasòl, fianzas (Socrata qww9-bvhh) | contratos | C1 | Incasòl, fianzas (Socrata qww9-bvhh) | no | municipio | 2007–2026T1 |
 | `incasol_renta_media` | Incasòl, fianzas | €/mes | C1 | Incasòl, fianzas | no | municipio | 2007–2026T1 |
+| `ine_vut_plazas` | INE, viviendas turísticas (experimental) | plazas | C4 | INE, viviendas turísticas (experimental) | sí | distrito,seccion | 2021-02–2026-05 |
+| `ine_vut_porcentaje_vivienda_turistica` | INE, viviendas turísticas (experimental) | % de viviendas | C4 | INE, viviendas turísticas (experimental) | sí | distrito,seccion | 2021-02–2026-05 |
+| `ine_vut_vivienda_turistica` | INE, Medición del número de viviendas turísticas (experimental) | viviendas | C4 | INE, Medición del número de viviendas turísticas (experimental) | sí | distrito,seccion | 2021-02–2026-05 |
 | `inflacion_deflactor` |  | % interanual | C4 | Derivada | sí | nacional | 1996T1–2026T2 |
 | `inflacion_ipc_yoy` | Inflación interanual = 100 x (ln IPC_t - ln IPC_t-4) | % (puntos log) | C4 | derivada de ipc_general | sí | nacional | 1996T1–2026T2 |
 | `iniciadas` |  | viviendas | C4 | ver diccionario del panel de origen | sí | provincia | 2008–2026T2 |
@@ -177,6 +221,10 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `renta_hog_real` |  | M€ a precios de 2020 | C4 | Derivada | sí | nacional | 1999T1–2026T2 |
 | `salario` | Coste salarial total por trabajador y mes, industria, construcción y servicios (ETCL, INE); 2000T1-2007T4 tabla 6067 y 2008T1+ tabla 79662 | euros/mes | C4 | v8/ine_etcl_6067_nacional.csv (ETCL5741) + v8/ine_etcl_79662_ccaa.csv (Total Nacional) | sí | nacional | 2000T1–2026T2 |
 | `salario_ccaa` | Coste salarial total por trabajador y mes, industria, construcción y servicios, por CCAA (ETCL tabla 79662) | euros/mes | C4 | v8/ine_etcl_79662_ccaa.csv | sí | ccaa | 2008T1–2026T2 |
+| `serpavi_alquiler_m2_mediana` |  | €/m²/mes | C4 | MIVAU, SERPAVI (AEAT-IRPF, stock de contratos de alquiler declarados) | sí | distrito,municipio,provincia,seccion | 2011–2024 |
+| `serpavi_alquiler_m2_p25` |  | €/m²/mes | C4 | MIVAU, SERPAVI (AEAT-IRPF, stock de contratos de alquiler declarados) | sí | municipio,provincia | 2011–2024 |
+| `serpavi_alquiler_m2_p75` |  | €/m²/mes | C4 | MIVAU, SERPAVI (AEAT-IRPF, stock de contratos de alquiler declarados) | sí | municipio,provincia | 2011–2024 |
+| `serpavi_alquiler_mes_mediana` |  | €/mes | C4 | MIVAU, SERPAVI (AEAT-IRPF, stock de contratos de alquiler declarados) | sí | distrito,seccion | 2011–2024 |
 | `serpavi_dist_vc_mediana` |  | €/m²/mes | C4 | ver diccionario del panel de origen | sí | distrito | 2011–2024 |
 | `serpavi_dist_vc_n_contratos` |  | viviendas (contratos) | C4 | ver diccionario del panel de origen | sí | distrito | 2011–2024 |
 | `serpavi_dist_vc_p25` |  | €/m²/mes | C4 | ver diccionario del panel de origen | sí | distrito | 2011–2024 |
@@ -186,6 +234,7 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `serpavi_dist_vu_p25` |  | €/m²/mes | C4 | ver diccionario del panel de origen | sí | distrito | 2011–2024 |
 | `serpavi_dist_vu_p75` |  | €/m²/mes | C4 | ver diccionario del panel de origen | sí | distrito | 2011–2024 |
 | `serpavi_esp_constante` |  | €/m²/mes (alquiler, VC) | C4 | MIVAU-SERPAVI (XLSX) → agregado propio | sí | nacional | 2011T4–2024T4 |
+| `serpavi_n_contratos_recuento` |  | contratos | C4 | MIVAU, SERPAVI (AEAT-IRPF, stock de contratos de alquiler declarados) | sí | municipio,provincia | 2011–2024 |
 | `serpavi_vc_alq_m2_mediana` | SERPAVI provincia, VC (vivienda colectiva), alquiler_m2 mediana | euros/m2/mes | C4 | pdf/serpavi_provincias.csv | sí | provincia | 2011–2024 |
 | `serpavi_vc_alq_m2_p25` | SERPAVI provincia, VC (vivienda colectiva), alquiler_m2 p25 | euros/m2/mes | C4 | pdf/serpavi_provincias.csv | sí | provincia | 2011–2024 |
 | `serpavi_vc_alq_m2_p75` | SERPAVI provincia, VC (vivienda colectiva), alquiler_m2 p75 | euros/m2/mes | C4 | pdf/serpavi_provincias.csv | sí | provincia | 2011–2024 |
@@ -219,6 +268,8 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `tx_extranj` | Transacciones de vivienda adquiridas por extranjeros residentes, total nacional (MIVAU, tabla 1.6.5) | número | C4 | mivau_transacciones_extranjeros.csv (tx_extranj_residentes_total_nacional) | sí | nacional | 2007T1–2026T2 |
 | `tx_extranj_ccaa` | Transacciones de vivienda adquiridas por extranjeros residentes por CCAA (MIVAU 1.6.5), total | número | C4 | mivau_transacciones_extranjeros.csv (tx_extranj_residentes_total_ccaa_*) | sí | ccaa | 2007T1–2026T2 |
 | `tx_total` | Transacciones inmobiliarias de vivienda, total nacional (MIVAU) | número | C4 | mivau_transacciones_total.csv | sí | nacional | 2004T1–2026T1 |
+| `v5_deficit_2021_2025` | Resultado publicado V5 (A4): déficit 2021-2025 por provincia (rango de variantes) | viviendas | C4 | Resultado publicado V5 (A4): déficit 2021-2025 por provincia (rango de variantes) | sí | provincia | 2025–2025 |
+| `v8_factor_comun_precios` | Resultado publicado V8 (M1): factor común de las fuentes de precio | unidades del componente (estandarizado) | C4 | Resultado publicado V8 (M1): factor común de las fuentes de precio | sí | nacional | 1996T1–2026T2 |
 | `valor_tasado` | Valor tasado medio vivienda libre provincial (MIVAU) desde 1995T1; coincide con v7 en el solape | euros/m2 | C4 | mivau_valor_tasado_nacional_ccaa_prov.csv | sí | provincia | 1995T1–2026T2 |
 | `valor_tasado_ccaa` | Valor tasado medio de vivienda libre por CCAA, desde 1995T1 | euros/m2 | C4 | mivau_valor_tasado_nacional_ccaa_prov.csv (nivel ccaa) | sí | ccaa | 1995T1–2026T2 |
 | `visados` | Viviendas libres iniciadas (visados de dirección de obra), nacional, flujo trimestral (MIVAU tabla 3.1) | viviendas | C4 | mivau_visados.csv (mensual 2008+, suma de 3 meses) y mivau_v2_iniciadas_terminadas_prov.csv (anual 1991-2025) | sí | ccaa,nacional | 1995T1–2026T2 |

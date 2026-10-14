@@ -1,0 +1,184 @@
+territorio_codigo,periodo,valor,indicador,unidad,fuente,ciudad,fecha_dato,capa,nota
+03014,2011,4.8390,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2011-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2012,4.6154,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2012-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2013,4.4444,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2013-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2014,4.4444,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2014-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2015,4.4643,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2015-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2016,4.6512,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2016-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2017,4.7681,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2017-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2018,4.9239,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2018-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2019,5.4128,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2020,5.6322,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2021,5.8442,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2022,6.1728,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2023,6.5574,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2024,7.1053,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Alicante/Alacant,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2024,11.5100,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Bilbao,2024-12-31,C4,SERPAVI cubre los territorios forales solo desde 2024
+29067,2011,6.2500,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2011-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2012,6.0345,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2012-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2013,5.7971,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2013-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2014,5.7576,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2014-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2015,5.7806,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2015-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2016,5.9524,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2016-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2017,6.1594,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2017-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2018,6.5175,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2018-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2019,7.2727,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2020,7.5000,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2021,7.8125,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2022,8.3206,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2023,8.8608,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2024,9.5531,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Málaga,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2011,6.2500,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2011-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2012,6.1224,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2012-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2013,5.9701,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2013-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2014,5.9636,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2014-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2015,6.0870,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2015-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2016,6.2762,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2016-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2017,6.5824,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2017-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2018,7.1216,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2018-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2019,7.8955,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2020,8.0508,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2021,8.3333,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2022,8.7838,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2023,9.2593,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2024,9.8377,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Palma,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2011,7.0146,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2011-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2012,6.8543,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2012-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2013,6.4900,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2013-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2014,6.4286,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2014-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2015,6.3743,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2015-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2016,6.5217,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2016-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2017,6.6667,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2017-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2018,6.9231,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2018-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2019,7.5581,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2020,7.7455,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2021,7.9887,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2022,8.3333,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2023,8.7202,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2024,9.1741,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Sevilla,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2011,5.1546,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2011-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2012,5.0000,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2012-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2013,4.7353,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2013-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2014,4.6392,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2014-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2015,4.6840,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2015-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2016,4.8077,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2016-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2017,4.9569,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2017-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2018,5.2500,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2018-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2019,5.8537,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2020,6.1394,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2021,6.5000,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2022,6.9686,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2023,7.5153,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2024,8.1818,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,València,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2011,6.3993,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2011-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2012,6.1798,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2012-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2013,5.8460,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2013-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2014,5.6824,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2014-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2015,5.6373,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2015-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2016,5.6962,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2016-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2017,5.7917,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2017-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2018,5.9701,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2018-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2019,6.3653,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2020,6.5455,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2021,6.7647,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2022,7.0370,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2023,7.3558,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2024,7.7215,alquiler_m2_mediana,€/m²/mes,MIVAU SERPAVI,Zaragoza,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2021,14.7904,pct_extranjeros,%,INE censo anual,Alicante/Alacant,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2022,15.2469,pct_extranjeros,%,INE censo anual,Alicante/Alacant,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2023,17.7805,pct_extranjeros,%,INE censo anual,Alicante/Alacant,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2024,19.4123,pct_extranjeros,%,INE censo anual,Alicante/Alacant,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2025,20.9759,pct_extranjeros,%,INE censo anual,Alicante/Alacant,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2021,9.6853,pct_extranjeros,%,INE censo anual,Bilbao,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2022,9.7891,pct_extranjeros,%,INE censo anual,Bilbao,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2023,10.8083,pct_extranjeros,%,INE censo anual,Bilbao,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2024,11.5696,pct_extranjeros,%,INE censo anual,Bilbao,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2025,12.3373,pct_extranjeros,%,INE censo anual,Bilbao,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2021,8.6207,pct_extranjeros,%,INE censo anual,Málaga,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2022,8.8002,pct_extranjeros,%,INE censo anual,Málaga,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2023,10.1876,pct_extranjeros,%,INE censo anual,Málaga,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2024,10.9036,pct_extranjeros,%,INE censo anual,Málaga,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2025,11.7038,pct_extranjeros,%,INE censo anual,Málaga,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2021,17.6905,pct_extranjeros,%,INE censo anual,Palma,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2022,17.6395,pct_extranjeros,%,INE censo anual,Palma,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2023,18.9634,pct_extranjeros,%,INE censo anual,Palma,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2024,20.1360,pct_extranjeros,%,INE censo anual,Palma,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2025,20.7479,pct_extranjeros,%,INE censo anual,Palma,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2021,5.8106,pct_extranjeros,%,INE censo anual,Sevilla,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2022,6.0934,pct_extranjeros,%,INE censo anual,Sevilla,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2023,6.9783,pct_extranjeros,%,INE censo anual,Sevilla,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2024,7.5407,pct_extranjeros,%,INE censo anual,Sevilla,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2025,8.4061,pct_extranjeros,%,INE censo anual,Sevilla,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2021,13.3068,pct_extranjeros,%,INE censo anual,València,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2022,14.1514,pct_extranjeros,%,INE censo anual,València,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2023,15.8775,pct_extranjeros,%,INE censo anual,València,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2024,17.8291,pct_extranjeros,%,INE censo anual,València,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2025,19.4111,pct_extranjeros,%,INE censo anual,València,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2021,12.3257,pct_extranjeros,%,INE censo anual,Zaragoza,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2022,11.8522,pct_extranjeros,%,INE censo anual,Zaragoza,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2023,12.9618,pct_extranjeros,%,INE censo anual,Zaragoza,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2024,13.7029,pct_extranjeros,%,INE censo anual,Zaragoza,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2025,14.2056,pct_extranjeros,%,INE censo anual,Zaragoza,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2021,338768.0000,poblacion,personas,INE censo anual,Alicante/Alacant,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2022,340260.0000,poblacion,personas,INE censo anual,Alicante/Alacant,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2023,350598.0000,poblacion,personas,INE censo anual,Alicante/Alacant,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2024,358608.0000,poblacion,personas,INE censo anual,Alicante/Alacant,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2025,365586.0000,poblacion,personas,INE censo anual,Alicante/Alacant,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2021,345749.0000,poblacion,personas,INE censo anual,Bilbao,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2022,343506.0000,poblacion,personas,INE censo anual,Bilbao,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2023,345235.0000,poblacion,personas,INE censo anual,Bilbao,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2024,347342.0000,poblacion,personas,INE censo anual,Bilbao,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2025,350975.0000,poblacion,personas,INE censo anual,Bilbao,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2021,578063.0000,poblacion,personas,INE censo anual,Málaga,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2022,578473.0000,poblacion,personas,INE censo anual,Málaga,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2023,587068.0000,poblacion,personas,INE censo anual,Málaga,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2024,592346.0000,poblacion,personas,INE censo anual,Málaga,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2025,597173.0000,poblacion,personas,INE censo anual,Málaga,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2021,424837.0000,poblacion,personas,INE censo anual,Palma,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2022,421933.0000,poblacion,personas,INE censo anual,Palma,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2023,430640.0000,poblacion,personas,INE censo anual,Palma,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2024,438234.0000,poblacion,personas,INE censo anual,Palma,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2025,443196.0000,poblacion,personas,INE censo anual,Palma,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2021,684340.0000,poblacion,personas,INE censo anual,Sevilla,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2022,681184.0000,poblacion,personas,INE censo anual,Sevilla,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2023,684164.0000,poblacion,personas,INE censo anual,Sevilla,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2024,686741.0000,poblacion,personas,INE censo anual,Sevilla,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2025,688714.0000,poblacion,personas,INE censo anual,Sevilla,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2021,788842.0000,poblacion,personas,INE censo anual,València,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2022,790797.0000,poblacion,personas,INE censo anual,València,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2023,804121.0000,poblacion,personas,INE censo anual,València,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2024,824340.0000,poblacion,personas,INE censo anual,València,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2025,841558.0000,poblacion,personas,INE censo anual,València,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2021,681430.0000,poblacion,personas,INE censo anual,Zaragoza,2021-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2022,675361.0000,poblacion,personas,INE censo anual,Zaragoza,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2023,683949.0000,poblacion,personas,INE censo anual,Zaragoza,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2024,691037.0000,poblacion,personas,INE censo anual,Zaragoza,2024-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2025,699007.0000,poblacion,personas,INE censo anual,Zaragoza,2025-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2019,11554.3026,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Alicante/Alacant,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2020,11578.3031,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Alicante/Alacant,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2022,12705.5125,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Alicante/Alacant,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+03014,2023,13706.7541,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Alicante/Alacant,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2019,16065.0406,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Bilbao,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2020,15949.2674,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Bilbao,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2022,17760.3382,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Bilbao,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+48020,2023,19336.3762,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Bilbao,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2019,11230.1488,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Málaga,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2020,11241.0225,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Málaga,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2022,12758.1629,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Málaga,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+29067,2023,13865.0700,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Málaga,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2019,13718.3045,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Palma,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2020,12988.1863,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Palma,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2022,14949.9579,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Palma,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+07040,2023,16231.5303,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Palma,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2019,12402.6224,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Sevilla,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2020,12492.0540,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Sevilla,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2022,13987.3996,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Sevilla,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+41091,2023,14997.9852,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Sevilla,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2019,13608.1635,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),València,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2020,13808.7254,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),València,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2022,15195.3795,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),València,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+46250,2023,16157.4908,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),València,2023-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2019,14089.5450,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Zaragoza,2019-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2020,14195.3589,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Zaragoza,2020-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2022,15356.2775,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Zaragoza,2022-12-31,C4,Comparación descriptiva; sin inferencia causal
+50297,2023,16301.4355,renta_neta_persona,€/año,INE ADRH (media de secciones ponderada por población 2023),Zaragoza,2023-12-31,C4,Comparación descriptiva; sin inferencia causal

@@ -116,3 +116,12 @@ v8:
 base:
 	$(PY) src/v10/geo.py
 	$(PY) src/v10/base.py
+
+# V10: atlas descriptivo (los microdatos solo se recalculan si están en disco; sus agregados están versionados)
+atlas:
+	@if [ -d data/raw/v9/ine_microdatos/ecv ]; then $(PY) src/v10/atlas_microdatos.py; else echo "[atlas] sin microdatos en disco: se conservan output/v10/atlas/a_*"; fi
+	$(PY) src/v10/atlas.py
+	$(PY) src/v10/atlas_texto.py
+
+figuras:
+	$(PY) src/v10/figuras.py

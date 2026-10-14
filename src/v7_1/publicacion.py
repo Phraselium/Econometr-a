@@ -46,6 +46,8 @@ FUENTES: dict[str, str] = {
     "publicacion/tablas_modelos_destacados.csv": "output/v8/tablas_modelos_destacados.csv",
     "publicacion/tablas_v8.xlsx": "output/v8/tablas_v8.xlsx",
     "publicacion/cifras_clave.csv": "output/v5/cifras_clave.csv",
+    # V10: atlas descriptivo (texto generado por src/v10/atlas_texto.py)
+    "publicacion/atlas_descriptivo.md": "output/v10/atlas_descriptivo.md",
     "publicacion/dosis_coste.csv": "output/v7_1/S1/dosis_coste.csv",
     "metodologia/anexo_metodologico.md": "output/v6_2/anexo_metodologico.md",
     "metodologia/guia_revisor.md": "docs/v7_1/guia_revisor.md",

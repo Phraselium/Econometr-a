@@ -1,0 +1,41 @@
+anio,grupo,categoria,indicador,valor_propio,valor_eurostat,tabla_eurostat,diferencia_pp,coincide_anio,coincide
+2018,total,Total,sobrecarga_40,8.8709,8.9000,ilc_lvho07a,-0.0291,True,True
+2019,total,Total,sobrecarga_40,8.5442,8.5000,ilc_lvho07a,0.0442,True,True
+2020,total,Total,sobrecarga_40,8.1704,8.2000,ilc_lvho07a,-0.0296,True,True
+2021,total,Total,sobrecarga_40,9.8606,9.9000,ilc_lvho07a,-0.0394,True,True
+2022,total,Total,sobrecarga_40,9.2102,9.2000,ilc_lvho07a,0.0102,True,True
+2023,total,Total,sobrecarga_40,8.2370,8.2000,ilc_lvho07a,0.0370,True,True
+2024,total,Total,sobrecarga_40,7.7712,7.8000,ilc_lvho07a,-0.0288,True,True
+2025,total,Total,sobrecarga_40,7.1720,7.2000,ilc_lvho07a,-0.0280,True,True
+2018,tenencia,propiedad con hipoteca,sobrecarga_40,3.4659,3.5000,ilc_lvho07c,-0.0341,True,True
+2019,tenencia,propiedad con hipoteca,sobrecarga_40,3.6914,3.7000,ilc_lvho07c,-0.0086,True,True
+2020,tenencia,propiedad con hipoteca,sobrecarga_40,3.0293,3.0000,ilc_lvho07c,0.0293,True,True
+2021,tenencia,propiedad con hipoteca,sobrecarga_40,3.6935,3.7000,ilc_lvho07c,-0.0065,True,True
+2022,tenencia,propiedad con hipoteca,sobrecarga_40,3.1579,3.2000,ilc_lvho07c,-0.0421,True,True
+2023,tenencia,propiedad con hipoteca,sobrecarga_40,4.3623,4.4000,ilc_lvho07c,-0.0377,True,True
+2024,tenencia,propiedad con hipoteca,sobrecarga_40,4.2910,4.3000,ilc_lvho07c,-0.0090,True,True
+2025,tenencia,propiedad con hipoteca,sobrecarga_40,3.4494,3.4000,ilc_lvho07c,0.0494,True,True
+2018,tenencia,propiedad sin hipoteca,sobrecarga_40,2.5627,2.6000,ilc_lvho07c,-0.0373,True,True
+2019,tenencia,propiedad sin hipoteca,sobrecarga_40,1.8433,1.8000,ilc_lvho07c,0.0433,True,True
+2020,tenencia,propiedad sin hipoteca,sobrecarga_40,2.1917,2.2000,ilc_lvho07c,-0.0083,True,True
+2021,tenencia,propiedad sin hipoteca,sobrecarga_40,3.0888,3.1000,ilc_lvho07c,-0.0112,True,True
+2022,tenencia,propiedad sin hipoteca,sobrecarga_40,2.7822,2.8000,ilc_lvho07c,-0.0178,True,True
+2023,tenencia,propiedad sin hipoteca,sobrecarga_40,2.5649,2.6000,ilc_lvho07c,-0.0351,True,True
+2024,tenencia,propiedad sin hipoteca,sobrecarga_40,2.1506,2.2000,ilc_lvho07c,-0.0494,True,True
+2025,tenencia,propiedad sin hipoteca,sobrecarga_40,1.8700,1.9000,ilc_lvho07c,-0.0300,True,True
+2018,tenencia,alquiler de mercado,sobrecarga_40,38.0701,38.1000,ilc_lvho07c,-0.0299,True,True
+2019,tenencia,alquiler de mercado,sobrecarga_40,37.4018,37.4000,ilc_lvho07c,0.0018,True,True
+2020,tenencia,alquiler de mercado,sobrecarga_40,35.9001,35.9000,ilc_lvho07c,0.0001,True,True
+2021,tenencia,alquiler de mercado,sobrecarga_40,40.8893,40.9000,ilc_lvho07c,-0.0107,True,True
+2022,tenencia,alquiler de mercado,sobrecarga_40,39.3845,39.4000,ilc_lvho07c,-0.0155,True,True
+2023,tenencia,alquiler de mercado,sobrecarga_40,30.6083,30.6000,ilc_lvho07c,0.0083,True,True
+2024,tenencia,alquiler de mercado,sobrecarga_40,28.0664,28.1000,ilc_lvho07c,-0.0336,True,True
+2025,tenencia,alquiler de mercado,sobrecarga_40,26.7965,26.8000,ilc_lvho07c,-0.0035,True,True
+2018,total,Total,hacinamiento,4.3269,4.7000,ilc_lvho05a,-0.3731,True,False
+2019,total,Total,hacinamiento,5.2665,5.9000,ilc_lvho05a,-0.6335,False,False
+2020,total,Total,hacinamiento,6.5931,7.6000,ilc_lvho05a,-1.0069,False,False
+2021,total,Total,hacinamiento,5.6254,6.4000,ilc_lvho05a,-0.7746,False,False
+2022,total,Total,hacinamiento,5.7085,6.6000,ilc_lvho05a,-0.8915,False,False
+2023,total,Total,hacinamiento,6.6275,7.6000,ilc_lvho05a,-0.9725,False,False
+2024,total,Total,hacinamiento,8.3287,9.1000,ilc_lvho05a,-0.7713,False,False
+2025,total,Total,hacinamiento,8.6255,9.5000,ilc_lvho05a,-0.8745,False,False

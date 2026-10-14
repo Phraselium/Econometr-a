@@ -1,0 +1,56 @@
+<!-- Generado por `make publicacion` desde output/v10/atlas_descriptivo.md. No editar a mano: se regenera y un test lo comprueba. -->
+
+# Atlas descriptivo: quién sufre la subida y dónde (V10)
+
+Generado por `make atlas` (src/v10/atlas_texto.py) desde las tablas de output/v10/atlas/; no editar a mano. Solo descriptivo: ninguna frase atribuye causas. Cada hallazgo indica capa, fuente y fecha del dato. Las filas posteriores al pre-registro (desde 2026T3) no entran en ningún cálculo.
+
+## Hallazgos
+
+- **Sobrecarga del gasto en vivienda (>40 % de la renta).** En 2025 afecta al 26,8 % de las personas que viven de alquiler a precio de mercado (IC 95 %: 24,4-29,2), frente al 7,2 % del conjunto de la población. En 2018, la cifra de los inquilinos de mercado era del 38,1 %. *Capa C1; INE ECV (microdatos) con contraste con Eurostat; renta del año anterior a la encuesta.*
+- **Por renta.** La sobrecarga del 40 % alcanza al 43,8 % de las personas del primer decil de renta equivalente y al 0,1 % del décimo (2025). *Capa C4; INE ECV.*
+- **Por nacionalidad.** 24,1 % de las personas con nacionalidad de fuera de la UE viven en hogares con sobrecarga del 40 %, frente al 4,7 % de las de nacionalidad española (2025; IC 95 % 20,6-27,5 y 4,4-5,0). *Capa C4; INE ECV.*
+- **Esfuerzo de alquiler por edad.** El alquiler anual mediano equivale al 21,1 % de la renta del hogar para las personas de 18 a 29 años que alquilan a precio de mercado y al 21,5 % para las de 45 a 64 (2025; IC de Woodruff 19,8-23,2 y 20,5-22,9). *Capa C4; INE ECV.*
+- **Emancipación.** Vivía con al menos uno de sus padres el 27,1 % de las personas de 30 a 34 años en 2018 y el 31,7 % en 2025 (media de cuatro trimestres). *Capa C4; INE EPA (microdatos).*
+- **Entrar frente a quedarse.** Desde 2015, la renta de los contratos nuevos ha crecido más que la de los existentes: en 2024, el índice de contratos nuevos está en 137,0 y el de existentes en 120,6 (2015 = 100), una brecha de 16,4 puntos en España. Las mayores brechas provinciales están en Valencia/València (26,8) y Castellón/Castelló (22,3); las menores, en Melilla (6,8). *Capa C4; INE IPVA (59004 y 59005).*
+- **València, población.** La ciudad pasa de 788.842 a 841.558 habitantes entre 2021 y 2025 (suma de secciones del censo anual); la población de nacionalidad extranjera, de 104.970 a 163.356 (13,3 % → 19,4 %). *Capa C1 (recuento oficial del INE); censo anual.*
+- **València, barrios.** Los cinco barrios con el índice descriptivo de presión residencial más alto son El Mercat (2,25), El Pilar (1,73), La Punta (1,59), La Seu (1,45), Cabanyal-Canyamelar (1,21). El índice promedia cuatro indicadores estandarizados (alquiler 2024, su variación 2019-2024, viviendas turísticas por 100 viviendas y cambio del porcentaje de población extranjera); describe coincidencias, no causas. *Capa C4; INE, MIVAU SERPAVI, Ajuntament de València.*
+- **València, viviendas turísticas.** El INE contabiliza 5.393 viviendas turísticas en la ciudad en mayo de 2026 (1,30 por 100 viviendas del Censo 2021), frente a 5.480 en agosto de 2021. *Capa C4; INE, medición experimental.*
+- **España por provincia.** El alquiler anual de una vivienda tipo de 80 m² equivale a entre el 28,6 % (Lugo) y el 66,9 % (Málaga) de la renta neta media por persona (alquiler 2024, renta 2023). *Capa C4; indicador comparativo, no carga de un hogar concreto.*
+- **Comunitat Valenciana.** Entre los municipios de 20.000 habitantes o más con dato, el alquiler mediano (SERPAVI) varía entre 2019 y 2024 desde un 19,1 % (Alfàs del Pi, l') hasta un 48,5 % (Sagunt/Sagunto); la mediana de esos municipios es del 31,9 %. *Capa C4; MIVAU SERPAVI.*
+- **Ciudades comparables.** Variación del alquiler mediano 2019-2024 (SERPAVI): València 39,8 %; Málaga 31,4 %; Alicante/Alacant 31,3 %; Palma 24,6 %; Sevilla 21,4 %; Zaragoza 21,3 %. *Capa C4; comparación descriptiva, Bilbao sin serie anterior a 2024.*
+
+## Tablas
+
+| tabla | filas | contenido |
+|---|---|---|
+| a_quien_ecv.csv | 4939 | ECV 2018-2025: sobrecarga, esfuerzo, hacinamiento y tenencia por grupo, con IC 95 % |
+| a_quien_epa.csv | 824 | EPA 2018-2026T2: jóvenes que viven con sus padres, con IC 95 % |
+| a_contraste_eurostat.csv | — | contraste de los totales propios con Eurostat (criterio de C1) |
+| b_ipva_nuevo_existente.csv | 264 | véase la cabecera de src/v10/atlas.py |
+| b_ipva_distritos_capitales.csv | 672 | véase la cabecera de src/v10/atlas.py |
+| b_fianzas_gva_cp.csv | 1240 | véase la cabecera de src/v10/atlas.py |
+| c_valencia_seccion.csv | 597 | véase la cabecera de src/v10/atlas.py |
+| c_valencia_barrio.csv | 87 | véase la cabecera de src/v10/atlas.py |
+| d_cv_municipios.csv | 542 | véase la cabecera de src/v10/atlas.py |
+| d_espana_provincias.csv | 52 | véase la cabecera de src/v10/atlas.py |
+| e_ciudades_comparables.csv | 183 | véase la cabecera de src/v10/atlas.py |
+
+## Método
+
+- **Microdatos.** Personas ponderadas. IC por linealización con el hogar como conglomerado; los ficheros públicos no traen estratos, así que los IC son algo estrechos. Las celdas con menos de 50 casos se suprimen.
+- **Agregación a barrio.** Correspondencia sección → barrio por área (data/base/geo/). Los recuentos se reparten con el peso de área, las tasas se recalculan y las medianas se promedian ponderando por población o viviendas.
+- **Índice de presión.** Media simple de puntuaciones z, sin pesos. Se construye para describir, no para explicar.
+- **Lo que falta.** Antigüedad y usos del parque por sección (Catastro INSPIRE no descargado), accesibilidad (GTFS no descargado) y compraventas municipales con código INE (el MIVAU solo las publica con el nombre). Véase docs/v9/estado_datos.md.
+
+## Summary (English)
+
+Descriptive atlas built from the project's single database. It covers:
+
+- housing cost overburden, rent and mortgage effort, overcrowding and tenure by income decile, age, nationality, household type and region (Spain's Living Conditions Survey microdata, 2018-2025, with confidence intervals; national overburden totals match Eurostat within 0.5 points every year);
+- living with parents from the Labour Force Survey;
+- the gap between new and existing rental contracts (INE IPVA);
+- València by census section and neighbourhood;
+- the Valencian Community by municipality and Spain by province;
+- València compared with similar cities.
+
+No causal claims are made.

@@ -62,3 +62,8 @@
 - Llevan la columna `posterior_prereg` las series de precios o alquileres con fecha que podrían solaparse con evaluate_v7 o evaluate_v8: EMAL e Incasòl.
 - Las demás series nuevas no son las que evalúan evaluate_v7 y evaluate_v8 (IPV, IPC de alquiler, valor tasado). Los tipos del BCE llegan a 2026-08, pero no son series evaluadas.
 - No se ha mirado ningún valor de 2026T3 en adelante.
+
+## D6 — Cierre (2026-10-14)
+- **Fuentes y ficheros.** `make datos_v9 --solo-verificar`: 93 ficheros registrados en 11 fuentes, todos verificados.
+  - Microdatos INE: EPA, 34 trimestres (2018T1-2026T2) más 2 diseños de registro; ECV, 8 años (2018-2025); unos 1,1 GB, no versionados.
+- **`make check`:** rc = 0, 319 tests aprobados (11 de V9); check_texto, check_v5, check_v6 y check_v8 con 0 errores.

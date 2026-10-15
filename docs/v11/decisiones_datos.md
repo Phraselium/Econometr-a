@@ -18,3 +18,22 @@ Tarea de solo datos: sin estimaciones, sin tocar salidas publicadas ni muestras 
    35-64, 65+).
 7. **posterior_prereg**: toda serie con periodos ≥ 2026T3 usada en evaluate_v7/v8/v9 se marca con `marcar_posterior_prereg`
    y no se usa en cálculos.
+8. **MNP municipal**: solo existe en microdatos (INEbase llega a provincia). Se leen los cuatro diseños de registro de
+   nacimientos (1980-95, 1996-2006, 2007-15, 2016-) y los tres de defunciones (1980-98, 1999-2008, 2009-); 1975-1979
+   no se incorpora (otro diseño; fuera del periodo de análisis). Municipio = residencia de la madre (nacimientos) y del
+   fallecido (defunciones). Nacionalidad disponible desde 1996 (nacimientos, de la madre) y 1999 (defunciones); antes,
+   «NC». Validación: totales nacionales iguales a los publicados (1985: 456.298 nacimientos; 2023: 320.656 nacimientos y
+   436.124 defunciones).
+9. **EMCR**: validada contra la tabla publicada 69696 (València 2024: 37.891 inmigraciones del extranjero en ambos) y
+   saldo interior nacional = 0 en cada año.
+10. **OPI e Interior** (residentes con certificado o tarjeta, protección internacional y temporal por provincia):
+    sus webs rechazan el acceso desde el entorno (403 o Cloudflare). Respaldo de nivel NACIONAL por nacionalidad con
+    Eurostat (migr_asyappctzm, migr_asydcfstq, migr_asytpsm/fm/fa, migr_resvalid), solo con sexo y edad totales y sin
+    celdas a 0 (tamaño). El desglose provincial queda en fuentes_fallidas.md y en las solicitudes (bloque 5).
+11. **ECP**: se añade la serie TRIMESTRAL provincial por nacionalidad (56947, 2002T1-2025T1; 82104, 2025T2-) y la
+    población en viviendas familiares por nacionalidad (60129). La ECP no publica hogares por nacionalidad; ese cruce
+    sale del Censo 2021 y de los microdatos EPA y ECV.
+12. **Eventos BOE**: legislación consolidada de ámbito estatal por título y las referencias posteriores (modificaciones,
+    desarrollos, sentencias) de las normas núcleo. «alcance» es una etiqueta por palabras del título; la fecha de la
+    norma modificadora se extrae del texto de la referencia (vacía si no se puede leer; el identificador BOE se
+    conserva siempre).

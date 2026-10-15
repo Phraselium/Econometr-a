@@ -1,0 +1,139 @@
+{
+ "rama": "v9/f2_potencia",
+ "pregunta": "¿Qué diseños tienen potencia para un contraste confirmatorio?",
+ "capa": "—",
+ "datos": "Incasòl, EMAL, IDESCAT, GVA, padrón, MIVAU, INE, BCE, Eurostat",
+ "N": 4038,
+ "metodo": "placebos entre nunca tratados y permutaciones de la exposición (B = 300, SEED = 20261010)",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "—",
+ "diagnosticos": [
+  {
+   "diseno": "D1a zonas tensionadas Cataluña (CS/BJS)",
+   "resultado": "log renta media de contratos nuevos",
+   "mde_holm": 0.03747976607984708,
+   "referencia": 0.05,
+   "confirmatorio": true
+  },
+  {
+   "diseno": "D1b Ley 11/2020 Cataluña (DiD, cohorte única)",
+   "resultado": "log renta media de contratos nuevos",
+   "mde_holm": 0.02485373014049291,
+   "referencia": 0.05,
+   "confirmatorio": true
+  },
+  {
+   "diseno": "D1a zonas tensionadas Cataluña (CS/BJS)",
+   "resultado": "log contratos nuevos",
+   "mde_holm": 0.0897982644649655,
+   "referencia": 0.1,
+   "confirmatorio": true
+  },
+  {
+   "diseno": "D1b Ley 11/2020 Cataluña (DiD, cohorte única)",
+   "resultado": "log contratos nuevos",
+   "mde_holm": 0.10596424090161084,
+   "referencia": 0.1,
+   "confirmatorio": false
+  },
+  {
+   "diseno": "D1c zonas tensionadas Euskadi (EMAL)",
+   "resultado": "log renta media / log contratos",
+   "mde_holm": NaN,
+   "referencia": 0.05,
+   "confirmatorio": false
+  },
+  {
+   "diseno": "D2 HUT × COVID Cataluña, 2020-2021 (COVID)",
+   "resultado": "log renta media de contratos nuevos por 1 DE de dosis",
+   "mde_holm": 0.008703425593560058,
+   "referencia": 0.019,
+   "confirmatorio": true
+  },
+  {
+   "diseno": "D2 HUT × COVID Cataluña, 2022-2025 (reapertura)",
+   "resultado": "log renta media de contratos nuevos por 1 DE de dosis",
+   "mde_holm": 0.009922411881187617,
+   "referencia": 0.019,
+   "confirmatorio": true
+  },
+  {
+   "diseno": "D2 HUT × COVID Cataluña, 2020-2021 (COVID)",
+   "resultado": "log contratos nuevos por 1 DE de dosis",
+   "mde_holm": 0.03515361357680371,
+   "referencia": 0.019,
+   "confirmatorio": false
+  },
+  {
+   "diseno": "D2 HUT × COVID Cataluña, 2022-2025 (reapertura)",
+   "resultado": "log contratos nuevos por 1 DE de dosis",
+   "mde_holm": 0.04436126254366676,
+   "referencia": 0.019,
+   "confirmatorio": false
+  },
+  {
+   "diseno": "D3 caída del registro VUT por CP (Comunitat Valenciana)",
+   "resultado": "Δ log fianza media 2024→2026 por 1 DE de ΔVUT/viviendas",
+   "mde_holm": 0.02240491515955639,
+   "referencia": 0.019,
+   "confirmatorio": false
+  },
+  {
+   "diseno": "D3 caída del registro VUT por CP (Comunitat Valenciana)",
+   "resultado": "Δ log número de fianzas 2024→2026 por 1 DE de ΔVUT/viviendas",
+   "mde_holm": 0.05650234846976441,
+   "referencia": 0.019,
+   "confirmatorio": false
+  },
+  {
+   "diseno": "D4 shift-share inmigración (réplica 2003-2012), forma reducida",
+   "resultado": "Δ log valor tasado por 1 punto de Z",
+   "mde_holm": 0.014554302383136179,
+   "referencia": 0.01,
+   "confirmatorio": false
+  },
+  {
+   "diseno": "D4 shift-share inmigración (réplica 2003-2012), forma reducida",
+   "resultado": "Δ log IPC alquiler por 1 punto de Z",
+   "mde_holm": 0.007398877319587212,
+   "referencia": 0.01,
+   "confirmatorio": true
+  },
+  {
+   "diseno": "D4 shift-share inmigración (ampliación 2015-2022), forma reducida",
+   "resultado": "Δ log valor tasado por 1 punto de Z",
+   "mde_holm": 0.0764878526834603,
+   "referencia": 0.01,
+   "confirmatorio": false
+  },
+  {
+   "diseno": "D4 shift-share inmigración (ampliación 2015-2022), forma reducida",
+   "resultado": "Δ log IPC alquiler por 1 punto de Z",
+   "mde_holm": 0.01586360321909088,
+   "referencia": 0.01,
+   "confirmatorio": false
+  },
+  {
+   "diseno": "D5 proyección local precios (BIS), h = 4 trimestres",
+   "resultado": "Δ log HPI por shock JK × 1 DE de exposición",
+   "mde_holm": 0.1173333296911213,
+   "referencia": 0.05,
+   "confirmatorio": false
+  },
+  {
+   "diseno": "D5 proyección local precios (BIS), h = 8 trimestres",
+   "resultado": "Δ log HPI por shock JK × 1 DE de exposición",
+   "mde_holm": 0.15246192610540352,
+   "referencia": 0.05,
+   "confirmatorio": false
+  }
+ ],
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "No usa la relación tratamiento-resultado de las unidades tratadas."
+}

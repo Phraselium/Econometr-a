@@ -11,3 +11,22 @@ Rama local `r9/main`, subida a la rama remota designada (`claude/housing-price-s
 - **Brecha del IPVA** (V10-ATL-B1). Se presenta como «diferencia de puntos de índice (base 2015)» y se aclara explícitamente que no es un porcentaje de encarecimiento.
 - **València +39,8 % (2019-2024)**: «C4, fuente única (SERPAVI)» en el atlas, la figura F10, las fichas municipales (nueva fila de variación del alquiler) y los mapas.
 - **Cifras.** Ninguna cambia: solo cambia el texto. `make web` y `make check` (rc = 0).
+
+## E1 — F1: datos (detalle en decisiones_datos.md, D8)
+- **Prioridad.** Primero las fuentes que necesitan D1-D7. Lo que ningún diseño usa queda aplazado y documentado (auditoria_exhaustividad.md).
+- **Exposición de D5.** Los volúmenes por fijación no existen por país, así que se usa la cuota RAI (BCE).
+- **Accesibilidad de D3.** Se mide como distancia al centro, sin GTFS.
+
+## E2 — F2: potencia antes de estimar
+- **Método.** El MDE sale de placebos entre nunca tratados (DiD) o de permutaciones de la exposición (dosis, diferencias largas, shift-share, proyecciones locales). Nunca se usa la relación tratamiento-resultado de los tratados.
+- **Regla.** Una hipótesis es confirmatoria si su MDE con Holm ≤ la referencia de la literatura.
+- **Resultado.**
+  - Confirmatorias: D1a (renta y contratos), D1b (renta), D2 (renta, COVID y reapertura) y D4 (IPC de alquiler en la réplica).
+  - Exploratorias: el resto.
+  - Descriptivo: D3.
+  - D6 no se estima: la ECV no tiene mes de nacimiento.
+- **Datos de los paneles.**
+  - Incasòl: los municipios solo tienen datos anuales antes de 2019. D1b usa la ventana trimestral 2019T1-2022T1, con robustez anual; D2 usa el panel anual 2014-2025.
+  - Precios de D5: BIS nominal (18 países). El fichero de prc_hpi_q del proyecto solo tenía 6.
+  - Valor tasado de D4: panel provincial de v7 (código INE). Las CCAA uniprovinciales se completan con el panel anual de CCAA (código INE de CCAA → provincia, tabla fija).
+- **Referencia de D5.** Es un orden de magnitud NO VERIFICADO (5 % por punto de shock y DE de exposición). Aun con esa referencia generosa el diseño no tiene potencia, así que es exploratorio.

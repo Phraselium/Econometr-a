@@ -10,8 +10,7 @@ Todo cruce territorial es por código INE. Las funciones leen data/raw (solo lec
   vut_gva_cp()         código postal: stock VUT en los cortes 2025-01-26 y 2026-10-14
   viviendas_cp()       código postal: viviendas (censo 2021 por sección × reparto sección-CP del callejero)
   padron_nac()         municipio o provincia × año × nacionalidad (2003-2022)
-  valor_tasado_prov()  provincia × año: valor tasado medio (media de trimestres)
-  ipc_alquiler_prov()  provincia × año: IPC de alquiler (media de meses)
+  panel_prov()         provincia × año (panel v7): valor tasado, IPC de alquiler y controles
   europa()             país × trimestre/mes: HPI, IPCA alquiler, cuota a tipo variable y shocks JK
 """
 from __future__ import annotations
@@ -183,20 +182,20 @@ def viviendas_cp() -> pd.DataFrame:
 
 
 # ------------------------------------------------------------------------------------------------ D4 provincias
-def valor_tasado_prov() -> pd.DataFrame:
-    v = pd.read_csv(RAW / "mivau_valor_tasado_nacional_ccaa_prov.csv", dtype=str)
-    v = v[v.nivel == "provincia"]
-    v["anio"] = v.periodo.str[:4].astype(int)
-    v["valor"] = pd.to_numeric(v.valor, errors="coerce")
-    return v
-
-
-def ipc_alquiler_prov() -> pd.DataFrame:
-    v = pd.read_csv(RAW / "ine_v2_ipc_alquiler_prov.csv", dtype=str)
-    v = v[v.nivel == "provincia"]
-    v["anio"] = v.periodo.str[:4].astype(int)
-    v["valor"] = pd.to_numeric(v.valor, errors="coerce")
-    return v
+def panel_prov() -> pd.DataFrame:
+    """Panel provincial anual de v7 (código INE de provincia; 2002-2024): valor tasado, IPC de alquiler, población,
+    extranjeros, ocupados, terminadas. Incluye la bandera prov_sellada_v6 (la muestra sellada de v6 es predictiva;
+    D4 la usa como robustez excluyéndola, no lee data/sealed)."""
+    d = pd.read_csv(RAIZ / "data/processed/v7/panel_prov_a_v7.csv", dtype={"cod_prov": str})
+    # CCAA uniprovinciales: el valor tasado está solo a nivel CCAA (panel v1 anual, código INE de CCAA → provincia)
+    uni = {"03": "33", "04": "07", "06": "39", "13": "28", "14": "30", "15": "31", "17": "26"}
+    c = pd.read_csv(RAIZ / "data/processed/panel_ccaa_a.csv", dtype={"codigo_ine_ccaa": str})
+    c = c[c.codigo_ine_ccaa.isin(uni)].assign(cod_prov=lambda x: x.codigo_ine_ccaa.map(uni))
+    c = c[["cod_prov", "anio", "p_tasado"]]
+    d = d.merge(c, on=["cod_prov", "anio"], how="left")
+    d["valor_tasado_origen"] = np.where(d.valor_tasado.isna() & d.p_tasado.notna(), "CCAA uniprovincial (panel v1)", "provincia (panel v7)")
+    d["valor_tasado"] = d.valor_tasado.fillna(d.p_tasado)
+    return d.drop(columns="p_tasado")
 
 
 # ------------------------------------------------------------------------------------------------ D5 zona euro
@@ -209,8 +208,11 @@ def europa() -> dict[str, pd.DataFrame]:
     hicp = pd.read_csv(RAW9 / "eurostat_alquiler/prc_hicp_minr_cp041_mensual.csv.gz", dtype=str)
     hicp = hicp[hicp.posterior_prereg.str.lower() != "true"]
     hicp["valor"] = pd.to_numeric(hicp.indice_2015, errors="coerce")
-    hpi = pd.read_csv(RAW / "v8/eurostat_prc_hpi_q_multi.csv", dtype=str)
-    return {"jk": jk, "rai": rai, "hicp": hicp, "hpi": hpi}
+    bis = pd.read_csv(RAW / "bis_rpp.csv", dtype=str)
+    bis = bis[(bis.precio == "nominal") & bis.serie.str.contains(r"\|N\|628\|")]   # índice nominal 2010 = 100
+    bis["valor"] = pd.to_numeric(bis.valor, errors="coerce")
+    bis["q"] = bis.periodo.str.replace("-Q", "Q")
+    return {"jk": jk, "rai": rai, "hicp": hicp, "bis": bis}
 
 
 def es_codigo(s: str) -> bool:

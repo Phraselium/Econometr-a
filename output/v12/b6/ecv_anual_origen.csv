@@ -1,0 +1,274 @@
+anio,grupo,categoria,indicador,valor,ic95_inf,ic95_sup,n_muestral,casos,error_relativo,publicable
+2018,origen,UE,propiedad,36.91,27.35,46.47,514,203.0,0.132,True
+2018,origen,UE,tenencia_3,55.25,44.78,65.73,514,283.0,0.097,True
+2018,origen,UE,sobrecarga_30,39.72,29.44,50.0,512,201.0,0.132,True
+2018,origen,UE,sobrecarga_40,27.69,17.69,37.69,512,123.0,0.184,True
+2018,origen,UE,esfuerzo_alquiler_30,41.9,27.95,55.85,277,114.0,0.17,True
+2018,origen,UE,esfuerzo_alquiler_40,29.94,16.49,43.39,277,81.0,0.229,True
+2018,origen,UE,hacinamiento,,,,514,,0.381,False
+2018,origen,española,propiedad,81.97,80.99,82.96,26472,22133.0,0.006,True
+2018,origen,española,tenencia_3,9.73,8.96,10.49,26472,2298.0,0.04,True
+2018,origen,española,sobrecarga_30,10.19,9.44,10.94,26438,2435.0,0.038,True
+2018,origen,española,sobrecarga_40,6.22,5.66,6.78,26438,1502.0,0.046,True
+2018,origen,española,esfuerzo_alquiler_30,35.77,31.85,39.69,2263,813.0,0.056,True
+2018,origen,española,esfuerzo_alquiler_40,20.59,17.48,23.7,2263,470.0,0.077,True
+2018,origen,española,hacinamiento,3.28,2.77,3.8,26461,930.0,0.08,True
+2018,origen,fuera de la UE,propiedad,22.91,18.0,27.83,1174,285.0,0.11,True
+2018,origen,fuera de la UE,tenencia_3,68.86,63.16,74.57,1174,786.0,0.042,True
+2018,origen,fuera de la UE,sobrecarga_30,44.51,37.92,51.1,1171,550.0,0.075,True
+2018,origen,fuera de la UE,sobrecarga_40,35.66,29.25,42.07,1171,417.0,0.092,True
+2018,origen,fuera de la UE,esfuerzo_alquiler_30,45.38,36.92,53.85,776,382.0,0.095,True
+2018,origen,fuera de la UE,esfuerzo_alquiler_40,32.64,24.62,40.65,776,267.0,0.125,True
+2018,origen,fuera de la UE,hacinamiento,18.19,12.02,24.35,1173,218.0,0.173,True
+2019,origen,UE,propiedad,35.16,26.66,43.65,643,256.0,0.123,True
+2019,origen,UE,tenencia_3,56.62,47.23,66.0,643,348.0,0.085,True
+2019,origen,UE,sobrecarga_30,43.82,34.04,53.6,637,251.0,0.114,True
+2019,origen,UE,sobrecarga_40,28.93,19.36,38.51,637,164.0,0.169,True
+2019,origen,UE,esfuerzo_alquiler_30,46.25,32.08,60.41,336,131.0,0.156,True
+2019,origen,UE,esfuerzo_alquiler_40,31.71,18.2,45.22,336,88.0,0.217,True
+2019,origen,UE,hacinamiento,,,,642,,0.484,False
+2019,origen,española,propiedad,82.54,81.61,83.47,30832,25849.0,0.006,True
+2019,origen,española,tenencia_3,9.73,9.01,10.46,30832,2761.0,0.038,True
+2019,origen,española,sobrecarga_30,9.73,9.05,10.41,30783,2761.0,0.036,True
+2019,origen,española,sobrecarga_40,5.72,5.19,6.24,30783,1661.0,0.047,True
+2019,origen,española,esfuerzo_alquiler_30,36.62,32.91,40.33,2714,1006.0,0.052,True
+2019,origen,española,esfuerzo_alquiler_40,20.51,17.58,23.45,2714,612.0,0.073,True
+2019,origen,española,hacinamiento,3.55,2.99,4.12,30788,1026.0,0.081,True
+2019,origen,fuera de la UE,propiedad,20.71,16.71,24.71,1721,390.0,0.098,True
+2019,origen,fuera de la UE,tenencia_3,70.64,65.83,75.44,1721,1154.0,0.035,True
+2019,origen,fuera de la UE,sobrecarga_30,49.13,43.25,55.0,1704,863.0,0.061,True
+2019,origen,fuera de la UE,sobrecarga_40,32.24,27.09,37.4,1704,607.0,0.082,True
+2019,origen,fuera de la UE,esfuerzo_alquiler_30,44.9,37.61,52.19,1122,537.0,0.083,True
+2019,origen,fuera de la UE,esfuerzo_alquiler_40,33.88,27.22,40.55,1122,388.0,0.1,True
+2019,origen,fuera de la UE,hacinamiento,21.4,16.16,26.65,1716,341.0,0.125,True
+2020,origen,UE,propiedad,37.95,26.36,49.53,581,240.0,0.156,True
+2020,origen,UE,tenencia_3,54.77,43.39,66.15,581,289.0,0.106,True
+2020,origen,UE,sobrecarga_30,46.98,35.79,58.17,580,228.0,0.122,True
+2020,origen,UE,sobrecarga_40,36.87,25.81,47.94,580,154.0,0.153,True
+2020,origen,UE,esfuerzo_alquiler_30,54.75,40.85,68.65,281,116.0,0.13,True
+2020,origen,UE,esfuerzo_alquiler_40,37.98,23.16,52.8,281,80.0,0.199,True
+2020,origen,UE,hacinamiento,,,,581,,0.324,False
+2020,origen,española,propiedad,81.46,80.4,82.51,29285,24430.0,0.007,True
+2020,origen,española,tenencia_3,9.44,8.67,10.2,29285,2572.0,0.041,True
+2020,origen,española,sobrecarga_30,8.79,8.08,9.51,29209,2397.0,0.042,True
+2020,origen,española,sobrecarga_40,5.12,4.57,5.66,29209,1451.0,0.054,True
+2020,origen,española,esfuerzo_alquiler_30,32.43,28.37,36.49,2507,797.0,0.064,True
+2020,origen,española,esfuerzo_alquiler_40,18.09,14.67,21.51,2507,467.0,0.097,True
+2020,origen,española,hacinamiento,4.54,3.83,5.24,29254,1130.0,0.079,True
+2020,origen,fuera de la UE,propiedad,25.07,20.09,30.04,1352,376.0,0.101,True
+2020,origen,fuera de la UE,tenencia_3,60.97,54.52,67.42,1352,828.0,0.054,True
+2020,origen,fuera de la UE,sobrecarga_30,49.29,42.74,55.85,1341,649.0,0.068,True
+2020,origen,fuera de la UE,sobrecarga_40,30.97,25.03,36.9,1341,411.0,0.098,True
+2020,origen,fuera de la UE,esfuerzo_alquiler_30,46.04,37.72,54.36,810,364.0,0.092,True
+2020,origen,fuera de la UE,esfuerzo_alquiler_40,27.41,20.08,34.74,810,238.0,0.136,True
+2020,origen,fuera de la UE,hacinamiento,23.14,17.19,29.09,1350,275.0,0.131,True
+2021,origen,UE,propiedad,36.98,30.22,43.74,1018,414.0,0.093,True
+2021,origen,UE,tenencia_3,54.43,47.26,61.6,1018,522.0,0.067,True
+2021,origen,UE,sobrecarga_30,44.93,37.58,52.28,1011,456.0,0.083,True
+2021,origen,UE,sobrecarga_40,30.97,24.66,37.28,1011,323.0,0.104,True
+2021,origen,UE,esfuerzo_alquiler_30,42.22,31.88,52.56,511,236.0,0.125,True
+2021,origen,UE,esfuerzo_alquiler_40,29.7,20.42,38.98,511,159.0,0.159,True
+2021,origen,UE,hacinamiento,6.0,2.51,9.5,1018,71.0,0.297,True
+2021,origen,española,propiedad,80.71,79.8,81.63,48927,40276.0,0.006,True
+2021,origen,española,tenencia_3,10.9,10.2,11.6,48927,5026.0,0.033,True
+2021,origen,española,sobrecarga_30,10.97,10.28,11.65,48809,5155.0,0.032,True
+2021,origen,española,sobrecarga_40,6.86,6.32,7.41,48809,3249.0,0.041,True
+2021,origen,española,esfuerzo_alquiler_30,36.31,33.02,39.59,4912,1768.0,0.046,True
+2021,origen,española,esfuerzo_alquiler_40,23.06,20.19,25.93,4912,1117.0,0.063,True
+2021,origen,española,hacinamiento,4.47,3.9,5.03,48728,2029.0,0.065,True
+2021,origen,fuera de la UE,propiedad,26.01,21.27,30.75,2372,589.0,0.093,True
+2021,origen,fuera de la UE,tenencia_3,63.98,58.78,69.18,2372,1491.0,0.041,True
+2021,origen,fuera de la UE,sobrecarga_30,53.89,48.3,59.47,2350,1286.0,0.053,True
+2021,origen,fuera de la UE,sobrecarga_40,41.5,35.82,47.18,2350,965.0,0.07,True
+2021,origen,fuera de la UE,esfuerzo_alquiler_30,56.17,49.01,63.32,1462,806.0,0.065,True
+2021,origen,fuera de la UE,esfuerzo_alquiler_40,42.71,35.07,50.34,1462,569.0,0.091,True
+2021,origen,fuera de la UE,hacinamiento,21.14,15.22,27.07,2358,412.0,0.143,True
+2021,nacimiento,nacido en España,propiedad,81.85,80.97,82.74,46967,39149.0,0.006,True
+2021,nacimiento,nacido en España,tenencia_3,9.7,9.07,10.33,46967,4345.0,0.033,True
+2021,nacimiento,nacido en España,sobrecarga_30,10.17,9.52,10.82,46856,4623.0,0.033,True
+2021,nacimiento,nacido en España,sobrecarga_40,6.2,5.69,6.72,46856,2880.0,0.042,True
+2021,nacimiento,nacido en España,esfuerzo_alquiler_30,34.09,30.84,37.34,4245,1485.0,0.049,True
+2021,nacimiento,nacido en España,esfuerzo_alquiler_40,21.38,18.6,24.16,4245,933.0,0.066,True
+2021,nacimiento,nacido en España,hacinamiento,4.24,3.69,4.8,46776,1849.0,0.067,True
+2021,nacimiento,nacido en otro país de la UE,propiedad,49.94,44.04,55.84,1059,557.0,0.06,True
+2021,nacimiento,nacido en otro país de la UE,tenencia_3,41.9,36.07,47.74,1059,428.0,0.071,True
+2021,nacimiento,nacido en otro país de la UE,sobrecarga_30,34.19,28.95,39.43,1051,371.0,0.078,True
+2021,nacimiento,nacido en otro país de la UE,sobrecarga_40,24.95,20.26,29.65,1051,257.0,0.096,True
+2021,nacimiento,nacido en otro país de la UE,esfuerzo_alquiler_30,43.65,34.58,52.72,416,189.0,0.106,True
+2021,nacimiento,nacido en otro país de la UE,esfuerzo_alquiler_40,27.22,19.6,34.85,416,119.0,0.143,True
+2021,nacimiento,nacido en otro país de la UE,hacinamiento,5.05,2.41,7.7,1059,60.0,0.267,True
+2021,nacimiento,nacido fuera de la UE,propiedad,32.5,28.91,36.1,4268,1550.0,0.056,True
+2021,nacimiento,nacido fuera de la UE,tenencia_3,58.36,54.47,62.26,4268,2264.0,0.034,True
+2021,nacimiento,nacido fuera de la UE,sobrecarga_30,48.11,43.99,52.22,4240,1905.0,0.044,True
+2021,nacimiento,nacido fuera de la UE,sobrecarga_40,36.16,32.09,40.24,4240,1400.0,0.058,True
+2021,nacimiento,nacido fuera de la UE,esfuerzo_alquiler_30,53.31,47.48,59.14,2221,1137.0,0.056,True
+2021,nacimiento,nacido fuera de la UE,esfuerzo_alquiler_40,39.92,33.92,45.92,2221,794.0,0.077,True
+2021,nacimiento,nacido fuera de la UE,hacinamiento,17.08,13.2,20.96,4246,603.0,0.116,True
+2022,origen,UE,propiedad,39.49,33.59,45.39,1176,500.0,0.076,True
+2022,origen,UE,tenencia_3,51.13,45.03,57.24,1176,578.0,0.061,True
+2022,origen,UE,sobrecarga_30,44.97,38.88,51.07,1169,489.0,0.069,True
+2022,origen,UE,sobrecarga_40,32.28,26.51,38.05,1169,334.0,0.091,True
+2022,origen,UE,esfuerzo_alquiler_30,48.25,39.51,56.99,568,253.0,0.092,True
+2022,origen,UE,esfuerzo_alquiler_40,27.43,19.9,34.95,568,151.0,0.14,True
+2022,origen,UE,hacinamiento,5.48,3.35,7.6,1166,79.0,0.198,True
+2022,origen,española,propiedad,80.88,80.08,81.68,56051,46085.0,0.005,True
+2022,origen,española,tenencia_3,10.93,10.29,11.56,56051,5649.0,0.03,True
+2022,origen,española,sobrecarga_30,10.47,9.89,11.04,55866,5741.0,0.028,True
+2022,origen,española,sobrecarga_40,6.18,5.71,6.65,55866,3361.0,0.038,True
+2022,origen,española,esfuerzo_alquiler_30,32.2,29.28,35.11,5499,1805.0,0.046,True
+2022,origen,española,esfuerzo_alquiler_40,18.28,15.89,20.67,5499,1021.0,0.067,True
+2022,origen,española,hacinamiento,5.01,4.46,5.56,55871,2447.0,0.056,True
+2022,origen,fuera de la UE,propiedad,26.65,22.02,31.28,2564,630.0,0.089,True
+2022,origen,fuera de la UE,tenencia_3,61.86,56.99,66.72,2564,1609.0,0.04,True
+2022,origen,fuera de la UE,sobrecarga_30,53.86,48.83,58.88,2536,1408.0,0.048,True
+2022,origen,fuera de la UE,sobrecarga_40,40.69,35.71,45.67,2536,999.0,0.062,True
+2022,origen,fuera de la UE,esfuerzo_alquiler_30,53.42,47.11,59.73,1562,782.0,0.06,True
+2022,origen,fuera de la UE,esfuerzo_alquiler_40,37.83,31.21,44.45,1562,520.0,0.089,True
+2022,origen,fuera de la UE,hacinamiento,15.57,11.55,19.58,2547,418.0,0.132,True
+2022,nacimiento,nacido en España,propiedad,82.3,81.56,83.04,53778,44770.0,0.005,True
+2022,nacimiento,nacido en España,tenencia_3,9.53,8.98,10.08,53778,4910.0,0.03,True
+2022,nacimiento,nacido en España,sobrecarga_30,9.57,9.05,10.09,53615,5186.0,0.028,True
+2022,nacimiento,nacido en España,sobrecarga_40,5.56,5.15,5.97,53615,2992.0,0.038,True
+2022,nacimiento,nacido en España,esfuerzo_alquiler_30,30.92,28.09,33.74,4781,1549.0,0.047,True
+2022,nacimiento,nacido en España,esfuerzo_alquiler_40,16.95,14.73,19.17,4781,865.0,0.067,True
+2022,nacimiento,nacido en España,hacinamiento,4.65,4.13,5.17,53600,2243.0,0.057,True
+2022,nacimiento,nacido en otro país de la UE,propiedad,49.92,44.33,55.51,1191,656.0,0.057,True
+2022,nacimiento,nacido en otro país de la UE,tenencia_3,40.36,34.89,45.83,1191,439.0,0.069,True
+2022,nacimiento,nacido en otro país de la UE,sobrecarga_30,36.23,30.88,41.57,1183,381.0,0.075,True
+2022,nacimiento,nacido en otro país de la UE,sobrecarga_40,25.98,21.22,30.75,1183,266.0,0.094,True
+2022,nacimiento,nacido en otro país de la UE,esfuerzo_alquiler_30,45.93,37.15,54.72,429,188.0,0.098,True
+2022,nacimiento,nacido en otro país de la UE,esfuerzo_alquiler_40,27.36,19.94,34.77,429,113.0,0.138,True
+2022,nacimiento,nacido en otro país de la UE,hacinamiento,5.0,3.08,6.92,1187,67.0,0.196,True
+2022,nacimiento,nacido fuera de la UE,propiedad,33.28,30.23,36.33,4823,1787.0,0.047,True
+2022,nacimiento,nacido fuera de la UE,tenencia_3,56.41,53.0,59.81,4823,2490.0,0.031,True
+2022,nacimiento,nacido fuera de la UE,sobrecarga_30,46.77,43.16,50.38,4774,2073.0,0.039,True
+2022,nacimiento,nacido fuera de la UE,sobrecarga_40,34.14,30.51,37.76,4774,1438.0,0.054,True
+2022,nacimiento,nacido fuera de la UE,esfuerzo_alquiler_30,49.45,44.06,54.85,2422,1105.0,0.056,True
+2022,nacimiento,nacido fuera de la UE,esfuerzo_alquiler_40,33.57,28.11,39.02,2422,716.0,0.083,True
+2022,nacimiento,nacido fuera de la UE,hacinamiento,14.31,11.47,17.15,4798,635.0,0.101,True
+2023,origen,UE,propiedad,42.66,37.16,48.16,1366,663.0,0.066,True
+2023,origen,UE,tenencia_3,48.45,42.85,54.04,1366,587.0,0.059,True
+2023,origen,UE,sobrecarga_30,35.61,30.36,40.85,1359,453.0,0.075,True
+2023,origen,UE,sobrecarga_40,23.92,19.45,28.39,1359,316.0,0.095,True
+2023,origen,UE,esfuerzo_alquiler_30,36.18,28.39,43.97,575,201.0,0.11,True
+2023,origen,UE,esfuerzo_alquiler_40,22.08,16.16,28.01,575,144.0,0.137,True
+2023,origen,UE,hacinamiento,7.44,4.51,10.37,1362,107.0,0.201,True
+2023,origen,española,propiedad,80.34,79.58,81.09,62917,51615.0,0.005,True
+2023,origen,española,tenencia_3,11.13,10.5,11.75,62917,6145.0,0.029,True
+2023,origen,española,sobrecarga_30,10.44,9.89,11.0,62776,6288.0,0.027,True
+2023,origen,española,sobrecarga_40,5.8,5.42,6.18,62776,3592.0,0.034,True
+2023,origen,española,esfuerzo_alquiler_30,27.78,25.26,30.31,6039,1741.0,0.046,True
+2023,origen,española,esfuerzo_alquiler_40,14.89,12.92,16.87,6039,943.0,0.068,True
+2023,origen,española,hacinamiento,5.56,5.03,6.08,62744,2948.0,0.048,True
+2023,origen,fuera de la UE,propiedad,26.88,22.4,31.36,2945,829.0,0.085,True
+2023,origen,fuera de la UE,tenencia_3,60.78,56.08,65.49,2945,1724.0,0.039,True
+2023,origen,fuera de la UE,sobrecarga_30,46.71,41.95,51.48,2921,1399.0,0.052,True
+2023,origen,fuera de la UE,sobrecarga_40,32.14,27.92,36.35,2921,941.0,0.067,True
+2023,origen,fuera de la UE,esfuerzo_alquiler_30,39.64,33.94,45.35,1678,724.0,0.073,True
+2023,origen,fuera de la UE,esfuerzo_alquiler_40,22.52,17.91,27.13,1678,406.0,0.104,True
+2023,origen,fuera de la UE,hacinamiento,19.99,15.49,24.5,2941,527.0,0.115,True
+2023,nacimiento,nacido en España,propiedad,81.93,81.24,82.62,60227,50082.0,0.004,True
+2023,nacimiento,nacido en España,tenencia_3,9.55,9.03,10.07,60227,5257.0,0.028,True
+2023,nacimiento,nacido en España,sobrecarga_30,9.57,9.08,10.06,60108,5644.0,0.026,True
+2023,nacimiento,nacido en España,sobrecarga_40,5.32,4.97,5.67,60108,3178.0,0.033,True
+2023,nacimiento,nacido en España,esfuerzo_alquiler_30,26.6,24.25,28.96,5173,1445.0,0.045,True
+2023,nacimiento,nacido en España,esfuerzo_alquiler_40,14.64,12.76,16.51,5173,791.0,0.065,True
+2023,nacimiento,nacido en España,hacinamiento,5.06,4.57,5.54,60066,2663.0,0.049,True
+2023,nacimiento,nacido en otro país de la UE,propiedad,52.92,47.92,57.92,1422,860.0,0.048,True
+2023,nacimiento,nacido en otro país de la UE,tenencia_3,37.89,33.04,42.74,1422,451.0,0.065,True
+2023,nacimiento,nacido en otro país de la UE,sobrecarga_30,30.62,26.27,34.96,1413,382.0,0.072,True
+2023,nacimiento,nacido en otro país de la UE,sobrecarga_40,21.03,17.27,24.79,1413,260.0,0.091,True
+2023,nacimiento,nacido en otro país de la UE,esfuerzo_alquiler_30,36.7,28.97,44.42,440,155.0,0.107,True
+2023,nacimiento,nacido en otro país de la UE,esfuerzo_alquiler_40,23.54,17.01,30.07,440,106.0,0.142,True
+2023,nacimiento,nacido en otro país de la UE,hacinamiento,5.84,3.7,7.98,1416,91.0,0.187,True
+2023,nacimiento,nacido fuera de la UE,propiedad,33.39,30.35,36.43,5579,2162.0,0.046,True
+2023,nacimiento,nacido fuera de la UE,tenencia_3,55.8,52.48,59.12,5579,2751.0,0.03,True
+2023,nacimiento,nacido fuera de la UE,sobrecarga_30,40.33,36.96,43.7,5535,2115.0,0.043,True
+2023,nacimiento,nacido fuera de la UE,sobrecarga_40,26.23,23.4,29.07,5535,1410.0,0.055,True
+2023,nacimiento,nacido fuera de la UE,esfuerzo_alquiler_30,37.42,32.83,42.01,2681,1066.0,0.063,True
+2023,nacimiento,nacido fuera de la UE,esfuerzo_alquiler_40,20.39,17.01,23.78,2681,596.0,0.085,True
+2023,nacimiento,nacido fuera de la UE,hacinamiento,18.22,14.99,21.46,5565,830.0,0.091,True
+2024,origen,UE,propiedad,45.79,40.31,51.27,1506,755.0,0.061,True
+2024,origen,UE,tenencia_3,46.11,40.72,51.51,1506,620.0,0.06,True
+2024,origen,UE,sobrecarga_30,34.22,29.13,39.3,1493,455.0,0.076,True
+2024,origen,UE,sobrecarga_40,24.13,19.62,28.64,1493,309.0,0.095,True
+2024,origen,UE,esfuerzo_alquiler_30,37.36,29.81,44.91,600,203.0,0.103,True
+2024,origen,UE,esfuerzo_alquiler_40,24.11,17.42,30.79,600,138.0,0.141,True
+2024,origen,UE,hacinamiento,9.47,6.23,12.7,1505,143.0,0.174,True
+2024,origen,española,propiedad,80.06,79.36,80.76,67940,55529.0,0.004,True
+2024,origen,española,tenencia_3,11.44,10.85,12.02,67940,6739.0,0.026,True
+2024,origen,española,sobrecarga_30,9.26,8.79,9.73,67705,6107.0,0.026,True
+2024,origen,española,sobrecarga_40,4.88,4.52,5.24,67705,3199.0,0.038,True
+2024,origen,española,esfuerzo_alquiler_30,26.24,23.92,28.56,6564,1776.0,0.045,True
+2024,origen,española,esfuerzo_alquiler_40,14.01,12.1,15.93,6564,954.0,0.07,True
+2024,origen,española,hacinamiento,6.8,6.18,7.41,67762,3389.0,0.046,True
+2024,origen,fuera de la UE,propiedad,25.79,22.41,29.17,3325,959.0,0.067,True
+2024,origen,fuera de la UE,tenencia_3,62.82,58.92,66.73,3325,1985.0,0.032,True
+2024,origen,fuera de la UE,sobrecarga_30,43.14,38.94,47.33,3274,1415.0,0.05,True
+2024,origen,fuera de la UE,sobrecarga_40,28.04,24.32,31.77,3274,924.0,0.068,True
+2024,origen,fuera de la UE,esfuerzo_alquiler_30,38.12,32.53,43.72,1913,749.0,0.075,True
+2024,origen,fuera de la UE,esfuerzo_alquiler_40,21.1,16.5,25.69,1913,431.0,0.111,True
+2024,origen,fuera de la UE,hacinamiento,22.25,18.15,26.35,3311,586.0,0.094,True
+2024,nacimiento,nacido en España,propiedad,81.76,81.13,82.4,64894,53863.0,0.004,True
+2024,nacimiento,nacido en España,tenencia_3,9.75,9.27,10.24,64894,5679.0,0.025,True
+2024,nacimiento,nacido en España,sobrecarga_30,8.56,8.13,8.99,64684,5400.0,0.026,True
+2024,nacimiento,nacido en España,sobrecarga_40,4.49,4.17,4.82,64684,2806.0,0.037,True
+2024,nacimiento,nacido en España,esfuerzo_alquiler_30,26.52,24.22,28.81,5524,1460.0,0.044,True
+2024,nacimiento,nacido en España,esfuerzo_alquiler_40,14.42,12.47,16.37,5524,785.0,0.069,True
+2024,nacimiento,nacido en España,hacinamiento,6.13,5.58,6.68,64721,3047.0,0.046,True
+2024,nacimiento,nacido en otro país de la UE,propiedad,53.09,48.02,58.17,1556,943.0,0.049,True
+2024,nacimiento,nacido en otro país de la UE,tenencia_3,39.04,34.09,43.99,1556,492.0,0.065,True
+2024,nacimiento,nacido en otro país de la UE,sobrecarga_30,29.04,24.65,33.42,1543,379.0,0.077,True
+2024,nacimiento,nacido en otro país de la UE,sobrecarga_40,19.46,15.73,23.19,1543,243.0,0.098,True
+2024,nacimiento,nacido en otro país de la UE,esfuerzo_alquiler_30,36.59,28.86,44.32,475,157.0,0.108,True
+2024,nacimiento,nacido en otro país de la UE,esfuerzo_alquiler_40,24.32,17.39,31.25,475,105.0,0.145,True
+2024,nacimiento,nacido en otro país de la UE,hacinamiento,7.95,5.03,10.86,1553,117.0,0.187,True
+2024,nacimiento,nacido fuera de la UE,propiedad,31.97,29.29,34.66,6319,2437.0,0.043,True
+2024,nacimiento,nacido fuera de la UE,tenencia_3,57.51,54.47,60.55,6319,3172.0,0.027,True
+2024,nacimiento,nacido fuera de la UE,sobrecarga_30,37.48,34.38,40.58,6243,2198.0,0.042,True
+2024,nacimiento,nacido fuera de la UE,sobrecarga_40,24.0,21.28,26.71,6243,1383.0,0.058,True
+2024,nacimiento,nacido fuera de la UE,esfuerzo_alquiler_30,35.16,30.73,39.59,3077,1111.0,0.064,True
+2024,nacimiento,nacido fuera de la UE,esfuerzo_alquiler_40,19.2,15.66,22.75,3077,633.0,0.094,True
+2024,nacimiento,nacido fuera de la UE,hacinamiento,21.07,17.8,24.35,6302,953.0,0.079,True
+2025,origen,UE,propiedad,46.56,41.09,52.03,1542,791.0,0.06,True
+2025,origen,UE,tenencia_3,42.63,37.2,48.05,1542,579.0,0.065,True
+2025,origen,UE,sobrecarga_30,27.49,23.18,31.8,1521,402.0,0.08,True
+2025,origen,UE,sobrecarga_40,19.15,15.54,22.75,1521,277.0,0.096,True
+2025,origen,UE,esfuerzo_alquiler_30,33.37,26.03,40.72,556,184.0,0.112,True
+2025,origen,UE,esfuerzo_alquiler_40,20.83,14.84,26.82,556,116.0,0.147,True
+2025,origen,UE,hacinamiento,10.41,6.27,14.55,1538,142.0,0.203,True
+2025,origen,española,propiedad,80.14,79.43,80.85,66627,54388.0,0.005,True
+2025,origen,española,tenencia_3,11.1,10.51,11.69,66627,6569.0,0.027,True
+2025,origen,española,sobrecarga_30,8.24,7.81,8.68,66434,5423.0,0.027,True
+2025,origen,española,sobrecarga_40,4.71,4.38,5.04,66434,3063.0,0.036,True
+2025,origen,española,esfuerzo_alquiler_30,25.37,23.29,27.46,6420,1811.0,0.042,True
+2025,origen,española,esfuerzo_alquiler_40,13.72,12.21,15.24,6420,988.0,0.056,True
+2025,origen,española,hacinamiento,7.08,6.43,7.73,66446,3562.0,0.047,True
+2025,origen,fuera de la UE,propiedad,27.51,23.77,31.25,3229,962.0,0.069,True
+2025,origen,fuera de la UE,tenencia_3,62.23,58.16,66.3,3229,1902.0,0.033,True
+2025,origen,fuera de la UE,sobrecarga_30,39.11,34.98,43.23,3206,1254.0,0.054,True
+2025,origen,fuera de la UE,sobrecarga_40,24.05,20.64,27.46,3206,818.0,0.072,True
+2025,origen,fuera de la UE,esfuerzo_alquiler_30,32.26,27.27,37.25,1880,663.0,0.079,True
+2025,origen,fuera de la UE,esfuerzo_alquiler_40,21.7,17.34,26.06,1880,443.0,0.102,True
+2025,origen,fuera de la UE,hacinamiento,21.79,17.83,25.74,3207,576.0,0.093,True
+2025,nacimiento,nacido en España,propiedad,81.84,81.18,82.49,63465,52668.0,0.004,True
+2025,nacimiento,nacido en España,tenencia_3,9.41,8.91,9.91,63465,5464.0,0.027,True
+2025,nacimiento,nacido en España,sobrecarga_30,7.44,7.04,7.84,63289,4715.0,0.027,True
+2025,nacimiento,nacido en España,sobrecarga_40,4.23,3.91,4.54,63289,2631.0,0.038,True
+2025,nacimiento,nacido en España,esfuerzo_alquiler_30,25.5,23.31,27.7,5332,1463.0,0.044,True
+2025,nacimiento,nacido en España,esfuerzo_alquiler_40,13.66,12.09,15.23,5332,787.0,0.059,True
+2025,nacimiento,nacido en España,hacinamiento,6.38,5.8,6.97,63284,3161.0,0.047,True
+2025,nacimiento,nacido en otro país de la UE,propiedad,55.98,50.87,61.09,1567,982.0,0.047,True
+2025,nacimiento,nacido en otro país de la UE,tenencia_3,33.89,28.92,38.87,1567,436.0,0.075,True
+2025,nacimiento,nacido en otro país de la UE,sobrecarga_30,24.52,20.53,28.52,1549,332.0,0.083,True
+2025,nacimiento,nacido en otro país de la UE,sobrecarga_40,17.56,14.15,20.98,1549,234.0,0.099,True
+2025,nacimiento,nacido en otro país de la UE,esfuerzo_alquiler_30,36.77,28.18,45.36,415,143.0,0.119,True
+2025,nacimiento,nacido en otro país de la UE,esfuerzo_alquiler_40,22.43,15.32,29.55,415,87.0,0.162,True
+2025,nacimiento,nacido en otro país de la UE,hacinamiento,7.11,3.57,10.65,1564,104.0,0.254,True
+2025,nacimiento,nacido fuera de la UE,propiedad,33.3,30.37,36.22,6366,2491.0,0.045,True
+2025,nacimiento,nacido fuera de la UE,tenencia_3,56.66,53.5,59.83,6366,3150.0,0.029,True
+2025,nacimiento,nacido fuera de la UE,sobrecarga_30,34.07,31.06,37.07,6323,2032.0,0.045,True
+2025,nacimiento,nacido fuera de la UE,sobrecarga_40,20.82,18.45,23.2,6323,1293.0,0.058,True
+2025,nacimiento,nacido fuera de la UE,esfuerzo_alquiler_30,30.23,26.33,34.13,3109,1052.0,0.066,True
+2025,nacimiento,nacido fuera de la UE,esfuerzo_alquiler_40,19.7,16.35,23.05,3109,673.0,0.087,True
+2025,nacimiento,nacido fuera de la UE,hacinamiento,21.2,17.93,24.47,6343,1015.0,0.079,True

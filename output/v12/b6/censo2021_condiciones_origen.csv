@@ -1,0 +1,237 @@
+grupo,nacionalidad_persona_referencia,categoria,indicador,hogares_muestra,valor,ic95_inf,ic95_sup,publicable
+total,todas,Total,propiedad,1853662,75.43,75.37,75.49,True
+total,todas,Total,alquiler,1853662,16.14,16.09,16.19,True
+total,todas,Total,superficie_menor_46m2,1834767,6.48,6.44,6.51,True
+total,todas,Total,menos_15m2_por_ocupante,1834767,6.59,6.56,6.63,True
+total,ES,Total,propiedad,1673321,78.53,78.47,78.59,True
+total,ES,Total,alquiler,1673321,13.52,13.47,13.57,True
+total,ES,Total,superficie_menor_46m2,1657487,5.72,5.69,5.76,True
+total,ES,Total,menos_15m2_por_ocupante,1657487,5.36,5.32,5.39,True
+total,EXT,Total,propiedad,180341,46.66,46.44,46.88,True
+total,EXT,Total,alquiler,180341,40.47,40.25,40.68,True
+total,EXT,Total,superficie_menor_46m2,177280,13.52,13.37,13.67,True
+total,EXT,Total,menos_15m2_por_ocupante,177280,18.18,18.01,18.35,True
+nac_primera_persona,todas,ES,propiedad,1673321,78.53,78.47,78.59,True
+nac_primera_persona,todas,ES,alquiler,1673321,13.52,13.47,13.57,True
+nac_primera_persona,todas,ES,superficie_menor_46m2,1657487,5.72,5.69,5.76,True
+nac_primera_persona,todas,ES,menos_15m2_por_ocupante,1657487,5.36,5.32,5.39,True
+nac_primera_persona,todas,EXT,propiedad,180341,46.66,46.44,46.88,True
+nac_primera_persona,todas,EXT,alquiler,180341,40.47,40.25,40.68,True
+nac_primera_persona,todas,EXT,superficie_menor_46m2,177280,13.52,13.37,13.67,True
+nac_primera_persona,todas,EXT,menos_15m2_por_ocupante,177280,18.18,18.01,18.35,True
+nacido_en_espana,todas,no,propiedad,277661,49.73,49.56,49.91,True
+nacido_en_espana,todas,no,alquiler,277661,38.32,38.15,38.49,True
+nacido_en_espana,todas,no,superficie_menor_46m2,273560,12.86,12.74,12.98,True
+nacido_en_espana,todas,no,menos_15m2_por_ocupante,273560,18.36,18.22,18.5,True
+nacido_en_espana,todas,si,propiedad,1576001,79.96,79.9,80.02,True
+nacido_en_espana,todas,si,alquiler,1576001,12.24,12.19,12.29,True
+nacido_en_espana,todas,si,superficie_menor_46m2,1561207,5.36,5.32,5.39,True
+nacido_en_espana,todas,si,menos_15m2_por_ocupante,1561207,4.53,4.5,4.56,True
+nacido_en_espana,ES,no,propiedad,98516,55.47,55.18,55.76,True
+nacido_en_espana,ES,no,alquiler,98516,34.27,33.99,34.55,True
+nacido_en_espana,ES,no,superficie_menor_46m2,97456,11.61,11.42,11.81,True
+nacido_en_espana,ES,no,menos_15m2_por_ocupante,97456,18.57,18.34,18.81,True
+nacido_en_espana,ES,si,propiedad,1574805,79.98,79.92,80.04,True
+nacido_en_espana,ES,si,alquiler,1574805,12.22,12.18,12.27,True
+nacido_en_espana,ES,si,superficie_menor_46m2,1560031,5.35,5.32,5.39,True
+nacido_en_espana,ES,si,menos_15m2_por_ocupante,1560031,4.53,4.5,4.56,True
+nacido_en_espana,EXT,no,propiedad,179145,46.58,46.36,46.8,True
+nacido_en_espana,EXT,no,alquiler,179145,40.55,40.33,40.76,True
+nacido_en_espana,EXT,no,superficie_menor_46m2,176104,13.55,13.39,13.7,True
+nacido_en_espana,EXT,no,menos_15m2_por_ocupante,176104,18.25,18.07,18.42,True
+nacido_en_espana,EXT,si,propiedad,1196,58.61,55.96,61.26,True
+nacido_en_espana,EXT,si,alquiler,1196,28.6,26.17,31.02,True
+nacido_en_espana,EXT,si,superficie_menor_46m2,1176,10.2,8.56,11.85,True
+nacido_en_espana,EXT,si,menos_15m2_por_ocupante,1176,8.16,6.68,9.65,True
+llegada_espana,todas,2001-2010,propiedad,125392,47.09,46.83,47.36,True
+llegada_espana,todas,2001-2010,alquiler,125392,40.81,40.55,41.06,True
+llegada_espana,todas,2001-2010,superficie_menor_46m2,123610,12.55,12.37,12.72,True
+llegada_espana,todas,2001-2010,menos_15m2_por_ocupante,123610,20.77,20.55,20.98,True
+llegada_espana,todas,2011-2015,propiedad,26951,44.97,44.4,45.53,True
+llegada_espana,todas,2011-2015,alquiler,26951,42.17,41.61,42.72,True
+llegada_espana,todas,2011-2015,superficie_menor_46m2,26510,15.02,14.62,15.43,True
+llegada_espana,todas,2011-2015,menos_15m2_por_ocupante,26510,15.65,15.23,16.06,True
+llegada_espana,todas,2016-2021,propiedad,64017,40.81,40.45,41.17,True
+llegada_espana,todas,2016-2021,alquiler,64017,45.5,45.13,45.86,True
+llegada_espana,todas,2016-2021,superficie_menor_46m2,62885,16.19,15.91,16.46,True
+llegada_espana,todas,2016-2021,menos_15m2_por_ocupante,62885,18.46,18.17,18.75,True
+llegada_espana,todas,antes de 2001,propiedad,61301,66.55,66.19,66.9,True
+llegada_espana,todas,antes de 2001,alquiler,61301,24.04,23.72,24.36,True
+llegada_espana,todas,antes de 2001,superficie_menor_46m2,60555,9.09,8.87,9.31,True
+llegada_espana,todas,antes de 2001,menos_15m2_por_ocupante,60555,14.55,14.28,14.81,True
+llegada_espana,todas,nacido_en_espana,propiedad,1576001,79.96,79.9,80.02,True
+llegada_espana,todas,nacido_en_espana,alquiler,1576001,12.24,12.19,12.29,True
+llegada_espana,todas,nacido_en_espana,superficie_menor_46m2,1561207,5.36,5.32,5.39,True
+llegada_espana,todas,nacido_en_espana,menos_15m2_por_ocupante,1561207,4.53,4.5,4.56,True
+llegada_espana,ES,2001-2010,propiedad,43794,45.83,45.38,46.27,True
+llegada_espana,ES,2001-2010,alquiler,43794,42.93,42.49,43.37,True
+llegada_espana,ES,2001-2010,superficie_menor_46m2,43353,13.1,12.8,13.4,True
+llegada_espana,ES,2001-2010,menos_15m2_por_ocupante,43353,22.86,22.48,23.23,True
+llegada_espana,ES,2011-2015,propiedad,4480,41.94,40.57,43.31,True
+llegada_espana,ES,2011-2015,alquiler,4480,45.71,44.33,47.1,True
+llegada_espana,ES,2011-2015,superficie_menor_46m2,4407,15.7,14.68,16.72,True
+llegada_espana,ES,2011-2015,menos_15m2_por_ocupante,4407,17.63,16.56,18.7,True
+llegada_espana,ES,2016-2021,propiedad,6318,40.44,39.29,41.59,True
+llegada_espana,ES,2016-2021,alquiler,6318,47.64,46.47,48.81,True
+llegada_espana,ES,2016-2021,superficie_menor_46m2,6228,17.26,16.37,18.15,True
+llegada_espana,ES,2016-2021,menos_15m2_por_ocupante,6228,23.12,22.13,24.11,True
+llegada_espana,ES,antes de 2001,propiedad,43924,68.63,68.22,69.04,True
+llegada_espana,ES,antes de 2001,alquiler,43924,22.55,22.18,22.92,True
+llegada_espana,ES,antes de 2001,superficie_menor_46m2,43468,8.91,8.66,9.17,True
+llegada_espana,ES,antes de 2001,menos_15m2_por_ocupante,43468,13.75,13.44,14.05,True
+llegada_espana,ES,nacido_en_espana,propiedad,1574805,79.98,79.92,80.04,True
+llegada_espana,ES,nacido_en_espana,alquiler,1574805,12.22,12.18,12.27,True
+llegada_espana,ES,nacido_en_espana,superficie_menor_46m2,1560031,5.35,5.32,5.39,True
+llegada_espana,ES,nacido_en_espana,menos_15m2_por_ocupante,1560031,4.53,4.5,4.56,True
+llegada_espana,EXT,2001-2010,propiedad,81598,47.78,47.45,48.1,True
+llegada_espana,EXT,2001-2010,alquiler,81598,39.67,39.35,39.99,True
+llegada_espana,EXT,2001-2010,superficie_menor_46m2,80257,12.25,12.03,12.46,True
+llegada_espana,EXT,2001-2010,menos_15m2_por_ocupante,80257,19.64,19.38,19.9,True
+llegada_espana,EXT,2011-2015,propiedad,22471,45.57,44.95,46.19,True
+llegada_espana,EXT,2011-2015,alquiler,22471,41.46,40.85,42.07,True
+llegada_espana,EXT,2011-2015,superficie_menor_46m2,22103,14.89,14.44,15.33,True
+llegada_espana,EXT,2011-2015,menos_15m2_por_ocupante,22103,15.25,14.8,15.7,True
+llegada_espana,EXT,2016-2021,propiedad,57699,40.85,40.47,41.23,True
+llegada_espana,EXT,2016-2021,alquiler,57699,45.26,44.88,45.65,True
+llegada_espana,EXT,2016-2021,superficie_menor_46m2,56657,16.07,15.78,16.36,True
+llegada_espana,EXT,2016-2021,menos_15m2_por_ocupante,56657,17.94,17.65,18.24,True
+llegada_espana,EXT,antes de 2001,propiedad,17377,61.29,60.61,61.98,True
+llegada_espana,EXT,antes de 2001,alquiler,17377,27.83,27.2,28.46,True
+llegada_espana,EXT,antes de 2001,superficie_menor_46m2,17087,9.54,9.12,9.96,True
+llegada_espana,EXT,antes de 2001,menos_15m2_por_ocupante,17087,16.58,16.05,17.11,True
+llegada_espana,EXT,nacido_en_espana,propiedad,1196,58.61,55.96,61.26,True
+llegada_espana,EXT,nacido_en_espana,alquiler,1196,28.6,26.17,31.02,True
+llegada_espana,EXT,nacido_en_espana,superficie_menor_46m2,1176,10.2,8.56,11.85,True
+llegada_espana,EXT,nacido_en_espana,menos_15m2_por_ocupante,1176,8.16,6.68,9.65,True
+edad_primera_persona,todas,30-44,propiedad,375240,64.45,64.3,64.59,True
+edad_primera_persona,todas,30-44,alquiler,375240,25.23,25.09,25.36,True
+edad_primera_persona,todas,30-44,superficie_menor_46m2,370671,8.85,8.77,8.94,True
+edad_primera_persona,todas,30-44,menos_15m2_por_ocupante,370671,8.93,8.84,9.02,True
+edad_primera_persona,todas,45-64,propiedad,767834,77.52,77.43,77.61,True
+edad_primera_persona,todas,45-64,alquiler,767834,15.15,15.07,15.22,True
+edad_primera_persona,todas,45-64,superficie_menor_46m2,760305,6.05,6.0,6.1,True
+edad_primera_persona,todas,45-64,menos_15m2_por_ocupante,760305,7.69,7.63,7.75,True
+edad_primera_persona,todas,65+,propiedad,659607,81.76,81.67,81.85,True
+edad_primera_persona,todas,65+,alquiler,659607,10.31,10.24,10.38,True
+edad_primera_persona,todas,65+,superficie_menor_46m2,653857,4.99,4.94,5.04,True
+edad_primera_persona,todas,65+,menos_15m2_por_ocupante,653857,4.18,4.13,4.22,True
+edad_primera_persona,todas,<30,propiedad,50981,42.98,42.57,43.39,True
+edad_primera_persona,todas,<30,alquiler,50981,39.76,39.35,40.16,True
+edad_primera_persona,todas,<30,superficie_menor_46m2,49934,14.73,14.43,15.02,True
+edad_primera_persona,todas,<30,menos_15m2_por_ocupante,49934,4.27,4.1,4.44,True
+edad_primera_persona,ES,30-44,propiedad,310959,69.39,69.24,69.55,True
+edad_primera_persona,ES,30-44,alquiler,310959,20.92,20.78,21.05,True
+edad_primera_persona,ES,30-44,superficie_menor_46m2,307513,7.51,7.42,7.6,True
+edad_primera_persona,ES,30-44,menos_15m2_por_ocupante,307513,6.95,6.86,7.03,True
+edad_primera_persona,ES,45-64,propiedad,692998,80.66,80.57,80.74,True
+edad_primera_persona,ES,45-64,alquiler,692998,12.58,12.51,12.65,True
+edad_primera_persona,ES,45-64,superficie_menor_46m2,686651,5.41,5.36,5.46,True
+edad_primera_persona,ES,45-64,menos_15m2_por_ocupante,686651,6.27,6.21,6.32,True
+edad_primera_persona,ES,65+,propiedad,630602,82.72,82.64,82.81,True
+edad_primera_persona,ES,65+,alquiler,630602,9.5,9.43,9.57,True
+edad_primera_persona,ES,65+,superficie_menor_46m2,625346,4.74,4.69,4.79,True
+edad_primera_persona,ES,65+,menos_15m2_por_ocupante,625346,3.7,3.65,3.74,True
+edad_primera_persona,ES,<30,propiedad,38762,45.74,45.27,46.21,True
+edad_primera_persona,ES,<30,alquiler,38762,36.46,36.0,36.91,True
+edad_primera_persona,ES,<30,superficie_menor_46m2,37977,13.2,12.88,13.52,True
+edad_primera_persona,ES,<30,menos_15m2_por_ocupante,37977,3.37,3.2,3.54,True
+edad_primera_persona,EXT,30-44,propiedad,64281,40.53,40.17,40.89,True
+edad_primera_persona,EXT,30-44,alquiler,64281,46.07,45.71,46.44,True
+edad_primera_persona,EXT,30-44,superficie_menor_46m2,63158,15.4,15.13,15.66,True
+edad_primera_persona,EXT,30-44,menos_15m2_por_ocupante,63158,18.58,18.3,18.87,True
+edad_primera_persona,EXT,45-64,propiedad,74836,48.46,48.12,48.8,True
+edad_primera_persona,EXT,45-64,alquiler,74836,38.92,38.58,39.25,True
+edad_primera_persona,EXT,45-64,superficie_menor_46m2,73654,12.1,11.87,12.32,True
+edad_primera_persona,EXT,45-64,menos_15m2_por_ocupante,73654,20.96,20.69,21.24,True
+edad_primera_persona,EXT,65+,propiedad,29005,60.82,60.29,61.35,True
+edad_primera_persona,EXT,65+,alquiler,29005,27.94,27.45,28.43,True
+edad_primera_persona,EXT,65+,superficie_menor_46m2,28511,10.53,10.19,10.86,True
+edad_primera_persona,EXT,65+,menos_15m2_por_ocupante,28511,14.72,14.33,15.11,True
+edad_primera_persona,EXT,<30,propiedad,12219,34.23,33.43,35.02,True
+edad_primera_persona,EXT,<30,alquiler,12219,50.22,49.38,51.06,True
+edad_primera_persona,EXT,<30,superficie_menor_46m2,11957,19.58,18.9,20.25,True
+edad_primera_persona,EXT,<30,menos_15m2_por_ocupante,11957,7.12,6.68,7.55,True
+tipo_hogar_c,todas,con personas no emparentadas,propiedad,84731,62.05,61.74,62.36,True
+tipo_hogar_c,todas,con personas no emparentadas,alquiler,84731,27.95,27.67,28.24,True
+tipo_hogar_c,todas,con personas no emparentadas,superficie_menor_46m2,83884,7.82,7.65,8.0,True
+tipo_hogar_c,todas,con personas no emparentadas,menos_15m2_por_ocupante,83884,28.15,27.87,28.44,True
+tipo_hogar_c,todas,dos familias o más,propiedad,6608,62.41,61.3,63.52,True
+tipo_hogar_c,todas,dos familias o más,alquiler,6608,27.42,26.4,28.44,True
+tipo_hogar_c,todas,dos familias o más,superficie_menor_46m2,6543,6.25,5.69,6.81,True
+tipo_hogar_c,todas,dos familias o más,menos_15m2_por_ocupante,6543,48.91,47.76,50.06,True
+tipo_hogar_c,todas,dos núcleos o más,propiedad,43004,77.09,76.71,77.46,True
+tipo_hogar_c,todas,dos núcleos o más,alquiler,43004,14.96,14.64,15.28,True
+tipo_hogar_c,todas,dos núcleos o más,superficie_menor_46m2,42618,3.86,3.69,4.04,True
+tipo_hogar_c,todas,dos núcleos o más,menos_15m2_por_ocupante,42618,37.64,37.21,38.08,True
+tipo_hogar_c,todas,sin núcleo,propiedad,81830,55.91,55.59,56.24,True
+tipo_hogar_c,todas,sin núcleo,alquiler,81830,31.17,30.87,31.48,True
+tipo_hogar_c,todas,sin núcleo,superficie_menor_46m2,80555,11.86,11.65,12.07,True
+tipo_hogar_c,todas,sin núcleo,menos_15m2_por_ocupante,80555,7.57,7.4,7.75,True
+tipo_hogar_c,todas,un núcleo,propiedad,1073091,80.72,80.65,80.79,True
+tipo_hogar_c,todas,un núcleo,alquiler,1073091,12.92,12.86,12.99,True
+tipo_hogar_c,todas,un núcleo,superficie_menor_46m2,1064671,4.39,4.35,4.43,True
+tipo_hogar_c,todas,un núcleo,menos_15m2_por_ocupante,1064671,5.55,5.51,5.59,True
+tipo_hogar_c,todas,un núcleo con otras personas,propiedad,64901,72.57,72.25,72.9,True
+tipo_hogar_c,todas,un núcleo con otras personas,alquiler,64901,18.24,17.96,18.52,True
+tipo_hogar_c,todas,un núcleo con otras personas,superficie_menor_46m2,64310,4.98,4.82,5.14,True
+tipo_hogar_c,todas,un núcleo con otras personas,menos_15m2_por_ocupante,64310,19.52,19.23,19.81,True
+tipo_hogar_c,todas,unipersonal,propiedad,499497,69.94,69.82,70.06,True
+tipo_hogar_c,todas,unipersonal,alquiler,499497,18.27,18.17,18.37,True
+tipo_hogar_c,todas,unipersonal,superficie_menor_46m2,492186,10.3,10.22,10.39,True
+tipo_hogar_c,todas,unipersonal,menos_15m2_por_ocupante,492186,0.07,0.07,0.08,True
+tipo_hogar_c,ES,con personas no emparentadas,propiedad,61853,68.35,68.0,68.7,True
+tipo_hogar_c,ES,con personas no emparentadas,alquiler,61853,22.45,22.13,22.76,True
+tipo_hogar_c,ES,con personas no emparentadas,superficie_menor_46m2,61267,6.47,6.28,6.65,True
+tipo_hogar_c,ES,con personas no emparentadas,menos_15m2_por_ocupante,61267,23.46,23.14,23.77,True
+tipo_hogar_c,ES,dos familias o más,propiedad,5091,67.0,65.78,68.23,True
+tipo_hogar_c,ES,dos familias o más,alquiler,5091,23.24,22.14,24.34,True
+tipo_hogar_c,ES,dos familias o más,superficie_menor_46m2,5046,4.86,4.29,5.42,True
+tipo_hogar_c,ES,dos familias o más,menos_15m2_por_ocupante,5046,43.52,42.22,44.82,True
+tipo_hogar_c,ES,dos núcleos o más,propiedad,38662,80.13,79.75,80.5,True
+tipo_hogar_c,ES,dos núcleos o más,alquiler,38662,12.24,11.93,12.55,True
+tipo_hogar_c,ES,dos núcleos o más,superficie_menor_46m2,38335,3.51,3.34,3.69,True
+tipo_hogar_c,ES,dos núcleos o más,menos_15m2_por_ocupante,38335,34.58,34.13,35.03,True
+tipo_hogar_c,ES,sin núcleo,propiedad,56388,62.25,61.87,62.63,True
+tipo_hogar_c,ES,sin núcleo,alquiler,56388,25.59,25.25,25.93,True
+tipo_hogar_c,ES,sin núcleo,superficie_menor_46m2,55548,10.16,9.93,10.4,True
+tipo_hogar_c,ES,sin núcleo,menos_15m2_por_ocupante,55548,5.32,5.14,5.49,True
+tipo_hogar_c,ES,un núcleo,propiedad,993749,83.24,83.17,83.31,True
+tipo_hogar_c,ES,un núcleo,alquiler,993749,10.83,10.78,10.89,True
+tipo_hogar_c,ES,un núcleo,superficie_menor_46m2,986500,3.81,3.77,3.84,True
+tipo_hogar_c,ES,un núcleo,menos_15m2_por_ocupante,986500,4.79,4.75,4.83,True
+tipo_hogar_c,ES,un núcleo con otras personas,propiedad,54138,77.12,76.78,77.45,True
+tipo_hogar_c,ES,un núcleo con otras personas,alquiler,54138,13.96,13.68,14.23,True
+tipo_hogar_c,ES,un núcleo con otras personas,superficie_menor_46m2,53673,4.12,3.96,4.28,True
+tipo_hogar_c,ES,un núcleo con otras personas,menos_15m2_por_ocupante,53673,15.75,15.46,16.05,True
+tipo_hogar_c,ES,unipersonal,propiedad,463440,71.95,71.83,72.07,True
+tipo_hogar_c,ES,unipersonal,alquiler,463440,16.58,16.48,16.68,True
+tipo_hogar_c,ES,unipersonal,superficie_menor_46m2,457118,9.59,9.51,9.67,True
+tipo_hogar_c,ES,unipersonal,menos_15m2_por_ocupante,457118,0.07,0.06,0.08,True
+tipo_hogar_c,EXT,con personas no emparentadas,propiedad,22878,45.01,44.4,45.62,True
+tipo_hogar_c,EXT,con personas no emparentadas,alquiler,22878,42.84,42.23,43.44,True
+tipo_hogar_c,EXT,con personas no emparentadas,superficie_menor_46m2,22617,11.5,11.1,11.89,True
+tipo_hogar_c,EXT,con personas no emparentadas,menos_15m2_por_ocupante,22617,40.88,40.27,41.49,True
+tipo_hogar_c,EXT,dos familias o más,propiedad,1517,47.0,44.62,49.38,True
+tipo_hogar_c,EXT,dos familias o más,alquiler,1517,41.46,39.11,43.82,True
+tipo_hogar_c,EXT,dos familias o más,superficie_menor_46m2,1497,10.96,9.45,12.46,True
+tipo_hogar_c,EXT,dos familias o más,menos_15m2_por_ocupante,1497,67.07,64.81,69.33,True
+tipo_hogar_c,EXT,dos núcleos o más,propiedad,4342,50.02,48.61,51.43,True
+tipo_hogar_c,EXT,dos núcleos o más,alquiler,4342,39.22,37.84,40.6,True
+tipo_hogar_c,EXT,dos núcleos o más,superficie_menor_46m2,4283,7.0,6.28,7.73,True
+tipo_hogar_c,EXT,dos núcleos o más,menos_15m2_por_ocupante,4283,65.09,63.74,66.45,True
+tipo_hogar_c,EXT,sin núcleo,propiedad,25442,41.88,41.31,42.46,True
+tipo_hogar_c,EXT,sin núcleo,alquiler,25442,43.55,42.98,44.13,True
+tipo_hogar_c,EXT,sin núcleo,superficie_menor_46m2,25007,15.63,15.2,16.05,True
+tipo_hogar_c,EXT,sin núcleo,menos_15m2_por_ocupante,25007,12.59,12.2,12.98,True
+tipo_hogar_c,EXT,un núcleo,propiedad,79342,49.23,48.9,49.56,True
+tipo_hogar_c,EXT,un núcleo,alquiler,79342,39.12,38.8,39.44,True
+tipo_hogar_c,EXT,un núcleo,superficie_menor_46m2,78171,11.7,11.49,11.92,True
+tipo_hogar_c,EXT,un núcleo,menos_15m2_por_ocupante,78171,15.21,14.97,15.45,True
+tipo_hogar_c,EXT,un núcleo con otras personas,propiedad,10763,49.71,48.81,50.6,True
+tipo_hogar_c,EXT,un núcleo con otras personas,alquiler,10763,39.78,38.9,40.65,True
+tipo_hogar_c,EXT,un núcleo con otras personas,superficie_menor_46m2,10637,9.32,8.79,9.84,True
+tipo_hogar_c,EXT,un núcleo con otras personas,menos_15m2_por_ocupante,10637,38.51,37.63,39.38,True
+tipo_hogar_c,EXT,unipersonal,propiedad,36057,44.09,43.6,44.57,True
+tipo_hogar_c,EXT,unipersonal,alquiler,36057,40.07,39.59,40.55,True
+tipo_hogar_c,EXT,unipersonal,superficie_menor_46m2,35068,19.57,19.18,19.96,True
+tipo_hogar_c,EXT,unipersonal,menos_15m2_por_ocupante,35068,0.15,0.11,0.19,True

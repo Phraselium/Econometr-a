@@ -1,0 +1,120 @@
+{
+ "rama": "V12-B6",
+ "pregunta": "¿En qué condiciones viven los hogares según su origen?",
+ "capa": "C4",
+ "metodo": "descriptivo con intervalos (linealización; bootstrap por hogar; binomial con CPF)",
+ "datos": "ECV 2018-2025 (microdatos), Censo 2021 (muestra)",
+ "N": 435132,
+ "ecv_ultimo_por_nacionalidad": {
+  "esfuerzo_alquiler_30": {
+   "UE": 33.37,
+   "española": 25.37,
+   "fuera de la UE": 32.26
+  },
+  "esfuerzo_alquiler_40": {
+   "UE": 20.83,
+   "española": 13.72,
+   "fuera de la UE": 21.7
+  },
+  "hacinamiento": {
+   "UE": 10.41,
+   "española": 7.08,
+   "fuera de la UE": 21.79
+  },
+  "propiedad": {
+   "UE": 46.56,
+   "española": 80.14,
+   "fuera de la UE": 27.51
+  },
+  "sobrecarga_30": {
+   "UE": 27.49,
+   "española": 8.24,
+   "fuera de la UE": 39.11
+  },
+  "sobrecarga_40": {
+   "UE": 19.15,
+   "española": 4.71,
+   "fuera de la UE": 24.05
+  },
+  "tenencia_3": {
+   "UE": 42.63,
+   "española": 11.1,
+   "fuera de la UE": 62.23
+  }
+ },
+ "brecha_misma_edad_y_renta": [
+  {
+   "indicador": "propiedad",
+   "extranjera": 33.39,
+   "espanola_cruda": 81.62,
+   "espanola_misma_edad_y_renta": 73.5,
+   "diferencia_estandarizada": -40.11,
+   "ic95_inf": -41.99,
+   "ic95_sup": -38.07
+  },
+  {
+   "indicador": "tenencia_3",
+   "extranjera": 56.07,
+   "espanola_cruda": 10.22,
+   "espanola_misma_edad_y_renta": 14.25,
+   "diferencia_estandarizada": 41.82,
+   "ic95_inf": 39.96,
+   "ic95_sup": 43.84
+  },
+  {
+   "indicador": "sobrecarga_30",
+   "extranjera": 38.59,
+   "espanola_cruda": 8.6,
+   "espanola_misma_edad_y_renta": 18.01,
+   "diferencia_estandarizada": 20.57,
+   "ic95_inf": 18.67,
+   "ic95_sup": 22.25
+  },
+  {
+   "indicador": "sobrecarga_40",
+   "extranjera": 25.66,
+   "espanola_cruda": 4.71,
+   "espanola_misma_edad_y_renta": 11.0,
+   "diferencia_estandarizada": 14.66,
+   "ic95_inf": 13.27,
+   "ic95_sup": 16.31
+  },
+  {
+   "indicador": "esfuerzo_alquiler_30",
+   "extranjera": 36.13,
+   "espanola_cruda": 26.31,
+   "espanola_misma_edad_y_renta": 36.98,
+   "diferencia_estandarizada": -0.85,
+   "ic95_inf": -3.2,
+   "ic95_sup": 1.84
+  },
+  {
+   "indicador": "esfuerzo_alquiler_40",
+   "extranjera": 21.91,
+   "espanola_cruda": 13.64,
+   "espanola_misma_edad_y_renta": 22.01,
+   "diferencia_estandarizada": -0.1,
+   "ic95_inf": -2.33,
+   "ic95_sup": 2.23
+  },
+  {
+   "indicador": "hacinamiento",
+   "extranjera": 17.12,
+   "espanola_cruda": 5.91,
+   "espanola_misma_edad_y_renta": 8.97,
+   "diferencia_estandarizada": 8.15,
+   "ic95_inf": 6.36,
+   "ic95_sup": 9.9
+  }
+ ],
+ "celdas_suprimidas": {
+  "ecv_anual": 3,
+  "ecv_cruces": 5,
+  "censo": 0
+ },
+ "notas": [
+  "descriptivo: las diferencias no se atribuyen a la nacionalidad",
+  "persona de referencia del censo = la de mayor edad",
+  "intervalos de la ECV sin efecto de diseño de estratos (no publicados)"
+ ]
+}

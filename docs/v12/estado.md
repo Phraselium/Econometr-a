@@ -14,11 +14,16 @@
   municipio (2011-2021 y 2021-2025) y provincia (output/v12/b4).
 - B5: cuotas de titularidad 2024-2026 en cuatro ámbitos, tipo fino, ranking, asociaciones (Holm), titulares
   2012-2023, AEAT CV y ficha V12-V02 que sustituye a V02 (output/v12/b5).
+- B6: condiciones por origen con ECV 2018-2025 (anual, cruces, brecha a igual edad y renta) y Censo 2021 (llegada,
+  edad, tipo de hogar), con IC y supresión de celdas (output/v12/b6).
+- B7: vivienda turística CV y València (INE frente a registro GVA, móviles, asociaciones), Cataluña y Barcelona
+  (output/v12/b7).
 
 ## Siguiente (para `claude --continue`)
-- B6: `src/v12/b6_condiciones.py`: condiciones de vivienda por origen (Censo 2021 muestra; ECV y EPA si hay microdatos):
-  tenencia, alquiler a precio de mercado, sobrecarga > 30 % y > 40 %, hacinamiento, superficie; por nacionalidad o país
-  de nacimiento, tiempo desde la llegada, edad y tipo de hogar, con IC y supresión de celdas.
+- B8: incorporar V12 a la base (`make base`), figuras (`make figuras`), tres páginas web nuevas («De dónde viene la
+  población», «Quién es propietario», «Dónde se construye»), fichas ampliadas, verificador con V12-V02 (sustituye a
+  V02), `make web`; publicacion/atlas_v12.md, actualizar por_que_ha_subido, lo_que_sabemos e historial_conclusiones;
+  publicacion/tablas_v12.xlsx; revisor final (opus, tope 100k); cierre en clon limpio.
 
 ## Tokens de subagentes
 Ninguno hasta el revisor final.

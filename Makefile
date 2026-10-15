@@ -164,6 +164,6 @@ validar_v9:
 
 
 # V12: análisis descriptivo (población, propiedad y oferta). Orden en V12_ORDEN (src/v12/<modulo>.py)
-V12_ORDEN := f0_correcciones b1_contabilidad b2_flujos b3_hogares b4_oferta b5_propiedad b7_turismo
+V12_ORDEN := f0_correcciones b1_contabilidad b2_flujos b3_hogares b4_oferta b5_propiedad b6_condiciones b7_turismo
 v12:
 	@for r in $(V12_ORDEN); do echo ">> src/v12/$$r.py"; $(PY) src/v12/$$r.py || exit 1; done

@@ -182,3 +182,24 @@ Reglas generales:
    es más alto y hay más propiedad de sociedades; no se asocia con la cuota de grandes titulares. Descriptivo.
 5. **Cataluña y Barcelona:** HUT del Idescat (2025) frente al INE (media de 2025) por municipio (coinciden en 209 de
    898) y HUT de Barcelona por año del expediente (Ajuntament).
+
+## B6 · Condiciones de vivienda por origen (src/v12/b6_condiciones.py → output/v12/b6)
+1. **Fuentes:** ECV 2018-2025 (microdatos; definiciones y estimadores de src/v10/atlas_microdatos.py, reutilizados) y
+   Censo 2021 (muestra de hogares, extracto corregido en B3). La EPA no recoge tenencia ni gasto en vivienda: no se usa
+   aquí (la emancipación por nacionalidad ya está en V10).
+2. **Grupos:** nacionalidad (española, resto de la UE, fuera de la UE), país de nacimiento (RB280, desde que la ECV lo
+   publica), periodo de llegada a España (Censo), edad, quintil de renta equivalente y tipo de hogar.
+3. **Misma edad y renta:** años 2023-2025 agrupados; tasa de los españoles reponderada a la composición por edad
+   (18-34, 35-49, 50-64, 65+) × quintil de renta del grupo extranjero (estandarización directa); IC bootstrap por hogar
+   (200 réplicas, SEED). Con la misma edad y renta: sobrecarga > 40 % +14,7 puntos (IC 13,3-16,3), hacinamiento +8,2
+   (6,4-9,9), alquiler de mercado +41,8; el esfuerzo del alquiler entre quienes alquilan a precio de mercado no difiere
+   (> 30 %: −0,9, IC −3,2 a 1,8). Lectura descriptiva: la diferencia en sobrecarga va con la tenencia (mucho más
+   alquiler de mercado), no con pagar más por el mismo alquiler a igual renta; no se atribuye a la nacionalidad.
+4. **Censo 2021:** hogares con persona de referencia extranjera: 46,7 % en propiedad y 40,5 % en alquiler (españoles
+   78,5 % y 13,5 %); < 15 m² por ocupante 18,2 % (5,4 %). La propiedad aumenta con el tiempo desde la llegada (40,8 %
+   llegados en 2016-2021; 66,6 % antes de 2001).
+5. **Celdas pequeñas:** ECV, < 50 observaciones se suprimen y además se exige ≥ 10 casos con el atributo y error
+   relativo ≤ 30 %; Censo, ≥ 10 hogares y error relativo ≤ 30 % (IC binomial con f = 0,1). Suprimidas: 3 (ECV anual),
+   5 (cruces), 0 (Censo).
+6. **Reproducibilidad:** los microdatos de la ECV no se versionan; sin ellos `make v12` conserva las salidas
+   versionadas de la ECV y rehace la parte del Censo.

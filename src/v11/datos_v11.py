@@ -4,7 +4,7 @@ Para cada src/v11/fetch_<fuente>.py:
   1. main(verificar=True): sin red, comprueba que los ficheros de data/raw/v11/<fuente>/_manifest.csv existen y que su
      sha256 coincide;
   2. si falla y hay red (y no se pasa --solo-verificar), main(verificar=False) descarga lo que falta y vuelve a registrar.
-Después escribe data/raw/v11/_manifest.csv con todas las filas. Código de salida 1 si alguna fuente queda sin verificar.
+Después incorpora las descargas manuales (src/v11/incorporar_manual.py) y escribe data/raw/v11/_manifest.csv con todas las filas. Código de salida 1 si alguna fuente queda sin verificar.
 Uso: python3 src/v11/datos_v11.py [--solo-verificar]
 """
 from __future__ import annotations
@@ -56,6 +56,8 @@ def main(solo_verificar: bool = False) -> int:
         print(f"[datos_v11] {s.stem}: {'OK' if ok else 'SIN VERIFICAR'}")
         if not ok:
             malos.append(s.stem)
+    import incorporar_manual  # noqa: E402  (descargas manuales del autor: data/manual/v11/)
+    incorporar_manual.main()
     n = consolidar()
     print(f"[datos_v11] manifiesto global: {n} ficheros; sin verificar: {malos or 'ninguno'}")
     return 1 if malos else 0

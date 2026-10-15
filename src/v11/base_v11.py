@@ -204,6 +204,13 @@ def partes() -> list[pd.DataFrame]:
         g = e.groupby("cod_municipio", as_index=False).size()
         add(pd.DataFrame({"territorio_codigo": g.cod_municipio, "nivel": "municipio", "periodo_raw": fecha,
                           "variable": f"reate_{tipo}_uso_turistico", "valor": g["size"]}), f"data/raw/v11/euskadi_vut/{f.name}")
+    # Descargas manuales del autor normalizadas por src/v11/incorporar_manual.py (si existen)
+    f = RAW11 / "manual/bcn_hut_trimestral.csv.gz"
+    if f.exists():
+        b = pd.read_csv(f, dtype=str)
+        add(pd.DataFrame({"territorio_codigo": "08019", "nivel": "municipio", "periodo_raw": b.trimestre,
+                          "variable": "bcn_hut_registro", "desagregacion": "barrio_bcn=" + b.cod_barrio_bcn.astype(str),
+                          "valor": pd.to_numeric(b.hut), "metodo_dato": "descarga manual del autor"}), "data/raw/v11/manual/bcn_hut_trimestral.csv.gz")
     return out
 
 
@@ -234,6 +241,7 @@ META_V11 = {
     "opi_residentes_documentados": ("personas", "OPI (Ministerio de Inclusión), extranjeros con certificado de registro o tarjeta en vigor; réplica de la Comunidad de Madrid", _C, "CC BY 4.0 (Comunidad de Madrid)", True),
     "catastro_tit_titulares": ("titulares (sujetos pasivos)", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial)", _C, "Catastro: reutilización con reconocimiento", True),
     "catastro_tit_viviendas": ("inmuebles residenciales", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial)", _C, "Catastro: reutilización con reconocimiento", True),
+    "bcn_hut_registro": ("viviendas", "Ajuntament de Barcelona, registro HUT, cortes trimestrales (descarga manual del autor)", _C, "CC BY 4.0", True),
     "ine_tmov_receptor_turistas": ("turistas", "INE, turismo receptor medido con teléfonos móviles (52048; experimental)", _C, INE, True),
     "ine_tmov_interno_turistas": ("turistas", "INE, turismo interno medido con teléfonos móviles (53464; experimental)", _C, INE, True),
     "c21md_hogares_muestra": ("hogares (muestra 10 %)", "INE, Censo 2021, microdatos de personas (recuento muestral)", _C, INE, True),

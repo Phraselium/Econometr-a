@@ -20,6 +20,7 @@ Licencia Catastro: reutilización libre con reconocimiento (Resolución DGC de 2
 """
 from __future__ import annotations
 
+import difflib
 import re
 import sys
 import unicodedata
@@ -115,7 +116,11 @@ def main(verificar: bool = False) -> int:
     feeds = {p: zips(p) for p in sorted({c[:2] for c in amb.cod_municipio})}
     partes, corr, sin = [], [], []
     for r in amb.itertuples():
-        k = next((feeds[r.cod_municipio[:2]][c] for c in candidatos(r.nombre) if c in feeds[r.cod_municipio[:2]]), None)
+        f = feeds[r.cod_municipio[:2]]
+        k = next((f[c] for c in candidatos(r.nombre) if c in f), None)
+        if k is None:   # último recurso (p. ej. «PUOL» por «PUÇOL»: el feed pierde la Ç); se verifica con la asignación espacial
+            cerca = difflib.get_close_matches(candidatos(r.nombre)[0], list(f), n=1, cutoff=0.85)
+            k = f[cerca[0]] if cerca else None
         if k is None:
             sin.append(f"{r.cod_municipio} {r.nombre}")
             continue

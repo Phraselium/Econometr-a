@@ -52,6 +52,7 @@ def enlaces(t: str) -> list[tuple[str, str]]:
 
 def tabla(t: str) -> pd.DataFrame | None:
     try:
+        t = re.sub(r"<\?xml[^>]*\?>", "", t)   # lxml no admite la declaración XML en una cadena
         T = max(pd.read_html(io.StringIO(t), thousands=".", decimal=",", flavor="lxml"), key=len)
     except (ValueError, ImportError):
         return None

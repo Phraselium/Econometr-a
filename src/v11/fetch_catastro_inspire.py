@@ -158,6 +158,18 @@ def main(verificar: bool = False) -> int:
         registrar(FUENTE, r, ATOM.format(p="<PP>"), edicion="Catastro INSPIRE Buildings (ATOM; fecha de los GML 2026)", periodo="stock vigente (2026)",
                   nivel_territorial="sección censal INE 2025" if nivel == "seccion" else "barrio de València", licencia=LIC, redistribuible=True,
                   notas=f"asignación espacial por centro del envolvente; sin sección = cod vacío; edificios={int(g.edificios.sum())}")
+    # obra nueva: viviendas en edificios residenciales por municipio INE y AÑO EXACTO de construcción (stock vigente;
+    # edificios demolidos no constan, por lo que los años antiguos son cota inferior de lo construido entonces)
+    d = pd.concat([x for n, x in partes if n == "seccion"], ignore_index=True)
+    d = d[d.uso.str.contains("residential", na=False) & d.anio.notna()]
+    ob = d.groupby(["cod_municipio_ine", "anio"], as_index=False).agg(edificios=("uso", "size"), viviendas=("viviendas", "sum"))
+    ob["anio"] = ob.anio.astype(int)
+    ro = DIR / "viviendas_por_anio_construccion_municipio.csv.gz"
+    ob.rename(columns={"cod_municipio_ine": "cod_municipio", "anio": "anio_construccion"}).to_csv(ro, index=False, compression=GZ_PANDAS)
+    registrar(FUENTE, ro, ATOM.format(p="<PP>"), edicion="Catastro INSPIRE Buildings (agregado propio)", periodo="stock vigente (2026)",
+              nivel_territorial="municipio INE (asignación espacial)", licencia=LIC, redistribuible=True,
+              notas="viviendas y edificios residenciales por año de construcción (dateOfConstruction); obra nueva por año = stock "
+                    "superviviente construido ese año")
     C = pd.DataFrame(corr)
     rc = DIR / "correspondencia_dgc_ine.csv"
     C.to_csv(rc, index=False)

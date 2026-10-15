@@ -204,6 +204,71 @@ def partes() -> list[pd.DataFrame]:
         g = e.groupby("cod_municipio", as_index=False).size()
         add(pd.DataFrame({"territorio_codigo": g.cod_municipio, "nivel": "municipio", "periodo_raw": fecha,
                           "variable": f"reate_{tipo}_uso_turistico", "valor": g["size"]}), f"data/raw/v11/euskadi_vut/{f.name}")
+    # --- Histórico (continuación V11) ---------------------------------------------------------------------------------
+    # Catastro: titulares por municipio 2012-2023 (JAXI; definición distinta de los CSV 2024-2026: no se encadenan)
+    f = RAW11 / "catastro_titularidad/titulares_municipio_2006_2023.csv.gz"
+    if f.exists():
+        t = pd.read_csv(f, dtype={"cod_municipio": str})
+        t = t[_mun(t.cod_municipio)]
+        for col in [c for c in ("titulares_urbano", "titulares_rustico", "titulares_total") if c in t]:
+            add(pd.DataFrame({"territorio_codigo": t.cod_municipio, "nivel": "municipio", "periodo_raw": t.anio.astype(str),
+                              "variable": "catastro_titulares_jaxi", "desagregacion": "clase=" + col.split("_")[1], "valor": t[col]}).dropna(subset=["valor"]),
+                "data/raw/v11/catastro_titularidad/titulares_municipio_2006_2023.csv.gz")
+    # Catastro, otras estadísticas 2019: viviendas por tramo de año de construcción y de reforma, y tipo
+    f = RAW11 / "catastro_otras/catastro_otras_municipio.csv.gz"
+    if f.exists():
+        o = pd.read_csv(f, dtype={"cod_municipio": str})
+        o = o[o.tabla.isin(["aant", "aref"]) & _mun(o.cod_municipio)]
+        o["desag"] = "tipo=" + o.grupo.str.replace(r"^NUMERO VIVIENDAS ", "", regex=True).str.lower() + "|tramo=" + o.categoria
+        o = o.drop_duplicates(["cod_municipio", "anio_fichero", "tabla", "desag"])
+        add(pd.DataFrame({"territorio_codigo": o.cod_municipio, "nivel": "municipio", "periodo_raw": o.anio_fichero.astype(str),
+                          "variable": np.where(o.tabla == "aant", "catastro_viviendas_por_anio_construccion", "catastro_viviendas_por_anio_reforma"),
+                          "desagregacion": o.desag, "valor": o.valor}), "data/raw/v11/catastro_otras/catastro_otras_municipio.csv.gz")
+    # Obra nueva (1): INSPIRE, viviendas por año exacto de construcción (stock superviviente), 94 municipios
+    f = RAW11 / "catastro_inspire/viviendas_por_anio_construccion_municipio.csv.gz"
+    if f.exists():
+        v = pd.read_csv(f, dtype={"cod_municipio": str})
+        v = v[_mun(v.cod_municipio) & (v.anio_construccion >= 1900) & (v.anio_construccion <= 2026)]
+        add(pd.DataFrame({"territorio_codigo": v.cod_municipio, "nivel": "municipio", "periodo_raw": v.anio_construccion.astype(str),
+                          "variable": "obra_nueva_viviendas_inspire", "valor": v.viviendas,
+                          "metodo_dato": "stock superviviente por año de construcción (cota inferior)"}),
+            "data/raw/v11/catastro_inspire/viviendas_por_anio_construccion_municipio.csv.gz")
+    # Obra nueva (2): variación anual de unidades urbanas residenciales del Catastro (neta de bajas; todos los municipios)
+    f = RAIZ / "data/raw/catastro_urbana_municipios.csv"
+    if f.exists():
+        u = pd.read_csv(f, dtype={"codigo": str, "periodo": str})
+        u = u[u.serie.str.startswith("catastro_uu_res_") & _mun(u.codigo)].sort_values(["codigo", "periodo"])
+        u["valor"] = pd.to_numeric(u.valor, errors="coerce")
+        u["dif"] = u.groupby("codigo").valor.diff()
+        u["salto"] = u.groupby("codigo").periodo.transform(lambda p: p.astype(int).diff())
+        u = u[u.salto == 1].dropna(subset=["dif"])
+        add(pd.DataFrame({"territorio_codigo": u.codigo, "nivel": "municipio", "periodo_raw": u.periodo, "variable": "obra_nueva_neta_catastro",
+                          "valor": u.dif, "metodo_dato": "diferencia anual de unidades urbanas residenciales (cálculo propio)"}),
+            "data/raw/catastro_urbana_municipios.csv")
+    # AEAT, IRPF por municipios (Comunitat Valenciana): conceptos principales
+    f = RAW11 / "aeat_irpf_municipios/irpf_municipios_cv.csv.gz"
+    if f.exists():
+        a = pd.read_csv(f, dtype={"cod_municipio": str})
+        claves = {"NÚMERO DE DECLARACIONES": "declaraciones", "RENTA BRUTA MEDIA": "renta_bruta_media",
+                  "RENTA DISPONIBLE MEDIA": "renta_disponible_media",
+                  "RENTAS DE BIENES INMUEBLES NO AFECTOS A ACTIV. ECONÓMICAS": "rentas_inmuebles_importe",
+                  "Media de las rentas derivadas de bienes inmuebles no afectos a activ. económicas": "rentas_inmuebles_media",
+                  "RENTAS DEL TRABAJO": "rentas_trabajo_importe"}
+        a = a[a.variable.isin(claves) & _mun(a.cod_municipio)].drop_duplicates(["cod_municipio", "ejercicio", "variable"])
+        add(pd.DataFrame({"territorio_codigo": a.cod_municipio, "nivel": "municipio", "periodo_raw": a.ejercicio.astype(str),
+                          "variable": "aeat_irpf_" + a.variable.map(claves), "valor": a.valor}).dropna(subset=["valor"]),
+            "data/raw/v11/aeat_irpf_municipios/irpf_municipios_cv.csv.gz")
+    # INE IPVA por municipio (> 10.000 hab.) y distrito de capitales, por tamaño de la vivienda (códigos de los metadatos)
+    for nivel in ("municipio", "distrito"):
+        f = RAW11 / f"ine_ipva/ipva_{nivel}_tamano.csv.gz"
+        if not f.exists():
+            continue
+        q = pd.read_csv(f, dtype={"codigo": str, "anio": str})
+        q = q[q.nivel == nivel]
+        add(pd.DataFrame({"territorio_codigo": q.codigo, "nivel": nivel, "periodo_raw": q.anio,
+                          "variable": np.where(q.tipo_dato.str.startswith("Índice"), "ipva_tam_indice", "ipva_tam_var_anual"),
+                          "desagregacion": "tamano=" + q.tamano_vivienda.fillna("Total"), "valor": q.valor}),
+            f"data/raw/v11/ine_ipva/ipva_{nivel}_tamano.csv.gz")
     # Descargas manuales del autor normalizadas por src/v11/incorporar_manual.py (si existen)
     f = RAW11 / "manual/bcn_hut_trimestral.csv.gz"
     if f.exists():
@@ -242,6 +307,16 @@ META_V11 = {
     "catastro_tit_titulares": ("titulares (sujetos pasivos)", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial)", _C, "Catastro: reutilización con reconocimiento", True),
     "catastro_tit_viviendas": ("inmuebles residenciales", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial)", _C, "Catastro: reutilización con reconocimiento", True),
     "bcn_hut_registro": ("viviendas", "Ajuntament de Barcelona, registro HUT, cortes trimestrales (descarga manual del autor)", _C, "CC BY 4.0", True),
+    "catastro_titulares_jaxi": ("titulares", "Catastro, titulares por municipio y clase (visor JAXI; 2012-2023)", _C, "Catastro: reutilización con reconocimiento", True),
+    "catastro_viviendas_por_anio_construccion": ("viviendas", "Catastro, otras estadísticas (2019): viviendas por año de construcción", _C, "Catastro: reutilización con reconocimiento", True),
+    "catastro_viviendas_por_anio_reforma": ("viviendas", "Catastro, otras estadísticas (2019): viviendas por año de reforma", _C, "Catastro: reutilización con reconocimiento", True),
+    "obra_nueva_viviendas_inspire": ("viviendas", "Catastro INSPIRE: viviendas por año de construcción (stock superviviente; agregado propio)", _C, "Catastro: reutilización con reconocimiento", True),
+    "obra_nueva_neta_catastro": ("unidades urbanas residenciales", "Catastro, estadística URBANA: diferencia anual (cálculo propio)", _C, "Catastro: reutilización con reconocimiento", True),
+    **{f"aeat_irpf_{k}": (u, "AEAT, estadística de declarantes del IRPF por municipios", _C, "AEAT: reutilización con cita", True)
+       for k, u in (("declaraciones", "declaraciones"), ("renta_bruta_media", "€"), ("renta_disponible_media", "€"),
+                    ("rentas_inmuebles_importe", "€"), ("rentas_inmuebles_media", "€"), ("rentas_trabajo_importe", "€"))},
+    "ipva_tam_indice": ("índice 2015=100", "INE, IPVA por municipio y distrito (59060, 59061) por tamaño de la vivienda", _C, INE, True),
+    "ipva_tam_var_anual": ("%", "INE, IPVA por municipio y distrito (59060, 59061)", _C, INE, True),
     "ine_tmov_receptor_turistas": ("turistas", "INE, turismo receptor medido con teléfonos móviles (52048; experimental)", _C, INE, True),
     "ine_tmov_interno_turistas": ("turistas", "INE, turismo interno medido con teléfonos móviles (53464; experimental)", _C, INE, True),
     "c21md_hogares_muestra": ("hogares (muestra 10 %)", "INE, Censo 2021, microdatos de personas (recuento muestral)", _C, INE, True),

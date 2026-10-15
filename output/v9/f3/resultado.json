@@ -171,7 +171,7 @@
   {
    "hipotesis": "H1a-contratos (exploratoria)",
    "p_holm": NaN,
-   "p_bh": 0.23451
+   "p_bh": 0.21620999999999999
   },
   {
    "hipotesis": "H1b-renta",
@@ -191,7 +191,7 @@
   {
    "hipotesis": "exploratoria",
    "p_holm": NaN,
-   "p_bh": 0.135135
+   "p_bh": 0.10810800000000001
   },
   {
    "hipotesis": "H2-renta-covid (exploratoria)",
@@ -201,7 +201,7 @@
   {
    "hipotesis": "H2-renta-reapertura (exploratoria)",
    "p_holm": NaN,
-   "p_bh": 0.03606
+   "p_bh": 0.027045
   },
   {
    "hipotesis": "H2-contratos-covid (exploratoria)",
@@ -226,37 +226,37 @@
   {
    "hipotesis": "H4-réplica-alquiler (exploratoria)",
    "p_holm": NaN,
-   "p_bh": 0.5838218181818182
+   "p_bh": 0.72522
   },
   {
    "hipotesis": "H4-réplica-alquiler (exploratoria) (efecto total)",
    "p_holm": NaN,
-   "p_bh": 0.5838218181818182
+   "p_bh": 0.72522
   },
   {
    "hipotesis": "exploratoria",
    "p_holm": NaN,
-   "p_bh": 0.81788
+   "p_bh": 0.82411
   },
   {
    "hipotesis": "exploratoria (efecto total)",
    "p_holm": NaN,
-   "p_bh": 0.81788
+   "p_bh": 0.82411
   },
   {
    "hipotesis": "H4-réplica-alquiler (exploratoria)",
    "p_holm": NaN,
-   "p_bh": 0.5838218181818182
+   "p_bh": 0.69116
   },
   {
    "hipotesis": "exploratoria",
    "p_holm": NaN,
-   "p_bh": 0.23451
+   "p_bh": 0.01932
   },
   {
    "hipotesis": "exploratoria",
    "p_holm": NaN,
-   "p_bh": 0.5838218181818182
+   "p_bh": 0.69116
   },
   {
    "hipotesis": "exploratoria",
@@ -271,7 +271,7 @@
   {
    "hipotesis": "exploratoria",
    "p_holm": NaN,
-   "p_bh": 0.5838218181818182
+   "p_bh": 0.69116
   }
  ],
  "nivel_evidencia": "ver capa",

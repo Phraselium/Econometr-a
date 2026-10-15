@@ -134,6 +134,132 @@ def honest_ruptura(res: dict, rejilla=np.arange(0, 3.01, 0.05)) -> float:
     return float(rejilla[-1])
 
 
+# =========================================================================================== Honest DiD (Rambachan y Roth)
+def _eta_lp(Y: np.ndarray, X: np.ndarray, sig: np.ndarray) -> float:
+    """η = min_{η, τ̃} η  s.a.  Y − X τ̃ ≤ η σ  (programa lineal; X puede tener 0 columnas)."""
+    from scipy.optimize import linprog
+    k = X.shape[1]
+    c = np.zeros(k + 1)
+    c[0] = 1.0
+    A_ub = np.column_stack([-sig, -X]) if k else -sig[:, None]
+    r = linprog(c, A_ub=A_ub, b_ub=-Y, bounds=[(None, None)] * (k + 1), method="highs")
+    return float(r.x[0]) if r.status == 0 else np.inf
+
+
+def _piezas_rm(n_pre: int, n_post: int, Mbar: float) -> list[np.ndarray]:
+    """Δ^RM(M̄) = ∪_{s, signo} {δ: |δ_{t+1}−δ_t| ≤ M̄·signo·(δ_{s+1}−δ_s) ∀ t ≥ −1}, con δ_{−1} = 0 (la condición de signo
+    queda implícita; con M̄ = 0 todas las piezas coinciden: tendencias paralelas exactas tras el tratamiento).
+    δ = (δ_pre [e = −n_pre..−2], δ_post [e = 0..n_post−1]). Devuelve las matrices A de cada pieza (A δ ≤ 0)."""
+    n = n_pre + n_post
+    def dif_pre(r):            # δ_{r+1} − δ_r para r = 0..n_pre−1 (el último es δ_{−1} − δ_{−2} = −δ_{−2})
+        v = np.zeros(n)
+        if r + 1 < n_pre:
+            v[r + 1] += 1
+        v[r] -= 1
+        return v
+    def dif_post(t):           # δ_{t} − δ_{t−1} para t = 0..n_post−1 (t = 0: δ_0 − δ_{−1} = δ_0)
+        v = np.zeros(n)
+        v[n_pre + t] += 1
+        if t > 0:
+            v[n_pre + t - 1] -= 1
+        return v
+    piezas = []
+    for s in range(n_pre):
+        for signo in (1.0, -1.0):
+            D = signo * dif_pre(s)
+            filas = []   # signo·D ≥ 0 ya está implícito en |d_t| ≤ M̄·signo·D (y con M̄ = 0 no aplica): no se añade como fila
+            for t in range(n_post):
+                filas += [dif_post(t) - Mbar * D, -dif_post(t) - Mbar * D]
+            piezas.append(np.array(filas))
+    return piezas
+
+
+def _arp_condicional(Y: np.ndarray, X: np.ndarray, sig: np.ndarray, SY: np.ndarray, alfa: float) -> bool:
+    """Contraste condicional de Andrews, Roth y Pakes (2023) de H0: E[Y] − X τ̃ ≤ 0 para algún τ̃.
+    η̂ = máx γ'Y s.a. γ ≥ 0, X'γ = 0, σ'γ = 1 (dual del programa de η); condicionando en el vértice óptimo γ*, η̂ sigue una
+    normal N(0, γ*'Σγ*) truncada en [v_lo, v_up] (cotas por programación lineal fraccional, transformación de
+    Charnes-Cooper). Devuelve True si rechaza al nivel α."""
+    from scipy.optimize import linprog
+    from scipy.stats import norm
+    m, k = len(Y), X.shape[1]
+    A_eq = np.vstack([X.T, sig[None, :]]) if k else sig[None, :]
+    b_eq = np.r_[np.zeros(k), 1.0]
+    r = linprog(-Y, A_eq=A_eq, b_eq=b_eq, bounds=[(0, None)] * m, method="highs")
+    if r.status != 0:
+        return False
+    g = r.x
+    eta = float(g @ Y)
+    s2 = float(g @ SY @ g)
+    if s2 <= 0:
+        return eta > 0
+    c = SY @ g / s2
+    S = Y - c * eta
+    # v_lo: máx γ'S/(1−γ'c) con γ'c < 1  → u = tγ, t = 1/(1−γ'c): máx u'S s.a. u ≥ 0, X'u = 0, σ'u = t, t − c'u = 1
+    A1 = np.vstack([np.c_[X.T, np.zeros(k)] if k else np.zeros((0, m + 1)), np.r_[sig, -1.0][None, :], np.r_[-c, 1.0][None, :]])
+    b1 = np.r_[np.zeros(k), 0.0, 1.0]
+    r1 = linprog(-np.r_[S, 0.0], A_eq=A1, b_eq=b1, bounds=[(0, None)] * (m + 1), method="highs")
+    v_lo = -r1.fun if r1.status == 0 else -np.inf
+    if r1.status == 3:
+        v_lo = np.inf
+    # v_up: mín γ'S/(1−γ'c) con γ'c > 1  → u = tγ, t = 1/(γ'c−1): mín −u'S s.a. u ≥ 0, X'u = 0, σ'u = t, c'u − t = 1
+    A2 = np.vstack([np.c_[X.T, np.zeros(k)] if k else np.zeros((0, m + 1)), np.r_[sig, -1.0][None, :], np.r_[c, -1.0][None, :]])
+    r2 = linprog(-np.r_[S, 0.0], A_eq=A2, b_eq=b1, bounds=[(0, None)] * (m + 1), method="highs")
+    v_up = float(r2.fun) if r2.status == 0 else np.inf   # el programa minimiza −u'S, que es justo la cota superior
+    sd = np.sqrt(s2)
+    lo, hi = max(v_lo, -1e9) / sd, min(v_up, 1e9) / sd
+    lo = min(lo, eta / sd)
+    hi = max(hi, eta / sd)
+    den = norm.cdf(hi) - norm.cdf(lo)
+    if den <= 1e-300:
+        return eta / sd > norm.ppf(1 - alfa)
+    pval = (norm.cdf(hi) - norm.cdf(eta / sd)) / den
+    return pval < alfa
+
+
+def honest_rr(res: dict, Mbar: float, alfa: float = 0.05, n_sim: int = 0, rejilla: np.ndarray | None = None,
+              seed: int = SEED) -> tuple[float, float]:
+    """IC de Rambachan y Roth (2023) para el ATT medio posterior (media de ATT(e), e ≥ 0) bajo magnitudes relativas M̄.
+    Δ^RM se descompone en piezas poliédricas (una por diferencia previa y signo); en cada pieza se invierte el contraste
+    condicional de Andrews, Roth y Pakes (2023); el IC es la unión sobre piezas. Usa ATT(e) y su covarianza.
+    (n_sim y seed se conservan por compatibilidad; el contraste condicional no simula.)"""
+    pre = sorted(e for e in res["es_orden"] if e < -1)
+    post = sorted(e for e in res["es_orden"] if e >= 0)
+    orden = pre + post
+    idx = [res["es_orden"].index(e) for e in orden]
+    b = np.array([res["es"][e][0] for e in orden])
+    S = np.atleast_2d(res["es_vcov"])[np.ix_(idx, idx)]
+    n_pre, n_post = len(pre), len(post)
+    l = np.ones(n_post) / n_post
+    theta = float(l @ b[n_pre:])
+    se = float(np.sqrt(l @ S[n_pre:, n_pre:] @ l))
+    if rejilla is None:
+        rejilla = np.linspace(theta - 15 * se - 3 * abs(theta), theta + 15 * se + 3 * abs(theta), 301)
+    Bm = np.linalg.svd(l[None, :])[2][1:].T if n_post > 1 else np.zeros((1, 0))
+    aceptados = np.zeros(len(rejilla), bool)
+    for A in _piezas_rm(n_pre, n_post, Mbar):
+        SY = A @ S @ A.T
+        sig = np.sqrt(np.clip(np.diag(SY), 1e-14, None))
+        Ap = A[:, n_pre:]
+        X = Ap @ Bm
+        AB = A @ b
+        for k, th in enumerate(rejilla):
+            if aceptados[k]:
+                continue
+            aceptados[k] = not _arp_condicional(AB - Ap @ (th * np.ones(n_post)), X, sig, SY, alfa)
+    if not aceptados.any():
+        return np.nan, np.nan
+    return float(rejilla[aceptados].min()), float(rejilla[aceptados].max())
+
+
+def honest_rr_ruptura(res: dict, rejilla_M=np.arange(0, 2.01, 0.1), **kw) -> float:
+    """Menor M̄ (rejilla de 0,1) con el que el IC de RR contiene el 0."""
+    for m in rejilla_M:
+        lo, hi = honest_rr(res, float(m), **kw)
+        if not np.isfinite(lo) or lo <= 0 <= hi:
+            return float(m)
+    return float(rejilla_M[-1])
+
+
 def _fe_no_tratadas(Y: np.ndarray, D: np.ndarray, it: int = 200) -> tuple[np.ndarray, np.ndarray]:
     """a_i + b_t ajustados por mínimos cuadrados sobre las celdas con D = 0 (proyecciones alternas)."""
     m = (D == 0) & np.isfinite(Y)

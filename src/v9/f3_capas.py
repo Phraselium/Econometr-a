@@ -46,6 +46,10 @@ def main() -> int:
     # principales por hipótesis
     for _, r in d1[d1.especificacion.str.contains("principal") | (d1.diseno == "D1c")].iterrows():
         prueba = pr1.loc[f"{r.diseno} {r.resultado}"] if f"{r.diseno} {r.resultado}" in pr1.index else None
+        if prueba is None and isinstance(r.diagnosticos, str) and "pretend p = " in r.diagnosticos:
+            prueba = pd.Series({"pretend_p": float(r.diagnosticos.split("pretend p = ")[1].split(";")[0]), "placebo_fecha_p": np.nan,
+                                "honest_M1_lo": np.nan, "honest_M1_hi": np.nan, "honest_Mbar_ruptura": np.nan,
+                                "permutacion_etiquetas_p": np.nan})
         filas.append({"diseno": r.diseno, "hipotesis": r.hipotesis, "resultado": r.resultado, "beta": r.beta, "se": r.se,
                       "ic95_lo": r.ic95_lo, "ic95_hi": r.ic95_hi, "p": r.p, "N": r.N_unidades, "tratadas": r.tratadas,
                       "confirmatoria": bool(r.confirmatoria and r.diseno in ("D1a", "D1b") and "renta" in r.resultado),
@@ -59,19 +63,29 @@ def main() -> int:
         nom = "renta" if "renta" in r.hipotesis else "contratos"
         prueba = pr2.loc[f"D2 {r.resultado}"]
         per = "covid" if "covid" in r.hipotesis else "reapertura"
+        tend = d2[(d2.hipotesis == r.hipotesis) & d2.especificacion.str.startswith("con tendencia")]
         filas.append({"diseno": "D2", "hipotesis": r.hipotesis, "resultado": r.resultado + f" ({per}; por 1 DE de dosis)",
                       "beta": r.beta, "se": r.se, "ic95_lo": r.ic95_lo, "ic95_hi": r.ic95_hi, "p": r.p, "N": r.N_unidades,
                       "tratadas": np.nan, "confirmatoria": False, "pretend_p": prueba.pretend_p,
                       "placebo_fecha_p": prueba.placebo_fecha_p, "perm_p": prueba[f"permutacion_p_{per}"],
+                      "tendencia_p": float(tend.p.iloc[0]) if len(tend) else np.nan,
                       "metodo": f"TWFE dosis continua ({nom})"})
+    d3p = d3[d3.especificacion.str.startswith("placebo") & d3.especificacion.str.contains("10 km")].set_index("resultado").p
     for _, r in d3[d3.especificacion.str.startswith("principal") & d3.especificacion.str.contains("10 km")].iterrows():
         filas.append({"diseno": "D3", "hipotesis": "descriptiva", "resultado": f"{r.resultado} ~ ΔVUT por 100 viviendas",
                       "beta": r.beta, "se": r.se, "ic95_lo": r.ic95_lo, "ic95_hi": r.ic95_hi, "p": r.p, "N": r.N_unidades,
-                      "confirmatoria": False, "metodo": "MCO diferencias largas, Conley 10 km"})
+                      "confirmatoria": False, "placebo_fecha_p": float(d3p.get(r.resultado, np.nan)),
+                      "metodo": "MCO diferencias largas, Conley 10 km"})
+    rot = pd.read_csv(V9 / "d4/rotemberg.csv")
+    rot_fallan = sorted(set(rot[(rot.get("p_holm", pd.Series(dtype=float)) < 0.10)].pais)) if "p_holm" in rot else []
     for _, r in d4[d4.especificacion.str.startswith("principal") | (d4.especificacion == "ampliación 2015-2022")].iterrows():
         filas.append({"diseno": "D4", "hipotesis": r.hipotesis, "resultado": f"{r.resultado} ({r.especificacion})",
-                      "beta": r.beta, "se": r.se, "ic95_lo": r.ic95_lo, "ic95_hi": r.ic95_hi, "p": r.p, "N": r.N_unidades,
+                      "beta": r.beta, "se": r.se, "ic95_lo": r.ic95_lo, "ic95_hi": r.ic95_hi,
+                      # con instrumento débil (F < 23,1) la inferencia válida es la de Anderson-Rubin: con un instrumento,
+                      # su p para β = 0 es el de la forma reducida (revisión F3, hallazgo 2)
+                      "p": r.p_rf if r.F_eff < 23.1 else r.p, "p_wald": r.p, "N": r.N_unidades,
                       "confirmatoria": False, "F_eff": r.F_eff, "AR": (r.AR_lo, r.AR_hi), "AR_acotado": r.get("AR_acotado", np.nan),
+                      "rotemberg_fallan": ", ".join(rot_fallan) if r.especificacion.startswith("principal") else "",
                       "se_akm": r.se_akm_iv, "metodo": "2SLS shift-share"})
     for _, r in d5[d5.especificacion == "principal"].iterrows():
         filas.append({"diseno": "D5", "hipotesis": "exploratoria", "resultado": r.resultado + " por shock × 1 DE de exposición",
@@ -96,13 +110,23 @@ def main() -> int:
                 return "C3", "supera todas las pruebas pre-registradas"
             return "C4", "confirmatoria; no cumple: " + "; ".join(fallan)
         if r.diseno == "D3":
-            return "C4", "descriptivo (sin potencia)"
+            nota = "; placebo 2021→2023 con asociación (p < 0,10)" if np.isfinite(r.get("placebo_fecha_p", np.nan)) and r.placebo_fecha_p < 0.10 else ""
+            return "C4", "descriptivo (sin potencia)" + nota
         etiqueta = "asociación (BH < 0,10)" if r.p_bh < 0.10 else "no detectada (BH ≥ 0,10)"
-        extra = []
+        extra = []   # pruebas que la exploratoria no supera (revisión F3, hallazgo 4)
         if r.diseno == "D4" and np.isfinite(r.get("F_eff", np.nan)) and r.F_eff < 23.1:
-            extra.append(f"instrumento débil (F efectiva {r.F_eff:.1f} < 23,1): solo IC de Anderson-Rubin")
-        if r.diseno == "D2" and r.pretend_p <= 0.10:
-            extra.append("pretendencias rechazadas")
+            extra.append(f"instrumento débil (F efectiva {r.F_eff:.1f} < 23,1): p e IC de Anderson-Rubin"
+                         + ("" if r.get("AR_acotado") in (True, "True") else "; conjunto de AR no acotado"))
+        if isinstance(r.get("rotemberg_fallan"), str) and r.rotemberg_fallan:
+            extra.append(f"pretendencias de cuotas con mayor peso de Rotemberg (Holm < 0,10): {r.rotemberg_fallan}")
+        if np.isfinite(r.get("pretend_p", np.nan)) and r.pretend_p <= 0.10:
+            extra.append(f"pretendencias rechazadas (p {r.pretend_p:.3f})")
+        if r.diseno != "D3" and np.isfinite(r.get("placebo_fecha_p", np.nan)) and r.placebo_fecha_p <= 0.10:
+            extra.append(f"placebo de fecha rechazado (p {r.placebo_fecha_p:.3f})")
+        if r.diseno == "D2" and np.isfinite(r.get("perm_p", np.nan)) and r.perm_p >= 0.05:
+            extra.append(f"permutación de la dosis p {r.perm_p:.3f}")
+        if r.diseno == "D2" and np.isfinite(r.get("tendencia_p", np.nan)) and r.tendencia_p >= 0.05:
+            extra.append("no se mantiene con tendencia lineal por dosis")
         return "C4", "exploratoria: " + etiqueta + ("; " + "; ".join(extra) if extra else "")
     cc = T.apply(capa, axis=1, result_type="expand")
     T["capa"], T["motivo_capa"] = cc[0], cc[1]
@@ -110,7 +134,7 @@ def main() -> int:
 
     # tabla de estilo revista
     lin = ["# Tabla V9 · resultados de los diseños D1-D5 (estilo revista)", "",
-           "β: efecto o asociación en log (≈ proporción). IC 95 %. p: bootstrap salvaje por conglomerados (D1, D2), normal (D3-D5).",
+           "β: diferencia o asociación en log (≈ proporción); no es un efecto causal salvo en C3/C3s. IC 95 %. p: bootstrap salvaje por conglomerados (D1, D2), normal (D3-D5).",
            "p ajustado: Holm en la familia confirmatoria {H1a-renta, H1b-renta}; BH (q = 0,10) en las exploratorias.",
            "Capa según las reglas pre-registradas (docs/v9/hipotesis.md y addendum A1). Sin lenguaje causal por debajo de C3/C3s.", "",
            "| Diseño | Hipótesis | Resultado | β | EE | IC 95 % | p | p ajustado | N | Diagnósticos | Capa |",
@@ -123,7 +147,7 @@ def main() -> int:
         if np.isfinite(r.get("placebo_fecha_p", np.nan)):
             diag.append(f"placebo fecha p = {fmt_p(r.placebo_fecha_p)}")
         if isinstance(r.get("honest_M1"), tuple) and np.isfinite(r.honest_M1[0]):
-            diag.append(f"Honest M̄=1 [{fmt(r.honest_M1[0])}; {fmt(r.honest_M1[1])}], M̄ ruptura {fmt(r.honest_ruptura, 2)}")
+            diag.append(f"Honest DiD (RR) M̄=1 [{fmt(r.honest_M1[0])}; {fmt(r.honest_M1[1])}], M̄ ruptura {fmt(r.honest_ruptura, 2)}")
         if np.isfinite(r.get("perm_p", np.nan)):
             diag.append(f"permutación p = {fmt_p(r.perm_p)}")
         if np.isfinite(r.get("F_eff", np.nan)):

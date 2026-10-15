@@ -1,0 +1,40 @@
+{
+ "rama": "v9/f4",
+ "pregunta": "¿Qué parte de la subida nacional y de la Comunitat Valenciana se puede acotar por factor?",
+ "capa": "C2 (vacía: ningún C3/C3s)",
+ "datos": "output/v9/f3/tabla_capas.csv; cifras_clave",
+ "N": 5,
+ "metodo": "Manski con supuestos explícitos sobre efectos C3/C3s (addendum A1.7)",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "—",
+ "diagnosticos": [
+  {
+   "factor": "Zonas tensionadas y topes de renta",
+   "estado": "no identificado (mejor capa alcanzada: C4)"
+  },
+  {
+   "factor": "Pisos turísticos",
+   "estado": "no identificado (mejor capa alcanzada: C4)"
+  },
+  {
+   "factor": "Inmigración",
+   "estado": "no identificado (mejor capa alcanzada: C4)"
+  },
+  {
+   "factor": "Tipos de interés (exposición a tipo variable)",
+   "estado": "no identificado (mejor capa alcanzada: C4)"
+  },
+  {
+   "factor": "Ayudas a jóvenes (Bono Alquiler Joven)",
+   "estado": "no estimado (sin edad exacta ni receptores identificados)"
+  }
+ ],
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Equilibrio parcial."
+}

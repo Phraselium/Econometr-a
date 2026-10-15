@@ -137,3 +137,21 @@ def test_holm_bh():
     p = [0.01, 0.04, 0.03, 0.2]
     assert np.allclose(H.holm(p), multipletests(p, method="holm")[1])
     assert np.allclose(H.bh(p), multipletests(p, method="fdr_bh")[1])
+
+
+def test_honest_rr_propiedades():
+    """IC de RR: contiene θ̂; se ensancha con M̄; sin tendencia previa y efecto grande excluye el 0 con M̄ = 1."""
+    pre, post = [-4, -3, -2], [0, 1, 2]
+    orden = pre + post
+    S = 0.01 ** 2 * np.eye(len(orden))
+    b = np.array([0.001, -0.001, 0.0, 0.10, 0.10, 0.10])
+    res = {"es_orden": orden, "es": {e: (b[i], 0.01) for i, e in enumerate(orden)}, "es_vcov": S}
+    lo0, hi0 = H.honest_rr(res, 0.0, n_sim=200)
+    lo1, hi1 = H.honest_rr(res, 1.0, n_sim=200)
+    assert lo0 <= 0.10 <= hi0
+    assert hi1 - lo1 >= hi0 - lo0 - 1e-9
+    assert lo1 > 0
+    b2 = np.array([0.03, -0.03, 0.0, 0.01, 0.01, 0.01])        # tendencia previa grande, efecto pequeño
+    res2 = {"es_orden": orden, "es": {e: (b2[i], 0.01) for i, e in enumerate(orden)}, "es_vcov": S}
+    lo, hi = H.honest_rr(res2, 1.0, n_sim=200)
+    assert lo <= 0 <= hi

@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10
+.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9
 
 all: data clean models report
 
@@ -51,6 +51,7 @@ check:
 	$(PY) src/v5/check_v5.py
 	$(PY) src/v6/check_v6.py
 	$(PY) src/v8/check_v8.py
+	$(PY) src/v9/check_v9.py
 
 verificador:
 	@if [ -f src/v3/verificador.py ]; then $(PY) src/v3/verificador.py; fi
@@ -139,3 +140,19 @@ v10:
 	$(PY) src/v5/cifras_clave.py
 	$(MAKE) publicacion
 	$(MAKE) base consulta figuras web
+
+# V9 COMPLETO: diseños de identificación (pre-registro docs/v9/hipotesis.md + addendum A1), cotas, hechos, verificador,
+# textos, historial y Excel. Sin red; SEED = 20261010. Luego `make publicacion base consulta figuras web` (o `make v10`).
+V9_ORDEN = f2_potencia f2b_potencia_addendum d1_zonas d2_turisticos d3_valencia d4_inmigracion d5_tipos d7_hogares f3_capas f4_cotas f5_hechos
+v9:
+	@for r in $(V9_ORDEN); do echo ">> src/v9/$$r.py"; $(PY) -W ignore src/v9/$$r.py > /dev/null || exit 1; done
+	$(PY) src/v5/cifras_clave.py
+	$(PY) src/v9/f5_verificador.py
+	$(PY) src/v9/render_v9.py
+	$(PY) src/v9/f5_historial.py
+	$(PY) src/v9/f5_excel.py
+
+# V9: validación Monte Carlo del IC de Rambachan y Roth (lenta; no entra en make v9)
+validar_v9:
+	$(PY) src/v9/validar_honest_rr.py
+

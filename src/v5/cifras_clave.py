@@ -99,7 +99,7 @@ def v4_adaptadores() -> list[dict]:
 
 
 def V7_HECHOS() -> list[Path]:   # v7.1 (W2): hechos de V7 (R4, R4b, R5, R6) y de V7.1 (S1, S3); V8 (F6, ids «V8-»); nunca los _smoke
-    return [p for v in ("v7", "v7_1", "v7_2", "v8", "v10") for p in sorted((RAIZ / "output" / v).glob("*/hechos.json")) if "_smoke" not in p.parent.name]   # V10: atlas (ids «V10-ATL-»)
+    return [p for v in ("v7", "v7_1", "v7_2", "v8", "v9", "v10") for p in sorted((RAIZ / "output" / v).glob("*/hechos.json")) if "_smoke" not in p.parent.name]   # V10: atlas (ids «V10-ATL-»); V9: F5 (ids «V9-»)
 
 
 def v5_hechos() -> list[dict]:

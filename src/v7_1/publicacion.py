@@ -50,6 +50,16 @@ FUENTES: dict[str, str] = {
     "publicacion/atlas_descriptivo.md": "output/v10/atlas_descriptivo.md",
     "publicacion/tablas_atlas.xlsx": "output/v10/tablas_atlas.xlsx",
     "publicacion/dosis_coste.csv": "output/v7_1/S1/dosis_coste.csv",
+    # V9: qué causa qué (informe, tabla de estilo revista, cotas, verificador y tablas; render en src/v9/render_v9.py)
+    "publicacion/informe_v9.md": "output/v9/informe_v9.md",
+    "publicacion/tabla_v9.md": "output/v9/f3/tabla_revista.md",
+    "publicacion/cotas_v9.md": "output/v9/f4/cotas.md",
+    "publicacion/tablas_v9.xlsx": "output/v9/tablas_v9.xlsx",
+    "publicacion/verificador/verificador_v9.md": "output/v9/verificador_v9.md",
+    "publicacion/verificador/fichas_v9.json": "output/v9/fichas_verificador_v9.json",
+    "metodologia/preregistro_v9.md": "docs/v9/hipotesis.md",
+    "metodologia/preregistro_v9_addendum_a1.md": "docs/v9/hipotesis_addendum_a1.md",
+    "metodologia/revision_v9_F2.md": "docs/v9/revision_f2.md",
     "metodologia/anexo_metodologico.md": "output/v6_2/anexo_metodologico.md",
     "metodologia/guia_revisor.md": "docs/v7_1/guia_revisor.md",
     "metodologia/capas.md": "docs/v7_1/capas.md",
@@ -144,7 +154,7 @@ def construir(base: Path) -> dict[str, list[tuple[str, str, str]]]:
 def regenerar_entregables() -> None:
     """V8.1: una_pagina, lo_que_sabemos y los entregables V8 se regeneran antes de copiarlos (render v5 y render v8; ambos leen output/v5/cifras_clave.csv).
     `make v8` ya ejecuta cifras_clave y render_v8, pero no render v5: sin este paso, una_pagina y lo_que_sabemos podrían quedar con cifras de otra versión de cifras_clave."""
-    for scr in ("src/v5/render.py", "src/v8/render_v8.py"):
+    for scr in ("src/v5/render.py", "src/v8/render_v8.py", "src/v9/render_v9.py"):
         r = subprocess.run([sys.executable, str(RAIZ / scr)], cwd=RAIZ, capture_output=True, text=True)
         if r.returncode != 0:
             raise SystemExit(f"publicacion: falla {scr} (marcadores sin resolver o error):\n{r.stdout[-800:]}{r.stderr[-800:]}")

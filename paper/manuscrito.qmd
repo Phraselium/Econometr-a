@@ -1,6 +1,6 @@
 ---
 title: "Vivienda en España: una base de evidencia por capas y un atlas descriptivo de quién soporta la subida y dónde"
-subtitle: "Manuscrito de trabajo (V10). Estructura de revista; las secciones de v9 están pendientes"
+subtitle: "Manuscrito de trabajo (V10 y V9). Estructura de revista"
 author:
   - name: Borja Romero
     affiliations: Economista (firma individual, independiente)
@@ -36,6 +36,8 @@ def v(g, c, i, a=ult):
     x = ecv[(ecv.anio == a) & (ecv.grupo == g) & (ecv.categoria.astype(str) == str(c)) & (ecv.indicador == i)]
     return x.iloc[0]
 nac = ipva[ipva.nivel == "nacional"].sort_values("periodo").iloc[-1]
+c9 = lambda i, d=1: fmt(float(cif.loc[i, "valor"]), d).replace("-", "−")
+ic9 = lambda i, d=1: f"[{fmt(float(cif.loc[i, 'min']), d)}; {fmt(float(cif.loc[i, 'max']), d)}]".replace("-", "−")
 ```
 
 ## Resumen {.unnumbered}
@@ -46,7 +48,7 @@ Con los microdatos de la Encuesta de Condiciones de Vida, la sobrecarga del gast
 
 Desde 2015, el índice de renta de los contratos nuevos supera en `{python} fmt(nac.brecha_nuevo_menos_existente)` puntos al de los contratos existentes (`{python} nac.periodo`; capa C4).
 
-El trabajo es descriptivo: no atribuye causas. Los diseños causales previstos para v9 están pendientes y se describen al final.
+El trabajo no atribuye causas. Los diseños de identificación de V9 (sección 6), pre-registrados, no alcanzan la capa causal: se informan como diferencias o asociaciones con sus pruebas.
 
 ## Abstract {.unnumbered lang="en"}
 
@@ -54,7 +56,7 @@ We present the project's single database. It is a long table in which every figu
 
 Using Living Conditions Survey microdata, housing-cost overburden (housing costs above 40% of income) affects `{python} fmt(v("tenencia", "alquiler de mercado", "sobrecarga_40").valor)`% of people renting at market prices in `{python} ult`, against `{python} fmt(v("total", "Total", "sobrecarga_40").valor)`% of the whole population. These figures replicate Eurostat's official table.
 
-No causal claims are made. The causal designs planned for v9 are pending.
+No causal claims are made. The pre-registered identification designs of V9 (section 6) do not reach the causal layer and are reported as associations together with their diagnostic tests.
 
 ## 1. Introducción
 
@@ -133,27 +135,31 @@ x[["grupo", "categoria", "valor", "ic95_inf", "ic95_sup", "n_muestral", "capa"]]
 
 Las conclusiones de V8 se mantienen sin cambios: `publicacion/por_que_ha_subido.md` y el verificador. En particular, ningún factor puede designarse como el más relevante en ninguno de los diez casos analizados (mercado por periodo).
 
-## 6. Diseños causales de v9 [PENDIENTE]
+## 6. Diseños de identificación de V9
 
-> **Pendiente.** Ninguna de estas secciones tiene resultados. Cada diseño exige su propio pre-registro, la validación por Monte Carlo de sus herramientas, una validación diferida y una revisión independiente (`docs/v9_prep/plan_v9.md`).
+Las reglas se fijaron antes de estimar: pre-registro `docs/v9/hipotesis.md` y addendum A1 tras una revisión independiente. Una hipótesis llega a C3 solo si es confirmatoria (con potencia calculada sin ver resultados), supera Holm y pasa sus pruebas: tendencias previas, placebo de fecha, IC de @rambachan2023 con M̄ = 1 que excluye el 0, y permutación de etiquetas. **Ningún resultado de V9 alcanza C3 o C3s**, así que lo que sigue son diferencias o asociaciones (C4), sin lectura causal. Tabla completa: `publicacion/tabla_v9.md`.
 
-### 6.1 Zonas tensionadas: DiD escalonado con Honest DiD [PENDIENTE]
+### 6.1 Topes y zonas tensionadas (DiD escalonado)
 
-Métodos previstos: @callaway2021 y @rambachan2023. Datos: zonas tensionadas verificadas frente al BOE hasta octubre de 2026 (`data/raw/v9/regulacion`).
+Con @callaway2021 sobre las fianzas de Incasòl, la renta de los contratos nuevos en los municipios de la Ley catalana 11/2020 fue `{python} c9("V9-D1b-renta-att")` % frente a los comparables (IC 95 % `{python} ic9("V9-D1b-renta-att")`), con un M̄ de ruptura de `{python} c9("V9-D1b-renta-ruptura")`. En las zonas tensionadas de 2024 la diferencia es `{python} c9("V9-D1a-renta-att")` %, pero con tendencias previas (p `{python} c9("V9-D1a-renta-pretend-p", 3)`). No se detecta una caída del número de contratos.
 
-### 6.2 Viviendas turísticas en València por sección [PENDIENTE]
+![Estudio de eventos de la Ley 11/2020 (C4).](../output/v9/d1/fig_d1b_eventos.png){#fig-d1b}
 
-Literatura de referencia: @LA05.
+### 6.2 Viviendas turísticas
 
-### 6.3 Réplica de Sanchis-Guarner con shift-share [PENDIENTE]
+En Cataluña, la renta tras la reapertura varía `{python} c9("V9-D2-renta-reap", 2)` % por desviación típica de plazas turísticas en 2019, con tendencias previas rechazadas. En la Comunitat Valenciana, el análisis por código postal es descriptivo (@LA05).
 
-Método previsto: @goldsmithpinkham2020 y @borusyak2022.
+### 6.3 Inmigración (shift-share)
 
-### 6.4 Bono Alquiler Joven: discontinuidad por edad [PENDIENTE]
+Con un instrumento de redes de origen (@goldsmithpinkham2020; @borusyak2022), la F efectiva es `{python} c9("V9-D4-ipc-replica-F")`: el instrumento es débil y solo se interpreta el IC de Anderson-Rubin. La réplica no es concluyente.
 
-Método previsto: @calonico2014.
+### 6.4 Tipos de interés con exposición
 
-### 6.5 Reconciliación del déficit [PENDIENTE]
+En 18 países de la zona euro, la asociación del precio con los shocks del BCE según la cuota de hipotecas a tipo variable es `{python} c9("V9-D5-precio-h4")` a cuatro trimestres (IC `{python} ic9("V9-D5-precio-h4")`).
+
+### 6.5 Bono Alquiler Joven y contabilidad de hogares
+
+La discontinuidad en los 35 años (@calonico2014) no se puede estimar: la ECV no publica el mes de nacimiento. En la contabilidad de hogares, el componente población supone `{python} c9("V9-D7-ES-2225-cuota-pob", 0)` % del aumento de hogares entre el 1 de enero de 2022 y el de 2025.
 
 ## 7. Discusión y límites
 

@@ -37,6 +37,7 @@ PAGINAS = [
     {"url": "fichas.html", "es": "Fichas territoriales", "va": "Fitxes territorials"},
     {"url": "quien.html", "es": "Quién soporta el coste", "va": "Qui en suporta el cost"},
     {"url": "verificador.html", "es": "Verificador", "va": "Verificador"},
+    {"url": "que_causa_que.html", "es": "Qué causa qué", "va": "Què causa què"},
     {"url": "monitor.html", "es": "Monitor", "va": "Monitor"},
     {"url": "metodologia.html", "es": "Metodología y datos", "va": "Metodologia i dades"},
     {"url": "historial.html", "es": "Historial", "va": "Historial"},
@@ -225,7 +226,8 @@ def fichas_verificador() -> list[dict]:
     for f in sorted((RAIZ / "output/v5/verificador/fichas").glob("*.json")):
         d = json.loads(f.read_text(encoding="utf-8"))
         out.append({**d, "version": "v5", "veredicto": d.get("veredicto", "")})
-    for rel, ver in (("publicacion/verificador/fichas_v7_1.json", "v7.1"), ("publicacion/verificador/fichas_v8.json", "v8")):
+    for rel, ver in (("publicacion/verificador/fichas_v7_1.json", "v7.1"), ("publicacion/verificador/fichas_v8.json", "v8"),
+                     ("publicacion/verificador/fichas_v9.json", "v9")):
         for d in json.loads((RAIZ / rel).read_text(encoding="utf-8")):
             out.append({**d, "version": ver})
     if (RAIZ / "output/v5/verificador/resumen.csv").exists():
@@ -250,6 +252,11 @@ def fichas_territoriales(env) -> list[dict]:
     alq_mun = alq_mun.pivot_table(index="territorio_codigo", columns="periodo", values="valor")
     nom = consulta("SELECT territorio_codigo, nivel, nombre FROM t").set_index(["nivel", "territorio_codigo"]).nombre.to_dict()
     lista = []
+    ck = pd.read_csv(RAIZ / "publicacion" / "cifras_clave.csv", dtype=str).set_index("id")
+
+    def fila_ck(etq, i, dec=1):   # V9: cifra de cifras_clave con su capa, fuente y fecha (trazable a su script)
+        r = ck.loc[i]
+        return fila(etq + f" [{i}]", float(r.valor), r.unidad, r.capa, r.fuentes, r.periodo, dec)
 
     def fila(etq, v, u, capa, fuente, fecha, dec=1):
         return {"etiqueta": etq, "valor": "—" if v is None or pd.isna(v) else f"{v:,.{dec}f}".replace(",", "X").replace(".", ",").replace("X", "."),
@@ -259,12 +266,20 @@ def fichas_territoriales(env) -> list[dict]:
         x = ipva[(ipva.nivel == nivel) & (ipva.territorio_codigo == cod) & (ipva.periodo == ult)]
         return x.iloc[0] if len(x) else None
 
+    filas_v9 = {   # V9 «Qué causa qué»: resultados C4 (ninguno alcanza C3); ver que_causa_que.html
+        ("ccaa", "09"): [fila_ck("V9 · Ley 11/2020: diferencia en la renta de contratos nuevos (ATT, no causal)", "V9-D1b-renta-att"),
+                         fila_ck("V9 · Zonas tensionadas: diferencia en la renta de contratos nuevos (ATT, no causal)", "V9-D1a-renta-att")],
+        ("ccaa", "10"): [fila_ck("V9 · Aumento de hogares 2022-2025", "V9-D7-CV-2225-dH", 0),
+                         fila_ck("V9 · Componente población del aumento de hogares 2022-2025", "V9-D7-CV-2225-cuota-pob", 0)],
+        ("municipio", "46250"): [fila_ck("V9 · Comunitat: caída del registro VUT y fianza media por CP (descriptivo)", "V9-D3-media", 2)],
+    }
     for c, n in [(c, n) for (nv, c), n in nom.items() if nv == "ccaa"]:
         x = ip(c, "ccaa")
         filas = [fila("IPVA, contratos nuevos (2015=100)", x.nuevo if x is not None else None, "índice", "C4", "INE IPVA", ult),
                  fila("IPVA, contratos existentes (2015=100)", x.existente if x is not None else None, "índice", "C4", "INE IPVA", ult),
                  fila("Brecha nuevos − existentes", x.brecha_nuevo_menos_existente if x is not None else None, "puntos", "C4", "INE IPVA", ult)]
         hijos = prov[prov.cod_provincia.isin([k for (nv, k), _ in nom.items() if nv == "provincia" and k in set(prov.cod_provincia)])]
+        filas += filas_v9.get(("ccaa", c), [])
         lista.append({"tipo": "Comunidad autónoma", "codigo": c, "nombre": n, "url": f"fichas/ccaa_{c}.html", "filas": filas,
                       "indicador_serie": f"ccaa__p_tasado", "hijos": []})
         del hijos
@@ -288,6 +303,7 @@ def fichas_territoriales(env) -> list[dict]:
                  fila("Variación del alquiler 2019-2024 (SERPAVI)",
                       100 * (alq_mun.at[c, "2024"] / alq_mun.at[c, "2019"] - 1) if c in alq_mun.index and "2019" in alq_mun and "2024" in alq_mun else None,
                       "%", "C4", "MIVAU SERPAVI (fuente única)", "2019-2024")]
+        filas += filas_v9.get(("municipio", c), [])
         if c in cvm_i.index:
             r = cvm_i.loc[c]
             filas += [fila("Población extranjera 2025", r.pct_extranj_2025, "%", "C4", "INE censo anual", "2025-01-01"),
@@ -309,6 +325,51 @@ def fichas_territoriales(env) -> list[dict]:
         (SITE / f["url"]).parent.mkdir(parents=True, exist_ok=True)
         (SITE / f["url"]).write_text(plantilla.render(**ctx("Ficha: " + f["nombre"], "fichas.html", "../"), ficha=f), encoding="utf-8")
     return lista
+
+
+# ------------------------------------------------------------------------------------------------ V9: qué causa qué
+V9_DISENOS = [  # diseño, pregunta, ids principales de cifras_clave, script, figura (output/v9)
+    ("D1b", "Topes de renta de la Ley catalana 11/2020 (2020T4-2022T1) y renta de los contratos nuevos",
+     ["V9-D1b-renta-att", "V9-D1b-contratos-att"], "src/v9/d1_zonas.py", "d1/fig_d1b_eventos.png"),
+    ("D1a", "Zonas tensionadas en Cataluña (desde 2024) y renta de los contratos nuevos",
+     ["V9-D1a-renta-att", "V9-D1a-contratos-att"], "src/v9/d1_zonas.py", "d1/fig_d1a_eventos.png"),
+    ("D1c", "Zonas tensionadas en Euskadi (2025) y renta de las fianzas nuevas", ["V9-D1c-renta-att"], "src/v9/d1_zonas.py", "d1/fig_d1c_eventos.png"),
+    ("D2", "Viviendas de uso turístico en 2019 × COVID y reapertura (Cataluña)", ["V9-D2-renta-covid", "V9-D2-renta-reap"],
+     "src/v9/d2_turisticos.py", "d2/fig_d2_eventos.png"),
+    ("D3", "Caída del registro de viviendas turísticas por código postal (Comunitat Valenciana), descriptivo", ["V9-D3-media", "V9-D3-cuota"],
+     "src/v9/d3_valencia.py", "d3/fig_d3.png"),
+    ("D4", "Inmigración predicha por redes de origen (provincias)", ["V9-D4-ipc-replica", "V9-D4-tasado-replica", "V9-D4-tasado-ampliacion"],
+     "src/v9/d4_inmigracion.py", "d4/fig_d4.png"),
+    ("D5", "Shocks del BCE × hipotecas a tipo variable (zona euro)", ["V9-D5-precio-h4", "V9-D5-precio-h8", "V9-D5-alq-h4"],
+     "src/v9/d5_tipos.py", "d5/fig_d5.png"),
+    ("D7", "Aumento de hogares: componente población y tasa de jefatura (contable)",
+     ["V9-D7-ES-2225-dH", "V9-D7-ES-2225-cuota-pob", "V9-D7-CV-2225-cuota-pob", "V9-D7-ES-1121-cuota-pob"], "src/v9/d7_hogares.py", "d7/fig_d7.png"),
+]
+
+
+def datos_que_causa_que() -> dict:
+    ck = pd.read_csv(RAIZ / "publicacion" / "cifras_clave.csv", dtype=str).set_index("id")
+    (SITE / "v9").mkdir(exist_ok=True)
+
+    def n(x, d=2):
+        return "—" if x is None or pd.isna(x) else f"{float(x):,.{d}f}".replace(",", "X").replace(".", ",").replace("X", ".").replace("-", "−")
+    filas = []
+    for dis, preg, ids, script, fig in V9_DISENOS:
+        src = RAIZ / "output" / "v9" / fig
+        destino = f"v9/{Path(fig).name}"
+        if src.exists():
+            shutil.copy(src, SITE / destino)
+        cifras = []
+        for i in ids:
+            r = ck.loc[i]
+            dec = 0 if r.unidad in ("hogares", "%") and "D7" in i else 2
+            rango = "" if pd.isna(r["min"]) else f" [{n(r['min'], dec)}; {n(r['max'], dec)}]"
+            cifras.append({"id": i, "indicador": r.indicador, "valor": n(r.valor, dec) + rango, "unidad": r.unidad, "capa": r.capa,
+                           "periodo": r.periodo, "fuentes": r.fuentes})
+        filas.append({"diseno": dis, "pregunta": preg, "cifras": cifras, "script": script, "figura": destino if src.exists() else None})
+    cotas = (RAIZ / "publicacion" / "cotas_v9.md")
+    return {"disenos": filas, "n_c3": int(float(ck.loc["V9-NC3", "valor"])),
+            "cotas": md(cotas.read_text(encoding="utf-8").split("\n", 2)[-1]) if cotas.exists() else ""}
 
 
 # ------------------------------------------------------------------------------------------------ plantillas de páginas
@@ -455,6 +516,19 @@ document.getElementById("buscar").addEventListener("input", e => { const q = e.t
 document.getElementById("buscarV").addEventListener("input", e => { const q = e.target.value.toLowerCase();
   document.querySelectorAll(".ficha-v").forEach(a => { a.hidden = q && !a.dataset.texto.includes(q); }); });
 </script>{% endblock %}""",
+"que_causa_que.html": """{% extends "base.html" %}{% block contenido %}
+<h1>Qué causa qué <span class="meta" lang="ca-valencia">· Què causa què</span></h1>
+<p class="lema">Diseños de identificación de V9, con reglas fijadas antes de estimar (<a href="https://github.com/Phraselium/vivienda-espana-evidencia/blob/main/docs/v9/hipotesis.md">pre-registro</a> y addendum). Resultados que alcanzan C3 o C3s: <strong>{{ n_c3 }}</strong>. Sin C3/C3s no hay lectura causal: lo que sigue son asociaciones (C4) o descripciones, con su intervalo. Se evalúan afirmaciones e instrumentos, nunca a quién los propone.</p>
+<p class="aviso">Cómo leerlo: «ATT» es la diferencia media entre los territorios donde se aplicó la medida y los comparables. Un ATT con intervalo que excluye el 0 <em>no</em> demuestra un efecto si el diseño no supera sus pruebas (tendencias previas, placebos, robustez a desviaciones de tendencia). Las afirmaciones concretas están en el <a href="verificador.html">verificador</a>.</p>
+{% for d in disenos %}<section class="tarjeta"><h2>{{ d.diseno }} · {{ d.pregunta }}</h2>
+<table><thead><tr><th>Indicador</th><th>Valor [IC 95 %]</th><th>Unidad</th><th>Capa</th><th>Periodo</th><th>Fuente</th></tr></thead><tbody>
+{% for c in d.cifras %}<tr><td>{{ c.indicador }} <span class="meta">{{ c.id }}</span></td><td>{{ c.valor }}</td><td>{{ c.unidad }}</td><td><span class="capa {{ c.capa }}">{{ c.capa }}</span></td><td>{{ c.periodo }}</td><td>{{ c.fuentes }}</td></tr>{% endfor %}
+</tbody></table>
+{% if d.figura %}<figure><img src="{{ d.figura }}" alt="Figura de {{ d.diseno }}" loading="lazy" style="max-width:100%"><figcaption class="meta">Script: <code>{{ d.script }}</code>; cifras de <code>publicacion/cifras_clave.csv</code>.</figcaption></figure>{% else %}<p class="meta">Script: <code>{{ d.script }}</code></p>{% endif %}
+</section>{% endfor %}
+<section class="tarjeta"><h2>Cotas de contribución a la subida (C2)</h2>{{ cotas|safe }}</section>
+<p class="meta">D6 (Bono Alquiler Joven) no se estima: no hay edad exacta ni receptores identificados en los datos públicos.</p>
+{% endblock %}""",
 "monitor.html": """{% extends "base.html" %}{% block contenido %}
 <h1>Monitor <span class="meta" lang="ca-valencia">· Monitor</span></h1>
 <p class="lema">Últimos datos publicados y su variación. Sin interpretación causal. Los datos desde 2026T3 son posteriores al pre-registro: se muestran como dato, sin compararlos con ninguna predicción hasta que se ejecuten las evaluaciones previstas (evaluate_v7 y evaluate_v8).</p>
@@ -534,6 +608,7 @@ def construir() -> dict:
                                                  "hacinamiento": "Hacinamiento (definición de Eurostat)",
                                                  "tenencia_3": "Viven en alquiler de mercado", "tenencia_2": "Propiedad con hipoteca"}}
     paginas["verificador.html"] = {"fichas": fichas_verificador()}
+    paginas["que_causa_que.html"] = datos_que_causa_que()
     mon = RAIZ / "output" / "v10" / "monitor" / "monitor.json"
     paginas["monitor.html"] = {"monitor": json.loads(mon.read_text(encoding="utf-8")) if mon.exists() else None}
     # descargas

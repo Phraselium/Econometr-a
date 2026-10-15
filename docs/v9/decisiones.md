@@ -60,3 +60,32 @@ Rama local `r9/main`, subida a la rama remota designada (`claude/housing-price-s
   1. **D3, València ciudad (26 CP).** Si más de la mitad de los pares de CP están dentro del corte, el error de Conley degenera (X'u = 0). En ese caso se informa HC1 y queda indicado en la especificación.
   2. **D4, AKM.** No está definido con un solo shock (variantes de un solo país): se informa «—». El IC de Anderson-Rubin lleva la bandera `AR_acotado`.
   3. **D1 y D2, Honest DiD.** Versión simplificada de magnitudes relativas, validada por Monte Carlo y conservadora frente a Rambachan y Roth (2023). La regla del addendum se aplica tal cual.
+
+## E6 — Revisión de F3 (REHACER 1 de 2) y correcciones (2026-10-15)
+- **Tope del revisor.** El revisor de F3 (docs/v9/revision_f3.md) usó unos 114.000 tokens, por encima del tope de 100.000. Conforme a la regla del prompt, **no se vuelve a delegar ninguna revisión**: la re-revisión de F3 y la revisión final las hace el orquestador y lo declara (docs/v9/revision_f3.md, sección «Re-revisión propia»; docs/v9/revision_final.md).
+- **Hallazgo 1 (alta): Honest DiD.**
+  - **Cambio.** Se sustituye el IC por sustitución por el de Rambachan y Roth (2023) para magnitudes relativas: Δ^RM se descompone en piezas poliédricas (una por diferencia previa y signo) y cada pieza usa el contraste «least favorable» de Andrews, Roth y Pakes. El IC es la unión sobre piezas.
+  - **Validez.** El contraste LF es válido y algo más conservador que el híbrido del paquete HonestDiD.
+  - **Validación por Monte Carlo:** output/v9/validacion/honest_rr_mc.csv (src/v9/validar_honest_rr.py) y tests/v9/test_herramientas.py.
+  - **Regla de capa.** La regla pre-registrada (IC con M̄ = 1 que excluya el 0) se aplica tal cual con el IC de RR.
+  - **Complemento.** La versión simplificada se publica solo como complemento. Se corrige la frase de E5.3, que la calificaba de conservadora sin haberlo comprobado.
+- **Hallazgo 2.** En D4, con instrumento débil, la familia BH usa el p de Anderson-Rubin (con un instrumento, el de la forma reducida). El de Wald se conserva como `p_wald`.
+- **Hallazgo 3.** La rejilla de AR pasa a ±5. Los conjuntos no acotados se marcan como tales.
+- **Hallazgo 4.** La capa de cada exploratoria enumera las pruebas que no supera:
+  - pretendencias;
+  - placebo de fecha;
+  - permutación;
+  - tendencia por dosis;
+  - pretendencias de Rotemberg;
+  - placebo de D3.
+- **Hallazgo 5: D7.** Hogares y población se miden en las mismas fechas (stocks a 1-1-2022 y 1-1-2025; ECP 2025T1 en lugar de 2026T1). El umbral de C1 (±2 %) queda documentado en src/v9/d7_hogares.py.
+  - Con las fechas alineadas, el componente población pasa a explicar la mayor parte del aumento en ambos territorios.
+  - Ninguna cifra publicada cambia: las de V9 aún no se habían difundido fuera de la rama.
+- **Bajos:**
+  - p de permutación con +1 en el numerador y el denominador;
+  - registro de D4 completo (también el efecto total);
+  - «diferencia o asociación» en lugar de «efecto» en la tabla.
+- **Especificaciones pre-registradas que no se estiman, y por qué:**
+  1. IPVA municipal (D1a y D4 municipal): no tiene código INE.
+  2. D4 2022-2025 con los 22 grupos del censo anual: es una robustez que no cambia ninguna capa. Queda aplazada a docs/v9/ideas_futuras.md.
+  3. Barcelona por barrios (D2): solo descriptiva, porque no hay resultado por barrio.

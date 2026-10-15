@@ -29,7 +29,7 @@ from paneles import construir  # noqa: E402
 
 OUT = P.RAIZ / "output" / "v9" / "d4"
 REG = Registry(OUT / "registry.csv")
-REJILLA = np.linspace(-0.3, 0.3, 1201)
+REJILLA = np.linspace(-5.0, 5.0, 4001)   # conjuntos de AR no acotados se marcan (AR_acotado = False)
 
 
 def fila(tab, hip, resultado, espec, r, akm_rf, akm_iv, ar, conf, n, extra=""):
@@ -80,6 +80,8 @@ def main() -> int:
             rt = H.iv_just(yy, dd.x_tot.values, dd.Z.values, W, w=wts)
             fila(tab, hip + " (efecto total)", nombre_y, etiqueta + " · endógena = Δ población total", rt,
                  H.akm_se(rt, sh, gg, W, coef="rf"), H.akm_se(rt, sh, gg, W, coef="iv"), H.anderson_rubin(rt, REJILLA), False, int(m.sum()))
+            REG.log("v9-D4", f"{hip} (efecto total)|{etiqueta}|{nombre_y}", "Δlog P ~ Δpob/pop | Z (Card LOO) + lpop0 + suma_cuotas",
+                    t0, t1, int(m.sum()), np.nan, np.nan, np.nan, coef_interes=rt["beta"], p_interes=rt["p"], notas=etiqueta)
         return s
 
     principales = {"Δ log IPC de alquiler": ipc, "Δ log valor tasado": vt}

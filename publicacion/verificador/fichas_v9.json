@@ -1,0 +1,193 @@
+[
+ {
+  "id": "V9-V1",
+  "tema": "Pisos turísticos",
+  "enunciado": "Los pisos turísticos han encarecido el alquiler.",
+  "magnitud": "Cataluña (D2, exploratorio): por cada desviación típica más de plazas turísticas por habitante en 2019, la renta de los contratos nuevos varió 0,22 % en 2020-2021 (IC [−0,55; 0,99]) y 1,05 % en 2022-2025 (IC [0,39; 1,70]), respecto a 2019. Las pretendencias se rechazan (p < 0,001): la asociación de la reapertura no se puede separar de tendencias previas. Comunitat Valenciana (D3, descriptivo): coeficiente de −0,20 % en la fianza media 2024→2025 por cada variación de +1 VUT registrada por 100 viviendas (IC [−0,41; 0,02]); como el registro cayó, una caída mayor se asocia con una fianza media algo mayor, y el placebo 2021→2023 muestra una asociación del mismo signo, de modo que no se separa de diferencias previas entre códigos postales.",
+  "intervalo": "IC 95 % con bootstrap salvaje por municipio (D2) y errores de Conley a 10 km (D3).",
+  "literatura": "Garcia-López et al. (2020, LA01, VERIFICADA, Q1): +1,9 % en el barrio medio de Barcelona; unidades no comparables. Referencias: docs/v9_prep/literatura.csv (estado VERIFICADA/NO VERIFICADA y cuartil en cada fila).",
+  "limites": "Sin diseño que supere sus pruebas; dosis municipal, no por barrio; D3 compara un resultado anterior a la mayor parte de la caída del registro.",
+  "evidencia": [
+   "output/v9/d2/tabla_d2.csv",
+   "output/v9/d3/tabla_d3.csv",
+   "output/v9/f3/tabla_revista.md"
+  ],
+  "ids_cifras": [
+   "V9-D2-renta-covid",
+   "V9-D2-renta-reap",
+   "V9-D2-renta-pretend-p",
+   "V9-D3-media"
+  ],
+  "capa": "C4",
+  "cota": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Pre-registro V9 (docs/v9/hipotesis.md y addendum A1): C3 exige superar todas las pruebas; ningún resultado de V9 las supera.",
+  "version": "V9"
+ },
+ {
+  "id": "V9-V2",
+  "tema": "Topes de renta (Ley catalana 11/2020)",
+  "enunciado": "Los topes de renta de la Ley catalana 11/2020 redujeron la renta de los contratos nuevos.",
+  "magnitud": "D1b (confirmatoria): ATT −5,9 % (IC [−7,3; −4,4]), p de Holm < 0,001; pretendencias p 0,282, placebo de fecha p 0,408. No supera la prueba de Honest DiD con M̄ = 1 (M̄ de ruptura 0,8), exigida en el pre-registro: queda en C4. Contratos nuevos: −1,3 % (IC [−7,0; 4,4]), sin diferencia detectable.",
+  "intervalo": "IC 95 % con bootstrap multiplicador por municipio; p de Holm en la familia confirmatoria {H1a-renta, H1b-renta}.",
+  "literatura": "Jofre-Monseny, Martínez-Mazza y Segú (2023, LB01, VERIFICADA, Q1): −4 % a −6 % en la renta y sin caída de la oferta, con los mismos registros. Referencias: docs/v9_prep/literatura.csv (estado VERIFICADA/NO VERIFICADA y cuartil en cada fila).",
+  "limites": "La regla pre-registrada no se relaja tras ver el resultado; la magnitud coincide con la literatura pero la evidencia no alcanza C3.",
+  "evidencia": [
+   "output/v9/d1/tabla_d1.csv",
+   "output/v9/d1/pruebas.csv",
+   "docs/v9/hipotesis_addendum_a1.md"
+  ],
+  "ids_cifras": [
+   "V9-D1b-renta-att",
+   "V9-D1b-renta-pholm",
+   "V9-D1b-renta-pretend-p",
+   "V9-D1b-renta-placebo-p",
+   "V9-D1b-renta-ruptura",
+   "V9-D1b-contratos-att"
+  ],
+  "capa": "C4",
+  "cota": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Pre-registro V9 (docs/v9/hipotesis.md y addendum A1): C3 exige superar todas las pruebas; ningún resultado de V9 las supera.",
+  "version": "V9"
+ },
+ {
+  "id": "V9-V3",
+  "tema": "Zonas tensionadas (Ley 12/2023)",
+  "enunciado": "La declaración de zonas tensionadas ha reducido los alquileres de los contratos nuevos en Cataluña.",
+  "magnitud": "D1a (confirmatoria): ATT −5,8 % (IC [−8,5; −3,2]), p de Holm < 0,001. No supera las pruebas: pretendencias p < 0,001, placebo de fecha p 0,007 y Honest DiD con M̄ = 1 incluye el 0: queda en C4. Euskadi (D1c, exploratorio, pocos trimestres): −2,5 % (IC [−3,5; −1,4]).",
+  "intervalo": "IC 95 % con bootstrap multiplicador por municipio; 20 municipios de control con datos completos.",
+  "literatura": "Fedea (Pinto 2026, LB03, sin DOI, no revisado por pares): comparación descriptiva Cataluña frente a España. Referencias: docs/v9_prep/literatura.csv (estado VERIFICADA/NO VERIFICADA y cuartil en cada fila).",
+  "limites": "Los municipios declarados ya tenían una evolución distinta antes de 2024; con pocos controles, la comparación es frágil.",
+  "evidencia": [
+   "output/v9/d1/tabla_d1.csv",
+   "output/v9/d1/pruebas.csv",
+   "output/v9/d1/fig_d1a_eventos.png"
+  ],
+  "ids_cifras": [
+   "V9-D1a-renta-att",
+   "V9-D1a-renta-pholm",
+   "V9-D1a-renta-pretend-p",
+   "V9-D1a-renta-placebo-p",
+   "V9-D1c-renta-att"
+  ],
+  "capa": "C4",
+  "cota": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Pre-registro V9 (docs/v9/hipotesis.md y addendum A1): C3 exige superar todas las pruebas; ningún resultado de V9 las supera.",
+  "version": "V9"
+ },
+ {
+  "id": "V9-V4",
+  "tema": "Regulación y oferta de alquiler",
+  "enunciado": "La regulación de rentas ha reducido el número de contratos de alquiler.",
+  "magnitud": "Zonas tensionadas (D1a, exploratorio): −6,2 % (IC [−13,2; 0,7]); Ley 11/2020 (D1b, exploratorio): −1,3 % (IC [−7,0; 4,4]). Ninguna diferencia detectable tras el ajuste de Benjamini-Hochberg.",
+  "intervalo": "IC 95 %; p ajustados en output/v9/f3/tabla_capas.csv.",
+  "literatura": "LB01 (VERIFICADA, Q1): sin caída de la oferta con la Ley 11/2020. Referencias: docs/v9_prep/literatura.csv (estado VERIFICADA/NO VERIFICADA y cuartil en cada fila).",
+  "limites": "El número de fianzas mide contratos registrados, no la oferta total (no observa el paso a temporada ni la economía sumergida).",
+  "evidencia": [
+   "output/v9/d1/tabla_d1.csv"
+  ],
+  "ids_cifras": [
+   "V9-D1a-contratos-att",
+   "V9-D1b-contratos-att"
+  ],
+  "capa": "C4",
+  "cota": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Pre-registro V9 (docs/v9/hipotesis.md y addendum A1): C3 exige superar todas las pruebas; ningún resultado de V9 las supera.",
+  "version": "V9"
+ },
+ {
+  "id": "V9-V5",
+  "tema": "Inmigración",
+  "enunciado": "La llegada de inmigrantes explica la subida de los alquileres y de los precios.",
+  "magnitud": "D4 (réplica 2003-2012, exploratorio): 0,72 % del IPC de alquiler por punto de población extranjera (IC [−0,81; 2,26]); valor tasado −0,29 % (IC [−2,72; 2,15]). Instrumento débil: F efectiva 4,6 (umbral 23,1). Ampliación 2015-2022, valor tasado: 12,88 % (IC [−1,45; 27,21]), también con instrumento débil.",
+  "intervalo": "IC 95 % de 2SLS; IC de Anderson-Rubin y errores AKM en output/v9/d4/tabla_d4.csv.",
+  "literatura": "Saiz (2007, LA09, VERIFICADA, Q1); González y Ortega (2013, LA08, VERIFICADA, Q1); Sanchis-Guarner (2023, LA07, VERIFICADA, Q1). Referencias: docs/v9_prep/literatura.csv (estado VERIFICADA/NO VERIFICADA y cuartil en cada fila).",
+  "limites": "Con 50 provincias el instrumento de redes de origen es débil; la réplica usa 2003 (primer año con país) y el IPC de alquiler (parque de contratos).",
+  "evidencia": [
+   "output/v9/d4/tabla_d4.csv",
+   "output/v9/d4/diagnosticos.csv",
+   "output/v9/d4/rotemberg.csv"
+  ],
+  "ids_cifras": [
+   "V9-D4-ipc-replica",
+   "V9-D4-tasado-replica",
+   "V9-D4-ipc-replica-F",
+   "V9-D4-tasado-ampliacion"
+  ],
+  "capa": "C4",
+  "cota": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Pre-registro V9 (docs/v9/hipotesis.md y addendum A1): C3 exige superar todas las pruebas; ningún resultado de V9 las supera.",
+  "version": "V9"
+ },
+ {
+  "id": "V9-V6",
+  "tema": "Tipos de interés",
+  "enunciado": "Las subidas de tipos del BCE abaratan más la vivienda donde las hipotecas son a tipo variable.",
+  "magnitud": "D5 (exploratorio, 18 países): precio a 4 trimestres −5,3 (IC [−15,6; 5,1]) y a 8 −4,4 (IC [−17,5; 8,8]) puntos log ×100 por unidad de shock y desviación típica de exposición; alquiler (IPCA) a 4 trimestres −11,7 (IC [−17,4; −6,0]).",
+  "intervalo": "IC 95 % Driscoll-Kraay.",
+  "literatura": "Koeniger, Lennartz y Ramelet (2022, LA25, VERIFICADA, Q1), cualitativo. Referencias: docs/v9_prep/literatura.csv (estado VERIFICADA/NO VERIFICADA y cuartil en cada fila).",
+  "limites": "Sin potencia para un contraste confirmatorio; la asociación del alquiler no se mantiene a 8 trimestres en la principal.",
+  "evidencia": [
+   "output/v9/d5/tabla_d5.csv",
+   "output/v9/d5/fig_d5.png"
+  ],
+  "ids_cifras": [
+   "V9-D5-precio-h4",
+   "V9-D5-precio-h8",
+   "V9-D5-alq-h4"
+  ],
+  "capa": "C4",
+  "cota": "—",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Pre-registro V9 (docs/v9/hipotesis.md y addendum A1): C3 exige superar todas las pruebas; ningún resultado de V9 las supera.",
+  "version": "V9"
+ },
+ {
+  "id": "V9-V7",
+  "tema": "Ayudas a jóvenes",
+  "enunciado": "El Bono Alquiler Joven ha subido los alquileres de los jóvenes.",
+  "magnitud": "No evaluable con datos públicos: la ECV no publica el mes de nacimiento (no hay edad exacta en los 35 años) y ninguna fuente identifica a los receptores (D6).",
+  "intervalo": "—",
+  "literatura": "Laguna documentada (LB23 en docs/v9_prep/literatura.csv). Referencias: docs/v9_prep/literatura.csv (estado VERIFICADA/NO VERIFICADA y cuartil en cada fila).",
+  "limites": "Haría falta el número de beneficiarios por edad en meses, CCAA y año (solicitud de transparencia (d)).",
+  "evidencia": [
+   "docs/v9/hipotesis.md",
+   "docs/v9/solicitudes_transparencia.md"
+  ],
+  "ids_cifras": [],
+  "capa": "C4",
+  "cota": "—",
+  "veredicto": "NO EVALUABLE",
+  "regla": "Pre-registro V9 (docs/v9/hipotesis.md y addendum A1): C3 exige superar todas las pruebas; ningún resultado de V9 las supera.",
+  "version": "V9"
+ },
+ {
+  "id": "V9-V8",
+  "tema": "Hogares y población",
+  "enunciado": "El aumento de hogares se debe sobre todo al crecimiento de la población.",
+  "magnitud": "D7 (contable): en 2022-2025 el componente población supone 69 % del aumento de hogares en España (939956 hogares) y 84 % en la Comunitat Valenciana. En 2011-2021 pesa más el componente tasa de jefatura (componente población 14 % en España). Censo 2021 y ECP coinciden en 1,5 % [C1].",
+  "intervalo": "Descomposición exacta (identidad); sin intervalo.",
+  "literatura": "Banco de España (LA18) y OCDE (LA21, NO VERIFICADA) para el déficit: output/v9/d7/reconciliacion_deficit.csv. Referencias: docs/v9_prep/literatura.csv (estado VERIFICADA/NO VERIFICADA y cuartil en cada fila).",
+  "limites": "Es una identidad contable, no una atribución causal; población y hogares de 2022-2025 vienen de fuentes con un año de desfase (marcado).",
+  "evidencia": [
+   "output/v9/d7/descomposicion_provincia.csv",
+   "output/v9/d7/reconciliacion_deficit.csv"
+  ],
+  "ids_cifras": [
+   "V9-D7-ES-2225-cuota-pob",
+   "V9-D7-ES-2225-dH",
+   "V9-D7-CV-2225-cuota-pob",
+   "V9-D7-ES-1121-cuota-pob",
+   "V9-D7-c1-dif"
+  ],
+  "capa": "C4",
+  "cota": "—",
+  "veredicto": "DESCRIPTIVA (CONTABLE)",
+  "regla": "Pre-registro V9 (docs/v9/hipotesis.md y addendum A1): C3 exige superar todas las pruebas; ningún resultado de V9 las supera.",
+  "version": "V9"
+ }
+]

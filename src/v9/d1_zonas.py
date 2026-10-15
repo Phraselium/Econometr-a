@@ -52,14 +52,17 @@ def permutacion(Yv: np.ndarray, g: np.ndarray, att_real: float, seed: int) -> fl
     ats = []
     for _ in range(NPERM):
         ats.append(H.cs(Yv, rng.permutation(g), B=2)["att"])
-    return float(np.mean(np.abs(ats) >= abs(att_real)))
+    return float((np.sum(np.abs(ats) >= abs(att_real)) + 1) / (len(ats) + 1))
 
 
 def pruebas(Yv, g, r, nombre, seed, desplaz=4, e_lo=-8):
     w_pre, p_pre, gl = H.pretendencias(r, e_lo, -2)
-    ic1 = H.honest_rm(r, 1.0)
-    ic05 = H.honest_rm(r, 0.5)
-    ruptura = H.honest_ruptura(r)
+    # Honest DiD pre-registrado: IC de Rambachan y Roth (magnitudes relativas; contraste LF de ARP, unión de piezas)
+    # (revisión F3, hallazgo 1). La versión simplificada (sustitución) se conserva como complemento.
+    ic1 = H.honest_rr(r, 1.0, seed=seed)
+    ic05 = H.honest_rr(r, 0.5, seed=seed)
+    ruptura = H.honest_rr_ruptura(r, seed=seed)
+    s1 = H.honest_rm(r, 1.0)
     # placebo de fecha: falso tratamiento `desplaz` periodos antes con la muestra previa al primer tratamiento
     g_min = int(np.nanmin(g[np.isfinite(g)]))
     Ypre = Yv[:, :g_min]
@@ -68,7 +71,8 @@ def pruebas(Yv, g, r, nombre, seed, desplaz=4, e_lo=-8):
     p_perm = permutacion(Yv, g, r["att"], seed)
     return {"prueba_diseno": nombre, "pretend_wald": w_pre, "pretend_p": p_pre, "pretend_gl": gl,
             "honest_M1_lo": ic1[0], "honest_M1_hi": ic1[1], "honest_M05_lo": ic05[0], "honest_M05_hi": ic05[1],
-            "honest_Mbar_ruptura": ruptura, "placebo_fecha_att": rf["att"], "placebo_fecha_p": rf.get("p_boot"),
+            "honest_Mbar_ruptura": ruptura, "honest_simplificado_M1_lo": s1[0], "honest_simplificado_M1_hi": s1[1],
+            "honest_simplificado_ruptura": H.honest_ruptura(r), "placebo_fecha_att": rf["att"], "placebo_fecha_p": rf.get("p_boot"),
             "permutacion_etiquetas_p": p_perm}
 
 

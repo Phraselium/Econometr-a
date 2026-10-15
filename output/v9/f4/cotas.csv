@@ -1,0 +1,6 @@
+factor,disenos,estado,cota_nacional_min,cota_nacional_max,cota_cv_min,cota_cv_max,capa_cota,advertencia
+Zonas tensionadas y topes de renta,"D1a, D1b, D1c",no identificado (mejor capa alcanzada: C4),,,,,—,equilibrio parcial
+Pisos turísticos,"D2, D3",no identificado (mejor capa alcanzada: C4),,,,,—,equilibrio parcial
+Inmigración,D4,no identificado (mejor capa alcanzada: C4),,,,,—,equilibrio parcial
+Tipos de interés (exposición a tipo variable),D5,no identificado (mejor capa alcanzada: C4),,,,,—,equilibrio parcial
+Ayudas a jóvenes (Bono Alquiler Joven),D6,no estimado (sin edad exacta ni receptores identificados),,,,,—,equilibrio parcial

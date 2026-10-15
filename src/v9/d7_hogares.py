@@ -4,12 +4,13 @@ Pre-registro: docs/v9/hipotesis.md (D7) y addendum A1.8 («componente población
 1. ΔH = h̄·ΔP (componente población) + P̄·Δh (componente tasa de jefatura), h = H/P, medias del periodo:
    - 2011→2021: hogares = viviendas principales de los censos 2011 (3457) y 2021 (municipios sumados a provincia);
      población del padrón a 1-1-2012 y 1-1-2022 (lo más próximo a las fechas censales de noviembre);
-   - 2022→2026 (años 2022-2025): hogares de la ECP a 1-1-2022 (2022T1) y 1-1-2026 (2026T1); población del censo
-     anual a 1-1-2022 y 1-1-2025 extrapolada no: se usa la ECP solo para hogares y el censo anual 2022 y 2025 (marcado).
+   - 1-1-2022 → 1-1-2025: hogares de la ECP (2022T1 y 2025T1) y población del censo anual (ediciones 2022 y 2025),
+     mismas fechas de referencia (revisión F3, hallazgo 5).
 2. ΔP por componentes: saldo exterior y saldo interprovincial (EM 2012-2020; EMCR 2021-2024) y residuo (crecimiento
    natural, ajustes de padrón y diferencias de calendario).
 3. Reconciliación del déficit 2021-2025: proyecto (cifras_clave L3-DEF-2125, T1-H10), BdE (LA18) y OCDE (LA21).
-C1 solo para recuentos con dos fuentes coincidentes (hogares censo 2021 frente a ECP); el resto C4.
+C1 solo para recuentos con dos fuentes coincidentes: hogares del censo 2021 (viviendas principales, 1-11-2021) frente a la ECP
+a 1-1-2022, con umbral de ±2 % (fijado aquí, antes de ver el contraste por provincia; la ECP se calibra con el censo); el resto C4.
 Salidas: output/v9/d7/{descomposicion_provincia.csv, componentes_poblacion.csv, reconciliacion_deficit.csv,
 contraste_c1.csv, resultado.json, fig_d7.png}.
 """
@@ -85,8 +86,8 @@ def main() -> int:
     provs = sorted(set(H11.index) & set(H21.index) & set(ptot.index))
     a = descomponer(H11[provs], H21[provs], ptot.loc[provs, 2012], ptot.loc[provs, 2022]).assign(periodo="2011-2021 (censos)")
     provs2 = sorted(set(ecp.index) & set(cap.index))
-    b = descomponer(ecp.loc[provs2, "2022T1"], ecp.loc[provs2, "2026T1"], cap.loc[provs2, "2022"], cap.loc[provs2, "2025"]).assign(
-        periodo="2022-2025 (ECP; población del censo anual 2022 y 2025, desfase de un año marcado)")
+    b = descomponer(ecp.loc[provs2, "2022T1"], ecp.loc[provs2, "2025T1"], cap.loc[provs2, "2022"], cap.loc[provs2, "2025"]).assign(
+        periodo="2022-2025 (stocks a 1-1-2022 y 1-1-2025, es decir, crecimiento de 2022, 2023 y 2024: hogares ECP; población del censo anual)")
     D = pd.concat([a, b]).rename_axis("cod_provincia").reset_index()
     D["capa"] = "C4"
     tot = D.groupby("periodo")[["dH", "comp_poblacion", "comp_jefatura", "H0", "H1", "P0", "P1"]].sum().assign(cod_provincia="ES")
@@ -146,8 +147,8 @@ def main() -> int:
          "hogares": "no detallado", "bajas": "no detallado", "capa": "C4", "estado_referencia": "VERIFICADA (informe institucional; cuartil no aplica)"},
         {"fuente": "OCDE, Economic Survey of Spain 2025 (LA21)", "id": "LA21", "valor": 600000.0, "rango": "≈", "periodo": "2022-2025",
          "hogares": "no detallado", "bajas": "no detallado", "capa": "C4", "estado_referencia": "NO VERIFICADA (capítulo no leído en el original)"},
-        {"fuente": "V9 D7: ΔH ECP 2022T1→2026T1 (contexto; no es déficit)", "id": "V9-D7-dH", "valor": float(tot.loc[tot.index.str.startswith("2022"), "dH"].iloc[0]),
-         "rango": "—", "periodo": "1-1-2022 a 1-1-2026", "hogares": "ECP", "bajas": "—", "capa": "C4", "estado_referencia": "cálculo propio"},
+        {"fuente": "V9 D7: ΔH ECP 2022T1→2025T1 (contexto; no es déficit)", "id": "V9-D7-dH", "valor": float(tot.loc[tot.index.str.startswith("2022"), "dH"].iloc[0]),
+         "rango": "—", "periodo": "1-1-2022 a 1-1-2025", "hogares": "ECP", "bajas": "—", "capa": "C4", "estado_referencia": "cálculo propio"},
     ]
     R = pd.DataFrame(rec)
     R.to_csv(OUT / "reconciliacion_deficit.csv", index=False, float_format="%.0f")

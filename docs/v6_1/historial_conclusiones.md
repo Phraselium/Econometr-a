@@ -1,6 +1,6 @@
 # Historial de conclusiones v1-v6 y estado en v6.1 (K2)
 
-Nota V8 (2026-10-13): este historial incluye V8; las filas de V8 están en la adenda «Adenda V8» del final, con la columna «Estado en V8 y porqué». Las filas anteriores no se modifican.
+Nota V8 (2026-10-13; V9 2026-10-15): este historial incluye V8 y V9 (adenda «Adenda V9» al final); las filas de V8 están en la adenda «Adenda V8» del final, con la columna «Estado en V8 y porqué». Las filas anteriores no se modifican.
 
 Fecha: 2026-10-11. Una fila por conclusión relevante. Capa: las versiones v1-v2 usaban «asociación/exploratorio» (equivalente a C4); desde v3 rige C1-C4. «Estado» compara con la reconciliación de K2 (`output/v6_1/K2/inmigracion.md`, `otros_cambios.md`). Magnitudes tal como constan en las fuentes; sin lectura causal. Las cifras de K2 se estimaron sobre las provincias de entrenamiento de v6 (no se reproduce la muestra de 49 provincias de v2).
 
@@ -88,3 +88,22 @@ Una fila por factor. Las cifras salen de `output/v5/cifras_clave.csv` (ids `V8-`
 | Predicción fuera de muestra | Crecimiento trimestral real | RMSE compra: AR(4) 1,2 pp, ECM v1 2,6 pp, BVAR 1,4 pp | Diebold-Mariano con Holm | — | C4 | **Se mantiene** (K1): ningún modelo supera al AR(4) en la misma muestra | output/v8/F6/hechos.json; output/v8/F5/resumen.md |
 
 <!-- V8:fin -->
+
+<!-- V9:inicio -->
+
+## Adenda V9 (qué causa qué, 2026-10-15)
+
+Una fila por factor. Las cifras salen de `output/v5/cifras_clave.csv` (ids `V9-`). Ningún resultado de V9 alcanza C3/C3s; todo es asociación o descripción (C4). «Estado» compara con v8.1.
+
+| Factor | Medida de resultado | Magnitud | Método | Signo | Capa | Estado en V9 frente a v8.1 y porqué | Fuente |
+|---|---|---|---|---|---|---|---|
+| Topes de renta (Ley catalana 11/2020) | Renta de contratos nuevos (Incasòl) | −5,9 % (−7,3 a −4,4) [V9-D1b-renta-att] | DiD (Callaway-Sant'Anna), confirmatoria | − | C4 | **Matiza** (v5-v8: «topes, signo no estable», C4): la diferencia es negativa, de magnitud igual a la literatura (LB01), y supera pretendencias (p 0,282) y placebos, pero no la robustez a desviaciones de tendencia pre-registrada (M̄ de ruptura 0,5); no pasa a C3 | output/v9/F5/hechos.json; output/v9/f3/tabla_capas.csv |
+| Zonas tensionadas (Ley 12/2023, Cataluña) | Renta de contratos nuevos | −5,8 % (−8,5 a −3,2) [V9-D1a-renta-att] | DiD escalonado, confirmatoria | − | C4 | **Nuevo**: sin lectura causal; pretendencias (p < 0,001) y placebo de fecha (p 0,007) rechazados | output/v9/F5/hechos.json; output/v9/f3/tabla_capas.csv |
+| Regulación y número de contratos | Contratos nuevos (fianzas) | Ley 11/2020 −1,3 %; zonas tensionadas −6,2 % | DiD, exploratoria | 0 | C4 | **Nuevo**: no se detecta caída (BH ≥ 0,10); coincide con LB01 | output/v9/F5/hechos.json; output/v9/f3/tabla_capas.csv |
+| Turismo y viviendas turísticas | Renta de contratos nuevos (Cataluña); fianzas por CP (C. Valenciana) | reapertura 1,05 % por DE de dosis; D3 −0,20 % por VUT/100 viv. | Dosis-respuesta; diferencias largas | + / 0 | C4 | **Se mantiene** (V8: no concluyente): asociación con pretendencias rechazadas (p < 0,001) y D3 descriptivo con placebo del mismo signo | output/v9/F5/hechos.json; output/v9/f3/tabla_capas.csv |
+| Demografía e inmigración | IPC de alquiler; valor tasado (provincias) | 0,72 % por punto (réplica 2003-2012); F efectiva 4,6 | 2SLS shift-share (Card), AKM, AR | no concluyente | C4 | **Se mantiene** (V8: instrumento migratorio sin primera etapa): el instrumento sigue siendo débil a escala provincial | output/v9/F5/hechos.json; output/v9/f3/tabla_capas.csv |
+| Tipos de interés | Precio (BIS) y alquiler (IPCA), zona euro | precio h=4 −5,3 %; alquiler h=4 −11,7 % por shock y DE de exposición | Proyecciones locales, Driscoll-Kraay | 0 (precio); − (alquiler) | C4 | **Se mantiene** en el precio (V8: no distinguible de 0); **nuevo** en el alquiler: asociación negativa a 4 trimestres, exploratoria y sin potencia | output/v9/F5/hechos.json; output/v9/f3/tabla_capas.csv |
+| Hogares (contable) | Aumento de hogares 2022-2025 | componente población 92 % (España), 112 % (C. Valenciana) | Descomposición contable | + | C4 | **Confirma** el orden de magnitud de V4/M2 (peso de la población extranjera en ΔH) con otra medida; identidad, no atribución | output/v9/F5/hechos.json; output/v9/f3/tabla_capas.csv |
+| Un factor con efecto identificado | — | 0 resultados en C3/C3s [V9-NC3] | Pre-registro V9 + addendum A1 | — | — | **Confirma** V8 (ningún factor designado): con diseños locales tampoco se identifica ningún efecto con las reglas fijadas antes de estimar | output/v9/F5/hechos.json; output/v9/f3/tabla_capas.csv |
+
+<!-- V9:fin -->

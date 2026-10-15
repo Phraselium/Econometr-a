@@ -51,8 +51,8 @@
    "pretend_gl": 4,
    "placebo_fecha_beta": -0.00505680237575915,
    "placebo_fecha_p": 0.47647647647647645,
-   "permutacion_p_covid": 0.636,
-   "permutacion_p_reapertura": 0.044
+   "permutacion_p_covid": 0.6367265469061876,
+   "permutacion_p_reapertura": 0.04590818363273453
   },
   {
    "prueba_diseno": "D2 log contratos nuevos",
@@ -61,8 +61,8 @@
    "pretend_gl": 4,
    "placebo_fecha_beta": -0.003400594130763249,
    "placebo_fecha_p": 0.7887887887887888,
-   "permutacion_p_covid": 0.568,
-   "permutacion_p_reapertura": 0.398
+   "permutacion_p_covid": 0.5688622754491018,
+   "permutacion_p_reapertura": 0.3992015968063872
   }
  ],
  "fuera_muestra": {

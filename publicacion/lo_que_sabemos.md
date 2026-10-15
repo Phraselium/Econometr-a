@@ -94,6 +94,14 @@ V8 pregunta cuánto pesa cada factor en el precio real de compra y en el alquile
 - [C4] València: en la provincia, el valor tasado (29,4 pp) y Registradores (17,4 pp) discrepan en 2022-2026 y se publican ambos; la ciudad solo tiene valor tasado.
 - [C4] Ningún modelo predice mejor fuera de muestra que un AR(4) sencillo.
 
+## Qué añade V9 (qué causa qué) [C4]
+
+V9 contrasta con diseños de identificación pre-registrados los topes y las zonas tensionadas, los pisos turísticos, la inmigración y los tipos de interés, y añade una contabilidad de hogares. Detalle: [Qué causa qué](informe_v9.md) y [verificador V9](verificador/verificador_v9.md).
+
+- **Ningún resultado alcanza C3 o C3s**: no hay lectura causal ni cotas de contribución a la subida.
+- [C4] Con la Ley catalana 11/2020, la renta de los contratos nuevos fue -5,9 % (-7,3 a -4,4 %) frente a municipios comparables. Es compatible con la literatura, pero no supera la robustez a desviaciones de tendencia pre-registrada. No se detecta caída del número de contratos.
+- [C4, contable] El componente población supone 68,9 % del aumento de hogares de 2022-2025 en España y 84,4 % en la Comunitat Valenciana.
+
 ## Qué cambió entre versiones y por qué
 
 Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v8).

@@ -517,6 +517,21 @@ def resultados_publicados() -> tuple[list[pd.DataFrame], pd.DataFrame]:
     return partes, atr
 
 
+def efectos_v9_tabla() -> pd.DataFrame:
+    """V9 (F5): tabla de efectos y asociaciones de los diseños D1-D5 con su capa (output/v9/f3/tabla_capas.csv) y el script
+    que la produce. Solo estimaciones agregadas (Incasòl, Registre y los shocks JK no se publican en bruto)."""
+    ruta = RAIZ / "output/v9/f3/tabla_capas.csv"
+    if not ruta.exists():
+        return pd.DataFrame()
+    t = pd.read_csv(ruta)
+    scripts = {"D1a": "src/v9/d1_zonas.py", "D1b": "src/v9/d1_zonas.py", "D1c": "src/v9/d1_zonas.py", "D2": "src/v9/d2_turisticos.py",
+               "D3": "src/v9/d3_valencia.py", "D4": "src/v9/d4_inmigracion.py", "D5": "src/v9/d5_tipos.py"}
+    t["script"] = t.diseno.map(scripts)
+    cols = ["diseno", "hipotesis", "resultado", "metodo", "beta", "se", "ic95_lo", "ic95_hi", "p", "p_holm", "p_bh", "N",
+            "confirmatoria", "capa", "motivo_capa", "script"]
+    return t[cols].assign(origen="output/v9/f3/tabla_capas.csv")
+
+
 def monitor_series() -> list[pd.DataFrame]:
     """Series del monitor (src/v10/monitor.py): último tramo de series abiertas, variable `monitor_<id>`."""
     import importlib.util
@@ -790,6 +805,7 @@ def construir() -> dict:
         min(periodo) primer_periodo, max(periodo) ultimo_periodo, count(*) n_filas FROM hechos GROUP BY variable ORDER BY variable""").df()
     vt = vt.merge(vt_meta[["variable", "definicion"]], on="variable", how="left")
     cifras = pd.read_csv(RAIZ / "publicacion/cifras_clave.csv", dtype=str, keep_default_na=False)
+    efectos_v9 = efectos_v9_tabla()
     # escritura
     con.execute("SET preserve_insertion_order=true")   # escritura determinista (mismo orden de filas y de grupos)
     con.execute(f"COPY (SELECT * FROM hechos ORDER BY {clave}) TO '{BASE / 'hechos.parquet'}' (FORMAT parquet, COMPRESSION zstd)")
@@ -797,7 +813,7 @@ def construir() -> dict:
     opts = {"index": False, "compression": "zstd"}
     for nombre, df, pub in (("territorios", terr, terr), ("variables", vt, vt[vt.redistribuible]),
                             ("cifras_clave", cifras, cifras), ("regulacion_zonas", zonas, zonas),
-                            ("v8_atribucion", atribucion, atribucion)):
+                            ("v8_atribucion", atribucion, atribucion), ("v9_efectos", efectos_v9, efectos_v9)):
         df.to_parquet(BASE / f"{nombre}.parquet", **opts)
         pub.to_parquet(PUB / f"{nombre}.parquet", **opts)
         con.register("tmp", df)

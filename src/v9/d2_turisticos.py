@@ -130,8 +130,8 @@ def main() -> int:
         perm = np.array(perm)
         pruebas.append({"prueba_diseno": f"D2 {RES[var]}", "pretend_wald": wald[0], "pretend_p": wald[1], "pretend_gl": 4,
                         "placebo_fecha_beta": rp["beta"][0], "placebo_fecha_p": rp["p_boot"][0],
-                        "permutacion_p_covid": float(np.mean(np.abs(perm[:, 0]) >= abs(r["beta"][jc]))),
-                        "permutacion_p_reapertura": float(np.mean(np.abs(perm[:, 1]) >= abs(r["beta"][jr])))})
+                        "permutacion_p_covid": float((np.sum(np.abs(perm[:, 0]) >= abs(r["beta"][jc])) + 1) / (NPERM + 1)),
+                        "permutacion_p_reapertura": float((np.sum(np.abs(perm[:, 1]) >= abs(r["beta"][jr])) + 1) / (NPERM + 1))})
         # robustez
         m = ~W.index.isin(ley)
         estima(W[m], dosis.reindex(W.index[m]).values, "sin municipios de la Ley 11/2020", var, conf, hp)

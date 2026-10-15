@@ -1,5 +1,5 @@
 """V10-B6: el manuscrito de Quarto es ejecutable (bloques de código y código en línea), sus figuras existen, sus citas
-están en referencias.bib y las secciones de v9 están marcadas como pendientes. Excel del atlas determinista."""
+están en referencias.bib y la sección 6 lleva los resultados de V9. Excel del atlas determinista."""
 from __future__ import annotations
 
 import os
@@ -31,7 +31,9 @@ def test_manuscrito_ejecutable_y_completo():
         if c in ("article", "book", "techreport", "unpublished", "refs"):
             continue
         assert c in claves, c
-    assert txt.count("[PENDIENTE]") >= 6 and "## Abstract" in txt
+    assert "## Abstract" in txt and "## 6. Diseños de identificación de V9" in txt   # V9: §6 con resultados (antes [PENDIENTE])
+    for img in re.findall(r"\]\((\.\./output/v9/[^)]+)\)", txt):
+        assert (QMD.parent / img).exists(), img
 
 
 def test_excel_atlas_determinista():

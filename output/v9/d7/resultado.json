@@ -15,10 +15,10 @@
   },
   {
    "cod_provincia": "ES",
-   "periodo": "2022-2025 (ECP; población del censo anual 2022 y 2025, desfase de un año marcado)",
-   "dH": 939956.0,
-   "comp_poblacion": 647203.2381060881,
-   "comp_jefatura": 292752.7618939118
+   "periodo": "2022-2025 (stocks a 1-1-2022 y 1-1-2025, es decir, crecimiento de 2022, 2023 y 2024: hogares ECP; población del censo anual)",
+   "dH": 698943.0,
+   "comp_poblacion": 642766.892921303,
+   "comp_jefatura": 56176.107078697154
   },
   {
    "cod_provincia": "CV",
@@ -29,10 +29,10 @@
   },
   {
    "cod_provincia": "CV",
-   "periodo": "2022-2025 (ECP; población del censo anual 2022 y 2025, desfase de un año marcado)",
-   "dH": 152576.0,
-   "comp_poblacion": 128824.55555936642,
-   "comp_jefatura": 23751.444440633517
+   "periodo": "2022-2025 (stocks a 1-1-2022 y 1-1-2025, es decir, crecimiento de 2022, 2023 y 2024: hogares ECP; población del censo anual)",
+   "dH": 114392.0,
+   "comp_poblacion": 127696.88515796869,
+   "comp_jefatura": -13304.885157968725
   }
  ],
  "ic95": null,

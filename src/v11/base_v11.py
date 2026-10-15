@@ -238,7 +238,7 @@ def partes() -> list[pd.DataFrame]:
                           "metodo_dato": "stock superviviente por año de construcción (cota inferior)"}),
             "data/raw/v11/catastro_inspire/viviendas_por_anio_construccion_municipio.csv.gz")
     # Obra nueva (2): variación anual de unidades urbanas residenciales del Catastro (neta de bajas; todos los municipios)
-    f = RAIZ / "data/raw/catastro_urbana_municipios.csv"
+    f = RAIZ / "data/raw/catastro_urbana_municipios.csv.gz"   # versión versionada (regla v5: no leer ficheros no versionados)
     if f.exists():
         u = pd.read_csv(f, dtype={"codigo": str, "periodo": str})
         u = u[u.serie.str.startswith("catastro_uu_res_") & _mun(u.codigo)].sort_values(["codigo", "periodo"])
@@ -248,7 +248,7 @@ def partes() -> list[pd.DataFrame]:
         u = u[u.salto == 1].dropna(subset=["dif"])
         add(pd.DataFrame({"territorio_codigo": u.codigo, "nivel": "municipio", "periodo_raw": u.periodo, "variable": "obra_nueva_neta_catastro",
                           "valor": u.dif, "metodo_dato": "diferencia anual de unidades urbanas residenciales (cálculo propio)"}),
-            "data/raw/catastro_urbana_municipios.csv")
+            "data/raw/catastro_urbana_municipios.csv.gz")
     # AEAT, IRPF por municipios (Comunitat Valenciana): conceptos principales
     f = RAW11 / "aeat_irpf_municipios/irpf_municipios_cv.csv.gz"
     if f.exists():

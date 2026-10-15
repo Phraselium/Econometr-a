@@ -100,7 +100,8 @@ def test_duckdb_coincide_con_parquet():
     n_pub = con.execute("select count(*) from hechos_publica").fetchone()[0]
     cif = con.execute("select * from cifras_clave").df()
     con.close()
-    assert n_pub == len(_pq("publica/hechos.parquet"))
+    import pyarrow.parquet as papq   # nº de filas desde los metadatos: no carga una segunda copia en memoria (V11: 14 M filas)
+    assert n_pub == papq.ParquetFile(BASE / "publica/hechos.parquet").metadata.num_rows
     csv = pd.read_csv(RAIZ / "publicacion/cifras_clave.csv", dtype=str, keep_default_na=False)
     assert cif.astype(str).equals(csv.astype(str))
 

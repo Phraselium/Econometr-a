@@ -34,11 +34,11 @@ Generado por `src/v10/base.py` (`make base`); no editar a mano.
 
 ## Resumen
 
-- filas_publica: 14028906
+- filas_publica: 14256871
 - territorios: 56579
-- filas_posterior_prereg: 301342
-- variables_publicas: 297
-- filas públicas por nivel: barrio 2408, ccaa 47980, distrito 587783, municipio 5159904, nacional 8833, nuts3 1440, pais 53350, provincia 294751, seccion 7872457
+- filas_posterior_prereg: 339722
+- variables_publicas: 316
+- filas públicas por nivel: barrio 2408, ccaa 54657, distrito 587783, municipio 5362548, nacional 9181, nuts3 1440, pais 53350, provincia 313047, seccion 7872457
 
 Las discrepancias entre paneles son claves presentes en varios ficheros procesados con valores distintos; se conserva el panel más reciente (v8 > v7 > v1), que es el que usan las publicaciones vigentes.
 
@@ -50,6 +50,7 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `adrh_renta_neta_hogar` | INE, ADRH | €/año | C4 | INE, ADRH | sí | seccion | 2019–2023 |
 | `adrh_renta_neta_persona` | INE, Atlas de distribución de renta de los hogares (ADRH) | €/año | C4 | INE, Atlas de distribución de renta de los hogares (ADRH) | sí | seccion | 2019–2023 |
 | `aeat_irpf_declaraciones` | AEAT, estadística de declarantes del IRPF por municipios | declaraciones | C4 | AEAT, estadística de declarantes del IRPF por municipios | sí | municipio | 2016–2024 |
+| `aeat_irpf_declarantes_inmuebles_aprox` | AEAT, IRPF por municipios: importe ÷ media de rentas de bienes inmuebles no afectos (incluye alquileres e imputación de inmuebles no alquilados; no identifica c | declarantes (aprox.) | C4 | AEAT, IRPF por municipios: importe ÷ media de rentas de bienes inmuebles no afectos (incluye alquileres e imputación de  | sí | municipio | 2016–2024 |
 | `aeat_irpf_renta_bruta_media` | AEAT, estadística de declarantes del IRPF por municipios | € | C4 | AEAT, estadística de declarantes del IRPF por municipios | sí | municipio | 2016–2024 |
 | `aeat_irpf_renta_disponible_media` | AEAT, estadística de declarantes del IRPF por municipios | € | C4 | AEAT, estadística de declarantes del IRPF por municipios | sí | municipio | 2016–2024 |
 | `aeat_irpf_rentas_inmuebles_importe` | AEAT, estadística de declarantes del IRPF por municipios | € | C4 | AEAT, estadística de declarantes del IRPF por municipios | sí | municipio | 2016–2024 |
@@ -71,9 +72,9 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `catastro_inspire_superficie_construida_m2` | Catastro, INSPIRE Buildings (agregado espacial propio a sección INE) | m² | C4 | Catastro, INSPIRE Buildings (agregado espacial propio a sección INE) | sí | barrio,seccion | 2026-08-21–2026-08-21 |
 | `catastro_inspire_viviendas` | Catastro, INSPIRE Buildings (agregado espacial propio a sección INE) | viviendas | C4 | Catastro, INSPIRE Buildings (agregado espacial propio a sección INE) | sí | barrio,seccion | 2026-08-21–2026-08-21 |
 | `catastro_inspire_viviendas_por_antiguedad` | Catastro, INSPIRE Buildings (agregado espacial propio a sección INE) | viviendas | C4 | Catastro, INSPIRE Buildings (agregado espacial propio a sección INE) | sí | barrio,seccion | 2026-08-21–2026-08-21 |
-| `catastro_tit_titulares` | Catastro, estadística de titularidad (padrón IBI urbano, uso residencial) | titulares (sujetos pasivos) | C4 | Catastro, estadística de titularidad (padrón IBI urbano, uso residencial) | sí | municipio | 2024–2026 |
+| `catastro_tit_titulares` | Catastro, estadística de titularidad (padrón IBI urbano, uso residencial; sujetos pasivos; tramos dentro del municipio; NO encadenar con catastro_titulares_jaxi | titulares (sujetos pasivos) | C4 | Catastro, estadística de titularidad (padrón IBI urbano, uso residencial; sujetos pasivos; tramos dentro del municipio;  | sí | municipio | 2024–2026 |
 | `catastro_tit_viviendas` | Catastro, estadística de titularidad (padrón IBI urbano, uso residencial) | inmuebles residenciales | C4 | Catastro, estadística de titularidad (padrón IBI urbano, uso residencial) | sí | municipio | 2024–2026 |
-| `catastro_titulares_jaxi` | Catastro, titulares por municipio y clase (visor JAXI; 2012-2023) | titulares | C4 | Catastro, titulares por municipio y clase (visor JAXI; 2012-2023) | sí | municipio | 2012–2023 |
+| `catastro_titulares_jaxi` | Catastro, titulares catastrales por municipio y clase (visor JAXI; 2012-2023; NO encadenar con catastro_tit_*: serie de sujetos pasivos desde 2024) | titulares | C4 | Catastro, titulares catastrales por municipio y clase (visor JAXI; 2012-2023; NO encadenar con catastro_tit_*: serie de  | sí | municipio | 2012–2023 |
 | `catastro_unidades_urbanas_residenciales` | Dirección General del Catastro, estadísticas catastrales (urbana) | inmuebles | C4 | Dirección General del Catastro, estadísticas catastrales (urbana) | sí | municipio | 2012–2026 |
 | `catastro_unidades_urbanas_total` | Dirección General del Catastro, estadísticas catastrales (urbana) | inmuebles | C4 | Dirección General del Catastro, estadísticas catastrales (urbana) | sí | municipio | 2012–2026 |
 | `catastro_viviendas_por_anio_construccion` | Catastro, otras estadísticas (2019): viviendas por año de construcción | viviendas | C4 | Catastro, otras estadísticas (2019): viviendas por año de construcción | sí | municipio | 2019–2019 |
@@ -325,6 +326,24 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `tx_extranj` | Transacciones de vivienda adquiridas por extranjeros residentes, total nacional (MIVAU, tabla 1.6.5) | número | C4 | mivau_transacciones_extranjeros.csv (tx_extranj_residentes_total_nacional) | sí | nacional | 2007T1–2026T2 |
 | `tx_extranj_ccaa` | Transacciones de vivienda adquiridas por extranjeros residentes por CCAA (MIVAU 1.6.5), total | número | C4 | mivau_transacciones_extranjeros.csv (tx_extranj_residentes_total_ccaa_*) | sí | ccaa | 2007T1–2026T2 |
 | `tx_total` | Transacciones inmobiliarias de vivienda, total nacional (MIVAU) | número | C4 | mivau_transacciones_total.csv | sí | nacional | 2004T1–2026T1 |
+| `v12_hogares_2011_2021_crecimiento` | INE: Censos 2011 y 2021 (microdatos), ECP; descomposición V12-B3 | hogares | C4 | INE: Censos 2011 y 2021 (microdatos), ECP; descomposición V12-B3 | sí | ccaa,nacional,provincia | 2021–2021 |
+| `v12_hogares_2011_2021_estructura` | INE: Censos 2011 y 2021 (microdatos), ECP; descomposición V12-B3 | hogares | C4 | INE: Censos 2011 y 2021 (microdatos), ECP; descomposición V12-B3 | sí | ccaa,nacional,provincia | 2021–2021 |
+| `v12_hogares_2011_2021_jefatura` | INE: Censos 2011 y 2021 (microdatos), ECP; descomposición V12-B3 | hogares | C4 | INE: Censos 2011 y 2021 (microdatos), ECP; descomposición V12-B3 | sí | ccaa,nacional,provincia | 2021–2021 |
+| `v12_hogares_2011_2021_poblacion` | INE: Censos 2011 y 2021 (microdatos), ECP; descomposición V12-B3 | hogares | C4 | INE: Censos 2011 y 2021 (microdatos), ECP; descomposición V12-B3 | sí | ccaa,nacional,provincia | 2021–2021 |
+| `v12_hogares_ext_cuota` | INE: Censo 2021, muestra de hogares (persona de referencia de nacionalidad extranjera; V12-B3) | % | C4 | INE: Censo 2021, muestra de hogares (persona de referencia de nacionalidad extranjera; V12-B3) | sí | ccaa,municipio,nacional,provincia | 2021–2021 |
+| `v12_hogares_nuevos_estimados` | INE: censo anual y Censo 2021 (V12-B4) | hogares | C4 | INE: censo anual y Censo 2021 (V12-B4) | sí | municipio | 2021–2025 |
+| `v12_obra_neta` | Catastro, estadística URBANA (V12-B4) | unidades residenciales | C4 | Catastro, estadística URBANA (V12-B4) | sí | municipio | 2021–2025 |
+| `v12_pob_crecimiento` | INE: padrón/censo anual, MNP, EVR/EMCR (contabilidad V12-B1) | personas | C4 | INE: padrón/censo anual, MNP, EVR/EMCR (contabilidad V12-B1) | sí | ccaa,municipio,nacional,provincia | 2003–2024 |
+| `v12_pob_residuo` | INE: padrón/censo anual, MNP, EVR/EMCR (contabilidad V12-B1) | personas | C4 | INE: padrón/censo anual, MNP, EVR/EMCR (contabilidad V12-B1) | sí | ccaa,municipio,nacional,provincia | 2003–2024 |
+| `v12_pob_saldo_exterior` | INE: padrón/censo anual, MNP, EVR/EMCR (contabilidad V12-B1) | personas | C4 | INE: padrón/censo anual, MNP, EVR/EMCR (contabilidad V12-B1) | sí | ccaa,municipio,nacional,provincia | 2003–2024 |
+| `v12_pob_saldo_interior` | INE: padrón/censo anual, MNP, EVR/EMCR (contabilidad V12-B1) | personas | C4 | INE: padrón/censo anual, MNP, EVR/EMCR (contabilidad V12-B1) | sí | ccaa,municipio,nacional,provincia | 2003–2024 |
+| `v12_pob_vegetativo` | INE: padrón/censo anual, MNP, EVR/EMCR (contabilidad V12-B1) | personas | C4 | INE: padrón/censo anual, MNP, EVR/EMCR (contabilidad V12-B1) | sí | ccaa,municipio,nacional,provincia | 2003–2024 |
+| `v12_ratio_obra_hogares` | Catastro e INE (V12-B4) | ratio | C4 | Catastro e INE (V12-B4) | sí | municipio | 2021–2025 |
+| `v12_titularidad_pct_mas10` | Catastro, titularidad por tramo de inmuebles y tipo de persona, uso residencial (V12-B5) | % | C4 | Catastro, titularidad por tramo de inmuebles y tipo de persona, uso residencial (V12-B5) | sí | ccaa,municipio,nacional,provincia | 2024–2026 |
+| `v12_titularidad_pct_mas100` | Catastro, titularidad por tramo de inmuebles y tipo de persona, uso residencial (V12-B5) | % | C4 | Catastro, titularidad por tramo de inmuebles y tipo de persona, uso residencial (V12-B5) | sí | ccaa,municipio,nacional,provincia | 2024–2026 |
+| `v12_titularidad_pct_mas5` | Catastro, titularidad por tramo de inmuebles y tipo de persona, uso residencial (V12-B5) | % | C4 | Catastro, titularidad por tramo de inmuebles y tipo de persona, uso residencial (V12-B5) | sí | ccaa,municipio,nacional,provincia | 2024–2026 |
+| `v12_titularidad_pct_pe` | Catastro, titularidad por tramo de inmuebles y tipo de persona, uso residencial (V12-B5) | % | C4 | Catastro, titularidad por tramo de inmuebles y tipo de persona, uso residencial (V12-B5) | sí | ccaa,municipio,nacional,provincia | 2024–2026 |
+| `v12_titularidad_pct_pj` | Catastro, titularidad por tramo de inmuebles y tipo de persona, uso residencial (V12-B5) | % | C4 | Catastro, titularidad por tramo de inmuebles y tipo de persona, uso residencial (V12-B5) | sí | ccaa,municipio,nacional,provincia | 2024–2026 |
 | `v5_deficit_2021_2025` | Resultado publicado V5 (A4): déficit 2021-2025 por provincia (rango de variantes) | viviendas | C4 | Resultado publicado V5 (A4): déficit 2021-2025 por provincia (rango de variantes) | sí | provincia | 2025–2025 |
 | `v8_factor_comun_precios` | Resultado publicado V8 (M1): factor común de las fuentes de precio | unidades del componente (estandarizado) | C4 | Resultado publicado V8 (M1): factor común de las fuentes de precio | sí | nacional | 1996T1–2026T2 |
 | `valor_tasado` | Valor tasado medio vivienda libre provincial (MIVAU) desde 1995T1; coincide con v7 en el solape | euros/m2 | C4 | mivau_valor_tasado_nacional_ccaa_prov.csv | sí | provincia | 1995T1–2026T2 |

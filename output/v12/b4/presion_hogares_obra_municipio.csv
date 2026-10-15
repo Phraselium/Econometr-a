@@ -1,0 +1,1154 @@
+cod_municipio,poblacion_2021,poblacion_2025,personas_por_hogar_2021,hogares_nuevos_estimados,obra_neta,periodo,metodo_hogares,ratio_obra_hogares,categoria
+01002,10295,10346,2.496583144,20.42791971,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+01036,18005,18063,2.294855709,25.27392017,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+01059,252953,260402,2.341463415,3181.34375,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+02003,172806,175068,2.569404672,880.359573,1461,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.659549172,obra ≥ hogares
+02009,24377,24603,2.503006012,90.29143315,70,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7752673489,obra 50-100 %
+02025,10058,10481,2.498759305,169.2840119,-14,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.0827012536,hogares no crecen
+02037,30305,30911,2.6375,229.7630332,49,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2132632013,obra < 50 %
+02069,15513,15792,2.615384615,106.6764706,11,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1031155225,obra < 50 %
+02081,25037,25418,2.762931034,137.8970359,69,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.500373337,obra 50-100 %
+03005,12704,13476,2.748908297,280.8387609,125,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4450952553,obra < 50 %
+03009,59187,61613,2.4004914,1010.626407,136,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1345700043,obra < 50 %
+03011,19615,21046,2.42979243,588.939196,32,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.05433498096,obra < 50 %
+03014,338768,365586,2.469831411,10858.231,3436,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3164419691,obra < 50 %
+03015,21303,22874,2.827225131,555.6685185,27,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.04859012001,obra < 50 %
+03018,22810,24731,2.515889831,763.5469474,198,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2593160783,obra < 50 %
+03019,21065,22354,2.685640362,479.9600193,116,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2416867975,obra < 50 %
+03031,68874,77211,2.272573554,3668.528125,1086,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2960315317,obra < 50 %
+03041,11517,12524,2.382289417,422.7026292,79,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1868926156,obra < 50 %
+03047,23593,27440,2.326574173,1653.504128,379,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2292101928,obra < 50 %
+03049,19274,19895,3.020030817,205.6270408,12,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.05835808341,obra < 50 %
+03050,29106,31567,2.313501144,1063.755687,231,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2171551257,obra < 50 %
+03053,10798,11900,2.379746835,463.0744681,9,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.01943531898,obra < 50 %
+03056,11459,11486,2.493273543,10.82913669,23,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.123899684,obra ≥ hogares
+03059,29659,30880,2.760112888,442.3732106,-23,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.05199229846,hogares no crecen
+03063,43126,47568,2.427930454,1829.541696,824,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4503860185,obra < 50 %
+03065,235566,245575,2.629466305,3806.475855,1417,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3722603411,obra < 50 %
+03066,52580,55554,2.483050847,1197.720137,161,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1344220533,obra < 50 %
+03076,15850,18541,2.31942446,1160.201613,607,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5231849303,obra 50-100 %
+03079,23692,24662,2.536511156,382.415034,105,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2745707953,obra < 50 %
+03082,28782,30817,2.442307692,833.2283465,684,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8209034209,obra 50-100 %
+03089,12185,13098,2.480961924,368.0024233,-15,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.04076060116,hogares no crecen
+03090,25798,28689,2.693452381,1073.343646,307,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2860220965,obra < 50 %
+03093,25578,26612,2.515060241,411.1233533,56,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1362121601,obra < 50 %
+03094,18180,19329,2.594427245,442.872315,33,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.07451357622,obra < 50 %
+03099,78486,84279,2.457334612,2357.432306,2744,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.16397828,obra ≥ hogares
+03102,10247,10852,2.467592593,245.1782364,36,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1468319559,obra < 50 %
+03104,34055,34035,2.598513011,-7.696709585,71,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+03113,16295,17488,2.185815603,545.7916937,359,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6577601018,obra 50-100 %
+03119,24354,26772,2.597077244,931.0466238,782,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8399149731,obra 50-100 %
+03121,34453,39622,2.304835319,2242.676497,185,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.08249072045,obra < 50 %
+03122,58925,60428,2.68865793,559.014958,282,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5044587734,obra 50-100 %
+03128,11608,12932,2.223819302,595.3721145,162,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2720987363,obra < 50 %
+03133,83740,100470,2.266118334,7382.668306,1413,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1913942143,obra < 50 %
+03139,34719,37578,2.397909408,1192.288579,412,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3455539265,obra < 50 %
+03140,33992,34729,2.588545592,284.7158661,18,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.06322092354,obra < 50 %
+03902,22626,24359,2.485101311,697.3558753,1011,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.44976193,obra ≥ hogares
+04003,25482,25579,2.785340314,34.82518797,262,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),7.523290333,obra ≥ hogares
+04006,12336,12872,2.643518519,202.7600701,41,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2022094389,obra < 50 %
+04013,200273,204772,2.615210442,1720.320448,2159,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.254998743,obra ≥ hogares
+04029,12623,12997,2.774553571,134.7964602,18,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1335346639,obra < 50 %
+04035,14567,15435,2.659090909,326.4273504,197,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6035033515,obra 50-100 %
+04052,18110,18763,2.974193548,219.5553145,59,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2687249914,obra < 50 %
+04053,19656,20801,2.729542302,419.484248,135,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3218237649,obra < 50 %
+04066,31558,32772,2.95505618,410.8212928,176,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4284101216,obra < 50 %
+04075,10642,12462,2.895261845,628.6132644,618,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.9831163849,obra 50-100 %
+04079,98364,110054,2.611852643,4475.750204,470,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1050103287,obra < 50 %
+04100,17607,20193,2.676970634,966.017321,136,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1407842251,obra < 50 %
+04102,27227,29104,3.045751634,616.2682403,121,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1963430728,obra < 50 %
+04902,83310,90617,2.835815603,2576.683756,-1155,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.4482505845,hogares no crecen
+05019,58120,59480,2.330721649,583.5102619,144,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2467822923,obra < 50 %
+06011,33757,34544,2.577777778,305.3017241,155,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5076944797,obra 50-100 %
+06015,151048,150870,2.573729864,-69.1603274,1720,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+06044,37354,38009,2.609756098,250.9813084,188,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7490597654,obra 50-100 %
+06083,59627,60319,2.587406794,267.4492475,625,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.336891974,obra ≥ hogares
+06088,15511,15195,2.525040388,-125.1465131,54,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+06095,11876,11775,2.533799534,-39.86108556,187,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+06149,12578,12285,2.652838428,-110.4477366,79,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+06153,25816,25751,2.525272547,-25.73979592,193,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+06158,16808,16708,2.565789474,-38.97435897,80,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+07003,20694,22459,2.675710594,659.6378561,190,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2880368345,obra < 50 %
+07005,11780,12424,2.546637744,252.8824532,131,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.518027243,obra 50-100 %
+07011,51831,54082,2.497058824,901.4605418,833,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.9240559751,obra 50-100 %
+07013,11471,12510,2.594882729,400.4034511,218,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5444508517,obra 50-100 %
+07014,12212,13298,2.376953125,456.8874281,279,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6106537034,obra 50-100 %
+07015,30766,32719,2.56514658,761.36,137,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1799411579,obra < 50 %
+07022,18211,19215,2.783625731,360.6806723,65,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1802148133,obra < 50 %
+07024,11891,11690,2.638636364,-76.17571059,31,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+07026,50566,54628,2.660695469,1526.668515,554,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3628816568,obra < 50 %
+07027,33719,36076,2.777419355,848.6295006,152,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1791123216,obra < 50 %
+07031,38475,40450,2.635294118,749.4419643,354,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.472351452,obra < 50 %
+07032,29648,30986,2.650902837,504.7337009,162,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3209613301,obra < 50 %
+07033,44878,49275,2.822235797,1557.984632,253,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1623892783,obra < 50 %
+07036,38351,40434,3.060536398,680.5996495,498,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7317076939,obra 50-100 %
+07040,424837,443196,2.687229641,6831.943099,3726,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5453792495,obra 50-100 %
+07042,16903,17801,2.674304419,335.7882497,124,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3692803429,obra < 50 %
+07044,14064,15106,2.938428875,354.6112717,127,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.358138644,obra < 50 %
+07046,27582,29455,2.886294416,648.9289483,405,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6241053062,obra 50-100 %
+07048,29015,30702,2.675900277,630.442029,263,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4171676188,obra < 50 %
+07054,40413,42496,2.614556962,796.6932946,430,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5397309139,obra 50-100 %
+07055,12830,14137,2.6069869,501.3450586,-727,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-1.450099063,hogares no crecen
+07057,12364,12928,2.224137931,253.5813953,306,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.206713133,obra ≥ hogares
+07061,13621,13996,2.549494949,147.0879556,43,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2923420875,obra < 50 %
+07062,12072,12583,2.654676259,192.4905149,129,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6701628912,obra 50-100 %
+08001,12612,13207,2.691075515,221.1011905,131,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5924888949,obra 50-100 %
+08006,16009,16982,2.414839798,402.9252793,252,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6254261346,obra 50-100 %
+08009,12634,12891,2.822072072,91.06783719,137,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.50437305,obra ≥ hogares
+08015,221750,230642,2.63994341,3368.254019,2300,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.682846361,obra 50-100 %
+08019,1627559,1713247,2.37833623,36028.54758,11902,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3303491481,obra < 50 %
+08022,16663,17539,2.446085672,358.1231884,49,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1368244269,obra < 50 %
+08033,17785,18554,2.714983713,283.2429514,72,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2541987352,obra < 50 %
+08035,19233,20775,2.430429129,634.4558587,82,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.12924461,obra < 50 %
+08040,14806,15191,2.542553191,151.4225941,41,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2707654048,obra < 50 %
+08041,16834,17445,2.951492537,207.0139064,45,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2173767008,obra < 50 %
+08046,18637,19050,2.730272597,151.2669469,157,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.037900237,obra ≥ hogares
+08051,24645,25395,2.717241379,276.0152284,235,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8514022989,obra 50-100 %
+08054,12595,13058,2.869158879,161.3713355,51,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3160412588,obra < 50 %
+08056,66866,69689,2.61980198,1077.562358,261,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2422133605,obra < 50 %
+08072,15029,16044,2.805369128,361.8062201,47,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1299037921,obra < 50 %
+08073,89158,92255,2.560665914,1209.451019,858,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7094127718,obra 50-100 %
+08074,16111,17648,2.307458143,666.1009235,153,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2296949225,obra < 50 %
+08076,22334,22639,2.632653061,115.8527132,83,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7164268986,obra 50-100 %
+08077,46825,48424,2.556295064,625.5146453,431,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6890326282,obra 50-100 %
+08086,20364,20855,2.760479042,177.867679,182,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.023232557,obra ≥ hogares
+08088,16716,17386,2.658703072,252.0025674,271,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.075385869,obra ≥ hogares
+08089,46823,48181,2.633027523,515.7560976,330,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6398373215,obra 50-100 %
+08096,62125,65123,2.592291221,1156.505865,708,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.612188854,obra 50-100 %
+08101,265003,292161,2.595913957,10461.82595,1938,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1852449094,obra < 50 %
+08102,40914,42449,2.620754717,585.7091433,215,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3670763936,obra < 50 %
+08105,13265,13254,2.717842324,-4.047328244,46,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+08106,10100,10931,2.592391304,320.5534591,327,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.020110658,obra ≥ hogares
+08107,15654,16519,2.937269373,294.491206,93,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3157989037,obra < 50 %
+08110,18898,19630,2.586630286,282.9936709,152,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5371144857,obra 50-100 %
+08112,20784,21321,2.736842105,196.2115385,-113,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.5759090464,hogares no crecen
+08113,77944,80692,2.48436019,1106.119802,415,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3751853998,obra < 50 %
+08114,28590,28989,2.832329317,140.8734491,349,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.477400831,obra ≥ hogares
+08118,23803,24727,2.535714286,364.3943662,293,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8040739023,obra 50-100 %
+08121,129749,131370,2.695750825,601.3167036,1362,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.265029379,obra ≥ hogares
+08123,26123,27291,2.665662651,438.1649718,491,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.120582501,obra ≥ hogares
+08124,51129,52759,2.623583934,621.2875368,396,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6373860355,obra 50-100 %
+08125,36861,37446,2.664310954,219.5689655,171,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7787985866,obra 50-100 %
+08126,12250,12835,2.612068966,223.960396,310,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.384173298,obra ≥ hogares
+08136,16733,17062,2.79644588,117.6493356,77,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6544873337,obra 50-100 %
+08147,24126,25000,2.695364238,324.2604423,228,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.703138497,obra 50-100 %
+08156,14923,15584,2.814393939,234.8640646,248,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.05592995,obra ≥ hogares
+08157,11640,11976,2.703431373,124.2864914,153,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.231026786,obra ≥ hogares
+08159,18938,18899,2.686330935,-14.51794322,63,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+08161,16376,17884,2.721231767,554.16081,34,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.06135403187,obra < 50 %
+08163,28072,30071,2.503072871,798.6183795,200,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2504325033,obra < 50 %
+08169,65417,66251,2.641910879,315.6805957,610,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.932332897,obra ≥ hogares
+08172,28429,29348,2.625225225,350.0652025,61,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1742532522,obra < 50 %
+08180,39055,39773,2.716092762,264.3503234,188,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7111774919,obra 50-100 %
+08181,10660,11021,2.676165803,134.8944821,90,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6671881504,obra 50-100 %
+08184,78465,82825,2.712270804,1607.5091,417,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2594075517,obra < 50 %
+08187,216759,224589,2.566516279,3050.828107,2014,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6601486315,obra 50-100 %
+08194,37121,38980,2.730769231,680.7605634,474,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6962800513,obra 50-100 %
+08196,27206,27069,2.749216301,-49.83238312,89,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+08197,11123,11910,2.755501222,285.6104703,188,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6582391739,obra 50-100 %
+08200,83621,85317,2.639628483,642.514661,480,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.747064665,obra 50-100 %
+08202,18154,18916,2.708978328,281.2868571,132,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4692718364,obra < 50 %
+08205,93937,97959,2.978573713,1350.310715,778,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5761636869,obra 50-100 %
+08211,45439,46688,2.607784431,478.9506315,394,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8226317581,obra 50-100 %
+08217,34072,35811,2.674939952,650.1080515,859,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.321318815,obra ≥ hogares
+08218,10847,11109,2.61352657,100.2476895,121,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.207010363,obra ≥ hogares
+08219,20970,21234,2.642770352,99.89517241,104,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.041091351,obra ≥ hogares
+08221,19279,21045,2.633841886,670.5034229,348,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5190130104,obra 50-100 %
+08230,10412,10601,2.709589041,69.75227503,60,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8601869972,obra 50-100 %
+08231,31452,32613,2.693061224,431.1079115,309,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.716757897,obra 50-100 %
+08238,20117,20175,2.907967033,19.94520548,79,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),3.960851648,obra ≥ hogares
+08240,12821,12930,2.57537155,42.32399011,68,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.606653811,obra ≥ hogares
+08245,118489,123250,2.682676986,1774.719813,289,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1628426064,obra < 50 %
+08250,10183,10601,2.628169014,159.0460879,34,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2137745131,obra < 50 %
+08252,33032,34031,2.701915071,369.7377504,-126,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.340782081,hogares no crecen
+08260,25917,26101,2.785407725,66.05855162,149,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.255574734,obra ≥ hogares
+08263,28120,28760,2.817910448,227.1186441,71,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3126119403,obra < 50 %
+08266,57335,58264,2.617825478,354.8746881,321,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.9045446486,obra 50-100 %
+08270,30257,32690,2.309936909,1053.275521,621,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5895893219,obra 50-100 %
+08279,222576,232676,2.609913793,3869.85962,917,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2369594998,obra < 50 %
+08284,17783,19047,2.631875882,480.2658092,-37,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.07704067058,hogares no crecen
+08285,14537,15334,2.681318681,297.2418033,117,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3936189281,obra < 50 %
+08295,15429,16239,2.777777778,291.6,45,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1543209877,obra < 50 %
+08298,47179,50405,2.790563867,1156.038763,690,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5968657991,obra 50-100 %
+08301,66810,67536,2.752029221,263.8053384,405,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.535222912,obra ≥ hogares
+08302,12739,12886,2.679039301,54.87041565,47,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8565635861,obra 50-100 %
+08305,39980,42561,2.555042848,1010.159185,502,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4969513791,obra < 50 %
+08307,67369,71305,2.511600928,1567.127945,1387,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8850585587,obra 50-100 %
+08904,13279,13058,2.527881041,-87.425,0,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+09018,33101,33904,2.357039187,340.6816502,454,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.332622405,obra ≥ hogares
+09059,174154,178370,2.332798073,1807.271726,2595,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.435865987,obra ≥ hogares
+09219,35530,36617,2.351159794,462.3250206,93,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2011571857,obra < 50 %
+10037,95659,96598,2.451456311,383.0376238,961,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.508891922,obra ≥ hogares
+10067,12340,12004,2.359437751,-142.4068085,15,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+10131,17045,17297,2.553824363,98.67554077,46,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4661742884,obra < 50 %
+10148,39862,40224,2.341733251,154.5863517,255,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.649563478,obra ≥ hogares
+11004,123435,126500,2.745106762,1116.532167,362,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3242181559,obra < 50 %
+11006,30931,31281,2.653811659,131.8857722,165,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.251082639,obra ≥ hogares
+11007,22701,22686,2.683014354,-5.590726705,242,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+11008,24164,24588,2.848699764,148.839834,51,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3426502074,obra < 50 %
+11012,114442,110123,2.467318132,-1750.48363,1091,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+11014,23186,24133,2.64803805,357.62326,459,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.283473564,obra ≥ hogares
+11015,86450,90997,2.721147848,1670.986016,520,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.311193508,obra < 50 %
+11016,19386,20078,2.741980474,252.3723296,979,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),3.879189139,obra ≥ hogares
+11020,213616,215025,2.660698744,529.5601402,1553,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.932622534,obra ≥ hogares
+11022,64242,65420,2.638429752,446.4776821,191,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4277929394,obra < 50 %
+11023,11866,11870,2.593333333,1.542416452,48,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),31.12,obra ≥ hogares
+11027,89062,90242,2.748014661,429.4009114,402,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.9361880455,obra 50-100 %
+11028,41793,42472,2.699680511,251.5112426,420,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.669905471,obra ≥ hogares
+11030,29446,29620,2.574449339,67.58726899,993,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),14.69211606,obra ≥ hogares
+11031,94952,93490,2.749575552,-531.7184316,480,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+11032,69590,69952,2.770891643,130.6438672,479,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),3.66645607,obra ≥ hogares
+11033,32663,34873,2.709459459,815.6608479,889,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.089913783,obra ≥ hogares
+11035,18465,18627,2.587537092,62.60779817,745,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),11.89947613,obra ≥ hogares
+11038,16493,16624,2.63086233,49.79355952,102,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.048457692,obra ≥ hogares
+11039,12622,13117,2.631808279,188.0836093,192,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.020822605,obra ≥ hogares
+11041,12213,12264,2.563063063,19.89806678,35,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.758964847,obra ≥ hogares
+12005,10450,10646,2.418823529,81.0311284,6,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.07404561825,obra < 50 %
+12009,26890,29094,2.542260209,866.9450878,92,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1061197546,obra < 50 %
+12027,27625,30394,2.586431227,1070.587136,20,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.01868133786,obra < 50 %
+12028,19003,20586,2.374512354,666.6631982,325,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4875025363,obra < 50 %
+12032,34842,37803,2.552478134,1160.049115,105,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.09051340901,obra < 50 %
+12040,172637,183709,2.466524217,4488.907883,1125,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2506177514,obra < 50 %
+12082,13434,14382,2.5,379.2,5,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.01318565401,obra < 50 %
+12084,24955,26297,2.524539877,531.582017,51,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.09594004005,obra < 50 %
+12126,31587,32220,2.587912088,244.5987261,102,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4170095308,obra < 50 %
+12135,51113,53634,2.561154856,984.3215823,97,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.09854503015,obra < 50 %
+12138,28916,30516,2.449456976,653.2060027,279,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4271240602,obra < 50 %
+13005,30549,31907,2.56763285,528.8918156,24,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.04537790015,obra < 50 %
+13023,11991,12121,2.783018868,46.71186441,65,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.391509434,obra ≥ hogares
+13028,13202,12883,2.610021786,-122.221202,-6,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+13034,75081,76087,2.479972845,405.6496031,763,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.880933678,obra ≥ hogares
+13039,17830,17741,2.640277778,-33.70857443,105,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+13053,17804,17699,2.517857143,-41.70212766,22,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+13056,15655,15890,2.825311943,83.17665615,73,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8776500929,obra 50-100 %
+13071,46128,45699,2.408580184,-178.1132316,-30,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+13078,12078,12236,2.632882883,60.01026518,35,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.58323355,obra 50-100 %
+13079,15346,15214,2.794820717,-47.23022096,117,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+13082,36019,37185,2.551569507,456.973638,-45,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.0984739518,hogares no crecen
+13087,30165,30698,2.621890547,203.288425,-210,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-1.033015037,hogares no crecen
+14002,13398,13119,2.635338346,-105.8687589,30,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+14007,18857,18335,2.578807947,-202.4191063,76,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+14013,20237,19986,2.553140097,-98.3103122,46,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+14017,14252,14520,2.483455882,107.9141377,4,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.03706650571,obra < 50 %
+14021,322327,324159,2.60006448,704.5979107,5669,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),8.045723546,obra ≥ hogares
+14038,42741,43410,2.60412758,256.8998559,236,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.9186459026,obra 50-100 %
+14042,22617,22192,2.566320646,-165.6067416,110,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+14049,20973,20535,2.681122449,-163.3644148,38,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+14052,10530,10252,2.588377724,-107.4031805,70,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+14054,17169,16918,2.546805349,-98.55484247,85,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+14055,22288,21731,2.443592552,-227.9430749,39,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+14056,29848,29977,2.67624683,48.20183196,70,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.452226962,obra ≥ hogares
+15002,32062,33213,2.610662359,440.8842822,256,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5806512283,obra 50-100 %
+15005,32914,34389,2.515239478,586.4252741,239,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4075540577,obra < 50 %
+15009,13024,13508,2.45840708,196.87545,55,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2793644409,obra < 50 %
+15011,18944,18958,2.660431655,5.262303948,76,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),14.44234327,obra ≥ hogares
+15017,24635,24771,2.527254708,53.81333333,138,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.564420218,obra ≥ hogares
+15019,31418,32095,2.548650859,265.6307347,278,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.046565641,obra ≥ hogares
+15030,245541,251277,2.32589851,2466.143719,1936,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7850312962,obra 50-100 %
+15031,30853,31232,2.487785658,152.3443142,86,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5645107298,obra 50-100 %
+15035,12850,12462,2.438380282,-159.1220217,35,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+15036,64928,64903,2.177852349,-11.47919877,183,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+15041,11505,11773,2.463963964,108.7678245,140,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.287145354,obra ≥ hogares
+15054,38810,39890,2.401925391,449.6392786,232,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5159691581,obra 50-100 %
+15057,14243,14108,2.570715474,-52.51456311,79,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+15058,36874,38750,2.617752326,716.6453377,667,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.9307253741,obra 50-100 %
+15059,12593,12970,2.649899396,142.269552,593,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),4.168144143,obra ≥ hogares
+15072,11021,10755,2.788557214,-95.38983051,54,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+15073,26825,27110,2.682523268,106.2432537,240,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.258966962,obra ≥ hogares
+15075,16436,17469,2.487101669,415.342892,71,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1709430963,obra < 50 %
+15078,97798,100842,2.440639269,1247.214219,1079,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8651280459,obra 50-100 %
+15082,18846,19038,2.719943423,70.58970359,105,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.487469059,obra ≥ hogares
+16078,54187,53761,2.442231076,-174.4306688,298,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+16203,15677,17207,2.632258065,581.25,28,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.04817204301,obra < 50 %
+17015,20131,20887,2.717880795,278.1578947,216,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7765373699,obra 50-100 %
+17022,11169,11731,2.618453865,214.6304762,29,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1351159468,obra < 50 %
+17023,40119,42446,2.506224066,928.4884106,-102,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.1098559754,hogares no crecen
+17034,11464,12268,2.438413361,329.7226027,368,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.116089698,obra ≥ hogares
+17044,10499,11167,2.794871795,239.0091743,73,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3054276063,obra < 50 %
+17047,11231,12275,2.449678801,426.1783217,234,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5490659381,obra 50-100 %
+17048,11220,12889,2.26959847,735.3723673,223,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3032477285,obra < 50 %
+17062,10340,10641,2.332665331,129.0369416,197,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.526694585,obra ≥ hogares
+17066,46804,49556,2.641100703,1041.989803,-221,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.2120942061,hogares no crecen
+17079,101648,108352,2.654586923,2525.44,-650,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.257380892,hogares no crecen
+17095,38133,41944,2.449900464,1555.573402,-694,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.4461377387,hogares no crecen
+17114,36181,39516,2.584319527,1290.4751,322,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.249520506,obra < 50 %
+17117,23093,24556,2.649278579,552.2258065,83,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1503008353,obra < 50 %
+17118,18213,18921,2.444940476,289.5776019,233,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8046202415,obra 50-100 %
+17147,10746,10812,2.482915718,26.58165138,37,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.391937599,obra ≥ hogares
+17152,19776,20175,2.521970706,158.2096093,225,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.422163932,obra ≥ hogares
+17155,32104,34603,3.020019066,827.4782197,-70,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.08459437159,hogares no crecen
+17160,22164,23060,2.514060742,356.3955257,-15,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.04208807046,hogares no crecen
+17180,13469,14218,2.667400881,280.7976879,79,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2813413479,obra < 50 %
+17199,11987,12507,2.642126789,196.8111455,-41,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.2083215353,hogares no crecen
+18003,19181,19770,2.787878788,211.2717391,233,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.102845089,obra ≥ hogares
+18017,26389,28011,2.430656934,667.3093093,110,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1648410991,obra < 50 %
+18021,24430,25259,2.704318937,306.546683,382,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.246139727,obra ≥ hogares
+18022,19252,20952,2.644385027,642.8715875,172,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2675495439,obra < 50 %
+18023,20388,20657,2.582147477,104.1768537,158,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.516651678,obra ≥ hogares
+18062,15781,16911,2.718796992,415.625,362,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8709774436,obra 50-100 %
+18087,233680,235294,2.360563668,683.7350002,1900,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.77885438,obra ≥ hogares
+18089,18477,18877,2.524005487,158.4782609,136,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8581618656,obra 50-100 %
+18100,10509,10760,2.670422535,93.99261603,98,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.042635093,obra ≥ hogares
+18101,12121,12276,2.775330396,55.84920635,128,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.291885747,obra ≥ hogares
+18102,10083,9925,2.394859813,-65.97463415,49,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+18122,20478,20923,2.597222222,171.3368984,79,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4610799001,obra < 50 %
+18127,22475,22372,2.638248848,-39.04104803,96,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+18140,58723,60160,2.668861712,538.4317941,772,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.433793488,obra ≥ hogares
+18145,14575,15242,2.775700935,240.2996633,127,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5285067747,obra 50-100 %
+18153,11572,11705,2.921375921,45.52649285,53,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.164157322,obra ≥ hogares
+18173,12358,12711,2.375494071,148.6006656,122,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8209922852,obra 50-100 %
+18175,15203,15526,2.538330494,127.2489933,24,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1886066002,obra < 50 %
+18193,19472,20398,2.656077348,348.6344254,219,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6281651612,obra 50-100 %
+18905,22146,23763,2.575028637,627.9541815,171,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2723128614,obra < 50 %
+18911,11683,12433,2.737078652,274.0147783,111,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4050876404,obra < 50 %
+19024,13061,14533,2.891954023,508.9984102,547,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.074659545,obra ≥ hogares
+19046,35119,35733,2.764070933,222.1361227,262,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.179456978,obra ≥ hogares
+19058,10823,11538,2.854700855,250.4640719,363,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.449309665,obra ≥ hogares
+19071,12778,13924,2.812217195,407.5076428,218,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5349592918,obra 50-100 %
+19130,86946,92798,2.541012216,2303.019231,1362,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5913975801,obra 50-100 %
+20009,14618,14505,2.34602649,-48.16654905,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20017,11647,11768,2.605990783,46.43147657,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20018,15178,15297,2.543103448,46.79322034,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20019,13897,14019,2.473491773,49.32298596,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20030,27402,27464,2.322795341,26.69197708,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20032,11449,11709,2.375,109.4736842,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20036,16837,16768,2.413199426,-28.59274673,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20040,20414,20378,2.338061466,-15.39737108,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20045,62898,63737,2.457442674,341.4118298,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20055,21853,22411,2.24872579,248.1405258,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20059,11426,11518,2.468041237,37.27652464,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20063,10295,10468,2.539951574,68.1115348,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20064,16065,16172,2.312590449,46.26846058,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20067,39155,39341,2.309433962,80.53921569,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20069,187892,189507,2.345351278,688.5962095,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20071,19801,20121,2.443249701,130.9731051,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20074,14561,14415,2.406143345,-60.67801418,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20076,10396,10792,2.555294118,154.9723757,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20079,23262,23467,2.523007856,81.2522242,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20081,10115,10154,2.655860349,14.68450704,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+20902,18843,19413,2.411311054,236.3859275,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+21002,21781,22772,2.922544952,339.0880265,371,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.094111178,obra ≥ hogares
+21005,24594,25236,2.658798283,241.4624697,330,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.366672015,obra ≥ hogares
+21010,21577,22238,2.514388489,262.8869814,521,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.981840246,obra ≥ hogares
+21013,14404,14377,2.82421875,-9.560165975,68,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+21021,20498,21639,2.700248756,422.5536619,117,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2768879093,obra < 50 %
+21035,12974,13432,2.726377953,167.9884477,40,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2381116116,obra < 50 %
+21041,142668,143774,2.549867139,433.7480895,1001,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.307791145,obra ≥ hogares
+21042,21620,21617,2.726582278,-1.100278552,90,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+21044,28377,29869,2.855975485,522.4134478,225,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.430693354,obra < 50 %
+21050,21745,24014,2.657142857,853.9247312,191,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2236731096,obra < 50 %
+21054,10818,10858,2.842696629,14.07114625,62,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),4.406179775,obra ≥ hogares
+21055,12073,13289,3.078947368,394.9401709,227,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5747706025,obra 50-100 %
+21060,15959,16274,2.499205087,126.0400763,206,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.634400787,obra ≥ hogares
+21072,12819,12739,2.638477801,-30.32051282,56,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+22048,17168,17799,2.465185185,255.9645433,86,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3359840347,obra < 50 %
+22112,15119,15400,2.745519713,102.348564,146,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.426497787,obra ≥ hogares
+22125,53377,55033,2.413942308,686.0147381,435,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6340971642,obra 50-100 %
+22130,13351,14012,2.317157712,285.263276,166,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5819185783,obra 50-100 %
+22158,17431,18465,2.52120383,410.121541,72,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1755577135,obra < 50 %
+23002,21570,21577,2.501668521,2.798132503,68,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),24.30192277,obra ≥ hogares
+23003,10519,10182,2.454545455,-137.2962963,52,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+23005,36328,35677,2.51167445,-259.1896414,70,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+23009,15760,15567,2.718286656,-71.00060606,93,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+23010,17494,17128,2.79277865,-131.0522766,49,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+23024,15033,14692,2.350584307,-145.0703125,67,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+23050,111915,112119,2.559772296,79.69458858,313,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),3.927493768,obra ≥ hogares
+23053,11585,11279,2.725118483,-112.2886957,61,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+23055,56525,55689,2.574074074,-324.7769784,90,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+23058,11305,11479,2.645374449,65.77518734,73,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.109841005,obra ≥ hogares
+23060,24296,24441,2.632025451,55.0906527,195,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),3.539620434,obra ≥ hogares
+23086,14061,13894,2.714851485,-61.5134938,44,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+23087,13519,13217,2.59047619,-116.5808824,30,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+23092,34243,33605,2.611363636,-244.3167972,107,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+23095,10530,10323,2.520987654,-82.11067581,53,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+24008,10561,10300,2.29010989,-113.9683301,42,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+24010,10152,10326,2.342364532,74.28391167,-1,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.01346186513,hogares no crecen
+24089,122398,124091,2.174818841,778.4556435,1266,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.6262969,obra ≥ hogares
+24115,63739,63112,2.336738555,-268.3227008,337,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+24142,30225,29996,2.375099761,-96.41700269,34,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+24222,18656,18968,2.412719892,129.3146383,109,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8429053468,obra 50-100 %
+25040,17357,17667,2.734567901,113.3634312,65,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5733771406,obra 50-100 %
+25120,138933,147369,2.523202071,3343.37075,1044,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3122597157,obra < 50 %
+25137,14922,16016,2.664835165,410.5319588,-122,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.2971754023,hogares no crecen
+25203,12229,13003,2.416513761,320.2961276,87,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2716236399,obra < 50 %
+25217,17626,18991,2.642105263,516.6334661,127,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2458222479,obra < 50 %
+26018,14880,15076,2.542124542,77.10086455,58,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7522613441,obra 50-100 %
+26036,24579,25292,2.536711479,281.0725642,-1,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.003557800111,hogares no crecen
+26071,11615,12153,2.358695652,228.0921659,58,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2542831744,obra < 50 %
+26084,11071,12100,2.547511312,403.9236234,150,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3713573341,obra < 50 %
+26089,150596,151681,2.374619939,456.9152234,1295,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.834223798,obra ≥ hogares
+27019,10090,10415,2.32304038,139.902863,-782,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-5.589592545,hogares no crecen
+27028,97514,100071,2.380363636,1074.205622,899,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8368975006,obra 50-100 %
+27031,18254,18989,2.303970223,319.0145396,101,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3165999899,obra < 50 %
+27057,13316,13776,2.444444444,188.1818182,22,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1169082126,obra < 50 %
+27065,14014,13946,2.404181185,-28.28405797,202,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+27066,15291,15091,2.339344262,-85.49404345,124,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+28005,195570,202549,2.668662119,2615.168084,2997,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.146006644,obra ≥ hogares
+28006,116895,123222,2.919013207,2167.513317,1420,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6551286161,obra 50-100 %
+28007,171575,176806,2.60405859,2008.787367,868,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4321014828,obra < 50 %
+28009,20704,21194,3.0359375,161.3998971,40,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2478316327,obra < 50 %
+28010,15178,15831,2.782178218,234.7081851,49,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2087698816,obra < 50 %
+28013,60156,63838,2.754545455,1336.69967,455,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.340390598,obra < 50 %
+28014,56315,60105,2.834002006,1337.331446,1103,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8247768371,obra 50-100 %
+28015,33757,38185,3.154056518,1403.906358,1485,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.057762857,obra ≥ hogares
+28022,59000,66319,3.261697497,2243.923603,2153,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.9594800808,obra 50-100 %
+28026,10699,11261,2.897243108,193.9775087,251,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.293964448,obra ≥ hogares
+28040,25070,26254,2.86722488,412.9428452,107,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.259115762,obra < 50 %
+28045,52465,58654,2.933333333,2109.886364,2085,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.9882048796,obra 50-100 %
+28047,64297,67956,2.790626369,1311.175169,421,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3210860075,obra < 50 %
+28049,81388,80365,2.732986111,-374.315843,506,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+28053,10528,10758,3.099099099,74.21511628,77,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.037524481,obra ≥ hogares
+28054,16681,17322,2.677471637,239.4049637,114,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4761806031,obra < 50 %
+28058,192612,189814,2.881005837,-971.188591,752,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+28061,34653,36805,2.82842725,760.8468629,489,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6427048909,obra 50-100 %
+28065,183872,195628,2.592105263,4535.309645,2281,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5029425064,obra 50-100 %
+28066,10489,10785,3.095238095,95.63076923,87,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.9097490347,obra 50-100 %
+28068,16583,17545,2.770689655,347.2059739,235,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6768316725,obra 50-100 %
+28073,19685,20549,2.927083333,295.1743772,211,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7148316937,obra 50-100 %
+28074,188687,195946,2.614349776,2776.598628,714,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2571491583,obra < 50 %
+28079,3277451,3477497,2.456994654,81418.98057,29393,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3610091872,obra < 50 %
+28080,72173,73662,3.053713806,487.6029957,586,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.201797374,obra ≥ hogares
+28083,14960,15979,2.97752809,342.2301887,262,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7655665943,obra 50-100 %
+28084,23673,24976,2.914918415,447.0107957,279,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6241459998,obra 50-100 %
+28090,13597,14725,2.872727273,392.6582278,351,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8939071567,obra 50-100 %
+28092,208632,214293,2.712860892,2086.726974,1820,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8721792659,obra 50-100 %
+28096,30696,33352,2.972693032,893.4659487,526,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5887185749,obra 50-100 %
+28104,26293,27649,3.077288942,440.6476043,215,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4879182319,obra < 50 %
+28106,130550,138012,2.912181941,2562.339906,483,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1884995815,obra < 50 %
+28113,53625,56592,2.78432404,1065.608729,546,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5123831904,obra 50-100 %
+28115,87080,89474,3.093886463,773.7840508,834,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.077820096,obra ≥ hogares
+28123,93272,103243,2.963768116,3364.298289,2804,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8334576068,obra 50-100 %
+28127,95294,99579,2.974627339,1440.51658,970,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6733695493,obra 50-100 %
+28129,13626,13947,3.048498845,105.2977273,94,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.892706827,obra 50-100 %
+28130,39286,39033,2.716845878,-93.12269129,1,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+28131,18432,18942,2.579689704,197.6981957,122,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6171022429,obra 50-100 %
+28132,19788,20936,2.968449931,386.7338262,111,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2870191136,obra < 50 %
+28134,90958,97330,2.76056338,2308.22449,891,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3860109811,obra < 50 %
+28148,133377,144211,2.801440983,3867.295461,2986,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7721158184,obra 50-100 %
+28152,24057,25324,3.189189189,397.279661,252,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6343138719,obra 50-100 %
+28160,13254,14395,2.654958678,429.7618677,184,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4281440812,obra < 50 %
+28161,77931,86078,2.972696246,2740.609644,2227,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8125929225,obra 50-100 %
+28167,12542,14467,3.03117506,635.0672468,942,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.483307484,obra ≥ hogares
+28172,15046,18661,2.885311871,1252.89749,1108,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8843500839,obra 50-100 %
+28176,22453,23784,3.288084465,404.7949541,320,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7905236879,obra 50-100 %
+28177,17266,18415,3.206834532,358.2972518,353,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.985215483,obra 50-100 %
+28181,28016,30068,2.988649262,686.5977972,518,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7544445993,obra 50-100 %
+28903,48726,54506,2.863529412,2018.488085,1727,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8555908813,obra 50-100 %
+29007,41833,45324,3.026093089,1153.63272,669,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5799072691,obra 50-100 %
+29008,26053,27610,2.797180043,556.6320279,379,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6808806914,obra 50-100 %
+29012,13321,13639,2.438735178,130.3954619,96,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7362219405,obra 50-100 %
+29015,41472,41823,2.663239075,131.7944015,89,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6752942383,obra 50-100 %
+29025,70419,78787,2.376733176,3520.799089,676,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1920018674,obra < 50 %
+29038,27443,29264,2.865537849,635.4827946,-3397,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-5.345542049,hogares no crecen
+29042,23509,26474,2.747368421,1079.214559,48,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.04447679063,obra < 50 %
+29051,71696,79593,2.56013363,3084.604611,3461,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.122023869,obra ≥ hogares
+29054,81987,84857,2.411816578,1189.974406,1768,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.485746241,obra ≥ hogares
+29067,578063,597173,2.636962936,7246.973305,7676,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.059200811,obra ≥ hogares
+29068,16845,18044,2.313269494,518.3140154,432,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8334715774,obra 50-100 %
+29069,149032,160478,2.606345268,4391.590071,2225,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5066502027,obra 50-100 %
+29070,86556,94320,2.608527132,2976.392273,1890,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6349969448,obra 50-100 %
+29075,20899,22062,2.454993835,473.7282772,241,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5087304507,obra 50-100 %
+29082,49917,52355,2.612683438,933.1402207,788,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8444604386,obra 50-100 %
+29084,33662,33708,2.5334805,18.15683997,226,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),12.44709985,obra ≥ hogares
+29091,18782,21795,2.208868145,1364.047015,580,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4252052851,obra < 50 %
+29094,82972,87798,2.575539568,1873.782123,1383,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.738079408,obra 50-100 %
+29901,67877,71270,2.300881834,1474.652001,784,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5316508571,obra 50-100 %
+30002,13080,13225,2.811965812,51.56534954,38,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7369289714,obra 50-100 %
+30003,35910,37761,2.684136967,689.6071336,253,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3668755552,obra < 50 %
+30005,42619,43791,2.865651886,408.9819861,65,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1589312053,obra < 50 %
+30008,22475,24227,2.589977221,676.4538259,110,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1626127251,obra < 50 %
+30009,19492,20795,2.88030303,452.3829563,49,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1083153097,obra < 50 %
+30010,11508,11548,2.984654731,13.40188518,2,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1492327366,obra < 50 %
+30012,11609,11999,2.634042553,148.0613893,12,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.08104746318,obra < 50 %
+30013,10118,10384,2.630727763,101.1127049,-593,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-5.864742719,hogares no crecen
+30015,25659,26236,2.758985201,209.1348659,164,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7841829687,obra 50-100 %
+30016,215826,220400,2.768363778,1652.239506,1023,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6191596293,obra 50-100 %
+30017,14935,14650,2.704467354,-105.3811944,478,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+30018,12286,13152,2.846846847,304.1962025,50,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1643676009,obra < 50 %
+30019,35179,35452,2.902074689,94.07063197,129,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.371310018,obra ≥ hogares
+30020,10665,11563,2.808383234,319.7569296,59,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1845151568,obra < 50 %
+30021,17253,19088,2.906690141,631.3022411,50,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.07920136624,obra < 50 %
+30022,26107,27434,2.859743041,464.027705,122,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2629153361,obra < 50 %
+30024,95726,98613,2.994548758,964.0851537,824,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8546962857,obra 50-100 %
+30026,33377,35642,2.524316109,897.2727273,241,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.268591692,obra < 50 %
+30027,73593,78210,2.811823802,1641.994778,-2117,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-1.289285464,hogares no crecen
+30029,17124,17986,2.750755287,313.3684789,51,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1627477026,obra < 50 %
+30030,459778,477631,2.78898007,6401.264817,3304,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5161479949,obra 50-100 %
+30033,16219,18240,2.835616438,712.7198068,34,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.04770458135,obra < 50 %
+30035,33489,36385,2.649517685,1093.029126,731,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6687836421,obra 50-100 %
+30036,26465,29726,2.71641791,1200.478022,824,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6863932408,obra 50-100 %
+30037,37039,41158,3.047579984,1351.564199,518,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3832596338,obra < 50 %
+30038,21907,22814,2.92578125,310.0026702,184,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5935432745,obra 50-100 %
+30039,32835,34162,2.771992819,478.7169689,353,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7373876903,obra 50-100 %
+30041,20560,21318,2.907624633,260.6938981,-45,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.1726162381,hogares no crecen
+30043,35052,36398,2.745627981,490.2339317,86,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1754264535,obra < 50 %
+30901,16116,16394,2.848275862,97.60290557,27,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2766311089,obra < 50 %
+30902,16958,20163,2.520930233,1271.356089,199,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1565257773,obra < 50 %
+31016,10739,10656,2.622276029,-31.65189289,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+31023,11717,13200,3.014409222,491.9703633,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+31060,19706,21229,2.724517906,558.9979778,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+31086,21604,22785,2.922764228,404.069541,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+31097,13954,14356,2.372681282,169.4285714,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+31201,203596,209676,2.431554804,2500.457727,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+31227,10598,10867,2.550724638,105.4602273,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+31232,36931,38773,2.550991501,722.0721821,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+31258,10125,9918,2.711442786,-76.34311927,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+31901,19812,19588,2.655778894,-84.34437086,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+31903,10704,11317,2.826829268,216.8507334,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+31907,15197,16466,2.892045455,438.7897839,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+32008,11027,11192,2.610576923,63.20441989,227,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),3.591520979,obra ≥ hogares
+32009,13368,13370,2.380582524,0.8401305057,76,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),90.46213592,obra ≥ hogares
+32019,13897,14238,2.227707006,153.0721944,178,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.162849992,obra ≥ hogares
+32054,104578,105609,2.332507321,442.0136179,220,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4977222218,obra < 50 %
+32085,13629,13921,2.409539474,121.1849829,65,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5363700883,obra 50-100 %
+33002,10358,10007,2.166340509,-162.0243902,-15,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+33004,76951,75915,2.241784038,-462.1319372,342,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+33011,11966,11290,2.663326653,-253.8179082,114,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+33014,10283,10296,2.345679012,5.542105263,48,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),8.660968661,obra ≥ hogares
+33016,22297,21986,2.401918977,-129.4798047,148,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+33020,15568,15793,2.31147541,97.34042553,0,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0,obra < 50 %
+33024,269311,271259,2.226516594,874.9092666,2116,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.418536505,obra ≥ hogares
+33025,10399,10396,2.297592998,-1.305714286,129,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+33031,38693,38615,2.177364865,-35.8231187,56,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+33032,12761,12393,2.240641711,-164.2386635,45,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+33033,10624,10411,2.171370968,-98.09470752,8,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+33034,11272,10763,2.486810552,-204.6798457,139,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+33035,13827,14010,2.53164557,72.285,108,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.49408591,obra ≥ hogares
+33036,13686,13529,2.152960526,-72.92284186,352,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+33037,37016,36368,2.18253012,-296.903119,13,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+33044,217164,223576,2.25855394,2838.984665,2322,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8178980424,obra 50-100 %
+33060,15664,15526,2.107671602,-65.47509579,-6,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+33066,51574,52997,2.405853659,591.474047,805,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.361006462,obra ≥ hogares
+33076,14868,15386,2.183890578,237.1913709,288,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.214209433,obra ≥ hogares
+34120,77086,77369,2.270826929,124.6242047,-358,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-2.872636186,hogares no crecen
+35002,32320,33875,2.795969773,556.1576577,160,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2876882082,obra < 50 %
+35003,12782,14027,2.290552585,543.536965,442,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8131921626,obra 50-100 %
+35004,64278,70265,2.822768435,2120.967461,639,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3012776064,obra < 50 %
+35006,38559,39193,2.766086298,229.2047072,-74,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.3228554985,hogares no crecen
+35009,24493,25167,2.724099099,247.4212484,170,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6870873099,obra 50-100 %
+35011,31856,32846,2.75044405,359.9418792,232,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6445485046,obra 50-100 %
+35012,20527,21403,2.537439614,345.2298905,148,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4286998434,obra < 50 %
+35014,27503,29864,2.457952468,960.5555969,766,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7974551421,obra 50-100 %
+35015,20892,21254,2.495203837,145.0783277,211,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.454386767,obra ≥ hogares
+35016,380667,384023,2.629730106,1276.17659,4289,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),3.36082015,obra ≥ hogares
+35017,41852,46182,2.741573034,1579.385246,386,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2443988894,obra < 50 %
+35018,19305,19744,2.626373626,167.1506276,234,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.399934917,obra ≥ hogares
+35019,53429,54925,2.36040146,633.7904909,678,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.069754138,obra ≥ hogares
+35021,18272,18790,2.916149068,177.6315229,149,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8388150795,obra 50-100 %
+35022,73921,79506,2.802264151,1993.031242,450,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2257867266,obra < 50 %
+35023,13886,14334,2.8,160,206,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.2875,obra ≥ hogares
+35024,22976,23946,2.696535245,359.7208684,583,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.62070108,obra ≥ hogares
+35026,103175,104933,2.693350717,652.7185594,953,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.460047345,obra ≥ hogares
+35027,12682,13244,2.711316397,207.2793867,79,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3811281057,obra < 50 %
+35028,20469,21671,2.63253012,456.5949657,-761,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-1.666685043,hogares no crecen
+35030,15494,16948,2.872600349,506.1616039,134,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2647375837,obra < 50 %
+35034,17080,18698,2.639175258,613.0703125,506,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8253539434,obra 50-100 %
+36003,12401,12366,2.556722689,-13.68940016,160,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+36004,11936,11829,2.310838446,-46.30353982,53,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+36006,13730,13863,2.693133047,49.38486056,70,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.417438446,obra ≥ hogares
+36008,26719,26698,2.603773585,-8.065217391,168,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+36017,20275,20101,2.596583443,-67.0111336,72,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+36021,14984,15109,2.773519164,45.06909548,57,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.264724739,obra ≥ hogares
+36022,10785,10877,2.568445476,35.81933153,117,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),3.266392616,obra ≥ hogares
+36023,10006,9994,2.407594937,-4.984227129,30,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+36024,20154,20255,2.469362745,40.90124069,60,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.466948165,obra ≥ hogares
+36026,24246,23976,2.570484581,-105.0385604,14,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+36029,19526,19316,2.613607189,-80.34872299,733,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+36033,15196,15221,2.885122411,8.665143603,-75,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-8.655367232,hogares no crecen
+36035,18006,18156,2.74,54.74452555,121,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.210266667,obra ≥ hogares
+36038,83241,83339,2.525878004,38.79839005,750,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),19.33069901,obra ≥ hogares
+36039,20241,20935,2.600518807,266.8698254,142,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5320946262,obra 50-100 %
+36041,17237,17426,2.788368336,67.7815759,74,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.0917421,obra ≥ hogares
+36042,22988,23206,2.349047141,92.80358668,-84,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.9051374306,hogares no crecen
+36045,29241,28928,2.814299901,-111.2177135,48,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+36051,17622,17990,2.686098655,137.0016694,435,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),3.17514379,obra ≥ hogares
+36054,13789,13814,2.436762226,10.25951557,79,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),7.700168634,obra ≥ hogares
+36055,17488,17499,2.721666667,4.041641151,108,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),26.72181818,obra ≥ hogares
+36057,294650,295735,2.546332046,426.1031084,2161,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),5.071542444,obra ≥ hogares
+36060,37495,37975,2.472240366,194.1558785,275,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.41638771,obra ≥ hogares
+36061,10332,10182,2.72319202,-55.08241758,-74,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+37046,12258,11990,2.182156134,-122.8143101,6,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+37107,12056,11733,2.324626866,-138.9470305,41,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+37274,143549,145583,2.216480227,917.6711686,489,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.532870615,obra 50-100 %
+37294,14632,14949,2.615248227,121.2122034,68,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5609996197,obra 50-100 %
+38001,48822,50612,2.552301255,701.3278689,615,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8769079732,obra 50-100 %
+38006,83097,89036,2.479118329,2395.609733,1088,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4541641257,obra < 50 %
+38011,28614,29240,2.557278208,244.7915123,195,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.796596247,obra 50-100 %
+38017,52401,59126,2.654261057,2533.661857,548,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2162877412,obra < 50 %
+38019,21871,22846,2.626963351,371.1509716,215,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5792790979,obra 50-100 %
+38020,21001,22010,2.631909548,383.3718377,208,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5425541981,obra 50-100 %
+38022,23492,24675,2.753882915,429.5752711,149,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3468542302,obra < 50 %
+38023,158117,161927,2.666723872,1428.719351,924,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6467330334,obra 50-100 %
+38024,20773,20662,2.624178712,-42.29894842,-46,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+38026,42546,42669,2.945870923,41.75335689,249,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),5.963592356,obra ≥ hogares
+38028,30326,31589,2.260305344,558.7740628,154,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2756033435,obra < 50 %
+38031,37256,38161,2.909945184,311.002422,180,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5787736278,obra 50-100 %
+38032,17559,18028,2.793814433,167.8708487,125,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7446200514,obra 50-100 %
+38035,22057,24307,2.66746988,843.495935,146,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1730891566,obra < 50 %
+38037,15546,15763,2.802610114,77.42782305,6,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.07749152389,obra < 50 %
+38038,208103,211498,2.562088314,1325.090935,1035,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7810784699,obra 50-100 %
+38039,15043,15450,2.823863636,144.1287726,161,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.117056623,obra ≥ hogares
+38040,11101,12656,2.614285714,594.8087432,-77,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.1294533762,hogares no crecen
+38043,24365,24694,2.87755102,114.3333333,89,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.778425656,obra 50-100 %
+38046,11346,11513,2.926760563,57.05967276,75,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.314413427,obra ≥ hogares
+39008,18115,18445,2.474692202,133.3499171,5,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.0374953364,obra < 50 %
+39016,30473,30557,2.656616415,31.61916772,89,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.814748345,obra ≥ hogares
+39020,32993,33392,2.361356932,168.9706433,244,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.444037823,obra ≥ hogares
+39025,10715,10950,2.524475524,93.08864266,10,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1074244904,obra < 50 %
+39035,10992,10675,2.309338521,-137.2687447,34,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+39052,26054,26859,2.637666325,305.1940241,123,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4030223081,obra < 50 %
+39073,13308,13886,2.771428571,208.556701,499,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.392634701,obra ≥ hogares
+39075,172000,175082,2.35902412,1306.472441,1203,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.920800135,obra 50-100 %
+39079,11013,10881,2.408577878,-54.80412371,61,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+39087,51203,51668,2.365581395,196.569013,-25,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.1271817954,hogares no crecen
+40194,51234,52189,2.508425614,380.7168906,59,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1549707971,obra < 50 %
+41004,75722,77718,2.794862385,714.167542,475,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6651100366,obra 50-100 %
+41005,12298,12353,2.723214286,20.19672131,94,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),4.654220779,obra ≥ hogares
+41007,16566,16862,2.764607679,107.0676329,90,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8405901728,obra 50-100 %
+41011,19470,19558,2.852583587,30.84922749,58,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.880111909,obra ≥ hogares
+41016,11081,11443,2.967123288,122.0036934,85,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6967002195,obra 50-100 %
+41017,22452,23086,2.929443691,216.4233441,269,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.24293431,obra ≥ hogares
+41018,12566,12931,2.70246085,135.0620861,42,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3109680978,obra < 50 %
+41020,16359,16393,2.85,11.92982456,70,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),5.867647059,obra ≥ hogares
+41021,27643,29191,2.534948742,610.6632353,693,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.134831704,obra ≥ hogares
+41023,10748,10768,2.756684492,7.255092144,60,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),8.270053476,obra ≥ hogares
+41024,29210,30408,2.687892377,445.702369,256,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5743743309,obra 50-100 %
+41029,17377,17068,2.791666667,-110.6865672,101,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+41034,30876,31292,2.773139746,150.0104712,105,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6999511378,obra 50-100 %
+41038,136296,142463,2.834514381,2175.681324,3711,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.705672591,obra ≥ hogares
+41039,39866,39797,2.648921833,-26.04833376,233,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+41040,16045,16574,3.013513514,175.5426009,143,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8146170745,obra 50-100 %
+41041,12479,12437,2.624229979,-16.00469484,94,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+41044,10331,10558,2.760683761,82.22600619,10,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1216160247,obra < 50 %
+41047,13570,13660,2.923747277,30.78241431,293,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),9.51842169,obra ≥ hogares
+41049,13108,14251,2.824949698,404.6089744,44,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.10874697,obra < 50 %
+41053,27621,27767,2.716012085,53.75528365,168,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),3.12527418,obra ≥ hogares
+41055,18633,18215,2.652050919,-157.6138667,96,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+41058,23908,24354,2.965018094,150.4206672,190,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.2631243,obra ≥ hogares
+41059,46903,48032,2.859365277,394.8428727,493,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.248597946,obra ≥ hogares
+41060,19378,19416,2.707282913,14.03621314,28,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.994840041,obra ≥ hogares
+41065,27581,27200,2.676441838,-142.3531775,88,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+41068,17595,17390,2.873397436,-71.34411601,98,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+41069,38698,38778,2.900826446,27.57834758,207,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),7.50588843,obra ≥ hogares
+41075,13914,14251,2.731898239,123.3574499,64,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5188174697,obra 50-100 %
+41077,10909,10837,2.662436548,-27.042898,51,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+41079,11869,11897,2.741418764,10.21368948,31,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),3.035142203,obra ≥ hogares
+41081,39201,40747,2.847212165,542.9872838,717,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.320472912,obra ≥ hogares
+41086,22284,23455,2.595465394,451.1714943,214,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4743207466,obra < 50 %
+41087,14027,14633,2.61328125,231.8923767,38,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1638691213,obra < 50 %
+41091,684340,688714,2.545745844,1718.160519,5165,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),3.006121921,obra ≥ hogares
+41093,25491,25577,2.910776362,29.54538217,414,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),14.01234202,obra ≥ hogares
+41095,51229,52489,2.739967897,459.8594025,215,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4675342047,obra < 50 %
+41102,19294,19473,2.988095238,59.90438247,99,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.652633679,obra ≥ hogares
+42173,39739,40941,2.372667068,506.6028927,651,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.285030167,obra ≥ hogares
+43014,21228,23047,2.551150895,713.0115288,87,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1220176624,obra < 50 %
+43037,28348,32429,2.399152542,1701.017308,545,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3203965047,obra < 50 %
+43038,34970,37068,2.421944035,866.2462755,477,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5506517182,obra 50-100 %
+43051,13984,16304,2.468926554,939.6796339,77,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.08194282096,obra < 50 %
+43092,12811,14652,2.409407666,764.088214,107,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.140036187,obra < 50 %
+43123,105981,111911,2.583979975,2294.909426,443,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1930359408,obra < 50 %
+43136,14986,16230,2.441281139,509.5685131,70,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1373711252,obra < 50 %
+43148,136150,143260,2.516808275,2825.006605,785,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2778754565,obra < 50 %
+43153,17023,18190,2.415977961,483.0342075,174,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3602229351,obra < 50 %
+43155,33686,36258,2.600317209,989.1100945,89,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.0899798723,obra < 50 %
+43161,24581,25540,2.629385965,364.7239366,19,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.05209419534,obra < 50 %
+43163,38865,41195,2.440437862,954.7467018,169,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1770102999,obra < 50 %
+43171,22781,24158,2.558790594,538.1448578,67,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1245017936,obra < 50 %
+43901,11557,12074,2.738041002,188.8211314,24,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1271044179,obra < 50 %
+43905,28314,31018,2.455341506,1101.272468,369,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3350669437,obra < 50 %
+44013,16006,16447,2.673504274,164.952046,-18,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.1091226234,hogares no crecen
+44216,35898,36521,2.448106592,254.4823833,354,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.391058962,obra ≥ hogares
+45019,10638,11325,2.784263959,246.7438469,43,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1742697966,obra < 50 %
+45066,11763,12662,2.841836735,316.3447038,119,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3761719371,obra < 50 %
+45081,30226,33167,2.97621313,988.1684783,826,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8358898489,obra 50-100 %
+45087,10206,10072,2.702247191,-49.58835759,65,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+45121,13045,16039,2.652694611,1128.663657,149,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1320145281,obra < 50 %
+45142,11087,11321,2.700507614,86.65037594,9,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1038656775,obra < 50 %
+45161,27465,30889,2.916666667,1173.942857,156,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.132885514,obra < 50 %
+45163,11054,11419,2.70505618,134.9325026,83,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.6151223642,obra 50-100 %
+45165,83201,84413,2.59374012,467.2788883,330,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7062163693,obra 50-100 %
+45168,85254,87074,2.623973228,693.6046377,792,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.141860877,obra ≥ hogares
+45173,13570,14313,2.708737864,274.297491,29,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1057246273,obra < 50 %
+45205,11114,13435,2.773631841,836.8089686,191,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2282480317,obra < 50 %
+46005,29871,30352,2.484210526,193.6228814,58,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2995513732,obra < 50 %
+46007,16671,17432,2.562798092,296.941067,214,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7206817237,obra 50-100 %
+46011,10562,11109,2.51039261,217.8942042,52,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2386479263,obra < 50 %
+46013,24946,26324,2.537578288,543.0374332,149,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.274382558,obra < 50 %
+46015,10280,10843,2.449760766,229.8183594,24,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1044302991,obra < 50 %
+46017,45088,48604,2.592780598,1356.073091,157,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1157754704,obra < 50 %
+46019,12200,12574,2.549019608,146.7230769,36,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2453601762,obra < 50 %
+46021,32348,34644,2.653939886,865.1288644,226,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2612327588,obra < 50 %
+46022,21380,22266,2.490407674,355.7650457,18,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.05059518976,obra < 50 %
+46029,27308,28248,2.45438121,382.9885904,-86,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.2245497703,hogares no crecen
+46031,14054,14981,2.493408663,371.7802115,47,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1264187779,obra < 50 %
+46051,11437,12707,2.6,488.4615385,185,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3787401575,obra < 50 %
+46054,15423,16759,2.584717608,516.8843188,90,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1741201981,obra < 50 %
+46060,11978,12238,2.545634921,102.1356196,27,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2643543956,obra < 50 %
+46070,25519,28605,2.744988864,1124.230426,620,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5514883654,obra 50-100 %
+46078,39028,41743,2.575048733,1054.348978,86,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.08156692119,obra < 50 %
+46081,13357,13805,2.63976378,169.7121551,12,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.07070795838,obra < 50 %
+46083,20552,21893,2.574812968,520.8145278,57,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1094439516,obra < 50 %
+46085,15810,16833,2.58,396.5116279,12,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.03026392962,obra < 50 %
+46094,28587,30612,2.649302326,764.352177,140,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1831616423,obra < 50 %
+46102,25055,26939,2.51641791,748.683274,373,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4982080046,obra < 50 %
+46105,22724,24621,2.330022075,814.1553766,88,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1080874763,obra < 50 %
+46110,30254,32178,2.586805556,743.7744966,35,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.04705727362,obra < 50 %
+46111,15940,18122,2.414673046,903.6420079,31,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.03430562073,obra < 50 %
+46116,18417,19952,2.76565008,555.0232153,325,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5855610919,obra 50-100 %
+46131,75700,82909,2.466732543,2922.489518,271,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.09272916065,obra < 50 %
+46135,13078,13556,2.848290598,167.819955,96,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5720416264,obra 50-100 %
+46145,29655,30925,2.480991736,511.892072,160,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3125658879,obra < 50 %
+46147,23808,25613,2.58306538,698.7821577,159,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2275387233,obra < 50 %
+46159,31270,32747,2.631662689,561.2421403,27,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.04810757793,obra < 50 %
+46164,16226,17564,2.578199052,518.9669118,150,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2890357682,obra < 50 %
+46166,10919,11046,2.560283688,49.60387812,17,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3427151393,obra < 50 %
+46169,44555,47003,2.478534631,987.6803695,297,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3007045692,obra < 50 %
+46171,21864,22252,2.53962704,152.7783387,74,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4843618581,obra < 50 %
+46181,25394,26820,2.380173244,599.1160534,462,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.7711360719,obra 50-100 %
+46184,35902,36847,2.534130894,372.9089142,19,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.05095077987,obra < 50 %
+46186,26617,28237,2.597868217,623.5882134,305,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.4891048186,obra < 50 %
+46190,71328,75805,2.620854827,1708.221285,264,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.154546722,obra < 50 %
+46193,11720,11899,2.619909502,68.32297064,98,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.434363862,obra ≥ hogares
+46194,21543,23157,2.599039616,620.9986143,49,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.07890516802,obra < 50 %
+46202,25552,27777,2.5862423,860.3215562,277,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3219726369,obra < 50 %
+46205,19951,21685,2.607611549,664.9763463,109,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1639156048,obra < 50 %
+46213,20444,21050,2.406139315,251.8557409,49,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1945558192,obra < 50 %
+46214,22931,24609,2.691954023,623.3390265,153,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2454523036,obra < 50 %
+46220,67326,73416,2.371358371,2568.148313,693,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.2698442285,obra < 50 %
+46223,10352,10862,2.586797066,197.1550095,28,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1420202311,obra < 50 %
+46230,19216,20484,2.599150142,487.8517711,102,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.209079901,obra < 50 %
+46235,27922,29544,2.425438596,668.7450271,8,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.01196270578,obra < 50 %
+46238,17129,17933,2.451936872,327.9040374,1,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.003049672727,obra < 50 %
+46244,84325,91353,2.682560418,2619.885074,627,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.239323475,obra < 50 %
+46249,11462,11639,2.44766147,72.31392175,38,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5254866433,obra 50-100 %
+46250,788842,841558,2.414065415,21837.02218,8549,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3914911076,obra < 50 %
+46256,10193,11552,2.407317073,564.5288754,69,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.1222258117,obra < 50 %
+47010,20778,22778,2.574193548,776.9423559,636,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8185935484,obra 50-100 %
+47076,22628,22999,2.659831122,139.4825397,343,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),2.45908915,obra ≥ hogares
+47085,20314,20238,2.403055229,-31.62640587,109,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+47186,297370,301798,2.310026592,1916.861051,2894,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.509759927,obra ≥ hogares
+48003,19536,19639,2.480722892,41.52015542,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48011,12134,11938,2.5,-78.4,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48013,100847,103084,2.330135704,960.0299227,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48015,40574,40262,2.341905319,-133.2248565,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48017,16854,17116,2.305665349,113.6331429,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48020,345749,350975,2.282723577,2289.370492,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48027,29934,30181,2.556866049,96.60263591,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48029,11660,12035,2.642533937,141.9092466,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48034,15790,15560,2.38184438,-96.56382335,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48036,29369,24767,2.423622047,-1898.810916,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48044,77101,75967,2.502617801,-453.125523,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48046,17031,17081,2.423822715,20.62857143,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48054,32182,32708,2.503631961,210.0947776,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48069,17709,18135,2.565830721,166.0281002,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48078,45294,44864,2.263881814,-189.9392439,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48080,11914,11795,2.417279412,-49.22889734,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48082,46112,46530,2.331488934,179.2845739,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48084,27321,28473,2.310043668,498.6918715,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48085,14287,15040,2.541522491,296.2791014,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+48902,24503,24721,2.442740286,89.24403516,,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+49021,17520,17276,2.356862745,-103.5274542,28,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+49275,60397,59857,2.248120301,-240.2006689,142,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+50067,19869,20152,2.440613027,115.9544741,45,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3880833435,obra < 50 %
+50074,10168,10405,2.703804348,87.65427136,52,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.5932397725,obra 50-100 %
+50089,13754,15380,2.8,580.7142857,566,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.9746617466,obra 50-100 %
+50095,17062,17219,2.504398827,62.68969555,82,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),1.308029961,obra ≥ hogares
+50251,10498,10872,2.544303797,146.9950249,-28,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),-0.1904826372,hogares no crecen
+50272,18809,19135,2.770061728,117.6869081,46,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.3908676058,obra < 50 %
+50297,681430,699007,2.410463496,7291.958593,5908,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),0.8102075629,obra 50-100 %
+51001,84071,83567,3.222889156,-156.3814254,1083,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),,hogares no crecen
+52001,86450,87067,3.344431688,184.4857535,1663,2021-2025,Δ población censo anual ÷ personas por hogar 2021 (estimación),9.014246186,obra ≥ hogares
+01059,,,,3594.959311,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+02003,,,,2930.997119,3239,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.105084675,obra ≥ hogares
+02009,,,,262.9415416,707,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.688810584,obra ≥ hogares
+02037,,,,156.7130286,93,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.5934414058,obra 50-100 %
+02081,,,,-467.2381104,1512,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+03009,,,,-716.6870987,324,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+03014,,,,2403.805127,4088,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.700637025,obra ≥ hogares
+03018,,,,341.4423628,666,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.950548826,obra ≥ hogares
+03019,,,,265.3132628,118,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4447572607,obra < 50 %
+03031,,,,1614.465229,352,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2180288517,obra < 50 %
+03047,,,,-647.5134942,942,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+03050,,,,2115.437557,796,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3762814919,obra < 50 %
+03059,,,,259.0110401,465,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.79529027,obra ≥ hogares
+03063,,,,555.6009918,1268,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.282213349,obra ≥ hogares
+03065,,,,2191.543279,4474,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.041483754,obra ≥ hogares
+03066,,,,404.5691849,-4848,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-11.9831173,hogares no crecen
+03079,,,,722.7163224,345,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4773657233,obra < 50 %
+03082,,,,-293.4344519,1826,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+03090,,,,1639.187212,322,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.196438819,obra < 50 %
+03093,,,,-57.70397736,297,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+03099,,,,223.0490012,9390,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",42.09837278,obra ≥ hogares
+03104,,,,232.0171583,43,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.1853311208,obra < 50 %
+03119,,,,1002.57079,389,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.388002527,obra < 50 %
+03121,,,,337.2167134,1201,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.561507933,obra ≥ hogares
+03122,,,,1191.939383,389,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3263588783,obra < 50 %
+03133,,,,-2220.518131,4719,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+03139,,,,1240.904979,1068,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8606621926,obra 50-100 %
+03140,,,,160.563026,383,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.38535614,obra ≥ hogares
+03902,,,,3.36538255,3507,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1042.08064,obra ≥ hogares
+04003,,,,1380.091818,175,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.1268031574,obra < 50 %
+04013,,,,6149.767681,2909,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4730259988,obra < 50 %
+04066,,,,1003.923287,221,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.220136342,obra < 50 %
+04079,,,,6098.427085,2884,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4729088271,obra < 50 %
+04102,,,,1717.112655,283,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.1648115511,obra < 50 %
+04902,,,,2054.435556,826,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4020569044,obra < 50 %
+05019,,,,1389.418982,625,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4498283154,obra < 50 %
+06011,,,,377.0322032,945,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.506417203,obra ≥ hogares
+06015,,,,-23.24093003,1951,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+06044,,,,816.2394775,1759,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.15500481,obra ≥ hogares
+06083,,,,2539.821997,1066,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4197144529,obra < 50 %
+06153,,,,287.7451911,685,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.380578446,obra ≥ hogares
+07011,,,,1398.216049,1237,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8846987566,obra 50-100 %
+07015,,,,880.749492,747,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8481412783,obra 50-100 %
+07026,,,,-679.4946681,654,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+07027,,,,1024.495847,-1623,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-1.58419383,hogares no crecen
+07031,,,,381.7232289,543,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.422496612,obra ≥ hogares
+07032,,,,494.976903,509,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.028330811,obra ≥ hogares
+07033,,,,1098.249971,1662,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.51331668,obra ≥ hogares
+07036,,,,1162.671924,617,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.5306742059,obra 50-100 %
+07040,,,,-955.4798099,2580,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+07046,,,,1290.479354,300,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2324717548,obra < 50 %
+07048,,,,1379.898634,1488,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.078340078,obra ≥ hogares
+07054,,,,2250.612115,741,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3292437622,obra < 50 %
+08015,,,,3086.582869,3378,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.094414161,obra ≥ hogares
+08019,,,,-10317.41305,23244,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+08051,,,,444.8123724,274,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6159900601,obra 50-100 %
+08056,,,,1870.207431,490,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2620030227,obra < 50 %
+08073,,,,2041.23046,1209,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.5922898094,obra 50-100 %
+08076,,,,330.891899,109,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3294127186,obra < 50 %
+08077,,,,513.1894307,497,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9684533045,obra 50-100 %
+08089,,,,-222.7329265,559,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+08096,,,,535.7113377,623,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.162939733,obra ≥ hogares
+08101,,,,-150.2084358,3478,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+08102,,,,223.0834414,483,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.165109149,obra ≥ hogares
+08112,,,,252.5342412,-33,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-0.1306753486,hogares no crecen
+08113,,,,2600.169579,838,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3222866719,obra < 50 %
+08114,,,,-19.68999832,227,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+08118,,,,129.1947025,429,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.320569588,obra ≥ hogares
+08121,,,,1432.980204,860,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.600147858,obra 50-100 %
+08123,,,,295.2820182,355,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.202240496,obra ≥ hogares
+08124,,,,126.9744033,146,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.149838048,obra ≥ hogares
+08125,,,,1153.294938,504,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.437008768,obra < 50 %
+08147,,,,-26.44119595,116,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+08163,,,,1008.129447,252,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2499678992,obra < 50 %
+08169,,,,674.7020986,837,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.240547498,obra ≥ hogares
+08172,,,,217.0603213,134,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6173399136,obra 50-100 %
+08180,,,,206.5594011,286,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.384589607,obra ≥ hogares
+08184,,,,266.1382843,694,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.60766692,obra ≥ hogares
+08187,,,,470.9505389,1806,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.834797608,obra ≥ hogares
+08194,,,,755.1930012,630,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8342238328,obra 50-100 %
+08196,,,,-400.5251121,216,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+08200,,,,1740.95605,1289,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.7403977832,obra 50-100 %
+08205,,,,1650.955537,2430,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.47187489,obra ≥ hogares
+08211,,,,382.6923508,1260,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.292461941,obra ≥ hogares
+08217,,,,261.3749095,447,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.710187106,obra ≥ hogares
+08231,,,,1207.090502,478,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.395993506,obra < 50 %
+08245,,,,-1685.399939,120,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+08252,,,,-128.9919767,-309,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+08260,,,,72.01306347,193,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.680069292,obra ≥ hogares
+08263,,,,188.4371495,119,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6315102957,obra 50-100 %
+08266,,,,128.5922828,327,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.542920873,obra ≥ hogares
+08270,,,,448.7444657,-187,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-0.4167182312,hogares no crecen
+08279,,,,329.3381004,5477,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",16.63032608,obra ≥ hogares
+08298,,,,1648.59038,656,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.397915703,obra < 50 %
+08301,,,,425.7786612,594,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.395091051,obra ≥ hogares
+08305,,,,42.24344127,511,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",12.09655238,obra ≥ hogares
+08307,,,,-707.6564145,-1154,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+09018,,,,419.7539849,376,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8957627885,obra 50-100 %
+09059,,,,3051.491453,3260,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.068330045,obra ≥ hogares
+09219,,,,-372.4597106,114,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+10037,,,,2103.357697,3142,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.493802031,obra ≥ hogares
+10148,,,,603.3977557,553,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9164767266,obra 50-100 %
+11004,,,,2320.495678,1658,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.7145025159,obra 50-100 %
+11006,,,,335.8076005,1477,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",4.398351907,obra ≥ hogares
+11007,,,,473.3206502,392,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8281912058,obra 50-100 %
+11008,,,,696.8738081,866,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.242692708,obra ≥ hogares
+11012,,,,-862.1770352,2472,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+11014,,,,993.9813835,504,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.50705175,obra 50-100 %
+11015,,,,3974.525666,933,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2347449931,obra < 50 %
+11020,,,,3146.462341,3233,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.027503161,obra ≥ hogares
+11022,,,,523.9024413,1223,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.334404087,obra ≥ hogares
+11027,,,,1369.635286,1704,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.244126825,obra ≥ hogares
+11028,,,,590.7097715,-274,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-0.4638487684,hogares no crecen
+11030,,,,786.7459826,1255,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.595178149,obra ≥ hogares
+11031,,,,1460.366642,1188,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8134943416,obra 50-100 %
+11032,,,,1735.668176,1740,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.002495767,obra ≥ hogares
+11033,,,,1195.888125,2348,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.96339436,obra ≥ hogares
+12009,,,,261.8006827,1250,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",4.774624677,obra ≥ hogares
+12027,,,,473.9741726,940,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.983230425,obra ≥ hogares
+12032,,,,561.1805827,532,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9480014391,obra 50-100 %
+12040,,,,878.9439548,-971,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-1.104734829,hogares no crecen
+12084,,,,186.8969184,680,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.638369246,obra ≥ hogares
+12126,,,,34.0051125,312,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",9.175090951,obra ≥ hogares
+12135,,,,-102.7381718,666,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+12138,,,,625.1883061,720,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.151653019,obra ≥ hogares
+13005,,,,361.4661307,1271,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.516235387,obra ≥ hogares
+13034,,,,-336.5401957,1833,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+13071,,,,-991.572883,1321,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+13082,,,,-326.7802375,1374,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+13087,,,,756.1652913,240,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3173909233,obra < 50 %
+14007,,,,39.45590256,583,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",14.77598945,obra ≥ hogares
+14013,,,,252.5926554,474,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.876539123,obra ≥ hogares
+14021,,,,926.4561378,11903,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",12.84788293,obra ≥ hogares
+14038,,,,780.3352669,1027,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.316100968,obra ≥ hogares
+14042,,,,-214.1337055,716,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+14049,,,,35.37502291,10,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2826853293,obra < 50 %
+14055,,,,-30.77866885,623,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+14056,,,,887.7119758,679,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.7648877322,obra 50-100 %
+15002,,,,995.3194017,875,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8791147832,obra 50-100 %
+15005,,,,1841.630146,687,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3730390717,obra < 50 %
+15017,,,,898.792398,-1094,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-1.217188755,hogares no crecen
+15019,,,,814.710838,2734,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.355791862,obra ≥ hogares
+15030,,,,-2979.429248,3959,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+15031,,,,1238.433752,379,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3060317109,obra < 50 %
+15036,,,,-590.7416974,565,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+15054,,,,1118.753326,387,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3459207593,obra < 50 %
+15058,,,,917.1470598,906,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9878459406,obra 50-100 %
+15073,,,,187.8305955,877,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",4.669100887,obra ≥ hogares
+15078,,,,2283.834447,2484,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.087644511,obra ≥ hogares
+16078,,,,1121.226686,563,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.5021286124,obra 50-100 %
+17023,,,,826.96383,177,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2140359633,obra < 50 %
+17066,,,,-603.237013,285,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+17079,,,,1014.655004,-2213,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-2.181036896,hogares no crecen
+17095,,,,-547.9167375,9,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+17114,,,,641.4050146,747,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.164630745,obra ≥ hogares
+17117,,,,615.7895722,683,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.109145122,obra ≥ hogares
+17155,,,,160.4879006,160,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9969598917,obra 50-100 %
+17160,,,,461.782394,301,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6518221654,obra 50-100 %
+18017,,,,830.2322543,1823,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.195771112,obra ≥ hogares
+18021,,,,707.9862888,403,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.5692200631,obra 50-100 %
+18023,,,,-2.779916902,694,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+18087,,,,918.8628999,3046,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.314966792,obra ≥ hogares
+18122,,,,-68.15583892,-180,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+18127,,,,622.2082969,495,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.7955535188,obra 50-100 %
+18140,,,,329.4031046,-3281,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-9.960440427,hogares no crecen
+19046,,,,408.4389377,637,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.559596653,obra ≥ hogares
+19130,,,,1924.562306,1769,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9191700339,obra 50-100 %
+20030,,,,528.7865127,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+20045,,,,1475.306705,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+20055,,,,1059.304379,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+20067,,,,-579.5948815,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+20069,,,,1520.297872,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+20079,,,,433.0391734,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+21005,,,,1799.368715,329,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.182841903,obra < 50 %
+21010,,,,424.2317409,1192,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.809785042,obra ≥ hogares
+21041,,,,1410.543055,733,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.5196580121,obra 50-100 %
+21042,,,,649.9559907,258,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3969499531,obra < 50 %
+21044,,,,1215.416307,70,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.05759343494,obra < 50 %
+21050,,,,317.0746496,438,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.381378172,obra ≥ hogares
+22125,,,,177.1788422,1303,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",7.354151228,obra ≥ hogares
+23002,,,,279.8641537,313,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.118399752,obra ≥ hogares
+23005,,,,511.0785642,275,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.5380777424,obra 50-100 %
+23050,,,,-1231.791819,2234,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+23055,,,,-268.3224109,1381,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+23060,,,,426.8437176,965,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.260780609,obra ≥ hogares
+23092,,,,199.4687403,277,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.388688772,obra ≥ hogares
+24089,,,,-1550.383488,1573,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+24115,,,,-1522.612158,1914,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+24142,,,,-69.97731764,325,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+25120,,,,-1572.804278,1646,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+26036,,,,411.3461086,339,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8241235128,obra 50-100 %
+26089,,,,1038.767213,1759,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.693353408,obra ≥ hogares
+27028,,,,818.6294895,2442,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.983034488,obra ≥ hogares
+28005,,,,94.14974477,4577,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",48.61404575,obra ≥ hogares
+28006,,,,1100.26192,2639,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.3985198,obra ≥ hogares
+28007,,,,-408.8152312,3641,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+28009,,,,-158.4736088,166,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+28013,,,,1998.910611,728,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3641983769,obra < 50 %
+28014,,,,1050.379055,1119,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.065329697,obra ≥ hogares
+28015,,,,3176.826597,1542,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4853900435,obra < 50 %
+28022,,,,3908.700143,3572,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9138587943,obra 50-100 %
+28040,,,,332.2490921,153,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4604978723,obra < 50 %
+28045,,,,2309.621724,1957,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8473249016,obra 50-100 %
+28047,,,,815.4696358,592,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.7259620396,obra 50-100 %
+28049,,,,-1638.656487,645,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+28058,,,,274.3497719,1665,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",6.06889515,obra ≥ hogares
+28061,,,,724.3883101,254,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3506406667,obra < 50 %
+28065,,,,6774.488524,11956,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.764856484,obra ≥ hogares
+28074,,,,538.8329733,3155,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",5.855246721,obra ≥ hogares
+28079,,,,4342.042809,58822,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",13.5470797,obra ≥ hogares
+28080,,,,803.3141557,1749,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.177230399,obra ≥ hogares
+28084,,,,1001.320284,365,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3645187318,obra < 50 %
+28092,,,,1384.752326,4446,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.210682457,obra ≥ hogares
+28096,,,,1793.236297,618,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3446283131,obra < 50 %
+28106,,,,777.5654842,1259,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.619156233,obra ≥ hogares
+28113,,,,1642.514593,2010,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.22373342,obra ≥ hogares
+28115,,,,759.7448861,1419,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.867732216,obra ≥ hogares
+28123,,,,5751.064471,6966,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.211254027,obra ≥ hogares
+28127,,,,1713.762343,1850,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.079496237,obra ≥ hogares
+28130,,,,-620.8355474,461,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+28134,,,,3719.733969,2835,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.7621512785,obra 50-100 %
+28148,,,,2693.687043,3089,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.14675534,obra ≥ hogares
+28152,,,,822.3080539,819,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9959771112,obra 50-100 %
+28161,,,,1577.991777,1123,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.711664038,obra 50-100 %
+28181,,,,-340.4655303,327,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+28903,,,,3724.494045,4393,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.179489065,obra ≥ hogares
+29007,,,,2049.822681,918,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4478436152,obra < 50 %
+29008,,,,1051.456511,703,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6685963638,obra 50-100 %
+29015,,,,708.5422752,-1367,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-1.92931325,hogares no crecen
+29025,,,,4162.605741,2017,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4845522554,obra < 50 %
+29038,,,,1667.527645,514,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3082407668,obra < 50 %
+29042,,,,1103.191838,1198,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.085939869,obra ≥ hogares
+29051,,,,2706.189887,2462,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9097661668,obra 50-100 %
+29054,,,,5661.893431,2058,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.363482645,obra < 50 %
+29067,,,,5931.889426,8946,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.508119818,obra ≥ hogares
+29069,,,,7725.196193,1647,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2131984689,obra < 50 %
+29070,,,,4073.904123,3283,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8058608894,obra 50-100 %
+29075,,,,-182.4079587,616,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+29082,,,,4075.645755,40,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.009814395658,obra < 50 %
+29084,,,,18.88463305,-2700,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-142.9733897,hogares no crecen
+29094,,,,3418.421308,2179,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6374287438,obra 50-100 %
+29901,,,,-326.0016937,1183,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+30003,,,,2197.713986,622,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2830213595,obra < 50 %
+30005,,,,280.0545907,356,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.271180733,obra ≥ hogares
+30008,,,,1410.113027,30,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.02127489033,obra < 50 %
+30015,,,,217.7680914,225,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.033209221,obra ≥ hogares
+30016,,,,466.7801865,2021,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",4.329661066,obra ≥ hogares
+30019,,,,83.71637436,996,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",11.89731409,obra ≥ hogares
+30022,,,,325.505992,711,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.184291587,obra ≥ hogares
+30024,,,,3129.264665,3197,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.021645767,obra ≥ hogares
+30026,,,,-171.217999,1954,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+30027,,,,2692.102546,1971,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.7321415014,obra 50-100 %
+30030,,,,4893.982122,-3337,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-0.6818578239,hogares no crecen
+30035,,,,1340.251262,778,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.5804881682,obra 50-100 %
+30036,,,,991.1872169,893,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9009397869,obra 50-100 %
+30037,,,,1426.841072,921,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6454818396,obra 50-100 %
+30038,,,,235.9519191,123,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.521292645,obra 50-100 %
+30039,,,,1127.855808,563,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4991772849,obra < 50 %
+30043,,,,335.9720175,564,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.678711234,obra ≥ hogares
+31201,,,,3616.190169,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+31232,,,,6.333834116,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+31901,,,,306.5919913,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+32054,,,,618.7661912,1319,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.131661391,obra ≥ hogares
+33004,,,,-1569.828606,1083,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+33016,,,,-188.2702355,157,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+33024,,,,-1139.75545,4429,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+33031,,,,-1098.972076,-1219,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+33037,,,,-1657.495585,-1496,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+33044,,,,-1816.617115,2072,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+33066,,,,124.7284149,1265,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",10.14203541,obra ≥ hogares
+34120,,,,670.3934917,235,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3505403959,obra < 50 %
+35002,,,,1259.18823,585,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4645850287,obra < 50 %
+35004,,,,3015.069531,909,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3014855845,obra < 50 %
+35006,,,,239.3111604,1777,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",7.425479017,obra ≥ hogares
+35009,,,,467.873553,994,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.124505635,obra ≥ hogares
+35011,,,,738.0364414,575,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.7790943207,obra 50-100 %
+35012,,,,-996.5226266,1198,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+35014,,,,1035.545007,1177,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.136599561,obra ≥ hogares
+35016,,,,-1175.381376,5538,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+35017,,,,1482.7022,1479,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9975030724,obra 50-100 %
+35019,,,,724.3422838,1482,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.045994046,obra ≥ hogares
+35022,,,,2794.654102,2565,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.917823783,obra 50-100 %
+35024,,,,563.2433731,595,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.056381714,obra ≥ hogares
+35026,,,,1507.850159,2818,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.868885965,obra ≥ hogares
+36008,,,,736.2758279,860,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.168040519,obra ≥ hogares
+36017,,,,-196.8192617,466,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+36024,,,,913.5864195,202,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2211066142,obra < 50 %
+36026,,,,249.4086765,188,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.7537829182,obra 50-100 %
+36038,,,,1486.210746,1668,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.122317279,obra ≥ hogares
+36042,,,,1533.810636,645,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4205212722,obra < 50 %
+36045,,,,-859.1789808,973,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+36057,,,,-592.870462,3140,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+36060,,,,1358.993004,209,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.1537903428,obra < 50 %
+37274,,,,-521.6487288,427,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+38001,,,,669.7121754,1666,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.487635825,obra ≥ hogares
+38006,,,,3084.411458,2277,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.738228356,obra 50-100 %
+38011,,,,999.8387532,420,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4200677346,obra < 50 %
+38017,,,,2826.869597,2440,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8631455807,obra 50-100 %
+38022,,,,301.1905368,1525,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",5.063240088,obra ≥ hogares
+38023,,,,750.8386165,3282,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",4.371112417,obra ≥ hogares
+38024,,,,-307.393713,970,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+38026,,,,-227.0162072,1544,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+38028,,,,-189.3258664,1806,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+38031,,,,-568.3662778,614,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+38038,,,,3457.801268,3031,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8765685952,obra 50-100 %
+38043,,,,363.9913567,947,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.60171013,obra ≥ hogares
+39016,,,,54.35178056,233,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",4.286888076,obra ≥ hogares
+39020,,,,-125.3907759,543,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+39052,,,,1023.098155,-318,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-0.3108206172,hogares no crecen
+39075,,,,-1616.997294,1446,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+39087,,,,-566.9773634,-533,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+40194,,,,-297.6932213,1068,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+41004,,,,1245.916264,833,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6685842573,obra 50-100 %
+41017,,,,666.3885041,256,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3841602885,obra < 50 %
+41021,,,,539.41638,289,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.5357642273,obra 50-100 %
+41024,,,,1308.995306,1284,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.980904969,obra 50-100 %
+41034,,,,341.9698785,384,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.122905917,obra ≥ hogares
+41038,,,,3832.599662,4264,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.112560762,obra ≥ hogares
+41039,,,,363.0211713,895,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.465420947,obra ≥ hogares
+41053,,,,622.5122798,727,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.167848448,obra ≥ hogares
+41058,,,,1012.46932,677,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6686622366,obra 50-100 %
+41059,,,,1493.099032,1106,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.740741221,obra 50-100 %
+41065,,,,127.7324184,412,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.225492832,obra ≥ hogares
+41069,,,,1117.945052,2071,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.852506075,obra ≥ hogares
+41081,,,,837.900243,588,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.7017541824,obra 50-100 %
+41086,,,,184.8241515,560,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.029907052,obra ≥ hogares
+41091,,,,-2328.877416,10838,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+41093,,,,675.2361005,718,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.063331773,obra ≥ hogares
+41095,,,,422.7179366,637,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.506915001,obra ≥ hogares
+42173,,,,676.0153971,1318,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.949659735,obra ≥ hogares
+43014,,,,-293.6708461,784,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+43037,,,,1793.218787,282,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.1572591153,obra < 50 %
+43038,,,,1056.399008,639,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6048850815,obra 50-100 %
+43123,,,,-347.1814012,723,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+43148,,,,2139.568669,2146,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.003005901,obra ≥ hogares
+43155,,,,-282.6854678,991,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+43161,,,,-337.5554496,291,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+43163,,,,1245.44722,639,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.5130687112,obra 50-100 %
+43171,,,,593.6679107,145,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2442442945,obra < 50 %
+43905,,,,709.2477944,494,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6965125643,obra 50-100 %
+44216,,,,1001.333245,1814,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.811584714,obra ≥ hogares
+45081,,,,1583.048272,1209,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.7637164459,obra 50-100 %
+45165,,,,-326.0949759,-363,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+45168,,,,1589.674458,1443,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9077330222,obra 50-100 %
+46005,,,,-138.5485574,119,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+46013,,,,498.7952884,660,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.32318812,obra ≥ hogares
+46017,,,,443.0532654,456,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.029221621,obra ≥ hogares
+46021,,,,201.2240183,247,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.227487663,obra ≥ hogares
+46022,,,,217.6840971,141,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6477276102,obra 50-100 %
+46029,,,,211.9281518,46,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2170546933,obra < 50 %
+46070,,,,1067.062535,728,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6822468001,obra 50-100 %
+46078,,,,339.2366161,86,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2535103698,obra < 50 %
+46083,,,,-21.92329594,117,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+46094,,,,28.00306489,99,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.535327308,obra ≥ hogares
+46102,,,,97.18825338,226,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.325383903,obra ≥ hogares
+46105,,,,-112.7731067,636,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+46110,,,,-326.4054096,156,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+46131,,,,686.2149492,602,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8772761373,obra 50-100 %
+46145,,,,996.1284563,899,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.9024940451,obra 50-100 %
+46147,,,,441.9012708,534,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.208414719,obra ≥ hogares
+46159,,,,854.4452511,115,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.1345902501,obra < 50 %
+46169,,,,-44.49071901,263,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+46171,,,,460.0325942,196,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4260567674,obra < 50 %
+46181,,,,-295.2821148,-620,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+46184,,,,7.784625488,239,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",30.70154118,obra ≥ hogares
+46186,,,,602.7229039,356,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.5906528484,obra 50-100 %
+46190,,,,1385.951858,856,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.6176260705,obra 50-100 %
+46194,,,,500.4221919,439,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.8772592565,obra 50-100 %
+46202,,,,1524.749946,336,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.2203640019,obra < 50 %
+46213,,,,431.7112023,462,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.07015986,obra ≥ hogares
+46214,,,,963.4697883,347,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.3601565967,obra < 50 %
+46220,,,,1273.529107,-90,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",-0.07066976287,hogares no crecen
+46235,,,,144.5423873,60,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",0.4151031481,obra < 50 %
+46244,,,,741.2899566,1108,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",1.494691774,obra ≥ hogares
+46250,,,,-7629.26457,3508,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+47076,,,,-99.88699683,135,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+47085,,,,-129.2523418,145,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+47186,,,,-1516.815093,2634,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+48013,,,,743.7396648,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+48015,,,,-10.11788922,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+48020,,,,-93.08624096,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+48027,,,,852.2171322,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+48036,,,,1233.386999,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+48044,,,,354.6950605,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+48054,,,,687.2068497,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+48078,,,,-201.8732346,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+48082,,,,755.1190877,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+48084,,,,-746.8102804,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+48902,,,,154.9698161,,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+49275,,,,-380.2017338,516,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+50067,,,,-474.8750894,272,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",,hogares no crecen
+50297,,,,2692.837737,9430,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",3.501882,obra ≥ hogares
+51001,,,,476.4174545,1395,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.928104306,obra ≥ hogares
+52001,,,,911.9892342,2298,2011-2021,"censos 2011 y 2021 (obra: ficheros 2012-2021, 9 años; robustez)",2.519766587,obra ≥ hogares

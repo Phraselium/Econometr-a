@@ -39,7 +39,7 @@ URL_MD = "https://www.ine.es/ftp/microdatos/censopv/cen21/{f}"
 LIC = "INE: reutilización con cita (Ley 37/2007)"
 TPX = list(range(59515, 59552))
 # posiciones (1-indexadas) del diseño dr_CensoPersonas_2021.xlsx y dr_CensoViviendas_2021.xlsx
-P_PERS = {"CPRO": (1, 2), "CMUN": (3, 3), "NVIV": (6, 7), "NORDEN": (13, 2), "PNACIO": (25, 3), "PNACIM": (28, 3),
+P_PERS = {"CPRO": (1, 2), "CMUN": (3, 3), "NVIV": (6, 7), "NORDEN": (13, 2), "VAREDAD": (21, 3), "PNACIO": (25, 3), "PNACIM": (28, 3),
           "VARANOE": (53, 4), "TENEN_VIV": (122, 1), "SUP_VIV": (120, 2), "SUP_OCU_VIV": (123, 2), "TAM_HOG": (179, 1),
           "TIPO_HOG": (184, 2)}
 P_VIV = {"CPRO": (8, 2), "CMUN": (10, 3), "TIPO_VIV": (13, 1), "TENEN_VIV": (14, 1), "SUPERF": (16, 4), "ANOCO": (25, 4),
@@ -83,10 +83,16 @@ def personas() -> None:
     d["cod_municipio"] = cod(d)
     d["nac_primera_persona"] = np.where(d.PNACIO.str.strip() == "108", "ES", "EXT")
     d["nacido_en_espana"] = np.where(d.PNACIM.str.strip() == "108", "si", "no")
-    a = pd.to_numeric(d.VARANOE, errors="coerce")
-    d["llegada_espana"] = pd.cut(a, [0, 1999, 2007, 2014, 2021], labels=["<2000", "2000-2007", "2008-2014", "2015-2021"]).astype(str)
+    # VARANOE (T_ANOP): 0001 antes de 1981, 0002 1981-1990, 0003 1991-2000, 0004 2001-2010, 0005 2011-2015, años sueltos
+    # 2016-2021 y 9999 = siempre ha vivido en España. (V12-B3: corregido; antes se leía como año y todo caía en «<2000».)
+    v = d.VARANOE.str.strip()
+    a = pd.to_numeric(v, errors="coerce")
+    d["llegada_espana"] = np.select([v.isin(["0001", "0002", "0003"]), v == "0004", v == "0005", a.between(2016, 2021)],
+                                    ["antes de 2001", "2001-2010", "2011-2015", "2016-2021"], "siempre en España o no consta")
     d.loc[d.nacido_en_espana == "si", "llegada_espana"] = "nacido_en_espana"
-    g = (d.groupby(["cod_municipio", "nac_primera_persona", "nacido_en_espana", "llegada_espana", "TENEN_VIV", "SUP_VIV",
+    d["edad_primera_persona"] = pd.cut(pd.to_numeric(d.VAREDAD, errors="coerce"), [-1, 29, 44, 64, 200],
+                                       labels=["<30", "30-44", "45-64", "65+"]).astype(str)
+    g = (d.groupby(["cod_municipio", "nac_primera_persona", "nacido_en_espana", "llegada_espana", "edad_primera_persona", "TENEN_VIV", "SUP_VIV",
                     "SUP_OCU_VIV", "TAM_HOG", "TIPO_HOG"]).size().rename("hogares_muestra").reset_index()
          .rename(columns={"TENEN_VIV": "tenencia", "SUP_VIV": "superficie", "SUP_OCU_VIV": "superficie_por_ocupante",
                           "TAM_HOG": "tamano_hogar", "TIPO_HOG": "tipo_hogar"}))
@@ -95,7 +101,7 @@ def personas() -> None:
     registrar(FUENTE, r, URL_MD.format(f="CensoPersonas_2021.zip"), edicion="Censo 2021, microdatos de personas (muestra 10 % de hogares)",
               periodo="2021-01-01", nivel_territorial="municipio ≥10.000 hab.; PP991/PP992/PP993 = tamaños de municipio menores",
               licencia=LIC, redistribuible=True,
-              notas=f"recuentos MUESTRALES sin elevar de hogares en viviendas familiares (NORDEN=01 como persona de referencia "
+              notas=f"recuentos MUESTRALES sin elevar de hogares en viviendas familiares (NORDEN=01 = persona de mayor edad, como persona de referencia "
                     f"aproximada); códigos según dr_CensoPersonas_2021.xlsx; hogares={int(g.hogares_muestra.sum())}")
     print("personas", len(d), len(g))
 

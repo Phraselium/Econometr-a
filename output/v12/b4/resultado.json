@@ -1,0 +1,143 @@
+{
+ "rama": "V12-B4",
+ "pregunta": "¿Dónde se construye y dónde no?",
+ "capa": "C4",
+ "metodo": "contable y descriptivo",
+ "datos": "Catastro URBANA e INSPIRE; MIVAU terminadas; censo anual; Censos 2011/2021; ECP hogares",
+ "N": 1153,
+ "nacional_catastro_vs_mivau": {
+  "2008": {
+   "obra_neta_catastro": null,
+   "terminadas_mivau": 563279,
+   "protegida_definitivas": 68496,
+   "terminadas_mivau_total": 631775
+  },
+  "2009": {
+   "obra_neta_catastro": null,
+   "terminadas_mivau": 356226,
+   "protegida_definitivas": 67799,
+   "terminadas_mivau_total": 424025
+  },
+  "2010": {
+   "obra_neta_catastro": null,
+   "terminadas_mivau": 217897,
+   "protegida_definitivas": 58160,
+   "terminadas_mivau_total": 276057
+  },
+  "2011": {
+   "obra_neta_catastro": null,
+   "terminadas_mivau": 120384,
+   "protegida_definitivas": 58041,
+   "terminadas_mivau_total": 178425
+  },
+  "2012": {
+   "obra_neta_catastro": 147465,
+   "terminadas_mivau": 79662,
+   "protegida_definitivas": 53159,
+   "terminadas_mivau_total": 132821
+  },
+  "2013": {
+   "obra_neta_catastro": 135795,
+   "terminadas_mivau": 42823,
+   "protegida_definitivas": 17035,
+   "terminadas_mivau_total": 59858
+  },
+  "2014": {
+   "obra_neta_catastro": 131184,
+   "terminadas_mivau": 35127,
+   "protegida_definitivas": 15045,
+   "terminadas_mivau_total": 50172
+  },
+  "2015": {
+   "obra_neta_catastro": 120036,
+   "terminadas_mivau": 41283,
+   "protegida_definitivas": 7931,
+   "terminadas_mivau_total": 49214
+  },
+  "2016": {
+   "obra_neta_catastro": 102064,
+   "terminadas_mivau": 37440,
+   "protegida_definitivas": 7118,
+   "terminadas_mivau_total": 44558
+  },
+  "2017": {
+   "obra_neta_catastro": 89227,
+   "terminadas_mivau": 49063,
+   "protegida_definitivas": 4896,
+   "terminadas_mivau_total": 53959
+  },
+  "2018": {
+   "obra_neta_catastro": 51028,
+   "terminadas_mivau": 58612,
+   "protegida_definitivas": 5191,
+   "terminadas_mivau_total": 63803
+  },
+  "2019": {
+   "obra_neta_catastro": 72045,
+   "terminadas_mivau": 71281,
+   "protegida_definitivas": 7248,
+   "terminadas_mivau_total": 78529
+  },
+  "2020": {
+   "obra_neta_catastro": 82887,
+   "terminadas_mivau": 77153,
+   "protegida_definitivas": 9952,
+   "terminadas_mivau_total": 87105
+  },
+  "2021": {
+   "obra_neta_catastro": 87324,
+   "terminadas_mivau": 83770,
+   "protegida_definitivas": 10637,
+   "terminadas_mivau_total": 94407
+  },
+  "2022": {
+   "obra_neta_catastro": 92390,
+   "terminadas_mivau": 79707,
+   "protegida_definitivas": 9610,
+   "terminadas_mivau_total": 89317
+  },
+  "2023": {
+   "obra_neta_catastro": 87354,
+   "terminadas_mivau": 80303,
+   "protegida_definitivas": 8847,
+   "terminadas_mivau_total": 89150
+  },
+  "2024": {
+   "obra_neta_catastro": 91186,
+   "terminadas_mivau": 86356,
+   "protegida_definitivas": 14371,
+   "terminadas_mivau_total": 100727
+  },
+  "2025": {
+   "obra_neta_catastro": 100508,
+   "terminadas_mivau": 80776,
+   "protegida_definitivas": 12858,
+   "terminadas_mivau_total": 93634
+  }
+ },
+ "regularizacion_2013_2017_catastro_menos_mivau": 320545,
+ "municipios_2021_2025_por_categoria": {
+  "obra < 50 %": 250,
+  "hogares no crecen": 188,
+  "obra 50-100 %": 167,
+  "obra ≥ hogares": 154
+ },
+ "municipios_2011_2021_por_categoria": {
+  "obra ≥ hogares": 136,
+  "hogares no crecen": 119,
+  "obra 50-100 %": 72,
+  "obra < 50 %": 67
+ },
+ "provincia_2021_2025": {
+  "hogares_nuevos_ecp": 981823,
+  "obra_neta_catastro": 358254,
+  "terminadas_mivau": 373601,
+  "provincias_fuentes_coinciden": 25
+ },
+ "inspire_municipios": 96,
+ "notas": [
+  "obra nueva neta del Catastro incluye regularizaciones administrativas (2013-2017)",
+  "hogares nuevos 2021-2025 municipales estimados con el tamaño de hogar de 2021",
+  "ratio obra/hogares descriptivo: no mide necesidad ni déficit (ver v7.1)"
+ ]
+}

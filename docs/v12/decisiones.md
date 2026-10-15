@@ -90,3 +90,49 @@ Reglas generales:
    diccionario versionado.
 9. **`make check` y consulta/:** el test de idempotencia del generador de consulta escribía en consulta/ (y
    version.json cambia con cada commit que toca output/). Ahora genera en un directorio temporal (corrección F0).
+
+## B3 · Hogares y presión (src/v12/b3_hogares.py → output/v12/b3)
+1. **Fuente nueva:** microdatos de personas del Censo 2011 (INE, con factor de elevación) y del Censo 2021 (muestra
+   del 10 % de los hogares, sin factor). Fetcher src/v11/fetch_ine_censos_microdatos.py (en src/v11 para que lo ejecute
+   `make datos_v11`); los zips no se versionan (tamaño) y los agregados sí (jefatura_{2011,2021}.csv.gz).
+2. **Persona de referencia común:** la de MAYOR edad del hogar. En 2021 la primera persona (NORDEN = 01) es siempre la
+   de más edad; en 2011 el orden es otro, y con «primera persona» las tasas por edad salían en dientes de sierra y no
+   comparables. Con la regla común, 2011 reproduce los 18.083.692 hogares publicados por el INE.
+3. **Calibración 2021:** factor uniforme por provincia = hogares de la ECP a 1-1-2021 ÷ hogares de la muestra.
+4. **Descomposición 2011-2021:** H = P · Σ s_a · h_a; se publican los dos órdenes (A: población → estructura →
+   jefatura; B: el inverso) porque el reparto cambia con el orden. España: +455.531 hogares; población +195.104
+   (A) / +197.884 (B); estructura por edad +966.831 / +1.176.650; jefatura −706.404 / −919.003. La jefatura baja sobre
+   todo entre los 25 y los 39 años (30-34: 0,365 → 0,275). Es contabilidad: no dice por qué cambia la jefatura.
+5. **2021-2026 (provincia):** hogares esperados con la jefatura por edad de 2021 y la población por edad de la ECP;
+   la diferencia con los hogares ECP observados es el cambio implícito de jefatura (+12.553 en la suma de provincias,
+   frente a +1.222.836 hogares observados): en este periodo casi todo el aumento de hogares es población y edad.
+6. **Hogares por nacionalidad (Censo 2021, muestra):** cuota de hogares cuya persona de referencia tiene nacionalidad
+   extranjera, con IC95 (muestreo aleatorio de hogares, f = 0,1). Se suprimen celdas con < 10 hogares en la muestra
+   o error relativo > 30 % (26 municipios). España: 9,73 % (IC95 9,69-9,77).
+7. **Corrección del extracto V11 del Censo 2021:** VARANOE (año de llegada a España) viene codificado por tramos
+   (0001 < 1981 … 0005 2011-2015) y años sueltos 2016-2021; el fetcher lo leía como año y casi todo caía en «<2000».
+   Corregido en src/v11/fetch_ine_censo2021.py y regenerado el extracto (con la edad de la persona de referencia).
+   Ninguna cifra publicada usaba esa variable (la base solo usa nacionalidad × tenencia): no procede ERRATA.
+8. **Formato:** las salidas de V12 se escriben con `%.10g` (con `%.6g` las cifras de millones perdían dígitos).
+
+## B4 · Respuesta de la oferta (src/v12/b4_oferta.py → output/v12/b4)
+1. **Obra nueva neta del Catastro:** variación anual de unidades urbanas residenciales; el fichero «t» es el stock a
+   31-12-(t−1), así que la variación entre los ficheros t+1 y t es la del año t. Incluye altas administrativas: en
+   2013-2017 la regularización catastral añade unidades no declaradas (el Catastro supera al MIVAU en 397.570
+   unidades en esos cinco años); esos años no se leen como construcción.
+2. **MIVAU:** viviendas LIBRES terminadas (certificados de fin de obra) + calificaciones definitivas de vivienda
+   PROTEGIDA. La protegida solo trae nombre de provincia: concordancia nombre → código INE versionada
+   (concordancia_mivau_protegida_provincias.csv); en las CCAA uniprovinciales (Madrid, Asturias, Murcia, etc.) las
+   terminadas solo se publican por CCAA y se asignan a su única provincia por código.
+3. **Cobertura:** País Vasco y Navarra no tienen Catastro estatal (catastros forales) y Ceuta y Melilla no tienen la
+   serie del MIVAU: quedan sin contraste.
+4. **Capa del contraste provincial 2021-2024:** si Catastro y MIVAU difieren < 25 %, la oferta de esa provincia es C1
+   (dos fuentes coinciden: 25 provincias); si no, C4 y se reportan ambas. Los hogares nuevos provinciales son de la ECP.
+   España: +981.823 hogares; 358.254 viviendas netas (Catastro) y 373.601 terminadas (MIVAU).
+5. **Presión municipal:**
+   - 2021-2025: hogares nuevos ESTIMADOS = Δ población del censo anual ÷ personas por hogar de 2021 (muestra
+     censal); obra nueva = Catastro en el mismo intervalo. Marcado como estimación.
+   - 2011-2021: hogares de los censos (municipios > 20.000 hab.) frente a Catastro 2012-2020 (robustez).
+   - Ratio obra/hogares y cuatro categorías. Es una relación contable: no mide necesidad ni déficit (para eso, v7.1).
+6. **INSPIRE:** viviendas por año de construcción (stock superviviente, cota inferior) frente al Catastro estadístico
+   en los 96 municipios cubiertos.

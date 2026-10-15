@@ -245,12 +245,12 @@ def main() -> int:
     for n, g in anual.groupby("nivel"):
         gz = n == "municipio"   # el municipal pesa ~35 MB sin comprimir
         g.sort_values(["cod_territorio", "nac", "anio"]).to_csv(OUT / f"contabilidad_anual_{n}.csv{'.gz' if gz else ''}", index=False,
-                                                            float_format="%.6g", compression=GZ_PANDAS if gz else None)
+                                                            float_format="%.10g", compression=GZ_PANDAS if gz else None)
     per = periodos(anual)
     for n, g in per.groupby("nivel"):
         gz = n == "municipio"
         g.sort_values(["cod_territorio", "nac", "periodo"]).to_csv(OUT / f"contabilidad_periodos_{n}.csv{'.gz' if gz else ''}", index=False,
-                                                               float_format="%.6g", compression=GZ_PANDAS if gz else None)
+                                                               float_format="%.10g", compression=GZ_PANDAS if gz else None)
     # empalme 2021 (EVR frente a EMCR, nacional) y población padrón frente a censo anual (2021 y 2022)
     emp = []
     for fuente in ("ine_evr", "ine_emcr"):

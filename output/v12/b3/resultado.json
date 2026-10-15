@@ -1,0 +1,44 @@
+{
+ "rama": "V12-B3",
+ "pregunta": "¿Por qué crece el número de hogares?",
+ "capa": "C4",
+ "metodo": "descomposición contable (dos órdenes)",
+ "datos": "Censos 2011 y 2021 (microdatos), ECP (hogares y población por edad)",
+ "N": 45187,
+ "nacional_2011_2021": {
+  "hogares_2011": 18083692,
+  "hogares_2021": 18539223,
+  "crecimiento": 455531,
+  "poblacion_A": 195104,
+  "estructura_A": 966831,
+  "jefatura_A": -706404,
+  "poblacion_B": 197884,
+  "estructura_B": 1176650,
+  "jefatura_B": -919003
+ },
+ "personas_por_hogar": [
+  2.576,
+  2.539
+ ],
+ "reciente_suma_provincias": {
+  "crecimiento_observado": 1222836,
+  "efecto_poblacion": 835141,
+  "efecto_estructura_edad": 375142,
+  "cambio_jefatura_implicito": 12553
+ },
+ "periodo_reciente": "2021-2026",
+ "hogares_nacionalidad": {
+  "municipios_publicables": 733,
+  "municipios_suprimidos": 26,
+  "nacional_cuota_ext": {
+   "cuota_ext_pct": 9.73,
+   "ic95_inf": 9.69,
+   "ic95_sup": 9.77
+  }
+ },
+ "notas": [
+  "persona de referencia = persona de mayor edad del hogar (común a 2011 y 2021)",
+  "2021 calibrado a hogares ECP por provincia",
+  "los dos órdenes de la descomposición se publican porque el reparto depende del orden"
+ ]
+}

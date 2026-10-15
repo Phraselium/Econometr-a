@@ -8,13 +8,16 @@
 - B2: flujos OD capital ↔ corona ↔ resto en València (PATEVAL), Madrid, Barcelona, Alicante y Castellón 2003-2024 por
   edad y nacionalidad; destinos 2022-2024; saldos interiores por edad × nacionalidad; asociación (Spearman, Holm)
   con alquiler SERPAVI y valor tasado MIVAU; alquiler en destino de quienes salen de las capitales (output/v12/b2).
+- B3: jefatura por edad (Censos 2011 y 2021, microdatos), descomposición 2011-2021 en dos órdenes, 2021-2026 con ECP,
+  hogares por nacionalidad con IC95 y supresión de celdas (output/v12/b3). Corregido VARANOE del extracto V11.
+- B4: obra nueva neta del Catastro, contraste con MIVAU (libre + protegida), INSPIRE, presión obra/hogares por
+  municipio (2011-2021 y 2021-2025) y provincia (output/v12/b4).
 
 ## Siguiente (para `claude --continue`)
-- B3: corregir `VARANOE` en src/v11/fetch_ine_censo2021.py (tramos 0001-0005 + años 2016-2021) y regenerar el extracto;
-  `src/v12/b3_hogares.py`: tasas de jefatura por edad con microdatos del Censo 2011
-  (ine.es/ftp/microdatos/censopv/cen11/Microdatos_personas_nacional.zip) y 2021; descomposición del crecimiento de
-  hogares (población, estructura de edad, jefatura) por provincia y municipio; índice hogares nuevos / obra nueva;
-  hogares por nacionalidad con intervalos (≥ 10 casos, error relativo ≤ 30 %).
+- B5: `src/v12/b5_propiedad.py`: cuotas de viviendas de titulares con > 5 y > 10 inmuebles y de personas jurídicas
+  (2024-2026, municipio = cota inferior; ficheros nacional/CCAA/provincia), ranking, relación descriptiva (C4) con
+  alquiler, precio, VUT, llegada de población y renta; 2012-2023 titulares frente a viviendas; AEAT; ficha del
+  verificador sobre fondos y grandes tenedores → «analizada».
 
 ## Tokens de subagentes
 Ninguno hasta el revisor final.

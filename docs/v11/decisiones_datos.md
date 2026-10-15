@@ -51,3 +51,26 @@ Tarea de solo datos: sin estimaciones, sin tocar salidas publicadas ni muestras 
     DGC → INE se guarda y verifica (cuota de edificios en el municipio INE). Área metropolitana operativa: municipios
     de la provincia 46 con centroide a ≤ 20 km del centroide INE de València (49 municipios). El centroide de
     València queda al sur (incluye la Albufera); se acepta y se documenta. Capitales añadidas: Alicante y Castellón.
+17. **Segunda pasada y descargas manuales**:
+    - los bloqueos se clasifican en servidor y entorno (fuentes_fallidas.md);
+    - no se eluden captchas ni retos anti-bots;
+    - lo inalcanzable va a docs/v11/descargas_manuales.md;
+    - `src/v11/incorporar_manual.py` incorpora lo que el autor suba a data/manual/v11/<fuente>/, con origen «descarga manual del autor».
+18. **Área metropolitana**: la definición oficial (ámbito PATEVAL de la GVA, 90 municipios) se une a la operativa
+    (20 km) en el Catastro INSPIRE (94 municipios).
+19. **Catastro, titularidad**: los CSV de 2024-2026 (sujetos pasivos e inmuebles por tramo de nº de inmuebles y tipo de
+    persona) y la serie JAXI de 2012-2023 (titulares por clase urbano o rústico, sin tramos) tienen definiciones distintas.
+    Son variables separadas (`catastro_tit_*` y `catastro_titulares_jaxi`); no se encadenan.
+20. **Obra nueva por municipio y año**, dos medidas complementarias que no se mezclan:
+    - (a) `obra_nueva_viviendas_inspire`: viviendas de edificios residenciales vigentes por año exacto de construcción
+      (stock superviviente; cota inferior de lo construido, 94 municipios);
+    - (b) `obra_nueva_neta_catastro`: diferencia anual de unidades urbanas residenciales (neta de bajas y de cambios de
+      uso; todos los municipios, 2013-2026).
+21. **AEAT, IRPF por municipios**:
+    - un informe HTML por municipio y ejercicio, sin ficheros descargables;
+    - se limita a la Comunitat Valenciana por coste;
+    - no hay número de declarantes con rentas inmobiliarias (solo importe y media).
+22. **IPVA municipal y de distrito**: códigos INE tomados de los metadatos de la API (tip=AM); por tamaño de la vivienda.
+    No existe por antigüedad del contrato a esa escala.
+23. **Censo anual**: no publica país de nacimiento ni hogares por municipio. El padrón por país de nacimiento (v9) cubre
+    2003-2022 y termina con el padrón continuo.

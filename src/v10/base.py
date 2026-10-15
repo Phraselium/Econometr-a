@@ -38,6 +38,9 @@ RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ))
 from src.v11 import base_v11  # noqa: E402
 from src.v11.base_v11 import META_V11  # noqa: E402
+from src.v12 import base_v12  # noqa: E402
+
+META_V11 = {**META_V11, **base_v12.META_V12}   # V12: variables v12_* (src/v12/base_v12.py)
 PROC = RAIZ / "data" / "processed"
 RAW = RAIZ / "data" / "raw"
 RAW9 = RAW / "v9"
@@ -731,6 +734,7 @@ def construir() -> dict:
     insertar(raw_proyecto())
     insertar(v9())
     insertar(base_v11.partes())   # V11-DATOS: migración, MNP, ECP, Catastro, afiliación, turismo (src/v11/base_v11.py)
+    insertar(base_v12.partes())   # V12: contabilidad demográfica, hogares, presión, titularidad (src/v12/base_v12.py)
     insertar([zt])
     res_partes, atribucion = resultados_publicados()
     insertar(res_partes)

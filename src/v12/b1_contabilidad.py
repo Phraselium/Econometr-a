@@ -127,7 +127,8 @@ def agregar(f: pd.DataFrame, P: pd.DataFrame, nivel: str, prov_ccaa: dict) -> pd
             filas.append(d)
     dp = pd.concat(filas, ignore_index=True)
     dp["crecimiento"] = dp.poblacion_fin - dp.poblacion_inicio
-    out = dp.merge(fl, how="left", on=["cod_territorio", "anio", "nac"])
+    # municipio: solo municipio-año identificados en los microdatos de flujos (≥ 10.000 hab.); los menores no tienen flujos
+    out = dp.merge(fl, how="inner" if nivel == "municipio" else "left", on=["cod_territorio", "anio", "nac"])
     out[num] = out[num].fillna(0)
     out["residuo"] = out.crecimiento - out.vegetativo - out.saldo_exterior - out.saldo_interior
     out["nivel"] = nivel

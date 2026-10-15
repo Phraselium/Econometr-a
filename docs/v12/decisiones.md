@@ -154,7 +154,7 @@ Reglas generales:
 5. **Asociación (C4):** Spearman entre las cuotas municipales de 2025 (> 10 y PJ) y nueve variables; IC bootstrap
    (1.000 réplicas, SEED) y Holm; 18 especificaciones al Registry. La cuota de personas jurídicas es mayor donde el
    alquiler y el precio son más altos (ρ ≈ 0,49 y 0,46), donde hay más viviendas turísticas (0,30) y donde el saldo
-   exterior es mayor (0,42). Son asociaciones entre municipios: no dicen si la propiedad de sociedades sigue a los
+   exterior es mayor (0,45). Son asociaciones entre municipios: no dicen si la propiedad de sociedades sigue a los
    precios, los precios a la propiedad o ambos a un tercer factor (turismo, tamaño urbano).
 6. **2012-2023:** titulares catastrales urbanos por unidad urbana: 0,823 (2012) → 0,849 (2023). Otra definición: no
    se encadena con 2024-2026 (F0).
@@ -203,3 +203,13 @@ Reglas generales:
    5 (cruces), 0 (Censo).
 6. **Reproducibilidad:** los microdatos de la ECV no se versionan; sin ellos `make v12` conserva las salidas
    versionadas de la ECV y rehace la parte del Censo.
+
+## B8 · Integración
+1. **Corrección de B1 (antes de publicar nada):** a nivel municipal entraban también los municipios < 10.000 hab.,
+   que no tienen flujos en los microdatos, con todo su crecimiento en el residuo. El nivel municipal se restringe a los
+   municipio-año identificados en los flujos (unos 670-780 por año). Provincia, CCAA y España no cambian. Se
+   regeneran B2, B5 y B7 (que leen B1 municipal); cambian ligeramente las asociaciones (p. ej. cuota de personas
+   jurídicas frente a saldo exterior: 0,42 → 0,45). No había cifras publicadas: no procede ERRATA.
+2. **Base:** src/v12/base_v12.py añade a la base variables `v12_*` (C4): contabilidad demográfica anual (B1),
+   descomposición de hogares 2011-2021 en los dos órdenes (B3), cuota de hogares con persona de referencia extranjera
+   (solo celdas publicables), presión obra/hogares (B4) y cuotas de titularidad (B5).

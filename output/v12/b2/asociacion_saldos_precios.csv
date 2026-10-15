@@ -1,33 +1,33 @@
 periodo,ambito,saldo,medida,N,spearman,p,p_holm,ic95_inf,ic95_sup
-2014-2019,España,tasa_saldo_interior_por_mil_anual,alquiler_m2:nivel_inicio,1828,0.191,1.5768481179646286e-16,4.730544353893886e-15,0.148,0.237
-2014-2019,España,tasa_saldo_interior_por_mil_anual,alquiler_m2:cambio_pct,1817,0.184,2.615766606642265e-15,7.585723159262569e-14,0.146,0.221
-2014-2019,España,tasa_saldo_exterior_por_mil_anual,alquiler_m2:nivel_inicio,1828,0.294,7.926674287797465e-38,2.457269029217214e-36,0.248,0.337
-2014-2019,España,tasa_saldo_exterior_por_mil_anual,alquiler_m2:cambio_pct,1817,0.18,1.0636765783429517e-14,2.978294419360265e-13,0.139,0.222
-2014-2019,cinco áreas,tasa_saldo_interior_por_mil_anual,alquiler_m2:nivel_inicio,107,-0.118,0.22754835595537756,1.0,-0.292,0.073
-2014-2019,cinco áreas,tasa_saldo_interior_por_mil_anual,alquiler_m2:cambio_pct,107,0.091,0.3502024350457008,1.0,-0.117,0.292
-2014-2019,cinco áreas,tasa_saldo_exterior_por_mil_anual,alquiler_m2:nivel_inicio,107,0.296,0.0019306921279194991,0.029576066408118572,0.093,0.456
-2014-2019,cinco áreas,tasa_saldo_exterior_por_mil_anual,alquiler_m2:cambio_pct,107,0.349,0.0002338342479199806,0.004442850710479632,0.146,0.525
-2014-2019,España,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:nivel_inicio,283,0.193,0.001128202479740053,0.0191794421555809,0.082,0.297
-2014-2019,España,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:cambio_pct,283,0.353,9.843752873499232e-10,2.5593757471098003e-08,0.244,0.46
-2014-2019,España,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:nivel_inicio,283,0.346,2.1570653288345997e-09,5.392663322086499e-08,0.232,0.448
-2014-2019,España,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:cambio_pct,283,0.432,2.79736385371547e-14,7.552882405031769e-13,0.336,0.52
-2014-2019,cinco áreas,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:nivel_inicio,63,-0.084,0.5149172826244582,1.0,-0.31,0.161
-2014-2019,cinco áreas,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:cambio_pct,63,-0.006,0.9627736488569214,1.0,-0.226,0.202
-2014-2019,cinco áreas,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:nivel_inicio,63,0.345,0.005621606191495198,0.061837668106447176,0.099,0.543
-2014-2019,cinco áreas,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:cambio_pct,63,0.406,0.0009572503988427999,0.0172305071791704,0.175,0.618
-2022-2024,España,tasa_saldo_interior_por_mil_anual,alquiler_m2:nivel_inicio,2365,0.078,0.00013388504315840384,0.002677700863168077,0.035,0.12
-2022-2024,España,tasa_saldo_interior_por_mil_anual,alquiler_m2:cambio_pct,2343,0.106,2.4930372711513397e-07,5.7339857236480815e-06,0.076,0.137
-2022-2024,España,tasa_saldo_exterior_por_mil_anual,alquiler_m2:nivel_inicio,2365,0.322,2.2875601565174993e-58,7.320192500855998e-57,0.288,0.356
-2022-2024,España,tasa_saldo_exterior_por_mil_anual,alquiler_m2:cambio_pct,2343,0.063,0.0023476950745653516,0.03052003596934957,0.026,0.098
-2022-2024,cinco áreas,tasa_saldo_interior_por_mil_anual,alquiler_m2:nivel_inicio,108,-0.44,1.8709518774765293e-06,4.1160941304483645e-05,-0.584,-0.271
-2022-2024,cinco áreas,tasa_saldo_interior_por_mil_anual,alquiler_m2:cambio_pct,108,0.294,0.00199040358142315,0.029576066408118572,0.112,0.457
-2022-2024,cinco áreas,tasa_saldo_exterior_por_mil_anual,alquiler_m2:nivel_inicio,108,-0.12,0.2152825928076502,1.0,-0.303,0.073
-2022-2024,cinco áreas,tasa_saldo_exterior_por_mil_anual,alquiler_m2:cambio_pct,108,0.408,1.1629547389329788e-05,0.00024422049517592556,0.244,0.549
-2022-2024,España,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:nivel_inicio,306,-0.116,0.041728937744513896,0.357726060120145,-0.225,0.004
-2022-2024,España,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:cambio_pct,306,0.118,0.039747340013349446,0.357726060120145,-0.002,0.239
-2022-2024,España,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:nivel_inicio,306,0.165,0.0037533379275675074,0.04504005513081009,0.068,0.269
-2022-2024,España,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:cambio_pct,306,0.326,4.977310893845522e-09,1.1945546145229252e-07,0.219,0.424
-2022-2024,cinco áreas,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:nivel_inicio,69,-0.299,0.012476903522728861,0.1247690352272886,-0.531,-0.044
-2022-2024,cinco áreas,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:cambio_pct,69,0.075,0.5393801446695957,1.0,-0.171,0.305
-2022-2024,cinco áreas,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:nivel_inicio,69,-0.127,0.2967125894888209,1.0,-0.361,0.095
-2022-2024,cinco áreas,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:cambio_pct,69,0.368,0.0018485041505074107,0.029576066408118572,0.16,0.569
+2014-2019,España,tasa_saldo_interior_por_mil_anual,alquiler_m2:nivel_inicio,681,0.327,1.909439516295279e-18,5.919262500515366e-17,0.262,0.395
+2014-2019,España,tasa_saldo_interior_por_mil_anual,alquiler_m2:cambio_pct,681,0.384,2.16827294087738e-25,6.938473410807616e-24,0.31,0.448
+2014-2019,España,tasa_saldo_exterior_por_mil_anual,alquiler_m2:nivel_inicio,681,0.311,1.0547248560374603e-16,3.0587020825086347e-15,0.242,0.377
+2014-2019,España,tasa_saldo_exterior_por_mil_anual,alquiler_m2:cambio_pct,681,0.322,7.647407167249261e-18,2.2942221501747784e-16,0.252,0.39
+2014-2019,cinco áreas,tasa_saldo_interior_por_mil_anual,alquiler_m2:nivel_inicio,107,-0.118,0.22754835595537756,1.0,-0.294,0.07
+2014-2019,cinco áreas,tasa_saldo_interior_por_mil_anual,alquiler_m2:cambio_pct,107,0.091,0.3502024350457008,1.0,-0.11,0.292
+2014-2019,cinco áreas,tasa_saldo_exterior_por_mil_anual,alquiler_m2:nivel_inicio,107,0.296,0.0019306921279194991,0.029576066408118572,0.096,0.462
+2014-2019,cinco áreas,tasa_saldo_exterior_por_mil_anual,alquiler_m2:cambio_pct,107,0.349,0.0002338342479199806,0.004442850710479632,0.162,0.516
+2014-2019,España,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:nivel_inicio,283,0.193,0.001128202479740053,0.0191794421555809,0.073,0.308
+2014-2019,España,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:cambio_pct,283,0.353,9.843752873499232e-10,2.460938218374808e-08,0.244,0.455
+2014-2019,España,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:nivel_inicio,283,0.346,2.1570653288345997e-09,5.176956789203039e-08,0.239,0.44
+2014-2019,España,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:cambio_pct,283,0.432,2.79736385371547e-14,7.552882405031769e-13,0.333,0.519
+2014-2019,cinco áreas,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:nivel_inicio,63,-0.084,0.5149172826244582,1.0,-0.317,0.155
+2014-2019,cinco áreas,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:cambio_pct,63,-0.006,0.9627736488569214,1.0,-0.246,0.234
+2014-2019,cinco áreas,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:nivel_inicio,63,0.345,0.005621606191495198,0.06745927429794238,0.099,0.57
+2014-2019,cinco áreas,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:cambio_pct,63,0.406,0.0009572503988427999,0.0172305071791704,0.148,0.615
+2022-2024,España,tasa_saldo_interior_por_mil_anual,alquiler_m2:nivel_inicio,741,0.062,0.0928558725245297,0.7428469801962376,-0.015,0.134
+2022-2024,España,tasa_saldo_interior_por_mil_anual,alquiler_m2:cambio_pct,741,0.24,3.914564992658702e-11,1.0177868980912624e-09,0.166,0.307
+2022-2024,España,tasa_saldo_exterior_por_mil_anual,alquiler_m2:nivel_inicio,741,0.168,4.4120478855125695e-06,9.265300559576396e-05,0.101,0.229
+2022-2024,España,tasa_saldo_exterior_por_mil_anual,alquiler_m2:cambio_pct,741,0.292,5.079647764094705e-16,1.4223013739465173e-14,0.221,0.362
+2022-2024,cinco áreas,tasa_saldo_interior_por_mil_anual,alquiler_m2:nivel_inicio,108,-0.44,1.8709518774765293e-06,4.1160941304483645e-05,-0.595,-0.261
+2022-2024,cinco áreas,tasa_saldo_interior_por_mil_anual,alquiler_m2:cambio_pct,108,0.294,0.00199040358142315,0.029576066408118572,0.106,0.449
+2022-2024,cinco áreas,tasa_saldo_exterior_por_mil_anual,alquiler_m2:nivel_inicio,108,-0.12,0.2152825928076502,1.0,-0.295,0.063
+2022-2024,cinco áreas,tasa_saldo_exterior_por_mil_anual,alquiler_m2:cambio_pct,108,0.408,1.1629547389329788e-05,0.00023259094778659576,0.238,0.562
+2022-2024,España,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:nivel_inicio,306,-0.116,0.041728937744513896,0.39747340013349447,-0.231,-0.007
+2022-2024,España,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:cambio_pct,306,0.118,0.039747340013349446,0.39747340013349447,0.004,0.23
+2022-2024,España,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:nivel_inicio,306,0.165,0.0037533379275675074,0.0487933930583776,0.065,0.274
+2022-2024,España,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:cambio_pct,306,0.326,4.977310893845522e-09,1.14478150558447e-07,0.218,0.432
+2022-2024,cinco áreas,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:nivel_inicio,69,-0.299,0.012476903522728861,0.13724593875001748,-0.528,-0.015
+2022-2024,cinco áreas,tasa_saldo_interior_por_mil_anual,valor_tasado_m2:cambio_pct,69,0.075,0.5393801446695957,1.0,-0.156,0.298
+2022-2024,cinco áreas,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:nivel_inicio,69,-0.127,0.2967125894888209,1.0,-0.342,0.12
+2022-2024,cinco áreas,tasa_saldo_exterior_por_mil_anual,valor_tasado_m2:cambio_pct,69,0.368,0.0018485041505074107,0.029576066408118572,0.138,0.568

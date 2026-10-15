@@ -67,7 +67,7 @@
    "spearman": -0.047,
    "ic95_inf": -0.116,
    "ic95_sup": 0.025,
-   "p_holm": 0.8516718373890002
+   "p_holm": 0.7251312307294914
   },
   {
    "cuota": "pct_mas10",
@@ -99,28 +99,28 @@
   {
    "cuota": "pct_mas10",
    "variable": "tasa_saldo_exterior_por_mil_anual",
-   "N": 728,
+   "N": 707,
    "spearman": 0.164,
-   "ic95_inf": 0.092,
-   "ic95_sup": 0.233,
-   "p_holm": 7.840416933019828e-05
+   "ic95_inf": 0.093,
+   "ic95_sup": 0.243,
+   "p_holm": 0.000101416853544335
   },
   {
    "cuota": "pct_mas10",
    "variable": "tasa_saldo_interior_por_mil_anual",
-   "N": 728,
-   "spearman": -0.107,
-   "ic95_inf": -0.175,
-   "ic95_sup": -0.035,
-   "p_holm": 0.025869390135244336
+   "N": 707,
+   "spearman": -0.099,
+   "ic95_inf": -0.173,
+   "ic95_sup": -0.025,
+   "p_holm": 0.059200018338780865
   },
   {
    "cuota": "pct_mas10",
    "variable": "renta_neta_hogar_2023",
    "N": 728,
    "spearman": -0.01,
-   "ic95_inf": -0.084,
-   "ic95_sup": 0.063,
+   "ic95_inf": -0.082,
+   "ic95_sup": 0.06,
    "p_holm": 1.0
   },
   {
@@ -129,7 +129,7 @@
    "N": 728,
    "spearman": 0.493,
    "ic95_inf": 0.437,
-   "ic95_sup": 0.549,
+   "ic95_sup": 0.545,
    "p_holm": 1.1239540997729672e-44
   },
   {
@@ -137,8 +137,8 @@
    "variable": "alquiler_var_2019_2024",
    "N": 727,
    "spearman": 0.181,
-   "ic95_inf": 0.116,
-   "ic95_sup": 0.252,
+   "ic95_inf": 0.112,
+   "ic95_sup": 0.256,
    "p_holm": 9.818198092435672e-06
   },
   {
@@ -146,8 +146,8 @@
    "variable": "ipva_var_2019_2024",
    "N": 700,
    "spearman": 0.204,
-   "ic95_inf": 0.133,
-   "ic95_sup": 0.275,
+   "ic95_inf": 0.132,
+   "ic95_sup": 0.278,
    "p_holm": 6.276885537625947e-07
   },
   {
@@ -155,7 +155,7 @@
    "variable": "valor_tasado_2024",
    "N": 289,
    "spearman": 0.458,
-   "ic95_inf": 0.363,
+   "ic95_inf": 0.36,
    "ic95_sup": 0.547,
    "p_holm": 3.105042423552783e-15
   },
@@ -164,8 +164,8 @@
    "variable": "valor_tasado_var_2019_2024",
    "N": 267,
    "spearman": 0.289,
-   "ic95_inf": 0.176,
-   "ic95_sup": 0.399,
+   "ic95_inf": 0.177,
+   "ic95_sup": 0.397,
    "p_holm": 1.6185823646681327e-05
   },
   {
@@ -173,34 +173,34 @@
    "variable": "vut_pct_2025",
    "N": 722,
    "spearman": 0.302,
-   "ic95_inf": 0.23,
-   "ic95_sup": 0.375,
+   "ic95_inf": 0.232,
+   "ic95_sup": 0.372,
    "p_holm": 1.641529439455351e-15
   },
   {
    "cuota": "pct_PJ",
    "variable": "tasa_saldo_exterior_por_mil_anual",
-   "N": 728,
-   "spearman": 0.42,
-   "ic95_inf": 0.349,
-   "ic95_sup": 0.483,
-   "p_holm": 3.117318084692207e-31
+   "N": 707,
+   "spearman": 0.446,
+   "ic95_inf": 0.385,
+   "ic95_sup": 0.501,
+   "p_holm": 1.160824657151979e-34
   },
   {
    "cuota": "pct_PJ",
    "variable": "tasa_saldo_interior_por_mil_anual",
-   "N": 728,
-   "spearman": 0.042,
-   "ic95_inf": -0.031,
-   "ic95_sup": 0.119,
-   "p_holm": 0.8516718373890002
+   "N": 707,
+   "spearman": 0.05,
+   "ic95_inf": -0.024,
+   "ic95_sup": 0.124,
+   "p_holm": 0.7251312307294914
   },
   {
    "cuota": "pct_PJ",
    "variable": "renta_neta_hogar_2023",
    "N": 728,
    "spearman": 0.276,
-   "ic95_inf": 0.212,
+   "ic95_inf": 0.21,
    "ic95_sup": 0.347,
    "p_holm": 4.904318037720635e-13
   }

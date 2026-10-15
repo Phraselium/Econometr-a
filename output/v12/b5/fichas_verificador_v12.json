@@ -10,7 +10,7 @@
   "cota": "—",
   "literatura": "Sin trabajo replicado para España con estos datos.",
   "veredicto": "ANALIZADA, NO CONCLUYENTE",
-  "regla": "Hay ya cifra del peso de los grandes titulares (C4, fuente única: Catastro). La afirmación es causal («responsables de la subida») y no hay diseño que la contraste: entre municipios, las asociaciones con alquiler y precio son descriptivas (12 de 18 con p de Holm < 0,05) y no permiten separar si la concentración sigue a los precios o al revés.",
+  "regla": "Hay ya cifra del peso de los grandes titulares (C4, fuente única: Catastro). La afirmación es causal («responsables de la subida») y no hay diseño que la contraste: entre municipios, las asociaciones con alquiler y precio son descriptivas (11 de 18 con p de Holm < 0,05) y no permiten separar si la concentración sigue a los precios o al revés.",
   "limites": "Los tramos se cuentan dentro de cada ámbito (la cuota municipal es una cota inferior); un sujeto pasivo por inmueble (no cuenta cotitulares); no distingue viviendas en alquiler; no identifica fondos frente a otras sociedades.",
   "evidencia": [
    "output/v12/b5/titularidad_cuotas.csv",

@@ -39,7 +39,7 @@ con su estado.
 | 13 | MIVAU visados y licencias por municipio | ✘ (no existe) | — | — | visados solo por provincia |
 | 14 | Ajuntament de València: equipamientos, vulnerabilidad por barrio, superficie por barrio, manzanas con población, VPP, precio, renta | ✔ | según conjunto | barrio, manzana, punto | CKAN, CC BY 4.0 |
 | 14 | Ajuntament: licencias urbanísticas y de cambio de uso; padrón por barrio × edad × nacionalidad | ✘ (no publicado) | — | — | solicitudes 6 y 7 |
-| 15 | Afiliación a la Seguridad Social por municipio | ✔ | 2011-12 (diciembres); mensual desde 2022-01 | municipio | resuelve el ✘ de V9; celdas «<5» contadas |
+| 15 | Afiliación a la Seguridad Social por municipio | ✔ | 2011-12 (diciembres 2011-2020, 2021-10, 2021-12); mensual 2022-01 a 2026-09 | municipio | se prueban todos los meses desde 2009-01: antes de 2022 solo existen esos cortes; celdas «<5» contadas; 2026-07 en adelante = posterior_prereg |
 | 15 | Afiliación de extranjeros por provincia | ✔ | 2022-01 (fotos anuales) | provincia | Seguridad Social, ficheros anuales; total 2025-12 = 3.045.174 (cuadra) |
 | 15 | Afiliados por municipio de residencia y nacionalidad (BDO GVA) | ✘ entorno | — | — | bdo.gva.es bloqueado por el proxy |
 | — | Ámbito oficial del área metropolitana (PATEVAL, GVA) | ✔ | 2026 | 90 municipios | sustituye a la definición operativa |
@@ -61,3 +61,14 @@ con su estado.
 | V9 | IDESCAT hoteles y rural por municipio | ✘ (sin cambios) | — | — | sin años municipales |
 
 **Ausencias.** Ninguna queda sin justificar. Las ausencias que dependen de terceros tienen solicitud redactada. Las que dependen de la red del entorno tienen anotado el host.
+
+## Histórico (continuación V11)
+| Fuente | Estado | Inicio–fin real | Nivel | Detalle |
+|---|---|---|---|---|
+| Catastro, titulares por municipio (JAXI) | ✔ | 2012–2023 | municipio (régimen común, ~7.600) | 2006-2011 no publicados; definición distinta de los CSV 2024-2026 (no se encadenan) |
+| Catastro, titularidad por tramos y tipo de persona | ✔ | 2024–2026 | municipio | CSV de la sede |
+| Catastro, viviendas por año de construcción y reforma | ✔ | 2019 | municipio | solo publicado para 2019; 2020 únicamente superficie y uso; desde 2022 solo piscinas |
+| Obra nueva por municipio y año | ✔ (construida) | INSPIRE: 1900–2026; neta: 2013–2026 | municipio | dos medidas: stock superviviente por año de construcción (94 municipios) y Δ unidades urbanas residenciales (todos) |
+| AEAT, IRPF por municipios | ✔ parcial | 2013–2024 | municipio > 1.000 hab., Comunitat Valenciana (331) | informe HTML por municipio; València figura desde 2016; sin nº de declarantes con rentas inmobiliarias; código postal no descargado |
+| INE IPVA municipio y distrito | ✔ | 2011–2024 | municipio > 10.000 hab. (720), distritos de capitales (379) | código INE de los metadatos; por tamaño de vivienda; sin antigüedad de contrato |
+| Censo anual: país de nacimiento y hogares por municipio | ✘ (no publicado) | — | — | padrón por país de nacimiento 2003-2022 (v9) |

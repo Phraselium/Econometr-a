@@ -121,3 +121,15 @@ Como sustituto de STOCK se documentan estas series, todas por código INE.
 **Réplica parcial de la OPI:** la Comunidad de Madrid republica los residentes documentados de la provincia 28:
 - 2013-2025 por país, en la base como `opi_residentes_documentados`;
 - desde 1995 por edad y tipo de documentación.
+
+## Histórico añadido (continuación V11)
+- **Respuesta de la oferta:**
+  - obra nueva por municipio y año, por dos vías:
+    - INSPIRE, por año exacto de construcción, 1900-2026, 94 municipios;
+    - Δ de unidades urbanas residenciales del Catastro, 2013-2026, todos los municipios;
+  - viviendas por año de construcción y de reforma, 2019.
+- **Propiedad:** titulares por municipio, 2012-2023, y titularidad por tramos y tipo de persona, 2024-2026.
+- **Renta y alquiler:**
+  - IRPF municipal (rentas de inmuebles, renta bruta y disponible), 2013-2024, en la Comunitat Valenciana;
+  - IPVA por municipio y distrito, 2011-2024.
+- **Empleo local:** afiliación por municipio, con diciembres desde 2011 y mensual desde 2022.

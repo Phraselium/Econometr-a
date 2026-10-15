@@ -96,3 +96,28 @@ Pregunta: con qué datos se puede construir un instrumento de llegada de poblaci
 **Hueco:**
 - protección temporal y arraigo por provincia o municipio (Interior e Inclusión inaccesibles; solicitud 5);
 - afiliación de extranjeros por municipio. El fichero municipal no distingue nacionalidad. Sí se ha añadido la afiliación de extranjeros por provincia (2022-01, 2023-12 a 2025-12 y 2026-09).
+
+## Sustituto de la OPI y de Interior: población por nacionalidad (segunda pasada)
+La OPI (residentes documentados) e Interior (protección internacional y temporal) siguen bloqueados por el servidor.
+Como sustituto de STOCK se documentan estas series, todas por código INE.
+
+**Ucrania (protección temporal desde marzo de 2022):**
+- **Trimestral nacional** (ECP 56936, `data/raw/ine_ecp_56936.csv`, desde 2002T1). Ejemplos de valores de la serie:
+  202.247 personas el 1-4-2023, 210.012 el 1-1-2024 y 202.105 el 1-1-2025. Las filas desde 2026T3 son posterior_prereg.
+- **Anual por provincia, municipio y sección:**
+  - censo anual 2021-2025 (`data/raw/v9/ine_censo_anual/censo_seccion_pais.csv.gz`, nacionalidad «Ucrania»);
+  - padrón continuo municipal 2003-2022 (`data/raw/v9/ine_padron_nacionalidad/`).
+- **Trimestral por provincia:** solo por grupos de nacionalidad (ECP 56947 y 82104; Ucrania está en «Europa no UE»).
+  La ECP no publica el país a escala provincial.
+
+**Otras nacionalidades:** las mismas tablas, más los flujos de entrada por país y municipio (EVR 1988-2021, EMCR 2021-2024).
+
+**Limitaciones del sustituto:**
+- mide población residente empadronada, no situaciones administrativas (protección concedida, arraigo, tipo de tarjeta);
+- no distingue a quien está en protección temporal de quien llegó por otras vías.
+
+**Flujo nacional de concesiones** (protección temporal, asilo): Eurostat `migr_asytpfm`, `migr_asyappctzm`.
+
+**Réplica parcial de la OPI:** la Comunidad de Madrid republica los residentes documentados de la provincia 28:
+- 2013-2025 por país, en la base como `opi_residentes_documentados`;
+- desde 1995 por edad y tipo de documentación.

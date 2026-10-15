@@ -6,7 +6,10 @@ estadístico); aquí se suman solo los valores numéricos y se cuenta el número
 publicado no se puede reconstruir exactamente: cota inferior = suma; cota superior = suma + 4 × celdas «<5»).
 
 Se prueba cada mes desde 2009-01 con las variantes de nombre (.xlsx/.xls, sufijo R o _R de revisado); los meses
-sin fichero quedan en el manifiesto. Por espacio en disco, cada xlsx (~25 MB) se descarga, se agrega y se borra; su
+sin fichero quedan en el manifiesto. Algunos meses vienen repartidos en varias hojas o sin la columna CNAE (las columnas CNAE quedan vacías ese mes);
+las columnas se detectan por nombre; en 2025-05 el último dígito del código de municipio
+aparece desplazado al inicio del nombre y se reconstruye. Cada mes agregado se guarda en tmp/meses/ (caché local) para poder reanudar.
+Por espacio en disco, cada xlsx (~25 MB) se descarga, se agrega y se borra; su
 sha256 queda en el manifiesto y `make datos_v11` lo regenera.
 Salida: afiliacion_municipio_mensual.csv.gz (mes, cod_municipio, grupo de régimen [general, autonomos, otros],
 afiliados_suma_numerica, celdas_menor5, construccion [CNAE 41-43], hosteleria [55-56], inmobiliarias [68]).
@@ -52,19 +55,40 @@ def bajar(m: pd.Timestamp) -> tuple[Path, str] | None:
     return None
 
 
+def _col(cols, *claves, excluir=()):
+    for c in cols:
+        if all(k in c for k in claves) and not any(e in c for e in excluir):
+            return c
+    return None
+
+
 def agregar(p: Path, m: pd.Timestamp) -> pd.DataFrame:
-    d = pd.read_excel(p, dtype=str)
-    d.columns = [c.strip().upper() for c in d.columns]
-    d["cod_municipio"] = pd.to_numeric(d["COD MUNICIPIO"], errors="coerce").astype("Int64").astype(str).str.zfill(5)
-    v = pd.to_numeric(d.AFILIADOS, errors="coerce")
+    hojas = pd.read_excel(p, dtype=str, sheet_name=None)   # algunos meses vienen repartidos en varias hojas
+    partes = []
+    for h in hojas.values():
+        h.columns = [str(c).strip().upper() for c in h.columns]
+        if _col(h.columns, "MUNICIPIO") and _col(h.columns, "AFILIADOS"):
+            partes.append(h)
+    d = pd.concat(partes, ignore_index=True)
+    cm = _col(d.columns, "COD", "MUNICIPIO")
+    cr = _col(d.columns, "COD", "REGIMEN") or _col(d.columns, "COD", "RÉGIMEN")
+    cc = _col(d.columns, "COD", "CNAE")
+    cod = pd.to_numeric(d[cm], errors="coerce").astype("Int64").astype(str)
+    nombre = d[_col(d.columns, "MUNICIPIO", excluir=("COD",))].astype(str)
+    desplazado = nombre.str.match(r"^\d")   # p. ej. 2025-05: último dígito del código pegado al inicio del nombre
+    cod = np.where(desplazado, cod + nombre.str[0], cod)
+    d["cod_municipio"] = pd.Series(cod, index=d.index).str.zfill(5)
+    v = pd.to_numeric(d[_col(d.columns, "AFILIADOS")], errors="coerce")
     d["num"], d["sup"] = v.fillna(0), v.isna().astype(int)
-    d["regimen"] = grupo(d["COD REGIMEN"])
-    cnae = pd.to_numeric(d.get("COD CNAE"), errors="coerce")
+    d["regimen"] = grupo(d[cr])
+    cnae = pd.to_numeric(d[cc], errors="coerce") if cc else pd.Series(np.nan, index=d.index)
     for col, rango in (("construccion", (41, 43)), ("hosteleria", (55, 56)), ("inmobiliarias", (68, 68))):
-        d[col] = np.where(cnae.between(*rango), d.num, 0)
+        d[col] = np.where(cnae.between(*rango), d.num, np.nan if cc is None else 0)
     g = d.groupby(["cod_municipio", "regimen"]).agg(afiliados_suma_numerica=("num", "sum"), celdas_menor5=("sup", "sum"),
                                                      construccion=("construccion", "sum"), hosteleria=("hosteleria", "sum"),
                                                      inmobiliarias=("inmobiliarias", "sum")).reset_index()
+    if cc is None:
+        g[["construccion", "hosteleria", "inmobiliarias"]] = np.nan
     g.insert(0, "mes", m.strftime("%Y-%m"))
     return g
 
@@ -75,12 +99,18 @@ def main(verificar: bool = False) -> int:
         return verificar_manifiesto(FUENTE)
     partes, faltan = [], []
     for m in pd.date_range("2009-01-01", FIN, freq="MS"):
+        cache = DIR / "tmp" / "meses" / f"{m:%Y-%m}.csv.gz"
+        if cache.exists():   # agregado ya hecho en una ejecución anterior (caché local, no versionada)
+            partes.append(pd.read_csv(cache, dtype={"cod_municipio": str, "mes": str}))
+            continue
         b = bajar(m)
         if b is None:
             faltan.append(m.strftime("%Y-%m"))
             continue
         p, url = b
         g = agregar(p, m)
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        g.to_csv(cache, index=False, compression=GZ_PANDAS)
         partes.append(g)
         registrar(FUENTE, p, url, edicion=f"Afiliados por municipio {m:%Y-%m}", periodo=m.strftime("%Y-%m"), nivel_territorial="microdatos agregados (municipio × régimen × CNAE 2D × sexo)",
                   licencia=LIC, redistribuible=True, notas=f"no versionado y borrado tras agregar (espacio); sha256 en manifiesto; filas={len(g)}")

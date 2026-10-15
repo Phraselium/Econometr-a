@@ -10,7 +10,7 @@ metropolitana y las otras capitales de la Comunitat Valenciana, agregado a secci
   La correspondencia DGC → INE resultante (municipio INE que recibe la mayoría de los edificios de cada zip) se
   guarda en correspondencia_dgc_ine.csv.
 - Ámbito: València (INE 46250); municipios de la provincia 46 cuyo centroide está a ≤ 20 km del de València (definición
-  operativa de área metropolitana, documentada en decisiones_datos.md); Alicante/Alacant (03014) y Castelló de la
+  operativa de área metropolitana, documentada en decisiones_datos.md) UNIDOS a los 90 del ámbito oficial PATEVAL (GVA); Alicante/Alacant (03014) y Castelló de la
   Plana (12040). La selección de zips se hace por nombre normalizado frente al nomenclátor INE y se verifica después
   con la asignación espacial.
 - Salidas: edificios_seccion.csv.gz (sección × uso × periodo de construcción: edificios, inmuebles, viviendas,
@@ -72,7 +72,9 @@ def ambito() -> pd.DataFrame:
     m = gpd.read_parquet(GEO / "municipios.parquet").to_crs(25830)
     c = m.geometry.centroid
     d = c.distance(c[m.cod_municipio == VLC].iloc[0]) / 1000
-    sel = m[((m.cod_provincia == "46") & (d <= RADIO_KM)) | m.cod_municipio.isin(CAPITALES)]
+    pat = RAIZ / "data/raw/v11/gva_pateval/pateval_municipios.csv"   # ámbito oficial PATEVAL (segunda pasada)
+    oficial = set(pd.read_csv(pat, dtype=str).cod_municipio) if pat.exists() else set()
+    sel = m[((m.cod_provincia == "46") & (d <= RADIO_KM)) | m.cod_municipio.isin(CAPITALES) | m.cod_municipio.isin(oficial)]
     return pd.DataFrame({"cod_municipio": sel.cod_municipio, "nombre": sel.nombre_municipio, "dist_km": d[sel.index].round(1)})
 
 

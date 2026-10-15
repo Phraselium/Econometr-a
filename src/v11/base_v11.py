@@ -127,17 +127,21 @@ def partes() -> list[pd.DataFrame]:
         add(pd.DataFrame({"territorio_codigo": r[col], "nivel": nivel, "periodo_raw": "2026-08-21",
                           "variable": "catastro_inspire_viviendas_por_antiguedad", "desagregacion": "construccion=" + r.periodo_construccion,
                           "valor": r.viviendas, "metodo_dato": "agregado espacial"}), f"data/raw/v11/catastro_inspire/{fich}")
-    # Seguridad Social: afiliados por municipio (cota inferior: suma de celdas numéricas) y celdas «<5»
+    # Seguridad Social: afiliados por municipio (cota inferior: suma de celdas numéricas) y celdas «<5». En la base solo el
+    # total de regímenes (tamaño de la capa pública < 50 MB); el desglose por régimen queda en data/raw/v11
     f = RAW11 / "ss_afiliacion_municipio/afiliacion_municipio_mensual.csv.gz"
     if f.exists():
         a = pd.read_csv(f, dtype={"cod_municipio": str, "mes": str})
         a = a[_mun(a.cod_municipio)]
+        cols = ["afiliados_suma_numerica", "celdas_menor5", "construccion", "hosteleria", "inmobiliarias"]
+        a = a.groupby(["cod_municipio", "mes"], as_index=False)[cols].sum(min_count=1)
         for col, var in (("afiliados_suma_numerica", "ss_afiliados_cota_inferior"), ("celdas_menor5", "ss_afiliados_celdas_menor5"),
                          ("construccion", "ss_afiliados_construccion_cota_inferior"), ("hosteleria", "ss_afiliados_hosteleria_cota_inferior"),
                          ("inmobiliarias", "ss_afiliados_inmobiliarias_cota_inferior")):
-            add(pd.DataFrame({"territorio_codigo": a.cod_municipio, "nivel": "municipio", "periodo_raw": a.mes, "variable": var,
-                              "desagregacion": "regimen=" + a.regimen, "valor": a[col],
-                              "metodo_dato": "suma de celdas publicadas (excluye «<5»)"}), "data/raw/v11/ss_afiliacion_municipio/afiliacion_municipio_mensual.csv.gz")
+            x = a[a[col].notna() & ((a[col] != 0) | (col == "afiliados_suma_numerica"))]
+            add(pd.DataFrame({"territorio_codigo": x.cod_municipio, "nivel": "municipio", "periodo_raw": x.mes, "variable": var,
+                              "valor": x[col], "metodo_dato": "suma de celdas publicadas (excluye «<5»); total de regímenes"}),
+                "data/raw/v11/ss_afiliacion_municipio/afiliacion_municipio_mensual.csv.gz")
     # Seguridad Social: afiliados extranjeros por provincia (foto anual)
     f = RAW11 / "ss_afiliacion_extranjeros/afiliados_extranjeros_provincia.csv.gz"
     if f.exists():

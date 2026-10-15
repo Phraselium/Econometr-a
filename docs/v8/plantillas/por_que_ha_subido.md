@@ -263,3 +263,11 @@ V9 añade diseños de identificación con datos locales, pre-registrados y revis
 - **Zonas tensionadas en Cataluña.** La diferencia es {{V9-D1a-renta-att}}, pero los municipios ya divergían antes. No se detecta una caída del número de contratos.
 - **Pisos turísticos e inmigración.** No hay diseño concluyente: tendencias previas en los pisos turísticos e instrumento débil en la inmigración (F efectiva {{V9-D4-ipc-replica-F:num}}).
 - **Hogares (contable).** El componente población explica {{V9-D7-ES-2225-cuota-pob}} del aumento de hogares de 2022-2025 en España y {{V9-D7-CV-2225-cuota-pob}} en la Comunitat Valenciana. <!-- check:cifra-libre (número de ley, nombres de capa y años del periodo) -->
+
+## Actualización V12 (2026-10-15): población, propiedad y oferta <!-- check:cifra-libre (años de los periodos) -->
+
+V12 no estima modelos: describe de dónde viene la población, quién es propietario y dónde se construye (`publicacion/atlas_v12.md`). No cambia la respuesta de V8 y V9 (ningún factor identificado), pero precisa magnitudes [C4]:
+
+- **Población.** En 2022-2024 el crecimiento ({{V12-B1-2022-2024-crecimiento}}) procede del saldo con el extranjero ({{V12-B1-2022-2024-saldo_exterior}}); el saldo vegetativo es negativo ({{V12-B1-2022-2024-vegetativo}}). <!-- check:cifra-libre (años de los periodos) -->
+- **Hogares frente a oferta.** Hogares nuevos: {{V12-B4-hogares-nuevos}}; obra nueva neta en el Catastro: {{V12-B4-obra-catastro}}; terminadas según el MIVAU: {{V12-B4-terminadas-mivau}}. Es una relación contable, no una medida de necesidad.
+- **Grandes titulares.** {{V12-B5-pct_mas10}} de las viviendas son de titulares con más de diez; la afirmación de que «son los responsables de la subida» sigue sin poder contrastarse (verificador, V12-V02). <!-- check:cifra-libre (identificador de la ficha) -->

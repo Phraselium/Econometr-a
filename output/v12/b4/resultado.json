@@ -129,9 +129,10 @@
   "obra < 50 %": 67
  },
  "provincia_2021_2025": {
-  "hogares_nuevos_ecp": 981823,
-  "obra_neta_catastro": 358254,
-  "terminadas_mivau": 373601,
+  "provincias": 46,
+  "hogares_nuevos_ecp": 934562,
+  "obra_neta_catastro": 355508,
+  "terminadas_mivau": 346403,
   "provincias_fuentes_coinciden": 25
  },
  "inspire_municipios": 96,

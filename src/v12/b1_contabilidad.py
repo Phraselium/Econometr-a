@@ -17,7 +17,7 @@ adquisiciones de nacionalidad, que no son flujos: van al residuo de cada grupo y
 Periodos: 2002-2007 (municipal y provincial desde 2003 por la población municipal), 2008-2013, 2014-2019, 2020-2021,
 2022-2024 (último año con flujos completos).
 Salidas en output/v12/b1/: contabilidad_anual_<nivel>.csv, contabilidad_periodos_<nivel>.csv, empalme_2021.csv,
-resultado.json, hechos.json.
+resultado.json.
 """
 from __future__ import annotations
 
@@ -276,13 +276,6 @@ def main() -> int:
                      "EVR sin bajas al extranjero antes de 2002 (no se usa antes de 2002)"]}
     res["valencia"] = valencia()
     (OUT / "resultado.json").write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float), encoding="utf-8")
-    hechos = [{"id": f"b1_nacional_{p}_{c}", "valor": float(nac.loc[p, c]), "unidad": "personas", "periodo": p, "territorio": "España",
-               "capa": "C4", "fuente": "INE: padrón/censo anual (población), MNP, EVR/EMCR",
-               "nota": "identidad contable; el residuo recoge revisiones del padrón y bajas por caducidad no registradas como flujo"}
-              for p in nac.index for c in ("crecimiento", "vegetativo", "saldo_exterior", "residuo")]
-    hechos += [{"id": f"b1_valencia_{k}", "valor": v, "unidad": "personas", "periodo": "2021-2025", "territorio": "València",
-                "capa": "C4", "fuente": "INE censo anual por sección"} for k, v in res["valencia"].items() if k.startswith("var_")]
-    (OUT / "hechos.json").write_text(json.dumps(hechos, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps(res["nacional_por_periodo"], ensure_ascii=False, indent=1, default=float))
     print(pd.DataFrame(emp))
     return 0

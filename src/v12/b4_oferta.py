@@ -196,8 +196,11 @@ def main() -> int:
            "regularizacion_2013_2017_catastro_menos_mivau": int((reg.obra_neta_catastro - reg.terminadas_mivau_total).sum()),
            "municipios_2021_2025_por_categoria": pr[pr.periodo == "2021-2025"].categoria.value_counts().to_dict(),
            "municipios_2011_2021_por_categoria": pr[pr.periodo == "2011-2021"].categoria.value_counts().to_dict(),
-           "provincia_2021_2025": {"hogares_nuevos_ecp": int(pv.hogares_nuevos_ecp.sum()), "obra_neta_catastro": int(pv.obra_neta_catastro.sum()),
-                                   "terminadas_mivau": int(pv.terminadas_mivau.sum()), "provincias_fuentes_coinciden": int(pv.fuentes_oferta_coinciden.sum())},
+           # misma muestra para las tres magnitudes: provincias con Catastro y MIVAU (sin País Vasco, Navarra, Ceuta ni Melilla)
+           "provincia_2021_2025": {"provincias": int(pv.dropna(subset=["obra_neta_catastro", "terminadas_mivau"]).shape[0]),
+                                   **{k: int(pv.dropna(subset=["obra_neta_catastro", "terminadas_mivau"])[k].sum())
+                                      for k in ("hogares_nuevos_ecp", "obra_neta_catastro", "terminadas_mivau")},
+                                   "provincias_fuentes_coinciden": int(pv.fuentes_oferta_coinciden.sum())},
            "inspire_municipios": int(ins.cod_municipio.nunique()),
            "notas": ["obra nueva neta del Catastro incluye regularizaciones administrativas (2013-2017)",
                      "hogares nuevos 2021-2025 municipales estimados con el tamaño de hogar de 2021",

@@ -263,3 +263,11 @@ V9 añade diseños de identificación con datos locales, pre-registrados y revis
 - **Zonas tensionadas en Cataluña.** La diferencia es -5,8 % (-8,5 a -3,2 %), pero los municipios ya divergían antes. No se detecta una caída del número de contratos.
 - **Pisos turísticos e inmigración.** No hay diseño concluyente: tendencias previas en los pisos turísticos e instrumento débil en la inmigración (F efectiva 4,55).
 - **Hogares (contable).** El componente población explica 92,0 % del aumento de hogares de 2022-2025 en España y 111,6 % en la Comunitat Valenciana. <!-- check:cifra-libre (número de ley, nombres de capa y años del periodo) -->
+
+## Actualización V12 (2026-10-15): población, propiedad y oferta <!-- check:cifra-libre (años de los periodos) -->
+
+V12 no estima modelos: describe de dónde viene la población, quién es propietario y dónde se construye (`publicacion/atlas_v12.md`). No cambia la respuesta de V8 y V9 (ningún factor identificado), pero precisa magnitudes [C4]:
+
+- **Población.** En 2022-2024 el crecimiento (1.641.570 personas) procede del saldo con el extranjero (1.995.569 personas); el saldo vegetativo es negativo (-362.896 personas). <!-- check:cifra-libre (años de los periodos) -->
+- **Hogares frente a oferta.** Hogares nuevos: 934.562 hogares; obra nueva neta en el Catastro: 355.508 viviendas; terminadas según el MIVAU: 346.403 viviendas. Es una relación contable, no una medida de necesidad.
+- **Grandes titulares.** 4,2 % de las viviendas son de titulares con más de diez; la afirmación de que «son los responsables de la subida» sigue sin poder contrastarse (verificador, V12-V02). <!-- check:cifra-libre (identificador de la ficha) -->

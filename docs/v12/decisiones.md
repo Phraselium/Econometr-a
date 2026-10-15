@@ -128,7 +128,8 @@ Reglas generales:
    serie del MIVAU: quedan sin contraste.
 4. **Capa del contraste provincial 2021-2024:** si Catastro y MIVAU difieren < 25 %, la oferta de esa provincia es C1
    (dos fuentes coinciden: 25 provincias); si no, C4 y se reportan ambas. Los hogares nuevos provinciales son de la ECP.
-   España: +981.823 hogares; 358.254 viviendas netas (Catastro) y 373.601 terminadas (MIVAU).
+   Mismo conjunto para las tres magnitudes (46 provincias con Catastro y MIVAU; sin País Vasco, Navarra, Ceuta ni
+   Melilla): +934.562 hogares; 355.508 viviendas netas (Catastro) y 346.403 terminadas (MIVAU).
 5. **Presión municipal:**
    - 2021-2025: hogares nuevos ESTIMADOS = Δ población del censo anual ÷ personas por hogar de 2021 (muestra
      censal); obra nueva = Catastro en el mismo intervalo. Marcado como estimación.
@@ -210,6 +211,8 @@ Reglas generales:
    municipio-año identificados en los flujos (unos 670-780 por año). Provincia, CCAA y España no cambian. Se
    regeneran B2, B5 y B7 (que leen B1 municipal); cambian ligeramente las asociaciones (p. ej. cuota de personas
    jurídicas frente a saldo exterior: 0,42 → 0,45). No había cifras publicadas: no procede ERRATA.
-2. **Base:** src/v12/base_v12.py añade a la base variables `v12_*` (C4): contabilidad demográfica anual (B1),
+2. **Comparación hogares/oferta en la misma muestra:** la primera versión sumaba los hogares de todas las provincias y la
+   oferta solo de las que tienen Catastro estatal; corregido antes de publicar (46 provincias para las tres magnitudes).
+3. **Base:** src/v12/base_v12.py añade a la base variables `v12_*` (C4): contabilidad demográfica anual (B1),
    descomposición de hogares 2011-2021 en los dos órdenes (B3), cuota de hogares con persona de referencia extranjera
    (solo celdas publicables), presión obra/hogares (B4) y cuotas de titularidad (B5).

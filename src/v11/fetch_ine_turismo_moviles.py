@@ -57,13 +57,22 @@ def main(verificar: bool = False) -> int:
         sel = [m for m in muns if m["Codigo"][:2] in ("03", "12", "46") or m["Codigo"] in CAPITALES]
         filas, fallos = [], []
         for m in sel:
-            d = []
-            for a0, a1 in TRAMOS:   # la API limita el volumen (≈36 meses por petición)
+            cache = DIR / "tmp" / f"{t}_{m['Codigo']}.json"
+            if cache.exists():   # caché local (no versionada) para reanudar
+                d = json.loads(cache.read_text(encoding="utf-8"))
+            else:
+                d = None
+            for a0, a1 in ([] if d is not None else TRAMOS):
+                d = d or []   # la API limita el volumen (≈36 meses por petición)
                 x = get(f"{API}DATOS_TABLA/{t}?tv={m['FK_Variable']}:{m['Id']}&date={a0}0101:{a1}1231&tip=AM")
                 if isinstance(x, list):
                     d += x
                 else:
                     fallos.append(f"{m['Codigo']}:{a0}")
+            if not any(f.startswith(m["Codigo"] + ":") for f in fallos):
+                cache.parent.mkdir(parents=True, exist_ok=True)
+                cache.write_text(json.dumps(d or []), encoding="utf-8")
+            d = d or []
             for s in d:
                 meta = {x.get("T3_Variable", ""): x.get("Nombre", "") for x in s.get("MetaData", [])}
                 origen = next((v for k, v in meta.items() if k not in ("Municipios", "Tipo de dato", "Concepto turístico")), "")

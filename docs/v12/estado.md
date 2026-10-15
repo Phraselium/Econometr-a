@@ -12,12 +12,13 @@
   hogares por nacionalidad con IC95 y supresión de celdas (output/v12/b3). Corregido VARANOE del extracto V11.
 - B4: obra nueva neta del Catastro, contraste con MIVAU (libre + protegida), INSPIRE, presión obra/hogares por
   municipio (2011-2021 y 2021-2025) y provincia (output/v12/b4).
+- B5: cuotas de titularidad 2024-2026 en cuatro ámbitos, tipo fino, ranking, asociaciones (Holm), titulares
+  2012-2023, AEAT CV y ficha V12-V02 que sustituye a V02 (output/v12/b5).
 
 ## Siguiente (para `claude --continue`)
-- B5: `src/v12/b5_propiedad.py`: cuotas de viviendas de titulares con > 5 y > 10 inmuebles y de personas jurídicas
-  (2024-2026, municipio = cota inferior; ficheros nacional/CCAA/provincia), ranking, relación descriptiva (C4) con
-  alquiler, precio, VUT, llegada de población y renta; 2012-2023 titulares frente a viviendas; AEAT; ficha del
-  verificador sobre fondos y grandes tenedores → «analizada».
+- B6: `src/v12/b6_condiciones.py`: condiciones de vivienda por origen (Censo 2021 muestra; ECV y EPA si hay microdatos):
+  tenencia, alquiler a precio de mercado, sobrecarga > 30 % y > 40 %, hacinamiento, superficie; por nacionalidad o país
+  de nacimiento, tiempo desde la llegada, edad y tipo de hogar, con IC y supresión de celdas.
 
 ## Tokens de subagentes
 Ninguno hasta el revisor final.

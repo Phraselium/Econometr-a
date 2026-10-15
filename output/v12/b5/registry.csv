@@ -1,0 +1,19 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+V12-B5,b5_pct_mas10_alquiler_m2_2024,"spearman(pct_mas10, alquiler_m2_2024)",2025,2025,728,,,,,0.20939099213791199,1.1750276061067465e-08,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_mas10_alquiler_var_2019_2024,"spearman(pct_mas10, alquiler_var_2019_2024)",2025,2025,727,,,,,-0.06692665167951703,0.07131657747835986,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_mas10_ipva_var_2019_2024,"spearman(pct_mas10, ipva_var_2019_2024)",2025,2025,700,,,,,-0.0471366388835485,0.21291795934725005,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_mas10_valor_tasado_2024,"spearman(pct_mas10, valor_tasado_2024)",2025,2025,289,,,,,0.19152149703694865,0.0010675306581938654,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_mas10_valor_tasado_var_2019_2024,"spearman(pct_mas10, valor_tasado_var_2019_2024)",2025,2025,267,,,,,0.004194411906001798,0.9456136949304647,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_mas10_vut_pct_2025,"spearman(pct_mas10, vut_pct_2025)",2025,2025,722,,,,,0.07620286472868083,0.04065762878275812,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_mas10_tasa_saldo_exterior_por_mil_anual,"spearman(pct_mas10, tasa_saldo_exterior_por_mil_anual)",2025,2025,728,,,,,0.16397824279796505,8.71157437002203e-06,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_mas10_tasa_saldo_interior_por_mil_anual,"spearman(pct_mas10, tasa_saldo_interior_por_mil_anual)",2025,2025,728,,,,,-0.10746664654576127,0.0036956271621777625,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_mas10_renta_neta_hogar_2023,"spearman(pct_mas10, renta_neta_hogar_2023)",2025,2025,728,,,,,-0.009878079954526433,0.7901824759167809,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_PJ_alquiler_m2_2024,"spearman(pct_PJ, alquiler_m2_2024)",2025,2025,728,,,,,0.49340104622008735,6.244189443183152e-46,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_PJ_alquiler_var_2019_2024,"spearman(pct_PJ, alquiler_var_2019_2024)",2025,2025,727,,,,,0.18105189624877355,8.925634629486975e-07,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_PJ_ipva_var_2019_2024,"spearman(pct_PJ, ipva_var_2019_2024)",2025,2025,700,,,,,0.20393530832278664,5.230737948021622e-08,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_PJ_valor_tasado_2024,"spearman(pct_PJ, valor_tasado_2024)",2025,2025,289,,,,,0.4582513025494173,2.0700282823685221e-16,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_PJ_valor_tasado_var_2019_2024,"spearman(pct_PJ, valor_tasado_var_2019_2024)",2025,2025,267,,,,,0.28859609194039937,1.6185823646681326e-06,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_PJ_vut_pct_2025,"spearman(pct_PJ, vut_pct_2025)",2025,2025,722,,,,,0.3022286908845293,1.0259558996595944e-16,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_PJ_tasa_saldo_exterior_por_mil_anual,"spearman(pct_PJ, tasa_saldo_exterior_por_mil_anual)",2025,2025,728,,,,,0.41991982718995674,1.8337165204071805e-32,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_PJ_tasa_saldo_interior_por_mil_anual,"spearman(pct_PJ, tasa_saldo_interior_por_mil_anual)",2025,2025,728,,,,,0.0415974997490864,0.2623225789297948,descriptivo C4; municipios ≥ 10.000 hab.
+V12-B5,b5_pct_PJ_renta_neta_hogar_2023,"spearman(pct_PJ, renta_neta_hogar_2023)",2025,2025,728,,,,,0.2758735595354883,3.5030843126575966e-14,descriptivo C4; municipios ≥ 10.000 hab.

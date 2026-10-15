@@ -1,0 +1,22 @@
+[
+ {
+  "id": "V12-V02",
+  "sustituye": "V02",
+  "tema": "Grandes tenedores",
+  "enunciado": "Los fondos de inversión y los grandes tenedores son los responsables de la subida de precios y alquileres.",
+  "capa": "C4",
+  "magnitud": "Catastro 2026 (uso residencial, España sin País Vasco ni Navarra): 4,2 % de las viviendas son de sujetos pasivos con más de 10 inmuebles residenciales en España, 2,1 % de los que tienen más de 100 y 4,6 % de personas jurídicas privadas; 93,4 % de personas físicas.",
+  "intervalo": "municipios ≥ 10.000 hab. (cota inferior): mediana 2,5 % (p10-p90 0,8-5,9 %) con > 10",
+  "cota": "—",
+  "literatura": "Sin trabajo replicado para España con estos datos.",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "regla": "Hay ya cifra del peso de los grandes titulares (C4, fuente única: Catastro). La afirmación es causal («responsables de la subida») y no hay diseño que la contraste: entre municipios, las asociaciones con alquiler y precio son descriptivas (12 de 18 con p de Holm < 0,05) y no permiten separar si la concentración sigue a los precios o al revés.",
+  "limites": "Los tramos se cuentan dentro de cada ámbito (la cuota municipal es una cota inferior); un sujeto pasivo por inmueble (no cuenta cotitulares); no distingue viviendas en alquiler; no identifica fondos frente a otras sociedades.",
+  "evidencia": [
+   "output/v12/b5/titularidad_cuotas.csv",
+   "output/v12/b5/asociaciones_titularidad.csv",
+   "docs/v12/decisiones.md"
+  ],
+  "veredicto_previo": "NO ANALIZADA: FALTAN DATOS"
+ }
+]

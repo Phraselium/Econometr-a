@@ -1,0 +1,218 @@
+{
+ "rama": "V12-B5",
+ "pregunta": "¿Quién es propietario?",
+ "capa": "C4",
+ "metodo": "descriptivo (cuotas) y asociación de rangos",
+ "datos": "Catastro titularidad 2024-2026 y JAXI 2012-2023; SERPAVI, IPVA, MIVAU, INE VUT, ADRH, B1; AEAT",
+ "N": 23027,
+ "nacional": {
+  "2025": {
+   "viviendas": 24235764.0,
+   "pct_mas5": 7.34,
+   "pct_mas10": 4.3,
+   "pct_mas100": 2.18,
+   "pct_PJ": 4.68,
+   "pct_PE": 1.07,
+   "pct_PF": 93.28
+  },
+  "2026": {
+   "viviendas": 24332088.0,
+   "pct_mas5": 7.23,
+   "pct_mas10": 4.16,
+   "pct_mas100": 2.06,
+   "pct_PJ": 4.58,
+   "pct_PE": 1.08,
+   "pct_PF": 93.42
+  }
+ },
+ "municipio_10k_2025_mediana_pct_mas10": 2.65,
+ "titulares_por_unidad_2012_2023": [
+  0.823,
+  0.849
+ ],
+ "aeat_cv_cuota_pct": {
+  "2016": 53.3,
+  "2017": 54.7,
+  "2018": 55.6,
+  "2019": 57.1,
+  "2020": 56.7,
+  "2021": 59.4,
+  "2022": 60.4,
+  "2023": 62.4,
+  "2024": 63.7
+ },
+ "asociaciones": [
+  {
+   "cuota": "pct_mas10",
+   "variable": "alquiler_m2_2024",
+   "N": 728,
+   "spearman": 0.209,
+   "ic95_inf": 0.145,
+   "ic95_sup": 0.275,
+   "p_holm": 1.5275358879387706e-07
+  },
+  {
+   "cuota": "pct_mas10",
+   "variable": "alquiler_var_2019_2024",
+   "N": 727,
+   "spearman": -0.067,
+   "ic95_inf": -0.135,
+   "ic95_sup": 0.004,
+   "p_holm": 0.3565828873917993
+  },
+  {
+   "cuota": "pct_mas10",
+   "variable": "ipva_var_2019_2024",
+   "N": 700,
+   "spearman": -0.047,
+   "ic95_inf": -0.116,
+   "ic95_sup": 0.025,
+   "p_holm": 0.8516718373890002
+  },
+  {
+   "cuota": "pct_mas10",
+   "variable": "valor_tasado_2024",
+   "N": 289,
+   "spearman": 0.192,
+   "ic95_inf": 0.08,
+   "ic95_sup": 0.296,
+   "p_holm": 0.008540245265550923
+  },
+  {
+   "cuota": "pct_mas10",
+   "variable": "valor_tasado_var_2019_2024",
+   "N": 267,
+   "spearman": 0.004,
+   "ic95_inf": -0.116,
+   "ic95_sup": 0.121,
+   "p_holm": 1.0
+  },
+  {
+   "cuota": "pct_mas10",
+   "variable": "vut_pct_2025",
+   "N": 722,
+   "spearman": 0.076,
+   "ic95_inf": 0.004,
+   "ic95_sup": 0.15,
+   "p_holm": 0.24394577269654874
+  },
+  {
+   "cuota": "pct_mas10",
+   "variable": "tasa_saldo_exterior_por_mil_anual",
+   "N": 728,
+   "spearman": 0.164,
+   "ic95_inf": 0.092,
+   "ic95_sup": 0.233,
+   "p_holm": 7.840416933019828e-05
+  },
+  {
+   "cuota": "pct_mas10",
+   "variable": "tasa_saldo_interior_por_mil_anual",
+   "N": 728,
+   "spearman": -0.107,
+   "ic95_inf": -0.175,
+   "ic95_sup": -0.035,
+   "p_holm": 0.025869390135244336
+  },
+  {
+   "cuota": "pct_mas10",
+   "variable": "renta_neta_hogar_2023",
+   "N": 728,
+   "spearman": -0.01,
+   "ic95_inf": -0.084,
+   "ic95_sup": 0.063,
+   "p_holm": 1.0
+  },
+  {
+   "cuota": "pct_PJ",
+   "variable": "alquiler_m2_2024",
+   "N": 728,
+   "spearman": 0.493,
+   "ic95_inf": 0.437,
+   "ic95_sup": 0.549,
+   "p_holm": 1.1239540997729672e-44
+  },
+  {
+   "cuota": "pct_PJ",
+   "variable": "alquiler_var_2019_2024",
+   "N": 727,
+   "spearman": 0.181,
+   "ic95_inf": 0.116,
+   "ic95_sup": 0.252,
+   "p_holm": 9.818198092435672e-06
+  },
+  {
+   "cuota": "pct_PJ",
+   "variable": "ipva_var_2019_2024",
+   "N": 700,
+   "spearman": 0.204,
+   "ic95_inf": 0.133,
+   "ic95_sup": 0.275,
+   "p_holm": 6.276885537625947e-07
+  },
+  {
+   "cuota": "pct_PJ",
+   "variable": "valor_tasado_2024",
+   "N": 289,
+   "spearman": 0.458,
+   "ic95_inf": 0.363,
+   "ic95_sup": 0.547,
+   "p_holm": 3.105042423552783e-15
+  },
+  {
+   "cuota": "pct_PJ",
+   "variable": "valor_tasado_var_2019_2024",
+   "N": 267,
+   "spearman": 0.289,
+   "ic95_inf": 0.176,
+   "ic95_sup": 0.399,
+   "p_holm": 1.6185823646681327e-05
+  },
+  {
+   "cuota": "pct_PJ",
+   "variable": "vut_pct_2025",
+   "N": 722,
+   "spearman": 0.302,
+   "ic95_inf": 0.23,
+   "ic95_sup": 0.375,
+   "p_holm": 1.641529439455351e-15
+  },
+  {
+   "cuota": "pct_PJ",
+   "variable": "tasa_saldo_exterior_por_mil_anual",
+   "N": 728,
+   "spearman": 0.42,
+   "ic95_inf": 0.349,
+   "ic95_sup": 0.483,
+   "p_holm": 3.117318084692207e-31
+  },
+  {
+   "cuota": "pct_PJ",
+   "variable": "tasa_saldo_interior_por_mil_anual",
+   "N": 728,
+   "spearman": 0.042,
+   "ic95_inf": -0.031,
+   "ic95_sup": 0.119,
+   "p_holm": 0.8516718373890002
+  },
+  {
+   "cuota": "pct_PJ",
+   "variable": "renta_neta_hogar_2023",
+   "N": 728,
+   "spearman": 0.276,
+   "ic95_inf": 0.212,
+   "ic95_sup": 0.347,
+   "p_holm": 4.904318037720635e-13
+  }
+ ],
+ "ficha_verificador": {
+  "id": "V12-V02",
+  "veredicto": "ANALIZADA, NO CONCLUYENTE",
+  "sustituye": "V02"
+ },
+ "notas": [
+  "cuota municipal = cota inferior (tramos dentro del ámbito)",
+  "sin País Vasco ni Navarra",
+  "asociaciones descriptivas entre municipios; no causales"
+ ]
+}

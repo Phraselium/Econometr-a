@@ -136,3 +136,31 @@ Reglas generales:
    - Ratio obra/hogares y cuatro categorías. Es una relación contable: no mide necesidad ni déficit (para eso, v7.1).
 6. **INSPIRE:** viviendas por año de construcción (stock superviviente, cota inferior) frente al Catastro estadístico
    en los 96 municipios cubiertos.
+
+## B5 · Quién es propietario (src/v12/b5_propiedad.py → output/v12/b5)
+1. **Medida:** viviendas (inmuebles de uso residencial, ficheros _V del Catastro) cuyo sujeto pasivo del IBI tiene
+   más de 5 / más de 10 / más de 100 inmuebles residenciales EN EL ÁMBITO, y viviendas de personas jurídicas privadas
+   (PJ), entidades públicas (PE) y personas físicas (PF). «> 5» = tramos 6-10, 11-25, 26-100 y > 100.
+2. **Cuatro ámbitos, cuatro lecturas:** el fichero nacional cuenta los inmuebles del titular en toda España (sin País
+   Vasco ni Navarra); el municipal, solo en el municipio. La cuota municipal es una COTA INFERIOR. España 2026: 4,2 %
+   de las viviendas en manos de titulares con > 10, 2,1 % con > 100, 4,6 % de personas jurídicas privadas, 1,1 % de
+   entidades públicas, 93,4 % de personas físicas. Municipios ≥ 10.000 hab. (2026): mediana 2,5 % con > 10.
+   El fichero nacional de 2024 no trae uso residencial: la serie nacional empieza en 2025.
+3. **Códigos de CCAA y provincia:** sus ficheros solo traen nombres; el código INE se toma del propio fichero municipal
+   (cada fila trae CODINE y el nombre de su provincia y CCAA). Sin nombres tecleados a mano.
+4. **Tipo fino (_TPF, España y provincia):** personas físicas de nacionalidad española 87,6 %, de nacionalidad
+   extranjera 5,8 % (residan o no en España), sociedades 4,3 %, administraciones públicas 1,1 %, entidades extranjeras
+   0,1 % (2026). Descriptivo: se informa del titular, no se valora.
+5. **Asociación (C4):** Spearman entre las cuotas municipales de 2025 (> 10 y PJ) y nueve variables; IC bootstrap
+   (1.000 réplicas, SEED) y Holm; 18 especificaciones al Registry. La cuota de personas jurídicas es mayor donde el
+   alquiler y el precio son más altos (ρ ≈ 0,49 y 0,46), donde hay más viviendas turísticas (0,30) y donde el saldo
+   exterior es mayor (0,42). Son asociaciones entre municipios: no dicen si la propiedad de sociedades sigue a los
+   precios, los precios a la propiedad o ambos a un tercer factor (turismo, tamaño urbano).
+6. **2012-2023:** titulares catastrales urbanos por unidad urbana: 0,823 (2012) → 0,849 (2023). Otra definición: no
+   se encadena con 2024-2026 (F0).
+7. **AEAT (Comunitat Valenciana):** declaraciones con rentas de bienes inmuebles (aprox., F0) / declaraciones: 53,3 %
+   (2016) → 63,7 % (2024). Incluye la imputación de inmuebles no alquilados: no mide caseros. 2013-2015 se guarda
+   (rendimientos del capital inmobiliario) con unidades por verificar; no se publica como cifra.
+8. **Verificador:** ficha V12-V02 sustituye a V02 («fondos y grandes tenedores … responsables de la subida»): pasa de
+   «NO ANALIZADA: FALTAN DATOS» a «ANALIZADA, NO CONCLUYENTE». Hay magnitud (C4, fuente única); la parte causal no
+   tiene diseño que la contraste. Se conecta a publicación y web en B8.

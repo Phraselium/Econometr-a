@@ -10,6 +10,8 @@ El repositorio tiene cuatro puertas de entrada:
 
 Toda cifra difundible sale de una única tabla, [publicacion/cifras_clave.csv](publicacion/cifras_clave.csv). Cada resultado lleva una capa de evidencia, de C1 (hecho con dos fuentes) a C4 (exploratorio); las definiciones están en [metodologia/capas.md](metodologia/capas.md). Ningún resultado es causal. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas.
 
+**V9 (qué causa qué).** Diseños de identificación pre-registrados ([informe](publicacion/informe_v9.md), [verificador V9](publicacion/verificador/verificador_v9.md)). Ningún resultado alcanza la capa causal; se publican como diferencias o asociaciones con sus pruebas y sin cotas de contribución.
+
 **V10 (difusión).**
 - [Atlas descriptivo](publicacion/atlas_descriptivo.md): quién soporta el coste de la vivienda (por renta, edad, nacionalidad y tenencia) y dónde (provincias, Comunitat Valenciana, barrios y secciones de València), sin lecturas causales.
 - Base de datos única ([diccionario](docs/v10/diccionario_base.md)).

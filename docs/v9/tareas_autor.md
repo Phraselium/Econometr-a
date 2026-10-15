@@ -1,8 +1,11 @@
 # Tareas del autor (V9 COMPLETO)
 
-1. **Pre-registro.** Publicar la etiqueta `prereg-v9` (solo local: el remoto rechaza etiquetas) y crear una release en GitHub con docs/v9/hipotesis.md. El hash del commit pre-registrado figura en docs/v9/hipotesis.md.
+1. **Pre-registro.** Publicar las etiquetas locales `prereg-v9` (2977349), `prereg-v9-a1` (9cb2200) y `prereg-v9-a1b` (4639772); el remoto de este entorno rechaza etiquetas. Crear una release en GitHub con docs/v9/hipotesis.md y el addendum, y depositarla con sello de tiempo externo (Zenodo u OSF). El hash del commit pre-registrado figura en docs/v9/hipotesis.md.
 2. **Inside Airbnb.** Pedir las ediciones históricas 2019-2021 de Barcelona y València (formulario de insideairbnb.com). Servirían como robustez de la exposición de D2. El diseño principal usa el registro oficial (IDESCAT).
 3. **Solicitudes de transparencia** (a)-(d) de docs/v9/solicitudes_transparencia.md.
 4. **Red del entorno.** Añadir web.archive.org a los dominios permitidos si se quieren cortes antiguos del registro VUT de la GVA.
 5. **Barcelona.** Los cortes trimestrales de HUT (2018T2-2026T3) están detrás de una prueba anti-bot: descargarlos a mano en data/raw/v9/bcn_hut/manual/ (CC BY 4.0) si se quiere sustituir la aproximación por año de expediente.
 6. **Revisión humana y publicación** de los resultados de V9 (docs/v9/cierre.md).
+7. **Web.** Revisar la página «Qué causa qué» y las filas V9 de las fichas antes de publicar en GitHub Pages (`make web`).
+8. **Manuscrito.** Quarto 1.10 se instaló en el entorno con pip (`quarto-cli`) y el HTML se renderiza. Para el PDF hace falta TeX (`quarto install tinytex`).
+9. **Revisión independiente final.** El revisor de F3 superó su tope de tokens y la revisión final la hizo el orquestador (docs/v9/revision_final.md). Conviene que la haga una persona.

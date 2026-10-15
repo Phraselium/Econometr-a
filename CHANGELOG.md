@@ -3,6 +3,29 @@
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
 
+## V9 (2026-10-15): qué causa qué — datos completos, diseños de identificación pre-registrados e integración en la web
+
+- **Datos (F1).**
+  - 10 fuentes nuevas en data/raw/v9: IDESCAT HUT municipal, HUT de Barcelona por barrio, padrón por nacionalidad 2003-2022, EM/EMCR, censo 2011, callejero sección-CP, SEPE municipal, BCE RAI y Eurostat IPCA alquiler; Registre e IEET solo vía `make datos_terceros`.
+  - Auditoría de exhaustividad y solicitudes de transparencia.
+  - 13 variables nuevas en la base.
+- **Pre-registro (F2).** docs/v9/hipotesis.md (etiqueta local `prereg-v9`) y addendum A1 tras revisión independiente (`prereg-v9-a1`, `prereg-v9-a1b`). La potencia se calculó sin ver resultados.
+- **Diseños (F3).**
+  - D1 topes y zonas tensionadas (Callaway-Sant'Anna, BJS, dCDH, Honest DiD de Rambachan y Roth con contraste condicional de ARP, permutación);
+  - D2 HUT × COVID;
+  - D3 caída del registro VUT por CP (descriptivo);
+  - D4 inmigración shift-share (AKM, AR, Rotemberg);
+  - D5 tipos × exposición (proyecciones locales, Driscoll-Kraay);
+  - D6 no estimable (sin edad exacta);
+  - D7 contabilidad de hogares.
+  - **Ningún resultado alcanza C3/C3s.**
+- **Cotas (F4).** Vacías: sin C3/C3s no se atribuye ninguna parte de la subida.
+- **Integración (F5).**
+  - 61 cifras `V9-` en cifras_clave; **ninguna cifra publicada cambia** (check_v9).
+  - Verificador V9 (8 afirmaciones), informe_v9, secciones V9 en por_que_ha_subido y lo_que_sabemos, adenda del historial de conclusiones, tablas_v9.xlsx, tabla de efectos en la base (`v9_efectos`), página «Qué causa qué» y filas V9 en las fichas de Cataluña, la Comunitat Valenciana y València.
+  - Sección 6 del manuscrito (Quarto 1.10 instalado y renderizado en HTML).
+- **Controles.** check_v9 en `make check`; `make v9`.
+
 ## V10 (2026-10-14): difusión — base única, atlas descriptivo, figuras, web y monitor (sin modelos nuevos)
 
 - **Base de datos única** (`make base`):

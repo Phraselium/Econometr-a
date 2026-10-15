@@ -132,3 +132,6 @@ data/base/vivienda.duckdb.wal
 data/raw/v10/geo/seccionado_2025.zip
 web/_site/
 data/raw/v9/eurostat_alquiler/original/
+# V9: render local de Quarto (se regenera con `quarto render paper/manuscrito.qmd`)
+paper/manuscrito.html
+paper/manuscrito_files/

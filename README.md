@@ -4,6 +4,8 @@
 
 **Repositorio:** https://github.com/Phraselium/vivienda-espana-evidencia (antes Phraselium/Econometr-a; GitHub redirige el nombre antiguo). **DOI:** pendiente (Zenodo).
 
+**Nuevo en V9 (qué causa qué, 15 de octubre de 2026):** diseños de identificación pre-registrados sobre topes y zonas tensionadas, pisos turísticos, inmigración, tipos de interés y hogares. **Ninguno alcanza la capa causal (C3/C3s)**. Se publican como diferencias o asociaciones con todas sus pruebas: [informe](publicacion/informe_v9.md), [tabla](publicacion/tabla_v9.md), [verificador V9](publicacion/verificador/verificador_v9.md), [pre-registro](metodologia/preregistro_v9.md) y página «Qué causa qué» de la web.
+
 **Nuevo en V10 (difusión, sin modelos nuevos):**
 - una base de datos única: [diccionario](docs/v10/diccionario_base.md) y datos redistribuibles en `data/base/publica`;
 - un [atlas descriptivo](publicacion/atlas_descriptivo.md) de quién soporta el coste de la vivienda y dónde, con sus [tablas en Excel](publicacion/tablas_atlas.xlsx);
@@ -48,7 +50,8 @@ Se evalúan afirmaciones e instrumentos, nunca partidos ni personas.
 | [reproducir/](reproducir/MANIFIESTO.md) | Instrucciones, entorno y versiones, tiempos, ensayo y protocolo de `make evaluate_v7` | `make publicacion` |
 | [historico/](historico/INDICE.md) | Documentos de versiones superadas e índice por versión | `git mv`, sin modificar |
 | data/base/ | Base única (V10): tabla larga, territorios, variables, geometrías; capa pública en data/base/publica | `make base` |
-| output/v10/, figuras/, web/, paper/ | Atlas, figuras con ficha, web estática y manuscrito (V10) | `make atlas`, `make figuras`, `make web` |
+| output/v10/, figuras/, web/, paper/ | Atlas, figuras con ficha, web estática y manuscrito (V10; §6 con V9) | `make atlas`, `make figuras`, `make web` |
+| output/v9/, docs/v9/ | Qué causa qué (V9): diseños D1-D7, pruebas, capas, cotas, verificador; pre-registro y revisiones | `make v9` |
 | src/, tests/, output/, docs/, data/ | Código, pruebas, salidas de cada versión, documentación de trabajo y datos | `make all`, `make v7`, `make check` |
 
 El mapa detallado está en [docs/MAPA.md](docs/MAPA.md).
@@ -63,6 +66,8 @@ make base          # V10: base única (DuckDB y Parquet) y geometrías (unos 5 m
 make atlas         # V10: atlas descriptivo (los microdatos se recalculan si están en disco)
 make figuras       # V10: figuras y mapas
 make web           # V10: web estática en web/_site
+make datos_v9      # V9: descarga o verificación de data/raw/v9 (sin red solo verifica)
+make v9            # V9: diseños D1-D7, cotas, cifras V9, verificador, textos y Excel (unos 30 min; Honest DiD es lento)
 make publicacion   # publicacion/, metodologia/ y reproducir/
 make check         # ruff, tests, controles de texto, cifras y capas
 ```

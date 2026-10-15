@@ -45,7 +45,8 @@ def main() -> int:
         for res, clave in (("log renta media", "renta"), ("log contratos", "contratos")):
             r = fila(dis, res)
             nom = "zonas tensionadas (Ley 12/2023)" if dis == "D1a" else "Ley catalana 11/2020"
-            out.append(h(f"V9-{dis}-{clave}-att", f"{nom}: ATT sobre {res.replace('log ', '')} de contratos nuevos (CS)", 100 * r.beta,
+            txt = "la renta media de los contratos nuevos" if clave == "renta" else "el número de contratos nuevos"
+            out.append(h(f"V9-{dis}-{clave}-att", f"{nom}: diferencia (ATT, CS) en {txt}", 100 * r.beta,
                          100 * r.ic95_lo, 100 * r.ic95_hi, PP, per, cob, INC, r.capa, per[-6:], f"output/v9/f3/tabla_capas.csv:{dis}"))
             pr = pr1.loc[f"{dis} {r.resultado}"]
             out.append(h(f"V9-{dis}-{clave}-pretend-p", f"{nom}, {res}: p del contraste conjunto de pretendencias", pr.pretend_p, None, None,

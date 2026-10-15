@@ -1,0 +1,300 @@
+fichero,variable,posicion,longitud,descripcion
+adultos,IDEN,1,6,"Identificador de Cuestionario (ordenados los cuestionarios por NIDEN se asigna 000001 al primero, 000002 al segundo, y así sucesivamente"
+adultos,IDQ_PV,7,2,Código de la provincia de residencia
+adultos,IDQ_MUN,9,5,Código del municipio de más de 50.000 habitantes o capital de provincia de residencia
+adultos,TAM_MUNI,14,1,Tamaño del municipio según las cifras de Padrón a 1 de enero de 2021
+adultos,FACTOR,15,17,"Factor de elevación del dato muestral a la población calibrado por edad, sexo, nacionalidad, totales provinciales, totales municipales de más de 50.000 habitantes, hogares y tamaño del hogar"
+adultos,NPV,32,2,Número de orden de la persona en el hogar
+adultos,EC,34,1,Estado civil legal
+adultos,ANOEC,35,4,Año en el que adquirió su estado civil legal
+adultos,EDADEC,39,3,Edad a la que adquirió su estado civil legal
+adultos,ESTUDIOS,42,2,Nivel de estudios alcanzado
+adultos,ANOESTUD,44,4,Año en el que alcanzó su mayor nivel de estudios
+adultos,EDADESTUD,48,3,Edad a la que alcanzó su mayor nivel de estudios
+adultos,CAMPO,51,2,Campo de los estudios 
+adultos,SITLAB,53,1,Situación laboral principal durante la última semana
+adultos,ANOSL,54,4,Desde que año se encuentra en esa situación laboral
+adultos,EDADSL,58,3,Desde que edad se encuentra en esa situación laboral
+adultos,FLEXI,61,1,"Puede flexibilizar, adaptar o acomodar su jornada laboral por conciliación"
+adultos,LUGTRAB,62,1,Dónde está su lugar de trabajo/estudio
+adultos,NDESPLA,63,2,Número de desplazamientos totales al día desde su vivienda hasta el lugar de trabajo/estudio
+adultos,MTRANSPOR_1,65,2,Primer medio de transporte que utiliza para ir de su casa hasta el lugar de trabajo/estudio con el que cubre más distancia
+adultos,MTRANSPOR_2,67,2,Segundo medio de transporte que utiliza para ir de su casa hasta el lugar de trabajo/estudio con el que cubre más distancia
+adultos,TIEMDESPLA,69,1,Tiempo que dedica a la suma de todos sus trayectos diarios (ida y vuelta) desde su casa hasta el lugar de trabajo/estudio
+adultos,SATISTIEMP,70,2,"Grado de satisfacción en el tiempo de desplazamiento al trabajo, valorado de 0 a 10 (donde 0 significa totalmente insatisfecho y 10 significa completamente satisfecho)"
+adultos,ACCESINTER,72,1,Accede a internet al menos 5 días por semana
+adultos,REDSOCI,73,1,Dispone de perfil en alguna red social
+adultos,SMART,74,1,Dispone de teléfono móvil smartphone
+adultos,COMPRAINT,75,1,En el último mes ha realizado la compra de artículos a través de internet
+adultos,VENDEINT,76,1,En el último mes ha realizado la venta de artículos a través de internet
+adultos,HIJOS,77,1,Ha tenido usted hijos
+adultos,NHIJOS,78,2,Número total de hijos (independientemente de si conviven con usted en el hogar o no y de si están vivos actualmente o no)
+adultos,PAREJA,80,1,Tiene pareja actualmente
+adultos,TDOMEST,81,1,Grado de participación en las tareas domésticas de su hogar
+adultos,CUIDODHOG,82,1,Grado de participación en los cuidados a personas dependientes del hogar
+adultos,NHSCDHOG,83,3,Número de horas a la semana que dedica a cuidar a personas dependientes del hogar
+adultos,EDDEPDH,86,3,Edad de la persona dependiente del hogar a la que más horas dedica
+adultos,TIPODEPDH,89,1,Tipo de dependiente que es la persona del hogar a la que más horas dedica
+adultos,CUIDOFHOG,90,1,Grado de participación en los cuidados a personas dependientes de fuera del hogar
+adultos,NHSCFHOG,91,3,Número de horas a la semana que dedica a cuidar a personas dependientes de fuera del hogar
+adultos,EDDEPFH,94,3,Edad de la persona dependiente de fuera del hogar a la que más horas dedica
+adultos,TIPODEPFH,97,1,Tipo de dependiente que es la persona de fuera del hogar a la que más horas dedica
+adultos,GALI,98,1,"Durante al menos los últimos seis meses, ¿en qué medida se ha visto limitado debido a un problema de salud para realizar las actividades que la gente habitualmente hace? "
+adultos,APOSOCI,99,1,Tiene a alguien con quien puede hablar de sus problemas cotidianos/sentimientos
+adultos,APOSOCIHIJ,100,1,Tipo de parentesco con las personas que le dan apoyo social: Hijos/as
+adultos,APOSOCIPAMA,101,1,Tipo de parentesco con las personas que le dan apoyo social: Padres/Madres
+adultos,APOSOCIHER,102,1,Tipo de parentesco con las personas que le dan apoyo social: Hermanos/as
+adultos,APOSOCIOTPAR,103,1,Tipo de parentesco con las personas que le dan apoyo social: Otro pariente
+adultos,APOSOCIOTRO,104,1,"Tipo de parentesco con las personas que le dan apoyo social: Otros: amigos, vecinos, etc."
+adultos,LRESMD,105,1,Lugar de residencia de la persona que se encuentra a menor distancia entre las personas que le dan apoyo social 
+adultos,TOTAL ,,105,nan
+hogar,IDEN,1,6,"Identificador de Cuestionario (ordenados los cuestionarios por NIDEN se asigna 000001 al primero, 000002 al segundo, y así sucesivamente"
+hogar,IDQ_PV,7,2,Código de la provincia de residencia
+hogar,IDQ_MUN,9,5,Código del municipio de más de 50.000 habitantes o capital de provincia de residencia
+hogar,TAM_MUNI,14,1,Tamaño del municipio según las cifras de Padrón a 1 de enero de 2021
+hogar,FACTOR,15,17,"Factor de elevación del dato muestral a la población calibrado por edad, sexo, nacionalidad, totales provinciales, totales municipales de más de 50.000 habitantes, hogares y tamaño del hogar"
+hogar,NPV,32,2,Número de orden de la persona en el hogar
+hogar,SEXO,34,1,Sexo
+hogar,MESN,35,2,Mes de nacimiento
+hogar,ANON,37,4,Año de nacimiento
+hogar,EDAD,41,3,Edad
+hogar,NACIM,44,1,Lugar de nacimiento
+hogar,PROVN,45,2,Provincia española de nacimiento
+hogar,MUNIN,47,5,Municipio español de nacimiento
+hogar,PNACIM,52,3,País de nacimiento
+hogar,PNAC1,55,3,País de nacionalidad 1
+hogar,PNAC2,58,3,País de nacionalidad 2
+hogar,NAC,61,1,Nacionalidad: Española / Extranjera
+hogar,ANOADQESP,62,4,Año de adquisición de la nacionalidad española
+hogar,RE_01,66,2,Relación de parentesco de la persona que ocupa el lugar 01 (NPV) con el entrevistado
+hogar,RE_02,68,2,Relación de parentesco de la persona que ocupa el lugar 02 (NPV) con el entrevistado
+hogar,RE_03,70,2,Relación de parentesco de la persona que ocupa el lugar 03 (NPV) con el entrevistado
+hogar,RE_04,72,2,Relación de parentesco de la persona que ocupa el lugar 04 (NPV) con el entrevistado
+hogar,RE_05,74,2,Relación de parentesco de la persona que ocupa el lugar 05 (NPV) con el entrevistado
+hogar,RE_06,76,2,Relación de parentesco de la persona que ocupa el lugar 06 (NPV) con el entrevistado
+hogar,RE_07,78,2,Relación de parentesco de la persona que ocupa el lugar 07 (NPV) con el entrevistado
+hogar,RE_08,80,2,Relación de parentesco de la persona que ocupa el lugar 08 (NPV) con el entrevistado
+hogar,RE_09,82,2,Relación de parentesco de la persona que ocupa el lugar 09 (NPV) con el entrevistado
+hogar,RE_10,84,2,Relación de parentesco de la persona que ocupa el lugar 10 (NPV) con el entrevistado
+hogar,RE_11,86,2,Relación de parentesco de la persona que ocupa el lugar 11 (NPV) con el entrevistado
+hogar,RE_12,88,2,Relación de parentesco de la persona que ocupa el lugar 12 (NPV) con el entrevistado
+hogar,RE_13,90,2,Relación de parentesco de la persona que ocupa el lugar 13 (NPV) con el entrevistado
+hogar,RE_14,92,2,Relación de parentesco de la persona que ocupa el lugar 14 (NPV) con el entrevistado
+hogar,RE_15,94,2,Relación de parentesco de la persona que ocupa el lugar 15 (NPV) con el entrevistado
+hogar,RE_16,96,2,Relación de parentesco de la persona que ocupa el lugar 16 (NPV) con el entrevistado
+hogar,RE_17,98,2,Relación de parentesco de la persona que ocupa el lugar 17 (NPV) con el entrevistado
+hogar,RE_18,100,2,Relación de parentesco de la persona que ocupa el lugar 18 (NPV) con el entrevistado
+hogar,RE_19,102,2,Relación de parentesco de la persona que ocupa el lugar 19 (NPV) con el entrevistado
+hogar,ANOCONVICASAD,104,4,Año desde el que convive con su cónyuge
+hogar,PARINSC,108,1,Pareja inscrita en un registro
+hogar,ANOCONVIPAR,109,4,Año desde el que convive con su pareja (no cónyuge)
+hogar,NPROGEN,113,1,Número de progenitores que tiene o ha tenido
+hogar,REPROGEN1,114,1,Relación de parentesco con su progenitor 1
+hogar,HOGP1,115,1,El progenitor 1 reside en la vivienda
+hogar,NPVP1,116,2,Nº de orden del progenitor1 en la lista de personas del hogar
+hogar,VIVOPROGEN1,118,1,El progenitor 1 sigue vivo
+hogar,RESIDP1,119,1,Lugar de residencia del progenitor 1
+hogar,PROVRP1,120,2,Provincia española de residencia del progenitor 1
+hogar,MUNIRP1,122,5,Municipio español de residencia del progenitor 1
+hogar,PRESIDP1,127,3,País de residencia del progenitor 1
+hogar,NACIMP1,130,1,Lugar de nacimiento del progenitor 1
+hogar,PROVNP1,131,2,Provincia española de nacimiento del progenitor 1
+hogar,MUNINP1,133,5,Municipio español de nacimiento del progenitor 1
+hogar,PNACIMP1,138,3,País de nacimiento del progenitor 1
+hogar,PNAC1P1,141,3,País de nacionalidad 1 del progenitor 1
+hogar,PNAC2P1,144,3,País de nacionalidad 2 del progenitor 1
+hogar,ESTUDIOSP1,147,2,Mayor nivel de estudios alcanzado por el progenitor 1
+hogar,REPROGEN2,149,1,Relación de parentesco con su progenitor 2
+hogar,HOGP2,150,1,El progenitor 2 reside en la vivienda
+hogar,NPVP2,151,2,Nº de orden del progenitor2 en la lista de personas del hogar
+hogar,VIVOPROGEN2,153,1,El progenitor 2 sigue vivo
+hogar,RESIDP2,154,1,Lugar de residencia del progenitor 2
+hogar,PROVRP2,155,2,Provincia española de residencia del progenitor 2
+hogar,MUNIRP2,157,5,Municipio español de residencia del progenitor 2
+hogar,PRESIDP2,162,3,País de residencia del progenitor 2
+hogar,NACIMP2,165,1,Lugar de nacimiento del progenitor 2
+hogar,PROVNP2,166,2,Provincia española de nacimiento del progenitor 2
+hogar,MUNINP2,168,5,Municipio español de nacimiento del progenitor 2
+hogar,PNACIMP2,173,3,País de nacimiento del progenitor 2
+hogar,PNAC1P2,176,3,País de nacionalidad 1 del progenitor 2
+hogar,PNAC2P2,179,3,País de nacionalidad 2 del progenitor 2
+hogar,ESTUDIOSP2,182,2,Mayor nivel de estudios alcanzado por el progenitor 2
+hogar,RESIDVNACI,184,1,Reside en esta vivienda desde el año en que nació
+hogar,ANORESIDVIV,185,4,Año desde el que reside en esta vivienda
+hogar,MOTIVOCAMBIO,189,2,Motivo del último cambio de residencia
+hogar,RESIDMUNNACI,191,1,Reside en este municipio desde el año en que nació
+hogar,ANORESIDMUN,192,4,Año desde el que reside en este municipio
+hogar,RESIDCANACI,196,1,Reside en esta comunidad autónoma desde el año en que nació
+hogar,ANORESIDCA,197,4,Año desde el que reside en esta comunidad autónoma
+hogar,RESIDESPNACI,201,1,Reside en España desde el año en que nació
+hogar,ANORESIDESP,202,4,Año desde el que reside en España
+hogar,RESIDANT,206,1,Lugar de residencia anterior
+hogar,PROVRESIDANT,207,2,Provincia de residencia anterior
+hogar,MUNIRESIDANT,209,5,Municipio de residencia anterior
+hogar,PRESIDANT,214,3,País de residencia anterior
+hogar,NOMLENG1,217,100,Nombre de la 1ª lengua o idioma que conoce que será CASTELLANO
+hogar,ENTIENDEL1,317,1,Nivel de conocimiento de la 1ª lengua: Entiende
+hogar,LEEL1,318,1,Nivel de conocimiento de la 1ª lengua: Lee
+hogar,HABLAL1,319,1,Nivel de conocimiento de la 1ª lengua: Habla
+hogar,ESCRIBEL1,320,1,Nivel de conocimiento de la 1ª lengua: Escribe
+hogar,LENGFAM1,321,1,Frecuencia con que usa la 1ª lengua en familia
+hogar,LENGAMIG1,322,1,Frecuencia con que usa la 1ª lengua con amigos
+hogar,LENGTRAB1,323,1,Frecuencia con que usa la 1ª lengua en el trabajo o escuela
+hogar,NOMLENG2,324,100,"Nombre de la 2ª lengua o idioma que conoce que será: - GALLEGO, para los entrevistados de Galicia. - EUSKERA, para los entrevistados en el País Vaso o en la Comunidad Foral de Navarra (solo para los m"
+hogar,ENTIENDEL2,424,1,Nivel de conocimiento de la 2ª lengua: Entiende
+hogar,LEEL2,425,1,Nivel de conocimiento de la 2ª lengua: Lee
+hogar,HABLAL2,426,1,Nivel de conocimiento de la 2ª lengua: Habla
+hogar,ESCRIBEL2,427,1,Nivel de conocimiento de la 2ª lengua: Escribe
+hogar,LENGFAM2,428,1,Frecuencia con que usa la 2ª lengua en familia
+hogar,LENGAMIG2,429,1,Frecuencia con que usa la 2ª lengua con amigos
+hogar,LENGTRAB2,430,1,Frecuencia con que usa la 2ª lengua en el trabajo o escuela
+hogar,NOMLENG3,431,100,Nombre de la 3ª lengua o idioma que conoce
+hogar,ENTIENDEL3,531,1,Nivel de conocimiento de la 3ª lengua: Entiende
+hogar,LEEL3,532,1,Nivel de conocimiento de la 3ª lengua: Lee
+hogar,HABLAL3,533,1,Nivel de conocimiento de la 3ª lengua: Habla
+hogar,ESCRIBEL3,534,1,Nivel de conocimiento de la 3ª lengua: Escribe
+hogar,LENGFAM3,535,1,Frecuencia con que usa la 3ª lengua en familia
+hogar,LENGAMIG3,536,1,Frecuencia con que usa la 3ª lengua con amigos
+hogar,LENGTRAB3,537,1,Frecuencia con que usa la 3ª lengua en el trabajo o escuela
+hogar,NOMLENG4,538,100,Nombre de la 4ª lengua o idioma que conoce
+hogar,ENTIENDEL4,638,1,Nivel de conocimiento de la 4ª lengua: Entiende
+hogar,LEEL4,639,1,Nivel de conocimiento de la 4ª lengua: Lee
+hogar,HABLAL4,640,1,Nivel de conocimiento de la 4ª lengua: Habla
+hogar,ESCRIBEL4,641,1,Nivel de conocimiento de la 4ª lengua: Escribe
+hogar,LENGFAM4,642,1,Frecuencia con que usa la 4ª lengua en familia
+hogar,LENGAMIG4,643,1,Frecuencia con que usa la 4ª lengua con amigos
+hogar,LENGTRAB4,644,1,Frecuencia con que usa la 4ª lengua en el trabajo o escuela
+hogar,NOMLENG5,645,100,Nombre de la 5ª lengua o idioma que conoce
+hogar,ENTIENDEL5,745,1,Nivel de conocimiento de la 5ª lengua: Entiende
+hogar,LEEL5,746,1,Nivel de conocimiento de la 5ª lengua: Lee
+hogar,HABLAL5,747,1,Nivel de conocimiento de la 5ª lengua: Habla
+hogar,ESCRIBEL5,748,1,Nivel de conocimiento de la 5ª lengua: Escribe
+hogar,LENGFAM5,749,1,Frecuencia con que usa la 5ª lengua en familia
+hogar,LENGAMIG5,750,1,Frecuencia con que usa la 5ª lengua con amigos
+hogar,LENGTRAB5,751,1,Frecuencia con que usa la 5ª lengua en el trabajo o escuela
+hogar,NOMLENG6,752,100,Nombre de la 6ª lengua o idioma que conoce
+hogar,ENTIENDEL6,852,1,Nivel de conocimiento de la 6ª lengua: Entiende
+hogar,LEEL6,853,1,Nivel de conocimiento de la 6ª lengua: Lee
+hogar,HABLAL6,854,1,Nivel de conocimiento de la 6ª lengua: Habla
+hogar,ESCRIBEL6,855,1,Nivel de conocimiento de la 6ª lengua: Escribe
+hogar,LENGFAM6,856,1,Frecuencia con que usa la 6ª lengua en familia
+hogar,LENGAMIG6,857,1,Frecuencia con que usa la 6ª lengua con amigos
+hogar,LENGTRAB6,858,1,Frecuencia con que usa la 6ª lengua en el trabajo o escuela
+hogar,LENGINICAST,859,1,Lengua inicial: Castellano
+hogar,LENGINIGALL,860,1,Lengua inicial: Gallego
+hogar,LENGINIEUSK,861,1,Lengua inicial: Euskera
+hogar,LENGINICAT,862,1,Lengua inicial: Catalán
+hogar,LENGINIVAL,863,1,Lengua inicial: Valenciano
+hogar,LENGINIING,864,1,Lengua inicial: Inglés
+hogar,LENGINIFRAN,865,1,Lengua inicial: Francés
+hogar,LENGINIITA,866,1,Lengua inicial: Italiano
+hogar,LENGINIALEM,867,1,Lengua inicial: Alemán
+hogar,LENGINIRUM,868,1,Lengua inicial: Rumano
+hogar,LENGINIARAB,869,1,Lengua inicial: Árabe
+hogar,LENGINIOTRA,870,100,Literal de otra lengua inicial que no está en la lista
+hogar,ESCUEINFANT,970,1,"Acude a alguna escuela infantil, guardería o centro escolar de otro tipo"
+hogar,TIPOESCUINFANT,971,1,Tipo de escuela infantil
+hogar,NUCLEO,972,1,Indica a qué orden de núcleo dentro del hogar pertenece cada NPV. Si no pertenece a ningún núcleo queda en blanco.
+hogar,TIPONUCLEO,973,1,Tipo de núcleo familiar
+hogar,SEXO_PAREJA,974,1,Sexo de los miembros de la pareja
+hogar,NACION_PAREJA,975,1,Nacionalidad de los miembros de la pareja
+hogar,UNION_PAREJA,976,1,Tipo de unión de la pareja
+hogar,ESTUDIOS_PAREJA,977,1,Nivel de estudios alcanzado por los miembros de la pareja
+hogar,SITLAB_PAREJA,978,1,Situación laboral de los miembros de la pareja
+hogar,SITUHOGAR,979,1,Situación familiar de la persona en el hogar
+hogar,HIJOS_NUCLEO_MENORES,980,1,Cantidad de hijos menores de 25 años pertenecientes al núcleo familiar
+hogar,HIJOS_NUCLEO,981,1,Cantidad de hijos pertenecientes al núcleo familiar
+hogar,TIPOHOGAR,982,1,Tipo de hogar
+hogar,NACHOGAR,983,1,Nacionalidad de los miembros del hogar
+hogar,NIVEDUCAHOGAR,984,1,Nivel educativo de los miembros del hogar
+hogar,SITLABHOGAR,985,1,Situación laboral de los miembros del hogar
+hogar,TOTAL,,985,nan
+vivienda,IDEN,1,6,"Identificador de Cuestionario (ordenados los cuestionarios por NIDEN se asigna 000001 al primero, 000002 al segundo, y así sucesivamente"
+vivienda,IDQ_PV,7,2,Código de la provincia de residencia
+vivienda,IDQ_MUN,9,5,Código del municipio de más de 50.000 habitantes o capital de provincia de residencia
+vivienda,TAM_MUNI,14,1,Tamaño del municipio según las cifras de Padrón a 1 de enero de 2021
+vivienda,FACTOR,15,17,"Factor de elevación del dato muestral a la población calibrado por edad, sexo, nacionalidad, totales provinciales, totales municipales de más de 50.000 habitantes, hogares y tamaño del hogar"
+vivienda,MESENT,32,2,Mes comienzo de la entrevista
+vivienda,ANOENT,34,4,Año comienzo de la entrevista
+vivienda,YORESI,38,1,Informante reside en la vivienda
+vivienda,OTRORESI,39,1,Otras personas residen en la vivienda
+vivienda,NRESI,40,2,Número de residentes en la vivienda
+vivienda,REGVI,42,1,Régimen de tenencia de la vivienda
+vivienda,PAGOVI,43,2,Cuota mensual que paga de hipoteca o alquiler intervalizada
+vivienda,CALEFAC,45,1,Dispone la vivienda de calefacción
+vivienda,TIPOCOMBCALE,46,1,Tipo de combustible principal que usa su calefacción
+vivienda,TIPOAGUA,47,1,Sistema de suministro de agua en su vivienda
+vivienda,WC,48,1,Dispone la vivienda de cuarto de aseo con inodoro
+vivienda,BODUCHA,49,1,Dispone de bañera o ducha
+vivienda,AIREACOND,50,1,"Dispone de algún sistema de refrigeración (aire acondicionado, aparatos móviles …; NO ventiladores)"
+vivienda,AISLAM,51,1,La vivienda tiene algún problema de aislamiento
+vivienda,ADAPTADA,52,1,La vivienda está adaptada a necesidades propias del envejecimiento de las personas
+vivienda,INTERNET,53,1,Dispone la vivienda de acceso a internet
+vivienda,INTFIJABANCHA,54,1,"Tipo de conexión a internet: Conexión fija de banda ancha (ADSL, cable, fibra, vía satélite…)"
+vivienda,INTMOVBANCHA,55,1,"Tipo de conexión a internet: Conexión móvil de banda ancha (modem USB o tarjetas, o al menos 3G en dispositivos móviles)"
+vivienda,INTBESTRECHA,56,1,"Tipo de conexión a internet: Conexión de banda estrecha (módem, RDSI, GPRS…)"
+vivienda,COCINA,57,1,Dispone la vivienda de cocina independiente (de 4 m2 o más)
+vivienda,LAVADORA,58,1,Dispone la vivienda de lavadora
+vivienda,LAVAVAJILLAS,59,1,Dispone la vivienda de lavavajillas
+vivienda,SECADORA,60,1,Dispone la vivienda de secadora
+vivienda,HORNO,61,1,Dispone la vivienda de horno
+vivienda,MICROONDAS,62,1,Dispone la vivienda de microondas
+vivienda,VITROINDUC,63,1,Dispone la vivienda de vitrocerámica y/o inducción
+vivienda,NASEOS,64,2,Numero de cuartos de baño o aseos de la vivienda
+vivienda,NSALONES,66,2,"Numero de salones, comedores o cuartos de estar de la vivienda"
+vivienda,NDORMITO,68,2,Numero de dormitorios de la vivienda
+vivienda,NSOTOTRAST,70,2,"Numero de buhardillas, sótanos o trasteros de la vivienda"
+vivienda,NOTRASHABIT,72,2,"Numero de otras estancias de la vivienda excluyendo cocinas, garajes, pasillos, vestíbulos, vestidores, despensas, terrazas abiertas y dependencias utilizadas para fines profesionales"
+vivienda,METROSVI,74,2,Metros cuadrados de la vivienda
+vivienda,VEHICULO,76,1,Dispone el hogar de algún vehículo
+vivienda,NVEHICULOS,77,2,Número de vehículos de los que dispone el hogar
+vivienda,VEHIELECTR,79,1,Alguno de los vehículos del hogar es eléctrico
+vivienda,VEHIHIBRI,80,1,Alguno de los vehículos del hogar es híbrido
+vivienda,PAPEL,81,1,En su hogar separan los residuos de papel y cartón
+vivienda,VIDRIO,82,1,En su hogar separan los residuos de vidrio
+vivienda,ENVASES,83,1,En su hogar separan los residuos de envases
+vivienda,ORGANICO,84,1,En su hogar separan los residuos de materia orgánica
+vivienda,HALOGENA,85,1,Dispone su vivienda de bombillas halógenas
+vivienda,BAJOCONSUMO,86,1,Dispone su vivienda de bombillas de bajo consumo
+vivienda,LED,87,1,Dispone su vivienda de bombillas de LED
+vivienda,SERVDOMES,88,1,Dispone el hogar de servicio doméstico remunerado
+vivienda,AYUDAEXT,89,1,Dispone el hogar de ayudas externas para tareas domésticas y cuidado de menores o mayores dependientes
+vivienda,RUIDOS,90,1,La zona en la que está ubicada la vivienda tiene ruidos exteriores
+vivienda,CONTAMIN,91,1,La zona en la que está ubicada la vivienda tiene contaminación o malos olores
+vivienda,SUCIO,92,1,La zona en la que está ubicada la vivienda tiene poca limpieza en las calles
+vivienda,MALCOMUNIC,93,1,La zona en la que está ubicada la vivienda tiene malas comunicaciones
+vivienda,POCOVERDE,94,1,La zona en la que está ubicada la vivienda tiene pocas zonas verdes
+vivienda,DELINCUENCIA,95,1,La zona en la que está ubicada la vivienda tiene delincuencia o vandalizmo
+vivienda,MOLESTURIST,96,1,La zona en la que está ubicada la vivienda tiene molestias relacionadas con actividades turísticas y/o locales de hostelería
+vivienda,COLEGIO,97,1,La zona en la que está ubicada la vivienda tiene colegios
+vivienda,CSALUD,98,1,"La zona en la que está ubicada la vivienda tiene hospitales, centros de salud y/o ambulatorios"
+vivienda,SUPER,99,1,La zona en la que está ubicada la vivienda tiene supermercados
+vivienda,FARMACIA,100,1,La zona en la que está ubicada la vivienda tiene farmacias
+vivienda,BARES,101,1,"La zona en la que está ubicada la vivienda tiene servicios de restauración (bares, restaurantes, …)"
+vivienda,CAMBIORESI,102,1,Cambiará de residencia en los próximos 6 meses por problemas económicos
+vivienda,SEGUNRESI,103,1,Dispone de una segunda residencia en propiedad
+vivienda,LUGSEGUNRESI,104,1,Dónde se encuentra su segunda residencia
+vivienda,OTRACCAA,105,2,Comunidad autónoma en la que se encuentra su segunda residencia
+vivienda,OTROPAIS,107,3,País en el que se encuentra su segunda residencia
+vivienda,DIASUSA,110,1,Número de días al año que usa aproximadamete esa segunda residencia alguna persona del hogar
+vivienda,INGREHOG,111,1,Ingresos mensuales netos del hogar en intervalos
+vivienda,TIPOEDIF,112,1,Tipo de edificio en que se encuentra la vivienda
+vivienda,TIPOEDIFVIV,113,1,Tipo de edificio en función del número de viviendas
+vivienda,NPLANTASSOB,114,2,Número de plantas sobre rasante (sin contar la planta baja)
+vivienda,NPLANTASBAJO,116,2,Número de plantas bajo rasante (sin contar la planta baja)
+vivienda,ANNOEDIFINTERV,118,2,Año de construcción del edificio en intervalos
+vivienda,ESTADOEDIF,120,2,Estado de conservación del edificio (escala de 0 a 10)
+vivienda,ACCESOEDIF,122,1,El edificio es de fácil acceso a cualquier persona.
+vivienda,ASCENSOR,123,1,El edificio tiene ascensor
+vivienda,GARAJE,124,1,El edificio tiene garaje
+vivienda,NPLAZASGAR,125,1,Número de plazas de aparcamiento del garaje
+vivienda,GASTUBERIA,126,1,El edificio tiene gas por tubería
+vivienda,AGUACALCENT,127,1,El edificio tiene agua caliente central
+vivienda,EVACUAGUARES,128,1,El edificio tiene sistema de evacuación de aguas residuales
+vivienda,TIPOEVACUARES,129,1,Tipo de sistema de evacuación de aguas residuales
+vivienda,ENERENOV,130,1,El edificio tiene instalación de dispositivo de energía renovable
+vivienda,ERSOLAR,131,1,Tipo de energía renovable: Energía solar térmica (para agua caliente)
+vivienda,ERFOTOV,132,1,Tipo de energía renovable: Energía solar fotovoltaica (para producir electricidad)
+vivienda,EROTRO,133,1,"Tipo de energía renovable: Otro tipo (eólica, biomasa…)"
+vivienda,NVIVIENDP,134,1,Número de viviendas que hay en la planta en al que reside
+vivienda,TOTAL ,,134,nan

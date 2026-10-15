@@ -37,3 +37,17 @@ Tarea de solo datos: sin estimaciones, sin tocar salidas publicadas ni muestras 
     desarrollos, sentencias) de las normas núcleo. «alcance» es una etiqueta por palabras del título; la fecha de la
     norma modificadora se extrae del texto de la referencia (vacía si no se puede leer; el identificador BOE se
     conserva siempre).
+13. **Censo 2021**: las 37 tablas predefinidas (tpx) de viviendas, hogares y núcleos no cruzan con la nacionalidad.
+    El cruce sale de los microdatos de personas (muestra del 10 % de hogares): recuentos MUESTRALES sin elevar por
+    municipio × nacionalidad de la primera persona del hogar (NORDEN=01, aproximación a la persona de referencia;
+    el censo no la identifica) × tenencia × superficie × tamaño y tipo de hogar × periodo de llegada a España. Los
+    municipios < 10.000 hab. vienen agregados por tamaño en la provincia (PP991/PP992/PP993; no son códigos INE).
+    Sección censal: no hay tablas de tenencia ni de hogares por sección más allá de los indicadores de v3.
+14. **ECV y EPA** (punto 9): auditoría de variables en docs/v11/auditoria_microdatos_ecv_epa.md; no se calcula nada.
+15. **ECEPOV 2021**: microdatos descargados (no versionados) e inventario de variables versionado; el municipio
+    solo se identifica en capitales y municipios > 50.000 hab.
+16. **Catastro INSPIRE**: el código de municipio del Catastro (DGC) NO es el del INE (DGC 46900 = València,
+    INE 46250; DGC 46250 = Turís). Cada edificio se asigna por posición a la sección INE 2025, y la correspondencia
+    DGC → INE se guarda y verifica (cuota de edificios en el municipio INE). Área metropolitana operativa: municipios
+    de la provincia 46 con centroide a ≤ 20 km del centroide INE de València (49 municipios). El centroide de
+    València queda al sur (incluye la Albufera); se acepta y se documenta. Capitales añadidas: Alicante y Castellón.

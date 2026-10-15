@@ -135,3 +135,6 @@ data/raw/v9/eurostat_alquiler/original/
 # V9: render local de Quarto (se regenera con `quarto render paper/manuscrito.qmd`)
 paper/manuscrito.html
 paper/manuscrito_files/
+# V11-DATOS: originales (microdatos, zips) y OD municipales (parquet) se regeneran con `make datos_v11`; sha256 en manifiestos
+data/raw/v11/*/original/
+data/raw/v11/*/od_municipios_*.parquet

@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9
+.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9 datos_v11
 
 all: data clean models report
 
@@ -99,6 +99,10 @@ datos_terceros:
 # V9-DATOS: descarga (con red) o verifica (sin red) todas las fuentes de data/raw/v9 y consolida data/raw/v9/_manifest.csv
 datos_v9:
 	$(PY) src/v9/datos_v9.py
+
+# V11-DATOS: descarga o verificación de data/raw/v11 (sin red solo verifica)
+datos_v11:
+	$(PY) src/v11/datos_v11.py
 
 # V8.1: capa de consulta (consulta/ y llms.txt; nunca a mano; tests en tests/consulta)
 consulta:

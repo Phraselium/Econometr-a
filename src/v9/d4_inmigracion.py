@@ -36,7 +36,8 @@ def fila(tab, hip, resultado, espec, r, akm_rf, akm_iv, ar, conf, n, extra=""):
     tab.append({"diseno": "D4", "hipotesis": hip, "resultado": resultado, "especificacion": espec,
                 "beta": r["beta"], "se": r["se"], "ic95_lo": r["beta"] - 1.96 * r["se"], "ic95_hi": r["beta"] + 1.96 * r["se"],
                 "p": r["p"], "rf": r["rf"], "se_rf": r["se_rf"], "p_rf": r["p_rf"], "se_akm_rf": akm_rf, "se_akm_iv": akm_iv,
-                "primera_etapa": r["pi"], "F_eff": r["F_eff"], "AR_lo": ar[0], "AR_hi": ar[1], "N_unidades": n,
+                "primera_etapa": r["pi"], "F_eff": r["F_eff"], "AR_lo": ar[0], "AR_hi": ar[1],
+                "AR_acotado": bool(ar[2] and REJILLA[0] < ar[0] and ar[1] < REJILLA[-1]), "N_unidades": n,
                 "confirmatoria": conf, "diagnosticos": extra})
 
 

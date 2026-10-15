@@ -1,0 +1,105 @@
+resultado,especificacion,h,beta,se,p,N,paises
+precio,principal,0,-0.01446,0.01336,0.27907,1276,18
+precio,principal,1,-0.04142,0.03236,0.20072,1276,18
+precio,principal,2,-0.03856,0.03427,0.26082,1276,18
+precio,principal,3,-0.05320,0.05275,0.31337,1266,18
+precio,principal,4,-0.05251,0.05296,0.32167,1248,18
+precio,principal,5,-0.05231,0.05652,0.35485,1230,18
+precio,principal,6,-0.04827,0.06379,0.44939,1212,18
+precio,principal,7,-0.04223,0.06284,0.50177,1194,18
+precio,principal,8,-0.04389,0.06708,0.51306,1176,18
+precio,principal,9,-0.03238,0.06719,0.63003,1158,18
+precio,principal,10,-0.03061,0.06415,0.63334,1140,18
+precio,principal,11,-0.03453,0.07281,0.63540,1122,18
+precio,principal,12,-0.01881,0.07362,0.79838,1104,18
+precio,shock CBI (información del banco central),0,0.00999,0.01808,0.58074,1276,18
+precio,shock CBI (información del banco central),1,0.04375,0.02105,0.03788,1276,18
+precio,shock CBI (información del banco central),2,0.04399,0.03239,0.17463,1276,18
+precio,shock CBI (información del banco central),3,0.05665,0.03529,0.10871,1266,18
+precio,shock CBI (información del banco central),4,0.06542,0.05004,0.19129,1248,18
+precio,shock CBI (información del banco central),5,0.07015,0.05586,0.20943,1230,18
+precio,shock CBI (información del banco central),6,0.06905,0.06103,0.25809,1212,18
+precio,shock CBI (información del banco central),7,0.08183,0.06906,0.23633,1194,18
+precio,shock CBI (información del banco central),8,0.07180,0.08067,0.37362,1176,18
+precio,shock CBI (información del banco central),9,0.08421,0.07966,0.29072,1158,18
+precio,shock CBI (información del banco central),10,0.07986,0.08108,0.32488,1140,18
+precio,shock CBI (información del banco central),11,0.10586,0.08705,0.22424,1122,18
+precio,shock CBI (información del banco central),12,0.10247,0.08886,0.24910,1104,18
+precio,muestra 2008-2019,0,-0.01973,0.01669,0.23757,862,18
+precio,muestra 2008-2019,1,-0.05762,0.04049,0.15508,862,18
+precio,muestra 2008-2019,2,-0.04558,0.04301,0.28967,862,18
+precio,muestra 2008-2019,3,-0.07987,0.06349,0.20871,862,18
+precio,muestra 2008-2019,4,-0.08482,0.06209,0.17231,862,18
+precio,muestra 2008-2019,5,-0.08492,0.06564,0.19614,862,18
+precio,muestra 2008-2019,6,-0.07976,0.07654,0.29768,862,18
+precio,muestra 2008-2019,7,-0.07318,0.07766,0.34628,862,18
+precio,muestra 2008-2019,8,-0.07467,0.08504,0.38013,862,18
+precio,muestra 2008-2019,9,-0.06966,0.08204,0.39610,862,18
+precio,muestra 2008-2019,10,-0.07138,0.07824,0.36188,862,18
+precio,muestra 2008-2019,11,-0.08785,0.08550,0.30448,862,18
+precio,muestra 2008-2019,12,-0.08026,0.08404,0.33986,862,18
+precio,sin España,0,-0.01413,0.01468,0.33591,1205,17
+precio,sin España,1,-0.04350,0.03523,0.21722,1205,17
+precio,sin España,2,-0.04152,0.03700,0.26196,1205,17
+precio,sin España,3,-0.05526,0.05668,0.32976,1196,17
+precio,sin España,4,-0.05523,0.05716,0.33409,1179,17
+precio,sin España,5,-0.05542,0.06022,0.35764,1162,17
+precio,sin España,6,-0.05253,0.06887,0.44576,1145,17
+precio,sin España,7,-0.04457,0.06676,0.50454,1128,17
+precio,sin España,8,-0.04765,0.07271,0.51241,1111,17
+precio,sin España,9,-0.03824,0.07138,0.59227,1094,17
+precio,sin España,10,-0.03798,0.06951,0.58489,1077,17
+precio,sin España,11,-0.04237,0.07745,0.58446,1060,17
+precio,sin España,12,-0.03001,0.07677,0.69597,1043,17
+alquiler,principal,0,-0.02191,0.00783,0.00523,1207,17
+alquiler,principal,1,-0.05223,0.01365,0.00014,1207,17
+alquiler,principal,2,-0.07183,0.02349,0.00228,1207,17
+alquiler,principal,3,-0.08949,0.02405,0.00021,1207,17
+alquiler,principal,4,-0.11680,0.02918,0.00007,1204,17
+alquiler,principal,5,-0.10740,0.04202,0.01072,1201,17
+alquiler,principal,6,-0.08320,0.05773,0.14980,1198,17
+alquiler,principal,7,-0.05849,0.07644,0.44434,1196,17
+alquiler,principal,8,-0.06561,0.06761,0.33202,1194,17
+alquiler,principal,9,-0.04643,0.07239,0.52136,1192,17
+alquiler,principal,10,0.02301,0.11932,0.84709,1190,17
+alquiler,principal,11,0.03638,0.11901,0.75988,1189,17
+alquiler,principal,12,0.06964,0.14566,0.63270,1188,17
+alquiler,shock CBI (información del banco central),0,0.00675,0.01210,0.57739,1207,17
+alquiler,shock CBI (información del banco central),1,0.02466,0.02639,0.35014,1207,17
+alquiler,shock CBI (información del banco central),2,0.03716,0.03330,0.26476,1207,17
+alquiler,shock CBI (información del banco central),3,0.04119,0.04121,0.31782,1207,17
+alquiler,shock CBI (información del banco central),4,0.04456,0.05361,0.40604,1204,17
+alquiler,shock CBI (información del banco central),5,0.08736,0.07278,0.23030,1201,17
+alquiler,shock CBI (información del banco central),6,0.06570,0.06984,0.34701,1198,17
+alquiler,shock CBI (información del banco central),7,0.04167,0.07581,0.58262,1196,17
+alquiler,shock CBI (información del banco central),8,0.04394,0.08007,0.58328,1194,17
+alquiler,shock CBI (información del banco central),9,0.02154,0.08100,0.79034,1192,17
+alquiler,shock CBI (información del banco central),10,-0.00903,0.08251,0.91285,1190,17
+alquiler,shock CBI (información del banco central),11,-0.03240,0.08476,0.70233,1189,17
+alquiler,shock CBI (información del banco central),12,-0.11965,0.12016,0.31958,1188,17
+alquiler,muestra 2008-2019,0,-0.02503,0.00926,0.00705,816,17
+alquiler,muestra 2008-2019,1,-0.04524,0.01883,0.01652,816,17
+alquiler,muestra 2008-2019,2,-0.07394,0.03318,0.02617,816,17
+alquiler,muestra 2008-2019,3,-0.10040,0.03127,0.00138,816,17
+alquiler,muestra 2008-2019,4,-0.13959,0.03763,0.00022,816,17
+alquiler,muestra 2008-2019,5,-0.14960,0.04711,0.00156,816,17
+alquiler,muestra 2008-2019,6,-0.15754,0.05039,0.00184,816,17
+alquiler,muestra 2008-2019,7,-0.15928,0.04769,0.00088,816,17
+alquiler,muestra 2008-2019,8,-0.15388,0.04890,0.00171,816,17
+alquiler,muestra 2008-2019,9,-0.14237,0.05038,0.00484,816,17
+alquiler,muestra 2008-2019,10,-0.13539,0.04483,0.00262,816,17
+alquiler,muestra 2008-2019,11,-0.11050,0.04819,0.02212,816,17
+alquiler,muestra 2008-2019,12,-0.10156,0.05080,0.04596,816,17
+alquiler,sin España,0,-0.02280,0.00843,0.00697,1136,16
+alquiler,sin España,1,-0.05604,0.01499,0.00019,1136,16
+alquiler,sin España,2,-0.07768,0.02579,0.00265,1136,16
+alquiler,sin España,3,-0.09531,0.02675,0.00038,1136,16
+alquiler,sin España,4,-0.12549,0.03288,0.00014,1133,16
+alquiler,sin España,5,-0.11533,0.04724,0.01479,1130,16
+alquiler,sin España,6,-0.08845,0.06399,0.16719,1127,16
+alquiler,sin España,7,-0.06264,0.08528,0.46279,1125,16
+alquiler,sin España,8,-0.06848,0.07575,0.36619,1123,16
+alquiler,sin España,9,-0.04798,0.08177,0.55747,1121,16
+alquiler,sin España,10,0.02907,0.13378,0.82801,1119,16
+alquiler,sin España,11,0.04300,0.13410,0.74853,1118,16
+alquiler,sin España,12,0.08229,0.16338,0.61459,1117,16

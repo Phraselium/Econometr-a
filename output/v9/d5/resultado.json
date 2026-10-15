@@ -1,0 +1,74 @@
+{
+ "rama": "v9/d5",
+ "pregunta": "¿Es mayor la variación de precios y alquileres asociada a los shocks del BCE en países con más hipotecas a tipo variable?",
+ "capa": "C4 (exploratorio; sin potencia)",
+ "datos": "BIS RPP, Eurostat IPCA alquiler, BCE RAI, shocks JK",
+ "N": 18,
+ "metodo": "Proyecciones locales en panel con efectos fijos de país y trimestre; Driscoll-Kraay",
+ "estimacion": [
+  {
+   "resultado": "Δ log precio (h = 4)",
+   "beta": -0.05250942759192469
+  },
+  {
+   "resultado": "Δ log precio (h = 8)",
+   "beta": -0.04389145810504898
+  },
+  {
+   "resultado": "Δ log alquiler (h = 4)",
+   "beta": -0.11680435433135407
+  },
+  {
+   "resultado": "Δ log alquiler (h = 8)",
+   "beta": -0.06560942815030268
+  }
+ ],
+ "ic95": [
+  [
+   -0.15631524636674676,
+   0.051296391182897375
+  ],
+  [
+   -0.1753716111778369,
+   0.08758869496773895
+  ],
+  [
+   -0.17399110884744998,
+   -0.05961759981525817
+  ],
+  [
+   -0.19811550862765234,
+   0.06689665232704697
+  ]
+ ],
+ "p_ajustado": "BH exploratorio en output/v9/f3/tabla_capas.csv",
+ "nivel_evidencia": "EXPLORATORIO",
+ "diagnosticos": {
+  "exposicion_2003_2007": {
+   "AT": 54.75,
+   "BE": 26.47,
+   "DE": 16.23,
+   "EE": 98.88,
+   "ES": 88.84,
+   "FI": 95.2,
+   "FR": 25.22,
+   "GR": 66.81,
+   "IE": 82.19,
+   "IT": 74.06,
+   "LT": 87.69,
+   "LU": 84.5,
+   "LV": 81.23,
+   "MT": 82.26,
+   "NL": 27.11,
+   "PT": 98.26,
+   "SI": 88.74,
+   "SK": 44.61
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Shocks JK no redistribuibles (make datos_terceros); solo se publican coeficientes."
+}

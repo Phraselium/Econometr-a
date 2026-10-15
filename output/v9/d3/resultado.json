@@ -1,0 +1,58 @@
+{
+ "rama": "v9/d3",
+ "pregunta": "¿Se asocia la caída del registro VUT por CP con la variación de fianzas (cuota y media)?",
+ "capa": "C4 (descriptivo; sin potencia)",
+ "datos": "GVA fianzas por CP 2021-2025, registro VUT GVA, INE VUT por sección, censo 2021, ADRH 2022",
+ "N": 192,
+ "metodo": "MCO en diferencias largas con controles; errores de Conley",
+ "estimacion": [
+  {
+   "resultado": "d_cuota",
+   "beta": 0.0020478005032819983
+  },
+  {
+   "resultado": "d_lmedia",
+   "beta": -0.0019481374361487202
+  }
+ ],
+ "ic95": [
+  [
+   -0.0021582418707601003,
+   0.006253842877324097
+  ],
+  [
+   -0.004132020233273275,
+   0.00023574536097583482
+  ]
+ ],
+ "p_ajustado": "BH exploratorio en output/v9/f3/tabla_capas.csv",
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": [
+  {
+   "resultado": "d_cuota",
+   "beta": 0.013820895985382047,
+   "p": 0.6947291200179961
+  },
+  {
+   "resultado": "d_cuota",
+   "beta": 0.013820895985382047,
+   "p": 0.6925471210407029
+  },
+  {
+   "resultado": "d_lmedia",
+   "beta": -0.026721949066905767,
+   "p": 0.04868146186589919
+  },
+  {
+   "resultado": "d_lmedia",
+   "beta": -0.026721949066905767,
+   "p": 0.037780338048084484
+  }
+ ],
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Exposición medida con un corte posterior al 2026-07-01 (excepción declarada en el addendum A1.4)."
+}

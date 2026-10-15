@@ -1,0 +1,17 @@
+diseno,hipotesis,resultado,especificacion,beta,se,ic95_lo,ic95_hi,p,N_unidades,N_obs,confirmatoria
+D5,exploratoria,Δ log precio (h = 4),principal,-0.05251,0.05296,-0.15632,0.05130,0.32167,18,1248,False
+D5,exploratoria,Δ log precio (h = 8),principal,-0.04389,0.06708,-0.17537,0.08759,0.51306,18,1176,False
+D5,exploratoria,Δ log precio (h = 4),shock CBI (información del banco central),0.06542,0.05004,-0.03265,0.16350,0.19129,18,1248,False
+D5,exploratoria,Δ log precio (h = 8),shock CBI (información del banco central),0.07180,0.08067,-0.08630,0.22990,0.37362,18,1176,False
+D5,exploratoria,Δ log precio (h = 4),muestra 2008-2019,-0.08482,0.06209,-0.20652,0.03688,0.17231,18,862,False
+D5,exploratoria,Δ log precio (h = 8),muestra 2008-2019,-0.07467,0.08504,-0.24135,0.09200,0.38013,18,862,False
+D5,exploratoria,Δ log precio (h = 4),sin España,-0.05523,0.05716,-0.16726,0.05679,0.33409,17,1179,False
+D5,exploratoria,Δ log precio (h = 8),sin España,-0.04765,0.07271,-0.19015,0.09486,0.51241,17,1111,False
+D5,exploratoria,Δ log alquiler (h = 4),principal,-0.11680,0.02918,-0.17399,-0.05962,0.00007,17,1204,False
+D5,exploratoria,Δ log alquiler (h = 8),principal,-0.06561,0.06761,-0.19812,0.06690,0.33202,17,1194,False
+D5,exploratoria,Δ log alquiler (h = 4),shock CBI (información del banco central),0.04456,0.05361,-0.06051,0.14963,0.40604,17,1204,False
+D5,exploratoria,Δ log alquiler (h = 8),shock CBI (información del banco central),0.04394,0.08007,-0.11300,0.20088,0.58328,17,1194,False
+D5,exploratoria,Δ log alquiler (h = 4),muestra 2008-2019,-0.13959,0.03763,-0.21333,-0.06584,0.00022,17,816,False
+D5,exploratoria,Δ log alquiler (h = 8),muestra 2008-2019,-0.15388,0.04890,-0.24972,-0.05805,0.00171,17,816,False
+D5,exploratoria,Δ log alquiler (h = 4),sin España,-0.12549,0.03288,-0.18993,-0.06104,0.00014,16,1133,False
+D5,exploratoria,Δ log alquiler (h = 8),sin España,-0.06848,0.07575,-0.21695,0.07999,0.36619,16,1123,False

@@ -1,0 +1,29 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v9-D2,H2-renta-covid (exploratoria)|principal,renta_media~dosis×covid+leads+FE,2014,2025,428,,,,,0.0021900719872493955,0.6166166166166166,principal
+v9-D2,H2-renta-reapertura (exploratoria)|principal,renta_media~dosis×reapertura+leads+FE,2014,2025,428,,,,,0.010463563659888282,0.006006006006006006,principal
+v9-D2,H2-renta-covid (exploratoria)|sin municipios de la Ley 11/2020,renta_media~dosis×covid+leads+FE,2014,2025,367,,,,,0.0019349001273006108,0.6796796796796797,sin municipios de la Ley 11/2020
+v9-D2,H2-renta-reapertura (exploratoria)|sin municipios de la Ley 11/2020,renta_media~dosis×reapertura+leads+FE,2014,2025,367,,,,,0.009726624837646363,0.015015015015015015,sin municipios de la Ley 11/2020
+v9-D2,H2-renta-covid (exploratoria)|sin Barcelona,renta_media~dosis×covid+leads+FE,2014,2025,427,,,,,0.0021651825250624825,0.5725725725725725,sin Barcelona
+v9-D2,H2-renta-reapertura (exploratoria)|sin Barcelona,renta_media~dosis×reapertura+leads+FE,2014,2025,427,,,,,0.010454216692906162,0.006006006006006006,sin Barcelona
+v9-D2,H2-renta-covid (exploratoria)|dosis: HUT por 100 viviendas (censo 2021),renta_media~dosis×covid+leads+FE,2014,2025,428,,,,,0.0008360375764358506,0.8158158158158159,dosis: HUT por 100 viviendas (censo 2021)
+v9-D2,H2-renta-reapertura (exploratoria)|dosis: HUT por 100 viviendas (censo 2021),renta_media~dosis×reapertura+leads+FE,2014,2025,428,,,,,0.008335614814116257,0.013013013013013013,dosis: HUT por 100 viviendas (censo 2021)
+v9-D2,H2-renta-covid (exploratoria)|sin controles de política,renta_media~dosis×covid+leads+FE,2014,2025,428,,,,,0.002502382141807927,0.5565565565565566,sin controles de política
+v9-D2,H2-renta-reapertura (exploratoria)|sin controles de política,renta_media~dosis×reapertura+leads+FE,2014,2025,428,,,,,0.010078086516814905,0.013013013013013013,sin controles de política
+v9-D2,H2-renta-covid (exploratoria)|con tendencia lineal por dosis (sensibilidad A1.3),renta_media~dosis×covid+leads+FE,2014,2025,428,,,,,0.004151997678844172,0.6326326326326326,con tendencia lineal por dosis (sensibilidad A1.3)
+v9-D2,H2-renta-reapertura (exploratoria)|con tendencia lineal por dosis (sensibilidad A1.3),renta_media~dosis×reapertura+leads+FE,2014,2025,428,,,,,0.016349568948449418,0.2982982982982983,con tendencia lineal por dosis (sensibilidad A1.3)
+v9-D2,H2-renta-covid|trimestral,renta_media,2019T1,2023T4,232,,,,,0.0003528712932293872,0.8988988988988988,robustez trimestral
+v9-D2,H2-renta-reapertura|trimestral,renta_media,2019T1,2023T4,232,,,,,0.009532308019600122,0.04004004004004004,robustez trimestral
+v9-D2,H2-contratos-covid (exploratoria)|principal,contratos~dosis×covid+leads+FE,2014,2025,644,,,,,0.010081953173056121,0.5365365365365365,principal
+v9-D2,H2-contratos-reapertura (exploratoria)|principal,contratos~dosis×reapertura+leads+FE,2014,2025,644,,,,,0.01262868136605693,0.6416416416416416,principal
+v9-D2,H2-contratos-covid (exploratoria)|sin municipios de la Ley 11/2020,contratos~dosis×covid+leads+FE,2014,2025,583,,,,,0.009173397053914612,0.6146146146146146,sin municipios de la Ley 11/2020
+v9-D2,H2-contratos-reapertura (exploratoria)|sin municipios de la Ley 11/2020,contratos~dosis×reapertura+leads+FE,2014,2025,583,,,,,0.011891417073723926,0.6636636636636637,sin municipios de la Ley 11/2020
+v9-D2,H2-contratos-covid (exploratoria)|sin Barcelona,contratos~dosis×covid+leads+FE,2014,2025,643,,,,,0.01006864415604473,0.5385385385385385,sin Barcelona
+v9-D2,H2-contratos-reapertura (exploratoria)|sin Barcelona,contratos~dosis×reapertura+leads+FE,2014,2025,643,,,,,0.012585006020498491,0.6176176176176176,sin Barcelona
+v9-D2,H2-contratos-covid (exploratoria)|dosis: HUT por 100 viviendas (censo 2021),contratos~dosis×covid+leads+FE,2014,2025,644,,,,,0.01347504193806482,0.3303303303303303,dosis: HUT por 100 viviendas (censo 2021)
+v9-D2,H2-contratos-reapertura (exploratoria)|dosis: HUT por 100 viviendas (censo 2021),contratos~dosis×reapertura+leads+FE,2014,2025,644,,,,,0.016650612031493536,0.36936936936936937,dosis: HUT por 100 viviendas (censo 2021)
+v9-D2,H2-contratos-covid (exploratoria)|sin controles de política,contratos~dosis×covid+leads+FE,2014,2025,644,,,,,0.010141886979190516,0.5325325325325325,sin controles de política
+v9-D2,H2-contratos-reapertura (exploratoria)|sin controles de política,contratos~dosis×reapertura+leads+FE,2014,2025,644,,,,,0.010848042704813864,0.7057057057057057,sin controles de política
+v9-D2,H2-contratos-covid (exploratoria)|con tendencia lineal por dosis (sensibilidad A1.3),contratos~dosis×covid+leads+FE,2014,2025,644,,,,,0.0007698256623918454,0.953953953953954,con tendencia lineal por dosis (sensibilidad A1.3)
+v9-D2,H2-contratos-reapertura (exploratoria)|con tendencia lineal por dosis (sensibilidad A1.3),contratos~dosis×reapertura+leads+FE,2014,2025,644,,,,,-0.01531613312744108,0.6016016016016016,con tendencia lineal por dosis (sensibilidad A1.3)
+v9-D2,H2-contratos-covid|trimestral,contratos,2019T1,2023T4,399,,,,,-0.012004021198759205,0.2752752752752753,robustez trimestral
+v9-D2,H2-contratos-reapertura|trimestral,contratos,2019T1,2023T4,399,,,,,-0.013609344418253452,0.037037037037037035,robustez trimestral

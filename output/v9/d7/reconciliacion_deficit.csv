@@ -1,0 +1,6 @@
+fuente,id,valor,rango,periodo,hogares,bajas,capa,estado_referencia
+Proyecto (V5/V6.2): déficit 2021-2025 sin bajas,L3-DEF-2125,705778,523606-887950,2021-2025,EPA y ECP,no,C4,cifra publicada del proyecto
+Proyecto (V5.1): déficit contable con bajas estimadas,T1-H10,735254,700934-770380,2021-2025,ECP,sí (estimadas),C4,cifra publicada del proyecto
+"Banco de España, Informe Anual 2025 (LA18)",LA18,750000,≈,2021-2025,no detallado,no detallado,C4,VERIFICADA (informe institucional; cuartil no aplica)
+"OCDE, Economic Survey of Spain 2025 (LA21)",LA21,600000,≈,2022-2025,no detallado,no detallado,C4,NO VERIFICADA (capítulo no leído en el original)
+V9 D7: ΔH ECP 2022T1→2026T1 (contexto; no es déficit),V9-D7-dH,939956,—,1-1-2022 a 1-1-2026,ECP,—,C4,cálculo propio

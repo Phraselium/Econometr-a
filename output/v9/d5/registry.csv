@@ -1,0 +1,105 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v9-D5,precio|principal|h0,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1276,,,,,-0.014464411388381816,0.2790707225411002,exploratorio
+v9-D5,precio|principal|h1,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1276,,,,,-0.041423751621223005,0.20071798396000573,exploratorio
+v9-D5,precio|principal|h2,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1276,,,,,-0.0385565511575302,0.2608169129547979,exploratorio
+v9-D5,precio|principal|h3,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1266,,,,,-0.05320326019777535,0.3133690476593829,exploratorio
+v9-D5,precio|principal|h4,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1248,,,,,-0.05250942759192469,0.3216724355598144,exploratorio
+v9-D5,precio|principal|h5,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1230,,,,,-0.052312476358281894,0.354850251335622,exploratorio
+v9-D5,precio|principal|h6,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1212,,,,,-0.04827111142269571,0.44939488988371945,exploratorio
+v9-D5,precio|principal|h7,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1194,,,,,-0.042226863577456177,0.5017669414387049,exploratorio
+v9-D5,precio|principal|h8,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1176,,,,,-0.04389145810504898,0.5130578345225956,exploratorio
+v9-D5,precio|principal|h9,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1158,,,,,-0.03237619727468508,0.6300253868439238,exploratorio
+v9-D5,precio|principal|h10,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1140,,,,,-0.030612403357828832,0.6333353458670588,exploratorio
+v9-D5,precio|principal|h11,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1122,,,,,-0.034531463921070635,0.6353997864936303,exploratorio
+v9-D5,precio|principal|h12,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1104,,,,,-0.018811331072812614,0.7983822417655808,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h0,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1276,,,,,0.009991001457736974,0.5807426586457916,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h1,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1276,,,,,0.04374680876871338,0.037881009903286245,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h2,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1276,,,,,0.04398997270738135,0.1746290064125411,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h3,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1266,,,,,0.05664919913348827,0.10870587197177461,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h4,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1248,,,,,0.06542459779173165,0.19129309642744619,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h5,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1230,,,,,0.07015162103923196,0.20942822292644436,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h6,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1212,,,,,0.06905407268487745,0.258087325189138,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h7,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1194,,,,,0.08182845757815993,0.23632607224273672,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h8,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1176,,,,,0.0717990816598033,0.3736161785512844,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h9,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1158,,,,,0.0842051566642257,0.290721382784457,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h10,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1140,,,,,0.07986020388598353,0.32488292340925495,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h11,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1122,,,,,0.10586007544543033,0.2242405471997504,exploratorio
+v9-D5,precio|shock CBI (información del banco central)|h12,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1104,,,,,0.10247044062304292,0.24910331241331107,exploratorio
+v9-D5,precio|muestra 2008-2019|h0,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.019731841035562494,0.23757381842388559,exploratorio
+v9-D5,precio|muestra 2008-2019|h1,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.057624157327342704,0.15507965240878563,exploratorio
+v9-D5,precio|muestra 2008-2019|h2,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.04557654236767775,0.28967233943501247,exploratorio
+v9-D5,precio|muestra 2008-2019|h3,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.07987415318681454,0.20871019452704842,exploratorio
+v9-D5,precio|muestra 2008-2019|h4,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.08481907018621032,0.17231329547764096,exploratorio
+v9-D5,precio|muestra 2008-2019|h5,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.08492432674643126,0.19613502698927698,exploratorio
+v9-D5,precio|muestra 2008-2019|h6,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.07975773243515076,0.29768201694162744,exploratorio
+v9-D5,precio|muestra 2008-2019|h7,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.07318245873870563,0.34628374056805544,exploratorio
+v9-D5,precio|muestra 2008-2019|h8,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.07467491639876586,0.3801289076362353,exploratorio
+v9-D5,precio|muestra 2008-2019|h9,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.06965647089842661,0.3961029145795334,exploratorio
+v9-D5,precio|muestra 2008-2019|h10,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.07138027580124194,0.36188459633616277,exploratorio
+v9-D5,precio|muestra 2008-2019|h11,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.08785240976671407,0.3044804638818803,exploratorio
+v9-D5,precio|muestra 2008-2019|h12,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,862,,,,,-0.08026162267860293,0.3398626075126905,exploratorio
+v9-D5,precio|sin España|h0,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1205,,,,,-0.014132863634490534,0.3359120543589027,exploratorio
+v9-D5,precio|sin España|h1,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1205,,,,,-0.043500543756604,0.21721892967576628,exploratorio
+v9-D5,precio|sin España|h2,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1205,,,,,-0.04152217906448681,0.26196418036483826,exploratorio
+v9-D5,precio|sin España|h3,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1196,,,,,-0.055260712194373146,0.3297612799333127,exploratorio
+v9-D5,precio|sin España|h4,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1179,,,,,-0.05523220461844601,0.33409110425475097,exploratorio
+v9-D5,precio|sin España|h5,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1162,,,,,-0.055415771120288566,0.3576353913806236,exploratorio
+v9-D5,precio|sin España|h6,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1145,,,,,-0.05253259158589655,0.4457622640021486,exploratorio
+v9-D5,precio|sin España|h7,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1128,,,,,-0.04456923847191501,0.5045414909380188,exploratorio
+v9-D5,precio|sin España|h8,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1111,,,,,-0.04764529769716204,0.512412024326887,exploratorio
+v9-D5,precio|sin España|h9,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1094,,,,,-0.03824150577884914,0.5922679375967803,exploratorio
+v9-D5,precio|sin España|h10,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1077,,,,,-0.037981831178278226,0.5848883494679589,exploratorio
+v9-D5,precio|sin España|h11,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1060,,,,,-0.042370886774209617,0.5844560697574992,exploratorio
+v9-D5,precio|sin España|h12,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1043,,,,,-0.030009082388572444,0.6959668221634672,exploratorio
+v9-D5,alquiler|principal|h0,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1207,,,,,-0.021911603188678477,0.005233766083614144,exploratorio
+v9-D5,alquiler|principal|h1,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1207,,,,,-0.05223184658482773,0.00013744212296429303,exploratorio
+v9-D5,alquiler|principal|h2,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1207,,,,,-0.07183008428764985,0.0022780213612316746,exploratorio
+v9-D5,alquiler|principal|h3,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1207,,,,,-0.08948885458596076,0.00020844541129139138,exploratorio
+v9-D5,alquiler|principal|h4,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1204,,,,,-0.11680435433135407,6.660301786776124e-05,exploratorio
+v9-D5,alquiler|principal|h5,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1201,,,,,-0.10740179582190441,0.010721634811699854,exploratorio
+v9-D5,alquiler|principal|h6,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1198,,,,,-0.08319855569903514,0.14980460212623692,exploratorio
+v9-D5,alquiler|principal|h7,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1196,,,,,-0.05848748440492376,0.4443375181777438,exploratorio
+v9-D5,alquiler|principal|h8,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1194,,,,,-0.06560942815030268,0.33202032433649475,exploratorio
+v9-D5,alquiler|principal|h9,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1192,,,,,-0.046434071307763045,0.521356001843204,exploratorio
+v9-D5,alquiler|principal|h10,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1190,,,,,0.02301424732068733,0.8470878181914552,exploratorio
+v9-D5,alquiler|principal|h11,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1189,,,,,0.03638367287890699,0.759875538455892,exploratorio
+v9-D5,alquiler|principal|h12,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1188,,,,,0.0696359672709415,0.6327025029057112,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h0,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1207,,,,,0.006745781738880577,0.5773924725353297,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h1,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1207,,,,,0.02466340563035026,0.35013914736774066,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h2,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1207,,,,,0.03715543020730656,0.26476318508824104,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h3,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1207,,,,,0.041187094688617344,0.3178231204818578,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h4,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1204,,,,,0.04455870755057222,0.4060413331809849,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h5,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1201,,,,,0.08735960232059618,0.23029746007093066,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h6,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1198,,,,,0.0657036850222601,0.34701437547339853,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h7,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1196,,,,,0.041673943669377454,0.5826200764055094,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h8,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1194,,,,,0.04394085666035809,0.5832770053002971,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h9,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1192,,,,,0.02154110996632818,0.790342415271706,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h10,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1190,,,,,-0.009032506412056315,0.9128524572557368,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h11,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1189,,,,,-0.032400860729685135,0.7023318378055792,exploratorio
+v9-D5,alquiler|shock CBI (información del banco central)|h12,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1188,,,,,-0.11965358315546172,0.31957500054220866,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h0,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.025029583174366307,0.007054873315178067,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h1,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.045238694955058875,0.016524735747925234,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h2,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.0739363510155246,0.0261724750892951,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h3,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.10040160430414637,0.0013784912321896936,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h4,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.13958616084383552,0.00022278641521489284,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h5,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.14960103459887858,0.0015552077685145882,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h6,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.15754105911120322,0.0018376553743282287,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h7,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.15927972830912657,0.0008801502856778942,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h8,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.15388320544960638,0.0017142513566390516,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h9,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.14236615439523798,0.004841481187757513,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h10,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.1353878096625413,0.002615707169060899,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h11,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.11049915325861197,0.02211788913848345,exploratorio
+v9-D5,alquiler|muestra 2008-2019|h12,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2019Q4,816,,,,,-0.10155651796232008,0.04595642660333921,exploratorio
+v9-D5,alquiler|sin España|h0,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1136,,,,,-0.022796246349341513,0.0069664334452514964,exploratorio
+v9-D5,alquiler|sin España|h1,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1136,,,,,-0.056041298639930716,0.00019435941083689734,exploratorio
+v9-D5,alquiler|sin España|h2,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1136,,,,,-0.07767986221357605,0.0026529384253166644,exploratorio
+v9-D5,alquiler|sin España|h3,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1136,,,,,-0.09530644079150784,0.00038372613975212744,exploratorio
+v9-D5,alquiler|sin España|h4,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1133,,,,,-0.1254858784355722,0.00014335715851765407,exploratorio
+v9-D5,alquiler|sin España|h5,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1130,,,,,-0.1153307272811812,0.01479126778031592,exploratorio
+v9-D5,alquiler|sin España|h6,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1127,,,,,-0.08845468450795295,0.1671890078087075,exploratorio
+v9-D5,alquiler|sin España|h7,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1125,,,,,-0.0626437981822901,0.46279056231431603,exploratorio
+v9-D5,alquiler|sin España|h8,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1123,,,,,-0.06848004074301617,0.36619366321602564,exploratorio
+v9-D5,alquiler|sin España|h9,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1121,,,,,-0.04798049360594591,0.557473587629338,exploratorio
+v9-D5,alquiler|sin España|h10,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1119,,,,,0.029071450795361324,0.8280075192704976,exploratorio
+v9-D5,alquiler|sin España|h11,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1118,,,,,0.043000147819966916,0.748529807159757,exploratorio
+v9-D5,alquiler|sin España|h12,LP: Δ_h log y ~ shock×expo + 4 retardos + FE país y trimestre,2008Q1,2025Q3,1117,,,,,0.08229062233517795,0.6145933730080404,exploratorio

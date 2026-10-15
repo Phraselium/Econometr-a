@@ -1,0 +1,29 @@
+diseno,hipotesis,resultado,especificacion,beta,se,ic95_lo,ic95_hi,p,p_normal,N_unidades,periodos,confirmatoria,diagnosticos
+D2,H2-renta-covid (exploratoria),log renta media de contratos nuevos,principal,0.00219,0.00392,-0.00549,0.00987,0.61662,0.57614,428,12,False,
+D2,H2-renta-reapertura (exploratoria),log renta media de contratos nuevos,principal,0.01046,0.00335,0.00390,0.01703,0.00601,0.00178,428,12,False,
+D2,H2-renta-covid (exploratoria),log renta media de contratos nuevos,sin municipios de la Ley 11/2020,0.00193,0.00431,-0.00651,0.01038,0.67968,0.65349,367,12,False,
+D2,H2-renta-reapertura (exploratoria),log renta media de contratos nuevos,sin municipios de la Ley 11/2020,0.00973,0.00376,0.00237,0.01709,0.01502,0.00960,367,12,False,
+D2,H2-renta-covid (exploratoria),log renta media de contratos nuevos,sin Barcelona,0.00217,0.00392,-0.00553,0.00986,0.57257,0.58109,427,12,False,
+D2,H2-renta-reapertura (exploratoria),log renta media de contratos nuevos,sin Barcelona,0.01045,0.00335,0.00388,0.01703,0.00601,0.00183,427,12,False,
+D2,H2-renta-covid (exploratoria),log renta media de contratos nuevos,dosis: HUT por 100 viviendas (censo 2021),0.00084,0.00354,-0.00610,0.00778,0.81582,0.81336,428,12,False,
+D2,H2-renta-reapertura (exploratoria),log renta media de contratos nuevos,dosis: HUT por 100 viviendas (censo 2021),0.00834,0.00330,0.00187,0.01480,0.01301,0.01152,428,12,False,
+D2,H2-renta-covid (exploratoria),log renta media de contratos nuevos,sin controles de política,0.00250,0.00391,-0.00517,0.01017,0.55656,0.52247,428,12,False,
+D2,H2-renta-reapertura (exploratoria),log renta media de contratos nuevos,sin controles de política,0.01008,0.00356,0.00310,0.01706,0.01301,0.00465,428,12,False,
+D2,H2-renta-covid (exploratoria),log renta media de contratos nuevos,con tendencia lineal por dosis (sensibilidad A1.3),0.00415,0.00678,-0.00913,0.01743,0.63263,0.54008,428,12,False,
+D2,H2-renta-reapertura (exploratoria),log renta media de contratos nuevos,con tendencia lineal por dosis (sensibilidad A1.3),0.01635,0.01262,-0.00840,0.04109,0.29830,0.19531,428,12,False,
+D2,H2-renta-covid (exploratoria),log renta media de contratos nuevos,trimestral 2019T1-2023T4 (base 2019),0.00035,0.00290,-0.00534,0.00604,0.89890,0.90322,232,20,False,COVID = 2020T2-2021T4
+D2,H2-renta-reapertura (exploratoria),log renta media de contratos nuevos,trimestral 2019T1-2023T4 (base 2019),0.00953,0.00404,0.00160,0.01746,0.04004,0.01843,232,20,False,COVID = 2020T2-2021T4
+D2,H2-contratos-covid (exploratoria),log contratos nuevos,principal,0.01008,0.01525,-0.01980,0.03997,0.53654,0.50847,644,12,False,
+D2,H2-contratos-reapertura (exploratoria),log contratos nuevos,principal,0.01263,0.02126,-0.02904,0.05430,0.64164,0.55254,644,12,False,
+D2,H2-contratos-covid (exploratoria),log contratos nuevos,sin municipios de la Ley 11/2020,0.00917,0.01616,-0.02250,0.04084,0.61461,0.57023,583,12,False,
+D2,H2-contratos-reapertura (exploratoria),log contratos nuevos,sin municipios de la Ley 11/2020,0.01189,0.02270,-0.03259,0.05638,0.66366,0.60032,583,12,False,
+D2,H2-contratos-covid (exploratoria),log contratos nuevos,sin Barcelona,0.01007,0.01526,-0.01984,0.03998,0.53854,0.50936,643,12,False,
+D2,H2-contratos-reapertura (exploratoria),log contratos nuevos,sin Barcelona,0.01259,0.02128,-0.02912,0.05429,0.61762,0.55421,643,12,False,
+D2,H2-contratos-covid (exploratoria),log contratos nuevos,dosis: HUT por 100 viviendas (censo 2021),0.01348,0.01399,-0.01395,0.04090,0.33033,0.33558,644,12,False,
+D2,H2-contratos-reapertura (exploratoria),log contratos nuevos,dosis: HUT por 100 viviendas (censo 2021),0.01665,0.01786,-0.01835,0.05165,0.36937,0.35107,644,12,False,
+D2,H2-contratos-covid (exploratoria),log contratos nuevos,sin controles de política,0.01014,0.01524,-0.01972,0.04001,0.53253,0.50566,644,12,False,
+D2,H2-contratos-reapertura (exploratoria),log contratos nuevos,sin controles de política,0.01085,0.02145,-0.03119,0.05289,0.70571,0.61305,644,12,False,
+D2,H2-contratos-covid (exploratoria),log contratos nuevos,con tendencia lineal por dosis (sensibilidad A1.3),0.00077,0.01614,-0.03086,0.03240,0.95395,0.96195,644,12,False,
+D2,H2-contratos-reapertura (exploratoria),log contratos nuevos,con tendencia lineal por dosis (sensibilidad A1.3),-0.01532,0.02942,-0.07299,0.04236,0.60160,0.60270,644,12,False,
+D2,H2-contratos-covid (exploratoria),log contratos nuevos,trimestral 2019T1-2023T4 (base 2019),-0.01200,0.00982,-0.03124,0.00724,0.27528,0.22136,399,20,False,COVID = 2020T2-2021T4
+D2,H2-contratos-reapertura (exploratoria),log contratos nuevos,trimestral 2019T1-2023T4 (base 2019),-0.01361,0.00695,-0.02723,0.00001,0.03704,0.05020,399,20,False,COVID = 2020T2-2021T4

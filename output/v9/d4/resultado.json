@@ -1,0 +1,66 @@
+{
+ "rama": "v9/d4",
+ "pregunta": "¿Cuánto suben precios y alquileres provinciales cuando la población crece por inmigración predicha por redes de origen?",
+ "capa": "pendiente (src/v9/f3_capas.py)",
+ "datos": "Padrón por nacionalidad 2003-2022; IPC alquiler; valor tasado; EM",
+ "N": 50,
+ "metodo": "2SLS shift-share (Card, LOO); AKM; AR; F efectiva; Rotemberg",
+ "estimacion": [
+  {
+   "resultado": "Δ log IPC de alquiler",
+   "beta": 0.007229255408663033
+  },
+  {
+   "resultado": "Δ log valor tasado",
+   "beta": -0.0028552731306231978
+  }
+ ],
+ "ic95": [
+  [
+   -0.008146857539716681,
+   0.022605368357042747
+  ],
+  [
+   -0.027158647723980876,
+   0.02144810146273448
+  ]
+ ],
+ "p_ajustado": "ver output/v9/f3/tabla_capas.csv",
+ "nivel_evidencia": "pendiente",
+ "diagnosticos": [
+  {
+   "prueba": "desplazamiento de nativos (forma reducida: saldo interprovincial de españoles 2008-2012, % pob. 2008, sobre Z)",
+   "valor": 0.04812478824285173,
+   "se": 0.05105044293540402,
+   "p": 0.34583902685262957,
+   "N": 50
+  },
+  {
+   "prueba": "primera etapa Δ extranjeros/pob sobre Z",
+   "valor": 0.39877007688470995,
+   "se": 0.1869239498291818,
+   "p": 0.03289783724644484,
+   "N": 50
+  },
+  {
+   "prueba": "primera etapa Δ población total/pob sobre Z",
+   "valor": 0.6518037632468945,
+   "se": 0.45404830821575987,
+   "p": 0.15113374569039398,
+   "N": 50
+  },
+  {
+   "prueba": "BHJ: número efectivo de shocks (1/HHI de pesos de exposición)",
+   "valor": 11.943672290022361,
+   "se": NaN,
+   "p": NaN,
+   "N": 28
+  }
+ ],
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Rotemberg con crecimientos nacionales (aproximación sin leave-one-out)."
+}

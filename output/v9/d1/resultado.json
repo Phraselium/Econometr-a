@@ -1,0 +1,114 @@
+{
+ "rama": "v9/d1",
+ "pregunta": "¿Cambian la renta y los contratos nuevos con la contención de rentas (zonas tensionadas; Ley 11/2020)?",
+ "capa": "pendiente de la clasificación (src/v9/f3_capas.py)",
+ "datos": "Incasòl trimestral 2019T1-2026T1; EMAL 2016T1-2025T4",
+ "N": 1282,
+ "metodo": "Callaway-Sant'Anna; BJS; dCDH; Honest DiD (RR, simplificado); bootstrap salvaje por municipio",
+ "estimacion": [
+  {
+   "diseno": "D1a",
+   "resultado": "log renta media de contratos nuevos",
+   "beta": -0.058460776297537057
+  },
+  {
+   "diseno": "D1a",
+   "resultado": "log contratos nuevos",
+   "beta": -0.06250325724252732
+  },
+  {
+   "diseno": "D1b",
+   "resultado": "log renta media de contratos nuevos",
+   "beta": -0.05851234734671715
+  },
+  {
+   "diseno": "D1b",
+   "resultado": "log contratos nuevos",
+   "beta": -0.013173362920019017
+  }
+ ],
+ "ic95": [
+  [
+   -0.08499430744334738,
+   -0.031927245151726735
+  ],
+  [
+   -0.13206414237059289,
+   0.007057627885538251
+  ],
+  [
+   -0.0734613428782951,
+   -0.043563351815139185
+  ],
+  [
+   -0.07019654138307199,
+   0.043849815543033965
+  ]
+ ],
+ "p_ajustado": "ver output/v9/f3/tabla_capas.csv",
+ "nivel_evidencia": "pendiente",
+ "diagnosticos": [
+  {
+   "prueba_diseno": "D1a log renta media de contratos nuevos",
+   "pretend_wald": 26.58017418297013,
+   "pretend_p": 0.00039651332662128685,
+   "pretend_gl": 7,
+   "honest_M1_lo": -0.27457735030399727,
+   "honest_M1_hi": 0.1532711669435183,
+   "honest_M05_lo": -0.18106781319509022,
+   "honest_M05_hi": 0.059761629834611224,
+   "honest_Mbar_ruptura": 0.2,
+   "placebo_fecha_att": 0.04509104838033844,
+   "placebo_fecha_p": 0.007007007007007007,
+   "permutacion_etiquetas_p": 0.0
+  },
+  {
+   "prueba_diseno": "D1a log contratos nuevos",
+   "pretend_wald": 15.38766731011576,
+   "pretend_p": 0.03133899758079664,
+   "pretend_gl": 7,
+   "honest_M1_lo": -0.3531482507438788,
+   "honest_M1_hi": 0.21833115232022224,
+   "honest_M05_lo": -0.24585530680922627,
+   "honest_M05_hi": 0.11103820838556978,
+   "honest_Mbar_ruptura": 0.0,
+   "placebo_fecha_att": -0.020231131229315864,
+   "placebo_fecha_p": 0.6126126126126126,
+   "permutacion_etiquetas_p": 0.04
+  },
+  {
+   "prueba_diseno": "D1b log renta media de contratos nuevos",
+   "pretend_wald": 7.445829420476364,
+   "pretend_p": 0.2815755901762536,
+   "pretend_gl": 6,
+   "honest_M1_lo": -0.12917827591405426,
+   "honest_M1_hi": 0.012153581220619943,
+   "honest_M05_lo": -0.10131967205052422,
+   "honest_M05_hi": -0.015705022642910085,
+   "honest_Mbar_ruptura": 0.8,
+   "placebo_fecha_att": -0.00637502256042993,
+   "placebo_fecha_p": 0.4084084084084084,
+   "permutacion_etiquetas_p": 0.0
+  },
+  {
+   "prueba_diseno": "D1b log contratos nuevos",
+   "pretend_wald": 7.462925847396568,
+   "pretend_p": 0.2801469899683097,
+   "pretend_gl": 6,
+   "honest_M1_lo": -0.34894321854682564,
+   "honest_M1_hi": 0.3225964927067876,
+   "honest_M05_lo": -0.20956935605780597,
+   "honest_M05_hi": 0.1832226302177679,
+   "honest_Mbar_ruptura": 0.0,
+   "placebo_fecha_att": -0.04709492784158824,
+   "placebo_fecha_p": 0.15615615615615616,
+   "permutacion_etiquetas_p": 0.826
+  }
+ ],
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Incasòl no redistribuible: solo agregados."
+}

@@ -295,6 +295,8 @@ def akm_se(res: dict, shares: np.ndarray, shocks: np.ndarray, W: np.ndarray | No
     shares: n × C (cuotas de exposición), shocks: C. Var = Σ_c g_c² (Σ_i s̃_ic ε̂_i)² / (Σ_i z̃_i x̃_i)²."""
     yt, xt, zt, k = res["_parciales"]
     n = len(yt)
+    if shares.shape[1] < 2:          # con un solo shock el error AKM no está definido
+        return np.nan
     Wm = np.ones((n, 1)) if W is None else np.column_stack([np.ones(n), W])
     st = shares - Wm @ np.linalg.lstsq(Wm, shares, rcond=None)[0]
     if coef == "rf":

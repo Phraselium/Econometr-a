@@ -1,0 +1,17 @@
+resultado,quintil_dosis,periodo,beta,se,dosis_media
+log renta media de contratos nuevos,2,covid,0.00081,0.00867,0.32600
+log renta media de contratos nuevos,2,reapertura,0.00665,0.00964,0.32600
+log renta media de contratos nuevos,3,covid,-0.00043,0.00878,1.01999
+log renta media de contratos nuevos,3,reapertura,0.01790,0.00955,1.01999
+log renta media de contratos nuevos,4,covid,-0.00470,0.00794,3.61753
+log renta media de contratos nuevos,4,reapertura,0.00303,0.00964,3.61753
+log renta media de contratos nuevos,5,covid,-0.00467,0.01030,47.33453
+log renta media de contratos nuevos,5,reapertura,0.00827,0.01101,47.33453
+log contratos nuevos,2,covid,0.00593,0.03893,0.42739
+log contratos nuevos,2,reapertura,0.01173,0.04305,0.42739
+log contratos nuevos,3,covid,0.03751,0.04169,1.55739
+log contratos nuevos,3,reapertura,0.05712,0.04290,1.55739
+log contratos nuevos,4,covid,0.07247,0.04404,5.50534
+log contratos nuevos,4,reapertura,0.04727,0.04476,5.50534
+log contratos nuevos,5,covid,0.07842,0.03860,46.19079
+log contratos nuevos,5,reapertura,0.10248,0.04490,46.19079

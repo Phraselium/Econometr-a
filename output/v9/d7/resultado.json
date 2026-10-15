@@ -1,0 +1,50 @@
+{
+ "rama": "v9/d7",
+ "pregunta": "¿Qué parte del aumento de hogares corresponde a más población y qué parte a más hogares por persona?",
+ "capa": "C4 (contable); C1 solo en el contraste censo-ECP donde coinciden",
+ "datos": "Censos 2011 y 2021, ECP, padrón, censo anual, EM, EMCR",
+ "N": 52,
+ "metodo": "descomposición de cambio (medias del periodo) e identidad de componentes de población",
+ "estimacion": [
+  {
+   "cod_provincia": "ES",
+   "periodo": "2011-2021 (censos)",
+   "dH": 452924.0,
+   "comp_poblacion": 61831.72162586008,
+   "comp_jefatura": 391092.27837414015
+  },
+  {
+   "cod_provincia": "ES",
+   "periodo": "2022-2025 (ECP; población del censo anual 2022 y 2025, desfase de un año marcado)",
+   "dH": 939956.0,
+   "comp_poblacion": 647203.2381060881,
+   "comp_jefatura": 292752.7618939118
+  },
+  {
+   "cod_provincia": "CV",
+   "periodo": "2011-2021 (censos)",
+   "dH": 35605.0,
+   "comp_poblacion": -12097.077532974763,
+   "comp_jefatura": 47702.077532974734
+  },
+  {
+   "cod_provincia": "CV",
+   "periodo": "2022-2025 (ECP; población del censo anual 2022 y 2025, desfase de un año marcado)",
+   "dH": 152576.0,
+   "comp_poblacion": 128824.55555936642,
+   "comp_jefatura": 23751.444440633517
+  }
+ ],
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "contraste_c1_ES_dif_pct": 1.5401246915834
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Regla v5.1: las viviendas liberadas por envejecimiento no se restan de la necesidad."
+}

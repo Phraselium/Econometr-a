@@ -1,0 +1,17 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v9-D3,"d_cuota|dvut|principal 2024→2025, exposición GVA|5km",d_cuota ~ dvut + adrh+lpob+lviv+dist_km+vlc,2024,2025,192,,,,,0.0020478005032819983,0.32020442940577143,descriptivo
+v9-D3,"d_cuota|dvut|principal 2024→2025, exposición GVA|10km",d_cuota ~ dvut + adrh+lpob+lviv+dist_km+vlc,2024,2025,192,,,,,0.0020478005032819983,0.33994832141236875,descriptivo
+v9-D3,d_cuota|dvut_ine|alternativa: exposición INE 2024M11→2025M11|5km,d_cuota ~ dvut_ine + adrh+lpob+lviv+dist_km+vlc,2024,2025,192,,,,,0.006722731893963571,0.9066303352849584,descriptivo
+v9-D3,d_cuota|dvut_ine|alternativa: exposición INE 2024M11→2025M11|10km,d_cuota ~ dvut_ine + adrh+lpob+lviv+dist_km+vlc,2024,2025,192,,,,,0.006722731893963571,0.8991395994151556,descriptivo
+v9-D3,d_cuota|dvut|València ciudad|5km,d_cuota ~ dvut + adrh+lpob+lviv+dist_km,2024,2025,26,,,,,0.02951640441135009,0.7556520463698433,descriptivo
+v9-D3,d_cuota|dvut|València ciudad|10km,d_cuota ~ dvut + adrh+lpob+lviv+dist_km,2024,2025,26,,,,,0.02951640441135009,0.7556520463698433,descriptivo
+v9-D3,"d_lmedia|dvut|principal 2024→2025, exposición GVA|5km",d_lmedia ~ dvut + adrh+lpob+lviv+dist_km+vlc,2024,2025,192,,,,,-0.0019481374361487202,0.08816510340398549,descriptivo
+v9-D3,"d_lmedia|dvut|principal 2024→2025, exposición GVA|10km",d_lmedia ~ dvut + adrh+lpob+lviv+dist_km+vlc,2024,2025,192,,,,,-0.0019481374361487202,0.0803909298874343,descriptivo
+v9-D3,d_lmedia|dvut_ine|alternativa: exposición INE 2024M11→2025M11|5km,d_lmedia ~ dvut_ine + adrh+lpob+lviv+dist_km+vlc,2024,2025,192,,,,,-0.00353226849883846,0.8226162016176034,descriptivo
+v9-D3,d_lmedia|dvut_ine|alternativa: exposición INE 2024M11→2025M11|10km,d_lmedia ~ dvut_ine + adrh+lpob+lviv+dist_km+vlc,2024,2025,192,,,,,-0.00353226849883846,0.8223303601417409,descriptivo
+v9-D3,d_lmedia|dvut|València ciudad|5km,d_lmedia ~ dvut + adrh+lpob+lviv+dist_km,2024,2025,26,,,,,-0.03378080505052454,0.003386230279292549,descriptivo
+v9-D3,d_lmedia|dvut|València ciudad|10km,d_lmedia ~ dvut + adrh+lpob+lviv+dist_km,2024,2025,26,,,,,-0.03378080505052454,0.003386230279292549,descriptivo
+v9-D3,d_cuota|dvut|placebo 2021→2023 (misma exposición)|5km,d_cuota ~ dvut + adrh+lpob+lviv+dist_km+vlc,2021,2023,170,,,,,0.013820895985382047,0.6947291200179961,descriptivo
+v9-D3,d_cuota|dvut|placebo 2021→2023 (misma exposición)|10km,d_cuota ~ dvut + adrh+lpob+lviv+dist_km+vlc,2021,2023,170,,,,,0.013820895985382047,0.6925471210407029,descriptivo
+v9-D3,d_lmedia|dvut|placebo 2021→2023 (misma exposición)|5km,d_lmedia ~ dvut + adrh+lpob+lviv+dist_km+vlc,2021,2023,170,,,,,-0.026721949066905767,0.04868146186589919,descriptivo
+v9-D3,d_lmedia|dvut|placebo 2021→2023 (misma exposición)|10km,d_lmedia ~ dvut + adrh+lpob+lviv+dist_km+vlc,2021,2023,170,,,,,-0.026721949066905767,0.037780338048084484,descriptivo

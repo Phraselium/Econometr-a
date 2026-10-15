@@ -82,11 +82,20 @@ def main() -> int:
         d = muestra[[ycol, xcol, "adrh", "lpob", "lviv", "dist_km", "vlc", "x", "y"]].replace([np.inf, -np.inf], np.nan).dropna()
         ctrls = ["adrh", "lpob", "lviv", "dist_km"] + (["vlc"] if d.vlc.nunique() > 1 else [])
         X = np.column_stack([np.ones(len(d)), d[xcol].values, d[ctrls].values])
+        coords = d[["x", "y"]].values
+        dist = np.sqrt(((coords[:, None, :] - coords[None, :, :]) ** 2).sum(-1)) / 1000
         for km in (5, 10):
-            r = H.conley(d[ycol].values, X, d[["x", "y"]].values, km * 1000.0)
+            r = H.conley(d[ycol].values, X, coords, km * 1000.0)
             b, se = r["beta"][1], r["se"][1]
+            frac = float((dist <= km).mean())
+            if frac > 0.5:      # más de la mitad de los pares dentro del corte: Conley degenera; se usa HC1
+                se = r["se_hc1"][1]
+                r["p"][1] = float(2 * __import__("scipy").stats.norm.sf(abs(b / se)))
+                etiqueta_km = f"HC1 (Conley {km} km degenerado: {frac:.0%} de pares dentro del corte)"
+            else:
+                etiqueta_km = f"Conley {km} km"
             tabla.append({"diseno": "D3", "hipotesis": "descriptiva (C4)", "resultado": ycol, "exposicion": xcol,
-                          "especificacion": f"{etiqueta}; Conley {km} km", "beta": b, "se": se, "ic95_lo": b - 1.96 * se,
+                          "especificacion": f"{etiqueta}; {etiqueta_km}", "beta": b, "se": se, "ic95_lo": b - 1.96 * se,
                           "ic95_hi": b + 1.96 * se, "p": r["p"][1], "se_hc1": r["se_hc1"][1], "N_unidades": len(d),
                           "confirmatoria": False, "media_exposicion": float(d[xcol].mean()), "de_exposicion": float(d[xcol].std())})
             REG.log("v9-D3", f"{ycol}|{xcol}|{etiqueta}|{km}km", f"{ycol} ~ {xcol} + " + "+".join(ctrls), a0, a1, len(d),
@@ -118,7 +127,7 @@ def main() -> int:
     fig.tight_layout()
     fig.savefig(OUT / "fig_d3.png", dpi=130)
     plt.close(fig)
-    pr = T[T.especificacion.str.startswith("principal") & T.especificacion.str.endswith("10 km")]
+    pr = T[T.especificacion.str.startswith("principal") & T.especificacion.str.contains("10 km")]
     res = {"rama": "v9/d3", "pregunta": "¿Se asocia la caída del registro VUT por CP con la variación de fianzas (cuota y media)?",
            "capa": "C4 (descriptivo; sin potencia)", "datos": "GVA fianzas por CP 2021-2025, registro VUT GVA, INE VUT por sección, censo 2021, ADRH 2022",
            "N": int(pr.N_unidades.max()) if len(pr) else 0, "metodo": "MCO en diferencias largas con controles; errores de Conley",

@@ -1,0 +1,37 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v9-D1a,H1a-renta-CS,renta_media~CS(nunca),2022T2,2026T1,231,,,,,-0.058460776297537057,0.0,principal
+v9-D1a,H1a-renta-BJS imputación,renta_media,2022T2,2026T1,231,,,,,-0.06097747571468139,2.288832849061747e-09,alternativa/heterogeneidad
+v9-D1a,H1a-renta-dCDH DID_l (aún no tratados),renta_media,2022T2,2026T1,231,,,,,-0.06587173672904575,3.3148156959096173e-07,alternativa/heterogeneidad
+v9-D1a,H1a-renta-CS ventana hasta 2025T4,renta_media,2022T2,2026T1,231,,,,,-0.053104326133742885,0.0,alternativa/heterogeneidad
+v9-D1a,H1a-renta-CS ponderado por contratos de 2022T2,renta_media,2022T2,2026T1,231,,,,,-0.0755390308792997,0.0,alternativa/heterogeneidad
+v9-D1a,H1a-renta-CS sin Barcelona,renta_media,2022T2,2026T1,230,,,,,-0.05823506143115009,0.0,alternativa/heterogeneidad
+v9-D1a,H1a-renta-heterogeneidad: tamaño > mediana,renta_media,2022T2,2026T1,127,,,,,-0.05818194369878799,0.0,alternativa/heterogeneidad
+v9-D1a,H1a-renta-heterogeneidad: tamaño ≤ mediana,renta_media,2022T2,2026T1,127,,,,,-0.058786882239177496,0.0,alternativa/heterogeneidad
+v9-D1a,H1a-renta-heterogeneidad: cohorte 2024T2,renta_media,2022T2,2026T1,154,,,,,-0.05048561744843835,0.0,alternativa/heterogeneidad
+v9-D1a,H1a-renta-heterogeneidad: cohorte 2024T4,renta_media,2022T2,2026T1,100,,,,,-0.07655161282103369,0.0,alternativa/heterogeneidad
+v9-D1a,H1a-contratos (exploratoria)-CS,contratos~CS(nunca),2022T2,2026T1,394,,,,,-0.06250325724252732,0.07207207207207207,principal
+v9-D1a,H1a-contratos (exploratoria)-BJS imputación,contratos,2022T2,2026T1,394,,,,,-0.13507525329604525,1.4734653238234759e-08,alternativa/heterogeneidad
+v9-D1a,H1a-contratos (exploratoria)-dCDH DID_l (aún no tratados),contratos,2022T2,2026T1,394,,,,,-0.06030728663091123,0.08371462156915599,alternativa/heterogeneidad
+v9-D1a,H1a-contratos (exploratoria)-CS ventana hasta 2025T4,contratos,2022T2,2026T1,394,,,,,-0.07429487836128096,0.03803803803803804,alternativa/heterogeneidad
+v9-D1a,H1a-contratos (exploratoria)-CS ponderado por contratos de 2022T2,contratos,2022T2,2026T1,394,,,,,-0.06262405487728558,0.10710710710710711,alternativa/heterogeneidad
+v9-D1a,H1a-contratos (exploratoria)-CS sin Barcelona,contratos,2022T2,2026T1,393,,,,,-0.06230388415941623,0.07407407407407407,alternativa/heterogeneidad
+v9-D1a,H1a-contratos (exploratoria)-heterogeneidad: tamaño > mediana,contratos,2022T2,2026T1,262,,,,,-0.11022549381622666,0.002002002002002002,alternativa/heterogeneidad
+v9-D1a,H1a-contratos (exploratoria)-heterogeneidad: tamaño ≤ mediana,contratos,2022T2,2026T1,262,,,,,-0.005439167754636839,0.908908908908909,alternativa/heterogeneidad
+v9-D1a,H1a-contratos (exploratoria)-heterogeneidad: cohorte 2024T2,contratos,2022T2,2026T1,269,,,,,-0.12868815732910469,0.003003003003003003,alternativa/heterogeneidad
+v9-D1a,H1a-contratos (exploratoria)-heterogeneidad: cohorte 2024T4,contratos,2022T2,2026T1,255,,,,,0.035626887952504654,0.5545545545545546,alternativa/heterogeneidad
+v9-D1b,H1b-renta-CS,renta_media~CS(nunca),2019T1,2022T1,241,,,,,-0.05851234734671715,0.0,principal
+v9-D1b,H1b-renta-BJS imputación,renta_media,2019T1,2022T1,241,,,,,-0.05179988579610374,2.928383990909085e-26,alternativa
+v9-D1b,H1b-renta-CS fin alternativo 2021T3 (fecha de data/raw/v3),renta_media,2019T1,2022T1,241,,,,,-0.06055987412386203,0.0,alternativa
+v9-D1b,H1b-renta-CS sin 2020T2-2020T3 (confinamiento),renta_media,2019T1,2022T1,241,,,,,-0.05666427920879376,0.0,alternativa
+v9-D1b,H1b-renta-CS ponderado por contratos de 2019T1,renta_media,2019T1,2022T1,241,,,,,-0.051602922420832906,0.0,alternativa
+v9-D1b,H1b-renta-CS sin Barcelona,renta_media,2019T1,2022T1,240,,,,,-0.05861148560056467,0.0,alternativa
+v9-D1b,H1b-renta-CS anual 2014-2021 (sin 2020),renta_media,2019T1,2022T1,442,,,,,-0.06206467993135388,0.0,alternativa
+v9-D1b,H1b-contratos (exploratoria)-CS,contratos~CS(nunca),2019T1,2022T1,416,,,,,-0.013173362920019017,0.6446446446446447,principal
+v9-D1b,H1b-contratos (exploratoria)-BJS imputación,contratos,2019T1,2022T1,416,,,,,0.008968144119448093,0.6039147611289102,alternativa
+v9-D1b,H1b-contratos (exploratoria)-CS fin alternativo 2021T3 (fecha de data/raw/v3),contratos,2019T1,2022T1,416,,,,,0.006894125417808563,0.8238238238238238,alternativa
+v9-D1b,H1b-contratos (exploratoria)-CS sin 2020T2-2020T3 (confinamiento),contratos,2019T1,2022T1,416,,,,,0.04415302310628928,0.12312312312312312,alternativa
+v9-D1b,H1b-contratos (exploratoria)-CS ponderado por contratos de 2019T1,contratos,2019T1,2022T1,416,,,,,0.07381323122229126,0.20520520520520522,alternativa
+v9-D1b,H1b-contratos (exploratoria)-CS sin Barcelona,contratos,2019T1,2022T1,415,,,,,-0.01745644645557896,0.5515515515515516,alternativa
+v9-D1b,H1b-contratos (exploratoria)-CS anual 2014-2021 (sin 2020),contratos,2019T1,2022T1,678,,,,,0.007762251466369299,0.7667667667667668,alternativa
+v9-D1c,D1c-renta_media,renta_media~CS(aun_no),2016T1,2025T4,13,,,,,-0.02483932904940824,0.0,exploratorio
+v9-D1c,D1c-contratos,contratos~CS(aun_no),2016T1,2025T4,20,,,,,-0.06151456056619362,0.03003003003003003,exploratorio

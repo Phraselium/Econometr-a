@@ -1,0 +1,288 @@
+{
+ "rama": "v9/f3",
+ "pregunta": "Capa y p ajustados de los diseños D1-D5",
+ "capa": "por fila",
+ "datos": "output/v9/d1..d5",
+ "N": 22,
+ "metodo": "Holm (confirmatorias) y BH (exploratorias)",
+ "estimacion": [
+  {
+   "diseno": "D1a",
+   "hipotesis": "H1a-renta",
+   "resultado": "log renta media de contratos nuevos",
+   "beta": -0.05846,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D1a",
+   "hipotesis": "H1a-contratos (exploratoria)",
+   "resultado": "log contratos nuevos",
+   "beta": -0.0625,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D1b",
+   "hipotesis": "H1b-renta",
+   "resultado": "log renta media de contratos nuevos",
+   "beta": -0.05851,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D1b",
+   "hipotesis": "H1b-contratos (exploratoria)",
+   "resultado": "log contratos nuevos",
+   "beta": -0.01317,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D1c",
+   "hipotesis": "exploratoria",
+   "resultado": "log renta media de contratos nuevos",
+   "beta": -0.02484,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D1c",
+   "hipotesis": "exploratoria",
+   "resultado": "log contratos nuevos",
+   "beta": -0.06151,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D2",
+   "hipotesis": "H2-renta-covid (exploratoria)",
+   "resultado": "log renta media de contratos nuevos (covid; por 1 DE de dosis)",
+   "beta": 0.00219,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D2",
+   "hipotesis": "H2-renta-reapertura (exploratoria)",
+   "resultado": "log renta media de contratos nuevos (reapertura; por 1 DE de dosis)",
+   "beta": 0.01046,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D2",
+   "hipotesis": "H2-contratos-covid (exploratoria)",
+   "resultado": "log contratos nuevos (covid; por 1 DE de dosis)",
+   "beta": 0.01008,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D2",
+   "hipotesis": "H2-contratos-reapertura (exploratoria)",
+   "resultado": "log contratos nuevos (reapertura; por 1 DE de dosis)",
+   "beta": 0.01263,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D3",
+   "hipotesis": "descriptiva",
+   "resultado": "d_cuota ~ ΔVUT por 100 viviendas",
+   "beta": 0.00205,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D3",
+   "hipotesis": "descriptiva",
+   "resultado": "d_lmedia ~ ΔVUT por 100 viviendas",
+   "beta": -0.00195,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D4",
+   "hipotesis": "H4-réplica-alquiler (exploratoria)",
+   "resultado": "Δ log IPC de alquiler (principal (réplica 2003-2012))",
+   "beta": 0.00723,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D4",
+   "hipotesis": "H4-réplica-alquiler (exploratoria) (efecto total)",
+   "resultado": "Δ log IPC de alquiler (principal (réplica 2003-2012) · endógena = Δ población total)",
+   "beta": 0.00442,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D4",
+   "hipotesis": "exploratoria",
+   "resultado": "Δ log valor tasado (principal (réplica 2003-2012))",
+   "beta": -0.00286,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D4",
+   "hipotesis": "exploratoria (efecto total)",
+   "resultado": "Δ log valor tasado (principal (réplica 2003-2012) · endógena = Δ población total)",
+   "beta": -0.00165,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D4",
+   "hipotesis": "H4-réplica-alquiler (exploratoria)",
+   "resultado": "Δ log IPC de alquiler (ampliación 2015-2022)",
+   "beta": 0.01525,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D4",
+   "hipotesis": "exploratoria",
+   "resultado": "Δ log valor tasado (ampliación 2015-2022)",
+   "beta": 0.12877,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D5",
+   "hipotesis": "exploratoria",
+   "resultado": "Δ log precio (h = 4) por shock × 1 DE de exposición",
+   "beta": -0.05251,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D5",
+   "hipotesis": "exploratoria",
+   "resultado": "Δ log precio (h = 8) por shock × 1 DE de exposición",
+   "beta": -0.04389,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D5",
+   "hipotesis": "exploratoria",
+   "resultado": "Δ log alquiler (h = 4) por shock × 1 DE de exposición",
+   "beta": -0.1168,
+   "capa": "C4"
+  },
+  {
+   "diseno": "D5",
+   "hipotesis": "exploratoria",
+   "resultado": "Δ log alquiler (h = 8) por shock × 1 DE de exposición",
+   "beta": -0.06561,
+   "capa": "C4"
+  }
+ ],
+ "ic95": null,
+ "p_ajustado": [
+  {
+   "hipotesis": "H1a-renta",
+   "p_holm": 0.0,
+   "p_bh": NaN
+  },
+  {
+   "hipotesis": "H1a-contratos (exploratoria)",
+   "p_holm": NaN,
+   "p_bh": 0.23451
+  },
+  {
+   "hipotesis": "H1b-renta",
+   "p_holm": 0.0,
+   "p_bh": NaN
+  },
+  {
+   "hipotesis": "H1b-contratos (exploratoria)",
+   "p_holm": NaN,
+   "p_bh": 0.72522
+  },
+  {
+   "hipotesis": "exploratoria",
+   "p_holm": NaN,
+   "p_bh": 0.0
+  },
+  {
+   "hipotesis": "exploratoria",
+   "p_holm": NaN,
+   "p_bh": 0.135135
+  },
+  {
+   "hipotesis": "H2-renta-covid (exploratoria)",
+   "p_holm": NaN,
+   "p_bh": 0.72522
+  },
+  {
+   "hipotesis": "H2-renta-reapertura (exploratoria)",
+   "p_holm": NaN,
+   "p_bh": 0.03606
+  },
+  {
+   "hipotesis": "H2-contratos-covid (exploratoria)",
+   "p_holm": NaN,
+   "p_bh": 0.72522
+  },
+  {
+   "hipotesis": "H2-contratos-reapertura (exploratoria)",
+   "p_holm": NaN,
+   "p_bh": 0.72522
+  },
+  {
+   "hipotesis": "descriptiva",
+   "p_holm": NaN,
+   "p_bh": NaN
+  },
+  {
+   "hipotesis": "descriptiva",
+   "p_holm": NaN,
+   "p_bh": NaN
+  },
+  {
+   "hipotesis": "H4-réplica-alquiler (exploratoria)",
+   "p_holm": NaN,
+   "p_bh": 0.5838218181818182
+  },
+  {
+   "hipotesis": "H4-réplica-alquiler (exploratoria) (efecto total)",
+   "p_holm": NaN,
+   "p_bh": 0.5838218181818182
+  },
+  {
+   "hipotesis": "exploratoria",
+   "p_holm": NaN,
+   "p_bh": 0.81788
+  },
+  {
+   "hipotesis": "exploratoria (efecto total)",
+   "p_holm": NaN,
+   "p_bh": 0.81788
+  },
+  {
+   "hipotesis": "H4-réplica-alquiler (exploratoria)",
+   "p_holm": NaN,
+   "p_bh": 0.5838218181818182
+  },
+  {
+   "hipotesis": "exploratoria",
+   "p_holm": NaN,
+   "p_bh": 0.23451
+  },
+  {
+   "hipotesis": "exploratoria",
+   "p_holm": NaN,
+   "p_bh": 0.5838218181818182
+  },
+  {
+   "hipotesis": "exploratoria",
+   "p_holm": NaN,
+   "p_bh": 0.72522
+  },
+  {
+   "hipotesis": "exploratoria",
+   "p_holm": NaN,
+   "p_bh": 0.0006299999999999999
+  },
+  {
+   "hipotesis": "exploratoria",
+   "p_holm": NaN,
+   "p_bh": 0.5838218181818182
+  }
+ ],
+ "nivel_evidencia": "ver capa",
+ "diagnosticos": {
+  "n_C3": 0,
+  "n_C4": 22
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Nada sube de capa por robustez."
+}

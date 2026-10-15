@@ -1,0 +1,74 @@
+{
+ "rama": "v9/d2",
+ "pregunta": "¿Se movieron la renta y los contratos nuevos más donde había más HUT en 2019, con el COVID y la reapertura?",
+ "capa": "pendiente (src/v9/f3_capas.py)",
+ "datos": "Incasòl anual 2014-2025; IDESCAT HUT 2019; padrón 2019",
+ "N": 644,
+ "metodo": "TWFE con dosis continua, leads 2014-2018, base 2019; bootstrap salvaje por municipio",
+ "estimacion": [
+  {
+   "hipotesis": "H2-renta-covid (exploratoria)",
+   "beta": 0.0021900719872493955
+  },
+  {
+   "hipotesis": "H2-renta-reapertura (exploratoria)",
+   "beta": 0.010463563659888282
+  },
+  {
+   "hipotesis": "H2-contratos-covid (exploratoria)",
+   "beta": 0.010081953173056121
+  },
+  {
+   "hipotesis": "H2-contratos-reapertura (exploratoria)",
+   "beta": 0.01262868136605693
+  }
+ ],
+ "ic95": [
+  [
+   -0.00548849227322787,
+   0.00986863624772666
+  ],
+  [
+   0.003899722571854217,
+   0.017027404747922345
+  ],
+  [
+   -0.01980295942997682,
+   0.039966865776089065
+  ],
+  [
+   -0.029044453084909307,
+   0.05430181581702317
+  ]
+ ],
+ "p_ajustado": "ver output/v9/f3/tabla_capas.csv",
+ "nivel_evidencia": "pendiente",
+ "diagnosticos": [
+  {
+   "prueba_diseno": "D2 log renta media de contratos nuevos",
+   "pretend_wald": 23.891668483702936,
+   "pretend_p": 0.00022777047969828822,
+   "pretend_gl": 4,
+   "placebo_fecha_beta": -0.00505680237575915,
+   "placebo_fecha_p": 0.47647647647647645,
+   "permutacion_p_covid": 0.636,
+   "permutacion_p_reapertura": 0.044
+  },
+  {
+   "prueba_diseno": "D2 log contratos nuevos",
+   "pretend_wald": 3.4541627396468257,
+   "pretend_p": 0.6303344562978597,
+   "pretend_gl": 4,
+   "placebo_fecha_beta": -0.003400594130763249,
+   "placebo_fecha_p": 0.7887887887887888,
+   "permutacion_p_covid": 0.568,
+   "permutacion_p_reapertura": 0.398
+  }
+ ],
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Incasòl no redistribuible: solo agregados."
+}

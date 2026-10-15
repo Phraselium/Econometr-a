@@ -1,0 +1,17 @@
+diseno,hipotesis,resultado,exposicion,especificacion,beta,se,ic95_lo,ic95_hi,p,se_hc1,N_unidades,confirmatoria,media_exposicion,de_exposicion
+D3,descriptiva (C4),d_cuota,dvut,"principal 2024→2025, exposición GVA; Conley 5 km",0.00205,0.00206,-0.00199,0.00609,0.32020,0.00211,192,False,0.06448,2.86302
+D3,descriptiva (C4),d_cuota,dvut,"principal 2024→2025, exposición GVA; Conley 10 km",0.00205,0.00215,-0.00216,0.00625,0.33995,0.00211,192,False,0.06448,2.86302
+D3,descriptiva (C4),d_cuota,dvut_ine,alternativa: exposición INE 2024M11→2025M11; Conley 5 km,0.00672,0.05732,-0.10562,0.11906,0.90663,0.05537,192,False,-0.34208,0.47810
+D3,descriptiva (C4),d_cuota,dvut_ine,alternativa: exposición INE 2024M11→2025M11; Conley 10 km,0.00672,0.05304,-0.09724,0.11068,0.89914,0.05537,192,False,-0.34208,0.47810
+D3,descriptiva (C4),d_cuota,dvut,València ciudad; HC1 (Conley 5 km degenerado: 81% de pares dentro del corte),0.02952,0.09485,-0.15639,0.21542,0.75565,0.09485,26,False,-0.18315,0.56263
+D3,descriptiva (C4),d_cuota,dvut,València ciudad; HC1 (Conley 10 km degenerado: 93% de pares dentro del corte),0.02952,0.09485,-0.15639,0.21542,0.75565,0.09485,26,False,-0.18315,0.56263
+D3,descriptiva (C4),d_lmedia,dvut,"principal 2024→2025, exposición GVA; Conley 5 km",-0.00195,0.00114,-0.00419,0.00029,0.08817,0.00130,192,False,0.06448,2.86302
+D3,descriptiva (C4),d_lmedia,dvut,"principal 2024→2025, exposición GVA; Conley 10 km",-0.00195,0.00111,-0.00413,0.00024,0.08039,0.00130,192,False,0.06448,2.86302
+D3,descriptiva (C4),d_lmedia,dvut_ine,alternativa: exposición INE 2024M11→2025M11; Conley 5 km,-0.00353,0.01576,-0.03441,0.02735,0.82262,0.01588,192,False,-0.34208,0.47810
+D3,descriptiva (C4),d_lmedia,dvut_ine,alternativa: exposición INE 2024M11→2025M11; Conley 10 km,-0.00353,0.01573,-0.03436,0.02730,0.82233,0.01588,192,False,-0.34208,0.47810
+D3,descriptiva (C4),d_lmedia,dvut,València ciudad; HC1 (Conley 5 km degenerado: 81% de pares dentro del corte),-0.03378,0.01153,-0.05638,-0.01119,0.00339,0.01153,26,False,-0.18315,0.56263
+D3,descriptiva (C4),d_lmedia,dvut,València ciudad; HC1 (Conley 10 km degenerado: 93% de pares dentro del corte),-0.03378,0.01153,-0.05638,-0.01119,0.00339,0.01153,26,False,-0.18315,0.56263
+D3,descriptiva (C4),d_cuota,dvut,placebo 2021→2023 (misma exposición); Conley 5 km,0.01382,0.03522,-0.05521,0.08285,0.69473,0.03502,170,False,-0.15373,0.95270
+D3,descriptiva (C4),d_cuota,dvut,placebo 2021→2023 (misma exposición); Conley 10 km,0.01382,0.03495,-0.05469,0.08233,0.69255,0.03502,170,False,-0.15373,0.95270
+D3,descriptiva (C4),d_lmedia,dvut,placebo 2021→2023 (misma exposición); Conley 5 km,-0.02672,0.01356,-0.05329,-0.00015,0.04868,0.01381,170,False,-0.15373,0.95270
+D3,descriptiva (C4),d_lmedia,dvut,placebo 2021→2023 (misma exposición); Conley 10 km,-0.02672,0.01286,-0.05194,-0.00151,0.03778,0.01381,170,False,-0.15373,0.95270

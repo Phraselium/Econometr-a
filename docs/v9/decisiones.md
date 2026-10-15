@@ -50,3 +50,13 @@ Rama local `r9/main`, subida a la rama remota designada (`claude/housing-price-s
   - A1-b: corregida la frase sobre el factor iid.
   - A1-c: declarado el desfase temporal de D3.
 - **Etiqueta local:** `prereg-v9-a1b`.
+
+## E5 — F3: ejecución de D1-D5 y D7 (2026-10-15)
+- **Ejecución.** Cada diseño tiene su script en src/v9 (d1_zonas, d2_turisticos, d3_valencia, d4_inmigracion, d5_tipos, d7_hogares); src/v9/f3_capas.py consolida y asigna la capa con las reglas pre-registradas.
+- **Resultado de las confirmatorias.** Ninguna llega a C3.
+  - H1a-renta: no cumple pretendencias (p < 0,001), placebo de fecha (p = 0,007) ni Honest DiD con M̄ = 1.
+  - H1b-renta: cumple pretendencias, placebo de fecha, permutación y Holm, pero no Honest DiD con M̄ = 1 (M̄ de ruptura 0,8; con M̄ = 0,5 el IC excluye el 0). Queda en C4 por la regla pre-registrada, que no se relaja después de ver el resultado.
+- **Desviaciones técnicas** (no cambian ninguna regla de capa):
+  1. **D3, València ciudad (26 CP).** Si más de la mitad de los pares de CP están dentro del corte, el error de Conley degenera (X'u = 0). En ese caso se informa HC1 y queda indicado en la especificación.
+  2. **D4, AKM.** No está definido con un solo shock (variantes de un solo país): se informa «—». El IC de Anderson-Rubin lleva la bandera `AR_acotado`.
+  3. **D1 y D2, Honest DiD.** Versión simplificada de magnitudes relativas, validada por Monte Carlo y conservadora frente a Rambachan y Roth (2023). La regla del addendum se aplica tal cual.

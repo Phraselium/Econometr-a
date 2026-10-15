@@ -1,0 +1,114 @@
+{
+ "rama": "V12-B1",
+ "pregunta": "¿De dónde viene el crecimiento de la población?",
+ "capa": "C4",
+ "metodo": "identidad contable",
+ "datos": "MNP, EVR, EMCR, padrón continuo, censo anual (INE)",
+ "N": 540636,
+ "nacional_por_periodo": {
+  "2003-2007": {
+   "crecimiento": 3440758.0,
+   "vegetativo": 441232.0,
+   "saldo_exterior": 3154542.0,
+   "saldo_interior": 0.0,
+   "residuo": -155016.0
+  },
+  "2008-2013": {
+   "crecimiento": 613519.0,
+   "vegetativo": 522433.0,
+   "saldo_exterior": 691833.0,
+   "saldo_interior": 0.0,
+   "residuo": -600747.0
+  },
+  "2014-2019": {
+   "crecimiento": 679454.0,
+   "vegetativo": -111584.0,
+   "saldo_exterior": 1272915.0,
+   "saldo_interior": 0.0,
+   "residuo": -481877.0
+  },
+  "2020-2021": {
+   "crecimiento": 24625.0,
+   "vegetativo": -264138.0,
+   "saldo_exterior": 443487.0,
+   "saldo_interior": 0.0,
+   "residuo": -154724.0
+  },
+  "2022-2024": {
+   "crecimiento": 1641570.0,
+   "vegetativo": -362896.0,
+   "saldo_exterior": 1995569.0,
+   "saldo_interior": 0.0,
+   "residuo": 8897.0
+  }
+ },
+ "empalme_2021": [
+  {
+   "fuente": "ine_evr",
+   "anio": 2021,
+   "inmigracion_exterior": 662173.0,
+   "emigracion_exterior": 452511.0,
+   "movimientos_interiores": 1678649
+  },
+  {
+   "fuente": "ine_emcr",
+   "anio": 2021,
+   "inmigracion_exterior": 887960.0,
+   "emigracion_exterior": 696866.0,
+   "movimientos_interiores": 1670717
+  },
+  {
+   "fuente": "poblacion_1_enero",
+   "anio": 2021,
+   "padron": 47385107.0,
+   "censo_anual": 47400798.0,
+   "dif_pct": 0.03311377982115893
+  },
+  {
+   "fuente": "poblacion_1_enero",
+   "anio": 2022,
+   "padron": 47475420.0,
+   "censo_anual": 47486727.0,
+   "dif_pct": 0.023816534956400126
+  }
+ ],
+ "notas": [
+  "Municipios < 10.000 hab. solo en provincia/CCAA/España",
+  "residuo por nacionalidad incluye adquisiciones de nacionalidad",
+  "EVR sin bajas al extranjero antes de 2002 (no se usa antes de 2002)"
+ ],
+ "valencia": {
+  "secciones": 597,
+  "barrios": 87,
+  "secciones_sin_correspondencia": 9,
+  "poblacion_repartida_por_area_2025_pct": 10.2,
+  "total_2021": 788842,
+  "total_2025": 841558,
+  "var_total": 52716,
+  "var_espanola": -5670,
+  "var_extranjera": 58386,
+  "distritos_con_cambio_de_seccionado": [
+   "02",
+   "04",
+   "05",
+   "07",
+   "08",
+   "10",
+   "11",
+   "12",
+   "14",
+   "16",
+   "17"
+  ],
+  "barrios_comparables_2021_2025": 37,
+  "poblacion_sin_asignar_a_barrio": {
+   "2021": 10188,
+   "2022": 10167,
+   "2023": 4339,
+   "2024": 4362,
+   "2025": 0
+  },
+  "barrios_comparables_que_pierden_poblacion": 0,
+  "nota": "variación de stocks por nacionalidad; la población española también cambia por adquisiciones de nacionalidad"
+ }
+}

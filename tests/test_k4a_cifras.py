@@ -20,7 +20,8 @@ CK = RAIZ / "output" / "v5" / "cifras_clave.csv"
 RANGO_OTRO_SENTIDO = ("CA-EU-", "R1B-G-", "R1B-S-", "m2_pip_", "E-E1-VLC-contratos", "T1-H1", "T3-H8", "CC-C7b-jov-",
                       "CA-CT-ratio-triang-", "V8-M9-shap-")   # V8: banda del bootstrap de SHAP
 # Filas con unidad «%» que son variaciones o log-puntos (pueden ser negativas)
-PCT_CAMBIO = ("CA-CR-", "E-v3-H3-", "V7-R6-", "V71-S3-R6-")   # v7.1: variaciones % de escenarios R6 (pueden ser negativas)
+PCT_CAMBIO = ("CA-CR-", "E-v3-H3-", "V7-R6-", "V71-S3-R6-", "V9-")   # v7.1: variaciones % de escenarios R6; V9: diferencias y asociaciones (pueden ser negativas)
+COMPONENTES = ("V9-D7-",)   # V9: cuota de un componente contable; supera 100 % si el otro componente es negativo
 
 
 @pytest.fixture(scope="module")
@@ -60,7 +61,7 @@ def test_min_valor_max(ck):
 
 def test_porcentajes_en_rango(ck):
     p = ck[(ck.unidad == "%") & ck.valor.notna()]
-    assert (p.valor <= 100).all(), p[p.valor > 100].id.tolist()
+    assert (p[~p.id.str.startswith(COMPONENTES)].valor <= 100).all(), p[(p.valor > 100) & ~p.id.str.startswith(COMPONENTES)].id.tolist()
     neg = p[(p.valor < 0) & ~p.id.str.startswith(PCT_CAMBIO)]
     assert neg.empty, neg.id.tolist()
 

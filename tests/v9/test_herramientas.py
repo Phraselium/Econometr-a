@@ -1,12 +1,15 @@
 """V9 · validación Monte Carlo de src/v9/herramientas.py antes de usarlas (regla V7). SEED fija; tolerancias amplias."""
-import sys
 from pathlib import Path
 
 import numpy as np
 from statsmodels.stats.multitest import multipletests
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src" / "v9"))
-import herramientas as H  # noqa: E402
+import importlib.util  # noqa: E402
+
+# carga por ruta con nombre propio: src/v7 y src/v8 también tienen un módulo «herramientas» en la misma sesión de pytest
+_spec = importlib.util.spec_from_file_location("herramientas_v9", Path(__file__).resolve().parents[2] / "src" / "v9" / "herramientas.py")
+H = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(H)
 
 
 def _panel(rng, n=240, T=14, cohortes=((7, 0.3), (9, 0.3)), efecto=lambda e: 0.05 + 0.01 * e, rho=0.0):

@@ -1,6 +1,6 @@
 """V9 F3 · D1 zonas tensionadas y topes (pre-registro: docs/v9/hipotesis.md, D1). SEED = 20261010.
 
-D1a zonas tensionadas de Cataluña (Incasòl trimestral 2022T2-2026T1), D1b Ley 11/2020 (2019T1-2022T1),
+D1a zonas tensionadas de Cataluña (Incasòl trimestral 2022T2-2026T1; addendum A1), D1b Ley 11/2020 (2019T1-2022T1),
 D1c Euskadi (EMAL, exploratorio). Estimadores de src/v9/herramientas.py (validados por Monte Carlo).
 Salidas: output/v9/d1/{tabla_d1.csv, estudio_eventos.csv, pruebas.csv, resultado.json, registry.csv, fig_d1*.png}.
 Incasòl no es redistribuible: las salidas solo contienen estimaciones agregadas.
@@ -46,28 +46,17 @@ def fila(diseno, hip, resultado, espec, r, n_t, n_c, T, conf, diag=""):
 
 
 def permutacion(Yv: np.ndarray, g: np.ndarray, att_real: float, seed: int) -> float:
-    """p de permutación: pseudo-tratados entre nunca tratados con la misma estructura de cohortes."""
+    """Prueba de aleatorización de Fisher (addendum A1.2): se permutan las etiquetas de cohorte (tamaños reales) sobre
+    el conjunto tratados + nunca tratados; p = proporción de |ATT*| ≥ |ATT real|."""
     rng = np.random.default_rng(seed)
-    nunca = np.where(~np.isfinite(g))[0]
-    coh = [(gg, int((g == gg).sum())) for gg in np.unique(g[np.isfinite(g)])]
-    tot = sum(c for _, c in coh)
-    k = min(tot, len(nunca) // 2)
-    sub = Yv[nunca]
     ats = []
     for _ in range(NPERM):
-        perm = rng.permutation(len(nunca))
-        gp = np.full(len(nunca), np.inf)
-        ini = 0
-        for gg, c in coh:
-            m = max(1, round(c * k / tot))
-            gp[perm[ini:ini + m]] = gg
-            ini += m
-        ats.append(H.cs(sub, gp, B=2)["att"])
+        ats.append(H.cs(Yv, rng.permutation(g), B=2)["att"])
     return float(np.mean(np.abs(ats) >= abs(att_real)))
 
 
-def pruebas(Yv, g, r, nombre, seed, desplaz=4):
-    w_pre, p_pre, gl = H.pretendencias(r, -8, -2)
+def pruebas(Yv, g, r, nombre, seed, desplaz=4, e_lo=-8):
+    w_pre, p_pre, gl = H.pretendencias(r, e_lo, -2)
     ic1 = H.honest_rm(r, 1.0)
     ic05 = H.honest_rm(r, 0.5)
     ruptura = H.honest_ruptura(r)
@@ -80,7 +69,7 @@ def pruebas(Yv, g, r, nombre, seed, desplaz=4):
     return {"prueba_diseno": nombre, "pretend_wald": w_pre, "pretend_p": p_pre, "pretend_gl": gl,
             "honest_M1_lo": ic1[0], "honest_M1_hi": ic1[1], "honest_M05_lo": ic05[0], "honest_M05_hi": ic05[1],
             "honest_Mbar_ruptura": ruptura, "placebo_fecha_att": rf["att"], "placebo_fecha_p": rf.get("p_boot"),
-            "placebo_territorio_p": p_perm}
+            "permutacion_etiquetas_p": p_perm}
 
 
 def es_tabla(r, diseno, resultado, t_cero):
@@ -106,8 +95,8 @@ def main() -> int:
     # ------------------------------------------------------------------------------------------- D1a
     t_ini, t_fin = 2022 * 4 + 1, 2026 * 4 + 0
     for var, nombre in resultados.items():
-        conf = True
-        hip = "H1a-renta" if var == "renta_media" else "H1a-contratos"
+        conf = var == "renta_media"          # addendum A1.1: H1a-contratos es exploratoria
+        hip = "H1a-renta" if conf else "H1a-contratos (exploratoria)"
         W = matriz(q, var, t_ini, t_fin)
         W = W[~(W.index.isin(ley) & ~W.index.isin(zt.index))]      # fuera: Ley 11/2020 sin zona tensionada
         g = np.array([zt[c] - t_ini if c in zt.index else np.inf for c in W.index], float)
@@ -163,7 +152,7 @@ def main() -> int:
         REG.log("v9-D1b", f"{hip}-CS", f"{var}~CS(nunca)", per(t_ini), per(t_fin), n_t + n_c, np.nan, np.nan, np.nan,
                 coef_interes=r["att"], p_interes=r["p_boot"], notas="principal")
         es_rows += es_tabla(r, "D1b", nombre, "2020T4")
-        pr_rows.append(pruebas(Yv, g, r, f"D1b {nombre}", P.SEED))
+        pr_rows.append(pruebas(Yv, g, r, f"D1b {nombre}", P.SEED, e_lo=-7))
         rb = H.bjs(Yv, g, B=199)
         tabla.append(fila("D1b", hip, nombre, "BJS imputación", rb, n_t, n_c, Yv.shape[1], False))
         fin_alt = (2021 * 4 + 2) - t_ini + 1

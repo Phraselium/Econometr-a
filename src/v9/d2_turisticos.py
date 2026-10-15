@@ -39,9 +39,12 @@ def panel(a: pd.DataFrame, var: str, a0: int, a1: int, dosis: pd.Series) -> pd.D
 
 
 def disenar(W: pd.DataFrame, x: np.ndarray, ley: set, zt: pd.Series, base: int = 2019, pre=(2014, 2018),
-            covid=(2020, 2021), reap=(2022, 2025), politicas: bool = True):
+            covid=(2020, 2021), reap=(2022, 2025), politicas: bool = True, tendencia: bool = False):
     anios = np.array(W.columns)
     Xs, nombres = [], []
+    if tendencia:   # addendum A1.3: tendencia lineal específica por dosis
+        Xs.append(np.outer(x, (anios - base).astype(float)))
+        nombres.append("tend_dosis")
     for k in range(pre[0], pre[1] + 1):
         if k in anios and k != base:
             Xs.append(np.outer(x, (anios == k).astype(float)))
@@ -100,8 +103,8 @@ def main() -> int:
         return r, nombres, x, out, wald
 
     for var in RES:
-        conf = var == "renta_media"
-        hp = "H2" if conf else "H2-contratos"
+        conf = False                                  # addendum A1.1: D2 es exploratorio
+        hp = "H2-renta" if var == "renta_media" else "H2-contratos"
         W = panel(a, var, 2014, 2025, dosis)
         xraw = dosis.reindex(W.index).values
         r, nombres, x, out, wald = estima(W, xraw, "principal", var, conf, hp)
@@ -113,9 +116,13 @@ def main() -> int:
         rp = H.twfe_cluster(Wp.values, [np.outer(xp, (anios_p >= 2017).astype(float))], B=B)
         rng = np.random.default_rng(P.SEED)
         jc, jr = nombres.index("covid"), nombres.index("reapertura")
+        prov = np.array([c[:2] for c in W.index])
         perm = []
         for _ in range(NPERM):
-            xs = rng.permutation(x)
+            xs = x.copy()
+            for pr_ in np.unique(prov):                 # permutación dentro de provincia (addendum A1.3)
+                mm = prov == pr_
+                xs[mm] = rng.permutation(x[mm])
             Xs, _ = disenar(W, xs, ley, zt)
             yv = H.dm2(W.values).ravel()
             Xm = np.column_stack([H.dm2(m).ravel() for m in Xs])
@@ -133,6 +140,7 @@ def main() -> int:
         Wv = W[W.index.isin(dosis_viv.dropna().index)]
         estima(Wv, dosis_viv.reindex(Wv.index).values, "dosis: HUT por 100 viviendas (censo 2021)", var, conf, hp)
         estima(W, xraw, "sin controles de política", var, conf, hp, politicas=False)
+        estima(W, xraw, "con tendencia lineal por dosis (sensibilidad A1.3)", var, conf, hp, tendencia=True)
         # trimestral 2019T1-2023T4, base 2019 (4 trimestres previos)
         q = P.incasol("T")
         wq = q[(q.t >= 2019 * 4) & (q.t <= 2023 * 4 + 3)].pivot_table(index="cod", columns="t", values=var)

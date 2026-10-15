@@ -10,8 +10,8 @@ Potencia recalculada en src/v9/f2b_potencia_addendum.py → output/v9/potencia/m
 
 | Hipótesis | Antes | Ahora | Motivo |
 |---|---|---|---|
-| H1a-renta (zonas tensionadas Cataluña) | confirmatoria | **confirmatoria** | La simulación nula por bloques de residuos previos, con n_t = 199 y n_c = 20 reales, da un MDE con Holm (m = 3) de 0,041 ≤ 0,05 (LB01, VERIFICADA, Q1) |
-| H1b-renta (Ley 11/2020) | confirmatoria | **confirmatoria** | MDE con Holm de 0,025 ≤ 0,05; 60 tratados y 181 controles. El factor iid se mantiene; con más controles que tratados es conservador |
+| H1a-renta (zonas tensionadas Cataluña) | confirmatoria | **confirmatoria** | La simulación nula por bloques de residuos previos (2019T1-2023T4, corregido tras la re-revisión A1-a), con n_t = 199 y n_c = 20 reales, da un MDE con Holm (m = 3) de 0,046 ≤ 0,05 (LB01, VERIFICADA, Q1) |
+| H1b-renta (Ley 11/2020) | confirmatoria | **confirmatoria** | MDE con Holm de 0,025 ≤ 0,05; 60 tratados y 181 controles. Se mantiene el factor iid. No es estrictamente conservador (≈ 0,94, re-revisión A1-b), pero el margen frente a la referencia lo absorbe |
 | H1a-contratos | confirmatoria | exploratoria | La referencia 0,10 no tenía fuente (hallazgo 4) |
 | H2-covid-renta, H2-reapertura-renta | confirmatorias | exploratorias | LA01 no se puede convertir a las unidades del MDE (1 DE de plazas HUT por 100 habitantes entre municipios; shock COVID): no hay referencia comparable (hallazgo 4). Con permutación dentro de provincia, el MDE es 0,010 |
 | H4-réplica-alquiler | confirmatoria | exploratoria | Con el error AKM (nula impuesta y controles) y la referencia en unidades de forma reducida (0,01 × π̂ = 0,0040), el MDE con Holm es 0,0079 > 0,0040 (hallazgos 4 y 5) |
@@ -49,6 +49,7 @@ Potencia recalculada en src/v9/f2b_potencia_addendum.py → output/v9/potencia/m
   - Δ 2024→2025 de la cuota del CP en las fianzas de su provincia (en lugar del Δ log del número);
   - Δ log de la fianza media.
 - **Excepción declarada para la exposición.** ΔVUT entre el corte del 2025-01-26 y el del 2026-10-14. La exposición no es un resultado de precio ni de alquiler. Es la única medición disponible de la caída del registro, porque el corte intermedio no existe.
+- **Desfase temporal declarado (re-revisión A1-c).** El resultado 2024→2025 es anterior a la mayor parte de la exposición (cortes 2025-01 → 2026-10). D3 describe por eso una asociación con el ritmo de bajas, no una respuesta posterior. La alternativa con el INE (2024M11 → 2025M11) está alineada en el tiempo.
 - **Columna `devuelta`.** Se cuentan todas las fianzas constituidas en el año (flujo según `anyo_datos`), estén devueltas o no.
 
 ## A1.5 · D4 (hallazgos 7, 9 y 13; ahora exploratorio)

@@ -2,7 +2,7 @@
 estimar ningún efecto. No usa la relación tratamiento-resultado de las unidades tratadas.
 
 - D1a (hallazgo 2): simulación nula con los tamaños reales n_t/n_c. Residuos de un modelo de efectos fijos de unidad y
-  trimestre ajustado SOLO con el periodo previo a las zonas tensionadas (2019T1-2024T1) para todas las unidades de la
+  trimestre ajustado SOLO con el periodo previo a las zonas tensionadas (2019T1-2023T4) para todas las unidades de la
   muestra; cada réplica toma, para cada unidad, un bloque contiguo de 16 trimestres de sus propios residuos; se estima
   CS con las cohortes reales. SE = DE de los ATT nulos (heterocedasticidad por unidad preservada).
 - Familias de Holm con su m real (hallazgo 3): D1 m = 3, D2 m = 2, D4 m = 1.
@@ -46,7 +46,8 @@ def d1a() -> list[dict]:
         W = q[(q.t >= t_ini) & (q.t <= t_fin)].pivot_table(index="cod", columns="t", values=var)
         W = W[(W > 0).all(1)].dropna()
         W = W[~(W.index.isin(ley) & ~W.index.isin(zt.index))]
-        pre = q[(q.t >= 2019 * 4) & (q.t <= 2024 * 4)].pivot_table(index="cod", columns="t", values=var)
+        # 2019T1-2023T4: previo a la primera cohorte (re-revisión A1-a)
+        pre = q[(q.t >= 2019 * 4) & (q.t <= 2023 * 4 + 3)].pivot_table(index="cod", columns="t", values=var)
         pre = np.log(pre[(pre > 0).all(1)].dropna())
         units = [c for c in W.index if c in pre.index]
         R = H.dm2(pre.loc[units].values)                        # residuos del modelo bidireccional (solo pre)

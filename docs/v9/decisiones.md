@@ -43,3 +43,10 @@ Rama local `r9/main`, subida a la rama remota designada (`claude/housing-price-s
   7. el valor tasado uniprovincial queda declarado, con robustez sin esas 7 provincias.
 - **Corrección técnica.** En `construir`, los shocks pasan a estar en puntos para que el error AKM tenga la escala de Z. src/v9/d4_inmigracion.py todavía no se había ejecutado.
 - **Robustez de D1a que no se puede hacer.** El IPVA municipal solo tiene nombres, sin código INE, así que se elimina y lo mismo ocurre con su uso municipal en D4 (cruces solo por código).
+
+## E4 — Re-revisión A1 de F2: APROBAR (2026-10-15)
+- **Pendientes de gravedad baja, resueltos antes de estimar:**
+  - A1-a: la ventana previa de la simulación de D1a pasa a 2019T1-2023T4. El MDE con Holm queda en 0,046 ≤ 0,05 y H1a-renta sigue confirmatoria.
+  - A1-b: corregida la frase sobre el factor iid.
+  - A1-c: declarado el desfase temporal de D3.
+- **Etiqueta local:** `prereg-v9-a1b`.

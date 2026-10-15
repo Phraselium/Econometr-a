@@ -118,3 +118,46 @@ El pre-registro es reproducible y no hay fuga en el cálculo de potencia. Hay do
 - **D5.** Está correctamente fuera de C3s porque el MDE de Holm (0,117 a 0,152) supera la referencia (0,05).
 - **Diseños sin potencia.** Ninguno figura como confirmatorio (D1b contratos, D1c, D2 contratos, D3, D4 valor tasado, D4 ampliación y D5).
 - **Semilla.** Se usa la misma en todo el cálculo de potencia (B = 300, declarado en resultado.json).
+
+## Re-revisión A1
+
+Fecha: 2026-10-15.
+
+**Objeto.** docs/v9/hipotesis_addendum_a1.md (commit 9cb2200, etiqueta `prereg-v9-a1`), src/v9/f2b_potencia_addendum.py, output/v9/potencia/mde_addendum.csv y la desviación E3 en docs/v9/decisiones.md. No se ha leído data/sealed.
+
+**Reproducción.** Se ejecutó f2b_potencia_addendum.py desde `git archive 9cb2200` en un directorio aislado y sin red, dos veces. Las dos ejecuciones terminan con exit 0 y dan el mismo md5 de mde_addendum.csv (`d4940…e973`), que coincide con el fichero versionado.
+
+### Veredicto: **APROBAR**
+
+Quedan observaciones de gravedad baja que deben resolverse al estimar, no en la puerta.
+
+### Estado de los hallazgos 1-13
+
+| # | Estado | Comprobación |
+|---|---|---|
+| 1 | Resuelto | A1.7 limita F4 a C3/C3s. Las cotas son de Manski con supuestos explícitos. Si no hay C3, la tabla dice «no identificado». Los resultados C4 solo pueden aparecer como escenario ilustrativo, sin «contribución» ni «atribuible». La advertencia es única: equilibrio parcial. |
+| 2 | Resuelto | **Prueba de territorio.** Ahora es una aleatorización de Fisher sobre tratados + nunca tratados, con umbral p < 0,05, y es exigida para C3. **Potencia.** Simulación nula con n_t = 199 y n_c = 20 reales y bloques de residuos previos: MDE de Holm 0,041 ≤ 0,05. |
+| 3 | Resuelto | La familia de Holm es {H1a-renta, H1b-renta}, m = 2. La potencia usa m = 3, que es conservador. La regla de cierre está declarada. |
+| 4 | Resuelto | H1a-contratos y D2 pasan a exploratorias. La referencia de D4 está ahora en unidades de forma reducida (0,01 × π̂). |
+| 5 | Resuelto | D2 usa permutación dentro de provincia. D4 usa AKM con la nula impuesta y controles; H4 pasa a exploratoria (0,0079 > 0,0040). |
+| 6 | Resuelto | El año final del resultado es 2025, con Δ de cuota provincial. La excepción de la exposición está declarada y el tratamiento de `devuelta` está definido. |
+| 7 | Resuelto | Hay umbrales en D2. La sensibilidad de D2 es una tendencia lineal por dosis. El placebo previo de D4 se declara inviable y está razonado. |
+| 8 | Resuelto | D1c: 7 municipios con al menos un trimestre posterior y 9 controles. |
+| 9 | Resuelto | 28 nacionalidades, con una cobertura del 87 %. |
+| 10 | Resuelto | Pretendencias de D1b en e ∈ [−7, −2]. |
+| 11 | Resuelto | Las formulaciones de D5, D4 y D7 están reescritas y el mecanismo de D2 queda como no contrastado. |
+| 12 | Resuelto | Cada referencia tiene estado y cuartil, o «no aplica». |
+| 13 | Resuelto | El relleno uniprovincial está declarado y hay robustez sin esas 7 provincias. |
+
+### Problemas nuevos
+
+**Fuga.** No hay fuga material. La simulación de D1a usa residuos de las unidades tratadas, pero solo de 2019T1 a 2024T1 y sin el contraste entre tratados y controles. La primera etapa de D4 no usa el resultado. Ninguna hipótesis sin potencia figura como confirmatoria, y no hay promoción de capa.
+
+**Observaciones bajas** (resolver en la fase de estimación; no bloquean):
+
+- **A1-a · Ventana previa de D1a** (f2b_potencia_addendum.py:49).
+  - **Problema.** La ventana «previa» incluye 2024T1. La cohorte de 140 municipios tiene efecto desde el 2024-03-16, así que esos residuos incluyen unas dos semanas tratadas.
+  - **Además.** La misma ventana incluye 2020T4-2022T1 de la Ley 11/2020 para 61 municipios. Este efecto infla la varianza, lo que es conservador.
+  - **Corrección.** Recalcular como sensibilidad con la ventana 2019T1-2023T4 e informar del MDE. Si superase 0,05, H1a-renta pasaría a exploratoria, y eso debe anotarse en decisiones.md **antes** de estimar.
+- **A1-b · Factor de escala en H1b-renta.** El factor iid no es estrictamente conservador: con 60 pseudo-tratados entre 181 controles, el factor es aproximadamente 0,94. El margen del MDE (0,025 frente a 0,05) absorbe esta diferencia. Conviene corregir la frase del addendum.
+- **A1-c · Desfase temporal en D3.** El resultado (2024→2025) es anterior a la mayor parte de la exposición (ΔVUT entre 2025-01 y 2026-10). Debe decirse expresamente en la presentación descriptiva. No se puede leer como respuesta a la caída del registro.

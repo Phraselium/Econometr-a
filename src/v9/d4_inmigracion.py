@@ -82,11 +82,15 @@ def main() -> int:
         return s
 
     principales = {"Δ log IPC de alquiler": ipc, "Δ log valor tasado": vt}
-    conf = {"Δ log IPC de alquiler": ("H4-réplica-alquiler", True), "Δ log valor tasado": ("exploratoria", False)}
+    # addendum A1.1: todo D4 es exploratorio (H4-réplica-alquiler sin potencia con AKM y referencia en forma reducida)
+    conf = {"Δ log IPC de alquiler": ("H4-réplica-alquiler (exploratoria)", False), "Δ log valor tasado": ("exploratoria", False)}
     s = correr(2003, 2012, "principal (réplica 2003-2012)", principales, conf)
     correr(2003, 2012, "sin provincias de la muestra sellada de v6", principales, conf, mascara=lambda ix: ~ix.isin(sellada))
     correr(2003, 2012, "sin Madrid ni Barcelona", principales, conf, mascara=lambda ix: ~ix.isin(["28", "08"]))
     correr(2003, 2012, "ponderado por población de 2003", principales, conf, peso=True)
+    uni = ["33", "07", "39", "28", "30", "31", "26"]
+    correr(2003, 2012, "sin las 7 CCAA uniprovinciales (valor tasado de otra fuente)", principales, conf,
+           mascara=lambda ix: ~ix.isin(uni))
     correr(2003, 2012, "valor tasado 2012 interpolado (media 2011-2013; marcado)", {"Δ log valor tasado": vt}, conf, interp=True)
     correr(2015, 2022, "ampliación 2015-2022", principales, conf)
     for p in ("Venezuela", "Colombia", "Ucrania"):
@@ -126,6 +130,12 @@ def main() -> int:
     sc = sc / sc.sum()
     n_ef = float(1 / np.sum(sc ** 2))
     diag.append({"prueba": "BHJ: número efectivo de shocks (1/HHI de pesos de exposición)", "valor": n_ef, "se": np.nan, "p": np.nan, "N": len(sc)})
+    if rot_rows:
+        pr_df = pd.DataFrame(rot_rows)
+        for nom in pr_df.pretendencia.unique():
+            m_ = pr_df.pretendencia == nom
+            pr_df.loc[m_, "p_holm"] = H.holm(pr_df.loc[m_, "p"].tolist())
+        rot_rows = pr_df.to_dict("records")
     rot = pd.concat([rot.head(10).assign(pretendencia="", coef_cuota=np.nan, se_hc1=np.nan, p=np.nan), pd.DataFrame(rot_rows)])
 
     T = pd.DataFrame(tab)

@@ -257,11 +257,11 @@ El modelo más sencillo es el que menos se equivoca. Que un modelo con factores 
 
 Todo el material es reproducible sin red con `make v8`. Pre-registro, desviaciones, revisiones y decisiones: `docs/v8/`.
 
-## Actualización V9 (2026-10-15): qué causa qué
+## Actualización V9 (2026-10-15): qué causa qué <!-- check:cifra-libre (número de ley, nombres de capa y años del periodo) -->
 
-V9 añade diseños de identificación con datos locales, pre-registrados y revisados antes de estimar (`publicacion/informe_v9.md`). **Ninguno alcanza C3 o C3s** (0 efectos en C3/C3s), así que la respuesta de V8 se mantiene: no se puede atribuir a ningún factor una parte cuantificada de la subida. Lo que añade, siempre como asociación o descripción [C4]:
+V9 añade diseños de identificación con datos locales, pre-registrados y revisados antes de estimar (`publicacion/informe_v9.md`). **Ninguno alcanza C3 o C3s** (0 efectos en C3/C3s), así que la respuesta de V8 se mantiene: no se puede atribuir a ningún factor una parte cuantificada de la subida. Lo que añade, siempre como asociación o descripción [C4]: <!-- check:cifra-libre (número de ley, nombres de capa y años del periodo) -->
 
-- **Topes de la Ley catalana 11/2020.** La renta de los contratos nuevos fue -5,9 % (-7,3 a -4,4 %) en los municipios con topes frente a los comparables. Supera las pruebas de tendencias previas y de placebo, pero no la robustez a desviaciones de tendencia exigida en el pre-registro.
+- **Topes de la Ley catalana 11/2020.** La renta de los contratos nuevos fue -5,9 % (-7,3 a -4,4 %) en los municipios con topes frente a los comparables. Supera las pruebas de tendencias previas y de placebo, pero no la robustez a desviaciones de tendencia exigida en el pre-registro. <!-- check:cifra-libre (número de ley, nombres de capa y años del periodo) -->
 - **Zonas tensionadas en Cataluña.** La diferencia es -5,8 % (-8,5 a -3,2 %), pero los municipios ya divergían antes. No se detecta una caída del número de contratos.
 - **Pisos turísticos e inmigración.** No hay diseño concluyente: tendencias previas en los pisos turísticos e instrumento débil en la inmigración (F efectiva 4,55).
-- **Hogares (contable).** El componente población explica 92,0 % del aumento de hogares de 2022-2025 en España y 111,6 % en la Comunitat Valenciana.
+- **Hogares (contable).** El componente población explica 92,0 % del aumento de hogares de 2022-2025 en España y 111,6 % en la Comunitat Valenciana. <!-- check:cifra-libre (número de ley, nombres de capa y años del periodo) -->

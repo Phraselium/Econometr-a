@@ -33,14 +33,14 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | informe_econometrico_v8.md | output/v8/informe_econometrico.md | `689599422d9eff15d6a4b2b567808ccfe75b8ba65c65fa85307e94dc72f5a8ee` |
 | informe_tecnico.md | output/v5/informe_tecnico.md | `62a2978a8338904a0bdf1f3e46fa066038e6a5314af319a2f61c6a2b75beef15` |
 | informe_v9.md | output/v9/informe_v9.md | `606a6693e12d7f765ad271805cf17edac6ccfd20814aba8b2c0923fffd6e92e7` |
-| lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `2c8ab6c4e9d6cd2395fe83ebba536243e622df1b38f8e6780bac98e6baaf31e0` |
+| lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `132ca3ff456ee4aeca66ce659a195b6d550554f0acd3d86f7582e9cade0ed556` |
 | nota_metodologica.md | output/v5/nota_metodologica.md | `42a718ba6ef57a976b84c757885d65fccef9295f58838854bff2794ad084a9b4` |
 | policy_brief.md | output/v5/policy_brief.md | `5ccb8276df6576967fc9e121a7a2b20fc8a6937f45b52066a3bcbdb2f1d0f762` |
 | ponencia/diapositivas.md | output/v5/ponencia/diapositivas.md | `59b79f616e34f23c4b58688b85b0e5ca8839ef11afbadce8cb58feda3c355f65` |
 | ponencia/guion.md | output/v5/ponencia/guion.md | `e7340de67107954fdaea292a5821ca2af43572a5330f687247b513df99413d35` |
-| por_que_ha_subido.md | output/v8/por_que_ha_subido.md | `94fa44af498e66e2daf00cad74528a7c6d49abcdd02606a2a7f456df2cb94076` |
+| por_que_ha_subido.md | output/v8/por_que_ha_subido.md | `ccd4ab910dc7594f419865300f377162be51bfb695854504dc3a93693e2f9034` |
 | que_cambio.md | output/v5/que_cambio.md | `b5b4ce8021db9bedf378195704d031c6f123e386e96273e869ad965a91e97091` |
-| tabla_v9.md | output/v9/f3/tabla_revista.md | `cbf6545d56d514eb5ed4869212ef0d0e178e3f71981c1f24f16b0713aabc053f` |
+| tabla_v9.md | output/v9/f3/tabla_revista.md | `9985da6ff8ec983c9a49948f71cad46f88be56ec0c87482edfb9a3a8e1a17ffe` |
 | tablas_atlas.xlsx | output/v10/tablas_atlas.xlsx | `3967d28730861ee685e90d940acf1455cb2779197c05791072aa574dda1666d6` |
 | tablas_modelos_destacados.csv | output/v8/tablas_modelos_destacados.csv | `b70730be9a7924f4ea71426a2ef04a50287c82b8a45dfd802ea61b2480277495` |
 | tablas_modelos_destacados.md | output/v8/tablas_modelos_destacados.md | `650cd6505b65d0e622e2c3916848664cb8c93b4cdb1aac86a1de2e6dc918590c` |

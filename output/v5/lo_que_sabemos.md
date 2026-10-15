@@ -92,7 +92,7 @@ V8 pregunta cuánto pesa cada factor en el precio real de compra y en el alquile
 - [C4] València: en la provincia, el valor tasado (29,4 pp) y Registradores (17,4 pp) discrepan en 2022-2026 y se publican ambos; la ciudad solo tiene valor tasado.
 - [C4] Ningún modelo predice mejor fuera de muestra que un AR(4) sencillo.
 
-## Qué añade V9 (qué causa qué) [C4] <!-- check:cifra-libre (número de ley, nombres de capa y años del periodo) -->
+## Qué añade V9 (diseños de identificación) [C4] <!-- check:cifra-libre (número de ley, nombres de capa y años del periodo) -->
 
 V9 contrasta con diseños de identificación pre-registrados los topes y las zonas tensionadas, los pisos turísticos, la inmigración y los tipos de interés, y añade una contabilidad de hogares. Detalle: [Qué causa qué](../v9/informe_v9.md) y [verificador V9](../v9/verificador_v9.md). <!-- check:cifra-libre (número de ley, nombres de capa y años del periodo) -->
 

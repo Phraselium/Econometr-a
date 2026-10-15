@@ -29813,7 +29813,7 @@
   },
   {
    "id": "V9-D1a-contratos-att",
-   "enunciado": "zonas tensionadas (Ley 12/2023): ATT sobre contratos de contratos nuevos (CS)",
+   "enunciado": "zonas tensionadas (Ley 12/2023): diferencia (ATT, CS) en el número de contratos nuevos",
    "cifra": -6.25,
    "rango": [
     -13.206,
@@ -29912,7 +29912,7 @@
   },
   {
    "id": "V9-D1a-renta-att",
-   "enunciado": "zonas tensionadas (Ley 12/2023): ATT sobre renta media de contratos nuevos (CS)",
+   "enunciado": "zonas tensionadas (Ley 12/2023): diferencia (ATT, CS) en la renta media de los contratos nuevos",
    "cifra": -5.846,
    "rango": [
     -8.499,
@@ -30035,7 +30035,7 @@
   },
   {
    "id": "V9-D1b-contratos-att",
-   "enunciado": "Ley catalana 11/2020: ATT sobre contratos de contratos nuevos (CS)",
+   "enunciado": "Ley catalana 11/2020: diferencia (ATT, CS) en el número de contratos nuevos",
    "cifra": -1.317,
    "rango": [
     -7.02,
@@ -30134,7 +30134,7 @@
   },
   {
    "id": "V9-D1b-renta-att",
-   "enunciado": "Ley catalana 11/2020: ATT sobre renta media de contratos nuevos (CS)",
+   "enunciado": "Ley catalana 11/2020: diferencia (ATT, CS) en la renta media de los contratos nuevos",
    "cifra": -5.851,
    "rango": [
     -7.346,

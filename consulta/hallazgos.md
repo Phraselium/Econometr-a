@@ -1273,20 +1273,20 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 
 | id | enunciado | cifra | capa | periodo | origen |
 |---|---|---|---|---|---|
-| `V9-D1a-contratos-att` | zonas tensionadas (Ley 12/2023): ATT sobre contratos de contratos nuevos (CS) | -6,25 % (-13,21 a 0,706) | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1a-contratos-att` | zonas tensionadas (Ley 12/2023): diferencia (ATT, CS) en el número de contratos nuevos | -6,25 % (-13,21 a 0,706) | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1a-contratos-placebo-p` | zonas tensionadas (Ley 12/2023), log contratos: p del placebo de fecha (4 trimestres antes) | 0,613 | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1a-contratos-pretend-p` | zonas tensionadas (Ley 12/2023), log contratos: p del contraste conjunto de pretendencias | 0,031 | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1a-contratos-ruptura` | zonas tensionadas (Ley 12/2023), log contratos: M̄ de ruptura de Honest DiD (magnitudes relativas, simplificado) | 0 M̄ | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
-| `V9-D1a-renta-att` | zonas tensionadas (Ley 12/2023): ATT sobre renta media de contratos nuevos (CS) | -5,85 % (-8,5 a -3,19) | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1a-renta-att` | zonas tensionadas (Ley 12/2023): diferencia (ATT, CS) en la renta media de los contratos nuevos | -5,85 % (-8,5 a -3,19) | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1a-renta-pholm` | zonas tensionadas (Ley 12/2023), log renta media: p ajustado por Holm (familia confirmatoria de V9) | 0 | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1a-renta-placebo-p` | zonas tensionadas (Ley 12/2023), log renta media: p del placebo de fecha (4 trimestres antes) | 0,00701 | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1a-renta-pretend-p` | zonas tensionadas (Ley 12/2023), log renta media: p del contraste conjunto de pretendencias | 0,0004 | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1a-renta-ruptura` | zonas tensionadas (Ley 12/2023), log renta media: M̄ de ruptura de Honest DiD (magnitudes relativas, simplificado) | 0,2 M̄ | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
-| `V9-D1b-contratos-att` | Ley catalana 11/2020: ATT sobre contratos de contratos nuevos (CS) | -1,32 % (-7,02 a 4,38) | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1b-contratos-att` | Ley catalana 11/2020: diferencia (ATT, CS) en el número de contratos nuevos | -1,32 % (-7,02 a 4,38) | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1b-contratos-placebo-p` | Ley catalana 11/2020, log contratos: p del placebo de fecha (4 trimestres antes) | 0,156 | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1b-contratos-pretend-p` | Ley catalana 11/2020, log contratos: p del contraste conjunto de pretendencias | 0,28 | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1b-contratos-ruptura` | Ley catalana 11/2020, log contratos: M̄ de ruptura de Honest DiD (magnitudes relativas, simplificado) | 0 M̄ | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
-| `V9-D1b-renta-att` | Ley catalana 11/2020: ATT sobre renta media de contratos nuevos (CS) | -5,85 % (-7,35 a -4,36) | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1b-renta-att` | Ley catalana 11/2020: diferencia (ATT, CS) en la renta media de los contratos nuevos | -5,85 % (-7,35 a -4,36) | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1b-renta-pholm` | Ley catalana 11/2020, log renta media: p ajustado por Holm (familia confirmatoria de V9) | 0 | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1b-renta-placebo-p` | Ley catalana 11/2020, log renta media: p del placebo de fecha (4 trimestres antes) | 0,408 | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D1b-renta-pretend-p` | Ley catalana 11/2020, log renta media: p del contraste conjunto de pretendencias | 0,282 | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |

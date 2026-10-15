@@ -235,20 +235,26 @@ def honest_rr(res: dict, Mbar: float, alfa: float = 0.05, n_sim: int = 0, rejill
     if rejilla is None:
         rejilla = np.linspace(theta - 15 * se - 3 * abs(theta), theta + 15 * se + 3 * abs(theta), 301)
     Bm = np.linalg.svd(l[None, :])[2][1:].T if n_post > 1 else np.zeros((1, 0))
-    aceptados = np.zeros(len(rejilla), bool)
+    piezas = []
     for A in _piezas_rm(n_pre, n_post, Mbar):
         SY = A @ S @ A.T
-        sig = np.sqrt(np.clip(np.diag(SY), 1e-14, None))
-        Ap = A[:, n_pre:]
-        X = Ap @ Bm
-        AB = A @ b
-        for k, th in enumerate(rejilla):
-            if aceptados[k]:
-                continue
-            aceptados[k] = not _arp_condicional(AB - Ap @ (th * np.ones(n_post)), X, sig, SY, alfa)
+        piezas.append((A @ b, A[:, n_pre:], A[:, n_pre:] @ Bm, np.sqrt(np.clip(np.diag(SY), 1e-14, None)), SY))
+
+    def acepta(th: float) -> bool:   # unión sobre piezas: se acepta θ̄ si alguna pieza no lo rechaza
+        return any(not _arp_condicional(AB - Ap @ (th * np.ones(n_post)), X, sig, SY, alfa) for AB, Ap, X, sig, SY in piezas)
+    aceptados = np.array([acepta(th) for th in rejilla])
     if not aceptados.any():
         return np.nan, np.nan
-    return float(rejilla[aceptados].min()), float(rejilla[aceptados].max())
+    i_lo, i_hi = int(np.argmax(aceptados)), int(len(aceptados) - 1 - np.argmax(aceptados[::-1]))
+
+    def biseca(dentro: float, fuera: float) -> float:   # refina el extremo entre un punto aceptado y uno rechazado
+        for _ in range(12):
+            medio = (dentro + fuera) / 2
+            dentro, fuera = (medio, fuera) if acepta(medio) else (dentro, medio)
+        return dentro
+    lo = biseca(rejilla[i_lo], rejilla[i_lo - 1]) if i_lo > 0 else float(rejilla[0])
+    hi = biseca(rejilla[i_hi], rejilla[i_hi + 1]) if i_hi < len(rejilla) - 1 else float(rejilla[-1])
+    return float(lo), float(hi)
 
 
 def honest_rr_ruptura(res: dict, rejilla_M=np.arange(0, 2.01, 0.1), **kw) -> float:

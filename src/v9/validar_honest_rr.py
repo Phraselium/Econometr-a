@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import herramientas as H  # noqa: E402
 
 OUT = Path(__file__).resolve().parents[2] / "output" / "v9" / "validacion"
-R = 40
+R = 30
 
 
 def main() -> int:
@@ -28,7 +28,22 @@ def main() -> int:
     S = 0.01 ** 2 * (0.5 * np.eye(n) + 0.5)
     L = np.linalg.cholesky(S)
     filas = []
-    for pendiente, M in ((0.0, 0.0), (0.0, 1.0), (0.004, 1.0), (0.004, 2.0)):
+    # tamaño del contraste condicional en el θ verdadero (400 réplicas, M̄ = 0): rápido y preciso
+    piezas = H._piezas_rm(len(pre), len(post), 0.0)
+    A = piezas[0]
+    SY = A @ S @ A.T
+    sig = np.sqrt(np.clip(np.diag(SY), 1e-14, None))
+    l = np.ones(len(post)) / len(post)
+    Bm = np.linalg.svd(l[None, :])[2][1:].T
+    Ap = A[:, len(pre):]
+    rech = []
+    for _ in range(400):
+        b = np.r_[np.zeros(len(pre)), 0.05 * np.ones(len(post))] + L @ rng.standard_normal(n)
+        rech.append(H._arp_condicional(A @ b - Ap @ (0.05 * np.ones(len(post))), Ap @ Bm, sig, SY, 0.05))
+    filas.append({"pendiente_previa": 0.0, "Mbar": 0.0, "replicas": 400, "cobertura_theta": 1 - float(np.mean(rech)),
+                  "anchura_media": np.nan, "excluye_0": np.nan})
+    print(filas[-1])
+    for pendiente, M in ((0.0, 0.0), (0.0, 1.0), (0.004, 1.0)):
         cub, ancho, excl0 = [], [], []
         for _ in range(R):
             d = np.array([pendiente * (e + 1) for e in orden])

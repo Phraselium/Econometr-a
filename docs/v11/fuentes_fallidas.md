@@ -1,26 +1,39 @@
 # V11-DATOS · Fuentes fallidas
 
-Regla: máximo 3 intentos y 30 minutos por fuente; segunda pasada al final de la tarea (2026-10-15, tarde).
+Regla: máximo 3 intentos y 30 minutos por fuente. Dos pasadas el 2026-10-15:
+- **primera pasada**: tarea V11-DATOS;
+- **segunda pasada**: «acceso de red completo», 15:15-16:30 UTC.
 
-Tipos de fallo:
-- **Servidor**: el organismo rechaza la conexión automatizada (403, WAF, Cloudflare, reto anti-bots).
-- **Red**: el proxy del entorno rechaza el host («connect_rejected»: no está en la lista de dominios permitidos) o
-  corta el túnel. Se resuelve ampliando el acceso de red del entorno (configuración del entorno → Network access →
-  añadir el dominio).
+## A. Bloqueo del ENTORNO (proxy de salida de la sesión)
+Comprobación de la segunda pasada: 3 intentos por host con curl, separados 15 s. Resultado en los tres: código 000. El registro del proxy dice «tunnel closed (code 1006) … 39 B received»: el proxy de la sesión cierra el túnel. No es el servidor (uv.es y upv.es responden 200 en el mismo bucle). La ampliación de red pedida no se ha aplicado a este contenedor; probablemente hará falta una sesión nueva.
 
-| Fuente (punto) | Endpoint | Edición buscada | Fecha | Intentos | Error | Tipo | Segunda pasada | Alternativa |
-|---|---|---|---|---|---|---|---|---|
-| OPI: residentes con certificado o tarjeta en vigor (5) | inclusion.gob.es/web/opi/estadisticas/catalogo/extranjeros_con_certificado; /documents/d/opi/… | nota 30-6-2025 / 2-12-2025 | 2026-10-15 | 3 + 2 | HTTP 403 «Acceso denegado» (también vía WebFetch); datos.gob.es 403 (Incapsula) | servidor | 403 | Eurostat migr_resvalid (nacional); solicitud 5(d) |
-| Interior, protección internacional y temporal por provincia (6) | interior.gob.es (Oficina de Asilo y Refugio); proteccion-asilo.interior.gob.es | avances mensuales 2026 | 2026-10-15 | 3 + 1 | reto Cloudflare; subdominio sin conexión | servidor / red | igual | Eurostat migr_asy* (nacional); solicitud 5(a,b) |
-| Arraigo y regularizaciones por provincia (6) | inclusion.gob.es (OPI, flujo de autorizaciones) | — | 2026-10-15 | (mismo host que OPI) | 403 | servidor | 403 | solicitud 5(c) |
-| Catastro, valores de referencia por municipio (12) | catastro.hacienda.gob.es/esp/estadisticas*.html; /documentos/estadisticas/ | 2022-2026 | 2026-10-15 | 3 | página generada con JavaScript sin enlaces; rutas directas = página genérica; búsqueda web sin fichero | no publicado como fichero | — | solicitud 2 |
-| MIVAU: visados y licencias municipales por municipio (13) | apps.fomento.gob.es/BoletinOnline2 | — | 2026-10-15 | 1 (índice completo) | no existen en el boletín (visados solo por provincia; licencias no publicadas) | no publicado | — | provincia (ya en la base) |
-| Ajuntament de València: licencias urbanísticas y padrón por barrio × nacionalidad (14) | opendata.vlci.valencia.es (CKAN) | — | 2026-10-15 | 2 búsquedas | no publicados en el portal | no publicado | — | solicitudes 6 y 7; IVE por sección (v9) |
-| GVA VUT, cortes antiguos en web.archive.org (16) | web.archive.org | 2015-2024 | 2026-10-15 | 3 + 1 | túnel cerrado / «connection reset» en el proxy | red | igual | histórico GVA con altas y bajas (v9) |
-| Barcelona HUT, cortes trimestrales 2018T2-2026T3 (16) | opendata-ajuntament.barcelona.cat/…/resource/<id>/download | 33 cortes | 2026-10-15 | 2 + 1 | 302 → /challenge (reto anti-bots) | servidor | igual (la API CKAN responde; las descargas no) | registro vigente por año de expediente (v9) |
-| Metrovalencia GTFS (18) | fgv.es, metrovalencia.es | vigente | 2026-10-15 | 3 | sin conexión (000) | red | — | GTFS EMT (descargado); NAP de Transportes requiere registro |
-| Universidades: matrícula y residencias UV y UPV (18) | estadisticas.universidades.gob.es (SIIU), educacion.gob.es/educabase, datos.upv.es, uv.es | cursos 2015-2026 | 2026-10-15 | 3 + 1 | sin conexión o connect_rejected (SIIU, EDUCAbase, datos.upv.es); 404 en páginas de cifras UV/UPV | red | igual | — |
-| INE turismo con móviles, tablas completas (17) | jaxiT3 52048/53464 (csv, px, xlsx) | — | 2026-10-15 | 4 formatos | HTTP 500 (tabla demasiado grande); API: «restricciones de volumen» | servidor | resuelto por municipio (CV y capitales) | — |
+| Host | Qué se necesitaba | Estado tras la 2.ª pasada | Alternativa usada |
+|---|---|---|---|
+| web.archive.org | cortes antiguos del registro VUT de la GVA y de Barcelona (punto 2) | bloqueado (000) | ninguna: no hay otra copia histórica pública; GVA tiene el histórico con altas y bajas hasta 2025-01 (v9) |
+| datos.upv.es | matrícula UPV | bloqueado | ninguna (upv.es no publica ficheros de cifras) |
+| estadisticas.universidades.gob.es (SIIU) | matrícula y residencias por universidad | bloqueado | UV: tablas del SAP (curso 2024/25, no redistribuibles) |
+| www.fgv.es, www.metrovalencia.es | GTFS de Metrovalencia | bloqueados | ninguna (no está en el CKAN de la GVA ni en el de València) |
+| bdo.gva.es | Base de Datos Oficial de la GVA: afiliados por municipio de residencia y nacionalidad (trimestral) | bloqueado (túnel cerrado) | afiliación por municipio de la Seguridad Social (sin nacionalidad) y afiliación de extranjeros por provincia |
+| proteccion-asilo.interior.gob.es | protección internacional | bloqueado | Eurostat (nacional) |
 
-Hosts rechazados por la política de red (para ampliar el acceso si se quiere completar): estadisticas.universidades.gob.es,
-www.educacion.gob.es, datos.upv.es, proteccion-asilo.interior.gob.es, www.fgv.es, www.metrovalencia.es, web.archive.org.
+## B. Bloqueo del SERVIDOR (el organismo rechaza el acceso automatizado)
+| Fuente | Endpoint | Intentos (1.ª + 2.ª pasada) | Respuesta | Alternativa conseguida |
+|---|---|---|---|---|
+| OPI, residentes con certificado o tarjeta en vigor | inclusion.gob.es (catálogo, /documents/d/opi/…) | 3 + 3 (curl, WebFetch, Chromium sin interfaz) | 403 «Acceso denegado» por IP, también con navegador real | réplica de la Comunidad de Madrid (CC BY, provincia 28, 2013-2025 por país; desde 1995 por edad y tipo); Eurostat migr_resvalid (nacional); sustituto de stock ECP, censo y padrón (cobertura.md) |
+| Interior, protección internacional y temporal por provincia | interior.gob.es | 3 + 1 (Chromium sin interfaz) | reto de Cloudflare («Just a moment…») no superado; no se intenta eludir | Eurostat migr_asy* (nacional) |
+| Arraigo y regularizaciones | inclusion.gob.es | igual que la OPI | 403 | solicitud 5(c) |
+| Barcelona, cortes trimestrales HUT 2018T2-2026T3 | opendata-ajuntament.barcelona.cat/…/download | 2 + 1; datastore CKAN comprobado | hCaptcha (BunkerWeb). Solo el recurso vigente está en el datastore; los 33 zips trimestrales no (`datastore_active = False`) | registro vigente por año de expediente (v9); no se elude el captcha |
+| datos.gob.es (réplicas) | apidata | varias | Incapsula limita tras 1-2 peticiones; con espera responde | catálogo leído: réplicas de Madrid (incorporada) e ICANE (Cantabria, otra estadística: permisos de trabajo) |
+| INE turismo con móviles (tablas completas) | jaxiT3 52048/53464 | 4 formatos | 500; API: «restricciones de volumen» (≤ ~36 meses por municipio) | descarga por municipio y tramo de 3 años (Comunitat Valenciana y capitales) |
+
+## C. No publicado (no es un fallo de acceso)
+- **Catastro, valores de referencia por municipio.** La página de estadísticas, renderizada con Chromium, no tiene ningún fichero de valores de referencia (sí ocupación, año de construcción y titularidad). Solicitud 2.
+  - **Recuperado en esta pasada:** la estadística de TITULARIDAD por municipio, 2024-2026, en CSV. Los años 2006-2023 solo están en PC-Axis por provincia, en el servidor jaxi del Catastro (no descargados).
+- **MIVAU:** visados y licencias por municipio.
+- **Ajuntament de València:** licencias urbanísticas y padrón por barrio × nacionalidad. Solicitudes 6 y 7.
+- **UPV:** matrícula en ficheros descargables (solo noticias).
+- **INE VUT noviembre de 2026:** todavía no publicado (fecha de la tarea: 2026-10-15).
+
+## D. Incidencias de proceso
+- **Afiliación municipal de la Seguridad Social.** El fichero de 2025-05 trae el último dígito del código de municipio desplazado al nombre, y el de 2025-07 llama «COD CNAE09» a la columna. Se corrigen en el script, que ahora guarda caché por mes. La primera ejecución se perdió al fallar en 2025-07, y se relanzó.
+- **Turismo con móviles.** La primera ejecución pidió 200 periodos y fallaron las 591 peticiones (límite de volumen). Se relanzó por tramos.

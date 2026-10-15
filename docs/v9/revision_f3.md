@@ -147,3 +147,8 @@ Hecha en un clon aislado del commit e28d1e4 (scratchpad), con `data/` enlazada e
 - Las cifras V9 se regeneran desde los scripts (`make v9`).
 
 **Veredicto de la re-revisión: APROBAR**, condicionado a que la validación por Monte Carlo del IC de RR (src/v9/validar_honest_rr.py) dé una cobertura ≥ 0,90 en todas las configuraciones. Si no la da, se documenta en docs/v9/bloqueos.md y H1a/H1b se mantienen en C4.
+
+**Resultado de la validación por Monte Carlo** (output/v9/validacion/honest_rr_mc.csv): se cumple la condición del veredicto.
+- **Tamaño del contraste condicional en el θ verdadero** (M̄ = 0, 400 réplicas): cobertura 0,93, es decir, rechazo del 7,3 %, algo por encima del 5 % nominal (error de Monte Carlo ≈ 1,1 puntos).
+- **Cobertura del IC** (30 réplicas por configuración): 1,0 sin tendencia previa con M̄ = 0 y M̄ = 1, y con tendencia lineal y M̄ = 1. La anchura con M̄ = 0 coincide con la del IC convencional.
+- **Lectura.** Un ligero exceso de rechazo estrecha los IC, lo que favorecería que H1a y H1b superasen la prueba de M̄ = 1. No la superan, así que su capa C4 no depende de esta imprecisión.

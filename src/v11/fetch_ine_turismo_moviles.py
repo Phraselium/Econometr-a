@@ -3,7 +3,7 @@
 - 52048 (TMOV_R, receptor): turistas residentes en el extranjero por municipio de destino y país de residencia;
 - 53464 (TMOV_I, interno): turistas residentes en España por municipio de destino y CCAA de origen.
 Las descargas completas (jaxiT3, px, xlsx) dan error 500 y la API tempus limita el volumen («No puede mostrarse por
-restricciones de volumen»), incluso con «Total» de país. Se pide municipio a municipio (tv=19:<id>) con metadatos
+restricciones de volumen»), incluso con «Total» de país. Se pide municipio a municipio (tv=19:<id>) y por tramos de tres años (date=…) con metadatos
 (tip=AM), lo que da el código INE de cada serie. Ámbito por coste (≈1 s por petición): municipios de la Comunitat
 Valenciana (provincias 03, 12, 46) y capitales de provincia; el resto, documentado en cobertura.md.
 Filas desde 2026-07: posterior_prereg = True. Licencia INE: reutilización con cita.
@@ -26,6 +26,7 @@ DIR = RAW11 / FUENTE
 API = "https://servicios.ine.es/wstempus/js/ES/"
 LIC = "INE: reutilización con cita (Ley 37/2007); estadística experimental"
 TABLAS = {52048: ("receptor", "País de residencia"), 53464: ("interno", "Comunidad autónoma de origen")}
+TRAMOS = [(2019, 2021), (2022, 2024), (2025, 2027)]
 CAPITALES = {"01059", "02003", "03014", "04013", "05019", "06015", "07040", "08019", "09059", "10037", "11012", "12040",
              "13034", "14021", "15030", "16078", "17079", "18087", "19130", "20069", "21041", "22125", "23050", "24089",
              "25120", "26089", "27028", "28079", "29067", "30030", "31201", "32054", "33044", "34120", "35016", "36038",
@@ -56,10 +57,13 @@ def main(verificar: bool = False) -> int:
         sel = [m for m in muns if m["Codigo"][:2] in ("03", "12", "46") or m["Codigo"] in CAPITALES]
         filas, fallos = [], []
         for m in sel:
-            d = get(f"{API}DATOS_TABLA/{t}?tv={m['FK_Variable']}:{m['Id']}&nult=200&tip=AM")
-            if not isinstance(d, list):
-                fallos.append(m["Codigo"])
-                continue
+            d = []
+            for a0, a1 in TRAMOS:   # la API limita el volumen (≈36 meses por petición)
+                x = get(f"{API}DATOS_TABLA/{t}?tv={m['FK_Variable']}:{m['Id']}&date={a0}0101:{a1}1231&tip=AM")
+                if isinstance(x, list):
+                    d += x
+                else:
+                    fallos.append(f"{m['Codigo']}:{a0}")
             for s in d:
                 meta = {x.get("T3_Variable", ""): x.get("Nombre", "") for x in s.get("MetaData", [])}
                 origen = next((v for k, v in meta.items() if k not in ("Municipios", "Tipo de dato", "Concepto turístico")), "")
@@ -73,7 +77,7 @@ def main(verificar: bool = False) -> int:
         D = marcar_posterior_prereg(D.dropna(subset=["valor"]).sort_values(["cod_municipio", "origen", "mes"]), "mes")
         r = DIR / f"turismo_moviles_{nombre}_municipio.csv.gz"
         D.to_csv(r, index=False, compression=GZ_PANDAS)
-        registrar(FUENTE, r, f"{API}DATOS_TABLA/{t}?tv=19:<id>&nult=200&tip=AM", edicion=f"INE {t} ({nombre}), API tempus",
+        registrar(FUENTE, r, f"{API}DATOS_TABLA/{t}?tv=19:<id>&date=<tramo>&tip=AM", edicion=f"INE {t} ({nombre}), API tempus",
                   periodo=f"{D.mes.min()}–{D.mes.max()}", nivel_territorial="municipio de destino (Comunitat Valenciana y capitales)",
                   licencia=LIC, redistribuible=True, notas=f"origen = {dim}; municipios={D.cod_municipio.nunique()}; fallos={fallos[:20]}; "
                                                           f"posterior_prereg={int(D.posterior_prereg.sum())}")

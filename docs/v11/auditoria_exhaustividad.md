@@ -39,6 +39,7 @@ con su estado.
 | 14 | Ajuntament de València: equipamientos, vulnerabilidad por barrio, superficie por barrio, manzanas con población, VPP, precio, renta | ✔ | según conjunto | barrio, manzana, punto | CKAN, CC BY 4.0 |
 | 14 | Ajuntament: licencias urbanísticas y de cambio de uso; padrón por barrio × edad × nacionalidad | ✘ (no publicado) | — | — | solicitudes 6 y 7 |
 | 15 | Afiliación a la Seguridad Social por municipio | ✔ | 2011-12 (diciembres); mensual desde 2022-01 | municipio | resuelve el ✘ de V9; celdas «<5» contadas |
+| 15 | Afiliación de extranjeros por provincia | ✔ | 2022-01 (fotos anuales) | provincia | Seguridad Social, ficheros anuales; total 2025-12 = 3.045.174 (cuadra) |
 | 15 | Afiliación: réplicas GVA, Idescat, Eustat, Comunidad de Madrid | no necesario | — | — | la fuente primaria municipal ya está |
 | 16 | Registro VUT de la GVA con fechas | = sin edición nueva | 2010 (altas) | registro | el recurso «2025-11-12» es una re-subida del corte de 2025-01-26 |
 | 16 | GVA cortes antiguos (web.archive.org) | ✘ | — | — | red |

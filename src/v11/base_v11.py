@@ -138,6 +138,13 @@ def partes() -> list[pd.DataFrame]:
             add(pd.DataFrame({"territorio_codigo": a.cod_municipio, "nivel": "municipio", "periodo_raw": a.mes, "variable": var,
                               "desagregacion": "regimen=" + a.regimen, "valor": a[col],
                               "metodo_dato": "suma de celdas publicadas (excluye «<5»)"}), "data/raw/v11/ss_afiliacion_municipio/afiliacion_municipio_mensual.csv.gz")
+    # Seguridad Social: afiliados extranjeros por provincia (foto anual)
+    f = RAW11 / "ss_afiliacion_extranjeros/afiliados_extranjeros_provincia.csv.gz"
+    if f.exists():
+        x = pd.read_csv(f, dtype={"cod_provincia": str, "mes": str})
+        add(pd.DataFrame({"territorio_codigo": x.cod_provincia, "nivel": "provincia", "periodo_raw": x.mes,
+                          "variable": "ss_afiliados_extranjeros", "valor": x.total}),
+            "data/raw/v11/ss_afiliacion_extranjeros/afiliados_extranjeros_provincia.csv.gz")
     # INE, turismo medido con móviles: turistas por municipio de destino y mes (suma de orígenes publicados)
     for nombre in ("receptor", "interno"):
         f = RAW11 / f"ine_turismo_moviles/turismo_moviles_{nombre}_municipio.csv.gz"
@@ -194,6 +201,7 @@ META_V11 = {
     "ss_afiliados_celdas_menor5": ("celdas", "Seguridad Social, afiliados por municipio (nº de celdas «<5»)", _C, "Seguridad Social: reutilización con cita", True),
     **{f"ss_afiliados_{s}_cota_inferior": ("afiliados", f"Seguridad Social, afiliados por municipio, CNAE {s}", _C, "Seguridad Social: reutilización con cita", True)
        for s in ("construccion", "hosteleria", "inmobiliarias")},
+    "ss_afiliados_extranjeros": ("afiliados", "Seguridad Social, afiliados extranjeros por provincia (último día del periodo)", _C, "Seguridad Social: reutilización con cita", True),
     "ine_tmov_receptor_turistas": ("turistas", "INE, turismo receptor medido con teléfonos móviles (52048; experimental)", _C, INE, True),
     "ine_tmov_interno_turistas": ("turistas", "INE, turismo interno medido con teléfonos móviles (53464; experimental)", _C, INE, True),
     "c21md_hogares_muestra": ("hogares (muestra 10 %)", "INE, Censo 2021, microdatos de personas (recuento muestral)", _C, INE, True),

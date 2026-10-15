@@ -95,4 +95,4 @@ Pregunta: con qué datos se puede construir un instrumento de llegada de poblaci
 
 **Hueco:**
 - protección temporal y arraigo por provincia o municipio (Interior e Inclusión inaccesibles; solicitud 5);
-- afiliación de extranjeros por municipio. El fichero municipal no distingue nacionalidad; el de extranjeros es provincial y se puede añadir.
+- afiliación de extranjeros por municipio. El fichero municipal no distingue nacionalidad. Sí se ha añadido la afiliación de extranjeros por provincia (2022-01, 2023-12 a 2025-12 y 2026-09).

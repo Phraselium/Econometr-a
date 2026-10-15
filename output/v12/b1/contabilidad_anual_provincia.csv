@@ -1,4 +1,4 @@
-territorio,nac,poblacion_inicio,poblacion_fin,anio,fuente_poblacion,crecimiento,nacimientos,defunciones,vegetativo,inmigracion_exterior,emigracion_exterior,saldo_exterior,altas_interiores,bajas_interiores,saldo_interior,residuo,nivel
+cod_territorio,nac,poblacion_inicio,poblacion_fin,anio,fuente_poblacion,crecimiento,nacimientos,defunciones,vegetativo,inmigracion_exterior,emigracion_exterior,saldo_exterior,altas_interiores,bajas_interiores,saldo_interior,residuo,nivel
 01,ES,283915,283847,2003,padron,-68,2484,2342,142,179,54,125,6070,5977,93,-428,provincia
 01,ES,283847,284816,2004,padron,969,2538,2259,279,219,57,162,6075,6042,33,495,provincia
 01,ES,284816,285069,2005,padron,253,2468,2482,-14,200,108,92,5614,5877,-263,438,provincia

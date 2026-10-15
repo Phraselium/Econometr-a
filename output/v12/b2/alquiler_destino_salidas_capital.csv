@@ -1,0 +1,421 @@
+area,anio,nac,destinos,personas_con_dato,alquiler_capital,alquiler_destino_ponderado,ratio_destino_capital
+valencia,2011,ES,corona,7136,5.15,4.3,0.834
+valencia,2011,ES,todos con dato,13701,5.15,5.03,0.977
+valencia,2011,EXT,corona,2606,5.15,4.3,0.834
+valencia,2011,EXT,todos con dato,7068,5.15,5.51,1.068
+valencia,2011,TOTAL,corona,9742,5.15,4.3,0.834
+valencia,2011,TOTAL,todos con dato,20769,5.15,5.19,1.008
+valencia,2012,ES,corona,6553,5.0,4.18,0.836
+valencia,2012,ES,todos con dato,13036,5.0,5.0,0.999
+valencia,2012,EXT,corona,2442,5.0,4.16,0.832
+valencia,2012,EXT,todos con dato,6474,5.0,5.41,1.081
+valencia,2012,TOTAL,corona,8995,5.0,4.18,0.835
+valencia,2012,TOTAL,todos con dato,19510,5.0,5.13,1.026
+valencia,2013,ES,corona,6084,4.74,3.96,0.835
+valencia,2013,ES,todos con dato,12391,4.74,4.76,1.006
+valencia,2013,EXT,corona,2078,4.74,3.97,0.838
+valencia,2013,EXT,todos con dato,5719,4.74,5.19,1.096
+valencia,2013,TOTAL,corona,8162,4.74,3.96,0.836
+valencia,2013,TOTAL,todos con dato,18110,4.74,4.9,1.034
+valencia,2014,ES,corona,6254,4.64,3.86,0.832
+valencia,2014,ES,todos con dato,12580,4.64,4.71,1.015
+valencia,2014,EXT,corona,1870,4.64,3.88,0.837
+valencia,2014,EXT,todos con dato,5268,4.64,5.11,1.101
+valencia,2014,TOTAL,corona,8124,4.64,3.86,0.833
+valencia,2014,TOTAL,todos con dato,17848,4.64,4.83,1.041
+valencia,2015,ES,corona,6124,4.68,3.8,0.811
+valencia,2015,ES,todos con dato,12583,4.68,4.75,1.013
+valencia,2015,EXT,corona,1774,4.68,3.81,0.814
+valencia,2015,EXT,todos con dato,4846,4.68,5.1,1.089
+valencia,2015,TOTAL,corona,7898,4.68,3.8,0.811
+valencia,2015,TOTAL,todos con dato,17429,4.68,4.84,1.034
+valencia,2016,ES,corona,6521,4.81,3.92,0.816
+valencia,2016,ES,todos con dato,12685,4.81,4.74,0.986
+valencia,2016,EXT,corona,1733,4.81,3.93,0.818
+valencia,2016,EXT,todos con dato,4655,4.81,5.21,1.085
+valencia,2016,TOTAL,corona,8254,4.81,3.92,0.816
+valencia,2016,TOTAL,todos con dato,17340,4.81,4.87,1.013
+valencia,2017,ES,corona,6895,4.96,4.01,0.809
+valencia,2017,ES,todos con dato,13000,4.96,4.9,0.989
+valencia,2017,EXT,corona,2007,4.96,4.0,0.806
+valencia,2017,EXT,todos con dato,4931,4.96,5.29,1.067
+valencia,2017,TOTAL,corona,8902,4.96,4.01,0.809
+valencia,2017,TOTAL,todos con dato,17931,4.96,5.01,1.011
+valencia,2018,ES,corona,7637,5.25,4.17,0.794
+valencia,2018,ES,todos con dato,13952,5.25,4.99,0.95
+valencia,2018,EXT,corona,2404,5.25,4.16,0.793
+valencia,2018,EXT,todos con dato,5486,5.25,5.37,1.023
+valencia,2018,TOTAL,corona,10041,5.25,4.17,0.794
+valencia,2018,TOTAL,todos con dato,19438,5.25,5.1,0.971
+valencia,2019,ES,corona,7279,5.85,4.57,0.781
+valencia,2019,ES,todos con dato,13465,5.85,5.47,0.934
+valencia,2019,EXT,corona,2806,5.85,4.58,0.783
+valencia,2019,EXT,todos con dato,6272,5.85,5.84,0.998
+valencia,2019,TOTAL,corona,10085,5.85,4.57,0.781
+valencia,2019,TOTAL,todos con dato,19737,5.85,5.59,0.954
+valencia,2020,ES,corona,6672,6.14,4.79,0.78
+valencia,2020,ES,todos con dato,11911,6.14,5.41,0.882
+valencia,2020,EXT,corona,2699,6.14,4.82,0.785
+valencia,2020,EXT,todos con dato,5622,6.14,5.78,0.942
+valencia,2020,TOTAL,corona,9371,6.14,4.8,0.781
+valencia,2020,TOTAL,todos con dato,17533,6.14,5.53,0.901
+valencia,2021,ES,corona,7755,6.5,5.05,0.777
+valencia,2021,ES,todos con dato,13655,6.5,5.69,0.876
+valencia,2021,EXT,corona,3026,6.5,5.08,0.781
+valencia,2021,EXT,todos con dato,6262,6.5,6.13,0.943
+valencia,2021,TOTAL,corona,10781,6.5,5.06,0.778
+valencia,2021,TOTAL,todos con dato,19917,6.5,5.83,0.897
+valencia,2022,ES,corona,7487,6.97,5.35,0.767
+valencia,2022,ES,todos con dato,13466,6.97,6.06,0.87
+valencia,2022,EXT,corona,3329,6.97,5.36,0.77
+valencia,2022,EXT,todos con dato,7072,6.97,6.4,0.918
+valencia,2022,TOTAL,corona,10816,6.97,5.35,0.768
+valencia,2022,TOTAL,todos con dato,20538,6.97,6.18,0.886
+valencia,2023,ES,corona,7341,7.52,5.73,0.763
+valencia,2023,ES,todos con dato,13742,7.52,6.32,0.841
+valencia,2023,EXT,corona,4233,7.52,5.72,0.762
+valencia,2023,EXT,todos con dato,8943,7.52,6.68,0.889
+valencia,2023,TOTAL,corona,11574,7.52,5.73,0.762
+valencia,2023,TOTAL,todos con dato,22685,7.52,6.47,0.86
+valencia,2024,ES,corona,7692,8.18,6.19,0.756
+valencia,2024,ES,todos con dato,14544,8.18,6.8,0.831
+valencia,2024,EXT,corona,4866,8.18,6.2,0.758
+valencia,2024,EXT,todos con dato,10232,8.18,7.1,0.868
+valencia,2024,TOTAL,corona,12558,8.18,6.19,0.757
+valencia,2024,TOTAL,todos con dato,24776,8.18,6.93,0.846
+madrid,2011,ES,corona,20223,10.84,8.54,0.788
+madrid,2011,ES,todos con dato,50007,10.84,7.06,0.652
+madrid,2011,EXT,corona,10173,10.84,8.42,0.777
+madrid,2011,EXT,todos con dato,25859,10.84,7.02,0.647
+madrid,2011,TOTAL,corona,30396,10.84,8.5,0.784
+madrid,2011,TOTAL,todos con dato,75866,10.84,7.05,0.65
+madrid,2012,ES,corona,20652,10.58,8.31,0.786
+madrid,2012,ES,todos con dato,50080,10.58,6.84,0.647
+madrid,2012,EXT,corona,9471,10.58,8.19,0.774
+madrid,2012,EXT,todos con dato,22726,10.58,6.88,0.651
+madrid,2012,TOTAL,corona,30123,10.58,8.27,0.782
+madrid,2012,TOTAL,todos con dato,72806,10.58,6.86,0.648
+madrid,2013,ES,corona,20132,10.0,7.84,0.784
+madrid,2013,ES,todos con dato,48466,10.0,6.5,0.65
+madrid,2013,EXT,corona,7644,10.0,7.74,0.774
+madrid,2013,EXT,todos con dato,18555,10.0,6.56,0.656
+madrid,2013,TOTAL,corona,27776,10.0,7.82,0.782
+madrid,2013,TOTAL,todos con dato,67021,10.0,6.52,0.652
+madrid,2014,ES,corona,20028,9.8,7.74,0.789
+madrid,2014,ES,todos con dato,48160,9.8,6.39,0.652
+madrid,2014,EXT,corona,6659,9.8,7.58,0.773
+madrid,2014,EXT,todos con dato,16056,9.8,6.45,0.658
+madrid,2014,TOTAL,corona,26687,9.8,7.7,0.785
+madrid,2014,TOTAL,todos con dato,64216,9.8,6.41,0.654
+madrid,2015,ES,corona,20491,9.85,7.73,0.784
+madrid,2015,ES,todos con dato,49021,9.85,6.38,0.648
+madrid,2015,EXT,corona,6128,9.85,7.51,0.762
+madrid,2015,EXT,todos con dato,15323,9.85,6.41,0.65
+madrid,2015,TOTAL,corona,26619,9.85,7.68,0.779
+madrid,2015,TOTAL,todos con dato,64344,9.85,6.39,0.649
+madrid,2016,ES,corona,19773,10.03,7.89,0.787
+madrid,2016,ES,todos con dato,47794,10.03,6.51,0.649
+madrid,2016,EXT,corona,6128,10.03,7.67,0.764
+madrid,2016,EXT,todos con dato,15719,10.03,6.51,0.649
+madrid,2016,TOTAL,corona,25901,10.03,7.84,0.781
+madrid,2016,TOTAL,todos con dato,63513,10.03,6.51,0.649
+madrid,2017,ES,corona,20820,10.36,8.03,0.775
+madrid,2017,ES,todos con dato,50453,10.36,6.64,0.641
+madrid,2017,EXT,corona,6228,10.36,7.81,0.754
+madrid,2017,EXT,todos con dato,16429,10.36,6.61,0.638
+madrid,2017,TOTAL,corona,27048,10.36,7.98,0.77
+madrid,2017,TOTAL,todos con dato,66882,10.36,6.63,0.64
+madrid,2018,ES,corona,20814,10.83,8.33,0.769
+madrid,2018,ES,todos con dato,53773,10.83,6.81,0.629
+madrid,2018,EXT,corona,7238,10.83,8.15,0.753
+madrid,2018,EXT,todos con dato,19761,10.83,6.82,0.63
+madrid,2018,TOTAL,corona,28052,10.83,8.28,0.765
+madrid,2018,TOTAL,todos con dato,73534,10.83,6.81,0.629
+madrid,2019,ES,corona,22167,11.86,8.98,0.757
+madrid,2019,ES,todos con dato,55668,11.86,7.38,0.622
+madrid,2019,EXT,corona,8624,11.86,8.7,0.733
+madrid,2019,EXT,todos con dato,23463,11.86,7.34,0.619
+madrid,2019,TOTAL,corona,30791,11.86,8.9,0.75
+madrid,2019,TOTAL,todos con dato,79131,11.86,7.37,0.621
+madrid,2020,ES,corona,20858,12.12,9.27,0.764
+madrid,2020,ES,todos con dato,56669,12.12,7.45,0.615
+madrid,2020,EXT,corona,8228,12.12,9.01,0.744
+madrid,2020,EXT,todos con dato,23876,12.12,7.41,0.612
+madrid,2020,TOTAL,corona,29086,12.12,9.19,0.758
+madrid,2020,TOTAL,todos con dato,80545,12.12,7.44,0.614
+madrid,2021,ES,corona,25525,12.31,9.61,0.78
+madrid,2021,ES,todos con dato,62262,12.31,7.88,0.64
+madrid,2021,EXT,corona,9178,12.31,9.31,0.757
+madrid,2021,EXT,todos con dato,24461,12.31,7.85,0.638
+madrid,2021,TOTAL,corona,34703,12.31,9.53,0.774
+madrid,2021,TOTAL,todos con dato,86723,12.31,7.87,0.639
+madrid,2022,ES,corona,21885,12.77,9.89,0.774
+madrid,2022,ES,todos con dato,55776,12.77,8.18,0.641
+madrid,2022,EXT,corona,9106,12.77,9.57,0.749
+madrid,2022,EXT,todos con dato,26910,12.77,8.03,0.629
+madrid,2022,TOTAL,corona,30991,12.77,9.79,0.767
+madrid,2022,TOTAL,todos con dato,82686,12.77,8.13,0.637
+madrid,2023,ES,corona,19448,13.3,10.23,0.769
+madrid,2023,ES,todos con dato,53165,13.3,8.41,0.632
+madrid,2023,EXT,corona,10747,13.3,9.87,0.742
+madrid,2023,EXT,todos con dato,32330,13.3,8.32,0.625
+madrid,2023,TOTAL,corona,30195,13.3,10.1,0.759
+madrid,2023,TOTAL,todos con dato,85495,13.3,8.37,0.629
+madrid,2024,ES,corona,20722,13.97,10.71,0.767
+madrid,2024,ES,todos con dato,56508,13.97,8.88,0.636
+madrid,2024,EXT,corona,12714,13.97,10.33,0.74
+madrid,2024,EXT,todos con dato,37447,13.97,8.75,0.626
+madrid,2024,TOTAL,corona,33436,13.97,10.57,0.756
+madrid,2024,TOTAL,todos con dato,93955,13.97,8.83,0.632
+barcelona,2011,ES,corona,13352,10.14,8.41,0.829
+barcelona,2011,ES,todos con dato,26488,10.14,7.38,0.727
+barcelona,2011,EXT,corona,11342,10.14,8.75,0.862
+barcelona,2011,EXT,todos con dato,18439,10.14,7.87,0.775
+barcelona,2011,TOTAL,corona,24694,10.14,8.56,0.844
+barcelona,2011,TOTAL,todos con dato,44927,10.14,7.58,0.747
+barcelona,2012,ES,corona,14021,9.89,8.08,0.817
+barcelona,2012,ES,todos con dato,27652,9.89,7.12,0.721
+barcelona,2012,EXT,corona,10584,9.89,8.34,0.844
+barcelona,2012,EXT,todos con dato,16967,9.89,7.57,0.765
+barcelona,2012,TOTAL,corona,24605,9.89,8.19,0.829
+barcelona,2012,TOTAL,todos con dato,44619,9.89,7.29,0.738
+barcelona,2013,ES,corona,14051,9.47,7.7,0.814
+barcelona,2013,ES,todos con dato,26374,9.47,6.89,0.727
+barcelona,2013,EXT,corona,9480,9.47,7.93,0.838
+barcelona,2013,EXT,todos con dato,15263,9.47,7.22,0.763
+barcelona,2013,TOTAL,corona,23531,9.47,7.8,0.824
+barcelona,2013,TOTAL,todos con dato,41637,9.47,7.01,0.741
+barcelona,2014,ES,corona,14176,9.33,7.56,0.81
+barcelona,2014,ES,todos con dato,26382,9.33,6.75,0.724
+barcelona,2014,EXT,corona,8722,9.33,7.74,0.83
+barcelona,2014,EXT,todos con dato,13828,9.33,7.13,0.764
+barcelona,2014,TOTAL,corona,22898,9.33,7.63,0.818
+barcelona,2014,TOTAL,todos con dato,40210,9.33,6.88,0.738
+barcelona,2015,ES,corona,14468,9.42,7.62,0.809
+barcelona,2015,ES,todos con dato,26832,9.42,6.84,0.726
+barcelona,2015,EXT,corona,9396,9.42,7.73,0.821
+barcelona,2015,EXT,todos con dato,14662,9.42,7.14,0.758
+barcelona,2015,TOTAL,corona,23864,9.42,7.66,0.813
+barcelona,2015,TOTAL,todos con dato,41494,9.42,6.95,0.738
+barcelona,2016,ES,corona,13739,9.68,7.71,0.796
+barcelona,2016,ES,todos con dato,26090,9.68,6.91,0.714
+barcelona,2016,EXT,corona,7749,9.68,7.92,0.818
+barcelona,2016,EXT,todos con dato,12645,9.68,7.25,0.749
+barcelona,2016,TOTAL,corona,21488,9.68,7.78,0.804
+barcelona,2016,TOTAL,todos con dato,38735,9.68,7.02,0.726
+barcelona,2017,ES,corona,14734,10.12,7.98,0.789
+barcelona,2017,ES,todos con dato,27963,10.12,7.13,0.705
+barcelona,2017,EXT,corona,8227,10.12,8.18,0.808
+barcelona,2017,EXT,todos con dato,13693,10.12,7.47,0.738
+barcelona,2017,TOTAL,corona,22961,10.12,8.05,0.796
+barcelona,2017,TOTAL,todos con dato,41656,10.12,7.24,0.716
+barcelona,2018,ES,corona,15826,10.78,8.43,0.782
+barcelona,2018,ES,todos con dato,30486,10.78,7.49,0.695
+barcelona,2018,EXT,corona,9836,10.78,8.59,0.797
+barcelona,2018,EXT,todos con dato,16461,10.78,7.81,0.724
+barcelona,2018,TOTAL,corona,25662,10.78,8.49,0.788
+barcelona,2018,TOTAL,todos con dato,46947,10.78,7.6,0.705
+barcelona,2019,ES,corona,15729,11.76,9.21,0.783
+barcelona,2019,ES,todos con dato,30270,11.76,8.16,0.694
+barcelona,2019,EXT,corona,11315,11.76,9.33,0.793
+barcelona,2019,EXT,todos con dato,19310,11.76,8.45,0.719
+barcelona,2019,TOTAL,corona,27044,11.76,9.26,0.787
+barcelona,2019,TOTAL,todos con dato,49580,11.76,8.28,0.704
+barcelona,2020,ES,corona,14162,12.0,9.51,0.793
+barcelona,2020,ES,todos con dato,29385,12.0,8.24,0.687
+barcelona,2020,EXT,corona,9966,12.0,9.61,0.801
+barcelona,2020,EXT,todos con dato,17955,12.0,8.54,0.712
+barcelona,2020,TOTAL,corona,24128,12.0,9.55,0.796
+barcelona,2020,TOTAL,todos con dato,47340,12.0,8.35,0.696
+barcelona,2021,ES,corona,15972,12.12,9.79,0.808
+barcelona,2021,ES,todos con dato,31859,12.12,8.56,0.707
+barcelona,2021,EXT,corona,11726,12.12,10.02,0.827
+barcelona,2021,EXT,todos con dato,20204,12.12,9.03,0.745
+barcelona,2021,TOTAL,corona,27698,12.12,9.89,0.816
+barcelona,2021,TOTAL,todos con dato,52063,12.12,8.75,0.722
+barcelona,2022,ES,corona,14739,12.57,10.09,0.802
+barcelona,2022,ES,todos con dato,29134,12.57,8.95,0.712
+barcelona,2022,EXT,corona,11354,12.57,10.31,0.82
+barcelona,2022,EXT,todos con dato,19988,12.57,9.34,0.743
+barcelona,2022,TOTAL,corona,26093,12.57,10.18,0.81
+barcelona,2022,TOTAL,todos con dato,49122,12.57,9.11,0.725
+barcelona,2023,ES,corona,14914,13.14,10.46,0.796
+barcelona,2023,ES,todos con dato,28937,13.14,9.32,0.709
+barcelona,2023,EXT,corona,13467,13.14,10.65,0.811
+barcelona,2023,EXT,todos con dato,23683,13.14,9.63,0.733
+barcelona,2023,TOTAL,corona,28381,13.14,10.55,0.803
+barcelona,2023,TOTAL,todos con dato,52620,13.14,9.46,0.72
+barcelona,2024,ES,corona,15807,13.68,10.83,0.792
+barcelona,2024,ES,todos con dato,30646,13.68,9.72,0.711
+barcelona,2024,EXT,corona,14568,13.68,11.11,0.812
+barcelona,2024,EXT,todos con dato,25959,13.68,10.11,0.739
+barcelona,2024,TOTAL,corona,30375,13.68,10.97,0.802
+barcelona,2024,TOTAL,todos con dato,56605,13.68,9.9,0.724
+alicante,2011,ES,corona,2416,4.84,4.61,0.953
+alicante,2011,ES,todos con dato,6500,4.84,5.4,1.115
+alicante,2011,EXT,corona,563,4.84,4.51,0.932
+alicante,2011,EXT,todos con dato,2465,4.84,5.71,1.181
+alicante,2011,TOTAL,corona,2979,4.84,4.59,0.949
+alicante,2011,TOTAL,todos con dato,8965,4.84,5.48,1.133
+alicante,2012,ES,corona,2430,4.62,4.45,0.963
+alicante,2012,ES,todos con dato,6500,4.62,5.24,1.136
+alicante,2012,EXT,corona,626,4.62,4.36,0.944
+alicante,2012,EXT,todos con dato,2504,4.62,5.43,1.177
+alicante,2012,TOTAL,corona,3056,4.62,4.43,0.959
+alicante,2012,TOTAL,todos con dato,9004,4.62,5.29,1.147
+alicante,2013,ES,corona,2215,4.44,4.22,0.95
+alicante,2013,ES,todos con dato,6303,4.44,5.01,1.128
+alicante,2013,EXT,corona,516,4.44,4.19,0.943
+alicante,2013,EXT,todos con dato,2232,4.44,5.26,1.184
+alicante,2013,TOTAL,corona,2731,4.44,4.22,0.949
+alicante,2013,TOTAL,todos con dato,8535,4.44,5.08,1.143
+alicante,2014,ES,corona,2285,4.44,4.17,0.939
+alicante,2014,ES,todos con dato,6376,4.44,5.02,1.129
+alicante,2014,EXT,corona,527,4.44,4.15,0.935
+alicante,2014,EXT,todos con dato,2141,4.44,5.2,1.17
+alicante,2014,TOTAL,corona,2812,4.44,4.17,0.938
+alicante,2014,TOTAL,todos con dato,8517,4.44,5.06,1.139
+alicante,2015,ES,corona,2479,4.46,4.14,0.928
+alicante,2015,ES,todos con dato,6440,4.46,4.96,1.112
+alicante,2015,EXT,corona,474,4.46,4.19,0.938
+alicante,2015,EXT,todos con dato,2070,4.46,5.32,1.193
+alicante,2015,TOTAL,corona,2953,4.46,4.15,0.93
+alicante,2015,TOTAL,todos con dato,8510,4.46,5.05,1.131
+alicante,2016,ES,corona,2399,4.65,4.28,0.921
+alicante,2016,ES,todos con dato,6232,4.65,5.04,1.085
+alicante,2016,EXT,corona,439,4.65,4.23,0.909
+alicante,2016,EXT,todos con dato,1928,4.65,5.34,1.148
+alicante,2016,TOTAL,corona,2838,4.65,4.28,0.919
+alicante,2016,TOTAL,todos con dato,8160,4.65,5.11,1.1
+alicante,2017,ES,corona,2473,4.77,4.44,0.932
+alicante,2017,ES,todos con dato,6168,4.77,5.26,1.103
+alicante,2017,EXT,corona,556,4.77,4.37,0.916
+alicante,2017,EXT,todos con dato,2045,4.77,5.33,1.118
+alicante,2017,TOTAL,corona,3029,4.77,4.43,0.929
+alicante,2017,TOTAL,todos con dato,8213,4.77,5.28,1.106
+alicante,2018,ES,corona,2726,4.92,4.57,0.929
+alicante,2018,ES,todos con dato,6516,4.92,5.36,1.089
+alicante,2018,EXT,corona,598,4.92,4.56,0.927
+alicante,2018,EXT,todos con dato,2323,4.92,5.69,1.155
+alicante,2018,TOTAL,corona,3324,4.92,4.57,0.928
+alicante,2018,TOTAL,todos con dato,8839,4.92,5.45,1.107
+alicante,2019,ES,corona,2565,5.41,4.98,0.92
+alicante,2019,ES,todos con dato,6277,5.41,5.74,1.061
+alicante,2019,EXT,corona,685,5.41,4.93,0.91
+alicante,2019,EXT,todos con dato,2486,5.41,6.03,1.113
+alicante,2019,TOTAL,corona,3250,5.41,4.97,0.918
+alicante,2019,TOTAL,todos con dato,8763,5.41,5.82,1.076
+alicante,2020,ES,corona,2117,5.63,5.13,0.911
+alicante,2020,ES,todos con dato,5088,5.63,5.73,1.017
+alicante,2020,EXT,corona,564,5.63,5.19,0.922
+alicante,2020,EXT,todos con dato,2186,5.63,5.96,1.059
+alicante,2020,TOTAL,corona,2681,5.63,5.15,0.914
+alicante,2020,TOTAL,todos con dato,7274,5.63,5.8,1.029
+alicante,2021,ES,corona,2904,5.84,5.42,0.927
+alicante,2021,ES,todos con dato,6425,5.84,5.99,1.025
+alicante,2021,EXT,corona,683,5.84,5.44,0.931
+alicante,2021,EXT,todos con dato,2672,5.84,6.27,1.073
+alicante,2021,TOTAL,corona,3587,5.84,5.42,0.928
+alicante,2021,TOTAL,todos con dato,9097,5.84,6.07,1.039
+alicante,2022,ES,corona,2788,6.17,5.68,0.919
+alicante,2022,ES,todos con dato,6435,6.17,6.43,1.042
+alicante,2022,EXT,corona,798,6.17,5.67,0.918
+alicante,2022,EXT,todos con dato,3023,6.17,6.65,1.077
+alicante,2022,TOTAL,corona,3586,6.17,5.67,0.919
+alicante,2022,TOTAL,todos con dato,9458,6.17,6.5,1.053
+alicante,2023,ES,corona,2656,6.56,6.06,0.924
+alicante,2023,ES,todos con dato,6455,6.56,6.72,1.025
+alicante,2023,EXT,corona,929,6.56,5.95,0.907
+alicante,2023,EXT,todos con dato,3413,6.56,6.98,1.065
+alicante,2023,TOTAL,corona,3585,6.56,6.03,0.919
+alicante,2023,TOTAL,todos con dato,9868,6.56,6.81,1.039
+alicante,2024,ES,corona,3059,7.11,6.54,0.921
+alicante,2024,ES,todos con dato,6761,7.11,7.08,0.996
+alicante,2024,EXT,corona,1145,7.11,6.59,0.928
+alicante,2024,EXT,todos con dato,4025,7.11,7.42,1.044
+alicante,2024,TOTAL,corona,4204,7.11,6.56,0.923
+alicante,2024,TOTAL,todos con dato,10786,7.11,7.2,1.014
+castellon,2011,ES,corona,1000,3.92,4.04,1.031
+castellon,2011,ES,todos con dato,2434,3.92,5.06,1.291
+castellon,2011,EXT,corona,428,3.92,3.71,0.946
+castellon,2011,EXT,todos con dato,1507,3.92,5.35,1.365
+castellon,2011,TOTAL,corona,1428,3.92,3.94,1.005
+castellon,2011,TOTAL,todos con dato,3941,3.92,5.17,1.319
+castellon,2012,ES,corona,992,3.74,4.0,1.068
+castellon,2012,ES,todos con dato,2304,3.74,5.03,1.345
+castellon,2012,EXT,corona,364,3.74,3.56,0.952
+castellon,2012,EXT,todos con dato,1163,3.74,5.14,1.373
+castellon,2012,TOTAL,corona,1356,3.74,3.88,1.037
+castellon,2012,TOTAL,todos con dato,3467,3.74,5.07,1.354
+castellon,2013,ES,corona,949,3.55,3.74,1.054
+castellon,2013,ES,todos con dato,2177,3.55,4.74,1.336
+castellon,2013,EXT,corona,364,3.55,3.37,0.949
+castellon,2013,EXT,todos con dato,1062,3.55,4.82,1.357
+castellon,2013,TOTAL,corona,1313,3.55,3.64,1.025
+castellon,2013,TOTAL,todos con dato,3239,3.55,4.77,1.343
+castellon,2014,ES,corona,966,3.44,3.55,1.031
+castellon,2014,ES,todos con dato,2339,3.44,4.66,1.355
+castellon,2014,EXT,corona,293,3.44,3.31,0.962
+castellon,2014,EXT,todos con dato,915,3.44,4.82,1.401
+castellon,2014,TOTAL,corona,1259,3.44,3.49,1.015
+castellon,2014,TOTAL,todos con dato,3254,3.44,4.71,1.368
+castellon,2015,ES,corona,967,3.42,3.49,1.023
+castellon,2015,ES,todos con dato,2323,3.42,4.6,1.348
+castellon,2015,EXT,corona,269,3.42,3.15,0.923
+castellon,2015,EXT,todos con dato,911,3.42,4.74,1.387
+castellon,2015,TOTAL,corona,1236,3.42,3.42,1.001
+castellon,2015,TOTAL,todos con dato,3234,3.42,4.64,1.359
+castellon,2016,ES,corona,1047,3.48,3.73,1.073
+castellon,2016,ES,todos con dato,2329,3.48,4.83,1.389
+castellon,2016,EXT,corona,259,3.48,3.34,0.96
+castellon,2016,EXT,todos con dato,880,3.48,4.74,1.364
+castellon,2016,TOTAL,corona,1306,3.48,3.65,1.05
+castellon,2016,TOTAL,todos con dato,3209,3.48,4.81,1.382
+castellon,2017,ES,corona,989,3.59,3.83,1.068
+castellon,2017,ES,todos con dato,2282,3.59,4.93,1.372
+castellon,2017,EXT,corona,282,3.59,3.37,0.938
+castellon,2017,EXT,todos con dato,794,3.59,4.82,1.343
+castellon,2017,TOTAL,corona,1271,3.59,3.73,1.039
+castellon,2017,TOTAL,todos con dato,3076,3.59,4.9,1.364
+castellon,2018,ES,corona,1217,3.73,3.95,1.059
+castellon,2018,ES,todos con dato,2458,3.73,4.96,1.329
+castellon,2018,EXT,corona,387,3.73,3.54,0.949
+castellon,2018,EXT,todos con dato,973,3.73,5.03,1.349
+castellon,2018,TOTAL,corona,1604,3.73,3.85,1.033
+castellon,2018,TOTAL,todos con dato,3431,3.73,4.98,1.334
+castellon,2019,ES,corona,1250,4.07,4.28,1.051
+castellon,2019,ES,todos con dato,2590,4.07,5.4,1.326
+castellon,2019,EXT,corona,449,4.07,3.77,0.925
+castellon,2019,EXT,todos con dato,1001,4.07,5.18,1.272
+castellon,2019,TOTAL,corona,1699,4.07,4.14,1.018
+castellon,2019,TOTAL,todos con dato,3591,4.07,5.34,1.311
+castellon,2020,ES,corona,1351,4.26,4.63,1.087
+castellon,2020,ES,todos con dato,2354,4.26,5.39,1.266
+castellon,2020,EXT,corona,397,4.26,4.05,0.951
+castellon,2020,EXT,todos con dato,979,4.26,5.66,1.331
+castellon,2020,TOTAL,corona,1748,4.26,4.49,1.056
+castellon,2020,TOTAL,todos con dato,3333,4.26,5.47,1.285
+castellon,2021,ES,corona,1389,4.47,4.82,1.077
+castellon,2021,ES,todos con dato,2510,4.47,5.61,1.256
+castellon,2021,EXT,corona,469,4.47,4.06,0.908
+castellon,2021,EXT,todos con dato,1108,4.47,5.68,1.271
+castellon,2021,TOTAL,corona,1858,4.47,4.62,1.034
+castellon,2021,TOTAL,todos con dato,3618,4.47,5.64,1.261
+castellon,2022,ES,corona,1179,4.74,4.97,1.048
+castellon,2022,ES,todos con dato,2527,4.74,6.19,1.306
+castellon,2022,EXT,corona,449,4.74,4.29,0.904
+castellon,2022,EXT,todos con dato,1215,4.74,6.15,1.297
+castellon,2022,TOTAL,corona,1628,4.74,4.78,1.008
+castellon,2022,TOTAL,todos con dato,3742,4.74,6.18,1.303
+castellon,2023,ES,corona,1327,5.07,5.36,1.057
+castellon,2023,ES,todos con dato,2722,5.07,6.41,1.264
+castellon,2023,EXT,corona,546,5.07,4.65,0.917
+castellon,2023,EXT,todos con dato,1551,5.07,6.64,1.309
+castellon,2023,TOTAL,corona,1873,5.07,5.15,1.016
+castellon,2023,TOTAL,todos con dato,4273,5.07,6.49,1.28
+castellon,2024,ES,corona,1205,5.43,5.65,1.04
+castellon,2024,ES,todos con dato,2659,5.43,6.99,1.286
+castellon,2024,EXT,corona,706,5.43,4.94,0.909
+castellon,2024,EXT,todos con dato,1894,5.43,6.97,1.282
+castellon,2024,TOTAL,corona,1911,5.43,5.39,0.992
+castellon,2024,TOTAL,todos con dato,4553,5.43,6.98,1.284

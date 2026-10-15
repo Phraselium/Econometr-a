@@ -107,17 +107,17 @@ def agregar(f: pd.DataFrame, P: pd.DataFrame, nivel: str, prov_ccaa: dict) -> pd
     f = f.copy()
     if nivel == "municipio":
         f = f[~f.cod_municipio.str[2:].isin(["999"])]
-    f["territorio"] = clave(f.cod_municipio)
-    fl = f.groupby(["territorio", "anio", "nac"], as_index=False)[num].sum()
-    flt = fl.groupby(["territorio", "anio"], as_index=False)[num].sum().assign(nac="TOTAL")
+    f["cod_territorio"] = clave(f.cod_municipio)
+    fl = f.groupby(["cod_territorio", "anio", "nac"], as_index=False)[num].sum()
+    flt = fl.groupby(["cod_territorio", "anio"], as_index=False)[num].sum().assign(nac="TOTAL")
     fl = pd.concat([fl[fl.nac.isin(["ES", "EXT"])], flt], ignore_index=True)
     P = P.copy()
-    P["territorio"] = clave(P.cod_municipio)
-    pp = P.groupby(["territorio", "anio", "nac", "fuente_poblacion"], as_index=False).poblacion.sum()
+    P["cod_territorio"] = clave(P.cod_municipio)
+    pp = P.groupby(["cod_territorio", "anio", "nac", "fuente_poblacion"], as_index=False).poblacion.sum()
     # ΔP con la misma fuente en t y t+1: padrón para t ≤ 2021, censo anual para t ≥ 2022
     filas = []
     for fuente, rango in (("padron", range(2003, 2022)), ("censo_anual", range(2022, 2025))):
-        q = pp[pp.fuente_poblacion == fuente].set_index(["territorio", "nac", "anio"]).poblacion
+        q = pp[pp.fuente_poblacion == fuente].set_index(["cod_territorio", "nac", "anio"]).poblacion
         for t in rango:
             if (t + 1) not in q.index.get_level_values("anio") or t not in q.index.get_level_values("anio"):
                 continue
@@ -127,7 +127,7 @@ def agregar(f: pd.DataFrame, P: pd.DataFrame, nivel: str, prov_ccaa: dict) -> pd
             filas.append(d)
     dp = pd.concat(filas, ignore_index=True)
     dp["crecimiento"] = dp.poblacion_fin - dp.poblacion_inicio
-    out = dp.merge(fl, how="left", on=["territorio", "anio", "nac"])
+    out = dp.merge(fl, how="left", on=["cod_territorio", "anio", "nac"])
     out[num] = out[num].fillna(0)
     out["residuo"] = out.crecimiento - out.vegetativo - out.saldo_exterior - out.saldo_interior
     out["nivel"] = nivel
@@ -138,11 +138,11 @@ def periodos(a: pd.DataFrame) -> pd.DataFrame:
     filas = []
     for nombre, (i, j) in PERIODOS.items():
         x = a[a.anio.between(i, j)]
-        g = x.groupby(["nivel", "territorio", "nac"])
+        g = x.groupby(["nivel", "cod_territorio", "nac"])
         r = g[["crecimiento", "vegetativo", "saldo_exterior", "saldo_interior", "residuo", "inmigracion_exterior",
                "emigracion_exterior", "altas_interiores", "bajas_interiores"]].sum()
         r["anios"] = g.anio.nunique()
-        r["poblacion_inicio"] = x[x.anio == i].set_index(["nivel", "territorio", "nac"]).poblacion_inicio
+        r["poblacion_inicio"] = x[x.anio == i].set_index(["nivel", "cod_territorio", "nac"]).poblacion_inicio
         r = r.reset_index()
         r["periodo"] = nombre
         r = r[r.anios == (j - i + 1)]
@@ -244,12 +244,12 @@ def main() -> int:
     anual = pd.concat([agregar(f, P, n, pc) for n in ("municipio", "provincia", "ccaa", "nacional")], ignore_index=True)
     for n, g in anual.groupby("nivel"):
         gz = n == "municipio"   # el municipal pesa ~35 MB sin comprimir
-        g.sort_values(["territorio", "nac", "anio"]).to_csv(OUT / f"contabilidad_anual_{n}.csv{'.gz' if gz else ''}", index=False,
+        g.sort_values(["cod_territorio", "nac", "anio"]).to_csv(OUT / f"contabilidad_anual_{n}.csv{'.gz' if gz else ''}", index=False,
                                                             float_format="%.6g", compression=GZ_PANDAS if gz else None)
     per = periodos(anual)
     for n, g in per.groupby("nivel"):
         gz = n == "municipio"
-        g.sort_values(["territorio", "nac", "periodo"]).to_csv(OUT / f"contabilidad_periodos_{n}.csv{'.gz' if gz else ''}", index=False,
+        g.sort_values(["cod_territorio", "nac", "periodo"]).to_csv(OUT / f"contabilidad_periodos_{n}.csv{'.gz' if gz else ''}", index=False,
                                                                float_format="%.6g", compression=GZ_PANDAS if gz else None)
     # empalme 2021 (EVR frente a EMCR, nacional) y población padrón frente a censo anual (2021 y 2022)
     emp = []

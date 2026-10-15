@@ -1,0 +1,100 @@
+{
+ "rama": "V12-B2",
+ "pregunta": "¿A dónde va y quién se desplaza?",
+ "capa": "C4",
+ "metodo": "flujos OD y asociación de rangos (descriptivo)",
+ "datos": "EVR 2002-2020 y EMCR 2021-2024 (microdatos OD, INE); SERPAVI; MIVAU valor tasado",
+ "N": 2482980,
+ "saldo_capital_con_corona_por_periodo": {
+  "alicante|2003-2007": -8820,
+  "alicante|2008-2013": -5621,
+  "alicante|2014-2019": -3162,
+  "alicante|2020-2021": -1304,
+  "alicante|2022-2024": -3590,
+  "barcelona|2003-2007": -62406,
+  "barcelona|2008-2013": -24926,
+  "barcelona|2014-2019": -32147,
+  "barcelona|2020-2021": -13722,
+  "barcelona|2022-2024": -22541,
+  "castellon|2003-2007": -5719,
+  "castellon|2008-2013": -994,
+  "castellon|2014-2019": -228,
+  "castellon|2020-2021": -1250,
+  "castellon|2022-2024": -650,
+  "madrid|2003-2007": -72607,
+  "madrid|2008-2013": -45567,
+  "madrid|2014-2019": -32498,
+  "madrid|2020-2021": -23572,
+  "madrid|2022-2024": -29196,
+  "valencia|2003-2007": -32180,
+  "valencia|2008-2013": -13087,
+  "valencia|2014-2019": -9134,
+  "valencia|2020-2021": -8073,
+  "valencia|2022-2024": -12225
+ },
+ "saldo_capital_con_corona_2022_2024_por_edad": {
+  "alicante": {
+   "0-15": -760,
+   "16-34": -708,
+   "35-64": -1445,
+   "65+": -677
+  },
+  "barcelona": {
+   "0-15": -4216,
+   "16-34": -5343,
+   "35-64": -10710,
+   "65+": -2272
+  },
+  "castellon": {
+   "0-15": -55,
+   "16-34": -143,
+   "35-64": -303,
+   "65+": -149
+  },
+  "madrid": {
+   "0-15": -8539,
+   "16-34": -4178,
+   "35-64": -12400,
+   "65+": -4079
+  },
+  "valencia": {
+   "0-15": -2476,
+   "16-34": -2887,
+   "35-64": -4516,
+   "65+": -2346
+  }
+ },
+ "saldo_capital_con_corona_2022_2024_por_nac": {
+  "alicante": {
+   "ES": -3028,
+   "EXT": -562
+  },
+  "barcelona": {
+   "ES": -13962,
+   "EXT": -8579
+  },
+  "castellon": {
+   "ES": -525,
+   "EXT": -125
+  },
+  "madrid": {
+   "ES": -21609,
+   "EXT": -7587
+  },
+  "valencia": {
+   "ES": -8373,
+   "EXT": -3852
+  }
+ },
+ "concordancia_mivau": {
+  "nombres": 309,
+  "con_codigo": 309
+ },
+ "asociaciones_p_holm_menor_005": 21,
+ "asociaciones": 32,
+ "notas": [
+  "corona de composición fija (municipios identificados en todos los años)",
+  "saldo exterior municipal sin edad (los microdatos no la traen)",
+  "asociaciones de rangos: no implican causalidad"
+ ]
+}

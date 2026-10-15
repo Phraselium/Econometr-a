@@ -1,4 +1,4 @@
-territorio,nac,poblacion_inicio,poblacion_fin,anio,fuente_poblacion,crecimiento,nacimientos,defunciones,vegetativo,inmigracion_exterior,emigracion_exterior,saldo_exterior,altas_interiores,bajas_interiores,saldo_interior,residuo,nivel
+cod_territorio,nac,poblacion_inicio,poblacion_fin,anio,fuente_poblacion,crecimiento,nacimientos,defunciones,vegetativo,inmigracion_exterior,emigracion_exterior,saldo_exterior,altas_interiores,bajas_interiores,saldo_interior,residuo,nivel
 01,ES,7.32395e+06,7.36595e+06,2003,padron,42001,80771,63325,17446,4782,1507,3275,188430,177109,11321,9959,ccaa
 01,ES,7.36595e+06,7.42959e+06,2004,padron,63644,82411,61460,20951,5059,1034,4025,189437,174698,14739,23929,ccaa
 01,ES,7.42959e+06,7.48674e+06,2005,padron,57152,84399,64232,20167,4515,2108,2407,185042,173550,11492,23086,ccaa

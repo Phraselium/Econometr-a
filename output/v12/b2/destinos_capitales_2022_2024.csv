@@ -1,0 +1,151 @@
+area,sentido,cod_municipio,n,cuota_pct,nombre,periodo
+valencia,salidas,46999,12783,14.8,municipios < 10.000 hab. (provincia),2022-2024
+valencia,salidas,46190,3760,4.3,Paterna,2022-2024
+valencia,salidas,28079,3625,4.2,Madrid,2022-2024
+valencia,salidas,46244,3393,3.9,Torrent,2022-2024
+valencia,salidas,46169,2619,3.0,Mislata,2022-2024
+valencia,salidas,46078,2265,2.6,Burjassot,2022-2024
+valencia,salidas,46110,1906,2.2,Xirivella,2022-2024
+valencia,salidas,08019,1748,2.0,Barcelona,2022-2024
+valencia,salidas,46070,1657,1.9,Bétera,2022-2024
+valencia,salidas,12999,1653,1.9,municipios < 10.000 hab. (provincia),2022-2024
+valencia,salidas,46013,1588,1.8,Alboraia/Alboraya,2022-2024
+valencia,salidas,46220,1266,1.5,Sagunt/Sagunto,2022-2024
+valencia,salidas,46202,1207,1.4,"Pobla de Vallbona, la",2022-2024
+valencia,salidas,46186,1125,1.3,Paiporta,2022-2024
+valencia,salidas,46094,1097,1.3,Catarroja,2022-2024
+valencia,entradas,46999,7684,10.5,municipios < 10.000 hab. (provincia),2022-2024
+valencia,entradas,28079,4247,5.8,Madrid,2022-2024
+valencia,entradas,46190,2463,3.4,Paterna,2022-2024
+valencia,entradas,46244,2222,3.0,Torrent,2022-2024
+valencia,entradas,46169,1940,2.6,Mislata,2022-2024
+valencia,entradas,08019,1845,2.5,Barcelona,2022-2024
+valencia,entradas,46078,1817,2.5,Burjassot,2022-2024
+valencia,entradas,46013,1306,1.8,Alboraia/Alboraya,2022-2024
+valencia,entradas,46110,1290,1.8,Xirivella,2022-2024
+valencia,entradas,12999,1112,1.5,municipios < 10.000 hab. (provincia),2022-2024
+valencia,entradas,46220,915,1.2,Sagunt/Sagunto,2022-2024
+valencia,entradas,03014,878,1.2,Alacant/Alicante,2022-2024
+valencia,entradas,12040,841,1.1,Castelló de la Plana/Castellón de la Plana,2022-2024
+valencia,entradas,46070,838,1.1,Bétera,2022-2024
+valencia,entradas,46131,744,1.0,Gandia,2022-2024
+madrid,salidas,28999,19322,5.9,municipios < 10.000 hab. (provincia),2022-2024
+madrid,salidas,45999,11957,3.7,municipios < 10.000 hab. (provincia),2022-2024
+madrid,salidas,28065,8689,2.7,Getafe,2022-2024
+madrid,salidas,28074,8342,2.6,Leganés,2022-2024
+madrid,salidas,08019,7470,2.3,Barcelona,2022-2024
+madrid,salidas,28123,7287,2.2,Rivas-Vaciamadrid,2022-2024
+madrid,salidas,28006,6705,2.1,Alcobendas,2022-2024
+madrid,salidas,28092,6585,2.0,Móstoles,2022-2024
+madrid,salidas,28148,6001,1.8,Torrejón de Ardoz,2022-2024
+madrid,salidas,28007,5865,1.8,Alcorcón,2022-2024
+madrid,salidas,28115,5688,1.7,Pozuelo de Alarcón,2022-2024
+madrid,salidas,28106,5660,1.7,Parla,2022-2024
+madrid,salidas,28005,5610,1.7,Alcalá de Henares,2022-2024
+madrid,salidas,28127,4617,1.4,"Rozas de Madrid, Las",2022-2024
+madrid,salidas,28058,4539,1.4,Fuenlabrada,2022-2024
+madrid,entradas,28999,12014,4.4,municipios < 10.000 hab. (provincia),2022-2024
+madrid,entradas,45999,8857,3.2,municipios < 10.000 hab. (provincia),2022-2024
+madrid,entradas,08019,8338,3.0,Barcelona,2022-2024
+madrid,entradas,28074,6024,2.2,Leganés,2022-2024
+madrid,entradas,28006,5471,2.0,Alcobendas,2022-2024
+madrid,entradas,28065,5170,1.9,Getafe,2022-2024
+madrid,entradas,28092,5135,1.9,Móstoles,2022-2024
+madrid,entradas,28115,4808,1.7,Pozuelo de Alarcón,2022-2024
+madrid,entradas,28007,4332,1.6,Alcorcón,2022-2024
+madrid,entradas,28106,3895,1.4,Parla,2022-2024
+madrid,entradas,28058,3834,1.4,Fuenlabrada,2022-2024
+madrid,entradas,28005,3829,1.4,Alcalá de Henares,2022-2024
+madrid,entradas,28049,3769,1.4,Coslada,2022-2024
+madrid,entradas,46250,3625,1.3,València,2022-2024
+madrid,entradas,28123,3462,1.3,Rivas-Vaciamadrid,2022-2024
+barcelona,salidas,08101,19907,10.7,"Hospitalet de Llobregat, L'",2022-2024
+barcelona,salidas,08999,12039,6.4,municipios < 10.000 hab. (provincia),2022-2024
+barcelona,salidas,08015,9316,5.0,Badalona,2022-2024
+barcelona,salidas,28079,8338,4.5,Madrid,2022-2024
+barcelona,salidas,08245,5458,2.9,Santa Coloma de Gramenet,2022-2024
+barcelona,salidas,08205,4291,2.3,Sant Cugat del Vallès,2022-2024
+barcelona,salidas,08187,4017,2.2,Sabadell,2022-2024
+barcelona,salidas,08279,3916,2.1,Terrassa,2022-2024
+barcelona,salidas,17999,3419,1.8,municipios < 10.000 hab. (provincia),2022-2024
+barcelona,salidas,08073,3213,1.7,Cornellà de Llobregat,2022-2024
+barcelona,salidas,08194,3041,1.6,Sant Adrià de Besòs,2022-2024
+barcelona,salidas,43999,2737,1.5,municipios < 10.000 hab. (provincia),2022-2024
+barcelona,salidas,08077,2342,1.3,Esplugues de Llobregat,2022-2024
+barcelona,salidas,08056,2310,1.2,Castelldefels,2022-2024
+barcelona,salidas,08121,2047,1.1,Mataró,2022-2024
+barcelona,entradas,08101,17487,11.8,"Hospitalet de Llobregat, L'",2022-2024
+barcelona,entradas,08999,7749,5.2,municipios < 10.000 hab. (provincia),2022-2024
+barcelona,entradas,28079,7470,5.0,Madrid,2022-2024
+barcelona,entradas,08015,6730,4.5,Badalona,2022-2024
+barcelona,entradas,08245,4639,3.1,Santa Coloma de Gramenet,2022-2024
+barcelona,entradas,08205,2741,1.8,Sant Cugat del Vallès,2022-2024
+barcelona,entradas,17999,2719,1.8,municipios < 10.000 hab. (provincia),2022-2024
+barcelona,entradas,08187,2698,1.8,Sabadell,2022-2024
+barcelona,entradas,08279,2589,1.7,Terrassa,2022-2024
+barcelona,entradas,08073,2547,1.7,Cornellà de Llobregat,2022-2024
+barcelona,entradas,08194,2327,1.6,Sant Adrià de Besòs,2022-2024
+barcelona,entradas,43999,2043,1.4,municipios < 10.000 hab. (provincia),2022-2024
+barcelona,entradas,46250,1748,1.2,València,2022-2024
+barcelona,entradas,08056,1745,1.2,Castelldefels,2022-2024
+barcelona,entradas,25999,1692,1.1,municipios < 10.000 hab. (provincia),2022-2024
+alicante,salidas,03122,2984,8.6,Sant Vicent del Raspeig/San Vicente del Raspeig,2022-2024
+alicante,salidas,03999,2465,7.1,municipios < 10.000 hab. (provincia),2022-2024
+alicante,salidas,03065,2296,6.6,Elx/Elche,2022-2024
+alicante,salidas,03119,2261,6.5,Sant Joan d'Alacant,2022-2024
+alicante,salidas,28079,2066,5.9,Madrid,2022-2024
+alicante,salidas,03090,2032,5.8,Mutxamel,2022-2024
+alicante,salidas,03050,1802,5.2,"Campello, el",2022-2024
+alicante,salidas,03121,1187,3.4,Santa Pola,2022-2024
+alicante,salidas,46250,878,2.5,València,2022-2024
+alicante,salidas,08019,701,2.0,Barcelona,2022-2024
+alicante,salidas,30030,517,1.5,Murcia,2022-2024
+alicante,salidas,03066,488,1.4,Elda,2022-2024
+alicante,salidas,03031,462,1.3,Benidorm,2022-2024
+alicante,salidas,03133,420,1.2,Torrevieja,2022-2024
+alicante,salidas,03053,357,1.0,Castalla,2022-2024
+alicante,entradas,03122,2708,9.0,Sant Vicent del Raspeig/San Vicente del Raspeig,2022-2024
+alicante,entradas,28079,2116,7.0,Madrid,2022-2024
+alicante,entradas,03065,1715,5.7,Elx/Elche,2022-2024
+alicante,entradas,03999,1390,4.6,municipios < 10.000 hab. (provincia),2022-2024
+alicante,entradas,03050,1189,3.9,"Campello, el",2022-2024
+alicante,entradas,03119,1136,3.8,Sant Joan d'Alacant,2022-2024
+alicante,entradas,03090,1037,3.4,Mutxamel,2022-2024
+alicante,entradas,03121,796,2.6,Santa Pola,2022-2024
+alicante,entradas,08019,668,2.2,Barcelona,2022-2024
+alicante,entradas,03133,601,2.0,Torrevieja,2022-2024
+alicante,entradas,30030,593,2.0,Murcia,2022-2024
+alicante,entradas,46250,552,1.8,València,2022-2024
+alicante,entradas,03031,548,1.8,Benidorm,2022-2024
+alicante,entradas,03066,398,1.3,Elda,2022-2024
+alicante,entradas,03099,304,1.0,Orihuela,2022-2024
+castellon,salidas,12999,2742,16.6,municipios < 10.000 hab. (provincia),2022-2024
+castellon,salidas,12009,1721,10.4,Almassora,2022-2024
+castellon,salidas,12028,1650,10.0,Benicàssim/Benicasim,2022-2024
+castellon,salidas,12135,976,5.9,Vila-real,2022-2024
+castellon,salidas,46250,841,5.1,València,2022-2024
+castellon,salidas,28079,645,3.9,Madrid,2022-2024
+castellon,salidas,12032,580,3.5,Borriana/Burriana,2022-2024
+castellon,salidas,12085,436,2.6,Orpesa/Oropesa del Mar,2022-2024
+castellon,salidas,08019,361,2.2,Barcelona,2022-2024
+castellon,salidas,12084,355,2.2,Onda,2022-2024
+castellon,salidas,46999,266,1.6,municipios < 10.000 hab. (provincia),2022-2024
+castellon,salidas,12005,201,1.2,"Alcora, l'",2022-2024
+castellon,salidas,12082,130,0.8,Nules,2022-2024
+castellon,salidas,12126,126,0.8,"Vall d'Uixó, la",2022-2024
+castellon,salidas,50297,121,0.7,Zaragoza,2022-2024
+castellon,entradas,12999,2445,13.8,municipios < 10.000 hab. (provincia),2022-2024
+castellon,entradas,12009,1495,8.4,Almassora,2022-2024
+castellon,entradas,12028,1351,7.6,Benicàssim/Benicasim,2022-2024
+castellon,entradas,12135,870,4.9,Vila-real,2022-2024
+castellon,entradas,46250,773,4.4,València,2022-2024
+castellon,entradas,28079,738,4.2,Madrid,2022-2024
+castellon,entradas,12085,571,3.2,Orpesa/Oropesa del Mar,2022-2024
+castellon,entradas,12032,545,3.1,Borriana/Burriana,2022-2024
+castellon,entradas,08019,379,2.1,Barcelona,2022-2024
+castellon,entradas,12084,334,1.9,Onda,2022-2024
+castellon,entradas,46999,310,1.7,municipios < 10.000 hab. (provincia),2022-2024
+castellon,entradas,12005,212,1.2,"Alcora, l'",2022-2024
+castellon,entradas,12082,167,0.9,Nules,2022-2024
+castellon,entradas,12027,159,0.9,Benicarló,2022-2024
+castellon,entradas,12138,157,0.9,Vinaròs,2022-2024

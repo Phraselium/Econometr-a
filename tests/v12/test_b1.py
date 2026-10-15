@@ -14,7 +14,7 @@ def _csv(nombre: str) -> pd.DataFrame:
     r = B1 / nombre
     if not r.exists():
         pytest.skip(f"{nombre} no existe (ejecutar `make v12`)")
-    return pd.read_csv(r, dtype={"territorio": str, "cod_barrio": str, "cod_seccion": str})
+    return pd.read_csv(r, dtype={"cod_territorio": str, "cod_barrio": str, "cod_seccion": str})
 
 
 def test_identidad_cierra():

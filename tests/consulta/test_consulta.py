@@ -95,16 +95,16 @@ def test_cabecera_en_cada_fichero():
     assert (RAIZ / "llms.txt").read_text(encoding="utf-8").startswith("# ")
 
 
-def _foto() -> dict[str, bytes]:
-    return {p.relative_to(RAIZ).as_posix(): p.read_bytes() for p in [*sorted((RAIZ / "consulta").rglob("*")), RAIZ / "llms.txt"] if p.is_file()}
+def _foto(base: Path) -> dict[str, bytes]:
+    return {p.relative_to(base).as_posix(): p.read_bytes() for p in [*sorted((base / "consulta").rglob("*")), base / "llms.txt"] if p.is_file()}
 
 
-def test_generador_idempotente():
-    cmd = [sys.executable, str(RAIZ / "src/consulta/generar.py")]
-    subprocess.run(cmd, check=True, capture_output=True, cwd=RAIZ)
-    a = _foto()
-    subprocess.run(cmd, check=True, capture_output=True, cwd=RAIZ)
-    assert a == _foto()
+def test_generador_idempotente(tmp_path):
+    # V12-F0: se genera en un directorio temporal; `make check` no reescribe consulta/ (version.json lleva el commit)
+    G.escribir(tmp_path / "a")
+    G.escribir(tmp_path / "b")
+    a = _foto(tmp_path / "a")
+    assert a == _foto(tmp_path / "b")
     assert set(a) == {f"consulta/{n}" for n in G.FICHEROS} | {"llms.txt"}
 
 

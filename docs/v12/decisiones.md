@@ -49,3 +49,44 @@ Reglas generales:
      distritos. La variación 2021→2025 es exacta por distrito (las secciones no cambian de distrito); por barrio se
      publica solo si su distrito no cambió de seccionado (37 barrios «comparables»); el resto queda en blanco.
    - Solo stocks por nacionalidad (no hay flujos por sección). Países con < 10 personas en la celda se suprimen.
+
+## B2 · A dónde va y quién se desplaza (src/v12/b2_flujos.py → output/v12/b2)
+1. **Áreas:**
+   - València: ámbito oficial del PATEVAL (90 municipios, incluida la ciudad).
+   - Madrid y Barcelona: municipios con centroide a ≤ 25 km del de la capital (no hay delimitación oficial en
+     data/raw; 25 km recoge las coronas continuas sin llegar a las capitales comarcales externas).
+   - Alicante/Alacant y Castelló de la Plana: ≤ 20 km (la misma definición operativa de V11).
+2. **Corona de composición fija:** los microdatos OD agregan los municipios < 10.000 hab. de cada provincia (PP999).
+   La corona es el conjunto de municipios del área identificados en TODOS los años 2002-2024 (València 28, Madrid 23,
+   Barcelona 41, Alicante 5, Castellón 6), para que la serie no cambie por municipios que cruzan el umbral. El resto
+   del área cuenta como «resto de España»: los saldos capital-corona son una cota inferior del intercambio con el área.
+3. **Fuentes y empalme:** EVR 2002-2020 y EMCR 2021-2024 (mismo criterio que B1). Los movimientos dentro de la corona
+   (entre dos municipios de la corona) no se cuentan: no cambian el reparto capital/corona.
+4. **Edad:** los OD y los saldos interiores municipales traen edad (0-15, 16-34, 35-64, 65+) y nacionalidad (ES/EXT);
+   los microdatos exteriores municipales solo traen nacionalidad: el saldo exterior por edad no se publica a escala
+   municipal.
+5. **Precios y alquileres (asociación, C4):**
+   - alquiler: SERPAVI, mediana €/m² de vivienda colectiva (código INE, 2011-2024);
+   - compra: valor tasado medio de vivienda libre (MIVAU, municipios > 25.000 hab.). El fichero no trae código INE:
+     concordancia nombre → código versionada (concordancia_mivau_municipios.csv): coincidencia normalizada con alguna
+     variante del nombre INE (partes separadas por «/», artículo pospuesto), provincia para desambiguar (Torrent,
+     Mieres, Cieza) y 7 alias explícitos apuntados al NOMBRE INE (Palma, Vitoria-Gasteiz, San Cristóbal de La Laguna,
+     Santa Coloma de Gramenet, El Puerto de Santa María, Santa Eulària des Riu, Maó). 309 de 309 nombres con código
+     único; Córdoba, Lucena y Puente Genil aparecen dos veces por una errata en la provincia («Córdaba») y se promedian.
+     El cruce posterior es por código INE.
+   - Spearman entre la tasa de saldo (interior y exterior, ‰ anual, B1) de un periodo y el nivel inicial y el cambio del
+     alquiler o el precio en ese periodo; municipios ≥ 10.000 hab.; España y las cinco áreas; IC95 por bootstrap
+     (1.000 réplicas, SEED); 32 especificaciones en el Registry con Holm. Son asociaciones de rangos entre territorios:
+     no indican qué mueve a qué.
+   - Pares: alquiler medio en destino de quienes salen de cada capital, ponderado por el flujo, frente al alquiler de la
+     capital (ratio).
+6. **Caché versionada:** los OD completos (data/raw/v11/*/od_municipios_*.parquet) no se versionan por tamaño; el
+   script solo los lee si falta output/v12/b2/od_seleccion.csv.gz (flujos con origen o destino en alguna de las áreas).
+   Así `make v12` funciona en un clon limpio sin `make datos_v11`.
+7. **Neutralidad:** se describen flujos por nacionalidad y edad; las personas que llegan o se desplazan forman parte
+   de la demanda y de la oferta de trabajo de los municipios de destino. No se atribuyen responsabilidades.
+8. **Cruces por código (V7) también en V12:** src/v12 entra en el control estricto de tests/test_v7_cruces.py; la
+   columna de código de B1 pasa a llamarse `cod_territorio`; la concordancia MIVAU se aplica una sola vez como
+   diccionario versionado.
+9. **`make check` y consulta/:** el test de idempotencia del generador de consulta escribía en consulta/ (y
+   version.json cambia con cada commit que toca output/). Ahora genera en un directorio temporal (corrección F0).

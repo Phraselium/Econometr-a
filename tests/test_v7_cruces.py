@@ -11,7 +11,7 @@ RAIZ = Path(__file__).resolve().parents[1]
 NOMBRES = r"(nombre|territorio|provincia|ccaa|municipio|comunidad|nombre_prov|nombre_ccaa|nom_prov|nom_mun)"
 PAT = re.compile(r"\.(merge|join)\([^)]*\bon\s*=\s*[\[\(]?[^)]*['\"]" + NOMBRES + r"['\"]", re.I)
 PAT_LR = re.compile(r"(left_on|right_on)\s*=\s*[\[\(]?\s*['\"]" + NOMBRES + r"['\"]", re.I)
-NUEVO = ("src/v7", "src/v6_3", "src/v8")
+NUEVO = ("src/v7", "src/v6_3", "src/v8", "src/v12")
 
 
 PAT_MAP = re.compile(r"\[\s*['\"]" + NOMBRES + r"['\"]\s*\]\s*\.(map|replace)\(|\." + NOMBRES + r"\.(map|replace)\(", re.I)

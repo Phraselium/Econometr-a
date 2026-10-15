@@ -1,4 +1,4 @@
-# Figuras de publicación (V10)
+# Figuras de publicación (V10 y V12)
 
 Generadas por `make figuras` (src/v10/figuras.py); no editar a mano.
 Paleta Okabe-Ito (apta para daltonismo); mapas con «cividis» (secuencial) o «PuOr» (divergente).
@@ -19,3 +19,12 @@ Paleta Okabe-Ito (apta para daltonismo); mapas con «cividis» (secuencial) o «
 | F12_descomposicion_periodos | Descomposición por periodo (V8, atribución con bandas del 68 %) | Resultado publicado V8 (F5, atribución combinada) desde la base | periodos P1-P5 de V8 | C3s | C3s: condicionada a las restricciones de signo explícitas. Figura clave de V8. |
 | F13_cotas_c2 | Cotas C2 publicadas (verificador) | publicacion/cifras_clave.csv desde la base | según cada cifra | C2 | Cotas de Manski con supuestos explícitos (ver la ficha de cada cifra). |
 | F14_emancipacion_epa | Jóvenes que viven con sus padres (EPA), 2018-2026 | INE, EPA (microdatos), cálculo propio | 2018T1-2026T2 (2026: media de T1-T2) | C4 | Media anual de trimestres; IC en la tabla del atlas. |
+| F15_contabilidad_demografica | España: de dónde viene el crecimiento de la población | INE: padrón y censo anual, MNP, EVR (hasta 2020) y EMCR (desde 2021); V12-B1 | 2003-2024 | C4 | Identidad contable; el residuo recoge revisiones del padrón y bajas no registradas como flujo (grande con la EVR). |
+| F16_mapa_saldo_exterior | Saldo migratorio con el extranjero, 2022-2024 | INE, EMCR (microdatos); padrón y censo anual; V12-B1 | 2022-2024 | C4 | Personas por 1.000 habitantes y año. Describe flujos; no atribuye efectos. Canarias recolocada. |
+| F17_saldo_capital_corona | Saldo de cada capital con su corona metropolitana | INE, EVR y EMCR (microdatos origen-destino); V12-B2 | 2003-2024 | C4 | Negativo: salen más personas de la capital a la corona que al revés. Corona de composición fija (cota inferior). |
+| F18_jefatura_edad | Tasa de jefatura por edad, Censos 2011 y 2021 | INE, Censos 2011 y 2021 (microdatos); V12-B3 | 2011 y 2021 | C4 | Persona de referencia = la de mayor edad del hogar (regla común a los dos censos). |
+| F19_mapa_cv_obra_hogares | Comunitat Valenciana: obra nueva frente a hogares nuevos, 2021-2025 | Catastro (URBANA); INE, censo anual y Censo 2021; V12-B4 | 2021-2025 | C4 | Hogares nuevos estimados con el tamaño de hogar de 2021; obra nueva neta del Catastro. No mide necesidad ni déficit. |
+| F20_obra_nueva_dos_fuentes | Obra nueva según dos fuentes | Catastro (URBANA); MIVAU; V12-B4 | 2012-2025 | C4 | Sin País Vasco ni Navarra (catastros forales). En 2013-2017 el Catastro incluye altas por regularización. |
+| F21_mapa_personas_juridicas | Viviendas de personas jurídicas privadas, 2026 | Catastro, titularidad por tipo de persona (uso residencial); V12-B5 | 2026 | C4 | Porcentaje de viviendas cuyo sujeto pasivo del IBI es una persona jurídica privada. País Vasco y Navarra sin dato. |
+| F22_brecha_misma_edad_renta | Condiciones de vivienda a igual edad y renta, 2023-2025 | INE, ECV (microdatos); V12-B6 | 2023-2025 | C4 | Estandarización directa por edad y quintil de renta; IC95 bootstrap por hogar. Descriptivo: no atribuye la diferencia a la nacionalidad. |
+| F23_mapa_valencia_vut_barrio | València: viviendas turísticas por barrio, 2026-05 | INE, medición experimental de viviendas turísticas (secciones → barrios); V12-B7 | 2026-05 | C4 | Porcentaje del parque; sección → barrio por área cuando la sección cruza barrios. |

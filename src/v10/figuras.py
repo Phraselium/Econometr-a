@@ -308,8 +308,13 @@ def main() -> dict:
               f05_mapa_provincias_esfuerzo, f06_mapa_deficit, f07_mapa_cv_alquiler, f08_mapa_vlc_barrios, f09_mapa_vlc_vut,
               f10_ciudades, f11_factor_comun, f12_descomposicion, f13_cotas, f14_emancipacion):
         f()
+    import sys
+    sys.path.insert(0, str(RAIZ))
+    from src.v12 import figuras_v12   # V12: población, hogares, oferta, titularidad, condiciones y turismo
+    for f in figuras_v12.FIGURAS:
+        f(sys.modules[__name__])
     (FIG / "fichas.json").write_text(json.dumps(FICHAS, ensure_ascii=False, indent=1), encoding="utf-8")
-    lin = ["# Figuras de publicación (V10)", "", "Generadas por `make figuras` (src/v10/figuras.py); no editar a mano.",
+    lin = ["# Figuras de publicación (V10 y V12)", "", "Generadas por `make figuras` (src/v10/figuras.py); no editar a mano.",
            "Paleta Okabe-Ito (apta para daltonismo); mapas con «cividis» (secuencial) o «PuOr» (divergente).", "",
            "| id | título | fuente | dato | capa | nota |", "|---|---|---|---|---|---|"]
     lin += [f"| {f['id']} | {f['titulo']} | {f['fuente']} | {f['fecha_dato']} | {f['capa']} | {f['nota']} |" for f in FICHAS]

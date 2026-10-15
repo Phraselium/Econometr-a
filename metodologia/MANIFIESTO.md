@@ -6,7 +6,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 |---|---|---|
 | anexo_metodologico.md | output/v6_2/anexo_metodologico.md | `55e93aefe0e4ffb450b15945a9900f56050bc616436010bcb130c4952e233806` |
 | capas.md | docs/v7_1/capas.md | `15e70c6bc6553acd487a3f2ad0708ea80b7d9fc7c40061559b22f43b59b39fea` |
-| decisiones_v12.md | docs/v12/decisiones.md | `bd6964ff35dbfd924931d6b5885048dd317f711084be16ca7f4fcccec4801ee1` |
+| decisiones_v12.md | docs/v12/decisiones.md | `2fecb46bbd96bdb025692245711f7bec8f84d4033b2aed2c1a9969dd3d5f2dab` |
 | desviaciones_v8.md | docs/v8/desviaciones.md | `f7fc104d2eed9fd0e1c63b4a0835ae8e8cbf350af8895a08e413bb2dffc4850f` |
 | dosis_coste.md | output/v7_1/S1/resumen.md | `a68795fea92cb1ff1bfa94c12bf578bcb06a464be65f11a06e7bdf67e0fb6e39` |
 | guia_revisor.md | docs/v7_1/guia_revisor.md | `2b1997b4242c3757bafa2bc25278571b842244a7efd46ca01b5be7303d9f032b` |

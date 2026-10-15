@@ -62,4 +62,5 @@ def test_datos_terceros_verifica_sin_red():
         assert h, f
         p = ROOT / f
         if p.exists():
-            assert datos_terceros.estado(ROOT, f, h) in ("OK", "DISTINTO")
+            # V9: un .gz regenerado con otra cabecera y el mismo contenido es «OK (contenido; cabecera gzip distinta)»
+            assert datos_terceros.estado(ROOT, f, h).startswith("OK") or datos_terceros.estado(ROOT, f, h) == "DISTINTO"

@@ -1,7 +1,7 @@
 [
  {
   "id": "V9-D1a-renta-att",
-  "indicador": "zonas tensionadas (Ley 12/2023): ATT sobre renta media de contratos nuevos (CS)",
+  "indicador": "zonas tensionadas (Ley 12/2023): diferencia (ATT, CS) en la renta media de los contratos nuevos",
   "valor": -5.846,
   "min": -8.498999999999999,
   "max": -3.193,
@@ -76,7 +76,7 @@
  },
  {
   "id": "V9-D1a-contratos-att",
-  "indicador": "zonas tensionadas (Ley 12/2023): ATT sobre contratos de contratos nuevos (CS)",
+  "indicador": "zonas tensionadas (Ley 12/2023): diferencia (ATT, CS) en el número de contratos nuevos",
   "valor": -6.25,
   "min": -13.206000000000001,
   "max": 0.7060000000000001,
@@ -136,7 +136,7 @@
  },
  {
   "id": "V9-D1b-renta-att",
-  "indicador": "Ley catalana 11/2020: ATT sobre renta media de contratos nuevos (CS)",
+  "indicador": "Ley catalana 11/2020: diferencia (ATT, CS) en la renta media de los contratos nuevos",
   "valor": -5.851,
   "min": -7.346,
   "max": -4.356,
@@ -211,7 +211,7 @@
  },
  {
   "id": "V9-D1b-contratos-att",
-  "indicador": "Ley catalana 11/2020: ATT sobre contratos de contratos nuevos (CS)",
+  "indicador": "Ley catalana 11/2020: diferencia (ATT, CS) en el número de contratos nuevos",
   "valor": -1.317,
   "min": -7.02,
   "max": 4.385,

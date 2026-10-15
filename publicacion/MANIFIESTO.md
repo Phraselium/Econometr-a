@@ -27,7 +27,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | atlas_regional/atlas_resumen.md | output/v7_1/atlas/atlas_resumen.md | `47a851d30ed16bfe1acbfdaddfdd71803bc5b9406ac77f779eae67c54b346c6f` |
 | atlas_regional/guia_lectura.md | output/v7_1/atlas/guia_lectura.md | `5c9b4b7374468d5d4598fc35c1e62742a23a85047163c2c703970fddd969c872` |
 | atlas_regional/tablas_regionales.xlsx | output/v7_1/atlas/tablas_regionales.xlsx | `566261bdf785de32fa6cf61b545bf0948eec59301aa82e463d1c7b76ab41de34` |
-| cifras_clave.csv | output/v5/cifras_clave.csv | `5b1b8571fdc5c5aad8f663c461fbe233854b6fa6d8b66ed567bd07aa5c63ff82` |
+| cifras_clave.csv | output/v5/cifras_clave.csv | `c1f8b3f1d7fac3f7a23bbc39f820f0fc00703f9fb4e85f19bcfe5c00ffb3b1ae` |
 | cotas_v9.md | output/v9/f4/cotas.md | `896fa98d33b01c934c5e7543d3453d01120d628c3512cbb3056c2c087aed0940` |
 | dosis_coste.csv | output/v7_1/S1/dosis_coste.csv | `6e7c2b8fa8ada5992399be00de87309a274ccc607a7aba04c88f3f0590c6f822` |
 | informe_econometrico_v8.md | output/v8/informe_econometrico.md | `689599422d9eff15d6a4b2b567808ccfe75b8ba65c65fa85307e94dc72f5a8ee` |
@@ -45,7 +45,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | tablas_modelos_destacados.csv | output/v8/tablas_modelos_destacados.csv | `b70730be9a7924f4ea71426a2ef04a50287c82b8a45dfd802ea61b2480277495` |
 | tablas_modelos_destacados.md | output/v8/tablas_modelos_destacados.md | `650cd6505b65d0e622e2c3916848664cb8c93b4cdb1aac86a1de2e6dc918590c` |
 | tablas_v8.xlsx | output/v8/tablas_v8.xlsx | `14840ac35aca7c0d924cdb62e1791c897a5bc4464c8d331d4361af2c1499ed78` |
-| tablas_v9.xlsx | output/v9/tablas_v9.xlsx | `45329667f1e457245a8a071f481ad362bb4c377028bb22ec200a1628aea74fa3` |
+| tablas_v9.xlsx | output/v9/tablas_v9.xlsx | `bb61506b8a3c82233cba7fdf3be83696ca40e5c7da5559e346b83a9e93d3ccb3` |
 | una_pagina.md | output/v5/una_pagina.md | `5d697d2498e43bc8136918738279cf3b620e8fb5637dd91f13a26105551992c6` |
 | verificador/fichas_v7_1.json | output/v7_1/fichas/fichas_verificador.json | `6651fcea7b3dfd7a668024b1a992b8b5bcb66edc977e0200d18617a9596778a7` |
 | verificador/fichas_v8.json | output/v8/fichas_verificador_v8.json | `f768bd7c97bf893d8127009d233da98a254221f51bf6ece6b9af9e2644c19df8` |

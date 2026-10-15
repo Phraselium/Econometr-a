@@ -34,11 +34,11 @@ Generado por `src/v10/base.py` (`make base`); no editar a mano.
 
 ## Resumen
 
-- filas_publica: 13985226
+- filas_publica: 14028906
 - territorios: 56579
-- filas_posterior_prereg: 300281
-- variables_publicas: 296
-- filas públicas por nivel: barrio 2408, ccaa 47980, distrito 587783, municipio 5116224, nacional 8833, nuts3 1440, pais 53350, provincia 294751, seccion 7872457
+- filas_posterior_prereg: 301342
+- variables_publicas: 297
+- filas públicas por nivel: barrio 2408, ccaa 47980, distrito 587783, municipio 5159904, nacional 8833, nuts3 1440, pais 53350, provincia 294751, seccion 7872457
 
 Las discrepancias entre paneles son claves presentes en varios ficheros procesados con valores distintos; se conserva el panel más reciente (v8 > v7 > v1), que es el que usan las publicaciones vigentes.
 
@@ -177,6 +177,7 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `idescat_apartamentos_plazas` | IDESCAT, turall: apartamentos turísticos | plazas | C4 | IDESCAT, turall: apartamentos turísticos | sí | municipio | 2015–2025 |
 | `idescat_hut_n` | IDESCAT, Estadística de establecimientos turísticos (turall): HUT | viviendas | C4 | IDESCAT, Estadística de establecimientos turísticos (turall): HUT | sí | municipio | 2015–2025 |
 | `idescat_hut_plazas` | IDESCAT, turall: HUT | plazas | C4 | IDESCAT, turall: HUT | sí | municipio | 2015–2025 |
+| `ine_tmov_interno_turistas` | INE, turismo interno medido con teléfonos móviles (53464; experimental) | turistas | C4 | INE, turismo interno medido con teléfonos móviles (53464; experimental) | sí | municipio | 2019-07–2026-08 |
 | `ine_tmov_receptor_turistas` | INE, turismo receptor medido con teléfonos móviles (52048; experimental) | turistas | C4 | INE, turismo receptor medido con teléfonos móviles (52048; experimental) | sí | municipio | 2019-07–2025-12 |
 | `ine_vut_plazas` | INE, viviendas turísticas (experimental) | plazas | C4 | INE, viviendas turísticas (experimental) | sí | distrito,seccion | 2021-02–2026-05 |
 | `ine_vut_porcentaje_vivienda_turistica` | INE, viviendas turísticas (experimental) | % de viviendas | C4 | INE, viviendas turísticas (experimental) | sí | distrito,seccion | 2021-02–2026-05 |

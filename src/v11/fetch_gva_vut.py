@@ -35,6 +35,9 @@ def firma(ruta: Path) -> tuple:
 def main(verificar: bool = False) -> int:
     DIR.mkdir(parents=True, exist_ok=True)
     if verificar:
+        if not (DIR / "_manifest.csv").exists():   # sin edición nueva: nada propio que verificar (los cortes están en v9)
+            print("gva_vut: sin edición nueva respecto a data/raw/v9/gva_vut (nada que verificar)")
+            return 0
         return verificar_manifiesto(FUENTE)
     v9 = {sha256(p) for p in (RAIZ / "data/raw/v9/gva_vut/cortes").glob("*.csv.gz")}
     firmas_v9 = {firma(p) for p in (RAIZ / "data/raw/v9/gva_vut/cortes").glob("*.csv.gz")}

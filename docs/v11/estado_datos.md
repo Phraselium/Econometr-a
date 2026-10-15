@@ -1,34 +1,22 @@
-# V11-DATOS · Estado
+# V11-DATOS · Estado (2026-10-15, cierre)
 
 ## Hecho
-- Inventario (docs/v11/inventario.md); infraestructura src/v11 (comun.py, datos_v11.py; `make datos_v11`).
-- Bloque 1:
-  - EMCR 2021-2024 completa y validada (microdatos y 8 tablas municipales).
-  - ECP trimestral provincial por nacionalidad (4 tablas).
-  - Eurostat asilo y protección temporal (nacional).
-  - Eventos normativos del BOE (85 normas y 171 modificaciones).
-  - EVR 1988-2021 y MNP 1980-2024 completos y validados.
-  - OPI e Interior fallidos (fuentes_fallidas.md).
-
-- Bloque 2 completo: Censo 2021 (37 tablas tpx, agregados muestrales de viviendas y hogares por nacionalidad), ECEPOV
-  (microdatos e inventario), auditoría ECV/EPA.
-- Bloque 3: Catastro INSPIRE (51 municipios, sección y barrio); Catastro estadísticas y MIVAU sin edición nueva;
-  València datos abiertos (CKAN: 9 conjuntos, GTFS EMT incluido).
-- Bloque 4:
-  - Afiliación municipal de la Seguridad Social (en curso).
-  - REATE Euskadi.
-  - GVA VUT: sin edición nueva.
-  - Turismo con móviles (en curso).
-  - CGPJ y BdE: sin edición nueva.
-- Bloque 5: docs/v11/solicitudes.md (7 solicitudes).
-- Bloque 6: src/v11/base_v11.py enlazado en src/v10/base.py (≈600.000 filas nuevas).
+- Primera pasada, segunda pasada y continuación del histórico: ver auditoria_exhaustividad.md, cobertura.md,
+  fuentes_fallidas.md (bloqueo del servidor frente a bloqueo del entorno) y decisiones_datos.md.
+- `make datos_v11`: 405 ficheros verificados.
+- `make base`: 14,09 millones de filas, 315 variables; capa pública de 45,9 MB, por debajo del límite de 50 MB.
+  La afiliación municipal entra solo con el total de regímenes.
+- `make check`: en verde.
+  - test_base cuenta las filas del parquet desde sus metadatos, en lugar de cargar una segunda copia que agotaba la memoria;
+  - base_v11 lee la versión versionada de catastro_urbana.
+- Lista de descargas manuales: docs/v11/descargas_manuales.md.
+- Incorporación de lo descargado a mano: src/v11/incorporar_manual.py, dentro de `make datos_v11`.
 
 ## Siguiente (para `claude --continue`)
-1. Esperar a que terminen `src/v11/fetch_ss_afiliacion_municipio.py` y `src/v11/fetch_ine_turismo_moviles.py`
-   (logs afi.log y moviles.log en el scratchpad). Si se cortan, relanzarlos (sin caché: rehacen las descargas).
-2. `make datos_v11`, `make base` y `make check`.
-3. Segunda pasada de fuentes fallidas (OPI, Interior, Barcelona HUT, universidades, valores de referencia).
-4. docs/v11/cobertura.md y auditoria_exhaustividad.md; commit y push.
+1. Cuando el autor suba ficheros a data/manual/v11/<fuente>/: `make datos_v11`, `make base` y `make check`.
+2. En una sesión con la red ampliada, reintentar los hosts de la sección A de fuentes_fallidas.md.
+3. `make check` regenera output/v10/web_resumen.csv (tamaño de la web local): restaurarlo con
+   `git checkout output/v10/web_resumen.csv` antes de hacer commit (salida publicada; no se modifica).
 
 ## Tokens de subagentes
 Ninguno (la tarea prohíbe subagentes).

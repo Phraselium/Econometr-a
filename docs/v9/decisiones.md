@@ -89,3 +89,14 @@ Rama local `r9/main`, subida a la rama remota designada (`claude/housing-price-s
   1. IPVA municipal (D1a y D4 municipal): no tiene código INE.
   2. D4 2022-2025 con los 22 grupos del censo anual: es una robustez que no cambia ninguna capa. Queda aplazada a docs/v9/ideas_futuras.md.
   3. Barcelona por barrios (D2): solo descriptiva, porque no hay resultado por barrio.
+
+## E7 — Cierre en clon limpio (2026-10-15)
+- **Procedimiento en un clon nuevo del repositorio (commit bef4132):**
+  1. `make datos_terceros`: 75 de 79 ficheros coinciden; los 4 restantes son renders y transcripciones manuales, que solo avisan;
+  2. copia de los originales no versionados (microdatos y Wayback, sin data/sealed);
+  3. `make v9 publicacion base consulta figuras web check`.
+- **Resultado:**
+  - ninguna salida versionada difiere (output/, publicacion/, data/base/publica);
+  - solo cambian las fechas de descarga de los manifiestos de terceros, que no se versionan;
+  - `make check`: 361 tests aprobados y check_texto, check_v5, check_v6, check_v8 y check_v9 sin errores.
+- **Test frágil corregido.** tests/v8_1/test_datos_terceros.py no aceptaba el estado «OK (contenido; cabecera gzip distinta)» de un .gz regenerado; ahora lo acepta.

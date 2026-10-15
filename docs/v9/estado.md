@@ -14,12 +14,15 @@ Rama local `r9/main` → remota `claude/housing-price-spain-econometric-95dhj3`.
 - **F5:** cifras V9 en cifras_clave, verificador V9, informe_v9, textos actualizados, historial, Excel, efectos en la base, página «Qué causa qué», fichas, manuscrito §6 (Quarto), check_v9, `make v9`, README, LEEME y CHANGELOG.
 - **docs/v9/cierre.md** escrito.
 
+- **Cierre:**
+  - validación por Monte Carlo del IC de RR (cobertura ≥ 0,90);
+  - `make check` en verde;
+  - revisión final propia (docs/v9/revision_final.md);
+  - clon limpio reproducido byte a byte (E7).
+
 ## Siguiente paso exacto
-1. Esperar a que terminen `make v9` y src/v9/validar_honest_rr.py (cobertura ≥ 0,90; si no, docs/v9/bloqueos.md).
-2. `make publicacion base consulta figuras web` y `make check`.
-3. Revisión final propia en docs/v9/revision_final.md.
-4. Clon limpio: `make datos_terceros` (copiar los no versionados si no hay red), `make v9 base figuras web check`.
-5. Commit y push.
+- **Ninguno de modelización.** V9 está cerrada (docs/v9/cierre.md).
+- **Tareas del autor:** docs/v9/tareas_autor.md (publicar etiquetas y release del pre-registro, revisar la web, revisión humana independiente, solicitudes de transparencia).
 
 ## Subagentes
 - Revisor F2: unos 84.000 tokens en total (dos rondas; tope 100.000).

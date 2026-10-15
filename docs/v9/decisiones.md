@@ -30,3 +30,16 @@ Rama local `r9/main`, subida a la rama remota designada (`claude/housing-price-s
   - Precios de D5: BIS nominal (18 países). El fichero de prc_hpi_q del proyecto solo tenía 6.
   - Valor tasado de D4: panel provincial de v7 (código INE). Las CCAA uniprovinciales se completan con el panel anual de CCAA (código INE de CCAA → provincia, tabla fija).
 - **Referencia de D5.** Es un orden de magnitud NO VERIFICADO (5 % por punto de shock y DE de exposición). Aun con esa referencia generosa el diseño no tiene potencia, así que es exploratorio.
+
+## E3 — Revisión de F2 (REHACER 1 de 2) y addendum A1 (2026-10-15, antes de estimar)
+- **Respuesta.** docs/v9/revision_f2.md se responde con docs/v9/hipotesis_addendum_a1.md (etiqueta local `prereg-v9-a1`), con potencia recalculada en src/v9/f2b_potencia_addendum.py.
+- **Desviaciones respecto de prereg-v9:**
+  1. el conjunto confirmatorio queda en {H1a-renta, H1b-renta}; H1a-contratos, H2 y H4 pasan a exploratorias;
+  2. la prueba 4 de D1 pasa a ser una permutación de etiquetas con umbral 0,05, obligatoria para C3;
+  3. D3 usa 2025 como año final, la cuota provincial como resultado y una excepción declarada para la exposición;
+  4. F4 queda limitada a C3/C3s con cotas de Manski;
+  5. umbrales de D2 y D4, y la sensibilidad de D2 a una tendencia por dosis;
+  6. cifras corregidas: 28 países; D1c con 7 tratados y al menos un trimestre posterior;
+  7. el valor tasado uniprovincial queda declarado, con robustez sin esas 7 provincias.
+- **Corrección técnica.** En `construir`, los shocks pasan a estar en puntos para que el error AKM tenga la escala de Z. src/v9/d4_inmigracion.py todavía no se había ejecutado.
+- **Robustez de D1a que no se puede hacer.** El IPVA municipal solo tiene nombres, sin código INE, así que se elimina y lo mismo ocurre con su uso municipal en D4 (cruces solo por código).

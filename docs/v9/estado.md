@@ -12,8 +12,13 @@ Rama local `r9/main` → remota `claude/housing-price-spain-econometric-95dhj3`.
 
 - **F2:** pre-registro en docs/v9/hipotesis.md, con potencia en output/v9/potencia (src/v9/f2_potencia.py). Commit con etiqueta local `prereg-v9`.
 
+- **Revisor F2:** REHACER (1 de 2), respondido con hipotesis_addendum_a1.md (etiqueta `prereg-v9-a1`).
+- **Herramientas** (src/v9/herramientas.py): validadas por Monte Carlo (tests/v9/test_herramientas.py, 8 pruebas).
+- **Scripts de D1, D2 y D4:** escritos y sin ejecutar.
+
 ## Siguiente paso exacto
-- Revisor de F2 (opus, tope 100k) → F3, D1a y D1b (src/v9/d1_zonas.py) según hipotesis.md.
+- Revisión breve del addendum.
+- Ejecutar src/v9/d1_zonas.py adaptado al addendum (permutación de etiquetas), y después D2, D4, D3, D5 y D7.
 
 ## Subagentes
-- Ninguno.
+- Revisor F2: unos 55.000 tokens según su propia estimación; la notificación del sistema contabiliza 69.477 (tope 100.000).

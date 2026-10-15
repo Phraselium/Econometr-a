@@ -198,6 +198,37 @@ def panel_prov() -> pd.DataFrame:
     return d.drop(columns="p_tasado")
 
 
+# ------------------------------------------------------------------------------------------------ D4 shift-share
+EXCL = ("Total", "Española", "Extranjera")
+AGREG = ("De ", "Europa", "País", "Oceanía")
+
+
+def paises(pn: pd.DataFrame) -> pd.DataFrame:
+    return pn[~pn.nacionalidad.isin(EXCL) & ~pn.nacionalidad.str.startswith(AGREG)]
+
+
+def construir(pp: pd.DataFrame, t0: int, t1: int, solo: str | None = None) -> dict:
+    """Devuelve DataFrame provincial con x (endógena), x_tot, Z, controles, y matrices de cuotas y shocks."""
+    tot = pp[pp.nacionalidad == "Total"].pivot_table(index="cod_provincia", columns="anio", values="poblacion")
+    ext = pp[pp.nacionalidad == "Extranjera"].pivot_table(index="cod_provincia", columns="anio", values="poblacion")
+    c = paises(pp)
+    F0 = c[c.anio == t0].pivot_table(index="cod_provincia", columns="nacionalidad", values="poblacion").fillna(0)
+    F1 = c[c.anio == t1].pivot_table(index="cod_provincia", columns="nacionalidad", values="poblacion").reindex_like(F0).fillna(0)
+    if solo:
+        F0, F1 = F0[[solo]], F1[[solo]]
+    provs = [p for p in F0.index if p not in ("51", "52")]
+    F0, F1 = F0.loc[provs], F1.loc[provs]
+    N0, N1 = F0.sum(0), F1.sum(0)
+    g_loo = ((N1 - F1) - (N0 - F0)) / (N0 - F0).replace(0, np.nan)          # n × C
+    w = F0.div(tot.loc[provs, t0], axis=0)                                  # cuotas de exposición
+    Z = (w * g_loo.fillna(0)).sum(1) * 100
+    d = pd.DataFrame({"Z": Z, "x": (ext.loc[provs, t1] - ext.loc[provs, t0]) / tot.loc[provs, t0] * 100,
+                      "x_tot": (tot.loc[provs, t1] - tot.loc[provs, t0]) / tot.loc[provs, t0] * 100,
+                      "lpop0": np.log(tot.loc[provs, t0]), "suma_cuotas": w.sum(1), "pop0": tot.loc[provs, t0]})
+    g_nac = (N1 - N0) / N0.replace(0, np.nan)
+    return {"d": d, "w": w, "g": g_nac.fillna(0) * 100}   # shocks en puntos: Z ≈ w @ g (aproximación sin leave-one-out)
+
+
 # ------------------------------------------------------------------------------------------------ D5 zona euro
 def europa() -> dict[str, pd.DataFrame]:
     jk = pd.read_csv(RAW / "v8/jk_shocks_ecb_mensual.csv", dtype=str)

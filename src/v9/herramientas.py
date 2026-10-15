@@ -1,0 +1,356 @@
+"""V9 · herramientas econométricas propias (sin dependencias nuevas), validadas por Monte Carlo en
+tests/v9/test_herramientas.py antes de usarse (regla V7).
+
+DiD escalonado (panel equilibrado; Y: matriz unidades × periodos; g: índice de columna del primer periodo tratado,
+np.inf si nunca tratada; tratamiento absorbente):
+  cs()       Callaway y Sant'Anna (2021) sin covariables: ATT(g,t) con base universal g-1 y controles «nunca» o «aún no»
+             tratados; agregados (ATT global ponderado por tamaño de cohorte, estudio de eventos ATT(e)) con funciones
+             de influencia por unidad y bootstrap multiplicador de Rademacher a nivel de unidad (= bootstrap salvaje por
+             conglomerados de unidad).
+  bjs()      imputación de Borusyak, Jaravel y Spiess (2024): efectos fijos de unidad y periodo estimados solo con
+             observaciones no tratadas; ATT = media de Y - Ŷ(0) en las tratadas; IC por bootstrap de unidades.
+  dcdh()     de Chaisemartin y D'Haultfœuille, DID_l con controles aún no tratados (equivale a CS «aún no tratados» con
+             base g-1 para tratamientos absorbentes); se expone por separado para la tabla.
+  honest_rm() Rambachan y Roth (2023), magnitudes relativas, versión simplificada: sesgo posterior acotado por
+             M̄ × máx |Δ| entre coeficientes previos consecutivos; IC = [θ̂ - cota - z·se, θ̂ + cota + z·se].
+Regresión con dosis continua (D2): twfe_cluster() con efectos fijos bidireccionales (panel equilibrado), errores por
+conglomerados y p de bootstrap salvaje (Rademacher, no restringido, bootstrap-t).
+IV y shift-share (D4): iv_just() 2SLS con un instrumento, F efectiva (Montiel Olea-Pflueger; con un instrumento es la
+F robusta de la primera etapa), IC de Anderson-Rubin por inversión, errores AKM (Adão, Kolesár y Morales 2019) y
+pesos de Rotemberg (Goldsmith-Pinkham, Sorkin y Swift 2020) con crecimientos nacionales (aproximación sin leave-one-out).
+Espacial (D3): conley() errores HAC espaciales con núcleo uniforme.
+"""
+from __future__ import annotations
+
+import numpy as np
+from scipy import stats
+
+SEED = 20261010
+
+
+# =========================================================================================== DiD escalonado
+def _medias(Y, idx):
+    return Y[idx].mean(0) if len(idx) else np.full(Y.shape[1], np.nan)
+
+
+def cs(Y: np.ndarray, g: np.ndarray, control: str = "nunca", e_min: int = -8, e_max: int = 8, B: int = 999,
+       seed: int = SEED, w: np.ndarray | None = None) -> dict:
+    """ATT(g,t) = [Ȳ_g(t) - Ȳ_g(g-1)] - [Ȳ_C(t) - Ȳ_C(g-1)], C = nunca tratadas (o aún no tratadas en t y en g-1).
+    Devuelve ATT global (t ≥ g), ATT(e) para e ∈ [e_min, e_max] (e = t - g; e = -1 es la base) y sus IF."""
+    n, T = Y.shape
+    w = np.ones(n) if w is None else np.asarray(w, float) / np.mean(w)
+    grupos = sorted(int(x) for x in np.unique(g[np.isfinite(g)]) if 1 <= x < T)
+    att, peso, IF = {}, {}, {}
+    for gg in grupos:
+        tr = np.where(g == gg)[0]
+        for t in range(T):
+            if t == gg - 1:
+                continue
+            if control == "nunca":
+                c = np.where(~np.isfinite(g))[0]
+            else:
+                c = np.where(((~np.isfinite(g)) | (g > max(t, gg - 1))) & (g != gg))[0]
+            if len(c) == 0 or len(tr) == 0:
+                continue
+            dt = Y[tr, t] - Y[tr, gg - 1]
+            dc = Y[c, t] - Y[c, gg - 1]
+            wt, wc = w[tr], w[c]
+            mt, mc = np.average(dt, weights=wt), np.average(dc, weights=wc)
+            a = mt - mc
+            inf = np.zeros(n)
+            inf[tr] = wt * (dt - mt) / wt.sum() * n
+            inf[c] -= wc * (dc - mc) / wc.sum() * n
+            att[(gg, t)], peso[(gg, t)], IF[(gg, t)] = a, wt.sum(), inf
+    def agrega(claves):
+        if not claves:
+            return np.nan, np.zeros(n)
+        w = np.array([peso[k] for k in claves], float)
+        w = w / w.sum()
+        est = float(sum(wi * att[k] for wi, k in zip(w, claves)))
+        inf = sum(wi * IF[k] for wi, k in zip(w, claves))
+        return est, inf
+    global_claves = [k for k in att if k[1] >= k[0]]
+    est_g, if_g = agrega(global_claves)
+    es = {}
+    for e in range(e_min, e_max + 1):
+        if e == -1:
+            continue
+        ks = [k for k in att if k[1] - k[0] == e]
+        if ks:
+            es[e] = agrega(ks)
+    rng = np.random.default_rng(seed)
+    V = rng.choice([-1.0, 1.0], size=(B, n))
+    def boot(inf):
+        return V @ inf / n
+    bg = boot(if_g)
+    se_g = float(bg.std(ddof=1))
+    es_tab = {e: (v[0], float(boot(v[1]).std(ddof=1))) for e, v in es.items()}
+    # p del bootstrap: proporción de |t*| ≥ |t| con t* centrado
+    p_g = float(np.mean(np.abs(bg) >= abs(est_g))) if se_g > 0 else np.nan
+    # matriz de covarianzas del estudio de eventos (para pretendencias y Honest DiD)
+    eks = sorted(es)
+    M = np.column_stack([boot(es[e][1]) for e in eks]) if eks else np.zeros((B, 0))
+    return {"att": est_g, "se": se_g, "p_boot": p_g, "p_normal": float(2 * stats.norm.sf(abs(est_g / se_g))) if se_g > 0 else np.nan,
+            "es": es_tab, "es_orden": eks, "es_vcov": np.cov(M, rowvar=False) if M.shape[1] > 1 else M.var(ddof=1, axis=0),
+            "n_tratadas": int(np.isfinite(g).sum()), "n_controles": int((~np.isfinite(g)).sum()), "att_gt": att}
+
+
+def pretendencias(res: dict, e_lo: int = -8, e_hi: int = -2) -> tuple[float, float, int]:
+    """Wald conjunto de ATT(e) = 0 para e ∈ [e_lo, e_hi]; devuelve (estadístico, p, gl)."""
+    idx = [i for i, e in enumerate(res["es_orden"]) if e_lo <= e <= e_hi]
+    if not idx:
+        return np.nan, np.nan, 0
+    b = np.array([res["es"][res["es_orden"][i]][0] for i in idx])
+    V = np.atleast_2d(res["es_vcov"])[np.ix_(idx, idx)]
+    w = float(b @ np.linalg.pinv(V) @ b)
+    return w, float(stats.chi2.sf(w, len(idx))), len(idx)
+
+
+def honest_rm(res: dict, Mbar: float, alfa: float = 0.05) -> tuple[float, float]:
+    """IC del ATT medio posterior (media simple de ATT(e), e ≥ 0) bajo magnitudes relativas M̄ (simplificado)."""
+    pre = sorted(e for e in res["es_orden"] if e < -1)
+    post = [e for e in res["es_orden"] if e >= 0]
+    if not post:
+        return np.nan, np.nan
+    b_pre = [res["es"][e][0] for e in pre] + [0.0]          # incluye la base e = -1 (0)
+    max_d = float(np.max(np.abs(np.diff(b_pre)))) if len(b_pre) > 1 else 0.0
+    idx = [res["es_orden"].index(e) for e in post]
+    V = np.atleast_2d(res["es_vcov"])[np.ix_(idx, idx)]
+    w = np.ones(len(idx)) / len(idx)
+    theta = float(np.mean([res["es"][e][0] for e in post]))
+    se = float(np.sqrt(w @ V @ w))
+    # el sesgo en el periodo posterior k crece como mucho M̄·max_d por periodo (acumulado): cota media
+    cota = Mbar * max_d * float(np.mean(np.arange(1, len(post) + 1)))
+    z = stats.norm.ppf(1 - alfa / 2)
+    return theta - cota - z * se, theta + cota + z * se
+
+
+def honest_ruptura(res: dict, rejilla=np.arange(0, 3.01, 0.05)) -> float:
+    """Menor M̄ con el que el IC contiene el 0 (M̄ de ruptura)."""
+    for m in rejilla:
+        lo, hi = honest_rm(res, m)
+        if lo <= 0 <= hi:
+            return float(m)
+    return float(rejilla[-1])
+
+
+def _fe_no_tratadas(Y: np.ndarray, D: np.ndarray, it: int = 200) -> tuple[np.ndarray, np.ndarray]:
+    """a_i + b_t ajustados por mínimos cuadrados sobre las celdas con D = 0 (proyecciones alternas)."""
+    m = (D == 0) & np.isfinite(Y)
+    a = np.zeros(Y.shape[0])
+    b = np.zeros(Y.shape[1])
+    Yz = np.where(m, Y, 0.0)
+    cnt_i = m.sum(1).clip(1)
+    cnt_t = m.sum(0).clip(1)
+    for _ in range(it):
+        a_new = ((Yz - b[None, :]) * m).sum(1) / cnt_i
+        b_new = ((Yz - a_new[:, None]) * m).sum(0) / cnt_t
+        if np.max(np.abs(a_new - a)) < 1e-10 and np.max(np.abs(b_new - b)) < 1e-10:
+            a, b = a_new, b_new
+            break
+        a, b = a_new, b_new
+    return a, b
+
+
+def bjs(Y: np.ndarray, g: np.ndarray, B: int = 499, seed: int = SEED, e_max: int = 8) -> dict:
+    n, T = Y.shape
+    tt = np.arange(T)[None, :]
+    D = (tt >= g[:, None]).astype(float)
+    def estima(Yb, gb):
+        Db = (tt >= gb[:, None]).astype(float)
+        a, b = _fe_no_tratadas(Yb, Db)
+        tau = Yb - a[:, None] - b[None, :]
+        trat = Db == 1
+        es = {}
+        e_mat = tt - gb[:, None]
+        for e in range(0, e_max + 1):
+            m = trat & (e_mat == e)
+            if m.any():
+                es[e] = float(tau[m].mean())
+        return float(tau[trat].mean()), es
+    att, es = estima(Y, g)
+    rng = np.random.default_rng(seed)
+    bs = []
+    for _ in range(B):
+        i = rng.integers(0, n, n)
+        if not np.isfinite(g[i]).any() or np.isfinite(g[i]).all():
+            continue
+        bs.append(estima(Y[i], g[i])[0])
+    se = float(np.std(bs, ddof=1))
+    return {"att": att, "se": se, "p_normal": float(2 * stats.norm.sf(abs(att / se))) if se > 0 else np.nan,
+            "ic95": (float(np.percentile(bs, 2.5)), float(np.percentile(bs, 97.5))), "es": es, "n_obs_tratadas": int(D.sum())}
+
+
+def dcdh(Y: np.ndarray, g: np.ndarray, B: int = 999, seed: int = SEED) -> dict:
+    """DID_l (l ≥ 0) con controles aún no tratados; con tratamiento binario absorbente coincide con CS «aún no tratados»."""
+    r = cs(Y, g, control="aun_no", e_min=0, e_max=8, B=B, seed=seed)
+    return {"att": r["att"], "se": r["se"], "p_normal": r["p_normal"], "es": r["es"]}
+
+
+# =========================================================================================== regresión TWFE con dosis
+def dm2(X: np.ndarray) -> np.ndarray:
+    """Doble centrado (unidad y periodo) de una matriz unidades × periodos (panel equilibrado)."""
+    return X - X.mean(1, keepdims=True) - X.mean(0, keepdims=True) + X.mean()
+
+
+def twfe_cluster(Y: np.ndarray, Xs: list[np.ndarray], B: int = 999, seed: int = SEED) -> dict:
+    """y_it = a_i + b_t + Σ_k β_k x_k,it + e; Xs: lista de matrices unidades × periodos. Conglomerado = unidad."""
+    n, T = Y.shape
+    y = dm2(Y).ravel()
+    X = np.column_stack([dm2(x).ravel() for x in Xs])
+    XtX_inv = np.linalg.pinv(X.T @ X)
+    beta = XtX_inv @ X.T @ y
+    u = y - X @ beta
+    cl = np.repeat(np.arange(n), T)
+    S = np.zeros((X.shape[1], X.shape[1]))
+    scores = np.zeros((n, X.shape[1]))
+    np.add.at(scores, cl, X * u[:, None])
+    S = scores.T @ scores
+    k = X.shape[1] + n + T - 1
+    c = n / (n - 1) * (n * T - 1) / (n * T - k)
+    V = c * XtX_inv @ S @ XtX_inv
+    se = np.sqrt(np.diag(V))
+    rng = np.random.default_rng(seed)
+    tb = np.zeros((B, X.shape[1]))
+    for b in range(B):
+        w = rng.choice([-1.0, 1.0], n)[cl]
+        yb = X @ beta + u * w
+        bb = XtX_inv @ X.T @ yb
+        ub = yb - X @ bb
+        sc = np.zeros((n, X.shape[1]))
+        np.add.at(sc, cl, X * ub[:, None])
+        Vb = c * XtX_inv @ (sc.T @ sc) @ XtX_inv
+        tb[b] = (bb - beta) / np.sqrt(np.diag(Vb))
+    t = beta / se
+    p_boot = np.array([np.mean(np.abs(tb[:, j]) >= abs(t[j])) for j in range(len(beta))])
+    return {"beta": beta, "se": se, "V": V, "p_normal": 2 * stats.norm.sf(np.abs(t)), "p_boot": p_boot, "n": n, "T": T}
+
+
+def wald(beta: np.ndarray, V: np.ndarray, idx: list[int]) -> tuple[float, float]:
+    b = beta[idx]
+    w = float(b @ np.linalg.pinv(V[np.ix_(idx, idx)]) @ b)
+    return w, float(stats.chi2.sf(w, len(idx)))
+
+
+# =========================================================================================== IV y shift-share
+def _ols(y, X):
+    XtX_inv = np.linalg.pinv(X.T @ X)
+    b = XtX_inv @ X.T @ y
+    return b, y - X @ b, XtX_inv
+
+
+def _hc1(X, u, XtX_inv):
+    n, k = X.shape
+    S = (X * u[:, None]).T @ (X * u[:, None])
+    return n / (n - k) * XtX_inv @ S @ XtX_inv
+
+
+def iv_just(y: np.ndarray, x: np.ndarray, z: np.ndarray, W: np.ndarray | None = None, w: np.ndarray | None = None) -> dict:
+    """2SLS con una endógena x, un instrumento z y controles W (con constante). w: pesos opcionales."""
+    n = len(y)
+    W = np.ones((n, 1)) if W is None else np.column_stack([np.ones(n), W])
+    if w is not None:
+        s = np.sqrt(w / w.mean())
+        y, x, z, W = y * s, x * s, z * s, W * s[:, None]
+    # parcialar controles
+    def res(v):
+        return v - W @ np.linalg.lstsq(W, v, rcond=None)[0]
+    yt, xt, zt = res(y), res(x), res(z)
+    pi = float(zt @ xt / (zt @ zt))
+    rf = float(zt @ yt / (zt @ zt))
+    beta = rf / pi
+    u = yt - beta * xt
+    v = xt - pi * zt
+    e_rf = yt - rf * zt
+    k = W.shape[1] + 1
+    se_iv = float(np.sqrt(n / (n - k) * np.sum(zt ** 2 * u ** 2)) / abs(zt @ xt))
+    se_pi = float(np.sqrt(n / (n - k) * np.sum(zt ** 2 * v ** 2)) / (zt @ zt))
+    se_rf = float(np.sqrt(n / (n - k) * np.sum(zt ** 2 * e_rf ** 2)) / (zt @ zt))
+    F_eff = (pi / se_pi) ** 2 if se_pi > 0 else np.inf
+    return {"beta": beta, "se": se_iv, "p": float(2 * stats.norm.sf(abs(beta / se_iv))), "pi": pi, "se_pi": se_pi,
+            "rf": rf, "se_rf": se_rf, "p_rf": float(2 * stats.norm.sf(abs(rf / se_rf))), "F_eff": F_eff, "n": n,
+            "_parciales": (yt, xt, zt, k)}
+
+
+def anderson_rubin(res: dict, rejilla: np.ndarray, alfa: float = 0.05) -> tuple[float, float, bool]:
+    """IC de AR por inversión (robusto a heterocedasticidad); devuelve (lo, hi, acotado)."""
+    yt, xt, zt, k = res["_parciales"]
+    n = len(yt)
+    acept = []
+    for b0 in rejilla:
+        e = yt - b0 * xt
+        g = float(zt @ e / (zt @ zt))
+        u = e - g * zt
+        se = np.sqrt(n / (n - k) * np.sum(zt ** 2 * u ** 2)) / (zt @ zt)
+        acept.append(abs(g / se) <= stats.norm.ppf(1 - alfa / 2))
+    acept = np.array(acept)
+    if not acept.any():
+        return np.nan, np.nan, True
+    lo, hi = rejilla[acept].min(), rejilla[acept].max()
+    return float(lo), float(hi), bool(not acept[0] and not acept[-1])
+
+
+def akm_se(res: dict, shares: np.ndarray, shocks: np.ndarray, W: np.ndarray | None = None, coef: str = "rf") -> float:
+    """Error estándar AKM (Adão, Kolesár y Morales 2019) del coeficiente de forma reducida o de 2SLS.
+    shares: n × C (cuotas de exposición), shocks: C. Var = Σ_c g_c² (Σ_i s̃_ic ε̂_i)² / (Σ_i z̃_i x̃_i)²."""
+    yt, xt, zt, k = res["_parciales"]
+    n = len(yt)
+    Wm = np.ones((n, 1)) if W is None else np.column_stack([np.ones(n), W])
+    st = shares - Wm @ np.linalg.lstsq(Wm, shares, rcond=None)[0]
+    if coef == "rf":
+        e = yt - res["rf"] * zt
+        den = zt @ zt
+    else:
+        e = yt - res["beta"] * xt
+        den = zt @ xt
+    R = (st * e[:, None]).sum(0)
+    return float(np.sqrt(np.sum(shocks ** 2 * R ** 2)) / abs(den))
+
+
+def rotemberg(y: np.ndarray, x: np.ndarray, shares: np.ndarray, shocks: np.ndarray, W: np.ndarray | None = None) -> np.ndarray:
+    """Pesos de Rotemberg α_c = g_c s_c'x̃ / Σ_c g_c s_c'x̃ (GPSS 2020) con crecimientos nacionales comunes."""
+    n = len(y)
+    Wm = np.ones((n, 1)) if W is None else np.column_stack([np.ones(n), W])
+    xt = x - Wm @ np.linalg.lstsq(Wm, x, rcond=None)[0]
+    num = shocks * (shares.T @ xt)
+    return num / num.sum()
+
+
+# =========================================================================================== espacial
+def conley(y: np.ndarray, X: np.ndarray, coords: np.ndarray, corte_m: float) -> dict:
+    """MCO con errores de Conley (núcleo uniforme, distancia euclídea en metros). X incluye la constante."""
+    b, u, XtX_inv = _ols(y, X)
+    d = np.sqrt(((coords[:, None, :] - coords[None, :, :]) ** 2).sum(-1))
+    K = (d <= corte_m).astype(float)
+    Xu = X * u[:, None]
+    S = Xu.T @ K @ Xu
+    V = XtX_inv @ S @ XtX_inv
+    se = np.sqrt(np.diag(V))
+    V_hc = _hc1(X, u, XtX_inv)
+    return {"beta": b, "se": se, "p": 2 * stats.norm.sf(np.abs(b / se)), "se_hc1": np.sqrt(np.diag(V_hc)), "n": len(y)}
+
+
+# =========================================================================================== ajustes múltiples
+def holm(p: list[float]) -> np.ndarray:
+    p = np.asarray(p, float)
+    m = len(p)
+    orden = np.argsort(p)
+    adj = np.empty(m)
+    acum = 0.0
+    for r, i in enumerate(orden):
+        acum = max(acum, (m - r) * p[i])
+        adj[i] = min(1.0, acum)
+    return adj
+
+
+def bh(p: list[float]) -> np.ndarray:
+    p = np.asarray(p, float)
+    m = len(p)
+    orden = np.argsort(p)[::-1]
+    adj = np.empty(m)
+    prev = 1.0
+    for r, i in enumerate(orden):
+        rank = m - r
+        prev = min(prev, p[i] * m / rank)
+        adj[i] = prev
+    return adj

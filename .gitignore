@@ -139,3 +139,4 @@ paper/manuscrito_files/
 data/raw/v11/*/original/
 data/raw/v11/*/od_municipios_*.parquet
 data/raw/v11/*/tmp/
+data/raw/v11/uv_matricula/*.csv

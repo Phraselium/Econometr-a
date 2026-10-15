@@ -145,6 +145,35 @@ def partes() -> list[pd.DataFrame]:
         add(pd.DataFrame({"territorio_codigo": x.cod_provincia, "nivel": "provincia", "periodo_raw": x.mes,
                           "variable": "ss_afiliados_extranjeros", "valor": x.total}),
             "data/raw/v11/ss_afiliacion_extranjeros/afiliados_extranjeros_provincia.csv.gz")
+    # OPI (réplica de la Comunidad de Madrid): certificados de registro o tarjetas en vigor, provincia 28, por nacionalidad
+    f = RAW11 / "opi_replica_madrid/opi_madrid_pais_sexo.csv.gz"
+    if f.exists():
+        o = pd.read_csv(f, dtype=str, keep_default_na=False)
+        o = o[o.sexo == "Total"]
+        nac = np.where(o.concepto.str.startswith("Total"), "Total",
+                       o.concepto.str.replace(r"^.*? en vigor (con nacionalidad de |de |del |con )?", "", regex=True))
+        nac = pd.Series(nac, index=o.index)
+        add(pd.DataFrame({"territorio_codigo": "28", "nivel": "provincia", "periodo_raw": o.anio, "variable": "opi_residentes_documentados",
+                          "desagregacion": "nacionalidad=" + nac.str.strip(),
+                          "valor": pd.to_numeric(o.valor, errors="coerce")}).dropna(subset=["valor"]).drop_duplicates(["periodo_raw", "desagregacion"]),
+            "data/raw/v11/opi_replica_madrid/opi_madrid_pais_sexo.csv.gz")
+    # Catastro, titularidad (padrón IBI): titulares y viviendas por tramo de nº de inmuebles del titular y tipo de persona
+    # (se omiten las celdas a 0: ausencia de fila con total presente = 0)
+    f = RAW11 / "catastro_titularidad/p_spi_mun_v.csv.gz"
+    if f.exists():
+        t = pd.read_csv(f, dtype=str, keep_default_na=False)
+        t = t[_mun(t.CODINE)]
+        persona = {"PF": "fisica", "PJ": "juridica", "PE": "entidad", "PD": "otros"}
+        for pref, var in (("U_", "catastro_tit_titulares"), ("I_U_", "catastro_tit_viviendas")):
+            tot = "NUM_SUJETOS_PASIVOS" if pref == "U_" else "INMUEBLES"
+            cols = [c for c in t.columns if re.fullmatch(pref + r"P[FJED]_(HASTA|MAYOR)_\d+", c)]
+            L = t.melt(id_vars=["CODINE", "anio_fichero"], value_vars=cols + [tot], var_name="col", value_name="v")
+            m = L.col.str.extract(r"P([FJED])_(HASTA|MAYOR)_(\d+)$")
+            L["desag"] = np.where(L.col == tot, "total",
+                                  "persona=" + ("P" + m[0]).map(persona).fillna("") + "|tramo_inmuebles=" + m[1].str.lower().fillna("") + "_" + m[2].fillna(""))
+            add(pd.DataFrame({"territorio_codigo": L.CODINE, "nivel": "municipio", "periodo_raw": L.anio_fichero, "variable": var,
+                              "desagregacion": L.desag, "valor": pd.to_numeric(L.v, errors="coerce")}).query("valor != 0").dropna(subset=["valor"]),
+                "data/raw/v11/catastro_titularidad/p_spi_mun_v.csv.gz")
     # INE, turismo medido con móviles: turistas por municipio de destino y mes (suma de orígenes publicados)
     for nombre in ("receptor", "interno"):
         f = RAW11 / f"ine_turismo_moviles/turismo_moviles_{nombre}_municipio.csv.gz"
@@ -202,6 +231,9 @@ META_V11 = {
     **{f"ss_afiliados_{s}_cota_inferior": ("afiliados", f"Seguridad Social, afiliados por municipio, CNAE {s}", _C, "Seguridad Social: reutilización con cita", True)
        for s in ("construccion", "hosteleria", "inmobiliarias")},
     "ss_afiliados_extranjeros": ("afiliados", "Seguridad Social, afiliados extranjeros por provincia (último día del periodo)", _C, "Seguridad Social: reutilización con cita", True),
+    "opi_residentes_documentados": ("personas", "OPI (Ministerio de Inclusión), extranjeros con certificado de registro o tarjeta en vigor; réplica de la Comunidad de Madrid", _C, "CC BY 4.0 (Comunidad de Madrid)", True),
+    "catastro_tit_titulares": ("titulares (sujetos pasivos)", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial)", _C, "Catastro: reutilización con reconocimiento", True),
+    "catastro_tit_viviendas": ("inmuebles residenciales", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial)", _C, "Catastro: reutilización con reconocimiento", True),
     "ine_tmov_receptor_turistas": ("turistas", "INE, turismo receptor medido con teléfonos móviles (52048; experimental)", _C, INE, True),
     "ine_tmov_interno_turistas": ("turistas", "INE, turismo interno medido con teléfonos móviles (53464; experimental)", _C, INE, True),
     "c21md_hogares_muestra": ("hogares (muestra 10 %)", "INE, Censo 2021, microdatos de personas (recuento muestral)", _C, INE, True),

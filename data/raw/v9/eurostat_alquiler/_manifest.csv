@@ -1,0 +1,2 @@
+fuente,fichero,url,fecha_descarga,edicion,periodo,nivel_territorial,n_filas,sha256,licencia,redistribuible,notas
+eurostat_alquiler,data/raw/v9/eurostat_alquiler/prc_hicp_minr_cp041_mensual.csv.gz,https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/prc_hicp_minr/M.I15.CP041.?format=SDMX-CSV,2026-10-15,Eurostat prc_hicp_minr (consulta 2026-10-15),1996-01–2026-08,país,13501,074303cfa73d865403df0896f0770c7572dfce0c4ac8e33d2558414c731bb765,Eurostat: reutilización con cita,sí,filas=13501; países=44

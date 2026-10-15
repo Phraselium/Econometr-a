@@ -1,0 +1,2 @@
+fuente,fichero,url,fecha_descarga,edicion,periodo,nivel_territorial,n_filas,sha256,licencia,redistribuible,notas
+ine_callejero,data/raw/v9/ine_callejero/seccion_cp_2025.csv.gz,https://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072025.zip,2026-10-15,"Callejero del Censo Electoral, julio 2025 (ref. 2025-06-30)",2025-06-30,sección censal × código postal,45998,60669aebb9e17f8f2110d383059482e9b2033f84110f69b96828156b3d0c7305,INE: reutilización con cita,sí,pares sección-CP=45998; secciones=36626; CP=10790

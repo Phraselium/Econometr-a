@@ -119,9 +119,16 @@ data/raw/v9/insideairbnb/listings_*.csv.gz
 data/raw/v9/incasol/*.csv.gz
 data/raw/v9/incasol/original/
 data/raw/v9/actualizaciones/original/
+data/raw/v9/cat_turisme/registre_*.csv.gz
+data/raw/v9/cat_turisme/ieet_*.csv.gz
+# V9 COMPLETO: originales grandes (sha256 en el manifiesto de cada fuente)
+data/raw/v9/ine_callejero/original/
+data/raw/v9/bce_rai/original/
+data/raw/v9/ine_censos/original/
 # V10: base completa (incluye filas no redistribuibles) y DuckDB se regeneran con `make base`
 data/base/hechos.parquet
 data/base/vivienda.duckdb
 data/base/vivienda.duckdb.wal
 data/raw/v10/geo/seccionado_2025.zip
 web/_site/
+data/raw/v9/eurostat_alquiler/original/

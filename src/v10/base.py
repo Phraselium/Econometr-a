@@ -356,6 +356,75 @@ def v9() -> pd.DataFrame:
                       "variable": "eurostat_plataformas_noches", "desagregacion": "indicador=" + u.indicador,
                       "valor": pd.to_numeric(u.valor, errors="coerce"), "metodo_dato": "observado"}).dropna(subset=["valor"]),
         "data/raw/v9/eurostat_plataformas/tour_ce_oan3.csv.gz")
+    # --- V9 COMPLETO (F1): fuentes nuevas ---------------------------------------------------------------------
+    # IDESCAT: viviendas de uso turístico y apartamentos turísticos por municipio (stock a 31-dic)
+    t = pd.read_csv(RAW9 / "cat_turisme/idescat_allotjaments_municipi.csv.gz", dtype=str)
+    corto = {"habitatges_us_turistic": "hut", "apartaments_turistics": "apartamentos"}
+    t = t[t.tipo.isin(corto)]
+    add(pd.DataFrame({"territorio_codigo": t.cod_ine, "nivel": "municipio", "periodo_raw": t.anio,
+                      "variable": "idescat_" + t.tipo.map(corto) + "_" + t.medida.str.lower().map({"establiments": "n", "places": "plazas"}),
+                      "valor": pd.to_numeric(t.valor, errors="coerce"), "metodo_dato": "observado"}).dropna(subset=["valor"]),
+        "data/raw/v9/cat_turisme/idescat_allotjaments_municipi.csv.gz")
+    # Padrón continuo por nacionalidad: total provincial = suma de municipios (el fichero municipal queda en data/raw/v9)
+    pn = pd.read_csv(RAW9 / "ine_padron_nacionalidad/padron_nacionalidad_2003_2022.csv.gz", dtype=str)
+    pn = pn[pn.cod_municipio.notna()]
+    pn = pn.assign(poblacion=pd.to_numeric(pn.poblacion)).groupby(["cod_provincia", "anio", "nacionalidad"], as_index=False).poblacion.sum()
+    add(pd.DataFrame({"territorio_codigo": pn.cod_provincia, "nivel": "provincia", "periodo_raw": pn.anio,
+                      "variable": "padron_pob_nacionalidad", "desagregacion": "nacionalidad=" + pn.nacionalidad,
+                      "valor": pn.poblacion, "metodo_dato": "suma de municipios"}),
+        "data/raw/v9/ine_padron_nacionalidad/padron_nacionalidad_2003_2022.csv.gz")
+    # Migraciones (EM 2008-2021 y EMCR 2021-2024): saldos y flujos por provincia
+    for f, var, col_nac in (("ine_em_24385", "em_saldo_interprovincial", "Nacionalidad"),
+                            ("ine_em_24323", "em_inmigracion_extranjero", "Nacionalidad"),
+                            ("ine_em_24326", "em_emigracion_extranjero", "Nacionalidad")):
+        m = pd.read_csv(RAW9 / f"ine_migraciones/{f}.csv.gz", dtype=str)
+        m = m[m.Provincias.str.match(r"^\d{2} ")]
+        add(pd.DataFrame({"territorio_codigo": m.Provincias.str[:2], "nivel": "provincia", "periodo_raw": m.Periodo,
+                          "variable": var, "desagregacion": "nacionalidad=" + m[col_nac],
+                          "valor": pd.to_numeric(m.Total.str.replace(".", "", regex=False), errors="coerce"),
+                          "metodo_dato": "observado"}).dropna(subset=["valor"]), f"data/raw/v9/ine_migraciones/{f}.csv.gz")
+    m = pd.read_csv(RAW9 / "ine_migraciones/ine_emcr_69764.csv.gz", dtype=str)
+    m = m[m.Provincias.fillna("").str.match(r"^\d{2} ")]
+    add(pd.DataFrame({"territorio_codigo": m.Provincias.str[:2], "nivel": "provincia", "periodo_raw": m.Periodo,
+                      "variable": "emcr_saldo", "desagregacion": "tipo=" + m["Tipo de saldo"] + "|nacionalidad=" + m.Nacionalidad,
+                      "valor": pd.to_numeric(m.Total.str.replace(".", "", regex=False), errors="coerce"),
+                      "metodo_dato": "observado"}).dropna(subset=["valor"]), "data/raw/v9/ine_migraciones/ine_emcr_69764.csv.gz")
+    # SEPE: paro registrado y contratos por municipio, media anual de los meses publicados (cálculo propio)
+    for var in ("paro_registrado", "contratos"):
+        s = pd.read_csv(RAW9 / f"sepe_municipios/{var}_municipio_mensual.csv.gz", dtype={"mes": str, "cod_municipio": str})
+        s = s[~s.posterior_prereg.astype(str).str.lower().eq("true")]
+        s["anio"] = s.mes.str[:4]
+        g = s.groupby(["cod_municipio", "anio"])[var].agg(["mean", "count"]).reset_index()
+        g = g[g["count"] == 12]
+        add(pd.DataFrame({"territorio_codigo": g.cod_municipio, "nivel": "municipio", "periodo_raw": g.anio,
+                          "variable": f"sepe_{var}_media_anual", "valor": g["mean"], "metodo_dato": "media de 12 meses (cálculo propio)"}),
+            f"data/raw/v9/sepe_municipios/{var}_municipio_mensual.csv.gz")
+    # BCE RAI: cuota de nuevos préstamos de vivienda a tipo variable o fijación ≤1 año; Eurostat IPCA alquileres
+    r = pd.read_csv(RAW9 / "bce_rai/bce_rai_svlhphh.csv.gz", dtype=str)
+    add(pd.DataFrame({"territorio_codigo": r.pais, "nivel": "pais", "periodo_raw": r.periodo, "variable": "bce_cuota_tipo_variable",
+                      "valor": pd.to_numeric(r.valor, errors="coerce"), "metodo_dato": "observado"}).dropna(subset=["valor"]),
+        "data/raw/v9/bce_rai/bce_rai_svlhphh.csv.gz")
+    h = pd.read_csv(RAW9 / "eurostat_alquiler/prc_hicp_minr_cp041_mensual.csv.gz", dtype=str)
+    h = h[h.pais.str.fullmatch(r"[A-Z]{2}")]
+    add(pd.DataFrame({"territorio_codigo": h.pais, "nivel": "pais", "periodo_raw": h.periodo, "variable": "hicp_alquiler_indice",
+                      "valor": pd.to_numeric(h.indice_2015, errors="coerce"), "metodo_dato": "observado"}).dropna(subset=["valor"]),
+        "data/raw/v9/eurostat_alquiler/prc_hicp_minr_cp041_mensual.csv.gz")
+    # Censo 2011: viviendas por tipo y provincia (vivienda principal = hogar)
+    c11 = pd.read_csv(RAW9 / "ine_censos/censo_t3457.csv.gz", sep=";", dtype=str)
+    col = c11.columns[0]
+    # CCAA y provincias comparten códigos de 2 dígitos: la tabla lista cada CCAA (01..19, en orden) seguida de sus
+    # provincias; una etiqueta es CCAA si su código es el siguiente de la secuencia 01..19
+    es_prov, sig = {}, 1
+    for e in c11[col].drop_duplicates():
+        if e[:2].isdigit() and int(e[:2]) == sig:
+            es_prov[e], sig = False, sig + 1
+        else:
+            es_prov[e] = e[:2].isdigit()
+    c11 = c11[c11[col].map(es_prov)]
+    add(pd.DataFrame({"territorio_codigo": c11[col].str[:2], "nivel": "provincia", "periodo_raw": c11.Periodo,
+                      "variable": "censo2011_viviendas", "desagregacion": "tipo=" + c11["Tipo de vivienda"],
+                      "valor": pd.to_numeric(c11.Total.str.replace(".", "", regex=False), errors="coerce"),
+                      "metodo_dato": "observado"}).dropna(subset=["valor"]), "data/raw/v9/ine_censos/censo_t3457.csv.gz")
     # Incasòl (no redistribuible; solo si está en disco)
     inc = RAW9 / "incasol/incasol_qww9-bvhh_actual.csv.gz"
     if inc.exists():
@@ -508,6 +577,20 @@ META_V9 = {  # variable -> (unidad, fuente, capa, licencia, redistribuible)
     "catastro_unidades_urbanas_total": ("inmuebles", "Dirección General del Catastro, estadísticas catastrales (urbana)", "C4", "Catastro: reutilización con cita", True),
     "v5_deficit_2021_2025": ("viviendas", "Resultado publicado V5 (A4): déficit 2021-2025 por provincia (rango de variantes)", "C4", "elaboración propia (CC BY 4.0)", True),
     "v8_factor_comun_precios": ("unidades del componente (estandarizado)", "Resultado publicado V8 (M1): factor común de las fuentes de precio", "C4", "elaboración propia (CC BY 4.0)", True),
+    "idescat_hut_n": ("viviendas", "IDESCAT, Estadística de establecimientos turísticos (turall): HUT", "C4", "IDESCAT: reutilización con cita", True),
+    "idescat_hut_plazas": ("plazas", "IDESCAT, turall: HUT", "C4", "IDESCAT: reutilización con cita", True),
+    "idescat_apartamentos_n": ("establecimientos", "IDESCAT, turall: apartamentos turísticos", "C4", "IDESCAT: reutilización con cita", True),
+    "idescat_apartamentos_plazas": ("plazas", "IDESCAT, turall: apartamentos turísticos", "C4", "IDESCAT: reutilización con cita", True),
+    "padron_pob_nacionalidad": ("personas", "INE, Padrón continuo por nacionalidad (tablas jaxiT3 por provincia; suma de municipios)", "C4", "INE: reutilización con cita", True),
+    "em_saldo_interprovincial": ("personas", "INE, Estadística de Migraciones (24385)", "C4", "INE: reutilización con cita", True),
+    "em_inmigracion_extranjero": ("personas", "INE, Estadística de Migraciones (24323)", "C4", "INE: reutilización con cita", True),
+    "em_emigracion_extranjero": ("personas", "INE, Estadística de Migraciones (24326)", "C4", "INE: reutilización con cita", True),
+    "emcr_saldo": ("personas", "INE, Estadística de Migraciones y Cambios de Residencia (69764)", "C4", "INE: reutilización con cita", True),
+    "sepe_paro_registrado_media_anual": ("personas", "SEPE, paro registrado por municipio (media anual propia)", "C4", "SEPE: reutilización con cita", True),
+    "sepe_contratos_media_anual": ("contratos al mes", "SEPE, contratos registrados por municipio (media anual propia)", "C4", "SEPE: reutilización con cita", True),
+    "bce_cuota_tipo_variable": ("% de nuevos préstamos", "BCE, RAI (SVLHPHH): nuevos préstamos de vivienda a tipo variable o fijación ≤1 año", "C4", "BCE: reutilización con cita", True),
+    "hicp_alquiler_indice": ("índice 2015=100", "Eurostat, prc_hicp_minr (CP041, alquileres efectivos)", "C4", "Eurostat: reutilización con cita", True),
+    "censo2011_viviendas": ("viviendas", "INE, Censo de Población y Viviendas 2011 (3457)", "C4", "INE: reutilización con cita", True),
     "zt_vigente": ("0/1", "BOE, resoluciones de la Secretaría de Estado de Vivienda (zonas tensionadas)", "C4", "BOE: reutilización con cita", True),
 }
 

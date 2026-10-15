@@ -108,3 +108,29 @@
   - shocks del BCE (2025-10);
   - costes de construcción de Eurostat (2026T2).
 - **Copias.** De MIVAU no se guarda copia, porque duplicaría el proyecto. Los CSV originales del BdE sí se guardan, porque el proyecto solo tenía extractos.
+
+## D8 — V9 COMPLETO, F1: bloques 1-9 (2026-10-15)
+- **Criterio de prioridad.** Se descarga primero lo que necesitan los diseños pre-registrables D1-D7. Lo que ningún diseño usa se documenta como aplazado (docs/v9/auditoria_exhaustividad.md), porque el prompt prohíbe análisis fuera de él.
+- **Fuentes nuevas** (todas con manifiesto y sha256; cruces por código):
+
+  | Script | Fuente | Periodo | Nivel | Redistribuible |
+  |---|---|---|---|---|
+  | fetch_cat_turisme.py | IDESCAT turall (HUT y apartamentos) | 2015-2025 | municipio (código IDESCAT → INE) | sí |
+  | fetch_cat_turisme.py | Registre de Turisme (agregado) e IEET | corte 2026-10; 2017S1-2025S1 | municipio | no (`make datos_terceros`) |
+  | fetch_bcn_hut.py | Open Data BCN, HUT vigentes | año de expediente 2008-2026 | barrio de Barcelona | sí (CC BY 4.0) |
+  | fetch_ine_padron_nacionalidad.py | Padrón continuo por nacionalidad y por país de nacimiento | 2003-2022 | provincia y municipio | sí |
+  | fetch_ine_migraciones.py | EM (24379, 24385, 24323, 24326) y EMCR (69764, 69693, 69708, 69733) | 2008-2021 y 2021-2024 | provincia | sí |
+  | fetch_ine_censos.py | Censo 2011, viviendas por tipo (3457) | 2011 | provincia | sí |
+  | fetch_ine_callejero.py | Callejero del censo electoral, julio de 2025 | 2025-06-30 | sección × código postal | sí |
+  | fetch_sepe_municipios.py | SEPE, paro y contratos registrados | 2006-01 a 2026 | municipio | sí |
+  | fetch_bce_rai.py | BCE RAI, cuota de nuevos préstamos a tipo variable | 2003-01 a 2026-08 | país | sí |
+  | fetch_eurostat_alquiler.py | Eurostat prc_hicp_minr CP041 | 1996-01 a 2026-08 | país | sí |
+
+- **Cuadres.**
+  - IDESCAT: la suma municipal de HUT coincide con el total de Cataluña publicado (47.242 en 2015 y 105.399 en 2025).
+  - Padrón: la suma de municipios coincide con el total provincial en todas las provincias con fila provincial (diferencia máxima 0). Las tablas uniprovinciales no traen fila provincial con código, así que el total provincial de la base se calcula siempre como suma de municipios.
+  - Callejero: 36.626 secciones (seccionado 2025: 36.554, más las secciones dadas de baja en el semestre) y 10.790 códigos postales.
+- **Barcelona HUT.** El año del número de expediente no es la fecha de alta: es el año de inicio del trámite. Como no hay licencias nuevas desde 2014 (PEUAT), el stock vigente aproxima el de 2019. Las bajas no se observan: la exposición por barrio se usa como **medida aproximada**, marcada.
+- **SEPE en la base.** Media de los 12 meses solo para años completos. El mensual queda en data/raw/v9.
+- **Padrón municipal por nacionalidad** (6,2 millones de filas): no entra en la base, que solo tiene el agregado provincial (39.520 filas). D4 lee el fichero municipal directamente de data/raw/v9.
+- **Base.** `make base` pasa de 10,16 a 10,67 millones de filas; 13 variables nuevas, todas redistribuibles. Incasòl, el agregado del Registre y el IEET siguen fuera de la capa pública.

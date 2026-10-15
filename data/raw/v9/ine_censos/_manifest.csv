@@ -1,0 +1,2 @@
+fuente,fichero,url,fecha_descarga,edicion,periodo,nivel_territorial,n_filas,sha256,licencia,redistribuible,notas
+ine_censos,data/raw/v9/ine_censos/censo_t3457.csv.gz,https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/3457.csv?nocab=1,2026-10-15,"INE, Censo 2011, tabla 3457",2011 (1 de noviembre),CCAA y provincia (código en la etiqueta),504,cc2fd42fc4adf2d0d0af2e757c90c6c0f148b7e45c4a2456d91182a8820a8f23,INE: reutilización con cita,sí,"censo 2011: viviendas por tipo, CCAA y provincia"

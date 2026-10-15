@@ -14,3 +14,16 @@
 |---|---|---|---|
 | Convalidación o derogación del Decreto ley catalán 1/2025 (contención de rentas) | https://portaljuridic.gencat.cat/eli/es-ct/dl/2025/01/28/1 (HTML, XML y Turtle); conjunto n6hn-rmy7 de analisi.transparenciacatalunya.cat; sumarios del BOE 2025-01 a 2026-10 | El BOE no lo ha publicado (sí el DOGC núm. 9339). El conjunto de normativa del DOGC no incluye las resoluciones del Parlament, y la ficha del Portal Jurídic no trae referencias posteriores. 3 intentos (2026-10-14). | Se registra con la publicación verificada y el estado NO VERIFICADO (eventos_regulacion_v9.csv y regimen_alcance_v9.csv). Segunda pasada en el bloque 9: buscador del Parlament o DOGC por fecha. |
 | Wayback Machine (cortes antiguos de registros públicos) | https://web.archive.org/cdx/search/cdx | «Blocked by egress policy»: la política de red del entorno no permite el host. | Pendiente: el autor puede añadir web.archive.org a los dominios permitidos del entorno. |
+
+## V9 COMPLETO, F1 (2026-10-15)
+
+| Fuente | URL o endpoint | Motivo | Qué se hizo en su lugar |
+|---|---|---|---|
+| BCE MIR, volúmenes de nuevas operaciones por periodo de fijación y país | `MIR/M.<país>.B.A2C.<F,I,O,P>.B.A.2250.EUR.N` | 404 para todos los países: solo existen para el agregado U2 (consulta con comodín, 3 intentos) | Cuota de nuevos préstamos a tipo variable o fijación ≤1 año por país (RAI, SVLHPHH; src/v9/fetch_bce_rai.py) |
+| Censo 2001, viviendas principales por provincia | ine.es/censo (sistema interactivo); tempus CENSOPV solo tiene tablas de 2011 | Sin tabla descargable por script (3 intentos) | D7 empieza en 2011 a escala provincial; 2001-2011 solo como contexto nacional |
+| EVR (Estadística de Variaciones Residenciales) 1988-2007 por provincia | tempus OPERACIONES_DISPONIBLES (no figura); jaxiT3 | No está en la API ni en jaxiT3 | Flujos EM desde 2008 y EMCR desde 2021; antes de 2008, el componente interno se aproxima con el cambio de la población española del padrón (marcado) |
+| Barcelona, cortes trimestrales de HUT (2018T2-2026T3) | opendata-ajuntament.barcelona.cat/…/download | Prueba anti-bot («/challenge») para los zip (3 intentos, con y sin redirecciones) | Registro vigente por la API CKAN datastore, con el año del número de expediente (src/v9/fetch_bcn_hut.py) |
+| IDESCAT, hoteles, campings y turismo rural por municipio | turall n=6033, 6034, 6037 con geo=mun | La tabla no ofrece años a escala municipal | Solo HUT y apartamentos turísticos (los que usa D2) |
+| Afiliación por municipio (IDESCAT `afi`) | idescat.cat/pub/?id=afi&n=… | Las tablas no exponen descarga SSV municipal estable (2 intentos) | Paro registrado y contratos del SEPE por municipio desde 2006 (src/v9/fetch_sepe_municipios.py) |
+| Cortes antiguos del registro VUT de la GVA | web.archive.org | Bloqueado por la política de red (sin cambio desde V9-DATOS) | Panel mensual reconstruido de altas y bajas fechadas (ya en el proyecto) |
+| INE viviendas turísticas, edición de noviembre de 2026 | tempus VTE | Aún no publicada (referencia noviembre; se publica en febrero) | Edición de mayo de 2026 |

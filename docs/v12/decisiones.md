@@ -164,3 +164,21 @@ Reglas generales:
 8. **Verificador:** ficha V12-V02 sustituye a V02 («fondos y grandes tenedores … responsables de la subida»): pasa de
    «NO ANALIZADA: FALTAN DATOS» a «ANALIZADA, NO CONCLUYENTE». Hay magnitud (C4, fuente única); la parte causal no
    tiene diseño que la contraste. Se conecta a publicación y web en B8.
+
+## B7 · Turismo y presión residencial (src/v12/b7_turismo.py → output/v12/b7)
+1. **Dos fuentes de stock que miden cosas distintas:** INE (anuncios en plataformas, experimental, semestral desde
+   2021-08) y registro de la GVA (inscripciones; cortes observados 2025-01-26 y 2026-10-14). Comunitat Valenciana:
+   51.268 viviendas turísticas según el INE (2026-05; 2,0 % del parque) y 90.124 inscritas en el registro
+   (2026-10-14). Coinciden (< 25 % de diferencia) en 132 de 452 municipios: en el resto se reportan las dos y no se
+   elige una. València: 5.393 (INE, 1,4 %) y 5.766 (registro).
+2. **Serie reconstruida del registro (2015-2025):** sale de las fechas de alta de las viviendas que siguen inscritas;
+   no recoge bajas, es cota inferior del stock pasado y solo entra como robustez.
+3. **Agregación:** el porcentaje del INE se agrega con el parque implícito de cada sección (viviendas turísticas ÷
+   porcentaje); sección → barrio en València con la misma correspondencia por área que B1.
+4. **Asociaciones (C4):** municipios de la Comunitat Valenciana ≥ 10.000 hab.; tres medidas de turismo (INE %,
+   registro por 1.000 hab., turistas de teléfonos móviles por habitante en 2024) frente a crecimiento de población
+   2021-2025, alquiler 2024 y su variación 2019-2024, cuota de personas jurídicas y de titulares con > 10 viviendas
+   (B5). 15 especificaciones al Registry, Holm. La vivienda turística es mayor donde crece más la población, el alquiler
+   es más alto y hay más propiedad de sociedades; no se asocia con la cuota de grandes titulares. Descriptivo.
+5. **Cataluña y Barcelona:** HUT del Idescat (2025) frente al INE (media de 2025) por municipio (coinciden en 209 de
+   898) y HUT de Barcelona por año del expediente (Ajuntament).

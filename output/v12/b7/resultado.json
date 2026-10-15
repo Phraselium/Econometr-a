@@ -1,0 +1,166 @@
+{
+ "rama": "V12-B7",
+ "pregunta": "¿Dónde se concentra la vivienda turística y qué la acompaña?",
+ "capa": "C4",
+ "metodo": "descriptivo; dos fuentes de stock; asociación de rangos",
+ "datos": "INE VUT, registro GVA, INE móviles, Idescat, Ajuntament de Barcelona",
+ "N": 542,
+ "cv": {
+  "vut_ine_2021_08": 51047.0,
+  "vut_ine_2026-05": 51268.0,
+  "pct_2026-05": 2.01,
+  "registro_gva_2026_10_14": 90124.0,
+  "municipios_fuentes_coinciden": 132,
+  "municipios_con_ambas": 452
+ },
+ "valencia": {
+  "vut_ine_2021_08": 5616.0,
+  "vut_ine_2026-05": 5393.0,
+  "pct_2026-05": 1.41,
+  "registro_gva_2026_10_14": 5766.0
+ },
+ "cataluna_municipios_fuentes_coinciden": 209,
+ "cataluna_municipios_con_ambas": 898,
+ "asociaciones": [
+  {
+   "turismo": "pct_vut_ine_2026-05",
+   "variable": "crec_pob_2021_2025_pct",
+   "N": 105,
+   "spearman": 0.475,
+   "ic95_inf": 0.318,
+   "ic95_sup": 0.6,
+   "p_holm": 3.3886863477913964e-06
+  },
+  {
+   "turismo": "pct_vut_ine_2026-05",
+   "variable": "alquiler_m2_2024",
+   "N": 105,
+   "spearman": 0.488,
+   "ic95_inf": 0.298,
+   "ic95_sup": 0.636,
+   "p_holm": 1.6786212245338542e-06
+  },
+  {
+   "turismo": "pct_vut_ine_2026-05",
+   "variable": "alquiler_var_2019_2024",
+   "N": 105,
+   "spearman": -0.12,
+   "ic95_inf": -0.32,
+   "ic95_sup": 0.067,
+   "p_holm": 0.8949458149181164
+  },
+  {
+   "turismo": "pct_vut_ine_2026-05",
+   "variable": "pct_PJ_2025",
+   "N": 105,
+   "spearman": 0.592,
+   "ic95_inf": 0.441,
+   "ic95_sup": 0.724,
+   "p_holm": 4.3186816555062376e-10
+  },
+  {
+   "turismo": "pct_vut_ine_2026-05",
+   "variable": "pct_mas10_2025",
+   "N": 105,
+   "spearman": -0.026,
+   "ic95_inf": -0.227,
+   "ic95_sup": 0.176,
+   "p_holm": 1.0
+  },
+  {
+   "turismo": "vut_registro_por_1000_hab",
+   "variable": "crec_pob_2021_2025_pct",
+   "N": 101,
+   "spearman": 0.487,
+   "ic95_inf": 0.339,
+   "ic95_sup": 0.621,
+   "p_holm": 2.912594728945461e-06
+  },
+  {
+   "turismo": "vut_registro_por_1000_hab",
+   "variable": "alquiler_m2_2024",
+   "N": 101,
+   "spearman": 0.425,
+   "ic95_inf": 0.246,
+   "ic95_sup": 0.577,
+   "p_holm": 8.59552155681332e-05
+  },
+  {
+   "turismo": "vut_registro_por_1000_hab",
+   "variable": "alquiler_var_2019_2024",
+   "N": 101,
+   "spearman": -0.214,
+   "ic95_inf": -0.406,
+   "ic95_sup": -0.028,
+   "p_holm": 0.15637895667010343
+  },
+  {
+   "turismo": "vut_registro_por_1000_hab",
+   "variable": "pct_PJ_2025",
+   "N": 101,
+   "spearman": 0.566,
+   "ic95_inf": 0.409,
+   "ic95_sup": 0.707,
+   "p_holm": 9.827072241446201e-09
+  },
+  {
+   "turismo": "vut_registro_por_1000_hab",
+   "variable": "pct_mas10_2025",
+   "N": 101,
+   "spearman": -0.034,
+   "ic95_inf": -0.222,
+   "ic95_sup": 0.16,
+   "p_holm": 1.0
+  },
+  {
+   "turismo": "turistas_2024_por_hab",
+   "variable": "crec_pob_2021_2025_pct",
+   "N": 106,
+   "spearman": 0.387,
+   "ic95_inf": 0.21,
+   "ic95_sup": 0.542,
+   "p_holm": 0.00033843809776215117
+  },
+  {
+   "turismo": "turistas_2024_por_hab",
+   "variable": "alquiler_m2_2024",
+   "N": 106,
+   "spearman": 0.362,
+   "ic95_inf": 0.186,
+   "ic95_sup": 0.533,
+   "p_holm": 0.0009501329127260274
+  },
+  {
+   "turismo": "turistas_2024_por_hab",
+   "variable": "alquiler_var_2019_2024",
+   "N": 106,
+   "spearman": -0.298,
+   "ic95_inf": -0.465,
+   "ic95_sup": -0.123,
+   "p_holm": 0.011701004228735002
+  },
+  {
+   "turismo": "turistas_2024_por_hab",
+   "variable": "pct_PJ_2025",
+   "N": 106,
+   "spearman": 0.467,
+   "ic95_inf": 0.295,
+   "ic95_sup": 0.617,
+   "p_holm": 4.6181732062445525e-06
+  },
+  {
+   "turismo": "turistas_2024_por_hab",
+   "variable": "pct_mas10_2025",
+   "N": 106,
+   "spearman": 0.025,
+   "ic95_inf": -0.171,
+   "ic95_sup": 0.214,
+   "p_holm": 1.0
+  }
+ ],
+ "notas": [
+  "INE VUT = anuncios en plataformas (experimental); registro GVA = inscripciones",
+  "serie reconstruida del registro: cota inferior, solo robustez",
+  "asociaciones descriptivas entre municipios"
+ ]
+}

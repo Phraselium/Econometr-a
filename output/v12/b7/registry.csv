@@ -1,0 +1,16 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+V12-B7,b7_pct_vut_ine_2026-05_crec_pob_2021_2025_pct,"spearman(pct_vut_ine_2026-05, crec_pob_2021_2025_pct)",2021,2025,105,,,,,0.4748911465892598,3.080623952537633e-07,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_pct_vut_ine_2026-05_alquiler_m2_2024,"spearman(pct_vut_ine_2026-05, alquiler_m2_2024)",2021,2025,105,,,,,0.4879703710631438,1.2912470957952725e-07,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_pct_vut_ine_2026-05_alquiler_var_2019_2024,"spearman(pct_vut_ine_2026-05, alquiler_var_2019_2024)",2021,2025,105,,,,,-0.11973875181422351,0.2237364537295291,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_pct_vut_ine_2026-05_pct_PJ_2025,"spearman(pct_vut_ine_2026-05, pct_PJ_2025)",2021,2025,105,,,,,0.59211071946921,2.879121103670825e-11,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_pct_vut_ine_2026-05_pct_mas10_2025,"spearman(pct_vut_ine_2026-05, pct_mas10_2025)",2021,2025,105,,,,,-0.02640479578278561,0.7891793493022893,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_vut_registro_por_1000_hab_crec_pob_2021_2025_pct,"spearman(vut_registro_por_1000_hab, crec_pob_2021_2025_pct)",2021,2025,101,,,,,0.48691904484566095,2.4271622741212173e-07,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_vut_registro_por_1000_hab_alquiler_m2_2024,"spearman(vut_registro_por_1000_hab, alquiler_m2_2024)",2021,2025,101,,,,,0.42475371215588414,9.550579507570356e-06,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_vut_registro_por_1000_hab_alquiler_var_2019_2024,"spearman(vut_registro_por_1000_hab, alquiler_var_2019_2024)",2021,2025,101,,,,,-0.21445544554455445,0.03127579133402068,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_vut_registro_por_1000_hab_pct_PJ_2025,"spearman(vut_registro_por_1000_hab, pct_PJ_2025)",2021,2025,101,,,,,0.565812463599301,7.019337315318715e-10,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_vut_registro_por_1000_hab_pct_mas10_2025,"spearman(vut_registro_por_1000_hab, pct_mas10_2025)",2021,2025,101,,,,,-0.03408862576783751,0.7350462821084384,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_turistas_2024_por_hab_crec_pob_2021_2025_pct,"spearman(turistas_2024_por_hab, crec_pob_2021_2025_pct)",2021,2025,106,,,,,0.38669420863037507,4.2304762220268897e-05,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_turistas_2024_por_hab_alquiler_m2_2024,"spearman(turistas_2024_por_hab, alquiler_m2_2024)",2021,2025,106,,,,,0.36224994898960944,0.00013573327324657535,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_turistas_2024_por_hab_alquiler_var_2019_2024,"spearman(turistas_2024_por_hab, alquiler_var_2019_2024)",2021,2025,106,,,,,-0.29755900949693936,0.0019501673714558338,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_turistas_2024_por_hab_pct_PJ_2025,"spearman(turistas_2024_por_hab, pct_PJ_2025)",2021,2025,106,,,,,0.4666095674736126,4.6181732062445525e-07,descriptivo C4; municipios CV ≥ 10.000 hab.
+V12-B7,b7_turistas_2024_por_hab_pct_mas10_2025,"spearman(turistas_2024_por_hab, pct_mas10_2025)",2021,2025,106,,,,,0.025044776796252468,0.7988510067650993,descriptivo C4; municipios CV ≥ 10.000 hab.

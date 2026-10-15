@@ -22,8 +22,8 @@
  ],
  "reciente_suma_provincias": {
   "crecimiento_observado": 1222836,
-  "efecto_poblacion": 835141,
-  "efecto_estructura_edad": 375142,
+  "componente_poblacion": 835141,
+  "componente_estructura_edad": 375142,
   "cambio_jefatura_implicito": 12553
  },
  "periodo_reciente": "2021-2026",

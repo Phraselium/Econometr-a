@@ -146,7 +146,7 @@ def f22_brecha(F):
                 fmt="o", color=F.OKABE[0], capsize=2)
     ax.axvline(0, color="#666666", lw=0.8)
     ax.set_yticks(y, b.et)
-    ax.set_xlabel("puntos porcentuales (hogares extranjeros − españoles de igual edad y renta)")
+    ax.set_xlabel("puntos porcentuales (adultos de nacionalidad extranjera − española, igual edad y renta)")
     ax.set_title(f"Condiciones de vivienda a igual edad y renta, {b.periodo.iloc[0]}")
     F.guardar(fig, "F22_brecha_misma_edad_renta", f"Condiciones de vivienda a igual edad y renta, {b.periodo.iloc[0]}",
               "INE, ECV (microdatos); V12-B6", b.periodo.iloc[0], "C4",

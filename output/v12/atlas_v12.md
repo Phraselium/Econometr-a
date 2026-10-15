@@ -4,7 +4,7 @@
 
 Borja Romero, economista (firma individual, independiente). Análisis descriptivo y contable: ninguna cifra de este atlas es causal. Capas: C4 salvo indicación; cada cifra lleva periodo, fuente, fecha y capa.
 
-**Abstract (English).** V12 describes, without models, where Spain's population growth comes from, who moves within metropolitan areas, how households form relative to new construction, who owns housing, and the housing conditions of households by origin. Recent growth comes from net international migration while natural change is negative; capital cities lose residents to their metropolitan rings; household growth exceeds new supply in most provinces; large owners and legal persons hold a small share of the stock nationally, with higher shares in tourist and high-rent municipalities; at equal age and income, foreign households face higher housing-cost overburden, associated with renting at market prices rather than with higher rent effort among tenants. All results are descriptive associations.
+**Abstract (English).** V12 describes, without models, where Spain's population growth comes from, who moves within metropolitan areas, how households form relative to new construction, who owns housing, and the housing conditions of households by origin. Recent growth comes from net international migration while natural change is negative; capital cities lose residents to their metropolitan rings; household growth exceeds new supply in most provinces; large owners and legal persons hold a small share of the stock nationally, with higher shares in tourist and high-rent municipalities; at equal age and income, adults of foreign nationality face higher housing-cost overburden, associated with renting at market prices rather than with higher rent effort among tenants. All results are descriptive associations.
 
 ## 1. De dónde viene la población
 
@@ -34,7 +34,7 @@ Hogares con persona de referencia de nacionalidad extranjera (Censo 2021, muestr
 
 ## 4. Dónde se construye
 
-Hogares nuevos 934.562 hogares; obra nueva neta 355.508 viviendas (Catastro); terminadas 346.403 viviendas (MIVAU, libres y protegidas). En 2013-2017 el Catastro supera al MIVAU en 320.545 viviendas por la regularización catastral: esos años no se leen como construcción. Ratio obra/hogares por municipio y mapa: `output/v12/b4`, figura F19. Es una relación contable, no una medida de necesidad. <!-- check:cifra-libre (años del periodo) -->
+Del 1 de enero de 2021 al de 2025 (obra: años 2021-2024), en las 46 provincias con Catastro estatal y serie del MIVAU (sin País Vasco, Navarra, Ceuta ni Melilla): hogares nuevos 934.562 hogares; obra nueva neta 355.508 viviendas (Catastro); terminadas 346.403 viviendas (MIVAU, libres y protegidas). En 2013-2017, en esas mismas provincias, el Catastro supera al MIVAU en 348.840 viviendas por la regularización catastral: esos años no se leen como construcción. Ratio obra/hogares por municipio y mapa: `output/v12/b4`, figura F19. Es una relación contable, no una medida de necesidad. <!-- check:cifra-libre (años del periodo) -->
 
 ## 5. Quién es propietario
 
@@ -42,7 +42,7 @@ Viviendas de titulares con más de diez viviendas: 4,2 %; con más de cien: 2,1 
 
 ## 6. Condiciones de vivienda por origen
 
-A igual edad y renta (ECV), diferencia entre hogares extranjeros y españoles: alquiler a precio de mercado 41,8 puntos (40,0-43,8 puntos); sobrecarga de más del 40 % 14,7 puntos (13,3-16,3 puntos); hacinamiento 8,2 puntos (6,4-9,9 puntos); inquilinos de mercado con alquiler de más del 30 % de la renta -0,85 puntos (-3,2 a 1,8 puntos). La diferencia en sobrecarga acompaña a la tenencia; no se atribuye a la nacionalidad. Por llegada, edad y tipo de hogar (Censo 2021): `output/v12/b6`. <!-- check:cifra-libre (umbrales de los indicadores y año del censo) -->
+A igual edad y renta (ECV), diferencia entre personas adultas de nacionalidad extranjera y española (en sus hogares): alquiler a precio de mercado 41,8 puntos (40,0-43,8 puntos); sobrecarga de más del 40 % 14,7 puntos (13,3-16,3 puntos); hacinamiento 8,2 puntos (6,4-9,9 puntos); inquilinos de mercado con alquiler de más del 30 % de la renta -0,85 puntos (-3,2 a 1,8 puntos). La diferencia en sobrecarga acompaña a la tenencia; no se atribuye a la nacionalidad. Por llegada, edad y tipo de hogar (Censo 2021): `output/v12/b6`. <!-- check:cifra-libre (umbrales de los indicadores y año del censo) -->
 
 ## 7. Turismo y presión residencial
 
@@ -50,4 +50,4 @@ Comunitat Valenciana: 51.268 viviendas anunciadas (INE) y 90.124 viviendas inscr
 
 ## Límites
 
-Todo es descriptivo o contable (C4). Celdas con menos de diez casos o error relativo superior al 30 % suprimidas. Decisiones: `docs/v12/decisiones.md`. <!-- check:cifra-libre (umbrales de supresión) -->
+Todo es descriptivo o contable (C4); en la tabla provincial de oferta, la obra nueva es C1 solo donde Catastro y MIVAU difieren menos de un 10 %. Celdas con menos de diez casos o error relativo superior al 30 % suprimidas. Decisiones: `docs/v12/decisiones.md`. <!-- check:cifra-libre (umbrales de supresión) -->

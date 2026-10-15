@@ -1,4 +1,4 @@
-cod_barrio,anio,nacionalidad,poblacion,suprimido_menor_10
+cod_barrio,anio,nacionalidad,poblacion,suprimido
 462500101,2021,Total,2646.0,False
 462500101,2022,Total,2738.0,False
 462500101,2023,Total,2772.0,False
@@ -8393,7 +8393,7 @@ sin_asignar,2025,Reino Unido,,True
 462500201,2022,República Dominicana,10.0,False
 462500201,2023,República Dominicana,,True
 462500201,2024,República Dominicana,,True
-462500201,2025,República Dominicana,12.0,False
+462500201,2025,República Dominicana,,True
 462500202,2021,República Dominicana,,True
 462500202,2022,República Dominicana,,True
 462500202,2023,República Dominicana,,True

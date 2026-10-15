@@ -197,7 +197,16 @@ def valencia() -> dict:
         L = d.melt(id_vars=[clave, "anio"], value_vars=cols, var_name="nacionalidad", value_name="poblacion")
         L["poblacion"] = L.poblacion.round(0)
         L["suprimido_menor_10"] = ~L.nacionalidad.isin(["Total", "España", "EXT"]) & (L.poblacion < 10)
+        # supresión complementaria: si en un territorio-año solo queda oculto un país, EXT − Σ publicados lo revelaría;
+        # se oculta también el país publicado más pequeño
+        paises = ~L.nacionalidad.isin(["Total", "España", "EXT"])
+        for _, g in L[paises].groupby([clave, "anio"]):
+            if g.suprimido_menor_10.sum() == 1:
+                vis = g[~g.suprimido_menor_10]
+                if len(vis):
+                    L.loc[vis.poblacion.idxmin(), "suprimido_menor_10"] = True
         L.loc[L.suprimido_menor_10, "poblacion"] = np.nan
+        L = L.rename(columns={"suprimido_menor_10": "suprimido"})
         return L
 
     ls, lb = largo(sec, "cod_seccion"), largo(b, "cod_barrio")
@@ -209,7 +218,8 @@ def valencia() -> dict:
     for g in ("Total", "España", "EXT"):
         d[f"var_{g}_2021_2025"] = d[f"{g}_2025"] - d[f"{g}_2021"]
     d["cuota_EXT_2021"], d["cuota_EXT_2025"] = 100 * d.EXT_2021 / d.Total_2021, 100 * d.EXT_2025 / d.Total_2025
-    d["pct_var_explicada_por_EXT"] = np.where(d.var_Total_2021_2025 != 0, 100 * d.var_EXT_2021_2025 / d.var_Total_2021_2025.abs(), np.nan)
+    d["cuota_variacion_EXT_sobre_total"] = np.where(   # incluye el efecto de las adquisiciones de nacionalidad
+        d.var_Total_2021_2025 != 0, 100 * d.var_EXT_2021_2025 / d.var_Total_2021_2025.abs(), np.nan)
     d = d.round(1).join(nombres.set_index("cod_barrio")).reset_index()
     d = d[d.cod_barrio != "sin_asignar"]
     d["comparable"] = ~d.cod_barrio.str[5:7].isin(dist_afectados)

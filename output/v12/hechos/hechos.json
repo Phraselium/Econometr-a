@@ -462,7 +462,7 @@
   "ficha": "—"
  },
  {
-  "id": "V12-B3-reciente-efecto_poblacion",
+  "id": "V12-B3-reciente-componente_poblacion",
   "indicador": "Componente población, España, 2021-2026",
   "valor": 835141.0498414399,
   "min": null,
@@ -476,7 +476,7 @@
   "ficha": "—"
  },
  {
-  "id": "V12-B3-reciente-efecto_estructura_edad",
+  "id": "V12-B3-reciente-componente_estructura_edad",
   "indicador": "Componente estructura por edad, España, 2021-2026",
   "valor": 375141.69639884704,
   "min": null,
@@ -562,7 +562,7 @@
  {
   "id": "V12-B4-regularizacion",
   "indicador": "Exceso del Catastro sobre el MIVAU en 2013-2017 (regularización catastral)",
-  "valor": 320545.0,
+  "valor": 348840.0,
   "min": null,
   "max": null,
   "unidad": "viviendas",
@@ -645,7 +645,7 @@
  },
  {
   "id": "V12-B6-brecha-sobrecarga_40",
-  "indicador": "Sobrecarga > 40 %: hogares extranjeros − españoles de igual edad y renta (puntos)",
+  "indicador": "Sobrecarga > 40 %: personas adultas de nacionalidad extranjera − española de igual edad y renta (puntos)",
   "valor": 14.66,
   "min": 13.27,
   "max": 16.31,
@@ -659,7 +659,7 @@
  },
  {
   "id": "V12-B6-brecha-hacinamiento",
-  "indicador": "Hacinamiento: hogares extranjeros − españoles de igual edad y renta (puntos)",
+  "indicador": "Hacinamiento: personas adultas de nacionalidad extranjera − española de igual edad y renta (puntos)",
   "valor": 8.15,
   "min": 6.36,
   "max": 9.9,
@@ -673,7 +673,7 @@
  },
  {
   "id": "V12-B6-brecha-esfuerzo_alquiler_30",
-  "indicador": "Alquiler > 30 % de la renta (inquilinos de mercado): hogares extranjeros − españoles de igual edad y renta (puntos)",
+  "indicador": "Alquiler > 30 % de la renta (inquilinos de mercado): personas adultas de nacionalidad extranjera − española de igual edad y renta (puntos)",
   "valor": -0.85,
   "min": -3.2,
   "max": 1.84,
@@ -687,7 +687,7 @@
  },
  {
   "id": "V12-B6-brecha-tenencia_3",
-  "indicador": "Alquiler a precio de mercado: hogares extranjeros − españoles de igual edad y renta (puntos)",
+  "indicador": "Alquiler a precio de mercado: personas adultas de nacionalidad extranjera − española de igual edad y renta (puntos)",
   "valor": 41.82,
   "min": 39.96,
   "max": 43.84,

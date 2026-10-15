@@ -116,15 +116,15 @@ periodo,nacionalidad,grupo,categoria,indicador,valor,ic95_inf,ic95_sup,n_muestra
 2023-2025,extranjera,quintil_renta,4.0,sobrecarga_30,10.88,7.74,14.02,1182,103.0,0.147,True
 2023-2025,extranjera,quintil_renta,4.0,sobrecarga_40,4.86,2.68,7.03,1182,38.0,0.228,True
 2023-2025,extranjera,quintil_renta,4.0,esfuerzo_alquiler_30,13.2,7.98,18.43,506,54.0,0.202,True
-2023-2025,extranjera,quintil_renta,4.0,esfuerzo_alquiler_40,,,,506,,0.366,False
+2023-2025,extranjera,quintil_renta,4.0,esfuerzo_alquiler_40,,,,506,,,False
 2023-2025,extranjera,quintil_renta,4.0,hacinamiento,10.49,5.42,15.57,1192,87.0,0.247,True
 2023-2025,extranjera,quintil_renta,5.0,propiedad,50.61,44.74,56.47,842,513.0,0.059,True
 2023-2025,extranjera,quintil_renta,5.0,tenencia_3,41.55,35.48,47.63,842,259.0,0.075,True
 2023-2025,extranjera,quintil_renta,5.0,sobrecarga_30,7.53,4.79,10.27,837,48.0,0.186,True
-2023-2025,extranjera,quintil_renta,5.0,sobrecarga_40,,,,837,,0.449,False
+2023-2025,extranjera,quintil_renta,5.0,sobrecarga_40,,,,837,,,False
 2023-2025,extranjera,quintil_renta,5.0,esfuerzo_alquiler_30,8.12,3.75,12.48,254,21.0,0.274,True
-2023-2025,extranjera,quintil_renta,5.0,esfuerzo_alquiler_40,,,,254,,0.868,False
-2023-2025,extranjera,quintil_renta,5.0,hacinamiento,,,,841,,0.322,False
+2023-2025,extranjera,quintil_renta,5.0,esfuerzo_alquiler_40,,,,254,,,False
+2023-2025,extranjera,quintil_renta,5.0,hacinamiento,,,,841,,,False
 2023-2025,española,tipo_hogar,monoparental,propiedad,68.95,67.01,70.89,5914,4110.0,0.014,True
 2023-2025,española,tipo_hogar,monoparental,tenencia_3,16.2,14.71,17.7,5914,953.0,0.047,True
 2023-2025,española,tipo_hogar,monoparental,sobrecarga_30,25.48,23.72,27.25,5888,1532.0,0.035,True
@@ -213,7 +213,7 @@ periodo,nacionalidad,grupo,categoria,indicador,valor,ic95_inf,ic95_sup,n_muestra
 2023-2025,extranjera,tipo_hogar,unipersonal 65+,tenencia_3,32.37,23.48,41.27,160,51.0,0.14,True
 2023-2025,extranjera,tipo_hogar,unipersonal 65+,sobrecarga_30,71.26,62.55,79.98,155,109.0,0.062,True
 2023-2025,extranjera,tipo_hogar,unipersonal 65+,sobrecarga_40,63.46,54.27,72.66,155,95.0,0.074,True
-2023-2025,extranjera,tipo_hogar,unipersonal 65+,hacinamiento,,,,160,,0.55,False
+2023-2025,extranjera,tipo_hogar,unipersonal 65+,hacinamiento,,,,160,,,False
 2023-2025,extranjera,tipo_hogar,unipersonal <65,propiedad,14.77,11.82,17.72,854,142.0,0.102,True
 2023-2025,extranjera,tipo_hogar,unipersonal <65,tenencia_3,69.47,65.43,73.52,854,567.0,0.03,True
 2023-2025,extranjera,tipo_hogar,unipersonal <65,sobrecarga_30,71.34,67.3,75.39,836,581.0,0.029,True

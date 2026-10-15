@@ -1,4 +1,4 @@
-cpro,periodo,hogares_2021,hogares_2026,crecimiento_observado,efecto_poblacion,efecto_estructura_edad,cambio_jefatura_implicito
+cpro,periodo,hogares_2021,hogares_2026,crecimiento_observado,componente_poblacion,componente_estructura_edad,cambio_jefatura_implicito
 01,2021-2026,140218,147991,7773,4451.243494,2071.30588,1250.450626
 02,2021-2026,151262,158731,7469,2285.16192,4091.513492,1092.324588
 03,2021-2026,754099,836243,82144,76986.45503,9114.817353,-3957.272387

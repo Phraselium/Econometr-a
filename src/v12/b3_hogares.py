@@ -69,6 +69,19 @@ def tasas(j: pd.DataFrame, claves: list[str]) -> pd.DataFrame:
     return g
 
 
+def publicable(t: pd.DataFrame) -> pd.DataFrame:
+    """Celdas pequeñas en las tablas de jefatura publicadas: con < 10 personas de referencia en la muestra o error relativo
+    de la tasa > 30 % (≈ √((1 − p)/x), muestreo de hogares) se vacían la tasa y los recuentos (la descomposición usa la
+    tabla completa y solo publica totales)."""
+    t = t.copy()
+    x, p = t.referencias_muestra, t.jefatura.clip(upper=1)
+    rse = np.sqrt((1 - p) / x.where(x > 0))
+    malo = (x < MIN_CASOS) | (rse > RSE_MAX)
+    t.loc[malo, ["referencias", "referencias_muestra", "personas_muestra", "jefatura"]] = np.nan
+    t["publicable"] = ~malo
+    return t
+
+
 def descomponer(g: pd.DataFrame, claves: list[str]) -> pd.DataFrame:
     filas = []
     for k, x in g.groupby(claves) if claves else [((), g)]:
@@ -129,7 +142,7 @@ def reciente(g21: pd.DataFrame) -> pd.DataFrame:
         Hobs21 = float(he[(he.cpro == cpro) & (he.anio == 2021)].hogares.iloc[0])
         Hobs = float(he[(he.cpro == cpro) & (he.anio == ult)].hogares.iloc[0])
         filas.append({"cpro": cpro, "periodo": f"2021-{ult}", "hogares_2021": Hobs21, f"hogares_{ult}": Hobs, "crecimiento_observado": Hobs - Hobs21,
-                      "efecto_poblacion": Hpob - H21, "efecto_estructura_edad": Hesp - Hpob,
+                      "componente_poblacion": Hpob - H21, "componente_estructura_edad": Hesp - Hpob,
                       "cambio_jefatura_implicito": (Hobs - Hobs21) - (Hesp - H21)})
     return pd.DataFrame(filas)
 
@@ -153,7 +166,8 @@ def nacionalidad_hogares() -> pd.DataFrame:
             ok = x >= MIN_CASOS and rse <= RSE_MAX
             filas.append({"nivel": nivel, "cod_territorio": cod, "hogares_muestra": n, "hogares_ext_muestra": x if ok else np.nan,
                           "cuota_ext_pct": round(100 * p, 2) if ok else np.nan, "ic95_inf": round(100 * max(p - 1.96 * se, 0), 2) if ok else np.nan,
-                          "ic95_sup": round(100 * (p + 1.96 * se), 2) if ok else np.nan, "error_relativo": round(rse, 3) if np.isfinite(rse) else np.nan,
+                          "ic95_sup": round(100 * (p + 1.96 * se), 2) if ok else np.nan, "error_relativo": round(rse, 3) if ok else np.nan,   # en blanco si no es publicable (evita despejar la cuota)
+                         
                           "publicable": ok})
     return pd.DataFrame(filas)
 
@@ -171,7 +185,7 @@ def main() -> int:
     for nivel, claves, sub in (("nacional", [], j), ("ccaa", ["ccaa"], j), ("provincia", ["cpro"], j),
                                ("municipio", ["cod_municipio"], j[j.cod_municipio.isin(ident)])):
         t = tasas(sub, claves)
-        t.to_csv(OUT / f"jefatura_{nivel}.csv{'.gz' if nivel == 'municipio' else ''}", index=False, float_format="%.10g",
+        publicable(t).to_csv(OUT / f"jefatura_{nivel}.csv{'.gz' if nivel == 'municipio' else ''}", index=False, float_format="%.10g",
                  compression=GZ_PANDAS if nivel == "municipio" else None)
         d = descomponer(t, claves)
         d.insert(0, "nivel", nivel)
@@ -188,7 +202,7 @@ def main() -> int:
            "nacional_2011_2021": {k: round(float(n[k])) for k in ("hogares_2011", "hogares_2021", "crecimiento", "poblacion_A", "estructura_A",
                                                                    "jefatura_A", "poblacion_B", "estructura_B", "jefatura_B")},
            "personas_por_hogar": [round(float(n.personas_por_hogar_2011), 3), round(float(n.personas_por_hogar_2021), 3)],
-           "reciente_suma_provincias": {k: round(float(rt[k])) for k in ("crecimiento_observado", "efecto_poblacion", "efecto_estructura_edad", "cambio_jefatura_implicito")},
+           "reciente_suma_provincias": {k: round(float(rt[k])) for k in ("crecimiento_observado", "componente_poblacion", "componente_estructura_edad", "cambio_jefatura_implicito")},
            "periodo_reciente": rec.periodo.iloc[0] if len(rec) else None,
            "hogares_nacionalidad": {"municipios_publicables": int(nh[(nh.nivel == "municipio") & nh.publicable].shape[0]),
                                     "municipios_suprimidos": int(nh[(nh.nivel == "municipio") & ~nh.publicable].shape[0]),

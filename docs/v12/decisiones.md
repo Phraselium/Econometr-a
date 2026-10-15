@@ -33,7 +33,7 @@ Reglas generales:
    696.866 emigraciones, frente a 662.173 y 452.511 en la EVR (la EMCR estima omisiones y bajas que la EVR no registra);
    los movimientos interiores casi coinciden (1,671 frente a 1,679 millones). Las dos se guardan en empalme_2021.csv.
 4. **Periodo inicial:** 2003-2007 (no 2002-2007): la población municipal por nacionalidad empieza el 1-1-2003.
-5. **Residuo:** con la EVR (2003-2021) el residuo nacional es negativo (−0,60 millones en 2008-2013, −0,48 en
+5. **Residuo:** con la EVR (2003-2020) el residuo nacional es negativo (−0,60 millones en 2008-2013, −0,48 en
    2014-2019): la EVR registra peor las salidas al extranjero y el padrón da de baja por caducidad e inscripción
    indebida sin que conste como flujo. Con la EMCR (2022-2024) el residuo es casi nulo (+8.897). Por eso las
    comparaciones entre periodos usan las tasas de los componentes y se lee el residuo junto a ellas.
@@ -81,7 +81,8 @@ Reglas generales:
    - Pares: alquiler medio en destino de quienes salen de cada capital, ponderado por el flujo, frente al alquiler de la
      capital (ratio).
 6. **Caché versionada:** los OD completos (data/raw/v11/*/od_municipios_*.parquet) no se versionan por tamaño; el
-   script solo los lee si falta output/v12/b2/od_seleccion.csv.gz (flujos con origen o destino en alguna de las áreas).
+   script solo los lee si falta data/cache/v12/od_seleccion.csv.gz (flujos con origen o destino en alguna de las áreas;
+   caché interna NO difundible, fuera de output/ tras la revisión final).
    Así `make v12` funciona en un clon limpio sin `make datos_v11`.
 7. **Neutralidad:** se describen flujos por nacionalidad y edad; las personas que llegan o se desplazan forman parte
    de la demanda y de la oferta de trabajo de los municipios de destino. No se atribuyen responsabilidades.
@@ -118,7 +119,7 @@ Reglas generales:
 ## B4 · Respuesta de la oferta (src/v12/b4_oferta.py → output/v12/b4)
 1. **Obra nueva neta del Catastro:** variación anual de unidades urbanas residenciales; el fichero «t» es el stock a
    31-12-(t−1), así que la variación entre los ficheros t+1 y t es la del año t. Incluye altas administrativas: en
-   2013-2017 la regularización catastral añade unidades no declaradas (el Catastro supera al MIVAU en 397.570
+   2013-2017 la regularización catastral añade unidades no declaradas (en las provincias con las dos fuentes, el Catastro supera al MIVAU en 348.840
    unidades en esos cinco años); esos años no se leen como construcción.
 2. **MIVAU:** viviendas LIBRES terminadas (certificados de fin de obra) + calificaciones definitivas de vivienda
    PROTEGIDA. La protegida solo trae nombre de provincia: concordancia nombre → código INE versionada
@@ -126,8 +127,8 @@ Reglas generales:
    terminadas solo se publican por CCAA y se asignan a su única provincia por código.
 3. **Cobertura:** País Vasco y Navarra no tienen Catastro estatal (catastros forales) y Ceuta y Melilla no tienen la
    serie del MIVAU: quedan sin contraste.
-4. **Capa del contraste provincial 2021-2024:** si Catastro y MIVAU difieren < 25 %, la oferta de esa provincia es C1
-   (dos fuentes coinciden: 25 provincias); si no, C4 y se reportan ambas. Los hogares nuevos provinciales son de la ECP.
+4. **Capa del contraste provincial 2021-2024:** si Catastro y MIVAU difieren < 10 %, la oferta de esa provincia es C1
+   (dos fuentes coinciden: 10 provincias con el umbral del 10 % fijado en la revisión final); si no, C4 y se reportan ambas. Los hogares nuevos provinciales son de la ECP.
    Mismo conjunto para las tres magnitudes (46 provincias con Catastro y MIVAU; sin País Vasco, Navarra, Ceuta ni
    Melilla): +934.562 hogares; 355.508 viviendas netas (Catastro) y 346.403 terminadas (MIVAU).
 5. **Presión municipal:**
@@ -170,7 +171,7 @@ Reglas generales:
 1. **Dos fuentes de stock que miden cosas distintas:** INE (anuncios en plataformas, experimental, semestral desde
    2021-08) y registro de la GVA (inscripciones; cortes observados 2025-01-26 y 2026-10-14). Comunitat Valenciana:
    51.268 viviendas turísticas según el INE (2026-05; 2,0 % del parque) y 90.124 inscritas en el registro
-   (2026-10-14). Coinciden (< 25 % de diferencia) en 132 de 452 municipios: en el resto se reportan las dos y no se
+   (2026-10-14). Coinciden (< 25 % de diferencia; dato descriptivo, sin C1) en 132 de 452 municipios: en el resto se reportan las dos y no se
    elige una. València: 5.393 (INE, 1,4 %) y 5.766 (registro).
 2. **Serie reconstruida del registro (2015-2025):** sale de las fechas de alta de las viviendas que siguen inscritas;
    no recoge bajas, es cota inferior del stock pasado y solo entra como robustez.
@@ -224,3 +225,27 @@ Reglas generales:
 6. **Web:** páginas «De dónde viene la población», «Quién es propietario» y «Dónde se construye»; fichas territoriales
    con filas «V12 ·» (CCAA, provincia, municipio ≥ 50.000 hab. y barrio); el verificador muestra V12-V02 y retira V02
    (campo `sustituye`).
+
+## Revisión final (subagente revisor, ~82.000 tokens; veredicto REHACER → correcciones)
+1. **Celdas suprimidas recuperables (B3):** en hogares por nacionalidad se publicaba el error relativo de las celdas
+   suprimidas, del que se despeja la cuota. Ahora va en blanco si la celda no es publicable (también en la ECV, B6).
+2. **Regularización catastral (B4):** se restaba al Catastro (sin País Vasco ni Navarra) un MIVAU con todas las
+   provincias. Se calcula en la misma muestra (provincias con las dos fuentes). El valor escrito antes en B4.1 era de
+   una versión previa; la cifra vigente es la de cifras_clave (V12-B4-regularizacion).
+3. **Unidad de la brecha (B6):** la comparación a igual edad y renta es entre PERSONAS adultas (ponderadas con RB050)
+   según su propia nacionalidad, no entre hogares: se corrige la redacción en cifras, atlas, lo_que_sabemos y F22.
+4. **Supresión complementaria (València por sección y barrio):** si en un territorio-año solo quedaba oculto un país,
+   EXT − Σ publicados lo revelaba; se oculta también el país publicado más pequeño.
+5. **Jefatura (B3):** las tablas publicadas vacían tasa y recuentos con < 10 personas de referencia en la muestra o
+   error relativo > 30 %; la descomposición sigue usando la tabla completa y solo publica totales.
+6. **Caché OD y saldos por edad (B2):** la caché origen-destino (celdas < 5) sale de output/ a data/cache/v12 (interna,
+   no difundible, con LEEME); en los saldos interiores por edad × nacionalidad se vacían las celdas con < 10 altas o
+   < 10 bajas.
+7. **Neutralidad:** `pct_var_explicada_por_EXT` → `cuota_variacion_EXT_sobre_total`; «efecto» → «componente» en la
+   descomposición reciente de hogares (B3).
+8. **Periodo y cobertura** de las cifras de oferta en atlas, lo_que_sabemos y por_que_ha_subido (2021-2024; 46
+   provincias con Catastro estatal y MIVAU).
+9. **Umbral de C1 en la oferta provincial:** de 25 % a 10 %; en vivienda turística (B7) no se asigna C1 (INE y
+   registro miden cosas distintas). El atlas lo dice expresamente.
+10. **Familias de Holm:** se ajusta por bloque (B2: 32 especificaciones; B5: 18; B7: 15), porque cada bloque responde a
+    una pregunta distinta con variables distintas; ninguna conclusión depende de un único p ajustado.

@@ -269,5 +269,5 @@ V9 añade diseños de identificación con datos locales, pre-registrados y revis
 V12 no estima modelos: describe de dónde viene la población, quién es propietario y dónde se construye (`publicacion/atlas_v12.md`). No cambia la respuesta de V8 y V9 (ningún factor identificado), pero precisa magnitudes [C4]:
 
 - **Población.** En 2022-2024 el crecimiento (1.641.570 personas) procede del saldo con el extranjero (1.995.569 personas); el saldo vegetativo es negativo (-362.896 personas). <!-- check:cifra-libre (años de los periodos) -->
-- **Hogares frente a oferta.** Hogares nuevos: 934.562 hogares; obra nueva neta en el Catastro: 355.508 viviendas; terminadas según el MIVAU: 346.403 viviendas. Es una relación contable, no una medida de necesidad.
+- **Hogares frente a oferta (2021-2024; provincias con Catastro estatal y MIVAU, sin País Vasco, Navarra, Ceuta ni Melilla).** Hogares nuevos: 934.562 hogares; obra nueva neta en el Catastro: 355.508 viviendas; terminadas según el MIVAU: 346.403 viviendas. Es una relación contable, no una medida de necesidad.
 - **Grandes titulares.** 4,2 % de las viviendas son de titulares con más de diez; la afirmación de que «son los responsables de la subida» sigue sin poder contrastarse (verificador, V12-V02). <!-- check:cifra-libre (identificador de la ficha) -->

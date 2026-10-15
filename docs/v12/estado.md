@@ -21,10 +21,12 @@
 - B7: vivienda turística CV y València (INE frente a registro GVA, móviles, asociaciones), Cataluña y Barcelona
   (output/v12/b7).
 
+- Revisor final (opus, ~82.000 tokens, dentro del tope): REHACER con 12 hallazgos; todos corregidos (decisiones,
+  «Revisión final»).
+
 ## Siguiente (para `claude --continue`)
-- Revisor final (subagente opus, tope 100k): capas, neutralidad, celdas pequeñas, privacidad, coherencia; si supera el
-  tope, dejar la revisión pendiente en docs/v12/tareas_autor.md. Después, cierre en clon limpio: `make datos_terceros`,
-  `make v12`, `make base`, `make figuras`, `make web`, `make check` (sin cambios en git).
+- Cierre en clon limpio: `make datos_terceros`, `make v12`, `make base`, `make figuras`, `make web`, `make check` (sin
+  cambios en git); commit y push.
 
 ## Tokens de subagentes
-Ninguno hasta el revisor final.
+Revisor final V12: ~82.000 tokens (tope 100.000).

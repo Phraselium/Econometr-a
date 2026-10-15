@@ -5,7 +5,7 @@
    regularización catastral (2013-2017, Ley 16/2012) incorporó construcciones no declaradas que no son obra nueva del año.
 2. Contraste provincial con el MIVAU: viviendas LIBRES terminadas (certificados de fin de obra) + calificaciones
    definitivas de vivienda PROTEGIDA (concordancia nombre → código versionada). Σ municipal del Catastro de la variación
-   del año t (ficheros t+1 − t) frente a terminadas del año t. Si las dos fuentes difieren menos de un 25 %
+   del año t (ficheros t+1 − t) frente a terminadas del año t. Si las dos fuentes difieren menos de un 10 %
    en un periodo se marca «coinciden» (C1 solo si coinciden; si no, se reportan ambas).
 3. INSPIRE (94 municipios de València, su área y las capitales): viviendas por año de construcción (stock superviviente,
    cota inferior de lo construido) frente al Catastro estadístico en los mismos años.
@@ -32,7 +32,7 @@ import pandas as pd
 
 RAIZ = Path(__file__).resolve().parents[2]
 OUT = RAIZ / "output/v12/b4"
-UMBRAL_COINCIDE = 0.25
+UMBRAL_COINCIDE = 0.10   # C1 solo si las dos fuentes de oferta difieren menos de un 10 %
 
 
 def catastro() -> pd.DataFrame:
@@ -189,7 +189,8 @@ def main() -> int:
     pv = provincial_reciente(u, m)
     pv.to_csv(OUT / "presion_provincia_2021_2025.csv", index=False, float_format="%.10g")
     nac = cp.groupby("anio")[["obra_neta_catastro", "terminadas_mivau", "protegida_definitivas", "terminadas_mivau_total"]].sum(min_count=1)
-    reg = nac.loc[2013:2017]
+    comun = cp.dropna(subset=["obra_neta_catastro", "terminadas_mivau_total"])   # misma muestra: provincias con Catastro y MIVAU
+    reg = comun[comun.anio.between(2013, 2017)]
     res = {"rama": "V12-B4", "pregunta": "¿Dónde se construye y dónde no?", "capa": "C4", "metodo": "contable y descriptivo",
            "datos": "Catastro URBANA e INSPIRE; MIVAU terminadas; censo anual; Censos 2011/2021; ECP hogares", "N": int(len(pr)),
            "nacional_catastro_vs_mivau": {int(a): {k: (None if pd.isna(v) else int(v)) for k, v in r.items()} for a, r in nac.iterrows()},

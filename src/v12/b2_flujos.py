@@ -18,7 +18,8 @@
    - por pares: alquiler medio en destino frente a origen de quienes salen de cada capital, ponderado por el flujo.
    Las correlaciones van al Registry y se ajustan por Holm.
 Caché: los OD completos (data/raw/v11/*/od_municipios_*.parquet, no versionados por tamaño) se leen solo si falta
-output/v12/b2/od_seleccion.csv.gz (versionada), que guarda los flujos con origen o destino en alguna de las áreas.
+data/cache/v12/od_seleccion.csv.gz (versionada, uso interno y NO difundible: contiene celdas pequeñas); las salidas de
+output/v12/b2 solo publican agregados por área y periodo.
 """
 from __future__ import annotations
 
@@ -44,7 +45,7 @@ CAPITALES = {"valencia": "46250", "madrid": "28079", "barcelona": "08019", "alic
 RADIO_KM = {"madrid": 25, "barcelona": 25, "alicante": 20, "castellon": 20}
 PERIODOS = {"2003-2007": (2003, 2007), "2008-2013": (2008, 2013), "2014-2019": (2014, 2019), "2020-2021": (2020, 2021),
             "2022-2024": (2022, 2024)}
-CACHE = OUT / "od_seleccion.csv.gz"
+CACHE = RAIZ / "data/cache/v12/od_seleccion.csv.gz"   # caché interna, no difundible (celdas pequeñas): data/cache/v12/LEEME.md
 
 
 def areas() -> dict[str, set[str]]:
@@ -74,7 +75,7 @@ def od(ar: dict[str, set[str]]) -> pd.DataFrame:
         g["fuente"] = "EVR" if a <= 2020 else "EMCR"
         partes.append(g)
     x = pd.concat(partes, ignore_index=True)
-    OUT.mkdir(parents=True, exist_ok=True)
+    CACHE.parent.mkdir(parents=True, exist_ok=True)
     x.to_csv(CACHE, index=False, compression=GZ_PANDAS)
     return x
 
@@ -154,7 +155,12 @@ def saldos_edad_nac() -> pd.DataFrame:
         g = s[s.anio.between(i, j)].groupby(["cod_municipio", "nac", "edad_g"], as_index=False)[["altas", "bajas", "saldo"]].sum()
         g.insert(0, "periodo", p)
         filas.append(g)
-    return pd.concat(filas, ignore_index=True).rename(columns={"altas": "altas_interiores", "bajas": "bajas_interiores", "saldo": "saldo_interior"})
+    t = pd.concat(filas, ignore_index=True).rename(columns={"altas": "altas_interiores", "bajas": "bajas_interiores", "saldo": "saldo_interior"})
+    # celdas pequeñas: con < 10 altas o < 10 bajas en la celda municipio × periodo × edad × nacionalidad se vacían las tres
+    malo = (t.altas_interiores < 10) | (t.bajas_interiores < 10)
+    t.loc[malo, ["altas_interiores", "bajas_interiores", "saldo_interior"]] = np.nan
+    t["suprimido"] = malo
+    return t
 
 
 # ------------------------------------------------------------------------------------------------ precios y alquileres

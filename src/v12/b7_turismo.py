@@ -10,8 +10,8 @@ Fuentes (todas en la base o en data/raw, cruce por código INE):
 - INE, medición del turismo con teléfonos móviles: turistas (internos + receptores) por municipio de destino;
 - Idescat, HUT por municipio (2015-2025) y Ajuntament de Barcelona, HUT por barrio y año del expediente;
 - contraste: población (censo anual), alquiler (SERPAVI; distrito en València), titularidad (B5), saldo B1.
-Dos fuentes de stock (INE y registro): si difieren < 25 % en un municipio se marca «coinciden» (C1 del orden de
-magnitud); si no, se reportan ambas (miden cosas distintas: anuncios frente a inscripciones).
+Dos fuentes de stock (INE y registro): miden cosas distintas (anuncios frente a inscripciones), así que no se promueve
+a C1: si difieren < 25 % se marca «coinciden» solo como dato descriptivo; siempre se reportan ambas.
 Asociaciones (Spearman, IC bootstrap, Holm, Registry) entre municipios de la Comunitat Valenciana: descriptivas.
 Salidas: output/v12/b7/.
 """

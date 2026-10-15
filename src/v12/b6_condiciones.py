@@ -76,7 +76,7 @@ def _fila(y: pd.Series, w: pd.Series, cl: pd.Series) -> dict | None:
     ok = casos >= CASOS_MIN and rse <= RSE_MAX
     return {"valor": round(100 * est, 2) if ok else np.nan, "ic95_inf": round(100 * (est - Z * se), 2) if ok else np.nan,
             "ic95_sup": round(100 * (est + Z * se), 2) if ok else np.nan, "n_muestral": n, "casos": casos if ok else np.nan,
-            "error_relativo": round(rse, 3) if np.isfinite(rse) else np.nan, "publicable": ok}
+            "error_relativo": round(rse, 3) if ok else np.nan, "publicable": ok}
 
 
 def tabla_anual(p: pd.DataFrame) -> pd.DataFrame:

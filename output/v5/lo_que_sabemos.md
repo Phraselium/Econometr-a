@@ -107,9 +107,9 @@ Análisis descriptivo y contable; nada de lo que sigue es causal (`publicacion/a
 - **De dónde viene la población.** En 2022-2024 la población creció 1.641.570 personas: saldo con el extranjero 1.995.569 personas y saldo vegetativo -362.896 personas. <!-- check:cifra-libre (años de los periodos) -->
 - **Desplazamiento metropolitano.** València pierde población con su corona (-12.225 personas en 2022-2024), como Madrid (-29.196 personas) y Barcelona (-22.541 personas). <!-- check:cifra-libre (años de los periodos) -->
 - **Hogares.** Entre los censos de 2011 y 2021 los hogares aumentaron 455.531 hogares; la estructura por edad sumó 1.071.741 hogares (966.831-1.176.650 hogares) y el cambio de la tasa de jefatura aportó -812.704 hogares (-919.003 a -706.404 hogares) (rango: los dos órdenes de la descomposición). <!-- check:cifra-libre (años de los periodos) -->
-- **Oferta.** Hogares nuevos: 934.562 hogares; obra nueva neta: 355.508 viviendas (Catastro); terminadas: 346.403 viviendas (MIVAU). <!-- check:cifra-libre (años de los periodos) -->
+- **Oferta.** En 2021-2024 y en las provincias con Catastro estatal y MIVAU (sin País Vasco, Navarra, Ceuta ni Melilla): hogares nuevos 934.562 hogares; obra nueva neta 355.508 viviendas (Catastro); terminadas 346.403 viviendas (MIVAU). <!-- check:cifra-libre (años de los periodos) -->
 - **Propiedad.** 4,2 % de las viviendas son de titulares con más de diez y 4,6 % de personas jurídicas privadas; 93,4 % de personas físicas.
-- **Condiciones por origen.** A igual edad y renta, la sobrecarga de más del 40 % es 14,7 puntos (13,3-16,3 puntos) mayor en hogares extranjeros; el esfuerzo de quienes alquilan a precio de mercado no difiere (-0,85 puntos (-3,2 a 1,8 puntos)). La diferencia va con la tenencia, no se atribuye a la nacionalidad. <!-- check:cifra-libre (umbral del indicador) -->
+- **Condiciones por origen.** A igual edad y renta, la sobrecarga de más del 40 % es 14,7 puntos (13,3-16,3 puntos) mayor entre las personas adultas de nacionalidad extranjera; el esfuerzo de quienes alquilan a precio de mercado no difiere (-0,85 puntos (-3,2 a 1,8 puntos)). La diferencia va con la tenencia, no se atribuye a la nacionalidad. <!-- check:cifra-libre (umbral del indicador) -->
 
 ## Qué cambió entre versiones y por qué
 

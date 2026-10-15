@@ -5,7 +5,7 @@ anio,grupo,categoria,indicador,valor,ic95_inf,ic95_sup,n_muestral,casos,error_re
 2018,origen,UE,sobrecarga_40,27.69,17.69,37.69,512,123.0,0.184,True
 2018,origen,UE,esfuerzo_alquiler_30,41.9,27.95,55.85,277,114.0,0.17,True
 2018,origen,UE,esfuerzo_alquiler_40,29.94,16.49,43.39,277,81.0,0.229,True
-2018,origen,UE,hacinamiento,,,,514,,0.381,False
+2018,origen,UE,hacinamiento,,,,514,,,False
 2018,origen,española,propiedad,81.97,80.99,82.96,26472,22133.0,0.006,True
 2018,origen,española,tenencia_3,9.73,8.96,10.49,26472,2298.0,0.04,True
 2018,origen,española,sobrecarga_30,10.19,9.44,10.94,26438,2435.0,0.038,True
@@ -26,7 +26,7 @@ anio,grupo,categoria,indicador,valor,ic95_inf,ic95_sup,n_muestral,casos,error_re
 2019,origen,UE,sobrecarga_40,28.93,19.36,38.51,637,164.0,0.169,True
 2019,origen,UE,esfuerzo_alquiler_30,46.25,32.08,60.41,336,131.0,0.156,True
 2019,origen,UE,esfuerzo_alquiler_40,31.71,18.2,45.22,336,88.0,0.217,True
-2019,origen,UE,hacinamiento,,,,642,,0.484,False
+2019,origen,UE,hacinamiento,,,,642,,,False
 2019,origen,española,propiedad,82.54,81.61,83.47,30832,25849.0,0.006,True
 2019,origen,española,tenencia_3,9.73,9.01,10.46,30832,2761.0,0.038,True
 2019,origen,española,sobrecarga_30,9.73,9.05,10.41,30783,2761.0,0.036,True
@@ -47,7 +47,7 @@ anio,grupo,categoria,indicador,valor,ic95_inf,ic95_sup,n_muestral,casos,error_re
 2020,origen,UE,sobrecarga_40,36.87,25.81,47.94,580,154.0,0.153,True
 2020,origen,UE,esfuerzo_alquiler_30,54.75,40.85,68.65,281,116.0,0.13,True
 2020,origen,UE,esfuerzo_alquiler_40,37.98,23.16,52.8,281,80.0,0.199,True
-2020,origen,UE,hacinamiento,,,,581,,0.324,False
+2020,origen,UE,hacinamiento,,,,581,,,False
 2020,origen,española,propiedad,81.46,80.4,82.51,29285,24430.0,0.007,True
 2020,origen,española,tenencia_3,9.44,8.67,10.2,29285,2572.0,0.041,True
 2020,origen,española,sobrecarga_30,8.79,8.08,9.51,29209,2397.0,0.042,True

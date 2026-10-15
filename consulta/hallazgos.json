@@ -30640,31 +30640,7 @@
    ]
   },
   {
-   "id": "V12-B3-reciente-crecimiento_observado",
-   "enunciado": "Crecimiento de hogares (ECP), España, 2021-2026",
-   "cifra": 1222836.0,
-   "rango": null,
-   "unidad": "hogares",
-   "periodo": "2021-2026",
-   "ambito": "España (suma de provincias)",
-   "mercado": "no aplica",
-   "capa": "C4",
-   "metodo": "ver ficha de origen",
-   "fuente": "INE, ECP y Censo 2021; V12-B3",
-   "ruta": "output/v12/hechos/hechos.json",
-   "version": "v12",
-   "estado": "vigente",
-   "tipo": "cifra",
-   "fecha_dato": "2026-01-01",
-   "cifra_texto": "1.222.836 hogares",
-   "min_max": [
-    null,
-    null,
-    "rango"
-   ]
-  },
-  {
-   "id": "V12-B3-reciente-efecto_estructura_edad",
+   "id": "V12-B3-reciente-componente_estructura_edad",
    "enunciado": "Componente estructura por edad, España, 2021-2026",
    "cifra": 375141.6964,
    "rango": null,
@@ -30688,7 +30664,7 @@
    ]
   },
   {
-   "id": "V12-B3-reciente-efecto_poblacion",
+   "id": "V12-B3-reciente-componente_poblacion",
    "enunciado": "Componente población, España, 2021-2026",
    "cifra": 835141.0498,
    "rango": null,
@@ -30705,6 +30681,30 @@
    "tipo": "cifra",
    "fecha_dato": "2026-01-01",
    "cifra_texto": "835.141 hogares",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V12-B3-reciente-crecimiento_observado",
+   "enunciado": "Crecimiento de hogares (ECP), España, 2021-2026",
+   "cifra": 1222836.0,
+   "rango": null,
+   "unidad": "hogares",
+   "periodo": "2021-2026",
+   "ambito": "España (suma de provincias)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, ECP y Censo 2021; V12-B3",
+   "ruta": "output/v12/hechos/hechos.json",
+   "version": "v12",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-01-01",
+   "cifra_texto": "1.222.836 hogares",
    "min_max": [
     null,
     null,
@@ -30762,7 +30762,7 @@
   {
    "id": "V12-B4-regularizacion",
    "enunciado": "Exceso del Catastro sobre el MIVAU en 2013-2017 (regularización catastral)",
-   "cifra": 320545.0,
+   "cifra": 348840.0,
    "rango": null,
    "unidad": "viviendas",
    "periodo": "2013-2017",
@@ -30776,7 +30776,7 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2017",
-   "cifra_texto": "320.545 viviendas",
+   "cifra_texto": "348.840 viviendas",
    "min_max": [
     null,
     null,
@@ -30929,7 +30929,7 @@
   },
   {
    "id": "V12-B6-brecha-esfuerzo_alquiler_30",
-   "enunciado": "Alquiler > 30 % de la renta (inquilinos de mercado): hogares extranjeros − españoles de igual edad y renta (puntos)",
+   "enunciado": "Alquiler > 30 % de la renta (inquilinos de mercado): personas adultas de nacionalidad extranjera − española de igual edad y renta (puntos)",
    "cifra": -0.85,
    "rango": [
     -3.2,
@@ -30956,7 +30956,7 @@
   },
   {
    "id": "V12-B6-brecha-hacinamiento",
-   "enunciado": "Hacinamiento: hogares extranjeros − españoles de igual edad y renta (puntos)",
+   "enunciado": "Hacinamiento: personas adultas de nacionalidad extranjera − española de igual edad y renta (puntos)",
    "cifra": 8.15,
    "rango": [
     6.36,
@@ -30983,7 +30983,7 @@
   },
   {
    "id": "V12-B6-brecha-sobrecarga_40",
-   "enunciado": "Sobrecarga > 40 %: hogares extranjeros − españoles de igual edad y renta (puntos)",
+   "enunciado": "Sobrecarga > 40 %: personas adultas de nacionalidad extranjera − española de igual edad y renta (puntos)",
    "cifra": 14.66,
    "rango": [
     13.27,
@@ -31010,7 +31010,7 @@
   },
   {
    "id": "V12-B6-brecha-tenencia_3",
-   "enunciado": "Alquiler a precio de mercado: hogares extranjeros − españoles de igual edad y renta (puntos)",
+   "enunciado": "Alquiler a precio de mercado: personas adultas de nacionalidad extranjera − española de igual edad y renta (puntos)",
    "cifra": 41.82,
    "rango": [
     39.96,
@@ -33253,7 +33253,7 @@
   },
   {
    "id": "HIST-066",
-   "enunciado": "Oferta · Obra nueva frente a hogares nuevos · [V12-B4-hogares-nuevos; V12-B4-obra-catastro; V12-B4-terminadas-mivau] · Catastro, MIVAU, ECP · C4 (C1 en 25 provincias donde coinciden las dos fuentes de",
+   "enunciado": "Oferta · Obra nueva frente a hogares nuevos · [V12-B4-hogares-nuevos; V12-B4-obra-catastro; V12-B4-terminadas-mivau] · Catastro, MIVAU, ECP · C4 (C1 en 10 provincias donde las dos fuentes de oferta di",
    "cifra": null,
    "rango": null,
    "unidad": "",
@@ -33291,7 +33291,7 @@
   },
   {
    "id": "HIST-068",
-   "enunciado": "Condiciones por origen · Brecha a igual edad y renta · sobrecarga > 40 % + [V12-B6-brecha-sobrecarga_40]; esfuerzo de inquilinos ≈ 0 · ECV, estandarización directa · C4 · **Nuevo** · output/v12/b6",
+   "enunciado": "Condiciones por origen · Brecha a igual edad y renta (personas adultas) · sobrecarga > 40 % + [V12-B6-brecha-sobrecarga_40]; esfuerzo de inquilinos ≈ 0 · ECV, estandarización directa · C4 · **Nuevo**",
    "cifra": null,
    "rango": null,
    "unidad": "",

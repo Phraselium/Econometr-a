@@ -51,8 +51,8 @@ def main() -> int:
                    (a + b) / 2, "hogares", "2011-2021", "España", F3, "2021-01-01", min(a, b), max(a, b)))
     rr = pd.read_csv(O / "b3/hogares_reciente_provincia.csv").sum(numeric_only=True)
     per = pd.read_csv(O / "b3/hogares_reciente_provincia.csv").periodo.iloc[0]
-    for c, et in (("crecimiento_observado", "Crecimiento de hogares (ECP)"), ("efecto_poblacion", "Componente población"),
-                  ("efecto_estructura_edad", "Componente estructura por edad"), ("cambio_jefatura_implicito", "Cambio implícito de jefatura")):
+    for c, et in (("crecimiento_observado", "Crecimiento de hogares (ECP)"), ("componente_poblacion", "Componente población"),
+                  ("componente_estructura_edad", "Componente estructura por edad"), ("cambio_jefatura_implicito", "Cambio implícito de jefatura")):
         H.append(h(f"V12-B3-reciente-{c}", f"{et}, España, {per}", rr[c], "hogares", per, "España (suma de provincias)", "INE, ECP y Censo 2021; V12-B3", per[-4:] + "-01-01"))
     nh = pd.read_csv(O / "b3/hogares_nacionalidad_censo2021.csv")
     x = nh[nh.nivel == "nacional"].iloc[0]
@@ -87,7 +87,7 @@ def main() -> int:
                "tenencia_3": "Alquiler a precio de mercado"}
     for i, et in nombres.items():
         r6 = b6.loc[i]
-        H.append(h(f"V12-B6-brecha-{i}", f"{et}: hogares extranjeros − españoles de igual edad y renta (puntos)", r6.diferencia_estandarizada, "puntos",
+        H.append(h(f"V12-B6-brecha-{i}", f"{et}: personas adultas de nacionalidad extranjera − española de igual edad y renta (puntos)", r6.diferencia_estandarizada, "puntos",
                    r6.periodo, "España", F6, f"ECV {r6.periodo[-4:]}", r6.ic95_inf, r6.ic95_sup))
     # B7
     r7 = json.loads((O / "b7/resultado.json").read_text(encoding="utf-8"))

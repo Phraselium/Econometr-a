@@ -115,7 +115,7 @@
    "terminadas_mivau_total": 93634
   }
  },
- "regularizacion_2013_2017_catastro_menos_mivau": 320545,
+ "regularizacion_2013_2017_catastro_menos_mivau": 348840,
  "municipios_2021_2025_por_categoria": {
   "obra < 50 %": 250,
   "hogares no crecen": 188,
@@ -133,7 +133,7 @@
   "hogares_nuevos_ecp": 934562,
   "obra_neta_catastro": 355508,
   "terminadas_mivau": 346403,
-  "provincias_fuentes_coinciden": 25
+  "provincias_fuentes_coinciden": 10
  },
  "inspire_municipios": 96,
  "notas": [

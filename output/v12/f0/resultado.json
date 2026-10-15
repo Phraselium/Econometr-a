@@ -1,0 +1,27 @@
+{
+ "rama": "V12-F0",
+ "capa": "C4",
+ "metodo": "descriptivo y contable",
+ "empalme_titularidad": {
+  "jaxi_titulares_urbanos_2023": 33723867.0,
+  "csv_sujetos_pasivos_urbanos_2024": 22895776.0,
+  "csv_sujetos_pasivos_residencial_2024": 19904497.0,
+  "salto_nacional_pct": -32.1,
+  "ratio_municipal_mediana": 0.671,
+  "ratio_municipal_p10_p90": [
+   0.612,
+   0.735
+  ],
+  "conclusion": "cambio de definición (titulares catastrales → sujetos pasivos del IBI): no encadenar"
+ },
+ "aeat": {
+  "municipios": 326,
+  "ejercicios": [
+   2016,
+   2024
+  ],
+  "error_relativo_max_mediano": 0.00038182517975962073,
+  "cuota_mediana": 0.483,
+  "filas_cuota_mayor_1": 10
+ }
+}

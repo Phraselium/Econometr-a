@@ -24,6 +24,7 @@ from jinja2 import ChoiceLoader, DictLoader, Environment, FileSystemLoader, sele
 RAIZ = Path(__file__).resolve().parents[2]
 WEB = RAIZ / "web"
 SITE = WEB / "_site"
+RESUMEN = RAIZ / "output" / "v10" / "web_resumen.csv"   # los tests lo redirigen a un directorio temporal (V12-F0)
 PUB = RAIZ / "data" / "base" / "publica"
 GEO = RAIZ / "data" / "base" / "geo"
 ATLAS = RAIZ / "output" / "v10" / "atlas"
@@ -647,7 +648,7 @@ def construir() -> dict:
     tam = sum(f.stat().st_size for f in SITE.rglob("*") if f.is_file())
     res = {"paginas": len(list(SITE.rglob("*.html"))), "indicadores": len(catalogo), "mapas": len(mapas),
            "fichas_territoriales": len(fichas), "tamano_mb": round(tam / 1e6, 1), "url_prevista": URL_PREVISTA}
-    with open(RAIZ / "output" / "v10" / "web_resumen.csv", "w", newline="", encoding="utf-8") as fh:
+    with open(RESUMEN, "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["clave", "valor"])
         w.writerows(res.items())

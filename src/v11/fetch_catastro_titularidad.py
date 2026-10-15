@@ -28,7 +28,13 @@ DIR = RAW11 / FUENTE
 URL = "https://www.catastro.hacienda.gob.es/documentos/estadisticas/propietarios/{a}/{f}.csv"
 LIC = "Catastro (DGC): reutilización libre con reconocimiento de la fuente"
 FICHEROS = {"P_SPI_mun_U": "inmuebles urbanos", "P_SPI_mun_V": "inmuebles de uso residencial",
-            "P_SPI_mun_V_TPF": "viviendas por tipo detallado de titular"}
+            "P_SPI_mun_V_TPF": "viviendas por tipo detallado de titular",
+            # V12: mismos indicadores por ámbito nacional, autonómico y provincial. Los tramos se cuentan DENTRO de cada
+            # ámbito (comprobado: suma municipal de viviendas de PJ con >100 = 139.295 frente a 290.427 en el total
+            # nacional de 2025), así que la concentración municipal es una cota inferior de la nacional.
+            "P_SPI_total_V": "total nacional, uso residencial", "P_SPI_aut_V": "comunidades autónomas, uso residencial",
+            "P_SPI_prov_V": "provincias, uso residencial", "P_SPI_total_V_TPF": "total nacional, tipo detallado de titular",
+            "P_SPI_prov_V_TPF": "provincias, tipo detallado de titular"}
 
 
 def main(verificar: bool = False) -> int:
@@ -50,7 +56,8 @@ def main(verificar: bool = False) -> int:
             print("sin datos", f)
             continue
         D = pd.concat(partes, ignore_index=True)
-        D["CODINE"] = D.CODINE.str.zfill(5)
+        if "CODINE" in D:
+            D["CODINE"] = D.CODINE.str.zfill(5)
         out = DIR / f"{f.lower()}.csv.gz"
         D.to_csv(out, index=False, compression=GZ_PANDAS)
         registrar(FUENTE, out, URL.format(a="<año>", f=f), edicion="Catastro, estadística de titularidad (padrón IBI urbano)",

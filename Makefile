@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9 datos_v11
+.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9 datos_v11 v12
 
 all: data clean models report
 
@@ -45,6 +45,7 @@ report:
 	@$(MAKE) --no-print-directory verificador
 
 check:
+	@$(PY) src/v12/git_limpio.py guardar $${TMPDIR:-/tmp}/econometra_check_git.txt
 	ruff check src tests --quiet
 	$(PY) -m pytest -q tests
 	$(PY) src/v3/check_texto.py
@@ -52,6 +53,7 @@ check:
 	$(PY) src/v6/check_v6.py
 	$(PY) src/v8/check_v8.py
 	$(PY) src/v9/check_v9.py
+	@$(PY) src/v12/git_limpio.py comparar $${TMPDIR:-/tmp}/econometra_check_git.txt
 
 verificador:
 	@if [ -f src/v3/verificador.py ]; then $(PY) src/v3/verificador.py; fi
@@ -160,3 +162,8 @@ v9:
 validar_v9:
 	$(PY) src/v9/validar_honest_rr.py
 
+
+# V12: análisis descriptivo (población, propiedad y oferta). Orden en V12_ORDEN (src/v12/<modulo>.py)
+V12_ORDEN := f0_correcciones
+v12:
+	@for r in $(V12_ORDEN); do echo ">> src/v12/$$r.py"; $(PY) src/v12/$$r.py || exit 1; done

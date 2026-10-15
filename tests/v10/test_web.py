@@ -14,10 +14,12 @@ sys.path.insert(0, str(RAIZ / "src" / "v10"))
 
 
 @pytest.fixture(scope="module")
-def sitio():
+def sitio(tmp_path_factory):
     if not (RAIZ / "data/base/publica/hechos.parquet").exists():
         pytest.skip("falta la capa pública de la base")
     import web
+    tmp = tmp_path_factory.mktemp("web")   # V12-F0: `make check` no escribe ficheros versionados
+    web.SITE, web.RESUMEN = tmp / "_site", tmp / "web_resumen.csv"
     web.construir()
     return web.SITE
 

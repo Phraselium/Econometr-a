@@ -262,6 +262,15 @@ def partes() -> list[pd.DataFrame]:
         add(pd.DataFrame({"territorio_codigo": a.cod_municipio, "nivel": "municipio", "periodo_raw": a.ejercicio.astype(str),
                           "variable": "aeat_irpf_" + a.variable.map(claves), "valor": a.valor}).dropna(subset=["valor"]),
             "data/raw/v11/aeat_irpf_municipios/irpf_municipios_cv.csv.gz")
+    # V12-F0: declarantes aproximados con rentas de bienes inmuebles (importe ÷ media; alquileres + imputaciones)
+    f = RAIZ / "output/v12/f0/aeat_declarantes_inmuebles_aprox.csv"
+    if f.exists():
+        q = pd.read_csv(f, dtype={"cod_municipio": str})
+        q = q[_mun(q.cod_municipio) & (q.marca.fillna("") == "")]
+        add(pd.DataFrame({"territorio_codigo": q.cod_municipio, "nivel": "municipio", "periodo_raw": q.ejercicio.astype(str),
+                          "variable": "aeat_irpf_declarantes_inmuebles_aprox", "valor": q.declarantes_rentas_inmuebles_aprox,
+                          "metodo_dato": "importe ÷ media (cálculo propio; error relativo ≤ 0,5/media)"}),
+            "output/v12/f0/aeat_declarantes_inmuebles_aprox.csv")
     # INE IPVA por municipio (> 10.000 hab.) y distrito de capitales, por tamaño de la vivienda (códigos de los metadatos)
     for nivel in ("municipio", "distrito"):
         f = RAW11 / f"ine_ipva/ipva_{nivel}_tamano.csv.gz"
@@ -308,10 +317,10 @@ META_V11 = {
        for s in ("construccion", "hosteleria", "inmobiliarias")},
     "ss_afiliados_extranjeros": ("afiliados", "Seguridad Social, afiliados extranjeros por provincia (último día del periodo)", _C, "Seguridad Social: reutilización con cita", True),
     "opi_residentes_documentados": ("personas", "OPI (Ministerio de Inclusión), extranjeros con certificado de registro o tarjeta en vigor; réplica de la Comunidad de Madrid", _C, "CC BY 4.0 (Comunidad de Madrid)", True),
-    "catastro_tit_titulares": ("titulares (sujetos pasivos)", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial)", _C, "Catastro: reutilización con reconocimiento", True),
+    "catastro_tit_titulares": ("titulares (sujetos pasivos)", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial; sujetos pasivos; tramos dentro del municipio; NO encadenar con catastro_titulares_jaxi: salto 2023→2024 de −32 % por cambio de definición)", _C, "Catastro: reutilización con reconocimiento", True),
     "catastro_tit_viviendas": ("inmuebles residenciales", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial)", _C, "Catastro: reutilización con reconocimiento", True),
     "bcn_hut_registro": ("viviendas", "Ajuntament de Barcelona, registro HUT, cortes trimestrales (descarga manual del autor)", _C, "CC BY 4.0", True),
-    "catastro_titulares_jaxi": ("titulares", "Catastro, titulares por municipio y clase (visor JAXI; 2012-2023)", _C, "Catastro: reutilización con reconocimiento", True),
+    "catastro_titulares_jaxi": ("titulares", "Catastro, titulares catastrales por municipio y clase (visor JAXI; 2012-2023; NO encadenar con catastro_tit_*: serie de sujetos pasivos desde 2024)", _C, "Catastro: reutilización con reconocimiento", True),
     "catastro_viviendas_por_anio_construccion": ("viviendas", "Catastro, otras estadísticas (2019): viviendas por año de construcción", _C, "Catastro: reutilización con reconocimiento", True),
     "catastro_viviendas_por_anio_reforma": ("viviendas", "Catastro, otras estadísticas (2019): viviendas por año de reforma", _C, "Catastro: reutilización con reconocimiento", True),
     "obra_nueva_viviendas_inspire": ("viviendas", "Catastro INSPIRE: viviendas por año de construcción (stock superviviente; agregado propio)", _C, "Catastro: reutilización con reconocimiento", True),
@@ -319,6 +328,7 @@ META_V11 = {
     **{f"aeat_irpf_{k}": (u, "AEAT, estadística de declarantes del IRPF por municipios", _C, "AEAT: reutilización con cita", True)
        for k, u in (("declaraciones", "declaraciones"), ("renta_bruta_media", "€"), ("renta_disponible_media", "€"),
                     ("rentas_inmuebles_importe", "€"), ("rentas_inmuebles_media", "€"), ("rentas_trabajo_importe", "€"))},
+    "aeat_irpf_declarantes_inmuebles_aprox": ("declarantes (aprox.)", "AEAT, IRPF por municipios: importe ÷ media de rentas de bienes inmuebles no afectos (incluye alquileres e imputación de inmuebles no alquilados; no identifica caseros)", _C, "AEAT: reutilización con cita", True),
     "ipva_tam_indice": ("índice 2015=100", "INE, IPVA por municipio y distrito (59060, 59061) por tamaño de la vivienda", _C, INE, True),
     "ipva_tam_var_anual": ("%", "INE, IPVA por municipio y distrito (59060, 59061)", _C, INE, True),
     "ine_tmov_receptor_turistas": ("turistas", "INE, turismo receptor medido con teléfonos móviles (52048; experimental)", _C, INE, True),

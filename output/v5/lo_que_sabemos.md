@@ -98,7 +98,7 @@ V9 contrasta con diseños de identificación pre-registrados los topes y las zon
 
 - **Ningún resultado alcanza C3 o C3s**: no hay lectura causal ni cotas de contribución a la subida.
 - [C4] Con la Ley catalana 11/2020, la renta de los contratos nuevos fue -5,9 % (-7,3 a -4,4 %) frente a municipios comparables. Es compatible con la literatura, pero no supera la robustez a desviaciones de tendencia pre-registrada. No se detecta caída del número de contratos.
-- [C4, contable] El componente población supone 68,9 % del aumento de hogares de 2022-2025 en España y 84,4 % en la Comunitat Valenciana.
+- [C4, contable] El componente población supone 92,0 % del aumento de hogares de 2022-2025 en España y 111,6 % en la Comunitat Valenciana.
 
 ## Qué cambió entre versiones y por qué
 

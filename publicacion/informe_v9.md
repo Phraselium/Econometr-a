@@ -21,14 +21,14 @@ Las reglas se fijaron antes de estimar: pre-registro `docs/v9/hipotesis.md` y ad
 
 - [C4] **Ley catalana 11/2020.** En los municipios con topes, la renta de los contratos nuevos fue -5,9 % (-7,3 a -4,4 %) respecto a los comparables (p de Holm < 0,001).
   - La comparación supera la prueba de tendencias previas (p 0,282), el placebo de fecha y la permutación.
-  - No supera la robustez a desviaciones de tendencia exigida en el pre-registro (M̄ de ruptura 0,80 frente a 1).
+  - No supera la robustez a desviaciones de tendencia exigida en el pre-registro (M̄ de ruptura 0,50 frente a 1).
   - La magnitud coincide con la literatura (LB01: −4 % a −6 %), pero no se lee como efecto.
 - [C4] **Zonas tensionadas en Cataluña.** La diferencia es -5,8 % (-8,5 a -3,2 %), pero los municipios declarados ya evolucionaban de forma distinta antes de 2024 (pretendencias p < 0,001; placebo de fecha p 0,007). No se puede separar de esas tendencias.
 - [C4] **Número de contratos.** No se detecta una caída del número de contratos ni con la Ley 11/2020 (-1,3 % (-7,0 a 4,4 %)) ni con las zonas tensionadas (-6,2 % (-13,2 a 0,71 %)).
 - [C4] **Pisos turísticos (Cataluña).** Los municipios con más plazas turísticas en 2019 muestran una renta de contratos nuevos algo mayor tras la reapertura, 1,0 % (0,39-1,7 %) por desviación típica de dosis. Las tendencias previas se rechazan (p < 0,001).
 - [C4] **Inmigración (provincias).** El instrumento de redes de origen es débil (F efectiva 4,55). Los coeficientes no son concluyentes: IPC de alquiler 0,72 % por punto de población (-0,81 a 2,3 % por punto de población) por punto de población extranjera en 2003-2012.
 - [C4] **Tipos de interés (zona euro).** Con más hipotecas a tipo variable, la asociación con el precio a cuatro trimestres es -5,3 % (-15,6 a 5,1 %) y no se distingue de cero. La del alquiler es negativa a cuatro trimestres (-11,7 % (-17,4 a -6,0 %)).
-- [C4, contable] **Hogares.** En 2022-2025, el componente población supone 68,9 % del aumento de hogares en España y 84,4 % en la Comunitat Valenciana. En 2011-2021 pesó más la tasa de jefatura (componente población 13,7 %).
+- [C4, contable] **Hogares.** Entre el 1 de enero de 2022 y el de 2025, el componente población supone 92,0 % del aumento de hogares en España y 111,6 % en la Comunitat Valenciana. Más del 100 % significa que la tasa de jefatura (hogares por persona) bajó. En 2011-2021 pesó más la tasa de jefatura (componente población 13,7 %).
 - **Bono Alquiler Joven.** No se puede evaluar con datos públicos: falta la edad exacta y no se identifica a los receptores.
 
 ## Abstract (English)
@@ -96,8 +96,8 @@ Los efectos y asociaciones se expresan en puntos logarítmicos ×100, que equiva
 - **Alquiler:** -11,7 % (-17,4 a -6,0 %) a 4 trimestres.
 
 **D7. Hogares y viviendas (contable).**
-- **Aumento de hogares 2022-2025:** 939.956 hogares en España.
-- **Componente población:** 68,9 % en España y 84,4 % en la Comunitat Valenciana.
+- **Aumento de hogares 2022-2025:** 698.943 hogares en España.
+- **Componente población:** 92,0 % en España y 111,6 % en la Comunitat Valenciana.
 - **Contraste entre fuentes.** Censo 2021 y ECP coinciden en 1,5 % [C1].
 - **Reconciliación del déficit** (proyecto, Banco de España y OCDE): `output/v9/d7/reconciliacion_deficit.csv`. Las viviendas liberadas por envejecimiento no se restan (regla v5.1).
 

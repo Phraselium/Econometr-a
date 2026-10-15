@@ -26,7 +26,7 @@ Borja Romero, economista (firma individual, independiente). Generado por src/v9/
 
 **Veredicto.** ANALIZADA, NO CONCLUYENTE [C4]
 
-**Magnitud.** D1b (confirmatoria): ATT −5,9 % (IC [−7,3; −4,4]), p de Holm < 0,001; pretendencias p 0,282, placebo de fecha p 0,408. No supera la prueba de Honest DiD con M̄ = 1 (M̄ de ruptura 0,8), exigida en el pre-registro: queda en C4. Contratos nuevos: −1,3 % (IC [−7,0; 4,4]), sin diferencia detectable.
+**Magnitud.** D1b (confirmatoria): ATT −5,9 % (IC [−7,3; −4,4]), p de Holm < 0,001; pretendencias p 0,282, placebo de fecha p 0,408. No supera la prueba de Honest DiD con M̄ = 1 (M̄ de ruptura 0,5), exigida en el pre-registro: queda en C4. Contratos nuevos: −1,3 % (IC [−7,0; 4,4]), sin diferencia detectable.
 
 **Intervalo.** IC 95 % con bootstrap multiplicador por municipio; p de Holm en la familia confirmatoria {H1a-renta, H1b-renta}.
 
@@ -122,7 +122,7 @@ Borja Romero, economista (firma individual, independiente). Generado por src/v9/
 
 **Veredicto.** DESCRIPTIVA (CONTABLE) [C4]
 
-**Magnitud.** D7 (contable): en 2022-2025 el componente población supone 69 % del aumento de hogares en España (939956 hogares) y 84 % en la Comunitat Valenciana. En 2011-2021 pesa más el componente tasa de jefatura (componente población 14 % en España). Censo 2021 y ECP coinciden en 1,5 % [C1].
+**Magnitud.** D7 (contable): en 2022-2025 el componente población supone 92 % del aumento de hogares en España (698943 hogares) y 112 % en la Comunitat Valenciana (más del 100 % significa que el componente tasa de jefatura fue negativo: menos hogares por persona). Periodo: stocks a 1-1-2022 y 1-1-2025. En 2011-2021 pesa más el componente tasa de jefatura (componente población 14 % en España). Censo 2021 y ECP coinciden en 1,5 % [C1].
 
 **Intervalo.** Descomposición exacta (identidad); sin intervalo.
 

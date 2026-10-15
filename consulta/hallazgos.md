@@ -4,7 +4,7 @@
 
 Un registro por hallazgo de las versiones vigentes (v5-V8, con v4 donde sigue en cifras_clave): cifras de `output/v5/cifras_clave.csv`, fichas del verificador, conclusiones del historial e hipótesis retiradas. Las superadas y retiradas están al final y **no se citan**. La versión legible por máquina es [hallazgos.json](hallazgos.json). Las capas se leen según [metodologia/capas.md](../metodologia/capas.md): causalidad solo en C3 y C3s.
 
-Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v10: 28; v1: 8; v2: 7; v3: 3. Total vigentes: 1188.
+Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v10: 28; v9: 69; v1: 8; v2: 7; v3: 3. Total vigentes: 1257.
 
 ## Versión v4
 
@@ -1268,6 +1268,80 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `HIST-006` | Inmigración · Cotas de cantidad (hogares extranjeros) | cuota máxima 100 % (no informativa) | C4 | 2014-2025 | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
 | `HIST-019` | Turísticos (VUT) · Alquiler SERPAVI | +0,0003 por 100 viviendas (p aj. 0,47); GL −0,0042 | C4 | 2016-2024; 2021-2024 | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
 | `HIST-020` | Turísticos · Cota de cantidad | como máximo 2,75 % del stock de alquiler (81.771 viviendas) | C2 | 2020-2024 | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+
+## Versión v9
+
+| id | enunciado | cifra | capa | periodo | origen |
+|---|---|---|---|---|---|
+| `V9-D1a-contratos-att` | zonas tensionadas (Ley 12/2023): ATT sobre contratos de contratos nuevos (CS) | -6,25 % (-13,21 a 0,706) | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1a-contratos-placebo-p` | zonas tensionadas (Ley 12/2023), log contratos: p del placebo de fecha (4 trimestres antes) | 0,613 | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1a-contratos-pretend-p` | zonas tensionadas (Ley 12/2023), log contratos: p del contraste conjunto de pretendencias | 0,031 | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1a-contratos-ruptura` | zonas tensionadas (Ley 12/2023), log contratos: M̄ de ruptura de Honest DiD (magnitudes relativas, simplificado) | 0 M̄ | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1a-renta-att` | zonas tensionadas (Ley 12/2023): ATT sobre renta media de contratos nuevos (CS) | -5,85 % (-8,5 a -3,19) | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1a-renta-pholm` | zonas tensionadas (Ley 12/2023), log renta media: p ajustado por Holm (familia confirmatoria de V9) | 0 | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1a-renta-placebo-p` | zonas tensionadas (Ley 12/2023), log renta media: p del placebo de fecha (4 trimestres antes) | 0,00701 | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1a-renta-pretend-p` | zonas tensionadas (Ley 12/2023), log renta media: p del contraste conjunto de pretendencias | 0,0004 | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1a-renta-ruptura` | zonas tensionadas (Ley 12/2023), log renta media: M̄ de ruptura de Honest DiD (magnitudes relativas, simplificado) | 0,2 M̄ | C4 | 2022T2-2026T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1b-contratos-att` | Ley catalana 11/2020: ATT sobre contratos de contratos nuevos (CS) | -1,32 % (-7,02 a 4,38) | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1b-contratos-placebo-p` | Ley catalana 11/2020, log contratos: p del placebo de fecha (4 trimestres antes) | 0,156 | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1b-contratos-pretend-p` | Ley catalana 11/2020, log contratos: p del contraste conjunto de pretendencias | 0,28 | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1b-contratos-ruptura` | Ley catalana 11/2020, log contratos: M̄ de ruptura de Honest DiD (magnitudes relativas, simplificado) | 0 M̄ | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1b-renta-att` | Ley catalana 11/2020: ATT sobre renta media de contratos nuevos (CS) | -5,85 % (-7,35 a -4,36) | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1b-renta-pholm` | Ley catalana 11/2020, log renta media: p ajustado por Holm (familia confirmatoria de V9) | 0 | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1b-renta-placebo-p` | Ley catalana 11/2020, log renta media: p del placebo de fecha (4 trimestres antes) | 0,408 | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1b-renta-pretend-p` | Ley catalana 11/2020, log renta media: p del contraste conjunto de pretendencias | 0,282 | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1b-renta-ruptura` | Ley catalana 11/2020, log renta media: M̄ de ruptura de Honest DiD (magnitudes relativas, simplificado) | 0,5 M̄ | C4 | 2019T1-2022T1 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D1c-renta-att` | Zonas tensionadas de Euskadi: ATT exploratorio sobre la renta de fianzas nuevas (EMAL) | -2,48 % (-3,52 a -1,45) | C4 | 2016T1-2025T4 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D2-renta-covid` | Viviendas de uso turístico en 2019 × COVID 2020-2021: variación de la renta de contratos nuevos por 1 DE de dosis | 0,219 % (-0,549 a 0,987) | C4 | 2014-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D2-renta-pretend-p` | D2, renta: p del contraste conjunto de pretendencias (2014-2018) | 0,00023 | C4 | 2014-2018 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D2-renta-reap` | Viviendas de uso turístico en 2019 × reapertura 2022-2025: variación de la renta de contratos nuevos por 1 DE de dosis | 1,05 % (0,39 a 1,7) | C4 | 2014-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D3-cuota` | Caída del registro VUT (por 1 VUT por 100 viviendas) y variación de la cuota provincial de fianzas 2024→2025 por CP (descriptivo) | 0,00205 puntos de cuota (-0,00216 a 0,00625) | C4 | 2024-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D3-media` | Caída del registro VUT (por 1 VUT por 100 viviendas) y variación de la fianza media 2024→2025 por CP (descriptivo) | -0,195 % (-0,413 a 0,024) | C4 | 2024-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D4-ipc-ampliacion` | Inmigración (2SLS shift-share), IPC de alquiler: elasticidad por punto de población extranjera (2015-2022) | 1,52 % por punto de población (-1,36 a 4,41) | C4 | 2015-2022 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D4-ipc-ampliacion-F` | Inmigración, IPC de alquiler: F efectiva del instrumento | 2,79 | C4 | 2015-2022 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D4-ipc-replica` | Inmigración (2SLS shift-share), IPC de alquiler: elasticidad por punto de población extranjera (2003-2012) | 0,723 % por punto de población (-0,815 a 2,26) | C4 | 2003-2012 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D4-ipc-replica-F` | Inmigración, IPC de alquiler: F efectiva del instrumento | 4,55 | C4 | 2003-2012 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D4-tasado-ampliacion` | Inmigración (2SLS shift-share), valor tasado: elasticidad por punto de población extranjera (2015-2022) | 12,88 % por punto de población (-1,45 a 27,21) | C4 | 2015-2022 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D4-tasado-ampliacion-F` | Inmigración, valor tasado: F efectiva del instrumento | 3,44 | C4 | 2015-2022 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D4-tasado-replica` | Inmigración (2SLS shift-share), valor tasado: elasticidad por punto de población extranjera (2003-2012) | -0,286 % por punto de población (-2,72 a 2,15) | C4 | 2003-2012 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D4-tasado-replica-F` | Inmigración, valor tasado: F efectiva del instrumento | 3,66 | C4 | 2003-2012 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D5-alq-h4` | Shock monetario del BCE × cuota de hipotecas a tipo variable (1 DE): Δ log alquiler (h = 4) | -11,68 % (-17,4 a -5,96) | C4 | 2008T1-2025T3 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D5-precio-h4` | Shock monetario del BCE × cuota de hipotecas a tipo variable (1 DE): Δ log precio (h = 4) | -5,25 % (-15,63 a 5,13) | C4 | 2008T1-2025T3 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D5-precio-h8` | Shock monetario del BCE × cuota de hipotecas a tipo variable (1 DE): Δ log precio (h = 8) | -4,39 % (-17,54 a 8,76) | C4 | 2008T1-2025T3 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-CV-1121-H0` | Hogares al inicio (2011-2021; descomposición D7) | 1.986.896 hogares | C4 | 2011-2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-CV-1121-H1` | Hogares al final (2011-2021; descomposición D7) | 2.022.501 hogares | C4 | 2011-2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-CV-1121-P0` | Población al inicio (2011-2021; descomposición D7) | 5.129.266 personas | C4 | 2011-2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-CV-1121-P1` | Población al final (2011-2021; descomposición D7) | 5.097.967 personas | C4 | 2011-2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-CV-1121-cuota-pob` | Componente población del aumento de hogares (2011-2021), % del total | -33,98 % | C4 | 2011-2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-CV-1121-dH` | Aumento de hogares (2011-2021) | 35.605 hogares | C4 | 2011-2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-CV-2225-H0` | Hogares al inicio (2022-2025; descomposición D7) | 2.063.319 hogares | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-CV-2225-H1` | Hogares al final (2022-2025; descomposición D7) | 2.177.711 hogares | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-CV-2225-P0` | Población al inicio (2022-2025; descomposición D7) | 5.108.116 personas | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-CV-2225-P1` | Población al final (2022-2025; descomposición D7) | 5.425.182 personas | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-CV-2225-cuota-pob` | Componente población del aumento de hogares (2022-2025), % del total | 111,6 % | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-CV-2225-dH` | Aumento de hogares (2022-2025) | 114.392 hogares | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-ES-1121-H0` | Hogares al inicio (2011-2021; descomposición D7) | 18.083.692 hogares | C4 | 2011-2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-ES-1121-H1` | Hogares al final (2011-2021; descomposición D7) | 18.536.616 hogares | C4 | 2011-2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-ES-1121-P0` | Población al inicio (2011-2021; descomposición D7) | 47.265.321 personas | C4 | 2011-2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-ES-1121-P1` | Población al final (2011-2021; descomposición D7) | 47.475.420 personas | C4 | 2011-2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-ES-1121-cuota-pob` | Componente población del aumento de hogares (2011-2021), % del total | 13,65 % | C4 | 2011-2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-ES-1121-dH` | Aumento de hogares (2011-2021) | 452.924 hogares | C4 | 2011-2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-ES-2225-H0` | Hogares al inicio (2022-2025; descomposición D7) | 18.822.103 hogares | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-ES-2225-H1` | Hogares al final (2022-2025; descomposición D7) | 19.521.046 hogares | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-ES-2225-P0` | Población al inicio (2022-2025; descomposición D7) | 47.486.727 personas | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-ES-2225-P1` | Población al final (2022-2025; descomposición D7) | 49.128.297 personas | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-ES-2225-cuota-pob` | Componente población del aumento de hogares (2022-2025), % del total | 91,96 % | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-ES-2225-dH` | Aumento de hogares (2022-2025) | 698.943 hogares | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-c1-dif` | Hogares 2021: ECP (1-1-2022) frente a censo 2021 (viviendas principales), diferencia | 1,54 % | C1 | 2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-NC3` | Resultados de V9 que alcanzan C3 o C3s | 0 efectos | C4 | 2026 | [hechos.json](../output/v9/F5/hechos.json) |
+| `HIST-055` | Topes de renta (Ley catalana 11/2020) · Renta de contratos nuevos (Incasòl) | −5,9 % (−7,3 a −4,4) [V9-D1b-renta-att] | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-056` | Zonas tensionadas (Ley 12/2023, Cataluña) · Renta de contratos nuevos | −5,8 % (−8,5 a −3,2) [V9-D1a-renta-att] | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-057` | Regulación y número de contratos · Contratos nuevos (fianzas) | Ley 11/2020 −1,3 %; zonas tensionadas −6,2 % | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-058` | Turismo y viviendas turísticas · Renta de contratos nuevos (Cataluña); fianzas por CP (C. Valenciana) | reapertura 1,05 % por DE de dosis; D3 −0,20 % por VUT/100 viv. | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-059` | Demografía e inmigración · IPC de alquiler; valor tasado (provincias) | 0,72 % por punto (réplica 2003-2012); F efectiva 4,6 | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-060` | Tipos de interés · Precio (BIS) y alquiler (IPCA), zona euro | precio h=4 −5,3 %; alquiler h=4 −11,7 % por shock y DE de exposición | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-061` | Hogares (contable) · Aumento de hogares 2022-2025 | componente población 92 % (España), 112 % (C. Valenciana) | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-062` | Un factor con efecto identificado · — | 0 resultados en C3/C3s [V9-NC3] | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
 
 ## Superadas y retiradas (no citar)
 

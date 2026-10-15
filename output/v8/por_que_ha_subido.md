@@ -262,4 +262,4 @@ V9 añade diseños de identificación con datos locales, pre-registrados y revis
 - **Topes de la Ley catalana 11/2020.** La renta de los contratos nuevos fue -5,9 % (-7,3 a -4,4 %) en los municipios con topes frente a los comparables. Supera las pruebas de tendencias previas y de placebo, pero no la robustez a desviaciones de tendencia exigida en el pre-registro.
 - **Zonas tensionadas en Cataluña.** La diferencia es -5,8 % (-8,5 a -3,2 %), pero los municipios ya divergían antes. No se detecta una caída del número de contratos.
 - **Pisos turísticos e inmigración.** No hay diseño concluyente: tendencias previas en los pisos turísticos e instrumento débil en la inmigración (F efectiva 4,55).
-- **Hogares (contable).** El componente población explica 68,9 % del aumento de hogares de 2022-2025 en España y 84,4 % en la Comunitat Valenciana.
+- **Hogares (contable).** El componente población explica 92,0 % del aumento de hogares de 2022-2025 en España y 111,6 % en la Comunitat Valenciana.

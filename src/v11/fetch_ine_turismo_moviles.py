@@ -46,11 +46,13 @@ def get(url: str):
     return None
 
 
-def main(verificar: bool = False) -> int:
+def main(verificar: bool = False, solo: int | None = None) -> int:
     DIR.mkdir(parents=True, exist_ok=True)
     if verificar:
         return verificar_manifiesto(FUENTE)
     for t, (nombre, dim) in TABLAS.items():
+        if solo and t != solo:
+            continue
         grupos = get(f"{API}GRUPOS_TABLA/{t}")
         gm = next(g["Id"] for g in grupos if "unicipio" in g["Nombre"] and "destino" in g["Nombre"].lower())
         muns = [m for m in get(f"{API}VALORES_GRUPOSTABLA/{t}/{gm}") if m.get("Codigo")]
@@ -95,4 +97,4 @@ def main(verificar: bool = False) -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main("--verificar" in sys.argv))
+    sys.exit(main("--verificar" in sys.argv, solo=int(sys.argv[sys.argv.index("--tabla") + 1]) if "--tabla" in sys.argv else None))

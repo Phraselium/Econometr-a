@@ -263,5 +263,5 @@ Tres consecuencias del cuadro:
 
 ## Sellado
 
-- Commit del pre-registro: ver docs/v9/estado.md («hash prereg-v9»). El hash se añade en el commit siguiente, porque un fichero no puede contener el hash de su propio commit.
+- Commit del pre-registro: **2977349e3ed3092a51c8a3ad309140cf0b83dca8** (2026-10-15), subido a la rama remota designada. El hash se añade en el commit siguiente, porque un fichero no puede contener el hash de su propio commit. Todo cambio posterior a este documento se anota como desviación en docs/v9/decisiones.md.
 - Etiqueta local: `prereg-v9`.

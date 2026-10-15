@@ -222,7 +222,7 @@ def f10_ciudades():
     ax.set_title("Alquiler mediano en València y ciudades comparables")
     ax.legend(fontsize=7, ncol=2)
     guardar(fig, "F10_ciudades_alquiler", "Alquiler mediano 2015-2024: València y ciudades comparables", "MIVAU SERPAVI",
-            "2015-2024", "C4", "Bilbao solo 2024 (territorios forales). Sin inferencia causal.", "Líneas por ciudad.")
+            "2015-2024", "C4 (fuente única: SERPAVI)", "Bilbao solo 2024 (territorios forales). Fuente única; sin inferencia causal.", "Líneas por ciudad.")
 
 
 def f11_factor_comun():

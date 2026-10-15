@@ -5,7 +5,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | Fichero | Fuente | sha256 |
 |---|---|---|
 | articulo_colegio.md | output/v5/articulo_colegio.md | `eaf609ab92c8925c259f8a76ff9554a8c40782d4c7c440d899995910bbce281a` |
-| atlas_descriptivo.md | output/v10/atlas_descriptivo.md | `9708fb4459a3cef6e2c8af0d5534401a4cc3c10eae848a5d3bc48d76173dbd55` |
+| atlas_descriptivo.md | output/v10/atlas_descriptivo.md | `ecc3efb09cdda4956054f9832d3a9dc29b1ce844020c0eb9983d64dc6493de85` |
 | atlas_regional/01_Andalucia.md | output/v7_1/atlas/01_Andalucia.md | `38fd89bd7c7f081bee4821cbebc394346eeb343c20df17cb46e78aff25ef69a4` |
 | atlas_regional/02_Aragon.md | output/v7_1/atlas/02_Aragon.md | `b7d1fb6fe99fb9677945e484560b7fe6383b37c800472bfd6275be347ce94510` |
 | atlas_regional/03_Asturias.md | output/v7_1/atlas/03_Asturias.md | `2f64ae49d3a78d55f8170aaaec7a41894232b895c95aaeace9275598e7d36cb6` |

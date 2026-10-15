@@ -92,7 +92,7 @@ MAPAS = {
         "filtro": ("cod_ccaa", "10"), "tabla": "d_cv_municipios.csv", "clave": "cod_municipio", "simplificar": 0.001,
         "fuente": "INE (censo anual, viviendas turísticas); MIVAU SERPAVI; GVA registro de turismo; Catastro",
         "fecha": "2019-2026 según indicador",
-        "cols": [("var_alquiler_2019_2024_pct", "Variación del alquiler 2019-2024", "%", "C4", False),
+        "cols": [("var_alquiler_2019_2024_pct", "Variación del alquiler 2019-2024 (fuente única: SERPAVI)", "%", "C4", False),
                  ("alquiler_m2_2024", "Alquiler mediano 2024", "€/m²/mes", "C4", False),
                  ("vut_ine_por_100_inmuebles", "Viviendas turísticas (INE) por 100 inmuebles residenciales", "por 100", "C4", False),
                  ("pct_extranj_2025", "Población extranjera 2025", "%", "C4", False),
@@ -104,7 +104,7 @@ MAPAS = {
         "fecha": "2019-2026 según indicador",
         "cols": [("indice_presion_descriptivo", "Índice descriptivo de presión residencial", "z medio", "C4", True),
                  ("alquiler_m2_2024", "Alquiler mediano 2024", "€/m²/mes", "C4", False),
-                 ("var_alquiler_2019_2024_pct", "Variación del alquiler 2019-2024", "%", "C4", False),
+                 ("var_alquiler_2019_2024_pct", "Variación del alquiler 2019-2024 (fuente única: SERPAVI)", "%", "C4", False),
                  ("vut_por_100_viv", "Viviendas turísticas por 100 viviendas (2026-05)", "por 100", "C4", False),
                  ("pct_extranj_2025", "Población extranjera 2025", "%", "C4", False),
                  ("var_pct_extranj_pp", "Cambio del % de extranjeros 2021-2025", "puntos", "C4", True),
@@ -273,7 +273,7 @@ def fichas_territoriales(env) -> list[dict]:
         filas = [fila("Población 2025", r.pob_2025, "personas", "C4", "INE censo anual", "2025-01-01", 0),
                  fila("Población extranjera 2025", r.pct_extranj_2025, "%", "C4", "INE censo anual", "2025-01-01"),
                  fila("Valor tasado 2024", r.valor_tasado_2024, "€/m²", "C4", "MIVAU", "2024"),
-                 fila("Alquiler mediano 2024 (SERPAVI)", r.alquiler_m2_2024, "€/m²/mes", "C4", "MIVAU SERPAVI", "2024", 2),
+                 fila("Alquiler mediano 2024 (SERPAVI)", r.alquiler_m2_2024, "€/m²/mes", "C4", "MIVAU SERPAVI (fuente única)", "2024", 2),
                  fila("Alquiler de 80 m² / renta por persona", r.alquiler_anual_80m2_pct_renta_persona, "%", "C4", "SERPAVI; INE ADRH", "2023-2024"),
                  fila("Déficit 2021-2025 (mediana)", r.deficit_2021_2025_mediana, "viviendas", "C4", "V5 (A4)", "2021-2025", 0),
                  fila("Brecha IPVA nuevos − existentes", x.brecha_nuevo_menos_existente if x is not None else None, "puntos", "C4", "INE IPVA", ult)]
@@ -283,8 +283,11 @@ def fichas_territoriales(env) -> list[dict]:
     cvm_i = cvm.set_index("cod_municipio")
     for c in sorted(grandes):
         filas = [fila("Población 2025", pob_mun.get(c), "personas", "C4", "INE censo anual", "2025-01-01", 0),
-                 fila("Alquiler mediano 2019 (SERPAVI)", alq_mun.at[c, "2019"] if c in alq_mun.index and "2019" in alq_mun else None, "€/m²/mes", "C4", "MIVAU SERPAVI", "2019", 2),
-                 fila("Alquiler mediano 2024 (SERPAVI)", alq_mun.at[c, "2024"] if c in alq_mun.index and "2024" in alq_mun else None, "€/m²/mes", "C4", "MIVAU SERPAVI", "2024", 2)]
+                 fila("Alquiler mediano 2019 (SERPAVI)", alq_mun.at[c, "2019"] if c in alq_mun.index and "2019" in alq_mun else None, "€/m²/mes", "C4", "MIVAU SERPAVI (fuente única)", "2019", 2),
+                 fila("Alquiler mediano 2024 (SERPAVI)", alq_mun.at[c, "2024"] if c in alq_mun.index and "2024" in alq_mun else None, "€/m²/mes", "C4", "MIVAU SERPAVI (fuente única)", "2024", 2),
+                 fila("Variación del alquiler 2019-2024 (SERPAVI)",
+                      100 * (alq_mun.at[c, "2024"] / alq_mun.at[c, "2019"] - 1) if c in alq_mun.index and "2019" in alq_mun and "2024" in alq_mun else None,
+                      "%", "C4", "MIVAU SERPAVI (fuente única)", "2019-2024")]
         if c in cvm_i.index:
             r = cvm_i.loc[c]
             filas += [fila("Población extranjera 2025", r.pct_extranj_2025, "%", "C4", "INE censo anual", "2025-01-01"),
@@ -294,8 +297,8 @@ def fichas_territoriales(env) -> list[dict]:
     for r in bar.itertuples():
         filas = [fila("Población 2025", r.pob_2025, "personas (reparto por área)", "C4", "INE censo anual", "2025-01-01", 0),
                  fila("Población extranjera 2025", r.pct_extranj_2025, "%", "C4", "INE censo anual", "2025-01-01"),
-                 fila("Alquiler mediano 2024", r.alquiler_m2_2024, "€/m²/mes", "C4", "MIVAU SERPAVI", "2024", 2),
-                 fila("Variación del alquiler 2019-2024", r.var_alquiler_2019_2024_pct, "%", "C4", "MIVAU SERPAVI", "2019-2024"),
+                 fila("Alquiler mediano 2024", r.alquiler_m2_2024, "€/m²/mes", "C4", "MIVAU SERPAVI (fuente única)", "2024", 2),
+                 fila("Variación del alquiler 2019-2024", r.var_alquiler_2019_2024_pct, "%", "C4", "MIVAU SERPAVI (fuente única)", "2019-2024"),
                  fila("Viviendas turísticas por 100 viviendas", r.vut_por_100_viv, "por 100", "C4", "INE (experimental); Censo 2021", "2026-05", 2),
                  fila("Renta neta por persona 2023", r.renta_persona_2023, "€", "C4", "INE ADRH", "2023", 0),
                  fila("Índice descriptivo de presión residencial", r.indice_presion_descriptivo, "z medio", "C4", "elaboración propia", "2019-2026", 2)]
@@ -406,6 +409,7 @@ document.getElementById("buscar").addEventListener("input", e => { const q = e.t
 {% endblock %}""",
 "quien.html": """{% extends "base.html" %}{% block contenido %}
 <h1>Quién soporta el coste de la vivienda <span class="meta" lang="ca-valencia">· Qui en suporta el cost</span></h1>
+<p class="aviso"><strong>Cómo leer la sobrecarga en alquiler.</strong> El porcentaje de inquilinos de mercado con gasto en vivienda superior al 40 % de la renta baja entre 2018 y 2025. Eso no indica que alquilar sea más asequible para quien entra ahora: la ECV mide a todos los inquilinos, la mayoría con contratos antiguos; compara el alquiler actual con la renta del año anterior, y el periodo coincide con subidas salariales. Los contratos nuevos han subido más; las cifras están en el <a href="index.html">inicio</a> (capa C1) y en «Entrar frente a quedarse».</p>
 <p class="lema">Microdatos de la Encuesta de Condiciones de Vida (2018-2025) y de la EPA (2018-2026T2). Intervalos al 95 % (linealización; los ficheros públicos no traen estratos, así que los intervalos son algo estrechos).</p>
 <div class="panel"><div class="controles">
 <label>Indicador<select id="ind">{% for k, v in indicadores_ecv.items() %}<option value="{{ k }}">{{ v }}</option>{% endfor %}</select></label>

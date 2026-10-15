@@ -139,8 +139,8 @@
   "titulo": "Alquiler mediano 2015-2024: València y ciudades comparables",
   "fuente": "MIVAU SERPAVI",
   "fecha_dato": "2015-2024",
-  "capa": "C4",
-  "nota": "Bilbao solo 2024 (territorios forales). Sin inferencia causal.",
+  "capa": "C4 (fuente única: SERPAVI)",
+  "nota": "Bilbao solo 2024 (territorios forales). Fuente única; sin inferencia causal.",
   "texto_alternativo": "Líneas por ciudad.",
   "ficheros": [
    "paper/F10_ciudades_alquiler.png",

@@ -45,6 +45,11 @@ def hallazgos() -> tuple[list[str], dict]:
     am_u, am_p = v(ult, "tenencia", "alquiler de mercado", "sobrecarga_40"), v(pri, "tenencia", "alquiler de mercado", "sobrecarga_40")
     tot = v(ult, "total", "Total", "sobrecarga_40")
     if am_u is not None and am_p is not None and tot is not None:
+        cc = pd.read_csv(RAIZ / "publicacion" / "cifras_clave.csv", dtype=str, keep_default_na=False).set_index("id")
+        terr = {"A23-A10": "la Comunitat Valenciana", "A23-A9": "Cataluña"}
+        nuevos = "la renta de los contratos nuevos subió un " + " y un ".join(
+            f"{f(float(cc.at[i, 'valor']))} % en {terr[i]} ({cc.at[i, 'periodo']}) [{i}; capa {cc.at[i, 'capa']}]"
+            for i in ("A23-A10", "A23-A9") if i in cc.index)
         r1 = reg("V10-ATL-A1", "Sobrecarga del gasto en vivienda (>40 % de la renta), personas en alquiler de mercado", am_u.valor, "%",
                  str(ult), "España", "INE ECV (microdatos), cálculo propio; contraste Eurostat ilc_lvho07c", am_u.capa, f"ECV {ult}",
                  am_u.ic95_inf, am_u.ic95_sup)
@@ -57,7 +62,10 @@ def hallazgos() -> tuple[list[str], dict]:
                  f"personas que viven de alquiler a precio de mercado (IC 95 %: {f(am_u.ic95_inf)}-{f(am_u.ic95_sup)}), "
                  f"frente al {f(tot.valor)} % {r2} del conjunto de la población. En {pri}, la cifra de los inquilinos de mercado "
                  f"era del {f(am_p.valor)} % {r3}. *Capa {am_u.capa}; INE ECV (microdatos) con contraste con Eurostat; "
-                 f"renta del año anterior a la encuesta.*")
+                 f"renta del año anterior a la encuesta.* **Cómo leerlo:** la caída no indica que alquilar sea más "
+                 f"asequible para quien entra ahora. La ECV mide a todos los inquilinos, en su mayoría con contratos firmados "
+                 f"hace años; compara el alquiler actual con la renta del año anterior; y el periodo coincide con subidas "
+                 f"salariales. Para quien firma un contrato nuevo, {nuevos}.")
         cifras["sobrecarga40_alquiler_mercado"] = (ult, am_u.valor)
     d1, d10 = v(ult, "decil_renta", 1, "sobrecarga_40"), v(ult, "decil_renta", 10, "sobrecarga_40")
     if d1 is not None and d10 is not None:
@@ -105,7 +113,9 @@ def hallazgos() -> tuple[list[str], dict]:
              "puntos de índice", str(nac.periodo), "España", "INE IPVA (59004)", "C4", str(nac.periodo))
     h.append(f"- **Entrar frente a quedarse.** Desde 2015, la renta de los contratos nuevos ha crecido más que la de los "
              f"existentes: en {nac.periodo}, el índice de contratos nuevos está en {f(nac.nuevo)} y el de existentes en "
-             f"{f(nac.existente)} (2015 = 100), una brecha de {f(nac.brecha_nuevo_menos_existente)} puntos {c1} en España. "
+             f"{f(nac.existente)} (2015 = 100): una diferencia de {f(nac.brecha_nuevo_menos_existente)} puntos de índice {c1} en "
+             f"España. Es una diferencia entre dos índices con base 2015, no un porcentaje: no significa que un contrato nuevo "
+             f"sea un {f(nac.brecha_nuevo_menos_existente, 0)} % más caro. "
              f"Las mayores brechas provinciales están en {pr.iloc[-1].nombre} ({f(pr.iloc[-1].brecha_nuevo_menos_existente)}) y "
              f"{pr.iloc[-2].nombre} ({f(pr.iloc[-2].brecha_nuevo_menos_existente)}); las menores, en {pr.iloc[0].nombre} "
              f"({f(pr.iloc[0].brecha_nuevo_menos_existente)}). *Capa C4; INE IPVA (59004 y 59005).*")
@@ -161,7 +171,8 @@ def hallazgos() -> tuple[list[str], dict]:
         h.append("- **Ciudades comparables.** Variación del alquiler mediano 2019-2024 (SERPAVI): "
                  + "; ".join(f"{k} {f(x)} % " + reg(f"V10-ATL-E-{CODIGOS.get(k, k)}", f"Variación del alquiler mediano 2019-2024, {k}", x, "%",
                                                        "2019-2024", k, "MIVAU SERPAVI", "C4", "2024") for k, x in var.iloc[::-1].items())
-                 + ". *Capa C4; comparación descriptiva, Bilbao sin serie anterior a 2024.*")
+                 + ". *Capa C4, fuente única (SERPAVI, contratos declarados en el IRPF); comparación descriptiva; Bilbao sin "
+                 "serie anterior a 2024.*")
     return h, cifras
 
 

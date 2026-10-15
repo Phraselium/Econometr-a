@@ -24,9 +24,12 @@
 - Revisor final (opus, ~82.000 tokens, dentro del tope): REHACER con 12 hallazgos; todos corregidos (decisiones,
   «Revisión final»).
 
+- Cierre en clon limpio (commit de la revisión final): `make datos_terceros`, `make v12`, `make figuras`, `make web`,
+  `src/v10/fetch_geo.py` + `make base` y `make check` sin diferencias con lo versionado; `make check` deja git sin
+  cambios. Solo `make datos_terceros` toca tres ficheros versionados (previo a V12; tareas_autor.md).
+
 ## Siguiente (para `claude --continue`)
-- Cierre en clon limpio: `make datos_terceros`, `make v12`, `make base`, `make figuras`, `make web`, `make check` (sin
-  cambios en git); commit y push.
+- V12 cerrada. Pendiente del autor: docs/v12/tareas_autor.md.
 
 ## Tokens de subagentes
 Revisor final V12: ~82.000 tokens (tope 100.000).

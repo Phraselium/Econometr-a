@@ -141,6 +141,8 @@ def main(verificar: bool = False) -> int:
         d = pd.concat([x for n, x in partes if n == nivel], ignore_index=True)
         d["periodo_construccion"] = pd.cut(d.anio, PERIODOS, labels=ETIQ).astype(str)
         clave = col_sec if nivel == "seccion" else [c for c in d.columns if c.startswith(("cod_barrio", "codbarrio", "barrio"))][0]
+        if nivel == "barrio":
+            d[clave] = pd.to_numeric(d[clave], errors="coerce").astype("Int64").astype("string")
         g = (d.groupby([clave, "uso", "periodo_construccion"], dropna=False)
              .agg(edificios=("uso", "size"), inmuebles=("inmuebles", "sum"), viviendas=("viviendas", "sum"),
                   superficie_construida_m2=("superficie", "sum")).reset_index().rename(columns={clave: "cod_" + nivel}))

@@ -35,9 +35,13 @@ import numpy as np
 import pandas as pd
 
 RAIZ = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(RAIZ))
+from src.v11 import base_v11  # noqa: E402
+from src.v11.base_v11 import META_V11  # noqa: E402
 PROC = RAIZ / "data" / "processed"
 RAW = RAIZ / "data" / "raw"
 RAW9 = RAW / "v9"
+RAW11 = RAW / "v11"
 BASE = RAIZ / "data" / "base"
 PUB = BASE / "publica"
 DOCS = RAIZ / "docs" / "v10"
@@ -643,6 +647,8 @@ def tabla_variables(vars_: list[str], meta: dict, lic: dict) -> pd.DataFrame:
             tabla[v] = ("anuncios" if "anuncios" in v or v.startswith("iab_n") else "", "Inside Airbnb (no oficial)", "C4", "CC BY 4.0", True)
         elif v in META_V9:
             tabla[v] = META_V9[v]
+        elif v in META_V11:
+            tabla[v] = META_V11[v]
         else:
             m = meta.get(v, {})
             fuente = m.get("fuente", "") if m.get("fuente") and m.get("fuente") not in ("idem", "Derivada", "derivada") else (FUENTES_DOCUMENTADAS.get(v) or m.get("fuente", ""))
@@ -661,13 +667,14 @@ def tabla_variables(vars_: list[str], meta: dict, lic: dict) -> pd.DataFrame:
     # V7 → CCAA; cualquier otro nivel (o C1 sin diccionario que la documente) baja a C4 en la consulta de montaje.
     t["nivel_c1"] = [{"docs/v8/diccionario.md": "nacional", "docs/v7/diccionario.md": "ccaa"}.get(meta.get(v, {}).get("dic_capa", ""), "")
                      if t.at[v, "capa"] == "C1" else "" for v in t.index]
-    t["definicion"] = [meta.get(v, {}).get("definicion", "") or (META_V9[v][1] if v in META_V9 else "") for v in t.index]
+    t["definicion"] = [meta.get(v, {}).get("definicion", "") or (META_V9[v][1] if v in META_V9 else META_V11[v][1] if v in META_V11 else "")
+                       for v in t.index]
     return t.rename_axis("variable").reset_index()
 
 
 def edicion_origen() -> dict:
     out = {}
-    for m in RAW9.glob("*/_manifest.csv"):
+    for m in [*RAW9.glob("*/_manifest.csv"), *RAW11.glob("*/_manifest.csv")]:
         with open(m, encoding="utf-8") as f:
             for r in csv.DictReader(f):
                 out[r["fichero"]] = f"{r['edicion']} (descarga {r['fecha_descarga']})"
@@ -723,6 +730,7 @@ def construir() -> dict:
     insertar(procesados())
     insertar(raw_proyecto())
     insertar(v9())
+    insertar(base_v11.partes())   # V11-DATOS: migración, MNP, ECP, Catastro, afiliación, turismo (src/v11/base_v11.py)
     insertar([zt])
     res_partes, atribucion = resultados_publicados()
     insertar(res_partes)

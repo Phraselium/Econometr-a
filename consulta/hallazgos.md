@@ -4,7 +4,7 @@
 
 Un registro por hallazgo de las versiones vigentes (v5-V8, con v4 donde sigue en cifras_clave): cifras de `output/v5/cifras_clave.csv`, fichas del verificador, conclusiones del historial e hipótesis retiradas. Las superadas y retiradas están al final y **no se citan**. La versión legible por máquina es [hallazgos.json](hallazgos.json). Las capas se leen según [metodologia/capas.md](../metodologia/capas.md): causalidad solo en C3 y C3s.
 
-Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v10: 28; v9: 69; v1: 8; v2: 7; v3: 3. Total vigentes: 1257.
+Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v10: 28; v12: 60; v9: 69; v1: 8; v2: 7; v3: 3. Total vigentes: 1317.
 
 ## Versión v4
 
@@ -1249,6 +1249,71 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `V10-ATL-E-46250` | Variación del alquiler mediano 2019-2024, València | 39,77 % | C4 | 2019-2024 | [hechos.json](../output/v10/atlas/hechos.json) |
 | `V10-ATL-E-50297` | Variación del alquiler mediano 2019-2024, Zaragoza | 21,31 % | C4 | 2019-2024 | [hechos.json](../output/v10/atlas/hechos.json) |
 
+## Versión v12
+
+| id | enunciado | cifra | capa | periodo | origen |
+|---|---|---|---|---|---|
+| `V12-B1-2003-2007-crecimiento` | Crecimiento de la población, España, 2003-2007 | 3.440.758 personas | C4 | 2003-2007 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2003-2007-residuo` | Residuo de la identidad demográfica, España, 2003-2007 | -155.016 personas | C4 | 2003-2007 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2003-2007-saldo_exterior` | Saldo migratorio con el extranjero, España, 2003-2007 | 3.154.542 personas | C4 | 2003-2007 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2003-2007-vegetativo` | Saldo vegetativo (nacimientos − defunciones), España, 2003-2007 | 441.232 personas | C4 | 2003-2007 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2008-2013-crecimiento` | Crecimiento de la población, España, 2008-2013 | 613.519 personas | C4 | 2008-2013 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2008-2013-residuo` | Residuo de la identidad demográfica, España, 2008-2013 | -600.747 personas | C4 | 2008-2013 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2008-2013-saldo_exterior` | Saldo migratorio con el extranjero, España, 2008-2013 | 691.833 personas | C4 | 2008-2013 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2008-2013-vegetativo` | Saldo vegetativo (nacimientos − defunciones), España, 2008-2013 | 522.433 personas | C4 | 2008-2013 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2014-2019-crecimiento` | Crecimiento de la población, España, 2014-2019 | 679.454 personas | C4 | 2014-2019 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2014-2019-residuo` | Residuo de la identidad demográfica, España, 2014-2019 | -481.877 personas | C4 | 2014-2019 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2014-2019-saldo_exterior` | Saldo migratorio con el extranjero, España, 2014-2019 | 1.272.915 personas | C4 | 2014-2019 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2014-2019-vegetativo` | Saldo vegetativo (nacimientos − defunciones), España, 2014-2019 | -111.584 personas | C4 | 2014-2019 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2020-2021-crecimiento` | Crecimiento de la población, España, 2020-2021 | 24.625 personas | C4 | 2020-2021 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2020-2021-residuo` | Residuo de la identidad demográfica, España, 2020-2021 | -154.724 personas | C4 | 2020-2021 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2020-2021-saldo_exterior` | Saldo migratorio con el extranjero, España, 2020-2021 | 443.487 personas | C4 | 2020-2021 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2020-2021-vegetativo` | Saldo vegetativo (nacimientos − defunciones), España, 2020-2021 | -264.138 personas | C4 | 2020-2021 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2022-2024-crecimiento` | Crecimiento de la población, España, 2022-2024 | 1.641.570 personas | C4 | 2022-2024 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2022-2024-residuo` | Residuo de la identidad demográfica, España, 2022-2024 | 8.897 personas | C4 | 2022-2024 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2022-2024-saldo_exterior` | Saldo migratorio con el extranjero, España, 2022-2024 | 1.995.569 personas | C4 | 2022-2024 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-2022-2024-vegetativo` | Saldo vegetativo (nacimientos − defunciones), España, 2022-2024 | -362.896 personas | C4 | 2022-2024 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-VLC-var_espanola` | Variación de la población de nacionalidad española, València, 2021-2025 | -5.670 personas | C4 | 2021-2025 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-VLC-var_extranjera` | Variación de la población de nacionalidad extranjera, València, 2021-2025 | 58.386 personas | C4 | 2021-2025 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B1-VLC-var_total` | Variación de la población de València, 2021-2025 | 52.716 personas | C4 | 2021-2025 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B2-alicante-saldo-corona` | Saldo de la capital con su corona metropolitana (alicante), 2022-2024 | -3.590 personas | C4 | 2022-2024 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B2-barcelona-saldo-corona` | Saldo de la capital con su corona metropolitana (barcelona), 2022-2024 | -22.541 personas | C4 | 2022-2024 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B2-castellon-saldo-corona` | Saldo de la capital con su corona metropolitana (castellon), 2022-2024 | -650 personas | C4 | 2022-2024 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B2-madrid-saldo-corona` | Saldo de la capital con su corona metropolitana (madrid), 2022-2024 | -29.196 personas | C4 | 2022-2024 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B2-valencia-saldo-corona` | Saldo de la capital con su corona metropolitana (valencia), 2022-2024 | -12.225 personas | C4 | 2022-2024 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B3-hogares-crec` | Crecimiento del número de hogares, España, 2011-2021 | 455.531 hogares | C4 | 2011-2021 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B3-hogares-estructura` | Componente «estructura por edad» del crecimiento de hogares 2011-2021 (media de los dos órdenes; rango = órdenes) | 1.071.741 hogares (966.831 a 1.176.650) | C4 | 2011-2021 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B3-hogares-ext` | Hogares cuya persona de referencia tiene nacionalidad extranjera, España | 9,73 % (9,69 a 9,77) | C4 | 2021 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B3-hogares-jefatura` | Componente «tasa de jefatura» del crecimiento de hogares 2011-2021 (media de los dos órdenes; rango = órdenes) | -812.704 hogares (-919.003 a -706.404) | C4 | 2011-2021 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B3-hogares-poblacion` | Componente «población» del crecimiento de hogares 2011-2021 (media de los dos órdenes; rango = órdenes) | 196.494 hogares (195.104 a 197.884) | C4 | 2011-2021 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B3-reciente-cambio_jefatura_implicito` | Cambio implícito de jefatura, España, 2021-2026 | 12.553 hogares | C4 | 2021-2026 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B3-reciente-crecimiento_observado` | Crecimiento de hogares (ECP), España, 2021-2026 | 1.222.836 hogares | C4 | 2021-2026 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B3-reciente-efecto_estructura_edad` | Componente estructura por edad, España, 2021-2026 | 375.142 hogares | C4 | 2021-2026 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B3-reciente-efecto_poblacion` | Componente población, España, 2021-2026 | 835.141 hogares | C4 | 2021-2026 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B4-hogares-nuevos` | Hogares nuevos (ECP), 1-1-2021 → 1-1-2025, 46 provincias con Catastro y MIVAU | 934.562 hogares | C4 | 2021-2024 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B4-obra-catastro` | Obra nueva neta (Catastro, unidades residenciales), 2021-2024 | 355.508 viviendas | C4 | 2021-2024 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B4-regularizacion` | Exceso del Catastro sobre el MIVAU en 2013-2017 (regularización catastral) | 320.545 viviendas | C4 | 2013-2017 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B4-terminadas-mivau` | Viviendas terminadas (MIVAU: libres + protegidas), 2021-2024 | 346.403 viviendas | C4 | 2021-2024 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B5-pct_PE` | Viviendas de entidades públicas, España sin País Vasco ni Navarra, 2026 | 1,08 % | C4 | 2026 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B5-pct_PF` | Viviendas de personas físicas, España sin País Vasco ni Navarra, 2026 | 93,42 % | C4 | 2026 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B5-pct_PJ` | Viviendas de personas jurídicas privadas, España sin País Vasco ni Navarra, 2026 | 4,58 % | C4 | 2026 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B5-pct_mas10` | Viviendas de titulares con más de 10 viviendas, España sin País Vasco ni Navarra, 2026 | 4,16 % | C4 | 2026 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B5-pct_mas100` | Viviendas de titulares con más de 100 viviendas, España sin País Vasco ni Navarra, 2026 | 2,06 % | C4 | 2026 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B6-brecha-esfuerzo_alquiler_30` | Alquiler > 30 % de la renta (inquilinos de mercado): hogares extranjeros − españoles de igual edad y renta (puntos) | -0,85 puntos (-3,2 a 1,84) | C4 | 2023-2025 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B6-brecha-hacinamiento` | Hacinamiento: hogares extranjeros − españoles de igual edad y renta (puntos) | 8,15 puntos (6,36 a 9,9) | C4 | 2023-2025 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B6-brecha-sobrecarga_40` | Sobrecarga > 40 %: hogares extranjeros − españoles de igual edad y renta (puntos) | 14,66 puntos (13,27 a 16,31) | C4 | 2023-2025 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B6-brecha-tenencia_3` | Alquiler a precio de mercado: hogares extranjeros − españoles de igual edad y renta (puntos) | 41,82 puntos (39,96 a 43,84) | C4 | 2023-2025 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B7-CV-vut-ine` | Viviendas turísticas anunciadas (INE), Comunitat Valenciana | 51.268 viviendas | C4 | 2026-05 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B7-CV-vut-registro` | Viviendas turísticas inscritas en el registro de la GVA, Comunitat Valenciana | 90.124 viviendas | C4 | 2026-10-14 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B7-VLC-vut-ine` | Viviendas turísticas anunciadas (INE), València | 5.393 viviendas | C4 | 2026-05 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `V12-B7-VLC-vut-registro` | Viviendas turísticas inscritas en el registro de la GVA, València | 5.766 viviendas | C4 | 2026-10-14 | [hechos.json](../output/v12/hechos/hechos.json) |
+| `HIST-063` | Origen del crecimiento de la población · Componentes de ΔP · 2022-2024: crecimiento y saldo exterior [V12-B1-2022-2024-crecimient… | 2022-2024: crecimiento y saldo exterior [V12-B1-2022-2024-crecimiento; V12-B1-2022-2024-s… | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-064` | Desplazamiento metropolitano · Saldo capital-corona · València, Madrid, Barcelona negativos en todos los periodos [V12-B2-*-saldo… | València, Madrid, Barcelona negativos en todos los periodos [V12-B2-*-saldo-corona] | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-065` | Hogares · Descomposición 2011-2021 · estructura por edad +, jefatura − [V12-B3-hogares-*] · Censos 2011/2021, dos órdenes · C4 ·… | estructura por edad +, jefatura − [V12-B3-hogares-*] | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-066` | Oferta · Obra nueva frente a hogares nuevos · [V12-B4-hogares-nuevos; V12-B4-obra-catastro; V12-B4-terminadas-mivau] · Catastro,… | [V12-B4-hogares-nuevos; V12-B4-obra-catastro; V12-B4-terminadas-mivau] | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-068` | Condiciones por origen · Brecha a igual edad y renta · sobrecarga > 40 % + [V12-B6-brecha-sobrecarga_40]; esfuerzo de inquilinos… | sobrecarga > 40 % + [V12-B6-brecha-sobrecarga_40]; esfuerzo de inquilinos ≈ 0 | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-069` | Vivienda turística (C. Valenciana) · Stock · INE frente a registro GVA [V12-B7-CV-vut-ine; V12-B7-CV-vut-registro] · Dos fuentes,… | INE frente a registro GVA [V12-B7-CV-vut-ine; V12-B7-CV-vut-registro] | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+
 ## Versión v2
 
 | id | enunciado | cifra | capa | periodo | origen |
@@ -1381,3 +1446,4 @@ Cada fila indica por qué ya no vale y, si existe, la cifra que la sustituye.
 | `HIST-004` | superada | Inmigración (flujo/pob., shift-share 2002) · Alquiler IPC; valor tasado real |  |
 | `HIST-026` | superada | Topes de renta · Renta y nº de contratos nuevos (fianzas) |  |
 | `HIST-028` | superada | Déficit acumulado · Viviendas (hogares − terminadas) |  |
+| `HIST-067` | superada | Grandes tenedores · Cuota de viviendas · [V12-B5-pct_mas10; V12-B5-pct_PJ] · Catastro, titularidad · C4 · **C… |  |

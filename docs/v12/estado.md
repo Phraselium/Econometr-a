@@ -16,14 +16,15 @@
   2012-2023, AEAT CV y ficha V12-V02 que sustituye a V02 (output/v12/b5).
 - B6: condiciones por origen con ECV 2018-2025 (anual, cruces, brecha a igual edad y renta) y Censo 2021 (llegada,
   edad, tipo de hogar), con IC y supresión de celdas (output/v12/b6).
+- B8 (parcial): base con variables v12_*, figuras F15-F23, 54 cifras V12 en cifras_clave, atlas_v12.md, tablas_v12.xlsx,
+  lo_que_sabemos / por_que_ha_subido / historial_conclusiones actualizados, tres páginas web y verificador (V12-V02).
 - B7: vivienda turística CV y València (INE frente a registro GVA, móviles, asociaciones), Cataluña y Barcelona
   (output/v12/b7).
 
 ## Siguiente (para `claude --continue`)
-- B8: incorporar V12 a la base (`make base`), figuras (`make figuras`), tres páginas web nuevas («De dónde viene la
-  población», «Quién es propietario», «Dónde se construye»), fichas ampliadas, verificador con V12-V02 (sustituye a
-  V02), `make web`; publicacion/atlas_v12.md, actualizar por_que_ha_subido, lo_que_sabemos e historial_conclusiones;
-  publicacion/tablas_v12.xlsx; revisor final (opus, tope 100k); cierre en clon limpio.
+- Revisor final (subagente opus, tope 100k): capas, neutralidad, celdas pequeñas, privacidad, coherencia; si supera el
+  tope, dejar la revisión pendiente en docs/v12/tareas_autor.md. Después, cierre en clon limpio: `make datos_terceros`,
+  `make v12`, `make base`, `make figuras`, `make web`, `make check` (sin cambios en git).
 
 ## Tokens de subagentes
 Ninguno hasta el revisor final.

@@ -109,3 +109,21 @@ Una fila por factor. Las cifras salen de `output/v5/cifras_clave.csv` (ids `V9-`
 | Un factor con efecto identificado | — | 0 resultados en C3/C3s [V9-NC3] | Pre-registro V9 + addendum A1 | — | — | **Confirma** V8 (ningún factor designado): con diseños locales tampoco se identifica ningún efecto con las reglas fijadas antes de estimar | output/v9/F5/hechos.json; output/v9/f3/tabla_capas.csv |
 
 <!-- V9:fin -->
+
+<!-- V12:inicio -->
+
+## Adenda V12 (población, propiedad y oferta, 2026-10-15)
+
+Descriptivo y contable; ninguna fila es causal. Cifras en `output/v5/cifras_clave.csv` (ids `V12-`). «Estado» compara con V9.
+
+| Tema | Medida | Magnitud | Método | Capa | Estado en V12 frente a V9 y porqué | Fuente |
+|---|---|---|---|---|---|---|
+| Origen del crecimiento de la población | Componentes de ΔP | 2022-2024: crecimiento y saldo exterior [V12-B1-2022-2024-crecimiento; V12-B1-2022-2024-saldo_exterior] | Identidad contable (MNP, EVR/EMCR, padrón/censo anual) | C4 | **Nuevo**: cuantifica por periodo y territorio; residuo publicado (grande con la EVR) | output/v12/b1 |
+| Desplazamiento metropolitano | Saldo capital-corona | València, Madrid, Barcelona negativos en todos los periodos [V12-B2-*-saldo-corona] | Microdatos origen-destino | C4 | **Nuevo** | output/v12/b2 |
+| Hogares | Descomposición 2011-2021 | estructura por edad +, jefatura − [V12-B3-hogares-*] | Censos 2011/2021, dos órdenes | C4 | **Matiza** V9-D7 (población) con la jefatura por edad; jefatura joven a la baja | output/v12/b3 |
+| Oferta | Obra nueva frente a hogares nuevos | [V12-B4-hogares-nuevos; V12-B4-obra-catastro; V12-B4-terminadas-mivau] | Catastro, MIVAU, ECP | C4 (C1 en 25 provincias donde coinciden las dos fuentes de oferta) | **Nuevo** a escala municipal | output/v12/b4 |
+| Grandes tenedores | Cuota de viviendas | [V12-B5-pct_mas10; V12-B5-pct_PJ] | Catastro, titularidad | C4 | **Cambia** de «no analizada: faltan datos» (V02) a «analizada, no concluyente» (V12-V02): hay magnitud, no hay diseño causal | output/v12/b5 |
+| Condiciones por origen | Brecha a igual edad y renta | sobrecarga > 40 % + [V12-B6-brecha-sobrecarga_40]; esfuerzo de inquilinos ≈ 0 | ECV, estandarización directa | C4 | **Nuevo** | output/v12/b6 |
+| Vivienda turística (C. Valenciana) | Stock | INE frente a registro GVA [V12-B7-CV-vut-ine; V12-B7-CV-vut-registro] | Dos fuentes, se reportan ambas | C4 | **Nuevo** | output/v12/b7 |
+
+<!-- V12:fin -->

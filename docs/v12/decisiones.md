@@ -216,3 +216,11 @@ Reglas generales:
 3. **Base:** src/v12/base_v12.py añade a la base variables `v12_*` (C4): contabilidad demográfica anual (B1),
    descomposición de hogares 2011-2021 en los dos órdenes (B3), cuota de hogares con persona de referencia extranjera
    (solo celdas publicables), presión obra/hogares (B4) y cuotas de titularidad (B5).
+4. **Cifras difundibles:** src/v12/hechos_v12.py escribe 54 cifras (ids `V12-`) en output/v12/hechos/hechos.json, que
+   src/v5/cifras_clave.py incorpora; atlas, lo_que_sabemos, por_que_ha_subido y la web citan por id (nada tecleado).
+5. **Publicación:** atlas_v12.md (plantilla docs/v12/plantillas/atlas_v12.md, resumen en inglés), tablas_v12.xlsx
+   (entradas en azul con fuente, cálculos como fórmulas en negro, vínculos entre hojas en verde, sin paneles
+   inmovilizados, zip con fechas fijas) y fichas_v12.json del verificador: solo vía `make publicacion`.
+6. **Web:** páginas «De dónde viene la población», «Quién es propietario» y «Dónde se construye»; fichas territoriales
+   con filas «V12 ·» (CCAA, provincia, municipio ≥ 50.000 hab. y barrio); el verificador muestra V12-V02 y retira V02
+   (campo `sustituye`).

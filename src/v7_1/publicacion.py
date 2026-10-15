@@ -57,6 +57,11 @@ FUENTES: dict[str, str] = {
     "publicacion/tablas_v9.xlsx": "output/v9/tablas_v9.xlsx",
     "publicacion/verificador/verificador_v9.md": "output/v9/verificador_v9.md",
     "publicacion/verificador/fichas_v9.json": "output/v9/fichas_verificador_v9.json",
+    # V12: población, propiedad y oferta (descriptivo; atlas y tablas de src/v12/atlas_v12.py; ficha V12-V02 de B5)
+    "publicacion/atlas_v12.md": "output/v12/atlas_v12.md",
+    "publicacion/tablas_v12.xlsx": "output/v12/tablas_v12.xlsx",
+    "publicacion/verificador/fichas_v12.json": "output/v12/b5/fichas_verificador_v12.json",
+    "metodologia/decisiones_v12.md": "docs/v12/decisiones.md",
     "metodologia/preregistro_v9.md": "docs/v9/hipotesis.md",
     "metodologia/preregistro_v9_addendum_a1.md": "docs/v9/hipotesis_addendum_a1.md",
     "metodologia/revision_v9_F2.md": "docs/v9/revision_f2.md",

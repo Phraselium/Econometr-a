@@ -37,6 +37,9 @@ PAGINAS = [
     {"url": "mapas.html", "es": "Mapas", "va": "Mapes"},
     {"url": "fichas.html", "es": "Fichas territoriales", "va": "Fitxes territorials"},
     {"url": "quien.html", "es": "Quién soporta el coste", "va": "Qui en suporta el cost"},
+    {"url": "poblacion.html", "es": "De dónde viene la población", "va": "D'on ve la població"},
+    {"url": "propietarios.html", "es": "Quién es propietario", "va": "Qui és propietari"},
+    {"url": "construccion.html", "es": "Dónde se construye", "va": "On es construeix"},
     {"url": "verificador.html", "es": "Verificador", "va": "Verificador"},
     {"url": "que_causa_que.html", "es": "Qué causa qué", "va": "Què causa què"},
     {"url": "monitor.html", "es": "Monitor", "va": "Monitor"},
@@ -228,9 +231,12 @@ def fichas_verificador() -> list[dict]:
         d = json.loads(f.read_text(encoding="utf-8"))
         out.append({**d, "version": "v5", "veredicto": d.get("veredicto", "")})
     for rel, ver in (("publicacion/verificador/fichas_v7_1.json", "v7.1"), ("publicacion/verificador/fichas_v8.json", "v8"),
-                     ("publicacion/verificador/fichas_v9.json", "v9")):
-        for d in json.loads((RAIZ / rel).read_text(encoding="utf-8")):
-            out.append({**d, "version": ver})
+                     ("publicacion/verificador/fichas_v9.json", "v9"), ("publicacion/verificador/fichas_v12.json", "v12")):
+        if (RAIZ / rel).exists():
+            for d in json.loads((RAIZ / rel).read_text(encoding="utf-8")):
+                out.append({**d, "version": ver})
+    sustituidas = {d["sustituye"] for d in out if d.get("sustituye")}   # V12: V12-V02 sustituye a V02
+    out = [d for d in out if d["id"] not in sustituidas]
     if (RAIZ / "output/v5/verificador/resumen.csv").exists():
         res = pd.read_csv(RAIZ / "output/v5/verificador/resumen.csv", dtype=str).set_index("id").veredicto.to_dict()
         for d in out:
@@ -274,13 +280,63 @@ def fichas_territoriales(env) -> list[dict]:
                          fila_ck("V9 · Componente población del aumento de hogares 2022-2025", "V9-D7-CV-2225-cuota-pob", 0)],
         ("municipio", "46250"): [fila_ck("V9 · Comunitat: caída del registro VUT y fianza media por CP (descriptivo)", "V9-D3-media", 2)],
     }
+    # V12: filas descriptivas nuevas (población, hogares, oferta, titularidad, vivienda turística); todas C4
+    o12 = RAIZ / "output" / "v12"
+    b1p = pd.read_csv(o12 / "b1/contabilidad_periodos_provincia.csv", dtype={"cod_territorio": str})
+    b1m = pd.read_csv(o12 / "b1/contabilidad_periodos_municipio.csv.gz", dtype={"cod_territorio": str})
+    b1x = pd.concat([b1p, b1m])
+    b1x = b1x[(b1x.nac == "TOTAL") & (b1x.periodo == "2022-2024")].set_index("cod_territorio")
+    tit = pd.read_csv(o12 / "b5/titularidad_cuotas.csv", dtype={"cod_territorio": str})
+    tit = tit[tit.anio == tit.anio.max()].set_index(["nivel", "cod_territorio"])
+    pres = pd.read_csv(o12 / "b4/presion_hogares_obra_municipio.csv", dtype={"cod_municipio": str})
+    pres = pres[pres.periodo == "2021-2025"].set_index("cod_municipio")
+    pprov = pd.read_csv(o12 / "b4/presion_provincia_2021_2025.csv", dtype={"cpro": str}).set_index("cpro")
+    hext = pd.read_csv(o12 / "b3/hogares_nacionalidad_censo2021.csv", dtype={"cod_territorio": str}).set_index(["nivel", "cod_territorio"])
+    bv = pd.read_csv(o12 / "b1/valencia_barrio_variacion_2021_2025.csv", dtype={"cod_barrio": str}).set_index("cod_barrio")
+    vb = pd.read_csv(o12 / "b7/valencia_barrios_vut_serie.csv", dtype={"cod_barrio": str})
+    vb = vb[vb.periodo == vb.periodo.max()].set_index("cod_barrio")
+    F12 = {"b1": "INE (padrón/censo anual, MNP, EMCR); V12-B1", "b5": "Catastro, titularidad; V12-B5", "b4": "Catastro e INE; V12-B4",
+           "b3": "INE, Censo 2021 (muestra); V12-B3", "b7": "INE, viviendas turísticas; V12-B7"}
+    ut = str(int(tit.anio.max()))
+
+    def filas_v12(nivel, cod):
+        f = []
+        if cod in b1x.index:
+            r = b1x.loc[cod]
+            f += [fila("V12 · Saldo con el extranjero, 2022-2024", r.tasa_saldo_exterior_por_mil_anual, "‰ anual", "C4", F12["b1"], "2022-2024"),
+                  fila("V12 · Saldo con otros municipios de España, 2022-2024", r.tasa_saldo_interior_por_mil_anual, "‰ anual", "C4", F12["b1"], "2022-2024"),
+                  fila("V12 · Saldo vegetativo, 2022-2024", r.tasa_vegetativo_por_mil_anual, "‰ anual", "C4", F12["b1"], "2022-2024")]
+        if (nivel, cod) in hext.index and bool(hext.loc[(nivel, cod)].publicable):
+            r = hext.loc[(nivel, cod)]
+            f.append(fila(f"V12 · Hogares con persona de referencia extranjera (IC95 {r.ic95_inf:.1f}-{r.ic95_sup:.1f})".replace(".", ","),
+                          r.cuota_ext_pct, "%", "C4", F12["b3"], "2021"))
+        if (nivel, cod) in tit.index:
+            r = tit.loc[(nivel, cod)]
+            f += [fila("V12 · Viviendas de titulares con más de 10 (cota inferior)" if nivel == "municipio" else "V12 · Viviendas de titulares con más de 10",
+                       r.pct_mas10, "%", "C4", F12["b5"], ut),
+                  fila("V12 · Viviendas de personas jurídicas privadas", r.pct_PJ, "%", "C4", F12["b5"], ut)]
+        if nivel == "provincia" and cod in pprov.index:
+            r = pprov.loc[cod]
+            f += [fila("V12 · Hogares nuevos 2021-2024 (ECP)", r.hogares_nuevos_ecp, "hogares", "C4", F12["b4"], "2021-2024", 0),
+                  fila("V12 · Obra nueva neta 2021-2024 (Catastro)", r.obra_neta_catastro, "viviendas", "C4", F12["b4"], "2021-2024", 0)]
+        if nivel == "municipio" and cod in pres.index:
+            r = pres.loc[cod]
+            f += [fila("V12 · Hogares nuevos estimados 2021-2025", r.hogares_nuevos_estimados, "hogares", "C4", F12["b4"], "2021-2025", 0),
+                  fila("V12 · Obra nueva neta 2021-2024 (Catastro)", r.obra_neta, "viviendas", "C4", F12["b4"], "2021-2024", 0)]
+        if nivel == "barrio":
+            if cod in bv.index and bool(bv.loc[cod].comparable):
+                f.append(fila("V12 · Variación de la población 2021-2025", bv.loc[cod].var_Total_2021_2025, "personas (reparto por área)", "C4", F12["b1"], "2021-2025", 0))
+            if cod in vb.index:
+                f.append(fila("V12 · Viviendas turísticas (% del parque)", vb.loc[cod].pct_vut, "%", "C4", F12["b7"], vb.loc[cod].periodo, 2))
+        return f
+
     for c, n in [(c, n) for (nv, c), n in nom.items() if nv == "ccaa"]:
         x = ip(c, "ccaa")
         filas = [fila("IPVA, contratos nuevos (2015=100)", x.nuevo if x is not None else None, "índice", "C4", "INE IPVA", ult),
                  fila("IPVA, contratos existentes (2015=100)", x.existente if x is not None else None, "índice", "C4", "INE IPVA", ult),
                  fila("Brecha nuevos − existentes", x.brecha_nuevo_menos_existente if x is not None else None, "puntos", "C4", "INE IPVA", ult)]
         hijos = prov[prov.cod_provincia.isin([k for (nv, k), _ in nom.items() if nv == "provincia" and k in set(prov.cod_provincia)])]
-        filas += filas_v9.get(("ccaa", c), [])
+        filas += filas_v9.get(("ccaa", c), []) + filas_v12("ccaa", c)
         lista.append({"tipo": "Comunidad autónoma", "codigo": c, "nombre": n, "url": f"fichas/ccaa_{c}.html", "filas": filas,
                       "indicador_serie": f"ccaa__p_tasado", "hijos": []})
         del hijos
@@ -293,6 +349,7 @@ def fichas_territoriales(env) -> list[dict]:
                  fila("Alquiler de 80 m² / renta por persona", r.alquiler_anual_80m2_pct_renta_persona, "%", "C4", "SERPAVI; INE ADRH", "2023-2024"),
                  fila("Déficit 2021-2025 (mediana)", r.deficit_2021_2025_mediana, "viviendas", "C4", "V5 (A4)", "2021-2025", 0),
                  fila("Brecha IPVA nuevos − existentes", x.brecha_nuevo_menos_existente if x is not None else None, "puntos", "C4", "INE IPVA", ult)]
+        filas += filas_v12("provincia", r.cod_provincia)
         lista.append({"tipo": "Provincia", "codigo": r.cod_provincia, "nombre": r.nombre, "url": f"fichas/provincia_{r.cod_provincia}.html",
                       "filas": filas, "indicador_serie": "provincia__valor_tasado"})
     grandes = pob_mun[pob_mun >= 50000].index
@@ -309,6 +366,7 @@ def fichas_territoriales(env) -> list[dict]:
             r = cvm_i.loc[c]
             filas += [fila("Población extranjera 2025", r.pct_extranj_2025, "%", "C4", "INE censo anual", "2025-01-01"),
                       fila("Viviendas turísticas (INE) por 100 inmuebles", r.vut_ine_por_100_inmuebles, "por 100", "C4", "INE; Catastro", "2026-05")]
+        filas += filas_v12("municipio", c)
         lista.append({"tipo": "Municipio (≥50.000 hab.)", "codigo": c, "nombre": nom.get(("municipio", c), c),
                       "url": f"fichas/municipio_{c}.html", "filas": filas})
     for r in bar.itertuples():
@@ -319,6 +377,7 @@ def fichas_territoriales(env) -> list[dict]:
                  fila("Viviendas turísticas por 100 viviendas", r.vut_por_100_viv, "por 100", "C4", "INE (experimental); Censo 2021", "2026-05", 2),
                  fila("Renta neta por persona 2023", r.renta_persona_2023, "€", "C4", "INE ADRH", "2023", 0),
                  fila("Índice descriptivo de presión residencial", r.indice_presion_descriptivo, "z medio", "C4", "elaboración propia", "2019-2026", 2)]
+        filas += filas_v12("barrio", r.cod_barrio)
         lista.append({"tipo": "Barrio de València", "codigo": r.cod_barrio, "nombre": str(r.nombre).title(),
                       "url": f"fichas/barrio_{r.cod_barrio}.html", "filas": filas})
     plantilla = env.get_template("ficha.html")
@@ -326,6 +385,74 @@ def fichas_territoriales(env) -> list[dict]:
         (SITE / f["url"]).parent.mkdir(parents=True, exist_ok=True)
         (SITE / f["url"]).write_text(plantilla.render(**ctx("Ficha: " + f["nombre"], "fichas.html", "../"), ficha=f), encoding="utf-8")
     return lista
+
+
+# ------------------------------------------------------------------------------------------------ V12: población, propiedad, oferta
+V12_PAGINAS = {
+    "poblacion.html": {"figuras": ("F15", "F16", "F17", "F18"), "ids": ["V12-B1-2022-2024-crecimiento", "V12-B1-2022-2024-saldo_exterior",
+                       "V12-B1-2022-2024-vegetativo", "V12-B1-2022-2024-residuo", "V12-B2-valencia-saldo-corona", "V12-B2-madrid-saldo-corona",
+                       "V12-B2-barcelona-saldo-corona", "V12-B3-hogares-crec", "V12-B3-hogares-estructura", "V12-B3-hogares-jefatura",
+                       "V12-B3-hogares-ext", "V12-B6-brecha-sobrecarga_40", "V12-B6-brecha-esfuerzo_alquiler_30"],
+                       "descargas": ["b1/contabilidad_periodos_provincia.csv", "b1/contabilidad_periodos_ccaa.csv", "b1/valencia_distrito_variacion_2021_2025.csv",
+                                     "b2/flujos_area_periodos.csv", "b3/descomposicion_2011_2021_provincia.csv", "b6/ecv_brecha_misma_edad_renta.csv"]},
+    "propietarios.html": {"figuras": ("F21",), "ids": ["V12-B5-pct_mas10", "V12-B5-pct_mas100", "V12-B5-pct_PJ", "V12-B5-pct_PE", "V12-B5-pct_PF"],
+                          "descargas": ["b5/titularidad_cuotas.csv", "b5/ranking_municipios.csv", "b5/asociaciones_titularidad.csv", "b5/titularidad_tipo_fino.csv"]},
+    "construccion.html": {"figuras": ("F19", "F20", "F23"), "ids": ["V12-B4-hogares-nuevos", "V12-B4-obra-catastro", "V12-B4-terminadas-mivau",
+                          "V12-B4-regularizacion", "V12-B7-CV-vut-ine", "V12-B7-CV-vut-registro", "V12-B7-VLC-vut-ine", "V12-B7-VLC-vut-registro"],
+                          "descargas": ["b4/presion_provincia_2021_2025.csv", "b4/presion_hogares_obra_municipio.csv", "b4/contraste_catastro_mivau_provincia.csv",
+                                        "b7/cv_municipios_vut_ine_registro.csv", "b7/valencia_distritos.csv"]},
+}
+
+
+def datos_v12(figuras: list[dict]) -> dict:
+    """Cifras (de cifras_clave, nunca tecleadas), figuras, tablas cortas y descargas de las páginas V12."""
+    ck = pd.read_csv(RAIZ / "publicacion" / "cifras_clave.csv", dtype=str).set_index("id")
+    o12 = RAIZ / "output" / "v12"
+
+    def cifra(i):
+        r = ck.loc[i]
+        v = float(r.valor)
+        dec = 0 if abs(v) >= 100 else 1
+        txt = f"{v:,.{dec}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+        rango = ""
+        if isinstance(r["min"], str) and r["min"] and isinstance(r["max"], str) and r["max"]:
+            a, b = float(r["min"]), float(r["max"])
+            rango = f"{a:,.{dec}f} a {b:,.{dec}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+        return {"id": i, "indicador": r.indicador, "valor": txt, "rango": rango, "unidad": r.unidad, "periodo": r.periodo, "capa": r.capa,
+                "fuente": r.fuentes, "fecha": r.fecha_dato}
+    out = {}
+    (SITE / "descargas").mkdir(exist_ok=True)
+    for pag, cfg in V12_PAGINAS.items():
+        desc = []
+        for rel in cfg["descargas"]:
+            dst = "v12_" + rel.replace("/", "_")
+            shutil.copy(o12 / rel, SITE / "descargas" / dst)
+            desc.append({"url": f"descargas/{dst}", "nombre": dst})
+        out[pag] = {"cifras": [cifra(i) for i in cfg["ids"]], "figuras": [f for f in figuras if f["id"].startswith(cfg["figuras"])],
+                    "descargas": desc}
+    p = pd.read_csv(o12 / "b1/contabilidad_periodos_ccaa.csv", dtype={"cod_territorio": str})
+    p = p[(p.nac == "TOTAL") & (p.periodo == "2022-2024")]
+    nom = consulta("SELECT territorio_codigo, nivel, nombre FROM t").set_index(["nivel", "territorio_codigo"]).nombre.to_dict()
+    out["poblacion.html"]["tabla"] = [{"nombre": nom.get(("ccaa", r.cod_territorio), r.cod_territorio),
+                                       **{c: f"{getattr(r, c):.1f}".replace(".", ",") for c in ("tasa_crecimiento_por_mil_anual", "tasa_vegetativo_por_mil_anual",
+                                                                                            "tasa_saldo_exterior_por_mil_anual", "tasa_saldo_interior_por_mil_anual",
+                                                                                            "tasa_residuo_por_mil_anual")}}
+                                      for r in p.sort_values("tasa_crecimiento_por_mil_anual", ascending=False).itertuples()]
+    rk = pd.read_csv(o12 / "b5/ranking_municipios.csv", dtype={"cod_territorio": str}).head(25)
+    out["propietarios.html"]["tabla"] = [{"nombre": r.nombre, "codigo": r.cod_territorio, "viviendas": f"{int(r.viviendas):,}".replace(",", "."),
+                                          "pct_mas10": f"{r.pct_mas10:.1f}".replace(".", ","), "pct_PJ": f"{r.pct_PJ:.1f}".replace(".", ",")}
+                                         for r in rk.itertuples()]
+    a = pd.read_csv(o12 / "b5/asociaciones_titularidad.csv")
+    out["propietarios.html"]["asociaciones"] = [{"cuota": r.cuota, "variable": r.variable, "N": r.N, "rho": f"{r.spearman:.2f}".replace(".", ","),
+                                                 "ic": f"{r.ic95_inf:.2f} a {r.ic95_sup:.2f}".replace(".", ","), "holm": "sí" if r.p_holm < 0.05 else "no"}
+                                                for r in a.itertuples()]
+    pv = pd.read_csv(o12 / "b4/presion_provincia_2021_2025.csv", dtype={"cpro": str})
+    fmt = lambda v, d=0: "—" if pd.isna(v) else f"{v:,.{d}f}".replace(",", "X").replace(".", ",").replace("X", ".")  # noqa: E731
+    out["construccion.html"]["tabla"] = [{"nombre": nom.get(("provincia", r.cpro), r.cpro), "hogares": fmt(r.hogares_nuevos_ecp), "catastro": fmt(r.obra_neta_catastro),
+                                          "mivau": fmt(r.terminadas_mivau), "ratio": fmt(r.ratio_catastro_hogares, 2), "capa": r.capa.split(" ")[0]}
+                                         for r in pv.sort_values("ratio_catastro_hogares").itertuples()]
+    return out
+
 
 
 # ------------------------------------------------------------------------------------------------ V9: qué causa qué
@@ -504,6 +631,45 @@ document.getElementById("buscar").addEventListener("input", e => { const q = e.t
   dibuja();
 })();
 </script>{% endblock %}""",
+"poblacion.html": """{% extends "base.html" %}{% block contenido %}
+<h1>De dónde viene la población <span class="meta" lang="ca-valencia">· D'on ve la població</span></h1>
+<p class="lema">Contabilidad demográfica (nacimientos, defunciones, migraciones con el extranjero y entre municipios), desplazamientos metropolitanos, hogares y condiciones de vivienda por origen. Descriptivo y contable: nada de esta página es causal. Se describen flujos y condiciones; las personas que llegan forman parte de la demanda y de la oferta de trabajo como el resto de la población.</p>
+{% include "_cifras_v12.html" %}
+<h2>Comunidades autónomas, 2022-2024 (‰ anual)</h2>
+<table><thead><tr><th scope="col">CCAA</th><th scope="col" class="num">Crecimiento</th><th scope="col" class="num">Vegetativo</th><th scope="col" class="num">Saldo exterior</th><th scope="col" class="num">Saldo interior</th><th scope="col" class="num">Residuo</th></tr></thead><tbody>
+{% for r in tabla %}<tr><td>{{ r.nombre }}</td><td class="num">{{ r.tasa_crecimiento_por_mil_anual }}</td><td class="num">{{ r.tasa_vegetativo_por_mil_anual }}</td><td class="num">{{ r.tasa_saldo_exterior_por_mil_anual }}</td><td class="num">{{ r.tasa_saldo_interior_por_mil_anual }}</td><td class="num">{{ r.tasa_residuo_por_mil_anual }}</td></tr>{% endfor %}
+</tbody></table><p class="meta">INE: padrón y censo anual, MNP, EMCR. Capa C4. El residuo recoge revisiones del padrón.</p>
+{% include "_figuras_descargas_v12.html" %}
+{% endblock %}""",
+"propietarios.html": """{% extends "base.html" %}{% block contenido %}
+<h1>Quién es propietario <span class="meta" lang="ca-valencia">· Qui és propietari</span></h1>
+<p class="lema">Viviendas según el número de viviendas de su titular y el tipo de persona (Catastro, sujetos pasivos del IBI, uso residencial; sin País Vasco ni Navarra). Los tramos se cuentan dentro de cada ámbito: la cuota de un municipio es una cota inferior de la concentración. Descriptivo; el verificador evalúa la afirmación causal (ficha V12-V02).</p>
+{% include "_cifras_v12.html" %}
+<h2>Municipios de 10.000 habitantes o más con mayor cuota de viviendas de titulares con más de diez</h2>
+<table><thead><tr><th scope="col">Municipio</th><th scope="col">Código INE</th><th scope="col" class="num">Viviendas</th><th scope="col" class="num">% titulares con más de 10</th><th scope="col" class="num">% personas jurídicas</th></tr></thead><tbody>
+{% for r in tabla %}<tr><td>{{ r.nombre }}</td><td>{{ r.codigo }}</td><td class="num">{{ r.viviendas }}</td><td class="num">{{ r.pct_mas10 }}</td><td class="num">{{ r.pct_PJ }}</td></tr>{% endfor %}
+</tbody></table>
+<h2>Asociación con alquiler, precio, turismo, llegada de población y renta (entre municipios)</h2>
+<table><thead><tr><th scope="col">Cuota</th><th scope="col">Variable</th><th scope="col" class="num">N</th><th scope="col" class="num">Spearman</th><th scope="col">IC 95 %</th><th scope="col">Holm &lt; 0,05</th></tr></thead><tbody>
+{% for r in asociaciones %}<tr><td>{{ r.cuota }}</td><td>{{ r.variable }}</td><td class="num">{{ r.N }}</td><td class="num">{{ r.rho }}</td><td>{{ r.ic }}</td><td>{{ r.holm }}</td></tr>{% endfor %}
+</tbody></table><p class="meta">Asociaciones de rangos entre municipios (C4): no indican qué causa qué.</p>
+{% include "_figuras_descargas_v12.html" %}
+{% endblock %}""",
+"construccion.html": """{% extends "base.html" %}{% block contenido %}
+<h1>Dónde se construye <span class="meta" lang="ca-valencia">· On es construeix</span></h1>
+<p class="lema">Hogares nuevos frente a obra nueva (Catastro y MIVAU) y vivienda turística en la Comunitat Valenciana. Relación contable: no mide necesidad ni déficit (para eso, el déficit de v7.1).</p>
+{% include "_cifras_v12.html" %}
+<h2>Provincias, 2021-2024: hogares nuevos frente a obra nueva</h2>
+<table><thead><tr><th scope="col">Provincia</th><th scope="col" class="num">Hogares nuevos (ECP)</th><th scope="col" class="num">Obra neta (Catastro)</th><th scope="col" class="num">Terminadas (MIVAU)</th><th scope="col" class="num">Catastro / hogares</th><th scope="col">Capa de la oferta</th></tr></thead><tbody>
+{% for r in tabla %}<tr><td>{{ r.nombre }}</td><td class="num">{{ r.hogares }}</td><td class="num">{{ r.catastro }}</td><td class="num">{{ r.mivau }}</td><td class="num">{{ r.ratio }}</td><td><span class="capa {{ r.capa }}">{{ r.capa }}</span></td></tr>{% endfor %}
+</tbody></table><p class="meta">C1 cuando Catastro y MIVAU difieren menos de un 25 %; si no, se muestran las dos (C4). País Vasco y Navarra sin Catastro estatal.</p>
+{% include "_figuras_descargas_v12.html" %}
+{% endblock %}""",
+"_cifras_v12.html": """<h2>Cifras</h2><table><thead><tr><th scope="col">Indicador</th><th scope="col" class="num">Valor</th><th scope="col">Rango</th><th scope="col">Unidad</th><th scope="col">Capa</th><th scope="col">Fuente</th><th scope="col">Dato</th></tr></thead><tbody>
+{% for c in cifras %}<tr><td>{{ c.indicador }} <span class="meta">[{{ c.id }}]</span></td><td class="num">{{ c.valor }}</td><td>{{ c.rango }}</td><td>{{ c.unidad }}</td><td><span class="capa {{ c.capa }}">{{ c.capa }}</span></td><td>{{ c.fuente }}</td><td>{{ c.fecha }}</td></tr>{% endfor %}
+</tbody></table><p class="meta">Todas las cifras salen de cifras_clave.csv (ids V12-). Atlas completo: publicacion/atlas_v12.md.</p>""",
+"_figuras_descargas_v12.html": """{% for f in figuras %}<figure><img src="figuras/{{ f.id }}.svg" alt="{{ f.texto_alternativo }}"><figcaption>{{ f.titulo }}. {{ f.fuente }}. Capa {{ f.capa }}. {{ f.nota }}</figcaption></figure>{% endfor %}
+<h2>Descargas</h2><ul>{% for d in descargas %}<li><a href="{{ d.url }}">{{ d.nombre }}</a></li>{% endfor %}</ul>""",
 "verificador.html": """{% extends "base.html" %}{% block contenido %}
 <h1>Verificador <span class="meta" lang="ca-valencia">· Verificador</span></h1>
 <p class="lema">Afirmaciones frecuentes evaluadas con datos. El veredicto se refiere a la afirmación, nunca a quién la hace. Capa de la evidencia en cada ficha.</p>
@@ -609,11 +775,12 @@ def construir() -> dict:
                                                  "hacinamiento": "Hacinamiento (definición de Eurostat)",
                                                  "tenencia_3": "Viven en alquiler de mercado", "tenencia_2": "Propiedad con hipoteca"}}
     paginas["verificador.html"] = {"fichas": fichas_verificador()}
+    paginas.update(datos_v12(figuras))   # V12: poblacion.html, propietarios.html, construccion.html
     paginas["que_causa_que.html"] = datos_que_causa_que()
     mon = RAIZ / "output" / "v10" / "monitor" / "monitor.json"
     paginas["monitor.html"] = {"monitor": json.loads(mon.read_text(encoding="utf-8")) if mon.exists() else None}
     # descargas
-    (SITE / "descargas").mkdir()
+    (SITE / "descargas").mkdir(exist_ok=True)
     descargas = []
     for f in sorted(PUB.glob("*.parquet")):
         shutil.copy(f, SITE / "descargas" / f.name)

@@ -102,6 +102,17 @@ V9 contrasta con diseños de identificación pre-registrados los topes y las zon
 - [C4] Con la Ley catalana 11/2020, la renta de los contratos nuevos fue -5,9 % (-7,3 a -4,4 %) frente a municipios comparables. Es compatible con la literatura, pero no supera la robustez a desviaciones de tendencia pre-registrada. No se detecta caída del número de contratos. <!-- check:cifra-libre (número de ley, nombres de capa y años del periodo) -->
 - [C4, contable] El componente población supone 92,0 % del aumento de hogares de 2022-2025 en España y 111,6 % en la Comunitat Valenciana. <!-- check:cifra-libre (número de ley, nombres de capa y años del periodo) -->
 
+## Qué añade V12 (población, propiedad y oferta) [C4] <!-- check:cifra-libre (años de los periodos) -->
+
+Análisis descriptivo y contable; nada de lo que sigue es causal (`publicacion/atlas_v12.md`).
+
+- **De dónde viene la población.** En 2022-2024 la población creció 1.641.570 personas: saldo con el extranjero 1.995.569 personas y saldo vegetativo -362.896 personas. <!-- check:cifra-libre (años de los periodos) -->
+- **Desplazamiento metropolitano.** València pierde población con su corona (-12.225 personas en 2022-2024), como Madrid (-29.196 personas) y Barcelona (-22.541 personas). <!-- check:cifra-libre (años de los periodos) -->
+- **Hogares.** Entre los censos de 2011 y 2021 los hogares aumentaron 455.531 hogares; la estructura por edad sumó 1.071.741 hogares (966.831-1.176.650 hogares) y el cambio de la tasa de jefatura aportó -812.704 hogares (-919.003 a -706.404 hogares) (rango: los dos órdenes de la descomposición). <!-- check:cifra-libre (años de los periodos) -->
+- **Oferta.** Hogares nuevos: 934.562 hogares; obra nueva neta: 355.508 viviendas (Catastro); terminadas: 346.403 viviendas (MIVAU). <!-- check:cifra-libre (años de los periodos) -->
+- **Propiedad.** 4,2 % de las viviendas son de titulares con más de diez y 4,6 % de personas jurídicas privadas; 93,4 % de personas físicas.
+- **Condiciones por origen.** A igual edad y renta, la sobrecarga de más del 40 % es 14,7 puntos (13,3-16,3 puntos) mayor en hogares extranjeros; el esfuerzo de quienes alquilan a precio de mercado no difiere (-0,85 puntos (-3,2 a 1,8 puntos)). La diferencia va con la tenencia, no se atribuye a la nacionalidad. <!-- check:cifra-libre (umbral del indicador) -->
+
 ## Qué cambió entre versiones y por qué
 
 Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v8).

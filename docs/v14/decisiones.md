@@ -31,7 +31,7 @@
     frente a una tabla provincial con miles de números (80 % frente a 50 % del control). Es una coincidencia: no es la serie.
 - En Econometr-a no se reescribe la historia: las versiones anteriores siguen allí (docs/v8_1/datos_retirados.md).
 
-## E4. AEAT (D4): sigue excluida
+## E4. [SUPERADA por E4-bis, V14.2] AEAT (D4): sigue excluida
 - El aviso legal de la sede de la AEAT (propiedad intelectual) reserva los derechos y no concede una licencia abierta de
   reutilización. Comprobado el 2026-10-16 en
   https://sede.agenciatributaria.gob.es/Sede/condiciones-uso-sede-electronica/aviso-legal/propiedad-intelectual.html.
@@ -62,5 +62,46 @@
   - output/v6/M0/paneles/prov_compra_anual_train.csv.gz entró en el árbol de V14 (origen cb19106) y en el paquete de entonces con dos columnas de Registradores: ln_pm2_registradores y ln_cv_registradores.
   - Ese árbol no se publicó y el paquete no se subió a Zenodo.
 - **Corrección V14.1.** terceros.py revisa también .csv.gz y reconoce «registr» como palabra. Pasan a ser 16 tablas redactadas.
-- **Corrección V14.2.** terceros.py escanea .csv, .gz, .parquet (columnas y valores de las columnas `variable`/`fuente`), .xlsx (todas las hojas), .zip (ficheros internos), .json (claves) y .duckdb (tablas y columnas). Se aplica al repositorio, al árbol público y al paquete. El resultado está en docs/v14/escaneo_terceros.md.
+- **Corrección V14.2.**
+  - terceros.py escanea:
+    - .csv y .gz: cabecera;
+    - .parquet: columnas, y los valores de las columnas `variable`, `serie` e `indicador`;
+    - .xlsx: todas las hojas;
+    - .zip: ficheros internos;
+    - .json: claves;
+    - .duckdb: tablas y columnas.
+  - src/v14/escaneo_terceros.py añade dos búsquedas: por nombre de fichero y por valores (contra los ficheros brutos de cada fuente, con control).
+  - Se aplica al repositorio, al árbol público y al paquete. Resultado: docs/v14/escaneo_terceros.md.
+- **Lo que apareció.** Once ficheros de output/ eran la serie o la reproducían aunque ninguna columna nombrara la fuente:
+  - Notariado de València (f6, M4);
+  - AEAT municipal y nacional (v12/f0, CB);
+  - CGPJ (CB).
 
+  Ahora se vacían. Quedan la cabecera o una nota, para que no se rompa ningún enlace.
+  - Dos tablas llevaban columnas de Registradores con otro nombre (`pm2`, `reg_compraventas_viv`…). Ahora se redactan.
+  - Los agregados propios de la AEAT (output/v12/b5/aeat_cv_*) se vacían solo con aeat = «excluir».
+- **Resultado.** Árbol y paquete regenerados desde d1c2162: 0 pendientes, y 0 ficheros por encima del control en la búsqueda por valores.
+- **Lo que no se escanea por contenido.**
+  - Las figuras no se escanean por contenido. output/f6/fig_notariado_provincia.png dibuja la serie y queda anotada para el autor.
+  - Los resultados de modelos con el precio de Registradores se revisaron a mano (escaneo_terceros.csv) y son resultados propios: métricas, SHAP, ALE, PDP y el modelo ajustado.
+
+
+## E4-bis. AEAT: E4 leyó solo la cláusula de propiedad intelectual (V14.2)
+- E4 se basó en la cláusula de propiedad intelectual del aviso legal. Esa cláusula se refiere al sitio web, su diseño gráfico y sus códigos.
+- La cláusula «Utilización de la información contenida en la web» autoriza expresamente la reproducción, la modificación y la distribución de la información, «para usos comerciales y no comerciales», salvo indicación en contrario. Lo hace con condiciones: citar la fuente, mencionar la fecha de actualización y no desnaturalizar.
+- Citas y clasificación: docs/v14/licencias.md.
+- La exclusión de las 7 variables `aeat_irpf_*` sigue aplicándose, porque proyecto.json fija aeat = «excluir» por defecto (decisión del autor, V14.2). Lo que cambia es el motivo: ya no es «no hay licencia abierta», sino «decisión pendiente del autor».
+
+## E7. Política terceros_1_0 y registro de cifras íntegro (V14.2)
+- proyecto.json → `terceros_1_0` fija, por fuente, «agregados», «excluir» o «redistribuir» (src/v14/terceros_1_0.py). Lo respetan:
+  - `make publicacion`, a través de los marcadores de render;
+  - `make consulta` y `make web`;
+  - `make arbol_publico` y `make paquete_zenodo`.
+- Valores por defecto (los del autor): registradores = agregados, notariado = agregados, aeat = excluir.
+- **«excluir» no borra la cifra de cifras_clave.**
+  - output/v5/cifras_clave.csv y su copia exacta publicacion/cifras_clave.csv siguen íntegras en todos los escenarios. Esa identidad la comprueban tests/v7_1/test_cifras_difundibles.py y tests/v10/test_base.py, y la exige check_v13.
+  - Lo que se retira es la cifra en los textos (publicacion/*.md, consulta/ y las páginas de la web). En su lugar queda «[cifra no publicada en la versión 1.0: usa la serie de …]».
+  - La lista de cifras retiradas va en publicacion/cifras_no_publicadas_1_0.csv.
+  - Consecuencia: el valor sigue legible en publicacion/cifras_clave.csv y en la descarga de cifras_clave de la web. Quitarlo de ahí sería cambiar el registro, que es la condición de parada (a). Lo decide el autor.
+- **Solo se retiran las cifras que usan de verdad la serie:** dependencia «directa» o «indirecta (el modelo usa la serie)». No se retiran las «técnicas» ni las que solo usan una estadística oficial del INE o del MIVAU que se elabora con datos de esa fuente.
+- **CGPJ no tiene escenario.** Sus series nunca se redistribuyen y sus agregados se publican citando la fuente.

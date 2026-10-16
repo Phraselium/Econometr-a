@@ -54,3 +54,21 @@ Ninguno.
   - `make check` en el árbol: un único error, el `hash_sellado` pendiente, que es lo previsto.
   - Detalle en docs/v14/arbol_1_0.md. Pasos 0 y 0 bis añadidos en tareas_autor.md.
 
+
+## V14.2 · Preparación autónoma de la publicación 1.0 (2026-10-16)
+- **Bloque 1 · Comprobaciones pendientes.**
+  - D5 corregida en decisiones.md: E3 marcada como superada en parte (se conserva) y nueva E3-bis.
+  - Escaneo de todos los formatos (src/v14/terceros.py y src/v14/escaneo_terceros.py):
+    - .parquet, .xlsx, .zip, .json, .duckdb, .csv y .gz;
+    - además, por nombre de fichero y por valores.
+  - Aparecieron 11 ficheros de output/ que eran la serie (Notariado de València, AEAT, CGPJ) y 2 tablas con columnas de Registradores con otro nombre. Ahora se vacían o se redactan.
+  - Árbol y paquete regenerados desde d1c2162: 0 pendientes y 0 coincidencias por valores por encima del control. El paquete no lleva series de Notariado, Registradores ni AEAT. Detalle en docs/v14/escaneo_terceros.md.
+- **Bloque 2 · Condiciones de uso.**
+  - docs/v14/licencias.md, con copias en texto de cada página en docs/v14/licencias/ (internas; excluidas del árbol y del paquete).
+  - Registradores:
+    - datos abiertos (ODbL 1.0): (a), (b) y (c) CLARO;
+    - Anuario ERI: (a) AMBIGUO, (b) CLARO que no, (c) NO CONSTA.
+  - Notariado: (a) y (b) AMBIGUO, (c) NO CONSTA.
+  - AEAT: (a), (b) y (c) CLARO (reutilización autorizada con cita y fecha). E4 queda superada (E4-bis).
+  - Recomendación pendiente del autor.
+- **Bloque 3 · Escenarios.** proyecto.json → `terceros_1_0` (src/v14/terceros_1_0.py). Lo respetan render (publicacion), consulta, web, árbol y paquete. Tests en tests/v14/test_terceros_1_0.py, uno por valor.

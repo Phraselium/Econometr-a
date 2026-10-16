@@ -84,10 +84,12 @@ def escanear_repo() -> list[dict]:
     todos = subprocess.run(["git", "ls-files", "-z"], cwd=RAIZ, capture_output=True, text=True, check=True).stdout.split("\0")
     por_nombre = {f for f in todos if f.startswith("output/") and NOMBRE.search(Path(f).name) and (RAIZ / f).is_file()}
     filas = []
-    for f in sorted(set(_ficheros_repo()) | por_nombre):
+    for f in sorted(set(_ficheros_repo()) | por_nombre | set(T.COLUMNAS_SERIE)):
         hits = T.escanear(RAIZ / f) if f.endswith(EXT) else []
         if f in por_nombre:
             hits = ["nombre del fichero"] + hits
+        if f in T.COLUMNAS_SERIE:
+            hits += [f"columna {c} (serie de {v}; escaneo por valores)" for c, v in T.COLUMNAS_SERIE[f].items()]
         if not hits:
             continue
         filas.append({"ambito": "repositorio", "fichero": f, "hallazgos": "; ".join(hits),
@@ -101,6 +103,9 @@ def _estado_dir(rel: str, p: Path) -> str:
         return "vaciado (solo la cabecera)"
     if p.suffix == ".md" and p.read_text(encoding="utf-8", errors="ignore").startswith(T.NOTA_VACIADO.split("\n")[0]):
         return "vaciado (nota)"
+    if (RAIZ / rel).is_file() and T.accion(rel, RAIZ / rel)[0] == "redactar":
+        quitar = T.accion(rel, RAIZ / rel)[1]
+        return "redactado (verificado)" if not set(quitar) & set(T.cabecera(p)) else "PENDIENTE"
     return "revisado: " + _revisado(rel) if _revisado(rel) else "PENDIENTE"
 
 

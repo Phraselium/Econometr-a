@@ -38,4 +38,10 @@ Ninguno.
   - proyecto.json `hash_sellado`: valor PENDIENTE (lo calcula el autor), fecha 2026-10-16 y comando.
   - Sección «Integridad de la muestra sellada» en docs/v7_1/evaluacion_2027.md, con marcadores `{{proyecto.hash_sellado.*}}` que rellena `make publicacion`.
   - check_v14 da un aviso en este repositorio y un error en el árbol público mientras el valor siga pendiente.
+- **Bloque 3 · Cifras que dependen de terceros.** docs/v14/cifras_terceros.{md,csv} (src/v14/cifras_terceros.py): 254 cifras distintas, 409 filas fuente × cifra.
+  - Notariado: 6 directas y 151 técnicas.
+  - Registradores: 56 directas, 35 indirectas (el modelo usa la serie) y 151 técnicas.
+  - AEAT: 5 directas y 5 indirectas vía estadística oficial (IPVA, SERPAVI).
+  - Al final, las URL de las condiciones de uso, sin interpretar.
+- **Hallazgo y corrección:** la redacción de tablas no miraba los .csv.gz. output/v6/M0/paneles/prov_compra_anual_train.csv.gz llevaba 2 columnas de Registradores. Ahora src/v14/terceros.py revisa también los .gz y reconoce «registr» como palabra: 16 tablas redactadas.
 

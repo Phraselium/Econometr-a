@@ -21,6 +21,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ))
 from src.v14 import terceros as T  # noqa: E402
+from src.v14 import tests_arbol as TA  # noqa: E402
 
 P = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))
 DATOS_QUE_ENTRAN = re.compile(r"^data/(CHECKSUMS\.sha256|raw/(.+/)?_manifest[^/]*\.csv)$")
@@ -96,7 +97,7 @@ def revisar_privacidad(dest: Path) -> list[str]:
     return err
 
 
-def construir(dest: Path, con_git: bool = True) -> dict:
+def construir(dest: Path, con_git: bool = True, con_recuento: bool = True) -> dict:
     if dest.exists() and any(dest.iterdir()):
         raise SystemExit(f"arbol_publico: {dest} existe y no está vacío")
     commit = _git("rev-parse", "HEAD").strip()
@@ -115,7 +116,9 @@ def construir(dest: Path, con_git: bool = True) -> dict:
     (dest / "historico").mkdir(exist_ok=True)
     (dest / "historico" / "INDICE.md").write_text(indice_historico(commit, fecha), encoding="utf-8")
     readme = (dest / "README.md").read_text(encoding="utf-8").split("\n")
-    (dest / "README.md").write_text("\n".join(readme[:1] + procedencia(commit, fecha).split("\n") + readme[1:]), encoding="utf-8")
+    # V14.1: primera sección tras el título, con el recuento de tests de una ejecución real (docs/v14/tests_arbol.json)
+    inicio = ("\n" + TA.readme_inicio()).split("\n") if con_recuento else []
+    (dest / "README.md").write_text("\n".join(readme[:1] + inicio + procedencia(commit, fecha).split("\n") + readme[1:]), encoding="utf-8")
     pj = json.loads((dest / "proyecto.json").read_text(encoding="utf-8"))
     pj["arbol_publico"] = True   # check_v14: en el árbol público la huella de data/sealed es obligatoria
     (dest / "proyecto.json").write_text(json.dumps(pj, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -138,9 +141,11 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--destino", required=True)
     ap.add_argument("--sin-git", action="store_true")
+    ap.add_argument("--sin-recuento", action="store_true",
+                    help="sin la sección del README con el recuento de tests (solo para generar docs/v14/tests_arbol.json la primera vez)")
     a = ap.parse_args()
     dest = Path(a.destino).resolve()
-    r = construir(dest, not a.sin_git)
+    r = construir(dest, not a.sin_git, not a.sin_recuento)
     print(f"arbol_publico: {dest} · {r['incluidos']} ficheros, {r['excluidos']} versionados excluidos, {r['redactadas']} tablas redactadas, "
           f"origen {r['commit_origen'][:7]}")
     return 0

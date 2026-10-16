@@ -76,7 +76,7 @@ make datos_terceros   # opcional, con red: datos de terceros no redistribuibles 
   (tests/conftest.py, src/v14/terceros.py). Para ejecutarlos:
   1. `make datos_terceros`;
   2. reconstruir los paneles con `make clean`, solo por orden expresa del autor, porque reescribe la partición sellada.
-- Las 15 tablas de output/ con columnas de Notariado, Registradores o AEAT se publican redactadas, sin esas columnas.
+- Las 16 tablas de output/ con columnas de Notariado, Registradores o AEAT se publican redactadas, sin esas columnas.
   `make all` las regenera completas tras `make datos_terceros`.
 - La muestra sellada (data/sealed) no se publica. Las evaluaciones selladas ya hechas están en output/ y en
   docs/v2/holdout_accesos.md.

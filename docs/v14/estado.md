@@ -72,3 +72,8 @@ Ninguno.
   - AEAT: (a), (b) y (c) CLARO (reutilización autorizada con cita y fecha). E4 queda superada (E4-bis).
   - Recomendación pendiente del autor.
 - **Bloque 3 · Escenarios.** proyecto.json → `terceros_1_0` (src/v14/terceros_1_0.py). Lo respetan render (publicacion), consulta, web, árbol y paquete. Tests en tests/v14/test_terceros_1_0.py, uno por valor.
+  - Los tres escenarios probados (docs/v14/escenarios.md, src/v14/escenarios.py), con el paquete completo de cada uno:
+    - por defecto: 5 cifras retiradas (CB-C6-01 a 05);
+    - todas = excluir: 98 cifras, 16 textos;
+    - todas = redistribuir: el paquete crece 34,5 MB, con 19 series brutas.
+  - El repositorio queda en el valor por defecto. `make web` en local: 324 páginas, sin variables de la AEAT en las descargas.

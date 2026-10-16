@@ -1,0 +1,127 @@
+{
+ "por defecto": {
+  "politica": {
+   "registradores": "agregados",
+   "notariado": "agregados",
+   "aeat": "excluir"
+  },
+  "retiradas": {
+   "Registradores": 0,
+   "Notariado": 0,
+   "AEAT": 5
+  },
+  "n_ids": 5,
+  "cambian": [
+   "consulta/hallazgos.json",
+   "consulta/hallazgos.md",
+   "docs/v5/plantillas/informe_tecnico.md"
+  ],
+  "marcas": 11,
+  "arbol": {
+   "redactar": 17,
+   "vaciar": 13
+  },
+  "hechos_sin": "^aeat_",
+  "paquete": {
+   "bytes": 1322884416,
+   "ficheros": 3797,
+   "series_brutas": 0,
+   "salida": "paquete_zenodo: /tmp/claude-0/-home-user-Econometr-a/468da938-3e2d-5fba-ac52-e16a4175b9ac/scratchpad/paq_esc/por_defecto/vivienda-espana-evidencia-1.0 · 3794 ficheros incluidos, 44 versionados excluidos, 7 variables AEAT quitadas, 1323 MB"
+  }
+ },
+ "todas = agregados": {
+  "politica": {
+   "registradores": "agregados",
+   "notariado": "agregados",
+   "aeat": "agregados"
+  },
+  "retiradas": {
+   "Registradores": 0,
+   "Notariado": 0,
+   "AEAT": 0
+  },
+  "n_ids": 0,
+  "cambian": [],
+  "marcas": 0,
+  "arbol": {
+   "redactar": 17,
+   "vaciar": 11
+  },
+  "hechos_sin": "^aeat_",
+  "paquete": {
+   "bytes": 1322884580,
+   "ficheros": 3797,
+   "series_brutas": 0,
+   "salida": "paquete_zenodo: /tmp/claude-0/-home-user-Econometr-a/468da938-3e2d-5fba-ac52-e16a4175b9ac/scratchpad/paq_esc/todas__agregados/vivienda-espana-evidencia-1.0 · 3794 ficheros incluidos, 42 versionados excluidos, 7 variables AEAT quitadas, 1323 MB"
+  }
+ },
+ "todas = excluir": {
+  "politica": {
+   "registradores": "excluir",
+   "notariado": "excluir",
+   "aeat": "excluir"
+  },
+  "retiradas": {
+   "Registradores": 91,
+   "Notariado": 6,
+   "AEAT": 5
+  },
+  "n_ids": 98,
+  "cambian": [
+   "consulta/hallazgos.json",
+   "consulta/hallazgos.md",
+   "consulta/preguntas_frecuentes.md",
+   "docs/v5/plantillas/articulo_colegio.md",
+   "docs/v5/plantillas/articulos/c_territorio.md",
+   "docs/v5/plantillas/informe_tecnico.md",
+   "docs/v5/plantillas/linkedin/05.md",
+   "docs/v5/plantillas/lo_que_sabemos.md",
+   "docs/v5/plantillas/policy_brief.md",
+   "docs/v5/plantillas/ponencia/diapositivas.md",
+   "docs/v5/plantillas/ponencia/guion.md",
+   "docs/v5/plantillas/que_cambio.md",
+   "docs/v5/plantillas/una_pagina.md",
+   "docs/v5/plantillas/working_paper.md",
+   "docs/v8/plantillas/informe_econometrico.md",
+   "docs/v8/plantillas/por_que_ha_subido.md"
+  ],
+  "marcas": 239,
+  "arbol": {
+   "redactar": 17,
+   "vaciar": 13
+  },
+  "hechos_sin": "^aeat_",
+  "paquete": {
+   "bytes": 1322885019,
+   "ficheros": 3797,
+   "series_brutas": 0,
+   "salida": "paquete_zenodo: /tmp/claude-0/-home-user-Econometr-a/468da938-3e2d-5fba-ac52-e16a4175b9ac/scratchpad/paq_esc/todas__excluir/vivienda-espana-evidencia-1.0 · 3794 ficheros incluidos, 44 versionados excluidos, 7 variables AEAT quitadas, 1323 MB"
+  }
+ },
+ "todas = redistribuir": {
+  "politica": {
+   "registradores": "redistribuir",
+   "notariado": "redistribuir",
+   "aeat": "redistribuir"
+  },
+  "retiradas": {
+   "Registradores": 0,
+   "Notariado": 0,
+   "AEAT": 0
+  },
+  "n_ids": 0,
+  "cambian": [],
+  "marcas": 0,
+  "arbol": {
+   "redactar": 0,
+   "vaciar": 2
+  },
+  "hechos_sin": "—",
+  "paquete": {
+   "bytes": 1357352692,
+   "ficheros": 3816,
+   "series_brutas": 19,
+   "salida": "paquete_zenodo: /tmp/claude-0/-home-user-Econometr-a/468da938-3e2d-5fba-ac52-e16a4175b9ac/scratchpad/paq_esc/todas__redistribuir/vivienda-espana-evidencia-1.0 · 3813 ficheros incluidos, 15 versionados excluidos, 0 variables AEAT quitadas, 1357 MB"
+  }
+ }
+}

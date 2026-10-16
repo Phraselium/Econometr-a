@@ -68,3 +68,11 @@ Hoy git versiona 1.212 MB de data/, de los que 1.072 MB son data/raw. Propuesta 
 - El paquete los excluye. Retirarlos también del índice de git (como en V8.1) cambiaría lo que `make all` necesita: un clon
   limpio tendría que ejecutar `make datos_terceros` antes de `make all`, que es lo que ya documenta README_REPLICACION.
 - Decide el autor.
+
+## D6. Redondeo de la página para lectores no técnicos
+- Los campos `breve` y `rango_breve` de src/v5/render.py escriben las cifras grandes en «mil» o «millones», por ejemplo
+  «998 mil hogares (982-1.013 mil)».
+- El primer intento redondeaba a 3 cifras significativas («998.000»). tests/test_k4c_cifras.py lo rechazó con razón: una cifra
+  así no se puede trazar hasta cifras_clave.
+- Con la escala, cada cifra coincide con su valor de cifras_clave dentro de la precisión con que se escribe, y el test lo
+  comprueba. No cambia ninguna cifra; solo su presentación.

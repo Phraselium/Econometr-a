@@ -53,19 +53,30 @@ def _guion(a) -> str:
     return " a " if pd.notna(a) and float(a) < 0 else "-"
 
 
-def redondeo(x: float, unidad: str = "") -> str:
-    """V13 (una página): 3 cifras significativas y, en %, sin decimales desde 10 (mitad hacia arriba). Solo presentación."""
+def _q(x: float, nd: int) -> str:
+    from decimal import ROUND_HALF_UP, Decimal
+    v = float(Decimal(str(x)).quantize(Decimal(1).scaleb(-nd), rounding=ROUND_HALF_UP))
+    return f"{v:,.{nd}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+
+def escala(x: float) -> tuple[float, str]:
+    """V13 (una página): escala de lectura según el valor central: millones, mil o ninguna."""
+    a = abs(float(x)) if pd.notna(x) else 0.0
+    return (1e6, "millones") if a >= 1e6 else ((1e3, "mil") if a >= 1e3 else (1.0, ""))
+
+
+def redondeo(x: float, unidad: str = "", div: float = 1.0) -> str:
+    """V13 (una página): cifra redondeada para lectores no técnicos. En millones, dos decimales; en miles, enteros (un decimal
+    por debajo de 100 mil); sin escala, % sin decimales desde 10, un decimal desde 1 y dos por debajo. Solo presentación: el
+    redondeo queda dentro de la precisión con que se escribe (tests/test_k4c_cifras.py lo comprueba contra cifras_clave)."""
     if pd.isna(x):
         return "—"
-    from decimal import ROUND_HALF_UP, Decimal
-    x = float(x)
-    if abs(x) < 1000:
-        nd = 0 if abs(x) >= 10 else (1 if abs(x) >= 1 else 2)
-        v = float(Decimal(str(x)).quantize(Decimal(1).scaleb(-nd), rounding=ROUND_HALF_UP))
-        return f"{v:,.{nd}f}".replace(",", "X").replace(".", ",").replace("X", ".")
-    e = len(str(int(abs(x)))) - 3
-    v = int(Decimal(str(x)).scaleb(-e).quantize(Decimal(1), rounding=ROUND_HALF_UP).scaleb(e))
-    return f"{v:,}".replace(",", ".")
+    y = float(x) / div
+    if div == 1e6:
+        return _q(y, 2)
+    if div == 1e3:
+        return _q(y, 0 if abs(y) >= 100 else 1)
+    return _q(y, 0 if abs(y) >= 10 else (1 if abs(y) >= 1 else 2))
 
 
 def texto(r: pd.Series, campo: str | None) -> str:
@@ -83,13 +94,18 @@ def texto(r: pd.Series, campo: str | None) -> str:
             base += f" ({fmt_num(r['min'], u)}{_guion(r['min'])}{fmt_num(r['max'], u)}{sep}{u})".rstrip()
         return base
     if campo in ("breve", "rango_breve"):
-        red = redondeo
-        if pd.notna(r["min"]) and pd.notna(r["max"]) and redondeo(r["min"], u) == redondeo(r["max"], u):
+        div, esc = escala(r.valor if pd.notna(r.valor) else r["max"])
+        red = lambda v, uu: redondeo(v, uu, div)  # noqa: E731
+        hay_rango = pd.notna(r["min"]) and pd.notna(r["max"])
+        if hay_rango and red(r["min"], u) == red(r["max"], u):
+            div, esc = 1.0, ""
             red = fmt_num   # rango estrecho: el redondeo lo colapsaría («17-17»); se dan las cifras completas
-        rango = f"{red(r['min'], u)}{_guion(r['min'])}{red(r['max'], u)}" if pd.notna(r["min"]) and pd.notna(r["max"]) else ""
+        esc_u = (f"{esc} de {u}" if esc == "millones" and u[:1].isalpha() else f"{esc} {u}").strip() if esc else u
+        rango = f"{red(r['min'], u)}{_guion(r['min'])}{red(r['max'], u)}" if hay_rango else ""
         if campo == "rango_breve" or pd.isna(r.valor):
-            return f"{rango}{sep}{u}".strip() if rango else f"{red(r.valor, u)}{sep}{u}".strip()
-        return f"{red(r.valor, u)}{sep}{u}".strip() + (f" ({rango})" if rango else "")
+            return f"{rango}{sep if not esc else ' '}{esc_u}".strip() if rango else f"{red(r.valor, u)} {esc_u}".strip()
+        cola = f" ({rango}{(' ' + esc) if esc else ''})" if rango else ""
+        return f"{red(r.valor, u)}{sep if not esc else ' '}{esc_u}".strip() + cola
     if campo == "valor":
         return f"{fmt_num(r.valor, u)}{sep}{u}".strip()
     if campo == "num":

@@ -8,13 +8,13 @@
 
 ## Ocho datos
 
-1. **Hay más hogares.** Entre 2021 y 2025 el número de hogares creció en unos 998.000 hogares (982.000-1.010.000) [C1]. [Ficha A1](../metodologia/anexo_metodologico.md#a1-dh_2125-aumento-del-número-de-hogares-2021-2025)
-2. **Se terminan menos viviendas de las que se forman hogares.** Entre 2021 y 2024 faltaron 389.000-711.000 viviendas [C2]. Es una cota, no una cifra exacta. Si se descartan dos de las correcciones de la EPA, faltaron 596.000-711.000 viviendas. [Ficha A5](../metodologia/anexo_metodologico.md#a5-l3-def-2124-sinbajas-déficit-2021-2024-sin-bajas-todas-las-variantes-v62)
+1. **Hay más hogares.** Entre 2021 y 2025 el número de hogares creció en unos 998 mil hogares (982-1.013 mil) [C1]. [Ficha A1](../metodologia/anexo_metodologico.md#a1-dh_2125-aumento-del-número-de-hogares-2021-2025)
+2. **Se terminan menos viviendas de las que se forman hogares.** Entre 2021 y 2024 faltaron 389-711 mil viviendas [C2]. Es una cota, no una cifra exacta. Si se descartan dos de las correcciones de la EPA, faltaron 596-711 mil viviendas. [Ficha A5](../metodologia/anexo_metodologico.md#a5-l3-def-2124-sinbajas-déficit-2021-2024-sin-bajas-todas-las-variantes-v62)
 3. **Hasta 2030 el saldo empeora en todos los escenarios.** Ocurre en todos los escenarios definidos por el autor, también en el más optimista [C2]. Cuánto empeora no se sabe: ver el recuadro. [Ficha B10](../metodologia/anexo_metodologico.md#b10-módulos-v51-t2-t3-y-t4-srcv5_1t2_runpy-t3_runpy-t4_runpy)
-4. **Se terminan 72.300-94.400 viviendas/año.** Son datos de 2019 a 2024 [C1]. [Ficha A2](../metodologia/anexo_metodologico.md#a2-terminadas_1924-viviendas-terminadas-al-año-en-territorio-común-2019-2024)
+4. **Se terminan 72,3-94,4 mil viviendas/año.** Son datos de 2019 a 2024 [C1]. [Ficha A2](../metodologia/anexo_metodologico.md#a2-terminadas_1924-viviendas-terminadas-al-año-en-territorio-común-2019-2024)
 5. **El precio de compra ha subido.** Entre 2015 y 2025 subió un 47 % (44-56) [C1]. [Ficha A8](../metodologia/anexo_metodologico.md#a8-a23-p2-precio-de-compra-variación-2015-2025-núcleo-mivau-notariado-y-registradores)
 6. **El alquiler sube más en los contratos nuevos.** En los contratos ya firmados subió un 11-23 % entre 2015 y 2024 [C1]. En los contratos nuevos de la Comunitat Valenciana subió un 29 % (26-31) entre 2021 y 2024 [C1]. [Fichas A7](../metodologia/anexo_metodologico.md#a7-a23-a2-alquiler-de-stock-variación-2015-2024-núcleo) y [A9](../metodologia/anexo_metodologico.md#a9-a23-a10-contratos-nuevos-en-la-comunitat-valenciana-2021-2024)
-7. **Habrá más hogares.** El INE proyecta 1.720.000 hogares (1.310.000-1.770.000) más entre 2026 y 2035 [C2]. [Ficha A14](../metodologia/anexo_metodologico.md#a13-a14-b1-h4-y-e-b1-f-crecimiento-de-hogares-proyectado-2026-2035)
+7. **Habrá más hogares.** El INE proyecta 1,72 millones de hogares (1,31-1,77 millones) más entre 2026 y 2035 [C2]. [Ficha A14](../metodologia/anexo_metodologico.md#a13-a14-b1-h4-y-e-b1-f-crecimiento-de-hogares-proyectado-2026-2035)
 8. **La mayoría de los hogares es propietaria.** Son propietarios de su vivienda: 75 % de hogares (72-76) [C1]. [Ficha A10](../metodologia/anexo_metodologico.md#a10-r1c-001-hogares-con-vivienda-principal-en-propiedad)
 
 ## Lo que añade el atlas regional (versión interna v7.2) [C4]
@@ -42,9 +42,9 @@
 > - Que haya una burbuja, ni que no la haya [C4]. Con ajuste por comparaciones múltiples, 0 de cuatro cocientes nacionales son exuberantes. Sin ajuste son 3, y frente a los tipos de interés, 0.
 > - Los niveles de precio sí son explosivos en 2 de dos series. Por comunidades lo son 7 de 34 series, y 0 de 11 en otra muestra. [Ficha de la burbuja](../output/v7_2/gsadf/ficha_burbuja.md) <!-- check:cifra-libre (número de series del diseño) -->
 > - Qué variable mueve el alquiler o el precio: ninguna supera las pruebas exigidas. Que un modelo prediga bien no dice por qué sube el precio [C4].
-> - Cuántas viviendas harán falta entre 2026 y 2035: depende de supuestos y es exploratorio. La estimación central es de 210.000 viviendas/año (99.400-292.000) [C4].
+> - Cuántas viviendas harán falta entre 2026 y 2035: depende de supuestos y es exploratorio. La estimación central es de 210 mil viviendas/año (99,4-292 mil) [C4].
 > - Las viviendas que quedan libres no se restan de esa necesidad: la proyección de hogares del INE ya las tiene en cuenta.
-> - Cuánto empeora el saldo hasta 2030: 87.200-947.000 viviendas [C4]. Si empeora hasta 2035 tampoco se sabe [C4].
+> - Cuánto empeora el saldo hasta 2030: 87,2-947 mil viviendas [C4]. Si empeora hasta 2035 tampoco se sabe [C4].
 > - Cuántas viviendas desaparecen cada año. Las demoliciones con licencia fueron un 0,02-0,04 % del parque en 2024 [C4]. [Ficha B7](../metodologia/anexo_metodologico.md#b7-módulo-e-hechos-derivados-srcv5e_hechos_e1py-e_hechos_t7py-e_hechos_v6py)
 
 ## Cómo citar estas cifras

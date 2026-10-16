@@ -54,6 +54,7 @@ check:
 	$(PY) src/v8/check_v8.py
 	$(PY) src/v9/check_v9.py
 	$(PY) src/v13/check_v13.py
+	$(PY) src/v14/check_v14.py
 	@$(PY) src/v12/git_limpio.py comparar $${TMPDIR:-/tmp}/econometra_check_git.txt
 
 verificador:

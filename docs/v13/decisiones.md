@@ -76,3 +76,22 @@ Hoy git versiona 1.212 MB de data/, de los que 1.072 MB son data/raw. Propuesta 
   así no se puede trazar hasta cifras_clave.
 - Con la escala, cada cifra coincide con su valor de cifras_clave dentro de la precisión con que se escribe, y el test lo
   comprueba. No cambia ninguna cifra; solo su presentación.
+
+### D3 · Verificación posterior (V14, bloque 0, 2026-10-16)
+- **Registros de acceso.** Entre a58b426 (último commit antes de V13) y e4a2a3f no cambian:
+  - `git diff a58b426 e4a2a3f -- src/holdout.py docs/v2/holdout_accesos.md docs/v8/evaluate_v8_accesos.md` sale vacío;
+  - el último cambio de esos registros es de V8 F6 (0cbe849, 2026-10-13).
+  - **No hay entradas nuevas.**
+- **Qué hizo `holdout.py build`.** Lee data/sealed/_full, que escribe build_dataset_v2. Vuelve a escribir data/processed/v2/train/<panel>.csv y data/sealed/<panel>.csv con la misma máscara y la misma semilla.
+  - No llama a `evaluate`, `evaluate_v3`, `evaluate_v6` ni `load_full`.
+  - No escribe en `_accesos.log` ni en holdout_accesos.md.
+- **Salidas comparables.** La partición de entrenamiento versionada coincide en git con a58b426, incluido _sellado.json (sha256 71376693…, con las filas selladas por panel).
+  - Como la parte sellada es el complemento exacto de la misma tabla con la misma máscara, su contenido es el mismo salvo que cambiara la tabla de partida.
+  - Eso no es posible: la tabla sale de data/raw versionado por un script sin cambios (build_dataset_v2, último cambio en 9925f68).
+- **Lo que no se pudo comprobar.** El sha256 de data/sealed:
+  - data/CHECKSUMS.sha256 no tiene huellas de data/sealed;
+  - no hay huellas anteriores a V13;
+  - el entorno deniega listar o leer data/sealed.
+  - Queda como limitación declarada (ERRATA.md y metodologia/desviaciones_v8.md, 2026-10-16).
+- **Conclusión.** Hubo regeneración, pero ni apertura ni evaluación. Ninguna cifra cambia.
+- **Propuesta para el autor (docs/v14/tareas_autor.md):** registrar en su máquina el sha256 de data/sealed en un fichero versionado, para poder compararlo en el futuro.

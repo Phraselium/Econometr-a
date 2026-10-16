@@ -30,3 +30,4 @@
 - V9: diseños pre-registrados con etiqueta `prereg-*` antes de estimar; datos posteriores al pre-registro marcados `posterior_prereg`.
 - V10-V12: la capa pública de la base (data/base/publica) solo lleva datos redistribuibles y pesa < 50 MB; `make check` deja git sin cambios (nada se escribe en el repositorio durante el check).
 - V13: la versión pública, la fecha, la URL del repositorio, la web y el DOI viven SOLO en proyecto.json (CITATION.cff y .zenodo.json se generan con `make metadatos`); `make check` falla si una puerta de entrada declara otra versión vigente u otra URL del repositorio; ninguna cifra de cifras_clave cambia sin entrada en ERRATA.md.
+- V14: ficheros con Write o heredoc entrecomillado; nunca make clean, make all ni objetivos de estimación sin orden expresa del autor (`make check` rechaza heredocs sin comillas en src/ y el Makefile: src/v14/check_v14.py).

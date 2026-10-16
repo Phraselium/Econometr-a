@@ -1,0 +1,9 @@
+{
+ "pasados": 318,
+ "omitidos": 59,
+ "fallos": 0,
+ "errores": 0,
+ "commit_arbol": "56d7192",
+ "fecha": "2026-10-16",
+ "_nota": "Ejecución de `pytest tests` en el árbol público con `make datos` y sin `make datos_terceros` (src/v14/tests_arbol.py)."
+}

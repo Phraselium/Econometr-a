@@ -34,11 +34,11 @@ Generado por `src/v10/base.py` (`make base`); no editar a mano.
 
 ## Resumen
 
-- filas_publica: 14256871
+- filas_publica: 14467304
 - territorios: 56579
-- filas_posterior_prereg: 339722
-- variables_publicas: 316
-- filas públicas por nivel: barrio 2408, ccaa 54657, distrito 587783, municipio 5362548, nacional 9181, nuts3 1440, pais 53350, provincia 313047, seccion 7872457
+- filas_posterior_prereg: 341759
+- variables_publicas: 322
+- filas públicas por nivel: barrio 83353, ccaa 54657, distrito 606496, municipio 5473323, nacional 9181, nuts3 1440, pais 53350, provincia 313047, seccion 7872457
 
 Las discrepancias entre paneles son claves presentes en varios ficheros procesados con valores distintos; se conserva el panel más reciente (v8 > v7 > v1), que es el que usan las publicaciones vigentes.
 
@@ -60,6 +60,7 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `bce_cuota_tipo_variable` | BCE, RAI (SVLHPHH): nuevos préstamos de vivienda a tipo variable o fijación ≤1 año | % de nuevos préstamos | C4 | BCE, RAI (SVLHPHH): nuevos préstamos de vivienda a tipo variable o fijación ≤1 año | sí | pais | 2003-01–2026-08 |
 | `bce_hip_tipo_nuevas` | BCE, MIR (nuevas operaciones de vivienda) | % anual | C4 | BCE, MIR (nuevas operaciones de vivienda) | sí | pais | 2003-01–2026-08 |
 | `bce_hip_volumen_nuevas` | BCE, MIR | millones de euros | C4 | BCE, MIR | sí | pais | 2003-01–2026-08 |
+| `bcn_hut_registro` | Ajuntament de Barcelona, registro HUT, cortes trimestrales (descarga manual del autor) | viviendas | C4 | Ajuntament de Barcelona, registro HUT, cortes trimestrales (descarga manual del autor) | sí | municipio | 2018T2–2026T3 |
 | `bls_criterios_dif` | Encuesta de préstamos bancarios (BLS), préstamos a hogares para vivienda, criterios de concesión (oferta), índice de difusión | puntos | C4 | v8/ecb_bls_es_vivienda.csv (Q.ES.ALL.Z.H.H.B3.ST.S.DINX) | sí | nacional | 2003T1–2026T2 |
 | `bls_criterios_neto` | Encuesta de préstamos bancarios (BLS), préstamos a hogares para vivienda, criterios de concesión (oferta), porcentaje neto (endurecimiento menos relajación) | puntos | C4 | v8/ecb_bls_es_vivienda.csv (Q.ES.ALL.Z.H.H.B3.ST.S.FNET) | sí | nacional | 2003T1–2026T2 |
 | `bls_demanda_dif` | Encuesta de préstamos bancarios (BLS), préstamos a hogares para vivienda, demanda de préstamos, índice de difusión | puntos | C4 | v8/ecb_bls_es_vivienda.csv (Q.ES.ALL.Z.H.H.B3.ZZ.D.DINX) | sí | nacional | 2003T1–2026T2 |
@@ -159,6 +160,7 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `fianzas_importe_media` | Importe medio de la fianza | euros | C4 | v5/gva_fianzas_AAAA.csv | sí | municipio,provincia | 2020–2026 |
 | `fianzas_importe_mediana` | Importe mediano de la fianza (proxy de una mensualidad de alquiler) | euros | C4 | v5/gva_fianzas_AAAA.csv | sí | municipio,provincia | 2020–2026 |
 | `fianzas_n` | Fianzas de arrendamiento depositadas en la GVA (número de contratos), por provincia y año | número | C4 | v5/gva_fianzas_AAAA.csv | sí | municipio,provincia | 2020–2026 |
+| `gva_bdo_afiliados` | GVA, Banco de Datos Municipal (consulta V0201_C2D0244): afiliados a la Seguridad Social por nacionalidad (descarga manual del autor) | afiliados | C4 | GVA, Banco de Datos Municipal (consulta V0201_C2D0244): afiliados a la Seguridad Social por nacionalidad (descarga manua | sí | municipio | 2012T1–2026T3 |
 | `hicp_alquiler_indice` | Eurostat, prc_hicp_minr (CP041, alquileres efectivos) | índice 2015=100 | C4 | Eurostat, prc_hicp_minr (CP041, alquileres efectivos) | sí | pais | 1996-01–2026-08 |
 | `hip_importe` | Importe de hipotecas sobre viviendas | miles de euros | C4 | INE Hipotecas, hipotecas_viviendas_importe | sí | ccaa,provincia | 2003–2026T2 |
 | `hip_n` | Hipotecas constituidas sobre viviendas, número | número | C4 | INE Hipotecas, serie HPT por provincia, hipotecas_viviendas_numero | sí | ccaa,provincia | 2003–2026T2 |
@@ -349,6 +351,10 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `valor_tasado` | Valor tasado medio vivienda libre provincial (MIVAU) desde 1995T1; coincide con v7 en el solape | euros/m2 | C4 | mivau_valor_tasado_nacional_ccaa_prov.csv | sí | provincia | 1995T1–2026T2 |
 | `valor_tasado_ccaa` | Valor tasado medio de vivienda libre por CCAA, desde 1995T1 | euros/m2 | C4 | mivau_valor_tasado_nacional_ccaa_prov.csv (nivel ccaa) | sí | ccaa | 1995T1–2026T2 |
 | `visados` | Viviendas libres iniciadas (visados de dirección de obra), nacional, flujo trimestral (MIVAU tabla 3.1) | viviendas | C4 | mivau_visados.csv (mensual 2008+, suma de 3 meses) y mivau_v2_iniciadas_terminadas_prov.csv (anual 1991-2025) | sí | ccaa,nacional | 1995T1–2026T2 |
+| `vlc_altas_bajas` | Ajuntament de València, informe anual de altas y bajas del padrón (PDF 2004-2016; extracción propia) | personas | C4 | Ajuntament de València, informe anual de altas y bajas del padrón (PDF 2004-2016; extracción propia) | sí | distrito | 1998–2016 |
+| `vlc_padron_ext_continente` | Ajuntament de València, Oficina d'Estadística, padrón municipal a 1 de enero (PDF; extracción propia; población extranjera por continente) | personas | C4 | Ajuntament de València, Oficina d'Estadística, padrón municipal a 1 de enero (PDF; extracción propia; población extranje | sí | barrio,distrito | 2002-01-01–2026-01-01 |
+| `vlc_padron_pob` | Ajuntament de València, Oficina d'Estadística, padrón municipal a 1 de enero (PDF; extracción propia; sexo) | personas | C4 | Ajuntament de València, Oficina d'Estadística, padrón municipal a 1 de enero (PDF; extracción propia; sexo) | sí | barrio,distrito | 2001-01-01–2026-01-01 |
+| `vlc_padron_pob_edad` | Ajuntament de València, Oficina d'Estadística, padrón municipal a 1 de enero (PDF; extracción propia; edad en tres grupos y sexo) | personas | C4 | Ajuntament de València, Oficina d'Estadística, padrón municipal a 1 de enero (PDF; extracción propia; edad en tres grupo | sí | barrio,distrito | 2002-01-01–2026-01-01 |
 | `vut_pct_sobre_total` |  | % | C4 | INE, viviendas turísticas (experimental) | sí | municipio,provincia | 2020T3–2026T2 |
 | `vut_plazas` | Plazas turísticas por provincia (INE experimental) | plazas | C4 | ine_vut_nacional_ccaa_prov.csv | sí | municipio,nacional,provincia | 2020T3–2026T2 |
 | `vut_plazas_por_vivienda` |  | plazas/vivienda | C4 | INE, viviendas turísticas (experimental) | sí | municipio,provincia | 2020T3–2026T2 |

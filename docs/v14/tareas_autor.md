@@ -7,6 +7,21 @@ Antes de empezar:
 - La integración de Zenodo con GitHub debe estar **DESACTIVADA** para los dos repositorios. El depósito se sube a mano.
 - Sustituye a docs/v13/tareas_autor.md, puntos 1-6. Los comandos de etiquetas y el texto de OSF siguen allí.
 
+## 0. Revisar docs/v14/cifras_terceros.md y las condiciones de uso
+- Lea docs/v14/cifras_terceros.md (y el .csv): las cifras publicadas que dependen de Notariado, Registradores o AEAT, con su capa, su ficha y dónde aparecen.
+- Lea las condiciones de uso enlazadas al final. No están interpretadas.
+- Decida, por fuente, si los agregados publicados pueden seguir en publicacion/, consulta/ y la web.
+- Si alguna cifra debe retirarse, se hace en una versión posterior, con entrada en ERRATA.md y en cifras_superadas.csv. Nunca se toca a mano.
+
+## 0 bis. Calcular la huella de data/sealed si sigue pendiente
+En su máquina, desde la raíz de Econometr-a (donde está data/sealed):
+```bash
+find data/sealed -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum
+```
+- Escriba los 64 caracteres hexadecimales en proyecto.json, en `hash_sellado.valor`, y la fecha en `hash_sellado.fecha`.
+- Ejecute `make publicacion && make check` y haga commit.
+- Mientras siga «PENDIENTE», `make check` avisa en Econometr-a y **falla en el árbol público** (src/v14/check_v14.py). Por eso este paso va antes de generar y subir el repositorio nuevo (punto 2).
+
 ## 1. Publicar las 18 etiquetas en el remoto de Econometr-a (antes de archivarlo)
 Las etiquetas existen solo en el clon de trabajo de la sesión; en el remoto hay 0. En un clon nuevo se crean sobre los mismos commits.
 ```bash

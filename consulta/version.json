@@ -19,6 +19,8 @@
  "repositorio": "https://github.com/Phraselium/vivienda-espana-evidencia",
  "fecha_verificable": "PENDIENTE",
  "pendientes": [
+  "Revisar docs/v14/cifras_terceros.md y las condiciones de uso",
+  "0 bis. Calcular la huella de data/sealed si sigue pendiente",
   "Publicar las 18 etiquetas en el remoto de Econometr-a (antes de archivarlo)",
   "Crear el repositorio vivienda-espana-evidencia y subir main",
   "Crear el depósito en Zenodo con el paquete (sin la integración automática con GitHub)",

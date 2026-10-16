@@ -55,9 +55,19 @@ def _falta_terceros(texto: str) -> str | None:
     return None
 
 
-def _texto(rep) -> str:
+def _texto(rep, call=None) -> str:
     partes = [str(getattr(rep, "longreprtext", "") or "")]
     partes += [c for _, c in getattr(rep, "sections", [])]
+    exc = getattr(getattr(call, "excinfo", None), "value", None)
+    if exc is not None and exc.__class__.__name__ == "CalledProcessError":
+        partes += [str(getattr(exc, a) or "") for a in ("stderr", "output")]
+        # sin salida capturada: el script lanzado lee por nombre un fichero de terceros que falta
+        for arg in (exc.cmd if isinstance(exc.cmd, (list, tuple)) else [exc.cmd]):
+            q = Path(str(arg))
+            q = q if q.is_absolute() else RAIZ / q
+            if q.suffix == ".py" and q.exists():
+                fuente = q.read_text(encoding="utf-8", errors="ignore")
+                partes += [f"No such file or directory: {f}" for f in _TERCEROS if Path(f).name in fuente and not (RAIZ / f).exists()]
     return "\n".join(partes)
 
 
@@ -66,7 +76,7 @@ def pytest_runtest_makereport(item, call):
     out = yield
     rep = out.get_result()
     if rep.failed:
-        f = _falta_terceros(_texto(rep))
+        f = _falta_terceros(_texto(rep, call))
         if f:
             rep.outcome = "skipped"
             rep.longrepr = (str(item.path), item.location[1] or 0, f"requiere datos de terceros no redistribuibles: {f} (make datos_terceros)")

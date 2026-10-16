@@ -92,6 +92,11 @@ publicacion: metadatos
 metadatos:
 	$(PY) src/v13/metadatos.py
 
+# V13: paquete del depósito en _deposito/ (ignorado): código, salidas, publicacion/, capa pública y data/raw redistribuible
+paquete_zenodo:
+	$(PY) src/v13/inventario_datos.py
+	$(PY) src/v13/paquete_zenodo.py
+
 # Validación limpia diferida de V7: CON red, UNA sola vez, tras la release del pre-registro (docs/v7/notas_release.md)
 evaluate_v7:
 	$(PY) src/v7/evaluate_v7.py

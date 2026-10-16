@@ -10,6 +10,16 @@ Sin análisis nuevo: ningún modelo, ninguna muestra sellada, ninguna cifra de c
   - URL del repositorio: 19 apariciones, todas con el nombre nuevo; ahora salen de proyecto.json o las comprueba el check.
   - CLAUDE.md: cabecera reescrita, sin quitar ninguna regla (se añaden las de V9-V13).
   - src/v13/check_v13.py entra en `make check`: versión vigente única, URL única, metadatos al día y cifras sin cambios (1.207 huellas).
+- **B · Datos fuera de git y depósito.**
+  - docs/v13/datos_deposito.md: tamaño de data/ por carpeta (≈ 12 GB en disco, 1.212 MB versionados).
+  - Clases (a)/(b)/(c) con licencia y fuente. Detalle por fichero en docs/v13/datos_inventario.csv (src/v13/inventario_datos.py).
+  - `make paquete_zenodo` (src/v13/paquete_zenodo.py): ensayo con 3.760 ficheros y 1.322 MB; CHECKSUMS verificados; sin data/sealed.
+    La capa pública va sin las 7 variables AEAT (D4).
+  - Propuesta para sacar data/raw del árbol: D2, pendiente del autor.
+  - `make datos_terceros` ya no reescribe ficheros versionados; probado con descarga real (tarea 2 de V12).
+  - Hallazgos para el autor: D4 (AEAT) y D5 (derivados con Notariado y Registradores).
+  - Incidencia D3: un heredoc sin comillas ejecutó `make clean` y el inicio de `make all`. Detenido; sin cambios en git ni en
+    cifras; ninguna muestra sellada evaluada.
 
 ## Siguiente
 

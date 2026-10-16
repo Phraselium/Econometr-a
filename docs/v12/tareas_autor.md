@@ -6,6 +6,8 @@
 2. **`make datos_terceros` reescribe tres ficheros versionados** (data/raw/_manifest.csv, data/raw/v9/incasol/_manifest.csv
    y docs/v5/programas/inventario.csv: fechas de descarga y filas de v4). Es previo a V12; decidir si esos ficheros deben
    versionarse o regenerarse sin fecha.
+   **Resuelta en V13** (docs/v13/datos_deposito.md, §5): las versiones de la descarga van a data/raw/_descargas_terceros/
+   (no versionado) y se conservan las versionadas.
 3. **Revisar el umbral de C1 de la oferta provincial** (10 %: 10 provincias) y, si se prefiere, fijarlo en el
    pre-registro de la siguiente versión.
 4. **Publicar la web** (web/_site, GitHub Pages) con las tres páginas nuevas y la ficha V12-V02 del verificador.

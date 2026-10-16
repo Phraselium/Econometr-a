@@ -8,6 +8,10 @@ versionan (están en .gitignore). Este script:
 Sin red solo verifica. Los .gz regenerados llevan otra marca de tiempo en la cabecera: se comparan por contenido
 con docs/v8_1/contenido_gz.sha256. Código de salida 0 si todo coincide; 1 si algo falta o difiere (los renders PNG manuales,
 sin script de descarga, solo avisan). Uso: python3 src/v8_1/datos_terceros.py [--solo-verificar] [--raiz RUTA]
+
+V13 (tarea 2 de docs/v12/tareas_autor.md): los fetch_* reescriben manifiestos versionados (fechas de descarga, filas de v4).
+Ahora se guarda una copia de los ficheros de PROTEGIDOS antes de descargar; las versiones nuevas van a
+data/raw/_descargas_terceros/ (no versionado) y se restauran los originales. Así `make datos_terceros` no deja cambios en git.
 """
 from __future__ import annotations
 
@@ -39,6 +43,34 @@ SCRIPTS = [
 ]
 MANUALES = ("_p1.png", "_zoomA.png", "_zoomB.png",   # renders de validación hechos a mano con pdftoppm sobre el PDF original
             "v4/medidas_programas.csv")   # V8.1: transcripción manual de medidas de programas, aplazada a la fase de propuestas
+
+
+PROTEGIDOS = ("data/raw/**/_manifest*.csv", "data/raw/_manifest*.csv", "docs/v5/programas/inventario.csv")
+REGISTRO = "data/raw/_descargas_terceros"
+
+
+def proteger_versionados(raiz: Path, ejecutar) -> list[str]:
+    """Ejecuta `ejecutar()` sin que cambien los ficheros de PROTEGIDOS: guarda su contenido, ejecuta, copia las versiones
+    nuevas a data/raw/_descargas_terceros/<ruta> y restaura las originales. Devuelve las rutas que el fetch había cambiado."""
+    antes: dict[Path, bytes] = {}
+    for patron in PROTEGIDOS:
+        for p in raiz.glob(patron):
+            if p.is_file() and REGISTRO not in p.as_posix():
+                antes[p] = p.read_bytes()
+    ejecutar()
+    cambiados = []
+    for p, b in sorted(antes.items()):
+        if p.exists() and p.read_bytes() != b:
+            rel = p.relative_to(raiz).as_posix()
+            copia = raiz / REGISTRO / rel
+            copia.parent.mkdir(parents=True, exist_ok=True)
+            copia.write_bytes(p.read_bytes())
+            p.write_bytes(b)
+            cambiados.append(rel)
+        elif not p.exists():
+            p.write_bytes(b)
+            cambiados.append(p.relative_to(raiz).as_posix())
+    return cambiados
 
 
 def sha(p: Path) -> str:
@@ -100,10 +132,13 @@ def main() -> int:
     pend = {s for f, h, s in items if estado(raiz, f, h) in ("AUSENTE", "DISTINTO") and s and not f.endswith(MANUALES)}
     if pend and not a.solo_verificar:
         if hay_red():
-            for nombre, cmd in SCRIPTS:
-                if nombre in pend:
-                    print(f"[datos_terceros] descargando con {nombre}")
-                    subprocess.run(cmd, cwd=raiz, check=False)
+            def descargar() -> None:
+                for nombre, cmd in SCRIPTS:
+                    if nombre in pend:
+                        print(f"[datos_terceros] descargando con {nombre}")
+                        subprocess.run(cmd, cwd=raiz, check=False)
+            for rel in proteger_versionados(raiz, descargar):
+                print(f"[datos_terceros] {rel}: versión de la descarga en {REGISTRO}/{rel}; se conserva la versionada")
         else:
             print("[datos_terceros] sin red: solo se verifica")
     malos, avisos, n_ok = [], [], 0

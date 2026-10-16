@@ -144,3 +144,7 @@ data/raw/v11/uv_matricula/*.csv
 # V11-DATOS (3.ª pasada): originales de las descargas manuales del autor (sha256 en data/raw/v11/manual/_manifest.csv;
 # las tablas normalizadas de data/raw/v11/manual sí se versionan)
 data/manual/
+# V13: paquete del depósito en Zenodo (make paquete_zenodo)
+_deposito/
+# V13: registro de descargas de `make datos_terceros` (fechas; no versionado)
+data/raw/_descargas_terceros/

@@ -4,7 +4,7 @@
 
 Un registro por hallazgo de las versiones vigentes (v5-V8, con v4 donde sigue en cifras_clave): cifras de `output/v5/cifras_clave.csv`, fichas del verificador, conclusiones del historial e hipótesis retiradas. Las superadas y retiradas están al final y **no se citan**. La versión legible por máquina es [hallazgos.json](hallazgos.json). Las capas se leen según [metodologia/capas.md](../metodologia/capas.md): causalidad solo en C3 y C3s.
 
-Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v10: 28; v12: 60; v9: 69; v1: 8; v2: 7; v3: 3. Total vigentes: 1317.
+Vigentes por versión: v4: 7; v5: 410; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v10: 28; v12: 60; v9: 69; v1: 8; v2: 7; v3: 3. Total vigentes: 1312.
 
 ## Versión v4
 
@@ -171,11 +171,6 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `CB-C5-03` | Hechos conocidos por allanamiento/usurpacion de inmuebles | 14.875 hechos/anio | C4 | 2025 | [hechos.json](../output/v5/CB/hechos.json) |
 | `CB-C5-04` | Verbales posesorios por ocupacion ilegal de viviendas ingresados | 1.845 procedimientos/anio | C4 | 2025 | [hechos.json](../output/v5/CB/hechos.json) |
 | `CB-C5-05` | Viviendas principales en alquiler (Censo 2021) | 2.965.497 viviendas | C4 | 2021 | [hechos.json](../output/v5/CB/hechos.json) |
-| `CB-C6-01` | Declarantes IRPF con ingresos de capital inmobiliario | 3.262.026 declarantes | C4 | 2024 | [hechos.json](../output/v5/CB/hechos.json) |
-| `CB-C6-02` | Declarantes IRPF con reduccion por arrendamiento de vivienda (art. 23.2 LIRPF) | 2.236.896 declarantes | C4 | 2024 | [hechos.json](../output/v5/CB/hechos.json) |
-| `CB-C6-03` | Viviendas equivalentes arrendadas por personas fisicas (habitual y otras) | 2.650.952 viviendas | C4 | 2024 | [hechos.json](../output/v5/CB/hechos.json) |
-| `CB-C6-04` | Viviendas equivalentes arrendadas por personas fisicas por declarante con ingresos de capital inmobiliario | 0,81 viviendas/declarante | C4 | 2024 | [hechos.json](../output/v5/CB/hechos.json) |
-| `CB-C6-05` | Residual (PJ + sector publico + alquiler no declarado) sobre el stock en alquiler | 16,9 % del stock (16,9 a 38,1) | C4 | 2021-2025 | [hechos.json](../output/v5/CB/hechos.json) |
 | `CB-C8-01` | Compraventas con comprador persona juridica | 11,3 % de compraventas | C4 | 2024 | [hechos.json](../output/v5/CB/hechos.json) |
 | `CC-C2-nuevas5a` | Calificaciones definitivas de vivienda protegida, media anual | 11.265 viviendas/año | C4 | 2021-2025 | [hechos.json](../output/v5/CC/hechos.json) |
 | `CC-C2-ratio` | Salidas anuales medias 2026-2035 (base) / calificaciones nuevas anuales medias 5 años | 5,28 ratio (4,72 a 5,94) | C4 | 2026-2035 | [hechos.json](../output/v5/CC/hechos.json) |
@@ -1408,15 +1403,20 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `HIST-061` | Hogares (contable) · Aumento de hogares 2022-2025 | componente población 92 % (España), 112 % (C. Valenciana) | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
 | `HIST-062` | Un factor con efecto identificado · — | 0 resultados en C3/C3s [V9-NC3] | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
 
-## Superadas y retiradas (no citar)
+## Superadas, retiradas y no publicadas en la 1.0 (no citar)
 
-Cada fila indica por qué ya no vale y, si existe, la cifra que la sustituye.
+Cada fila indica por qué ya no vale o no se publica y, si existe, la cifra que la sustituye.
 
 | id | estado | enunciado | sustituida por / motivo |
 |---|---|---|---|
 | `deficit_2124_c1` | superada | Déficit acumulado: aumento de hogares menos viviendas terminadas, sin bajas | L3-DEF-2124-SINBAJAS superada en v6.2: rango C1 con una sola corrección de la EPA; pasa a cota C2 con 8 variantes |
 | `deficit_2124_c2` | superada | Déficit acumulado con bajas del parque supuestas del 0,1-0,2 % anual (cota) | L3-DEF-2124-BAJAST1 superada: bajas SUPUESTAS del 0,1-0,2 % anual (v4) sin respaldo observado; máximo 902.808 |
 | `B1-H1` | superada | Necesidad total de vivienda por año (A+R+V+F-M-K), suma de 52 provincias | T3-H5b superada en v5.1: necesidad de v5 (B1); la vigente es la recalculada en T3 |
+| `CB-C6-01` | no publicada (1.0) | Declarantes IRPF con ingresos de capital inmobiliario | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
+| `CB-C6-02` | no publicada (1.0) | Declarantes IRPF con reduccion por arrendamiento de vivienda (art. 23.2 LIRPF) | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
+| `CB-C6-03` | no publicada (1.0) | Viviendas equivalentes arrendadas por personas fisicas (habitual y otras) | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
+| `CB-C6-04` | no publicada (1.0) | Viviendas equivalentes arrendadas por personas fisicas por declarante con ingresos de capital inmobiliario | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
+| `CB-C6-05` | no publicada (1.0) | Residual (PJ + sector publico + alquiler no declarado) sobre el stock en alquiler | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
 | `T3-H1` | superada | Déficit acumulado sin bajas (12 combinaciones de M0: 4 de fuentes; las bajas a 0) | L3-DEF-2124-SINBAJAS superada en v6.2: mismas 4 combinaciones de fuentes que deficit_2124_c1 (C1 retirado) |
 | `T3-H2` | superada | Déficit acumulado con las bajas estimadas de T1 (4 fuentes x tasa 0 / central / máx.) | L3-DEF-2124-BAJAST1 superada en v6.2: bajas estimadas T1 sobre las 4 combinaciones antiguas de M0; máximo 744.144 |
 | `T3-H3` | superada | Nuevo máximo del déficit 2021-2024 frente al máximo del supuesto antiguo de bajas 0,1-0,2 % (902.808) | L3-DEF-2124-BAJAST1 superada: compara con el supuesto antiguo de bajas (902.808), ya retirado |

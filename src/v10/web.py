@@ -13,6 +13,7 @@ import csv
 import json
 import re
 import shutil
+import sys
 from pathlib import Path
 
 import duckdb
@@ -22,6 +23,8 @@ import pandas as pd
 from jinja2 import ChoiceLoader, DictLoader, Environment, FileSystemLoader, select_autoescape
 
 RAIZ = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(RAIZ))
+from src.v14 import terceros_1_0 as T10  # noqa: E402
 WEB = RAIZ / "web"
 SITE = WEB / "_site"
 RESUMEN = RAIZ / "output" / "v10" / "web_resumen.csv"   # los tests lo redirigen a un directorio temporal (V12-F0)
@@ -163,6 +166,13 @@ def limpio(v):
 
 
 # ------------------------------------------------------------------------------------------------ datos de la web
+def _ck() -> pd.DataFrame:
+    """publicacion/cifras_clave.csv sin las cifras no publicadas en la 1.0 (V14.2, terceros_1_0 = excluir): si una página
+    pidiera una, la construcción falla en lugar de mostrarla."""
+    ck = pd.read_csv(RAIZ / "publicacion" / "cifras_clave.csv", dtype=str).set_index("id")
+    return ck.drop(index=[i for i in T10.retiradas() if i in ck.index])
+
+
 def datos_indicadores() -> list[dict]:
     nombres = consulta("SELECT territorio_codigo, nivel, nombre FROM t").set_index(["nivel", "territorio_codigo"]).nombre.to_dict()
     catalogo = []
@@ -260,7 +270,7 @@ def fichas_territoriales(env) -> list[dict]:
     alq_mun = alq_mun.pivot_table(index="territorio_codigo", columns="periodo", values="valor")
     nom = consulta("SELECT territorio_codigo, nivel, nombre FROM t").set_index(["nivel", "territorio_codigo"]).nombre.to_dict()
     lista = []
-    ck = pd.read_csv(RAIZ / "publicacion" / "cifras_clave.csv", dtype=str).set_index("id")
+    ck = _ck()
 
     def fila_ck(etq, i, dec=1):   # V9: cifra de cifras_clave con su capa, fuente y fecha (trazable a su script)
         r = ck.loc[i]
@@ -407,7 +417,7 @@ V12_PAGINAS = {
 
 def datos_v12(figuras: list[dict]) -> dict:
     """Cifras (de cifras_clave, nunca tecleadas), figuras, tablas cortas y descargas de las páginas V12."""
-    ck = pd.read_csv(RAIZ / "publicacion" / "cifras_clave.csv", dtype=str).set_index("id")
+    ck = _ck()
     o12 = RAIZ / "output" / "v12"
 
     def cifra(i):
@@ -477,7 +487,7 @@ V9_DISENOS = [  # diseño, pregunta, ids principales de cifras_clave, script, fi
 
 
 def datos_que_causa_que() -> dict:
-    ck = pd.read_csv(RAIZ / "publicacion" / "cifras_clave.csv", dtype=str).set_index("id")
+    ck = _ck()
     (SITE / "v9").mkdir(exist_ok=True)
 
     def n(x, d=2):
@@ -784,11 +794,17 @@ def construir() -> dict:
     (SITE / "descargas").mkdir(exist_ok=True)
     descargas = []
     for f in sorted(PUB.glob("*.parquet")):
-        shutil.copy(f, SITE / "descargas" / f.name)
+        if f.name == "hechos.parquet":   # V14.2: sin las variables de fuentes que no se redistribuyen (terceros_1_0)
+            T10.filtrar_hechos(f, SITE / "descargas" / f.name)
+        else:
+            shutil.copy(f, SITE / "descargas" / f.name)
         descargas.append({"url": f"descargas/{f.name}", "nombre": f.name, "desc": f"Parquet ({f.stat().st_size / 1e6:.1f} MB)"})
     for f in ("variables", "territorios", "cifras_clave"):
         pd.read_parquet(PUB / f"{f}.parquet").to_csv(SITE / "descargas" / f"{f}.csv", index=False)
         descargas.append({"url": f"descargas/{f}.csv", "nombre": f"{f}.csv", "desc": "CSV"})
+    shutil.copy(RAIZ / T10.NO_PUBLICADAS, SITE / "descargas" / Path(T10.NO_PUBLICADAS).name)
+    descargas.append({"url": f"descargas/{Path(T10.NO_PUBLICADAS).name}", "nombre": Path(T10.NO_PUBLICADAS).name,
+                      "desc": "cifras no publicadas en la 1.0 por la licencia de su fuente (CSV)"})
     for f in sorted(ATLAS.glob("*.csv")):
         shutil.copy(f, SITE / "descargas" / f"atlas_{f.name}")
         descargas.append({"url": f"descargas/atlas_{f.name}", "nombre": f"atlas_{f.name}", "desc": "tabla del atlas (CSV)"})

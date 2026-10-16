@@ -4,7 +4,8 @@
  "estados": [
   "vigente",
   "superada",
-  "retirada"
+  "retirada",
+  "no publicada (1.0)"
  ],
  "capas": [
   "C1",
@@ -4037,7 +4038,7 @@
   {
    "id": "CB-C6-01",
    "enunciado": "Declarantes IRPF con ingresos de capital inmobiliario",
-   "cifra": 3262026.0,
+   "cifra": null,
    "rango": null,
    "unidad": "declarantes",
    "periodo": "2024",
@@ -4048,20 +4049,16 @@
    "fuente": "Cifras de AEAT, Estadistica de los declarantes del IRPF 2024 (publ. 2026)",
    "ruta": "output/v5/CB/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2026-06",
-   "cifra_texto": "3.262.026 declarantes",
-   "min_max": [
-    null,
-    null,
-    "rango"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de AEAT]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "CB-C6-02",
    "enunciado": "Declarantes IRPF con reduccion por arrendamiento de vivienda (art. 23.2 LIRPF)",
-   "cifra": 2236896.0,
+   "cifra": null,
    "rango": null,
    "unidad": "declarantes",
    "periodo": "2024",
@@ -4072,20 +4069,16 @@
    "fuente": "Cifras de AEAT, Estadistica de los declarantes del IRPF 2024 (publ. 2026)",
    "ruta": "output/v5/CB/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2026-06",
-   "cifra_texto": "2.236.896 declarantes",
-   "min_max": [
-    null,
-    null,
-    "rango"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de AEAT]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "CB-C6-03",
    "enunciado": "Viviendas equivalentes arrendadas por personas fisicas (habitual y otras)",
-   "cifra": 2650952.0,
+   "cifra": null,
    "rango": null,
    "unidad": "viviendas",
    "periodo": "2024",
@@ -4096,20 +4089,16 @@
    "fuente": "AEAT, Estadistica de viviendas declaradas en el IRPF 2024",
    "ruta": "output/v5/CB/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2026-06",
-   "cifra_texto": "2.650.952 viviendas",
-   "min_max": [
-    null,
-    null,
-    "rango"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de AEAT]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "CB-C6-04",
    "enunciado": "Viviendas equivalentes arrendadas por personas fisicas por declarante con ingresos de capital inmobiliario",
-   "cifra": 0.81,
+   "cifra": null,
    "rango": null,
    "unidad": "viviendas/declarante",
    "periodo": "2024",
@@ -4120,24 +4109,17 @@
    "fuente": "AEAT (dos estadisticas)",
    "ruta": "output/v5/CB/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2026-06",
-   "cifra_texto": "0,81 viviendas/declarante",
-   "min_max": [
-    null,
-    null,
-    "rango"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de AEAT]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "CB-C6-05",
    "enunciado": "Residual (PJ + sector publico + alquiler no declarado) sobre el stock en alquiler",
-   "cifra": 16.9,
-   "rango": [
-    16.9,
-    38.1
-   ],
+   "cifra": null,
+   "rango": null,
    "unidad": "% del stock",
    "periodo": "2021-2025",
    "ambito": "Espana sin Navarra ni Pais Vasco",
@@ -4147,15 +4129,11 @@
    "fuente": "AEAT 2024; INE Censo 2021; INE ECV 2025; INE ECH 2025T4",
    "ruta": "output/v5/CB/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2026-06",
-   "cifra_texto": "16,9 % del stock (16,9 a 38,1)",
-   "min_max": [
-    16.9,
-    38.1,
-    "rango"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de AEAT]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "CB-C8-01",

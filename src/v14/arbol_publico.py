@@ -50,6 +50,8 @@ def excluir(f: str) -> str | None:
         return "histórico de desarrollo: queda en el repositorio archivado (historico/INDICE.md enlaza al commit de origen)"
     if f.startswith(".claude/"):
         return "configuración de los agentes de trabajo de la sesión de desarrollo"
+    if f.startswith("docs/v14/licencias/"):   # V14.2: copias de avisos legales de terceros, solo para uso interno
+        return "copias de condiciones de uso de terceros: uso interno (docs/v14/licencias.md cita y enlaza)"
     return None
 
 
@@ -105,14 +107,9 @@ def construir(dest: Path, con_git: bool = True, con_recuento: bool = True) -> di
     inc, exc = seleccionar()
     redactadas = []
     for f in inc:
-        d = dest / f
-        d.parent.mkdir(parents=True, exist_ok=True)
-        quitar = T.a_redactar(f, RAIZ / f)
-        if quitar:   # tabla propia con columnas de Notariado, Registradores o AEAT: se copia sin ellas (D5, D4)
-            T.redactar(RAIZ / f, d, quitar)
-            redactadas.append((f, "redactada: sin las columnas " + " ".join(quitar)))
-        else:
-            shutil.copyfile(RAIZ / f, d)
+        # tabla propia con columnas de Notariado, Registradores o AEAT: sin ellas; tabla que es la serie: vacía (D5, D4; V14.2 según terceros_1_0)
+        if motivo := T.aplicar(f, RAIZ / f, dest / f):
+            redactadas.append((f, motivo))
     (dest / "historico").mkdir(exist_ok=True)
     (dest / "historico" / "INDICE.md").write_text(indice_historico(commit, fecha), encoding="utf-8")
     readme = (dest / "README.md").read_text(encoding="utf-8").split("\n")

@@ -7,6 +7,8 @@ Marcadores:
 - {{id:breve}}: V13, para lectores no técnicos: el valor redondeado (3 cifras significativas; los % sin decimales desde 10) con el
   rango al lado, «998.000 hogares (982.000-1.010.000)»; {{id:rango_breve}}: solo el rango redondeado. No cambian la cifra;
 - {{proyecto.<campo>}}: un campo de proyecto.json (V13: versión pública, repositorio, web, DOI; única fuente).
+V14.2: si terceros_1_0 = «excluir» para una fuente, los marcadores de las cifras que usan su serie se sustituyen por la marca
+«cifra no publicada en la versión 1.0» (src/v14/terceros_1_0.py). La cifra sigue en cifras_clave sin cambios.
 Un marcador sin resolver es un error. Determinista y sin red.
 """
 from __future__ import annotations
@@ -20,6 +22,8 @@ import json
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+from src.v14 import terceros_1_0 as T10  # noqa: E402
 PLANT = ROOT / "docs" / "v5" / "plantillas"
 OUT = ROOT / "output" / "v5"
 PROYECTO = json.loads((ROOT / "proyecto.json").read_text(encoding="utf-8"))
@@ -121,6 +125,7 @@ def texto(r: pd.Series, campo: str | None) -> str:
 
 def render(src: Path, ck: pd.DataFrame) -> tuple[str, list[str]]:
     falta: list[str] = []
+    retiradas = T10.retiradas()
 
     def sub(m: re.Match) -> str:
         i, campo = m.group(1), m.group(2)
@@ -133,6 +138,8 @@ def render(src: Path, ck: pd.DataFrame) -> tuple[str, list[str]]:
         if i not in ck.index:
             falta.append(i)
             return m.group(0)
+        if i in retiradas:
+            return T10.marca(retiradas[i])
         return texto(ck.loc[i], campo)
 
     return MARC.sub(sub, src.read_text()), falta

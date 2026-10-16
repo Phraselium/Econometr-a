@@ -5,9 +5,13 @@ Contenido (solo ficheros versionados, salvo la capa pública de la base, que se 
 - código y documentación: todo lo versionado fuera de data/ y output/ (src, tests, Makefile, docs, publicacion, metodologia,
   reproducir, consulta, figuras, web, paper, historico, metadatos);
 - output/: salidas versionadas (las evaluaciones selladas ya hechas se leen de ahí; `make all` no reabre el sellado); las
-  tablas con columnas de Notariado, Registradores o AEAT van redactadas, sin esas columnas (V14; src/v14/terceros.py);
+  tablas con columnas de Notariado, Registradores o AEAT van redactadas, sin esas columnas, y las que son la serie van vacías
+  (V14-V14.2; src/v14/terceros.py, según proyecto.json → terceros_1_0);
 - data/: la clase (a) de docs/v13/datos_inventario.csv (redistribuible y versionado), con data/base/publica y data/base/geo;
-  data/base/publica/hechos.parquet sin las variables de EXCLUIR_PUBLICA (licencia pendiente del autor; docs/v13/decisiones.md).
+  data/base/publica/hechos.parquet sin las variables de fuentes que no se redistribuyen (V14.2: las de la AEAT salvo
+  terceros_1_0.aeat = «redistribuir»; src/v14/terceros_1_0.py);
+- V14.2: con «redistribuir», las series brutas de esa fuente (terceros_1_0.SERIES_BRUTAS, también las que solo están en disco
+  tras `make datos_terceros`).
 Excluido: clase (b) (no redistribuible: `make datos_terceros` o descarga manual), clase (c) (regenerable: `make datos_v9`,
 `make datos_v11`, `src/v10/fetch_geo.py`, `make data`) y data/sealed (no se lee: solo vía src/holdout.py).
 Escribe CHECKSUMS.sha256 y LEEME_DEPOSITO.md en la raíz del paquete. Uso: python3 src/v13/paquete_zenodo.py [--destino DIR] [--zip]
@@ -28,14 +32,12 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ))
 from src.v14 import terceros as T  # noqa: E402
+from src.v14 import terceros_1_0 as T10  # noqa: E402
 
 P = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))
 NOMBRE = f"vivienda-espana-evidencia-{P['version_publica']}"
 INVENTARIO = RAIZ / "docs" / "v13" / "datos_inventario.csv"
 NO_REDIS_COL = re.compile(r"notar|registrad|cgn_|cgpj|aeat", re.I)
-# variables de la capa pública con licencia en discrepancia (AEAT: manifiesto V11 «sí» frente a v5/V8.1 «no verificada»).
-# Si el autor confirma la licencia, se vacía esta lista (docs/v13/decisiones.md, D4).
-EXCLUIR_PUBLICA = re.compile(r"^aeat_")
 
 
 def _git_ls() -> list[str]:
@@ -65,41 +67,22 @@ def seleccionar() -> tuple[list[str], list[tuple[str, str]]]:
         for r in csv.DictReader(fh):
             clase[r["fichero"]] = (r["clase"], r["motivo"])
     inc, exc = [], []
+    pol = T10.politica()
+    brutas = T10.series_brutas(pol)   # V14.2: series de las fuentes con «redistribuir»
     for f in _git_ls():
-        if f.startswith(("data/sealed", ".claude/")):   # muestra sellada (no se lee) y configuración de los agentes de trabajo
+        if f.startswith(("data/sealed", ".claude/", "docs/v14/licencias/")):   # muestra sellada (no se lee), agentes de trabajo y copias internas de avisos legales
             continue
         if f.startswith("data/"):
             c, m = clase.get(f, ("?", "sin clasificar en docs/v13/datos_inventario.csv"))
-            (inc.append(f) if c == "a" else exc.append((f, f"clase ({c}): {m}")))
+            (inc.append(f) if c == "a" or f in brutas else exc.append((f, f"clase ({c}): {m}")))
         else:
             inc.append(f)
+    inc += sorted(set(brutas) - set(inc))   # las que solo están en disco (no versionadas)
     return inc, exc
 
 
-def _filtrar_hechos(origen: Path, destino: Path) -> int:
-    """Copia hechos.parquet sin las variables de EXCLUIR_PUBLICA, por lotes (sin cargar la tabla entera)."""
-    import pyarrow.compute as pc
-    import pyarrow.dataset as ds
-    import pyarrow.parquet as pq
-
-    dset = ds.dataset(origen, format="parquet")
-    variables = [v for v in pq.read_table(origen, columns=["variable"]).column("variable").unique().to_pylist() if EXCLUIR_PUBLICA.match(str(v))]
-    if not variables:
-        shutil.copyfile(origen, destino)
-        return 0
-    filtro = ~pc.field("variable").isin(variables)
-    escritor, n = None, 0
-    for lote in dset.to_batches(filter=filtro, batch_size=500_000):
-        if escritor is None:
-            escritor = pq.ParquetWriter(destino, lote.schema, compression="zstd")
-        escritor.write_batch(lote)
-        n += lote.num_rows
-    if escritor is not None:
-        escritor.close()
-    return len(variables)
-
-
 def leeme(n_inc: int, excluidos: list[tuple[str, str]], quitadas: int) -> str:
+    politica = ", ".join(f"{k} = {v}" for k, v in T10.politica().items())
     grupos: dict[str, int] = {}
     for _, m in excluidos:
         k = m.split(":")[0] if m.startswith("clase") else m
@@ -123,7 +106,7 @@ Depósito en Zenodo. Autor: {P['autor']}. Repositorio: {P['repositorio']}. DOI: 
 - **No redistribuibles (clase b):** `make datos_terceros` descarga y verifica los de Notariado, Registradores, CGPJ, Interior, Incasòl, Registre de Turisme, Comunidad de Madrid y Jarociński-Karadi (sha256 en data/CHECKSUMS.sha256). Las descargas manuales del autor (Barcelona HUT, BDO de la GVA) se describen en docs/v11/descargas_manuales.md. Las tablas de output/ con series de esas fuentes y los paneles de data/processed se regeneran con `make all` después de `make datos_terceros`.
 - **Regenerables (clase c):** originales y microdatos grandes; `make datos_v9`, `make datos_v11`, `python3 src/v10/fetch_geo.py` y `make data` (con red) los descargan y verifican contra sus manifiestos.
 - **Muestra sellada (data/sealed):** no se incluye ni se lee; `make clean` la reconstruye (`src/holdout.py build`).
-- **Capa pública:** se han quitado {quitadas} variables de AEAT de data/base/publica/hechos.parquet porque su licencia está pendiente de confirmar por el autor (docs/v13/decisiones.md, D4).
+- **Capa pública:** se han quitado {quitadas} variables de fuentes que no se redistribuyen de data/base/publica/hechos.parquet (proyecto.json → terceros_1_0: {politica}; docs/v14/licencias.md y docs/v14/escenarios.md).
 
 ## Licencias
 Código: MIT. Textos, tablas y figuras propios: CC BY 4.0 (LICENSE). Datos de terceros: la licencia de su fuente (docs/v5/licencias_datos.md, docs/v13/datos_deposito.md).
@@ -154,12 +137,9 @@ def main() -> int:
         d = base / f
         d.parent.mkdir(parents=True, exist_ok=True)
         if f == "data/base/publica/hechos.parquet":
-            quitadas = _filtrar_hechos(RAIZ / f, d)
-        elif quitar := T.a_redactar(f, RAIZ / f):   # V14: tabla de output/ sin las columnas de terceros (antes se excluía entera)
-            T.redactar(RAIZ / f, d, quitar)
-            exc.append((f, "redactada: sin las columnas " + " ".join(quitar)))
-        else:
-            shutil.copyfile(RAIZ / f, d)
+            quitadas = T10.filtrar_hechos(RAIZ / f, d)
+        elif motivo := T.aplicar(f, RAIZ / f, d):   # V14-V14.2: tabla de output/ redactada o vaciada según terceros_1_0
+            exc.append((f, motivo))
     (base / "LEEME_DEPOSITO.md").write_text(leeme(len(inc), exc, quitadas), encoding="utf-8")
     with (base / "EXCLUIDOS.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.writer(fh)

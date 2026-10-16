@@ -15,7 +15,9 @@
 - Con esto D2 deja de hacer falta: no hay que sacar data/raw de un árbol con historia, porque el árbol público nace sin
   datos ni historia.
 
-## E3. Tablas propias con series de Notariado, Registradores o AEAT: redactadas, no excluidas (D5)
+## E3. [SUPERADA en parte por E3-bis, V14.2] Tablas propias con series de Notariado, Registradores o AEAT: redactadas, no excluidas (D5)
+
+> Versión original de V14, que se conserva. Afirmaba que no quedaba ninguna serie en el árbol nuevo. Era incorrecto: la redacción solo miraba los .csv, y output/v6/M0/paneles/prov_compra_anual_train.csv.gz llevaba dos columnas de Registradores (ln_pm2_registradores, ln_cv_registradores). Ver E3-bis.
 - V13 excluía del paquete las tablas de output/ cuya cabecera contenía esos nombres. Dos problemas:
   - el filtro tenía falsos positivos: «p_hipotesis_preregistrada», «especificaciones_registradas» y las cuotas de R² de Shapley;
   - la exclusión rompía enlaces publicados del verificador, del anexo y de consulta/.
@@ -54,3 +56,11 @@
   - negro: cálculo (amplitud del rango);
   - verde: URL tomada de la pestaña «fuentes»;
   - sin paneles inmovilizados.
+
+## E3-bis. D5 corregida (V14.1-V14.2): el .csv.gz que se escapaba y el escaneo de todos los formatos
+- **Qué falló en E3.** src/v14/terceros.py solo revisaba ficheros .csv. La búsqueda por valores de muestra tampoco abría los .gz.
+  - output/v6/M0/paneles/prov_compra_anual_train.csv.gz entró en el árbol de V14 (origen cb19106) y en el paquete de entonces con dos columnas de Registradores: ln_pm2_registradores y ln_cv_registradores.
+  - Ese árbol no se publicó y el paquete no se subió a Zenodo.
+- **Corrección V14.1.** terceros.py revisa también .csv.gz y reconoce «registr» como palabra. Pasan a ser 16 tablas redactadas.
+- **Corrección V14.2.** terceros.py escanea .csv, .gz, .parquet (columnas y valores de las columnas `variable`/`fuente`), .xlsx (todas las hojas), .zip (ficheros internos), .json (claves) y .duckdb (tablas y columnas). Se aplica al repositorio, al árbol público y al paquete. El resultado está en docs/v14/escaneo_terceros.md.
+

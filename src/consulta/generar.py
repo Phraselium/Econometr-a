@@ -5,6 +5,8 @@ docs/v6_1/historial_conclusiones.md (conclusiones v1-V8), output/v8/M2/hipotesis
 docs/v8/tareas_autor.md. Determinista y sin red: dos ejecuciones dan el mismo contenido.
 
 Las cifras de consulta/ se insertan SIEMPRE desde cifras_clave por id (función `valor_texto`); ninguna se teclea.
+V14.2: las cifras que terceros_1_0 = «excluir» retira (src/v14/terceros_1_0.py) aparecen con estado «no publicada (1.0)», sin
+valor y con la marca en lugar de la cifra; siguen en cifras_clave sin cambios.
 Elección de version.json: el campo `commit` es el del último cambio de contenido de output/ (`git log -1 --format=%h -- output`), no
 HEAD: HEAD cambia con cada commit (incluido el que versiona consulta/) y rompería la comparación con lo versionado.
 """
@@ -19,6 +21,9 @@ import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(RAIZ))
+from src.v14 import terceros_1_0 as T10  # noqa: E402
+
 PROYECTO = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))   # V13: versión pública, repositorio, web y DOI (única fuente)
 CAB_MD = "<!-- Generado por `make consulta` (src/consulta/generar.py). No editar a mano: se regenera y un test lo comprueba. -->\n\n"
 CAPAS_VALIDAS = ("C1", "C2", "C3", "C3s", "C4")
@@ -34,7 +39,12 @@ def _csv(ruta: str) -> list[dict]:
 
 
 def cargar_cifras() -> dict[str, dict]:
-    return {r["id"]: r for r in _csv("output/v5/cifras_clave.csv")}
+    ret = T10.retiradas()
+    cifras = {r["id"]: r for r in _csv("output/v5/cifras_clave.csv")}
+    for i, f in ret.items():   # V14.2: no publicadas en la 1.0 (terceros_1_0 = excluir)
+        if i in cifras:
+            cifras[i]["_no_publicada"] = T10.marca(f)
+    return cifras
 
 
 def cargar_superadas() -> dict[str, dict]:
@@ -73,6 +83,8 @@ def _unidad(u: str) -> str:
 
 def valor_texto(r: dict) -> str:
     """Valor de una fila de cifras_clave con unidad y rango: la única forma en que consulta/ escribe una cifra."""
+    if r.get("_no_publicada"):
+        return r["_no_publicada"]
     v, lo, hi = _num(r["valor"]), _num(r["min"]), _num(r["max"])
     if r.get("sentido_min_max", "rango") != "rango":   # min y max no son un rango del valor (umbral, banda de otra cosa, variantes…)
         lo = hi = None
@@ -194,6 +206,13 @@ def construir_hallazgos(cifras: dict[str, dict], superadas: dict[str, dict]) -> 
 
     for i, r in cifras.items():
         ruta = _ruta_fichero(r["origen"])
+        if r.get("_no_publicada"):   # V14.2: sin valor, con la marca y su propio estado
+            H.append(base(id=i, enunciado=_limpia(r["indicador"]), unidad=r["unidad"], periodo=r["periodo"], ambito=r["cobertura"],
+                          mercado=mercado_de(r["indicador"] + " " + r["unidad"]), capa=r["capa"], metodo=metodo_de(i), fuente=r["fuentes"],
+                          ruta=ruta, version=_version_de_ruta(ruta), estado="no publicada (1.0)", fecha_dato=r["fecha_dato"],
+                          cifra_texto=r["_no_publicada"], motivo="no publicada en la versión 1.0 por la licencia de su fuente "
+                          "(proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."))
+            continue
         lo, hi = _num(r["min"]), _num(r["max"])
         es_rango = r["sentido_min_max"] == "rango"
         H.append(base(id=i, enunciado=_limpia(r["indicador"]), cifra=_num(r["valor"]), rango=[lo, hi] if es_rango and lo is not None and hi is not None else None,
@@ -259,7 +278,7 @@ def hallazgos_md(H: list[dict], cifras: dict[str, dict]) -> str:
             enlace = f"[{Path(h['ruta']).name}](../{h['ruta']})" if (RAIZ / h["ruta"]).exists() else h["ruta"]
             L.append(f"| `{h['id']}` | {_limpia(h['enunciado'], 130)} | {cifra} | {h['capa']} | {_limpia(h['periodo'], 40)} | {enlace} |\n")
         L.append("\n")
-    L.append("## Superadas y retiradas (no citar)\n\nCada fila indica por qué ya no vale y, si existe, la cifra que la sustituye.\n\n"
+    L.append("## Superadas, retiradas y no publicadas en la 1.0 (no citar)\n\nCada fila indica por qué ya no vale o no se publica y, si existe, la cifra que la sustituye.\n\n"
              "| id | estado | enunciado | sustituida por / motivo |\n|---|---|---|---|\n")
     for h in H:
         if h["estado"] != "vigente":
@@ -821,7 +840,7 @@ def generar() -> dict[str, str]:
     version = construir_version(cifras)
     H = construir_hallazgos(cifras, superadas)
     hj = {"_generado": "Generado por `make consulta` (src/consulta/generar.py). No editar a mano.", "version": PROYECTO["version_publica"],
-          "estados": ["vigente", "superada", "retirada"], "capas": list(CAPAS_VALIDAS), "n": len(H), "hallazgos": H}
+          "estados": ["vigente", "superada", "retirada", "no publicada (1.0)"], "capas": list(CAPAS_VALIDAS), "n": len(H), "hallazgos": H}
     return {
         "consulta/LEEME_ASISTENTE.md": leeme_md(cifras, version),
         "consulta/hallazgos.json": json.dumps(hj, ensure_ascii=False, indent=1) + "\n",

@@ -4,6 +4,8 @@
 - Reescribe los enlaces relativos de los .md: si el destino también se publica, apunta a la copia publicada; si no, a
   la ruta del repositorio. Los anclajes (#…) se conservan.
 - Escribe un MANIFIESTO.md por carpeta con la fuente y el sha256 de cada fichero.
+- V14.2: escribe publicacion/cifras_no_publicadas_1_0.csv con las cifras que terceros_1_0 = «excluir» retira de los textos
+  (src/v14/terceros_1_0.py); cifras_clave.csv se sigue copiando entera y sin cambios.
 Antes de copiar, regenera los entregables con render v5 y render v8 (V8.1). Determinista y sin red. tests/v7_1/test_publicacion.py lo regenera en un directorio temporal y compara byte a byte.
 """
 from __future__ import annotations
@@ -160,6 +162,17 @@ def construir(base: Path) -> dict[str, list[tuple[str, str, str]]]:
             b = p.read_bytes()
         out.write_bytes(b)
         man[dst.split("/")[0]].append((dst, src, _sha(b)))
+    sys.path.insert(0, str(RAIZ))
+    from src.v14 import terceros_1_0 as T10
+    import csv
+    import io
+    buf = io.StringIO()
+    w = csv.DictWriter(buf, ["id", "fuentes", "dependencia", "estado_1_0", "en_cifras_clave"], lineterminator="\n")
+    w.writeheader()
+    w.writerows(T10.filas_no_publicadas())
+    nop = buf.getvalue().encode("utf-8")
+    (base / T10.NO_PUBLICADAS).write_bytes(nop)
+    man["publicacion"].append((T10.NO_PUBLICADAS, "proyecto.json (terceros_1_0) y docs/v14/cifras_terceros.csv", _sha(nop)))
     ent = (CAB.format(src="requirements.lock") + _entorno()).encode("utf-8")
     (base / "reproducir" / "entorno.md").write_bytes(ent)
     man["reproducir"].append(("reproducir/entorno.md", "requirements.lock", _sha(ent)))

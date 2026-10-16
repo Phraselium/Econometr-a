@@ -344,9 +344,9 @@ El parque es el conjunto de viviendas existentes y sus ocupantes; el mercado son
 ### 5.2 Empresas (CB)
 
 - Compraventas con comprador persona jurídica: 11,3 % de compraventas en 2024 [C4]. Es un flujo; no dice qué parte del parque poseen las empresas.
-- Declarantes del IRPF con rendimientos de capital inmobiliario: 3.262.026 declarantes; con reducción por arrendamiento de vivienda: 2.236.896 declarantes [C4].
-- Viviendas equivalentes arrendadas por personas físicas: 2.650.952 viviendas, es decir, 0,81 viviendas/declarante por declarante [C4].
-- Frente a las viviendas principales en alquiler del Censo (2.965.497 viviendas), el residual que incluye personas jurídicas, sector público y alquiler no declarado está entre 16,9-38,1 % del stock [C4].
+- Declarantes del IRPF con rendimientos de capital inmobiliario: [cifra no publicada en la versión 1.0: usa la serie de AEAT]; con reducción por arrendamiento de vivienda: [cifra no publicada en la versión 1.0: usa la serie de AEAT] [C4].
+- Viviendas equivalentes arrendadas por personas físicas: [cifra no publicada en la versión 1.0: usa la serie de AEAT], es decir, [cifra no publicada en la versión 1.0: usa la serie de AEAT] por declarante [C4].
+- Frente a las viviendas principales en alquiler del Censo (2.965.497 viviendas), el residual que incluye personas jurídicas, sector público y alquiler no declarado está entre [cifra no publicada en la versión 1.0: usa la serie de AEAT] [C4].
 - La AEAT no publica la distribución de arrendadores por número de inmuebles: no se puede contrastar cuánto alquiler está en manos de grandes tenedores.
 
 ### 5.3 No residentes (R1A)
@@ -375,7 +375,7 @@ El parque es el conjunto de viviendas existentes y sus ocupantes; el mercado son
 
 ### 5.6 Fiscalidad (CB)
 
-- La reducción por arrendamiento de vivienda se aplica a 2.236.896 declarantes [C4].
+- La reducción por arrendamiento de vivienda se aplica a [cifra no publicada en la versión 1.0: usa la serie de AEAT] [C4].
 - No hay en el repositorio una evaluación de la incidencia de los cambios fiscales en la oferta de alquiler. La matriz D1 los deja como «no evaluable» (instrumento `I15`).
 
 ### 5.7 Desigualdad (CC)

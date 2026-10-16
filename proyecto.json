@@ -15,6 +15,12 @@
   "comando": "find data/sealed -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum",
   "nota": "Lo calcula el autor en su máquina, desde la raíz del repositorio de desarrollo, y lo escribe aquí. Mientras sea PENDIENTE, `make check` avisa en el repositorio de desarrollo y falla en el árbol público (src/v14/check_v14.py)."
  },
+ "terceros_1_0": {
+  "_nota": "V14.2. Qué se hace en la 1.0 con las series de cada fuente: «agregados» (cifras propias citando la fuente; la serie no se redistribuye), «excluir» (además, las cifras que usan la serie se retiran de publicacion/, web/ y consulta/ y se marcan como no publicadas, sin borrarlas de cifras_clave) o «redistribuir» (la serie va al paquete). Decisión del autor tras leer docs/v14/licencias.md; escenarios en docs/v14/escenarios.md. Tras cambiarlo: make publicacion consulta web paquete_zenodo arbol_publico.",
+  "registradores": "agregados",
+  "notariado": "agregados",
+  "aeat": "excluir"
+ },
  "vigentes": {
   "deficit_y_necesidad": {
    "tema": "Déficit y necesidad de vivienda 2026-2035, simulaciones de instrumentos (dosis y coste) y atlas regional",

@@ -10,7 +10,7 @@ sys.path.insert(0, str(RAIZ / "src" / "consulta"))
 import generar as G  # noqa: E402
 
 CAPAS = {"C1", "C2", "C3", "C3s", "C4"}
-MARCA_SUPERADAS = "## Superadas y retiradas"
+MARCA_SUPERADAS = "## Superadas, retiradas y no publicadas"
 
 
 def _md() -> list[Path]:
@@ -66,7 +66,9 @@ def test_hallazgos_capa_fuente_ruta():
         assert h["capa"] in CAPAS, h["id"]
         assert h["fuente"].strip() and h["ruta"].strip(), h["id"]
         assert (RAIZ / h["ruta"]).exists(), f"{h['id']}: ruta inexistente {h['ruta']}"
-        assert h["estado"] in ("vigente", "superada", "retirada")
+        assert h["estado"] in ("vigente", "superada", "retirada", "no publicada (1.0)")
+        if h["estado"] == "no publicada (1.0)":   # V14.2: sin cifra, con la marca
+            assert h["cifra"] is None and h["cifra_texto"].startswith("[cifra no publicada")
     assert sum(h["version"] == "V8" and h["tipo"] == "cifra" for h in H) >= 290
     assert sum(h["version"] in ("v5", "v5.1", "v6", "v6.1", "v6.2", "v7", "v7.1", "v7.2") and h["estado"] == "vigente" for h in H) >= 100
     assert any(h["estado"] == "superada" for h in H) and any(h["estado"] == "retirada" for h in H)

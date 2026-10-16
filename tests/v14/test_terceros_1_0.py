@@ -13,6 +13,7 @@ from src.v14 import terceros as T  # noqa: E402
 from src.v14 import terceros_1_0 as T10  # noqa: E402
 
 TODAS = lambda v: {f: v for f in T10.FUENTES}  # noqa: E731
+ARBOL = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8")).get("arbol_publico", False)   # árbol público: tablas ya redactadas
 CA = "output/v5/CA/tablas/contado_ratio_hipotecas_compraventas.csv"
 F6 = "output/f6/notariado_provincia_trimestral.csv"
 B5 = "output/v12/b5/aeat_cv_declarantes_inmuebles.csv"
@@ -49,8 +50,12 @@ def test_agregados(monkeypatch, tmp_path):
     assert T10.retiradas(pol) == {} and T10.series_brutas(pol) == []
     assert T10.variables_excluidas(pol) == r"^aeat_"
     assert not any(t.startswith("[cifra no publicada") for t in _render(tmp_path, ["CB-C6-01", REG_DIRECTA]))
-    assert T.accion(CA, RAIZ / CA, pol) == ("redactar", ["reg_compraventas_viv", "reg_hipotecas_viv"])
-    assert T.accion(M0, RAIZ / M0, pol) == ("redactar", ["ln_pm2_registradores", "ln_cv_registradores"])
+    if ARBOL:   # en el árbol público la redacción ya está aplicada: las columnas de la serie no están
+        assert not {"reg_compraventas_viv", "reg_hipotecas_viv"} & set(T.cabecera(RAIZ / CA))
+        assert not {"ln_pm2_registradores", "ln_cv_registradores"} & set(T.cabecera(RAIZ / M0))
+    else:
+        assert T.accion(CA, RAIZ / CA, pol) == ("redactar", ["reg_compraventas_viv", "reg_hipotecas_viv"])
+        assert T.accion(M0, RAIZ / M0, pol) == ("redactar", ["ln_pm2_registradores", "ln_cv_registradores"])
     assert T.accion(F6, RAIZ / F6, pol) == ("vaciar", "notariado")
     assert T.accion(B5, RAIZ / B5, pol) == ("copiar", None)   # agregado propio: se publica citando la fuente
     d = tmp_path / "vacia.csv"
@@ -85,6 +90,8 @@ def test_excluir(monkeypatch, tmp_path):
 
 def test_redistribuir(monkeypatch, tmp_path):
     pol = _escenario(monkeypatch, "redistribuir")
+    if ARBOL:
+        pytest.skip("árbol público: las series de terceros no están (make datos_terceros); se prueba en el repositorio de desarrollo")
     assert T10.retiradas(pol) == {} and T10.variables_excluidas(pol) is None
     assert "data/raw/v11/aeat_irpf_municipios/irpf_municipios_cv.csv.gz" in T10.series_brutas(pol)
     for rel in (CA, M0, F6, B5):

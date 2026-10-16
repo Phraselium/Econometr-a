@@ -25,8 +25,7 @@
   "paquete": {
    "bytes": 1322884416,
    "ficheros": 3797,
-   "series_brutas": 0,
-   "salida": "paquete_zenodo: /tmp/claude-0/-home-user-Econometr-a/468da938-3e2d-5fba-ac52-e16a4175b9ac/scratchpad/paq_esc/por_defecto/vivienda-espana-evidencia-1.0 · 3794 ficheros incluidos, 44 versionados excluidos, 7 variables AEAT quitadas, 1323 MB"
+   "series_brutas": 0
   }
  },
  "todas = agregados": {
@@ -51,8 +50,7 @@
   "paquete": {
    "bytes": 1322884580,
    "ficheros": 3797,
-   "series_brutas": 0,
-   "salida": "paquete_zenodo: /tmp/claude-0/-home-user-Econometr-a/468da938-3e2d-5fba-ac52-e16a4175b9ac/scratchpad/paq_esc/todas__agregados/vivienda-espana-evidencia-1.0 · 3794 ficheros incluidos, 42 versionados excluidos, 7 variables AEAT quitadas, 1323 MB"
+   "series_brutas": 0
   }
  },
  "todas = excluir": {
@@ -94,8 +92,7 @@
   "paquete": {
    "bytes": 1322885019,
    "ficheros": 3797,
-   "series_brutas": 0,
-   "salida": "paquete_zenodo: /tmp/claude-0/-home-user-Econometr-a/468da938-3e2d-5fba-ac52-e16a4175b9ac/scratchpad/paq_esc/todas__excluir/vivienda-espana-evidencia-1.0 · 3794 ficheros incluidos, 44 versionados excluidos, 7 variables AEAT quitadas, 1323 MB"
+   "series_brutas": 0
   }
  },
  "todas = redistribuir": {
@@ -120,8 +117,7 @@
   "paquete": {
    "bytes": 1357352692,
    "ficheros": 3816,
-   "series_brutas": 19,
-   "salida": "paquete_zenodo: /tmp/claude-0/-home-user-Econometr-a/468da938-3e2d-5fba-ac52-e16a4175b9ac/scratchpad/paq_esc/todas__redistribuir/vivienda-espana-evidencia-1.0 · 3813 ficheros incluidos, 15 versionados excluidos, 0 variables AEAT quitadas, 1357 MB"
+   "series_brutas": 19
   }
  }
 }

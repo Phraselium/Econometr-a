@@ -77,7 +77,8 @@ def paquete(pol: dict, tmp: Path) -> dict:
     nf = sum(1 for p in base.rglob("*") if p.is_file())
     brutas = len(T10.series_brutas(pol))
     shutil.rmtree(tmp)
-    return {"bytes": tam, "ficheros": nf, "series_brutas": brutas, "salida": r.stdout.strip().splitlines()[-1]}
+    assert r.returncode == 0
+    return {"bytes": tam, "ficheros": nf, "series_brutas": brutas}   # sin la salida: lleva la ruta local del directorio temporal
 
 
 def main() -> int:

@@ -1,11 +1,13 @@
-# V10-B4: construye la web estática (src/v10/web.py) y la publica en GitHub Pages.
-# Requisito del autor: Settings → Pages → Source: «GitHub Actions» (docs/v10/tareas_autor.md).
+# V10-B4 · construye la web estática (src/v10/web.py) y la publica en GitHub Pages.
+# V14.2 · en el repositorio público (vivienda-espana-evidencia) data/ no se versiona: antes de construir, `src/v14/datos.py`
+# trae el paquete del depósito de Zenodo (URL de proyecto.json, zenodo_url_paquete) y verifica cada sha256. Mientras la URL
+# sea «PENDIENTE», el paso falla con un mensaje claro y no se publica nada (docs/v14/publicacion_1_0/github_pages.md).
+# Requisito del autor: Settings → Pages → Source: «GitHub Actions».
 name: web
 
 on:
   push:
     branches: [main]
-    paths: ["data/base/**", "output/v10/**", "figuras/**", "web/**", "src/v10/web.py", "publicacion/**", "CHANGELOG.md", "ERRATA.md"]
   workflow_dispatch:
 
 permissions:
@@ -26,6 +28,14 @@ jobs:
         with:
           python-version: "3.13"
       - run: pip install -r requirements-web.txt
+      - name: Paquete del depósito en caché (se renueva si cambia proyecto.json)
+        uses: actions/cache@v4
+        with:
+          path: _descarga
+          key: deposito-${{ hashFiles('proyecto.json') }}
+      - name: Datos del depósito (solo si data/ no está en el repositorio)
+        run: |
+          if [ ! -f data/base/publica/hechos.parquet ]; then python src/v14/datos.py; fi
       - run: python src/v10/monitor.py --sin-red
       - run: python src/v10/web.py
       - uses: actions/configure-pages@v5

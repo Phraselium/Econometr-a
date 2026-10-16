@@ -77,3 +77,10 @@ Ninguno.
     - todas = excluir: 98 cifras, 16 textos;
     - todas = redistribuir: el paquete crece 34,5 MB, con 19 series brutas.
   - El repositorio queda en el valor por defecto. `make web` en local: 324 páginas, sin variables de la AEAT en las descargas.
+- **Bloque 4 · Material de publicación** (docs/v14/publicacion_1_0/):
+  - notas de la versión para GitHub, sin cifras: remiten a una_pagina y a cifras_clave;
+  - metadatos de Zenodo con licencias por parte, descripción en español y en inglés e identificadores relacionados;
+  - texto de OSF: 9 etiquetas, con commits, fechas y sha256 idénticos a V13, y la declaración de que el sello es posterior. Corrige la frase de V13 sobre C3/C3s;
+  - GitHub Pages: el workflow trae los datos del depósito si faltan; probado con `make web`;
+  - correo al revisor: 175 palabras.
+  - tests/v14/test_publicacion_1_0.py comprueba la coherencia con .zenodo.json, los límites y la tabla de OSF.

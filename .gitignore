@@ -140,3 +140,7 @@ data/raw/v11/*/original/
 data/raw/v11/*/od_municipios_*.parquet
 data/raw/v11/*/tmp/
 data/raw/v11/uv_matricula/*.csv
+
+# V11-DATOS (3.ª pasada): originales de las descargas manuales del autor (sha256 en data/raw/v11/manual/_manifest.csv;
+# las tablas normalizadas de data/raw/v11/manual sí se versionan)
+data/manual/

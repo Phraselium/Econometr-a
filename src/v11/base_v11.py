@@ -289,6 +289,14 @@ def partes() -> list[pd.DataFrame]:
         add(pd.DataFrame({"territorio_codigo": "08019", "nivel": "municipio", "periodo_raw": b.trimestre,
                           "variable": "bcn_hut_registro", "desagregacion": "barrio_bcn=" + b.cod_barrio_bcn.astype(str),
                           "valor": pd.to_numeric(b.hut), "metodo_dato": "descarga manual del autor"}), "data/raw/v11/manual/bcn_hut_trimestral.csv.gz")
+    f = RAW11 / "manual/gva_bdo_afiliacion.csv.gz"
+    if f.exists():   # GVA BDO: afiliados por municipio y nacionalidad (ambos sexos; el desglose por sexo queda en data/raw)
+        b = pd.read_csv(f, dtype={"cod_municipio": str})
+        b = b[(b.sexo == "Ambos sexos") & _mun(b.cod_municipio) & b.valor.notna()]
+        add(pd.DataFrame({"territorio_codigo": b.cod_municipio, "nivel": "municipio", "periodo_raw": b.trimestre,
+                          "variable": "gva_bdo_afiliados", "desagregacion": "nacionalidad=" + b.nacionalidad,
+                          "valor": b.valor, "metodo_dato": "descarga manual del autor (BDO GVA, V0201_C2D0244)"}),
+            "data/raw/v11/manual/gva_bdo_afiliacion.csv.gz")
     return out
 
 
@@ -319,6 +327,7 @@ META_V11 = {
     "opi_residentes_documentados": ("personas", "OPI (Ministerio de Inclusión), extranjeros con certificado de registro o tarjeta en vigor; réplica de la Comunidad de Madrid", _C, "CC BY 4.0 (Comunidad de Madrid)", True),
     "catastro_tit_titulares": ("titulares (sujetos pasivos)", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial; sujetos pasivos; tramos dentro del municipio; NO encadenar con catastro_titulares_jaxi: salto 2023→2024 de −32 % por cambio de definición)", _C, "Catastro: reutilización con reconocimiento", True),
     "catastro_tit_viviendas": ("inmuebles residenciales", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial)", _C, "Catastro: reutilización con reconocimiento", True),
+    "gva_bdo_afiliados": ("afiliados", "GVA, Banco de Datos Municipal (consulta V0201_C2D0244): afiliados a la Seguridad Social por nacionalidad (descarga manual del autor)", _C, "Generalitat Valenciana: CC BY 4.0", True),
     "bcn_hut_registro": ("viviendas", "Ajuntament de Barcelona, registro HUT, cortes trimestrales (descarga manual del autor)", _C, "CC BY 4.0", True),
     "catastro_titulares_jaxi": ("titulares", "Catastro, titulares catastrales por municipio y clase (visor JAXI; 2012-2023; NO encadenar con catastro_tit_*: serie de sujetos pasivos desde 2024)", _C, "Catastro: reutilización con reconocimiento", True),
     "catastro_viviendas_por_anio_construccion": ("viviendas", "Catastro, otras estadísticas (2019): viviendas por año de construcción", _C, "Catastro: reutilización con reconocimiento", True),

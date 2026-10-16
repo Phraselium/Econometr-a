@@ -22,9 +22,9 @@ RAIZ = Path(__file__).resolve().parents[2]
 P = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))
 NO_REDIS_COL = re.compile(r"notar|registrad|cgn_|cgpj|aeat", re.I)
 DATOS_QUE_ENTRAN = re.compile(r"^data/(CHECKSUMS\.sha256|raw/(.+/)?_manifest[^/]*\.csv)$")
-PRIVADO = re.compile(r"/tmp/claude|/home/user|/root/|claude\.ai/code/session|session_0[0-9A-Za-z]{10,}|ghp_[A-Za-z0-9]{20,}|"
-                     r"github_pat_[A-Za-z0-9_]{20,}|\bsk-[A-Za-z0-9]{20,}|AKIA[A-Z0-9]{12,}|xox[abp]-[A-Za-z0-9-]{10,}|"
-                     r"[A-Za-z0-9._%+-]+@(?!anthropic\.com)[A-Za-z0-9-]+\.[A-Za-z0-9.-]*[a-z]{2,}")
+PRIVADO = re.compile(r"/tmp/claude|/home/user|/root/|claude\.ai/code/session|session_0[0-9A-Za-z]{10,}|ghp_[A-Za-z0-9]{20,}|"  # arbol_publico: permitido
+                     r"github_pat_[A-Za-z0-9_]{20,}|\bsk-[A-Za-z0-9]{20,}|AKIA[A-Z0-9]{12,}|xox[abp]-[A-Za-z0-9-]{10,}|"  # arbol_publico: permitido
+                     r"[A-Za-z0-9._%+-]+@(?!anthropic\.com)[A-Za-z0-9-]+\.[A-Za-z0-9.-]*[a-z]{2,}")  # arbol_publico: permitido
 IGNORE_EXTRA = """
 # V14 (árbol público): los datos vienen del depósito de Zenodo (`make datos`); solo se versionan manifiestos y checksums
 /data/**

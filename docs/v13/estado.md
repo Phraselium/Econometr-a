@@ -20,6 +20,10 @@ Sin análisis nuevo: ningún modelo, ninguna muestra sellada, ninguna cifra de c
   - Hallazgos para el autor: D4 (AEAT) y D5 (derivados con Notariado y Registradores).
   - Incidencia D3: un heredoc sin comillas ejecutó `make clean` y el inicio de `make all`. Detenido; sin cambios en git ni en
     cifras; ninguna muestra sellada evaluada.
+- **C · Pre-registro.**
+  - 18 etiquetas locales: 9 prereg-* y 9 de versión, con commit, fecha, tipo y sha256 del documento.
+  - Ninguna existe en el remoto (`git ls-remote --tags` devuelve 0), pero todos sus commits sí están en la rama remota.
+  - Comandos exactos de publicación y texto del registro en OSF en docs/v13/tareas_autor.md. Todo «pendiente del autor».
 
 ## Siguiente
 

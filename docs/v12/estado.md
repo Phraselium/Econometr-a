@@ -33,3 +33,8 @@
 
 ## Tokens de subagentes
 Revisor final V12: ~82.000 tokens (tope 100.000).
+
+## V11-DATOS · tercera pasada (2026-10-16)
+- Hecho: padrón de València (PDF del Ajuntament) 2001-2026 sin 2014, por barrio y distrito (sexo, edad en 3 grupos, continente); nacionalidades principales 2005-2018; altas y bajas por distrito 1998-2016; validado con el INE (0,09-1,32 %) y con el censo anual 2021-2025 (mediana 2,2-3,3 %). OPI por datos.gob.es: 403. Manual: HUT Barcelona y BDO GVA incorporados. `make datos_v11`, `make base` y `make check` (382 tests, sin cambios en git) correctos.
+- Siguiente: normalizar las altas y bajas por nacionalidad y los países por barrio (hoy solo en tablas_crudas).
+- Subagentes: ninguno.

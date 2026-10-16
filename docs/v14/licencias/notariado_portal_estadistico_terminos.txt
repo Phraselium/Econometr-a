@@ -1,0 +1,122 @@
+URL: https://penotariado.com/inmobiliario/terminos-y-condiciones
+Fecha de consulta: 2026-10-16
+Copia en texto (sin menús de navegación depurados) para uso interno; no va al árbol público.
+------------------------------------------------------------------------
+Términos y Condiciones de Uso | Portal Estadístico del Notariado
+
+Inicio
+Mapa
+Utilidades
+Actualidad
+Área privada
+Acceder
+
+TÉRMINOS Y CONDICIONES DE USO DEL PORTAL ESTADÍSTICO DEL NOTARIADO
+
+Los presentes Términos y Condiciones de Uso describen las condiciones de uso del Portal Estadístico del Notariado del CONSEJO GENERAL DEL NOTARIADO albergado en el sitio web www.penotariado.com, que se ponen a disposición de los Usuarios de los Servicios ofrecidos por el Portal Estadístico del Notariado (en adelante el “Usuario” y el “Servicio”). El acceso o utilización del Servicio implica la aceptación de todas y cada una de las presentes condiciones de uso y de aquellas que, unilateralmente y siempre dentro de los márgenes establecidos por la legislación vigente, pueda establecer el CONSEJO GENERAL DEL NOTARIADO, siendo responsabilidad del Usuario la lectura de las condiciones de uso vigentes en cada una de las ocasiones en que acceda al Servicio.
+La versión vigente de los presentes Términos y Condiciones de Uso en cada momento podrá ser consultada en la opción del menú inferior “Términos y Condiciones” habilitado en el propio Portal.
+
+1. Condición de Usuario
+Se entiende por Usuario a la persona física que acceda al sitio web www.penotariado.com del Portal Estadístico del Notariado, tanto si se ha registrado mediante el correspondiente formulario de registro como si no lo ha hecho.
+El acceso y uso de los contenidos del Portal Estadístico del Notariado atribuye a la persona la condición de Usuario del mismo.
+El Usuario se compromete a cumplir las siguientes obligaciones:
+A hacer un uso diligente del Portal Estadístico del Notariado, conforme a la Ley, a las condiciones de acceso y uso, así como a la moral y buenas costumbres generalmente aceptadas.
+A no utilizar el Portal Estadístico del Notariado con fines ilícitos, lesivos de derechos de terceros, o que de cualquier manera pueda dañar o inutilizar el Portal o los derechos de terceros.
+A no utilizar el Portal Estadístico del Notariado con fines comerciales.
+El acceso al Portal Estadístico del Notariado es gratuito salvo en lo relativo al coste de la conexión a través de la red de telecomunicaciones suministrada por el proveedor de acceso contratado por el Usuario.
+
+2. Descripción del Servicio
+El Portal Estadístico del Notariado presta servicios de consulta de datos y análisis estadísticos de forma agregada del mercado de operaciones inmobiliarias en España a los siguientes perfiles de Usuario:
+Público
+Registrado
+Los beneficios de cada uno de los servicios que el Portal presta a dichos perfiles se detallan a continuación:
+SecciónFuncionalidadPúblicoRegistrado
+
+BúsquedaBúsqueda y navegación
+Nivel de profundidadProvincialCódigo postal
+Selección de principales indicadores
+Filtros
+Consultas mensuales de estadísticas050
+Evolución de los principales indicadores
+Otros indicadores de interés
+Indicadores sociodemográficos
+
+UtilidadesCalculadora de hipotecas
+Tasa de esfuerzo
+
+ActualidadNoticias
+Artículos de expertos
+
+Área privadaTu contenido
+Notificaciones
+Gestión de compras
+Para cada uno de dichos perfiles los Servicios son gratuitos.
+2.1 Sistemas de acceso al Portal Estadístico del Notariado
+El sistema de identificación para el acceso al Portal del Usuario registrado es el uso de credenciales de identificador/contraseña (login/password) indicados en el proceso de registro.
+2.2 Dispositivos permitidos por el Portal Estadístico del Notariado
+Todos los Usuarios podrán disfrutar del Servicio a través del PC o Mac, smartphones (iOS, Android y Windows) y tabletas (iOS, Android y Windows). Para poder aprovechar todos los beneficios que ofrece el Portal es recomendable tener una conexión de al menos 100 Mbps.
+
+3. Registro al Portal Estadístico del Notariado
+El Usuario registrado debe registrarse en el Portal mediante el correspondiente formulario de registro, siendo obligatorio para dicho registro que sea mayor de edad. Para ello deberá introducir los datos personales identificativos solicitados, debiendo facilitar toda la información indicada como obligatoria. Dicha información debe ser actual, completa y veraz, y deberá ser actualizada y mantenida al día durante todo el uso del Portal, siendo responsable de la información falsa o inexacta que realice y de los perjuicios que cause al CONSEJO GENERAL DEL NOTARIADO.
+El uso de la contraseña, u otro medio de identificación para el acceso al Portal, es personal e intransferible. El Usuario será responsable de mantener la confidencialidad de su cuenta y de todas y cualesquiera transacciones que se efectúen desde ésta. El Usuario se compromete a no facilitar la contraseña a otras personas y a adoptar todas aquellas medidas que sean útiles para mantenerla en secreto. El Usuario es el único y exclusivo responsable de su custodia y de la utilización, autorizada o no, por terceras personas. Por ello, se compromete a hacer un uso diligente, asumiendo toda responsabilidad por las consecuencias de su divulgación a terceros.
+El Usuario queda informado de que el acceso al Portal utilizando la identidad o contraseña de otro Usuario, así como la obtención, uso o difusión de datos personales de otros usuarios puede ser constitutivo de una infracción legal y eventualmente penal.
+a. “Área privada”
+El Usuario registrado podrá acceder y editar su perfil de usuario dentro de la sección “Área privada” del Portal para gestionar cualquier cambio de la información comunicada al CONSEJO GENERAL DEL NOTARIADO, así como para gestionar sus comunicaciones con el Portal.
+b. Baja de Usuario
+El Usuario registrado en cualquier momento podrá darse de baja como Usuario del Portal debiendo acceder a la sección “Área privada”. Para tramitar su baja, el usuario deberá acceder a su cuenta de usuario y llevar a cabo los pasos indicados en la sección “Darme de baja”
+Sin perjuicio de ello, el CONSEJO GENERAL DEL NOTARIADO en cualquier momento podrá darse de baja del Servicio a un Usuario registrado cuando se tenga conocimiento de que ha llevado a cabo un mal uso del Portal o ha incumplido sus obligaciones como Usuario y lo considere necesario para el buen funcionamiento del Portal.
+
+4. Condiciones de utilización de los datos del Portal
+El CONSEJO GENERAL DEL NOTARIADO permite a todo Usuario público o registrado el acceso y uso de los servicios de datos ofrecidos por el Portal para su uso exclusivo personal no permitiéndose el uso comercial de los mismos, sin que ello suponga, en ningún caso, ningún otro derecho, comprometiéndose el Usuario a no incorporar dichos datos a bases de datos o ficheros informatizados que puedan ser susceptibles de consulta individualizada con fines comerciales por otras personas físicas o jurídicas y, ello, aunque se exprese la procedencia de la información.
+
+5. Responsabilidad del Usuario del Portal Estadístico del Notariado
+El Usuario se compromete a hacer un uso adecuado del Servicio y a no emplearlo para incurrir en actividades ilícitas, ilegales o contrarias a la buena fe y al orden público.
+El Usuario del Portal Estadístico del Notariado responderá de cualesquiera daños y perjuicios que el CONSEJO GENERAL DEL NOTARIADO pudiera sufrir como consecuencia del incumplimiento de las condiciones de acceso y uso del Portal y de demás obligaciones establecidas en las presentes condiciones o de la Ley.
+El Usuario es consciente de que el uso del Portal lo realiza bajo su única y exclusiva responsabilidad y el CONSEJO GENERAL DEL NOTARIADO no garantiza la fiabilidad y disponibilidad del mismo.
+El Usuario registrado declara que dispone de capacidad legal necesaria para registrarse en el Portal. El Usuario registrado se compromete a no transmitir a terceros su nombre de usuario (login) y su contraseña, debiendo comunicar inmediatamente al CONSEJO GENERAL DEL NOTARIADO si es conocedor del acceso por parte de un usuario no autorizado a dicha información. Queda expresamente prohibida la cesión de la cuenta de usuario a terceros, de forma gratuita o a cambio de una contraprestación de cualquier tipo. El CONSEJO GENERAL DEL NOTARIADO se reserva el derecho de emprender las acciones legales que estime oportunas en caso de incumplimiento.
+
+6. Propiedad intelectual e industrial
+Pertenecen al CONSEJO GENERAL DEL NOTARIADO la totalidad de los contenidos ofrecidos por el Portal Estadístico del Notariado a través del Servicio, estando todos ellos protegidos por la normativa española, comunitaria e internacional aplicable.
+En consecuencia, queda prohibida la reproducción, distribución, comunicación pública, transformación y/o puesta a disposición del público de todo o parte del Servicio y/o sus contenidos, sin la previa autorización expresa del CONSEJO GENERAL DEL NOTARIADO.
+Por el derecho de uso de los datos objeto del Servicio, el Usuario no adquiere ningún derecho sobre los mismos, pudiendo simplemente utilizarlos en su ámbito personal. Queda expresamente prohibida cualquier otra utilización, acceso, reproducción, distribución, comunicación pública, transformación, traducción, alquiler, venta, explotación comercial o puesta a disposición de terceras personas de ninguna forma, de todo o de parte de los contenidos, productos y/o servicios incluidos en el Servicio. La utilización no autorizada de los contenidos del Servicio, así como la lesión a los derechos de propiedad intelectual o industrial de sus contenidos, productos y/o servicios dará lugar a las correspondientes responsabilidades legales.
+Para solicitar autorización para cualquier uso diferente del ámbito personal del Usuario de contenidos del Portal del CONSEJO GENERAL DEL NOTARIADO, puede formular la petición a través del siguiente correo electrónico soporte.penotariado@notariado.org. Para denuncias sobre el uso de contenidos del CONSEJO GENERAL DEL NOTARIADO sin autorización, puede comunicárnoslo en el correo electrónico soporte.penotariado@notariado.org.
+
+7. Tratamiento de los datos personales
+Para el Usuario registrado la utilización del Servicio está condicionada a la previa cumplimentación del correspondiente registro de Usuario y a la aceptación de la correspondiente política de privacidad.
+En los formularios de recogida de datos, los campos señalados con asterisco son obligatorios, por lo que en caso de que el usuario no facilite los datos correspondientes, el CONSEJO GENERAL DEL NOTARIADO podrá, según su criterio, denegar el correspondiente Servicio.
+
+8. Exención de responsabilidad del CONSEJO GENERAL DEL NOTARIADO
+El CONSEJO GENERAL DEL NOTARIADO se reserva el derecho a interrumpir en cualquier momento y sin previo aviso el acceso al Portal Estadístico del Notariado, así como a interrumpir la prestación de cualquiera o de todos los servicios que se presta a través del mismo, ya sea por motivos técnicos, de seguridad, de mantenimiento, por fallos en el suministro eléctrico o por cualquier otra causa. Dicha interrupción podrá tener carácter temporal o definitivo.
+El CONSEJO GENERAL DEL NOTARIADO no será responsable en caso de que existan interrupciones del servicio, demoras, errores o mal funcionamiento de los servicios que tengan su origen en causas ajenas a la misma o debidas a una actuación dolosa o culposa del Usuario, o a causa de fuerza mayor. Son causas de fuerza mayor fallos de terceros, operadores o compañías de servicios, falta de acceso a redes de terceros, actos u omisiones de las autoridades públicas, actos producidos como consecuencia de fenómenos naturales, apagones, etc., y ciberataques o intervenciones de terceros que comprometan la integridad y seguridad del sistema informático, siempre que el CONSEJO GENERAL DEL NOTARIADO haya adoptado todas las medidas de seguridad existentes de acuerdo con el estado de la técnica.
+En cualquier caso, sea cual fuere su causa, el CONSEJO GENERAL DEL NOTARIADO no asumirá responsabilidad alguna ya sea por daños directos o indirectos, daño emergente y/o por lucro cesante.
+El CONSEJO GENERAL DEL NOTARIADO no se responsabiliza de contenidos y opiniones de terceros vertidos en el Portal ni de la información contenida en las páginas web de terceros a las que se pueda acceder por enlaces o buscadores del Portal, puesto que la función de éstas es informar al Usuario sobre la existencia de otras fuentes de información en Internet, donde podrá ampliar los datos ofrecidos en el Portal. Por todo ello, el CONSEJO GENERAL DEL NOTARIADO no será responsable del resultado obtenido a través de dichos enlaces hipertextuales.
+El CONSEJO GENERAL DEL NOTARIADO no se hace responsable por la utilización que el Usuario realice de los servicios del Portal ni de sus contraseñas, así como de cualquier otro material del mismo, infringiendo los derechos de propiedad intelectual o industrial o cualquier otro derecho de terceros.
+El CONSEJO GENERAL DEL NOTARIADO no se hace responsable por los daños que puedan causarse en los equipos de los Usuarios por posibles virus informáticos contraídos por el Usuario a causa de su navegación en el Portal, o por cualesquiera otros daños derivados de esa navegación. Corresponde al Usuario, en todo caso, disponer de herramientas adecuadas para la detección y desinfección de programas informáticos dañinos.
+El CONSEJO GENERAL DEL NOTARIADO no ofrece ninguna garantía de ausencia de errores en ninguno de los contenidos del Portal, además de no garantizar la corrección de cualquier defecto o la ausencia de virus y demás componentes dañinos en el Portal o en su/s servidor/es.
+
+9. Asistencia
+En caso de que se produzca cualquier error en el acceso al Servicio, descarga o cualquier consulta sobre las presentes condiciones, puede ponerse en contacto con el Portal a través del correspondiente formulario de contacto o a través del correo electrónico soporte.penotariado@notariado.org.
+
+10. Ley aplicable y jurisdicción
+Para toda cuestión litigiosa o que incumba al Portal Estadístico del Notariado rige la legislación española siendo competentes para la resolución de todos los conflictos derivados o relacionados con el uso del presente Portal, los Juzgados y Tribunales de Madrid capital.
+
+Contacto
+penotariado@notariado.org
+www.notariado.org
+Prensa
+prensa@penotariado.com
+
+Explora el portal
+Mapa de búsqueda
+Utilidades
+Actualidad
+Área privada
+Guía de usuario
+
+-
+
+© 2026 Consejo General del Notariado. Todos los derechos reservados.
+Términos y condiciones
+Política de Privacidad
+Aviso Legal
+Política de Cookies

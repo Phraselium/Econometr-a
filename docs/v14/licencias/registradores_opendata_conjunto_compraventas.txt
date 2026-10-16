@@ -1,0 +1,128 @@
+URL: https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia
+Fecha de consulta: 2026-10-16
+Copia en texto (sin menús de navegación depurados) para uso interno; no va al árbol público.
+------------------------------------------------------------------------
+Portal de datos abiertos del Colegio de Registradores
+
+Ir al contenido
+
+ Toggle navigation
+
+Inicio
+
+Catálogo de datos
+Acerca de
+
+ Español
+
+ English
+
+ Català
+
+ Euskara
+
+ Galego
+
+ Ir
+
+ Inicio
+
+Organizaciones
+
+registros-de-la-propiedad
+
+Compraventas de inmuebles,...
+
+ Conjunto de datos
+
+ Grupos
+
+ Flujo de Actividad
+
+ Compraventas de inmuebles, uso residencial, por provincia
+
+ Recoge información sobre las compraventas trimestrales de inmuebles de uso residencial por provincias, diferenciando entre viviendas, trasteros y garajes. Esta información incluye el número total de operaciones, el importe medio por operación, así como el precio medio por metro cuadrado.
+
+Datos y Recursos
+
+ Compraventas de inmuebles, uso residencial 2007-2t2026CSV
+
+ Explorar
+
+ Previsualizar
+
+ Descargar
+
+ Compraventas de inmuebles, uso residencial 2007-2t2026ODS
+
+ Explorar
+
+ Previsualizar
+
+ Descargar
+
+ Compraventas de inmuebles, uso residencial 2007-2t2026XLSX
+
+ Explorar
+
+ Previsualizar
+
+ Descargar
+
+Información Adicional
+
+ Categorías
+
+Economía
+
+ Etiquetas
+
+ Registro de la prop...
+
+ inmuebles
+
+ uso residencial
+
+ viviendas
+
+ trasteros
+
+ garajes
+
+ Idiomas
+
+ Español
+
+ Inglés
+
+ Fecha de creación
+
+ 04/03/24 00:00
+
+ Última actualización
+
+ 24/08/26 16:56
+
+ Frecuencia de actualización
+
+ Trimestral
+
+ Cobertura geográfica
+
+ España
+
+ Licencia
+
+Open Data Commons Open Database License 1.0
+
+ Aviso Legal
+
+ Política de privacidad
+
+ Términos y condiciones de uso del servicio
+
+ Principe de Vergara, 70 28006 Madrid
+
+ 912701796
+
+ soporte.usuarios@corpme.es

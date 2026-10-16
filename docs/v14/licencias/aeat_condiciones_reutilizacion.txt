@@ -1,0 +1,37 @@
+URL: https://sede.agenciatributaria.gob.es/Sede/gobierno-abierto/reutilizacion-informacion/condiciones-reutilizacion.html
+Fecha de consulta: 2026-10-16
+Copia en texto (sin menús de navegación depurados) para uso interno; no va al árbol público.
+------------------------------------------------------------------------
+Agencia Tributaria: Condiciones de reutilización
+
+ Saltar al contenido principal
+
+Logotipo Gobierno de EspañaLogotipo Organismo
+
+Menú móvil
+Aqui se cargarán las opciones del menú cuando estén disponibles
+
+Inicio
+Gobierno abierto
+Reutilización de la información (Iniciativa Datos abiertos)
+
+Condiciones de reutilización
+
+Condiciones de reutilización
+La Agencia Tributaria opta por la modalidad básica de puesta a disposición de los datos sin sujeción a condiciones específicas (artículo 8.1 del Real Decreto 1495/2011, de 24 de octubre).
+
+La reutilización de la información estará sometida a diversas condiciones generales que aseguren que el contenido de la información no sea alterada ni desnaturalizada.
+
+Son de aplicación las siguientes condiciones generales para la reutilización de los documentos:
+
+Está prohibido desnaturalizar el sentido de la información.
+
+Debe citarse la fuente de los documentos objeto de la reutilización, citando el órgano administrativo, organismo o entidad del sector público estatal de que se trate.
+
+Debe mencionarse la fecha de la última actualización de los documentos objeto de la reutilización, siempre cuando estuviera incluida en el documento original.
+
+No se podrá indicar, insinuar o sugerir que el titular de la información reutilizada participa, patrocina o apoya la reutilización que se lleve a cabo con ella.
+
+Deben conservarse, no alterarse ni suprimirse los metadatos sobre la fecha de actualización y las condiciones de reutilización aplicables incluidos, en su caso, en el documento puesto a disposición para su reutilización.
+
+Página actualizada: 02/octubre/2023

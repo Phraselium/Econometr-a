@@ -67,7 +67,9 @@ def test_paquete_sin_no_redistribuibles():
     if "data/base/publica/hechos.parquet" in versionados:
         assert "data/base/publica/hechos.parquet" in inc
     assert "src/v13/check_v13.py" in inc and not any(f.startswith(".claude/") for f in inc)
-    assert PZ.EXCLUIR_PUBLICA.match("aeat_irpf_renta_bruta_media")
+    import re
+    from src.v14 import terceros_1_0 as T10   # V14.2: el filtro de la capa pública depende de terceros_1_0 (aeat ≠ redistribuir)
+    assert re.match(T10.variables_excluidas(T10.POR_DEFECTO), "aeat_irpf_renta_bruta_media")
 
 
 def test_inventario_solo_versionados_y_clasificado():

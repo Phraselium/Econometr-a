@@ -9,8 +9,26 @@ Sin análisis nuevo. Ningún modelo estimado, ninguna muestra sellada abierta ni
   - No se pudo comparar el sha256 de data/sealed: el entorno deniega su lectura y no hay huellas previas.
   - Queda documentado en ERRATA.md, en metodologia (desviaciones) y en D3.
   - Nueva regla en CLAUDE.md y control src/v14/check_v14.py en `make check` (heredocs sin comillas).
+- **Bloque 1 · Árbol público 1.0** (docs/v14/arbol_1_0.md).
+  - `make arbol_publico` crea un repositorio nuevo con un único commit, «Versión 1.0».
+  - Tamaño: 46,1 MiB de pack git; 125 MB de árbol sin datos, en 3.000 ficheros.
+  - `make datos` trae data/ del depósito (o de `_descarga/`) y verifica los sha256.
+  - Prueba sin red, con el paquete copiado a mano:
+    - `make datos`: 705 ficheros y 0 problemas;
+    - `make check`: 316 tests superados y 59 omitidos por faltar datos de terceros; todos los controles sin errores y git sin cambios;
+    - `make publicacion`: sin cambios.
+  - Rutas y datos personales: se eliminó la ruta local de src/v10/fetch_geo.py; el árbol sale limpio.
+- **Bloque 2 · Decisiones.**
+  - D2: resuelta por el árbol nuevo.
+  - D4 (AEAT): sigue excluida; el aviso legal reserva los derechos. Procedimiento para una 1.0.1 en tareas_autor.md.
+  - D5: 15 tablas redactadas. La búsqueda por cabeceras y por valores de muestra no encuentra ninguna serie de terceros.
+- **Bloque 3 · Revisión externa.** `make muestra_revision`: 40 cifras (C1 10, C2 9, C3s 10, C4 11), determinista. Hoja xlsx y guía.
+- **Bloque 4 · Pasos del autor.** docs/v14/tareas_autor.md, del 1 al 8.
 
 ## Siguiente
+- V14 cerrada en este repositorio. Lo que queda es del autor: docs/v14/tareas_autor.md, puntos 1 a 8.
+- El árbol se probó generado desde cb19106. Los commits posteriores solo cambian docs/v13, docs/v14 y consulta/. El autor lo
+  regenera desde el commit final con `make arbol_publico` (punto 2).
 
 ## Tokens de subagentes
 Ninguno.

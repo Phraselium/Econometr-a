@@ -1,8 +1,8 @@
 <!-- Generado por `make publicacion` desde README_REPLICACION.md. No editar a mano: se regenera y un test lo comprueba. -->
 
-# Paquete de replicación: vivienda en España (v1-v7.1)
+# Paquete de replicación: vivienda en España (versión pública 1.0; versiones internas v1-V12)
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión:** 7.2, versión de referencia (v7.1 con correcciones; ver CHANGELOG) (consolidación: `make v7` incluye `make v7_1`; `make publicacion` genera publicacion/, metodologia/ y reproducir/). **Cita:** CITATION.cff. **DOI:** pendiente (Zenodo; .zenodo.json). **Licencia:** MIT para el código y CC BY 4.0 para los textos propios (LICENSE); los datos de terceros conservan su licencia (docs/v5/licencias_datos.md).
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión pública:** 1.0 (16 de octubre de 2026; reúne las versiones internas v1-V12, con su correspondencia en CHANGELOG.md; déficit y necesidad: v7.1 con las correcciones de v7.2) (consolidación: `make v7` incluye `make v7_1`; `make publicacion` genera publicacion/, metodologia/ y reproducir/). **Cita:** CITATION.cff. **DOI:** pendiente (Zenodo; .zenodo.json). **Licencia:** MIT para el código y CC BY 4.0 para los textos propios (LICENSE); los datos de terceros conservan su licencia (docs/v5/licencias_datos.md).
 
 Este README sigue el modelo de los editores de datos (AEA Data Editor / Social Science Data Editors). Explica cómo reproducir **todas** las tablas, figuras y documentos del proyecto a partir de los datos incluidos y sin conexión a la red.
 
@@ -54,7 +54,7 @@ Las hipótesis confirmatorias de B3 (diferencias entre provincias) están en doc
 - v2 y v3 reservan una muestra sellada para la evaluación confirmatoria. Solo se accede a ella a través de `src/holdout.py`, que registra cada acceso. La copia versionada del registro es docs/v2/holdout_accesos.md.
 - Las evaluaciones ya hechas se leen de los ficheros `*_sellado*.json` versionados: `make all` **no** reabre la muestra sellada.
 
-### Versión de referencia v7.1 (después de `make all`)
+### Versión interna v7.1 (después de `make all`)
 ```bash
 make v7            # atlas regional V7 (R1-R7) y V7.1 (dosis y coste, cifras de difusión, ensayo de evaluate_v7, cifras_clave, render)
 make publicacion   # copia lo vigente a publicacion/, metodologia/ y reproducir/ con manifiesto sha256 (nunca a mano)

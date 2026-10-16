@@ -28,8 +28,9 @@ RESUMEN = RAIZ / "output" / "v10" / "web_resumen.csv"   # los tests lo redirigen
 PUB = RAIZ / "data" / "base" / "publica"
 GEO = RAIZ / "data" / "base" / "geo"
 ATLAS = RAIZ / "output" / "v10" / "atlas"
-REPO = "https://github.com/Phraselium/vivienda-espana-evidencia"
-URL_PREVISTA = "https://phraselium.github.io/vivienda-espana-evidencia/"
+_PROYECTO = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))   # V13: única fuente de la URL del repositorio y de la web
+REPO = _PROYECTO["repositorio"]
+URL_PREVISTA = _PROYECTO["web"]
 
 PAGINAS = [
     {"url": "index.html", "es": "Inicio", "va": "Inici"},
@@ -685,7 +686,7 @@ document.getElementById("buscarV").addEventListener("input", e => { const q = e.
 </script>{% endblock %}""",
 "que_causa_que.html": """{% extends "base.html" %}{% block contenido %}
 <h1>Qué causa qué <span class="meta" lang="ca-valencia">· Què causa què</span></h1>
-<p class="lema">Diseños de identificación de V9, con reglas fijadas antes de estimar (<a href="https://github.com/Phraselium/vivienda-espana-evidencia/blob/main/docs/v9/hipotesis.md">pre-registro</a> y addendum). Resultados que alcanzan C3 o C3s: <strong>{{ n_c3 }}</strong>. Sin C3/C3s no hay lectura causal: lo que sigue son asociaciones (C4) o descripciones, con su intervalo. Se evalúan afirmaciones e instrumentos, nunca a quién los propone.</p>
+<p class="lema">Diseños de identificación de V9, con reglas fijadas antes de estimar (<a href="{{ repo }}/blob/main/docs/v9/hipotesis.md">pre-registro</a> y addendum). Resultados que alcanzan C3 o C3s: <strong>{{ n_c3 }}</strong>. Sin C3/C3s no hay lectura causal: lo que sigue son asociaciones (C4) o descripciones, con su intervalo. Se evalúan afirmaciones e instrumentos, nunca a quién los propone.</p>
 <p class="aviso">Cómo leerlo: «ATT» es la diferencia media entre los territorios donde se aplicó la medida y los comparables. Un ATT con intervalo que excluye el 0 <em>no</em> demuestra un efecto si el diseño no supera sus pruebas (tendencias previas, placebos, robustez a desviaciones de tendencia). Las afirmaciones concretas están en el <a href="verificador.html">verificador</a>.</p>
 {% for d in disenos %}<section class="tarjeta"><h2>{{ d.diseno }} · {{ d.pregunta }}</h2>
 <table><thead><tr><th>Indicador</th><th>Valor [IC 95 %]</th><th>Unidad</th><th>Capa</th><th>Periodo</th><th>Fuente</th></tr></thead><tbody>
@@ -736,7 +737,7 @@ document.getElementById("buscarV").addEventListener("input", e => { const q = e.
 
 def ctx(titulo: str, actual: str, raiz: str = "") -> dict:
     version = json.loads((RAIZ / "consulta" / "version.json").read_text(encoding="utf-8"))
-    return {"titulo": titulo, "actual": actual, "raiz": raiz, "paginas": PAGINAS, "version": version,
+    return {"titulo": titulo, "actual": actual, "raiz": raiz, "paginas": PAGINAS, "version": version, "repo": REPO,
             "leaflet": actual == "mapas.html"}
 
 

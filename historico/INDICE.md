@@ -1,6 +1,6 @@
 # Índice del histórico (versiones superadas)
 
-La versión de referencia es la **v7.1**: lo vigente está en [publicacion/](../publicacion/MANIFIESTO.md), [metodologia/](../metodologia/MANIFIESTO.md) y [reproducir/](../reproducir/MANIFIESTO.md). Aquí se ordena lo superado, de la primera versión a la v6.2.
+Versión pública: **1.0** (16 de octubre de 2026). Reúne las versiones internas v1-V12 (correspondencia en [CHANGELOG.md](../CHANGELOG.md)); lo vigente está en [publicacion/](../publicacion/MANIFIESTO.md), [metodologia/](../metodologia/MANIFIESTO.md) y [reproducir/](../reproducir/MANIFIESTO.md). Aquí se ordena lo superado, de la primera versión a la v6.2 (versiones internas).
 
 **Qué se ha movido y qué no.**
 - **Se han movido** con `git mv`, sin modificarlos, los documentos de versiones cerradas que no lee ningún script, test, plantilla ni el Makefile: planes, estados, bloqueos, revisiones internas, auditorías, arbitrajes simulados y síntesis antiguas. Están en historico/docs/ y historico/output/, con la misma ruta relativa que tenían. `git log --follow <fichero>` muestra su historia completa: no se ha reescrito la historia de git.
@@ -113,7 +113,7 @@ Con el mismo criterio que en v7.1: se trasladan con `git mv` los documentos de p
 | docs/v7_1/revision_control.md | historico/docs/v7_1/revision_control.md |
 | docs/v7_2/estado.md | historico/docs/v7_2/estado.md |
 
-**Versión de referencia tras V10.**
+**Versiones internas vigentes tras V10.**
 - La modelización de referencia sigue siendo V8.
 - V10 añade la base única (data/base), el atlas descriptivo (output/v10, publicacion/atlas_descriptivo.md), las figuras (figuras/), la web (web/) y el monitor.
 - Vigente en output/: v5 (cifras clave y entregables), v6_2 (anexo), v7 y v7_1 (regional y verificador), v8 (modelos) y v10. El resto se conserva porque `make all` lo regenera y los vigentes lo leen.

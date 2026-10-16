@@ -6,10 +6,12 @@ Estás ante una base de evidencia sobre la vivienda en España. Autor: Borja Rom
 
 ## 1. Versión vigente
 
-- Versión de consulta: **8.1** (sin estimaciones nuevas respecto a V8; solo redacción, tablas, capa de consulta y publicación). Metadatos en [version.json](version.json).
-- **V8** es la referencia de modelización: por qué ha subido la vivienda, factores, periodos y factor común (SVAR, factor común, instrumentos, multiverso, predicción).
+- Versión pública: **1.0** (2026-10-16). Reúne las versiones internas de desarrollo v1 a V12 (correspondencia en CHANGELOG.md). Metadatos en [version.json](version.json). Para cada tema vale una versión interna:
+- **V8** (redacción y tablas de v8.1) para la modelización: por qué ha subido la vivienda, factores, periodos y factor común (SVAR, factor común, instrumentos, multiverso, predicción).
+- **V9** para qué causa qué: diseños pre-registrados; ninguno alcanza C3 ni C3s.
 - **V10** (sin modelos nuevos): base única, atlas descriptivo (ids `V10-ATL-*`), figuras, web y monitor; los datos desde 2026T3 no se contrastan con predicciones.
-- **v7.1 y v7.2** son la referencia para el **déficit y la necesidad de vivienda**, las simulaciones de instrumentos (dosis y coste) y el atlas regional. v5 a v6.3 siguen vigentes en lo que no han sido superadas.
+- **V12** (descriptivo, datos de V11): demografía, hogares, titularidad, oferta, condiciones por origen y turismo (ids `V12-*`).
+- **v7.1 y v7.2** para el **déficit y la necesidad de vivienda**, las simulaciones de instrumentos (dosis y coste) y el atlas regional. v5 a v6.3 siguen vigentes en lo que no han sido superadas.
 - Repositorio: https://github.com/Phraselium/vivienda-espana-evidencia. DOI: PENDIENTE. Fecha verificable del pre-registro: PENDIENTE (también en [version.json](version.json)).
 - Una cifra **superada** no se cita nunca: las lista [output/v5/cifras_superadas.csv](../output/v5/cifras_superadas.csv) con su sustituta. El registro completo está en [hallazgos.md](hallazgos.md) y [hallazgos.json](hallazgos.json) (campo `estado`: vigente, superada o retirada).
 
@@ -83,7 +85,7 @@ La capa de un resultado es la menor de las de sus componentes; **nunca se promue
 - Si te preguntan por **Errores corregidos tras publicar**, mira [ERRATA.md](../ERRATA.md).
 - Si te preguntan por **Cómo citar y licencias**, mira [CITATION.cff](../CITATION.cff).
 - Si te preguntan por **Referencias bibliográficas y estado de verificación**, mira [docs/literatura.md](../docs/literatura.md).
-- Si te preguntan por **Pendientes del autor (DOI, etiquetas, revisión humana)**, mira [docs/v8/tareas_autor.md](../docs/v8/tareas_autor.md).
+- Si te preguntan por **Pendientes del autor (DOI, etiquetas, revisión humana)**, mira [docs/v13/tareas_autor.md](../docs/v13/tareas_autor.md).
 - Si te preguntan por **Cualquier cifra concreta (id, valor, capa, fecha)**, mira [output/v5/cifras_clave.csv](../output/v5/cifras_clave.csv).
 - Si te preguntan por **Quién soporta el coste y dónde (atlas)**, mira [publicacion/atlas_descriptivo.md](../publicacion/atlas_descriptivo.md).
 - Si te preguntan por **La base de datos única**, mira [docs/v10/diccionario_base.md](../docs/v10/diccionario_base.md).

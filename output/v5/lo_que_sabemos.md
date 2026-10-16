@@ -1,4 +1,4 @@
-# Vivienda en España: lo que sabemos y lo que no (versión de referencia v8)
+# Vivienda en España: lo que sabemos y lo que no (versión pública 1.0)
 
 Actualización de output/v4/lo_que_sabemos.md con las salidas de v5. Cada afirmación lleva su capa:
 - **C1**: hecho con al menos dos fuentes independientes, con todos sus componentes en C1.
@@ -67,7 +67,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - (v6) Que los modelos de aprendizaje profundo predigan mejor que el gradient boosting, o que algún modelo bata a la inercia en el volumen trimestral de compraventas del último año: no lo hacen.
 - El resultado de bajar impuestos a la compra o a la construcción, de la seguridad jurídica frente a la ocupación ilegal o de limitar compras de no residentes: no hay diseño ni datos.
 
-## Qué añade la versión de referencia v7.2 (atlas regional) [C4]
+## Qué añade la versión interna v7.2 (atlas regional) [C4]
 
 - **Domina el componente común.** La variación interanual del precio de cada comunidad acompaña en gran medida a la media de las 17: el R² mediano es 93,6 % en compra y 86,1 % en alquiler. Es una descripción, no un modelo.
 - **No hay un largo plazo regional confirmado.** Se confirman 0 de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en 8 de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
@@ -79,7 +79,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
   - Robustez en la rejilla simulada (C4; no es robustez estadística): la movilización de vacías es robusta en 17 de 17 comunidades en alquiler; las ayudas a la demanda, en 0.
 - Detalle por comunidad: atlas regional (atlas_regional/). Método: [nota metodológica](nota_metodologica.md). Afirmaciones evaluadas: verificador V7.
 
-## Qué añade la versión de referencia v8 (por qué ha subido) [C4]
+## Qué añade la versión interna V8 (por qué ha subido) [C4]
 
 V8 pregunta cuánto pesa cada factor en el precio real de compra y en el alquiler real en cada periodo de 1995 a 2026, y qué parte es común a todas las comunidades y a la zona euro. Las reglas se fijaron antes de estimar. Detalle: [¿Por qué ha subido el precio de la vivienda?](../v8/por_que_ha_subido.md) (lectura no técnica) e [informe econométrico](../v8/informe_econometrico.md). Verificador de afirmaciones vigente: [verificador V8](../v8/verificador_v8.md).
 
@@ -113,7 +113,7 @@ Análisis descriptivo y contable; nada de lo que sigue es causal (`publicacion/a
 
 ## Qué cambió entre versiones y por qué
 
-Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v8).
+Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión pública 1.0).
 
 ## Problema y opciones con signo estable
 

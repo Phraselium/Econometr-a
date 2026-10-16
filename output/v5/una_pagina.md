@@ -1,4 +1,4 @@
-# Vivienda en España en una página (versión de referencia v8)
+# Vivienda en España en una página (versión pública 1.0)
 
 **Borja Romero, economista.** Solo hechos con al menos dos fuentes [C1] o cotas con supuestos explícitos [C2]. Cada cifra lleva periodo, fuente, fecha del dato y capa.
 
@@ -11,12 +11,12 @@
 7. [C2] **La próxima década.** Crecimiento de hogares proyectado por el INE: 1.720.537 hogares (1.308.531-1.772.410 hogares) (2026-2035; INE Proyección de Hogares (tabla 54562); dato de 2026; C2).
 8. [C1] **La mayoría de los hogares es propietaria.** Hogares con vivienda principal en propiedad: 74,5 % de hogares (72,1-75,9 % de hogares) (2021-2022; BdE EFF; INE ECV; INE Censo 2021; dato de 2021-11 (Censo) / 2022 (EFF, ECV); C1).
 
-**Qué añade la versión de referencia v7.2 [C4].** Los cambios entre versiones, y por qué, están en una sección única: [Qué cambió entre versiones y por qué](que_cambio.md).
+**Qué añade la versión interna v7.2 [C4].** Los cambios entre versiones, y por qué, están en una sección única: [Qué cambió entre versiones y por qué](que_cambio.md).
 - Los precios de las comunidades se mueven sobre todo juntos: la variación de cada una acompaña en gran medida a la media de las 17 (R² mediano de 93,6 % en compra).
 - No se confirma ninguna relación regional de largo plazo con el empleo, la población, las hipotecas o el paro (0 de siete hipótesis).
 - En una simulación condicional, las ayudas a la demanda reducen el precio neto de quien las recibe, pero el precio de mercado sube (4,4 % a diez años; el signo lo fija en gran parte la fórmula de incidencia). Su dosis y su coste en compra están declarados. En los instrumentos de cantidad (construcción, vacías, vivienda pública, turísticos) el coste no es estimable.
 
-**Qué añade la versión de referencia v8: por qué ha subido [C4].** Detalle en [¿Por qué ha subido el precio de la vivienda?](../v8/por_que_ha_subido.md); afirmaciones evaluadas: [verificador V8](../v8/verificador_v8.md).
+**Qué añade la versión interna V8: por qué ha subido [C4].** Detalle en [¿Por qué ha subido el precio de la vivienda?](../v8/por_que_ha_subido.md); afirmaciones evaluadas: [verificador V8](../v8/verificador_v8.md).
 - Ningún factor puede designarse como el más relevante en ninguno de los diez casos (mercado por periodo): el máximo de métodos coincidentes es 2,0 de cuatro y la regla exige tres.
 - El precio real de compra ha subido 18,4 pp desde mediados de 2022; 9,5 pp de los 18,4 pp quedan sin atribuir a los shocks identificados (banda del 68 %: -14,6 a 24,1 pp) [C3s, condicionado a las restricciones de signo y de cero]. <!-- check:cifra-libre (umbral pre-registrado) -->
 - El alquiler real (-1,8 pp) mide el parque de contratos vivos; los contratos nuevos [C1] suben más: Cataluña 16,9 % (16,6-17,2 %) (2021-2024; INE IPVA (AEAT); Incasòl; dato de 2024; C1); Comunitat Valenciana 28,5 % (26,1-30,8 %) (2021-2024; INE IPVA (AEAT); GVA fianzas; dato de 2024; C1).

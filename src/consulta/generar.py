@@ -19,6 +19,7 @@ import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
+PROYECTO = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))   # V13: versión pública, repositorio, web y DOI (única fuente)
 CAB_MD = "<!-- Generado por `make consulta` (src/consulta/generar.py). No editar a mano: se regenera y un test lo comprueba. -->\n\n"
 CAPAS_VALIDAS = ("C1", "C2", "C3", "C3s", "C4")
 ORDEN_VERSION = ["v4", "v5", "v5.1", "v6", "v6.1", "v6.2", "v6.3", "v7", "v7.1", "v7.2", "V8"]
@@ -551,7 +552,7 @@ MAPA: list[tuple[str, str]] = [
     ("Errores corregidos tras publicar", "ERRATA.md"),
     ("Cómo citar y licencias", "CITATION.cff"),
     ("Referencias bibliográficas y estado de verificación", "docs/literatura.md"),
-    ("Pendientes del autor (DOI, etiquetas, revisión humana)", "docs/v8/tareas_autor.md"),
+    ("Pendientes del autor (DOI, etiquetas, revisión humana)", "docs/v13/tareas_autor.md"),
     ("Cualquier cifra concreta (id, valor, capa, fecha)", "output/v5/cifras_clave.csv"),
     ("Quién soporta el coste y dónde (atlas)", "publicacion/atlas_descriptivo.md"),
     ("La base de datos única", "docs/v10/diccionario_base.md"),
@@ -573,10 +574,12 @@ Estás ante una base de evidencia sobre la vivienda en España. Autor: Borja Rom
 
 ## 1. Versión vigente
 
-- Versión de consulta: **{version['version']}** (sin estimaciones nuevas respecto a V8; solo redacción, tablas, capa de consulta y publicación). Metadatos en [version.json](version.json).
-- **V8** es la referencia de modelización: por qué ha subido la vivienda, factores, periodos y factor común (SVAR, factor común, instrumentos, multiverso, predicción).
+- Versión pública: **{version['version']}** ({version['fecha_version']}). Reúne las versiones internas de desarrollo v1 a V12 (correspondencia en CHANGELOG.md). Metadatos en [version.json](version.json). Para cada tema vale una versión interna:
+- **V8** (redacción y tablas de v8.1) para la modelización: por qué ha subido la vivienda, factores, periodos y factor común (SVAR, factor común, instrumentos, multiverso, predicción).
+- **V9** para qué causa qué: diseños pre-registrados; ninguno alcanza C3 ni C3s.
 - **V10** (sin modelos nuevos): base única, atlas descriptivo (ids `V10-ATL-*`), figuras, web y monitor; los datos desde 2026T3 no se contrastan con predicciones.
-- **v7.1 y v7.2** son la referencia para el **déficit y la necesidad de vivienda**, las simulaciones de instrumentos (dosis y coste) y el atlas regional. v5 a v6.3 siguen vigentes en lo que no han sido superadas.
+- **V12** (descriptivo, datos de V11): demografía, hogares, titularidad, oferta, condiciones por origen y turismo (ids `V12-*`).
+- **v7.1 y v7.2** para el **déficit y la necesidad de vivienda**, las simulaciones de instrumentos (dosis y coste) y el atlas regional. v5 a v6.3 siguen vigentes en lo que no han sido superadas.
 - Repositorio: {version['repositorio']}. DOI: {version['doi']}. Fecha verificable del pre-registro: {version['fecha_verificable']} (también en [version.json](version.json)).
 - Una cifra **superada** no se cita nunca: las lista [output/v5/cifras_superadas.csv](../output/v5/cifras_superadas.csv) con su sustituta. El registro completo está en [hallazgos.md](hallazgos.md) y [hallazgos.json](hallazgos.json) (campo `estado`: vigente, superada o retirada).
 
@@ -740,26 +743,28 @@ def _git(*args: str) -> str:
         return ""
 
 
-REPOSITORIO = "https://github.com/Phraselium/vivienda-espana-evidencia"   # V8.1: nombre nuevo (antes Phraselium/Econometr-a; GitHub redirige el antiguo)
+REPOSITORIO = PROYECTO["repositorio"]   # V13: desde proyecto.json
 
 
 def construir_version(cifras: dict[str, dict]) -> dict:
     notas = (RAIZ / "docs/v8/notas_release.md").read_text(encoding="utf-8")
     m = re.search(r"^fecha_verificable:\s*(\S+)", notas, re.M)
     d = re.search(r"^doi:\s*(\S+)", notas, re.M)
-    tareas = (RAIZ / "docs/v8/tareas_autor.md").read_text(encoding="utf-8")
+    tareas = (RAIZ / "docs/v13/tareas_autor.md").read_text(encoding="utf-8")
     pend = [re.sub(r"^\d+\.\s*", "", t.lstrip("# ").strip()) for t in tareas.splitlines() if t.startswith("## ")]
     sha = hashlib.sha256((RAIZ / "output/v5/cifras_clave.csv").read_bytes()).hexdigest()
-    return {"_generado": "Generado por `make consulta` (src/consulta/generar.py). No editar a mano.", "version": "8.1",
+    return {"_generado": "Generado por `make consulta` (src/consulta/generar.py). No editar a mano.", "version": PROYECTO["version_publica"],
+            "fecha_version": PROYECTO["fecha_version"],
+            "versiones_internas_vigentes": {k: v["version_interna"] for k, v in PROYECTO["vigentes"].items()},
             "referencia_modelizacion": "V8", "referencia_deficit_y_necesidad": "v7.1 con correcciones de v7.2",
             "commit": _git("log", "-1", "--format=%h", "--", "output") or "desconocido",
             "commit_nota": "commit del último cambio de contenido de output/ (git log -1 --format=%h -- output), no HEAD: HEAD cambia con cada commit y rompería la comparación con lo versionado",
-            "fecha": _git("log", "-1", "--format=%cs", "--", "output") or "desconocido", "doi": d.group(1) if d else "pendiente",
+            "fecha": _git("log", "-1", "--format=%cs", "--", "output") or "desconocido", "doi": PROYECTO["doi"], "doi_preregistro_v8": d.group(1) if d else "pendiente",
             "repositorio": REPOSITORIO,
             "fecha_verificable": m.group(1) if m else "desconocido", "pendientes": pend, "n_cifras_clave": len(cifras), "sha256_cifras_clave": sha,
             "autor": "Borja Romero, economista (firma individual, independiente)",
             "difusion": "V10: base única, atlas descriptivo, figuras, web y monitor (sin modelos nuevos)",
-            "web_prevista": "https://phraselium.github.io/vivienda-espana-evidencia/"}
+            "web_prevista": PROYECTO["web"]}
 
 
 def construir_llms() -> str:
@@ -767,7 +772,7 @@ def construir_llms() -> str:
         assert (RAIZ / r).exists() or r.startswith("consulta/"), r
     return """# Vivienda en España: base de evidencia reproducible
 
-> Base de evidencia sobre precios, alquileres, déficit y necesidad de vivienda en España, con un análisis de por qué ha subido (V8: factores, periodos y factor común). Cada resultado lleva una capa de evidencia (C1, C2, C3, C3s, C4); la causalidad solo se admite en C3 y C3s. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas. Autor: Borja Romero, economista (firma individual, independiente). Versión de consulta 8.1. Repositorio: https://github.com/Phraselium/vivienda-espana-evidencia.
+> Base de evidencia sobre precios, alquileres, déficit y necesidad de vivienda en España, con un análisis de por qué ha subido (V8: factores, periodos y factor común). Cada resultado lleva una capa de evidencia (C1, C2, C3, C3s, C4); la causalidad solo se admite en C3 y C3s. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas. Autor: Borja Romero, economista (firma individual, independiente). Versión pública {VP} ({FV}; versiones internas v1-V12, correspondencia en CHANGELOG.md). Repositorio: {REPO}.
 
 Generado por `make consulta`; no editar a mano. Empieza por la guía para asistentes y cita solo cifras de cifras_clave con su id y su fecha.
 
@@ -806,7 +811,7 @@ Generado por `make consulta`; no editar a mano. Empieza por la guía para asiste
 - [Errata](ERRATA.md)
 - [Cómo citar](CITATION.cff)
 - [Mapa del repositorio](docs/MAPA.md)
-"""
+""".replace("{VP}", PROYECTO["version_publica"]).replace("{FV}", PROYECTO["fecha_version"]).replace("{REPO}", REPOSITORIO)
 
 
 # ---------------------------------------------------------------- orquestación
@@ -815,7 +820,7 @@ def generar() -> dict[str, str]:
     cifras, superadas = cargar_cifras(), cargar_superadas()
     version = construir_version(cifras)
     H = construir_hallazgos(cifras, superadas)
-    hj = {"_generado": "Generado por `make consulta` (src/consulta/generar.py). No editar a mano.", "version": "8.1",
+    hj = {"_generado": "Generado por `make consulta` (src/consulta/generar.py). No editar a mano.", "version": PROYECTO["version_publica"],
           "estados": ["vigente", "superada", "retirada"], "capas": list(CAPAS_VALIDAS), "n": len(H), "hallazgos": H}
     return {
         "consulta/LEEME_ASISTENTE.md": leeme_md(cifras, version),

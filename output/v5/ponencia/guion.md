@@ -29,7 +29,7 @@ Regla del ponente: cada cifra se dice con su periodo y su capa; los veredictos s
 - Las ayudas generales a la demanda podrían trasladarse al precio en una parte que depende de la elasticidad de la oferta : clase `1`: 27,8-81,8 %; clase `2`: 88,1-100,0 %; clase `3`: 50,1-89,8 % [C4]; el extremo bajo corresponde a la literatura con oferta elástica y el alto a la de oferta rígida.
 - La política por territorio (D2): la construcción adicional planificada cubriría en torno a 29,7 % de la necesidad [C4]; donde construir no es rentable, el instrumento sería distinto del que serviría donde hay freno de suelo.
 
-- Versión de referencia v7.1 (atlas regional) [C4]: los precios de las comunidades se mueven sobre todo juntos y no se confirma ningún largo plazo regional (0 de siete hipótesis). En la simulación, las ayudas a la demanda bajan el precio neto del beneficiario y suben el de mercado (4,4 %); el signo lo da la fórmula, lo informativo es la magnitud relativa. Los cambios entre versiones están en una sección única ([que_cambio](../que_cambio.md)).
+- Versión interna v7.1 (atlas regional) [C4]: los precios de las comunidades se mueven sobre todo juntos y no se confirma ningún largo plazo regional (0 de siete hipótesis). En la simulación, las ayudas a la demanda bajan el precio neto del beneficiario y suben el de mercado (4,4 %); el signo lo da la fórmula, lo informativo es la magnitud relativa. Los cambios entre versiones están en una sección única ([que_cambio](../que_cambio.md)).
 
 ## Bloque 5 · Cierre (19:00-20:00; diapositiva 15) <!-- check:cifra-libre -->
 - Lo que no se puede afirmar. Dónde están los datos y el código. Preguntas.

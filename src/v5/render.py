@@ -3,7 +3,8 @@
 Marcadores:
 - {{id}}: el valor con su unidad y, si existe, el rango [min-max];
 - {{id:campo}}: un campo concreto (valor, min, max, periodo, cobertura, fuentes, capa, fecha_dato, rango);
-- {{id:cita}}: «valor (periodo; fuentes; fecha; capa)».
+- {{id:cita}}: «valor (periodo; fuentes; fecha; capa)»;
+- {{proyecto.<campo>}}: un campo de proyecto.json (V13: versión pública, repositorio, web, DOI; única fuente).
 Un marcador sin resolver es un error. Determinista y sin red.
 """
 from __future__ import annotations
@@ -12,11 +13,14 @@ import re
 import sys
 from pathlib import Path
 
+import json
+
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 PLANT = ROOT / "docs" / "v5" / "plantillas"
 OUT = ROOT / "output" / "v5"
+PROYECTO = json.loads((ROOT / "proyecto.json").read_text(encoding="utf-8"))
 MARC = re.compile(r"\{\{([A-Za-z0-9_.\-]+)(?::([a-z_]+))?\}\}")
 
 
@@ -79,6 +83,12 @@ def render(src: Path, ck: pd.DataFrame) -> tuple[str, list[str]]:
 
     def sub(m: re.Match) -> str:
         i, campo = m.group(1), m.group(2)
+        if i.startswith("proyecto.") and campo is None:
+            v = PROYECTO.get(i.split(".", 1)[1])
+            if isinstance(v, str):
+                return v
+            falta.append(i)
+            return m.group(0)
         if i not in ck.index:
             falta.append(i)
             return m.group(0)

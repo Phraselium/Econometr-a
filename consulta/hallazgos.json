@@ -1,6 +1,6 @@
 {
  "_generado": "Generado por `make consulta` (src/consulta/generar.py). No editar a mano.",
- "version": "8.1",
+ "version": "1.0",
  "estados": [
   "vigente",
   "superada",

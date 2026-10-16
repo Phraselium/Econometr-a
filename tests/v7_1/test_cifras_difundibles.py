@@ -24,7 +24,10 @@ def test_plantillas_solo_marcadores():
     assert check_v5.plantillas() == []
     ids = set(pd.read_csv(RAIZ / "output" / "v5" / "cifras_clave.csv").id)
     usados = {m for p in (RAIZ / "docs" / "v5" / "plantillas").rglob("*.md") for m in MARC.findall(p.read_text(encoding="utf-8"))}
-    assert usados <= ids, sorted(usados - ids)[:10]
+    proyecto = {m for m in usados if m.startswith("proyecto.")}   # V13: metadatos de proyecto.json, no cifras
+    campos = set(__import__("json").loads((RAIZ / "proyecto.json").read_text(encoding="utf-8")))
+    assert {m.split(".", 1)[1] for m in proyecto} <= campos, sorted(proyecto)
+    assert usados - proyecto <= ids, sorted(usados - proyecto - ids)[:10]
 
 
 def test_tabla_unica_vigente():

@@ -1,17 +1,17 @@
 cff-version: 1.2.0
 message: "Si usa este trabajo, cítelo así."
-title: "Vivienda en España: base de evidencia reproducible (v8.1)"
+title: "Vivienda en España: base de evidencia reproducible (1.0)"
 type: software
 authors:
   - family-names: Romero
     given-names: Borja
     affiliation: "Economista independiente"
-version: "8.1"
-date-released: "2026-10-14"
+version: "1.0"
+date-released: "2026-10-16"
 repository-code: "https://github.com/Phraselium/vivienda-espana-evidencia"
 url: "https://github.com/Phraselium/vivienda-espana-evidencia"
 license:
   - MIT
   - CC-BY-4.0
-keywords: [vivienda, España, precios, alquiler, déficit de vivienda, econometría, reproducibilidad]
-abstract: "Base de evidencia independiente y reproducible sobre la vivienda en España por provincias, con un módulo para València. Cubre el déficit y la necesidad de vivienda 2026-2035, las diferencias territoriales, los precios y el alquiler triangulados, la comparación europea, una matriz de instrumentos de política y un verificador de afirmaciones. Desde V8 incluye una atribución por factores y periodos de la subida del precio de compra y del alquiler, y su factor común con la zona euro. Cada resultado se clasifica en capas de evidencia (C1, C2, C3, C3s y C4)."
+keywords: [vivienda, España, precios de la vivienda, alquiler, déficit de vivienda, econometría, reproducibilidad]
+abstract: "Base de evidencia independiente y reproducible sobre la vivienda en España por provincias, con un módulo para València. Cubre el déficit y la necesidad de vivienda 2026-2035, las diferencias territoriales, los precios y el alquiler triangulados, la comparación europea, una matriz de instrumentos de política y un verificador de afirmaciones. Incluye una atribución por factores y periodos de la subida del precio de compra y del alquiler (V8), diseños de identificación pre-registrados (V9), una base de datos única con atlas descriptivo y web (V10) y una contabilidad demográfica, de hogares, titularidad y oferta (V12). Cada resultado se clasifica en capas de evidencia (C1, C2, C3, C3s y C4)."

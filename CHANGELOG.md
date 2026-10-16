@@ -2,6 +2,53 @@
 
 Formato: versión, fecha y cambios principales. Las correcciones de resultados ya publicados van en ERRATA.md.
 
+## 1.0 (2026-10-16): primera versión pública
+
+La versión pública **1.0** reúne todo lo hecho en las versiones internas de desarrollo v1 a V12. La consolidación que la prepara (V13) no añade análisis: no estima ningún modelo, no abre ninguna muestra sellada y no cambia ninguna cifra de cifras_clave (src/v13/check_v13.py). La versión pública, la URL del repositorio, la web y el DOI se configuran en un único sitio, proyecto.json.
+
+**Correspondencia entre versiones internas y versión pública.**
+
+| Versión interna | Fecha | Etiqueta local (commit) | Tema | Estado en la 1.0 |
+|---|---|---|---|---|
+| v1 | 2026-10 | — | Primer modelo nacional (f2-f7) | superada (histórico) |
+| v2 | 2026-10-10 | prereg-v2 (f59574a) | Ramas econométricas y muestra sellada | superada (histórico) |
+| v3 | 2026-10-10 | prereg-v3 (204c073) | Capas de evidencia C1-C4 | superada; las capas siguen vigentes |
+| v4 | 2026-10-10 | — | Modelos M0-M7 | superada (histórico) |
+| v5.0 | 2026-10-10 | v5.0 (434c75f), prereg-v5 (1e057cd) | Entregables, cifras_clave, verificador | vigente en lo no superado (plantillas y cifras_clave) |
+| v5.1 | 2026-10-11 | v5.1 (02364d3) | Necesidad de vivienda con bajas del parque | vigente en lo no superado |
+| v6.0 | 2026-10-11 | v6.0 (57f3478), prereg-v6 (278cc9e) | Validación sellada nueva y aprendizaje automático | vigente en lo no superado |
+| v6.1 | 2026-10-11 | v6.1 (7a63f9f) | Líneas base exigentes, ERRATA | vigente en lo no superado |
+| v6.2 | 2026-10-12 | v6.2 (462ebf1) | Anexo metodológico, déficit como cota | histórica; el anexo sigue vigente |
+| v6.3 | 2026-10-12 | — (dentro de V7) | Correcciones de v6.2 | vigente en lo no superado |
+| v7.0 | 2026-10-12 | v7.0 (3d1170c), prereg-v7 (3fad305) | Atlas econométrico regional | vigente (la amplía v7.1) |
+| v7.1 | 2026-10-12 | v7.1 (7415932) | Dosis y coste, publicacion/ | **vigente: déficit y necesidad, instrumentos, atlas regional** |
+| v7.2 | 2026-10-13 | v7.2 (e7bf435) | Correcciones previas a la release | **vigente (con v7.1)** |
+| V8 (v8.0) | 2026-10-13 | v8.0 (5c68973), prereg-v8 (91e618b) | Por qué ha subido: factores, periodos y factor común | **vigente: por qué ha subido** |
+| v8.1 | 2026-10-13 | — | Coherencia de redacción, capa de consulta, datos de terceros retirados | vigente (con V8) |
+| V9 | 2026-10-15 | prereg-v9 (2977349), prereg-v9-a1 (9cb2200), prereg-v9-a1b (4639772) | Qué causa qué: diseños pre-registrados | **vigente: qué causa qué** |
+| V10 | 2026-10-14 | — | Base única, atlas descriptivo, figuras, web y monitor | **vigente: atlas descriptivo, base y web** |
+| V11 | 2026-10-15 | — | Datos de migración, población, oferta, empleo y turismo (sin análisis) | vigente (datos de la base) |
+| V12 | 2026-10-15 | — | Demografía, hogares, titularidad, oferta, condiciones por origen y turismo (descriptivo) | **vigente: demografía y titularidad** |
+| V13 | 2026-10-16 | — | Consolidación para la versión pública (sin análisis) | da lugar a la 1.0 |
+
+Las etiquetas son locales salvo que se indique lo contrario (docs/v13/tareas_autor.md). Fechas: las del commit de cierre de cada versión.
+
+**Cambios de V13.**
+- Coherencia de las puertas de entrada (docs/v13/coherencia.md): README, LEEME_PRIMERO, CLAUDE.md, consulta/, llms.txt, CITATION.cff y .zenodo.json declaran la versión pública 1.0; en los entregables, las versiones de cada tema pasan a llamarse «versión interna».
+- URL del repositorio en proyecto.json; las plantillas la leen con `{{proyecto.repositorio}}`; CITATION.cff y .zenodo.json se generan con `make metadatos`.
+- Control nuevo en `make check` (src/v13/check_v13.py): versión vigente única, URL única y cifras_clave sin cambios.
+- Depósito: docs/v13/datos_deposito.md y `make paquete_zenodo`; `make datos_terceros` ya no reescribe ficheros versionados.
+- Una página reescrita para un lector no técnico (mismas cifras e ids).
+
+## V12 (2026-10-15): población, hogares, titularidad y oferta (descriptivo)
+
+- Contabilidad demográfica por municipio, provincia, CCAA y España 2003-2024; flujos origen-destino de las capitales; jefatura de hogar 2011-2021; obra nueva neta del Catastro frente al MIVAU; cuotas de titularidad 2024-2026; condiciones de vivienda por origen (ECV y Censo 2021); vivienda turística en la Comunitat Valenciana y Barcelona.
+- 54 cifras `V12-` en cifras_clave (C4); ninguna cifra publicada cambia. Ficha V12-V02 del verificador. Detalle: docs/v12/estado.md y docs/v12/decisiones.md.
+
+## V11 (2026-10-15): datos de migración, población, oferta, empleo y turismo (sin análisis)
+
+- Fuentes nuevas en data/raw/v11 (EVR, EMCR, MNP, ECP, Eurostat asilo y protección temporal, Catastro, AEAT, IPVA, afiliación, turismo con móviles, padrón de València por barrio) y su incorporación a la base. Cobertura y fuentes fallidas en docs/v11/.
+
 
 ## V9 (2026-10-15): qué causa qué — datos completos, diseños de identificación pre-registrados e integración en la web
 

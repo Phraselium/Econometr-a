@@ -1,11 +1,11 @@
-# Vivienda España — V8.1 coherencia, consulta y publicación de V8 (por qué ha subido). V1-V8 cerradas; v8 referencia (v7.2 anterior); trabajo en docs/v8_1, src/v8, output/v8
+# Vivienda España — versión pública 1.0 (16-10-2026). v1-V12 son versiones internas cerradas (correspondencia en CHANGELOG.md); vigentes por tema: déficit y necesidad v7.1+v7.2, por qué ha subido V8, qué causa qué V9, atlas/base/web V10, demografía y titularidad V12. Trabajo actual: V13 consolidación (docs/v13, src/v13)
 
 - Idioma: español. `make all` reproducible SIN red; SEED=20261010 en todo lo aleatorio.
-- Al empezar: leer docs/v8/estado.md, docs/v8/plan.md, docs/v8/decisiones.md, docs/v7_1/decisiones.md y docs/estado_proyecto/informe_estado.md (inventario v1-v6.2).
+- Al empezar: leer docs/v13/estado.md, docs/v13/decisiones.md, docs/v13/tareas_autor.md, docs/v12/estado.md, docs/v8/decisiones.md, docs/v7_1/decisiones.md y docs/estado_proyecto/informe_estado.md (inventario v1-v6.2).
 - Capas v3: C1 HECHOS (≥2 fuentes) · C2 COTAS (Manski, supuestos explícitos) · C3 EFECTOS (pretendencias, placebos, sensibilidad, sellado) · C4 EXPLORATORIO. Nunca promover de capa.
 - Neutralidad: veredicto sobre la afirmación, nunca sobre quién la dice; se evalúan afirmaciones e instrumentos, nunca partidos ni personas; sin lenguaje valorativo ni partidista. `make check` en cada puerta.
-- Tras cada tarea: actualizar docs/v8/estado.md (hecho / siguiente / tokens de subagentes).
-- Decisiones → docs/v8/decisiones.md; bloqueos reales → docs/v8/bloqueos.md; fuentes inaccesibles → docs/v6/fuentes_fallidas.md (endpoint, edición y fecha verificados).
+- Tras cada tarea: actualizar el estado.md de la versión en curso (hoy docs/v13/estado.md: hecho / siguiente / tokens de subagentes).
+- Decisiones → docs/v13/decisiones.md (la versión en curso); bloqueos reales → docs/v13/bloqueos.md; fuentes inaccesibles → docs/v6/fuentes_fallidas.md (endpoint, edición y fecha verificados).
 - Subagentes devuelven: rutas + resumen ≤200 palabras + output/v6/<módulo>/resultado.json. Nunca datos crudos.
 - resultado.json: {rama, pregunta, capa, datos, N, metodo, estimacion, ic95, p_ajustado, nivel_evidencia, diagnosticos, fuera_muestra{modelo, rmse, dm_vs_ar4}, notas}.
 - data/raw: solo lectura. data/sealed: SOLO vía src/holdout.py (registra cada acceso; una evaluación por hipótesis confirmatoria).
@@ -27,3 +27,6 @@
 - V7.1: sin análisis nuevo; publicacion/ solo se genera con `make publicacion` (nunca a mano); toda cifra difundible sale de cifras_clave y de una versión vigente.
 
 - V8: capas C1, C2, C3 (instrumento externo o diseño que supera pruebas), C3s (restricciones de signo explícitas), C4; causalidad solo en C3/C3s; ningún modelo elegido por p-valor; atribuciones siempre con bandas; multiverso ≤50.000; fuera de alcance: programas electorales y divulgación.
+- V9: diseños pre-registrados con etiqueta `prereg-*` antes de estimar; datos posteriores al pre-registro marcados `posterior_prereg`.
+- V10-V12: la capa pública de la base (data/base/publica) solo lleva datos redistribuibles y pesa < 50 MB; `make check` deja git sin cambios (nada se escribe en el repositorio durante el check).
+- V13: la versión pública, la fecha, la URL del repositorio, la web y el DOI viven SOLO en proyecto.json (CITATION.cff y .zenodo.json se generan con `make metadatos`); `make check` falla si una puerta de entrada declara otra versión vigente u otra URL del repositorio; ninguna cifra de cifras_clave cambia sin entrada en ERRATA.md.

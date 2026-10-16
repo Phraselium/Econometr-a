@@ -1,4 +1,4 @@
-# Vivienda en España: necesidad, datos y opciones con la misma vara (policy brief, versión de referencia v7.2)
+# Vivienda en España: necesidad, datos y opciones con la misma vara (policy brief, versión pública 1.0; déficit y necesidad: versión interna v7.2)
 
 **Borja Romero, economista** (firma individual, independiente). Octubre de 2026. Cada afirmación lleva su capa: [C1] hecho con al menos dos fuentes independientes; [C2] cota con supuestos explícitos; [C4] exploratorio o de fuente única. Ningún resultado alcanza la capa de identificación causal, de modo que el texto describe asociaciones y cotas, no relaciones de causa.
 
@@ -49,7 +49,7 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 
 [C4] Con datos públicos por provincia, municipio y distrito, los modelos de árboles predicen el alquiler de stock (SERPAVI) y el precio de compra (valor tasado) en provincias que no vieron mejor que la simple inercia (y que la línea base más exigente en el alquiler de stock; en el precio anual, de forma frágil): en el alquiler provincial, 1,6 % de error frente a 4,2 %. Pero predecir no es explicar: ninguna variable es «relevante con seguridad», ninguna hipótesis confirmatoria pasa la corrección de Holm y, en el volumen trimestral de compraventas del último año, nada bate a la inercia. La población se asocia con los dos mercados y el PIB por habitante solo con la compra. Precio y alquiler se mueven juntos sin señales de exuberancia en ninguna de las 11 CCAA contrastadas. Para decidir, estos resultados orientan dónde mirar, no qué instrumento funciona.
 
-## Qué añade la versión de referencia v7.2 (atlas regional) [C4]
+## Qué añade la versión interna v7.2 (atlas regional) [C4]
 
 - **Domina el componente común.** La variación interanual del precio de cada comunidad acompaña en gran medida a la media de las 17: el R² mediano es 93,6 % en compra y 86,1 % en alquiler. Es una descripción, no un modelo.
 - **No hay un largo plazo regional confirmado.** Se confirman 0 de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en 8 de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
@@ -63,7 +63,7 @@ La matriz D1 aplica la misma rúbrica (evidencia, signo, plazo, coste, riesgos, 
 
 ## Qué cambió entre versiones y por qué
 
-Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.2).
+Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión interna v7.2).
 
 ## Qué falta para decidir mejor
 

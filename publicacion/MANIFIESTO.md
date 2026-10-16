@@ -4,7 +4,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 
 | Fichero | Fuente | sha256 |
 |---|---|---|
-| articulo_colegio.md | output/v5/articulo_colegio.md | `eaf609ab92c8925c259f8a76ff9554a8c40782d4c7c440d899995910bbce281a` |
+| articulo_colegio.md | output/v5/articulo_colegio.md | `8ae3785d699e9f1e58b56b12257ea6a1701ff323ad32d4c94aaa8c7aa056de43` |
 | atlas_descriptivo.md | output/v10/atlas_descriptivo.md | `ecc3efb09cdda4956054f9832d3a9dc29b1ce844020c0eb9983d64dc6493de85` |
 | atlas_regional/01_Andalucia.md | output/v7_1/atlas/01_Andalucia.md | `38fd89bd7c7f081bee4821cbebc394346eeb343c20df17cb46e78aff25ef69a4` |
 | atlas_regional/02_Aragon.md | output/v7_1/atlas/02_Aragon.md | `b7d1fb6fe99fb9677945e484560b7fe6383b37c800472bfd6275be347ce94510` |
@@ -32,15 +32,15 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | cotas_v9.md | output/v9/f4/cotas.md | `896fa98d33b01c934c5e7543d3453d01120d628c3512cbb3056c2c087aed0940` |
 | dosis_coste.csv | output/v7_1/S1/dosis_coste.csv | `6e7c2b8fa8ada5992399be00de87309a274ccc607a7aba04c88f3f0590c6f822` |
 | informe_econometrico_v8.md | output/v8/informe_econometrico.md | `689599422d9eff15d6a4b2b567808ccfe75b8ba65c65fa85307e94dc72f5a8ee` |
-| informe_tecnico.md | output/v5/informe_tecnico.md | `62a2978a8338904a0bdf1f3e46fa066038e6a5314af319a2f61c6a2b75beef15` |
+| informe_tecnico.md | output/v5/informe_tecnico.md | `3f72892ddcb0c84740a2cd1f4e0dfd7edb34ee6cc0cbb4a0db1a610677a3ef7e` |
 | informe_v9.md | output/v9/informe_v9.md | `606a6693e12d7f765ad271805cf17edac6ccfd20814aba8b2c0923fffd6e92e7` |
-| lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `e03f93d8060edafa9880db6e7ce5e7499e7d210df80b9fb694f6e98e39bc3620` |
+| lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `7628f5b379021670e800f19b28f57d44ef2a2cac78db1e108e58ddee2ba10864` |
 | nota_metodologica.md | output/v5/nota_metodologica.md | `42a718ba6ef57a976b84c757885d65fccef9295f58838854bff2794ad084a9b4` |
-| policy_brief.md | output/v5/policy_brief.md | `5ccb8276df6576967fc9e121a7a2b20fc8a6937f45b52066a3bcbdb2f1d0f762` |
-| ponencia/diapositivas.md | output/v5/ponencia/diapositivas.md | `59b79f616e34f23c4b58688b85b0e5ca8839ef11afbadce8cb58feda3c355f65` |
-| ponencia/guion.md | output/v5/ponencia/guion.md | `e7340de67107954fdaea292a5821ca2af43572a5330f687247b513df99413d35` |
+| policy_brief.md | output/v5/policy_brief.md | `5d8739882f230809cee37cc306e7f25d27fc77ccff2ffb2a22c58db6c129aead` |
+| ponencia/diapositivas.md | output/v5/ponencia/diapositivas.md | `7f3ae9ef05aaa8b56f4ede8d72206ce09d7a72a90d46283707423238f825db1a` |
+| ponencia/guion.md | output/v5/ponencia/guion.md | `d67524b7a651ee557c7feda5a49d373226218bfb75d0f784318e266b93b60698` |
 | por_que_ha_subido.md | output/v8/por_que_ha_subido.md | `2d954d78049ad32499976d8cb3c2e04e0af6330067a6935ab03239185c6aadf0` |
-| que_cambio.md | output/v5/que_cambio.md | `b5b4ce8021db9bedf378195704d031c6f123e386e96273e869ad965a91e97091` |
+| que_cambio.md | output/v5/que_cambio.md | `2ad0fb191c4c3fc10c7aca377ea1e6fda0519d8877fe2c86a99d3d8a0dfbdebb` |
 | tabla_v9.md | output/v9/f3/tabla_revista.md | `9985da6ff8ec983c9a49948f71cad46f88be56ec0c87482edfb9a3a8e1a17ffe` |
 | tablas_atlas.xlsx | output/v10/tablas_atlas.xlsx | `3967d28730861ee685e90d940acf1455cb2779197c05791072aa574dda1666d6` |
 | tablas_modelos_destacados.csv | output/v8/tablas_modelos_destacados.csv | `b70730be9a7924f4ea71426a2ef04a50287c82b8a45dfd802ea61b2480277495` |
@@ -48,7 +48,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | tablas_v12.xlsx | output/v12/tablas_v12.xlsx | `da3e41ffa49ac1810e932705a7c8b80c78a570a947e6fe8ca81249dbc48764e2` |
 | tablas_v8.xlsx | output/v8/tablas_v8.xlsx | `14840ac35aca7c0d924cdb62e1791c897a5bc4464c8d331d4361af2c1499ed78` |
 | tablas_v9.xlsx | output/v9/tablas_v9.xlsx | `bb61506b8a3c82233cba7fdf3be83696ca40e5c7da5559e346b83a9e93d3ccb3` |
-| una_pagina.md | output/v5/una_pagina.md | `5d697d2498e43bc8136918738279cf3b620e8fb5637dd91f13a26105551992c6` |
+| una_pagina.md | output/v5/una_pagina.md | `b9354f8f762f0e62a65bb720b0b394d6db35635e2b4d3b9c6668aaaa766cac53` |
 | verificador/fichas_v12.json | output/v12/b5/fichas_verificador_v12.json | `cc9578f802c3c755fc0f0067f17a623eec7247d976d525edbebb0d0003e0ac8f` |
 | verificador/fichas_v7_1.json | output/v7_1/fichas/fichas_verificador.json | `6651fcea7b3dfd7a668024b1a992b8b5bcb66edc977e0200d18617a9596778a7` |
 | verificador/fichas_v8.json | output/v8/fichas_verificador_v8.json | `f768bd7c97bf893d8127009d233da98a254221f51bf6ece6b9af9e2644c19df8` |
@@ -57,4 +57,4 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | verificador/verificador_v7_1.md | output/v7_1/verificador_v7_1.md | `1c554e0e8556ff4c80e4b0d6f05c70f20b6e027c7a175e5782058782666af9a0` |
 | verificador/verificador_v8.md | output/v8/verificador_v8.md | `4841def9efb91d0bddc0f9d0ddd9843e83dde6e886acaba207486dc8e07d95e4` |
 | verificador/verificador_v9.md | output/v9/verificador_v9.md | `604adae1ce1a1624f4b3cf3bb0bcfa1c71969d75b3b81afe6866292b2817130e` |
-| working_paper.md | output/v5/working_paper.md | `b3ce2701850156b652b8bbb782acdb03571fca30b5bcac15c15c96b4760d1573` |
+| working_paper.md | output/v5/working_paper.md | `2b98a6649af22b3d69cc2929031262680a4016bf3692a3c958a9de890dc3237d` |

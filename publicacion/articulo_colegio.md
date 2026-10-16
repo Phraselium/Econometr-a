@@ -82,7 +82,7 @@ Cada cifra de este artículo lleva su periodo, sus fuentes, la fecha del dato y 
 
 - Qué cambió entre versiones y por qué: [sección única](que_cambio.md). Nota metodológica sobre los paneles regionales: [nota](nota_metodologica.md).
 - Informe técnico: [output/v5/informe_tecnico.md](informe_tecnico.md) (DOI pendiente).
-- Repositorio con datos, código y verificador de afirmaciones: [github.com/Phraselium/vivienda-espana-evidencia](https://github.com/Phraselium/vivienda-espana-evidencia).
+- Repositorio con datos, código y verificador de afirmaciones: [https://github.com/Phraselium/vivienda-espana-evidencia](https://github.com/Phraselium/vivienda-espana-evidencia).
 - Verificador: [verificador](verificador/verificador.md). Evalúa afirmaciones, nunca a quien las formula.
 
 *Borja Romero, economista.*

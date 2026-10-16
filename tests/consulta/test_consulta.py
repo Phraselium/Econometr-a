@@ -77,7 +77,7 @@ def test_leeme_asistente_longitud_y_contenido():
     assert len(t.split()) <= 1500
     assert t.startswith("<!-- Generado por `make consulta`")
     assert len(re.findall(r"^- Si te preguntan por", t, re.M)) >= 20
-    for clave in ("8.1", "v7.1", "C3s", "neutralidad", "no concluyente", "parque", "contratos nuevos", "SHAP"):
+    for clave in ("versión pública", "8.1", "v7.1", "C3s", "neutralidad", "no concluyente", "parque", "contratos nuevos", "SHAP"):
         assert clave.lower() in t.lower(), clave
 
 
@@ -126,6 +126,8 @@ def test_version_json():
     v = json.loads((RAIZ / "consulta/version.json").read_text(encoding="utf-8"))
     notas = (RAIZ / "docs/v8/notas_release.md").read_text(encoding="utf-8")
     m = re.search(r"^doi:\s*(\S+)", notas, re.M)
-    assert v["version"] == "8.1" and v["doi"] == (m.group(1) if m else "pendiente")
-    assert v["repositorio"].endswith("/vivienda-espana-evidencia")
+    proyecto = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))   # V13: versión pública y DOI en proyecto.json
+    assert v["version"] == proyecto["version_publica"] and v["doi"] == proyecto["doi"]
+    assert v["doi_preregistro_v8"] == (m.group(1) if m else "pendiente")
+    assert v["repositorio"] == proyecto["repositorio"]
     assert {"commit", "fecha", "fecha_verificable", "pendientes"} <= set(v) and isinstance(v["pendientes"], list) and v["pendientes"]

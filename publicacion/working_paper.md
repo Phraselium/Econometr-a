@@ -2,13 +2,13 @@
 
 # Necesidad de vivienda, territorio y precios en España: hechos, cotas y exploración con datos públicos y una escala de evidencia
 
-*Borja Romero, economista (independiente). Documento de trabajo, versión de referencia `7.2`, 12 de octubre de 2026. DOI: pendiente.*
+*Borja Romero, economista (independiente). Documento de trabajo, versión interna `7.2` (12 de octubre de 2026), incluida en la versión pública 1.0. DOI: pendiente.*
 
 *Proyecto reproducible: `make all` sin red; todas las cifras proceden de `output/v5/cifras_clave.csv`.*
 
 ## Resumen
 
-Este trabajo mide la necesidad de vivienda en España y su distribución territorial con registros públicos y clasifica cada resultado en una escala de evidencia: hechos con dos fuentes independientes, cotas con supuestos explícitos y resultados exploratorios. Entre 2021 y 2024 los hogares crecieron más que las viviendas terminadas, en el rango 389.361-710.542 viviendas (sin las dos correcciones que conservan el salto de la EPA, 596.371-710.542 viviendas) según la corrección del salto de la EPA [C2]. El precio de compra subió 47,2 % en 2015-2025 según tres registros, frente a 79,9 % del índice oficial; un puente contable reconcilia ambas medidas salvo un residuo de método. Una contabilidad stock-flujo provincial da una necesidad base de 210.424 viviendas/año al año en 2026-2035 (99.388-292.083 viviendas/año), entre 1,4 veces y 3,8 veces la producción actual [C4]; el supuesto que más pesa es la fracción de vacías movilizables. Las viviendas liberadas por el envejecimiento no se restan, porque la proyección de hogares del INE ya descuenta las disoluciones. De 2025 a 2030 el déficit empeora en todos los escenarios considerados [C2], aunque la magnitud es exploratoria [C4]; a 2035 la dirección es indeterminada. El déficit se concentra en pocas provincias, y una clasificación con un coste de construcción oficial separa dónde falta vivienda y es rentable construir de dónde la oferta no responde. Un análisis pre-registrado de las diferencias provinciales de precios resulta descriptivo por falta de potencia, y las contribuciones contables de los factores a la subida no son estables entre métodos ni periodos. Ningún resultado nuevo alcanza la capa de efectos identificados. La versión de referencia v7.2 añade un atlas regional [C4]: los precios de las comunidades se mueven sobre todo con su media común (R² mediano de 93,6 % en compra), no se confirma ninguna relación regional de largo plazo y, en una simulación de traslado con dosis y coste declarados, las ayudas a la demanda reducen el precio neto del beneficiario pero suben el precio de mercado.
+Este trabajo mide la necesidad de vivienda en España y su distribución territorial con registros públicos y clasifica cada resultado en una escala de evidencia: hechos con dos fuentes independientes, cotas con supuestos explícitos y resultados exploratorios. Entre 2021 y 2024 los hogares crecieron más que las viviendas terminadas, en el rango 389.361-710.542 viviendas (sin las dos correcciones que conservan el salto de la EPA, 596.371-710.542 viviendas) según la corrección del salto de la EPA [C2]. El precio de compra subió 47,2 % en 2015-2025 según tres registros, frente a 79,9 % del índice oficial; un puente contable reconcilia ambas medidas salvo un residuo de método. Una contabilidad stock-flujo provincial da una necesidad base de 210.424 viviendas/año al año en 2026-2035 (99.388-292.083 viviendas/año), entre 1,4 veces y 3,8 veces la producción actual [C4]; el supuesto que más pesa es la fracción de vacías movilizables. Las viviendas liberadas por el envejecimiento no se restan, porque la proyección de hogares del INE ya descuenta las disoluciones. De 2025 a 2030 el déficit empeora en todos los escenarios considerados [C2], aunque la magnitud es exploratoria [C4]; a 2035 la dirección es indeterminada. El déficit se concentra en pocas provincias, y una clasificación con un coste de construcción oficial separa dónde falta vivienda y es rentable construir de dónde la oferta no responde. Un análisis pre-registrado de las diferencias provinciales de precios resulta descriptivo por falta de potencia, y las contribuciones contables de los factores a la subida no son estables entre métodos ni periodos. Ningún resultado nuevo alcanza la capa de efectos identificados. La versión interna v7.2 añade un atlas regional [C4]: los precios de las comunidades se mueven sobre todo con su media común (R² mediano de 93,6 % en compra), no se confirma ninguna relación regional de largo plazo y, en una simulación de traslado con dosis y coste declarados, las ayudas a la demanda reducen el precio neto del beneficiario pero suben el precio de mercado.
 
 ## Abstract
 
@@ -209,7 +209,7 @@ La validación v6 es **espacial nueva** y **temporal ya vista**: el último año
 
 ---
 
-## 5 bis. Qué añade la versión de referencia v7.2 (atlas regional) [C4]
+## 5 bis. Qué añade la versión interna v7.2 (atlas regional) [C4]
 
 - **Domina el componente común.** La variación interanual del precio de cada comunidad acompaña en gran medida a la media de las 17: el R² mediano es 93,6 % en compra y 86,1 % en alquiler. Es una descripción, no un modelo.
 - **No hay un largo plazo regional confirmado.** Se confirman 0 de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en 8 de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
@@ -241,7 +241,7 @@ La validación v6 es **espacial nueva** y **temporal ya vista**: el último año
 
 ### 6.1 Qué cambió entre versiones y por qué
 
-Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.2).
+Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión interna v7.2).
 
 ## 7. Conclusiones
 

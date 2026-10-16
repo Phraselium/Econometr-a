@@ -1,10 +1,10 @@
 # Vivienda en España: necesidad, territorio, precios e instrumentos con datos públicos
 
-## Informe técnico (versión de referencia v7.2)
+## Informe técnico (versión pública {{proyecto.version_publica}}; déficit y necesidad: versión interna v7.2)
 
 - **Autor:** Borja Romero, economista (independiente).
 - **Fecha:** 10 de octubre de 2026.
-- **Versión:** `5.0`.
+- **Versión del documento:** `5.0` (versión interna; vigente en la versión pública {{proyecto.version_publica}}).
 - **DOI:** pendiente.
 - **Reproducción:** `make all` sin red, semilla `SEED=20261010`; comprobaciones con `make check`.
 - **Cifras:** todas proceden de `output/v5/cifras_clave.csv` (tabla legible en `output/v5/cifras_clave.md`); este texto se genera desde una plantilla y no contiene cifras tecleadas.
@@ -712,7 +712,7 @@ Fuentes: `output/v6/M1A`, `output/v6/M1B`, `output/v6/M2/peso_variables.md`, `ou
 
 ---
 
-## 11 bis. Qué añade la versión de referencia v7.2 (atlas regional) [C4]
+## 11 bis. Qué añade la versión interna v7.2 (atlas regional) [C4]
 
 - **Domina el componente común.** La variación interanual del precio de cada comunidad acompaña en gran medida a la media de las 17: el R² mediano es {{V71-S3-comun-r2-compra:valor}} en compra y {{V71-S3-comun-r2-alquiler:valor}} en alquiler. Es una descripción, no un modelo.
 - **No hay un largo plazo regional confirmado.** Se confirman {{V71-S3-largo-confirmadas:num}} de las siete hipótesis pre-registradas (empleo, población, hipotecas y paro). En compra no se descarta que la serie sea I(2) en {{V71-S3-i2-compra:num}} de 17 comunidades. En la simulación, con un componente común así, ningún estimador de panel es fiable (nota metodológica).
@@ -726,7 +726,7 @@ Fuentes: `output/v6/M1A`, `output/v6/M1B`, `output/v6/M2/peso_variables.md`, `ou
 
 ## 12. Qué cambió entre versiones y por qué
 
-Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión de referencia v7.2).
+Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión interna v7.2).
 
 ## Anexo A. Datos y fuentes
 

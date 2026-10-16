@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9 datos_v11 v12
+.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9 datos_v11 v12 metadatos paquete_zenodo
 
 all: data clean models report
 
@@ -53,6 +53,7 @@ check:
 	$(PY) src/v6/check_v6.py
 	$(PY) src/v8/check_v8.py
 	$(PY) src/v9/check_v9.py
+	$(PY) src/v13/check_v13.py
 	@$(PY) src/v12/git_limpio.py comparar $${TMPDIR:-/tmp}/econometra_check_git.txt
 
 verificador:
@@ -84,8 +85,12 @@ v7_2:
 	$(PY) src/v7_2/gsadf_reverifica.py
 
 # V7.1: publicacion/, metodologia/ y reproducir/ se generan desde output/ y docs/ (nunca a mano; tests/v7_1/test_publicacion.py)
-publicacion:
+publicacion: metadatos
 	$(PY) src/v7_1/publicacion.py
+
+# V13: CITATION.cff y .zenodo.json desde proyecto.json (versión pública, fecha y URL del repositorio en un único sitio)
+metadatos:
+	$(PY) src/v13/metadatos.py
 
 # Validación limpia diferida de V7: CON red, UNA sola vez, tras la release del pre-registro (docs/v7/notas_release.md)
 evaluate_v7:

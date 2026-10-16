@@ -1,6 +1,6 @@
 # Léeme primero
 
-**Vivienda en España: base de evidencia reproducible.** Autor: Borja Romero, economista (firma individual, independiente). Versión de referencia: **v8** (por qué ha subido; publicada como v8.1 el 14 de octubre de 2026). Para el déficit y la necesidad de vivienda, la referencia sigue siendo v7.1 con las correcciones de v7.2. Repositorio: https://github.com/Phraselium/vivienda-espana-evidencia. Para asistentes y consultas rápidas: [consulta/LEEME_ASISTENTE.md](consulta/LEEME_ASISTENTE.md).
+**Vivienda en España: base de evidencia reproducible.** Autor: Borja Romero, economista (firma individual, independiente). Versión pública: **1.0** (16 de octubre de 2026). Reúne las versiones internas de desarrollo v1 a V12; la correspondencia está en [CHANGELOG.md](CHANGELOG.md). Para cada tema vale una versión interna: déficit y necesidad de vivienda, v7.1 con las correcciones de v7.2; por qué ha subido, V8; qué causa qué, V9; atlas descriptivo, base y web, V10; demografía, hogares y titularidad, V12. Repositorio: https://github.com/Phraselium/vivienda-espana-evidencia. Para asistentes y consultas rápidas: [consulta/LEEME_ASISTENTE.md](consulta/LEEME_ASISTENTE.md).
 
 El repositorio tiene cuatro puertas de entrada:
 - [publicacion/](publicacion/MANIFIESTO.md): todo lo vigente para leer y difundir. Se genera con `make publicacion` y nunca se edita a mano.
@@ -11,6 +11,8 @@ El repositorio tiene cuatro puertas de entrada:
 Toda cifra difundible sale de una única tabla, [publicacion/cifras_clave.csv](publicacion/cifras_clave.csv). Cada resultado lleva una capa de evidencia, de C1 (hecho con dos fuentes) a C4 (exploratorio); las definiciones están en [metodologia/capas.md](metodologia/capas.md). Ningún resultado es causal. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas.
 
 **V9 (qué causa qué).** Diseños de identificación pre-registrados ([informe](publicacion/informe_v9.md), [verificador V9](publicacion/verificador/verificador_v9.md)). Ningún resultado alcanza la capa causal; se publican como diferencias o asociaciones con sus pruebas y sin cotas de contribución.
+
+**V12 (población, hogares, titularidad y oferta; descriptivo).** [Atlas V12](publicacion/atlas_v12.md) y [tablas](publicacion/tablas_v12.xlsx).
 
 **V10 (difusión).**
 - [Atlas descriptivo](publicacion/atlas_descriptivo.md): quién soporta el coste de la vivienda (por renta, edad, nacionalidad y tenencia) y dónde (provincias, Comunitat Valenciana, barrios y secciones de València), sin lecturas causales.

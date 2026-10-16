@@ -31,7 +31,10 @@ Sin análisis nuevo: ningún modelo, ninguna muestra sellada, ninguna cifra de c
   - Mismos 29 ids de cifras_clave; check_v13 confirma que no cambia ninguna cifra.
   - El registro de `make datos_terceros` pasa a data/descargas_terceros/, fuera de data/raw: dentro, check_v5 lo tomaba por una lectura no versionada.
 
+- **Cierre.** `make publicacion` sin cambios. `make check` en limpio: 389 tests superados; check_texto, v5, v6, v8, v9 y v13 sin errores; git sin cambios tras el check.
+
 ## Siguiente
+- V13 cerrada. Lo que queda es del autor: docs/v13/tareas_autor.md, puntos 1 a 6, y las decisiones D2, D4 y D5.
 
 ## Tokens de subagentes
 Ninguno.

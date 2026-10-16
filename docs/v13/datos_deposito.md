@@ -124,7 +124,7 @@ Era la tarea 2 de docs/v12/tareas_autor.md. Los scripts de descarga reescribían
 
 Solución en src/v8_1/datos_terceros.py (`proteger_versionados`):
 1. guarda esos ficheros antes de descargar;
-2. copia la versión de la descarga en data/raw/_descargas_terceros/, que es un directorio ignorado;
+2. copia la versión de la descarga en data/descargas_terceros/, que es un directorio ignorado;
 3. restaura la versión versionada.
 
 Prueba real (2026-10-16):

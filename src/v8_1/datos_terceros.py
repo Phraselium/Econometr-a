@@ -11,7 +11,7 @@ sin script de descarga, solo avisan). Uso: python3 src/v8_1/datos_terceros.py [-
 
 V13 (tarea 2 de docs/v12/tareas_autor.md): los fetch_* reescriben manifiestos versionados (fechas de descarga, filas de v4).
 Ahora se guarda una copia de los ficheros de PROTEGIDOS antes de descargar; las versiones nuevas van a
-data/raw/_descargas_terceros/ (no versionado) y se restauran los originales. Así `make datos_terceros` no deja cambios en git.
+data/descargas_terceros/ (no versionado) y se restauran los originales. Así `make datos_terceros` no deja cambios en git.
 """
 from __future__ import annotations
 
@@ -46,12 +46,12 @@ MANUALES = ("_p1.png", "_zoomA.png", "_zoomB.png",   # renders de validación he
 
 
 PROTEGIDOS = ("data/raw/**/_manifest*.csv", "data/raw/_manifest*.csv", "docs/v5/programas/inventario.csv")
-REGISTRO = "data/raw/_descargas_terceros"
+REGISTRO = "data/descargas_terceros"
 
 
 def proteger_versionados(raiz: Path, ejecutar) -> list[str]:
     """Ejecuta `ejecutar()` sin que cambien los ficheros de PROTEGIDOS: guarda su contenido, ejecuta, copia las versiones
-    nuevas a data/raw/_descargas_terceros/<ruta> y restaura las originales. Devuelve las rutas que el fetch había cambiado."""
+    nuevas a data/descargas_terceros/<ruta> y restaura las originales. Devuelve las rutas que el fetch había cambiado."""
     antes: dict[Path, bytes] = {}
     for patron in PROTEGIDOS:
         for p in raiz.glob(patron):

@@ -1,45 +1,56 @@
 # Vivienda en España en una página (versión pública {{proyecto.version_publica}})
 
-**Borja Romero, economista.** Solo hechos con al menos dos fuentes [C1] o cotas con supuestos explícitos [C2]. Cada cifra lleva periodo, fuente, fecha del dato y capa.
+**Borja Romero, economista.** Esta página resume lo que se sabe con más seguridad. Cada cifra va redondeada y con su rango al lado. Las notas técnicas están en la ficha enlazada.
 
-1. [C1] **Hay más hogares.** El número de hogares aumentó en {{dh_2125:cita}}.
-2. [C2] **Se terminan menos viviendas de las que se forman hogares.** Balance acumulado 2021-2024 sin bajas del parque: en el rango {{L3-DEF-2124-SINBAJAS:rango}} (sin las dos correcciones que conservan el salto de la EPA, {{L3-DEF-2124-SENS:rango}}) ({{L3-DEF-2124-SINBAJAS:periodo}}; {{L3-DEF-2124-SINBAJAS:fuentes}}; dato de {{L3-DEF-2124-SINBAJAS:fecha_dato}}; {{L3-DEF-2124-SINBAJAS:capa}}: el rango depende de cómo se corrija el salto de la EPA en 2021, y es una cota, no una estimación puntual).
-3. [C2] **Hasta 2030 el balance empeora en todos los escenarios.** Con los ritmos de construcción considerados, incluido uno optimista, el déficit nacional 2025-2030 crece en toda la rejilla de escenarios, definida por el autor ({{T4-H3:periodo}}; Ministerio e INE; {{T4-H3:capa}}). Cuánto crece no es un hecho (ver el recuadro).
-4. [C1] **Viviendas terminadas.** Viviendas terminadas al año: {{terminadas_1924:rango}} ({{terminadas_1924:periodo}}; {{terminadas_1924:fuentes}}; dato de {{terminadas_1924:fecha_dato}}; {{terminadas_1924:capa}}).
-5. [C1] **El precio de compra sube.** Variación acumulada según el núcleo de tres fuentes: {{A23-P2:cita}}.
-6. [C1] **El alquiler de los contratos vigentes sube menos que el de los nuevos.** Contratos vigentes: {{A23-A2:rango}} ({{A23-A2:periodo}}; {{A23-A2:fuentes}}; dato de {{A23-A2:fecha_dato}}; {{A23-A2:capa}}). Contratos nuevos en la Comunitat Valenciana: {{A23-A10:cita}}.
-7. [C2] **La próxima década.** Crecimiento de hogares proyectado por el INE: {{E-B1-F:cita}}.
-8. [C1] **La mayoría de los hogares es propietaria.** Hogares con vivienda principal en propiedad: {{R1C-001:cita}}.
+**Cómo leer las etiquetas.** [C1] es un hecho: dos fuentes o más coinciden. [C2] es una cota: vale si se aceptan unos supuestos declarados. [C3s] depende de las restricciones de un modelo. [C4] es exploratorio: no permite hablar de causas. <!-- check:cifra-libre (etiquetas de capa) -->
 
-**Qué añade la versión interna v7.2 [C4].** Los cambios entre versiones, y por qué, están en una sección única: [Qué cambió entre versiones y por qué](que_cambio.md).
-- Los precios de las comunidades se mueven sobre todo juntos: la variación de cada una acompaña en gran medida a la media de las 17 (R² mediano de {{V71-S3-comun-r2-compra:valor}} en compra).
-- No se confirma ninguna relación regional de largo plazo con el empleo, la población, las hipotecas o el paro ({{V71-S3-largo-confirmadas:num}} de siete hipótesis).
-- En una simulación condicional, las ayudas a la demanda reducen el precio neto de quien las recibe, pero el precio de mercado sube ({{V71-S3-R6-e_ayuda_demanda-compra-precio10a:valor}} a diez años; el signo lo fija en gran parte la fórmula de incidencia). Su dosis y su coste en compra están declarados. En los instrumentos de cantidad (construcción, vacías, vivienda pública, turísticos) el coste no es estimable.
+## Ocho datos
 
-**Qué añade la versión interna V8: por qué ha subido [C4].** Detalle en [¿Por qué ha subido el precio de la vivienda?](../v8/por_que_ha_subido.md); afirmaciones evaluadas: [verificador V8](../v8/verificador_v8.md).
-- Ningún factor puede designarse como el más relevante en ninguno de los diez casos (mercado por periodo): el máximo de métodos coincidentes es {{V8-VOTOS-c-P5:num}} de cuatro y la regla exige tres.
-- El precio real de compra ha subido {{V8-OBS-c-P5}} desde mediados de 2022; {{V8-QNA-pp-c-P5:valor}} de los {{V8-OBS-c-P5:valor}} quedan sin atribuir a los shocks identificados (banda del 68 %: {{V8-QNA-pp-c-P5:rango}}) [C3s, condicionado a las restricciones de signo y de cero]. <!-- check:cifra-libre (umbral pre-registrado) -->
-- El alquiler real ({{V8-OBS-a-P5}}) mide el parque de contratos vivos; los contratos nuevos [C1] suben más: Cataluña {{A23-A9:cita}}; Comunitat Valenciana {{A23-A10:cita}}.
-- La subida reciente es muy común a las diecisiete comunidades ({{V8-M1-cuota-c-P5}} de la varianza) y acompaña a la de la zona euro (correlación {{V8-H8-9-est}}); es una asociación.
-- Ningún modelo predice mejor fuera de muestra que un AR(4) sencillo.
+1. **Hay más hogares.** Entre 2021 y 2025 el número de hogares creció en unos {{dh_2125:breve}} [C1]. [Ficha A1](../v6_2/anexo_metodologico.md#a1-dh_2125-aumento-del-número-de-hogares-2021-2025)
+2. **Se terminan menos viviendas de las que se forman hogares.** Entre 2021 y 2024 faltaron {{L3-DEF-2124-SINBAJAS:rango_breve}} [C2]. Es una cota, no una cifra exacta. Si se descartan dos de las correcciones de la EPA, faltaron {{L3-DEF-2124-SENS:rango_breve}}. [Ficha A5](../v6_2/anexo_metodologico.md#a5-l3-def-2124-sinbajas-déficit-2021-2024-sin-bajas-todas-las-variantes-v62)
+3. **Hasta 2030 el saldo empeora en todos los escenarios.** Ocurre en todos los escenarios definidos por el autor, también en el más optimista [{{T4-H3:capa}}]. Cuánto empeora no se sabe: ver el recuadro. [Ficha B10](../v6_2/anexo_metodologico.md#b10-módulos-v51-t2-t3-y-t4-srcv5_1t2_runpy-t3_runpy-t4_runpy)
+4. **Se terminan {{terminadas_1924:rango_breve}}.** Son datos de 2019 a 2024 [C1]. [Ficha A2](../v6_2/anexo_metodologico.md#a2-terminadas_1924-viviendas-terminadas-al-año-en-territorio-común-2019-2024)
+5. **El precio de compra ha subido.** Entre 2015 y 2025 subió un {{A23-P2:breve}} [C1]. [Ficha A8](../v6_2/anexo_metodologico.md#a8-a23-p2-precio-de-compra-variación-2015-2025-núcleo-mivau-notariado-y-registradores)
+6. **El alquiler sube más en los contratos nuevos.** En los contratos ya firmados subió un {{A23-A2:rango_breve}} entre 2015 y 2024 [C1]. En los contratos nuevos de la Comunitat Valenciana subió un {{A23-A10:breve}} entre 2021 y 2024 [C1]. [Fichas A7](../v6_2/anexo_metodologico.md#a7-a23-a2-alquiler-de-stock-variación-2015-2024-núcleo) y [A9](../v6_2/anexo_metodologico.md#a9-a23-a10-contratos-nuevos-en-la-comunitat-valenciana-2021-2024)
+7. **Habrá más hogares.** El INE proyecta {{E-B1-F:breve}} más entre 2026 y 2035 [C2]. [Ficha A14](../v6_2/anexo_metodologico.md#a13-a14-b1-h4-y-e-b1-f-crecimiento-de-hogares-proyectado-2026-2035)
+8. **La mayoría de los hogares es propietaria.** Son propietarios de su vivienda: {{R1C-001:breve}} [C1]. [Ficha A10](../v6_2/anexo_metodologico.md#a10-r1c-001-hogares-con-vivienda-principal-en-propiedad)
+
+## Lo que añade el atlas regional (versión interna v7.2) [C4]
+
+- Los precios de las comunidades se mueven casi siempre juntos. La media de las 17 recoge en compra un {{V71-S3-comun-r2-compra:breve}} de lo que varía cada una.
+- No se confirma ninguna relación regional de largo plazo con el empleo, la población, las hipotecas o el paro: {{V71-S3-largo-confirmadas:num}} de siete hipótesis.
+- En una simulación, las ayudas a la compra abaratan la vivienda a quien las recibe. Pero el precio de mercado sube un {{V71-S3-R6-e_ayuda_demanda-compra-precio10a:breve}} a diez años. Ese signo depende sobre todo de la fórmula de la simulación.
+- El coste de construir más, movilizar vacías o limitar los pisos turísticos no se puede estimar con estos datos.
+- Notas técnicas: [atlas regional](../v7_1/atlas/atlas_resumen.md) y [dosis y coste](../v7_1/S1/resumen.md). Los cambios entre versiones están en [qué cambió y por qué](que_cambio.md).
+
+## Por qué ha subido (versión interna V8) [C4]
+
+- Ningún factor destaca como el principal en ninguno de los diez casos estudiados. Como mucho coinciden {{V8-VOTOS-c-P5:num}} métodos de cuatro, y la regla exige tres.
+- Desde mediados de 2022 el precio real de compra subió {{V8-OBS-c-P5:breve}}. De esa subida, {{V8-QNA-pp-c-P5:breve}} no se atribuye a ningún factor identificado [C3s: vale solo bajo las restricciones del modelo]. <!-- check:cifra-libre (umbral pre-registrado) -->
+- El alquiler real del conjunto de contratos varió {{V8-OBS-a-P5:breve}}. Los contratos nuevos subieron más: Cataluña {{A23-A9:breve}} y Comunitat Valenciana {{A23-A10:breve}} [C1].
+- La subida reciente es común a casi todas las comunidades: un {{V8-M1-cuota-c-P5:breve}} de lo que varían. Acompaña a la de la zona euro, con correlación {{V8-H8-9-est:breve}}. Es una asociación.
+- Ningún modelo predice mejor que una regla sencilla basada en los últimos trimestres.
+- Notas técnicas: [por qué ha subido](../v8/por_que_ha_subido.md), [informe econométrico](../v8/informe_econometrico.md) y [verificador V8](../v8/verificador_v8.md).
 
 > **Lo que NO se puede afirmar con estos datos**
 >
-> - Que un único factor (turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas) sea la causa principal de la subida.
-> - Qué parte de las viviendas o del alquiler está en manos de empresas o grandes tenedores: no hay datos de titularidad.
-> - Que los topes al alquiler reduzcan los precios o la oferta.
-> - Que haya una burbuja, ni que no la haya [C4]. En el ámbito nacional, los cocientes precio/renta y precio/alquiler son exuberantes sin ajuste en {{V72-GSADF-ratios-p05:num}} de cuatro, pero en {{V72-GSADF-ratios-bh:num}} tras el ajuste por comparaciones múltiples, y en {{V72-GSADF-tipos-p05:num}} frente a referencias con tipos de interés; los niveles de precio sí son explosivos ({{V72-GSADF-niveles-bh:num}} de dos). Por comunidades, {{V72-GSADF-ccaa-bh:num}} de 34 series tras el ajuste (y {{V72-GSADF-ccaa-v6:num}} de 11 en otra muestra). Una exuberancia estadística no identifica una burbuja, y su ausencia tampoco la descarta. <!-- check:cifra-libre (número de series del diseño) -->
-> - Qué variable mueve el alquiler o el precio de compra: en v6 ninguna es «relevante con seguridad» y ninguna hipótesis confirmatoria pasa Holm; que un modelo prediga bien no identifica por qué sube el precio [C4].
-> - La necesidad total de vivienda para 2026-2035 como hecho: depende de supuestos sobre el parque y queda como exploratoria ({{T3-H5b:cita}}). Las viviendas liberadas no se restan de la necesidad: la proyección de hogares del INE ya descuenta las disoluciones de hogares.
-> - Cuánto empeora el déficit a 2030 ({{T4-H2:rango}}, [C4]) y si empeora a 2035 (indeterminado, [C4]).
-> - Cuántas viviendas salen del parque cada año: las identidades de stock no miden bajas, y las demoliciones con licencia son {{E-T7-demol-2024:rango}} en 2024 [C4].
+> - Que un solo factor sea la causa principal de la subida. Ni los pisos turísticos, ni la inmigración, ni la falta de oferta, ni los tipos de interés, ni los compradores extranjeros, ni las empresas.
+> - Qué parte de las viviendas tienen empresas o grandes propietarios: no hay datos de titularidad suficientes.
+> - Que los topes al alquiler bajen los precios o reduzcan la oferta.
+> - Que haya una burbuja, ni que no la haya [C4]. Con ajuste por comparaciones múltiples, {{V72-GSADF-ratios-bh:num}} de cuatro cocientes nacionales son exuberantes. Sin ajuste son {{V72-GSADF-ratios-p05:num}}, y frente a los tipos de interés, {{V72-GSADF-tipos-p05:num}}.
+> - Los niveles de precio sí son explosivos en {{V72-GSADF-niveles-bh:num}} de dos series. Por comunidades lo son {{V72-GSADF-ccaa-bh:num}} de 34 series, y {{V72-GSADF-ccaa-v6:num}} de 11 en otra muestra. [Ficha de la burbuja](../v7_2/gsadf/ficha_burbuja.md) <!-- check:cifra-libre (número de series del diseño) -->
+> - Qué variable mueve el alquiler o el precio: ninguna supera las pruebas exigidas. Que un modelo prediga bien no dice por qué sube el precio [C4].
+> - Cuántas viviendas harán falta entre 2026 y 2035: depende de supuestos y es exploratorio. La estimación central es de {{T3-H5b:breve}} [C4].
+> - Las viviendas que quedan libres no se restan de esa necesidad: la proyección de hogares del INE ya las tiene en cuenta.
+> - Cuánto empeora el saldo hasta 2030: {{T4-H2:rango_breve}} [C4]. Si empeora hasta 2035 tampoco se sabe [C4].
+> - Cuántas viviendas desaparecen cada año. Las demoliciones con licencia fueron un {{E-T7-demol-2024:rango_breve}} en 2024 [C4]. [Ficha B7](../v6_2/anexo_metodologico.md#b7-módulo-e-hechos-derivados-srcv5e_hechos_e1py-e_hechos_t7py-e_hechos_v6py)
 
-**Cómo citar estas cifras (revisión por pares simulada).**
+## Cómo citar estas cifras
 
-- Dé el rango antes que el valor central. Los rangos [C1] son el mínimo y el máximo entre combinaciones de fuentes, no intervalos de confianza.
-- El precio de compra se cita con las dos medidas juntas: el núcleo de registros y el índice oficial.
-- Las cotas y las direcciones [C2] valen dentro de la rejilla de escenarios definida por el autor. Cite la rejilla junto con la conclusión.
-- Solo es citable la versión vigente. Las cifras de versiones anteriores se sustituyeron por nuevas fuentes, muestras o correcciones, y el motivo de cada cambio consta en el historial de conclusiones y en la fe de erratas.
-- [C4] no indica baja calidad: incluye estadísticas oficiales de fuente única y resultados exploratorios.
+- Cite el rango además de la cifra. En [C1], el rango va de la fuente más baja a la más alta.
+- Las cotas [C2] valen solo dentro de los escenarios definidos por el autor. Cítelos con la conclusión.
+- Cite solo la versión pública vigente. Los cambios de cifras y sus motivos están en el historial de conclusiones y en la fe de erratas.
+- [C4] no significa mala calidad. Incluye estadísticas oficiales de una sola fuente y resultados exploratorios.
+- Las cifras completas, sin redondear, están en [cifras_clave.csv](cifras_clave.csv), con su id.
 
-**Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente del autor; las etiquetas aún no se han podido publicar desde el entorno de trabajo, véase la primera tarea de `docs/v7_1/tareas_autor.md`]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.
+**Pre-registro.** Los análisis se registraron en git antes de estimarlos. Las etiquetas aún no se han publicado: es una tarea pendiente del autor. Las fechas y las huellas de cada pre-registro están en `docs/v13/tareas_autor.md`.

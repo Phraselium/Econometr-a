@@ -147,4 +147,4 @@ data/manual/
 # V13: paquete del depósito en Zenodo (make paquete_zenodo)
 _deposito/
 # V13: registro de descargas de `make datos_terceros` (fechas; no versionado)
-data/raw/_descargas_terceros/
+data/descargas_terceros/

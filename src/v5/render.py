@@ -4,6 +4,8 @@ Marcadores:
 - {{id}}: el valor con su unidad y, si existe, el rango [min-max];
 - {{id:campo}}: un campo concreto (valor, min, max, periodo, cobertura, fuentes, capa, fecha_dato, rango);
 - {{id:cita}}: «valor (periodo; fuentes; fecha; capa)»;
+- {{id:breve}}: V13, para lectores no técnicos: el valor redondeado (3 cifras significativas; los % sin decimales desde 10) con el
+  rango al lado, «998.000 hogares (982.000-1.010.000)»; {{id:rango_breve}}: solo el rango redondeado. No cambian la cifra;
 - {{proyecto.<campo>}}: un campo de proyecto.json (V13: versión pública, repositorio, web, DOI; única fuente).
 Un marcador sin resolver es un error. Determinista y sin red.
 """
@@ -51,6 +53,21 @@ def _guion(a) -> str:
     return " a " if pd.notna(a) and float(a) < 0 else "-"
 
 
+def redondeo(x: float, unidad: str = "") -> str:
+    """V13 (una página): 3 cifras significativas y, en %, sin decimales desde 10 (mitad hacia arriba). Solo presentación."""
+    if pd.isna(x):
+        return "—"
+    from decimal import ROUND_HALF_UP, Decimal
+    x = float(x)
+    if abs(x) < 1000:
+        nd = 0 if abs(x) >= 10 else (1 if abs(x) >= 1 else 2)
+        v = float(Decimal(str(x)).quantize(Decimal(1).scaleb(-nd), rounding=ROUND_HALF_UP))
+        return f"{v:,.{nd}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    e = len(str(int(abs(x)))) - 3
+    v = int(Decimal(str(x)).scaleb(-e).quantize(Decimal(1), rounding=ROUND_HALF_UP).scaleb(e))
+    return f"{v:,}".replace(",", ".")
+
+
 def texto(r: pd.Series, campo: str | None) -> str:
     u = r.unidad if isinstance(r.unidad, str) else ""
     if u == "proporción":   # v7.1: coberturas, correlaciones y tasas de rechazo (0-1) se escriben sin unidad
@@ -65,6 +82,14 @@ def texto(r: pd.Series, campo: str | None) -> str:
         if campo is None and pd.notna(r["min"]) and pd.notna(r["max"]):
             base += f" ({fmt_num(r['min'], u)}{_guion(r['min'])}{fmt_num(r['max'], u)}{sep}{u})".rstrip()
         return base
+    if campo in ("breve", "rango_breve"):
+        red = redondeo
+        if pd.notna(r["min"]) and pd.notna(r["max"]) and redondeo(r["min"], u) == redondeo(r["max"], u):
+            red = fmt_num   # rango estrecho: el redondeo lo colapsaría («17-17»); se dan las cifras completas
+        rango = f"{red(r['min'], u)}{_guion(r['min'])}{red(r['max'], u)}" if pd.notna(r["min"]) and pd.notna(r["max"]) else ""
+        if campo == "rango_breve" or pd.isna(r.valor):
+            return f"{rango}{sep}{u}".strip() if rango else f"{red(r.valor, u)}{sep}{u}".strip()
+        return f"{red(r.valor, u)}{sep}{u}".strip() + (f" ({rango})" if rango else "")
     if campo == "valor":
         return f"{fmt_num(r.valor, u)}{sep}{u}".strip()
     if campo == "num":

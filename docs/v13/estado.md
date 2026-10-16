@@ -24,6 +24,12 @@ Sin análisis nuevo: ningún modelo, ninguna muestra sellada, ninguna cifra de c
   - 18 etiquetas locales: 9 prereg-* y 9 de versión, con commit, fecha, tipo y sha256 del documento.
   - Ninguna existe en el remoto (`git ls-remote --tags` devuelve 0), pero todos sus commits sí están en la rama remota.
   - Comandos exactos de publicación y texto del registro en OSF en docs/v13/tareas_autor.md. Todo «pendiente del autor».
+- **D · Una página legible.**
+  - Plantilla docs/v5/plantillas/una_pagina.md reescrita: frases de menos de 25 palabras (comprobado: 0 de 25 o más).
+  - Cifras redondeadas con el rango al lado mediante dos campos nuevos de render, `breve` y `rango_breve`, que no tocan cifras_clave.
+  - Capa entre corchetes; notas técnicas en enlaces a las fichas del anexo (A1, A2, A5, A7-A10, A14, B7 y B10) o al documento técnico de V7.1, V7.2 y V8.
+  - Mismos 29 ids de cifras_clave; check_v13 confirma que no cambia ninguna cifra.
+  - El registro de `make datos_terceros` pasa a data/descargas_terceros/, fuera de data/raw: dentro, check_v5 lo tomaba por una lectura no versionada.
 
 ## Siguiente
 

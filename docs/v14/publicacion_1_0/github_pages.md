@@ -25,7 +25,7 @@ Mientras `zenodo_url_paquete` sea «PENDIENTE», el paso de datos falla con un m
 - **Repositorio de desarrollo** (2026-10-16, con los datos presentes): `make web` construyó 324 páginas, 27 indicadores, 4 mapas y 311 fichas territoriales (77,0 MB).
   - La descarga hechos.parquet no lleva variables `aeat_*` (terceros_1_0.aeat = excluir).
   - Lleva publicacion/cifras_no_publicadas_1_0.csv.
-- **Árbol público** (bloque 5 de V14.2): `make datos` con el paquete copiado a mano en `_descarga/` y después `make web`. El resultado está en docs/v14/arbol_1_0.md.
+- **Árbol público** (bloque 5 de V14.2, origen e023bf6): `make datos` con el paquete copiado a mano en `_descarga/` y después `make web`. Resultado: 324 páginas y git sin cambios (docs/v14/arbol_1_0.md). Es lo mismo que hace el workflow, salvo la descarga desde Zenodo, que necesita la URL del punto 4.
 
 Para probarlo en su máquina:
 ```bash

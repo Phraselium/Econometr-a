@@ -84,3 +84,22 @@ Ninguno.
   - GitHub Pages: el workflow trae los datos del depósito si faltan; probado con `make web`;
   - correo al revisor: 175 palabras.
   - tests/v14/test_publicacion_1_0.py comprueba la coherencia con .zenodo.json, los límites y la tabla de OSF.
+- **Bloque 5 · Árbol final.**
+  - Este repositorio:
+    - `make publicacion`: sin cambios;
+    - `make check`: 402 tests y solo el aviso por el hash pendiente; git sin cambios.
+    - Se corrigieron tres fallos causados por los cambios de V14.2: test_v13 leía una constante que se había movido, consulta/version.json lee los pasos de tareas_autor.md, y en escenarios_resultado.json quedaba una ruta local que el control de privacidad del árbol rechazó.
+  - Árbol final desde e023bf6:
+    - pack de 46,06 MiB;
+    - `make datos`: 0 problemas;
+    - `make check`: 326 pasados y 60 omitidos, con un único error, el `hash_sellado` pendiente;
+    - `make publicacion` y `make web`: sin cambios.
+    - Recuento nuevo en docs/v14/tests_arbol.json; detalle en arbol_1_0.md.
+  - tareas_autor.md, en el orden pedido: A (huella), B (licencias y terceros_1_0), C (regenerar) y después los pasos 1-8, cada uno con su orden exacta.
+
+## Siguiente (V14.2)
+- Solo quedan tareas del autor: docs/v14/tareas_autor.md, de A a 8.
+- Si el autor cambia terceros_1_0, debe regenerar con C. Después, el paquete y el árbol; el recuento de tests puede cambiar.
+
+## Tokens de subagentes (V14.2)
+Ninguno.

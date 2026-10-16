@@ -19,7 +19,29 @@ def pytest_sessionstart(session):
     session.config._git_antes = _estado()
 
 
+def _comprobar_recuento_arbol(session) -> None:
+    """V14.1: en el árbol público, una ejecución completa de `pytest tests` debe dar los pasados y omitidos de
+    docs/v14/tests_arbol.json (los que publica el README)."""
+    import json as _json
+    try:
+        proyecto = _json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))
+        esperado = _json.loads((RAIZ / "docs/v14/tests_arbol.json").read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        return
+    cfg = session.config
+    completa = [str(x).rstrip("/") for x in cfg.args] == ["tests"] and not cfg.option.keyword and not cfg.option.markexpr
+    if not proyecto.get("arbol_publico") or not completa or session.testsfailed:
+        return
+    tr = cfg.pluginmanager.get_plugin("terminalreporter")
+    real = {"pasados": len(tr.stats.get("passed", [])), "omitidos": len(tr.stats.get("skipped", []))}
+    if real != {k: esperado[k] for k in real}:
+        print(f"\nRecuento de tests distinto del publicado en el README: ejecución {real}, docs/v14/tests_arbol.json "
+              f"{ {k: esperado[k] for k in real} }")
+        session.exitstatus = 1
+
+
 def pytest_sessionfinish(session, exitstatus):
+    _comprobar_recuento_arbol(session)
     antes = getattr(session.config, "_git_antes", None)
     if antes is None:
         return

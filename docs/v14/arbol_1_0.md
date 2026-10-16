@@ -79,6 +79,6 @@ Los 20 ficheros mayores:
 | 20 | output/f2/busqueda_coefs.csv | 0,8 |
 
 ## Datos personales y rutas locales
-- `arbol_publico` rechaza el árbol si encuentra cualquiera de estos patrones: rutas locales (/tmp/claude…, /home/user, /root/), enlaces de sesión, correos (salvo noreply@anthropic.com) o tokens (ghp_, github_pat_, sk-, AKIA, xox*).
+- `arbol_publico` rechaza el árbol si encuentra cualquiera de estos patrones: rutas locales (directorios temporales de la sesión, del usuario o de root), enlaces de sesión, correos (salvo noreply@anthropic.com) o tokens (ghp_, github_pat_, sk-, AKIA, xox*).
 - Se encontró y se corrigió en origen una ruta local de la sesión en src/v10/fetch_geo.py: ahora es una variable de entorno opcional.
 - El commit «Versión 1.0» lleva la identidad de git configurada en la máquina que lo genera. El autor puede reescribirla antes de subir con `git commit --amend --reset-author` (tareas_autor.md, punto 2).

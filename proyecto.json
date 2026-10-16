@@ -1,5 +1,5 @@
 {
- "_nota": "Única fuente de la versión pública, la URL del repositorio, la web y el DOI (V13). La leen src/v5/render.py ({{proyecto.<campo>}} en las plantillas), src/consulta/generar.py, src/v10/web.py y src/v13/metadatos.py (CITATION.cff y .zenodo.json). src/v13/check_v13.py (make check) falla si una puerta de entrada declara otra versión vigente o si aparece otra URL del repositorio. V14: zenodo_url_paquete es la URL de descarga del paquete del depósito (la usa `make datos` en el árbol público); repositorio_desarrollo es el repositorio de desarrollo archivado (única otra URL de repositorio admitida).",
+ "_nota": "Única fuente de la versión pública, la URL del repositorio, la web y el DOI (V13). La leen src/v5/render.py ({{proyecto.<campo>}} en las plantillas), src/consulta/generar.py, src/v10/web.py y src/v13/metadatos.py (CITATION.cff y .zenodo.json). src/v13/check_v13.py (make check) falla si una puerta de entrada declara otra versión vigente o si aparece otra URL del repositorio. V14: zenodo_url_paquete es la URL de descarga del paquete del depósito (la usa `make datos` en el árbol público); repositorio_desarrollo es el repositorio de desarrollo archivado (única otra URL de repositorio admitida). V14.1: hash_sellado es la huella de data/sealed (valor, fecha y comando).",
  "titulo": "Vivienda en España: base de evidencia reproducible",
  "autor": "Borja Romero, economista (firma individual, independiente)",
  "version_publica": "1.0",
@@ -9,6 +9,12 @@
  "doi": "PENDIENTE",
  "zenodo_url_paquete": "PENDIENTE",
  "repositorio_desarrollo": "https://github.com/Phraselium/Econometr-a",
+ "hash_sellado": {
+  "valor": "PENDIENTE",
+  "fecha": "2026-10-16",
+  "comando": "find data/sealed -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum",
+  "nota": "Lo calcula el autor en su máquina, desde la raíz del repositorio de desarrollo, y lo escribe aquí. Mientras sea PENDIENTE, `make check` avisa en el repositorio de desarrollo y falla en el árbol público (src/v14/check_v14.py)."
+ },
  "vigentes": {
   "deficit_y_necesidad": {
    "tema": "Déficit y necesidad de vivienda 2026-2035, simulaciones de instrumentos (dosis y coste) y atlas regional",

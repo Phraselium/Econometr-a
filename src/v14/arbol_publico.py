@@ -116,6 +116,9 @@ def construir(dest: Path, con_git: bool = True) -> dict:
     (dest / "historico" / "INDICE.md").write_text(indice_historico(commit, fecha), encoding="utf-8")
     readme = (dest / "README.md").read_text(encoding="utf-8").split("\n")
     (dest / "README.md").write_text("\n".join(readme[:1] + procedencia(commit, fecha).split("\n") + readme[1:]), encoding="utf-8")
+    pj = json.loads((dest / "proyecto.json").read_text(encoding="utf-8"))
+    pj["arbol_publico"] = True   # check_v14: en el árbol público la huella de data/sealed es obligatoria
+    (dest / "proyecto.json").write_text(json.dumps(pj, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     (dest / ".gitignore").write_text((dest / ".gitignore").read_text(encoding="utf-8").rstrip("\n") + "\n" + IGNORE_EXTRA, encoding="utf-8")
     (dest / "docs" / "v14").mkdir(parents=True, exist_ok=True)
     with (dest / "docs" / "v14" / "excluidos_arbol.csv").open("w", encoding="utf-8") as fh:

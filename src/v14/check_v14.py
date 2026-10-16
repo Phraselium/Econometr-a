@@ -3,9 +3,13 @@
 1. Heredocs entrecomillados: ningún heredoc de shell con el delimitador sin comillas (p. ej. EOF a pelo) en src/, el Makefile ni los guiones .sh
    versionados. Con comillas (`<<'EOF'`) el shell no expande `$(...)` ni comillas invertidas del texto; sin ellas, una orden
    escrita entre comillas invertidas en un texto se ejecuta (incidencia D3 de V13: `make clean` y `make all`).
+2. Huella de la muestra sellada (V14.1): proyecto.json `hash_sellado.valor` debe ser un sha256 (64 caracteres hexadecimales).
+   Mientras sea «PENDIENTE» es un AVISO en el repositorio de desarrollo y un ERROR en el árbol público
+   (proyecto.json con `arbol_publico: true`, que escribe `make arbol_publico`).
 """
 from __future__ import annotations
 
+import json
 import re
 import subprocess
 import sys
@@ -35,11 +39,32 @@ def heredocs_sin_comillas(ficheros: list[str] | None = None) -> list[str]:
     return err
 
 
+def hash_sellado(proyecto: dict | None = None) -> tuple[list[str], list[str]]:
+    """(errores, avisos) sobre proyecto.json hash_sellado."""
+    p = proyecto if proyecto is not None else json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))
+    h = p.get("hash_sellado") or {}
+    v = str(h.get("valor", "")).strip()
+    if re.fullmatch(r"[0-9a-f]{64}", v):
+        return [], []
+    msg = (f"proyecto.json hash_sellado = «{v or 'falta'}»: el autor debe calcularlo con "
+           f"`{h.get('comando', 'find data/sealed -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum')}`")
+    if v and v.upper() != "PENDIENTE":
+        return [f"{msg} (no es un sha256 válido)"], []
+    return ([msg], []) if p.get("arbol_publico") else ([], [msg])
+
+
 def main() -> int:
     e = heredocs_sin_comillas()
     print(f"check_v14 · heredocs sin comillas: {len(e)} errores")
     for x in e[:20]:
         print("  -", x)
+    eh, ah = hash_sellado()
+    print(f"check_v14 · huella de la muestra sellada: {len(eh)} errores")
+    for x in eh:
+        print("  -", x)
+    for x in ah:
+        print("  AVISO:", x)
+    e += eh
     print(f"check_v14: {len(e)} errores")
     return 1 if e else 0
 

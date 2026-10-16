@@ -32,3 +32,10 @@ Sin análisis nuevo. Ningún modelo estimado, ninguna muestra sellada abierta ni
 
 ## Tokens de subagentes
 Ninguno.
+
+## V14.1 · Ajustes de cierre (2026-10-16)
+- **Bloque 1 · Integridad de la muestra sellada.**
+  - proyecto.json `hash_sellado`: valor PENDIENTE (lo calcula el autor), fecha 2026-10-16 y comando.
+  - Sección «Integridad de la muestra sellada» en docs/v7_1/evaluacion_2027.md, con marcadores `{{proyecto.hash_sellado.*}}` que rellena `make publicacion`.
+  - check_v14 da un aviso en este repositorio y un error en el árbol público mientras el valor siga pendiente.
+

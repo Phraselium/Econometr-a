@@ -90,6 +90,21 @@ def _sha(b: bytes) -> str:
     return hashlib.sha256(b).hexdigest()
 
 
+def _proyecto(txt: str) -> str:
+    """V14.1: marcadores {{proyecto.<campo>[.<subcampo>]}} de los .md copiados se rellenan con proyecto.json (fuente única)."""
+    import json
+    datos = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))
+
+    def sub(m):
+        v = datos
+        for k in m.group(1).split("."):
+            if not isinstance(v, dict) or k not in v:
+                raise SystemExit(f"publicacion: campo inexistente en proyecto.json: {m.group(1)}")
+            v = v[k]
+        return str(v)
+    return re.sub(r"\{\{proyecto\.([A-Za-z0-9_.]+)\}\}", sub, txt)
+
+
 def _reescribir(txt: str, src: str, dst: str) -> str:
     inverso = {v: k for k, v in FUENTES.items()}
     sdir, ddir = (RAIZ / src).parent, (RAIZ / dst).parent
@@ -137,7 +152,7 @@ def construir(base: Path) -> dict[str, list[tuple[str, str, str]]]:
         out = base / dst
         out.parent.mkdir(parents=True, exist_ok=True)
         if p.suffix == ".md":
-            txt = _reescribir(p.read_text(encoding="utf-8"), src, dst)
+            txt = _reescribir(_proyecto(p.read_text(encoding="utf-8")), src, dst)
             if dst == "publicacion/verificador/verificador.md":   # v7.1 (H12): título coherente con la versión de referencia
                 txt = re.sub(r"^(# Verificador de afirmaciones[^\n]*?)\s*\(v5\)", r"\1 (fichas v5-v6.3, vigentes en v7.1)", txt, count=1)
             b = (CAB.format(src=src) + txt).encode("utf-8")

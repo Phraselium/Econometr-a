@@ -38,6 +38,16 @@ Julio y agosto de 2026 del IPC de alquiler ya estaban publicados, y en data/raw,
 
 Si discrepan, se reportan las dos. Esta nota se añade a docs/v7/desviaciones.md como desviación declarada antes de la apertura.
 
+## Integridad de la muestra sellada
+
+- **Huella de data/sealed:** `PENDIENTE` (fecha: 2026-10-16; fuente: proyecto.json, campo `hash_sellado`).
+- **Comando con el que se calcula** (desde la raíz del repositorio de desarrollo):
+  ```bash
+  find data/sealed -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum
+  ```
+- **Antes de evaluar**, recalcule la huella y compruebe que coincide con la de proyecto.json. Si no coincide, no evalúe: anótelo en ERRATA.md.
+- La integridad anterior al 16/10/2026 se apoya en el registro de accesos de src/holdout.py, no en checksums (ver ERRATA y la decisión D3 de V13).
+
 ## 3. Orden exacto de las órdenes
 
 Desde una copia limpia del repositorio en la versión pública 1.0 (contenido de V7: versión interna v7.1), con red y con permisos para publicar:

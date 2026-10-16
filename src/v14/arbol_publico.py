@@ -19,8 +19,10 @@ import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(RAIZ))
+from src.v14 import terceros as T  # noqa: E402
+
 P = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))
-NO_REDIS_COL = re.compile(r"notar|registrad|cgn_|cgpj|aeat", re.I)
 DATOS_QUE_ENTRAN = re.compile(r"^data/(CHECKSUMS\.sha256|raw/(.+/)?_manifest[^/]*\.csv)$")
 PRIVADO = re.compile(r"/tmp/claude|/home/user|/root/|claude\.ai/code/session|session_0[0-9A-Za-z]{10,}|ghp_[A-Za-z0-9]{20,}|"  # arbol_publico: permitido
                      r"github_pat_[A-Za-z0-9_]{20,}|\bsk-[A-Za-z0-9]{20,}|AKIA[A-Z0-9]{12,}|xox[abp]-[A-Za-z0-9-]{10,}|"  # arbol_publico: permitido
@@ -39,13 +41,6 @@ def _git(*a: str, cwd: Path = RAIZ) -> str:
     return subprocess.run(["git", *a], cwd=cwd, capture_output=True, text=True, check=True).stdout
 
 
-def _cabecera_no_redis(p: Path) -> bool:
-    if p.suffix != ".csv":
-        return False
-    with p.open(encoding="utf-8", errors="ignore") as fh:
-        return bool(NO_REDIS_COL.search(fh.readline()))
-
-
 def excluir(f: str) -> str | None:
     """Motivo de exclusión del fichero versionado f, o None si entra."""
     if f.startswith("data/"):
@@ -54,8 +49,6 @@ def excluir(f: str) -> str | None:
         return "histórico de desarrollo: queda en el repositorio archivado (historico/INDICE.md enlaza al commit de origen)"
     if f.startswith(".claude/"):
         return "configuración de los agentes de trabajo de la sesión de desarrollo"
-    if f.startswith("output/") and _cabecera_no_redis(RAIZ / f):
-        return "tabla con series de Notariado, Registradores o AEAT (licencia no verificada; D5 y D4)"
     return None
 
 
@@ -109,10 +102,16 @@ def construir(dest: Path, con_git: bool = True) -> dict:
     commit = _git("rev-parse", "HEAD").strip()
     fecha = _git("log", "-1", "--format=%cs", commit).strip()
     inc, exc = seleccionar()
+    redactadas = []
     for f in inc:
         d = dest / f
         d.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(RAIZ / f, d)
+        quitar = T.a_redactar(f, RAIZ / f)
+        if quitar:   # tabla propia con columnas de Notariado, Registradores o AEAT: se copia sin ellas (D5, D4)
+            T.redactar(RAIZ / f, d, quitar)
+            redactadas.append((f, "redactada: sin las columnas " + " ".join(quitar)))
+        else:
+            shutil.copyfile(RAIZ / f, d)
     (dest / "historico").mkdir(exist_ok=True)
     (dest / "historico" / "INDICE.md").write_text(indice_historico(commit, fecha), encoding="utf-8")
     readme = (dest / "README.md").read_text(encoding="utf-8").split("\n")
@@ -120,7 +119,7 @@ def construir(dest: Path, con_git: bool = True) -> dict:
     (dest / ".gitignore").write_text((dest / ".gitignore").read_text(encoding="utf-8").rstrip("\n") + "\n" + IGNORE_EXTRA, encoding="utf-8")
     (dest / "docs" / "v14").mkdir(parents=True, exist_ok=True)
     with (dest / "docs" / "v14" / "excluidos_arbol.csv").open("w", encoding="utf-8") as fh:
-        fh.write("fichero,motivo\n" + "".join(f'"{f}","{m}"\n' for f, m in exc))
+        fh.write("fichero,motivo\n" + "".join(f'"{f}","{m}"\n' for f, m in exc + redactadas))
     priv = revisar_privacidad(dest)
     if priv:
         raise SystemExit("arbol_publico: datos personales o rutas locales en el árbol:\n  " + "\n  ".join(priv[:20]))
@@ -129,7 +128,7 @@ def construir(dest: Path, con_git: bool = True) -> dict:
         _git("add", "-A", cwd=dest)
         _git("commit", "-q", "-m", f"Versión {P['version_publica']}\n\nÁrbol limpio generado con `make arbol_publico` desde "
              f"{P['repositorio_desarrollo']} (commit {commit}).", cwd=dest)
-    return {"incluidos": len(inc) + 1, "excluidos": len(exc), "commit_origen": commit}
+    return {"incluidos": len(inc) + 1, "excluidos": len(exc), "redactadas": len(redactadas), "commit_origen": commit}
 
 
 def main() -> int:
@@ -139,7 +138,8 @@ def main() -> int:
     a = ap.parse_args()
     dest = Path(a.destino).resolve()
     r = construir(dest, not a.sin_git)
-    print(f"arbol_publico: {dest} · {r['incluidos']} ficheros, {r['excluidos']} versionados excluidos, origen {r['commit_origen'][:7]}")
+    print(f"arbol_publico: {dest} · {r['incluidos']} ficheros, {r['excluidos']} versionados excluidos, {r['redactadas']} tablas redactadas, "
+          f"origen {r['commit_origen'][:7]}")
     return 0
 
 

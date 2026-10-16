@@ -62,6 +62,27 @@ make check         # incluye tests/v7_1: regeneración idéntica de publicacion/
 ```
 Tiempos medidos: reproducir/tiempos.md. Evaluación diferida (2027, con red, una sola vez): reproducir/evaluacion_2027.md.
 
+### Árbol público de la versión 1.0 (repositorio vivienda-espana-evidencia)
+El repositorio público es un árbol limpio generado con `make arbol_publico` (docs/v14/arbol_1_0.md). No versiona datos.
+```bash
+make datos            # data/ redistribuible desde el depósito de Zenodo (DOI y URL en proyecto.json), con verificación sha256
+make check            # ruff, tests y controles de texto, cifras y capas
+make publicacion      # no debe producir cambios
+make datos_terceros   # opcional, con red: datos de terceros no redistribuibles (Notariado, Registradores, CGPJ, Interior…)
+```
+**Limitaciones del árbol público sin datos de terceros.**
+- Algunos tests leen paneles con series de Notariado y Registradores (data/processed/nacional_q.csv, panel_ccaa_a.csv,
+  v2/train/nacional_q_v2.csv, v8/nacional_q_v8.csv y v8/cv_prov_q_v8.csv) o los ficheros brutos de esas fuentes. Son la
+  doble implementación, los paneles y modelos de V8 y las evaluaciones selladas de v2.
+- Esos tests se marcan como omitidos con su motivo, y solo si fallan por la falta de uno de esos ficheros
+  (tests/conftest.py, src/v14/terceros.py). Para ejecutarlos:
+  1. `make datos_terceros`;
+  2. reconstruir los paneles con `make clean`, solo por orden expresa del autor, porque reescribe la partición sellada.
+- Las 15 tablas de output/ con columnas de Notariado, Registradores o AEAT se publican redactadas, sin esas columnas.
+  `make all` las regenera completas tras `make datos_terceros`.
+- La muestra sellada (data/sealed) no se publica. Las evaluaciones selladas ya hechas están en output/ y en
+  docs/v2/holdout_accesos.md.
+
 ## 3. Datos: fuentes, acceso y licencias
 El inventario completo, con fichero, fuente, número de series, fechas y fecha de descarga, está en `data/raw/_manifest.csv` (110 ficheros). Resumen por organismo:
 

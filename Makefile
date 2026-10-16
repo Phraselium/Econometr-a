@@ -107,6 +107,10 @@ DEST ?= ../vivienda-espana-evidencia
 arbol_publico:
 	$(PY) src/v14/arbol_publico.py --destino $(DEST)
 
+# V14: paquete para la revisión externa (40 cifras de cifras_clave estratificadas por capa, SEED=20261010)
+muestra_revision:
+	$(PY) src/v14/muestra_revision.py
+
 # Validación limpia diferida de V7: CON red, UNA sola vez, tras la release del pre-registro (docs/v7/notas_release.md)
 evaluate_v7:
 	$(PY) src/v7/evaluate_v7.py

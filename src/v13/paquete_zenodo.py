@@ -4,8 +4,8 @@ del repositorio ni de su historia.
 Contenido (solo ficheros versionados, salvo la capa pública de la base, que se filtra):
 - código y documentación: todo lo versionado fuera de data/ y output/ (src, tests, Makefile, docs, publicacion, metodologia,
   reproducir, consulta, figuras, web, paper, historico, metadatos);
-- output/: salidas versionadas (las evaluaciones selladas ya hechas se leen de ahí; `make all` no reabre el sellado), salvo las
-  tablas cuya cabecera contiene series de Notariado, Registradores o AEAT;
+- output/: salidas versionadas (las evaluaciones selladas ya hechas se leen de ahí; `make all` no reabre el sellado); las
+  tablas con columnas de Notariado, Registradores o AEAT van redactadas, sin esas columnas (V14; src/v14/terceros.py);
 - data/: la clase (a) de docs/v13/datos_inventario.csv (redistribuible y versionado), con data/base/publica y data/base/geo;
   data/base/publica/hechos.parquet sin las variables de EXCLUIR_PUBLICA (licencia pendiente del autor; docs/v13/decisiones.md).
 Excluido: clase (b) (no redistribuible: `make datos_terceros` o descarga manual), clase (c) (regenerable: `make datos_v9`,
@@ -26,6 +26,9 @@ import zipfile
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(RAIZ))
+from src.v14 import terceros as T  # noqa: E402
+
 P = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))
 NOMBRE = f"vivienda-espana-evidencia-{P['version_publica']}"
 INVENTARIO = RAIZ / "docs" / "v13" / "datos_inventario.csv"
@@ -68,8 +71,6 @@ def seleccionar() -> tuple[list[str], list[tuple[str, str]]]:
         if f.startswith("data/"):
             c, m = clase.get(f, ("?", "sin clasificar en docs/v13/datos_inventario.csv"))
             (inc.append(f) if c == "a" else exc.append((f, f"clase ({c}): {m}")))
-        elif f.startswith("output/") and _cabecera_no_redis(RAIZ / f):
-            exc.append((f, "tabla con series de Notariado, Registradores o AEAT (licencia no verificada)"))
         else:
             inc.append(f)
     return inc, exc
@@ -154,6 +155,9 @@ def main() -> int:
         d.parent.mkdir(parents=True, exist_ok=True)
         if f == "data/base/publica/hechos.parquet":
             quitadas = _filtrar_hechos(RAIZ / f, d)
+        elif quitar := T.a_redactar(f, RAIZ / f):   # V14: tabla de output/ sin las columnas de terceros (antes se excluía entera)
+            T.redactar(RAIZ / f, d, quitar)
+            exc.append((f, "redactada: sin las columnas " + " ".join(quitar)))
         else:
             shutil.copyfile(RAIZ / f, d)
     (base / "LEEME_DEPOSITO.md").write_text(leeme(len(inc), exc, quitadas), encoding="utf-8")

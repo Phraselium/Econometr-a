@@ -137,6 +137,10 @@ RETIRADOS_MANUALES = {"medidas_programas.csv": "docs/v8_1/datos_retirados.md (co
 def lecturas_no_versionadas() -> list[str]:
     vers = set(subprocess.run(["git", "ls-files", "data/raw"], cwd=RAIZ, capture_output=True, text=True).stdout.split())
     nombres = {Path(v).name for v in vers} | retirados_con_descarga() | set(RETIRADOS_MANUALES)
+    inv = RAIZ / "docs" / "v13" / "datos_inventario.csv"   # V14: en el árbol público data/raw viene del depósito (`make datos`)
+    if inv.exists():
+        with inv.open(encoding="utf-8") as fh:
+            nombres |= {Path(r["fichero"]).name for r in csv.DictReader(fh) if r["fichero"].startswith("data/raw/")}
     err = []
     scripts = [p for p in RAIZ.joinpath("src").rglob("*.py") if not re.match(r"(fetch_|.*_fetch\.py$|extract_|check_v5)", p.name)]
     for p in scripts:

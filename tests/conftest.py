@@ -28,3 +28,56 @@ def pytest_sessionfinish(session, exitstatus):
         nuevas = sorted(set(despues.splitlines()) - set(antes.splitlines()))
         print("\nLos tests han modificado ficheros del repositorio:\n  " + "\n  ".join(nuevas))
         session.exitstatus = 1
+
+
+# V14 (árbol público): sin los datos de terceros (Notariado, Registradores; `make datos_terceros` y la reconstrucción de
+# los paneles), los tests que los leen no pueden ejecutarse. Solo se marcan como omitidos los que fallan con
+# FileNotFoundError sobre uno de esos ficheros (src/v14/terceros.py, REQUIEREN_TERCEROS); cualquier otro fallo sigue siendo
+# un fallo. En el repositorio de desarrollo, con los datos presentes, no se omite nada. Limitación documentada en
+# reproducir/instrucciones.md («Árbol público»).
+import sys as _sys  # noqa: E402
+
+import pytest  # noqa: E402
+
+_sys.path.insert(0, str(RAIZ))
+try:
+    from src.v14.terceros import REQUIEREN_TERCEROS as _TERCEROS
+except Exception:  # noqa: BLE001
+    _TERCEROS = ()
+
+
+def _falta_terceros(texto: str) -> str | None:
+    if "No such file or directory" not in texto:
+        return None
+    for f in _TERCEROS:
+        if f in texto and not (RAIZ / f).exists():
+            return f
+    return None
+
+
+def _texto(rep) -> str:
+    partes = [str(getattr(rep, "longreprtext", "") or "")]
+    partes += [c for _, c in getattr(rep, "sections", [])]
+    return "\n".join(partes)
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    out = yield
+    rep = out.get_result()
+    if rep.failed:
+        f = _falta_terceros(_texto(rep))
+        if f:
+            rep.outcome = "skipped"
+            rep.longrepr = (str(item.path), item.location[1] or 0, f"requiere datos de terceros no redistribuibles: {f} (make datos_terceros)")
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_make_collect_report(collector):
+    out = yield
+    rep = out.get_result()
+    if rep.failed:
+        f = _falta_terceros(_texto(rep))
+        if f:
+            rep.outcome = "skipped"
+            rep.longrepr = (str(collector.path), 0, f"requiere datos de terceros no redistribuibles: {f} (make datos_terceros)")

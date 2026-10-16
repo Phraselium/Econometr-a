@@ -1,5 +1,5 @@
 {
- "_nota": "Única fuente de la versión pública, la URL del repositorio, la web y el DOI (V13). La leen src/v5/render.py ({{proyecto.<campo>}} en las plantillas), src/consulta/generar.py, src/v10/web.py y src/v13/metadatos.py (CITATION.cff y .zenodo.json). src/v13/check_v13.py (make check) falla si una puerta de entrada declara otra versión vigente o si aparece otra URL del repositorio.",
+ "_nota": "Única fuente de la versión pública, la URL del repositorio, la web y el DOI (V13). La leen src/v5/render.py ({{proyecto.<campo>}} en las plantillas), src/consulta/generar.py, src/v10/web.py y src/v13/metadatos.py (CITATION.cff y .zenodo.json). src/v13/check_v13.py (make check) falla si una puerta de entrada declara otra versión vigente o si aparece otra URL del repositorio. V14: zenodo_url_paquete es la URL de descarga del paquete del depósito (la usa `make datos` en el árbol público); repositorio_desarrollo es el repositorio de desarrollo archivado (única otra URL de repositorio admitida).",
  "titulo": "Vivienda en España: base de evidencia reproducible",
  "autor": "Borja Romero, economista (firma individual, independiente)",
  "version_publica": "1.0",
@@ -7,11 +7,28 @@
  "repositorio": "https://github.com/Phraselium/vivienda-espana-evidencia",
  "web": "https://phraselium.github.io/vivienda-espana-evidencia/",
  "doi": "PENDIENTE",
+ "zenodo_url_paquete": "PENDIENTE",
+ "repositorio_desarrollo": "https://github.com/Phraselium/Econometr-a",
  "vigentes": {
-  "deficit_y_necesidad": {"tema": "Déficit y necesidad de vivienda 2026-2035, simulaciones de instrumentos (dosis y coste) y atlas regional", "version_interna": "v7.1 con las correcciones de v7.2"},
-  "por_que_ha_subido": {"tema": "Por qué ha subido el precio de compra y el alquiler (factores, periodos y factor común)", "version_interna": "V8 (redacción y tablas de v8.1)"},
-  "que_causa_que": {"tema": "Qué causa qué: diseños de identificación pre-registrados", "version_interna": "V9"},
-  "atlas_descriptivo": {"tema": "Atlas descriptivo, base de datos única, figuras y web", "version_interna": "V10 (base ampliada en V11 y V12)"},
-  "demografia_titularidad": {"tema": "Demografía, hogares, titularidad, oferta, condiciones por origen y turismo", "version_interna": "V12 (datos de V11)"}
+  "deficit_y_necesidad": {
+   "tema": "Déficit y necesidad de vivienda 2026-2035, simulaciones de instrumentos (dosis y coste) y atlas regional",
+   "version_interna": "v7.1 con las correcciones de v7.2"
+  },
+  "por_que_ha_subido": {
+   "tema": "Por qué ha subido el precio de compra y el alquiler (factores, periodos y factor común)",
+   "version_interna": "V8 (redacción y tablas de v8.1)"
+  },
+  "que_causa_que": {
+   "tema": "Qué causa qué: diseños de identificación pre-registrados",
+   "version_interna": "V9"
+  },
+  "atlas_descriptivo": {
+   "tema": "Atlas descriptivo, base de datos única, figuras y web",
+   "version_interna": "V10 (base ampliada en V11 y V12)"
+  },
+  "demografia_titularidad": {
+   "tema": "Demografía, hogares, titularidad, oferta, condiciones por origen y turismo",
+   "version_interna": "V12 (datos de V11)"
+  }
  }
 }

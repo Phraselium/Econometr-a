@@ -4,7 +4,7 @@
    «**Versión:**» distinto de proyecto.json; las puertas principales declaran la versión pública; los campos «version» de
    CITATION.cff, .zenodo.json y consulta/*.json coinciden.
 2. URL única: toda URL github.com/Phraselium/... o phraselium.github.io/... de los ficheros versionados es la configurada en
-   proyecto.json (repositorio y web).
+   proyecto.json (repositorio y web; desde V14 también el repositorio de desarrollo archivado, `repositorio_desarrollo`).
 3. Metadatos generados: CITATION.cff y .zenodo.json son los que genera src/v13/metadatos.py.
 4. Cifras: ninguna cifra de output/v5/cifras_clave.csv cambia, desaparece ni se añade respecto a las huellas de
    docs/v13/cifras_base_v12.csv sin entrada en ERRATA.md (mismo criterio que check_v9).
@@ -70,6 +70,7 @@ def version_unica() -> list[str]:
 
 def url_unica() -> list[str]:
     repo, web = P["repositorio"].lower(), P["web"].lower()
+    admitidas = {repo, P.get("repositorio_desarrollo", repo).lower()}   # V14: el de desarrollo, archivado, también se cita
     err = []
     for f in _versionados("."):
         if not f.endswith(EXT_TEXTO) or f == "proyecto.json":
@@ -78,7 +79,7 @@ def url_unica() -> list[str]:
         for m in URL_REPO.finditer(t):
             u = m.group(0).rstrip(".").lower()
             u = u[:-4] if u.endswith(".git") else u
-            if u != repo:
+            if u not in admitidas:
                 err.append(f"{f}: URL de repositorio distinta de la configurada: {m.group(0)}")
         for m in URL_WEB.finditer(t):
             if not m.group(0).lower().startswith(web.rstrip("/")):

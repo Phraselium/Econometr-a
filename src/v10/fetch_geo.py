@@ -6,6 +6,7 @@
 """
 from __future__ import annotations
 
+import os
 import shutil
 import sys
 from pathlib import Path
@@ -23,8 +24,9 @@ CAPAS_VLC = {"vlc_barrios.geojson": 224, "vlc_distritos.geojson": 225, "vlc_secc
 def main() -> int:
     DIR.mkdir(parents=True, exist_ok=True)
     destino = DIR / "seccionado_2025.zip"
-    cache = Path("/tmp/claude-0/-home-user-Econometr-a/468da938-3e2d-5fba-ac52-e16a4175b9ac/scratchpad/iab/seccionado_2025.zip")
-    if not destino.exists() and cache.exists():
+    # V14: copia local opcional del zip del INE (variable de entorno), en lugar de una ruta fija de la sesión de trabajo
+    cache = Path(os.environ["SECCIONADO_2025_ZIP"]) if os.environ.get("SECCIONADO_2025_ZIP") else None
+    if not destino.exists() and cache is not None and cache.exists():
         shutil.copy(cache, destino)
     descargar(INE, destino)
     for nombre, capa in CAPAS_VLC.items():

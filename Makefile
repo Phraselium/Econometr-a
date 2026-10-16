@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9 datos_v11 v12 metadatos paquete_zenodo
+.PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9 datos_v11 v12 metadatos paquete_zenodo datos arbol_publico muestra_revision
 
 all: data clean models report
 
@@ -97,6 +97,15 @@ metadatos:
 paquete_zenodo:
 	$(PY) src/v13/inventario_datos.py
 	$(PY) src/v13/paquete_zenodo.py
+
+# V14: datos desde el depósito de Zenodo (URL y DOI de proyecto.json; o el paquete copiado en _descarga/), con verificación sha256
+datos:
+	$(PY) src/v14/datos.py
+
+# V14: árbol limpio de la versión pública en un repositorio git nuevo (un único commit «Versión 1.0»)
+DEST ?= ../vivienda-espana-evidencia
+arbol_publico:
+	$(PY) src/v14/arbol_publico.py --destino $(DEST)
 
 # Validación limpia diferida de V7: CON red, UNA sola vez, tras la release del pre-registro (docs/v7/notas_release.md)
 evaluate_v7:

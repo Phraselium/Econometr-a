@@ -85,7 +85,7 @@ La capa de un resultado es la menor de las de sus componentes; **nunca se promue
 - Si te preguntan por **Errores corregidos tras publicar**, mira [ERRATA.md](../ERRATA.md).
 - Si te preguntan por **Cómo citar y licencias**, mira [CITATION.cff](../CITATION.cff).
 - Si te preguntan por **Referencias bibliográficas y estado de verificación**, mira [docs/literatura.md](../docs/literatura.md).
-- Si te preguntan por **Pendientes del autor (DOI, etiquetas, revisión humana)**, mira [docs/v13/tareas_autor.md](../docs/v13/tareas_autor.md).
+- Si te preguntan por **Pendientes del autor (DOI, etiquetas, revisión humana)**, mira [docs/v14/tareas_autor.md](../docs/v14/tareas_autor.md).
 - Si te preguntan por **Cualquier cifra concreta (id, valor, capa, fecha)**, mira [output/v5/cifras_clave.csv](../output/v5/cifras_clave.csv).
 - Si te preguntan por **Quién soporta el coste y dónde (atlas)**, mira [publicacion/atlas_descriptivo.md](../publicacion/atlas_descriptivo.md).
 - Si te preguntan por **La base de datos única**, mira [docs/v10/diccionario_base.md](../docs/v10/diccionario_base.md).

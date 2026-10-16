@@ -552,7 +552,7 @@ MAPA: list[tuple[str, str]] = [
     ("Errores corregidos tras publicar", "ERRATA.md"),
     ("Cómo citar y licencias", "CITATION.cff"),
     ("Referencias bibliográficas y estado de verificación", "docs/literatura.md"),
-    ("Pendientes del autor (DOI, etiquetas, revisión humana)", "docs/v13/tareas_autor.md"),
+    ("Pendientes del autor (DOI, etiquetas, revisión humana)", "docs/v14/tareas_autor.md"),
     ("Cualquier cifra concreta (id, valor, capa, fecha)", "output/v5/cifras_clave.csv"),
     ("Quién soporta el coste y dónde (atlas)", "publicacion/atlas_descriptivo.md"),
     ("La base de datos única", "docs/v10/diccionario_base.md"),
@@ -750,7 +750,7 @@ def construir_version(cifras: dict[str, dict]) -> dict:
     notas = (RAIZ / "docs/v8/notas_release.md").read_text(encoding="utf-8")
     m = re.search(r"^fecha_verificable:\s*(\S+)", notas, re.M)
     d = re.search(r"^doi:\s*(\S+)", notas, re.M)
-    tareas = (RAIZ / "docs/v13/tareas_autor.md").read_text(encoding="utf-8")
+    tareas = (RAIZ / "docs/v14/tareas_autor.md").read_text(encoding="utf-8")
     pend = [re.sub(r"^\d+\.\s*", "", t.lstrip("# ").strip()) for t in tareas.splitlines() if t.startswith("## ")]
     sha = hashlib.sha256((RAIZ / "output/v5/cifras_clave.csv").read_bytes()).hexdigest()
     return {"_generado": "Generado por `make consulta` (src/consulta/generar.py). No editar a mano.", "version": PROYECTO["version_publica"],

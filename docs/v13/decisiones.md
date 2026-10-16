@@ -95,3 +95,8 @@ Hoy git versiona 1.212 MB de data/, de los que 1.072 MB son data/raw. Propuesta 
   - Queda como limitación declarada (ERRATA.md y metodologia/desviaciones_v8.md, 2026-10-16).
 - **Conclusión.** Hubo regeneración, pero ni apertura ni evaluación. Ninguna cifra cambia.
 - **Propuesta para el autor (docs/v14/tareas_autor.md):** registrar en su máquina el sha256 de data/sealed en un fichero versionado, para poder compararlo en el futuro.
+
+## Seguimiento en V14 (2026-10-16)
+- **D2 · resuelta por el bloque 1 de V14.** El repositorio público vivienda-espana-evidencia nace sin datos y sin historia (`make arbol_publico`). Los datos vienen del depósito de Zenodo (`make datos`). No hace falta sacar data/raw de Econometr-a, que queda archivado. Detalle en docs/v14/arbol_1_0.md y docs/v14/decisiones.md, E2.
+- **D4 · se mantiene la exclusión.** El aviso legal de la AEAT reserva los derechos. Procedimiento para una 1.0.1: docs/v14/tareas_autor.md.
+- **D5 · resuelta.** Las 15 tablas propias con columnas de Notariado o Registradores van redactadas en el árbol nuevo y en el paquete. Los paneles derivados no entran. La búsqueda por cabeceras y por valores de muestra no encuentra ninguna serie de esas fuentes (docs/v14/decisiones.md, E3). En Econometr-a no se reescribe la historia.

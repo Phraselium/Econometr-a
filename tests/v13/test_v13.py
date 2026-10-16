@@ -21,7 +21,8 @@ def test_version_y_url_unicas():
 
 def test_check_detecta_discrepancias(tmp_path, monkeypatch):
     f = tmp_path / "README.md"
-    f.write_text("Versión pública: **0.9**. Repositorio: https://github.com/Phraselium/Econometr-a\n", encoding="utf-8")
+    antigua = "https://github.com/" + "Phraselium/Econometr-a"   # concatenada: el propio check_v13 rechaza la URL literal
+    f.write_text(f"Versión pública: **0.9**. Repositorio: {antigua}\n", encoding="utf-8")
     assert [m.group(1) for m in C.DECL.finditer(f.read_text(encoding="utf-8"))] == ["0.9"]
     assert C.URL_REPO.search(f.read_text(encoding="utf-8")).group(0).lower() != C.P["repositorio"].lower()
 

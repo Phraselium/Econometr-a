@@ -44,4 +44,13 @@ Ninguno.
   - AEAT: 5 directas y 5 indirectas vía estadística oficial (IPVA, SERPAVI).
   - Al final, las URL de las condiciones de uso, sin interpretar.
 - **Hallazgo y corrección:** la redacción de tablas no miraba los .csv.gz. output/v6/M0/paneles/prov_compra_anual_train.csv.gz llevaba 2 columnas de Registradores. Ahora src/v14/terceros.py revisa también los .gz y reconoce «registr» como palabra: 16 tablas redactadas.
+- **Bloque 2 · README del árbol público.**
+  - Primera sección tras el título: 106 palabras, desde la plantilla docs/v14/plantillas/readme_arbol.md.
+  - Recuento de una ejecución real: docs/v14/tests_arbol.json, 318 pasados y 59 omitidos.
+  - tests/conftest.py comprueba en el árbol que la ejecución completa da esos números, y tests/v14 que el README los lleva.
+- **Bloque 4 · Regeneración y prueba.**
+  - Este repositorio: `make publicacion` sin cambios; `make check` limpio (393 tests, aviso por el hash pendiente); git sin cambios.
+  - Árbol final desde 6d86b2a: pack de 46,14 MiB; 318 pasados y 59 omitidos; `make publicacion` sin cambios.
+  - `make check` en el árbol: un único error, el `hash_sellado` pendiente, que es lo previsto.
+  - Detalle en docs/v14/arbol_1_0.md. Pasos 0 y 0 bis añadidos en tareas_autor.md.
 

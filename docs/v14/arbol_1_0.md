@@ -17,7 +17,7 @@ Entra todo lo versionado en Econometr-a, salvo las exclusiones de la tabla sigui
 | publicacion/, metodologia/, reproducir/, consulta/ | Lo publicado. `make publicacion` y `make consulta` lo regeneran y los tests lo comparan |
 | figuras/, web/ (fuentes), paper/ | Figuras con ficha, web estática y manuscrito |
 | docs/ completo (3,6 MB) | Los scripts y tests leen plantillas, pre-registros, decisiones, manifiestos e inventarios de docs/. Separar lo «imprescindible» rompería `make all` y los tests |
-| output/ (89 MB) | Salidas versionadas: `make publicacion` copia de ahí y los tests las comparan. Incluye las evaluaciones selladas ya hechas (`make all` no reabre el sellado). Las 15 tablas con columnas de Notariado, Registradores o AEAT van **redactadas**, sin esas columnas |
+| output/ (89 MB) | Salidas versionadas: `make publicacion` copia de ahí y los tests las comparan. Incluye las evaluaciones selladas ya hechas (`make all` no reabre el sellado). Las 16 tablas con columnas de Notariado, Registradores o AEAT van **redactadas**, sin esas columnas |
 | data/CHECKSUMS.sha256 y los manifiestos data/raw/**/_manifest*.csv | URL, edición, fecha, licencia y sha256 de cada fichero de datos. Con ellos `make datos` y `make datos_terceros` verifican lo que descargan |
 | revision_externa/ | Paquete para la revisión externa (bloque 3) |
 | historico/INDICE.md (nuevo) | Sustituye a historico/: enlaza al repositorio de desarrollo y al commit de origen |
@@ -30,7 +30,7 @@ Entra todo lo versionado en Econometr-a, salvo las exclusiones de la tabla sigui
 | data/raw de terceros no redistribuibles (Notariado, Registradores, CGPJ, Interior, Incasòl, Registre de Turisme, Comunidad de Madrid, Jarociński-Karadi, AEAT) | dentro de los 719 | Licencia no verificada o no abierta (docs/v8_1/datos_retirados.md; D4) | `make datos_terceros` (con red) y docs/v11/descargas_manuales.md |
 | data/sealed | — | Muestra sellada: solo vía src/holdout.py; nunca se publica | `make clean` la reconstruye (solo por orden del autor) |
 | Derivados con series de Notariado o Registradores (data/processed/nacional_q, panel_ccaa_a, v2/train/nacional_q_v2, v8/nacional_q_v8, v8/cv_prov_q_v8) | dentro de los 719 | Contienen series de esas fuentes (D5) | `make datos_terceros` y reconstrucción de paneles |
-| Columnas de Notariado, Registradores o AEAT de 15 tablas de output/ | 15 tablas redactadas | Ídem (D5, D4). Se quita la columna y no la tabla, para que no se rompa ningún enlace publicado | `make all` tras `make datos_terceros` |
+| Columnas de Notariado, Registradores o AEAT de 16 tablas de output/ (también .csv.gz desde V14.1) | 16 tablas redactadas | Ídem (D5, D4). Se quita la columna y no la tabla, para que no se rompa ningún enlace publicado | `make all` tras `make datos_terceros` |
 | historico/ | 76 | Documentos de versiones superadas; ningún script los necesita | Repositorio de desarrollo archivado, en el commit de origen (historico/INDICE.md) |
 | .claude/ | 19 | Configuración de los agentes de trabajo de la sesión de desarrollo | — |
 
@@ -42,14 +42,20 @@ No queda ninguna serie de Notariado ni de Registradores: ni por cabeceras ni por
 - Nunca sobrescribe un fichero versionado.
 - No lee nada fuera del repositorio.
 
-## Comprobación en el árbol generado (2026-10-16)
-Sin red y con el paquete de `make paquete_zenodo` copiado a mano en `_descarga/`, se ejecutó `make datos`, después `make check` y después `make publicacion`.
-- `make datos`: 705 ficheros copiados, 50 ya presentes (los manifiestos) y 0 problemas.
-- Los resultados de `make check` y `make publicacion` están en docs/v14/estado.md.
-- Limitación documentada en reproducir/instrucciones.md («Árbol público»): sin `make datos_terceros`, los tests que leen datos de terceros se marcan como omitidos, con su motivo, y solo si fallan por la falta de uno de esos ficheros (tests/conftest.py).
+## Comprobación en el árbol generado (V14.1, 2026-10-16)
+**Árbol final:** generado con `make arbol_publico` desde el commit de origen exacto `6d86b2a1f71d084af1d54b734ac09001a446de22` (6d86b2a). En el repositorio nuevo hay un único commit, c4ac604 «Versión 1.0». La prueba se hizo sin red y con el paquete de `make paquete_zenodo` copiado a mano en `_descarga/`.
+- **`make datos`:** 705 ficheros copiados, 50 ya presentes (los manifiestos) y 0 problemas.
+- **`make check`:**
+  - pytest: **318 tests pasados y 59 omitidos** por faltar datos de terceros. Coinciden con docs/v14/tests_arbol.json, que es lo que publica el README; tests/conftest.py lo comprueba.
+  - ruff, check_texto, check_v5, v6, v8, v9 y v13: sin errores. check_v14: sin heredocs sin comillas.
+  - **Un único error, por diseño:** `hash_sellado` sigue PENDIENTE. En el árbol público es obligatorio y lo calcula el autor (tareas_autor.md, paso 0 bis). Con el hash escrito, `make check` pasa entero.
+  - Git queda sin cambios tras el check (comprobado con `git status` y src/v12/git_limpio.py).
+- **`make publicacion`:** sin cambios.
+- **Recuento:** `pytest tests --junitxml` en un árbol de arranque (generado desde 56d7192 con `--sin-recuento`) escribió docs/v14/tests_arbol.json con src/v14/tests_arbol.py: 318 pasados, 59 omitidos, 0 fallos, 0 errores. El árbol final da los mismos números.
+- **Limitación** documentada en reproducir/instrucciones.md («Árbol público»): sin `make datos_terceros`, los tests que leen datos de terceros se marcan como omitidos, con su motivo, y solo si fallan por la falta de uno de esos ficheros (tests/conftest.py).
 
 ## Tamaño
-- Repositorio git (pack, lo que descarga un clon y cuenta GitHub): **46,1 MiB**. Cumple el objetivo de menos de 100 MB.
+- Repositorio git (pack, lo que descarga un clon y cuenta GitHub): **46,14 MiB** en el árbol final (origen 6d86b2a). Cumple el objetivo de menos de 100 MB.
 - Árbol de trabajo sin datos: 125,2 MB en 3.000 ficheros. El 71 % es output/ (89 MB). Las salidas de texto se comprimen bien en git.
 - Con `make datos`, data/ añade unos 1.200 MB en el disco local; no entran en git.
 

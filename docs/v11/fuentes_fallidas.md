@@ -37,3 +37,11 @@ Comprobación de la segunda pasada: 3 intentos por host con curl, separados 15 s
 ## D. Incidencias de proceso
 - **Afiliación municipal de la Seguridad Social.** El fichero de 2025-05 trae el último dígito del código de municipio desplazado al nombre, y el de 2025-07 llama «COD CNAE09» a la columna. Se corrigen en el script, que ahora guarda caché por mes. La primera ejecución se perdió al fallar en 2025-07, y se relanzó.
 - **Turismo con móviles.** La primera ejecución pidió 200 periodos y fallaron las 591 peticiones (límite de volumen). Se relanzó por tramos.
+
+## E. Tercera pasada (2026-10-16)
+- **OPI por la API de datos.gob.es** («Extranjeros con certificado de registro o tarjeta de residencia en vigor» y «Personas ucranianas con documentación de residencia o estancia en vigor»): un intento, 403 de Incapsula. No se insiste.
+  - Los ficheros subidos por el autor (`OPI_datos_completos.zip`, `OPI_Descarga_Completa.zip`) contienen la página de bloqueo, no datos.
+  - `datos-wayback.zip` contiene conjuntos de la GVA ajenos al registro turístico; no se incorpora. El primer zip subido estaba vacío.
+- **Padrón de València 2014:** no existe con ningún nombre (`Padron2014.pdf`, `...Cast.pdf`, `...Val.pdf`). No publicado.
+- **Altas y bajas del padrón de València desde 2017:** no existe en `AltasBajas/<A>/` ni en `<A>/`. No publicado.
+- **Padrón y población extranjera de València 2025-2026 en castellano:** fuentes sin mapa Unicode; se usa la versión en valenciano y OCR en las páginas afectadas.

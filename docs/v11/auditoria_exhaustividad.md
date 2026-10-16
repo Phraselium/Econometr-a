@@ -72,3 +72,13 @@ con su estado.
 | AEAT, IRPF por municipios | ✔ parcial | 2013–2024 | municipio > 1.000 hab., Comunitat Valenciana (331) | informe HTML por municipio; València figura desde 2016; sin nº de declarantes con rentas inmobiliarias; código postal no descargado |
 | INE IPVA municipio y distrito | ✔ | 2011–2024 | municipio > 10.000 hab. (720), distritos de capitales (379) | código INE de los metadatos; por tamaño de vivienda; sin antigüedad de contrato |
 | Censo anual: país de nacimiento y hogares por municipio | ✘ (no publicado) | — | — | padrón por país de nacimiento 2003-2022 (v9) |
+
+## Tercera pasada (2026-10-16)
+| Fuente | Estado | Inicio–fin real | Nivel | Detalle |
+|---|---|---|---|---|
+| Ajuntament de València, padrón (PDF) | ✔ | 2001–2026 (sin 2014) | barrio, distrito | sexo, edad (3 grupos), continente; validado con INE y censo anual |
+| Ajuntament de València, población extranjera (PDF) | ✔ parcial | 2001–2026 | distrito, ciudad | continente por barrio y distrito; países principales 2005-2018 |
+| Ajuntament de València, altas y bajas (PDF) | ✔ | 1998–2016 | distrito | sin informe desde 2017 |
+| OPI vía datos.gob.es | ✘ | — | — | 403 Incapsula (un intento); los ficheros subidos son páginas de bloqueo |
+| Barcelona HUT trimestral (manual) | ✔ | 2018T2–2026T3 | municipio; barrio desde 2023T1 | expedientes únicos |
+| GVA BDO afiliación por nacionalidad (manual) | ✔ | 2012T1–2026T3 | municipio | ratio 0,961 frente a la SS en la provincia 46 |

@@ -133,3 +133,20 @@ Como sustituto de STOCK se documentan estas series, todas por código INE.
   - IRPF municipal (rentas de inmuebles, renta bruta y disponible), 2013-2024, en la Comunitat Valenciana;
   - IPVA por municipio y distrito, 2011-2024.
 - **Empleo local:** afiliación por municipio, con diciembres desde 2011 y mensual desde 2022.
+
+## Padrón municipal de València por barrio y distrito (tercera pasada, 2026-10-16)
+Fuente: PDF anuales de la Oficina d'Estadística (`data/raw/v11/vlc_padron/`; variantes en `docs/v11/vlc_padron_ficheros.md`).
+| Tabla | Barrio (87) | Distrito (19) |
+|---|---|---|
+| Población por sexo (`vlc_padron_pob`) | 2001-2013, 2015-2026 | 2001-2013, 2015-2026 |
+| Edad en 3 grupos × sexo (`vlc_padron_pob_edad`) | 2002-2012, 2016-2024 | 2002-2009, 2016-2026 |
+| Extranjeros por continente × sexo (`vlc_padron_ext_continente`) | 2002-2003, 2005-2026 (2011 por sexo no cuadra: excluido de la base) | 2002-2026 |
+| Nacionalidades principales: total de la ciudad y 4 distritos con más peso | — | 2005-2018 (`vlc_nacionalidades_principales.csv.gz`, fuera de la base) |
+| Altas y bajas (nacimientos, defunciones, inmigración, emigración, cambios de domicilio) | — | 1998-2016 (`vlc_altas_bajas`) |
+
+**Falta:** padrón 2014 (no publicado en PDF; sí la población extranjera 2014); altas y bajas desde 2017 (sin informe);
+altas y bajas por nacionalidad y países por barrio (filas en `tablas_crudas.csv.gz`, sin normalizar); edad en 2001, 2013, 2015 y 2025-2026 a escala de barrio.
+
+**Validación** (`validacion.csv`): suma de barrios = total de la ciudad del PDF en todos los años; Total = Hombres + Mujeres en todas las filas salvo las señaladas;
+ciudad frente al padrón del INE: 0,09-1,32 % (máximo en 2021). Barrios frente al censo anual por sección 2021-2025 (37 barrios comparables): mediana 2,2-3,3 %;
+máximo ≈ 400 % en barrios rurales (Pobles del Nord y del Sud), por la asignación sección → barrio por superficie de V12-B1, no por el padrón.

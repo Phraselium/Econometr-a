@@ -297,6 +297,22 @@ def partes() -> list[pd.DataFrame]:
                           "variable": "gva_bdo_afiliados", "desagregacion": "nacionalidad=" + b.nacionalidad,
                           "valor": b.valor, "metodo_dato": "descarga manual del autor (BDO GVA, V0201_C2D0244)"}),
             "data/raw/v11/manual/gva_bdo_afiliacion.csv.gz")
+    # Padrón municipal de València (PDF del Ajuntament; extracción propia validada contra INE): barrio y distrito por código
+    for fich, nivel in (("vlc_padron_barrio.csv.gz", "barrio"), ("vlc_padron_distrito.csv.gz", "distrito")):
+        f = RAW11 / "vlc_padron" / fich
+        if f.exists():
+            b = pd.read_csv(f, dtype={"codigo": str})
+            b = b[b.control_suma.astype(bool) & (b.codigo != "462501106")]   # Les Moreres (solo 2002): sin código vigente
+            add(pd.DataFrame({"territorio_codigo": b.codigo, "nivel": nivel, "periodo_raw": b.anio.astype(str) + "-01-01",
+                              "variable": b.variable, "desagregacion": b.desagregacion, "valor": b.valor,
+                              "metodo_dato": np.where(b.ocr.astype(bool), "extracción de PDF con OCR", "extracción de PDF")}),
+                f"data/raw/v11/vlc_padron/{fich}")
+    f = RAW11 / "vlc_padron" / "vlc_altas_bajas_distrito.csv.gz"
+    if f.exists():
+        a = pd.read_csv(f, dtype={"cod_distrito": str})
+        add(pd.DataFrame({"territorio_codigo": a.cod_distrito, "nivel": "distrito", "periodo_raw": a.anio.astype(str),
+                          "variable": "vlc_altas_bajas", "desagregacion": "componente=" + a.componente, "valor": a.valor,
+                          "metodo_dato": "extracción de PDF (informe más reciente)"}), "data/raw/v11/vlc_padron/vlc_altas_bajas_distrito.csv.gz")
     return out
 
 
@@ -328,6 +344,12 @@ META_V11 = {
     "catastro_tit_titulares": ("titulares (sujetos pasivos)", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial; sujetos pasivos; tramos dentro del municipio; NO encadenar con catastro_titulares_jaxi: salto 2023→2024 de −32 % por cambio de definición)", _C, "Catastro: reutilización con reconocimiento", True),
     "catastro_tit_viviendas": ("inmuebles residenciales", "Catastro, estadística de titularidad (padrón IBI urbano, uso residencial)", _C, "Catastro: reutilización con reconocimiento", True),
     "gva_bdo_afiliados": ("afiliados", "GVA, Banco de Datos Municipal (consulta V0201_C2D0244): afiliados a la Seguridad Social por nacionalidad (descarga manual del autor)", _C, "Generalitat Valenciana: CC BY 4.0", True),
+    **{v: ("personas", f"Ajuntament de València, Oficina d'Estadística, padrón municipal a 1 de enero (PDF; extracción propia; {d})", _C,
+           "Ajuntament de València: reutilización con cita", True)
+       for v, d in (("vlc_padron_pob", "sexo"), ("vlc_padron_pob_edad", "edad en tres grupos y sexo"),
+                    ("vlc_padron_ext_continente", "población extranjera por continente"))},
+    "vlc_altas_bajas": ("personas", "Ajuntament de València, informe anual de altas y bajas del padrón (PDF 2004-2016; extracción propia)", _C,
+                        "Ajuntament de València: reutilización con cita", True),
     "bcn_hut_registro": ("viviendas", "Ajuntament de Barcelona, registro HUT, cortes trimestrales (descarga manual del autor)", _C, "CC BY 4.0", True),
     "catastro_titulares_jaxi": ("titulares", "Catastro, titulares catastrales por municipio y clase (visor JAXI; 2012-2023; NO encadenar con catastro_tit_*: serie de sujetos pasivos desde 2024)", _C, "Catastro: reutilización con reconocimiento", True),
     "catastro_viviendas_por_anio_construccion": ("viviendas", "Catastro, otras estadísticas (2019): viviendas por año de construcción", _C, "Catastro: reutilización con reconocimiento", True),

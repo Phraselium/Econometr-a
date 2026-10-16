@@ -21,6 +21,17 @@ Están ordenadas por utilidad para el canal demográfico. Para cada una se indic
    - lo registra con origen «descarga manual del autor»;
    - `make base` lo incorpora.
 
+## Estado (2026-10-16, tercera pasada)
+| N.º | Fuente | Estado |
+|---|---|---|
+| 1 | OPI | ✘ los ficheros subidos son páginas de bloqueo (sin datos); la API de datos.gob.es devuelve 403 |
+| 2 | Interior | pendiente |
+| 3 | GVA BDO afiliados por nacionalidad | ✔ incorporado (`gva_bdo_afiliados`, 2012T1-2026T3) |
+| 4 | Barcelona HUT trimestral | ✔ incorporado (`bcn_hut_registro`, 32 cortes 2018T2-2026T3) |
+| 5 | GVA vía web.archive.org | ✘ el zip subido contiene otros conjuntos de la GVA |
+| 6-8 | Catastro, universidades, GTFS | pendientes |
+| — | ICANE (extranjeros con tarjeta por edad, Cantabria) | registrado; no se usa (otra estadística y otra región) |
+
 ## 1. OPI: extranjeros con certificado de registro o tarjeta de residencia en vigor por provincia y nacionalidad (IMPRESCINDIBLE)
 - **Para qué.** Stock de residentes extranjeros documentados por provincia y país, desde 2002. Es el instrumento migratorio
   (cuotas iniciales por país × provincia) y distingue régimen general y de libre circulación (UE), que la ECP no da.

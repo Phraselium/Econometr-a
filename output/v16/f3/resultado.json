@@ -11,14 +11,14 @@
   "docs/v16/literatura/L6_extranjeros_golden_visa_efectos.csv",
   "docs/v16/literatura/L7_vivienda_publica_vacias_efectos.csv"
  ],
- "N": 173,
+ "N": 171,
  "metodo": "efectos aleatorios DL y REML; Egger, PET-PEESE",
  "estimacion": null,
  "ic95": null,
  "p_ajustado": null,
  "nivel_evidencia": "DESCRIPTIVO",
  "diagnosticos": {
-  "grupos": 89,
+  "grupos": 88,
   "con_metaanalisis": 0,
   "metaanalisis": []
  },

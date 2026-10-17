@@ -2,7 +2,7 @@
 
 Generado por `python3 src/v16/f3_metaanalisis.py` desde docs/v16/literatura/*_efectos.csv. Regla fijada de antemano (decisiones K7): un estudio, una estimación (la primera anotada); metaanálisis solo con ≥ 5 estudios con error estándar y la misma unidad. Las fichas están NO VERIFICADAS hasta pasar el verificador de referencias, y casi todas se leyeron en resumen: estos agregados son distribuciones a priori orientativas para la fase 6, no hallazgos (capa C4).
 
-Grupos: 89; con metaanálisis: 0; insuficientes: 89.
+Grupos: 88; con metaanálisis: 0; insuficientes: 88.
 
 ## Grupos sin metaanálisis (rango de las estimaciones, sin agregar)
 
@@ -20,7 +20,6 @@ Grupos: 89; con metaanálisis: 0; insuficientes: 89.
 | L1_control_alquileres | renta_ciudad_total | 1 | 0 | 5.1 | 5.1 | 5.1 | 0 estudios con ee (< 5) |
 | L1_control_alquileres | renta_contratos_regulados | 4 | 2 | -5 | -1.52 | -0.049 | 2 estudios con ee (< 5); el rango mezcla 4 unidades (no comparable) |
 | L1_control_alquileres | valor_inmobiliario | 1 | 0 | -6 | -6 | -6 | 0 estudios con ee (< 5) |
-| L2_vivienda_turistica_regulacion |  | 0 | 0 |  |  |  | 0 estudios con ee (< 5) |
 | L2_vivienda_turistica_regulacion | alquiler | 3 | 0 | 0.018 | 0.056 | 1.9 | 0 estudios con ee (< 5); el rango mezcla 3 unidades (no comparable) |
 | L2_vivienda_turistica_regulacion | alquiler mensual anunciado | 1 | 0 | 49.5 | 49.5 | 49.5 | 0 estudios con ee (< 5) |
 | L2_vivienda_turistica_regulacion | alquiler por m2 | 2 | 0 | 0.023 | 0.661 | 1.3 | 0 estudios con ee (< 5); el rango mezcla 2 unidades (no comparable) |

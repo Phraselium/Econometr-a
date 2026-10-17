@@ -65,13 +65,14 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F1 | adquisidor-datos | renta_parque | 156.933 | data/raw/v16/renta_parque;docs/v16/fuentes/renta_parque.md |
 | 2026-10-17 | F1 | auditor-datos | auditoria_alquiler_turismo | 185.453 | output/v16/auditoria/alquiler_turismo |
 | 2026-10-17 | F2 | econometrician | f2_hechos | 191.483 | src/v16/f2_hechos.py;output/v16/f2_hechos |
+| 2026-10-17 | F2 | econometrician | f2_contabilidad | 131.826 | src/v16/f2_contabilidad.py;output/v16/f2_contabilidad |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F1 | 1.689.072 |
-| F2 | 191.483 |
+| F2 | 323.309 |
 | F3 | 1.160.356 |
 
-Total V16: 3.040.911 tokens
+Total V16: 3.172.737 tokens
 
 <!-- fin subagentes -->

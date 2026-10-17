@@ -1,0 +1,4 @@
+periodo,T,N,r2_medio_dfm_global,r2_medio_pc1_global,cuota_pc1_propia_periodo,corr_factor_dfm_pc1_global,dfm_convergio
+2007-2013,28,33,0.35527,0.35893,0.35989,-0.99535,True
+2014-2019,24,33,0.17625,0.17708,0.19278,-0.99535,True
+2020-2026,26,33,0.45021,0.45332,0.45374,-0.99535,True

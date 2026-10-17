@@ -1,0 +1,83 @@
+{
+ "rama": "v16-f2-contabilidad",
+ "pregunta": "¿Cómo se reparte contablemente la variación de hogares (demografía, jefatura, nacionalidad) y la del precio (común frente a local)?",
+ "capa": "C4",
+ "datos": [
+  "data/raw/v11/ine_ecp/ecp_t60129.csv.gz",
+  "data/raw/ine_v2_hogares_prov.csv",
+  "data/base/hechos.parquet (hogares_epa, valor_tasado; muestra_sellada_v6 == False)",
+  "data/raw/v11/ine_censos_microdatos/jefatura_2021.csv.gz",
+  "data/processed/v16/tension_social.parquet (EMCR, nacional)"
+ ],
+ "N": {
+  "provincias_precio": 33,
+  "trimestres_precio_2007_2026": 78,
+  "ccaa_hogares": 11,
+  "provincias_hogares": 41
+ },
+ "metodo": "Shift-share con reparto de Shapley (tamaño, nacionalidad, edad) y residuo de jefatura; PCA y DynamicFactor (statsmodels) sobre tasas de ln valor tasado; bootstrap por bloques; BH",
+ "estimacion": {
+  "hogares_2021_2025_ecp": {
+   "cambio_observado": 981823.0,
+   "poblacion": 670187.1622753782,
+   "composicion_nacionalidad": -80764.15805952561,
+   "estructura_edad": 371921.7725496168,
+   "jefatura_residuo": 20478.22323453054
+  },
+  "cuota_pc1_precio": {
+   "2007-2013": 0.7140221104148321,
+   "2014-2019": 0.5289026903766754,
+   "2020-2026": 0.8085755322512399
+  }
+ },
+ "ic95": {
+  "2007-2013": [
+   0.4004042442658618,
+   0.8293326895268452
+  ],
+  "2014-2019": [
+   0.24791780336546632,
+   0.6311256293276315
+  ],
+  "2020-2026": [
+   0.4020433238124573,
+   0.8609795257883095
+  ]
+ },
+ "p_ajustado": {
+  "2007-2013": 0.001,
+  "2014-2019": 0.001,
+  "2020-2026": 0.001
+ },
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "error_identidad_max_hogares": 3.725290298461914e-09,
+  "discrepancia_ecp_epa_pct": 8.196691256978085,
+  "dfm_convergio": true,
+  "corr_dfm_pc1": -0.995346471342709,
+  "smoke": false,
+  "ya_visto": [
+   "V12-B3 (hogares 2011-2021)",
+   "V8-M1 (factor común 17 CCAA)"
+  ],
+  "excluidas_k8": [
+   "07",
+   "22",
+   "26",
+   "28",
+   "30",
+   "31",
+   "33",
+   "35",
+   "38",
+   "44",
+   "50"
+  ]
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Contabilidad C4 sin lectura causal. Hogares: 8 CCAA con provincias selladas excluidas (K8). Precio: 33 provincias con serie completa; interpolación solo en robustez. Fuera de muestra no aplica (identidad contable)."
+}

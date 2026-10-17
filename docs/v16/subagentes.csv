@@ -19,3 +19,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-17,F1,adquisidor-datos,renta_parque,156933,data/raw/v16/renta_parque;docs/v16/fuentes/renta_parque.md
 2026-10-17,F1,auditor-datos,auditoria_alquiler_turismo,185453,output/v16/auditoria/alquiler_turismo
 2026-10-17,F2,econometrician,f2_hechos,191483,src/v16/f2_hechos.py;output/v16/f2_hechos
+2026-10-17,F2,econometrician,f2_contabilidad,131826,src/v16/f2_contabilidad.py;output/v16/f2_contabilidad

@@ -1,0 +1,7 @@
+periodo_v8,ventana,panel,N,T,cuota_pc1,v8_17_ccaa_cuota,v8_b68_lo,v8_b68_hi,v8_N,v8_T,cuota_azar_v8,diferencia_pp,fuera_banda68_v8
+P2,2008T3-2013T4,CCAA sin provincias selladas con serie completa (real),9,22,0.52871,0.45273,0.42012,0.54171,17,22,0.32776,7.59845,False
+P2,2008T3-2013T4,33 provincias (real),33,22,0.4047,0.45273,0.42012,0.54171,17,22,0.32776,-4.80326,True
+P3,2014T1-2019T4,CCAA sin provincias selladas con serie completa (real),9,24,0.5548,0.59577,0.47814,0.66824,17,24,0.2796,-4.09737,False
+P3,2014T1-2019T4,33 provincias (real),33,24,0.45046,0.59577,0.47814,0.66824,17,24,0.2796,-14.5319,True
+P5,2022T3-2026T2,CCAA sin provincias selladas con serie completa (real),9,16,0.95036,0.92793,0.86654,0.94925,17,16,0.35218,2.24304,True
+P5,2022T3-2026T2,33 provincias (real),33,16,0.89072,0.92793,0.86654,0.94925,17,16,0.35218,-3.72088,False

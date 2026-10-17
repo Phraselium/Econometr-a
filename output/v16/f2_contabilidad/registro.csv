@@ -1,0 +1,22 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v16-f2-contabilidad,precio_principal_d4_nominal_2007-2013,PCA1 de 33 provincias; d4 ln valor tasado,2007T1,2013T4,28,,,,,0.7140221104148321,0.001,"cuota PC1 frente a azar (N=33,T=28); C4 contabilidad"
+v16-f2-contabilidad,precio_principal_d4_nominal_2014-2019,PCA1 de 33 provincias; d4 ln valor tasado,2014T1,2019T4,24,,,,,0.5289026903766754,0.001,"cuota PC1 frente a azar (N=33,T=24); C4 contabilidad"
+v16-f2-contabilidad,precio_principal_d4_nominal_2020-2026,PCA1 de 33 provincias; d4 ln valor tasado,2020T1,2026T2,26,,,,,0.8085755322512399,0.001,"cuota PC1 frente a azar (N=33,T=26); C4 contabilidad"
+v16-f2-contabilidad,precio_d4_real_2007-2013,PCA1 de 33 provincias; d4 ln valor tasado,2007T1,2013T4,28,,,,,0.6118999205895984,0.001,"cuota PC1 frente a azar (N=33,T=28); C4 contabilidad"
+v16-f2-contabilidad,precio_d4_real_2014-2019,PCA1 de 33 provincias; d4 ln valor tasado,2014T1,2019T4,24,,,,,0.4504551480780774,0.001,"cuota PC1 frente a azar (N=33,T=24); C4 contabilidad"
+v16-f2-contabilidad,precio_d4_real_2020-2026,PCA1 de 33 provincias; d4 ln valor tasado,2020T1,2026T2,26,,,,,0.8158842721466607,0.001,"cuota PC1 frente a azar (N=33,T=26); C4 contabilidad"
+v16-f2-contabilidad,precio_trimestral_nominal_2007-2013,PCA1 de 33 provincias; dq ln valor tasado,2007T1,2013T4,28,,,,,0.3598884588970333,0.001,"cuota PC1 frente a azar (N=33,T=28); C4 contabilidad"
+v16-f2-contabilidad,precio_trimestral_nominal_2014-2019,PCA1 de 33 provincias; dq ln valor tasado,2014T1,2019T4,24,,,,,0.19277934637291863,0.001,"cuota PC1 frente a azar (N=33,T=24); C4 contabilidad"
+v16-f2-contabilidad,precio_trimestral_nominal_2020-2026,PCA1 de 33 provincias; dq ln valor tasado,2020T1,2026T2,26,,,,,0.4537429893703948,0.001,"cuota PC1 frente a azar (N=33,T=26); C4 contabilidad"
+v16-f2-contabilidad,precio_d4_nominal_interpolada_2007-2013,PCA1 de 38 provincias; d4 ln valor tasado,2007T1,2013T4,28,,,,,0.7022319671221793,0.001,"cuota PC1 frente a azar (N=38,T=28); C4 contabilidad"
+v16-f2-contabilidad,precio_d4_nominal_interpolada_2014-2019,PCA1 de 38 provincias; d4 ln valor tasado,2014T1,2019T4,24,,,,,0.48023901775565914,0.001,"cuota PC1 frente a azar (N=38,T=24); C4 contabilidad"
+v16-f2-contabilidad,precio_d4_nominal_interpolada_2020-2026,PCA1 de 38 provincias; d4 ln valor tasado,2020T1,2026T2,26,,,,,0.798608303377386,0.001,"cuota PC1 frente a azar (N=38,T=26); C4 contabilidad"
+v16-f2-contabilidad,precio_dfm_global_2007-2013,"DynamicFactor(k=1, AR2) 2007T1-2026T2, R2 medio por periodo",2007T1,2013T4,28,,,,,0.355272488522334,,convergió=True; llf=-2982.1; contraste de PCA
+v16-f2-contabilidad,precio_dfm_global_2014-2019,"DynamicFactor(k=1, AR2) 2007T1-2026T2, R2 medio por periodo",2014T1,2019T4,24,,,,,0.17625236953554022,,convergió=True; llf=-2982.1; contraste de PCA
+v16-f2-contabilidad,precio_dfm_global_2020-2026,"DynamicFactor(k=1, AR2) 2007T1-2026T2, R2 medio por periodo",2020T1,2026T2,26,,,,,0.45021081676170943,,convergió=True; llf=-2982.1; contraste de PCA
+v16-f2-contabilidad,puente_v8_P2_9,PCA1 CCAA sin provincias selladas con serie completa (real); d4 ln real,2008T3,2013T4,22,,,,,0.5287145529182027,,puente con V8-M1 (17 CCAA); sin contraste de hipótesis
+v16-f2-contabilidad,puente_v8_P2_33,PCA1 33 provincias (real); d4 ln real,2008T3,2013T4,22,,,,,0.4046974894335508,,puente con V8-M1 (17 CCAA); sin contraste de hipótesis
+v16-f2-contabilidad,puente_v8_P3_9,PCA1 CCAA sin provincias selladas con serie completa (real); d4 ln real,2014T1,2019T4,24,,,,,0.5548004235982141,,puente con V8-M1 (17 CCAA); sin contraste de hipótesis
+v16-f2-contabilidad,puente_v8_P3_33,PCA1 33 provincias (real); d4 ln real,2014T1,2019T4,24,,,,,0.4504551480780774,,puente con V8-M1 (17 CCAA); sin contraste de hipótesis
+v16-f2-contabilidad,puente_v8_P5_9,PCA1 CCAA sin provincias selladas con serie completa (real); d4 ln real,2022T3,2026T2,16,,,,,0.9503637392446204,,puente con V8-M1 (17 CCAA); sin contraste de hipótesis
+v16-f2-contabilidad,puente_v8_P5_33,PCA1 33 provincias (real); d4 ln real,2022T3,2026T2,16,,,,,0.8907245449071832,,puente con V8-M1 (17 CCAA); sin contraste de hipótesis

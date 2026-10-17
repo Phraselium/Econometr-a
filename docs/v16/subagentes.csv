@@ -5,3 +5,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-17,F1,adquisidor-datos,alquiler_turismo,119161,data/raw/v16/alquiler_turismo;docs/v16/fuentes/alquiler_turismo.md
 2026-10-17,F1,ingeniero-datos,datos_demanda_internacional,61558,src/v16/datos/demanda_internacional.py;data/processed/v16/demanda_internacional.parquet
 2026-10-17,F1,adquisidor-datos,tension_social,82901,data/raw/v16/tension_social;docs/v16/fuentes/tension_social.md
+2026-10-17,F1,ingeniero-datos,datos_tension_social,139695,src/v16/datos/tension_social.py;data/processed/v16/tension_social.parquet

@@ -593,7 +593,133 @@ def evaluate_v15(hipotesis: str, fn, rama: str, nombres: list[str]):
     return res
 
 
+# ============================================================================== v16
+# Validación sellada de V16 (docs/v16/plan.md, fase 4.4; docs/v16/preregistro_v16.md), fijada ANTES de estimar nada de V16:
+# - no toca las de v6 ni V15: sus unidades siguen fuera (unidad_sellada_v16 devuelve True para ellas);
+# - espacial: el 15 % de las celdas de 0,5° × 0,5° que quedan tras quitar las provincias de v6 y las celdas de V15 (generador
+#   independiente: semilla [SEED, 16]); los municipios con 5 distritos o más nunca se sellan enteros: se sella el 15 % de sus
+#   distritos que no estén ya sellados por V15;
+# - temporal: todo periodo posterior al último visto de cada variable|nivel|frecuencia en docs/v16/sellado_v16.json, y toda
+#   edición publicada después de la fecha de corte (la del commit con la etiqueta prereg-v16).
+# La puerta de evaluate_v16 es la etiqueta prereg-v16 publicada en el remoto (src/v16/etiquetas.py).
+FRACCION_V16 = 0.15
+MANIFIESTO_V16 = HERE / "docs" / "v16" / "sellado_v16.json"
+
+
+def _celda(m: pd.DataFrame) -> pd.Series:
+    return np.floor(m.lon / CELDA_V15).astype(int).astype(str) + "_" + np.floor(m.lat / CELDA_V15).astype(int).astype(str)
+
+
+def celdas_selladas_v16() -> list[str]:
+    m = _centroides_municipios()
+    m = m[~m.cod_provincia.isin(set(provincias_selladas_v6()))]
+    todas = sorted(set(_celda(m).unique()) - set(celdas_selladas_v15()))
+    rng = np.random.default_rng([SEED, 16])
+    n = int(round(FRACCION_V16 * len(todas)))
+    return sorted(np.array(todas)[rng.permutation(len(todas))[:n]].tolist())
+
+
+def municipios_sellados_v16() -> set[str]:
+    m = _centroides_municipios()
+    m = m[~m.cod_provincia.isin(set(provincias_selladas_v6()))]
+    return set(m.cod_municipio[_celda(m).isin(set(celdas_selladas_v16()))]) - _municipios_grandes()
+
+
+def distritos_sellados_v16() -> set[str]:
+    """15 % de los distritos (7 dígitos) no sellados por V15 de cada municipio grande no sellado, más todos los de municipios sellados V16."""
+    s = pd.read_parquet(GEO / "secciones.parquet", columns=["cod_distrito", "cod_municipio"]).astype(str)
+    s["cod_distrito"] = s.cod_distrito.str.zfill(7)
+    s["cod_municipio"] = s.cod_municipio.str.zfill(5)
+    s = s[~s.cod_municipio.str[:2].isin(set(provincias_selladas_v6()))]
+    mun = municipios_sellados_v16()
+    sel = set(s.cod_distrito[s.cod_municipio.isin(mun)])
+    ya = distritos_sellados_v15()
+    rng = np.random.default_rng([SEED, 16, 7])
+    for cod, g in s[~s.cod_municipio.isin(mun | municipios_sellados_v15())].groupby("cod_municipio"):
+        d = sorted(set(g.cod_distrito.unique()) - ya)
+        if len(set(g.cod_distrito.unique())) >= 5 and d:
+            k = max(1, int(round(FRACCION_V16 * len(d))))
+            sel |= set(np.array(d)[rng.permutation(len(d))[:k]].tolist())
+    return sel
+
+
+def unidad_sellada_v16(codigo: pd.Series, nivel: str) -> pd.Series:
+    """True si la unidad está fuera del entrenamiento de V16: bloque espacial V16, bloque V15 o provincias de v6.
+    CCAA y nación no se sellan espacialmente (su validación es la temporal). Partidos judiciales (PJ-pp-n) heredan su provincia."""
+    c = codigo.astype(str)
+    v6 = set(provincias_selladas_v6())
+    previo = unidad_sellada_v15(codigo, nivel)
+    if nivel == "municipio":
+        return previo | c.str.zfill(5).isin(municipios_sellados_v16())
+    if nivel in ("distrito", "seccion"):
+        return previo | c.str.zfill(7 if nivel == "distrito" else 10).str[:7].isin(distritos_sellados_v16())
+    if nivel == "partido_judicial":
+        return c.str[3:5].isin(v6)
+    return previo
+
+
+def _manifiesto_v16() -> dict:
+    return json.loads(MANIFIESTO_V16.read_text(encoding="utf-8")) if MANIFIESTO_V16.exists() else {}
+
+
+def sellar_v16(hechos: pd.DataFrame, nombre: str) -> pd.DataFrame:
+    """Como sellar_v15, con el manifiesto docs/v16/sellado_v16.json: la parte sellada (espacial V16/V15/v6 o temporal posterior
+    al corte) va a data/sealed/v16_<nombre>.parquet sin devolverse; devuelve SOLO el entrenamiento. Sin manifiesto se niega."""
+    man = _manifiesto_v16()
+    if not man:
+        raise RuntimeError("Falta docs/v16/sellado_v16.json: fije el corte (fase 4.4) antes de sellar.")
+    esp = pd.Series(False, index=hechos.index)
+    for nivel, idx in hechos.groupby("nivel").groups.items():
+        esp.loc[idx] = unidad_sellada_v16(hechos.loc[idx, "territorio_codigo"], nivel).values
+    if "muestra_sellada_v6" in hechos:
+        esp |= hechos.muestra_sellada_v6.fillna(False).astype(bool)
+    clave = hechos.variable.astype(str) + "|" + hechos.nivel.astype(str) + "|" + hechos.frecuencia.astype(str)
+    tope = clave.map(man["ultimo_periodo_visto"])
+    tem = (tope.notna() & (hechos.periodo.astype(str) > tope.astype(str))) | tope.isna()
+    if "edicion" in hechos:
+        tem |= pd.to_datetime(hechos.edicion, errors="coerce") > pd.Timestamp(man["fecha_corte"])
+    m = esp | tem
+    SEALED.mkdir(parents=True, exist_ok=True)
+    hechos[m].to_parquet(SEALED / f"v16_{nombre}.parquet", index=False)
+    with open(LOG, "a") as f:
+        f.write(json.dumps({"utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "evento": "sellado",
+                            "hipotesis": f"v16:{nombre}", "filas_selladas": int(m.sum()), "filas_entrenamiento": int((~m).sum())},
+                           ensure_ascii=False) + "\n")
+    return hechos[~m].copy()
+
+
+def evaluate_v16(hipotesis: str, fn, rama: str, nombres: list[str]):
+    """Abre la muestra sellada V16 UNA vez por pregunta confirmatoria (registrado antes de leer), solo si la etiqueta prereg-v16
+    está publicada en el remoto (src/v16/etiquetas.py). fn(dict) -> dict."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("v16_etiquetas", HERE / "src" / "v16" / "etiquetas.py")
+    et = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(et)
+    ok, motivo = et.prereg_v16_publicada(HERE)
+    if not ok:
+        raise PermissionError(f"Puerta V16 cerrada: {motivo}")
+    clave = f"v16:{hipotesis}"
+    if any(a["hipotesis"] == clave and a.get("evento") == "apertura" for a in _accesos()):
+        raise PermissionError(f"{clave} ya abrió la muestra sellada V16 (una sola vez).")
+    apertura = {"utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "evento": "apertura",
+                "hipotesis": clave, "rama": rama, "paneles": [f"v16_{n}" for n in nombres]}
+    with open(LOG, "a") as f:
+        f.write(json.dumps(apertura, ensure_ascii=False) + "\n")
+    _log_md(apertura["utc"], clave, rama, apertura["paneles"], "APERTURA (antes de leer)")
+    res = fn({n: pd.read_parquet(SEALED / f"v16_{n}.parquet") for n in nombres})
+    reg = {**apertura, "utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "evento": "evaluacion", "resultado": res}
+    with open(LOG, "a") as f:
+        f.write(json.dumps(reg, ensure_ascii=False, default=str) + "\n")
+    _log_md(reg["utc"], clave, rama, apertura["paneles"], json.dumps(res, ensure_ascii=False, default=str)[:300])
+    return res
+
+
 if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "bloques_v16":
+        mun, dis = municipios_sellados_v16(), distritos_sellados_v16()
+        print(json.dumps({"celdas_selladas": len(celdas_selladas_v16()), "municipios_sellados": len(mun),
+                          "distritos_sellados": len(dis)}, ensure_ascii=False))
+        sys.exit(0)
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         print(json.dumps(build(), indent=2, ensure_ascii=False))
     elif len(sys.argv) > 1 and sys.argv[1] == "bloques_v15":

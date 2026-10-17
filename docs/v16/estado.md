@@ -53,11 +53,12 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F1 | adquisidor-datos | tension_social | 82.901 | data/raw/v16/tension_social;docs/v16/fuentes/tension_social.md |
 | 2026-10-17 | F1 | ingeniero-datos | datos_tension_social | 139.695 | src/v16/datos/tension_social.py;data/processed/v16/tension_social.parquet |
 | 2026-10-17 | F1 | ingeniero-datos | datos_oferta_suelo | 50.757 | src/v16/datos/oferta_suelo.py;data/processed/v16/oferta_suelo.parquet |
+| 2026-10-17 | F1 | ingeniero-datos | datos_alquiler_turismo | 199.177 | src/v16/datos/alquiler_turismo.py;data/processed/v16/alquiler_turismo.parquet |
 
 | Fase | Tokens de subagentes |
 |---|---|
-| F1 | 957.151 |
+| F1 | 1.156.328 |
 
-Total V16: 957.151 tokens
+Total V16: 1.156.328 tokens
 
 <!-- fin subagentes -->

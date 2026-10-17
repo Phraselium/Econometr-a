@@ -7,3 +7,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-17,F1,adquisidor-datos,tension_social,82901,data/raw/v16/tension_social;docs/v16/fuentes/tension_social.md
 2026-10-17,F1,ingeniero-datos,datos_tension_social,139695,src/v16/datos/tension_social.py;data/processed/v16/tension_social.parquet
 2026-10-17,F1,ingeniero-datos,datos_oferta_suelo,50757,src/v16/datos/oferta_suelo.py;data/processed/v16/oferta_suelo.parquet
+2026-10-17,F1,ingeniero-datos,datos_alquiler_turismo,199177,src/v16/datos/alquiler_turismo.py;data/processed/v16/alquiler_turismo.parquet

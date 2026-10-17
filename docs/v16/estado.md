@@ -55,12 +55,13 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F1 | ingeniero-datos | datos_oferta_suelo | 50.757 | src/v16/datos/oferta_suelo.py;data/processed/v16/oferta_suelo.parquet |
 | 2026-10-17 | F1 | ingeniero-datos | datos_alquiler_turismo | 199.177 | src/v16/datos/alquiler_turismo.py;data/processed/v16/alquiler_turismo.parquet |
 | 2026-10-17 | F3 | lector-literatura | L3_oferta_elasticidad | 148.156 | docs/v16/literatura/L3_oferta_elasticidad.md |
+| 2026-10-17 | F3 | lector-literatura | L1_control_alquileres | 270.191 | docs/v16/literatura/L1_control_alquileres.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F1 | 1.156.328 |
-| F3 | 148.156 |
+| F3 | 418.347 |
 
-Total V16: 1.304.484 tokens
+Total V16: 1.574.675 tokens
 
 <!-- fin subagentes -->

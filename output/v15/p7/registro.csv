@@ -1,0 +1,25 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+E2,E2-prov-obra_neta_catastro-hogares-SERPAVI,provincia hogares vs obra_neta_catastro -> SERPAVI,2018,2024,38,,,,,0.7697691476921371,,descriptiva; sin p
+E2,E2-prov-obra_neta_catastro-hogares-IPC_alquiler,provincia hogares vs obra_neta_catastro -> IPC_alquiler,2018,2024,38,,,,,0.5147648433183434,,descriptiva; sin p
+E2,E2-prov-terminadas_MIVAU-hogares-SERPAVI,provincia hogares vs terminadas_MIVAU -> SERPAVI,2018,2024,35,,,,,0.7426878836737578,,descriptiva; sin p
+E2,E2-prov-terminadas_MIVAU-hogares-IPC_alquiler,provincia hogares vs terminadas_MIVAU -> IPC_alquiler,2018,2024,38,,,,,0.49727039039600096,,descriptiva; sin p
+E2,E2-prov-iniciadas_MIVAU-hogares-SERPAVI,provincia hogares vs iniciadas_MIVAU -> SERPAVI,2018,2024,35,,,,,0.6985103199021098,,descriptiva; sin p
+E2,E2-prov-iniciadas_MIVAU-hogares-IPC_alquiler,provincia hogares vs iniciadas_MIVAU -> IPC_alquiler,2018,2024,38,,,,,0.4651450496381514,,descriptiva; sin p
+E2,E2-prov-obra_neta_catastro-poblacion-SERPAVI,provincia poblacion vs obra_neta_catastro -> SERPAVI,2018,2024,38,,,,,0.7697691476921372,,descriptiva; sin p
+E2,E2-prov-obra_neta_catastro-poblacion-IPC_alquiler,provincia poblacion vs obra_neta_catastro -> IPC_alquiler,2018,2024,38,,,,,0.5147648433183434,,descriptiva; sin p
+E2,E2-prov-terminadas_MIVAU-poblacion-SERPAVI,provincia poblacion vs terminadas_MIVAU -> SERPAVI,2018,2024,35,,,,,0.7426878836737578,,descriptiva; sin p
+E2,E2-prov-terminadas_MIVAU-poblacion-IPC_alquiler,provincia poblacion vs terminadas_MIVAU -> IPC_alquiler,2018,2024,38,,,,,0.49727039039600096,,descriptiva; sin p
+E2,E2-prov-iniciadas_MIVAU-poblacion-SERPAVI,provincia poblacion vs iniciadas_MIVAU -> SERPAVI,2018,2024,35,,,,,0.6985103199021098,,descriptiva; sin p
+E2,E2-prov-iniciadas_MIVAU-poblacion-IPC_alquiler,provincia poblacion vs iniciadas_MIVAU -> IPC_alquiler,2018,2024,38,,,,,0.4651450496381513,,descriptiva; sin p
+E2,E2-mun-obra_neta_catastro-hogares-SERPAVI,municipio hogares vs obra_neta_catastro -> SERPAVI,2021,2025,444,,,,,0.38109558786278946,,descriptiva; sin p
+E2,E2-mun-obra_neta_catastro-hogares-IPC_alquiler,municipio hogares vs obra_neta_catastro -> IPC_alquiler,2021,2025,445,,,,,0.25789167694410703,,descriptiva; sin p
+E2,E2-mun-terminadas_MIVAU-hogares-SERPAVI,municipio hogares vs terminadas_MIVAU -> SERPAVI,2021,2025,0,,,,,,,descriptiva; sin p
+E2,E2-mun-terminadas_MIVAU-hogares-IPC_alquiler,municipio hogares vs terminadas_MIVAU -> IPC_alquiler,2021,2025,0,,,,,,,descriptiva; sin p
+E2,E2-mun-iniciadas_MIVAU-hogares-SERPAVI,municipio hogares vs iniciadas_MIVAU -> SERPAVI,2021,2025,0,,,,,,,descriptiva; sin p
+E2,E2-mun-iniciadas_MIVAU-hogares-IPC_alquiler,municipio hogares vs iniciadas_MIVAU -> IPC_alquiler,2021,2025,0,,,,,,,descriptiva; sin p
+E2,E2-mun-obra_neta_catastro-poblacion-SERPAVI,municipio poblacion vs obra_neta_catastro -> SERPAVI,2021,2025,444,,,,,0.37107948953904735,,descriptiva; sin p
+E2,E2-mun-obra_neta_catastro-poblacion-IPC_alquiler,municipio poblacion vs obra_neta_catastro -> IPC_alquiler,2021,2025,445,,,,,0.2536776491313525,,descriptiva; sin p
+E2,E2-mun-terminadas_MIVAU-poblacion-SERPAVI,municipio poblacion vs terminadas_MIVAU -> SERPAVI,2021,2025,0,,,,,,,descriptiva; sin p
+E2,E2-mun-terminadas_MIVAU-poblacion-IPC_alquiler,municipio poblacion vs terminadas_MIVAU -> IPC_alquiler,2021,2025,0,,,,,,,descriptiva; sin p
+E2,E2-mun-iniciadas_MIVAU-poblacion-SERPAVI,municipio poblacion vs iniciadas_MIVAU -> SERPAVI,2021,2025,0,,,,,,,descriptiva; sin p
+E2,E2-mun-iniciadas_MIVAU-poblacion-IPC_alquiler,municipio poblacion vs iniciadas_MIVAU -> IPC_alquiler,2021,2025,0,,,,,,,descriptiva; sin p

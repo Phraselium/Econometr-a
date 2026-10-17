@@ -1,0 +1,25 @@
+id,nivel,ventana,oferta,demanda,resultado,n,pearson,spearman,nota
+E2-prov-obra_neta_catastro-hogares-SERPAVI,provincia,2018-2024,obra_neta_catastro,hogares,SERPAVI,38,0.7697691476921371,0.7840026261078893,
+E2-prov-obra_neta_catastro-hogares-IPC_alquiler,provincia,2018-2024,obra_neta_catastro,hogares,IPC_alquiler,38,0.5147648433183434,0.43845059634533323,
+E2-prov-terminadas_MIVAU-hogares-SERPAVI,provincia,2018-2024,terminadas_MIVAU,hogares,SERPAVI,35,0.7426878836737578,0.7803921568627451,
+E2-prov-terminadas_MIVAU-hogares-IPC_alquiler,provincia,2018-2024,terminadas_MIVAU,hogares,IPC_alquiler,38,0.49727039039600096,0.4633986212933581,
+E2-prov-iniciadas_MIVAU-hogares-SERPAVI,provincia,2018-2024,iniciadas_MIVAU,hogares,SERPAVI,35,0.6985103199021098,0.7686274509803922,
+E2-prov-iniciadas_MIVAU-hogares-IPC_alquiler,provincia,2018-2024,iniciadas_MIVAU,hogares,IPC_alquiler,38,0.4651450496381514,0.43319838056680154,
+E2-prov-obra_neta_catastro-poblacion-SERPAVI,provincia,2018-2024,obra_neta_catastro,poblacion,SERPAVI,38,0.7697691476921372,0.7840026261078893,
+E2-prov-obra_neta_catastro-poblacion-IPC_alquiler,provincia,2018-2024,obra_neta_catastro,poblacion,IPC_alquiler,38,0.5147648433183434,0.43845059634533323,
+E2-prov-terminadas_MIVAU-poblacion-SERPAVI,provincia,2018-2024,terminadas_MIVAU,poblacion,SERPAVI,35,0.7426878836737578,0.7803921568627451,
+E2-prov-terminadas_MIVAU-poblacion-IPC_alquiler,provincia,2018-2024,terminadas_MIVAU,poblacion,IPC_alquiler,38,0.49727039039600096,0.4633986212933581,
+E2-prov-iniciadas_MIVAU-poblacion-SERPAVI,provincia,2018-2024,iniciadas_MIVAU,poblacion,SERPAVI,35,0.6985103199021098,0.7686274509803922,
+E2-prov-iniciadas_MIVAU-poblacion-IPC_alquiler,provincia,2018-2024,iniciadas_MIVAU,poblacion,IPC_alquiler,38,0.4651450496381513,0.43319838056680154,
+E2-mun-obra_neta_catastro-hogares-SERPAVI,municipio,2021-2025,obra_neta_catastro,hogares,SERPAVI,444,0.38109558786278946,0.3909710659247778,
+E2-mun-obra_neta_catastro-hogares-IPC_alquiler,municipio,2021-2025,obra_neta_catastro,hogares,IPC_alquiler,445,0.25789167694410703,0.27189191627208503,
+E2-mun-terminadas_MIVAU-hogares-SERPAVI,municipio,2021-2025,terminadas_MIVAU,hogares,SERPAVI,0,,,no disponible a nivel municipal (MIVAU solo provincial)
+E2-mun-terminadas_MIVAU-hogares-IPC_alquiler,municipio,2021-2025,terminadas_MIVAU,hogares,IPC_alquiler,0,,,no disponible a nivel municipal (MIVAU solo provincial)
+E2-mun-iniciadas_MIVAU-hogares-SERPAVI,municipio,2021-2025,iniciadas_MIVAU,hogares,SERPAVI,0,,,no disponible a nivel municipal (MIVAU solo provincial)
+E2-mun-iniciadas_MIVAU-hogares-IPC_alquiler,municipio,2021-2025,iniciadas_MIVAU,hogares,IPC_alquiler,0,,,no disponible a nivel municipal (MIVAU solo provincial)
+E2-mun-obra_neta_catastro-poblacion-SERPAVI,municipio,2021-2025,obra_neta_catastro,poblacion,SERPAVI,444,0.37107948953904735,0.38869001144091814,
+E2-mun-obra_neta_catastro-poblacion-IPC_alquiler,municipio,2021-2025,obra_neta_catastro,poblacion,IPC_alquiler,445,0.2536776491313525,0.2671509780529188,
+E2-mun-terminadas_MIVAU-poblacion-SERPAVI,municipio,2021-2025,terminadas_MIVAU,poblacion,SERPAVI,0,,,no disponible a nivel municipal (MIVAU solo provincial)
+E2-mun-terminadas_MIVAU-poblacion-IPC_alquiler,municipio,2021-2025,terminadas_MIVAU,poblacion,IPC_alquiler,0,,,no disponible a nivel municipal (MIVAU solo provincial)
+E2-mun-iniciadas_MIVAU-poblacion-SERPAVI,municipio,2021-2025,iniciadas_MIVAU,poblacion,SERPAVI,0,,,no disponible a nivel municipal (MIVAU solo provincial)
+E2-mun-iniciadas_MIVAU-poblacion-IPC_alquiler,municipio,2021-2025,iniciadas_MIVAU,poblacion,IPC_alquiler,0,,,no disponible a nivel municipal (MIVAU solo provincial)

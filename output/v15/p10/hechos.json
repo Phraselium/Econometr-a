@@ -1,0 +1,16 @@
+[
+  {
+    "id": "V15-E3-rho",
+    "indicador": "Parámetro autorregresivo espacial ρ (SAR, contigüidad, Δlog SERPAVI VC 2015-2024)",
+    "valor": 0.393,
+    "min": 0.244,
+    "max": 0.639,
+    "unidad": "ρ",
+    "periodo": "2015-2024",
+    "cobertura": "1124 municipios",
+    "fuentes": "MIVAU SERPAVI",
+    "capa": "C4",
+    "fecha_dato": "2026-10-17",
+    "ficha": "output/v15/p10/informe.md#rho"
+  }
+]

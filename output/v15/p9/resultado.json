@@ -1,0 +1,476 @@
+{
+  "rama": "r15/p9",
+  "pregunta": "H5: ¿predice la combinación el Δlog trimestral del valor tasado nacional mejor que el AR(4) y el ECM v1 en la misma muestra?",
+  "capa": "C4",
+  "datos": "data/processed/v15/p9_prediccion.parquet (+ inflación y tipo real de p2_fundamentales); entrenamiento",
+  "N": 51,
+  "metodo": "Ventana expansiva, h = 1; combinación = media de DFM (2 factores), BVAR Minnesota (6 var.), LASSO (λ con embargo de 4 trimestres) y ARDL (BIC ≤ 4); DM-HLN unilateral",
+  "estimacion": {
+    "razon_ECM_combinacion_AR4": 1.6966260028370308,
+    "rmse_combinacion": 0.012236308548971874,
+    "rmse_AR4": 0.00939414718164079,
+    "rmse_ECMv1": 0.01505407383041454,
+    "rmse_RWD": 0.012129113955349944
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "PREDICTIVO (sin capa causal; C4 de entrenamiento)",
+  "diagnosticos": {
+    "muestra_errores": {
+      "P": 51,
+      "primer_origen_objetivo": "2013Q3",
+      "ultimo": "2026Q1",
+      "desviacion": "DV15-B-1 (24 trimestres de indicadores; sin los 73 del preregistro)"
+    },
+    "ECM_por_modelo": {
+      "AR4": {
+        "rmse": 0.00939414718164079,
+        "ecm": 8.82500012703296e-05,
+        "razon_ecm_vs_AR4": 1.0
+      },
+      "DFM": {
+        "rmse": 0.011035983530412371,
+        "ecm": 0.00012179293248353311,
+        "razon_ecm_vs_AR4": 1.380089866633021
+      },
+      "BVAR": {
+        "rmse": 0.011824789999066623,
+        "ecm": 0.00013982565852202602,
+        "razon_ecm_vs_AR4": 1.5844267026547523
+      },
+      "LASSO": {
+        "rmse": 0.01652457969886312,
+        "ecm": 0.0002730617342240792,
+        "razon_ecm_vs_AR4": 3.0941839126736066
+      },
+      "ARDL": {
+        "rmse": 0.011133437328759816,
+        "ecm": 0.0001239534267534225,
+        "razon_ecm_vs_AR4": 1.404571387752452
+      },
+      "Combinacion": {
+        "rmse": 0.012236308548971874,
+        "ecm": 0.0001497272469056422,
+        "razon_ecm_vs_AR4": 1.6966260028370308
+      },
+      "RWD": {
+        "rmse": 0.012129113955349944,
+        "ecm": 0.00014711540534186475,
+        "razon_ecm_vs_AR4": 1.66703006486331
+      },
+      "ECMv1": {
+        "rmse": 0.01505407383041454,
+        "ecm": 0.0002266251388915719,
+        "razon_ecm_vs_AR4": 2.5679902054320443
+      }
+    },
+    "linea_base_K1": {
+      "base": "AR4",
+      "ecm_base": 8.82500012703296e-05,
+      "dm_combinacion_vs_base": {
+        "dm": -1.264042855845043,
+        "p_unilateral": 0.8939620432536092,
+        "p_bilateral": 0.21207591349278165,
+        "P": 51
+      },
+      "regla_K1": "la combinación debe batir a la base (DM tras Holm en la evaluación sellada) y estar en el MCS al 10 % (descriptivo)"
+    },
+    "DM_HLN_vs_AR4_unilateral": {
+      "DFM": {
+        "dm": -1.2784267246404317,
+        "p_unilateral": 0.8964991752082682,
+        "p_bilateral": 0.20700164958346373,
+        "P": 51
+      },
+      "BVAR": {
+        "dm": -1.4001240901110206,
+        "p_unilateral": 0.9161745112715645,
+        "p_bilateral": 0.16765097745687096,
+        "P": 51
+      },
+      "LASSO": {
+        "dm": -1.18245190915965,
+        "p_unilateral": 0.8786904556103178,
+        "p_bilateral": 0.24261908877936453,
+        "P": 51
+      },
+      "ARDL": {
+        "dm": -1.3794468407904024,
+        "p_unilateral": 0.9130521287522229,
+        "p_bilateral": 0.1738957424955542,
+        "P": 51
+      },
+      "Combinacion": {
+        "dm": -1.264042855845043,
+        "p_unilateral": 0.8939620432536092,
+        "p_bilateral": 0.21207591349278165,
+        "P": 51
+      },
+      "RWD": {
+        "dm": -1.7983939387754642,
+        "p_unilateral": 0.9609236213782422,
+        "p_bilateral": 0.0781527572435156,
+        "P": 51
+      },
+      "ECMv1": {
+        "dm": -1.2429545682026633,
+        "p_unilateral": 0.8901590737823106,
+        "p_bilateral": 0.21968185243537874,
+        "P": 51
+      }
+    },
+    "DM_HLN_vs_ECMv1_unilateral": {
+      "AR4": {
+        "dm": 1.2429545682026633,
+        "p_unilateral": 0.10984092621768937,
+        "p_bilateral": 0.21968185243537874,
+        "P": 51
+      },
+      "DFM": {
+        "dm": 1.134250036825677,
+        "p_unilateral": 0.13104925362505573,
+        "p_bilateral": 0.26209850725011147,
+        "P": 51
+      },
+      "BVAR": {
+        "dm": 1.0749345015949607,
+        "p_unilateral": 0.1437820257470716,
+        "p_bilateral": 0.2875640514941432,
+        "P": 51
+      },
+      "LASSO": {
+        "dm": -0.9538271240345655,
+        "p_unilateral": 0.8276200550457635,
+        "p_bilateral": 0.34475988990847284,
+        "P": 51
+      },
+      "ARDL": {
+        "dm": 1.1094012416249432,
+        "p_unilateral": 0.13628229084453342,
+        "p_bilateral": 0.27256458168906683,
+        "P": 51
+      },
+      "Combinacion": {
+        "dm": 1.1516677324696079,
+        "p_unilateral": 0.12746744956458655,
+        "p_bilateral": 0.2549348991291731,
+        "P": 51
+      },
+      "RWD": {
+        "dm": 0.6960180283171089,
+        "p_unilateral": 0.2448201907690187,
+        "p_bilateral": 0.4896403815380374,
+        "P": 51
+      }
+    },
+    "MCS": {
+      "al_10pct_descriptivo": [
+        "AR4",
+        "DFM",
+        "BVAR",
+        "LASSO",
+        "ARDL",
+        "Combinacion"
+      ],
+      "al_5pct_descriptivo": [
+        "AR4",
+        "DFM",
+        "BVAR",
+        "LASSO",
+        "ARDL",
+        "Combinacion"
+      ],
+      "nota": "MCS al 10 % NO APTO (K13): solo descriptivo; combinación en MCS 10 %: True"
+    },
+    "Clark_West": "NO APTO (tamaño 0,19): no se calcula p",
+    "Giacomini_White": "NO APTO (tamaño 0,031): no se calcula p",
+    "robustez_sin_2020T2_T3": {
+      "dm": -0.9791715108114878,
+      "p_unilateral": 0.8337975964850204,
+      "p_bilateral": 0.3324048070299591,
+      "P": 49
+    },
+    "mitades": {
+      "primera": {
+        "dm": -1.0580536471085078,
+        "p_unilateral": 0.8497176482133538,
+        "p_bilateral": 0.3005647035732923,
+        "P": 25
+      },
+      "segunda": {
+        "dm": -1.0929060943581872,
+        "p_unilateral": 0.8575725096924419,
+        "p_bilateral": 0.28485498061511616,
+        "P": 26
+      }
+    },
+    "potencia": "P ≈ 51 errores (< 73 del preregistro): potencia menor que 0,58 (MC) para una reducción del 20 %",
+    "multiverso_60": {
+      "n": 60,
+      "frac_ecm_menor_que_AR4": 0.0,
+      "frac_p_unilat_lt_005": 0.0,
+      "razon_min": 1.380089866633021,
+      "razon_max": 9.020924605421984
+    },
+    "pruebas_C3": "no aplica: H5 es predictivo (sin capa causal); la evaluación sellada es en octubre de 2027"
+  },
+  "fuera_muestra": {
+    "modelo": "Combinacion",
+    "rmse": 0.012236308548971874,
+    "dm_vs_ar4": {
+      "dm": -1.264042855845043,
+      "p_unilateral": 0.8939620432536092,
+      "P": 51
+    }
+  },
+  "notas": [
+    "Errores recursivos de entrenamiento (visto desde v1); la evaluación sellada (≥ 4 trimestres nuevos) es en octubre de 2027.",
+    "DM-HLN unilateral APTO; CW/GW sin p; MCS descriptivo.",
+    "Resultado esperado según el preregistro: no distinguible del AR(4)."
+  ],
+  "pendiente_sellada": true,
+  "p_valores_para_BY": [
+    {
+      "id": "H5-principal",
+      "p": 0.8939620432536092,
+      "contraste": "DM-HLN unilateral, Combinación frente a AR(4), h=1"
+    },
+    {
+      "id": "H5-mv-ptas-h1-sin-DFM",
+      "p": 0.8964991752082682
+    },
+    {
+      "id": "H5-mv-ptas-h1-sin-BVAR",
+      "p": 0.9161745112715645
+    },
+    {
+      "id": "H5-mv-ptas-h1-sin-LASSO",
+      "p": 0.8786904556103178
+    },
+    {
+      "id": "H5-mv-ptas-h1-sin-ARDL",
+      "p": 0.9130521287522229
+    },
+    {
+      "id": "H5-mv-ptas-h1-dummy-DFM",
+      "p": 0.9065168104245892
+    },
+    {
+      "id": "H5-mv-ptas-h1-dummy-BVAR",
+      "p": 0.912527577444186
+    },
+    {
+      "id": "H5-mv-ptas-h1-dummy-LASSO",
+      "p": 0.8755479998215862
+    },
+    {
+      "id": "H5-mv-ptas-h1-dummy-ARDL",
+      "p": 0.9155951129212391
+    },
+    {
+      "id": "H5-mv-ptas-h1-dummy-Combinacion",
+      "p": 0.8908064137717032
+    },
+    {
+      "id": "H5-mv-ptas-h2-sin-DFM",
+      "p": 0.9606334639470726
+    },
+    {
+      "id": "H5-mv-ptas-h2-sin-BVAR",
+      "p": 0.9618856730606392
+    },
+    {
+      "id": "H5-mv-ptas-h2-sin-LASSO",
+      "p": 0.8861617226388565
+    },
+    {
+      "id": "H5-mv-ptas-h2-sin-ARDL",
+      "p": 0.9627300146712355
+    },
+    {
+      "id": "H5-mv-ptas-h2-sin-Combinacion",
+      "p": 0.928479367518432
+    },
+    {
+      "id": "H5-mv-ptas-h2-dummy-DFM",
+      "p": 0.9415539063302025
+    },
+    {
+      "id": "H5-mv-ptas-h2-dummy-BVAR",
+      "p": 0.937340967798003
+    },
+    {
+      "id": "H5-mv-ptas-h2-dummy-LASSO",
+      "p": 0.8735525978425398
+    },
+    {
+      "id": "H5-mv-ptas-h2-dummy-ARDL",
+      "p": 0.9290094731171324
+    },
+    {
+      "id": "H5-mv-ptas-h2-dummy-Combinacion",
+      "p": 0.9009236869080849
+    },
+    {
+      "id": "H5-mv-ptas-h4-sin-DFM",
+      "p": 0.9873671616196478
+    },
+    {
+      "id": "H5-mv-ptas-h4-sin-BVAR",
+      "p": 0.9980033834730319
+    },
+    {
+      "id": "H5-mv-ptas-h4-sin-LASSO",
+      "p": 0.952516559509501
+    },
+    {
+      "id": "H5-mv-ptas-h4-sin-ARDL",
+      "p": 0.9980403083386481
+    },
+    {
+      "id": "H5-mv-ptas-h4-sin-Combinacion",
+      "p": 0.9927919666655812
+    },
+    {
+      "id": "H5-mv-ptas-h4-dummy-DFM",
+      "p": 0.9937901668521113
+    },
+    {
+      "id": "H5-mv-ptas-h4-dummy-BVAR",
+      "p": 0.9989848077644391
+    },
+    {
+      "id": "H5-mv-ptas-h4-dummy-LASSO",
+      "p": 0.956103103176948
+    },
+    {
+      "id": "H5-mv-ptas-h4-dummy-ARDL",
+      "p": 0.9992112858887584
+    },
+    {
+      "id": "H5-mv-ptas-h4-dummy-Combinacion",
+      "p": 0.9940568449076006
+    },
+    {
+      "id": "H5-mv-ipv-h1-sin-DFM",
+      "p": 0.9564760661178057
+    },
+    {
+      "id": "H5-mv-ipv-h1-sin-BVAR",
+      "p": 0.9844902504685299
+    },
+    {
+      "id": "H5-mv-ipv-h1-sin-LASSO",
+      "p": 0.9596787042680621
+    },
+    {
+      "id": "H5-mv-ipv-h1-sin-ARDL",
+      "p": 0.9372674463462494
+    },
+    {
+      "id": "H5-mv-ipv-h1-sin-Combinacion",
+      "p": 0.9436092435911075
+    },
+    {
+      "id": "H5-mv-ipv-h1-dummy-DFM",
+      "p": 0.9441831910964814
+    },
+    {
+      "id": "H5-mv-ipv-h1-dummy-BVAR",
+      "p": 0.9736160652955727
+    },
+    {
+      "id": "H5-mv-ipv-h1-dummy-LASSO",
+      "p": 0.9602053574546165
+    },
+    {
+      "id": "H5-mv-ipv-h1-dummy-ARDL",
+      "p": 0.946457148524869
+    },
+    {
+      "id": "H5-mv-ipv-h1-dummy-Combinacion",
+      "p": 0.9332004002005778
+    },
+    {
+      "id": "H5-mv-ipv-h2-sin-DFM",
+      "p": 0.9859997466528196
+    },
+    {
+      "id": "H5-mv-ipv-h2-sin-BVAR",
+      "p": 0.9906237768688363
+    },
+    {
+      "id": "H5-mv-ipv-h2-sin-LASSO",
+      "p": 0.9061960880168051
+    },
+    {
+      "id": "H5-mv-ipv-h2-sin-ARDL",
+      "p": 0.9826041941776978
+    },
+    {
+      "id": "H5-mv-ipv-h2-sin-Combinacion",
+      "p": 0.9627041879721148
+    },
+    {
+      "id": "H5-mv-ipv-h2-dummy-DFM",
+      "p": 0.9878333087532771
+    },
+    {
+      "id": "H5-mv-ipv-h2-dummy-BVAR",
+      "p": 0.9903945798953324
+    },
+    {
+      "id": "H5-mv-ipv-h2-dummy-LASSO",
+      "p": 0.8946621107693059
+    },
+    {
+      "id": "H5-mv-ipv-h2-dummy-ARDL",
+      "p": 0.980356694456712
+    },
+    {
+      "id": "H5-mv-ipv-h2-dummy-Combinacion",
+      "p": 0.957612316920942
+    },
+    {
+      "id": "H5-mv-ipv-h4-sin-DFM",
+      "p": 0.9282722740364983
+    },
+    {
+      "id": "H5-mv-ipv-h4-sin-BVAR",
+      "p": 0.9934362634884288
+    },
+    {
+      "id": "H5-mv-ipv-h4-sin-LASSO",
+      "p": 0.952410456511531
+    },
+    {
+      "id": "H5-mv-ipv-h4-sin-ARDL",
+      "p": 0.9529088602700216
+    },
+    {
+      "id": "H5-mv-ipv-h4-sin-Combinacion",
+      "p": 0.9770903743158565
+    },
+    {
+      "id": "H5-mv-ipv-h4-dummy-DFM",
+      "p": 0.9347553938063479
+    },
+    {
+      "id": "H5-mv-ipv-h4-dummy-BVAR",
+      "p": 0.9938185196689404
+    },
+    {
+      "id": "H5-mv-ipv-h4-dummy-LASSO",
+      "p": 0.9524934207551387
+    },
+    {
+      "id": "H5-mv-ipv-h4-dummy-ARDL",
+      "p": 0.9587391565543627
+    },
+    {
+      "id": "H5-mv-ipv-h4-dummy-Combinacion",
+      "p": 0.9782262321082571
+    }
+  ],
+  "semilla": 20261010
+}

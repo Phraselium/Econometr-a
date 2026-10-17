@@ -1,0 +1,140 @@
+{
+  "rama": "r15/p7",
+  "pregunta": "E2: ¿se asocia la presión demográfica no cubierta por la obra con el crecimiento del alquiler? (descriptiva)",
+  "capa": "C4",
+  "datos": "data/processed/v15/p7_demografia_obra.parquet (+ p9, p4); entrenamiento",
+  "N": 35,
+  "metodo": "Correlaciones de Pearson/Spearman del exceso de presión (demanda − obra)/población inicial con el Δlog del alquiler; 24 especificaciones",
+  "estimacion": {
+    "pearson_provincial_terminadas_hogares_SERPAVI": 0.7426878836737578,
+    "spearman": 0.7803921568627451
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "DESCRIPTIVO (C4)",
+  "diagnosticos": {
+    "especificaciones": 24,
+    "con_dato": 16,
+    "pearson_min_max": [
+      0.2536776491313525,
+      0.7697691476921372
+    ],
+    "frac_pearson_positivo": 1.0,
+    "frac_spearman_positivo": 1.0,
+    "limitaciones": [
+      "N provincial ≈ 38 (correlación con ruido grande, sin IC)",
+      "provincial: demanda hogares y población coinciden salvo escala (DV15-B-8)",
+      "Catastro municipal solo de municipios de entrenamiento: la suma provincial es parcial",
+      "contaminación por regularización catastral 2011-2021 (por eso solo 2018+)"
+    ],
+    "inferencia": "ninguna herramienta de inferencia de E2 figura en las tablas de K13: puntual"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Sin p ni IC. Capa C4; pendiente de evaluación sellada. Asociación, no efecto."
+  ],
+  "pendiente_sellada": true,
+  "p_valores_para_BY": [
+    {
+      "id": "E2-prov-obra_neta_catastro-hogares-SERPAVI",
+      "p": null
+    },
+    {
+      "id": "E2-prov-obra_neta_catastro-hogares-IPC_alquiler",
+      "p": null
+    },
+    {
+      "id": "E2-prov-terminadas_MIVAU-hogares-SERPAVI",
+      "p": null
+    },
+    {
+      "id": "E2-prov-terminadas_MIVAU-hogares-IPC_alquiler",
+      "p": null
+    },
+    {
+      "id": "E2-prov-iniciadas_MIVAU-hogares-SERPAVI",
+      "p": null
+    },
+    {
+      "id": "E2-prov-iniciadas_MIVAU-hogares-IPC_alquiler",
+      "p": null
+    },
+    {
+      "id": "E2-prov-obra_neta_catastro-poblacion-SERPAVI",
+      "p": null
+    },
+    {
+      "id": "E2-prov-obra_neta_catastro-poblacion-IPC_alquiler",
+      "p": null
+    },
+    {
+      "id": "E2-prov-terminadas_MIVAU-poblacion-SERPAVI",
+      "p": null
+    },
+    {
+      "id": "E2-prov-terminadas_MIVAU-poblacion-IPC_alquiler",
+      "p": null
+    },
+    {
+      "id": "E2-prov-iniciadas_MIVAU-poblacion-SERPAVI",
+      "p": null
+    },
+    {
+      "id": "E2-prov-iniciadas_MIVAU-poblacion-IPC_alquiler",
+      "p": null
+    },
+    {
+      "id": "E2-mun-obra_neta_catastro-hogares-SERPAVI",
+      "p": null
+    },
+    {
+      "id": "E2-mun-obra_neta_catastro-hogares-IPC_alquiler",
+      "p": null
+    },
+    {
+      "id": "E2-mun-terminadas_MIVAU-hogares-SERPAVI",
+      "p": null
+    },
+    {
+      "id": "E2-mun-terminadas_MIVAU-hogares-IPC_alquiler",
+      "p": null
+    },
+    {
+      "id": "E2-mun-iniciadas_MIVAU-hogares-SERPAVI",
+      "p": null
+    },
+    {
+      "id": "E2-mun-iniciadas_MIVAU-hogares-IPC_alquiler",
+      "p": null
+    },
+    {
+      "id": "E2-mun-obra_neta_catastro-poblacion-SERPAVI",
+      "p": null
+    },
+    {
+      "id": "E2-mun-obra_neta_catastro-poblacion-IPC_alquiler",
+      "p": null
+    },
+    {
+      "id": "E2-mun-terminadas_MIVAU-poblacion-SERPAVI",
+      "p": null
+    },
+    {
+      "id": "E2-mun-terminadas_MIVAU-poblacion-IPC_alquiler",
+      "p": null
+    },
+    {
+      "id": "E2-mun-iniciadas_MIVAU-poblacion-SERPAVI",
+      "p": null
+    },
+    {
+      "id": "E2-mun-iniciadas_MIVAU-poblacion-IPC_alquiler",
+      "p": null
+    }
+  ],
+  "semilla": 20261010
+}

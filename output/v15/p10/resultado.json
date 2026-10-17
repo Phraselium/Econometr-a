@@ -1,0 +1,476 @@
+{
+  "rama": "r15/p10",
+  "pregunta": "E3: ¿hay dependencia espacial en el crecimiento del alquiler municipal (SERPAVI VC)?",
+  "capa": "C4",
+  "datos": "data/processed/v15/p10_espacial.parquet (entrenamiento)",
+  "N": 1124,
+  "metodo": "SAR/SEM/SDM de máxima verosimilitud; W de contigüidad y de distancia inversa (25 km); Δlog SERPAVI VC",
+  "estimacion": {
+    "rho_SAR_contiguidad_2015_2024": 0.39283234207143025,
+    "se": 0.027185266103504774
+  },
+  "ic95": [
+    0.3395492205085609,
+    0.4461154636342996
+  ],
+  "p_ajustado": null,
+  "nivel_evidencia": "ASOCIACIÓN espacial (C4, exploratoria)",
+  "diagnosticos": {
+    "moran_2015_2024_contigüidad": {
+      "z_moran_residuos_MCO": 14.07823831489433,
+      "p_bilateral_normal": 5.168214164198481e-45,
+      "n": 1124
+    },
+    "moran_2015_2024_dist_inversa_25km": {
+      "z_moran_residuos_MCO": 21.225952204680727,
+      "p_bilateral_normal": 5.500079161607246e-100,
+      "n": 1124
+    },
+    "exclusion_Barcelona_Valencia_SAR_contiguidad_2015_2024": {
+      "rho_o_lambda": 0.39041017241812626,
+      "se": 0.027273906668411976,
+      "p_wald": 1.778400191074428e-46,
+      "n": 1122
+    },
+    "moran_2011_2019_contigüidad": {
+      "z_moran_residuos_MCO": 10.316645057180821,
+      "p_bilateral_normal": 5.925767809694433e-25,
+      "n": 1015
+    },
+    "moran_2011_2019_dist_inversa_25km": {
+      "z_moran_residuos_MCO": 13.96796973520022,
+      "p_bilateral_normal": 2.44497586490522e-44,
+      "n": 1015
+    },
+    "multiverso_12": {
+      "n": 12,
+      "rho_lambda_min": 0.24382147579934263,
+      "rho_lambda_max": 0.6389409719856516,
+      "frac_p_wald_lt_005_sin_ajustar": 1.0
+    },
+    "herramientas": {
+      "SAR/SDM/SEM": "APTO (K13): Wald de ρ y efectos indirectos",
+      "Conley": "no figura en la tabla V15: no se usa"
+    },
+    "sdm_cota": "efectos indirectos del SDM dependen de W (limitación declarada)"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "IC95 = ρ ± 1,96 EE (Wald, APTO). Efectos directo/indirecto en multiverso (resultado en este json, filas completas en detalle).",
+    "Capa C4; pendiente de evaluación sellada."
+  ],
+  "pendiente_sellada": true,
+  "p_valores_para_BY": [
+    {
+      "id": "E3-SAR-contigüidad-2015_2024",
+      "p": 2.499843815704485e-47,
+      "contraste": "Wald de rho/lambda (APTO)"
+    },
+    {
+      "id": "E3-SEM-contigüidad-2015_2024",
+      "p": 1.8714680116864516e-59,
+      "contraste": "Wald de rho/lambda (APTO)"
+    },
+    {
+      "id": "E3-SDM-contigüidad-2015_2024",
+      "p": 4.2534295283574115e-63,
+      "contraste": "Wald de rho/lambda (APTO)"
+    },
+    {
+      "id": "E3-SAR-dist_inversa_25km-2015_2024",
+      "p": 6.036904440304245e-73,
+      "contraste": "Wald de rho/lambda (APTO)"
+    },
+    {
+      "id": "E3-SEM-dist_inversa_25km-2015_2024",
+      "p": 1.146100670303826e-115,
+      "contraste": "Wald de rho/lambda (APTO)"
+    },
+    {
+      "id": "E3-SDM-dist_inversa_25km-2015_2024",
+      "p": 3.132935523869475e-87,
+      "contraste": "Wald de rho/lambda (APTO)"
+    },
+    {
+      "id": "E3-SAR-contigüidad-2011_2019",
+      "p": 1.111172116438867e-15,
+      "contraste": "Wald de rho/lambda (APTO)"
+    },
+    {
+      "id": "E3-SEM-contigüidad-2011_2019",
+      "p": 2.1426385772253175e-31,
+      "contraste": "Wald de rho/lambda (APTO)"
+    },
+    {
+      "id": "E3-SDM-contigüidad-2011_2019",
+      "p": 2.643889188032512e-40,
+      "contraste": "Wald de rho/lambda (APTO)"
+    },
+    {
+      "id": "E3-SAR-dist_inversa_25km-2011_2019",
+      "p": 1.9225289433396772e-20,
+      "contraste": "Wald de rho/lambda (APTO)"
+    },
+    {
+      "id": "E3-SEM-dist_inversa_25km-2011_2019",
+      "p": 1.7720642229826566e-77,
+      "contraste": "Wald de rho/lambda (APTO)"
+    },
+    {
+      "id": "E3-SDM-dist_inversa_25km-2011_2019",
+      "p": 1.8574703567138677e-44,
+      "contraste": "Wald de rho/lambda (APTO)"
+    }
+  ],
+  "semilla": 20261010,
+  "detalle": [
+    {
+      "modelo": "SAR",
+      "rho_o_lambda": 0.39283234207143025,
+      "se": 0.027185266103504774,
+      "z": 14.450193004393126,
+      "p_wald": 2.499843815704485e-47,
+      "lr": 173.62064018044202,
+      "p_lr": 1.1979261166409033e-39,
+      "n": 1124,
+      "indirecto_log_alquiler_inicial": {
+        "mediana": -0.03752355953665219,
+        "ic95_simulado": [
+          -0.05577892264776012,
+          -0.023097820445429584
+        ]
+      },
+      "directo_log_alquiler_inicial_ic95": [
+        -0.0944230504304201,
+        -0.04378261425566475
+      ],
+      "indirecto_log_contratos_inicial": {
+        "mediana": 0.006855172694393113,
+        "ic95_simulado": [
+          0.004079295675824354,
+          0.010129656227460548
+        ]
+      },
+      "directo_log_contratos_inicial_ic95": [
+        0.007309558963867882,
+        0.01735371996369101
+      ],
+      "id": "E3-SAR-contigüidad-2015_2024",
+      "W": "contigüidad",
+      "periodo": "2015-2024",
+      "vecinos_medios": 3.4056939501779357
+    },
+    {
+      "modelo": "SEM",
+      "rho_o_lambda": 0.47510410235808104,
+      "se": 0.02921768061290993,
+      "z": 16.26084248960387,
+      "p_wald": 1.8714680116864516e-59,
+      "lr": 211.60563967091275,
+      "p_lr": 6.13150295650916e-48,
+      "n": 1124,
+      "id": "E3-SEM-contigüidad-2015_2024",
+      "W": "contigüidad",
+      "periodo": "2015-2024",
+      "vecinos_medios": 3.4056939501779357
+    },
+    {
+      "modelo": "SDM",
+      "rho_o_lambda": 0.4357344684487831,
+      "se": 0.025987598597608918,
+      "z": 16.767015498264406,
+      "p_wald": 4.2534295283574115e-63,
+      "lr": 223.10067508652537,
+      "p_lr": 1.9057603435447127e-50,
+      "n": 1124,
+      "indirecto_log_alquiler_inicial": {
+        "mediana": 0.23521743581841828,
+        "ic95_simulado": [
+          0.18883578000992532,
+          0.2843858366110596
+        ]
+      },
+      "directo_log_alquiler_inicial_ic95": [
+        -0.2761112904868196,
+        -0.20260637035837215
+      ],
+      "indirecto_log_contratos_inicial": {
+        "mediana": 0.00010642110072950003,
+        "ic95_simulado": [
+          -0.008737725898524153,
+          0.009031103578690185
+        ]
+      },
+      "directo_log_contratos_inicial_ic95": [
+        0.012705391705840582,
+        0.021731214385814053
+      ],
+      "id": "E3-SDM-contigüidad-2015_2024",
+      "W": "contigüidad",
+      "periodo": "2015-2024",
+      "vecinos_medios": 3.4056939501779357
+    },
+    {
+      "modelo": "SAR",
+      "rho_o_lambda": 0.531941048082881,
+      "se": 0.029446316767907484,
+      "z": 18.064773678677025,
+      "p_wald": 6.036904440304245e-73,
+      "lr": 246.654367282802,
+      "p_lr": 1.3926343106221568e-55,
+      "n": 1124,
+      "indirecto_log_alquiler_inicial": {
+        "mediana": -0.07207312449583103,
+        "ic95_simulado": [
+          -0.10509260435799848,
+          -0.04401650955769444
+        ]
+      },
+      "directo_log_alquiler_inicial_ic95": [
+        -0.09760971743607112,
+        -0.04800435926293865
+      ],
+      "indirecto_log_contratos_inicial": {
+        "mediana": 0.012506274051159123,
+        "ic95_simulado": [
+          0.007410413574301486,
+          0.01862332901970203
+        ]
+      },
+      "directo_log_contratos_inicial_ic95": [
+        0.007880533620758039,
+        0.01727036678272234
+      ],
+      "id": "E3-SAR-dist_inversa_25km-2015_2024",
+      "W": "dist_inversa_25km",
+      "periodo": "2015-2024",
+      "vecinos_medios": 19.765124555160142
+    },
+    {
+      "modelo": "SEM",
+      "rho_o_lambda": 0.6389409719856516,
+      "se": 0.027949424511096742,
+      "z": 22.86061280911073,
+      "p_wald": 1.146100670303826e-115,
+      "lr": 313.84812970382245,
+      "p_lr": 3.1692166323996095e-70,
+      "n": 1124,
+      "id": "E3-SEM-dist_inversa_25km-2015_2024",
+      "W": "dist_inversa_25km",
+      "periodo": "2015-2024",
+      "vecinos_medios": 19.765124555160142
+    },
+    {
+      "modelo": "SDM",
+      "rho_o_lambda": 0.5572735107082204,
+      "se": 0.028148785005637316,
+      "z": 19.7974268017826,
+      "p_wald": 3.132935523869475e-87,
+      "lr": 286.5040870415414,
+      "p_lr": 2.8727629600234245e-64,
+      "n": 1124,
+      "indirecto_log_alquiler_inicial": {
+        "mediana": 0.27900288583689303,
+        "ic95_simulado": [
+          0.21155041437983307,
+          0.35029512325968803
+        ]
+      },
+      "directo_log_alquiler_inicial_ic95": [
+        -0.28069453924198673,
+        -0.2102170170678374
+      ],
+      "indirecto_log_contratos_inicial": {
+        "mediana": -0.0027281725561065107,
+        "ic95_simulado": [
+          -0.02176685951538856,
+          0.014977053605563093
+        ]
+      },
+      "directo_log_contratos_inicial_ic95": [
+        0.014165968585273678,
+        0.022793307244129587
+      ],
+      "id": "E3-SDM-dist_inversa_25km-2015_2024",
+      "W": "dist_inversa_25km",
+      "periodo": "2015-2024",
+      "vecinos_medios": 19.765124555160142
+    },
+    {
+      "modelo": "SAR",
+      "rho_o_lambda": 0.24382147579934263,
+      "se": 0.030424779926333644,
+      "z": 8.013910910438735,
+      "p_wald": 1.111172116438867e-15,
+      "lr": 59.7025165138848,
+      "p_lr": 1.1033536961708585e-14,
+      "n": 1015,
+      "indirecto_log_alquiler_inicial": {
+        "mediana": -0.03821276409075837,
+        "ic95_simulado": [
+          -0.05273323436007367,
+          -0.026256981202103364
+        ]
+      },
+      "directo_log_alquiler_inicial_ic95": [
+        -0.15360900463351684,
+        -0.10775325138109657
+      ],
+      "indirecto_log_contratos_inicial": {
+        "mediana": 0.004255724558675497,
+        "ic95_simulado": [
+          0.0026608450431464693,
+          0.006516199122280192
+        ]
+      },
+      "directo_log_contratos_inicial_ic95": [
+        0.009821794540028341,
+        0.019506440205773072
+      ],
+      "id": "E3-SAR-contigüidad-2011_2019",
+      "W": "contigüidad",
+      "periodo": "2011-2019",
+      "vecinos_medios": 3.2236453201970443
+    },
+    {
+      "modelo": "SEM",
+      "rho_o_lambda": 0.41069788815874575,
+      "se": 0.0352353827274367,
+      "z": 11.655837296722424,
+      "p_wald": 2.1426385772253175e-31,
+      "lr": 123.42264692170284,
+      "p_lr": 1.1269514442626951e-28,
+      "n": 1015,
+      "id": "E3-SEM-contigüidad-2011_2019",
+      "W": "contigüidad",
+      "periodo": "2011-2019",
+      "vecinos_medios": 3.2236453201970443
+    },
+    {
+      "modelo": "SDM",
+      "rho_o_lambda": 0.37572201890507645,
+      "se": 0.028270918349485186,
+      "z": 13.290053554695309,
+      "p_wald": 2.643889188032512e-40,
+      "lr": 148.42172976156235,
+      "p_lr": 3.836576309591755e-34,
+      "n": 1015,
+      "indirecto_log_alquiler_inicial": {
+        "mediana": 0.2349498865991989,
+        "ic95_simulado": [
+          0.1950380915186712,
+          0.2767814012092535
+        ]
+      },
+      "directo_log_alquiler_inicial_ic95": [
+        -0.3486272812451692,
+        -0.28932860602521526
+      ],
+      "indirecto_log_contratos_inicial": {
+        "mediana": 0.0011065531155192154,
+        "ic95_simulado": [
+          -0.006997056994089594,
+          0.009805868764064654
+        ]
+      },
+      "directo_log_contratos_inicial_ic95": [
+        0.014943612083409955,
+        0.02391836015379119
+      ],
+      "id": "E3-SDM-contigüidad-2011_2019",
+      "W": "contigüidad",
+      "periodo": "2011-2019",
+      "vecinos_medios": 3.2236453201970443
+    },
+    {
+      "modelo": "SAR",
+      "rho_o_lambda": 0.34423560720512164,
+      "se": 0.03714816992711234,
+      "z": 9.266556276676328,
+      "p_wald": 1.9225289433396772e-20,
+      "lr": 76.65075290595178,
+      "p_lr": 2.040282698937637e-18,
+      "n": 1015,
+      "indirecto_log_alquiler_inicial": {
+        "mediana": -0.06427352755357191,
+        "ic95_simulado": [
+          -0.08929022933149551,
+          -0.04424901653636226
+        ]
+      },
+      "directo_log_alquiler_inicial_ic95": [
+        -0.15305857369718995,
+        -0.10863583312484643
+      ],
+      "indirecto_log_contratos_inicial": {
+        "mediana": 0.007103890980598584,
+        "ic95_simulado": [
+          0.004369875530998422,
+          0.01082894267346173
+        ]
+      },
+      "directo_log_contratos_inicial_ic95": [
+        0.009648714816896749,
+        0.01942046368747753
+      ],
+      "id": "E3-SAR-dist_inversa_25km-2011_2019",
+      "W": "dist_inversa_25km",
+      "periodo": "2011-2019",
+      "vecinos_medios": 18.632512315270937
+    },
+    {
+      "modelo": "SEM",
+      "rho_o_lambda": 0.6243591282820418,
+      "se": 0.03351026832201916,
+      "z": 18.63187493105758,
+      "p_wald": 1.7720642229826566e-77,
+      "lr": 191.69405510464458,
+      "p_lr": 1.3569499181083224e-43,
+      "n": 1015,
+      "id": "E3-SEM-dist_inversa_25km-2011_2019",
+      "W": "dist_inversa_25km",
+      "periodo": "2011-2019",
+      "vecinos_medios": 18.632512315270937
+    },
+    {
+      "modelo": "SDM",
+      "rho_o_lambda": 0.47065276996032124,
+      "se": 0.03364802135800224,
+      "z": 13.98753183590659,
+      "p_wald": 1.8574703567138677e-44,
+      "lr": 157.17327679436494,
+      "p_lr": 4.6912305179501345e-36,
+      "n": 1015,
+      "indirecto_log_alquiler_inicial": {
+        "mediana": 0.2630637750527911,
+        "ic95_simulado": [
+          0.21252524997938022,
+          0.31800413066337463
+        ]
+      },
+      "directo_log_alquiler_inicial_ic95": [
+        -0.37034449187694485,
+        -0.3077471743542197
+      ],
+      "indirecto_log_contratos_inicial": {
+        "mediana": 0.012816970281473328,
+        "ic95_simulado": [
+          -0.003800793418481199,
+          0.028479063036727384
+        ]
+      },
+      "directo_log_contratos_inicial_ic95": [
+        0.01700883749731924,
+        0.025807136205922013
+      ],
+      "id": "E3-SDM-dist_inversa_25km-2011_2019",
+      "W": "dist_inversa_25km",
+      "periodo": "2011-2019",
+      "vecinos_medios": 18.632512315270937
+    }
+  ]
+}

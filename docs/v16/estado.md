@@ -126,6 +126,7 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F6 | modelizador | grupo_A_q1_q2_q7_q8 | 224.084 | src/v16/q1_zonas.py;output/v16/q1;output/v16/q2;output/v16/q7;output/v16/q8 |
 | 2026-10-17 | F6 | modelizador | grupo_B_q3_q4_q6 | 212.505 | src/v16/q3_seccion.py;output/v16/q3;output/v16/q4;output/v16/q6 |
 | 2026-10-17 | F6 | modelizador | grupo_C_q5_q9_q10_rejilla | 192.100 | src/v16/q9_burbuja.py;output/v16/q5;output/v16/q9;output/v16/q10;output/v16/rejilla |
+| 2026-10-17 | F6 | modelizador | v15_grupo_B_h4_h5_e1_e2_e3 | 180.001 | src/v15/p4_inmigracion.py;output/v15/p4;output/v15/p9;output/v15/p2;output/v15/p7;output/v15/p10 |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -134,8 +135,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | F3 | 1.160.356 |
 | F4 | 555.674 |
 | F5 | 771.025 |
-| F6 | 628.689 |
+| F6 | 808.690 |
 
-Total V16: 5.759.271 tokens
+Total V16: 5.939.272 tokens
 
 <!-- fin subagentes -->

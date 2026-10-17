@@ -1,0 +1,224 @@
+{
+  "rama": "r15/p2",
+  "pregunta": "E1: ¿existe una relación de largo plazo entre el valor tasado y el alquiler/coste de uso en el panel provincial? (descriptiva)",
+  "capa": "C4",
+  "datos": "data/processed/v15/p2_fundamentales.parquet (38 provincias; entrenamiento)",
+  "N": 3610,
+  "metodo": "ECM por unidad: CS-ARDL (principal declarado, p=1, sin coste de uso), MG y PMG como contraste; todo puntual",
+  "estimacion": {
+    "theta_precio_alquiler_CS_ARDL": 0.6398923524656316,
+    "velocidad_media": -0.2808714828947078,
+    "semivida_mediana_anios": 0.6301548489765825
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "DESCRIPTIVO (asociación de largo plazo; C4, sin inferencia APTA)",
+  "diagnosticos": {
+    "tasado_estructura": {
+      "N": 38,
+      "T": 95,
+      "periodo": "2002Q1-2026Q2",
+      "CD_Pesaran_dlog_precio": 128.70698454900906,
+      "correlacion_media": 0.5006803257483059,
+      "CIPS_log_precio_p1": -1.7323328157083877,
+      "CIPS_log_alquiler_p1": -2.206301509292827,
+      "tipo": "descriptivo (CIPS NO APTO)"
+    },
+    "ipv_estructura": {
+      "N": 17,
+      "T": 78,
+      "periodo": "2007Q1-2026Q2",
+      "CD_Pesaran_dlog_precio": 83.71600032724379,
+      "correlacion_media": 0.8180760044189195,
+      "CIPS_log_precio_p1": -1.7327923537382084,
+      "CIPS_log_alquiler_p1": -2.2129067362950976,
+      "tipo": "descriptivo (CIPS NO APTO)"
+    },
+    "multiverso_36": {
+      "n": 36,
+      "theta_media_min": -3.4208112123770786,
+      "theta_media_max": 10.174543765888128,
+      "frac_semivida_2_a_7": 0.4722222222222222,
+      "semivida_mediana_min_max": [
+        0.49970194246006555,
+        7.199529955973279
+      ],
+      "por_estimador": {
+        "CS-ARDL": 0.5783387170409848,
+        "MG": 1.6098072057786705,
+        "PMG": 2.217492222486305
+      }
+    },
+    "herramientas_no_aptas": {
+      "Westerlund": "NO APTO (tamaño 0,09-0,20)",
+      "CIPS": "NO APTO (tamaño 0,0105, conservador)",
+      "CS-ARDL": "NO APTO (elasticidad: cobertura 0,99; velocidad: cobertura 0,003)",
+      "consecuencia": "solo puntual; sin p ni IC; la «cointegración» no se contrasta"
+    },
+    "PMG_con_coste_de_uso": "no identificado: θ del coste de uso en el límite del rango [-5, 10] con velocidad ≈ 0 (verosimilitud degenerada); se reporta n_unidades = 0 (DV15-B-7)",
+    "MG_dispersion": "las medias de grupo del MG están dominadas por unidades con velocidad cercana a 0 (θ = -b/φ); léase la mediana y el rango intercuartílico en multiverso.csv",
+    "criterio_potencia_V15": "potencia de Westerlund frente a -0,04 < 0,5 o NO APTO: E1 solo descriptiva"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Sin p ni IC (herramientas NO APTAS). Capa C4; pendiente de evaluación sellada (valor tasado e IPC alquiler posteriores al corte).",
+    "No contrasta cointegración: V7.2 («no se establece cointegración») ni se confirma ni se matiza con inferencia."
+  ],
+  "pendiente_sellada": true,
+  "p_valores_para_BY": [
+    {
+      "id": "E1-principal",
+      "p": null,
+      "motivo": "NO APTO"
+    },
+    {
+      "id": "E1-tasado-MG-p0-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-MG-p0-uso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-MG-p1-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-MG-p1-uso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-MG-p2-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-MG-p2-uso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-CS-ARDL-p0-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-CS-ARDL-p0-uso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-CS-ARDL-p1-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-CS-ARDL-p1-uso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-CS-ARDL-p2-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-CS-ARDL-p2-uso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-PMG-p0-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-PMG-p0-uso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-PMG-p1-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-PMG-p1-uso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-PMG-p2-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-tasado-PMG-p2-uso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-MG-p0-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-MG-p0-uso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-MG-p1-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-MG-p1-uso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-MG-p2-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-MG-p2-uso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-CS-ARDL-p0-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-CS-ARDL-p0-uso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-CS-ARDL-p1-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-CS-ARDL-p1-uso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-CS-ARDL-p2-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-CS-ARDL-p2-uso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-PMG-p0-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-PMG-p0-uso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-PMG-p1-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-PMG-p1-uso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-PMG-p2-sinuso",
+      "p": null
+    },
+    {
+      "id": "E1-ipv-PMG-p2-uso",
+      "p": null
+    }
+  ],
+  "semilla": 20261010
+}

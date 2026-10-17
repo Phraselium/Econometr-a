@@ -1,0 +1,16 @@
+[
+  {
+    "id": "V15-E2-pearson",
+    "indicador": "Correlación (Pearson) entre exceso de presión (hogares − terminadas) y Δlog SERPAVI, provincias 2018-2024",
+    "valor": 0.743,
+    "min": 0.254,
+    "max": 0.77,
+    "unidad": "r",
+    "periodo": "2018-2024",
+    "cobertura": "35 provincias",
+    "fuentes": "INE; MIVAU; Catastro",
+    "capa": "C4",
+    "fecha_dato": "2026-10-17",
+    "ficha": "output/v15/p7/informe.md#pearson"
+  }
+]

@@ -1,0 +1,463 @@
+{
+  "rama": "r15/p4",
+  "pregunta": "H4: ¿se asocia la población extranjera predicha por cuotas de origen con el alquiler municipal? (asociación, solo puntual)",
+  "capa": "C4",
+  "datos": "data/processed/v15/p4_inmigracion.parquet (padrón 2003-2022, SERPAVI municipal 2011-2022; entrenamiento)",
+  "N": 13442,
+  "metodo": "2SLS shift-share (Δlog alquiler SERPAVI VC sobre ΔPobExt/Pob(t-1); instrumento Σ cuotas 2003 × crecimiento nacional leave-one-out, sin orígenes residenciales); FE provincia×año; puntual",
+  "estimacion": {
+    "beta_pp_alquiler_por_pp_poblacion_extranjera": 0.29071938430141253,
+    "unidad": "% de alquiler por punto porcentual de población extranjera",
+    "ols_pp": 0.06736631513007804,
+    "forma_reducida": [
+      0.0025930561348231533
+    ],
+    "primera_etapa_pi": [
+      0.891944698168017
+    ],
+    "F_robusto": 70.65361449038932,
+    "n_municipios": 1276
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "ASOCIACIÓN (C4, estimación puntual; sin inferencia APTA)",
+  "diagnosticos": {
+    "rotemberg": {
+      "top8": [
+        {
+          "origen": "Colombia",
+          "peso": 0.3458257931993131,
+          "beta_k_pp": 0.006724029185555974
+        },
+        {
+          "origen": "Bulgaria",
+          "peso": 0.13516594239394028,
+          "beta_k_pp": -0.0017143017670797635
+        },
+        {
+          "origen": "Ecuador",
+          "peso": 0.12251356951298173,
+          "beta_k_pp": 0.003905605856766284
+        },
+        {
+          "origen": "Marruecos",
+          "peso": 0.10380544978777584,
+          "beta_k_pp": 0.006529089154119834
+        },
+        {
+          "origen": "Argentina",
+          "peso": 0.09432330259350055,
+          "beta_k_pp": 0.0005542430235836866
+        },
+        {
+          "origen": "Rumanía",
+          "peso": 0.0834296273394339,
+          "beta_k_pp": 0.006699146408209781
+        },
+        {
+          "origen": "Bolivia",
+          "peso": 0.03169117323690087,
+          "beta_k_pp": -0.016874171240138607
+        },
+        {
+          "origen": "Rusia",
+          "peso": -0.020787922002519926,
+          "beta_k_pp": 0.00413405980544585
+        }
+      ],
+      "n_efectivo_choques_1_sobre_HHI": 5.4696797001142325,
+      "suma_pesos_negativos": -0.04033449158878637,
+      "tipo": "descriptivo"
+    },
+    "pretendencias_2011_2013": {
+      "pendiente_dlog_por_pp_z": -0.02086982965859514,
+      "correlacion": -0.03179326548907857,
+      "n": 1128,
+      "tipo": "descriptivo (sin inferencia APTA)"
+    },
+    "balance_2003": {
+      "corr_z_logpob03": -0.007454617735738817,
+      "corr_z_cuota_ext03": -0.05135725612319829,
+      "n": 1127,
+      "tipo": "descriptivo"
+    },
+    "jaeger_ruist_stuhler_control_z_retardado": {
+      "beta_pp": 0.005058489933801406,
+      "ols_pp": 0.0006783167822912357,
+      "forma_reducida": [
+        0.006269017519229379
+      ],
+      "F_robusto": 68.59048577793257,
+      "pi": [
+        1.2393061172938362
+      ],
+      "n": 13442,
+      "n_municipios": 1276
+    },
+    "excluye_5_origenes_Rotemberg": {
+      "excluidos": [
+        "Colombia",
+        "Bulgaria",
+        "Ecuador",
+        "Marruecos",
+        "Argentina"
+      ],
+      "beta_pp": -0.0019910497138452216,
+      "ols_pp": 0.0006736631513007804,
+      "forma_reducida": [
+        -0.0035416023949401292
+      ],
+      "F_robusto": 36.07938885858643,
+      "pi": [
+        1.7787614092771116
+      ],
+      "n": 13442,
+      "n_municipios": 1276
+    },
+    "desbordamiento_15km": {
+      "beta_propio_pp": 0.0022588266938011648,
+      "n": 12615,
+      "tipo": "puntual"
+    },
+    "excluye_Barcelona_Valencia": {
+      "beta_pp": 0.002931830403197046,
+      "ols_pp": 0.0006710920359128447,
+      "forma_reducida": [
+        0.0026253492074312166
+      ],
+      "F_robusto": 70.26715858122517,
+      "pi": [
+        0.8954642139492035
+      ],
+      "n": 13420,
+      "n_municipios": 1274
+    },
+    "excluye_1pct_superior_exposicion": {
+      "beta_pp": 0.0026347620860401673,
+      "ols_pp": 0.0007322943707835053,
+      "forma_reducida": [
+        0.00237949513570597
+      ],
+      "F_robusto": 71.41441882664135,
+      "pi": [
+        0.9031157493548712
+      ],
+      "n": 13327,
+      "n_municipios": 1263
+    },
+    "instrumento_28_origenes": {
+      "beta_pp": -0.0007532791190101353,
+      "ols_pp": 0.0006736631513007804,
+      "forma_reducida": [
+        -0.0009824659997939246
+      ],
+      "F_robusto": 111.26303589869764,
+      "pi": [
+        1.3042522685149638
+      ],
+      "n": 13442,
+      "n_municipios": 1276
+    },
+    "f_efectivo_primera_etapa": {
+      "F_robusto_HC1": 70.65361449038932,
+      "umbral_MOP_tau10_referencia_un_instrumento": 23.1,
+      "nota": "descriptivo; el procedimiento MOP/AR/AKM no es APTO (K13). Referencia de valor crítico para 1 instrumento y tau=10 %: ~23,1 (Montiel Olea-Pflueger, cota)"
+    },
+    "herramientas_no_aptas": {
+      "AKM": "NO APTO (tamaño 0,22-0,33)",
+      "AKM0": "NO APTO (tamaño 0,005-0,008, conservador)",
+      "agrupacion_provincia": "NO APTO (tamaño 0,43-0,71)",
+      "consecuencia": "solo estimación puntual; sin p ni IC; sin TOST"
+    },
+    "pruebas_C3_no_evaluables_ahora": [
+      "evaluación sellada temporal 2022->2025 (pendiente: último trimestre de 2027)",
+      "AKM/AR (no apto)",
+      "F efectivo MOP (descriptivo)"
+    ],
+    "multiverso_64": {
+      "n": 64,
+      "beta_pp_min": -0.0014259156039205922,
+      "beta_pp_max": 0.003919666906963185,
+      "beta_pp_mediana": 0.0007922737386452858,
+      "signo_positivo_frac": 0.71875,
+      "F_robusto_mediana": 113.0886742226256,
+      "F_robusto_max": 175.76900993793322
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Herramientas de inferencia NO APTAS (K13): estimación puntual sin p ni IC.",
+    "Capa máxima C4; pendiente de evaluación sellada temporal (último trimestre de 2027).",
+    "Contrasta con V9-D4 (provincial, IPC/valor tasado, F efectiva 2,8-4,6): no es lo mismo ni lo reemplaza.",
+    "Preperiodo SERPAVI 2011-2013; sin lenguaje causal."
+  ],
+  "pendiente_sellada": true,
+  "p_valores_para_BY": [
+    {
+      "id": "H4-principal",
+      "p": null,
+      "motivo": "AKM/AKM0 NO APTO"
+    },
+    {
+      "id": "H4-mv-VC-prev-28-provincia_anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-28-provincia_anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-28-provincia_anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-28-provincia_anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-28-anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-28-anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-28-anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-28-anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-continentes-provincia_anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-continentes-provincia_anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-continentes-provincia_anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-continentes-provincia_anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-continentes-anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-continentes-anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-continentes-anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-prev-continentes-anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-28-provincia_anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-28-provincia_anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-28-provincia_anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-28-provincia_anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-28-anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-28-anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-28-anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-28-anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-continentes-provincia_anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-continentes-provincia_anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-continentes-provincia_anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-continentes-provincia_anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-continentes-anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-continentes-anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-continentes-anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VC-base-continentes-anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-28-provincia_anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-28-provincia_anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-28-provincia_anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-28-provincia_anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-28-anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-28-anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-28-anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-28-anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-continentes-provincia_anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-continentes-provincia_anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-continentes-provincia_anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-continentes-provincia_anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-continentes-anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-continentes-anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-continentes-anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-prev-continentes-anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-28-provincia_anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-28-provincia_anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-28-provincia_anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-28-provincia_anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-28-anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-28-anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-28-anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-28-anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-continentes-provincia_anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-continentes-provincia_anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-continentes-provincia_anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-continentes-provincia_anio-2008-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-continentes-anio-2003-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-continentes-anio-2003-ge1000",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-continentes-anio-2008-todas",
+      "p": null
+    },
+    {
+      "id": "H4-mv-VU-base-continentes-anio-2008-ge1000",
+      "p": null
+    }
+  ],
+  "semilla": 20261010
+}

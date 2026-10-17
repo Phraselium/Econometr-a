@@ -1,0 +1,30 @@
+[
+  {
+    "id": "V15-E1-theta",
+    "indicador": "Elasticidad de largo plazo precio-alquiler (CS-ARDL, media de provincias; puntual)",
+    "valor": 0.64,
+    "min": -3.421,
+    "max": 10.175,
+    "unidad": "elasticidad",
+    "periodo": "2002T1-2026T2",
+    "cobertura": "38 provincias de entrenamiento",
+    "fuentes": "MIVAU valor tasado; INE IPC alquiler",
+    "capa": "C4",
+    "fecha_dato": "2026-10-17",
+    "ficha": "output/v15/p2/informe.md#theta"
+  },
+  {
+    "id": "V15-E1-semivida",
+    "indicador": "Semivida mediana del desajuste en MG y PMG sin coste de uso (años; puntual; el CS-ARDL se descarta como cifra: cobertura de la velocidad 0,003 en el Monte Carlo)",
+    "valor": 3.97,
+    "min": 3.55,
+    "max": 4.16,
+    "unidad": "años",
+    "periodo": "2002T1-2026T2",
+    "cobertura": "38 provincias",
+    "fuentes": "MIVAU; INE",
+    "capa": "C4",
+    "fecha_dato": "2026-10-17",
+    "ficha": "output/v15/p2/informe.md#semivida"
+  }
+]

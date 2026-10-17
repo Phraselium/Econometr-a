@@ -67,13 +67,14 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F2 | econometrician | f2_hechos | 191.483 | src/v16/f2_hechos.py;output/v16/f2_hechos |
 | 2026-10-17 | F2 | econometrician | f2_contabilidad | 131.826 | src/v16/f2_contabilidad.py;output/v16/f2_contabilidad |
 | 2026-10-17 | F1 | ingeniero-datos | datos_renta_parque | 146.666 | src/v16/datos/renta_parque.py;data/processed/v16/renta_parque.parquet |
+| 2026-10-17 | F1 | auditor-datos | auditoria_renta_parque | 117.132 | output/v16/auditoria/renta_parque |
 
 | Fase | Tokens de subagentes |
 |---|---|
-| F1 | 1.835.738 |
+| F1 | 1.952.870 |
 | F2 | 323.309 |
 | F3 | 1.160.356 |
 
-Total V16: 3.319.403 tokens
+Total V16: 3.436.535 tokens
 
 <!-- fin subagentes -->

@@ -80,6 +80,7 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
     - Con inferencia válida: H5 (DM-HLN p = 0,894; el AR(4) no se supera) y E3 (ρ SAR = 0,39).
     - El resto solo con estimación puntual.
     - Desviaciones DV15-A y DV15-B.
+  - make check en solitario, 0 errores, sin cambios en git (2026-10-17). Se corrigió una colisión de importación en src/v15/montecarlo/honest_did.py: ahora importa src.v9.herramientas por paquete.
 
 ## Siguiente
 - **Detenido en la parada D (B-2).** Hasta que decida el autor: sin réplica ciega, sin abogado del diablo, sin fase 7 y sin publicar Q9-g.

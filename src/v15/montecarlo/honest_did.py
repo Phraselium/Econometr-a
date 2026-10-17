@@ -15,10 +15,9 @@ import pandas as pd
 from joblib import Parallel, delayed
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "src" / "v9"))
 from src.v15.montecarlo import _comun_v15 as C  # noqa: E402
 from src.v15.montecarlo import _comun_panel_v15 as Pn  # noqa: E402
-import herramientas as H  # noqa: E402  (implementación V9)
+from src.v9 import herramientas as H  # noqa: E402  (implementación V9; por paquete, para no chocar con otros «herramientas»)
 
 HERR, K = "honest_did", 2
 SD_E, PEND, TAU_REF, TAU_MDE = 0.05, 0.004, -0.05, -0.022

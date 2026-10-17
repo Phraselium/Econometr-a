@@ -1,0 +1,8 @@
+{
+ "rama": "v16-f1-demanda_internacional",
+ "pregunta": "Instrumento externo de política monetaria del BCE (Q5), financiación por periodo de fijación (Q5-Q6), compras por residencia y personas jurídicas (Q3, Q8), comparación internacional de precios y sobrecarga (contexto de Q9)",
+ "capa": "C4",
+ "N": 6,
+ "metodo": "adquisición de datos",
+ "notas": "6 fuentes, 8 ficheros nuevos (2 en _terceros por licencia: EA-MPD dudoso, JK zip dudoso). Ya en repositorio: INE hipotecas provincia, MIVAU residencia/extranjeros, Eurostat HPI e ilc_lvho02/05a, BdE TAE. Fallidas: OPI golden visa (403); Registradores ERI y Notariado no descargados por licencia. Pendiente: serie oficial golden visa (requiere al autor)."
+}

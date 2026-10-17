@@ -1,2 +1,3 @@
 fecha,fase,rol,tarea,tokens,ficheros
 2026-10-17,F1,adquisidor-datos,oferta_suelo,121582,data/raw/v16/oferta_suelo;docs/v16/fuentes/oferta_suelo.md
+2026-10-17,F1,adquisidor-datos,demanda_internacional,140999,data/raw/v16/demanda_internacional;docs/v16/fuentes/demanda_internacional.md

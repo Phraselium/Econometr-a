@@ -46,11 +46,12 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | Fecha | Fase | Rol | Tarea | Tokens | Ficheros |
 |---|---|---|---|---|---|
 | 2026-10-17 | F1 | adquisidor-datos | oferta_suelo | 121.582 | data/raw/v16/oferta_suelo;docs/v16/fuentes/oferta_suelo.md |
+| 2026-10-17 | F1 | adquisidor-datos | demanda_internacional | 140.999 | data/raw/v16/demanda_internacional;docs/v16/fuentes/demanda_internacional.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
-| F1 | 121.582 |
+| F1 | 262.581 |
 
-Total V16: 121.582 tokens
+Total V16: 262.581 tokens
 
 <!-- fin subagentes -->

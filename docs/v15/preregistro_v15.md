@@ -41,8 +41,8 @@ En la fase 3 se sella la validación (sección 2). Cualquier desviación de lo q
 | Id | Pregunta | Papel | Capa máxima | Motivo |
 |---|---|---|---|---|
 | P6 | Zonas tensionadas (Ley 12/2023) en Cataluña: renta y número de contratos nuevos | **H1, H2** confirmatorias | C3 | Hay potencia (MDE ≈ 2,2 %, frente a los ≈ 5 % de la literatura). Ahora hay más periodos posteriores que en V9 y SDID con Honest DiD |
-| P5 | Densidad de vivienda turística (INE) y alquiler por sección | **H3** confirmatoria | C4 (asociación) | Hay potencia (MDE ≈ 0,4 % por desviación típica, frente al 2-6 % implícito en la literatura). Cruce por código INE. T = 4 y sin periodo previo: no admite C3 |
-| P4 | Inmigración y alquiler: shift-share municipal con padrón 2003-2022 | **H4** confirmatoria | C3 (si supera AKM, pretendencias y primera etapa) | Hay potencia (MDE ≈ 0,7 % por desviación típica). El riesgo es de identificación, y se declara |
+| P5 | Densidad de vivienda turística (INE) y alquiler por sección | **H3** confirmatoria | C4 (asociación) | Hay potencia (MDE ≈ 0,5 % por desviación típica, frente al 2-6 % implícito en la literatura). Cruce por código INE. T = 4 y sin periodo previo: no admite C3 |
+| P4 | Inmigración y alquiler: shift-share municipal con padrón 2003-2022 | **H4** confirmatoria | C3 (si supera AKM, pretendencias y primera etapa) | Hay potencia (MDE ≈ 0,8 % por desviación típica). El riesgo es de identificación, y se declara |
 | P9 | Predicción frente al AR(4) | **H5** confirmatoria (predictiva) | Sin capa causal | Nulo esperado (el DM solo detecta reducciones del ECM ≥ 18-30 %). Cierra una pregunta abierta desde v1 |
 | P2 | Fundamentales: cointegración precio-alquiler en panel provincial | **E1** exploratoria | C4 | Asociación de largo plazo. Su potencia se mide por Monte Carlo antes de estimar |
 | P7 | Presión demográfica frente a obra nueva | **E2** exploratoria | C4 | Descriptiva: provincial desde 2018 y municipal 2021-2025. La regularización catastral contamina 2011-2021 |
@@ -110,7 +110,7 @@ Si a 31-12-2027 no se alcanza el mínimo, se evalúa con lo que haya y se declar
   - (vii) inferencia por aleatorización.
 - **C3 si:** el ATT es significativo tras Holm en la familia, supera (i) a (iv) y M̄ ≥ 1. Si falla alguna, queda en C4 (asociación).
 - **Multiverso** (BH): 2 estimadores (SDID, CS) × 3 umbrales de contratos mínimos (5, 10, 30) × 3 radios de exclusión (0, 10, 25 km) × 2 ventanas (hasta 2025T4 y hasta 2026T1) = 36.
-- **Potencia.** MDE80 ≈ 2,2 % con errores por municipio (rechazo placebo 0,058). Referencia de la literatura: ≈ −5 % (Ley 11/2020) y un nulo en renta para 2024 en un preprint (Pérez García, 2026).
+- **Potencia.** MDE80 ≈ 2,2 % con errores por municipio (rechazo placebo 0,050). Referencia de la literatura: ≈ −5 % (Ley 11/2020) y un nulo en renta para 2024 en un preprint (Pérez García, 2026).
 - **Qué cambiaría.**
   - Si es C3 con ATT negativo, cambia V9-D1a: de «C4, pretendencias rechazadas» a «C3».
   - Si da un nulo con intervalo que excluye −5 %, matiza la lectura de los topes de la Ley 11/2020 (V9-D1b) para la Ley 12/2023: no son la misma intervención.
@@ -123,7 +123,7 @@ Si a 31-12-2027 no se alcanza el mínimo, se evalúa con lo que haya y se declar
 - **Referencia.**
   - Pérez García (2026): ≈ −13 %, robusto a tres diseños.
   - V9: «sin diferencia detectable», sin potencia.
-- **Potencia.** MDE80 ≈ 4,1 % en log(1 + contratos), con 541 municipios, 270 tratados placebo y errores por municipio (rechazo placebo 0,044; output/v15/potencia). Es menor que el −13 % de la referencia.
+- **Potencia.** MDE80 ≈ 3,9 % en log(1 + contratos), con 541 municipios, 270 tratados placebo y errores por municipio (rechazo placebo 0,038; output/v15/potencia, recalculado tras la marca de v6). Es menor que el −13 % de la referencia.
 - **Multiverso:** 36, como en H1.
 - **Qué cambiaría.** Una caída C3 cambiaría la conclusión «no se detecta caída del número de contratos» (V9, C4).
 
@@ -132,7 +132,7 @@ Si a 31-12-2027 no se alcanza el mínimo, se evalúa con lo que haya y se declar
 - **Estimando.** Coeficiente de log(alquiler) sobre el porcentaje de viviendas turísticas estandarizado (por 1 desviación típica intra-sección), con efectos fijos de sección y de municipio × año. Periodo 2021-2024 en entrenamiento.
 - **Supuestos.** Exogeneidad estricta condicional a los efectos fijos. No es un diseño causal: **capa máxima C4**, como mucho asociación robusta.
 - **Inferencia.**
-  - Principal: errores agrupados por municipio (rechazo placebo 0,058).
+  - Principal: errores agrupados por municipio (rechazo placebo 0,052).
   - Alternativa: Conley a 2 km.
 - **Pruebas.**
   - Placebo de adelanto: la exposición en t+1 no debe asociarse con el alquiler en t una vez controlada la de t.
@@ -141,7 +141,7 @@ Si a 31-12-2027 no se alcanza el mínimo, se evalúa con lo que haya y se declar
   - Exclusión de secciones con saltos de factor > 10 en la serie INE (auditoría de turismo).
   - Moran en residuos.
 - **Multiverso** (BH): 2 resultados (SERPAVI VC, VU) × 3 exposiciones (porcentaje, viviendas por 100 hogares, plazas) × 2 efectos fijos temporales (año, municipio × año) × 2 muestras (todas, sin saltos) × 2 agrupaciones = 48.
-- **Potencia.** MDE80 ≈ 0,4 % por desviación típica. Implicado por la literatura: 2-6 % por desviación típica si la dispersión del log de exposición es de orden 1.
+- **Potencia.** MDE80 ≈ 0,5 % por desviación típica (15.112 secciones; recalculado sin las provincias de v6). Implicado por la literatura: 2-6 % por desviación típica si la dispersión del log de exposición es de orden 1.
 - **Qué cambiaría.**
   - Una asociación positiva robusta por sección en toda España cambiaría «turísticos: no concluyente» (v3, v6, V8, V9), pero solo como asociación (C4).
   - Un nulo preciso por debajo de 0,5 % por desviación típica contradiría la literatura en los barrios muy expuestos, y se investigará la medida antes de leerlo.
@@ -166,7 +166,7 @@ Si a 31-12-2027 no se alcanza el mínimo, se evalúa con lo que haya y se declar
   - (vi) Desbordamientos: repetir con el área de 15 km.
 - **C3 si:** Holm, (i) a (v) y AKM significativo. Si no, C4.
 - **Multiverso** (BH): 2 resultados (VC, VU) × 2 normalizaciones (población inicial, población del periodo anterior) × 2 conjuntos de orígenes (28 países, continentes) × 2 especificaciones temporales (provincia × año, año) × 2 años base (2003, 2008) × 2 muestras (todas, ≥ 1.000 habitantes) = 64.
-- **Potencia.** MDE80 ≈ 0,7 % por desviación típica (forma reducida). La primera etapa es desconocida; si su F < 10, H4 se reporta con intervalos AR y queda en C4.
+- **Potencia.** MDE80 ≈ 0,8 % por desviación típica (forma reducida; 1.452 municipios, recalculado sin las provincias de v6). La primera etapa es desconocida; si su F < 10, H4 se reporta con intervalos AR y queda en C4.
 - **Qué cambiaría.**
   - Un efecto C3 positivo cambiaría «no concluyente» (v1-V9) y daría una magnitud para comparar con Saiz (≈ 1 % por 1 % de población).
   - Un nulo con AKM estrecho sería un nulo bien identificado.

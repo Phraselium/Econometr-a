@@ -30,7 +30,7 @@ Generado por `src/v10/base.py` (`make base`); no editar a mano.
 | metodo_dato | observado, interpolado, agregado, reconstruido… (banderas `_metodo` de los paneles) |
 | origen | fichero de data/processed o data/raw/v9 del que sale la fila |
 | posterior_prereg | True si el periodo empieza el 2026-07-01 o después (evaluate_v7/evaluate_v8): se muestra, pero no entra en cálculos |
-| muestra_sellada_v6 | True en las provincias del sellado transversal de v6 (informativo) |
+| muestra_sellada_v6 | True en las provincias del sellado transversal de v6 y en sus municipios, distritos y secciones (V15; solo a través de src/holdout.py) |
 
 ## Resumen
 

@@ -38,3 +38,12 @@ Corregir la base es corregir la 1.0. Según la regla del plan, eso va a ERRATA e
   - **Consecuencia para V15:** quedan fuera de toda estimación.
   - **Pendiente para el autor:** que la base pública lleve esas filas no altera ninguna cifra publicada de cifras_clave. Pero el cálculo de potencia de la fase 1 las incluyó en los paneles de sección (solo con tratamientos placebo, sin resultados). Queda para el autor decidir si conviene revisar qué análisis de V10-V14 las usaron (tareas_autor.md). Las evaluaciones v6 ya se hicieron, así que son muestras vistas.
 - **Control.** check_v15 comprueba que los módulos de estimación (src/v15/p*.py) no lean la base completa, los crudos ni la muestra sellada.
+
+## G7. Filas sub-provinciales de v6: auditoría, marca y control (antes del depósito)
+- **Auditoría** (docs/v15/contaminacion_v6.md). Los módulos de V10-V14 que leyeron filas de municipio, distrito o sección de las 11 provincias de v6 lo hicieron después de la última evaluación v6 (2026-10-11 17:45 UTC). Ninguno evalúa con muestra sellada. Todos los casos son **sin efecto**: no hay ERRATA ni parada.
+- **Marca.**
+  - `muestra_sellada_v6` marca ahora también esas filas en la base: src/v10/base.py para futuras construcciones y src/v15/marca_v6.py sobre la base actual.
+  - Filas marcadas: 3.642.696, antes 65.994.
+- **Control.** check_v15 («lecturas v6») exige el filtro en todo lector de la base, salvo los heredados con huella (docs/v15/contaminacion_v6_heredados.csv) y src/holdout.py.
+- **Potencia recalculada** sin esas provincias (output/v15/potencia). Cambios en el pre-registro: H3 0,4 → 0,5 % por desviación típica; H4 0,7 → 0,8 %; H2 4,1 → 3,9 %. H1 sigue en 2,2 %.
+- **Sellado.** Rehecho (`f3_sellado.py --rehacer`, con la puerta cerrada) para registrar la nueva huella de la base. Los ficheros de entrenamiento no cambian byte a byte.

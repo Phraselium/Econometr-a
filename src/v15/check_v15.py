@@ -115,9 +115,36 @@ def sellado() -> list[str]:
     return err
 
 
+LECTURA_BASE = re.compile(r"hechos\.parquet|vivienda\.duckdb")
+EXENTOS_V6 = {"src/holdout.py", "src/v10/base.py", "src/v15/marca_v6.py", "src/v15/check_v15.py"}
+
+
+def lecturas_v6() -> list[str]:
+    """Filas sub-provinciales de las provincias selladas en v6 (docs/v15/contaminacion_v6.md): todo script de src/ que lea la
+    base debe filtrar `muestra_sellada_v6`, salvo src/holdout.py, el constructor de la base y los heredados de V10-V15 F1
+    listados con su sha256 (docs/v15/contaminacion_v6_heredados.csv); un heredado modificado deja de estar exento."""
+    import csv
+    import hashlib
+    her = {}
+    lista = RAIZ / "docs" / "v15" / "contaminacion_v6_heredados.csv"
+    if lista.exists():
+        with lista.open(encoding="utf-8", newline="") as fh:
+            her = {r["fichero"]: r["sha256"] for r in csv.DictReader(fh)}
+    err = []
+    for p in sorted((RAIZ / "src").rglob("*.py")):
+        rel = p.relative_to(RAIZ).as_posix()
+        t = p.read_text(encoding="utf-8")
+        if rel in EXENTOS_V6 or not LECTURA_BASE.search(t) or "muestra_sellada_v6" in t:
+            continue
+        if rel in her and hashlib.sha256(p.read_bytes()).hexdigest() == her[rel]:
+            continue
+        err.append(f"{rel}: lee la base sin filtrar muestra_sellada_v6 (filas de v6 solo a través de src/holdout.py)")
+    return err
+
+
 def main() -> int:
     total = 0
-    for nombre, f in (("guardas", guardas), ("puerta", puerta), ("cifras", cifras), ("lenguaje causal", causal), ("literatura", literatura), ("sellado", sellado)):
+    for nombre, f in (("guardas", guardas), ("puerta", puerta), ("cifras", cifras), ("lenguaje causal", causal), ("literatura", literatura), ("sellado", sellado), ("lecturas v6", lecturas_v6)):
         e = f()
         print(f"check_v15 · {nombre}: {len(e)} errores")
         for x in e[:30]:

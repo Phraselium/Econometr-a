@@ -41,7 +41,7 @@
  "n_municipios_sellados": 853,
  "n_distritos_sellados": 1211,
  "fuentes_sha256": {
-  "data/base/hechos.parquet": "a4d738d0e10967c45331efb1c16daf51c5d27755674c87e5271953224850fd18",
+  "data/base/hechos.parquet": "609619b6a82018a1bb3dc6622e0c86cab51b8c5ad7eb84a8d1ac7893428e3ee7",
   "data/raw/v9/ine_padron_nacionalidad/padron_nacionalidad_2003_2022.csv.gz": "aac341143dce75aa727931de2056ec1f759e20b7b3b1a291441f5510dce37475"
  },
  "ultimo_periodo_visto": {
@@ -204,9 +204,9 @@
  },
  "preguntas": {
   "p6_zonas_tensionadas": {
-   "filas": 57192,
+   "filas": 57082,
    "filas_entrenamiento": 49085,
-   "filas_selladas": 8107,
+   "filas_selladas": 7997,
    "variables": [
     "incasol_contratos",
     "incasol_renta_media",
@@ -214,9 +214,9 @@
    ]
   },
   "p5_turismo_seccion": {
-   "filas": 2689382,
+   "filas": 1894059,
    "filas_entrenamiento": 1606374,
-   "filas_selladas": 1083008,
+   "filas_selladas": 287685,
    "variables": [
     "ine_vut_plazas",
     "ine_vut_porcentaje_vivienda_turistica",
@@ -228,9 +228,9 @@
    ]
   },
   "p4_inmigracion": {
-   "filas": 7142646,
+   "filas": 6949023,
    "filas_entrenamiento": 4959550,
-   "filas_selladas": 2183096,
+   "filas_selladas": 1989473,
    "variables": [
     "ipc_alquiler_indice",
     "ipc_alquiler_yoy",
@@ -296,9 +296,9 @@
    ]
   },
   "p7_demografia_obra": {
-   "filas": 5929231,
+   "filas": 4281974,
    "filas_entrenamiento": 3657522,
-   "filas_selladas": 2271709,
+   "filas_selladas": 624452,
    "variables": [
     "catastro_unidades_urbanas_residenciales",
     "hogares_ecp",
@@ -329,18 +329,18 @@
    ]
   },
   "p10_espacial": {
-   "filas": 222702,
+   "filas": 178180,
    "filas_entrenamiento": 152873,
-   "filas_selladas": 69829,
+   "filas_selladas": 25307,
    "variables": [
     "serpavi_alquiler_m2_mediana",
     "serpavi_n_contratos_recuento"
    ]
   },
   "p5_cv_cataluna": {
-   "filas": 711651,
+   "filas": 531665,
    "filas_entrenamiento": 453211,
-   "filas_selladas": 258440,
+   "filas_selladas": 78454,
    "variables": [
     "idescat_apartamentos_n",
     "idescat_apartamentos_plazas",

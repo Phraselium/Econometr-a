@@ -84,7 +84,7 @@ Recuento con data/processed/v15/p6_zonas_tensionadas.parquet (entrenamiento, tra
      - la regla del 1 % superior de exposición solo para exposiciones continuas (H3, H4 y E4).
 9. **(I, en parte) Potencias.**
    - **Recálculo en la fase 4, antes de estimar.** Se rehacen con exposiciones reales permutadas por bloques: entre secciones del mismo municipio en H3; las cuotas de 2003 reales con choques permutados entre orígenes en H4. Si el MDE80 supera el umbral de cada hipótesis (H3: 1 % por desviación típica intra-sección; H4: 1 % por punto), pasa a exploratoria.
-   - **H4.** Su rechazo placebo es 0,116 con 50 provincias, así que la inferencia principal es AKM (ya lo era).
+   - **H4.** Su rechazo placebo es 0,116 con las provincias de entrenamiento, así que la inferencia principal es AKM (ya lo era).
    - **H3.** Se traduce la literatura a desviaciones típicas intra-sección antes de estimar y se declara la cifra.
    - **(R parcial)** No se recalcula ahora: hacerlo bien exige construir el instrumento de H4, que es trabajo de la fase 4. La regla de paso a exploratoria lo cubre sin mirar resultados.
 10. **(I) Identificación de H4.**

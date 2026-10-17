@@ -91,3 +91,15 @@ def test_fases_4_y_5_cerradas_sin_osf():
     for f in ("f4", "f5"):
         r = subprocess.run([sys.executable, str(RAIZ / "src/v15/fase.py"), f], cwd=RAIZ, capture_output=True, text=True)
         assert r.returncode == 1 and "osf_prereg_v15" in r.stdout
+
+
+def test_lecturas_v6_exige_filtro(tmp_path, monkeypatch):
+    import check_v15 as C
+    src = tmp_path / "src" / "v99"
+    src.mkdir(parents=True)
+    (src / "malo.py").write_text('import duckdb\nduckdb.sql("select * from \'data/base/hechos.parquet\'")\n', encoding="utf-8")
+    (src / "bueno.py").write_text('q = "select * from \'data/base/hechos.parquet\' where not muestra_sellada_v6"\n', encoding="utf-8")
+    (tmp_path / "docs" / "v15").mkdir(parents=True)
+    monkeypatch.setattr(C, "RAIZ", tmp_path)
+    err = C.lecturas_v6()
+    assert len(err) == 1 and "malo.py" in err[0]

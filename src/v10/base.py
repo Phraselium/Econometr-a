@@ -20,7 +20,9 @@ Reglas:
   discrepancias (docs/v10/diccionario_base.md);
 - `posterior_prereg` = periodo que empieza el 2026-07-01 o después (evaluate_v7/evaluate_v8): esas filas se marcan y
   no entran en ningún cálculo del atlas;
-- `muestra_sellada_v6` marca las provincias del sellado transversal de v6 (informativo; data/sealed no se lee);
+- `muestra_sellada_v6` marca las provincias del sellado transversal de v6 y, desde V15, sus municipios, distritos y
+  secciones (solo se leen a través de src/holdout.py; los módulos de V10-V14 que las usaron están en
+  docs/v15/contaminacion_v6.md; data/sealed no se lee);
 - solo descriptivo: no se estima nada.
 """
 from __future__ import annotations
@@ -769,7 +771,8 @@ def construir() -> dict:
         SELECT u.territorio_codigo, u.nivel, u.periodo, u.frecuencia, u.variable, u.desagregacion, u.valor,
                vm.unidad, vm.fuente, coalesce(ed.edicion, 'proyecto') AS edicion, u.fin AS fecha_dato, CASE WHEN vm.capa = 'C1' AND u.nivel <> vm.nivel_c1 THEN 'C4' ELSE vm.capa END AS capa, vm.licencia,
                vm.redistribuible, u.metodo_dato, u.origen, u.fin >= '2026-07-01' AS posterior_prereg,
-               (u.nivel = 'provincia' AND u.territorio_codigo IN (SELECT territorio_codigo FROM sell)) AS muestra_sellada_v6
+               (u.nivel IN ('provincia', 'municipio', 'distrito', 'seccion')   -- V15: también filas sub-provinciales (docs/v15/contaminacion_v6.md)
+                AND substr(u.territorio_codigo, 1, 2) IN (SELECT territorio_codigo FROM sell)) AS muestra_sellada_v6
         FROM u JOIN vmeta vm USING (variable) LEFT JOIN ed USING (origen) WHERE rn = 1
         ORDER BY {clave}""")
     con.execute("DROP TABLE b2")
@@ -871,7 +874,7 @@ def escribir_diccionario(vt: pd.DataFrame, niv: dict, resumen: dict) -> None:
            "| metodo_dato | observado, interpolado, agregado, reconstruido… (banderas `_metodo` de los paneles) |",
            "| origen | fichero de data/processed o data/raw/v9 del que sale la fila |",
            "| posterior_prereg | True si el periodo empieza el 2026-07-01 o después (evaluate_v7/evaluate_v8): se muestra, pero no entra en cálculos |",
-           "| muestra_sellada_v6 | True en las provincias del sellado transversal de v6 (informativo) |", "",
+           "| muestra_sellada_v6 | True en las provincias del sellado transversal de v6 y en sus municipios, distritos y secciones (V15; solo a través de src/holdout.py) |", "",
            "## Resumen", "",
            *[f"- {k}: {v}" for k, v in resumen.items()],
            "- filas públicas por nivel: " + ", ".join(f"{k} {v}" for k, v in niv.items()), "",

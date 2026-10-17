@@ -52,11 +52,12 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F1 | ingeniero-datos | datos_demanda_internacional | 61.558 | src/v16/datos/demanda_internacional.py;data/processed/v16/demanda_internacional.parquet |
 | 2026-10-17 | F1 | adquisidor-datos | tension_social | 82.901 | data/raw/v16/tension_social;docs/v16/fuentes/tension_social.md |
 | 2026-10-17 | F1 | ingeniero-datos | datos_tension_social | 139.695 | src/v16/datos/tension_social.py;data/processed/v16/tension_social.parquet |
+| 2026-10-17 | F1 | ingeniero-datos | datos_oferta_suelo | 50.757 | src/v16/datos/oferta_suelo.py;data/processed/v16/oferta_suelo.parquet |
 
 | Fase | Tokens de subagentes |
 |---|---|
-| F1 | 906.394 |
+| F1 | 957.151 |
 
-Total V16: 906.394 tokens
+Total V16: 957.151 tokens
 
 <!-- fin subagentes -->

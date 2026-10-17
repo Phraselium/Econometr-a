@@ -1,0 +1,9 @@
+{
+  "rama": "v16-f1-datos-oferta_suelo",
+  "pregunta": "Q4: insumos de oferta de suelo normalizados (costes de construcción nacionales; restricción física Red Natura 2000 por municipio)",
+  "capa": "C4",
+  "N": 3938,
+  "metodo": "normalización",
+  "notas": "Normalización INE IMM (tablas 8381, 8382, 8377): nacional mensual, redistribuible sí. Red Natura 2000 calculada por municipio en terceros (no versionado): {'municipios_calculados': 8132, 'sin_geometria': ['01000', '02000', '03000', '03141', '04000', '04039', '05000', '06000', '07000', '08000', '09000', '10000', '11000', '11043', '11044', '12000', '13000', '13099', '14000', '15000', '15026', '15063', '16000', '17000', '17122', '18000', '19000', '20000', '21000', '22000', '22091', '22132', '22210', '22231', '23000', '24000', '25000', '26000', '27000', '28000', '28409', '29000', '30000', '31000', '32000', '33000', '34000', '35000', '36000', '36011', '36012', '36062', '37000', '38000', '39000', '40000', '41000', '41103', '42000', '43000', '44000', '45000', '46000', '46264', '46265', '46266', '46328', '47000', '48000', '49000', '50000', '51000', '52000'], 'geometria_sin_territorio': [], 'municipios_con_rn2000': 5656}.",
+  "N_terceros": 24396
+}

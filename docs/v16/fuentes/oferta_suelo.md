@@ -76,3 +76,36 @@ Hueco: el visado de dirección de obra del CSCAE y el certificado de fin de obra
 - Los tamaños citados de fuentes no descargadas (SIU, CLC, MDT) no están verificados.
 - Ninguna cifra de este fichero entra en cifras_clave ni en publicación: son insumos.
 - No se leyó data/sealed ni filas marcadas muestra_sellada_v6.
+
+## Normalización (V16 fase 1)
+
+Script: `src/v16/datos/oferta_suelo.py` (determinista, SEED=20261010, sin red; ~5 min por la geometría). Tests: `tests/v16/test_datos_oferta_suelo.py`. Diccionario: `docs/v16/fuentes/oferta_suelo_variables.csv`. Resultado: `data/processed/v16/oferta_suelo_resultado.json`. capa = C4 y posterior_prereg = False (el corte de V16 no está fijado).
+
+### Salidas
+- `data/processed/v16/oferta_suelo.parquet` (versionado; 3 938 filas, 45 KB; redistribuible = sí): INE IMM, nacional (código «00»), mensual (periodo AAAA-MM; fecha_dato = fin de mes). 22 variables `ine_imm_*_indice`: mano de obra (IMM1, 1995-01 a 2026-03), 16 materiales generales y 5 específicos (2012-01 a 2026-03). La desagregación lleva el código de serie INE (IMM*). Unidades: «índice base 2011=100» o «índice base julio 1980».
+- `data/processed/v16/oferta_suelo_terceros.parquet` (NO versionado; redistribuible = False; 24 396 filas): Red Natura 2000 (MITECO, edición 2025) por municipio, anual 2025: `miteco_rn2000_superficie_municipio_ha`, `miteco_rn2000_porcentaje_superficie_municipal` y `ine_geo_superficie_municipio_ha` (denominador). 8 132 municipios; 5 656 con alguna superficie en Red Natura.
+
+### Cálculo de Red Natura 2000 (insumo de la restricción física, Q4)
+- Geopandas, shapely 2 y pyogrio disponibles; geometría municipal: `data/base/geo/municipios.parquet` (polígonos INE derivados del seccionado, WGS84).
+- Ambas capas (península/Baleares EPSG:25830 y Canarias EPSG:32628) y los municipios se reproyectan a LAEA EPSG:3035 (equivalente en área); geometrías reparadas con make_valid; las 1 865 geometrías de sitios se disuelven en una unión única (solapes LIC/ZEC-ZEPA y entre capas), y se intersecta cada municipio con las partes disueltas. Porcentaje = área en Red Natura / área municipal x 100, acotado a [0, 100].
+- Comprobaciones: suma de áreas municipales 50,4 Mha (España, ~50,6 Mha); Madrid capital 60 492 ha.
+- Marca muestra_sellada_v6 aplicada a los municipios de las provincias de holdout (solo por código).
+
+### Rupturas
+1. IMM1 usa base julio 1980; las demás series, base 2011=100: no comparables en nivel sin reescalado. Sin cambio de definición ni de seccionado (todas nacionales).
+2. Las series de materiales específicos tienen huecos (161-167 observaciones frente a 171): no se interpolan.
+3. Red Natura es una única edición (2025): sin serie temporal. Áreas sobre el polígono municipal 2025; la parte marina de los sitios queda fuera.
+
+### Descartes
+- 8 205 municipios en territorios.parquet frente a 8 132 con geometría. Sin geometría (73): 52 códigos «PP000» (pseudo-códigos provinciales, no municipios) y 21 municipios reales de creación o cambio posterior a la cartografía (03141, 04039, 11043, 11044, 13099, 15026, 15063, 17122, 22091, 22132, 22210, 22231, 28409, 36011, 36012, 36062, 41103, 46264, 46265, 46266, 46328). Quedan sin cálculo; lista completa en `oferta_suelo_resultado.json`. Ningún cruce por nombre.
+- Sin geometría sin código: ninguna (geometria_sin_territorio vacío).
+
+### Insumos de Q4 que siguen faltando y cómo obtenerlos
+| Insumo | Estado | Cómo obtenerlo |
+|---|---|---|
+| Pendiente (% >15 %) | falta | MDT05 del CNIG, hojas por provincia (descarga manual en navegador); pendiente por celda en EPSG:25830 y agregación por código INE de municipio. Alternativa: WCS del IGN (no probado). Licencia por confirmar. |
+| Agua (masas de agua, embalses, lagos) | falta | BDLJE/BCN del IGN o capas de masas de agua de MITECO/Confederaciones; la intersección es igual que la de Red Natura. Alternativa: clase «superficies de agua» de CORINE/SIOSE. |
+| DPMT (deslinde y núcleos excluidos) | falta (descarga devuelve HTML) | Descarga manual de dpmt.zip (12,2 MB) en la página de MITECO de deslinde DPMT; uso libre con cita. Dejar en `data/raw/v16/oferta_suelo/dpmt_miteco/` y repetir el cálculo de intersección. |
+| Planeamiento (suelo urbano/urbanizable) | falta | SIU del MIVAU (descarga manual; 403 en el agente); mientras tanto, proxy catastral `data/raw/v4/catastro_solares_municipios.csv.gz`. Licencias de obra mayor del INE ECE: falta el id de tabla. |
+| Usos del suelo (CORINE/SIOSE) | falta | CLMS exige cuenta; SIOSE del CNIG sin endpoint. Alternativa: descarga manual del autor. |
+| Red Natura: licencia | dudosa | Confirmar el aviso legal del MITECO; si es abierta con cita, pasa a «sí» y sale de _terceros. |

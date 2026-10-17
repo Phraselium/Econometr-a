@@ -52,7 +52,8 @@ Generada por src/v15/registro_subagentes.py (fuente: docs/v15/subagentes.csv). T
 | 2026-10-17 | auditor-datos | F1.2 demografía y hogares (incl. reparto alternativo B1) | 244.726 | src/v15/auditoria/demografia_hogares.py; output/v15/auditoria/demografia_hogares/ |
 | 2026-10-17 | lector-literatura | F2 P5 pisos turísticos | 145.840 | docs/v15/literatura/P5_pisos_turisticos.md |
 | 2026-10-17 | lector-literatura | F2 P6 topes y zonas tensionadas | 198.830 | docs/v15/literatura/P6_topes_alquiler.md |
+| 2026-10-17 | lector-literatura | F2 P9 predicción | 86.141 | docs/v15/literatura/P9_prediccion.md |
 
-Total: 1.439.382 tokens · auditor-datos: 721.673; inventariador: 287.158; lector-literatura: 430.551
+Total: 1.525.523 tokens · auditor-datos: 721.673; inventariador: 287.158; lector-literatura: 516.692
 
 <!-- fin subagentes -->

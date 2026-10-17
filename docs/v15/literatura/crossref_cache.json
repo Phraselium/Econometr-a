@@ -1,4 +1,40 @@
 {
+ "10.1002/for.2483": {
+  "existe": true,
+  "titulo": "Forecasting house prices in OECD economies",
+  "primer_autor": "Kishor",
+  "anio": 2017,
+  "revista": "Journal of Forecasting",
+  "issn": [
+   "0277-6693",
+   "1099-131X"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1002/for.928": {
+  "existe": true,
+  "titulo": "Combination forecasts of output growth in a seven‐country data set",
+  "primer_autor": "Stock",
+  "anio": 2004,
+  "revista": "Journal of Forecasting",
+  "issn": [
+   "0277-6693",
+   "1099-131X"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1002/jae.1137": {
+  "existe": true,
+  "titulo": "Large Bayesian vector auto regressions",
+  "primer_autor": "Bańbura",
+  "anio": 2010,
+  "revista": "Journal of Applied Econometrics",
+  "issn": [
+   "0883-7252",
+   "1099-1255"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.1007/BF03399433": {
   "existe": true,
   "titulo": "Immigration and Swiss House Prices",
@@ -7,6 +43,39 @@
   "revista": "Swiss Journal of Economics and Statistics",
   "issn": [
    "2235-6282"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.econmod.2014.10.050": {
+  "existe": true,
+  "titulo": "Forecasting the U.S. real house price index",
+  "primer_autor": "Plakandaras",
+  "anio": 2015,
+  "revista": "Economic Modelling",
+  "issn": [
+   "0264-9993"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.ijforecast.2014.05.005": {
+  "existe": true,
+  "titulo": "Forecasting house prices in the 50 states using Dynamic Model Averaging and Dynamic Model Selection",
+  "primer_autor": "Bork",
+  "anio": 2015,
+  "revista": "International Journal of Forecasting",
+  "issn": [
+   "0169-2070"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.jeconom.2006.05.023": {
+  "existe": true,
+  "titulo": "Approximately normal tests for equal predictive accuracy in nested models",
+  "primer_autor": "Clark",
+  "anio": 2007,
+  "revista": "Journal of Econometrics",
+  "issn": [
+   "0304-4076"
   ],
   "consulta": "2026-10-17"
  },
@@ -238,6 +307,18 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.1111/j.1468-0262.2006.00718.x": {
+  "existe": true,
+  "titulo": "Tests of Conditional Predictive Ability",
+  "primer_autor": "Giacomini",
+  "anio": 2006,
+  "revista": "Econometrica",
+  "issn": [
+   "0012-9682",
+   "1468-0262"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.1111/jors.12010": {
   "existe": true,
   "titulo": "IMMIGRATION AND HOUSING BOOMS: EVIDENCE FROM SPAIN*",
@@ -422,12 +503,33 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.3982/ECTA5771": {
+  "existe": true,
+  "titulo": "The Model Confidence Set",
+  "primer_autor": "",
+  "anio": 2011,
+  "revista": "Econometrica",
+  "issn": [
+   "0012-9682"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.4337/9780857934581.00010": {
   "existe": true,
   "titulo": "The effects of immigration on US wages and rents: a general equilibrium approach*",
   "primer_autor": "Ottaviano",
   "anio": 2012,
   "revista": "Migration Impact Assessment",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.48550/arXiv.1707.04868": {
+  "existe": true,
+  "registro": "DataCite",
+  "titulo": "Forecasting the U.S. Real House Price Index",
+  "primer_autor": "Plakandaras",
+  "anio": 2017,
+  "revista": "arXiv",
   "issn": [],
   "consulta": "2026-10-17"
  },

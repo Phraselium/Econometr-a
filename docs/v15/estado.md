@@ -45,7 +45,8 @@ Generada por src/v15/registro_subagentes.py (fuente: docs/v15/subagentes.csv). T
 | Fecha | Rol | Tarea | Tokens | Ficheros |
 |---|---|---|---|---|
 | 2026-10-17 | auditor-datos | F1.2 precios de compra | 103.963 | src/v15/auditoria/precios_compra.py; output/v15/auditoria/precios_compra/ |
+| 2026-10-17 | inventariador | F1.1 anotaciones del inventario (79 familias) | 287.158 | docs/v15/inventario_anotaciones.csv |
 
-Total: 103.963 tokens · auditor-datos: 103.963
+Total: 391.121 tokens · auditor-datos: 103.963; inventariador: 287.158
 
 <!-- fin subagentes -->

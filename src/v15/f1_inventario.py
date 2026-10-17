@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import csv
 import fnmatch
+import re
 import sys
 from pathlib import Path
 
@@ -46,16 +47,35 @@ def base() -> pd.DataFrame:
     return d
 
 
+def patrones(familia: str) -> list[str]:
+    """«emcr_* (saldo; md_*); ine_x» → ['emcr_*', 'emcr_saldo', 'emcr_md_*', 'saldo', 'md_*', 'ine_x']. Separadores ; o ,;
+    lo que va entre paréntesis son miembros de la familia: valen solos y con el prefijo delante."""
+    pats = []
+    for trozo in re.split(r";(?![^(]*\))|,(?![^(]*\))", familia):
+        base = re.sub(r"\(.*?\)", "", trozo).strip().split(" ")[0]
+        if base:
+            pats.append(base)
+        for dentro in re.findall(r"\((.*?)\)", trozo):
+            for m in re.split(r"[;,]", dentro):
+                m = m.strip()
+                if re.fullmatch(r"[a-z0-9_*]+", m):
+                    pats.append(m)
+                    if base.endswith("*"):
+                        pats.append(base[:-1] + m)
+    return pats
+
+
 def anotaciones(d: pd.DataFrame) -> pd.DataFrame:
     f = SAL / "inventario_anotaciones.csv"
     d["concepto"] = d["definicion_exacta"] = d["rupturas"] = d["fuente_documento"] = "no consta"
     if not f.exists():
         return d
     an = list(csv.DictReader(f.open(encoding="utf-8")))
+    for a in an:
+        a["_pats"] = patrones(a["familia_o_prefijo"])
     for i, var in d.variable.items():
         for a in an:   # la primera familia cuyo patrón (glob) encaja con la variable
-            pats = [p.strip() for p in a["familia_o_prefijo"].split(",")]
-            if any(fnmatch.fnmatch(var, p) for p in pats):
+            if any(fnmatch.fnmatch(var, p) for p in a["_pats"]):
                 for c in ("concepto", "definicion_exacta", "rupturas", "fuente_documento"):
                     d.at[i, c] = a.get(c) or "no consta"
                 break

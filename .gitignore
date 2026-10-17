@@ -153,3 +153,5 @@ data/raw/v16/*/_grandes/
 data/raw/v16/*/_terceros/
 # V16: instantáneas de Inside Airbnb (como en v9: solo en disco, sha256 en data/CHECKSUMS.sha256)
 data/raw/v16/alquiler_turismo/original/insideairbnb/listings_*.csv.gz
+# V16: normalizados de series de terceros (solo en disco)
+data/processed/v16/*_terceros.parquet

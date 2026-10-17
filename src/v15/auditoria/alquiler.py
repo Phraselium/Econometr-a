@@ -51,7 +51,7 @@ def base(variable: str, nivel: str | None = None, freq: str | None = None, desag
         w.append(f"desagregacion = '{desag}'")
     if edicion_like:
         w.append(f"edicion like '{edicion_like}'")
-    sql = ("select nivel, territorio_codigo as territorio, periodo, desagregacion as desag, valor, edicion "
+    sql = ("select nivel, territorio_codigo as cod_ine, periodo, desagregacion as desag, valor, edicion "
            "from h where " + " and ".join(w))
     return CON.execute(sql).fetchdf()
 
@@ -99,10 +99,10 @@ def prov_de(cod: str) -> str:
 
 def panel(serie: str, nivel: str, df: pd.DataFrame) -> pd.DataFrame:
     """Normaliza a columnas serie, nivel, territorio, t (año), yoy."""
-    d = df[["territorio", "t", "yoy"]].copy()
+    d = df[["cod_ine", "t", "yoy"]].copy()
     d["serie"] = serie
     d["nivel"] = nivel
-    return d[["serie", "nivel", "territorio", "t", "yoy"]]
+    return d[["serie", "nivel", "cod_ine", "t", "yoy"]]
 
 
 # ----------------------------------------------------------------------------- construcción
@@ -114,35 +114,35 @@ def leer_gva() -> pd.DataFrame:
         d["anio"] = int(f.stem[-4:])
         out.append(d)
     g = pd.concat(out, ignore_index=True)
-    g["territorio"] = g["cod_provincia"].str.zfill(2) + g["cod_municipio"].str.zfill(3)
+    g["cod_ine"] = g["cod_provincia"].str.zfill(2) + g["cod_municipio"].str.zfill(3)
     g["importe"] = pd.to_numeric(g["importe_fianza"], errors="coerce")
     return g
 
 
 def gva_paneles(g: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     ok = g[(g["importe"] > 0) & (g["anio"] <= 2025)]
-    mun = ok.groupby(["territorio", "anio"]).agg(valor=("importe", "median"), n=("importe", "size")).reset_index()
-    prv = ok.assign(territorio=ok["cod_provincia"].str.zfill(2)).groupby(["territorio", "anio"]).agg(
+    mun = ok.groupby(["cod_ine", "anio"]).agg(valor=("importe", "median"), n=("importe", "size")).reset_index()
+    prv = ok.assign(cod_ine=ok["cod_provincia"].str.zfill(2)).groupby(["cod_ine", "anio"]).agg(
         valor=("importe", "median"), n=("importe", "size")).reset_index()
     mun = mun.rename(columns={"anio": "t"})
     prv = prv.rename(columns={"anio": "t"})
-    ym = yoy(mun[mun["n"] >= MIN_N_FIANZAS], ["territorio"])
+    ym = yoy(mun[mun["n"] >= MIN_N_FIANZAS], ["cod_ine"])
     # exige n mínimo también en t-1
-    nprev = mun.assign(t=mun["t"] + 1)[["territorio", "t", "n"]].rename(columns={"n": "n_prev"})
-    ym = ym.merge(nprev, on=["territorio", "t"], how="left")
+    nprev = mun.assign(t=mun["t"] + 1)[["cod_ine", "t", "n"]].rename(columns={"n": "n_prev"})
+    ym = ym.merge(nprev, on=["cod_ine", "t"], how="left")
     ym = ym[ym["n_prev"] >= MIN_N_FIANZAS]
-    yp = yoy(prv, ["territorio"])
+    yp = yoy(prv, ["cod_ine"])
     return mun, ym, yp
 
 
 def incasol_anual() -> pd.DataFrame:
     c = base("incasol_contratos", "municipio", "A")
     r = base("incasol_renta_media", "municipio", "A")
-    m = c.merge(r, on=["territorio", "periodo", "desag"], how="left", suffixes=("_c", "_r"))
+    m = c.merge(r, on=["cod_ine", "periodo", "desag"], how="left", suffixes=("_c", "_r"))
     m["t"] = m["periodo"].astype(str).str[:4].astype(int)
     m["cr"] = m["valor_c"] * m["valor_r"]
     m["c_con_renta"] = np.where(m["valor_r"].notna(), m["valor_c"], 0.0)
-    g = m.groupby(["territorio", "t"]).agg(contratos=("valor_c", "sum"), c_renta=("c_con_renta", "sum"),
+    g = m.groupby(["cod_ine", "t"]).agg(contratos=("valor_c", "sum"), c_renta=("c_con_renta", "sum"),
                                              cr=("cr", "sum")).reset_index()
     g["cobertura_renta"] = np.where(g["contratos"] > 0, g["c_renta"] / g["contratos"], np.nan)
     g["valor"] = np.where(g["c_renta"] > 0, g["cr"] / g["c_renta"], np.nan)
@@ -159,9 +159,9 @@ def construir() -> dict:
     for nivel in ("nacional", "ccaa"):
         d = base("ipc_alquiler", nivel, "T")
         d["t"] = t_index(d["periodo"])
-        AUX[f"ipc_T_{nivel}"] = yoy(d.assign(territorio=d["territorio"]), ["territorio"], lag=4)
-        a = annual_from_quarterly(d, ["territorio"])
-        P[f"IPC_{nivel}"] = panel("IPC", nivel, yoy(a, ["territorio"]))
+        AUX[f"ipc_T_{nivel}"] = yoy(d.assign(cod_ine=d["cod_ine"]), ["cod_ine"], lag=4)
+        a = annual_from_quarterly(d, ["cod_ine"])
+        P[f"IPC_{nivel}"] = panel("IPC", nivel, yoy(a, ["cod_ine"]))
     ipcp = base("ipc_alquiler_yoy", "provincia", "A")
     ipcp["t"] = ipcp["periodo"].astype(int)
     ipcp["yoy"] = ipcp["valor"]
@@ -169,7 +169,7 @@ def construir() -> dict:
     ipci = base("ipc_alquiler_indice", "provincia", "A")
     ipci["t"] = ipci["periodo"].astype(int)
     AUX["ipc_idx_prov_A"] = ipci
-    AUX["ipc_idx_prov_yoy_recalc"] = yoy(ipci, ["territorio"])
+    AUX["ipc_idx_prov_yoy_recalc"] = yoy(ipci, ["cod_ine"])
     AUX["ipc_yoy_prov_pub"] = ipcp
     ipcq = base("ipc_alquiler_yoy", "provincia", "T")
     ipcq["t"] = t_index(ipcq["periodo"])
@@ -193,7 +193,7 @@ def construir() -> dict:
     ipv = base("ipva_indice", "provincia", desag="")
     ipv["t"] = ipv["periodo"].astype(int)
     AUX["ipva_idx_prov_panel"] = ipv
-    y = yoy(ipv, ["territorio"])
+    y = yoy(ipv, ["cod_ine"])
     P["IPVA_PANEL_provincia"] = panel("IPVA_PANEL", "provincia", y)
     F["IPVA_PANEL_provincia"], TIPO["IPVA_PANEL_provincia"] = "IPVA", "stock"
     for nivel in ("distrito", "municipio"):
@@ -216,7 +216,7 @@ def construir() -> dict:
             d = base("serpavi_alquiler_m2_mediana", nivel, desag=f"tipologia={tip}")
             d["t"] = d["periodo"].astype(int)
             ser[(tip, nivel)] = d
-            y = yoy(d, ["territorio"])
+            y = yoy(d, ["cod_ine"])
             s = f"SERPAVI_{tip}_{nivel}"
             P[s] = panel(f"SERPAVI_{tip}", nivel, y)
             F[s], TIPO[s] = "SERPAVI", "stock"
@@ -228,17 +228,17 @@ def construir() -> dict:
     nmun["t"] = nmun["periodo"].astype(int)
     AUX["serpavi_n_mun"] = nmun
     # agregados nacional / ccaa de SERPAVI VC (media de tasas provinciales ponderada por contratos)
-    yp = yoy(ser[("VC", "provincia")], ["territorio"]).merge(
-        nprov[["territorio", "t", "valor"]].rename(columns={"valor": "w"}), on=["territorio", "t"], how="left")
+    yp = yoy(ser[("VC", "provincia")], ["cod_ine"]).merge(
+        nprov[["cod_ine", "t", "valor"]].rename(columns={"valor": "w"}), on=["cod_ine", "t"], how="left")
     yp = yp[yp["w"] > 0]
-    yp["ccaa"] = yp["territorio"].map(CCAA_DE_PROV)
+    yp["ccaa"] = yp["cod_ine"].map(CCAA_DE_PROV)
     agg_c = yp.groupby(["ccaa", "t"]).apply(lambda g: np.average(g["yoy"], weights=g["w"]),
                                             include_groups=False).rename("yoy").reset_index()
-    agg_c = agg_c.rename(columns={"ccaa": "territorio"})
+    agg_c = agg_c.rename(columns={"ccaa": "cod_ine"})
     P["SERPAVI_VC_ccaa"] = panel("SERPAVI_VC", "ccaa", agg_c)
     agg_n = yp.groupby("t").apply(lambda g: np.average(g["yoy"], weights=g["w"]),
                                   include_groups=False).rename("yoy").reset_index()
-    agg_n["territorio"] = "00"
+    agg_n["cod_ine"] = "00"
     P["SERPAVI_VC_nacional"] = panel("SERPAVI_VC", "nacional", agg_n)
     for s in ("SERPAVI_VC_ccaa", "SERPAVI_VC_nacional"):
         F[s], TIPO[s] = "SERPAVI", "stock"
@@ -257,39 +257,39 @@ def construir() -> dict:
     inc = incasol_anual()
     AUX["incasol"] = inc
     ok = inc[(inc["cobertura_renta"] >= 0.9) & inc["valor"].notna() & (inc["contratos"] >= MIN_N_FIANZAS)]
-    ymi = yoy(ok, ["territorio"])
-    nprev = inc.assign(t=inc["t"] + 1)[["territorio", "t", "contratos"]].rename(columns={"contratos": "n_prev"})
-    ymi = ymi.merge(nprev, on=["territorio", "t"], how="left")
+    ymi = yoy(ok, ["cod_ine"])
+    nprev = inc.assign(t=inc["t"] + 1)[["cod_ine", "t", "contratos"]].rename(columns={"contratos": "n_prev"})
+    ymi = ymi.merge(nprev, on=["cod_ine", "t"], how="left")
     ymi = ymi[ymi["n_prev"] >= MIN_N_FIANZAS]
     P["INCASOL_municipio"] = panel("INCASOL", "municipio", ymi)
-    okp = ok.assign(prov=ok["territorio"].str[:2])
+    okp = ok.assign(prov=ok["cod_ine"].str[:2])
     ap = okp.groupby(["prov", "t"]).apply(lambda x: np.average(x["valor"], weights=x["contratos"]),
                                           include_groups=False).rename("valor").reset_index()
-    ap = ap.rename(columns={"prov": "territorio"})
-    P["INCASOL_provincia"] = panel("INCASOL", "provincia", yoy(ap, ["territorio"]))
+    ap = ap.rename(columns={"prov": "cod_ine"})
+    P["INCASOL_provincia"] = panel("INCASOL", "provincia", yoy(ap, ["cod_ine"]))
     ac = ok.groupby("t").apply(lambda x: np.average(x["valor"], weights=x["contratos"]),
                                include_groups=False).rename("valor").reset_index()
-    ac["territorio"] = "09"
-    P["INCASOL_ccaa"] = panel("INCASOL", "ccaa", yoy(ac, ["territorio"]))
+    ac["cod_ine"] = "09"
+    P["INCASOL_ccaa"] = panel("INCASOL", "ccaa", yoy(ac, ["cod_ine"]))
     for s in ("INCASOL_municipio", "INCASOL_provincia", "INCASOL_ccaa"):
         F[s], TIPO[s] = "INCASOL", "nuevos"
 
     # --- EMAL (Euskadi, contratos nuevos, 20 municipios; CC BY)
     e = base("emal_renta_mensual_eur", "municipio", "T")
     e["t"] = t_index(e["periodo"])
-    AUX["emal_T"] = yoy(e, ["territorio"], lag=4)
-    ea = annual_from_quarterly(e, ["territorio"])
-    P["EMAL_municipio"] = panel("EMAL", "municipio", yoy(ea, ["territorio"]))
+    AUX["emal_T"] = yoy(e, ["cod_ine"], lag=4)
+    ea = annual_from_quarterly(e, ["cod_ine"])
+    P["EMAL_municipio"] = panel("EMAL", "municipio", yoy(ea, ["cod_ine"]))
     F["EMAL_municipio"], TIPO["EMAL_municipio"] = "EMAL", "nuevos"
 
     # --- HICP alquileres efectivos España (control de coherencia del IPC)
     hh = base("hicp_alquiler_indice", "pais")
-    hh = hh[hh["territorio"] == "ES"].copy()
+    hh = hh[hh["cod_ine"] == "ES"].copy()
     hh["anio"] = hh["periodo"].astype(str).str[:4].astype(int)
     ha = hh.groupby("anio").agg(valor=("valor", "mean"), n=("valor", "size")).reset_index()
     ha = ha[ha["n"] == 12].rename(columns={"anio": "t"})
-    ha["territorio"] = "00"
-    P["HICP_nacional"] = panel("HICP", "nacional", yoy(ha, ["territorio"]))
+    ha["cod_ine"] = "00"
+    P["HICP_nacional"] = panel("HICP", "nacional", yoy(ha, ["cod_ine"]))
     F["HICP_nacional"], TIPO["HICP_nacional"] = "HICP", "stock"
     return {"P": P, "F": F, "TIPO": TIPO, "AUX": AUX}
 
@@ -298,7 +298,7 @@ def construir() -> dict:
 def z_series(d: pd.DataFrame, modo: str, suelo: float = 0.0) -> tuple[pd.Series, pd.Series]:
     """z robusto = 0,6745 (x - mediana) / MAD; con `suelo` > 0 la escala es max(MAD, suelo). Devuelve (z, MAD)."""
     d = d.copy()
-    clave, minimo = ("territorio", MIN_T_TEMPORAL) if modo == "temporal" else ("t", 30)
+    clave, minimo = ("cod_ine", MIN_T_TEMPORAL) if modo == "temporal" else ("t", 30)
     g = d.groupby(clave)["yoy"]
     n = g.transform("size")
     med = g.transform("median")
@@ -319,14 +319,14 @@ def atipicos(R: dict) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
     }
     items = [(s, F[s], p["nivel"].iloc[0], p) for s, p in P.items()]
     for s, (fte, nivel, d) in extra.items():
-        dd = d[["territorio", "t", "yoy"]].copy()
+        dd = d[["cod_ine", "t", "yoy"]].copy()
         items.append((s, fte, nivel, dd))
     filas, tops = [], []
     for s, fte, nivel, d in items:
         d = d.dropna(subset=["yoy"]).reset_index(drop=True)
         if d.empty:
             continue
-        long_med = d.groupby("territorio").size().median()
+        long_med = d.groupby("cod_ine").size().median()
         modo = "temporal" if long_med >= MIN_T_TEMPORAL else "transversal"
         z, mad = z_series(d, modo)
         zs, _ = z_series(d, modo, suelo=1.0)
@@ -344,20 +344,20 @@ def atipicos(R: dict) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
             f2 = fl.assign(serie=s, fuente=fte, nivel=nivel)
             f2["t"] = [f"{int(x) // 4}T{int(x) % 4 + 1}" if s.endswith("_trimestral") else str(int(x))
                        for x in f2["t"]]
-            tops.append(f2[["fuente", "serie", "nivel", "territorio", "t", "yoy", "z", "mad"]])
+            tops.append(f2[["fuente", "serie", "nivel", "cod_ine", "t", "yoy", "z", "mad"]])
     res = pd.DataFrame(filas)
     top = pd.concat(tops, ignore_index=True) if tops else pd.DataFrame()
     top["absz"] = top["z"].abs()
     # un municipio de una sola sección/distrito repite el mismo hecho en tres niveles: se deja el más agregado
     top["familia"] = top["serie"].str.replace(r"_(municipio|distrito|seccion)$", "", regex=True)
-    top["muni"] = top["territorio"].astype(str).str[:5]
+    top["muni"] = top["cod_ine"].astype(str).str[:5]
     top["rango_nivel"] = top["nivel"].map({"nacional": 0, "ccaa": 1, "provincia": 2, "municipio": 3,
                                            "distrito": 4, "seccion": 5}).fillna(9)
     top["zr"] = top["z"].round(0)
     top["yr"] = top["yoy"].round(1)
     top = top.sort_values("rango_nivel").drop_duplicates(["familia", "muni", "t", "yr", "zr"]).drop(
         columns=["familia", "muni", "rango_nivel", "zr", "yr"])
-    top = top.sort_values(["absz", "serie", "territorio", "t"], ascending=[False, True, True, True])
+    top = top.sort_values(["absz", "serie", "cod_ine", "t"], ascending=[False, True, True, True])
     top20 = top.head(20).drop(columns="absz").round({"yoy": 2, "z": 2, "mad": 3})
     por_fuente = top.groupby("fuente").head(5).drop(columns="absz").round({"yoy": 2, "z": 2, "mad": 3})
     # diagnóstico: los atípicos municipales de SERPAVI, ¿tienen pocos contratos?
@@ -365,8 +365,8 @@ def atipicos(R: dict) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
     d = P["SERPAVI_VC_municipio"].dropna(subset=["yoy"]).reset_index(drop=True)
     d["z"], _ = z_series(d, "temporal")
     nm = R["AUX"]["serpavi_n_mun"]
-    nm = nm[nm["desag"] == "tipologia=VC"][["territorio", "t", "valor"]].rename(columns={"valor": "n"})
-    d = d.merge(nm, on=["territorio", "t"], how="left")
+    nm = nm[nm["desag"] == "tipologia=VC"][["cod_ine", "t", "valor"]].rename(columns={"valor": "n"})
+    d = d.merge(nm, on=["cod_ine", "t"], how="left")
     ev = d[d["z"].notna()]
     fl = ev[ev["z"].abs() > UMBRAL_Z]
     diag["serpavi_vc_mun_mediana_n_contratos_atipicos"] = float(fl["n"].median()) if len(fl) else None
@@ -403,16 +403,16 @@ def unidades_dudosas(R: dict) -> dict:
     out["ipc_indice_provincial_anio_mas_cercano_a_100"] = int((ii - 100).abs().idxmin())
     it = base("ipc_alquiler_indice", "provincia", "T")
     it["anio"] = it["periodo"].astype(str).str[:4].astype(int)
-    ia = it.groupby(["territorio", "anio"])["valor"].agg(["mean", "size"]).reset_index()
+    ia = it.groupby(["cod_ine", "anio"])["valor"].agg(["mean", "size"]).reset_index()
     ia = ia[ia["size"] == 4].groupby("anio")["mean"].mean()
     out["ipc_indice_provincial_media_2025_trimestral"] = round(float(ia.loc[2025]), 2)
     out["ipc_indice_provincial_anio_con_media_mas_cercana_a_100_(trimestral)"] = int((ia - 100).abs().idxmin())
     nac = base("ipc_alquiler", "nacional", "T")
-    na = annual_from_quarterly(nac, ["territorio"]).set_index("t")["valor"]
+    na = annual_from_quarterly(nac, ["cod_ine"]).set_index("t")["valor"]
     out["ipc_nacional_indice_anio_con_media_mas_cercana_a_100"] = int((na - 100).abs().idxmin())
     out["ipc_nacional_media_2021"] = round(float(na.loc[2021]), 2)
     out["ipc_nacional_media_2025"] = round(float(na.loc[2025]), 2)
-    ipv_terr = set(base("ipva_indice", "provincia", desag="")["territorio"].unique())
+    ipv_terr = set(base("ipva_indice", "provincia", desag="")["cod_ine"].unique())
     out["ipva_provincias_ausentes_codigo_INE"] = sorted(f"{i:02d}" for i in range(1, 53) if f"{i:02d}" not in ipv_terr)
     ip = R["AUX"]["ipva_idx_prov_panel"]
     out["ipva_indice_provincial_media_2015"] = round(float(ip[ip["t"] == 2015]["valor"].mean()), 3)
@@ -443,11 +443,11 @@ def flag_div(ya: pd.Series, yb: pd.Series) -> pd.Series:
 
 def estadisticos_par(m: pd.DataFrame) -> dict:
     pa, pb = m["ya"], m["yb"]
-    out = {"n_obs": len(m), "n_territorios": m["territorio"].nunique(), "n_periodos": m["t"].nunique(),
+    out = {"n_obs": len(m), "n_territorios": m["cod_ine"].nunique(), "n_periodos": m["t"].nunique(),
            "t_min": int(m["t"].min()), "t_max": int(m["t"].max())}
     out["corr_conjunta"] = round(float(pa.corr(pb)), 3) if len(m) >= 3 and pa.std() > 0 and pb.std() > 0 else np.nan
     ct = []
-    for _, g in m.groupby("territorio"):
+    for _, g in m.groupby("cod_ine"):
         if len(g) >= 5 and g["ya"].std() > 0 and g["yb"].std() > 0:
             ct.append(g["ya"].corr(g["yb"]))
     out["corr_temporal_media"] = round(float(np.mean(ct)), 3) if ct else np.nan
@@ -473,9 +473,9 @@ def coherencia(R: dict) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         disp = [s for s in series if s in P and not P[s].empty]
         for i, sa in enumerate(disp):
             for sb in disp[i + 1:]:
-                a = P[sa][["territorio", "t", "yoy"]].rename(columns={"yoy": "ya"}).dropna()
-                b = P[sb][["territorio", "t", "yoy"]].rename(columns={"yoy": "yb"}).dropna()
-                m = a.merge(b, on=["territorio", "t"])
+                a = P[sa][["cod_ine", "t", "yoy"]].rename(columns={"yoy": "ya"}).dropna()
+                b = P[sb][["cod_ine", "t", "yoy"]].rename(columns={"yoy": "yb"}).dropna()
+                m = a.merge(b, on=["cod_ine", "t"])
                 if len(m) < 3:
                     continue
                 restringido = not (ABIERTA[F[sa]] and ABIERTA[F[sb]])
@@ -489,7 +489,7 @@ def coherencia(R: dict) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
                 if nivel == "nacional":
                     nacional.append(m)
                 else:
-                    g = m.groupby(["par", "nivel", "t"]).agg(n_terr=("territorio", "size"),
+                    g = m.groupby(["par", "nivel", "t"]).agg(n_terr=("cod_ine", "size"),
                                                             pct_divergente=("divergente", "mean"),
                                                             dif_media_pp=("ya", "size")).reset_index()
                     g["dif_media_pp"] = m.groupby(["par", "nivel", "t"]).apply(
@@ -528,7 +528,7 @@ def ventanas(nac: pd.DataFrame) -> list[dict]:
 # ----------------------------------------------------------------------------- 2b. brecha nuevos - stock
 def resumen_dif(m: pd.DataFrame) -> dict:
     d = m["ya"] - m["yb"]
-    return {"n_terr": int(m["territorio"].nunique()), "n_obs": len(m), "media_pp": round(float(d.mean()), 2),
+    return {"n_terr": int(m["cod_ine"].nunique()), "n_obs": len(m), "media_pp": round(float(d.mean()), 2),
             "mediana_pp": round(float(d.median()), 2), "p10_pp": round(float(d.quantile(0.1)), 2),
             "p90_pp": round(float(d.quantile(0.9)), 2), "pct_positivo": round(100 * float((d > 0).mean()), 1)}
 
@@ -552,9 +552,9 @@ def brecha(R: dict) -> tuple[pd.DataFrame, pd.DataFrame]:
     ]
     filas = []
     for medida, sa, sb in pares:
-        a = P[sa][["territorio", "t", "yoy"]].rename(columns={"yoy": "ya"}).dropna()
-        b = P[sb][["territorio", "t", "yoy"]].rename(columns={"yoy": "yb"}).dropna()
-        m = a.merge(b, on=["territorio", "t"])
+        a = P[sa][["cod_ine", "t", "yoy"]].rename(columns={"yoy": "ya"}).dropna()
+        b = P[sb][["cod_ine", "t", "yoy"]].rename(columns={"yoy": "yb"}).dropna()
+        m = a.merge(b, on=["cod_ine", "t"])
         if m.empty:
             continue
         restr = not (ABIERTA[F[sa]] and ABIERTA[F[sb]])
@@ -602,7 +602,7 @@ def consistencia_indice_tasa(R: dict) -> pd.DataFrame:
     filas = []
 
     def comp(nombre: str, rec: pd.DataFrame, pub: pd.DataFrame) -> None:
-        m = rec[["territorio", "t", "yoy"]].merge(pub[["territorio", "t", "yoy"]], on=["territorio", "t"],
+        m = rec[["cod_ine", "t", "yoy"]].merge(pub[["cod_ine", "t", "yoy"]], on=["cod_ine", "t"],
                                                   suffixes=("_recalc", "_pub"))
         d = (m["yoy_recalc"] - m["yoy_pub"]).abs()
         filas.append({"comparacion": nombre, "n": len(m), "dif_abs_media_pp": round(float(d.mean()), 4),
@@ -613,20 +613,20 @@ def consistencia_indice_tasa(R: dict) -> pd.DataFrame:
          A["ipc_yoy_prov_pub"])
     it = base("ipc_alquiler_indice", "provincia", "T")
     it["t"] = t_index(it["periodo"])
-    comp("IPC provincial trimestral (lag 4)", yoy(it, ["territorio"], lag=4), A["ipc_prov_T_pub"])
+    comp("IPC provincial trimestral (lag 4)", yoy(it, ["cod_ine"], lag=4), A["ipc_prov_T_pub"])
     for nivel in ("distrito", "municipio"):
         ix = base("ipva_tam_indice", nivel)
         ix["t"] = ix["periodo"].astype(int)
         pb = base("ipva_tam_var_anual", nivel)
         pb["t"] = pb["periodo"].astype(int)
         pb["yoy"] = pb["valor"]
-        comp(f"IPVA tam. {nivel}: índice vs tasa publicada", yoy(ix, ["territorio"]), pb)
+        comp(f"IPVA tam. {nivel}: índice vs tasa publicada", yoy(ix, ["cod_ine"]), pb)
     ix = base("ipva_indice", "provincia", desag="contrato=Total")
     ix["t"] = ix["periodo"].astype(int)
     pb = base("ipva_var_anual", "provincia", desag="contrato=Total")
     pb["t"] = pb["periodo"].astype(int)
     pb["yoy"] = pb["valor"]
-    comp("IPVA provincial (contrato=Total): índice vs tasa publicada", yoy(ix, ["territorio"]), pb)
+    comp("IPVA provincial (contrato=Total): índice vs tasa publicada", yoy(ix, ["cod_ine"]), pb)
     return pd.DataFrame(filas)
 
 
@@ -662,19 +662,19 @@ def serpavi_cobertura(R: dict) -> tuple[pd.DataFrame, dict]:
     filas = []
     diag = {}
     for tip in ("VC", "VU"):
-        d = ser[(tip, "municipio")][["territorio", "t", "valor"]]
-        n = nmun[nmun["desag"] == f"tipologia={tip}"][["territorio", "t", "valor"]].rename(columns={"valor": "n"})
-        d = d.merge(n, on=["territorio", "t"], how="left")
+        d = ser[(tip, "municipio")][["cod_ine", "t", "valor"]]
+        n = nmun[nmun["desag"] == f"tipologia={tip}"][["cod_ine", "t", "valor"]].rename(columns={"valor": "n"})
+        d = d.merge(n, on=["cod_ine", "t"], how="left")
         diag[f"serpavi_{tip}_pct_valores_con_n_contratos_cero_o_ausente"] = round(
             100 * float(((d["n"].fillna(0)) == 0).mean()), 2)
         diag[f"serpavi_{tip}_n_contratos_minimo_publicado_positivo"] = float(d.loc[d["n"] > 0, "n"].min())
-        prev = d.assign(t=d["t"] + 1)[["territorio", "t", "valor", "n"]].rename(columns={"valor": "v_prev",
+        prev = d.assign(t=d["t"] + 1)[["cod_ine", "t", "valor", "n"]].rename(columns={"valor": "v_prev",
                                                                                           "n": "n_prev"})
-        mm = d.merge(prev, on=["territorio", "t"], how="left")
+        mm = d.merge(prev, on=["cod_ine", "t"], how="left")
         for t, g in mm.groupby("t"):
             ent = g[g["v_prev"].isna()]
             con = g[g["v_prev"].notna()]
-            sal = d[d["t"] == t - 1]["territorio"].nunique() - len(con) if (t - 1) in set(d["t"]) else np.nan
+            sal = d[d["t"] == t - 1]["cod_ine"].nunique() - len(con) if (t - 1) in set(d["t"]) else np.nan
             yoy_con = 100 * (con["valor"] / con["v_prev"] - 1)
             filas.append({"tipologia": tip, "t": int(t), "n_municipios": len(g), "entrantes": len(ent),
                           "salientes": sal if t > d["t"].min() else np.nan,
@@ -703,7 +703,7 @@ def gva_cobertura(R: dict) -> tuple[pd.DataFrame, dict]:
     prev = set()
     for a, x in g.groupby("anio"):
         xo = ok[ok["anio"] == a]
-        c = xo.groupby("territorio").size()
+        c = xo.groupby("cod_ine").size()
         muns = set(c.index)
         filas.append({"t": int(a), "filas": len(x), "importe_nulo_o_no_positivo": int(len(x) - len(xo)),
                       "n_municipios": len(muns), "n_municipios_ge10": int((c >= 10).sum()),
@@ -717,8 +717,8 @@ def gva_cobertura(R: dict) -> tuple[pd.DataFrame, dict]:
     tab = pd.DataFrame(filas)
     diag = {"gva_2026_filas_sobre_2025": round(float(tab.loc[tab.t == 2026, "filas"].iloc[0]
                                                       / tab.loc[tab.t == 2025, "filas"].iloc[0]), 3)}
-    cs = ok[ok["anio"].between(2020, 2025)].groupby("territorio")["anio"].nunique()
-    n10 = ok[ok["anio"].between(2020, 2025)].groupby(["territorio", "anio"]).size().unstack()
+    cs = ok[ok["anio"].between(2020, 2025)].groupby("cod_ine")["anio"].nunique()
+    n10 = ok[ok["anio"].between(2020, 2025)].groupby(["cod_ine", "anio"]).size().unstack()
     diag["gva_municipios_panel_equilibrado_2020_2025_n_ge10"] = int((n10.fillna(0) >= 10).all(axis=1).sum())
     diag["gva_municipios_panel_equilibrado_2020_2025_n_ge30"] = int((n10.fillna(0) >= 30).all(axis=1).sum())
     diag["gva_municipios_con_dato_todos_los_anios_2020_2025"] = int((cs == 6).sum())
@@ -726,7 +726,7 @@ def gva_cobertura(R: dict) -> tuple[pd.DataFrame, dict]:
     mb = CON.execute("select count(distinct territorio_codigo) from h where variable='fianzas_n' and "
                      "nivel='municipio'").fetchone()[0]
     diag["gva_municipios_en_base_hechos"] = int(mb)
-    diag["gva_municipios_en_crudo_v9"] = int(g["territorio"].nunique())
+    diag["gva_municipios_en_crudo_v9"] = int(g["cod_ine"].nunique())
     return tab, diag
 
 
@@ -749,7 +749,7 @@ def incasol_cobertura(R: dict) -> tuple[pd.DataFrame, dict]:
     tab = tab.merge(esq[["t", "n_tramos", "esquema_tramos"]], on="t", how="left")
     diag = {}
     sub = inc[inc["t"].between(2019, 2025)]
-    n10 = sub.pivot_table(index="territorio", columns="t", values="contratos")
+    n10 = sub.pivot_table(index="cod_ine", columns="t", values="contratos")
     diag["incasol_municipios_panel_equilibrado_2019_2025_n_ge10"] = int((n10.fillna(0) >= 10).all(axis=1).sum())
     diag["incasol_municipios_panel_equilibrado_2019_2025_n_ge30"] = int((n10.fillna(0) >= 30).all(axis=1).sum())
     ant = esq[esq["esquema_tramos"].str.startswith("antiguo")]["t"]
@@ -784,54 +784,54 @@ def revisiones(R: dict) -> pd.DataFrame:
     # IPVA: panel del proyecto vs IPVA 2024 publicado (índice provincial, 2021-2024)
     pn = base("ipva_indice", "provincia", desag="", edicion_like="panel%")
     pb = base("ipva_indice", "provincia", desag="contrato=Total", edicion_like="IPVA 2024%")
-    x, y = cruza(pn, pb, ["territorio", "periodo"])
+    x, y = cruza(pn, pb, ["cod_ine", "periodo"])
     f.append(fila_rev("IPVA índice provincial: panel v1-v8 vs IPVA 2024 (descarga 2026-10-14)", "IPVA",
                       "panel procesado (descargas hasta 2026-10-10)", "IPVA 2024 publicado 2026-05", x, y,
                       "puntos de índice (2015=100)"))
     # IPVA distrito: csv 59061 (14-oct) vs API tempus 59061 (15-oct)
     a = base("ipva_indice", "distrito")
     b = base("ipva_tam_indice", "distrito")
-    x, y = cruza(a, b, ["territorio", "periodo"])
+    x, y = cruza(a, b, ["cod_ine", "periodo"])
     f.append(fila_rev("IPVA índice distrital: csv 59061 vs API tempus 59061", "IPVA", "csv INE (2026-10-14)",
                       "API tempus (2026-10-15)", x, y, "puntos de índice (2015=100)"))
     a = base("ipva_var_anual", "distrito")
     b = base("ipva_tam_var_anual", "distrito")
-    x, y = cruza(a, b, ["territorio", "periodo"])
+    x, y = cruza(a, b, ["cod_ine", "periodo"])
     f.append(fila_rev("IPVA tasa distrital: csv 59061 vs API tempus 59061", "IPVA", "csv INE (2026-10-14)",
                       "API tempus (2026-10-15)", x, y, "pp"))
     a = base("ipva", "municipio")
     b = base("ipva_tam_indice", "municipio")
-    x, y = cruza(a, b, ["territorio", "periodo"])
+    x, y = cruza(a, b, ["cod_ine", "periodo"])
     f.append(fila_rev("IPVA índice municipal: serie 59060 (v1-v8) vs API tempus 59060", "IPVA",
                       "ine_ipva_municipal.csv (2026-10-09)", "API tempus (2026-10-15)", x, y,
                       "puntos de índice", "solo 1 municipio solapa (46250)"))
     # SERPAVI: tablas procesadas del proyecto frente a la serie municipal/provincial/distrital
     a = base("serpavi_vc_alq_m2_mediana", "provincia")
     b = base("serpavi_alquiler_m2_mediana", "provincia", desag="tipologia=VC")
-    x, y = cruza(a, b, ["territorio", "periodo"])
+    x, y = cruza(a, b, ["cod_ine", "periodo"])
     f.append(fila_rev("SERPAVI provincial: pdf/serpavi_provincias.csv vs serie municipal-provincial base", "SERPAVI",
                       "serpavi_provincias.csv", "xlsx provincial/municipal", x, y, "€/m²/mes", "3 provincias CV"))
     a = base("serpavi_vc_mediana", "municipio")
     b = base("serpavi_alquiler_m2_mediana", "municipio", desag="tipologia=VC")
-    x, y = cruza(a, b, ["territorio", "periodo"])
+    x, y = cruza(a, b, ["cod_ine", "periodo"])
     f.append(fila_rev("SERPAVI municipal 46250: tabla del proyecto vs serie base", "SERPAVI", "tabla XLSX",
                       "serie base", x, y, "€/m²/mes", "1 municipio"))
     a = base("serpavi_dist_vc_mediana", "distrito")
     b = base("serpavi_alquiler_m2_mediana", "distrito", desag="tipologia=VC")
-    x, y = cruza(a, b, ["territorio", "periodo"])
+    x, y = cruza(a, b, ["cod_ine", "periodo"])
     f.append(fila_rev("SERPAVI distritos de València: tabla del proyecto vs serie base", "SERPAVI", "tabla distritos",
                       "serie base", x, y, "€/m²/mes", "19 distritos"))
     # SERPAVI crudo (pdf/serpavi_v2_municipios.csv) frente a la base municipal
-    raw = pd.read_csv(RAIZ / "data" / "raw" / "pdf" / "serpavi_v2_municipios.csv", dtype={"codigo": str})
+    raw = pd.read_csv(RAIZ / "data" / "raw" / "pdf" / "serpavi_v2_municipios.csv.gz", dtype={"codigo": str})
     raw = raw[(raw["variable"] == "alquiler_m2") & (raw["estadistico"] == "mediana")].copy()
-    raw["territorio"] = raw["codigo"].str.zfill(5)
+    raw["cod_ine"] = raw["codigo"].str.zfill(5)
     raw["periodo"] = raw["periodo"].astype(str)
     for tip in ("VC", "VU"):
         a = raw[raw["tipologia"] == tip]
         b = base("serpavi_alquiler_m2_mediana", "municipio", desag=f"tipologia={tip}")
         b["periodo"] = b["periodo"].astype(str)
-        x, y = cruza(a, b, ["territorio", "periodo"])
-        f.append(fila_rev(f"SERPAVI municipal {tip}: crudo serpavi_v2_municipios.csv vs base", "SERPAVI",
+        x, y = cruza(a, b, ["cod_ine", "periodo"])
+        f.append(fila_rev(f"SERPAVI municipal {tip}: crudo serpavi_v2_municipios.csv.gz vs base", "SERPAVI",
                           "crudo data/raw/pdf (2026-10-10)", "base", x, y, "€/m²/mes"))
     # IPC: tabla 76137 (ine_ipc_alquiler.csv) vs tabla 76142 (ECOICOP v2) para los mismos códigos de serie
     r1 = pd.read_csv(RAIZ / "data" / "raw" / "ine_ipc_alquiler.csv")
@@ -858,29 +858,29 @@ def revisiones(R: dict) -> pd.DataFrame:
     # base frente al crudo (GVA): mediana de fianza por provincia y año
     g = R["AUX"]["gva_raw"]
     ok = g[g["importe"] > 0]
-    pr = ok.assign(territorio=ok["cod_provincia"].str.zfill(2), periodo=ok["anio"].astype(str)).groupby(
-        ["territorio", "periodo"])["importe"].median().rename("valor").reset_index()
+    pr = ok.assign(cod_ine=ok["cod_provincia"].str.zfill(2), periodo=ok["anio"].astype(str)).groupby(
+        ["cod_ine", "periodo"])["importe"].median().rename("valor").reset_index()
     bb = base("fianzas_importe_mediana", "provincia")
     bb["periodo"] = bb["periodo"].astype(str)
-    x, y = cruza(pr, bb, ["territorio", "periodo"])
+    x, y = cruza(pr, bb, ["cod_ine", "periodo"])
     f.append(fila_rev("GVA mediana provincial: recalculada del crudo vs base hechos", "GVA", "crudo v9", "base", x, y,
                       "euros", "derivación reproducible si es 0"))
     # Incasòl: v3 (2026-10-10) vs v9 (2026-10-14), contratos anuales totales por municipio
     v3 = pd.read_csv(RAIZ / "data" / "raw" / "v3" / "incasol_fianzas_municipio_v3.csv.gz")
     v3 = v3[v3["serie"].str.contains("n_contratos_TOTAL_bandas") & v3["periodo"].str.endswith("gener-desembre")].copy()
-    v3["territorio"] = v3["codigo"].astype(int).astype(str).str.zfill(5)
+    v3["cod_ine"] = v3["codigo"].astype(int).astype(str).str.zfill(5)
     v3["periodo"] = v3["periodo"].str[:4]
     v9 = pd.read_csv(RAIZ / "data" / "raw" / "v9" / "incasol" / "incasol_qww9-bvhh_actual.csv.gz")
     v9 = v9[v9["periode"] == "gener-desembre"].copy()
-    v9["territorio"] = v9["codi_territorial"].astype(int).astype(str).str.zfill(5)
+    v9["cod_ine"] = v9["codi_territorial"].astype(int).astype(str).str.zfill(5)
     v9["periodo"] = v9["any"].astype(str)
-    s9 = v9.groupby(["territorio", "periodo"])["habitatges"].sum().rename("valor").reset_index()
-    s3 = v3.groupby(["territorio", "periodo"])["valor"].sum().reset_index()
-    x, y = cruza(s3, s9, ["territorio", "periodo"])
+    s9 = v9.groupby(["cod_ine", "periodo"])["habitatges"].sum().rename("valor").reset_index()
+    s3 = v3.groupby(["cod_ine", "periodo"])["valor"].sum().reset_index()
+    x, y = cruza(s3, s9, ["cod_ine", "periodo"])
     r = fila_rev("Incasòl contratos anuales por municipio: v3 vs v9", "INCASOL", "v3 (2026-10-10)",
                  "v9 (2026-10-14)", x, y, "contratos", restringido=True)
-    r["nota"] = (f"claves solo en v3: {len(set(map(tuple, s3[['territorio', 'periodo']].values)) - set(map(tuple, s9[['territorio', 'periodo']].values)))}; "
-                 f"solo en v9: {len(set(map(tuple, s9[['territorio', 'periodo']].values)) - set(map(tuple, s3[['territorio', 'periodo']].values)))}")
+    r["nota"] = (f"claves solo en v3: {len(set(map(tuple, s3[['cod_ine', 'periodo']].values)) - set(map(tuple, s9[['cod_ine', 'periodo']].values)))}; "
+                 f"solo en v9: {len(set(map(tuple, s9[['cod_ine', 'periodo']].values)) - set(map(tuple, s3[['cod_ine', 'periodo']].values)))}")
     f.append(r)
     return pd.DataFrame(f)
 
@@ -948,10 +948,10 @@ def potencia_p5_p6(R: dict) -> dict:
     """Municipios con >=10 contratos nuevos antes y después de 2024 (condiciona P5/P6); solo recuentos."""
     out = {}
     g = R["AUX"]["gva_mun_nivel"]
-    pv = g.pivot_table(index="territorio", columns="t", values="n")
+    pv = g.pivot_table(index="cod_ine", columns="t", values="n")
     out["gva_municipios_n_ge10_en_2023_y_2025"] = int(((pv[2023] >= 10) & (pv[2025] >= 10)).sum())
     out["gva_municipios_n_ge10_en_2021_2022_2023_2024_2025"] = int((pv[[2021, 2022, 2023, 2024, 2025]] >= 10).all(axis=1).sum())
-    inc = R["AUX"]["incasol"].pivot_table(index="territorio", columns="t", values="contratos")
+    inc = R["AUX"]["incasol"].pivot_table(index="cod_ine", columns="t", values="contratos")
     out["incasol_municipios_n_ge10_en_2023_y_2025"] = int(((inc[2023] >= 10) & (inc[2025] >= 10)).sum())
     out["incasol_municipios_n_ge30_en_2023_y_2025"] = int(((inc[2023] >= 30) & (inc[2025] >= 30)).sum())
     # provincias de Cataluña y CV: clústeres provinciales disponibles
@@ -1041,7 +1041,7 @@ def main() -> dict:
     ficheros.append(escribir(por_fuente, "atipicos_recuento_por_fuente.csv"))
     ficheros.append(escribir(top, "atipicos_top20_y_top5_por_fuente.csv"))
     dud = unidades_dudosas(R)
-    sp = P["SERPAVI_VC_provincia"]["territorio"].unique()
+    sp = P["SERPAVI_VC_provincia"]["cod_ine"].unique()
     dud["serpavi_provincias_sin_tasa_VC"] = sorted(f"{i:02d}" for i in range(1, 53) if f"{i:02d}" not in set(sp))
     # 2. coherencia
     pares, nac, sub = coherencia(R)
@@ -1099,7 +1099,7 @@ def main() -> dict:
         "capa": "C4",
         "datos": {
             "base": "data/base/hechos.parquet (consultas agregadas con duckdb)",
-            "crudos": ["data/raw/v9/gva_fianzas", "data/raw/v5/gva_fianzas_*.csv", "data/raw/pdf/serpavi_v2_municipios.csv",
+            "crudos": ["data/raw/v9/gva_fianzas", "data/raw/v5/gva_fianzas_*.csv", "data/raw/pdf/serpavi_v2_municipios.csv.gz",
                        "data/raw/ine_ipc_alquiler.csv", "data/raw/ine_v2_ipc_alquiler_prov.csv",
                        "data/raw/v3/incasol_fianzas_municipio_v3.csv.gz",
                        "data/raw/v9/incasol/incasol_qww9-bvhh_actual.csv.gz", "data/raw/v9/insideairbnb"],

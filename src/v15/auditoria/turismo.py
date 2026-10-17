@@ -550,7 +550,7 @@ def tarea3_vintages(D: pd.DataFrame) -> dict:
         "solo_ultimo": len(su - sh), "municipios_con_diferencia": int((jj.historico != jj.ultimo).sum()), "municipios_total": int(len(jj)),
         "dif_abs_municipal_max": int((jj.historico - jj.ultimo).abs().max()),
         "nota": "misma fecha de referencia, dos recursos del mismo conjunto CKAN descargados el mismo día (2026-10-14): no es una revisión temporal"}
-    g = pd.read_csv(RAW / "gva_vut_municipio.csv", dtype={"codigo": str})
+    g = pd.read_csv(RAW / "gva_vut_municipio.csv.gz", dtype={"codigo": str})
     g = g[g.serie.str.startswith("vut_stock_mun_")].copy()
     g["mm"] = g.periodo.str[:4].astype(int) * 12 + g.periodo.str[5:7].astype(int)
     g["cod"] = g.serie.str[-5:]

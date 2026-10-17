@@ -1,4 +1,4 @@
-fuente,serie,nivel,territorio,t,yoy,z,mad,lista
+fuente,serie,nivel,cod_ine,t,yoy,z,mad,lista
 SERPAVI,SERPAVI_VC_municipio,municipio,10019,2024,41.44,50309.25,0.001,top20_global
 SERPAVI,SERPAVI_VC_municipio,municipio,10019,2022,6.67,8093.64,0.001,top20_global
 SERPAVI,SERPAVI_VC_municipio,municipio,10019,2023,6.05,7349.35,0.001,top20_global

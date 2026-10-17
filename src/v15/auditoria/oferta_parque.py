@@ -433,10 +433,12 @@ def coherencia_fuentes(con, prov, ini_m, term_m, ini_a, term_a) -> pd.DataFrame:
         f"permisos es un índice (2021=100, Eurostat sts_cobp_q según src/build_dataset.py) con unidad declarada «viviendas (visados)» y fuente declarada MIVAU; "
         f"ratio mediano a visados {rat.median():.4f}; correlación de variaciones interanuales log {r4:.2f} (n={len(d4)})",
         len(j), len(j), float((j.permisos - j.visados).abs().max()), float((rat - 1).abs().max()))
-    x = pd.read_csv(RAIZ / "data/raw/catastro_urbana_municipios.csv", dtype=str)
-    y = pd.read_csv(RAIZ / "data/raw/catastro_urbana_municipios.csv.gz", dtype=str)
+    gz = RAIZ / "data/raw/catastro_urbana_municipios.csv.gz"   # versionado
+    sin_gz = gz.with_suffix("")   # copia local sin comprimir (no versionada): solo se compara si existe
+    y = pd.read_csv(gz, dtype=str)
+    x = pd.read_csv(sin_gz, dtype=str) if sin_gz.exists() else y.iloc[0:0]
     comunes = [c for c in x.columns if c in y.columns]
-    if len(x) == len(y):
+    if sin_gz.exists() and len(x) == len(y):
         xs = x[comunes].fillna("").sort_values(["serie", "periodo"]).reset_index(drop=True)
         ys = y[comunes].fillna("").sort_values(["serie", "periodo"]).reset_index(drop=True)
         nd = int(xs.ne(ys).any(axis=1).sum())

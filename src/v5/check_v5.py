@@ -109,7 +109,11 @@ def recuentos() -> list[str]:
 EXENTOS = {("src/v3/c1_geo.py", "Cartografia_secc.zip"): "caché versionada output/v3/C1/centroides.csv",
            # V10: INE abierto pero >50 MB; sha256 en data/CHECKSUMS.sha256; descarga con src/v10/fetch_geo.py; sus
            # derivados (data/base/geo/) están versionados
-           ("src/v10/geo.py", "seccionado_2025.zip"): "geometrías versionadas data/base/geo/"}
+           ("src/v10/geo.py", "seccionado_2025.zip"): "geometrías versionadas data/base/geo/",
+           # V15: auditoría de microdatos INE (ECEPOV 2021 y diseño de registro de la EPA), fuera del índice por tamaño y
+           # licencia, como los microdatos de src/v12/b6_condiciones.py; la auditoría solo publica recuentos agregados (n ≥ 10)
+           ("src/v15/auditoria/renta_microdatos.py", "datos_2021.zip"): "microdatos INE; salida agregada en output/v15/auditoria/renta_microdatos",
+           ("src/v15/auditoria/renta_microdatos.py", "dr_EPA_2021.xlsx"): "solo comprueba si existe el diseño de registro"}
 
 
 def retirados_con_descarga() -> set[str]:

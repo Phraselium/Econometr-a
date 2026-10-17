@@ -116,7 +116,8 @@ def sellado() -> list[str]:
 
 
 LECTURA_BASE = re.compile(r"hechos\.parquet|vivienda\.duckdb")
-EXENTOS_V6 = {"src/holdout.py", "src/v10/base.py", "src/v15/marca_v6.py", "src/v15/check_v15.py"}
+EXENTOS_V6 = {"src/holdout.py", "src/v10/base.py", "src/v15/check_v15.py",   # holdout, constructor de la base y este control;
+              "src/v15/marca_v6.py", "src/v15/correcciones_metadatos_1_0.py"}   # mantenimiento de la base (sin análisis)
 
 
 def lecturas_v6() -> list[str]:

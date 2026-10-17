@@ -61,6 +61,6 @@ El entrenamiento de V15 (data/processed/v15) ya excluía esas filas: sellar_v15 
    - Filas marcadas: 3.642.696 (antes, 65.994).
    - El diccionario (docs/v10/diccionario_base.md) se actualiza.
 2. **Control en `make check`** (src/v15/check_v15.py, «lecturas v6»):
-   - Todo script de src/ que lea la base debe filtrar `muestra_sellada_v6`, salvo src/holdout.py, el constructor (src/v10/base.py y src/v15/marca_v6.py) y la lista cerrada de módulos heredados de esta tabla.
+   - Todo script de src/ que lea la base debe filtrar `muestra_sellada_v6`, salvo src/holdout.py, el constructor de la base (src/v10/base.py), los scripts que la mantienen sin análisis (src/v15/marca_v6.py y src/v15/correcciones_metadatos_1_0.py) y la lista cerrada de módulos heredados de esta tabla.
    - Los heredados están en docs/v15/contaminacion_v6_heredados.csv con su sha256. Si se modifican, el control los trata como nuevos y exige el filtro.
 3. **Lo que el control no cubre.** No cubre las lecturas de crudos (data/raw), que no llevan marca. En V15, los módulos de estimación solo pueden leer data/processed/v15, y check_v15 («sellado») ya lo exige.

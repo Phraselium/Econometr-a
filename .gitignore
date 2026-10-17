@@ -161,3 +161,5 @@ data/raw/v16/renta_parque/epf/
 # V16: salidas de prueba rápida de los módulos
 output/v16/*/smoke/
 output/v16/*/_smoke/
+# V16: ADRH completo normalizado (37 MB; se regenera con src/v16/datos/renta_parque.py)
+data/processed/v16/renta_parque_adrh_completo.parquet

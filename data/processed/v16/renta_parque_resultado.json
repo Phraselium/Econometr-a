@@ -1,0 +1,8 @@
+{
+ "rama": "v16-f1-datos-renta_parque",
+ "pregunta": "Normalizar al formato largo de la base el ADRH (renta, desigualdad, demografía, municipio/distrito/sección 2015-2023) y el Catastro urbano municipal 2026",
+ "capa": "C4",
+ "N": 2433670,
+ "metodo": "normalización",
+ "notas": "Filas versionadas 2433670; ADRH completo (no versionado) 21160414 filas; ECV y EPF no normalizadas (microdatos, fase 2). posterior_prereg=False (corte V16 sin fijar). Detalle en data/processed/v16/renta_parque_estadisticas.json y docs/v16/fuentes/renta_parque.md."
+}

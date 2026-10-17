@@ -1,0 +1,8 @@
+{
+  "rama": "v16-f1-tension_social",
+  "pregunta": "¿Qué datos públicos de tensión social (lanzamientos y ejecuciones hipotecarias por territorio, paro y afiliación municipal, migraciones y padrón por nacionalidad) están disponibles, con qué licencia y cobertura, y qué falta respecto a lo ya existente en el repositorio?",
+  "capa": "C4",
+  "N": 6,
+  "metodo": "adquisición de datos",
+  "notas": "Fuentes nuevas: CGPJ efecto crisis (5 xlsx, dudoso, _terceros); Nomenclátor partidos judiciales Min. Justicia (PDF + CSV derivado, dudoso, _terceros); INE EMCR municipal 2021-2024 (7 tablas, sí); INE cifras oficiales padrón municipio 1996-2025 (sí); INE padrón sección censal 2022 nacionalidad continentes (52 px, sí). SEPE paro y SS afiliación ya cubren hasta 2026-08/09: no se descargó nada. Fallida: INE EVR microdatos 2022-2025 (404). El INE no publica padrón municipal por nacionalidad tras 2022. Cruce nombre de partido CGPJ -> número del nomenclátor pendiente. Total 22 MB, sin _grandes."
+}

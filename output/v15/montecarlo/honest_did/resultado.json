@@ -1,0 +1,78 @@
+{
+  "rama": "v15/montecarlo",
+  "pregunta": "H1 (Honest DiD, Rambachan-Roth M̄)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; solo estructura (códigos, calendario, dimensiones, geometría) de data/processed/v15; ningún valor de resultado real",
+  "N": {
+    "tratados": 124,
+    "donantes": 74,
+    "pre": 6,
+    "post": 9
+  },
+  "metodo": "Honest DiD, implementación propia de V9 (ARP condicional por piezas)",
+  "estimacion": {
+    "tamano_A": 0.144,
+    "cobertura_A": 0.8745,
+    "tamano_A_Sigma_verdadera": 0.052,
+    "tamano_B": 0.0,
+    "cobertura_B": 1.0,
+    "potencia_B_tau005": 0.0,
+    "potencia_B_mde": 0.0,
+    "sesgo_B": 0.020189979016921576,
+    "rmse_B": 0.02340487904785188
+  },
+  "ic95": [
+    0.0,
+    0.0
+  ],
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "NO APTO → criterio M̄ solo descriptivo (no sostiene C3)",
+    "por_escenario": {
+      "A_PT_exacta_M0": {
+        "veredicto": "NO APTO",
+        "apto": false,
+        "fallos": [
+          "tamaño 0.1440 fuera de [0.04; 0.06]",
+          "cobertura 0.8745 fuera de [0.92; 0.97]"
+        ],
+        "con_Sigma_verdadera": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        }
+      },
+      "B_frontera_lineal_M1": {
+        "veredicto": "NO APTO",
+        "apto": false,
+        "fallos": [
+          "tamaño 0,0 (conservador extremo)",
+          "cobertura 1.0000 fuera de [0.92; 0.97]"
+        ],
+        "con_Sigma_verdadera": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0,0 (conservador extremo)",
+            "cobertura 1.0000 fuera de [0.92; 0.97]"
+          ]
+        }
+      }
+    },
+    "consistencia_honest_rr_vs_piezas": 1.0,
+    "R": 2000,
+    "semilla": 20261010,
+    "segunda_implementacion_independiente": "no disponible en este entorno (sin red para instalar HonestDiD); la adenda (punto 13) la exige para sostener C3"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "El pre-registro no nombra inferencia alternativa para Honest DiD.",
+    "Cobertura = 1 − rechazo del verdadero θ (dualidad de la inversión del contraste).",
+    "La columna Sigma_verdadera aísla el contraste ARP del error de estimación de la covarianza (clusterizada por municipio, que ignora la correlación espacial)."
+  ]
+}

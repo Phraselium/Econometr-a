@@ -114,3 +114,19 @@ adquisidor-datos, ingeniero-datos, replicador-ciego y redactor (sonnet), abogado
 - **Todo lo demás es NO APTO y queda solo descriptivo**, con estimación puntual sin p-valor ni IC: CS-Webb, dCDH, rejilla TWFE, shift-share AKM, DiD de intensidad, LP Newey-West b, BLP/GATES, CIPS, CS-ARDL, DM-HLN y bayesiano jerárquico.
 - **Sin cambio de especificaciones.** No se cambia ninguna especificación para «hacerla apta». El cambio de BH a BY es la alternativa nombrada en la adenda (punto 11), no una elección por resultados.
 
+## K13. Herramientas de V15 validadas en la fase 5 (2026-10-17)
+- **Tabla.** docs/v15/validacion_montecarlo.md y output/v15/montecarlo/veredictos.csv, generadas con `python3 src/v16/f5_validacion.py v15`. Se publica como metodologia/validacion_montecarlo_v15.md. El criterio es el de V16.
+- **Utilizables:**
+  - SAR/SDM/SEM, con Wald de ρ y efectos indirectos;
+  - DM-HLN en E1-E4.
+- **Clark-West y MCS al 10 %:** NO APTOS; el MCS queda descriptivo.
+- **NO APTOS, solo descriptivos:**
+  - SDID de H1/H2. El placebo literal no es computable con 74 o 14 donantes frente a 124 tratados, y Webb da un tamaño de 0,09-0,23.
+  - Honest DiD: con M̄ = 1 el IC nunca excluye 0, así que el criterio «M̄ ≥ 1» de H1 no se alcanza en el entrenamiento.
+  - Control sintético.
+  - AKM y AKM0 de H4.
+  - Westerlund y CS-ARDL de E1.
+  - Wild bootstrap de Webb.
+- **Sin elección por resultados.** La variante «placebo sin escalar» sale APTA solo en S1, pero no es la inferencia pre-registrada ni la alternativa nombrada: no se usa.
+- **Efecto en las capas.** Ninguno de estos veredictos cambia la capa máxima de V15 (C4 en entrenamiento; C3 solo tras la evaluación sellada). La evaluación sellada de H1/H2 heredará estas limitaciones de inferencia; se dirá al evaluarla.
+

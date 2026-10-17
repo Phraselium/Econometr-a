@@ -1,0 +1,148 @@
+{
+  "rama": "v15/montecarlo",
+  "pregunta": "H1/H2 y H4 (wild cluster bootstrap de Webb)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; solo estructura (códigos, calendario, dimensiones, geometría) de data/processed/v15; ningún valor de resultado real",
+  "N": {
+    "G_H1H2": 198,
+    "G_H4": 38,
+    "G_RIPVA": 36
+  },
+  "metodo": "wild cluster bootstrap-t de Webb, nulo impuesto; IC percentil-t no impuesto",
+  "estimacion": {
+    "tamano_W1": 0.2155,
+    "cobertura_W1": 0.774,
+    "potencia_W1": 0.986,
+    "por_escenario": {
+      "W1_H1H2_198municipios": {
+        "tamano_5pct": 0.2155,
+        "cobertura_95": 0.774,
+        "potencia_ref": 0.986,
+        "potencia_mde": 0.71,
+        "sesgo": -0.0004188580797633172,
+        "rmse": 0.01410218907210132
+      },
+      "W2_H4_38provincias": {
+        "tamano_5pct": 0.424,
+        "cobertura_95": 0.635,
+        "potencia_ref": 0.5165,
+        "potencia_mde": 0.498,
+        "sesgo": 5.536460511521401e-05,
+        "rmse": 0.006239396776530689
+      },
+      "W3_RIPVA_36provincias_pocos_tratados": {
+        "tamano_5pct": 0.123,
+        "cobertura_95": 0.776,
+        "potencia_ref": 0.36,
+        "potencia_mde": 0.735,
+        "sesgo": 0.0005081601528569383,
+        "rmse": 0.021386827306258675
+      }
+    }
+  },
+  "ic95": [
+    0.1975,
+    0.2335
+  ],
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto_por_escenario": {
+      "W1_H1H2_198municipios": "NO APTO → inferencia solo descriptiva",
+      "W2_H4_38provincias": "NO APTO → inferencia solo descriptiva",
+      "W3_RIPVA_36provincias_pocos_tratados": "NO APTO → inferencia solo descriptiva"
+    },
+    "por_inferencia": {
+      "W1_H1H2_198municipios": {
+        "Webb WCR/WCU B=9999": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.2155 fuera de [0.04; 0.06]",
+            "cobertura 0.7740 fuera de [0.92; 0.97]"
+          ]
+        },
+        "Webb B=999": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.2135 fuera de [0.04; 0.06]",
+            "cobertura 0.7735 fuera de [0.92; 0.97]"
+          ]
+        },
+        "CR1 t(G-1)": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.2165 fuera de [0.04; 0.06]",
+            "cobertura 0.7735 fuera de [0.92; 0.97]"
+          ]
+        }
+      },
+      "W2_H4_38provincias": {
+        "Webb WCR/WCU B=9999": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.4240 fuera de [0.04; 0.06]",
+            "cobertura 0.6350 fuera de [0.92; 0.97]"
+          ]
+        },
+        "Webb B=999": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.4225 fuera de [0.04; 0.06]",
+            "cobertura 0.6330 fuera de [0.92; 0.97]"
+          ]
+        },
+        "CR1 t(G-1)": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.5495 fuera de [0.04; 0.06]",
+            "cobertura 0.4570 fuera de [0.92; 0.97]"
+          ]
+        }
+      },
+      "W3_RIPVA_36provincias_pocos_tratados": {
+        "Webb WCR/WCU B=9999": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.1230 fuera de [0.04; 0.06]",
+            "cobertura 0.7760 fuera de [0.92; 0.97]"
+          ]
+        },
+        "Webb B=999": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.1230 fuera de [0.04; 0.06]",
+            "cobertura 0.7780 fuera de [0.92; 0.97]"
+          ]
+        },
+        "CR1 t(G-1)": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.3150 fuera de [0.04; 0.06]",
+            "cobertura 0.7120 fuera de [0.92; 0.97]"
+          ]
+        }
+      }
+    },
+    "B": 9999,
+    "R": 2000,
+    "semilla": 20261010,
+    "nota_B": "V15 usa 9.999 réplicas; el cierre algebraico por cluster permite usar el mismo B en el Monte Carlo"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "La verdad de cobertura en W1 y W3 es el ATT muestral (tau_i heterogéneo); en W2, β_rf."
+  ]
+}

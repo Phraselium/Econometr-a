@@ -1,0 +1,286 @@
+{
+  "rama": "v15/montecarlo",
+  "pregunta": "H1/H2 (SDID, preregistro_v15 sección 6)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; solo estructura (códigos, calendario, dimensiones, geometría) de data/processed/v15; ningún valor de resultado real",
+  "N": {
+    "tratados": 124,
+    "donantes": [
+      74,
+      14,
+      382
+    ],
+    "T_pre": 7,
+    "T_post": 9
+  },
+  "metodo": "SDID con error típico por placebo; alternativa Webb",
+  "estimacion": {
+    "S1_H1_74donantes": {
+      "placebo_literal": {
+        "tamano": NaN,
+        "cobertura": NaN,
+        "potencia_ref": NaN,
+        "potencia_mde": NaN,
+        "sesgo": NaN,
+        "rmse": NaN
+      },
+      "placebo_m_sin_escalar": {
+        "tamano": 0.0485,
+        "cobertura": 0.943,
+        "potencia_ref": 0.9555,
+        "potencia_mde": 0.3875,
+        "sesgo": -0.00048807468498601676,
+        "rmse": 0.013774024340421711
+      },
+      "placebo_m_escalado": {
+        "tamano": 0.271,
+        "cobertura": 0.7325,
+        "potencia_ref": 0.991,
+        "potencia_mde": 0.7125,
+        "sesgo": -0.00048807468498601676,
+        "rmse": 0.013774024340421711
+      },
+      "webb_cluster": {
+        "tamano": 0.208,
+        "cobertura": 0.801,
+        "potencia_ref": 0.9875,
+        "potencia_mde": 0.6675,
+        "sesgo": -0.00048807468498601676,
+        "rmse": 0.013774024340421711
+      }
+    },
+    "S2_H1_14donantes_10km": {
+      "placebo_literal": {
+        "tamano": NaN,
+        "cobertura": NaN,
+        "potencia_ref": NaN,
+        "potencia_mde": NaN,
+        "sesgo": NaN,
+        "rmse": NaN
+      },
+      "placebo_m_sin_escalar": {
+        "tamano": 0.0155,
+        "cobertura": 0.9825,
+        "potencia_ref": 0.361,
+        "potencia_mde": 0.08,
+        "sesgo": 0.00043369833307123297,
+        "rmse": 0.02170053953677059
+      },
+      "placebo_m_escalado": {
+        "tamano": 0.505,
+        "cobertura": 0.521,
+        "potencia_ref": 0.945,
+        "potencia_mde": 0.67,
+        "sesgo": 0.00043369833307123297,
+        "rmse": 0.02170053953677059
+      },
+      "webb_cluster": {
+        "tamano": 0.226,
+        "cobertura": 0.8015,
+        "potencia_ref": 0.8635,
+        "potencia_mde": 0.485,
+        "sesgo": 0.00043369833307123297,
+        "rmse": 0.02170053953677059
+      }
+    },
+    "S3_H2_74donantes": {
+      "placebo_literal": {
+        "tamano": NaN,
+        "cobertura": NaN,
+        "potencia_ref": NaN,
+        "potencia_mde": NaN,
+        "sesgo": NaN,
+        "rmse": NaN
+      },
+      "placebo_m_sin_escalar": {
+        "tamano": 0.008,
+        "cobertura": 0.9965,
+        "potencia_ref": 0.987,
+        "potencia_mde": 0.1425,
+        "sesgo": -0.0001997308204313154,
+        "rmse": 0.02398603442409998
+      },
+      "placebo_m_escalado": {
+        "tamano": 0.136,
+        "cobertura": 0.865,
+        "potencia_ref": 0.9995,
+        "potencia_mde": 0.535,
+        "sesgo": -0.0001997308204313154,
+        "rmse": 0.02398603442409998
+      },
+      "webb_cluster": {
+        "tamano": 0.093,
+        "cobertura": 0.9185,
+        "potencia_ref": 0.9995,
+        "potencia_mde": 0.4825,
+        "sesgo": -0.0001997308204313154,
+        "rmse": 0.02398603442409998
+      }
+    },
+    "S4_IPVA_provincias": {
+      "webb_cluster": {
+        "tamano": 0.2825,
+        "cobertura": 0.7145,
+        "potencia_ref": 0.6645,
+        "potencia_mde": 0.94,
+        "sesgo": 0.0002943238011402689,
+        "rmse": 0.012882117423815096
+      }
+    }
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredictos_por_inferencia": {
+      "S1_H1_74donantes": {
+        "placebo_literal": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "no computable (N donantes <= N tratados + 5)"
+          ]
+        },
+        "placebo_m_sin_escalar": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        },
+        "placebo_m_escalado": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.2710 fuera de [0.04; 0.06]",
+            "cobertura 0.7325 fuera de [0.92; 0.97]"
+          ]
+        },
+        "webb_cluster": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.2080 fuera de [0.04; 0.06]",
+            "cobertura 0.8010 fuera de [0.92; 0.97]"
+          ]
+        }
+      },
+      "S2_H1_14donantes_10km": {
+        "placebo_literal": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "no computable (N donantes <= N tratados + 5)"
+          ]
+        },
+        "placebo_m_sin_escalar": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.0155 fuera de [0.04; 0.06]",
+            "cobertura 0.9825 fuera de [0.92; 0.97]"
+          ]
+        },
+        "placebo_m_escalado": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.5050 fuera de [0.04; 0.06]",
+            "cobertura 0.5210 fuera de [0.92; 0.97]"
+          ]
+        },
+        "webb_cluster": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.2260 fuera de [0.04; 0.06]",
+            "cobertura 0.8015 fuera de [0.92; 0.97]"
+          ]
+        }
+      },
+      "S3_H2_74donantes": {
+        "placebo_literal": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "no computable (N donantes <= N tratados + 5)"
+          ]
+        },
+        "placebo_m_sin_escalar": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.0080 fuera de [0.04; 0.06]",
+            "cobertura 0.9965 fuera de [0.92; 0.97]"
+          ]
+        },
+        "placebo_m_escalado": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.1360 fuera de [0.04; 0.06]",
+            "cobertura 0.8650 fuera de [0.92; 0.97]"
+          ]
+        },
+        "webb_cluster": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.0930 fuera de [0.04; 0.06]",
+            "cobertura 0.9185 fuera de [0.92; 0.97]"
+          ]
+        }
+      },
+      "S4_IPVA_provincias": {
+        "webb_cluster": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.2825 fuera de [0.04; 0.06]",
+            "cobertura 0.7145 fuera de [0.92; 0.97]"
+          ]
+        }
+      }
+    },
+    "veredicto_por_escenario": {
+      "S1_H1_74donantes": "NO APTO → diseño solo descriptivo",
+      "S2_H1_14donantes_10km": "NO APTO → diseño solo descriptivo",
+      "S3_H2_74donantes": "NO APTO → diseño solo descriptivo",
+      "S4_IPVA_provincias": "NO APTO → diseño solo descriptivo"
+    },
+    "R": 2000,
+    "R_alt": 2000,
+    "R_mde": 400,
+    "B_placebo": 99,
+    "B_webb": 999,
+    "estructura": {
+      "S1_H1_74donantes": {
+        "n_tratados": 124,
+        "n_donantes": 74
+      },
+      "S2_H1_14donantes_10km": {
+        "n_tratados": 124,
+        "n_donantes": 14
+      },
+      "S3_H2_74donantes": {
+        "n_tratados": 124,
+        "n_donantes": 74
+      },
+      "S4_IPVA_provincias": {
+        "n_tratados": 124,
+        "n_donantes": 382,
+        "provincias_tratadas": 5,
+        "provincias_donantes": 31
+      }
+    },
+    "semilla": 20261010,
+    "n_donantes_a_10km_entre_74": 14
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "El placebo literal exige N_donantes > N_tratados; con 74 o 14 donantes y 124 tratados no es computable.",
+    "B_placebo = 99 en el Monte Carlo (V15 usa 1.000); Webb con 999 réplicas."
+  ]
+}

@@ -74,6 +74,7 @@ FUENTES: dict[str, str] = {
     "metodologia/desviaciones_preregistros.md": "docs/preregistros_desviaciones.md",
     "metodologia/desviaciones_v16.md": "docs/v16/desviaciones.md",
     "metodologia/validacion_montecarlo_v16.md": "docs/v16/validacion_montecarlo.md",
+    "metodologia/validacion_montecarlo_v15.md": "docs/v15/validacion_montecarlo.md",
     "metodologia/validacion_montecarlo.md": "docs/v7/validacion_herramientas.md",
     "metodologia/preregistro_v7.md": "docs/v7/hipotesis.md",
     "metodologia/preregistro_v8.md": "docs/v8/hipotesis.md",

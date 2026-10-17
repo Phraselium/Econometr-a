@@ -1,0 +1,163 @@
+{
+  "rama": "v15/montecarlo",
+  "pregunta": "H4 (shift-share municipal, AKM / AKM0)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; solo estructura (códigos, calendario, dimensiones, geometría) de data/processed/v15; ningún valor de resultado real",
+  "N": {
+    "municipios": 1451,
+    "origenes": 28,
+    "T": 11,
+    "provincias": 38
+  },
+  "metodo": "2SLS exactamente identificado con inferencia AKM y AKM0",
+  "estimacion": {
+    "tamano_AKM": 0.21933333333333332,
+    "cobertura_AKM": 0.7806666666666666,
+    "tamano_AKM0": 0.008333333333333333,
+    "cobertura_AKM0": 0.9916666666666667,
+    "tamano_agrupado": 0.5213333333333333,
+    "potencia_AKM": 0.33466666666666667,
+    "potencia_AKM0": 0.021,
+    "sesgo": -0.23414129417963378,
+    "rmse": 12.558952131407754
+  },
+  "ic95": [
+    0.2045,
+    0.2341
+  ],
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto_por_escenario": {
+      "M1_28_origenes_F_alta": "NO APTO → diseño solo descriptivo",
+      "M2_28_origenes_F_baja": "NO APTO → diseño solo descriptivo",
+      "M3_instr_sin_residenciales_F_alta": "NO APTO → diseño solo descriptivo"
+    },
+    "por_inferencia": {
+      "M1_28_origenes_F_alta": {
+        "AKM": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.2193 fuera de [0.04; 0.06]",
+            "cobertura 0.7807 fuera de [0.92; 0.97]"
+          ]
+        },
+        "AKM0 (AR)": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.0083 fuera de [0.04; 0.06]",
+            "cobertura 0.9917 fuera de [0.92; 0.97]"
+          ]
+        },
+        "agrupado provincia t(40)": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.5213 fuera de [0.04; 0.06]",
+            "cobertura 0.4787 fuera de [0.92; 0.97]"
+          ]
+        }
+      },
+      "M2_28_origenes_F_baja": {
+        "AKM": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.1700 fuera de [0.04; 0.06]",
+            "cobertura 0.8300 fuera de [0.92; 0.97]"
+          ]
+        },
+        "AKM0 (AR)": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.0077 fuera de [0.04; 0.06]",
+            "cobertura 0.9923 fuera de [0.92; 0.97]"
+          ]
+        },
+        "agrupado provincia t(40)": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.4267 fuera de [0.04; 0.06]",
+            "cobertura 0.5733 fuera de [0.92; 0.97]"
+          ]
+        }
+      },
+      "M3_instr_sin_residenciales_F_alta": {
+        "AKM": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.3283 fuera de [0.04; 0.06]",
+            "cobertura 0.6717 fuera de [0.92; 0.97]"
+          ]
+        },
+        "AKM0 (AR)": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.0047 fuera de [0.04; 0.06]",
+            "cobertura 0.9953 fuera de [0.92; 0.97]"
+          ]
+        },
+        "agrupado provincia t(40)": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.7050 fuera de [0.04; 0.06]",
+            "cobertura 0.2950 fuera de [0.92; 0.97]"
+          ]
+        }
+      }
+    },
+    "estructura": {
+      "M1_28_origenes_F_alta": {
+        "N": 1451,
+        "K": 28,
+        "provincias": 38,
+        "n_efectivo_choques": 9.529369555447008,
+        "pi": 0.39016432661489414,
+        "F_mediana": 24.08713547564616,
+        "F_p10": 4.265667455109525,
+        "F_p90": 123.78826708091445,
+        "prop_F_ge_10": 0.7523333333333333
+      },
+      "M2_28_origenes_F_baja": {
+        "N": 1451,
+        "K": 28,
+        "provincias": 38,
+        "n_efectivo_choques": 9.529369555447008,
+        "pi": 0.12851320478748243,
+        "F_mediana": 2.8914769367900135,
+        "F_p10": 0.09606211704791613,
+        "F_p90": 24.045830237773014,
+        "prop_F_ge_10": 0.23233333333333334
+      },
+      "M3_instr_sin_residenciales_F_alta": {
+        "N": 1451,
+        "K": 23,
+        "provincias": 38,
+        "n_efectivo_choques": 6.0757939684987585,
+        "pi": 0.36532812294271516,
+        "F_mediana": 36.46714298905887,
+        "F_p10": 4.0694678365284975,
+        "F_p90": 204.78627845803578,
+        "prop_F_ge_10": 0.802
+      }
+    },
+    "R": 3000,
+    "semilla": 20261010
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Veredicto global = escenario M1 (28 orígenes, F alta); M2 (F baja) es informativo; M3 es el instrumento principal de la adenda 1 punto 10.",
+    "El umbral MOP 23,1 (τ = 10 %, K = 1) está NO VERIFICADO; el pre-registro fija F ≥ 10 en el texto y τ = 10 % en la adenda."
+  ]
+}

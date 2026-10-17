@@ -23,7 +23,7 @@ FASES: dict[str, list[str]] = {
     "f2": ["src/v16/f2_hechos.py", "src/v16/f2_contabilidad.py", "src/v16/f2_esfuerzo.py", "src/v16/f2_atlas.py"],
     "f3": ["src/v16/f3_verificar_referencias.py", "src/v16/f3_metaanalisis.py", "src/v16/f3_cuatro_cuadrantes.py"],
     "f4": ["src/v16/f4_potencia.py", "src/v16/f4_rejilla.py", "src/v16/f4_sellado.py"],
-    "f5": ["src/v16/f5_validacion.py"],
+    "f5": ["src/v16/f5_validacion.py todas"],
     "f6": [],
     "f7": [],
 }

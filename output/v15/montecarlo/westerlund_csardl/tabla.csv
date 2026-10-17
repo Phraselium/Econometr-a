@@ -1,0 +1,8 @@
+herramienta,R_nulo,tamano_5pct,R_alt,potencia_alpha_-0.04,cobertura_95,sesgo,rmse
+Westerlund Gtau,2000,0.1355,1000,0.338,,,
+Westerlund Galpha,2000,0.093,1000,0.335,,,
+Westerlund Ptau,2000,0.1965,1000,0.407,,,
+Westerlund Palpha,2000,0.181,1000,0.459,,,
+CIPS (serie I(1)),2000,0.0105,1000,0.078,,,
+CS-ARDL elasticidad de largo plazo,2000,0.0075,2000,0.2045,0.9925,-0.018698,1.1579
+CS-ARDL velocidad de ajuste media,2000,0.997,2000,1,0.003,-0.12501,0.12618

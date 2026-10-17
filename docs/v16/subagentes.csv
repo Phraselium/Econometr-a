@@ -30,3 +30,6 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-17,F5,montecarlo,mc_panel,152118,src/v16/montecarlo;output/v16/montecarlo
 2026-10-17,F5,montecarlo,mc_iv_espacial,151703,src/v16/montecarlo;output/v16/montecarlo
 2026-10-17,F5,montecarlo,mc_series,134835,src/v16/montecarlo;output/v16/montecarlo
+2026-10-17,F5,montecarlo,mc_v15,332369,src/v15/montecarlo;output/v15/montecarlo
+2026-10-17,F6,modelizador,grupo_A_q1_q2_q7_q8,224084,src/v16/q1_zonas.py;output/v16/q1;output/v16/q2;output/v16/q7;output/v16/q8
+2026-10-17,F6,modelizador,grupo_B_q3_q4_q6,212505,src/v16/q3_seccion.py;output/v16/q3;output/v16/q4;output/v16/q6

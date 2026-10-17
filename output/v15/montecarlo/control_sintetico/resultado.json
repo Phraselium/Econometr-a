@@ -1,0 +1,92 @@
+{
+  "rama": "v15/montecarlo",
+  "pregunta": "H1 (control sintético, 10 tratados mayores)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; solo estructura (códigos, calendario, dimensiones, geometría) de data/processed/v15; ningún valor de resultado real",
+  "N": {
+    "tratados": 10,
+    "donantes": 74,
+    "T_pre": 7,
+    "T_post": 9
+  },
+  "metodo": "control sintético con efecto fijo + permutación en el espacio",
+  "estimacion": {
+    "tamano": 0.0064,
+    "tamano_rmspe": 0.09685,
+    "cobertura": 0.98645,
+    "potencia_ref": 0.0648,
+    "potencia_mde": 0.015,
+    "sesgo": -4.792036857869806e-05,
+    "rmse": 0.0384874992530753
+  },
+  "ic95": [
+    0.0053,
+    0.0075
+  ],
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "NO APTO → control sintético solo descriptivo",
+    "por_escenario": {
+      "P7_heterogeneo": {
+        "perm_tau": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.0064 fuera de [0.04; 0.06]",
+            "cobertura 0.9865 fuera de [0.92; 0.97]"
+          ]
+        },
+        "perm_rmspe": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.0969 fuera de [0.04; 0.06]"
+          ]
+        }
+      },
+      "P7_intercambiable": {
+        "perm_tau": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        },
+        "perm_rmspe": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.0375 fuera de [0.04; 0.06]"
+          ]
+        }
+      },
+      "P20_heterogeneo": {
+        "perm_tau": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.0081 fuera de [0.04; 0.06]",
+            "cobertura 0.9852 fuera de [0.92; 0.97]"
+          ]
+        },
+        "perm_rmspe": {
+          "veredicto": "NO APTO",
+          "apto": false,
+          "fallos": [
+            "tamaño 0.1374 fuera de [0.04; 0.06]"
+          ]
+        }
+      }
+    },
+    "R": 2000,
+    "semilla": 20261010
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Veredicto sobre el escenario P7_heterogeneo (preperiodo de la adenda 1).",
+    "Tamaño exacto máximo con 75 unidades: 3/75 = 0,04."
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "rama": "v15/montecarlo",
+  "pregunta": "E3 (SAR, SEM, SDM)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; solo estructura (códigos, calendario, dimensiones, geometría) de data/processed/v15; ningún valor de resultado real",
+  "N": {
+    "municipios": 1483,
+    "vecinos_medios": {
+      "contigüidad": 3.7828725556304788,
+      "dist_inversa_25km": 24.182063385030343
+    }
+  },
+  "metodo": "ML concentrada, Wald/LR sobre ρ, efectos LeSage-Pace",
+  "estimacion": {
+    "tamano_wald_rho_hetero": {
+      "SAR|contigüidad": 0.055,
+      "SDM|contigüidad": 0.04533333333333334,
+      "SEM|contigüidad": 0.048666666666666664,
+      "SAR|dist_inversa_25km": 0.04833333333333333,
+      "SDM|dist_inversa_25km": 0.055,
+      "SEM|dist_inversa_25km": 0.05466666666666667
+    },
+    "cobertura_indirecto_hetero": {
+      "SAR|contigüidad": 0.9446666666666667,
+      "SDM|contigüidad": 0.9436666666666667,
+      "SAR|dist_inversa_25km": 0.94,
+      "SDM|dist_inversa_25km": 0.946
+    },
+    "sesgo_rho": {
+      "SAR|contigüidad": -0.002387536456114819,
+      "SDM|contigüidad": -0.0022535549010730335,
+      "SEM|contigüidad": -0.00133805666224379,
+      "SAR|dist_inversa_25km": -0.004271717491156401,
+      "SDM|dist_inversa_25km": -0.00830934149034099,
+      "SEM|dist_inversa_25km": -0.0053482624545961146
+    },
+    "rmse_rho": {
+      "SAR|contigüidad": 0.024394895676863603,
+      "SDM|contigüidad": 0.02514209128792508,
+      "SEM|contigüidad": 0.02639559600521879,
+      "SAR|dist_inversa_25km": 0.034872478737536364,
+      "SDM|dist_inversa_25km": 0.039399899292271626,
+      "SEM|dist_inversa_25km": 0.03959245874922145
+    }
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "APTO",
+    "por_celda": {
+      "SAR|contigüidad": {
+        "rho": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        },
+        "indirecto": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        },
+        "apto": true
+      },
+      "SDM|contigüidad": {
+        "rho": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        },
+        "indirecto": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        },
+        "apto": true
+      },
+      "SEM|contigüidad": {
+        "rho": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        },
+        "indirecto": null,
+        "apto": true
+      },
+      "SAR|dist_inversa_25km": {
+        "rho": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        },
+        "indirecto": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        },
+        "apto": true
+      },
+      "SDM|dist_inversa_25km": {
+        "rho": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        },
+        "indirecto": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        },
+        "apto": true
+      },
+      "SEM|dist_inversa_25km": {
+        "rho": {
+          "veredicto": "APTO",
+          "apto": true,
+          "fallos": []
+        },
+        "indirecto": null,
+        "apto": true
+      }
+    },
+    "R": 3000,
+    "semilla": 20261010,
+    "N": 1483,
+    "segundos": 544.2481772899628
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Veredicto sobre el escenario heterocedástico; el homocedástico es diagnóstico.",
+    "X fija en todas las réplicas."
+  ]
+}

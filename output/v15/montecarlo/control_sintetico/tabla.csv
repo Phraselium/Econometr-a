@@ -1,0 +1,4 @@
+escenario,T_pre,R_nulo,tamano_perm_tau,tamano_perm_rmspe,cobertura_ic_perm,potencia_ref_tau,potencia_ref_rmspe,potencia_mde_tau,sesgo,rmse,tam_trat_1_mayor,tam_trat_10,segundos
+P7_heterogeneo,7,2000,0.0064,0.09685,0.98645,0.0648,0.09685,0.015,-4.792e-05,0.038487,0.006,0.006,496.48
+P7_intercambiable,7,2000,0.0422,0.0375,0.93345,0.1224,0.0404,0.0484,0.00010061,0.057295,0.041,0.051,651.45
+P20_heterogeneo,20,2000,0.0081,0.13745,0.98525,0.0976,0.14295,0.0194,0.00014584,0.036489,0.0115,0.007,403.51

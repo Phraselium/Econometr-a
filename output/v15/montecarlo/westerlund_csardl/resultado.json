@@ -1,0 +1,110 @@
+{
+  "rama": "v15/montecarlo",
+  "pregunta": "E1 (Westerlund, CIPS, CS-ARDL)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; solo estructura (códigos, calendario, dimensiones, geometría) de data/processed/v15; ningún valor de resultado real",
+  "N": {
+    "N": 40,
+    "T": 98
+  },
+  "metodo": "Westerlund con bootstrap, CIPS con bootstrap, CS-ARDL con bootstrap de bloques",
+  "estimacion": {
+    "tamano_Gtau": 0.1355,
+    "potencia_Gtau_alpha_-0.04": 0.338,
+    "tamano_CIPS": 0.0105,
+    "potencia_CIPS": 0.078,
+    "cobertura_CSARDL_theta": 0.9925,
+    "cobertura_CSARDL_velocidad": 0.003,
+    "sesgo_theta": -0.01869819215675842,
+    "rmse_theta": 1.1579304002447162
+  },
+  "ic95": [
+    0.1205,
+    0.1505
+  ],
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredictos": {
+      "Westerlund Gtau": "NO APTO → solo descriptivo",
+      "Westerlund Galpha": "NO APTO → solo descriptivo",
+      "Westerlund Ptau": "NO APTO → solo descriptivo",
+      "Westerlund Palpha": "NO APTO → solo descriptivo",
+      "CIPS (serie I(1))": "NO APTO → solo descriptivo",
+      "CS-ARDL elasticidad de largo plazo": "NO APTO → solo descriptivo",
+      "CS-ARDL velocidad de ajuste media": "NO APTO → solo descriptivo"
+    },
+    "detalle": {
+      "Westerlund Gtau": {
+        "veredicto": "NO APTO",
+        "apto": false,
+        "fallos": [
+          "tamaño 0.1355 fuera de [0.04; 0.06]"
+        ]
+      },
+      "Westerlund Galpha": {
+        "veredicto": "NO APTO",
+        "apto": false,
+        "fallos": [
+          "tamaño 0.0930 fuera de [0.04; 0.06]"
+        ]
+      },
+      "Westerlund Ptau": {
+        "veredicto": "NO APTO",
+        "apto": false,
+        "fallos": [
+          "tamaño 0.1965 fuera de [0.04; 0.06]"
+        ]
+      },
+      "Westerlund Palpha": {
+        "veredicto": "NO APTO",
+        "apto": false,
+        "fallos": [
+          "tamaño 0.1810 fuera de [0.04; 0.06]"
+        ]
+      },
+      "CIPS (serie I(1))": {
+        "veredicto": "NO APTO",
+        "apto": false,
+        "fallos": [
+          "tamaño 0.0105 fuera de [0.04; 0.06]"
+        ]
+      },
+      "CS-ARDL elasticidad de largo plazo": {
+        "veredicto": "NO APTO",
+        "apto": false,
+        "fallos": [
+          "tamaño 0.0075 fuera de [0.04; 0.06]",
+          "cobertura 0.9925 fuera de [0.92; 0.97]"
+        ]
+      },
+      "CS-ARDL velocidad de ajuste media": {
+        "veredicto": "NO APTO",
+        "apto": false,
+        "fallos": [
+          "tamaño 0.9970 fuera de [0.04; 0.06]",
+          "cobertura 0.0030 fuera de [0.92; 0.97]"
+        ]
+      }
+    },
+    "umbral_potencia_V15_0.5": {
+      "potencia_Gtau": 0.338,
+      "E1_solo_descriptiva": true
+    },
+    "R": 2000,
+    "R_alt": 1000,
+    "B_westerlund": 99,
+    "B_cips": 199,
+    "semilla": 20261010,
+    "segundos": 812.3579120635986
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Umbral de V15 (potencia frente a −0,04 ≥ 0,5): NO se cumple → E1 solo descriptiva (Gτ: 0.338).",
+    "Westerlund sin adelantos y 1 rezago; Pτ/Pα con variables auxiliares eliminadas por unidad (variante del agrupado de Westerlund)."
+  ]
+}

@@ -1,0 +1,30 @@
+# V15 · Estado
+
+Plan: docs/v15/plan.md (íntegro). Versión pública vigente: 1.0. V15 solo añade cifras V15-* y se publicará como 1.1.
+
+## Hecho
+- **Plan** guardado íntegro en docs/v15/plan.md (0e4ca8a) y aviso en CLAUDE.md.
+- **B1 · Guardas.**
+  - .claude/settings.json: permissions.deny para leer, editar y escribir la muestra sellada; make clean, make all, make v7, make evaluate_v7, git push --force, git filter-repo, rm -rf data y rm -rf output.
+  - .claude/hooks/guardas_bash.py, hook PreToolUse de Bash, que rechaza:
+    - (a) heredocs sin comillas;
+    - (b) cualquier mención de la muestra sellada salvo src/holdout.py;
+    - (c) un segundo make check (bloqueo /tmp/econometra_make_check.lock que escribe el Makefile, o un proceso `make check` vivo);
+    - (d) make v15_f4* y v15_f5* sin osf_prereg_v15;
+    - (e) los mismos comandos prohibidos que deny.
+  - tests/v15/test_guardas.py: 27 casos. Además, intentos reales que fallaron como debían: `make clean` (hook), listar la muestra sellada (hook) y leerla con Read (permissions.deny).
+- **B2 · Subagentes** en .claude/agents/: inventariador (haiku), auditor-datos, lector-literatura, montecarlo y modelizador (sonnet), y revisor-preregistro y arbitro-final (opus, sin Write ni Bash). Cada uno lleva su tope de tokens.
+- **B3 · Herramientas.**
+  - src/v15/verificar_referencias.py: Crossref con caché versionada para funcionar sin red, cuartil desde docs/v15/scimago_cuartiles.csv, estados VERIFICADA / NO VERIFICADA / DISCREPANTE y fallo ante un DOI inexistente.
+  - src/v15/registro_subagentes.py.
+  - src/v15/puerta.py y src/v15/fase.py.
+  - Tests en tests/v15/test_herramientas_v15.py.
+- **B4 · Comandos y make.**
+  - .claude/commands/v15-fase0 … v15-fase5 y v15-estado.
+  - Makefile: v15_f0 … v15_f5, v15, check_v15, y check_v15 dentro de make check.
+
+## Siguiente
+- B5: make check en solitario y commit «V15 infraestructura».
+- Fase 0.
+
+<!-- las secciones siguientes las mantiene src/v15/registro_subagentes.py -->

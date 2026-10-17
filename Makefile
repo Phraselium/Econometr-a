@@ -25,6 +25,7 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
+.PHONY: check_v15 v15 v15_f0 v15_f1 v15_f2 v15_f3 v15_f4 v15_f5
 .PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9 datos_v11 v12 metadatos paquete_zenodo datos arbol_publico muestra_revision
 
 all: data clean models report
@@ -45,6 +46,7 @@ report:
 	@$(MAKE) --no-print-directory verificador
 
 check:
+	@echo $$PPID > /tmp/econometra_make_check.lock   # V15-B1: bloqueo (la guarda (c) rechaza un segundo make check)
 	@$(PY) src/v12/git_limpio.py guardar $${TMPDIR:-/tmp}/econometra_check_git.txt
 	ruff check src tests --quiet
 	$(PY) -m pytest -q tests
@@ -55,7 +57,9 @@ check:
 	$(PY) src/v9/check_v9.py
 	$(PY) src/v13/check_v13.py
 	$(PY) src/v14/check_v14.py
+	$(PY) src/v15/check_v15.py
 	@$(PY) src/v12/git_limpio.py comparar $${TMPDIR:-/tmp}/econometra_check_git.txt
+	@rm -f /tmp/econometra_make_check.lock
 
 verificador:
 	@if [ -f src/v3/verificador.py ]; then $(PY) src/v3/verificador.py; fi
@@ -191,3 +195,30 @@ validar_v9:
 V12_ORDEN := f0_correcciones b1_contabilidad b2_flujos b3_hogares b4_oferta b5_propiedad b6_condiciones b7_turismo hechos_v12 ../v5/cifras_clave atlas_v12
 v12:
 	@for r in $(V12_ORDEN); do echo ">> src/v12/$$r.py"; $(PY) src/v12/$$r.py || exit 1; done
+
+# ------------------------------------------------------------------ V15 (docs/v15/plan.md)
+# Cada fase solo ejecuta lo suyo; v15_f4 y v15_f5 exigen osf_prereg_v15 en proyecto.json (src/v15/puerta.py y la guarda (d)).
+check_v15:
+	$(PY) src/v15/check_v15.py
+
+v15_f0:
+	$(PY) src/v15/fase.py f0
+
+v15_f1:
+	$(PY) src/v15/fase.py f1
+
+v15_f2:
+	$(PY) src/v15/fase.py f2
+
+v15_f3:
+	$(PY) src/v15/fase.py f3
+
+v15_f4:
+	$(PY) src/v15/puerta.py
+	$(PY) src/v15/fase.py f4
+
+v15_f5:
+	$(PY) src/v15/puerta.py
+	$(PY) src/v15/fase.py f5
+
+v15: v15_f0 v15_f1 v15_f2 v15_f3 v15_f4 v15_f5

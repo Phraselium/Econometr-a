@@ -63,6 +63,11 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - Puertas con etiqueta y criterio provisional; tests y autocomprobación actualizados.
   - Registro: docs/preregistros.md, que check_v16 verifica.
   - CHANGELOG corregido.
+- **Fase 5: Monte Carlo (K12).**
+  - 16 herramientas V16 validadas con el criterio de la adenda (punto 11).
+  - Utilizables: SDID con Conley-Taber, Conley por sección (con salvedad), GSADF con bootstrap salvaje, Benjamini-Yekutieli y TOST condicionado.
+  - El resto es NO APTO y queda descriptivo.
+  - Tabla en docs/v16/validacion_montecarlo.md.
 
 ## Siguiente
 - Fases 5-7 de V16:

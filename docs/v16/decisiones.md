@@ -102,3 +102,15 @@ adquisidor-datos, ingeniero-datos, replicador-ciego y redactor (sonnet), abogado
 - **Resultado.** Ningún resultado publicado depende de muestras modificadas y no procede entrada en ERRATA. Está documentado en docs/preregistros_desviaciones.md (publicado como metodologia/desviaciones_preregistros.md) y en docs/preregistros.md.
 - **Sin cálculos nuevos.** No se reejecutó ninguna evaluación sellada ni se estimó nada.
 - **Publicación.** metodologia/desviaciones_v16.md se publica también desde docs/v16/desviaciones.md.
+
+## K12. Consecuencias del Monte Carlo para la fase 6 (2026-10-17)
+- **Tabla.** docs/v16/validacion_montecarlo.md y output/v16/montecarlo/veredictos.csv, generadas por src/v16/f5_validacion.py; se publica como metodologia/validacion_montecarlo_v16.md.
+- **Inferencia utilizable (solo estas):**
+  - SDID con Conley-Taber, escenario A, con el tamaño en el límite superior (0,0575). Q1b no tiene periodos posteriores al tratamiento en el entrenamiento, así que queda pendiente.
+  - Conley a 2 km por sección (Q3-b), solo con el escenario principal; se declara que no es robusto al rango espacial.
+  - GSADF sobre el factor con bootstrap salvaje (Q9-g).
+  - Benjamini-Yekutieli en lugar del BH jerárquico, en las dos ramas de control.
+  - TOST solo cuando Δ/EE ≥ 2; en otro caso, «no concluyente».
+- **Todo lo demás es NO APTO y queda solo descriptivo**, con estimación puntual sin p-valor ni IC: CS-Webb, dCDH, rejilla TWFE, shift-share AKM, DiD de intensidad, LP Newey-West b, BLP/GATES, CIPS, CS-ARDL, DM-HLN y bayesiano jerárquico.
+- **Sin cambio de especificaciones.** No se cambia ninguna especificación para «hacerla apta». El cambio de BH a BY es la alternativa nombrada en la adenda (punto 11), no una elección por resultados.
+

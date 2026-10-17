@@ -20,3 +20,4 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | revision_v8_F4.md | docs/v8/revision_F4.md | `f1b06d5f52a70daa1388bc80275ff2d010d84f2c33606df6561d6c5a84039e9f` |
 | revision_v9_F2.md | docs/v9/revision_f2.md | `690800171515b8e9c0c53f2fb0fce5b8d4d827dd20dfd9a70df9a7fb2473277f` |
 | validacion_montecarlo.md | docs/v7/validacion_herramientas.md | `6af570c58d993d47c03ee18a07ad05759499c7a24c63aef4ae855ae0be5c7833` |
+| validacion_montecarlo_v16.md | docs/v16/validacion_montecarlo.md | `ecd0da3df3fe0edbe44ff64f644797016a4d8507249271d236d909e7571091fb` |

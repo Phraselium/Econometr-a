@@ -18,3 +18,4 @@ Pendiente de la fase 3: registro del pre-registro en OSF y `osf_prereg_v15` en p
 
   Mientras tanto, todas las referencias con DOI quedan «VERIFICADA (Crossref; cuartil no verificado)».
 - **AEAT 2013-2015** (auditoría de renta y microdatos). Los ficheros municipales de esos años no traen declaraciones, renta bruta media ni renta disponible media, y sus valores parecen recuentos. **No son utilizables como renta en euros.** La base usa 2016-2024, así que ninguna cifra publicada cambia. Si se quieren esos años, hay que volver a descargarlos con todas las columnas (descarga HTML por municipio, no automatizada en el repositorio).
+- **Filas sub-provinciales de las provincias selladas en v6** (decisiones G6). La base las conserva sin la marca de sellado. V15 las excluye. Decida si se revisa qué análisis de V10-V14 las usaron; las evaluaciones v6 ya se hicieron, así que no hay muestra que proteger, pero conviene documentarlo.

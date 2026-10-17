@@ -100,9 +100,24 @@ def literatura() -> list[str]:
     return err
 
 
+def sellado() -> list[str]:
+    """Los módulos de estimación V15 (src/v15/p*.py) leen solo data/processed/v15 (entrenamiento): nunca la base completa, los
+    crudos ni la muestra sellada (que solo se abre con holdout.evaluate_v15). El manifiesto del sellado existe si hay módulos."""
+    err = []
+    mods = sorted((RAIZ / "src" / "v15").glob("p[0-9]*.py"))
+    for m in mods:
+        t = m.read_text(encoding="utf-8")
+        for patron in ("hechos.parquet", "data/raw", "data/sealed", '"sealed"', "vivienda.duckdb"):
+            if patron in t:
+                err.append(f"{m.relative_to(RAIZ)}: lee {patron!r}; los módulos V15 solo leen data/processed/v15 (sellado_v15.json)")
+    if mods and not (RAIZ / "docs" / "v15" / "sellado_v15.json").exists():
+        err.append("hay módulos de estimación V15 sin docs/v15/sellado_v15.json: se sella antes de estimar")
+    return err
+
+
 def main() -> int:
     total = 0
-    for nombre, f in (("guardas", guardas), ("puerta", puerta), ("cifras", cifras), ("lenguaje causal", causal), ("literatura", literatura)):
+    for nombre, f in (("guardas", guardas), ("puerta", puerta), ("cifras", cifras), ("lenguaje causal", causal), ("literatura", literatura), ("sellado", sellado)):
         e = f()
         print(f"check_v15 · {nombre}: {len(e)} errores")
         for x in e[:30]:

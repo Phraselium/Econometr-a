@@ -27,3 +27,14 @@ Corregir la base es corregir la 1.0. Según la regla del plan, eso va a ERRATA e
 - **P6.** Usa solo trimestres anteriores a la primera zona tensionada (2024T1), con el mismo número de periodos posteriores que tendrá el diseño.
 - **Errores agrupados.** La tasa de rechazo placebo con errores agrupados indica si los clusters bastan. Con 4 provincias (Cataluña) el rechazo es 0,18, frente al 0,05 nominal. Por eso en P6 se agrupa por municipio y, si hay pocos clusters, se usa bootstrap salvaje.
 - **Medidas de alquiler.** SERPAVI es la medida de alquiler en los paneles de sección y municipio (stock de contratos declarados). Incasòl es la medida de contratos nuevos en Cataluña (renta media ponderada por contratos de todos los tramos, que no depende del cambio de tramos de 2021).
+
+## G6. Sellado V15 ejecutado (fase 3.3) y filas sub-provinciales de las provincias de v6
+- **Ejecución.** `python3 src/v15/f3_sellado.py` se ejecutó el 2026-10-17, antes de estimar nada.
+  - Manifiesto: docs/v15/sellado_v15.json, con fecha de corte, último periodo visto, celdas selladas y sha256 de las fuentes.
+  - Entrenamiento por pregunta en data/processed/v15/ (versionado).
+  - Parte sellada fuera del control de versiones, regenerable de forma determinista desde la base y el manifiesto.
+- **Proporción sellada por el bloque espacial V15** (sobre lo que no son provincias de v6): ≈ 15 % (13-15 % según la pregunta), como se diseñó.
+- **Filas de provincias v6 sin la marca de sellado.** La base conserva filas de municipio, distrito y sección de las 11 provincias selladas en v6 sin la marca `muestra_sellada_v6`, que solo cubre parte de las filas. sellar_v15 las aparta como selladas. Son el 20-30 % de las filas en P4, P5 y P7, y el 0,2 % en P6.
+  - **Consecuencia para V15:** quedan fuera de toda estimación.
+  - **Pendiente para el autor:** que la base pública lleve esas filas no altera ninguna cifra publicada de cifras_clave. Pero el cálculo de potencia de la fase 1 las incluyó en los paneles de sección (solo con tratamientos placebo, sin resultados). Queda para el autor decidir si conviene revisar qué análisis de V10-V14 las usaron (tareas_autor.md). Las evaluaciones v6 ya se hicieron, así que son muestras vistas.
+- **Control.** check_v15 comprueba que los módulos de estimación (src/v15/p*.py) no lean la base completa, los crudos ni la muestra sellada.

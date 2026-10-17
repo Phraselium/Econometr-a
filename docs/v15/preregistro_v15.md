@@ -84,6 +84,8 @@ Si a 31-12-2027 no se alcanza el mínimo, se evalúa con lo que haya y se declar
 - H1-H4: misma especificación en las unidades selladas; se compara el signo y si el intervalo contiene la estimación de entrenamiento;
 - H5: no tiene parte espacial (es nacional).
 
+**Ejecutado** el 2026-10-17 (src/v15/f3_sellado.py; decisiones G6). Las filas de municipio, distrito y sección de las 11 provincias de v6 también quedan fuera: el bloque V15 aparta ≈ 15 % de lo restante.
+
 **Muestras ya vistas (solo informativas).**
 - Sellados de v2 (3 provincias, ya evaluadas).
 - Sellado de v6 (11 provincias). Sigue fuera de todo uso: no está en la base de entrenamiento.

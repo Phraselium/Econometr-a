@@ -1,0 +1,61 @@
+{
+  "rama": "r16/montecarlo",
+  "pregunta": "Q9 (adenda punto 3)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; estructura (N, T) de la pregunta; ningún valor real de resultados",
+  "N": {
+    "N": 38,
+    "T": 95
+  },
+  "metodo": "CIPS + bootstrap de bloques con factor común",
+  "estimacion": {
+    "tamano_boot": 0.006,
+    "potencia_boot": 0.868,
+    "tamano_asintotico_cv_-2.11": 0.0925,
+    "cobertura": "no aplica (prueba)"
+  },
+  "ic95": [
+    0.0026,
+    0.0094
+  ],
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "detalle": {
+      "nulo": {
+        "R": 2000,
+        "rech_boot": 0.006,
+        "rech_pvalor": 0.0055,
+        "rech_asint": 0.0925,
+        "media_cips": -1.788797894123561,
+        "cv_boot_media": -2.356638877657741
+      },
+      "alternativa": {
+        "R": 500,
+        "rech_boot": 0.868,
+        "rech_pvalor": 0.856,
+        "rech_asint": 1.0,
+        "media_cips": -2.634089452110985,
+        "cv_boot_media": -2.4771183037145303
+      }
+    },
+    "bloque": 9,
+    "B": 399,
+    "veredicto": {
+      "veredicto": "NO APTO",
+      "fallos": [
+        "tamaño 0.0060 fuera de [0.04; 0.06]"
+      ]
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Cobertura no definida para una prueba de raíz unitaria; el veredicto usa el tamaño (criterio de la adenda).",
+    "La adenda no nombra alternativa para CIPS: si no pasa, Q9 queda en GSADF agregado y CIPS solo descriptivo.",
+    "Diagnóstico exploratorio (R=120, B=149, src/v16/montecarlo/cips_bootstrap_diagnostico.py; no es parte del veredicto): bloques de 9, 20 y 40 dan tamaño 0,0 en los tres casos (sobrecorrección: VC demasiado negativo); un bootstrap sieve AR(1) con remuestreo conjunto de residuos da 0,075 (ruido ±0,05); VC asintótico -2,11: 0,092."
+  ]
+}

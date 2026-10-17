@@ -1,0 +1,88 @@
+{
+  "rama": "r16/montecarlo",
+  "pregunta": "Nulo informativo (adenda punto 10)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; estructura (N, T) de la pregunta; ningún valor real de resultados",
+  "N": {
+    "R": 20000,
+    "razones_repositorio": 15
+  },
+  "metodo": "TOST (dos pruebas t unilaterales al 5 %)",
+  "estimacion": {
+    "umbral_delta_sobre_EE_apto": {
+      "12": 2.0,
+      "37": 2.0,
+      "inf": 2.0
+    },
+    "razon_repositorio_mediana": 1.0401702127659573,
+    "razon_repositorio_min_max": [
+      0.23991004497751126,
+      7.301538461538461
+    ],
+    "tamano_borde_df12_a_razon_mediana": 0.00055,
+    "cobertura": "no aplica (prueba)"
+  },
+  "ic95": [
+    0.047,
+    0.053
+  ],
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": {
+      "veredicto": "NO APTO como regla general; APTO condicionado a Δ/EE >= umbral (en otro caso «no concluyente»)",
+      "fallos": [
+        "tamaño en el borde < 0,04 (hasta 0,0) para Δ/EE pequeña: 10 de 15 diseños del repositorio con tamaño < 0,04 (df=12)",
+        "APTO solo si Δ/EE >= 2.0 (df=12), 2.0 (df=37)"
+      ]
+    },
+    "razones_repositorio": [
+      0.96,
+      0.6,
+      0.61,
+      1.34,
+      1.69,
+      3.68,
+      0.24,
+      0.27,
+      0.3,
+      6.95,
+      1.99,
+      7.3,
+      0.52,
+      1.04,
+      2.94
+    ],
+    "tamano_por_razon_df12": [
+      0.00055,
+      0.0,
+      0.0,
+      0.0126,
+      0.0126,
+      0.049,
+      0.0,
+      0.0,
+      0.0,
+      0.0463,
+      0.04015,
+      0.0509,
+      0.0,
+      0.00055,
+      0.04635
+    ],
+    "proporcion_diseños_apta": {
+      "12": 0.3333333333333333,
+      "37": 0.3333333333333333,
+      "inf": 0.3333333333333333
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Referencia del repositorio: EE = MDE80/2,8 (potencia.csv, 15 filas con magnitud de referencia); Δ = ref_pct.",
+    "La adenda no nombra alternativa: sin magnitud o con Δ/EE bajo el umbral, el resultado es «no concluyente»."
+  ]
+}

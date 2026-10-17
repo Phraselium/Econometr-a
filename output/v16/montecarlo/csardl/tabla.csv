@@ -1,0 +1,10 @@
+medida,valor
+sesgo,-0.039099146755267024
+rmse,0.06564128109841817
+cobertura_normal_boot,0.8985
+cobertura_percentil_centrado,0.8955
+tamano_5pct,0.10150000000000003
+potencia_theta0,0.974
+potencia_desplazamiento_0.2,0.8705
+se_boot_medio,0.10695070271792663
+sd_estimador,0.05976466135066912

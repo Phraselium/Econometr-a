@@ -1,0 +1,50 @@
+{
+  "rama": "r16/montecarlo",
+  "pregunta": "Q9-c (adenda punto 3)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; estructura (N, T) de la pregunta; ningún valor real de resultados",
+  "N": {
+    "N": 38,
+    "T": 95
+  },
+  "metodo": "CS-ARDL(1,1) grupo medio + bootstrap por bloques",
+  "estimacion": {
+    "sesgo": -0.039099146755267024,
+    "rmse": 0.06564128109841817,
+    "cobertura_normal_boot": 0.8985,
+    "cobertura_percentil_centrado": 0.8955,
+    "tamano_5pct": 0.10150000000000003,
+    "potencia_theta0": 0.974,
+    "potencia_desplazamiento_0.2": 0.8705,
+    "se_boot_medio": 0.10695070271792663,
+    "sd_estimador": 0.05976466135066912
+  },
+  "ic95": [
+    0.8853,
+    0.9117
+  ],
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "R": 2000,
+    "B": 99,
+    "bloque": 9,
+    "rezagos_MT": 4,
+    "veredicto": {
+      "veredicto": "NO APTO",
+      "fallos": [
+        "tamaño 0.1015 fuera de [0.04; 0.06]",
+        "cobertura 0.8985 fuera de [0.92; 0.97]"
+      ]
+    },
+    "nota_magnitud": "Q9-c no tiene magnitud de referencia («no aplica»): la potencia es frente a θ=0 y a un desplazamiento declarado de 0,2."
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "La adenda no nombra alternativa para CS-ARDL: si falla, Q9-c queda descriptivo."
+  ]
+}

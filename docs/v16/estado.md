@@ -106,6 +106,7 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F2 | econometrician | f2_esfuerzo | 185.151 | src/v16/f2_esfuerzo.py;output/v16/f2_esfuerzo |
 | 2026-10-17 | F5 | montecarlo | mc_panel | 152.118 | src/v16/montecarlo;output/v16/montecarlo |
 | 2026-10-17 | F5 | montecarlo | mc_iv_espacial | 151.703 | src/v16/montecarlo;output/v16/montecarlo |
+| 2026-10-17 | F5 | montecarlo | mc_series | 134.835 | src/v16/montecarlo;output/v16/montecarlo |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -113,8 +114,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | F2 | 690.657 |
 | F3 | 1.160.356 |
 | F4 | 555.674 |
-| F5 | 303.821 |
+| F5 | 438.656 |
 
-Total V16: 4.663.378 tokens
+Total V16: 4.798.213 tokens
 
 <!-- fin subagentes -->

@@ -1,0 +1,6 @@
+escenario,R,rech_boot_wild,rech_cv_iid_simulado
+nulo_homo,2000,0.017,0.052
+nulo_salto,2000,0.0455,0.288
+nulo_estoc,2000,0.0455,0.3715
+alt_homo,500,0.064,0.202
+alt_salto,500,0.132,0.454

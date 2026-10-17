@@ -1,0 +1,3 @@
+escenario,R,tam_HLN_unilateral,tam_HLN_bilateral,tam_DM_normal_unilateral,CW_normal_unilateral,CW_t_unilateral,reduccion_ECM_media
+nulo_anidado,2000,0.002,0.069,0.002,0.033,0.032,-0.021484877321941175
+alt_reduccion10,1000,0.277,0.167,0.287,0.824,0.82,0.08382345320433214

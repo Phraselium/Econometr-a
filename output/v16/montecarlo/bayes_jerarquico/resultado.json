@@ -1,0 +1,53 @@
+{
+  "rama": "r16/montecarlo",
+  "pregunta": "Modelo jerárquico (adenda punto 12)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; estructura (N, T) de la pregunta; ningún valor real de resultados",
+  "N": {
+    "provincias": 8,
+    "municipios": 181,
+    "secciones": 530
+  },
+  "metodo": "normal-normal 3 niveles, Gibbs propio (griddy para desviaciones)",
+  "estimacion": {
+    "cobertura_mu_min": 0.94,
+    "cobertura_seccion_min": 0.9460886792452831,
+    "cobertura_municipio_min": 0.937364640883978,
+    "cobertura_provincia_min": 0.9355,
+    "sesgo_mu_no_nulo": 0.0012656634056015853,
+    "rmse_mu_no_nulo": 0.008038807093350428,
+    "P_0_fuera_IC_bajo_nulo": 0.048,
+    "potencia_mu_no_nulo": 0.998
+  },
+  "ic95": [
+    0.9479,
+    0.9721
+  ],
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": {
+      "veredicto": "NO APTO",
+      "fallos": [
+        "no_nulo cob_mu=0.972",
+        "homogeneo cob_mu=0.976",
+        "homogeneo cob_seccion=0.985"
+      ]
+    },
+    "R_nulo": 2000,
+    "R_resto": 1000,
+    "criterio": "cobertura de IC creíble 95 % en [0,92; 0,97] (encargo, punto 6)",
+    "iter": 1200,
+    "burn": 300,
+    "implementacion": "Gibbs propio; PyMC no usado"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "En el escenario «prior» la cobertura es una calibración bayesiana exacta si el muestreador es correcto.",
+    "Sensibilidad s×0,5 y s×2 informada con verdad fija (no se usa para el veredicto)."
+  ]
+}

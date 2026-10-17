@@ -1,0 +1,63 @@
+{
+  "rama": "r16/montecarlo",
+  "pregunta": "Control de falsos descubrimientos (adenda punto 2)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; estructura (N, T) de la pregunta; ningún valor real de resultados",
+  "N": {
+    "celdas_rejilla": 83,
+    "pruebas_disenos": [
+      18,
+      21
+    ]
+  },
+  "metodo": "Simes por familia (q=0,10) + BH dentro; alternativa BY",
+  "estimacion": {
+    "FDR_max_BH": 0.12159424603174603,
+    "FDR_max_BY": 0.047305357142857135,
+    "FWER_max_BH": 0.7375,
+    "FDR_media_BH": 0.09615066622504148,
+    "FDR_max_BH_unilateral_signos_mixtos": 0.0984837003345868,
+    "potencia_media_BH": 0.7610713553945699,
+    "potencia_media_BY": 0.552347355282024
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "R": 2000,
+    "q": 0.1,
+    "cota_2q": 0.2,
+    "escenario_peor_BH": {
+      "estructura": "disenos_18",
+      "correlacion": "debil",
+      "signos": "mixtos",
+      "nulos": "celdas_20",
+      "metodo": "bh",
+      "FDR": 0.12159424603174603,
+      "FWER": 0.3655,
+      "potencia_celda": 0.7388824331630636
+    },
+    "violaciones_PRDS_empirico": {
+      "rejilla_83|positivos|bilateral": 0.0,
+      "rejilla_83|mixtos|bilateral": 0.0,
+      "rejilla_83|mixtos|unilateral": 0.0,
+      "disenos_18|mixtos|bilateral": 0.0
+    },
+    "veredicto": {
+      "veredicto": "NO APTO BH jerárquico; alternativa Benjamini-Yekutieli APTA",
+      "fallos": [
+        "FDR máx. 0.1216 > 0.1"
+      ]
+    },
+    "criterio": "Para el control de FDR el criterio es FDR realizada <= q = 0,10 en todos los escenarios bilaterales declarados (el tamaño al 5 % no aplica)."
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "La adenda lista 18 pruebas de diseños en el punto 3; el encargo decía 21: se simulan ambas (las 3 adicionales son hipotéticas).",
+    "Un tamaño/FDR de 0,0 no es relevante aquí: se informa también la potencia."
+  ]
+}

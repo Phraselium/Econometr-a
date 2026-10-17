@@ -1,0 +1,79 @@
+{
+  "rama": "r16/montecarlo",
+  "pregunta": "Q9-g (adenda punto 3)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; estructura (N, T) de la pregunta; ningún valor real de resultados",
+  "N": {
+    "T": 98,
+    "r0_obs": 18
+  },
+  "metodo": "GSADF + bootstrap wild",
+  "estimacion": {
+    "tamano": {
+      "nulo_homo": 0.017,
+      "nulo_salto": 0.0455,
+      "nulo_estoc": 0.0455
+    },
+    "potencia": {
+      "alt_homo": 0.064,
+      "alt_salto": 0.132
+    },
+    "tamano_cv_iid_bajo_heterocedasticidad": {
+      "nulo_salto": 0.288,
+      "nulo_estoc": 0.3715
+    },
+    "cobertura": "no aplica (prueba)"
+  },
+  "ic95": {
+    "nulo_homo": [
+      0.0113,
+      0.0227
+    ],
+    "nulo_salto": [
+      0.0364,
+      0.0546
+    ],
+    "nulo_estoc": [
+      0.0364,
+      0.0546
+    ]
+  },
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "R": 2000,
+    "B": 499,
+    "veredicto": {
+      "veredicto": "APTO",
+      "fallos": [
+        "nulo_homo: tamaño 0.0170 fuera de [0.04; 0.06]"
+      ]
+    },
+    "veredicto_por_escenario": {
+      "nulo_homo": {
+        "veredicto": "NO APTO",
+        "fallos": [
+          "tamaño 0.0170 fuera de [0.04; 0.06]"
+        ]
+      },
+      "nulo_salto": {
+        "veredicto": "APTO",
+        "fallos": []
+      },
+      "nulo_estoc": {
+        "veredicto": "APTO",
+        "fallos": []
+      }
+    },
+    "cv95_iid_simulado": 1.9152121394347736,
+    "todos_pasan": false
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Veredicto global exige APTO bajo heterocedasticidad (salto y estocástica); la adenda no nombra alternativa para GSADF (R18: por provincia es ya visto)."
+  ]
+}

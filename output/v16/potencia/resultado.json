@@ -1,0 +1,191 @@
+{
+ "rama": "v16-f4-potencia",
+ "pregunta": "Potencia y efecto mínimo detectable (MDE80) de Q1-Q10 con los datos nuevos, antes del pre-registro",
+ "capa": "C4",
+ "datos": "data/base/hechos.parquet + data/processed/v16/*.parquet (incl. *_terceros agregados) + ECV microdatos; sin muestras selladas (v6, V15, V16)",
+ "N": 53,
+ "metodo": "aleatorización placebo (500 réplicas), SEED=20261010; MDE80 = 2,8 × DT placebo; RD con umbrales placebo; Monte Carlo CIPS/GSADF (300 réplicas); DM-HLN por simulación",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "unidades_tras_exclusiones": {
+   "q1_adrh_mun": 4864,
+   "q1_compraventas_prov": 41,
+   "q1_ipva_mun": 391,
+   "q1_ipva_prov_Contr": 38,
+   "q1_ipva_prov_Nuevo": 38,
+   "q1_serpavi_mun": 1426,
+   "q1_valor_tasado_prov": 38,
+   "q2_ia_municipio": 279,
+   "q2_ia_seccion": 2697,
+   "q2_ipcalq_prov": 41,
+   "q2_ipva_mun_2024": 391,
+   "q2_rta_andalucia": 442,
+   "q3_compraventas_prov": 41,
+   "q3_padron_nacionalidad": 4873,
+   "q3_serpavi_seccion": 11479,
+   "q3_valor_tasado_prov": 38,
+   "q4_obra_catastro": 4811,
+   "q4_rn2000": 4868,
+   "q5_compraventas": 1,
+   "q5_ipc_alquiler": 1,
+   "q5_ipv": 1,
+   "q5_p_tasado": 1,
+   "q6_compraventas_prov": 41,
+   "q6_valor_tasado_prov": 38,
+   "q7_ecv_micro": 11,
+   "q8_registradores_extranj_ccaa": 9,
+   "q9_ipc_alquiler_prov": 41,
+   "q9_valor_tasado_prov": 38
+  },
+  "resumen_por_pregunta": {
+   "Q1": {
+    "recomendacion_global": "exploratoria (BH)",
+    "mde80_pct_mejor_subdiseno": 1.16,
+    "subdisenos": 10
+   },
+   "Q10": {
+    "recomendacion_global": "exploratoria (BH)",
+    "mde80_pct_mejor_subdiseno": null,
+    "subdisenos": 16
+   },
+   "Q2": {
+    "recomendacion_global": "exploratoria (BH)",
+    "mde80_pct_mejor_subdiseno": 0.39,
+    "subdisenos": 6
+   },
+   "Q3": {
+    "recomendacion_global": "exploratoria (BH)",
+    "mde80_pct_mejor_subdiseno": 0.83,
+    "subdisenos": 4
+   },
+   "Q4": {
+    "recomendacion_global": "exploratoria (BH)",
+    "mde80_pct_mejor_subdiseno": 0.64,
+    "subdisenos": 2
+   },
+   "Q5": {
+    "recomendacion_global": "exploratoria (BH)",
+    "mde80_pct_mejor_subdiseno": 0.25,
+    "subdisenos": 8
+   },
+   "Q6": {
+    "recomendacion_global": "descartada",
+    "mde80_pct_mejor_subdiseno": 9.4,
+    "subdisenos": 2
+   },
+   "Q7": {
+    "recomendacion_global": "reformulada",
+    "mde80_pct_mejor_subdiseno": 13.2,
+    "subdisenos": 2
+   },
+   "Q8": {
+    "recomendacion_global": "descartada",
+    "mde80_pct_mejor_subdiseno": null,
+    "subdisenos": 1
+   },
+   "Q9": {
+    "recomendacion_global": "exploratoria (BH)",
+    "mde80_pct_mejor_subdiseno": null,
+    "subdisenos": 2
+   }
+  },
+  "extra": {
+   "q1_rd_cobertura": {
+    "municipios_ADRH_no_sellados": 4864,
+    "municipios_SERPAVI_alquiler_no_sellados": 1426,
+    "con_crecimiento_5a_2019_2024": 1220,
+    "umbral_crecimiento_5a_log (IPC acumulado + 3 p.p.)": 0.1894,
+    "con_cociente_alquiler_renta (proxy, 70 m2 sin suministros)": 1340,
+    "cociente_alquiler_renta>0,30": 0,
+    "cociente_alquiler_renta_maximo": 0.287,
+    "cociente_alquiler_renta_p95": 0.177,
+    "dentro_de_±10_log_puntos_del_umbral_de_precio": 942,
+    "ZT_vigentes_no_selladas_con_crecimiento_5a": 223,
+    "precio_de_compra_municipal_5a": 0,
+    "ZT_vigentes_totales (todas)": 317,
+    "ZT_vigentes_no_selladas": 234
+   },
+   "q3_origenes": {
+    "n_origenes": 28,
+    "n_efectivo_1/HHI": 12.24,
+    "mayor_cuota": 0.2,
+    "municipios_padron_no_sellados": 4873
+   },
+   "q4_primera_etapa": {
+    "municipios_con_obra_nueva_catastro": 4811,
+    "municipios_con_Red_Natura": 4868,
+    "interseccion": 4807
+   },
+   "q6_eventos_ITP": {
+    "eventos_con_cambio_no_sellados_2011_2024": 20,
+    "ccaa_con_evento": 8,
+    "cambio_medio_abs_pp": 1.8,
+    "eventos_totales_todas_ccaa": 37
+   },
+   "q7_conteos": {
+    "inquilinos_mercado_30_40_por_ola": {
+     "2018": 653,
+     "2019": 766,
+     "2020": 648,
+     "2021": 909,
+     "2022": 1068,
+     "2023": 1100,
+     "2024": 1141,
+     "2025": 1092
+    },
+    "hogares_30_40_pre_2018_2021": 2211,
+    "hogares_30_40_post_2023_2025": 2487,
+    "personas_33_37_todas_las_olas": 3423,
+    "factor_escala_N": 0.945
+   },
+   "q9_cips": {
+    "N": 38,
+    "T": 95,
+    "potencia_por_rho": {
+     "0.99": 0.12333333333333334,
+     "0.98": 0.27666666666666667,
+     "0.97": 0.53,
+     "0.95": 0.8966666666666666,
+     "0.92": 1.0,
+     "0.9": 1.0
+    },
+    "valor_critico_5pct": -2.101,
+    "tamano_5pct": 0.097,
+    "rho_min_detectable_80": 0.95,
+    "vida_media_trimestres": 13.5,
+    "reps": 300
+   },
+   "q9_gsadf": {
+    "T": 95,
+    "ventana_minima": 18,
+    "valor_critico_5pct": 1.941,
+    "valor_critico_bonferroni_35": 3.029,
+    "potencia_por_rho": {
+     "1.01": 0.06666666666666667,
+     "1.02": 0.10333333333333333,
+     "1.03": 0.13,
+     "1.05": 0.38666666666666666
+    },
+    "potencia_bonferroni_por_rho": {
+     "1.01": 0.0033333333333333335,
+     "1.02": 0.0033333333333333335,
+     "1.03": 0.013333333333333334,
+     "1.05": 0.17333333333333334
+    },
+    "rho_min_detectable_80": NaN,
+    "potencia_bonferroni": NaN,
+    "reps_nulo": 600
+   }
+  },
+  "smoke": false
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Ningún efecto ni asociación real estimados. Tratamientos placebo; solo unidades no tratadas y periodos previos en regulaciones; umbrales RD placebo."
+}

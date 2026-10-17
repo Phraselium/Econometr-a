@@ -1,0 +1,54 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v16-f4-potencia,Q1:RD en umbrales del art. 18 (variable de asignación),placebo (sin efecto real),2019,2024,1220,,,,,,,mde80=None n/d; rechazo=nan
+v16-f4-potencia,"Q1:RD con umbrales PLACEBO (cuantiles lejos del umbral real), local lineal, EE p",placebo (sin efecto real),2016,2023,768,,,,,,,mde80=0.0445 log puntos; rechazo=0.0
+v16-f4-potencia,"Q1:SDID/ASCM (cota: DiD placebo, donantes de otras CCAA), SERPAVI municipal, 1 a",placebo (sin efecto real),2011,2023,9694,,,,,,,mde80=0.071 log puntos; rechazo=0.09
+v16-f4-potencia,"Q1:SDID/ASCM (cota: DiD placebo, donantes de otras CCAA), SERPAVI municipal, 3 a",placebo (sin efecto real),2011,2023,9694,,,,,,,mde80=0.0705 log puntos; rechazo=0.106
+v16-f4-potencia,"Q1:SDID/ASCM (cota: DiD placebo, donantes de otras CCAA), IPVA municipal (contra",placebo (sin efecto real),2011,2023,3614,,,,,,,mde80=0.0318 log puntos; rechazo=0.098
+v16-f4-potencia,"Q1:IPVA provincial, Nuevo contrato, DiD placebo (1 año posterior)",placebo (sin efecto real),2021,2023,99,,,,,,,mde80=0.0253 log puntos; rechazo=0.104
+v16-f4-potencia,"Q1:IPVA provincial, Contrato existente, DiD placebo (1 año posterior)",placebo (sin efecto real),2021,2023,99,,,,,,,mde80=0.0116 log puntos; rechazo=0.114
+v16-f4-potencia,"Q1:Desplazamiento a venta / precio de compra: compraventas (volumen), DiD placeb",placebo (sin efecto real),2007T1,2023T4,2244,,,,,,,mde80=0.1334 log puntos; rechazo=0.068
+v16-f4-potencia,"Q1:Desplazamiento a venta / precio de compra: valor tasado (precio de compra), D",placebo (sin efecto real),2007T1,2023T4,2715,,,,,,,mde80=0.1165 log puntos; rechazo=0.178
+v16-f4-potencia,Q1:Desplazamiento a alquiler de temporada,placebo (sin efecto real),2025,09,0,,,,,,,mde80=None n/d; rechazo=nan
+v16-f4-potencia,Q2:Inside Airbnb (secciones/municipios no sellados): cobertura,placebo (sin efecto real),2025,28,10355,,,,,,,mde80=None n/d; rechazo=nan
+v16-f4-potencia,"Q2:DiD con moratorias: 1 ciudad tratada no sellada (València 2024-05), 1 año pos",placebo (sin efecto real),2011,2023,3614,,,,,,,mde80=0.0952 log puntos; rechazo=0.846
+v16-f4-potencia,Q2:RD espacial en los límites de zonas del PEUAT (Barcelona 2017) / PEUAT de Mad,placebo (sin efecto real),—,—,0,,,,,,,mde80=None n/d; rechazo=nan
+v16-f4-potencia,Q2:Shift-share con demanda turística exógena (cuota provincial de pernoctaciones,placebo (sin efecto real),2002T1,2026T2,4018,,,,,,,mde80=0.0041 log puntos por 1 DT de exposición; rechazo=0.096
+v16-f4-potencia,"Q2:Registro autonómico de Andalucía (RTA, altas acumuladas por año) × SERPAVI mu",placebo (sin efecto real),2015,2024,1900,,,,,,,mde80=0.0143 log puntos por 1 DT; rechazo=0.11
+v16-f4-potencia,Q2:Exposición INE-VUT municipal (2021-2024) × IPVA municipal (otro resultado que,placebo (sin efecto real),2021,2024,1532,,,,,,,mde80=0.0039 log puntos por 1 DT; rechazo=0.052
+v16-f4-potencia,Q3:Alquiler municipal (SERPAVI) con exposición shift-share padrón 2003-2022 (H4 ,placebo (sin efecto real),2011,2022,12908,,,,,,,mde80=0.0083 log puntos por 1 DT; rechazo=0.088
+v16-f4-potencia,"Q3:Demanda de compra, compra: compraventas (volumen), provincial 2007-2022, expo",placebo (sin efecto real),2007,2022,656,,,,,,,mde80=0.0489 log puntos por 1 DT; rechazo=0.102
+v16-f4-potencia,"Q3:Demanda de compra, compra: valor tasado (precio), provincial 2007-2022, expos",placebo (sin efecto real),2007,2022,793,,,,,,,mde80=0.0227 log puntos por 1 DT; rechazo=0.126
+v16-f4-potencia,"Q3:Escala de barrio: Δlog 2021→2024 por sección, covariable placebo con componen",placebo (sin efecto real),2021,2024,8968,,,,,,,mde80=0.0098 log puntos por 1 DT; rechazo=0.052
+v16-f4-potencia,"Q4:Elasticidad con restricciones físicas: Red Natura (único índice disponible), ",placebo (sin efecto real),2015,2024,1095,,,,,,,mde80=0.0245 log puntos por 1 DT; rechazo=0.116
+v16-f4-potencia,Q4:Heterogeneidad por inelasticidad: interacción choque de demanda municipal × í,placebo (sin efecto real),2015,2024,11333,,,,,,,mde80=0.0064 log puntos por 1 DT de la interacción; rechazo=0.116
+v16-f4-potencia,"Q5:Proyección local con sorpresas de Jarociński-Karadi (placebo iid), h = 4",placebo (sin efecto real),1999T1,2025T4,99,,,,,,,mde80=0.0147 log puntos por 1 DT de sorpresa; rechazo=nan
+v16-f4-potencia,"Q5:Proyección local con sorpresas de Jarociński-Karadi (placebo iid), h = 8",placebo (sin efecto real),1999T1,2025T4,95,,,,,,,mde80=0.0277 log puntos por 1 DT de sorpresa; rechazo=nan
+v16-f4-potencia,"Q5:Proyección local con sorpresas de Jarociński-Karadi (placebo iid), h = 4",placebo (sin efecto real),2007T1,2025T4,67,,,,,,,mde80=0.0224 log puntos por 1 DT de sorpresa; rechazo=nan
+v16-f4-potencia,"Q5:Proyección local con sorpresas de Jarociński-Karadi (placebo iid), h = 8",placebo (sin efecto real),2007T1,2025T4,63,,,,,,,mde80=0.0433 log puntos por 1 DT de sorpresa; rechazo=nan
+v16-f4-potencia,"Q5:Proyección local con sorpresas de Jarociński-Karadi (placebo iid), h = 4",placebo (sin efecto real),2007T1,2025T4,67,,,,,,,mde80=0.0808 log puntos por 1 DT de sorpresa; rechazo=nan
+v16-f4-potencia,"Q5:Proyección local con sorpresas de Jarociński-Karadi (placebo iid), h = 8",placebo (sin efecto real),2007T1,2025T4,63,,,,,,,mde80=0.0992 log puntos por 1 DT de sorpresa; rechazo=nan
+v16-f4-potencia,"Q5:Proyección local con sorpresas de Jarociński-Karadi (placebo iid), h = 4",placebo (sin efecto real),2002T1,2025T4,87,,,,,,,mde80=0.0025 log puntos por 1 DT de sorpresa; rechazo=nan
+v16-f4-potencia,"Q5:Proyección local con sorpresas de Jarociński-Karadi (placebo iid), h = 8",placebo (sin efecto real),2002T1,2025T4,83,,,,,,,mde80=0.0059 log puntos por 1 DT de sorpresa; rechazo=nan
+v16-f4-potencia,"Q6:DiD escalonado placebo (cambios de ITP: calendario real de 20 eventos, tratam",placebo (sin efecto real),2007T1,2024T4,2952,,,,,,,mde80=0.1883 log puntos; rechazo=0.15
+v16-f4-potencia,"Q6:DiD escalonado placebo (cambios de ITP: calendario real de 20 eventos, tratam",placebo (sin efecto real),2007T1,2024T4,3571,,,,,,,mde80=0.094 log puntos; rechazo=0.152
+v16-f4-potencia,Q7:RD por edad 35 del bono alquiler joven (RD 42/2022): umbrales PLACEBO 28-31 y,placebo (sin efecto real),2018,2025,7377,,,,,,,mde80=0.132 log puntos; rechazo=0.0
+v16-f4-potencia,"Q7:Avales ICO (2024-05, ≤35 años): incidencia en rentas/compras",placebo (sin efecto real),2024T2+,2024T2+,0,,,,,,,mde80=None n/d; rechazo=nan
+v16-f4-potencia,"Q8:Fin de la golden visa (LO 1/2025, 2025-04-03): compras de extracomunitarios f",placebo (sin efecto real),2016,2025,90,,,,,,,mde80=None n/d; rechazo=nan
+v16-f4-potencia,Q9:CIPS/Pesaran y Westerlund en panel de precio/alquiler (razón de índices) con ,placebo (sin efecto real),2002T1,2026T2,3610,,,,,,,mde80=0.95 ρ mínimo detectable (vida media 13.5 trimestres); rechazo nulo=0.097; rechazo=nan
+v16-f4-potencia,Q9:GSADF por provincia (burbuja explosiva); potencia con episodio de 20 trimestr,placebo (sin efecto real),2002T1,2026T2,3610,,,,,,,"mde80=None ρ explosivo mínimo detectable (por provincia, α=5 %); potencia Bonferroni nan; rechazo=nan"
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 1 (errores no solapados), ρ = 0.9",placebo (sin efecto real),2007T3,2026T2,75,,,,,,,mde80=0.18 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 1 (errores no solapados), ρ = 0.7",placebo (sin efecto real),2007T3,2026T2,75,,,,,,,mde80=0.28 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 4 (errores no solapados), ρ = 0.9",placebo (sin efecto real),2007T3,2026T2,19,,,,,,,mde80=0.46 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 4 (errores no solapados), ρ = 0.7",placebo (sin efecto real),2007T3,2026T2,19,,,,,,,mde80=0.64 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 1 (errores no solapados), ρ = 0.9",placebo (sin efecto real),2014T4,2026T2,46,,,,,,,mde80=0.24 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 1 (errores no solapados), ρ = 0.7",placebo (sin efecto real),2014T4,2026T2,46,,,,,,,mde80=0.42 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 4 (errores no solapados), ρ = 0.9",placebo (sin efecto real),2014T4,2026T2,12,,,,,,,mde80=0.6 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 4 (errores no solapados), ρ = 0.7",placebo (sin efecto real),2014T4,2026T2,12,,,,,,,mde80=0.76 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 1 (errores no solapados), ρ = 0.9",placebo (sin efecto real),2011T4,2026T2,58,,,,,,,mde80=0.18 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 1 (errores no solapados), ρ = 0.7",placebo (sin efecto real),2011T4,2026T2,58,,,,,,,mde80=0.28 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 4 (errores no solapados), ρ = 0.9",placebo (sin efecto real),2011T4,2026T2,15,,,,,,,mde80=0.38 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 4 (errores no solapados), ρ = 0.7",placebo (sin efecto real),2011T4,2026T2,15,,,,,,,mde80=0.58 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 1 (errores no solapados), ρ = 0.9",placebo (sin efecto real),2014T4,2026T2,46,,,,,,,mde80=0.44 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 1 (errores no solapados), ρ = 0.7",placebo (sin efecto real),2014T4,2026T2,46,,,,,,,mde80=0.64 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 4 (errores no solapados), ρ = 0.9",placebo (sin efecto real),2014T4,2026T2,12,,,,,,,mde80=0.42 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan
+v16-f4-potencia,"Q10:DM-HLN frente a AR(4), h = 4 (errores no solapados), ρ = 0.7",placebo (sin efecto real),2014T4,2026T2,12,,,,,,,mde80=0.6 reducción relativa mínima del ECM (detectable al 80 %); rechazo=nan

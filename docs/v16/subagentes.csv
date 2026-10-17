@@ -22,3 +22,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-17,F2,econometrician,f2_contabilidad,131826,src/v16/f2_contabilidad.py;output/v16/f2_contabilidad
 2026-10-17,F1,ingeniero-datos,datos_renta_parque,146666,src/v16/datos/renta_parque.py;data/processed/v16/renta_parque.parquet
 2026-10-17,F1,auditor-datos,auditoria_renta_parque,117132,output/v16/auditoria/renta_parque
+2026-10-17,F4,econometrician,f4_potencia,215590,src/v16/f4_potencia.py;output/v16/potencia

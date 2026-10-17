@@ -1,0 +1,33 @@
+panel,nivel,unidades_antes,unidades_selladas_excluidas,unidades_despues,filas_antes,filas_despues,corte_temporal_v15
+q1_serpavi_mun,municipio,2616,597,1426,28716.0,16522,2024
+q1_adrh_mun,municipio,8124,1626,4864,65723.0,39495,sin restricción
+q1_ipva_mun,municipio,718,137,391,9856.0,5393,sin restricción
+q1_ipva_prov_Nuevo,provincia,48,0,38,192.0,152,sin restricción
+q1_ipva_prov_Contr,provincia,48,0,38,192.0,152,sin restricción
+q1_compraventas_prov,provincia,52,0,41,4056.0,3198,2026T2
+q1_valor_tasado_prov,provincia,43,0,38,4282.0,3799,2026T2
+q2_ia_seccion,seccion,6600,1232,2697,24995.0,10355,sin restricción
+q2_ia_municipio,municipio,502,161,279,1968.0,1094,sin restricción
+q2_ipcalq_prov,provincia,52,0,41,5096.0,4018,2026T2
+q2_rta_andalucia,municipio,580,138,442,39409.0,30210,sin restricción
+q2_ipva_mun_2024,municipio,718,137,391,9856.0,5393,sin restricción
+q3_padron_nacionalidad,municipio,8135,3262,4873,,3731828,2022 (fin del padrón por nacionalidad)
+q3_compraventas_prov,provincia,52,0,41,936.0,738,2024
+q3_valor_tasado_prov,provincia,43,0,38,980.0,869,2024
+q3_serpavi_seccion,seccion,26226,5836,11479,50125.0,21961,2024
+q4_rn2000,municipio,8132,1630,4868,8132.0,4868,sin restricción
+q4_obra_catastro,municipio,7610,1437,4811,106455.0,67287,2025
+q5_p_tasado,nacional,1,0,1,108.0,108,2026T2
+q5_p_tasado,nacional,1,0,1,108.0,108,2026T2
+q5_ipv,nacional,1,0,1,76.0,76,2026T2
+q5_ipv,nacional,1,0,1,76.0,76,2026T2
+q5_compraventas,nacional,1,0,1,76.0,76,2026T2
+q5_compraventas,nacional,1,0,1,76.0,76,2026T2
+q5_ipc_alquiler,nacional,1,0,1,96.0,96,2026T2
+q5_ipc_alquiler,nacional,1,0,1,96.0,96,2026T2
+q6_compraventas_prov,provincia,52,0,41,4056.0,3198,2026T2
+q6_valor_tasado_prov,provincia,43,0,38,4282.0,3799,2026T2
+q7_ecv_micro,persona (ECV),19,8,11,293507.0,293507,"n/a (microdatos, no sellados temporalmente)"
+q8_registradores_extranj_ccaa,ccaa,17,8,9,170.0,90,sin restricción
+q9_valor_tasado_prov,provincia,43,0,38,4282.0,3799,2026T2
+q9_ipc_alquiler_prov,provincia,52,0,41,5096.0,4018,2026T2

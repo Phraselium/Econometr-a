@@ -1,0 +1,14 @@
+nivel,A,B,variante,n_territorios,corr_mediana,corr_p10,corr_p90,dif_media_pp_mediana,dif_media_pp_abs_mediana,terr_con_divergencia,pct_terr_con_divergencia
+ccaa,ipv,reg_pm2,ventana4,19,0.8,0.566,0.883,0.6,1.01,8,42.1
+ccaa,p_tasado,ipv,directa,19,0.862,0.642,0.939,-1.03,1.03,2,10.5
+ccaa,p_tasado,ipv,ventana4,19,0.89,0.694,0.96,-1.05,1.05,6,31.6
+ccaa,p_tasado,reg_pm2,ventana4,19,0.748,0.594,0.864,-0.41,0.47,4,21.1
+nacional,ipv,not_pm2,semestral,1,0.869,0.869,0.869,1.2,1.2,0,0.0
+nacional,ipv,reg_pm2,ventana4,1,0.933,0.933,0.933,0.58,0.58,0,0.0
+nacional,p_tasado,ipv,directa,1,0.941,0.941,0.941,-0.91,0.91,0,0.0
+nacional,p_tasado,ipv,ventana4,1,0.957,0.957,0.957,-1.0,1.0,0,0.0
+nacional,p_tasado,not_pm2,semestral,1,0.795,0.795,0.795,0.24,0.24,0,0.0
+nacional,p_tasado,p_bde,directa,1,1.0,1.0,1.0,-0.0,0.0,0,0.0
+nacional,p_tasado,reg_pm2,ventana4,1,0.885,0.885,0.885,-0.42,0.42,0,0.0
+nacional,reg_pm2,not_pm2,semestral,1,0.751,0.751,0.751,0.67,0.67,0,0.0
+provincia,p_tasado,reg_pm2,ventana4,45,0.658,0.279,0.841,-0.49,0.53,13,28.9

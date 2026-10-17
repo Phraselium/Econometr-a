@@ -1,0 +1,864 @@
+{
+ "rama": "v15/auditoria/precios_compra",
+ "pregunta": "¿Qué medida de precio de compra es fiable como principal en V15 y cuáles solo como robustez? Atípicos, coherencia entre fuentes, sesgo de composición, revisiones y rupturas.",
+ "capa": "C4",
+ "datos": [
+  "MIVAU valor tasado (nacional, CCAA, provincia, municipios >25.000 hab.)",
+  "INE IPV 80270 y 25171",
+  "BdE p_bde (be2507)",
+  "Registradores datos abiertos precio m2 (suma móvil 4T)",
+  "Notariado precio m2 nacional semestral (CGN)",
+  "Anuario ERI 2023-2025 (solo revisiones)",
+  "INE ETDP 6150 (solo volumen/cuota de nueva)"
+ ],
+ "N": {
+  "series_precio": 325,
+  "series_municipales": 309
+ },
+ "metodo": "Auditoría descriptiva determinista (SEED=20261010): tasa interanual, z robusto con mediana y MAD (|z|>5), correlación de tasas, diferencia media, rachas >=8 trimestres con signo opuesto (ambas |tasa|>1 pp) o diferencia >5 pp, acumulado de medias anuales 2015-2025, brecha logarítmica precio medio frente a IPV. Cruces por código INE.",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "atipicos_recuento": [
+   {
+    "fuente": "ipv",
+    "nivel": "ccaa",
+    "series": 19,
+    "series_z_validas": 19,
+    "obs_tasa": 1406,
+    "atipicos": 4,
+    "atipicos_qoq": 4,
+    "series_con_atipicos": 1,
+    "pct_atipicos": 0.28
+   },
+   {
+    "fuente": "ipv",
+    "nivel": "nacional",
+    "series": 1,
+    "series_z_validas": 1,
+    "obs_tasa": 74,
+    "atipicos": 0,
+    "atipicos_qoq": 0,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "ipv_nueva",
+    "nivel": "ccaa",
+    "series": 17,
+    "series_z_validas": 17,
+    "obs_tasa": 1258,
+    "atipicos": 0,
+    "atipicos_qoq": 2,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "ipv_nueva",
+    "nivel": "nacional",
+    "series": 1,
+    "series_z_validas": 1,
+    "obs_tasa": 74,
+    "atipicos": 0,
+    "atipicos_qoq": 0,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "ipv_usada",
+    "nivel": "ccaa",
+    "series": 17,
+    "series_z_validas": 17,
+    "obs_tasa": 1258,
+    "atipicos": 0,
+    "atipicos_qoq": 3,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "ipv_usada",
+    "nivel": "nacional",
+    "series": 1,
+    "series_z_validas": 1,
+    "obs_tasa": 74,
+    "atipicos": 0,
+    "atipicos_qoq": 0,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "not_pm2",
+    "nivel": "nacional",
+    "series": 1,
+    "series_z_validas": 1,
+    "obs_tasa": 36,
+    "atipicos": 0,
+    "atipicos_qoq": 0,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "p_bde",
+    "nivel": "nacional",
+    "series": 1,
+    "series_z_validas": 1,
+    "obs_tasa": 122,
+    "atipicos": 0,
+    "atipicos_qoq": 0,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "p_bde_nueva",
+    "nivel": "nacional",
+    "series": 1,
+    "series_z_validas": 1,
+    "obs_tasa": 50,
+    "atipicos": 0,
+    "atipicos_qoq": 0,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "p_bde_usada",
+    "nivel": "nacional",
+    "series": 1,
+    "series_z_validas": 1,
+    "obs_tasa": 50,
+    "atipicos": 0,
+    "atipicos_qoq": 0,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "p_tasado",
+    "nivel": "ccaa",
+    "series": 19,
+    "series_z_validas": 19,
+    "obs_tasa": 2244,
+    "atipicos": 0,
+    "atipicos_qoq": 1,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "p_tasado",
+    "nivel": "nacional",
+    "series": 1,
+    "series_z_validas": 1,
+    "obs_tasa": 122,
+    "atipicos": 0,
+    "atipicos_qoq": 0,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "p_tasado",
+    "nivel": "provincia",
+    "series": 45,
+    "series_z_validas": 45,
+    "obs_tasa": 5385,
+    "atipicos": 3,
+    "atipicos_qoq": 2,
+    "series_con_atipicos": 2,
+    "pct_atipicos": 0.06
+   },
+   {
+    "fuente": "p_tasado_municipal",
+    "nivel": "municipio",
+    "series": 309,
+    "series_z_validas": 309,
+    "obs_tasa": 23534,
+    "atipicos": 8,
+    "atipicos_qoq": 0,
+    "series_con_atipicos": 7,
+    "pct_atipicos": 0.03
+   },
+   {
+    "fuente": "reg_imp",
+    "nivel": "ccaa",
+    "series": 19,
+    "series_z_validas": 19,
+    "obs_tasa": 1406,
+    "atipicos": 0,
+    "atipicos_qoq": 2,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "reg_imp",
+    "nivel": "nacional",
+    "series": 1,
+    "series_z_validas": 1,
+    "obs_tasa": 74,
+    "atipicos": 0,
+    "atipicos_qoq": 0,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "reg_imp",
+    "nivel": "provincia",
+    "series": 52,
+    "series_z_validas": 52,
+    "obs_tasa": 3848,
+    "atipicos": 7,
+    "atipicos_qoq": 13,
+    "series_con_atipicos": 3,
+    "pct_atipicos": 0.18
+   },
+   {
+    "fuente": "reg_pm2",
+    "nivel": "ccaa",
+    "series": 19,
+    "series_z_validas": 19,
+    "obs_tasa": 1406,
+    "atipicos": 0,
+    "atipicos_qoq": 3,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "reg_pm2",
+    "nivel": "nacional",
+    "series": 1,
+    "series_z_validas": 1,
+    "obs_tasa": 74,
+    "atipicos": 0,
+    "atipicos_qoq": 1,
+    "series_con_atipicos": 0,
+    "pct_atipicos": 0.0
+   },
+   {
+    "fuente": "reg_pm2",
+    "nivel": "provincia",
+    "series": 52,
+    "series_z_validas": 52,
+    "obs_tasa": 3848,
+    "atipicos": 16,
+    "atipicos_qoq": 19,
+    "series_con_atipicos": 4,
+    "pct_atipicos": 0.42
+   }
+  ],
+  "atipicos_top20": [
+   {
+    "fuente": "reg_pm2",
+    "nivel": "provincia",
+    "cod_ine": "05",
+    "periodo": "2014T2",
+    "z_robusto": -7.0,
+    "tasa_pp": null
+   },
+   {
+    "fuente": "reg_pm2",
+    "nivel": "provincia",
+    "cod_ine": "05",
+    "periodo": "2014T1",
+    "z_robusto": -6.85,
+    "tasa_pp": null
+   },
+   {
+    "fuente": "ipv",
+    "nivel": "ccaa",
+    "cod_ine": "11",
+    "periodo": "2013T4",
+    "z_robusto": -6.54,
+    "tasa_pp": -15.66
+   },
+   {
+    "fuente": "ipv",
+    "nivel": "ccaa",
+    "cod_ine": "11",
+    "periodo": "2013T2",
+    "z_robusto": -6.53,
+    "tasa_pp": -15.65
+   },
+   {
+    "fuente": "reg_pm2",
+    "nivel": "provincia",
+    "cod_ine": "16",
+    "periodo": "2014T1",
+    "z_robusto": -6.5,
+    "tasa_pp": null
+   },
+   {
+    "fuente": "reg_pm2",
+    "nivel": "provincia",
+    "cod_ine": "16",
+    "periodo": "2014T3",
+    "z_robusto": -6.48,
+    "tasa_pp": null
+   },
+   {
+    "fuente": "p_tasado_municipal",
+    "nivel": "municipio",
+    "cod_ine": "sin_codigo:valor_tasado_mun_durango",
+    "periodo": "2007T2",
+    "z_robusto": 6.47,
+    "tasa_pp": 59.37
+   },
+   {
+    "fuente": "reg_pm2",
+    "nivel": "provincia",
+    "cod_ine": "16",
+    "periodo": "2025T2",
+    "z_robusto": 6.42,
+    "tasa_pp": null
+   },
+   {
+    "fuente": "p_tasado",
+    "nivel": "provincia",
+    "cod_ine": "27",
+    "periodo": "2006T2",
+    "z_robusto": 6.4,
+    "tasa_pp": 37.61
+   },
+   {
+    "fuente": "p_tasado_municipal",
+    "nivel": "municipio",
+    "cod_ine": "sin_codigo:valor_tasado_mun_mislata",
+    "periodo": "2006T2",
+    "z_robusto": 6.29,
+    "tasa_pp": 88.28
+   },
+   {
+    "fuente": "reg_pm2",
+    "nivel": "provincia",
+    "cod_ine": "05",
+    "periodo": "2014T3",
+    "z_robusto": -5.95,
+    "tasa_pp": null
+   },
+   {
+    "fuente": "ipv",
+    "nivel": "ccaa",
+    "cod_ine": "11",
+    "periodo": "2013T3",
+    "z_robusto": -5.92,
+    "tasa_pp": -14.04
+   },
+   {
+    "fuente": "reg_imp",
+    "nivel": "provincia",
+    "cod_ine": "23",
+    "periodo": "2013T2",
+    "z_robusto": -5.86,
+    "tasa_pp": null
+   },
+   {
+    "fuente": "reg_pm2",
+    "nivel": "provincia",
+    "cod_ine": "16",
+    "periodo": "2014T2",
+    "z_robusto": -5.85,
+    "tasa_pp": null
+   },
+   {
+    "fuente": "p_tasado_municipal",
+    "nivel": "municipio",
+    "cod_ine": "sin_codigo:valor_tasado_mun_ubeda",
+    "periodo": "2006T1",
+    "z_robusto": 5.83,
+    "tasa_pp": 44.23
+   },
+   {
+    "fuente": "ipv",
+    "nivel": "ccaa",
+    "cod_ine": "11",
+    "periodo": "2013T1",
+    "z_robusto": -5.78,
+    "tasa_pp": -13.68
+   },
+   {
+    "fuente": "reg_imp",
+    "nivel": "provincia",
+    "cod_ine": "32",
+    "periodo": "2014T1",
+    "z_robusto": -5.77,
+    "tasa_pp": null
+   },
+   {
+    "fuente": "p_tasado_municipal",
+    "nivel": "municipio",
+    "cod_ine": "sin_codigo:valor_tasado_mun_santiago_de_compostela",
+    "periodo": "2007T4",
+    "z_robusto": 5.75,
+    "tasa_pp": 49.43
+   },
+   {
+    "fuente": "reg_imp",
+    "nivel": "provincia",
+    "cod_ine": "16",
+    "periodo": "2014T1",
+    "z_robusto": -5.63,
+    "tasa_pp": null
+   },
+   {
+    "fuente": "reg_pm2",
+    "nivel": "provincia",
+    "cod_ine": "23",
+    "periodo": "2013T2",
+    "z_robusto": -5.52,
+    "tasa_pp": null
+   }
+  ],
+  "rangos_unidades": {
+   "p_tasado": {
+    "min": 375.8,
+    "max": 4089.6,
+    "fuera_100_20000": 0
+   },
+   "p_bde": {
+    "min": 670.8,
+    "max": 2355.0,
+    "fuera_100_20000": 0
+   },
+   "reg_pm2": {
+    "min": 614.9,
+    "max": 4305.0,
+    "fuera_100_20000": 0
+   },
+   "not_pm2": {
+    "min": 1284.0,
+    "max": 2113.0,
+    "fuera_100_20000": 0
+   },
+   "reg_imp": {
+    "min": 65777.0,
+    "max": 425047.0,
+    "fuera_10000_2000000": 0
+   }
+  },
+  "p_bde_vs_p_tasado": {
+   "n_trimestres_comunes": 126,
+   "primer": "1995T1",
+   "ultimo": "2026T2",
+   "corr_niveles": 1.0,
+   "dif_abs_max_eur_m2": 0.0,
+   "dif_abs_media_eur_m2": 0.0,
+   "n_trimestres_distintos": 0,
+   "corr_tasas_interanuales": 1.0,
+   "dif_media_tasas_pp": -0.0,
+   "misma_serie": true,
+   "comparacion_hechos_vs_raw_tasado_nacional": {
+    "obs_comparadas": 1436,
+    "obs_distintas": 0
+   },
+   "p_bde_nueva_n": 54,
+   "p_bde_usada_n": 54
+  },
+  "coherencia_resumen": {
+   "nacional|p_tasado|ipv|directa": {
+    "nivel": "nacional",
+    "A": "p_tasado",
+    "B": "ipv",
+    "variante": "directa",
+    "n_territorios": 1,
+    "corr_mediana": 0.941,
+    "corr_p10": 0.941,
+    "corr_p90": 0.941,
+    "dif_media_pp_mediana": -0.91,
+    "dif_media_pp_abs_mediana": 0.91,
+    "terr_con_divergencia": 0,
+    "pct_terr_con_divergencia": 0.0
+   },
+   "nacional|p_tasado|reg_pm2|ventana4": {
+    "nivel": "nacional",
+    "A": "p_tasado",
+    "B": "reg_pm2",
+    "variante": "ventana4",
+    "n_territorios": 1,
+    "corr_mediana": 0.885,
+    "corr_p10": 0.885,
+    "corr_p90": 0.885,
+    "dif_media_pp_mediana": -0.42,
+    "dif_media_pp_abs_mediana": 0.42,
+    "terr_con_divergencia": 0,
+    "pct_terr_con_divergencia": 0.0
+   },
+   "nacional|ipv|reg_pm2|ventana4": {
+    "nivel": "nacional",
+    "A": "ipv",
+    "B": "reg_pm2",
+    "variante": "ventana4",
+    "n_territorios": 1,
+    "corr_mediana": 0.933,
+    "corr_p10": 0.933,
+    "corr_p90": 0.933,
+    "dif_media_pp_mediana": 0.58,
+    "dif_media_pp_abs_mediana": 0.58,
+    "terr_con_divergencia": 0,
+    "pct_terr_con_divergencia": 0.0
+   },
+   "nacional|p_tasado|not_pm2|semestral": {
+    "nivel": "nacional",
+    "A": "p_tasado",
+    "B": "not_pm2",
+    "variante": "semestral",
+    "n_territorios": 1,
+    "corr_mediana": 0.795,
+    "corr_p10": 0.795,
+    "corr_p90": 0.795,
+    "dif_media_pp_mediana": 0.24,
+    "dif_media_pp_abs_mediana": 0.24,
+    "terr_con_divergencia": 0,
+    "pct_terr_con_divergencia": 0.0
+   },
+   "nacional|ipv|not_pm2|semestral": {
+    "nivel": "nacional",
+    "A": "ipv",
+    "B": "not_pm2",
+    "variante": "semestral",
+    "n_territorios": 1,
+    "corr_mediana": 0.869,
+    "corr_p10": 0.869,
+    "corr_p90": 0.869,
+    "dif_media_pp_mediana": 1.2,
+    "dif_media_pp_abs_mediana": 1.2,
+    "terr_con_divergencia": 0,
+    "pct_terr_con_divergencia": 0.0
+   },
+   "nacional|reg_pm2|not_pm2|semestral": {
+    "nivel": "nacional",
+    "A": "reg_pm2",
+    "B": "not_pm2",
+    "variante": "semestral",
+    "n_territorios": 1,
+    "corr_mediana": 0.751,
+    "corr_p10": 0.751,
+    "corr_p90": 0.751,
+    "dif_media_pp_mediana": 0.67,
+    "dif_media_pp_abs_mediana": 0.67,
+    "terr_con_divergencia": 0,
+    "pct_terr_con_divergencia": 0.0
+   },
+   "ccaa|p_tasado|ipv|directa": {
+    "nivel": "ccaa",
+    "A": "p_tasado",
+    "B": "ipv",
+    "variante": "directa",
+    "n_territorios": 19,
+    "corr_mediana": 0.862,
+    "corr_p10": 0.642,
+    "corr_p90": 0.939,
+    "dif_media_pp_mediana": -1.03,
+    "dif_media_pp_abs_mediana": 1.03,
+    "terr_con_divergencia": 2,
+    "pct_terr_con_divergencia": 10.5
+   },
+   "ccaa|p_tasado|reg_pm2|ventana4": {
+    "nivel": "ccaa",
+    "A": "p_tasado",
+    "B": "reg_pm2",
+    "variante": "ventana4",
+    "n_territorios": 19,
+    "corr_mediana": 0.748,
+    "corr_p10": 0.594,
+    "corr_p90": 0.864,
+    "dif_media_pp_mediana": -0.41,
+    "dif_media_pp_abs_mediana": 0.47,
+    "terr_con_divergencia": 4,
+    "pct_terr_con_divergencia": 21.1
+   },
+   "ccaa|ipv|reg_pm2|ventana4": {
+    "nivel": "ccaa",
+    "A": "ipv",
+    "B": "reg_pm2",
+    "variante": "ventana4",
+    "n_territorios": 19,
+    "corr_mediana": 0.8,
+    "corr_p10": 0.566,
+    "corr_p90": 0.883,
+    "dif_media_pp_mediana": 0.6,
+    "dif_media_pp_abs_mediana": 1.01,
+    "terr_con_divergencia": 8,
+    "pct_terr_con_divergencia": 42.1
+   },
+   "provincia|p_tasado|reg_pm2|ventana4": {
+    "nivel": "provincia",
+    "A": "p_tasado",
+    "B": "reg_pm2",
+    "variante": "ventana4",
+    "n_territorios": 45,
+    "corr_mediana": 0.658,
+    "corr_p10": 0.279,
+    "corr_p90": 0.841,
+    "dif_media_pp_mediana": -0.49,
+    "dif_media_pp_abs_mediana": 0.53,
+    "terr_con_divergencia": 13,
+    "pct_terr_con_divergencia": 28.9
+   }
+  },
+  "acumulado_2015_2025_nacional": {
+   "ipv": [
+    79.9
+   ],
+   "ipv_nueva": [
+    106.4
+   ],
+   "ipv_usada": [
+    75.8
+   ],
+   "not_pm2": [
+    47.2
+   ],
+   "p_bde": [
+    44.2
+   ],
+   "p_tasado": [
+    44.2
+   ],
+   "reg_pm2": [
+    53.3
+   ]
+  },
+  "composicion_nacional": [
+   {
+    "fuente": "p_tasado",
+    "nivel": "nacional",
+    "cod_ine": "00",
+    "acum_precio_medio_pct": 44.2,
+    "acum_ipv_pct": 79.9,
+    "brecha_log_2025_pp": -22.1
+   },
+   {
+    "fuente": "reg_pm2",
+    "nivel": "nacional",
+    "cod_ine": "00",
+    "acum_precio_medio_pct": 53.3,
+    "acum_ipv_pct": 79.9,
+    "brecha_log_2025_pp": -16.0
+   },
+   {
+    "fuente": "not_pm2",
+    "nivel": "nacional",
+    "cod_ine": "00",
+    "acum_precio_medio_pct": 47.2,
+    "acum_ipv_pct": 79.9,
+    "brecha_log_2025_pp": -20.1
+   }
+  ],
+  "composicion_relacion_cuota_nueva": [
+   {
+    "fuente": "p_tasado",
+    "n_dif": 44,
+    "corr_dif_tasas_vs_cambio_cuota_nueva_4t": 0.112,
+    "corr_brecha_nivel_vs_cuota_nueva": -0.118,
+    "nota_nivel": "tendencial, no inferencial"
+   },
+   {
+    "fuente": "reg_pm2",
+    "n_dif": 44,
+    "corr_dif_tasas_vs_cambio_cuota_nueva_4t": -0.02,
+    "corr_brecha_nivel_vs_cuota_nueva": -0.273,
+    "nota_nivel": "tendencial, no inferencial"
+   }
+  ],
+  "composicion_segmentos_bde_vs_ipv": [
+   {
+    "segmento": "p_bde_nueva",
+    "acum_bde_pct": 42.9,
+    "acum_ipv_pct": 106.4
+   },
+   {
+    "segmento": "p_bde_usada",
+    "acum_bde_pct": 44.4,
+    "acum_ipv_pct": 75.8
+   }
+  ],
+  "composicion_extra": {
+   "ratio_precio_nueva_usada_bde_2015": 1.183,
+   "ratio_precio_nueva_usada_bde_2025": 1.171,
+   "cuota_nueva_etdp_2015_pct": 21.6,
+   "cuota_nueva_etdp_2025_pct": 21.7
+  },
+  "composicion_ccaa": [
+   {
+    "fuente": "p_tasado",
+    "n_ccaa": 19,
+    "brecha_log_media_pp": -24.6,
+    "brecha_log_sd_pp": 11.1,
+    "spearman_brecha_vs_cambio_cuota": 0.33
+   },
+   {
+    "fuente": "reg_pm2",
+    "n_ccaa": 19,
+    "brecha_log_media_pp": -18.6,
+    "brecha_log_sd_pp": 15.1,
+    "spearman_brecha_vs_cambio_cuota": 0.246
+   }
+  ],
+  "revisiones": {
+   "eri_revision_tasa_implicita_vs_publicada": {
+    "n_pares": 134,
+    "media_abs_pp": 0.034,
+    "max_abs_pp": 0.107,
+    "pct_pares_gt1pp": 0.0
+   },
+   "opendata_vs_eri_precio_m2_ccaa": {
+    "n_pares": 51,
+    "dif_rel_media_pct": 0.02,
+    "dif_rel_max_pct": 0.05
+   },
+   "manifiestos_descargas_por_archivo": {
+    "bde_precio_vivienda_libre.csv": 1,
+    "ine_etdp_compraventas.csv": 1,
+    "ine_ipv_25171.csv": 1,
+    "ine_ipv_80270.csv": 1,
+    "mivau_valor_tasado_municipios.csv": 1,
+    "mivau_valor_tasado_nacional_ccaa_prov.csv": 1
+   },
+   "revision_media_abs_tasa_vintages_misma_serie": null,
+   "nota": "Una sola descarga por serie de precios (manifiestos y columna edicion de hechos): no hay vintages comparables de MIVAU, IPV, BdE, Notariado ni Registradores abiertos. Solo el Anuario ERI tiene 3 ediciones (2023-2025) con un único año cada una, y se compara su tasa publicada con la implícita en niveles.",
+   "ediciones_por_variable_hechos": {
+    "compraventas": [
+     1,
+     78
+    ],
+    "ipv": [
+     1,
+     78
+    ],
+    "ipv15": [
+     1,
+     76
+    ],
+    "ipv_nueva": [
+     1,
+     78
+    ],
+    "ipv_usada": [
+     1,
+     78
+    ],
+    "notariado_pm2_sem": [
+     1,
+     38
+    ],
+    "p_bde": [
+     1,
+     126
+    ],
+    "p_tasado": [
+     1,
+     126
+    ],
+    "registr_pm2_4tm": [
+     1,
+     78
+    ]
+   }
+  },
+  "rupturas": {
+   "ipv_80270_vs_25171": [
+    {
+     "serie": "ipv",
+     "n_territorios": 20,
+     "corr_tasas_mediana": 1.0,
+     "dif_max_tasa_pp_mediana": 0.002,
+     "cv_cociente_niveles_mediana": 0.0
+    },
+    {
+     "serie": "ipv_nueva",
+     "n_territorios": 18,
+     "corr_tasas_mediana": 1.0,
+     "dif_max_tasa_pp_mediana": 0.002,
+     "cv_cociente_niveles_mediana": 0.0
+    },
+    {
+     "serie": "ipv_usada",
+     "n_territorios": 18,
+     "corr_tasas_mediana": 1.0,
+     "dif_max_tasa_pp_mediana": 0.002,
+     "cv_cociente_niveles_mediana": 0.0
+    }
+   ],
+   "ipv_tasa_publicada_vs_calculada_nacional": {
+    "n": 74,
+    "dif_abs_max_pp": 0.05,
+    "dif_abs_media_pp": 0.0247
+   },
+   "tasado_municipal": {
+    "n_series": 309,
+    "n_con_inicio_2005T1": 283,
+    "n_con_inicio_2020T1": 22,
+    "municipios_por_trimestre": {
+     "2005T1": 283,
+     "2010T1": 284,
+     "2015T1": 280,
+     "2019T4": 284,
+     "2020T1": 306,
+     "2025T4": 306
+    },
+    "tamano_umbral": "municipios >25.000 hab. (tabla 35103500); entrada de nuevos municipios en 2020T1",
+    "dif_mediana_tasa_todos_vs_balanceado_pp_desde_2020": {
+     "media_abs": 0.09,
+     "max_abs": 0.254
+    },
+    "corr_tasa_media_municipios_balanceados_vs_nacional": 0.954
+   },
+   "tasado_provincial": {
+    "n_provincias_con_codigo": 45,
+    "primer_trimestre_min": "1995T1",
+    "primer_trimestre_max": "2004T1"
+   },
+   "registradores_ventana": {
+    "etiquetas_ventana_inconsistentes_con_periodo": 0,
+    "n_periodos": 78
+   },
+   "registradores_retardo_vs_tasado_nacional_tasas": {
+    "corr_L0": 0.864,
+    "retardo_optimo_trim": 1,
+    "corr_optima": 0.889
+   }
+  },
+  "rupturas_saltos_nacional": [
+   {
+    "fuente": "p_tasado",
+    "z_max_cambio_tasa": -3.2,
+    "periodo": "1997T4",
+    "n_gt5": 0
+   },
+   {
+    "fuente": "ipv",
+    "z_max_cambio_tasa": 4.2,
+    "periodo": "2014T1",
+    "n_gt5": 0
+   },
+   {
+    "fuente": "p_bde",
+    "z_max_cambio_tasa": -3.2,
+    "periodo": "1997T4",
+    "n_gt5": 0
+   },
+   {
+    "fuente": "reg_pm2",
+    "z_max_cambio_tasa": 2.5,
+    "periodo": "omitido",
+    "n_gt5": 0
+   },
+   {
+    "fuente": "not_pm2",
+    "z_max_cambio_tasa": 3.1,
+    "periodo": "omitido",
+    "n_gt5": 0
+   }
+  ],
+  "codigos_sin_mapear": {
+   "p_tasado": [
+    "provincia:Ceuta y Melilla"
+   ]
+  },
+  "n_rachas_divergencia_total": 36
+ },
+ "fuera_muestra": null,
+ "notas": [
+  "Auditoría C4: sin efectos ni regresiones. Sin series por periodo de Notariado, Registradores ni ERI en output.",
+  "Tasas de Registradores: suma móvil de 4 trimestres (suaviza y retrasa); se comparan en variante ventana4.",
+  "Notariado: precio m2 nacional semestral; sin serie territorial de precio por m2 en el repositorio.",
+  "Municipios MIVAU sin código INE en el raw: atípicos y cobertura se reportan por nombre de serie, sin cruces."
+ ]
+}

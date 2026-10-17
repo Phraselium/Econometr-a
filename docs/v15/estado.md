@@ -37,3 +37,15 @@ Plan: docs/v15/plan.md (íntegro). Versión pública vigente: 1.0. V15 solo aña
 - Fase 1: inventario (inventariador), calidad (auditor-datos por grupos) y potencia por pregunta candidata.
 
 <!-- las secciones siguientes las mantiene src/v15/registro_subagentes.py -->
+
+## Subagentes y tokens
+
+Generada por src/v15/registro_subagentes.py (fuente: docs/v15/subagentes.csv). Tokens aproximados según el informe de cada subagente.
+
+| Fecha | Rol | Tarea | Tokens | Ficheros |
+|---|---|---|---|---|
+| 2026-10-17 | auditor-datos | F1.2 precios de compra | 103.963 | src/v15/auditoria/precios_compra.py; output/v15/auditoria/precios_compra/ |
+
+Total: 103.963 tokens · auditor-datos: 103.963
+
+<!-- fin subagentes -->

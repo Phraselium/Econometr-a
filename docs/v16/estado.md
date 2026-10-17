@@ -34,8 +34,23 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
 - **F0.4 · Lo ya visto.** docs/v16/lo_ya_visto.md (107 filas de cifras_clave, auditorías de V15 y pre-registro de V15), generado por src/v16/f0_lo_ya_visto.py.
 - **Duda para el autor:** la independencia de dh_2125 (ECP y EPA), en tareas_autor §2.
 
-## Subagentes y tokens
-- Fase 0: ninguno (0 tokens).
+- Fase 0 sin subagentes (0 tokens).
 
 ## Siguiente
 - Fase 1: adquisición. Lo que requiera al autor va primero a tareas_autor. Después vienen la base de intervenciones, el registro de licencias, la normalización, la auditoría y el inventario.
+
+## Subagentes y tokens
+
+Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). Tokens aproximados según el informe de cada subagente. Tope por fase: 6.000.000 (parada D).
+
+| Fecha | Fase | Rol | Tarea | Tokens | Ficheros |
+|---|---|---|---|---|---|
+| 2026-10-17 | F1 | adquisidor-datos | oferta_suelo | 121.582 | data/raw/v16/oferta_suelo;docs/v16/fuentes/oferta_suelo.md |
+
+| Fase | Tokens de subagentes |
+|---|---|
+| F1 | 121.582 |
+
+Total V16: 121.582 tokens
+
+<!-- fin subagentes -->

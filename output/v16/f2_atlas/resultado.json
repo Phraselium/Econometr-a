@@ -1,0 +1,35 @@
+{
+ "rama": "f2_atlas",
+ "pregunta": "¿Cómo se distribuyen territorialmente renta, alquiler, precio, esfuerzo, turismo, población extranjera, parque, lanzamientos e intervenciones, con qué incertidumbre y dónde no se puede publicar?",
+ "capa": "C4",
+ "datos": "INE ADRH, MIVAU SERPAVI y valor tasado, INE VTE, Inside Airbnb, padrón y EMCR, Censo 2021, CGPJ (agregados), ECV (f2_esfuerzo), intervenciones F1",
+ "N": 1586227,
+ "metodo": "Inventario descriptivo en formato largo; IC normal aproximado (alquiler), propagado (esfuerzo) y bootstrap (ECV); supresión base < 10 o CV > 30 %; exclusión de unidades selladas V16",
+ "estimacion": {
+  "filas": 1586227,
+  "indicadores": 32,
+  "suprimidas": 71717
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "unidades_selladas_en_salida": 0,
+  "selladas_por_nivel": {
+   "provincia": 11,
+   "municipio": 3280,
+   "distrito": 4361,
+   "seccion": 19522,
+   "partido_judicial": 97
+  },
+  "smoke": false,
+  "fdr": "no aplica (sin contrastes)",
+  "auf": "sin correspondencia en la base"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Capa C4. Sin lenguaje causal. Unidades selladas en blanco por validación sellada (K8). No sustituye a las cifras de cifras_clave."
+}

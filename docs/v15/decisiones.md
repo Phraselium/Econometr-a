@@ -13,3 +13,17 @@ Se usan los alias del plan: haiku para el inventariador; sonnet para auditor-dat
 ## G3. Verificación de referencias sin red (B3)
 - Crossref se consulta una vez por DOI y la respuesta reducida se guarda en docs/v15/literatura/crossref_cache.json, versionada con la fecha de consulta. Así `make v15_f2` y los tests funcionan sin red.
 - El cuartil sale solo de docs/v15/scimago_cuartiles.csv, versionado con la fecha de consulta. Una revista que no esté ahí queda «cuartil no verificado». Nunca se supone un cuartil.
+
+## G4. Metadatos de la base 1.0 con fallos detectados en la fase 1 (no cambian ninguna cifra de cifras_clave)
+Las auditorías de la fase 1 han encontrado tres fallos de metadatos en la base pública 1.0. Ninguno cambia una cifra de output/v5/cifras_clave.csv: lo he comprobado buscando cada variable en cifras_clave y en los scripts que las generan. Sí afectan a quien use la base descargable.
+- **`obra_nueva_neta_catastro`: periodo desplazado un año.** El fichero de origen t es el stock a 31-12-(t−1); comprobado en data/raw/catastro_urbana_municipios.csv.gz, columna `fecha`. La diferencia etiquetada t es, por tanto, la obra neta del año t−1. V12-B4 ya usaba la convención correcta (`anio_obra`), así que sus cifras no cambian. **V15 usa periodo − 1** en todo cruce por año.
+- **`ipc_alquiler_indice`: base mal rotulada.** Se rotula «2021=100», pero su base efectiva es 2025=100 (auditoría de alquiler). Las tasas y los logaritmos en diferencias no cambian. V15 no usa niveles de esta serie entre fuentes.
+- **`permisos`: unidad y fuente mal declaradas.** Es un índice de Eurostat, no visados del MIVAU (auditoría de oferta y parque). V15 usa `visados`/`iniciadas` para el MIVAU.
+
+Corregir la base es corregir la 1.0. Según la regla del plan, eso va a ERRATA en una versión posterior y queda **pendiente del autor** (tareas_autor.md). No es condición de parada, porque no cambia ninguna cifra publicada de cifras_clave. Lo dejo escrito por si el autor entiende que la base descargable cuenta como cifra publicada.
+
+## G5. Potencia: método (fase 1.3)
+- **Método.** El efecto mínimo detectable se mide por aleatorización placebo (src/v15/f1_potencia.py, 500 réplicas, SEED=20261010). El tratamiento o la exposición placebo se genera al azar e independiente del resultado, así que no se estima ningún efecto.
+- **P6.** Usa solo trimestres anteriores a la primera zona tensionada (2024T1), con el mismo número de periodos posteriores que tendrá el diseño.
+- **Errores agrupados.** La tasa de rechazo placebo con errores agrupados indica si los clusters bastan. Con 4 provincias (Cataluña) el rechazo es 0,18, frente al 0,05 nominal. Por eso en P6 se agrupa por municipio y, si hay pocos clusters, se usa bootstrap salvaje.
+- **Medidas de alquiler.** SERPAVI es la medida de alquiler en los paneles de sección y municipio (stock de contratos declarados). Incasòl es la medida de contratos nuevos en Cataluña (renta media ponderada por contratos de todos los tramos, que no depende del cambio de tramos de 2021).

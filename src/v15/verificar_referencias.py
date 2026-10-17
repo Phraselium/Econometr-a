@@ -126,7 +126,7 @@ def estado(cab: str, cr: dict | None, sj: list[dict]) -> str:
     m = re.search(r"\((\d{4})", cab)
     if m and cr.get("anio") and abs(int(m.group(1)) - int(cr["anio"])) > 1:
         problemas.append(f"año ({m.group(1)} frente a {cr['anio']})")
-    if cr.get("primer_autor") and _norm(cr["primer_autor"]).split()[-1] not in _norm(cab.split("(")[0]):
+    if cr.get("primer_autor") and re.sub(r"[^a-z]", "", _norm(cr["primer_autor"]).split()[-1]) not in re.sub(r"[^a-z]", "", _norm(cab.split("(")[0])):
         problemas.append(f"primer autor ({cr['primer_autor']})")
     if problemas:
         return "DISCREPANTE (" + ", ".join(problemas) + ")"

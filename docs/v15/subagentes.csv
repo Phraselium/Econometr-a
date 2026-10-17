@@ -6,3 +6,4 @@ fecha,rol,tarea,tokens,ficheros
 2026-10-17,lector-literatura,F2 P4 inmigración,85881,docs/v15/literatura/P4_inmigracion.md
 2026-10-17,auditor-datos,F1.2 demografía y hogares (incl. reparto alternativo B1),244726,src/v15/auditoria/demografia_hogares.py; output/v15/auditoria/demografia_hogares/
 2026-10-17,lector-literatura,F2 P5 pisos turísticos,145840,docs/v15/literatura/P5_pisos_turisticos.md
+2026-10-17,lector-literatura,F2 P6 topes y zonas tensionadas,198830,docs/v15/literatura/P6_topes_alquiler.md

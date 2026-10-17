@@ -31,12 +31,12 @@ Correcciones al encargo: (a) González y Ortega (2013) se publicó en el **Journ
 - Validez externa para España: es el antecedente directo del diseño por barrio de València. (inferencia mía) Predice que el coeficiente por barrio puede tener signo distinto del de la ciudad; lo confirman Accetturo et al. para Italia. Discrepancias: la escala municipal o provincial (Saiz 2007, González y Ortega) da signo positivo; la de barrio, el contrario o menor. Mezclar escalas en un mismo instrumento sería un error.
 - Estado: VERIFICADA (Crossref; cuartil no verificado)
 
-### Ottaviano, G. I. P. y Peri, G. (2007/2012). The effects of immigration on US wages and rents: a general equilibrium approach
+### Ottaviano, G. I. P. y Peri, G. (2012; documento de trabajo de 2007). The effects of immigration on US wages and rents: a general equilibrium approach
 - DOI: 10.4337/9780857934581.00010 (capítulo de 2012 visto en Crossref; el documento de trabajo CReAM DP 13/07 / CEPR DP6551 de 2007, sin DOI visto) · Revista: capítulo en «Migration Impact Assessment» (Edward Elgar, 2012); CReAM DP 13/07
 - Leído: resumen (extracto de búsqueda de UCL Discovery, IPUMS y CEPR; la página de UCL devolvió 403 al abrirla)
 - Diseño e identificación: correlaciones entre estados de EE. UU. y estimaciones IV de flujos de inmigración con salarios medios de nativos y alquileres; después, un modelo de equilibrio general con tres grupos de educación calibrado para 1990-2005. Resultado principal: la inmigración se asocia con salarios y alquileres medios de nativos más altos; las ganancias se concentran en nativos muy educados; en los poco educados el efecto salarial es pequeño y negativo y el de los alquileres, pequeño y positivo. El resumen disponible no da magnitudes.
 - Validez externa para España: (inferencia mía) aporta la vía de equilibrio general (complementariedad productiva más competencia por vivienda), no una elasticidad; su utilidad es para decidir qué grupo de renta o educación de un barrio debería mostrar el efecto. No he encontrado una versión revisada por pares específica de vivienda; no se afirma que exista. Discrepancias: ninguna directa; es compatible con el signo positivo de Saiz.
-- Estado: DISCREPANTE (año (2007 frente a 2012))
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Accetturo, A., Manaresi, F., Mocetti, S. y Olivieri, E. (2014). Don't stand so close to me: The urban impact of immigration
 - DOI: 10.1016/j.regsciurbeco.2014.01.001 (visto en Crossref) · Revista: Regional Science and Urban Economics, 45, 45-56 (volumen y páginas según RePEc); versión previa en Banco de Italia, Temi di discussione n.º 866 (2012), SSRN 10.2139/ssrn.2057974

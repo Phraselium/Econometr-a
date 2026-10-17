@@ -4,13 +4,12 @@
 
 Un registro por hallazgo de las versiones vigentes (v5-V8, con v4 donde sigue en cifras_clave): cifras de `output/v5/cifras_clave.csv`, fichas del verificador, conclusiones del historial e hipótesis retiradas. Las superadas y retiradas están al final y **no se citan**. La versión legible por máquina es [hallazgos.json](hallazgos.json). Las capas se leen según [metodologia/capas.md](../metodologia/capas.md): causalidad solo en C3 y C3s.
 
-Vigentes por versión: v4: 7; v5: 410; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v10: 28; v12: 60; v9: 69; v1: 8; v2: 7; v3: 3. Total vigentes: 1312.
+Vigentes por versión: v4: 6; v5: 402; v5.1: 39; v6: 146; v6.1: 46; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v10: 28; v12: 60; v9: 69; v1: 8; v2: 7; v3: 3. Total vigentes: 1301.
 
 ## Versión v4
 
 | id | enunciado | cifra | capa | periodo | origen |
 |---|---|---|---|---|---|
-| `compradores_extranjeros` | Compraventas de vivienda con comprador extranjero (residente o no) | 16,89 % (16,89 a 18,82) | C4 | 2025 | [hechos.json](../output/v4/M4/hechos.json) |
 | `compradores_no_residentes` | Compraventas con comprador extranjero no residente | 6,83 % | C4 | 2025 | [hechos.json](../output/v4/M4/hechos.json) |
 | `dh_2125` | Aumento del número de hogares | 997.586 hogares (981.823 a 1.013.350) | C1 | 2021-2025 | [hechos.json](../output/v4/M2/hechos.json) |
 | `latente_convivencia` | Demanda latente de jóvenes por convivencia con los padres (frente a 2008) | 188.000 a 506.000 hogares | C2 | 2008-2025 | [hechos.json](../output/v4/M2/hechos.json) |
@@ -37,13 +36,9 @@ Vigentes por versión: v4: 7; v5: 410; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `A23-A8` | Subida adicional del stock si todo contrato se actualizase al HICP (sin tope) | 7,2 % | C4 | 2022-2024 | [hechos.json](../output/v5/A23/hechos.json) |
 | `A23-A9` | Contratos nuevos Cataluña 2021-2024: IPVA nuevo e Incasòl | 16,9 % (16,6 a 17,2) | C1 | 2021-2024 | [hechos.json](../output/v5/A23/hechos.json) |
 | `A23-P1` | Precio de compra, variación acumulada 2015-2025, INE IPV | 79,9 % | C4 | 2015-2025 (media anual) | [hechos.json](../output/v5/A23/hechos.json) |
-| `A23-P10` | Factor común de las 4 fuentes de precio: varianza explicada por el 1.er componente | 89,2 % | C4 | 2016-2025 (dln anual) | [hechos.json](../output/v5/A23/hechos.json) |
-| `A23-P2` | Precio de compra, núcleo MIVAU/Notariado/Registradores 2015-2025 | 47,2 % (44,2 a 56,1) | C1 | 2015-2025 (media anual) | [hechos.json](../output/v5/A23/hechos.json) |
 | `A23-P3` | Residuo no identificado del puente INE IPV -> núcleo (sin descomponer; candidatos: método, calidad, tamaño, cobertura) | -30,9 pp | C4 | 2015-2025 | [hechos.json](../output/v5/A23/hechos.json) |
 | `A23-P4` | Diferencia contable del IPV con pesos CCAA comunes | 0,6 pp | C4 | 2015-2025 | [hechos.json](../output/v5/A23/hechos.json) |
-| `A23-P5` | Diferencia contable por composición nueva/usada en la media de pm2 | 0 pp | C4 | 2015-2025 | [hechos.json](../output/v5/A23/hechos.json) |
 | `A23-P6` | Precio por m2 Registradores nacional 2025 | 2.284 EUR/m2 | C4 | 2025 | [hechos.json](../output/v5/A23/hechos.json) |
-| `A23-P7` | Precio por m2 Notariado 2025 | 1.949 EUR/m2 | C4 | 2025 | [hechos.json](../output/v5/A23/hechos.json) |
 | `A23-P8` | Registradores con pesos provinciales de importe 2015 (52 provincias) | 66,8 % | C4 | 2015-2025 | [hechos.json](../output/v5/A23/hechos.json) |
 | `A23-P9` | Registradores con pesos CCAA de importe 2015 | 63,8 % | C4 | 2015-2025 | [hechos.json](../output/v5/A23/hechos.json) |
 | `A4-001` | Rango oficial derivado de coste de construcción (MBC 1993 actualizado) | 677 EUR/m2 construido (422 a 932) | C4 | 2025T3-2026T2 | [hechos.json](../output/v5/A4/hechos.json) |
@@ -146,10 +141,6 @@ Vigentes por versión: v4: 7; v5: 410; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `CA-CT-contado-cota` | Cota inferior del contado si todas las hipotecas fueran de compra (phi = 1) | 29,95 % de compraventas | C4 | 2025 | [hechos.json](../output/v5/CA/hechos.json) |
 | `CA-CT-phi-critico` | Fracción de hipotecas dedicadas a compra por debajo de la cual el contado supera el 50 % | 71,38 % de las hipotecas | C4 | 2025 | [hechos.json](../output/v5/CA/hechos.json) |
 | `CA-CT-ratio-ine` | Hipotecas sobre vivienda por 100 compraventas de vivienda (INE) | 70,05 hipotecas por 100 compraventas (63,89 a 159,8) | C4 | 2025 | [hechos.json](../output/v5/CA/hechos.json) |
-| `CA-CT-ratio-triang-2022` | Hipotecas por 100 compraventas: INE 71.4 frente a Registradores 71.7 | 71,37 hipotecas por 100 compraventas | C4 | 2022 | [hechos.json](../output/v5/CA/hechos.json) |
-| `CA-CT-ratio-triang-2023` | Hipotecas por 100 compraventas: INE 65.3 frente a Registradores 65.8 | 65,27 hipotecas por 100 compraventas | C4 | 2023 | [hechos.json](../output/v5/CA/hechos.json) |
-| `CA-CT-ratio-triang-2024` | Hipotecas por 100 compraventas: INE 66.4 frente a Registradores 68.4 | 66,45 hipotecas por 100 compraventas | C4 | 2024 | [hechos.json](../output/v5/CA/hechos.json) |
-| `CA-CT-ratio-triang-2025` | Hipotecas por 100 compraventas: INE 70.0 frente a Registradores 70.7 | 70,05 hipotecas por 100 compraventas | C4 | 2025 | [hechos.json](../output/v5/CA/hechos.json) |
 | `CA-EU-alq_real-crecimiento` | Alquiler real (IPCA rúbrica CP041 deflactado, 2015=100) · crecimiento: España | -10,3 % acumulado desde 2015 | C4 | 2025 | [hechos.json](../output/v5/CA/hechos.json) |
 | `CA-EU-alquiler_mercado-cambio_desde_2015` | Alquiler a precio de mercado (ilc_lvho02) · cambio_desde_2015: España | 4,7 cambio desde 2015 | C4 | 2025 | [hechos.json](../output/v5/CA/hechos.json) |
 | `CA-EU-alquiler_mercado-nivel` | Alquiler a precio de mercado (ilc_lvho02) · nivel: España | 17,4 nivel % población | C4 | 2025 | [hechos.json](../output/v5/CA/hechos.json) |
@@ -678,8 +669,6 @@ Vigentes por versión: v4: 7; v5: 410; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `K3-INI-A-ini_l2` | Iniciadas ini_l2 sobre Δln alquiler (EF) | -0,0013 coef. (-0,004 a 0,0014) | C4 | 2016-2023 | [hechos.json](../output/v6_1/K3/hechos.json) |
 | `K3-INI-B-dlna_l1` | Iniciadas_t sobre dlna_l1 (EF) | 0,028 coef. (-14,43 a 14,48) | C4 | 2016-2023 | [hechos.json](../output/v6_1/K3/hechos.json) |
 | `K3-INI-B-dlna_l2` | Iniciadas_t sobre dlna_l2 (EF) | 2,92 coef. (-8,93 a 14,78) | C4 | 2016-2023 | [hechos.json](../output/v6_1/K3/hechos.json) |
-| `K3-RATIO-2015` | Ratio precio/alquiler, medida v6 (tasado/stock); min-max con las demás medidas de precio provinciales | 20,33 años de alquiler (18,93 a 20,33) | C4 | 2015 | [hechos.json](../output/v6_1/K3/hechos.json) |
-| `K3-RATIO-2023` | Ratio precio/alquiler, medida v6 (tasado/stock); min-max con las demás medidas de precio provinciales | 17,12 años de alquiler (17,12 a 17,73) | C4 | 2023 | [hechos.json](../output/v6_1/K3/hechos.json) |
 
 ## Versión v6.2
 
@@ -1409,9 +1398,18 @@ Cada fila indica por qué ya no vale o no se publica y, si existe, la cifra que 
 
 | id | estado | enunciado | sustituida por / motivo |
 |---|---|---|---|
+| `compradores_extranjeros` | no publicada (1.0) | Compraventas de vivienda con comprador extranjero (residente o no) | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
 | `deficit_2124_c1` | superada | Déficit acumulado: aumento de hogares menos viviendas terminadas, sin bajas | L3-DEF-2124-SINBAJAS superada en v6.2: rango C1 con una sola corrección de la EPA; pasa a cota C2 con 8 variantes |
 | `deficit_2124_c2` | superada | Déficit acumulado con bajas del parque supuestas del 0,1-0,2 % anual (cota) | L3-DEF-2124-BAJAST1 superada: bajas SUPUESTAS del 0,1-0,2 % anual (v4) sin respaldo observado; máximo 902.808 |
+| `A23-P10` | no publicada (1.0) | Factor común de las 4 fuentes de precio: varianza explicada por el 1.er componente | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
+| `A23-P2` | no publicada (1.0) | Precio de compra, núcleo MIVAU/Notariado/Registradores 2015-2025 | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
+| `A23-P5` | no publicada (1.0) | Diferencia contable por composición nueva/usada en la media de pm2 | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
+| `A23-P7` | no publicada (1.0) | Precio por m2 Notariado 2025 | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
 | `B1-H1` | superada | Necesidad total de vivienda por año (A+R+V+F-M-K), suma de 52 provincias | T3-H5b superada en v5.1: necesidad de v5 (B1); la vigente es la recalculada en T3 |
+| `CA-CT-ratio-triang-2022` | no publicada (1.0) | Hipotecas por 100 compraventas: INE 71.4 frente a Registradores 71.7 | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
+| `CA-CT-ratio-triang-2023` | no publicada (1.0) | Hipotecas por 100 compraventas: INE 65.3 frente a Registradores 65.8 | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
+| `CA-CT-ratio-triang-2024` | no publicada (1.0) | Hipotecas por 100 compraventas: INE 66.4 frente a Registradores 68.4 | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
+| `CA-CT-ratio-triang-2025` | no publicada (1.0) | Hipotecas por 100 compraventas: INE 70.0 frente a Registradores 70.7 | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
 | `CB-C6-01` | no publicada (1.0) | Declarantes IRPF con ingresos de capital inmobiliario | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
 | `CB-C6-02` | no publicada (1.0) | Declarantes IRPF con reduccion por arrendamiento de vivienda (art. 23.2 LIRPF) | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
 | `CB-C6-03` | no publicada (1.0) | Viviendas equivalentes arrendadas por personas fisicas (habitual y otras) | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
@@ -1427,6 +1425,8 @@ Cada fila indica por qué ya no vale o no se publica y, si existe, la cifra que 
 | `HIST-013` | superada | Empleo · Valor tasado |  |
 | `HIST-015` | superada | Renta (PIB por habitante) · Alquiler; valor tasado |  |
 | `HIST-018` | superada | Iniciadas libres · Alquiler SERPAVI (stock); volumen |  |
+| `K3-RATIO-2015` | no publicada (1.0) | Ratio precio/alquiler, medida v6 (tasado/stock); min-max con las demás medidas de precio provinciales | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
+| `K3-RATIO-2023` | no publicada (1.0) | Ratio precio/alquiler, medida v6 (tasado/stock); min-max con las demás medidas de precio provinciales | no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios. |
 | `L3-DEF-2124-CONBAJAS` | superada | Déficit acumulado 2021-2024 con bajas supuestas 0,1-0,2 % anual (cota) | L3-DEF-2124-BAJAST1 superada en v7.2: mismas variantes L3 con bajas SUPUESTAS del 0,1-0,2 % anual; máximo 924.658 |
 | `HIST-030` | superada | Déficit 2021-2024 sin bajas · Viviendas (hogares − terminadas) |  |
 | `V7-R6-a_construccion-esfuerzo10a` | superada | Variacion del esfuerzo de compra a 10 anos si se aplicase a_construccion (mediana entre CCAA, rejilla) | V71-S3-R6-a_construccion-compra-precio10a superada en v7.2: dosis de construcción adicional nula en 14 CCAA; reestimada con dosis no nula |
@@ -1447,3 +1447,7 @@ Cada fila indica por qué ya no vale o no se publica y, si existe, la cifra que 
 | `HIST-026` | superada | Topes de renta · Renta y nº de contratos nuevos (fianzas) |  |
 | `HIST-028` | superada | Déficit acumulado · Viviendas (hogares − terminadas) |  |
 | `HIST-067` | superada | Grandes tenedores · Cuota de viviendas · [V12-B5-pct_mas10; V12-B5-pct_PJ] · Catastro, titularidad · C4 · **C… |  |
+
+---
+
+*Atribución (Open Database License).* Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. Las cifras construidas con esos datos se publican bajo la misma licencia.

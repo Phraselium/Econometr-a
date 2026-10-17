@@ -30,7 +30,13 @@ find data/sealed -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum
 2. Lea también:
    - docs/v14/escenarios.md: qué cambia con cada valor (ids, páginas, tamaño del paquete);
    - docs/v14/cifras_terceros.md: qué cifras dependen de cada fuente.
-3. Edite proyecto.json → `terceros_1_0`, con un valor por fuente: `"agregados"`, `"excluir"` o `"redistribuir"`. Hoy vale registradores = agregados, notariado = agregados, aeat = excluir.
+3. proyecto.json → `terceros_1_0` tiene un valor por fuente: `"agregados"`, `"excluir"` o `"redistribuir"`. Desde V14.3 (decisión del autor) vale:
+   - registradores_odbl = agregados, con la ODbL 1.0 y su aviso para lo derivado (LICENSE, punto 4);
+   - registradores_eri = excluir;
+   - notariado = excluir: envíe docs/v14/publicacion_1_0/solicitud_notariado.md y, si el CGN autoriza, cámbielo a agregados;
+   - aeat = excluir.
+
+   Origen de cada cifra de Registradores: docs/v14/registradores_origen.md.
 4. Si elige «redistribuir» para la AEAT, haga también lo que dice el apartado D4 de «Pendientes», al final.
 5. Si decide pedir autorización escrita a CORPME (Anuario ERI) o al CGN, hágalo antes de C. Anote la respuesta en docs/v14/licencias.md.
 

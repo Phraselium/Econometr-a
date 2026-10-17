@@ -748,7 +748,7 @@ document.getElementById("buscarV").addEventListener("input", e => { const q = e.
 def ctx(titulo: str, actual: str, raiz: str = "") -> dict:
     version = json.loads((RAIZ / "consulta" / "version.json").read_text(encoding="utf-8"))
     return {"titulo": titulo, "actual": actual, "raiz": raiz, "paginas": PAGINAS, "version": version, "repo": REPO,
-            "leaflet": actual == "mapas.html"}
+            "leaflet": actual == "mapas.html", "aviso_odbl": T10.nota_odbl()}   # V14.3: atribución de la ODbL (Registradores)
 
 
 def construir() -> dict:

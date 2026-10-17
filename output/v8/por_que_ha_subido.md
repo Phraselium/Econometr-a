@@ -271,3 +271,7 @@ V12 no estima modelos: describe de dónde viene la población, quién es propiet
 - **Población.** En 2022-2024 el crecimiento (1.641.570 personas) procede del saldo con el extranjero (1.995.569 personas); el saldo vegetativo es negativo (-362.896 personas). <!-- check:cifra-libre (años de los periodos) -->
 - **Hogares frente a oferta (2021-2024; provincias con Catastro estatal y MIVAU, sin País Vasco, Navarra, Ceuta ni Melilla).** Hogares nuevos: 934.562 hogares; obra nueva neta en el Catastro: 355.508 viviendas; terminadas según el MIVAU: 346.403 viviendas. Es una relación contable, no una medida de necesidad.
 - **Grandes titulares.** 4,2 % de las viviendas son de titulares con más de diez; la afirmación de que «son los responsables de la subida» sigue sin poder contrastarse (verificador, V12-V02). <!-- check:cifra-libre (identificador de la ficha) -->
+
+---
+
+*Atribución (Open Database License).* Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. Las cifras construidas con esos datos se publican bajo la misma licencia.

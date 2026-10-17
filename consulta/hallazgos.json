@@ -7,6 +7,7 @@
   "retirada",
   "no publicada (1.0)"
  ],
+ "aviso_odbl": "*Atribución (Open Database License).* Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. Las cifras construidas con esos datos se publican bajo la misma licencia.",
  "capas": [
   "C1",
   "C2",
@@ -19,11 +20,8 @@
   {
    "id": "compradores_extranjeros",
    "enunciado": "Compraventas de vivienda con comprador extranjero (residente o no)",
-   "cifra": 16.89131768,
-   "rango": [
-    16.89131768,
-    18.81539266
-   ],
+   "cifra": null,
+   "rango": null,
    "unidad": "%",
    "periodo": "2025",
    "ambito": "España",
@@ -33,15 +31,11 @@
    "fuente": "Ministerio; Notariado (no independientes)",
    "ruta": "output/v4/M4/hechos.json",
    "version": "v4",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2025",
-   "cifra_texto": "16,89 % (16,89 a 18,82)",
-   "min_max": [
-    16.89131768,
-    18.81539266,
-    "rango"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Notariado]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "compradores_no_residentes",
@@ -613,7 +607,7 @@
   {
    "id": "A23-P10",
    "enunciado": "Factor común de las 4 fuentes de precio: varianza explicada por el 1.er componente",
-   "cifra": 89.2,
+   "cifra": null,
    "rango": null,
    "unidad": "%",
    "periodo": "2016-2025 (dln anual)",
@@ -624,24 +618,17 @@
    "fuente": "INE, MIVAU, Notariado, Registradores",
    "ruta": "output/v5/A23/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2025T4",
-   "cifra_texto": "89,2 %",
-   "min_max": [
-    null,
-    null,
-    "rango"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Notariado]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "A23-P2",
    "enunciado": "Precio de compra, núcleo MIVAU/Notariado/Registradores 2015-2025",
-   "cifra": 47.2,
-   "rango": [
-    44.2,
-    56.1
-   ],
+   "cifra": null,
+   "rango": null,
    "unidad": "%",
    "periodo": "2015-2025 (media anual)",
    "ambito": "España",
@@ -651,15 +638,11 @@
    "fuente": "MIVAU valor tasado; Notariado CGN; Registradores opendata",
    "ruta": "output/v5/A23/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2025 (anual)",
-   "cifra_texto": "47,2 % (44,2 a 56,1)",
-   "min_max": [
-    44.2,
-    56.1,
-    "rango"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Notariado]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "A23-P3",
@@ -707,12 +690,13 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "A23-P5",
    "enunciado": "Diferencia contable por composición nueva/usada en la media de pm2",
-   "cifra": 0.0,
+   "cifra": null,
    "rango": null,
    "unidad": "pp",
    "periodo": "2015-2025",
@@ -723,15 +707,11 @@
    "fuente": "INE ETDP + Registradores ERI 2025",
    "ruta": "output/v5/A23/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2025",
-   "cifra_texto": "0 pp",
-   "min_max": [
-    null,
-    null,
-    "rango"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "A23-P6",
@@ -755,12 +735,13 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "A23-P7",
    "enunciado": "Precio por m2 Notariado 2025",
-   "cifra": 1949.0,
+   "cifra": null,
    "rango": null,
    "unidad": "EUR/m2",
    "periodo": "2025",
@@ -771,15 +752,11 @@
    "fuente": "Notariado CGN",
    "ruta": "output/v5/A23/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2025S2",
-   "cifra_texto": "1.949 EUR/m2",
-   "min_max": [
-    null,
-    null,
-    "rango"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Notariado]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "A23-P8",
@@ -803,7 +780,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "A23-P9",
@@ -827,7 +805,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "A4-001",
@@ -2068,7 +2047,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B3-H-B3-6-p",
@@ -2116,7 +2096,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B3-R2",
@@ -2164,7 +2145,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B3-mv-H-B3-2",
@@ -2188,7 +2170,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B3-mv-H-B3-6",
@@ -2212,7 +2195,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B3-shap-orden",
@@ -2236,7 +2220,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B3-shap-spearman",
@@ -2260,7 +2245,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B4-b3-shapley-demografica",
@@ -2287,7 +2273,8 @@
     21.062,
     26.18,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B4-b3-shapley-financiacion_tipos",
@@ -2314,7 +2301,8 @@
     8.941,
     13.643,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B4-b3-shapley-oferta_suelo",
@@ -2341,7 +2329,8 @@
     23.178,
     28.596,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B4-b3-shapley-renta_empleo",
@@ -2368,7 +2357,8 @@
     8.918,
     10.75,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B4-b3-shapley-residuo",
@@ -2395,7 +2385,8 @@
     18.841,
     29.866,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B4-b3-shapley-turismo_no_residentes",
@@ -2422,7 +2413,8 @@
     9.301,
     18.702,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "B4-estabilidad-tau-min",
@@ -3438,7 +3430,7 @@
   {
    "id": "CA-CT-ratio-triang-2022",
    "enunciado": "Hipotecas por 100 compraventas: INE 71.4 frente a Registradores 71.7",
-   "cifra": 71.372,
+   "cifra": null,
    "rango": null,
    "unidad": "hipotecas por 100 compraventas",
    "periodo": "2022",
@@ -3449,20 +3441,16 @@
    "fuente": "INE + Registradores (ERI Anuario)",
    "ruta": "output/v5/CA/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2022-12-31",
-   "cifra_texto": "71,37 hipotecas por 100 compraventas",
-   "min_max": [
-    71.37197912,
-    71.71674344,
-    "min = ratio INE; max = ratio Registradores (dos fuentes; valor redondeado del titular)"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "CA-CT-ratio-triang-2023",
    "enunciado": "Hipotecas por 100 compraventas: INE 65.3 frente a Registradores 65.8",
-   "cifra": 65.273,
+   "cifra": null,
    "rango": null,
    "unidad": "hipotecas por 100 compraventas",
    "periodo": "2023",
@@ -3473,20 +3461,16 @@
    "fuente": "INE + Registradores (ERI Anuario)",
    "ruta": "output/v5/CA/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2023-12-31",
-   "cifra_texto": "65,27 hipotecas por 100 compraventas",
-   "min_max": [
-    65.27291138,
-    65.8165278,
-    "min = ratio INE; max = ratio Registradores (dos fuentes; valor redondeado del titular)"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "CA-CT-ratio-triang-2024",
    "enunciado": "Hipotecas por 100 compraventas: INE 66.4 frente a Registradores 68.4",
-   "cifra": 66.446,
+   "cifra": null,
    "rango": null,
    "unidad": "hipotecas por 100 compraventas",
    "periodo": "2024",
@@ -3497,20 +3481,16 @@
    "fuente": "INE + Registradores (ERI Anuario)",
    "ruta": "output/v5/CA/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2024-12-31",
-   "cifra_texto": "66,45 hipotecas por 100 compraventas",
-   "min_max": [
-    66.44617982,
-    68.35010967,
-    "min = ratio INE; max = ratio Registradores (dos fuentes; valor redondeado del titular)"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "CA-CT-ratio-triang-2025",
    "enunciado": "Hipotecas por 100 compraventas: INE 70.0 frente a Registradores 70.7",
-   "cifra": 70.049,
+   "cifra": null,
    "rango": null,
    "unidad": "hipotecas por 100 compraventas",
    "periodo": "2025",
@@ -3521,15 +3501,11 @@
    "fuente": "INE + Registradores (ERI Anuario)",
    "ruta": "output/v5/CA/hechos.json",
    "version": "v5",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2025-12-31",
-   "cifra_texto": "70,05 hipotecas por 100 compraventas",
-   "min_max": [
-    70.04903428,
-    70.67343204,
-    "min = ratio INE; max = ratio Registradores (dos fuentes; valor redondeado del titular)"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "CA-EU-alq_real-crecimiento",
@@ -5594,7 +5570,8 @@
     -0.06136170163,
     4.787276567,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-H-B3-1-p3",
@@ -5618,7 +5595,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-H-B3-1-pri",
@@ -5642,7 +5620,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-H-B3-2-ic",
@@ -5669,7 +5648,8 @@
     -0.739348434,
     7.844149785,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-H-B3-2-p3",
@@ -5693,7 +5673,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-H-B3-2-pri",
@@ -5717,7 +5698,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-H-B3-6-ic",
@@ -5744,7 +5726,8 @@
     -23.78552456,
     -8.229461291,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-H-B3-6-p3",
@@ -5768,7 +5751,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-H-B3-6-p8",
@@ -5792,7 +5776,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-H-B3-6-pri",
@@ -5816,7 +5801,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-N",
@@ -5840,7 +5826,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-R2reg",
@@ -5864,7 +5851,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-kendall",
@@ -5888,7 +5876,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-B3-rmse",
@@ -5912,7 +5901,8 @@
     null,
     0.1612217035,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "E-E1-B2-D2030-a",
@@ -11948,7 +11938,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "V6-M4-PERS-PROV_PRECIO_TRIM",
@@ -12116,7 +12107,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "V6-M4-RMSE-PROV_PRECIO_ANUAL",
@@ -12140,7 +12132,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "V6-M4-RMSE-PROV_PRECIO_ANUAL_REGISTRADORES",
@@ -12164,7 +12157,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "V6-M4-RMSE-PROV_PRECIO_TRIM",
@@ -12188,7 +12182,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "V6-M4-RMSE-PROV_VOL_ANUAL",
@@ -12212,7 +12207,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "V6-M4-RMSE-PROV_VOL_TRIM",
@@ -12236,7 +12232,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "V6-M4-RMSE-alq_distrito",
@@ -13913,7 +13910,8 @@
     0.9698,
     0.0441,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_alq_ln_pib_pc",
@@ -13937,7 +13935,8 @@
     0.1881,
     0.0481,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_alq_ln_pob",
@@ -13961,7 +13960,8 @@
     1.0,
     1.0,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_alq_ln_terminadas_libres",
@@ -13985,7 +13985,8 @@
     0.0566,
     0.0834,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_alq_ln_vut",
@@ -14009,7 +14010,8 @@
     null,
     0.0551,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_alq_n_mun_topes_cat",
@@ -14033,7 +14035,8 @@
     0.0946,
     0.1152,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_alq_share_ext_pob",
@@ -14057,7 +14060,8 @@
     0.062,
     0.1531,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cp_ln_hip_viv_num",
@@ -14081,7 +14085,8 @@
     0.1803,
     0.0481,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cp_ln_iniciadas_libres",
@@ -14105,7 +14110,8 @@
     0.0557,
     0.0547,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cp_ln_ocupados_miles",
@@ -14129,7 +14135,8 @@
     0.0684,
     0.0773,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cp_ln_pib_pc",
@@ -14153,7 +14160,8 @@
     0.4702,
     0.5872,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cp_ln_pob",
@@ -14177,7 +14185,8 @@
     1.0,
     0.7941,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cp_ln_suelo_pm2_m50k",
@@ -14201,7 +14210,8 @@
     null,
     0.0607,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cp_ln_terminadas_libres",
@@ -14225,7 +14235,8 @@
     0.485,
     0.0523,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cp_ln_vut",
@@ -14249,7 +14260,8 @@
     null,
     0.0391,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cp_paro_tasa",
@@ -14273,7 +14285,8 @@
     0.1881,
     0.0497,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cp_share_ext_pob",
@@ -14297,7 +14310,8 @@
     0.772,
     0.2308,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cv_ln_hip_viv_num",
@@ -14321,7 +14335,8 @@
     0.9877,
     0.024,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cv_ln_iniciadas_libres",
@@ -14345,7 +14360,8 @@
     0.7905,
     0.8332,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cv_ln_ocupados_miles",
@@ -14369,7 +14385,8 @@
     0.0609,
     0.0272,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cv_ln_pib_pc",
@@ -14393,7 +14410,8 @@
     0.056,
     0.024,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cv_ln_pob",
@@ -14417,7 +14435,8 @@
     0.3518,
     0.025,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cv_ln_suelo_pm2_m50k",
@@ -14441,7 +14460,8 @@
     null,
     0.025,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cv_ln_terminadas_libres",
@@ -14465,7 +14485,8 @@
     0.0719,
     0.0293,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cv_ln_vut",
@@ -14489,7 +14510,8 @@
     null,
     0.0362,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cv_paro_tasa",
@@ -14513,7 +14535,8 @@
     0.0601,
     0.06,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m2_pip_cv_share_ext_pob",
@@ -14537,7 +14560,8 @@
     0.8117,
     0.0276,
     "valor = PIP con prior uniforme; min y max = PIP en el núcleo y con prior beta-binomial (variantes, no rango)"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m3a_rmse_ar_distrito",
@@ -14777,7 +14801,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m3b_PROV_PRECIO_ANUAL_REGISTRADORES_rmse_pct_AR",
@@ -14801,7 +14826,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m3b_PROV_PRECIO_ANUAL_REGISTRADORES_rmse_pct_mejor_ML",
@@ -14825,7 +14851,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "m3b_PROV_PRECIO_ANUAL_rmse_pct_ADL",
@@ -15375,7 +15402,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "K1-BASE-PROV_PRECIO_TRIM",
@@ -15639,7 +15667,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "K1-RATIO-PROV_PRECIO_TRIM",
@@ -15855,7 +15884,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "K1-RMSE-PROV_PRECIO_TRIM",
@@ -16074,7 +16104,8 @@
     -1.302,
     1.904,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "K2-CUOTA-ALQ-NUCLEO-SIN",
@@ -16101,7 +16132,8 @@
     -1.476,
     1.832,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "K2-CUOTA-ALQ-SINPOB-EXT",
@@ -16128,7 +16160,8 @@
     0.052,
     3.049,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "K2-CUOTA-ALQ-SINPOB-SIN",
@@ -16155,7 +16188,8 @@
     1.308,
     4.037,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "K2-CUOTA-COMPRA-EXT",
@@ -16182,7 +16216,8 @@
     -4.368,
     1.524,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "K2-CUOTA-COMPRA-SIN",
@@ -16209,7 +16244,8 @@
     -4.308,
     1.692,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "K2-CUOTA-COMPRA-SINPOB-EXT",
@@ -16236,7 +16272,8 @@
     -0.788,
     3.988,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "K2-CUOTA-COMPRA-SINPOB-SIN",
@@ -16263,7 +16300,8 @@
     2.115,
     6.412,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "K3-INI-A-ini_1000",
@@ -16457,11 +16495,8 @@
   {
    "id": "K3-RATIO-2015",
    "enunciado": "Ratio precio/alquiler, medida v6 (tasado/stock); min-max con las demás medidas de precio provinciales",
-   "cifra": 20.3257,
-   "rango": [
-    18.931,
-    20.3257
-   ],
+   "cifra": null,
+   "rango": null,
    "unidad": "años de alquiler",
    "periodo": "2015",
    "ambito": "38-39 provincias de entrenamiento",
@@ -16471,24 +16506,17 @@
    "fuente": "MIVAU tasado; SERPAVI; Registradores; Notariado",
    "ruta": "output/v6_1/K3/hechos.json",
    "version": "v6.1",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2023 (anual)",
-   "cifra_texto": "20,33 años de alquiler (18,93 a 20,33)",
-   "min_max": [
-    18.931,
-    20.3257,
-    "rango"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Notariado]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "K3-RATIO-2023",
    "enunciado": "Ratio precio/alquiler, medida v6 (tasado/stock); min-max con las demás medidas de precio provinciales",
-   "cifra": 17.1196,
-   "rango": [
-    17.1196,
-    17.7306
-   ],
+   "cifra": null,
+   "rango": null,
    "unidad": "años de alquiler",
    "periodo": "2023",
    "ambito": "38-39 provincias de entrenamiento",
@@ -16498,15 +16526,11 @@
    "fuente": "MIVAU tasado; SERPAVI; Registradores; Notariado",
    "ruta": "output/v6_1/K3/hechos.json",
    "version": "v6.1",
-   "estado": "vigente",
+   "estado": "no publicada (1.0)",
    "tipo": "cifra",
    "fecha_dato": "2023 (anual)",
-   "cifra_texto": "17,12 años de alquiler (17,12 a 17,73)",
-   "min_max": [
-    17.1196,
-    17.7306,
-    "rango"
-   ]
+   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Notariado]",
+   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
   },
   {
    "id": "L3-DEF-2124-BAJAST1",
@@ -22634,7 +22658,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "V8-M8-cv-p03-P5-acum-mivau",
@@ -22949,7 +22974,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "V8-M8-cv-p12-P5-acum-mivau",
@@ -23264,7 +23290,8 @@
     null,
     null,
     "rango"
-   ]
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "V8-M8-cv-p46-P5-acum-mivau",

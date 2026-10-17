@@ -27,7 +27,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## Precio de compra: dos fuentes, dos cifras
 
-- Núcleo MIVAU, Notariado y Registradores: 47,2 % (44,2-56,1 %) (2015-2025 (media anual); MIVAU valor tasado; Notariado CGN; Registradores opendata; dato de 2025 (anual); C1)
+- Núcleo MIVAU, Notariado y Registradores: [cifra no publicada en la versión 1.0: usa la serie de Notariado]
 - INE: 79,9 % [C4]; la diferencia no está descompuesta
 
 ---

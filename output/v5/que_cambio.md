@@ -28,7 +28,7 @@ En cada caso se dice cuál fue la razón.
   - «ANALIZADA, NO CONCLUYENTE» [C4]: ninguna de las dos lecturas identifica un efecto.
 - [C4] **Iniciadas y alquiler.** La asociación es del mismo año. No hay orden temporal detectable, y no indica que construir suba el alquiler.
 - [C4] **Otras conclusiones que cambiaron.** Empleo, renta, iniciadas y turísticos cambian de signo o de mercado según la medida, el método y los controles. Ningún intervalo de la especificación final excluye el cero (`output/v6_1/K2/otros_cambios.md`). La correlación entre cuota de extranjeros y población dentro de cada provincia es 0,66; las islas no se pueden contrastar porque están en la muestra sellada.
-- [C4] **Ratio precio/alquiler.** Según la medida de precio, va de 18,9-20,3 años de alquiler en 2015 a 17,1-17,7 años de alquiler en 2023 (provincias de entrenamiento).
+- [C4] **Ratio precio/alquiler.** Según la medida de precio, va de [cifra no publicada en la versión 1.0: usa la serie de Notariado] en 2015 a [cifra no publicada en la versión 1.0: usa la serie de Notariado] en 2023 (provincias de entrenamiento).
 - **Correcciones** (ERRATA.md). Los contratos nuevos de la Comunitat Valenciana pasan a 28,5 % (26,1-30,8 %) por un error de ponderación del peso de Valencia. También se corrigieron el redondeo de los recuentos de más de un millón, las fianzas de Incasòl (solo un descriptivo) y la descripción de las fuentes del déficit. Ninguna conclusión cambia.
 
 ## v6.2 y v6.3: el déficit pasa de hecho a cota, y propagación de correcciones
@@ -74,3 +74,7 @@ Para cada tema sigue vigente una versión interna:
 - qué causa qué: V9;
 - atlas descriptivo, base de datos y web: V10;
 - demografía, hogares, titularidad y oferta: V12.
+
+---
+
+*Atribución (Open Database License).* Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. Las cifras construidas con esos datos se publican bajo la misma licencia.

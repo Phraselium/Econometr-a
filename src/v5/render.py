@@ -9,6 +9,8 @@ Marcadores:
 - {{proyecto.<campo>}}: un campo de proyecto.json (V13: versión pública, repositorio, web, DOI; única fuente).
 V14.2: si terceros_1_0 = «excluir» para una fuente, los marcadores de las cifras que usan su serie se sustituyen por la marca
 «cifra no publicada en la versión 1.0» (src/v14/terceros_1_0.py). La cifra sigue en cifras_clave sin cambios.
+V14.3: si el texto cita alguna cifra que usa los datos abiertos de Registradores (terceros_1_0.odbl), se añade al final el
+aviso de atribución que exige la Open Database License 1.0 (4.3).
 Un marcador sin resolver es un error. Determinista y sin red.
 """
 from __future__ import annotations
@@ -126,6 +128,7 @@ def texto(r: pd.Series, campo: str | None) -> str:
 def render(src: Path, ck: pd.DataFrame) -> tuple[str, list[str]]:
     falta: list[str] = []
     retiradas = T10.retiradas()
+    odbl, usa_odbl = T10.odbl(), []
 
     def sub(m: re.Match) -> str:
         i, campo = m.group(1), m.group(2)
@@ -140,9 +143,14 @@ def render(src: Path, ck: pd.DataFrame) -> tuple[str, list[str]]:
             return m.group(0)
         if i in retiradas:
             return T10.marca(retiradas[i])
+        if i in odbl:
+            usa_odbl.append(i)
         return texto(ck.loc[i], campo)
 
-    return MARC.sub(sub, src.read_text()), falta
+    txt = MARC.sub(sub, src.read_text())
+    if usa_odbl:
+        txt = txt.rstrip("\n") + "\n\n---\n\n" + T10.nota_odbl() + "\n"
+    return txt, falta
 
 
 def main() -> int:

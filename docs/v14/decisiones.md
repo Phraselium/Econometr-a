@@ -105,3 +105,35 @@
   - Consecuencia: el valor sigue legible en publicacion/cifras_clave.csv y en la descarga de cifras_clave de la web. Quitarlo de ahí sería cambiar el registro, que es la condición de parada (a). Lo decide el autor.
 - **Solo se retiran las cifras que usan de verdad la serie:** dependencia «directa» o «indirecta (el modelo usa la serie)». No se retiran las «técnicas» ni las que solo usan una estadística oficial del INE o del MIVAU que se elabora con datos de esa fuente.
 - **CGPJ no tiene escenario.** Sus series nunca se redistribuyen y sus agregados se publican citando la fuente.
+
+## E8. Registradores dividido por producto; ODbL para lo derivado de los datos abiertos; Notariado excluido (V14.3, orden del autor)
+- proyecto.json → `terceros_1_0` pasa a cuatro claves:
+  - registradores_odbl = «agregados»;
+  - registradores_eri = «excluir»;
+  - notariado = «excluir»;
+  - aeat = «excluir».
+- El origen de cada cifra y tabla de Registradores sale de src/v14/registradores_origen.py (docs/v14/registradores_origen.md):
+  - **Cifras.** Reglas por orden:
+    1. tabla manual con motivo;
+    2. lo que digan `fuentes` o el enunciado;
+    3. lo que lean los scripts del módulo.
+
+    Resultado: 237 ODbL, 1 ERI (A23-P5) y 4 «ambos» (CA-CT-ratio-triang-2022 a 2025: compraventas del CSV abierto e hipotecas tecleadas del Anuario).
+  - **Las «técnicas»** heredan el origen del panel y nunca se retiran.
+- **Retiradas con los valores por defecto:** 16 cifras.
+  - AEAT: 5 (CB-C6-01 a 05).
+  - Notariado: 6 (A23-P2, A23-P7, A23-P10, K3-RATIO-2015, K3-RATIO-2023 y compradores_extranjeros).
+  - Anuario ERI: 5 (A23-P5 y las 4 CA-CT).
+  - Siguen en cifras_clave sin cambios. Lista en publicacion/cifras_no_publicadas_1_0.csv.
+- **ODbL 1.0 (4.2-4.4).** La parte de cada fichero del árbol o del paquete construida con los datos abiertos se publica bajo la ODbL 1.0: variables, columnas, resultados de modelos con ese precio y filas de cifras_clave con origen ODbL o «ambos». Son 65 ficheros (docs/v14/licencias_tablas.csv). Se declara en:
+  - LICENSE (punto 4, con el aviso);
+  - .zenodo.json (`notes`) y CITATION.cff (`ODbL-1.0`), generados por `make metadatos`;
+  - el diccionario de la base (sección «Licencias por tabla», escrita por src/v14/registradores_origen.py y por src/v10/base.py al regenerarlo);
+  - las notas de la versión y los metadatos de Zenodo.
+- **Avisos en los textos.**
+  - Los textos de publicacion/ y consulta/ que citan una cifra ODbL publicada llevan al final el aviso de atribución (4.3), escrito por render y generar.
+  - La web lo lleva en el pie de todas las páginas.
+  - Cada hallazgo ODbL de consulta/hallazgos.json lleva `licencia` = «ODbL 1.0».
+- **Las series** (columnas de los datos abiertos y del Anuario) siguen sin redistribuirse: ninguno de los dos productos está en «redistribuir».
+- **No hay conflicto con CC BY 4.0.** Lo derivado de los datos abiertos queda solo bajo la ODbL, que exige el «share alike» (4.4) a las bases derivadas. El resto de cada fichero sigue bajo CC BY 4.0. No se ha cambiado data/base/variables.parquet (datos de solo lectura). Su columna `licencia` para registr_* sigue diciendo «sin licencia abierta clara». Esa base completa no entra en el árbol ni en el paquete.
+- **Notariado:** solicitud de autorización en docs/v14/publicacion_1_0/solicitud_notariado.md. Si se concede, se cambia a «agregados».

@@ -56,11 +56,12 @@ Independent, reproducible evidence base on housing in Spain by province, with a 
 |---|---|---|
 | Código (src/, tests/, Makefile) | MIT | LICENSE; campo `license` de .zenodo.json |
 | Textos, tablas y figuras propios (publicacion/, metodologia/, output/, figuras/, web/, paper/, docs/) | CC BY 4.0 | LICENSE; campo `notes` de .zenodo.json |
+| Tablas, bases y cifras construidas con los datos abiertos de Registradores (la parte construida con ellos; 65 ficheros de docs/v14/licencias_tablas.csv) | ODbL 1.0, con el aviso de atribución | LICENSE, punto 4; `notes` de .zenodo.json; CITATION.cff (`ODbL-1.0`) |
 | Datos de terceros incluidos (data/raw de clase a, capa pública de la base) | la de su fuente | docs/v5/licencias_datos.md; docs/v13/datos_inventario.csv |
-| Series de Notariado, Registradores y AEAT | no se incluyen (proyecto.json, `terceros_1_0`) | docs/v14/licencias.md; docs/v14/escenarios.md |
+| Series de Notariado, Registradores (datos abiertos y Anuario ERI) y AEAT | no se incluyen (proyecto.json, `terceros_1_0`) | docs/v14/licencias.md; docs/v14/registradores_origen.md |
 
-En el formulario de Zenodo: licencia principal «MIT License». En «Additional notes», el texto de `notes` de .zenodo.json:
-> Código bajo MIT; textos, tablas y figuras propios bajo CC BY 4.0 (fichero LICENSE). Los datos de terceros conservan sus licencias: véase docs/v5/licencias_datos.md y docs/v13/datos_deposito.md.
+En el formulario de Zenodo: licencia principal «MIT License»; añada «Open Data Commons Open Database License v1.0» como licencia adicional si el formulario lo permite. En «Additional notes», el texto de `notes` de .zenodo.json:
+> Código bajo MIT; textos, tablas y figuras propios bajo CC BY 4.0 (fichero LICENSE). Los datos de terceros conservan sus licencias: véase docs/v5/licencias_datos.md y docs/v13/datos_deposito.md. Las tablas, bases y cifras construidas con los datos abiertos del Colegio de Registradores se publican bajo la Open Database License (ODbL) 1.0 (https://opendatacommons.org/licenses/odbl/1-0/; lista de ficheros en docs/v14/licencias_tablas.csv). Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/.
 
 ## Identificadores relacionados
 | Relación en Zenodo | Identificador | Nota |

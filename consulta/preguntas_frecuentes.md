@@ -316,9 +316,9 @@ Se estiman 733.553 viviendas (366.777 a 1.100.330) movilizables en zonas con pre
 
 ### 43. ¿Qué peso tienen los compradores extranjeros?
 
-En 2025 el 16,89 % (16,89 a 18,82) de las compraventas tiene comprador extranjero (residente o no) y los no residentes son 6,83 %. Es dato descriptivo (C4, una fuente).
+En 2025 el [cifra no publicada en la versión 1.0: usa la serie de Notariado] de las compraventas tiene comprador extranjero (residente o no) y los no residentes son 6,83 %. Es dato descriptivo (C4, una fuente).
 
-- `compradores_extranjeros` = 16,89 % (16,89 a 18,82); capa C4; periodo 2025; dato 2025. Origen: [hechos.json](../output/v4/M4/hechos.json).
+- `compradores_extranjeros` = [cifra no publicada en la versión 1.0: usa la serie de Notariado]; capa C4; periodo 2025; dato 2025. Origen: [hechos.json](../output/v4/M4/hechos.json).
 - `compradores_no_residentes` = 6,83 %; capa C4; periodo 2025; dato 2025. Origen: [hechos.json](../output/v4/M4/hechos.json).
 - Fuente: [output/v4/M4](../output/v4/M4)
 
@@ -534,3 +534,6 @@ Con licencias de demolición, la tasa anual de bajas es 0,026 % del parque al a�
 - `T1-H8` = 0,026 % del parque al año (0 a 0,052); capa C4; periodo 2015-2024; dato 2024-12-31. Origen: [hechos.json](../output/v5_1/T1/hechos.json).
 - Fuente: [output/v5_1/T1](../output/v5_1/T1)
 
+---
+
+*Atribución (Open Database License).* Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. Las cifras construidas con esos datos se publican bajo la misma licencia.

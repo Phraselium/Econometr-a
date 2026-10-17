@@ -166,3 +166,5 @@ Valor actual en proyecto.json, el que se fijó por defecto: registradores = agre
 - La redistribución de la serie no tiene apoyo en el texto (AMBIGUO en el mejor caso): no se recomienda «redistribuir».
 
 Ninguna de estas recomendaciones se ha aplicado. El repositorio queda con los valores por defecto.
+
+**V14.3 (decisión del autor):** registradores_odbl = agregados, con la ODbL 1.0 para lo derivado; registradores_eri = excluir; notariado = excluir (solicitud de autorización redactada); aeat = excluir. Ver decisiones.md, E8.

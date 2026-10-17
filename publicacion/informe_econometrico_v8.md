@@ -131,3 +131,7 @@ AR(4) es la base más exigente en ambos mercados. Predicciones de 2026T3-2027T2 
 ## 11. Reproducibilidad
 
 `make v8` reconstruye datos, modelos, atribución, tablas, hechos y este informe sin red, con SEED = 20261010 y un hilo. Dos ejecuciones dan ficheros idénticos salvo los tiempos (`tiempos.json`). Revisión de F4: hallazgos J1-J23 y su corrección en `docs/v8/revision_F4.md` y `docs/v8/decisiones.md` (Y9-Y11).
+
+---
+
+*Atribución (Open Database License).* Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. Las cifras construidas con esos datos se publican bajo la misma licencia.

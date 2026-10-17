@@ -11,6 +11,8 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
 P = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))
+sys.path.insert(0, str(RAIZ))
+from src.v14 import terceros_1_0 as T10  # noqa: E402   (V14.3: aviso de la ODbL)
 
 RESUMEN = ("Base de evidencia independiente y reproducible sobre la vivienda en España por provincias, con un módulo para València. "
            "Cubre el déficit y la necesidad de vivienda 2026-2035, las diferencias territoriales, los precios y el alquiler triangulados, "
@@ -38,6 +40,7 @@ url: "{P['repositorio']}"
 license:
   - MIT
   - CC-BY-4.0
+  - ODbL-1.0
 keywords: [{kw}]
 abstract: "{RESUMEN}"
 """
@@ -58,7 +61,9 @@ def zenodo() -> str:
         "keywords": KEYWORDS,
         "related_identifiers": [{"identifier": P["repositorio"], "relation": "isSupplementTo", "scheme": "url"}],
         "notes": "Código bajo MIT; textos, tablas y figuras propios bajo CC BY 4.0 (fichero LICENSE). Los datos de terceros conservan sus "
-                 "licencias: véase docs/v5/licencias_datos.md y docs/v13/datos_deposito.md.",
+                 "licencias: véase docs/v5/licencias_datos.md y docs/v13/datos_deposito.md. Las tablas, bases y cifras construidas con los "
+                 "datos abiertos del Colegio de Registradores se publican bajo la Open Database License (ODbL) 1.0 "
+                 "(https://opendatacommons.org/licenses/odbl/1-0/; lista de ficheros en docs/v14/licencias_tablas.csv). " + T10.AVISO_ODBL,
     }
     return json.dumps(d, ensure_ascii=False, indent=2) + "\n"
 

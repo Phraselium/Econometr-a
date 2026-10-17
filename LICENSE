@@ -1,4 +1,4 @@
-Licencia doble
+Licencias por parte
 
 1. Código (src/, tests/, Makefile y scripts): licencia MIT.
 
@@ -22,3 +22,17 @@ Licencia doble
    https://creativecommons.org/licenses/by/4.0/deed.es
 
 3. Datos de terceros (data/raw/): conservan la licencia de su fuente; véase docs/v5/licencias_datos.md.
+
+4. Tablas, bases y cifras construidas con los datos abiertos del Colegio de Registradores (conjunto «Compraventas de
+   inmuebles, uso residencial, por provincia», https://opendata.registradores.org): Open Database License (ODbL) 1.0,
+   https://opendatacommons.org/licenses/odbl/1-0/ (decisión V14.3). Se aplica a la parte de cada
+   fichero de docs/v14/licencias_tablas.csv construida con esos datos (variables, columnas o filas con origen «ODbL» o
+   «ambos» en docs/v14/registradores_origen.csv); el resto de cada fichero sigue en CC BY 4.0. Cualquier base derivada de
+   esa parte que se publique debe ir también bajo la ODbL 1.0 (4.4). Aviso de atribución (4.2 y 4.3):
+
+   Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores,
+   https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible
+   bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/.
+
+   Las series del Anuario de la Estadística Registral Inmobiliaria (Registradores), del Notariado y de la AEAT no se
+   redistribuyen (proyecto.json, terceros_1_0; docs/v14/licencias.md).

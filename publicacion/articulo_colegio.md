@@ -24,7 +24,7 @@ La renta de los contratos vigentes creció en 2015-2024 entre 10,9 % y 22,9 % se
 
 ## El precio de compra: las fuentes no coinciden [C1]
 
-El núcleo de fuentes de transacción (MIVAU, Notariado y Registradores) sitúa la subida acumulada del precio de compra en 47,2 % (44,2-56,1 %) (2015-2025 (media anual); MIVAU valor tasado; Notariado CGN; Registradores opendata; dato de 2025 (anual); C1). El índice del INE da una cifra mayor (79,9 %, [C4]), y la diferencia no está descompuesta. Cuando dos fuentes discrepan, se dan las dos.
+El núcleo de fuentes de transacción (MIVAU, Notariado y Registradores) sitúa la subida acumulada del precio de compra en [cifra no publicada en la versión 1.0: usa la serie de Notariado]. El índice del INE da una cifra mayor (79,9 %, [C4]), y la diferencia no está descompuesta. Cuando dos fuentes discrepan, se dan las dos.
 
 ## La mayoría de los hogares es propietaria de su vivienda [C1]
 

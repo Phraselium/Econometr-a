@@ -26,7 +26,7 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - [C2] Crecimiento de hogares proyectado por el INE para 2026-2035: 1.720.537 hogares (1.308.531-1.772.410 hogares) (2026-2035; INE Proyección de Hogares (tabla 54562); dato de 2026; C2); para 2026-2030: 1.024.156 hogares (819.421-1.060.364 hogares) (1-ene-2026 a 1-ene-2031; INE; dato de INE 2026-06-17; C2).
 
 **Precios y alquileres**
-- [C1] Precio de compra, núcleo Ministerio-Notariado-Registradores: 47,2 % (44,2-56,1 %) (2015-2025 (media anual); MIVAU valor tasado; Notariado CGN; Registradores opendata; dato de 2025 (anual); C1).
+- [C1] Precio de compra, núcleo Ministerio-Notariado-Registradores: [cifra no publicada en la versión 1.0: usa la serie de Notariado].
 - [C1] Alquiler de los contratos vigentes (IPC de alquiler e IPVA): 10,9-22,9 % (2015-2024; INE IPC (encuesta); INE IPVA (datos tributarios AEAT); dato de 2024; C1).
 - [C1] Alquiler de los contratos nuevos, con dos fuentes por comunidad: Cataluña 16,9 % (16,6-17,2 %) (2021-2024; INE IPVA (AEAT); Incasòl; dato de 2024; C1); Comunitat Valenciana 28,5 % (26,1-30,8 %) (2021-2024; INE IPVA (AEAT); GVA fianzas; dato de 2024; C1).
 
@@ -45,8 +45,8 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 - [C4] Bajas del parque: las identidades de stock no las miden (dan bajas negativas), y las demoliciones con licencia son 0,02-0,04 % del parque en 2024.
 - [C4] Déficit nacional a fin de 2030: 1.349.025 viviendas (788.180-1.773.555 viviendas) según la rejilla de escenarios (mínimo, ritmo actual y máximo).
 - [C4] Contratos nuevos frente a vigentes: la brecha en el IPVA es de 13,6 % en 2024, con fuente única.
-- [C4] Las cuatro fuentes de precio comparten un factor común que recoge 89,2 % de la varianza; el IPV del INE acumula 79,9 % en 2015-2025.
-- [C4] Compraventas con comprador extranjero en 2025: 16,9 % (16,9-18,8 %); no residentes: 6,8 %.
+- [C4] Las cuatro fuentes de precio comparten un factor común que recoge [cifra no publicada en la versión 1.0: usa la serie de Notariado] de la varianza; el IPV del INE acumula 79,9 % en 2015-2025.
+- [C4] Compraventas con comprador extranjero en 2025: [cifra no publicada en la versión 1.0: usa la serie de Notariado]; no residentes: 6,8 %.
 - [C4] Compraventas con comprador persona jurídica en 2024: 11,3 % de compraventas.
 - [C4] La parte de una ayuda general que se traslada al precio, por clase territorial (A4, método A, rejilla de elasticidades de demanda): clase `1`, falta y es rentable, 27,8-81,8 %; clase `2`, la oferta no responde, 88,1-100,0 %; clase `3`, no rentable, 50,1-89,8 % [C4]. El extremo bajo se apoya en la literatura con oferta elástica (Eriksen y Ross, 2015) y el alto en la de oferta rígida (Gibbons y Manning, 2006; Hilber y Turner, 2014).
 - [C4] En Europa (Eurostat): tenencia en propiedad en España de 73,6 % de la población en 2025, dentro del rango intercuartílico de la Unión Europea; precio real de la vivienda 42,6 % acumulado desde 2015.
@@ -122,3 +122,7 @@ Sección única del proyecto: [Qué cambió entre versiones y por qué](que_camb
 - [C4] Signo no estable: topes, regulación de turísticos y traslado al precio de las ayudas a la demanda. La matriz completa está en output/v5/D1/matriz_instrumentos.md y la política por territorio, condicional, en output/v5/D2/politica_territorio.md.
 
 **Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente del autor; las etiquetas aún no se han podido publicar desde el entorno de trabajo, véase la primera tarea de `docs/v7_1/tareas_autor.md`]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.
+
+---
+
+*Atribución (Open Database License).* Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. Las cifras construidas con esos datos se publican bajo la misma licencia.

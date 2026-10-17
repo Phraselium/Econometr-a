@@ -1,5 +1,6 @@
 """V14.2-B3 · Un test por valor de terceros_1_0 (agregados, excluir, redistribuir): textos (render), consulta, árbol público y
-paquete. Los escenarios se prueban con la variable de entorno VIVIENDA_TERCEROS_1_0, sin tocar proyecto.json."""
+paquete. Los escenarios se prueban con la variable de entorno VIVIENDA_TERCEROS_1_0, sin tocar proyecto.json.
+V14.3: Registradores dividido en registradores_odbl (datos abiertos, ODbL 1.0, con aviso) y registradores_eri (Anuario ERI)."""
 import json
 import sys
 from pathlib import Path
@@ -40,9 +41,34 @@ def _render(tmp_path, ids):
 
 def test_por_defecto_en_proyecto_json(monkeypatch):
     monkeypatch.delenv(T10.ENV, raising=False)
-    assert T10.politica() == T10.POR_DEFECTO == {"registradores": "agregados", "notariado": "agregados", "aeat": "excluir"}
-    assert set(T10.retiradas()) == {f"CB-C6-0{i}" for i in range(1, 6)}
-    assert (RAIZ / T10.NO_PUBLICADAS).read_text(encoding="utf-8").count("\n") == 1 + 5
+    assert T10.politica() == T10.POR_DEFECTO == {"registradores_odbl": "agregados", "registradores_eri": "excluir",
+                                                 "notariado": "excluir", "aeat": "excluir"}
+    ret = T10.retiradas()
+    assert {f"CB-C6-0{i}" for i in range(1, 6)} | {"A23-P2", "A23-P5", "compradores_extranjeros"} <= set(ret)
+    assert {f"CA-CT-ratio-triang-{a}" for a in range(2022, 2026)} <= set(ret)   # «ambos»: usan también el Anuario ERI
+    assert (RAIZ / T10.NO_PUBLICADAS).read_text(encoding="utf-8").count("\n") == 1 + len(ret)
+
+
+def test_registradores_odbl_y_eri(monkeypatch, tmp_path):
+    """V14.3: las cifras de datos abiertos se publican con el aviso de la ODbL; las del Anuario ERI se retiran."""
+    monkeypatch.delenv(T10.ENV, raising=False)
+    orig = T10.origen_registradores()
+    assert orig["A23-P6"] == "ODbL" and orig["A23-P5"] == "ERI" and orig["CA-CT-ratio-triang-2025"] == "ambos"
+    assert "A23-P6" in T10.odbl() and "A23-P5" not in T10.odbl()
+    a6, a5 = _render(tmp_path, ["A23-P6", "A23-P5"])
+    assert not a6.startswith("[cifra") and a5.startswith("[cifra no publicada") and "Open Database License" in a5   # aviso al final
+    from src.consulta import generar as G
+    H = {h["id"]: h for h in G.construir_hallazgos(G.cargar_cifras(), {}) if h["tipo"] == "cifra"}
+    assert H["A23-P6"].get("licencia") == "ODbL 1.0" and H["A23-P5"]["estado"] == "no publicada (1.0)"
+    assert T.fuente_columna("ln_pm2_registradores") == "registradores_odbl"
+    assert T.fuente_columna("registradores_pct_ext_publicado") == "registradores_eri"
+    lic = (RAIZ / "LICENSE").read_text(encoding="utf-8")
+    assert "Open Database License (ODbL) 1.0" in lic and "docs/v14/licencias_tablas.csv" in lic
+    z = json.loads((RAIZ / ".zenodo.json").read_text(encoding="utf-8"))
+    assert T10.AVISO_ODBL in z["notes"] and "ODbL-1.0" in (RAIZ / "CITATION.cff").read_text(encoding="utf-8")
+    import pandas as pd
+    lt = pd.read_csv(RAIZ / "docs" / "v14" / "licencias_tablas.csv")
+    assert "publicacion/cifras_clave.csv" in set(lt.fichero) and lt.licencia.str.contains("ODbL 1.0").all()
 
 
 def test_agregados(monkeypatch, tmp_path):

@@ -10,7 +10,7 @@ Regla del ponente: cada cifra se dice con su periodo y su capa; los veredictos s
 ## Bloque 1 · Hechos (1:30-6:00; diapositivas 3-5) <!-- check:cifra-libre -->
 - Hogares frente a terminadas: 997.586 hogares más en 2021-2025 [C1]; terminadas entre 72.264-94.426 viviendas/año [C1].
 - Alquiler: el stock creció entre 10,9 % y 22,9 % en 2015-2024 [C1]; los contratos nuevos, más.
-- Precio de compra: núcleo de fuentes 47,2 % en 2015-2025 (media anual) [C1]; el INE da más y la diferencia no está descompuesta.
+- Precio de compra: núcleo de fuentes [cifra no publicada en la versión 1.0: usa la serie de Notariado] en [cifra no publicada en la versión 1.0: usa la serie de Notariado] [C1]; el INE da más y la diferencia no está descompuesta.
 
 ## Bloque 2 · Mitos del verificador (6:00-11:00; diapositivas 6-9) <!-- check:cifra-libre -->
 - Recordar: se evalúa la afirmación; las mismas reglas para todas.

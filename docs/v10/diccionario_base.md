@@ -368,3 +368,16 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `zt_declarada` | Al menos un municipio en zona tensionada vigente (Ley 12/2023, art. 18) | 0/1 | C4 | BOE, resoluciones de zonas tensionadas (evento) | sí | ccaa | 2007T1–2026T2 |
 | `zt_n_municipios` | Municipios en zona tensionada vigente al cierre del trimestre (alcance parcial cuenta como municipio) | número | C4 | Resoluciones de zonas tensionadas, v3/zonas_tensionadas_v3.csv (fecha_efecto, fecha_fin_prevista) | sí | ccaa | 2007T1–2026T2 |
 | `zt_vigente` | BOE, resoluciones de la Secretaría de Estado de Vivienda (zonas tensionadas) | 0/1 | C4 | BOE, resoluciones de la Secretaría de Estado de Vivienda (zonas tensionadas) | sí | municipio | 2024T1–2026T3 |
+
+<!-- licencias V14.3: inicio (src/v14/registradores_origen.py) -->
+
+## Licencias por tabla (V14.3)
+
+- Las tablas de la capa pública (data/base/publica: hechos, variables, territorios, regulacion_zonas) no contienen series ni variables de Registradores, Notariado o AEAT (las variables `aeat_*` se quitan según proyecto.json → terceros_1_0). Su licencia es la de la columna `licencia` de variables.parquet para cada variable y CC BY 4.0 para lo propio.
+- `cifras_clave` (publica/cifras_clave.parquet y publicacion/cifras_clave.csv): las filas con origen «ODbL» o «ambos» en docs/v14/registradores_origen.csv se publican bajo la Open Database License 1.0; el resto, CC BY 4.0.
+- Las variables de Registradores de la base completa (registr_pm2_4tm, registr_num_4tm, registradores_compraventas_anual: datos abiertos, ODbL 1.0; registradores_extranj_pct: Anuario ERI, no redistribuible) no están en la capa pública ni en el depósito.
+- Ficheros de output/ y del registro con partes bajo ODbL 1.0: 65 (lista en docs/v14/licencias_tablas.csv).
+
+Aviso de atribución: Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/.
+
+<!-- licencias V14.3: fin -->

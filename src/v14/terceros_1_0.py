@@ -1,6 +1,8 @@
 """V14.2-B3 · Política de la versión 1.0 para las series de terceros: campo `terceros_1_0` de proyecto.json.
 
-Un valor por fuente (registradores, notariado, aeat):
+Un valor por fuente (registradores_odbl, registradores_eri, notariado, aeat). V14.3: Registradores se divide por producto
+(docs/v14/registradores_origen.csv): datos abiertos bajo ODbL 1.0 y Anuario ERI (derechos reservados). Las cifras con origen
+«ambos» dependen de los dos valores; las ODbL que se publican llevan el aviso de atribución de la ODbL (`AVISO_ODBL`).
 - «agregados»: las cifras propias se publican citando la fuente; la serie descargada no se redistribuye (ni en el árbol público
   ni en el paquete: columnas redactadas y tablas que son la serie vaciadas, src/v14/terceros.py).
 - «excluir»: además, las cifras que usan de verdad la serie (dependencia «directa» o «indirecta (el modelo usa la serie)» en
@@ -21,10 +23,16 @@ from functools import lru_cache
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
-FUENTES = ("registradores", "notariado", "aeat")
+FUENTES = ("registradores_odbl", "registradores_eri", "notariado", "aeat")
 VALORES = ("agregados", "excluir", "redistribuir")
-POR_DEFECTO = {"registradores": "agregados", "notariado": "agregados", "aeat": "excluir"}
-NOMBRE = {"registradores": "Registradores", "notariado": "Notariado", "aeat": "AEAT"}   # como en docs/v14/cifras_terceros.csv
+POR_DEFECTO = {"registradores_odbl": "agregados", "registradores_eri": "excluir", "notariado": "excluir", "aeat": "excluir"}
+NOMBRE = {"registradores_odbl": "Registradores (datos abiertos)", "registradores_eri": "Registradores (Anuario ERI)",
+          "notariado": "Notariado", "aeat": "AEAT"}
+CT_FUENTE = {"registradores_odbl": "Registradores", "registradores_eri": "Registradores", "notariado": "Notariado", "aeat": "AEAT"}
+ORIGEN_REG = {"ODbL": ("registradores_odbl",), "ERI": ("registradores_eri",), "ambos": ("registradores_odbl", "registradores_eri")}
+AVISO_ODBL = ("Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, "
+              "https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la "
+              "Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/.")
 RETIRAN = ("directa", "indirecta (el modelo usa la serie)")
 ENV = "VIVIENDA_TERCEROS_1_0"
 NO_PUBLICADAS = "publicacion/cifras_no_publicadas_1_0.csv"
@@ -48,16 +56,40 @@ def redistribuye(fuente: str, pol: dict | None = None) -> bool:
 
 
 @lru_cache(maxsize=None)
-def _retiradas(clave: tuple) -> dict[str, tuple[str, ...]]:
-    excl = {NOMBRE[f] for f, v in clave if v == "excluir"}
-    out: dict[str, set] = {}
-    if not excl:
-        return {}
+def origen_registradores() -> dict[str, str]:
+    """{id: ODbL | ERI | ambos} de las cifras que dependen de Registradores (docs/v14/registradores_origen.csv)."""
+    with (RAIZ / "docs" / "v14" / "registradores_origen.csv").open(encoding="utf-8", newline="") as fh:
+        return {r["id_o_fichero"]: r["origen"] for r in csv.DictReader(fh) if r["tipo"] == "cifra"}
+
+
+@lru_cache(maxsize=None)
+def _dependencias() -> dict[str, list[tuple[str, str]]]:
+    """{id: [(fuente de terceros_1_0, dependencia)]}, con Registradores dividido por producto."""
+    inv = {"Notariado": ("notariado",), "AEAT": ("aeat",)}
+    out: dict[str, list] = {}
     with (RAIZ / "docs" / "v14" / "cifras_terceros.csv").open(encoding="utf-8", newline="") as fh:
         for r in csv.DictReader(fh):
-            if r["fuente"] in excl and r["dependencia"] in RETIRAN:
-                out.setdefault(r["id"], set()).add(r["fuente"])
-    return {i: tuple(sorted(f)) for i, f in sorted(out.items())}
+            fs = ORIGEN_REG.get(origen_registradores().get(r["id"], "ambos"), ()) if r["fuente"] == "Registradores" else inv.get(r["fuente"], ())
+            out.setdefault(r["id"], []).extend((f, r["dependencia"]) for f in fs)
+    return out
+
+
+@lru_cache(maxsize=None)
+def _retiradas(clave: tuple) -> dict[str, tuple[str, ...]]:
+    excl = {f for f, v in clave if v == "excluir"}
+    out = {i: tuple(sorted({NOMBRE[f] for f, d in deps if f in excl and d in RETIRAN})) for i, deps in _dependencias().items()}
+    return {i: f for i, f in sorted(out.items()) if f}
+
+
+def nota_odbl() -> str:
+    """Aviso de atribución (ODbL 4.3) para los textos que citan cifras construidas con los datos abiertos de Registradores."""
+    return f"*Atribución (Open Database License).* {AVISO_ODBL} Las cifras construidas con esos datos se publican bajo la misma licencia."
+
+
+def odbl(pol: dict | None = None) -> set[str]:
+    """Cifras publicadas (no retiradas) que usan la serie de los datos abiertos de Registradores: llevan el aviso de la ODbL."""
+    ret = retiradas(pol)
+    return {i for i, deps in _dependencias().items() if i not in ret and any(f == "registradores_odbl" and d in RETIRAN for f, d in deps)}
 
 
 def retiradas(pol: dict | None = None) -> dict[str, tuple[str, ...]]:
@@ -75,7 +107,9 @@ def filas_no_publicadas(pol: dict | None = None) -> list[dict]:
     with (RAIZ / "docs" / "v14" / "cifras_terceros.csv").open(encoding="utf-8", newline="") as fh:
         for r in csv.DictReader(fh):
             dep.setdefault(r["id"], []).append(f"{r['fuente']}: {r['dependencia']}")
-    return [{"id": i, "fuentes": " y ".join(f), "dependencia": "; ".join(dep.get(i, [])),
+    orig = origen_registradores()
+    return [{"id": i, "fuentes": " y ".join(f), "dependencia": "; ".join(d + (f" ({orig[i]})" if d.startswith("Registradores") and i in orig else "")
+                                                                    for d in dep.get(i, [])),
              "estado_1_0": "no publicada (terceros_1_0 = excluir)", "en_cifras_clave": "sí, sin cambios"}
             for i, f in retiradas(pol).items()]
 
@@ -119,7 +153,8 @@ def filtrar_hechos(origen: Path, destino: Path, pol: dict | None = None) -> int:
 # ---------------------------------------------------------------- «redistribuir»: series brutas que van al paquete
 SERIES_BRUTAS = {
     "notariado": ("data/raw/pdf/notariado_*.csv",),
-    "registradores": ("data/raw/pdf/registradores_*.csv",),
+    "registradores_odbl": ("data/raw/pdf/registradores_opendata_*.csv",),
+    "registradores_eri": ("data/raw/pdf/registradores_eri_anuario.csv",),
     "aeat": ("data/raw/v11/aeat_irpf_municipios/irpf_municipios_cv.csv.gz", "data/raw/v5/cb_aeat_*.html"),
 }
 

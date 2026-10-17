@@ -7,6 +7,8 @@ docs/v8/tareas_autor.md. Determinista y sin red: dos ejecuciones dan el mismo co
 Las cifras de consulta/ se insertan SIEMPRE desde cifras_clave por id (función `valor_texto`); ninguna se teclea.
 V14.2: las cifras que terceros_1_0 = «excluir» retira (src/v14/terceros_1_0.py) aparecen con estado «no publicada (1.0)», sin
 valor y con la marca en lugar de la cifra; siguen en cifras_clave sin cambios.
+V14.3: las cifras construidas con los datos abiertos de Registradores llevan `licencia` = ODbL 1.0, y los textos que las
+citan, el aviso de atribución de la ODbL.
 Elección de version.json: el campo `commit` es el del último cambio de contenido de output/ (`git log -1 --format=%h -- output`), no
 HEAD: HEAD cambia con cada commit (incluido el que versiona consulta/) y rompería la comparación con lo versionado.
 """
@@ -219,6 +221,8 @@ def construir_hallazgos(cifras: dict[str, dict], superadas: dict[str, dict]) -> 
                       unidad=r["unidad"], periodo=r["periodo"], ambito=r["cobertura"], mercado=mercado_de(r["indicador"] + " " + r["unidad"]),
                       capa=r["capa"], metodo=metodo_de(i), fuente=r["fuentes"], ruta=ruta, version=_version_de_ruta(ruta),
                       fecha_dato=r["fecha_dato"], cifra_texto=valor_texto(r), min_max=[lo, hi, r["sentido_min_max"]]))
+        if i in T10.odbl():   # V14.3: construida con los datos abiertos de Registradores
+            H[-1]["licencia"] = "ODbL 1.0"
     for i, r in superadas.items():
         ruta = _ruta_fichero(r["origen"])
         lo, hi = _num(r["min"]), _num(r["max"])
@@ -840,12 +844,15 @@ def generar() -> dict[str, str]:
     version = construir_version(cifras)
     H = construir_hallazgos(cifras, superadas)
     hj = {"_generado": "Generado por `make consulta` (src/consulta/generar.py). No editar a mano.", "version": PROYECTO["version_publica"],
-          "estados": ["vigente", "superada", "retirada", "no publicada (1.0)"], "capas": list(CAPAS_VALIDAS), "n": len(H), "hallazgos": H}
+          "estados": ["vigente", "superada", "retirada", "no publicada (1.0)"], "aviso_odbl": T10.nota_odbl(), "capas": list(CAPAS_VALIDAS), "n": len(H), "hallazgos": H}
+    def con_aviso(txt: str) -> str:   # V14.3: aviso de la ODbL si el texto cita una cifra construida con datos abiertos de Registradores
+        cita = any(re.search(rf"`{re.escape(i)}`", txt) for i in T10.odbl())
+        return txt.rstrip("\n") + "\n\n---\n\n" + T10.nota_odbl() + "\n" if cita else txt
     return {
-        "consulta/LEEME_ASISTENTE.md": leeme_md(cifras, version),
+        "consulta/LEEME_ASISTENTE.md": con_aviso(leeme_md(cifras, version)),
         "consulta/hallazgos.json": json.dumps(hj, ensure_ascii=False, indent=1) + "\n",
-        "consulta/hallazgos.md": hallazgos_md(H, cifras),
-        "consulta/preguntas_frecuentes.md": faq_md(cifras),
+        "consulta/hallazgos.md": con_aviso(hallazgos_md(H, cifras)),
+        "consulta/preguntas_frecuentes.md": con_aviso(faq_md(cifras)),
         "consulta/glosario.md": glosario_md(),
         "consulta/indice_ficheros.md": indice_md(),
         "consulta/version.json": json.dumps(version, ensure_ascii=False, indent=1) + "\n",

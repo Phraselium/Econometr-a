@@ -56,3 +56,5 @@ La lista completa, con cifras y fichas, está en el recuadro de [una_pagina.md](
 - **Código:** MIT.
 - **Textos, tablas y figuras propios:** CC BY 4.0.
 - **Datos de terceros:** la licencia de su fuente (docs/v5/licencias_datos.md, docs/v14/licencias.md).
+- **Tablas, bases y cifras construidas con los datos abiertos del Colegio de Registradores:** Open Database License (ODbL) 1.0, en la parte construida con esos datos (LICENSE, punto 4; docs/v14/licencias_tablas.csv). Aviso de atribución: «Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores), disponible bajo la Open Database License (ODbL) 1.0». Los textos que citan esas cifras lo llevan al final.
+- **No se publican en la 1.0** las cifras que usan el Anuario ERI de Registradores, el Notariado o la AEAT (publicacion/cifras_no_publicadas_1_0.csv); siguen en el registro cifras_clave.

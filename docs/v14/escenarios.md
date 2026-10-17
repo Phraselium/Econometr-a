@@ -1,5 +1,7 @@
 # V14.2 · Escenarios de terceros_1_0: qué cambia en cada uno
 
+> V14.3: desde E8, Registradores tiene dos claves (registradores_odbl y registradores_eri) y los valores por defecto son agregados / excluir / excluir / excluir. Las cifras de esta página corresponden a las tres claves de V14.2. Las retiradas con los valores actuales están en publicacion/cifras_no_publicadas_1_0.csv.
+
 proyecto.json → `terceros_1_0` fija, por fuente (registradores, notariado, aeat), uno de tres valores. Implementación en src/v14/terceros_1_0.py y src/v14/terceros.py; decisión E7.
 
 | Valor | Cifras en publicacion/, web/ y consulta/ | Serie en el árbol y en el paquete |

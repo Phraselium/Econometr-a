@@ -103,3 +103,15 @@ Ninguno.
 
 ## Tokens de subagentes (V14.2)
 Ninguno.
+
+## V14.3 · Licencias de Registradores (2026-10-17)
+- **Origen de cada cifra y tabla** (docs/v14/registradores_origen.md y .csv):
+  - cifras: 237 ODbL, 1 ERI y 4 «ambos»;
+  - tablas: 61 ODbL, 4 ERI y 8 «ambos».
+- **terceros_1_0** dividido en registradores_odbl = agregados y registradores_eri = excluir; notariado = excluir.
+  - Retiradas: 16 cifras (AEAT 5, Notariado 6, ERI 5). cifras_clave no cambia.
+  - Tests en tests/v14/test_terceros_1_0.py.
+- **ODbL 1.0** para la parte derivada de los datos abiertos, en 65 ficheros (docs/v14/licencias_tablas.csv). Se refleja en:
+  - LICENSE, .zenodo.json, CITATION.cff, el diccionario de la base, las notas de la versión y los metadatos de Zenodo;
+  - el aviso de atribución en los textos, en consulta/ y en el pie de la web.
+- **Solicitud al Notariado:** docs/v14/publicacion_1_0/solicitud_notariado.md (229 palabras).

@@ -59,13 +59,13 @@ def cabecera(p: Path) -> list[str]:
 
 
 FUENTE_COL = (("notariado", re.compile(r"(?:^|[_\s])(notariado|cgn)(?:[_\s]|$)", re.I)),
-              ("registradores", re.compile(r"(?:^|[_\s])(registradores|registr)(?:[_\s]|$)", re.I)),
+              ("registradores", re.compile(r"(?:^|[_\s])(registradores|registr)(?:[_\s]|$)", re.I)),   # el producto (ODbL o ERI) lo decide fuente_columna
               ("aeat", re.compile(r"(?:^|[_\s])aeat(?:[_\s]|$)", re.I)),
               ("cgpj", re.compile(r"(?:^|[_\s])cgpj(?:[_\s]|$)", re.I)))
 # V14.2: columnas que son la serie de una fuente aunque su nombre no la nombre (escaneo por valores)
 COLUMNAS_SERIE = {
-    "output/v5/CA/tablas/contado_ratio_hipotecas_compraventas.csv": {"reg_compraventas_viv": "registradores", "reg_hipotecas_viv": "registradores"},
-    "output/v5/A23/tablas/tamano_implicito_registradores.csv": {"pm2": "registradores", "importe_medio_vivienda": "registradores"},
+    "output/v5/CA/tablas/contado_ratio_hipotecas_compraventas.csv": {"reg_compraventas_viv": "registradores_odbl", "reg_hipotecas_viv": "registradores_eri"},
+    "output/v5/A23/tablas/tamano_implicito_registradores.csv": {"pm2": "registradores_odbl", "importe_medio_vivienda": "registradores_odbl"},
 }
 # V14.2: ficheros de output/ que son la serie de la fuente o la reproducen (por nombre de fichero y por valores)
 TABLAS_SERIE = {
@@ -79,11 +79,18 @@ TABLAS_SERIE = {
 }
 # V14.2: agregados propios de la serie (sumas de la Comunitat Valenciana): se publican con «agregados», se vacían con «excluir»
 AGREGADOS_PROPIOS = {"output/v12/b5/aeat_cv_declarantes_inmuebles.csv": "aeat", "output/v12/b5/aeat_cv_2013_2015.csv": "aeat"}
-NOMBRE_FUENTE = {"notariado": "Notariado", "registradores": "Registradores", "aeat": "AEAT", "cgpj": "CGPJ"}
+NOMBRE_FUENTE = {"notariado": "Notariado", "registradores_odbl": "Registradores (datos abiertos)", "registradores_eri": "Registradores (Anuario ERI)",
+                 "aeat": "AEAT", "cgpj": "CGPJ"}
+
+
+ERI_COL = re.compile(r"extranj|_ext_|_ext$|pct_publicado|cobertura_ccaa|hipotecas", re.I)   # V14.3: columnas del Anuario ERI
 
 
 def fuente_columna(c: str) -> str | None:
-    return next((f for f, pat in FUENTE_COL if pat.search(c)), None)
+    f = next((f for f, pat in FUENTE_COL if pat.search(c)), None)
+    if f == "registradores":   # V14.3: producto de Registradores (docs/v14/registradores_origen.md)
+        return "registradores_eri" if ERI_COL.search(c) else "registradores_odbl"
+    return f
 
 
 def _pol(pol):

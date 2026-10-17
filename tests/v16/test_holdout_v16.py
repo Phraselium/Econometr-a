@@ -50,3 +50,32 @@ def test_evaluate_v16_cerrado_sin_etiqueta(monkeypatch, tmp_path):
     monkeypatch.setenv("ECONOMETRA_ETIQUETAS_REMOTAS", str(f))
     with pytest.raises(PermissionError):
         H.evaluate_v16("Q1", lambda d: {}, "prueba", ["q1"])
+
+
+def test_ccaa_de_v6_selladas_en_v16():
+    s = H.unidad_sellada_v16(pd.Series(["13", "09", "05", "01"]), "ccaa")
+    assert s.tolist() == [True, False, True, False]
+
+
+def test_tope_temporal_nunca_pasa_el_de_v15(monkeypatch, tmp_path):
+    m16 = tmp_path / "s16.json"
+    m16.write_text(json.dumps({"fecha_corte": "2026-10-17", "ultimo_periodo_visto": {"x|nacional|A": "2026"}}), encoding="utf-8")
+    monkeypatch.setattr(H, "MANIFIESTO_V16", m16)
+    monkeypatch.setattr(H, "_manifiesto_v15", lambda: {"fecha_corte": "2026-10-17", "ultimo_periodo_visto": {"x|nacional|A": "2024"}})
+    monkeypatch.setattr(H, "SEALED", tmp_path / "sel")
+    monkeypatch.setattr(H, "LOG", tmp_path / "log")
+    d = pd.DataFrame({"territorio_codigo": ["00"] * 3, "nivel": ["nacional"] * 3, "variable": ["x"] * 3, "frecuencia": ["A"] * 3,
+                      "periodo": ["2023", "2024", "2025"], "valor": [1.0, 2.0, 3.0]})
+    tr = H.sellar_v16(d, "prueba")
+    assert tr.periodo.tolist() == ["2023", "2024"]
+
+
+def test_evaluate_v16_espera_a_v15(monkeypatch, tmp_path):
+    f = tmp_path / "e.json"
+    f.write_text(json.dumps({"prereg-v16": "a" * 40}), encoding="utf-8")
+    monkeypatch.setenv("ECONOMETRA_ETIQUETAS_REMOTAS", str(f))
+    monkeypatch.setattr(H, "_manifiesto_v16", lambda: {"conjuntos": {"q1": {"variables": ["incasol_renta_media"]}}})
+    monkeypatch.setattr(H, "_manifiesto_v15", lambda: {"preguntas": {"p6_zonas_tensionadas": {"variables": ["incasol_renta_media"]}}})
+    monkeypatch.setattr(H, "_accesos", lambda: [])
+    with pytest.raises(PermissionError, match="H1"):
+        H.evaluate_v16("Q1", lambda d: {}, "prueba", ["q1"])

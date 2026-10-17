@@ -18,6 +18,7 @@ import datetime as dt
 import hashlib
 import importlib.util
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -96,6 +97,11 @@ def main() -> int:
     if holdout.MANIFIESTO_V16.exists() and not a.rehacer:
         print("f4_sellado: ya sellado (docs/v16/sellado_v16.json); no se repite.")
         return 0
+    local = subprocess.run(["git", "rev-parse", "-q", "--verify", "refs/tags/prereg-v16"], cwd=RAIZ, capture_output=True, text=True)
+    with open(RAIZ / "docs" / "v16" / "sellado_intentos.log", "a", encoding="utf-8") as f:   # registro de cada intento (adenda R21)
+        f.write(f"{dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds')} rehacer={a.rehacer} etiqueta_local={bool(local.stdout.strip())}\n")
+    if local.stdout.strip():
+        raise SystemExit("f4_sellado: la etiqueta prereg-v16 ya existe en local; el sellado no se rehace (adenda R21).")
     if _publicada():
         raise SystemExit("f4_sellado: prereg-v16 ya está en el remoto; el sellado no se rehace después de fijar el pre-registro.")
     ext = conjuntos()
@@ -113,7 +119,7 @@ def main() -> int:
         tr = holdout.sellar_v16(d.reset_index(drop=True), n)
         tr.to_parquet(SAL / f"{n}.parquet", index=False)
         man["conjuntos"][n] = {"filas": len(d), "filas_entrenamiento": len(tr), "filas_selladas": len(d) - len(tr),
-                               "variables": int(d.variable.nunique())}
+                               "variables": sorted(d.variable.astype(str).unique().tolist())}
         print(f"f4_sellado: {n}: {len(tr)} entrenamiento, {len(d) - len(tr)} selladas")
     holdout.MANIFIESTO_V16.write_text(json.dumps(man, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return 0

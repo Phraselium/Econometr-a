@@ -643,11 +643,23 @@ def distritos_sellados_v16() -> set[str]:
     return sel
 
 
+def ccaa_selladas_v6() -> set[str]:
+    """CCAA cuyas provincias están todas en la muestra v6 (docs/v16/decisiones.md K8): su total autonómico duplica la información
+    sellada (cinco son uniprovinciales), así que V16 no las usa a escala de CCAA (adenda del pre-registro V16, punto R7)."""
+    t = pd.read_parquet(HERE / "data" / "base" / "publica" / "territorios.parquet", columns=["territorio_codigo", "nivel", "cod_ccaa"])
+    p = t[t.nivel == "provincia"].astype(str)
+    v6 = set(provincias_selladas_v6())
+    return {c for c, g in p.groupby("cod_ccaa") if set(g.territorio_codigo) <= v6}
+
+
 def unidad_sellada_v16(codigo: pd.Series, nivel: str) -> pd.Series:
-    """True si la unidad está fuera del entrenamiento de V16: bloque espacial V16, bloque V15 o provincias de v6.
-    CCAA y nación no se sellan espacialmente (su validación es la temporal). Partidos judiciales (PJ-pp-n) heredan su provincia."""
+    """True si la unidad está fuera del entrenamiento de V16: bloque espacial V16, bloque V15 o provincias de v6; a escala de CCAA,
+    las 8 CCAA enteras de v6. La nación no se sella espacialmente (su validación es la temporal). Partidos judiciales (PJ-pp-n)
+    heredan su provincia."""
     c = codigo.astype(str)
     v6 = set(provincias_selladas_v6())
+    if nivel == "ccaa":
+        return c.str.zfill(2).isin(ccaa_selladas_v6())
     previo = unidad_sellada_v15(codigo, nivel)
     if nivel == "municipio":
         return previo | c.str.zfill(5).isin(municipios_sellados_v16())
@@ -675,9 +687,14 @@ def sellar_v16(hechos: pd.DataFrame, nombre: str) -> pd.DataFrame:
         esp |= hechos.muestra_sellada_v6.fillna(False).astype(bool)
     clave = hechos.variable.astype(str) + "|" + hechos.nivel.astype(str) + "|" + hechos.frecuencia.astype(str)
     tope = clave.map(man["ultimo_periodo_visto"])
+    # nunca más allá del corte de V15: para las claves que V15 selló temporalmente manda el mínimo de los dos manifiestos
+    tope15 = clave.map(_manifiesto_v15().get("ultimo_periodo_visto", {}))
+    ambos = tope.notna() & tope15.notna()
+    tope = tope.where(~ambos, np.minimum(tope.astype(str), tope15.astype(str)))
     tem = (tope.notna() & (hechos.periodo.astype(str) > tope.astype(str))) | tope.isna()
     if "edicion" in hechos:
-        tem |= pd.to_datetime(hechos.edicion, errors="coerce") > pd.Timestamp(man["fecha_corte"])
+        corte = min(pd.Timestamp(man["fecha_corte"]), pd.Timestamp(_manifiesto_v15().get("fecha_corte", man["fecha_corte"])))
+        tem |= pd.to_datetime(hechos.edicion, errors="coerce") > corte
     m = esp | tem
     SEALED.mkdir(parents=True, exist_ok=True)
     hechos[m].to_parquet(SEALED / f"v16_{nombre}.parquet", index=False)
@@ -688,9 +705,33 @@ def sellar_v16(hechos: pd.DataFrame, nombre: str) -> pd.DataFrame:
     return hechos[~m].copy()
 
 
+# Variables de V15 por hipótesis (docs/v15/sellado_v15.json, «preguntas»): ninguna apertura de V16 que las contenga antes de que
+# su hipótesis de V15 se haya evaluado (adenda del pre-registro V16, punto R6).
+HIPOTESIS_V15_POR_PREGUNTA = {"p6_zonas_tensionadas": ["H1", "H2"], "p5_turismo_seccion": ["H3"], "p4_inmigracion": ["H4"],
+                              "p9_prediccion": ["H5"]}
+
+
+def hipotesis_v15_pendientes(variables: set[str]) -> list[str]:
+    """Hipótesis de V15 que comparten alguna variable con `variables` y aún no tienen evento «evaluacion» en el registro."""
+    man = _manifiesto_v15().get("preguntas", {})
+    hechas = {a["hipotesis"] for a in _accesos() if a.get("evento") == "evaluacion"}
+    pend = []
+    for p, hs in HIPOTESIS_V15_POR_PREGUNTA.items():
+        if variables & set(man.get(p, {}).get("variables", [])):
+            pend += [h for h in hs if not any(x.startswith(f"v15:{h}") for x in hechas)]
+    return sorted(set(pend))
+
+
 def evaluate_v16(hipotesis: str, fn, rama: str, nombres: list[str]):
-    """Abre la muestra sellada V16 UNA vez por pregunta confirmatoria (registrado antes de leer), solo si la etiqueta prereg-v16
-    está publicada en el remoto (src/v16/etiquetas.py). fn(dict) -> dict."""
+    """Abre la muestra sellada V16 UNA vez por pregunta (registrado antes de leer), solo si la etiqueta prereg-v16 está publicada
+    en el remoto (src/v16/etiquetas.py) y si ninguna hipótesis de V15 que comparta variables con esos paneles sigue pendiente de
+    evaluar. fn(dict) -> dict."""
+    vars_ = set()
+    for n in nombres:
+        vars_ |= set(_manifiesto_v16().get("conjuntos", {}).get(n, {}).get("variables", []))
+    pend = hipotesis_v15_pendientes(vars_)
+    if pend:
+        raise PermissionError(f"V16 no abre {nombres}: comparte variables con {pend} de V15, aún sin evaluar.")
     import importlib.util
     spec = importlib.util.spec_from_file_location("v16_etiquetas", HERE / "src" / "v16" / "etiquetas.py")
     et = importlib.util.module_from_spec(spec)

@@ -60,12 +60,13 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F3 | lector-literatura | L4_fiscalidad_compra | 133.818 | docs/v16/literatura/L4_fiscalidad_compra.md |
 | 2026-10-17 | F3 | lector-literatura | L5_ayudas_demanda | 129.764 | docs/v16/literatura/L5_ayudas_demanda.md |
 | 2026-10-17 | F3 | lector-literatura | L7_vivienda_publica_vacias | 126.467 | docs/v16/literatura/L7_vivienda_publica_vacias.md |
+| 2026-10-17 | F3 | lector-literatura | L6_extranjeros_golden_visa | 186.938 | docs/v16/literatura/L6_extranjeros_golden_visa.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F1 | 1.346.686 |
-| F3 | 808.396 |
+| F3 | 995.334 |
 
-Total V16: 2.155.082 tokens
+Total V16: 2.342.020 tokens
 
 <!-- fin subagentes -->

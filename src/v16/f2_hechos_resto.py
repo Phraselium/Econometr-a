@@ -77,7 +77,7 @@ def parque() -> list[str]:
     out["pct_no_principales"] = (100 * out["Vivienda no principal"] / out["Viviendas totales"]).round(2)
     out.reset_index().rename(columns={"Comunidades y Ciudades Autónomas": "ccaa"}).to_csv(SAL / "parque_ccaa.csv", index=False)
     # Catastro frente a Censo (territorio común: sin País Vasco ni Navarra)
-    cat = pd.read_csv(RAW / "catastro_urbana_municipios.csv")
+    cat = pd.read_csv(RAW / "catastro_urbana_municipios.csv.gz")   # la versión versionada (el .csv está en .gitignore)
     cat = cat[cat.serie.str.startswith("catastro_uu_res") & (cat.periodo == 2022)]
     cat_c = cat[~cat.provincia_codigo.isin([1, 20, 48, 31])].valor.sum()
     cen_c = tot - out.loc["16 País Vasco", "Viviendas totales"] - out.loc["15 Navarra, Comunidad Foral de", "Viviendas totales"]

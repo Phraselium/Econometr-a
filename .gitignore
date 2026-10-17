@@ -163,3 +163,5 @@ output/v16/*/smoke/
 output/v16/*/_smoke/
 # V16: ADRH completo normalizado (37 MB; se regenera con src/v16/datos/renta_parque.py)
 data/processed/v16/renta_parque_adrh_completo.parquet
+# V16: entrenamiento sellado de series de terceros (solo en disco, como sus fuentes)
+data/processed/v16/entrenamiento/*_terceros.parquet

@@ -690,7 +690,7 @@ def sellar_v16(hechos: pd.DataFrame, nombre: str) -> pd.DataFrame:
     # nunca más allá del corte de V15: para las claves que V15 selló temporalmente manda el mínimo de los dos manifiestos
     tope15 = clave.map(_manifiesto_v15().get("ultimo_periodo_visto", {}))
     ambos = tope.notna() & tope15.notna()
-    tope = tope.where(~ambos, np.minimum(tope.astype(str), tope15.astype(str)))
+    tope = tope.where(~ambos, pd.Series([min(str(a), str(b)) for a, b in zip(tope, tope15)], index=tope.index))
     tem = (tope.notna() & (hechos.periodo.astype(str) > tope.astype(str))) | tope.isna()
     if "edicion" in hechos:
         corte = min(pd.Timestamp(man["fecha_corte"]), pd.Timestamp(_manifiesto_v15().get("fecha_corte", man["fecha_corte"])))

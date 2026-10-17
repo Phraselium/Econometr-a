@@ -96,7 +96,6 @@ try:
     from shapely import STRtree  # noqa: F401
     from shapely.ops import unary_union
     g = pd.read_parquet(RAIZ / "data/base/geo/municipios.parquet")
-    import geopandas as gpd
     g = gpd.GeoDataFrame(g.drop(columns="geometry"), geometry=gpd.GeoSeries.from_wkb(g.geometry), crs="EPSG:4326").to_crs(3035)
     g["geometry"] = g.geometry.buffer(0)
     from shapely import prepare

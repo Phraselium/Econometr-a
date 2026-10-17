@@ -33,11 +33,35 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   Ningún valor cambia. La página se ha regenerado con make publicacion.
 - **F0.4 · Lo ya visto.** docs/v16/lo_ya_visto.md (107 filas de cifras_clave, auditorías de V15 y pre-registro de V15), generado por src/v16/f0_lo_ya_visto.py.
 - **Duda para el autor:** la independencia de dh_2125 (ECP y EPA), en tareas_autor §2.
-
 - Fase 0 sin subagentes (0 tokens).
+- **F1 · Datos** (inventario: docs/v16/inventario_fuentes.csv, 655 ficheros; licencias en los manifiestos por familia, K5).
+  - Familias descargadas: renta_parque, oferta_suelo, demanda_internacional, alquiler_turismo y tension_social.
+  - Base de intervenciones: 476 filas.
+  - Normalización a formato largo: 5 familias, cada una con sus tests.
+  - Auditorías: output/v16/auditoria/<familia>. Correcciones: partidos judiciales de 2025 excluidos y K6 (fuentes no independientes).
+  - Lo que depende del autor: tareas_autor §3 y §4.
+  - K8: la muestra v6 cubre 8 CCAA enteras.
+- **F2 · Hechos y diagnóstico** (C4 salvo 3 C1; ninguna discrepancia con la 1.0):
+  - output/v16/f2_hechos: 56 cifras;
+  - f2_contabilidad: hogares 2021-2025 y factor común provincial;
+  - f2_esfuerzo: ECV 2004-2025, validada con Eurostat en 2013-2025, con Oaxaca-Blinder, DFL y RIF;
+  - f2_atlas: 32 indicadores en 7 escalas, con supresión e incertidumbre.
+  - Las cifras V16-* pasan a cifras_clave en la fase 7, con la 2.0.
+- **F3 · Literatura y mecanismos.**
+  - docs/v16/literatura.md: 7 instrumentos y 115 fichas (72 VERIFICADAS, 43 NO VERIFICADAS, ninguna DISCREPANTE).
+  - Metaanálisis con regla fija (K7): ningún grupo llega a 5 estudios con error estándar.
+  - Marco de cuatro cuadrantes calibrado: output/v16/f3.
+- **F4 · Pre-registro interno V16.**
+  - Potencia con placebos: output/v16/potencia.
+  - Bloque sellado V16: src/holdout.py; 28 celdas, 777 municipios y 1.118 distritos, sin solapes con v6 ni V15.
+  - docs/v16/preregistro_v16.md más una adenda vinculante que responde punto por punto a revisor-preregistro y abogado-del-diablo: nada confirmatorio nuevo; V16 C4 como máximo; dos ramas de control (21 + 83); rejilla fija.
+  - Sellado ejecutado: docs/v16/sellado_v16.json; entrenamiento en data/processed/v16/entrenamiento.
+  - H1-H5 de V15 intactas.
+  - Desviación D1 y decisión K9.
 
 ## Siguiente
-- Fase 1: adquisición. Lo que requiera al autor va primero a tareas_autor. Después vienen la base de intervenciones, el registro de licencias, la normalización, la auditoría y el inventario.
+- Etiqueta prereg-v16 en el commit del sellado. Hay que publicarla en el remoto; si da 403 (B-1), es tarea del autor.
+- Fases 5-7: bloqueadas por la guarda (f) hasta que prereg-v16 (y prereg-v15) estén en el remoto. Es la guarda funcionando, no una parada D.
 
 ## Subagentes y tokens
 

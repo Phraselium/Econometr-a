@@ -73,8 +73,13 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - Grupo A (Q1, Q2, Q7, Q8) y grupo B (Q3, Q4, Q6) estimados en entrenamiento, C4 y pendientes de sellado. Desviaciones D2 (B) y D3 (A).
   - Q1b no es estimable en el entrenamiento.
   - Q3-b es el único resultado con inferencia válida.
+  - Grupo C (Q5, Q9, Q10 y la rejilla de 83 celdas) estimado. Desviaciones D4.
+  - Control BY (src/v16/f6_fdr.py): solo Q3-b cumple la condición (a); Q9-g tiene q = 0,153.
+  - **PARADA D (B-2):** Q9-g queda retenido a la espera del autor.
 
 ## Siguiente
+- **Detenido en la parada D (B-2).** Hasta que decida el autor: sin réplica ciega, sin abogado del diablo, sin fase 7 y sin publicar Q9-g.
+- Se terminan y versionan los grupos V15-A y V15-B, que ya estaban en marcha (estimación sin publicar).
 - Fases 5-7 de V16:
   - fase 5: Monte Carlo de las herramientas;
   - fase 6: estimación exploratoria con la rejilla fija y los diseños de la adenda;
@@ -120,6 +125,7 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F5 | montecarlo | mc_v15 | 332.369 | src/v15/montecarlo;output/v15/montecarlo |
 | 2026-10-17 | F6 | modelizador | grupo_A_q1_q2_q7_q8 | 224.084 | src/v16/q1_zonas.py;output/v16/q1;output/v16/q2;output/v16/q7;output/v16/q8 |
 | 2026-10-17 | F6 | modelizador | grupo_B_q3_q4_q6 | 212.505 | src/v16/q3_seccion.py;output/v16/q3;output/v16/q4;output/v16/q6 |
+| 2026-10-17 | F6 | modelizador | grupo_C_q5_q9_q10_rejilla | 192.100 | src/v16/q9_burbuja.py;output/v16/q5;output/v16/q9;output/v16/q10;output/v16/rejilla |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -128,8 +134,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | F3 | 1.160.356 |
 | F4 | 555.674 |
 | F5 | 771.025 |
-| F6 | 436.589 |
+| F6 | 628.689 |
 
-Total V16: 5.567.171 tokens
+Total V16: 5.759.271 tokens
 
 <!-- fin subagentes -->

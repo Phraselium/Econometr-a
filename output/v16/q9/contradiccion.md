@@ -1,0 +1,2 @@
+# Q9-g: posible contradicción con V7.2
+El GSADF del factor supera el valor crítico bootstrap al 5 %. La conclusión publicada de V7.2 es «sin exuberancia de los cocientes tras el ajuste múltiple». Es el factor agregado (no el GSADF por CCAA de V7.2) y no ha pasado BY ni réplica sellada; la tendencia del cociente puede producir rechazos del GSADF sin deriva. Se retiene aquí y no va a hechos.json hasta decisión del orquestador (parada D).

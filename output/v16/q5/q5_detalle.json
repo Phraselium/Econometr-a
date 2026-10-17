@@ -1,0 +1,239 @@
+{
+ "preguntas": [
+  "Q5-p",
+  "Q5-a"
+ ],
+ "estimacion": {
+  "Q5-p": {
+   "beta_h4_pct_por_DT": -0.5127882993936491,
+   "n": 101,
+   "muestra": "2000Q2-2025Q2",
+   "irf_puntual_pct": {
+    "1": -0.4543797615980653,
+    "4": -0.5127882993936491,
+    "8": 0.2324754903317324,
+    "12": 2.3034762489425
+   },
+   "ic95": null,
+   "p": null,
+   "multiverso": {
+    "n": 15,
+    "mediana": 0.15068323785013496,
+    "min": -0.6371813259569221,
+    "max": 2.3034762489425,
+    "proporcion_mismo_signo_que_principal": 0.4666666666666667
+   },
+   "sd_choque_original": 0.05391028076944662,
+   "r2": 0.7516696979716997,
+   "magnitud_referencia_pct": -0.6,
+   "cociente_estimacion_sobre_referencia": 0.8546471656560819,
+   "mismo_signo_que_referencia": true,
+   "MDE_declarado_pct": 1.47
+  },
+  "Q5-a": {
+   "beta_h4_pct_por_DT": -0.06205402249633725,
+   "n": 89,
+   "muestra": "2003Q2-2025Q2",
+   "irf_puntual_pct": {
+    "1": 0.024797875031732367,
+    "4": -0.06205402249633725,
+    "8": -0.2578266499230587,
+    "12": -0.2971209988484872
+   },
+   "ic95": null,
+   "p": null,
+   "multiverso": {
+    "n": 15,
+    "mediana": -0.1786511245126757,
+    "min": -0.5832991176656361,
+    "max": 0.024797875031732367,
+    "proporcion_mismo_signo_que_principal": 0.8666666666666667
+   },
+   "sd_choque_original": 0.05239793391787194,
+   "r2": 0.8763313391745591,
+   "magnitud_referencia": "ninguna comparable: (b) no se cumple (adenda, punto 3)"
+  }
+ },
+ "diagnosticos": {
+  "Q5-p": [
+   {
+    "prueba": "calibración de la inferencia",
+    "estado": "NO APTO",
+    "detalle": "LP con Newey-West de b fija: tamaño 0,0642-0,0925 fuera de [0,04; 0,06]; solo estimación puntual"
+   },
+   {
+    "prueba": "heterocedasticidad (Breusch-Pagan, h=1)",
+    "estado": "reportado",
+    "detalle": {
+     "LM": 13.8759810916055,
+     "p_diagnostico": 0.1268057156956325
+    }
+   },
+   {
+    "prueba": "autocorrelación de los residuos (Breusch-Godfrey 4, h=1)",
+    "estado": "reportado",
+    "detalle": {
+     "LM": 74.33603323539256,
+     "p_diagnostico": 2.753182955732137e-15
+    }
+   },
+   {
+    "prueba": "ruptura (sup-F de ruptura única, Bai-Perron simplificado)",
+    "estado": "reportado sin valor crítico validado",
+    "detalle": {
+     "supF": 4.203786680353064,
+     "trimestre_indice": 26,
+     "posicion_en_la_muestra_efectiva": "26 de 101"
+    }
+   },
+   {
+    "prueba": "placebo temporal (choque adelantado 8 trimestres, h=4)",
+    "estado": "reportado",
+    "detalle": {
+     "beta_placebo_pct": 0.4493009641590604,
+     "cociente_sobre_principal": -0.8761919191415641
+    }
+   },
+   {
+    "prueba": "primera etapa (sorpresa → Δ tipo hipotecario BdE)",
+    "estado": "FALLIDA si F < 10 (ver detalle); descriptiva",
+    "detalle": [
+     {
+      "h": 0,
+      "beta_pp_por_DT": -0.041203542831359546,
+      "F_robusto_HC1": 2.0799916069659363,
+      "n": 107
+     },
+     {
+      "h": 4,
+      "beta_pp_por_DT": -0.23728385542999617,
+      "F_robusto_HC1": 2.941579126954978,
+      "n": 105
+     }
+    ]
+   },
+   {
+    "prueba": "controles negativos (h=4)",
+    "estado": "reportados (no debe moverse)",
+    "detalle": {
+     "poblacion_total_pct": -0.031737265050715696,
+     "inflacion_yoy_cambio_pp": -0.2955606982361405
+    }
+   },
+   {
+    "prueba": "Oster / Cinelli-Hazlett / E-value",
+    "estado": "no aplicable",
+    "detalle": "choque externo (instrumento) sin regresores omitidos comparables; sin errores típicos válidos no hay RV"
+   },
+   {
+    "prueba": "pretendencias / Honest DiD / placebos de unidades / exclusión de grandes ciudades",
+    "estado": "no aplicable",
+    "detalle": "serie nacional única"
+   },
+   {
+    "prueba": "Moran en residuos",
+    "estado": "no aplicable",
+    "detalle": "sin dimensión espacial"
+   }
+  ],
+  "Q5-a": [
+   {
+    "prueba": "calibración de la inferencia",
+    "estado": "NO APTO",
+    "detalle": "LP con Newey-West de b fija: tamaño 0,0642-0,0925 fuera de [0,04; 0,06]; solo estimación puntual"
+   },
+   {
+    "prueba": "heterocedasticidad (Breusch-Pagan, h=1)",
+    "estado": "reportado",
+    "detalle": {
+     "LM": 15.456384892226547,
+     "p_diagnostico": 0.07913876342713752
+    }
+   },
+   {
+    "prueba": "autocorrelación de los residuos (Breusch-Godfrey 4, h=1)",
+    "estado": "reportado",
+    "detalle": {
+     "LM": 70.19963926966079,
+     "p_diagnostico": 2.0599043221147787e-14
+    }
+   },
+   {
+    "prueba": "ruptura (sup-F de ruptura única, Bai-Perron simplificado)",
+    "estado": "reportado sin valor crítico validado",
+    "detalle": {
+     "supF": 5.602823244337382,
+     "trimestre_indice": 22,
+     "posicion_en_la_muestra_efectiva": "22 de 89"
+    }
+   },
+   {
+    "prueba": "placebo temporal (choque adelantado 8 trimestres, h=4)",
+    "estado": "reportado",
+    "detalle": {
+     "beta_placebo_pct": 0.15415203955797535,
+     "cociente_sobre_principal": -2.484158695225184
+    }
+   },
+   {
+    "prueba": "primera etapa (sorpresa → Δ tipo hipotecario BdE)",
+    "estado": "FALLIDA si F < 10 (ver detalle); descriptiva",
+    "detalle": [
+     {
+      "h": 0,
+      "beta_pp_por_DT": -0.041203542831359546,
+      "F_robusto_HC1": 2.0799916069659363,
+      "n": 107
+     },
+     {
+      "h": 4,
+      "beta_pp_por_DT": -0.23728385542999617,
+      "F_robusto_HC1": 2.941579126954978,
+      "n": 105
+     }
+    ]
+   },
+   {
+    "prueba": "controles negativos (h=4)",
+    "estado": "reportados (no debe moverse)",
+    "detalle": {
+     "poblacion_total_pct": -0.031737265050715696,
+     "inflacion_yoy_cambio_pp": -0.2955606982361405
+    }
+   },
+   {
+    "prueba": "Oster / Cinelli-Hazlett / E-value",
+    "estado": "no aplicable",
+    "detalle": "choque externo (instrumento) sin regresores omitidos comparables; sin errores típicos válidos no hay RV"
+   },
+   {
+    "prueba": "pretendencias / Honest DiD / placebos de unidades / exclusión de grandes ciudades",
+    "estado": "no aplicable",
+    "detalle": "serie nacional única"
+   },
+   {
+    "prueba": "Moran en residuos",
+    "estado": "no aplicable",
+    "detalle": "sin dimensión espacial"
+   }
+  ]
+ },
+ "controles_negativos": {
+  "poblacion_total_pct": -0.031737265050715696,
+  "inflacion_yoy_cambio_pp": -0.2955606982361405
+ },
+ "primera_etapa": [
+  {
+   "h": 0,
+   "beta_pp_por_DT": -0.041203542831359546,
+   "F_robusto_HC1": 2.0799916069659363,
+   "n": 107
+  },
+  {
+   "h": 4,
+   "beta_pp_por_DT": -0.23728385542999617,
+   "F_robusto_HC1": 2.941579126954978,
+   "n": 105
+  }
+ ]
+}

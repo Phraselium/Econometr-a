@@ -1,0 +1,16 @@
+[
+ {
+  "id": "V16-Q9-c",
+  "indicador": "Q9-c: elasticidad de largo plazo del valor tasado respecto al IPC de alquiler (CS-ARDL p=2, media entre provincias; puntual)",
+  "valor": 0.8384096582693705,
+  "min": -1.4357331999305454,
+  "max": 0.9497092463359221,
+  "unidad": "elasticidad",
+  "periodo": "2002T1-2026T2",
+  "cobertura": "33 provincias",
+  "fuentes": "MIVAU; INE",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q9/informe.md#q9c"
+ }
+]

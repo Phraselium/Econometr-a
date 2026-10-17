@@ -1,0 +1,530 @@
+{
+ "rama": "v16/rejilla",
+ "pregunta": "Rejilla fija multiescala: 83 celdas, TWFE puntual de log del resultado sobre la exposición de Q1, Q2, Q3, Q4 y Q6",
+ "capa": "C4",
+ "datos": "data/processed/v16/entrenamiento (paneles anuales por unidad)",
+ "N": {
+  "celdas": 83,
+  "estimadas": 83
+ },
+ "metodo": "TWFE con EF de unidad y periodo, estimación puntual (NO APTA); 5 variantes de robustez por celda",
+ "estimacion": {
+  "celdas": 83,
+  "estimadas": 83,
+  "no_estimables": 0,
+  "por_familia": {
+   "Q1": {
+    "celdas": 18,
+    "estimadas": 18,
+    "no_estimables": 0,
+    "beta_positivo": 9,
+    "beta_negativo": 9,
+    "mismo_signo_en_variantes_mediana": 1.0
+   },
+   "Q2": {
+    "celdas": 24,
+    "estimadas": 24,
+    "no_estimables": 0,
+    "beta_positivo": 12,
+    "beta_negativo": 12,
+    "mismo_signo_en_variantes_mediana": 1.0
+   },
+   "Q3": {
+    "celdas": 21,
+    "estimadas": 21,
+    "no_estimables": 0,
+    "beta_positivo": 11,
+    "beta_negativo": 10,
+    "mismo_signo_en_variantes_mediana": 0.8
+   },
+   "Q4": {
+    "celdas": 7,
+    "estimadas": 7,
+    "no_estimables": 0,
+    "beta_positivo": 3,
+    "beta_negativo": 4,
+    "mismo_signo_en_variantes_mediana": 1.0
+   },
+   "Q6": {
+    "celdas": 13,
+    "estimadas": 13,
+    "no_estimables": 0,
+    "beta_positivo": 7,
+    "beta_negativo": 6,
+    "mismo_signo_en_variantes_mediana": 1.0
+   }
+  },
+  "variantes_declaradas": 415,
+  "variantes_estimadas": 355,
+  "mismo_signo_variantes_mediana_global": 1.0
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "metodo": "sin corrección aquí: el control Benjamini-Yekutieli lo aplica el orquestador",
+  "valores": []
+ },
+ "p_valores_para_BY": [
+  {
+   "id": "Q1|municipio|emal_renta_mensual_eur",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|municipio|ipva_tam_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|municipio|obra_nueva_neta_catastro",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|municipio|serpavi_alquiler_m2_mediana",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|municipio|serpavi_n_contratos_recuento",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|cgpj_ejecuciones_hipotecarias_numero",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|cgpj_lanzamientos_lau_numero",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|cgpj_lanzamientos_total_numero",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|compraventas",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|hip_importe",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|hip_n",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|iniciadas",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|ipc_alquiler_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|ipva_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|serpavi_alquiler_m2_mediana",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|serpavi_n_contratos_recuento",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|terminadas",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q1|provincia|valor_tasado",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|distrito|ipva_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|distrito|ipva_tam_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|distrito|serpavi_alquiler_m2_mediana",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|distrito|serpavi_alquiler_mes_mediana",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|municipio|emal_renta_mensual_eur",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|municipio|incasol_contratos",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|municipio|incasol_renta_media",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|municipio|ipva_tam_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|municipio|obra_nueva_neta_catastro",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|municipio|serpavi_alquiler_m2_mediana",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|municipio|serpavi_n_contratos_recuento",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|cgpj_ejecuciones_hipotecarias_numero",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|cgpj_lanzamientos_lau_numero",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|cgpj_lanzamientos_total_numero",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|compraventas",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|hip_importe",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|hip_n",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|iniciadas",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|ipc_alquiler_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|ipva_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|serpavi_alquiler_m2_mediana",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|serpavi_n_contratos_recuento",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|terminadas",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q2|provincia|valor_tasado",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|municipio|emal_renta_mensual_eur",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|municipio|incasol_contratos",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|municipio|incasol_renta_media",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|municipio|ipva_tam_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|municipio|obra_nueva_neta_catastro",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|municipio|serpavi_n_contratos_recuento",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|cgpj_ejecuciones_hipotecarias_numero",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|cgpj_lanzamientos_lau_numero",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|cgpj_lanzamientos_total_numero",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|compraventas",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|hip_importe",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|hip_n",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|iniciadas",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|ipc_alquiler_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|ipva_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|serpavi_alquiler_m2_mediana",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|serpavi_n_contratos_recuento",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|terminadas",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|provincia|valor_tasado",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|seccion|serpavi_alquiler_m2_mediana",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q3|seccion|serpavi_alquiler_mes_mediana",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q4|municipio|emal_renta_mensual_eur",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q4|municipio|incasol_contratos",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q4|municipio|incasol_renta_media",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q4|municipio|ipva_tam_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q4|municipio|obra_nueva_neta_catastro",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q4|municipio|serpavi_alquiler_m2_mediana",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q4|municipio|serpavi_n_contratos_recuento",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|cgpj_ejecuciones_hipotecarias_numero",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|cgpj_lanzamientos_lau_numero",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|cgpj_lanzamientos_total_numero",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|compraventas",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|hip_importe",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|hip_n",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|iniciadas",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|ipc_alquiler_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|ipva_indice",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|serpavi_alquiler_m2_mediana",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|serpavi_n_contratos_recuento",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|terminadas",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  },
+  {
+   "id": "Q6|provincia|valor_tasado",
+   "p": null,
+   "motivo": "rejilla_twfe NO APTO (municipio y provincia): solo estimación puntual"
+  }
+ ],
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": [
+  {
+   "prueba": "calibración TWFE de la rejilla",
+   "estado": "NO APTO",
+   "detalle": "tamaño municipio 0,203 / provincia 0,1105; cobertura 0,8055: solo estimación puntual, sin p ni IC"
+  },
+  {
+   "prueba": "balance, pretendencias, Honest DiD, placebos de fecha/unidades, MOP, Moran",
+   "estado": "no ejecutado por celda",
+   "detalle": "la rejilla es una búsqueda declarada con estimador puntual; los diagnósticos de diseño están en los informes de Q1-Q6"
+  },
+  {
+   "prueba": "exclusión de grandes ciudades (Barcelona, València, Sevilla, Málaga)",
+   "estado": "reportada por celda",
+   "detalle": "columna excl_grandes_beta de rejilla_resultados.csv"
+  },
+  {
+   "prueba": "estabilidad en variantes",
+   "estado": "reportada",
+   "detalle": {
+    "mediana_proporcion_mismo_signo": 1.0
+   }
+  },
+  {
+   "prueba": "celdas no estimables",
+   "estado": "reportadas",
+   "detalle": 0
+  }
+ ],
+ "fuera_muestra": {
+  "modelo": "no aplica (no es predicción)",
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "pendiente_sellada": true,
+ "regla_hallazgo": {
+  "a_q_menor_0_10": "pendiente (BY del orquestador; p null si NO APTO)",
+  "b_error_S_M": "no evaluable sin errores típicos válidos",
+  "c_sellada": "pendiente",
+  "resultado": "estimación C4 pendiente de evaluación sellada; sin lenguaje causal"
+ },
+ "notas": [
+  "C4 exploratorio, pendiente de evaluación sellada; asociación, sin lenguaje causal.",
+  "Sin errores típicos válidos no hay p-valor: las 83 celdas entran en el BY del orquestador con p null.",
+  "Q3 y Q4 cubren hasta 2022 por el padrón por nacionalidad."
+ ]
+}

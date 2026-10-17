@@ -1,0 +1,203 @@
+{
+ "rama": "v16/q10-1",
+ "pregunta": "Q10-1: Δlog IPV nacional, h = 1, MIDAS frente a AR(4)",
+ "capa": "C4",
+ "datos": "data/processed/v16/entrenamiento: base_precio, base_alquiler, base_macro, base_poblacion, demanda_internacional",
+ "N": 38,
+ "metodo": "ventana expansiva; reducción puntual del ECM; sin DM/CW (NO APTOS)",
+ "estimacion": {
+  "h1": {
+   "n": 38,
+   "rmse": {
+    "AR4": 0.011265572405151731,
+    "RW_deriva": 0.022734885464861885,
+    "AR4_S": 0.013558614684697382,
+    "MIDAS": 0.012252060937676336,
+    "ECM_v1": 0.0172678012587164
+   },
+   "reduccion_ecm_vs_AR4": {
+    "RW_deriva": -3.072668062373003,
+    "AR4_S": -0.4485187175896106,
+    "MIDAS": -0.18280123685764926,
+    "ECM_v1": -1.3494573020856429
+   },
+   "reduccion_ecm_vs_ECM_v1": {
+    "AR4": 0.5743697920739876,
+    "RW_deriva": -0.7334505542014511,
+    "AR4_S": 0.3834666770476134,
+    "MIDAS": 0.49656406362113426
+   },
+   "muestra": "2016Q1-2026Q2"
+  },
+  "h1_sin2020": {
+   "n": 32,
+   "rmse": {
+    "AR4": 0.011296230541958368,
+    "RW_deriva": 0.02394778720750637,
+    "AR4_S": 0.013840108967126523,
+    "MIDAS": 0.011432455929831298,
+    "ECM_v1": 0.017573137717539964
+   },
+   "reduccion_ecm_vs_AR4": {
+    "RW_deriva": -3.494316845590215,
+    "AR4_S": -0.5011079482059395,
+    "MIDAS": -0.02426416198318071,
+    "ECM_v1": -1.4200900753835741
+   },
+   "reduccion_ecm_vs_ECM_v1": {
+    "AR4": 0.5867922396064105,
+    "RW_deriva": -0.8570865982655151,
+    "AR4_S": 0.37973054661280725,
+    "MIDAS": 0.5767660995755131
+   },
+   "muestra": "2016Q1-2026Q2"
+  },
+  "h4": {
+   "n": 35,
+   "rmse": {
+    "AR4": 0.04229653542103177,
+    "RW_deriva": 0.08245256907019764,
+    "AR4_S": 0.042564884845919804,
+    "MIDAS": 0.044187644313222404,
+    "ECM_v1": 0.06733727407246849
+   },
+   "reduccion_ecm_vs_AR4": {
+    "RW_deriva": -2.8001329759200284,
+    "AR4_S": -0.01272920775550812,
+    "MIDAS": -0.09142050527923185,
+    "ECM_v1": -1.534553557726293
+   },
+   "reduccion_ecm_vs_ECM_v1": {
+    "AR4": 0.6054531982756427,
+    "RW_deriva": -0.4993303117765113,
+    "AR4_S": 0.6004309300672221,
+    "MIDAS": 0.5693835303056971
+   },
+   "muestra": "2016Q4-2026Q2"
+  },
+  "h4_sin2020": {
+   "n": 29,
+   "rmse": {
+    "AR4": 0.04588769688853873,
+    "RW_deriva": 0.0890308081846248,
+    "AR4_S": 0.04523573927536509,
+    "MIDAS": 0.04578362957578815,
+    "ECM_v1": 0.07313650599033572
+   },
+   "reduccion_ecm_vs_AR4": {
+    "RW_deriva": -2.7643336471358455,
+    "AR4_S": 0.02821349752578417,
+    "MIDAS": 0.004530595965870354,
+    "ECM_v1": -1.540246696995737
+   },
+   "reduccion_ecm_vs_ECM_v1": {
+    "AR4": 0.6063374469957323,
+    "RW_deriva": -0.48187719389136285,
+    "AR4_S": 0.6174440444609122,
+    "MIDAS": 0.6081209729702877
+   },
+   "muestra": "2016Q4-2026Q2"
+  },
+  "conforme_h1": {
+   "MIDAS": {
+    "cobertura_empirica_90": 0.7692307692307693,
+    "n": 26,
+    "ancho_medio": 0.036874534928920726
+   },
+   "AR4": {
+    "cobertura_empirica_90": 0.8076923076923077,
+    "n": 26,
+    "ancho_medio": 0.03388053767218185
+   }
+  },
+  "modelo_principal": "MIDAS",
+  "reduccion_principal": -0.18280123685764926,
+  "relevancia_minima_10pct": false,
+  "ic95": null,
+  "p": null
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "metodo": "sin corrección aquí: el control Benjamini-Yekutieli lo aplica el orquestador",
+  "valores": []
+ },
+ "p_valores_para_BY": [
+  {
+   "id": "Q10-1",
+   "p": null,
+   "motivo": "dm_hln y Clark-West NO APTOS: solo reducción puntual del ECM"
+  }
+ ],
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": [
+  {
+   "prueba": "calibración DM-HLN / Clark-West",
+   "estado": "NO APTO",
+   "detalle": "tamaño HLN 0,002; Clark-West 0,033: sin p-valor"
+  },
+  {
+   "prueba": "MCS / GW",
+   "estado": "no ejecutado",
+   "detalle": "no validados en veredictos.csv"
+  },
+  {
+   "prueba": "misma muestra de objetivos",
+   "estado": "superada",
+   "detalle": "todos los modelos sobre los mismos 38 objetivos (2016Q1-2026Q2)"
+  },
+  {
+   "prueba": "ECM v1",
+   "estado": "reportado",
+   "detalle": "reproducción en entrenamiento sin ln_costes (D4)"
+  },
+  {
+   "prueba": "cobertura conforme h=1 (90 %)",
+   "estado": "reportada",
+   "detalle": {
+    "MIDAS": {
+     "cobertura_empirica_90": 0.7692307692307693,
+     "n": 26,
+     "ancho_medio": 0.036874534928920726
+    },
+    "AR4": {
+     "cobertura_empirica_90": 0.8076923076923077,
+     "n": 26,
+     "ancho_medio": 0.03388053767218185
+    }
+   }
+  },
+  {
+   "prueba": "embargo/bloques",
+   "estado": "no interviene",
+   "detalle": "modelos fijados de antemano, objetivos directos con información ≤ origen"
+  },
+  {
+   "prueba": "límite de información",
+   "estado": "declarado",
+   "detalle": "indicadores mensuales en su última edición, no en tiempo real (adenda, punto 8)"
+  }
+ ],
+ "fuera_muestra": {
+  "modelo": "MIDAS",
+  "rmse": {
+   "AR4": 0.011265572405151731,
+   "RW_deriva": 0.022734885464861885,
+   "AR4_S": 0.013558614684697382,
+   "MIDAS": 0.012252060937676336,
+   "ECM_v1": 0.0172678012587164
+  },
+  "dm_vs_ar4": null
+ },
+ "pendiente_sellada": true,
+ "regla_hallazgo": {
+  "a_q_menor_0_10": "pendiente (BY del orquestador; p null si NO APTO)",
+  "b_error_S_M": "no evaluable sin errores típicos válidos",
+  "c_sellada": "pendiente",
+  "resultado": "estimación C4 pendiente de evaluación sellada; sin lenguaje causal"
+ },
+ "notas": [
+  "C4; predicción ≠ causalidad.",
+  "El nowcasting puede parecer mejor de lo que sería en directo (última edición de los indicadores).",
+  "Solo «predice mejor» si supera a la línea base más exigente: ver razones frente a RW con deriva y ECM v1."
+ ]
+}

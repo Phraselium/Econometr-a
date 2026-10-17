@@ -1,0 +1,244 @@
+{
+ "rama": "v16/q9",
+ "pregunta": "Q9: ratio valor tasado / IPC de alquiler: explosividad del factor común (GSADF) y elasticidad de largo plazo provincial (CS-ARDL)",
+ "capa": "C4",
+ "datos": "data/processed/v16/entrenamiento: base_precio (valor tasado), base_alquiler (IPC alquiler, SERPAVI), base_macro (coste de uso)",
+ "N": {
+  "Q9-g": 98,
+  "Q9-c": 3234
+ },
+ "metodo": "GSADF con bootstrap salvaje (APTO); CS-ARDL/MG/PMG y CIPS puntuales (NO APTOS)",
+ "estimacion": {
+  "Q9-g": {
+   "gsadf_factor": 5.918697291453831,
+   "vc95_bootstrap_salvaje": 3.3400553385047043,
+   "p_bootstrap": 0.004,
+   "B": 499,
+   "explosivo_al_5pct": true,
+   "lectura": "explosivo",
+   "fechas_BSADF_sobre_vc_puntual": [
+    "2010Q1",
+    "2010Q2",
+    "2010Q3",
+    "2010Q4",
+    "2011Q1",
+    "2011Q2",
+    "2011Q3",
+    "2011Q4",
+    "2012Q1",
+    "2012Q2",
+    "2012Q3",
+    "2012Q4",
+    "2013Q1",
+    "2013Q2",
+    "2013Q3",
+    "2013Q4",
+    "2014Q1",
+    "2014Q2",
+    "2014Q3",
+    "2014Q4",
+    "2015Q1",
+    "2015Q2",
+    "2015Q3",
+    "2015Q4",
+    "2016Q1",
+    "2016Q2",
+    "2016Q3",
+    "2016Q4",
+    "2017Q1",
+    "2017Q2",
+    "2017Q3",
+    "2017Q4",
+    "2018Q1",
+    "2018Q2",
+    "2018Q3",
+    "2019Q1",
+    "2019Q2",
+    "2019Q3",
+    "2019Q4",
+    "2020Q1",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1",
+    "2026Q2"
+   ],
+   "varianza_explicada_1ªCP": 0.8743318534552705,
+   "robustez_media": {
+    "gsadf": 6.20017738023632,
+    "vc95": 3.1698714292724475,
+    "p": 0.002
+   },
+   "alternativa_SERPAVI_anual": {
+    "gsadf": 0.8783513548064562,
+    "vc95": 1.147240839198462,
+    "p": 0.092,
+    "T": 14,
+    "nota": "sin potencia con T = 14"
+   },
+   "n": 98,
+   "unidades": 33,
+   "ic95": null
+  },
+  "Q9-c": {
+   "theta_principal_CS_ARDL_p2": 0.8384096582693705,
+   "theta_mediana_entre_provincias": 0.5574787071113143,
+   "n_provincias": 33,
+   "T": 98,
+   "multiverso": {
+    "n": 14,
+    "mediana": -0.54352402336766,
+    "min": -1.4357331999305454,
+    "max": 0.9497092463359221,
+    "proporcion_mismo_signo": 0.14285714285714285,
+    "por_estimador": {
+     "CS-ARDL": 0.8384096582693705,
+     "MG": -0.6859051096291289,
+     "PMG": -0.5497971069302756
+    }
+   },
+   "ic95": null,
+   "p": null
+  },
+  "Q9-gsadf-provincias": {
+   "valor_tasado/IPC_alquiler (trimestral)": {
+    "n": 33,
+    "supera_vc95_sin_ajuste_multiple": 18
+   },
+   "valor_tasado/SERPAVI (anual, T=14)": {
+    "n": 30,
+    "supera_vc95_sin_ajuste_multiple": 1
+   }
+  }
+ },
+ "ic95": {
+  "Q9-g": null,
+  "Q9-c": null
+ },
+ "p_ajustado": {
+  "metodo": "sin corrección aquí: el control Benjamini-Yekutieli lo aplica el orquestador",
+  "valores": []
+ },
+ "p_valores_para_BY": [
+  {
+   "id": "Q9-g",
+   "p": 0.004,
+   "motivo": "gsadf_factor APTO (bootstrap salvaje)"
+  },
+  {
+   "id": "Q9-c",
+   "p": null,
+   "motivo": "csardl NO APTO"
+  }
+ ],
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "Q9-g": [
+   {
+    "prueba": "calibración GSADF-factor",
+    "estado": "superada",
+    "detalle": "bootstrap salvaje: tamaño 0,0455 (salto), 0,0455 (estocástica); homocedástico 0,017 (conservador)"
+   },
+   {
+    "prueba": "heterocedasticidad de Δ factor (ARCH-LM 4)",
+    "estado": "reportado",
+    "detalle": {
+     "LM": 33.73617568573288,
+     "p": 8.440352961202577e-07,
+     "razon_var_1ª_mitad/2ª": 4.549753039689416,
+     "lectura": "heterocedástico (ARCH-LM p < 0,05)"
+    }
+   },
+   {
+    "prueba": "potencia",
+    "estado": "límite declarado",
+    "detalle": "el GSADF agregado detecta ρ explosiva con potencia limitada; «no explosivo» = no detectado con esta potencia"
+   },
+   {
+    "prueba": "raíces unitarias / rupturas / Moran / pretendencias / placebos / Oster",
+    "estado": "no aplicable",
+    "detalle": "prueba de explosividad sobre un factor; no hay coeficiente de tratamiento"
+   },
+   {
+    "prueba": "multiplicidad",
+    "estado": "BY del orquestador",
+    "detalle": "explosivo exige BH/BY y réplica sellada"
+   }
+  ],
+  "Q9-c": [
+   {
+    "prueba": "calibración CS-ARDL",
+    "estado": "NO APTO",
+    "detalle": "tamaño 0,1015; cobertura 0,8985: solo estimación puntual"
+   },
+   {
+    "prueba": "CIPS (descriptivo, sin vc: bootstrap NO APTO)",
+    "estado": "reportado",
+    "detalle": {
+     "ratio": {
+      "CIPS": -2.1816403194863554,
+      "t_CADF_mediana": -2.2557019742435083,
+      "N": 33,
+      "T": 98,
+      "rezagos": 1
+     },
+     "ln_valor_tasado": {
+      "CIPS": -1.6110506095028392,
+      "t_CADF_mediana": -1.8410437893647882,
+      "N": 33,
+      "T": 98,
+      "rezagos": 1
+     },
+     "ln_ipc_alquiler": {
+      "CIPS": -2.1698041638543124,
+      "t_CADF_mediana": -2.235422886406606,
+      "N": 33,
+      "T": 98,
+      "rezagos": 1
+     }
+    }
+   },
+   {
+    "prueba": "dependencia transversal (correlación media de Δln valor tasado)",
+    "estado": "reportado",
+    "detalle": {
+     "rho_medio": 0.4866969365009172
+    }
+   },
+   {
+    "prueba": "heterogeneidad de θ_i (CS-ARDL p=2)",
+    "estado": "reportado",
+    "detalle": {
+     "p25": -0.6523590728638097,
+     "mediana": 0.5574787071113143,
+     "p75": 1.7060787935634971,
+     "n_nan": 0
+    }
+   },
+   {
+    "prueba": "Westerlund / Pedroni",
+    "estado": "no ejecutado",
+    "detalle": "no figuran en la especificación de la adenda ni en veredictos.csv"
+   }
+  ]
+ },
+ "fuera_muestra": {
+  "modelo": "no aplica (no es predicción)",
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "pendiente_sellada": true,
+ "regla_hallazgo": {
+  "a_q_menor_0_10": "pendiente (BY del orquestador; p null si NO APTO)",
+  "b_error_S_M": "no evaluable sin errores típicos válidos",
+  "c_sellada": "pendiente",
+  "resultado": "estimación C4 pendiente de evaluación sellada; sin lenguaje causal"
+ },
+ "notas": [
+  "C4 exploratorio, pendiente de evaluación sellada; sin lenguaje causal.",
+  "Ratio con IPC de alquiler en vez de índice de stock de contratos (no existe en entrenamiento): declarado en D4.",
+  "Lectura simétrica: «no explosivo» = no detectado con esta potencia, nunca «no hay burbuja».",
+  "Ya visto: GSADF por CCAA de la versión 7.2."
+ ]
+}

@@ -1,0 +1,30 @@
+[
+ {
+  "id": "V16-Q5-p-h4",
+  "indicador": "Q5-p: variación acumulada del valor tasado nacional a 4 trimestres asociada a una DT de sorpresa monetaria (JK)",
+  "valor": -0.5127882993936491,
+  "min": -0.6371813259569221,
+  "max": 2.3034762489425,
+  "unidad": "% por DT de sorpresa",
+  "periodo": "2000Q2-2025Q2",
+  "cobertura": "nacional, trimestral",
+  "fuentes": "MIVAU (valor tasado); BCE/JK (sorpresas)",
+  "capa": "C4",
+  "fecha_dato": "2025T4",
+  "ficha": "output/v16/q5/informe.md#q5p"
+ },
+ {
+  "id": "V16-Q5-a-h4",
+  "indicador": "Q5-a: variación acumulada del IPC de alquiler nacional a 4 trimestres asociada a una DT de sorpresa monetaria (JK)",
+  "valor": -0.06205402249633725,
+  "min": -0.5832991176656361,
+  "max": 0.024797875031732367,
+  "unidad": "% por DT de sorpresa",
+  "periodo": "2003Q2-2025Q2",
+  "cobertura": "nacional, trimestral",
+  "fuentes": "INE (IPC alquiler); BCE/JK (sorpresas)",
+  "capa": "C4",
+  "fecha_dato": "2025T4",
+  "ficha": "output/v16/q5/informe.md#q5a"
+ }
+]

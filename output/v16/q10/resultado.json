@@ -1,0 +1,501 @@
+{
+ "rama": "v16/q10",
+ "pregunta": "Q10: predicción nacional (IPV, IPC de alquiler, compraventas) h = 1 frente a AR(4) y ECM v1; reducción puntual del ECM",
+ "capa": "C4",
+ "datos": "data/processed/v16/entrenamiento: base_precio, base_alquiler, base_macro, base_poblacion, demanda_internacional",
+ "N": {
+  "Q10-1": 38,
+  "Q10-2": 58,
+  "Q10-3": 42
+ },
+ "metodo": "ventana expansiva (30 trimestres iniciales); MIDAS exp-Almon / puente; DM-HLN y Clark-West NO APTOS: solo razones de ECM",
+ "estimacion": {
+  "Q10-1": {
+   "h1": {
+    "n": 38,
+    "rmse": {
+     "AR4": 0.011265572405151731,
+     "RW_deriva": 0.022734885464861885,
+     "AR4_S": 0.013558614684697382,
+     "MIDAS": 0.012252060937676336,
+     "ECM_v1": 0.0172678012587164
+    },
+    "reduccion_ecm_vs_AR4": {
+     "RW_deriva": -3.072668062373003,
+     "AR4_S": -0.4485187175896106,
+     "MIDAS": -0.18280123685764926,
+     "ECM_v1": -1.3494573020856429
+    },
+    "reduccion_ecm_vs_ECM_v1": {
+     "AR4": 0.5743697920739876,
+     "RW_deriva": -0.7334505542014511,
+     "AR4_S": 0.3834666770476134,
+     "MIDAS": 0.49656406362113426
+    },
+    "muestra": "2016Q1-2026Q2"
+   },
+   "h1_sin2020": {
+    "n": 32,
+    "rmse": {
+     "AR4": 0.011296230541958368,
+     "RW_deriva": 0.02394778720750637,
+     "AR4_S": 0.013840108967126523,
+     "MIDAS": 0.011432455929831298,
+     "ECM_v1": 0.017573137717539964
+    },
+    "reduccion_ecm_vs_AR4": {
+     "RW_deriva": -3.494316845590215,
+     "AR4_S": -0.5011079482059395,
+     "MIDAS": -0.02426416198318071,
+     "ECM_v1": -1.4200900753835741
+    },
+    "reduccion_ecm_vs_ECM_v1": {
+     "AR4": 0.5867922396064105,
+     "RW_deriva": -0.8570865982655151,
+     "AR4_S": 0.37973054661280725,
+     "MIDAS": 0.5767660995755131
+    },
+    "muestra": "2016Q1-2026Q2"
+   },
+   "h4": {
+    "n": 35,
+    "rmse": {
+     "AR4": 0.04229653542103177,
+     "RW_deriva": 0.08245256907019764,
+     "AR4_S": 0.042564884845919804,
+     "MIDAS": 0.044187644313222404,
+     "ECM_v1": 0.06733727407246849
+    },
+    "reduccion_ecm_vs_AR4": {
+     "RW_deriva": -2.8001329759200284,
+     "AR4_S": -0.01272920775550812,
+     "MIDAS": -0.09142050527923185,
+     "ECM_v1": -1.534553557726293
+    },
+    "reduccion_ecm_vs_ECM_v1": {
+     "AR4": 0.6054531982756427,
+     "RW_deriva": -0.4993303117765113,
+     "AR4_S": 0.6004309300672221,
+     "MIDAS": 0.5693835303056971
+    },
+    "muestra": "2016Q4-2026Q2"
+   },
+   "h4_sin2020": {
+    "n": 29,
+    "rmse": {
+     "AR4": 0.04588769688853873,
+     "RW_deriva": 0.0890308081846248,
+     "AR4_S": 0.04523573927536509,
+     "MIDAS": 0.04578362957578815,
+     "ECM_v1": 0.07313650599033572
+    },
+    "reduccion_ecm_vs_AR4": {
+     "RW_deriva": -2.7643336471358455,
+     "AR4_S": 0.02821349752578417,
+     "MIDAS": 0.004530595965870354,
+     "ECM_v1": -1.540246696995737
+    },
+    "reduccion_ecm_vs_ECM_v1": {
+     "AR4": 0.6063374469957323,
+     "RW_deriva": -0.48187719389136285,
+     "AR4_S": 0.6174440444609122,
+     "MIDAS": 0.6081209729702877
+    },
+    "muestra": "2016Q4-2026Q2"
+   },
+   "conforme_h1": {
+    "MIDAS": {
+     "cobertura_empirica_90": 0.7692307692307693,
+     "n": 26,
+     "ancho_medio": 0.036874534928920726
+    },
+    "AR4": {
+     "cobertura_empirica_90": 0.8076923076923077,
+     "n": 26,
+     "ancho_medio": 0.03388053767218185
+    }
+   },
+   "modelo_principal": "MIDAS",
+   "reduccion_principal": -0.18280123685764926,
+   "relevancia_minima_10pct": false,
+   "ic95": null,
+   "p": null
+  },
+  "Q10-2": {
+   "h1": {
+    "n": 58,
+    "rmse": {
+     "AR4": 0.0011455455018037249,
+     "RW_deriva": 0.004505515293220698,
+     "AR4_S": 0.0013287684218296634,
+     "NOWCAST": 0.0013075957852464546
+    },
+    "reduccion_ecm_vs_AR4": {
+     "RW_deriva": -14.469071530728534,
+     "AR4_S": -0.34546965843506583,
+     "NOWCAST": -0.3029337550111606
+    },
+    "reduccion_ecm_vs_ECM_v1": null,
+    "muestra": "2011Q1-2026Q2"
+   },
+   "h1_sin2020": {
+    "n": 52,
+    "rmse": {
+     "AR4": 0.0011427863374498081,
+     "RW_deriva": 0.0046787789234086444,
+     "AR4_S": 0.0012785775310101201,
+     "NOWCAST": 0.0013245649652383793
+    },
+    "reduccion_ecm_vs_AR4": {
+     "RW_deriva": -15.762352551205602,
+     "AR4_S": -0.2517686111306878,
+     "NOWCAST": -0.343434349848748
+    },
+    "reduccion_ecm_vs_ECM_v1": null,
+    "muestra": "2011Q1-2026Q2"
+   },
+   "h4": {
+    "n": 55,
+    "rmse": {
+     "AR4": 0.005399774586939048,
+     "RW_deriva": 0.01905583358457993,
+     "AR4_S": 0.005097911850513906,
+     "NOWCAST": 0.005543330839720792
+    },
+    "reduccion_ecm_vs_AR4": {
+     "RW_deriva": -11.453878993616058,
+     "AR4_S": 0.10868055305880298,
+     "NOWCAST": -0.053877996227467806
+    },
+    "reduccion_ecm_vs_ECM_v1": null,
+    "muestra": "2011Q4-2026Q2"
+   },
+   "h4_sin2020": {
+    "n": 49,
+    "rmse": {
+     "AR4": 0.005608810056093729,
+     "RW_deriva": 0.019998005343300488,
+     "AR4_S": 0.005251766545624889,
+     "NOWCAST": 0.005756446801276021
+    },
+    "reduccion_ecm_vs_AR4": {
+     "RW_deriva": -11.712527185339757,
+     "AR4_S": 0.12326295117740738,
+     "NOWCAST": -0.053337450391292895
+    },
+    "reduccion_ecm_vs_ECM_v1": null,
+    "muestra": "2011Q4-2026Q2"
+   },
+   "conforme_h1": {
+    "NOWCAST": {
+     "cobertura_empirica_90": 0.8913043478260869,
+     "n": 46,
+     "ancho_medio": 0.004404506759602076
+    },
+    "AR4": {
+     "cobertura_empirica_90": 0.8695652173913043,
+     "n": 46,
+     "ancho_medio": 0.0035084298101807757
+    }
+   },
+   "modelo_principal": "NOWCAST",
+   "reduccion_principal": -0.3029337550111606,
+   "relevancia_minima_10pct": false,
+   "ic95": null,
+   "p": null
+  },
+  "Q10-3": {
+   "h1": {
+    "n": 42,
+    "rmse": {
+     "AR4": 0.13090963661590369,
+     "RW_deriva": 0.13003163392735798,
+     "AR4_S": 0.1326644385499571,
+     "MIDAS": 0.10086229590692086
+    },
+    "reduccion_ecm_vs_AR4": {
+     "RW_deriva": 0.013368891042665254,
+     "AR4_S": -0.026989047711007963,
+     "MIDAS": 0.40637188061825824
+    },
+    "reduccion_ecm_vs_ECM_v1": null,
+    "muestra": "2016Q1-2026Q2"
+   },
+   "h1_sin2020": {
+    "n": 36,
+    "rmse": {
+     "AR4": 0.06830605698321528,
+     "RW_deriva": 0.0909254501627847,
+     "AR4_S": 0.0773216706972207,
+     "MIDAS": 0.06933814895621061
+    },
+    "reduccion_ecm_vs_AR4": {
+     "RW_deriva": -0.7719541802538177,
+     "AR4_S": -0.2813979545825056,
+     "MIDAS": -0.0304479391427237
+    },
+    "reduccion_ecm_vs_ECM_v1": null,
+    "muestra": "2016Q1-2026Q2"
+   },
+   "h4": {
+    "n": 39,
+    "rmse": {
+     "AR4": 0.2053769308774747,
+     "RW_deriva": 0.198293216764084,
+     "AR4_S": 0.2070346922584442,
+     "MIDAS": 0.20202208395369708
+    },
+    "reduccion_ecm_vs_AR4": {
+     "RW_deriva": 0.0677929199245827,
+     "AR4_S": -0.016208752682126404,
+     "MIDAS": 0.03240330914261369
+    },
+    "reduccion_ecm_vs_ECM_v1": null,
+    "muestra": "2016Q4-2026Q2"
+   },
+   "h4_sin2020": {
+    "n": 33,
+    "rmse": {
+     "AR4": 0.1588914463994635,
+     "RW_deriva": 0.15752588759675523,
+     "AR4_S": 0.16312671656398392,
+     "MIDAS": 0.1498917899593295
+    },
+    "reduccion_ecm_vs_AR4": {
+     "RW_deriva": 0.01711471360997152,
+     "AR4_S": -0.05402073017260545,
+     "MIDAS": 0.11007244374546166
+    },
+    "reduccion_ecm_vs_ECM_v1": null,
+    "muestra": "2016Q4-2026Q2"
+   },
+   "conforme_h1": {
+    "MIDAS": {
+     "cobertura_empirica_90": 0.8333333333333334,
+     "n": 30,
+     "ancho_medio": 0.26109322985929884
+    },
+    "AR4": {
+     "cobertura_empirica_90": 0.8666666666666667,
+     "n": 30,
+     "ancho_medio": 0.3633843096508003
+    }
+   },
+   "modelo_principal": "MIDAS",
+   "reduccion_principal": 0.40637188061825824,
+   "relevancia_minima_10pct": true,
+   "ic95": null,
+   "p": null
+  }
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "metodo": "sin corrección aquí: el control Benjamini-Yekutieli lo aplica el orquestador",
+  "valores": []
+ },
+ "p_valores_para_BY": [
+  {
+   "id": "Q10-1",
+   "p": null,
+   "motivo": "dm_hln y Clark-West NO APTOS: solo reducción puntual del ECM"
+  },
+  {
+   "id": "Q10-2",
+   "p": null,
+   "motivo": "dm_hln y Clark-West NO APTOS: solo reducción puntual del ECM"
+  },
+  {
+   "id": "Q10-3",
+   "p": null,
+   "motivo": "dm_hln y Clark-West NO APTOS: solo reducción puntual del ECM"
+  }
+ ],
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "Q10-1": [
+   {
+    "prueba": "calibración DM-HLN / Clark-West",
+    "estado": "NO APTO",
+    "detalle": "tamaño HLN 0,002; Clark-West 0,033: sin p-valor"
+   },
+   {
+    "prueba": "MCS / GW",
+    "estado": "no ejecutado",
+    "detalle": "no validados en veredictos.csv"
+   },
+   {
+    "prueba": "misma muestra de objetivos",
+    "estado": "superada",
+    "detalle": "todos los modelos sobre los mismos 38 objetivos (2016Q1-2026Q2)"
+   },
+   {
+    "prueba": "ECM v1",
+    "estado": "reportado",
+    "detalle": "reproducción en entrenamiento sin ln_costes (D4)"
+   },
+   {
+    "prueba": "cobertura conforme h=1 (90 %)",
+    "estado": "reportada",
+    "detalle": {
+     "MIDAS": {
+      "cobertura_empirica_90": 0.7692307692307693,
+      "n": 26,
+      "ancho_medio": 0.036874534928920726
+     },
+     "AR4": {
+      "cobertura_empirica_90": 0.8076923076923077,
+      "n": 26,
+      "ancho_medio": 0.03388053767218185
+     }
+    }
+   },
+   {
+    "prueba": "embargo/bloques",
+    "estado": "no interviene",
+    "detalle": "modelos fijados de antemano, objetivos directos con información ≤ origen"
+   },
+   {
+    "prueba": "límite de información",
+    "estado": "declarado",
+    "detalle": "indicadores mensuales en su última edición, no en tiempo real (adenda, punto 8)"
+   }
+  ],
+  "Q10-2": [
+   {
+    "prueba": "calibración DM-HLN / Clark-West",
+    "estado": "NO APTO",
+    "detalle": "tamaño HLN 0,002; Clark-West 0,033: sin p-valor"
+   },
+   {
+    "prueba": "MCS / GW",
+    "estado": "no ejecutado",
+    "detalle": "no validados en veredictos.csv"
+   },
+   {
+    "prueba": "misma muestra de objetivos",
+    "estado": "superada",
+    "detalle": "todos los modelos sobre los mismos 58 objetivos (2011Q1-2026Q2)"
+   },
+   {
+    "prueba": "ECM v1",
+    "estado": "no existe",
+    "detalle": "no hay ECM v1 para esta variable"
+   },
+   {
+    "prueba": "cobertura conforme h=1 (90 %)",
+    "estado": "reportada",
+    "detalle": {
+     "NOWCAST": {
+      "cobertura_empirica_90": 0.8913043478260869,
+      "n": 46,
+      "ancho_medio": 0.004404506759602076
+     },
+     "AR4": {
+      "cobertura_empirica_90": 0.8695652173913043,
+      "n": 46,
+      "ancho_medio": 0.0035084298101807757
+     }
+    }
+   },
+   {
+    "prueba": "embargo/bloques",
+    "estado": "no interviene",
+    "detalle": "modelos fijados de antemano, objetivos directos con información ≤ origen"
+   },
+   {
+    "prueba": "límite de información",
+    "estado": "declarado",
+    "detalle": "indicadores mensuales en su última edición, no en tiempo real (adenda, punto 8)"
+   }
+  ],
+  "Q10-3": [
+   {
+    "prueba": "calibración DM-HLN / Clark-West",
+    "estado": "NO APTO",
+    "detalle": "tamaño HLN 0,002; Clark-West 0,033: sin p-valor"
+   },
+   {
+    "prueba": "MCS / GW",
+    "estado": "no ejecutado",
+    "detalle": "no validados en veredictos.csv"
+   },
+   {
+    "prueba": "misma muestra de objetivos",
+    "estado": "superada",
+    "detalle": "todos los modelos sobre los mismos 42 objetivos (2016Q1-2026Q2)"
+   },
+   {
+    "prueba": "ECM v1",
+    "estado": "no existe",
+    "detalle": "no hay ECM v1 para esta variable"
+   },
+   {
+    "prueba": "cobertura conforme h=1 (90 %)",
+    "estado": "reportada",
+    "detalle": {
+     "MIDAS": {
+      "cobertura_empirica_90": 0.8333333333333334,
+      "n": 30,
+      "ancho_medio": 0.26109322985929884
+     },
+     "AR4": {
+      "cobertura_empirica_90": 0.8666666666666667,
+      "n": 30,
+      "ancho_medio": 0.3633843096508003
+     }
+    }
+   },
+   {
+    "prueba": "embargo/bloques",
+    "estado": "no interviene",
+    "detalle": "modelos fijados de antemano, objetivos directos con información ≤ origen"
+   },
+   {
+    "prueba": "límite de información",
+    "estado": "declarado",
+    "detalle": "indicadores mensuales en su última edición, no en tiempo real (adenda, punto 8)"
+   }
+  ]
+ },
+ "fuera_muestra": {
+  "modelo": {
+   "Q10-1": "MIDAS",
+   "Q10-2": "NOWCAST",
+   "Q10-3": "MIDAS"
+  },
+  "rmse": {
+   "Q10-1": {
+    "AR4": 0.011265572405151731,
+    "RW_deriva": 0.022734885464861885,
+    "AR4_S": 0.013558614684697382,
+    "MIDAS": 0.012252060937676336,
+    "ECM_v1": 0.0172678012587164
+   },
+   "Q10-2": {
+    "AR4": 0.0011455455018037249,
+    "RW_deriva": 0.004505515293220698,
+    "AR4_S": 0.0013287684218296634,
+    "NOWCAST": 0.0013075957852464546
+   },
+   "Q10-3": {
+    "AR4": 0.13090963661590369,
+    "RW_deriva": 0.13003163392735798,
+    "AR4_S": 0.1326644385499571,
+    "MIDAS": 0.10086229590692086
+   }
+  },
+  "dm_vs_ar4": null
+ },
+ "pendiente_sellada": true,
+ "regla_hallazgo": {
+  "a_q_menor_0_10": "pendiente (BY del orquestador; p null si NO APTO)",
+  "b_error_S_M": "no evaluable sin errores típicos válidos",
+  "c_sellada": "pendiente",
+  "resultado": "estimación C4 pendiente de evaluación sellada; sin lenguaje causal"
+ },
+ "notas": [
+  "C4; predicción, sin lenguaje causal.",
+  "Límite declarado: indicadores mensuales en su última edición.",
+  "ECM v1 solo existe para el IPV."
+ ]
+}

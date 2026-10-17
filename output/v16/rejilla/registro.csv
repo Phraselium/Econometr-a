@@ -1,0 +1,499 @@
+id,pregunta,rol,especificacion,muestra,n,estimacion,unidad,inferencia,nota
+REJ-Q1|municipio|emal_renta_mensual_eur,Q1,principal,"log emal_renta_mensual_eur ~ exposición + EF de unidad y periodo (municipio, 2019-2025)","10 unidades, 2019-2025",69.0,-0.010544748690675313,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|municipio|emal_renta_mensual_eur-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,69.0,-0.01054474869067532,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|emal_renta_mensual_eur-b,Q1,robustez,variante (b) controles,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|municipio|emal_renta_mensual_eur-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|municipio|emal_renta_mensual_eur-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|municipio|emal_renta_mensual_eur-e,Q1,robustez,variante (e) desde 2020,2019-2025,59.0,-0.011766131884548487,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|ipva_tam_indice,Q1,principal,"log ipva_tam_indice ~ exposición + EF de unidad y periodo (municipio, 2019-2025)","391 unidades, 2019-2025",2316.0,-0.0030271861681474763,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|municipio|ipva_tam_indice-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,2316.0,-0.005198090485616603,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|ipva_tam_indice-b,Q1,robustez,variante (b) controles,2019-2025,2316.0,-0.012525006830141931,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|ipva_tam_indice-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,2316.0,-0.006795188781387116,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|ipva_tam_indice-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|municipio|ipva_tam_indice-e,Q1,robustez,variante (e) desde 2020,2019-2025,1931.0,-0.0038950760007239,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|obra_nueva_neta_catastro,Q1,principal,"log obra_nueva_neta_catastro ~ exposición + EF de unidad y periodo (municipio, 2019-2025)","4228 unidades, 2019-2025",15807.0,0.08997845701405177,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|municipio|obra_nueva_neta_catastro-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,15807.0,0.01767494320984499,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|obra_nueva_neta_catastro-b,Q1,robustez,variante (b) controles,2019-2025,15807.0,0.02149602222874404,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|obra_nueva_neta_catastro-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,15807.0,0.040551151704897745,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|obra_nueva_neta_catastro-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|municipio|obra_nueva_neta_catastro-e,Q1,robustez,variante (e) desde 2020,2019-2025,13738.0,0.0481861729770586,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|serpavi_alquiler_m2_mediana,Q1,principal,"log serpavi_alquiler_m2_mediana ~ exposición + EF de unidad y periodo (municipio, 2019-2025)","2001 unidades, 2019-2025",10720.0,-0.016335599887701086,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|municipio|serpavi_alquiler_m2_mediana-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,10720.0,-0.018212778778076325,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|serpavi_alquiler_m2_mediana-b,Q1,robustez,variante (b) controles,2019-2025,10705.0,-0.021226798169069944,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|serpavi_alquiler_m2_mediana-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,10705.0,-0.016658686258113006,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|serpavi_alquiler_m2_mediana-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|municipio|serpavi_alquiler_m2_mediana-e,Q1,robustez,variante (e) desde 2020,2019-2025,9070.0,-0.017454943826355047,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|serpavi_n_contratos_recuento,Q1,principal,"log serpavi_n_contratos_recuento ~ exposición + EF de unidad y periodo (municipio, 2019-2025)","2694 unidades, 2019-2025",14445.0,-0.11914364660547777,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|municipio|serpavi_n_contratos_recuento-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,14445.0,-0.03960219028155409,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|serpavi_n_contratos_recuento-b,Q1,robustez,variante (b) controles,2019-2025,14404.0,-0.03860562860927899,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|serpavi_n_contratos_recuento-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,14404.0,-0.020033194180657268,log por unidad de exposición,ninguna,estimada
+REJ-Q1|municipio|serpavi_n_contratos_recuento-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|municipio|serpavi_n_contratos_recuento-e,Q1,robustez,variante (e) desde 2020,2019-2025,12151.0,-0.09718175650064119,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|cgpj_ejecuciones_hipotecarias_numero,Q1,principal,"log cgpj_ejecuciones_hipotecarias_numero ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","39 unidades, 2019-2025",273.0,0.21264323680286473,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|cgpj_ejecuciones_hipotecarias_numero-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,273.0,0.45220223299193724,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|cgpj_ejecuciones_hipotecarias_numero-b,Q1,robustez,variante (b) controles,2019-2025,266.0,0.4041761646073009,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|cgpj_ejecuciones_hipotecarias_numero-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,266.0,0.4868202763439971,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|cgpj_ejecuciones_hipotecarias_numero-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|cgpj_ejecuciones_hipotecarias_numero-e,Q1,robustez,variante (e) desde 2020,2019-2025,234.0,0.2262614358853712,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|cgpj_lanzamientos_lau_numero,Q1,principal,"log cgpj_lanzamientos_lau_numero ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","39 unidades, 2019-2025",273.0,0.3277148143271066,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|cgpj_lanzamientos_lau_numero-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,273.0,0.238111281601161,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|cgpj_lanzamientos_lau_numero-b,Q1,robustez,variante (b) controles,2019-2025,266.0,0.1910208559386346,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|cgpj_lanzamientos_lau_numero-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,266.0,0.1638812377227206,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|cgpj_lanzamientos_lau_numero-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|cgpj_lanzamientos_lau_numero-e,Q1,robustez,variante (e) desde 2020,2019-2025,234.0,0.3310596403780432,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|cgpj_lanzamientos_total_numero,Q1,principal,"log cgpj_lanzamientos_total_numero ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","39 unidades, 2019-2025",273.0,0.3005846113855159,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|cgpj_lanzamientos_total_numero-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,273.0,0.1834466963820054,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|cgpj_lanzamientos_total_numero-b,Q1,robustez,variante (b) controles,2019-2025,266.0,0.22248098820853737,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|cgpj_lanzamientos_total_numero-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,266.0,0.07636122450952934,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|cgpj_lanzamientos_total_numero-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|cgpj_lanzamientos_total_numero-e,Q1,robustez,variante (e) desde 2020,2019-2025,234.0,0.30200626637305666,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|compraventas,Q1,principal,"log compraventas ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","41 unidades, 2019-2025",287.0,-0.1085735110866585,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|compraventas-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,287.0,-0.1639271560053001,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|compraventas-b,Q1,robustez,variante (b) controles,2019-2025,280.0,0.007996323435982645,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|compraventas-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,280.0,-0.1411820477596677,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|compraventas-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|compraventas-e,Q1,robustez,variante (e) desde 2020,2019-2025,246.0,-0.11016979310505094,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|hip_importe,Q1,principal,"log hip_importe ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","41 unidades, 2019-2025",287.0,-0.025695084238809847,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|hip_importe-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,287.0,-0.2058746912256173,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|hip_importe-b,Q1,robustez,variante (b) controles,2019-2025,280.0,-0.04632683648456305,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|hip_importe-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,280.0,-0.2072939637231395,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|hip_importe-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|hip_importe-e,Q1,robustez,variante (e) desde 2020,2019-2025,246.0,-0.04939884138143137,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|hip_n,Q1,principal,"log hip_n ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","41 unidades, 2019-2025",287.0,-0.019822553636275112,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|hip_n-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,287.0,-0.15282806083111938,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|hip_n-b,Q1,robustez,variante (b) controles,2019-2025,280.0,-0.008612416695989581,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|hip_n-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,280.0,-0.1581730690142866,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|hip_n-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|hip_n-e,Q1,robustez,variante (e) desde 2020,2019-2025,246.0,-0.02785504772687258,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|iniciadas,Q1,principal,"log iniciadas ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","38 unidades, 2019-2025",266.0,0.03179105425993541,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|iniciadas-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,266.0,0.07493194240173717,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|iniciadas-b,Q1,robustez,variante (b) controles,2019-2025,259.0,0.028741322120210914,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|iniciadas-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,259.0,0.05128442067530395,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|iniciadas-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|iniciadas-e,Q1,robustez,variante (e) desde 2020,2019-2025,228.0,0.07205212976685525,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|ipc_alquiler_indice,Q1,principal,"log ipc_alquiler_indice ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","41 unidades, 2019-2025",287.0,0.017170919789913516,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|ipc_alquiler_indice-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,287.0,-0.005680652516885847,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|ipc_alquiler_indice-b,Q1,robustez,variante (b) controles,2019-2025,280.0,0.007177799350204093,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|ipc_alquiler_indice-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,280.0,-0.005655610531468696,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|ipc_alquiler_indice-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|ipc_alquiler_indice-e,Q1,robustez,variante (e) desde 2020,2019-2025,246.0,0.013010228957803597,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|ipva_indice,Q1,principal,"log ipva_indice ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","38 unidades, 2019-2025",228.0,0.0037259213238967884,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|ipva_indice-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,228.0,-0.004130127044357376,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|ipva_indice-b,Q1,robustez,variante (b) controles,2019-2025,228.0,-0.009013759542631328,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|ipva_indice-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,228.0,-0.004509544808402464,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|ipva_indice-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|ipva_indice-e,Q1,robustez,variante (e) desde 2020,2019-2025,190.0,0.0028005307221987807,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|serpavi_alquiler_m2_mediana,Q1,principal,"log serpavi_alquiler_m2_mediana ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","41 unidades, 2019-2025",233.0,-0.011660360228878106,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|serpavi_alquiler_m2_mediana-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,233.0,-0.019188708915709944,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|serpavi_alquiler_m2_mediana-b,Q1,robustez,variante (b) controles,2019-2025,232.0,-0.040411885600921335,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|serpavi_alquiler_m2_mediana-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,232.0,-0.020207328974909976,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|serpavi_alquiler_m2_mediana-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|serpavi_alquiler_m2_mediana-e,Q1,robustez,variante (e) desde 2020,2019-2025,195.0,-0.013092943772644649,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|serpavi_n_contratos_recuento,Q1,principal,"log serpavi_n_contratos_recuento ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","41 unidades, 2019-2025",233.0,-0.07256410671132342,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|serpavi_n_contratos_recuento-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,233.0,-0.024302728994410445,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|serpavi_n_contratos_recuento-b,Q1,robustez,variante (b) controles,2019-2025,232.0,-0.05997111532596331,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|serpavi_n_contratos_recuento-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,232.0,-0.019705704436582743,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|serpavi_n_contratos_recuento-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|serpavi_n_contratos_recuento-e,Q1,robustez,variante (e) desde 2020,2019-2025,195.0,-0.06285082432552844,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|terminadas,Q1,principal,"log terminadas ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","38 unidades, 2019-2025",266.0,0.19537340428184238,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|terminadas-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,266.0,0.725067470459843,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|terminadas-b,Q1,robustez,variante (b) controles,2019-2025,259.0,0.1915496690106161,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|terminadas-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,259.0,0.7316704272670043,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|terminadas-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|terminadas-e,Q1,robustez,variante (e) desde 2020,2019-2025,228.0,0.23345288292631902,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|valor_tasado,Q1,principal,"log valor_tasado ~ exposición + EF de unidad y periodo (provincia, 2019-2025)","38 unidades, 2019-2025",266.0,0.03477860408555471,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q1|provincia|valor_tasado-a,Q1,robustez,variante (a) tendencias CCAA,2019-2025,266.0,-0.0007426261750297751,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|valor_tasado-b,Q1,robustez,variante (b) controles,2019-2025,259.0,-0.04997329289156888,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|valor_tasado-c,Q1,robustez,variante (c) tendencias+controles,2019-2025,259.0,-0.004298109709791999,log por unidad de exposición,ninguna,estimada
+REJ-Q1|provincia|valor_tasado-d,Q1,robustez,variante (d) hasta 2019,2019-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q1|provincia|valor_tasado-e,Q1,robustez,variante (e) desde 2020,2019-2025,228.0,0.029128970252825532,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|ipva_indice,Q2,principal,"log ipva_indice ~ exposición + EF de unidad y periodo (distrito, 2021-2024)","207 unidades, 2021-2024",825.0,-0.007769028582451388,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|distrito|ipva_indice-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,825.0,-0.017487038103092035,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|ipva_indice-b,Q2,robustez,variante (b) controles,2021-2024,825.0,-0.006067542244493671,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|ipva_indice-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,825.0,-0.009793620802667028,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|ipva_indice-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|distrito|ipva_indice-e,Q2,robustez,variante (e) desde 2020,2021-2024,825.0,-0.007769028582451388,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|ipva_tam_indice,Q2,principal,"log ipva_tam_indice ~ exposición + EF de unidad y periodo (distrito, 2021-2024)","207 unidades, 2021-2024",825.0,-0.007769028582451388,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|distrito|ipva_tam_indice-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,825.0,-0.017487038103092035,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|ipva_tam_indice-b,Q2,robustez,variante (b) controles,2021-2024,825.0,-0.006067542244493671,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|ipva_tam_indice-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,825.0,-0.009793620802667028,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|ipva_tam_indice-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|distrito|ipva_tam_indice-e,Q2,robustez,variante (e) desde 2020,2021-2024,825.0,-0.007769028582451388,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|serpavi_alquiler_m2_mediana,Q2,principal,"log serpavi_alquiler_m2_mediana ~ exposición + EF de unidad y periodo (distrito, 2021-2024)","2868 unidades, 2021-2024",10359.0,-0.007471341730787342,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|distrito|serpavi_alquiler_m2_mediana-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,10359.0,-0.009039765982813773,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|serpavi_alquiler_m2_mediana-b,Q2,robustez,variante (b) controles,2021-2024,10341.0,-0.006151914044227104,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|serpavi_alquiler_m2_mediana-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,10341.0,-0.00828748498170271,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|serpavi_alquiler_m2_mediana-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|distrito|serpavi_alquiler_m2_mediana-e,Q2,robustez,variante (e) desde 2020,2021-2024,10359.0,-0.007471341730787342,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|serpavi_alquiler_mes_mediana,Q2,principal,"log serpavi_alquiler_mes_mediana ~ exposición + EF de unidad y periodo (distrito, 2021-2024)","2868 unidades, 2021-2024",10359.0,0.003928289302387834,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|distrito|serpavi_alquiler_mes_mediana-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,10359.0,0.003075763140552793,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|serpavi_alquiler_mes_mediana-b,Q2,robustez,variante (b) controles,2021-2024,10341.0,0.006353228485640076,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|serpavi_alquiler_mes_mediana-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,10341.0,0.003513925744975707,log por unidad de exposición,ninguna,estimada
+REJ-Q2|distrito|serpavi_alquiler_mes_mediana-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|distrito|serpavi_alquiler_mes_mediana-e,Q2,robustez,variante (e) desde 2020,2021-2024,10359.0,0.003928289302387834,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|emal_renta_mensual_eur,Q2,principal,"log emal_renta_mensual_eur ~ exposición + EF de unidad y periodo (municipio, 2021-2024)","10 unidades, 2021-2024",40.0,0.0031520284594774607,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|municipio|emal_renta_mensual_eur-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,40.0,0.0031520284594774607,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|emal_renta_mensual_eur-b,Q2,robustez,variante (b) controles,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|municipio|emal_renta_mensual_eur-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|municipio|emal_renta_mensual_eur-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|municipio|emal_renta_mensual_eur-e,Q2,robustez,variante (e) desde 2020,2021-2024,40.0,0.0031520284594774607,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|incasol_contratos,Q2,principal,"log incasol_contratos ~ exposición + EF de unidad y periodo (municipio, 2021-2024)","489 unidades, 2021-2024",1585.0,0.016041143659474243,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|municipio|incasol_contratos-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,1585.0,0.01604114365947422,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|incasol_contratos-b,Q2,robustez,variante (b) controles,2021-2024,1585.0,0.020875406624922547,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|incasol_contratos-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,1585.0,0.02087540662492256,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|incasol_contratos-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|municipio|incasol_contratos-e,Q2,robustez,variante (e) desde 2020,2021-2024,1585.0,0.016041143659474243,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|incasol_renta_media,Q2,principal,"log incasol_renta_media ~ exposición + EF de unidad y periodo (municipio, 2021-2024)","513 unidades, 2021-2024",1741.0,0.012068642729134988,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|municipio|incasol_renta_media-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,1741.0,0.012068642729134983,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|incasol_renta_media-b,Q2,robustez,variante (b) controles,2021-2024,1741.0,0.01273612839221324,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|incasol_renta_media-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,1741.0,0.012736128392213246,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|incasol_renta_media-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|municipio|incasol_renta_media-e,Q2,robustez,variante (e) desde 2020,2021-2024,1741.0,0.012068642729134988,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|ipva_tam_indice,Q2,principal,"log ipva_tam_indice ~ exposición + EF de unidad y periodo (municipio, 2021-2024)","388 unidades, 2021-2024",1524.0,-0.009540549202998893,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|municipio|ipva_tam_indice-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,1524.0,-0.010129150888786815,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|ipva_tam_indice-b,Q2,robustez,variante (b) controles,2021-2024,1524.0,-0.003912148822641457,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|ipva_tam_indice-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,1524.0,-0.006515173543595411,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|ipva_tam_indice-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|municipio|ipva_tam_indice-e,Q2,robustez,variante (e) desde 2020,2021-2024,1524.0,-0.009540549202998893,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|obra_nueva_neta_catastro,Q2,principal,"log obra_nueva_neta_catastro ~ exposición + EF de unidad y periodo (municipio, 2021-2024)","2863 unidades, 2021-2024",7242.0,0.006712440922743888,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|municipio|obra_nueva_neta_catastro-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,7242.0,0.004070142423921783,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|obra_nueva_neta_catastro-b,Q2,robustez,variante (b) controles,2021-2024,7242.0,0.015999816396574322,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|obra_nueva_neta_catastro-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,7242.0,0.005392196899981711,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|obra_nueva_neta_catastro-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|municipio|obra_nueva_neta_catastro-e,Q2,robustez,variante (e) desde 2020,2021-2024,7242.0,0.006712440922743888,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|serpavi_alquiler_m2_mediana,Q2,principal,"log serpavi_alquiler_m2_mediana ~ exposición + EF de unidad y periodo (municipio, 2021-2024)","1899 unidades, 2021-2024",6744.0,-0.006322998801312426,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|municipio|serpavi_alquiler_m2_mediana-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,6744.0,-0.00832232955402772,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|serpavi_alquiler_m2_mediana-b,Q2,robustez,variante (b) controles,2021-2024,6729.0,-0.006342943935628859,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|serpavi_alquiler_m2_mediana-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,6729.0,-0.008127290003647801,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|serpavi_alquiler_m2_mediana-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|municipio|serpavi_alquiler_m2_mediana-e,Q2,robustez,variante (e) desde 2020,2021-2024,6744.0,-0.006322998801312426,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|serpavi_n_contratos_recuento,Q2,principal,"log serpavi_n_contratos_recuento ~ exposición + EF de unidad y periodo (municipio, 2021-2024)","2401 unidades, 2021-2024",8383.0,0.0067014451146750675,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|municipio|serpavi_n_contratos_recuento-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,8383.0,-0.0032588056757100817,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|serpavi_n_contratos_recuento-b,Q2,robustez,variante (b) controles,2021-2024,8347.0,0.0005686803868960997,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|serpavi_n_contratos_recuento-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,8347.0,-0.0021011493139172378,log por unidad de exposición,ninguna,estimada
+REJ-Q2|municipio|serpavi_n_contratos_recuento-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|municipio|serpavi_n_contratos_recuento-e,Q2,robustez,variante (e) desde 2020,2021-2024,8383.0,0.0067014451146750675,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|cgpj_ejecuciones_hipotecarias_numero,Q2,principal,"log cgpj_ejecuciones_hipotecarias_numero ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","39 unidades, 2021-2024",156.0,0.3031625090385927,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|cgpj_ejecuciones_hipotecarias_numero-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,156.0,-0.04834350384906936,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|cgpj_ejecuciones_hipotecarias_numero-b,Q2,robustez,variante (b) controles,2021-2024,152.0,0.10135066142872241,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|cgpj_ejecuciones_hipotecarias_numero-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,152.0,-0.06844750722931778,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|cgpj_ejecuciones_hipotecarias_numero-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|cgpj_ejecuciones_hipotecarias_numero-e,Q2,robustez,variante (e) desde 2020,2021-2024,156.0,0.3031625090385927,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|cgpj_lanzamientos_lau_numero,Q2,principal,"log cgpj_lanzamientos_lau_numero ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","39 unidades, 2021-2024",156.0,-0.5521028010621883,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|cgpj_lanzamientos_lau_numero-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,156.0,-0.47089079269731593,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|cgpj_lanzamientos_lau_numero-b,Q2,robustez,variante (b) controles,2021-2024,152.0,-0.5459394218117162,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|cgpj_lanzamientos_lau_numero-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,152.0,-0.5756592409694916,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|cgpj_lanzamientos_lau_numero-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|cgpj_lanzamientos_lau_numero-e,Q2,robustez,variante (e) desde 2020,2021-2024,156.0,-0.5521028010621883,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|cgpj_lanzamientos_total_numero,Q2,principal,"log cgpj_lanzamientos_total_numero ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","39 unidades, 2021-2024",156.0,-0.49597075533654256,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|cgpj_lanzamientos_total_numero-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,156.0,-0.4499375199440895,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|cgpj_lanzamientos_total_numero-b,Q2,robustez,variante (b) controles,2021-2024,152.0,-0.5987260359668529,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|cgpj_lanzamientos_total_numero-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,152.0,-0.5348073156813079,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|cgpj_lanzamientos_total_numero-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|cgpj_lanzamientos_total_numero-e,Q2,robustez,variante (e) desde 2020,2021-2024,156.0,-0.49597075533654256,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|compraventas,Q2,principal,"log compraventas ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","41 unidades, 2021-2024",164.0,0.06322585488100113,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|compraventas-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,164.0,0.05047189897345949,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|compraventas-b,Q2,robustez,variante (b) controles,2021-2024,160.0,-0.09456870007527948,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|compraventas-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,160.0,0.002880583135867526,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|compraventas-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|compraventas-e,Q2,robustez,variante (e) desde 2020,2021-2024,164.0,0.06322585488100113,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|hip_importe,Q2,principal,"log hip_importe ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","41 unidades, 2021-2024",164.0,-0.06614882168668704,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|hip_importe-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,164.0,0.10013321865336687,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|hip_importe-b,Q2,robustez,variante (b) controles,2021-2024,160.0,-0.07545233745392878,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|hip_importe-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,160.0,0.10962977856786695,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|hip_importe-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|hip_importe-e,Q2,robustez,variante (e) desde 2020,2021-2024,164.0,-0.06614882168668704,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|hip_n,Q2,principal,"log hip_n ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","41 unidades, 2021-2024",164.0,-0.1572017674496426,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|hip_n-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,164.0,0.010809082485297996,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|hip_n-b,Q2,robustez,variante (b) controles,2021-2024,160.0,-0.1643497041076539,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|hip_n-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,160.0,0.006361843826735733,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|hip_n-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|hip_n-e,Q2,robustez,variante (e) desde 2020,2021-2024,164.0,-0.1572017674496426,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|iniciadas,Q2,principal,"log iniciadas ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","38 unidades, 2021-2024",152.0,-0.3597528719556362,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|iniciadas-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,152.0,0.022115755170607102,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|iniciadas-b,Q2,robustez,variante (b) controles,2021-2024,148.0,-0.009779177554998244,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|iniciadas-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,148.0,0.09363338242022233,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|iniciadas-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|iniciadas-e,Q2,robustez,variante (e) desde 2020,2021-2024,152.0,-0.3597528719556362,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|ipc_alquiler_indice,Q2,principal,"log ipc_alquiler_indice ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","41 unidades, 2021-2024",164.0,0.014075763975341639,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|ipc_alquiler_indice-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,164.0,0.021099008211109205,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|ipc_alquiler_indice-b,Q2,robustez,variante (b) controles,2021-2024,160.0,0.020959891103136823,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|ipc_alquiler_indice-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,160.0,0.023930947209535005,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|ipc_alquiler_indice-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|ipc_alquiler_indice-e,Q2,robustez,variante (e) desde 2020,2021-2024,164.0,0.014075763975341639,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|ipva_indice,Q2,principal,"log ipva_indice ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","38 unidades, 2021-2024",152.0,0.014370573016597844,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|ipva_indice-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,152.0,-0.011052304585030226,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|ipva_indice-b,Q2,robustez,variante (b) controles,2021-2024,152.0,0.012905671321288722,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|ipva_indice-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,152.0,-0.005497819117583405,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|ipva_indice-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|ipva_indice-e,Q2,robustez,variante (e) desde 2020,2021-2024,152.0,0.014370573016597844,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|serpavi_alquiler_m2_mediana,Q2,principal,"log serpavi_alquiler_m2_mediana ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","41 unidades, 2021-2024",157.0,0.0222593217252235,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|serpavi_alquiler_m2_mediana-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,157.0,-0.02441249584926347,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|serpavi_alquiler_m2_mediana-b,Q2,robustez,variante (b) controles,2021-2024,156.0,0.009494615850764453,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|serpavi_alquiler_m2_mediana-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,156.0,-0.01652859389637607,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|serpavi_alquiler_m2_mediana-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|serpavi_alquiler_m2_mediana-e,Q2,robustez,variante (e) desde 2020,2021-2024,157.0,0.0222593217252235,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|serpavi_n_contratos_recuento,Q2,principal,"log serpavi_n_contratos_recuento ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","41 unidades, 2021-2024",157.0,0.06731605605796864,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|serpavi_n_contratos_recuento-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,157.0,-0.0021266813844501944,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|serpavi_n_contratos_recuento-b,Q2,robustez,variante (b) controles,2021-2024,156.0,0.0057801012761049,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|serpavi_n_contratos_recuento-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,156.0,-0.0051106577400893295,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|serpavi_n_contratos_recuento-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|serpavi_n_contratos_recuento-e,Q2,robustez,variante (e) desde 2020,2021-2024,157.0,0.06731605605796864,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|terminadas,Q2,principal,"log terminadas ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","38 unidades, 2021-2024",152.0,-0.1563111736430344,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|terminadas-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,152.0,-0.5199575100883537,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|terminadas-b,Q2,robustez,variante (b) controles,2021-2024,148.0,-0.351113138980102,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|terminadas-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,148.0,-0.4516043543253954,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|terminadas-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|terminadas-e,Q2,robustez,variante (e) desde 2020,2021-2024,152.0,-0.1563111736430344,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|valor_tasado,Q2,principal,"log valor_tasado ~ exposición + EF de unidad y periodo (provincia, 2021-2024)","38 unidades, 2021-2024",152.0,-0.05929963543500621,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q2|provincia|valor_tasado-a,Q2,robustez,variante (a) tendencias CCAA,2021-2024,152.0,-0.06776952606140982,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|valor_tasado-b,Q2,robustez,variante (b) controles,2021-2024,148.0,-0.003973794748753222,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|valor_tasado-c,Q2,robustez,variante (c) tendencias+controles,2021-2024,148.0,-0.04468895625191765,log por unidad de exposición,ninguna,estimada
+REJ-Q2|provincia|valor_tasado-d,Q2,robustez,variante (d) hasta 2019,2021-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q2|provincia|valor_tasado-e,Q2,robustez,variante (e) desde 2020,2021-2024,152.0,-0.05929963543500621,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|emal_renta_mensual_eur,Q3,principal,"log emal_renta_mensual_eur ~ exposición + EF de unidad y periodo (municipio, 2011-2024)","10 unidades, 2011-2024",68.0,0.03077024069328736,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|municipio|emal_renta_mensual_eur-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,68.0,0.03077024069328736,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|emal_renta_mensual_eur-b,Q3,robustez,variante (b) controles,2011-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q3|municipio|emal_renta_mensual_eur-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q3|municipio|emal_renta_mensual_eur-d,Q3,robustez,variante (d) hasta 2019,2011-2024,39.0,0.05831460359895956,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|emal_renta_mensual_eur-e,Q3,robustez,variante (e) desde 2020,2011-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q3|municipio|incasol_contratos,Q3,principal,"log incasol_contratos ~ exposición + EF de unidad y periodo (municipio, 2011-2024)","521 unidades, 2011-2024",1706.0,-0.036878476368624846,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|municipio|incasol_contratos-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,1706.0,-0.036878476368624846,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|incasol_contratos-b,Q3,robustez,variante (b) controles,2011-2024,1706.0,-0.02992783172604131,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|incasol_contratos-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,1706.0,-0.02992783172604132,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|incasol_contratos-d,Q3,robustez,variante (d) hasta 2019,2011-2024,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q3|municipio|incasol_contratos-e,Q3,robustez,variante (e) desde 2020,2011-2024,1273.0,-0.06353132481047197,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|incasol_renta_media,Q3,principal,"log incasol_renta_media ~ exposición + EF de unidad y periodo (municipio, 2011-2024)","578 unidades, 2011-2024",5379.0,0.006096013494758946,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|municipio|incasol_renta_media-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,5379.0,0.006096013494758945,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|incasol_renta_media-b,Q3,robustez,variante (b) controles,2011-2024,5379.0,0.003145029616517771,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|incasol_renta_media-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,5379.0,0.003145029616517753,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|incasol_renta_media-d,Q3,robustez,variante (d) hasta 2019,2011-2024,3966.0,0.005128881806543173,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|incasol_renta_media-e,Q3,robustez,variante (e) desde 2020,2011-2024,1413.0,-0.005770157506104544,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|ipva_tam_indice,Q3,principal,"log ipva_tam_indice ~ exposición + EF de unidad y periodo (municipio, 2011-2024)","386 unidades, 2011-2024",4618.0,-0.0010419176738742462,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|municipio|ipva_tam_indice-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,4618.0,-0.0010398345655776987,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|ipva_tam_indice-b,Q3,robustez,variante (b) controles,2011-2024,4618.0,-0.0013803181970025468,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|ipva_tam_indice-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,4618.0,-0.0012815499633826181,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|ipva_tam_indice-d,Q3,robustez,variante (d) hasta 2019,2011-2024,3462.0,-0.0016472892920353277,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|ipva_tam_indice-e,Q3,robustez,variante (e) desde 2020,2011-2024,1156.0,0.0025948956577367586,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|obra_nueva_neta_catastro,Q3,principal,"log obra_nueva_neta_catastro ~ exposición + EF de unidad y periodo (municipio, 2011-2024)","4741 unidades, 2011-2024",27962.0,0.03586994352322184,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|municipio|obra_nueva_neta_catastro-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,27962.0,0.031748532765463085,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|obra_nueva_neta_catastro-b,Q3,robustez,variante (b) controles,2011-2024,27962.0,0.034065181253401106,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|obra_nueva_neta_catastro-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,27962.0,0.03163048516358852,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|obra_nueva_neta_catastro-d,Q3,robustez,variante (d) hasta 2019,2011-2024,21434.0,0.025183845678772247,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|obra_nueva_neta_catastro-e,Q3,robustez,variante (e) desde 2020,2011-2024,6528.0,-0.014055127267292238,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|serpavi_n_contratos_recuento,Q3,principal,"log serpavi_n_contratos_recuento ~ exposición + EF de unidad y periodo (municipio, 2011-2024)","2714 unidades, 2011-2024",26535.0,-0.010606695244521815,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|municipio|serpavi_n_contratos_recuento-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,26535.0,-0.006159678448434192,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|serpavi_n_contratos_recuento-b,Q3,robustez,variante (b) controles,2011-2024,26535.0,-0.008707545971690342,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|serpavi_n_contratos_recuento-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,26535.0,-0.006090699709543949,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|serpavi_n_contratos_recuento-d,Q3,robustez,variante (d) hasta 2019,2011-2024,19364.0,-0.011971308829959752,log por unidad de exposición,ninguna,estimada
+REJ-Q3|municipio|serpavi_n_contratos_recuento-e,Q3,robustez,variante (e) desde 2020,2011-2024,7171.0,-0.012343285826539475,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_ejecuciones_hipotecarias_numero,Q3,principal,"log cgpj_ejecuciones_hipotecarias_numero ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","39 unidades, 2011-2024",468.0,0.07152680797219321,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|cgpj_ejecuciones_hipotecarias_numero-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,468.0,0.049510928879594435,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_ejecuciones_hipotecarias_numero-b,Q3,robustez,variante (b) controles,2011-2024,456.0,0.06809583262822537,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_ejecuciones_hipotecarias_numero-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,456.0,0.04790498283232059,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_ejecuciones_hipotecarias_numero-d,Q3,robustez,variante (d) hasta 2019,2011-2024,351.0,0.05769215557291999,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_ejecuciones_hipotecarias_numero-e,Q3,robustez,variante (e) desde 2020,2011-2024,117.0,-0.0756660016947375,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_lanzamientos_lau_numero,Q3,principal,"log cgpj_lanzamientos_lau_numero ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","39 unidades, 2011-2024",390.0,-0.024058071273514416,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|cgpj_lanzamientos_lau_numero-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,390.0,-0.005624024255823331,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_lanzamientos_lau_numero-b,Q3,robustez,variante (b) controles,2011-2024,380.0,-0.03887427284006171,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_lanzamientos_lau_numero-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,380.0,-0.030019788372951973,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_lanzamientos_lau_numero-d,Q3,robustez,variante (d) hasta 2019,2011-2024,273.0,-0.049532336409100805,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_lanzamientos_lau_numero-e,Q3,robustez,variante (e) desde 2020,2011-2024,117.0,0.06050719201775171,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_lanzamientos_total_numero,Q3,principal,"log cgpj_lanzamientos_total_numero ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","39 unidades, 2011-2024",390.0,0.021205458030357532,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|cgpj_lanzamientos_total_numero-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,390.0,0.008105300634686594,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_lanzamientos_total_numero-b,Q3,robustez,variante (b) controles,2011-2024,380.0,0.00836425076773944,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_lanzamientos_total_numero-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,380.0,-0.005954785817733805,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_lanzamientos_total_numero-d,Q3,robustez,variante (d) hasta 2019,2011-2024,273.0,-0.015025933551435118,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|cgpj_lanzamientos_total_numero-e,Q3,robustez,variante (e) desde 2020,2011-2024,117.0,0.09259430451394393,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|compraventas,Q3,principal,"log compraventas ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","41 unidades, 2011-2024",492.0,-0.028176478254563007,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|compraventas-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,492.0,-0.025839412659207688,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|compraventas-b,Q3,robustez,variante (b) controles,2011-2024,480.0,-0.03389401023934716,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|compraventas-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,480.0,-0.024067895661757568,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|compraventas-d,Q3,robustez,variante (d) hasta 2019,2011-2024,369.0,-0.029569753597346985,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|compraventas-e,Q3,robustez,variante (e) desde 2020,2011-2024,123.0,0.03269917959926301,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|hip_importe,Q3,principal,"log hip_importe ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","41 unidades, 2011-2024",492.0,-0.03673475929024706,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|hip_importe-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,492.0,-0.00888449608046441,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|hip_importe-b,Q3,robustez,variante (b) controles,2011-2024,480.0,-0.03980066347391986,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|hip_importe-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,480.0,-0.005944302600328999,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|hip_importe-d,Q3,robustez,variante (d) hasta 2019,2011-2024,369.0,-0.046541261918824205,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|hip_importe-e,Q3,robustez,variante (e) desde 2020,2011-2024,123.0,-0.026968303367811138,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|hip_n,Q3,principal,"log hip_n ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","41 unidades, 2011-2024",492.0,-0.038596577945006226,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|hip_n-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,492.0,-0.011718233610384345,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|hip_n-b,Q3,robustez,variante (b) controles,2011-2024,480.0,-0.03999205390381873,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|hip_n-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,480.0,-0.00895875115809052,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|hip_n-d,Q3,robustez,variante (d) hasta 2019,2011-2024,369.0,-0.03806878793749049,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|hip_n-e,Q3,robustez,variante (e) desde 2020,2011-2024,123.0,0.04697883400497957,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|iniciadas,Q3,principal,"log iniciadas ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","38 unidades, 2011-2024",380.0,-0.1318237954308794,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|iniciadas-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,380.0,-0.13647287917780232,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|iniciadas-b,Q3,robustez,variante (b) controles,2011-2024,370.0,-0.12462616076590674,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|iniciadas-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,370.0,-0.11510067640408699,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|iniciadas-d,Q3,robustez,variante (d) hasta 2019,2011-2024,266.0,-0.16761626830632848,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|iniciadas-e,Q3,robustez,variante (e) desde 2020,2011-2024,114.0,0.06954853421532967,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|ipc_alquiler_indice,Q3,principal,"log ipc_alquiler_indice ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","41 unidades, 2011-2024",492.0,0.006105150093183737,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|ipc_alquiler_indice-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,492.0,0.006154270124015924,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|ipc_alquiler_indice-b,Q3,robustez,variante (b) controles,2011-2024,480.0,0.005032796446676881,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|ipc_alquiler_indice-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,480.0,0.006402663322298875,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|ipc_alquiler_indice-d,Q3,robustez,variante (d) hasta 2019,2011-2024,369.0,0.005127215788913216,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|ipc_alquiler_indice-e,Q3,robustez,variante (e) desde 2020,2011-2024,123.0,-0.002715560328202046,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|ipva_indice,Q3,principal,"log ipva_indice ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","38 unidades, 2011-2024",456.0,0.002260665886604519,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|ipva_indice-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,456.0,0.004086428823747958,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|ipva_indice-b,Q3,robustez,variante (b) controles,2011-2024,456.0,0.0015344754598555883,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|ipva_indice-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,456.0,0.0036388642026958028,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|ipva_indice-d,Q3,robustez,variante (d) hasta 2019,2011-2024,342.0,0.00284232110465329,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|ipva_indice-e,Q3,robustez,variante (e) desde 2020,2011-2024,114.0,-0.0032371189316725986,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|serpavi_alquiler_m2_mediana,Q3,principal,"log serpavi_alquiler_m2_mediana ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","39 unidades, 2011-2024",457.0,0.006560103349544531,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|serpavi_alquiler_m2_mediana-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,457.0,0.008853666756396601,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|serpavi_alquiler_m2_mediana-b,Q3,robustez,variante (b) controles,2011-2024,457.0,0.005452638669665349,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|serpavi_alquiler_m2_mediana-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,457.0,0.008116753985733003,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|serpavi_alquiler_m2_mediana-d,Q3,robustez,variante (d) hasta 2019,2011-2024,342.0,0.007173009320444086,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|serpavi_alquiler_m2_mediana-e,Q3,robustez,variante (e) desde 2020,2011-2024,115.0,-0.00040155616292583863,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|serpavi_n_contratos_recuento,Q3,principal,"log serpavi_n_contratos_recuento ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","39 unidades, 2011-2024",457.0,-0.025423498521892907,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|serpavi_n_contratos_recuento-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,457.0,-0.0190318069680501,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|serpavi_n_contratos_recuento-b,Q3,robustez,variante (b) controles,2011-2024,457.0,-0.02561738944624233,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|serpavi_n_contratos_recuento-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,457.0,-0.022631682274627085,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|serpavi_n_contratos_recuento-d,Q3,robustez,variante (d) hasta 2019,2011-2024,342.0,-0.025602992984968688,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|serpavi_n_contratos_recuento-e,Q3,robustez,variante (e) desde 2020,2011-2024,115.0,-0.0059271463465346355,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|terminadas,Q3,principal,"log terminadas ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","38 unidades, 2011-2024",456.0,-0.08197964575189093,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|terminadas-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,456.0,-0.07112414391414323,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|terminadas-b,Q3,robustez,variante (b) controles,2011-2024,444.0,-0.08170225585872257,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|terminadas-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,444.0,-0.06829015604577902,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|terminadas-d,Q3,robustez,variante (d) hasta 2019,2011-2024,342.0,-0.11182913206832305,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|terminadas-e,Q3,robustez,variante (e) desde 2020,2011-2024,114.0,-0.2504731707095016,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|valor_tasado,Q3,principal,"log valor_tasado ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","38 unidades, 2011-2024",451.0,0.011896232675603788,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|provincia|valor_tasado-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,451.0,0.011887727199766952,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|valor_tasado-b,Q3,robustez,variante (b) controles,2011-2024,439.0,0.012018151048458936,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|valor_tasado-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,439.0,0.011510823326652734,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|valor_tasado-d,Q3,robustez,variante (d) hasta 2019,2011-2024,337.0,0.0023079066673323545,log por unidad de exposición,ninguna,estimada
+REJ-Q3|provincia|valor_tasado-e,Q3,robustez,variante (e) desde 2020,2011-2024,114.0,0.04259420228326671,log por unidad de exposición,ninguna,estimada
+REJ-Q3|seccion|serpavi_alquiler_m2_mediana,Q3,principal,"log serpavi_alquiler_m2_mediana ~ exposición + EF de unidad y periodo (seccion, 2011-2024)","12273 unidades, 2011-2024",129232.0,0.0007995481238041913,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|seccion|serpavi_alquiler_m2_mediana-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,129232.0,0.0016238298523931906,log por unidad de exposición,ninguna,estimada
+REJ-Q3|seccion|serpavi_alquiler_m2_mediana-b,Q3,robustez,variante (b) controles,2011-2024,129232.0,0.00011211543943297179,log por unidad de exposición,ninguna,estimada
+REJ-Q3|seccion|serpavi_alquiler_m2_mediana-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,129232.0,0.0009846811166801753,log por unidad de exposición,ninguna,estimada
+REJ-Q3|seccion|serpavi_alquiler_m2_mediana-d,Q3,robustez,variante (d) hasta 2019,2011-2024,93780.0,-0.0004774180707940964,log por unidad de exposición,ninguna,estimada
+REJ-Q3|seccion|serpavi_alquiler_m2_mediana-e,Q3,robustez,variante (e) desde 2020,2011-2024,35452.0,-0.0010053787919599862,log por unidad de exposición,ninguna,estimada
+REJ-Q3|seccion|serpavi_alquiler_mes_mediana,Q3,principal,"log serpavi_alquiler_mes_mediana ~ exposición + EF de unidad y periodo (seccion, 2011-2024)","12273 unidades, 2011-2024",129232.0,0.0014363815722140403,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q3|seccion|serpavi_alquiler_mes_mediana-a,Q3,robustez,variante (a) tendencias CCAA,2011-2024,129232.0,0.002759728447226935,log por unidad de exposición,ninguna,estimada
+REJ-Q3|seccion|serpavi_alquiler_mes_mediana-b,Q3,robustez,variante (b) controles,2011-2024,129232.0,0.0007817392070989425,log por unidad de exposición,ninguna,estimada
+REJ-Q3|seccion|serpavi_alquiler_mes_mediana-c,Q3,robustez,variante (c) tendencias+controles,2011-2024,129232.0,0.0021878498147423838,log por unidad de exposición,ninguna,estimada
+REJ-Q3|seccion|serpavi_alquiler_mes_mediana-d,Q3,robustez,variante (d) hasta 2019,2011-2024,93780.0,-0.0003423962132222887,log por unidad de exposición,ninguna,estimada
+REJ-Q3|seccion|serpavi_alquiler_mes_mediana-e,Q3,robustez,variante (e) desde 2020,2011-2024,35452.0,-0.0007685057373201697,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|emal_renta_mensual_eur,Q4,principal,"log emal_renta_mensual_eur ~ exposición + EF de unidad y periodo (municipio, 2018-2025)","10 unidades, 2018-2025",49.0,0.12014060019161975,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q4|municipio|emal_renta_mensual_eur-a,Q4,robustez,variante (a) tendencias CCAA,2018-2025,49.0,0.12014060019161975,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|emal_renta_mensual_eur-b,Q4,robustez,variante (b) controles,2018-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q4|municipio|emal_renta_mensual_eur-c,Q4,robustez,variante (c) tendencias+controles,2018-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q4|municipio|emal_renta_mensual_eur-d,Q4,robustez,variante (d) hasta 2019,2018-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q4|municipio|emal_renta_mensual_eur-e,Q4,robustez,variante (e) desde 2020,2018-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q4|municipio|incasol_contratos,Q4,principal,"log incasol_contratos ~ exposición + EF de unidad y periodo (municipio, 2018-2025)","521 unidades, 2018-2025",1706.0,-0.048718169280766215,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q4|municipio|incasol_contratos-a,Q4,robustez,variante (a) tendencias CCAA,2018-2025,1706.0,-0.048718169280766166,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|incasol_contratos-b,Q4,robustez,variante (b) controles,2018-2025,1706.0,-0.03739915198883524,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|incasol_contratos-c,Q4,robustez,variante (c) tendencias+controles,2018-2025,1706.0,-0.03739915198883519,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|incasol_contratos-d,Q4,robustez,variante (d) hasta 2019,2018-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q4|municipio|incasol_contratos-e,Q4,robustez,variante (e) desde 2020,2018-2025,1273.0,-0.0887394776144405,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|incasol_renta_media,Q4,principal,"log incasol_renta_media ~ exposición + EF de unidad y periodo (municipio, 2018-2025)","558 unidades, 2018-2025",2364.0,-0.011861667780368597,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q4|municipio|incasol_renta_media-a,Q4,robustez,variante (a) tendencias CCAA,2018-2025,2364.0,-0.011861667780368595,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|incasol_renta_media-b,Q4,robustez,variante (b) controles,2018-2025,2364.0,-0.011036095646295195,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|incasol_renta_media-c,Q4,robustez,variante (c) tendencias+controles,2018-2025,2364.0,-0.011036095646295195,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|incasol_renta_media-d,Q4,robustez,variante (d) hasta 2019,2018-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q4|municipio|incasol_renta_media-e,Q4,robustez,variante (e) desde 2020,2018-2025,1413.0,-0.015099003616718853,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|ipva_tam_indice,Q4,principal,"log ipva_tam_indice ~ exposición + EF de unidad y periodo (municipio, 2018-2025)","386 unidades, 2018-2025",1926.0,-0.00136674451960676,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q4|municipio|ipva_tam_indice-a,Q4,robustez,variante (a) tendencias CCAA,2018-2025,1926.0,-0.004281694760015948,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|ipva_tam_indice-b,Q4,robustez,variante (b) controles,2018-2025,1926.0,-0.006163454528655787,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|ipva_tam_indice-c,Q4,robustez,variante (c) tendencias+controles,2018-2025,1926.0,-0.004549892260839349,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|ipva_tam_indice-d,Q4,robustez,variante (d) hasta 2019,2018-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q4|municipio|ipva_tam_indice-e,Q4,robustez,variante (e) desde 2020,2018-2025,1156.0,0.003299961684408829,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|obra_nueva_neta_catastro,Q4,principal,"log obra_nueva_neta_catastro ~ exposición + EF de unidad y periodo (municipio, 2018-2025)","4022 unidades, 2018-2025",10985.0,0.12102798097571468,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q4|municipio|obra_nueva_neta_catastro-a,Q4,robustez,variante (a) tendencias CCAA,2018-2025,10985.0,0.10469746639559951,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|obra_nueva_neta_catastro-b,Q4,robustez,variante (b) controles,2018-2025,10985.0,0.10943231512889255,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|obra_nueva_neta_catastro-c,Q4,robustez,variante (c) tendencias+controles,2018-2025,10985.0,0.11907565269573432,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|obra_nueva_neta_catastro-d,Q4,robustez,variante (d) hasta 2019,2018-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q4|municipio|obra_nueva_neta_catastro-e,Q4,robustez,variante (e) desde 2020,2018-2025,6518.0,-0.04101635800651675,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|serpavi_alquiler_m2_mediana,Q4,principal,"log serpavi_alquiler_m2_mediana ~ exposición + EF de unidad y periodo (municipio, 2018-2025)","1874 unidades, 2018-2025",8519.0,0.007404333635964991,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q4|municipio|serpavi_alquiler_m2_mediana-a,Q4,robustez,variante (a) tendencias CCAA,2018-2025,8519.0,0.004337005081597243,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|serpavi_alquiler_m2_mediana-b,Q4,robustez,variante (b) controles,2018-2025,8519.0,0.00044251124683685546,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|serpavi_alquiler_m2_mediana-c,Q4,robustez,variante (c) tendencias+controles,2018-2025,8519.0,0.0021637171391660805,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|serpavi_alquiler_m2_mediana-d,Q4,robustez,variante (d) hasta 2019,2018-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q4|municipio|serpavi_alquiler_m2_mediana-e,Q4,robustez,variante (e) desde 2020,2018-2025,5283.0,0.019379695877253487,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|serpavi_n_contratos_recuento,Q4,principal,"log serpavi_n_contratos_recuento ~ exposición + EF de unidad y periodo (municipio, 2018-2025)","2574 unidades, 2018-2025",11739.0,-0.018423548917724335,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q4|municipio|serpavi_n_contratos_recuento-a,Q4,robustez,variante (a) tendencias CCAA,2018-2025,11739.0,-0.01436920615914549,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|serpavi_n_contratos_recuento-b,Q4,robustez,variante (b) controles,2018-2025,11739.0,-0.03059671511571943,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|serpavi_n_contratos_recuento-c,Q4,robustez,variante (c) tendencias+controles,2018-2025,11739.0,-0.024224746093596563,log por unidad de exposición,ninguna,estimada
+REJ-Q4|municipio|serpavi_n_contratos_recuento-d,Q4,robustez,variante (d) hasta 2019,2018-2025,,,log por unidad de exposición,ninguna,no estimable
+REJ-Q4|municipio|serpavi_n_contratos_recuento-e,Q4,robustez,variante (e) desde 2020,2018-2025,7171.0,-0.0406063760406438,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_ejecuciones_hipotecarias_numero,Q6,principal,"log cgpj_ejecuciones_hipotecarias_numero ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","36 unidades, 2011-2024",504.0,-0.03640277569019307,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|cgpj_ejecuciones_hipotecarias_numero-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,504.0,-0.03718196054633026,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_ejecuciones_hipotecarias_numero-b,Q6,robustez,variante (b) controles,2011-2024,504.0,-0.035997031836868955,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_ejecuciones_hipotecarias_numero-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,504.0,-0.03987265395333938,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_ejecuciones_hipotecarias_numero-d,Q6,robustez,variante (d) hasta 2019,2011-2024,324.0,-0.02937501599682123,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_ejecuciones_hipotecarias_numero-e,Q6,robustez,variante (e) desde 2020,2011-2024,180.0,-0.08183251603609365,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_lanzamientos_lau_numero,Q6,principal,"log cgpj_lanzamientos_lau_numero ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","36 unidades, 2011-2024",432.0,-0.04285413307038265,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|cgpj_lanzamientos_lau_numero-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,432.0,-0.05609562780405354,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_lanzamientos_lau_numero-b,Q6,robustez,variante (b) controles,2011-2024,432.0,-0.03264231537813914,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_lanzamientos_lau_numero-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,432.0,-0.06668207488547095,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_lanzamientos_lau_numero-d,Q6,robustez,variante (d) hasta 2019,2011-2024,252.0,0.011063850991421249,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_lanzamientos_lau_numero-e,Q6,robustez,variante (e) desde 2020,2011-2024,180.0,-0.066442581794383,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_lanzamientos_total_numero,Q6,principal,"log cgpj_lanzamientos_total_numero ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","36 unidades, 2011-2024",432.0,-0.06505379264482702,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|cgpj_lanzamientos_total_numero-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,432.0,-0.010298629346826491,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_lanzamientos_total_numero-b,Q6,robustez,variante (b) controles,2011-2024,432.0,-0.07070361557369073,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_lanzamientos_total_numero-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,432.0,-0.015199522424218835,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_lanzamientos_total_numero-d,Q6,robustez,variante (d) hasta 2019,2011-2024,252.0,-0.04902077284690281,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|cgpj_lanzamientos_total_numero-e,Q6,robustez,variante (e) desde 2020,2011-2024,180.0,-0.08624994207900206,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|compraventas,Q6,principal,"log compraventas ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","36 unidades, 2011-2024",504.0,0.015737689509153503,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|compraventas-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,504.0,0.021142928223961723,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|compraventas-b,Q6,robustez,variante (b) controles,2011-2024,504.0,0.013284052914897634,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|compraventas-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,504.0,0.021217010818847214,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|compraventas-d,Q6,robustez,variante (d) hasta 2019,2011-2024,324.0,0.014976604428039823,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|compraventas-e,Q6,robustez,variante (e) desde 2020,2011-2024,180.0,0.010160285855732877,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|hip_importe,Q6,principal,"log hip_importe ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","36 unidades, 2011-2024",504.0,0.006441781686362605,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|hip_importe-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,504.0,0.012790287028666523,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|hip_importe-b,Q6,robustez,variante (b) controles,2011-2024,504.0,0.008894432015082342,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|hip_importe-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,504.0,0.015729442214825605,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|hip_importe-d,Q6,robustez,variante (d) hasta 2019,2011-2024,324.0,0.016946492246083193,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|hip_importe-e,Q6,robustez,variante (e) desde 2020,2011-2024,180.0,0.004626314877288898,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|hip_n,Q6,principal,"log hip_n ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","36 unidades, 2011-2024",504.0,0.01563950503529672,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|hip_n-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,504.0,0.00514759979690425,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|hip_n-b,Q6,robustez,variante (b) controles,2011-2024,504.0,0.018600331264801886,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|hip_n-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,504.0,0.0068342252321777035,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|hip_n-d,Q6,robustez,variante (d) hasta 2019,2011-2024,324.0,0.012825816789615247,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|hip_n-e,Q6,robustez,variante (e) desde 2020,2011-2024,180.0,-0.007197914562666021,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|iniciadas,Q6,principal,"log iniciadas ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","35 unidades, 2011-2024",420.0,-0.03565544679153715,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|iniciadas-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,420.0,0.018834041932314652,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|iniciadas-b,Q6,robustez,variante (b) controles,2011-2024,420.0,-0.05712709349526932,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|iniciadas-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,420.0,0.023792005107872344,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|iniciadas-d,Q6,robustez,variante (d) hasta 2019,2011-2024,245.0,0.00674530658541511,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|iniciadas-e,Q6,robustez,variante (e) desde 2020,2011-2024,175.0,-0.016441334660089218,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|ipc_alquiler_indice,Q6,principal,"log ipc_alquiler_indice ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","36 unidades, 2011-2024",504.0,0.0013044036265363113,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|ipc_alquiler_indice-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,504.0,0.0007103165662665671,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|ipc_alquiler_indice-b,Q6,robustez,variante (b) controles,2011-2024,504.0,-0.001956745707955052,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|ipc_alquiler_indice-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,504.0,0.001000402030239129,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|ipc_alquiler_indice-d,Q6,robustez,variante (d) hasta 2019,2011-2024,324.0,0.002194773539929524,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|ipc_alquiler_indice-e,Q6,robustez,variante (e) desde 2020,2011-2024,180.0,0.002316222035103493,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|ipva_indice,Q6,principal,"log ipva_indice ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","36 unidades, 2011-2024",504.0,0.0013265490174523367,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|ipva_indice-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,504.0,0.0008691492104201505,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|ipva_indice-b,Q6,robustez,variante (b) controles,2011-2024,504.0,0.001435375795034053,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|ipva_indice-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,504.0,0.0015752280164316082,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|ipva_indice-d,Q6,robustez,variante (d) hasta 2019,2011-2024,324.0,0.00022207377906712314,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|ipva_indice-e,Q6,robustez,variante (e) desde 2020,2011-2024,180.0,0.0021049217647519775,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|serpavi_alquiler_m2_mediana,Q6,principal,"log serpavi_alquiler_m2_mediana ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","36 unidades, 2011-2024",504.0,0.00017715009447295964,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|serpavi_alquiler_m2_mediana-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,504.0,0.003415393806908023,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|serpavi_alquiler_m2_mediana-b,Q6,robustez,variante (b) controles,2011-2024,504.0,0.0005938983820256147,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|serpavi_alquiler_m2_mediana-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,504.0,0.004490919304762327,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|serpavi_alquiler_m2_mediana-d,Q6,robustez,variante (d) hasta 2019,2011-2024,324.0,0.0019517691646285258,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|serpavi_alquiler_m2_mediana-e,Q6,robustez,variante (e) desde 2020,2011-2024,180.0,0.004056732754874331,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|serpavi_n_contratos_recuento,Q6,principal,"log serpavi_n_contratos_recuento ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","36 unidades, 2011-2024",504.0,0.003337783033675456,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|serpavi_n_contratos_recuento-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,504.0,0.004421338268972892,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|serpavi_n_contratos_recuento-b,Q6,robustez,variante (b) controles,2011-2024,504.0,0.02299335297819398,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|serpavi_n_contratos_recuento-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,504.0,0.006577801915462959,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|serpavi_n_contratos_recuento-d,Q6,robustez,variante (d) hasta 2019,2011-2024,324.0,0.0012931268471327792,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|serpavi_n_contratos_recuento-e,Q6,robustez,variante (e) desde 2020,2011-2024,180.0,0.004517179239792055,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|terminadas,Q6,principal,"log terminadas ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","35 unidades, 2011-2024",490.0,-0.06023385271808746,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|terminadas-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,490.0,-0.008041755380594358,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|terminadas-b,Q6,robustez,variante (b) controles,2011-2024,490.0,-0.06305730422738813,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|terminadas-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,490.0,-0.000831778037358218,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|terminadas-d,Q6,robustez,variante (d) hasta 2019,2011-2024,315.0,-0.03161180881945334,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|terminadas-e,Q6,robustez,variante (e) desde 2020,2011-2024,175.0,0.061049073606276955,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|valor_tasado,Q6,principal,"log valor_tasado ~ exposición + EF de unidad y periodo (provincia, 2011-2024)","35 unidades, 2011-2024",485.0,-0.004711806055200201,log por unidad de exposición,ninguna (rejilla_twfe NO APTO),
+REJ-Q6|provincia|valor_tasado-a,Q6,robustez,variante (a) tendencias CCAA,2011-2024,485.0,-0.0014916062668263823,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|valor_tasado-b,Q6,robustez,variante (b) controles,2011-2024,485.0,-0.00681010950825953,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|valor_tasado-c,Q6,robustez,variante (c) tendencias+controles,2011-2024,485.0,0.0009281630581156265,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|valor_tasado-d,Q6,robustez,variante (d) hasta 2019,2011-2024,310.0,0.00644953218771805,log por unidad de exposición,ninguna,estimada
+REJ-Q6|provincia|valor_tasado-e,Q6,robustez,variante (e) desde 2020,2011-2024,175.0,-0.010736271284445134,log por unidad de exposición,ninguna,estimada

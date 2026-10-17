@@ -1,0 +1,44 @@
+[
+ {
+  "id": "V16-Q10-1-red",
+  "indicador": "Q10-1: reducción puntual del ECM de MIDAS respecto al AR(4) en Δlog IPV nacional, h = 1",
+  "valor": -0.18280123685764926,
+  "min": -0.18280123685764926,
+  "max": 0.004530595965870354,
+  "unidad": "reducción relativa del ECM",
+  "periodo": "2016Q1-2026Q2",
+  "cobertura": "nacional, 38 objetivos",
+  "fuentes": "INE; BdE; MIVAU",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q10/informe.md#q10-1"
+ },
+ {
+  "id": "V16-Q10-2-red",
+  "indicador": "Q10-2: reducción puntual del ECM de NOWCAST respecto al AR(4) en Δlog IPC de alquiler nacional, h = 1",
+  "valor": -0.3029337550111606,
+  "min": -0.343434349848748,
+  "max": -0.053337450391292895,
+  "unidad": "reducción relativa del ECM",
+  "periodo": "2011Q1-2026Q2",
+  "cobertura": "nacional, 58 objetivos",
+  "fuentes": "INE; BdE; MIVAU",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q10/informe.md#q10-2"
+ },
+ {
+  "id": "V16-Q10-3-red",
+  "indicador": "Q10-3: reducción puntual del ECM de MIDAS respecto al AR(4) en Δlog compraventas nacional, h = 1",
+  "valor": 0.40637188061825824,
+  "min": -0.0304479391427237,
+  "max": 0.40637188061825824,
+  "unidad": "reducción relativa del ECM",
+  "periodo": "2016Q1-2026Q2",
+  "cobertura": "nacional, 42 objetivos",
+  "fuentes": "INE; BdE; MIVAU",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q10/informe.md#q10-3"
+ }
+]

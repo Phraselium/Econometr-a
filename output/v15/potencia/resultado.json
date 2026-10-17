@@ -1,0 +1,21 @@
+{
+ "rama": "v15-f1-potencia",
+ "pregunta": "Efecto mínimo detectable al 80 % por pregunta candidata (P1-P10)",
+ "capa": "C4",
+ "datos": "data/base/hechos.parquet (sin la muestra sellada de v6); output/v12/b6/ecv_anual_origen.csv",
+ "N": 19,
+ "metodo": "aleatorización placebo, 500 réplicas, SEED=20261010; MDE80 = 2,8 × DT placebo; DM por simulación con bloques de 4",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "tamano_5pct_cluster": "tasa de rechazo placebo con errores agrupados (debería ser ≈ 0,05)"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Ningún efecto estimado: tratamientos y exposiciones placebo independientes del resultado; P6 solo con periodos previos a la regulación."
+}

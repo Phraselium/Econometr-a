@@ -16,7 +16,7 @@ Se usan los alias del plan: haiku para el inventariador; sonnet para auditor-dat
 
 ## G4. Metadatos de la base 1.0 con fallos detectados en la fase 1 (no cambian ninguna cifra de cifras_clave)
 Las auditorías de la fase 1 han encontrado tres fallos de metadatos en la base pública 1.0. Ninguno cambia una cifra de output/v5/cifras_clave.csv: lo he comprobado buscando cada variable en cifras_clave y en los scripts que las generan. Sí afectan a quien use la base descargable.
-- **`obra_nueva_neta_catastro`: periodo desplazado un año.** El fichero de origen t es el stock a 31-12-(t−1); comprobado en data/raw/catastro_urbana_municipios.csv.gz, columna `fecha`. La diferencia etiquetada t es, por tanto, la obra neta del año t−1. V12-B4 ya usaba la convención correcta (`anio_obra`), así que sus cifras no cambian. **V15 usa periodo − 1** en todo cruce por año.
+- **`obra_nueva_neta_catastro`: periodo desplazado un año.** El fichero de origen t es el stock a 31-12-(t−1); comprobado en data/raw/catastro_urbana_municipios.csv.gz, columna `fecha`. La diferencia etiquetada t es, por tanto, la obra neta del año t−1. V12-B4 ya usaba la convención correcta (`anio_obra`), así que sus cifras no cambian. **V15 usaba periodo − 1** en todo cruce por año. Desde G8 la base está corregida y no hace falta desplazar.
 - **`ipc_alquiler_indice`: base mal rotulada.** Se rotula «2021=100», pero su base efectiva es 2025=100 (auditoría de alquiler). Las tasas y los logaritmos en diferencias no cambian. V15 no usa niveles de esta serie entre fuentes.
 - **`permisos`: unidad y fuente mal declaradas.** Es un índice de Eurostat, no visados del MIVAU (auditoría de oferta y parque). V15 usa `visados`/`iniciadas` para el MIVAU.
 
@@ -47,3 +47,14 @@ Corregir la base es corregir la 1.0. Según la regla del plan, eso va a ERRATA e
 - **Control.** check_v15 («lecturas v6») exige el filtro en todo lector de la base, salvo los heredados con huella (docs/v15/contaminacion_v6_heredados.csv) y src/holdout.py.
 - **Potencia recalculada** sin esas provincias (output/v15/potencia). Cambios en el pre-registro: H3 0,4 → 0,5 % por desviación típica; H4 0,7 → 0,8 %; H2 4,1 → 3,9 %. H1 sigue en 2,2 %.
 - **Sellado.** Rehecho (`f3_sellado.py --rehacer`, con la puerta cerrada) para registrar la nueva huella de la base. Los ficheros de entrenamiento no cambian byte a byte.
+
+## G8. Correcciones de la 1.0 antes del depósito (encargo del autor, 2026-10-17)
+- **Capas.**
+  - 11 cifras C1 bajan a C4 (docs/v15/bajadas_capa.csv; ERRATA.md; adenda V15 del historial). Se aplican en src/v5/cifras_clave.py, que rechaza cualquier subida.
+  - check_v8, check_v9 y check_v13 comparan valores y aceptan una bajada solo si ERRATA la documenta con «id | capa Cx → Cy» y el resto de la fila no cambia (C8.cambio_documentado). Tests en tests/v15/test_bajadas_capa.py.
+- **Metadatos.**
+  - `obra_nueva_neta_catastro`: año de la obra, 2012-2025.
+  - `ipc_alquiler_indice`: índice 2025=100.
+  - `permisos`: Eurostat sts_cobp_q, índice 2021=100 (SCA).
+  - Dónde se corrige: src/v11/base_v11.py y src/v10/base.py (futuras construcciones), la base construida (src/v15/correcciones_metadatos_1_0.py, que comprueba que no cambia ningún valor), el diccionario y las anotaciones del inventario.
+- **Sellado V15.** Rehecho con la puerta cerrada: el entrenamiento de P2, P4 y P7 lleva estas variables.

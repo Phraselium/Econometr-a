@@ -125,3 +125,19 @@ Descriptivo y contable; ninguna fila es causal. Cifras en `output/v5/cifras_clav
 | Vivienda turística (C. Valenciana) | Stock | INE frente a registro GVA [V12-B7-CV-vut-ine; V12-B7-CV-vut-registro] | Dos fuentes, se reportan ambas | C4 | **Nuevo** | output/v12/b7 |
 
 <!-- V12:fin -->
+
+## Adenda V15 (correcciones de la 1.0 antes del depósito, 2026-10-17)
+
+Once cifras publicadas en C1 no cumplían la definición de C1 (dos fuentes independientes como mínimo; metodologia/capas.md) y bajan a C4. **Los valores no cambian; cambia la capa y, con ella, la lectura**: de «es» (hecho contrastado) a dato de una fuente o contabilidad interna. ERRATA.md, 2026-10-17.
+
+| Cifras | Qué describen | Capa antes → ahora | Por qué | Estado en V15 |
+|---|---|---|---|---|
+| [E-T7-prod] | Viviendas terminadas al año (MIVAU) | C1 → C4 | Una sola fuente | **Matiza**: el rango de terminadas es un dato oficial de fuente única, no un hecho contrastado |
+| [V8-M8-cv-p03-P5-acum-alt], [V8-M8-cv-p03-P5-acum-mivau], [V8-M8-cv-p12-P5-acum-alt], [V8-M8-cv-p12-P5-acum-mivau] | Variación acumulada del precio real en Alicante y Castellón (Registradores; valor tasado) | C1 → C4 | Cada cifra describe una sola serie | **Matiza**: se leen como dos fuentes distintas, cada una C4, no como un hecho C1 por cifra |
+| [VER-A23-V2-1], [VER-A23-V2-2] | Municipios con fianzas en el análisis (Cataluña, C. Valenciana) | C1 → C4 | Recuento interno del proyecto | **Matiza**: contabilidad del análisis |
+| [V10-ATL-A1], [V10-ATL-A2], [V10-ATL-A3] | Sobrecarga del gasto en vivienda (ECV) | C1 → C4 | Eurostat ilc_lvho07 es la misma encuesta | **Matiza**: dato de una encuesta, sin contraste independiente |
+| [V9-D7-c1-dif] | Hogares 2021: ECP frente a censo | C1 → C4 | La ECP se apoya en el censo | **Matiza**: diferencia entre fuentes no independientes |
+
+Metadatos de la base corregidos (ERRATA.md, 2026-10-17; ninguna cifra cambia): año de `obra_nueva_neta_catastro` (stock a 31-12 de t−1: la obra neta pasa a etiquetarse con su año), base de `ipc_alquiler_indice` (2025=100) y unidad y fuente de `permisos` (Eurostat, índice 2021=100).
+
+<!-- V15:fin -->

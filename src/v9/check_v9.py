@@ -40,8 +40,7 @@ def cifras_previas() -> list[str]:
             if not C8._en_errata(errata, i, None):
                 err.append(f"cifra publicada desaparecida sin ERRATA: {i}")
             continue
-        h2 = C8._huella(ck, i)
-        if h2 != h and not C8._en_errata(errata, i, h2):
+        if not C8.cambio_documentado(ck, i, h, errata):   # V15: compara valores; admite bajadas de capa con ERRATA
             err.append(f"cifra publicada cambiada sin ERRATA: {i}")
     return err
 

@@ -79,7 +79,7 @@ FUENTE_PERMITIDA = re.compile(r"\bINE\b|ine_|Eurostat|eurostat|\bBCE\b|\bECB\b|e
 FUENTES_DOCUMENTADAS = {   # variables de paneles sin fila de diccionario: fuente comprobada en el script del panel
     "costes": "Eurostat, sts_copi_q (coste de construcción residencial)", "hpi_eurostat": "Eurostat, prc_hpi_q",
     "prod_constr": "Eurostat, sts_copr (producción de la construcción)", "renta_hog": "INE, Contabilidad Nacional Trimestral",
-    "permisos": "MIVAU, visados de dirección de obra", "iniciadas": "MIVAU, viviendas libres iniciadas",
+    "permisos": "Eurostat, sts_cobp_q: permisos de construcción, número de viviendas (BPRM_DW), índice desestacionalizado", "iniciadas": "MIVAU, viviendas libres iniciadas",
     "iniciadas_anual_tabla": "MIVAU, viviendas libres iniciadas (tabla anual)", "terminadas_anual_tabla": "MIVAU, viviendas libres terminadas (tabla anual)",
     "ipc_alquiler_indice": "INE, IPC de alquiler por provincia", "ipva": "INE, IPVA municipal (59060)",
     "ocupados_epa": "INE, EPA por provincia", "pob_extranjera": "INE, Padrón continuo", "pob_extranjera_gva": "GVA (IVE), Padrón municipal",
@@ -621,8 +621,8 @@ META_V9 = {  # variable -> (unidad, fuente, capa, licencia, redistribuible)
 
 UNIDADES = {  # variables cuyo diccionario de origen no da unidad (comprobado en el diccionario y en el fichero raw)
     "costes": "índice 2021=100", "hpi_eurostat": "índice 2015=100", "iniciadas": "viviendas",
-    "iniciadas_anual_tabla": "viviendas", "terminadas_anual_tabla": "viviendas", "ipc_alquiler_indice": "índice 2021=100",
-    "ocupados_epa": "miles de personas", "permisos": "viviendas (visados)", "prod_constr": "índice 2021=100",
+    "iniciadas_anual_tabla": "viviendas", "terminadas_anual_tabla": "viviendas", "ipc_alquiler_indice": "índice 2025=100",
+    "ocupados_epa": "miles de personas", "permisos": "índice 2021=100 (SCA)", "prod_constr": "índice 2021=100",
     "renta_hog": "millones de euros", "iab_disponibilidad_365_media": "días", "iab_resenas_ultimos_12m": "reseñas",
 }
 

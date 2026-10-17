@@ -41,7 +41,7 @@
  "n_municipios_sellados": 853,
  "n_distritos_sellados": 1211,
  "fuentes_sha256": {
-  "data/base/hechos.parquet": "609619b6a82018a1bb3dc6622e0c86cab51b8c5ad7eb84a8d1ac7893428e3ee7",
+  "data/base/hechos.parquet": "a8ae4998d40057fa2834a105528a283f947ec2e6405a74c50859e07c8ef31377",
   "data/raw/v9/ine_padron_nacionalidad/padron_nacionalidad_2003_2022.csv.gz": "aac341143dce75aa727931de2056ec1f759e20b7b3b1a291441f5510dce37475"
  },
  "ultimo_periodo_visto": {
@@ -99,7 +99,7 @@
   "monitor_tipo_hip_tae|nacional|M": "2026-08",
   "monitor_tipo_hip_variable|nacional|M": "2026-08",
   "monitor_vut_viviendas|nacional|M": "2026-05",
-  "obra_nueva_neta_catastro|municipio|A": "2026",
+  "obra_nueva_neta_catastro|municipio|A": "2025",
   "ocupados_sa|nacional|T": "2026T2",
   "ocupados|ccaa|T": "2026T2",
   "ocupados|nacional|T": "2026T2",

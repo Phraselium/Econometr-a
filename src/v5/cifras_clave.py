@@ -118,10 +118,34 @@ def v5_hechos() -> list[dict]:
     return f
 
 
+# V15 (antes del depósito; ERRATA.md): bajadas de capa de cifras que no cumplen la definición de su capa (metodologia/capas.md).
+# Nunca se sube: solo se acepta una capa nueva de rango menor y con la capa anterior esperada. El valor no cambia.
+BAJADAS = RAIZ / "docs" / "v15" / "bajadas_capa.csv"
+RANGO_CAPA = {"C1": 4, "C3": 4, "C3s": 3, "C2": 2, "C4": 1}
+
+
+def bajar_capas(ck: pd.DataFrame) -> pd.DataFrame:
+    if not BAJADAS.exists():
+        return ck
+    b = pd.read_csv(BAJADAS, dtype=str)
+    for r in b.itertuples():
+        m = ck.id == r.id
+        if m.sum() != 1:
+            raise ValueError(f"bajadas_capa: {r.id} no está (o está repetida) en cifras_clave")
+        actual = ck.loc[m, "capa"].iloc[0]
+        if actual not in (r.capa_antes, r.capa_nueva):
+            raise ValueError(f"bajadas_capa: {r.id} tiene capa {actual}, se esperaba {r.capa_antes}")
+        if RANGO_CAPA[r.capa_nueva] >= RANGO_CAPA[r.capa_antes]:
+            raise ValueError(f"bajadas_capa: {r.id} {r.capa_antes} -> {r.capa_nueva} no es una bajada")
+        ck.loc[m, "capa"] = r.capa_nueva
+    return ck
+
+
 def main() -> None:
     ck = pd.DataFrame(v4_adaptadores() + v5_hechos(), columns=COLS)
     ck = ck[ck[["valor", "min", "max"]].notna().any(axis=1)]   # filas sin cifra (p. ej. NaN de origen) no entran
     ck["capa"] = ck.capa.astype(str)
+    ck = bajar_capas(ck)
     ck = ck.sort_values("id", kind="stable")
     # K4a-01: «%.6g» redondeaba a 6 cifras significativas los recuentos >= 1e6 (1.720.537 -> 1.720.540); «%.10g» es exacto hasta 1e10
     ck["sentido_min_max"] = ck.id.map(sentido)

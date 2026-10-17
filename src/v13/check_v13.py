@@ -102,8 +102,7 @@ def cifras_sin_cambios() -> list[str]:
             if not C8._en_errata(errata, i, None):
                 err.append(f"cifra desaparecida sin ERRATA: {i}")
             continue
-        h2 = C8._huella(ck, i)
-        if h2 != h and not C8._en_errata(errata, i, h2):
+        if not C8.cambio_documentado(ck, i, h, errata):   # V15: compara valores; admite bajadas de capa con ERRATA
             err.append(f"cifra cambiada sin ERRATA: {i}")
     err += [f"cifra nueva en V13 (sin análisis nuevo): {i}" for i in ck.index if i not in base.index]
     return err

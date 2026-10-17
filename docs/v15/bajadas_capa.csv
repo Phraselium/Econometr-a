@@ -1,0 +1,12 @@
+id,capa_antes,capa_nueva,motivo
+E-T7-prod,C1,C4,"Una sola fuente (MIVAU, terminadas libres y protegidas): estadística oficial de fuente única (metodologia/capas.md)"
+V8-M8-cv-p03-P5-acum-alt,C1,C4,"Describe una sola serie (Registradores, precio por m2 deflactado): fuente única"
+V8-M8-cv-p03-P5-acum-mivau,C1,C4,"Describe una sola serie (valor tasado MIVAU real): fuente única"
+V8-M8-cv-p12-P5-acum-alt,C1,C4,"Describe una sola serie (Registradores, precio por m2 deflactado): fuente única"
+V8-M8-cv-p12-P5-acum-mivau,C1,C4,"Describe una sola serie (valor tasado MIVAU real): fuente única"
+VER-A23-V2-1,C1,C4,"Recuento interno de municipios del análisis (contabilidad del proyecto), no un hecho contrastado con dos fuentes"
+VER-A23-V2-2,C1,C4,"Recuento interno de municipios del análisis (contabilidad del proyecto), no un hecho contrastado con dos fuentes"
+V10-ATL-A1,C1,C4,"El contraste con Eurostat ilc_lvho07 procede de la misma encuesta (EU-SILC/ECV): no hay dos fuentes independientes"
+V10-ATL-A2,C1,C4,"El contraste con Eurostat ilc_lvho07 procede de la misma encuesta (EU-SILC/ECV): no hay dos fuentes independientes"
+V10-ATL-A3,C1,C4,"El contraste con Eurostat ilc_lvho07 procede de la misma encuesta (EU-SILC/ECV): no hay dos fuentes independientes"
+V9-D7-c1-dif,C1,C4,"La ECP a 1-1-2022 se apoya en el censo 2021: las dos fuentes no son independientes"

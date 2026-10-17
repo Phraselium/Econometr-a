@@ -192,7 +192,7 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `inmig_anual` | Inmigración anual desde el extranjero, total (Eurostat migr_imm1ctz), valor anual asignado a cada trimestre del año | personas/año | C4 | eurostat_inmigracion_anual.csv (A/TOTAL/REACH/TOTAL/NR/T/ES) | sí | nacional | 1998T1–2024T4 |
 | `inmig_anual_eurostat` |  | personas (flujo anual) | C4 | Eurostat migr_imm1ctz (inmigración anual, ciudadanía TOTAL) | sí | nacional | 1998–2024T4 |
 | `ipc_alquiler` | IPC, alquiler de vivienda, nacional (índice; media trimestral de los 3 índices mensuales) | índice (base INE) | C4 | ine_ipc_alquiler.csv (IPC290887) | sí | ccaa,nacional | 2002T1–2026T2 |
-| `ipc_alquiler_indice` |  | índice 2021=100 | C4 | INE, IPC de alquiler por provincia | sí | provincia | 2002–2026T2 |
+| `ipc_alquiler_indice` |  | índice 2025=100 | C4 | INE, IPC de alquiler por provincia | sí | provincia | 2002–2026T2 |
 | `ipc_alquiler_yoy` |  | % interanual | C4 | INE IPC, subclase alquiler de vivienda | sí | nacional,provincia | 2002–2026T2 |
 | `ipv` | Índice de precios de vivienda INE, general, nacional (base 2015=100) | índice | C1/C4 | ine_ipv_80270.csv (IPV1209) | sí | ccaa,nacional | 2007T1–2026T2 |
 | `ipv15` |  | índice | C4 | INE IPV, tabla 25171 (base 2015, robustez) | sí | nacional | 2007T1–2025T4 |
@@ -218,7 +218,7 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `monitor_tipo_hip_tae` | BCE, MIR | % anual | C4 | BCE, MIR | sí | nacional | 2022-01–2026-08 |
 | `monitor_tipo_hip_variable` | BCE, MIR | % anual | C4 | BCE, MIR | sí | nacional | 2022-01–2026-08 |
 | `monitor_vut_viviendas` | INE, VUT (VTE71) | viviendas | C4 | INE, VUT (VTE71) | sí | nacional | 2020-08–2026-05 |
-| `obra_nueva_neta_catastro` | Catastro, estadística URBANA: diferencia anual (cálculo propio) | unidades urbanas residenciales | C4 | Catastro, estadística URBANA: diferencia anual (cálculo propio) | sí | municipio | 2013–2026 |
+| `obra_nueva_neta_catastro` | Catastro, estadística URBANA: diferencia anual (cálculo propio); el año es el de la obra (fichero t = stock a 31-12-(t−1); corregido en V15, ERRATA) | unidades urbanas residenciales | C4 | Catastro, estadística URBANA: diferencia anual (cálculo propio) | sí | municipio | 2012–2025 |
 | `obra_nueva_viviendas_inspire` | Catastro INSPIRE: viviendas por año de construcción (stock superviviente; agregado propio) | viviendas | C4 | Catastro INSPIRE: viviendas por año de construcción (stock superviviente; agregado propio) | sí | municipio | 1900–2026 |
 | `ocupados` | Ocupados EPA, total nacional (media del trimestre) | miles de personas | C4 | ine_epa_ocupados.csv (EPA387796) | sí | ccaa,nacional | 2002T1–2026T2 |
 | `ocupados_epa` |  | miles de personas | C4 | INE, EPA por provincia | sí | provincia | 2002–2026T2 |
@@ -231,7 +231,7 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `p_tasado` | Valor tasado medio de la vivienda libre, total nacional (medida principal de precio de compra) | euros/m2 | C1/C4 | mivau_valor_tasado_nacional_ccaa_prov.csv (serie valor_tasado_libre_nacional) | sí | ccaa,municipio,nacional,provincia | 1995T1–2026T2 |
 | `padron_pob_nacionalidad` | INE, Padrón continuo por nacionalidad (tablas jaxiT3 por provincia; suma de municipios) | personas | C4 | INE, Padrón continuo por nacionalidad (tablas jaxiT3 por provincia; suma de municipios) | sí | provincia | 2003–2022 |
 | `parados_epa` | Parados EPA, suma de provincias de la CCAA | miles de personas | C4 | INE EPA tabla 65345, medida EPA_parados | sí | ccaa,provincia | 2002–2026T2 |
-| `permisos` |  | viviendas (visados) | C4 | MIVAU, visados de dirección de obra | sí | nacional | 2000T1–2026T2 |
+| `permisos` |  | índice 2021=100 (SCA) | C4 | Eurostat, sts_cobp_q: permisos de construcción, número de viviendas (BPRM_DW), índice desestacionalizado | sí | nacional | 2000T1–2026T2 |
 | `pib_ccaa_anual` | PIB a precios corrientes, suma de provincias (CRE 80109); control; el valor anual se repite en los 4 trimestres sin interpolar | miles de euros | C4 | INE CRE 80109 PIB_precios_corrientes | sí | ccaa | 2007T1–2025T4 |
 | `pib_ccaa_q` | PIB trimestralizado: ancla en T3, log-lineal entre anclas, sin extrapolar (huecos tras el último ancla); solo robustez | miles de euros | C4 | INE, Contabilidad Regional (trimestralización propia) | sí | ccaa | 2007T1–2025T3 |
 | `pib_miles_eur` | PIB a precios corrientes (CRE 80109) | miles de euros | C4 | INE CRE 80109 | sí | provincia | 2002–2024 |

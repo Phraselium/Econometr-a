@@ -72,6 +72,28 @@ def _en_errata(errata: str, i: str, h: str | None) -> bool:
     return bool(pat.search(errata))
 
 
+RANGO_CAPA = {"C1": 4, "C3": 4, "C3s": 3, "C2": 2, "C4": 1}   # V15: bajar de capa = pasar a un rango menor
+
+
+def _solo_baja_capa(ck, i: str, h_base: str, errata: str) -> bool:
+    """V15: la cifra conserva todos sus campos (valor, rango, unidad, periodo, cobertura, fuentes y fecha) y solo BAJA de
+    capa, documentado en ERRATA.md con «id | capa Cx → Cy». Nunca acepta una subida."""
+    m = re.search(r"(?:^|\|)\s*`?" + re.escape(i) + r"`?\s*\|\s*capa\s+(C\w+)\s*(?:→|->)\s*(C\w+)", errata, re.M)
+    if not m:
+        return False
+    antes, nueva = m.groups()
+    if ck.at[i, "capa"] != nueva or RANGO_CAPA.get(nueva, 9) >= RANGO_CAPA.get(antes, 0):
+        return False
+    fila = [i] + [antes if c == "capa" else ck.at[i, c] for c in COLS[1:]]
+    return hashlib.sha256("|".join(fila).encode()).hexdigest() == h_base
+
+
+def cambio_documentado(ck, i: str, h_base: str, errata: str) -> bool:
+    """Cifra sin cambios, cambiada con «id | sha256_nuevo» en ERRATA, o con solo una bajada de capa documentada."""
+    h2 = _huella(ck, i)
+    return h2 == h_base or _en_errata(errata, i, h2) or _solo_baja_capa(ck, i, h_base, errata)
+
+
 def cifras_previas() -> list[str]:
     if not BASE.exists() or not CK.exists():
         return [f"falta {BASE.relative_to(RAIZ) if not BASE.exists() else CK.relative_to(RAIZ)}"]
@@ -85,7 +107,7 @@ def cifras_previas() -> list[str]:
                 err.append(f"cifra previa a V8 desaparecida sin línea «{i} | desaparecida» en ERRATA: {i}")
             continue
         nueva = _huella(ck, i)
-        if nueva != h and not _en_errata(errata, i, nueva):
+        if not cambio_documentado(ck, i, h, errata):
             err.append(f"cifra previa a V8 cambiada sin línea «{i} | {nueva[:12]}…» en ERRATA: {i}")
     return err
 

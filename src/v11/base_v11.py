@@ -246,7 +246,10 @@ def partes() -> list[pd.DataFrame]:
         u["dif"] = u.groupby("codigo").valor.diff()
         u["salto"] = u.groupby("codigo").periodo.transform(lambda p: p.astype(int).diff())
         u = u[u.salto == 1].dropna(subset=["dif"])
-        add(pd.DataFrame({"territorio_codigo": u.codigo, "nivel": "municipio", "periodo_raw": u.periodo, "variable": "obra_nueva_neta_catastro",
+        # V15 (ERRATA): el fichero «año t» es el stock a 31-12-(t−1) (columna `fecha` del crudo), así que la diferencia
+        # entre los ficheros t y t−1 es la obra neta del año natural t−1, y con ese año se etiqueta (antes llevaba el año t)
+        add(pd.DataFrame({"territorio_codigo": u.codigo, "nivel": "municipio", "periodo_raw": (u.periodo.astype(int) - 1).astype(str),
+                          "variable": "obra_nueva_neta_catastro",
                           "valor": u.dif, "metodo_dato": "diferencia anual de unidades urbanas residenciales (cálculo propio)"}),
             "data/raw/catastro_urbana_municipios.csv.gz")
     # AEAT, IRPF por municipios (Comunitat Valenciana): conceptos principales

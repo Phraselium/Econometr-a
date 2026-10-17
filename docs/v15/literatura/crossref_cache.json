@@ -1,0 +1,315 @@
+{
+ "10.1007/BF03399433": {
+  "existe": true,
+  "titulo": "Immigration and Swiss House Prices",
+  "primer_autor": "Degen",
+  "anio": 2017,
+  "revista": "Swiss Journal of Economics and Statistics",
+  "issn": [
+   "2235-6282"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.jeconom.2020.12.001": {
+  "existe": true,
+  "titulo": "Difference-in-Differences with multiple time periods",
+  "primer_autor": "Callaway",
+  "anio": 2021,
+  "revista": "Journal of Econometrics",
+  "issn": [
+   "0304-4076"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.jhe.2017.01.002": {
+  "existe": true,
+  "titulo": "Immigration and housing: A spatial econometric analysis",
+  "primer_autor": "Mussa",
+  "anio": 2017,
+  "revista": "Journal of Housing Economics",
+  "issn": [
+   "1051-1377"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.jhe.2019.04.002": {
+  "existe": true,
+  "titulo": "Do house prices ride the wave of immigration?",
+  "primer_autor": "Larkin",
+  "anio": 2019,
+  "revista": "Journal of Housing Economics",
+  "issn": [
+   "1051-1377"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.jue.2006.07.004": {
+  "existe": true,
+  "titulo": "Immigration and housing rents in American cities",
+  "primer_autor": "Saiz",
+  "anio": 2007,
+  "revista": "Journal of Urban Economics",
+  "issn": [
+   "0094-1190"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.regsciurbeco.2014.01.001": {
+  "existe": true,
+  "titulo": "Don't stand so close to me: The urban impact of immigration",
+  "primer_autor": "Accetturo",
+  "anio": 2014,
+  "revista": "Regional Science and Urban Economics",
+  "issn": [
+   "0166-0462"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.regsciurbeco.2023.103893": {
+  "existe": true,
+  "titulo": "Decomposing the impact of immigration on house prices",
+  "primer_autor": "Sanchis-Guarner",
+  "anio": 2023,
+  "revista": "Regional Science and Urban Economics",
+  "issn": [
+   "0166-0462"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.regsciurbeco.2023.103916": {
+  "existe": true,
+  "titulo": "Effectiveness and supply effects of high-coverage rent control policies",
+  "primer_autor": "Jofre-Monseny",
+  "anio": 2023,
+  "revista": "Regional Science and Urban Economics",
+  "issn": [
+   "0166-0462"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1080/19491247.2022.2155338": {
+  "existe": true,
+  "titulo": "Exploring rent pressure zones: Ireland’s recent rent control regime",
+  "primer_autor": "O’Toole",
+  "anio": 2023,
+  "revista": "International Journal of Housing Policy",
+  "issn": [
+   "1949-1247",
+   "1949-1255"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1093/qje/qjz025": {
+  "existe": true,
+  "titulo": "Shift-Share Designs: Theory and Inference*",
+  "primer_autor": "Adão",
+  "anio": 2019,
+  "revista": "The Quarterly Journal of Economics",
+  "issn": [
+   "0033-5533",
+   "1531-4650"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1093/restud/rdab030": {
+  "existe": true,
+  "titulo": "Quasi-Experimental Shift-Share Research Designs",
+  "primer_autor": "Borusyak",
+  "anio": 2021,
+  "revista": "The Review of Economic Studies",
+  "issn": [
+   "0034-6527",
+   "1467-937X"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1093/restud/rdad018": {
+  "existe": true,
+  "titulo": "A More Credible Approach to Parallel Trends",
+  "primer_autor": "Rambachan",
+  "anio": 2023,
+  "revista": "Review of Economic Studies",
+  "issn": [
+   "0034-6527",
+   "1467-937X"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1093/restud/rdae007": {
+  "existe": true,
+  "titulo": "Revisiting Event-Study Designs: Robust and Efficient Estimation",
+  "primer_autor": "Borusyak",
+  "anio": 2024,
+  "revista": "Review of Economic Studies",
+  "issn": [
+   "0034-6527",
+   "1467-937X"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1111/ecoj.12158": {
+  "existe": true,
+  "titulo": "Immigration and House Prices in the UK",
+  "primer_autor": "Sá",
+  "anio": 2014,
+  "revista": "The Economic Journal",
+  "issn": [
+   "0013-0133"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1111/jors.12010": {
+  "existe": true,
+  "titulo": "IMMIGRATION AND HOUSING BOOMS: EVIDENCE FROM SPAIN*",
+  "primer_autor": "Gonzalez",
+  "anio": 2012,
+  "revista": "Journal of Regional Science",
+  "issn": [
+   "0022-4146",
+   "1467-9787"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1162/003465303322369687": {
+  "existe": true,
+  "titulo": "Room in the Kitchen for the Melting Pot: Immigration and Rental Prices",
+  "primer_autor": "Saiz",
+  "anio": 2003,
+  "revista": "Review of Economics and Statistics",
+  "issn": [
+   "0034-6535",
+   "1530-9142"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1257/aer.20181047": {
+  "existe": true,
+  "titulo": "Bartik Instruments: What, When, Why, and How",
+  "primer_autor": "Goldsmith-Pinkham",
+  "anio": 2020,
+  "revista": "American Economic Review",
+  "issn": [
+   "0002-8282"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1257/aer.20181169": {
+  "existe": true,
+  "titulo": "Two-Way Fixed Effects Estimators with Heterogeneous Treatment Effects",
+  "primer_autor": "de Chaisemartin",
+  "anio": 2020,
+  "revista": "American Economic Review",
+  "issn": [
+   "0002-8282"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1257/aer.20181289": {
+  "existe": true,
+  "titulo": "The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San Francisco",
+  "primer_autor": "Diamond",
+  "anio": 2019,
+  "revista": "American Economic Review",
+  "issn": [
+   "0002-8282"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1257/aer.20190159": {
+  "existe": true,
+  "titulo": "Synthetic Difference-in-Differences",
+  "primer_autor": "Arkhangelsky",
+  "anio": 2021,
+  "revista": "American Economic Review",
+  "issn": [
+   "0002-8282"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1257/aeri.20210236": {
+  "existe": true,
+  "titulo": "Pretest with Caution: Event-Study Estimates after Testing for Parallel Trends",
+  "primer_autor": "Roth",
+  "anio": 2022,
+  "revista": "American Economic Review: Insights",
+  "issn": [
+   "2640-205X",
+   "2640-2068"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1257/jel.20191450": {
+  "existe": true,
+  "titulo": "Using Synthetic Controls: Feasibility, Data Requirements, and Methodological Aspects",
+  "primer_autor": "Abadie",
+  "anio": 2021,
+  "revista": "Journal of Economic Literature",
+  "issn": [
+   "0022-0515"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1257/pol.3.2.169": {
+  "existe": true,
+  "titulo": "Immigration and the Neighborhood",
+  "primer_autor": "Saiz",
+  "anio": 2011,
+  "revista": "American Economic Journal: Economic Policy",
+  "issn": [
+   "1945-7731",
+   "1945-774X"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1287/mnsc.2023.4775": {
+  "existe": true,
+  "titulo": "Forward to the Past: Short-Term Effects of the Rent Freeze in Berlin",
+  "primer_autor": "Hahn",
+  "anio": 2024,
+  "revista": "Management Science",
+  "issn": [
+   "0025-1909",
+   "1526-5501"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.24148/wp2023-28": {
+  "existe": true,
+  "titulo": "The Effect of Second-Generation Rent Controls: New Evidence from Catalonia",
+  "primer_autor": "",
+  "anio": 2023,
+  "revista": "Federal Reserve Bank of San Francisco, Working Paper Series",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.3386/w24285": {
+  "existe": true,
+  "titulo": "Shift-Share Instruments and the Impact of Immigration",
+  "primer_autor": "Jaeger",
+  "anio": 2018,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.37230/CyTET.2023.215.3": {
+  "existe": true,
+  "titulo": "El impacto de la inmigración sobre el precio de la vivienda española en el siglo XXI",
+  "primer_autor": "Torres-Téllez",
+  "anio": 2023,
+  "revista": "Ciudad y Territorio Estudios Territoriales",
+  "issn": [
+   "2659-3254",
+   "1133-4762"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.4337/9780857934581.00010": {
+  "existe": true,
+  "titulo": "The effects of immigration on US wages and rents: a general equilibrium approach*",
+  "primer_autor": "Ottaviano",
+  "anio": 2012,
+  "revista": "Migration Impact Assessment",
+  "issn": [],
+  "consulta": "2026-10-17"
+ }
+}

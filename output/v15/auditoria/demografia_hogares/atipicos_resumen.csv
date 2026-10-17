@@ -1,0 +1,15 @@
+dominio,tipo,nivel,series,obs,atipicos,z_max_abs,pct_atipicos
+poblacion_total_tasa_anual_pct,temporal_por_serie,provincia,104,2236,0,4.89,0
+poblacion_total_tasa_anual_pct,temporal_por_serie,ccaa,38,817,0,3.49,0
+poblacion_total_tasa_anual_pct,temporal_por_serie,municipio,765,16187,174,58.66,1.075
+poblacion_total_tasa_anual_pct,corte_por_anio,municipio,22,16353,200,,1.223
+poblacion_total_tasa_anual_pct,corte_por_anio_pob<20000,municipio,22,7699,136,,1.766
+poblacion_total_tasa_anual_pct,corte_por_anio_pob>=20000,municipio,22,8654,64,,0.74
+censo_anual_municipal_tasa_pct,corte_por_anio_todos,municipio,4,32525,708,119.38,2.177
+censo_anual_municipal_tasa_pct,corte_por_anio_v0>=1000,municipio,4,12601,38,12.88,0.302
+censo_anual_municipal_tasa_pct,corte_por_anio_v0>=10000,municipio,4,3076,17,17.04,0.553
+hogares_nacional_variacion_trimestral_pct,temporal_por_serie,nacional,2,118,0,4.43,0
+hogares_ecp_provincial_variacion_trimestral_pct,temporal_por_serie,provincia,52,1144,0,4.41,0
+hogares_2011_2021_provincia_tasa_pct,corte_provincias,provincia,1,52,0,3.28,0
+hogares_2011_2021_provincia_delta_personas_por_hogar,corte_provincias,provincia,1,52,0,2.76,0
+valencia_barrio_tasa_anual_pct,temporal_por_serie,barrio,87,1999,25,44.74,1.251

@@ -1,0 +1,2103 @@
+{
+ "rama": "v15/auditoria/demografia_hogares",
+ "pregunta": "¿Son coherentes y utilizables las fuentes de demografía y hogares (padrón/censo anual, ECP, EPA, censos, EVR/EMCR, MNP, València por barrio)? Atípicos, coherencia, rupturas, reparto espacial de V12-B1 y cobertura para el shift-share de inmigración (P4).",
+ "capa": "C4",
+ "datos": "padrón continuo y censo anual (INE), ECP, EPA, censos 2011 y 2021, EVR/EMCR/EM, MNP, V12-B1/B3, Catastro (unidades urbanas e INSPIRE), padrón de València (Ajuntament)",
+ "N": 162683,
+ "metodo": "auditoría descriptiva: z robusto (mediana, MAD, umbral 5), coherencia de niveles y tasas entre fuentes, rupturas, reparto alternativo por viviendas del Catastro",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "atipicos": {
+   "resumen": [
+    {
+     "dominio": "poblacion_total_tasa_anual_pct",
+     "tipo": "temporal_por_serie",
+     "nivel": "provincia",
+     "series": 104,
+     "obs": 2236,
+     "atipicos": 0,
+     "z_max_abs": 4.89,
+     "pct_atipicos": 0.0
+    },
+    {
+     "dominio": "poblacion_total_tasa_anual_pct",
+     "tipo": "temporal_por_serie",
+     "nivel": "ccaa",
+     "series": 38,
+     "obs": 817,
+     "atipicos": 0,
+     "z_max_abs": 3.49,
+     "pct_atipicos": 0.0
+    },
+    {
+     "dominio": "poblacion_total_tasa_anual_pct",
+     "tipo": "temporal_por_serie",
+     "nivel": "municipio",
+     "series": 765,
+     "obs": 16187,
+     "atipicos": 174,
+     "z_max_abs": 58.66,
+     "pct_atipicos": 1.075
+    },
+    {
+     "dominio": "poblacion_total_tasa_anual_pct",
+     "tipo": "corte_por_anio",
+     "nivel": "municipio",
+     "series": 22,
+     "obs": 16353,
+     "atipicos": 200,
+     "z_max_abs": null,
+     "pct_atipicos": 1.223
+    },
+    {
+     "dominio": "poblacion_total_tasa_anual_pct",
+     "tipo": "corte_por_anio_pob<20000",
+     "nivel": "municipio",
+     "series": 22,
+     "obs": 7699,
+     "atipicos": 136,
+     "z_max_abs": null,
+     "pct_atipicos": 1.766
+    },
+    {
+     "dominio": "poblacion_total_tasa_anual_pct",
+     "tipo": "corte_por_anio_pob>=20000",
+     "nivel": "municipio",
+     "series": 22,
+     "obs": 8654,
+     "atipicos": 64,
+     "z_max_abs": null,
+     "pct_atipicos": 0.74
+    },
+    {
+     "dominio": "censo_anual_municipal_tasa_pct",
+     "tipo": "corte_por_anio_todos",
+     "nivel": "municipio",
+     "series": 4,
+     "obs": 32525,
+     "atipicos": 708,
+     "z_max_abs": 119.38,
+     "pct_atipicos": 2.177
+    },
+    {
+     "dominio": "censo_anual_municipal_tasa_pct",
+     "tipo": "corte_por_anio_v0>=1000",
+     "nivel": "municipio",
+     "series": 4,
+     "obs": 12601,
+     "atipicos": 38,
+     "z_max_abs": 12.88,
+     "pct_atipicos": 0.302
+    },
+    {
+     "dominio": "censo_anual_municipal_tasa_pct",
+     "tipo": "corte_por_anio_v0>=10000",
+     "nivel": "municipio",
+     "series": 4,
+     "obs": 3076,
+     "atipicos": 17,
+     "z_max_abs": 17.04,
+     "pct_atipicos": 0.553
+    },
+    {
+     "dominio": "hogares_nacional_variacion_trimestral_pct",
+     "tipo": "temporal_por_serie",
+     "nivel": "nacional",
+     "series": 2,
+     "obs": 118,
+     "atipicos": 0,
+     "z_max_abs": 4.43,
+     "pct_atipicos": 0.0
+    },
+    {
+     "dominio": "hogares_ecp_provincial_variacion_trimestral_pct",
+     "tipo": "temporal_por_serie",
+     "nivel": "provincia",
+     "series": 52,
+     "obs": 1144,
+     "atipicos": 0,
+     "z_max_abs": 4.41,
+     "pct_atipicos": 0.0
+    },
+    {
+     "dominio": "hogares_2011_2021_provincia_tasa_pct",
+     "tipo": "corte_provincias",
+     "nivel": "provincia",
+     "series": 1,
+     "obs": 52,
+     "atipicos": 0,
+     "z_max_abs": 3.28,
+     "pct_atipicos": 0.0
+    },
+    {
+     "dominio": "hogares_2011_2021_provincia_delta_personas_por_hogar",
+     "tipo": "corte_provincias",
+     "nivel": "provincia",
+     "series": 1,
+     "obs": 52,
+     "atipicos": 0,
+     "z_max_abs": 2.76,
+     "pct_atipicos": 0.0
+    },
+    {
+     "dominio": "valencia_barrio_tasa_anual_pct",
+     "tipo": "temporal_por_serie",
+     "nivel": "barrio",
+     "series": 87,
+     "obs": 1999,
+     "atipicos": 25,
+     "z_max_abs": 44.74,
+     "pct_atipicos": 1.251
+    }
+   ],
+   "top_provincia_ccaa": []
+  },
+  "coherencia_poblacion": {
+   "niveles_y_dispersion": {
+    "ccaa|censo_anual_vs_ecp|EXT": {
+     "anios": [
+      2021,
+      2025
+     ],
+     "dif_nacional_pct_min": 0.0,
+     "dif_nacional_pct_max": 0.0,
+     "max_dif_territorial_abs_pct": 0.0,
+     "terr_dif_max": "01",
+     "anio_dif_max": 2021,
+     "max_territorios_con_dif_gt1pct_en_un_anio": 0,
+     "anios_con_dif_nacional_gt0_5pct": []
+    },
+    "ccaa|censo_anual_vs_ecp|TOTAL": {
+     "anios": [
+      2021,
+      2025
+     ],
+     "dif_nacional_pct_min": 0.0,
+     "dif_nacional_pct_max": 0.0,
+     "max_dif_territorial_abs_pct": 0.0,
+     "terr_dif_max": "01",
+     "anio_dif_max": 2021,
+     "max_territorios_con_dif_gt1pct_en_un_anio": 0,
+     "anios_con_dif_nacional_gt0_5pct": []
+    },
+    "ccaa|padron_vs_censo_anual|EXT": {
+     "anios": [
+      2021,
+      2022
+     ],
+     "dif_nacional_pct_min": 0.615,
+     "dif_nacional_pct_max": 0.693,
+     "max_dif_territorial_abs_pct": 3.811,
+     "terr_dif_max": "04",
+     "anio_dif_max": 2022,
+     "max_territorios_con_dif_gt1pct_en_un_anio": 9,
+     "anios_con_dif_nacional_gt0_5pct": [
+      2021,
+      2022
+     ]
+    },
+    "ccaa|padron_vs_censo_anual|TOTAL": {
+     "anios": [
+      2021,
+      2022
+     ],
+     "dif_nacional_pct_min": -0.033,
+     "dif_nacional_pct_max": -0.024,
+     "max_dif_territorial_abs_pct": 0.879,
+     "terr_dif_max": "04",
+     "anio_dif_max": 2021,
+     "max_territorios_con_dif_gt1pct_en_un_anio": 0,
+     "anios_con_dif_nacional_gt0_5pct": []
+    },
+    "ccaa|padron_vs_ecp|EXT": {
+     "anios": [
+      2003,
+      2022
+     ],
+     "dif_nacional_pct_min": 0.615,
+     "dif_nacional_pct_max": 12.792,
+     "max_dif_territorial_abs_pct": 31.911,
+     "terr_dif_max": "05",
+     "anio_dif_max": 2003,
+     "max_territorios_con_dif_gt1pct_en_un_anio": 19,
+     "anios_con_dif_nacional_gt0_5pct": [
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+     ]
+    },
+    "ccaa|padron_vs_ecp|TOTAL": {
+     "anios": [
+      2003,
+      2022
+     ],
+     "dif_nacional_pct_min": -0.033,
+     "dif_nacional_pct_max": 2.126,
+     "max_dif_territorial_abs_pct": 7.927,
+     "terr_dif_max": "05",
+     "anio_dif_max": 2003,
+     "max_territorios_con_dif_gt1pct_en_un_anio": 17,
+     "anios_con_dif_nacional_gt0_5pct": [
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014
+     ]
+    },
+    "provincia|censo_anual_vs_ecp|EXT": {
+     "anios": [
+      2021,
+      2025
+     ],
+     "dif_nacional_pct_min": 0.0,
+     "dif_nacional_pct_max": 0.0,
+     "max_dif_territorial_abs_pct": 0.0,
+     "terr_dif_max": "01",
+     "anio_dif_max": 2021,
+     "max_territorios_con_dif_gt1pct_en_un_anio": 0,
+     "anios_con_dif_nacional_gt0_5pct": []
+    },
+    "provincia|censo_anual_vs_ecp|TOTAL": {
+     "anios": [
+      2021,
+      2025
+     ],
+     "dif_nacional_pct_min": 0.0,
+     "dif_nacional_pct_max": 0.0,
+     "max_dif_territorial_abs_pct": 0.0,
+     "terr_dif_max": "01",
+     "anio_dif_max": 2021,
+     "max_territorios_con_dif_gt1pct_en_un_anio": 0,
+     "anios_con_dif_nacional_gt0_5pct": []
+    },
+    "provincia|padron_vs_censo_anual|EXT": {
+     "anios": [
+      2021,
+      2022
+     ],
+     "dif_nacional_pct_min": 0.615,
+     "dif_nacional_pct_max": 0.693,
+     "max_dif_territorial_abs_pct": 5.527,
+     "terr_dif_max": "14",
+     "anio_dif_max": 2022,
+     "max_territorios_con_dif_gt1pct_en_un_anio": 33,
+     "anios_con_dif_nacional_gt0_5pct": [
+      2021,
+      2022
+     ]
+    },
+    "provincia|padron_vs_censo_anual|TOTAL": {
+     "anios": [
+      2021,
+      2022
+     ],
+     "dif_nacional_pct_min": -0.033,
+     "dif_nacional_pct_max": -0.024,
+     "max_dif_territorial_abs_pct": 0.879,
+     "terr_dif_max": "07",
+     "anio_dif_max": 2021,
+     "max_territorios_con_dif_gt1pct_en_un_anio": 0,
+     "anios_con_dif_nacional_gt0_5pct": []
+    },
+    "provincia|padron_vs_ecp|EXT": {
+     "anios": [
+      2003,
+      2022
+     ],
+     "dif_nacional_pct_min": 0.615,
+     "dif_nacional_pct_max": 12.792,
+     "max_dif_territorial_abs_pct": 34.364,
+     "terr_dif_max": "38",
+     "anio_dif_max": 2003,
+     "max_territorios_con_dif_gt1pct_en_un_anio": 51,
+     "anios_con_dif_nacional_gt0_5pct": [
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+     ]
+    },
+    "provincia|padron_vs_ecp|TOTAL": {
+     "anios": [
+      2003,
+      2022
+     ],
+     "dif_nacional_pct_min": -0.033,
+     "dif_nacional_pct_max": 2.126,
+     "max_dif_territorial_abs_pct": 9.465,
+     "terr_dif_max": "38",
+     "anio_dif_max": 2003,
+     "max_territorios_con_dif_gt1pct_en_un_anio": 34,
+     "anios_con_dif_nacional_gt0_5pct": [
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014
+     ]
+    }
+   },
+   "tasas": {
+    "provincia|padron_vs_ecp|TOTAL": {
+     "corr_tasas": 0.9409,
+     "dif_media_pp": -0.1057,
+     "n_signo_opuesto": 49,
+     "n_tasas": 988
+    },
+    "provincia|padron_vs_ecp|EXT": {
+     "corr_tasas": 0.9248,
+     "dif_media_pp": -0.3975,
+     "n_signo_opuesto": 89,
+     "n_tasas": 988
+    },
+    "provincia|censo_anual_vs_ecp|TOTAL": {
+     "corr_tasas": 1.0,
+     "dif_media_pp": 0.0,
+     "n_signo_opuesto": 0,
+     "n_tasas": 208
+    },
+    "provincia|censo_anual_vs_ecp|EXT": {
+     "corr_tasas": 1.0,
+     "dif_media_pp": 0.0,
+     "n_signo_opuesto": 0,
+     "n_tasas": 208
+    },
+    "provincia|padron_vs_censo_anual|TOTAL": {
+     "corr_tasas": 0.9584,
+     "dif_media_pp": 0.02,
+     "n_signo_opuesto": 2,
+     "n_tasas": 52
+    },
+    "provincia|padron_vs_censo_anual|EXT": {
+     "corr_tasas": 0.9054,
+     "dif_media_pp": -0.1299,
+     "n_signo_opuesto": 6,
+     "n_tasas": 52
+    },
+    "ccaa|padron_vs_ecp|TOTAL": {
+     "corr_tasas": 0.9152,
+     "dif_media_pp": -0.134,
+     "n_signo_opuesto": 17,
+     "n_tasas": 361
+    },
+    "ccaa|padron_vs_ecp|EXT": {
+     "corr_tasas": 0.9003,
+     "dif_media_pp": -0.4558,
+     "n_signo_opuesto": 39,
+     "n_tasas": 361
+    },
+    "ccaa|censo_anual_vs_ecp|TOTAL": {
+     "corr_tasas": 1.0,
+     "dif_media_pp": 0.0,
+     "n_signo_opuesto": 0,
+     "n_tasas": 76
+    },
+    "ccaa|censo_anual_vs_ecp|EXT": {
+     "corr_tasas": 1.0,
+     "dif_media_pp": 0.0,
+     "n_signo_opuesto": 0,
+     "n_tasas": 76
+    },
+    "ccaa|padron_vs_censo_anual|TOTAL": {
+     "corr_tasas": 0.9454,
+     "dif_media_pp": 0.0779,
+     "n_signo_opuesto": 0,
+     "n_tasas": 19
+    },
+    "ccaa|padron_vs_censo_anual|EXT": {
+     "corr_tasas": 0.9674,
+     "dif_media_pp": 0.1745,
+     "n_signo_opuesto": 2,
+     "n_tasas": 19
+    }
+   },
+   "nacional_anios_padron_ecp_signo_opuesto": [
+    2020
+   ],
+   "nacional_tasas_pct": [
+    {
+     "anio": 2002,
+     "padron": null,
+     "censo_anual": null,
+     "ecp": 1.9314
+    },
+    {
+     "anio": 2003,
+     "padron": 1.1251,
+     "censo_anual": null,
+     "ecp": 1.7204
+    },
+    {
+     "anio": 2004,
+     "padron": 2.1086,
+     "censo_anual": null,
+     "ecp": 1.7601
+    },
+    {
+     "anio": 2005,
+     "padron": 1.3613,
+     "censo_anual": null,
+     "ecp": 1.6483
+    },
+    {
+     "anio": 2006,
+     "padron": 1.0999,
+     "censo_anual": null,
+     "ecp": 1.7603
+    },
+    {
+     "anio": 2007,
+     "padron": 2.1174,
+     "censo_anual": null,
+     "ecp": 1.9745
+    },
+    {
+     "anio": 2008,
+     "padron": 1.2739,
+     "censo_anual": null,
+     "ecp": 1.2489
+    },
+    {
+     "anio": 2009,
+     "padron": 0.5888,
+     "censo_anual": null,
+     "ecp": 0.5349
+    },
+    {
+     "anio": 2010,
+     "padron": 0.3604,
+     "censo_anual": null,
+     "ecp": 0.3884
+    },
+    {
+     "anio": 2011,
+     "padron": 0.1586,
+     "censo_anual": null,
+     "ecp": 0.3237
+    },
+    {
+     "anio": 2012,
+     "padron": -0.2868,
+     "censo_anual": null,
+     "ecp": -0.2255
+    },
+    {
+     "anio": 2013,
+     "padron": -0.7605,
+     "censo_anual": null,
+     "ecp": -0.4643
+    },
+    {
+     "anio": 2014,
+     "padron": -0.3142,
+     "censo_anual": null,
+     "ecp": -0.1506
+    },
+    {
+     "anio": 2015,
+     "padron": -0.1445,
+     "censo_anual": null,
+     "ecp": -0.0147
+    },
+    {
+     "anio": 2016,
+     "padron": 0.0325,
+     "censo_anual": null,
+     "ecp": 0.1691
+    },
+    {
+     "anio": 2017,
+     "padron": 0.3239,
+     "censo_anual": null,
+     "ecp": 0.3176
+    },
+    {
+     "anio": 2018,
+     "padron": 0.649,
+     "censo_anual": null,
+     "ecp": 0.5872
+    },
+    {
+     "anio": 2019,
+     "padron": 0.9029,
+     "censo_anual": null,
+     "ecp": 0.8506
+    },
+    {
+     "anio": 2020,
+     "padron": -0.1384,
+     "censo_anual": null,
+     "ecp": 0.1749
+    },
+    {
+     "anio": 2021,
+     "padron": 0.1906,
+     "censo_anual": 0.1813,
+     "ecp": 0.1813
+    },
+    {
+     "anio": 2022,
+     "padron": null,
+     "censo_anual": 1.2606,
+     "ecp": 1.2606
+    },
+    {
+     "anio": 2023,
+     "padron": null,
+     "censo_anual": 1.1112,
+     "ecp": 1.1112
+    },
+    {
+     "anio": 2024,
+     "padron": null,
+     "censo_anual": 1.0461,
+     "ecp": 1.0461
+    },
+    {
+     "anio": 2025,
+     "padron": null,
+     "censo_anual": null,
+     "ecp": 0.9528
+    }
+   ]
+  },
+  "coherencia_hogares": {
+   "epa_vs_ecp_2021T1_2026T2": {
+    "n_trimestres": 22,
+    "brecha_pct_2021T1": 0.382,
+    "brecha_pct_2026T2": 0.918,
+    "pendiente_brecha_pp_por_anio": 0.029,
+    "corr_qoq": 0.527,
+    "corr_yoy": 0.945,
+    "dif_media_yoy_pp_epa_menos_ecp": 0.045,
+    "trimestres_qoq_signo_opuesto": [
+     "2024T2"
+    ],
+    "crecimiento_acumulado_pct_epa": 7.458,
+    "crecimiento_acumulado_pct_ecp": 6.887
+   },
+   "epa_vs_censo2021": {
+    "censo_hogares_tabla_59534": 18539223,
+    "censo_hogares_tabla_59519_sup_util": 18536616,
+    "epa_2021T1_miles": 18610.0,
+    "ecp_2021T1_miles": 18539.223,
+    "dif_epa_vs_censo_pct": 0.382,
+    "dif_ecp_vs_censo_pct": 0.0,
+    "nota": "la ECP de 2021T1 reproduce el total del censo por construcción: no es un contraste independiente"
+   },
+   "ecp_vs_censo2021_provincial": {
+    "provincias": 52,
+    "dif_pct_mediana_abs": 0.0,
+    "dif_pct_max_abs": 0.4344,
+    "provincias_dif_gt1pct": 0
+   },
+   "ruptura_epa_2021T1_hogares": {
+    "qoq": {
+     "valor_2021T1": -1.104,
+     "mediana_resto": 0.361,
+     "mad_esc_resto": 0.325,
+     "z_robusto": -4.51
+    },
+    "yoy": {
+     "valor_2021T1": -0.873,
+     "mediana_resto": 1.284,
+     "mad_esc_resto": 1.142,
+     "z_robusto": -1.89
+    }
+   }
+  },
+  "residuo_b1_provincia": {
+   "por_periodo": {
+    "2003-2007": {
+     "provincias": 52,
+     "residuo_nacional": -155016.0,
+     "residuo_nacional_pct_pob_inicio": -0.363,
+     "provincias_residuo_negativo": 24,
+     "provincias_residuo_positivo": 28,
+     "residuo_pct_pob_mediana": 0.107,
+     "residuo_pct_pob_min": -2.593,
+     "residuo_pct_pob_max": 1.617,
+     "n_provincias_residuo_gt1pct_periodo": 15,
+     "n_provincias_residuo_gt1pct_anual": 0,
+     "provincias_gt1pct_periodo": [
+      "03",
+      "12",
+      "17",
+      "18",
+      "23",
+      "28",
+      "29",
+      "30",
+      "35",
+      "38",
+      "40",
+      "42",
+      "45",
+      "51",
+      "52"
+     ],
+     "corr_migratorio_vs_dp_menos_veg": 0.9947,
+     "signo_migratorio_igual_a_dp_menos_veg": 51
+    },
+    "2008-2013": {
+     "provincias": 52,
+     "residuo_nacional": -600747.0,
+     "residuo_nacional_pct_pob_inicio": -1.302,
+     "provincias_residuo_negativo": 48,
+     "provincias_residuo_positivo": 4,
+     "residuo_pct_pob_mediana": -0.784,
+     "residuo_pct_pob_min": -5.912,
+     "residuo_pct_pob_max": 0.746,
+     "n_provincias_residuo_gt1pct_periodo": 19,
+     "n_provincias_residuo_gt1pct_anual": 0,
+     "provincias_gt1pct_periodo": [
+      "03",
+      "04",
+      "07",
+      "11",
+      "12",
+      "16",
+      "19",
+      "21",
+      "28",
+      "29",
+      "30",
+      "35",
+      "36",
+      "37",
+      "38",
+      "43",
+      "45",
+      "50",
+      "52"
+     ],
+     "corr_migratorio_vs_dp_menos_veg": 0.268,
+     "signo_migratorio_igual_a_dp_menos_veg": 37
+    },
+    "2014-2019": {
+     "provincias": 52,
+     "residuo_nacional": -481877.0,
+     "residuo_nacional_pct_pob_inicio": -1.03,
+     "provincias_residuo_negativo": 49,
+     "provincias_residuo_positivo": 3,
+     "residuo_pct_pob_mediana": -0.707,
+     "residuo_pct_pob_min": -3.976,
+     "residuo_pct_pob_max": 0.266,
+     "n_provincias_residuo_gt1pct_periodo": 16,
+     "n_provincias_residuo_gt1pct_anual": 0,
+     "provincias_gt1pct_periodo": [
+      "01",
+      "07",
+      "08",
+      "16",
+      "19",
+      "21",
+      "25",
+      "28",
+      "29",
+      "31",
+      "35",
+      "38",
+      "40",
+      "42",
+      "43",
+      "52"
+     ],
+     "corr_migratorio_vs_dp_menos_veg": 0.9952,
+     "signo_migratorio_igual_a_dp_menos_veg": 46
+    },
+    "2020-2021": {
+     "provincias": 52,
+     "residuo_nacional": -154724.0,
+     "residuo_nacional_pct_pob_inicio": -0.326,
+     "provincias_residuo_negativo": 45,
+     "provincias_residuo_positivo": 7,
+     "residuo_pct_pob_mediana": -0.181,
+     "residuo_pct_pob_min": -0.747,
+     "residuo_pct_pob_max": 0.96,
+     "n_provincias_residuo_gt1pct_periodo": 0,
+     "n_provincias_residuo_gt1pct_anual": 0,
+     "provincias_gt1pct_periodo": [],
+     "corr_migratorio_vs_dp_menos_veg": 0.7599,
+     "signo_migratorio_igual_a_dp_menos_veg": 49
+    },
+    "2022-2024": {
+     "provincias": 52,
+     "residuo_nacional": 8897.0,
+     "residuo_nacional_pct_pob_inicio": 0.019,
+     "provincias_residuo_negativo": 29,
+     "provincias_residuo_positivo": 23,
+     "residuo_pct_pob_mediana": -0.005,
+     "residuo_pct_pob_min": -0.288,
+     "residuo_pct_pob_max": 0.226,
+     "n_provincias_residuo_gt1pct_periodo": 0,
+     "n_provincias_residuo_gt1pct_anual": 0,
+     "provincias_gt1pct_periodo": [],
+     "corr_migratorio_vs_dp_menos_veg": 0.9999,
+     "signo_migratorio_igual_a_dp_menos_veg": 52
+    }
+   },
+   "anual_resumen": [
+    {
+     "anio": 2003,
+     "n": 52,
+     "n_gt1": 4,
+     "n_neg": 21,
+     "mediana": 0.044,
+     "minimo": -1.67,
+     "maximo": 1.856
+    },
+    {
+     "anio": 2004,
+     "n": 52,
+     "n_gt1": 2,
+     "n_neg": 2,
+     "mediana": 0.337,
+     "minimo": -2.636,
+     "maximo": 1.07
+    },
+    {
+     "anio": 2005,
+     "n": 52,
+     "n_gt1": 3,
+     "n_neg": 30,
+     "mediana": -0.026,
+     "minimo": -1.141,
+     "maximo": 0.601
+    },
+    {
+     "anio": 2006,
+     "n": 52,
+     "n_gt1": 10,
+     "n_neg": 48,
+     "mediana": -0.418,
+     "minimo": -1.278,
+     "maximo": 0.22
+    },
+    {
+     "anio": 2007,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 7,
+     "mediana": 0.133,
+     "minimo": -0.341,
+     "maximo": 0.983
+    },
+    {
+     "anio": 2008,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 28,
+     "mediana": -0.004,
+     "minimo": -0.394,
+     "maximo": 0.358
+    },
+    {
+     "anio": 2009,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 30,
+     "mediana": -0.04,
+     "minimo": -0.303,
+     "maximo": 0.498
+    },
+    {
+     "anio": 2010,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 33,
+     "mediana": -0.021,
+     "minimo": -0.504,
+     "maximo": 0.667
+    },
+    {
+     "anio": 2011,
+     "n": 52,
+     "n_gt1": 1,
+     "n_neg": 44,
+     "mediana": -0.131,
+     "minimo": -1.931,
+     "maximo": 0.253
+    },
+    {
+     "anio": 2012,
+     "n": 52,
+     "n_gt1": 4,
+     "n_neg": 50,
+     "mediana": -0.303,
+     "minimo": -1.702,
+     "maximo": 0.101
+    },
+    {
+     "anio": 2013,
+     "n": 52,
+     "n_gt1": 5,
+     "n_neg": 44,
+     "mediana": -0.198,
+     "minimo": -4.015,
+     "maximo": 0.221
+    },
+    {
+     "anio": 2014,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 49,
+     "mediana": -0.2,
+     "minimo": -0.975,
+     "maximo": 0.247
+    },
+    {
+     "anio": 2015,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 43,
+     "mediana": -0.129,
+     "minimo": -0.807,
+     "maximo": 0.42
+    },
+    {
+     "anio": 2016,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 47,
+     "mediana": -0.146,
+     "minimo": -0.967,
+     "maximo": 0.172
+    },
+    {
+     "anio": 2017,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 37,
+     "mediana": -0.06,
+     "minimo": -0.705,
+     "maximo": 0.461
+    },
+    {
+     "anio": 2018,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 36,
+     "mediana": -0.047,
+     "minimo": -0.482,
+     "maximo": 0.222
+    },
+    {
+     "anio": 2019,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 38,
+     "mediana": -0.077,
+     "minimo": -0.654,
+     "maximo": 0.239
+    },
+    {
+     "anio": 2020,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 47,
+     "mediana": -0.196,
+     "minimo": -0.712,
+     "maximo": 0.166
+    },
+    {
+     "anio": 2021,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 20,
+     "mediana": 0.011,
+     "minimo": -0.285,
+     "maximo": 0.872
+    },
+    {
+     "anio": 2022,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 21,
+     "mediana": 0.003,
+     "minimo": -0.063,
+     "maximo": 0.101
+    },
+    {
+     "anio": 2023,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 22,
+     "mediana": 0.003,
+     "minimo": -0.108,
+     "maximo": 0.08
+    },
+    {
+     "anio": 2024,
+     "n": 52,
+     "n_gt1": 0,
+     "n_neg": 29,
+     "mediana": -0.011,
+     "minimo": -0.151,
+     "maximo": 0.106
+    }
+   ],
+   "provincias_residuo_negativo_2014_2019_y_positivo_2022_2024": 22,
+   "corr_residuo_anual_pct_2014_2019_vs_2022_2024": -0.296
+  },
+  "rupturas": {
+   "epa_poblacion_vs_ecp": {
+    "razon_epa_ecp_pct_ultimo_antes_2021T1": -1.2857828766684065,
+    "periodo_ultimo_antes": "2020T3",
+    "razon_epa_ecp_pct_2021T1": -1.1054624017089454,
+    "salto_razon_pp_2021T1": 0.18032047495946113,
+    "mediana_saltos_previos_pp": -0.024801420616082925,
+    "mad_esc_saltos_previos_pp": 0.058837064326219504,
+    "z_robusto_salto_2021T1": 3.4862700565455604,
+    "n_pares": 50,
+    "nota": "EPA se recalibra a la población del censo 2021 desde 2021T1; el salto se mide contra la ECP (T1 y T3 hasta 2020, trimestral después)"
+   },
+   "padron_a_censo_anual_municipal": {
+    "2021": {
+     "municipios_ambos": 8131,
+     "solo_padron": 0,
+     "solo_censo": 0,
+     "dif_total_pct": 0.0331,
+     "dif_mediana_abs_pct": 0.281,
+     "municipios_dif_gt1pct": 1653,
+     "municipios_dif_gt5pct": 142,
+     "poblacion_en_municipios_dif_gt5pct": 28659,
+     "municipios_dif_gt1pct_con_pob_ge_10000": 42
+    },
+    "2022": {
+     "municipios_ambos": 8131,
+     "solo_padron": 0,
+     "solo_censo": 0,
+     "dif_total_pct": 0.0238,
+     "dif_mediana_abs_pct": 0.266,
+     "municipios_dif_gt1pct": 1629,
+     "municipios_dif_gt5pct": 151,
+     "poblacion_en_municipios_dif_gt5pct": 58241,
+     "municipios_dif_gt1pct_con_pob_ge_10000": 54
+    }
+   },
+   "seccionado": {
+    "tabla": [
+     {
+      "fuente": "censo_anual",
+      "desde": 2021,
+      "hasta": 2022,
+      "secciones_desde": 36333,
+      "secciones_hasta": 36382,
+      "desaparecen": 57,
+      "nuevas": 106,
+      "municipios_con_cambio": 101
+     },
+     {
+      "fuente": "censo_anual",
+      "desde": 2022,
+      "hasta": 2023,
+      "secciones_desde": 36382,
+      "secciones_hasta": 36462,
+      "desaparecen": 127,
+      "nuevas": 207,
+      "municipios_con_cambio": 180
+     },
+     {
+      "fuente": "censo_anual",
+      "desde": 2023,
+      "hasta": 2024,
+      "secciones_desde": 36462,
+      "secciones_hasta": 36477,
+      "desaparecen": 74,
+      "nuevas": 89,
+      "municipios_con_cambio": 103
+     },
+     {
+      "fuente": "censo_anual",
+      "desde": 2024,
+      "hasta": 2025,
+      "secciones_desde": 36477,
+      "secciones_hasta": 36554,
+      "desaparecen": 80,
+      "nuevas": 157,
+      "municipios_con_cambio": 146
+     },
+     {
+      "fuente": "adrh",
+      "desde": 2019,
+      "hasta": 2020,
+      "secciones_desde": 34051,
+      "secciones_hasta": 35619,
+      "desaparecen": 39,
+      "nuevas": 1607,
+      "municipios_con_cambio": 1435
+     },
+     {
+      "fuente": "adrh",
+      "desde": 2020,
+      "hasta": 2022,
+      "secciones_desde": 35619,
+      "secciones_hasta": 36378,
+      "desaparecen": 251,
+      "nuevas": 1010,
+      "municipios_con_cambio": 677
+     },
+     {
+      "fuente": "adrh",
+      "desde": 2022,
+      "hasta": 2023,
+      "secciones_desde": 36378,
+      "secciones_hasta": 36394,
+      "desaparecen": 84,
+      "nuevas": 100,
+      "municipios_con_cambio": 120
+     },
+     {
+      "fuente": "adrh2023_vs_censo_anual2021",
+      "desde": 2023,
+      "hasta": 2021,
+      "secciones_desde": 36394,
+      "secciones_hasta": 36333,
+      "desaparecen": 397,
+      "nuevas": 336,
+      "municipios_con_cambio": 410
+     },
+     {
+      "fuente": "censo_anual_2021_vs_2025",
+      "desde": 2021,
+      "hasta": 2025,
+      "secciones_desde": 36333,
+      "secciones_hasta": 36554,
+      "desaparecen": 338,
+      "nuevas": 559,
+      "municipios_con_cambio": 435
+     }
+    ],
+    "municipios_con_cambio_2021_2025": 435,
+    "poblacion_2025_en_municipios_con_cambio_pct": 50.69,
+    "secciones_en_territorios_vigente_2025": 36554,
+    "primer_anio_de_las_variables_con_nivel_seccion": {
+     "2011": 2,
+     "2019": 3,
+     "2021": 40,
+     "2026": 13
+    },
+    "secciones_2011": "no hay seccionado ni datos por sección de 2011 en data/raw ni en la base: la comparación 2011-2021 por sección NO es auditable; solo el seccionado vigente (2019-2025)"
+   },
+   "evr_emcr_revisiones_y_empalme": {
+    "em_inmigracion_extranjero": {
+     "EVR_vs_EM_dif_total_pct_2008_2020": [
+      11.904,
+      33.194
+     ],
+     "EVR_vs_EM_max_dif_provincial_abs_pct_2008_2020": 67.547,
+     "EMCR_vs_EM_dif_total_pct_2021": 67.902,
+     "EVR_vs_EM_dif_total_pct_2021": 25.209
+    },
+    "em_emigracion_extranjero": {
+     "EVR_vs_EM_dif_total_pct_2008_2020": [
+      -15.575,
+      25.731
+     ],
+     "EVR_vs_EM_max_dif_provincial_abs_pct_2008_2020": 224.244,
+     "EMCR_vs_EM_dif_total_pct_2021": 83.007,
+     "EVR_vs_EM_dif_total_pct_2021": 18.836
+    },
+    "empalme_2021_nacional": {
+     "inmigracion_evr": 662173.0,
+     "inmigracion_emcr": 887960.0,
+     "emigracion_evr": 452511.0,
+     "emigracion_emcr": 696866.0
+    },
+    "empalme_2021_cociente_emcr_evr_provincial": {
+     "inmigracion_mediana": 1.354161541411234,
+     "inmigracion_min": 1.1354537976418975,
+     "inmigracion_max": 2.0145922746781117,
+     "emigracion_mediana": 1.7249718153602918,
+     "emigracion_min": 0.5979116111478785,
+     "emigracion_max": 3.321266968325792
+    }
+   }
+  },
+  "reparto_b1": {
+   "municipal": {
+    "metricas_observados": [
+     {
+      "periodo": "2008-2013",
+      "componente": "crecimiento",
+      "n_municipios": 680,
+      "corr_nivel_poblacion": -0.373,
+      "corr_nivel_catastro": -0.3816,
+      "corr_tasa_poblacion": 0.2699,
+      "corr_tasa_catastro": 0.3118,
+      "spearman_tasa_catastro": 0.3814,
+      "error_abs_mediano_por_mil_poblacion": 28.4949,
+      "error_abs_mediano_por_mil_catastro": 29.0647,
+      "pct_municipios_catastro_mejor": 53.3824,
+      "n_signo_cambia_catastro": 209,
+      "n_signo_cambia_poblacion": 209,
+      "pct_signo_cambia_catastro": 30.7353,
+      "pct_signo_cambia_poblacion": 30.7353,
+      "corr_entre_repartos_nivel": 0.9952
+     },
+     {
+      "periodo": "2008-2013",
+      "componente": "residuo",
+      "n_municipios": 680,
+      "corr_nivel_poblacion": 0.812,
+      "corr_nivel_catastro": 0.8572,
+      "corr_tasa_poblacion": 0.4973,
+      "corr_tasa_catastro": 0.6087,
+      "spearman_tasa_catastro": 0.4314,
+      "error_abs_mediano_por_mil_poblacion": 7.8372,
+      "error_abs_mediano_por_mil_catastro": 7.9608,
+      "pct_municipios_catastro_mejor": 52.3529,
+      "n_signo_cambia_catastro": 132,
+      "n_signo_cambia_poblacion": 132,
+      "pct_signo_cambia_catastro": 19.4118,
+      "pct_signo_cambia_poblacion": 19.4118,
+      "corr_entre_repartos_nivel": 0.9858
+     },
+     {
+      "periodo": "2008-2013",
+      "componente": "saldo_exterior",
+      "n_municipios": 680,
+      "corr_nivel_poblacion": 0.6764,
+      "corr_nivel_catastro": 0.694,
+      "corr_tasa_poblacion": 0.4481,
+      "corr_tasa_catastro": 0.5142,
+      "spearman_tasa_catastro": 0.3091,
+      "error_abs_mediano_por_mil_poblacion": 10.3398,
+      "error_abs_mediano_por_mil_catastro": 9.8464,
+      "pct_municipios_catastro_mejor": 53.0882,
+      "n_signo_cambia_catastro": 109,
+      "n_signo_cambia_poblacion": 109,
+      "pct_signo_cambia_catastro": 16.0767,
+      "pct_signo_cambia_poblacion": 16.0767,
+      "corr_entre_repartos_nivel": 0.9884
+     },
+     {
+      "periodo": "2008-2013",
+      "componente": "saldo_interior",
+      "n_municipios": 680,
+      "corr_nivel_poblacion": 0.3445,
+      "corr_nivel_catastro": 0.374,
+      "corr_tasa_poblacion": 0.1333,
+      "corr_tasa_catastro": 0.1316,
+      "spearman_tasa_catastro": 0.1494,
+      "error_abs_mediano_por_mil_poblacion": 17.2517,
+      "error_abs_mediano_por_mil_catastro": 17.5102,
+      "pct_municipios_catastro_mejor": 45.7353,
+      "n_signo_cambia_catastro": 305,
+      "n_signo_cambia_poblacion": 305,
+      "pct_signo_cambia_catastro": 44.8529,
+      "pct_signo_cambia_poblacion": 44.8529,
+      "corr_entre_repartos_nivel": 0.9914
+     },
+     {
+      "periodo": "2008-2013",
+      "componente": "vegetativo",
+      "n_municipios": 680,
+      "corr_nivel_poblacion": 0.823,
+      "corr_nivel_catastro": 0.814,
+      "corr_tasa_poblacion": 0.5926,
+      "corr_tasa_catastro": 0.5719,
+      "spearman_tasa_catastro": 0.537,
+      "error_abs_mediano_por_mil_poblacion": 11.8224,
+      "error_abs_mediano_por_mil_catastro": 13.3125,
+      "pct_municipios_catastro_mejor": 46.3235,
+      "n_signo_cambia_catastro": 85,
+      "n_signo_cambia_poblacion": 85,
+      "pct_signo_cambia_catastro": 12.5184,
+      "pct_signo_cambia_poblacion": 12.5184,
+      "corr_entre_repartos_nivel": 0.9974
+     },
+     {
+      "periodo": "2014-2019",
+      "componente": "crecimiento",
+      "n_municipios": 679,
+      "corr_nivel_poblacion": 0.9634,
+      "corr_nivel_catastro": 0.9683,
+      "corr_tasa_poblacion": 0.5438,
+      "corr_tasa_catastro": 0.5521,
+      "spearman_tasa_catastro": 0.6034,
+      "error_abs_mediano_por_mil_poblacion": 21.2801,
+      "error_abs_mediano_por_mil_catastro": 22.1736,
+      "pct_municipios_catastro_mejor": 52.1355,
+      "n_signo_cambia_catastro": 142,
+      "n_signo_cambia_poblacion": 142,
+      "pct_signo_cambia_catastro": 20.9131,
+      "pct_signo_cambia_poblacion": 20.9131,
+      "corr_entre_repartos_nivel": 0.9977
+     },
+     {
+      "periodo": "2014-2019",
+      "componente": "residuo",
+      "n_municipios": 679,
+      "corr_nivel_poblacion": 0.9143,
+      "corr_nivel_catastro": 0.9147,
+      "corr_tasa_poblacion": 0.3516,
+      "corr_tasa_catastro": 0.3294,
+      "spearman_tasa_catastro": 0.3879,
+      "error_abs_mediano_por_mil_poblacion": 6.5578,
+      "error_abs_mediano_por_mil_catastro": 6.5218,
+      "pct_municipios_catastro_mejor": 50.9573,
+      "n_signo_cambia_catastro": 128,
+      "n_signo_cambia_poblacion": 128,
+      "pct_signo_cambia_catastro": 18.8513,
+      "pct_signo_cambia_poblacion": 18.8513,
+      "corr_entre_repartos_nivel": 0.9973
+     },
+     {
+      "periodo": "2014-2019",
+      "componente": "saldo_exterior",
+      "n_municipios": 679,
+      "corr_nivel_poblacion": 0.9746,
+      "corr_nivel_catastro": 0.9775,
+      "corr_tasa_poblacion": 0.4132,
+      "corr_tasa_catastro": 0.4291,
+      "spearman_tasa_catastro": 0.5086,
+      "error_abs_mediano_por_mil_poblacion": 12.6537,
+      "error_abs_mediano_por_mil_catastro": 13.0049,
+      "pct_municipios_catastro_mejor": 52.5773,
+      "n_signo_cambia_catastro": 85,
+      "n_signo_cambia_poblacion": 85,
+      "pct_signo_cambia_catastro": 12.5184,
+      "pct_signo_cambia_poblacion": 12.5184,
+      "corr_entre_repartos_nivel": 0.9978
+     },
+     {
+      "periodo": "2014-2019",
+      "componente": "saldo_interior",
+      "n_municipios": 679,
+      "corr_nivel_poblacion": 0.4782,
+      "corr_nivel_catastro": 0.4785,
+      "corr_tasa_poblacion": 0.4115,
+      "corr_tasa_catastro": 0.4188,
+      "spearman_tasa_catastro": 0.3885,
+      "error_abs_mediano_por_mil_poblacion": 13.3611,
+      "error_abs_mediano_por_mil_catastro": 13.6335,
+      "pct_municipios_catastro_mejor": 49.7791,
+      "n_signo_cambia_catastro": 251,
+      "n_signo_cambia_poblacion": 251,
+      "pct_signo_cambia_catastro": 36.9661,
+      "pct_signo_cambia_poblacion": 36.9661,
+      "corr_entre_repartos_nivel": 0.9955
+     },
+     {
+      "periodo": "2014-2019",
+      "componente": "vegetativo",
+      "n_municipios": 679,
+      "corr_nivel_poblacion": 0.5115,
+      "corr_nivel_catastro": 0.4849,
+      "corr_tasa_poblacion": 0.6585,
+      "corr_tasa_catastro": 0.6463,
+      "spearman_tasa_catastro": 0.6088,
+      "error_abs_mediano_por_mil_poblacion": 9.5477,
+      "error_abs_mediano_por_mil_catastro": 9.944,
+      "pct_municipios_catastro_mejor": 46.6863,
+      "n_signo_cambia_catastro": 159,
+      "n_signo_cambia_poblacion": 159,
+      "pct_signo_cambia_catastro": 23.4168,
+      "pct_signo_cambia_poblacion": 23.4168,
+      "corr_entre_repartos_nivel": 0.9973
+     },
+     {
+      "periodo": "2020-2021",
+      "componente": "crecimiento",
+      "n_municipios": 697,
+      "corr_nivel_poblacion": 0.8226,
+      "corr_nivel_catastro": 0.8566,
+      "corr_tasa_poblacion": 0.4143,
+      "corr_tasa_catastro": 0.4581,
+      "spearman_tasa_catastro": 0.4081,
+      "error_abs_mediano_por_mil_poblacion": 9.7834,
+      "error_abs_mediano_por_mil_catastro": 9.6427,
+      "pct_municipios_catastro_mejor": 52.0803,
+      "n_signo_cambia_catastro": 263,
+      "n_signo_cambia_poblacion": 263,
+      "pct_signo_cambia_catastro": 37.7331,
+      "pct_signo_cambia_poblacion": 37.7331,
+      "corr_entre_repartos_nivel": 0.9932
+     },
+     {
+      "periodo": "2020-2021",
+      "componente": "residuo",
+      "n_municipios": 697,
+      "corr_nivel_poblacion": 0.9529,
+      "corr_nivel_catastro": 0.9543,
+      "corr_tasa_poblacion": 0.2264,
+      "corr_tasa_catastro": 0.2699,
+      "spearman_tasa_catastro": 0.2845,
+      "error_abs_mediano_por_mil_poblacion": 2.7531,
+      "error_abs_mediano_por_mil_catastro": 2.7331,
+      "pct_municipios_catastro_mejor": 51.7934,
+      "n_signo_cambia_catastro": 172,
+      "n_signo_cambia_poblacion": 172,
+      "pct_signo_cambia_catastro": 24.8196,
+      "pct_signo_cambia_poblacion": 24.8196,
+      "corr_entre_repartos_nivel": 0.9977
+     },
+     {
+      "periodo": "2020-2021",
+      "componente": "saldo_exterior",
+      "n_municipios": 697,
+      "corr_nivel_poblacion": 0.9638,
+      "corr_nivel_catastro": 0.9728,
+      "corr_tasa_poblacion": 0.3873,
+      "corr_tasa_catastro": 0.5112,
+      "spearman_tasa_catastro": 0.4601,
+      "error_abs_mediano_por_mil_poblacion": 4.7015,
+      "error_abs_mediano_por_mil_catastro": 4.532,
+      "pct_municipios_catastro_mejor": 54.6628,
+      "n_signo_cambia_catastro": 67,
+      "n_signo_cambia_poblacion": 67,
+      "pct_signo_cambia_catastro": 9.6264,
+      "pct_signo_cambia_poblacion": 9.6264,
+      "corr_entre_repartos_nivel": 0.9953
+     },
+     {
+      "periodo": "2020-2021",
+      "componente": "saldo_interior",
+      "n_municipios": 697,
+      "corr_nivel_poblacion": 0.9499,
+      "corr_nivel_catastro": 0.9514,
+      "corr_tasa_poblacion": 0.1859,
+      "corr_tasa_catastro": 0.1924,
+      "spearman_tasa_catastro": 0.2255,
+      "error_abs_mediano_por_mil_poblacion": 8.3571,
+      "error_abs_mediano_por_mil_catastro": 8.2563,
+      "pct_municipios_catastro_mejor": 52.6542,
+      "n_signo_cambia_catastro": 315,
+      "n_signo_cambia_poblacion": 315,
+      "pct_signo_cambia_catastro": 45.1937,
+      "pct_signo_cambia_poblacion": 45.1937,
+      "corr_entre_repartos_nivel": 0.999
+     },
+     {
+      "periodo": "2020-2021",
+      "componente": "vegetativo",
+      "n_municipios": 697,
+      "corr_nivel_poblacion": 0.8842,
+      "corr_nivel_catastro": 0.9028,
+      "corr_tasa_poblacion": 0.6709,
+      "corr_tasa_catastro": 0.6998,
+      "spearman_tasa_catastro": 0.6414,
+      "error_abs_mediano_por_mil_poblacion": 2.921,
+      "error_abs_mediano_por_mil_catastro": 2.8815,
+      "pct_municipios_catastro_mejor": 59.3974,
+      "n_signo_cambia_catastro": 177,
+      "n_signo_cambia_poblacion": 177,
+      "pct_signo_cambia_catastro": 25.431,
+      "pct_signo_cambia_poblacion": 25.431,
+      "corr_entre_repartos_nivel": 0.9961
+     },
+     {
+      "periodo": "2022-2024",
+      "componente": "crecimiento",
+      "n_municipios": 702,
+      "corr_nivel_poblacion": 0.9863,
+      "corr_nivel_catastro": 0.9891,
+      "corr_tasa_poblacion": 0.5888,
+      "corr_tasa_catastro": 0.6462,
+      "spearman_tasa_catastro": 0.6704,
+      "error_abs_mediano_por_mil_poblacion": 13.8092,
+      "error_abs_mediano_por_mil_catastro": 15.026,
+      "pct_municipios_catastro_mejor": 46.7236,
+      "n_signo_cambia_catastro": 69,
+      "n_signo_cambia_poblacion": 69,
+      "pct_signo_cambia_catastro": 9.8291,
+      "pct_signo_cambia_poblacion": 9.8291,
+      "corr_entre_repartos_nivel": 0.9966
+     },
+     {
+      "periodo": "2022-2024",
+      "componente": "residuo",
+      "n_municipios": 702,
+      "corr_nivel_poblacion": 0.8396,
+      "corr_nivel_catastro": 0.8372,
+      "corr_tasa_poblacion": 0.2731,
+      "corr_tasa_catastro": 0.2697,
+      "spearman_tasa_catastro": 0.344,
+      "error_abs_mediano_por_mil_poblacion": 1.037,
+      "error_abs_mediano_por_mil_catastro": 1.0196,
+      "pct_municipios_catastro_mejor": 51.7094,
+      "n_signo_cambia_catastro": 251,
+      "n_signo_cambia_poblacion": 251,
+      "pct_signo_cambia_catastro": 36.5889,
+      "pct_signo_cambia_poblacion": 36.5889,
+      "corr_entre_repartos_nivel": 0.993
+     },
+     {
+      "periodo": "2022-2024",
+      "componente": "saldo_exterior",
+      "n_municipios": 702,
+      "corr_nivel_poblacion": 0.9887,
+      "corr_nivel_catastro": 0.9909,
+      "corr_tasa_poblacion": 0.4601,
+      "corr_tasa_catastro": 0.6063,
+      "spearman_tasa_catastro": 0.5874,
+      "error_abs_mediano_por_mil_poblacion": 14.2661,
+      "error_abs_mediano_por_mil_catastro": 13.769,
+      "pct_municipios_catastro_mejor": 56.5527,
+      "n_signo_cambia_catastro": 1,
+      "n_signo_cambia_poblacion": 1,
+      "pct_signo_cambia_catastro": 0.1425,
+      "pct_signo_cambia_poblacion": 0.1425,
+      "corr_entre_repartos_nivel": 0.9969
+     },
+     {
+      "periodo": "2022-2024",
+      "componente": "saldo_interior",
+      "n_municipios": 702,
+      "corr_nivel_poblacion": 0.9017,
+      "corr_nivel_catastro": 0.9048,
+      "corr_tasa_poblacion": 0.1872,
+      "corr_tasa_catastro": 0.1981,
+      "spearman_tasa_catastro": 0.2193,
+      "error_abs_mediano_por_mil_poblacion": 9.5331,
+      "error_abs_mediano_por_mil_catastro": 9.2951,
+      "pct_municipios_catastro_mejor": 51.7094,
+      "n_signo_cambia_catastro": 279,
+      "n_signo_cambia_poblacion": 279,
+      "pct_signo_cambia_catastro": 39.8003,
+      "pct_signo_cambia_poblacion": 39.8003,
+      "corr_entre_repartos_nivel": 0.9986
+     },
+     {
+      "periodo": "2022-2024",
+      "componente": "vegetativo",
+      "n_municipios": 702,
+      "corr_nivel_poblacion": 0.8176,
+      "corr_nivel_catastro": 0.8204,
+      "corr_tasa_poblacion": 0.7129,
+      "corr_tasa_catastro": 0.7285,
+      "spearman_tasa_catastro": 0.6607,
+      "error_abs_mediano_por_mil_poblacion": 3.8557,
+      "error_abs_mediano_por_mil_catastro": 3.7124,
+      "pct_municipios_catastro_mejor": 54.1311,
+      "n_signo_cambia_catastro": 134,
+      "n_signo_cambia_poblacion": 134,
+      "pct_signo_cambia_catastro": 19.1702,
+      "pct_signo_cambia_poblacion": 19.1702,
+      "corr_entre_repartos_nivel": 0.9957
+     }
+    ],
+    "metricas_resto": [
+     {
+      "periodo": "2008-2013",
+      "componente": "crecimiento",
+      "n_municipios": 6903,
+      "corr_nivel_entre_repartos": 0.9559,
+      "dif_relativa_mediana": 0.2405,
+      "dif_relativa_p90": 1.0108,
+      "pct_dif_relativa_gt50": 23.6419,
+      "pct_signo_distinto_entre_repartos": 0.0
+     },
+     {
+      "periodo": "2008-2013",
+      "componente": "residuo",
+      "n_municipios": 6903,
+      "corr_nivel_entre_repartos": 0.9501,
+      "dif_relativa_mediana": 0.2405,
+      "dif_relativa_p90": 1.0108,
+      "pct_dif_relativa_gt50": 23.6419,
+      "pct_signo_distinto_entre_repartos": 0.0
+     },
+     {
+      "periodo": "2008-2013",
+      "componente": "saldo_exterior",
+      "n_municipios": 6903,
+      "corr_nivel_entre_repartos": 0.9197,
+      "dif_relativa_mediana": 0.2405,
+      "dif_relativa_p90": 1.0108,
+      "pct_dif_relativa_gt50": 23.6419,
+      "pct_signo_distinto_entre_repartos": 0.0
+     },
+     {
+      "periodo": "2008-2013",
+      "componente": "saldo_interior",
+      "n_municipios": 6903,
+      "corr_nivel_entre_repartos": 0.9525,
+      "dif_relativa_mediana": 0.2405,
+      "dif_relativa_p90": 1.0108,
+      "pct_dif_relativa_gt50": 23.6419,
+      "pct_signo_distinto_entre_repartos": 0.0
+     },
+     {
+      "periodo": "2008-2013",
+      "componente": "vegetativo",
+      "n_municipios": 6903,
+      "corr_nivel_entre_repartos": 0.9614,
+      "dif_relativa_mediana": 0.2405,
+      "dif_relativa_p90": 1.0108,
+      "pct_dif_relativa_gt50": 23.6419,
+      "pct_signo_distinto_entre_repartos": 0.0
+     },
+     {
+      "periodo": "2014-2019",
+      "componente": "crecimiento",
+      "n_municipios": 6909,
+      "corr_nivel_entre_repartos": 0.9575,
+      "dif_relativa_mediana": 0.2651,
+      "dif_relativa_p90": 1.2189,
+      "pct_dif_relativa_gt50": 27.8477,
+      "pct_signo_distinto_entre_repartos": 0.0145
+     },
+     {
+      "periodo": "2014-2019",
+      "componente": "residuo",
+      "n_municipios": 6909,
+      "corr_nivel_entre_repartos": 0.9393,
+      "dif_relativa_mediana": 0.2651,
+      "dif_relativa_p90": 1.2189,
+      "pct_dif_relativa_gt50": 27.8477,
+      "pct_signo_distinto_entre_repartos": 0.0145
+     },
+     {
+      "periodo": "2014-2019",
+      "componente": "saldo_exterior",
+      "n_municipios": 6909,
+      "corr_nivel_entre_repartos": 0.9322,
+      "dif_relativa_mediana": 0.2651,
+      "dif_relativa_p90": 1.2189,
+      "pct_dif_relativa_gt50": 27.8477,
+      "pct_signo_distinto_entre_repartos": 0.0145
+     },
+     {
+      "periodo": "2014-2019",
+      "componente": "saldo_interior",
+      "n_municipios": 6909,
+      "corr_nivel_entre_repartos": 0.9624,
+      "dif_relativa_mediana": 0.2651,
+      "dif_relativa_p90": 1.2189,
+      "pct_dif_relativa_gt50": 27.8477,
+      "pct_signo_distinto_entre_repartos": 0.0145
+     },
+     {
+      "periodo": "2014-2019",
+      "componente": "vegetativo",
+      "n_municipios": 6909,
+      "corr_nivel_entre_repartos": 0.943,
+      "dif_relativa_mediana": 0.2651,
+      "dif_relativa_p90": 1.2189,
+      "pct_dif_relativa_gt50": 27.8477,
+      "pct_signo_distinto_entre_repartos": 0.0145
+     },
+     {
+      "periodo": "2020-2021",
+      "componente": "crecimiento",
+      "n_municipios": 6905,
+      "corr_nivel_entre_repartos": 0.9272,
+      "dif_relativa_mediana": 0.2971,
+      "dif_relativa_p90": 1.3906,
+      "pct_dif_relativa_gt50": 32.4837,
+      "pct_signo_distinto_entre_repartos": 0.029
+     },
+     {
+      "periodo": "2020-2021",
+      "componente": "residuo",
+      "n_municipios": 6905,
+      "corr_nivel_entre_repartos": 0.936,
+      "dif_relativa_mediana": 0.2971,
+      "dif_relativa_p90": 1.3906,
+      "pct_dif_relativa_gt50": 32.4837,
+      "pct_signo_distinto_entre_repartos": 0.029
+     },
+     {
+      "periodo": "2020-2021",
+      "componente": "saldo_exterior",
+      "n_municipios": 6905,
+      "corr_nivel_entre_repartos": 0.9196,
+      "dif_relativa_mediana": 0.2971,
+      "dif_relativa_p90": 1.3906,
+      "pct_dif_relativa_gt50": 32.4837,
+      "pct_signo_distinto_entre_repartos": 0.029
+     },
+     {
+      "periodo": "2020-2021",
+      "componente": "saldo_interior",
+      "n_municipios": 6905,
+      "corr_nivel_entre_repartos": 0.9139,
+      "dif_relativa_mediana": 0.2971,
+      "dif_relativa_p90": 1.3906,
+      "pct_dif_relativa_gt50": 32.4837,
+      "pct_signo_distinto_entre_repartos": 0.029
+     },
+     {
+      "periodo": "2020-2021",
+      "componente": "vegetativo",
+      "n_municipios": 6905,
+      "corr_nivel_entre_repartos": 0.929,
+      "dif_relativa_mediana": 0.2971,
+      "dif_relativa_p90": 1.3906,
+      "pct_dif_relativa_gt50": 32.4837,
+      "pct_signo_distinto_entre_repartos": 0.029
+     },
+     {
+      "periodo": "2022-2024",
+      "componente": "crecimiento",
+      "n_municipios": 6900,
+      "corr_nivel_entre_repartos": 0.9391,
+      "dif_relativa_mediana": 0.2958,
+      "dif_relativa_p90": 1.3798,
+      "pct_dif_relativa_gt50": 32.4203,
+      "pct_signo_distinto_entre_repartos": 0.029
+     },
+     {
+      "periodo": "2022-2024",
+      "componente": "residuo",
+      "n_municipios": 6900,
+      "corr_nivel_entre_repartos": 0.949,
+      "dif_relativa_mediana": 0.2958,
+      "dif_relativa_p90": 1.3798,
+      "pct_dif_relativa_gt50": 32.4203,
+      "pct_signo_distinto_entre_repartos": 0.029
+     },
+     {
+      "periodo": "2022-2024",
+      "componente": "saldo_exterior",
+      "n_municipios": 6900,
+      "corr_nivel_entre_repartos": 0.9215,
+      "dif_relativa_mediana": 0.2958,
+      "dif_relativa_p90": 1.3798,
+      "pct_dif_relativa_gt50": 32.4203,
+      "pct_signo_distinto_entre_repartos": 0.029
+     },
+     {
+      "periodo": "2022-2024",
+      "componente": "saldo_interior",
+      "n_municipios": 6900,
+      "corr_nivel_entre_repartos": 0.9369,
+      "dif_relativa_mediana": 0.2958,
+      "dif_relativa_p90": 1.3798,
+      "pct_dif_relativa_gt50": 32.4203,
+      "pct_signo_distinto_entre_repartos": 0.029
+     },
+     {
+      "periodo": "2022-2024",
+      "componente": "vegetativo",
+      "n_municipios": 6900,
+      "corr_nivel_entre_repartos": 0.9336,
+      "dif_relativa_mediana": 0.2958,
+      "dif_relativa_p90": 1.3798,
+      "pct_dif_relativa_gt50": 32.4203,
+      "pct_signo_distinto_entre_repartos": 0.029
+     }
+    ],
+    "cobertura": {
+     "municipios_resto_total": 7422,
+     "municipios_resto_con_reparto_catastro": 6948,
+     "municipios_observados_con_reparto_catastro": 720,
+     "provincias_sin_catastro_estatal_excluidas": [
+      "01",
+      "20",
+      "48",
+      "31",
+      "51",
+      "52"
+     ]
+    }
+   },
+   "valencia_barrio": {
+    "poblacion_2025_en_secciones_repartidas_por_area_pct": 10.2,
+    "chequeo_reproduce_v12_max_abs_dif_var_total_barrios_comparables": 0.04950795881609338,
+    "corr_poblacion2025_barrio_vs_viviendas_inspire": 0.975510567988307,
+    "personas_por_vivienda_inspire_mediana": 2.023772522290921,
+    "personas_por_vivienda_inspire_p5_p95": [
+     1.3767400533968792,
+     2.874058064875218
+    ],
+    "barrios_con_viviendas_inspire": 87,
+    "metricas": [
+     {
+      "componente": "stock_EXT_2025",
+      "subconjunto": "todos",
+      "n_barrios": 87,
+      "corr_original_vs_catastro": 0.9982,
+      "dif_relativa_mediana": 0.0059,
+      "dif_relativa_max": 3.2951,
+      "n_signo_cambia": 0,
+      "barrios_signo_cambia": ""
+     },
+     {
+      "componente": "stock_EXT_2025",
+      "subconjunto": "comparables_v12",
+      "n_barrios": 37,
+      "corr_original_vs_catastro": 0.9989,
+      "dif_relativa_mediana": 0.0053,
+      "dif_relativa_max": 3.2951,
+      "n_signo_cambia": 0,
+      "barrios_signo_cambia": ""
+     },
+     {
+      "componente": "stock_Total_2025",
+      "subconjunto": "todos",
+      "n_barrios": 87,
+      "corr_original_vs_catastro": 0.9974,
+      "dif_relativa_mediana": 0.0057,
+      "dif_relativa_max": 3.2944,
+      "n_signo_cambia": 0,
+      "barrios_signo_cambia": ""
+     },
+     {
+      "componente": "stock_Total_2025",
+      "subconjunto": "comparables_v12",
+      "n_barrios": 37,
+      "corr_original_vs_catastro": 0.9975,
+      "dif_relativa_mediana": 0.0044,
+      "dif_relativa_max": 3.2944,
+      "n_signo_cambia": 0,
+      "barrios_signo_cambia": ""
+     },
+     {
+      "componente": "var_EXT_2021_2025",
+      "subconjunto": "todos",
+      "n_barrios": 87,
+      "corr_original_vs_catastro": 0.9965,
+      "dif_relativa_mediana": 0.0062,
+      "dif_relativa_max": 3.2909,
+      "n_signo_cambia": 0,
+      "barrios_signo_cambia": ""
+     },
+     {
+      "componente": "var_EXT_2021_2025",
+      "subconjunto": "comparables_v12",
+      "n_barrios": 37,
+      "corr_original_vs_catastro": 0.999,
+      "dif_relativa_mediana": 0.0043,
+      "dif_relativa_max": 3.2909,
+      "n_signo_cambia": 0,
+      "barrios_signo_cambia": ""
+     },
+     {
+      "componente": "var_Total_2021_2025",
+      "subconjunto": "todos",
+      "n_barrios": 87,
+      "corr_original_vs_catastro": 0.9672,
+      "dif_relativa_mediana": 0.0051,
+      "dif_relativa_max": 12.654,
+      "n_signo_cambia": 1,
+      "barrios_signo_cambia": "462501305"
+     },
+     {
+      "componente": "var_Total_2021_2025",
+      "subconjunto": "comparables_v12",
+      "n_barrios": 37,
+      "corr_original_vs_catastro": 0.9965,
+      "dif_relativa_mediana": 0.0051,
+      "dif_relativa_max": 12.654,
+      "n_signo_cambia": 1,
+      "barrios_signo_cambia": "462501305"
+     }
+    ]
+   },
+   "filas_csv": 162683,
+   "criterio_v12": "B1 no reparte componentes a municipios: los obtiene observados (>= 10.000 hab.); solo reparte por área (secciones a barrios de València, stocks). Ver b1_reparto_tabla_uso_v12.csv"
+  },
+  "disponibilidad_p4": {
+   "padron_municipal_por_nacionalidad": {
+    "anios": [
+     2003,
+     2022
+    ],
+    "municipios_por_anio_min_max": [
+     8108,
+     8131
+    ],
+    "municipios_con_dato_en_todos_los_anios": 8104,
+    "anios_antes_de_2015": 12,
+    "categorias_nacionalidad_por_anio_min_max": [
+     38,
+     38
+    ],
+    "paises_individuales_por_anio_min_max": [
+     28,
+     28
+    ],
+    "paises_individuales_estables_todos_los_anios": [
+     "Alemania",
+     "Argelia",
+     "Argentina",
+     "Bolivia",
+     "Brasil",
+     "Bulgaria",
+     "Chile",
+     "China",
+     "Colombia",
+     "Cuba",
+     "Ecuador",
+     "Francia",
+     "Italia",
+     "Marruecos",
+     "Nigeria",
+     "Pakistán",
+     "Paraguay",
+     "Perú",
+     "Polonia",
+     "Portugal",
+     "Reino Unido",
+     "República Dominicana",
+     "Rumanía",
+     "Rusia",
+     "Senegal",
+     "Ucrania",
+     "Uruguay",
+     "Venezuela"
+    ],
+    "paises_individuales_listado": [
+     "Alemania",
+     "Argelia",
+     "Argentina",
+     "Bolivia",
+     "Brasil",
+     "Bulgaria",
+     "Chile",
+     "China",
+     "Colombia",
+     "Cuba",
+     "Ecuador",
+     "Francia",
+     "Italia",
+     "Marruecos",
+     "Nigeria",
+     "Pakistán",
+     "Paraguay",
+     "Perú",
+     "Polonia",
+     "Portugal",
+     "Reino Unido",
+     "República Dominicana",
+     "Rumanía",
+     "Rusia",
+     "Senegal",
+     "Ucrania",
+     "Uruguay",
+     "Venezuela"
+    ],
+    "pct_celdas_cero_2003": 78.59,
+    "pct_celdas_cero_2014": 68.04,
+    "poblacion_total_2003_2014_2022": {
+     "2003": 42717064.0,
+     "2014": 46771341.0,
+     "2022": 47475420.0
+    }
+   },
+   "censo_anual_municipal_por_pais": {
+    "anios": [
+     2021,
+     2025
+    ],
+    "municipios": 8132,
+    "paises_individuales": 20,
+    "pct_celdas_cero_2021": 61.58
+   },
+   "padron_por_pais_de_nacimiento_municipal": {
+    "anios": [
+     2003,
+     2022
+    ],
+    "municipios_max": 8131,
+    "categorias_max": 38
+   },
+   "padron_pcaxis_valencia_provincia": {
+    "anios": [
+     1998,
+     2019
+    ],
+    "municipios_max": 267,
+    "nota": "provincia 46; incluye 1998-2002"
+   },
+   "valencia_barrio_poblacion": {
+    "barrios_por_anio_min_max": [
+     86,
+     87
+    ],
+    "anios_con_dato": 25,
+    "anio_inicial": 2001,
+    "anio_final": 2026,
+    "anios_sin_dato_en_2001_2026": [
+     2014
+    ],
+    "anios_con_87_barrios": [
+     2003,
+     2004,
+     2005,
+     2006,
+     2007,
+     2008,
+     2009,
+     2010,
+     2011,
+     2012,
+     2013,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ]
+   },
+   "valencia_barrio_nacionalidad_continente": {
+    "categorias": [
+     {
+      "cont": "africa",
+      "anios": 23,
+      "primer_anio": 2002,
+      "ultimo_anio": 2026,
+      "barrios": 87
+     },
+     {
+      "cont": "america_central",
+      "anios": 23,
+      "primer_anio": 2002,
+      "ultimo_anio": 2026,
+      "barrios": 87
+     },
+     {
+      "cont": "america_norte",
+      "anios": 23,
+      "primer_anio": 2002,
+      "ultimo_anio": 2026,
+      "barrios": 87
+     },
+     {
+      "cont": "america_sur",
+      "anios": 23,
+      "primer_anio": 2002,
+      "ultimo_anio": 2026,
+      "barrios": 87
+     },
+     {
+      "cont": "asia",
+      "anios": 23,
+      "primer_anio": 2002,
+      "ultimo_anio": 2026,
+      "barrios": 87
+     },
+     {
+      "cont": "oceania",
+      "anios": 4,
+      "primer_anio": 2005,
+      "ultimo_anio": 2013,
+      "barrios": 87
+     },
+     {
+      "cont": "oceania_otros",
+      "anios": 19,
+      "primer_anio": 2002,
+      "ultimo_anio": 2026,
+      "barrios": 87
+     },
+     {
+      "cont": "otros",
+      "anios": 4,
+      "primer_anio": 2005,
+      "ultimo_anio": 2013,
+      "barrios": 87
+     },
+     {
+      "cont": "resto_europa",
+      "anios": 23,
+      "primer_anio": 2002,
+      "ultimo_anio": 2026,
+      "barrios": 87
+     },
+     {
+      "cont": "total_extranjeros",
+      "anios": 23,
+      "primer_anio": 2002,
+      "ultimo_anio": 2026,
+      "barrios": 87
+     },
+     {
+      "cont": "ue",
+      "anios": 23,
+      "primer_anio": 2002,
+      "ultimo_anio": 2026,
+      "barrios": 87
+     }
+    ],
+    "nota": "continente, sin país; nacionalidad por país solo en censo anual por sección 2021-2025"
+   },
+   "valencia_ajuntament_vs_ine": {
+    "dif_vs_padron_ine_pct_min_max": [
+     0.093,
+     1.321
+    ],
+    "dif_vs_censo_anual_pct": {
+     "2021": 1.437,
+     "2022": 0.868,
+     "2023": 0.669,
+     "2024": 0.76,
+     "2025": 0.341
+    }
+   }
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "SEED=20261010 (sin aleatoriedad)",
+  "cruces por código INE",
+  "ningún efecto estimado",
+  "solo agregados propios de INE, Catastro y Ajuntament de València"
+ ]
+}

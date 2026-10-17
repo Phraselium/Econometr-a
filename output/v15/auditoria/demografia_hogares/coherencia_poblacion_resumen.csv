@@ -1,0 +1,13 @@
+par,nivel,nac,n_tasas,corr_tasas,dif_media_tasa_pp,dif_max_abs_tasa_pp,n_signo_opuesto,n_tasas_con_signo_opuesto_o_cero
+padron_vs_ecp,provincia,TOTAL,988,0.9409,-0.1057,3.964,49,49
+padron_vs_ecp,provincia,EXT,988,0.9248,-0.3975,39.955,89,89
+censo_anual_vs_ecp,provincia,TOTAL,208,1,0,0,0,0
+censo_anual_vs_ecp,provincia,EXT,208,1,0,0,0,0
+padron_vs_censo_anual,provincia,TOTAL,52,0.9584,0.02,0.734,2,2
+padron_vs_censo_anual,provincia,EXT,52,0.9054,-0.1299,3.837,6,6
+padron_vs_ecp,ccaa,TOTAL,361,0.9152,-0.134,3.964,17,17
+padron_vs_ecp,ccaa,EXT,361,0.9003,-0.4558,39.955,39,39
+censo_anual_vs_ecp,ccaa,TOTAL,76,1,0,0,0,0
+censo_anual_vs_ecp,ccaa,EXT,76,1,0,0,0,0
+padron_vs_censo_anual,ccaa,TOTAL,19,0.9454,0.0779,0.734,0,0
+padron_vs_censo_anual,ccaa,EXT,19,0.9674,0.1745,2.521,2,2

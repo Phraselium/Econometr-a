@@ -1,0 +1,9 @@
+componente,subconjunto,n_barrios,corr_original_vs_catastro,dif_relativa_mediana,dif_relativa_max,n_signo_cambia,barrios_signo_cambia
+stock_EXT_2025,todos,87,0.998179,0.00594426,3.29505,0,
+stock_EXT_2025,comparables_v12,37,0.998901,0.0052579,3.29505,0,
+stock_Total_2025,todos,87,0.99744,0.00571536,3.29442,0,
+stock_Total_2025,comparables_v12,37,0.997472,0.00442509,3.29442,0,
+var_EXT_2021_2025,todos,87,0.99654,0.00624776,3.2909,0,
+var_EXT_2021_2025,comparables_v12,37,0.998979,0.00434357,3.2909,0,
+var_Total_2021_2025,todos,87,0.967184,0.00509977,12.654,1,462501305
+var_Total_2021_2025,comparables_v12,37,0.996532,0.00513729,12.654,1,462501305

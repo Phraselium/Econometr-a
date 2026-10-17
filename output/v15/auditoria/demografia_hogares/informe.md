@@ -1,0 +1,39 @@
+# Auditoría de datos V15 · Demografía y hogares (fase 1.2)
+
+Capa C4, nivel DESCRIPTIVO. Sin efectos estimados. Script: `src/v15/auditoria/demografia_hogares.py` (SEED=20261010, sin aleatoriedad; cruces por código INE). Tablas en esta carpeta.
+
+## 1. Atípicos (z robusto con mediana y MAD, umbral |z| > 5)
+- Población provincial y de CCAA (padrón, ECP): 0 atípicos (|z| máximo 4,9 y 3,5). Hogares: EPA y ECP nacional, ECP provincial y corte provincial 2011-2021: 0 (máximo 4,4).
+- Municipios ≥ 10.000 hab. (B1): 174 de 16.187 tasas anuales (1,1 %). El mayor es 48036 en 2023 (censo anual, −15,5 %, z = −58,7). Se concentran en 2003-2007 (103) y 2013 (22); 132 son al alza y 42 a la baja (p. ej. 03118 en 2013, −27 %).
+- Censo anual municipal 2021-2025: 708 de 32.525 (2,2 %) con todos los municipios; 38 de 12.601 (0,3 %) con ≥ 1.000 hab. Es ruido de municipios pequeños.
+- València por barrio (padrón del Ajuntament): 25 de 1.999 (1,3 %). Destaca Faitanar (462501908) en 2011: 173 habitantes entre 426 (2010) y 633 (2012), z = 44,7; la suma de control del PDF cuadra, así que no es error de extracción. Los 87 valores de 2026 proceden de OCR.
+
+## 2. Coherencia entre fuentes
+- **Censo anual = ECP** en 2021-2025 (provincia y CCAA, diferencia 0,0 %, correlación de tasas 1,0): no son dos fuentes independientes.
+- **Padrón frente a ECP** (provincias, 2003-2022): el padrón supera a la ECP en el total nacional hasta +2,13 % (2003); más de 0,5 % en 2003-2014. En población extranjera la diferencia nacional va de +0,6 % a +12,8 %, y supera 0,5 % los 20 años; máximos provinciales 9,5 % (total) y 34,4 % (extranjera). Tasas anuales: correlación 0,94 (total) y 0,92 (extranjera), diferencia media −0,11 y −0,40 pp. Signo opuesto en 49 de 988 provincia-año (total) y 89 (extranjera). A escala nacional, solo 2020 (padrón −0,14 %, ECP +0,17 %).
+- **Padrón frente a censo anual** (2021-2022): nacional −0,03 % y −0,02 %; extranjera +0,6 % y +0,7 %. Por municipio, 1.653 y 1.629 difieren más de 1 % (42 y 54 con ≥ 10.000 hab.) y 142 y 151 más de 5 %.
+- **Hogares**: EPA frente a ECP (2021T1-2026T2, 22 trimestres): la brecha pasa de +0,38 % a +0,92 % (+0,03 pp/año); correlación de la tasa anual 0,95 y trimestral 0,53; un trimestre con signo opuesto (2024T2); crecimiento acumulado EPA 7,46 % frente a 6,89 % ECP. Censo 2021: 18.539.223 hogares; la ECP 2021T1 lo reproduce por construcción (provincial: mediana 0, máximo 0,43 %), la EPA queda +0,38 % por encima. B3 calibra 2021 a la ECP, así que censo, ECP y B3 no son contrastes independientes en 2021.
+- **Residuo de B1 por provincia** (periodos, % de la población inicial): provincias con |residuo| > 1 %: 15 (2003-07), 19 (2008-13), 16 (2014-19), 0 (2020-21), 0 (2022-24). Signo negativo en 48/52 (2008-13), 49/52 (2014-19), 45/52 (2020-21) y 29/52 (2022-24). Residuo nacional: −1,30 %, −1,03 %, −0,33 % y +0,02 %. En términos anuales hay 29 provincia-año con |residuo| > 1 %, todas hasta 2013. La correlación entre saldo migratorio (EVR/EMCR) y ΔP − vegetativo es 0,99 (2003-07, 2014-19), 0,27 (2008-13), 0,76 (2020-21) y 1,00 (2022-24). 22 provincias pasan de residuo negativo (2014-19) a positivo (2022-24); la correlación entre ambos residuos anuales es −0,30.
+
+## 3. Rupturas y revisiones
+- **EPA 2021T1**: la variación trimestral de hogares es −1,10 % (mediana del resto 0,36 %; z = −4,5, no llega a 5 pero es la mayor de la serie); anual −0,87 %. La razón población EPA/ECP salta +0,18 pp en 2021T1 (z = 3,5).
+- **Padrón a censo anual (2021)**: ver arriba. No se debe encadenar; B1 usa cada fuente en sus dos extremos.
+- **Seccionado**: 36.333 secciones en 2021 y 36.554 en 2025; 338 desaparecen y 559 son nuevas, en 435 municipios que reúnen el 50,7 % de la población de 2025. Cada año hay entre 89 y 207 secciones nuevas y entre 57 y 127 que desaparecen. La ADRH 2019 tiene 34.051 secciones y la de 2020 35.619 (+1.607: cobertura y seccionado no se distinguen). El seccionado de 2011 no existe en data/raw ni en la base: la comparación 2011-2021 por sección no es auditable.
+- **EVR, EMCR y EM**: las altas desde el extranjero de la EVR superan a la Estadística de Migraciones publicada (tabla 24323) entre 11,9 % y 33,2 % en 2008-2020 (máximo provincial 67,5 %); en emigración, de −15,6 % a +25,7 % (provincial hasta 224 %). En 2021: EVR 662.173, EMCR 887.960 (+34 %) y EM 528.856 altas. Cociente EMCR/EVR provincial 2021: mediana 1,35 en inmigración (1,14-2,01) y 1,72 en emigración (0,60-3,32). Los conceptos difieren; B1 usa microdatos, no la EM publicada.
+
+## 4. Reparto espacial de V12-B1
+**Criterio de V12.** B1 no reparte componentes a escala municipal: los observa en MNP, EVR y EMCR por municipio de residencia (≥ 10.000 hab.; el resto se queda solo en provincia, CCAA y España). El único reparto de B1 es por área, de sección a barrio de València (stocks, no flujos): sección entera si ≥ 95 % de su área está en un barrio y, si no, por `peso_area` (10,2 % de la población de 2025). B7 reutiliza ese criterio; B3 reparte hogares con un factor provincial de la ECP. Tabla completa en `b1_reparto_tabla_uso_v12.csv`.
+
+**Alternativa V15** (`b1_reparto_alternativo.csv.gz`, 162.683 filas; variables `valor_original`, `reparto_poblacion`, `reparto_catastro`):
+- *Contraste en 679-702 municipios observados por periodo*: se reparte el total del grupo por población o por unidades urbanas residenciales del Catastro (stock a 1 de enero del primer año del periodo; 2012 para 2008-13) y se compara con lo observado. Las dos ponderaciones casi coinciden (correlación 0,99). La correlación con lo observado en tasas por mil habitantes va de 0,13 a 0,73 con Catastro y de 0,13 a 0,71 con población; el error absoluto mediano es casi idéntico y el Catastro acierta más en 46-59 % de los municipios. Un reparto proporcional impone el signo del total del grupo: el signo no coincide con el observado en 37-45 % de los municipios para saldo interior, 12-25 % para vegetativo, 19-37 % para residuo y 0,1-16 % para saldo exterior (idéntico con ambas ponderaciones).
+- *Resto de municipios* (7.422; 6.948 con Catastro; faltan País Vasco, Navarra, Ceuta y Melilla): el residuo provincial repartido por Catastro o por población da correlación 0,91-0,96, pero la diferencia relativa mediana es 24-30 % (p90 > 100 %) y 24-32 % de los municipios difieren más de 50 %. El signo solo difiere entre ponderaciones en municipios sin unidades residenciales en el Catastro (peso cero).
+- *València por barrio*: se reproduce V12 (diferencia máxima 0,05 personas). Ponderar el área por la densidad de viviendas INSPIRE del barrio da correlación 0,967-0,999 y diferencia relativa mediana 0,4-0,6 %. Un solo barrio cambia de signo en la variación 2021-2025 (462501305). La población de 2025 por barrio y las viviendas INSPIRE correlacionan 0,976 (2,0 personas por vivienda).
+
+## 5. Disponibilidad para P4 (solo cobertura)
+- **Sí hay año base anterior a 2015 para toda España**: padrón continuo por municipio y nacionalidad, 2003-2022, 8.108-8.131 municipios por año (8.104 con dato todos los años), 38 categorías de nacionalidad (28 países individuales y agregados) por año. El 78,6 % de las celdas país × municipio son cero en 2003 y el 68,0 % en 2014. Hay 12 años anteriores a 2015. También existe padrón por país de nacimiento municipal 2003-2022.
+- Censo anual municipal 2021-2025: 8.131-8.132 municipios, 20 países individuales (57-62 % de celdas cero). Por sección, 2021-2025.
+- Provincia de València (pcaxis): 1998-2019, hasta 267 municipios.
+- València por barrio: población total 2001-2026 en 25 años (falta 2014), 87 barrios desde 2003 (86 en 2001-2002); nacionalidad por continente 2002-2026 (23 años, sin país). La suma de barrios difiere del padrón INE entre 0,09 % y 1,32 %, y del censo anual entre 0,34 % y 1,44 %.
+
+## Límites
+Sin seccionado de 2011; la EM publicada solo cubre hasta 2021; el Catastro empieza en 2012; los 87 barrios de 2026 son OCR. Nada de lo anterior estima efectos.

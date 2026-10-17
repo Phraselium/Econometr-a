@@ -10,7 +10,8 @@ Para cada ficha («### Autores (año). Título» con una línea «- DOI: …» y
    revista, issn, cuartil, categoria, anio_scimago, fecha_consulta).
 4. Escribe en la ficha «Estado: VERIFICADA (Crossref; cuartil Qx Scimago <año>)», «Estado: VERIFICADA (Crossref; cuartil no
    verificado)», «Estado: DISCREPANTE (<qué no cuadra>)» o «Estado: NO VERIFICADA (sin DOI)».
-Falla (código 1) si una ficha cita un DOI que Crossref no encuentra (404) o un DOI sin caché con --sin-red.
+Un DOI que Crossref no tiene (404) se busca en DataCite (arXiv, Zenodo): si existe, «VERIFICADA (DataCite; … cuartil no aplicable)».
+Falla (código 1) si una ficha cita un DOI que no está ni en Crossref ni en DataCite o un DOI sin caché con --sin-red.
 Uso: python3 src/v15/verificar_referencias.py [--sin-red] [--solo-comprobar]
 """
 from __future__ import annotations
@@ -57,7 +58,7 @@ def crossref(doi: str, cache: dict, red: bool) -> dict | None:
             m = json.load(r)["message"]
     except urllib.error.HTTPError as e:
         if e.code == 404:
-            cache[doi] = {"existe": False, "consulta": dt.date.today().isoformat()}
+            cache[doi] = datacite(doi) or {"existe": False, "consulta": dt.date.today().isoformat()}
             return cache[doi]
         raise
     a = m.get("author") or [{}]
@@ -65,6 +66,23 @@ def crossref(doi: str, cache: dict, red: bool) -> dict | None:
                   "anio": (m.get("issued", {}).get("date-parts") or [[None]])[0][0],
                   "revista": (m.get("container-title") or [""])[0], "issn": m.get("ISSN") or [], "consulta": dt.date.today().isoformat()}
     return cache[doi]
+
+
+def datacite(doi: str) -> dict | None:
+    """DOI que no es de Crossref (p. ej. arXiv, Zenodo: 10.48550, 10.5281): se busca en DataCite. Sin cuartil (preprint o datos)."""
+    req = urllib.request.Request("https://api.datacite.org/dois/" + urllib.parse.quote(doi),
+                                 headers={"User-Agent": "vivienda-espana-evidencia (verificador de referencias)"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:   # noqa: S310 (URL fija de DataCite)
+            m = json.load(r)["data"]["attributes"]
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            return None
+        raise
+    cr = (m.get("creators") or [{}])[0]
+    return {"existe": True, "registro": "DataCite", "titulo": (m.get("titles") or [{}])[0].get("title", ""),
+            "primer_autor": cr.get("familyName") or cr.get("name", "").split(",")[0], "anio": m.get("publicationYear"),
+            "revista": m.get("publisher", ""), "issn": [], "consulta": dt.date.today().isoformat()}
 
 
 def scimago() -> list[dict]:
@@ -99,13 +117,15 @@ def estado(cab: str, cr: dict | None, sj: list[dict]) -> str:
         problemas.append(f"primer autor ({cr['primer_autor']})")
     if problemas:
         return "DISCREPANTE (" + ", ".join(problemas) + ")"
+    if cr.get("registro") == "DataCite":
+        return "VERIFICADA (DataCite; preprint o documento sin revista: cuartil no aplicable)"
     return f"VERIFICADA (Crossref; {cuartil(cr, sj) or 'cuartil no verificado'})"
 
 
-def procesar(red: bool, escribir: bool) -> tuple[dict, list[str]]:
+def procesar(red: bool, escribir: bool, solo: str = "*.md") -> tuple[dict, list[str]]:
     cache = json.loads(CACHE.read_text(encoding="utf-8")) if CACHE.exists() else {}
     sj, errores, cuenta = scimago(), [], {}
-    for p in sorted(LIT.glob("*.md")):
+    for p in sorted(LIT.glob(solo)):
         t = p.read_text(encoding="utf-8")
         partes = re.split(r"(?=^### )", t, flags=re.M)
         nuevas = []
@@ -133,8 +153,9 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--sin-red", action="store_true")
     ap.add_argument("--solo-comprobar", action="store_true", help="no reescribe las fichas")
+    ap.add_argument("--solo", default="*.md", help="patrón de ficheros de docs/v15/literatura (por defecto, todos)")
     a = ap.parse_args()
-    cuenta, errores = procesar(red=not a.sin_red, escribir=not a.solo_comprobar)
+    cuenta, errores = procesar(red=not a.sin_red, escribir=not a.solo_comprobar, solo=a.solo)
     print("verificar_referencias:", cuenta)
     for e in errores:
         print("  ERROR", e)

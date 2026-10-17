@@ -48,7 +48,9 @@ Generada por src/v15/registro_subagentes.py (fuente: docs/v15/subagentes.csv). T
 | 2026-10-17 | inventariador | F1.1 anotaciones del inventario (79 familias) | 287.158 | docs/v15/inventario_anotaciones.csv |
 | 2026-10-17 | auditor-datos | F1.2 alquiler | 179.787 | src/v15/auditoria/alquiler.py; output/v15/auditoria/alquiler/ |
 | 2026-10-17 | auditor-datos | F1.2 oferta y parque | 193.197 | src/v15/auditoria/oferta_parque.py; output/v15/auditoria/oferta_parque/ |
+| 2026-10-17 | lector-literatura | F2 P4 inmigración | 85.881 | docs/v15/literatura/P4_inmigracion.md |
+| 2026-10-17 | auditor-datos | F1.2 demografía y hogares (incl. reparto alternativo B1) | 244.726 | src/v15/auditoria/demografia_hogares.py; output/v15/auditoria/demografia_hogares/ |
 
-Total: 764.105 tokens · auditor-datos: 476.947; inventariador: 287.158
+Total: 1.094.712 tokens · auditor-datos: 721.673; inventariador: 287.158; lector-literatura: 85.881
 
 <!-- fin subagentes -->

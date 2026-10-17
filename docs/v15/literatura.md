@@ -1,5 +1,7 @@
 # V15 · Bibliografía crítica (fase 2)
 
+> Ampliada en V16 por instrumento de política: docs/v16/literatura.md (fichas en docs/v16/literatura/).
+
 Fichas completas por pregunta en docs/v15/literatura/. Cada ficha recoge el diseño, los datos, la magnitud tal como la da el autor, la validez externa para España y las discrepancias.
 
 Las fichas las escribieron seis lectores (subagente lector-literatura, uno por pregunta). Los DOI se comprueban con `src/v15/verificar_referencias.py`, contra Crossref con caché versionada, y con DataCite o doi.org si el DOI no es de Crossref. Las fichas sin DOI se buscaron en Crossref con `src/v15/buscar_doi.py`, que exige título, primer autor y año coincidentes.

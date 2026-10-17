@@ -1,0 +1,35 @@
+{
+ "rama": "v16-f3-cuatro-cuadrantes",
+ "pregunta": "Respuestas esperadas a cada shock en un marco de stock y flujo calibrado",
+ "capa": "C4",
+ "datos": [
+  "output/v5/cifras_clave.csv",
+  "data/base/publica/hechos.parquet",
+  "docs/v16/literatura/L3_oferta_elasticidad.md"
+ ],
+ "N": 20000,
+ "metodo": "DiPasquale-Wheaton log-lineal en estado estacionario; Monte Carlo uniforme sobre rangos",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "supuestos_del_autor": 3,
+  "patron_solo_tipos_en_datos": false,
+  "signos_observados_2022_2024": {
+   "tipo_hip": "+",
+   "ipv": "+",
+   "ipc_alquiler": "+",
+   "compraventas_ine": "−",
+   "visados": "+",
+   "renta_hog_real": "+",
+   "hogares_epa": "+"
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Marco teórico calibrado; no identifica efectos. Tres parámetros son supuestos con rango amplio."
+}

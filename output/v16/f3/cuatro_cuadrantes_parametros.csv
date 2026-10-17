@@ -1,0 +1,7 @@
+parametro,minimo,maximo,tipo,fuente
+es,0.8,1.3,literatura,"elasticidad de la nueva oferta a precio, 17 CCAA 1990-2012: Taltavull (2014), docs/v16/literatura/L3_oferta_elasticidad.md (leída en resumen)"
+ed,0.3,1,supuesto del autor,"elasticidad-precio de la demanda de servicios de vivienda: sin estimación española leída en V16 (L3, «Parámetros de calibración»); rango amplio"
+ey,0.5,1.5,supuesto del autor,elasticidad-renta de la demanda de vivienda: sin estimación española leída en V16; rango amplio
+i,0.0563997,0.0584126,cifra_clave,"inversa del ratio precio/alquiler 2023 (K3-RATIO-2023, mínimo y máximo de las medidas)"
+phi,0.002,0.006,supuesto del autor,"obra nueva sobre el parque al año (crecimiento del parque + bajas); orden de magnitud de E-T7-prod sobre el parque censal; las bajas por licencia (T1-H8) son < 0,06 %"
+retardo,2.97,3.21,cifra_clave,retardo medio iniciadas-terminadas en años (B2-H5); solo informativo: el estado estacionario no depende de él

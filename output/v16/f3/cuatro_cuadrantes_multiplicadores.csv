@@ -1,0 +1,18 @@
+shock,variable,plazo,mediana_pct,p05_pct,p95_pct
+demanda +1 % (renta u hogares),alquiler,largo,0.596257,0.312341,0.953479
+demanda +1 % (renta u hogares),precio,largo,0.596257,0.312341,0.953479
+demanda +1 % (renta u hogares),stock,largo,0.617973,0.327966,0.968785
+demanda +1 % (renta u hogares),alquiler,corto (stock fijo),1.55129,0.725927,3.37571
+demanda +1 % (renta u hogares),obra nueva,corto (stock fijo),1.61704,0.737337,3.5977
+tipo exigido +1 p.p.,precio,corto (stock fijo),-17.4173,-17.6993,-17.15
+tipo exigido +1 p.p.,obra nueva,corto (stock fijo),-18.2686,-22.1796,-14.359
+tipo exigido +1 p.p.,alquiler,corto (stock fijo),0,0,0
+tipo exigido +1 p.p.,precio,largo,-6.66427,-8.78324,-4.14557
+tipo exigido +1 p.p.,alquiler,largo,10.7574,8.64284,13.2798
+tipo exigido +1 p.p.,stock,largo,-6.90755,-9.0125,-4.3904
+coste de construcción +1 %,precio,largo,0.617413,0.49668,0.761915
+coste de construcción +1 %,alquiler,largo,0.617413,0.49668,0.761915
+coste de construcción +1 %,stock,largo,-0.396417,-0.51714,-0.251905
+"oferta menos elástica (es/2), demanda +1 %",precio,largo,0.85904,0.441081,1.45584
+"oferta menos elástica (es/2), demanda +1 %",stock,largo,0.445009,0.228865,0.754572
+ajuste del stock,semivida (años),—,65.1074,35.3134,127.648

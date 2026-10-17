@@ -1,0 +1,65 @@
+{
+ "principal_log_alquiler_h5": {
+  "salto_antes": 0.08172925089052634,
+  "salto_despues": -0.03824285309979783,
+  "diferencia_en_discontinuidades": -0.11997210399032417,
+  "n": 5061,
+  "n_antes_T": 1148,
+  "n_antes_noT": 1210,
+  "n_despues_T": 1284,
+  "n_despues_noT": 1419
+ },
+ "porcentaje_equivalente_principal": -11.30548213966598,
+ "multiverso_log_alquiler": {
+  "log_alquiler|3": -0.1482981820916789,
+  "log_alquiler|5": -0.11997210399032417,
+  "log_alquiler|7": -0.13564612469438833
+ },
+ "multiverso_alq_renta": {
+  "alq_renta|3": -0.03942638601556158,
+  "alq_renta|5": -0.013105564398257377,
+  "alq_renta|7": -0.011056044382165219
+ },
+ "mediana_log_alquiler": -0.13564612469438833,
+ "mismo_signo_que_principal": 1.0,
+ "placebos_umbral": {
+  "31": -0.05265065043993837,
+  "39": -0.13544140929280438
+ },
+ "balance_diff_in_disc": {
+  "ln_renta_hogar": -0.022673815141971528,
+  "n_pers": 0.2971233320101017,
+  "extranjero": -0.0888000676650539
+ },
+ "proporcion_inquilinos": {
+  "salto_antes": -0.008830681249531432,
+  "salto_despues": -0.054419173563651196,
+  "diferencia_en_discontinuidades": -0.045588492314119766,
+  "n": 18623,
+  "n_antes_T": 3647,
+  "n_antes_noT": 4830,
+  "n_despues_T": 4280,
+  "n_despues_noT": 5866
+ },
+ "densidad_edad": {
+  "antes": {
+   "hogares_ponderados_edad_35": 349840.03963,
+   "hogares_ponderados_edad_36": 329506.21532,
+   "razon_35_36": 1.06170998714016
+  },
+  "despues": {
+   "hogares_ponderados_edad_35": 281111.61019,
+   "hogares_ponderados_edad_36": 301777.76545,
+   "razon_35_36": 0.9315186285206155
+  }
+ },
+ "cota_incidencia_con_cobertura_plena_pct": 13.9,
+ "plan_2018_2021": {
+  "fuente": "BOE-A-2018-3358 (RD 106/2018), capítulo IX, programa de ayuda a los jóvenes",
+  "consultado": "2026-10-17",
+  "existia_programa_para_menores_de_35": true,
+  "requisito": "ayuda al alquiler para quien tiene «menos de treinta y cinco años» en el momento de solicitar, con ingresos limitados",
+  "lectura": "la diferencia en discontinuidades mide un CAMBIO de generosidad entre el Plan 2018-2021 y el Bono Alquiler Joven (hasta 35 años inclusive), no el efecto de un programa nuevo; el corte legal difiere en un año (34|35 frente a 35|36) y la edad de la ECV es la diferencia de años de nacimiento"
+ },
+ "n_hogares_total": 6872
+}

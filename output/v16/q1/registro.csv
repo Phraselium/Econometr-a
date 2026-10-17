@@ -1,0 +1,7 @@
+id,pregunta,rol,especificacion,muestra,n,estimacion,unidad,inferencia,nota
+Q1a-D,Q1a,diagnóstico descriptivo,recuento de elegibilidad art. 18 (SERPAVI VC 2018-2023),1188 municipios,1188,0.23726851851851852,tasa de declaración entre elegibles,ninguna,sin RD
+Q1b-P,Q1b,principal,SDID Conley-Taber (2019-2022 vs 2024; 2023 fuera),8 tratados fuera de Cataluña,0,,Δlog SERPAVI,Conley-Taber (escenario A),NO ESTIMABLE en el entrenamiento; pendiente de la evaluación sellada
+Q1c-P,Q1c,principal,"CS sin regresores, nunca tratadas, base g-1; log compraventas provincial trimestral 2019T1-2026T2",41 provincias (8 tratadas),1230,-0.04780167408861155,Δlog (ATT global),ninguna (CS-Webb NO APTO),incluye Cataluña (solapa con H1/H2)
+Q1c-X1,Q1c,robustez (punto 14),"sin Barcelona, València, Sevilla y Málaga (provincias)",37 provincias (7 tratadas),1110,-0.0640497554818523,Δlog (ATT global),ninguna,islas no selladas: ninguna (Baleares y Canarias son de v6)
+Q1c-PL1,Q1c,placebo de fecha,"cohortes adelantadas 8 trimestres, datos hasta g_real−1",41 provincias,32,0.0002841621004763713,Δlog (ATT placebo),ninguna,debería estar cerca de 0
+Q1c-D1,Q1c,diagnóstico,"diferencia de corte post(2024T1+)−pre sobre tratada, con controles 2019",40 provincias,40,0.054886479337306206,Δlog,ninguna,base de Oster/CH/E-value/Moran/BP

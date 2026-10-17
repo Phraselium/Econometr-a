@@ -1,0 +1,105 @@
+{
+ "rama": "v16/q7",
+ "pregunta": "¿Cambió en el corte de 35 años la diferencia de alquiler pagado entre inquilinos de mercado, de 2018-2021 a 2023-2025 (Q7a, diferencia en discontinuidades)?",
+ "capa": "C4",
+ "datos": "ECV transversal 2018-2021 y 2023-2025 (microdatos INE, data/raw; extracto en output/v16/q7); sin muestra sellada v6",
+ "N": {
+  "hogares_inquilinos_mercado": 6872,
+  "n_principal": 5061
+ },
+ "metodo": "diferencia en discontinuidades lineal local, pesos DB090, anchos 3/5/7 años; sin intervalo",
+ "estimacion": {
+  "principal_log_alquiler_h5": -0.11997210399032417,
+  "equivalente_pct": -11.30548213966598,
+  "cota_incidencia_pct": 13.9
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "metodo": "sin p-valor: las herramientas de inferencia del diseño son NO APTAS o no estimables; el control Benjamini-Yekutieli lo aplica el orquestador",
+  "valores": []
+ },
+ "p_valores": [],
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": [
+  {
+   "prueba": "Q7a · umbrales placebo (31|32 y 39|40, ±3)",
+   "estado": "informativa (sin umbral pre-registrado)",
+   "detalle": "-0,053 y -0,135 frente a -0,120 del principal: del mismo orden"
+  },
+  {
+   "prueba": "Q7a · balance de covariables en el umbral (diferencia en discontinuidades)",
+   "estado": "informativa",
+   "detalle": "ln_renta_hogar -0,023; n_pers 0,297; extranjero -0,089"
+  },
+  {
+   "prueba": "Q7a · proporción de inquilinos en el umbral",
+   "estado": "informativa",
+   "detalle": "salto antes -0,009, después -0,054, diferencia -0,046"
+  },
+  {
+   "prueba": "Q7a · densidad por edad (edad discreta)",
+   "estado": "informativa",
+   "detalle": "razón de hogares de edad 35/36: antes 1,06, después 0,93; McCrary no aplica con edad entera"
+  },
+  {
+   "prueba": "Q7a · Plan Estatal 2018-2021 con programa para menores de 35",
+   "estado": "informativa (cambio de generosidad)",
+   "detalle": "sí: RD 106/2018, programa de ayuda a los jóvenes («menos de treinta y cinco años»); la diferencia en discontinuidades mide un cambio de generosidad, no un programa nuevo"
+  },
+  {
+   "prueba": "Q7a · anchos 0,5× y 2× del óptimo; rdrobust",
+   "estado": "no aplica",
+   "detalle": "edad discreta de 11 valores: anchos de 3, 5 y 7 años declarados; sin rdrobust (en RD difuso/dif-en-disc no validado)"
+  },
+  {
+   "prueba": "Q7a · intervalo de Kolesár-Rothe",
+   "estado": "no mostrado",
+   "detalle": "no se muestra ningún intervalo"
+  },
+  {
+   "prueba": "Q7a · sensibilidad a confusores (Oster, Cinelli-Hazlett, E-value)",
+   "estado": "no evaluable",
+   "detalle": "sin errores típicos ni controles en el diseño de corte"
+  },
+  {
+   "prueba": "Q7a · exclusión de grandes ciudades e islas",
+   "estado": "no aplica",
+   "detalle": "la ECV no lleva provincia (solo NUTS2)"
+  }
+ ],
+ "herramientas": {
+  "kolesar_rothe": "no se muestra intervalo"
+ },
+ "fuera_muestra": {
+  "modelo": "no aplica (no es predicción)",
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "pendiente_sellada": true,
+ "regla_hallazgo": {
+  "a_q_menor_0_10": "no evaluable (sin p-valor)",
+  "b_error_S_M": "no evaluable (sin errores típicos)",
+  "c_sellada": "pendiente",
+  "resultado": "ni hallazgo ni pista confirmada: estimación puntual descriptiva C4"
+ },
+ "notas": "Descriptiva. La edad no asigna el bono por sí sola (renta, contrato, límites de precio). Potencia en el límite (MDE 13,2 % frente a cota de 13,9 %). El corte legal del Plan 2018-2021 (<35) difiere en un año del Bono (≤35). Sin magnitud de referencia numérica creíble → (b) no se cumple.",
+ "plan_2018_2021": {
+  "fuente": "BOE-A-2018-3358 (RD 106/2018), capítulo IX, programa de ayuda a los jóvenes",
+  "consultado": "2026-10-17",
+  "existia_programa_para_menores_de_35": true,
+  "requisito": "ayuda al alquiler para quien tiene «menos de treinta y cinco años» en el momento de solicitar, con ingresos limitados",
+  "lectura": "la diferencia en discontinuidades mide un CAMBIO de generosidad entre el Plan 2018-2021 y el Bono Alquiler Joven (hasta 35 años inclusive), no el efecto de un programa nuevo; el corte legal difiere en un año (34|35 frente a 35|36) y la edad de la ECV es la diferencia de años de nacimiento"
+ },
+ "multiverso": {
+  "log_alquiler": {
+   "log_alquiler|3": -0.1482981820916789,
+   "log_alquiler|5": -0.11997210399032417,
+   "log_alquiler|7": -0.13564612469438833
+  },
+  "alq_renta": {
+   "alq_renta|3": -0.03942638601556158,
+   "alq_renta|5": -0.013105564398257377,
+   "alq_renta|7": -0.011056044382165219
+  }
+ }
+}

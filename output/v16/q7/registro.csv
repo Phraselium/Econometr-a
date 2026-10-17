@@ -1,0 +1,10 @@
+id,pregunta,rol,especificacion,muestra,n,estimacion,unidad,inferencia,nota
+Q7a-log_alquiler-h3,Q7a,multiverso declarado,"diff-in-disc, log del alquiler mensual (HH060), ancho ±3 años","inquilinos de mercado, sustentador 35±h, 2018-21 vs 2023-25",3213,-0.1482981820916789,Δlog,ninguna (sin intervalo; no se usa Kolesár-Rothe),
+Q7a-log_alquiler-h5,Q7a,principal,"diff-in-disc, log del alquiler mensual (HH060), ancho ±5 años","inquilinos de mercado, sustentador 35±h, 2018-21 vs 2023-25",5061,-0.11997210399032417,Δlog,ninguna (sin intervalo; no se usa Kolesár-Rothe),
+Q7a-log_alquiler-h7,Q7a,multiverso declarado,"diff-in-disc, log del alquiler mensual (HH060), ancho ±7 años","inquilinos de mercado, sustentador 35±h, 2018-21 vs 2023-25",6872,-0.13564612469438833,Δlog,ninguna (sin intervalo; no se usa Kolesár-Rothe),
+Q7a-alq_renta-h3,Q7a,multiverso declarado,"diff-in-disc, alquiler anual / renta del hogar (tope 1), ancho ±3 años","inquilinos de mercado, sustentador 35±h, 2018-21 vs 2023-25",3187,-0.03942638601556158,proporción de la renta,ninguna (sin intervalo; no se usa Kolesár-Rothe),
+Q7a-alq_renta-h5,Q7a,multiverso declarado,"diff-in-disc, alquiler anual / renta del hogar (tope 1), ancho ±5 años","inquilinos de mercado, sustentador 35±h, 2018-21 vs 2023-25",5023,-0.013105564398257377,proporción de la renta,ninguna (sin intervalo; no se usa Kolesár-Rothe),
+Q7a-alq_renta-h7,Q7a,multiverso declarado,"diff-in-disc, alquiler anual / renta del hogar (tope 1), ancho ±7 años","inquilinos de mercado, sustentador 35±h, 2018-21 vs 2023-25",6822,-0.011056044382165219,proporción de la renta,ninguna (sin intervalo; no se usa Kolesár-Rothe),
+Q7a-PL-31,Q7a,placebo de umbral,"diff-in-disc log alquiler, corte falso 31|32, ±3",ídem,2543,-0.05265065043993837,Δlog,ninguna,debería estar cerca de 0
+Q7a-PL-39,Q7a,placebo de umbral,"diff-in-disc log alquiler, corte falso 39|40, ±3",ídem,3859,-0.13544140929280438,Δlog,ninguna,debería estar cerca de 0
+Q7a-PROP,Q7a,diagnóstico (proporción de inquilinos),"diff-in-disc de la proporción de inquilinos de mercado, ±5",todos los hogares 30-40,18623,-0.045588492314119766,proporción,ninguna,

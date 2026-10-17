@@ -1,0 +1,72 @@
+[
+ {
+  "id": "V16-Q7-1",
+  "indicador": "Q7a · diferencia en discontinuidades del log del alquiler mensual en el corte de 35 años (2023-2025 frente a 2018-2021, ±5 años)",
+  "valor": -0.11997210399032417,
+  "min": -0.1482981820916789,
+  "max": -0.11997210399032417,
+  "unidad": "Δlog",
+  "periodo": "2018-2021 / 2023-2025",
+  "cobertura": "5061 hogares inquilinos de mercado, sustentador 30-40 años",
+  "fuentes": "INE ECV (microdatos)",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q7/informe.md#v16-q7-1"
+ },
+ {
+  "id": "V16-Q7-2",
+  "indicador": "Q7a · salto del log del alquiler en el corte, antes (2018-2021)",
+  "valor": 0.08172925089052634,
+  "min": null,
+  "max": null,
+  "unidad": "Δlog",
+  "periodo": "2018-2021",
+  "cobertura": "2358 hogares",
+  "fuentes": "INE ECV",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q7/informe.md#v16-q7-1"
+ },
+ {
+  "id": "V16-Q7-3",
+  "indicador": "Q7a · salto del log del alquiler en el corte, después (2023-2025)",
+  "valor": -0.03824285309979783,
+  "min": null,
+  "max": null,
+  "unidad": "Δlog",
+  "periodo": "2023-2025",
+  "cobertura": "2703 hogares",
+  "fuentes": "INE ECV",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q7/informe.md#v16-q7-1"
+ },
+ {
+  "id": "V16-Q7-4",
+  "indicador": "Q7a · diferencia en discontinuidades en umbrales placebo (31|32 y 39|40)",
+  "valor": -0.05265065043993837,
+  "min": -0.13544140929280438,
+  "max": -0.05265065043993837,
+  "unidad": "Δlog",
+  "periodo": "2018-2025",
+  "cobertura": "inquilinos de mercado, ±3 años",
+  "fuentes": "INE ECV",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q7/informe.md#v16-q7-2"
+ },
+ {
+  "id": "V16-Q7-5",
+  "indicador": "Q7a · diferencia en discontinuidades de la proporción de inquilinos de mercado en el corte",
+  "valor": -0.045588492314119766,
+  "min": null,
+  "max": null,
+  "unidad": "proporción",
+  "periodo": "2018-2021 / 2023-2025",
+  "cobertura": "18623 hogares 30-40 años",
+  "fuentes": "INE ECV",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q7/informe.md#v16-q7-3"
+ }
+]

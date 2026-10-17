@@ -1,0 +1,60 @@
+{
+ "rama": "v16/q8",
+ "pregunta": "¿Cómo ha evolucionado la cuota de compras de no residentes (MIVAU) en el agregado de entrenamiento, antes y después de abril de 2025?",
+ "capa": "C4",
+ "datos": "data/raw/mivau_transacciones_residencia.csv (nivel CCAA y ciudad autónoma, 9 CCAA de entrenamiento + Ceuta y Melilla); sin muestra sellada",
+ "N": {
+  "trimestres": 78,
+  "periodo": "2007Q1-2026Q2"
+ },
+ "metodo": "descriptivo: cuotas y niveles por trimestre y año, comparación de ventanas de 4 trimestres",
+ "estimacion": {
+  "cuota_no_res_antes": 8.685709958922521,
+  "cuota_no_res_despues": 7.352842510175783,
+  "dif_pp": -1.3328674487467378,
+  "dif_pp_ano_anterior": -0.683418971950303
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "metodo": "sin p-valor: las herramientas de inferencia del diseño son NO APTAS o no estimables; el control Benjamini-Yekutieli lo aplica el orquestador",
+  "valores": []
+ },
+ "p_valores": [],
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": [
+  {
+   "prueba": "Q8 · distinción UE / fuera de la UE",
+   "estado": "no disponible",
+   "detalle": "la fuente MIVAU no la trae (adenda, R23); solo no residentes totales, extranjeros y españoles"
+  },
+  {
+   "prueba": "Q8 · muestra",
+   "estado": "informativa",
+   "detalle": "agregado de 9 CCAA de entrenamiento + Ceuta y Melilla; el total nacional se descarta porque incluye las 8 CCAA de v6"
+  },
+  {
+   "prueba": "Q8 · comparación con el año anterior",
+   "estado": "informativa",
+   "detalle": "variación de la cuota un año antes: -0,68 pp frente a -1,33 pp"
+  },
+  {
+   "prueba": "Q8 · pruebas de diseño (pretendencias, placebos, sensibilidad)",
+   "estado": "no aplica",
+   "detalle": "descriptiva: sin estimador de efecto"
+  }
+ ],
+ "herramientas": {},
+ "fuera_muestra": {
+  "modelo": "no aplica (no es predicción)",
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "pendiente_sellada": true,
+ "regla_hallazgo": {
+  "a_q_menor_0_10": "no evaluable (sin p-valor)",
+  "b_error_S_M": "no evaluable (sin errores típicos)",
+  "c_sellada": "pendiente",
+  "resultado": "ni hallazgo ni pista confirmada: estimación puntual descriptiva C4"
+ },
+ "notas": "Descriptiva. Sin distinción UE/extra-UE: la cuota total de no residentes no identifica los visados de oro. No hay autorizaciones del OPI. Ninguna lectura causal sobre el fin de la golden visa."
+}

@@ -1,0 +1,140 @@
+{
+ "rama": "v16/q1",
+ "pregunta": "¿Qué diferencia hay, en el entrenamiento, entre los mercados con y sin zonas tensionadas declaradas (Q1a diagnóstico, Q1b SDID, Q1c compraventas provinciales)?",
+ "capa": "C4",
+ "datos": "data/processed/v16/entrenamiento (base_alquiler SERPAVI, base_precio compraventas, base_regulacion BOE); sin muestra sellada",
+ "N": {
+  "Q1a_municipios": 1188,
+  "Q1b_tratados_fuera_Cataluna": 8,
+  "Q1c_provincias": 41,
+  "Q1c_tratadas": 8
+ },
+ "metodo": "Q1a recuento de elegibilidad (art. 18); Q1b SDID con Conley-Taber (no estimable); Q1c Callaway-Sant'Anna sin regresores, puntual",
+ "estimacion": {
+  "Q1a_tasa_declaracion_elegibles": 0.23726851851851852,
+  "Q1a_tasa_declaracion_no_elegibles": 0.05555555555555555,
+  "Q1b": "no estimable en el entrenamiento; pendiente de la evaluación sellada",
+  "Q1c_estimador_CS_global_dlog": -0.04780167408861155,
+  "Q1c_sin_grandes_ciudades": -0.0640497554818523,
+  "Q1c_placebo_fecha": 0.0002841621004763713
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "metodo": "sin p-valor: las herramientas de inferencia del diseño son NO APTAS o no estimables; el control Benjamini-Yekutieli lo aplica el orquestador",
+  "valores": []
+ },
+ "p_valores": [],
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": [
+  {
+   "prueba": "Q1b · periodo posterior al tratamiento en el entrenamiento",
+   "estado": "fallida",
+   "detalle": "primera entrada en vigor fuera de Cataluña 2025-05-01; último año de SERPAVI 2024; zonas vigentes fuera de Cataluña antes de 2025: 0"
+  },
+  {
+   "prueba": "Q1b · potencia",
+   "estado": "fallida",
+   "detalle": "MDE 7,1 % frente a −0,75 % de referencia (SERPAVI es stock): sin potencia"
+  },
+  {
+   "prueba": "Q1b · balance tratados/donantes",
+   "estado": "informativa (sin umbral pre-registrado)",
+   "detalle": "renta ADRH 36.639 frente a 25.974 €; población 160.845 frente a 12.133 (tratados 8, donantes 1.201); exposición al tipo variable no está en disco"
+  },
+  {
+   "prueba": "Q1c · pretendencias (coeficientes previos del estudio de eventos)",
+   "estado": "informativa (sin umbral pre-registrado)",
+   "detalle": "media de los coeficientes e∈[−8,−2] = -0,016; |media| de las ATT(g,t) previas = 0,101"
+  },
+  {
+   "prueba": "Q1c · Honest DiD",
+   "estado": "no evaluable",
+   "detalle": "no validado en la fase 5 (no figura en veredictos.csv)"
+  },
+  {
+   "prueba": "Q1c · placebo de fecha (cohortes 8 trimestres antes)",
+   "estado": "informativa (sin umbral pre-registrado)",
+   "detalle": "estimación placebo 0,0003 frente a -0,048 del principal"
+  },
+  {
+   "prueba": "Q1c · exclusión de grandes ciudades",
+   "estado": "informativa",
+   "detalle": "sin Barcelona, València, Sevilla y Málaga: -0,064 (mismo signo)"
+  },
+  {
+   "prueba": "Q1c · balance tratadas/no tratadas",
+   "estado": "informativa (sin umbral pre-registrado)",
+   "detalle": "diferencias estandarizadas: ln_renta 1,96; ln_pob 0,81; cuota_extranj 0,71; pct_vut_2020_08 0,55; obra_pc 0,20"
+  },
+  {
+   "prueba": "Q1c · Oster (δ, β=0, Rmax = 1,3 R²)",
+   "estado": "fallida",
+   "detalle": "δ = -0,158 (δ < 1 = frágil)"
+  },
+  {
+   "prueba": "Q1c · Cinelli-Hazlett RV_q=1",
+   "estado": "superada",
+   "detalle": "RV = 0,170 (frágil si < 0,05)"
+  },
+  {
+   "prueba": "Q1c · E-value (puntual)",
+   "estado": "informativa (sin umbral)",
+   "detalle": "2,97"
+  },
+  {
+   "prueba": "Q1c · Moran de los residuos (cruce provincial)",
+   "estado": "informativa",
+   "detalle": "I = -0,018, p de permutación (diagnóstico) = 0,335"
+  },
+  {
+   "prueba": "Q1c · heterocedasticidad (Breusch-Pagan)",
+   "estado": "informativa",
+   "detalle": "LM = 1,232, p = 0,745"
+  },
+  {
+   "prueba": "Q1c · ruptura (Bai-Perron) en la brecha tratadas − no tratadas",
+   "estado": "informativa",
+   "detalle": "2 rupturas, trimestres ['2021Q4', '2023Q2']: la brecha cambia de régimen antes del primer tratamiento (2024T1)"
+  },
+  {
+   "prueba": "Controles negativos (población 65+, IPC general provincial)",
+   "estado": "no evaluable",
+   "detalle": "no están en el entrenamiento"
+  },
+  {
+   "prueba": "Raíces unitarias / cointegración con dependencia transversal",
+   "estado": "no aplica",
+   "detalle": "diseños en diferencias sobre ventana corta"
+  },
+  {
+   "prueba": "BLP/GATES de Q1",
+   "estado": "no evaluable",
+   "detalle": "Q1b sin periodo posterior; Q1c tiene 8 tratadas frente a 5 moderadores; herramienta NO APTA"
+  }
+ ],
+ "herramientas": {
+  "sdid_conley_taber": "APTO solo en el escenario A (tamaño 0,0575, límite superior)",
+  "cs_webb": "NO APTO (tamaño 0,0655; cobertura 0,9015) → solo descriptivo",
+  "blp_gates": "NO APTO (tamaño 0,005; cobertura 0,9885) → solo descriptivo",
+  "bh_jerarquico": "NO APTO; alternativa Benjamini-Yekutieli APTA (la aplica el orquestador)"
+ },
+ "fuera_muestra": {
+  "modelo": "no aplica (no es predicción)",
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "pendiente_sellada": true,
+ "regla_hallazgo": {
+  "a_q_menor_0_10": "no evaluable (sin p-valor)",
+  "b_error_S_M": "no evaluable (sin errores típicos)",
+  "c_sellada": "pendiente",
+  "resultado": "ni hallazgo ni pista confirmada: estimación puntual descriptiva C4"
+ },
+ "notas": "Q1c incluye Cataluña (solapa con H1/H2 de V15, declarado). Cohortes 2024T1 (Cataluña) y 2025T2-T4 (Euskadi, Galicia): las de 2025 tienen entre 1 y 4 trimestres posteriores. La cohorte de Álava/Gipuzkoa/Bizkaia/A Coruña se fecha con base_regulacion (zt_vigente); intervenciones.csv recoge una fecha de 2025-01-31 para un municipio de Gipuzkoa que base_regulacion no lleva. Magnitud de referencia de Q1c: ninguna comparable → condición (b) no se cumple. Q1a no tiene resultado en entrenamiento. Multiverso de Q1c: solo la principal y la exclusión del punto 14 (D3).",
+ "q1b_veredicto": "NO ESTIMABLE en el entrenamiento; pendiente de la evaluación sellada",
+ "multiverso_declarado": {
+  "Q1a": "sin resultado",
+  "Q1b": "no estimable",
+  "Q1c": "2 especificaciones (principal + punto 14)"
+ }
+}

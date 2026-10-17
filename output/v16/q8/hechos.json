@@ -1,0 +1,72 @@
+[
+ {
+  "id": "V16-Q8-1",
+  "indicador": "Cuota de compras de no residentes sobre el total de transacciones (agregado de entrenamiento), 2025T2-2026T1",
+  "valor": 7.352842510175783,
+  "min": null,
+  "max": null,
+  "unidad": "% de las transacciones",
+  "periodo": "2025T2-2026T1",
+  "cobertura": "9 CCAA de entrenamiento + Ceuta y Melilla",
+  "fuentes": "MIVAU, Boletín Online (tabla 340101d0)",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q8/informe.md#v16-q8-1"
+ },
+ {
+  "id": "V16-Q8-2",
+  "indicador": "Cuota de compras de no residentes, 2024T2-2025T1",
+  "valor": 8.685709958922521,
+  "min": null,
+  "max": null,
+  "unidad": "% de las transacciones",
+  "periodo": "2024T2-2025T1",
+  "cobertura": "9 CCAA de entrenamiento + Ceuta y Melilla",
+  "fuentes": "MIVAU, Boletín Online (tabla 340101d0)",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q8/informe.md#v16-q8-1"
+ },
+ {
+  "id": "V16-Q8-3",
+  "indicador": "Variación de la cuota entre ambas ventanas",
+  "valor": -1.3328674487467378,
+  "min": -1.3328674487467378,
+  "max": -0.683418971950303,
+  "unidad": "puntos porcentuales",
+  "periodo": "2024T2-2026T1",
+  "cobertura": "ídem (mínimo y máximo: este año y el anterior)",
+  "fuentes": "MIVAU, Boletín Online",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q8/informe.md#v16-q8-2"
+ },
+ {
+  "id": "V16-Q8-4",
+  "indicador": "Compras de no residentes (número), 2025",
+  "valor": 41239.0,
+  "min": 45087.0,
+  "max": 49157.0,
+  "unidad": "transacciones",
+  "periodo": "2025",
+  "cobertura": "ídem (mínimo y máximo: 2024 y 2022)",
+  "fuentes": "MIVAU, Boletín Online",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q8/informe.md#v16-q8-3"
+ },
+ {
+  "id": "V16-Q8-5",
+  "indicador": "Cuota anual de compras de no residentes, 2025",
+  "valor": 7.561475146823425,
+  "min": 7.561475146823425,
+  "max": 9.714937331272703,
+  "unidad": "% de las transacciones",
+  "periodo": "2025",
+  "cobertura": "ídem (máximo: 2022)",
+  "fuentes": "MIVAU, Boletín Online",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q8/informe.md#v16-q8-3"
+ }
+]

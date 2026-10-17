@@ -1,0 +1,20 @@
+id,pregunta,rol,especificacion,muestra,n,estimacion,unidad,inferencia,nota
+Q2a-P,Q2a,principal,DiD intensidad: log IPC alquiler prov. ~ z(log %VUT 2020-08)×post(2022-25) + EF provincia y año; sin 2020-21,"41 provincias, pre 2017-19, post 2022-25",287,0.013161806189649688,Δlog por DT del log de la exposición,ninguna (did_intensidad_webb NO APTO),elasticidad 0.0139; referencia 0.0379
+Q2a-X1,Q2a,robustez (punto 14),"sin provincias de Barcelona, València, Sevilla y Málaga (exposición re-estandarizada)",37 provincias,259,0.011813632104009793,Δlog por DT,ninguna,islas no selladas: ninguna
+Q2a-C1,Q2a,robustez (controles),"principal + renta ADRH, población y cuota de extranjeros 2019 × post",40 provincias,280,0.007067612874306908,Δlog por DT,ninguna,base de Oster/CH
+Q2a-PL1,Q2a,placebo de fecha,post falso 2016-2019 frente a 2012-2015,41 provincias,328,0.00258048860953584,Δlog por DT,ninguna,debería estar cerca de 0
+Q2b-01,Q2b,robustez de Q2a (principal de Q2b),"y_serpavi ~ dosis_pc + EF municipio y año, 2016-2024",177 municipios de Andalucía,1062,0.000724832556730031,Δlog por unidad de dosis,ninguna,dosis reconstruida (sesgo de supervivencia); solo robustez
+Q2b-02,Q2b,robustez de Q2a,"y_serpavi ~ dosis_pc + EF municipio y año, 2019-2024",177 municipios de Andalucía,860,0.000858322578299994,Δlog por unidad de dosis,ninguna,dosis reconstruida (sesgo de supervivencia); solo robustez
+Q2b-03,Q2b,robustez de Q2a,"y_serpavi ~ dosis_ln + EF municipio y año, 2016-2024",177 municipios de Andalucía,1062,-0.002346627957540123,Δlog por unidad de dosis,ninguna,dosis reconstruida (sesgo de supervivencia); solo robustez
+Q2b-04,Q2b,robustez de Q2a,"y_serpavi ~ dosis_ln + EF municipio y año, 2019-2024",177 municipios de Andalucía,860,-0.01549778807424683,Δlog por unidad de dosis,ninguna,dosis reconstruida (sesgo de supervivencia); solo robustez
+Q2b-05,Q2b,robustez de Q2a,"y_ipva ~ dosis_pc + EF municipio y año, 2016-2024",90 municipios de Andalucía,650,0.00013486609826781785,Δlog por unidad de dosis,ninguna,dosis reconstruida (sesgo de supervivencia); solo robustez
+Q2b-06,Q2b,robustez de Q2a,"y_ipva ~ dosis_pc + EF municipio y año, 2019-2024",90 municipios de Andalucía,498,0.00027482470488954063,Δlog por unidad de dosis,ninguna,dosis reconstruida (sesgo de supervivencia); solo robustez
+Q2b-07,Q2b,robustez de Q2a,"y_ipva ~ dosis_ln + EF municipio y año, 2016-2024",90 municipios de Andalucía,650,-0.0016649216336800908,Δlog por unidad de dosis,ninguna,dosis reconstruida (sesgo de supervivencia); solo robustez
+Q2b-08,Q2b,robustez de Q2a,"y_ipva ~ dosis_ln + EF municipio y año, 2019-2024",90 municipios de Andalucía,498,0.0009760340101341282,Δlog por unidad de dosis,ninguna,dosis reconstruida (sesgo de supervivencia); solo robustez
+Q2c-P,Q2c,principal,"log IPVA-TAM municipal ~ z(log %VUT INE) + EF municipio y año, 2021-2024",388 municipios,1524,-0.009540549202998893,Δlog por DT del log de la exposición,ninguna (did_intensidad_webb NO APTO; agrupación por provincia no se calcula),"referencia 0.0633 (= 0,04 × DT log = 1.582)"
+Q2c-V1,Q2c,variante declarada (exposición),exposición en nivel estandarizado (incluye 0 %),389 municipios,1538,0.00784869647536347,Δlog por DT del nivel,ninguna,
+Q2c-V2,Q2c,variante declarada (resultado),Δlog IPVA-TAM (2022-2024) ~ z(log %VUT),383 municipios,1140,-0.0005276729676975037,Δlog por DT del log,ninguna,
+Q2c-V3,Q2c,variante declarada (resultado × exposición),Δlog IPVA-TAM ~ z(nivel %VUT),384 municipios,1149,-0.005376098190979581,Δlog por DT del nivel,ninguna,
+Q2c-X1,Q2c,robustez (punto 14),"sin Barcelona, València, Sevilla y Málaga",384 municipios,1508,-0.009493027048588884,Δlog por DT,ninguna,islas no selladas: ninguna
+Q2c-C1,Q2c,robustez (controles),principal + renta y población 2019 × tendencia,388 municipios,1524,-0.00907072377833834,Δlog por DT,ninguna,base de Oster/CH
+Q2c-PL1,Q2c,placebo temporal (exposición adelantada),log IPVA-TAM ~ z(t+1),383 municipios,1136,-0.004819544362950854,Δlog por DT,ninguna,la exposición futura no debería explicar el presente si no hay tendencia previa

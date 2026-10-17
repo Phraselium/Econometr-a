@@ -1,0 +1,206 @@
+{
+ "q2a": {
+  "beta_por_DT": 0.013161806189649688,
+  "elasticidad": 0.013905254362386,
+  "dt_log_exposicion": 0.9465347304435254,
+  "referencia_b_por_DT": 0.037861389217741015,
+  "magnitud_referencia": "0,04 × DT del log de la exposición (elasticidad central de L2/P5)",
+  "n_obs": 287,
+  "beta_sin_grandes_ciudades": 0.011813632104009793,
+  "beta_con_controles": 0.007067612874306908,
+  "beta_corto_misma_muestra": 0.013335633446980933,
+  "placebo_fecha": 0.00258048860953584,
+  "evento_base_2019": {
+   "2012": -0.00530765509303045,
+   "2013": -0.006433166910419504,
+   "2014": -0.007164040031359529,
+   "2015": -0.007819481968530018,
+   "2016": -0.00614681080711917,
+   "2017": -0.005887642507761962,
+   "2018": -0.004367936250314978,
+   "2022": 0.005210389324952633,
+   "2023": 0.007522959918654421,
+   "2024": 0.011210241719762627,
+   "2025": 0.015029528784459803
+  },
+  "pendiente_coef_pre": 0.00017597980563213912,
+  "r2_parcial": 0.24521169594489708,
+  "sensibilidad": {
+   "oster": {
+    "delta": 1.8388120585116512,
+    "rmax": 0.3919762454722556
+   },
+   "cinelli_hazlett_RV_q1": 0.1965995234624706,
+   "cinelli_hazlett_frágil_si_RV_menor_0_05": false,
+   "e_value_puntual": 2.9769028827904425
+  },
+  "moran_residuos": {
+   "I": -0.05780470456595821,
+   "E_I": -0.02564102564102564,
+   "p_permutacion_diagnostico": 0.921,
+   "n": 40
+  },
+  "breusch_pagan": {
+   "LM": 1.203326219480143,
+   "p_diagnostico": 0.877550674357262
+  },
+  "bai_perron_brecha_tercil": {
+   "n_bkps": 2,
+   "fechas": [
+    "2019Q2",
+    "2023Q1"
+   ],
+   "bic": {
+    "0": -637.8699102270598,
+    "1": -746.4205211857984,
+    "2": -799.6739401637709
+   }
+  },
+  "balance_terciles": [
+   {
+    "variable": "ln_renta",
+    "media_tercil_alto": 10.315023053135361,
+    "media_tercil_bajo": 10.29597177107381,
+    "dif_estandarizada": 0.13898579582103676
+   },
+   {
+    "variable": "ln_pob",
+    "media_tercil_alto": 13.90329208366793,
+    "media_tercil_bajo": 12.624395647771152,
+    "dif_estandarizada": 1.8507009639914418
+   },
+   {
+    "variable": "cuota_extranj",
+    "media_tercil_alto": 0.11794635577049338,
+    "media_tercil_bajo": 0.06667589370842046,
+    "dif_estandarizada": 1.0019440993921607
+   },
+   {
+    "variable": "obra_pc",
+    "media_tercil_alto": 1.2238007703143687,
+    "media_tercil_bajo": 1.2186139527213455,
+    "dif_estandarizada": 0.009325643708945047
+   }
+  ],
+  "blp_gates": {
+   "ATE_beta1_mediana": 0.01132880905866077,
+   "heterogeneidad_beta2_mediana": -0.4654246928666359,
+   "GATES_pendiente_por_cuartil_mediana": [
+    0.01155375929963601,
+    0.013869105095124304,
+    0.009702459637813996,
+    0.004400264209159747
+   ],
+   "GATES_cuartil4_menos_cuartil1": -0.006280780855844155,
+   "interaccion_lineal_exposicion_x_moderador": {
+    "ln_renta": -9.965882914319728e-05,
+    "ln_pob": -0.0008131002905823022,
+    "cuota_extranj": 0.006550741079268221,
+    "obra_pc": -0.0020164810610140663
+   },
+   "reps": 50,
+   "n": 37,
+   "nota": "descriptivo; herramienta NO APTA (veredictos.csv): sin p-valor ni IC; subgrupos descriptivos C4"
+  },
+  "honest_did": "no validado en la fase 5 (no figura en veredictos.csv): no se usa; se publican los coeficientes previos del estudio de eventos"
+ },
+ "q2b": {
+  "n_especificaciones": 8,
+  "estimaciones": {
+   "y_serpavi|dosis_pc|2016-2024": 0.000724832556730031,
+   "y_serpavi|dosis_pc|2019-2024": 0.000858322578299994,
+   "y_serpavi|dosis_ln|2016-2024": -0.002346627957540123,
+   "y_serpavi|dosis_ln|2019-2024": -0.01549778807424683,
+   "y_ipva|dosis_pc|2016-2024": 0.00013486609826781785,
+   "y_ipva|dosis_pc|2019-2024": 0.00027482470488954063,
+   "y_ipva|dosis_ln|2016-2024": -0.0016649216336800908,
+   "y_ipva|dosis_ln|2019-2024": 0.0009760340101341282
+  },
+  "municipios": {
+   "y_serpavi|dosis_pc|2016-2024": 177,
+   "y_serpavi|dosis_pc|2019-2024": 177,
+   "y_serpavi|dosis_ln|2016-2024": 177,
+   "y_serpavi|dosis_ln|2019-2024": 177,
+   "y_ipva|dosis_pc|2016-2024": 90,
+   "y_ipva|dosis_pc|2019-2024": 90,
+   "y_ipva|dosis_ln|2016-2024": 90,
+   "y_ipva|dosis_ln|2019-2024": 90
+  },
+  "mediana": 0.00020484540157867924,
+  "proporcion_mismo_signo_que_la_primera": 0.625,
+  "evento_dosis_final_base_2019": {
+   "2016": -0.017408853478045074,
+   "2017": -0.011775328536646607,
+   "2018": -0.006804499355206495,
+   "2020": 0.004389001058334206,
+   "2021": 0.007127893862916459,
+   "2022": 0.010651754381366112,
+   "2023": 0.014493313485880793,
+   "2024": 0.01918969139930776
+  },
+  "nota": "solo robustez de Q2a (adenda, punto 3); sin inferencia; dosis reconstruida con sesgo de supervivencia"
+ },
+ "q2c": {
+  "beta_por_DT": -0.009540549202998893,
+  "dt_log_exposicion": 1.581701653776598,
+  "referencia_b_por_DT": 0.06326806615106392,
+  "n_obs": 1524,
+  "n_municipios": 388,
+  "beta_variante_nivel": 0.00784869647536347,
+  "beta_variante_dlog": -0.0005276729676975037,
+  "beta_variante_dlog_nivel": -0.005376098190979581,
+  "beta_sin_grandes_ciudades": -0.009493027048588884,
+  "beta_con_controles": -0.00907072377833834,
+  "placebo_exposicion_adelantada": -0.004819544362950854,
+  "multiverso": {
+   "n_especificaciones": 6,
+   "mediana": -0.00722341098465896,
+   "min": -0.009540549202998893,
+   "max": 0.00784869647536347,
+   "proporcion_mismo_signo_que_principal": 0.8333333333333334,
+   "nota": "la proporción con IC95 % que excluye 0 no se calcula: sin inferencia apta"
+  },
+  "r2_parcial": 0.0192197960431349,
+  "sensibilidad": {
+   "oster": {
+    "delta": 8.818217787164084,
+    "rmax": 0.0728063377763507
+   },
+   "cinelli_hazlett_RV_q1": 0.12465294487192727,
+   "cinelli_hazlett_frágil_si_RV_menor_0_05": false,
+   "e_value_puntual": 4.669185379490998
+  },
+  "moran_residuos_por_provincia": {
+   "I": 0.0013070558482312078,
+   "E_I": -0.027777777777777776,
+   "p_permutacion_diagnostico": 0.061,
+   "n": 37
+  },
+  "breusch_pagan": {
+   "LM": 41.597249473998986,
+   "p_diagnostico": 4.884634213116776e-09
+  },
+  "blp_gates": {
+   "ATE_beta1_mediana": -0.00976669720119075,
+   "heterogeneidad_beta2_mediana": 1.3883955781860937,
+   "GATES_pendiente_por_cuartil_mediana": [
+    -0.004997495709673987,
+    -0.013242536165985573,
+    -0.013543607135160608,
+    0.005409471417018577
+   ],
+   "GATES_cuartil4_menos_cuartil1": 0.008193406877219953,
+   "interaccion_lineal_exposicion_x_moderador": {
+    "ln_renta": 0.01141640170065574,
+    "ln_pob": 0.0017336835185339323,
+    "cuota_extranj": 0.015188042276708322,
+    "pct_vut_2021": 0.010482807101888744,
+    "obra_pc": -0.000972465186756998
+   },
+   "reps": 50,
+   "n": 374,
+   "nota": "descriptivo; herramienta NO APTA (veredictos.csv): sin p-valor ni IC; subgrupos descriptivos C4"
+  },
+  "agrupacion_provincia": "no calculada: did_intensidad_webb NO APTO (Q2c: tamaño 0,0975)"
+ }
+}

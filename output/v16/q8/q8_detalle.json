@@ -1,0 +1,234 @@
+{
+ "cambio": {
+  "ventana_antes": "2024Q2-2025Q1",
+  "ventana_despues": "2025Q2-2026Q1",
+  "cuota_no_res_antes": 8.685709958922521,
+  "cuota_no_res_despues": 7.352842510175783,
+  "cuota_no_res_extranjeros_antes": 8.126715505328715,
+  "cuota_no_res_extranjeros_despues": 6.8127432124166925,
+  "compras_no_res_antes": 45884.0,
+  "compras_no_res_despues": 39453.0,
+  "compras_total_antes": 528270.0,
+  "compras_total_despues": 536568.0,
+  "dif_cuota_pp": -1.3328674487467378,
+  "dif_cuota_extranj_pp": -1.3139722929120223,
+  "dif_cuota_pp_referencia_ano_anterior": -0.683418971950303
+ },
+ "anual": [
+  {
+   "anio": 2007,
+   "no_residentes_total": 22004.0,
+   "no_res_extranjeros": 17093.0,
+   "no_res_espanoles": 4911.0,
+   "total": 600415.0,
+   "cuota_no_res": 3.6647985143609,
+   "cuota_no_res_extranjeros": 2.846864252225544
+  },
+  {
+   "anio": 2008,
+   "no_residentes_total": 13905.0,
+   "no_res_extranjeros": 11728.0,
+   "no_res_espanoles": 2177.0,
+   "total": 400587.0,
+   "cuota_no_res": 3.471156078454867,
+   "cuota_no_res_extranjeros": 2.9277035949743753
+  },
+  {
+   "anio": 2009,
+   "no_residentes_total": 10989.0,
+   "no_res_extranjeros": 9614.0,
+   "no_res_espanoles": 1375.0,
+   "total": 320578.0,
+   "cuota_no_res": 3.427870908172114,
+   "cuota_no_res_extranjeros": 2.9989581318743017
+  },
+  {
+   "anio": 2010,
+   "no_residentes_total": 11849.0,
+   "no_res_extranjeros": 11127.0,
+   "no_res_espanoles": 722.0,
+   "total": 343749.0,
+   "cuota_no_res": 3.446991845794461,
+   "cuota_no_res_extranjeros": 3.2369548711414433
+  },
+  {
+   "anio": 2011,
+   "no_residentes_total": 14266.0,
+   "no_res_extranjeros": 13648.0,
+   "no_res_espanoles": 618.0,
+   "total": 244823.0,
+   "cuota_no_res": 5.827066901394069,
+   "cuota_no_res_extranjeros": 5.574639637615747
+  },
+  {
+   "anio": 2012,
+   "no_residentes_total": 19548.0,
+   "no_res_extranjeros": 18715.0,
+   "no_res_espanoles": 833.0,
+   "total": 256497.0,
+   "cuota_no_res": 7.6211417677399735,
+   "cuota_no_res_extranjeros": 7.296381634093187
+  },
+  {
+   "anio": 2013,
+   "no_residentes_total": 23073.0,
+   "no_res_extranjeros": 22212.0,
+   "no_res_espanoles": 861.0,
+   "total": 209002.0,
+   "cuota_no_res": 11.039607276485393,
+   "cuota_no_res_extranjeros": 10.62764949617707
+  },
+  {
+   "anio": 2014,
+   "no_residentes_total": 28729.0,
+   "no_res_extranjeros": 27561.0,
+   "no_res_espanoles": 1168.0,
+   "total": 250013.0,
+   "cuota_no_res": 11.49100246787167,
+   "cuota_no_res_extranjeros": 11.023826761008428
+  },
+  {
+   "anio": 2015,
+   "no_residentes_total": 30314.0,
+   "no_res_extranjeros": 29147.0,
+   "no_res_espanoles": 1167.0,
+   "total": 273206.0,
+   "cuota_no_res": 11.095656757172243,
+   "cuota_no_res_extranjeros": 10.668506548172441
+  },
+  {
+   "anio": 2016,
+   "no_residentes_total": 32249.0,
+   "no_res_extranjeros": 30926.0,
+   "no_res_espanoles": 1323.0,
+   "total": 311077.0,
+   "cuota_no_res": 10.366886655072538,
+   "cuota_no_res_extranjeros": 9.941590024334811
+  },
+  {
+   "anio": 2017,
+   "no_residentes_total": 34693.0,
+   "no_res_extranjeros": 33152.0,
+   "no_res_espanoles": 1541.0,
+   "total": 358951.0,
+   "cuota_no_res": 9.665107493780488,
+   "cuota_no_res_extranjeros": 9.235800986764211
+  },
+  {
+   "anio": 2018,
+   "no_residentes_total": 34374.0,
+   "no_res_extranjeros": 32585.0,
+   "no_res_espanoles": 1789.0,
+   "total": 399146.0,
+   "cuota_no_res": 8.611886377415782,
+   "cuota_no_res_extranjeros": 8.163679455637787
+  },
+  {
+   "anio": 2019,
+   "no_residentes_total": 32681.0,
+   "no_res_extranjeros": 30726.0,
+   "no_res_espanoles": 1955.0,
+   "total": 395443.0,
+   "cuota_no_res": 8.264402202087279,
+   "cuota_no_res_extranjeros": 7.7700199523066535
+  },
+  {
+   "anio": 2020,
+   "no_residentes_total": 22946.0,
+   "no_res_extranjeros": 21488.0,
+   "no_res_espanoles": 1458.0,
+   "total": 340723.0,
+   "cuota_no_res": 6.734502807265725,
+   "cuota_no_res_extranjeros": 6.306589223504138
+  },
+  {
+   "anio": 2021,
+   "no_residentes_total": 33927.0,
+   "no_res_extranjeros": 31487.0,
+   "no_res_espanoles": 2435.0,
+   "total": 473675.0,
+   "cuota_no_res": 7.162505937615454,
+   "cuota_no_res_extranjeros": 6.6473848102602
+  },
+  {
+   "anio": 2022,
+   "no_residentes_total": 49157.0,
+   "no_res_extranjeros": 46147.0,
+   "no_res_espanoles": 2907.0,
+   "total": 505994.0,
+   "cuota_no_res": 9.714937331272703,
+   "cuota_no_res_extranjeros": 9.120068617414436
+  },
+  {
+   "anio": 2023,
+   "no_residentes_total": 43296.0,
+   "no_res_extranjeros": 40498.0,
+   "no_res_espanoles": 2752.0,
+   "total": 454333.0,
+   "cuota_no_res": 9.529574122945064,
+   "cuota_no_res_extranjeros": 8.913726275661244
+  },
+  {
+   "anio": 2024,
+   "no_residentes_total": 45087.0,
+   "no_res_extranjeros": 42146.0,
+   "no_res_espanoles": 2913.0,
+   "total": 509974.0,
+   "cuota_no_res": 8.841038954927113,
+   "cuota_no_res_extranjeros": 8.264342888068803
+  },
+  {
+   "anio": 2025,
+   "no_residentes_total": 41239.0,
+   "no_res_extranjeros": 38329.0,
+   "no_res_espanoles": 2859.0,
+   "total": 545383.0,
+   "cuota_no_res": 7.561475146823425,
+   "cuota_no_res_extranjeros": 7.027905160226849
+  },
+  {
+   "anio": 2026,
+   "no_residentes_total": 18307.0,
+   "no_res_extranjeros": 16935.0,
+   "no_res_espanoles": 1312.0,
+   "total": 255069.0,
+   "cuota_no_res": 7.177273600476735,
+   "cuota_no_res_extranjeros": 6.639379932488857
+  }
+ ],
+ "provincias_top5_cuota_2025": [
+  {
+   "territorio": "Alicante/Alacant",
+   "2024": 36.10789980732177,
+   "2025": 33.24980146474896,
+   "dif_pp": -2.8580983425728093
+  },
+  {
+   "territorio": "Málaga",
+   "2024": 28.760041358466555,
+   "2025": 27.898029229406557,
+   "dif_pp": -0.8620121290599982
+  },
+  {
+   "territorio": "Girona",
+   "2024": 15.99643762416935,
+   "2025": 14.696097248880358,
+   "dif_pp": -1.3003403752889913
+  },
+  {
+   "territorio": "Almería",
+   "2024": 9.53042328042328,
+   "2025": 8.196627607887969,
+   "dif_pp": -1.3337956725353113
+  },
+  {
+   "territorio": "Castellón/Castelló",
+   "2024": 7.330028328611898,
+   "2025": 5.581304262680332,
+   "dif_pp": -1.7487240659315662
+  }
+ ],
+ "primer_trimestre": "2007Q1",
+ "ultimo_trimestre": "2026Q2",
+ "n_provincias": 38
+}

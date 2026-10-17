@@ -1,0 +1,183 @@
+{
+ "q1a": {
+  "ipc_acumulado_2018_2023": 0.15674922709675077,
+  "umbral_log": 0.17121782717185122,
+  "n_municipios": 1188,
+  "n_en_banda_10pts": 833,
+  "n_elegibles": 864,
+  "n_declarados_en_muestra": 223,
+  "declarados_elegibles": 205,
+  "declarados_no_elegibles": 18,
+  "tasa_declaracion_elegibles": 0.23726851851851852,
+  "tasa_declaracion_no_elegibles": 0.05555555555555555,
+  "tabla": [
+   {
+    "cataluna": false,
+    "elegible": false,
+    "n": 262,
+    "declarados": 0,
+    "tasa_declaracion": 0.0
+   },
+   {
+    "cataluna": false,
+    "elegible": true,
+    "n": 551,
+    "declarados": 2,
+    "tasa_declaracion": 0.003629764065335753
+   },
+   {
+    "cataluna": true,
+    "elegible": false,
+    "n": 62,
+    "declarados": 18,
+    "tasa_declaracion": 0.2903225806451613
+   },
+   {
+    "cataluna": true,
+    "elegible": true,
+    "n": 313,
+    "declarados": 203,
+    "tasa_declaracion": 0.6485623003194888
+   }
+  ],
+  "lectura": "Recuento de elegibilidad por el criterio de precio del art. 18 (SERPAVI VC 2018-2023). No es un RD: el resultado de Q1a solo existe en la muestra sellada (adenda, punto 3)."
+ },
+ "q1b": {
+  "tratados_fuera_cataluna_en_panel_serpavi": 8,
+  "tratados_en_panel_completo_2019_2024": 2,
+  "primer_efecto_fuera_cataluna": "2025-05-01",
+  "ultimo_anio_serpavi_entrenamiento": "2024",
+  "zt_vigente_fuera_cataluna_antes_2025": 0,
+  "hay_periodo_posterior_en_entrenamiento": false,
+  "veredicto": "NO ESTIMABLE en el entrenamiento; pendiente de la evaluación sellada",
+  "inferencia": "SDID con Conley-Taber APTA solo en el escenario A (tamaño 0,0575, en el límite superior de [0,04; 0,06]); no se usa porque no hay periodo posterior",
+  "potencia": "MDE 7,1 % frente a −0,75 % de referencia: sin potencia (adenda, punto 5)",
+  "balance": [
+   {
+    "grupo": "tratados_fuera_Cataluña",
+    "n": 8,
+    "renta_neta_hogar_ADRH_2019": 36639.125,
+    "poblacion_2019": 160844.875,
+    "cuota_extranjeros_2021": 0.07881759696959992,
+    "pct_vivienda_turistica_2021_02": 0.47124999999999995,
+    "exposicion_tipo_variable": null
+   },
+   {
+    "grupo": "donantes_CCAA_sin_zonas",
+    "n": 1201,
+    "renta_neta_hogar_ADRH_2019": 25973.93588676103,
+    "poblacion_2019": 12132.938384679434,
+    "cuota_extranjeros_2021": 0.09040620886965983,
+    "pct_vivienda_turistica_2021_02": 0.7376426174496644,
+    "exposicion_tipo_variable": null
+   }
+  ]
+ },
+ "q1c": {
+  "att_global": -0.04780167408861155,
+  "att_global_sin_grandes_ciudades": -0.0640497554818523,
+  "att_placebo_fecha": 0.0002841621004763713,
+  "evento": {
+   "-8": -0.03882050599510775,
+   "-7": -0.035388148379695894,
+   "-6": 0.0004946983330708574,
+   "-5": -0.018253861407339363,
+   "-4": 0.0057410364090878865,
+   "-3": 0.009378336222544408,
+   "-2": -0.03290280468477726,
+   "0": -0.05077653659638648,
+   "1": -0.04640783825316036,
+   "2": -0.0383141583634583,
+   "3": -0.06585898210768774,
+   "4": -0.021704768257251213,
+   "5": -0.07095865959298425,
+   "6": -0.041478509945715
+  },
+  "pretendencia": {
+   "media_abs_pre": 0.10111944437060763,
+   "media_pre": -0.06173210541779848,
+   "media_coef_pre_evento": -0.01567874992888816
+  },
+  "n_provincias": 41,
+  "n_tratadas": 8,
+  "cohortes": {
+   "01": "2025Q4",
+   "08": "2024Q1",
+   "15": "2025Q3",
+   "17": "2024Q1",
+   "20": "2025Q3",
+   "25": "2024Q1",
+   "43": "2024Q1",
+   "48": "2025Q2"
+  },
+  "balance": [
+   {
+    "variable": "ln_renta",
+    "media_tratadas": 10.464231888890165,
+    "media_no_tratadas": 10.260586286308849,
+    "dif_estandarizada": 1.9608127323368982
+   },
+   {
+    "variable": "ln_pob",
+    "media_tratadas": 13.71770944288491,
+    "media_no_tratadas": 13.004578256700338,
+    "dif_estandarizada": 0.8138671241761907
+   },
+   {
+    "variable": "cuota_extranj",
+    "media_tratadas": 0.11267477899468908,
+    "media_no_tratadas": 0.0753145081863255,
+    "dif_estandarizada": 0.711437586699391
+   },
+   {
+    "variable": "pct_vut_2020_08",
+    "media_tratadas": 1.3712499999999999,
+    "media_no_tratadas": 0.7257575757575757,
+    "dif_estandarizada": 0.553658488619687
+   },
+   {
+    "variable": "obra_pc",
+    "media_tratadas": 1.3334654347310722,
+    "media_no_tratadas": 1.2346004558242545,
+    "dif_estandarizada": 0.20066552322894132
+   }
+  ],
+  "sensibilidad_corte": {
+   "oster": {
+    "delta": -0.15773071809755354,
+    "rmax": 0.5015243669692268
+   },
+   "cinelli_hazlett_RV_q1": 0.1702368148913775,
+   "cinelli_hazlett_frágil_si_RV_menor_0_05": false,
+   "e_value_puntual": 2.965871787743029
+  },
+  "moran_residuos": {
+   "I": -0.017649675202412063,
+   "E_I": -0.02564102564102564,
+   "p_permutacion_diagnostico": 0.335,
+   "n": 40
+  },
+  "breusch_pagan": {
+   "LM": 1.231802614909805,
+   "p_diagnostico": 0.7453872688009318
+  },
+  "bai_perron_brecha": {
+   "n_bkps": 2,
+   "fechas": [
+    "2021Q4",
+    "2023Q2"
+   ],
+   "bic": {
+    "0": -158.6868937479399,
+    "1": -177.0153868512603,
+    "2": -179.02684090646972
+   }
+  },
+  "att_por_cohorte": {
+   "2024Q1": -0.025507532434082096,
+   "2025Q2": -0.08744442325418528,
+   "2025Q3": -0.0353979933759626,
+   "2025Q4": -0.2228855628219942
+  }
+ }
+}

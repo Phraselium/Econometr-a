@@ -7,7 +7,7 @@
     "crudos": [
       "data/raw/v9/gva_fianzas",
       "data/raw/v5/gva_fianzas_*.csv",
-      "data/raw/pdf/serpavi_v2_municipios.csv",
+      "data/raw/pdf/serpavi_v2_municipios.csv.gz",
       "data/raw/ine_ipc_alquiler.csv",
       "data/raw/ine_v2_ipc_alquiler_prov.csv",
       "data/raw/v3/incasol_fianzas_municipio_v3.csv.gz",
@@ -665,7 +665,7 @@
         "restringido_licencia": false
       },
       {
-        "comparacion": "SERPAVI municipal VC: crudo serpavi_v2_municipios.csv vs base",
+        "comparacion": "SERPAVI municipal VC: crudo serpavi_v2_municipios.csv.gz vs base",
         "fuente": "SERPAVI",
         "n_comparados": 28716,
         "revision_media_abs": 0.0,
@@ -676,7 +676,7 @@
         "restringido_licencia": false
       },
       {
-        "comparacion": "SERPAVI municipal VU: crudo serpavi_v2_municipios.csv vs base",
+        "comparacion": "SERPAVI municipal VU: crudo serpavi_v2_municipios.csv.gz vs base",
         "fuente": "SERPAVI",
         "n_comparados": 33052,
         "revision_media_abs": 0.0,

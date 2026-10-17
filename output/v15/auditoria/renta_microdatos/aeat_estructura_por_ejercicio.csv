@@ -1,0 +1,13 @@
+ejercicio,municipios,filas,conceptos_distintos,filas_por_municipio_mediana,tiene_NUM_DECLARACIONES,tiene_RENTA_BRUTA_MEDIA,tiene_RENTA_DISPONIBLE_MEDIA,valencia_46250_presente,pct_valores_nulos,valor_mediano_global
+2013,320,17920,55,56.0,False,False,False,True,3.2,479.0
+2014,322,18032,55,56.0,False,False,False,True,3.3,481.0
+2015,319,17864,55,56.0,False,False,False,True,3.2,482.0
+2016,317,18703,57,59.0,True,True,True,True,8.2,11081.5
+2017,317,18703,57,59.0,True,True,True,True,8.2,11746.0
+2018,316,19592,60,62.0,True,True,True,True,8.6,8627.0
+2019,318,19716,60,62.0,True,True,True,True,8.6,8979.0
+2020,321,19902,60,62.0,True,True,True,True,8.7,8166.0
+2021,320,19840,60,62.0,True,True,True,True,8.5,9213.0
+2022,325,19825,61,61.0,True,True,True,True,5.4,15390.0
+2023,324,19764,61,61.0,True,True,True,True,5.4,16228.0
+2024,324,19764,61,61.0,True,True,True,True,5.2,17048.5

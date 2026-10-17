@@ -1,0 +1,21 @@
+anio,AEAT,ADRH,n_municipios,pearson_log,spearman,razon_AEAT_sobre_ADRH_mediana,razon_p10,razon_p90,nota
+2019,renta_bruta_media,neta_persona,318,0.587,0.681,2.0562,1.7812,2.3347,
+2019,renta_disponible_media,neta_persona,318,0.57,0.681,1.7239,1.5269,1.9238,
+2019,renta_bruta_media,neta_hogar,318,0.657,0.735,0.816,0.7301,0.9065,
+2019,renta_disponible_media,neta_hogar,318,0.637,0.732,0.6858,0.6231,0.7561,
+2020,renta_bruta_media,neta_persona,321,0.768,0.721,2.0275,1.7777,2.2725,
+2020,renta_disponible_media,neta_persona,321,0.769,0.722,1.6962,1.5252,1.9103,
+2020,renta_bruta_media,neta_hogar,321,0.828,0.765,0.8072,0.726,0.8984,
+2020,renta_disponible_media,neta_hogar,321,0.825,0.764,0.68,0.6199,0.7507,
+2021,renta_bruta_media,neta_persona,320,0.736,0.691,2.0348,1.7673,2.2693,"2021 ADRH solo en crudo (campo etiquetado por orden, supuesto)"
+2021,renta_disponible_media,neta_persona,320,0.738,0.698,1.6949,1.5068,1.8868,"2021 ADRH solo en crudo (campo etiquetado por orden, supuesto)"
+2021,renta_bruta_media,neta_hogar,320,0.796,0.732,0.8119,0.7287,0.9115,"2021 ADRH solo en crudo (campo etiquetado por orden, supuesto)"
+2021,renta_disponible_media,neta_hogar,320,0.791,0.732,0.6804,0.6174,0.7548,"2021 ADRH solo en crudo (campo etiquetado por orden, supuesto)"
+2022,renta_bruta_media,neta_persona,324,0.723,0.665,2.0066,1.7526,2.301,
+2022,renta_disponible_media,neta_persona,324,0.727,0.672,1.6699,1.4974,1.885,
+2022,renta_bruta_media,neta_hogar,324,0.791,0.717,0.8052,0.7237,0.9092,
+2022,renta_disponible_media,neta_hogar,324,0.789,0.716,0.6729,0.6125,0.7519,
+2023,renta_bruta_media,neta_persona,324,0.727,0.694,1.9406,1.7232,2.1731,
+2023,renta_disponible_media,neta_persona,324,0.735,0.706,1.6167,1.4579,1.7831,
+2023,renta_bruta_media,neta_hogar,324,0.796,0.784,0.7813,0.7145,0.8548,
+2023,renta_disponible_media,neta_hogar,324,0.797,0.786,0.6528,0.5979,0.7036,

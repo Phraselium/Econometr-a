@@ -1,0 +1,34 @@
+variable,n_ediciones,n_fechas,edicion,origen,n_filas,redistribuible,n_posterior_prereg,descarga
+bcn_hut_registro,1,32,descarga manual del autor (normalizado) (descarga 2026-10-16,data/raw/v11/manual/bcn_hut_trimestral.csv.gz,886,True,67,2026-10-16
+eurostat_plataformas_noches,1,8,SDMX 2.1 TSV (dissemination API) (descarga 2026-10-14),data/raw/v9/eurostat_plataformas/tour_ce_oan3.csv.gz,1440,True,0,2026-10-14
+iab_disponibilidad_365_media,1,1,2026 (descarga 2026-10-14),data/raw/v9/insideairbnb/insideairbnb_seccion.csv.gz,4335,True,4335,2026-10-14
+iab_n_anuncios,1,1,2026 (descarga 2026-10-14),data/raw/v9/insideairbnb/insideairbnb_seccion.csv.gz,4335,True,4335,2026-10-14
+iab_n_con_licencia,1,1,2026 (descarga 2026-10-14),data/raw/v9/insideairbnb/insideairbnb_seccion.csv.gz,4335,True,4335,2026-10-14
+iab_n_entire_home,1,1,2026 (descarga 2026-10-14),data/raw/v9/insideairbnb/insideairbnb_seccion.csv.gz,4335,True,4335,2026-10-14
+iab_n_hotel_room,1,1,2026 (descarga 2026-10-14),data/raw/v9/insideairbnb/insideairbnb_seccion.csv.gz,4335,True,4335,2026-10-14
+iab_n_private_room,1,1,2026 (descarga 2026-10-14),data/raw/v9/insideairbnb/insideairbnb_seccion.csv.gz,4335,True,4335,2026-10-14
+iab_n_shared_room,1,1,2026 (descarga 2026-10-14),data/raw/v9/insideairbnb/insideairbnb_seccion.csv.gz,4335,True,4335,2026-10-14
+iab_resenas_ultimos_12m,1,1,2026 (descarga 2026-10-14),data/raw/v9/insideairbnb/insideairbnb_seccion.csv.gz,4335,True,4335,2026-10-14
+idescat_apartamentos_n,1,11,IDESCAT turall (consulta 2026-10-15) (descarga 2026-10-15),data/raw/v9/cat_turisme/idescat_allotjaments_municipi.csv.gz,10417,True,0,2026-10-15
+idescat_apartamentos_plazas,1,11,IDESCAT turall (consulta 2026-10-15) (descarga 2026-10-15),data/raw/v9/cat_turisme/idescat_allotjaments_municipi.csv.gz,10417,True,0,2026-10-15
+idescat_hut_n,1,11,IDESCAT turall (consulta 2026-10-15) (descarga 2026-10-15),data/raw/v9/cat_turisme/idescat_allotjaments_municipi.csv.gz,10417,True,0,2026-10-15
+idescat_hut_plazas,1,11,IDESCAT turall (consulta 2026-10-15) (descarga 2026-10-15),data/raw/v9/cat_turisme/idescat_allotjaments_municipi.csv.gz,10417,True,0,2026-10-15
+ine_tmov_interno_turistas,1,86,"INE 53464 (interno), API tempus (descarga 2026-10-15)",data/raw/v11/ine_turismo_moviles/turismo_moviles_interno_municipio.csv.gz,43680,True,1061,2026-10-15
+ine_tmov_receptor_turistas,1,78,"INE 52048 (receptor), API tempus (descarga 2026-10-15)",data/raw/v11/ine_turismo_moviles/turismo_moviles_receptor_municipio.csv.gz,22010,True,0,2026-10-15
+ine_vut_plazas,1,12,proyecto,data/raw/v3/ine_v3_vut_seccion.csv.gz,560274,True,0,
+ine_vut_porcentaje_vivienda_turistica,1,12,proyecto,data/raw/v3/ine_v3_vut_seccion.csv.gz,545992,True,0,
+ine_vut_vivienda_turistica,1,12,proyecto,data/raw/v3/ine_v3_vut_seccion.csv.gz,560274,True,0,
+monitor_plataformas_noches,1,8,monitor V10 (fecha de descarga en output/v10/monitor/monitor,data/raw/v10/monitor/plataformas_noches.csv,8,True,0,
+reate_habitaciones_uso_turistico,1,1,"REATE, corte 2026-10-15 (descarga 2026-10-15)",data/raw/v11/euskadi_vut/reate_habitaciones_2026-10-15.csv.gz,125,True,125,2026-10-15
+reate_viviendas_uso_turistico,1,1,"REATE, corte 2026-10-15 (descarga 2026-10-15)",data/raw/v11/euskadi_vut/reate_viviendas_2026-10-15.csv.gz,190,True,190,2026-10-15
+turistas,1,43,"panel procesado del proyecto (data/processed, construcción v",data/processed/v8/nacional_q_v8.csv,43,True,0,2026-10-10
+turistas_ccaa,1,43,"panel procesado del proyecto (data/processed, construcción v",data/processed/v8/panel_ccaa_q_v8.csv,258,True,0,2026-10-10
+vut_pct_sobre_total,1,13,"panel procesado del proyecto (data/processed, construcción v",data/processed/valencia.csv,26,True,0,2026-10-10
+vut_plazas,1,24,"panel procesado del proyecto (data/processed, construcción v",data/processed/v8/nacional_q_v8.csv,109,True,0,2026-10-10
+vut_plazas_por_vivienda,1,13,"panel procesado del proyecto (data/processed, construcción v",data/processed/valencia.csv,26,True,0,2026-10-10
+vut_registro_gva,1,2,v9 (descarga 2026-10-14),data/raw/v9/gva_vut/gva_vut_panel_municipio.csv,905,True,452,2026-10-14
+vut_registro_gva_reconstruido,1,121,v9 (descarga 2026-10-14),data/raw/v9/gva_vut/gva_vut_panel_municipio.csv,45416,True,0,2026-10-14
+vut_regulacion_ccaa,1,78,"panel procesado del proyecto (data/processed, construcción v",data/processed/v8/panel_ccaa_q_v8.csv,1326,True,0,2026-10-10
+vut_stock_gva,1,60,"panel procesado del proyecto (data/processed, construcción v",data/processed/valencia.csv,180,True,0,2026-10-10
+vut_viviendas,1,24,"panel procesado del proyecto (data/processed, construcción v",data/processed/v8/nacional_q_v8.csv,709,True,0,2026-10-10
+vut_viviendas_turisticas,1,13,"panel procesado del proyecto (data/processed, construcción v",data/processed/valencia.csv,26,True,0,2026-10-10

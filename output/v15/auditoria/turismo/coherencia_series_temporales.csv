@@ -1,0 +1,3 @@
+par,n_municipios_serie,corr_niveles_mediana,corr_niveles_p25,corr_cambios_mediana,corr_cambios_p25,corr_cambios_p75
+INE_VUT vs GVA_reconstruido,169,0.821,0.493,0.412,0.2,0.623
+INE_VUT vs IDESCAT_HUT_n,234,0.501,0.046,0.367,0.118,0.647

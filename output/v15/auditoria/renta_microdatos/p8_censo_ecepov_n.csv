@@ -1,0 +1,13 @@
+fuente,cruce,celdas,min_n,celdas_n_menor_10,celdas_n200,pct_celdas_n200
+"Censo 2021 muestra 10 % (nacional, hogares de muestra)",nacionalidad×tenencia,6,23215,0,6,100.0
+"Censo 2021 muestra 10 % (nacional, hogares de muestra)",nacionalidad×edad×tenencia,24,1901,0,24,100.0
+"Censo 2021 muestra 10 % (nacional, hogares de muestra)",nacionalidad×llegada×tenencia,30,153,0,29,96.7
+"Censo 2021 muestra 10 % (nacional, hogares de muestra)",nacionalidad×edad×tenencia×tipo_hogar,192,2,9,157,81.8
+ECEPOV 2021 (viviendas muestrales; persona 01 del hogar),tenencia,6,4215,0,6,100.0
+ECEPOV 2021 (viviendas muestrales; persona 01 del hogar),tenencia×ingreso,24,563,0,24,100.0
+ECEPOV 2021 (viviendas muestrales; persona 01 del hogar),tenencia×nacionalidad,12,186,0,11,91.7
+ECEPOV 2021 (viviendas muestrales; persona 01 del hogar),tenencia×nacionalidad×ingreso,48,27,0,37,77.1
+ECEPOV 2021 (viviendas muestrales; persona 01 del hogar),tenencia×nacionalidad×edad,48,23,0,35,72.9
+ECEPOV 2021 (viviendas muestrales; persona 01 del hogar),tenencia×nacionalidad×edad×ingreso,192,1,17,101,52.6
+ECEPOV 2021 (viviendas muestrales; persona 01 del hogar),alquiler: nacionalidad×edad×ingreso,32,44,0,26,81.2
+ECEPOV 2021 (viviendas muestrales; persona 01 del hogar),alquiler: nacionalidad×ingreso,8,772,0,8,100.0

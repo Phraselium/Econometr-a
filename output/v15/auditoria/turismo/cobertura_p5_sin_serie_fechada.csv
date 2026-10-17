@@ -1,0 +1,5 @@
+exposicion,unidades,cortes,años_con_corte_4T,años_solapados_con_resultado,unidades_con_resultado_por_codigo_INE,nota
+BCN_HUT_barrio(2023T1-2026T3),66,13,"2023,2024,2025","2023,2024",0,código de barrio de Barcelona no es INE; sin correspondencia barrio-sección/distrito en el repositorio
+REATE_viviendas(corte 2026-10-15),190,1,,,0,corte único posterior a los resultados (SERPAVI hasta 2024): sin periodo previo
+InsideAirbnb_sección(2026-09),4335,1,,,0,corte único posterior a los resultados; no oficial
+GVA_registro_cortes(2025-01-26 y 2026-10-14),477,2,,2024 (solo aproximado: corte 2025-01),0,tramo 2025-02 a 2026-10 sin fechar (sin identificador común)

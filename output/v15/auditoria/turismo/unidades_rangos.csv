@@ -1,0 +1,14 @@
+comprobacion,variable,n_incumple,n_total,detalle
+porcentaje_fuera_0_100,ine_vut_porcentaje_vivienda_turistica,0,545992,
+porcentaje_mayor_50,ine_vut_porcentaje_vivienda_turistica,34,545992,secciones con más de la mitad de viviendas turísticas
+plazas_con_0_viviendas(seccion),ine_vut_plazas,0,434482,
+viviendas_sin_plazas(seccion),ine_vut_plazas,0,277215,
+"plazas_por_vivienda_fuera_[1,20](seccion)",ine_vut_plazas,210,277215,"mediana 4.50, p99 14.00, max 62.0"
+plazas_con_0_viviendas(distrito),ine_vut_plazas,0,125792,
+viviendas_sin_plazas(distrito),ine_vut_plazas,0,84371,
+"plazas_por_vivienda_fuera_[1,20](distrito)",ine_vut_plazas,133,84371,"mediana 5.59, p99 16.00, max 62.0"
+iab_tipos_no_suman_anuncios,iab_n_anuncios,0,4335,
+iab_licencias_mayor_anuncios,iab_n_con_licencia,0,4335,
+iab_disponibilidad_fuera_0_365,iab_disponibilidad_365_media,0,4335,
+eurostat_total_distinto_dom_mas_for,eurostat_plataformas_noches,0,480,
+bcn_suma_barrios_distinta_total,bcn_hut_registro,0,13,cortes con barrios: 13

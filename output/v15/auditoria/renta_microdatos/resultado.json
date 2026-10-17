@@ -1,0 +1,2656 @@
+{
+ "rama": "v15/auditoria/renta_microdatos",
+ "pregunta": "¿Son utilizables la renta de la AEAT (2013-2015 y 2016-2024), el ADRH por sección y los microdatos (ECV, ECEPOV, Censo 2021) para P8 (esfuerzo de acceso por renta, edad, nacionalidad y tenencia)? Unidades, atípicos, coherencia, rupturas y tamaños muestrales.",
+ "capa": "C4",
+ "datos": [
+  "AEAT IRPF por municipios, Comunitat Valenciana (crudo 2013-2024; base 2016-2024)",
+  "INE ADRH por sección (base 2019, 2020, 2022, 2023; crudo 2021)",
+  "INE ECV microdatos 2018-2025",
+  "INE ECEPOV 2021 (microdatos)",
+  "INE Censo 2021, muestra 10 % (c21md_*, solo agregados n>=10)",
+  "INE EPA 2018T1-2026T2 (solo inventario)"
+ ],
+ "N": {
+  "municipios_AEAT": 331,
+  "secciones_ADRH_base": 36750,
+  "personas_ECV": 435132,
+  "viviendas_ECEPOV": 172444
+ },
+ "metodo": "Auditoría descriptiva determinista (SEED=20261010): razones entre ejercicios por municipio y concepto, z robusto con mediana y MAD (|z|>5) en cortes transversales y variaciones, correlación de niveles (log) y de variaciones entre AEAT y ADRH agregado a municipio por código INE, recuentos muestrales por año × grupo y por cruce de P8 (umbral n>=200). Sin estimación de efectos.",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "aeat_dictamen_2013_2015": {
+   "veredicto": "NO UTILIZABLE como serie de renta en euros; el reescalado no es aplicable",
+   "motivo": "La tabla de 2013-2015 no tiene las mismas magnitudes que la de 2016-2024: carece de NÚMERO DE DECLARACIONES, RENTA BRUTA MEDIA y RENTA DISPONIBLE MEDIA y sus valores tienen el orden de un recuento de declarantes por concepto, no de un importe. Un factor de unidades (euros frente a miles de euros) no la reconcilia (ver razones).",
+   "razon_mediana_2014_2015": {
+    "trabajo": 1.0537,
+    "capital_mobiliario": 0.9337,
+    "inmuebles_no_afectos": 0.9696,
+    "actividades_economicas": 1.0889,
+    "ganancias_patrimoniales": 0.9237,
+    "cuota_autoliquidacion": 1.0972
+   },
+   "razon_mediana_2015_2016": {
+    "trabajo": 0.0,
+    "capital_mobiliario": 0.0016,
+    "inmuebles_no_afectos": 0.0008,
+    "actividades_economicas": 0.0001,
+    "ganancias_patrimoniales": 0.0003,
+    "cuota_autoliquidacion": 0.0003
+   },
+   "razon_mediana_2016_2017": {
+    "trabajo": 0.9478,
+    "capital_mobiliario": 1.0995,
+    "inmuebles_no_afectos": 0.9228,
+    "actividades_economicas": 0.9465,
+    "ganancias_patrimoniales": 0.9068,
+    "cuota_autoliquidacion": 0.9378
+   }
+  },
+  "aeat_estructura_por_ejercicio": [
+   {
+    "ejercicio": 2013,
+    "municipios": 320,
+    "filas": 17920,
+    "conceptos_distintos": 55,
+    "filas_por_municipio_mediana": 56.0,
+    "tiene_NUM_DECLARACIONES": false,
+    "tiene_RENTA_BRUTA_MEDIA": false,
+    "tiene_RENTA_DISPONIBLE_MEDIA": false,
+    "valencia_46250_presente": true,
+    "pct_valores_nulos": 3.2,
+    "valor_mediano_global": 479.0
+   },
+   {
+    "ejercicio": 2014,
+    "municipios": 322,
+    "filas": 18032,
+    "conceptos_distintos": 55,
+    "filas_por_municipio_mediana": 56.0,
+    "tiene_NUM_DECLARACIONES": false,
+    "tiene_RENTA_BRUTA_MEDIA": false,
+    "tiene_RENTA_DISPONIBLE_MEDIA": false,
+    "valencia_46250_presente": true,
+    "pct_valores_nulos": 3.3,
+    "valor_mediano_global": 481.0
+   },
+   {
+    "ejercicio": 2015,
+    "municipios": 319,
+    "filas": 17864,
+    "conceptos_distintos": 55,
+    "filas_por_municipio_mediana": 56.0,
+    "tiene_NUM_DECLARACIONES": false,
+    "tiene_RENTA_BRUTA_MEDIA": false,
+    "tiene_RENTA_DISPONIBLE_MEDIA": false,
+    "valencia_46250_presente": true,
+    "pct_valores_nulos": 3.2,
+    "valor_mediano_global": 482.0
+   },
+   {
+    "ejercicio": 2016,
+    "municipios": 317,
+    "filas": 18703,
+    "conceptos_distintos": 57,
+    "filas_por_municipio_mediana": 59.0,
+    "tiene_NUM_DECLARACIONES": true,
+    "tiene_RENTA_BRUTA_MEDIA": true,
+    "tiene_RENTA_DISPONIBLE_MEDIA": true,
+    "valencia_46250_presente": true,
+    "pct_valores_nulos": 8.2,
+    "valor_mediano_global": 11081.5
+   },
+   {
+    "ejercicio": 2017,
+    "municipios": 317,
+    "filas": 18703,
+    "conceptos_distintos": 57,
+    "filas_por_municipio_mediana": 59.0,
+    "tiene_NUM_DECLARACIONES": true,
+    "tiene_RENTA_BRUTA_MEDIA": true,
+    "tiene_RENTA_DISPONIBLE_MEDIA": true,
+    "valencia_46250_presente": true,
+    "pct_valores_nulos": 8.2,
+    "valor_mediano_global": 11746.0
+   },
+   {
+    "ejercicio": 2018,
+    "municipios": 316,
+    "filas": 19592,
+    "conceptos_distintos": 60,
+    "filas_por_municipio_mediana": 62.0,
+    "tiene_NUM_DECLARACIONES": true,
+    "tiene_RENTA_BRUTA_MEDIA": true,
+    "tiene_RENTA_DISPONIBLE_MEDIA": true,
+    "valencia_46250_presente": true,
+    "pct_valores_nulos": 8.6,
+    "valor_mediano_global": 8627.0
+   },
+   {
+    "ejercicio": 2019,
+    "municipios": 318,
+    "filas": 19716,
+    "conceptos_distintos": 60,
+    "filas_por_municipio_mediana": 62.0,
+    "tiene_NUM_DECLARACIONES": true,
+    "tiene_RENTA_BRUTA_MEDIA": true,
+    "tiene_RENTA_DISPONIBLE_MEDIA": true,
+    "valencia_46250_presente": true,
+    "pct_valores_nulos": 8.6,
+    "valor_mediano_global": 8979.0
+   },
+   {
+    "ejercicio": 2020,
+    "municipios": 321,
+    "filas": 19902,
+    "conceptos_distintos": 60,
+    "filas_por_municipio_mediana": 62.0,
+    "tiene_NUM_DECLARACIONES": true,
+    "tiene_RENTA_BRUTA_MEDIA": true,
+    "tiene_RENTA_DISPONIBLE_MEDIA": true,
+    "valencia_46250_presente": true,
+    "pct_valores_nulos": 8.7,
+    "valor_mediano_global": 8166.0
+   },
+   {
+    "ejercicio": 2021,
+    "municipios": 320,
+    "filas": 19840,
+    "conceptos_distintos": 60,
+    "filas_por_municipio_mediana": 62.0,
+    "tiene_NUM_DECLARACIONES": true,
+    "tiene_RENTA_BRUTA_MEDIA": true,
+    "tiene_RENTA_DISPONIBLE_MEDIA": true,
+    "valencia_46250_presente": true,
+    "pct_valores_nulos": 8.5,
+    "valor_mediano_global": 9213.0
+   },
+   {
+    "ejercicio": 2022,
+    "municipios": 325,
+    "filas": 19825,
+    "conceptos_distintos": 61,
+    "filas_por_municipio_mediana": 61.0,
+    "tiene_NUM_DECLARACIONES": true,
+    "tiene_RENTA_BRUTA_MEDIA": true,
+    "tiene_RENTA_DISPONIBLE_MEDIA": true,
+    "valencia_46250_presente": true,
+    "pct_valores_nulos": 5.4,
+    "valor_mediano_global": 15390.0
+   },
+   {
+    "ejercicio": 2023,
+    "municipios": 324,
+    "filas": 19764,
+    "conceptos_distintos": 61,
+    "filas_por_municipio_mediana": 61.0,
+    "tiene_NUM_DECLARACIONES": true,
+    "tiene_RENTA_BRUTA_MEDIA": true,
+    "tiene_RENTA_DISPONIBLE_MEDIA": true,
+    "valencia_46250_presente": true,
+    "pct_valores_nulos": 5.4,
+    "valor_mediano_global": 16228.0
+   },
+   {
+    "ejercicio": 2024,
+    "municipios": 324,
+    "filas": 19764,
+    "conceptos_distintos": 61,
+    "filas_por_municipio_mediana": 61.0,
+    "tiene_NUM_DECLARACIONES": true,
+    "tiene_RENTA_BRUTA_MEDIA": true,
+    "tiene_RENTA_DISPONIBLE_MEDIA": true,
+    "valencia_46250_presente": true,
+    "pct_valores_nulos": 5.2,
+    "valor_mediano_global": 17048.5
+   }
+  ],
+  "aeat_razones": [
+   {
+    "concepto": "trabajo",
+    "par": "2013/2014",
+    "n_municipios": 318,
+    "razon_p10": 0.9672,
+    "razon_mediana": 0.9936,
+    "razon_p90": 1.0165,
+    "log10_mediana": -0.003,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "trabajo",
+    "par": "2014/2015",
+    "n_municipios": 318,
+    "razon_p10": 1.0256,
+    "razon_mediana": 1.0537,
+    "razon_p90": 1.0899,
+    "log10_mediana": 0.023,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "trabajo",
+    "par": "2015/2016",
+    "n_municipios": 317,
+    "razon_p10": 0.0,
+    "razon_mediana": 0.0,
+    "razon_p90": 0.0001,
+    "log10_mediana": -4.308,
+    "pct_razon_entre_0.5_y_2": 0.0
+   },
+   {
+    "concepto": "trabajo",
+    "par": "2016/2017",
+    "n_municipios": 316,
+    "razon_p10": 0.9274,
+    "razon_mediana": 0.9478,
+    "razon_p90": 0.9705,
+    "log10_mediana": -0.023,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "trabajo",
+    "par": "2017/2018",
+    "n_municipios": 315,
+    "razon_p10": 0.9165,
+    "razon_mediana": 0.9402,
+    "razon_p90": 0.9639,
+    "log10_mediana": -0.027,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "capital_mobiliario",
+    "par": "2013/2014",
+    "n_municipios": 318,
+    "razon_p10": 0.979,
+    "razon_mediana": 1.0205,
+    "razon_p90": 1.064,
+    "log10_mediana": 0.009,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "capital_mobiliario",
+    "par": "2014/2015",
+    "n_municipios": 318,
+    "razon_p10": 0.8323,
+    "razon_mediana": 0.9337,
+    "razon_p90": 0.9874,
+    "log10_mediana": -0.03,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "capital_mobiliario",
+    "par": "2015/2016",
+    "n_municipios": 317,
+    "razon_p10": 0.0007,
+    "razon_mediana": 0.0016,
+    "razon_p90": 0.0032,
+    "log10_mediana": -2.789,
+    "pct_razon_entre_0.5_y_2": 0.0
+   },
+   {
+    "concepto": "capital_mobiliario",
+    "par": "2016/2017",
+    "n_municipios": 316,
+    "razon_p10": 0.784,
+    "razon_mediana": 1.0995,
+    "razon_p90": 1.6189,
+    "log10_mediana": 0.041,
+    "pct_razon_entre_0.5_y_2": 93.0
+   },
+   {
+    "concepto": "capital_mobiliario",
+    "par": "2017/2018",
+    "n_municipios": 315,
+    "razon_p10": 0.6277,
+    "razon_mediana": 0.9493,
+    "razon_p90": 1.411,
+    "log10_mediana": -0.023,
+    "pct_razon_entre_0.5_y_2": 93.3
+   },
+   {
+    "concepto": "inmuebles_no_afectos",
+    "par": "2013/2014",
+    "n_municipios": 318,
+    "razon_p10": 0.9171,
+    "razon_mediana": 0.9584,
+    "razon_p90": 0.9939,
+    "log10_mediana": -0.018,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "inmuebles_no_afectos",
+    "par": "2014/2015",
+    "n_municipios": 318,
+    "razon_p10": 0.9346,
+    "razon_mediana": 0.9696,
+    "razon_p90": 1.0,
+    "log10_mediana": -0.013,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "inmuebles_no_afectos",
+    "par": "2015/2016",
+    "n_municipios": 317,
+    "razon_p10": 0.0004,
+    "razon_mediana": 0.0008,
+    "razon_p90": 0.0015,
+    "log10_mediana": -3.087,
+    "pct_razon_entre_0.5_y_2": 0.0
+   },
+   {
+    "concepto": "inmuebles_no_afectos",
+    "par": "2016/2017",
+    "n_municipios": 316,
+    "razon_p10": 0.8663,
+    "razon_mediana": 0.9228,
+    "razon_p90": 0.9962,
+    "log10_mediana": -0.035,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "inmuebles_no_afectos",
+    "par": "2017/2018",
+    "n_municipios": 315,
+    "razon_p10": 0.8374,
+    "razon_mediana": 0.917,
+    "razon_p90": 0.9864,
+    "log10_mediana": -0.038,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "actividades_economicas",
+    "par": "2013/2014",
+    "n_municipios": 318,
+    "razon_p10": 0.9539,
+    "razon_mediana": 0.9963,
+    "razon_p90": 1.0494,
+    "log10_mediana": -0.002,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "actividades_economicas",
+    "par": "2014/2015",
+    "n_municipios": 318,
+    "razon_p10": 1.0262,
+    "razon_mediana": 1.0889,
+    "razon_p90": 1.1749,
+    "log10_mediana": 0.037,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "actividades_economicas",
+    "par": "2015/2016",
+    "n_municipios": 317,
+    "razon_p10": 0.0001,
+    "razon_mediana": 0.0001,
+    "razon_p90": 0.0002,
+    "log10_mediana": -3.875,
+    "pct_razon_entre_0.5_y_2": 0.0
+   },
+   {
+    "concepto": "actividades_economicas",
+    "par": "2016/2017",
+    "n_municipios": 316,
+    "razon_p10": 0.8761,
+    "razon_mediana": 0.9465,
+    "razon_p90": 1.049,
+    "log10_mediana": -0.024,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "actividades_economicas",
+    "par": "2017/2018",
+    "n_municipios": 315,
+    "razon_p10": 0.861,
+    "razon_mediana": 0.9422,
+    "razon_p90": 1.0333,
+    "log10_mediana": -0.026,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "ganancias_patrimoniales",
+    "par": "2013/2014",
+    "n_municipios": 318,
+    "razon_p10": 0.5843,
+    "razon_mediana": 0.7569,
+    "razon_p90": 0.9252,
+    "log10_mediana": -0.121,
+    "pct_razon_entre_0.5_y_2": 97.2
+   },
+   {
+    "concepto": "ganancias_patrimoniales",
+    "par": "2014/2015",
+    "n_municipios": 318,
+    "razon_p10": 0.6923,
+    "razon_mediana": 0.9237,
+    "razon_p90": 1.1066,
+    "log10_mediana": -0.034,
+    "pct_razon_entre_0.5_y_2": 99.7
+   },
+   {
+    "concepto": "ganancias_patrimoniales",
+    "par": "2015/2016",
+    "n_municipios": 317,
+    "razon_p10": 0.0002,
+    "razon_mediana": 0.0003,
+    "razon_p90": 0.0008,
+    "log10_mediana": -3.457,
+    "pct_razon_entre_0.5_y_2": 0.0
+   },
+   {
+    "concepto": "ganancias_patrimoniales",
+    "par": "2016/2017",
+    "n_municipios": 316,
+    "razon_p10": 0.386,
+    "razon_mediana": 0.9068,
+    "razon_p90": 1.9478,
+    "log10_mediana": -0.043,
+    "pct_razon_entre_0.5_y_2": 74.4
+   },
+   {
+    "concepto": "ganancias_patrimoniales",
+    "par": "2017/2018",
+    "n_municipios": 315,
+    "razon_p10": 0.394,
+    "razon_mediana": 0.8348,
+    "razon_p90": 1.8247,
+    "log10_mediana": -0.078,
+    "pct_razon_entre_0.5_y_2": 74.9
+   },
+   {
+    "concepto": "cuota_autoliquidacion",
+    "par": "2013/2014",
+    "n_municipios": 318,
+    "razon_p10": 0.9451,
+    "razon_mediana": 0.9889,
+    "razon_p90": 1.0236,
+    "log10_mediana": -0.005,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "cuota_autoliquidacion",
+    "par": "2014/2015",
+    "n_municipios": 318,
+    "razon_p10": 1.0436,
+    "razon_mediana": 1.0972,
+    "razon_p90": 1.1819,
+    "log10_mediana": 0.04,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "cuota_autoliquidacion",
+    "par": "2015/2016",
+    "n_municipios": 317,
+    "razon_p10": 0.0002,
+    "razon_mediana": 0.0003,
+    "razon_p90": 0.0003,
+    "log10_mediana": -3.587,
+    "pct_razon_entre_0.5_y_2": 0.0
+   },
+   {
+    "concepto": "cuota_autoliquidacion",
+    "par": "2016/2017",
+    "n_municipios": 316,
+    "razon_p10": 0.8785,
+    "razon_mediana": 0.9378,
+    "razon_p90": 0.9928,
+    "log10_mediana": -0.028,
+    "pct_razon_entre_0.5_y_2": 100.0
+   },
+   {
+    "concepto": "cuota_autoliquidacion",
+    "par": "2017/2018",
+    "n_municipios": 315,
+    "razon_p10": 0.851,
+    "razon_mediana": 0.924,
+    "razon_p90": 0.9892,
+    "log10_mediana": -0.034,
+    "pct_razon_entre_0.5_y_2": 100.0
+   }
+  ],
+  "aeat_hipotesis_recuentos_2015": [
+   {
+    "concepto": "trabajo",
+    "razon_2015_sobre_importe_2016_mediana": 4.922e-05,
+    "razon_2015_sobre_n_declaraciones_2016_mediana": 0.7987,
+    "razon_2015_sobre_n_declaraciones_2016_p10": 0.7412,
+    "razon_2015_sobre_n_declaraciones_2016_p90": 0.8351,
+    "pct_municipios_2015_menor_igual_1.2_n_declaraciones_2016": 100.0,
+    "n_municipios": 317
+   },
+   {
+    "concepto": "capital_mobiliario",
+    "razon_2015_sobre_importe_2016_mediana": 0.001627,
+    "razon_2015_sobre_n_declaraciones_2016_mediana": 0.6988,
+    "razon_2015_sobre_n_declaraciones_2016_p10": 0.6236,
+    "razon_2015_sobre_n_declaraciones_2016_p90": 0.8233,
+    "pct_municipios_2015_menor_igual_1.2_n_declaraciones_2016": 100.0,
+    "n_municipios": 317
+   },
+   {
+    "concepto": "inmuebles_no_afectos",
+    "razon_2015_sobre_importe_2016_mediana": 0.0008191,
+    "razon_2015_sobre_n_declaraciones_2016_mediana": 0.4077,
+    "razon_2015_sobre_n_declaraciones_2016_p10": 0.3387,
+    "razon_2015_sobre_n_declaraciones_2016_p90": 0.4717,
+    "pct_municipios_2015_menor_igual_1.2_n_declaraciones_2016": 100.0,
+    "n_municipios": 317
+   },
+   {
+    "concepto": "actividades_economicas",
+    "razon_2015_sobre_importe_2016_mediana": 0.0001334,
+    "razon_2015_sobre_n_declaraciones_2016_mediana": 0.1987,
+    "razon_2015_sobre_n_declaraciones_2016_p10": 0.1293,
+    "razon_2015_sobre_n_declaraciones_2016_p90": 0.3522,
+    "pct_municipios_2015_menor_igual_1.2_n_declaraciones_2016": 100.0,
+    "n_municipios": 317
+   },
+   {
+    "concepto": "ganancias_patrimoniales",
+    "razon_2015_sobre_importe_2016_mediana": 0.0003495,
+    "razon_2015_sobre_n_declaraciones_2016_mediana": 0.1138,
+    "razon_2015_sobre_n_declaraciones_2016_p10": 0.0882,
+    "razon_2015_sobre_n_declaraciones_2016_p90": 0.1582,
+    "pct_municipios_2015_menor_igual_1.2_n_declaraciones_2016": 100.0,
+    "n_municipios": 317
+   },
+   {
+    "concepto": "cuota_autoliquidacion",
+    "razon_2015_sobre_importe_2016_mediana": 0.0002589,
+    "razon_2015_sobre_n_declaraciones_2016_mediana": 0.5384,
+    "razon_2015_sobre_n_declaraciones_2016_p10": 0.4577,
+    "razon_2015_sobre_n_declaraciones_2016_p90": 0.6328,
+    "pct_municipios_2015_menor_igual_1.2_n_declaraciones_2016": 100.0,
+    "n_municipios": 317
+   }
+  ],
+  "aeat_comprobacion_unidades_2016_2024": [
+   {
+    "ejercicio": 2016,
+    "n": 317,
+    "razon_importe_sobre_n_sobre_media_p05": 1.0,
+    "mediana": 1.0,
+    "p95": 1.0,
+    "renta_bruta_media_mediana_eur": 19857.0
+   },
+   {
+    "ejercicio": 2017,
+    "n": 317,
+    "razon_importe_sobre_n_sobre_media_p05": 1.0,
+    "mediana": 1.0,
+    "p95": 1.0,
+    "renta_bruta_media_mediana_eur": 20360.0
+   },
+   {
+    "ejercicio": 2018,
+    "n": 316,
+    "razon_importe_sobre_n_sobre_media_p05": 1.0,
+    "mediana": 1.0,
+    "p95": 1.0,
+    "renta_bruta_media_mediana_eur": 21054.0
+   },
+   {
+    "ejercicio": 2019,
+    "n": 318,
+    "razon_importe_sobre_n_sobre_media_p05": 1.0,
+    "mediana": 1.0,
+    "p95": 1.0,
+    "renta_bruta_media_mediana_eur": 21838.5
+   },
+   {
+    "ejercicio": 2020,
+    "n": 321,
+    "razon_importe_sobre_n_sobre_media_p05": 1.0,
+    "mediana": 1.0,
+    "p95": 1.0,
+    "renta_bruta_media_mediana_eur": 21758.0
+   },
+   {
+    "ejercicio": 2021,
+    "n": 320,
+    "razon_importe_sobre_n_sobre_media_p05": 1.0,
+    "mediana": 1.0,
+    "p95": 1.0,
+    "renta_bruta_media_mediana_eur": 23019.0
+   },
+   {
+    "ejercicio": 2022,
+    "n": 325,
+    "razon_importe_sobre_n_sobre_media_p05": 1.0,
+    "mediana": 1.0,
+    "p95": 1.0,
+    "renta_bruta_media_mediana_eur": 24113.0
+   },
+   {
+    "ejercicio": 2023,
+    "n": 324,
+    "razon_importe_sobre_n_sobre_media_p05": 1.0,
+    "mediana": 1.0,
+    "p95": 1.0,
+    "renta_bruta_media_mediana_eur": 25097.0
+   },
+   {
+    "ejercicio": 2024,
+    "n": 324,
+    "razon_importe_sobre_n_sobre_media_p05": 1.0,
+    "mediana": 1.0,
+    "p95": 1.0,
+    "renta_bruta_media_mediana_eur": 26465.0
+   }
+  ],
+  "aeat_conceptos_y_municipios": {
+   "conceptos_2015": 55,
+   "conceptos_2016": 57,
+   "conceptos_nombre_identico": [
+    "CUOTA RESULTANTE DE LA AUTOLIQUIDACIÓN"
+   ],
+   "municipios_solo_2015": [
+    "03085",
+    "12096"
+   ],
+   "municipios_solo_2016": []
+  },
+  "atipicos_recuento_resumen": [
+   {
+    "fuente": "ADRH",
+    "variable": "adrh_gini",
+    "tipo": "nivel_log_corte_transversal",
+    "n_atip": 0,
+    "n": 138190
+   },
+   {
+    "fuente": "ADRH",
+    "variable": "adrh_gini",
+    "tipo": "variacion_log_corte_transversal",
+    "n_atip": 362,
+    "n": 102662
+   },
+   {
+    "fuente": "ADRH",
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "nivel_log_corte_transversal",
+    "n_atip": 0,
+    "n": 142442
+   },
+   {
+    "fuente": "ADRH",
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion_log_corte_transversal",
+    "n_atip": 1236,
+    "n": 105674
+   },
+   {
+    "fuente": "ADRH",
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "nivel_log_corte_transversal",
+    "n_atip": 0,
+    "n": 142442
+   },
+   {
+    "fuente": "ADRH",
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion_log_corte_transversal",
+    "n_atip": 1213,
+    "n": 105674
+   },
+   {
+    "fuente": "AEAT",
+    "variable": "aeat_irpf_declaraciones",
+    "tipo": "nivel_log_corte_transversal",
+    "n_atip": 0,
+    "n": 2882
+   },
+   {
+    "fuente": "AEAT",
+    "variable": "aeat_irpf_declaraciones",
+    "tipo": "serie_municipal_variaciones",
+    "n_atip": 18,
+    "n": 316
+   },
+   {
+    "fuente": "AEAT",
+    "variable": "aeat_irpf_declaraciones",
+    "tipo": "variacion_interanual_log",
+    "n_atip": 13,
+    "n": 2553
+   },
+   {
+    "fuente": "AEAT",
+    "variable": "aeat_irpf_renta_bruta_media",
+    "tipo": "nivel_log_corte_transversal",
+    "n_atip": 14,
+    "n": 2882
+   },
+   {
+    "fuente": "AEAT",
+    "variable": "aeat_irpf_renta_bruta_media",
+    "tipo": "serie_municipal_variaciones",
+    "n_atip": 45,
+    "n": 316
+   },
+   {
+    "fuente": "AEAT",
+    "variable": "aeat_irpf_renta_bruta_media",
+    "tipo": "variacion_interanual_log",
+    "n_atip": 69,
+    "n": 2553
+   },
+   {
+    "fuente": "AEAT",
+    "variable": "aeat_irpf_renta_disponible_media",
+    "tipo": "nivel_log_corte_transversal",
+    "n_atip": 16,
+    "n": 2882
+   },
+   {
+    "fuente": "AEAT",
+    "variable": "aeat_irpf_renta_disponible_media",
+    "tipo": "serie_municipal_variaciones",
+    "n_atip": 52,
+    "n": 316
+   },
+   {
+    "fuente": "AEAT",
+    "variable": "aeat_irpf_renta_disponible_media",
+    "tipo": "variacion_interanual_log",
+    "n_atip": 66,
+    "n": 2553
+   },
+   {
+    "fuente": "AEAT",
+    "variable": "aeat_irpf_rentas_inmuebles_media",
+    "tipo": "nivel_log_corte_transversal",
+    "n_atip": 0,
+    "n": 2882
+   },
+   {
+    "fuente": "AEAT",
+    "variable": "aeat_irpf_rentas_inmuebles_media",
+    "tipo": "serie_municipal_variaciones",
+    "n_atip": 44,
+    "n": 316
+   },
+   {
+    "fuente": "AEAT",
+    "variable": "aeat_irpf_rentas_inmuebles_media",
+    "tipo": "variacion_interanual_log",
+    "n_atip": 36,
+    "n": 2553
+   }
+  ],
+  "atipicos_top40": [
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "4718601007",
+    "periodo": "2019->2020",
+    "z_robusto": 70.58,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "aeat_irpf_renta_disponible_media",
+    "tipo": "variacion",
+    "cod_ine": "46146",
+    "periodo": "2019",
+    "z_robusto": 54.0,
+    "fuente": "AEAT"
+   },
+   {
+    "variable": "aeat_irpf_renta_bruta_media",
+    "tipo": "variacion",
+    "cod_ine": "46146",
+    "periodo": "2019",
+    "z_robusto": 52.57,
+    "fuente": "AEAT"
+   },
+   {
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion",
+    "cod_ine": "4718601007",
+    "periodo": "2019->2020",
+    "z_robusto": 52.16,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "3502103004",
+    "periodo": "2022->2023",
+    "z_robusto": -51.92,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "1402101026",
+    "periodo": "2022->2023",
+    "z_robusto": -49.92,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "0812001004",
+    "periodo": "2019->2020",
+    "z_robusto": 49.62,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "2906709007",
+    "periodo": "2019->2020",
+    "z_robusto": -48.35,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion",
+    "cod_ine": "3502103004",
+    "periodo": "2022->2023",
+    "z_robusto": -47.96,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion",
+    "cod_ine": "0812001004",
+    "periodo": "2019->2020",
+    "z_robusto": 47.93,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion",
+    "cod_ine": "2807904013",
+    "periodo": "2019->2020",
+    "z_robusto": 47.52,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "2807904013",
+    "periodo": "2019->2020",
+    "z_robusto": 44.18,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "aeat_irpf_renta_disponible_media",
+    "tipo": "variacion",
+    "cod_ine": "46146",
+    "periodo": "2020",
+    "z_robusto": -43.88,
+    "fuente": "AEAT"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "0309301003",
+    "periodo": "2019->2020",
+    "z_robusto": -41.8,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "0801905081",
+    "periodo": "2019->2020",
+    "z_robusto": -41.3,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "3605703022",
+    "periodo": "2019->2020",
+    "z_robusto": 41.1,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion",
+    "cod_ine": "1402101026",
+    "periodo": "2022->2023",
+    "z_robusto": -40.2,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion",
+    "cod_ine": "0801905081",
+    "periodo": "2019->2020",
+    "z_robusto": -40.03,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "aeat_irpf_renta_bruta_media",
+    "tipo": "variacion",
+    "cod_ine": "46146",
+    "periodo": "2020",
+    "z_robusto": -39.75,
+    "fuente": "AEAT"
+   },
+   {
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion",
+    "cod_ine": "3605703022",
+    "periodo": "2019->2020",
+    "z_robusto": 39.55,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion",
+    "cod_ine": "3803809018",
+    "periodo": "2022->2023",
+    "z_robusto": 39.33,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion",
+    "cod_ine": "2906709007",
+    "periodo": "2019->2020",
+    "z_robusto": -38.47,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "3004301025",
+    "periodo": "2019->2020",
+    "z_robusto": 38.3,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "aeat_irpf_renta_bruta_media",
+    "tipo": "variacion",
+    "cod_ine": "03004",
+    "periodo": "2024",
+    "z_robusto": -35.48,
+    "fuente": "AEAT"
+   },
+   {
+    "variable": "aeat_irpf_renta_bruta_media",
+    "tipo": "variacion",
+    "cod_ine": "46098",
+    "periodo": "2024",
+    "z_robusto": -34.54,
+    "fuente": "AEAT"
+   },
+   {
+    "variable": "aeat_irpf_renta_disponible_media",
+    "tipo": "variacion",
+    "cod_ine": "46098",
+    "periodo": "2024",
+    "z_robusto": -34.2,
+    "fuente": "AEAT"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "2906709007",
+    "periodo": "2020->2022",
+    "z_robusto": 34.0,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "aeat_irpf_renta_bruta_media",
+    "tipo": "variacion",
+    "cod_ine": "03004",
+    "periodo": "2023",
+    "z_robusto": 33.92,
+    "fuente": "AEAT"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "2514801001",
+    "periodo": "2022->2023",
+    "z_robusto": 31.88,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "2300204002",
+    "periodo": "2019->2020",
+    "z_robusto": 31.03,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "3001607006",
+    "periodo": "2019->2020",
+    "z_robusto": -30.89,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "4718601003",
+    "periodo": "2019->2020",
+    "z_robusto": 30.88,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "0810801003",
+    "periodo": "2022->2023",
+    "z_robusto": -30.82,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion",
+    "cod_ine": "0309301003",
+    "periodo": "2019->2020",
+    "z_robusto": -30.46,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_persona",
+    "tipo": "variacion",
+    "cod_ine": "3002701056",
+    "periodo": "2019->2020",
+    "z_robusto": -30.42,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "aeat_irpf_renta_disponible_media",
+    "tipo": "variacion",
+    "cod_ine": "03004",
+    "periodo": "2023",
+    "z_robusto": 30.37,
+    "fuente": "AEAT"
+   },
+   {
+    "variable": "aeat_irpf_renta_disponible_media",
+    "tipo": "variacion",
+    "cod_ine": "03004",
+    "periodo": "2024",
+    "z_robusto": -30.19,
+    "fuente": "AEAT"
+   },
+   {
+    "variable": "aeat_irpf_renta_disponible_media",
+    "tipo": "variacion",
+    "cod_ine": "46098",
+    "periodo": "2023",
+    "z_robusto": 30.08,
+    "fuente": "AEAT"
+   },
+   {
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion",
+    "cod_ine": "3002701056",
+    "periodo": "2019->2020",
+    "z_robusto": -29.81,
+    "fuente": "ADRH"
+   },
+   {
+    "variable": "adrh_renta_neta_hogar",
+    "tipo": "variacion",
+    "cod_ine": "2300204002",
+    "periodo": "2019->2020",
+    "z_robusto": 29.61,
+    "fuente": "ADRH"
+   }
+  ],
+  "rangos_aeat": {
+   "aeat_irpf_renta_bruta_media": {
+    "min": 13396.0,
+    "max": 69313.0,
+    "n": 2882,
+    "pct_nulos_o_cero": 0.0
+   },
+   "aeat_irpf_renta_disponible_media": {
+    "min": 12232.0,
+    "max": 54938.0,
+    "n": 2882,
+    "pct_nulos_o_cero": 0.0
+   },
+   "aeat_irpf_declaraciones": {
+    "min": 338.0,
+    "max": 474329.0,
+    "n": 2882,
+    "pct_nulos_o_cero": 0.0
+   },
+   "aeat_irpf_rentas_inmuebles_media": {
+    "min": 461.0,
+    "max": 4870.0,
+    "n": 2882,
+    "pct_nulos_o_cero": 0.0
+   },
+   "disponible_sobre_bruta": {
+    "min": 0.685,
+    "p01": 0.7705,
+    "mediana": 0.8417,
+    "p99": 0.8848,
+    "max": 0.9131,
+    "n_disponible_mayor_bruta": 0
+   }
+  },
+  "rangos_adrh": {
+   "adrh_renta_neta_persona": {
+    "min": 4053.4,
+    "max": 36917.59,
+    "n": 147000
+   },
+   "adrh_renta_neta_hogar": {
+    "min": 13605.39,
+    "max": 104773.66,
+    "n": 147000
+   },
+   "adrh_gini": {
+    "min": 19.7,
+    "max": 45.2,
+    "n": 141792
+   },
+   "hogar_sobre_persona": {
+    "min": 1.3409,
+    "p01": 1.7719,
+    "mediana": 2.5117,
+    "p99": 3.3204,
+    "max": 7.5714,
+    "n_fuera_1_a_6": 1
+   },
+   "gini_fuera_0_100": 0
+  },
+  "coherencia_niveles": [
+   {
+    "anio": 2019,
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 318,
+    "pearson_log": 0.587,
+    "spearman": 0.681,
+    "razon_AEAT_sobre_ADRH_mediana": 2.0562,
+    "razon_p10": 1.7812,
+    "razon_p90": 2.3347,
+    "nota": ""
+   },
+   {
+    "anio": 2019,
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 318,
+    "pearson_log": 0.57,
+    "spearman": 0.681,
+    "razon_AEAT_sobre_ADRH_mediana": 1.7239,
+    "razon_p10": 1.5269,
+    "razon_p90": 1.9238,
+    "nota": ""
+   },
+   {
+    "anio": 2019,
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 318,
+    "pearson_log": 0.657,
+    "spearman": 0.735,
+    "razon_AEAT_sobre_ADRH_mediana": 0.816,
+    "razon_p10": 0.7301,
+    "razon_p90": 0.9065,
+    "nota": ""
+   },
+   {
+    "anio": 2019,
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 318,
+    "pearson_log": 0.637,
+    "spearman": 0.732,
+    "razon_AEAT_sobre_ADRH_mediana": 0.6858,
+    "razon_p10": 0.6231,
+    "razon_p90": 0.7561,
+    "nota": ""
+   },
+   {
+    "anio": 2020,
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 321,
+    "pearson_log": 0.768,
+    "spearman": 0.721,
+    "razon_AEAT_sobre_ADRH_mediana": 2.0275,
+    "razon_p10": 1.7777,
+    "razon_p90": 2.2725,
+    "nota": ""
+   },
+   {
+    "anio": 2020,
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 321,
+    "pearson_log": 0.769,
+    "spearman": 0.722,
+    "razon_AEAT_sobre_ADRH_mediana": 1.6962,
+    "razon_p10": 1.5252,
+    "razon_p90": 1.9103,
+    "nota": ""
+   },
+   {
+    "anio": 2020,
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 321,
+    "pearson_log": 0.828,
+    "spearman": 0.765,
+    "razon_AEAT_sobre_ADRH_mediana": 0.8072,
+    "razon_p10": 0.726,
+    "razon_p90": 0.8984,
+    "nota": ""
+   },
+   {
+    "anio": 2020,
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 321,
+    "pearson_log": 0.825,
+    "spearman": 0.764,
+    "razon_AEAT_sobre_ADRH_mediana": 0.68,
+    "razon_p10": 0.6199,
+    "razon_p90": 0.7507,
+    "nota": ""
+   },
+   {
+    "anio": 2021,
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 320,
+    "pearson_log": 0.736,
+    "spearman": 0.691,
+    "razon_AEAT_sobre_ADRH_mediana": 2.0348,
+    "razon_p10": 1.7673,
+    "razon_p90": 2.2693,
+    "nota": "2021 ADRH solo en crudo (campo etiquetado por orden, supuesto)"
+   },
+   {
+    "anio": 2021,
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 320,
+    "pearson_log": 0.738,
+    "spearman": 0.698,
+    "razon_AEAT_sobre_ADRH_mediana": 1.6949,
+    "razon_p10": 1.5068,
+    "razon_p90": 1.8868,
+    "nota": "2021 ADRH solo en crudo (campo etiquetado por orden, supuesto)"
+   },
+   {
+    "anio": 2021,
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 320,
+    "pearson_log": 0.796,
+    "spearman": 0.732,
+    "razon_AEAT_sobre_ADRH_mediana": 0.8119,
+    "razon_p10": 0.7287,
+    "razon_p90": 0.9115,
+    "nota": "2021 ADRH solo en crudo (campo etiquetado por orden, supuesto)"
+   },
+   {
+    "anio": 2021,
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 320,
+    "pearson_log": 0.791,
+    "spearman": 0.732,
+    "razon_AEAT_sobre_ADRH_mediana": 0.6804,
+    "razon_p10": 0.6174,
+    "razon_p90": 0.7548,
+    "nota": "2021 ADRH solo en crudo (campo etiquetado por orden, supuesto)"
+   },
+   {
+    "anio": 2022,
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 324,
+    "pearson_log": 0.723,
+    "spearman": 0.665,
+    "razon_AEAT_sobre_ADRH_mediana": 2.0066,
+    "razon_p10": 1.7526,
+    "razon_p90": 2.301,
+    "nota": ""
+   },
+   {
+    "anio": 2022,
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 324,
+    "pearson_log": 0.727,
+    "spearman": 0.672,
+    "razon_AEAT_sobre_ADRH_mediana": 1.6699,
+    "razon_p10": 1.4974,
+    "razon_p90": 1.885,
+    "nota": ""
+   },
+   {
+    "anio": 2022,
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 324,
+    "pearson_log": 0.791,
+    "spearman": 0.717,
+    "razon_AEAT_sobre_ADRH_mediana": 0.8052,
+    "razon_p10": 0.7237,
+    "razon_p90": 0.9092,
+    "nota": ""
+   },
+   {
+    "anio": 2022,
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 324,
+    "pearson_log": 0.789,
+    "spearman": 0.716,
+    "razon_AEAT_sobre_ADRH_mediana": 0.6729,
+    "razon_p10": 0.6125,
+    "razon_p90": 0.7519,
+    "nota": ""
+   },
+   {
+    "anio": 2023,
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 324,
+    "pearson_log": 0.727,
+    "spearman": 0.694,
+    "razon_AEAT_sobre_ADRH_mediana": 1.9406,
+    "razon_p10": 1.7232,
+    "razon_p90": 2.1731,
+    "nota": ""
+   },
+   {
+    "anio": 2023,
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 324,
+    "pearson_log": 0.735,
+    "spearman": 0.706,
+    "razon_AEAT_sobre_ADRH_mediana": 1.6167,
+    "razon_p10": 1.4579,
+    "razon_p90": 1.7831,
+    "nota": ""
+   },
+   {
+    "anio": 2023,
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 324,
+    "pearson_log": 0.796,
+    "spearman": 0.784,
+    "razon_AEAT_sobre_ADRH_mediana": 0.7813,
+    "razon_p10": 0.7145,
+    "razon_p90": 0.8548,
+    "nota": ""
+   },
+   {
+    "anio": 2023,
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 324,
+    "pearson_log": 0.797,
+    "spearman": 0.786,
+    "razon_AEAT_sobre_ADRH_mediana": 0.6528,
+    "razon_p10": 0.5979,
+    "razon_p90": 0.7036,
+    "nota": ""
+   }
+  ],
+  "coherencia_tasas": [
+   {
+    "periodo": "2019->2020",
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 318,
+    "pearson_tasas": -0.61,
+    "spearman_tasas": 0.347,
+    "dif_media_pp_AEAT_menos_ADRH": -1.58,
+    "tasa_media_AEAT_pp": -0.22,
+    "tasa_media_ADRH_pp": 1.18,
+    "pearson_tasas_AEAT_desfase_-1": 0.681
+   },
+   {
+    "periodo": "2019->2020",
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 318,
+    "pearson_tasas": -0.624,
+    "spearman_tasas": 0.332,
+    "dif_media_pp_AEAT_menos_ADRH": -1.6,
+    "tasa_media_AEAT_pp": -0.24,
+    "tasa_media_ADRH_pp": 1.18,
+    "pearson_tasas_AEAT_desfase_-1": 0.683
+   },
+   {
+    "periodo": "2019->2020",
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 318,
+    "pearson_tasas": -0.617,
+    "spearman_tasas": 0.334,
+    "dif_media_pp_AEAT_menos_ADRH": -1.15,
+    "tasa_media_AEAT_pp": -0.22,
+    "tasa_media_ADRH_pp": 0.87,
+    "pearson_tasas_AEAT_desfase_-1": 0.692
+   },
+   {
+    "periodo": "2019->2020",
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 318,
+    "pearson_tasas": -0.632,
+    "spearman_tasas": 0.316,
+    "dif_media_pp_AEAT_menos_ADRH": -1.17,
+    "tasa_media_AEAT_pp": -0.24,
+    "tasa_media_ADRH_pp": 0.87,
+    "pearson_tasas_AEAT_desfase_-1": 0.695
+   },
+   {
+    "periodo": "2020->2021",
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 320,
+    "pearson_tasas": -0.093,
+    "spearman_tasas": 0.224,
+    "dif_media_pp_AEAT_menos_ADRH": 0.17,
+    "tasa_media_AEAT_pp": 4.77,
+    "tasa_media_ADRH_pp": 4.72,
+    "pearson_tasas_AEAT_desfase_-1": 0.211
+   },
+   {
+    "periodo": "2020->2021",
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 320,
+    "pearson_tasas": -0.105,
+    "spearman_tasas": 0.219,
+    "dif_media_pp_AEAT_menos_ADRH": -0.53,
+    "tasa_media_AEAT_pp": 4.07,
+    "tasa_media_ADRH_pp": 4.72,
+    "pearson_tasas_AEAT_desfase_-1": 0.216
+   },
+   {
+    "periodo": "2020->2021",
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 320,
+    "pearson_tasas": -0.061,
+    "spearman_tasas": 0.192,
+    "dif_media_pp_AEAT_menos_ADRH": 0.73,
+    "tasa_media_AEAT_pp": 4.77,
+    "tasa_media_ADRH_pp": 4.18,
+    "pearson_tasas_AEAT_desfase_-1": 0.228
+   },
+   {
+    "periodo": "2020->2021",
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 320,
+    "pearson_tasas": -0.073,
+    "spearman_tasas": 0.189,
+    "dif_media_pp_AEAT_menos_ADRH": 0.04,
+    "tasa_media_AEAT_pp": 4.07,
+    "tasa_media_ADRH_pp": 4.18,
+    "pearson_tasas_AEAT_desfase_-1": 0.232
+   },
+   {
+    "periodo": "2021->2022",
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 320,
+    "pearson_tasas": -0.246,
+    "spearman_tasas": 0.129,
+    "dif_media_pp_AEAT_menos_ADRH": -0.47,
+    "tasa_media_AEAT_pp": 5.04,
+    "tasa_media_ADRH_pp": 5.37,
+    "pearson_tasas_AEAT_desfase_-1": 0.118
+   },
+   {
+    "periodo": "2021->2022",
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 320,
+    "pearson_tasas": -0.256,
+    "spearman_tasas": 0.128,
+    "dif_media_pp_AEAT_menos_ADRH": -0.91,
+    "tasa_media_AEAT_pp": 4.59,
+    "tasa_media_ADRH_pp": 5.37,
+    "pearson_tasas_AEAT_desfase_-1": 0.123
+   },
+   {
+    "periodo": "2021->2022",
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 320,
+    "pearson_tasas": -0.25,
+    "spearman_tasas": 0.163,
+    "dif_media_pp_AEAT_menos_ADRH": -0.38,
+    "tasa_media_AEAT_pp": 5.04,
+    "tasa_media_ADRH_pp": 5.42,
+    "pearson_tasas_AEAT_desfase_-1": 0.129
+   },
+   {
+    "periodo": "2021->2022",
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 320,
+    "pearson_tasas": -0.261,
+    "spearman_tasas": 0.162,
+    "dif_media_pp_AEAT_menos_ADRH": -0.83,
+    "tasa_media_AEAT_pp": 4.59,
+    "tasa_media_ADRH_pp": 5.42,
+    "pearson_tasas_AEAT_desfase_-1": 0.133
+   },
+   {
+    "periodo": "2022->2023",
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 324,
+    "pearson_tasas": 0.034,
+    "spearman_tasas": 0.28,
+    "dif_media_pp_AEAT_menos_ADRH": -3.33,
+    "tasa_media_AEAT_pp": 3.93,
+    "tasa_media_ADRH_pp": 7.49,
+    "pearson_tasas_AEAT_desfase_-1": 0.185
+   },
+   {
+    "periodo": "2022->2023",
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 324,
+    "pearson_tasas": 0.027,
+    "spearman_tasas": 0.281,
+    "dif_media_pp_AEAT_menos_ADRH": -3.53,
+    "tasa_media_AEAT_pp": 3.73,
+    "tasa_media_ADRH_pp": 7.49,
+    "pearson_tasas_AEAT_desfase_-1": 0.183
+   },
+   {
+    "periodo": "2022->2023",
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 324,
+    "pearson_tasas": 0.035,
+    "spearman_tasas": 0.24,
+    "dif_media_pp_AEAT_menos_ADRH": -3.3,
+    "tasa_media_AEAT_pp": 3.93,
+    "tasa_media_ADRH_pp": 7.39,
+    "pearson_tasas_AEAT_desfase_-1": 0.158
+   },
+   {
+    "periodo": "2022->2023",
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 324,
+    "pearson_tasas": 0.028,
+    "spearman_tasas": 0.241,
+    "dif_media_pp_AEAT_menos_ADRH": -3.5,
+    "tasa_media_AEAT_pp": 3.73,
+    "tasa_media_ADRH_pp": 7.39,
+    "pearson_tasas_AEAT_desfase_-1": 0.155
+   },
+   {
+    "periodo": "2020->2022",
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 321,
+    "pearson_tasas": -0.044,
+    "spearman_tasas": 0.275,
+    "dif_media_pp_AEAT_menos_ADRH": -0.3,
+    "tasa_media_AEAT_pp": 9.8,
+    "tasa_media_ADRH_pp": 10.1,
+    "pearson_tasas_AEAT_desfase_-1": null
+   },
+   {
+    "periodo": "2020->2022",
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_persona",
+    "n_municipios": 321,
+    "pearson_tasas": -0.062,
+    "spearman_tasas": 0.264,
+    "dif_media_pp_AEAT_menos_ADRH": -1.44,
+    "tasa_media_AEAT_pp": 8.66,
+    "tasa_media_ADRH_pp": 10.1,
+    "pearson_tasas_AEAT_desfase_-1": null
+   },
+   {
+    "periodo": "2020->2022",
+    "AEAT": "renta_bruta_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 321,
+    "pearson_tasas": -0.058,
+    "spearman_tasas": 0.263,
+    "dif_media_pp_AEAT_menos_ADRH": 0.35,
+    "tasa_media_AEAT_pp": 9.8,
+    "tasa_media_ADRH_pp": 9.63,
+    "pearson_tasas_AEAT_desfase_-1": null
+   },
+   {
+    "periodo": "2020->2022",
+    "AEAT": "renta_disponible_media",
+    "ADRH": "neta_hogar",
+    "n_municipios": 321,
+    "pearson_tasas": -0.075,
+    "spearman_tasas": 0.25,
+    "dif_media_pp_AEAT_menos_ADRH": -0.79,
+    "tasa_media_AEAT_pp": 8.66,
+    "tasa_media_ADRH_pp": 9.63,
+    "pearson_tasas_AEAT_desfase_-1": null
+   }
+  ],
+  "coherencia_cobertura": {
+   "municipios_AEAT": 326,
+   "municipios_ADRH_cv": 540,
+   "municipios_en_ambas": 325,
+   "municipios_ADRH_sin_AEAT": 215,
+   "periodos_ADRH_base": [
+    2019,
+    2020,
+    2022,
+    2023
+   ],
+   "agregacion": "media simple de secciones por municipio (sin pesos de población)"
+  },
+  "adrh_seccionado": [
+   {
+    "intervalo": "2019->2020",
+    "secciones_a0": 36317,
+    "secciones_a1": 36317,
+    "secciones_persisten": 36317,
+    "secciones_salen": 0,
+    "secciones_entran": 0,
+    "municipios_con_distinto_n_secciones": 0,
+    "n_var_estables": 34012,
+    "mediana_var_log_estables": 0.0085,
+    "p05_estables": -0.0503,
+    "p95_estables": 0.056,
+    "pct_abs_gt_20_estables": 0.45,
+    "n_var_cambiantes": 0,
+    "mediana_var_log_cambiantes": null,
+    "p05_cambiantes": null,
+    "p95_cambiantes": null,
+    "pct_abs_gt_20_cambiantes": null
+   },
+   {
+    "intervalo": "2020->2021",
+    "secciones_a0": 36317,
+    "secciones_a1": 36382,
+    "secciones_persisten": 36194,
+    "secciones_salen": 123,
+    "secciones_entran": 188,
+    "municipios_con_distinto_n_secciones": 169,
+    "n_var_estables": 28356,
+    "mediana_var_log_estables": 0.0468,
+    "p05_estables": -0.0045,
+    "p95_estables": 0.0991,
+    "pct_abs_gt_20_estables": 0.41,
+    "n_var_cambiantes": 7194,
+    "mediana_var_log_cambiantes": 0.0446,
+    "p05_cambiantes": -0.0051,
+    "p95_cambiantes": 0.0927,
+    "pct_abs_gt_20_cambiantes": 0.38
+   },
+   {
+    "intervalo": "2021->2022",
+    "secciones_a0": 36382,
+    "secciones_a1": 36462,
+    "secciones_persisten": 36255,
+    "secciones_salen": 127,
+    "secciones_entran": 207,
+    "municipios_con_distinto_n_secciones": 178,
+    "n_var_estables": 25820,
+    "mediana_var_log_estables": 0.0534,
+    "p05_estables": -0.0074,
+    "p95_estables": 0.1122,
+    "pct_abs_gt_20_estables": 0.72,
+    "n_var_cambiantes": 10354,
+    "mediana_var_log_cambiantes": 0.0563,
+    "p05_cambiantes": 0.0075,
+    "p95_cambiantes": 0.1098,
+    "pct_abs_gt_20_cambiantes": 0.55
+   },
+   {
+    "intervalo": "2022->2023",
+    "secciones_a0": 36462,
+    "secciones_a1": 36477,
+    "secciones_persisten": 36388,
+    "secciones_salen": 74,
+    "secciones_entran": 89,
+    "municipios_con_distinto_n_secciones": 100,
+    "n_var_estables": 32554,
+    "mediana_var_log_estables": 0.0683,
+    "p05_estables": 0.0179,
+    "p95_estables": 0.1266,
+    "pct_abs_gt_20_estables": 0.76,
+    "n_var_cambiantes": 3740,
+    "mediana_var_log_cambiantes": 0.068,
+    "p05_cambiantes": 0.0191,
+    "p95_cambiantes": 0.1245,
+    "pct_abs_gt_20_cambiantes": 0.72
+   }
+  ],
+  "ecv_diseno": [
+   {
+    "anio": 2018,
+    "personas_muestra": 33734,
+    "hogares_muestra": 13368,
+    "suma_pesos_RB050_millones": 46.18,
+    "pct_sin_nacionalidad": 16.5,
+    "pct_sin_nacionalidad_adultos": 1.3,
+    "pct_sin_pais_nacimiento": 100.0,
+    "pct_sin_edad": 0.0,
+    "pct_sin_renta_HY020": 0.0,
+    "pct_sin_gasto_HH070": 0.1,
+    "pct_alquiler_mercado_sin_HH060_positivo": 0.6,
+    "personas_con_esfuerzo_alquiler": 4382,
+    "personas_con_sobrecarga": 33692,
+    "hogares_en_alquiler_mercado_con_esfuerzo": 1650,
+    "razon_hogares_vs_anio_previo": null,
+    "razon_pesos_vs_anio_previo": null
+   },
+   {
+    "anio": 2019,
+    "personas_muestra": 39852,
+    "hogares_muestra": 15887,
+    "suma_pesos_RB050_millones": 46.52,
+    "pct_sin_nacionalidad": 16.7,
+    "pct_sin_nacionalidad_adultos": 1.1,
+    "pct_sin_pais_nacimiento": 100.0,
+    "pct_sin_edad": 0.0,
+    "pct_sin_renta_HY020": 0.0,
+    "pct_sin_gasto_HH070": 0.2,
+    "pct_alquiler_mercado_sin_HH060_positivo": 1.3,
+    "personas_con_esfuerzo_alquiler": 5482,
+    "personas_con_sobrecarga": 39755,
+    "hogares_en_alquiler_mercado_con_esfuerzo": 2107,
+    "razon_hogares_vs_anio_previo": 1.188,
+    "razon_pesos_vs_anio_previo": 1.0074
+   },
+   {
+    "anio": 2020,
+    "personas_muestra": 38011,
+    "hogares_muestra": 15043,
+    "suma_pesos_RB050_millones": 46.87,
+    "pct_sin_nacionalidad": 17.9,
+    "pct_sin_nacionalidad_adultos": 1.9,
+    "pct_sin_pais_nacimiento": 100.0,
+    "pct_sin_edad": 0.0,
+    "pct_sin_renta_HY020": 0.0,
+    "pct_sin_gasto_HH070": 0.3,
+    "pct_alquiler_mercado_sin_HH060_positivo": 1.7,
+    "personas_con_esfuerzo_alquiler": 4849,
+    "personas_con_sobrecarga": 37897,
+    "hogares_en_alquiler_mercado_con_esfuerzo": 1832,
+    "razon_hogares_vs_anio_previo": 0.947,
+    "razon_pesos_vs_anio_previo": 1.0075
+   },
+   {
+    "anio": 2021,
+    "personas_muestra": 52325,
+    "hogares_muestra": 21007,
+    "suma_pesos_RB050_millones": 46.88,
+    "pct_sin_nacionalidad": 0.0,
+    "pct_sin_nacionalidad_adultos": 0.0,
+    "pct_sin_pais_nacimiento": 0.1,
+    "pct_sin_edad": 0.0,
+    "pct_sin_renta_HY020": 0.0,
+    "pct_sin_gasto_HH070": 0.3,
+    "pct_alquiler_mercado_sin_HH060_positivo": 1.5,
+    "personas_con_esfuerzo_alquiler": 6886,
+    "personas_con_sobrecarga": 52178,
+    "hogares_en_alquiler_mercado_con_esfuerzo": 2666,
+    "razon_hogares_vs_anio_previo": 1.396,
+    "razon_pesos_vs_anio_previo": 1.0002
+   },
+   {
+    "anio": 2022,
+    "personas_muestra": 59799,
+    "hogares_muestra": 24313,
+    "suma_pesos_RB050_millones": 46.88,
+    "pct_sin_nacionalidad": 0.0,
+    "pct_sin_nacionalidad_adultos": 0.0,
+    "pct_sin_pais_nacimiento": 0.0,
+    "pct_sin_edad": 0.0,
+    "pct_sin_renta_HY020": 0.0,
+    "pct_sin_gasto_HH070": 0.4,
+    "pct_alquiler_mercado_sin_HH060_positivo": 2.1,
+    "personas_con_esfuerzo_alquiler": 7632,
+    "personas_con_sobrecarga": 59579,
+    "hogares_en_alquiler_mercado_con_esfuerzo": 3016,
+    "razon_hogares_vs_anio_previo": 1.157,
+    "razon_pesos_vs_anio_previo": 1.0
+   },
+   {
+    "anio": 2023,
+    "personas_muestra": 67242,
+    "hogares_muestra": 27227,
+    "suma_pesos_RB050_millones": 47.35,
+    "pct_sin_nacionalidad": 0.0,
+    "pct_sin_nacionalidad_adultos": 0.0,
+    "pct_sin_pais_nacimiento": 0.0,
+    "pct_sin_edad": 0.0,
+    "pct_sin_renta_HY020": 0.0,
+    "pct_sin_gasto_HH070": 0.3,
+    "pct_alquiler_mercado_sin_HH060_positivo": 1.2,
+    "personas_con_esfuerzo_alquiler": 8296,
+    "personas_con_sobrecarga": 67070,
+    "hogares_en_alquiler_mercado_con_esfuerzo": 3282,
+    "razon_hogares_vs_anio_previo": 1.12,
+    "razon_pesos_vs_anio_previo": 1.01
+   },
+   {
+    "anio": 2024,
+    "personas_muestra": 72771,
+    "hogares_muestra": 29779,
+    "suma_pesos_RB050_millones": 48.26,
+    "pct_sin_nacionalidad": 0.0,
+    "pct_sin_nacionalidad_adultos": 0.0,
+    "pct_sin_pais_nacimiento": 0.0,
+    "pct_sin_edad": 0.0,
+    "pct_sin_renta_HY020": 0.0,
+    "pct_sin_gasto_HH070": 0.4,
+    "pct_alquiler_mercado_sin_HH060_positivo": 2.2,
+    "personas_con_esfuerzo_alquiler": 9077,
+    "personas_con_sobrecarga": 72472,
+    "hogares_en_alquiler_mercado_con_esfuerzo": 3686,
+    "razon_hogares_vs_anio_previo": 1.094,
+    "razon_pesos_vs_anio_previo": 1.0192
+   },
+   {
+    "anio": 2025,
+    "personas_muestra": 71398,
+    "hogares_muestra": 29369,
+    "suma_pesos_RB050_millones": 48.7,
+    "pct_sin_nacionalidad": 0.0,
+    "pct_sin_nacionalidad_adultos": 0.0,
+    "pct_sin_pais_nacimiento": 0.0,
+    "pct_sin_edad": 0.0,
+    "pct_sin_renta_HY020": 0.0,
+    "pct_sin_gasto_HH070": 0.3,
+    "pct_alquiler_mercado_sin_HH060_positivo": 1.8,
+    "personas_con_esfuerzo_alquiler": 8856,
+    "personas_con_sobrecarga": 71161,
+    "hogares_en_alquiler_mercado_con_esfuerzo": 3642,
+    "razon_hogares_vs_anio_previo": 0.986,
+    "razon_pesos_vs_anio_previo": 1.0091
+   }
+  ],
+  "p8_cruces_resumen": [
+   {
+    "cruce": "origen",
+    "periodo": "2018-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 3,
+    "celdas_n200_personas": 3,
+    "celdas_n200_hogares": 3,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 3159,
+    "mediana_n_personas": 9343.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen",
+    "periodo": "2018-2025",
+    "variable": "sobrecarga",
+    "celdas": 3,
+    "celdas_n200_personas": 3,
+    "celdas_n200_hogares": 3,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 7163,
+    "mediana_n_personas": 15640.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen",
+    "periodo": "2023-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 3,
+    "celdas_n200_personas": 3,
+    "celdas_n200_hogares": 3,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 1437,
+    "mediana_n_personas": 4329.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen",
+    "periodo": "2023-2025",
+    "variable": "sobrecarga",
+    "celdas": 3,
+    "celdas_n200_personas": 3,
+    "celdas_n200_hogares": 3,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 3674,
+    "mediana_n_personas": 7600.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen",
+    "periodo": "2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 3,
+    "celdas_n200_personas": 3,
+    "celdas_n200_hogares": 3,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 464,
+    "mediana_n_personas": 1499.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen",
+    "periodo": "2025",
+    "variable": "sobrecarga",
+    "celdas": 3,
+    "celdas_n200_personas": 3,
+    "celdas_n200_hogares": 3,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 1290,
+    "mediana_n_personas": 2636.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen×edad",
+    "periodo": "2018-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 12,
+    "celdas_n200_personas": 11,
+    "celdas_n200_hogares": 11,
+    "pct_celdas_n200_hogares": 91.7,
+    "min_n_personas": 166,
+    "mediana_n_personas": 2409.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad",
+    "periodo": "2018-2025",
+    "variable": "sobrecarga",
+    "celdas": 12,
+    "celdas_n200_personas": 12,
+    "celdas_n200_hogares": 12,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 662,
+    "mediana_n_personas": 4039.5,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen×edad",
+    "periodo": "2023-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 12,
+    "celdas_n200_personas": 11,
+    "celdas_n200_hogares": 10,
+    "pct_celdas_n200_hogares": 83.3,
+    "min_n_personas": 81,
+    "mediana_n_personas": 1109.5,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad",
+    "periodo": "2023-2025",
+    "variable": "sobrecarga",
+    "celdas": 12,
+    "celdas_n200_personas": 12,
+    "celdas_n200_hogares": 12,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 366,
+    "mediana_n_personas": 1957.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen×edad",
+    "periodo": "2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 12,
+    "celdas_n200_personas": 8,
+    "celdas_n200_hogares": 7,
+    "pct_celdas_n200_hogares": 58.3,
+    "min_n_personas": 25,
+    "mediana_n_personas": 391.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad",
+    "periodo": "2025",
+    "variable": "sobrecarga",
+    "celdas": 12,
+    "celdas_n200_personas": 11,
+    "celdas_n200_hogares": 9,
+    "pct_celdas_n200_hogares": 75.0,
+    "min_n_personas": 145,
+    "mediana_n_personas": 682.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×tenencia",
+    "periodo": "2018-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 3,
+    "celdas_n200_personas": 3,
+    "celdas_n200_hogares": 3,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 3159,
+    "mediana_n_personas": 9343.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen×tenencia",
+    "periodo": "2018-2025",
+    "variable": "sobrecarga",
+    "celdas": 12,
+    "celdas_n200_personas": 12,
+    "celdas_n200_hogares": 12,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 612,
+    "mediana_n_personas": 2763.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen×tenencia",
+    "periodo": "2023-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 3,
+    "celdas_n200_personas": 3,
+    "celdas_n200_hogares": 3,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 1437,
+    "mediana_n_personas": 4329.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen×tenencia",
+    "periodo": "2023-2025",
+    "variable": "sobrecarga",
+    "celdas": 12,
+    "celdas_n200_personas": 12,
+    "celdas_n200_hogares": 12,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 353,
+    "mediana_n_personas": 1319.5,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen×tenencia",
+    "periodo": "2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 3,
+    "celdas_n200_personas": 3,
+    "celdas_n200_hogares": 3,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 464,
+    "mediana_n_personas": 1499.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen×tenencia",
+    "periodo": "2025",
+    "variable": "sobrecarga",
+    "celdas": 12,
+    "celdas_n200_personas": 11,
+    "celdas_n200_hogares": 11,
+    "pct_celdas_n200_hogares": 91.7,
+    "min_n_personas": 146,
+    "mediana_n_personas": 454.5,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×quintil",
+    "periodo": "2018-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 15,
+    "celdas_n200_personas": 15,
+    "celdas_n200_hogares": 14,
+    "pct_celdas_n200_hogares": 93.3,
+    "min_n_personas": 206,
+    "mediana_n_personas": 1427.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×quintil",
+    "periodo": "2018-2025",
+    "variable": "sobrecarga",
+    "celdas": 15,
+    "celdas_n200_personas": 15,
+    "celdas_n200_hogares": 15,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 596,
+    "mediana_n_personas": 2331.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen×quintil",
+    "periodo": "2023-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 15,
+    "celdas_n200_personas": 12,
+    "celdas_n200_hogares": 11,
+    "pct_celdas_n200_hogares": 73.3,
+    "min_n_personas": 119,
+    "mediana_n_personas": 691.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×quintil",
+    "periodo": "2023-2025",
+    "variable": "sobrecarga",
+    "celdas": 15,
+    "celdas_n200_personas": 15,
+    "celdas_n200_hogares": 15,
+    "pct_celdas_n200_hogares": 100.0,
+    "min_n_personas": 327,
+    "mediana_n_personas": 1162.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": true
+   },
+   {
+    "cruce": "origen×quintil",
+    "periodo": "2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 15,
+    "celdas_n200_personas": 8,
+    "celdas_n200_hogares": 7,
+    "pct_celdas_n200_hogares": 46.7,
+    "min_n_personas": 38,
+    "mediana_n_personas": 242.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×quintil",
+    "periodo": "2025",
+    "variable": "sobrecarga",
+    "celdas": 15,
+    "celdas_n200_personas": 13,
+    "celdas_n200_hogares": 9,
+    "pct_celdas_n200_hogares": 60.0,
+    "min_n_personas": 112,
+    "mediana_n_personas": 417.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×tenencia",
+    "periodo": "2018-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 12,
+    "celdas_n200_personas": 11,
+    "celdas_n200_hogares": 11,
+    "pct_celdas_n200_hogares": 91.7,
+    "min_n_personas": 166,
+    "mediana_n_personas": 2409.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×tenencia",
+    "periodo": "2018-2025",
+    "variable": "sobrecarga",
+    "celdas": 48,
+    "celdas_n200_personas": 40,
+    "celdas_n200_hogares": 40,
+    "pct_celdas_n200_hogares": 83.3,
+    "min_n_personas": 68,
+    "mediana_n_personas": 756.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×tenencia",
+    "periodo": "2023-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 12,
+    "celdas_n200_personas": 11,
+    "celdas_n200_hogares": 10,
+    "pct_celdas_n200_hogares": 83.3,
+    "min_n_personas": 81,
+    "mediana_n_personas": 1109.5,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×tenencia",
+    "periodo": "2023-2025",
+    "variable": "sobrecarga",
+    "celdas": 48,
+    "celdas_n200_personas": 36,
+    "celdas_n200_hogares": 34,
+    "pct_celdas_n200_hogares": 70.8,
+    "min_n_personas": 37,
+    "mediana_n_personas": 374.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×tenencia",
+    "periodo": "2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 12,
+    "celdas_n200_personas": 8,
+    "celdas_n200_hogares": 7,
+    "pct_celdas_n200_hogares": 58.3,
+    "min_n_personas": 25,
+    "mediana_n_personas": 391.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×tenencia",
+    "periodo": "2025",
+    "variable": "sobrecarga",
+    "celdas": 48,
+    "celdas_n200_personas": 20,
+    "celdas_n200_hogares": 19,
+    "pct_celdas_n200_hogares": 39.6,
+    "min_n_personas": 14,
+    "mediana_n_personas": 125.5,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×quintil",
+    "periodo": "2018-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 60,
+    "celdas_n200_personas": 38,
+    "celdas_n200_hogares": 32,
+    "pct_celdas_n200_hogares": 53.3,
+    "min_n_personas": 5,
+    "mediana_n_personas": 312.5,
+    "celdas_menores_10_suprimidas": 3,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×quintil",
+    "periodo": "2018-2025",
+    "variable": "sobrecarga",
+    "celdas": 60,
+    "celdas_n200_personas": 50,
+    "celdas_n200_hogares": 49,
+    "pct_celdas_n200_hogares": 81.7,
+    "min_n_personas": 33,
+    "mediana_n_personas": 683.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×quintil",
+    "periodo": "2023-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 60,
+    "celdas_n200_personas": 28,
+    "celdas_n200_hogares": 26,
+    "pct_celdas_n200_hogares": 43.3,
+    "min_n_personas": 3,
+    "mediana_n_personas": 152.5,
+    "celdas_menores_10_suprimidas": 3,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×quintil",
+    "periodo": "2023-2025",
+    "variable": "sobrecarga",
+    "celdas": 60,
+    "celdas_n200_personas": 39,
+    "celdas_n200_hogares": 34,
+    "pct_celdas_n200_hogares": 56.7,
+    "min_n_personas": 25,
+    "mediana_n_personas": 359.5,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×quintil",
+    "periodo": "2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 60,
+    "celdas_n200_personas": 14,
+    "celdas_n200_hogares": 12,
+    "pct_celdas_n200_hogares": 20.0,
+    "min_n_personas": 1,
+    "mediana_n_personas": 50.0,
+    "celdas_menores_10_suprimidas": 8,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×quintil",
+    "periodo": "2025",
+    "variable": "sobrecarga",
+    "celdas": 60,
+    "celdas_n200_personas": 24,
+    "celdas_n200_hogares": 23,
+    "pct_celdas_n200_hogares": 38.3,
+    "min_n_personas": 10,
+    "mediana_n_personas": 124.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×tenencia×quintil",
+    "periodo": "2018-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 15,
+    "celdas_n200_personas": 15,
+    "celdas_n200_hogares": 14,
+    "pct_celdas_n200_hogares": 93.3,
+    "min_n_personas": 206,
+    "mediana_n_personas": 1427.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×tenencia×quintil",
+    "periodo": "2018-2025",
+    "variable": "sobrecarga",
+    "celdas": 60,
+    "celdas_n200_personas": 50,
+    "celdas_n200_hogares": 44,
+    "pct_celdas_n200_hogares": 73.3,
+    "min_n_personas": 30,
+    "mediana_n_personas": 579.5,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×tenencia×quintil",
+    "periodo": "2023-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 15,
+    "celdas_n200_personas": 12,
+    "celdas_n200_hogares": 11,
+    "pct_celdas_n200_hogares": 73.3,
+    "min_n_personas": 119,
+    "mediana_n_personas": 691.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×tenencia×quintil",
+    "periodo": "2023-2025",
+    "variable": "sobrecarga",
+    "celdas": 60,
+    "celdas_n200_personas": 39,
+    "celdas_n200_hogares": 29,
+    "pct_celdas_n200_hogares": 48.3,
+    "min_n_personas": 21,
+    "mediana_n_personas": 298.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×tenencia×quintil",
+    "periodo": "2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 15,
+    "celdas_n200_personas": 8,
+    "celdas_n200_hogares": 7,
+    "pct_celdas_n200_hogares": 46.7,
+    "min_n_personas": 38,
+    "mediana_n_personas": 242.0,
+    "celdas_menores_10_suprimidas": 0,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×tenencia×quintil",
+    "periodo": "2025",
+    "variable": "sobrecarga",
+    "celdas": 60,
+    "celdas_n200_personas": 24,
+    "celdas_n200_hogares": 22,
+    "pct_celdas_n200_hogares": 36.7,
+    "min_n_personas": 9,
+    "mediana_n_personas": 100.0,
+    "celdas_menores_10_suprimidas": 1,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×tenencia×quintil",
+    "periodo": "2018-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 60,
+    "celdas_n200_personas": 38,
+    "celdas_n200_hogares": 32,
+    "pct_celdas_n200_hogares": 53.3,
+    "min_n_personas": 5,
+    "mediana_n_personas": 312.5,
+    "celdas_menores_10_suprimidas": 3,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×tenencia×quintil",
+    "periodo": "2018-2025",
+    "variable": "sobrecarga",
+    "celdas": 240,
+    "celdas_n200_personas": 112,
+    "celdas_n200_hogares": 99,
+    "pct_celdas_n200_hogares": 41.2,
+    "min_n_personas": 1,
+    "mediana_n_personas": 147.5,
+    "celdas_menores_10_suprimidas": 11,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×tenencia×quintil",
+    "periodo": "2023-2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 60,
+    "celdas_n200_personas": 28,
+    "celdas_n200_hogares": 26,
+    "pct_celdas_n200_hogares": 43.3,
+    "min_n_personas": 3,
+    "mediana_n_personas": 152.5,
+    "celdas_menores_10_suprimidas": 3,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×tenencia×quintil",
+    "periodo": "2023-2025",
+    "variable": "sobrecarga",
+    "celdas": 238,
+    "celdas_n200_personas": 89,
+    "celdas_n200_hogares": 87,
+    "pct_celdas_n200_hogares": 36.6,
+    "min_n_personas": 1,
+    "mediana_n_personas": 79.0,
+    "celdas_menores_10_suprimidas": 18,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×tenencia×quintil",
+    "periodo": "2025",
+    "variable": "esfuerzo_alquiler",
+    "celdas": 60,
+    "celdas_n200_personas": 14,
+    "celdas_n200_hogares": 12,
+    "pct_celdas_n200_hogares": 20.0,
+    "min_n_personas": 1,
+    "mediana_n_personas": 50.0,
+    "celdas_menores_10_suprimidas": 8,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   },
+   {
+    "cruce": "origen×edad×tenencia×quintil",
+    "periodo": "2025",
+    "variable": "sobrecarga",
+    "celdas": 237,
+    "celdas_n200_personas": 63,
+    "celdas_n200_hogares": 54,
+    "pct_celdas_n200_hogares": 22.8,
+    "min_n_personas": 1,
+    "mediana_n_personas": 27.0,
+    "celdas_menores_10_suprimidas": 50,
+    "cruce_viable_todas_celdas_n200_hogares": false
+   }
+  ],
+  "censo_ecepov_epa": {
+   "censo_hogares_muestra_total_crudo": 1853662,
+   "censo_municipios_crudo": 909,
+   "censo_hogares_muestra_total_base": 1468378,
+   "censo_municipios_base": 759,
+   "censo_tenencia_codigos": [
+    "2",
+    "3",
+    "4"
+   ],
+   "censo_tiene_renta_o_gasto": false,
+   "censo_municipios_con_n200": 906,
+   "censo_municipios_con_n_menor_10": 0,
+   "ecepov_personas_hogar": 424493,
+   "ecepov_viviendas": 172444,
+   "ecepov_pct_pago_vivienda_informado": 38.5,
+   "ecepov_viviendas_alquiladas": 21050,
+   "ecepov_pct_alquiladas_con_pago_e_ingreso": 100.0,
+   "ecepov_renta_intervalizada": true,
+   "epa_trimestres": 34,
+   "epa_primero": "2018T1",
+   "epa_ultimo": "2026T2",
+   "epa_huecos": [],
+   "epa_diseno_registro_2021_presente": true
+  },
+  "censo_ecepov_cruces": [
+   {
+    "fuente": "Censo 2021 muestra 10 % (nacional, hogares de muestra)",
+    "cruce": "nacionalidad×tenencia",
+    "celdas": 6,
+    "min_n": 23215,
+    "celdas_n_menor_10": 0,
+    "celdas_n200": 6,
+    "pct_celdas_n200": 100.0
+   },
+   {
+    "fuente": "Censo 2021 muestra 10 % (nacional, hogares de muestra)",
+    "cruce": "nacionalidad×edad×tenencia",
+    "celdas": 24,
+    "min_n": 1901,
+    "celdas_n_menor_10": 0,
+    "celdas_n200": 24,
+    "pct_celdas_n200": 100.0
+   },
+   {
+    "fuente": "Censo 2021 muestra 10 % (nacional, hogares de muestra)",
+    "cruce": "nacionalidad×llegada×tenencia",
+    "celdas": 30,
+    "min_n": 153,
+    "celdas_n_menor_10": 0,
+    "celdas_n200": 29,
+    "pct_celdas_n200": 96.7
+   },
+   {
+    "fuente": "Censo 2021 muestra 10 % (nacional, hogares de muestra)",
+    "cruce": "nacionalidad×edad×tenencia×tipo_hogar",
+    "celdas": 192,
+    "min_n": 2,
+    "celdas_n_menor_10": 9,
+    "celdas_n200": 157,
+    "pct_celdas_n200": 81.8
+   },
+   {
+    "fuente": "ECEPOV 2021 (viviendas muestrales; persona 01 del hogar)",
+    "cruce": "tenencia",
+    "celdas": 6,
+    "min_n": 4215,
+    "celdas_n_menor_10": 0,
+    "celdas_n200": 6,
+    "pct_celdas_n200": 100.0
+   },
+   {
+    "fuente": "ECEPOV 2021 (viviendas muestrales; persona 01 del hogar)",
+    "cruce": "tenencia×ingreso",
+    "celdas": 24,
+    "min_n": 563,
+    "celdas_n_menor_10": 0,
+    "celdas_n200": 24,
+    "pct_celdas_n200": 100.0
+   },
+   {
+    "fuente": "ECEPOV 2021 (viviendas muestrales; persona 01 del hogar)",
+    "cruce": "tenencia×nacionalidad",
+    "celdas": 12,
+    "min_n": 186,
+    "celdas_n_menor_10": 0,
+    "celdas_n200": 11,
+    "pct_celdas_n200": 91.7
+   },
+   {
+    "fuente": "ECEPOV 2021 (viviendas muestrales; persona 01 del hogar)",
+    "cruce": "tenencia×nacionalidad×ingreso",
+    "celdas": 48,
+    "min_n": 27,
+    "celdas_n_menor_10": 0,
+    "celdas_n200": 37,
+    "pct_celdas_n200": 77.1
+   },
+   {
+    "fuente": "ECEPOV 2021 (viviendas muestrales; persona 01 del hogar)",
+    "cruce": "tenencia×nacionalidad×edad",
+    "celdas": 48,
+    "min_n": 23,
+    "celdas_n_menor_10": 0,
+    "celdas_n200": 35,
+    "pct_celdas_n200": 72.9
+   },
+   {
+    "fuente": "ECEPOV 2021 (viviendas muestrales; persona 01 del hogar)",
+    "cruce": "tenencia×nacionalidad×edad×ingreso",
+    "celdas": 192,
+    "min_n": 1,
+    "celdas_n_menor_10": 17,
+    "celdas_n200": 101,
+    "pct_celdas_n200": 52.6
+   },
+   {
+    "fuente": "ECEPOV 2021 (viviendas muestrales; persona 01 del hogar)",
+    "cruce": "alquiler: nacionalidad×edad×ingreso",
+    "celdas": 32,
+    "min_n": 44,
+    "celdas_n_menor_10": 0,
+    "celdas_n200": 26,
+    "pct_celdas_n200": 81.2
+   },
+   {
+    "fuente": "ECEPOV 2021 (viviendas muestrales; persona 01 del hogar)",
+    "cruce": "alquiler: nacionalidad×ingreso",
+    "celdas": 8,
+    "min_n": 772,
+    "celdas_n_menor_10": 0,
+    "celdas_n200": 8,
+    "pct_celdas_n200": 100.0
+   }
+  ]
+ },
+ "fuera_muestra": null,
+ "notas": [
+  "Auditoría C4: sin efectos. Solo agregados propios de AEAT (razones, recuentos de atípicos, correlaciones); sin series municipales de AEAT.",
+  "Celdas del Censo 2021 (clase b) y recuentos ECV con n<10 suprimidos; no se escribe ningún microdato.",
+  "ADRH 2021 solo en el crudo (data/raw/v3), con campos etiquetados por orden (supuesto); la base no tiene 2021.",
+  "ECEPOV: persona 01 del hogar como proxy de la persona de referencia; códigos NAC no decodificados en el inventario.",
+  "ECV: la ruptura de 2021 (base del Censo) no consta en docs/: se reportan solo señales de los datos."
+ ]
+}

@@ -1,0 +1,5 @@
+intervalo,secciones_a0,secciones_a1,secciones_persisten,secciones_salen,secciones_entran,municipios_con_distinto_n_secciones,n_var_estables,mediana_var_log_estables,p05_estables,p95_estables,pct_abs_gt_20_estables,n_var_cambiantes,mediana_var_log_cambiantes,p05_cambiantes,p95_cambiantes,pct_abs_gt_20_cambiantes
+2019->2020,36317,36317,36317,0,0,0,34012,0.0085,-0.0503,0.056,0.45,0,,,,
+2020->2021,36317,36382,36194,123,188,169,28356,0.0468,-0.0045,0.0991,0.41,7194,0.0446,-0.0051,0.0927,0.38
+2021->2022,36382,36462,36255,127,207,178,25820,0.0534,-0.0074,0.1122,0.72,10354,0.0563,0.0075,0.1098,0.55
+2022->2023,36462,36477,36388,74,89,100,32554,0.0683,0.0179,0.1266,0.76,3740,0.068,0.0191,0.1245,0.72

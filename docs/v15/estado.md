@@ -55,7 +55,8 @@ Plan: docs/v15/plan.md (íntegro). Versión pública vigente: 1.0. V15 solo aña
   - 11 cifras C1 bajan a C4 con valores intactos; controles de cifras por valores (G8);
   - metadatos de la base corregidos; make publicacion y make web (docs/v15/cambios_publicacion_web.md);
   - adenda 2: lo ya visto (V9-D1 y V9-D4), confirmatorio solo lo no visto, robustez R-IPVA y calendario de la evaluación sellada;
-  - potencia y sellado recalculados.
+  - potencia y sellado recalculados;
+  - etiqueta local prereg-v15 movida a 542b4fd y texto de OSF actualizado; sin subagentes en este encargo (0 tokens).
 
 ## Siguiente
 - **PARADA en la puerta.** Las fases 4 y 5 esperan a que el autor deposite en OSF y ponga `osf_prereg_v15` en proyecto.json.

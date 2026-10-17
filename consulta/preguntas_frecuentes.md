@@ -316,9 +316,9 @@ Se estiman 733.553 viviendas (366.777 a 1.100.330) movilizables en zonas con pre
 
 ### 43. ¿Qué peso tienen los compradores extranjeros?
 
-En 2025 el [cifra no publicada en la versión 1.0: usa la serie de Notariado] de las compraventas tiene comprador extranjero (residente o no) y los no residentes son 6,83 %. Es dato descriptivo (C4, una fuente).
+En 2025 el 16,89 % (16,89 a 18,82) de las compraventas tiene comprador extranjero (residente o no) y los no residentes son 6,83 %. Es dato descriptivo (C4, una fuente).
 
-- `compradores_extranjeros` = [cifra no publicada en la versión 1.0: usa la serie de Notariado]; capa C4; periodo 2025; dato 2025. Origen: [hechos.json](../output/v4/M4/hechos.json).
+- `compradores_extranjeros` = 16,89 % (16,89 a 18,82); capa C4; periodo 2025; dato 2025. Origen: [hechos.json](../output/v4/M4/hechos.json).
 - `compradores_no_residentes` = 6,83 %; capa C4; periodo 2025; dato 2025. Origen: [hechos.json](../output/v4/M4/hechos.json).
 - Fuente: [output/v4/M4](../output/v4/M4)
 

@@ -20,8 +20,11 @@
   {
    "id": "compradores_extranjeros",
    "enunciado": "Compraventas de vivienda con comprador extranjero (residente o no)",
-   "cifra": null,
-   "rango": null,
+   "cifra": 16.89131768,
+   "rango": [
+    16.89131768,
+    18.81539266
+   ],
    "unidad": "%",
    "periodo": "2025",
    "ambito": "España",
@@ -31,11 +34,15 @@
    "fuente": "Ministerio; Notariado (no independientes)",
    "ruta": "output/v4/M4/hechos.json",
    "version": "v4",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Notariado]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "16,89 % (16,89 a 18,82)",
+   "min_max": [
+    16.89131768,
+    18.81539266,
+    "rango"
+   ]
   },
   {
    "id": "compradores_no_residentes",
@@ -607,7 +614,7 @@
   {
    "id": "A23-P10",
    "enunciado": "Factor común de las 4 fuentes de precio: varianza explicada por el 1.er componente",
-   "cifra": null,
+   "cifra": 89.2,
    "rango": null,
    "unidad": "%",
    "periodo": "2016-2025 (dln anual)",
@@ -618,17 +625,25 @@
    "fuente": "INE, MIVAU, Notariado, Registradores",
    "ruta": "output/v5/A23/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025T4",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Notariado]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "89,2 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "A23-P2",
    "enunciado": "Precio de compra, núcleo MIVAU/Notariado/Registradores 2015-2025",
-   "cifra": null,
-   "rango": null,
+   "cifra": 47.2,
+   "rango": [
+    44.2,
+    56.1
+   ],
    "unidad": "%",
    "periodo": "2015-2025 (media anual)",
    "ambito": "España",
@@ -638,11 +653,16 @@
    "fuente": "MIVAU valor tasado; Notariado CGN; Registradores opendata",
    "ruta": "output/v5/A23/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025 (anual)",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Notariado]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "47,2 % (44,2 a 56,1)",
+   "min_max": [
+    44.2,
+    56.1,
+    "rango"
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "A23-P3",
@@ -696,7 +716,7 @@
   {
    "id": "A23-P5",
    "enunciado": "Diferencia contable por composición nueva/usada en la media de pm2",
-   "cifra": null,
+   "cifra": 0.0,
    "rango": null,
    "unidad": "pp",
    "periodo": "2015-2025",
@@ -707,11 +727,15 @@
    "fuente": "INE ETDP + Registradores ERI 2025",
    "ruta": "output/v5/A23/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "0 pp",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
   },
   {
    "id": "A23-P6",
@@ -741,7 +765,7 @@
   {
    "id": "A23-P7",
    "enunciado": "Precio por m2 Notariado 2025",
-   "cifra": null,
+   "cifra": 1949.0,
    "rango": null,
    "unidad": "EUR/m2",
    "periodo": "2025",
@@ -752,11 +776,15 @@
    "fuente": "Notariado CGN",
    "ruta": "output/v5/A23/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025S2",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Notariado]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "1.949 EUR/m2",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
   },
   {
    "id": "A23-P8",
@@ -3430,7 +3458,7 @@
   {
    "id": "CA-CT-ratio-triang-2022",
    "enunciado": "Hipotecas por 100 compraventas: INE 71.4 frente a Registradores 71.7",
-   "cifra": null,
+   "cifra": 71.372,
    "rango": null,
    "unidad": "hipotecas por 100 compraventas",
    "periodo": "2022",
@@ -3441,16 +3469,21 @@
    "fuente": "INE + Registradores (ERI Anuario)",
    "ruta": "output/v5/CA/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2022-12-31",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "71,37 hipotecas por 100 compraventas",
+   "min_max": [
+    71.37197912,
+    71.71674344,
+    "min = ratio INE; max = ratio Registradores (dos fuentes; valor redondeado del titular)"
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "CA-CT-ratio-triang-2023",
    "enunciado": "Hipotecas por 100 compraventas: INE 65.3 frente a Registradores 65.8",
-   "cifra": null,
+   "cifra": 65.273,
    "rango": null,
    "unidad": "hipotecas por 100 compraventas",
    "periodo": "2023",
@@ -3461,16 +3494,21 @@
    "fuente": "INE + Registradores (ERI Anuario)",
    "ruta": "output/v5/CA/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2023-12-31",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "65,27 hipotecas por 100 compraventas",
+   "min_max": [
+    65.27291138,
+    65.8165278,
+    "min = ratio INE; max = ratio Registradores (dos fuentes; valor redondeado del titular)"
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "CA-CT-ratio-triang-2024",
    "enunciado": "Hipotecas por 100 compraventas: INE 66.4 frente a Registradores 68.4",
-   "cifra": null,
+   "cifra": 66.446,
    "rango": null,
    "unidad": "hipotecas por 100 compraventas",
    "periodo": "2024",
@@ -3481,16 +3519,21 @@
    "fuente": "INE + Registradores (ERI Anuario)",
    "ruta": "output/v5/CA/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024-12-31",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "66,45 hipotecas por 100 compraventas",
+   "min_max": [
+    66.44617982,
+    68.35010967,
+    "min = ratio INE; max = ratio Registradores (dos fuentes; valor redondeado del titular)"
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "CA-CT-ratio-triang-2025",
    "enunciado": "Hipotecas por 100 compraventas: INE 70.0 frente a Registradores 70.7",
-   "cifra": null,
+   "cifra": 70.049,
    "rango": null,
    "unidad": "hipotecas por 100 compraventas",
    "periodo": "2025",
@@ -3501,11 +3544,16 @@
    "fuente": "INE + Registradores (ERI Anuario)",
    "ruta": "output/v5/CA/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025-12-31",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "70,05 hipotecas por 100 compraventas",
+   "min_max": [
+    70.04903428,
+    70.67343204,
+    "min = ratio INE; max = ratio Registradores (dos fuentes; valor redondeado del titular)"
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "CA-EU-alq_real-crecimiento",
@@ -4014,7 +4062,7 @@
   {
    "id": "CB-C6-01",
    "enunciado": "Declarantes IRPF con ingresos de capital inmobiliario",
-   "cifra": null,
+   "cifra": 3262026.0,
    "rango": null,
    "unidad": "declarantes",
    "periodo": "2024",
@@ -4025,16 +4073,20 @@
    "fuente": "Cifras de AEAT, Estadistica de los declarantes del IRPF 2024 (publ. 2026)",
    "ruta": "output/v5/CB/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-06",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de AEAT]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "3.262.026 declarantes",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
   },
   {
    "id": "CB-C6-02",
    "enunciado": "Declarantes IRPF con reduccion por arrendamiento de vivienda (art. 23.2 LIRPF)",
-   "cifra": null,
+   "cifra": 2236896.0,
    "rango": null,
    "unidad": "declarantes",
    "periodo": "2024",
@@ -4045,16 +4097,20 @@
    "fuente": "Cifras de AEAT, Estadistica de los declarantes del IRPF 2024 (publ. 2026)",
    "ruta": "output/v5/CB/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-06",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de AEAT]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "2.236.896 declarantes",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
   },
   {
    "id": "CB-C6-03",
    "enunciado": "Viviendas equivalentes arrendadas por personas fisicas (habitual y otras)",
-   "cifra": null,
+   "cifra": 2650952.0,
    "rango": null,
    "unidad": "viviendas",
    "periodo": "2024",
@@ -4065,16 +4121,20 @@
    "fuente": "AEAT, Estadistica de viviendas declaradas en el IRPF 2024",
    "ruta": "output/v5/CB/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-06",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de AEAT]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "2.650.952 viviendas",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
   },
   {
    "id": "CB-C6-04",
    "enunciado": "Viviendas equivalentes arrendadas por personas fisicas por declarante con ingresos de capital inmobiliario",
-   "cifra": null,
+   "cifra": 0.81,
    "rango": null,
    "unidad": "viviendas/declarante",
    "periodo": "2024",
@@ -4085,17 +4145,24 @@
    "fuente": "AEAT (dos estadisticas)",
    "ruta": "output/v5/CB/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-06",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de AEAT]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "0,81 viviendas/declarante",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
   },
   {
    "id": "CB-C6-05",
    "enunciado": "Residual (PJ + sector publico + alquiler no declarado) sobre el stock en alquiler",
-   "cifra": null,
-   "rango": null,
+   "cifra": 16.9,
+   "rango": [
+    16.9,
+    38.1
+   ],
    "unidad": "% del stock",
    "periodo": "2021-2025",
    "ambito": "Espana sin Navarra ni Pais Vasco",
@@ -4105,11 +4172,15 @@
    "fuente": "AEAT 2024; INE Censo 2021; INE ECV 2025; INE ECH 2025T4",
    "ruta": "output/v5/CB/hechos.json",
    "version": "v5",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-06",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de AEAT]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "16,9 % del stock (16,9 a 38,1)",
+   "min_max": [
+    16.9,
+    38.1,
+    "rango"
+   ]
   },
   {
    "id": "CB-C8-01",
@@ -16495,8 +16566,11 @@
   {
    "id": "K3-RATIO-2015",
    "enunciado": "Ratio precio/alquiler, medida v6 (tasado/stock); min-max con las demás medidas de precio provinciales",
-   "cifra": null,
-   "rango": null,
+   "cifra": 20.3257,
+   "rango": [
+    18.931,
+    20.3257
+   ],
    "unidad": "años de alquiler",
    "periodo": "2015",
    "ambito": "38-39 provincias de entrenamiento",
@@ -16506,17 +16580,25 @@
    "fuente": "MIVAU tasado; SERPAVI; Registradores; Notariado",
    "ruta": "output/v6_1/K3/hechos.json",
    "version": "v6.1",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2023 (anual)",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Notariado]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "20,33 años de alquiler (18,93 a 20,33)",
+   "min_max": [
+    18.931,
+    20.3257,
+    "rango"
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "K3-RATIO-2023",
    "enunciado": "Ratio precio/alquiler, medida v6 (tasado/stock); min-max con las demás medidas de precio provinciales",
-   "cifra": null,
-   "rango": null,
+   "cifra": 17.1196,
+   "rango": [
+    17.1196,
+    17.7306
+   ],
    "unidad": "años de alquiler",
    "periodo": "2023",
    "ambito": "38-39 provincias de entrenamiento",
@@ -16526,11 +16608,16 @@
    "fuente": "MIVAU tasado; SERPAVI; Registradores; Notariado",
    "ruta": "output/v6_1/K3/hechos.json",
    "version": "v6.1",
-   "estado": "no publicada (1.0)",
+   "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2023 (anual)",
-   "cifra_texto": "[cifra no publicada en la versión 1.0: usa la serie de Notariado]",
-   "motivo": "no publicada en la versión 1.0 por la licencia de su fuente (proyecto.json, terceros_1_0 = excluir; publicacion/cifras_no_publicadas_1_0.csv). Sigue en cifras_clave sin cambios."
+   "cifra_texto": "17,12 años de alquiler (17,12 a 17,73)",
+   "min_max": [
+    17.1196,
+    17.7306,
+    "rango"
+   ],
+   "licencia": "ODbL 1.0"
   },
   {
    "id": "L3-DEF-2124-BAJAST1",

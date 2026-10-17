@@ -137,3 +137,11 @@
 - **Las series** (columnas de los datos abiertos y del Anuario) siguen sin redistribuirse: ninguno de los dos productos está en «redistribuir».
 - **No hay conflicto con CC BY 4.0.** Lo derivado de los datos abiertos queda solo bajo la ODbL, que exige el «share alike» (4.4) a las bases derivadas. El resto de cada fichero sigue bajo CC BY 4.0. No se ha cambiado data/base/variables.parquet (datos de solo lectura). Su columna `licencia` para registr_* sigue diciendo «sin licencia abierta clara». Esa base completa no entra en el árbol ni en el paquete.
 - **Notariado:** solicitud de autorización en docs/v14/publicacion_1_0/solicitud_notariado.md. Si se concede, se cambia a «agregados».
+
+## E9. V14.4: todas las fuentes en «agregados» (orden del autor, plan de V15, 2026-10-17)
+- proyecto.json → `terceros_1_0`: registradores_odbl, registradores_eri, notariado y aeat = «agregados».
+- Las 16 cifras retiradas en V14.3 vuelven a los textos de publicacion/, consulta/ y la web: AEAT 5, Notariado 6 y Anuario ERI 5. publicacion/cifras_no_publicadas_1_0.csv queda vacío, solo con la cabecera.
+- Ninguna cifra de cifras_clave cambia de valor.
+- Ninguna serie no redistribuible sale del repositorio de desarrollo. Las tablas que son la serie se siguen vaciando en el árbol y en el paquete. Las columnas de terceros se siguen redactando. hechos.parquet público sigue sin las variables `aeat_*`, porque ninguna fuente está en «redistribuir».
+- La ODbL 1.0 (E8) sigue aplicándose a lo derivado de los datos abiertos de Registradores.
+- **Pendiente.** Con notariado = «agregados», la solicitud de autorización al CGN (docs/v14/publicacion_1_0/solicitud_notariado.md) pasa de condición para publicar a cortesía recomendable: licencias.md califica sus condiciones de AMBIGUAS.

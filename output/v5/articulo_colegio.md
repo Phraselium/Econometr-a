@@ -22,7 +22,7 @@ La renta de los contratos vigentes creció en 2015-2024 entre 10,9 % y 22,9 % se
 
 ## El precio de compra: las fuentes no coinciden [C1]
 
-El núcleo de fuentes de transacción (MIVAU, Notariado y Registradores) sitúa la subida acumulada del precio de compra en [cifra no publicada en la versión 1.0: usa la serie de Notariado]. El índice del INE da una cifra mayor (79,9 %, [C4]), y la diferencia no está descompuesta. Cuando dos fuentes discrepan, se dan las dos.
+El núcleo de fuentes de transacción (MIVAU, Notariado y Registradores) sitúa la subida acumulada del precio de compra en 47,2 % (44,2-56,1 %) (2015-2025 (media anual); MIVAU valor tasado; Notariado CGN; Registradores opendata; dato de 2025 (anual); C1). El índice del INE da una cifra mayor (79,9 %, [C4]), y la diferencia no está descompuesta. Cuando dos fuentes discrepan, se dan las dos.
 
 ## La mayoría de los hogares es propietaria de su vivienda [C1]
 
@@ -88,3 +88,7 @@ Cada cifra de este artículo lleva su periodo, sus fuentes, la fecha del dato y 
 *Nota de independencia y método.* Trabajo individual e independiente, sin financiación externa ni vínculo con partidos. El análisis se hizo con agentes de inteligencia artificial bajo la supervisión del autor, que es el responsable del contenido. El código y los datos permiten reproducir cada cifra.
 
 **Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente del autor; las etiquetas aún no se han podido publicar desde el entorno de trabajo, véase la primera tarea de `docs/v7_1/tareas_autor.md`]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.
+
+---
+
+*Atribución (Open Database License).* Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. Las cifras construidas con esos datos se publican bajo la misma licencia.

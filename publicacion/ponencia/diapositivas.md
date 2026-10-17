@@ -29,7 +29,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 
 ## Precio de compra: dos fuentes, dos cifras
 
-- Núcleo MIVAU, Notariado y Registradores: [cifra no publicada en la versión 1.0: usa la serie de Notariado]
+- Núcleo MIVAU, Notariado y Registradores: 47,2 % (44,2-56,1 %) (2015-2025 (media anual); MIVAU valor tasado; Notariado CGN; Registradores opendata; dato de 2025 (anual); C1)
 - INE: 79,9 % [C4]; la diferencia no está descompuesta
 
 ---
@@ -112,3 +112,7 @@ Borja Romero, economista · Informe técnico (DOI pendiente) · [Repositorio](ht
 - Que los topes, los turísticos, la inmigración o los tipos sean «la» razón de la subida
 - Que las vacías o la vivienda de los mayores resuelvan la necesidad
 - Que una política concreta cierre el déficit en un plazo dado
+
+---
+
+*Atribución (Open Database License).* Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. Las cifras construidas con esos datos se publican bajo la misma licencia.

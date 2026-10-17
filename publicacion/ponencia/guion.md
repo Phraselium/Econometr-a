@@ -12,7 +12,7 @@ Regla del ponente: cada cifra se dice con su periodo y su capa; los veredictos s
 ## Bloque 1 · Hechos (1:30-6:00; diapositivas 3-5) <!-- check:cifra-libre -->
 - Hogares frente a terminadas: 997.586 hogares más en 2021-2025 [C1]; terminadas entre 72.264-94.426 viviendas/año [C1].
 - Alquiler: el stock creció entre 10,9 % y 22,9 % en 2015-2024 [C1]; los contratos nuevos, más.
-- Precio de compra: núcleo de fuentes [cifra no publicada en la versión 1.0: usa la serie de Notariado] en [cifra no publicada en la versión 1.0: usa la serie de Notariado] [C1]; el INE da más y la diferencia no está descompuesta.
+- Precio de compra: núcleo de fuentes 47,2 % en 2015-2025 (media anual) [C1]; el INE da más y la diferencia no está descompuesta.
 
 ## Bloque 2 · Mitos del verificador (6:00-11:00; diapositivas 6-9) <!-- check:cifra-libre -->
 - Recordar: se evalúa la afirmación; las mismas reglas para todas.
@@ -37,3 +37,7 @@ Regla del ponente: cada cifra se dice con su periodo y su capa; los veredictos s
 - Lo que no se puede afirmar. Dónde están los datos y el código. Preguntas.
 
 **Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente del autor; las etiquetas aún no se han podido publicar desde el entorno de trabajo, véase la primera tarea de `docs/v7_1/tareas_autor.md`]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.
+
+---
+
+*Atribución (Open Database License).* Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. Las cifras construidas con esos datos se publican bajo la misma licencia.

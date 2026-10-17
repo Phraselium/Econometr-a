@@ -41,17 +41,18 @@ def _render(tmp_path, ids):
 
 def test_por_defecto_en_proyecto_json(monkeypatch):
     monkeypatch.delenv(T10.ENV, raising=False)
-    assert T10.politica() == T10.POR_DEFECTO == {"registradores_odbl": "agregados", "registradores_eri": "excluir",
-                                                 "notariado": "excluir", "aeat": "excluir"}
-    ret = T10.retiradas()
+    assert T10.politica() == T10.POR_DEFECTO == {f: "agregados" for f in T10.FUENTES}   # V14.4
+    assert T10.retiradas() == {}
+    assert (RAIZ / T10.NO_PUBLICADAS).read_text(encoding="utf-8").count("\n") == 1
+    ret = T10.retiradas({**T10.POR_DEFECTO, "registradores_eri": "excluir", "notariado": "excluir", "aeat": "excluir"})   # V14.3
     assert {f"CB-C6-0{i}" for i in range(1, 6)} | {"A23-P2", "A23-P5", "compradores_extranjeros"} <= set(ret)
     assert {f"CA-CT-ratio-triang-{a}" for a in range(2022, 2026)} <= set(ret)   # «ambos»: usan también el Anuario ERI
-    assert (RAIZ / T10.NO_PUBLICADAS).read_text(encoding="utf-8").count("\n") == 1 + len(ret)
+    assert len(ret) == 16
 
 
 def test_registradores_odbl_y_eri(monkeypatch, tmp_path):
-    """V14.3: las cifras de datos abiertos se publican con el aviso de la ODbL; las del Anuario ERI se retiran."""
-    monkeypatch.delenv(T10.ENV, raising=False)
+    """V14.3: las cifras de datos abiertos se publican con el aviso de la ODbL; con registradores_eri = excluir, las del ERI se retiran."""
+    monkeypatch.setenv(T10.ENV, json.dumps({"registradores_eri": "excluir"}))
     orig = T10.origen_registradores()
     assert orig["A23-P6"] == "ODbL" and orig["A23-P5"] == "ERI" and orig["CA-CT-ratio-triang-2025"] == "ambos"
     assert "A23-P6" in T10.odbl() and "A23-P5" not in T10.odbl()

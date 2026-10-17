@@ -21,7 +21,7 @@
 - Entre 2021 y 2024 el número de hogares creció más que el de viviendas terminadas: la diferencia está en el rango 389.361-710.542 viviendas (sin las dos correcciones que conservan el salto de la EPA, 596.371-710.542 viviendas) [C2: cota; la cuantía depende de cómo se corrija el salto de la EPA en 2021]. Con las bajas del parque estimadas, llega como máximo a 765.994 viviendas [C4].
 - Los hogares aumentaron en 997.586 hogares (981.823-1.013.350 hogares) entre 2021 y 2025 [C1].
 - Se terminaron 72.264-94.426 viviendas/año en 2019-2024 (territorio común) [C1].
-- El precio de compra subió [cifra no publicada en la versión 1.0: usa la serie de Notariado] en 2015-2025 según el núcleo de tres fuentes (Ministerio, Notariado y Registradores) [C1]; el índice del INE marca 79,9 % [C4]. Los dos se dan siempre juntos.
+- El precio de compra subió 47,2 % (44,2-56,1 %) en 2015-2025 según el núcleo de tres fuentes (Ministerio, Notariado y Registradores) [C1]; el índice del INE marca 79,9 % [C4]. Los dos se dan siempre juntos.
 - La renta del stock de contratos de alquiler subió 10,9-22,9 % en 2015-2024 [C1]; los contratos nuevos subieron más (sección de alquiler).
 - Los hogares con vivienda principal en propiedad son 74,5 % de hogares (72,1-75,9 % de hogares) [C1].
 
@@ -105,18 +105,18 @@ Reglas que se aplican en todo el informe:
 ### 1.4 Precios: el puente IPV frente al núcleo
 
 **Dos medidas que no coinciden.**
-- Núcleo de tres fuentes (Ministerio, valor tasado; Notariado; Registradores): [cifra no publicada en la versión 1.0: usa la serie de Notariado] en 2015-2025, medias anuales [C1].
+- Núcleo de tres fuentes (Ministerio, valor tasado; Notariado; Registradores): 47,2 % (44,2-56,1 %) en 2015-2025, medias anuales [C1].
 - Índice de precios de vivienda del INE: 79,9 % [C4]. Eurostat publica el mismo índice, de modo que la coincidencia con Eurostat no es una segunda fuente.
 
 **El puente.** Se reconcilian las dos medidas paso a paso, en logaritmos y con pesos comunes:
 - reponderar el IPV con pesos de comunidades autónomas comunes cambia 0,60 pp [C4];
-- la composición entre vivienda nueva y usada en la media de precio por metro cuadrado aporta [cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)] [C4];
+- la composición entre vivienda nueva y usada en la media de precio por metro cuadrado aporta 0,00 pp [C4];
 - con pesos provinciales de 2015, Registradores sube 66,8 % y con pesos de comunidades 63,8 % [C4]: la reponderación geográfica amplía la diferencia en lugar de reducirla;
 - queda un residuo no identificado de -30,9 pp [C4], compatible con diferencias de método (hedónico frente a medias o medianas), calidad, tamaño y cobertura, que no se pueden separar con los datos del repositorio.
 
-**Factor común.** Las cuatro fuentes se mueven juntas: el primer componente principal recoge [cifra no publicada en la versión 1.0: usa la serie de Notariado] de la varianza de las variaciones anuales [C4]. El desacuerdo está en el nivel acumulado, no en la dirección.
+**Factor común.** Las cuatro fuentes se mueven juntas: el primer componente principal recoge 89,2 % de la varianza de las variaciones anuales [C4]. El desacuerdo está en el nivel acumulado, no en la dirección.
 
-**Niveles.** Registradores 2.284 EUR/m2 y Notariado [cifra no publicada en la versión 1.0: usa la serie de Notariado] en 2025 [C4], fuentes únicas por concepto.
+**Niveles.** Registradores 2.284 EUR/m2 y Notariado 1.949 EUR/m2 en 2025 [C4], fuentes únicas por concepto.
 
 ![Puente de precio entre el IPV y el núcleo](../output/v5/A23/fig1_puente_precio.png)
 
@@ -346,14 +346,14 @@ El parque es el conjunto de viviendas existentes y sus ocupantes; el mercado son
 ### 5.2 Empresas (CB)
 
 - Compraventas con comprador persona jurídica: 11,3 % de compraventas en 2024 [C4]. Es un flujo; no dice qué parte del parque poseen las empresas.
-- Declarantes del IRPF con rendimientos de capital inmobiliario: [cifra no publicada en la versión 1.0: usa la serie de AEAT]; con reducción por arrendamiento de vivienda: [cifra no publicada en la versión 1.0: usa la serie de AEAT] [C4].
-- Viviendas equivalentes arrendadas por personas físicas: [cifra no publicada en la versión 1.0: usa la serie de AEAT], es decir, [cifra no publicada en la versión 1.0: usa la serie de AEAT] por declarante [C4].
-- Frente a las viviendas principales en alquiler del Censo (2.965.497 viviendas), el residual que incluye personas jurídicas, sector público y alquiler no declarado está entre [cifra no publicada en la versión 1.0: usa la serie de AEAT] [C4].
+- Declarantes del IRPF con rendimientos de capital inmobiliario: 3.262.026 declarantes; con reducción por arrendamiento de vivienda: 2.236.896 declarantes [C4].
+- Viviendas equivalentes arrendadas por personas físicas: 2.650.952 viviendas, es decir, 0,81 viviendas/declarante por declarante [C4].
+- Frente a las viviendas principales en alquiler del Censo (2.965.497 viviendas), el residual que incluye personas jurídicas, sector público y alquiler no declarado está entre 16,9-38,1 % del stock [C4].
 - La AEAT no publica la distribución de arrendadores por número de inmuebles: no se puede contrastar cuánto alquiler está en manos de grandes tenedores.
 
 ### 5.3 No residentes (R1A)
 
-- Peso de los compradores extranjeros no residentes: 6,8 % en 2025 frente a 9,9 % en 2015 [C4]. Con residentes, los compradores extranjeros son [cifra no publicada en la versión 1.0: usa la serie de Notariado] [C4].
+- Peso de los compradores extranjeros no residentes: 6,8 % en 2025 frente a 9,9 % en 2015 [C4]. Con residentes, los compradores extranjeros son 16,9 % [C4].
 - Entre provincias va de 0,07-32,5 % [C4].
 - Asociación entre el peso inicial de no residentes y la subida del precio 2015-2025: bivariada 0,96 % de precio por punto de peso inicial (0,46-1,5 % de precio por punto de peso inicial); con renta, población, costa e islas, 0,02 % de precio por punto de peso inicial (-0,55 a 0,59 % de precio por punto de peso inicial) [C4]. Con controles el coeficiente no se distingue de cero, pero el intervalo no excluye una asociación de una parte apreciable de la bivariada. No se atribuye la subida a los no residentes ni se descarta.
 
@@ -361,7 +361,7 @@ El parque es el conjunto de viviendas existentes y sus ocupantes; el mercado son
 
 ### 5.4 Contado (CA)
 
-- Hipotecas sobre vivienda por cada cien compraventas: 70,0 hipotecas por 100 compraventas en 2025 (INE) [C4]. Con Registradores, en 2022-2025, la razón coincide: [cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)] en 2022, [cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)] en 2023, [cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)] en 2024 y [cifra no publicada en la versión 1.0: usa la serie de Registradores (Anuario ERI)] en 2025 [C4].
+- Hipotecas sobre vivienda por cada cien compraventas: 70,0 hipotecas por 100 compraventas en 2025 (INE) [C4]. Con Registradores, en 2022-2025, la razón coincide: 71,4-71,7 hipotecas por 100 compraventas en 2022, 65,3-65,8 hipotecas por 100 compraventas en 2023, 66,4-68,4 hipotecas por 100 compraventas en 2024 y 70,0-70,7 hipotecas por 100 compraventas en 2025 [C4].
 - Si todas las hipotecas fuesen de compra, el contado sería como mínimo 30,0 % de compraventas de las compraventas [C4]. La cota solo es informativa si la fracción de hipotecas de compra supera 71,4 % de las hipotecas.
 - Crédito a construcción y actividades inmobiliarias: de 471,8 miles de millones de euros en 2008 a 97,6 miles de millones de euros en 2025, una caída de -79,3 % [C4]. Es un saldo, no nuevas operaciones.
 
@@ -377,7 +377,7 @@ El parque es el conjunto de viviendas existentes y sus ocupantes; el mercado son
 
 ### 5.6 Fiscalidad (CB)
 
-- La reducción por arrendamiento de vivienda se aplica a [cifra no publicada en la versión 1.0: usa la serie de AEAT] [C4].
+- La reducción por arrendamiento de vivienda se aplica a 2.236.896 declarantes [C4].
 - No hay en el repositorio una evaluación de la incidencia de los cambios fiscales en la oferta de alquiler. La matriz D1 los deja como «no evaluable» (instrumento `I15`).
 
 ### 5.7 Desigualdad (CC)

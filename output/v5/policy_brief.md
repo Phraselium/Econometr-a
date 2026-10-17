@@ -7,7 +7,7 @@
 1. [C1] Entre 2021 y 2025 el número de hogares aumentó en 997.586 hogares (981.823-1.013.350 hogares), con dos fuentes de hogares (ECP y EPA corregida) que coinciden en orden de magnitud.
 2. [C2] En 2021-2024 los hogares crecieron más que las viviendas terminadas: el balance acumulado está en el rango 389.361-710.542 viviendas (sin las dos correcciones que conservan el salto de la EPA, 596.371-710.542 viviendas) sin contar bajas del parque (cota: depende de la corrección del salto de la EPA en 2021). [C4] Con las bajas del parque estimadas, llegaría como máximo a 765.994 viviendas.
 3. [C1] Las viviendas terminadas fueron de 72.264-94.426 viviendas/año en 2019-2024 (territorio común), con el Ministerio y el Catastro de acuerdo.
-4. [C1] El precio de compra subió [cifra no publicada en la versión 1.0: usa la serie de Notariado] en 2015-2025 según el núcleo Ministerio-Notariado-Registradores. [C1] El alquiler de los contratos vigentes subió 10,9-22,9 % en 2015-2024; el de los contratos nuevos crece más deprisa, pero esa brecha es [C4].
+4. [C1] El precio de compra subió 47,2 % (44,2-56,1 %) en 2015-2025 según el núcleo Ministerio-Notariado-Registradores. [C1] El alquiler de los contratos vigentes subió 10,9-22,9 % en 2015-2024; el de los contratos nuevos crece más deprisa, pero esa brecha es [C4].
 5. [C2] La proyección del INE añade 1.720.537 hogares (1.308.531-1.772.410 hogares) en 2026-2035: es la parte de la necesidad que no depende de supuestos propios sobre el parque.
 6. [C2] Hasta 2030 el déficit nacional empeora en todos los escenarios de la rejilla (definida por el autor), incluido uno de construcción optimista; cuánto empeora es [C4].
 7. [C2] La demanda latente de los jóvenes, medida por la convivencia con los padres frente a 2008, queda en 188.000-506.000 hogares.
@@ -101,3 +101,7 @@ Las solicitudes de docs/v5/solicitudes.md, por orden de prioridad:
 Se evalúan afirmaciones e instrumentos, nunca a quienes los proponen. Todos los instrumentos se miden con la misma rúbrica y las cifras proceden de output/v5/cifras_clave.csv, con su periodo, fuente y capa. Cuando dos métodos discrepan se dan los dos.
 
 **Pre-registro y versiones.** Las etiquetas git `prereg-v5` (pre-registro de las diferencias entre provincias, `docs/v5/prereg_B3.md`) y `v5.0` se crearon en el repositorio local el 10 de octubre de 2026 y se publicaron en el repositorio remoto el [fecha de publicación: pendiente del autor; las etiquetas aún no se han podido publicar desde el entorno de trabajo, véase la primera tarea de `docs/v7_1/tareas_autor.md`]. El commit del pre-registro es anterior a cualquier resultado de ese análisis, pero una etiqueta local no es un sello de tiempo externo. Por eso, en versiones futuras el pre-registro se depositará además con sello de tiempo externo (OSF o Zenodo) antes de estimar.
+
+---
+
+*Atribución (Open Database License).* Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. Las cifras construidas con esos datos se publican bajo la misma licencia.

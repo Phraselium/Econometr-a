@@ -155,3 +155,6 @@ data/raw/v16/*/_terceros/
 data/raw/v16/alquiler_turismo/original/insideairbnb/listings_*.csv.gz
 # V16: normalizados de series de terceros (solo en disco)
 data/processed/v16/*_terceros.parquet
+# V16: microdatos de la ECV y la EPF (como en v9: solo en disco, sha256 en data/CHECKSUMS.sha256)
+data/raw/v16/renta_parque/ecv/
+data/raw/v16/renta_parque/epf/

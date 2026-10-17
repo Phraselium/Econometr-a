@@ -1,0 +1,8 @@
+{
+  "rama": "v16-f1-renta_parque",
+  "pregunta": "Qué fuentes de renta, hogares, parque, vacías, EPF, ECV, Catastro y EFF faltan en el repositorio, y cuáles se han descargado con licencia y checksum (fase 1 de V16)",
+  "capa": "C4",
+  "N": 7,
+  "metodo": "adquisición de datos",
+  "notas": "Manifiesto: data/raw/v16/renta_parque/_manifest.csv (469 filas). Ficha: docs/v16/fuentes/renta_parque.md. Descargado: ADRH 432 de 540 tablas (58,6 M puntos; 64 % secretos o nulos; 108 bloqueadas por volumen en la API); ECV 2004-2017 transversal y longitudinal parcial (ECV 2018-2025 ya en el repositorio); EPF 2006 y módulo de bienestar; Catastro URBANA2026.xls. Ya en el repositorio: Censo 2021 por municipio y sección (provisional) y vacías por consumo eléctrico (tabla 59531, sin serie anual). No localizado: EPF 2007-2025 y serie anual de vacías 2020-. Requiere al autor: descarga masiva del Catastro (certificado) y microdatos EFF (solicitud BELab). Pendiente de decisión: ECV longitudinal 2017-2025 (~510 MB). Redistribuibles marcados «sí» con cita; ficheros grandes en _grandes/ (ignorado en git). Rutas de scripts: data/raw/v16/renta_parque/_scripts/. Sin normalizar: la normalización a formato largo es del ingeniero de datos."
+}

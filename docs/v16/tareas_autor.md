@@ -28,3 +28,30 @@ Sus dos fuentes son la ECP y la EPA del INE. La EPA se calibra con las cifras de
 - (a) mantener C1 y explicar por qué la jefatura de hogar de la EPA es una medición distinta;
 - (b) bajar a C4 sin cambiar el valor, con la línea «dh_2125 | capa C1 → C4» en ERRATA.md y una fila en docs/v15/bajadas_capa.csv.
 V16 no lo cambia por su cuenta: la cifra figura como C1 en la página de hechos. Las cifras nuevas V16-* aplican ya esta vara (fase 2).
+
+## 3. Datos que dependen de ti (fase 1)
+El trabajo sigue sin ellos. Cada paso exacto está en la ficha de su familia, en docs/v16/fuentes/.
+
+**Por orden de valor para las preguntas de V16:**
+1. **Q1 y Q2 · Inside Airbnb anterior a 2025-12.** Formulario en https://insideairbnb.com/data-requests/, pidiendo las ciudades españolas y todo el histórico.
+2. **Q8 · Golden visa (OPI).** Autorizaciones de residencia por inversión, por nacionalidad y año. Descarga manual desde inclusion.gob.es (el servidor da 403 al agente). Destino: data/raw/v16/demanda_internacional/_terceros/golden_visa/.
+3. **Q4 · Restricciones físicas y de planeamiento:**
+   - SIU del MIVAU (suelo urbano y urbanizable por municipio);
+   - MDT05 del CNIG (pendientes);
+   - DPMT del MITECO (dpmt.zip, 12 MB, uso libre con cita);
+   - cuenta en CLMS para CORINE 2018.
+   - Sin estos datos, la elasticidad tipo Saiz solo puede usar la Red Natura y la línea de costa.
+4. **Q5 · Licencias:**
+   - EA-MPD del BCE: decidir si se acepta su uso con cita. Hoy está en _terceros.
+   - Choques de Jarociński-Karadi: la versión mensual en abierto ya está en el repositorio con CC BY 4.0.
+5. **Fase 2 · Catastro y EFF:**
+   - descarga masiva alfanumérica del Catastro (certificado electrónico; parque por año de construcción, uso y superficie);
+   - microdatos de la EFF (solicitud a BELab del Banco de España).
+6. **Q1 y Q2 · Registro Único de Arrendamientos (RD 1312/2024).** Pedir estadísticas agregadas por provincia o municipio y mes al MIVAU y al Colegio de Registradores (Portal de Transparencia).
+7. **Q1 · Fianzas por tipo de contrato** (temporada, habitación) en Madrid, Andalucía y Baleares, y altas de viviendas turísticas de Catalunya con fecha, Ibiza y Formentera: solicitud a las agencias autonómicas.
+8. **Licencias por confirmar** (hoy en _terceros):
+   - estadísticas judiciales del CGPJ (lanzamientos);
+   - Nomenclátor de partidos judiciales;
+   - Red Natura 2000 (MITECO);
+   - ITP y AJD del panorama del REAF: el CSV solo lleva tipos impositivos, con las leyes autonómicas como fuente normativa.
+9. **ECV longitudinal 2017-2025** (unos 510 MB): decidir si se descarga. La transversal ya está completa (2004-2025).

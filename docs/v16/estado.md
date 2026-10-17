@@ -62,12 +62,13 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F3 | lector-literatura | L7_vivienda_publica_vacias | 126.467 | docs/v16/literatura/L7_vivienda_publica_vacias.md |
 | 2026-10-17 | F3 | lector-literatura | L6_extranjeros_golden_visa | 186.938 | docs/v16/literatura/L6_extranjeros_golden_visa.md |
 | 2026-10-17 | F3 | lector-literatura | L2_vivienda_turistica_regulacion | 165.022 | docs/v16/literatura/L2_vivienda_turistica_regulacion.md |
+| 2026-10-17 | F1 | adquisidor-datos | renta_parque | 156.933 | data/raw/v16/renta_parque;docs/v16/fuentes/renta_parque.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
-| F1 | 1.346.686 |
+| F1 | 1.503.619 |
 | F3 | 1.160.356 |
 
-Total V16: 2.507.042 tokens
+Total V16: 2.663.975 tokens
 
 <!-- fin subagentes -->

@@ -1,0 +1,83 @@
+{
+  "rama": "r16/montecarlo",
+  "pregunta": "Q5-p / Q5-a (proyección local nacional)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; solo T y horizontes de la pregunta",
+  "N": "T = 100, h = [1, 4, 8, 12]",
+  "metodo": "LP con Newey-West de b fija (b = 0,2, Bartlett)",
+  "estimacion": {
+    "beta_4_ref": -0.006
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "NO APTO → diseño solo descriptivo",
+    "combinaciones_que_fallan": {
+      "rho=0.9, h=1": [
+        "tamaño 0.0698 fuera de [0.04; 0.06]"
+      ],
+      "rho=0.9, h=4": [
+        "tamaño 0.0834 fuera de [0.04; 0.06]",
+        "cobertura 0.8941 fuera de [0.92; 0.97]"
+      ],
+      "rho=0.9, h=8": [
+        "tamaño 0.0871 fuera de [0.04; 0.06]",
+        "cobertura 0.8643 fuera de [0.92; 0.97]"
+      ],
+      "rho=0.9, h=12": [
+        "tamaño 0.0894 fuera de [0.04; 0.06]",
+        "cobertura 0.8772 fuera de [0.92; 0.97]"
+      ],
+      "rho=0.95, h=1": [
+        "tamaño 0.0642 fuera de [0.04; 0.06]"
+      ],
+      "rho=0.95, h=4": [
+        "tamaño 0.0749 fuera de [0.04; 0.06]",
+        "cobertura 0.8962 fuera de [0.92; 0.97]"
+      ],
+      "rho=0.95, h=8": [
+        "tamaño 0.0829 fuera de [0.04; 0.06]",
+        "cobertura 0.8632 fuera de [0.92; 0.97]"
+      ],
+      "rho=0.95, h=12": [
+        "tamaño 0.0876 fuera de [0.04; 0.06]",
+        "cobertura 0.8457 fuera de [0.92; 0.97]"
+      ],
+      "rho=0.98, h=1": [
+        "tamaño 0.0686 fuera de [0.04; 0.06]"
+      ],
+      "rho=0.98, h=4": [
+        "tamaño 0.0788 fuera de [0.04; 0.06]",
+        "cobertura 0.8894 fuera de [0.92; 0.97]"
+      ],
+      "rho=0.98, h=8": [
+        "tamaño 0.0874 fuera de [0.04; 0.06]",
+        "cobertura 0.8472 fuera de [0.92; 0.97]"
+      ],
+      "rho=0.98, h=12": [
+        "tamaño 0.0925 fuera de [0.04; 0.06]",
+        "cobertura 0.8130 fuera de [0.92; 0.97]"
+      ]
+    },
+    "n_combinaciones": 12,
+    "cv_fijo_b": {
+      "0.2": 2.5375607294985327,
+      "1.0": 4.793347087698169
+    },
+    "tamano_min": 0.0642,
+    "tamano_max": 0.0925,
+    "cobertura_min": 0.813,
+    "cobertura_max": 0.9313,
+    "R": 10000,
+    "semilla": 20261010
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Sin alternativa nombrada para Q5 en el punto 3; b = 1,0 y NW convencional son solo referencias."
+  ]
+}

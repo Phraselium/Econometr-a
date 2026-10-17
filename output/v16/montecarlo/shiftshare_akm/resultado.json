@@ -1,0 +1,59 @@
+{
+  "rama": "r16/montecarlo",
+  "pregunta": "Q3-c1 / Q3-c2 (shift-share en forma reducida)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; cuotas 2003 reales del padrón (solo estructura)",
+  "N": "41 provincias x 14 años, 28 orígenes",
+  "metodo": "TWFE con inferencia AKM / AKM0",
+  "estimacion": {
+    "beta_alt": 1.0,
+    "sesgo": -0.005622517466942655,
+    "rmse": 0.24906521903008355
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "NO APTO → diseño solo descriptivo",
+    "por_inferencia": {
+      "AKM": {
+        "veredicto": "NO APTO",
+        "fallos": [
+          "tamaño 0.3762 fuera de [0.04; 0.06]",
+          "cobertura 0.6238 fuera de [0.92; 0.97]"
+        ]
+      },
+      "AKM0": {
+        "veredicto": "NO APTO",
+        "fallos": [
+          "tamaño 0.0108 fuera de [0.04; 0.06]",
+          "cobertura 0.9892 fuera de [0.92; 0.97]"
+        ]
+      },
+      "convencional (EE por provincia)": {
+        "veredicto": "NO APTO",
+        "fallos": [
+          "tamaño 0.4520 fuera de [0.04; 0.06]",
+          "cobertura 0.5480 fuera de [0.92; 0.97]"
+        ]
+      }
+    },
+    "n_efectivo_choques": 9.31757423226139,
+    "tamano_convencional": 0.452,
+    "tamano_akm": 0.3762,
+    "cobertura_akm": 0.6238,
+    "tamano_akm0": 0.0108,
+    "cobertura_akm0": 0.9892,
+    "potencia_akm": 0.9848,
+    "R": 5000,
+    "semilla": 20261010
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "El EE convencional se muestra solo para medir el sobre-rechazo; no es alternativa."
+  ]
+}

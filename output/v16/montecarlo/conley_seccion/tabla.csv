@@ -1,0 +1,10 @@
+escenario,inferencia,R,tamano_5pct,tamano_ic95,cobertura_95,potencia_beta,sesgo,rmse,var_no_positiva
+"principal: radio del campo 1,0 km (correlación nula más allá de 2 km)",Conley 2 km,4000,0.0435,"[0.0372, 0.0498]",0.9565,0.65425,1.82159737688814e-07,0.020945258637745438,0.0
+"principal: radio del campo 1,0 km (correlación nula más allá de 2 km)",HC1 (referencia),4000,0.23625,"[0.2231, 0.2494]",0.76375,0.889,1.82159737688814e-07,0.020945258637745438,
+"principal: radio del campo 1,0 km (correlación nula más allá de 2 km)",agrupado por municipio (referencia),4000,0.0695,"[0.0616, 0.0774]",0.9305,0.726,1.82159737688814e-07,0.020945258637745438,
+"sens: radio 0,5 km",Conley 2 km,2000,0.012,"[0.0072, 0.0168]",0.988,0.8225,-0.00011333892473353374,0.014490072839963534,0.0
+"sens: radio 0,5 km",HC1 (referencia),2000,0.0925,"[0.0798, 0.1052]",0.9075,0.9555,-0.00011333892473353374,0.014490072839963534,
+"sens: radio 0,5 km",agrupado por municipio (referencia),2000,0.048,"[0.0386, 0.0574]",0.952,0.927,-0.00011333892473353374,0.014490072839963534,
+"sens: radio 1,5 km (correlación hasta 3 km, mayor que el corte)",Conley 2 km,2000,0.068,"[0.057, 0.079]",0.932,0.5825,-0.00016735498873546634,0.027060507871005945,0.0
+"sens: radio 1,5 km (correlación hasta 3 km, mayor que el corte)",HC1 (referencia),2000,0.346,"[0.3252, 0.3668]",0.654,0.8335,-0.00016735498873546634,0.027060507871005945,
+"sens: radio 1,5 km (correlación hasta 3 km, mayor que el corte)",agrupado por municipio (referencia),2000,0.063,"[0.0524, 0.0736]",0.937,0.584,-0.00016735498873546634,0.027060507871005945,

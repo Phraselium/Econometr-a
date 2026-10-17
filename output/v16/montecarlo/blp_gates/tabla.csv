@@ -1,0 +1,4 @@
+prueba,R,tamano_5pct,tamano_ic95,potencia_heterogeneidad,cobertura_ate_95,sesgo_ate,rmse_ate
+conjunta: igualdad de los 5 GATES (principal),2000,0.005,"[0.0019, 0.0081]",0.188,0.985,-0.0003901289927315457,0.022560655803960643
+BLP beta2 = 0 (secundaria),2000,0.005,"[0.0019, 0.0081]",0.212,,,
+GATES gamma5 = gamma1 (secundaria),2000,0.0025,"[0.0003, 0.0047]",0.184,,,

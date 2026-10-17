@@ -1,0 +1,93 @@
+{
+  "rama": "r16/montecarlo",
+  "pregunta": "Q2a / Q2c (DiD de intensidad)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; estructura real (provincias, distancias, municipios IPVA)",
+  "N": "41 provincias x 7 periodos; 391 municipios x 4 años en 37 provincias",
+  "metodo": "TWFE de exposición continua × posterior; Webb (Q2a) / CR1 por provincia (Q2c)",
+  "estimacion": {
+    "beta_ref_por_DT": 0.04
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": {
+      "Q2a": "NO APTO → diseño solo descriptivo",
+      "Q2c": "NO APTO → diseño solo descriptivo"
+    },
+    "criterio": {
+      "Q2a": {
+        "veredicto": "NO APTO",
+        "fallos": [
+          "tamaño 0.1420 fuera de [0.04; 0.06]",
+          "cobertura 0.8570 fuera de [0.92; 0.97]"
+        ]
+      },
+      "Q2c": {
+        "veredicto": "NO APTO",
+        "fallos": [
+          "tamaño 0.0975 fuera de [0.04; 0.06]",
+          "cobertura 0.9025 fuera de [0.92; 0.97]"
+        ]
+      }
+    },
+    "tabla": [
+      {
+        "diseno": "Q2a provincial",
+        "inferencia": "Webb (principal)",
+        "R": 2000,
+        "tamano_5pct": 0.142,
+        "tamano_ic95": "[0.1267, 0.1573]",
+        "cobertura_95": 0.857,
+        "potencia_beta_ref": 0.9955,
+        "sesgo": -0.00044166663630878285,
+        "rmse": 0.008677637884209971
+      },
+      {
+        "diseno": "Q2a provincial",
+        "inferencia": "CR1 por provincia (referencia)",
+        "R": 2000,
+        "tamano_5pct": 0.172,
+        "tamano_ic95": "[0.1555, 0.1885]",
+        "cobertura_95": 0.8280000000000001,
+        "potencia_beta_ref": 0.997,
+        "sesgo": -0.00044166663630878285,
+        "rmse": 0.008677637884209971
+      },
+      {
+        "diseno": "Q2c municipal",
+        "inferencia": "CR1 por provincia (principal)",
+        "R": 2000,
+        "tamano_5pct": 0.0975,
+        "tamano_ic95": "[0.0845, 0.1105]",
+        "cobertura_95": 0.9025,
+        "potencia_beta_ref": 0.9955,
+        "sesgo": -3.099914768927864e-05,
+        "rmse": 0.007616012805335751
+      },
+      {
+        "diseno": "Q2c municipal",
+        "inferencia": "Webb por provincia (referencia extra)",
+        "R": 2000,
+        "tamano_5pct": 0.0605,
+        "tamano_ic95": "[0.0501, 0.0709]",
+        "cobertura_95": 0.9375,
+        "potencia_beta_ref": 0.99,
+        "sesgo": -3.099914768927864e-05,
+        "rmse": 0.007616012805335751
+      }
+    ],
+    "R": 2000,
+    "B_bootstrap": 399,
+    "semilla": 20261010
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Veredictos separados por diseño (Q2a, Q2c); el de Q2c no tiene alternativa nombrada."
+  ]
+}

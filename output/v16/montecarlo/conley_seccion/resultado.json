@@ -1,0 +1,42 @@
+{
+  "rama": "r16/montecarlo",
+  "pregunta": "Q3-b (correlación transversal por sección)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; geometría real de secciones de entrenamiento (solo estructura)",
+  "N": "10815 secciones, 851 municipios",
+  "metodo": "MCO con FE de municipio y errores de Conley a 2 km",
+  "estimacion": {
+    "beta_alt": 0.05,
+    "sesgo": 1.82159737688814e-07,
+    "rmse": 0.020945258637745438
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "APTO (solo escenario principal; no robusto a la sensibilidad del rango espacial)",
+    "criterio": {
+      "veredicto": "APTO",
+      "fallos": []
+    },
+    "tamano_conley": 0.0435,
+    "cobertura_conley": 0.9565,
+    "potencia": 0.65425,
+    "tamano_hc1": 0.23625,
+    "R": 4000,
+    "semilla": 20261010,
+    "vecinos_medios_2km": 46.645307443365695,
+    "pasa_sensibilidad": {
+      "sens: radio 0,5 km": false,
+      "sens: radio 1,5 km (correlación hasta 3 km, mayor que el corte)": false
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "Sin magnitud de referencia en la adenda: potencia frente a beta = 0,05 DT/DT declarada en el proceso generador."
+  ]
+}

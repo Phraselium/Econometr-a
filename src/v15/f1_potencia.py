@@ -219,6 +219,16 @@ def main() -> int:
     res = placebo_did(inc, n_trat, ["2021T4"], inc.u, rng)
     fila("P6", "Igual, errores agrupados por municipio", "incasol", "municipio (Cataluña)", inc.u.nunique(), inc.u.nunique(), inc.t.nunique(), res,
          "log puntos", "0,059 (V9-D1b)", "", n_trat)
+    # P6b · número de contratos nuevos (Incasòl, suma de tramos), mismo diseño
+    nc = q("""SELECT territorio_codigo AS u, periodo AS t, sum(valor) AS valor FROM {H}
+              WHERE {F} AND variable='incasol_contratos' AND nivel='municipio' AND frecuencia='T' GROUP BY 1, 2""")
+    nc["y"] = np.log1p(nc.valor)
+    nc = nc[nc.t < "2024T1"]
+    nc = nc[nc.groupby("u").t.transform("count") >= 16]
+    n_trat = int(zt.u.isin(nc.u).sum())
+    res = placebo_did(nc, n_trat, ["2021T4"], nc.u, rng)
+    fila("P6", "DiD placebo, número de contratos nuevos log(1+n), errores por municipio", "incasol contratos (suma de tramos)",
+         "municipio (Cataluña)", nc.u.nunique(), nc.u.nunique(), nc.t.nunique(), res, "log puntos", "0,13 (Pérez García 2026, preprint)", "", n_trat)
     # P6 · SERPAVI anual nacional: la base acaba en 2024 → 1 año posterior
     sp = panel("serpavi_alquiler_m2_mediana", "municipio", "A", "tipologia=VC", "periodo < '2024'", min_t=8)
     n_trat = int(zt.u.isin(sp.u).sum())

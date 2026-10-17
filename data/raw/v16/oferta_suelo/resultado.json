@@ -1,0 +1,8 @@
+{
+  "rama": "v16-f1-oferta_suelo",
+  "pregunta": "Q4 de V16: ¿se puede construir una elasticidad de oferta municipal tipo Saiz con insumos de suelo, pendiente, protección y planeamiento? Fase 1: qué material crudo hay, qué falta y qué requiere al autor.",
+  "capa": "C4",
+  "N": 2,
+  "metodo": "adquisición de datos",
+  "notas": "Descargadas 2 fuentes nuevas: INE IMM (tablas 8381, 8382, 8377; JSON original; redistribuible sí) y MITECO Red Natura 2000 2025 (SHP 132 MB, licencia no explícita, redistribuible dudoso, en _terceros/_grandes, no versionado). Ya en el repositorio (no descargado): precio del suelo urbano MIVAU (mivau_v2_suelo), calificaciones VPO provisionales y definitivas (mivau_v2_protegida), proxies de visados y fin de obra (mivau_visados, mivau_fin_obra), Catastro (catastro_urbana_municipios, v4 catastro_solares), seccionado 2025 para agregar a municipio, Eurostat costes. Fallidas: SIU MIVAU (403), MDT05 CNIG (página no disponible), DPMT MITECO (la descarga devuelve HTML), CLC 2018 y SIOSE (exigen autenticación o sin endpoint de fichero), Madrid, GVA e Incasòl (sin endpoint verificado), licencias INE ECE (id de tabla no localizado). Requiere al autor: descarga manual del SIU, del MDT05 por hojas, del DPMT y del CLC; registro CLMS; URL de catálogos autonómicos; confirmar licencia de Natura. Pendiente de cálculo: pendiente municipal desde MDT, % Natura y DPMT por municipio. Sin checksum añadido a data/CHECKSUMS.sha256 (lo hace el coordinador). Ficha: docs/v16/fuentes/oferta_suelo.md; manifiesto: data/raw/v16/oferta_suelo/_manifest.csv."
+}

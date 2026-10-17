@@ -457,9 +457,148 @@ def evaluate_v6(modelo_id: str, fn, rama: str, nombres: list[str]):
     return res
 
 
+# ============================================================================== v15
+# Validación sellada NUEVA de V15 (docs/v15/plan.md, fase 3.3; docs/v15/sellado_v15.md), fijada ANTES de estimar nada:
+# - temporal: todo dato posterior al depósito del pre-registro (periodo posterior al último visto de cada variable, registrado
+#   en docs/v15/sellado_v15.json al sellar, o edición publicada después de la fecha de corte);
+# - espacial, por bloques aleatorios (SEED=20261010): celdas de 0,5° × 0,5° sobre los centroides municipales (≈ 45 km); se sella
+#   el 15 % de las celdas con municipios del universo V15. Los municipios con 5 distritos o más nunca se sellan enteros: se sella
+#   el 15 % de sus distritos (bloques intramunicipales para los diseños por sección). Partición anidada: un municipio sellado
+#   sella todas sus secciones y distritos. Fuga declarada: el agregado municipal de una gran ciudad (entrenamiento) contiene sus
+#   distritos sellados; por eso la evaluación por sección de esas ciudades no se combina con modelos municipales.
+# - Universo V15: provincias visibles en la base (las selladas en v6 siguen fuera de todo uso; las de v2 ya se evaluaron).
+SEED_V15 = SEED
+FRACCION_V15 = 0.15
+CELDA_V15 = 0.5
+GEO = HERE / "data" / "base" / "geo"
+MANIFIESTO_V15 = HERE / "docs" / "v15" / "sellado_v15.json"
+PROYECTO = HERE / "proyecto.json"
+
+
+def _centroides_municipios() -> pd.DataFrame:
+    import shapely
+    m = pd.read_parquet(GEO / "municipios.parquet", columns=["cod_municipio", "cod_provincia", "geometry"])
+    c = shapely.centroid(shapely.from_wkb(m.geometry.values))
+    return pd.DataFrame({"cod_municipio": m.cod_municipio.astype(str).str.zfill(5), "cod_provincia": m.cod_provincia.astype(str).str.zfill(2),
+                         "lon": shapely.get_x(c), "lat": shapely.get_y(c)})
+
+
+def celdas_selladas_v15() -> list[str]:
+    m = _centroides_municipios()
+    m = m[~m.cod_provincia.isin(set(provincias_selladas_v6()))]
+    celda = (np.floor(m.lon / CELDA_V15).astype(int).astype(str) + "_" + np.floor(m.lat / CELDA_V15).astype(int).astype(str))
+    todas = sorted(celda.unique())
+    rng = np.random.default_rng(SEED_V15)
+    n = int(round(FRACCION_V15 * len(todas)))
+    return sorted(np.array(todas)[rng.permutation(len(todas))[:n]].tolist())
+
+
+def _municipios_grandes() -> set[str]:
+    """Municipios con 5 distritos o más: nunca se sellan enteros; se sellan por distritos (regla fijada antes de sortear)."""
+    s = pd.read_parquet(GEO / "secciones.parquet", columns=["cod_distrito", "cod_municipio"]).astype(str)
+    n = s.groupby(s.cod_municipio.str.zfill(5)).cod_distrito.nunique()
+    return set(n[n >= 5].index)
+
+
+def municipios_sellados_v15() -> set[str]:
+    m = _centroides_municipios()
+    m = m[~m.cod_provincia.isin(set(provincias_selladas_v6()))]
+    celda = (np.floor(m.lon / CELDA_V15).astype(int).astype(str) + "_" + np.floor(m.lat / CELDA_V15).astype(int).astype(str))
+    return set(m.cod_municipio[celda.isin(set(celdas_selladas_v15()))]) - _municipios_grandes()
+
+
+def distritos_sellados_v15() -> set[str]:
+    """15 % de los distritos (7 dígitos) de cada municipio no sellado con ≥ 5 distritos, más todos los de municipios sellados."""
+    s = pd.read_parquet(GEO / "secciones.parquet", columns=["cod_distrito", "cod_municipio"]).astype(str)
+    s["cod_distrito"] = s.cod_distrito.str.zfill(7)
+    s["cod_municipio"] = s.cod_municipio.str.zfill(5)
+    mun = municipios_sellados_v15()
+    sel = set(s.cod_distrito[s.cod_municipio.isin(mun)])
+    rng = np.random.default_rng(SEED_V15 + 15)
+    for cod, g in s[~s.cod_municipio.isin(mun)].groupby("cod_municipio"):
+        d = sorted(g.cod_distrito.unique())
+        if len(d) >= 5:
+            k = max(1, int(round(FRACCION_V15 * len(d))))
+            sel |= set(np.array(d)[rng.permutation(len(d))[:k]].tolist())
+    return sel
+
+
+def unidad_sellada_v15(codigo: pd.Series, nivel: str) -> pd.Series:
+    """True si la unidad está en el bloque espacial sellado de V15. Provincias y CCAA no se sellan espacialmente (solo
+    temporalmente): su validación es la temporal. Las provincias selladas en v6 devuelven True (siguen fuera de uso)."""
+    c = codigo.astype(str)
+    v6 = set(provincias_selladas_v6())
+    if nivel == "municipio":
+        return c.str.zfill(5).isin(municipios_sellados_v15()) | c.str.zfill(5).str[:2].isin(v6)
+    if nivel in ("distrito", "seccion"):
+        return c.str.zfill(7 if nivel == "distrito" else 10).str[:7].isin(distritos_sellados_v15()) | c.str[:2].isin(v6)
+    if nivel == "provincia":
+        return c.str.zfill(2).isin(v6)
+    return pd.Series(False, index=codigo.index)
+
+
+def _manifiesto_v15() -> dict:
+    return json.loads(MANIFIESTO_V15.read_text(encoding="utf-8")) if MANIFIESTO_V15.exists() else {}
+
+
+def sellar_v15(hechos: pd.DataFrame, nombre: str) -> pd.DataFrame:
+    """Separa filas de la base (formato largo de data/base/hechos.parquet): escribe la parte sellada en
+    data/sealed/v15_<nombre>.parquet (sin devolverla) y devuelve SOLO la de entrenamiento. Sellado = unidad del bloque espacial
+    V15, o periodo posterior al último visto de la variable en el manifiesto, o edición posterior a la fecha de corte.
+    Sin manifiesto (docs/v15/sellado_v15.json) se niega: el corte se fija antes de sellar."""
+    man = _manifiesto_v15()
+    if not man:
+        raise RuntimeError("Falta docs/v15/sellado_v15.json: fije el corte (fase 3.3) antes de sellar.")
+    esp = pd.Series(False, index=hechos.index)
+    for nivel, idx in hechos.groupby("nivel").groups.items():
+        esp.loc[idx] = unidad_sellada_v15(hechos.loc[idx, "territorio_codigo"], nivel).values
+    ultimo = hechos.variable.astype(str) + "|" + hechos.nivel.astype(str) + "|" + hechos.frecuencia.astype(str)
+    tope = ultimo.map(man["ultimo_periodo_visto"])
+    tem = tope.notna() & (hechos.periodo.astype(str) > tope.astype(str))
+    tem |= tope.isna()   # variable o combinación no vista al depositar: entera al sellado
+    if "edicion" in hechos:
+        tem |= pd.to_datetime(hechos.edicion, errors="coerce") > pd.Timestamp(man["fecha_corte"])
+    m = esp | tem
+    SEALED.mkdir(parents=True, exist_ok=True)
+    hechos[m].to_parquet(SEALED / f"v15_{nombre}.parquet", index=False)
+    with open(LOG, "a") as f:
+        f.write(json.dumps({"utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "evento": "sellado",
+                            "hipotesis": f"v15:{nombre}", "filas_selladas": int(m.sum()), "filas_entrenamiento": int((~m).sum())},
+                           ensure_ascii=False) + "\n")
+    return hechos[~m].copy()
+
+
+def evaluate_v15(hipotesis: str, fn, rama: str, nombres: list[str]):
+    """Abre la muestra sellada V15 UNA vez por hipótesis confirmatoria (registrado antes de leer), solo con la puerta abierta
+    (osf_prereg_v15 en proyecto.json). fn(dict) -> dict."""
+    sys.path.insert(0, str(HERE / "src" / "v15"))
+    from puerta import abierta
+    ok, motivo = abierta(json.loads(PROYECTO.read_text(encoding="utf-8")))
+    if not ok:
+        raise PermissionError(f"Puerta V15 cerrada: {motivo}")
+    clave = f"v15:{hipotesis}"
+    if any(a["hipotesis"] == clave and a.get("evento") == "apertura" for a in _accesos()):
+        raise PermissionError(f"{clave} ya abrió la muestra sellada V15 (una sola vez).")
+    apertura = {"utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "evento": "apertura",
+                "hipotesis": clave, "rama": rama, "paneles": [f"v15_{n}" for n in nombres]}
+    with open(LOG, "a") as f:
+        f.write(json.dumps(apertura, ensure_ascii=False) + "\n")
+    _log_md(apertura["utc"], clave, rama, apertura["paneles"], "APERTURA (antes de leer)")
+    res = fn({n: pd.read_parquet(SEALED / f"v15_{n}.parquet") for n in nombres})
+    reg = {**apertura, "utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "evento": "evaluacion", "resultado": res}
+    with open(LOG, "a") as f:
+        f.write(json.dumps(reg, ensure_ascii=False, default=str) + "\n")
+    _log_md(reg["utc"], clave, rama, apertura["paneles"], json.dumps(res, ensure_ascii=False, default=str)[:300])
+    return res
+
+
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         print(json.dumps(build(), indent=2, ensure_ascii=False))
+    elif len(sys.argv) > 1 and sys.argv[1] == "bloques_v15":
+        mun, dis = municipios_sellados_v15(), distritos_sellados_v15()
+        print(json.dumps({"celdas_selladas": len(celdas_selladas_v15()), "municipios_sellados": len(mun),
+                          "distritos_sellados": len(dis), "municipios_grandes": len(_municipios_grandes())}, ensure_ascii=False))
     elif len(sys.argv) > 1 and sys.argv[1] == "provincias_v6":
         print(provincias_selladas_v6())
     elif len(sys.argv) > 1 and sys.argv[1] == "provincias":

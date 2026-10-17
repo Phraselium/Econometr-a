@@ -2,7 +2,7 @@
 
 Versión: borrador de depósito, 2026-10-17. Autor: Borja Romero. Repositorio: el de proyecto.json. Etiqueta local: `prereg-v15`. Registro externo: OSF; el autor lo deposita y anota el identificador en proyecto.json (`osf_prereg_v15`).
 
-Este documento se escribe **antes de estimar ningún efecto de V15**.
+Este documento se escribe **antes de estimar ningún efecto de V15**. **La adenda docs/v15/preregistro_v15_adenda.md (respuesta al revisor) prevalece donde difiera.**
 
 **Lo que ya se ha hecho con datos:**
 - inventario (docs/v15/inventario_variables.md);
@@ -88,7 +88,7 @@ Si a 31-12-2027 no se alcanza el mínimo, se evalúa con lo que haya y se declar
 
 **Muestras ya vistas (solo informativas).**
 - Sellados de v2 (3 provincias, ya evaluadas).
-- Sellado de v6 (11 provincias). Sigue fuera de todo uso: no está en la base de entrenamiento.
+- Sellado de v6 (11 provincias). Sigue fuera de todo uso: sus filas están en la base, pero no en el entrenamiento V15 (decisiones G6).
 - Todos los periodos hasta el último visto, porque V9 ya estimó P6 con Incasòl hasta 2025 y V3/V6 estimaron P5 con SERPAVI 2021-2023.
 
 ## 3. Hipótesis confirmatorias
@@ -112,7 +112,7 @@ Si a 31-12-2027 no se alcanza el mínimo, se evalúa con lo que haya y se declar
 - **Multiverso** (BH): 2 estimadores (SDID, CS) × 3 umbrales de contratos mínimos (5, 10, 30) × 3 radios de exclusión (0, 10, 25 km) × 2 ventanas (hasta 2025T4 y hasta 2026T1) = 36.
 - **Potencia.** MDE80 ≈ 2,2 % con errores por municipio (rechazo placebo 0,058). Referencia de la literatura: ≈ −5 % (Ley 11/2020) y un nulo en renta para 2024 en un preprint (Pérez García, 2026).
 - **Qué cambiaría.**
-  - Si es C3 con ATT negativo, cambia V9-D1a: de «C4, pretendencias rechazadas» a «C3». Sería la primera cifra causal de regulación del repositorio.
+  - Si es C3 con ATT negativo, cambia V9-D1a: de «C4, pretendencias rechazadas» a «C3».
   - Si da un nulo con intervalo que excluye −5 %, matiza la lectura de los topes de la Ley 11/2020 (V9-D1b) para la Ley 12/2023: no son la misma intervención.
   - Si falla las pruebas, confirma V9-D1a (C4).
 - **Si no pasa las pruebas.** Se publica como C4 con todas las pruebas fallidas listadas. No se cambia la especificación para pasarlas.
@@ -170,7 +170,7 @@ Si a 31-12-2027 no se alcanza el mínimo, se evalúa con lo que haya y se declar
 - **Qué cambiaría.**
   - Un efecto C3 positivo cambiaría «no concluyente» (v1-V9) y daría una magnitud para comparar con Saiz (≈ 1 % por 1 % de población).
   - Un nulo con AKM estrecho sería un nulo bien identificado.
-  - Un instrumento débil confirma lo que ya sabíamos (V9-D4, F 4,6).
+  - Un instrumento débil coincidiría con V9-D4 (F 4,6).
 - **Si no pasa las pruebas.** C4, con la primera etapa y los pesos de Rotemberg publicados.
 
 ### H5 · P9: predicción frente al AR(4)

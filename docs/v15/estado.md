@@ -42,11 +42,20 @@ Plan: docs/v15/plan.md (íntegro). Versión pública vigente: 1.0. V15 solo aña
   - Seis revisiones: P2, P3, P4, P5, P6 y P9.
   - 100 fichas: 88 VERIFICADA y 12 NO VERIFICADA. Cuartiles no verificados, porque Scimago bloquea la descarga (tarea del autor).
   - Síntesis en docs/v15/literatura.md.
-- **Fase 3 (preparación).** sellar_v15 y evaluate_v15 en src/holdout.py, con tests. Todavía no se ha sellado nada.
+- **Fase 1 completa.** Siete auditorías, incluidas turismo (BCN por barrio solo desde 2023T1; el INE VUT empieza en 2021) y renta (AEAT 2013-2015 no utilizable).
+- **Fase 3.**
+  - Pre-registro (docs/v15/preregistro_v15.md) con: H1 y H2 (zonas tensionadas), H4 (inmigración), H3 (asociación de turismo), H5 (predicción), E1-E4, y P1, P3 y P8 descartadas.
+  - Validación sellada ejecutada antes de estimar (src/v15/f3_sellado.py; docs/v15/sellado_v15.json; decisiones G6).
+  - revisor-preregistro: APTO CON CAMBIOS, 18 hallazgos. Adenda vinculante: docs/v15/preregistro_v15_adenda.md (Holm m = 3, preperiodo 2022T2-2023T4, CS y SDID, evaluación sellada como condición de C3, multiverso ≤ 408).
+  - Etiqueta local prereg-v15 y texto para OSF en tareas_autor.md.
 
 ## Siguiente
-- Recoger las auditorías de turismo y renta.
-- Fase 3: selección de preguntas, preregistro_v15.md, sellado, revisor-preregistro, adenda, etiqueta prereg-v15 y texto OSF. PARADA en la puerta.
+- **PARADA en la puerta.** Las fases 4 y 5 esperan a que el autor deposite en OSF y ponga `osf_prereg_v15` en proyecto.json.
+- Al reanudar:
+  - comprobar que la fecha del depósito es anterior a cualquier estimación;
+  - montecarlo valida las herramientas;
+  - recálculo de potencias del punto 9 de la adenda;
+  - modelizadores por pregunta.
 
 <!-- las secciones siguientes las mantiene src/v15/registro_subagentes.py -->
 
@@ -70,7 +79,8 @@ Generada por src/v15/registro_subagentes.py (fuente: docs/v15/subagentes.csv). T
 | 2026-10-17 | lector-literatura | F2 P2 fundamentales | 169.593 | docs/v15/literatura/P2_fundamentales.md |
 | 2026-10-17 | auditor-datos | F1.2 renta y microdatos (AEAT 2013-2015) | 203.774 | src/v15/auditoria/renta_microdatos.py; output/v15/auditoria/renta_microdatos/ |
 | 2026-10-17 | auditor-datos | F1.2 turismo | 290.251 | src/v15/auditoria/turismo.py; output/v15/auditoria/turismo/ |
+| 2026-10-17 | revisor-preregistro | F3.4 revisión del pre-registro (APTO CON CAMBIOS. 18 hallazgos) | 82.220 | docs/v15/preregistro_v15_adenda.md |
 
-Total: 2.613.879 tokens · auditor-datos: 1.458.372; inventariador: 287.158; lector-literatura: 868.349
+Total: 2.696.099 tokens · auditor-datos: 1.458.372; inventariador: 287.158; lector-literatura: 868.349; revisor-preregistro: 82.220
 
 <!-- fin subagentes -->

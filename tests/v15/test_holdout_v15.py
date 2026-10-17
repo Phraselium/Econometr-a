@@ -45,7 +45,10 @@ def test_sellar_separa_temporal_y_espacial(tmp_path, monkeypatch):
 
 def test_evaluate_v15_con_puerta_cerrada(tmp_path, monkeypatch):
     p = tmp_path / "proyecto.json"
-    p.write_text(json.dumps({"osf_prereg_v15": "PENDIENTE"}))
+    p.write_text(json.dumps({}))
+    e = tmp_path / "etiquetas.json"
+    e.write_text("{}")
+    monkeypatch.setenv("ECONOMETRA_ETIQUETAS_REMOTAS", str(e))   # sin prereg-v15 en el remoto: puerta cerrada
     monkeypatch.setattr(h, "PROYECTO", p)
     monkeypatch.setattr(h, "LOG", tmp_path / "log")
     with pytest.raises(PermissionError):

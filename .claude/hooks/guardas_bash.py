@@ -4,7 +4,9 @@ motivo en stderr) si el comando:
   (a) usa un heredoc sin comillas («<<EOF» en lugar de «<<'EOF'»): el shell expandiría `…` y $(…) (incidente D3 de V13);
   (b) menciona la muestra sellada salvo a través de src/holdout.py;
   (c) lanza `make check` mientras ya hay uno en marcha (bloqueo /tmp/econometra_make_check.lock con su PID, o un proceso vivo);
-  (d) lanza `make v15_f4*` o `make v15_f5*` sin `osf_prereg_v15` en proyecto.json (puerta del pre-registro de V15);
+  (d) lanza `make v15_f4*` o `make v15_f5*` sin la etiqueta prereg-v15 en el remoto apuntando a 542b4fd (V16: pre-registro
+      interno sin sello externo; src/v16/etiquetas.py);
+  (f) lanza `make v16_f5*`, `v16_f6*`, `v16_f7*` o `make v16` sin la etiqueta prereg-v16 en el remoto (V16);
   (e) además de permissions.deny: make clean, make all, make v7, make evaluate_v7, git push --force/-f, git filter-repo,
       rm -rf data, rm -rf output (no cuenta el texto de un heredoc entrecomillado que solo escribe un fichero con cat o tee).
 La regla (a) no mira el cuerpo de un heredoc ya entrecomillado (el shell no lo expande).
@@ -57,12 +59,16 @@ def _make_check_en_marcha() -> bool:
     return False
 
 
-def _osf(raiz: Path) -> bool:
+def _etiqueta_ok(raiz: Path, cual: str) -> bool:
+    """V16: la puerta es una etiqueta de pre-registro interno publicada en el remoto (src/v16/etiquetas.py)."""
     try:
-        v = json.loads((raiz / "proyecto.json").read_text(encoding="utf-8")).get("osf_prereg_v15")
-    except (OSError, ValueError):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("etiquetas_v16", raiz / "src" / "v16" / "etiquetas.py")
+        e = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(e)
+        return (e.prereg_v15_publicada if cual == "v15" else e.prereg_v16_publicada)(raiz)[0]
+    except Exception:  # noqa: BLE001 (sin módulo o sin red: la puerta queda cerrada)
         return False
-    return bool(v) and str(v).strip().upper() not in ("PENDIENTE", "")
 
 
 CUERPO = re.compile(r"(?m)^([^\n]*?)<<-?\s*(['\"])([A-Za-z_][A-Za-z0-9_]*)\2[^\n]*\n(.*?)^\3\s*$", re.S)
@@ -85,8 +91,10 @@ def evaluar(cmd: str, raiz: Path) -> str | None:
         return "(b) la muestra sellada solo se toca a través de src/holdout.py"
     if re.search(r"\bmake\b[^;&|]*\scheck(\s|$|;|&|\|)", cmd) and _make_check_en_marcha():
         return "(c) ya hay un make check en marcha: un solo make check a la vez"
-    if re.search(r"\bmake\b[^;&|]*\sv15_f[45]", cmd) and not _osf(raiz):
-        return "(d) fases 4-5 de V15 bloqueadas: falta osf_prereg_v15 en proyecto.json (puerta del pre-registro)"
+    if re.search(r"\bmake\b[^;&|]*\sv15_f[45]", cmd) and not _etiqueta_ok(raiz, "v15"):
+        return "(d) fases 4-5 de V15 bloqueadas: la etiqueta prereg-v15 no está en el remoto apuntando a 542b4fd"
+    if re.search(r"\bmake\b[^;&|]*\s(v16_f[5-7]\w*|v16)(\s|$|;|&|\|)", cmd) and not _etiqueta_ok(raiz, "v16"):
+        return "(f) fases 5-7 de V16 bloqueadas: la etiqueta prereg-v16 no existe en el remoto"
     orden = _sin_cuerpos(cmd, solo_texto=True)
     for pat, motivo in PROHIBIDOS:
         if pat.search(orden):

@@ -79,18 +79,23 @@ def test_registro_subagentes(tmp_path, monkeypatch):
     assert t.count("## Subagentes y tokens") == 1 and "Total: 3.500 tokens" in t and "## Hecho" in t
 
 
-def test_puerta():
-    assert not P.abierta({})[0] and not P.abierta({"osf_prereg_v15": "PENDIENTE"})[0]
-    assert P.abierta({"osf_prereg_v15": "https://doi.org/10.17605/OSF.IO/ABCDE", "osf_prereg_v15_fecha": "2026-11-01"})[0]
+def test_puerta(tmp_path, monkeypatch):
+    f = tmp_path / "e.json"
+    f.write_text("{}", encoding="utf-8")
+    monkeypatch.setenv("ECONOMETRA_ETIQUETAS_REMOTAS", str(f))
+    assert not P.abierta()[0]
+    f.write_text(json.dumps({"prereg-v15": "542b4fdf398970c817af7abfcd20c92dda299c69"}), encoding="utf-8")
+    assert P.abierta()[0]
 
 
-def test_fases_4_y_5_cerradas_sin_osf():
-    p = json.loads((RAIZ / "proyecto.json").read_text(encoding="utf-8"))
-    if P.abierta(p)[0]:
-        return
-    for f in ("f4", "f5"):
-        r = subprocess.run([sys.executable, str(RAIZ / "src/v15/fase.py"), f], cwd=RAIZ, capture_output=True, text=True)
-        assert r.returncode == 1 and "osf_prereg_v15" in r.stdout
+def test_fases_4_y_5_cerradas_sin_etiqueta(tmp_path):
+    import os
+    f = tmp_path / "e.json"
+    f.write_text("{}", encoding="utf-8")
+    env = {**os.environ, "ECONOMETRA_ETIQUETAS_REMOTAS": str(f)}
+    for fase in ("f4", "f5"):
+        r = subprocess.run([sys.executable, str(RAIZ / "src/v15/fase.py"), fase], cwd=RAIZ, capture_output=True, text=True, env=env)
+        assert r.returncode == 1 and "prereg-v15" in r.stdout
 
 
 def test_lecturas_v6_exige_filtro(tmp_path, monkeypatch):

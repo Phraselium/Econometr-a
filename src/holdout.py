@@ -570,7 +570,8 @@ def sellar_v15(hechos: pd.DataFrame, nombre: str) -> pd.DataFrame:
 
 def evaluate_v15(hipotesis: str, fn, rama: str, nombres: list[str]):
     """Abre la muestra sellada V15 UNA vez por hipótesis confirmatoria (registrado antes de leer), solo con la puerta abierta
-    (osf_prereg_v15 en proyecto.json). fn(dict) -> dict."""
+    (etiqueta prereg-v15 publicada en el remoto en 542b4fd;
+    src/v15/puerta.py). fn(dict) -> dict."""
     sys.path.insert(0, str(HERE / "src" / "v15"))
     from puerta import abierta
     ok, motivo = abierta(json.loads(PROYECTO.read_text(encoding="utf-8")))

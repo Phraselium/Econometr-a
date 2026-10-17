@@ -26,6 +26,7 @@ export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
 .PHONY: check_v15 v15 v15_f0 v15_f1 v15_f2 v15_f3 v15_f4 v15_f5
+.PHONY: check_v16 v16 v16_f0 v16_f1 v16_f2 v16_f3 v16_f4 v16_f5 v16_f6 v16_f7
 .PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9 datos_v11 v12 metadatos paquete_zenodo datos arbol_publico muestra_revision
 
 all: data clean models report
@@ -58,6 +59,7 @@ check:
 	$(PY) src/v13/check_v13.py
 	$(PY) src/v14/check_v14.py
 	$(PY) src/v15/check_v15.py
+	$(PY) src/v16/check_v16.py
 	@$(PY) src/v12/git_limpio.py comparar $${TMPDIR:-/tmp}/econometra_check_git.txt
 	@rm -f /tmp/econometra_make_check.lock
 
@@ -197,7 +199,7 @@ v12:
 	@for r in $(V12_ORDEN); do echo ">> src/v12/$$r.py"; $(PY) src/v12/$$r.py || exit 1; done
 
 # ------------------------------------------------------------------ V15 (docs/v15/plan.md)
-# Cada fase solo ejecuta lo suyo; v15_f4 y v15_f5 exigen osf_prereg_v15 en proyecto.json (src/v15/puerta.py y la guarda (d)).
+# Cada fase solo ejecuta lo suyo; v15_f4 y v15_f5 exigen la etiqueta prereg-v15 en el remoto en 542b4fd (src/v15/puerta.py y la guarda (d)).
 check_v15:
 	$(PY) src/v15/check_v15.py
 
@@ -222,3 +224,35 @@ v15_f5:
 	$(PY) src/v15/fase.py f5
 
 v15: v15_f0 v15_f1 v15_f2 v15_f3 v15_f4 v15_f5
+
+# ------------------------------------------------------------------ V16 (docs/v16/plan.md)
+# Pre-registros internos sin sello externo: v16_f5, v16_f6, v16_f7 y v16 exigen la etiqueta prereg-v16 en el remoto
+# (src/v16/etiquetas.py y la guarda (f) del hook).
+check_v16:
+	$(PY) src/v16/check_v16.py
+
+v16_f0:
+	$(PY) src/v16/fase.py f0
+
+v16_f1:
+	$(PY) src/v16/fase.py f1
+
+v16_f2:
+	$(PY) src/v16/fase.py f2
+
+v16_f3:
+	$(PY) src/v16/fase.py f3
+
+v16_f4:
+	$(PY) src/v16/fase.py f4
+
+v16_f5:
+	$(PY) src/v16/fase.py f5
+
+v16_f6:
+	$(PY) src/v16/fase.py f6
+
+v16_f7:
+	$(PY) src/v16/fase.py f7
+
+v16: v16_f0 v16_f1 v16_f2 v16_f3 v16_f4 v16_f5 v16_f6 v16_f7

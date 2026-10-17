@@ -56,21 +56,21 @@ def test_c_un_solo_make_check(tmp_path):
     assert _hook("make check", env) == 0                        # PID muerto: el bloqueo caduca
 
 
-def test_d_puerta_del_preregistro(tmp_path):
+def test_d_puerta_del_preregistro(tmp_path, monkeypatch):
+    """V16: la puerta de V15 es la etiqueta prereg-v15 publicada en el remoto apuntando a 542b4fd (sin OSF)."""
     g = _g()
-    sin = tmp_path / "sin"
-    con = tmp_path / "con"
-    for d, p in ((sin, {}), (con, {"osf_prereg_v15": "https://doi.org/10.17605/OSF.IO/XXXXX"})):
-        d.mkdir()
-        (d / "proyecto.json").write_text(json.dumps(p), encoding="utf-8")
-    for cmd in ("make v15_f4", "make v15_f5", "make v15_f4_p1"):
-        assert g.evaluar(cmd, sin).startswith("(d)")
-        assert g.evaluar(cmd, con) is None
-    assert g.evaluar("make v15_f3", sin) is None
-    pend = tmp_path / "pend"
-    pend.mkdir()
-    (pend / "proyecto.json").write_text(json.dumps({"osf_prereg_v15": "PENDIENTE"}), encoding="utf-8")
-    assert g.evaluar("make v15_f4", pend).startswith("(d)")
+    raiz = Path(__file__).resolve().parents[2]
+    sin, mala, buena = tmp_path / "sin.json", tmp_path / "mala.json", tmp_path / "buena.json"
+    sin.write_text("{}", encoding="utf-8")
+    mala.write_text(json.dumps({"prereg-v15": "0123456789abcdef"}), encoding="utf-8")
+    buena.write_text(json.dumps({"prereg-v15": "542b4fdf398970c817af7abfcd20c92dda299c69"}), encoding="utf-8")
+    for f in (sin, mala):
+        monkeypatch.setenv("ECONOMETRA_ETIQUETAS_REMOTAS", str(f))
+        for cmd in ("make v15_f4", "make v15_f5", "make v15_f4_p1"):
+            assert g.evaluar(cmd, raiz).startswith("(d)")
+    monkeypatch.setenv("ECONOMETRA_ETIQUETAS_REMOTAS", str(buena))
+    assert g.evaluar("make v15_f4", raiz) is None
+    assert g.evaluar("make v15_f3", raiz) is None
 
 
 @pytest.mark.parametrize("cmd", ["make clean", "make all", "make v7", "make evaluate_v7", "git push --force origin x",

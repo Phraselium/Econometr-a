@@ -2,7 +2,7 @@
 
 1. guardas: .claude/settings.json niega leer y escribir la muestra sellada y los comandos prohibidos, registra el hook
    PreToolUse de Bash, y el hook bloquea un caso de cada regla (autocomprobación rápida);
-2. puerta: ningún resultado de estimación de V15 (output/v15/p*/resultado.json con `estimacion`) existe sin osf_prereg_v15;
+2. puerta: la etiqueta prereg-v15 existe y apunta a 542b4fd (V16: pre-registro interno, sin sello externo);
 3. cifras V15 (output/v15/cifras_v15.csv, si existe): id V15-*, capa válida, ficha no vacía y ningún id de la 1.0;
 4. lenguaje causal: en output/v15/**/*.md ninguna línea con vocabulario causal sin etiqueta [C3] o [C3s];
 5. literatura: cada ficha de docs/v15/literatura/*.md declara su estado (VERIFICADA, NO VERIFICADA o DISCREPANTE).
@@ -50,17 +50,18 @@ def guardas() -> list[str]:
 
 
 def puerta() -> list[str]:
-    sys.path.insert(0, str(RAIZ / "src" / "v15"))
-    import puerta as P
-    ok, _ = P.abierta()
-    if ok:
-        return []
-    err = []
-    for r in sorted((RAIZ / "output" / "v15").glob("p*/resultado.json")):
-        d = json.loads(r.read_text(encoding="utf-8"))
-        if d.get("estimacion") not in (None, "", {}, []):
-            err.append(f"{r.relative_to(RAIZ)}: estimación de V15 antes de la puerta (falta osf_prereg_v15)")
-    return err
+    """V16: la puerta de V15 es la etiqueta prereg-v15 (pre-registro interno, sin sello externo) en 542b4fd. Aquí se comprueba
+    sin red que existe en el repositorio local y apunta a ese commit; que esté en el remoto lo exige la guarda (d), y que
+    ninguna estimación sea anterior a la etiqueta lo comprueba check_v16 («estimaciones posteriores a su etiqueta»)."""
+    import subprocess
+    r = subprocess.run(["git", "rev-parse", "-q", "--verify", "prereg-v15^{commit}"], cwd=RAIZ, capture_output=True, text=True)
+    if r.returncode != 0:
+        hay = [x for x in sorted((RAIZ / "output" / "v15").glob("p*/resultado.json"))
+               if json.loads(x.read_text(encoding="utf-8")).get("estimacion") not in (None, "", {}, [])]
+        return [f"{x.relative_to(RAIZ)}: estimación de V15 sin la etiqueta prereg-v15" for x in hay]
+    if not r.stdout.strip().startswith("542b4fd"):
+        return [f"la etiqueta prereg-v15 apunta a {r.stdout.strip()[:7]}, no a 542b4fd"]
+    return []
 
 
 def cifras() -> list[str]:

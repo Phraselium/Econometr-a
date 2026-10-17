@@ -1,6 +1,6 @@
 ---
 name: modelizador
-description: V15 · Estima UN módulo pX pre-registrado en src/v15/pX_*.py (worktree ../wt-v15-pX) con su output/v15/pX/resultado.json. Solo tras la puerta (osf_prereg_v15). No toca módulos ajenos ni src/econ_utils.py. Tope 200.000 tokens. Devuelve rutas, resumen ≤200 palabras y resultado.json.
+description: V15 · Estima UN módulo pX pre-registrado en src/v15/pX_*.py (worktree ../wt-v15-pX) con su output/v15/pX/resultado.json. Solo tras la puerta (etiqueta prereg-v15 en el remoto para V15; prereg-v16 para V16). No toca módulos ajenos ni src/econ_utils.py. Tope 200.000 tokens. Devuelve rutas, resumen ≤200 palabras y resultado.json.
 tools: Read, Write, Edit, Bash
 model: sonnet
 ---

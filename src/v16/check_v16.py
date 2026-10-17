@@ -116,6 +116,23 @@ def causal() -> list[str]:
     return err
 
 
+def literatura() -> list[str]:
+    """Fichas de docs/v16/literatura: ninguna DISCREPANTE y todas con su línea de estado (las escribe el verificador)."""
+    import re
+    err = []
+    for p in sorted((RAIZ / "docs" / "v16" / "literatura").glob("L*.md")):
+        for b in re.split(r"(?=^### )", p.read_text(encoding="utf-8"), flags=re.M):
+            if not b.startswith("### "):
+                continue
+            cab = b.splitlines()[0][4:70]
+            m = re.search(r"^- Estado: (.*)$", b, flags=re.M)
+            if not m:
+                err.append(f"{p.name}: ficha sin estado ({cab})")
+            elif m.group(1).startswith("DISCREPANTE"):
+                err.append(f"{p.name}: DISCREPANTE ({cab})")
+    return err
+
+
 def fuentes() -> list[str]:
     """Registro de licencias de las fuentes nuevas (data/raw/v16/*/_manifest.csv; decisiones K5)."""
     import importlib.util
@@ -129,7 +146,7 @@ def main() -> int:
     total = 0
     for nombre, f in (("guardas", guardas), ("pre-registro interno", preregistro),
                       ("estimaciones posteriores a su etiqueta", estimaciones_tras_etiqueta), ("cifras V16", cifras_v16),
-                      ("lenguaje causal", causal), ("registro de fuentes", fuentes)):
+                      ("lenguaje causal", causal), ("registro de fuentes", fuentes), ("literatura", literatura)):
         e = f()
         print(f"check_v16 · {nombre}: {len(e)} errores")
         for x in e[:30]:

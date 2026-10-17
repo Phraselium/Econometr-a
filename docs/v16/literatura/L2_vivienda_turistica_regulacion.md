@@ -53,7 +53,7 @@ València, Palma, Baleares, Canarias. València: ver P5, ficha MESVAL (corte tra
 - Diseño e identificación: 18 de 88 ciudades del condado de Los Ángeles adoptan ordenanzas que restringen severamente el alquiler de corta duración. Anuncios y precios de venta 2014-2018 (microdatos; precios de transacciones; alquiler mediano por m² de Zillow a nivel de código postal). Panel RDD con efectos fijos de propiedad o de bloque censal, área HSO × mes y segmento de frontera × mes; núcleo uniforme, ancho de banda óptimo de Imbens-Kalyanaraman con robustez ×2 y ÷2. Alquiler: DiD por código postal (efectos fijos de código postal y mes, tendencias por distancia al centro y a la playa), porque el diseño predice que el alquiler no salta en la frontera. Precio sobre tasa de anuncios: 2SLS con ficticias HSO específicas por ciudad como instrumentos (F de Kleibergen-Paap de 15 a 18 en la mayoría de columnas; la 4 es 16,94 y la 6 es 64,24). Diagnósticos leídos: tendencias paralelas previas en alquiler y precio (fig. 6), continuidad de covariables en la frontera (fig. 5), tres placebos de frontera y dos temporales (tabla 8).
 - Resultado principal, con su magnitud: resumen de esta versión: «Ordinances reduced listings by 50% and housing prices by 3%... ordinances reduced rents also by 3%» y un aumento de precio de «10% within 2.5km of Downtown LA». Tabla 4, panel A, col. 1: efecto de la ordenanza sobre la probabilidad de estar anunciado (vivienda entera) −0,0969 (ee 0,0086), N = 270.906; col. 2 (con segmentos de frontera): −0,0985 (0,0088). Los autores lo traducen en −32 % de anuncios dada una probabilidad de 0,3 antes de la norma. Tabla 5, log precio: col. 1 −0,0421 (0,0067), N = 58.316; col. 2 −0,0297 (0,0080), N = 58.285 (los autores: −4,1 % y −2,9 %). Tabla 7, 2SLS log precio por 1 p.p. de tasa de anuncios (<200 m): col. 1 0,0351 (0,0100); col. 2 0,0226 (0,0088), N = 80.905; los autores calculan una elasticidad de 0,0386 (= 0,0226/1,1523) y un efecto de 4,2 % por desviación típica de la tasa (1,845 p.p.). Tabla 9, panel A, log alquiler mediano por m²: col. 1 −0,0347 (0,0118), N = 3.313; col. 2 −0,0372 (0,0120); col. 3 −0,0496 (0,0134); col. 4 (solo observaciones a <2,5 km fuera de las zonas) −0,0192 (0,0128); col. 5 −0,0376 (0,0124); col. 6 −0,0440 (0,0132). Panel B (2SLS), log alquiler por 1 p.p. de tasa de anuncios: col. 1 0,0365 (0,0199); col. 2 0,0321 (0,0148); col. 3 0,0575 (0,0274); col. 4 0,0112 (0,0099). Placebos de tabla 8: coeficientes no distintos de cero (por ejemplo, frontera desplazada 1 km: −0,0036 (0,0064) en anuncios y 0,0093 (0,0173) en precio). Sin heterogeneidad por demanda turística en el efecto de la norma sobre el precio (tabla 6, cols. 1-2). Las cifras de la versión publicada (−2 % en precio y en alquiler) son distintas de las de esta versión: ver P5, ficha Koster.
 - Validez externa para España: transferible el diseño (frontera administrativa con tratamiento distinto, DiD de alquiler, placebos), no la magnitud: Los Ángeles prohíbe el subarriendo en casi todos los contratos, circunstancia que los autores usan como supuesto (p. 19), y la regulación es municipal con fronteras entre ciudades. En España la regulación autonómica cubre toda la unidad; las fronteras utilizables serían entre zonas de un mismo plan (PEUAT), entre municipios con moratoria y vecinos sin ella, o entre CCAA. Discrepancias: el efecto de precio y alquiler cambia de signo en magnitud entre versiones (3 % frente a 2 %); dentro de esta versión, el alquiler a menos de 2,5 km de las zonas no es significativo (tabla 9, col. 4), lo que los autores leen como continuidad de alquiler en la frontera.
-- Estado: NO VERIFICADA
+- Estado: NO VERIFICADA (sin DOI)
 
 ### Bibler, Teltser y Tremblay (2021). Is Sharing Really Caring? The Effect of Airbnb on Housing Prices and Foreclosures
 - DOI: 10.2139/ssrn.3846919 (visto en OpenAlex) · Revista: SSRN Electronic Journal (versión de 5 de noviembre de 2021; sin revisión por pares localizada)
@@ -61,7 +61,7 @@ València, Palma, Baleares, Canarias. València: ver P5, ficha MESVAL (corte tra
 - Diseño e identificación: aplicación obligatoria del registro de anfitriones en las ciudades de Chicago y San Francisco, frente a áreas no tratadas dentro de las dos áreas metropolitanas; datos de anuncios y de transacciones y ejecuciones hipotecarias (Zillow ZTRAX) a nivel de tramo censal.
 - Resultado principal, con su magnitud: «enforcing registration requirements... reduced Airbnb supply and bookings by 40%»; los mayores shocks en los barrios con más anuncios por habitante; «home prices decline by roughly 10% in the most Airbnb-dense census tracts while foreclosures in these same tracts increase by roughly 0.07 per tract-month (or 117%)». No mide alquiler.
 - Validez externa para España: es un DiD sobre una norma de registro (coste de anunciar), no sobre una prohibición; la comparación es la más cercana a un registro de VUT, y avisa de que el efecto sobre el precio se concentra en los barrios más densos. Las ejecuciones hipotecarias son un resultado sin análogo directo en España. Discrepa en magnitud con Koster et al. (−10 % en los tramos más densos frente a −3 % de media); coincide en signo.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Bekkerman, Cohen, Kung, Maiden y Proserpio (2023). The Effect of Short-Term Rentals on Residential Investment
 - DOI: 10.1287/mksc.2022.1409 (visto en IDEAS) · Revista: Marketing Science, vol. 42(4), pp. 819-834
@@ -69,7 +69,7 @@ València, Palma, Baleares, Canarias. València: ver P5, ficha MESVAL (corte tra
 - Diseño e identificación: dos estrategias, según el resumen: (1) calendario de entrada en vigor de las normas locales sobre alquiler de corta duración; (2) fronteras jurisdiccionales con y sin norma. Resultado sobre anuncios y permisos de construcción residencial. No he leído datos, periodo ni país; el buscador indica EE. UU.
 - Resultado principal, con su magnitud: en los primeros 12 meses tras la norma, los anuncios de Airbnb caen un 9,0 % y los permisos residenciales un 11,0 %; en la frontera, caída de permisos en el lado con norma, la mayor en unidades accesorias, un 16,5 %.
 - Validez externa para España: es un efecto lateral sobre la oferta futura (construcción), no sobre alquiler o precio actuales. Importa para el diseño porque una regulación puede reducir la oferta residencial futura, lo que sesga a la baja cualquier efecto en alquiler a 2-3 años. No hay equivalente español localizado. Discrepancia: no hay trabajo comparable leído.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Chaves Fonseca (2024). Short-term rentals and residential rents: evidence from a regulation in Santa Monica
 - DOI: 10.1108/ijhma-01-2024-0001 (visto en OpenAlex) · Revista: International Journal of Housing Markets and Analysis, vol. 18(5), pp. 1169-1203
@@ -77,7 +77,7 @@ València, Palma, Baleares, Canarias. València: ver P5, ficha MESVAL (corte tra
 - Diseño e identificación: control sintético sobre un panel de anuncios de Airbnb y alquileres de varias ciudades del condado de Los Ángeles; la ordenanza de alquiler compartido de Santa Monica de 2015. El autor lo presenta como la primera aplicación de control sintético a una norma de este tipo.
 - Resultado principal, con su magnitud: descenso de anuncios de «aproximadamente un 60 %» en dos años (parafraseo del resumen); efecto sobre el alquiler residencial no estadísticamente significativo. Sin ee ni IC en el resumen.
 - Validez externa para España: un único tratamiento (una ciudad) con control sintético es un diseño aplicable a un único municipio español con moratoria (por ejemplo, València) si hay un conjunto de donantes con la misma medida de alquiler; pero el nulo se refiere a una ciudad y no excluye efectos del orden de 2-3 %. Discrepa de Koster et al., que incluye Santa Monica entre las 18 ciudades y halla −2 % a −3 % en alquiler agregado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Robertson, Dejean y Suire (2023). «Airbnb in the City»: assessing short-term rental regulation in Bordeaux
 - DOI: 10.1007/s00168-023-01215-4 (visto en OpenAlex) · Revista: The Annals of Regional Science, vol. 72(2), pp. 647-682
@@ -85,7 +85,7 @@ València, Palma, Baleares, Canarias. València: ver P5, ficha MESVAL (corte tra
 - Diseño e identificación: diferencias en diferencias y triple diferencia sobre la actividad de alquiler de corta duración en Burdeos tras la regulación de la ciudad (anuncios dirigidos o comerciales frente a no dirigidos o home-sharing). Sobre actividad, no sobre alquiler residencial.
 - Resultado principal, con su magnitud: «reductive effect of over 322 rented days per month per district on average. This equates to 43% of mean reservation days and over 28 thousand less nights spent per month in STRs across the city»; en la periferia, 35 % de los días reservados mensuales. Los anuncios no objetivo «also seem to have modified their behavior». El resumen no da ee.
 - Validez externa para España: indica que la efectividad de la norma varía entre centro y periferia (relevante para una zonificación como la del PEUAT) y que los anfitriones no objetivo reaccionan (posible contaminación del control). No mide alquiler. Un buscador devolvió «316 días» en otra versión: la cifra depende de la versión; uso la del PDF leído.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Gonçalves, Peralta y Pereira dos Santos (2022). Short-Term Rental Bans and Housing Prices: Quasi-Experimental Evidence from Lisbon
 - DOI: sin DOI (no visto) · Revista: IZA Discussion Paper n.º 15706 (noviembre de 2022); versión previa en GEE Papers 155 (503 al consultar; no leída)
@@ -93,7 +93,7 @@ València, Palma, Baleares, Canarias. València: ver P5, ficha MESVAL (corte tra
 - Diseño e identificación: reforma urbanística de noviembre de 2018 que prohíbe nuevos registros de alquiler de corta duración en algunas zonas de Lisboa («containment areas»); DiD que aprovecha la discontinuidad espacial; registros administrativos de alojamiento local y de transacciones inmobiliarias, más datos de Airbnb. No he leído tablas ni el diseño detallado del radio.
 - Resultado principal, con su magnitud: «The reform decreases real estate prices by 8%, mostly in two-bedroom dwellings, for which the price drops 20%»; pico de nuevos registros entre el anuncio y la entrada en vigor de la prohibición. No mide alquiler.
 - Validez externa para España: es el caso más cercano a una moratoria de licencias por zonas con registro previo (como las de València o el PEUAT); la lectura del autor (valor de opción de la licencia) es aplicable donde la licencia se transmite o caduca con la venta; en España depende de la norma autonómica. Discrepa en magnitud de Franco y Santos (P5; efecto por cuota de Airbnb) y de Koster (−3 %).
-- Estado: NO VERIFICADA
+- Estado: NO VERIFICADA (sin DOI)
 
 ### Nobre, Jardim Gonçalves y Cruz (2026). Short-term rentals and the housing market: evidence from Portuguese metropolitan areas
 - DOI: 10.1007/s10258-026-00295-2 (visto en OpenAlex) · Revista: Portuguese Economic Journal
@@ -101,7 +101,7 @@ València, Palma, Baleares, Canarias. València: ver P5, ficha MESVAL (corte tra
 - Diseño e identificación: reforma de 2014 que facilita el registro; transacciones 2010-2017 en las áreas metropolitanas de Lisboa y Oporto; efectos fijos bidireccionales y DiD escalonado por código postal; controles de características, ubicación y tiempo.
 - Resultado principal, con su magnitud: cada alquiler de corta duración adicional por trimestre y código postal eleva el valor de la transacción un 2,3 %-6,0 % (€104-€329 por transacción); mayor en segmentos altos y parroquias con menos paro y densidad; el efecto aparece hacia el décimo trimestre; efectos positivos sobre locales comerciales. No da ee en el resumen.
 - Validez externa para España: mide precio de compra con exposición por unidad de código postal; el efecto tarda unos diez trimestres, de modo que un DiD español con ventana corta tras 2018-2024 puede no detectarlo. El resumen no menciona alquiler. Coincide en signo con Franco y Santos (P5).
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Chaves Fonseca (2026). The effect of short-term rentals on house prices and residential mobility: evidence from Madrid
 - DOI: 10.1007/s13209-026-00335-2 (visto en OpenAlex) · Revista: SERIEs (Journal of the Spanish Economic Association)
@@ -109,7 +109,7 @@ València, Palma, Baleares, Canarias. València: ver P5, ficha MESVAL (corte tra
 - Diseño e identificación: panel barrio-año de Madrid, 2010-2018; variable instrumental tipo shift-share (atractivo turístico espacial por expansión de la plataforma); análisis de mediación.
 - Resultado principal, con su magnitud: cada 100 anuncios adicionales de vivienda entera en un barrio se asocian con unas 50 entradas anuales menos de residentes (≈ 2 % de la media), sin efecto significativo en salidas, y con un aumento del precio de la vivienda del 2 %; el efecto sobre la movilidad opera sobre todo a través del precio; concentrado en residentes sin estudios universitarios. No da ee en el resumen; no hay resultado sobre alquiler.
 - Validez externa para España: es el único estimador de identificación creíble para Madrid localizado, pero termina en 2018, antes del Plan Especial de Hospedaje (2019), y mide precio de compra, no alquiler. Sirve como contrapunto madrileño de García-López et al. (Barcelona).
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Banabak y Sielker (2026). Short term rental regulations in Vienna – enforcement versus deterrence?
 - DOI: 10.1080/00343404.2026.2693559 (visto en OpenAlex) · Revista: Regional Studies, vol. 60(1)
@@ -117,7 +117,7 @@ València, Palma, Baleares, Canarias. València: ver P5, ficha MESVAL (corte tra
 - Diseño e identificación: métodos mixtos: DiD y entrevistas con oferentes y reguladores; reforma de julio de 2024 que restringe operaciones profesionales y permite el alquiler compartido.
 - Resultado principal, con su magnitud: «slight decline in STR listings» no atribuible claramente a la reforma, y no se observa mayor oferta de alquiler de larga duración; efectos limitados atribuidos a problemas de cumplimiento y recursos administrativos. Sin cifras en el resumen.
 - Validez externa para España: indica el riesgo de que una norma sin aplicación efectiva no genere variación de tratamiento: en el registro de VUT conviene separar la fecha de la norma de la fecha de aplicación (bajas de anuncios). Un resumen no permite comparar magnitudes. Sin explicación de la ventana temporal tras julio de 2024, muy corta.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Slaymaker (2025). New research highlights challenge of understanding short-term let activity and interaction with the rental sector (ESRI, Irlanda)
 - DOI: sin DOI · Revista: ESRI (Economic and Social Research Institute), nota de prensa de 25-04-2025; el informe completo no lo he leído
@@ -133,7 +133,7 @@ València, Palma, Baleares, Canarias. València: ver P5, ficha MESVAL (corte tra
 - Diseño e identificación: comparación descriptiva del PEUAT de Barcelona (enero de 2017) y del Plan Especial de Hospedaje de Madrid (dos años después) con la oferta publicada en Airbnb: características y distribución temporal, para valorar el grado de turistificación y la adecuación de la zonificación. Sin diseño causal ni resultado de precios.
 - Resultado principal, con su magnitud: ambos planes tratan de contener la turistificación residencial de los distritos centrales; las diferencias en criterios de zonificación y una reactivación de aprobaciones tras una posible consolidación de oferta profesionalizada podrían socavar su efectividad. Sin cifras en el resumen.
 - Validez externa para España: da la fecha del PEUAT (enero de 2017) y confirma que las zonas de ambos planes son la variación disponible; no estima efecto sobre alquiler. Una fuente en español dató el PEUAT en 2022 (modificación) y el resumen de la tesis de Princeton en marzo de 2017: la fecha de tratamiento debe fijarse sobre el texto de la norma, no sobre estas fuentes.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Autoría no verificada (Princeton DataSpace). DiD de las normas del PEUAT sobre anuncios de Barcelona y Sevilla, 2015-2023
 - DOI: sin DOI · Revista: repositorio Princeton DataSpace (handle 88435/dsp01f7623g92j); probable trabajo de fin de grado; no he podido abrir la página (401)

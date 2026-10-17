@@ -48,3 +48,12 @@ adquisidor-datos, ingeniero-datos, replicador-ciego y redactor (sonnet), abogado
 - **Métodos:** efectos aleatorios DL y REML; Egger, PET y PEESE, con aviso si k < 10.
 - **Resultado:** con la literatura leída (7 instrumentos, 88 grupos de resultado), ningún grupo llega al mínimo. La fase 6 usará distribuciones a priori poco informativas, centradas en cero, con la escala que sugiere el rango de la literatura de diseño creíble. Esta conclusión se declara en el pre-registro de V16 y no se rebaja el umbral para obtener un agregado.
 - **Corrección de entrada:** en L3_oferta_elasticidad_efectos.csv, dos filas tenían una coma sin comillas («Asquith, Mast y Reed»). Se repararon uniendo los dos campos, y el script ahora para si un CSV tiene filas de distinta longitud. En L2 se quitaron dos filas de cabecera de bloque («BLOQUE …»).
+
+## K8. La muestra sellada v6 cubre CCAA enteras: consecuencias para V16 (17-10-2026)
+- **Qué hay.** Las 11 provincias selladas de v6 forman bloques de CCAA completos: 07, 22, 26, 28, 30, 31, 33, 35, 38, 44 y 50. Son Aragón, Asturias, Baleares, Canarias, Madrid, Murcia, Navarra y La Rioja.
+- **Qué está sellado.** La marca muestra_sellada_v6 se aplica por regla a provincia, municipio, distrito y sección. Las filas de nivel ccaa de esas comunidades no se marcan: los paneles de CCAA ya se vieron en v1 (CLAUDE.md, V7) y la auditoría de contaminación de V15 mantuvo esa definición. No es un acceso a la muestra sellada ni una parada D.
+- **Consecuencias para V16:**
+  - Los datos municipales y provinciales nuevos de esas ocho comunidades solo se usan a través de src/holdout.py. Por ejemplo: el registro de viviendas turísticas de Madrid, Canarias y Baleares, Inside Airbnb de Madrid y Mallorca, y el padrón por sección de Madrid.
+  - Las preguntas de V16 se diseñan con el resto de provincias. Los totales de CCAA de esas comunidades no se usan como sustituto de sus provincias en una validación provincial: duplican la información sellada.
+  - sellar_v16 (fase 4) no vuelve a sellar esas provincias: elige su bloque espacial nuevo entre las 39 restantes.
+- **Origen.** La auditoría de alquiler_turismo (output/v16/auditoria/alquiler_turismo) lo detectó al no encontrar filas no selladas de Madrid, Canarias ni Baleares.

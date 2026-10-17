@@ -1,0 +1,1716 @@
+{
+ "rama": "v16/auditoria/alquiler_turismo",
+ "pregunta": "Calidad de la familia alquiler_turismo: coherencia temporal de Inside Airbnb, contraste con registros VUT e INE (VTE, EOAP, OAT), rupturas, atípicos y peso de lo descartado",
+ "capa": "C4",
+ "datos": "data/processed/v16/alquiler_turismo.parquet (muestra_sellada_v6 == False); terceros solo como recuentos propios; crudos data/raw/v16, v9 (gva_vut, cat_turisme), v11 (euskadi_vut)",
+ "N": 1181682,
+ "metodo": "Mediana y MAD (|z robusto|>5) en tasas interanuales; comparación de niveles (Pearson, Spearman, log), razón media y variaciones entre fuentes; recuento de duplicados y solapes; sin estimación de parámetros",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "1_ia_resumen": {
+   "rondas": [
+    "2025-12",
+    "2026-03",
+    "2026-06",
+    "2026-09"
+   ],
+   "provincias": [
+    "01",
+    "08",
+    "17",
+    "20",
+    "25",
+    "29",
+    "41",
+    "46",
+    "48"
+   ],
+   "nota": "Madrid y Mallorca/Menorca (28, 07) quedan fuera por la muestra sellada v6; cobertura efectiva: Barcelona, Girona, Euskadi, Malaga, Sevilla y Valencia"
+  },
+  "1a_saltos_municipio": {
+   "ia_anuncios_total_numero": {
+    "pares_municipio_ronda_>=20_en_ambas": 340,
+    "n_saltos_>25%": 42,
+    "n_saltos_>50%": 5,
+    "saltos_>50%": [
+     {
+      "par": "2026-03->2026-06",
+      "cod": "17056",
+      "area": "Girona",
+      "antes": 22.0,
+      "despues": 34.0,
+      "var": 0.545
+     },
+     {
+      "par": "2026-03->2026-06",
+      "cod": "17098",
+      "area": "Girona",
+      "antes": 24.0,
+      "despues": 38.0,
+      "var": 0.583
+     },
+     {
+      "par": "2026-03->2026-06",
+      "cod": "17901",
+      "area": "Girona",
+      "antes": 35.0,
+      "despues": 55.0,
+      "var": 0.571
+     },
+     {
+      "par": "2026-03->2026-06",
+      "cod": "46250",
+      "area": "Valencia",
+      "antes": 4927.0,
+      "despues": 7848.0,
+      "var": 0.593
+     },
+     {
+      "par": "2026-03->2026-06",
+      "cod": "48041",
+      "area": "Euskadi",
+      "antes": 28.0,
+      "despues": 45.0,
+      "var": 0.607
+     }
+    ]
+   },
+   "ia_anuncios_activos_numero": {
+    "pares_municipio_ronda_>=20_en_ambas": 340,
+    "n_saltos_>25%": 50,
+    "n_saltos_>50%": 5,
+    "saltos_>50%": [
+     {
+      "par": "2026-03->2026-06",
+      "cod": "17056",
+      "area": "Girona",
+      "antes": 22.0,
+      "despues": 34.0,
+      "var": 0.545
+     },
+     {
+      "par": "2026-03->2026-06",
+      "cod": "17098",
+      "area": "Girona",
+      "antes": 24.0,
+      "despues": 38.0,
+      "var": 0.583
+     },
+     {
+      "par": "2026-03->2026-06",
+      "cod": "17901",
+      "area": "Girona",
+      "antes": 35.0,
+      "despues": 55.0,
+      "var": 0.571
+     },
+     {
+      "par": "2026-03->2026-06",
+      "cod": "46250",
+      "area": "Valencia",
+      "antes": 4910.0,
+      "despues": 7810.0,
+      "var": 0.591
+     },
+     {
+      "par": "2026-03->2026-06",
+      "cod": "48041",
+      "area": "Euskadi",
+      "antes": 28.0,
+      "despues": 45.0,
+      "var": 0.607
+     }
+    ]
+   },
+   "ia_anuncios_vivienda_entera_numero": {
+    "pares_municipio_ronda_>=20_en_ambas": 340,
+    "n_saltos_>25%": 41,
+    "n_saltos_>50%": 2,
+    "saltos_>50%": [
+     {
+      "par": "2026-03->2026-06",
+      "cod": "17103",
+      "area": "Girona",
+      "antes": 65.0,
+      "despues": 98.0,
+      "var": 0.508
+     },
+     {
+      "par": "2026-03->2026-06",
+      "cod": "46250",
+      "area": "Valencia",
+      "antes": 3879.0,
+      "despues": 6121.0,
+      "var": 0.578
+     }
+    ]
+   }
+  },
+  "1a_cambio_cobertura_municipios": {
+   "2025-12->2026-03": {
+    "municipios_entran": 5,
+    "anuncios_entran": 5.0,
+    "municipios_salen": 3,
+    "anuncios_salen": 3.0
+   },
+   "2026-03->2026-06": {
+    "municipios_entran": 7,
+    "anuncios_entran": 8.0,
+    "municipios_salen": 3,
+    "anuncios_salen": 3.0
+   },
+   "2026-06->2026-09": {
+    "municipios_entran": 4,
+    "anuncios_entran": 4.0,
+    "municipios_salen": 2,
+    "anuncios_salen": 2.0
+   }
+  },
+  "1a_total_por_area": {
+   "Barcelona": {
+    "2025-12": 18179.0,
+    "2026-03": 16108.0,
+    "2026-06": 15295.0,
+    "2026-09": 15238.0
+   },
+   "Euskadi": {
+    "2025-12": 5460.0,
+    "2026-03": 5111.0,
+    "2026-06": 6248.0,
+    "2026-09": 6248.0
+   },
+   "Girona": {
+    "2025-12": 17066.0,
+    "2026-03": 16832.0,
+    "2026-06": 21254.0,
+    "2026-09": 20467.0
+   },
+   "Lleida": {
+    "2025-12": 1.0,
+    "2026-03": 1.0,
+    "2026-06": 1.0,
+    "2026-09": 1.0
+   },
+   "Malaga": {
+    "2025-12": 8811.0,
+    "2026-03": 8098.0,
+    "2026-06": 9568.0,
+    "2026-09": 9505.0
+   },
+   "Sevilla": {
+    "2025-12": 7674.0,
+    "2026-03": 7093.0,
+    "2026-06": 8245.0,
+    "2026-09": 8375.0
+   },
+   "Valencia": {
+    "2025-12": 7697.0,
+    "2026-03": 4927.0,
+    "2026-06": 7848.0,
+    "2026-09": 7967.0
+   }
+  },
+  "1a_var_area_consecutiva": {
+   "Barcelona": {
+    "2025-12->2026-03": -0.114,
+    "2026-03->2026-06": -0.05,
+    "2026-06->2026-09": -0.004
+   },
+   "Euskadi": {
+    "2025-12->2026-03": -0.064,
+    "2026-03->2026-06": 0.222,
+    "2026-06->2026-09": 0.0
+   },
+   "Girona": {
+    "2025-12->2026-03": -0.014,
+    "2026-03->2026-06": 0.263,
+    "2026-06->2026-09": -0.037
+   },
+   "Lleida": {
+    "2025-12->2026-03": 0.0,
+    "2026-03->2026-06": 0.0,
+    "2026-06->2026-09": 0.0
+   },
+   "Malaga": {
+    "2025-12->2026-03": -0.081,
+    "2026-03->2026-06": 0.182,
+    "2026-06->2026-09": -0.007
+   },
+   "Sevilla": {
+    "2025-12->2026-03": -0.076,
+    "2026-03->2026-06": 0.162,
+    "2026-06->2026-09": 0.016
+   },
+   "Valencia": {
+    "2025-12->2026-03": -0.36,
+    "2026-03->2026-06": 0.593,
+    "2026-06->2026-09": 0.015
+   }
+  },
+  "1a_secciones": {
+   "n_secciones_por_ronda": {
+    "2025-12": 3761,
+    "2026-03": 3659,
+    "2026-06": 3757,
+    "2026-09": 3737
+   },
+   "secciones_variacion_>50%_(>=20_anuncios_en_ambas)": 77,
+   "secciones_pares_evaluables": 1955
+  },
+  "1a_cuota_activos_sobre_total_por_area": {
+   "Barcelona": {
+    "2025-12": 0.944,
+    "2026-03": 0.905,
+    "2026-06": 0.989,
+    "2026-09": 0.83
+   },
+   "Euskadi": {
+    "2025-12": 0.995,
+    "2026-03": 0.995,
+    "2026-06": 0.995,
+    "2026-09": 0.92
+   },
+   "Girona": {
+    "2025-12": 0.996,
+    "2026-03": 0.996,
+    "2026-06": 0.995,
+    "2026-09": 0.905
+   },
+   "Lleida": {
+    "2025-12": 1.0,
+    "2026-03": 1.0,
+    "2026-06": 1.0,
+    "2026-09": 1.0
+   },
+   "Malaga": {
+    "2025-12": 0.998,
+    "2026-03": 0.998,
+    "2026-06": 0.998,
+    "2026-09": 0.812
+   },
+   "Sevilla": {
+    "2025-12": 0.998,
+    "2026-03": 0.998,
+    "2026-06": 0.998,
+    "2026-09": 0.798
+   },
+   "Valencia": {
+    "2025-12": 0.991,
+    "2026-03": 0.997,
+    "2026-06": 0.995,
+    "2026-09": 0.813
+   }
+  },
+  "1a_atipicos_z>5_variacion_log_entre_rondas": {
+   "n": 4,
+   "lista": [
+    {
+     "par": "2026-06->2026-09",
+     "cod": "17056",
+     "area": "Girona",
+     "log_var": 0.235,
+     "z": 5.5
+    },
+    {
+     "par": "2026-06->2026-09",
+     "cod": "17133",
+     "area": "Girona",
+     "log_var": -0.31,
+     "z": -6.4
+    },
+    {
+     "par": "2026-06->2026-09",
+     "cod": "17901",
+     "area": "Girona",
+     "log_var": -0.318,
+     "z": -6.6
+    },
+    {
+     "par": "2026-06->2026-09",
+     "cod": "48078",
+     "area": "Euskadi",
+     "log_var": 0.217,
+     "z": 5.1
+    }
+   ]
+  },
+  "2_gva_2026": {
+   "filas": 90124,
+   "signaturas_duplicadas": 0,
+   "filas_sin_fecha_alta": 0,
+   "municipios": 452
+  },
+  "2_gva_cortes": {
+   "fechas": [
+    "2025-01-26",
+    "2026-10-14"
+   ],
+   "total": {
+    "2025-01-26": 101222.0,
+    "2026-10-14": 90124.0
+   }
+  },
+  "2_gva_mensual_reconstruido": {
+   "primer": "2015-01",
+   "ultimo": "2025-01",
+   "stock_ultimo": 101231.0,
+   "meses_con_caida_mensual_>2%": []
+  },
+  "2_euskadi_reate": {
+   "filas": 4738,
+   "registros_duplicados": 1,
+   "sin_fecha": 0,
+   "altas_desde_2026-01": 69
+  },
+  "1b_ia_vs_vut_niveles_2026-09": {
+   "Valencia_GVA__IA_entera__umbral1": {
+    "n": 1
+   },
+   "Valencia_GVA__IA_entera__umbral20": {
+    "n": 1
+   },
+   "Valencia_GVA__IA_activos__umbral1": {
+    "n": 1
+   },
+   "Valencia_GVA__IA_activos__umbral20": {
+    "n": 1
+   },
+   "Euskadi_REATE__IA_entera__umbral1": {
+    "n": 176,
+    "corr_pearson": 0.995,
+    "corr_spearman": 0.84,
+    "corr_log": 0.905,
+    "ratio_medio": 1.284,
+    "ratio_mediana": 1.0,
+    "ratio_agregado": 0.854,
+    "suma_a": 4032.0,
+    "suma_b": 4722.0,
+    "ratio_p10_p90": [
+     0.5,
+     2.367
+    ]
+   },
+   "Euskadi_REATE__IA_entera__umbral20": {
+    "n": 39,
+    "corr_pearson": 0.995,
+    "corr_spearman": 0.912,
+    "corr_log": 0.941,
+    "ratio_medio": 1.015,
+    "ratio_mediana": 0.773,
+    "ratio_agregado": 0.837,
+    "suma_a": 3447.0,
+    "suma_b": 4117.0,
+    "ratio_p10_p90": [
+     0.618,
+     1.574
+    ]
+   },
+   "Euskadi_REATE__IA_activos__umbral1": {
+    "n": 181,
+    "corr_pearson": 0.989,
+    "corr_spearman": 0.801,
+    "corr_log": 0.872,
+    "ratio_medio": 1.935,
+    "ratio_mediana": 1.25,
+    "ratio_agregado": 1.188,
+    "suma_a": 5618.0,
+    "suma_b": 4728.0,
+    "ratio_p10_p90": [
+     0.667,
+     3.333
+    ]
+   },
+   "Euskadi_REATE__IA_activos__umbral20": {
+    "n": 39,
+    "corr_pearson": 0.988,
+    "corr_spearman": 0.804,
+    "corr_log": 0.861,
+    "ratio_medio": 1.982,
+    "ratio_mediana": 1.143,
+    "ratio_agregado": 1.168,
+    "suma_a": 4808.0,
+    "suma_b": 4117.0,
+    "ratio_p10_p90": [
+     0.714,
+     2.886
+    ]
+   },
+   "Cataluna_HUT__IA_entera__umbral1": {
+    "n": 219,
+    "corr_pearson": 0.936,
+    "corr_spearman": 0.845,
+    "corr_log": 0.908,
+    "ratio_medio": 0.669,
+    "ratio_mediana": 0.55,
+    "ratio_agregado": 0.455,
+    "suma_a": 25711.0,
+    "suma_b": 56482.0,
+    "ratio_p10_p90": [
+     0.291,
+     1.185
+    ]
+   },
+   "Cataluna_HUT__IA_entera__umbral20": {
+    "n": 88,
+    "corr_pearson": 0.935,
+    "corr_spearman": 0.895,
+    "corr_log": 0.962,
+    "ratio_medio": 0.667,
+    "ratio_mediana": 0.508,
+    "ratio_agregado": 0.456,
+    "suma_a": 24771.0,
+    "suma_b": 54278.0,
+    "ratio_p10_p90": [
+     0.311,
+     1.23
+    ]
+   },
+   "Cataluna_HUT__IA_activos__umbral1": {
+    "n": 220,
+    "corr_pearson": 0.886,
+    "corr_spearman": 0.794,
+    "corr_log": 0.88,
+    "ratio_medio": 0.817,
+    "ratio_mediana": 0.627,
+    "ratio_agregado": 0.551,
+    "suma_a": 31167.0,
+    "suma_b": 56606.0,
+    "ratio_p10_p90": [
+     0.333,
+     1.509
+    ]
+   },
+   "Cataluna_HUT__IA_activos__umbral20": {
+    "n": 88,
+    "corr_pearson": 0.887,
+    "corr_spearman": 0.864,
+    "corr_log": 0.951,
+    "ratio_medio": 0.836,
+    "ratio_mediana": 0.58,
+    "ratio_agregado": 0.554,
+    "suma_a": 30067.0,
+    "suma_b": 54278.0,
+    "ratio_p10_p90": [
+     0.342,
+     1.5
+    ]
+   },
+   "Andalucia_OpenRTA__IA_entera__umbral1": {
+    "n": 5,
+    "corr_pearson": 0.91,
+    "corr_spearman": 0.667,
+    "corr_log": 0.66,
+    "ratio_medio": 0.282,
+    "ratio_mediana": 0.261,
+    "ratio_agregado": 0.44,
+    "suma_a": 12245.0,
+    "suma_b": 27818.0,
+    "ratio_p10_p90": [
+     0.015,
+     0.562
+    ]
+   },
+   "Andalucia_OpenRTA__IA_entera__umbral20": {
+    "n": 2
+   },
+   "Andalucia_OpenRTA__IA_activos__umbral1": {
+    "n": 5,
+    "corr_pearson": 0.908,
+    "corr_spearman": 0.667,
+    "corr_log": 0.661,
+    "ratio_medio": 0.322,
+    "ratio_mediana": 0.261,
+    "ratio_agregado": 0.518,
+    "suma_a": 14400.0,
+    "suma_b": 27818.0,
+    "ratio_p10_p90": [
+     0.015,
+     0.665
+    ]
+   },
+   "Andalucia_OpenRTA__IA_activos__umbral20": {
+    "n": 2
+   }
+  },
+  "1b_ia_vs_vut_variaciones": {
+   "Euskadi_REATE_altas_2026_sin_bajas": {
+    "n_municipios": 37,
+    "corr_variaciones_abs": 0.207,
+    "suma_variacion_IA_entera": 48.0,
+    "suma_altas_REATE": 28.0
+   },
+   "GVA_corte_2025-01_a_2026-10 (periodos no alineados con IA)": {
+    "n_municipios_IA": 1,
+    "variacion_GVA_en_esos_municipios": -325.0,
+    "variacion_IA_entera": -973.0,
+    "variacion_GVA_total_CV": -11084.0
+   }
+  },
+  "1c_ia_vs_vte": {
+   "municipios_comunes_IA_VTE": 437,
+   "IA_entera_2025-12__VTE_viviendas_2025-11__umbral1": {
+    "n": 404,
+    "corr_pearson": 0.964,
+    "corr_spearman": 0.883,
+    "corr_log": 0.914,
+    "ratio_medio": 1.043,
+    "ratio_mediana": 0.973,
+    "ratio_agregado": 0.928,
+    "suma_a": 51855.0,
+    "suma_b": 55851.0,
+    "ratio_p10_p90": [
+     0.5,
+     1.685
+    ]
+   },
+   "IA_entera_2025-12__VTE_viviendas_2025-11__umbral20": {
+    "n": 115,
+    "corr_pearson": 0.982,
+    "corr_spearman": 0.92,
+    "corr_log": 0.976,
+    "ratio_medio": 0.968,
+    "ratio_mediana": 0.916,
+    "ratio_agregado": 0.987,
+    "suma_a": 50149.0,
+    "suma_b": 50835.0,
+    "ratio_p10_p90": [
+     0.669,
+     1.366
+    ]
+   },
+   "IA_activos_2025-12__VTE_viviendas_2025-11__umbral1": {
+    "n": 414,
+    "corr_pearson": 0.933,
+    "corr_spearman": 0.881,
+    "corr_log": 0.909,
+    "ratio_medio": 1.319,
+    "ratio_mediana": 1.0,
+    "ratio_agregado": 1.138,
+    "suma_a": 63630.0,
+    "suma_b": 55928.0,
+    "ratio_p10_p90": [
+     0.75,
+     2.0
+    ]
+   },
+   "IA_activos_2025-12__VTE_viviendas_2025-11__umbral20": {
+    "n": 115,
+    "corr_pearson": 0.95,
+    "corr_spearman": 0.899,
+    "corr_log": 0.972,
+    "ratio_medio": 1.239,
+    "ratio_mediana": 1.074,
+    "ratio_agregado": 1.21,
+    "suma_a": 61524.0,
+    "suma_b": 50835.0,
+    "ratio_p10_p90": [
+     0.856,
+     1.89
+    ]
+   },
+   "IA_entera_2026-06__VTE_viviendas_2026-05__umbral1": {
+    "n": 412,
+    "corr_pearson": 0.977,
+    "corr_spearman": 0.897,
+    "corr_log": 0.921,
+    "ratio_medio": 1.062,
+    "ratio_mediana": 1.0,
+    "ratio_agregado": 0.99,
+    "suma_a": 56993.0,
+    "suma_b": 57546.0,
+    "ratio_p10_p90": [
+     0.503,
+     1.667
+    ]
+   },
+   "IA_entera_2026-06__VTE_viviendas_2026-05__umbral20": {
+    "n": 129,
+    "corr_pearson": 0.992,
+    "corr_spearman": 0.933,
+    "corr_log": 0.981,
+    "ratio_medio": 1.003,
+    "ratio_mediana": 0.938,
+    "ratio_agregado": 1.045,
+    "suma_a": 55326.0,
+    "suma_b": 52957.0,
+    "ratio_p10_p90": [
+     0.678,
+     1.368
+    ]
+   },
+   "IA_activos_2026-06__VTE_viviendas_2026-05__umbral1": {
+    "n": 419,
+    "corr_pearson": 0.959,
+    "corr_spearman": 0.883,
+    "corr_log": 0.911,
+    "ratio_medio": 1.395,
+    "ratio_mediana": 1.062,
+    "ratio_agregado": 1.181,
+    "suma_a": 68039.0,
+    "suma_b": 57633.0,
+    "ratio_p10_p90": [
+     0.727,
+     2.0
+    ]
+   },
+   "IA_activos_2026-06__VTE_viviendas_2026-05__umbral20": {
+    "n": 129,
+    "corr_pearson": 0.973,
+    "corr_spearman": 0.91,
+    "corr_log": 0.98,
+    "ratio_medio": 1.291,
+    "ratio_mediana": 1.103,
+    "ratio_agregado": 1.245,
+    "suma_a": 65919.0,
+    "suma_b": 52957.0,
+    "ratio_p10_p90": [
+     0.923,
+     1.834
+    ]
+   },
+   "IA_entera_2026-09__VTE_viviendas_2026-05__umbral1": {
+    "n": 414,
+    "corr_pearson": 0.977,
+    "corr_spearman": 0.881,
+    "corr_log": 0.9,
+    "ratio_medio": 1.009,
+    "ratio_mediana": 0.902,
+    "ratio_agregado": 0.802,
+    "suma_a": 46841.0,
+    "suma_b": 58437.0,
+    "ratio_p10_p90": [
+     0.5,
+     1.667
+    ]
+   },
+   "IA_entera_2026-09__VTE_viviendas_2026-05__umbral20": {
+    "n": 131,
+    "corr_pearson": 0.994,
+    "corr_spearman": 0.928,
+    "corr_log": 0.98,
+    "ratio_medio": 0.909,
+    "ratio_mediana": 0.837,
+    "ratio_agregado": 0.855,
+    "suma_a": 45290.0,
+    "suma_b": 52987.0,
+    "ratio_p10_p90": [
+     0.615,
+     1.263
+    ]
+   },
+   "IA_activos_2026-09__VTE_viviendas_2026-05__umbral1": {
+    "n": 420,
+    "corr_pearson": 0.955,
+    "corr_spearman": 0.867,
+    "corr_log": 0.889,
+    "ratio_medio": 1.329,
+    "ratio_mediana": 1.0,
+    "ratio_agregado": 0.987,
+    "suma_a": 57761.0,
+    "suma_b": 58523.0,
+    "ratio_p10_p90": [
+     0.688,
+     2.008
+    ]
+   },
+   "IA_activos_2026-09__VTE_viviendas_2026-05__umbral20": {
+    "n": 131,
+    "corr_pearson": 0.971,
+    "corr_spearman": 0.891,
+    "corr_log": 0.977,
+    "ratio_medio": 1.194,
+    "ratio_mediana": 1.0,
+    "ratio_agregado": 1.053,
+    "suma_a": 55784.0,
+    "suma_b": 52987.0,
+    "ratio_p10_p90": [
+     0.811,
+     1.727
+    ]
+   },
+   "variacion_log_IA_entera_2025-12_2026-06_vs_VTE_2025-11_2026-05": {
+    "n": 113,
+    "corr": -0.034,
+    "dif_media_pp": 3.8,
+    "signo_opuesto_n": 18
+   },
+   "variacion_log_IA_activos_2025-12_2026-06_vs_VTE_2025-11_2026-05": {
+    "n": 113,
+    "corr": -0.0,
+    "dif_media_pp": 3.6,
+    "signo_opuesto_n": 18
+   }
+  },
+  "1c_grandes_ciudades_VTE_vs_IA": {
+   "Barcelona": {
+    "VTE_2025-11": 8536.0,
+    "VTE_2026-05": 8231.0,
+    "IA_entera_2025-12": 11539.0,
+    "IA_entera_2026-06": 10802.0,
+    "IA_total_2026-06": 15293.0
+   },
+   "Malaga": {
+    "VTE_2025-11": 8638.0,
+    "VTE_2026-05": 8288.0,
+    "IA_entera_2025-12": 7858.0,
+    "IA_entera_2026-06": 8461.0,
+    "IA_total_2026-06": 9560.0
+   },
+   "Sevilla": {
+    "VTE_2025-11": 7087.0,
+    "VTE_2026-05": 6937.0,
+    "IA_entera_2025-12": 6660.0,
+    "IA_entera_2026-06": 7104.0,
+    "IA_total_2026-06": 8245.0
+   },
+   "Valencia": {
+    "VTE_2025-11": 5852.0,
+    "VTE_2026-05": 5393.0,
+    "IA_entera_2025-12": 5795.0,
+    "IA_entera_2026-06": 6121.0,
+    "IA_total_2026-06": 7848.0
+   },
+   "Donostia": {
+    "VTE_2025-11": 1291.0,
+    "VTE_2026-05": 1350.0,
+    "IA_entera_2025-12": 1111.0,
+    "IA_entera_2026-06": 1234.0,
+    "IA_total_2026-06": 1608.0
+   },
+   "Bilbao": {
+    "VTE_2025-11": 1199.0,
+    "VTE_2026-05": 1257.0,
+    "IA_entera_2025-12": 917.0,
+    "IA_entera_2026-06": 1054.0,
+    "IA_total_2026-06": 1593.0
+   }
+  },
+  "1b_ciudades_IA_registro_VTE": {
+   "08019": {
+    "IA_entera_2026-09": 8326.0,
+    "IA_total_2026-09": 15235.0,
+    "registro_VUT": 10651.0,
+    "VTE_2026-05": 8231.0
+   },
+   "17079": {
+    "IA_entera_2026-09": 342.0,
+    "IA_total_2026-09": 596.0,
+    "registro_VUT": 752.0,
+    "VTE_2026-05": 523.0
+   },
+   "46250": {
+    "IA_entera_2026-09": 4822.0,
+    "IA_total_2026-09": 7967.0,
+    "registro_VUT": 5766.0,
+    "VTE_2026-05": 5393.0
+   },
+   "29067": {
+    "IA_entera_2026-09": 6663.0,
+    "IA_total_2026-09": 9497.0,
+    "registro_VUT": 12608.0,
+    "VTE_2026-05": 8288.0
+   },
+   "41091": {
+    "IA_entera_2026-09": 5574.0,
+    "IA_total_2026-09": 8375.0,
+    "registro_VUT": 9546.0,
+    "VTE_2026-05": 6937.0
+   },
+   "20069": {
+    "IA_entera_2026-09": 1131.0,
+    "IA_total_2026-09": 1627.0,
+    "registro_VUT": 1211.0,
+    "VTE_2026-05": 1350.0
+   },
+   "48020": {
+    "IA_entera_2026-09": 923.0,
+    "IA_total_2026-09": 1609.0,
+    "registro_VUT": 1019.0,
+    "VTE_2026-05": 1257.0
+   }
+  },
+  "1b_valencia_gva_cortes": {
+   "2025-01-26": 6091.0,
+   "2026-10-14": 5766.0
+  },
+  "1c_vte_municipios_y_suma_por_corte": {
+   "2020-08": [
+    6452,
+    217554.0
+   ],
+   "2021-02": [
+    6452,
+    195387.0
+   ],
+   "2021-08": [
+    6452,
+    204106.0
+   ],
+   "2022-02": [
+    6452,
+    189381.0
+   ],
+   "2022-08": [
+    6452,
+    209111.0
+   ],
+   "2023-02": [
+    6452,
+    202099.0
+   ],
+   "2023-08": [
+    6452,
+    231576.0
+   ],
+   "2024-02": [
+    6461,
+    237709.0
+   ],
+   "2024-08": [
+    6471,
+    276617.0
+   ],
+   "2024-11": [
+    6471,
+    255775.0
+   ],
+   "2025-05": [
+    6471,
+    264496.0
+   ],
+   "2025-11": [
+    6471,
+    226782.0
+   ],
+   "2026-05": [
+    6471,
+    237278.0
+   ]
+  },
+  "1c_vte_nacional_y_ratios": {
+   "2020-08": {
+    "nacional": 321496.0,
+    "suma_provincias_no_selladas/nacional": 0.678,
+    "suma_municipios_no_selladas/nacional": 0.677
+   },
+   "2021-02": {
+    "nacional": 294698.0,
+    "suma_provincias_no_selladas/nacional": 0.664,
+    "suma_municipios_no_selladas/nacional": 0.663
+   },
+   "2021-08": {
+    "nacional": 306974.0,
+    "suma_provincias_no_selladas/nacional": 0.666,
+    "suma_municipios_no_selladas/nacional": 0.665
+   },
+   "2022-02": {
+    "nacional": 285868.0,
+    "suma_provincias_no_selladas/nacional": 0.663,
+    "suma_municipios_no_selladas/nacional": 0.662
+   },
+   "2022-08": {
+    "nacional": 311518.0,
+    "suma_provincias_no_selladas/nacional": 0.672,
+    "suma_municipios_no_selladas/nacional": 0.671
+   },
+   "2023-02": {
+    "nacional": 305136.0,
+    "suma_provincias_no_selladas/nacional": 0.663,
+    "suma_municipios_no_selladas/nacional": 0.662
+   },
+   "2023-08": {
+    "nacional": 340424.0,
+    "suma_provincias_no_selladas/nacional": 0.681,
+    "suma_municipios_no_selladas/nacional": 0.68
+   },
+   "2024-02": {
+    "nacional": 351389.0,
+    "suma_provincias_no_selladas/nacional": 0.678,
+    "suma_municipios_no_selladas/nacional": 0.676
+   },
+   "2024-08": {
+    "nacional": 403267.0,
+    "suma_provincias_no_selladas/nacional": 0.687,
+    "suma_municipios_no_selladas/nacional": 0.686
+   },
+   "2024-11": {
+    "nacional": 376463.0,
+    "suma_provincias_no_selladas/nacional": 0.681,
+    "suma_municipios_no_selladas/nacional": 0.679
+   },
+   "2025-05": {
+    "nacional": 381837.0,
+    "suma_provincias_no_selladas/nacional": 0.694,
+    "suma_municipios_no_selladas/nacional": 0.693
+   },
+   "2025-11": {
+    "nacional": 329764.0,
+    "suma_provincias_no_selladas/nacional": 0.689,
+    "suma_municipios_no_selladas/nacional": 0.688
+   },
+   "2026-05": {
+    "nacional": 341001.0,
+    "suma_provincias_no_selladas/nacional": 0.697,
+    "suma_municipios_no_selladas/nacional": 0.696
+   }
+  },
+  "1d_precio_moneda": {
+   "snapshots_leidos": 24,
+   "moneda_quote": {
+    "EUR": 163252
+   },
+   "precio_con_$": 162999,
+   "precio_con_euro": 0,
+   "precio_igual_a_cotizacion_noche": [
+    162449,
+    162449
+   ]
+  },
+  "1d_precio_mediana_ciudades": {
+   "Barcelona": {
+    "2026-03": 177.0,
+    "2026-06": 177.3,
+    "2026-09": 183.4
+   },
+   "Malaga": {
+    "2026-03": 151.0,
+    "2026-06": 169.0,
+    "2026-09": 150.0
+   },
+   "Sevilla": {
+    "2026-03": 191.5,
+    "2026-06": 107.1,
+    "2026-09": 152.5
+   },
+   "Valencia": {
+    "2026-06": 150.6,
+    "2026-09": 130.0
+   },
+   "Donostia": {
+    "2026-03": 235.5,
+    "2026-06": 332.9,
+    "2026-09": 227.5
+   },
+   "Bilbao": {
+    "2026-03": 136.0,
+    "2026-06": 168.0,
+    "2026-09": 148.0
+   }
+  },
+  "1d_precio_mediana_fuera_de_10_1500": {
+   "n": 0,
+   "lista": []
+  },
+  "1d_precio_z>5_entre_municipios_n>=20": {
+   "n": 0,
+   "lista": []
+  },
+  "2_openrta_acumulado": {
+   "series_municipio_grupo": 2247,
+   "series_no_monotonas": 0,
+   "registros_total_no_sellada": 169329.0,
+   "VFT_completa_mas_habitaciones": 148580.0
+  },
+  "2_openrta_codigos_registro_repetidos": {
+   "codigos_encontrados": 177185,
+   "distintos": 177112,
+   "repeticiones_extra": 73,
+   "max_repeticiones": 4,
+   "nota": "regex sobre el texto crudo (esquema mixto de 72/92 columnas): un codigo puede figurar en mas de un campo; cota superior de duplicados"
+  },
+  "2_gva_historico": {
+   "filas": 182893,
+   "signaturas_duplicadas": 0,
+   "altas_por_anio_2019_2024": {
+    "2019": 11083,
+    "2020": 5886,
+    "2021": 5304,
+    "2022": 8805,
+    "2023": 13843,
+    "2024": 14019
+   },
+   "bajas_por_anio_2019_2024": {
+    "2019": 4833,
+    "2020": 2238,
+    "2021": 3026,
+    "2022": 5653,
+    "2023": 5407,
+    "2024": 7884
+   },
+   "altas_antes_2015": 69932,
+   "baja_anterior_a_alta": 56,
+   "estado_BAJA_sin_fecha_baja": 9
+  },
+  "2_gva_signaturas_alta_2025_en_2026": {
+   "alta_2025": 101222,
+   "presentes_en_2026": 0,
+   "nuevas_2026": 90124
+  },
+  "2_madrid_vut": {
+   "estado": "no auditado: provincia 28 en la muestra sellada v6 (0 filas tras el filtro)",
+   "cortes_declarados_en_ficha": "14 cortes 2025-04 a 2026-10; faltan 2025-08, 2025-10, 2025-11, 2026-02; formato MUNICIPIO/ISO-8859-1 en 2025-04 a 2025-09"
+  },
+  "2_filtrado": {
+   "filas_ccaa_de_regiones_selladas_con_marca_False_excluidas": 115668,
+   "filas_tras_filtro": 1181682,
+   "fuentes_tras_filtro": [
+    "INE, EOAP (Tempus)",
+    "INE, EOH (Tempus)",
+    "INE, EOT (Tempus)",
+    "INE, IPAP (Tempus)",
+    "INE, OAT (Tempus)",
+    "INE, VTE (Tempus)",
+    "Inside Airbnb (CC BY 4.0), agr"
+   ]
+  },
+  "3_duplicados_clave_parquet": 0,
+  "3_solapes_crudo_mismo_COD_fecha": {
+   "tablas": 39,
+   "claves": 1649641,
+   "solapes_entre_tablas": 161476,
+   "discrepancias_de_valor": 0
+  },
+  "3_unidades_y_rangos": {
+   "porcentaje_fuera_0_100": [
+    0,
+    239615
+   ],
+   "VTE_plazas_por_vivienda_>20": 125,
+   "VTE_plazas_por_vivienda_<1": 0,
+   "VTE_plazas_por_vivienda_p1_p50_p99": [
+    2.0,
+    6.0,
+    16.0
+   ],
+   "VTE_pct_viviendas_>30": 2,
+   "valores_negativos_en_niveles": 0,
+   "VTE_plazas/viviendas_calculado_vs_publicado_dif>0.1": [
+    0,
+    53736
+   ]
+  },
+  "3_atipicos_yoy_log_z>5": {
+   "series_mensuales_evaluadas": 3494,
+   "n_atipicos": 37441,
+   "n_en_ventana_covid_2020-03_2022-06": 35128,
+   "n_fuera_covid": 2313,
+   "por_operacion_fuera_covid": {
+    "eoh": 1241,
+    "eoap": 650,
+    "eot": 390,
+    "oat": 32
+   },
+   "series_distintas_fuera_covid": 702,
+   "mayores_fuera_covid": [
+    {
+     "variable": "ine_eoh_numero_de_plazas_estimadas",
+     "cod": "19",
+     "nivel": "ccaa",
+     "periodo": "2004-07",
+     "log_yoy": 0.38,
+     "z": 26.38
+    },
+    {
+     "variable": "ine_eoh_numero_de_plazas_estimadas",
+     "cod": "19",
+     "nivel": "ccaa",
+     "periodo": "2004-01",
+     "log_yoy": 0.37,
+     "z": 25.96
+    },
+    {
+     "variable": "ine_eoh_numero_de_plazas_estimadas",
+     "cod": "19",
+     "nivel": "ccaa",
+     "periodo": "2004-02",
+     "log_yoy": 0.35,
+     "z": 24.87
+    },
+    {
+     "variable": "ine_eoh_numero_de_plazas_estimadas",
+     "cod": "19",
+     "nivel": "ccaa",
+     "periodo": "2004-03",
+     "log_yoy": 0.35,
+     "z": 24.86
+    },
+    {
+     "variable": "ine_eoh_pernoctaciones_total_categorias_residentes_en_espana",
+     "cod": "06",
+     "nivel": "ccaa",
+     "periodo": "2012-01",
+     "log_yoy": -2.53,
+     "z": -23.39
+    },
+    {
+     "variable": "ine_eoh_pernoctaciones_total_categorias_residentes_en_espana",
+     "cod": "39",
+     "nivel": "provincia",
+     "periodo": "2012-01",
+     "log_yoy": -2.53,
+     "z": -23.39
+    },
+    {
+     "variable": "ine_eoh_numero_de_plazas_estimadas",
+     "cod": "19",
+     "nivel": "ccaa",
+     "periodo": "2004-04",
+     "log_yoy": 0.33,
+     "z": 23.35
+    },
+    {
+     "variable": "ine_eoh_numero_de_plazas_estimadas",
+     "cod": "19",
+     "nivel": "ccaa",
+     "periodo": "2004-12",
+     "log_yoy": 0.32,
+     "z": 22.51
+    },
+    {
+     "variable": "ine_eoh_numero_de_plazas_estimadas",
+     "cod": "19",
+     "nivel": "ccaa",
+     "periodo": "2004-08",
+     "log_yoy": 0.32,
+     "z": 22.51
+    },
+    {
+     "variable": "ine_eoh_numero_de_plazas_estimadas",
+     "cod": "19",
+     "nivel": "ccaa",
+     "periodo": "2004-09",
+     "log_yoy": 0.32,
+     "z": 22.51
+    }
+   ]
+  },
+  "3_vte_variacion_entre_cortes_municipal": {
+   "2020-08->2021-02": {
+    "n": 687,
+    "mediana_logvar": -0.09,
+    "n_z>5": 3,
+    "n_pasan_a_0_o_ausentes": 140,
+    "var_total_pct": -10.2
+   },
+   "2021-02->2021-08": {
+    "n": 673,
+    "mediana_logvar": 0.058,
+    "n_z>5": 2,
+    "n_pasan_a_0_o_ausentes": 129,
+    "var_total_pct": 4.5
+   },
+   "2021-08->2022-02": {
+    "n": 702,
+    "mediana_logvar": -0.071,
+    "n_z>5": 1,
+    "n_pasan_a_0_o_ausentes": 147,
+    "var_total_pct": -7.2
+   },
+   "2022-02->2022-08": {
+    "n": 676,
+    "mediana_logvar": 0.127,
+    "n_z>5": 0,
+    "n_pasan_a_0_o_ausentes": 128,
+    "var_total_pct": 10.4
+   },
+   "2022-08->2023-02": {
+    "n": 746,
+    "mediana_logvar": -0.03,
+    "n_z>5": 6,
+    "n_pasan_a_0_o_ausentes": 121,
+    "var_total_pct": -3.4
+   },
+   "2023-02->2023-08": {
+    "n": 743,
+    "mediana_logvar": 0.124,
+    "n_z>5": 1,
+    "n_pasan_a_0_o_ausentes": 140,
+    "var_total_pct": 14.6
+   },
+   "2023-08->2024-02": {
+    "n": 792,
+    "mediana_logvar": 0.018,
+    "n_z>5": 4,
+    "n_pasan_a_0_o_ausentes": 115,
+    "var_total_pct": 2.6
+   },
+   "2024-02->2024-08": {
+    "n": 843,
+    "mediana_logvar": 0.131,
+    "n_z>5": 2,
+    "n_pasan_a_0_o_ausentes": 89,
+    "var_total_pct": 16.4
+   },
+   "2024-08->2024-11": {
+    "n": 927,
+    "mediana_logvar": -0.063,
+    "n_z>5": 1,
+    "n_pasan_a_0_o_ausentes": 92,
+    "var_total_pct": -7.5
+   },
+   "2024-11->2025-05": {
+    "n": 897,
+    "mediana_logvar": 0.008,
+    "n_z>5": 3,
+    "n_pasan_a_0_o_ausentes": 133,
+    "var_total_pct": 3.4
+   },
+   "2025-05->2025-11": {
+    "n": 911,
+    "mediana_logvar": -0.199,
+    "n_z>5": 4,
+    "n_pasan_a_0_o_ausentes": 317,
+    "var_total_pct": -14.3
+   },
+   "2025-11->2026-05": {
+    "n": 802,
+    "mediana_logvar": 0.064,
+    "n_z>5": 3,
+    "n_pasan_a_0_o_ausentes": 97,
+    "var_total_pct": 4.6
+   }
+  },
+  "3_serie_antigua_vs_total_categorias_en_solape": {
+   "ine_eoap_grado_de_ocupacion_por_plazas": {
+    "territorios_comunes": 1,
+    "periodos_comunes": 164,
+    "pares_validos": 29,
+    "dif_relativa_media_abs": 2.591,
+    "dif_relativa_max": 7.986
+   },
+   "ine_eoap_numero_de_plazas_estimadas": {
+    "territorios_comunes": 1,
+    "periodos_comunes": 164,
+    "pares_validos": 29,
+    "dif_relativa_media_abs": 0.908,
+    "dif_relativa_max": 2.894
+   },
+   "ine_eoap_numero_de_apartamentos_estimados": {
+    "territorios_comunes": 1,
+    "periodos_comunes": 164,
+    "pares_validos": 29,
+    "dif_relativa_media_abs": 1.929,
+    "dif_relativa_max": 4.292
+   },
+   "ine_eoh_numero_de_plazas_estimadas": {
+    "territorios_comunes": 0
+   },
+   "ine_eoh_grado_de_ocupacion_por_plazas": {
+    "territorios_comunes": 0
+   },
+   "ine_eot_numero_de_plazas_estimadas": {
+    "territorios_comunes": 10,
+    "periodos_comunes": 151,
+    "pares_validos": 1413,
+    "dif_relativa_media_abs": 5.507,
+    "dif_relativa_max": 41.264
+   }
+  },
+  "3_saltos_mensuales_plazas": {
+   "ine_eoap_numero_de_plazas_estimadas": {
+    "series": 46,
+    "saltos_>15%_y_z>5": 627,
+    "de_ellos_en_enero": 60,
+    "periodos_con_mas_saltos": {
+     "2020-04": 34,
+     "2020-03": 27,
+     "2020-07": 13,
+     "2020-05": 12
+    }
+   },
+   "ine_eoh_numero_de_plazas_estimadas": {
+    "series": 100,
+    "saltos_>15%_y_z>5": 798,
+    "de_ellos_en_enero": 46,
+    "periodos_con_mas_saltos": {
+     "2020-04": 90,
+     "2020-03": 57,
+     "2020-06": 43,
+     "2020-05": 43
+    }
+   },
+   "ine_eot_numero_de_plazas_estimadas": {
+    "series": 10,
+    "saltos_>15%_y_z>5": 62,
+    "de_ellos_en_enero": 10,
+    "periodos_con_mas_saltos": {
+     "2020-07": 10,
+     "2020-06": 10,
+     "2020-05": 10,
+     "2020-03": 9
+    }
+   }
+  },
+  "3_ipap_coherencia_tasa": {
+   "meses_faltantes_en_indice": [
+    "2020-05"
+   ],
+   "n": 270,
+   "dif_abs_media_pp": 0.008,
+   "dif_abs_max_pp": 0.478,
+   "n_dif_>0.3pp": 1,
+   "indice_inicio_fin": [
+    101.02,
+    225.7
+   ],
+   "saltos_mensuales_>5pct": [
+    [
+     "2006-07",
+     5.668
+    ],
+    [
+     "2007-06",
+     5.223
+    ],
+    [
+     "2007-07",
+     5.466
+    ],
+    [
+     "2007-09",
+     -6.443
+    ],
+    [
+     "2008-07",
+     9.584
+    ],
+    [
+     "2008-09",
+     -10.47
+    ],
+    [
+     "2008-10",
+     -6.114
+    ],
+    [
+     "2009-04",
+     5.56
+    ],
+    [
+     "2009-07",
+     9.321
+    ],
+    [
+     "2009-09",
+     -12.959
+    ]
+   ]
+  },
+  "3_eoap_pernoctaciones_vs_vte": {
+   "provincia_2025-11": {
+    "n_territorios": 17,
+    "EOAP_pernoct12m_vs_VTE_plazas": {
+     "n": 17,
+     "corr_pearson": 0.829,
+     "corr_spearman": 0.907,
+     "corr_log": 0.893,
+     "ratio_medio": 30.77,
+     "ratio_mediana": 25.047,
+     "ratio_agregado": 31.637,
+     "suma_a": 29497675.0,
+     "suma_b": 932379.0,
+     "ratio_p10_p90": [
+      15.449,
+      51.624
+     ]
+    },
+    "EOAP_pernoct12m_vs_VTE_viviendas": {
+     "n": 17,
+     "corr_pearson": 0.819,
+     "corr_spearman": 0.902,
+     "corr_log": 0.903,
+     "ratio_medio": 151.23,
+     "ratio_mediana": 124.47,
+     "ratio_agregado": 155.681,
+     "suma_a": 29497675.0,
+     "suma_b": 189475.0,
+     "ratio_p10_p90": [
+      76.383,
+      244.718
+     ]
+    },
+    "variacion_log_12m_EOAP_pernoct_vs_VTE_plazas": {
+     "n": 17,
+     "corr": 0.145,
+     "dif_media_pp": 19.3,
+     "signo_opuesto_n": 9
+    }
+   },
+   "provincia_2026-05": {
+    "n_territorios": 17,
+    "EOAP_pernoct12m_vs_VTE_plazas": {
+     "n": 17,
+     "corr_pearson": 0.873,
+     "corr_spearman": 0.88,
+     "corr_log": 0.888,
+     "ratio_medio": 29.636,
+     "ratio_mediana": 28.307,
+     "ratio_agregado": 30.998,
+     "suma_a": 30557322.0,
+     "suma_b": 985792.0,
+     "ratio_p10_p90": [
+      14.342,
+      51.235
+     ]
+    },
+    "EOAP_pernoct12m_vs_VTE_viviendas": {
+     "n": 17,
+     "corr_pearson": 0.867,
+     "corr_spearman": 0.887,
+     "corr_log": 0.901,
+     "ratio_medio": 147.578,
+     "ratio_mediana": 136.523,
+     "ratio_agregado": 155.592,
+     "suma_a": 30557322.0,
+     "suma_b": 196394.0,
+     "ratio_p10_p90": [
+      73.317,
+      248.209
+     ]
+    },
+    "variacion_log_12m_EOAP_pernoct_vs_VTE_plazas": {
+     "n": 17,
+     "corr": 0.568,
+     "dif_media_pp": 19.5,
+     "signo_opuesto_n": 12
+    }
+   },
+   "municipio_2025-11": {
+    "n_territorios": 14,
+    "EOAP_pernoct12m_vs_VTE_plazas": {
+     "n": 14,
+     "corr_pearson": 0.204,
+     "corr_spearman": 0.609,
+     "corr_log": 0.705,
+     "ratio_medio": 78.627,
+     "ratio_mediana": 48.908,
+     "ratio_agregado": 49.078,
+     "suma_a": 11402876.0,
+     "suma_b": 232342.0,
+     "ratio_p10_p90": [
+      16.834,
+      170.76
+     ]
+    },
+    "EOAP_pernoct12m_vs_VTE_viviendas": {
+     "n": 14,
+     "corr_pearson": 0.242,
+     "corr_spearman": 0.565,
+     "corr_log": 0.717,
+     "ratio_medio": 377.691,
+     "ratio_mediana": 218.015,
+     "ratio_agregado": 232.124,
+     "suma_a": 11402876.0,
+     "suma_b": 49124.0,
+     "ratio_p10_p90": [
+      86.986,
+      871.407
+     ]
+    },
+    "variacion_log_12m_EOAP_pernoct_vs_VTE_plazas": {
+     "n": 12,
+     "corr": -0.069,
+     "dif_media_pp": 17.5,
+     "signo_opuesto_n": 6
+    }
+   },
+   "municipio_2026-05": {
+    "n_territorios": 16,
+    "EOAP_pernoct12m_vs_VTE_plazas": {
+     "n": 16,
+     "corr_pearson": 0.275,
+     "corr_spearman": 0.544,
+     "corr_log": 0.728,
+     "ratio_medio": 72.926,
+     "ratio_mediana": 52.872,
+     "ratio_agregado": 51.306,
+     "suma_a": 13167780.0,
+     "suma_b": 256654.0,
+     "ratio_p10_p90": [
+      18.463,
+      150.526
+     ]
+    },
+    "EOAP_pernoct12m_vs_VTE_viviendas": {
+     "n": 16,
+     "corr_pearson": 0.312,
+     "corr_spearman": 0.571,
+     "corr_log": 0.74,
+     "ratio_medio": 351.236,
+     "ratio_mediana": 238.351,
+     "ratio_agregado": 242.393,
+     "suma_a": 13167780.0,
+     "suma_b": 54324.0,
+     "ratio_p10_p90": [
+      96.454,
+      779.476
+     ]
+    },
+    "variacion_log_12m_EOAP_pernoct_vs_VTE_plazas": {
+     "n": 13,
+     "corr": 0.636,
+     "dif_media_pp": 20.0,
+     "signo_opuesto_n": 10
+    }
+   }
+  },
+  "3_eoap_plazas_vs_vte_plazas_provincia_2025-11": {
+   "n": 19,
+   "corr_pearson": 0.754,
+   "corr_spearman": 0.756,
+   "corr_log": 0.785,
+   "ratio_medio": 0.215,
+   "ratio_mediana": 0.158,
+   "ratio_agregado": 0.207,
+   "suma_a": 209470.0,
+   "suma_b": 1014038.0,
+   "ratio_p10_p90": [
+    0.097,
+    0.398
+   ]
+  },
+  "3_oat_vs_eoap_pernoctaciones": {
+   "nacional": {
+    "territorios": 1,
+    "periodos": 97,
+    "razon_OAT_EOAP_mediana": 1.83,
+    "razon_p10_p90": [
+     1.282,
+     2.516
+    ],
+    "corr_niveles": 0.895,
+    "n_yoy": 83,
+    "corr_yoy_log": 0.978,
+    "dif_media_yoy_pp": 9.8,
+    "dif_media_yoy_pp_sin_2020_2021": 9.1,
+    "corr_yoy_log_sin_2020_2021": 0.955,
+    "razon_por_anio": {
+     "2018": 1.285,
+     "2019": 1.479,
+     "2022": 1.743,
+     "2023": 1.934,
+     "2024": 2.367,
+     "2025": 2.471
+    }
+   },
+   "ccaa": {
+    "territorios": 9,
+    "periodos": 98,
+    "razon_OAT_EOAP_mediana": 2.73,
+    "razon_p10_p90": [
+     1.488,
+     5.09
+    ]
+   }
+  },
+  "3_oat_periodos": {
+   "anuales": [
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "mensual_primero_ultimo": [
+    "2018-01",
+    "2026-03"
+   ],
+   "desagregaciones": [
+    "",
+    "serie=OAT324",
+    "serie=OAT336",
+    "serie=OAT337",
+    "serie=OAT442",
+    "serie=OAT454",
+    "serie=OAT455"
+   ]
+  },
+  "4_descartes": {
+   "series_zona_sin_codigo": 870,
+   "por_tabla": {
+    "tabla 2013 (zona)": 336,
+    "tabla 2022 (zona)": 264,
+    "tabla 2039 (zona)": 192,
+    "tabla 48432 (zona)": 78
+   },
+   "estados_n_series": {
+    "ambigua_municipio": 136,
+    "coincidencia_unica": 412974,
+    "descartado_sin_nivel_ine": 4416,
+    "sin_coincidencia": 91,
+    "zona_turistica_sin_codigo_ine": 870
+   }
+  },
+  "4_peso_zonas_descartadas": {
+   "tabla2039_pernoctaciones_12m_2025-09_2026-08": {
+    "series_zona_incluidas": 38,
+    "series_excluidas_por_muestra_sellada": 28,
+    "suma_zonas_bruta": 117724989.0,
+    "suma_zonas_sin_versiones_solapadas": 85097315.0,
+    "nacional_EOH_total_categorias": 369819587.0,
+    "nacional_EOAP": 76606708.0,
+    "cuota_bruta_sobre_EOH": 0.318,
+    "cuota_sin_solapes_sobre_EOH": 0.23,
+    "nota": "la tabla 2039 no declara operación; se compara con EOH (la suma bruta contiene versiones solapadas de la misma zona)"
+   },
+   "tabla2022_plazas_apartamentos_2026-08": {
+    "series_zona": 9,
+    "suma_zonas": 230457.0,
+    "suma_zonas_sin_solapes": 193498.0,
+    "suma_provincias_EOAP_no_selladas": 324989.0
+   },
+   "tabla48432_OAT_zonas": {
+    "series": 20,
+    "suma_zonas_por_anio": {
+     "2018": 50620917.0,
+     "2019": 57051795.0,
+     "2020": 22008418.0,
+     "2021": 34379433.0,
+     "2022": 60309933.0,
+     "2023": 73099059.0,
+     "2024": 88498233.0,
+     "2025": 97623499.0
+    },
+    "OAT_nacional_anual": {
+     "2018": 94389000.0,
+     "2019": 105602000.0,
+     "2020": 44207000.0,
+     "2021": 69272000.0,
+     "2022": 117954000.0,
+     "2023": 141056000.0,
+     "2024": 170591544.0,
+     "2025": 189492971.0
+    }
+   }
+  },
+  "4_vte_ambiguas": {
+   "series": 136,
+   "ejemplos": [
+    "Arroyomolinos. Plazas por vivienda turística. Dato base. ",
+    "Arroyomolinos. Plazas. Dato base. ",
+    "Arroyomolinos. Viviendas turísticas. Dato base. ",
+    "Cabanes. Plazas por vivienda turística. Dato base. ",
+    "Cabanes. Plazas. Dato base. ",
+    "Cabanes. Viviendas turísticas. Dato base. "
+   ]
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "Auditoría descriptiva C4; sin estimación de parámetros",
+  "115668 filas de nivel ccaa de regiones enteramente selladas llevan muestra_sellada_v6 == False y se excluyen de los cálculos",
+  "Madrid, Mallorca, Menorca, Canarias, Asturias, Navarra, etc. están en la muestra sellada v6 y no se auditan",
+  "Registros VUT con sesgo de supervivencia (OpenRTA, REATE sin bajas)",
+  "Inside Airbnb cubre el área de captura, no el municipio completo"
+ ]
+}

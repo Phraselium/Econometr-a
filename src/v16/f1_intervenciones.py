@@ -33,8 +33,10 @@ FECHA = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 def _zonas() -> pd.DataFrame:
     partes = [RAIZ / "data/raw/v9/regulacion/zonas_tensionadas_v9.csv", ENT / "zonas_tensionadas_v16_nuevas.csv"]
     z = pd.concat([pd.read_csv(p, dtype=str).fillna("") for p in partes if p.exists()], ignore_index=True)
+    # un municipio puede tener varias zonas parciales con la misma fecha (Llanes, 2026): sufijo por orden de aparición
+    n = z.groupby(["cod_ine_municipio", "fecha_efecto"]).cumcount()
     out = pd.DataFrame({
-        "id": "ZT-" + z.cod_ine_municipio + "-" + z.fecha_efecto,
+        "id": "ZT-" + z.cod_ine_municipio + "-" + z.fecha_efecto + n.map(lambda k: "" if k == 0 else f"-{k + 1}"),
         "instrumento": "zona_tensionada",
         "medida": "declaración de zona de mercado residencial tensionado (Ley 12/2023, art. 18): " + z.alcance,
         "ambito": "municipio", "cod_ine": z.cod_ine_municipio, "territorio": z.municipio_resolucion,

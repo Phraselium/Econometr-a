@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documento fecha_actualizacion="20260730135601">
+  <metadatos>
+    <identificador>BOE-A-2024-281</identificador>
+    <origen_legislativo codigo="2">Autonómico</origen_legislativo>
+    <departamento codigo="8070">Comunidad Autónoma de Cataluña</departamento>
+    <rango codigo="1500">Decreto-ley</rango>
+    <fecha_disposicion>20231107</fecha_disposicion>
+    <numero_oficial>3/2023</numero_oficial>
+    <titulo>Decreto-ley 3/2023, de 7 de noviembre, de medidas urgentes sobre el régimen urbanístico de las viviendas de uso turístico.</titulo>
+    <diario codigo="BOE">Boletín Oficial del Estado</diario>
+    <fecha_publicacion>20240105</fecha_publicacion>
+    <diario_numero>5</diario_numero>
+    <seccion>1</seccion>
+    <subseccion/>
+    <pagina_inicial>1557</pagina_inicial>
+    <pagina_final>1567</pagina_final>
+    <suplemento_pagina_inicial/>
+    <suplemento_pagina_final/>
+    <url_pdf>https://www.boe.es/boe/dias/2024/01/05/pdfs/BOE-A-2024-281.pdf</url_pdf>
+    <url_epub>
+      <url_epub>https://www.boe.es/diario_boe/epub.php?id=BOE-A-2024-281</url_epub>
+    </url_epub>
+    <url_pdf_catalan/>
+    <url_pdf_euskera/>
+    <url_pdf_gallego/>
+    <url_pdf_valenciano/>
+    <estatus_legislativo>L</estatus_legislativo>
+    <fecha_vigencia>20231109</fecha_vigencia>
+    <estatus_derogacion>N</estatus_derogacion>
+    <fecha_derogacion/>
+    <judicialmente_anulada>N</judicialmente_anulada>
+    <fecha_anulacion/>
+    <vigencia_agotada>N</vigencia_agotada>
+    <estado_consolidacion codigo="3">Finalizado</estado_consolidacion>
+    <letra_imagen>A</letra_imagen>
+    <suplemento_letra_imagen/>
+    <url_eli>https://www.boe.es/eli/es-ct/dl/2023/11/07/3</url_eli>
+  </metadatos>
+  <metadata-eli>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:eli="http://data.europa.eu/eli/ontology#">
+      <eli:LegalResource rdf:about="https://www.boe.es/eli/es-ct/dl/2023/11/07/3">
+        <eli:jurisdiction rdf:resource="http://www.elidata.es/mdr/authority/jurisdiction/1/es-ct"/>
+        <eli:type_document rdf:resource="http://www.elidata.es/mdr/authority/resource-type/1/dl"/>
+        <eli:id_local rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BOE-A-2024-281</eli:id_local>
+        <eli:date_document rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-07</eli:date_document>
+        <eli:number rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</eli:number>
+        <eli:is_about rdf:resource="https://www.boe.es/legislacion/eli/materias/211"/>
+        <eli:is_about rdf:resource="https://www.boe.es/legislacion/eli/materias/665"/>
+        <eli:is_about rdf:resource="https://www.boe.es/legislacion/eli/materias/4799"/>
+        <eli:is_about rdf:resource="https://www.boe.es/legislacion/eli/materias/6988"/>
+        <eli:is_about rdf:resource="https://www.boe.es/legislacion/eli/materias/7162"/>
+        <eli:has_member>
+          <eli:LegalResource rdf:about="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/dof">
+            <eli:jurisdiction rdf:resource="http://www.elidata.es/mdr/authority/jurisdiction/1/es-ct"/>
+            <eli:type_document rdf:resource="http://www.elidata.es/mdr/authority/resource-type/1/dl"/>
+            <eli:id_local rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BOE-A-2024-281</eli:id_local>
+            <eli:date_document rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-07</eli:date_document>
+            <eli:number rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</eli:number>
+            <eli:is_about rdf:resource="https://www.boe.es/legislacion/eli/materias/211"/>
+            <eli:is_about rdf:resource="https://www.boe.es/legislacion/eli/materias/665"/>
+            <eli:is_about rdf:resource="https://www.boe.es/legislacion/eli/materias/4799"/>
+            <eli:is_about rdf:resource="https://www.boe.es/legislacion/eli/materias/6988"/>
+            <eli:is_about rdf:resource="https://www.boe.es/legislacion/eli/materias/7162"/>
+            <eli:version rdf:resource="http://www.elidata.es/mdr/authority/version/dof"/>
+            <eli:is_member_of rdf:resource="https://www.boe.es/eli/es-ct/dl/2023/11/07/3"/>
+            <eli:consolidated_by rdf:resource="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/con/20231108"/>
+            <eli:is_realized_by>
+              <eli:LegalExpression rdf:about="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/dof/spa">
+                <eli:language rdf:resource="http://www.elidata.es/mdr/authority/language/spa"/>
+                <eli:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Decreto-ley 3/2023, de 7 de noviembre, de medidas urgentes sobre el régimen urbanístico de las viviendas de uso turístico.</eli:title>
+                <eli:publisher_agent rdf:resource="https://www.boe.es"/>
+                <eli:date_publication rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-01-05</eli:date_publication>
+                <eli:realizes rdf:resource="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/dof"/>
+                <eli:is_embodied_by>
+                  <eli:Format rdf:about="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/dof/spa/epub">
+                    <eli:format rdf:resource="http://www.iana.org/assignments/media-types/application/epub+zip"/>
+                    <eli:embodies rdf:resource="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/dof/spa"/>
+                  </eli:Format>
+                </eli:is_embodied_by>
+                <eli:is_embodied_by>
+                  <eli:Format rdf:about="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/dof/spa/html">
+                    <eli:format rdf:resource="http://www.iana.org/assignments/media-types/text/html"/>
+                    <eli:embodies rdf:resource="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/dof/spa"/>
+                  </eli:Format>
+                </eli:is_embodied_by>
+                <eli:is_embodied_by>
+                  <eli:Format rdf:about="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/dof/spa/pdf">
+                    <eli:format rdf:resource="http://www.iana.org/assignments/media-types/application/pdf"/>
+                    <eli:embodies rdf:resource="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/dof/spa"/>
+                  </eli:Format>
+                </eli:is_embodied_by>
+                <eli:is_embodied_by>
+                  <eli:Format rdf:about="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/dof/spa/xml">
+                    <eli:format rdf:resource="http://www.iana.org/assignments/media-types/application/xml"/>
+                    <eli:embodies rdf:resource="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/dof/spa"/>
+                  </eli:Format>
+                </eli:is_embodied_by>
+              </eli:LegalExpression>
+            </eli:is_realized_by>
+          </eli:LegalResource>
+        </eli:has_member>
+        <eli:has_member>
+          <eli:LegalResource rdf:about="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/con/20231108">
+            <eli:jurisdiction rdf:resource="http://www.elidata.es/mdr/authority/jurisdiction/1/es-ct"/>
+            <eli:type_document rdf:resource="http://www.elidata.es/mdr/authority/resource-type/1/dl"/>
+            <eli:id_local rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BOE-A-2024-281</eli:id_local>
+            <eli:date_document rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-07</eli:date_document>
+            <eli:number rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</eli:number>
+            <eli:version rdf:resource="http://www.elidata.es/mdr/authority/version/con"/>
+            <eli:version_date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-08</eli:version_date>
+            <eli:is_member_of rdf:resource="https://www.boe.es/eli/es-ct/dl/2023/11/07/3"/>
+            <eli:consolidates rdf:resource="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/dof"/>
+            <eli:is_realized_by>
+              <eli:LegalExpression rdf:about="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/con/20231108/spa">
+                <eli:language rdf:resource="http://www.elidata.es/mdr/authority/language/spa"/>
+                <eli:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Decreto-ley 3/2023, de 7 de noviembre, de medidas urgentes sobre el régimen urbanístico de las viviendas de uso turístico.</eli:title>
+                <eli:publisher_agent rdf:resource="https://www.boe.es"/>
+                <eli:realizes rdf:resource="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/con/20231108"/>
+                <eli:is_embodied_by>
+                  <eli:Format rdf:about="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/con/20231108/spa/html">
+                    <eli:format rdf:resource="http://www.iana.org/assignments/media-types/text/html"/>
+                    <eli:embodies rdf:resource="https://www.boe.es/eli/es-ct/dl/2023/11/07/3/con/20231108/spa"/>
+                  </eli:Format>
+                </eli:is_embodied_by>
+              </eli:LegalExpression>
+            </eli:is_realized_by>
+          </eli:LegalResource>
+        </eli:has_member>
+        <eli:is_another_publication_of rdf:resource="https://portaljuridic.gencat.cat/eli/es-ct/dl/2023/11/07/3"/>
+      </eli:LegalResource>
+    </rdf:RDF>
+  </metadata-eli>
+  <analisis>
+    <materias>
+      <materia codigo="211" orden="1">Alojamientos turísticos</materia>
+      <materia codigo="665" orden="1">Cataluña</materia>
+      <materia codigo="4799" orden="1">Licencias</materia>
+      <materia codigo="6988" orden="1">Turismo</materia>
+      <materia codigo="7162" orden="1">Viviendas</materia>
+    </materias>
+    <notas>
+      <nota codigo="14" orden="400">Publicada en el DOGC núm.9036, de 8 de noviembre de 2023.</nota>
+    </notas>
+    <referencias>
+      <anteriores>
+        <anterior referencia="BOE-A-2010-13883" orden="2015">
+          <palabra codigo="270">MODIFICA</palabra>
+          <texto>el art. 187.1 y AÑADE la disposición adicional 27 a la Ley de urbanismo, texto refundido aprobado por Decreto Legislativo 1/2010, de 3 de agosto</texto>
+        </anterior>
+        <anterior referencia="BOE-A-2006-13087" orden="3060">
+          <palabra codigo="440">DE CONFORMIDAD con</palabra>
+          <texto>con los arts. 26 y 64 del Estatuto aprobado por Ley Orgánica 6/2006, de 19 de julio</texto>
+        </anterior>
+        <anterior referencia="BOE-A-2015-11723" orden="5020">
+          <palabra codigo="330">CITA</palabra>
+          <texto>Ley de Suelo y Rehabilitación Urbana, texto refundido aprobado por Real Decreto Legislativo 7/2015, de 30 de octubre</texto>
+        </anterior>
+      </anteriores>
+      <posteriores>
+        <posterior referencia="BOE-A-2025-7430" orden="">
+          <palabra codigo="470">SE DECLARA</palabra>
+          <texto>en el Recurso 798/2024, su desestimación, por Sentencia 64/2025, de 13 de marzo</texto>
+        </posterior>
+        <posterior referencia="DOGC-f-2023-90341" orden="">
+          <palabra codigo="301">SE PUBLICA  Acuerdo de convalidación</palabra>
+          <texto>, por Resolución 897/XIV , de 20 de diciembre de 2023</texto>
+        </posterior>
+      </posteriores>
+    </referencias>
+    <alertas>
+      <alerta codigo="133" orden="1">Turismo</alerta>
+      <alerta codigo="137" orden="1">Vivienda y urbanismo</alerta>
+    </alertas>
+  </analisis>
+  <texto>
+    <p class="centro_redonda">EL PRESIDENTE DE LA GENERALITAT DE CATALUNYA</p>
+    <p class="parrafo_2">Sea notorio a todos los ciudadanos y ciudadanas que el Gobierno ha aprobado y yo, de acuerdo con el artículo 67.6.a del Estatuto de autonomía de Cataluña, promulgo el siguiente Decreto-ley.</p>
+    <p class="centro_redonda">EXPOSICIÓN DE MOTIVOS</p>
+    <p class="centro_redonda">I</p>
+    <p class="parrafo_2">Las medidas que se proponen en este Decreto-ley responden a las necesidades de regulación del creciente mercado de viviendas de uso turístico que ha proliferado en el territorio de Cataluña como consecuencia de la concurrencia de una serie de factores, como son la explosión de la modalidad del turismo urbano, la aparición de plataformas de comercialización de alojamientos y el contexto regulatorio de la Unión Europea relativo a la libre prestación de servicios, que han sido los detonantes y han ayudado a esa expansión.</p>
+    <p class="parrafo">Se ha demostrado que la aparición del fenómeno de las viviendas de uso turístico tiene efectos directos sobre la dimensión del mercado de alquiler de vivienda permanente y habitual. Las viviendas de uso turístico no se crean como resultado de la construcción de nuevas viviendas, sino que aparecen como cambios de destino de viviendas ya existentes, lo que implica que la oferta de viviendas no es elástica a corto plazo. Por consiguiente, el crecimiento de viviendas de uso turístico es una de las causas de disminución del potencial mercado de viviendas de carácter permanente y habitual.</p>
+    <p class="parrafo">La confluencia de los diversos factores mencionados y la situación de Cataluña como destino turístico en el ámbito europeo favorecen el cambio del uso residencial de las viviendas en el uso turístico, lo que comporta una disminución de la oferta de viviendas destinadas a uso residencial habitual; oferta de viviendas que, de conformidad con los datos existentes actualmente, es ya insuficiente para cubrir la demanda residencial habitual existente en Cataluña, y más teniendo en cuenta el crecimiento poblacional actual de Cataluña, muy por encima de la media europea.</p>
+    <p class="parrafo">Esta situación de urgencia ya ha provocado que del orden del 20 % de los municipios que se relacionan en el anexo de este Decreto-ley, y que representan un 50 % de la población de estos, ya hayan regulado la ordenación de las viviendas de uso turístico, dado que la proliferación de esta modalidad ya ha tenido incidencia en el acceso a la vivienda. Conviene destacar que la regulación de las viviendas de uso turístico no es un fenómeno aislado de Cataluña, sino que también afecta a varias ciudades y municipios de Europa e incluso de Estados Unidos; ejemplos paradigmáticos son la reciente regulación de las viviendas de uso turístico en las ciudades de Florencia o Nueva York.</p>
+    <p class="parrafo">A esta situación descrita de necesidad extraordinaria y urgencia, se ha añadido la urgencia derivada de la aprobación, el pasado 24 de mayo, de la Ley 12/2023, de 24 de mayo, por el derecho a la vivienda (publicada en el BOE en fecha 25 de mayo de 2023), que contiene una serie de medidas para fomentar la congelación o abaratamiento de los precios de alquiler en las zonas de mercado tensionado y que conllevan de forma directa la limitación de la actualización de los precios de alquiler de vivienda. En consecuencia, se prevé que la contención de estos precios puede abocar a un éxodo de las viviendas que en principio estaban ofrecidas dentro del mercado del alquiler de vivienda habitual hacia otras modalidades de tenencia, como la propiedad, el alquiler turístico o el alquiler de temporada. En este sentido, debe tenerse en cuenta que la Resolución TER/2940/2023, de 11 de agosto, declara zona de mercado residencial tensionado 140 municipios.</p>
+    <p class="parrafo">Asimismo, hay que tener en cuenta que el fuerte incremento de viviendas de uso turístico contribuye a la saturación turística o el turismo de masas (overtourism), que tiene fuertes consecuencias negativas, como el deterioro de la convivencia vecinal, la proliferación de actividades turísticas y de ocio que rompen el equilibrio del entorno urbano, dado que generan un funcionamiento anómalo en la zona al no estar destinadas a residentes locales, la gentrificación turística, la transformación social de los barrios a través del deterioro del paisaje urbano y la saturación de las infraestructuras y servicios de la ciudad, entre otros. Este hecho ha obligado al Gobierno de la Generalitat a adoptar medidas urgentes para hacer frente al impacto que este incremento de las viviendas de uso turístico supone tanto para el parque de viviendas de alquiler como para la gentrificación o pérdida de identidad de los municipios donde se sitúan.</p>
+    <p class="parrafo">Asimismo, debe tenerse en cuenta que, de conformidad con el artículo 3.4 del Real decreto legislativo 7/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del suelo y la rehabilitación urbana, artículo que según la disposición final segunda de la misma norma tiene carácter de condición básica, el suelo vinculado a un uso residencial por la ordenación territorial y urbanística está al servicio de la efectividad del derecho de disfrutar de una vivienda digna y adecuada, en los términos que disponga la legislación en la materia. En este sentido, a fin de que los derechos y deberes comprendidos en dicha normativa sean reales y efectivos, los poderes públicos adoptan las medidas de ordenación territorial y urbanística adecuadas para asegurar el resultado pretendido a través de los procesos de ocupación y transformación del suelo.</p>
+    <p class="parrafo">Por todo lo expuesto, dado que las viviendas de uso turístico pueden sustraer un número importante de viviendas del parque residencial habitual previsto por el planificador para cubrir las necesidades habitacionales de un municipio, y dado que una alta concentración de viviendas de uso turístico pone en riesgo el equilibrio del entorno urbano, queda patente que el Gobierno de la Generalitat está no solo legitimado sino también obligado a promover la ordenación urbanística necesaria para conciliar el destino de determinadas viviendas a uso turístico con la capacidad de priorizar las necesidades habitacionales y sociales de una población.</p>
+    <p class="parrafo">Por otra parte, en la medida en que este Decreto-ley establece un régimen de intervención previa que afecta al ejercicio de la actividad económica de viviendas de uso turístico que se encuentren en los municipios a los que se aplica, es necesario justificar que se dan los requisitos del artículo 9 de la Directiva 2006/123/CE, del Parlamento y del Consejo, de 12 de diciembre de 2006, relativa a los servicios en el mercado interior.</p>
+    <p class="parrafo">En concreto, el régimen de intervención previa que se establece consiste en sujetar a una licencia urbanística previa el destino al uso turístico de las viviendas que se encuentren en los municipios con problemas de acceso a la vivienda y los municipios en riesgo romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico.</p>
+    <p class="parrafo">Esta medida se basa en la finalidad de luchar contra la escasez de la vivienda destinada a la residencia habitual y permanente de la ciudadanía, y en la necesidad de establecer una ordenación urbanística que permita conciliar la satisfacción del derecho a la vivienda de la ciudadanía con el destino de algunas viviendas al uso turístico y el ejercicio de la actividad económica que le es inherente.</p>
+    <p class="parrafo">En este sentido, de acuerdo con los considerandos 40 y 56 de la Directiva 2006/123/CE, la protección del entorno urbano se incluye en el concepto de «razones imperiosas de interés general» que permiten justificar la aplicación de un régimen de autorización y otras restricciones, entendiendo que este régimen no sea discriminatorio y respete los principios de necesidad y proporcionalidad.</p>
+    <p class="parrafo">Por otra parte, debe tenerse en cuenta que el artículo 26 del Estatuto de autonomía de Cataluña determina que los poderes públicos deben establecer medidas en normas con rango de ley para garantizar el derecho de acceder a un vivienda digna. Dado que este derecho es esencial para el desarrollo con normalidad de la vida de los ciudadanos y ciudadanas, también debe considerarse su garantía como una razón imperiosa de interés general, teniendo en cuenta que la jurisprudencia del Tribunal de Justicia de la Unión Europea tiene declarado que las razones imperiosas de interés general no son <em>numerus clausus</em>.</p>
+    <p class="parrafo">En este caso, el establecimiento del régimen de intervención que se prevé en este Decreto-ley cumple con las condiciones de no discriminación, necesidad y proporcionalidad exigidas. Así, en primer lugar, la sujeción a una licencia previa para el destino de las viviendas al uso turístico no comporta ninguna discriminación por razón de la nacionalidad, dado que se aplica de forma igualitaria a todas las viviendas situadas en los municipios que reúnan las condiciones que establece este Decreto-ley; en segundo lugar, se trata de una medida necesaria, en tanto que sus requisitos se justifican por la razón imperiosa de interés general de garantizar que en estos municipios exista una oferta suficiente de vivienda destinada al alojamiento permanente y habitual de la ciudadanía, que se ha constatado que ha disminuido ostensiblemente debido a la proliferación de la vivienda de uso turístico; y, por último, es una medida proporcionada, porque los requisitos del régimen de licencia urbanística que se establecen son adecuados para garantizar la realización del objetivo que se persigue y no van más allá de lo necesario para alcanzarlo, ni pueden sustituirse por otras medidas menos restrictivas que permitan obtener el mismo resultado, dado que un control a posteriori no sería eficaz.</p>
+    <p class="parrafo">En consecuencia, el Gobierno de la Generalitat debe adoptar medidas urgentes para evitar que se incrementen los cambios de uso de vivienda permanente y habitual en vivienda de uso turístico, como mínimo en aquellas zonas donde el acceso a la vivienda ya presenta dificultades y donde la excesiva concentración de viviendas de uso turístico comporta que no se dé cumplimiento al principio de desarrollo urbanístico sostenible consagrado en la legislación urbanística.</p>
+    <p class="centro_redonda">II</p>
+    <p class="parrafo_2">El Decreto-ley se estructura en tres artículos, dos disposiciones transitorias, dos disposiciones finales y un anexo con la lista de los municipios con problemas de acceso a la vivienda y en riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico.</p>
+    <p class="parrafo">El artículo 1 regula el requisito de una licencia urbanística previa para el destino de las viviendas al uso turístico, y prevé para esta licencia una duración de cinco años. Asimismo, el artículo 2 refiere los municipios donde la vivienda de uso turístico se encuentra sujeta al régimen de licencia urbanística previa, e instrumenta su identificación mediante un anexo al Decreto-ley con la lista de los municipios donde, a fecha de entrada en vigor del Decreto-ley, existen problemas de acceso a la vivienda o riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico.</p>
+    <p class="parrafo">El último artículo del Decreto-ley regula precisamente que mediante una orden de la persona titular del departamento competente en materia de urbanismo, debe determinarse la relación de los municipios con problemas de acceso a la vivienda. Esta orden, por tanto, se aprueba cada cinco años, previa audiencia a los municipios afectados. Por lo que se refiere a las disposiciones transitorias, la primera define qué municipios presentan problemas de acceso a la vivienda y qué municipios se encuentran en riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico.</p>
+    <p class="parrafo">La segunda disposición transitoria regula el régimen transitorio de las viviendas de uso turístico en cuatro apartados: (i) el primero se refiere a las viviendas que ya están debidamente habilitadas y ubicadas en uno de los municipios enumerados en el anexo. En el plazo de cinco años, los titulares de estas viviendas deben obtener la licencia urbanística de acuerdo con el régimen establecido en la disposición adicional vigésima séptima o bien cesar la actividad; (ii) el segundo prevé una única ampliación de la transitoriedad establecida en el apartado 1 anterior y, por tanto, la prórroga para la obtención de la preceptiva licencia, con la acreditación por parte del titular de la no compensación de la pérdida del título habilitante; (iii) el tercero regula el carácter indemnizatorio de las prórrogas y el régimen transitorio establecido en los apartados 1 y 2; (iv) el cuarto establece la aplicación del régimen transitorio a los municipios que se incorporen de nuevo a la lista como consecuencia de posteriores órdenes, así como el momento de inicio del cómputo del régimen transitorio.</p>
+    <p class="parrafo">En cuanto a las disposiciones finales previstas en el Decreto-ley, la primera responde a la necesidad de modificar el texto refundido de la Ley de urbanismo. Esta disposición final añade una nueva letra, la p, al apartado 1 del artículo 187, que regula los actos sujetos a licencia urbanística previa, para el destino de las viviendas a uso turístico en los municipios con problemas de acceso a la vivienda y en los municipios en riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico, entendidas como aquellas que, en el momento de redacción de este Decreto-ley, presenten una concentración de 5 viviendas de uso turístico o más por 100 habitantes, sin perjuicio de que el planeamiento general justifique la suficiencia de suelo calificado como residencial destinado a domicilio permanente y habitual, sin poder superar una ratio de 10 viviendas de uso turístico por 100 habitantes.</p>
+    <p class="parrafo">Asimismo, y vinculada a la modificación anterior, se añade una nueva disposición adicional, la vigésima séptima, al texto refundido de la Ley de urbanismo; esta disposición tiene por objeto regular el régimen urbanístico de las viviendas de uso turístico en el sentido de establecer que tienen la obligación de disponer de la correspondiente licencia urbanística en determinados municipios, independientemente de otras licencias o autorizaciones que sean necesarias. Esta disposición también establece que el planeamiento urbanístico debe permitir expresamente la compatibilidad del uso de vivienda de uso turístico con el uso de vivienda destinada a domicilio habitual y permanente; asimismo, establece que en ningún caso pueden otorgarse más licencias que las resultantes de aplicar un máximo de 10 viviendas de uso turístico por 100 habitantes. Por último, esta disposición establece el mecanismo para actualizar la relación de municipios en los que el destino de las viviendas al uso turístico requerirá una licencia previa, que es a través de una orden de la persona titular del departamento competente en materia de urbanismo, previa audiencia a los municipios.</p>
+    <p class="parrafo">Finalmente, la disposición final segunda fija la entrada en vigor del Decreto-ley al día siguiente de su publicación en el «Diari Oﬁcial de la Generalitat de Catalunya».</p>
+    <p class="parrafo">En uso de la autorización que concede el artículo 64 del Estatuto de autonomía de Cataluña, de conformidad con el artículo 38 de la Ley 13/2008, de 5 de noviembre, de la presidencia de la Generalidad y del Gobierno, a propuesta de la consejera de Territorio y de acuerdo con el Gobierno, decreto:</p>
+    <p class="articulo">Artículo 1. Licencia urbanística previa para la destinación de las viviendas al uso turístico.</p>
+    <p class="parrafo">1. Se sujeta al régimen de licencia urbanística previa el destino de las viviendas al uso turístico en los municipios con problemas de acceso a la vivienda y los municipios en riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico.</p>
+    <p class="parrafo">2. Esta licencia tiene una duración de cinco años, prorrogable por períodos de igual duración siempre que el planeamiento urbanístico lo permita de acuerdo con la disposición adicional vigésima séptima del texto refundido de la Ley de urbanismo, aprobado por el Decreto legislativo 1/2010, de 3 de agosto.</p>
+    <p class="articulo">Artículo 2. Municipios donde la vivienda de uso turístico se encuentra sujeta al régimen de licencia urbanística previa.</p>
+    <p class="parrafo">1. Se detalla, en el anexo de este Decreto-ley, la relación de municipios donde la vivienda de uso turístico se encuentra sujeta al régimen de licencia urbanística previa porque presentan problemas de acceso a la vivienda o riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico, de acuerdo con la disposición transitoria primera.</p>
+    <p class="parrafo">2. Esta relación tiene una vigencia de cinco años, a contar desde la entrada en vigor de este decreto ley. En todo caso, la relación perderá vigencia en el momento en que se publique la orden que apruebe la relación que la sustituya.</p>
+    <p class="articulo">Artículo 3. Revisión periódica.</p>
+    <p class="parrafo">Cada cinco años, y previa audiencia a los municipios afectados, se determina, mediante orden de la persona titular del departamento competente en materia de urbanismo, la relación de municipios con problemas de acceso a la vivienda y de los municipios en riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico.</p>
+    <p class="articulo">Disposición transitoria primera. Municipios con problemas de acceso a la vivienda o en riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico.</p>
+    <p class="parrafo">1. Se consideran municipios con problemas de acceso a la vivienda aquellos donde existan necesidades de vivienda acreditadas y que cumplan al menos uno de los siguientes requisitos:</p>
+    <p class="parrafo_2">a) que la carga media del coste del alquiler o de la hipoteca en el presupuesto personal o de la unidad de convivencia, más los gastos y suministros básicos, supere el treinta por ciento de los ingresos medios o de la renta media de los hogares,</p>
+    <p class="parrafo">b) que en el período de los cinco años anteriores a la entrada en vigor de este Decreto-ley el precio de alquiler o compra de la vivienda haya experimentado un porcentaje de crecimiento acumulado al menos tres puntos porcentuales superior al porcentaje de crecimiento acumulado de índice de precios de consumo de Cataluña.</p>
+    <p class="parrafo_2">2. Se consideran municipios en riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico aquellos que presenten una ratio de 5 o más viviendas de uso turístico por 100 habitantes en el momento de la aprobación de este Decreto-ley.</p>
+    <p class="articulo">Disposición transitoria segunda. Régimen transitorio de las viviendas de uso turístico debidamente habilitadas a la entrada en vigor del Decreto-ley.</p>
+    <p class="parrafo">1. Las viviendas de uso turístico debidamente habilitadas y que estén situadas en los municipios con problemas de acceso a la vivienda, y en los municipios en riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico, deben disponer de una licencia urbanística adecuada a lo dispuesto en la disposición adicional vigésima séptima del texto refundido de la Ley de urbanismo, aprobado por el Decreto legislativo 1/2010, de 3 de agosto, para poder ejercer esta actividad en el plazo de cinco años desde la entrada en vigor de este Decreto-ley, o cesar su actividad.</p>
+    <p class="parrafo">2. Si el titular de una vivienda de uso turístico, situada en uno de los municipios descritos en el apartado anterior y debidamente habilitados en el momento de entrada vigor de este Decreto-ley, acredita que el régimen transitorio de esta disposición no compensa la pérdida del título habilitante de vivienda de uso turístico, puede solicitar una única ampliación del régimen transitorio de hasta cinco años más. La ampliación debe solicitarse al ayuntamiento donde se ubique la vivienda una vez transcurridos cuatro años desde la entrada en vigor de este Decreto-ley y antes de que finalice el período transitorio previsto en el apartado 1.</p>
+    <p class="parrafo">3. El régimen transitorio previsto en los apartados anteriores tiene, para todos los afectados, el carácter de indemnización por todos los conceptos relacionados con las modificaciones introducidas por este Decreto-ley en relación con el nuevo régimen urbanístico de las viviendas de uso turístico.</p>
+    <p class="parrafo">4. El régimen transitorio regulado en esta disposición también se aplicará a los municipios que pasen a sujetar de nuevo las viviendas de uso turístico a una licencia urbanística previa entrada en vigor de la orden correspondiente. En este supuesto, el plazo de cinco años previsto en el apartado 1 y el plazo para la solicitud de prórroga previsto en el apartado 2 se iniciará a partir de la entrada en vigor de la orden en la que se designe la lista de los municipios con problemas de acceso a la vivienda y de los municipios en riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico.</p>
+    <p class="articulo">Disposición final primera. Modificaciones del texto refundido de la Ley de urbanismo, aprobado por Decreto Legislativo 1/2010, de 3 de agosto.</p>
+    <p class="parrafo">1. Se añade una nueva letra, la p, en el apartado 1 del artículo 187 del texto refundido de la Ley de urbanismo con la siguiente redacción:</p>
+    <blockquote class="sangrado">
+      <p class="parrafo_2">«p) El destino de las viviendas al uso turístico en los municipios con problemas de acceso a la vivienda y en los municipios en riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico.»</p>
+    </blockquote>
+    <p class="parrafo_2">2. Se añade una nueva disposición adicional, la vigésimo séptima, al texto refundido de la Ley de urbanismo, con la siguiente redacción:</p>
+    <blockquote class="sangrado">
+      <p class="articulo">«Disposición adicional vigésimo séptima. Régimen urbanístico de las viviendas de uso turístico.</p>
+      <p class="parrafo">1. En los municipios con problemas de acceso a la vivienda y en los municipios en riesgo de romper el equilibrio del entorno urbano por una alta concentración de viviendas de uso turístico, la vivienda de uso turístico solo es compatible con el uso de vivienda si lo permite expresamente el planeamiento urbanístico, cuando se justifique la suficiencia de suelo calificado para el uso de vivienda destinada al domicilio habitual y permanente de la población residente, teniendo en cuenta: el régimen de tenencia de las viviendas en el municipio; el no poner en riesgo la protección del entorno urbano, y el principio del desarrollo urbanístico sostenible del ámbito que se ordene.</p>
+      <p class="parrafo">2. Las licencias urbanísticas de viviendas de uso turístico tienen una limitación temporal de cinco años, prorrogables por períodos de igual duración, siempre que el planeamiento urbanístico lo permita de acuerdo con los criterios del apartado 1. En ningún caso se pueden otorgar más licencias que las resultantes de aplicar un máximo de 10 viviendas de uso turístico por 100 habitantes. En el otorgamiento de las licencias, y sus prórrogas, los municipios deben garantizar el cumplimiento de los principios de publicidad, objetividad, imparcialidad, transparencia y concurrencia competitiva.»</p>
+    </blockquote>
+    <p class="articulo">Disposición final segunda. Entrada en vigor.</p>
+    <p class="parrafo">Este Decreto-ley entra en vigor al día siguiente al de su publicación en el «Diari Oficial de la Generalitat de Catalunya».</p>
+    <p class="parrafo_2">Por lo tanto, ordeno que toda la ciudadanía a la cual se aplique este Decreto-ley coopere a cumplirlo y que los tribunales y las autoridades a quien corresponda lo hagan cumplir.</p>
+    <p class="parrafo_2">Barcelona, 7 de noviembre de 2023.–El President de la Generalitat de Catalunya, Pere Aragonès i Garcia.–La Consejera de Territorio, Ester Capella i Farré.</p>
+    <p class="publicado">(Publicado en el «Diario Oficial de la Generalitat de Cataluña» número 9.036, de 8 de noviembre de 2023. Convalidado por Resolución 897/XIV del Parlament de Catalunya, publicada en el «Diario Oficial de la Generalitat de Cataluña» número 9.066, de 22 de diciembre de 2023)</p>
+    <p class="anexo_num">ANEXO</p>
+    <p class="anexo_tit">Relación de municipios donde la vivienda de uso turístico se encuentra sujeta al régimen de licencia urbanística previa</p>
+    <p class="parrafo_2">1. Abrera.</p>
+    <p class="parrafo">2. Àger.</p>
+    <p class="parrafo">3. Albons.</p>
+    <p class="parrafo">4. Alcanar.</p>
+    <p class="parrafo">5. Alella.</p>
+    <p class="parrafo">6. Alins.</p>
+    <p class="parrafo">7. Alòs de Balaguer.</p>
+    <p class="parrafo">8. Alp.</p>
+    <p class="parrafo">9. Alt Àneu.</p>
+    <p class="parrafo">10. Altafulla.</p>
+    <p class="parrafo">11. Amposta.</p>
+    <p class="parrafo">12. Arbolí</p>
+    <p class="parrafo">13. Arenys de Mar.</p>
+    <p class="parrafo">14. Arenys de Munt.</p>
+    <p class="parrafo">15. Argentona.</p>
+    <p class="parrafo">16. Arres.</p>
+    <p class="parrafo">17. Arsèguel.</p>
+    <p class="parrafo">18. Badalona.</p>
+    <p class="parrafo">19. Badia del Vallès.</p>
+    <p class="parrafo">20. Baix Pallars.</p>
+    <p class="parrafo">21. Balaguer.</p>
+    <p class="parrafo">22. Banyoles.</p>
+    <p class="parrafo">23. Barberà del Vallès.</p>
+    <p class="parrafo">24. Barcelona.</p>
+    <p class="parrafo">25. Begur.</p>
+    <p class="parrafo">26. Bellcaire d’Empordà</p>
+    <p class="parrafo">27. Bellver de Cerdanya.</p>
+    <p class="parrafo">28. Berga.</p>
+    <p class="parrafo">29. Blanes.</p>
+    <p class="parrafo">30. Bolvir.</p>
+    <p class="parrafo">31. Cabanelles.</p>
+    <p class="parrafo">32. Cabrera de Mar.</p>
+    <p class="parrafo">33. Cabrils.</p>
+    <p class="parrafo">34. Cadaqués.</p>
+    <p class="parrafo">35. Calafell.</p>
+    <p class="parrafo">36. Caldes de Montbui.</p>
+    <p class="parrafo">37. Caldes d’Estrac.</p>
+    <p class="parrafo">38. Calella.</p>
+    <p class="parrafo">39. Calldetenes.</p>
+    <p class="parrafo">40. Calonge i Sant Antoni.</p>
+    <p class="parrafo">41. Cambrils.</p>
+    <p class="parrafo">42. Campelles.</p>
+    <p class="parrafo">43. Camprodon.</p>
+    <p class="parrafo">44. Canet de Mar.</p>
+    <p class="parrafo">45. Canovelles.</p>
+    <p class="parrafo">46. Cantallops.</p>
+    <p class="parrafo">47. Capafonts.</p>
+    <p class="parrafo">48. Cardedeu.</p>
+    <p class="parrafo">49. Castell de l’Areny.</p>
+    <p class="parrafo">50. Castell de Mur.</p>
+    <p class="parrafo">51. Castellar de n’Hug.</p>
+    <p class="parrafo">52. Castellar del Riu.</p>
+    <p class="parrafo">53. Castellar del Vallès.</p>
+    <p class="parrafo">54. Castellbisbal.</p>
+    <p class="parrafo">55. Castelldefels.</p>
+    <p class="parrafo">56. Castelló d’Empúries.</p>
+    <p class="parrafo">57. Castell-Platja d’Aro.</p>
+    <p class="parrafo">58. Cava.</p>
+    <p class="parrafo">59. Cerdanyola del Vallès.</p>
+    <p class="parrafo">60. Cervelló</p>
+    <p class="parrafo">61. Cervera.</p>
+    <p class="parrafo">62. Colera.</p>
+    <p class="parrafo">63. Corbera de Llobregat.</p>
+    <p class="parrafo">64. Cornellà de Llobregat.</p>
+    <p class="parrafo">65. Cornudella de Montsant.</p>
+    <p class="parrafo">66. Cruïlles, Monells i Sant Sadurní de l’Heura.</p>
+    <p class="parrafo">67. Cubelles.</p>
+    <p class="parrafo">68. Das.</p>
+    <p class="parrafo">69. Deltebre.</p>
+    <p class="parrafo">70. el Masnou.</p>
+    <p class="parrafo">71. El Papiol.</p>
+    <p class="parrafo">72. El Perelló</p>
+    <p class="parrafo">73. El Port de la Selva.</p>
+    <p class="parrafo">74. El Prat de Llobregat.</p>
+    <p class="parrafo">75. El Vendrell.</p>
+    <p class="parrafo">76. Es Bòrdes.</p>
+    <p class="parrafo">77. Esparreguera.</p>
+    <p class="parrafo">78. Esplugues de Llobregat.</p>
+    <p class="parrafo">79. Espot.</p>
+    <p class="parrafo">80. Esterri d’Àneu.</p>
+    <p class="parrafo">81. Falset.</p>
+    <p class="parrafo">82. Farrera.</p>
+    <p class="parrafo">83. Figueres.</p>
+    <p class="parrafo">84. Foixà</p>
+    <p class="parrafo">85. Fontanals de Cerdanya.</p>
+    <p class="parrafo">86. Foradada.</p>
+    <p class="parrafo">87. Garrigoles.</p>
+    <p class="parrafo">88. Gavà</p>
+    <p class="parrafo">89. Ger.</p>
+    <p class="parrafo">90. Girona.</p>
+    <p class="parrafo">91. Gisclareny.</p>
+    <p class="parrafo">92. Gósol.</p>
+    <p class="parrafo">93. Granollers.</p>
+    <p class="parrafo">94. Gualta.</p>
+    <p class="parrafo">95. Guils de Cerdanya.</p>
+    <p class="parrafo">96. Guissona.</p>
+    <p class="parrafo">97. Igualada.</p>
+    <p class="parrafo">98. Isòvol.</p>
+    <p class="parrafo">99. Josa i Tuixén.</p>
+    <p class="parrafo">100. La Baronia de Rialb.</p>
+    <p class="parrafo">101. La Bisbal d’Empordà</p>
+    <p class="parrafo">102. La Canonja.</p>
+    <p class="parrafo">103. La Coma i la Pedra.</p>
+    <p class="parrafo">104. La Garriga.</p>
+    <p class="parrafo">105. La Guingueta d’Àneu.</p>
+    <p class="parrafo">106. La Llagosta.</p>
+    <p class="parrafo">107. La Morera de Montsant.</p>
+    <p class="parrafo">108. La Roca del Vallès.</p>
+    <p class="parrafo">109. La Selva de Mar.</p>
+    <p class="parrafo">110. La Seu d’Urgell.</p>
+    <p class="parrafo">111. La Torre de Cabdella.</p>
+    <p class="parrafo">112. La Vall de Boí</p>
+    <p class="parrafo">113. La Vilella Baixa.</p>
+    <p class="parrafo">114. L’Ametlla de Mar.</p>
+    <p class="parrafo">115. L’Ampolla.</p>
+    <p class="parrafo">116. Les Franqueses del Vallès.</p>
+    <p class="parrafo">117. L’Escala.</p>
+    <p class="parrafo">118. L’Hospitalet de Llobregat.</p>
+    <p class="parrafo">119. Llançà</p>
+    <p class="parrafo">120. Llavorsí</p>
+    <p class="parrafo">121. Lleida.</p>
+    <p class="parrafo">122. Llinars del Vallès.</p>
+    <p class="parrafo">123. Llívia.</p>
+    <p class="parrafo">124. Lloret de Mar.</p>
+    <p class="parrafo">125. Madremanya.</p>
+    <p class="parrafo">126. Malgrat de Mar.</p>
+    <p class="parrafo">127. Manlleu.</p>
+    <p class="parrafo">128. Manresa.</p>
+    <p class="parrafo">129. Margalef.</p>
+    <p class="parrafo">130. Matadepera.</p>
+    <p class="parrafo">131. Mataró</p>
+    <p class="parrafo">132. Molins de Rei.</p>
+    <p class="parrafo">133. Mollerussa.</p>
+    <p class="parrafo">134. Mollet del Vallès.</p>
+    <p class="parrafo">135. Molló</p>
+    <p class="parrafo">136. Montcada i Reixac.</p>
+    <p class="parrafo">137. Montellà i Martinet.</p>
+    <p class="parrafo">138. Montgat.</p>
+    <p class="parrafo">139. Montmeló</p>
+    <p class="parrafo">140. Montornès del Vallès.</p>
+    <p class="parrafo">141. Mont-roig del Camp.</p>
+    <p class="parrafo">142. Móra la Nova.</p>
+    <p class="parrafo">143. Naut Aran.</p>
+    <p class="parrafo">144. Olesa de Montserrat.</p>
+    <p class="parrafo">145. Olot.</p>
+    <p class="parrafo">146. Palafolls.</p>
+    <p class="parrafo">147. Palafrugell.</p>
+    <p class="parrafo">148. Palamós.</p>
+    <p class="parrafo">149. Palau-sator.</p>
+    <p class="parrafo">150. Palau-saverdera.</p>
+    <p class="parrafo">151. Palau-solità i Plegamans.</p>
+    <p class="parrafo">152. Pals.</p>
+    <p class="parrafo">153. Pardines.</p>
+    <p class="parrafo">154. Parets del Vallès.</p>
+    <p class="parrafo">155. Pau.</p>
+    <p class="parrafo">156. Pineda de Mar.</p>
+    <p class="parrafo">157. Planoles.</p>
+    <p class="parrafo">158. Poboleda.</p>
+    <p class="parrafo">159. Polinyà</p>
+    <p class="parrafo">160. Porqueres.</p>
+    <p class="parrafo">161. Prades.</p>
+    <p class="parrafo">162. Pratdip.</p>
+    <p class="parrafo">163. Prats i Sansor.</p>
+    <p class="parrafo">164. Premià de Dalt.</p>
+    <p class="parrafo">165. Premià de Mar.</p>
+    <p class="parrafo">166. Puigcerdà</p>
+    <p class="parrafo">167. Queralbs.</p>
+    <p class="parrafo">168. Rabós.</p>
+    <p class="parrafo">169. Regencós.</p>
+    <p class="parrafo">170. Reus.</p>
+    <p class="parrafo">171. Rialp.</p>
+    <p class="parrafo">172. Riner.</p>
+    <p class="parrafo">173. Ripoll.</p>
+    <p class="parrafo">174. Ripollet.</p>
+    <p class="parrafo">175. Riu de Cerdanya.</p>
+    <p class="parrafo">176. Roda de Berà</p>
+    <p class="parrafo">177. Roquetes.</p>
+    <p class="parrafo">178. Roses.</p>
+    <p class="parrafo">179. Rubí</p>
+    <p class="parrafo">180. Rupià</p>
+    <p class="parrafo">181. Rupit i Pruit.</p>
+    <p class="parrafo">182. Sabadell.</p>
+    <p class="parrafo">183. Salou.</p>
+    <p class="parrafo">184. Salt.</p>
+    <p class="parrafo">185. Sant Adrià de Besòs.</p>
+    <p class="parrafo">186. Sant Andreu de Llavaneres.</p>
+    <p class="parrafo">187. Sant Boi de Llobregat.</p>
+    <p class="parrafo">188. Sant Celoni.</p>
+    <p class="parrafo">189. Sant Climent de Llobregat.</p>
+    <p class="parrafo">190. Sant Cugat del Vallès.</p>
+    <p class="parrafo">191. Sant Esteve Sesrovires.</p>
+    <p class="parrafo">192. Sant Feliu de Guíxols.</p>
+    <p class="parrafo">193. Sant Feliu de Llobregat.</p>
+    <p class="parrafo">194. Sant Fost de Campsentelles.</p>
+    <p class="parrafo">195. Sant Fruitós de Bages.</p>
+    <p class="parrafo">196. Sant Jaume de Frontanyà</p>
+    <p class="parrafo">197. Sant Joan Despí</p>
+    <p class="parrafo">198. Sant Just Desvern.</p>
+    <p class="parrafo">199. Sant Mori.</p>
+    <p class="parrafo">200. Sant Pere de Ribes.</p>
+    <p class="parrafo">201. Sant Pere Pescador.</p>
+    <p class="parrafo">202. Sant Pol de Mar.</p>
+    <p class="parrafo">203. Sant Quirze del Vallès.</p>
+    <p class="parrafo">204. Sant Sadurní d’Anoia.</p>
+    <p class="parrafo">205. Sant Vicenç de Montalt.</p>
+    <p class="parrafo">206. Sant Vicenç dels Horts.</p>
+    <p class="parrafo">207. Santa Coloma de Cervelló</p>
+    <p class="parrafo">208. Santa Coloma de Farners.</p>
+    <p class="parrafo">209. Santa Coloma de Gramenet.</p>
+    <p class="parrafo">210. Santa Cristina d’Aro.</p>
+    <p class="parrafo">211. Santa Margarida de Montbui.</p>
+    <p class="parrafo">212. Santa Perpètua de Mogoda.</p>
+    <p class="parrafo">213. Santa Susanna.</p>
+    <p class="parrafo">214. Sarrià de Ter.</p>
+    <p class="parrafo">215. Senterada.</p>
+    <p class="parrafo">216. Setcases.</p>
+    <p class="parrafo">217. Sitges.</p>
+    <p class="parrafo">218. Siurana.</p>
+    <p class="parrafo">219. Solsona.</p>
+    <p class="parrafo">220. Sort.</p>
+    <p class="parrafo">221. Susqueda.</p>
+    <p class="parrafo">222. Tarragona.</p>
+    <p class="parrafo">223. Tàrrega.</p>
+    <p class="parrafo">224. Tavertet.</p>
+    <p class="parrafo">225. Teià</p>
+    <p class="parrafo">226. Terrassa.</p>
+    <p class="parrafo">227. Tiana.</p>
+    <p class="parrafo">228. Tiurana.</p>
+    <p class="parrafo">229. Tona.</p>
+    <p class="parrafo">230. Torelló</p>
+    <p class="parrafo">231. Torredembarra.</p>
+    <p class="parrafo">232. Torrelles de Llobregat.</p>
+    <p class="parrafo">233. Torrent.</p>
+    <p class="parrafo">234. Torroella de Fluvià</p>
+    <p class="parrafo">235. Torroella de Montgrí</p>
+    <p class="parrafo">236. Tortosa.</p>
+    <p class="parrafo">237. Toses.</p>
+    <p class="parrafo">238. Tossa de Mar.</p>
+    <p class="parrafo">239. Tremp.</p>
+    <p class="parrafo">240. Ullastret.</p>
+    <p class="parrafo">241. Urús.</p>
+    <p class="parrafo">242. Vall de Cardós.</p>
+    <p class="parrafo">243. Vallirana.</p>
+    <p class="parrafo">244. Vall-llobrega.</p>
+    <p class="parrafo">245. Valls.</p>
+    <p class="parrafo">246. Vandellòs i l’Hospitalet de l’Infant.</p>
+    <p class="parrafo">247. Ventalló</p>
+    <p class="parrafo">248. Vic.</p>
+    <p class="parrafo">249. Vielha e Mijaran.</p>
+    <p class="parrafo">250. Viladecans.</p>
+    <p class="parrafo">251. Vilafranca del Penedès.</p>
+    <p class="parrafo">252. Vilallonga de Ter.</p>
+    <p class="parrafo">253. Vilamaniscle.</p>
+    <p class="parrafo">254. Vilamòs.</p>
+    <p class="parrafo">255. Vilanova del Camí</p>
+    <p class="parrafo">256. Vilanova i la Geltrú</p>
+    <p class="parrafo">257. Vila-seca.</p>
+    <p class="parrafo">258. Vilassar de Dalt.</p>
+    <p class="parrafo">259. Vilassar de Mar.</p>
+    <p class="parrafo">260. Vilaür.</p>
+    <p class="parrafo">261. Vilopriu.</p>
+    <p class="parrafo">262. Vinyols i els Arcs.</p>
+  </texto>
+</documento>

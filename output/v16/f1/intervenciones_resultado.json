@@ -1,0 +1,29 @@
+{
+ "rama": "v16-f1-intervenciones",
+ "pregunta": "Calendario fechado y por territorio de las medidas de vivienda",
+ "capa": "C1",
+ "datos": [
+  "data/raw/v16/intervenciones/intervenciones.csv",
+  "data/raw/v9/regulacion/zonas_tensionadas_v9.csv"
+ ],
+ "N": 476,
+ "metodo": "base normativa (BOE y diarios oficiales)",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "errores_validacion": 0,
+  "por_verificacion": {
+   "VERIFICADA": 368,
+   "SECUNDARIA": 106,
+   "NO VERIFICADA": 2
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Capa C1 solo para las filas VERIFICADAS con el texto oficial; las SECUNDARIAS y NO VERIFICADAS son C4 hasta verificarse."
+}

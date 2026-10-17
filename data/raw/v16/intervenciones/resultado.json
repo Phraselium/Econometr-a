@@ -1,0 +1,8 @@
+{
+ "rama": "v16-f1-intervenciones",
+ "pregunta": "Calendario fechado y por territorio de las medidas de vivienda con su fuente normativa",
+ "capa": "C1",
+ "N": 158,
+ "metodo": "base normativa",
+ "notas": "158 filas propias (50 VERIFICADA con el texto oficial, 106 SECUNDARIA, 2 NO VERIFICADA) mas 318 zonas tensionadas que toma de v9 el script de consolidacion (476 en total). ITP/AJD de CCAA de regimen comun 2010-2026 desde Tributacion Autonomica (Ministerio de Hacienda), sin contrastar con la ley autonomica; tipos reducidos y regimen foral no recogidos. Sin zonas tensionadas nuevas en el BOE tras el corte de v9. Laguna en la consolidacion: id duplicado ZT-33036-2026-07-30 (dos zonas de Llanes con la misma fecha), imputable al script. Solo las filas VERIFICADAS son C1; las demas son C4 hasta verificarse."
+}

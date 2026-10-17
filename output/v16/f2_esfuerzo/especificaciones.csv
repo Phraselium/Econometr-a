@@ -1,0 +1,48 @@
+id,tipo,formula,muestra,n
+ESF-sobre40,indicador,100*sum(wp*[G>0.40*Y])/sum(wp); G=12*HH070-HY070N; Y=HY020-HY070N,2004-2025,356980
+ESF-sobre30,indicador,100*sum(wp*[G>0.30*Y])/sum(wp); G=12*HH070-HY070N; Y=HY020-HY070N,2004-2025,356980
+ESF-cae_bajo_umbral,indicador,[eq_pre>=z & eq_post<z]; eq_pre=HY020/HX240; eq_post=(HY020-12*HH070)/HX240; z=0.6*mediana(eq_pre),2004-2025,356980
+ESF-pobreza_antes,indicador,[eq_pre<z],2004-2025,356980
+ESF-pobreza_despues,indicador,[eq_post<z],2004-2025,356980
+ESF-esfuerzo_medio,indicador,"mean_wh(min(G/Y,1))",2004-2025,356980
+OB2-alquiler_mercado-2008-2015,descomposicion,"r ~ ln_renta + edad + edad2 + tam + nacionalidad + region; dos pliegues, referencia agrupada",2008-2015,2160
+OB3-alquiler_mercado-2008-2015,descomposicion,"idem; tres pliegues (dotaciones, coeficientes, interacción), referencia año inicial",2008-2015,2160
+DFL-alquiler_mercado-2008-2015,descomposicion,"logit P(año fin | X) -> reponderación del año inicial; media, p10, p50, p90",2008-2015,2160
+RIF-alquiler_mercado-2008-2015,descomposicion,"RIF(r; q_tau) ~ X, tau=0.1,0.5,0.9; referencia agrupada",2008-2015,2160
+DIRECTA-alquiler_mercado-2008-2015,descomposicion,dR = dG/Y0 + G0*d(1/Y) + dG*d(1/Y) (razón de medias),2008-2015,2160
+OB2-alquiler_mercado-2015-2025,descomposicion,"r ~ ln_renta + edad + edad2 + tam + nacionalidad + region; dos pliegues, referencia agrupada",2015-2025,4832
+OB3-alquiler_mercado-2015-2025,descomposicion,"idem; tres pliegues (dotaciones, coeficientes, interacción), referencia año inicial",2015-2025,4832
+DFL-alquiler_mercado-2015-2025,descomposicion,"logit P(año fin | X) -> reponderación del año inicial; media, p10, p50, p90",2015-2025,4832
+RIF-alquiler_mercado-2015-2025,descomposicion,"RIF(r; q_tau) ~ X, tau=0.1,0.5,0.9; referencia agrupada",2015-2025,4832
+DIRECTA-alquiler_mercado-2015-2025,descomposicion,dR = dG/Y0 + G0*d(1/Y) + dG*d(1/Y) (razón de medias),2015-2025,4832
+OB2-alquiler_mercado-2008-2025,descomposicion,"r ~ ln_renta + edad + edad2 + tam + nacionalidad + region; dos pliegues, referencia agrupada",2008-2025,4648
+OB3-alquiler_mercado-2008-2025,descomposicion,"idem; tres pliegues (dotaciones, coeficientes, interacción), referencia año inicial",2008-2025,4648
+DFL-alquiler_mercado-2008-2025,descomposicion,"logit P(año fin | X) -> reponderación del año inicial; media, p10, p50, p90",2008-2025,4648
+RIF-alquiler_mercado-2008-2025,descomposicion,"RIF(r; q_tau) ~ X, tau=0.1,0.5,0.9; referencia agrupada",2008-2025,4648
+DIRECTA-alquiler_mercado-2008-2025,descomposicion,dR = dG/Y0 + G0*d(1/Y) + dG*d(1/Y) (razón de medias),2008-2025,4648
+OB2-alquiler_mercado-2019-2025,descomposicion,"r ~ ln_renta + edad + edad2 + tam + nacionalidad + region; dos pliegues, referencia agrupada",2019-2025,5791
+OB3-alquiler_mercado-2019-2025,descomposicion,"idem; tres pliegues (dotaciones, coeficientes, interacción), referencia año inicial",2019-2025,5791
+DFL-alquiler_mercado-2019-2025,descomposicion,"logit P(año fin | X) -> reponderación del año inicial; media, p10, p50, p90",2019-2025,5791
+RIF-alquiler_mercado-2019-2025,descomposicion,"RIF(r; q_tau) ~ X, tau=0.1,0.5,0.9; referencia agrupada",2019-2025,5791
+DIRECTA-alquiler_mercado-2019-2025,descomposicion,dR = dG/Y0 + G0*d(1/Y) + dG*d(1/Y) (razón de medias),2019-2025,5791
+OB2-prop_con_hipoteca-2008-2015,descomposicion,"r ~ ln_renta + edad + edad2 + tam + nacionalidad + region; dos pliegues, referencia agrupada",2008-2015,6683
+OB3-prop_con_hipoteca-2008-2015,descomposicion,"idem; tres pliegues (dotaciones, coeficientes, interacción), referencia año inicial",2008-2015,6683
+DFL-prop_con_hipoteca-2008-2015,descomposicion,"logit P(año fin | X) -> reponderación del año inicial; media, p10, p50, p90",2008-2015,6683
+RIF-prop_con_hipoteca-2008-2015,descomposicion,"RIF(r; q_tau) ~ X, tau=0.1,0.5,0.9; referencia agrupada",2008-2015,6683
+DIRECTA-prop_con_hipoteca-2008-2015,descomposicion,dR = dG/Y0 + G0*d(1/Y) + dG*d(1/Y) (razón de medias),2008-2015,6683
+OB2-prop_con_hipoteca-2015-2025,descomposicion,"r ~ ln_renta + edad + edad2 + tam + nacionalidad + region; dos pliegues, referencia agrupada",2015-2025,10822
+OB3-prop_con_hipoteca-2015-2025,descomposicion,"idem; tres pliegues (dotaciones, coeficientes, interacción), referencia año inicial",2015-2025,10822
+DFL-prop_con_hipoteca-2015-2025,descomposicion,"logit P(año fin | X) -> reponderación del año inicial; media, p10, p50, p90",2015-2025,10822
+RIF-prop_con_hipoteca-2015-2025,descomposicion,"RIF(r; q_tau) ~ X, tau=0.1,0.5,0.9; referencia agrupada",2015-2025,10822
+DIRECTA-prop_con_hipoteca-2015-2025,descomposicion,dR = dG/Y0 + G0*d(1/Y) + dG*d(1/Y) (razón de medias),2015-2025,10822
+OB2-prop_con_hipoteca-2008-2025,descomposicion,"r ~ ln_renta + edad + edad2 + tam + nacionalidad + region; dos pliegues, referencia agrupada",2008-2025,11213
+OB3-prop_con_hipoteca-2008-2025,descomposicion,"idem; tres pliegues (dotaciones, coeficientes, interacción), referencia año inicial",2008-2025,11213
+DFL-prop_con_hipoteca-2008-2025,descomposicion,"logit P(año fin | X) -> reponderación del año inicial; media, p10, p50, p90",2008-2025,11213
+RIF-prop_con_hipoteca-2008-2025,descomposicion,"RIF(r; q_tau) ~ X, tau=0.1,0.5,0.9; referencia agrupada",2008-2025,11213
+DIRECTA-prop_con_hipoteca-2008-2025,descomposicion,dR = dG/Y0 + G0*d(1/Y) + dG*d(1/Y) (razón de medias),2008-2025,11213
+OB2-prop_con_hipoteca-2019-2025,descomposicion,"r ~ ln_renta + edad + edad2 + tam + nacionalidad + region; dos pliegues, referencia agrupada",2019-2025,11465
+OB3-prop_con_hipoteca-2019-2025,descomposicion,"idem; tres pliegues (dotaciones, coeficientes, interacción), referencia año inicial",2019-2025,11465
+DFL-prop_con_hipoteca-2019-2025,descomposicion,"logit P(año fin | X) -> reponderación del año inicial; media, p10, p50, p90",2019-2025,11465
+RIF-prop_con_hipoteca-2019-2025,descomposicion,"RIF(r; q_tau) ~ X, tau=0.1,0.5,0.9; referencia agrupada",2019-2025,11465
+DIRECTA-prop_con_hipoteca-2019-2025,descomposicion,dR = dG/Y0 + G0*d(1/Y) + dG*d(1/Y) (razón de medias),2019-2025,11465
+EUROSTAT-ilc_lvho07a,validacion,"|sobre40 - ilc_lvho07a| <= 0,5 pp",2004-2025,22

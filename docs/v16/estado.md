@@ -72,14 +72,15 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F4 | revisor-preregistro | revision_prereg | 174.748 | docs/v16/preregistro_v16_adenda.md |
 | 2026-10-17 | F4 | abogado-del-diablo | critica_prereg | 165.336 | docs/v16/preregistro_v16_adenda.md |
 | 2026-10-17 | F2 | econometrician | f2_atlas | 182.197 | src/v16/f2_atlas.py;output/v16/f2_atlas |
+| 2026-10-17 | F2 | econometrician | f2_esfuerzo | 185.151 | src/v16/f2_esfuerzo.py;output/v16/f2_esfuerzo |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F1 | 1.952.870 |
-| F2 | 505.506 |
+| F2 | 690.657 |
 | F3 | 1.160.356 |
 | F4 | 555.674 |
 
-Total V16: 4.174.406 tokens
+Total V16: 4.359.557 tokens
 
 <!-- fin subagentes -->

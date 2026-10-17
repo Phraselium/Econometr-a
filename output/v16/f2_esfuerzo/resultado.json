@@ -1,0 +1,36 @@
+{
+ "rama": "v16/f2_esfuerzo",
+ "pregunta": "¿Cuál es el esfuerzo de acceso a la vivienda (sobrecarga 30/40 %, renta residual) por renta, edad, tenencia, nacionalidad y región, y cómo se reparte contablemente su cambio entre características y resto?",
+ "capa": "C4",
+ "datos": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P) 2004-2025; sin provincia (NUTS2); no toca la muestra sellada v6",
+ "N": 356980,
+ "metodo": "Descriptivo ponderado con bootstrap de hogares (B=500); Oaxaca-Blinder 2 y 3 pliegues, reponderación DFL, regresiones RIF p10/p50/p90, identidad directa gasto-renta",
+ "estimacion": {
+  "sobre40_espana_2025": 7.172
+ },
+ "ic95": [
+  6.75,
+  7.658
+ ],
+ "p_ajustado": {
+  "metodo": "BH sobre contrastes de la parte atribuida",
+  "n_contrastes": 64,
+  "minimo": 0.00532
+ },
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "eurostat_2013_2025_max_abs_dif_pp": 0.047,
+  "eurostat_2015_2024_anios_dentro_0_5pp": "10/10",
+  "eurostat_2004_2012_anios_fuera_0_5pp": 8,
+  "discrepancias_metodos": "16/32",
+  "B": 500,
+  "semilla": 20261010,
+  "n_cifras_candidatas": 37
+ },
+ "fuera_muestra": {
+  "modelo": "no aplica (descriptivo)",
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "ECV y Eurostat son la misma encuesta: no hay C1. IC aproximados (sin estratos ni conglomerados). Descomposiciones contables, sin interpretación de mecanismoses. 2004-2012 no coincide con Eurostat."
+}

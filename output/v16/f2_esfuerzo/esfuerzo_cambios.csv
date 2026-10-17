@@ -1,0 +1,865 @@
+periodo,dimension,categoria,indicador,unidad,valor_ini,valor_fin,cambio,ic_lo,ic_hi,p_boot,estado,categoria_nombre
+2008-2015,Total,Espana,sobre40,puntos porcentuales,10.0831,10.3411,0.2579,-0.9649,1.5225,0.7066,publicable,Espana
+2008-2015,Total,Espana,sobre30,puntos porcentuales,16.2652,16.9155,0.6504,-0.8879,2.0340,0.3593,publicable,Espana
+2008-2015,Total,Espana,cae_bajo_umbral,puntos porcentuales,9.9286,9.8286,-0.1000,-1.1197,0.8788,0.8383,publicable,Espana
+2008-2015,Total,Espana,pobreza_antes,puntos porcentuales,20.6940,22.1209,1.4269,0.3135,2.7358,0.0160,publicable,Espana
+2008-2015,Total,Espana,pobreza_despues,puntos porcentuales,30.6226,31.9495,1.3269,0.2517,2.6611,0.0240,publicable,Espana
+2008-2015,Total,Espana,esfuerzo_medio,puntos porcentuales,19.7629,21.1677,1.4049,0.5927,2.2925,0.0040,publicable,Espana
+2008-2015,CCAA,ES11,sobre40,puntos porcentuales,3.8189,6.4445,2.6256,0.3850,5.0216,0.0319,publicable,Galicia
+2008-2015,CCAA,ES11,sobre30,puntos porcentuales,7.6953,8.8841,1.1888,-3.2467,5.0782,0.5669,publicable,Galicia
+2008-2015,CCAA,ES11,cae_bajo_umbral,puntos porcentuales,6.2342,7.9882,1.7541,-1.1637,4.6921,0.1876,publicable,Galicia
+2008-2015,CCAA,ES11,pobreza_antes,puntos porcentuales,21.2405,19.4272,-1.8133,-6.6106,3.0214,0.5349,publicable,Galicia
+2008-2015,CCAA,ES11,pobreza_despues,puntos porcentuales,27.4747,27.4154,-0.0593,-5.5959,5.4498,0.9541,publicable,Galicia
+2008-2015,CCAA,ES11,esfuerzo_medio,puntos porcentuales,14.1097,17.3288,3.2191,1.0727,5.3785,0.0040,publicable,Galicia
+2008-2015,CCAA,ES12,sobre40,puntos porcentuales,4.2968,8.6562,4.3594,0.0291,8.8370,0.0519,publicable,Asturias
+2008-2015,CCAA,ES12,sobre30,puntos porcentuales,7.2774,14.0673,6.7899,1.8123,12.2214,0.0120,publicable,Asturias
+2008-2015,CCAA,ES12,cae_bajo_umbral,puntos porcentuales,7.9851,9.7613,1.7762,-2.6612,6.5020,0.4910,publicable,Asturias
+2008-2015,CCAA,ES12,pobreza_antes,puntos porcentuales,13.0699,16.6526,3.5827,-2.0855,9.4336,0.2275,publicable,Asturias
+2008-2015,CCAA,ES12,pobreza_despues,puntos porcentuales,21.0551,26.4140,5.3589,-1.5099,12.4107,0.1517,publicable,Asturias
+2008-2015,CCAA,ES12,esfuerzo_medio,puntos porcentuales,15.8845,16.9511,1.0666,-1.5554,3.6670,0.4032,publicable,Asturias
+2008-2015,CCAA,ES13,sobre40,puntos porcentuales,6.0966,7.1097,1.0132,-4.2756,5.5923,0.6427,publicable,Cantabria
+2008-2015,CCAA,ES13,sobre30,puntos porcentuales,13.2825,10.5218,-2.7607,-9.9264,3.9072,0.4072,publicable,Cantabria
+2008-2015,CCAA,ES13,cae_bajo_umbral,puntos porcentuales,8.6597,9.0128,0.3531,-5.1928,6.0096,0.9102,publicable,Cantabria
+2008-2015,CCAA,ES13,pobreza_antes,puntos porcentuales,11.2331,14.5721,3.3389,-2.7945,11.1728,0.2954,publicable,Cantabria
+2008-2015,CCAA,ES13,pobreza_despues,puntos porcentuales,19.8929,23.5849,3.6920,-5.1269,12.4822,0.3553,publicable,Cantabria
+2008-2015,CCAA,ES13,esfuerzo_medio,puntos porcentuales,16.5144,17.5401,1.0257,-2.0648,4.6725,0.5669,publicable,Cantabria
+2008-2015,CCAA,ES21,sobre40,puntos porcentuales,6.2362,7.4550,1.2188,-1.8218,3.9525,0.4711,publicable,País Vasco
+2008-2015,CCAA,ES21,sobre30,puntos porcentuales,10.6041,11.8013,1.1973,-2.3870,4.6630,0.5749,publicable,País Vasco
+2008-2015,CCAA,ES21,cae_bajo_umbral,puntos porcentuales,6.6098,4.9839,-1.6259,-3.8502,1.0903,0.3194,publicable,País Vasco
+2008-2015,CCAA,ES21,pobreza_antes,puntos porcentuales,10.1078,10.8558,0.7480,-2.9421,4.5113,0.8024,publicable,País Vasco
+2008-2015,CCAA,ES21,pobreza_despues,puntos porcentuales,16.7176,15.8397,-0.8779,-4.7194,3.3218,0.6467,publicable,País Vasco
+2008-2015,CCAA,ES21,esfuerzo_medio,puntos porcentuales,17.2160,17.5290,0.3130,-2.1001,2.5109,0.8104,publicable,País Vasco
+2008-2015,CCAA,ES22,sobre40,puntos porcentuales,8.3020,5.7068,-2.5952,-7.6120,3.1537,0.3154,suprimida,Navarra
+2008-2015,CCAA,ES22,sobre30,puntos porcentuales,14.9312,12.0975,-2.8336,-9.5315,3.8547,0.3673,publicable,Navarra
+2008-2015,CCAA,ES22,cae_bajo_umbral,puntos porcentuales,7.9620,4.4507,-3.5114,-7.5043,1.1029,0.1956,suprimida,Navarra
+2008-2015,CCAA,ES22,pobreza_antes,puntos porcentuales,5.8634,9.6077,3.7443,-0.6808,9.4401,0.1118,publicable,Navarra
+2008-2015,CCAA,ES22,pobreza_despues,puntos porcentuales,13.8254,14.0583,0.2329,-5.8132,7.0950,0.8263,publicable,Navarra
+2008-2015,CCAA,ES22,esfuerzo_medio,puntos porcentuales,18.4025,16.8115,-1.5910,-4.7711,1.5704,0.2954,publicable,Navarra
+2008-2015,CCAA,ES23,sobre40,puntos porcentuales,15.8387,8.1678,-7.6709,-13.4813,-1.9552,0.0319,publicable,La Rioja
+2008-2015,CCAA,ES23,sobre30,puntos porcentuales,19.7887,12.0776,-7.7110,-13.8710,-1.1001,0.0319,publicable,La Rioja
+2008-2015,CCAA,ES23,cae_bajo_umbral,puntos porcentuales,12.5138,9.1944,-3.3194,-8.8663,2.4064,0.2156,publicable,La Rioja
+2008-2015,CCAA,ES23,pobreza_antes,puntos porcentuales,21.3816,17.0545,-4.3271,-12.6201,2.9723,0.2595,publicable,La Rioja
+2008-2015,CCAA,ES23,pobreza_despues,puntos porcentuales,33.8954,26.2489,-7.6465,-16.4819,1.1842,0.0878,publicable,La Rioja
+2008-2015,CCAA,ES23,esfuerzo_medio,puntos porcentuales,21.3126,18.4046,-2.9080,-6.0836,0.3822,0.1078,publicable,La Rioja
+2008-2015,CCAA,ES24,sobre40,puntos porcentuales,7.8286,6.4343,-1.3942,-5.3868,3.3513,0.5749,publicable,Aragón
+2008-2015,CCAA,ES24,sobre30,puntos porcentuales,14.8883,10.6529,-4.2353,-10.1031,1.6135,0.1397,publicable,Aragón
+2008-2015,CCAA,ES24,cae_bajo_umbral,puntos porcentuales,8.6705,7.2692,-1.4013,-5.3264,3.0168,0.5150,publicable,Aragón
+2008-2015,CCAA,ES24,pobreza_antes,puntos porcentuales,15.5216,14.3818,-1.1398,-6.9907,5.4799,0.7186,publicable,Aragón
+2008-2015,CCAA,ES24,pobreza_despues,puntos porcentuales,24.1921,21.6510,-2.5411,-9.8529,5.3460,0.4830,publicable,Aragón
+2008-2015,CCAA,ES24,esfuerzo_medio,puntos porcentuales,17.9697,17.2386,-0.7311,-3.6078,1.8043,0.5629,publicable,Aragón
+2008-2015,CCAA,ES30,sobre40,puntos porcentuales,13.0439,13.5019,0.4580,-3.7741,4.4240,0.7505,publicable,Madrid
+2008-2015,CCAA,ES30,sobre30,puntos porcentuales,20.2729,23.2520,2.9791,-1.7837,7.8277,0.2435,publicable,Madrid
+2008-2015,CCAA,ES30,cae_bajo_umbral,puntos porcentuales,10.4717,11.1947,0.7230,-3.0477,4.0602,0.7186,publicable,Madrid
+2008-2015,CCAA,ES30,pobreza_antes,puntos porcentuales,14.9482,15.0960,0.1479,-4.4236,4.1718,0.9182,publicable,Madrid
+2008-2015,CCAA,ES30,pobreza_despues,puntos porcentuales,25.4198,26.2907,0.8709,-3.7752,5.7197,0.7984,publicable,Madrid
+2008-2015,CCAA,ES30,esfuerzo_medio,puntos porcentuales,21.6275,25.2992,3.6717,1.4459,5.9936,0.0040,publicable,Madrid
+2008-2015,CCAA,ES41,sobre40,puntos porcentuales,6.3572,8.5568,2.1997,-1.4343,5.5442,0.2475,publicable,Castilla y León
+2008-2015,CCAA,ES41,sobre30,puntos porcentuales,11.4500,12.8288,1.3789,-2.6881,6.0237,0.5309,publicable,Castilla y León
+2008-2015,CCAA,ES41,cae_bajo_umbral,puntos porcentuales,8.0565,8.0836,0.0271,-3.7546,2.8117,0.8144,publicable,Castilla y León
+2008-2015,CCAA,ES41,pobreza_antes,puntos porcentuales,23.5552,18.2703,-5.2848,-10.4087,0.3788,0.0758,publicable,Castilla y León
+2008-2015,CCAA,ES41,pobreza_despues,puntos porcentuales,31.6116,26.3539,-5.2577,-11.6458,0.3299,0.0639,publicable,Castilla y León
+2008-2015,CCAA,ES41,esfuerzo_medio,puntos porcentuales,18.0713,19.0274,0.9560,-1.3147,3.5737,0.4271,publicable,Castilla y León
+2008-2015,CCAA,ES42,sobre40,puntos porcentuales,9.0000,8.0731,-0.9270,-5.5851,3.8114,0.7345,publicable,Castilla-La Mancha
+2008-2015,CCAA,ES42,sobre30,puntos porcentuales,14.7467,18.4792,3.7325,-1.8970,9.8388,0.2475,publicable,Castilla-La Mancha
+2008-2015,CCAA,ES42,cae_bajo_umbral,puntos porcentuales,11.8989,9.6543,-2.2446,-7.2067,2.0644,0.2395,publicable,Castilla-La Mancha
+2008-2015,CCAA,ES42,pobreza_antes,puntos porcentuales,29.4003,28.5385,-0.8619,-6.8767,6.2884,0.9701,publicable,Castilla-La Mancha
+2008-2015,CCAA,ES42,pobreza_despues,puntos porcentuales,41.2992,38.1927,-3.1065,-10.3619,4.9717,0.4431,publicable,Castilla-La Mancha
+2008-2015,CCAA,ES42,esfuerzo_medio,puntos porcentuales,19.0248,20.5062,1.4814,-1.5651,4.5632,0.3553,publicable,Castilla-La Mancha
+2008-2015,CCAA,ES43,sobre40,puntos porcentuales,5.4927,5.7601,0.2674,-3.3293,3.7301,0.8503,publicable,Extremadura
+2008-2015,CCAA,ES43,sobre30,puntos porcentuales,8.1010,11.6870,3.5860,-0.7776,7.9283,0.1397,publicable,Extremadura
+2008-2015,CCAA,ES43,cae_bajo_umbral,puntos porcentuales,10.2453,14.0593,3.8140,0.0159,9.6935,0.0519,publicable,Extremadura
+2008-2015,CCAA,ES43,pobreza_antes,puntos porcentuales,37.5070,29.0139,-8.4931,-16.0403,-1.7961,0.0160,publicable,Extremadura
+2008-2015,CCAA,ES43,pobreza_despues,puntos porcentuales,47.7523,43.0732,-4.6791,-11.9352,3.0066,0.3154,publicable,Extremadura
+2008-2015,CCAA,ES43,esfuerzo_medio,puntos porcentuales,16.1059,17.1236,1.0177,-1.6255,3.2738,0.3992,publicable,Extremadura
+2008-2015,CCAA,ES51,sobre40,puntos porcentuales,13.7921,11.6405,-2.1516,-5.7510,1.2914,0.2475,publicable,Cataluña
+2008-2015,CCAA,ES51,sobre30,puntos porcentuales,22.2332,18.1258,-4.1074,-8.1654,0.0837,0.0639,publicable,Cataluña
+2008-2015,CCAA,ES51,cae_bajo_umbral,puntos porcentuales,11.8970,9.4445,-2.4525,-5.5578,0.6513,0.0918,publicable,Cataluña
+2008-2015,CCAA,ES51,pobreza_antes,puntos porcentuales,13.5458,13.7870,0.2412,-3.4408,3.8608,0.8942,publicable,Cataluña
+2008-2015,CCAA,ES51,pobreza_despues,puntos porcentuales,25.4428,23.2315,-2.2113,-6.0739,1.5779,0.3234,publicable,Cataluña
+2008-2015,CCAA,ES51,esfuerzo_medio,puntos porcentuales,22.7534,21.1960,-1.5574,-3.6758,0.4445,0.1317,publicable,Cataluña
+2008-2015,CCAA,ES52,sobre40,puntos porcentuales,10.5448,11.4635,0.9187,-4.2381,6.2084,0.7106,publicable,Comunitat Valenciana
+2008-2015,CCAA,ES52,sobre30,puntos porcentuales,17.5580,18.4229,0.8649,-4.4022,6.7616,0.7625,publicable,Comunitat Valenciana
+2008-2015,CCAA,ES52,cae_bajo_umbral,puntos porcentuales,10.5747,11.4732,0.8985,-3.9400,5.0155,0.6786,publicable,Comunitat Valenciana
+2008-2015,CCAA,ES52,pobreza_antes,puntos porcentuales,22.1055,25.2768,3.1713,-2.2508,9.3059,0.2715,publicable,Comunitat Valenciana
+2008-2015,CCAA,ES52,pobreza_despues,puntos porcentuales,32.6802,36.7500,4.0698,-1.8466,10.6284,0.1796,publicable,Comunitat Valenciana
+2008-2015,CCAA,ES52,esfuerzo_medio,puntos porcentuales,19.4555,21.8927,2.4372,-0.5694,5.3284,0.1158,publicable,Comunitat Valenciana
+2008-2015,CCAA,ES53,sobre40,puntos porcentuales,16.2122,20.5320,4.3197,-3.7472,12.7456,0.3074,publicable,Illes Balears
+2008-2015,CCAA,ES53,sobre30,puntos porcentuales,26.0567,28.7456,2.6889,-6.3476,11.3154,0.6068,publicable,Illes Balears
+2008-2015,CCAA,ES53,cae_bajo_umbral,puntos porcentuales,17.4995,10.6281,-6.8713,-14.5218,0.2490,0.0639,publicable,Illes Balears
+2008-2015,CCAA,ES53,pobreza_antes,puntos porcentuales,14.3946,21.6144,7.2199,-0.1651,15.0590,0.0679,publicable,Illes Balears
+2008-2015,CCAA,ES53,pobreza_despues,puntos porcentuales,31.8940,32.2426,0.3485,-9.1497,9.6955,0.9102,publicable,Illes Balears
+2008-2015,CCAA,ES53,esfuerzo_medio,puntos porcentuales,27.8787,27.9196,0.0410,-5.6543,6.2432,0.9820,publicable,Illes Balears
+2008-2015,CCAA,ES61,sobre40,puntos porcentuales,9.3332,8.8238,-0.5094,-3.2406,2.3152,0.6986,publicable,Andalucía
+2008-2015,CCAA,ES61,sobre30,puntos porcentuales,14.5345,15.3387,0.8041,-2.4859,4.0395,0.6507,publicable,Andalucía
+2008-2015,CCAA,ES61,cae_bajo_umbral,puntos porcentuales,9.9452,10.5049,0.5597,-2.0496,3.2517,0.5948,publicable,Andalucía
+2008-2015,CCAA,ES61,pobreza_antes,puntos porcentuales,29.3033,35.6519,6.3486,2.3065,10.4302,0.0080,publicable,Andalucía
+2008-2015,CCAA,ES61,pobreza_despues,puntos porcentuales,39.2484,46.1568,6.9084,2.9772,11.3505,0.0040,publicable,Andalucía
+2008-2015,CCAA,ES61,esfuerzo_medio,puntos porcentuales,19.4649,21.1687,1.7038,-0.5747,4.0312,0.1876,publicable,Andalucía
+2008-2015,CCAA,ES62,sobre40,puntos porcentuales,10.7194,12.8671,2.1477,-3.2903,7.5130,0.4431,publicable,Murcia
+2008-2015,CCAA,ES62,sobre30,puntos porcentuales,16.2806,19.5563,3.2757,-4.4823,9.4306,0.3673,publicable,Murcia
+2008-2015,CCAA,ES62,cae_bajo_umbral,puntos porcentuales,5.8390,13.6480,7.8090,4.0151,11.8433,0.0040,publicable,Murcia
+2008-2015,CCAA,ES62,pobreza_antes,puntos porcentuales,26.0502,31.8462,5.7959,-2.0962,12.3115,0.1477,publicable,Murcia
+2008-2015,CCAA,ES62,pobreza_despues,puntos porcentuales,31.8892,45.4942,13.6050,5.7971,21.0485,0.0040,publicable,Murcia
+2008-2015,CCAA,ES62,esfuerzo_medio,puntos porcentuales,19.6649,22.0012,2.3363,-0.7406,6.0168,0.1796,publicable,Murcia
+2008-2015,CCAA,ES63,sobre40,puntos porcentuales,7.3123,7.7482,0.4359,-9.1613,8.3322,0.9261,suprimida,Ceuta
+2008-2015,CCAA,ES63,sobre30,puntos porcentuales,10.7050,16.2811,5.5760,-6.9093,17.3277,0.4032,suprimida,Ceuta
+2008-2015,CCAA,ES63,cae_bajo_umbral,puntos porcentuales,4.1240,9.7180,5.5939,-2.4544,14.4722,0.1956,suprimida,Ceuta
+2008-2015,CCAA,ES63,pobreza_antes,puntos porcentuales,49.6210,31.0432,-18.5778,-37.1232,1.1553,0.0758,publicable,Ceuta
+2008-2015,CCAA,ES63,pobreza_despues,puntos porcentuales,53.7450,40.7612,-12.9839,-31.7410,6.1600,0.1717,publicable,Ceuta
+2008-2015,CCAA,ES63,esfuerzo_medio,puntos porcentuales,18.6000,20.3299,1.7299,-5.0933,8.2147,0.7066,publicable,Ceuta
+2008-2015,CCAA,ES64,sobre40,puntos porcentuales,5.7708,9.2001,3.4293,-4.4923,11.6840,0.4192,suprimida,Melilla
+2008-2015,CCAA,ES64,sobre30,puntos porcentuales,8.0794,11.4417,3.3622,-5.8529,12.1356,0.4591,suprimida,Melilla
+2008-2015,CCAA,ES64,cae_bajo_umbral,puntos porcentuales,4.8777,4.7271,-0.1507,-8.1465,6.3768,0.9182,suprimida,Melilla
+2008-2015,CCAA,ES64,pobreza_antes,puntos porcentuales,26.0607,25.7877,-0.2730,-12.8161,15.1316,0.9421,publicable,Melilla
+2008-2015,CCAA,ES64,pobreza_despues,puntos porcentuales,30.9384,30.5148,-0.4237,-13.8341,14.9322,1.0000,publicable,Melilla
+2008-2015,CCAA,ES64,esfuerzo_medio,puntos porcentuales,17.3722,20.0266,2.6544,-8.7883,12.4554,0.5788,publicable,Melilla
+2008-2015,CCAA,ES70,sobre40,puntos porcentuales,12.3078,13.0299,0.7221,-5.7495,6.5676,0.7705,publicable,Canarias
+2008-2015,CCAA,ES70,sobre30,puntos porcentuales,17.6308,19.0190,1.3883,-5.9435,8.3608,0.7465,publicable,Canarias
+2008-2015,CCAA,ES70,cae_bajo_umbral,puntos porcentuales,10.0178,8.5690,-1.4488,-6.6679,3.5142,0.4990,publicable,Canarias
+2008-2015,CCAA,ES70,pobreza_antes,puntos porcentuales,27.8298,28.5145,0.6846,-7.3843,8.8578,0.8423,publicable,Canarias
+2008-2015,CCAA,ES70,pobreza_despues,puntos porcentuales,37.8476,37.0835,-0.7641,-8.6966,6.7252,0.8743,publicable,Canarias
+2008-2015,CCAA,ES70,esfuerzo_medio,puntos porcentuales,20.6827,24.5893,3.9065,-1.1933,8.6427,0.1437,publicable,Canarias
+2008-2015,Quintil,Q1,sobre40,puntos porcentuales,31.8856,40.8303,8.9447,4.6558,12.9014,0.0040,publicable,Q1
+2008-2015,Quintil,Q1,sobre30,puntos porcentuales,41.1253,55.0517,13.9264,9.9969,18.0352,0.0040,publicable,Q1
+2008-2015,Quintil,Q1,cae_bajo_umbral,puntos porcentuales,0.0000,0.0000,0.0000,-1.2286,0.0000,1.0000,suprimida,Q1
+2008-2015,Quintil,Q1,pobreza_antes,puntos porcentuales,100.0000,100.0000,0.0000,0.0000,1.2286,1.0000,publicable,Q1
+2008-2015,Quintil,Q1,pobreza_despues,puntos porcentuales,100.0000,100.0000,0.0000,0.0000,0.0000,1.0000,publicable,Q1
+2008-2015,Quintil,Q1,esfuerzo_medio,puntos porcentuales,36.1697,48.0991,11.9294,9.3943,14.8936,0.0040,publicable,Q1
+2008-2015,Quintil,Q2,sobre40,puntos porcentuales,10.1542,7.6185,-2.5357,-5.1422,-0.1790,0.0399,publicable,Q2
+2008-2015,Quintil,Q2,sobre30,puntos porcentuales,17.5488,16.7373,-0.8114,-3.9554,2.3902,0.6188,publicable,Q2
+2008-2015,Quintil,Q2,cae_bajo_umbral,puntos porcentuales,43.1490,45.5755,2.4265,-1.1267,6.2986,0.2116,publicable,Q2
+2008-2015,Quintil,Q2,pobreza_antes,puntos porcentuales,3.0800,10.5790,7.4990,2.6563,12.8534,0.0040,suprimida,Q2
+2008-2015,Quintil,Q2,pobreza_despues,puntos porcentuales,46.2290,56.1545,9.9255,4.7322,16.3119,0.0040,publicable,Q2
+2008-2015,Quintil,Q2,esfuerzo_medio,puntos porcentuales,19.5936,20.9285,1.3348,0.0311,2.6593,0.0519,publicable,Q2
+2008-2015,Quintil,Q3,sobre40,puntos porcentuales,4.9664,1.9288,-3.0376,-4.4949,-1.6095,0.0040,publicable,Q3
+2008-2015,Quintil,Q3,sobre30,puntos porcentuales,10.6349,7.2390,-3.3959,-5.6504,-1.2759,0.0040,publicable,Q3
+2008-2015,Quintil,Q3,cae_bajo_umbral,puntos porcentuales,5.9638,3.1366,-2.8271,-4.2737,-1.1660,0.0120,publicable,Q3
+2008-2015,Quintil,Q3,pobreza_antes,puntos porcentuales,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,suprimida,Q3
+2008-2015,Quintil,Q3,pobreza_despues,puntos porcentuales,5.9638,3.1366,-2.8271,-4.2737,-1.1660,0.0120,publicable,Q3
+2008-2015,Quintil,Q3,esfuerzo_medio,puntos porcentuales,16.5505,15.9626,-0.5880,-1.7089,0.4797,0.2595,publicable,Q3
+2008-2015,Quintil,Q4,sobre40,puntos porcentuales,2.2947,1.1302,-1.1646,-1.9794,-0.2699,0.0160,publicable,Q4
+2008-2015,Quintil,Q4,sobre30,puntos porcentuales,7.9725,4.4447,-3.5278,-5.5940,-1.6550,0.0040,publicable,Q4
+2008-2015,Quintil,Q4,cae_bajo_umbral,puntos porcentuales,0.6110,0.4271,-0.1838,-0.6918,0.3299,0.4152,suprimida,Q4
+2008-2015,Quintil,Q4,pobreza_antes,puntos porcentuales,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,suprimida,Q4
+2008-2015,Quintil,Q4,pobreza_despues,puntos porcentuales,0.6110,0.4271,-0.1838,-0.6918,0.3299,0.4152,suprimida,Q4
+2008-2015,Quintil,Q4,esfuerzo_medio,puntos porcentuales,14.1728,13.5963,-0.5765,-1.5459,0.4518,0.2914,publicable,Q4
+2008-2015,Quintil,Q5,sobre40,puntos porcentuales,1.0174,0.1871,-0.8302,-1.2742,-0.3863,0.0040,suprimida,Q5
+2008-2015,Quintil,Q5,sobre30,puntos porcentuales,3.9357,1.0914,-2.8443,-3.9750,-1.8434,0.0040,publicable,Q5
+2008-2015,Quintil,Q5,cae_bajo_umbral,puntos porcentuales,0.0241,0.0000,-0.0241,-0.0757,0.0000,0.7745,suprimida,Q5
+2008-2015,Quintil,Q5,pobreza_antes,puntos porcentuales,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,suprimida,Q5
+2008-2015,Quintil,Q5,pobreza_despues,puntos porcentuales,0.0241,0.0000,-0.0241,-0.0757,0.0000,0.7745,suprimida,Q5
+2008-2015,Quintil,Q5,esfuerzo_medio,puntos porcentuales,11.8915,9.7025,-2.1890,-2.9156,-1.4952,0.0040,publicable,Q5
+2008-2015,Edad,16-34,sobre40,puntos porcentuales,13.8605,19.0606,5.2001,1.0570,9.6689,0.0160,publicable,16-34
+2008-2015,Edad,16-34,sobre30,puntos porcentuales,23.2579,30.8007,7.5428,2.6544,12.8476,0.0040,publicable,16-34
+2008-2015,Edad,16-34,cae_bajo_umbral,puntos porcentuales,11.2500,13.3060,2.0560,-1.3276,5.1924,0.2475,publicable,16-34
+2008-2015,Edad,16-34,pobreza_antes,puntos porcentuales,16.7533,28.0166,11.2633,7.0273,15.9483,0.0040,publicable,16-34
+2008-2015,Edad,16-34,pobreza_despues,puntos porcentuales,28.0033,41.3226,13.3193,8.6939,18.3964,0.0040,publicable,16-34
+2008-2015,Edad,16-34,esfuerzo_medio,puntos porcentuales,24.7016,28.9137,4.2121,1.2826,7.0874,0.0080,publicable,16-34
+2008-2015,Edad,35-49,sobre40,puntos porcentuales,12.4827,13.7675,1.2848,-1.1659,3.6764,0.2994,publicable,35-49
+2008-2015,Edad,35-49,sobre30,puntos porcentuales,19.5735,22.3070,2.7335,-0.1465,5.4125,0.0639,publicable,35-49
+2008-2015,Edad,35-49,cae_bajo_umbral,puntos porcentuales,10.3381,9.7389,-0.5992,-2.3581,1.3428,0.5988,publicable,35-49
+2008-2015,Edad,35-49,pobreza_antes,puntos porcentuales,21.1254,25.7648,4.6394,2.0097,7.5326,0.0040,publicable,35-49
+2008-2015,Edad,35-49,pobreza_despues,puntos porcentuales,31.4636,35.5037,4.0401,1.3531,7.0282,0.0040,publicable,35-49
+2008-2015,Edad,35-49,esfuerzo_medio,puntos porcentuales,21.6400,25.3336,3.6935,2.0931,5.3171,0.0040,publicable,35-49
+2008-2015,Edad,50-64,sobre40,puntos porcentuales,6.2347,7.1102,0.8755,-1.1049,2.9596,0.3752,publicable,50-64
+2008-2015,Edad,50-64,sobre30,puntos porcentuales,10.3899,11.6807,1.2907,-0.8986,3.4103,0.3034,publicable,50-64
+2008-2015,Edad,50-64,cae_bajo_umbral,puntos porcentuales,6.9184,7.0387,0.1202,-1.6133,1.4663,0.9301,publicable,50-64
+2008-2015,Edad,50-64,pobreza_antes,puntos porcentuales,15.4325,20.0755,4.6430,2.2966,7.2453,0.0040,publicable,50-64
+2008-2015,Edad,50-64,pobreza_despues,puntos porcentuales,22.3509,27.1141,4.7632,2.0884,7.4312,0.0040,publicable,50-64
+2008-2015,Edad,50-64,esfuerzo_medio,puntos porcentuales,15.8985,18.3006,2.4022,1.1433,3.7378,0.0040,publicable,50-64
+2008-2015,Edad,65+,sobre40,puntos porcentuales,5.7965,3.6392,-2.1573,-4.1284,-0.5156,0.0120,publicable,65+
+2008-2015,Edad,65+,sobre30,puntos porcentuales,9.1026,6.4723,-2.6303,-4.9053,-0.7130,0.0160,publicable,65+
+2008-2015,Edad,65+,cae_bajo_umbral,puntos porcentuales,11.7567,11.6372,-0.1195,-2.0630,1.9902,0.9980,publicable,65+
+2008-2015,Edad,65+,pobreza_antes,puntos porcentuales,31.7439,15.0664,-16.6775,-19.6763,-13.6968,0.0040,publicable,65+
+2008-2015,Edad,65+,pobreza_despues,puntos porcentuales,43.5006,26.7035,-16.7970,-19.9671,-13.7674,0.0040,publicable,65+
+2008-2015,Edad,65+,esfuerzo_medio,puntos porcentuales,16.9716,15.9025,-1.0691,-2.0530,-0.1646,0.0359,publicable,65+
+2008-2015,Tenencia,prop_sin_hipoteca,sobre40,puntos porcentuales,2.7190,2.7104,-0.0086,-0.6636,0.5860,0.9780,publicable,prop_sin_hipoteca
+2008-2015,Tenencia,prop_sin_hipoteca,sobre30,puntos porcentuales,4.2361,5.1795,0.9434,-0.0138,1.8876,0.0599,publicable,prop_sin_hipoteca
+2008-2015,Tenencia,prop_sin_hipoteca,cae_bajo_umbral,puntos porcentuales,6.2014,6.7068,0.5054,-0.4942,1.6365,0.3273,publicable,prop_sin_hipoteca
+2008-2015,Tenencia,prop_sin_hipoteca,pobreza_antes,puntos porcentuales,21.1144,17.7904,-3.3240,-5.0196,-1.5482,0.0040,publicable,prop_sin_hipoteca
+2008-2015,Tenencia,prop_sin_hipoteca,pobreza_despues,puntos porcentuales,27.3158,24.4973,-2.8186,-4.5819,-1.0054,0.0080,publicable,prop_sin_hipoteca
+2008-2015,Tenencia,prop_sin_hipoteca,esfuerzo_medio,puntos porcentuales,12.8673,14.1728,1.3055,0.5791,1.9941,0.0040,publicable,prop_sin_hipoteca
+2008-2015,Tenencia,prop_con_hipoteca,sobre40,puntos porcentuales,11.7297,8.6521,-3.0776,-4.8884,-0.9378,0.0120,publicable,prop_con_hipoteca
+2008-2015,Tenencia,prop_con_hipoteca,sobre30,puntos porcentuales,20.7193,15.8271,-4.8922,-7.4349,-2.1954,0.0040,publicable,prop_con_hipoteca
+2008-2015,Tenencia,prop_con_hipoteca,cae_bajo_umbral,puntos porcentuales,11.4680,9.6033,-1.8647,-3.9129,0.1552,0.0838,publicable,prop_con_hipoteca
+2008-2015,Tenencia,prop_con_hipoteca,pobreza_antes,puntos porcentuales,12.0614,17.2412,5.1798,3.0993,7.5057,0.0040,publicable,prop_con_hipoteca
+2008-2015,Tenencia,prop_con_hipoteca,pobreza_despues,puntos porcentuales,23.5294,26.8445,3.3151,0.5930,6.4138,0.0240,publicable,prop_con_hipoteca
+2008-2015,Tenencia,prop_con_hipoteca,esfuerzo_medio,puntos porcentuales,23.1529,21.4196,-1.7332,-2.8569,-0.4422,0.0120,publicable,prop_con_hipoteca
+2008-2015,Tenencia,alquiler_mercado,sobre40,puntos porcentuales,38.8160,43.3259,4.5099,-1.8820,10.3329,0.2116,publicable,alquiler_mercado
+2008-2015,Tenencia,alquiler_mercado,sobre30,puntos porcentuales,57.3810,63.4646,6.0836,0.4951,11.9809,0.0399,publicable,alquiler_mercado
+2008-2015,Tenencia,alquiler_mercado,cae_bajo_umbral,puntos porcentuales,21.7224,22.4527,0.7303,-4.6526,5.6754,0.7824,publicable,alquiler_mercado
+2008-2015,Tenencia,alquiler_mercado,pobreza_antes,puntos porcentuales,34.5719,38.5945,4.0225,-2.1120,10.0413,0.1956,publicable,alquiler_mercado
+2008-2015,Tenencia,alquiler_mercado,pobreza_despues,puntos porcentuales,56.2944,61.0472,4.7528,-1.0076,10.6960,0.1158,publicable,alquiler_mercado
+2008-2015,Tenencia,alquiler_mercado,esfuerzo_medio,puntos porcentuales,43.1529,48.7309,5.5780,2.2300,8.9244,0.0080,publicable,alquiler_mercado
+2008-2015,Tenencia,alquiler_reducido_cesion,sobre40,puntos porcentuales,7.0863,9.9365,2.8502,-0.4019,6.3797,0.0878,publicable,alquiler_reducido_cesion
+2008-2015,Tenencia,alquiler_reducido_cesion,sobre30,puntos porcentuales,12.3044,16.9100,4.6055,0.3674,9.2145,0.0479,publicable,alquiler_reducido_cesion
+2008-2015,Tenencia,alquiler_reducido_cesion,cae_bajo_umbral,puntos porcentuales,9.3476,9.2725,-0.0751,-3.3860,3.2438,0.9940,publicable,alquiler_reducido_cesion
+2008-2015,Tenencia,alquiler_reducido_cesion,pobreza_antes,puntos porcentuales,33.2034,38.4309,5.2274,-0.3504,10.9562,0.0758,publicable,alquiler_reducido_cesion
+2008-2015,Tenencia,alquiler_reducido_cesion,pobreza_despues,puntos porcentuales,42.5510,47.7034,5.1524,0.1940,11.7364,0.0359,publicable,alquiler_reducido_cesion
+2008-2015,Tenencia,alquiler_reducido_cesion,esfuerzo_medio,puntos porcentuales,18.2732,19.5620,1.2888,-1.1253,3.7813,0.2954,publicable,alquiler_reducido_cesion
+2008-2015,Nacionalidad,Espana,sobre40,puntos porcentuales,6.7193,7.5398,0.8205,-0.1103,1.6587,0.0878,publicable,Espana
+2008-2015,Nacionalidad,Espana,sobre30,puntos porcentuales,11.6436,13.5093,1.8657,0.5613,3.0189,0.0040,publicable,Espana
+2008-2015,Nacionalidad,Espana,cae_bajo_umbral,puntos porcentuales,8.6356,9.0541,0.4185,-0.4953,1.4153,0.3393,publicable,Espana
+2008-2015,Nacionalidad,Espana,pobreza_antes,puntos porcentuales,18.4949,19.5989,1.1040,-0.1297,2.2947,0.0878,publicable,Espana
+2008-2015,Nacionalidad,Espana,pobreza_despues,puntos porcentuales,27.1305,28.6530,1.5225,0.3211,2.9117,0.0200,publicable,Espana
+2008-2015,Nacionalidad,Espana,esfuerzo_medio,puntos porcentuales,17.6158,19.1406,1.5248,0.8051,2.1638,0.0040,publicable,Espana
+2008-2015,Nacionalidad,UE,sobre40,puntos porcentuales,30.3585,33.1259,2.7674,-12.9615,18.8727,0.6707,publicable,UE
+2008-2015,Nacionalidad,UE,sobre30,puntos porcentuales,41.2152,44.0830,2.8678,-13.6719,20.6887,0.7106,publicable,UE
+2008-2015,Nacionalidad,UE,cae_bajo_umbral,puntos porcentuales,15.6925,17.1425,1.4500,-9.7518,11.9828,0.8303,publicable,UE
+2008-2015,Nacionalidad,UE,pobreza_antes,puntos porcentuales,30.1521,35.7440,5.5919,-8.8839,20.5494,0.4311,publicable,UE
+2008-2015,Nacionalidad,UE,pobreza_despues,puntos porcentuales,45.8446,52.8865,7.0419,-8.5479,23.8572,0.3713,publicable,UE
+2008-2015,Nacionalidad,UE,esfuerzo_medio,puntos porcentuales,37.4334,40.2471,2.8137,-5.1315,10.8238,0.4790,publicable,UE
+2008-2015,Nacionalidad,Resto,sobre40,puntos porcentuales,37.4875,49.1123,11.6248,1.3801,21.1921,0.0359,publicable,Resto
+2008-2015,Nacionalidad,Resto,sobre30,puntos porcentuales,54.4455,65.2568,10.8114,-0.9139,21.1689,0.0758,publicable,Resto
+2008-2015,Nacionalidad,Resto,cae_bajo_umbral,puntos porcentuales,20.8328,20.2950,-0.5378,-8.8793,6.5099,0.9022,publicable,Resto
+2008-2015,Nacionalidad,Resto,pobreza_antes,puntos porcentuales,39.3020,62.8035,23.5015,14.1304,33.7289,0.0040,publicable,Resto
+2008-2015,Nacionalidad,Resto,pobreza_despues,puntos porcentuales,60.1348,83.0985,22.9637,14.4285,31.5585,0.0040,publicable,Resto
+2008-2015,Nacionalidad,Resto,esfuerzo_medio,puntos porcentuales,40.8756,53.3113,12.4357,5.4933,18.0115,0.0080,publicable,Resto
+2015-2025,Total,Espana,sobre40,puntos porcentuales,10.3411,7.1720,-3.1690,-4.1569,-2.2365,0.0040,publicable,Espana
+2015-2025,Total,Espana,sobre30,puntos porcentuales,16.9155,12.0110,-4.9045,-6.0500,-3.7276,0.0040,publicable,Espana
+2015-2025,Total,Espana,cae_bajo_umbral,puntos porcentuales,9.8286,9.2672,-0.5614,-1.5573,0.3768,0.2315,publicable,Espana
+2015-2025,Total,Espana,pobreza_antes,puntos porcentuales,22.1209,19.4681,-2.6528,-3.9961,-1.5586,0.0040,publicable,Espana
+2015-2025,Total,Espana,pobreza_despues,puntos porcentuales,31.9495,28.7353,-3.2142,-4.5097,-2.1349,0.0040,publicable,Espana
+2015-2025,Total,Espana,esfuerzo_medio,puntos porcentuales,21.1677,18.2264,-2.9414,-3.6602,-2.2501,0.0040,publicable,Espana
+2015-2025,CCAA,ES11,sobre40,puntos porcentuales,6.4445,4.6954,-1.7491,-4.1686,0.6619,0.1557,publicable,Galicia
+2015-2025,CCAA,ES11,sobre30,puntos porcentuales,8.8841,7.9293,-0.9548,-3.7303,1.8856,0.5509,publicable,Galicia
+2015-2025,CCAA,ES11,cae_bajo_umbral,puntos porcentuales,7.9882,7.3499,-0.6383,-3.3734,2.0129,0.6108,publicable,Galicia
+2015-2025,CCAA,ES11,pobreza_antes,puntos porcentuales,19.4272,15.9519,-3.4753,-7.3543,0.7916,0.1158,publicable,Galicia
+2015-2025,CCAA,ES11,pobreza_despues,puntos porcentuales,27.4154,23.3018,-4.1136,-8.7748,0.7161,0.1078,publicable,Galicia
+2015-2025,CCAA,ES11,esfuerzo_medio,puntos porcentuales,17.3288,15.7308,-1.5979,-3.5894,0.4523,0.1198,publicable,Galicia
+2015-2025,CCAA,ES12,sobre40,puntos porcentuales,8.6562,5.3556,-3.3006,-7.4415,0.9509,0.1397,publicable,Asturias
+2015-2025,CCAA,ES12,sobre30,puntos porcentuales,14.0673,8.8276,-5.2397,-10.4673,-0.3456,0.0359,publicable,Asturias
+2015-2025,CCAA,ES12,cae_bajo_umbral,puntos porcentuales,9.7613,6.7768,-2.9845,-7.4872,1.2366,0.2156,publicable,Asturias
+2015-2025,CCAA,ES12,pobreza_antes,puntos porcentuales,16.6526,17.1685,0.5159,-5.2557,6.8530,0.8703,publicable,Asturias
+2015-2025,CCAA,ES12,pobreza_despues,puntos porcentuales,26.4140,23.9454,-2.4686,-9.6320,4.8340,0.5549,publicable,Asturias
+2015-2025,CCAA,ES12,esfuerzo_medio,puntos porcentuales,16.9511,16.6547,-0.2964,-2.5365,1.8101,0.8623,publicable,Asturias
+2015-2025,CCAA,ES13,sobre40,puntos porcentuales,7.1097,6.7371,-0.3726,-4.9052,3.5918,0.8703,publicable,Cantabria
+2015-2025,CCAA,ES13,sobre30,puntos porcentuales,10.5218,9.8594,-0.6623,-5.5937,4.2054,0.7984,publicable,Cantabria
+2015-2025,CCAA,ES13,cae_bajo_umbral,puntos porcentuales,9.0128,10.2361,1.2233,-4.7878,5.9839,0.6627,publicable,Cantabria
+2015-2025,CCAA,ES13,pobreza_antes,puntos porcentuales,14.5721,13.8397,-0.7324,-7.3960,5.1991,0.8902,publicable,Cantabria
+2015-2025,CCAA,ES13,pobreza_despues,puntos porcentuales,23.5849,24.0758,0.4909,-7.6401,7.8614,0.9501,publicable,Cantabria
+2015-2025,CCAA,ES13,esfuerzo_medio,puntos porcentuales,17.5401,17.2957,-0.2444,-3.6222,2.6939,0.8982,publicable,Cantabria
+2015-2025,CCAA,ES21,sobre40,puntos porcentuales,7.4550,4.9178,-2.5372,-5.1776,0.2690,0.0758,publicable,País Vasco
+2015-2025,CCAA,ES21,sobre30,puntos porcentuales,11.8013,8.8701,-2.9312,-6.3973,0.4941,0.1038,publicable,País Vasco
+2015-2025,CCAA,ES21,cae_bajo_umbral,puntos porcentuales,4.9839,7.6928,2.7089,-0.3230,5.3210,0.0878,publicable,País Vasco
+2015-2025,CCAA,ES21,pobreza_antes,puntos porcentuales,10.8558,9.2687,-1.5871,-5.2983,2.2333,0.4192,publicable,País Vasco
+2015-2025,CCAA,ES21,pobreza_despues,puntos porcentuales,15.8397,16.9614,1.1217,-3.8471,5.1361,0.6507,publicable,País Vasco
+2015-2025,CCAA,ES21,esfuerzo_medio,puntos porcentuales,17.5290,15.8218,-1.7072,-3.8908,0.4316,0.1118,publicable,País Vasco
+2015-2025,CCAA,ES22,sobre40,puntos porcentuales,5.7068,3.4782,-2.2286,-6.4451,1.0879,0.2275,suprimida,Navarra
+2015-2025,CCAA,ES22,sobre30,puntos porcentuales,12.0975,8.4016,-3.6959,-10.0198,3.2804,0.3114,publicable,Navarra
+2015-2025,CCAA,ES22,cae_bajo_umbral,puntos porcentuales,4.4507,8.6872,4.2366,-0.2763,8.6250,0.0758,suprimida,Navarra
+2015-2025,CCAA,ES22,pobreza_antes,puntos porcentuales,9.6077,12.3393,2.7317,-3.8376,8.4307,0.4351,publicable,Navarra
+2015-2025,CCAA,ES22,pobreza_despues,puntos porcentuales,14.0583,21.0265,6.9682,-1.1784,14.1952,0.0878,publicable,Navarra
+2015-2025,CCAA,ES22,esfuerzo_medio,puntos porcentuales,16.8115,14.1950,-2.6165,-5.1006,-0.1994,0.0359,publicable,Navarra
+2015-2025,CCAA,ES23,sobre40,puntos porcentuales,8.1678,6.7533,-1.4145,-6.7337,3.4740,0.5349,publicable,La Rioja
+2015-2025,CCAA,ES23,sobre30,puntos porcentuales,12.0776,9.7299,-2.3477,-8.0688,3.1684,0.3673,publicable,La Rioja
+2015-2025,CCAA,ES23,cae_bajo_umbral,puntos porcentuales,9.1944,5.0947,-4.0997,-7.9447,-0.1183,0.0479,publicable,La Rioja
+2015-2025,CCAA,ES23,pobreza_antes,puntos porcentuales,17.0545,18.4478,1.3933,-5.9685,8.5282,0.7106,publicable,La Rioja
+2015-2025,CCAA,ES23,pobreza_despues,puntos porcentuales,26.2489,23.5425,-2.7063,-10.2830,4.9489,0.5070,publicable,La Rioja
+2015-2025,CCAA,ES23,esfuerzo_medio,puntos porcentuales,18.4046,16.3335,-2.0711,-4.7531,0.4154,0.0958,publicable,La Rioja
+2015-2025,CCAA,ES24,sobre40,puntos porcentuales,6.4343,4.4088,-2.0255,-5.6260,1.2276,0.2635,publicable,Aragón
+2015-2025,CCAA,ES24,sobre30,puntos porcentuales,10.6529,7.5941,-3.0588,-7.4162,1.6498,0.2116,publicable,Aragón
+2015-2025,CCAA,ES24,cae_bajo_umbral,puntos porcentuales,7.2692,9.1920,1.9228,-2.3008,6.7656,0.3273,publicable,Aragón
+2015-2025,CCAA,ES24,pobreza_antes,puntos porcentuales,14.3818,13.6026,-0.7792,-5.6948,4.2303,0.8343,publicable,Aragón
+2015-2025,CCAA,ES24,pobreza_despues,puntos porcentuales,21.6510,22.7946,1.1436,-4.8567,7.8642,0.6627,publicable,Aragón
+2015-2025,CCAA,ES24,esfuerzo_medio,puntos porcentuales,17.2386,15.9765,-1.2621,-3.1716,0.7950,0.2635,publicable,Aragón
+2015-2025,CCAA,ES30,sobre40,puntos porcentuales,13.5019,9.9050,-3.5969,-6.8886,-0.6320,0.0200,publicable,Madrid
+2015-2025,CCAA,ES30,sobre30,puntos porcentuales,23.2520,16.0338,-7.2182,-10.7986,-3.5819,0.0040,publicable,Madrid
+2015-2025,CCAA,ES30,cae_bajo_umbral,puntos porcentuales,11.1947,10.5162,-0.6785,-4.0617,2.7555,0.6547,publicable,Madrid
+2015-2025,CCAA,ES30,pobreza_antes,puntos porcentuales,15.0960,12.8140,-2.2821,-5.8321,1.1582,0.1996,publicable,Madrid
+2015-2025,CCAA,ES30,pobreza_despues,puntos porcentuales,26.2907,23.3302,-2.9606,-7.4515,1.0167,0.1477,publicable,Madrid
+2015-2025,CCAA,ES30,esfuerzo_medio,puntos porcentuales,25.2992,20.6094,-4.6898,-6.8879,-2.7571,0.0040,publicable,Madrid
+2015-2025,CCAA,ES41,sobre40,puntos porcentuales,8.5568,7.5521,-1.0047,-4.3329,2.5907,0.6826,publicable,Castilla y León
+2015-2025,CCAA,ES41,sobre30,puntos porcentuales,12.8288,11.0629,-1.7659,-5.8183,2.0722,0.4311,publicable,Castilla y León
+2015-2025,CCAA,ES41,cae_bajo_umbral,puntos porcentuales,8.0836,8.2917,0.2081,-2.3845,3.0737,0.8303,publicable,Castilla y León
+2015-2025,CCAA,ES41,pobreza_antes,puntos porcentuales,18.2703,19.7875,1.5171,-2.7323,5.9569,0.4830,publicable,Castilla y León
+2015-2025,CCAA,ES41,pobreza_despues,puntos porcentuales,26.3539,28.0791,1.7252,-2.8969,6.7689,0.4511,publicable,Castilla y León
+2015-2025,CCAA,ES41,esfuerzo_medio,puntos porcentuales,19.0274,16.8326,-2.1947,-4.3171,-0.3248,0.0200,publicable,Castilla y León
+2015-2025,CCAA,ES42,sobre40,puntos porcentuales,8.0731,6.6717,-1.4013,-5.3108,1.9658,0.4112,publicable,Castilla-La Mancha
+2015-2025,CCAA,ES42,sobre30,puntos porcentuales,18.4792,13.8660,-4.6132,-9.7291,1.0188,0.1078,publicable,Castilla-La Mancha
+2015-2025,CCAA,ES42,cae_bajo_umbral,puntos porcentuales,9.6543,11.3036,1.6493,-2.7328,6.2524,0.3593,publicable,Castilla-La Mancha
+2015-2025,CCAA,ES42,pobreza_antes,puntos porcentuales,28.5385,26.0255,-2.5130,-9.8397,3.0290,0.3154,publicable,Castilla-La Mancha
+2015-2025,CCAA,ES42,pobreza_despues,puntos porcentuales,38.1927,37.3291,-0.8636,-7.8150,5.2695,0.7146,publicable,Castilla-La Mancha
+2015-2025,CCAA,ES42,esfuerzo_medio,puntos porcentuales,20.5062,18.0355,-2.4707,-5.2252,0.1012,0.0719,publicable,Castilla-La Mancha
+2015-2025,CCAA,ES43,sobre40,puntos porcentuales,5.7601,4.1675,-1.5926,-4.3116,1.1393,0.3034,publicable,Extremadura
+2015-2025,CCAA,ES43,sobre30,puntos porcentuales,11.6870,7.3623,-4.3247,-8.2034,-0.7734,0.0319,publicable,Extremadura
+2015-2025,CCAA,ES43,cae_bajo_umbral,puntos porcentuales,14.0593,8.0187,-6.0407,-11.1982,-1.8332,0.0080,publicable,Extremadura
+2015-2025,CCAA,ES43,pobreza_antes,puntos porcentuales,29.0139,26.2926,-2.7213,-9.3219,2.7074,0.4192,publicable,Extremadura
+2015-2025,CCAA,ES43,pobreza_despues,puntos porcentuales,43.0732,34.3113,-8.7619,-15.8226,-2.1126,0.0160,publicable,Extremadura
+2015-2025,CCAA,ES43,esfuerzo_medio,puntos porcentuales,17.1236,16.0316,-1.0920,-3.1486,0.9307,0.2914,publicable,Extremadura
+2015-2025,CCAA,ES51,sobre40,puntos porcentuales,11.6405,7.7986,-3.8419,-6.7036,-1.2191,0.0080,publicable,Cataluña
+2015-2025,CCAA,ES51,sobre30,puntos porcentuales,18.1258,14.4532,-3.6726,-7.1086,-0.2828,0.0319,publicable,Cataluña
+2015-2025,CCAA,ES51,cae_bajo_umbral,puntos porcentuales,9.4445,9.9365,0.4920,-1.9884,3.0023,0.6587,publicable,Cataluña
+2015-2025,CCAA,ES51,pobreza_antes,puntos porcentuales,13.7870,14.2460,0.4590,-2.8150,3.3006,0.8184,publicable,Cataluña
+2015-2025,CCAA,ES51,pobreza_despues,puntos porcentuales,23.2315,24.1825,0.9510,-2.4658,4.2801,0.6148,publicable,Cataluña
+2015-2025,CCAA,ES51,esfuerzo_medio,puntos porcentuales,21.1960,19.5722,-1.6238,-3.3039,-0.0867,0.0399,publicable,Cataluña
+2015-2025,CCAA,ES52,sobre40,puntos porcentuales,11.4635,8.4911,-2.9724,-7.3017,0.7357,0.0958,publicable,Comunitat Valenciana
+2015-2025,CCAA,ES52,sobre30,puntos porcentuales,18.4229,14.1673,-4.2556,-9.2289,-0.2204,0.0399,publicable,Comunitat Valenciana
+2015-2025,CCAA,ES52,cae_bajo_umbral,puntos porcentuales,11.4732,8.8929,-2.5803,-5.9813,0.5923,0.1517,publicable,Comunitat Valenciana
+2015-2025,CCAA,ES52,pobreza_antes,puntos porcentuales,25.2768,25.9204,0.6436,-4.4078,5.9361,0.8782,publicable,Comunitat Valenciana
+2015-2025,CCAA,ES52,pobreza_despues,puntos porcentuales,36.7500,34.8133,-1.9367,-7.3293,4.0230,0.4551,publicable,Comunitat Valenciana
+2015-2025,CCAA,ES52,esfuerzo_medio,puntos porcentuales,21.8927,19.9612,-1.9315,-4.7683,0.6432,0.1756,publicable,Comunitat Valenciana
+2015-2025,CCAA,ES53,sobre40,puntos porcentuales,20.5320,6.3753,-14.1567,-21.2900,-7.2828,0.0040,publicable,Illes Balears
+2015-2025,CCAA,ES53,sobre30,puntos porcentuales,28.7456,11.3117,-17.4339,-24.3034,-10.3377,0.0040,publicable,Illes Balears
+2015-2025,CCAA,ES53,cae_bajo_umbral,puntos porcentuales,10.6281,10.0244,-0.6037,-6.2521,4.6843,0.8184,publicable,Illes Balears
+2015-2025,CCAA,ES53,pobreza_antes,puntos porcentuales,21.6144,11.1695,-10.4449,-19.3207,-1.4825,0.0160,publicable,Illes Balears
+2015-2025,CCAA,ES53,pobreza_despues,puntos porcentuales,32.2426,21.1939,-11.0486,-20.5448,-1.6611,0.0160,publicable,Illes Balears
+2015-2025,CCAA,ES53,esfuerzo_medio,puntos porcentuales,27.9196,18.7764,-9.1432,-14.9192,-4.4463,0.0040,publicable,Illes Balears
+2015-2025,CCAA,ES61,sobre40,puntos porcentuales,8.8238,6.9502,-1.8736,-4.1977,0.5193,0.1597,publicable,Andalucía
+2015-2025,CCAA,ES61,sobre30,puntos porcentuales,15.3387,10.3653,-4.9734,-7.7781,-2.2198,0.0040,publicable,Andalucía
+2015-2025,CCAA,ES61,cae_bajo_umbral,puntos porcentuales,10.5049,9.2995,-1.2054,-3.5766,1.0254,0.2874,publicable,Andalucía
+2015-2025,CCAA,ES61,pobreza_antes,puntos porcentuales,35.6519,27.7411,-7.9108,-12.0287,-3.9461,0.0040,publicable,Andalucía
+2015-2025,CCAA,ES61,pobreza_despues,puntos porcentuales,46.1568,37.0406,-9.1162,-13.5113,-5.5112,0.0040,publicable,Andalucía
+2015-2025,CCAA,ES61,esfuerzo_medio,puntos porcentuales,21.1687,17.8521,-3.3167,-5.1939,-1.5569,0.0040,publicable,Andalucía
+2015-2025,CCAA,ES62,sobre40,puntos porcentuales,12.8671,6.7696,-6.0975,-10.4578,-1.5740,0.0120,publicable,Murcia
+2015-2025,CCAA,ES62,sobre30,puntos porcentuales,19.5563,11.0947,-8.4616,-13.7990,-2.9539,0.0040,publicable,Murcia
+2015-2025,CCAA,ES62,cae_bajo_umbral,puntos porcentuales,13.6480,10.2307,-3.4173,-8.0492,0.7871,0.1238,publicable,Murcia
+2015-2025,CCAA,ES62,pobreza_antes,puntos porcentuales,31.8462,26.6479,-5.1982,-11.2250,1.7104,0.1517,publicable,Murcia
+2015-2025,CCAA,ES62,pobreza_despues,puntos porcentuales,45.4942,36.8786,-8.6156,-14.7985,-1.3564,0.0439,publicable,Murcia
+2015-2025,CCAA,ES62,esfuerzo_medio,puntos porcentuales,22.0012,17.8189,-4.1823,-7.2050,-1.5657,0.0080,publicable,Murcia
+2015-2025,CCAA,ES63,sobre40,puntos porcentuales,7.7482,7.3139,-0.4343,-8.0689,6.5183,0.9421,suprimida,Ceuta
+2015-2025,CCAA,ES63,sobre30,puntos porcentuales,16.2811,9.9231,-6.3580,-17.6798,3.7651,0.2754,suprimida,Ceuta
+2015-2025,CCAA,ES63,cae_bajo_umbral,puntos porcentuales,9.7180,5.8302,-3.8877,-12.7869,4.3815,0.4192,suprimida,Ceuta
+2015-2025,CCAA,ES63,pobreza_antes,puntos porcentuales,31.0432,37.3371,6.2939,-12.7248,24.0623,0.5389,publicable,Ceuta
+2015-2025,CCAA,ES63,pobreza_despues,puntos porcentuales,40.7612,43.1674,2.4062,-14.4218,21.1021,0.8024,publicable,Ceuta
+2015-2025,CCAA,ES63,esfuerzo_medio,puntos porcentuales,20.3299,19.4592,-0.8707,-7.8680,5.3695,0.8503,publicable,Ceuta
+2015-2025,CCAA,ES64,sobre40,puntos porcentuales,9.2001,13.8129,4.6129,-5.3360,14.3373,0.3433,suprimida,Melilla
+2015-2025,CCAA,ES64,sobre30,puntos porcentuales,11.4417,21.2530,9.8113,-0.2389,21.5372,0.0679,suprimida,Melilla
+2015-2025,CCAA,ES64,cae_bajo_umbral,puntos porcentuales,4.7271,6.3992,1.6721,-5.2889,10.7416,0.6267,suprimida,Melilla
+2015-2025,CCAA,ES64,pobreza_antes,puntos porcentuales,25.7877,38.8732,13.0855,-2.9098,26.6084,0.1198,publicable,Melilla
+2015-2025,CCAA,ES64,pobreza_despues,puntos porcentuales,30.5148,45.2724,14.7576,-1.3199,29.9296,0.0719,publicable,Melilla
+2015-2025,CCAA,ES64,esfuerzo_medio,puntos porcentuales,20.0266,19.7247,-0.3019,-9.3838,7.1137,0.9780,publicable,Melilla
+2015-2025,CCAA,ES70,sobre40,puntos porcentuales,13.0299,4.9627,-8.0673,-13.2559,-3.6434,0.0040,publicable,Canarias
+2015-2025,CCAA,ES70,sobre30,puntos porcentuales,19.0190,8.0889,-10.9301,-17.2062,-5.4622,0.0040,publicable,Canarias
+2015-2025,CCAA,ES70,cae_bajo_umbral,puntos porcentuales,8.5690,8.1180,-0.4510,-5.6663,3.9261,0.9301,publicable,Canarias
+2015-2025,CCAA,ES70,pobreza_antes,puntos porcentuales,28.5145,22.9119,-5.6026,-13.9255,1.4314,0.1118,publicable,Canarias
+2015-2025,CCAA,ES70,pobreza_despues,puntos porcentuales,37.0835,31.0299,-6.0536,-13.9899,1.8326,0.1477,publicable,Canarias
+2015-2025,CCAA,ES70,esfuerzo_medio,puntos porcentuales,24.5893,15.9358,-8.6535,-13.6559,-4.2752,0.0040,publicable,Canarias
+2015-2025,Quintil,Q1,sobre40,puntos porcentuales,40.8303,27.7158,-13.1145,-16.7977,-9.0317,0.0040,publicable,Q1
+2015-2025,Quintil,Q1,sobre30,puntos porcentuales,55.0517,39.5161,-15.5356,-19.4710,-11.7999,0.0040,publicable,Q1
+2015-2025,Quintil,Q1,cae_bajo_umbral,puntos porcentuales,0.0000,2.6691,2.6691,0.0000,5.4945,0.0679,suprimida,Q1
+2015-2025,Quintil,Q1,pobreza_antes,puntos porcentuales,100.0000,97.3309,-2.6691,-5.4945,0.0000,0.0679,publicable,Q1
+2015-2025,Quintil,Q1,pobreza_despues,puntos porcentuales,100.0000,100.0000,0.0000,0.0000,0.0000,1.0000,publicable,Q1
+2015-2025,Quintil,Q1,esfuerzo_medio,puntos porcentuales,48.0991,38.0907,-10.0083,-12.6843,-7.5414,0.0040,publicable,Q1
+2015-2025,Quintil,Q2,sobre40,puntos porcentuales,7.6185,5.1700,-2.4485,-4.0967,-0.9350,0.0080,publicable,Q2
+2015-2025,Quintil,Q2,sobre30,puntos porcentuales,16.7373,10.8772,-5.8602,-8.4386,-3.4338,0.0040,publicable,Q2
+2015-2025,Quintil,Q2,cae_bajo_umbral,puntos porcentuales,45.5755,40.5028,-5.0727,-9.8173,-0.5237,0.0359,publicable,Q2
+2015-2025,Quintil,Q2,pobreza_antes,puntos porcentuales,10.5790,0.0000,-10.5790,-14.3476,-7.0029,0.0040,suprimida,Q2
+2015-2025,Quintil,Q2,pobreza_despues,puntos porcentuales,56.1545,40.5028,-15.6517,-21.5640,-10.4406,0.0040,publicable,Q2
+2015-2025,Quintil,Q2,esfuerzo_medio,puntos porcentuales,20.9285,18.9202,-2.0083,-2.9027,-0.9591,0.0040,publicable,Q2
+2015-2025,Quintil,Q3,sobre40,puntos porcentuales,1.9288,1.8773,-0.0516,-0.8483,0.7481,0.9381,publicable,Q3
+2015-2025,Quintil,Q3,sobre30,puntos porcentuales,7.2390,5.8358,-1.4031,-2.9614,0.2232,0.1078,publicable,Q3
+2015-2025,Quintil,Q3,cae_bajo_umbral,puntos porcentuales,3.1366,2.7662,-0.3705,-1.5030,0.5877,0.5070,publicable,Q3
+2015-2025,Quintil,Q3,pobreza_antes,puntos porcentuales,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,suprimida,Q3
+2015-2025,Quintil,Q3,pobreza_despues,puntos porcentuales,3.1366,2.7662,-0.3705,-1.5030,0.5877,0.5070,publicable,Q3
+2015-2025,Quintil,Q3,esfuerzo_medio,puntos porcentuales,15.9626,14.6368,-1.3258,-2.0704,-0.5201,0.0040,publicable,Q3
+2015-2025,Quintil,Q4,sobre40,puntos porcentuales,1.1302,0.8880,-0.2422,-0.8080,0.3456,0.4431,publicable,Q4
+2015-2025,Quintil,Q4,sobre30,puntos porcentuales,4.4447,2.7602,-1.6845,-2.9377,-0.4810,0.0080,publicable,Q4
+2015-2025,Quintil,Q4,cae_bajo_umbral,puntos porcentuales,0.4271,0.3880,-0.0392,-0.4634,0.3451,0.8383,suprimida,Q4
+2015-2025,Quintil,Q4,pobreza_antes,puntos porcentuales,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,suprimida,Q4
+2015-2025,Quintil,Q4,pobreza_despues,puntos porcentuales,0.4271,0.3880,-0.0392,-0.4634,0.3451,0.8383,suprimida,Q4
+2015-2025,Quintil,Q4,esfuerzo_medio,puntos porcentuales,13.5963,11.5394,-2.0569,-2.7419,-1.3197,0.0040,publicable,Q4
+2015-2025,Quintil,Q5,sobre40,puntos porcentuales,0.1871,0.2066,0.0195,-0.2120,0.2938,0.8743,suprimida,Q5
+2015-2025,Quintil,Q5,sobre30,puntos porcentuales,1.0914,1.0621,-0.0293,-0.5761,0.5047,0.9142,publicable,Q5
+2015-2025,Quintil,Q5,cae_bajo_umbral,puntos porcentuales,0.0000,0.0121,0.0121,0.0000,0.0372,0.7226,suprimida,Q5
+2015-2025,Quintil,Q5,pobreza_antes,puntos porcentuales,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,suprimida,Q5
+2015-2025,Quintil,Q5,pobreza_despues,puntos porcentuales,0.0000,0.0121,0.0121,0.0000,0.0372,0.7226,suprimida,Q5
+2015-2025,Quintil,Q5,esfuerzo_medio,puntos porcentuales,9.7025,8.4356,-1.2669,-1.7230,-0.8314,0.0040,publicable,Q5
+2015-2025,Edad,16-34,sobre40,puntos porcentuales,19.0606,12.8399,-6.2207,-10.3639,-2.0739,0.0120,publicable,16-34
+2015-2025,Edad,16-34,sobre30,puntos porcentuales,30.8007,21.2598,-9.5409,-14.8081,-4.3364,0.0040,publicable,16-34
+2015-2025,Edad,16-34,cae_bajo_umbral,puntos porcentuales,13.3060,13.3766,0.0707,-3.6722,4.0137,0.9701,publicable,16-34
+2015-2025,Edad,16-34,pobreza_antes,puntos porcentuales,28.0166,22.3542,-5.6624,-10.3934,-1.3115,0.0120,publicable,16-34
+2015-2025,Edad,16-34,pobreza_despues,puntos porcentuales,41.3226,35.7308,-5.5918,-10.9395,-0.7363,0.0279,publicable,16-34
+2015-2025,Edad,16-34,esfuerzo_medio,puntos porcentuales,28.9137,24.2284,-4.6853,-7.5966,-1.7958,0.0040,publicable,16-34
+2015-2025,Edad,35-49,sobre40,puntos porcentuales,13.7675,8.5507,-5.2168,-7.2168,-3.3181,0.0040,publicable,35-49
+2015-2025,Edad,35-49,sobre30,puntos porcentuales,22.3070,15.4438,-6.8632,-9.2792,-4.5059,0.0040,publicable,35-49
+2015-2025,Edad,35-49,cae_bajo_umbral,puntos porcentuales,9.7389,10.4709,0.7320,-1.0957,2.4588,0.4271,publicable,35-49
+2015-2025,Edad,35-49,pobreza_antes,puntos porcentuales,25.7648,22.0742,-3.6906,-6.2715,-1.2731,0.0080,publicable,35-49
+2015-2025,Edad,35-49,pobreza_despues,puntos porcentuales,35.5037,32.5451,-2.9586,-5.7127,-0.5796,0.0160,publicable,35-49
+2015-2025,Edad,35-49,esfuerzo_medio,puntos porcentuales,25.3336,20.7600,-4.5736,-6.0493,-3.1409,0.0040,publicable,35-49
+2015-2025,Edad,50-64,sobre40,puntos porcentuales,7.1102,5.9352,-1.1750,-2.7322,0.2731,0.1277,publicable,50-64
+2015-2025,Edad,50-64,sobre30,puntos porcentuales,11.6807,9.5520,-2.1286,-3.9417,-0.5186,0.0319,publicable,50-64
+2015-2025,Edad,50-64,cae_bajo_umbral,puntos porcentuales,7.0387,7.6961,0.6575,-0.7279,2.2501,0.2794,publicable,50-64
+2015-2025,Edad,50-64,pobreza_antes,puntos porcentuales,20.0755,17.5173,-2.5582,-4.9106,-0.3230,0.0319,publicable,50-64
+2015-2025,Edad,50-64,pobreza_despues,puntos porcentuales,27.1141,25.2134,-1.9007,-4.2894,0.3642,0.1277,publicable,50-64
+2015-2025,Edad,50-64,esfuerzo_medio,puntos porcentuales,18.3006,16.3341,-1.9665,-3.1621,-0.9361,0.0040,publicable,50-64
+2015-2025,Edad,65+,sobre40,puntos porcentuales,3.6392,4.5571,0.9180,-0.1250,1.7397,0.0719,publicable,65+
+2015-2025,Edad,65+,sobre30,puntos porcentuales,6.4723,6.7532,0.2809,-0.9893,1.3667,0.6427,publicable,65+
+2015-2025,Edad,65+,cae_bajo_umbral,puntos porcentuales,11.6372,8.0410,-3.5961,-5.3341,-2.2224,0.0040,publicable,65+
+2015-2025,Edad,65+,pobreza_antes,puntos porcentuales,15.0664,17.4008,2.3344,0.0885,4.2584,0.0439,publicable,65+
+2015-2025,Edad,65+,pobreza_despues,puntos porcentuales,26.7035,25.4418,-1.2617,-3.8459,1.0930,0.2395,publicable,65+
+2015-2025,Edad,65+,esfuerzo_medio,puntos porcentuales,15.9025,15.7722,-0.1303,-0.9308,0.5174,0.7106,publicable,65+
+2015-2025,Tenencia,prop_sin_hipoteca,sobre40,puntos porcentuales,2.7104,1.8700,-0.8403,-1.3355,-0.2934,0.0040,publicable,prop_sin_hipoteca
+2015-2025,Tenencia,prop_sin_hipoteca,sobre30,puntos porcentuales,5.1795,2.8682,-2.3112,-3.0411,-1.5246,0.0040,publicable,prop_sin_hipoteca
+2015-2025,Tenencia,prop_sin_hipoteca,cae_bajo_umbral,puntos porcentuales,6.7068,4.8945,-1.8123,-2.8051,-0.9825,0.0040,publicable,prop_sin_hipoteca
+2015-2025,Tenencia,prop_sin_hipoteca,pobreza_antes,puntos porcentuales,17.7904,15.5793,-2.2112,-3.8206,-0.6923,0.0160,publicable,prop_sin_hipoteca
+2015-2025,Tenencia,prop_sin_hipoteca,pobreza_despues,puntos porcentuales,24.4973,20.4738,-4.0234,-5.8505,-2.4644,0.0040,publicable,prop_sin_hipoteca
+2015-2025,Tenencia,prop_sin_hipoteca,esfuerzo_medio,puntos porcentuales,14.1728,12.0004,-2.1724,-2.7972,-1.5625,0.0040,publicable,prop_sin_hipoteca
+2015-2025,Tenencia,prop_con_hipoteca,sobre40,puntos porcentuales,8.6521,3.4494,-5.2027,-6.7776,-3.7756,0.0040,publicable,prop_con_hipoteca
+2015-2025,Tenencia,prop_con_hipoteca,sobre30,puntos porcentuales,15.8271,6.1467,-9.6804,-11.6011,-7.8600,0.0040,publicable,prop_con_hipoteca
+2015-2025,Tenencia,prop_con_hipoteca,cae_bajo_umbral,puntos porcentuales,9.6033,7.2969,-2.3064,-3.5951,-0.6725,0.0080,publicable,prop_con_hipoteca
+2015-2025,Tenencia,prop_con_hipoteca,pobreza_antes,puntos porcentuales,17.2412,12.9122,-4.3290,-6.9665,-2.1879,0.0040,publicable,prop_con_hipoteca
+2015-2025,Tenencia,prop_con_hipoteca,pobreza_despues,puntos porcentuales,26.8445,20.2091,-6.6354,-9.3010,-3.9734,0.0040,publicable,prop_con_hipoteca
+2015-2025,Tenencia,prop_con_hipoteca,esfuerzo_medio,puntos porcentuales,21.4196,16.2109,-5.2088,-6.2470,-4.3120,0.0040,publicable,prop_con_hipoteca
+2015-2025,Tenencia,alquiler_mercado,sobre40,puntos porcentuales,43.3259,26.7965,-16.5294,-20.9563,-11.5257,0.0040,publicable,alquiler_mercado
+2015-2025,Tenencia,alquiler_mercado,sobre30,puntos porcentuales,63.4646,44.0162,-19.4484,-24.4301,-14.4070,0.0040,publicable,alquiler_mercado
+2015-2025,Tenencia,alquiler_mercado,cae_bajo_umbral,puntos porcentuales,22.4527,23.9892,1.5366,-3.3610,5.7190,0.5230,publicable,alquiler_mercado
+2015-2025,Tenencia,alquiler_mercado,pobreza_antes,puntos porcentuales,38.5945,32.7774,-5.8171,-10.9421,-0.6586,0.0359,publicable,alquiler_mercado
+2015-2025,Tenencia,alquiler_mercado,pobreza_despues,puntos porcentuales,61.0472,56.7666,-4.2805,-8.9817,0.5478,0.0878,publicable,alquiler_mercado
+2015-2025,Tenencia,alquiler_mercado,esfuerzo_medio,puntos porcentuales,48.7309,38.9999,-9.7310,-12.6254,-6.7236,0.0040,publicable,alquiler_mercado
+2015-2025,Tenencia,alquiler_reducido_cesion,sobre40,puntos porcentuales,9.9365,8.4417,-1.4948,-4.3690,1.3067,0.2994,publicable,alquiler_reducido_cesion
+2015-2025,Tenencia,alquiler_reducido_cesion,sobre30,puntos porcentuales,16.9100,15.9700,-0.9399,-4.8482,2.6731,0.6946,publicable,alquiler_reducido_cesion
+2015-2025,Tenencia,alquiler_reducido_cesion,cae_bajo_umbral,puntos porcentuales,9.2725,9.6398,0.3672,-2.6758,3.2602,0.7465,publicable,alquiler_reducido_cesion
+2015-2025,Tenencia,alquiler_reducido_cesion,pobreza_antes,puntos porcentuales,38.4309,34.6182,-3.8127,-9.5540,0.9967,0.1238,publicable,alquiler_reducido_cesion
+2015-2025,Tenencia,alquiler_reducido_cesion,pobreza_despues,puntos porcentuales,47.7034,44.2579,-3.4454,-9.0189,1.5247,0.1836,publicable,alquiler_reducido_cesion
+2015-2025,Tenencia,alquiler_reducido_cesion,esfuerzo_medio,puntos porcentuales,19.5620,19.5071,-0.0549,-2.0510,1.8639,0.9701,publicable,alquiler_reducido_cesion
+2015-2025,Nacionalidad,Espana,sobre40,puntos porcentuales,7.5398,4.6487,-2.8911,-3.6191,-2.1364,0.0040,publicable,Espana
+2015-2025,Nacionalidad,Espana,sobre30,puntos porcentuales,13.5093,8.1294,-5.3800,-6.2688,-4.4254,0.0040,publicable,Espana
+2015-2025,Nacionalidad,Espana,cae_bajo_umbral,puntos porcentuales,9.0541,8.0697,-0.9844,-1.8513,-0.1035,0.0200,publicable,Espana
+2015-2025,Nacionalidad,Espana,pobreza_antes,puntos porcentuales,19.5989,15.5979,-4.0010,-5.2196,-2.9464,0.0040,publicable,Espana
+2015-2025,Nacionalidad,Espana,pobreza_despues,puntos porcentuales,28.6530,23.6676,-4.9854,-6.1735,-3.8776,0.0040,publicable,Espana
+2015-2025,Nacionalidad,Espana,esfuerzo_medio,puntos porcentuales,19.1406,15.8771,-3.2634,-3.8336,-2.7311,0.0040,publicable,Espana
+2015-2025,Nacionalidad,UE,sobre40,puntos porcentuales,33.1259,18.4535,-14.6724,-25.5937,-4.6844,0.0080,publicable,UE
+2015-2025,Nacionalidad,UE,sobre30,puntos porcentuales,44.0830,25.9375,-18.1455,-30.8629,-7.6090,0.0040,publicable,UE
+2015-2025,Nacionalidad,UE,cae_bajo_umbral,puntos porcentuales,17.1425,13.2213,-3.9212,-12.3961,4.6344,0.3872,publicable,UE
+2015-2025,Nacionalidad,UE,pobreza_antes,puntos porcentuales,35.7440,28.3286,-7.4154,-20.4411,4.4330,0.1437,publicable,UE
+2015-2025,Nacionalidad,UE,pobreza_despues,puntos porcentuales,52.8865,41.5499,-11.3365,-23.8652,-0.5994,0.0439,publicable,UE
+2015-2025,Nacionalidad,UE,esfuerzo_medio,puntos porcentuales,40.2471,32.4300,-7.8171,-14.9980,-1.1143,0.0240,publicable,UE
+2015-2025,Nacionalidad,Resto,sobre40,puntos porcentuales,49.1123,25.3620,-23.7503,-33.2653,-13.6949,0.0040,publicable,Resto
+2015-2025,Nacionalidad,Resto,sobre30,puntos porcentuales,65.2568,41.6747,-23.5821,-33.6473,-12.3598,0.0040,publicable,Resto
+2015-2025,Nacionalidad,Resto,cae_bajo_umbral,puntos porcentuales,20.2950,18.5870,-1.7080,-8.7733,4.7280,0.6387,publicable,Resto
+2015-2025,Nacionalidad,Resto,pobreza_antes,puntos porcentuales,62.8035,51.5092,-11.2943,-20.1271,-2.4775,0.0200,publicable,Resto
+2015-2025,Nacionalidad,Resto,pobreza_despues,puntos porcentuales,83.0985,70.0962,-13.0023,-19.5218,-6.0597,0.0040,publicable,Resto
+2015-2025,Nacionalidad,Resto,esfuerzo_medio,puntos porcentuales,53.3113,37.4224,-15.8889,-22.1267,-8.7792,0.0040,publicable,Resto
+2008-2025,Total,Espana,sobre40,puntos porcentuales,10.0831,7.1720,-2.9111,-3.8133,-1.9802,0.0040,publicable,Espana
+2008-2025,Total,Espana,sobre30,puntos porcentuales,16.2652,12.0110,-4.2541,-5.4695,-3.0143,0.0040,publicable,Espana
+2008-2025,Total,Espana,cae_bajo_umbral,puntos porcentuales,9.9286,9.2672,-0.6614,-1.6299,0.2700,0.1756,publicable,Espana
+2008-2025,Total,Espana,pobreza_antes,puntos porcentuales,20.6940,19.4681,-1.2259,-2.3965,-0.0991,0.0399,publicable,Espana
+2008-2025,Total,Espana,pobreza_despues,puntos porcentuales,30.6226,28.7353,-1.8873,-3.0916,-0.7919,0.0040,publicable,Espana
+2008-2025,Total,Espana,esfuerzo_medio,puntos porcentuales,19.7629,18.2264,-1.5365,-2.1432,-0.9755,0.0040,publicable,Espana
+2008-2025,CCAA,ES11,sobre40,puntos porcentuales,3.8189,4.6954,0.8765,-0.9615,2.6180,0.3114,publicable,Galicia
+2008-2025,CCAA,ES11,sobre30,puntos porcentuales,7.6953,7.9293,0.2340,-3.7305,3.6097,0.8543,publicable,Galicia
+2008-2025,CCAA,ES11,cae_bajo_umbral,puntos porcentuales,6.2342,7.3499,1.1157,-1.2357,3.3698,0.3673,publicable,Galicia
+2008-2025,CCAA,ES11,pobreza_antes,puntos porcentuales,21.2405,15.9519,-5.2886,-9.5302,-0.9896,0.0160,publicable,Galicia
+2008-2025,CCAA,ES11,pobreza_despues,puntos porcentuales,27.4747,23.3018,-4.1729,-8.9259,0.6183,0.0958,publicable,Galicia
+2008-2025,CCAA,ES11,esfuerzo_medio,puntos porcentuales,14.1097,15.7308,1.6212,0.0514,3.3592,0.0399,publicable,Galicia
+2008-2025,CCAA,ES12,sobre40,puntos porcentuales,4.2968,5.3556,1.0588,-1.4063,3.5348,0.3952,publicable,Asturias
+2008-2025,CCAA,ES12,sobre30,puntos porcentuales,7.2774,8.8276,1.5502,-1.5614,4.6700,0.3194,publicable,Asturias
+2008-2025,CCAA,ES12,cae_bajo_umbral,puntos porcentuales,7.9851,6.7768,-1.2083,-4.7093,2.0568,0.5269,publicable,Asturias
+2008-2025,CCAA,ES12,pobreza_antes,puntos porcentuales,13.0699,17.1685,4.0986,-0.3833,9.3883,0.0958,publicable,Asturias
+2008-2025,CCAA,ES12,pobreza_despues,puntos porcentuales,21.0551,23.9454,2.8903,-2.5713,9.2693,0.2874,publicable,Asturias
+2008-2025,CCAA,ES12,esfuerzo_medio,puntos porcentuales,15.8845,16.6547,0.7702,-1.2453,2.7495,0.3992,publicable,Asturias
+2008-2025,CCAA,ES13,sobre40,puntos porcentuales,6.0966,6.7371,0.6406,-3.7331,4.7473,0.7066,publicable,Cantabria
+2008-2025,CCAA,ES13,sobre30,puntos porcentuales,13.2825,9.8594,-3.4231,-10.5575,2.1703,0.2874,publicable,Cantabria
+2008-2025,CCAA,ES13,cae_bajo_umbral,puntos porcentuales,8.6597,10.2361,1.5764,-3.8711,6.2090,0.5469,publicable,Cantabria
+2008-2025,CCAA,ES13,pobreza_antes,puntos porcentuales,11.2331,13.8397,2.6065,-1.7238,7.4889,0.2076,publicable,Cantabria
+2008-2025,CCAA,ES13,pobreza_despues,puntos porcentuales,19.8929,24.0758,4.1829,-2.0514,9.8599,0.2076,publicable,Cantabria
+2008-2025,CCAA,ES13,esfuerzo_medio,puntos porcentuales,16.5144,17.2957,0.7813,-2.2564,3.6490,0.5469,publicable,Cantabria
+2008-2025,CCAA,ES21,sobre40,puntos porcentuales,6.2362,4.9178,-1.3184,-3.7106,1.0771,0.2874,publicable,País Vasco
+2008-2025,CCAA,ES21,sobre30,puntos porcentuales,10.6041,8.8701,-1.7339,-4.6379,1.2232,0.2754,publicable,País Vasco
+2008-2025,CCAA,ES21,cae_bajo_umbral,puntos porcentuales,6.6098,7.6928,1.0830,-1.9310,4.5906,0.5469,publicable,País Vasco
+2008-2025,CCAA,ES21,pobreza_antes,puntos porcentuales,10.1078,9.2687,-0.8392,-4.0293,2.4539,0.6387,publicable,País Vasco
+2008-2025,CCAA,ES21,pobreza_despues,puntos porcentuales,16.7176,16.9614,0.2438,-4.3071,4.6579,0.9980,publicable,País Vasco
+2008-2025,CCAA,ES21,esfuerzo_medio,puntos porcentuales,17.2160,15.8218,-1.3942,-3.5722,0.8199,0.2116,publicable,País Vasco
+2008-2025,CCAA,ES22,sobre40,puntos porcentuales,8.3020,3.4782,-4.8238,-8.8601,-1.0044,0.0080,publicable,Navarra
+2008-2025,CCAA,ES22,sobre30,puntos porcentuales,14.9312,8.4016,-6.5295,-12.6618,-0.5232,0.0359,publicable,Navarra
+2008-2025,CCAA,ES22,cae_bajo_umbral,puntos porcentuales,7.9620,8.6872,0.7252,-3.9487,5.9487,0.5908,publicable,Navarra
+2008-2025,CCAA,ES22,pobreza_antes,puntos porcentuales,5.8634,12.3393,6.4760,1.4328,11.9695,0.0240,publicable,Navarra
+2008-2025,CCAA,ES22,pobreza_despues,puntos porcentuales,13.8254,21.0265,7.2011,0.8122,13.9632,0.0319,publicable,Navarra
+2008-2025,CCAA,ES22,esfuerzo_medio,puntos porcentuales,18.4025,14.1950,-4.2075,-6.9105,-1.4293,0.0040,publicable,Navarra
+2008-2025,CCAA,ES23,sobre40,puntos porcentuales,15.8387,6.7533,-9.0854,-15.4952,-3.3472,0.0040,publicable,La Rioja
+2008-2025,CCAA,ES23,sobre30,puntos porcentuales,19.7887,9.7299,-10.0587,-16.9427,-3.9106,0.0040,publicable,La Rioja
+2008-2025,CCAA,ES23,cae_bajo_umbral,puntos porcentuales,12.5138,5.0947,-7.4191,-11.6293,-3.1235,0.0080,publicable,La Rioja
+2008-2025,CCAA,ES23,pobreza_antes,puntos porcentuales,21.3816,18.4478,-2.9338,-10.3530,3.6870,0.3952,publicable,La Rioja
+2008-2025,CCAA,ES23,pobreza_despues,puntos porcentuales,33.8954,23.5425,-10.3528,-18.1946,-3.0336,0.0040,publicable,La Rioja
+2008-2025,CCAA,ES23,esfuerzo_medio,puntos porcentuales,21.3126,16.3335,-4.9791,-7.6868,-2.2249,0.0040,publicable,La Rioja
+2008-2025,CCAA,ES24,sobre40,puntos porcentuales,7.8286,4.4088,-3.4197,-6.7196,-0.2750,0.0359,publicable,Aragón
+2008-2025,CCAA,ES24,sobre30,puntos porcentuales,14.8883,7.5941,-7.2941,-11.9590,-2.8889,0.0040,publicable,Aragón
+2008-2025,CCAA,ES24,cae_bajo_umbral,puntos porcentuales,8.6705,9.1920,0.5214,-3.3008,4.7660,0.6467,publicable,Aragón
+2008-2025,CCAA,ES24,pobreza_antes,puntos porcentuales,15.5216,13.6026,-1.9189,-7.2693,3.5724,0.5469,publicable,Aragón
+2008-2025,CCAA,ES24,pobreza_despues,puntos porcentuales,24.1921,22.7946,-1.3975,-6.9672,5.1361,0.7585,publicable,Aragón
+2008-2025,CCAA,ES24,esfuerzo_medio,puntos porcentuales,17.9697,15.9765,-1.9931,-4.2251,0.1093,0.0679,publicable,Aragón
+2008-2025,CCAA,ES30,sobre40,puntos porcentuales,13.0439,9.9050,-3.1389,-7.2015,0.3103,0.0798,publicable,Madrid
+2008-2025,CCAA,ES30,sobre30,puntos porcentuales,20.2729,16.0338,-4.2391,-8.3702,-0.2453,0.0359,publicable,Madrid
+2008-2025,CCAA,ES30,cae_bajo_umbral,puntos porcentuales,10.4717,10.5162,0.0445,-3.4763,3.7023,0.9661,publicable,Madrid
+2008-2025,CCAA,ES30,pobreza_antes,puntos porcentuales,14.9482,12.8140,-2.1342,-6.5473,1.7295,0.3074,publicable,Madrid
+2008-2025,CCAA,ES30,pobreza_despues,puntos porcentuales,25.4198,23.3302,-2.0897,-6.8820,2.1342,0.3234,publicable,Madrid
+2008-2025,CCAA,ES30,esfuerzo_medio,puntos porcentuales,21.6275,20.6094,-1.0181,-2.8593,0.7512,0.2236,publicable,Madrid
+2008-2025,CCAA,ES41,sobre40,puntos porcentuales,6.3572,7.5521,1.1949,-1.6429,4.5546,0.4112,publicable,Castilla y León
+2008-2025,CCAA,ES41,sobre30,puntos porcentuales,11.4500,11.0629,-0.3870,-3.7989,3.7645,0.8423,publicable,Castilla y León
+2008-2025,CCAA,ES41,cae_bajo_umbral,puntos porcentuales,8.0565,8.2917,0.2352,-2.9143,2.4973,0.9860,publicable,Castilla y León
+2008-2025,CCAA,ES41,pobreza_antes,puntos porcentuales,23.5552,19.7875,-3.7677,-8.3893,1.7413,0.2036,publicable,Castilla y León
+2008-2025,CCAA,ES41,pobreza_despues,puntos porcentuales,31.6116,28.0791,-3.5325,-8.3623,1.6206,0.2036,publicable,Castilla y León
+2008-2025,CCAA,ES41,esfuerzo_medio,puntos porcentuales,18.0713,16.8326,-1.2387,-3.1335,0.6067,0.1637,publicable,Castilla y León
+2008-2025,CCAA,ES42,sobre40,puntos porcentuales,9.0000,6.6717,-2.3283,-7.0607,1.2569,0.2555,publicable,Castilla-La Mancha
+2008-2025,CCAA,ES42,sobre30,puntos porcentuales,14.7467,13.8660,-0.8807,-6.0136,4.0528,0.7745,publicable,Castilla-La Mancha
+2008-2025,CCAA,ES42,cae_bajo_umbral,puntos porcentuales,11.8989,11.3036,-0.5953,-4.5909,3.1613,0.7625,publicable,Castilla-La Mancha
+2008-2025,CCAA,ES42,pobreza_antes,puntos porcentuales,29.4003,26.0255,-3.3748,-9.5438,2.7665,0.2914,publicable,Castilla-La Mancha
+2008-2025,CCAA,ES42,pobreza_despues,puntos porcentuales,41.2992,37.3291,-3.9701,-10.3326,2.1006,0.2236,publicable,Castilla-La Mancha
+2008-2025,CCAA,ES42,esfuerzo_medio,puntos porcentuales,19.0248,18.0355,-0.9893,-3.7677,1.6670,0.5389,publicable,Castilla-La Mancha
+2008-2025,CCAA,ES43,sobre40,puntos porcentuales,5.4927,4.1675,-1.3252,-4.2680,1.4365,0.4910,publicable,Extremadura
+2008-2025,CCAA,ES43,sobre30,puntos porcentuales,8.1010,7.3623,-0.7387,-4.1205,2.5780,0.7385,publicable,Extremadura
+2008-2025,CCAA,ES43,cae_bajo_umbral,puntos porcentuales,10.2453,8.0187,-2.2267,-6.3745,2.1217,0.3912,publicable,Extremadura
+2008-2025,CCAA,ES43,pobreza_antes,puntos porcentuales,37.5070,26.2926,-11.2143,-19.1621,-5.1703,0.0040,publicable,Extremadura
+2008-2025,CCAA,ES43,pobreza_despues,puntos porcentuales,47.7523,34.3113,-13.4410,-20.8732,-7.0783,0.0040,publicable,Extremadura
+2008-2025,CCAA,ES43,esfuerzo_medio,puntos porcentuales,16.1059,16.0316,-0.0742,-2.2390,2.0285,0.9900,publicable,Extremadura
+2008-2025,CCAA,ES51,sobre40,puntos porcentuales,13.7921,7.7986,-5.9935,-8.7350,-3.0356,0.0040,publicable,Cataluña
+2008-2025,CCAA,ES51,sobre30,puntos porcentuales,22.2332,14.4532,-7.7800,-11.1097,-4.0960,0.0040,publicable,Cataluña
+2008-2025,CCAA,ES51,cae_bajo_umbral,puntos porcentuales,11.8970,9.9365,-1.9605,-4.8213,0.8115,0.1277,publicable,Cataluña
+2008-2025,CCAA,ES51,pobreza_antes,puntos porcentuales,13.5458,14.2460,0.7002,-2.6243,3.8707,0.6507,publicable,Cataluña
+2008-2025,CCAA,ES51,pobreza_despues,puntos porcentuales,25.4428,24.1825,-1.2603,-5.1928,2.5012,0.4671,publicable,Cataluña
+2008-2025,CCAA,ES51,esfuerzo_medio,puntos porcentuales,22.7534,19.5722,-3.1812,-5.0618,-1.4063,0.0040,publicable,Cataluña
+2008-2025,CCAA,ES52,sobre40,puntos porcentuales,10.5448,8.4911,-2.0537,-6.4722,1.5167,0.3074,publicable,Comunitat Valenciana
+2008-2025,CCAA,ES52,sobre30,puntos porcentuales,17.5580,14.1673,-3.3907,-8.1657,1.2718,0.1756,publicable,Comunitat Valenciana
+2008-2025,CCAA,ES52,cae_bajo_umbral,puntos porcentuales,10.5747,8.8929,-1.6818,-5.8516,2.0026,0.3673,publicable,Comunitat Valenciana
+2008-2025,CCAA,ES52,pobreza_antes,puntos porcentuales,22.1055,25.9204,3.8149,-1.2346,9.1329,0.1557,publicable,Comunitat Valenciana
+2008-2025,CCAA,ES52,pobreza_despues,puntos porcentuales,32.6802,34.8133,2.1331,-2.9414,7.9286,0.3633,publicable,Comunitat Valenciana
+2008-2025,CCAA,ES52,esfuerzo_medio,puntos porcentuales,19.4555,19.9612,0.5057,-1.5886,2.7098,0.6188,publicable,Comunitat Valenciana
+2008-2025,CCAA,ES53,sobre40,puntos porcentuales,16.2122,6.3753,-9.8369,-15.8514,-4.2634,0.0040,publicable,Illes Balears
+2008-2025,CCAA,ES53,sobre30,puntos porcentuales,26.0567,11.3117,-14.7451,-22.0452,-7.7088,0.0040,publicable,Illes Balears
+2008-2025,CCAA,ES53,cae_bajo_umbral,puntos porcentuales,17.4995,10.0244,-7.4751,-15.0149,-0.6377,0.0279,publicable,Illes Balears
+2008-2025,CCAA,ES53,pobreza_antes,puntos porcentuales,14.3946,11.1695,-3.2250,-9.8109,3.5172,0.3393,publicable,Illes Balears
+2008-2025,CCAA,ES53,pobreza_despues,puntos porcentuales,31.8940,21.1939,-10.7001,-19.9005,-2.8113,0.0120,publicable,Illes Balears
+2008-2025,CCAA,ES53,esfuerzo_medio,puntos porcentuales,27.8787,18.7764,-9.1023,-13.3662,-4.8632,0.0040,publicable,Illes Balears
+2008-2025,CCAA,ES61,sobre40,puntos porcentuales,9.3332,6.9502,-2.3830,-4.6888,0.0570,0.0599,publicable,Andalucía
+2008-2025,CCAA,ES61,sobre30,puntos porcentuales,14.5345,10.3653,-4.1692,-6.7439,-1.1833,0.0080,publicable,Andalucía
+2008-2025,CCAA,ES61,cae_bajo_umbral,puntos porcentuales,9.9452,9.2995,-0.6457,-3.0803,1.5018,0.6667,publicable,Andalucía
+2008-2025,CCAA,ES61,pobreza_antes,puntos porcentuales,29.3033,27.7411,-1.5622,-5.3996,1.9671,0.4032,publicable,Andalucía
+2008-2025,CCAA,ES61,pobreza_despues,puntos porcentuales,39.2484,37.0406,-2.2078,-5.8875,1.3000,0.2435,publicable,Andalucía
+2008-2025,CCAA,ES61,esfuerzo_medio,puntos porcentuales,19.4649,17.8521,-1.6128,-3.3430,0.0300,0.0639,publicable,Andalucía
+2008-2025,CCAA,ES62,sobre40,puntos porcentuales,10.7194,6.7696,-3.9498,-8.8510,0.1078,0.0639,publicable,Murcia
+2008-2025,CCAA,ES62,sobre30,puntos porcentuales,16.2806,11.0947,-5.1859,-11.5748,-0.0096,0.0559,publicable,Murcia
+2008-2025,CCAA,ES62,cae_bajo_umbral,puntos porcentuales,5.8390,10.2307,4.3917,1.1344,7.8103,0.0120,publicable,Murcia
+2008-2025,CCAA,ES62,pobreza_antes,puntos porcentuales,26.0502,26.6479,0.5977,-6.1243,6.6595,0.8303,publicable,Murcia
+2008-2025,CCAA,ES62,pobreza_despues,puntos porcentuales,31.8892,36.8786,4.9894,-1.6191,11.0497,0.1277,publicable,Murcia
+2008-2025,CCAA,ES62,esfuerzo_medio,puntos porcentuales,19.6649,17.8189,-1.8460,-4.7226,0.8429,0.1677,publicable,Murcia
+2008-2025,CCAA,ES63,sobre40,puntos porcentuales,7.3123,7.3139,0.0016,-7.0702,6.6216,0.9820,suprimida,Ceuta
+2008-2025,CCAA,ES63,sobre30,puntos porcentuales,10.7050,9.9231,-0.7820,-9.2772,7.4736,0.8144,publicable,Ceuta
+2008-2025,CCAA,ES63,cae_bajo_umbral,puntos porcentuales,4.1240,5.8302,1.7062,-2.8003,7.3652,0.4551,suprimida,Ceuta
+2008-2025,CCAA,ES63,pobreza_antes,puntos porcentuales,49.6210,37.3371,-12.2839,-31.5860,6.9582,0.2196,publicable,Ceuta
+2008-2025,CCAA,ES63,pobreza_despues,puntos porcentuales,53.7450,43.1674,-10.5777,-30.3013,7.5975,0.2874,publicable,Ceuta
+2008-2025,CCAA,ES63,esfuerzo_medio,puntos porcentuales,18.6000,19.4592,0.8592,-5.0474,6.2275,0.8024,publicable,Ceuta
+2008-2025,CCAA,ES64,sobre40,puntos porcentuales,5.7708,13.8129,8.0422,0.1125,17.3164,0.0519,suprimida,Melilla
+2008-2025,CCAA,ES64,sobre30,puntos porcentuales,8.0794,21.2530,13.1736,3.0505,23.6179,0.0120,suprimida,Melilla
+2008-2025,CCAA,ES64,cae_bajo_umbral,puntos porcentuales,4.8777,6.3992,1.5214,-6.2069,10.5759,0.7226,suprimida,Melilla
+2008-2025,CCAA,ES64,pobreza_antes,puntos porcentuales,26.0607,38.8732,12.8125,-1.3286,28.2613,0.0798,publicable,Melilla
+2008-2025,CCAA,ES64,pobreza_despues,puntos porcentuales,30.9384,45.2724,14.3339,-0.1180,28.4098,0.0559,publicable,Melilla
+2008-2025,CCAA,ES64,esfuerzo_medio,puntos porcentuales,17.3722,19.7247,2.3524,-7.2898,10.9188,0.5469,publicable,Melilla
+2008-2025,CCAA,ES70,sobre40,puntos porcentuales,12.3078,4.9627,-7.3452,-12.5340,-2.8094,0.0040,publicable,Canarias
+2008-2025,CCAA,ES70,sobre30,puntos porcentuales,17.6308,8.0889,-9.5418,-15.3870,-4.3880,0.0040,publicable,Canarias
+2008-2025,CCAA,ES70,cae_bajo_umbral,puntos porcentuales,10.0178,8.1180,-1.8998,-6.9593,3.3070,0.3752,publicable,Canarias
+2008-2025,CCAA,ES70,pobreza_antes,puntos porcentuales,27.8298,22.9119,-4.9180,-11.9447,1.9847,0.1597,publicable,Canarias
+2008-2025,CCAA,ES70,pobreza_despues,puntos porcentuales,37.8476,31.0299,-6.8177,-14.7102,0.1258,0.0599,publicable,Canarias
+2008-2025,CCAA,ES70,esfuerzo_medio,puntos porcentuales,20.6827,15.9358,-4.7470,-8.8316,-1.6695,0.0080,publicable,Canarias
+2008-2025,Quintil,Q1,sobre40,puntos porcentuales,31.8856,27.7158,-4.1698,-7.6731,-0.6145,0.0240,publicable,Q1
+2008-2025,Quintil,Q1,sobre30,puntos porcentuales,41.1253,39.5161,-1.6092,-5.4394,2.3117,0.4631,publicable,Q1
+2008-2025,Quintil,Q1,cae_bajo_umbral,puntos porcentuales,0.0000,2.6691,2.6691,0.0000,5.4945,0.0838,suprimida,Q1
+2008-2025,Quintil,Q1,pobreza_antes,puntos porcentuales,100.0000,97.3309,-2.6691,-5.4945,0.0000,0.0838,publicable,Q1
+2008-2025,Quintil,Q1,pobreza_despues,puntos porcentuales,100.0000,100.0000,0.0000,0.0000,0.0000,1.0000,publicable,Q1
+2008-2025,Quintil,Q1,esfuerzo_medio,puntos porcentuales,36.1697,38.0907,1.9210,0.0266,4.0801,0.0479,publicable,Q1
+2008-2025,Quintil,Q2,sobre40,puntos porcentuales,10.1542,5.1700,-4.9842,-7.4706,-2.9857,0.0040,publicable,Q2
+2008-2025,Quintil,Q2,sobre30,puntos porcentuales,17.5488,10.8772,-6.6716,-9.0885,-3.9739,0.0040,publicable,Q2
+2008-2025,Quintil,Q2,cae_bajo_umbral,puntos porcentuales,43.1490,40.5028,-2.6462,-7.2412,1.9843,0.2754,publicable,Q2
+2008-2025,Quintil,Q2,pobreza_antes,puntos porcentuales,3.0800,0.0000,-3.0800,-6.6995,0.0000,0.2076,suprimida,Q2
+2008-2025,Quintil,Q2,pobreza_despues,puntos porcentuales,46.2290,40.5028,-5.7262,-11.1009,-0.4160,0.0479,publicable,Q2
+2008-2025,Quintil,Q2,esfuerzo_medio,puntos porcentuales,19.5936,18.9202,-0.6734,-1.8649,0.4495,0.2196,publicable,Q2
+2008-2025,Quintil,Q3,sobre40,puntos porcentuales,4.9664,1.8773,-3.0891,-4.4325,-1.8557,0.0040,publicable,Q3
+2008-2025,Quintil,Q3,sobre30,puntos porcentuales,10.6349,5.8358,-4.7991,-6.9424,-2.7550,0.0040,publicable,Q3
+2008-2025,Quintil,Q3,cae_bajo_umbral,puntos porcentuales,5.9638,2.7662,-3.1976,-4.8471,-1.4977,0.0040,publicable,Q3
+2008-2025,Quintil,Q3,pobreza_antes,puntos porcentuales,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,suprimida,Q3
+2008-2025,Quintil,Q3,pobreza_despues,puntos porcentuales,5.9638,2.7662,-3.1976,-4.8471,-1.4977,0.0040,publicable,Q3
+2008-2025,Quintil,Q3,esfuerzo_medio,puntos porcentuales,16.5505,14.6368,-1.9138,-2.9109,-0.8816,0.0040,publicable,Q3
+2008-2025,Quintil,Q4,sobre40,puntos porcentuales,2.2947,0.8880,-1.4068,-2.1844,-0.6258,0.0080,publicable,Q4
+2008-2025,Quintil,Q4,sobre30,puntos porcentuales,7.9725,2.7602,-5.2123,-6.9949,-3.6709,0.0040,publicable,Q4
+2008-2025,Quintil,Q4,cae_bajo_umbral,puntos porcentuales,0.6110,0.3880,-0.2230,-0.7413,0.1880,0.2435,suprimida,Q4
+2008-2025,Quintil,Q4,pobreza_antes,puntos porcentuales,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,suprimida,Q4
+2008-2025,Quintil,Q4,pobreza_despues,puntos porcentuales,0.6110,0.3880,-0.2230,-0.7413,0.1880,0.2435,suprimida,Q4
+2008-2025,Quintil,Q4,esfuerzo_medio,puntos porcentuales,14.1728,11.5394,-2.6334,-3.4651,-1.8250,0.0040,publicable,Q4
+2008-2025,Quintil,Q5,sobre40,puntos porcentuales,1.0174,0.2066,-0.8108,-1.2864,-0.3884,0.0040,suprimida,Q5
+2008-2025,Quintil,Q5,sobre30,puntos porcentuales,3.9357,1.0621,-2.8736,-4.0232,-1.8778,0.0040,publicable,Q5
+2008-2025,Quintil,Q5,cae_bajo_umbral,puntos porcentuales,0.0241,0.0121,-0.0120,-0.0737,0.0357,0.9022,suprimida,Q5
+2008-2025,Quintil,Q5,pobreza_antes,puntos porcentuales,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,suprimida,Q5
+2008-2025,Quintil,Q5,pobreza_despues,puntos porcentuales,0.0241,0.0121,-0.0120,-0.0737,0.0357,0.9022,suprimida,Q5
+2008-2025,Quintil,Q5,esfuerzo_medio,puntos porcentuales,11.8915,8.4356,-3.4559,-4.1187,-2.8626,0.0040,publicable,Q5
+2008-2025,Edad,16-34,sobre40,puntos porcentuales,13.8605,12.8399,-1.0206,-4.0896,2.0549,0.5868,publicable,16-34
+2008-2025,Edad,16-34,sobre30,puntos porcentuales,23.2579,21.2598,-1.9981,-5.9110,2.5097,0.3313,publicable,16-34
+2008-2025,Edad,16-34,cae_bajo_umbral,puntos porcentuales,11.2500,13.3766,2.1267,-1.4107,5.7374,0.2595,publicable,16-34
+2008-2025,Edad,16-34,pobreza_antes,puntos porcentuales,16.7533,22.3542,5.6009,1.5614,9.4924,0.0080,publicable,16-34
+2008-2025,Edad,16-34,pobreza_despues,puntos porcentuales,28.0033,35.7308,7.7275,2.9269,12.0474,0.0040,publicable,16-34
+2008-2025,Edad,16-34,esfuerzo_medio,puntos porcentuales,24.7016,24.2284,-0.4731,-2.6197,1.4952,0.6747,publicable,16-34
+2008-2025,Edad,35-49,sobre40,puntos porcentuales,12.4827,8.5507,-3.9320,-5.9448,-2.1067,0.0040,publicable,35-49
+2008-2025,Edad,35-49,sobre30,puntos porcentuales,19.5735,15.4438,-4.1298,-6.5388,-1.7885,0.0040,publicable,35-49
+2008-2025,Edad,35-49,cae_bajo_umbral,puntos porcentuales,10.3381,10.4709,0.1327,-1.4612,1.8967,0.8982,publicable,35-49
+2008-2025,Edad,35-49,pobreza_antes,puntos porcentuales,21.1254,22.0742,0.9488,-1.7331,3.5174,0.4591,publicable,35-49
+2008-2025,Edad,35-49,pobreza_despues,puntos porcentuales,31.4636,32.5451,1.0815,-1.4440,3.6808,0.3792,publicable,35-49
+2008-2025,Edad,35-49,esfuerzo_medio,puntos porcentuales,21.6400,20.7600,-0.8801,-1.9977,0.3353,0.1876,publicable,35-49
+2008-2025,Edad,50-64,sobre40,puntos porcentuales,6.2347,5.9352,-0.2995,-2.1154,1.4988,0.7066,publicable,50-64
+2008-2025,Edad,50-64,sobre30,puntos porcentuales,10.3899,9.5520,-0.8379,-2.9568,1.2317,0.4032,publicable,50-64
+2008-2025,Edad,50-64,cae_bajo_umbral,puntos porcentuales,6.9184,7.6961,0.7777,-0.6533,2.3235,0.3114,publicable,50-64
+2008-2025,Edad,50-64,pobreza_antes,puntos porcentuales,15.4325,17.5173,2.0848,-0.0012,4.4067,0.0559,publicable,50-64
+2008-2025,Edad,50-64,pobreza_despues,puntos porcentuales,22.3509,25.2134,2.8625,0.3177,5.3547,0.0200,publicable,50-64
+2008-2025,Edad,50-64,esfuerzo_medio,puntos porcentuales,15.8985,16.3341,0.4357,-0.6454,1.4279,0.4671,publicable,50-64
+2008-2025,Edad,65+,sobre40,puntos porcentuales,5.7965,4.5571,-1.2394,-3.2136,0.4070,0.1637,publicable,65+
+2008-2025,Edad,65+,sobre30,puntos porcentuales,9.1026,6.7532,-2.3494,-4.4288,-0.5859,0.0120,publicable,65+
+2008-2025,Edad,65+,cae_bajo_umbral,puntos porcentuales,11.7567,8.0410,-3.7157,-5.5938,-1.7674,0.0040,publicable,65+
+2008-2025,Edad,65+,pobreza_antes,puntos porcentuales,31.7439,17.4008,-14.3431,-17.1062,-11.6676,0.0040,publicable,65+
+2008-2025,Edad,65+,pobreza_despues,puntos porcentuales,43.5006,25.4418,-18.0588,-20.8974,-15.5934,0.0040,publicable,65+
+2008-2025,Edad,65+,esfuerzo_medio,puntos porcentuales,16.9716,15.7722,-1.1993,-2.1796,-0.3864,0.0120,publicable,65+
+2008-2025,Tenencia,prop_sin_hipoteca,sobre40,puntos porcentuales,2.7190,1.8700,-0.8490,-1.4181,-0.3543,0.0080,publicable,prop_sin_hipoteca
+2008-2025,Tenencia,prop_sin_hipoteca,sobre30,puntos porcentuales,4.2361,2.8682,-1.3679,-2.0171,-0.6981,0.0040,publicable,prop_sin_hipoteca
+2008-2025,Tenencia,prop_sin_hipoteca,cae_bajo_umbral,puntos porcentuales,6.2014,4.8945,-1.3068,-2.2300,-0.4908,0.0040,publicable,prop_sin_hipoteca
+2008-2025,Tenencia,prop_sin_hipoteca,pobreza_antes,puntos porcentuales,21.1144,15.5793,-5.5352,-7.1010,-3.9055,0.0040,publicable,prop_sin_hipoteca
+2008-2025,Tenencia,prop_sin_hipoteca,pobreza_despues,puntos porcentuales,27.3158,20.4738,-6.8420,-8.5067,-5.1992,0.0040,publicable,prop_sin_hipoteca
+2008-2025,Tenencia,prop_sin_hipoteca,esfuerzo_medio,puntos porcentuales,12.8673,12.0004,-0.8669,-1.4625,-0.3547,0.0080,publicable,prop_sin_hipoteca
+2008-2025,Tenencia,prop_con_hipoteca,sobre40,puntos porcentuales,11.7297,3.4494,-8.2804,-10.2010,-6.6417,0.0040,publicable,prop_con_hipoteca
+2008-2025,Tenencia,prop_con_hipoteca,sobre30,puntos porcentuales,20.7193,6.1467,-14.5726,-16.8305,-12.4909,0.0040,publicable,prop_con_hipoteca
+2008-2025,Tenencia,prop_con_hipoteca,cae_bajo_umbral,puntos porcentuales,11.4680,7.2969,-4.1711,-5.8366,-2.4098,0.0040,publicable,prop_con_hipoteca
+2008-2025,Tenencia,prop_con_hipoteca,pobreza_antes,puntos porcentuales,12.0614,12.9122,0.8508,-1.2113,3.0429,0.4471,publicable,prop_con_hipoteca
+2008-2025,Tenencia,prop_con_hipoteca,pobreza_despues,puntos porcentuales,23.5294,20.2091,-3.3203,-5.7862,-0.8726,0.0200,publicable,prop_con_hipoteca
+2008-2025,Tenencia,prop_con_hipoteca,esfuerzo_medio,puntos porcentuales,23.1529,16.2109,-6.9420,-7.8053,-5.9753,0.0040,publicable,prop_con_hipoteca
+2008-2025,Tenencia,alquiler_mercado,sobre40,puntos porcentuales,38.8160,26.7965,-12.0196,-17.4960,-6.8594,0.0040,publicable,alquiler_mercado
+2008-2025,Tenencia,alquiler_mercado,sobre30,puntos porcentuales,57.3810,44.0162,-13.3648,-18.5217,-8.0537,0.0040,publicable,alquiler_mercado
+2008-2025,Tenencia,alquiler_mercado,cae_bajo_umbral,puntos porcentuales,21.7224,23.9892,2.2668,-2.8217,7.0221,0.3832,publicable,alquiler_mercado
+2008-2025,Tenencia,alquiler_mercado,pobreza_antes,puntos porcentuales,34.5719,32.7774,-1.7945,-7.7844,3.7684,0.6188,publicable,alquiler_mercado
+2008-2025,Tenencia,alquiler_mercado,pobreza_despues,puntos porcentuales,56.2944,56.7666,0.4723,-4.8819,5.6504,0.8663,publicable,alquiler_mercado
+2008-2025,Tenencia,alquiler_mercado,esfuerzo_medio,puntos porcentuales,43.1529,38.9999,-4.1530,-6.4521,-1.9481,0.0040,publicable,alquiler_mercado
+2008-2025,Tenencia,alquiler_reducido_cesion,sobre40,puntos porcentuales,7.0863,8.4417,1.3554,-1.5810,4.1872,0.3593,publicable,alquiler_reducido_cesion
+2008-2025,Tenencia,alquiler_reducido_cesion,sobre30,puntos porcentuales,12.3044,15.9700,3.6656,-0.7199,7.6419,0.0838,publicable,alquiler_reducido_cesion
+2008-2025,Tenencia,alquiler_reducido_cesion,cae_bajo_umbral,puntos porcentuales,9.3476,9.6398,0.2922,-2.0652,2.8608,0.7345,publicable,alquiler_reducido_cesion
+2008-2025,Tenencia,alquiler_reducido_cesion,pobreza_antes,puntos porcentuales,33.2034,34.6182,1.4148,-3.0370,6.6509,0.5269,publicable,alquiler_reducido_cesion
+2008-2025,Tenencia,alquiler_reducido_cesion,pobreza_despues,puntos porcentuales,42.5510,44.2579,1.7069,-2.7943,6.4000,0.4311,publicable,alquiler_reducido_cesion
+2008-2025,Tenencia,alquiler_reducido_cesion,esfuerzo_medio,puntos porcentuales,18.2732,19.5071,1.2339,-0.9387,3.4284,0.2475,publicable,alquiler_reducido_cesion
+2008-2025,Nacionalidad,Espana,sobre40,puntos porcentuales,6.7193,4.6487,-2.0706,-2.7372,-1.3723,0.0040,publicable,Espana
+2008-2025,Nacionalidad,Espana,sobre30,puntos porcentuales,11.6436,8.1294,-3.5143,-4.3972,-2.6156,0.0040,publicable,Espana
+2008-2025,Nacionalidad,Espana,cae_bajo_umbral,puntos porcentuales,8.6356,8.0697,-0.5659,-1.3912,0.3447,0.2555,publicable,Espana
+2008-2025,Nacionalidad,Espana,pobreza_antes,puntos porcentuales,18.4949,15.5979,-2.8970,-4.0937,-1.7605,0.0040,publicable,Espana
+2008-2025,Nacionalidad,Espana,pobreza_despues,puntos porcentuales,27.1305,23.6676,-3.4629,-4.6915,-2.2612,0.0040,publicable,Espana
+2008-2025,Nacionalidad,Espana,esfuerzo_medio,puntos porcentuales,17.6158,15.8771,-1.7387,-2.2707,-1.2396,0.0040,publicable,Espana
+2008-2025,Nacionalidad,UE,sobre40,puntos porcentuales,30.3585,18.4535,-11.9050,-24.2097,-0.6875,0.0479,publicable,UE
+2008-2025,Nacionalidad,UE,sobre30,puntos porcentuales,41.2152,25.9375,-15.2777,-29.5707,-2.5592,0.0200,publicable,UE
+2008-2025,Nacionalidad,UE,cae_bajo_umbral,puntos porcentuales,15.6925,13.2213,-2.4712,-11.8854,5.6095,0.5749,publicable,UE
+2008-2025,Nacionalidad,UE,pobreza_antes,puntos porcentuales,30.1521,28.3286,-1.8235,-14.5499,10.7091,0.7146,publicable,UE
+2008-2025,Nacionalidad,UE,pobreza_despues,puntos porcentuales,45.8446,41.5499,-4.2947,-18.1383,9.3009,0.4830,publicable,UE
+2008-2025,Nacionalidad,UE,esfuerzo_medio,puntos porcentuales,37.4334,32.4300,-5.0034,-11.9776,1.7989,0.1756,publicable,UE
+2008-2025,Nacionalidad,Resto,sobre40,puntos porcentuales,37.4875,25.3620,-12.1255,-19.0225,-5.1580,0.0080,publicable,Resto
+2008-2025,Nacionalidad,Resto,sobre30,puntos porcentuales,54.4455,41.6747,-12.7708,-20.1825,-4.9278,0.0040,publicable,Resto
+2008-2025,Nacionalidad,Resto,cae_bajo_umbral,puntos porcentuales,20.8328,18.5870,-2.2458,-8.9989,3.6111,0.4511,publicable,Resto
+2008-2025,Nacionalidad,Resto,pobreza_antes,puntos porcentuales,39.3020,51.5092,12.2072,4.0358,20.5835,0.0040,publicable,Resto
+2008-2025,Nacionalidad,Resto,pobreza_despues,puntos porcentuales,60.1348,70.0962,9.9614,2.5534,17.6407,0.0120,publicable,Resto
+2008-2025,Nacionalidad,Resto,esfuerzo_medio,puntos porcentuales,40.8756,37.4224,-3.4532,-6.9095,0.2736,0.0679,publicable,Resto
+2019-2025,Total,Espana,sobre40,puntos porcentuales,8.5442,7.1720,-1.3722,-2.2073,-0.4305,0.0080,publicable,Espana
+2019-2025,Total,Espana,sobre30,puntos porcentuales,13.9706,12.0110,-1.9596,-3.1575,-0.8473,0.0040,publicable,Espana
+2019-2025,Total,Espana,cae_bajo_umbral,puntos porcentuales,9.7092,9.2672,-0.4419,-1.4575,0.5550,0.3952,publicable,Espana
+2019-2025,Total,Espana,pobreza_antes,puntos porcentuales,20.6343,19.4681,-1.1663,-2.4252,0.0305,0.0599,publicable,Espana
+2019-2025,Total,Espana,pobreza_despues,puntos porcentuales,30.3435,28.7353,-1.6082,-2.9496,-0.4337,0.0040,publicable,Espana
+2019-2025,Total,Espana,esfuerzo_medio,puntos porcentuales,19.0206,18.2264,-0.7942,-1.3624,-0.1890,0.0200,publicable,Espana
+2019-2025,CCAA,ES11,sobre40,puntos porcentuales,5.0672,4.6954,-0.3718,-2.4285,1.7973,0.7146,publicable,Galicia
+2019-2025,CCAA,ES11,sobre30,puntos porcentuales,8.2261,7.9293,-0.2968,-3.0491,2.4883,0.8343,publicable,Galicia
+2019-2025,CCAA,ES11,cae_bajo_umbral,puntos porcentuales,7.7525,7.3499,-0.4026,-3.1976,2.6101,0.9142,publicable,Galicia
+2019-2025,CCAA,ES11,pobreza_antes,puntos porcentuales,20.0237,15.9519,-4.0719,-8.3496,-0.5219,0.0279,publicable,Galicia
+2019-2025,CCAA,ES11,pobreza_despues,puntos porcentuales,27.7762,23.3018,-4.4744,-9.8537,0.1278,0.0639,publicable,Galicia
+2019-2025,CCAA,ES11,esfuerzo_medio,puntos porcentuales,15.9437,15.7308,-0.2128,-2.1685,1.6247,0.8583,publicable,Galicia
+2019-2025,CCAA,ES12,sobre40,puntos porcentuales,11.4149,5.3556,-6.0593,-10.7629,-1.1936,0.0120,publicable,Asturias
+2019-2025,CCAA,ES12,sobre30,puntos porcentuales,15.7383,8.8276,-6.9107,-11.8386,-1.5283,0.0080,publicable,Asturias
+2019-2025,CCAA,ES12,cae_bajo_umbral,puntos porcentuales,7.5204,6.7768,-0.7436,-4.1474,2.1130,0.6547,publicable,Asturias
+2019-2025,CCAA,ES12,pobreza_antes,puntos porcentuales,20.7232,17.1685,-3.5547,-10.0088,3.0598,0.3353,publicable,Asturias
+2019-2025,CCAA,ES12,pobreza_despues,puntos porcentuales,28.2436,23.9454,-4.2982,-11.1055,2.8395,0.2555,publicable,Asturias
+2019-2025,CCAA,ES12,esfuerzo_medio,puntos porcentuales,20.4417,16.6547,-3.7870,-6.7850,-0.1144,0.0439,publicable,Asturias
+2019-2025,CCAA,ES13,sobre40,puntos porcentuales,4.8591,6.7371,1.8780,-2.0907,5.7117,0.2954,suprimida,Cantabria
+2019-2025,CCAA,ES13,sobre30,puntos porcentuales,9.6676,9.8594,0.1918,-4.6085,4.8268,0.8343,publicable,Cantabria
+2019-2025,CCAA,ES13,cae_bajo_umbral,puntos porcentuales,6.1601,10.2361,4.0759,0.5409,7.4565,0.0279,publicable,Cantabria
+2019-2025,CCAA,ES13,pobreza_antes,puntos porcentuales,17.1129,13.8397,-3.2732,-8.6564,2.6666,0.2675,publicable,Cantabria
+2019-2025,CCAA,ES13,pobreza_despues,puntos porcentuales,23.2730,24.0758,0.8027,-5.8368,7.1910,0.7944,publicable,Cantabria
+2019-2025,CCAA,ES13,esfuerzo_medio,puntos porcentuales,17.2629,17.2957,0.0328,-3.3823,3.2415,0.9222,publicable,Cantabria
+2019-2025,CCAA,ES21,sobre40,puntos porcentuales,6.2770,4.9178,-1.3592,-4.0405,1.0086,0.2515,publicable,País Vasco
+2019-2025,CCAA,ES21,sobre30,puntos porcentuales,9.4672,8.8701,-0.5970,-4.3142,2.5146,0.7146,publicable,País Vasco
+2019-2025,CCAA,ES21,cae_bajo_umbral,puntos porcentuales,6.4958,7.6928,1.1969,-2.5989,4.0906,0.6946,publicable,País Vasco
+2019-2025,CCAA,ES21,pobreza_antes,puntos porcentuales,10.0017,9.2687,-0.7330,-4.1451,2.8326,0.7186,publicable,País Vasco
+2019-2025,CCAA,ES21,pobreza_despues,puntos porcentuales,16.4975,16.9614,0.4639,-4.4214,4.3390,0.9741,publicable,País Vasco
+2019-2025,CCAA,ES21,esfuerzo_medio,puntos porcentuales,15.8172,15.8218,0.0046,-1.9653,1.9678,0.9820,publicable,País Vasco
+2019-2025,CCAA,ES22,sobre40,puntos porcentuales,4.9085,3.4782,-1.4304,-5.1189,1.5902,0.4232,suprimida,Navarra
+2019-2025,CCAA,ES22,sobre30,puntos porcentuales,8.7547,8.4016,-0.3531,-6.1844,5.7034,0.9621,publicable,Navarra
+2019-2025,CCAA,ES22,cae_bajo_umbral,puntos porcentuales,4.4687,8.6872,4.2186,-0.3065,8.6180,0.0679,suprimida,Navarra
+2019-2025,CCAA,ES22,pobreza_antes,puntos porcentuales,7.7485,12.3393,4.5908,-0.5160,10.9722,0.0918,publicable,Navarra
+2019-2025,CCAA,ES22,pobreza_despues,puntos porcentuales,12.2171,21.0265,8.8094,2.8058,16.2598,0.0120,publicable,Navarra
+2019-2025,CCAA,ES22,esfuerzo_medio,puntos porcentuales,14.6182,14.1950,-0.4232,-2.8556,1.9379,0.7425,publicable,Navarra
+2019-2025,CCAA,ES23,sobre40,puntos porcentuales,5.8468,6.7533,0.9064,-3.4634,5.5385,0.7465,publicable,La Rioja
+2019-2025,CCAA,ES23,sobre30,puntos porcentuales,8.2782,9.7299,1.4517,-3.7849,6.3008,0.6028,publicable,La Rioja
+2019-2025,CCAA,ES23,cae_bajo_umbral,puntos porcentuales,9.4018,5.0947,-4.3071,-9.0833,0.0102,0.0559,publicable,La Rioja
+2019-2025,CCAA,ES23,pobreza_antes,puntos porcentuales,12.3297,18.4478,6.1181,-1.1248,12.2112,0.0878,publicable,La Rioja
+2019-2025,CCAA,ES23,pobreza_despues,puntos porcentuales,21.7315,23.5425,1.8110,-6.6222,8.6197,0.6188,publicable,La Rioja
+2019-2025,CCAA,ES23,esfuerzo_medio,puntos porcentuales,17.6825,16.3335,-1.3490,-4.1386,1.3865,0.3313,publicable,La Rioja
+2019-2025,CCAA,ES24,sobre40,puntos porcentuales,4.9472,4.4088,-0.5383,-4.7672,2.8856,0.8383,suprimida,Aragón
+2019-2025,CCAA,ES24,sobre30,puntos porcentuales,8.4262,7.5941,-0.8320,-5.4942,3.7466,0.7625,publicable,Aragón
+2019-2025,CCAA,ES24,cae_bajo_umbral,puntos porcentuales,4.7965,9.1920,4.3955,0.8640,7.9648,0.0160,publicable,Aragón
+2019-2025,CCAA,ES24,pobreza_antes,puntos porcentuales,17.9450,13.6026,-4.3423,-10.6776,1.9670,0.2395,publicable,Aragón
+2019-2025,CCAA,ES24,pobreza_despues,puntos porcentuales,22.7415,22.7946,0.0531,-6.2730,6.4131,0.9461,publicable,Aragón
+2019-2025,CCAA,ES24,esfuerzo_medio,puntos porcentuales,16.3674,15.9765,-0.3909,-2.7523,1.9780,0.8503,publicable,Aragón
+2019-2025,CCAA,ES30,sobre40,puntos porcentuales,12.9880,9.9050,-3.0829,-6.2231,0.1453,0.0719,publicable,Madrid
+2019-2025,CCAA,ES30,sobre30,puntos porcentuales,18.7657,16.0338,-2.7319,-6.1019,1.1563,0.1597,publicable,Madrid
+2019-2025,CCAA,ES30,cae_bajo_umbral,puntos porcentuales,11.3414,10.5162,-0.8252,-3.9666,2.2805,0.6347,publicable,Madrid
+2019-2025,CCAA,ES30,pobreza_antes,puntos porcentuales,14.9457,12.8140,-2.1317,-6.0577,1.6041,0.2395,publicable,Madrid
+2019-2025,CCAA,ES30,pobreza_despues,puntos porcentuales,26.2871,23.3302,-2.9569,-7.5980,1.2012,0.1557,publicable,Madrid
+2019-2025,CCAA,ES30,esfuerzo_medio,puntos porcentuales,21.8740,20.6094,-1.2647,-3.0876,0.5335,0.1677,publicable,Madrid
+2019-2025,CCAA,ES41,sobre40,puntos porcentuales,3.8709,7.5521,3.6812,1.0693,6.4308,0.0040,publicable,Castilla y León
+2019-2025,CCAA,ES41,sobre30,puntos porcentuales,11.7996,11.0629,-0.7366,-4.8429,2.9230,0.6946,publicable,Castilla y León
+2019-2025,CCAA,ES41,cae_bajo_umbral,puntos porcentuales,10.1116,8.2917,-1.8199,-4.5934,0.9829,0.2196,publicable,Castilla y León
+2019-2025,CCAA,ES41,pobreza_antes,puntos porcentuales,12.9542,19.7875,6.8333,2.5731,10.5834,0.0040,publicable,Castilla y León
+2019-2025,CCAA,ES41,pobreza_despues,puntos porcentuales,23.0658,28.0791,5.0133,0.0605,9.4250,0.0559,publicable,Castilla y León
+2019-2025,CCAA,ES41,esfuerzo_medio,puntos porcentuales,17.0637,16.8326,-0.2311,-1.9309,1.3323,0.7345,publicable,Castilla y León
+2019-2025,CCAA,ES42,sobre40,puntos porcentuales,7.3865,6.6717,-0.7148,-4.4275,2.5229,0.7265,publicable,Castilla-La Mancha
+2019-2025,CCAA,ES42,sobre30,puntos porcentuales,13.5833,13.8660,0.2827,-5.2070,5.4323,0.9142,publicable,Castilla-La Mancha
+2019-2025,CCAA,ES42,cae_bajo_umbral,puntos porcentuales,11.9721,11.3036,-0.6684,-4.4413,4.3303,0.9860,publicable,Castilla-La Mancha
+2019-2025,CCAA,ES42,pobreza_antes,puntos porcentuales,26.1505,26.0255,-0.1250,-7.6096,6.0403,0.7705,publicable,Castilla-La Mancha
+2019-2025,CCAA,ES42,pobreza_despues,puntos porcentuales,38.1226,37.3291,-0.7935,-7.4968,5.6975,0.7505,publicable,Castilla-La Mancha
+2019-2025,CCAA,ES42,esfuerzo_medio,puntos porcentuales,18.5499,18.0355,-0.5144,-3.0325,1.9640,0.7265,publicable,Castilla-La Mancha
+2019-2025,CCAA,ES43,sobre40,puntos porcentuales,6.3828,4.1675,-2.2153,-5.1275,0.8411,0.1557,publicable,Extremadura
+2019-2025,CCAA,ES43,sobre30,puntos porcentuales,9.9221,7.3623,-2.5598,-5.7004,0.9074,0.1637,publicable,Extremadura
+2019-2025,CCAA,ES43,cae_bajo_umbral,puntos porcentuales,12.3153,8.0187,-4.2966,-8.3701,-0.0211,0.0479,publicable,Extremadura
+2019-2025,CCAA,ES43,pobreza_antes,puntos porcentuales,31.5008,26.2926,-5.2081,-12.8000,0.4047,0.0758,publicable,Extremadura
+2019-2025,CCAA,ES43,pobreza_despues,puntos porcentuales,43.8160,34.3113,-9.5047,-17.3424,-3.1975,0.0080,publicable,Extremadura
+2019-2025,CCAA,ES43,esfuerzo_medio,puntos porcentuales,16.2376,16.0316,-0.2060,-1.8877,1.5652,0.8583,publicable,Extremadura
+2019-2025,CCAA,ES51,sobre40,puntos porcentuales,10.2848,7.7986,-2.4862,-5.1187,-0.0903,0.0399,publicable,Cataluña
+2019-2025,CCAA,ES51,sobre30,puntos porcentuales,16.4413,14.4532,-1.9881,-4.8895,0.9483,0.2395,publicable,Cataluña
+2019-2025,CCAA,ES51,cae_bajo_umbral,puntos porcentuales,9.1739,9.9365,0.7626,-2.0960,2.9182,0.7425,publicable,Cataluña
+2019-2025,CCAA,ES51,pobreza_antes,puntos porcentuales,13.7566,14.2460,0.4894,-2.6389,3.4584,0.7226,publicable,Cataluña
+2019-2025,CCAA,ES51,pobreza_despues,puntos porcentuales,22.9305,24.1825,1.2519,-2.8239,4.1634,0.5908,publicable,Cataluña
+2019-2025,CCAA,ES51,esfuerzo_medio,puntos porcentuales,20.4379,19.5722,-0.8657,-2.6882,0.7349,0.3273,publicable,Cataluña
+2019-2025,CCAA,ES52,sobre40,puntos porcentuales,7.0360,8.4911,1.4552,-1.0713,3.8987,0.2515,publicable,Comunitat Valenciana
+2019-2025,CCAA,ES52,sobre30,puntos porcentuales,13.3066,14.1673,0.8606,-3.5946,5.1643,0.6786,publicable,Comunitat Valenciana
+2019-2025,CCAA,ES52,cae_bajo_umbral,puntos porcentuales,8.9803,8.8929,-0.0874,-2.8189,2.9651,0.9780,publicable,Comunitat Valenciana
+2019-2025,CCAA,ES52,pobreza_antes,puntos porcentuales,23.7134,25.9204,2.2070,-2.6603,7.0988,0.3593,publicable,Comunitat Valenciana
+2019-2025,CCAA,ES52,pobreza_despues,puntos porcentuales,32.6937,34.8133,2.1196,-2.4347,7.2991,0.3633,publicable,Comunitat Valenciana
+2019-2025,CCAA,ES52,esfuerzo_medio,puntos porcentuales,18.4355,19.9612,1.5257,-0.5307,3.5175,0.1158,publicable,Comunitat Valenciana
+2019-2025,CCAA,ES53,sobre40,puntos porcentuales,11.6768,6.3753,-5.3015,-10.6776,0.2084,0.0679,publicable,Illes Balears
+2019-2025,CCAA,ES53,sobre30,puntos porcentuales,22.5867,11.3117,-11.2750,-18.7910,-3.7667,0.0040,publicable,Illes Balears
+2019-2025,CCAA,ES53,cae_bajo_umbral,puntos porcentuales,12.9349,10.0244,-2.9105,-9.9312,4.1131,0.4431,publicable,Illes Balears
+2019-2025,CCAA,ES53,pobreza_antes,puntos porcentuales,12.0599,11.1695,-0.8904,-9.6540,7.0108,0.6547,publicable,Illes Balears
+2019-2025,CCAA,ES53,pobreza_despues,puntos porcentuales,24.9948,21.1939,-3.8009,-14.0856,5.5409,0.3792,publicable,Illes Balears
+2019-2025,CCAA,ES53,esfuerzo_medio,puntos porcentuales,23.0421,18.7764,-4.2657,-9.5119,0.2410,0.0719,publicable,Illes Balears
+2019-2025,CCAA,ES61,sobre40,puntos porcentuales,7.9686,6.9502,-1.0184,-3.2339,1.3889,0.4511,publicable,Andalucía
+2019-2025,CCAA,ES61,sobre30,puntos porcentuales,13.0839,10.3653,-2.7186,-5.5847,0.2270,0.0798,publicable,Andalucía
+2019-2025,CCAA,ES61,cae_bajo_umbral,puntos porcentuales,10.5427,9.2995,-1.2432,-3.6186,1.0377,0.3114,publicable,Andalucía
+2019-2025,CCAA,ES61,pobreza_antes,puntos porcentuales,31.2984,27.7411,-3.5574,-7.6115,0.2167,0.0599,publicable,Andalucía
+2019-2025,CCAA,ES61,pobreza_despues,puntos porcentuales,41.8411,37.0406,-4.8005,-8.7242,-1.3152,0.0080,publicable,Andalucía
+2019-2025,CCAA,ES61,esfuerzo_medio,puntos porcentuales,19.0717,17.8521,-1.2196,-2.8662,0.4955,0.1637,publicable,Andalucía
+2019-2025,CCAA,ES62,sobre40,puntos porcentuales,5.7120,6.7696,1.0576,-1.9924,4.3464,0.5150,publicable,Murcia
+2019-2025,CCAA,ES62,sobre30,puntos porcentuales,10.6130,11.0947,0.4817,-3.8943,4.7851,0.7505,publicable,Murcia
+2019-2025,CCAA,ES62,cae_bajo_umbral,puntos porcentuales,14.7592,10.2307,-4.5285,-8.9408,0.6889,0.0998,publicable,Murcia
+2019-2025,CCAA,ES62,pobreza_antes,puntos porcentuales,27.7344,26.6479,-1.0865,-9.4495,5.1784,0.7425,publicable,Murcia
+2019-2025,CCAA,ES62,pobreza_despues,puntos porcentuales,42.4936,36.8786,-5.6150,-12.4148,1.6199,0.1517,publicable,Murcia
+2019-2025,CCAA,ES62,esfuerzo_medio,puntos porcentuales,17.9313,17.8189,-0.1124,-2.3207,2.2566,0.9501,publicable,Murcia
+2019-2025,CCAA,ES63,sobre40,puntos porcentuales,12.4210,7.3139,-5.1071,-13.3366,2.5263,0.2635,publicable,Ceuta
+2019-2025,CCAA,ES63,sobre30,puntos porcentuales,19.1834,9.9231,-9.2603,-19.2876,-0.3740,0.0479,publicable,Ceuta
+2019-2025,CCAA,ES63,cae_bajo_umbral,puntos porcentuales,5.4326,5.8302,0.3976,-4.9347,6.1741,0.8623,suprimida,Ceuta
+2019-2025,CCAA,ES63,pobreza_antes,puntos porcentuales,40.6970,37.3371,-3.3599,-21.2313,13.2543,0.6786,publicable,Ceuta
+2019-2025,CCAA,ES63,pobreza_despues,puntos porcentuales,46.1296,43.1674,-2.9623,-20.2290,14.5488,0.6866,publicable,Ceuta
+2019-2025,CCAA,ES63,esfuerzo_medio,puntos porcentuales,20.7436,19.4592,-1.2844,-7.1954,5.0856,0.6906,publicable,Ceuta
+2019-2025,CCAA,ES64,sobre40,puntos porcentuales,12.7650,13.8129,1.0479,-8.7553,10.9737,0.8184,publicable,Melilla
+2019-2025,CCAA,ES64,sobre30,puntos porcentuales,18.0021,21.2530,3.2509,-7.2266,14.7707,0.5389,publicable,Melilla
+2019-2025,CCAA,ES64,cae_bajo_umbral,puntos porcentuales,1.9380,6.3992,4.4612,-1.5129,13.0581,0.1956,suprimida,Melilla
+2019-2025,CCAA,ES64,pobreza_antes,puntos porcentuales,35.6693,38.8732,3.2039,-9.8398,16.9984,0.6267,publicable,Melilla
+2019-2025,CCAA,ES64,pobreza_despues,puntos porcentuales,37.6073,45.2724,7.6651,-5.6749,21.3982,0.2635,publicable,Melilla
+2019-2025,CCAA,ES64,esfuerzo_medio,puntos porcentuales,18.4505,19.7247,1.2741,-4.0114,7.1584,0.5709,publicable,Melilla
+2019-2025,CCAA,ES70,sobre40,puntos porcentuales,11.6380,4.9627,-6.6754,-14.3633,-0.5580,0.0279,publicable,Canarias
+2019-2025,CCAA,ES70,sobre30,puntos porcentuales,15.3608,8.0889,-7.2719,-14.6434,-0.7858,0.0359,publicable,Canarias
+2019-2025,CCAA,ES70,cae_bajo_umbral,puntos porcentuales,8.6405,8.1180,-0.5225,-6.0196,5.0670,0.9062,publicable,Canarias
+2019-2025,CCAA,ES70,pobreza_antes,puntos porcentuales,28.4690,22.9119,-5.5571,-15.2778,2.5505,0.2196,publicable,Canarias
+2019-2025,CCAA,ES70,pobreza_despues,puntos porcentuales,37.1095,31.0299,-6.0796,-15.4687,2.9847,0.1677,publicable,Canarias
+2019-2025,CCAA,ES70,esfuerzo_medio,puntos porcentuales,19.3970,15.9358,-3.4612,-7.7480,0.0927,0.0679,publicable,Canarias
+2019-2025,Quintil,Q1,sobre40,puntos porcentuales,32.4789,27.7158,-4.7631,-8.2786,-0.9023,0.0279,publicable,Q1
+2019-2025,Quintil,Q1,sobre30,puntos porcentuales,44.6949,39.5161,-5.1788,-9.2228,-1.2885,0.0279,publicable,Q1
+2019-2025,Quintil,Q1,cae_bajo_umbral,puntos porcentuales,0.0000,2.6691,2.6691,0.0000,5.4945,0.0719,suprimida,Q1
+2019-2025,Quintil,Q1,pobreza_antes,puntos porcentuales,100.0000,97.3309,-2.6691,-5.4945,0.0000,0.0719,publicable,Q1
+2019-2025,Quintil,Q1,pobreza_despues,puntos porcentuales,100.0000,100.0000,0.0000,0.0000,0.0000,1.0000,publicable,Q1
+2019-2025,Quintil,Q1,esfuerzo_medio,puntos porcentuales,41.9917,38.0907,-3.9009,-5.8129,-1.7703,0.0120,publicable,Q1
+2019-2025,Quintil,Q2,sobre40,puntos porcentuales,6.3901,5.1700,-1.2201,-2.7193,0.2955,0.1198,publicable,Q2
+2019-2025,Quintil,Q2,sobre30,puntos porcentuales,14.5055,10.8772,-3.6283,-5.7336,-1.2049,0.0080,publicable,Q2
+2019-2025,Quintil,Q2,cae_bajo_umbral,puntos porcentuales,45.3615,40.5028,-4.8587,-9.8499,0.1700,0.0679,publicable,Q2
+2019-2025,Quintil,Q2,pobreza_antes,puntos porcentuales,3.1495,0.0000,-3.1495,-8.1364,-0.3723,0.0319,suprimida,Q2
+2019-2025,Quintil,Q2,pobreza_despues,puntos porcentuales,48.5110,40.5028,-8.0082,-14.2176,-2.4565,0.0160,publicable,Q2
+2019-2025,Quintil,Q2,esfuerzo_medio,puntos porcentuales,19.7182,18.9202,-0.7980,-1.9440,0.2425,0.1517,publicable,Q2
+2019-2025,Quintil,Q3,sobre40,puntos porcentuales,2.4961,1.8773,-0.6188,-1.5554,0.2365,0.1677,publicable,Q3
+2019-2025,Quintil,Q3,sobre30,puntos porcentuales,6.6745,5.8358,-0.8386,-2.5619,0.7736,0.3353,publicable,Q3
+2019-2025,Quintil,Q3,cae_bajo_umbral,puntos porcentuales,3.0706,2.7662,-0.3044,-1.4477,0.7453,0.5509,publicable,Q3
+2019-2025,Quintil,Q3,pobreza_antes,puntos porcentuales,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,suprimida,Q3
+2019-2025,Quintil,Q3,pobreza_despues,puntos porcentuales,3.0706,2.7662,-0.3044,-1.4477,0.7453,0.5509,publicable,Q3
+2019-2025,Quintil,Q3,esfuerzo_medio,puntos porcentuales,14.9376,14.6368,-0.3008,-1.1742,0.4302,0.4591,publicable,Q3
+2019-2025,Quintil,Q4,sobre40,puntos porcentuales,1.2202,0.8880,-0.3322,-0.9094,0.2526,0.2954,publicable,Q4
+2019-2025,Quintil,Q4,sobre30,puntos porcentuales,3.1445,2.7602,-0.3844,-1.3357,0.5152,0.4072,publicable,Q4
+2019-2025,Quintil,Q4,cae_bajo_umbral,puntos porcentuales,0.1163,0.3880,0.2717,0.0110,0.5402,0.0399,suprimida,Q4
+2019-2025,Quintil,Q4,pobreza_antes,puntos porcentuales,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,suprimida,Q4
+2019-2025,Quintil,Q4,pobreza_despues,puntos porcentuales,0.1163,0.3880,0.2717,0.0110,0.5402,0.0399,suprimida,Q4
+2019-2025,Quintil,Q4,esfuerzo_medio,puntos porcentuales,11.6644,11.5394,-0.1250,-0.6487,0.4229,0.7305,publicable,Q4
+2019-2025,Quintil,Q5,sobre40,puntos porcentuales,0.1284,0.2066,0.0782,-0.0865,0.2937,0.4431,suprimida,Q5
+2019-2025,Quintil,Q5,sobre30,puntos porcentuales,0.8236,1.0621,0.2384,-0.3415,0.7510,0.3513,publicable,Q5
+2019-2025,Quintil,Q5,cae_bajo_umbral,puntos porcentuales,0.0000,0.0121,0.0121,0.0000,0.0372,0.7226,suprimida,Q5
+2019-2025,Quintil,Q5,pobreza_antes,puntos porcentuales,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,suprimida,Q5
+2019-2025,Quintil,Q5,pobreza_despues,puntos porcentuales,0.0000,0.0121,0.0121,0.0000,0.0372,0.7226,suprimida,Q5
+2019-2025,Quintil,Q5,esfuerzo_medio,puntos porcentuales,8.2770,8.4356,0.1586,-0.2628,0.5993,0.4790,publicable,Q5
+2019-2025,Edad,16-34,sobre40,puntos porcentuales,16.4499,12.8399,-3.6100,-7.0439,0.0981,0.0599,publicable,16-34
+2019-2025,Edad,16-34,sobre30,puntos porcentuales,29.3586,21.2598,-8.0988,-13.3842,-2.9574,0.0040,publicable,16-34
+2019-2025,Edad,16-34,cae_bajo_umbral,puntos porcentuales,15.5603,13.3766,-2.1837,-6.4205,2.5781,0.4431,publicable,16-34
+2019-2025,Edad,16-34,pobreza_antes,puntos porcentuales,30.7294,22.3542,-8.3752,-14.1879,-3.1965,0.0040,publicable,16-34
+2019-2025,Edad,16-34,pobreza_despues,puntos porcentuales,46.2897,35.7308,-10.5589,-15.8506,-5.2617,0.0040,publicable,16-34
+2019-2025,Edad,16-34,esfuerzo_medio,puntos porcentuales,27.4221,24.2284,-3.1937,-5.9402,-0.5419,0.0200,publicable,16-34
+2019-2025,Edad,35-49,sobre40,puntos porcentuales,11.3201,8.5507,-2.7695,-4.6253,-1.0985,0.0080,publicable,35-49
+2019-2025,Edad,35-49,sobre30,puntos porcentuales,17.8074,15.4438,-2.3636,-4.7964,-0.2357,0.0519,publicable,35-49
+2019-2025,Edad,35-49,cae_bajo_umbral,puntos porcentuales,8.7735,10.4709,1.6974,0.0900,3.1615,0.0399,publicable,35-49
+2019-2025,Edad,35-49,pobreza_antes,puntos porcentuales,21.5369,22.0742,0.5373,-2.0744,2.6310,0.8104,publicable,35-49
+2019-2025,Edad,35-49,pobreza_despues,puntos porcentuales,30.3104,32.5451,2.2347,-0.6718,4.3143,0.1357,publicable,35-49
+2019-2025,Edad,35-49,esfuerzo_medio,puntos porcentuales,21.2937,20.7600,-0.5337,-1.7769,0.7577,0.4112,publicable,35-49
+2019-2025,Edad,50-64,sobre40,puntos porcentuales,5.9029,5.9352,0.0323,-1.1993,1.3626,0.8663,publicable,50-64
+2019-2025,Edad,50-64,sobre30,puntos porcentuales,9.3090,9.5520,0.2430,-1.4062,1.7636,0.7066,publicable,50-64
+2019-2025,Edad,50-64,cae_bajo_umbral,puntos porcentuales,7.0797,7.6961,0.6164,-0.9299,1.9114,0.4431,publicable,50-64
+2019-2025,Edad,50-64,pobreza_antes,puntos porcentuales,18.4890,17.5173,-0.9717,-3.2443,1.1850,0.3992,publicable,50-64
+2019-2025,Edad,50-64,pobreza_despues,puntos porcentuales,25.5687,25.2134,-0.3552,-2.7443,1.8437,0.7465,publicable,50-64
+2019-2025,Edad,50-64,esfuerzo_medio,puntos porcentuales,16.4727,16.3341,-0.1386,-1.1420,0.8175,0.7984,publicable,50-64
+2019-2025,Edad,65+,sobre40,puntos porcentuales,3.8301,4.5571,0.7271,-0.2598,1.6474,0.1437,publicable,65+
+2019-2025,Edad,65+,sobre30,puntos porcentuales,6.7097,6.7532,0.0434,-1.2720,1.1567,0.9780,publicable,65+
+2019-2025,Edad,65+,cae_bajo_umbral,puntos porcentuales,12.0485,8.0410,-4.0075,-5.6364,-2.4306,0.0040,publicable,65+
+2019-2025,Edad,65+,pobreza_antes,puntos porcentuales,17.2722,17.4008,0.1286,-2.2390,2.3368,0.9940,publicable,65+
+2019-2025,Edad,65+,pobreza_despues,puntos porcentuales,29.3207,25.4418,-3.8789,-6.7019,-1.6194,0.0080,publicable,65+
+2019-2025,Edad,65+,esfuerzo_medio,puntos porcentuales,16.1498,15.7722,-0.3775,-1.2501,0.4131,0.3752,publicable,65+
+2019-2025,Tenencia,prop_sin_hipoteca,sobre40,puntos porcentuales,1.8433,1.8700,0.0267,-0.4485,0.4852,0.8263,publicable,prop_sin_hipoteca
+2019-2025,Tenencia,prop_sin_hipoteca,sobre30,puntos porcentuales,3.0889,2.8682,-0.2206,-0.7766,0.3661,0.5150,publicable,prop_sin_hipoteca
+2019-2025,Tenencia,prop_sin_hipoteca,cae_bajo_umbral,puntos porcentuales,7.5302,4.8945,-2.6357,-3.6933,-1.5822,0.0040,publicable,prop_sin_hipoteca
+2019-2025,Tenencia,prop_sin_hipoteca,pobreza_antes,puntos porcentuales,15.5988,15.5793,-0.0195,-1.7827,1.4766,0.8703,publicable,prop_sin_hipoteca
+2019-2025,Tenencia,prop_sin_hipoteca,pobreza_despues,puntos porcentuales,23.1290,20.4738,-2.6552,-4.5168,-1.1159,0.0040,publicable,prop_sin_hipoteca
+2019-2025,Tenencia,prop_sin_hipoteca,esfuerzo_medio,puntos porcentuales,12.8433,12.0004,-0.8429,-1.3899,-0.2966,0.0040,publicable,prop_sin_hipoteca
+2019-2025,Tenencia,prop_con_hipoteca,sobre40,puntos porcentuales,3.6914,3.4494,-0.2420,-1.4605,0.9511,0.7984,publicable,prop_con_hipoteca
+2019-2025,Tenencia,prop_con_hipoteca,sobre30,puntos porcentuales,6.4888,6.1467,-0.3421,-1.7890,0.9930,0.7146,publicable,prop_con_hipoteca
+2019-2025,Tenencia,prop_con_hipoteca,cae_bajo_umbral,puntos porcentuales,6.3707,7.2969,0.9262,-0.3262,2.2639,0.1357,publicable,prop_con_hipoteca
+2019-2025,Tenencia,prop_con_hipoteca,pobreza_antes,puntos porcentuales,13.9381,12.9122,-1.0259,-3.4026,1.3627,0.4112,publicable,prop_con_hipoteca
+2019-2025,Tenencia,prop_con_hipoteca,pobreza_despues,puntos porcentuales,20.3088,20.2091,-0.0996,-2.5100,2.5067,0.9182,publicable,prop_con_hipoteca
+2019-2025,Tenencia,prop_con_hipoteca,esfuerzo_medio,puntos porcentuales,15.3977,16.2109,0.8132,0.0354,1.6495,0.0439,publicable,prop_con_hipoteca
+2019-2025,Tenencia,alquiler_mercado,sobre40,puntos porcentuales,37.4018,26.7965,-10.6053,-14.6763,-6.0409,0.0040,publicable,alquiler_mercado
+2019-2025,Tenencia,alquiler_mercado,sobre30,puntos porcentuales,59.5005,44.0162,-15.4843,-19.9360,-10.6260,0.0040,publicable,alquiler_mercado
+2019-2025,Tenencia,alquiler_mercado,cae_bajo_umbral,puntos porcentuales,21.6940,23.9892,2.2952,-1.9676,6.4318,0.2874,publicable,alquiler_mercado
+2019-2025,Tenencia,alquiler_mercado,pobreza_antes,puntos porcentuales,38.1688,32.7774,-5.3914,-10.3297,-1.5387,0.0160,publicable,alquiler_mercado
+2019-2025,Tenencia,alquiler_mercado,pobreza_despues,puntos porcentuales,59.8628,56.7666,-3.0962,-7.4880,1.1979,0.1677,publicable,alquiler_mercado
+2019-2025,Tenencia,alquiler_mercado,esfuerzo_medio,puntos porcentuales,45.2262,38.9999,-6.2263,-8.4251,-4.0484,0.0040,publicable,alquiler_mercado
+2019-2025,Tenencia,alquiler_reducido_cesion,sobre40,puntos porcentuales,9.2742,8.4417,-0.8325,-3.7239,1.9839,0.6307,publicable,alquiler_reducido_cesion
+2019-2025,Tenencia,alquiler_reducido_cesion,sobre30,puntos porcentuales,16.3440,15.9700,-0.3740,-4.3899,3.8610,0.8263,publicable,alquiler_reducido_cesion
+2019-2025,Tenencia,alquiler_reducido_cesion,cae_bajo_umbral,puntos porcentuales,11.1040,9.6398,-1.4643,-4.9316,1.4443,0.3792,publicable,alquiler_reducido_cesion
+2019-2025,Tenencia,alquiler_reducido_cesion,pobreza_antes,puntos porcentuales,40.0682,34.6182,-5.4500,-10.7818,-0.4985,0.0160,publicable,alquiler_reducido_cesion
+2019-2025,Tenencia,alquiler_reducido_cesion,pobreza_despues,puntos porcentuales,51.1722,44.2579,-6.9143,-11.9792,-2.2388,0.0080,publicable,alquiler_reducido_cesion
+2019-2025,Tenencia,alquiler_reducido_cesion,esfuerzo_medio,puntos porcentuales,19.8183,19.5071,-0.3112,-1.9463,1.6752,0.7705,publicable,alquiler_reducido_cesion
+2019-2025,Nacionalidad,Espana,sobre40,puntos porcentuales,6.0142,4.6487,-1.3655,-2.0753,-0.6281,0.0040,publicable,Espana
+2019-2025,Nacionalidad,Espana,sobre30,puntos porcentuales,10.2742,8.1294,-2.1448,-3.0359,-1.2814,0.0040,publicable,Espana
+2019-2025,Nacionalidad,Espana,cae_bajo_umbral,puntos porcentuales,8.7251,8.0697,-0.6554,-1.5738,0.2229,0.1238,publicable,Espana
+2019-2025,Nacionalidad,Espana,pobreza_antes,puntos porcentuales,17.4002,15.5979,-1.8024,-3.0026,-0.5971,0.0120,publicable,Espana
+2019-2025,Nacionalidad,Espana,pobreza_despues,puntos porcentuales,26.1253,23.6676,-2.4577,-3.7299,-1.3494,0.0040,publicable,Espana
+2019-2025,Nacionalidad,Espana,esfuerzo_medio,puntos porcentuales,16.9727,15.8771,-1.0955,-1.5955,-0.6016,0.0040,publicable,Espana
+2019-2025,Nacionalidad,UE,sobre40,puntos porcentuales,32.6889,18.4535,-14.2354,-26.5844,-3.1551,0.0120,publicable,UE
+2019-2025,Nacionalidad,UE,sobre30,puntos porcentuales,47.2214,25.9375,-21.2838,-33.1991,-8.5922,0.0040,publicable,UE
+2019-2025,Nacionalidad,UE,cae_bajo_umbral,puntos porcentuales,20.6979,13.2213,-7.4766,-16.1414,2.1469,0.1517,publicable,UE
+2019-2025,Nacionalidad,UE,pobreza_antes,puntos porcentuales,45.2326,28.3286,-16.9040,-30.2801,-6.4415,0.0040,publicable,UE
+2019-2025,Nacionalidad,UE,pobreza_despues,puntos porcentuales,65.9305,41.5499,-24.3806,-34.0135,-14.6609,0.0040,publicable,UE
+2019-2025,Nacionalidad,UE,esfuerzo_medio,puntos porcentuales,41.0224,32.4300,-8.5924,-15.7199,-1.7332,0.0160,publicable,UE
+2019-2025,Nacionalidad,Resto,sobre40,puntos porcentuales,34.2119,25.3620,-8.8499,-15.6437,-1.6750,0.0240,publicable,Resto
+2019-2025,Nacionalidad,Resto,sobre30,puntos porcentuales,52.5018,41.6747,-10.8271,-18.7699,-2.3543,0.0120,publicable,Resto
+2019-2025,Nacionalidad,Resto,cae_bajo_umbral,puntos porcentuales,17.8609,18.5870,0.7261,-5.4662,6.7268,0.8743,publicable,Resto
+2019-2025,Nacionalidad,Resto,pobreza_antes,puntos porcentuales,56.7442,51.5092,-5.2350,-13.4357,2.5446,0.2156,publicable,Resto
+2019-2025,Nacionalidad,Resto,pobreza_despues,puntos porcentuales,74.6051,70.0962,-4.5089,-11.9358,3.0597,0.2076,publicable,Resto
+2019-2025,Nacionalidad,Resto,esfuerzo_medio,puntos porcentuales,45.7109,37.4224,-8.2885,-12.7364,-3.6815,0.0040,publicable,Resto

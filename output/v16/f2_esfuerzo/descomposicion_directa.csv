@@ -1,0 +1,145 @@
+tenencia,periodo,gasto_definicion,componente,valor,ic_lo,ic_hi,B_validas,unidad
+alquiler_mercado,2008-2015,HH070 neto de ayudas,R0,34.59857,32.69090,36.69192,500,puntos porcentuales
+alquiler_mercado,2008-2015,HH070 neto de ayudas,R1,36.73541,34.71407,38.55268,500,puntos porcentuales
+alquiler_mercado,2008-2015,HH070 neto de ayudas,dR,2.13684,-0.97538,4.90245,500,puntos porcentuales
+alquiler_mercado,2008-2015,HH070 neto de ayudas,gasto,-0.41682,-2.25618,1.49642,500,puntos porcentuales
+alquiler_mercado,2008-2015,HH070 neto de ayudas,renta,2.58481,-0.64003,5.99439,500,puntos porcentuales
+alquiler_mercado,2008-2015,HH070 neto de ayudas,interaccion,-0.03114,-0.31289,0.06424,500,puntos porcentuales
+alquiler_mercado,2008-2015,HH070 neto de ayudas,dlnG,-0.01212,-0.06508,0.04245,500,log
+alquiler_mercado,2008-2015,HH070 neto de ayudas,dlnY,-0.07205,-0.16223,0.01840,500,log
+alquiler_mercado,2008-2015,HH070 neto de ayudas,dlnR,0.05993,-0.02725,0.13533,500,log
+alquiler_mercado,2008-2015,alquiler HH060,R0,28.57357,26.85044,30.42415,500,puntos porcentuales
+alquiler_mercado,2008-2015,alquiler HH060,R1,28.85320,27.17952,30.46024,500,puntos porcentuales
+alquiler_mercado,2008-2015,alquiler HH060,dR,0.27963,-2.30893,2.49784,500,puntos porcentuales
+alquiler_mercado,2008-2015,alquiler HH060,gasto,-1.72610,-3.39697,-0.08879,500,puntos porcentuales
+alquiler_mercado,2008-2015,alquiler HH060,renta,2.13469,-0.52624,4.97035,500,puntos porcentuales
+alquiler_mercado,2008-2015,alquiler HH060,interaccion,-0.12895,-0.47244,0.01761,500,puntos porcentuales
+alquiler_mercado,2008-2015,alquiler HH060,dlnG,-0.06231,-0.12271,-0.00310,500,log
+alquiler_mercado,2008-2015,alquiler HH060,dlnY,-0.07205,-0.16223,0.01840,500,log
+alquiler_mercado,2008-2015,alquiler HH060,dlnR,0.00974,-0.08061,0.08623,500,log
+alquiler_mercado,2015-2025,HH070 neto de ayudas,R0,36.73541,34.89114,38.81467,500,puntos porcentuales
+alquiler_mercado,2015-2025,HH070 neto de ayudas,R1,29.90015,29.04317,30.79884,500,puntos porcentuales
+alquiler_mercado,2015-2025,HH070 neto de ayudas,dR,-6.83525,-9.01705,-4.62198,500,puntos porcentuales
+alquiler_mercado,2015-2025,HH070 neto de ayudas,gasto,12.37180,10.66595,14.27006,500,puntos porcentuales
+alquiler_mercado,2015-2025,HH070 neto de ayudas,renta,-14.36813,-16.79156,-12.31407,500,puntos porcentuales
+alquiler_mercado,2015-2025,HH070 neto de ayudas,interaccion,-4.83892,-6.05494,-3.89079,500,puntos porcentuales
+alquiler_mercado,2015-2025,HH070 neto de ayudas,dlnG,0.29026,0.25563,0.32430,500,log
+alquiler_mercado,2015-2025,HH070 neto de ayudas,dlnY,0.49614,0.43437,0.56349,500,log
+alquiler_mercado,2015-2025,HH070 neto de ayudas,dlnR,-0.20588,-0.26485,-0.14300,500,log
+alquiler_mercado,2015-2025,alquiler HH060,R0,28.85320,27.34921,30.62516,500,puntos porcentuales
+alquiler_mercado,2015-2025,alquiler HH060,R1,24.33937,23.55474,25.11688,500,puntos porcentuales
+alquiler_mercado,2015-2025,alquiler HH060,dR,-4.51383,-6.36782,-2.74901,500,puntos porcentuales
+alquiler_mercado,2015-2025,alquiler HH060,gasto,11.12113,9.56339,12.85028,500,puntos porcentuales
+alquiler_mercado,2015-2025,alquiler HH060,renta,-11.28521,-13.24933,-9.64035,500,puntos porcentuales
+alquiler_mercado,2015-2025,alquiler HH060,interaccion,-4.34975,-5.47085,-3.44068,500,puntos porcentuales
+alquiler_mercado,2015-2025,alquiler HH060,dlnG,0.32602,0.28533,0.36785,500,log
+alquiler_mercado,2015-2025,alquiler HH060,dlnY,0.49614,0.43437,0.56349,500,log
+alquiler_mercado,2015-2025,alquiler HH060,dlnR,-0.17013,-0.23291,-0.10545,500,log
+alquiler_mercado,2008-2025,HH070 neto de ayudas,R0,34.59857,32.99734,36.69035,500,puntos porcentuales
+alquiler_mercado,2008-2025,HH070 neto de ayudas,R1,29.90015,29.06147,30.77694,500,puntos porcentuales
+alquiler_mercado,2008-2025,HH070 neto de ayudas,dR,-4.69841,-6.90082,-2.81995,500,puntos porcentuales
+alquiler_mercado,2008-2025,HH070 neto de ayudas,gasto,11.09495,9.10861,13.06309,500,puntos porcentuales
+alquiler_mercado,2008-2025,HH070 neto de ayudas,renta,-11.95854,-14.05277,-10.08087,500,puntos porcentuales
+alquiler_mercado,2008-2025,HH070 neto de ayudas,interaccion,-3.83482,-4.98695,-2.83155,500,puntos porcentuales
+alquiler_mercado,2008-2025,HH070 neto de ayudas,dlnG,0.27814,0.23349,0.32424,500,log
+alquiler_mercado,2008-2025,HH070 neto de ayudas,dlnY,0.42409,0.35878,0.49357,500,log
+alquiler_mercado,2008-2025,HH070 neto de ayudas,dlnR,-0.14595,-0.20810,-0.08834,500,log
+alquiler_mercado,2008-2025,alquiler HH060,R0,28.57357,27.24116,30.39065,500,puntos porcentuales
+alquiler_mercado,2008-2025,alquiler HH060,R1,24.33937,23.63733,25.11483,500,puntos porcentuales
+alquiler_mercado,2008-2025,alquiler HH060,dR,-4.23420,-6.05758,-2.53466,500,puntos porcentuales
+alquiler_mercado,2008-2025,alquiler HH060,gasto,8.62194,6.91328,10.34850,500,puntos porcentuales
+alquiler_mercado,2008-2025,alquiler HH060,renta,-9.87608,-11.58782,-8.33928,500,puntos porcentuales
+alquiler_mercado,2008-2025,alquiler HH060,interaccion,-2.98006,-3.93572,-2.19119,500,puntos porcentuales
+alquiler_mercado,2008-2025,alquiler HH060,dlnG,0.26371,0.21343,0.31341,500,log
+alquiler_mercado,2008-2025,alquiler HH060,dlnY,0.42409,0.35878,0.49357,500,log
+alquiler_mercado,2008-2025,alquiler HH060,dlnR,-0.16039,-0.22442,-0.09741,500,log
+alquiler_mercado,2019-2025,HH070 neto de ayudas,R0,34.07305,32.56823,35.77082,500,puntos porcentuales
+alquiler_mercado,2019-2025,HH070 neto de ayudas,R1,29.90015,29.13044,30.77966,500,puntos porcentuales
+alquiler_mercado,2019-2025,HH070 neto de ayudas,dR,-4.17290,-6.11392,-2.40120,500,puntos porcentuales
+alquiler_mercado,2019-2025,HH070 neto de ayudas,gasto,7.67142,6.22003,9.52310,500,puntos porcentuales
+alquiler_mercado,2019-2025,HH070 neto de ayudas,renta,-9.66768,-11.75528,-7.82265,500,puntos porcentuales
+alquiler_mercado,2019-2025,HH070 neto de ayudas,interaccion,-2.17664,-3.01750,-1.54168,500,puntos porcentuales
+alquiler_mercado,2019-2025,HH070 neto de ayudas,dlnG,0.20306,0.16874,0.24314,500,log
+alquiler_mercado,2019-2025,HH070 neto de ayudas,dlnY,0.33370,0.27127,0.40011,500,log
+alquiler_mercado,2019-2025,HH070 neto de ayudas,dlnR,-0.13064,-0.18767,-0.07587,500,log
+alquiler_mercado,2019-2025,alquiler HH060,R0,27.56866,26.36915,28.91271,500,puntos porcentuales
+alquiler_mercado,2019-2025,alquiler HH060,R1,24.33937,23.68473,25.10684,500,puntos porcentuales
+alquiler_mercado,2019-2025,alquiler HH060,dR,-3.22929,-4.86452,-1.78150,500,puntos porcentuales
+alquiler_mercado,2019-2025,alquiler HH060,gasto,6.41224,5.07247,8.09205,500,puntos porcentuales
+alquiler_mercado,2019-2025,alquiler HH060,renta,-7.82216,-9.49570,-6.35433,500,puntos porcentuales
+alquiler_mercado,2019-2025,alquiler HH060,interaccion,-1.81937,-2.61029,-1.26855,500,puntos porcentuales
+alquiler_mercado,2019-2025,alquiler HH060,dlnG,0.20912,0.16926,0.25512,500,log
+alquiler_mercado,2019-2025,alquiler HH060,dlnY,0.33370,0.27127,0.40011,500,log
+alquiler_mercado,2019-2025,alquiler HH060,dlnR,-0.12458,-0.18393,-0.06997,500,log
+prop_con_hipoteca,2008-2015,HH070 neto de ayudas,R0,18.01856,17.38494,18.67991,500,puntos porcentuales
+prop_con_hipoteca,2008-2015,HH070 neto de ayudas,R1,15.11647,14.66452,15.61828,500,puntos porcentuales
+prop_con_hipoteca,2008-2015,HH070 neto de ayudas,dR,-2.90210,-3.64245,-2.15836,500,puntos porcentuales
+prop_con_hipoteca,2008-2015,HH070 neto de ayudas,gasto,-3.31688,-3.95534,-2.70962,500,puntos porcentuales
+prop_con_hipoteca,2008-2015,HH070 neto de ayudas,renta,0.50836,-0.13206,1.21915,500,puntos porcentuales
+prop_con_hipoteca,2008-2015,HH070 neto de ayudas,interaccion,-0.09358,-0.23544,0.02367,500,puntos porcentuales
+prop_con_hipoteca,2008-2015,HH070 neto de ayudas,dlnG,-0.20344,-0.24198,-0.16823,500,log
+prop_con_hipoteca,2008-2015,HH070 neto de ayudas,dlnY,-0.02782,-0.06570,0.00726,500,log
+prop_con_hipoteca,2008-2015,HH070 neto de ayudas,dlnR,-0.17562,-0.22192,-0.12963,500,log
+prop_con_hipoteca,2008-2015,cuota hipotecaria cuotahip,R0,23.46109,22.79553,24.22151,500,puntos porcentuales
+prop_con_hipoteca,2008-2015,cuota hipotecaria cuotahip,R1,19.18907,18.57013,19.93236,500,puntos porcentuales
+prop_con_hipoteca,2008-2015,cuota hipotecaria cuotahip,dR,-4.27202,-5.23438,-3.29148,500,puntos porcentuales
+prop_con_hipoteca,2008-2015,cuota hipotecaria cuotahip,gasto,-4.80715,-5.70047,-3.94556,500,puntos porcentuales
+prop_con_hipoteca,2008-2015,cuota hipotecaria cuotahip,renta,0.67303,-0.13461,1.58997,500,puntos porcentuales
+prop_con_hipoteca,2008-2015,cuota hipotecaria cuotahip,interaccion,-0.13790,-0.35884,0.02575,500,puntos porcentuales
+prop_con_hipoteca,2008-2015,cuota hipotecaria cuotahip,dlnG,-0.22929,-0.27293,-0.18819,500,log
+prop_con_hipoteca,2008-2015,cuota hipotecaria cuotahip,dlnY,-0.02828,-0.06677,0.00574,500,log
+prop_con_hipoteca,2008-2015,cuota hipotecaria cuotahip,dlnR,-0.20100,-0.24625,-0.15554,500,log
+prop_con_hipoteca,2015-2025,HH070 neto de ayudas,R0,15.11647,14.65894,15.57534,500,puntos porcentuales
+prop_con_hipoteca,2015-2025,HH070 neto de ayudas,R1,11.95433,11.70357,12.16104,500,puntos porcentuales
+prop_con_hipoteca,2015-2025,HH070 neto de ayudas,dR,-3.16214,-3.65707,-2.66954,500,puntos porcentuales
+prop_con_hipoteca,2015-2025,HH070 neto de ayudas,gasto,3.11450,2.69281,3.57882,500,puntos porcentuales
+prop_con_hipoteca,2015-2025,HH070 neto de ayudas,renta,-5.20437,-5.65420,-4.77081,500,puntos porcentuales
+prop_con_hipoteca,2015-2025,HH070 neto de ayudas,interaccion,-1.07228,-1.27491,-0.89922,500,puntos porcentuales
+prop_con_hipoteca,2015-2025,HH070 neto de ayudas,dlnG,0.18734,0.16373,0.21391,500,log
+prop_con_hipoteca,2015-2025,HH070 neto de ayudas,dlnY,0.42203,0.38778,0.45333,500,log
+prop_con_hipoteca,2015-2025,HH070 neto de ayudas,dlnR,-0.23469,-0.26812,-0.20205,500,log
+prop_con_hipoteca,2015-2025,cuota hipotecaria cuotahip,R0,19.18907,18.58754,19.88478,500,puntos porcentuales
+prop_con_hipoteca,2015-2025,cuota hipotecaria cuotahip,R1,14.82607,14.53041,15.09717,500,puntos porcentuales
+prop_con_hipoteca,2015-2025,cuota hipotecaria cuotahip,dR,-4.36299,-5.08241,-3.67505,500,puntos porcentuales
+prop_con_hipoteca,2015-2025,cuota hipotecaria cuotahip,gasto,3.34971,2.61089,4.10401,500,puntos porcentuales
+prop_con_hipoteca,2015-2025,cuota hipotecaria cuotahip,renta,-6.56644,-7.10075,-6.01456,500,puntos porcentuales
+prop_con_hipoteca,2015-2025,cuota hipotecaria cuotahip,interaccion,-1.14626,-1.45546,-0.86258,500,puntos porcentuales
+prop_con_hipoteca,2015-2025,cuota hipotecaria cuotahip,dlnG,0.16090,0.12538,0.19595,500,log
+prop_con_hipoteca,2015-2025,cuota hipotecaria cuotahip,dlnY,0.41885,0.38502,0.45316,500,log
+prop_con_hipoteca,2015-2025,cuota hipotecaria cuotahip,dlnR,-0.25795,-0.29732,-0.22079,500,log
+prop_con_hipoteca,2008-2025,HH070 neto de ayudas,R0,18.01856,17.42073,18.66093,500,puntos porcentuales
+prop_con_hipoteca,2008-2025,HH070 neto de ayudas,R1,11.95433,11.73523,12.17366,500,puntos porcentuales
+prop_con_hipoteca,2008-2025,HH070 neto de ayudas,dR,-6.06423,-6.70117,-5.42363,500,puntos porcentuales
+prop_con_hipoteca,2008-2025,HH070 neto de ayudas,gasto,-0.28783,-0.81206,0.25653,500,puntos porcentuales
+prop_con_hipoteca,2008-2025,HH070 neto de ayudas,renta,-5.87018,-6.35053,-5.36838,500,puntos porcentuales
+prop_con_hipoteca,2008-2025,HH070 neto de ayudas,interaccion,0.09377,-0.08337,0.26133,500,puntos porcentuales
+prop_con_hipoteca,2008-2025,HH070 neto de ayudas,dlnG,-0.01610,-0.04509,0.01460,500,log
+prop_con_hipoteca,2008-2025,HH070 neto de ayudas,dlnY,0.39421,0.36303,0.42628,500,log
+prop_con_hipoteca,2008-2025,HH070 neto de ayudas,dlnR,-0.41031,-0.44779,-0.37285,500,log
+prop_con_hipoteca,2008-2025,cuota hipotecaria cuotahip,R0,23.46109,22.73062,24.24627,500,puntos porcentuales
+prop_con_hipoteca,2008-2025,cuota hipotecaria cuotahip,R1,14.82607,14.56135,15.11636,500,puntos porcentuales
+prop_con_hipoteca,2008-2025,cuota hipotecaria cuotahip,dR,-8.63502,-9.44579,-7.88983,500,puntos porcentuales
+prop_con_hipoteca,2008-2025,cuota hipotecaria cuotahip,gasto,-1.55086,-2.30879,-0.68903,500,puntos porcentuales
+prop_con_hipoteca,2008-2025,cuota hipotecaria cuotahip,renta,-7.58559,-8.20876,-6.94207,500,puntos porcentuales
+prop_con_hipoteca,2008-2025,cuota hipotecaria cuotahip,interaccion,0.50143,0.23132,0.73680,500,puntos porcentuales
+prop_con_hipoteca,2008-2025,cuota hipotecaria cuotahip,dlnG,-0.06839,-0.10110,-0.03017,500,log
+prop_con_hipoteca,2008-2025,cuota hipotecaria cuotahip,dlnY,0.39057,0.35803,0.42222,500,log
+prop_con_hipoteca,2008-2025,cuota hipotecaria cuotahip,dlnR,-0.45896,-0.49444,-0.42433,500,log
+prop_con_hipoteca,2019-2025,HH070 neto de ayudas,R0,10.82951,10.51859,11.17375,500,puntos porcentuales
+prop_con_hipoteca,2019-2025,HH070 neto de ayudas,R1,11.95433,11.71044,12.18996,500,puntos porcentuales
+prop_con_hipoteca,2019-2025,HH070 neto de ayudas,dR,1.12482,0.70957,1.52600,500,puntos porcentuales
+prop_con_hipoteca,2019-2025,HH070 neto de ayudas,gasto,4.88375,4.50937,5.22150,500,puntos porcentuales
+prop_con_hipoteca,2019-2025,HH070 neto de ayudas,renta,-2.59064,-2.92417,-2.26548,500,puntos porcentuales
+prop_con_hipoteca,2019-2025,HH070 neto de ayudas,interaccion,-1.16829,-1.35849,-0.98201,500,puntos porcentuales
+prop_con_hipoteca,2019-2025,HH070 neto de ayudas,dlnG,0.37223,0.34834,0.39676,500,log
+prop_con_hipoteca,2019-2025,HH070 neto de ayudas,dlnY,0.27341,0.24134,0.30711,500,log
+prop_con_hipoteca,2019-2025,HH070 neto de ayudas,dlnR,0.09882,0.06214,0.13549,500,log
+prop_con_hipoteca,2019-2025,cuota hipotecaria cuotahip,R0,15.80825,15.29845,16.33556,500,puntos porcentuales
+prop_con_hipoteca,2019-2025,cuota hipotecaria cuotahip,R1,14.82607,14.54022,15.13544,500,puntos porcentuales
+prop_con_hipoteca,2019-2025,cuota hipotecaria cuotahip,dR,-0.98217,-1.55999,-0.39821,500,puntos porcentuales
+prop_con_hipoteca,2019-2025,cuota hipotecaria cuotahip,gasto,3.71843,3.17634,4.30514,500,puntos porcentuales
+prop_con_hipoteca,2019-2025,cuota hipotecaria cuotahip,renta,-3.80547,-4.28029,-3.32146,500,puntos porcentuales
+prop_con_hipoteca,2019-2025,cuota hipotecaria cuotahip,interaccion,-0.89513,-1.10605,-0.69779,500,puntos porcentuales
+prop_con_hipoteca,2019-2025,cuota hipotecaria cuotahip,dlnG,0.21125,0.18167,0.24258,500,log
+prop_con_hipoteca,2019-2025,cuota hipotecaria cuotahip,dlnY,0.27539,0.24123,0.30878,500,log
+prop_con_hipoteca,2019-2025,cuota hipotecaria cuotahip,dlnR,-0.06414,-0.10088,-0.02617,500,log

@@ -88,16 +88,18 @@ def main() -> int:
     for e in errores:
         print("ERROR", e)
     if escribir:
+        rutas = "\0".join(f["fichero"] for f in filas if f["fichero"])
+        r = subprocess.run(["git", "check-ignore", "-z", "--no-index", "--stdin"], cwd=RAIZ, input=rutas, capture_output=True, text=True)
+        ignorados = {x for x in r.stdout.split("\0") if x}
         SAL.parent.mkdir(parents=True, exist_ok=True)
         with SAL.open("w", encoding="utf-8", newline="") as fh:
             w = csv.DictWriter(fh, fieldnames=["familia", "fuente", "fichero", "edicion", "periodo", "nivel_territorial", "licencia",
                                                 "redistribuible", "sha256", "estado"], lineterminator="\n")
             w.writeheader()
             for f in sorted(filas, key=lambda x: (x["familia"], x["fuente"], x["fichero"])):
-                # determinista: el estado sale de la ruta, no del clon ni del índice de git
+                # determinista: el estado sale de la ruta y del .gitignore versionado, no del clon ni del índice de git
                 rel = f["fichero"]
-                f = dict(f, estado="sin fichero" if not rel else
-                         "no versionado" if ("/_terceros/" in rel or "/_grandes/" in rel) else "versionado")
+                f = dict(f, estado="sin fichero" if not rel else "no versionado" if rel in ignorados else "versionado")
                 w.writerow(f)
     print(f"f1_inventario: {len(filas)} filas, {len(errores)} errores")
     return 1 if errores else 0

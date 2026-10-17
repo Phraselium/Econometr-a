@@ -1,0 +1,1165 @@
+﻿TipoSignatura;TipoVia;NombreVia;Numero;Portal;Bloque;Escalera;Planta;Puerta;Localidad
+VT;CALLE;del Cementerio;S/N;;;1;1;1;Acebeda, La
+VT;PLAZA;del Sauce;9;LOCAL;;;BAJA;3;Alcobendas
+VT;PLAZA;del Sauce;9;;;;bj;4;Alcobendas
+VT;PLAZA;del Sauce;9;;;;bj;2;Alcobendas
+VT;PLAZA;del Sauce;9;;;;bj;1;Alcobendas
+VT;CALLE;de Fuentidueña;12;;;;;;Alcobendas
+VT;CALLE;de la Cruz;46;;;;BAJO;;Alcobendas
+VT;CALLE;del Tajo;8;;;;1;A;Alcobendas
+VT;CALLE;de Granada;32;;;;BAJO;B;Alcobendas
+VT;CALLE;del Tajo;8;;;;1;C;Alcobendas
+VT;CALLE;del Camino Nuevo;11;;;;1;B;Alcobendas
+VT;CALLE;del Camino Nuevo;11;;;;1;C;Alcobendas
+VT;CALLE;del Camino Nuevo;11;;;;1;D;Alcobendas
+VT;CALLE;AV CAMILO JOSE CELA;41;;;;;;Alcobendas
+VT;CALLE;del Camino Nuevo;11;;;;1;h;Alcobendas
+VT;CALLE;Zamora;16;16;;;Bajo;16;Arganda del Rey
+VT;CALLE;del Valle;4;;;;;;Cabrera, La
+VT;AVDA;del Hornazo;5;;;;;;Cadalso de los Vidrios
+VT;CALLE;Virgen de la Antigua;3;;;;;;Carabaña
+VT;POLIG;los Cohonares;47;;;0;0;0;Chinchón
+VT;CALLE;Praofuentes;10;;;C;C;C;Colmenarejo
+VT;CALLE;del Dr Michavila;3;;;;Bajo;1;Coslada
+VT;AVDA;de la Cañada;89;;;Izda.;2;D;Coslada
+VT;AVDA;de la Constitución;85;2;;;6;7;Coslada
+VT;CALLE;de la Madreselva;26;;;1;1;1;Escorial, El
+VT;;Diseminado valle del rio;1;;;0;0;0;Fresno de Torote
+VT;CALLE;de las Codornices;16;;;;;;Fresno de Torote
+VT;CALLE;Santander;4;;;;Bajo;;Guadarrama
+VT;CALLE;Puerto Navacerrada;10;;;;;;Guadarrama
+VT;CALLE;Carboneros;8;;;na;na;A;Hoyo de Manzanares
+VT;CALLE;Monegros;51;;;0;6;B;Leganés
+VT;CALLE;San Justiniano;1;;;1;Bajo;A;Leganés
+VT;CALLE;Vereda Carpetana;7;;;Izq;303B;303b;Loeches
+VT;CALLE;de Carlos Martín Álvarez;7;;;4;6;B;Madrid
+VT;CALLE;de Jorge Juan;96;;;2;6;3;Madrid
+VT;CALLE;de Jaén;40;;;0;0;4B;Madrid
+VT;CALLE;del Arzobispo Morcillo;48;-;;-;-;4;Madrid
+VT;CALLE;del Arzobispo Morcillo;48;;;BJ;LC;5;Madrid
+VT;CALLE;Calle Mariano Agüi;3;;;;Bajo;2;Madrid
+VT;CALLE;Mariano Agüi;3;;;;Bajo;A;Madrid
+VT;CALLE;del Arroyo del Olivar;43;110;;DCHA;4;4;Madrid
+VT;CALLE;de Huesca;9;;;1;1;B;Madrid
+VT;CALLE;del Marqués de Santa Ana;18;;;1;4;I;Madrid
+VT;CALLE;de los Hermanos Machado;29;;;1;BAJO;2;Madrid
+VT;CALLE;de San David;2;;;1;BAJO;1;Madrid
+VT;CALLE;de Ruiz Palacios;37;;;1;bajo;1;Madrid
+VT;CALLE;de las Azucenas;12;;;1;BAJO;2;Madrid
+VT;CALLE;de la Oca;10;H;;A;2;5;Madrid
+VT;CALLE;de Sófora;28020;;;acceso;Local;calle;Madrid
+VT;CALLE;de Puentedey;2;;;L;LOCAL;10;Madrid
+VT;CALLE;del Solano;9;;;Bajo;Bajo;Bajo;Madrid
+VT;CALLE;de Veza;43;;;1;1;1;Madrid
+VT;CALLE;de Sierra Carbonera;20A;;;1;1;B;Madrid
+VT;CALLE;de Caracas;7;;;NA;2;A;Madrid
+VT;PASEO;de las Delicias;6;14;;4;4;I;Madrid
+VT;CALLE;de García Llamas;95;30;;1;2B;B;Madrid
+VT;PSAJE;de Pradillo;11;;;;BAJO;IZDA;Madrid
+VT;CALLE;de la Hacienda;20;;;1;3;IZDA;Madrid
+VT;CALLE;del Conde de Miranda;1;;;1;3;14;Madrid
+VT;PASEO;de la Castellana;188;;;1;14;A;Madrid
+VT;CALLE;de Campezo;9;4;;;2;L;Madrid
+VT;AVDA;de Juan Antonio Samaranch;132;;;NO;12;A;Madrid
+VT;CALLE;del Olivar;24;;;0;0;0;Madrid
+VT;CALLE;de Baleares;61;;;;Bajo;61;Madrid
+VT;CALLE;de Ferrer del Río;3;;;A;3;1;Madrid
+VT;CALLE;de Moreruela;8;B;;0;0;0;Madrid
+VT;CALLE;de Longares;34;;;A;3;A;Madrid
+VT;CALLE;de Gustavo Pérez Puig;77;3;;b;bajo;b;Madrid
+VT;CALLE;Calle de Alfonso Fernández clausells;5;7;;0;Planta;C;Madrid
+VT;CALLE;de Alfonso Fernández Clausells;5;7;;0;1;C;Madrid
+VT;CALLE;de Salorino;7;;;Unica;2;D;Madrid
+VT;AVDA;de Moratalaz;141;;;;1;C;Madrid
+VT;CALLE;del Conde de Miranda;1;;;1;3;14;Madrid
+VT;CALLE;del Pintor Brenes;32;;;--;--;--;Madrid
+VT;CALLE;de la Iliada;33;;;1;BAJO;A;Madrid
+VT;PLAZA;del Descubridor Diego de Ordás;4;4;;2;2;3;Madrid
+VT;CALLE;de Ruiz Palacios;4;;;1;B;L-10;Madrid
+VT;AVDA;de Juan Andrés;58;;;00;00;Bajo 1;Madrid
+VT;AVDA;del Papa Negro;39;;;-;-;B;Madrid
+VT;CALLE;de Josefina Aldecoa;21;;;;8;D;Madrid
+VT;CALLE;de la Araucaria;15;;;0;Bajo;5;Madrid
+VT;CALLE;de Caravaca;5;;;1;1;1;Madrid
+VT;CALLE;María de Molina;15;64;;5;5;B;Madrid
+VT;CALLE;de Repullés y Vargas;6;;;01;BAJO;01;Madrid
+VT;CALLE;de María Pedraza;15;1;;1;1;Dcha;Madrid
+VT;PASEO;de las Delicias;126;;;Local;Bajo;4;Madrid
+VT;CALLE;de Hernani;49;;;N/A;1;B;Madrid
+VT;CALLE;de las Infantas;20;;;1;4;Derech;Madrid
+VT;CALLE;de San Vicente Ferrer;13;;;;bajo;1;Madrid
+VT;CALLE;de Silva;18;;;1;2;C;Madrid
+VT;CALLE;de Ponferrada;2;;;;1;2;Madrid
+VT;CALLE;de San Miguel;9;B;;;1;B2;Madrid
+VT;CALLE;de Emilio Ferrari;96;;;0;bajo;0;Madrid
+VT;CALLE;de César Cort Botí;59;;;A;12;A;Madrid
+VT;CALLE;de Santa Isabel;30;;;B;1;6;Madrid
+VT;CALLE;del Goloso;13;;;na;na;B;Madrid
+VT;CALLE;de Muñoz Torrero;6;;;B;4;B;Madrid
+VT;CALLE;de Atocha;88;;;Int.;Bajo b;88;Madrid
+VT;CALLE;de Orión;39;1;;1;2;A;Madrid
+VT;CALLE;Dr. Fourquet;4;;;Dcha.;6;A;Madrid
+VT;CALLE;de Peña Nueva;74;;;0;bajo;5;Madrid
+VT;CALLE;de Francisca Moreno;5;4;;4;4b;4b;Madrid
+VT;CALLE;de Leganés;11;;;7;7;716;Madrid
+VT;CALLE;de Hermosilla;75;;;1;6;4;Madrid
+VT;CALLE;de José Arcones Gil;82;;;0;4;4;Madrid
+VT;CALLE;de Monteverde;77;NA;;NA;NA;NA;Madrid
+VT;CALLE;de Gabriel Gómez;12;;;00;00;3-1;Madrid
+VT;CALLE;del Príncipe;5;;;A;3;B;Madrid
+VT;CALLE;del Príncipe;5;;;A;3;A;Madrid
+VT;CALLE;del Príncipe;5;;;A;1;B;Madrid
+VT;CALLE;del Príncipe;5;;;A;1;A;Madrid
+VT;CALLE;de Cartagena;110;;;in;SS;1;Madrid
+VT;CALLE;de la Sal;2;;;;5;F;Madrid
+VT;CALLE;de Caramuel;17;17;;B;4;B;Madrid
+VT;CALLE;de Villasandino;9;9;;1;11;Q;Madrid
+VT;CALLE;del Doctor Criado;2;;;Unica;Bajo;B-c;Madrid
+VT;CALLE;del Fomento;14;;;;Bajo;1;Madrid
+VT;PASEO;de la Alameda de Osuna;48;;;A;1;B;Madrid
+VT;CALLE;del Tesoro;19;19;;int;3;6;Madrid
+VT;CALLE;de Belfast;13;3;;5;5;k;Madrid
+VT;CALLE;de Alicante;3;;;;Bajo;B;Madrid
+VT;PASEO;de las Delicias;126;;;n;local;B;Madrid
+VT;CALLE;de Pirra;44;A;;1;1;21;Madrid
+VT;CALLE;de Pirra;44;A;;1;1;23;Madrid
+VT;CALLE;de Pirra;44;B;;2;5;8;Madrid
+VT;CALLE;de Pirra;44;B;;2;5;7;Madrid
+VT;CALLE;de Béjar;5;;;Interi;2;C;Madrid
+VT;CALLE;de Pirra;44;B;;2;4;3;Madrid
+VT;CALLE;de Pirra;44;B;;2;4;1;Madrid
+VT;CALLE;de Pirra;44;A;;1;5;22;Madrid
+VT;CALLE;de Pirra;44;A;;1;5;21;Madrid
+VT;CALLE;de Pirra;44;A;;1;4;23;Madrid
+VT;CRA;de San Jerónimo;12;12;;3;3;Izquie;Madrid
+VT;CALLE;de Pirra;44;B;;2;2º;8;Madrid
+VT;CALLE;de Belfast;13;4;;2;5º;C;Madrid
+VT;CALLE;de Campezo;14;1;;2;3º;4;Madrid
+VT;CALLE;de Campezo;14;4;;4;3º;6;Madrid
+VT;CALLE;de Campezo;14;2;;2;1;15;Madrid
+VT;CALLE;de Pirra;44;D;;4;1;18;Madrid
+VT;CALLE;de San Lorenzo;18;;;INT;3;2;Madrid
+VT;CALLE;de Villanueva;2;;;;0;247;Madrid
+VT;CTRA;de Húmera;10;;;0;0;A;Madrid
+VT;AVDA;de Donostiarra;27;27;;Centra;4;2;Madrid
+VT;CALLE;Gran Vía;61;;;;7;2;Madrid
+VT;CALLE;de Julián Besteiro;35;;;1;7;4;Madrid
+VT;CALLE;de Grama;35;;;0;0;0;Madrid
+VT;CALLE;de Noviembre;58;;;IZQ;ENTREP;112;Madrid
+VT;CALLE;de Sancho Dávila;28;;;0;Local2;L30;Madrid
+VT;CALLE;de Diana;3;;;;;;Madrid
+VT;CALLE;de Samaniego;12;;;3;4;A;Madrid
+VT;CALLE;de Belfast;13;4;;;4;M;Madrid
+VT;CALLE;de San Miguel;9;B;;;1;B1;Madrid
+VT;CALLE;de los Ferroviarios;57;;;2D;57;d;Madrid
+VT;CALLE;de los Cuatro Amigos;7;;;1;6;D;Madrid
+VT;AVDA;de Pablo Neruda;98G;;;;;3;Madrid
+VT;CALLE;de Fernando Díaz de Mendoza;59;;;;0;5;Madrid
+VT;PLAZA;de los Geólogos;2;;;derech;4;derech;Madrid
+VT;CALLE;de las Musas;15;;;0;PB;IZQ;Madrid
+VT;CALLE;camino alto de hortaleza;32;32;;;;chalet;Madrid
+VT;CALLE;del Marqués de Monasterio;8;8;;izq;4;izq;Madrid
+VT;PLAZA;de Tirso de Molina;14;;;1;1;1;Madrid
+VT;CALLE;de la Montera;14;;;derech;3;B;Madrid
+VT;CALLE;de las Navas del Rey;9;;;0;0;0;Madrid
+VT;CALLE;Vía Carpetana;71;;;;3;b;Madrid
+VT;CALLE;de Saturnino Tejera;19;Bj;;00;Izqd;00;Madrid
+VT;CALLE;de Maragatería;7b;;;0;0;0;Madrid
+VT;CALLE;de Cyesa;3;;;0;Bajo;Derech;Madrid
+VT;CALLE;de Ramón Luján;12;A;;1;Bajo;A;Madrid
+VT;CALLE;de Juan de Vera;4;;;1;3;M;Madrid
+VT;CALLE;de Noviembre;58;;;Bajo;Bajo;112;Madrid
+VT;CALLE;de Argente;11;;;1;1;1;Madrid
+VT;CALLE;de Dulce Chacón;40;;;-;12;B;Madrid
+VT;CALLE;de Canillas;76;;;;BAJO;4;Madrid
+VT;CALLE;de Argüeso;40;local;;;;;Madrid
+VT;CALLE;de Roma;22;;;;;;Madrid
+VT;CALLE;Alonso del Braco;101;;;1;7;A;Madrid
+VT;CALLE;del General Oraá;20;local;;Dcha.;local;Dcha.;Madrid
+VT;CALLE;del Doctor Fourquet;21;;;00;BAJO;A;Madrid
+VT;PLAZA;de Puerto Rubio;14;14;;2;2;D;Madrid
+VT;CALLE;de Monteleón;11;;;;local;bajo;Madrid
+VT;CALLE;del General Díaz Porlier;32;;;;Bajo;5-8;Madrid
+VT;CALLE;del General Díaz Porlier;32;;;;Bajo;5-7;Madrid
+VT;CALLE;del General Díaz Porlier;32;;;;Bajo;5-6;Madrid
+VT;CALLE;del General Díaz Porlier;32;;;;Bajo;5-5;Madrid
+VT;CALLE;del General Díaz Porlier;32;;;;Bajo;5-4;Madrid
+VT;CALLE;del General Díaz Porlier;32;;;;Bajo;5-3;Madrid
+VT;CALLE;del General Díaz Porlier;32;;;;Bajo;5-2;Madrid
+VT;CALLE;de los Algodonales;3;;;0;00;02C;Madrid
+VT;CALLE;de la Ballesta;28;;;1;1;3;Madrid
+VT;CALLE;Gran Vía;61;;;;7;4;Madrid
+VT;CALLE;de Deyanira;59;C;;_;2;10;Madrid
+VT;CALLE;de la Virgen de África;15;;;-;BAJO;L20;Madrid
+VT;CALLE;de Pirra;44;B;;;1;9;Madrid
+VT;CALLE;de Pirra;44;B;;;1;8;Madrid
+VT;CALLE;de los Urquiza;20;;;0;0;0;Madrid
+VT;CALLE;del General Pardiñas;32;;;Princi;Primer;17;Madrid
+VT;CALLE;de Perpetua Díaz;18;;;0;bajo;3;Madrid
+VT;CALLE;del Oso;19;19;;Patio;5;5;Madrid
+VT;CALLE;de la Virgen de Lourdes;42;;;1;00;03;Madrid
+VT;CALLE;de los Embajadores;47;;;1;Bajo;1;Madrid
+VT;CALLE;Los Yébenes;183;183;;0;1;B;Madrid
+VT;CALLE;de Gonzalo Herrero;18;;;-;BAJO;DERECH;Madrid
+VT;PASEO;de Santa María de la Cabeza;151;;;1;1º;C;Madrid
+VT;CALLE;del Plátano;34;;;;Bajo;4;Madrid
+VT;CALLE;de Retrasos;3;3;;1586;7;A;Madrid
+VT;CALLE;de Carolina Paino;29;29;;Bajo;Bajo;B;Madrid
+VT;AVDA;de la Ciudad de Barcelona;21;;;1;6;A;Madrid
+VT;CALLE;de la Condesa de Venadito;12;;;;13;E;Madrid
+VT;CALLE;de Belfast;13;1;;0;5;B;Madrid
+VT;CALLE;de Aguilar del Río;2;;;LOCAL;BAJO;4;Madrid
+VT;CALLE;de Antonio Acuña;27;;;A;1;1A;Madrid
+VT;CALLE;de San Gerardo;17;;;D;1;D;Madrid
+VT;CALLE;de Moratilla de Henares;11;;;;4;C;Madrid
+VT;CALLE;de la Chinchilla;7;;;D;2;2;Madrid
+VT;CALLE;de San Pedro Mártir;4;;;Izquie;3;Izquie;Madrid
+VT;AVDA;de Manoteras;8;1;;1;bajo;L;Madrid
+VT;CALLE;de Ferrer del Río;21;;;B;6;6D;Madrid
+VT;CALLE;del Tesoro;20;;;;1;I;Madrid
+VT;CALLE;de los Riojanos;13;;;Sn;9;C;Madrid
+VT;CALLE;de Augusto Figueroa;17;;;1;2;2;Madrid
+VT;CALLE;de Campezo;9;;;3;2;J;Madrid
+VT;CALLE;de San José;8;;;4;4;C;Madrid
+VT;CALLE;de Tablada;38;38;;0;Bajo;1;Madrid
+VT;CALLE;Andrés Manjon;7;;;;Bajo;C;Madrid
+VT;CALLE;del Norte;27;;;;3;B;Madrid
+VT;CALLE;Horizon;3;E;;5B;5B;B;Madrid
+VT;CALLE;de Benidorm;19;;;1;Bajo;1;Madrid
+VT;CALLE;de Fuencarral;92;;;dcha;3;derech;Madrid
+VT;CALLE;de Povedilla;15;;;derech;1;4;Madrid
+VT;CALLE;de Peñalara;23;;;O;O;O;Madrid
+VT;CALLE;de Antonio Toledano;26;;;No;5;C;Madrid
+VT;CALLE;de Pirra;44;B;;1;2;11;Madrid
+VT;CALLE;de Tabatinga;24;;;No;Bajo;No;Madrid
+VT;CALLE;de Pico Moncayo;5;;;-;Bajo;1;Madrid
+VT;CALLE;de Santa Isabel;50;;;b;1;6;Madrid
+VT;CALLE;de la Conciliación;6;3A;;0;Bajo A;0;Madrid
+VT;CALLE;de Taconera;16;;;;0;0;Madrid
+VT;CALLE;de Pico Moncayo;5;;;;2;1;Madrid
+VT;CALLE;de Pico Moncayo;5;;;;1;1;Madrid
+VT;CALLE;de Paulina Odiaga;46;;;B;B;B;Madrid
+VT;CALLE;de Gandhi;17;;;NA;Bajo;D;Madrid
+VT;CALLE;de la Virgen del Puig;1;;;30;BAJO;2;Madrid
+VT;CALLE;de la Reina;39;;;4;4;Izq.;Madrid
+VT;CALLE;de Cartagena;47;;;0;BAJO;0;Madrid
+VT;CALLE;de Noviciado;8B;B;;0;2;0;Madrid
+VT;CALLE;de Ministriles;9;;;Princi;BAJO;B;Madrid
+VT;CALLE;de Belfast;13;;;0;1;130;Madrid
+VT;CALLE;Jardines de San federico;11;;;izquie;semiso;izquie;Madrid
+VT;CALLE;Gran Vía;61;;;.;7;1;Madrid
+VT;CALLE;del Campanar;10;-;;-;-;-;Madrid
+VT;CALLE;de María de Guzmán;4;;;NA;Bajo;A;Madrid
+VT;CALLE;de Ercilla;51;;;NA;NA;A;Madrid
+VT;CALLE;de San Carlos;1;1;;1;1;C;Madrid
+VT;CALLE;de Agramunt;2;;;A;Bajo;A;Madrid
+VT;CALLE;de Carolina Coronado;22;;;0;Bajo;1B;Madrid
+VT;CALLE;de Carolina Coronado;22;;;;Bajo;1A;Madrid
+VT;CALLE;de Aramis;15;;;1;1;A;Madrid
+VT;CALLE;de Urgel;38;;;A;Bajo;A;Madrid
+VT;PASEO;Extremadamente;47;;;B;2;Derech;Madrid
+VT;CALLE;de Marcelino Roa Vázquez;13;;;1;00;A;Madrid
+VT;CALLE;del Oligisto;38;;;;7;D;Madrid
+VT;PLAZA;de la Solidaridad;1;;;;0;D;Madrid
+VT;PLAZA;de la Solidaridad;1;;;;0;C;Madrid
+VT;PLAZA;de la Solidaridad;1;;;;0;B;Madrid
+VT;PLAZA;de la Solidaridad;1;;;;0;A;Madrid
+VT;CALLE;de Carretas;14;;;00;07;C3;Madrid
+VT;CALLE;de Sor María de Ágreda;28;;;00;00;01;Madrid
+VT;PASEO;del Comandante Fortea;59;B;;;Bajo;B;Madrid
+VT;CALLE;de Chantada;3;;;a;BAJO;3;Madrid
+VT;AVDA;de los Apóstoles;28;28;;1;Bajo;2;Madrid
+VT;CALLE;de Sánchez Balderás;08;;;00;00;2B;Madrid
+VT;CALLE;de Ferraz;57;;;-;BAJO;E-D;Madrid
+VT;CALLE;de Taconera;18;;;0;0;DCHA;Madrid
+VT;CALLE;de Álvarez;2;;;0;BAJO;B;Madrid
+VT;CALLE;de Canillas;76;;;0;PB;4;Madrid
+VT;CALLE;de Juan de Herrera;3;;;B;2;B;Madrid
+VT;CALLE;del Apóstol Santiago;57;;;1;00;03;Madrid
+VT;CALLE;de Guadalix;7;7;;1;Primer;Derech;Madrid
+VT;CALLE;de Guadalix;7;;;Derech;1;Interi;Madrid
+VT;CALLE;del Espíritu Santo;27;;;1;1;B;Madrid
+VT;PLAZA;de Donoso;3;;;0;Bajo;Dcha;Madrid
+VT;CALLE;de Campezo;9;2-2;;1;4;A;Madrid
+VT;CALLE;de los Reyes;19;1;;1;1;Izda.;Madrid
+VT;CALLE;de La Serna del Monte;5;;;;BAJO;D;Madrid
+VT;CALLE;de Ricardo Ortiz;18;;;0;sotano;01;Madrid
+VT;CALLE;de Ricardo Ortiz;18;;;0;sotano;03;Madrid
+VT;CALLE;del Doctor Mariani;10;5;;IZQUIE;Bajo;5B IZQ;Madrid
+VT;CALLE;de Olid;12;;;12;SEMISO;DERECH;Madrid
+VT;PASEO;de Pontones;18;;;-;6;A;Madrid
+VT;CALLE;del Camino Viejo de Leganés;122;122;;1;1;a;Madrid
+VT;CALLE;de Pablo Neruda;81;K;;1;2;IZQ;Madrid
+VT;CALLE;de Gonzalo Herrero;13;;;-;Bajo;C;Madrid
+VT;CALLE;de Torquemada;27;;;3;BAJO;3;Madrid
+VT;CALLE;de Deyanira;59;A;;1;1;16;Madrid
+VT;CALLE;de Pico Cejo;41;;;0;2;B;Madrid
+VT;CALLE;de Carlos Martín Álvarez;12;12;;ext;2;izq;Madrid
+VT;CALLE;de Campezo;14;2;;1 Y 2;5;21;Madrid
+VT;CALLE;del Tucán;46;;;1;3;D;Madrid
+VT;CALLE;de la Virgen del Sagrario;13;;;1;1;1;Madrid
+VT;CALLE;de Alejandro Rodríguez;9;;;A;3;ATICO;Madrid
+VT;CALLE;del Puerto de Arlabán;90;;;N/A;Bajo;N/A;Madrid
+VT;CALLE;de Orense;3;;;;Bajo;;Madrid
+VT;CALLE;de la Hierbabuena;16D;;;;;;Madrid
+VT;PASEO;de la Dirección;161;;;06;9;06;Madrid
+VT;CALLE;de Pedro Yagüe;4;;;-;BAJO;2A;Madrid
+VT;CALLE;de Buenavista;27;;;1;2;B;Madrid
+VT;CALLE;de Aries;1;;;;Bajo;A;Madrid
+VT;CALLE;de Aries;4;;;;bajo;4;Madrid
+VT;CALLE;de Aries;4;;;BIS;;P1;Madrid
+VT;CALLE;de Aries;4;;;;Bajo;A;Madrid
+VT;CALLE;de la Aguja;12;;;1;00;IZQ;Madrid
+VT;CALLE;de Alejandro Morán;10;10;;0;Bajo i;A;Madrid
+VT;CALLE;de Portugalete;19;;;-;4;A;Madrid
+VT;CALLE;de la Flora;01;bajo;;bajo;izquie;bajo;Madrid
+VT;CALLE;de Orense;69;;;1;BAJA;3G;Madrid
+VT;CALLE;de Orense;69;;;1;BAJA;2FG;Madrid
+VT;CALLE;de Orense;69;;;1;baja;1F;Madrid
+VT;CALLE;de Fernando Mora;22;22;;1;1;A;Madrid
+VT;CALLE;de la Laguna del Marquesado;9;;;2;04;35;Madrid
+VT;CALLE;del Marqués de Santa Ana;12;;;C;2;C;Madrid
+VT;CALLE;del Marqués de Santa Ana;12;;;B;2;B;Madrid
+VT;CALLE;de Ruiz Palacios;30;;;0;00;01;Madrid
+VT;CALLE;Gran Vía;55;;;1;3;F;Madrid
+VT;CALLE;Gran Vía;55;;;1;3;G;Madrid
+VT;CALLE;de la Campiña;10;10;;B;B;B;Madrid
+VT;CALLE;de Segovia;7;;;1;2;B;Madrid
+VT;CALLE;del Marqués de Santa Ana;12;;;a;2;a;Madrid
+VT;CALLE;del Marqués de Santa Ana;12;;;c;1;c;Madrid
+VT;CALLE;del Marqués de Santa Ana;12;;;B;1;B;Madrid
+VT;CALLE;del Marqués de Santa Ana;12;;;A;1;A;Madrid
+VT;CALLE;de Almagro;10;;;Centra;3;12;Madrid
+VT;CALLE;del Marqués de Santa Ana;12;;;b;bajo;b;Madrid
+VT;CALLE;de la Inmaculada Concepción;30;;;;0;Izq;Madrid
+VT;CALLE;de la Inmaculada Concepción;30;;;;0;Dcha.;Madrid
+VT;CALLE;de Moreja;30;;;NA;1;B;Madrid
+VT;CALLE;de la Oca;10;H;;1;4;6;Madrid
+VT;CALLE;de Orense;69;;;;15;2;Madrid
+VT;CALLE;de Lasarte;9;;;;BAJO;;Madrid
+VT;CALLE;de Hermosilla;145;;;1;SEMISO;A2;Madrid
+VT;CTRA;de Villaverde a Vallecas;293B;2;;;PB;Izda.;Madrid
+VT;CALLE;SAN ISIDORO DE SEVILLA;3;;;1;BAJO;A;Madrid
+VT;CALLE;de Antonio Casero;20;;;1;2;1;Madrid
+VT;CALLE;de Antonio López;50;;;Centro;2;D;Madrid
+VT;CALLE;del Príncipe;5;;;DR;3;B-3;Madrid
+VT;CALLE;del Príncipe;5;;;DR;3;B-2;Madrid
+VT;CALLE;del Príncipe;5;;;DR;3;B-1;Madrid
+VT;CALLE;de Fuencarral;91;;;;4;IZDA;Madrid
+VT;CALLE;del Apóstol Santiago;57;;;;2;D;Madrid
+VT;CALLE;del General Lacy;12;;;IZQUIE;BAJO,4;IZQUIE;Madrid
+VT;CALLE;de Torrelaguna;70;;;Dcha.;3;B;Madrid
+VT;CALLE;Postas;14;;;;5;ATICO;Madrid
+VT;CALLE;del Elfo;11;;;;Bajo;Izda.;Madrid
+VT;AVDA;de Cantabria;34;;;;1;B;Madrid
+VT;CALLE;de Moratín;50;;;;-1;2;Madrid
+VT;CALLE;de María de Guzmán;4;;;;BAJO;1;Madrid
+VT;CALLE;Calle Vicente Camarón;58;;;;BAJO;IZDA;Madrid
+VT;CALLE;de Juan Tornero;24;;;;1;D;Madrid
+VT;CALLE;VIRGEN DE LA PAZ;12;;;;6;4;Madrid
+VT;CALLE;del Fomento;36;;;;Bajo;L-10;Madrid
+VT;CALLE;de San Alberto;1;;;;1º;;Madrid
+VT;CALLE;de Sánchez Barcaiztegui;23;;;;BAJO;1F;Madrid
+VT;CALLE;de Sánchez Barcaiztegui;23;;;;BAJO;1E;Madrid
+VT;CALLE;de Sánchez Barcaiztegui;23;;;;BAJO;1D;Madrid
+VT;CALLE;de Sánchez Barcaiztegui;23;;;;BAJO;1C;Madrid
+VT;CALLE;de Sánchez Barcaiztegui;23;;;;BAJO;1B;Madrid
+VT;CALLE;de Sánchez Barcaiztegui;23;;;;BAJO;1A;Madrid
+VT;CALLE;DE LA PAZ;7;7;;;5;CD;Madrid
+VT;CALLE;de Atocha;43;;;INT;BAJO;DER;Madrid
+VT;CALLE;de Buenavista;12;;;;B;4;Madrid
+VT;AVDA;de Nuestra Señora de Valvanera;77;;;;BAJO;2;Madrid
+VT;CALLE;de Segovia;19;;;;1;D2;Madrid
+VT;CALLE;del Conde del Serrallo;1;4;;;1;12;Madrid
+VT;CALLE;de las Infantas;12;;;;3;C;Madrid
+VT;CALLE;de San Cándido;3;;;;2;Dcha.;Madrid
+VT;CALLE;del General Zabala;19;;;;Bajo;B;Madrid
+VT;CALLE;de Toledo;129;;;;2;IZDA;Madrid
+VT;CALLE;de Tribulete;21;;;;BAJO;D;Madrid
+VT;CALLE;de Francisco Silvela;54;;;;1º;D;Madrid
+VT;CALLE;de José María de Castro;5;;;;2;A;Madrid
+VT;CALLE;Gran Vía;46;1;;1;10;F;Madrid
+VT;CALLE;de la Cabeza;18;;;;LOCAL;4;Madrid
+VT;CALLE;de San Vicente Ferrer;78;;;;BAJO;;Madrid
+VT;CALLE;de San Cándido;3;;;;Bajo;Izda.;Madrid
+VT;CALLE;de Sánchez Barcaiztegui;23;;;;BAJO;B;Madrid
+VT;CALLE;de Jesús y María;15;;;;3;A;Madrid
+VT;CALLE;de la Batalla del Salado;4;;;;SOT;D;Madrid
+VT;CALLE;de los Cuchilleros;3;;;;1;IZQ;Madrid
+VT;CALLE;del Doctor Piga;19;-;;-;Bajo;Izq;Madrid
+VT;CALLE;de José Ortega y Gasset;98;;;;4º;IZQ;Madrid
+VT;CALLE;del Carnero;14;;;;;;Madrid
+VT;CALLE;de Pelayo;8;;;;1;D;Madrid
+VT;CALLE;de Fuencarral;9;;;1;5;A;Madrid
+VT;CALLE;de Jacinto Verdaguer;12;;;;2;B;Madrid
+VT;CALLE;del General Oraá;70;;;;2;DRCH;Madrid
+VT;CALLE;de la Princesa;25-27;;;;15;6;Madrid
+VT;CALLE;de Toledo;117;;;;BAJO;C;Madrid
+VT;CALLE;de Dulce Chacón;49;;;;3º;C;Madrid
+VT;CALLE;de Julio Aguirre;6;;;;bajo;ext.;Madrid
+VT;CALLE;de Luis Vélez de Guevara;9;;;;1;15;Madrid
+VT;PZO;de San Ginés;5;;;;5º;Centr;Madrid
+VT;CALLE;de Concepción Jerónima;33;;;;1º;A´´;Madrid
+VT;CALLE;de Concepción Jerónima;33;;;;2º;A´´;Madrid
+VT;CALLE;de Concepción Jerónima;33;;;;3º;A´´;Madrid
+VT;CALLE;de Concepción Jerónima;33;;;;4º;B;Madrid
+VT;CALLE;de Concepción Jerónima;33;;;;4º;A;Madrid
+VT;CALLE;de Concepción Jerónima;33;;;;3º;B;Madrid
+VT;CALLE;de Concepción Jerónima;33;;;;3º;A;Madrid
+VT;CALLE;de Concepción Jerónima;33;;;;2º;B;Madrid
+VT;CALLE;de Concepción Jerónima;33;;;;2º;A;Madrid
+VT;CALLE;de Concepción Jerónima;33;;;;1º;B;Madrid
+VT;CALLE;de Concepción Jerónima;33;;;;1º;A;Madrid
+VT;PLAZA;de Santa Ana;10;;;;1º;Dcha;Madrid
+VT;AVDA;DEL PLANETARIO;1;A;;;9;A;Madrid
+VT;CALLE;Gran Vía;61;;;;4;;Madrid
+VT;CALLE;de Sor Ángela de la Cruz;22;;;dcha;3;Q;Madrid
+VT;CALLE;de Motilla del Palancar;8;;;;BAJO;A;Madrid
+VT;CALLE;del Montserrat;4;;;;entrep;10;Madrid
+VT;CALLE;Gran Vía;15;;;;3;B;Madrid
+VT;CALLE;RONDA DE SEGOVIA;13;;;;1;A;Madrid
+VT;CALLE;DEL ARENAL;16;;;;1;A;Madrid
+VT;CALLE;LOPE DE RUEDA;52;52;;;BAJ;A;Madrid
+VT;CALLE;de Alcalá;99;99;;INT;4;F;Madrid
+VT;PLAZA;de la Provincia;3;;;;3;IZDA;Madrid
+VT;CALLE;de los Embajadores;39;;;;1;;Madrid
+VT;CALLE;de los Embajadores;39;;;;5;;Madrid
+VT;CALLE;de Alcalá;99;99;;INT;4;E;Madrid
+VT;CALLE;de Ricardo Gutiérrez;5;A;;1;3;B;Madrid
+VT;CALLE;del Prado;12;;;;3;A;Madrid
+VT;CALLE;de Lope de Rueda;50;;;;2;D.cha;Madrid
+VT;CALLE;de Eugenio Selles;5;;;;1º;AA;Madrid
+VT;CALLE;de Bravo Murillo;9;;;;1º;37;Madrid
+VT;CALLE;de Santa Ana;9;;;;1;C;Madrid
+VT;CALLE;de Istúriz;12;;;;2;B;Madrid
+VT;CALLE;de Francisco Silvela;104;;;;2;A;Madrid
+VT;PLAZA;CAMPILLO DEL MUNDO NUEO;4;;;;1;C;Madrid
+VT;CALLE;de Segovia;20;;;;1;IZQ;Madrid
+VT;CALLE;de Covarrubias;35;;;;3º;Izqda;Madrid
+VT;CALLE;de Ibiza;27;;;;7;D;Madrid
+VT;CALLE;de Doña Berenguela;19;;;;B;B;Madrid
+VT;CALLE;MOLINO DE VIENTO;6;;;;6;B;Madrid
+VT;CALLE;MOLINO DE VIENTO;6;;;;3;C;Madrid
+VT;CALLE;del General Palanca;7;;;;B;;Madrid
+VT;CALLE;de la Cabeza;18;;;;BAJ;2;Madrid
+VT;CALLE;del Mirador de la Reina;56;;;;1;a;Madrid
+VT;CALLE;MINAS;22;;;exteri;bajo;dcha.;Madrid
+VT;CALLE;de Sagasta;4;;;;3;Izqda;Madrid
+VT;CALLE;CHINCHILLA;7;;;;5;ATIC;Madrid
+VT;CALLE;CHINCHILLA;7;;;;4;D;Madrid
+VT;CALLE;CHINCHILLA;7;;;;4;C;Madrid
+VT;CALLE;CHINCHILLA;7;;;;4;B;Madrid
+VT;CALLE;CHINCHILLA;7;;;;4;A;Madrid
+VT;CALLE;CHINCHILLA;7;;;;3;D;Madrid
+VT;CALLE;CHINCHILLA;7;;;;3;C;Madrid
+VT;CALLE;CHINCHILLA;7;;;;3;B;Madrid
+VT;CALLE;CHINCHILLA;7;;;;3;A;Madrid
+VT;CALLE;CHINCHILLA;7;;;;2;C;Madrid
+VT;CALLE;CHINCHILLA;7;;;;2;B;Madrid
+VT;CALLE;CHINCHILLA;7;;;;2;A;Madrid
+VT;CALLE;CHINCHILLA;7;;;;1;C;Madrid
+VT;CALLE;CHINCHILLA;7;;;;1;A;Madrid
+VT;CALLE;de Francisco Silvela;93;;;;3;;Madrid
+VT;CALLE;de Francisco Silvela;93;;;;2;IZDA;Madrid
+VT;CALLE;de Francisco Silvela;93;;;;2;DCHA;Madrid
+VT;CALLE;de Francisco Silvela;93;;;;1;Dcha;Madrid
+VT;CALLE;de Francisco Silvela;93;;;;BAJO;IZDA;Madrid
+VT;CALLE;de Francisco Silvela;93;;;;BAJO;DCHA;Madrid
+VT;CALLE;de Alburquerque;29;;;;2;B;Madrid
+VT;PASEO;de las Delicias;125;;;;BAJO;G;Madrid
+VT;PLAZA;de Pedro Zerolo;10;;;;5;8;Madrid
+VT;CALLE;de las Infantas;19;;;;2;4 IZ;Madrid
+VT;CALLE;de Ramírez Tomé;29;;;;1;A;Madrid
+VT;CALLE;de Augusto Figueroa;17;;;;3;IZ. A;Madrid
+VT;CALLE;Vía Lusitana;72;;;;BAJO;6;Madrid
+VT;CALLE;del General Pardiñas;35;;;;4;DCHA;Madrid
+VT;CALLE;de la Paloma;8;;;;1;11;Madrid
+VT;AVDA;del Manzanares;214;;;;;;Madrid
+VT;CALLE;de Esparteros;10;;;;4;B;Madrid
+VT;CALLE;de Augusto Figueroa;17;;;;3;IZ. B;Madrid
+VT;CALLE;de Hernán Cortés;16;;;;00;2;Madrid
+VT;CALLE;de Arturo Soria;267;;;;3;B-3;Madrid
+VT;CALLE;de Arturo Soria;267;;;;3;B-2;Madrid
+VT;CALLE;de Arturo Soria;267;;;;3;B-2;Madrid
+VT;CALLE;de Arturo Soria;267;;;;3;B-1;Madrid
+VT;CALLE;de Arturo Soria;265;;;;3;B-3;Madrid
+VT;CALLE;de Arturo Soria;265;;;;3;B-3;Madrid
+VT;CALLE;MESÓN DE PAREDES;40;;;;2;A;Madrid
+VT;CALLE;de Arturo Soria;265;;;;3;B-2;Madrid
+VT;CALLE;de Arturo Soria;265;;;;3;B-1;Madrid
+VT;CALLE;de los Irlandeses;5;;;;3;3;Madrid
+VT;CALLE;del Pez Austral;4;;;I;5;B;Madrid
+VT;CALLE;del Almirante;22;;;;1;c;Madrid
+VT;CLLON;de Concepción Jerónima;18;;;;3;3;Madrid
+VT;CALLE;de Núñez de Balboa;8;;;;4;DCHA;Madrid
+VT;CALLE;de la Sierpe;6;;;;2;DCHA;Madrid
+VT;CALLE;del Doctor Santero;4;;;;SÓTANO;A;Madrid
+VT;CALLE;del Elfo;39;;;;7;;Madrid
+VT;CALLE;del Amparo;68;;;;1;1;Madrid
+VT;CALLE;de Carnicer;19;;;;5;;Madrid
+VT;CALLE;del Marqués de la Ensenada;16;;;;9;907;Madrid
+VT;AVDA;de Monforte de Lemos;151;;;;3;2;Madrid
+VT;CALLE;de las Huertas;55;;;;3;IZ;Madrid
+VT;CALLE;del Marqués de Santa Ana;5;;;;4;C;Madrid
+VT;CALLE;de la Paloma;10;;;;BAJO;6;Madrid
+VT;CALLE;de la Academia;8;;;;5º;C;Madrid
+VT;CALLE;del Puerto de Maderi;6B;;;;BAJO;;Madrid
+VT;CALLE;de la Manzana;17;;;;1;I;Madrid
+VT;CALLE;de Mauregato;;;;;BAJO;;Madrid
+VT;CALLE;de Mauricio Legendre;16;;;1;3;28;Madrid
+VT;CALLE;de Julián Gayarre;16;;;;2;D;Madrid
+VT;CALLE;de Atocha;43;;;dcha;5;7;Madrid
+VT;CALLE;del Río San Lorenzo;22;;;;BAJO;1;Madrid
+VT;TRVA;de Trujillos;2;;;;2;E;Madrid
+VT;TRVA;de Trujillos;2;;;;2;D;Madrid
+VT;CALLE;de la Princesa;73;;;;7;A;Madrid
+VT;CALLE;de Ponzano;32;;;;4;5;Madrid
+VT;CALLE;del Desengaño;8;;;1;5;B;Madrid
+VT;CALLE;de Fuencarral;55;;;IZ;5;CTRO;Madrid
+VT;CALLE;de Luchana;3;;;;3;1;Madrid
+VT;CALLE;SOR ÁNGELA DE LA CRUZ;43;;;;5;10;Madrid
+VT;PQUE;de Roma;3;;;;bajo;;Madrid
+VT;CALLE;de la Cruz;8;;;EXT;4;IZD;Madrid
+VT;CALLE;de la Caliza;55;;;;5;B;Madrid
+VT;CALLE;del Acuerdo;17;;;;5;B;Madrid
+VT;CALLE;del General Arrando;7;;;;2;;Madrid
+VT;CALLE;MOLINO DE VIENTO;8;;;DCHA;BAJO;INT;Madrid
+VT;CALLE;de la Nao;4;;;;3;;Madrid
+VT;CALLE;de Velarde;5;;;;BAJO;3;Madrid
+VT;CALLE;del Batel;10;;;10;2;D;Madrid
+VT;RONDA;de Valencia;14;;;;2;1;Madrid
+VT;CALLE;del Pez Austral;4;;;I;5;B;Madrid
+VT;CALLE;de Pavia;2;;;;BAJO;1;Madrid
+VT;PASEO;de la Virgen del Puerto;47;;;DCHA;3;C;Madrid
+VT;CALLE;de la Costa del Sol;11;;;;BAJO;;Madrid
+VT;CALLE;de Eugenio Selles;3D;;;;BAJO;1;Madrid
+VT;CALLE;de Abades;1;;;;bajo;1;Madrid
+VT;CALLE;del Mesón de Paredes;90;;;;2;INT.IZ;Madrid
+VT;CALLE;de Santa Polonia;1;;;;BAJO;;Madrid
+VT;CALLE;de Cáceres;7;;;;BAJO;10;Madrid
+VT;CALLE;de Loreto y Chicote;;;;;BAJO;;Madrid
+VT;CALLE;de la Encomienda;5;;;;bajo;dcha;Madrid
+VT;CALLE;de Iturbe;3;;;;BAJO;2;Madrid
+VT;CALLE;de Mercedes Formica;1;;;;BAJO;3;Madrid
+VT;CALLE;de Palencia;41;;;EXT;2;IZDA;Madrid
+VT;CALLE;de Fernando Poo;50;;;;2;C;Madrid
+VT;CALLE;de la Esperanza;10;;;;BAJO;INF;Madrid
+VT;CALLE;de Méjico;14;;;;5;F;Madrid
+VT;CALLE;de Bárbara de Braganza;9;;;;4;IZDA;Madrid
+VT;CALLE;de la Cruz;20;;;;2;A;Madrid
+VT;CALLE;de Melilla;53;B;;1;BAJO;A;Madrid
+VT;CALLE;de Melilla;53;B;;1;BAJO;B;Madrid
+VT;CALLE;de Melilla;53;B;;1;BAJO;C;Madrid
+VT;CALLE;del Carnero;5;;;;BAJO;E;Madrid
+VT;CALLE;del Cerro Bermejo;6;;;;4;DCHA;Madrid
+VT;CALLE;de Menorca;9;;;;1;IZDA;Madrid
+VT;CALLE;de Juan Álvarez Mendizábal;51;;;;1;D;Madrid
+VT;CALLE;del Mesón de Paredes;21;;;2;1 INT;DCHA;Madrid
+VT;CALLE;de San Hermenegildo;20;;;;BAJO;ACC;Madrid
+VT;CALLE;de Juan Duque;8;;;;2;CTRO;Madrid
+VT;CALLE;de Villagarcía;23;;;;5;B;Madrid
+VT;CALLE;de Felipe III;6;;;;3;IZDA;Madrid
+VT;CALLE;del Mesón de Paredes;45;;;;00;IZ;Madrid
+VT;CALLE;del Mesón de Paredes;45;;;;04;DR;Madrid
+VT;CALLE;del Mesón de Paredes;45;;;;01;DR;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;5º;E;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;5º;D;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;5º;C;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;5º;B;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;5º;A;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;4º;E;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;4º;D;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;4º;C;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;4º;B;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;4º;A;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;3º;E;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;3º;D;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;3º;C;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;3º;B;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;3º;A;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;2º;E;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;2º;D;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;2º;C;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;2º;B;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;2º;A;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;1º;B;Madrid
+VT;CALLE;de Hermosilla;97;----;;----;1º;A;Madrid
+VT;CALLE;de Antonio Durán Tovar;1;;;;BAJO;B;Madrid
+VT;PASEO;de la Chopera;63;;;;2;1;Madrid
+VT;CALLE;del General Pardiñas;71;;;;10;G;Madrid
+VT;CALLE;del Mesón de Paredes;45;;;;BAJO;3;Madrid
+VT;CALLE;de Calatrava;20;;;;B;Ext.Iz;Madrid
+VT;CALLE;del Mesón de Paredes;45;;;;00;2;Madrid
+VT;CALLE;de Palafox;27;;;;6;DR;Madrid
+VT;CALLE;de Acuario;11 D;;;;1;A;Madrid
+VT;CALLE;TRAVESÍA DE ALARÓ;9;;;;BAJO;G;Madrid
+VT;CALLE;de Granada;42;;;;BJ;8;Madrid
+VT;CALLE;PRINCIPE DE VERGARA;15;-;;;SS;A;Madrid
+VT;CALLE;del Mesón de Paredes;45;;;;01;IZ;Madrid
+VT;CALLE;de las Fuentes;7;;;;3;A;Madrid
+VT;CALLE;de Jesús;14;;;;4º;IZDA;Madrid
+VT;CALLE;de Preciados;33;;;DER;5;1;Madrid
+VT;CALLE;del Divino Pastor;26;;;;5;Izq;Madrid
+VT;CALLE;de Carballido;1;;;;BJ;A4;Madrid
+VT;CALLE;del Mistral;101;;;;;;Madrid
+VT;CALLE;de Abades;13;;;;2;B;Madrid
+VT;CALLE;de Toledo;87;;;;5;C;Madrid
+VT;CALLE;NUÑEZ DE BALBOA;114;;;;8;816;Madrid
+VT;CALLE;de Acuario;11 DP;;;;1;;Madrid
+VT;CALLE;NUÑEZ DE BALBOA;17;;;;-1;DCH;Madrid
+VT;CALLE;de Magallanes;1;;;;8;1;Madrid
+VT;CALLE;de Miguel Ángel;3;;;;6;607;Madrid
+VT;CALLE;MANUEL LAMELA;5;;;;1;D;Madrid
+VT;CALLE;DEL RIO;20;;;;Bajo;Izq;Madrid
+VT;CALLE;del Mesón de Paredes;45;;;;00;1;Madrid
+VT;CALLE;del Marqués de la Ensenada;16;;;;9;919;Madrid
+VT;CALLE;de Larra;5;;;;00;1;Madrid
+VT;PLAZA;de San Ildefonso;5;;;;3;B;Madrid
+VT;CALLE;de Granada;53;;;C;3;M;Madrid
+VT;PLAZA;del Campillo del Mundo Nuevo;1;;;;2;1;Madrid
+VT;CALLE;de las Humanitarias;11;;;;3;;Madrid
+VT;CALLE;de los Bordadores;6;;;;4;IZ;Madrid
+VT;CALLE;de Ministriles;19;;;;1;INT IZ;Madrid
+VT;PLAZA;de Puerta Cerrada;7;;;;2;IZ 1;Madrid
+VT;PLAZA;de Puerta Cerrada;7;;;;2;IZ 2;Madrid
+VT;CALLE;del Ángel;7;;;;0;1;Madrid
+VT;CALLE;de Diego Bahamonde;15;;;;3;B;Madrid
+VT;CALLE;de Toledo;50;;;;2;Izda.B;Madrid
+VT;CALLE;de Carvajales;9;;;1;4;A;Madrid
+VT;CALLE;de Quiñones;3;;;;4;B;Madrid
+VT;CALLE;de Hilarión Eslava;37;;;;BJ;D;Madrid
+VT;CALLE;del Príncipe;12;;;;2;D;Madrid
+VT;CALLE;de la Puerta del Sol;5;;;;2;D;Madrid
+VT;CALLE;Gran Vía;15;;;;1;7;Madrid
+VT;PLAZA;de San Nicolás;1;;;;BAJO;DCHA;Madrid
+VT;CALLE;de Don Pedro;20;;;A;2;;Madrid
+VT;CALLE;de Nuestra Señora de los Dolores;9;;;;2;;Madrid
+VT;RONDA;de Segovia;33;;;;1;C;Madrid
+VT;CALLE;de Sarriá;14;;;;0;1;Madrid
+VT;CALLE;del Arenal;26;;;;1;IZQ 3;Madrid
+VT;CALLE;del Arenal;26;;;;1;IZQ 2;Madrid
+VT;CALLE;del Arenal;26;;;;1;IZQ 1;Madrid
+VT;CALLE;de Nuestra Señora de los Dolores;9;;;;1;;Madrid
+VT;CALLE;de Morenés Arteaga;17;;;;1;3;Madrid
+VT;CALLE;de Menéndez Pelayo;67;;;;2;11A;Madrid
+VT;CALLE;de Argensola;10;;;;1;Dcha.;Madrid
+VT;CALLE;del Olivar;36;;;;Bajo;D;Madrid
+VT;CALLE;del Marqués de Toca;6;;;;1;D;Madrid
+VT;CALLE;Benito Gutiérrez;31;;;;BJ;A;Madrid
+VT;CALLE;de Valverde;45;;;;1;A;Madrid
+VT;CALLE;DUQUE DE ALBA;12;;;IZQ;3;;Madrid
+VT;BULEV;TERESA LÓPEZ VARCÁRCEL;14;;;;1;;Madrid
+VT;BULEV;TERESA LÓPEZ VARCÁRCEL;14;;;;2;;Madrid
+VT;CALLE;de Coloreros;3;;;;4;Dcha.;Madrid
+VT;CALLE;de Pilar de Zaragoza;35;;;;3;;Madrid
+VT;CALLE;de Juan Duque;5;;;;5;B;Madrid
+VT;CALLE;de Francisca Moreno;5;;;;3;E;Madrid
+VT;PLAZA;de la Paja;3;;;Y;1;D;Madrid
+VT;CALLE;de Churruca;13;;;IN;3;Izq.;Madrid
+VT;CALLE;de la Ventosa;28;;;;2;Dcha.;Madrid
+VT;CALLE;de San Bernardo;87;;;;4;A;Madrid
+VT;CALLE;Gran Vía;68;;;;5;B;Madrid
+VT;CALLE;de Santa María;18;;;;2;D;Madrid
+VT;CALLE;SAN BERNARDO;87;;;;4;C;Madrid
+VT;CALLE;de Hermosilla;55;;;;2;D;Madrid
+VT;CALLE;de Santa María;18;;;;2;D;Madrid
+VT;CALLE;Gran Vía;68;;;;4;B;Madrid
+VT;CALLE;MARQUES DE LEIS;10;;;;1;Izq.;Madrid
+VT;CALLE;LOPE DE RUEDA;7;;;1;1;A-DR;Madrid
+VT;CALLE;de Goya;51;;;Y;3;2;Madrid
+VT;PLAZA;del Liceo;3A;;;A;3;E;Madrid
+VT;CALLE;de la Ballesta;28;;;1;3;9;Madrid
+VT;CALLE;de Jerte;8;;;;3;YI;Madrid
+VT;PLAZA;DE ESPAÑA;18;;;;31;7;Madrid
+VT;CALLE;de Alberto Aguilera;62;;;;5;6;Madrid
+VT;CALLE;del General Díaz Porlier;40;;;1;-1;B;Madrid
+VT;PLAZA;de Lavapiés;6;;;;1;A-IZ;Madrid
+VT;CALLE;de Andrés Mellado;27;;;;5;A;Madrid
+VT;CALLE;de Don Ramón de la Cruz;14;;;1;2;Dcha.;Madrid
+VT;CALLE;de Peña de Francia;6;;;;2;5;Madrid
+VT;CALLE;de Titania;48A;;;;Bajo;;Madrid
+VT;CALLE;de Dulcinea;33;;;;Bajo;C;Madrid
+VT;CALLE;del Amparo;27;;;;1;Dcha.;Madrid
+VT;CALLE;PUEBLA;12;INT;;DCHA;BAJ;;Madrid
+VT;CALLE;de Aries;4;;;;Bajo;3;Madrid
+VT;CALLE;de Villanueva;2;;;1;2;32;Madrid
+VT;CALLE;de Ave María;20;;;;1;F;Madrid
+VT;CALLE;de Francisco Palomo;1;;;;Bajo;F;Madrid
+VT;CALLE;de Francisco Palomo;1;;;;Bajo;E;Madrid
+VT;CALLE;de Francisco Palomo;1;;;;Bajo;D;Madrid
+VT;CALLE;de Francisco Palomo;1;;;;Bajo;C;Madrid
+VT;CALLE;de Francisco Palomo;1;;;;Bajo;B;Madrid
+VT;CALLE;de Francisco Palomo;1;;;;Bajo;A;Madrid
+VT;CALLE;de Miguel Yuste;29;A;;;2;S02;Madrid
+VT;CALLE;de Miguel Yuste;29;B;;;1;P27;Madrid
+VT;CALLE;de Miguel Yuste;29;B;;;1;P20;Madrid
+VT;CALLE;de Miguel Yuste;29;A;;;1;P07;Madrid
+VT;CALLE;de Miguel Yuste;29;A;;;1;P06;Madrid
+VT;CALLE;de San Dimas;3;;;;1;2;Madrid
+VT;CALLE;de Augusto Figueroa;4;;;;3;F;Madrid
+VT;CALLE;de la Cava Alta;13;;;;1;B;Madrid
+VT;CALLE;del Teniente Coronel Noreña;34;;;;1;A;Madrid
+VT;AVDA;de San Luis;94;;;;Bajo;7;Madrid
+VT;CALLE;de Francisca Moreno;6;;;;Bajo;C;Madrid
+VT;CALLE;de Miguel Yuste;29;B;;;1;P35;Madrid
+VT;CALLE;de Miguel Yuste;29;B;;;1;P31;Madrid
+VT;CALLE;de Miguel Yuste;29;B;;;1;P30;Madrid
+VT;CALLE;de Miguel Yuste;29;B;;;1;P29;Madrid
+VT;CALLE;de Miguel Yuste;29;A;;;1;P16;Madrid
+VT;CALLE;de Miguel Yuste;29;A;;;1;P15;Madrid
+VT;CALLE;de Miguel Yuste;29;A;;;1;P14;Madrid
+VT;CALLE;de Miguel Yuste;29;A;;;1;P13;Madrid
+VT;PLAZA;de Arteijo;14;;;;9;4;Madrid
+VT;CALLE;del Teniente Muñoz Díaz;7;;;;B;Dcha;Madrid
+VT;CALLE;PAULA DE LA VEGA;17;;;;3;B;Madrid
+VT;PASEO;de Santa María de la Cabeza;58;;;;1;B;Madrid
+VT;CALLE;de Jorge Juan;88;;;;1;Izq.;Madrid
+VT;CALLE;de Hermosilla;103;;;Int.;5;Izq.;Madrid
+VT;CALLE;de Puentelarra;4;;;I;1;D;Madrid
+VT;CALLE;de Raimundo Fernández Villaverde;15;;;;3;D;Madrid
+VT;RONDA;de Segovia;35;;;EXT;4;IZDA;Madrid
+VT;AVDA;de la Reina Victoria;23;;;;4;C;Madrid
+VT;CALLE;del Correo;2;;;;3;BC;Madrid
+VT;GTA;de Puerta de Toledo;3;;;;1;;Madrid
+VT;CALLE;del Cerro Bermejo;4;;;1;3;CD;Madrid
+VT;CALLE;del Cardenal Cisneros;57;;;;Bajo;Dcha.;Madrid
+VT;TRVA;de la Comadre;6;;;;Bajo;Dcha.;Madrid
+VT;CALLE;diagonal;11;;;5;2;B;Madrid
+VT;CALLE;de Balsaminas;1;;;;Bajo;;Madrid
+VT;CALLE;de la Virgen de Lourdes;4;;;;3;3;Madrid
+VT;CALLE;de Segovia;47;;;;5;B;Madrid
+VT;CALLE;de Atocha;114;;;Int.;1;Izq.;Madrid
+VT;CALLE;de la Escalinata;10;;;;1;;Madrid
+VT;CALLE;de Bailén;47;;;;Bajo;Izq.;Madrid
+VT;CALLE;de Martín de los Heros;31;;;;6;1;Madrid
+VT;CALLE;de Mauricio Legendre;16;;;;6;634;Madrid
+VT;CALLE;de Cartagena;110;;;Int.;2;2;Madrid
+VT;CALLE;de Juan de Olías;35;;;;2;D;Madrid
+VT;CALLE;del Mesón de Paredes;47;;;Izq.;4;;Madrid
+VT;CALLE;de Ave María;22;;;Int.;4;4;Madrid
+VT;CALLE;de Francisco Navacerrada;63;;;;Atico;B;Madrid
+VT;CALLE;de Francisco Navacerrada;63;;;;Atico;A;Madrid
+VT;CALLE;de Francisco Navacerrada;63;;;;3;D;Madrid
+VT;CALLE;de Francisco Navacerrada;63;;;;3;B;Madrid
+VT;CALLE;de Francisco Navacerrada;63;;;;3;A;Madrid
+VT;CALLE;de Francisco Navacerrada;63;;;;2;C;Madrid
+VT;CALLE;de Francisco Navacerrada;63;;;;2;B;Madrid
+VT;CALLE;de Francisco Navacerrada;63;;;;1;D;Madrid
+VT;CALLE;de Francisco Navacerrada;63;;;;1;B;Madrid
+VT;CALLE;de Francisco Navacerrada;63;;;;Bajo;C;Madrid
+VT;CALLE;de Francisco Navacerrada;63;;;;Bajo;B;Madrid
+VT;CALLE;de Francisco Navacerrada;63;;;;Bajo;A;Madrid
+VT;CALLE;de Diagonal;11;;;5;2;A;Madrid
+VT;CALLE;de Barbieri;3;;;;4;1;Madrid
+VT;CALLE;de Claudio Coello;81;;;;4;C Int;Madrid
+VT;CALLE;de Sor María de Ágreda;14;;;;3;B;Madrid
+VT;CALLE;de Leganitos;35;;;;1;A Int.;Madrid
+VT;PASEO;de la Infanta Isabel;15;;;Ext.;7;Izq.;Madrid
+VT;CALLE;de la Corredera Baja de San Pablo;21;;;;2;D;Madrid
+VT;CALLE;de Andrés Borrego;17;;;;Bajo;1;Madrid
+VT;CALLE;de Alegría de Oria;5;;;;Bajo;A;Madrid
+VT;CALLE;de Casto Plasencia;11;;;;Bajo;B;Madrid
+VT;CALLE;de Lagasca;132;;;;1;Dcha.;Madrid
+VT;CALLE;de Aldea del Fresno;17;;;;Bajo;A;Madrid
+VT;CALLE;de Serrano Anguita;7;;;;3;Dcha.;Madrid
+VT;CALLE;de Fuencarral;88;;;;5;Izq.;Madrid
+VT;CALLE;de la Paloma;7;;;;1;A;Madrid
+VT;CALLE;de la Paloma;7;;;;1;C;Madrid
+VT;CALLE;de la Paloma;7;;;;3;B;Madrid
+VT;CALLE;de la Paloma;7;;;;3;A;Madrid
+VT;CALLE;de la Paloma;7;;;;2;C;Madrid
+VT;CALLE;de la Paloma;7;;;;2;B;Madrid
+VT;CALLE;de la Paloma;7;;;;2;A;Madrid
+VT;CALLE;de la Paloma;7;;;;1;D;Madrid
+VT;CALLE;de la Paloma;7;;;;4;C;Madrid
+VT;CALLE;de la Paloma;7;;;;4;B;Madrid
+VT;CALLE;de la Paloma;7;;;;3;C;Madrid
+VT;CALLE;de San Bernardo;42;;;;2;C;Madrid
+VT;CALLE;de Galdo;1;;;;2;;Madrid
+VT;CALLE;de Ramón Calabuig;62;;;;Bajo;C;Madrid
+VT;CALLE;de Velarde;12;;;;1;Izq.;Madrid
+VT;CALLE;de la Primavera;9;;;Int.;4;Izq.;Madrid
+VT;CALLE;de Ventura de la Vega;12;;;;Bajo;3;Madrid
+VT;CALLE;del Pretil de los Consejos;11;;;Izq.;3;B;Madrid
+VT;CALLE;de Fernández de los Ríos;47;;;Int DC;Bajo;D;Madrid
+VT;CALLE;de Villa de Rota;2;5;;;2;D;Madrid
+VT;CALLE;de Segovia;51;;;;3;1;Madrid
+VT;CALLE;del Espíritu Santo;37;;;1;Bajo;1;Madrid
+VT;CALLE;de Mauricio Legendre;15;;;Dcha.;8;H;Madrid
+VT;CALLE;de Barbieri;10;;;Izq.;3;Ult.;Madrid
+VT;CALLE;de Colombia;14;;;;1;D;Madrid
+VT;CALLE;de Toledo;87;;;;1;E;Madrid
+VT;CALLE;de Aragón;8;;;;1;1;Madrid
+VT;CALLE;de San Leopoldo;50;;;;Bajo;1;Madrid
+VT;CALLE;del Correo;2;;;;3;D;Madrid
+VT;CALLE;de Santísima Trinidad;31;;;;3;IA;Madrid
+VT;CALLE;del Doctor Cortezo;12;;;Int.;3;3;Madrid
+VT;CALLE;de la Virgen de Lourdes;34;;;;10;4;Madrid
+VT;CALLE;de la Reina;23;;;;6;A;Madrid
+VT;CALLE;de Fernández de los Ríos;50;;;;4;Izq.;Madrid
+VT;CALLE;de Santa Engracia;88;;;;4;C;Madrid
+VT;CALLE;de Gravina;8;;;;1;;Madrid
+VT;CALLE;de Francisca Calonge;11;;;Izq.;Bajo;1;Madrid
+VT;CALLE;de Santa Ana;14;;;;Bajo;C;Madrid
+VT;CALLE;de los Estudios;3;;;;5;1;Madrid
+VT;PASEO;de la Castellana;284;;;;3;D;Madrid
+VT;CALLE;de Silva;17;;;;4;Dcha.;Madrid
+VT;CALLE;de Silva;17;;;;4;Izq.;Madrid
+VT;CALLE;del Conde de Torralba;14;;;;1;D;Madrid
+VT;CALLE;de Ministriles;11;;;;2;B;Madrid
+VT;CALLE;de Ministriles;11;;;;1;C;Madrid
+VT;CALLE;de Vargas;14;;;;Bajo;Izq.;Madrid
+VT;CALLE;de la Fresa;3;;;;;;Madrid
+VT;CALLE;de San Mateo;30;;;;1;E;Madrid
+VT;CALLE;de Padilla;69;;;Int.;1;4;Madrid
+VT;CALLE;de Bailén;20;;;;1;Izq.;Madrid
+VT;CALLE;del Fomento;3;;;;2;A;Madrid
+VT;CALLE;de Ayala;81;;;Int.;Bajo;11;Madrid
+VT;CALLE;de Tribulete;8;;;;3;Dcha.;Madrid
+VT;CALLE;de Hortaleza;4;;;Izq.;2;A;Madrid
+VT;CALLE;Postas;26;;;;4;Dcha.;Madrid
+VT;CRA;de San Jerónimo;3;;;;1;Dcha 2;Madrid
+VT;CALLE;de Don Ramón de la Cruz;46;;;;3;D;Madrid
+VT;CALLE;de López Silva;7;;;;1;C;Madrid
+VT;AVDA;de la Ciudad de Barcelona;51;;;;5;YB;Madrid
+VT;PLAZA;del General Vara de Rey;14;;;;Bajo;Dcha.;Madrid
+VT;CALLE;del Cañaveral;8;;;;1;Izq.;Madrid
+VT;CALLE;de Mota del Cuervo;76;;;;8;10;Madrid
+VT;AVDA;de los Prunos;5-7;G;;;5;B;Madrid
+VT;AVDA;de los Prunos;22;;;;Bajo;;Madrid
+VT;AVDA;de los Prunos;4;;;;Bajo;;Madrid
+VT;CALLE;de Noviciado;8 B;;;;2;;Madrid
+VT;CALLE;de Velarde;13;;;;2;;Madrid
+VT;CALLE;de Alejandro Villegas;32;;;;;;Madrid
+VT;CALLE;de Muñoz Torrero;4;;;;1;C;Madrid
+VT;CALLE;de San Bernardo;84;;;;Bajo;G;Madrid
+VT;RONDA;de Atocha;3;;;;2;Izq.;Madrid
+VT;CALLE;de Tenerife;6;;;;4;4;Madrid
+VT;CALLE;de Indalecio Fernández;42;;;;4;C;Madrid
+VT;CALLE;de Jarilla;7;;;;2;B;Madrid
+VT;CALLE;de Valverde;37;;;1;1;15;Madrid
+VT;CALLE;de Villanueva;;;;4;6;D;Madrid
+VT;CALLE;de Villanueva;2;;;4;6;A;Madrid
+VT;PLAZA;de Salesas;8;;;;3;Izq.;Madrid
+VT;CALLE;de Rafael Calvo;31;;;;4;13;Madrid
+VT;CALLE;de San Andrés;38;;;;3;A;Madrid
+VT;CALLE;de Alcalá;213;;;2;1;B;Madrid
+VT;CALLE;de San Roque;16;;;;1;D;Madrid
+VT;AVDA;de los Arces;7;G;;;4;A;Madrid
+VT;AVDA;de los Arces;7;G;;;1;A;Madrid
+VT;CALLE;de Alcalá;22;;;;5;Izq.;Madrid
+VT;CALLE;del Conde de Aranda;4;;;;3;;Madrid
+VT;CALLE;Mayor;21;;;Int.;4;Izq.;Madrid
+VT;CALLE;de Blasco de Garay;29;;;;2;3;Madrid
+VT;CALLE;de Julián Besteiro;35;;;;6;9;Madrid
+VT;CALLE;del Conde del Serrallo;1;1;;;1;8;Madrid
+VT;CALLE;de Oña;5;;;;Bajo;2;Madrid
+VT;CALLE;de las Abelias;12;;;;Bajo;;Madrid
+VT;CALLE;de Gravina;5;;;;1;C;Madrid
+VT;CALLE;de los Bordadores;4;;;;1;Izq;Madrid
+VT;CALLE;de Sirio;50;;;;10;A;Madrid
+VT;CALLE;del Calvario;19;;;;2;Dcha.;Madrid
+VT;CALLE;del Conde de Aranda;4;;;;2;;Madrid
+VT;CALLE;de Cedaceros;3;;;;3;Centro;Madrid
+VT;CUSTA;de Santo Domingo;3;;;Izq.;1;B;Madrid
+VT;CALLE;de Agustín Durán;33;;;;1;B;Madrid
+VT;CALLE;Agustín Durán;33;;;;1;A;Madrid
+VT;CALLE;de Daganzo;3;;;;Bajo;3;Madrid
+VT;CALLE;de Salitre;28;;;;Bajo;4;Madrid
+VT;CALLE;de Veneras;5;;;;4;1;Madrid
+VT;PLAZA;de la Cruz Verde;1;;;Dcha.;2;B;Madrid
+VT;CALLE;de San Andrés;22;;;;Bajo;8;Madrid
+VT;CALLE;de Pizarro;19;;;;2;Dcha.;Madrid
+VT;CALLE;de los Pirineos;21;;;;4;;Madrid
+VT;CALLE;de Ponzano;26;;;Int.;2;Centro;Madrid
+VT;CALLE;de la Cava Baja;39;;;;1;D;Madrid
+VT;CUSTA;de Santo Domingo;20;;;;4;D;Madrid
+VT;CALLE;del Gobernador;;;;;4;A 2;Madrid
+VT;CALLE;de Santa Engracia;49;;;;3;8;Madrid
+VT;CALLE;de la Princesa;3 DUP;;;;10;11;Madrid
+VT;CALLE;de Don Ramón de la Cruz;50;;;;7;Dcha.;Madrid
+VT;CALLE;del Tesoro;21;;;;2;2;Madrid
+VT;PLAZA;de Chueca;2;;;;3;;Madrid
+VT;CALLE;de la Magdalena;;;;;2;Izq.;Madrid
+VT;CALLE;de los Bordadores;6;;;;1;Dcha.;Madrid
+VT;CALLE;de Lavapiés;42;;;;Bajo;A;Madrid
+VT;CALLE;de Ministriles;5;;;;1;Ext dr;Madrid
+VT;CALLE;de Hermenegildo Bielsa;5;;;;4;B;Madrid
+VT;CALLE;de Robledillo;12;;;;Atico;B;Madrid
+VT;CALLE;de Méndez Álvaro;39;A;;;13;E;Madrid
+VT;CALLE;de Hortaleza;61;;;;4;L;Madrid
+VT;CALLE;de Hortaleza;61;;;;4;K;Madrid
+VT;CALLE;de Hortaleza;61;;;;1;K;Madrid
+VT;CALLE;de Florencio Llorente;23;;;;5;A;Madrid
+VT;CALLE;de San Lamberto;15;;;;-1;2;Madrid
+VT;CALLE;del Príncipe;4;;;;1;1;Madrid
+VT;CALLE;de Sambara;9;;;;2;Izq;Madrid
+VT;CALLE;de Dulce Chacón;23;;;;12;B;Madrid
+VT;CALLE;de Gustavo Fernández Balbuena;32;;;;3;;Madrid
+VT;CALLE;de Gustavo Fernández Balbuena;32;;;;2;;Madrid
+VT;CALLE;de Gustavo Fernández Balbuena;32;;;;1;;Madrid
+VT;CALLE;de Núñez de Balboa;110;;;;2;INT D;Madrid
+VT;CALLE;de San Lorenzo;22;;;;3;B;Madrid
+VT;CALLE;de Alburquerque;3;;;;2;A;Madrid
+VT;CALLE;de Alonso Cano;33;;;;6;B;Madrid
+VT;CALLE;de Espoz y Mina;2;;;;2;Dcha.;Madrid
+VT;CALLE;de la Ruda;15;;;;1;BEXT;Madrid
+VT;CALLE;de Muela de San Juan;10;;;;Bajo;B;Madrid
+VT;CALLE;de Arganzuela;16;;;;1;2;Madrid
+VT;CALLE;de Segovia;57;;;;Patio;3;Madrid
+VT;CALLE;del Pinar;22;;;;2;;Madrid
+VT;CALLE;de Vicente Camarón;46;;;Ext.;Bajo;3;Madrid
+VT;CALLE;de Vicente Camarón;46;;;Int.;Bajo;3;Madrid
+VT;CALLE;de Vicente Camarón;;;;Int.;Bajo;1;Madrid
+VT;CALLE;de Vicente Camarón;46;;;Int.;Bajo;2;Madrid
+VT;CALLE;de Linneo;29;;;;7;B;Madrid
+VT;CALLE;de Bernardo López García;5;;;;4;Izq.;Madrid
+VT;CALLE;del Olivar;26;;;;2;B;Madrid
+VT;CALLE;del Doctor Mata;1;;;;1;C;Madrid
+VT;PASEO;Imperial;35;A;;;4;K;Madrid
+VT;CALLE;de Mira el Sol;18;;;;Bajo;1;Madrid
+VT;PLAZA;del Emperador Carlos V;9;;;;3;6;Madrid
+VT;CALLE;de Molina;28;;;;Bajo;C;Madrid
+VT;CALLE;de Zaragoza;11;;;;3;Izq.;Madrid
+VT;CALLE;del Castillo;14;;;Dcha.;Bajo;Dcha.;Madrid
+VT;CALLE;del Montserrat;32;;;;2;Izq.;Madrid
+VT;CALLE;de Alejandro González;7;;;;2;3;Madrid
+VT;CALLE;de Sagunto;14;;;;Bajo;Izq.;Madrid
+VT;CALLE;de Marcelina;15;;;;;;Madrid
+VT;CALLE;del Cardenal Cisneros;57;;;;4;A;Madrid
+VT;CALLE;de Loreto y Chicote;13;;;Int;4;Izq;Madrid
+VT;CALLE;de Lagasca;10;;;;2;;Madrid
+VT;CALLE;de la Palma;34;;;;1;G;Madrid
+VT;CALLE;de San Juan de la Cruz;7;;;;4;5;Madrid
+VT;CALLE;de la Corredera Baja de San Pablo;25;;;;2;D;Madrid
+VT;CALLE;de la Escalinata;9;;;;4;5;Madrid
+VT;CALLE;de Toledo;25;;;;4;Dcha.;Madrid
+VT;CALLE;de Gravina;15;;;I;4;2;Madrid
+VT;CALLE;de Sotomayor;4;;;1;2;A;Madrid
+VT;CALLE;de José Ortega y Gasset;52;;;Ext.;8;Izq.;Madrid
+VT;CALLE;de Gómez de Avellaneda;48;;;;2;A;Madrid
+VT;CALLE;de la Montera;39;;;1;3;C;Madrid
+VT;RONDA;de Segovia;31;;;1;4;C;Madrid
+VT;CALLE;de los Embajadores;60;;;Ext.;5;Izq.;Madrid
+VT;CALLE;de la Farmacia;6;;;;2;2;Madrid
+VT;CALLE;de las Minas;22;;;;1;Dcha.;Madrid
+VT;CALLE;de Nicolás Godoy;23;;;;8;G;Madrid
+VT;CALLE;del Ferrocarril;25;;;;5;2;Madrid
+VT;CALLE;del Arenal;26;;;;2;DR-B;Madrid
+VT;CALLE;Mayor;51;;;;1;A;Madrid
+VT;CALLE;de San Pedro;5;;;;1;C;Madrid
+VT;CALLE;de la Fresa;;;;;4;;Madrid
+VT;CALLE;de Bailén;20;;;;1;Izq.;Madrid
+VT;CALLE;de Padilla;69;;;;1;4;Madrid
+VT;CALLE;Trafalgar;23;;;;4;Izq.;Madrid
+VT;CALLE;de la Cava Baja;23;;;;3;Izq.;Madrid
+VT;CALLE;de Molina;30;;;;Bajo;C;Madrid
+VT;CALLE;de la Magdalena;38;;;;1;C;Madrid
+VT;CALLE;de Pinar del Rey;49;;;A;Bajo;;Madrid
+VT;CALLE;de San Marcos;42;;;;1;A;Madrid
+VT;CALLE;de la Magdalena;38;;;;4;D;Madrid
+VT;CALLE;de Lavapiés;15;;;;1;C;Madrid
+VT;CALLE;de Augusto Figueroa;4;;;Int.;3;F;Madrid
+VT;CALLE;de Tetuán;26;;;;4;Izq.;Madrid
+VT;CALLE;de Ave María;5;;;;1;Izq.;Madrid
+VT;CALLE;de Piamonte;5;;;;2;B;Madrid
+VT;CALLE;de Piamonte;5;;;;2;A;Madrid
+VT;CALLE;de Piamonte;5;;;;4;Atico;Madrid
+VT;CALLE;de Piamonte;5;;;;3;B;Madrid
+VT;CALLE;de Piamonte;5;;;;3;A;Madrid
+VT;CALLE;de Murcia;20;;;1;2;J;Madrid
+VT;CALLE;de Piamonte;5;;;;1;;Madrid
+VT;CALLE;de Granada;42;;;;1;9;Madrid
+VT;CALLE;del Norte;5;;;Ext.;3;Izq.;Madrid
+VT;CALLE;de los Cabestreros;15;;;;1;Dcha.;Madrid
+VT;CALLE;de Lagasca;75;;;;9;Izq.;Madrid
+VT;CALLE;de Acuario;11 D;;;;2;A;Madrid
+VT;CALLE;de Almadén;8;;;;1;8;Madrid
+VT;CALLE;de la Palma;14;;;Int.;4;6;Madrid
+VT;CALLE;de los Bordadores;11;;;Int.;1;Dcha.;Madrid
+VT;CALLE;de Narváez;58;;;Dcha;1;1;Madrid
+VT;CALLE;de Narváez;58;;;DCHA;1;2;Madrid
+VT;CALLE;de las Huertas;42;;;;2;Dcha.;Madrid
+VT;PLAZA;del Ángel;13;;;;5º;YB;Madrid
+VT;CALLE;de Ave María;42;;;;5;A;Madrid
+VT;CALLE;de Ave María;42;;;;5;D;Madrid
+VT;AVDA;de Menéndez Pelayo;67;;;;2;11 B;Madrid
+VT;CALLE;del Profesor Waksman;14;;;1IZQ;2;IZQ;Madrid
+VT;CALLE;de Concepción Jerónima;18;;;;3;4;Madrid
+VT;CALLE;Postas;15;;;;4;;Madrid
+VT;CALLE;Postas;15;;;;3;;Madrid
+VT;CALLE;Postas;15;;;;2;;Madrid
+VT;CALLE;Postas;15;;;;1;;Madrid
+VT;CALLE;de la Alameda;24;Bajo;;;Bajo;;Madrid
+VT;CALLE;de Santa Polonia;3;Bajo;;;Bajo;;Madrid
+VT;CALLE;del Duque de Alba;15;;;Dcha.;3;3;Madrid
+VT;CALLE;del Conde de Lemos;4;;;;4;4;Madrid
+VT;CALLE;del Mar de Omán;14;;;;1;;Madrid
+VT;CALLE;de Gustavo Fernández Balbuena;17;;;;BAJ;3;Madrid
+VT;CALLE;de Aquilino Domínguez;15;;;;Bajo;1;Madrid
+VT;CALLE;de Lavapiés;53;;;;1;IZ;Madrid
+VT;CALLE;de Villanueva;2;;;4;4;C;Madrid
+VT;CALLE;de Concepción Jerónima;22;;;;1;Drcha;Madrid
+VT;CALLE;Gran Vía;68;;;;2;C;Madrid
+VT;CALLE;de la Cruz;20;;;;3;B;Madrid
+VT;CALLE;de Villanueva;2;;;4;3;D;Madrid
+VT;CALLE;de Alcalá;22;;;;3;Dcha.;Madrid
+VT;CALLE;de Alcalá;22;;;;3;Izda.;Madrid
+VT;CALLE;de Alcalá;22;;;;4;Izda.;Madrid
+VT;CALLE;de Alcalá;22;;;;4;Dcha.;Madrid
+VT;CALLE;de la Cruz;20;;;;2;B;Madrid
+VT;CALLE;del General Pardiñas;42;;;Ext.;1;Dcha.;Madrid
+VT;PASEO;del Prado;46;;;;1;B;Madrid
+VT;CALLE;de Lepanto;6;;;;4;Dcha.;Madrid
+VT;CALLE;de Lepanto;6;;;;1;IZQ.;Madrid
+VT;CALLE;de Lepanto;6;;;;2;IZQ.;Madrid
+VT;CALLE;de Lepanto;6;;;;3;IZQ.;Madrid
+VT;CALLE;de Lepanto;6;;;;4;IZQ.;Madrid
+VT;CALLE;de Lepanto;6;;;;5;CENT;Madrid
+VT;CALLE;de Lepanto;6;;;;4;CENT;Madrid
+VT;CALLE;de Lepanto;6;;;;5;IZQ.;Madrid
+VT;CALLE;de Cádiz;1;;;;3;;Madrid
+VT;CALLE;de Silva;12;;;;4;C;Madrid
+VT;CALLE;de Trujillos;7;;;;2;F;Madrid
+VT;CALLE;Gran Vía;6;;;;5;Dcha.;Madrid
+VT;CALLE;de Arganzuela;6;;;;2;3;Madrid
+VT;CALLE;de Doña Mencía;13;;;;Bajo;Izda.;Madrid
+VT;CALLE;de Doña Mencía;11;;;;Bajo;D;Madrid
+VT;CALLE;de Echegaray;10;;;Int.;1;Dcha.;Madrid
+VT;CALLE;de Diagonal;11;;;5;1;A;Madrid
+VT;CALLE;de la Cruz;20;;;;1;A;Madrid
+VT;CALLE;del Doctor Mariani;8;;;;Bajo;C;Madrid
+VT;CALLE;del Oso;6;;;;4;1;Madrid
+VT;CALLE;de Bretón de los Herreros;37;;;;Bajo;Izda.;Madrid
+VT;CALLE;del Lago Constanza;37;Local;;;Izda.;;Madrid
+VT;CALLE;de Castelló;62;;;;5;B;Madrid
+VT;CALLE;de Gravina;17;;;;3;Centro;Madrid
+VT;CALLE;de Alonso Heredia;13;;;;7;Izda.;Madrid
+VT;CALLE;de los Fundadores;13;;;;4;C;Madrid
+VT;CALLE;del Barrilero;17;3;;;B;A;Madrid
+VT;CALLE;del Barrilero;17;3;;;B;B;Madrid
+VT;CALLE;de Toledo;2;;;;4;5;Madrid
+VT;CALLE;de Arganzuela;6;;;;0;3;Madrid
+VT;CALLE;de Haro;25;;;;;;Madrid
+VT;CALLE;del Norte;5;;;;1;Centro;Madrid
+VT;CALLE;de San Vicente Ferrer;25;;;;0;1;Madrid
+VT;CALLE;de la Palma;22;;;2;2;3;Madrid
+VT;CALLE;de Rodrigo Uhagón;5;;;Ext.;Bajo;Izda.;Madrid
+VT;CALLE;de Rodrigo Uhagón;5;;;Int.;Bajo;Izda.;Madrid
+VT;CALLE;de Rodrigo Uhagón;5;;;Int.;Bajo;Centro;Madrid
+VT;CALLE;de Rodrigo Uhagón;5;;;Int.;Bajo;Dcha.;Madrid
+VT;CALLE;de Rodrigo Uhagón;5;;;Ext.;Bajo;Dcha.;Madrid
+VT;CALLE;de Leñeros;30;;;Int.;Bajo;Centro;Madrid
+VT;CALLE;de Leñeros;30;;;Int.;Bajo;Dcha.;Madrid
+VT;CALLE;de Leñeros;30;;;Int.;Bajo;Izda.;Madrid
+VT;CALLE;de Leñeros;30;;;Ext;Bajo;Izda.;Madrid
+VT;CALLE;de la Encomienda;18;;;;4;Izda.;Madrid
+VT;AVDA;de Manoteras;8;;;1;1;K;Madrid
+VT;AVDA;de Bruselas;70;;;;Bajo;A;Madrid
+VT;CALLE;de Francisco Santos;18;;;;Bajo;F;Madrid
+VT;CALLE;de Meléndez Valdés;13;;;;1;Izda.;Madrid
+VT;AVDA;de Baviera;10;;;;Bajo;;Madrid
+VT;AVDA;de Bruselas;72;;;;Bajo;D;Madrid
+VT;AVDA;de Bruselas;72;;;;Bajo;C;Madrid
+VT;AVDA;de Bruselas;72;;;;Bajo;B;Madrid
+VT;AVDA;de Bruselas;72;;;;Bajo;A;Madrid
+VT;AVDA;de Bruselas;70;;;;Bajo;D;Madrid
+VT;AVDA;de Bruselas;70;;;;Bajo;C;Madrid
+VT;AVDA;de Bruselas;70;;;;Bajo;B;Madrid
+VT;CALLE;de las Infantas;23;;;1;1;Dcha.;Madrid
+VT;CALLE;Gran Vía;68;;;;3;B;Madrid
+VT;CALLE;de la Salud;15;;;;Bajo;Izda.;Madrid
+VT;CALLE;del Arenal;21;;;;1;Dcha.;Madrid
+VT;CALLE;del General Díaz Porlier;85;;;;-1;C;Madrid
+VT;CALLE;de José Castán Tobeñas;1;;;;2;9;Madrid
+VT;CALLE;de Bailén;33;;;;1;Dcha.B;Madrid
+VT;CALLE;de Carretas;33;;;Izda.;4 CT;C;Madrid
+VT;CALLE;de Campo Real;;;;;2;B;Madrid
+VT;CALLE;de Campo Real;20;;;;2;A;Madrid
+VT;CALLE;de Campo Real;20;;;;1;B;Madrid
+VT;PLAZA;de Lavapiés;6;;;Int.;5;D;Madrid
+VT;CALLE;de Lagasca;67;;;A;2;204;Madrid
+VT;CALLE;de Campo Real;20;;;;1;A;Madrid
+VT;CALLE;de Gravina;21;;;;0;A;Madrid
+VT;CALLE;de Miguel Moya;4;;;INT;4;DCHA;Madrid
+VT;CALLE;de los Cabestreros;14;;;INT;3;IZ;Madrid
+VT;CALLE;de Maiquez;20;;;;BAJO;A;Madrid
+VT;CALLE;de Concepción Jerónima;18;;;;2;4;Madrid
+VT;CALLE;de Casto Plasencia;4;BIS;;;BAJO;;Madrid
+VT;CALLE;del Espíritu Santo;10;;;;2;DR;Madrid
+VT;CALLE;del Cardenal Mendoza;21;;;;BAJO;B;Madrid
+VT;RONDA;de Segovia;81;;;;6;B;Madrid
+VT;CALLE;SAN ESTEBAN DE GORMAZ;11;;;;;;Madrid
+VT;CALLE;del Limón;1;;;;1;E;Madrid
+VT;CALLE;del Divino Pastor;23;;;;1;IZDA;Madrid
+VT;CALLE;de San Vicente Ferrer;17;;;;1;IZDA;Madrid
+VT;CALLE;de Jesús del Gran Poder;2;;;1;BAJO;9;Madrid
+VT;CALLE;de Marcelino Roa Vázquez;20;;;;BAJO;B;Madrid
+VT;CALLE;del Marqués Viudo de Pontejos;3;;;;ENTREP;;Madrid
+VT;AVDA;de Abrantes;88;;;;8;B;Madrid
+VT;GTA;del Valle de Oro;8;;;;BAJO;IZDA;Madrid
+VT;CALLE;de Torrijos;2;;;;1;C;Madrid
+VT;CALLE;de Torrijos;2;;;;2;A;Madrid
+VT;CALLE;de Torrijos;;;;;2;D;Madrid
+VT;CALLE;de San Marcelo;24;;;;BAJO;4B;Madrid
+VT;CALLE;del Marqués de la Ensenada;16;;;;6;609;Madrid
+VT;CALLE;de Juanelo;20;;;DCHA;1;C;Madrid
+VT;PLAZA;CIUDAD DE VIENA;6;;;;18;17;Madrid
+VT;CALLE;de Gerona;6;;;;1;DCHA;Madrid
+VT;CALLE;de Pablo Luna;14;;;;4;c;Madrid
+VT;CALLE;de la Corredera Baja de San Pablo;4;;;;4;DCHA;Madrid
+VT;CALLE;de Jesús y María;15;;;;2;A;Madrid
+VT;CALLE;de Jesús y María;15;;;;5;;Madrid
+VT;CALLE;de San Lorenzo;22;;;;2;B;Madrid
+VT;CALLE;de Claudio Coello;14;;;;4;C;Madrid
+VT;CALLE;de Lagasca;53;;;;3;D;Madrid
+VT;CALLE;de la Palma;63;;;;0;2;Madrid
+VT;CALLE;de Miguel Ángel;3;;;;;510;Madrid
+VT;CALLE;de Miguel Ángel;3;;;;;605;Madrid
+VT;CALLE;de Miguel Ángel;3;;;;;307;Madrid
+VT;CALLE;del Barco;25;;;;2;4;Madrid
+VT;CALLE;del Barco;25;;;;2;3;Madrid
+VT;CALLE;del Barco;25;;;;2;2;Madrid
+VT;CALLE;de Moratín;;;;;3;dcha;Madrid
+VT;CALLE;de Miguel Ángel;3;;;;;502;Madrid
+VT;CALLE;de Miguel Ángel;3;;;;;306;Madrid
+VT;CALLE;de los Dos Amigos;5;;;;AT;1;Madrid
+VT;CALLE;de San Pedro Mártir;10;;;IZDA;3;A;Madrid
+VT;CALLE;de San Pedro Mártir;10;;;IZDA;3;B;Madrid
+VT;CALLE;de Vicente Martín Arias;16;;;;2;;Madrid
+VT;CALLE;de Moratín;11;;;;4;iz;Madrid
+VT;CALLE;de Moratín;11;;;;3;iz;Madrid
+VT;CALLE;Moratín;11;;;;2;I;Madrid
+VT;CALLE;de Moratín;11;;;;2;d;Madrid
+VT;CALLE;de Moratín;11;;;;1;izda;Madrid
+VT;CALLE;de Claudio Coello;71;;;;3;B;Madrid
+VT;PLAZA;de Jesús;6;;;;BAJO;;Madrid
+VT;CALLE;de Carretas;27;;;;4;AB;Madrid
+VT;CALLE;de Carretas;27;;;;4;AA;Madrid
+VT;PLAZA;de Tirso de Molina;14;;;;5;4;Madrid
+VT;CALLE;de San Andrés;38;;;;1;F;Madrid
+VT;CALLE;de San Andrés;38;;;;1;D;Madrid
+VT;CALLE;de San Andrés;38;;;;1;E;Madrid
+VT;CALLE;de San Andrés;38;;;;1;C;Madrid
+VT;CALLE;del Cardenal Cisneros;5;;;int;bajo;B;Madrid
+VT;CALLE;SAN BERNARDO;13;;;;5;IZQ;Madrid
+VT;CALLE;de la Reina;23;;;;ENTREP;;Madrid
+VT;CALLE;del Pez;7;;;;4;F;Madrid
+VT;CALLE;MARTINEZ IZQUIERDO;60;;;-;LOCAL;IZQUIE;Majadahonda
+VT;PASEO;del Sol;3;;;;;LOCAL;Meco
+VT;CALLE;Linar del Río;12C;;;;;;Moralzarzal
+VT;AVDA;Olímpica;3;3;;D;5;D;Móstoles
+VT;;Avenida del Rosal;57;;;0;0;0;Navacerrada
+VT;CALLE;de la Fragua;7;-;;-;1;-;Navacerrada
+VT;CALLE;de la Iglesia;27;;;;0;;Navarredonda y San Mamés
+VT;CALLE;Las Parras;2;;;;Bajo;;Puebla de la Sierra
+VT;CALLE;Navas;150bis;;;0;0;0;Robledo de Chavela
+VT;CALLE;Timoteo Padrós;10;;;;A;;San Lorenzo de El Escorial
+VT;PASEO;Carlos III;10;;;;1;B;San Lorenzo de El Escorial
+VT;AVDA;de Tenerife;3;;;Bajo;B7;7;San Sebastián de los Reyes
+VT;AVDA;de Tenerife;2;;;Bajo;B6;6;San Sebastián de los Reyes
+VT;AVDA;de Tenerife;2;;;Bajo;B5;5;San Sebastián de los Reyes
+VT;CALLE;Juan Gris;1;;;B;2;B;Torrejón de Ardoz
+VT;CTRA;M-507 (Navalcarnero-Cadalso de los Vidrios);;;;;;;Villa del Prado
+VT;CTRA;M-507 (Navalcarnero-Cadalso de los Vidrios);;;;;;;Villa del Prado
+VT;CALLE;del Guijo;28;;;;Bajo;;Zarzalejo

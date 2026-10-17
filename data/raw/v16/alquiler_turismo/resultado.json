@@ -1,0 +1,8 @@
+{
+  "rama": "v16-f1-alquiler_turismo",
+  "pregunta": "Q2 vivienda turística y Q1 desplazamiento al alquiler de temporada: fuentes abiertas de oferta turística (Inside Airbnb, registros autonómicos VUT, INE EOAP/EOH/OAT/VTE)",
+  "capa": "C4",
+  "N": 14,
+  "metodo": "adquisición de datos",
+  "notas": "82 ficheros, 231 MB, ninguno >50 MB. Inside Airbnb: 31 instantáneas nuevas (9 áreas x 4 trimestres, 2025-12 a 2026-09; nuevas áreas Girona, Euskadi, Sevilla, Menorca). Registros: Madrid, Andalucía OpenRTA (con fechas de alta, en _terceros por datos personales), Mallorca/Menorca, Canarias + ISTAC. INE: 40 tablas Tempus. Ya existentes: GVA, Catalunya, Euskadi VUT, EMAL, VTE previa. Sin datos abiertos: Registro Único (RD 1312/2024), fianzas de Madrid/Andalucía/Baleares. Fallos: datos.gob.es y mivau.gob.es 403. Requiere al autor: Inside Airbnb anterior a 2025-12, estadísticas del Registro Único, altas Catalunya, Ibiza/Formentera."
+}

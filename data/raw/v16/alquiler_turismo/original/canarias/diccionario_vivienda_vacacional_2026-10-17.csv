@@ -1,0 +1,17 @@
+Campo;Nombre;Descripción;Tipo;Codificación (si procede);Observaciones
+establecimiento_id;Identificador del establecimiento;Identificador del establecimiento extrahotelero de tipología vivienda vacacional.;Texto;;
+establecimiento_nombre_comercial;Nombre comercial del establecimiento;Nombre comercial del establecimiento extrahotelero de tipología vivienda vacacional.;Texto;;
+establecimiento_modalidad;Modalidad del establecimiento;Modalidad del establecimiento extrahotelero de tipología vivienda vacacional.;Texto;;
+establecimiento_tipologia;Tipología del establecimiento;Tipología del establecimiento extrahotelero de tipología vivienda vacacional.;Texto;;
+establecimiento_clasificacion;Clasificación del establecimiento;Clasificación del establecimiento extrahotelero de tipología vivienda vacacional.;Texto;;"Tener en cuenta que el código ""_U"" se usa para indicar que se trata de un dato desconocido o que no consta."
+direccion;Dirección;"Tipo de vía; nombre y número.";Texto;;"Tener en cuenta que el código ""_U"" se usa para indicar que se trata de un dato desconocido o que no consta."
+direccion_isla_nombre;Dirección: nombre de la isla;Nombre de la isla.;Texto;;
+direccion_provincia_nombre;Dirección: nombre de la provincia;Nombre de la provincia.;Texto;;
+direccion_municipio_nombre;Dirección: nombre del municipio;Nombre del municipio.;Texto;;
+direccion_localidad_nombre;Dirección: nombre de la localidad;Nombre de la localidad.;Texto;;"Tener en cuenta que el código ""_U"" se usa para indicar que se trata de un dato desconocido o que no consta."
+direccion_codigo_postal;Dirección: código postal;Código postal.;Número;;"Tener en cuenta que el código ""_U"" se usa para indicar que se trata de un dato desconocido o que no consta."
+numero_dormitorios_individuales_explotacion;Número de dormitorios individuales de explotación;Número de dormitorios individuales de explotación del establecimiento extrahotelero de tipología vivienda vacacional.;Número;;
+numero_dormitorios_dobles_explotacion;Número de dormitorios dobles de explotación;Número de dormitorios dobles de explotación del establecimiento extrahotelero de tipología vivienda vacacional.;Número;;
+plazas;Plazas;Número de plazas alojativas.;Número;;
+latitud;;;;;
+longitud;;;;;

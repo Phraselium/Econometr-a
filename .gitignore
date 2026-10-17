@@ -151,3 +151,5 @@ data/descargas_terceros/
 # V16 fase 1: originales >50 MB (sha256 en data/CHECKSUMS.sha256) y series de terceros no redistribuibles o dudosas (solo en disco)
 data/raw/v16/*/_grandes/
 data/raw/v16/*/_terceros/
+# V16: instantáneas de Inside Airbnb (como en v9: solo en disco, sha256 en data/CHECKSUMS.sha256)
+data/raw/v16/alquiler_turismo/original/insideairbnb/listings_*.csv.gz

@@ -2,3 +2,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-17,F1,adquisidor-datos,oferta_suelo,121582,data/raw/v16/oferta_suelo;docs/v16/fuentes/oferta_suelo.md
 2026-10-17,F1,adquisidor-datos,demanda_internacional,140999,data/raw/v16/demanda_internacional;docs/v16/fuentes/demanda_internacional.md
 2026-10-17,F1,adquisidor-datos,intervenciones,240498,data/raw/v16/intervenciones;docs/v16/fuentes/intervenciones.md
+2026-10-17,F1,adquisidor-datos,alquiler_turismo,119161,data/raw/v16/alquiler_turismo;docs/v16/fuentes/alquiler_turismo.md

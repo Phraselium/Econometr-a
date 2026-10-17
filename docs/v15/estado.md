@@ -23,8 +23,12 @@ Plan: docs/v15/plan.md (íntegro). Versión pública vigente: 1.0. V15 solo aña
   - .claude/commands/v15-fase0 … v15-fase5 y v15-estado.
   - Makefile: v15_f0 … v15_f5, v15, check_v15, y check_v15 dentro de make check.
 
+- **B5 · Comprobación.**
+  - Tests de las guardas en verde (33 tests en tests/v15).
+  - `make check` en solitario: 436 pasados; solo el aviso del hash pendiente; check_v15 sin errores; git sin cambios.
+  - Commit «V15 infraestructura» (eb61254).
+
 ## Siguiente
-- B5: make check en solitario y commit «V15 infraestructura».
-- Fase 0.
+- Fase 0: V14.4 (todas las fuentes en «agregados» y las 16 cifras reincorporadas) y punto_partida.md.
 
 <!-- las secciones siguientes las mantiene src/v15/registro_subagentes.py -->

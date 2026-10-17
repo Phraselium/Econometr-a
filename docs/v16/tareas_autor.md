@@ -21,7 +21,13 @@ git ls-remote --tags origin "prereg-*"
 
 La lista de etiquetas, commits y tipos de objeto está en docs/v16/etiquetas_prereg.csv.
 
-Cuando se cierre la fase 4 de V16 se añadirá aquí el comando de prereg-v16. Hasta que esté en el remoto, la guarda (f) mantiene bloqueadas las fases 5 a 7 de V16, por diseño.
+Y el de V16 (fase 4 cerrada el 2026-10-17):
+
+```
+git tag -a prereg-v16 a8304ecc07aacc8db9ca59d90baf522ac1b305d7 -m "V16: pre-registro interno sin sello externo (preregistro_v16.md y adenda; sellado_v16.json)"
+git push origin prereg-v16
+```
+ Hasta que esté en el remoto, la guarda (f) mantiene bloqueadas las fases 5 a 7 de V16, por diseño.
 
 ## 2. Decidir sobre la independencia de dh_2125 (aumento de hogares 2021-2025, C1)
 Sus dos fuentes son la ECP y la EPA del INE. La EPA se calibra con las cifras de población que salen de la ECP, de modo que las dos fuentes podrían no ser independientes en el sentido que llevó a las 11 bajadas de la 1.0. Opciones:

@@ -60,7 +60,8 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - Desviación D1 y decisión K9.
 
 ## Siguiente
-- Etiqueta prereg-v16 en el commit del sellado. Hay que publicarla en el remoto; si da 403 (B-1), es tarea del autor.
+- prereg-v16 está creada en local sobre a8304ec, el commit del sellado, que ya está en la rama remota. El remoto rechazó publicar la etiqueta 5 veces (B-1); los comandos para hacerlo están en tareas_autor §1.
+- En vivo, `make v16_f5` lo bloquea la guarda (f) y `fase.py f5` termina con código 1.
 - Fases 5-7: bloqueadas por la guarda (f) hasta que prereg-v16 (y prereg-v15) estén en el remoto. Es la guarda funcionando, no una parada D.
 
 ## Subagentes y tokens

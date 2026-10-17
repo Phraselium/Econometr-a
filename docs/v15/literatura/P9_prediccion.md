@@ -7,18 +7,18 @@ Alcance y límites de lo leído. Todas las fichas se basan en el resumen o en el
 ## A. Contraste de capacidad predictiva
 
 ### Diebold y Mariano (1995). Comparing Predictive Accuracy
-- DOI: sin DOI · Revista: Journal of Business & Economic Statistics 13(3), 253-263
+- DOI: 10.1080/07350015.1995.10524599 (artículo en JBES, comprobado en Crossref por el orquestador; el documento técnico NBER es 10.3386/t0169) · antes: sin DOI · Revista: Journal of Business & Economic Statistics 13(3), 253-263
 - Leído: resumen (https://www.econbiz.de/Record/comparing-predictive-accuracy/10005170846 y https://econpapers.repec.org/RePEc:fip:fedmem:52, versión de trabajo de 1991; además el resumen de Diebold 2012 en https://www.nber.org/papers/w18391.pdf, citado por el resultado de búsqueda). Crossref devolvió solo el documento técnico NBER t0169 (DOI 10.3386/t0169, 1994) y no el artículo de la revista, por eso no se asigna DOI.
 - Diseño e identificación: contraste de la hipótesis nula de igual precisión de dos pronósticos rivales; no exige pérdida cuadrática, admite errores no gaussianos, de media no nula y con correlación serial; versiones asintótica y exacta de muestra finita. Datos: ninguno propio en lo leído. Resultado: no hay magnitud; es un procedimiento. Diebold (2012), según el resumen leído, aclara que el contraste sirve para comparar pronósticos y no estaba pensado para comparar modelos.
 - Validez externa para España: el contraste es aplicable, pero con 73 errores recursivos y horizonte múltiple la autocorrelación de la diferencia de pérdidas es fuerte; la potencia es la del informe de potencia del repositorio. Discrepancia: el matiz de Diebold (2012) (pronósticos, no modelos) separa el DM del de Giacomini-White y del de Clark-West, que tratan la estimación y el anidamiento.
-- Estado: NO VERIFICADA (sin DOI)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Harvey, Leybourne y Newbold (1997). Testing the equality of prediction mean squared errors
-- DOI: sin DOI · Revista: International Journal of Forecasting 13(2), 281-291
+- DOI: 10.1016/s0169-2070(96)00719-4 (localizado en Crossref por el orquestador; International Journal of Forecasting) · antes: sin DOI · Revista: International Journal of Forecasting 13(2), 281-291
 - Leído: resumen (https://ideas.repec.org/a/eee/intfor/v13y1997i2p281-291.html, que solo da la referencia; https://iaorifors.com/paper/20644, resumen visto a través de la búsqueda web)
 - Diseño e identificación: examinan dos contrastes de igualdad de precisión de pronósticos y modificaciones para corregir sus defectos, y recomiendan un enfoque para uso práctico. La corrección de muestra pequeña del estadístico DM (reescalado con la raíz de (T+1−2h+h(h−1)/T)/T y comparación con una t) se atribuye al artículo en fuentes secundarias de la búsqueda (documentación de software); no la he visto en el resumen del artículo. Datos y magnitud: no constan en lo leído.
 - Validez externa para España: con T pequeño y horizontes de 4 u 8 trimestres, la corrección de muestra finita es la práctica mínima; no resuelve la baja potencia (valoración propia). Discrepancias: no consta ninguna en lo leído.
-- Estado: NO VERIFICADA (sin DOI)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Giacomini y White (2006). Tests of Conditional Predictive Ability
 - DOI: 10.1111/j.1468-0262.2006.00718.x · Revista: Econometrica 74(6), 1545-1578
@@ -44,11 +44,11 @@ Alcance y límites de lo leído. Todas las fichas se basan en el resumen o en el
 ## B. Factores, combinación, BVAR y nowcasting
 
 ### Stock y Watson (2002). Forecasting Using Principal Components from a Large Number of Predictors
-- DOI: sin DOI · Revista: Journal of the American Statistical Association 97(460), 1167-1179
+- DOI: 10.1198/016214502388618960 (localizado en Crossref por el orquestador; Journal of the American Statistical Association) · antes: sin DOI · Revista: Journal of the American Statistical Association 97(460), 1167-1179
 - Leído: resumen (https://stock.scholars.harvard.edu/publications/forecasting-using-principal-components-large-number-predictors y https://collaborate.princeton.edu/en/publications/forecasting-using-principal-components-from-a-large-number-of-pre/)
 - Diseño e identificación: predicción de una serie con muchos predictores N relativos a T bajo un modelo de factores aproximado; los índices se estiman por componentes principales. Teoría: la diferencia entre el pronóstico factible y el infactible con los factores verdaderos converge a cero en probabilidad cuando N y T crecen; los factores estimados son consistentes aun con variación temporal de las cargas. Magnitud empírica: no consta en lo leído.
 - Validez externa para España: el resultado es asintótico en N y T; los indicadores mensuales útiles para España (compraventas, hipotecas, visados, afiliación) son pocas decenas y comparten tendencia, y el trimestral tiene T reducido (valoración propia). Discrepancia: Stock y Watson (2004) muestran que predictores individuales inestables empeoran frente al AR.
-- Estado: NO VERIFICADA (sin DOI)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Stock y Watson (2004). Combination forecasts of output growth in a seven-country data set
 - DOI: 10.1002/for.928 · Revista: Journal of Forecasting 23(6), 405-430
@@ -58,11 +58,11 @@ Alcance y límites de lo leído. Todas las fichas se basan en el resumen o en el
 - Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Timmermann (2006). Forecast Combinations
-- DOI: sin DOI · Revista: Handbook of Economic Forecasting, vol. 1, cap. 4, 135-196 (Elsevier)
+- DOI: 10.1016/s1574-0706(05)01004-9 (localizado en Crossref por el orquestador; Handbook of Economic Forecasting) · antes: sin DOI · Revista: Handbook of Economic Forecasting, vol. 1, cap. 4, 135-196 (Elsevier)
 - Leído: resumen (https://ideas.repec.org/h/eee/ecofch/1-04.html y, por contenido, la versión de trabajo de Aiolfi, Capistrán y Timmermann, CREATES 2010-21, https://ideas.repec.org/p/aah/create/2010-21.html)
 - Diseño e identificación: revisión. Las combinaciones han mostrado con frecuencia mejores pronósticos en media que el mejor modelo individual ex ante; analiza qué determina la ganancia (correlación de errores, varianzas relativas) y por qué las combinaciones simples suelen batir a ponderaciones más refinadas (mala especificación, inestabilidad, error de estimación cuando hay muchos modelos en relación con T). Magnitud: no consta en lo leído.
 - Validez externa para España: el argumento del error de estimación con T corto favorece la media simple frente a pesos estimados en P9 (valoración propia). Discrepancia: no consta ninguna en lo leído; la versión de 2010 es de otros autores y se cita solo por su resumen.
-- Estado: NO VERIFICADA (sin DOI)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Bańbura, Giannone y Reichlin (2010). Large Bayesian vector auto regressions
 - DOI: 10.1002/jae.1137 · Revista: Journal of Applied Econometrics 25(1), 71-92
@@ -72,20 +72,20 @@ Alcance y límites de lo leído. Todas las fichas se basan en el resumen o en el
 - Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Giannone, Reichlin y Small (2008). Nowcasting: The real-time informational content of macroeconomic data
-- DOI: sin DOI · Revista: Journal of Monetary Economics 55(4), 665-676
+- DOI: 10.1016/j.jmoneco.2008.05.010 (localizado en Crossref por el orquestador; Journal of Monetary Economics) · antes: sin DOI · Revista: Journal of Monetary Economics 55(4), 665-676
 - Leído: resumen (https://ideas.repec.org/a/eee/moneco/v55y2008i4p665-676.html)
 - Diseño e identificación: método formal para medir el efecto marginal de cada publicación intra-mensual sobre el pronóstico del trimestre en curso (nowcast) del PIB real; admite conjuntos grandes con calendarios de publicación escalonados («borde irregular»); el nowcast se actualiza con cada publicación. Magnitud: no consta en lo leído.
 - Validez externa para España: la estructura (indicadores mensuales con retardos de publicación distintos) coincide con compraventas, hipotecas y visados, pero la ganancia depende de que el indicador se publique antes que el objetivo, y el precio de la vivienda se publica con retraso (valoración propia). Discrepancia: el trabajo trata el PIB, no un precio con fuerte persistencia.
-- Estado: NO VERIFICADA (sin DOI)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ## C. Predicción del precio de la vivienda
 
 ### Rapach y Strauss (2009). Differences in housing price forecastability across US states
-- DOI: sin DOI · Revista: International Journal of Forecasting 25(2), 351-372
+- DOI: 10.1016/j.ijforecast.2009.01.009 (localizado en Crossref por el orquestador; International Journal of Forecasting) · antes: sin DOI · Revista: International Journal of Forecasting 25(2), 351-372
 - Leído: resumen (https://ideas.repec.org/a/eee/intfor/v25y2009i2p351-372.html)
 - Diseño e identificación: pronóstico del crecimiento real del precio de la vivienda por estado de EE. UU., 1995-2006; compara un modelo autorregresivo con modelos que usan variables estatales, regionales y nacionales (por la búsqueda web, con combinación de pronósticos). Resultado: la previsibilidad varía entre estados; los modelos autorregresivos, en especial con muchas variables económicas, suelen pronosticar bien en varios estados del interior; todos los modelos fallan en un grupo mayormente costero de fuerte crecimiento, que los autores atribuyen a una «desconexión» entre precios y fundamentales. El resumen leído no da ganancias numéricas.
 - Validez externa para España: España tiene un mercado con tramos costeros y metropolitanos y un ciclo de burbuja 1997-2007 (valoración propia); el hallazgo de peor previsibilidad donde el precio se separa de los fundamentales anticipa más dificultad en la costa mediterránea y los archipiélagos. Discrepancia: la muestra termina en 2006, antes del desplome, como señalan trabajos posteriores citados en la búsqueda.
-- Estado: NO VERIFICADA (sin DOI)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Plakandaras, Gupta, Gogas y Papadimitriou (2015). Forecasting the U.S. real house price index
 - DOI: 10.1016/j.econmod.2014.10.050 (DOI de la revista, localizado en Crossref por el orquestador; versión arXiv 10.48550/arXiv.1707.04868) · Revista: Economic Modelling 45, 259-267
@@ -109,18 +109,18 @@ Alcance y límites de lo leído. Todas las fichas se basan en el resumen o en el
 - Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Ganics y Rodríguez-Moreno (2023). A house price-at-risk model to monitor the downside risk for the Spanish housing market
-- DOI: sin DOI · Revista: Banco de España, Documentos de Trabajo n.º 2244 (23-01-2023)
+- DOI: 10.53479/29472 (localizado en Crossref por el orquestador; Documentos de Trabajo) · antes: sin DOI · Revista: Banco de España, Documentos de Trabajo n.º 2244 (23-01-2023)
 - Leído: resumen (https://www.bde.es/wbe/es/publicaciones/analisis-economico-investigacion/documentos-trabajo/house-priceatrisk-model-to-monitor-downside-risk-for-spanish-housing-market.html)
 - Diseño e identificación: modelo «at-risk» con regresiones cuantílicas; incluye la tasa trimestral de crecimiento del precio, una medida de sobrevaloración y el índice de confianza del consumidor. Según el resumen, predice con precisión la evolución del mercado español hasta dos años vista. Magnitud: no consta en la página leída (no se leyó el PDF).
 - Validez externa para España: es el único trabajo del Banco de España leído que predice el precio español; evalúa la cola inferior de la distribución (riesgo a la baja), no el error de la media, así que no es comparable con el DM sobre el ECM del AR(4) (valoración propia). No he encontrado un nowcasting del Banco de España con compraventas, hipotecas o visados.
-- Estado: NO VERIFICADA (sin DOI)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Trojanek, Hartigan, Pfeifer y Steurer (2025). Nowcasting Transaction-Based House Price Indices Using Web-Scraped Listings and MIDAS Regression
-- DOI: sin DOI · Revista: CAMA Working Paper 45/2025 (Crawford School, ANU)
+- DOI: 10.15396/eres2026_252 (localizado en Crossref por el orquestador; 32nd Annual European Real Estate Society Conference) · antes: sin DOI · Revista: CAMA Working Paper 45/2025 (Crawford School, ANU)
 - Leído: resumen (https://crawford.anu.edu.au/cama/content-centre/research/nowcasting-transaction-based-house-price-indices-using-web-scraped)
 - Diseño e identificación: 16 años de microdatos de Varsovia y Poznań; índices mensuales de precios de oferta e índices trimestrales de precios de transacción; los de oferta preceden a los de transacción uno o dos meses (más en Varsovia); MIDAS para el nowcast del crecimiento trimestral con datos mensuales de oferta. Resultado: las especificaciones preferidas reducen el error a un trimestre frente a autorregresivos, con más ganancia cuando se usan el primer o segundo mes del trimestre. Cifras: la búsqueda web las da como reducción del RMSE de aproximadamente 16-23 % en Varsovia y 5-15 % en Poznań; no las he visto en la página leída (solo cualitativa) y deben comprobarse en el PDF.
 - Validez externa para España: la ganancia viene de un indicador de precio de oferta mensual, no de cantidades (compraventas, visados); no hay en el repositorio una serie mensual de precios de oferta redistribuible (valoración propia). Es un documento de trabajo, no revisado. Ghysels no figura como autor.
-- Estado: NO VERIFICADA (sin DOI)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ## Qué sería sorprendente replicar o no replicar en España, y por qué
 

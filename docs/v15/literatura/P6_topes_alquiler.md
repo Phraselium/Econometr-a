@@ -60,11 +60,11 @@ Resultado previo del repositorio, para contrastar (docs/v9/cierre.md): V9-D1b (L
 - Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Kholodilin, López, Rey Blanco y González Arbués (2022). Lessons from an Aborted Second-Generation Rent Control in Catalonia
-- DOI: sin DOI · Revista: DIW Berlin Discussion Papers, n.º 2008
+- DOI: 10.2139/ssrn.4159469 (localizado en Crossref por el orquestador; ) · antes: sin DOI · Revista: DIW Berlin Discussion Papers, n.º 2008
 - Leído: resumen (https://ideas.repec.org/p/diw/diwwpp/dp2008.html)
 - Diseño: control catalán de septiembre de 2020 a marzo de 2022; microdatos de anuncios de idealista, enero de 2017 a mayo de 2022, mercados de alquiler y venta por separado; datos nacionales de viviendas iniciadas. Resultado: la introducción baja las rentas en los municipios controlados y también en los no controlados, con apenas cambio en cantidades de alquiler; los precios de venta no se mueven y la oferta de viviendas en venta sube mucho; tras la derogación, las rentas y los precios de venta suben con fuerza en todos los municipios. Iniciadas mensuales en Cataluña en torno a un 6 % por debajo del nivel de enero de 2019 a septiembre de 2020, frente a casi +12 % a nivel nacional.
 - Validez externa para España: alta para la validez del control. Si la caída también aparece en municipios no regulados, el control no está limpio (violación de la no interferencia) y un DiD municipal con controles catalanes sesgaría la diferencia hacia 0. Es un motivo para elegir donantes fuera de Cataluña. Discrepancias: Monràs y Montalvo y Jofre-Monseny usan registros de contratos y sí detectan efecto diferencial; aquí el efecto diferencial se diluye. Los anuncios de idealista no son contratos.
-- Estado: NO VERIFICADA (sin DOI)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)
 
 ### Abel, Carrer y Luque (2024). The Perverse Effects of Rent Control: Evidence From a Large-scale Stringent Regulation in Catalonia
 - DOI: sin DOI · Revista: documento de trabajo, ESCP Business School y Toulouse School of Economics (marzo de 2024)

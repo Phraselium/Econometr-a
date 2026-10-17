@@ -35,6 +35,30 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.1002/jae.2679": {
+  "existe": true,
+  "titulo": "Monetary policy, housing rents, and inflation dynamics",
+  "primer_autor": "Dias",
+  "anio": 2019,
+  "revista": "Journal of Applied Econometrics",
+  "issn": [
+   "0883-7252",
+   "1099-1255"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1002/jae.951": {
+  "existe": true,
+  "titulo": "A simple panel unit root test in the presence of cross‐section dependence",
+  "primer_autor": "Pesaran",
+  "anio": 2007,
+  "revista": "Journal of Applied Econometrics",
+  "issn": [
+   "0883-7252",
+   "1099-1255"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.1007/BF03399433": {
   "existe": true,
   "titulo": "Immigration and Swiss House Prices",
@@ -46,6 +70,40 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.1007/bf03399433": {
+  "existe": true,
+  "titulo": "Immigration and Swiss House Prices",
+  "primer_autor": "Degen",
+  "anio": 2017,
+  "revista": "Swiss Journal of Economics and Statistics",
+  "issn": [
+   "2235-6282"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1007/s11146-007-9090-2": {
+  "existe": true,
+  "titulo": "Testing for Bubbles in Housing Markets: A Panel Data Approach",
+  "primer_autor": "Mikhed",
+  "anio": 2007,
+  "revista": "The Journal of Real Estate Finance and Economics",
+  "issn": [
+   "0895-5638",
+   "1573-045X"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.econlet.2021.109962": {
+  "existe": true,
+  "titulo": "Euro area house prices and unconventional monetary policy surprises",
+  "primer_autor": "Hülsewig",
+  "anio": 2021,
+  "revista": "Economics Letters",
+  "issn": [
+   "0165-1765"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.1016/j.econmod.2014.10.050": {
   "existe": true,
   "titulo": "Forecasting the U.S. real house price index",
@@ -54,6 +112,17 @@
   "revista": "Economic Modelling",
   "issn": [
    "0264-9993"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.ijforecast.2009.01.009": {
+  "existe": true,
+  "titulo": "Differences in housing price forecastability across US states",
+  "primer_autor": "Rapach",
+  "anio": 2009,
+  "revista": "International Journal of Forecasting",
+  "issn": [
+   "0169-2070"
   ],
   "consulta": "2026-10-17"
  },
@@ -79,6 +148,17 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.1016/j.jeconom.2010.03.040": {
+  "existe": true,
+  "titulo": "A spatio-temporal model of house prices in the USA",
+  "primer_autor": "Holly",
+  "anio": 2010,
+  "revista": "Journal of Econometrics",
+  "issn": [
+   "0304-4076"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.1016/j.jeconom.2020.12.001": {
   "existe": true,
   "titulo": "Difference-in-Differences with multiple time periods",
@@ -87,6 +167,17 @@
   "revista": "Journal of Econometrics",
   "issn": [
    "0304-4076"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.jedc.2020.103879": {
+  "existe": true,
+  "titulo": "Household balance sheet channels of monetary policy: A back of the envelope calculation for the euro area",
+  "primer_autor": "Slacalek",
+  "anio": 2020,
+  "revista": "Journal of Economic Dynamics and Control",
+  "issn": [
+   "0165-1889"
   ],
   "consulta": "2026-10-17"
  },
@@ -109,6 +200,39 @@
   "revista": "Journal of Housing Economics",
   "issn": [
    "1051-1377"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.jinteco.2014.12.011": {
+  "existe": true,
+  "titulo": "Betting the house",
+  "primer_autor": "Jordà",
+  "anio": 2015,
+  "revista": "Journal of International Economics",
+  "issn": [
+   "0022-1996"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.jmoneco.2008.05.010": {
+  "existe": true,
+  "titulo": "Nowcasting: The real-time informational content of macroeconomic data",
+  "primer_autor": "Giannone",
+  "anio": 2008,
+  "revista": "Journal of Monetary Economics",
+  "issn": [
+   "0304-3932"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.jmoneco.2019.08.016": {
+  "existe": true,
+  "titulo": "Measuring euro area monetary policy",
+  "primer_autor": "Altavilla",
+  "anio": 2019,
+  "revista": "Journal of Monetary Economics",
+  "issn": [
+   "0304-3932"
   ],
   "consulta": "2026-10-17"
  },
@@ -200,6 +324,28 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.1016/s0169-2070(96)00719-4": {
+  "existe": true,
+  "titulo": "Testing the equality of prediction mean squared errors",
+  "primer_autor": "Harvey",
+  "anio": 1997,
+  "revista": "International Journal of Forecasting",
+  "issn": [
+   "0169-2070"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/s1574-0706(05)01004-9": {
+  "existe": true,
+  "titulo": "Chapter 4 Forecast Combinations",
+  "primer_autor": "Timmermann",
+  "anio": 2006,
+  "revista": "Handbook of Economic Forecasting",
+  "issn": [
+   "1574-0706"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.1080/00343404.2026.2670360": {
   "existe": true,
   "titulo": "Housing versus home sharing: the causal impact of short-term rental regulation on residential rents",
@@ -209,6 +355,42 @@
   "issn": [
    "0034-3404",
    "1360-0591"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1080/01621459.1999.10474156": {
+  "existe": true,
+  "titulo": "Pooled Mean Group Estimation of Dynamic Heterogeneous Panels",
+  "primer_autor": "Pesaran",
+  "anio": 1999,
+  "revista": "Journal of the American Statistical Association",
+  "issn": [
+   "0162-1459",
+   "1537-274X"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1080/07350015.1995.10524599": {
+  "existe": true,
+  "titulo": "Comparing Predictive Accuracy",
+  "primer_autor": "Diebold",
+  "anio": 1995,
+  "revista": "Journal of Business &amp; Economic Statistics",
+  "issn": [
+   "0735-0015",
+   "1537-2707"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1080/07474938.2014.956623": {
+  "existe": true,
+  "titulo": "Testing Weak Cross-Sectional Dependence in Large Panels",
+  "primer_autor": "Pesaran",
+  "anio": 2014,
+  "revista": "Econometric Reviews",
+  "issn": [
+   "0747-4938",
+   "1532-4168"
   ],
   "consulta": "2026-10-17"
  },
@@ -233,6 +415,18 @@
   "issn": [
    "1949-1247",
    "1949-1255"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1093/jeea/jvab030": {
+  "existe": true,
+  "titulo": "One Money, Many Markets",
+  "primer_autor": "Corsetti",
+  "anio": 2021,
+  "revista": "Journal of the European Economic Association",
+  "issn": [
+   "1542-4766",
+   "1542-4774"
   ],
   "consulta": "2026-10-17"
  },
@@ -284,6 +478,15 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.1108/s0731-905320160000036013": {
+  "existe": true,
+  "titulo": "Long-Run Effects in Large Heterogeneous Panel Data Models with Cross-Sectionally Correlated Errors",
+  "primer_autor": "Chudik",
+  "anio": 2016,
+  "revista": "Essays in Honor of Aman Ullah",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
  "10.1111/1540-6229.12330": {
   "existe": true,
   "titulo": "Regulating short‐term rental housing: Evidence from New Orleans",
@@ -307,6 +510,30 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.1111/iere.12132": {
+  "existe": true,
+  "titulo": "TESTING FOR MULTIPLE BUBBLES: HISTORICAL EPISODES OF EXUBERANCE AND COLLAPSE IN THE S&amp;P 500",
+  "primer_autor": "Phillips",
+  "anio": 2015,
+  "revista": "International Economic Review",
+  "issn": [
+   "0020-6598",
+   "1468-2354"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1111/j.1468-0084.2007.00477.x": {
+  "existe": true,
+  "titulo": "Testing for Error Correction in Panel Data*",
+  "primer_autor": "Westerlund",
+  "anio": 2007,
+  "revista": "Oxford Bulletin of Economics and Statistics",
+  "issn": [
+   "0305-9049",
+   "1468-0084"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.1111/j.1468-0262.2006.00718.x": {
   "existe": true,
   "titulo": "Tests of Conditional Predictive Ability",
@@ -316,6 +543,40 @@
   "issn": [
    "0012-9682",
    "1468-0262"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1111/j.1540-6229.2006.00172.x": {
+  "existe": true,
+  "titulo": "The Long-Run Relationship between House Prices and Income: Evidence from Local Housing Markets",
+  "primer_autor": "Gallin",
+  "anio": 2006,
+  "revista": "Real Estate Economics",
+  "issn": [
+   "1080-8620"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1111/j.1540-6229.2008.00225.x": {
+  "existe": true,
+  "titulo": "The Long‐Run Relationship Between House Prices and Rents",
+  "primer_autor": "Gallin",
+  "anio": 2008,
+  "revista": "Real Estate Economics",
+  "issn": [
+   "1080-8620",
+   "1540-6229"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1111/j.1542-4774.2012.01095.x": {
+  "existe": true,
+  "titulo": "HOUSING FINANCE AND MONETARY POLICY",
+  "primer_autor": "Calza",
+  "anio": 2013,
+  "revista": "Journal of the European Economic Association",
+  "issn": [
+   "1542-4766"
   ],
   "consulta": "2026-10-17"
  },
@@ -340,6 +601,40 @@
   "issn": [
    "0034-6535",
    "1530-9142"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1198/016214502388618960": {
+  "existe": true,
+  "titulo": "Forecasting Using Principal Components From a Large Number of Predictors",
+  "primer_autor": "Stock",
+  "anio": 2002,
+  "revista": "Journal of the American Statistical Association",
+  "issn": [
+   "0162-1459",
+   "1537-274X"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1257/0002828053828518": {
+  "existe": true,
+  "titulo": "Estimation and Inference of Impulse Responses by Local Projections",
+  "primer_autor": "Jordà",
+  "anio": 2005,
+  "revista": "American Economic Review",
+  "issn": [
+   "0002-8282"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1257/0002828054201477": {
+  "existe": true,
+  "titulo": "House Prices, Borrowing Constraints, and Monetary Policy in the Business Cycle",
+  "primer_autor": "Iacoviello",
+  "anio": 2005,
+  "revista": "American Economic Review",
+  "issn": [
+   "0002-8282"
   ],
   "consulta": "2026-10-17"
  },
@@ -410,6 +705,18 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.1257/mac.20180090": {
+  "existe": true,
+  "titulo": "Deconstructing Monetary Policy Surprises— The Role of Information Shocks",
+  "primer_autor": "Jarociński",
+  "anio": 2020,
+  "revista": "American Economic Journal: Macroeconomics",
+  "issn": [
+   "1945-7707",
+   "1945-7715"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.1257/pol.3.2.169": {
   "existe": true,
   "titulo": "Immigration and the Neighborhood",
@@ -451,6 +758,26 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.15396/eres2026_252": {
+  "existe": true,
+  "titulo": "Nowcasting Transaction-Based House Price Indices Using Web-Scraped Listings and MIDAS Regression",
+  "primer_autor": "Trojanek",
+  "anio": 2026,
+  "revista": "32nd Annual European Real Estate Society Conference",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.17016/ifdp.2019.1248": {
+  "existe": true,
+  "titulo": "Monetary Policy, Housing Rents and Inflation Dynamics",
+  "primer_autor": "Dias",
+  "anio": 2019,
+  "revista": "International Finance Discussion Papers",
+  "issn": [
+   "1073-2500"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.17561/ree.n2.2023.7827": {
   "existe": true,
   "titulo": "Effects of the supply reduction in the peer-to-peer market for tourist accommodation on the housing market",
@@ -459,6 +786,120 @@
   "revista": "Revista de Estudios Empresariales. Segunda Época",
   "issn": [
    "1988-9046"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.2139/ssrn.2473468": {
+  "existe": true,
+  "titulo": "Forecasting House Prices in the 50 States Using Dynamic Model Averaging and Dynamic Model Selection",
+  "primer_autor": "Bork",
+  "anio": 2014,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.2139/ssrn.3177372": {
+  "existe": true,
+  "titulo": "Do House Prices Sink or Ride the Wave of Immigration?",
+  "primer_autor": "Larkin",
+  "anio": 2018,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.2139/ssrn.3416872": {
+  "existe": true,
+  "titulo": "Measuring Euro Area Monetary Policy",
+  "primer_autor": "Altavilla",
+  "anio": 2019,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.2139/ssrn.3428237": {
+  "existe": true,
+  "titulo": "Do Short-Term Rental Platforms Affect Housing Markets? Evidence From Airbnb in Barcelona",
+  "primer_autor": "Garcia-López",
+  "anio": 2019,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.2139/ssrn.3505232": {
+  "existe": true,
+  "titulo": "Modelling Regional Housing Prices in Spain",
+  "primer_autor": "Alvárez Román",
+  "anio": 2019,
+  "revista": "SSRN Electronic Journal",
+  "issn": [
+   "1556-5068"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.2139/ssrn.3837773": {
+  "existe": true,
+  "titulo": "Euro Area House Prices and Unconventional Monetary Policy Surprises",
+  "primer_autor": "Hülsewig",
+  "anio": 2021,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.2139/ssrn.4159469": {
+  "existe": true,
+  "titulo": "Lessons from an Aborted Second-Generation Rent Control in Catalonia",
+  "primer_autor": "Kholodilin",
+  "anio": 2022,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.2139/ssrn.4787395": {
+  "existe": true,
+  "titulo": "Location Sorting and Endogenous Amenities: Evidence from Amsterdam",
+  "primer_autor": "Almagro",
+  "anio": 2024,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.2139/ssrn.6416042": {
+  "existe": true,
+  "titulo": "Housing wealth and monetary policy transmission: cross-country evidence",
+  "primer_autor": "Grothe",
+  "anio": 2026,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.2139/ssrn.901155": {
+  "existe": true,
+  "titulo": "House Prices and Rents in Spain: Does the Discount Factor Matter?",
+  "primer_autor": "Ayuso",
+  "anio": 2006,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.2139/ssrn.953756": {
+  "existe": true,
+  "titulo": "House Prices and Real Interest Rates in Spain",
+  "primer_autor": "Ayuso",
+  "anio": 2006,
+  "revista": "SSRN Electronic Journal",
+  "issn": [
+   "1556-5068"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.2307/1883123": {
+  "existe": true,
+  "titulo": "Tax Subsidies to Owner-Occupied Housing: An Asset-Market Approach",
+  "primer_autor": "Poterba",
+  "anio": 1984,
+  "revista": "The Quarterly Journal of Economics",
+  "issn": [
+   "0033-5533"
   ],
   "consulta": "2026-10-17"
  },
@@ -471,6 +912,51 @@
   "issn": [],
   "consulta": "2026-10-17"
  },
+ "10.3386/t0169": {
+  "existe": true,
+  "titulo": "Comparing Predictive Accuracy",
+  "primer_autor": "Diebold",
+  "anio": 1994,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.3386/t0326": {
+  "existe": true,
+  "titulo": "Approximately Normal Tests for Equal Predictive Accuracy in Nested Models",
+  "primer_autor": "West",
+  "anio": 2006,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.3386/w11643": {
+  "existe": true,
+  "titulo": "Assessing High House Prices: Bubbles, Fundamentals, and Misperceptions",
+  "primer_autor": "Himmelberg",
+  "anio": 2005,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.3386/w20771": {
+  "existe": true,
+  "titulo": "Betting the House",
+  "primer_autor": "Jordà",
+  "anio": 2014,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.3386/w24181": {
+  "existe": true,
+  "titulo": "The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San Francisco",
+  "primer_autor": "Diamond",
+  "anio": 2018,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
  "10.3386/w24285": {
   "existe": true,
   "titulo": "Shift-Share Instruments and the Impact of Immigration",
@@ -480,7 +966,46 @@
   "issn": [],
   "consulta": "2026-10-17"
  },
+ "10.3386/w24944": {
+  "existe": true,
+  "titulo": "Shift-Share Designs: Theory and Inference",
+  "primer_autor": "Adão",
+  "anio": 2018,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.3386/w25904": {
+  "existe": true,
+  "titulo": "Two-way Fixed Effects Estimators with Heterogeneous Treatment Effects",
+  "primer_autor": "de Chaisemartin",
+  "anio": 2019,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.3386/w26630": {
+  "existe": true,
+  "titulo": "Household Balance Sheet Channels of Monetary Policy: A Back of the Envelope Calculation for the Euro Area",
+  "primer_autor": "Slacalek",
+  "anio": 2020,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
  "10.37230/CyTET.2023.215.3": {
+  "existe": true,
+  "titulo": "El impacto de la inmigración sobre el precio de la vivienda española en el siglo XXI",
+  "primer_autor": "Torres-Téllez",
+  "anio": 2023,
+  "revista": "Ciudad y Territorio Estudios Territoriales",
+  "issn": [
+   "2659-3254",
+   "1133-4762"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.37230/cytet.2023.215.3": {
   "existe": true,
   "titulo": "El impacto de la inmigración sobre el precio de la vivienda española en el siglo XXI",
   "primer_autor": "Torres-Téllez",
@@ -551,6 +1076,48 @@
   "revista": "Journal of Policy Evaluation",
   "issn": [
    "3101-3805"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.5089/9781513548746.001.a001": {
+  "existe": true,
+  "titulo": "One Money, Many Markets: Monetary Transmission and Housing Financing in the Euro Area1",
+  "primer_autor": "Corsetti",
+  "anio": null,
+  "revista": "",
+  "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.53479/29472": {
+  "existe": true,
+  "titulo": "A house price-at-risk model to monitor the downside risk for the Spanish housing market",
+  "primer_autor": "Ganics",
+  "anio": 2023,
+  "revista": "Documentos de Trabajo",
+  "issn": [
+   "1579-8666"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.53479/33154": {
+  "existe": true,
+  "titulo": "Indicadores de riesgos y vulnerabilidades en el mercado de la vivienda en España",
+  "primer_autor": "Alves",
+  "anio": 2023,
+  "revista": "Documentos Ocasionales",
+  "issn": [
+   "1696-2230"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.53479/34572": {
+  "existe": true,
+  "titulo": "The pass-through of market interest rates to bank interest rates",
+  "primer_autor": "Mayordomo",
+  "anio": 2023,
+  "revista": "Documentos Ocasionales",
+  "issn": [
+   "1696-2230"
   ],
   "consulta": "2026-10-17"
  },

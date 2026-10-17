@@ -46,7 +46,8 @@ Generada por src/v15/registro_subagentes.py (fuente: docs/v15/subagentes.csv). T
 |---|---|---|---|---|
 | 2026-10-17 | auditor-datos | F1.2 precios de compra | 103.963 | src/v15/auditoria/precios_compra.py; output/v15/auditoria/precios_compra/ |
 | 2026-10-17 | inventariador | F1.1 anotaciones del inventario (79 familias) | 287.158 | docs/v15/inventario_anotaciones.csv |
+| 2026-10-17 | auditor-datos | F1.2 alquiler | 179.787 | src/v15/auditoria/alquiler.py; output/v15/auditoria/alquiler/ |
 
-Total: 391.121 tokens · auditor-datos: 103.963; inventariador: 287.158
+Total: 570.908 tokens · auditor-datos: 283.750; inventariador: 287.158
 
 <!-- fin subagentes -->

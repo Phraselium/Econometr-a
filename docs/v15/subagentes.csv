@@ -1,3 +1,4 @@
 fecha,rol,tarea,tokens,ficheros
 2026-10-17,auditor-datos,F1.2 precios de compra,103963,src/v15/auditoria/precios_compra.py; output/v15/auditoria/precios_compra/
 2026-10-17,inventariador,F1.1 anotaciones del inventario (79 familias),287158,docs/v15/inventario_anotaciones.csv
+2026-10-17,auditor-datos,F1.2 alquiler,179787,src/v15/auditoria/alquiler.py; output/v15/auditoria/alquiler/

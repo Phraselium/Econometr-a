@@ -1,0 +1,8 @@
+fuente,series,n_obs,n_evaluables,n_atipicos,n_atipicos_escala_min_1pp,licencia_abierta
+EMAL,2,928,900,1,1,True
+GVA,2,811,796,17,17,True
+HICP,1,29,29,0,0,True
+INCASOL,3,7259,6964,26,26,False
+IPC,6,7973,7973,26,5,True
+IPVA,13,19903,19420,156,38,True
+SERPAVI,10,512070,475041,5863,5705,True

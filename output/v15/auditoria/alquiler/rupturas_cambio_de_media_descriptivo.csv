@@ -1,0 +1,8 @@
+serie,n,t_max_abs,primer_anio_tras_corte,media_antes,media_despues
+IPC nacional (media anual),23,12.6,2009,4.27,1.02
+HICP alquileres ES (media anual),29,9.67,2010,4.3,0.91
+SERPAVI VC nacional (aprox.),13,6.19,2015,-2.89,3.68
+IPC provincial: media entre provincias,23,11.98,2009,3.83,0.8
+IPVA panel provincial: media entre provincias,13,6.36,2016,-1.25,2.02
+SERPAVI VC provincial: mediana entre provincias,13,6.46,2016,-2.07,3.64
+SERPAVI VC municipal: mediana entre municipios,13,6.95,2015,-2.65,3.35

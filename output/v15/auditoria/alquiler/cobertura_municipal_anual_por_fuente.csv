@@ -1,0 +1,79 @@
+fuente,tipo,t,n_municipios,n_municipios_ge10,n_municipios_ge30,nota
+SERPAVI_VC,stock,2011,1722,1722.0,1222.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2012,1741,1741.0,1250.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2013,1783,1783.0,1267.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2014,1829,1829.0,1310.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2015,1877,1877.0,1374.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2016,1925,1925.0,1426.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2017,1979,1979.0,1472.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2018,2029,2029.0,1512.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2019,2079,2079.0,1592.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2020,2146,2146.0,1632.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2021,2271,2271.0,1723.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2022,2365,2365.0,1808.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2023,2415,2415.0,1844.0,umbral de publicación n>=10 contratos
+SERPAVI_VC,stock,2024,2555,2555.0,1938.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2011,1746,1746.0,844.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2012,1795,1795.0,906.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2013,1855,1855.0,975.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2014,1961,1961.0,1044.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2015,2098,2098.0,1133.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2016,2231,2231.0,1217.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2017,2309,2309.0,1284.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2018,2414,2414.0,1362.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2019,2519,2519.0,1419.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2020,2621,2621.0,1492.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2021,2742,2742.0,1537.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2022,2826,2826.0,1587.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2023,2915,2915.0,1609.0,umbral de publicación n>=10 contratos
+SERPAVI_VU,stock,2024,3020,3020.0,1669.0,umbral de publicación n>=10 contratos
+GVA_fianzas,nuevos,2020,219,158.0,104.0,crudo v9; la base solo trae València ciudad
+GVA_fianzas,nuevos,2021,218,167.0,110.0,crudo v9; la base solo trae València ciudad
+GVA_fianzas,nuevos,2022,234,174.0,109.0,crudo v9; la base solo trae València ciudad
+GVA_fianzas,nuevos,2023,234,182.0,111.0,crudo v9; la base solo trae València ciudad
+GVA_fianzas,nuevos,2024,237,181.0,112.0,crudo v9; la base solo trae València ciudad
+GVA_fianzas,nuevos,2025,240,184.0,119.0,crudo v9; la base solo trae València ciudad
+GVA_fianzas,nuevos,2026,239,177.0,112.0,2026 parcial
+Incasol_fianzas,nuevos,2007,662,265.0,149.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2008,707,323.0,185.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2009,717,356.0,216.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2010,775,381.0,243.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2011,784,402.0,264.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2012,790,421.0,273.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2013,803,429.0,278.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2014,796,435.0,283.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2015,818,441.0,289.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2016,811,451.0,299.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2017,839,460.0,305.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2018,836,475.0,312.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2019,854,477.0,310.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2020,850,461.0,299.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2021,862,470.0,307.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2022,849,470.0,304.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2023,846,457.0,295.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2024,854,468.0,294.0,licencia no abierta: solo recuento de municipios
+Incasol_fianzas,nuevos,2025,844,448.0,289.0,licencia no abierta: solo recuento de municipios
+IPVA_total_municipal,stock,2011,702,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2012,702,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2013,702,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2014,703,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2015,703,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2016,703,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2017,703,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2018,703,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2019,703,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2020,703,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2021,703,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2022,705,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2023,705,,,índice total sin desglose nuevo/existente
+IPVA_total_municipal,stock,2024,716,,,índice total sin desglose nuevo/existente
+EMAL_Euskadi,nuevos,2016,20,,,municipios >20.000 hab.
+EMAL_Euskadi,nuevos,2017,20,,,municipios >20.000 hab.
+EMAL_Euskadi,nuevos,2018,20,,,municipios >20.000 hab.
+EMAL_Euskadi,nuevos,2019,20,,,municipios >20.000 hab.
+EMAL_Euskadi,nuevos,2020,20,,,municipios >20.000 hab.
+EMAL_Euskadi,nuevos,2021,20,,,municipios >20.000 hab.
+EMAL_Euskadi,nuevos,2022,20,,,municipios >20.000 hab.
+EMAL_Euskadi,nuevos,2023,20,,,municipios >20.000 hab.
+EMAL_Euskadi,nuevos,2024,20,,,municipios >20.000 hab.
+EMAL_Euskadi,nuevos,2025,20,,,municipios >20.000 hab.

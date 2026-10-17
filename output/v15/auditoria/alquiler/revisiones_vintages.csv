@@ -1,0 +1,14 @@
+comparacion,fuente,vintage_a,vintage_b,n_comparados,revision_media_abs,revision_media,revision_max_abs,unidad,nota,restringido_licencia
+IPVA índice provincial: panel v1-v8 vs IPVA 2024 (descarga 2026-10-14),IPVA,panel procesado (descargas hasta 2026-10-10),IPVA 2024 publicado 2026-05,192,0.0,0.0,0.0,puntos de índice (2015=100),,False
+IPVA índice distrital: csv 59061 vs API tempus 59061,IPVA,csv INE (2026-10-14),API tempus (2026-10-15),5016,0.0,0.0,0.0,puntos de índice (2015=100),,False
+IPVA tasa distrital: csv 59061 vs API tempus 59061,IPVA,csv INE (2026-10-14),API tempus (2026-10-15),4667,0.0,0.0,0.0,pp,,False
+IPVA índice municipal: serie 59060 (v1-v8) vs API tempus 59060,IPVA,ine_ipva_municipal.csv (2026-10-09),API tempus (2026-10-15),14,0.0,0.0,0.0,puntos de índice,solo 1 municipio solapa (46250),False
+SERPAVI provincial: pdf/serpavi_provincias.csv vs serie municipal-provincial base,SERPAVI,serpavi_provincias.csv,xlsx provincial/municipal,42,0.0,-0.0,0.0,€/m²/mes,3 provincias CV,False
+SERPAVI municipal 46250: tabla del proyecto vs serie base,SERPAVI,tabla XLSX,serie base,14,0.0,0.0,0.0,€/m²/mes,1 municipio,False
+SERPAVI distritos de València: tabla del proyecto vs serie base,SERPAVI,tabla distritos,serie base,266,0.0,0.0,0.0,€/m²/mes,19 distritos,False
+SERPAVI municipal VC: crudo serpavi_v2_municipios.csv vs base,SERPAVI,crudo data/raw/pdf (2026-10-10),base,28716,0.0,0.0,0.0,€/m²/mes,,False
+SERPAVI municipal VU: crudo serpavi_v2_municipios.csv vs base,SERPAVI,crudo data/raw/pdf (2026-10-10),base,33052,0.0,0.0,0.0,€/m²/mes,,False
+IPC alquiler tasa anual: tabla 76137 vs tabla 76142 (mismos códigos de serie),IPC,ine_ipc_alquiler.csv (2026-10-09),ine_v2_ipc_alquiler_prov.csv (2026-10-10),296,0.0,0.0,0.0,pp,series solapadas: 20 vs 53,False
+GVA fianzas: descarga v5 vs v9,GVA,data/raw/v5,data/raw/v9 (2026-10-14),7,0.0,0.0,0.0,ficheros anuales idénticos (SHA-256),7/7 idénticos,False
+GVA mediana provincial: recalculada del crudo vs base hechos,GVA,crudo v9,base,15,0.0,0.0,0.0,euros,derivación reproducible si es 0,False
+Incasòl contratos anuales por municipio: v3 vs v9,INCASOL,v3 (2026-10-10),v9 (2026-10-14),15297,0.0,0.0,0.0,contratos,claves solo en v3: 0; solo en v9: 0,True

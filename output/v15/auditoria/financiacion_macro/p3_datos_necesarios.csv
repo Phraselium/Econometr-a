@@ -1,0 +1,7 @@
+dato,uso,estado
+"Euro Area Monetary Policy Event-Study Database (EA-MPD; Altavilla et al., 2019) con ventana de cada reunión del BCE",sorpresas por evento en lugar del agregado mensual JK,no está en el repositorio; licencia y acceso: no verificado
+Actualización de los shocks JK posterior a 2025-10 y con fechas de reunión,alargar la muestra hasta 2026,el repositorio llega a 2025-10; condiciones de reutilización: no verificado
+"Stock de préstamos hipotecarios a vivienda por tipo de interés (variable, fijo, mixto) por provincia o CCAA (BdE, CIR/AnaCredit, Registradores, Notariado)",peso de la hipoteca variable como exposición,no está en el repositorio; disponibilidad territorial y licencia: no verificado
+Hipotecas INE (HPT) por tipo de interés (fijo/variable) por CCAA o provincia (flujo de nuevas),exposición de flujo por CCAA,no está en la base; si existe con detalle territorial: no verificado
+Encuesta Financiera de las Familias (BdE): hogares con deuda hipotecaria a tipo variable,exposición por CCAA con muestra pequeña,no está; representatividad territorial y licencia: no verificado
+"Tipo inicial y fecha de formalización por hipoteca agregados por municipio o provincia (Notariado, Registradores)",exposición por cohorte,terceros_1_0: solo agregados propios; disponibilidad: no verificado

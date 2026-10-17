@@ -53,7 +53,9 @@ Generada por src/v15/registro_subagentes.py (fuente: docs/v15/subagentes.csv). T
 | 2026-10-17 | lector-literatura | F2 P5 pisos turísticos | 145.840 | docs/v15/literatura/P5_pisos_turisticos.md |
 | 2026-10-17 | lector-literatura | F2 P6 topes y zonas tensionadas | 198.830 | docs/v15/literatura/P6_topes_alquiler.md |
 | 2026-10-17 | lector-literatura | F2 P9 predicción | 86.141 | docs/v15/literatura/P9_prediccion.md |
+| 2026-10-17 | lector-literatura | F2 P3 tipos de interés | 182.064 | docs/v15/literatura/P3_tipos_interes.md |
+| 2026-10-17 | auditor-datos | F1.2 financiación y macro | 242.674 | src/v15/auditoria/financiacion_macro.py; output/v15/auditoria/financiacion_macro/ |
 
-Total: 1.525.523 tokens · auditor-datos: 721.673; inventariador: 287.158; lector-literatura: 516.692
+Total: 1.950.261 tokens · auditor-datos: 964.347; inventariador: 287.158; lector-literatura: 698.756
 
 <!-- fin subagentes -->

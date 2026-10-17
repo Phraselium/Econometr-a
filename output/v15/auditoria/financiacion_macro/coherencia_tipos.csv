@@ -1,0 +1,7 @@
+par,n_trim,primero,ultimo,dif_media_pp_AmenosB,dif_abs_max_pp,corr_niveles,corr_cambio_4t,n_rachas_dif_gt_0.5pp,n_rachas_signo_opuesto
+tipo_hip_bde (BdE referencia) vs tipo_hip_bce (BCE MIR nuevas),94,2003T1,2026T2,0.1025,0.503,0.9956,0.9889,0,0
+tipo_hip_bde vs tipo_hip_nuevas_tae (BdE nuevas TAE),94,2003T1,2026T2,-0.0613,0.4104,0.9909,0.988,0,0
+tipo_hip_bce vs tipo_hip_nuevas_tae,94,2003T1,2026T2,-0.1638,0.416,0.9972,0.9977,0,0
+tipo_hip_bce vs media trimestral de bce_hip_tipo_nuevas ES AM (hechos mensual),94,2003T1,2026T2,0.0,0.0,1.0,1.0,0,0
+tipo_bce vs tipo_mro,110,1999T1,2026T2,0.0,0.0,1.0,1.0,0,0
+euribor vs euribor_1y,126,1995T1,2026T2,-0.0,0.0,1.0,1.0,0,0

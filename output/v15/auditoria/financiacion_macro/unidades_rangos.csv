@@ -1,0 +1,90 @@
+variable,nivel,desag,unidad,min,mediana,max,n_negativos,n_ceros,saltos_orden_magnitud_entre_periodos_adyacentes
+bce_cuota_tipo_variable,pais,,% de nuevos préstamos,0.4419,56.9015,100.0,0,0,1
+bce_hip_tipo_nuevas,pais,fijacion=AM,% anual,0.72,3.21,7.27,0,0,0
+bce_hip_tipo_nuevas,pais,fijacion=F,% anual,0.62,3.22,9.08,0,0,0
+bce_hip_tipo_nuevas,pais,fijacion=I,% anual,0.0,3.51,18.05,0,1,0
+bce_hip_tipo_nuevas,pais,fijacion=K,% anual,0.93,3.62,14.74,0,0,0
+bce_hip_tipo_nuevas,pais,fijacion=O,% anual,0.0,3.91,18.62,0,40,0
+bce_hip_tipo_nuevas,pais,fijacion=P,% anual,0.0,3.68,14.82,0,36,2
+bce_hip_volumen_nuevas,pais,,millones de euros,2.22,1132.5,39089.0,0,0,1
+bls_criterios_dif,nacional,,puntos,-10.0,5.0,50.0,11,33,0
+bls_criterios_neto,nacional,,puntos,-20.0,10.0,90.0,11,34,0
+bls_demanda_dif,nacional,,puntos,-77.7778,0.0,31.25,43,11,0
+bls_demanda_neto,nacional,,puntos,-100.0,0.0,62.5,43,11,0
+bls_rechazo_dif,nacional,,puntos,-11.1111,0.0,10.0,15,14,0
+bls_rechazo_neto,nacional,,puntos,-22.2222,0.0,20.0,15,14,0
+compraventas,ccaa,,número,523.0,4106.0,46780.0,0,0,0
+compraventas,nacional,,número,67374.0,120827.0,230023.0,0,0,0
+compraventas,provincia,,número,238.0,4696.0,67430.0,0,0,0
+compraventas,provincia,,número,12.0,1211.0,22584.0,0,0,1
+credito_construccion,nacional,,millones de euros,22677.317,41403.663,156363.299,0,0,0
+credito_inmobiliario,nacional,,millones de euros,12646.1,88001.066,324663.474,0,0,0
+credito_nuevo,nacional,,millones de euros,4836.0,15300.5,45409.0,0,0,0
+credito_promotor,nacional,,millones de euros,35323.417,122439.743,471806.757,0,0,0
+credito_stock,nacional,,M€ (stock),245865.0,525893.0,665222.0,0,0,0
+credito_stock_bde,nacional,,millones de euros,98229.0,511621.5,662798.0,0,0,0
+credito_stock_ecb,nacional,,millones de euros,245865.0,525893.0,665222.0,0,0,0
+deflactor,nacional,,índice 2020=100,59.5311,94.1781,123.626,0,0,0
+dif_hip_euribor_bce,nacional,,puntos porcentuales,-0.1871,1.4947,2.5572,7,0,0
+dif_hip_euribor_bde,nacional,,puntos porcentuales,0.023,1.7098,4.9517,0,0,1
+euribor,nacional,,% anual,-0.4974,2.2882,7.7267,24,0,1
+euribor_1y,nacional,,% anual,-0.4974,2.2629,7.7267,24,0,1
+euribor_3m,nacional,,% anual,-0.5664,2.1205,7.1367,29,0,0
+gva_bdo_afiliados,municipio,nacionalidad=ES,afiliados,6.0,462.0,267687.0,0,0,0
+gva_bdo_afiliados,municipio,nacionalidad=EXT_UE,afiliados,5.0,45.0,19937.0,0,0,0
+gva_bdo_afiliados,municipio,nacionalidad=EXT_no_UE,afiliados,5.0,50.0,56771.0,0,0,1
+gva_bdo_afiliados,municipio,nacionalidad=Total,afiliados,6.0,502.0,341252.0,0,0,0
+hip_importe,ccaa,,miles de euros,25381.0,371602.0,11037080.0,0,0,0
+hip_importe,provincia,,miles de euros,25865.0,451907.0,29586044.0,0,0,0
+hip_importe,provincia,,miles de euros,2116.0,114499.5,8018507.0,0,0,0
+hip_n,ccaa,,número,328.0,3312.5,71932.0,0,0,0
+hip_n,provincia,,número,235.0,4654.5,164464.0,0,0,0
+hip_n,provincia,,número,18.0,1166.5,46989.0,0,0,0
+inflacion_deflactor,nacional,,% interanual,-0.9956,2.5089,7.0956,15,0,0
+inflacion_ipc_yoy,nacional,,% (puntos log),-1.0741,2.4942,9.585,14,0,2
+monitor_hipotecas_viviendas,nacional,,hipotecas,24807.0,38816.0,51897.0,0,0,0
+monitor_ipv_general,nacional,,índice,62.501,76.1605,111.095,0,0,0
+monitor_tipo_hip_tae,nacional,,% anual,1.43,2.89,3.99,0,0,0
+monitor_tipo_hip_variable,nacional,,% anual,1.32,3.215,4.61,0,0,0
+monitor_vut_viviendas,nacional,,viviendas,285868.0,329764.0,403267.0,0,0,0
+ocupados,ccaa,,miles de personas,121.7,770.3,3997.8,0,0,0
+ocupados,nacional,,miles de personas,16482.3,19126.3,22779.0,0,0,0
+ocupados_epa,provincia,,miles de personas,21.75,209.05,2851.05,0,0,0
+ocupados_epa,provincia,,miles de personas,21.3,212.05,2939.8,0,0,0
+ocupados_epa_prov,ccaa,,miles de personas,121.7,770.3,3997.8,0,0,0
+ocupados_sa,nacional,,miles (SA),16568.0305,19074.3678,22668.016,0,0,0
+parados_epa,ccaa,,miles de personas,7.9,126.9,1481.8,0,0,0
+parados_epa,provincia,,miles de personas,1.0,34.65,655.125,0,0,0
+parados_epa,provincia,,miles de personas,0.1,34.0,698.6,0,0,1
+pib_ccaa_anual,ccaa,,miles de euros,7581142.0,39636569.0,337216162.0,0,0,0
+pib_ccaa_q,ccaa,,miles de euros,7581142.0,39605765.51,337216162.0,0,0,0
+pib_miles_eur,provincia,,miles de euros,947808.0,11316197.0,223995584.0,0,0,0
+pib_nom,nacional,,millones de euros,112609.0,265450.5,441117.0,0,0,0
+pib_vol_idx,nacional,,índice,67.016,100.8001,126.4212,0,0,0
+rdb,nacional,,millones de euros,142392.0,261210.5,437260.0,0,0,0
+renta_hog,nacional,,millones de euros,94781.0,173163.5,276938.0,0,0,0
+renta_hog_real,nacional,,M€ a precios de 2020,141997.3625,184113.3327,224026.3445,0,0,0
+salario,nacional,,euros/mes,1264.36,1842.255,2531.22,0,0,0
+salario_ccaa,ccaa,,euros/mes,1282.18,1840.35,3098.99,0,0,0
+sepe_contratos_media_anual,municipio,,contratos al mes,0.0,14.25,149542.8333,0,2105,259
+sepe_paro_registrado_media_anual,municipio,,personas,0.0,32.3333,241674.5,0,3489,183
+ss_afiliados_celdas_menor5,municipio,,celdas,1.0,27.0,129.0,0,0,1
+ss_afiliados_construccion_cota_inferior,municipio,,afiliados,5.0,50.0,105163.0,0,0,5
+ss_afiliados_cota_inferior,municipio,,afiliados,0.0,88.0,2497711.0,0,76166,27
+ss_afiliados_extranjeros,provincia,,afiliados,2004.0,17761.0,589907.0,0,0,0
+ss_afiliados_hosteleria_cota_inferior,municipio,,afiliados,5.0,48.0,159480.0,0,0,31
+ss_afiliados_inmobiliarias_cota_inferior,municipio,,afiliados,5.0,31.0,39501.0,0,0,1
+tasa_paro_epa,ccaa,,%,4.2876,14.2949,36.7756,0,0,0
+tasa_paro_epa,nacional,,%,7.9323,13.9732,26.9354,0,0,0
+tipo_bce,nacional,,% anual,0.0,1.8967,4.5,0,25,0
+tipo_dfr,nacional,,% anual,-0.5,1.0,4.0,34,6,0
+tipo_hip,nacional,,% anual,1.4267,2.915,5.96,0,0,0
+tipo_hip_bce,nacional,,% anual,1.4267,2.915,5.96,0,0,0
+tipo_hip_bde,nacional,,% anual,1.4423,3.4238,11.3017,0,0,0
+tipo_hip_nuevas_tae,nacional,,% anual,1.5448,3.0651,6.1088,0,0,0
+tipo_hip_real,nacional,,pp,-3.6223,0.7188,4.599,29,0,0
+tipo_hip_real_bce,nacional,,puntos porcentuales,-7.565,0.8023,3.9341,21,0,3
+tipo_hip_real_bde,nacional,,puntos porcentuales,-7.387,1.3701,7.0481,21,0,0
+tipo_mro,nacional,,% anual,0.0,1.8967,4.5,0,25,0
+visados,ccaa,,viviendas,1.0,711.5,14971.0,0,0,5
+visados,nacional,,viviendas,6590.0,28710.0,166230.75,0,0,0

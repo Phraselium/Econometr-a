@@ -1,0 +1,90 @@
+variable,nivel,desag,frec,tasa_tipo,unidad,n_series,series_corta,series_mad_nula,series_mad_casi_nula,series_z_valido_tasa,obs_tasa_validas,atip_tasa,pct_atip_tasa,series_con_atip_tasa,atip_tasa_en_mad_casi_nula,desv_distintas_de_mediana_en_mad_nula,series_mad_nula_nivel,series_mad_casi_nula_nivel,atip_nivel,series_con_atip_nivel,obs_nivel_validas
+bce_cuota_tipo_variable,pais,,M,dif,% de nuevos préstamos,28,0,0,1,27,6010,215,3.577,17,54,0,0,1,183,10,6659
+bce_hip_tipo_nuevas,pais,fijacion=AM,M,dif,% anual,21,1,0,0,20,4720,175,3.708,15,0,0,0,0,19,3,4960
+bce_hip_tipo_nuevas,pais,fijacion=F,M,dif,% anual,21,0,0,0,21,5299,225,4.246,18,0,0,0,0,6,2,5552
+bce_hip_tipo_nuevas,pais,fijacion=I,M,dif,% anual,21,0,0,0,21,4415,101,2.288,14,0,0,0,0,8,1,4796
+bce_hip_tipo_nuevas,pais,fijacion=K,M,dif,% anual,21,0,0,0,21,4694,49,1.044,9,0,0,0,0,0,0,5059
+bce_hip_tipo_nuevas,pais,fijacion=O,M,dif,% anual,20,0,1,0,19,4146,66,1.592,9,0,17,1,0,2,2,4500
+bce_hip_tipo_nuevas,pais,fijacion=P,M,dif,% anual,19,0,1,0,18,3920,23,0.587,6,0,0,1,0,1,1,4297
+bce_hip_volumen_nuevas,pais,,M,log_x100,millones de euros,21,0,0,0,21,4687,49,1.045,9,0,0,0,0,61,6,5072
+bls_criterios_dif,nacional,,T,dif,puntos,1,0,0,0,1,90,2,2.222,1,0,0,0,0,4,1,94
+bls_criterios_neto,nacional,,T,dif,puntos,1,0,0,0,1,90,1,1.111,1,0,0,0,0,4,1,94
+bls_demanda_dif,nacional,,T,dif,puntos,1,0,0,0,1,90,0,0.0,0,0,0,0,0,0,0,94
+bls_demanda_neto,nacional,,T,dif,puntos,1,0,0,0,1,90,0,0.0,0,0,0,0,0,0,0,94
+bls_rechazo_dif,nacional,,T,dif,puntos,1,0,0,0,1,41,0,0.0,0,0,0,0,0,0,0,45
+bls_rechazo_neto,nacional,,T,dif,puntos,1,0,0,0,1,41,0,0.0,0,0,0,0,0,0,0,45
+compraventas,ccaa,,T,log_x100,número,17,0,0,0,17,1258,1,0.079,1,0,0,0,0,0,0,1326
+compraventas,nacional,,T,log_x100,número,1,0,0,0,1,74,0,0.0,0,0,0,0,0,0,0,78
+compraventas,provincia,,A,log_x100,número,41,0,0,0,41,697,0,0.0,0,0,0,0,0,1,1,738
+compraventas,provincia,,T,log_x100,número,41,0,0,0,41,3034,5,0.165,3,0,0,0,0,4,3,3198
+credito_construccion,nacional,,T,log_x100,millones de euros,1,0,0,0,1,122,0,0.0,0,0,0,0,0,0,0,126
+credito_inmobiliario,nacional,,T,log_x100,millones de euros,1,0,0,0,1,122,0,0.0,0,0,0,0,0,0,0,126
+credito_nuevo,nacional,,T,log_x100,millones de euros,1,0,0,0,1,90,0,0.0,0,0,0,0,0,0,0,94
+credito_promotor,nacional,,T,log_x100,millones de euros,1,0,0,0,1,122,0,0.0,0,0,0,0,0,0,0,126
+credito_stock,nacional,,T,log_x100,M€ (stock),1,0,0,0,1,90,11,12.222,1,0,0,0,0,1,1,94
+credito_stock_bde,nacional,,T,log_x100,millones de euros,1,0,0,0,1,112,0,0.0,0,0,0,0,0,0,0,116
+credito_stock_ecb,nacional,,T,log_x100,millones de euros,1,0,0,0,1,90,11,12.222,1,0,0,0,0,1,1,94
+deflactor,nacional,,T,log_x100,índice 2020=100,1,0,0,0,1,122,0,0.0,0,0,0,0,0,0,0,126
+dif_hip_euribor_bce,nacional,,T,dif,puntos porcentuales,1,0,0,0,1,90,3,3.333,1,0,0,0,0,0,0,94
+dif_hip_euribor_bde,nacional,,T,dif,puntos porcentuales,1,0,0,0,1,122,0,0.0,0,0,0,0,0,0,0,126
+euribor,nacional,,T,dif,% anual,1,0,0,0,1,123,2,1.626,1,0,0,0,0,0,0,127
+euribor_1y,nacional,,T,dif,% anual,1,0,0,0,1,122,3,2.459,1,0,0,0,0,0,0,126
+euribor_3m,nacional,,T,dif,% anual,1,0,0,0,1,122,1,0.82,1,0,0,0,0,0,0,126
+gva_bdo_afiliados,municipio,nacionalidad=ES,T,log_x100,afiliados,542,0,0,0,542,29810,65,0.218,45,0,0,0,0,13,4,31978
+gva_bdo_afiliados,municipio,nacionalidad=EXT_UE,T,log_x100,afiliados,472,43,2,0,427,22109,259,1.171,97,0,11,15,1,39,20,24118
+gva_bdo_afiliados,municipio,nacionalidad=EXT_no_UE,T,log_x100,afiliados,469,70,1,0,398,18836,140,0.743,47,0,0,3,0,739,171,21054
+gva_bdo_afiliados,municipio,nacionalidad=Total,T,log_x100,afiliados,542,0,0,0,542,29810,159,0.533,89,0,0,0,0,22,4,31978
+hip_importe,ccaa,,T,log_x100,miles de euros,17,0,0,0,17,1258,0,0.0,0,0,0,0,0,61,15,1326
+hip_importe,provincia,,A,log_x100,miles de euros,41,0,0,0,41,861,2,0.232,2,0,0,0,0,42,18,902
+hip_importe,provincia,,T,log_x100,miles de euros,41,0,0,0,41,3690,3,0.081,2,0,0,0,0,108,22,3854
+hip_n,ccaa,,T,log_x100,número,17,0,0,0,17,1258,0,0.0,0,0,0,0,0,66,15,1326
+hip_n,provincia,,A,log_x100,número,41,0,0,0,41,861,3,0.348,3,0,0,0,0,38,17,902
+hip_n,provincia,,T,log_x100,número,41,0,0,0,41,3690,2,0.054,2,0,0,0,0,91,24,3854
+inflacion_deflactor,nacional,,T,dif,% interanual,1,0,0,0,1,118,0,0.0,0,0,0,0,0,0,0,122
+inflacion_ipc_yoy,nacional,,T,dif,% (puntos log),1,0,0,0,1,118,0,0.0,0,0,0,0,0,1,1,122
+monitor_hipotecas_viviendas,nacional,,M,log_x100,hipotecas,1,0,0,0,1,24,0,0.0,0,0,0,0,0,0,0,36
+monitor_ipv_general,nacional,,T,log_x100,índice,1,0,0,0,1,32,0,0.0,0,0,0,0,0,0,0,36
+monitor_tipo_hip_tae,nacional,,M,dif,% anual,1,0,0,0,1,44,0,0.0,0,0,0,0,0,0,0,56
+monitor_tipo_hip_variable,nacional,,M,dif,% anual,1,0,0,0,1,44,0,0.0,0,0,0,0,0,0,0,56
+monitor_vut_viviendas,nacional,,M,log_x100,viviendas,1,1,0,0,0,0,0,,0,0,0,0,0,0,0,13
+ocupados,ccaa,,T,log_x100,miles de personas,17,0,0,0,17,1258,0,0.0,0,0,0,0,0,0,0,1326
+ocupados,nacional,,T,log_x100,miles de personas,1,0,0,0,1,94,4,4.255,1,0,0,0,0,0,0,98
+ocupados_epa,provincia,,A,log_x100,miles de personas,41,0,0,0,41,902,1,0.111,1,0,0,0,0,0,0,943
+ocupados_epa,provincia,,T,log_x100,miles de personas,41,0,0,0,41,3854,1,0.026,1,0,0,0,0,0,0,4018
+ocupados_epa_prov,ccaa,,T,log_x100,miles de personas,17,0,0,0,17,1258,0,0.0,0,0,0,0,0,0,0,1326
+ocupados_sa,nacional,,T,log_x100,miles (SA),1,0,0,0,1,94,3,3.191,1,0,0,0,0,0,0,98
+parados_epa,ccaa,,T,log_x100,miles de personas,17,0,0,0,17,1258,2,0.159,2,0,0,0,0,0,0,1326
+parados_epa,provincia,,A,log_x100,miles de personas,41,0,0,0,41,902,6,0.665,4,0,0,0,0,0,0,943
+parados_epa,provincia,,T,log_x100,miles de personas,41,0,0,0,41,3854,10,0.259,5,0,0,0,0,0,0,4018
+pib_ccaa_anual,ccaa,,T,log_x100,miles de euros,17,0,0,0,17,1184,0,0.0,0,0,0,0,0,32,7,1252
+pib_ccaa_q,ccaa,,T,log_x100,miles de euros,17,0,0,0,17,1167,1,0.086,1,0,0,0,0,40,13,1235
+pib_miles_eur,provincia,,A,log_x100,miles de euros,41,0,0,0,41,902,1,0.111,1,0,0,0,0,20,11,943
+pib_nom,nacional,,T,log_x100,millones de euros,1,0,0,0,1,122,1,0.82,1,0,0,0,0,0,0,126
+pib_vol_idx,nacional,,T,log_x100,índice,1,0,0,0,1,122,4,3.279,1,0,0,0,0,0,0,126
+rdb,nacional,,T,log_x100,millones de euros,1,0,0,0,1,106,1,0.943,1,0,0,0,0,0,0,110
+renta_hog,nacional,,T,log_x100,millones de euros,1,0,0,0,1,106,0,0.0,0,0,0,0,0,0,0,110
+renta_hog_real,nacional,,T,log_x100,M€ a precios de 2020,1,0,0,0,1,106,1,0.943,1,0,0,0,0,0,0,110
+salario,nacional,,T,log_x100,euros/mes,1,0,0,0,1,102,1,0.98,1,0,0,0,0,0,0,106
+salario_ccaa,ccaa,,T,log_x100,euros/mes,17,0,0,0,17,1190,11,0.924,6,0,0,0,0,0,0,1258
+sepe_contratos_media_anual,municipio,,A,log_x100,contratos al mes,8134,239,18,1,7876,99353,740,0.745,567,3,72,65,34,1632,1089,126551
+sepe_paro_registrado_media_anual,municipio,,A,log_x100,personas,8135,327,3,0,7805,107111,1459,1.362,1106,0,11,135,5,348,187,134596
+ss_afiliados_celdas_menor5,municipio,,M,log_x100,celdas,8195,26,472,0,7697,438460,2410,0.55,2131,0,8823,565,0,3882,2586,524669
+ss_afiliados_construccion_cota_inferior,municipio,,M,log_x100,afiliados,5590,1056,196,119,4219,224082,2279,1.017,1050,209,2088,487,6,6671,1790,280389
+ss_afiliados_cota_inferior,municipio,,M,log_x100,afiliados,8195,1057,433,5,6700,374211,4203,1.123,1856,64,5684,1502,8,8953,2202,459757
+ss_afiliados_extranjeros,provincia,,M,log_x100,afiliados,41,41,0,0,0,0,0,,0,0,0,0,0,0,0,0
+ss_afiliados_hosteleria_cota_inferior,municipio,,M,log_x100,afiliados,5197,1020,93,3,4081,215293,2794,1.298,1389,28,910,361,5,3445,1209,265288
+ss_afiliados_inmobiliarias_cota_inferior,municipio,,M,log_x100,afiliados,1436,420,40,1,975,49862,1723,3.456,295,9,375,156,2,4348,524,61458
+tasa_paro_epa,ccaa,,T,dif,%,17,0,0,0,17,1258,0,0.0,0,0,0,0,0,0,0,1326
+tasa_paro_epa,nacional,,T,dif,%,1,0,0,0,1,94,0,0.0,0,0,0,0,0,0,0,98
+tipo_bce,nacional,,T,dif,% anual,1,0,1,0,0,0,0,,0,0,51,0,0,0,0,110
+tipo_dfr,nacional,,T,dif,% anual,1,0,0,0,1,106,14,13.208,1,0,0,0,0,0,0,110
+tipo_hip,nacional,,T,dif,% anual,1,0,0,0,1,90,2,2.222,1,0,0,0,0,0,0,94
+tipo_hip_bce,nacional,,T,dif,% anual,1,0,0,0,1,90,2,2.222,1,0,0,0,0,0,0,94
+tipo_hip_bde,nacional,,T,dif,% anual,1,0,0,0,1,122,0,0.0,0,0,0,0,0,0,0,126
+tipo_hip_nuevas_tae,nacional,,T,dif,% anual,1,0,0,0,1,90,5,5.556,1,0,0,0,0,0,0,94
+tipo_hip_real,nacional,,T,dif,pp,1,0,0,0,1,90,0,0.0,0,0,0,0,0,0,0,94
+tipo_hip_real_bce,nacional,,T,dif,puntos porcentuales,1,0,0,0,1,90,1,1.111,1,0,0,0,0,3,1,94
+tipo_hip_real_bde,nacional,,T,dif,puntos porcentuales,1,0,0,0,1,118,3,2.542,1,0,0,0,0,2,1,122
+tipo_mro,nacional,,T,dif,% anual,1,0,1,0,0,0,0,,0,0,51,0,0,0,0,110
+visados,ccaa,,T,log_x100,viviendas,17,0,0,0,17,1139,6,0.527,4,0,0,0,0,27,13,1224
+visados,nacional,,T,log_x100,viviendas,1,0,0,0,1,119,5,4.202,1,0,0,0,0,0,0,124

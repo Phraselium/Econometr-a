@@ -8,3 +8,5 @@ fecha,rol,tarea,tokens,ficheros
 2026-10-17,lector-literatura,F2 P5 pisos turísticos,145840,docs/v15/literatura/P5_pisos_turisticos.md
 2026-10-17,lector-literatura,F2 P6 topes y zonas tensionadas,198830,docs/v15/literatura/P6_topes_alquiler.md
 2026-10-17,lector-literatura,F2 P9 predicción,86141,docs/v15/literatura/P9_prediccion.md
+2026-10-17,lector-literatura,F2 P3 tipos de interés,182064,docs/v15/literatura/P3_tipos_interes.md
+2026-10-17,auditor-datos,F1.2 financiación y macro,242674,src/v15/auditoria/financiacion_macro.py; output/v15/auditoria/financiacion_macro/

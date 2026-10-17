@@ -1,0 +1,5 @@
+par,n_trim,primero,ultimo,ratio_A_B_mediana,ratio_A_B_p10,ratio_A_B_p90,corr_yoy,dif_media_yoy_pp,dif_abs_media_yoy_pp,n_rachas_signo_opuesto,n_rachas_dif_gt10pp
+"INE hip_importe (suma 17 CCAA, M€) vs BCE credito_nuevo",78,2007T1,2026T2,0.979,0.7408,1.2698,0.7695,-1.0177,15.8537,0,4
+"INE hip_importe (suma 17 CCAA, M€) vs BCE MIR volumen nuevas ES (suma trimestral)",78,2007T1,2026T2,0.979,0.7408,1.2698,0.7695,-1.0177,15.8537,0,4
+INE hip_n (suma 17 CCAA) vs BCE credito_nuevo (M€),78,2007T1,2026T2,7.7478,6.0746,10.3722,0.7905,-1.791,13.4498,0,4
+BCE credito_nuevo vs BCE MIR volumen nuevas ES,94,2003T1,2026T2,1.0,1.0,1.0,1.0,0.0,0.0,0,0

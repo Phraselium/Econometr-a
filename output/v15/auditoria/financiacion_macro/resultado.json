@@ -1,0 +1,1813 @@
+{
+ "rama": "v15/auditoria/financiacion_macro",
+ "pregunta": "¿Qué series de financiación y macro son fiables y coherentes para V15 (P2, P3, P9)? Atípicos, coherencia entre fuentes, sumas territoriales, vintages, rupturas, y qué falta para P3 y P9.",
+ "capa": "C4",
+ "datos": [
+  "hechos.parquet (muestra no sellada): variables de financiación, empleo, renta, macro y otras (inventario V15)",
+  "data/raw: manifiestos y reproducción nacional (BCE, EPA)",
+  "data/raw/v8/jk_shocks_ecb_mensual.csv (solo cobertura)"
+ ],
+ "N": {
+  "series": 47805,
+  "variables": 68,
+  "grupos_variable_nivel": 89
+ },
+ "metodo": "Auditoría descriptiva determinista (SEED=20261010): z robusto con mediana y MAD (|z|>5) sobre niveles y tasas (log×100 a 4 trimestres o 12 meses; diferencia para tipos y variables en %/pp), separando MAD nula y casi nula (1,4826·MAD<0,1·sd); coherencia por correlación de cambios, diferencias y rachas; sumas provincial-CCAA-nacional; cruces por código INE.",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "atipicos_resumen": {
+   "n_grupos_variable_nivel": 89,
+   "n_series": 47805,
+   "atip_tasa_total": 17270,
+   "series_con_atip_tasa": 8829,
+   "series_mad_nula_tasa": 1262,
+   "series_mad_casi_nula_tasa": 130,
+   "atip_tasa_en_mad_casi_nula": 367,
+   "desv_en_mad_nula": 18093,
+   "atip_nivel_total": 30918,
+   "claves_duplicadas_hechos": 0
+  },
+  "atipicos_top_grupos": [
+   {
+    "variable": "ss_afiliados_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "n_series": 8195,
+    "atip_tasa": 4203,
+    "pct_atip_tasa": 1.123,
+    "series_con_atip_tasa": 1856
+   },
+   {
+    "variable": "ss_afiliados_hosteleria_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "n_series": 5197,
+    "atip_tasa": 2794,
+    "pct_atip_tasa": 1.298,
+    "series_con_atip_tasa": 1389
+   },
+   {
+    "variable": "ss_afiliados_celdas_menor5",
+    "nivel": "municipio",
+    "desag": "",
+    "n_series": 8195,
+    "atip_tasa": 2410,
+    "pct_atip_tasa": 0.55,
+    "series_con_atip_tasa": 2131
+   },
+   {
+    "variable": "ss_afiliados_construccion_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "n_series": 5590,
+    "atip_tasa": 2279,
+    "pct_atip_tasa": 1.017,
+    "series_con_atip_tasa": 1050
+   },
+   {
+    "variable": "ss_afiliados_inmobiliarias_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "n_series": 1436,
+    "atip_tasa": 1723,
+    "pct_atip_tasa": 3.456,
+    "series_con_atip_tasa": 295
+   },
+   {
+    "variable": "sepe_paro_registrado_media_anual",
+    "nivel": "municipio",
+    "desag": "",
+    "n_series": 8135,
+    "atip_tasa": 1459,
+    "pct_atip_tasa": 1.362,
+    "series_con_atip_tasa": 1106
+   },
+   {
+    "variable": "sepe_contratos_media_anual",
+    "nivel": "municipio",
+    "desag": "",
+    "n_series": 8134,
+    "atip_tasa": 740,
+    "pct_atip_tasa": 0.745,
+    "series_con_atip_tasa": 567
+   },
+   {
+    "variable": "gva_bdo_afiliados",
+    "nivel": "municipio",
+    "desag": "nacionalidad=EXT_UE",
+    "n_series": 472,
+    "atip_tasa": 259,
+    "pct_atip_tasa": 1.171,
+    "series_con_atip_tasa": 97
+   },
+   {
+    "variable": "bce_hip_tipo_nuevas",
+    "nivel": "pais",
+    "desag": "fijacion=F",
+    "n_series": 21,
+    "atip_tasa": 225,
+    "pct_atip_tasa": 4.246,
+    "series_con_atip_tasa": 18
+   },
+   {
+    "variable": "bce_cuota_tipo_variable",
+    "nivel": "pais",
+    "desag": "",
+    "n_series": 28,
+    "atip_tasa": 215,
+    "pct_atip_tasa": 3.577,
+    "series_con_atip_tasa": 17
+   },
+   {
+    "variable": "bce_hip_tipo_nuevas",
+    "nivel": "pais",
+    "desag": "fijacion=AM",
+    "n_series": 21,
+    "atip_tasa": 175,
+    "pct_atip_tasa": 3.708,
+    "series_con_atip_tasa": 15
+   },
+   {
+    "variable": "gva_bdo_afiliados",
+    "nivel": "municipio",
+    "desag": "nacionalidad=Total",
+    "n_series": 542,
+    "atip_tasa": 159,
+    "pct_atip_tasa": 0.533,
+    "series_con_atip_tasa": 89
+   },
+   {
+    "variable": "gva_bdo_afiliados",
+    "nivel": "municipio",
+    "desag": "nacionalidad=EXT_no_UE",
+    "n_series": 469,
+    "atip_tasa": 140,
+    "pct_atip_tasa": 0.743,
+    "series_con_atip_tasa": 47
+   },
+   {
+    "variable": "bce_hip_tipo_nuevas",
+    "nivel": "pais",
+    "desag": "fijacion=I",
+    "n_series": 21,
+    "atip_tasa": 101,
+    "pct_atip_tasa": 2.288,
+    "series_con_atip_tasa": 14
+   },
+   {
+    "variable": "bce_hip_tipo_nuevas",
+    "nivel": "pais",
+    "desag": "fijacion=O",
+    "n_series": 20,
+    "atip_tasa": 66,
+    "pct_atip_tasa": 1.592,
+    "series_con_atip_tasa": 9
+   }
+  ],
+  "atipicos_top10": [
+   {
+    "variable": "ss_afiliados_construccion_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "cod_ine": "46181",
+    "periodo": "2012-12",
+    "z_robusto_tasa": 75.504,
+    "tasa": 320.791,
+    "nivel_valor": 544.0
+   },
+   {
+    "variable": "ss_afiliados_construccion_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "cod_ine": "07003",
+    "periodo": "2012-12",
+    "z_robusto_tasa": 74.257,
+    "tasa": 318.125,
+    "nivel_valor": 313.0
+   },
+   {
+    "variable": "ss_afiliados_construccion_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "cod_ine": "31072",
+    "periodo": "2012-12",
+    "z_robusto_tasa": 73.822,
+    "tasa": 378.419,
+    "nivel_valor": 308.0
+   },
+   {
+    "variable": "ss_afiliados_construccion_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "cod_ine": "14021",
+    "periodo": "2012-12",
+    "z_robusto_tasa": 73.568,
+    "tasa": 230.564,
+    "nivel_valor": 4584.0
+   },
+   {
+    "variable": "ss_afiliados_construccion_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "cod_ine": "25120",
+    "periodo": "2012-12",
+    "z_robusto_tasa": 73.509,
+    "tasa": 310.084,
+    "nivel_valor": 3488.0
+   },
+   {
+    "variable": "ss_afiliados_construccion_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "cod_ine": "05019",
+    "periodo": "2012-12",
+    "z_robusto_tasa": 73.115,
+    "tasa": 281.421,
+    "nivel_valor": 1251.0
+   },
+   {
+    "variable": "ss_afiliados_construccion_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "cod_ine": "46029",
+    "periodo": "2012-12",
+    "z_robusto_tasa": 72.969,
+    "tasa": 357.591,
+    "nivel_valor": 393.0
+   },
+   {
+    "variable": "ss_afiliados_construccion_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "cod_ine": "43148",
+    "periodo": "2012-12",
+    "z_robusto_tasa": 72.95,
+    "tasa": 262.656,
+    "nivel_valor": 3816.0
+   },
+   {
+    "variable": "ss_afiliados_construccion_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "cod_ine": "17023",
+    "periodo": "2012-12",
+    "z_robusto_tasa": 72.348,
+    "tasa": 277.951,
+    "nivel_valor": 725.0
+   },
+   {
+    "variable": "ss_afiliados_construccion_cota_inferior",
+    "nivel": "municipio",
+    "desag": "",
+    "cod_ine": "22125",
+    "periodo": "2012-12",
+    "z_robusto_tasa": 71.479,
+    "tasa": 185.077,
+    "nivel_valor": 1623.0
+   }
+  ],
+  "unidades": {
+   "importe_medio_hipoteca": {
+    "ccaa": {
+     "unidad": "miles de euros por hipoteca",
+     "min": 62.0191,
+     "p5": 77.9178,
+     "mediana": 108.1281,
+     "p95": 182.6715,
+     "max": 308.842,
+     "n_fuera_20_1000": 0
+    },
+    "provincia": {
+     "unidad": "miles de euros por hipoteca",
+     "min": 51.93,
+     "p5": 73.025,
+     "mediana": 100.2079,
+     "p95": 156.054,
+     "max": 270.4773,
+     "n_fuera_20_1000": 0
+    }
+   },
+   "saltos_orden_magnitud_total": 527,
+   "variables_con_negativos": [
+    "bls_criterios_dif",
+    "bls_criterios_neto",
+    "bls_demanda_dif",
+    "bls_demanda_neto",
+    "bls_rechazo_dif",
+    "bls_rechazo_neto",
+    "dif_hip_euribor_bce",
+    "euribor",
+    "euribor_1y",
+    "euribor_3m",
+    "inflacion_deflactor",
+    "inflacion_ipc_yoy",
+    "tipo_dfr",
+    "tipo_hip_real",
+    "tipo_hip_real_bce",
+    "tipo_hip_real_bde"
+   ]
+  },
+  "series_nacionales_identicas": [
+   {
+    "A": "credito_stock",
+    "B": "credito_stock_ecb",
+    "n_comunes": 94,
+    "identicas": true
+   },
+   {
+    "A": "euribor",
+    "B": "euribor_1y",
+    "n_comunes": 126,
+    "identicas": true
+   },
+   {
+    "A": "tipo_bce",
+    "B": "tipo_mro",
+    "n_comunes": 110,
+    "identicas": true
+   },
+   {
+    "A": "tipo_hip",
+    "B": "tipo_hip_bce",
+    "n_comunes": 94,
+    "identicas": true
+   }
+  ],
+  "coherencia_tipos": [
+   {
+    "par": "tipo_hip_bde (BdE referencia) vs tipo_hip_bce (BCE MIR nuevas)",
+    "n_trim": 94,
+    "primero": "2003T1",
+    "ultimo": "2026T2",
+    "dif_media_pp_AmenosB": 0.1025,
+    "dif_abs_media_pp": 0.1139,
+    "dif_abs_max_pp": 0.503,
+    "trim_dif_abs_max": "2013T3",
+    "corr_niveles": 0.9956,
+    "corr_cambio_4t": 0.9889,
+    "corr_cambio_1t": 0.9718,
+    "dif_media_por_periodo": {
+     "2003-2007": 0.096,
+     "2008-2014": 0.18,
+     "2015-2021": -0.006,
+     "2022-2026": 0.159
+    },
+    "rachas_dif_abs_gt_0.5pp_4t": [],
+    "rachas_cambio_4t_signo_opuesto": []
+   },
+   {
+    "par": "tipo_hip_bde vs tipo_hip_nuevas_tae (BdE nuevas TAE)",
+    "n_trim": 94,
+    "primero": "2003T1",
+    "ultimo": "2026T2",
+    "dif_media_pp_AmenosB": -0.0613,
+    "dif_abs_media_pp": 0.139,
+    "dif_abs_max_pp": 0.4104,
+    "trim_dif_abs_max": "2016T3",
+    "corr_niveles": 0.9909,
+    "corr_cambio_4t": 0.988,
+    "corr_cambio_1t": 0.9738,
+    "dif_media_por_periodo": {
+     "2003-2007": -0.049,
+     "2008-2014": 0.041,
+     "2015-2021": -0.26,
+     "2022-2026": 0.074
+    },
+    "rachas_dif_abs_gt_0.5pp_4t": [],
+    "rachas_cambio_4t_signo_opuesto": []
+   },
+   {
+    "par": "tipo_hip_bce vs tipo_hip_nuevas_tae",
+    "n_trim": 94,
+    "primero": "2003T1",
+    "ultimo": "2026T2",
+    "dif_media_pp_AmenosB": -0.1638,
+    "dif_abs_media_pp": 0.1638,
+    "dif_abs_max_pp": 0.416,
+    "trim_dif_abs_max": "2016T3",
+    "corr_niveles": 0.9972,
+    "corr_cambio_4t": 0.9977,
+    "corr_cambio_1t": 0.9938,
+    "dif_media_por_periodo": {
+     "2003-2007": -0.145,
+     "2008-2014": -0.138,
+     "2015-2021": -0.254,
+     "2022-2026": -0.085
+    },
+    "rachas_dif_abs_gt_0.5pp_4t": [],
+    "rachas_cambio_4t_signo_opuesto": []
+   },
+   {
+    "par": "tipo_hip_bce vs media trimestral de bce_hip_tipo_nuevas ES AM (hechos mensual)",
+    "n_trim": 94,
+    "primero": "2003T1",
+    "ultimo": "2026T2",
+    "dif_media_pp_AmenosB": 0.0,
+    "dif_abs_media_pp": 0.0,
+    "dif_abs_max_pp": 0.0,
+    "trim_dif_abs_max": "2008T1",
+    "corr_niveles": 1.0,
+    "corr_cambio_4t": 1.0,
+    "corr_cambio_1t": 1.0,
+    "dif_media_por_periodo": {
+     "2003-2007": -0.0,
+     "2008-2014": 0.0,
+     "2015-2021": 0.0,
+     "2022-2026": 0.0
+    },
+    "rachas_dif_abs_gt_0.5pp_4t": [],
+    "rachas_cambio_4t_signo_opuesto": []
+   },
+   {
+    "par": "tipo_bce vs tipo_mro",
+    "n_trim": 110,
+    "primero": "1999T1",
+    "ultimo": "2026T2",
+    "dif_media_pp_AmenosB": 0.0,
+    "dif_abs_media_pp": 0.0,
+    "dif_abs_max_pp": 0.0,
+    "trim_dif_abs_max": "2025T2",
+    "corr_niveles": 1.0,
+    "corr_cambio_4t": 1.0,
+    "corr_cambio_1t": 1.0,
+    "dif_media_por_periodo": {
+     "2003-2007": 0.0,
+     "2008-2014": 0.0,
+     "2015-2021": -0.0,
+     "2022-2026": 0.0
+    },
+    "rachas_dif_abs_gt_0.5pp_4t": [],
+    "rachas_cambio_4t_signo_opuesto": []
+   },
+   {
+    "par": "euribor vs euribor_1y",
+    "n_trim": 126,
+    "primero": "1995T1",
+    "ultimo": "2026T2",
+    "dif_media_pp_AmenosB": -0.0,
+    "dif_abs_media_pp": 0.0,
+    "dif_abs_max_pp": 0.0,
+    "trim_dif_abs_max": "2002T2",
+    "corr_niveles": 1.0,
+    "corr_cambio_4t": 1.0,
+    "corr_cambio_1t": 1.0,
+    "dif_media_por_periodo": {
+     "2003-2007": -0.0,
+     "2008-2014": -0.0,
+     "2015-2021": -0.0,
+     "2022-2026": -0.0
+    },
+    "rachas_dif_abs_gt_0.5pp_4t": [],
+    "rachas_cambio_4t_signo_opuesto": []
+   }
+  ],
+  "identidades_derivadas": {
+   "dif_hip_euribor_bce = tipo_hip_bce - euribor_1y (resid. max pp)": 0.0,
+   "dif_hip_euribor_bde = tipo_hip_bde - euribor (resid. max pp)": 0.0,
+   "tipo_hip_real_bce = tipo_hip_bce - inflacion_ipc_yoy (resid. max pp)": 0.0,
+   "tipo_hip_real_bde = tipo_hip_bde - inflacion_ipc_yoy (resid. max pp)": 0.0,
+   "euribor_ultimo_trimestre_y_valor (trimestre incompleto en la descarga)": [
+    "2026T3",
+    3.0186
+   ]
+  },
+  "coherencia_hipotecas_credito": {
+   "comparacion": [
+    {
+     "par": "INE hip_importe (suma 17 CCAA, M€) vs BCE credito_nuevo",
+     "n_trim": 78,
+     "primero": "2007T1",
+     "ultimo": "2026T2",
+     "ratio_A_B_mediana": 0.979,
+     "ratio_A_B_p10": 0.7408,
+     "ratio_A_B_p90": 1.2698,
+     "corr_yoy": 0.7695,
+     "dif_media_yoy_pp": -1.0177,
+     "dif_abs_media_yoy_pp": 15.8537,
+     "rachas_yoy_signo_opuesto_4t": [],
+     "rachas_dif_yoy_gt10pp_4t": [
+      {
+       "inicio": "2009T1",
+       "fin": "2009T4",
+       "trimestres": 4,
+       "dif_media_pp": -25.03
+      },
+      {
+       "inicio": "2010T3",
+       "fin": "2013T1",
+       "trimestres": 11,
+       "dif_media_pp": -4.78
+      },
+      {
+       "inicio": "2020T3",
+       "fin": "2021T4",
+       "trimestres": 6,
+       "dif_media_pp": -10.43
+      },
+      {
+       "inicio": "2023T3",
+       "fin": "2024T2",
+       "trimestres": 4,
+       "dif_media_pp": -19.83
+      }
+     ]
+    },
+    {
+     "par": "INE hip_importe (suma 17 CCAA, M€) vs BCE MIR volumen nuevas ES (suma trimestral)",
+     "n_trim": 78,
+     "primero": "2007T1",
+     "ultimo": "2026T2",
+     "ratio_A_B_mediana": 0.979,
+     "ratio_A_B_p10": 0.7408,
+     "ratio_A_B_p90": 1.2698,
+     "corr_yoy": 0.7695,
+     "dif_media_yoy_pp": -1.0177,
+     "dif_abs_media_yoy_pp": 15.8537,
+     "rachas_yoy_signo_opuesto_4t": [],
+     "rachas_dif_yoy_gt10pp_4t": [
+      {
+       "inicio": "2009T1",
+       "fin": "2009T4",
+       "trimestres": 4,
+       "dif_media_pp": -25.03
+      },
+      {
+       "inicio": "2010T3",
+       "fin": "2013T1",
+       "trimestres": 11,
+       "dif_media_pp": -4.78
+      },
+      {
+       "inicio": "2020T3",
+       "fin": "2021T4",
+       "trimestres": 6,
+       "dif_media_pp": -10.43
+      },
+      {
+       "inicio": "2023T3",
+       "fin": "2024T2",
+       "trimestres": 4,
+       "dif_media_pp": -19.83
+      }
+     ]
+    },
+    {
+     "par": "INE hip_n (suma 17 CCAA) vs BCE credito_nuevo (M€)",
+     "n_trim": 78,
+     "primero": "2007T1",
+     "ultimo": "2026T2",
+     "ratio_A_B_mediana": 7.7478,
+     "ratio_A_B_p10": 6.0746,
+     "ratio_A_B_p90": 10.3722,
+     "corr_yoy": 0.7905,
+     "dif_media_yoy_pp": -1.791,
+     "dif_abs_media_yoy_pp": 13.4498,
+     "rachas_yoy_signo_opuesto_4t": [],
+     "rachas_dif_yoy_gt10pp_4t": [
+      {
+       "inicio": "2010T3",
+       "fin": "2012T2",
+       "trimestres": 8,
+       "dif_media_pp": 2.9
+      },
+      {
+       "inicio": "2013T3",
+       "fin": "2014T4",
+       "trimestres": 6,
+       "dif_media_pp": -10.06
+      },
+      {
+       "inicio": "2020T3",
+       "fin": "2021T4",
+       "trimestres": 6,
+       "dif_media_pp": -13.74
+      },
+      {
+       "inicio": "2023T3",
+       "fin": "2024T2",
+       "trimestres": 4,
+       "dif_media_pp": -17.38
+      }
+     ]
+    },
+    {
+     "par": "BCE credito_nuevo vs BCE MIR volumen nuevas ES",
+     "n_trim": 94,
+     "primero": "2003T1",
+     "ultimo": "2026T2",
+     "ratio_A_B_mediana": 1.0,
+     "ratio_A_B_p10": 1.0,
+     "ratio_A_B_p90": 1.0,
+     "corr_yoy": 1.0,
+     "dif_media_yoy_pp": 0.0,
+     "dif_abs_media_yoy_pp": 0.0,
+     "rachas_yoy_signo_opuesto_4t": [],
+     "rachas_dif_yoy_gt10pp_4t": []
+    }
+   ],
+   "monitor_vs_76317": {
+    "par": "INE hip_n (suma 17 CCAA, tabla 76317) vs monitor_hipotecas_viviendas (HPT34618, suma 3 meses)",
+    "n_trim": 11,
+    "primero": "2023T4",
+    "ultimo": "2026T2",
+    "ratio_A_B_mediana": 0.9979,
+    "ratio_A_B_p10": 0.9975,
+    "ratio_A_B_p90": 0.9981,
+    "corr_yoy": 1.0,
+    "dif_media_yoy_pp": -0.0035,
+    "dif_abs_media_yoy_pp": 0.0357,
+    "rachas_yoy_signo_opuesto_4t": [],
+    "rachas_dif_yoy_gt10pp_4t": [],
+    "ratio_por_trimestre": {
+     "2023T4": 0.9978,
+     "2024T1": 0.9979,
+     "2024T2": 0.9976,
+     "2024T3": 0.9985,
+     "2024T4": 0.9973,
+     "2025T1": 0.9979,
+     "2025T2": 0.9978,
+     "2025T3": 0.9981,
+     "2025T4": 0.998,
+     "2026T1": 0.9975,
+     "2026T2": 0.998
+    }
+   },
+   "importe_medio_hipoteca": {
+    "ccaa": {
+     "unidad": "miles de euros por hipoteca",
+     "min": 62.0191,
+     "p5": 77.9178,
+     "mediana": 108.1281,
+     "p95": 182.6715,
+     "max": 308.842,
+     "n_fuera_20_1000": 0
+    },
+    "provincia": {
+     "unidad": "miles de euros por hipoteca",
+     "min": 51.93,
+     "p5": 73.025,
+     "mediana": 100.2079,
+     "p95": 156.054,
+     "max": 270.4773,
+     "n_fuera_20_1000": 0
+    }
+   }
+  },
+  "ss_vs_epa_provincias": {
+   "n_provincias_comparadas": 41,
+   "ratio_mediana_entre_provincias": 0.8796,
+   "ratio_p10": 0.7789,
+   "ratio_p90": 0.9897,
+   "ratio_min": 0.7049,
+   "ratio_max": 1.0841,
+   "corr_yoy_mediana": 0.4326,
+   "n_prov_corr_yoy_lt_0.5": 27,
+   "ratio_mediana_provincias_por_año_t4": {
+    "2012": {
+     "ratio_mediana_provincias": 0.8544,
+     "p10": 0.7644,
+     "p90": 1.0229
+    },
+    "2013": {
+     "ratio_mediana_provincias": 0.8636,
+     "p10": 0.79,
+     "p90": 1.028
+    },
+    "2014": {
+     "ratio_mediana_provincias": 0.8647,
+     "p10": 0.758,
+     "p90": 1.0225
+    },
+    "2015": {
+     "ratio_mediana_provincias": 0.8752,
+     "p10": 0.7548,
+     "p90": 1.0251
+    },
+    "2016": {
+     "ratio_mediana_provincias": 0.8636,
+     "p10": 0.7388,
+     "p90": 1.0324
+    },
+    "2017": {
+     "ratio_mediana_provincias": 0.8851,
+     "p10": 0.7796,
+     "p90": 1.0028
+    },
+    "2018": {
+     "ratio_mediana_provincias": 0.8786,
+     "p10": 0.7865,
+     "p90": 1.0361
+    },
+    "2019": {
+     "ratio_mediana_provincias": 0.8781,
+     "p10": 0.7643,
+     "p90": 1.0178
+    },
+    "2020": {
+     "ratio_mediana_provincias": 0.8623,
+     "p10": 0.7647,
+     "p90": 1.0175
+    },
+    "2021": {
+     "ratio_mediana_provincias": 0.8731,
+     "p10": 0.7867,
+     "p90": 0.9684
+    },
+    "2022": {
+     "ratio_mediana_provincias": 0.8917,
+     "p10": 0.7818,
+     "p90": 1.017
+    },
+    "2023": {
+     "ratio_mediana_provincias": 0.8817,
+     "p10": 0.7856,
+     "p90": 0.99
+    },
+    "2024": {
+     "ratio_mediana_provincias": 0.8742,
+     "p10": 0.7461,
+     "p90": 0.9779
+    },
+    "2025": {
+     "ratio_mediana_provincias": 0.8719,
+     "p10": 0.7883,
+     "p90": 0.9906
+    }
+   },
+   "nota": "SS: afiliados por municipio de la cuenta de cotización (centro de trabajo/empresa), cota inferior (celdas <5 omitidas), último día del mes, todos los regímenes; EPA: ocupados residentes, media trimestral. Conceptos distintos: el cociente no debe valer 1."
+  },
+  "suma_provincial_vs_ccaa": {
+   "filas_comparables": 45,
+   "filas_total": 85,
+   "dif_rel_abs_max_pct_por_variable": {
+    "compraventas": 0.0,
+    "hip_importe": 0.0,
+    "hip_n": 0.0,
+    "ocupados_epa": 0.0,
+    "parados_epa": 0.0
+   },
+   "ccaa_comparables": {
+    "compraventas": [
+     "01",
+     "06",
+     "07",
+     "08",
+     "09",
+     "10",
+     "11",
+     "12",
+     "16"
+    ],
+    "hip_importe": [
+     "01",
+     "06",
+     "07",
+     "08",
+     "09",
+     "10",
+     "11",
+     "12",
+     "16"
+    ],
+    "hip_n": [
+     "01",
+     "06",
+     "07",
+     "08",
+     "09",
+     "10",
+     "11",
+     "12",
+     "16"
+    ],
+    "ocupados_epa": [
+     "01",
+     "06",
+     "07",
+     "08",
+     "09",
+     "10",
+     "11",
+     "12",
+     "16"
+    ],
+    "parados_epa": [
+     "01",
+     "06",
+     "07",
+     "08",
+     "09",
+     "10",
+     "11",
+     "12",
+     "16"
+    ]
+   }
+  },
+  "suma_ccaa_vs_nacional_y_pib": {
+   "compraventas": {
+    "n_trim": 78,
+    "dif_rel_media_pct": -0.2095,
+    "dif_rel_abs_max_pct": 0.468,
+    "periodo_dif_max": "2019T1",
+    "dif_rel_media_por_año": {
+     "2007": -0.204,
+     "2008": -0.18,
+     "2009": -0.222,
+     "2010": -0.312,
+     "2011": -0.231,
+     "2012": -0.224,
+     "2013": -0.192,
+     "2014": -0.231,
+     "2015": -0.233,
+     "2016": -0.21,
+     "2017": -0.2,
+     "2018": -0.194,
+     "2019": -0.261,
+     "2020": -0.194,
+     "2021": -0.182,
+     "2022": -0.179,
+     "2023": -0.164,
+     "2024": -0.177,
+     "2025": -0.19,
+     "2026": -0.213
+    },
+    "nota": "17 CCAA; Ceuta y Melilla no están en las series de CCAA de la base"
+   },
+   "ocupados": {
+    "n_trim": 78,
+    "dif_rel_media_pct": -0.2767,
+    "dif_rel_abs_max_pct": 0.3122,
+    "periodo_dif_max": "2020T2",
+    "dif_rel_media_por_año": {
+     "2007": -0.235,
+     "2008": -0.25,
+     "2009": -0.269,
+     "2010": -0.273,
+     "2011": -0.287,
+     "2012": -0.284,
+     "2013": -0.292,
+     "2014": -0.29,
+     "2015": -0.282,
+     "2016": -0.29,
+     "2017": -0.294,
+     "2018": -0.293,
+     "2019": -0.284,
+     "2020": -0.302,
+     "2021": -0.274,
+     "2022": -0.271,
+     "2023": -0.259,
+     "2024": -0.263,
+     "2025": -0.266,
+     "2026": -0.277
+    },
+    "nota": "17 CCAA; Ceuta y Melilla no están en las series de CCAA de la base"
+   },
+   "visados": {
+    "n_trim": 72,
+    "dif_rel_media_pct": -0.4197,
+    "dif_rel_abs_max_pct": 1.4919,
+    "periodo_dif_max": "2014T4",
+    "dif_rel_media_por_año": {
+     "2008": -0.207,
+     "2009": -0.559,
+     "2010": -0.531,
+     "2011": -0.792,
+     "2012": -0.698,
+     "2013": -0.713,
+     "2014": -0.584,
+     "2015": -0.742,
+     "2016": -0.545,
+     "2017": -0.58,
+     "2018": -0.3,
+     "2019": -0.356,
+     "2020": -0.265,
+     "2021": -0.205,
+     "2022": -0.301,
+     "2023": -0.201,
+     "2024": -0.11,
+     "2025": -0.135,
+     "2026": -0.024
+    },
+    "nota": "17 CCAA; Ceuta y Melilla no están en las series de CCAA de la base"
+   },
+   "pib_ccaa_anual_17CCAA_vs_pib_nom_CNT": {
+    "razon_por_año": {
+     "2007": 0.9966,
+     "2008": 0.9966,
+     "2009": 0.9964,
+     "2010": 0.9963,
+     "2011": 0.996,
+     "2012": 0.9962,
+     "2013": 0.9961,
+     "2014": 0.9962,
+     "2015": 0.9962,
+     "2016": 0.9963,
+     "2017": 0.9964,
+     "2018": 0.9965,
+     "2019": 0.9965,
+     "2020": 0.9963,
+     "2021": 0.9964,
+     "2022": 0.9965,
+     "2023": 0.9967,
+     "2024": 0.9967,
+     "2025": null
+    },
+    "nota": "CRE (corrientes, sin ajuste estacional) frente a CNT (corrientes, SA y calendario); 17 CCAA sin Ceuta/Melilla"
+   },
+   "pib_provincias_vs_pib_ccaa_anual": {
+    "n_ccaa_comparables": 9,
+    "dif_rel_abs_max_pct": 0.0
+   }
+  },
+  "pib_ccaa_anual_repetido": {
+   "ccaa_anio_con_4_trimestres": 313,
+   "ccaa_anio_con_4_trimestres_valores_distintos": [],
+   "ccaa_con_dato_en_el_ultimo_trimestre": [
+    "2025T4",
+    7
+   ],
+   "ccaa_con_dato_en_T4_del_año_anterior": 17,
+   "con_un_unico_valor": 313,
+   "pct_variaciones_trimestrales_exactamente_cero": 76.0,
+   "advertencia": "Una tasa trimestral (diferencia de 1 trimestre) de pib_ccaa_anual vale 0 en tres de cada cuatro trimestres y salta en el T1: no es una variación. Solo la variación a 4 trimestres (T1 frente a T1) equivale a la tasa anual.",
+   "uso_trimestral_detectado_en_src": "grep de src/v7/r1_panel.py: d_ln y d4_ln solo se crean para pib_ccaa_q (interpolada); pib_ccaa_anual no recibe d_ln en el panel; 'exp_hip_importe_pib_1519' usa el PIB anual. No se ejecuta código ajeno.",
+   "pib_ccaa_q": "interpolación log-lineal entre anclas T3: solo robustez (regla del repositorio)."
+  },
+  "vintages": {
+   "ediciones_por_variable_hechos": {
+    "bce_cuota_tipo_variable": [
+     1,
+     284
+    ],
+    "bce_hip_tipo_nuevas": [
+     1,
+     284
+    ],
+    "bce_hip_volumen_nuevas": [
+     1,
+     284
+    ],
+    "bls_criterios_dif": [
+     1,
+     94
+    ],
+    "bls_criterios_neto": [
+     1,
+     94
+    ],
+    "bls_demanda_dif": [
+     1,
+     94
+    ],
+    "bls_demanda_neto": [
+     1,
+     94
+    ],
+    "bls_rechazo_dif": [
+     1,
+     45
+    ],
+    "bls_rechazo_neto": [
+     1,
+     45
+    ],
+    "compraventas": [
+     1,
+     78
+    ],
+    "credito_construccion": [
+     1,
+     126
+    ],
+    "credito_inmobiliario": [
+     1,
+     126
+    ],
+    "credito_nuevo": [
+     1,
+     94
+    ],
+    "credito_promotor": [
+     1,
+     126
+    ],
+    "credito_stock": [
+     1,
+     94
+    ],
+    "credito_stock_bde": [
+     1,
+     116
+    ],
+    "credito_stock_ecb": [
+     1,
+     94
+    ],
+    "deflactor": [
+     1,
+     126
+    ],
+    "dif_hip_euribor_bce": [
+     1,
+     94
+    ],
+    "dif_hip_euribor_bde": [
+     1,
+     126
+    ],
+    "euribor": [
+     1,
+     127
+    ],
+    "euribor_1y": [
+     1,
+     126
+    ],
+    "euribor_3m": [
+     1,
+     126
+    ],
+    "gva_bdo_afiliados": [
+     1,
+     59
+    ],
+    "hip_importe": [
+     1,
+     94
+    ],
+    "hip_n": [
+     1,
+     94
+    ],
+    "inflacion_deflactor": [
+     1,
+     122
+    ],
+    "inflacion_ipc_yoy": [
+     1,
+     122
+    ],
+    "monitor_hipotecas_viviendas": [
+     1,
+     36
+    ],
+    "monitor_ipv_general": [
+     1,
+     36
+    ],
+    "monitor_tipo_hip_tae": [
+     1,
+     56
+    ],
+    "monitor_tipo_hip_variable": [
+     1,
+     56
+    ],
+    "monitor_vut_viviendas": [
+     1,
+     13
+    ],
+    "ocupados": [
+     1,
+     98
+    ],
+    "ocupados_epa": [
+     1,
+     98
+    ],
+    "ocupados_epa_prov": [
+     1,
+     78
+    ],
+    "ocupados_sa": [
+     1,
+     98
+    ],
+    "parados_epa": [
+     1,
+     98
+    ],
+    "pib_ccaa_anual": [
+     1,
+     76
+    ],
+    "pib_ccaa_q": [
+     1,
+     75
+    ],
+    "pib_miles_eur": [
+     1,
+     23
+    ],
+    "pib_nom": [
+     1,
+     126
+    ],
+    "pib_vol_idx": [
+     1,
+     126
+    ],
+    "rdb": [
+     1,
+     110
+    ],
+    "renta_hog": [
+     1,
+     110
+    ],
+    "renta_hog_real": [
+     1,
+     110
+    ],
+    "salario": [
+     1,
+     106
+    ],
+    "salario_ccaa": [
+     1,
+     74
+    ],
+    "sepe_contratos_media_anual": [
+     1,
+     18
+    ],
+    "sepe_paro_registrado_media_anual": [
+     1,
+     18
+    ],
+    "ss_afiliados_celdas_menor5": [
+     1,
+     69
+    ],
+    "ss_afiliados_construccion_cota_inferior": [
+     1,
+     69
+    ],
+    "ss_afiliados_cota_inferior": [
+     1,
+     69
+    ],
+    "ss_afiliados_extranjeros": [
+     1,
+     5
+    ],
+    "ss_afiliados_hosteleria_cota_inferior": [
+     1,
+     69
+    ],
+    "ss_afiliados_inmobiliarias_cota_inferior": [
+     1,
+     68
+    ],
+    "tasa_paro_epa": [
+     1,
+     98
+    ],
+    "tipo_bce": [
+     1,
+     110
+    ],
+    "tipo_dfr": [
+     1,
+     110
+    ],
+    "tipo_hip": [
+     1,
+     94
+    ],
+    "tipo_hip_bce": [
+     1,
+     94
+    ],
+    "tipo_hip_bde": [
+     1,
+     126
+    ],
+    "tipo_hip_nuevas_tae": [
+     1,
+     94
+    ],
+    "tipo_hip_real": [
+     1,
+     94
+    ],
+    "tipo_hip_real_bce": [
+     1,
+     94
+    ],
+    "tipo_hip_real_bde": [
+     1,
+     122
+    ],
+    "tipo_mro": [
+     1,
+     110
+    ],
+    "visados": [
+     1,
+     124
+    ]
+   },
+   "variables_con_mas_de_una_edicion": [],
+   "fechas_descarga_manifiestos": {
+    "min": "2026-10-09",
+    "max": "2026-10-16",
+    "n_distintas": 6,
+    "fecha_modal": "2026-10-10"
+   },
+   "comparacion_ediciones_v9": {
+    "filas": 16,
+    "novedad_no": 16,
+    "nota": "compara solo el último periodo del proyecto con la edición vigente a 2026-10-14; no mide revisiones de la historia"
+   },
+   "reproduccion_hechos_vs_raw": [
+    {
+     "serie": "tipo_hip_bce",
+     "n_trim": 94,
+     "dif_abs_max": 0.0,
+     "nota": "media de 3 meses"
+    },
+    {
+     "serie": "euribor_1y",
+     "n_trim": 126,
+     "dif_abs_max": 0.0,
+     "nota": "media de 3 meses"
+    },
+    {
+     "serie": "credito_nuevo (suma 3 meses)",
+     "n_trim": 94,
+     "dif_abs_max": 0.0,
+     "nota": "suma"
+    },
+    {
+     "serie": "credito_nuevo (media 3 meses)",
+     "n_trim": 94,
+     "dif_abs_max": 30272.6667,
+     "nota": "media"
+    },
+    {
+     "serie": "ocupados nacional",
+     "n_trim": 98,
+     "dif_abs_max": 0.0,
+     "nota": "EPA387796"
+    }
+   ],
+   "conclusion": "Una sola descarga por serie (lote del 2026-10-09 al 2026-10-15) y una sola edición en hechos: no hay vintages comparables, así que no se mide ninguna revisión (CNT, EPA, HPT, BdE, BCE). Hace falta una segunda descarga fechada."
+  },
+  "rupturas": {
+   "epa_2021T1": {
+    "nacional": {
+     "ocupados_log_qoq": {
+      "cambio": -0.5427,
+      "z_misma_estacion": -0.0408,
+      "n_misma_estacion": 24
+     },
+     "tasa_paro_dif_qoq": {
+      "cambio": 0.0133,
+      "z_misma_estacion": -0.8656,
+      "n_misma_estacion": 24
+     }
+    },
+    "ocupados_epa_prov_log": {
+     "n_series": 41,
+     "z_mediana": -0.2928,
+     "n_abs_z_gt3": 1,
+     "n_abs_z_gt5": 0
+    },
+    "tasa_paro_prov_dif": {
+     "n_series": 41,
+     "z_mediana": 0.2597,
+     "n_abs_z_gt3": 0,
+     "n_abs_z_gt5": 0
+    },
+    "tasa_paro_epa_ccaa_dif": {
+     "n_series": 17,
+     "z_mediana": -0.259,
+     "n_abs_z_gt3": 0,
+     "n_abs_z_gt5": 0
+    },
+    "suma_ccaa_vs_nacional_ocupados_pct": {
+     "media_2007_2020": -0.2803,
+     "media_2021_2026": -0.2676,
+     "2020T4_y_2021T1": [
+      -0.3029,
+      -0.2786
+     ]
+    },
+    "nota": "El INE declara el cambio de factores de elevación de 2021T1 como «no relevante» (inventario). Aquí solo se contrasta el cambio trimestral de 2021T1 con los demás primeros trimestres (z robusto de la misma estación); 2021T1 coincide con la salida de la fase aguda del COVID."
+   },
+   "etcl_2008T1": {
+    "salario_nacional_log_qoq_2008T1": {
+     "cambio": -7.4188,
+     "z_misma_estacion": 0.8787,
+     "n_misma_estacion": 26
+    },
+    "salario_nacional_log_qoq_2008T2": {
+     "cambio": 5.6175,
+     "z_misma_estacion": -0.2598,
+     "n_misma_estacion": 27
+    },
+    "nivel_2007T4": 1851.4,
+    "nivel_2008T1": 1719.02,
+    "yoy_2008T1_a_2008T4_z_robusto": {
+     "2008T1": 1.07,
+     "2008T2": 0.98,
+     "2008T3": 1.1,
+     "2008T4": 0.9
+    },
+    "razon_salario_nacional_sobre_media_simple_ccaa": {
+     "n": 74,
+     "media": 1.0486,
+     "desv": 0.0095,
+     "min": 1.031,
+     "max": 1.0717
+    }
+   },
+   "cnt": {
+    "pib_nom": {
+     "n": 126,
+     "huecos_trimestres": 0,
+     "z_max_qoq": -21.81,
+     "periodo_z_max": "2020T2",
+     "n_abs_z_gt5": 3
+    },
+    "pib_vol_idx": {
+     "n": 126,
+     "huecos_trimestres": 0,
+     "z_max_qoq": -51.57,
+     "periodo_z_max": "2020T2",
+     "n_abs_z_gt5": 5
+    },
+    "rdb": {
+     "n": 110,
+     "huecos_trimestres": 0,
+     "z_max_qoq": -19.18,
+     "periodo_z_max": "2020T2",
+     "n_abs_z_gt5": 3
+    },
+    "renta_hog": {
+     "n": 110,
+     "huecos_trimestres": 0,
+     "z_max_qoq": -6.7,
+     "periodo_z_max": "2020T2",
+     "n_abs_z_gt5": 2
+    },
+    "renta_hog_real": {
+     "n": 110,
+     "huecos_trimestres": 0,
+     "z_max_qoq": 7.61,
+     "periodo_z_max": "2020T3",
+     "n_abs_z_gt5": 2
+    },
+    "deflactor": {
+     "n": 126,
+     "huecos_trimestres": 0,
+     "z_max_qoq": 3.9,
+     "periodo_z_max": "2022T4",
+     "n_abs_z_gt5": 0
+    },
+    "deflactor_frente_a_pib_nom_sobre_vol": {
+     "razon_cv": 0.0,
+     "razon_min": 0.0354,
+     "razon_max": 0.0354,
+     "media_2020_deflactor": 100.0
+    },
+    "renta_hog_sobre_rdb": {
+     "min": 0.6179,
+     "max": 0.7376,
+     "identicas": false
+    },
+    "renta_hog_real_vs_renta_hog_sobre_deflactor_resid_max": 0.0,
+    "nota": "Sin cambio de base de la CNT documentado en el repositorio («no consta»); no hay vintages para medir revisiones."
+   },
+   "hipotecas_76317": {
+    "suma_17ccaa_log_qoq_top5_z": {
+     "2011T2": -2.59,
+     "2020T2": -2.33,
+     "2013T2": -2.06,
+     "2010T4": -1.97,
+     "2015T1": 1.71
+    },
+    "suma_17ccaa_n_abs_z_gt5_qoq": 0,
+    "suma_17ccaa_yoy_top3_z": {
+     "2012T1": -2.43,
+     "2011T3": -2.37,
+     "2011T4": -2.09
+    },
+    "primer_periodo_provincial": "2003T1",
+    "primer_periodo_ccaa": "2007T1",
+    "metodo_dato_ccaa": "agregado_suma_3_meses_y_provincias (hechos): suma provincial = CCAA es identidad por construcción, no comprobación independiente",
+    "fecha_cambio_de_base": "no consta (tabla 76317 «base nueva» según el manifiesto; sin fecha en el repositorio)",
+    "nota": "las series provinciales cubren 41 de 52 provincias en la muestra no sellada; el total nacional solo se reconstruye con las 17 CCAA."
+   }
+  },
+  "rupturas_transversales": {
+   "n_filas": 86,
+   "top10": [
+    {
+     "variable": "ss_afiliados_inmobiliarias_cota_inferior",
+     "nivel": "municipio",
+     "desag": "",
+     "periodo": "2026-04",
+     "z_robusto_mediana_transversal": 21.801,
+     "mediana_tasa": 41.074,
+     "n_series": 1009
+    },
+    {
+     "variable": "ss_afiliados_inmobiliarias_cota_inferior",
+     "nivel": "municipio",
+     "desag": "",
+     "periodo": "2026-05",
+     "z_robusto_mediana_transversal": 21.495,
+     "mediana_tasa": 40.547,
+     "n_series": 1020
+    },
+    {
+     "variable": "ss_afiliados_inmobiliarias_cota_inferior",
+     "nivel": "municipio",
+     "desag": "",
+     "periodo": "2026-09",
+     "z_robusto_mediana_transversal": 21.261,
+     "mediana_tasa": 40.144,
+     "n_series": 1031
+    },
+    {
+     "variable": "ss_afiliados_inmobiliarias_cota_inferior",
+     "nivel": "municipio",
+     "desag": "",
+     "periodo": "2026-06",
+     "z_robusto_mediana_transversal": 20.915,
+     "mediana_tasa": 39.546,
+     "n_series": 1028
+    },
+    {
+     "variable": "ss_afiliados_inmobiliarias_cota_inferior",
+     "nivel": "municipio",
+     "desag": "",
+     "periodo": "2026-07",
+     "z_robusto_mediana_transversal": 20.53,
+     "mediana_tasa": 38.883,
+     "n_series": 1031
+    },
+    {
+     "variable": "ss_afiliados_inmobiliarias_cota_inferior",
+     "nivel": "municipio",
+     "desag": "",
+     "periodo": "2026-01",
+     "z_robusto_mediana_transversal": 20.266,
+     "mediana_tasa": 38.428,
+     "n_series": 998
+    },
+    {
+     "variable": "ss_afiliados_inmobiliarias_cota_inferior",
+     "nivel": "municipio",
+     "desag": "",
+     "periodo": "2026-02",
+     "z_robusto_mediana_transversal": 20.13,
+     "mediana_tasa": 38.193,
+     "n_series": 1001
+    },
+    {
+     "variable": "ss_afiliados_inmobiliarias_cota_inferior",
+     "nivel": "municipio",
+     "desag": "",
+     "periodo": "2026-08",
+     "z_robusto_mediana_transversal": 20.097,
+     "mediana_tasa": 38.137,
+     "n_series": 1029
+    },
+    {
+     "variable": "ss_afiliados_inmobiliarias_cota_inferior",
+     "nivel": "municipio",
+     "desag": "",
+     "periodo": "2026-03",
+     "z_robusto_mediana_transversal": 20.0,
+     "mediana_tasa": 37.97,
+     "n_series": 1010
+    },
+    {
+     "variable": "ss_afiliados_cota_inferior",
+     "nivel": "municipio",
+     "desag": "",
+     "periodo": "2012-12",
+     "z_robusto_mediana_transversal": -16.158,
+     "mediana_tasa": -9.447,
+     "n_series": 7057
+    }
+   ],
+   "por_variable": {
+    "bce_cuota_tipo_variable": 13,
+    "bce_hip_tipo_nuevas": 45,
+    "gva_bdo_afiliados": 8,
+    "ocupados_epa": 3,
+    "parados_epa": 1,
+    "sepe_paro_registrado_media_anual": 1,
+    "ss_afiliados_cota_inferior": 4,
+    "ss_afiliados_hosteleria_cota_inferior": 2,
+    "ss_afiliados_inmobiliarias_cota_inferior": 9
+   }
+  },
+  "metodo_y_ceros": {
+   "filas_con_metodo_interpolado_o_imputado": [
+    {
+     "variable": "pib_ccaa_q",
+     "nivel": "ccaa",
+     "metodo": "interpolacion_loglineal_entre_anclas_T3",
+     "filas": 922
+    },
+    {
+     "variable": "visados",
+     "nivel": "nacional",
+     "metodo": "interpolado",
+     "filas": 52
+    }
+   ],
+   "pct_filas_interpoladas_o_imputadas_grupo": 0.044,
+   "bce_hip_tipo_nuevas_valores_cero": {
+    "filas": 77,
+    "paises": [
+     "LV",
+     "MT",
+     "SI"
+    ],
+    "desagregaciones": [
+     "fijacion=I",
+     "fijacion=O",
+     "fijacion=P"
+    ],
+    "nota": "tipo exactamente 0,00: posible código de ausencia o fijación sin operaciones; no verificado"
+   },
+   "ss_afiliados_cota_inferior_ceros": {
+    "filas": 76166,
+    "pct_filas": 13.53,
+    "nota": "cero = todas las celdas del municipio <5 (censura), no ausencia de afiliados"
+   }
+  },
+  "p3_exposicion_y_sorpresas": {
+   "busqueda": {
+    "jarocinski_karadi": {
+     "manifiestos": [
+      {
+       "manifiesto": "data/raw/v8/_manifest.csv",
+       "filas": 6
+      }
+     ],
+     "docs_n_ficheros": 7,
+     "docs_top5": [
+      {
+       "fichero": "docs/v8/diccionario.md",
+       "menciones": 4
+      },
+      {
+       "fichero": "docs/v9/cobertura.md",
+       "menciones": 2
+      },
+      {
+       "fichero": "docs/v10/decisiones.md",
+       "menciones": 1
+      },
+      {
+       "fichero": "docs/v10/revision_final.md",
+       "menciones": 1
+      },
+      {
+       "fichero": "docs/v8/desviaciones.md",
+       "menciones": 1
+      }
+     ]
+    },
+    "ea_mpd_altavilla": {
+     "manifiestos": [],
+     "docs_n_ficheros": 0,
+     "docs_top5": []
+    },
+    "alta_frecuencia_sorpresas": {
+     "manifiestos": [],
+     "docs_n_ficheros": 7,
+     "docs_top5": [
+      {
+       "fichero": "docs/v15/plan.md",
+       "menciones": 2
+      },
+      {
+       "fichero": "docs/v8/diccionario.md",
+       "menciones": 2
+      },
+      {
+       "fichero": "docs/v8/hipotesis.md",
+       "menciones": 2
+      },
+      {
+       "fichero": "docs/v15/punto_partida.md",
+       "menciones": 1
+      },
+      {
+       "fichero": "docs/v8/ideas_futuras.md",
+       "menciones": 1
+      }
+     ]
+    },
+    "exposicion_tipo_variable": {
+     "manifiestos": [
+      {
+       "manifiesto": "data/raw/v9/_manifest.csv",
+       "filas": 1
+      },
+      {
+       "manifiesto": "data/raw/v9/bce_rai/_manifest.csv",
+       "filas": 1
+      }
+     ],
+     "docs_n_ficheros": 14,
+     "docs_top5": [
+      {
+       "fichero": "docs/v10/diccionario_base.md",
+       "menciones": 4
+      },
+      {
+       "fichero": "docs/v9/cobertura.md",
+       "menciones": 4
+      },
+      {
+       "fichero": "docs/v9/plantillas/informe_v9.md",
+       "menciones": 3
+      },
+      {
+       "fichero": "docs/v9/diccionario_v9.md",
+       "menciones": 2
+      },
+      {
+       "fichero": "docs/v9/fuentes_fallidas.md",
+       "menciones": 2
+      }
+     ]
+    },
+    "jk_cobertura": {
+     "fichero": "data/raw/v8/jk_shocks_ecb_mensual.csv",
+     "series": [
+      "CBI_median",
+      "CBI_pm",
+      "MP_median",
+      "MP_pm",
+      "STOXX50_hf",
+      "pc1_hf"
+     ],
+     "primer_mes": "1999-01",
+     "ultimo_mes": "2025-10",
+     "n_meses": 322,
+     "n_meses_valor_no_nulo": 277,
+     "frecuencia": "mensual (agregación de los shocks de cada reunión del BCE); el fichero no trae la fecha-hora de cada reunión",
+     "licencia_segun_repositorio": "conflicto: docs/v8 y docs/v9/cobertura la marcan no redistribuible; src/v8/fetch_v8.py cita CC BY 4.0 para datos; v9 comparacion_ediciones: «sin licencia explícita». No verificado."
+    },
+    "exposicion_en_la_base": {
+     "bce_cuota_tipo_variable": {
+      "nivel": "pais (28 códigos)",
+      "ES_primer": "2003-01",
+      "ES_ultimo": "2026-08",
+      "ES_min": 6.0317,
+      "ES_max": 94.1592,
+      "ES_ultimo_valor": 8.2826
+     },
+     "bce_hip_tipo_nuevas": {
+      "nivel": "pais (21)",
+      "desagregaciones_ES": [
+       "fijacion=AM",
+       "fijacion=F",
+       "fijacion=I",
+       "fijacion=K",
+       "fijacion=O",
+       "fijacion=P"
+      ],
+      "nota": "tipo de nuevas operaciones por periodo de fijación inicial (códigos BCE); significado exacto de cada código: no verificado en el repositorio"
+     },
+     "territorial_provincial_o_municipal": "no existe en el repositorio ninguna variable de peso de la hipoteca variable (stock o flujo) por provincia o municipio"
+    }
+   },
+   "datos_necesarios_no_verificados": [
+    {
+     "dato": "Euro Area Monetary Policy Event-Study Database (EA-MPD; Altavilla et al., 2019) con ventana de cada reunión del BCE",
+     "uso": "sorpresas por evento en lugar del agregado mensual JK",
+     "estado": "no está en el repositorio; licencia y acceso: no verificado"
+    },
+    {
+     "dato": "Actualización de los shocks JK posterior a 2025-10 y con fechas de reunión",
+     "uso": "alargar la muestra hasta 2026",
+     "estado": "el repositorio llega a 2025-10; condiciones de reutilización: no verificado"
+    },
+    {
+     "dato": "Stock de préstamos hipotecarios a vivienda por tipo de interés (variable, fijo, mixto) por provincia o CCAA (BdE, CIR/AnaCredit, Registradores, Notariado)",
+     "uso": "peso de la hipoteca variable como exposición",
+     "estado": "no está en el repositorio; disponibilidad territorial y licencia: no verificado"
+    },
+    {
+     "dato": "Hipotecas INE (HPT) por tipo de interés (fijo/variable) por CCAA o provincia (flujo de nuevas)",
+     "uso": "exposición de flujo por CCAA",
+     "estado": "no está en la base; si existe con detalle territorial: no verificado"
+    },
+    {
+     "dato": "Encuesta Financiera de las Familias (BdE): hogares con deuda hipotecaria a tipo variable",
+     "uso": "exposición por CCAA con muestra pequeña",
+     "estado": "no está; representatividad territorial y licencia: no verificado"
+    },
+    {
+     "dato": "Tipo inicial y fecha de formalización por hipoteca agregados por municipio o provincia (Notariado, Registradores)",
+     "uso": "exposición por cohorte",
+     "estado": "terceros_1_0: solo agregados propios; disponibilidad: no verificado"
+    }
+   ]
+  },
+  "p9_indicadores_adelantados": {
+   "tabla": [
+    {
+     "indicador": "compraventas ETDP 6150 (mensual)",
+     "frec": "M",
+     "primer_periodo": "2007-01",
+     "ultimo_periodo": "2026-07",
+     "n_periodos": 235,
+     "descarga": "2026-10-09",
+     "lag_dias_cota_superior": 70,
+     "meses_2026T3_disponibles": 1
+    },
+    {
+     "indicador": "hipotecas INE HPT 76317 (mensual)",
+     "frec": "M",
+     "primer_periodo": "2003-01",
+     "ultimo_periodo": "2026-07",
+     "n_periodos": 283,
+     "descarga": "2026-10-10",
+     "lag_dias_cota_superior": 71,
+     "meses_2026T3_disponibles": 1
+    },
+    {
+     "indicador": "visados MIVAU (mensual)",
+     "frec": "M",
+     "primer_periodo": "2008-01",
+     "ultimo_periodo": "2026-06",
+     "n_periodos": 222,
+     "descarga": "2026-10-09",
+     "lag_dias_cota_superior": 101,
+     "meses_2026T3_disponibles": 0
+    },
+    {
+     "indicador": "ocupados EPA (trimestral)",
+     "frec": "T",
+     "primer_periodo": "2002-01",
+     "ultimo_periodo": "2026-04",
+     "n_periodos": 98,
+     "descarga": "2026-10-09",
+     "lag_dias_cota_superior": 101,
+     "meses_2026T3_disponibles": 0
+    },
+    {
+     "indicador": "crédito nuevo BCE (mensual)",
+     "frec": "M",
+     "primer_periodo": "2003-01",
+     "ultimo_periodo": "2026-08",
+     "n_periodos": 284,
+     "descarga": "2026-10-09",
+     "lag_dias_cota_superior": 39,
+     "meses_2026T3_disponibles": 2
+    },
+    {
+     "indicador": "Euribor 1 año (mensual)",
+     "frec": "M",
+     "primer_periodo": "1994-01",
+     "ultimo_periodo": "2026-09",
+     "n_periodos": 393,
+     "descarga": "2026-10-09",
+     "lag_dias_cota_superior": 9,
+     "meses_2026T3_disponibles": 3
+    },
+    {
+     "indicador": "afiliación SS municipal (último día; mensual solo desde 2022-01)",
+     "frec": "M",
+     "primer_periodo": "2011-12",
+     "ultimo_periodo": "2026-09",
+     "n_periodos": 69,
+     "descarga": "2026-10-15",
+     "lag_dias_cota_superior": 15,
+     "meses_2026T3_disponibles": 3
+    }
+   ],
+   "calendario_declarado": {
+    "fuente": "docs/v7/hipotesis.md l.85, docs/v7/desviaciones.md l.22, docs/v7/tareas_autor.md l.7, docs/v8/hipotesis.md l.174",
+    "ventana_de_evaluacion_declarada": "2026T3 a 2027T2 (4 trimestres), con datos publicados «hacia el verano de 2027»",
+    "trimestres_posteriores_a_2026-10_en_la_ventana": 3,
+    "detalle": "2026T4, 2027T1 y 2027T2 son posteriores a 2026-10; 2026T3 cierra en septiembre y solo está publicado en parte (afiliación) a 2026-10-17",
+    "evaluacion_v15": "no consta: el repositorio no declara fecha ni ventana de la evaluación de V15 (el sellado V15 aún no existe)",
+    "calendarios_oficiales_INE_BdE_MIVAU": "no constan en el repositorio (no se asume ninguno)"
+   },
+   "nota": "lag_dias_cota_superior = fecha de descarga menos fin del último periodo: cota superior del retraso de publicación del último dato (el dato ya estaba publicado a esa fecha); no es el calendario oficial."
+  }
+ },
+ "fuera_muestra": null,
+ "notas": [
+  "Auditoría C4 sin efectos; hechos filtrado con NOT coalesce(muestra_sellada_v6,false) (41 de 52 provincias en series provinciales); no se lee la muestra sellada.",
+  "Sin series de Notariado, Registradores ni AEAT en la salida (variables aeat_ excluidas del grupo).",
+  "ipc_general, ss_afiliados provinciales totales, eu_*, bis_rpp y oecd_house_prices no están en hechos (solo en data/raw o como derivadas)."
+ ]
+}

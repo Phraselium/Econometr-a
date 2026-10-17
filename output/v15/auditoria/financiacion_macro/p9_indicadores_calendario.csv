@@ -1,0 +1,8 @@
+indicador,frec,primer_periodo,ultimo_periodo,n_periodos,descarga,lag_dias_cota_superior,meses_2026T3_disponibles
+compraventas ETDP 6150 (mensual),M,2007-01,2026-07,235,2026-10-09,70,1
+hipotecas INE HPT 76317 (mensual),M,2003-01,2026-07,283,2026-10-10,71,1
+visados MIVAU (mensual),M,2008-01,2026-06,222,2026-10-09,101,0
+ocupados EPA (trimestral),T,2002-01,2026-04,98,2026-10-09,101,0
+crédito nuevo BCE (mensual),M,2003-01,2026-08,284,2026-10-09,39,2
+Euribor 1 año (mensual),M,1994-01,2026-09,393,2026-10-09,9,3
+afiliación SS municipal (último día; mensual solo desde 2022-01),M,2011-12,2026-09,69,2026-10-15,15,3

@@ -1,0 +1,70 @@
+[
+  {
+    "id": "V15-E4-cat-post",
+    "indicador": "E4: media de los coeficientes dosis × año 2018-2024, renta Incasòl y HUT IDESCAT (min/max = IDESCAT n y plazas; puntual)",
+    "valor": 0.707,
+    "min": 0.688,
+    "max": 0.707,
+    "periodo": "2018-2024",
+    "ficha": "output/v15/p5cv/informe.md#ficha-e4-cat",
+    "unidad": "% por DT de dosis",
+    "cobertura": "municipios con panel equilibrado 2015-2024",
+    "fuentes": [
+      "IDESCAT turall",
+      "Incasòl"
+    ],
+    "capa": "C4",
+    "fecha_dato": "2026-10-17"
+  },
+  {
+    "id": "V15-E4-cat-pre",
+    "indicador": "E4: mayor |coeficiente previo| (2015, 2016) en Cataluña, IDESCAT n",
+    "valor": 0.754,
+    "min": null,
+    "max": null,
+    "periodo": "2015-2016",
+    "ficha": "output/v15/p5cv/informe.md#ficha-e4-pre",
+    "unidad": "% por DT de dosis",
+    "cobertura": "municipios con panel equilibrado 2015-2024",
+    "fuentes": [
+      "IDESCAT turall",
+      "Incasòl"
+    ],
+    "capa": "C4",
+    "fecha_dato": "2026-10-17"
+  },
+  {
+    "id": "V15-E4-cv-post",
+    "indicador": "E4: media de los coeficientes dosis × año 2018-2024, SERPAVI VC y registro GVA reconstruido, fechado base (C4; min/max = VC y VU en los 3 fechados)",
+    "valor": 0.166,
+    "min": -0.504,
+    "max": 0.324,
+    "periodo": "2018-2024",
+    "ficha": "output/v15/p5cv/informe.md#ficha-e4-cv",
+    "unidad": "% por DT de dosis",
+    "cobertura": "municipios de Alicante, Castellón y València con panel equilibrado",
+    "fuentes": [
+      "GVA registro de turismo (reconstruido)",
+      "MIVAU SERPAVI"
+    ],
+    "capa": "C4",
+    "fecha_dato": "2026-10-17"
+  },
+  {
+    "id": "V15-E4-compat",
+    "indicador": "E4: especificaciones compatibles con la regla puntual de pretendencias, sobre el total",
+    "valor": 6,
+    "min": 0,
+    "max": 16,
+    "unidad": "especificaciones",
+    "periodo": "2015-2024",
+    "ficha": "output/v15/p5cv/informe.md#ficha-e4-resumen",
+    "cobertura": "municipios con panel equilibrado 2015-2024",
+    "fuentes": [
+      "IDESCAT turall",
+      "Incasòl"
+    ],
+    "capa": "C4",
+    "fecha_dato": "2026-10-17"
+  }
+]

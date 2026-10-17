@@ -1,0 +1,130 @@
+[
+  {
+    "id": "V15-H1-cs-att",
+    "indicador": "H1: asociación de la zona tensionada con renta media de los contratos nuevos (log), CS puntual (rango = mínimo y máximo de las especificaciones CS del multiverso; no es IC)",
+    "valor": -7.18,
+    "min": -8.94,
+    "max": -3.36,
+    "ficha": "output/v15/p6/informe.md#ficha-h1-cs",
+    "unidad": "%",
+    "periodo": "2024T2-2026T1",
+    "cobertura": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+    "fuentes": [
+      "Incasòl"
+    ],
+    "capa": "C4",
+    "fecha_dato": "2026-10-17"
+  },
+  {
+    "id": "V15-H1-sdid-att",
+    "indicador": "H1: ídem, SDID puntual (rango = especificaciones SDID estimables; no es IC)",
+    "valor": -3.64,
+    "min": -4.86,
+    "max": -2.83,
+    "ficha": "output/v15/p6/informe.md#ficha-h1-sdid",
+    "unidad": "%",
+    "periodo": "2024T2-2026T1",
+    "cobertura": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+    "fuentes": [
+      "Incasòl"
+    ],
+    "capa": "C4",
+    "fecha_dato": "2026-10-17"
+  },
+  {
+    "id": "V15-H1-placebo-cs",
+    "indicador": "H1: placebo temporal 2023T2 (CS), puntual",
+    "valor": 7.72,
+    "min": null,
+    "max": null,
+    "unidad": "%",
+    "periodo": "2023T2-2023T4",
+    "cobertura": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+    "fuentes": [
+      "Incasòl"
+    ],
+    "capa": "C4",
+    "fecha_dato": "2026-10-17",
+    "ficha": "output/v15/p6/informe.md#ficha-h1-placebo"
+  },
+  {
+    "id": "V15-H1-lee",
+    "indicador": "H1: cotas de Lee de la variación de la renta (valor = sin recorte; min/max = cotas)",
+    "valor": -5.11,
+    "min": -9.82,
+    "max": -0.01,
+    "unidad": "puntos log·100",
+    "periodo": "2024T2-2026T1",
+    "cobertura": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+    "fuentes": [
+      "Incasòl"
+    ],
+    "capa": "C4",
+    "fecha_dato": "2026-10-17",
+    "ficha": "output/v15/p6/informe.md#ficha-h1-lee"
+  },
+  {
+    "id": "V15-H2-cs-att",
+    "indicador": "H2: asociación de la zona tensionada con número de contratos nuevos, CS puntual (rango = mínimo y máximo de las especificaciones CS del multiverso; no es IC)",
+    "valor": -4.22,
+    "min": -32.68,
+    "max": 3.14,
+    "ficha": "output/v15/p6/informe.md#ficha-h2-cs",
+    "unidad": "%",
+    "periodo": "2024T2-2026T1",
+    "cobertura": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+    "fuentes": [
+      "Incasòl"
+    ],
+    "capa": "C4",
+    "fecha_dato": "2026-10-17"
+  },
+  {
+    "id": "V15-H2-sdid-att",
+    "indicador": "H2: ídem, SDID puntual (rango = especificaciones SDID estimables; no es IC)",
+    "valor": -14.16,
+    "min": -34.8,
+    "max": -10.35,
+    "ficha": "output/v15/p6/informe.md#ficha-h2-sdid",
+    "unidad": "%",
+    "periodo": "2024T2-2026T1",
+    "cobertura": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+    "fuentes": [
+      "Incasòl"
+    ],
+    "capa": "C4",
+    "fecha_dato": "2026-10-17"
+  },
+  {
+    "id": "V15-H2-placebo-cs",
+    "indicador": "H2: placebo temporal 2023T2 (CS), puntual",
+    "valor": -5.53,
+    "min": null,
+    "max": null,
+    "unidad": "%",
+    "periodo": "2023T2-2023T4",
+    "cobertura": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+    "fuentes": [
+      "Incasòl"
+    ],
+    "capa": "C4",
+    "fecha_dato": "2026-10-17",
+    "ficha": "output/v15/p6/informe.md#ficha-h2-placebo"
+  },
+  {
+    "id": "V15-H2-ppml",
+    "indicador": "H2: asociación con el número de contratos nuevos, PPML con efectos de municipio y trimestre (puntual)",
+    "valor": -9.95,
+    "min": -16.07,
+    "max": -0.27,
+    "ficha": "output/v15/p6/informe.md#ficha-h2-ppml",
+    "unidad": "%",
+    "periodo": "2024T2-2026T1",
+    "cobertura": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+    "fuentes": [
+      "Incasòl"
+    ],
+    "capa": "C4",
+    "fecha_dato": "2026-10-17"
+  }
+]

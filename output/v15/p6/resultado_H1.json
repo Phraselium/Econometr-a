@@ -1,0 +1,230 @@
+{
+  "rama": "v15/p6",
+  "pregunta": "H1: asociación de la zona tensionada (Ley 12/2023, Cataluña) con renta media de los contratos nuevos (log)",
+  "capa": "C4",
+  "datos": "data/processed/v15/p6_zonas_tensionadas.parquet (Incasòl trimestral municipal 2022T2-2026T1; entrenamiento)",
+  "N": {
+    "municipios": 308,
+    "tratados": 234,
+    "nunca_tratados": 74,
+    "renta_equilibrado_tratados": 184,
+    "renta_equilibrado_donantes": 20
+  },
+  "metodo": "CS (2x2, control no tratado aún y nunca tratados) y SDID por cohortes, estimación puntual; preperiodo 2022T2-2023T4; sin inferencia (herramientas NO APTAS)",
+  "estimacion": {
+    "CS_att_pct": -7.178832767503041,
+    "SDID_att_pct": -3.6420740265707074,
+    "CS_por_cohorte_pct": {
+      "2024T1": -8.059333488697506,
+      "2024T4": -5.410595056265977
+    },
+    "SDID_por_cohorte_pct": {
+      "2024T1": -2.7865107554404522,
+      "2024T4": -5.699036106265975
+    },
+    "rango_multiverso_CS_pct": [
+      -8.93971769463664,
+      -3.3602666623927635
+    ],
+    "rango_multiverso_SDID_pct": [
+      -4.8561208362455925,
+      -2.826376742936787
+    ]
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "DESCRIPTIVO",
+  "diagnosticos": {
+    "inferencia": "NO APTO (SDID placebo no computable; Webb tamaño 0,2155; Honest DiD NO APTO; control sintético NO APTO): estimación puntual",
+    "honest_did_M_barra": "no evaluado (NO APTO)",
+    "potencia_roth": "no calculable sin error típico válido",
+    "pretendencias_CS": {
+      "max_abs_coef_pre": 0.04689057286182367,
+      "umbral_0.5ATT": 0.037247738513958746,
+      "compatible_puntualmente": false,
+      "pendiente_lineal_por_anio": -0.006945747892467827
+    },
+    "contraste_SDID_2023T3_T4": {
+      "efecto": 0.0464522339192239,
+      "umbral_0.5ATT": 0.01855026610125947,
+      "compatible_puntualmente": false
+    },
+    "placebo_temporal_2023T2": {
+      "CS": 0.07439209917016738,
+      "SDID": 0.02668795123197576,
+      "compatible_CS": false,
+      "compatible_SDID": false
+    },
+    "placebo_espacial_1000": {
+      "CS": {
+        "n": 1000,
+        "media": 0.00014531445458162477,
+        "dt": 0.010220510260149342,
+        "p2_5": -0.019592045642909072,
+        "p97_5": 0.019925778544326773
+      },
+      "SDID_200": {
+        "n": 200,
+        "media": 0.0012002646280970886,
+        "dt": 0.010552077307152352,
+        "p2_5": -0.023032109093726844,
+        "p97_5": 0.01891533064200859
+      },
+      "ATT_CS_fuera_de_p2.5_p97.5": true,
+      "nota": "escala de los ATT permutados, sin p-valor"
+    },
+    "exclusiones": {
+      "sin_Barcelona_ni_decil_superior": {
+        "CS": -0.07478002471245734,
+        "SDID": -0.040967858026691735,
+        "n": 277,
+        "n_donantes": 71
+      },
+      "provincia_08_sin_capital": {
+        "CS": -0.0712101474267272,
+        "SDID": -0.02443638042200476,
+        "n": 159,
+        "n_donantes": 24
+      },
+      "mantiene_signo_CS": true,
+      "mantiene_signo_SDID": true
+    },
+    "solapamiento_donantes_soporte_comun": {
+      "n": 68,
+      "menos_de_30": false
+    },
+    "balance": {
+      "log_renta_pre": {
+        "media_tratados": 6.493458185921855,
+        "media_donantes": 6.295988857239051,
+        "dif_tipificada": 0.7359832968579632,
+        "n_tr": 234,
+        "n_don": 74
+      },
+      "log_contratos_pre": {
+        "media_tratados": 3.6592042119690182,
+        "media_donantes": 2.2942635304684664,
+        "dif_tipificada": 1.2667897063080278,
+        "n_tr": 234,
+        "n_don": 74
+      },
+      "donantes_en_soporte_comun_renta": 68,
+      "soporte_comun_menos_30": false
+    },
+    "exclusion_islas": "no aplica (no hay islas en Cataluña)",
+    "oster_cinelli_evalue": "no calculados (diferencias en diferencias sin error típico válido)",
+    "R_IPVA": "no estimada (adenda 2, B; S4 NO APTO)",
+    "control_sintetico_10_mayores": {
+      "unidades": [
+        {
+          "municipio": "08019",
+          "cohorte": "2024T1",
+          "efecto_pct": 46.70607860496811
+        },
+        {
+          "municipio": "08101",
+          "cohorte": "2024T1",
+          "efecto_pct": 7.581268280861075
+        },
+        {
+          "municipio": "08279",
+          "cohorte": "2024T1",
+          "efecto_pct": -0.05778837980598972
+        },
+        {
+          "municipio": "08187",
+          "cohorte": "2024T1",
+          "efecto_pct": 5.984955865918384
+        },
+        {
+          "municipio": "08015",
+          "cohorte": "2024T1",
+          "efecto_pct": 21.280086007739495
+        },
+        {
+          "municipio": "43148",
+          "cohorte": "2024T1",
+          "efecto_pct": -5.087932249798078
+        },
+        {
+          "municipio": "17079",
+          "cohorte": "2024T1",
+          "efecto_pct": 3.3069171588511415
+        },
+        {
+          "municipio": "25120",
+          "cohorte": "2024T1",
+          "efecto_pct": -6.646006224613787
+        },
+        {
+          "municipio": "08121",
+          "cohorte": "2024T1",
+          "efecto_pct": -0.7003975589957467
+        },
+        {
+          "municipio": "43123",
+          "cohorte": "2024T1",
+          "efecto_pct": -7.48315638951762
+        }
+      ],
+      "mediana_pct": 1.6245643895225759,
+      "media_pct": 6.4884025115606985
+    },
+    "cotas_Lee": {
+      "lim_inf": -0.09821352938196895,
+      "lim_sup": -0.0001102088253518152,
+      "p_obs_tratados": 0.7863247863247863,
+      "p_obs_controles": 0.2702702702702703,
+      "sin_recorte": -0.05109344158270278
+    },
+    "moran_residuos": {
+      "I_moran": -0.0057647004617060234,
+      "n": 306,
+      "W": "distancia inversa, corte 25 km, filas normalizadas"
+    },
+    "ruptura_preperiodo_largo_2022T2": {
+      "n_unidades": 202,
+      "n_tratados": 184,
+      "n_donantes": 18,
+      "salto_nivel_2022T2": 0.0061065033202334085,
+      "ruptura_unica_estimada": "2023T2",
+      "brecha_media_2019T1_2022T1": 0.20591107810690398,
+      "brecha_media_2022T2_2023T4": 0.2120175814271374
+    },
+    "CS_a1_cohorte4_control_solo_2024T2_T3": -0.04634340108925263,
+    "pruebas_superadas_puntualmente": [
+      "exclusiones_signo_CS",
+      "exclusiones_signo_SDID"
+    ],
+    "pruebas_fallidas_puntualmente": [
+      "pretendencias_CS",
+      "contraste_SDID_2023T3_T4",
+      "placebo_temporal_CS",
+      "placebo_temporal_SDID"
+    ],
+    "no_evaluadas_por_herramienta_NO_APTA": [
+      "inferencia SDID (placebo)",
+      "wild bootstrap Webb",
+      "Honest DiD (M̄ ≥ 1)",
+      "inferencia control sintético",
+      "potencia de Roth",
+      "inferencia por aleatorización (solo escala)"
+    ]
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "pendiente_sellada": true,
+  "p_valores_para_BY": [
+    {
+      "hipotesis": "H1",
+      "p": null,
+      "motivo": "inferencia NO APTA (SDID placebo no computable, Webb NO APTO); H1/H2 son de la familia Holm {H1,H2,H4} de la evaluación sellada, no de BY"
+    }
+  ],
+  "notas": "Asociación C4, sin lenguaje causal. Ventana 2024T2-2026T1 ya vista en V9-D1. Hechos candidatos: ver hechos.json. Desviaciones: docs/v15/desviaciones.md (DV15-A).",
+  "multiverso_n": 36,
+  "multiverso_registro": "output/v15/p6/registro.csv"
+}

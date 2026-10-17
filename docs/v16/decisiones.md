@@ -130,3 +130,14 @@ adquisidor-datos, ingeniero-datos, replicador-ciego y redactor (sonnet), abogado
 - **Sin elección por resultados.** La variante «placebo sin escalar» sale APTA solo en S1, pero no es la inferencia pre-registrada ni la alternativa nombrada: no se usa.
 - **Efecto en las capas.** Ninguno de estos veredictos cambia la capa máxima de V15 (C4 en entrenamiento; C3 solo tras la evaluación sellada). La evaluación sellada de H1/H2 heredará estas limitaciones de inferencia; se dirá al evaluarla.
 
+## K14. Lectura de los resultados de V15 en entrenamiento (2026-10-17)
+- **H3.**
+  - El IC de Conley a 2 km (p = 0,95) se publica marcado como «condicionado».
+  - Conley solo está validado en corte transversal (V16, Q3-b), no en un panel con T = 4.
+  - No cuenta para ningún hallazgo ni para Holm.
+  - A efectos de la regla de hallazgo, H3 es descriptiva.
+- **H2.** El SDID (−14,2 %) queda fuera del IC de V9-D1b, pero sin inferencia válida y frente a una conclusión «sin diferencia detectable». Precisar un «no concluyente» no es contradecirlo (adenda V16, punto 10), así que no hay parada.
+- **H1.** El ATT de CS (−7,2 %) cae dentro del IC de V9-D1a (−8,5 a −3,2). No es nuevo: se presenta como réplica en entrenamiento de lo ya visto.
+- **H5.** El BVAR se corrigió de escala después de ver su primera ejecución; está registrado en DV15-B-3. Ningún modelo bate al AR(4) ni antes ni después de la corrección.
+- **H4.** Solo es puntual. Al quitar los 5 orígenes de mayor peso Rotemberg cambia de signo; se declara como fragilidad.
+

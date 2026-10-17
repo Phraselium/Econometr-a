@@ -1,0 +1,75 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+V15-A,H1-CS-u5-r0-2026T1,CS log renta umbral=5 radio=0km hasta 2026T1,2022T2,2026T1,234,,,,,-0.07449547702791749,,puntual; donantes=74; 
+V15-A,H1-CS-u5-r0-2025T4,CS log renta umbral=5 radio=0km hasta 2025T4,2022T2,2025T4,234,,,,,-0.07158765514332309,,puntual; donantes=74; 
+V15-A,H1-CS-u5-r10-2026T1,CS log renta umbral=5 radio=10km hasta 2026T1,2022T2,2026T1,234,,,,,-0.04642007780166788,,puntual; donantes=13; 
+V15-A,H1-CS-u5-r10-2025T4,CS log renta umbral=5 radio=10km hasta 2025T4,2022T2,2025T4,234,,,,,-0.02949282472914574,,puntual; donantes=13; 
+V15-A,H1-CS-u5-r25-2026T1,CS log renta umbral=5 radio=25km hasta 2026T1,2022T2,2026T1,234,,,,,-0.09006701940292303,,puntual; donantes=1; 
+V15-A,H1-CS-u5-r25-2025T4,CS log renta umbral=5 radio=25km hasta 2025T4,2022T2,2025T4,234,,,,,-0.09006701940292303,,puntual; donantes=1; 
+V15-A,H1-CS-u10-r0-2026T1,CS log renta umbral=10 radio=0km hasta 2026T1,2022T2,2026T1,199,,,,,-0.08537659376444115,,puntual; donantes=23; 
+V15-A,H1-CS-u10-r0-2025T4,CS log renta umbral=10 radio=0km hasta 2025T4,2022T2,2025T4,199,,,,,-0.08086036520142782,,puntual; donantes=23; 
+V15-A,H1-CS-u10-r10-2026T1,CS log renta umbral=10 radio=10km hasta 2026T1,2022T2,2026T1,199,,,,,-0.03418021114306698,,puntual; donantes=4; 
+V15-A,H1-CS-u10-r10-2025T4,CS log renta umbral=10 radio=10km hasta 2025T4,2022T2,2025T4,199,,,,,-0.023479613845307203,,puntual; donantes=4; 
+V15-A,H1-CS-u10-r25-2026T1,CS log renta umbral=10 radio=25km hasta 2026T1,2022T2,2026T1,199,,,,,-0.06671707842464546,,puntual; donantes=0; 
+V15-A,H1-CS-u10-r25-2025T4,CS log renta umbral=10 radio=25km hasta 2025T4,2022T2,2025T4,199,,,,,-0.06671707842464546,,puntual; donantes=0; 
+V15-A,H1-CS-u30-r0-2026T1,CS log renta umbral=30 radio=0km hasta 2026T1,2022T2,2026T1,119,,,,,-0.05375379906434201,,puntual; donantes=7; 
+V15-A,H1-CS-u30-r0-2025T4,CS log renta umbral=30 radio=0km hasta 2025T4,2022T2,2025T4,119,,,,,-0.05331870419673215,,puntual; donantes=7; 
+V15-A,H1-CS-u30-r10-2026T1,CS log renta umbral=30 radio=10km hasta 2026T1,2022T2,2026T1,119,,,,,-0.09364845587361702,,puntual; donantes=0; 
+V15-A,H1-CS-u30-r10-2025T4,CS log renta umbral=30 radio=10km hasta 2025T4,2022T2,2025T4,119,,,,,-0.09364845587361702,,puntual; donantes=0; 
+V15-A,H1-CS-u30-r25-2026T1,CS log renta umbral=30 radio=25km hasta 2026T1,2022T2,2026T1,119,,,,,-0.09364845587361702,,puntual; donantes=0; 
+V15-A,H1-CS-u30-r25-2025T4,CS log renta umbral=30 radio=25km hasta 2025T4,2022T2,2025T4,119,,,,,-0.09364845587361702,,puntual; donantes=0; 
+V15-A,H1-SDID-u5-r0-2026T1,SDID log renta umbral=5 radio=0km hasta 2026T1,2022T2,2026T1,184,,,,,-0.03710053220251894,,puntual; donantes=20; 
+V15-A,H1-SDID-u5-r0-2025T4,SDID log renta umbral=5 radio=0km hasta 2025T4,2022T2,2025T4,184,,,,,-0.033803000834591715,,puntual; donantes=20; 
+V15-A,H1-SDID-u5-r10-2026T1,SDID log renta umbral=5 radio=10km hasta 2026T1,2022T2,2026T1,184,,,,,-0.04977992259932729,,puntual; donantes=3; 
+V15-A,H1-SDID-u5-r10-2025T4,SDID log renta umbral=5 radio=10km hasta 2025T4,2022T2,2025T4,184,,,,,-0.04290360811381822,,puntual; donantes=3; 
+V15-A,H1-SDID-u5-r25-2026T1,SDID log renta umbral=5 radio=25km hasta 2026T1,2022T2,2026T1,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H1-SDID-u5-r25-2025T4,SDID log renta umbral=5 radio=25km hasta 2025T4,2022T2,2025T4,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H1-SDID-u10-r0-2026T1,SDID log renta umbral=10 radio=0km hasta 2026T1,2022T2,2026T1,184,,,,,-0.03710053220251894,,puntual; donantes=20; 
+V15-A,H1-SDID-u10-r0-2025T4,SDID log renta umbral=10 radio=0km hasta 2025T4,2022T2,2025T4,184,,,,,-0.033803000834591715,,puntual; donantes=20; 
+V15-A,H1-SDID-u10-r10-2026T1,SDID log renta umbral=10 radio=10km hasta 2026T1,2022T2,2026T1,184,,,,,-0.04977992259932729,,puntual; donantes=3; 
+V15-A,H1-SDID-u10-r10-2025T4,SDID log renta umbral=10 radio=10km hasta 2025T4,2022T2,2025T4,184,,,,,-0.04290360811381822,,puntual; donantes=3; 
+V15-A,H1-SDID-u10-r25-2026T1,SDID log renta umbral=10 radio=25km hasta 2026T1,2022T2,2026T1,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H1-SDID-u10-r25-2025T4,SDID log renta umbral=10 radio=25km hasta 2025T4,2022T2,2025T4,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H1-SDID-u30-r0-2026T1,SDID log renta umbral=30 radio=0km hasta 2026T1,2022T2,2026T1,119,,,,,-0.028670877016097215,,puntual; donantes=7; 
+V15-A,H1-SDID-u30-r0-2025T4,SDID log renta umbral=30 radio=0km hasta 2025T4,2022T2,2025T4,119,,,,,-0.02614859863528619,,puntual; donantes=7; 
+V15-A,H1-SDID-u30-r10-2026T1,SDID log renta umbral=30 radio=10km hasta 2026T1,2022T2,2026T1,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H1-SDID-u30-r10-2025T4,SDID log renta umbral=30 radio=10km hasta 2025T4,2022T2,2025T4,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H1-SDID-u30-r25-2026T1,SDID log renta umbral=30 radio=25km hasta 2026T1,2022T2,2026T1,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H1-SDID-u30-r25-2025T4,SDID log renta umbral=30 radio=25km hasta 2025T4,2022T2,2025T4,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H2-CS-u5-r0-2026T1,CS log(1+contratos) umbral=5 radio=0km hasta 2026T1,2022T2,2026T1,234,,,,,-0.04307337815337899,,puntual; donantes=74; 
+V15-A,H2-CS-u5-r0-2025T4,CS log(1+contratos) umbral=5 radio=0km hasta 2025T4,2022T2,2025T4,234,,,,,-0.046036386890041595,,puntual; donantes=74; 
+V15-A,H2-CS-u5-r10-2026T1,CS log(1+contratos) umbral=5 radio=10km hasta 2026T1,2022T2,2026T1,234,,,,,-0.20571758989487882,,puntual; donantes=13; 
+V15-A,H2-CS-u5-r10-2025T4,CS log(1+contratos) umbral=5 radio=10km hasta 2025T4,2022T2,2025T4,234,,,,,-0.2422593371428386,,puntual; donantes=13; 
+V15-A,H2-CS-u5-r25-2026T1,CS log(1+contratos) umbral=5 radio=25km hasta 2026T1,2022T2,2026T1,234,,,,,0.030881300723412414,,puntual; donantes=1; 
+V15-A,H2-CS-u5-r25-2025T4,CS log(1+contratos) umbral=5 radio=25km hasta 2025T4,2022T2,2025T4,234,,,,,-0.06633604009032391,,puntual; donantes=1; 
+V15-A,H2-CS-u10-r0-2026T1,CS log(1+contratos) umbral=10 radio=0km hasta 2026T1,2022T2,2026T1,199,,,,,-0.07928047580933434,,puntual; donantes=23; 
+V15-A,H2-CS-u10-r0-2025T4,CS log(1+contratos) umbral=10 radio=0km hasta 2025T4,2022T2,2025T4,199,,,,,-0.08369439532766165,,puntual; donantes=23; 
+V15-A,H2-CS-u10-r10-2026T1,CS log(1+contratos) umbral=10 radio=10km hasta 2026T1,2022T2,2026T1,199,,,,,-0.3957454148587921,,puntual; donantes=4; 
+V15-A,H2-CS-u10-r10-2025T4,CS log(1+contratos) umbral=10 radio=10km hasta 2025T4,2022T2,2025T4,199,,,,,-0.4133987221334782,,puntual; donantes=4; 
+V15-A,H2-CS-u10-r25-2026T1,CS log(1+contratos) umbral=10 radio=25km hasta 2026T1,2022T2,2026T1,199,,,,,-0.0574671156852634,,puntual; donantes=0; 
+V15-A,H2-CS-u10-r25-2025T4,CS log(1+contratos) umbral=10 radio=25km hasta 2025T4,2022T2,2025T4,199,,,,,-0.0574671156852634,,puntual; donantes=0; 
+V15-A,H2-CS-u30-r0-2026T1,CS log(1+contratos) umbral=30 radio=0km hasta 2026T1,2022T2,2026T1,119,,,,,-0.0615417054285773,,puntual; donantes=7; 
+V15-A,H2-CS-u30-r0-2025T4,CS log(1+contratos) umbral=30 radio=0km hasta 2025T4,2022T2,2025T4,119,,,,,-0.051295240540373,,puntual; donantes=7; 
+V15-A,H2-CS-u30-r10-2026T1,CS log(1+contratos) umbral=30 radio=10km hasta 2026T1,2022T2,2026T1,119,,,,,-0.09370147579505356,,puntual; donantes=0; 
+V15-A,H2-CS-u30-r10-2025T4,CS log(1+contratos) umbral=30 radio=10km hasta 2025T4,2022T2,2025T4,119,,,,,-0.09370147579505356,,puntual; donantes=0; 
+V15-A,H2-CS-u30-r25-2026T1,CS log(1+contratos) umbral=30 radio=25km hasta 2026T1,2022T2,2026T1,119,,,,,-0.09370147579505356,,puntual; donantes=0; 
+V15-A,H2-CS-u30-r25-2025T4,CS log(1+contratos) umbral=30 radio=25km hasta 2025T4,2022T2,2025T4,119,,,,,-0.09370147579505356,,puntual; donantes=0; 
+V15-A,H2-SDID-u5-r0-2026T1,SDID log(1+contratos) umbral=5 radio=0km hasta 2026T1,2022T2,2026T1,234,,,,,-0.15269051985054824,,puntual; donantes=74; 
+V15-A,H2-SDID-u5-r0-2025T4,SDID log(1+contratos) umbral=5 radio=0km hasta 2025T4,2022T2,2025T4,234,,,,,-0.15640073645428626,,puntual; donantes=74; 
+V15-A,H2-SDID-u5-r10-2026T1,SDID log(1+contratos) umbral=5 radio=10km hasta 2026T1,2022T2,2026T1,234,,,,,-0.25451722596925136,,puntual; donantes=13; 
+V15-A,H2-SDID-u5-r10-2025T4,SDID log(1+contratos) umbral=5 radio=10km hasta 2025T4,2022T2,2025T4,234,,,,,-0.28237828259181097,,puntual; donantes=13; 
+V15-A,H2-SDID-u5-r25-2026T1,SDID log(1+contratos) umbral=5 radio=25km hasta 2026T1,2022T2,2026T1,234,,,,,-0.1556300076492931,,puntual; donantes=1; degenerada
+V15-A,H2-SDID-u5-r25-2025T4,SDID log(1+contratos) umbral=5 radio=25km hasta 2025T4,2022T2,2025T4,234,,,,,-0.2575345257548981,,puntual; donantes=1; degenerada
+V15-A,H2-SDID-u10-r0-2026T1,SDID log(1+contratos) umbral=10 radio=0km hasta 2026T1,2022T2,2026T1,199,,,,,-0.10929982959333866,,puntual; donantes=23; 
+V15-A,H2-SDID-u10-r0-2025T4,SDID log(1+contratos) umbral=10 radio=0km hasta 2025T4,2022T2,2025T4,199,,,,,-0.11289666769770272,,puntual; donantes=23; 
+V15-A,H2-SDID-u10-r10-2026T1,SDID log(1+contratos) umbral=10 radio=10km hasta 2026T1,2022T2,2026T1,199,,,,,-0.4276940538490106,,puntual; donantes=4; 
+V15-A,H2-SDID-u10-r10-2025T4,SDID log(1+contratos) umbral=10 radio=10km hasta 2025T4,2022T2,2025T4,199,,,,,-0.4514432146414437,,puntual; donantes=4; 
+V15-A,H2-SDID-u10-r25-2026T1,SDID log(1+contratos) umbral=10 radio=25km hasta 2026T1,2022T2,2026T1,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H2-SDID-u10-r25-2025T4,SDID log(1+contratos) umbral=10 radio=25km hasta 2025T4,2022T2,2025T4,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H2-SDID-u30-r0-2026T1,SDID log(1+contratos) umbral=30 radio=0km hasta 2026T1,2022T2,2026T1,119,,,,,-0.12044560676592704,,puntual; donantes=7; 
+V15-A,H2-SDID-u30-r0-2025T4,SDID log(1+contratos) umbral=30 radio=0km hasta 2025T4,2022T2,2025T4,119,,,,,-0.11066064366189877,,puntual; donantes=7; 
+V15-A,H2-SDID-u30-r10-2026T1,SDID log(1+contratos) umbral=30 radio=10km hasta 2026T1,2022T2,2026T1,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H2-SDID-u30-r10-2025T4,SDID log(1+contratos) umbral=30 radio=10km hasta 2025T4,2022T2,2025T4,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H2-SDID-u30-r25-2026T1,SDID log(1+contratos) umbral=30 radio=25km hasta 2026T1,2022T2,2026T1,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H2-SDID-u30-r25-2025T4,SDID log(1+contratos) umbral=30 radio=25km hasta 2025T4,2022T2,2025T4,0,,,,,,,puntual; donantes=0; degenerada
+V15-A,H2-PPML-2026T1,PPML contratos ~ cohorte x post + FE municipio + FE trimestre,2022T2,2026T1,4801,,,,,-0.09948082837419876,,puntual (sin error típico válido)
+V15-A,H2-PPML-2025T4,PPML contratos ~ cohorte x post + FE municipio + FE trimestre,2022T2,2025T4,4493,,,,,-0.10304962094716881,,puntual (sin error típico válido)

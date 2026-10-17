@@ -1,0 +1,89 @@
+{
+  "rama": "v15/p5cv",
+  "pregunta": "E4: asociación entre la exposición turística con periodo previo (IDESCAT; registro GVA reconstruido) y el alquiler, en estudio de eventos de dosis continua",
+  "capa": "C4",
+  "datos": "data/processed/v15/p5_cv_cataluna.parquet (IDESCAT 2015-2024, Incasòl anual, registro GVA reconstruido, SERPAVI municipal; entrenamiento)",
+  "N": {
+    "municipios_cataluna": 380,
+    "municipios_valenciana": 207,
+    "especificaciones": 16
+  },
+  "metodo": "estudio de eventos de dosis continua, efectos fijos de municipio y año, referencia 2017; coeficientes puntuales",
+  "estimacion": {
+    "cataluna_hut_n_2015_2024": {
+      "previos_2015_2016_pct_por_DT": [
+        0.0036553642327657697,
+        0.7543785960608348
+      ],
+      "media_post_pct_por_DT": 0.7067091229305253
+    },
+    "valenciana_VC_base_2015_2024": {
+      "previos_2015_2016_pct_por_DT": [
+        0.2963046264966773,
+        -0.4766538418941308
+      ],
+      "media_post_pct_por_DT": 0.16583524907758093
+    },
+    "resumen": {
+      "compatibles_puntualmente": 6,
+      "no_compatibles": 10,
+      "media_post_rango": [
+        -0.7161825666449393,
+        1.012535742169206
+      ],
+      "signo_positivo_media_post": 10
+    }
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "EXPLORATORIO",
+  "diagnosticos": {
+    "inferencia": "NO APTA para el estudio de eventos de dosis; Honest DiD NO APTO: solo coeficientes puntuales",
+    "pretendencias": {
+      "regla_puntual": "max|coef 2015,2016| <= 0,5 x |media post|",
+      "compatibles": 6,
+      "no_compatibles": 10
+    },
+    "exclusion_1pct_superior_y_grandes_ciudades": "en la tabla del informe (media posterior sin el 1 % superior de dosis y sin Barcelona y València)",
+    "honest_did": "no evaluado (NO APTO)",
+    "potencia_roth": "no calculable sin error típico válido",
+    "oster_cinelli_evalue": "no calculados (sin error típico válido)",
+    "exposicion_GVA": "reconstruida (supuesto de fechado); solo robustez, nunca principal",
+    "raices_unitarias_cointegracion": "no aplica (T <= 10, estudio de eventos)",
+    "pruebas_superadas_puntualmente": [
+      "Comunitat Valenciana|SERPAVI VU|base_dic2017|2015-2024",
+      "Comunitat Valenciana|SERPAVI VU|base_dic2017|2015-2019",
+      "Comunitat Valenciana|SERPAVI VU|alta_12m_antes_dic2018|2015-2024",
+      "Comunitat Valenciana|SERPAVI VU|alta_12m_antes_dic2018|2015-2019",
+      "Comunitat Valenciana|SERPAVI VU|alta_12m_despues_dic2016|2015-2024",
+      "Comunitat Valenciana|SERPAVI VU|alta_12m_despues_dic2016|2015-2019"
+    ],
+    "pruebas_fallidas_puntualmente": [
+      "Cataluña|hut_n|n/a|2015-2024",
+      "Cataluña|hut_n|n/a|2015-2019",
+      "Cataluña|hut_plazas|n/a|2015-2024",
+      "Cataluña|hut_plazas|n/a|2015-2019",
+      "Comunitat Valenciana|SERPAVI VC|base_dic2017|2015-2024",
+      "Comunitat Valenciana|SERPAVI VC|base_dic2017|2015-2019",
+      "Comunitat Valenciana|SERPAVI VC|alta_12m_antes_dic2018|2015-2024",
+      "Comunitat Valenciana|SERPAVI VC|alta_12m_antes_dic2018|2015-2019",
+      "Comunitat Valenciana|SERPAVI VC|alta_12m_despues_dic2016|2015-2024",
+      "Comunitat Valenciana|SERPAVI VC|alta_12m_despues_dic2016|2015-2019"
+    ]
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "pendiente_sellada": true,
+  "p_valores_para_BY": [
+    {
+      "hipotesis": "E4",
+      "p": null,
+      "motivo": "inferencia NO APTA para el estudio de eventos de dosis; Honest DiD NO APTO"
+    }
+  ],
+  "notas": "Asociación C4 exploratoria, sin lenguaje causal. Exposición GVA reconstruida: solo robustez. Desviaciones: DV15-A, A6.",
+  "multiverso_registro": "output/v15/p5cv/registro.csv"
+}

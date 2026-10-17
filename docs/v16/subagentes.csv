@@ -35,3 +35,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-17,F6,modelizador,grupo_B_q3_q4_q6,212505,src/v16/q3_seccion.py;output/v16/q3;output/v16/q4;output/v16/q6
 2026-10-17,F6,modelizador,grupo_C_q5_q9_q10_rejilla,192100,src/v16/q9_burbuja.py;output/v16/q5;output/v16/q9;output/v16/q10;output/v16/rejilla
 2026-10-17,F6,modelizador,v15_grupo_B_h4_h5_e1_e2_e3,180001,src/v15/p4_inmigracion.py;output/v15/p4;output/v15/p9;output/v15/p2;output/v15/p7;output/v15/p10
+2026-10-17,F6,modelizador,v15_grupo_A_h1_h2_h3_e4,200805,src/v15/p6_zonas.py;output/v15/p6;output/v15/p5;output/v15/p5cv

@@ -28,7 +28,12 @@ Plan: docs/v15/plan.md (íntegro). Versión pública vigente: 1.0. V15 solo aña
   - `make check` en solitario: 436 pasados; solo el aviso del hash pendiente; check_v15 sin errores; git sin cambios.
   - Commit «V15 infraestructura» (eb61254).
 
+- **Fase 0.**
+  - V14.4 aplicada (5557c25): las cuatro fuentes de terceros en «agregados» y las 16 cifras reincorporadas a los textos; cifras_clave sin cambios.
+  - docs/v15/punto_partida.md (unas 1.300 palabras): preguntas sin respuesta con su causa, 7 resultados frágiles y 7 debilidades.
+  - Entre las debilidades, siete cifras C1 que no cumplen la definición de C1. Queda para el autor (tareas_autor.md) y no se corrige.
+
 ## Siguiente
-- Fase 0: V14.4 (todas las fuentes en «agregados» y las 16 cifras reincorporadas) y punto_partida.md.
+- Fase 1: inventario (inventariador), calidad (auditor-datos por grupos) y potencia por pregunta candidata.
 
 <!-- las secciones siguientes las mantiene src/v15/registro_subagentes.py -->

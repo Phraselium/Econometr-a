@@ -401,8 +401,10 @@ def cgpj_pj(man: dict, t: pd.DataFrame):
     d["fecha_dato"] = d.periodo + "-12-31"
     d["metodo_dato"] = "observado (partido identificado por nombre de cabecera; cruce con el nomenclátor a 30/12/2025)"
     d = construir(d, rel, man)
-    # 2025: la suma por provincia de los partidos difiere más de un 10 % de la serie provincial en 24 provincias (p. ej. PJ-32-2 = 2944)
-    d.loc[d.periodo == "2025", "metodo_dato"] += "; 2025 discrepante con la serie provincial del CGPJ (ver ficha)"
+    # 2025: el bloque de partidos no reproduce la serie provincial ni la del TSJ (24 provincias con diferencias > 10 %; celda anómala
+    # de Ribadavia, 2.944 frente a 4 en 2024). Auditoría output/v16/auditoria/tension_social: se excluye 2025 a nivel de partido y se
+    # usa la serie provincial; 2013-2024 cuadra con la provincial.
+    d = d[d.periodo != "2025"]
     # correspondencia partido -> municipios (todos los partidos del nomenclátor) y descartes del CGPJ
     nombre_por_pj = {(pr, pj): nombres[rs[0]] for (pr, pj), rs in asign.items() if (pr, pj) not in dup}
     cm = nm[["cod_provincia", "partido_judicial_n", "cod_municipio_ine", "municipio"]].copy()

@@ -4,5 +4,5 @@
  "capa": "C4",
  "N": 3248643,
  "metodo": "normalización",
- "notas": "N_terceros=36904 (no versionado, redistribuible=False). posterior_prereg=False porque el corte de V16 no está fijado. Descartes de códigos: {\"emcr\": {\"descartados\": 0, \"conservados_no_vigentes\": 0}, \"padron_cifras\": {\"descartados\": 0, \"conservados_no_vigentes\": 4}, \"padron_seccion\": {\"descartados\": 0, \"conservados_no_vigentes\": 275}}. Partidos judiciales del CGPJ: 427 de 431 con cruce único; 4 descartados (lista en la ficha)"
+ "notas": "N_terceros=35196 (no versionado, redistribuible=False). posterior_prereg=False porque el corte de V16 no está fijado. Descartes de códigos: {\"emcr\": {\"descartados\": 0, \"conservados_no_vigentes\": 0}, \"padron_cifras\": {\"descartados\": 0, \"conservados_no_vigentes\": 4}, \"padron_seccion\": {\"descartados\": 0, \"conservados_no_vigentes\": 275}}. Partidos judiciales del CGPJ: 427 de 431 con cruce único; 4 descartados (lista en la ficha)"
 }

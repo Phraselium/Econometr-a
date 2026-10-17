@@ -32,3 +32,12 @@ adquisidor-datos, ingeniero-datos, replicador-ciego y redactor (sonnet), abogado
 - **Registro.** Es el manifiesto de cada familia: data/raw/v16/<familia>/_manifest.csv, con el mismo esquema que data/raw/v11/_manifest.csv. Sus columnas licencia y redistribuible son las que leen src/v13/inventario_datos.py y la base.
 - **Ficheros de terceros.** Los que tienen redistribuible «no» o «dudoso» van a _terceros/ y no se versionan (regla terceros_1_0).
 - **Control.** src/v16/f1_inventario.py valida los manifiestos (columnas, sha256, licencia no vacía, ningún fichero versionado de terceros) y escribe docs/v16/inventario_fuentes.csv.
+
+## K6. Lecciones de la auditoría de la fase 1 para la vara de C1 (fase 2)
+- **No son fuentes independientes:**
+  - OCDE y Eurostat para el precio de la vivienda en España: correlación 0,9999, ambas salen del IPV del INE;
+  - los choques mensuales y diarios de Jarociński-Karadi.
+  - Con estas parejas no se forma un C1, igual que con ECV y Eurostat.
+- **EMCR y EVR** tienen una ruptura de nivel en 2021 (inmigración exterior ×1,31, emigración ×1,56): no se empalman.
+- **Partidos judiciales del CGPJ en 2025:** excluidos (fuentes/tension_social.md).
+- **Intervenciones:** 78 de 105 fechas fiscales son aproximadas (1 de enero). Se usan solo con resolución anual, y en Q6 la fecha exacta de la ley autonómica entra como robustez.

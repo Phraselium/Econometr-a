@@ -1,0 +1,462 @@
+{
+ "rama": "v16/auditoria/tension_social",
+ "pregunta": "¿Son coherentes entre sí y con la base las series de tensión social (CGPJ, padrón, EMCR)?",
+ "capa": "C4",
+ "datos": "data/processed/v16/tension_social*.parquet; data/base/hechos.parquet (muestra_sellada_v6=False); data/raw/v16/tension_social/_terceros (solo lectura)",
+ "N": 2537736,
+ "metodo": "mediana/MAD (|z|>5), cocientes de agregación, comparación de niveles entre fuentes; sin estimación de efectos",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "A_n_provincias_no_selladas_con_ambas_series": 39,
+  "A_desviacion_mediana_abs_por_anyo": {
+   "2013": 0.0,
+   "2014": 0.0,
+   "2015": 0.0,
+   "2016": 0.0,
+   "2017": 0.0,
+   "2018": 0.0,
+   "2019": 0.0,
+   "2020": 0.0,
+   "2021": 0.0,
+   "2022": 0.0,
+   "2023": 0.0,
+   "2024": 0.0,
+   "2025": 0.09
+  },
+  "A_provincias_desv_gt10pct_por_anyo": {
+   "2013": 1,
+   "2014": 1,
+   "2015": 1,
+   "2016": 0,
+   "2017": 0,
+   "2018": 0,
+   "2019": 0,
+   "2020": 0,
+   "2021": 0,
+   "2022": 2,
+   "2023": 1,
+   "2024": 0,
+   "2025": 19
+  },
+  "A_2025_provincias_desv_gt10pct": [
+   "02",
+   "06",
+   "10",
+   "13",
+   "14",
+   "15",
+   "16",
+   "19",
+   "23",
+   "25",
+   "32",
+   "34",
+   "36",
+   "37",
+   "39",
+   "45",
+   "46",
+   "47",
+   "49"
+  ],
+  "A_PJ-32-2_2024_2025": {
+   "2024": {
+    "cgpj_lanzamientos_hipotecaria_numero": 0.0,
+    "cgpj_lanzamientos_lau_numero": 4.0,
+    "cgpj_lanzamientos_otros_numero": 0.0,
+    "cgpj_lanzamientos_total_numero": 4.0
+   },
+   "2025": {
+    "cgpj_lanzamientos_hipotecaria_numero": 749.0,
+    "cgpj_lanzamientos_lau_numero": 1783.0,
+    "cgpj_lanzamientos_otros_numero": 412.0,
+    "cgpj_lanzamientos_total_numero": 2944.0
+   }
+  },
+  "A_32_suma_PJ_2025": 3091.0,
+  "A_32_serie_provincial_2025": 152.0,
+  "A_32_suma_sin_PJ-32-2": 147.0,
+  "A_total_PJ_2025_ix": 20773.0,
+  "A_total_PJ_2025_sin_PJ-32-2": 17829.0,
+  "A_total_provincial_2025_ix": 17675.0,
+  "A_corr_2024_2025_sin_PJ-32-2": 0.954,
+  "A_corr_desfasada_k=1,2,3": {
+   "1": 0.2,
+   "2": 0.276,
+   "3": 0.095
+  },
+  "A_partidos_|z|>5_salto_2025_vs_2024": {
+   "PJ-13-10": 44,
+   "PJ-49-1": 24
+  },
+  "A_sd_crecimiento_log": {
+   "2019": {
+    "sd_prov": 0.192,
+    "sd_partidos": 0.195
+   },
+   "2020": {
+    "sd_prov": 0.2,
+    "sd_partidos": 0.202
+   },
+   "2021": {
+    "sd_prov": 0.225,
+    "sd_partidos": 0.229
+   },
+   "2022": {
+    "sd_prov": 0.202,
+    "sd_partidos": 0.196
+   },
+   "2023": {
+    "sd_prov": 0.274,
+    "sd_partidos": 0.275
+   },
+   "2024": {
+    "sd_prov": 0.25,
+    "sd_partidos": 0.252
+   },
+   "2025": {
+    "sd_prov": 0.355,
+    "sd_partidos": 0.467
+   }
+  },
+  "A_prov_con_desv_>3%_en_2013-2024_en_mas_de_6_anyos": [
+   "02",
+   "09",
+   "11",
+   "29"
+  ],
+  "A_celdas_prov-anyo_2013-2024_con_desv_>10%": [
+   "01:2022=1.18",
+   "02:2013=0.78",
+   "02:2014=0.769",
+   "02:2015=0.814",
+   "02:2023=0.876",
+   "09:2022=0.896"
+  ],
+  "A_partido-anyo_con_total_distinto_de_suma_de_causas": 0,
+  "A_filas_partido_anyo": 4290,
+  "B_anyos_padron": [
+   1996,
+   1998,
+   1999,
+   2000,
+   2001,
+   2002,
+   2003,
+   2004,
+   2005,
+   2006,
+   2007,
+   2008,
+   2009,
+   2010,
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "B_anyos_ausentes_1996-2025": [
+   1997
+  ],
+  "B_municipios_no_sellados": 6502,
+  "B_municipios_por_anyo_min_max": [
+   6465,
+   6498
+  ],
+  "B_total_distinto_de_hombres+mujeres_celdas": 0,
+  "B_municipios_con_huecos_en_su_rango": 0,
+  "B_municipios_sin_dato_2025": 4,
+  "B_valores_<=0": 0,
+  "B_atipicos_|z|>5_municipios_>=5000hab_n": 42,
+  "B_atipicos_top10_por_|z|": [
+   [
+    "08068",
+    1999,
+    -14.3,
+    7682,
+    5617
+   ],
+   [
+    "10180",
+    1999,
+    14.1,
+    7005,
+    9528
+   ],
+   [
+    "11021",
+    2019,
+    -13.4,
+    9773,
+    6951
+   ],
+   [
+    "03118",
+    2014,
+    -12.6,
+    12688,
+    9237
+   ],
+   [
+    "23012",
+    2002,
+    -11.5,
+    8061,
+    5661
+   ],
+   [
+    "03012",
+    2014,
+    -10.9,
+    5004,
+    3799
+   ],
+   [
+    "03047",
+    2014,
+    -10.7,
+    29442,
+    22437
+   ],
+   [
+    "14060",
+    2019,
+    -10.3,
+    6014,
+    4629
+   ],
+   [
+    "04029",
+    2016,
+    -8.5,
+    15174,
+    12380
+   ],
+   [
+    "03118",
+    2016,
+    -8.4,
+    9021,
+    7384
+   ]
+  ],
+  "B_atipicos_por_anyo": {
+   "1999": 2,
+   "2000": 3,
+   "2001": 3,
+   "2002": 2,
+   "2003": 1,
+   "2004": 3,
+   "2005": 3,
+   "2006": 2,
+   "2007": 1,
+   "2009": 1,
+   "2012": 1,
+   "2014": 11,
+   "2015": 2,
+   "2016": 3,
+   "2017": 1,
+   "2019": 2,
+   "2024": 1
+  },
+  "B_atipicos_todos_tamanos_n": 3369,
+  "B_comparacion_base_provincial": {
+   "n_prov": 41,
+   "anyos": [
+    2003,
+    2022
+   ],
+   "desv_rel_mediana_abs": 0.0,
+   "desv_rel_max_abs": 0.0,
+   "celdas_>0.5%": 0,
+   "peores": [
+    [
+     "01",
+     2003,
+     0.0
+    ],
+    [
+     "01",
+     2004,
+     0.0
+    ],
+    [
+     "01",
+     2005,
+     0.0
+    ],
+    [
+     "01",
+     2006,
+     0.0
+    ],
+    [
+     "01",
+     2007,
+     0.0
+    ]
+   ]
+  },
+  "B_v9_columnas": [
+   "anio",
+   "cod_provincia",
+   "cod_municipio",
+   "nacionalidad",
+   "poblacion",
+   "tabla"
+  ],
+  "C_solape_2021": {
+   "inmig_EMCR_vs_EVR": {
+    "n_municipios": 562,
+    "suma_a": 474210.0,
+    "suma_b": 361289.0,
+    "ratio_sumas": 1.3126,
+    "corr_niveles": 0.9989,
+    "exactos_%": 0.4,
+    "desv_rel_mediana": 0.3362,
+    "desv_rel_p5_p95": [
+     0.088,
+     0.786
+    ]
+   },
+   "emig_EMCR_vs_EVR": {
+    "n_municipios": 562,
+    "suma_a": 373799.0,
+    "suma_b": 240000.0,
+    "ratio_sumas": 1.5575,
+    "corr_niveles": 0.9902,
+    "exactos_%": 0.2,
+    "desv_rel_mediana": 0.7442,
+    "desv_rel_p5_p95": [
+     -0.026,
+     4.892
+    ]
+   },
+   "inmig_EMCR_vs_EMCR-microdatos(base)": {
+    "n_municipios": 561,
+    "suma_a": 474068.0,
+    "suma_b": 474068.0,
+    "ratio_sumas": 1.0,
+    "corr_niveles": 1.0,
+    "exactos_%": 100.0,
+    "desv_rel_mediana": 0.0,
+    "desv_rel_p5_p95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "C_municipios_EMCR_2021_vs_EVR": [
+   6497,
+   562
+  ],
+  "C_EVR_inmig_exterior_suma_municipios_2017-2021": {
+   "2017": 332735.0,
+   "2018": 399853.0,
+   "2019": 464046.0,
+   "2020": 280655.0,
+   "2021": 361289.0
+  },
+  "C_EMCR_inmig_exterior_suma_municipios_2021-2024": {
+   "2021": 572832.0,
+   "2022": 806363.0,
+   "2023": 797573.0,
+   "2024": 830365.0
+  },
+  "C_EVR_solo_municipios_>=10000hab_segun_metodo_dato": true,
+  "A2_triangulacion_CCAA_2025": {
+   "ANDALUCÍA": {
+    "TSJ_anual_2025": 3782.0,
+    "TSJ_serie_2T2026_2025": 3782.0,
+    "suma_provincias_serie": 3782.0,
+    "suma_partidos_2025_sin_PJ-32-2": 3767.0,
+    "desv_partidos_%": -0.4
+   },
+   "CASTILLA - LA MANCHA": {
+    "TSJ_anual_2025": 740.0,
+    "TSJ_serie_2T2026_2025": 740.0,
+    "suma_provincias_serie": 740.0,
+    "suma_partidos_2025_sin_PJ-32-2": 1166.0,
+    "desv_partidos_%": 57.6
+   },
+   "CASTILLA Y LEÓN": {
+    "TSJ_anual_2025": 875.0,
+    "TSJ_serie_2T2026_2025": 875.0,
+    "suma_provincias_serie": 875.0,
+    "suma_partidos_2025_sin_PJ-32-2": 1075.0,
+    "desv_partidos_%": 22.9
+   },
+   "CATALUÑA": {
+    "TSJ_anual_2025": 6814.0,
+    "TSJ_serie_2T2026_2025": 6814.0,
+    "suma_provincias_serie": 6814.0,
+    "suma_partidos_2025_sin_PJ-32-2": 6711.0,
+    "desv_partidos_%": -1.5
+   },
+   "COMUNITAT VALENCIANA": {
+    "TSJ_anual_2025": 2992.0,
+    "TSJ_serie_2T2026_2025": 2992.0,
+    "suma_provincias_serie": 2992.0,
+    "suma_partidos_2025_sin_PJ-32-2": 2588.0,
+    "desv_partidos_%": -13.5
+   },
+   "EXTREMADURA": {
+    "TSJ_anual_2025": 261.0,
+    "TSJ_serie_2T2026_2025": 261.0,
+    "suma_provincias_serie": 261.0,
+    "suma_partidos_2025_sin_PJ-32-2": 370.0,
+    "desv_partidos_%": 41.8
+   },
+   "GALICIA": {
+    "TSJ_anual_2025": 1046.0,
+    "TSJ_serie_2T2026_2025": 1046.0,
+    "suma_provincias_serie": 1046.0,
+    "suma_partidos_2025_sin_PJ-32-2": 1051.0,
+    "desv_partidos_%": 0.5
+   },
+   "PAÍS VASCO": {
+    "TSJ_anual_2025": 974.0,
+    "TSJ_serie_2T2026_2025": 974.0,
+    "suma_provincias_serie": 974.0,
+    "suma_partidos_2025_sin_PJ-32-2": 935.0,
+    "desv_partidos_%": -4.0
+   },
+   "CANTABRIA": {
+    "TSJ_anual_2025": 191.0,
+    "TSJ_serie_2T2026_2025": 191.0,
+    "suma_provincias_serie": 191.0,
+    "suma_partidos_2025_sin_PJ-32-2": 166.0,
+    "desv_partidos_%": -13.1
+   }
+  },
+  "A2_TSJ_total_nacional_2025": 24540.0,
+  "A2_TSJ_total_nacional_2024": 27564.0,
+  "A2_suma_nacional_partidos_2024_y_2025_todas_las_provincias": {
+   "2024": 27477.0,
+   "2025": 27425.0
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "Solo agregados propios del CGPJ; los datos de terceros no se reproducen.",
+  "Excluye las 11 provincias de la muestra sellada (muestra_sellada_v6)."
+ ]
+}

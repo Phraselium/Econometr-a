@@ -1,0 +1,600 @@
+{
+ "rama": "v16/auditoria/oferta_suelo",
+ "pregunta": "¿Son consistentes las series IMM y el cálculo de Red Natura por municipio?",
+ "capa": "C4",
+ "datos": "data/processed/v16/oferta_suelo*.parquet (muestra_sellada_v6=False); data/base/geo/municipios.parquet (solo geometría)",
+ "N": 23432,
+ "metodo": "mediana/MAD (|z|>5), huecos, saltos, recálculo del porcentaje, comparación exterior/interior",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "1_series": 22,
+  "1_series_con_huecos": {
+   "ine_imm_materiales_especificos_calzado_indice": {
+    "n_faltan": 8,
+    "meses": [
+     "2019-09",
+     "2019-10",
+     "2019-11",
+     "2019-12",
+     "2020-03",
+     "2020-04",
+     "2020-05",
+     "2020-06"
+    ],
+    "tramos": null
+   },
+   "ine_imm_materiales_especificos_equipos_electricos_indice": {
+    "n_faltan": 6,
+    "meses": [
+     "2019-07",
+     "2019-08",
+     "2019-09",
+     "2019-10",
+     "2020-01",
+     "2020-02"
+    ],
+    "tramos": null
+   },
+   "ine_imm_materiales_especificos_minerales_no_metalicos_indice": {
+    "n_faltan": 10,
+    "meses": [
+     "2019-07",
+     "2019-08",
+     "2019-09",
+     "2019-10",
+     "2019-11",
+     "2019-12",
+     "2020-01",
+     "2020-02",
+     "2020-03",
+     "2020-04"
+    ],
+    "tramos": null
+   },
+   "ine_imm_materiales_especificos_textiles_indice": {
+    "n_faltan": 4,
+    "meses": [
+     "2019-11",
+     "2019-12",
+     "2020-05",
+     "2020-06"
+    ],
+    "tramos": null
+   }
+  },
+  "1_atipicos_|z|>5_variacion_mensual_n_por_serie": {
+   "ine_imm_mano_obra_construccion_indice": 6,
+   "ine_imm_materiales_acero_indice": 4,
+   "ine_imm_materiales_aluminio_indice": 0,
+   "ine_imm_materiales_aridos_rocas_indice": 3,
+   "ine_imm_materiales_cemento_indice": 6,
+   "ine_imm_materiales_ceramica_indice": 12,
+   "ine_imm_materiales_cobre_indice": 0,
+   "ine_imm_materiales_electronicos_indice": 2,
+   "ine_imm_materiales_energia_indice": 3,
+   "ine_imm_materiales_especificos_cabezas_explosivas_indice": 3,
+   "ine_imm_materiales_especificos_calzado_indice": 0,
+   "ine_imm_materiales_especificos_equipos_electricos_indice": 3,
+   "ine_imm_materiales_especificos_minerales_no_metalicos_indice": 1,
+   "ine_imm_materiales_especificos_textiles_indice": 13,
+   "ine_imm_materiales_explosivos_indice": 0,
+   "ine_imm_materiales_focos_luminarias_indice": 30,
+   "ine_imm_materiales_ligantes_indice": 0,
+   "ine_imm_materiales_madera_indice": 10,
+   "ine_imm_materiales_plantas_indice": 0,
+   "ine_imm_materiales_productos_plasticos_indice": 6,
+   "ine_imm_materiales_productos_quimicos_indice": 1,
+   "ine_imm_materiales_vidrio_indice": 1
+  },
+  "1_atipicos_top": {
+   "ine_imm_mano_obra_construccion_indice": [
+    [
+     "2022-03",
+     9.3,
+     2.5
+    ],
+    [
+     "2016-01",
+     7.1,
+     -1.6
+    ],
+    [
+     "2015-01",
+     6.1,
+     -1.4
+    ]
+   ],
+   "ine_imm_materiales_acero_indice": [
+    [
+     "2022-04",
+     7.5,
+     9.8
+    ],
+    [
+     "2021-01",
+     5.7,
+     7.4
+    ],
+    [
+     "2021-07",
+     5.3,
+     6.9
+    ]
+   ],
+   "ine_imm_materiales_aridos_rocas_indice": [
+    [
+     "2022-01",
+     6.6,
+     3.1
+    ],
+    [
+     "2016-04",
+     5.8,
+     -2.5
+    ],
+    [
+     "2022-04",
+     5.5,
+     2.6
+    ]
+   ],
+   "ine_imm_materiales_cemento_indice": [
+    [
+     "2023-02",
+     13.5,
+     6.7
+    ],
+    [
+     "2022-01",
+     11.5,
+     5.7
+    ],
+    [
+     "2022-05",
+     9.8,
+     4.9
+    ]
+   ],
+   "ine_imm_materiales_ceramica_indice": [
+    [
+     "2022-01",
+     25.6,
+     8.3
+    ],
+    [
+     "2022-02",
+     22.6,
+     7.3
+    ],
+    [
+     "2022-03",
+     20.3,
+     6.6
+    ]
+   ],
+   "ine_imm_materiales_electronicos_indice": [
+    [
+     "2022-02",
+     5.9,
+     2.2
+    ],
+    [
+     "2021-06",
+     5.2,
+     2.0
+    ]
+   ],
+   "ine_imm_materiales_energia_indice": [
+    [
+     "2022-03",
+     6.0,
+     19.3
+    ],
+    [
+     "2026-03",
+     5.8,
+     18.4
+    ],
+    [
+     "2020-04",
+     5.2,
+     -16.0
+    ]
+   ],
+   "ine_imm_materiales_especificos_cabezas_explosivas_indice": [
+    [
+     "2022-01",
+     10.0,
+     5.6
+    ],
+    [
+     "2012-03",
+     7.8,
+     4.4
+    ],
+    [
+     "2017-01",
+     5.6,
+     3.2
+    ]
+   ],
+   "ine_imm_materiales_especificos_equipos_electricos_indice": [
+    [
+     "2012-05",
+     6.1,
+     4.1
+    ],
+    [
+     "2012-04",
+     5.9,
+     4.0
+    ],
+    [
+     "2026-01",
+     5.0,
+     3.4
+    ]
+   ],
+   "ine_imm_materiales_especificos_minerales_no_metalicos_indice": [
+    [
+     "2023-01",
+     6.6,
+     9.9
+    ]
+   ],
+   "ine_imm_materiales_especificos_textiles_indice": [
+    [
+     "2022-07",
+     42.4,
+     9.0
+    ],
+    [
+     "2022-03",
+     31.5,
+     6.7
+    ],
+    [
+     "2012-04",
+     22.6,
+     4.8
+    ]
+   ],
+   "ine_imm_materiales_focos_luminarias_indice": [
+    [
+     "2013-04",
+     64.0,
+     5.5
+    ],
+    [
+     "2024-09",
+     60.4,
+     -5.2
+    ],
+    [
+     "2013-09",
+     42.2,
+     -3.6
+    ]
+   ],
+   "ine_imm_materiales_madera_indice": [
+    [
+     "2022-02",
+     32.8,
+     6.0
+    ],
+    [
+     "2025-01",
+     12.7,
+     2.4
+    ],
+    [
+     "2022-05",
+     8.2,
+     1.6
+    ]
+   ],
+   "ine_imm_materiales_productos_plasticos_indice": [
+    [
+     "2022-04",
+     13.6,
+     4.2
+    ],
+    [
+     "2022-01",
+     9.6,
+     3.0
+    ],
+    [
+     "2022-07",
+     8.7,
+     -2.7
+    ]
+   ],
+   "ine_imm_materiales_productos_quimicos_indice": [
+    [
+     "2021-11",
+     8.2,
+     4.7
+    ]
+   ],
+   "ine_imm_materiales_vidrio_indice": [
+    [
+     "2022-04",
+     5.3,
+     5.3
+    ]
+   ]
+  },
+  "1_saltos_mensuales_>25%": {},
+  "1_rachas_constantes_o_valores_no_positivos": {
+   "ine_imm_materiales_especificos_textiles_indice": {
+    "racha_maxima_valores_repetidos": 6
+   },
+   "ine_imm_materiales_focos_luminarias_indice": {
+    "racha_maxima_valores_repetidos": 8
+   },
+   "ine_imm_materiales_plantas_indice": {
+    "racha_maxima_valores_repetidos": 47
+   }
+  },
+  "1_ultimo_periodo": "2026-03",
+  "1_retraso_meses_hasta_2026-10": 7,
+  "1_niveles": {
+   "ine_imm_mano_obra_construccion_indice": {
+    "unidad": "índice base julio 1980",
+    "primero": 258.63,
+    "ultimo": 488.39,
+    "min": 258.63,
+    "max": 488.39
+   },
+   "ine_imm_materiales_acero_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 99.74,
+    "ultimo": 127.96,
+    "min": 76.46,
+    "max": 180.53
+   },
+   "ine_imm_materiales_aluminio_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 98.52,
+    "ultimo": 153.09,
+    "min": 91.4,
+    "max": 182.55
+   },
+   "ine_imm_materiales_aridos_rocas_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 99.76,
+    "ultimo": 136.61,
+    "min": 98.87,
+    "max": 136.61
+   },
+   "ine_imm_materiales_cemento_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 100.94,
+    "ultimo": 158.45,
+    "min": 98.31,
+    "max": 158.45
+   },
+   "ine_imm_materiales_ceramica_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 99.44,
+    "ultimo": 154.92,
+    "min": 96.75,
+    "max": 162.85
+   },
+   "ine_imm_materiales_cobre_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 105.91,
+    "ultimo": 177.52,
+    "min": 76.23,
+    "max": 178.55
+   },
+   "ine_imm_materiales_electronicos_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 100.68,
+    "ultimo": 121.05,
+    "min": 100.38,
+    "max": 121.2
+   },
+   "ine_imm_materiales_energia_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 104.54,
+    "ultimo": 149.28,
+    "min": 66.25,
+    "max": 174.38
+   },
+   "ine_imm_materiales_especificos_cabezas_explosivas_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 101.76,
+    "ultimo": 162.4,
+    "min": 100.72,
+    "max": 162.56
+   },
+   "ine_imm_materiales_especificos_calzado_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 101.53,
+    "ultimo": 122.76,
+    "min": 101.04,
+    "max": 124.36
+   },
+   "ine_imm_materiales_especificos_equipos_electricos_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 100.05,
+    "ultimo": 141.81,
+    "min": 100.05,
+    "max": 141.81
+   },
+   "ine_imm_materiales_especificos_minerales_no_metalicos_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 101.4,
+    "ultimo": 137.96,
+    "min": 88.63,
+    "max": 139.21
+   },
+   "ine_imm_materiales_especificos_textiles_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 97.93,
+    "ultimo": 115.85,
+    "min": 88.95,
+    "max": 122.26
+   },
+   "ine_imm_materiales_explosivos_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 99.37,
+    "ultimo": 146.66,
+    "min": 97.71,
+    "max": 146.66
+   },
+   "ine_imm_materiales_focos_luminarias_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 100.02,
+    "ultimo": 115.56,
+    "min": 98.06,
+    "max": 119.35
+   },
+   "ine_imm_materiales_ligantes_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 104.1,
+    "ultimo": 140.84,
+    "min": 44.9,
+    "max": 170.58
+   },
+   "ine_imm_materiales_madera_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 100.05,
+    "ultimo": 144.01,
+    "min": 99.78,
+    "max": 144.01
+   },
+   "ine_imm_materiales_plantas_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 103.15,
+    "ultimo": 160.79,
+    "min": 103.15,
+    "max": 160.79
+   },
+   "ine_imm_materiales_productos_plasticos_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 100.05,
+    "ultimo": 128.13,
+    "min": 100.05,
+    "max": 134.08
+   },
+   "ine_imm_materiales_productos_quimicos_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 100.92,
+    "ultimo": 134.11,
+    "min": 99.37,
+    "max": 137.02
+   },
+   "ine_imm_materiales_vidrio_indice": {
+    "unidad": "índice base 2011=100",
+    "primero": 102.07,
+    "ultimo": 144.6,
+    "min": 98.68,
+    "max": 146.71
+   }
+  },
+  "1_mano_obra_variacion_mediana_mensual_%_por_mes_calendario": {
+   "1": -0.47,
+   "2": 0.09,
+   "3": 0.53,
+   "4": 0.7,
+   "5": 0.17,
+   "6": 0.17,
+   "7": -0.44,
+   "8": 0.25,
+   "9": 0.15,
+   "10": 0.54,
+   "11": 0.17,
+   "12": 0.18
+  },
+  "1_eurostat_costes_columnas": [
+   "fecha",
+   "periodo",
+   "serie",
+   "valor",
+   "unidad",
+   "fuente",
+   "url",
+   "freq",
+   "indic_bt",
+   "cpa2_1",
+   "s_adj",
+   "unit"
+  ],
+  "2_municipios_no_sellados": 6498,
+  "2_pct_fuera_de_[0,100]": 0,
+  "2_pct_NaN": 0,
+  "2_rn_ha_mayor_que_ha_municipio": {
+   "n": 0,
+   "max_exceso_%": 0.0
+  },
+  "2_pct_igual_100_n": 150,
+  "2_pct_entre_95_y_100_n": 338,
+  "2_pct_guardado_vs_recalculado_max_abs_dif": 0.0,
+  "2_ha_municipio_<=0": 0,
+  "2_con_algo_de_RN_n": 4432,
+  "2_pct_percentiles": {
+   "0.25": 0.0,
+   "0.5": 2.78,
+   "0.75": 36.45,
+   "0.9": 78.15,
+   "0.99": 100.0
+  },
+  "2_area_atipica_|z|>5_intraprovincial_n": 2,
+  "2_areas_extremas_ha": {
+   "min": [
+    "46117",
+    2.6
+   ],
+   "max": [
+    "10037",
+    175144.0
+   ]
+  },
+  "2_areas_<50ha_n": 4,
+  "2_suma_area_no_sellados_Mha": 39.979,
+  "2_suma_RN_no_sellados_Mha": 10.659,
+  "2_porcentaje_RN_sobre_area_no_sellados": 26.66,
+  "2_pct_RN_por_provincia_min_max": {
+   "min": [
+    "52",
+    3.6
+   ],
+   "max": [
+    "12",
+    45.4
+   ]
+  },
+  "2_municipios_frontera_exterior_(costa+frontera)_n": 576,
+  "2_exterior": {
+   "n": 576,
+   "pct_RN_mediana": 13.68,
+   "pct_RN_agregado": 32.17,
+   "con_RN_%": 86.5,
+   "pct=100_n": 4
+  },
+  "2_interior": {
+   "n": 5922,
+   "pct_RN_mediana": 2.24,
+   "pct_RN_agregado": 26.05,
+   "con_RN_%": 66.4,
+   "pct=100_n": 146
+  },
+  "2_nota_geometria": "polígonos INE 2025 terrestres (la parte marina de los sitios queda fuera); el área municipal no incluye aguas territoriales",
+  "2_referencia_MITECO_en_ficha": "No hay cifra de superficie Natura 2000 de MITECO en docs/v16/fuentes/oferta_suelo.md; solo suma de áreas municipales 50,4 Mha (ficha) frente a ~50,6 Mha de España. No verificada aquí: proporción terrestre publicada en torno al 27 % (NO VERIFICADA)."
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "Terceros (MITECO Red Natura): solo agregados propios.",
+  "La suma nacional no puede calcularse sin los municipios de la muestra sellada; se informa la de los no sellados."
+ ]
+}

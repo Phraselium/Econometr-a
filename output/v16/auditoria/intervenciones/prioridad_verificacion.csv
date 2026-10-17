@@ -1,0 +1,109 @@
+id,instrumento,cod_ine,fecha_efecto,verificacion,prioridad,motivo,rango
+VUT-MAD-RESIDE-2025,vut_regulacion,28079,2025-09-22,NO VERIFICADA (fuente secundaria: nota d,15,NO VERIFICADA; instrumento no fiscal con verificación incompleta,1
+VUT-VAL-MORATORIA-2024,vut_moratoria,46250,2024-05-28,NO VERIFICADA (resultado de búsqueda; pá,15,NO VERIFICADA; instrumento no fiscal con verificación incompleta,2
+AJD-09-2012-01-01,ajd,09,2012-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",9,peso CCAA 5; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,3
+AJD-13-2014-01-01,ajd,13,2014-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",9,peso CCAA 5; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,4
+ITP-09-2017-01-01,itp,09,2017-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",9,peso CCAA 5; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,5
+ITP-09-2025-01-01,itp,09,2025-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",9,peso CCAA 5; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,6
+ITP-09-2025-01-01-max,itp,09,2025-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",9,peso CCAA 5; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,7
+ITP-13-2014-01-01,itp,13,2014-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",9,peso CCAA 5; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,8
+AJD-01-2012-01-01,ajd,01,2012-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",8,peso CCAA 4; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,9
+AJD-10-2012-01-01,ajd,10,2012-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",8,peso CCAA 4; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,10
+ITP-01-2012-01-01,itp,01,2012-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",8,peso CCAA 4; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,11
+ITP-01-2012-01-01-max,itp,01,2012-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",8,peso CCAA 4; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,12
+ITP-10-2013-01-01,itp,10,2013-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",8,peso CCAA 4; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,13
+ITP-10-2023-01-01,itp,10,2023-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",8,peso CCAA 4; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,14
+AJD-04-2013-01-01,ajd,04,2013-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,15
+AJD-04-2020-01-01,ajd,04,2020-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,16
+AJD-09-2010-01-01,ajd,09,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 5; fecha de efecto aproximada,17
+AJD-12-2013-01-01,ajd,12,2013-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,18
+AJD-13-2010-01-01,ajd,13,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 5; fecha de efecto aproximada,19
+ITP-04-2016-01-01,itp,04,2016-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,20
+ITP-04-2016-01-01-max,itp,04,2016-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,21
+ITP-04-2022-01-01,itp,04,2022-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,22
+ITP-04-2022-01-01-max,itp,04,2022-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,23
+ITP-04-2023-01-01,itp,04,2023-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,24
+ITP-04-2023-01-01-max,itp,04,2023-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,25
+ITP-09-2010-01-01,itp,09,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 5; fecha de efecto aproximada,26
+ITP-09-2017-01-01-max,itp,09,2017-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 5; fecha de efecto aproximada,27
+ITP-12-2022-01-01,itp,12,2022-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,28
+ITP-12-2024-01-01,itp,12,2024-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,29
+ITP-13-2010-01-01,itp,13,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",7,peso CCAA 5; fecha de efecto aproximada,30
+AJD-01-2010-01-01,ajd,01,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",6,peso CCAA 4; fecha de efecto aproximada,31
+AJD-07-2013-01-01,ajd,07,2013-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",6,peso CCAA 2; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,32
+AJD-08-2012-01-01,ajd,08,2012-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",6,peso CCAA 2; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,33
+AJD-09-2010-07-01,ajd,09,2010-07-01,"SECUNDARIA (Ministerio de Hacienda, Trib",6,peso CCAA 5; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,34
+AJD-10-2010-01-01,ajd,10,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",6,peso CCAA 4; fecha de efecto aproximada,35
+ITP-01-2010-01-01,itp,01,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",6,peso CCAA 4; fecha de efecto aproximada,36
+ITP-01-2010-01-01-max,itp,01,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",6,peso CCAA 4; fecha de efecto aproximada,37
+ITP-07-2013-01-01,itp,07,2013-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",6,peso CCAA 2; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,38
+ITP-08-2012-01-01,itp,08,2012-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",6,peso CCAA 2; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,39
+ITP-09-2010-07-01,itp,09,2010-07-01,"SECUNDARIA (Ministerio de Hacienda, Trib",6,peso CCAA 5; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,40
+ITP-09-2013-08-01,itp,09,2013-08-01,"SECUNDARIA (Ministerio de Hacienda, Trib",6,peso CCAA 5; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,41
+ITP-10-2010-01-01,itp,10,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",6,peso CCAA 4; fecha de efecto aproximada,42
+AJD-01-2021-04-28,ajd,01,2021-04-28,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 4; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,43
+AJD-02-2016-01-01,ajd,02,2016-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,44
+AJD-04-2010-01-01,ajd,04,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 3; fecha de efecto aproximada,45
+AJD-05-2010-01-01,ajd,05,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 3; fecha de efecto aproximada,46
+AJD-06-2013-01-01,ajd,06,2013-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,47
+AJD-10-2013-08-06,ajd,10,2013-08-06,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 4; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,48
+AJD-10-2026-06-01,ajd,10,2026-06-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 4; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,49
+AJD-11-2012-01-01,ajd,11,2012-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,50
+AJD-12-2010-01-01,ajd,12,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 3; fecha de efecto aproximada,51
+AJD-14-2012-01-01,ajd,14,2012-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,52
+ITP-01-2021-04-28,itp,01,2021-04-28,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 4; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,53
+ITP-02-2016-01-01,itp,02,2016-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,54
+ITP-04-2010-01-01,itp,04,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 3; fecha de efecto aproximada,55
+ITP-04-2013-01-01,itp,04,2013-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto),56
+ITP-04-2013-01-01-max,itp,04,2013-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto),57
+ITP-05-2010-01-01,itp,05,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 3; fecha de efecto aproximada,58
+ITP-06-2013-01-01,itp,06,2013-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,59
+ITP-06-2013-01-01-max,itp,06,2013-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,60
+ITP-06-2018-01-01,itp,06,2018-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,61
+ITP-06-2018-01-01-max,itp,06,2018-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,62
+ITP-06-2019-01-01,itp,06,2019-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,63
+ITP-06-2024-01-01,itp,06,2024-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,64
+ITP-10-2013-08-06,itp,10,2013-08-06,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 4; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,65
+ITP-10-2026-06-01,itp,10,2026-06-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 4; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,66
+ITP-11-2011-01-01,itp,11,2011-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,67
+ITP-11-2012-01-01,itp,11,2012-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,68
+ITP-11-2012-01-01-max,itp,11,2012-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,69
+ITP-12-2010-01-01,itp,12,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 3; fecha de efecto aproximada,70
+ITP-14-2025-01-01,itp,14,2025-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",5,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha de efecto aproximada,71
+VUT-BCN-PEUAT-2017,vut_moratoria,08019,2017-03-06,"SECUNDARIA (Manual operatiu del PEUAT, A",5,instrumento no fiscal con verificación incompleta,72
+AJD-07-2010-01-01,ajd,07,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",4,peso CCAA 2; fecha de efecto aproximada,73
+AJD-08-2010-01-01,ajd,08,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",4,peso CCAA 2; fecha de efecto aproximada,74
+ITP-04-2012-05-01,itp,04,2012-05-01,"SECUNDARIA (Ministerio de Hacienda, Trib",4,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,75
+ITP-07-2010-01-01,itp,07,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",4,peso CCAA 2; fecha de efecto aproximada,76
+ITP-07-2013-01-01-max,itp,07,2013-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",4,peso CCAA 2; fecha de efecto aproximada,77
+ITP-08-2010-01-01,itp,08,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",4,peso CCAA 2; fecha de efecto aproximada,78
+ITP-12-2013-03-01,itp,12,2013-03-01,"SECUNDARIA (Ministerio de Hacienda, Trib",4,peso CCAA 3; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,79
+AJD-02-2010-01-01,ajd,02,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,80
+AJD-03-2010-01-01,ajd,03,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,81
+AJD-06-2010-01-01,ajd,06,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,82
+AJD-08-2016-06-01,ajd,08,2016-06-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 2; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,83
+AJD-11-2010-01-01,ajd,11,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,84
+AJD-11-2011-01-01,ajd,11,2011-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto),85
+AJD-14-2010-01-01,ajd,14,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,86
+AJD-17-2010-01-01,ajd,17,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,87
+ITP-02-2010-01-01,itp,02,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,88
+ITP-02-2016-01-01-max,itp,02,2016-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,89
+ITP-03-2010-01-01,itp,03,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,90
+ITP-06-2010-01-01,itp,06,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,91
+ITP-06-2010-01-01-max,itp,06,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,92
+ITP-08-2016-06-01,itp,08,2016-06-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 2; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,93
+ITP-11-2010-01-01,itp,11,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,94
+ITP-11-2011-01-01-max,itp,11,2011-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,95
+ITP-14-2010-01-01,itp,14,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,96
+ITP-17-2010-01-01,itp,17,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",3,peso CCAA 1; fecha de efecto aproximada,97
+AJD-03-2010-07-15,ajd,03,2010-07-15,"SECUNDARIA (Ministerio de Hacienda, Trib",2,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,98
+AJD-11-2016-12-15,ajd,11,2016-12-15,"SECUNDARIA (Ministerio de Hacienda, Trib",2,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,99
+AJD-14-2013-07-11,ajd,14,2013-07-11,"SECUNDARIA (Ministerio de Hacienda, Trib",2,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,100
+ITP-03-2010-07-15,itp,03,2010-07-15,"SECUNDARIA (Ministerio de Hacienda, Trib",2,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,101
+ITP-04-2012-05-01-max,itp,04,2012-05-01,"SECUNDARIA (Ministerio de Hacienda, Trib",2,peso CCAA 3; fecha exacta recogida por la fuente,102
+ITP-14-2013-07-11,itp,14,2013-07-11,"SECUNDARIA (Ministerio de Hacienda, Trib",2,peso CCAA 1; es un cambio de tipo (ancla de la fecha de efecto); fecha exacta recogida por la fuente,103
+AJD-15-foral,ajd,15,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",1,peso CCAA 1,104
+AJD-16-foral,ajd,16,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",1,peso CCAA 1,105
+ITP-15-foral,itp,15,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",1,peso CCAA 1,106
+ITP-16-foral,itp,16,2010-01-01,"SECUNDARIA (Ministerio de Hacienda, Trib",1,peso CCAA 1,107
+ITP-03-2010-07-15-max,itp,03,2010-07-15,"SECUNDARIA (Ministerio de Hacienda, Trib",0,peso CCAA 1; fecha exacta recogida por la fuente,108

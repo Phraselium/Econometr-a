@@ -60,3 +60,7 @@ Script: `src/v16/datos/tension_social.py` (determinista, SEED=20261010, sin red)
 - muestra_sellada_v6 = True en provincia, municipio y sección de las 11 provincias del holdout (22,8 % de las filas versionadas). Decisión conservadora: los partidos judiciales (nivel «partido_judicial», solo terceros) heredan la marca de su provincia aunque la regla no los nombre.
 - No se procesaron los otros dos libros del CGPJ (datos 2T-2026 y anual 2025 por órgano) ni las hojas de concursos, despidos, monitorios y verbales posesorios; fuera del encargo.
 - Los datos del CGPJ y del nomenclátor son de licencia dudosa: nada de ello entra en el parquet versionado.
+
+### Corrección tras la auditoría (17-10-2026)
+- 2025 por partido judicial se excluye del parquet de terceros. El bloque no reproduce la serie provincial ni la del TSJ: hay una celda anómala en Ribadavia (2.944 frente a 4 en 2024), y Castilla-La Mancha sale +58 % y la C. Valenciana −13 %. Para 2025 se usa la serie provincial. En 2013-2024 la suma de partidos cuadra con la provincial (output/v16/auditoria/tension_social/).
+- Los cuatro partidos sin cruce siguen descartados: Cangas de Narcea, Mao-Mahón, Villarcayo y Villarrobledo. Sus alias quedan para una revisión posterior.

@@ -1,0 +1,447 @@
+{
+ "rama": "v16/auditoria/demanda_internacional",
+ "pregunta": "¿Son coherentes los tipos del BdE, los índices de precios internacionales y los choques del BCE?",
+ "capa": "C4",
+ "datos": "data/processed/v16/demanda_internacional*.parquet; data/raw/{bde_tipos_hipotecas_nuevas,ecb_tipo_hipotecario_es,eurostat_hpi,bis_rpp,oecd_house_prices}.csv; data/raw/v16/demanda_internacional/bce_sorpresas",
+ "N": 174814,
+ "metodo": "mediana/MAD (|z|>5), correlación de tasas, diferencias medias, ventanas de signo opuesto, identidades contables",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "1_be1903_vs_be1904_total": {
+   "n": 284,
+   "periodo": [
+    "2003-01",
+    "2026-08"
+   ],
+   "dif_nivel_media": -0.0,
+   "dif_nivel_max_abs": 0.0045,
+   "corr_niveles": 1.0,
+   "corr_variacion": 1.0,
+   "dif_variacion_media": 0.0,
+   "dif_variacion_mad": 0.0,
+   "ventanas_signo_opuesto_>=3": [],
+   "max_abs_dif": 0.0045
+  },
+  "1_TEDR_v16_be1903_vs_raw_bde_tipos_DN_1TI2T0135": {
+   "max_abs_dif": 0.0,
+   "n_comunes": 284
+  },
+  "1_TEDR_BdE_vs_BCE_MIR_AAR_ES": {
+   "n": 284,
+   "periodo": [
+    "2003-01",
+    "2026-08"
+   ],
+   "dif_nivel_media": 0.008,
+   "dif_nivel_max_abs": 0.1553,
+   "corr_niveles": 0.9996,
+   "corr_variacion": 0.9993,
+   "dif_variacion_media": -0.0,
+   "dif_variacion_mad": 0.018,
+   "ventanas_signo_opuesto_>=3": []
+  },
+  "1_TAE_BdE_vs_BCE_MIR_AAR_ES": {
+   "n": 284,
+   "periodo": [
+    "2003-01",
+    "2026-08"
+   ],
+   "dif_nivel_media": 0.163,
+   "dif_nivel_max_abs": 0.4493,
+   "corr_niveles": 0.997,
+   "corr_variacion": 0.9973,
+   "dif_variacion_media": -0.004,
+   "dif_variacion_mad": 0.034,
+   "ventanas_signo_opuesto_>=3": []
+  },
+  "1_importes_suma_tramos_vs_total_be1911": {
+   "ratio_mediana": 1.0,
+   "ratio_min_max": [
+    0.99,
+    1.0012
+   ],
+   "be1911_vs_be1912_max_abs_dif": 25.0,
+   "be1911_vs_be1912_ratio_mediana": 1.0
+  },
+  "1_TEDR_total_vs_media_ponderada_de_tramos": {
+   "n": 284,
+   "dif_media_pp": 0.0,
+   "dif_max_abs_pp": 0.004,
+   "meses_|dif|>0.25pp": []
+  },
+  "1_NaN_por_tramo_TEDR": {
+   "hasta_1a": 0,
+   "1a_5a": 0,
+   "5a_10a": 0,
+   "mas_10a": 0
+  },
+  "1_cuota_importe_hasta_1a_mediana_por_tramo_de_anyos": {
+   "2003": 0.794,
+   "2008": 0.909,
+   "2012": 0.783,
+   "2016": 0.463,
+   "2019": 0.36,
+   "2022": 0.228,
+   "2024": 0.116,
+   "2025": 0.078
+  },
+  "1_atipicos_|z|>5_variacion_mensual": {
+   "hasta_1a": {
+    "n": 4,
+    "ejemplos": [
+     [
+      "2024-01",
+      9.3
+     ],
+     [
+      "2009-01",
+      8.9
+     ],
+     [
+      "2009-02",
+      6.9
+     ],
+     [
+      "2009-03",
+      5.1
+     ]
+    ]
+   },
+   "1a_5a": {
+    "n": 2,
+    "ejemplos": [
+     [
+      "2009-01",
+      6.2
+     ],
+     [
+      "2022-10",
+      5.5
+     ]
+    ]
+   },
+   "5a_10a": {
+    "n": 4,
+    "ejemplos": [
+     [
+      "2012-06",
+      7.5
+     ],
+     [
+      "2015-07",
+      6.5
+     ],
+     [
+      "2010-10",
+      5.8
+     ],
+     [
+      "2015-11",
+      5.1
+     ]
+    ]
+   },
+   "mas_10a": {
+    "n": 26,
+    "ejemplos": [
+     [
+      "2012-09",
+      17.3
+     ],
+     [
+      "2013-03",
+      11.3
+     ],
+     [
+      "2015-01",
+      10.4
+     ],
+     [
+      "2012-07",
+      10.3
+     ]
+    ]
+   },
+   "total": {
+    "n": 3,
+    "ejemplos": [
+     [
+      "2009-01",
+      9.9
+     ],
+     [
+      "2009-02",
+      7.3
+     ],
+     [
+      "2009-03",
+      5.3
+     ]
+    ]
+   },
+   "MIR_ECB": {
+    "n": 3,
+    "ejemplos": [
+     [
+      "2009-01",
+      10.9
+     ],
+     [
+      "2009-02",
+      8.2
+     ],
+     [
+      "2009-03",
+      6.1
+     ]
+    ]
+   },
+   "TAE_BdE": {
+    "n": 2,
+    "ejemplos": [
+     [
+      "2009-01",
+      9.1
+     ],
+     [
+      "2009-02",
+      6.5
+     ]
+    ]
+   }
+  },
+  "1_total_vs_excl_renegociaciones": {
+   "n": 141,
+   "periodo": [
+    "2014-12",
+    "2026-08"
+   ],
+   "dif_nivel_media": -0.0034,
+   "dif_nivel_max_abs": 0.1306,
+   "corr_niveles": 0.9991,
+   "corr_variacion": 0.9986,
+   "dif_variacion_media": 0.005,
+   "dif_variacion_mad": 0.011,
+   "ventanas_signo_opuesto_>=3": []
+  },
+  "1_huecos_be1903": [],
+  "1_huecos_ECB_MIR": [],
+  "2_OCDE_HPI_ES_vs_otras_tasas_interanuales": {
+   "Eurostat_TOTAL": {
+    "n": 79,
+    "periodo": [
+     "2006-Q4",
+     "2026-Q2"
+    ],
+    "corr_tasas": 0.9999,
+    "dif_media_pp": -0.004,
+    "dif_abs_mediana_pp": 0.058,
+    "dif_max_abs_pp": 0.36,
+    "trimestre_max_dif": "2006-Q4",
+    "ventanas_signo_opuesto_>=2": [],
+    "trimestres_|dif|>3pp": 0
+   },
+   "Eurostat_DW_EXST": {
+    "n": 79,
+    "periodo": [
+     "2006-Q4",
+     "2026-Q2"
+    ],
+    "corr_tasas": 0.9859,
+    "dif_media_pp": 0.717,
+    "dif_abs_mediana_pp": 0.49,
+    "dif_max_abs_pp": 5.64,
+    "trimestre_max_dif": "2008-Q3",
+    "ventanas_signo_opuesto_>=2": [],
+    "trimestres_|dif|>3pp": 7
+   },
+   "Eurostat_DW_NEW": {
+    "n": 79,
+    "periodo": [
+     "2006-Q4",
+     "2026-Q2"
+    ],
+    "corr_tasas": 0.948,
+    "dif_media_pp": -1.475,
+    "dif_abs_mediana_pp": 1.544,
+    "dif_max_abs_pp": 6.65,
+    "trimestre_max_dif": "2008-Q3",
+    "ventanas_signo_opuesto_>=2": [
+     [
+      "2008-Q2",
+      "2008-Q4",
+      3
+     ]
+    ],
+    "trimestres_|dif|>3pp": 23
+   },
+   "BIS_nominal": {
+    "n": 101,
+    "periodo": [
+     "2001-Q1",
+     "2026-Q1"
+    ],
+    "corr_tasas": 0.9961,
+    "dif_media_pp": 0.318,
+    "dif_abs_mediana_pp": 0.077,
+    "dif_max_abs_pp": 3.61,
+    "trimestre_max_dif": "2006-Q2",
+    "ventanas_signo_opuesto_>=2": [],
+    "trimestres_|dif|>3pp": 2
+   }
+  },
+  "2_OCDE_nivel_2015_media_vs_Eurostat_TOTAL_2015": [
+   100.0,
+   100.0
+  ],
+  "2_Eurostat_RCH_A_publicada_vs_recalculada": {
+   "n": 79,
+   "max_abs_dif_pp": 0.06
+  },
+  "2_BIS_variacion_publicada_vs_recalculada": {
+   "n": 101,
+   "max_abs_dif_pp": 0.0
+  },
+  "2_ultimo_periodo": {
+   "OCDE": "2026-Q2",
+   "Eurostat": "2026-Q2",
+   "BIS": "2026-Q1"
+  },
+  "2_OCDE_HPI_ES_atipicos_|z|>5_variacion_trimestral": [],
+  "2_oecd_antiguo_ES_HPI_filas": 106,
+  "2_OCDE_nuevo_vs_antiguo_ES_HPI": {
+   "n_comunes": 106,
+   "max_abs_dif": 0.0,
+   "ejemplo_idx": [
+    "2000-Q1",
+    "2000-Q2"
+   ]
+  },
+  "3_columnas_diario": [
+   "date",
+   "pc1",
+   "STOXX50",
+   "MP_pm",
+   "CBI_pm",
+   "MP_median",
+   "CBI_median"
+  ],
+  "3_columnas_mensual": [
+   "year",
+   "month",
+   "pc1_hf",
+   "STOXX50_hf",
+   "MP_pm",
+   "CBI_pm",
+   "MP_median",
+   "CBI_median"
+  ],
+  "3_JK_mensual_vs_suma_diarios": {
+   "pc1": {
+    "n_meses": 322,
+    "corr": 1.0,
+    "max_abs_dif": 0.0,
+    "meses_|dif|>1e-6": 0,
+    "ratio_pendiente": 1.0,
+    "max_abs_dif_con_media": 0.11218,
+    "meses_sin_reunion_con_mensual_distinto_de_0": 0
+   },
+   "STOXX50": {
+    "n_meses": 322,
+    "corr": 1.0,
+    "max_abs_dif": 0.0,
+    "meses_|dif|>1e-6": 0,
+    "ratio_pendiente": 1.0,
+    "max_abs_dif_con_media": 0.994629,
+    "meses_sin_reunion_con_mensual_distinto_de_0": 0
+   },
+   "MP_pm": {
+    "n_meses": 322,
+    "corr": 1.0,
+    "max_abs_dif": 0.0,
+    "meses_|dif|>1e-6": 0,
+    "ratio_pendiente": 1.0,
+    "max_abs_dif_con_media": 0.11218,
+    "meses_sin_reunion_con_mensual_distinto_de_0": 0
+   },
+   "CBI_pm": {
+    "n_meses": 322,
+    "corr": 1.0,
+    "max_abs_dif": 0.0,
+    "meses_|dif|>1e-6": 0,
+    "ratio_pendiente": 1.0,
+    "max_abs_dif_con_media": 0.095656,
+    "meses_sin_reunion_con_mensual_distinto_de_0": 0
+   },
+   "MP_median": {
+    "n_meses": 322,
+    "corr": 1.0,
+    "max_abs_dif": 0.0,
+    "meses_|dif|>1e-6": 0,
+    "ratio_pendiente": 1.0,
+    "max_abs_dif_con_media": 0.068284,
+    "meses_sin_reunion_con_mensual_distinto_de_0": 0
+   },
+   "CBI_median": {
+    "n_meses": 322,
+    "corr": 1.0,
+    "max_abs_dif": 0.0,
+    "meses_|dif|>1e-6": 0,
+    "ratio_pendiente": 1.0,
+    "max_abs_dif_con_media": 0.063551,
+    "meses_sin_reunion_con_mensual_distinto_de_0": 0
+   }
+  },
+  "3_reuniones_por_mes_max": 3,
+  "3_diario_filas_NaN": 0,
+  "3_identidad_MP+CBI=pc1_max_abs": {
+   "pm": 0.0,
+   "median": 0.0
+  },
+  "3_diario_pc1_atipicos_|z|>5_n": 18,
+  "3_diario_pc1_atipicos_top5": [
+   [
+    "2001-05-10",
+    -0.233,
+    -12.8
+   ],
+   [
+    "2008-11-06",
+    0.204,
+    11.1
+   ],
+   [
+    "2023-03-16",
+    0.201,
+    11.0
+   ],
+   [
+    "2001-04-11",
+    0.179,
+    9.8
+   ],
+   [
+    "2000-06-08",
+    0.168,
+    9.2
+   ]
+  ],
+  "3_EA-MPD_fechas_vs_JK_diario": {
+   "fechas_EA-MPD_ois_1y": 902,
+   "reuniones_JK": 312,
+   "comunes": 312
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": [
+  "EA-MPD (terceros) solo se usa para contar fechas comunes; no se reproducen valores.",
+  "Ningún efecto estimado."
+ ]
+}

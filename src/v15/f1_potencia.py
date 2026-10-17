@@ -233,6 +233,12 @@ def main() -> int:
     res = placebo_continuo(a, a.u.str[:2], rng)
     fila("P4", "Exposición continua placebo (shift-share), EF municipio y año", "serpavi €/m² VC", "municipio", a.u.nunique(), "50 provincias",
          4, res, "log puntos por 1 DT de exposición", "pendiente fase 2", "T = 4: la exposición por nacionalidad municipal solo existe 2021-2025.")
+    b = spm[spm.t <= "2022"]   # padrón municipal por nacionalidad 2003-2022 (auditoría de demografía): solape con SERPAVI 2011-2022
+    b = b[b.groupby("u").t.transform("count") >= 8]
+    res = placebo_continuo(b, b.u.str[:2], rng)
+    fila("P4", "Exposición continua placebo (shift-share con padrón 2003-2022), EF municipio y año", "serpavi €/m² VC", "municipio", b.u.nunique(),
+         "50 provincias", b.t.nunique(), res, "log puntos por 1 DT de exposición", "pendiente fase 2",
+         "Padrón por nacionalidad (28 países) 2003-2022 para toda España; SERPAVI desde 2011.")
     vs = panel("serpavi_alquiler_m2_mediana", "seccion", "A", "tipologia=VC", "territorio_codigo LIKE '46250%'", min_t=10)
     res = placebo_continuo(vs, vs.u.str[5:7], rng)
     fila("P4", "Exposición continua placebo por barrio (shift-share), EF sección y año", "serpavi €/m² VC", "sección (València)", vs.u.nunique(),

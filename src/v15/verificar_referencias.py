@@ -58,7 +58,7 @@ def crossref(doi: str, cache: dict, red: bool) -> dict | None:
             m = json.load(r)["message"]
     except urllib.error.HTTPError as e:
         if e.code == 404:
-            cache[doi] = datacite(doi) or {"existe": False, "consulta": dt.date.today().isoformat()}
+            cache[doi] = datacite(doi) or handle(doi) or {"existe": False, "consulta": dt.date.today().isoformat()}
             return cache[doi]
         raise
     a = m.get("author") or [{}]
@@ -85,6 +85,17 @@ def datacite(doi: str) -> dict | None:
             "revista": m.get("publisher", ""), "issn": [], "consulta": dt.date.today().isoformat()}
 
 
+def handle(doi: str) -> dict | None:
+    """Último recurso: el DOI existe en doi.org (otra agencia, p. ej. mEDRA) pero sin metadatos en Crossref ni DataCite."""
+    ag = "https://doi.org/ra/" + urllib.parse.quote(doi.split("/")[0])
+    with urllib.request.urlopen(urllib.request.Request("https://doi.org/api/handles/" + urllib.parse.quote(doi)), timeout=60) as r:  # noqa: S310
+        if json.load(r).get("responseCode") != 1:
+            return None
+    with urllib.request.urlopen(urllib.request.Request(ag), timeout=60) as r:   # noqa: S310
+        ra = (json.load(r) or [{}])[0].get("RA", "otra agencia")
+    return {"existe": True, "registro": ra, "consulta": dt.date.today().isoformat()}
+
+
 def scimago() -> list[dict]:
     if not SCIMAGO.exists():
         return []
@@ -105,6 +116,8 @@ def estado(cab: str, cr: dict | None, sj: list[dict]) -> str:
         return "NO VERIFICADA (sin DOI)"
     if not cr.get("existe"):
         return "DISCREPANTE (el DOI no existe en Crossref)"
+    if cr.get("registro") not in (None, "DataCite"):
+        return f"NO VERIFICADA (el DOI existe en doi.org, agencia {cr['registro']}, sin metadatos comparables)"
     problemas = []
     tit = cab.split(". ", 1)[1] if ". " in cab else cab
     ft, ct = _palabras(tit), _palabras(cr["titulo"])

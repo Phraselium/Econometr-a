@@ -54,11 +54,44 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.1016/j.jue.2020.103278": {
+  "existe": true,
+  "titulo": "Do short-term rental platforms affect housing markets? Evidence from Airbnb in Barcelona",
+  "primer_autor": "Garcia-López",
+  "anio": 2020,
+  "revista": "Journal of Urban Economics",
+  "issn": [
+   "0094-1190"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.jue.2021.103356": {
+  "existe": true,
+  "titulo": "Short-term rentals and the housing market: Quasi-experimental evidence from Airbnb in Los Angeles",
+  "primer_autor": "Koster",
+  "anio": 2021,
+  "revista": "Journal of Urban Economics",
+  "issn": [
+   "0094-1190"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.1016/j.regsciurbeco.2014.01.001": {
   "existe": true,
   "titulo": "Don't stand so close to me: The urban impact of immigration",
   "primer_autor": "Accetturo",
   "anio": 2014,
+  "revista": "Regional Science and Urban Economics",
+  "issn": [
+   "0166-0462"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.regsciurbeco.2021.103667": {
+  "existe": true,
+  "titulo": "The impact of Airbnb on residential property values and rents: Evidence from Portugal",
+  "primer_autor": "Franco",
+  "anio": 2021,
   "revista": "Regional Science and Urban Economics",
   "issn": [
    "0166-0462"
@@ -84,6 +117,41 @@
   "revista": "Regional Science and Urban Economics",
   "issn": [
    "0166-0462"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1016/j.regsciurbeco.2024.104007": {
+  "existe": true,
+  "titulo": "Airbnb and rental markets: Evidence from Berlin",
+  "primer_autor": "Duso",
+  "anio": 2024,
+  "revista": "Regional Science and Urban Economics",
+  "issn": [
+   "0166-0462"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1080/00343404.2026.2670360": {
+  "existe": true,
+  "titulo": "Housing versus home sharing: the causal impact of short-term rental regulation on residential rents",
+  "primer_autor": "Wachsmuth",
+  "anio": 2026,
+  "revista": "Regional Studies",
+  "issn": [
+   "0034-3404",
+   "1360-0591"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1080/17535069.2023.2179419": {
+  "existe": true,
+  "titulo": "Is the effect of Airbnb on the housing market different in medium-sized cities? Evidence from a Southern European city",
+  "primer_autor": "Mozo Carollo",
+  "anio": 2023,
+  "revista": "Urban Research &amp; Practice",
+  "issn": [
+   "1753-5069",
+   "1753-5077"
   ],
   "consulta": "2026-10-17"
  },
@@ -144,6 +212,18 @@
   "issn": [
    "0034-6527",
    "1467-937X"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.1111/1540-6229.12330": {
+  "existe": true,
+  "titulo": "Regulating short‐term rental housing: Evidence from New Orleans",
+  "primer_autor": "Valentin",
+  "anio": 2020,
+  "revista": "Real Estate Economics",
+  "issn": [
+   "1080-8620",
+   "1540-6229"
   ],
   "consulta": "2026-10-17"
  },
@@ -261,6 +341,23 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.12842/MESVAL_DT2022_05": {
+  "existe": true,
+  "registro": "mEDRA",
+  "consulta": "2026-10-17"
+ },
+ "10.1287/mksc.2020.1227": {
+  "existe": true,
+  "titulo": "The Effect of Home-Sharing on House Prices and Rents: Evidence from Airbnb",
+  "primer_autor": "Barron",
+  "anio": 2021,
+  "revista": "Marketing Science",
+  "issn": [
+   "0732-2399",
+   "1526-548X"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.1287/mnsc.2023.4775": {
   "existe": true,
   "titulo": "Forward to the Past: Short-Term Effects of the Rent Freeze in Berlin",
@@ -270,6 +367,17 @@
   "issn": [
    "0025-1909",
    "1526-5501"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.17561/ree.n2.2023.7827": {
+  "existe": true,
+  "titulo": "Effects of the supply reduction in the peer-to-peer market for tourist accommodation on the housing market",
+  "primer_autor": "Benítez-Aurioles",
+  "anio": 2023,
+  "revista": "Revista de Estudios Empresariales. Segunda Época",
+  "issn": [
+   "1988-9046"
   ],
   "consulta": "2026-10-17"
  },
@@ -303,6 +411,17 @@
   ],
   "consulta": "2026-10-17"
  },
+ "10.3982/ECTA21394": {
+  "existe": true,
+  "titulo": "Location Sorting and Endogenous Amenities: Evidence From Amsterdam",
+  "primer_autor": "Almagro",
+  "anio": 2025,
+  "revista": "Econometrica",
+  "issn": [
+   "0012-9682"
+  ],
+  "consulta": "2026-10-17"
+ },
  "10.4337/9780857934581.00010": {
   "existe": true,
   "titulo": "The effects of immigration on US wages and rents: a general equilibrium approach*",
@@ -310,6 +429,52 @@
   "anio": 2012,
   "revista": "Migration Impact Assessment",
   "issn": [],
+  "consulta": "2026-10-17"
+ },
+ "10.4995/jpeval.2026.25574": {
+  "existe": true,
+  "titulo": "Evaluating Municipal Responses to Touristification: The PEUAT in Barcelona",
+  "primer_autor": "Reina",
+  "anio": 2026,
+  "revista": "Journal of Policy Evaluation",
+  "issn": [
+   "3101-3805"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.53479/37872": {
+  "existe": true,
+  "titulo": "El mercado del alquiler de vivienda residencial en España: evolución reciente, determinantes e indicadores de esfuerzo",
+  "primer_autor": "Khametshin",
+  "anio": 2024,
+  "revista": "Documentos Ocasionales",
+  "issn": [
+   "1696-2230"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.54254/2754-1169/2026.34798": {
+  "existe": true,
+  "titulo": "The Unintended Consequences of Short-Term Rental Regulation: Evidence from New York City's Local Law 18",
+  "primer_autor": "Dong",
+  "anio": 2026,
+  "revista": "Advances in Economics, Management and Political Sciences",
+  "issn": [
+   "2754-1169",
+   "2754-1177"
+  ],
+  "consulta": "2026-10-17"
+ },
+ "10.6018/turismo.451881": {
+  "existe": true,
+  "titulo": "HABITABILIDAD Y AIRBNB: EL ALQUILER DE LA VIVIENDA EN EL DISTRITO CENTRO DE MADRID",
+  "primer_autor": "Martínez-Caldentey",
+  "anio": 2020,
+  "revista": "Cuadernos de Turismo",
+  "issn": [
+   "1989-4635",
+   "1139-7861"
+  ],
   "consulta": "2026-10-17"
  }
 }

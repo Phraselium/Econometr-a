@@ -3,7 +3,7 @@
  "pregunta": "Efecto mínimo detectable al 80 % por pregunta candidata (P1-P10)",
  "capa": "C4",
  "datos": "data/base/hechos.parquet (sin la muestra sellada de v6); output/v12/b6/ecv_anual_origen.csv",
- "N": 19,
+ "N": 20,
  "metodo": "aleatorización placebo, 500 réplicas, SEED=20261010; MDE80 = 2,8 × DT placebo; DM por simulación con bloques de 4",
  "estimacion": null,
  "ic95": null,

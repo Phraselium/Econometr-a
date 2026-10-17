@@ -148,3 +148,6 @@ data/manual/
 _deposito/
 # V13: registro de descargas de `make datos_terceros` (fechas; no versionado)
 data/descargas_terceros/
+# V16 fase 1: originales >50 MB (sha256 en data/CHECKSUMS.sha256) y series de terceros no redistribuibles o dudosas (solo en disco)
+data/raw/v16/*/_grandes/
+data/raw/v16/*/_terceros/

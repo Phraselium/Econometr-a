@@ -116,11 +116,20 @@ def causal() -> list[str]:
     return err
 
 
+def fuentes() -> list[str]:
+    """Registro de licencias de las fuentes nuevas (data/raw/v16/*/_manifest.csv; decisiones K5)."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("v16_f1_inventario", RAIZ / "src" / "v16" / "f1_inventario.py")
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m.revisar()[1]
+
+
 def main() -> int:
     total = 0
     for nombre, f in (("guardas", guardas), ("pre-registro interno", preregistro),
                       ("estimaciones posteriores a su etiqueta", estimaciones_tras_etiqueta), ("cifras V16", cifras_v16),
-                      ("lenguaje causal", causal)):
+                      ("lenguaje causal", causal), ("registro de fuentes", fuentes)):
         e = f()
         print(f"check_v16 · {nombre}: {len(e)} errores")
         for x in e[:30]:

@@ -49,11 +49,12 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F1 | adquisidor-datos | demanda_internacional | 140.999 | data/raw/v16/demanda_internacional;docs/v16/fuentes/demanda_internacional.md |
 | 2026-10-17 | F1 | adquisidor-datos | intervenciones | 240.498 | data/raw/v16/intervenciones;docs/v16/fuentes/intervenciones.md |
 | 2026-10-17 | F1 | adquisidor-datos | alquiler_turismo | 119.161 | data/raw/v16/alquiler_turismo;docs/v16/fuentes/alquiler_turismo.md |
+| 2026-10-17 | F1 | ingeniero-datos | datos_demanda_internacional | 61.558 | src/v16/datos/demanda_internacional.py;data/processed/v16/demanda_internacional.parquet |
 
 | Fase | Tokens de subagentes |
 |---|---|
-| F1 | 622.240 |
+| F1 | 683.798 |
 
-Total V16: 622.240 tokens
+Total V16: 683.798 tokens
 
 <!-- fin subagentes -->

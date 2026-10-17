@@ -114,3 +114,25 @@ Regla del coordinador aplicada: lo que tiene redistribuible «no» o «dudoso» 
 - Todos los ficheros nuevos se han descargado con el registro de la cabecera de agente y el checksum por fichero.
 - Ninguna fila de data/sealed se ha leído ni escrito. No se ha tocado ningún fichero fuera de data/raw/v16/demanda_internacional/ y docs/v16/fuentes/.
 - Tamaños: el mayor fichero versionable es oecd_house_prices_todos.csv.gz (~0,5 MB) y el mayor no versionable (_terceros) es el xlsx del BCE (~0,4 MB). No hay ficheros >50 MB.
+
+## Normalización
+
+Script: src/v16/datos/demanda_internacional.py (determinista, sin red). Salida versionable: data/processed/v16/demanda_internacional.parquet (174.814 filas, capa C4, redistribuible = True). Terceros: data/processed/v16/demanda_internacional_terceros.parquet (33.719 filas de EA-MPD, redistribuible = False, NO se versiona; el script no falla si el libro no existe). Diccionario: docs/v16/fuentes/demanda_internacional_variables.csv. Test: tests/v16/test_datos_demanda_internacional.py.
+
+Decisiones
+- posterior_prereg = False en todas las filas: el corte de V16 aún no está fijado. muestra_sellada_v6 = False en todas: no hay niveles provincia o inferior.
+- Niveles no INE: «pais» (ISO-2), «zona_euro» (EA) y «agregado_ue» (EA18-EA21, EU, EU27_2007, EU27_2020, EU28 de Eurostat). España en BdE e INE: nacional, código 00.
+- Periodos: M «AAAA-MM», T «AAAAT#», A «AAAA», D fecha ISO (reunión del Consejo de Gobierno); fecha_dato = fin del periodo.
+- Cruces por código: OCDE ISO-3 a ISO-2 con tabla explícita del script (38 de 38 áreas, todas únicas). Eurostat: EL a GR y UK a GB; XK (Kosovo) se conserva tal cual.
+
+Rupturas
+- BdE: la clasificación es por periodo inicial de fijación, no fijo/variable; «hasta 1 año» solo aproxima variable. Hay dos totales (be1903/be1904 e importes be1911/be1912) con sufijo de tabla; no se fusionan.
+- INE ETDP: mensual (50256, desde 2007-01) y anual (50272, 2007-2025) comparten variable y se distinguen por frecuencia. Supuesto: el orden del título de la serie es «transmitente. titular».
+- Eurostat ilc_lvho07a: las marcas de calidad (b ruptura de serie, u poco fiable, e estimado, p provisional) se conservan en metodo_dato; los agregados de zona euro cambian de composición (EA18 a EA21).
+- OCDE: serie desestacionalizada (ajuste S) base 2015 = 100; las ratios vs media de largo plazo tienen unidad propia. Sin interpolaciones.
+- JK: el CSV no declara unidad; muestra hasta 2025-10-30. EA-MPD: ventanas horarias distintas desde julio 2022 (nota del libro); fechas del libro en dos formatos (datetime y dd/mm/aaaa).
+
+Descartes
+- Celdas vacías: BdE 568, Eurostat 175, EA-MPD NaN de ventanas sin cotización; no se rellenan.
+- jk_shocks_median.zip (terceros, dudoso) no se procesa; sigue pendiente su contraste con el CSV del repositorio.
+- Sin series de golden visa ni de Registradores/Notariado (sin fichero en disco).

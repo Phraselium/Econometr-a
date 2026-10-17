@@ -1,0 +1,8 @@
+{
+ "rama": "v16-f1-datos-demanda_internacional",
+ "pregunta": "Normalización al formato largo: choques BCE (JK; EA-MPD en terceros), BdE nuevas operaciones por periodo de fijación, INE ETDP por titular, OCDE precios analíticos, Eurostat sobrecarga de vivienda",
+ "capa": "C4",
+ "N": 174814,
+ "metodo": "normalización",
+ "notas": "N_terceros=33719 (no versionado, redistribuible=False). posterior_prereg=False porque el corte de V16 no está fijado. Sin datos de provincia o inferior: muestra_sellada_v6 = False en todas las filas. Descartes: celdas vacías del BdE, Eurostat y EA-MPD; zip JK de terceros no procesado."
+}

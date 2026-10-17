@@ -14,7 +14,7 @@
 - literatura, metaanálisis y marco de cuatro cuadrantes (fase 3; docs/v16/literatura.md, output/v16/f3/);
 - potencia con tratamientos placebo independientes del resultado (output/v16/potencia/).
 
-Lo ya visto de V5-V15, con sus cifras, está en docs/v16/lo_ya_visto.md: todo él es informativo. Cualquier desviación irá a metodologia/desviaciones_v16.md con su motivo.
+Lo ya visto de V5-V15, con sus cifras, está en docs/v16/lo_ya_visto.md: todo él es informativo. Cualquier desviación irá a docs/v16/desviaciones.md (publicado en metodologia/desviaciones_v16.md con make publicacion) con su motivo.
 
 ## 0. Reglas comunes
 - **Capas.** C1, C2, C3, C3s y C4 (metodologia/capas.md); nunca se promueve de capa. Solo C3 y C3s admiten lenguaje causal; por debajo se habla de asociación.

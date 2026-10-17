@@ -57,3 +57,12 @@ adquisidor-datos, ingeniero-datos, replicador-ciego y redactor (sonnet), abogado
   - Las preguntas de V16 se diseñan con el resto de provincias. Los totales de CCAA de esas comunidades no se usan como sustituto de sus provincias en una validación provincial: duplican la información sellada.
   - sellar_v16 (fase 4) no vuelve a sellar esas provincias: elige su bloque espacial nuevo entre las 39 restantes.
 - **Origen.** La auditoría de alquiler_turismo (output/v16/auditoria/alquiler_turismo) lo detectó al no encontrar filas no selladas de Madrid, Canarias ni Baleares.
+
+## K9. Pre-registro V16: nada confirmatorio y todo C4 como máximo (17-10-2026)
+- **Origen.** La potencia con placebos (output/v16/potencia) y dos revisiones independientes (revisor-preregistro: «aprobar con cambios»; abogado-del-diablo: «no resiste» en la primera redacción).
+- **Decisión.** El documento final es docs/v16/preregistro_v16.md más su adenda vinculante.
+  - V16 no añade hipótesis confirmatorias y todo V16 es C4 como máximo: en entrenamiento no se pasa de C4 y la lista de parejas de triangulación válidas está vacía.
+  - Hay dos ramas de control de falsos descubrimientos: 21 pruebas de diseños y 83 celdas de una rejilla fija.
+  - Las especificaciones principales y las magnitudes de referencia son numéricas y quedan fijadas, con una holgura del 20 %.
+  - El código de holdout impide abrir datos de V15 antes de su evaluación.
+- **Desviación del plan.** Está en docs/v16/desviaciones.md (D1).

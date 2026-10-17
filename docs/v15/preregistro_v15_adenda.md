@@ -138,3 +138,84 @@ H1 36 · H2 36 · H3 48 · H4 64 · H5 60 · E1 36 · E2 24 · E3 12 · E4 24 = 
 | H3 | C4 | Asociación pre-registrada |
 | H5 | — | Predictiva (K1 y MCS) |
 | E1-E4 | C4 | Exploratorias, BH por familia |
+
+---
+
+# Adenda 2 (encargo del autor, 2026-10-17; antes del depósito y de cualquier estimación; vinculante)
+
+## A. Lo ya visto y qué es confirmatorio
+
+### H1 y H2: lo que ya estimó V9-D1 (output/v5/cifras_clave.csv; todas C4)
+
+| Diseño V9 | Resultado | Ventana | Pruebas |
+|---|---|---|---|
+| D1a, zonas tensionadas (Ley 12/2023), renta de contratos nuevos (Incasòl) | ATT (CS) −5,8 % (−8,5 a −3,2) [V9-D1a-renta-att]; p de Holm de V9 < 0,001 [V9-D1a-renta-pholm] | 2022T2-2026T1 | **No superadas:** pretendencias p = 0,0004 [V9-D1a-renta-pretend-p]; placebo de fecha p = 0,007 [V9-D1a-renta-placebo-p]; Honest DiD M̄ de ruptura 0,2 [V9-D1a-renta-ruptura] |
+| D1a, número de contratos nuevos | ATT −6,2 % (−13,2 a 0,7) [V9-D1a-contratos-att] | 2022T2-2026T1 | Pretendencias p = 0,03 [V9-D1a-contratos-pretend-p] (no superada); placebo p = 0,61; M̄ de ruptura 0 |
+| D1b, topes de la Ley 11/2020, renta de contratos nuevos | −5,9 % (−7,3 a −4,4) [V9-D1b-renta-att] | 2019T1-2022T1 | Pretendencias p = 0,28 y placebo p = 0,41 (superadas); Honest DiD M̄ de ruptura 0,5 (no llega a 1) |
+| D1b, número de contratos | −1,3 % (−7,0 a 4,4) [V9-D1b-contratos-att] | 2019T1-2022T1 | Pretendencias y placebo superados; M̄ de ruptura 0 |
+
+**Consecuencia.** V9-D1a ya usó **todo** Incasòl hasta 2026T1, incluidos los trimestres de 2024 a 2026T1 posteriores a la declaración y todos los municipios catalanes. También usó los que hoy forman el bloque espacial de V15. Los periodos 2024-2026 que hay en el repositorio **ya están vistos** para H1 y H2: no son nuevos.
+
+### H4: lo que ya estimó V9-D4 (todas C4)
+
+| Diseño V9 | Resultado | Ventana | Pruebas |
+|---|---|---|---|
+| 2SLS shift-share provincial, IPC de alquiler, réplica | 0,72 por punto de población extranjera (−0,82 a 2,26) [V9-D4-ipc-replica] | 2003-2012 | F efectiva 4,6 [V9-D4-ipc-replica-F]: instrumento débil |
+| Ídem, ampliación | 1,53 (−1,36 a 4,41) [V9-D4-ipc-ampliacion] | 2015-2022 | F efectiva 2,8 |
+| 2SLS shift-share provincial, valor tasado, réplica | −0,29 (−2,72 a 2,15) [V9-D4-tasado-replica] | 2003-2012 | F efectiva 3,7 |
+| Ídem, ampliación | 12,9 (−1,5 a 27,2) [V9-D4-tasado-ampliacion] | 2015-2022 | F efectiva 3,4 |
+
+**Consecuencia.** V9-D4 era provincial y con IPC y valor tasado; H4 es municipal y con SERPAVI. El diseño es nuevo, pero los datos no:
+- SERPAVI municipal 2011-2024 y el censo anual 2021-2025 ya se usaron en análisis descriptivos (V3, V6, V10 y V12);
+- el padrón municipal por nacionalidad 2003-2022, en V12-B1.
+
+### Qué es confirmatorio y cómo se separa
+Solo es confirmatorio **lo que nadie ha visto todavía**:
+
+| Hipótesis | Confirmatorio | Informativo (ya visto) |
+|---|---|---|
+| H1, H2 | Trimestres de Incasòl posteriores al corte (2026T2 en adelante; bloque temporal sellado). El bloque espacial de V15 es informativo, porque V9-D1a ya lo vio | Estimación de entrenamiento 2022T2-2026T1, que repite la ventana de V9-D1a con otro diseño (CS con cohorte aún no tratada y SDID; adenda 1, puntos 1, 2 y 6) |
+| H4 | Evaluación temporal 2022→2025, con SERPAVI 2025 publicado después del corte (adenda 1, punto 4). Réplica en el bloque espacial de V15: pre-registrada, pero no es condición de C3, porque SERPAVI de esos municipios ya se vio en análisis descriptivos | Estimación de entrenamiento 2011-2022 |
+| H3 | Ninguna parte confirmatoria; asociación pre-registrada | Entrenamiento 2021-2024; evaluación con SERPAVI 2025 y el bloque espacial, como réplicas |
+| H5 | Los 4 trimestres o más de valor tasado posteriores al corte (2026T3 en adelante) | Errores recursivos 2008-2026T2, vistos desde v1 |
+
+**Separación en la estimación.**
+1. La fase 4 estima solo con data/processed/v15 (entrenamiento): fija la especificación, los pesos de SDID, la cohorte de control y las covariables, y las congela en metodologia/especificaciones_congeladas_v15.json **antes** de la primera apertura sellada.
+2. evaluate_v15 abre el bloque temporal una sola vez por clave (`H1-temporal`, `H2-temporal`, `H4-temporal`, `H5-temporal`) y aplica la especificación congelada:
+   - en H1 y H2, el ATT solo en los trimestres nuevos, con los pesos y el preperiodo de entrenamiento;
+   - en H4, la diferencia larga 2022→2025;
+   - en H5, los errores fuera de muestra en los trimestres nuevos.
+3. **La familia de Holm {H1, H2, H4} se aplica a los p de la evaluación sellada temporal**, no a los de entrenamiento. Los resultados de entrenamiento se publican como **informativos** (sin Holm confirmatorio) y con la etiqueta «ventana ya vista en V9». Esto sustituye la frase «qué p entra» del punto 5 de la adenda 1, que pasa a referirse a la evaluación sellada.
+4. **Capa C3** solo con la evaluación temporal superada (adenda 1, punto 3). Los resultados de entrenamiento no pueden pasar de C4, por mucho que superen las pruebas.
+
+## B. Donantes de otras comunidades con el IPVA (H1 y H2)
+- **¿Se valoró?** No antes de esta adenda: el pre-registro solo contemplaba donantes catalanes, porque Incasòl solo cubre Cataluña y la renta de contratos nuevos no tiene equivalente municipal en el resto de España.
+- **¿Es factible?** Sí, con limitaciones. Recuento con la base de entrenamiento, sin mirar resultados:
+  - el IPVA municipal (INE 59060, total, índice anual 2011-2024) cubre 528 municipios fuera de las provincias de v6;
+  - de ellos, 125 son catalanes, 124 están tratados (zonas tensionadas en Cataluña, País Vasco, Navarra, Galicia o Asturias) y 382 están en provincias sin ninguna zona tensionada.
+- **Limitaciones** (por eso es robustez y no diseño principal):
+  - (i) el IPVA mide el stock de contratos vigentes, no los nuevos, así que el efecto se diluye;
+  - (ii) es anual y la declaración llega en marzo de 2024, de modo que 2024 mezcla tres meses previos;
+  - (iii) solo 2024 es posterior en el repositorio; 2025 llega después del corte (sellado);
+  - (iv) es otra medida y otra fuente que Incasòl: no se combinan.
+- **Robustez pre-registrada R-IPVA** (no se estima ahora):
+  - SDID anual municipal; resultado log del IPVA total;
+  - tratados: municipios con zona tensionada vigente en 2024 (cualquier comunidad);
+  - donantes: municipios de provincias sin zona tensionada hasta el último dato;
+  - preperiodo 2015-2023, sin 2020-2022 de Cataluña en robustez (topes de la Ley 11/2020); posterior 2024 en entrenamiento.
+  - Evaluación sellada (clave `R-IPVA-temporal`, informativa) con el IPVA 2025.
+  - Errores por provincia con bootstrap salvaje de Webb.
+  - Familia BH de robustez de H1. Multiverso: 2 preperiodos × 2 conjuntos de donantes (todas las provincias sin zona tensionada, o las limítrofes de las comunidades tratadas) = 4 especificaciones, dentro de la holgura de 68 de la adenda 1.
+
+## C. Calendario de la evaluación sellada temporal
+Fechas esperadas estimadas con los retrasos observados en el repositorio. Por ejemplo, Incasòl actualizó 2026T1 el 2026-07-30 (rowsUpdatedAt de Socrata), y el IPVA 2024 se publicó en mayo de 2026. No hay calendario oficial versionado: son estimaciones, se revisan al ingresar cada dato (solo a través de src/v15/f3_sellado.py) y cada ingreso queda en el registro de accesos.
+
+| Hipótesis | Publicaciones necesarias (mínimo de la adenda 1) | Fecha esperada de cada una | Primera fecha posible de la evaluación |
+|---|---|---|---|
+| H1, H2 | Incasòl 2026T2 y 2026T3 (2 trimestres nuevos) | 2026T2 hacia nov. 2026; 2026T3 hacia feb. 2027 (≈ 4 meses tras el trimestre) | **≈ marzo de 2027** |
+| H4 | SERPAVI 2025 (municipal) y censo anual a 1-1-2026 (crecimiento extranjero 2022→2025) | Censo anual 1-1-2026: hacia dic. 2026-jun. 2027. SERPAVI 2025: hacia el segundo semestre de 2027 (2024 estaba disponible en oct. 2026) | **≈ último trimestre de 2027**; riesgo de no llegar al 31-12-2027, y entonces «no evaluable, no C3» |
+| H3 (réplica, no confirmatoria) | SERPAVI 2025 y ediciones del INE VUT de 2025-2026 | INE VUT: ediciones de nov. 2026 y mayo de 2027; SERPAVI: como H4 | ≈ último trimestre de 2027 |
+| H5 | Valor tasado MIVAU 2026T3-2027T2 (4 trimestres) y sus indicadores (compraventas, hipotecas, visados) | Retraso ≤ 3,5 meses (2026T2 disponible en oct. 2026): 2027T2 hacia sept.-oct. 2027 | **≈ octubre de 2027** |
+| R-IPVA (robustez) | IPVA 2025 (municipal) | Hacia mayo de 2027 | ≈ junio de 2027 |
+
+**Fecha límite.** El 31-12-2027 (adenda 1, punto 3). Lo que no se haya podido evaluar entonces se declara «no evaluable» y no alcanza C3.

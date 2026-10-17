@@ -50,6 +50,13 @@ Plan: docs/v15/plan.md (íntegro). Versión pública vigente: 1.0. V15 solo aña
   - `make check` en solitario: 440 pasados; solo el aviso del hash; check_v15 sin errores; git sin cambios.
   - Etiqueta local prereg-v15 y texto para OSF en tareas_autor.md.
 
+- **Antes del depósito** (encargo del autor, 2026-10-17):
+  - contaminación v6: docs/v15/contaminacion_v6.md, todos los casos sin efecto, marca en la base y control en make check (G7);
+  - 11 cifras C1 bajan a C4 con valores intactos; controles de cifras por valores (G8);
+  - metadatos de la base corregidos; make publicacion y make web (docs/v15/cambios_publicacion_web.md);
+  - adenda 2: lo ya visto (V9-D1 y V9-D4), confirmatorio solo lo no visto, robustez R-IPVA y calendario de la evaluación sellada;
+  - potencia y sellado recalculados.
+
 ## Siguiente
 - **PARADA en la puerta.** Las fases 4 y 5 esperan a que el autor deposite en OSF y ponga `osf_prereg_v15` en proyecto.json.
 - Al reanudar:

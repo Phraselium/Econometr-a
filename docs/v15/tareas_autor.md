@@ -11,3 +11,9 @@ Pendiente de la fase 3: registro del pre-registro en OSF y `osf_prereg_v15` en p
   - el periodo de `obra_nueva_neta_catastro` está desplazado un año;
   - la base de `ipc_alquiler_indice` es 2025=100, no 2021=100;
   - la unidad y la fuente de `permisos` (índice de Eurostat) están mal declaradas.
+- **Cuartiles Scimago** (descarga no automatizable: Cloudflare; docs/v6/fuentes_fallidas.md).
+  1. Descargue el ranking de 2024 desde https://www.scimagojr.com/journalrank.php («Download data»).
+  2. Deje en docs/v15/scimago_cuartiles.csv solo las revistas citadas en docs/v15/literatura/, con las columnas revista, issn, cuartil, categoria, anio_scimago y fecha_consulta.
+  3. `python3 src/v15/verificar_referencias.py --sin-red` rellenará los cuartiles.
+
+  Mientras tanto, todas las referencias con DOI quedan «VERIFICADA (Crossref; cuartil no verificado)».

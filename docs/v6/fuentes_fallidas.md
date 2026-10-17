@@ -19,3 +19,10 @@ Cada entrada: fuente, endpoint probado, edición, fecha de la prueba y error.
 - Endpoint: https://datos.gob.es/apidata/catalog/dataset (OPI: residentes con certificado o tarjeta; personas ucranianas con documentación). Error: 403 Incapsula, un intento (verificado 2026-10-16). Alternativa: réplica de la Comunidad de Madrid (provincia 28) y sustituto ECP/censo/padrón.
 - Endpoint: https://www.valencia.es/estadistica/Padron/2014/Padron2014.pdf (y Cast/Val). Error: 404, edición 2014 no publicada (verificado 2026-10-16). Alternativa: Pob_estrangera_2014.pdf y padrón INE.
 - Endpoint: https://www.valencia.es/estadistica/Padron/AltasBajas/<A>/AltasBajasPadron<A>.pdf, 2017-2026. Error: 404 (verificado 2026-10-16). Alternativa: EVR/EMCR del INE por municipio.
+
+## V15, fase 2 (2026-10-17)
+
+- **Scimago, ranking anual.** Endpoints: https://www.scimagojr.com/journalrank.php?out=xls&year=2024 y https://www.scimagojr.com/journalsearch.php?q=<ISSN>.
+  - Error: 403, desafío de Cloudflare («Just a moment...») con dos intentos, también con cabecera de navegador (verificado 2026-10-17).
+  - Consecuencia: docs/v15/scimago_cuartiles.csv no se puede generar de forma automática, y las referencias quedan «cuartil no verificado».
+  - Alternativa: descarga manual del autor (tareas_autor.md).

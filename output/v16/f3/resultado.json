@@ -1,0 +1,31 @@
+{
+ "rama": "v16-f3-metaanalisis",
+ "pregunta": "Distribuciones a priori por instrumento desde la literatura leída",
+ "capa": "C4",
+ "datos": [
+  "docs/v16/literatura/L1_control_alquileres_efectos.csv",
+  "docs/v16/literatura/L2_vivienda_turistica_regulacion_efectos.csv",
+  "docs/v16/literatura/L3_oferta_elasticidad_efectos.csv",
+  "docs/v16/literatura/L4_fiscalidad_compra_efectos.csv",
+  "docs/v16/literatura/L5_ayudas_demanda_efectos.csv",
+  "docs/v16/literatura/L6_extranjeros_golden_visa_efectos.csv",
+  "docs/v16/literatura/L7_vivienda_publica_vacias_efectos.csv"
+ ],
+ "N": 173,
+ "metodo": "efectos aleatorios DL y REML; Egger, PET-PEESE",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "grupos": 89,
+  "con_metaanalisis": 0,
+  "metaanalisis": []
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Fichas NO VERIFICADAS y casi todas leídas en resumen; priors orientativos, no hallazgos."
+}

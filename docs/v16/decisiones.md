@@ -41,3 +41,10 @@ adquisidor-datos, ingeniero-datos, replicador-ciego y redactor (sonnet), abogado
 - **EMCR y EVR** tienen una ruptura de nivel en 2021 (inmigración exterior ×1,31, emigración ×1,56): no se empalman.
 - **Partidos judiciales del CGPJ en 2025:** excluidos (fuentes/tension_social.md).
 - **Intervenciones:** 78 de 105 fechas fiscales son aproximadas (1 de enero). Se usan solo con resolución anual, y en Q6 la fecha exacta de la ley autonómica entra como robustez.
+
+## K7. Regla del metaanálisis (fase 3), fijada antes de ejecutarlo
+- **Unidad de análisis:** un estudio aporta una estimación, la primera que anotó el lector, y nunca se elige la más favorable. El error estándar es el del autor o el derivado de su IC 95 %; nunca se imputa.
+- **Cuándo hay metaanálisis:** solo con al menos 5 estudios con error estándar y la misma unidad.
+- **Métodos:** efectos aleatorios DL y REML; Egger, PET y PEESE, con aviso si k < 10.
+- **Resultado:** con la literatura leída (6 instrumentos, 69 grupos), ningún grupo llega al mínimo. La fase 6 usará distribuciones a priori poco informativas, centradas en cero, con la escala que sugiere el rango de la literatura de diseño creíble. Esta conclusión se declara en el pre-registro de V16 y no se rebaja el umbral para obtener un agregado.
+- **Corrección de entrada:** en L3_oferta_elasticidad_efectos.csv, dos filas tenían una coma sin comillas («Asquith, Mast y Reed»). Se repararon uniendo los dos campos, y el script ahora para si un CSV tiene filas de distinta longitud.

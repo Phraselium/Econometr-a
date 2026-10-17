@@ -58,12 +58,13 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F3 | lector-literatura | L1_control_alquileres | 270.191 | docs/v16/literatura/L1_control_alquileres.md |
 | 2026-10-17 | F1 | auditor-datos | auditoria_lote1 | 190.358 | output/v16/auditoria;src/v16/auditoria |
 | 2026-10-17 | F3 | lector-literatura | L4_fiscalidad_compra | 133.818 | docs/v16/literatura/L4_fiscalidad_compra.md |
+| 2026-10-17 | F3 | lector-literatura | L5_ayudas_demanda | 129.764 | docs/v16/literatura/L5_ayudas_demanda.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F1 | 1.346.686 |
-| F3 | 552.165 |
+| F3 | 681.929 |
 
-Total V16: 1.898.851 tokens
+Total V16: 2.028.615 tokens
 
 <!-- fin subagentes -->

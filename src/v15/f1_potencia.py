@@ -251,6 +251,12 @@ def main() -> int:
     fila("P5", "Exposición continua placebo (densidad HUT), EF sección y año", "serpavi €/m² VC", "sección (Barcelona)", bs.u.nunique(),
          f"{bs.u.str[5:7].nunique()} distritos", bs.t.nunique(), res, "log puntos por 1 DT", "pendiente fase 2",
          "La exposición HUT es por barrio (73): agrupar por barrio; con 10 distritos, la tasa de rechazo indica si sirve.")
+    sn = panel("serpavi_alquiler_m2_mediana", "seccion", "A", "tipologia=VC", "periodo >= '2021'")
+    sn = sn[sn.groupby("u").t.transform("count") == 4]
+    res = placebo_continuo(sn, sn.u.str[:5], rng)
+    fila("P5", "Exposición continua placebo (% de viviendas turísticas INE por sección), EF sección y año", "serpavi €/m² VC",
+         "sección (España)", sn.u.nunique(), f"{sn.u.str[:5].nunique()} municipios", 4, res, "log puntos por 1 DT", "pendiente fase 2",
+         "Exposición oficial con código INE (VUT experimental 2020-2026); T = 4 (2021-2024).")
     cv = spm[spm.u.str[:2].isin(["03", "12", "46"]) & (spm.t >= "2015")]
     cv = cv[cv.groupby("u").t.transform("count") >= 8]
     res = placebo_continuo(cv, cv.u, rng)

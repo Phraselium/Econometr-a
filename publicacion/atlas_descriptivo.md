@@ -6,7 +6,7 @@ Generado por `make atlas` (src/v10/atlas_texto.py) desde las tablas de output/v1
 
 ## Hallazgos
 
-- **Sobrecarga del gasto en vivienda (>40 % de la renta).** En 2025 afecta al 26,8 % [V10-ATL-A1] de las personas que viven de alquiler a precio de mercado (IC 95 %: 24,4-29,2), frente al 7,2 % [V10-ATL-A2] del conjunto de la población. En 2018, la cifra de los inquilinos de mercado era del 38,1 % [V10-ATL-A3]. *Capa C1; INE ECV (microdatos) con contraste con Eurostat; renta del año anterior a la encuesta.* **Cómo leerlo:** la caída no indica que alquilar sea más asequible para quien entra ahora. La ECV mide a todos los inquilinos, en su mayoría con contratos firmados hace años; compara el alquiler actual con la renta del año anterior; y el periodo coincide con subidas salariales. Para quien firma un contrato nuevo, la renta de los contratos nuevos subió un 28,5 % en la Comunitat Valenciana (2021-2024) [A23-A10; capa C1] y un 16,9 % en Cataluña (2021-2024) [A23-A9; capa C1].
+- **Sobrecarga del gasto en vivienda (>40 % de la renta).** En 2025 afecta al 26,8 % [V10-ATL-A1] de las personas que viven de alquiler a precio de mercado (IC 95 %: 24,4-29,2), frente al 7,2 % [V10-ATL-A2] del conjunto de la población. En 2018, la cifra de los inquilinos de mercado era del 38,1 % [V10-ATL-A3]. *Capa C4; INE ECV (microdatos); el contraste con Eurostat es la misma encuesta, no una fuente independiente; renta del año anterior a la encuesta.* **Cómo leerlo:** la caída no indica que alquilar sea más asequible para quien entra ahora. La ECV mide a todos los inquilinos, en su mayoría con contratos firmados hace años; compara el alquiler actual con la renta del año anterior; y el periodo coincide con subidas salariales. Para quien firma un contrato nuevo, la renta de los contratos nuevos subió un 28,5 % en la Comunitat Valenciana (2021-2024) [A23-A10; capa C1] y un 16,9 % en Cataluña (2021-2024) [A23-A9; capa C1].
 - **Por renta.** La sobrecarga del 40 % alcanza al 43,8 % [V10-ATL-A4] de las personas del primer decil de renta equivalente y al 0,1 % [V10-ATL-A5] del décimo (2025). *Capa C4; INE ECV.*
 - **Por nacionalidad.** 24,1 % [V10-ATL-A6] de las personas con nacionalidad de fuera de la UE viven en hogares con sobrecarga del 40 %, frente al 4,7 % [V10-ATL-A7] de las de nacionalidad española (2025; IC 95 % 20,6-27,5 y 4,4-5,0). *Capa C4; INE ECV.*
 - **Esfuerzo de alquiler por edad.** El alquiler anual mediano equivale al 21,1 % [V10-ATL-A8] de la renta del hogar para las personas de 18 a 29 años que alquilan a precio de mercado y al 21,5 % [V10-ATL-A9] para las de 45 a 64 (2025; IC de Woodruff 19,8-23,2 y 20,5-22,9). *Capa C4; INE ECV.*
@@ -25,7 +25,7 @@ Generado por `make atlas` (src/v10/atlas_texto.py) desde las tablas de output/v1
 |---|---|---|
 | a_quien_ecv.csv | 4939 | ECV 2018-2025: sobrecarga, esfuerzo, hacinamiento y tenencia por grupo, con IC 95 % |
 | a_quien_epa.csv | 824 | EPA 2018-2026T2: jóvenes que viven con sus padres, con IC 95 % |
-| a_contraste_eurostat.csv | — | contraste de los totales propios con Eurostat (criterio de C1) |
+| a_contraste_eurostat.csv | — | contraste de los totales propios con Eurostat (misma encuesta: control de cálculo, no fuente independiente) |
 | b_ipva_nuevo_existente.csv | 264 | véase la cabecera de src/v10/atlas.py |
 | b_ipva_distritos_capitales.csv | 672 | véase la cabecera de src/v10/atlas.py |
 | b_fianzas_gva_cp.csv | 1240 | véase la cabecera de src/v10/atlas.py |

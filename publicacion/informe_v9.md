@@ -98,7 +98,7 @@ Los efectos y asociaciones se expresan en puntos logarítmicos ×100, que equiva
 **D7. Hogares y viviendas (contable).**
 - **Aumento de hogares 2022-2025:** 698.943 hogares en España.
 - **Componente población:** 92,0 % en España y 111,6 % en la Comunitat Valenciana.
-- **Contraste entre fuentes.** Censo 2021 y ECP coinciden en 1,5 % [C1].
+- **Contraste entre fuentes.** Censo 2021 y ECP difieren en 1,5 % [C4: la ECP se apoya en el censo, así que no son fuentes independientes; corregido en V15, ERRATA].
 - **Reconciliación del déficit** (proyecto, Banco de España y OCDE): `output/v9/d7/reconciliacion_deficit.csv`. Las viviendas liberadas por envejecimiento no se restan (regla v5.1).
 
 ## 3. Qué no se ha podido identificar y qué datos lo resolverían

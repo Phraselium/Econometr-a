@@ -61,7 +61,8 @@ def hallazgos() -> tuple[list[str], dict]:
         h.append(f"- **Sobrecarga del gasto en vivienda (>40 % de la renta).** En {ult} afecta al {f(am_u.valor)} % {r1} de las "
                  f"personas que viven de alquiler a precio de mercado (IC 95 %: {f(am_u.ic95_inf)}-{f(am_u.ic95_sup)}), "
                  f"frente al {f(tot.valor)} % {r2} del conjunto de la población. En {pri}, la cifra de los inquilinos de mercado "
-                 f"era del {f(am_p.valor)} % {r3}. *Capa {am_u.capa}; INE ECV (microdatos) con contraste con Eurostat; "
+                 f"era del {f(am_p.valor)} % {r3}. *Capa {cc.at['V10-ATL-A1', 'capa'] if 'V10-ATL-A1' in cc.index else am_u.capa}; "
+                 f"INE ECV (microdatos); el contraste con Eurostat es la misma encuesta, no una fuente independiente; "
                  f"renta del año anterior a la encuesta.* **Cómo leerlo:** la caída no indica que alquilar sea más "
                  f"asequible para quien entra ahora. La ECV mide a todos los inquilinos, en su mayoría con contratos firmados "
                  f"hace años; compara el alquiler actual con la renta del año anterior; y el periodo coincide con subidas "
@@ -191,7 +192,7 @@ def main() -> dict:
            "| tabla | filas | contenido |", "|---|---|---|",
            f"| a_quien_ecv.csv | {sum(1 for _ in open(A / 'a_quien_ecv.csv')) - 1} | ECV 2018-2025: sobrecarga, esfuerzo, hacinamiento y tenencia por grupo, con IC 95 % |",
            f"| a_quien_epa.csv | {sum(1 for _ in open(A / 'a_quien_epa.csv')) - 1} | EPA 2018-2026T2: jóvenes que viven con sus padres, con IC 95 % |",
-           "| a_contraste_eurostat.csv | — | contraste de los totales propios con Eurostat (criterio de C1) |",
+           "| a_contraste_eurostat.csv | — | contraste de los totales propios con Eurostat (misma encuesta: control de cálculo, no fuente independiente) |",
            *[f"| {k} | {v} | véase la cabecera de src/v10/atlas.py |" for k, v in res.items()], "",
            "## Método", "",
            "- **Microdatos.** Personas ponderadas. IC por linealización con el hogar como conglomerado; los ficheros públicos "

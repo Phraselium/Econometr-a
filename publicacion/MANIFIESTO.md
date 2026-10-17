@@ -5,7 +5,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | Fichero | Fuente | sha256 |
 |---|---|---|
 | articulo_colegio.md | output/v5/articulo_colegio.md | `ae826e31f171fbf4b0daa9714fd21103a2393cc547d110dd70b5e03fc53e7720` |
-| atlas_descriptivo.md | output/v10/atlas_descriptivo.md | `ecc3efb09cdda4956054f9832d3a9dc29b1ce844020c0eb9983d64dc6493de85` |
+| atlas_descriptivo.md | output/v10/atlas_descriptivo.md | `e2e399e8212de616120d9dac128c14b221ce40767078844d1801c8d8dbab72cd` |
 | atlas_regional/01_Andalucia.md | output/v7_1/atlas/01_Andalucia.md | `38fd89bd7c7f081bee4821cbebc394346eeb343c20df17cb46e78aff25ef69a4` |
 | atlas_regional/02_Aragon.md | output/v7_1/atlas/02_Aragon.md | `b7d1fb6fe99fb9677945e484560b7fe6383b37c800472bfd6275be347ce94510` |
 | atlas_regional/03_Asturias.md | output/v7_1/atlas/03_Asturias.md | `2f64ae49d3a78d55f8170aaaec7a41894232b895c95aaeace9275598e7d36cb6` |
@@ -28,13 +28,13 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | atlas_regional/guia_lectura.md | output/v7_1/atlas/guia_lectura.md | `5c9b4b7374468d5d4598fc35c1e62742a23a85047163c2c703970fddd969c872` |
 | atlas_regional/tablas_regionales.xlsx | output/v7_1/atlas/tablas_regionales.xlsx | `566261bdf785de32fa6cf61b545bf0948eec59301aa82e463d1c7b76ab41de34` |
 | atlas_v12.md | output/v12/atlas_v12.md | `ee7f40631a403531230053edeb8c5a3710d511068ad58b746004e75f53f24ec8` |
-| cifras_clave.csv | output/v5/cifras_clave.csv | `d9db915135acfd402e48f7f5d1e1690ed70ba3f3b5e5d86a3409c0bc641abe9f` |
+| cifras_clave.csv | output/v5/cifras_clave.csv | `cbe9c05ce3829e863a8395e0c43cce2180d3ff9ee4b785e9378fe28f8d9d11f9` |
 | cifras_no_publicadas_1_0.csv | proyecto.json (terceros_1_0) y docs/v14/cifras_terceros.csv | `01c846704182f19e7b3297045a0a692fddd10a26920e43a758dd8640a986cd87` |
 | cotas_v9.md | output/v9/f4/cotas.md | `896fa98d33b01c934c5e7543d3453d01120d628c3512cbb3056c2c087aed0940` |
 | dosis_coste.csv | output/v7_1/S1/dosis_coste.csv | `6e7c2b8fa8ada5992399be00de87309a274ccc607a7aba04c88f3f0590c6f822` |
 | informe_econometrico_v8.md | output/v8/informe_econometrico.md | `d1a2c95f60ca03283fee915e87cc197849e11289c7e558ff5b55a25ccd6652cc` |
 | informe_tecnico.md | output/v5/informe_tecnico.md | `d8eda75c44f121964107027a12f7a9001e04e69a4c4553fcfbf02c061c9239bb` |
-| informe_v9.md | output/v9/informe_v9.md | `606a6693e12d7f765ad271805cf17edac6ccfd20814aba8b2c0923fffd6e92e7` |
+| informe_v9.md | output/v9/informe_v9.md | `bde71cee9bdaf6f11941c9c703bb7d92bb79bd8c9b2eb6d13a8771f6ae219c35` |
 | lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `21f8763a9868ef966bb7132435ac7efebad8959a9882c600e04f527f9d546bff` |
 | nota_metodologica.md | output/v5/nota_metodologica.md | `42a718ba6ef57a976b84c757885d65fccef9295f58838854bff2794ad084a9b4` |
 | policy_brief.md | output/v5/policy_brief.md | `dc47722bd4223761f3a4be227781bfa2102e41ed7e6f42f1a7a642cbeabbfab4` |

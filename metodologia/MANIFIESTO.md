@@ -10,7 +10,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | desviaciones_v8.md | docs/v8/desviaciones.md | `3b0743c50e5390145a16612fb332f847bd173274c17b75696d0c788cf9d0b1b1` |
 | dosis_coste.md | output/v7_1/S1/resumen.md | `a68795fea92cb1ff1bfa94c12bf578bcb06a464be65f11a06e7bdf67e0fb6e39` |
 | guia_revisor.md | docs/v7_1/guia_revisor.md | `10a8b83466534b7769e66e4a078cb894767a4acec6c5045261cfb5ad1362cdc8` |
-| historial_conclusiones.md | docs/v6_1/historial_conclusiones.md | `bf6bc8f5c382a3e30eed5a6a44b25d0d375edb33e422382b8152ae4e205e4f9b` |
+| historial_conclusiones.md | docs/v6_1/historial_conclusiones.md | `1e63701eb9a439ecabd30660526b9033e0d18fa55a253999e0368c980ab22525` |
 | preregistro_v7.md | docs/v7/hipotesis.md | `bde3d6680557a2f0dc720c824730186abd44dbb76c4fd7d57c2d4dcbecb4af80` |
 | preregistro_v8.md | docs/v8/hipotesis.md | `5e5f53df7b30adc1d39b98620529892760a2e40abf06278861035f8cc2f268a7` |
 | preregistro_v9.md | docs/v9/hipotesis.md | `627864e01ca12fcc88b8f05ae62c0f68beb94206f759d81e06e74fad4880ffe7` |

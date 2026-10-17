@@ -115,3 +115,12 @@ Ninguno.
   - LICENSE, .zenodo.json, CITATION.cff, el diccionario de la base, las notas de la versión y los metadatos de Zenodo;
   - el aviso de atribución en los textos, en consulta/ y en el pie de la web.
 - **Solicitud al Notariado:** docs/v14/publicacion_1_0/solicitud_notariado.md (229 palabras).
+- **Paso 5.**
+  - Este repositorio:
+    - `make publicacion` y `make metadatos`: regenerados;
+    - `make check`: 403 tests y solo el aviso del hash; git limpio.
+  - Árbol final desde 87e95a3:
+    - pack de 46,09 MiB;
+    - `make datos`: 0 problemas;
+    - `make check`: 327 pasados y 60 omitidos, con un único error, el hash pendiente;
+    - `make publicacion`: sin cambios.

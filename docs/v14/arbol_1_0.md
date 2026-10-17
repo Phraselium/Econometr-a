@@ -43,6 +43,14 @@ No queda ninguna serie de Notariado, Registradores ni AEAT: lo comprueba el esca
 - Nunca sobrescribe un fichero versionado.
 - No lee nada fuera del repositorio.
 
+## Comprobación V14.3 (2026-10-17)
+- **Origen:** árbol final generado con `make arbol_publico` desde `87e95a36603dcd64b019117e255966666eb72630` (87e95a3). En el repositorio nuevo hay un único commit, 636ba8c «Versión 1.0». Pack: 46,09 MiB.
+- **`make datos`:** 0 problemas.
+- **`make check`:** 327 pasados y 60 omitidos. Coinciden con docs/v14/tests_arbol.json, que viene de un árbol de arranque desde dbe12f1. Un único error, el `hash_sellado` pendiente.
+- **`make publicacion`:** sin cambios. Git queda limpio.
+- LICENSE del árbol: punto 4, la ODbL 1.0, con el aviso. docs/v14/licencias_tablas.csv lista los 65 ficheros con partes bajo la ODbL.
+- La comprobación de V14.2 (origen e023bf6) queda abajo como historia.
+
 ## Comprobación en el árbol generado (V14.2, 2026-10-16)
 **Árbol final:** generado con `make arbol_publico` desde el commit de origen exacto `e023bf66caed76527f93215549eeea8f92af5306` (e023bf6, rama claude/housing-price-spain-econometric-95dhj3). En el repositorio nuevo hay un único commit, b7a3092 «Versión 1.0»; la identidad la reescribe el autor. Los commits posteriores de Econometr-a solo cambian docs/v14 (este fichero y el estado). La prueba se hizo sin red, con el paquete de `make paquete_zenodo` copiado a mano en `_descarga/`, y con la política por defecto de terceros_1_0.
 - **`make datos`:** 705 ficheros copiados, 50 ya presentes y 0 problemas.

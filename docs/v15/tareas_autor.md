@@ -17,3 +17,4 @@ Pendiente de la fase 3: registro del pre-registro en OSF y `osf_prereg_v15` en p
   3. `python3 src/v15/verificar_referencias.py --sin-red` rellenará los cuartiles.
 
   Mientras tanto, todas las referencias con DOI quedan «VERIFICADA (Crossref; cuartil no verificado)».
+- **AEAT 2013-2015** (auditoría de renta y microdatos). Los ficheros municipales de esos años no traen declaraciones, renta bruta media ni renta disponible media, y sus valores parecen recuentos. **No son utilizables como renta en euros.** La base usa 2016-2024, así que ninguna cifra publicada cambia. Si se quieren esos años, hay que volver a descargarlos con todas las columnas (descarga HTML por municipio, no automatizada en el repositorio).

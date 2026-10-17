@@ -68,7 +68,8 @@ Generada por src/v15/registro_subagentes.py (fuente: docs/v15/subagentes.csv). T
 | 2026-10-17 | lector-literatura | F2 P3 tipos de interés | 182.064 | docs/v15/literatura/P3_tipos_interes.md |
 | 2026-10-17 | auditor-datos | F1.2 financiación y macro | 242.674 | src/v15/auditoria/financiacion_macro.py; output/v15/auditoria/financiacion_macro/ |
 | 2026-10-17 | lector-literatura | F2 P2 fundamentales | 169.593 | docs/v15/literatura/P2_fundamentales.md |
+| 2026-10-17 | auditor-datos | F1.2 renta y microdatos (AEAT 2013-2015) | 203.774 | src/v15/auditoria/renta_microdatos.py; output/v15/auditoria/renta_microdatos/ |
 
-Total: 2.119.854 tokens · auditor-datos: 964.347; inventariador: 287.158; lector-literatura: 868.349
+Total: 2.323.628 tokens · auditor-datos: 1.168.121; inventariador: 287.158; lector-literatura: 868.349
 
 <!-- fin subagentes -->

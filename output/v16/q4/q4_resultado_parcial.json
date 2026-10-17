@@ -1,0 +1,218 @@
+{
+  "Q4a": {
+    "principal": {
+      "beta_por_DT_RN": -0.12971924516228092,
+      "n": 18184,
+      "n_municipios": 4374,
+      "r2_total": 0.17789248956103543,
+      "r2_within": 0.007939921116681403,
+      "sd_rn_entre_municipios_pp": 31.769260185314838
+    },
+    "multiverso": {
+      "n": 8,
+      "mediana": -0.03965858477854905,
+      "min": -0.12971924516228092,
+      "max": -0.0022477217665072403,
+      "proporcion_mismo_signo": 1.0
+    },
+    "especificaciones": [
+      {
+        "id": "Q4a|log_pos|sin|2018-2025|PRINCIPAL",
+        "beta_por_DT": -0.12971924516228092,
+        "n": 18184,
+        "r2": 0.17789248956103543,
+        "principal": true
+      },
+      {
+        "id": "Q4a|log_pos|sin|2018-2021",
+        "beta_por_DT": -0.1204513875245781,
+        "n": 8681,
+        "r2": 0.1728537918785864,
+        "principal": false
+      },
+      {
+        "id": "Q4a|log_pos|log_unidades_2017|2018-2025",
+        "beta_por_DT": -0.007822215042144375,
+        "n": 18162,
+        "r2": 0.6000453262020229,
+        "principal": false
+      },
+      {
+        "id": "Q4a|log_pos|log_unidades_2017|2018-2021",
+        "beta_por_DT": -0.010640820621951833,
+        "n": 8672,
+        "r2": 0.5589502671589524,
+        "principal": false
+      },
+      {
+        "id": "Q4a|asinh|sin|2018-2025",
+        "beta_por_DT": -0.06867634893514626,
+        "n": 38451,
+        "r2": 0.13566506726246386,
+        "principal": false
+      },
+      {
+        "id": "Q4a|asinh|sin|2018-2021",
+        "beta_por_DT": -0.07108907871295764,
+        "n": 19223,
+        "r2": 0.12416124573494769,
+        "principal": false
+      },
+      {
+        "id": "Q4a|asinh|log_unidades_2017|2018-2025",
+        "beta_por_DT": -0.0022477217665072403,
+        "n": 38416,
+        "r2": 0.3143337338485622,
+        "principal": false
+      },
+      {
+        "id": "Q4a|asinh|log_unidades_2017|2018-2021",
+        "beta_por_DT": -0.010406454859026916,
+        "n": 19208,
+        "r2": 0.2724584756950146,
+        "principal": false
+      }
+    ],
+    "diagnosticos": {
+      "oster": {
+        "beta_sin_FE": -0.16590663674320189,
+        "r2_sin_FE": 0.011587913499599867,
+        "beta_con_FE": -0.12971924516228092,
+        "r2_con_FE": 0.17789248956103543,
+        "delta_beta0_rmax1_3": 11.170496188431867,
+        "fragil_delta_lt_1": false
+      },
+      "e_value_punto": 1.3871184919188453,
+      "cinelli_hazlett": "no calculado: requiere t con inferencia APTA (agrupación provincial NO APTA)",
+      "het_autocorr": {
+        "breusch_pagan_LM": 62.322241941526464,
+        "wooldridge_pendiente": -0.4121524715456299,
+        "wooldridge_referencia_sin_autocorr": -0.5
+      },
+      "moran_residuos_municipios": {
+        "I": 0.3464288386575925,
+        "p_perm_bilateral": 0.001,
+        "n": 4374,
+        "nota": "diagnóstico de dependencia espacial de residuos; no es inferencia sobre el efecto"
+      },
+      "sin_grandes_ciudades": {
+        "beta": -0.1294422322328379,
+        "n": 18152,
+        "excluidos": [
+          "08019",
+          "29067",
+          "41091",
+          "46250"
+        ],
+        "islas": "ninguna no sellada"
+      },
+      "periodo_regularizacion_2012_2016": {
+        "beta": -0.11087032503286931,
+        "n": 14383,
+        "nota": "periodo excluido del principal por la regularización catastral de 2013-2017; no es placebo"
+      },
+      "magnitud_referencia": "ninguna (b no se cumple)"
+    }
+  },
+  "Q4b": {
+    "principal": {
+      "beta_interaccion_por_DT_RN_y_punto_de_choque": -0.0013826223465030403,
+      "beta_choque_main": 0.007587978547173385,
+      "n": 6105,
+      "n_municipios": 1293,
+      "r2_total": 0.05427100449172029,
+      "r2_within": 0.0032177997268256764
+    },
+    "multiverso": {
+      "n": 8,
+      "mediana": -0.0017796930076938986,
+      "min": -0.0026262937844986336,
+      "max": -0.0007697661540772902,
+      "proporcion_mismo_signo": 1.0
+    },
+    "especificaciones": [
+      {
+        "id": "Q4b|VC|2018-2022|año|PRINCIPAL",
+        "beta_interaccion": -0.0013826223465030403,
+        "beta_choque": 0.007587978547173385,
+        "n": 6105,
+        "principal": true
+      },
+      {
+        "id": "Q4b|VC|2018-2022|provincia×año",
+        "beta_interaccion": -0.001092453390242181,
+        "beta_choque": 0.004737411355315504,
+        "n": 6105,
+        "principal": false
+      },
+      {
+        "id": "Q4b|VC|2018-2020|año",
+        "beta_interaccion": -0.0022240213927872715,
+        "beta_choque": 0.007985110650290204,
+        "n": 3571,
+        "principal": false
+      },
+      {
+        "id": "Q4b|VC|2018-2020|provincia×año",
+        "beta_interaccion": -0.0019430690372947217,
+        "beta_choque": 0.004317012666404308,
+        "n": 3571,
+        "principal": false
+      },
+      {
+        "id": "Q4b|VU|2018-2022|año",
+        "beta_interaccion": -0.0016163169780930757,
+        "beta_choque": 0.0025611127025287326,
+        "n": 7602,
+        "principal": false
+      },
+      {
+        "id": "Q4b|VU|2018-2022|provincia×año",
+        "beta_interaccion": -0.0007697661540772902,
+        "beta_choque": -0.0007573915937564615,
+        "n": 7602,
+        "principal": false
+      },
+      {
+        "id": "Q4b|VU|2018-2020|año",
+        "beta_interaccion": -0.0026262937844986336,
+        "beta_choque": 0.0020631533140428038,
+        "n": 4388,
+        "principal": false
+      },
+      {
+        "id": "Q4b|VU|2018-2020|provincia×año",
+        "beta_interaccion": -0.0025662975033294163,
+        "beta_choque": 0.000676509529514871,
+        "n": 4388,
+        "principal": false
+      }
+    ],
+    "diagnosticos": {
+      "e_value_punto": 1.102717004784833,
+      "het_autocorr": {
+        "breusch_pagan_LM": 6.8745006282487235,
+        "wooldridge_pendiente": -0.4949418939281918,
+        "wooldridge_referencia_sin_autocorr": -0.5
+      },
+      "sin_grandes_ciudades": {
+        "beta_interaccion": -0.0014146820159647963,
+        "n": 6085,
+        "excluidos": [
+          "08019",
+          "29067",
+          "41091",
+          "46250"
+        ],
+        "islas": "ninguna no sellada"
+      },
+      "placebo_choque_adelantado": {
+        "beta_interaccion": -0.0020985164288061585,
+        "n": 4829,
+        "lectura": "puntual; una interacción adelantada no nula sería señal de tendencias previas"
+      },
+      "magnitud_referencia": "ninguna (b no se cumple)",
+      "nota": "choque de Q3 construido con el padrón hasta 2022 (D2): la ventana es 2018-2022"
+    }
+  }
+}

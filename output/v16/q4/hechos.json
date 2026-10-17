@@ -1,0 +1,30 @@
+[
+  {
+    "id": "V16-Q4a-beta",
+    "indicador": "Q4a: asociación de log obra nueva neta (obra > 0) con el porcentaje de Red Natura municipal (por DT = 31,8 pp)",
+    "valor": -0.12971924516228092,
+    "min": -0.12971924516228092,
+    "max": -0.0022477217665072403,
+    "unidad": "log por desviación típica",
+    "periodo": "2018-2025",
+    "cobertura": "4374 municipios",
+    "fuentes": "Catastro (obra neta); MITECO (Red Natura 2000)",
+    "capa": "C4",
+    "fecha_dato": "2025",
+    "ficha": "output/v16/q4/informe.md#q4a"
+  },
+  {
+    "id": "V16-Q4b-beta",
+    "indicador": "Q4b: interacción del choque de demanda (Δ población extranjera predicha) con el % de Red Natura sobre el Δlog SERPAVI",
+    "valor": -0.0013826223465030403,
+    "min": -0.0026262937844986336,
+    "max": -0.0007697661540772902,
+    "unidad": "log por punto de choque y DT de RN",
+    "periodo": "2018-2022",
+    "cobertura": "1293 municipios",
+    "fuentes": "MIVAU SERPAVI; INE padrón; MITECO",
+    "capa": "C4",
+    "fecha_dato": "2022",
+    "ficha": "output/v16/q4/informe.md#q4b"
+  }
+]

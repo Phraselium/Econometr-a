@@ -1,0 +1,452 @@
+{
+  "Q6-v": {
+    "especificaciones": [
+      {
+        "id": "Q6-v|dCDH|fecha_efecto|2011-2024|PRINCIPAL",
+        "estimador": "dCDH",
+        "fecha": 0,
+        "ventana": [
+          2011,
+          2024
+        ],
+        "beta_por_punto": 0.02508245316199873,
+        "n": 504,
+        "principal": true,
+        "n_provincias_switchers": 34,
+        "n_años_con_contraste": 6
+      },
+      {
+        "id": "Q6-v|dCDH|fecha_efecto|2011-2019",
+        "estimador": "dCDH",
+        "fecha": 0,
+        "ventana": [
+          2011,
+          2019
+        ],
+        "beta_por_punto": 0.005491730009840492,
+        "n": 324,
+        "principal": false,
+        "n_provincias_switchers": 26,
+        "n_años_con_contraste": 3
+      },
+      {
+        "id": "Q6-v|dCDH|fecha_adelantada1|2011-2024",
+        "estimador": "dCDH",
+        "fecha": -1,
+        "ventana": [
+          2011,
+          2024
+        ],
+        "beta_por_punto": -0.04835529878015494,
+        "n": 504,
+        "principal": false,
+        "n_provincias_switchers": 34,
+        "n_años_con_contraste": 6
+      },
+      {
+        "id": "Q6-v|dCDH|fecha_adelantada1|2011-2019",
+        "estimador": "dCDH",
+        "fecha": -1,
+        "ventana": [
+          2011,
+          2019
+        ],
+        "beta_por_punto": -0.019386405548562823,
+        "n": 324,
+        "principal": false,
+        "n_provincias_switchers": 26,
+        "n_años_con_contraste": 3
+      },
+      {
+        "id": "Q6-v|TWFE|fecha_efecto|2011-2024",
+        "estimador": "TWFE",
+        "fecha": 0,
+        "ventana": [
+          2011,
+          2024
+        ],
+        "beta_por_punto": 0.015737689509153503,
+        "n": 504,
+        "principal": false
+      },
+      {
+        "id": "Q6-v|TWFE|fecha_efecto|2011-2019",
+        "estimador": "TWFE",
+        "fecha": 0,
+        "ventana": [
+          2011,
+          2019
+        ],
+        "beta_por_punto": 0.014976604428039823,
+        "n": 324,
+        "principal": false
+      },
+      {
+        "id": "Q6-v|TWFE|fecha_adelantada1|2011-2024",
+        "estimador": "TWFE",
+        "fecha": -1,
+        "ventana": [
+          2011,
+          2024
+        ],
+        "beta_por_punto": 0.017046413217752663,
+        "n": 504,
+        "principal": false
+      },
+      {
+        "id": "Q6-v|TWFE|fecha_adelantada1|2011-2019",
+        "estimador": "TWFE",
+        "fecha": -1,
+        "ventana": [
+          2011,
+          2019
+        ],
+        "beta_por_punto": 0.002489803845211047,
+        "n": 324,
+        "principal": false
+      }
+    ],
+    "principal": {
+      "id": "Q6-v|dCDH|fecha_efecto|2011-2024|PRINCIPAL",
+      "estimador": "dCDH",
+      "fecha": 0,
+      "ventana": [
+        2011,
+        2024
+      ],
+      "beta_por_punto": 0.02508245316199873,
+      "n": 504,
+      "principal": true,
+      "n_provincias_switchers": 34.0,
+      "n_años_con_contraste": 6.0
+    },
+    "diagnosticos": {
+      "subidas": {
+        "beta": 0.005491730009840492,
+        "n_provincias_switchers": 26,
+        "n_años_con_contraste": 3
+      },
+      "bajadas": {
+        "beta": -0.027927738896782385,
+        "n_provincias_switchers": 13,
+        "n_años_con_contraste": 3
+      },
+      "placebo_dy_retardado": {
+        "beta": -0.04835529878015494,
+        "n_provincias_switchers": 34,
+        "n_años_con_contraste": 6
+      },
+      "control_negativo_log_poblacion": {
+        "beta": -0.004138402598310366,
+        "n_provincias_switchers": 34,
+        "n_años_con_contraste": 6
+      },
+      "sin_grandes_ciudades": {
+        "beta": 0.03743359877146777,
+        "n_provincias_switchers": 30,
+        "n_años_con_contraste": 6
+      },
+      "e_value_punto": 1.6888959197549511,
+      "cinelli_hazlett": "no calculado: requiere t con inferencia APTA (dCDH con aleatorización NO APTO)",
+      "oster": "no aplica al Wald-DID; para la referencia TWFE ver ‘twfe_referencia’",
+      "twfe_referencia": {
+        "beta": 0.015737689509153503,
+        "n": 504,
+        "r2_total": 0.9910903214448566,
+        "r2_within": 0.005978338149310258
+      },
+      "het_autocorr_twfe": {
+        "breusch_pagan_LM": 2.863402430465954,
+        "wooldridge_pendiente": -0.10213953137835771,
+        "wooldridge_referencia_sin_autocorr": -0.5
+      },
+      "moran_residuos_twfe_prov": {
+        "I": 0.10801051104005176,
+        "p_perm_bilateral": 0.326,
+        "n": 36,
+        "nota": "diagnóstico de dependencia espacial de residuos; no es inferencia sobre el efecto"
+      },
+      "honest_did": "no usado: no validado por Monte Carlo (veredictos.csv)",
+      "islas": "ninguna no sellada",
+      "magnitud_referencia": -0.07,
+      "razon_estimacion_sobre_referencia": -0.3583207594571247,
+      "estables_vs_cambios": "ver calendario_cambios; sin errores S y M (sin SE válido)"
+    },
+    "multiverso": {
+      "n": 8,
+      "mediana": 0.010234167218940158,
+      "min": -0.04835529878015494,
+      "max": 0.02508245316199873,
+      "proporcion_mismo_signo": 0.75,
+      "mediana_solo_dCDH": -0.006947337769361165
+    }
+  },
+  "Q6-p": {
+    "especificaciones": [
+      {
+        "id": "Q6-p|dCDH|fecha_efecto|2011-2024|PRINCIPAL",
+        "estimador": "dCDH",
+        "fecha": 0,
+        "ventana": [
+          2011,
+          2024
+        ],
+        "beta_por_punto": -0.015704563680369415,
+        "n": 485,
+        "principal": true,
+        "n_provincias_switchers": 33,
+        "n_años_con_contraste": 5
+      },
+      {
+        "id": "Q6-p|dCDH|fecha_efecto|2011-2019",
+        "estimador": "dCDH",
+        "fecha": 0,
+        "ventana": [
+          2011,
+          2019
+        ],
+        "beta_por_punto": -0.011570630678619666,
+        "n": 310,
+        "principal": false,
+        "n_provincias_switchers": 25,
+        "n_años_con_contraste": 2
+      },
+      {
+        "id": "Q6-p|dCDH|fecha_adelantada1|2011-2024",
+        "estimador": "dCDH",
+        "fecha": -1,
+        "ventana": [
+          2011,
+          2024
+        ],
+        "beta_por_punto": -0.015506080851534964,
+        "n": 485,
+        "principal": false,
+        "n_provincias_switchers": 33,
+        "n_años_con_contraste": 6
+      },
+      {
+        "id": "Q6-p|dCDH|fecha_adelantada1|2011-2019",
+        "estimador": "dCDH",
+        "fecha": -1,
+        "ventana": [
+          2011,
+          2019
+        ],
+        "beta_por_punto": -0.01096135416929821,
+        "n": 310,
+        "principal": false,
+        "n_provincias_switchers": 25,
+        "n_años_con_contraste": 3
+      },
+      {
+        "id": "Q6-p|TWFE|fecha_efecto|2011-2024",
+        "estimador": "TWFE",
+        "fecha": 0,
+        "ventana": [
+          2011,
+          2024
+        ],
+        "beta_por_punto": -0.004711806055200216,
+        "n": 485,
+        "principal": false
+      },
+      {
+        "id": "Q6-p|TWFE|fecha_efecto|2011-2019",
+        "estimador": "TWFE",
+        "fecha": 0,
+        "ventana": [
+          2011,
+          2019
+        ],
+        "beta_por_punto": 0.006449532187718039,
+        "n": 310,
+        "principal": false
+      },
+      {
+        "id": "Q6-p|TWFE|fecha_adelantada1|2011-2024",
+        "estimador": "TWFE",
+        "fecha": -1,
+        "ventana": [
+          2011,
+          2024
+        ],
+        "beta_por_punto": -0.015505033725725086,
+        "n": 485,
+        "principal": false
+      },
+      {
+        "id": "Q6-p|TWFE|fecha_adelantada1|2011-2019",
+        "estimador": "TWFE",
+        "fecha": -1,
+        "ventana": [
+          2011,
+          2019
+        ],
+        "beta_por_punto": -0.004983915490446007,
+        "n": 310,
+        "principal": false
+      }
+    ],
+    "principal": {
+      "id": "Q6-p|dCDH|fecha_efecto|2011-2024|PRINCIPAL",
+      "estimador": "dCDH",
+      "fecha": 0,
+      "ventana": [
+        2011,
+        2024
+      ],
+      "beta_por_punto": -0.015704563680369415,
+      "n": 485,
+      "principal": true,
+      "n_provincias_switchers": 33.0,
+      "n_años_con_contraste": 5.0
+    },
+    "diagnosticos": {
+      "subidas": {
+        "beta": -0.011570630678619666,
+        "n_provincias_switchers": 25,
+        "n_años_con_contraste": 2
+      },
+      "bajadas": {
+        "beta": -0.0043362479255576025,
+        "n_provincias_switchers": 12,
+        "n_años_con_contraste": 3
+      },
+      "placebo_dy_retardado": {
+        "beta": 0.006001460568209868,
+        "n_provincias_switchers": 33,
+        "n_años_con_contraste": 5
+      },
+      "control_negativo_log_poblacion": {
+        "beta": -0.004138402598310366,
+        "n_provincias_switchers": 34,
+        "n_años_con_contraste": 6
+      },
+      "sin_grandes_ciudades": {
+        "beta": -0.016962150329486524,
+        "n_provincias_switchers": 29,
+        "n_años_con_contraste": 5
+      },
+      "e_value_punto": 2.295107759746415,
+      "cinelli_hazlett": "no calculado: requiere t con inferencia APTA (dCDH con aleatorización NO APTO)",
+      "oster": "no aplica al Wald-DID; para la referencia TWFE ver ‘twfe_referencia’",
+      "twfe_referencia": {
+        "beta": -0.004711806055200216,
+        "n": 485,
+        "r2_total": 0.952315036434097,
+        "r2_within": 0.0015545353239736492
+      },
+      "het_autocorr_twfe": {
+        "breusch_pagan_LM": 0.6253385728819549,
+        "wooldridge_pendiente": 0.2632739610976192,
+        "wooldridge_referencia_sin_autocorr": -0.5
+      },
+      "moran_residuos_twfe_prov": {
+        "I": -0.01666250556588113,
+        "p_perm_bilateral": 0.922,
+        "n": 35,
+        "nota": "diagnóstico de dependencia espacial de residuos; no es inferencia sobre el efecto"
+      },
+      "honest_did": "no usado: no validado por Monte Carlo (veredictos.csv)",
+      "islas": "ninguna no sellada",
+      "magnitud_referencia": -0.01,
+      "razon_estimacion_sobre_referencia": 1.5704563680369414,
+      "estables_vs_cambios": "ver calendario_cambios; sin errores S y M (sin SE válido)"
+    },
+    "multiverso": {
+      "n": 8,
+      "mediana": -0.011265992423958938,
+      "min": -0.015704563680369415,
+      "max": 0.006449532187718039,
+      "proporcion_mismo_signo": 0.875,
+      "mediana_solo_dCDH": -0.013538355765077316
+    }
+  },
+  "calendario_cambios": [
+    {
+      "c": "01",
+      "t": 2012,
+      "d": 8.0,
+      "cambio_puntos": 1.0
+    },
+    {
+      "c": "01",
+      "t": 2021,
+      "d": 7.0,
+      "cambio_puntos": -1.0
+    },
+    {
+      "c": "06",
+      "t": 2013,
+      "d": 8.0,
+      "cambio_puntos": 1.0
+    },
+    {
+      "c": "06",
+      "t": 2019,
+      "d": 10.0,
+      "cambio_puntos": 2.0
+    },
+    {
+      "c": "06",
+      "t": 2024,
+      "d": 9.0,
+      "cambio_puntos": -1.0
+    },
+    {
+      "c": "07",
+      "t": 2013,
+      "d": 8.0,
+      "cambio_puntos": 1.0
+    },
+    {
+      "c": "08",
+      "t": 2012,
+      "d": 8.0,
+      "cambio_puntos": 1.0
+    },
+    {
+      "c": "08",
+      "t": 2016,
+      "d": 9.0,
+      "cambio_puntos": 1.0
+    },
+    {
+      "c": "09",
+      "t": 2013,
+      "d": 10.0,
+      "cambio_puntos": 2.0
+    },
+    {
+      "c": "10",
+      "t": 2013,
+      "d": 10.0,
+      "cambio_puntos": 3.0
+    },
+    {
+      "c": "11",
+      "t": 2012,
+      "d": 8.0,
+      "cambio_puntos": 1.0
+    },
+    {
+      "c": "12",
+      "t": 2013,
+      "d": 10.0,
+      "cambio_puntos": 3.0
+    },
+    {
+      "c": "12",
+      "t": 2022,
+      "d": 9.0,
+      "cambio_puntos": -1.0
+    },
+    {
+      "c": "12",
+      "t": 2024,
+      "d": 8.0,
+      "cambio_puntos": -1.0
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v16-fase6,Q4a|log_pos|sin|2018-2025|PRINCIPAL,y ~ RN_std (+control) + FE provincia + FE año,2018,2025,18184,0.17789248956103543,,,,-0.12971924516228092,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4a|log_pos|sin|2018-2021,y ~ RN_std (+control) + FE provincia + FE año,2018,2021,8681,0.1728537918785864,,,,-0.1204513875245781,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4a|log_pos|log_unidades_2017|2018-2025,y ~ RN_std (+control) + FE provincia + FE año,2018,2025,18162,0.6000453262020229,,,,-0.007822215042144375,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4a|log_pos|log_unidades_2017|2018-2021,y ~ RN_std (+control) + FE provincia + FE año,2018,2021,8672,0.5589502671589524,,,,-0.010640820621951833,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4a|asinh|sin|2018-2025,y ~ RN_std (+control) + FE provincia + FE año,2018,2025,38451,0.13566506726246386,,,,-0.06867634893514626,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4a|asinh|sin|2018-2021,y ~ RN_std (+control) + FE provincia + FE año,2018,2021,19223,0.12416124573494769,,,,-0.07108907871295764,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4a|asinh|log_unidades_2017|2018-2025,y ~ RN_std (+control) + FE provincia + FE año,2018,2025,38416,0.3143337338485622,,,,-0.0022477217665072403,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4a|asinh|log_unidades_2017|2018-2021,y ~ RN_std (+control) + FE provincia + FE año,2018,2021,19208,0.2724584756950146,,,,-0.010406454859026916,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4a|excl_grandes,idem sin 4 ciudades,2018,2025,18152,0.17682924713404935,,,,-0.1294422322328379,,diagnóstico
+v16-fase6,Q4b|VC|2018-2022|año|PRINCIPAL,Δlog SERPAVI ~ choque×RN_std + choque + FE año (FE municipio absorbido en Δ),2018,2022,6105,0.05427100449172029,,,,-0.0013826223465030403,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4b|VC|2018-2022|provincia×año,Δlog SERPAVI ~ choque×RN_std + choque + FE año (FE municipio absorbido en Δ),2018,2022,6105,0.09548194825689726,,,,-0.001092453390242181,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4b|VC|2018-2020|año,Δlog SERPAVI ~ choque×RN_std + choque + FE año (FE municipio absorbido en Δ),2018,2020,3571,0.07173657961501234,,,,-0.0022240213927872715,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4b|VC|2018-2020|provincia×año,Δlog SERPAVI ~ choque×RN_std + choque + FE año (FE municipio absorbido en Δ),2018,2020,3571,0.11450230467858968,,,,-0.0019430690372947217,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4b|VU|2018-2022|año,Δlog SERPAVI ~ choque×RN_std + choque + FE año (FE municipio absorbido en Δ),2018,2022,7602,0.01646248475535994,,,,-0.0016163169780930757,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4b|VU|2018-2022|provincia×año,Δlog SERPAVI ~ choque×RN_std + choque + FE año (FE municipio absorbido en Δ),2018,2022,7602,0.044003087402195606,,,,-0.0007697661540772902,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4b|VU|2018-2020|año,Δlog SERPAVI ~ choque×RN_std + choque + FE año (FE municipio absorbido en Δ),2018,2020,4388,0.02423695147698468,,,,-0.0026262937844986336,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4b|VU|2018-2020|provincia×año,Δlog SERPAVI ~ choque×RN_std + choque + FE año (FE municipio absorbido en Δ),2018,2020,4388,0.053693024628787556,,,,-0.0025662975033294163,,puntual; agrupación provincial NO APTA
+v16-fase6,Q4b|excl_grandes,idem sin 4 ciudades,2018,2022,6085,0.05396359649459048,,,,-0.0014146820159647963,,diagnóstico
+v16-fase6,Q4b|placebo_adelantado,Δlog ~ choque(t+1)×RN,2018,2021,4829,0.0613896042677039,,,,-0.0020985164288061585,,diagnóstico

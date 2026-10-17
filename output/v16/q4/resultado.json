@@ -1,0 +1,161 @@
+{
+  "rama": "r16/fase6-grupoB",
+  "pregunta": "Q4: oferta municipal y restricción física (% Red Natura): Q4a obra nueva neta, Q4b interacción con el choque de demanda de Q3",
+  "capa": "C4",
+  "datos": "data/processed/v16/entrenamiento: base_oferta (obra neta Catastro, SERPAVI municipal), oferta_suelo_terceros (Red Natura 2000), padron_nacionalidad",
+  "N": {
+    "Q4a": 18184,
+    "Q4b": 6105
+  },
+  "metodo": "Q4a: MCO con FE de provincia y año, 2018-2025; Q4b: primeras diferencias con FE de año, interacción choque × RN, 2018-2022. Solo puntual.",
+  "estimacion": {
+    "Q4a": {
+      "beta_log_obra_neta_por_DT_red_natura": -0.12971924516228092,
+      "n": 18184,
+      "n_municipios": 4374,
+      "ic95": null,
+      "p": null,
+      "multiverso": {
+        "n": 8,
+        "mediana": -0.03965858477854905,
+        "min": -0.12971924516228092,
+        "max": -0.0022477217665072403,
+        "proporcion_mismo_signo": 1.0
+      }
+    },
+    "Q4b": {
+      "beta_interaccion_choque_x_RN": -0.0013826223465030403,
+      "n": 6105,
+      "n_municipios": 1293,
+      "ic95": null,
+      "p": null,
+      "multiverso": {
+        "n": 8,
+        "mediana": -0.0017796930076938986,
+        "min": -0.0026262937844986336,
+        "max": -0.0007697661540772902,
+        "proporcion_mismo_signo": 1.0
+      }
+    }
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "DESCRIPTIVO",
+  "diagnosticos": {
+    "Q4a": {
+      "oster": {
+        "beta_sin_FE": -0.16590663674320189,
+        "r2_sin_FE": 0.011587913499599867,
+        "beta_con_FE": -0.12971924516228092,
+        "r2_con_FE": 0.17789248956103543,
+        "delta_beta0_rmax1_3": 11.170496188431867,
+        "fragil_delta_lt_1": false
+      },
+      "e_value_punto": 1.3871184919188453,
+      "cinelli_hazlett": "no calculado: requiere t con inferencia APTA (agrupación provincial NO APTA)",
+      "het_autocorr": {
+        "breusch_pagan_LM": 62.322241941526464,
+        "wooldridge_pendiente": -0.4121524715456299,
+        "wooldridge_referencia_sin_autocorr": -0.5
+      },
+      "moran_residuos_municipios": {
+        "I": 0.3464288386575925,
+        "p_perm_bilateral": 0.001,
+        "n": 4374,
+        "nota": "diagnóstico de dependencia espacial de residuos; no es inferencia sobre el efecto"
+      },
+      "sin_grandes_ciudades": {
+        "beta": -0.1294422322328379,
+        "n": 18152,
+        "excluidos": [
+          "08019",
+          "29067",
+          "41091",
+          "46250"
+        ],
+        "islas": "ninguna no sellada"
+      },
+      "periodo_regularizacion_2012_2016": {
+        "beta": -0.11087032503286931,
+        "n": 14383,
+        "nota": "periodo excluido del principal por la regularización catastral de 2013-2017; no es placebo"
+      },
+      "magnitud_referencia": "ninguna (b no se cumple)"
+    },
+    "Q4b": {
+      "e_value_punto": 1.102717004784833,
+      "het_autocorr": {
+        "breusch_pagan_LM": 6.8745006282487235,
+        "wooldridge_pendiente": -0.4949418939281918,
+        "wooldridge_referencia_sin_autocorr": -0.5
+      },
+      "sin_grandes_ciudades": {
+        "beta_interaccion": -0.0014146820159647963,
+        "n": 6085,
+        "excluidos": [
+          "08019",
+          "29067",
+          "41091",
+          "46250"
+        ],
+        "islas": "ninguna no sellada"
+      },
+      "placebo_choque_adelantado": {
+        "beta_interaccion": -0.0020985164288061585,
+        "n": 4829,
+        "lectura": "puntual; una interacción adelantada no nula sería señal de tendencias previas"
+      },
+      "magnitud_referencia": "ninguna (b no se cumple)",
+      "nota": "choque de Q3 construido con el padrón hasta 2022 (D2): la ventana es 2018-2022"
+    },
+    "pruebas": {
+      "superadas": [
+        "Q4a: sin grandes ciudades, mismo resultado (-0,1294)",
+        "Q4a: periodo 2012-2016 de signo igual (-0,1109; no es placebo)",
+        "Q4b: sin grandes ciudades, mismo signo (-0,0014)"
+      ],
+      "fallidas": [
+        "Q4a: dependencia espacial de residuos (Moran I = 0,346, p de permutación 0,001)",
+        "Q4b: placebo de choque adelantado de igual signo y mayor tamaño que el efecto (-0,0021 frente a -0,0014)",
+        "Q4a y Q4b: la Red Natura no es exógena (restricción de uso del suelo correlacionada con rural y despoblación)"
+      ],
+      "no_evaluables": [
+        "inferencia con agrupación provincial (rejilla TWFE provincia NO APTA): sin p-valor ni IC",
+        "Cinelli-Hazlett (requiere t válido)",
+        "costa, pendiente, agua y planeamiento: no están en disco (tareas del autor)"
+      ]
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null,
+    "nota": "no es un diseño predictivo"
+  },
+  "pendiente_sellada": true,
+  "p_valores_para_BY": [
+    {
+      "id": "Q4a|principal",
+      "p": null,
+      "rama": "diseños",
+      "nota": "agrupación provincial NO APTA"
+    },
+    {
+      "id": "Q4b|principal",
+      "p": null,
+      "rama": "diseños",
+      "nota": "agrupación provincial NO APTA"
+    }
+  ],
+  "notas": [
+    "Asociación C4; pendiente de evaluación sellada. Sin lenguaje causal.",
+    "La Red Natura no se presenta como exógena. Sin magnitud de referencia: (b) no se cumple.",
+    "Q4b: ventana 2018-2022 porque el padrón por nacionalidad termina en 2022 (D2)."
+  ],
+  "regla_hallazgo": {
+    "a_q_le_0_10": "pendiente del control BY global (lo hace el orquestador)",
+    "b_tipo_S_M": "no evaluable sin SE válido o sin magnitud de referencia",
+    "c_sellada": "pendiente",
+    "resultado": "sin hallazgo; a lo sumo pista C4"
+  }
+}

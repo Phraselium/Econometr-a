@@ -1,0 +1,11 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v16-fase6,Q3-b|VC|cuota_ext|2021-2024|Conley2km|PRINCIPAL,dlogSERPAVI ~ cuota_ext_std + FE municipio,2021,2024,9916,0.3470651144356962,,,,0.009077270952434798,7.577156457827527e-09,Conley 2 km APTO solo escenario principal
+v16-fase6,Q3-b|VC|cuota_ext|2022-2024|puntual,idem,2021,2024,10112,0.28987514648966173,,,,0.0054739214486370594,,variante: solo estimación puntual
+v16-fase6,Q3-b|VC|cuota_no_europea|2021-2024|puntual,idem,2021,2024,9916,0.34424184196731555,,,,0.006031618924123834,,variante: solo estimación puntual
+v16-fase6,Q3-b|VC|cuota_no_europea|2022-2024|puntual,idem,2021,2024,10112,0.28877894555388817,,,,0.003937883072205959,,variante: solo estimación puntual
+v16-fase6,Q3-b|VU|cuota_ext|2021-2024|puntual,idem,2021,2024,2235,0.25344590833415903,,,,0.007628549821179024,,variante: solo estimación puntual
+v16-fase6,Q3-b|VU|cuota_no_europea|2021-2024|puntual,idem,2021,2024,2235,0.2529896221619784,,,,0.0034453761546201374,,variante: solo estimación puntual
+v16-fase6,Q3-b|VU|*|2022-2024,no estimada,2022,2024,0,,,,,,,VU 2022 no cargado (decisión de operativización D2); no se rellena
+v16-fase6,Q3-b|excl_grandes,"idem sin Barcelona, València, Sevilla, Málaga",2021,2024,8051,0.3304964700775418,,,,0.010379319412285138,,diagnóstico
+v16-fase6,Q3-b|pretendencia,Δlog 2018-2021 ~ cuota,2018,2021,9560,0.26022454745728985,,,,0.005109416546799145,,diagnóstico
+v16-fase6,Q3|BLP_GATES,interacciones x·moderador + GATES cv,2021,2024,9489,,,,,0.005981443355033046,,NO APTO: puntual descriptivo

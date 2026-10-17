@@ -1,0 +1,382 @@
+{
+  "rama": "r16/fase6-grupoB",
+  "pregunta": "Q3: inmigración y precios/alquiler más allá de H4 (Q3-c1 valor tasado, Q3-c2 compraventas, Q3-b barrio) y BLP/GATES",
+  "capa": "C4",
+  "datos": "data/processed/v16/entrenamiento: padron_nacionalidad, base_poblacion, base_precio, base_alquiler (SERPAVI sección), tension_social; secciones.parquet (solo geometría)",
+  "N": {
+    "Q3-c1": 451,
+    "Q3-c2": 492,
+    "Q3-b": 9916,
+    "blp": 9489
+  },
+  "metodo": "Shift-share de forma reducida (cuotas de 2003 × crecimiento nacional sin la provincia) con FE de provincia y año; correlación transversal por sección con FE de municipio y Conley 2 km; BLP lineal y GATES con validación cruzada",
+  "estimacion": {
+    "Q3-c1": {
+      "beta_log_valor_tasado_por_punto_poblacion_extranjera_predicha": 0.011896232675603781,
+      "n": 451,
+      "ic95": null,
+      "p": null,
+      "inferencia": "AKM/AKM0 NO APTOS: solo puntual",
+      "multiverso": {
+        "n_especificaciones": 16,
+        "mediana_beta_por_DT": 0.007819138230900042,
+        "min_por_DT": 0.006741655173450538,
+        "max_por_DT": 0.015530076784414744,
+        "mediana_beta_por_punto_solo_pts": 0.018860774248955655,
+        "min_por_punto_solo_pts": 0.011887727199766948,
+        "max_por_punto_solo_pts": 0.05251933747312519,
+        "proporcion_mismo_signo_que_principal": 1.0,
+        "nota": "sin IC válido: no se puede contar «IC que excluye el 0»"
+      }
+    },
+    "Q3-c2": {
+      "beta_log_compraventas_por_punto": -0.028176478254563007,
+      "n": 492,
+      "ic95": null,
+      "p": null,
+      "inferencia": "AKM/AKM0 NO APTOS: solo puntual",
+      "multiverso": {
+        "n_especificaciones": 16,
+        "mediana_beta_por_DT": -0.01806623594492623,
+        "min_por_DT": -0.02512822616302105,
+        "max_por_DT": -0.0037306053957085732,
+        "mediana_beta_por_punto_solo_pts": -0.028838315470960427,
+        "min_por_punto_solo_pts": -0.08372081448825872,
+        "max_por_punto_solo_pts": -0.01563090314505639,
+        "proporcion_mismo_signo_que_principal": 1.0,
+        "nota": "sin IC válido: no se puede contar «IC que excluye el 0»"
+      }
+    },
+    "Q3-b": {
+      "beta_dlog_serpavi_por_DT_cuota_extranjeros": 0.009077270952434798,
+      "se_conley_2km": 0.0015711131865724468,
+      "ic95": [
+        0.005997945666827519,
+        0.012156596238042078
+      ],
+      "p": 7.577156457827527e-09,
+      "n_secciones": 9916,
+      "n_municipios": 748,
+      "multiverso": {
+        "n_especificaciones": 6,
+        "mediana_beta_por_DT": 0.005752770186380447,
+        "min": 0.0034453761546201374,
+        "max": 0.009077270952434798,
+        "proporcion_mismo_signo": 1.0,
+        "nota": "variantes sin IC (Conley solo validado en el escenario principal)"
+      },
+      "sensibilidad_rango_espacial": {
+        "radios_km_no_aptos": [
+          0.5,
+          1.5
+        ],
+        "beta_por_DT": 0.009077270952434798,
+        "nota": "la estimación puntual no depende del radio del núcleo; el EE a 0,5 y 1,5 km NO pasa el Monte Carlo y no se publica"
+      }
+    },
+    "BLP_GATES_Q3": {
+      "n": 9489,
+      "beta_x_media": 0.005981443355033046,
+      "interacciones_x_moderador_por_DT": {
+        "renta_adrh": 0.0012297204732226433,
+        "poblacion": 0.0010106629384676622,
+        "cuota_extranjeros": -0.0016226497996945993,
+        "pct_vut": 0.0006303554894959212,
+        "obra_pc": 0.0019178265166746324
+      },
+      "r2_within_con_interacciones": 0.012826829706671594,
+      "r2_within_sin_interacciones": 0.01076589506601966,
+      "ganancia_r2_within": 0.0020609346406519347,
+      "gates_beta_por_DT": {
+        "cuartil_1": 0.009990876214857971,
+        "cuartil_2": 0.011860460775390061,
+        "cuartil_3": 0.008369056211436644,
+        "cuartil_4": 0.010152462405375326
+      },
+      "gates_q4_menos_q1": 0.00016158619051735539,
+      "estado": "NO APTO (blp_gates: tamaño 0,005, cobertura 0,9885): estimación puntual descriptiva, sin p-valor ni IC"
+    }
+  },
+  "ic95": {
+    "Q3-b": [
+      0.005997945666827519,
+      0.012156596238042078
+    ],
+    "Q3-c1": null,
+    "Q3-c2": null
+  },
+  "p_ajustado": null,
+  "nivel_evidencia": "EXPLORATORIO (Q3-b, con pretendencia no nula); DESCRIPTIVO (Q3-c1, Q3-c2, BLP/GATES)",
+  "diagnosticos": {
+    "Q3-c1": {
+      "oster": {
+        "beta_sin_efectos": 0.00600253923582066,
+        "r2_sin_efectos": 0.017890316698478625,
+        "beta_con_efectos": 0.011896232675603781,
+        "r2_con_efectos": 0.9795819927448391,
+        "delta_beta0_rmax1_3": -95.07020070977254,
+        "fragil_delta_lt_1": false,
+        "nota": "δ < 0 = al añadir efectos fijos la estimación se aleja de 0: no es el caso de fragilidad; se publica el valor"
+      },
+      "e_value_punto": 1.609179995300364,
+      "cinelli_hazlett_RV": "no calculado: requiere t con inferencia APTA (AKM/AKM0 NO APTOS)",
+      "het_autocorr": {
+        "breusch_pagan_LM": 7.782221459993804,
+        "wooldridge_pendiente": 0.21209637442067994,
+        "wooldridge_referencia_sin_autocorr": -0.5
+      },
+      "moran_residuos_prov": {
+        "I": -0.06666752815298867,
+        "p_perm_bilateral": 0.489,
+        "n": 38,
+        "nota": "diagnóstico de dependencia espacial de residuos; no es inferencia sobre el efecto"
+      },
+      "sin_grandes_ciudades": {
+        "beta": 0.012879734836205975,
+        "n": 403,
+        "provincias_excluidas": [
+          "08",
+          "29",
+          "41",
+          "46"
+        ],
+        "islas": "ninguna no sellada"
+      },
+      "control_instrumento_retardado": {
+        "beta_x": 0.007677543589754392,
+        "beta_xlag4": -0.014526266584140874,
+        "n": 451
+      },
+      "pretendencia": {
+        "periodo_previo": [
+          2003,
+          2008
+        ],
+        "pendiente_dlogy_por_punto_exposicion_2022": 0.0003563482363166769,
+        "n": 38,
+        "lectura": "pendiente puntual; sin p-valor (herramienta NO APTA); se compara con el efecto principal por punto"
+      },
+      "primera_etapa_descriptiva": {
+        "coef": 0.8858580109711484,
+        "r2_within": 0.4692309157535901,
+        "n": 492,
+        "nota": "F efectivo de Montiel Olea-Pflueger: herramienta no validada (AKM NO APTO); en V9-D4 el F fue de 3,4 a 3,7"
+      },
+      "magnitud_referencia": {
+        "saiz_por_punto": 0.01,
+        "razon_estimacion_sobre_referencia": 1.1896232675603782,
+        "nota": "sin SE válido no se calculan errores S y M: (b) de la regla de hallazgo no se evalúa"
+      }
+    },
+    "Q3-c2": {
+      "oster": {
+        "beta_sin_efectos": 0.04005151516970682,
+        "r2_sin_efectos": 0.06375378102815332,
+        "beta_con_efectos": -0.028176478254563007,
+        "r2_con_efectos": 0.9904530070398249,
+        "delta_beta0_rmax1_3": -40.08633109647893,
+        "fragil_delta_lt_1": false,
+        "nota": "δ < 0 = al añadir efectos fijos la estimación se aleja de 0: no es el caso de fragilidad; se publica el valor"
+      },
+      "e_value_punto": 1.6130329563434995,
+      "cinelli_hazlett_RV": "no calculado: requiere t con inferencia APTA (AKM/AKM0 NO APTOS)",
+      "het_autocorr": {
+        "breusch_pagan_LM": 2.0363508683605307,
+        "wooldridge_pendiente": -0.1871648142631446,
+        "wooldridge_referencia_sin_autocorr": -0.5
+      },
+      "moran_residuos_prov": {
+        "I": -0.0005261398577448242,
+        "p_perm_bilateral": 0.992,
+        "n": 41,
+        "nota": "diagnóstico de dependencia espacial de residuos; no es inferencia sobre el efecto"
+      },
+      "sin_grandes_ciudades": {
+        "beta": -0.019648029114692562,
+        "n": 444,
+        "provincias_excluidas": [
+          "08",
+          "29",
+          "41",
+          "46"
+        ],
+        "islas": "ninguna no sellada"
+      },
+      "control_instrumento_retardado": {
+        "beta_x": -0.026935137901559707,
+        "beta_xlag4": 0.007660229452964704,
+        "n": 492
+      },
+      "pretendencia": {
+        "periodo_previo": [
+          2007,
+          2010
+        ],
+        "pendiente_dlogy_por_punto_exposicion_2022": -0.012739192890903894,
+        "n": 41,
+        "lectura": "pendiente puntual; sin p-valor (herramienta NO APTA); se compara con el efecto principal por punto"
+      },
+      "primera_etapa_descriptiva": {
+        "coef": 0.8858580109711484,
+        "r2_within": 0.4692309157535901,
+        "n": 492,
+        "nota": "F efectivo de Montiel Olea-Pflueger: herramienta no validada (AKM NO APTO); en V9-D4 el F fue de 3,4 a 3,7"
+      },
+      "magnitud_referencia": {
+        "saiz_por_punto": null,
+        "razon_estimacion_sobre_referencia": null,
+        "nota": "sin SE válido no se calculan errores S y M: (b) de la regla de hallazgo no se evalúa"
+      }
+    },
+    "Q3-b": {
+      "oster": {
+        "beta_sin_FE": 0.007004897281521934,
+        "r2_sin_FE": 0.008815721240272967,
+        "beta_con_FE": 0.009077270952434798,
+        "r2_con_FE": 0.3470651144356962,
+        "delta_beta0_rmax1_3": -14.229578707207468,
+        "fragil_delta_lt_1": false
+      },
+      "cinelli_hazlett_RV_q1": 0.05855077669035639,
+      "cinelli_hazlett_fragil_RV_lt_0_05": false,
+      "e_value_punto": 1.4136814320625275,
+      "e_value_limite_ic": 1.3152000490771334,
+      "heterocedasticidad_BP_LM": 0.027390452257877396,
+      "autocorrelacion_temporal": "no aplica (corte transversal)",
+      "moran_residuos_secciones": {
+        "I": -0.048250952733054187,
+        "p_perm_bilateral": 0.001,
+        "n": 9916,
+        "nota": "diagnóstico de dependencia espacial de residuos; no es inferencia sobre el efecto"
+      },
+      "balance_covariables_con_FE_municipio": {
+        "renta_adrh": {
+          "coef_std_por_DT": -0.5025726346967879,
+          "n": 10606
+        },
+        "poblacion": {
+          "coef_std_por_DT": 0.10632472724730976,
+          "n": 10838
+        },
+        "pct_vut": {
+          "coef_std_por_DT": 0.38587348957532946,
+          "n": 10394
+        }
+      },
+      "pretendencia_placebo_2018_2021": {
+        "beta_por_DT": 0.005109416546799145,
+        "se_conley": 0.0023348521402191454,
+        "ic95": [
+          0.000533190406646668,
+          0.009685642686951622
+        ],
+        "n": 9560,
+        "nota": "mismo estimador y estructura que el principal, con otro periodo; diagnóstico, no entra en el control BY"
+      },
+      "sin_grandes_ciudades": {
+        "beta_por_DT": 0.010379319412285138,
+        "se_conley": 0.001852870266633994,
+        "n": 8051,
+        "excluidas": [
+          "08019",
+          "29067",
+          "41091",
+          "46250"
+        ],
+        "islas": "ninguna no sellada"
+      },
+      "tost": "no concluyente: sin magnitud de referencia en la adenda (punto 3) y herramienta solo condicionada a Δ/EE ≥ 2",
+      "magnitud_referencia": "ninguna (b no se cumple): a lo sumo una pista C4"
+    },
+    "Rotemberg_top5": [
+      {
+        "origen": "Rumanía",
+        "alfa_rotemberg": 0.4753220306422869
+      },
+      {
+        "origen": "Reino Unido",
+        "alfa_rotemberg": 0.1571807953764863
+      },
+      {
+        "origen": "Bulgaria",
+        "alfa_rotemberg": 0.062045409815294
+      },
+      {
+        "origen": "Ecuador",
+        "alfa_rotemberg": 0.05913171520043216
+      },
+      {
+        "origen": "Alemania",
+        "alfa_rotemberg": 0.05271996189521207
+      }
+    ],
+    "pruebas": {
+      "superadas": [
+        "Q3-b: Conley 2 km APTO solo en el escenario principal",
+        "Q3-b: sin grandes ciudades, mismo signo (0,0104 por DT)",
+        "Q3-b: Cinelli-Hazlett RV_q=1 = 0,0586 (≥ 0,05)",
+        "Q3-c1/c2: sin grandes ciudades, mismo signo",
+        "Q3-c1: pendiente previa 2003-2008 pequeña frente al efecto"
+      ],
+      "fallidas": [
+        "Q3-b: pretendencia placebo 2018-2021 = 0,0051 por DT (IC Conley 0,0005 a 0,0097) excluye el 0",
+        "Q3-b: no robusto a la sensibilidad del rango espacial (radios 0,5 y 1,5 km no pasan)",
+        "Q3-c: F efectivo no evaluable con herramienta APTA; en V9-D4 fue de 3,4 a 3,7 (< 10)",
+        "Q3-c1: estimación inestable al controlar por el instrumento retardado (de 0,0119 a 0,0077)"
+      ],
+      "no_evaluables": [
+        "AKM, AKM0 (NO APTOS)",
+        "BLP/GATES (NO APTO): solo puntual",
+        "TOST (sin magnitud en Q3-b; sin SE en Q3-c)",
+        "desbordamientos a 15 km (no aplica a escala provincial, D2)",
+        "Honest DiD / raíces unitarias con dependencia transversal (CIPS NO APTO): no aplican a una forma reducida con efectos fijos"
+      ]
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null,
+    "nota": "no es un diseño predictivo"
+  },
+  "pendiente_sellada": true,
+  "p_valores_para_BY": [
+    {
+      "id": "Q3-b|principal",
+      "p": 7.577156457827527e-09,
+      "rama": "diseños",
+      "nota": "única prueba de Q3 con p-valor válido (Conley 2 km APTO, escenario principal)"
+    },
+    {
+      "id": "Q3-c1|principal",
+      "p": null,
+      "rama": "diseños",
+      "nota": "AKM NO APTO: sin p-valor"
+    },
+    {
+      "id": "Q3-c2|principal",
+      "p": null,
+      "rama": "diseños",
+      "nota": "AKM NO APTO: sin p-valor"
+    },
+    {
+      "id": "Q3|BLP_GATES",
+      "p": null,
+      "rama": "diseños (prueba adicional, punto 13)",
+      "nota": "NO APTO: sin p-valor"
+    }
+  ],
+  "notas": [
+    "Asociación C4; pendiente de evaluación sellada. Sin lenguaje causal.",
+    "Q3 municipal de alquiler retirado (es H4 con otra muestra, adenda punto 7).",
+    "Q3-b es correlación transversal; Conley a 2 km no es robusto al rango espacial; las variantes son puntuales.",
+    "Todas las desviaciones de operativización en docs/v16/desviaciones.md (D2).",
+    "Valor tasado: F de 3,4 a 3,7 en V9-D4 (C4); no hay contradicción de dirección con V9-D4 (instrumento débil)."
+  ],
+  "regla_hallazgo": {
+    "a_q_le_0_10": "pendiente del control BY global (lo hace el orquestador)",
+    "b_tipo_S_M": "no evaluable sin SE válido o sin magnitud de referencia",
+    "c_sellada": "pendiente",
+    "resultado": "sin hallazgo; a lo sumo pista C4"
+  }
+}

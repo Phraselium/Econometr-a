@@ -1,0 +1,204 @@
+{
+  "rama": "r16/fase6-grupoB",
+  "pregunta": "Q6: fiscalidad de la compra (tipo general del ITP): Q6-v compraventas, Q6-p valor tasado",
+  "capa": "C4",
+  "datos": "data/processed/v16/entrenamiento: base_precio (compraventas y valor tasado provinciales anuales), base_poblacion; output/v16/f1/intervenciones.csv (calendario ITP)",
+  "N": {
+    "Q6-v": 504,
+    "Q6-p": 485
+  },
+  "metodo": "Wald-DID de de Chaisemartin-D'Haultfœuille (dosis continua, no absorbente) sobre panel anual provincial 2011-2024; referencia TWFE. Solo puntual.",
+  "estimacion": {
+    "Q6-v": {
+      "beta_por_punto_de_tipo": 0.02508245316199873,
+      "n": 504,
+      "ic95": null,
+      "p": null,
+      "magnitud_referencia": -0.07,
+      "multiverso": {
+        "n": 8,
+        "mediana": 0.010234167218940158,
+        "min": -0.04835529878015494,
+        "max": 0.02508245316199873,
+        "proporcion_mismo_signo": 0.75,
+        "mediana_solo_dCDH": -0.006947337769361165
+      }
+    },
+    "Q6-p": {
+      "beta_por_punto_de_tipo": -0.015704563680369415,
+      "n": 485,
+      "ic95": null,
+      "p": null,
+      "magnitud_referencia": -0.01,
+      "multiverso": {
+        "n": 8,
+        "mediana": -0.011265992423958938,
+        "min": -0.015704563680369415,
+        "max": 0.006449532187718039,
+        "proporcion_mismo_signo": 0.875,
+        "mediana_solo_dCDH": -0.013538355765077316
+      }
+    }
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "DESCRIPTIVO",
+  "diagnosticos": {
+    "Q6-v": {
+      "subidas": {
+        "beta": 0.005491730009840492,
+        "n_provincias_switchers": 26,
+        "n_años_con_contraste": 3
+      },
+      "bajadas": {
+        "beta": -0.027927738896782385,
+        "n_provincias_switchers": 13,
+        "n_años_con_contraste": 3
+      },
+      "placebo_dy_retardado": {
+        "beta": -0.04835529878015494,
+        "n_provincias_switchers": 34,
+        "n_años_con_contraste": 6
+      },
+      "control_negativo_log_poblacion": {
+        "beta": -0.004138402598310366,
+        "n_provincias_switchers": 34,
+        "n_años_con_contraste": 6
+      },
+      "sin_grandes_ciudades": {
+        "beta": 0.03743359877146777,
+        "n_provincias_switchers": 30,
+        "n_años_con_contraste": 6
+      },
+      "e_value_punto": 1.6888959197549511,
+      "cinelli_hazlett": "no calculado: requiere t con inferencia APTA (dCDH con aleatorización NO APTO)",
+      "oster": "no aplica al Wald-DID; para la referencia TWFE ver ‘twfe_referencia’",
+      "twfe_referencia": {
+        "beta": 0.015737689509153503,
+        "n": 504,
+        "r2_total": 0.9910903214448566,
+        "r2_within": 0.005978338149310258
+      },
+      "het_autocorr_twfe": {
+        "breusch_pagan_LM": 2.863402430465954,
+        "wooldridge_pendiente": -0.10213953137835771,
+        "wooldridge_referencia_sin_autocorr": -0.5
+      },
+      "moran_residuos_twfe_prov": {
+        "I": 0.10801051104005176,
+        "p_perm_bilateral": 0.326,
+        "n": 36,
+        "nota": "diagnóstico de dependencia espacial de residuos; no es inferencia sobre el efecto"
+      },
+      "honest_did": "no usado: no validado por Monte Carlo (veredictos.csv)",
+      "islas": "ninguna no sellada",
+      "magnitud_referencia": -0.07,
+      "razon_estimacion_sobre_referencia": -0.3583207594571247,
+      "estables_vs_cambios": "ver calendario_cambios; sin errores S y M (sin SE válido)"
+    },
+    "Q6-p": {
+      "subidas": {
+        "beta": -0.011570630678619666,
+        "n_provincias_switchers": 25,
+        "n_años_con_contraste": 2
+      },
+      "bajadas": {
+        "beta": -0.0043362479255576025,
+        "n_provincias_switchers": 12,
+        "n_años_con_contraste": 3
+      },
+      "placebo_dy_retardado": {
+        "beta": 0.006001460568209868,
+        "n_provincias_switchers": 33,
+        "n_años_con_contraste": 5
+      },
+      "control_negativo_log_poblacion": {
+        "beta": -0.004138402598310366,
+        "n_provincias_switchers": 34,
+        "n_años_con_contraste": 6
+      },
+      "sin_grandes_ciudades": {
+        "beta": -0.016962150329486524,
+        "n_provincias_switchers": 29,
+        "n_años_con_contraste": 5
+      },
+      "e_value_punto": 2.295107759746415,
+      "cinelli_hazlett": "no calculado: requiere t con inferencia APTA (dCDH con aleatorización NO APTO)",
+      "oster": "no aplica al Wald-DID; para la referencia TWFE ver ‘twfe_referencia’",
+      "twfe_referencia": {
+        "beta": -0.004711806055200216,
+        "n": 485,
+        "r2_total": 0.952315036434097,
+        "r2_within": 0.0015545353239736492
+      },
+      "het_autocorr_twfe": {
+        "breusch_pagan_LM": 0.6253385728819549,
+        "wooldridge_pendiente": 0.2632739610976192,
+        "wooldridge_referencia_sin_autocorr": -0.5
+      },
+      "moran_residuos_twfe_prov": {
+        "I": -0.01666250556588113,
+        "p_perm_bilateral": 0.922,
+        "n": 35,
+        "nota": "diagnóstico de dependencia espacial de residuos; no es inferencia sobre el efecto"
+      },
+      "honest_did": "no usado: no validado por Monte Carlo (veredictos.csv)",
+      "islas": "ninguna no sellada",
+      "magnitud_referencia": -0.01,
+      "razon_estimacion_sobre_referencia": 1.5704563680369414,
+      "estables_vs_cambios": "ver calendario_cambios; sin errores S y M (sin SE válido)"
+    },
+    "pruebas": {
+      "superadas": [
+        "Q6-p: placebo con ΔY retardado pequeño (0,0060)",
+        "Q6-p: sin grandes ciudades, mismo signo (-0,0170)",
+        "Q6-v y Q6-p: control negativo (log población) cercano a 0 (-0,0041)"
+      ],
+      "fallidas": [
+        "Q6-v: placebo con ΔY retardado de signo opuesto y mayor tamaño que el efecto (-0,0484 frente a 0,0251)",
+        "Q6-v: la estimación principal tiene signo opuesto a la referencia (-0,07 por punto); las bajadas (-0,0279) tienen el signo de la referencia y las subidas son casi nulas (0,0055): lectura no unívoca",
+        "Q6-v/Q6-p: el diseño tiene 14 cambios en 8 CCAA, concentrados en 2012-2013: en 2012 no hay estables que cumplan la exclusión de anticipación"
+      ],
+      "no_evaluables": [
+        "inferencia por aleatorización del calendario (dCDH NO APTO): sin p-valor ni IC",
+        "Honest DiD (no validado)",
+        "Cinelli-Hazlett (requiere t válido)",
+        "Oster (no aplica al Wald-DID)",
+        "TOST (sin SE)"
+      ]
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null,
+    "nota": "no es un diseño predictivo"
+  },
+  "pendiente_sellada": true,
+  "p_valores_para_BY": [
+    {
+      "id": "Q6-v|principal",
+      "p": null,
+      "rama": "diseños",
+      "nota": "dCDH con aleatorización NO APTO"
+    },
+    {
+      "id": "Q6-p|principal",
+      "p": null,
+      "rama": "diseños",
+      "nota": "dCDH con aleatorización NO APTO"
+    }
+  ],
+  "notas": [
+    "Asociación C4; pendiente de evaluación sellada. Sin lenguaje causal.",
+    "Compraventas = total de vivienda (sin desglose usada/nueva en el panel provincial); ver D2.",
+    "Calendario: 14 cambios del tipo general en 8 CCAA no selladas (2012-2024).",
+    "La variante «fecha adelantada un año» coincide con el placebo de ΔY retardado por construcción."
+  ],
+  "regla_hallazgo": {
+    "a_q_le_0_10": "pendiente del control BY global (lo hace el orquestador)",
+    "b_tipo_S_M": "no evaluable sin SE válido o sin magnitud de referencia",
+    "c_sellada": "pendiente",
+    "resultado": "sin hallazgo; a lo sumo pista C4"
+  }
+}

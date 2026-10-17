@@ -1,0 +1,39 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v16-fase6,Q3-c1|base2003|todos|pts|año|PRINCIPAL,log y ~ x + FE (año),2011,2022,451,0.9795819927448391,,,,0.011896232675603781,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|excl_grandes,idem sin 08/46/41/29,2011,2022,403,0.9849642782262805,,,,0.012879734836205975,,diagnóstico
+v16-fase6,Q3-c1|JRS_lag4,idem + x(t-4),2011,2022,451,0.9808504412312544,,,,0.007677543589754392,,diagnóstico
+v16-fase6,Q3-c1|pretendencia,Δlog y previo ~ x2022,2003,2008,38,,,,,0.0003563482363166769,,diagnóstico
+v16-fase6,Q3-c1|base2003|todos|pts|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,451,0.9850515940131008,,,,0.011887727199766948,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2003|todos|log1p|año,log y ~ x + FE (año),2011,2022,451,0.9796777954046022,,,,1.5824178703949583,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2003|todos|log1p|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,451,0.9849891267681046,,,,1.3682692721192067,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2003|sin_top5|pts|año,log y ~ x + FE (año),2011,2022,451,0.981465551823238,,,,0.05062947827947149,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2003|sin_top5|pts|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,451,0.9850869591130734,,,,0.024395686788890706,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2003|sin_top5|log1p|año,log y ~ x + FE (año),2011,2022,451,0.9815553671878294,,,,5.843113455348577,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2003|sin_top5|log1p|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,451,0.9850942387107957,,,,2.7974544165731166,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2004|todos|pts|año,log y ~ x + FE (año),2011,2022,451,0.9796050101106984,,,,0.013325861709020604,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2004|todos|pts|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,451,0.9850115287112194,,,,0.012221955763920439,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2004|todos|log1p|año,log y ~ x + FE (año),2011,2022,451,0.9797060373817019,,,,1.7455598965542836,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2004|todos|log1p|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,451,0.9849736871064636,,,,1.4244180711150107,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2004|sin_top5|pts|año,log y ~ x + FE (año),2011,2022,451,0.9814667164302081,,,,0.05251933747312519,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2004|sin_top5|pts|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,451,0.9851573201807068,,,,0.0274440600026061,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2004|sin_top5|log1p|año,log y ~ x + FE (año),2011,2022,451,0.9815594660763064,,,,6.072311166010772,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c1|base2004|sin_top5|log1p|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,451,0.9851717299311056,,,,3.166275012241072,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2003|todos|pts|año|PRINCIPAL,log y ~ x + FE (año),2011,2022,492,0.9904530070398249,,,,-0.028176478254563007,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|excl_grandes,idem sin 08/46/41/29,2011,2022,444,0.9876705282803833,,,,-0.019648029114692562,,diagnóstico
+v16-fase6,Q3-c2|JRS_lag4,idem + x(t-4),2011,2022,492,0.9904827677531577,,,,-0.026935137901559707,,diagnóstico
+v16-fase6,Q3-c2|pretendencia,Δlog y previo ~ x2022,2007,2010,41,,,,,-0.012739192890903894,,diagnóstico
+v16-fase6,Q3-c2|base2003|todos|pts|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,492,0.9920067083936006,,,,-0.025839412659207736,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2003|todos|log1p|año,log y ~ x + FE (año),2011,2022,492,0.990451115139093,,,,-3.44573726051215,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2003|todos|log1p|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,492,0.9920182927205786,,,,-3.346772936275936,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2003|sin_top5|pts|año,log y ~ x + FE (año),2011,2022,492,0.9901971565891073,,,,-0.01932434101997215,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2003|sin_top5|pts|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,492,0.9922341370816181,,,,-0.07819961468271139,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2003|sin_top5|log1p|año,log y ~ x + FE (año),2011,2022,492,0.9901872020680426,,,,-1.8593452533842796,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2003|sin_top5|log1p|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,492,0.9922029809185955,,,,-8.602945341646276,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2004|todos|pts|año,log y ~ x + FE (año),2011,2022,492,0.9904647133219177,,,,-0.03176080332550286,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2004|todos|pts|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,492,0.9920227935539223,,,,-0.029500152687357846,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2004|todos|log1p|año,log y ~ x + FE (año),2011,2022,492,0.9904548086230708,,,,-3.769806806289937,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2004|todos|log1p|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,492,0.9920268442376176,,,,-3.665005063074111,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2004|sin_top5|pts|año,log y ~ x + FE (año),2011,2022,492,0.9901827903784141,,,,-0.01563090314505639,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2004|sin_top5|pts|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,492,0.9922367428373347,,,,-0.08372081448825872,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2004|sin_top5|log1p|año,log y ~ x + FE (año),2011,2022,492,0.9901759423072488,,,,-1.4229822705496105,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
+v16-fase6,Q3-c2|base2004|sin_top5|log1p|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,492,0.9922053405438,,,,-9.15736662315899,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total

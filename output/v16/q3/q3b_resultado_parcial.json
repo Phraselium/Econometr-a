@@ -1,0 +1,174 @@
+{
+  "especificaciones": [
+    {
+      "id": "Q3-b|VC|cuota_ext|2021-2024|Conley2km|PRINCIPAL",
+      "beta_por_DT": 0.009077270952434798,
+      "n": 9916,
+      "principal": true,
+      "se_conley": 0.0015711131865724468,
+      "p_conley": 7.577156457827527e-09
+    },
+    {
+      "id": "Q3-b|VC|cuota_ext|2022-2024|puntual",
+      "beta_por_DT": 0.0054739214486370594,
+      "n": 10112,
+      "principal": false,
+      "se_conley": null,
+      "p_conley": null
+    },
+    {
+      "id": "Q3-b|VC|cuota_no_europea|2021-2024|puntual",
+      "beta_por_DT": 0.006031618924123834,
+      "n": 9916,
+      "principal": false,
+      "se_conley": null,
+      "p_conley": null
+    },
+    {
+      "id": "Q3-b|VC|cuota_no_europea|2022-2024|puntual",
+      "beta_por_DT": 0.003937883072205959,
+      "n": 10112,
+      "principal": false,
+      "se_conley": null,
+      "p_conley": null
+    },
+    {
+      "id": "Q3-b|VU|cuota_ext|2021-2024|puntual",
+      "beta_por_DT": 0.007628549821179024,
+      "n": 2235,
+      "principal": false,
+      "se_conley": null,
+      "p_conley": null
+    },
+    {
+      "id": "Q3-b|VU|cuota_no_europea|2021-2024|puntual",
+      "beta_por_DT": 0.0034453761546201374,
+      "n": 2235,
+      "principal": false,
+      "se_conley": null,
+      "p_conley": null
+    }
+  ],
+  "principal": {
+    "beta_por_DT": 0.009077270952434798,
+    "se": 0.0015711131865724468,
+    "t": 5.777604713660284,
+    "p": 7.577156457827527e-09,
+    "ic95": [
+      0.005997945666827519,
+      0.012156596238042078
+    ],
+    "n": 9916,
+    "n_mun": 748,
+    "r2_total": 0.3470651144356962,
+    "r2_within": 0.00967750514152943,
+    "vecinos_medios": 50.096208148446955,
+    "dof": 9167
+  },
+  "p_valores_para_BY": [
+    {
+      "id": "Q3-b|principal",
+      "p": 7.577156457827527e-09,
+      "rama": "diseños"
+    }
+  ],
+  "multiverso": {
+    "n_especificaciones": 6,
+    "mediana_beta_por_DT": 0.005752770186380447,
+    "min": 0.0034453761546201374,
+    "max": 0.009077270952434798,
+    "proporcion_mismo_signo": 1.0,
+    "nota": "variantes sin IC (Conley solo validado en el escenario principal)"
+  },
+  "sensibilidad_rango_espacial": {
+    "radios_km_no_aptos": [
+      0.5,
+      1.5
+    ],
+    "beta_por_DT": 0.009077270952434798,
+    "nota": "la estimación puntual no depende del radio del núcleo; el EE a 0,5 y 1,5 km NO pasa el Monte Carlo y no se publica"
+  },
+  "diagnosticos": {
+    "oster": {
+      "beta_sin_FE": 0.007004897281521934,
+      "r2_sin_FE": 0.008815721240272967,
+      "beta_con_FE": 0.009077270952434798,
+      "r2_con_FE": 0.3470651144356962,
+      "delta_beta0_rmax1_3": -14.229578707207468,
+      "fragil_delta_lt_1": false
+    },
+    "cinelli_hazlett_RV_q1": 0.05855077669035639,
+    "cinelli_hazlett_fragil_RV_lt_0_05": false,
+    "e_value_punto": 1.4136814320625275,
+    "e_value_limite_ic": 1.3152000490771334,
+    "heterocedasticidad_BP_LM": 0.027390452257877396,
+    "autocorrelacion_temporal": "no aplica (corte transversal)",
+    "moran_residuos_secciones": {
+      "I": -0.048250952733054187,
+      "p_perm_bilateral": 0.001,
+      "n": 9916,
+      "nota": "diagnóstico de dependencia espacial de residuos; no es inferencia sobre el efecto"
+    },
+    "balance_covariables_con_FE_municipio": {
+      "renta_adrh": {
+        "coef_std_por_DT": -0.5025726346967879,
+        "n": 10606
+      },
+      "poblacion": {
+        "coef_std_por_DT": 0.10632472724730976,
+        "n": 10838
+      },
+      "pct_vut": {
+        "coef_std_por_DT": 0.38587348957532946,
+        "n": 10394
+      }
+    },
+    "pretendencia_placebo_2018_2021": {
+      "beta_por_DT": 0.005109416546799145,
+      "se_conley": 0.0023348521402191454,
+      "ic95": [
+        0.000533190406646668,
+        0.009685642686951622
+      ],
+      "n": 9560,
+      "nota": "mismo estimador y estructura que el principal, con otro periodo; diagnóstico, no entra en el control BY"
+    },
+    "sin_grandes_ciudades": {
+      "beta_por_DT": 0.010379319412285138,
+      "se_conley": 0.001852870266633994,
+      "n": 8051,
+      "excluidas": [
+        "08019",
+        "29067",
+        "41091",
+        "46250"
+      ],
+      "islas": "ninguna no sellada"
+    },
+    "tost": "no concluyente: sin magnitud de referencia en la adenda (punto 3) y herramienta solo condicionada a Δ/EE ≥ 2",
+    "magnitud_referencia": "ninguna (b no se cumple): a lo sumo una pista C4"
+  },
+  "blp_gates": {
+    "n": 9489,
+    "beta_x_media": 0.005981443355033046,
+    "interacciones_x_moderador_por_DT": {
+      "renta_adrh": 0.0012297204732226433,
+      "poblacion": 0.0010106629384676622,
+      "cuota_extranjeros": -0.0016226497996945993,
+      "pct_vut": 0.0006303554894959212,
+      "obra_pc": 0.0019178265166746324
+    },
+    "r2_within_con_interacciones": 0.012826829706671594,
+    "r2_within_sin_interacciones": 0.01076589506601966,
+    "ganancia_r2_within": 0.0020609346406519347,
+    "gates_beta_por_DT": {
+      "cuartil_1": 0.009990876214857971,
+      "cuartil_2": 0.011860460775390061,
+      "cuartil_3": 0.008369056211436644,
+      "cuartil_4": 0.010152462405375326
+    },
+    "gates_q4_menos_q1": 0.00016158619051735539,
+    "estado": "NO APTO (blp_gates: tamaño 0,005, cobertura 0,9885): estimación puntual descriptiva, sin p-valor ni IC"
+  },
+  "n_secciones_entrenamiento": 17510
+}

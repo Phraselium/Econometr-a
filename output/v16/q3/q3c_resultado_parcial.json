@@ -1,0 +1,615 @@
+{
+  "especificaciones": [
+    {
+      "id": "Q3-c1|base2003|todos|pts|año|PRINCIPAL",
+      "pregunta": "Q3-c1",
+      "base": 2003,
+      "origenes": "todos",
+      "norm": "pts",
+      "efectos": "año",
+      "beta": 0.011896232675603781,
+      "beta_por_DT": 0.007528629483374078,
+      "n": 451,
+      "r2": 0.9795819927448391,
+      "principal": true
+    },
+    {
+      "id": "Q3-c1|base2003|todos|pts|año+CCAA×tendencia",
+      "pregunta": "Q3-c1",
+      "base": 2003,
+      "origenes": "todos",
+      "norm": "pts",
+      "efectos": "año+CCAA×tendencia",
+      "beta": 0.011887727199766948,
+      "beta_por_DT": 0.007523246722469727,
+      "n": 451,
+      "r2": 0.9850515940131008,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2003|todos|log1p|año",
+      "pregunta": "Q3-c1",
+      "base": 2003,
+      "origenes": "todos",
+      "norm": "log1p",
+      "efectos": "año",
+      "beta": 1.5824178703949583,
+      "beta_por_DT": 0.008100548174043206,
+      "n": 451,
+      "r2": 0.9796777954046022,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2003|todos|log1p|año+CCAA×tendencia",
+      "pregunta": "Q3-c1",
+      "base": 2003,
+      "origenes": "todos",
+      "norm": "log1p",
+      "efectos": "año+CCAA×tendencia",
+      "beta": 1.3682692721192067,
+      "beta_por_DT": 0.0070043010517179365,
+      "n": 451,
+      "r2": 0.9849891267681046,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2003|sin_top5|pts|año",
+      "pregunta": "Q3-c1",
+      "base": 2003,
+      "origenes": "sin_top5",
+      "norm": "pts",
+      "efectos": "año",
+      "beta": 0.05062947827947149,
+      "beta_por_DT": 0.015245355325446687,
+      "n": 451,
+      "r2": 0.981465551823238,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2003|sin_top5|pts|año+CCAA×tendencia",
+      "pregunta": "Q3-c1",
+      "base": 2003,
+      "origenes": "sin_top5",
+      "norm": "pts",
+      "efectos": "año+CCAA×tendencia",
+      "beta": 0.024395686788890706,
+      "beta_por_DT": 0.007345936125431998,
+      "n": 451,
+      "r2": 0.9850869591130734,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2003|sin_top5|log1p|año",
+      "pregunta": "Q3-c1",
+      "base": 2003,
+      "origenes": "sin_top5",
+      "norm": "log1p",
+      "efectos": "año",
+      "beta": 5.843113455348577,
+      "beta_por_DT": 0.01551775914125268,
+      "n": 451,
+      "r2": 0.9815553671878294,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2003|sin_top5|log1p|año+CCAA×tendencia",
+      "pregunta": "Q3-c1",
+      "base": 2003,
+      "origenes": "sin_top5",
+      "norm": "log1p",
+      "efectos": "año+CCAA×tendencia",
+      "beta": 2.7974544165731166,
+      "beta_por_DT": 0.007429296757070324,
+      "n": 451,
+      "r2": 0.9850942387107957,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2004|todos|pts|año",
+      "pregunta": "Q3-c1",
+      "base": 2004,
+      "origenes": "todos",
+      "norm": "pts",
+      "efectos": "año",
+      "beta": 0.013325861709020604,
+      "beta_por_DT": 0.007669930739714182,
+      "n": 451,
+      "r2": 0.9796050101106984,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2004|todos|pts|año+CCAA×tendencia",
+      "pregunta": "Q3-c1",
+      "base": 2004,
+      "origenes": "todos",
+      "norm": "pts",
+      "efectos": "año+CCAA×tendencia",
+      "beta": 0.012221955763920439,
+      "beta_por_DT": 0.007034558534377131,
+      "n": 451,
+      "r2": 0.9850115287112194,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2004|todos|log1p|año",
+      "pregunta": "Q3-c1",
+      "base": 2004,
+      "origenes": "todos",
+      "norm": "log1p",
+      "efectos": "año",
+      "beta": 1.7455598965542836,
+      "beta_por_DT": 0.008261593380348795,
+      "n": 451,
+      "r2": 0.9797060373817019,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2004|todos|log1p|año+CCAA×tendencia",
+      "pregunta": "Q3-c1",
+      "base": 2004,
+      "origenes": "todos",
+      "norm": "log1p",
+      "efectos": "año+CCAA×tendencia",
+      "beta": 1.4244180711150107,
+      "beta_por_DT": 0.006741655173450538,
+      "n": 451,
+      "r2": 0.9849736871064636,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2004|sin_top5|pts|año",
+      "pregunta": "Q3-c1",
+      "base": 2004,
+      "origenes": "sin_top5",
+      "norm": "pts",
+      "efectos": "año",
+      "beta": 0.05251933747312519,
+      "beta_por_DT": 0.015248918638168798,
+      "n": 451,
+      "r2": 0.9814667164302081,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2004|sin_top5|pts|año+CCAA×tendencia",
+      "pregunta": "Q3-c1",
+      "base": 2004,
+      "origenes": "sin_top5",
+      "norm": "pts",
+      "efectos": "año+CCAA×tendencia",
+      "beta": 0.0274440600026061,
+      "beta_por_DT": 0.007968345722085901,
+      "n": 451,
+      "r2": 0.9851573201807068,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2004|sin_top5|log1p|año",
+      "pregunta": "Q3-c1",
+      "base": 2004,
+      "origenes": "sin_top5",
+      "norm": "log1p",
+      "efectos": "año",
+      "beta": 6.072311166010772,
+      "beta_por_DT": 0.015530076784414744,
+      "n": 451,
+      "r2": 0.9815594660763064,
+      "principal": false
+    },
+    {
+      "id": "Q3-c1|base2004|sin_top5|log1p|año+CCAA×tendencia",
+      "pregunta": "Q3-c1",
+      "base": 2004,
+      "origenes": "sin_top5",
+      "norm": "log1p",
+      "efectos": "año+CCAA×tendencia",
+      "beta": 3.166275012241072,
+      "beta_por_DT": 0.008097821853385295,
+      "n": 451,
+      "r2": 0.9851717299311056,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2003|todos|pts|año|PRINCIPAL",
+      "pregunta": "Q3-c2",
+      "base": 2003,
+      "origenes": "todos",
+      "norm": "pts",
+      "efectos": "año",
+      "beta": -0.028176478254563007,
+      "beta_por_DT": -0.018323249251057282,
+      "n": 492,
+      "r2": 0.9904530070398249,
+      "principal": true
+    },
+    {
+      "id": "Q3-c2|base2003|todos|pts|año+CCAA×tendencia",
+      "pregunta": "Q3-c2",
+      "base": 2003,
+      "origenes": "todos",
+      "norm": "pts",
+      "efectos": "año+CCAA×tendencia",
+      "beta": -0.025839412659207736,
+      "beta_por_DT": -0.016803448407499755,
+      "n": 492,
+      "r2": 0.9920067083936006,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2003|todos|log1p|año",
+      "pregunta": "Q3-c2",
+      "base": 2003,
+      "origenes": "todos",
+      "norm": "log1p",
+      "efectos": "año",
+      "beta": -3.44573726051215,
+      "beta_por_DT": -0.018263185077963637,
+      "n": 492,
+      "r2": 0.990451115139093,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2003|todos|log1p|año+CCAA×tendencia",
+      "pregunta": "Q3-c2",
+      "base": 2003,
+      "origenes": "todos",
+      "norm": "log1p",
+      "efectos": "año+CCAA×tendencia",
+      "beta": -3.346772936275936,
+      "beta_por_DT": -0.017738651826298087,
+      "n": 492,
+      "r2": 0.9920182927205786,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2003|sin_top5|pts|año",
+      "pregunta": "Q3-c2",
+      "base": 2003,
+      "origenes": "sin_top5",
+      "norm": "pts",
+      "efectos": "año",
+      "beta": -0.01932434101997215,
+      "beta_por_DT": -0.006209575502020472,
+      "n": 492,
+      "r2": 0.9901971565891073,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2003|sin_top5|pts|año+CCAA×tendencia",
+      "pregunta": "Q3-c2",
+      "base": 2003,
+      "origenes": "sin_top5",
+      "norm": "pts",
+      "efectos": "año+CCAA×tendencia",
+      "beta": -0.07819961468271139,
+      "beta_por_DT": -0.02512822616302105,
+      "n": 492,
+      "r2": 0.9922341370816181,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2003|sin_top5|log1p|año",
+      "pregunta": "Q3-c2",
+      "base": 2003,
+      "origenes": "sin_top5",
+      "norm": "log1p",
+      "efectos": "año",
+      "beta": -1.8593452533842796,
+      "beta_por_DT": -0.005195784032054629,
+      "n": 492,
+      "r2": 0.9901872020680426,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2003|sin_top5|log1p|año+CCAA×tendencia",
+      "pregunta": "Q3-c2",
+      "base": 2003,
+      "origenes": "sin_top5",
+      "norm": "log1p",
+      "efectos": "año+CCAA×tendencia",
+      "beta": -8.602945341646276,
+      "beta_por_DT": -0.024040207677087238,
+      "n": 492,
+      "r2": 0.9922029809185955,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2004|todos|pts|año",
+      "pregunta": "Q3-c2",
+      "base": 2004,
+      "origenes": "todos",
+      "norm": "pts",
+      "efectos": "año",
+      "beta": -0.03176080332550286,
+      "beta_por_DT": -0.01869060925237706,
+      "n": 492,
+      "r2": 0.9904647133219177,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2004|todos|pts|año+CCAA×tendencia",
+      "pregunta": "Q3-c2",
+      "base": 2004,
+      "origenes": "todos",
+      "norm": "pts",
+      "efectos": "año+CCAA×tendencia",
+      "beta": -0.029500152687357846,
+      "beta_por_DT": -0.017360260731255822,
+      "n": 492,
+      "r2": 0.9920227935539223,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2004|todos|log1p|año",
+      "pregunta": "Q3-c2",
+      "base": 2004,
+      "origenes": "todos",
+      "norm": "log1p",
+      "efectos": "año",
+      "beta": -3.769806806289937,
+      "beta_por_DT": -0.018380263570632705,
+      "n": 492,
+      "r2": 0.9904548086230708,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2004|todos|log1p|año+CCAA×tendencia",
+      "pregunta": "Q3-c2",
+      "base": 2004,
+      "origenes": "todos",
+      "norm": "log1p",
+      "efectos": "año+CCAA×tendencia",
+      "beta": -3.665005063074111,
+      "beta_por_DT": -0.017869286811888825,
+      "n": 492,
+      "r2": 0.9920268442376176,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2004|sin_top5|pts|año",
+      "pregunta": "Q3-c2",
+      "base": 2004,
+      "origenes": "sin_top5",
+      "norm": "pts",
+      "efectos": "año",
+      "beta": -0.01563090314505639,
+      "beta_por_DT": -0.004676727646525813,
+      "n": 492,
+      "r2": 0.9901827903784141,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2004|sin_top5|pts|año+CCAA×tendencia",
+      "pregunta": "Q3-c2",
+      "base": 2004,
+      "origenes": "sin_top5",
+      "norm": "pts",
+      "efectos": "año+CCAA×tendencia",
+      "beta": -0.08372081448825872,
+      "beta_por_DT": -0.02504906108581008,
+      "n": 492,
+      "r2": 0.9922367428373347,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2004|sin_top5|log1p|año",
+      "pregunta": "Q3-c2",
+      "base": 2004,
+      "origenes": "sin_top5",
+      "norm": "log1p",
+      "efectos": "año",
+      "beta": -1.4229822705496105,
+      "beta_por_DT": -0.0037306053957085732,
+      "n": 492,
+      "r2": 0.9901759423072488,
+      "principal": false
+    },
+    {
+      "id": "Q3-c2|base2004|sin_top5|log1p|año+CCAA×tendencia",
+      "pregunta": "Q3-c2",
+      "base": 2004,
+      "origenes": "sin_top5",
+      "norm": "log1p",
+      "efectos": "año+CCAA×tendencia",
+      "beta": -9.15736662315899,
+      "beta_por_DT": -0.02400769288688583,
+      "n": 492,
+      "r2": 0.9922053405438,
+      "principal": false
+    }
+  ],
+  "principal": {
+    "Q3-c1": {
+      "beta_por_punto": 0.011896232675603781,
+      "n": 451,
+      "n_provincias": 38,
+      "sd_x_dentro": 0.6328582912482392,
+      "r2_total": 0.9795819927448391,
+      "r2_within": 0.028893005843521835
+    },
+    "Q3-c2": {
+      "beta_por_punto": -0.028176478254563007,
+      "n": 492,
+      "n_provincias": 41,
+      "sd_x_dentro": 0.6503030323915638,
+      "r2_total": 0.9904530070398249,
+      "r2_within": 0.02938647354477386
+    }
+  },
+  "diagnosticos": {
+    "rotemberg_top5": [
+      {
+        "origen": "Rumanía",
+        "alfa_rotemberg": 0.4753220306422869
+      },
+      {
+        "origen": "Reino Unido",
+        "alfa_rotemberg": 0.1571807953764863
+      },
+      {
+        "origen": "Bulgaria",
+        "alfa_rotemberg": 0.062045409815294
+      },
+      {
+        "origen": "Ecuador",
+        "alfa_rotemberg": 0.05913171520043216
+      },
+      {
+        "origen": "Alemania",
+        "alfa_rotemberg": 0.05271996189521207
+      }
+    ],
+    "rotemberg_suma_alfa": 0.9999999999999992,
+    "rotemberg_suma_alfa_negativos": -0.05585337907008544,
+    "top5_excluidos": [
+      "Rumanía",
+      "Reino Unido",
+      "Bulgaria",
+      "Ecuador",
+      "Alemania"
+    ],
+    "Q3-c1": {
+      "oster": {
+        "beta_sin_efectos": 0.00600253923582066,
+        "r2_sin_efectos": 0.017890316698478625,
+        "beta_con_efectos": 0.011896232675603781,
+        "r2_con_efectos": 0.9795819927448391,
+        "delta_beta0_rmax1_3": -95.07020070977254,
+        "fragil_delta_lt_1": false,
+        "nota": "δ < 0 = al añadir efectos fijos la estimación se aleja de 0: no es el caso de fragilidad; se publica el valor"
+      },
+      "e_value_punto": 1.609179995300364,
+      "cinelli_hazlett_RV": "no calculado: requiere t con inferencia APTA (AKM/AKM0 NO APTOS)",
+      "het_autocorr": {
+        "breusch_pagan_LM": 7.782221459993804,
+        "wooldridge_pendiente": 0.21209637442067994,
+        "wooldridge_referencia_sin_autocorr": -0.5
+      },
+      "moran_residuos_prov": {
+        "I": -0.06666752815298867,
+        "p_perm_bilateral": 0.489,
+        "n": 38,
+        "nota": "diagnóstico de dependencia espacial de residuos; no es inferencia sobre el efecto"
+      },
+      "sin_grandes_ciudades": {
+        "beta": 0.012879734836205975,
+        "n": 403,
+        "provincias_excluidas": [
+          "08",
+          "29",
+          "41",
+          "46"
+        ],
+        "islas": "ninguna no sellada"
+      },
+      "control_instrumento_retardado": {
+        "beta_x": 0.007677543589754392,
+        "beta_xlag4": -0.014526266584140874,
+        "n": 451
+      },
+      "pretendencia": {
+        "periodo_previo": [
+          2003,
+          2008
+        ],
+        "pendiente_dlogy_por_punto_exposicion_2022": 0.0003563482363166769,
+        "n": 38,
+        "lectura": "pendiente puntual; sin p-valor (herramienta NO APTA); se compara con el efecto principal por punto"
+      },
+      "primera_etapa_descriptiva": {
+        "coef": 0.8858580109711484,
+        "r2_within": 0.4692309157535901,
+        "n": 492,
+        "nota": "F efectivo de Montiel Olea-Pflueger: herramienta no validada (AKM NO APTO); en V9-D4 el F fue de 3,4 a 3,7"
+      },
+      "magnitud_referencia": {
+        "saiz_por_punto": 0.01,
+        "razon_estimacion_sobre_referencia": 1.1896232675603782,
+        "nota": "sin SE válido no se calculan errores S y M: (b) de la regla de hallazgo no se evalúa"
+      }
+    },
+    "Q3-c2": {
+      "oster": {
+        "beta_sin_efectos": 0.04005151516970682,
+        "r2_sin_efectos": 0.06375378102815332,
+        "beta_con_efectos": -0.028176478254563007,
+        "r2_con_efectos": 0.9904530070398249,
+        "delta_beta0_rmax1_3": -40.08633109647893,
+        "fragil_delta_lt_1": false,
+        "nota": "δ < 0 = al añadir efectos fijos la estimación se aleja de 0: no es el caso de fragilidad; se publica el valor"
+      },
+      "e_value_punto": 1.6130329563434995,
+      "cinelli_hazlett_RV": "no calculado: requiere t con inferencia APTA (AKM/AKM0 NO APTOS)",
+      "het_autocorr": {
+        "breusch_pagan_LM": 2.0363508683605307,
+        "wooldridge_pendiente": -0.1871648142631446,
+        "wooldridge_referencia_sin_autocorr": -0.5
+      },
+      "moran_residuos_prov": {
+        "I": -0.0005261398577448242,
+        "p_perm_bilateral": 0.992,
+        "n": 41,
+        "nota": "diagnóstico de dependencia espacial de residuos; no es inferencia sobre el efecto"
+      },
+      "sin_grandes_ciudades": {
+        "beta": -0.019648029114692562,
+        "n": 444,
+        "provincias_excluidas": [
+          "08",
+          "29",
+          "41",
+          "46"
+        ],
+        "islas": "ninguna no sellada"
+      },
+      "control_instrumento_retardado": {
+        "beta_x": -0.026935137901559707,
+        "beta_xlag4": 0.007660229452964704,
+        "n": 492
+      },
+      "pretendencia": {
+        "periodo_previo": [
+          2007,
+          2010
+        ],
+        "pendiente_dlogy_por_punto_exposicion_2022": -0.012739192890903894,
+        "n": 41,
+        "lectura": "pendiente puntual; sin p-valor (herramienta NO APTA); se compara con el efecto principal por punto"
+      },
+      "primera_etapa_descriptiva": {
+        "coef": 0.8858580109711484,
+        "r2_within": 0.4692309157535901,
+        "n": 492,
+        "nota": "F efectivo de Montiel Olea-Pflueger: herramienta no validada (AKM NO APTO); en V9-D4 el F fue de 3,4 a 3,7"
+      },
+      "magnitud_referencia": {
+        "saiz_por_punto": null,
+        "razon_estimacion_sobre_referencia": null,
+        "nota": "sin SE válido no se calculan errores S y M: (b) de la regla de hallazgo no se evalúa"
+      }
+    }
+  },
+  "multiverso": {
+    "Q3-c1": {
+      "n_especificaciones": 16,
+      "mediana_beta_por_DT": 0.007819138230900042,
+      "min_por_DT": 0.006741655173450538,
+      "max_por_DT": 0.015530076784414744,
+      "mediana_beta_por_punto_solo_pts": 0.018860774248955655,
+      "min_por_punto_solo_pts": 0.011887727199766948,
+      "max_por_punto_solo_pts": 0.05251933747312519,
+      "proporcion_mismo_signo_que_principal": 1.0,
+      "nota": "sin IC válido: no se puede contar «IC que excluye el 0»"
+    },
+    "Q3-c2": {
+      "n_especificaciones": 16,
+      "mediana_beta_por_DT": -0.01806623594492623,
+      "min_por_DT": -0.02512822616302105,
+      "max_por_DT": -0.0037306053957085732,
+      "mediana_beta_por_punto_solo_pts": -0.028838315470960427,
+      "min_por_punto_solo_pts": -0.08372081448825872,
+      "max_por_punto_solo_pts": -0.01563090314505639,
+      "proporcion_mismo_signo_que_principal": 1.0,
+      "nota": "sin IC válido: no se puede contar «IC que excluye el 0»"
+    }
+  }
+}

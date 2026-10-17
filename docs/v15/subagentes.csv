@@ -12,3 +12,4 @@ fecha,rol,tarea,tokens,ficheros
 2026-10-17,auditor-datos,F1.2 financiación y macro,242674,src/v15/auditoria/financiacion_macro.py; output/v15/auditoria/financiacion_macro/
 2026-10-17,lector-literatura,F2 P2 fundamentales,169593,docs/v15/literatura/P2_fundamentales.md
 2026-10-17,auditor-datos,F1.2 renta y microdatos (AEAT 2013-2015),203774,src/v15/auditoria/renta_microdatos.py; output/v15/auditoria/renta_microdatos/
+2026-10-17,auditor-datos,F1.2 turismo,290251,src/v15/auditoria/turismo.py; output/v15/auditoria/turismo/

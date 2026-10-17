@@ -33,8 +33,20 @@ Plan: docs/v15/plan.md (íntegro). Versión pública vigente: 1.0. V15 solo aña
   - docs/v15/punto_partida.md (unas 1.300 palabras): preguntas sin respuesta con su causa, 7 resultados frágiles y 7 debilidades.
   - Entre las debilidades, siete cifras C1 que no cumplen la definición de C1. Queda para el autor (tareas_autor.md) y no se corrige.
 
+- **Fase 1.**
+  - Inventario: 340 variables y 467 combinaciones, todas anotadas (79 familias del inventariador y 6 del orquestador).
+  - Auditorías de calidad, una por grupo en output/v15/auditoria/: precios de compra, alquiler, oferta y parque, demografía y hogares, financiación y macro. Faltan turismo y renta.
+  - Potencia por pregunta: output/v15/potencia/informe.md.
+  - Tres fallos de metadatos de la base 1.0 que no cambian ninguna cifra de cifras_clave (decisiones G4; tarea del autor).
+- **Fase 2.**
+  - Seis revisiones: P2, P3, P4, P5, P6 y P9.
+  - 100 fichas: 88 VERIFICADA y 12 NO VERIFICADA. Cuartiles no verificados, porque Scimago bloquea la descarga (tarea del autor).
+  - Síntesis en docs/v15/literatura.md.
+- **Fase 3 (preparación).** sellar_v15 y evaluate_v15 en src/holdout.py, con tests. Todavía no se ha sellado nada.
+
 ## Siguiente
-- Fase 1: inventario (inventariador), calidad (auditor-datos por grupos) y potencia por pregunta candidata.
+- Recoger las auditorías de turismo y renta.
+- Fase 3: selección de preguntas, preregistro_v15.md, sellado, revisor-preregistro, adenda, etiqueta prereg-v15 y texto OSF. PARADA en la puerta.
 
 <!-- las secciones siguientes las mantiene src/v15/registro_subagentes.py -->
 

@@ -1,0 +1,102 @@
+{
+  "municipio": {
+    "estructura": {
+      "n_unidades": 2014,
+      "n_clusters": 41,
+      "periodos": 7,
+      "diferencias": 6
+    },
+    "resultados": {
+      "nulo": {
+        "R": 2000,
+        "R_validas": 2000,
+        "sesgo": 8.460748974844136e-05,
+        "rmse": 0.005193202568052016,
+        "cobertura": 0.797,
+        "rechazo": 0.203,
+        "ancho_medio_ic": 0.012619537714664286,
+        "segundos": 25.24980330467224
+      },
+      "alt_ref_0.04": {
+        "R": 2000,
+        "R_validas": 2000,
+        "sesgo": 0.00013403764096094428,
+        "rmse": 0.0055661703438012805,
+        "cobertura": 0.8055,
+        "rechazo": 0.9995,
+        "ancho_medio_ic": 0.013237846123260184,
+        "segundos": 23.8153076171875
+      },
+      "alt_pot_0.01": {
+        "R": 1000,
+        "R_validas": 1000,
+        "sesgo": -0.0001421857740939173,
+        "rmse": 0.005638400566930647,
+        "cobertura": 0.797,
+        "rechazo": 0.78,
+        "ancho_medio_ic": 0.012937328953250596,
+        "segundos": 11.961017370223999
+      },
+      "control_iid_nulo": {
+        "R": 1000,
+        "R_validas": 1000,
+        "sesgo": -1.2693562496539212e-05,
+        "rmse": 0.0009005237899887657,
+        "cobertura": 0.949,
+        "rechazo": 0.051,
+        "ancho_medio_ic": 0.0036134108296323156,
+        "segundos": 1.8655807971954346
+      }
+    }
+  },
+  "provincia": {
+    "estructura": {
+      "n_unidades": 41,
+      "n_clusters": 41,
+      "periodos": 7,
+      "diferencias": 6
+    },
+    "resultados": {
+      "nulo": {
+        "R": 2000,
+        "R_validas": 2000,
+        "sesgo": 9.559865025309044e-05,
+        "rmse": 0.009165065408467272,
+        "cobertura": 0.889,
+        "rechazo": 0.1105,
+        "ancho_medio_ic": 0.030759791551841515,
+        "segundos": 12.454979419708252
+      },
+      "alt_ref_0.04": {
+        "R": 2000,
+        "R_validas": 2000,
+        "sesgo": 6.698621585268239e-06,
+        "rmse": 0.009243694740943671,
+        "cobertura": 0.9545,
+        "rechazo": 0.96,
+        "ancho_medio_ic": 0.03980148591461588,
+        "segundos": 13.051456212997437
+      },
+      "alt_pot_0.01": {
+        "R": 1000,
+        "R_validas": 1000,
+        "sesgo": -0.0001693072060980592,
+        "rmse": 0.009169319128058798,
+        "cobertura": 0.913,
+        "rechazo": 0.278,
+        "ancho_medio_ic": 0.03187690175259785,
+        "segundos": 7.119041442871094
+      },
+      "control_iid_nulo": {
+        "R": 1000,
+        "R_validas": 1000,
+        "sesgo": -9.073089646412001e-05,
+        "rmse": 0.006580992270218778,
+        "cobertura": 0.954,
+        "rechazo": 0.044,
+        "ancho_medio_ic": 0.027768474486794596,
+        "segundos": 4.847321510314941
+      }
+    }
+  }
+}

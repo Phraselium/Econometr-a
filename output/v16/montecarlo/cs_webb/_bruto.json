@@ -1,0 +1,101 @@
+{
+  "estructura": {
+    "n_provincias": 41,
+    "n_trimestres": 30,
+    "n_tratadas": 8,
+    "cohortes": {
+      "21": 4,
+      "25": 1,
+      "26": 1,
+      "27": 1,
+      "28": 1
+    },
+    "n_nunca_tratadas": 33
+  },
+  "resultados": {
+    "nulo": {
+      "a_multiplicador_IF": {
+        "R": 2000,
+        "R_validas": 2000,
+        "sesgo": 0.0012394246068562888,
+        "rmse": 0.045232357801454515,
+        "cobertura": 0.6855,
+        "rechazo": 0.3145,
+        "ancho_medio_ic": 0.09380967892118225
+      },
+      "b_WCR_nulo_impuesto": {
+        "R": 2000,
+        "R_validas": 2000,
+        "sesgo": 0.0012394246068562888,
+        "rmse": 0.045232357801454515,
+        "cobertura": 0.9325,
+        "rechazo": 0.0655,
+        "ancho_medio_ic": 0.12844033308618463
+      },
+      "segundos": 4.072067022323608
+    },
+    "alt_005": {
+      "a_multiplicador_IF": {
+        "R": 2000,
+        "R_validas": 2000,
+        "sesgo": 0.0003180814284617628,
+        "rmse": 0.04577464285605788,
+        "cobertura": 0.6905,
+        "rechazo": 0.4765,
+        "ancho_medio_ic": 0.09506571839409642
+      },
+      "b_WCR_nulo_impuesto": {
+        "R": 2000,
+        "R_validas": 2000,
+        "sesgo": 0.0003180814284617628,
+        "rmse": 0.04577464285605788,
+        "cobertura": 0.9015,
+        "rechazo": 0.1965,
+        "ancho_medio_ic": 0.1427946537306811
+      },
+      "segundos": 3.3079674243927
+    },
+    "alt_010": {
+      "a_multiplicador_IF": {
+        "R": 1000,
+        "R_validas": 1000,
+        "sesgo": -0.001930061781462904,
+        "rmse": 0.04466574679971487,
+        "cobertura": 0.732,
+        "rechazo": 0.717,
+        "ancho_medio_ic": 0.10236886111684144
+      },
+      "b_WCR_nulo_impuesto": {
+        "R": 1000,
+        "R_validas": 1000,
+        "sesgo": -0.001930061781462904,
+        "rmse": 0.04466574679971487,
+        "cobertura": 0.908,
+        "rechazo": 0.419,
+        "ancho_medio_ic": 0.17534179150138174
+      },
+      "segundos": 1.480407953262329
+    },
+    "control_iid_nulo": {
+      "a_multiplicador_IF": {
+        "R": 1000,
+        "R_validas": 1000,
+        "sesgo": 0.0009257794742959682,
+        "rmse": 0.02603721380987886,
+        "cobertura": 0.794,
+        "rechazo": 0.204,
+        "ancho_medio_ic": 0.07350141598656734
+      },
+      "b_WCR_nulo_impuesto": {
+        "R": 1000,
+        "R_validas": 1000,
+        "sesgo": 0.0009257794742959682,
+        "rmse": 0.02603721380987886,
+        "cobertura": 0.977,
+        "rechazo": 0.023,
+        "ancho_medio_ic": 0.0943617910463603
+      },
+      "segundos": 1.2220282554626465
+    }
+  }
+}

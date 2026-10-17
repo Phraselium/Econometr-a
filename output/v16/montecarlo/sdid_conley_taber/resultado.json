@@ -1,0 +1,128 @@
+{
+  "rama": "r16/montecarlo-panel",
+  "pregunta": "¿Es válida la inferencia de sdid_conley_taber en el proceso generador del repositorio?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; estructura leída de data/processed/v16/entrenamiento e intervenciones.csv (sin valores reales)",
+  "N": "ver estructura; R=2000/1000/300",
+  "metodo": "SDID (Arkhangelsky et al.) + Conley-Taber por reasignación de provincias donantes; alternativa wild cluster bootstrap-t Webb por provincia",
+  "estimacion": {
+    "tamano": {
+      "A_ct": 0.0575,
+      "A_webb": 0.7795,
+      "B_ct": 0.065,
+      "B_webb": 0.792
+    },
+    "cobertura": {
+      "A_ct": 0.943,
+      "A_webb": 0.207,
+      "B_ct": 0.929,
+      "B_webb": 0.197
+    },
+    "potencia_mde": {
+      "A_ct": 0.3233333333333333,
+      "A_webb": 0.9,
+      "B_ct": 0.3166666666666666,
+      "B_webb": 0.9033333333333332
+    }
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "APTO (Conley-Taber, escenario A; en el límite superior del tamaño, ver notas)",
+    "criterio": {
+      "A_ct": {
+        "apto": true,
+        "tamano_ok": true,
+        "cobertura_ok": true,
+        "fallos": [],
+        "tamano": 0.0575,
+        "R_nulo": 2000,
+        "cobertura_alt": 0.943,
+        "R_alt": 1000,
+        "cobertura_nulo": 0.9425,
+        "sesgo_nulo": -0.0016154805824415,
+        "rmse_nulo": 0.0587989633217807,
+        "se_mc_tamano": 0.005205465877325487,
+        "se_mc_cobertura": 0.007331507348424336
+      },
+      "A_webb": {
+        "apto": false,
+        "tamano_ok": false,
+        "cobertura_ok": false,
+        "fallos": [
+          "tamaño 0.7795 fuera de [0,04; 0,06]",
+          "cobertura 0.2070 fuera de [0,92; 0,97]"
+        ],
+        "tamano": 0.7795,
+        "R_nulo": 2000,
+        "cobertura_alt": 0.207,
+        "R_alt": 1000,
+        "cobertura_nulo": 0.2205,
+        "sesgo_nulo": -0.0016154805824415,
+        "rmse_nulo": 0.0587989633217807,
+        "se_mc_tamano": 0.009270376205958419,
+        "se_mc_cobertura": 0.012812142677944232
+      },
+      "B_ct": {
+        "apto": false,
+        "tamano_ok": false,
+        "cobertura_ok": true,
+        "fallos": [
+          "tamaño 0.0650 fuera de [0,04; 0,06]"
+        ],
+        "tamano": 0.065,
+        "R_nulo": 2000,
+        "cobertura_alt": 0.929,
+        "R_alt": 1000,
+        "cobertura_nulo": 0.935,
+        "sesgo_nulo": -0.0016752745748473,
+        "rmse_nulo": 0.0605052989557364,
+        "se_mc_tamano": 0.005512485827646181,
+        "se_mc_cobertura": 0.008121514637061239
+      },
+      "B_webb": {
+        "apto": false,
+        "tamano_ok": false,
+        "cobertura_ok": false,
+        "fallos": [
+          "tamaño 0.7920 fuera de [0,04; 0,06]",
+          "cobertura 0.1970 fuera de [0,92; 0,97]"
+        ],
+        "tamano": 0.792,
+        "R_nulo": 2000,
+        "cobertura_alt": 0.197,
+        "R_alt": 1000,
+        "cobertura_nulo": 0.208,
+        "sesgo_nulo": -0.0016752745748473,
+        "rmse_nulo": 0.0605052989557364,
+        "se_mc_tamano": 0.009075681792570737,
+        "se_mc_cobertura": 0.012577400367325514
+      }
+    },
+    "estructura": {
+      "A": {
+        "n_tratados": 2,
+        "n_donantes": 930,
+        "provincias_tratadas": [
+          "15"
+        ],
+        "provincias_donantes": 30
+      },
+      "B": {
+        "n_tratados": 2,
+        "n_donantes": 930,
+        "provincias_tratadas": [
+          "15"
+        ],
+        "provincias_donantes": 30
+      }
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": "Hallazgo de estructura: con los datos de entrenamiento, el diseño literal de la adenda (tratados = municipios con zona vigente fuera de Cataluña, con SERPAVI completo 2019-2022 y 2024) tiene 2 municipios en 1 provincia (['15']) y 930 donantes en 30 provincias; las zonas de esos dos municipios entran en vigor en 2025-2026, es decir, DESPUÉS del año post (2024): en entrenamiento hay 0 municipios con zona vigente en 2024 fuera de Cataluña. El resto de zonas fuera de Cataluña (Álava, Gipuzkoa, Bizkaia) está en territorios forales sin SERPAVI, por lo que el escenario B del docstring (reparto 15:2, 20:2, 48:3, 01:1) no pudo construirse y resultó ser el mismo conjunto de 2 tratados con otra realización de la geometría simulada (B = réplica independiente de A, no un diseño distinto). Veredicto sobre A (proceso del repositorio, declarado antes de simular). Resultados A: Conley-Taber tamaño 0.0575 (error MC 0.0052), cobertura bajo tau=-0,0075 0.9430, bajo el nulo 0.9425. La réplica B queda fuera del intervalo (tamaño 0.0650, cobertura 0.9290); agrupando A y B (4.000 réplicas nulas) el tamaño es 0.0612 (error MC 0.0038): la calibración es CASI en el límite del criterio, no holgada. Alternativa Webb (solo se informa): tamaño 0.7795 y cobertura 0.2070; con un único cluster tratado el bootstrap degenera (no se debe usar). Potencia de Conley-Taber a -7,1 % (MDE de la adenda): 0.323; a -0,75 % es prácticamente el tamaño. El IC medio mide 0.230 de ancho (en log): con 2 municipios tratados el diseño no distingue efectos de la magnitud de la literatura y su lectura es la de un nulo no concluyente. Los pesos SDID se estiman por FISTA (40 iteraciones) con regularización a la Arkhangelsky et al.; en la alternativa Webb los pesos se mantienen fijos."
+}

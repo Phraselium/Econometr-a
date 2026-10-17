@@ -1,0 +1,81 @@
+{
+  "rama": "r16/montecarlo-panel",
+  "pregunta": "¿Es válida la inferencia de cs_webb en el proceso generador del repositorio?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; estructura leída de data/processed/v16/entrenamiento e intervenciones.csv (sin valores reales)",
+  "N": "41 provincias x 30 trimestres; R=2000/2000/1000",
+  "metodo": "Callaway-Sant'Anna (nunca tratadas, ATT simple) + wild bootstrap-t Webb por provincia",
+  "estimacion": {
+    "tamano": 0.0655,
+    "cobertura": 0.9015,
+    "sesgo": 0.0012394246068562,
+    "rmse": 0.0452323578014545,
+    "potencia": {
+      "alt_005": 0.1965,
+      "alt_010": 0.419
+    }
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "NO APTO → diseño solo descriptivo",
+    "criterio": {
+      "principal_b": {
+        "apto": false,
+        "tamano_ok": false,
+        "cobertura_ok": false,
+        "fallos": [
+          "tamaño 0.0655 fuera de [0,04; 0,06]",
+          "cobertura 0.9015 fuera de [0,92; 0,97]"
+        ],
+        "tamano": 0.0655,
+        "R_nulo": 2000,
+        "cobertura_alt": 0.9015,
+        "R_alt": 2000,
+        "cobertura_nulo": 0.9325,
+        "sesgo_nulo": 0.0012394246068562,
+        "rmse_nulo": 0.0452323578014545,
+        "se_mc_tamano": 0.005532167296819575,
+        "se_mc_cobertura": 0.0066632480818291625
+      },
+      "descartada_a": {
+        "apto": false,
+        "tamano_ok": false,
+        "cobertura_ok": false,
+        "fallos": [
+          "tamaño 0.3145 fuera de [0,04; 0,06]",
+          "cobertura 0.6905 fuera de [0,92; 0,97]"
+        ],
+        "tamano": 0.3145,
+        "R_nulo": 2000,
+        "cobertura_alt": 0.6905,
+        "R_alt": 2000,
+        "cobertura_nulo": 0.6855,
+        "sesgo_nulo": 0.0012394246068562,
+        "rmse_nulo": 0.0452323578014545,
+        "se_mc_tamano": 0.010382431073693675,
+        "se_mc_cobertura": 0.010337063170939801
+      }
+    },
+    "estructura": {
+      "n_provincias": 41,
+      "n_trimestres": 30,
+      "n_tratadas": 8,
+      "cohortes": {
+        "21": 4,
+        "25": 1,
+        "26": 1,
+        "27": 1,
+        "28": 1
+      },
+      "n_nunca_tratadas": 33
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": "Inferencia principal = wild cluster bootstrap de Webb por provincia con el nulo impuesto (variante b). La adenda no nombra alternativa para Q1c: si falla, el diseño es solo descriptivo. Variante a (multiplicador sobre la función de influencia sin restringir) descartada de entrada: tamaño 0.315 y cobertura 0.691, porque las cohortes de una sola provincia (4 de 5) tienen residuo de influencia cero y la varianza se subestima; se informa pero no se usa. Variante b: tamaño 0.0655, cobertura bajo nulo 0.9325, bajo tau=0,05 0.9015. Control de implementación sin dependencia (ruido iid): tamaño 0.023, cobertura 0.977 (el procedimiento es conservador sin dependencia y pierde la cobertura con dependencia transversal y espacial, con 8 tratadas en 5 cohortes y 33 comparaciones). Potencia (variante b): 0.197 a tau=0,05 y 0.419 a tau=0,10; sin magnitud de referencia comparable (la condición (b) no se cumple). Sesgo despreciable (0.0012); el fallo es de inferencia, no de punto."
+}

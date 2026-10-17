@@ -1,0 +1,91 @@
+{
+  "rama": "r16/montecarlo-panel",
+  "pregunta": "¿Es válida la inferencia de rejilla_twfe en el proceso generador del repositorio?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados; estructura leída de data/processed/v16/entrenamiento e intervenciones.csv (sin valores reales)",
+  "N": "2.014 municipios y 41 provincias x 7 años; R=2000/2000/1000",
+  "metodo": "Dlog ~ exposición continua + EF de unidad y periodo; CR1 por provincia (municipio) y wild Webb (provincia)",
+  "estimacion": {
+    "tamano": {
+      "municipio": 0.203,
+      "provincia": 0.1105
+    },
+    "cobertura": {
+      "municipio": 0.8055,
+      "provincia": 0.9545
+    },
+    "potencia": {
+      "municipio": {
+        "b=0.04": 0.9995,
+        "b=0.01": 0.78
+      },
+      "provincia": {
+        "b=0.04": 0.96,
+        "b=0.01": 0.278
+      }
+    }
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "municipio: NO APTO → diseño solo descriptivo; provincia: NO APTO → diseño solo descriptivo",
+    "criterio": {
+      "municipio": {
+        "apto": false,
+        "tamano_ok": false,
+        "cobertura_ok": false,
+        "fallos": [
+          "tamaño 0.2030 fuera de [0,04; 0,06]",
+          "cobertura 0.8055 fuera de [0,92; 0,97]"
+        ],
+        "tamano": 0.203,
+        "R_nulo": 2000,
+        "cobertura_alt": 0.8055,
+        "R_alt": 2000,
+        "cobertura_nulo": 0.797,
+        "sesgo_nulo": 8.460748974844136e-05,
+        "rmse_nulo": 0.005193202568052,
+        "se_mc_tamano": 0.00899419257076476,
+        "se_mc_cobertura": 0.00885069912492793
+      },
+      "provincia": {
+        "apto": false,
+        "tamano_ok": false,
+        "cobertura_ok": true,
+        "fallos": [
+          "tamaño 0.1105 fuera de [0,04; 0,06]"
+        ],
+        "tamano": 0.1105,
+        "R_nulo": 2000,
+        "cobertura_alt": 0.9545,
+        "R_alt": 2000,
+        "cobertura_nulo": 0.889,
+        "sesgo_nulo": 9.559865025309044e-05,
+        "rmse_nulo": 0.0091650654084672,
+        "se_mc_tamano": 0.0070103405766053905,
+        "se_mc_cobertura": 0.004659922209651143
+      }
+    },
+    "estructura": {
+      "municipio": {
+        "n_unidades": 2014,
+        "n_clusters": 41,
+        "periodos": 7,
+        "diferencias": 6
+      },
+      "provincia": {
+        "n_unidades": 41,
+        "n_clusters": 41,
+        "periodos": 7,
+        "diferencias": 6
+      }
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": "Escalas representativas de la especificación principal de la rejilla: municipio (2014 unidades, 41 provincias, CR1 con t(G-1)) y provincia (41, wild bootstrap-t de Webb con nulo impuesto). La adenda no nombra alternativa para la rejilla: si la principal falla, la escala es solo descriptiva. Tamaño municipal 0.2030, provincial 0.1105; cobertura bajo b=0,04: 0.8055 y 0.9545. Control iid (exposición y ruido independientes): tamaño 0.051 (municipio) y 0.044 (provincia), de modo que el procedimiento está bien implementado y el exceso de rechazo procede de la correlación espacial de la exposición con cargas de factores y choques espaciales que cruzan fronteras de provincia (el agrupamiento por provincia no los absorbe). Potencia: municipio {'b=0.04': 0.9995, 'b=0.01': 0.78}, provincia {'b=0.04': 0.96, 'b=0.01': 0.278}. Consecuencia: las 83 celdas de la rejilla con TWFE y exposición espacial no deben llevar p-valor calibrado; se leen como descriptivas, o con una inferencia espacial (Conley) validada aparte."
+}

@@ -47,6 +47,7 @@ Plan: docs/v15/plan.md (íntegro). Versión pública vigente: 1.0. V15 solo aña
   - Pre-registro (docs/v15/preregistro_v15.md) con: H1 y H2 (zonas tensionadas), H4 (inmigración), H3 (asociación de turismo), H5 (predicción), E1-E4, y P1, P3 y P8 descartadas.
   - Validación sellada ejecutada antes de estimar (src/v15/f3_sellado.py; docs/v15/sellado_v15.json; decisiones G6).
   - revisor-preregistro: APTO CON CAMBIOS, 18 hallazgos. Adenda vinculante: docs/v15/preregistro_v15_adenda.md (Holm m = 3, preperiodo 2022T2-2023T4, CS y SDID, evaluación sellada como condición de C3, multiverso ≤ 408).
+  - `make check` en solitario: 440 pasados; solo el aviso del hash; check_v15 sin errores; git sin cambios.
   - Etiqueta local prereg-v15 y texto para OSF en tareas_autor.md.
 
 ## Siguiente

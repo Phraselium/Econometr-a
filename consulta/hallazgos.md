@@ -4,7 +4,7 @@
 
 Un registro por hallazgo de las versiones vigentes (v5-V8, con v4 donde sigue en cifras_clave): cifras de `output/v5/cifras_clave.csv`, fichas del verificador, conclusiones del historial e hipótesis retiradas. Las superadas y retiradas están al final y **no se citan**. La versión legible por máquina es [hallazgos.json](hallazgos.json). Las capas se leen según [metodologia/capas.md](../metodologia/capas.md): causalidad solo en C3 y C3s.
 
-Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v10: 28; v12: 60; v9: 69; v1: 8; v2: 7; v3: 3. Total vigentes: 1317.
+Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v10: 28; v12: 60; v9: 69; v1: 8; v2: 7; v3: 3; v15: 5. Total vigentes: 1322.
 
 ## Versión v4
 
@@ -320,7 +320,7 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `E-T7-peso-R` | Peso en la amplitud de la necesidad anual 2026-2035: reposición (R) | 6,54 % | C4 | 2026-2035 | [hechos.json](../output/v5/E/hechos.json) |
 | `E-T7-peso-V` | Peso en la amplitud de la necesidad anual 2026-2035: vacancia friccional (V) | 5,46 % | C4 | 2026-2035 | [hechos.json](../output/v5/E/hechos.json) |
 | `E-T7-peso-X` | Peso en la amplitud de la necesidad anual 2026-2035: liberadas que no llegan al mercado (X) | 10,26 % | C4 | 2026-2035 | [hechos.json](../output/v5/E/hechos.json) |
-| `E-T7-prod` | Viviendas terminadas al año, España con País Vasco y Navarra (mín. y máx. anual) | 78.810 a 100.980 viviendas/año | C1 | 2019-2024 | [hechos.json](../output/v5/E/hechos.json) |
+| `E-T7-prod` | Viviendas terminadas al año, España con País Vasco y Navarra (mín. y máx. anual) | 78.810 a 100.980 viviendas/año | C4 | 2019-2024 | [hechos.json](../output/v5/E/hechos.json) |
 | `E-V6-M1A-HOLM` | Hipótesis confirmatorias de alquiler que pasan Holm (p<0,05) | 0 hipótesis | C4 | 2021-2023 | [hechos.json](../output/v5/E/hechos.json) |
 | `E-V6-M1A-NCONF` | Hipótesis confirmatorias de alquiler contrastadas con Holm | 16 hipótesis | C4 | 2021-2023 | [hechos.json](../output/v5/E/hechos.json) |
 | `E-V6-M1B-GSADF-SIG` | CCAA con exuberancia GSADF (p<0,05) en el ratio precio/alquiler | 0 CCAA | C4 | 2015T1-2024T4 | [hechos.json](../output/v5/E/hechos.json) |
@@ -699,8 +699,8 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 
 | id | enunciado | cifra | capa | periodo | origen |
 |---|---|---|---|---|---|
-| `VER-A23-V2-1` | Municipios de Cataluña con renta de fianzas (Incasòl) en el análisis | 261 municipios | C1 | 2015-2025 | [hechos.json](../output/v6_3/VER/hechos.json) |
-| `VER-A23-V2-2` | Municipios de la C. Valenciana con renta de fianzas (GVA) en el análisis | 103 municipios | C1 | 2020-2025 | [hechos.json](../output/v6_3/VER/hechos.json) |
+| `VER-A23-V2-1` | Municipios de Cataluña con renta de fianzas (Incasòl) en el análisis | 261 municipios | C4 | 2015-2025 | [hechos.json](../output/v6_3/VER/hechos.json) |
+| `VER-A23-V2-2` | Municipios de la C. Valenciana con renta de fianzas (GVA) en el análisis | 103 municipios | C4 | 2020-2025 | [hechos.json](../output/v6_3/VER/hechos.json) |
 | `VER-B4-V1-1` | Aumento de la población extranjera 2014-2019 (denominador de la cota de cantidad) | 174.410 personas | C2 | 2014-2019 | [hechos.json](../output/v6_3/VER/hechos.json) |
 | `VER-B4-V2-1` | Cota C2 de viviendas de alquiler absorbidas por turismo, sustitución 1:1 | 81.771 viviendas | C2 | 2020M08-2024M08 | [hechos.json](../output/v6_3/VER/hechos.json) |
 | `VER-M3-V1-1` | Solares catastrales (uso «solar») | 3.092.393 unidades urbanas | C4 | 2026 | [hechos.json](../output/v6_3/VER/hechos.json) |
@@ -949,8 +949,8 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `V8-M8-cv-p03-P3-total` | Variación observada del precio real de compra en provincia de Alicante (03) en P3 (pp, log×100; media interanual × T/4: aproximac… | 4,21 pp | C4 | P3 (2014T1-2019T4) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M8-cv-p03-P4-cuota` | R² del crecimiento interanual de provincia de Alicante (03) en P4 sobre el factor común nacional (cuota de varianza; no es parte… | 8,53 % | C4 | P4 (2020T2-2022T2) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M8-cv-p03-P4-total` | Variación observada del precio real de compra en provincia de Alicante (03) en P4 (pp, log×100; media interanual × T/4: aproximac… | -1,11 pp | C4 | P4 (2020T2-2022T2) | [hechos.json](../output/v8/F6/hechos.json) |
-| `V8-M8-cv-p03-P5-acum-alt` | Variación acumulada observada del precio real de compra en provincia de Alicante (03) en P5 con la segunda fuente (Registradores… | 20,3 pp | C1 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
-| `V8-M8-cv-p03-P5-acum-mivau` | Variación acumulada observada del valor tasado real de compra en provincia de Alicante (03) en P5 (valor tasado MIVAU (p_tasado)… | 25,07 pp | C1 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
+| `V8-M8-cv-p03-P5-acum-alt` | Variación acumulada observada del precio real de compra en provincia de Alicante (03) en P5 con la segunda fuente (Registradores… | 20,3 pp | C4 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
+| `V8-M8-cv-p03-P5-acum-mivau` | Variación acumulada observada del valor tasado real de compra en provincia de Alicante (03) en P5 (valor tasado MIVAU (p_tasado)… | 25,07 pp | C4 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M8-cv-p03-P5-cuota` | R² del crecimiento interanual de provincia de Alicante (03) en P5 sobre el factor común nacional (cuota de varianza; no es parte… | 95,81 % | C4 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M8-cv-p03-P5-fcpp` | Parte de la variación del precio real de compra de provincia de Alicante (03) en P5 asociada al factor común nacional (pp; regres… | 11,24 pp (4,58 a 16,8) | C4 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M8-cv-p03-P5-total` | Variación observada del precio real de compra en provincia de Alicante (03) en P5 (pp, log×100; media interanual × T/4: aproximac… | 16,84 pp | C4 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
@@ -962,8 +962,8 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `V8-M8-cv-p12-P3-total` | Variación observada del precio real de compra en provincia de Castellón (12) en P3 (pp, log×100; media interanual × T/4: aproxima… | -8,26 pp | C4 | P3 (2014T1-2019T4) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M8-cv-p12-P4-cuota` | R² del crecimiento interanual de provincia de Castellón (12) en P4 sobre el factor común nacional (cuota de varianza; no es parte… | 57,36 % | C4 | P4 (2020T2-2022T2) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M8-cv-p12-P4-total` | Variación observada del precio real de compra en provincia de Castellón (12) en P4 (pp, log×100; media interanual × T/4: aproxima… | -3,64 pp | C4 | P4 (2020T2-2022T2) | [hechos.json](../output/v8/F6/hechos.json) |
-| `V8-M8-cv-p12-P5-acum-alt` | Variación acumulada observada del precio real de compra en provincia de Castellón (12) en P5 con la segunda fuente (Registradores… | 10,89 pp | C1 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
-| `V8-M8-cv-p12-P5-acum-mivau` | Variación acumulada observada del valor tasado real de compra en provincia de Castellón (12) en P5 (valor tasado MIVAU (p_tasado)… | 18,57 pp | C1 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
+| `V8-M8-cv-p12-P5-acum-alt` | Variación acumulada observada del precio real de compra en provincia de Castellón (12) en P5 con la segunda fuente (Registradores… | 10,89 pp | C4 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
+| `V8-M8-cv-p12-P5-acum-mivau` | Variación acumulada observada del valor tasado real de compra en provincia de Castellón (12) en P5 (valor tasado MIVAU (p_tasado)… | 18,57 pp | C4 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M8-cv-p12-P5-cuota` | R² del crecimiento interanual de provincia de Castellón (12) en P5 sobre el factor común nacional (cuota de varianza; no es parte… | 94,52 % | C4 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M8-cv-p12-P5-fcpp` | Parte de la variación del precio real de compra de provincia de Castellón (12) en P5 asociada al factor común nacional (pp; regre… | 14,61 pp (6,65 a 21,38) | C4 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M8-cv-p12-P5-total` | Variación observada del precio real de compra en provincia de Castellón (12) en P5 (pp, log×100; media interanual × T/4: aproxima… | 7,8 pp | C4 | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
@@ -1220,11 +1220,11 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 
 | id | enunciado | cifra | capa | periodo | origen |
 |---|---|---|---|---|---|
-| `V10-ATL-A1` | Sobrecarga del gasto en vivienda (>40 % de la renta), personas en alquiler de mercado | 26,8 % (24,4 a 29,19) | C1 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A1` | Sobrecarga del gasto en vivienda (>40 % de la renta), personas en alquiler de mercado | 26,8 % (24,4 a 29,19) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
 | `V10-ATL-A10` | Personas de 30 a 34 años que viven con al menos uno de sus padres, primer año | 27,14 % (26,54 a 27,75) | C4 | 2018 | [hechos.json](../output/v10/atlas/hechos.json) |
 | `V10-ATL-A11` | Personas de 30 a 34 años que viven con al menos uno de sus padres, último año completo | 31,68 % (30,84 a 32,52) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
-| `V10-ATL-A2` | Sobrecarga del gasto en vivienda (>40 % de la renta), total de la población | 7,17 % (6,67 a 7,67) | C1 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
-| `V10-ATL-A3` | Sobrecarga del gasto en vivienda (>40 %), alquiler de mercado, primer año de la serie | 38,07 % (34,15 a 41,99) | C1 | 2018 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A2` | Sobrecarga del gasto en vivienda (>40 % de la renta), total de la población | 7,17 % (6,67 a 7,67) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
+| `V10-ATL-A3` | Sobrecarga del gasto en vivienda (>40 %), alquiler de mercado, primer año de la serie | 38,07 % (34,15 a 41,99) | C4 | 2018 | [hechos.json](../output/v10/atlas/hechos.json) |
 | `V10-ATL-A4` | Sobrecarga del gasto en vivienda (>40 %), primer decil de renta equivalente | 43,85 % (40,27 a 47,42) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
 | `V10-ATL-A5` | Sobrecarga del gasto en vivienda (>40 %), décimo decil de renta equivalente | 0,057 % (-0,009 a 0,122) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
 | `V10-ATL-A6` | Sobrecarga del gasto en vivienda (>40 %), nacionalidad de fuera de la UE | 24,05 % (20,64 a 27,46) | C4 | 2025 | [hechos.json](../output/v10/atlas/hechos.json) |
@@ -1314,6 +1314,16 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `HIST-068` | Condiciones por origen · Brecha a igual edad y renta (personas adultas) · sobrecarga > 40 % + [V12-B6-brecha-sobrecarga_40]; esfu… | sobrecarga > 40 % + [V12-B6-brecha-sobrecarga_40]; esfuerzo de inquilinos ≈ 0 | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
 | `HIST-069` | Vivienda turística (C. Valenciana) · Stock · INE frente a registro GVA [V12-B7-CV-vut-ine; V12-B7-CV-vut-registro] · Dos fuentes,… | INE frente a registro GVA [V12-B7-CV-vut-ine; V12-B7-CV-vut-registro] | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
 
+## Versión v15
+
+| id | enunciado | cifra | capa | periodo | origen |
+|---|---|---|---|---|---|
+| `HIST-070` | [E-T7-prod] · Viviendas terminadas al año (MIVAU) · C1 → C4 · Una sola fuente · **Matiza**: el rango de terminadas es un dato ofi… | (sin cifra puntual) | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-071` | [V8-M8-cv-p03-P5-acum-alt], [V8-M8-cv-p03-P5-acum-mivau], [V8-M8-cv-p12-P5-acum-alt], [V8-M8-cv-p12-P5-acum-mivau] · Variación ac… | (sin cifra puntual) | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-072` | [VER-A23-V2-1], [VER-A23-V2-2] · Municipios con fianzas en el análisis (Cataluña, C. Valenciana) · C1 → C4 · Recuento interno del… | (sin cifra puntual) | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-073` | [V10-ATL-A1], [V10-ATL-A2], [V10-ATL-A3] · Sobrecarga del gasto en vivienda (ECV) · C1 → C4 · Eurostat ilc_lvho07 es la misma enc… | (sin cifra puntual) | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+| `HIST-074` | [V9-D7-c1-dif] · Hogares 2021: ECP frente a censo · C1 → C4 · La ECP se apoya en el censo · **Matiza**: diferencia entre fuentes… | (sin cifra puntual) | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
+
 ## Versión v2
 
 | id | enunciado | cifra | capa | periodo | origen |
@@ -1397,7 +1407,7 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `V9-D7-ES-2225-P1` | Población al final (2022-2025; descomposición D7) | 49.128.297 personas | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D7-ES-2225-cuota-pob` | Componente población del aumento de hogares (2022-2025), % del total | 91,96 % | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-D7-ES-2225-dH` | Aumento de hogares (2022-2025) | 698.943 hogares | C4 | 2022-2025 | [hechos.json](../output/v9/F5/hechos.json) |
-| `V9-D7-c1-dif` | Hogares 2021: ECP (1-1-2022) frente a censo 2021 (viviendas principales), diferencia | 1,54 % | C1 | 2021 | [hechos.json](../output/v9/F5/hechos.json) |
+| `V9-D7-c1-dif` | Hogares 2021: ECP (1-1-2022) frente a censo 2021 (viviendas principales), diferencia | 1,54 % | C4 | 2021 | [hechos.json](../output/v9/F5/hechos.json) |
 | `V9-NC3` | Resultados de V9 que alcanzan C3 o C3s | 0 efectos | C4 | 2026 | [hechos.json](../output/v9/F5/hechos.json) |
 | `HIST-055` | Topes de renta (Ley catalana 11/2020) · Renta de contratos nuevos (Incasòl) | −5,9 % (−7,3 a −4,4) [V9-D1b-renta-att] | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |
 | `HIST-056` | Zonas tensionadas (Ley 12/2023, Cataluña) · Renta de contratos nuevos | −5,8 % (−8,5 a −3,2) [V9-D1a-renta-att] | C4 |  | [historial_conclusiones.md](../metodologia/historial_conclusiones.md) |

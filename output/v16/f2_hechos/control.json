@@ -1,0 +1,718 @@
+{
+ "tol_pp": 3.0,
+ "tol_rel_recuento": 0.15,
+ "grupos": {
+  "INE IPV": "notarial",
+  "Notariado": "notarial",
+  "MIVAU valor tasado": "tasacion",
+  "Registradores": "registral",
+  "INE IPC alquiler": "encuesta_ine",
+  "INE IPVA": "aeat_irpf",
+  "SERPAVI": "aeat_irpf",
+  "Incasòl fianzas": "fianzas_cat",
+  "GVA fianzas": "fianzas_cv",
+  "Censo 2021": "censo",
+  "Censo 2021 consumo eléctrico": "censo",
+  "Catastro": "catastro",
+  "MIVAU fin de obra": "mivau_obra",
+  "INE ECP": "ine_hogares",
+  "INE EPA": "ine_hogares",
+  "CGPJ": "cgpj",
+  "OCDE": "ine_ipv_derivado",
+  "Eurostat HPI": "ine_ipv_derivado",
+  "BIS": "ine_ipv_derivado",
+  "Eurostat ECV": "ecv",
+  "OCDE Affordable Housing": "ocde_ah"
+ },
+ "cifras": [
+  {
+   "id": "V16-HEC-PRECIO-NOM-2007-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPV",
+    "MIVAU valor tasado",
+    "Registradores",
+    "Notariado"
+   ],
+   "grupos": [
+    "notarial",
+    "registral",
+    "tasacion"
+   ],
+   "tolerancia": "±3.0 p.p. entre cambios acumulados"
+  },
+  {
+   "id": "V16-HEC-PRECIO-REAL-2007-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPV",
+    "MIVAU valor tasado",
+    "Registradores",
+    "Notariado"
+   ],
+   "grupos": [
+    "notarial",
+    "registral",
+    "tasacion"
+   ],
+   "tolerancia": "±3.0 p.p. entre cambios acumulados"
+  },
+  {
+   "id": "V16-HEC-PRECIO-NOM-2013-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPV",
+    "MIVAU valor tasado",
+    "Registradores",
+    "Notariado"
+   ],
+   "grupos": [
+    "notarial",
+    "registral",
+    "tasacion"
+   ],
+   "tolerancia": "±3.0 p.p. entre cambios acumulados"
+  },
+  {
+   "id": "V16-HEC-PRECIO-REAL-2013-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPV",
+    "MIVAU valor tasado",
+    "Registradores",
+    "Notariado"
+   ],
+   "grupos": [
+    "notarial",
+    "registral",
+    "tasacion"
+   ],
+   "tolerancia": "±3.0 p.p. entre cambios acumulados"
+  },
+  {
+   "id": "V16-HEC-PRECIO-NOM-2019-2025",
+   "capa": "C1",
+   "fuentes": [
+    "INE IPV",
+    "MIVAU valor tasado",
+    "Registradores",
+    "Notariado"
+   ],
+   "grupos": [
+    "notarial",
+    "registral",
+    "tasacion"
+   ],
+   "tolerancia": "±3.0 p.p. entre cambios acumulados"
+  },
+  {
+   "id": "V16-HEC-PRECIO-REAL-2019-2025",
+   "capa": "C1",
+   "fuentes": [
+    "INE IPV",
+    "MIVAU valor tasado",
+    "Registradores",
+    "Notariado"
+   ],
+   "grupos": [
+    "notarial",
+    "registral",
+    "tasacion"
+   ],
+   "tolerancia": "±3.0 p.p. entre cambios acumulados"
+  },
+  {
+   "id": "V16-HEC-PRECIO-CCAA-NCOINC-2007-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPV",
+    "MIVAU valor tasado",
+    "Registradores"
+   ],
+   "grupos": [
+    "notarial",
+    "registral",
+    "tasacion"
+   ],
+   "tolerancia": "±3.0 p.p."
+  },
+  {
+   "id": "V16-HEC-PRECIO-CCAA-NCOINC-2013-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPV",
+    "MIVAU valor tasado",
+    "Registradores"
+   ],
+   "grupos": [
+    "notarial",
+    "registral",
+    "tasacion"
+   ],
+   "tolerancia": "±3.0 p.p."
+  },
+  {
+   "id": "V16-HEC-PRECIO-CCAA-NCOINC-2019-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPV",
+    "MIVAU valor tasado",
+    "Registradores"
+   ],
+   "grupos": [
+    "notarial",
+    "registral",
+    "tasacion"
+   ],
+   "tolerancia": "±3.0 p.p."
+  },
+  {
+   "id": "V16-HEC-ALQ-STOCK-NOMINAL-2013-2024",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPC alquiler",
+    "INE IPVA",
+    "SERPAVI"
+   ],
+   "grupos": [
+    "aeat_irpf",
+    "encuesta_ine"
+   ],
+   "tolerancia": "±3.0 p.p."
+  },
+  {
+   "id": "V16-HEC-ALQ-STOCK-REAL-2013-2024",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPC alquiler",
+    "INE IPVA",
+    "SERPAVI"
+   ],
+   "grupos": [
+    "aeat_irpf",
+    "encuesta_ine"
+   ],
+   "tolerancia": "±3.0 p.p."
+  },
+  {
+   "id": "V16-HEC-ALQ-STOCK-NOMINAL-2019-2024",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPC alquiler",
+    "INE IPVA",
+    "SERPAVI"
+   ],
+   "grupos": [
+    "aeat_irpf",
+    "encuesta_ine"
+   ],
+   "tolerancia": "±3.0 p.p."
+  },
+  {
+   "id": "V16-HEC-ALQ-STOCK-REAL-2019-2024",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPC alquiler",
+    "INE IPVA",
+    "SERPAVI"
+   ],
+   "grupos": [
+    "aeat_irpf",
+    "encuesta_ine"
+   ],
+   "tolerancia": "±3.0 p.p."
+  },
+  {
+   "id": "V16-HEC-ALQ-IPC-NOMINAL-2007-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPC alquiler"
+   ],
+   "grupos": [
+    "encuesta_ine"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-ALQ-IPC-REAL-2007-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPC alquiler"
+   ],
+   "grupos": [
+    "encuesta_ine"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-ALQ-IPC-NOMINAL-2013-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPC alquiler"
+   ],
+   "grupos": [
+    "encuesta_ine"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-ALQ-IPC-REAL-2013-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPC alquiler"
+   ],
+   "grupos": [
+    "encuesta_ine"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-ALQ-IPC-NOMINAL-2019-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPC alquiler"
+   ],
+   "grupos": [
+    "encuesta_ine"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-ALQ-IPC-REAL-2019-2025",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPC alquiler"
+   ],
+   "grupos": [
+    "encuesta_ine"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-ALQ-BRECHA-2124-CAT",
+   "capa": "C1",
+   "fuentes": [
+    "INE IPVA",
+    "Incasòl fianzas",
+    "INE IPC alquiler"
+   ],
+   "grupos": [
+    "aeat_irpf",
+    "encuesta_ine",
+    "fianzas_cat"
+   ],
+   "tolerancia": "±3.0 p.p. entre las dos estimaciones de la brecha"
+  },
+  {
+   "id": "V16-HEC-ALQ-NIVEL-2024-CAT",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPVA"
+   ],
+   "grupos": [
+    "aeat_irpf"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-ALQ-BRECHA-2125-CAT",
+   "capa": "C4",
+   "fuentes": [
+    "Incasòl fianzas",
+    "INE IPC alquiler"
+   ],
+   "grupos": [
+    "encuesta_ine",
+    "fianzas_cat"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-ALQ-BRECHA-2124-CV",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPVA",
+    "GVA fianzas",
+    "INE IPC alquiler"
+   ],
+   "grupos": [
+    "aeat_irpf",
+    "encuesta_ine",
+    "fianzas_cv"
+   ],
+   "tolerancia": "±3.0 p.p. entre las dos estimaciones de la brecha"
+  },
+  {
+   "id": "V16-HEC-ALQ-NIVEL-2024-CV",
+   "capa": "C4",
+   "fuentes": [
+    "INE IPVA"
+   ],
+   "grupos": [
+    "aeat_irpf"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-ALQ-BRECHA-2125-CV",
+   "capa": "C4",
+   "fuentes": [
+    "GVA fianzas",
+    "INE IPC alquiler"
+   ],
+   "grupos": [
+    "encuesta_ine",
+    "fianzas_cv"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-PARQUE-TOTAL-2021",
+   "capa": "C4",
+   "fuentes": [
+    "Censo 2021"
+   ],
+   "grupos": [
+    "censo"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-PARQUE-PRINCIPALES-2021",
+   "capa": "C4",
+   "fuentes": [
+    "Censo 2021"
+   ],
+   "grupos": [
+    "censo"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-PARQUE-NOPRINCIPALES-2021",
+   "capa": "C4",
+   "fuentes": [
+    "Censo 2021"
+   ],
+   "grupos": [
+    "censo"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-VACIAS-CONSUMO-2021",
+   "capa": "C4",
+   "fuentes": [
+    "Censo 2021 consumo eléctrico",
+    "Censo 2021"
+   ],
+   "grupos": [
+    "censo"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-VACIAS-PCT-2021",
+   "capa": "C4",
+   "fuentes": [
+    "Censo 2021 consumo eléctrico",
+    "Censo 2021"
+   ],
+   "grupos": [
+    "censo"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-ESPORADICO-2021",
+   "capa": "C4",
+   "fuentes": [
+    "Censo 2021 consumo eléctrico",
+    "Censo 2021"
+   ],
+   "grupos": [
+    "censo"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-PARQUE-CATASTRO-CENSO-2021",
+   "capa": "C4",
+   "fuentes": [
+    "Catastro",
+    "Censo 2021"
+   ],
+   "grupos": [
+    "catastro",
+    "censo"
+   ],
+   "tolerancia": "±15% en recuentos (capas.md)"
+  },
+  {
+   "id": "V16-HEC-OBRA-TERMINADAS-2125",
+   "capa": "C4",
+   "fuentes": [
+    "MIVAU fin de obra"
+   ],
+   "grupos": [
+    "mivau_obra"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-OBRA-TERMINADAS-2025",
+   "capa": "C4",
+   "fuentes": [
+    "MIVAU fin de obra"
+   ],
+   "grupos": [
+    "mivau_obra"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-HOGARES-ECP-2125",
+   "capa": "C4",
+   "fuentes": [
+    "INE ECP"
+   ],
+   "grupos": [
+    "ine_hogares"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-OBRA-SOBRE-HOGARES-2125",
+   "capa": "C4",
+   "fuentes": [
+    "MIVAU fin de obra",
+    "INE ECP"
+   ],
+   "grupos": [
+    "ine_hogares",
+    "mivau_obra"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-LANZ-2013",
+   "capa": "C4",
+   "fuentes": [
+    "CGPJ"
+   ],
+   "grupos": [
+    "cgpj"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-LANZ-PICO",
+   "capa": "C4",
+   "fuentes": [
+    "CGPJ"
+   ],
+   "grupos": [
+    "cgpj"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-LANZ-2025",
+   "capa": "C4",
+   "fuentes": [
+    "CGPJ"
+   ],
+   "grupos": [
+    "cgpj"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-LANZ-UM4T",
+   "capa": "C4",
+   "fuentes": [
+    "CGPJ"
+   ],
+   "grupos": [
+    "cgpj"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-LANZ-TIPO-HIPOTECARIA-2025",
+   "capa": "C4",
+   "fuentes": [
+    "CGPJ"
+   ],
+   "grupos": [
+    "cgpj"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-LANZ-TIPO-LAU-2025",
+   "capa": "C4",
+   "fuentes": [
+    "CGPJ"
+   ],
+   "grupos": [
+    "cgpj"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-LANZ-TIPO-OTROS-2025",
+   "capa": "C4",
+   "fuentes": [
+    "CGPJ"
+   ],
+   "grupos": [
+    "cgpj"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-RHP-ES-2007-2025",
+   "capa": "C4",
+   "fuentes": [
+    "OCDE"
+   ],
+   "grupos": [
+    "ine_ipv_derivado"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-RHP-MED-2007-2025",
+   "capa": "C4",
+   "fuentes": [
+    "OCDE"
+   ],
+   "grupos": [
+    "ine_ipv_derivado"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-RHP-ES-2019-2025",
+   "capa": "C4",
+   "fuentes": [
+    "OCDE"
+   ],
+   "grupos": [
+    "ine_ipv_derivado"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-RHP-MED-2019-2025",
+   "capa": "C4",
+   "fuentes": [
+    "OCDE"
+   ],
+   "grupos": [
+    "ine_ipv_derivado"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_RPI-ES-2007-2025",
+   "capa": "C4",
+   "fuentes": [
+    "OCDE"
+   ],
+   "grupos": [
+    "ine_ipv_derivado"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_RPI-MED-2007-2025",
+   "capa": "C4",
+   "fuentes": [
+    "OCDE"
+   ],
+   "grupos": [
+    "ine_ipv_derivado"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_RPI-ES-2019-2025",
+   "capa": "C4",
+   "fuentes": [
+    "OCDE"
+   ],
+   "grupos": [
+    "ine_ipv_derivado"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_RPI-MED-2019-2025",
+   "capa": "C4",
+   "fuentes": [
+    "OCDE"
+   ],
+   "grupos": [
+    "ine_ipv_derivado"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_YDH-ES-2007-2025",
+   "capa": "C4",
+   "fuentes": [
+    "OCDE"
+   ],
+   "grupos": [
+    "ine_ipv_derivado"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_YDH-MED-2007-2025",
+   "capa": "C4",
+   "fuentes": [
+    "OCDE"
+   ],
+   "grupos": [
+    "ine_ipv_derivado"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_YDH-ES-2019-2025",
+   "capa": "C4",
+   "fuentes": [
+    "OCDE"
+   ],
+   "grupos": [
+    "ine_ipv_derivado"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_YDH-MED-2019-2025",
+   "capa": "C4",
+   "fuentes": [
+    "OCDE"
+   ],
+   "grupos": [
+    "ine_ipv_derivado"
+   ],
+   "tolerancia": ""
+  },
+  {
+   "id": "V16-HEC-INTL-SOBRECARGA-ES-2025",
+   "capa": "C4",
+   "fuentes": [
+    "Eurostat ECV"
+   ],
+   "grupos": [
+    "ecv"
+   ],
+   "tolerancia": ""
+  }
+ ]
+}

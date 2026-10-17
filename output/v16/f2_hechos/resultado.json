@@ -1,0 +1,27 @@
+{
+ "rama": "f2_hechos",
+ "pregunta": "¿Qué hechos de precios, alquiler, parque, obra, lanzamientos y comparación internacional se sostienen con dos fuentes independientes?",
+ "capa": "C1/C4 (mixta; cada cifra lleva la suya)",
+ "datos": "INE IPV, IPC alquiler, IPVA, Censo 2021; MIVAU tasado, fin de obra, SERPAVI; Registradores; Notariado; Incasòl; GVA; Catastro; CGPJ; OCDE; Eurostat",
+ "N": 56,
+ "metodo": "Cambios acumulados con media anual; coincidencia ±3.0 p.p. (cambios) o ±15% (recuentos); grupos por fuente primaria",
+ "estimacion": {
+  "C1": 3,
+  "C2": 0,
+  "C4": 53
+ },
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "controles_1_0": "reproducidos",
+  "tolerancia_pp": 3.0,
+  "pendiente": "Vivienda pública por habitante frente a la UE: no hay dato descargado (OCDE Affordable Housing Database, PH4.2). Se deja la cifra pendiente en tareas del autor; no se estima ni se aproxima con otra fuente."
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Hechos descriptivos, sin estimar efectos ni predecir; sin contraste de hipótesis (no aplica FDR)."
+}

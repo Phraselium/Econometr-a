@@ -158,3 +158,6 @@ data/processed/v16/*_terceros.parquet
 # V16: microdatos de la ECV y la EPF (como en v9: solo en disco, sha256 en data/CHECKSUMS.sha256)
 data/raw/v16/renta_parque/ecv/
 data/raw/v16/renta_parque/epf/
+# V16: salidas de prueba rápida de los módulos
+output/v16/*/smoke/
+output/v16/*/_smoke/

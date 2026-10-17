@@ -64,12 +64,14 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F3 | lector-literatura | L2_vivienda_turistica_regulacion | 165.022 | docs/v16/literatura/L2_vivienda_turistica_regulacion.md |
 | 2026-10-17 | F1 | adquisidor-datos | renta_parque | 156.933 | data/raw/v16/renta_parque;docs/v16/fuentes/renta_parque.md |
 | 2026-10-17 | F1 | auditor-datos | auditoria_alquiler_turismo | 185.453 | output/v16/auditoria/alquiler_turismo |
+| 2026-10-17 | F2 | econometrician | f2_hechos | 191.483 | src/v16/f2_hechos.py;output/v16/f2_hechos |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F1 | 1.689.072 |
+| F2 | 191.483 |
 | F3 | 1.160.356 |
 
-Total V16: 2.849.428 tokens
+Total V16: 3.040.911 tokens
 
 <!-- fin subagentes -->

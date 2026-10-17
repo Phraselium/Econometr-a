@@ -4,18 +4,34 @@
 
 **Borja Romero, economista.** Esta página resume lo que se sabe con más seguridad. Cada cifra va redondeada y con su rango al lado. Las notas técnicas están en la ficha enlazada.
 
-**Cómo leer las etiquetas.** [C1] es un hecho: dos fuentes o más coinciden. [C2] es una cota: vale si se aceptan unos supuestos declarados. [C3s] depende de las restricciones de un modelo. [C4] es exploratorio: no permite hablar de causas. <!-- check:cifra-libre (etiquetas de capa) -->
+**Cómo leer las etiquetas.** La página separa las cifras por cómo se sabe lo que dicen. <!-- check:cifra-libre (etiquetas de capa) -->
+- [C1] es un hecho: al menos dos fuentes **independientes** coinciden dentro de una tolerancia declarada. <!-- check:cifra-libre (etiquetas de capa) -->
+- [C2] es una cota: vale si se aceptan unos supuestos declarados. <!-- check:cifra-libre (etiquetas de capa) -->
+- [C3s] depende de las restricciones de un modelo. <!-- check:cifra-libre (etiquetas de capa) -->
+- [C4] incluye las estadísticas oficiales de **una sola fuente** y los resultados exploratorios. No permite hablar de causas. <!-- check:cifra-libre (etiquetas de capa) -->
 
-## Ocho datos
+Dos fuentes no son independientes si una se construye a partir de la otra o salen de la misma encuesta. Por eso en la versión 1.0 once cifras pasaron de C1 a C4 sin cambiar su valor (ver la fe de erratas). <!-- check:cifra-libre (recuento de la fe de erratas) -->
+
+## Hechos: dos fuentes independientes coinciden [C1]
 
 1. **Hay más hogares.** Entre 2021 y 2025 el número de hogares creció en unos 998 mil hogares (982-1.013 mil) [C1]. [Ficha A1](../metodologia/anexo_metodologico.md#a1-dh_2125-aumento-del-número-de-hogares-2021-2025)
-2. **Se terminan menos viviendas de las que se forman hogares.** Entre 2021 y 2024 faltaron 389-711 mil viviendas [C2]. Es una cota, no una cifra exacta. Si se descartan dos de las correcciones de la EPA, faltaron 596-711 mil viviendas. [Ficha A5](../metodologia/anexo_metodologico.md#a5-l3-def-2124-sinbajas-déficit-2021-2024-sin-bajas-todas-las-variantes-v62)
-3. **Hasta 2030 el saldo empeora en todos los escenarios.** Ocurre en todos los escenarios definidos por el autor, también en el más optimista [C2]. Cuánto empeora no se sabe: ver el recuadro. [Ficha B10](../metodologia/anexo_metodologico.md#b10-módulos-v51-t2-t3-y-t4-srcv5_1t2_runpy-t3_runpy-t4_runpy)
-4. **Se terminan 72,3-94,4 mil viviendas/año.** Son datos de 2019 a 2024 [C1]. [Ficha A2](../metodologia/anexo_metodologico.md#a2-terminadas_1924-viviendas-terminadas-al-año-en-territorio-común-2019-2024)
-5. **El precio de compra ha subido.** Entre 2015 y 2025 subió un 47 % (44-56) [C1]. [Ficha A8](../metodologia/anexo_metodologico.md#a8-a23-p2-precio-de-compra-variación-2015-2025-núcleo-mivau-notariado-y-registradores)
-6. **El alquiler sube más en los contratos nuevos.** En los contratos ya firmados subió un 11-23 % entre 2015 y 2024 [C1]. En los contratos nuevos de la Comunitat Valenciana subió un 29 % (26-31) entre 2021 y 2024 [C1]. [Fichas A7](../metodologia/anexo_metodologico.md#a7-a23-a2-alquiler-de-stock-variación-2015-2024-núcleo) y [A9](../metodologia/anexo_metodologico.md#a9-a23-a10-contratos-nuevos-en-la-comunitat-valenciana-2021-2024)
-7. **Habrá más hogares.** El INE proyecta 1,72 millones de hogares (1,31-1,77 millones) más entre 2026 y 2035 [C2]. [Ficha A14](../metodologia/anexo_metodologico.md#a13-a14-b1-h4-y-e-b1-f-crecimiento-de-hogares-proyectado-2026-2035)
-8. **La mayoría de los hogares es propietaria.** Son propietarios de su vivienda: 75 % de hogares (72-76) [C1]. [Ficha A10](../metodologia/anexo_metodologico.md#a10-r1c-001-hogares-con-vivienda-principal-en-propiedad)
+2. **Se terminan 72,3-94,4 mil viviendas/año.** Son datos de 2019 a 2024 [C1]: Ministerio (fin de obra) y Catastro (altas). [Ficha A2](../metodologia/anexo_metodologico.md#a2-terminadas_1924-viviendas-terminadas-al-año-en-territorio-común-2019-2024)
+3. **El precio de compra ha subido.** Entre 2015 y 2025 subió un 47 % (44-56) [C1]. [Ficha A8](../metodologia/anexo_metodologico.md#a8-a23-p2-precio-de-compra-variación-2015-2025-núcleo-mivau-notariado-y-registradores)
+4. **El alquiler sube más en los contratos nuevos.** En los contratos ya firmados subió un 11-23 % entre 2015 y 2024 [C1]. En los contratos nuevos de la Comunitat Valenciana subió un 29 % (26-31) entre 2021 y 2024 [C1]. [Fichas A7](../metodologia/anexo_metodologico.md#a7-a23-a2-alquiler-de-stock-variación-2015-2024-núcleo) y [A9](../metodologia/anexo_metodologico.md#a9-a23-a10-contratos-nuevos-en-la-comunitat-valenciana-2021-2024)
+5. **La mayoría de los hogares es propietaria.** Son propietarios de su vivienda: 75 % de hogares (72-76) [C1]. [Ficha A10](../metodologia/anexo_metodologico.md#a10-r1c-001-hogares-con-vivienda-principal-en-propiedad)
+
+## Estadísticas oficiales de una sola fuente [C4]
+
+Son datos oficiales y fiables en su definición, pero no hay una segunda fuente independiente con la que contrastarlos.
+
+6. **Viviendas terminadas al año en toda España**, con País Vasco y Navarra: 78,8-101 mil viviendas/año según el año (Ministerio, una sola estadística) [C4].
+7. **Sobrecarga del gasto en vivienda.** Destina más del 40 % de su renta a la vivienda un 27 % (24-29) de quienes alquilan a precio de mercado (Encuesta de Condiciones de Vida, 2025) [C4]. El dato de Eurostat sale de la misma encuesta: no es una segunda fuente. <!-- check:cifra-libre (umbral de sobrecarga) -->
+
+## Cotas y proyecciones: valen bajo supuestos declarados [C2]
+
+8. **Se terminan menos viviendas de las que se forman hogares.** Entre 2021 y 2024 faltaron 389-711 mil viviendas [C2]. Es una cota, no una cifra exacta. Si se descartan dos de las correcciones de la EPA, faltaron 596-711 mil viviendas. [Ficha A5](../metodologia/anexo_metodologico.md#a5-l3-def-2124-sinbajas-déficit-2021-2024-sin-bajas-todas-las-variantes-v62)
+9. **Hasta 2030 el saldo empeora en todos los escenarios.** Ocurre en todos los escenarios definidos por el autor, también en el más optimista [C2]. Cuánto empeora no se sabe: ver el recuadro. [Ficha B10](../metodologia/anexo_metodologico.md#b10-módulos-v51-t2-t3-y-t4-srcv5_1t2_runpy-t3_runpy-t4_runpy)
+10. **Habrá más hogares.** El INE proyecta 1,72 millones de hogares (1,31-1,77 millones) más entre 2026 y 2035 [C2]. [Ficha A14](../metodologia/anexo_metodologico.md#a13-a14-b1-h4-y-e-b1-f-crecimiento-de-hogares-proyectado-2026-2035)
 
 ## Lo que añade el atlas regional (versión interna v7.2) [C4]
 
@@ -55,7 +71,7 @@
 - [C4] no significa mala calidad. Incluye estadísticas oficiales de una sola fuente y resultados exploratorios.
 - Las cifras completas, sin redondear, están en [cifras_clave.csv](cifras_clave.csv), con su id.
 
-**Pre-registro.** Los análisis se registraron en git antes de estimarlos. Las etiquetas aún no se han publicado: es una tarea pendiente del autor. Las fechas y las huellas de cada pre-registro están en `docs/v13/tareas_autor.md`.
+**Pre-registro.** Los análisis se registraron en git antes de estimarlos. Es un pre-registro **interno, sin sello de tiempo externo**: lo fijan etiquetas git (prereg-*) en el repositorio de desarrollo, cuya lista y commits están en `docs/v16/etiquetas_prereg.csv`.
 
 ---
 

@@ -49,7 +49,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | tablas_v12.xlsx | output/v12/tablas_v12.xlsx | `da3e41ffa49ac1810e932705a7c8b80c78a570a947e6fe8ca81249dbc48764e2` |
 | tablas_v8.xlsx | output/v8/tablas_v8.xlsx | `14840ac35aca7c0d924cdb62e1791c897a5bc4464c8d331d4361af2c1499ed78` |
 | tablas_v9.xlsx | output/v9/tablas_v9.xlsx | `bb61506b8a3c82233cba7fdf3be83696ca40e5c7da5559e346b83a9e93d3ccb3` |
-| una_pagina.md | output/v5/una_pagina.md | `a11c75b8a20147c7adf2bdf9d36fe0e23e5a4dc6fa0bd6cb9541525f0e207d7d` |
+| una_pagina.md | output/v5/una_pagina.md | `ed09deb1261b3b42994ef62e07aceb95911f4c615ca5c1e9e181c19454efc939` |
 | verificador/fichas_v12.json | output/v12/b5/fichas_verificador_v12.json | `cc9578f802c3c755fc0f0067f17a623eec7247d976d525edbebb0d0003e0ac8f` |
 | verificador/fichas_v7_1.json | output/v7_1/fichas/fichas_verificador.json | `6651fcea7b3dfd7a668024b1a992b8b5bcb66edc977e0200d18617a9596778a7` |
 | verificador/fichas_v8.json | output/v8/fichas_verificador_v8.json | `f768bd7c97bf893d8127009d233da98a254221f51bf6ece6b9af9e2644c19df8` |

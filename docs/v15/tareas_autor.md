@@ -1,58 +1,7 @@
 # V15 · Tareas del autor
 
-## PUERTA DE LA FASE 3: depósito en OSF (lo hace el autor)
-
-1. **Registro en OSF.** Cree un registro en OSF («OSF Preregistration» o «Open-Ended Registration») con:
-   - el texto de abajo;
-   - adjuntos: docs/v15/preregistro_v15.md, docs/v15/preregistro_v15_adenda.md (adendas 1 y 2) y docs/v15/sellado_v15.json, en la versión de la etiqueta local `prereg-v15`, commit `542b4fdf398970c817af7abfcd20c92dda299c69`.
-   - Compruebe el hash con `git rev-parse prereg-v15^{commit}`.
-2. **Etiqueta.** Si quiere publicarla, súbala usted (`git push origin prereg-v15`). Claude no sube etiquetas.
-3. **proyecto.json.** Añada `"osf_prereg_v15": "<DOI o URL del registro OSF>"` y la fecha del depósito. Sin ese campo, la puerta (src/v15/puerta.py y la guarda del hook) mantiene cerradas las fases 4 y 5.
-4. **Al reanudar.** Claude comprobará que la fecha del depósito es anterior a cualquier estimación de V15.
-
-### Texto exacto para OSF
-
-**Título:** Vivienda en España, V15: preguntas pre-registradas sobre regulación del alquiler, vivienda turística, inmigración y predicción (pre-registro y adendas)
-
-**Autor:** Borja Romero (economista; firma individual e independiente)
-
-**Resumen (ES):**
-- **Qué es.** Pre-registro de la versión 15 de un estudio reproducible sobre la vivienda en España, depositado antes de estimar ningún efecto.
-- **Hipótesis confirmatorias** (Holm, m = 3, sobre la evaluación sellada temporal: solo es confirmatorio lo no visto; lo ya estimado en V9, D1 y D4, y los periodos ya publicados se declaran informativos):
-  - H1 y H2: asociación de la declaración de zonas tensionadas (Ley 12/2023) en Cataluña con la renta y el número de contratos de alquiler nuevos (Incasòl), con Callaway-Sant'Anna y SDID, Honest DiD y preperiodo posterior a la anulación de los topes de 2020-2022;
-  - H4: inmigración y alquiler municipal con un instrumento shift-share (padrón 2003-2022), inferencia AKM y Anderson-Rubin.
-- **Asociación pre-registrada** (C4): H3, densidad de vivienda turística (INE) y alquiler declarado (SERPAVI) por sección censal.
-- **Contraste predictivo:** H5, combinación de modelos frente a la línea base más exigente (AR(4), ECM v1 y paseo aleatorio), con Diebold-Mariano y Model Confidence Set.
-- **Exploratorias:** cuatro, con BH.
-- **Descartadas antes de estimar:** tres, por falta de datos o de potencia.
-- **Validación sellada,** fijada antes de estimar:
-  - datos publicados después del depósito, con mínimos por hipótesis y evaluación única;
-  - un bloque espacial aleatorio (SEED=20261010) de 33 celdas de 0,5° y el 15 % de los distritos de las grandes ciudades.
-- **Condiciones de la capa causal (C3):** superar todas las pruebas declaradas y la evaluación sellada temporal. Un diseño válido sin efecto se reporta como nulo acotado (TOST).
-- **Historial.** Se declaran las especificaciones previas de las versiones 1 a 14, la multiplicidad entre versiones y los resultados ya vistos de V9 para estas hipótesis.
-- **Calendario.** La evaluación sellada será hacia marzo de 2027 (H1, H2), octubre de 2027 (H5) y el último trimestre de 2027 (H4). Lo que no se pueda evaluar antes del 31-12-2027 no alcanza C3.
-- **Correcciones previas al depósito.** Antes del depósito se corrigieron la capa de 11 cifras de la versión 1.0 (C1 → C4, valores intactos) y tres metadatos de la base (ERRATA.md, 2026-10-17).
-
-**Abstract (EN):**
-- **What this is.** Pre-registration of version 15 of a reproducible study of housing in Spain, deposited before any effect is estimated.
-- **Confirmatory hypotheses** (Holm, m = 3, applied to the sealed temporal evaluation: only unseen data are confirmatory; designs already estimated in V9, D1 and D4, and already released periods are declared informative):
-  - H1 and H2: association of the designation of stressed rental areas (Law 12/2023) in Catalonia with new-lease rents and the number of new leases (Incasòl deposits), using Callaway-Sant'Anna and synthetic difference-in-differences with Honest DiD, and a pre-period after the 2020-2022 rent caps were annulled;
-  - H4: immigration and municipal rents with a shift-share instrument (municipal register 2003-2022), AKM and Anderson-Rubin inference.
-- **Pre-registered association** (no causal layer): H3, short-term rental density (INE) and declared rents (SERPAVI) by census tract.
-- **Predictive test:** H5, a forecast combination against the most demanding benchmark (AR(4), the v1 error-correction model and a random walk with drift), using Diebold-Mariano and the Model Confidence Set.
-- **Exploratory questions:** four, with BH.
-- **Dropped before estimation:** three, for lack of data or power.
-- **Sealed validation,** fixed before estimation:
-  - data released after the deposit, with minimum amounts per hypothesis and a single evaluation;
-  - a random spatial block (SEED=20261010) of 33 cells of 0.5° and 15 % of large-city districts.
-- **Causal layer (C3):** requires passing all declared tests and the temporal sealed evaluation. A valid design with no effect is reported as a bounded null (TOST).
-- **History.** Prior specifications from versions 1 to 14, cross-version multiplicity and the V9 results already seen for these hypotheses are disclosed.
-- **Timing.** The sealed evaluation is expected around March 2027 (H1, H2), October 2027 (H5) and Q4 2027 (H4). Anything not evaluable by 31 December 2027 cannot reach C3.
-- **Corrections before deposit.** Before deposit, the evidence layer of 11 figures of release 1.0 was lowered (C1 → C4, values unchanged) and three metadata fields of the database were corrected (ERRATA.md, 2026-10-17).
-
-**Fecha de corte de los datos:** 2026-10-17 (docs/v15/sellado_v15.json, con sha256 de las fuentes).
-**Etiqueta del repositorio:** prereg-v15 (commit `542b4fdf398970c817af7abfcd20c92dda299c69`). **Repositorio:** URL de proyecto.json.
-
+## Puerta de la fase 3 (sustituida en V16)
+El pre-registro de V15 es **interno, sin sello de tiempo externo**: ya no se deposita en OSF ni se usan campos osf_prereg_* (docs/v16/plan.md, regla A). La puerta es la etiqueta `prereg-v15` publicada en el remoto y apuntando a 542b4fdf398970c817af7abfcd20c92dda299c69. Los comandos para publicarla están en docs/v16/tareas_autor.md (bloqueo B-1: el remoto rechaza las etiquetas desde la sesión).
 
 ## Pendiente de decisión (de la fase 0)
 - ~~**Capa de las cifras C1 de la 1.0**~~ Resuelto antes del depósito: 11 cifras bajan a C4 sin cambiar su valor (ERRATA, adenda V15 del historial; decisiones G8).

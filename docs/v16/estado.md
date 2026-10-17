@@ -16,6 +16,26 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - Objetivos make v16_f0 … v16_f7, v16 y check_v16, este último dentro de make check.
   - src/v16/fase.py y src/v16/registro_subagentes.py (tokens por fase y aviso de 6 millones).
 - **Bloqueo B-1.** El remoto rechaza las etiquetas (HTTP 403). Los comandos para publicarlas están en tareas_autor.
+- **F0.1 · Pre-registro interno.**
+  - proyecto.json lleva `preregistro_tipo: "interno, sin sello externo"` y ninguna clave osf_prereg (check_v16 lo comprueba).
+  - La puerta de V15 (src/v15/puerta.py) y la guarda (d) usan la etiqueta, no OSF.
+  - La sección OSF de docs/v15/tareas_autor.md queda sustituida.
+  - La publicación de las etiquetas sigue bloqueada (B-1).
+- **F0.2 · Correcciones previas** (output/v16/f0/comprobaciones.json, `todo_ok`).
+  - 3.642.696 filas v6 marcadas y 0 sin marcar, en la base y en la capa pública.
+  - 11 de 11 bajadas de capa en output/v5 y en publicacion.
+  - Los tres metadatos corregidos.
+  - make check limpio al cerrar la fase.
+- **F0.3 · Una página.** La plantilla docs/v5/plantillas/una_pagina.md se ha reorganizado en tres bloques:
+  - hechos C1 con dos fuentes independientes;
+  - estadísticas oficiales de fuente única C4 (ejemplos nuevos: E-T7-prod y V10-ATL-A1);
+  - cotas C2.
+  Ningún valor cambia. La página se ha regenerado con make publicacion.
+- **F0.4 · Lo ya visto.** docs/v16/lo_ya_visto.md (107 filas de cifras_clave, auditorías de V15 y pre-registro de V15), generado por src/v16/f0_lo_ya_visto.py.
+- **Duda para el autor:** la independencia de dh_2125 (ECP y EPA), en tareas_autor §2.
+
+## Subagentes y tokens
+- Fase 0: ninguno (0 tokens).
 
 ## Siguiente
-- Fase 0: proyecto.json (preregistro_tipo), comprobación de las correcciones previas, plantilla de una página y lo_ya_visto.md.
+- Fase 1: adquisición. Lo que requiera al autor va primero a tareas_autor. Después vienen la base de intervenciones, el registro de licencias, la normalización, la auditoría y el inventario.

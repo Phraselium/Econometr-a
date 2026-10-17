@@ -8,12 +8,15 @@ La guarda (d) de .claude/hooks/guardas_bash.py hace la misma comprobación antes
 """
 from __future__ import annotations
 
+import importlib.util
 import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(RAIZ / "src" / "v16"))
-import etiquetas  # noqa: E402
+# carga por ruta, sin tocar sys.path: src/v16 tiene módulos con el mismo nombre que src/v15 (registro_subagentes)
+_spec = importlib.util.spec_from_file_location("v16_etiquetas", RAIZ / "src" / "v16" / "etiquetas.py")
+etiquetas = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(etiquetas)
 
 
 def abierta(p: dict | None = None) -> tuple[bool, str]:

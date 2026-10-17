@@ -1,0 +1,42 @@
+{
+ "marca_v6": {
+  "data/base/hechos.parquet": {
+   "marcadas": 3642696,
+   "sin_marcar_de_v6": 0,
+   "ok": true
+  },
+  "data/base/publica/hechos.parquet": {
+   "marcadas": 3642696,
+   "sin_marcar_de_v6": 0,
+   "ok": true
+  }
+ },
+ "bajadas_capa": {
+  "output/v5/cifras_clave.csv": {
+   "bajadas": 11,
+   "aplicadas": 11,
+   "ok": true
+  },
+  "publicacion/cifras_clave.csv": {
+   "bajadas": 11,
+   "aplicadas": 11,
+   "ok": true
+  }
+ },
+ "metadatos": {
+  "obra_nueva_neta_catastro": {
+   "periodo": "2012-2025",
+   "ok": true
+  },
+  "ipc_alquiler_indice": {
+   "unidad": "índice 2025=100",
+   "ok": true
+  },
+  "permisos": {
+   "unidad": "índice 2021=100 (SCA)",
+   "fuente": "Eurostat, sts_cobp_q: permisos de construcción, número de viviendas (BPRM_DW), índice desestacionalizado",
+   "ok": true
+  }
+ },
+ "todo_ok": true
+}

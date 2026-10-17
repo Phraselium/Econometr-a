@@ -16,7 +16,7 @@ sys.path.insert(0, str(RAIZ / "src" / "v16"))
 import etiquetas  # noqa: E402
 
 FASES: dict[str, list[str]] = {
-    "f0": ["src/v16/f0_lo_ya_visto.py"],
+    "f0": ["src/v16/f0_comprobaciones.py", "src/v16/f0_lo_ya_visto.py"],
     "f1": ["src/v16/f1_intervenciones.py", "src/v16/f1_inventario.py"],
     "f2": ["src/v16/f2_hechos.py", "src/v16/f2_contabilidad.py", "src/v16/f2_atlas.py"],
     "f3": ["src/v15/verificar_referencias.py", "src/v16/f3_metaanalisis.py", "src/v16/f3_cuatro_cuadrantes.py"],

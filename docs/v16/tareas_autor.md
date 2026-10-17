@@ -55,3 +55,7 @@ El trabajo sigue sin ellos. Cada paso exacto está en la ficha de su familia, en
    - Red Natura 2000 (MITECO);
    - ITP y AJD del panorama del REAF: el CSV solo lleva tipos impositivos, con las leyes autonómicas como fuente normativa.
 9. **ECV longitudinal 2017-2025** (unos 510 MB): decidir si se descarga. La transversal ya está completa (2004-2025).
+
+## 4. Comprobaciones pequeñas (auditorías de la fase 1)
+- Confirmar que «Noáin (Valle de Elorz)» corresponde al código INE 31088, uno de los 11 alias manuales del ADRH (output/v16/auditoria/renta_parque/). Cae en Navarra, que está en la muestra sellada v6, así que no afecta a ningún análisis de V16 hasta la evaluación.
+- Vivienda pública por habitante frente a la UE (fase 2): falta el indicador PH4.2 de la OCDE (Affordable Housing Database). Si se descarga a data/raw/v16/demanda_internacional/, el hecho se añade como C4.

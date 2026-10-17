@@ -1,0 +1,15 @@
+variable,nivel,frecuencia,n_series,n_obs,n_huecos_internos,n_ceros,n_atipicos_nivel_log,n_atipicos_var_interanual,n_series_con_atipico
+iniciadas,provincia,A,43,645,86,0,7,7,11
+iniciadas,provincia,T,43,3095,87,2,13,3,7
+iniciadas_anual_tabla,provincia,A,43,989,0,0,0,8,8
+"iniciadas_libres_anual(raw, unidad provincial)",unidad_prov,A,52,832,104,0,5,6,10
+permisos,nacional,T,1,106,0,0,0,0,0
+prot_definitiva_anual(raw),unidad_prov,A,52,936,0,231,10,41,18
+terminadas,ccaa,T,17,1258,0,0,19,2,7
+terminadas,nacional,T,1,74,0,0,0,0,0
+terminadas,provincia,A,43,731,0,0,21,3,12
+terminadas,provincia,T,43,3182,0,2,32,6,11
+terminadas_anual_tabla,provincia,A,43,989,0,0,0,5,5
+"terminadas_libres_anual(raw, unidad provincial)",unidad_prov,A,52,936,0,1,26,4,15
+visados,ccaa,T,17,1224,34,0,3,6,5
+visados,nacional,T,1,72,2,0,0,1,1

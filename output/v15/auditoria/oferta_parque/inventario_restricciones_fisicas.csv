@@ -1,0 +1,11 @@
+concepto,existe_en_repositorio,donde,observacion
+Pendiente / altitud / MDT por municipio,no,-,Ninguna variable ni fichero ráster (búsqueda en variables.parquet y árbol de ficheros).
+Superficie municipal (km2),derivable,data/base/geo/municipios.parquet,"Polígonos INE 2025 (WGS84, 8.132 municipios): el área se calcula; son límites administrativos, no suelo clasificable."
+Superficie no urbanizable / clasificación del suelo,no,-,"Solo precio del suelo urbano (MIVAU, tabla 4) y unidades urbanas del Catastro; sin superficie clasificada."
+"Suelo protegido (Red Natura 2000, ENP)",no,-,Sin capa ni variable.
+Agua / hidrografía / litoral,no,-,"Sin capa; la costa podría derivarse de los límites, no está calculada."
+"Usos del suelo (SIOSE, Corine)",no,-,Sin datos.
+Huella edificada,parcial,Catastro INSPIRE (hechos: catastro_inspire_*),"Solo València (87 barrios, 1.659 secciones) y 108 municipios en obra_nueva_viviendas_inspire (cota inferior)."
+Viviendas por año de construcción (stock),parcial,catastro_viviendas_por_anio_construccion,"Un solo corte (2019), 7.608 municipios; sirve para antigüedad, no para flujo anual."
+Licencias municipales de obra,no,-,"Solo iab_n_con_licencia (anuncios con licencia turística, no de obra)."
+Visados de colegios de arquitectos / CSCAE,no,-,"La variable «visados» es la tabla 3.1 del MIVAU (viviendas libres INICIADAS), no visado de dirección de obra."

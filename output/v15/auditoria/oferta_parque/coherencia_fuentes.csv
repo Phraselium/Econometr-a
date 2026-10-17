@@ -1,0 +1,9 @@
+chequeo,detalle,n_comparaciones,n_discrepancias,max_abs_dif,max_rel_dif
+visados(CCAA) = suma de iniciadas libres provinciales,"CCAA multiprovinciales con provincias completas: 01,02,05,07,08,09,10,11,12,16",719,0,0.0,0.0
+iniciadas T provincial: hechos frente a suma de meses del raw,43 provincias,3095,0,0.0,
+iniciadas libres: suma mensual frente a tabla anual,"provincias, CCAA uniprovinciales, Ceuta y Melilla, 2008-2025",832,0,0.0,0.0
+terminadas libres: suma mensual frente a tabla anual,"provincias, CCAA uniprovinciales, Ceuta y Melilla, 2008-2025",936,0,0.0,0.0
+iniciadas libres: suma de unidades frente a total nacional (tabla anual),unidades con dato: 52,35,0,0.0,0.0
+terminadas libres: suma de unidades frente a total nacional (tabla anual),unidades con dato: 52,35,0,0.0,0.0
+permisos (nacional T) frente a visados (nacional T): unidades,"permisos es un índice (2021=100, Eurostat sts_cobp_q según src/build_dataset.py) con unidad declarada «viviendas (visados)» y fuente declarada MIVAU; ratio mediano a visados 0.0069; correlación de variaciones interanuales log 0.73 (n=68)",72,72,82324.0,0.9967039981430975
+Catastro URBANA: .csv frente a .csv.gz (dos copias en data/raw),filas 228130 / 228130; columnas comunes 14 de 15 / 14,228130,0,,

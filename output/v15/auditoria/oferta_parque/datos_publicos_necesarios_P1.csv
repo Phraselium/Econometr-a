@@ -1,0 +1,7 @@
+concepto,fuente_publica,licencia_segun_conocimiento_previo_no_verificada,descarga_automatizable,nota
+Pendiente y altitud,"MDT05 / MDT25 / MDT200 (IGN-CNIG), Centro de Descargas del CNIG",CC BY 4.0 (IGN),Parcial: hojas por formulario web; los servicios INSPIRE de descarga (ATOM/WCS) permiten el acceso en bloque,Estadísticos zonales por municipio con los polígonos del repositorio; MDT25 pesa del orden de GB (no verificado)
+Usos y cubiertas del suelo,"SIOSE (CNIG/IGN, ediciones 2005-2020), descarga por CCAA",CC BY 4.0 (IGN),Sí por ATOM o descarga directa por CCAA (Canarias aparte),Series SIOSE no homogéneas entre ediciones: solo sección transversal
+Usos del suelo europeos,CORINE Land Cover 1990-2018 (Copernicus CLMS),Libre y abierta (Copernicus),Sí con la API de CLMS; requiere cuenta EU Login,Resolución de 25 ha: gruesa para municipios pequeños
+Suelo protegido,"Red Natura 2000 y Espacios Naturales Protegidos (MITECO, EEA)",Reutilización con cita (MITECO); CC BY 4.0 (EEA),Sí por descarga directa de capas,Intersección con límites municipales; no equivale a suelo no urbanizable
+Clasificación urbanística del suelo,"SIU, Sistema de Información Urbana (MIVAU)",no verificada,No comprobada,Es la medida más cercana a «suelo no urbanizable»; cobertura y vintage por comprobar
+Hidrografía / masas de agua,"BCN y red hidrográfica (CNIG), MITECO",CC BY 4.0 (IGN); reutilización con cita (MITECO),Sí (capas por descarga),"«Agua» como restricción de oferta exige definir el concepto (cuenca, no solo masa de agua)"

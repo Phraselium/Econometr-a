@@ -1,0 +1,1051 @@
+{
+ "rama": "V15-F1.2-oferta_parque",
+ "pregunta": "¿Son coherentes, completas y estables las series de oferta y parque (MIVAU, Catastro, Censos 2011/2021) para P1 y P7?",
+ "capa": "C4",
+ "datos": "MIVAU iniciadas/terminadas libres y calificaciones definitivas (provincia, CCAA); MIVAU parque estimado; Catastro URBANA 2012-2026 (municipio); Censos 2011 y 2021 (provincia); geometría municipal INE 2025",
+ "N": 52,
+ "metodo": "auditoría descriptiva: z robusto (mediana, MAD), coherencia flujo-stock, ruptura sup-t con permutación (999, SEED=20261010), inventario y cobertura",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "DESCRIPTIVO",
+ "diagnosticos": {
+  "convenciones": {
+   "umbral_z_robusto": 5.0,
+   "umbral_dif_rel": 0.15,
+   "seed": 20261010,
+   "dif_rel": "flujo / variación de stock - 1",
+   "ventana_censo": "meses 2011-11 a 2021-10",
+   "catastro_convencion_A": "fichero t = stock a 31-12-(t-1) según el campo fecha del origen; flujo 2012-2021 frente a fichero 2022 - 2012",
+   "catastro_convencion_B": "etiqueta de hechos (periodo t = 31-12-t); flujo 2013-2021 frente a fichero 2021 - 2012"
+  },
+  "t1_atipicos": {
+   "mivau_resumen": [
+    {
+     "variable": "iniciadas",
+     "nivel": "provincia",
+     "frecuencia": "A",
+     "n_series": 43,
+     "n_obs": 645,
+     "n_huecos_internos": 86,
+     "n_ceros": 0,
+     "n_atipicos_nivel_log": 7,
+     "n_atipicos_var_interanual": 7,
+     "n_series_con_atipico": 11
+    },
+    {
+     "variable": "iniciadas",
+     "nivel": "provincia",
+     "frecuencia": "T",
+     "n_series": 43,
+     "n_obs": 3095,
+     "n_huecos_internos": 87,
+     "n_ceros": 2,
+     "n_atipicos_nivel_log": 13,
+     "n_atipicos_var_interanual": 3,
+     "n_series_con_atipico": 7
+    },
+    {
+     "variable": "iniciadas_anual_tabla",
+     "nivel": "provincia",
+     "frecuencia": "A",
+     "n_series": 43,
+     "n_obs": 989,
+     "n_huecos_internos": 0,
+     "n_ceros": 0,
+     "n_atipicos_nivel_log": 0,
+     "n_atipicos_var_interanual": 8,
+     "n_series_con_atipico": 8
+    },
+    {
+     "variable": "iniciadas_libres_anual(raw, unidad provincial)",
+     "nivel": "unidad_prov",
+     "frecuencia": "A",
+     "n_series": 52,
+     "n_obs": 832,
+     "n_huecos_internos": 104,
+     "n_ceros": 0,
+     "n_atipicos_nivel_log": 5,
+     "n_atipicos_var_interanual": 6,
+     "n_series_con_atipico": 10
+    },
+    {
+     "variable": "permisos",
+     "nivel": "nacional",
+     "frecuencia": "T",
+     "n_series": 1,
+     "n_obs": 106,
+     "n_huecos_internos": 0,
+     "n_ceros": 0,
+     "n_atipicos_nivel_log": 0,
+     "n_atipicos_var_interanual": 0,
+     "n_series_con_atipico": 0
+    },
+    {
+     "variable": "prot_definitiva_anual(raw)",
+     "nivel": "unidad_prov",
+     "frecuencia": "A",
+     "n_series": 52,
+     "n_obs": 936,
+     "n_huecos_internos": 0,
+     "n_ceros": 231,
+     "n_atipicos_nivel_log": 10,
+     "n_atipicos_var_interanual": 41,
+     "n_series_con_atipico": 18
+    },
+    {
+     "variable": "terminadas",
+     "nivel": "ccaa",
+     "frecuencia": "T",
+     "n_series": 17,
+     "n_obs": 1258,
+     "n_huecos_internos": 0,
+     "n_ceros": 0,
+     "n_atipicos_nivel_log": 19,
+     "n_atipicos_var_interanual": 2,
+     "n_series_con_atipico": 7
+    },
+    {
+     "variable": "terminadas",
+     "nivel": "nacional",
+     "frecuencia": "T",
+     "n_series": 1,
+     "n_obs": 74,
+     "n_huecos_internos": 0,
+     "n_ceros": 0,
+     "n_atipicos_nivel_log": 0,
+     "n_atipicos_var_interanual": 0,
+     "n_series_con_atipico": 0
+    },
+    {
+     "variable": "terminadas",
+     "nivel": "provincia",
+     "frecuencia": "A",
+     "n_series": 43,
+     "n_obs": 731,
+     "n_huecos_internos": 0,
+     "n_ceros": 0,
+     "n_atipicos_nivel_log": 21,
+     "n_atipicos_var_interanual": 3,
+     "n_series_con_atipico": 12
+    },
+    {
+     "variable": "terminadas",
+     "nivel": "provincia",
+     "frecuencia": "T",
+     "n_series": 43,
+     "n_obs": 3182,
+     "n_huecos_internos": 0,
+     "n_ceros": 2,
+     "n_atipicos_nivel_log": 32,
+     "n_atipicos_var_interanual": 6,
+     "n_series_con_atipico": 11
+    },
+    {
+     "variable": "terminadas_anual_tabla",
+     "nivel": "provincia",
+     "frecuencia": "A",
+     "n_series": 43,
+     "n_obs": 989,
+     "n_huecos_internos": 0,
+     "n_ceros": 0,
+     "n_atipicos_nivel_log": 0,
+     "n_atipicos_var_interanual": 5,
+     "n_series_con_atipico": 5
+    },
+    {
+     "variable": "terminadas_libres_anual(raw, unidad provincial)",
+     "nivel": "unidad_prov",
+     "frecuencia": "A",
+     "n_series": 52,
+     "n_obs": 936,
+     "n_huecos_internos": 0,
+     "n_ceros": 1,
+     "n_atipicos_nivel_log": 26,
+     "n_atipicos_var_interanual": 4,
+     "n_series_con_atipico": 15
+    },
+    {
+     "variable": "visados",
+     "nivel": "ccaa",
+     "frecuencia": "T",
+     "n_series": 17,
+     "n_obs": 1224,
+     "n_huecos_internos": 34,
+     "n_ceros": 0,
+     "n_atipicos_nivel_log": 3,
+     "n_atipicos_var_interanual": 6,
+     "n_series_con_atipico": 5
+    },
+    {
+     "variable": "visados",
+     "nivel": "nacional",
+     "frecuencia": "T",
+     "n_series": 1,
+     "n_obs": 72,
+     "n_huecos_internos": 2,
+     "n_ceros": 0,
+     "n_atipicos_nivel_log": 0,
+     "n_atipicos_var_interanual": 1,
+     "n_series_con_atipico": 1
+    }
+   ],
+   "mivau_aux": {
+    "duplicados_exactos_entre_origenes": 0,
+    "duplicados_con_valor_distinto": 0,
+    "filas_interpoladas_excluidas": 104,
+    "huecos_trimestrales_internos": {
+     "iniciadas|provincia": 87,
+     "visados|ccaa": 34,
+     "visados|nacional": 2
+    }
+   },
+   "catastro": {
+    "municipios_con_serie_evaluable": 7603,
+    "atipicos_z5_total": 7901,
+    "atipicos_z5_material_ge50": 2428,
+    "series_sin_escala_(constantes)": 9,
+    "provincias_atipico_z5": [
+     {
+      "provincia": "03",
+      "ejercicio_fichero": "2013",
+      "obra_neta": -979.0,
+      "z": -6.3248220747697905
+     },
+     {
+      "provincia": "06",
+      "ejercicio_fichero": "2013",
+      "obra_neta": 6100.0,
+      "z": 7.595213481120332
+     },
+     {
+      "provincia": "11",
+      "ejercicio_fichero": "2013",
+      "obra_neta": 8324.0,
+      "z": 8.315660451869043
+     },
+     {
+      "provincia": "13",
+      "ejercicio_fichero": "2013",
+      "obra_neta": 2809.0,
+      "z": 9.844149945272331
+     },
+     {
+      "provincia": "13",
+      "ejercicio_fichero": "2014",
+      "obra_neta": 2693.0,
+      "z": 9.348954197808503
+     },
+     {
+      "provincia": "13",
+      "ejercicio_fichero": "2015",
+      "obra_neta": 3801.0,
+      "z": 14.078927371859562
+     },
+     {
+      "provincia": "13",
+      "ejercicio_fichero": "2016",
+      "obra_neta": 1934.0,
+      "z": 6.108837195006378
+     },
+     {
+      "provincia": "13",
+      "ejercicio_fichero": "2017",
+      "obra_neta": 3749.0,
+      "z": 13.85694307127233
+     },
+     {
+      "provincia": "13",
+      "ejercicio_fichero": "2018",
+      "obra_neta": 1873.0,
+      "z": 5.848432534702122
+     },
+     {
+      "provincia": "18",
+      "ejercicio_fichero": "2019",
+      "obra_neta": -5138.0,
+      "z": -5.407694725923586
+     },
+     {
+      "provincia": "22",
+      "ejercicio_fichero": "2015",
+      "obra_neta": 1663.0,
+      "z": 5.906024822226961
+     },
+     {
+      "provincia": "22",
+      "ejercicio_fichero": "2016",
+      "obra_neta": -1320.0,
+      "z": -8.516956794394426
+     },
+     {
+      "provincia": "30",
+      "ejercicio_fichero": "2019",
+      "obra_neta": -11315.0,
+      "z": -11.04943001815759
+     },
+     {
+      "provincia": "45",
+      "ejercicio_fichero": "2013",
+      "obra_neta": 7713.0,
+      "z": 9.921117803481053
+     },
+     {
+      "provincia": "45",
+      "ejercicio_fichero": "2014",
+      "obra_neta": 4810.0,
+      "z": 5.435329316057098
+     },
+     {
+      "provincia": "45",
+      "ejercicio_fichero": "2016",
+      "obra_neta": 4667.0,
+      "z": 5.214362125667286
+     },
+     {
+      "provincia": "50",
+      "ejercicio_fichero": "2014",
+      "obra_neta": 4273.0,
+      "z": 5.505302955727886
+     }
+    ],
+    "negativos_total": 17129,
+    "atipicos_material_por_ejercicio": {
+     "2013": 499,
+     "2014": 309,
+     "2015": 334,
+     "2016": 360,
+     "2017": 286,
+     "2018": 204,
+     "2019": 127,
+     "2020": 38,
+     "2021": 31,
+     "2022": 52,
+     "2023": 22,
+     "2024": 36,
+     "2025": 66,
+     "2026": 64
+    }
+   }
+  },
+  "t2_flujo_stock": {
+   "resumen": {
+    "dif_rel_libres_vs_censo": {
+     "n": 52,
+     "n_fuera_15": 51,
+     "mediana": -0.69294700667326,
+     "p10": -0.8317743652825945,
+     "p90": -0.329399491247717,
+     "fuera_15_provincias": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45",
+      "46",
+      "47",
+      "48",
+      "49",
+      "50",
+      "51",
+      "52"
+     ]
+    },
+    "dif_rel_total_vs_censo": {
+     "n": 52,
+     "n_fuera_15": 48,
+     "mediana": -0.5958933897979146,
+     "p10": -0.8134265317558195,
+     "p90": -0.1869769714896391,
+     "fuera_15_provincias": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "42",
+      "43",
+      "44",
+      "45",
+      "46",
+      "47",
+      "49",
+      "50",
+      "51",
+      "52"
+     ]
+    },
+    "dif_rel_total_vs_catastro_A": {
+     "n": 48,
+     "n_fuera_15": 39,
+     "mediana": -0.3754840697229547,
+     "p10": -0.688551580702839,
+     "p90": 0.001871553126278647,
+     "fuera_15_provincias": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "18",
+      "19",
+      "21",
+      "23",
+      "24",
+      "25",
+      "27",
+      "29",
+      "30",
+      "32",
+      "33",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "43",
+      "44",
+      "45",
+      "46",
+      "47",
+      "49",
+      "51"
+     ]
+    },
+    "dif_rel_total_vs_catastro_B": {
+     "n": 48,
+     "n_fuera_15": 43,
+     "mediana": -0.48506829502251386,
+     "p10": -0.730146966926251,
+     "p90": -0.11679901970538925,
+     "fuera_15_provincias": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "18",
+      "19",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "29",
+      "30",
+      "32",
+      "33",
+      "34",
+      "35",
+      "36",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45",
+      "46",
+      "47",
+      "49",
+      "51"
+     ]
+    },
+    "catastro_A_sobre_censo": {
+     "n": 48,
+     "n_fuera_15": 41,
+     "mediana": -0.3047582000030835,
+     "p10": -0.7122916895998851,
+     "p90": 0.29956732134839553,
+     "fuera_15_provincias": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "07",
+      "08",
+      "09",
+      "10",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "21",
+      "22",
+      "23",
+      "24",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "32",
+      "33",
+      "34",
+      "35",
+      "36",
+      "37",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "46",
+      "47",
+      "49",
+      "50"
+     ]
+    },
+    "nivel_catastro2012_sobre_censo2011": {
+     "n": 48,
+     "min": 0.8439831747666607,
+     "mediana": 0.9694430306373606,
+     "max": 1.0672862855290177,
+     "n_fuera_15": 2
+    },
+    "nivel_catastro2022_sobre_censo2021": {
+     "n": 48,
+     "min": 0.8602507504856083,
+     "mediana": 0.9523276750918266,
+     "max": 1.005991080384927,
+     "n_fuera_15": 0
+    },
+    "nacional_52_unidades": {
+     "delta_censo_familiar": 1415086.0,
+     "flujo_libres_nov11_oct21": 578559.0,
+     "flujo_libres_mas_protegida_nov11_oct21": 729801.0
+    },
+    "pais_vasco_navarra_dif_rel_total_vs_censo": {
+     "01": -0.4,
+     "20": -0.116,
+     "31": -0.185,
+     "48": 0.03
+    },
+    "pais_vasco_navarra_dif_rel_libres_vs_censo": {
+     "01": -0.699,
+     "20": -0.323,
+     "31": -0.509,
+     "48": -0.32
+    },
+    "catastro_48_provincias": {
+     "delta_catastro_A_fichero2022_menos_2012": 1035609.0,
+     "flujo_total_2012_2021": 649848.0,
+     "delta_catastro_B_fichero2021_menos_2012": 948285.0,
+     "flujo_total_2013_2021": 527890.0,
+     "delta_censo_familiar": 1335109.0
+    },
+    "resto_dif_rel_total_vs_censo_mediana": -0.6708388806152266,
+    "resto_dif_rel_libres_vs_censo_mediana": -0.7036798933924291
+   },
+   "alineacion_temporal_catastro": {
+    "desvio_medio_abs_ratio_agregado_1_2018_2024": {
+     "fichero(t)-fichero(t-1) [etiqueta hechos]": 0.15907200721653977,
+     "fichero(t+1)-fichero(t)": 0.04120121942843962
+    },
+    "spearman_corte_transversal_media_fichero_t1_menos_t": 0.7022014759798426,
+    "spearman_corte_transversal_media_etiqueta_hechos": 0.6754162834526315,
+    "anios_donde_gana_fichero": 7,
+    "anios_comparados": 13
+   },
+   "parque_vs_censo": {
+    "unidades": 51,
+    "fuera15_delta": 2,
+    "unidades_fuera15": [
+     "08",
+     "28"
+    ],
+    "nivel2011_min_med_max": [
+     1.0000867832981597,
+     1.0013523827377047,
+     1.005089593521281
+    ],
+    "nivel2021_min_med_max": [
+     1.0003381315814897,
+     1.0025787821673307,
+     1.0077347298733932
+    ],
+    "nacional_parque_2011_2021": [
+     25249053.0,
+     26719905.0
+    ],
+    "nacional_censo_2011_familiar_2021": [
+     25208622.0,
+     26623708.0
+    ]
+   },
+   "coherencia_fuentes": [
+    {
+     "chequeo": "visados(CCAA) = suma de iniciadas libres provinciales",
+     "detalle": "CCAA multiprovinciales con provincias completas: 01,02,05,07,08,09,10,11,12,16",
+     "n_comparaciones": 719,
+     "n_discrepancias": 0,
+     "max_abs_dif": 0.0,
+     "max_rel_dif": 0.0
+    },
+    {
+     "chequeo": "iniciadas T provincial: hechos frente a suma de meses del raw",
+     "detalle": "43 provincias",
+     "n_comparaciones": 3095,
+     "n_discrepancias": 0,
+     "max_abs_dif": 0.0,
+     "max_rel_dif": NaN
+    },
+    {
+     "chequeo": "iniciadas libres: suma mensual frente a tabla anual",
+     "detalle": "provincias, CCAA uniprovinciales, Ceuta y Melilla, 2008-2025",
+     "n_comparaciones": 832,
+     "n_discrepancias": 0,
+     "max_abs_dif": 0.0,
+     "max_rel_dif": 0.0
+    },
+    {
+     "chequeo": "terminadas libres: suma mensual frente a tabla anual",
+     "detalle": "provincias, CCAA uniprovinciales, Ceuta y Melilla, 2008-2025",
+     "n_comparaciones": 936,
+     "n_discrepancias": 0,
+     "max_abs_dif": 0.0,
+     "max_rel_dif": 0.0
+    },
+    {
+     "chequeo": "iniciadas libres: suma de unidades frente a total nacional (tabla anual)",
+     "detalle": "unidades con dato: 52",
+     "n_comparaciones": 35,
+     "n_discrepancias": 0,
+     "max_abs_dif": 0.0,
+     "max_rel_dif": 0.0
+    },
+    {
+     "chequeo": "terminadas libres: suma de unidades frente a total nacional (tabla anual)",
+     "detalle": "unidades con dato: 52",
+     "n_comparaciones": 35,
+     "n_discrepancias": 0,
+     "max_abs_dif": 0.0,
+     "max_rel_dif": 0.0
+    },
+    {
+     "chequeo": "permisos (nacional T) frente a visados (nacional T): unidades",
+     "detalle": "permisos es un índice (2021=100, Eurostat sts_cobp_q según src/build_dataset.py) con unidad declarada «viviendas (visados)» y fuente declarada MIVAU; ratio mediano a visados 0.0069; correlación de variaciones interanuales log 0.73 (n=68)",
+     "n_comparaciones": 72,
+     "n_discrepancias": 72,
+     "max_abs_dif": 82324.0,
+     "max_rel_dif": 0.9967039981430975
+    },
+    {
+     "chequeo": "Catastro URBANA: .csv frente a .csv.gz (dos copias en data/raw)",
+     "detalle": "filas 228130 / 228130; columnas comunes 14 de 15 / 14",
+     "n_comparaciones": 228130,
+     "n_discrepancias": 0,
+     "max_abs_dif": NaN,
+     "max_rel_dif": NaN
+    }
+   ]
+  },
+  "t3_rupturas": {
+   "mivau_permutacion": {
+    "cuota_terminadas_libres": {
+     "unidades": 51,
+     "umbral_fw_95": 5.464495469041371,
+     "supera_umbral_fw": [
+      "05",
+      "12",
+      "15",
+      "24",
+      "25",
+      "27",
+      "28",
+      "31",
+      "37",
+      "40",
+      "41",
+      "45",
+      "49"
+     ],
+     "sup_t_pv_navarra": {
+      "01": 2.27,
+      "20": 3.51,
+      "48": 3.98,
+      "31": 6.14
+     }
+    },
+    "cuota_iniciadas_libres": {
+     "unidades": 52,
+     "umbral_fw_95": 5.592895326944367,
+     "supera_umbral_fw": [
+      "05",
+      "10",
+      "15",
+      "16",
+      "23",
+      "24",
+      "25",
+      "28",
+      "29",
+      "37",
+      "38",
+      "40",
+      "41",
+      "44",
+      "45",
+      "49"
+     ],
+     "sup_t_pv_navarra": {
+      "01": 3.13,
+      "20": 3.83,
+      "48": 2.31,
+      "31": 2.78
+     }
+    },
+    "peso_libres_en_libres_mas_protegida": {
+     "unidades": 11,
+     "umbral_fw_95": 4.420056494756107,
+     "supera_umbral_fw": [
+      "13",
+      "28",
+      "31"
+     ],
+     "sup_t_pv_navarra": {
+      "20": 2.54,
+      "48": 1.61,
+      "31": 6.7
+     }
+    }
+   },
+   "catastro": {
+    "municipios_catastro": 7610,
+    "municipios_ine_2025": 8132,
+    "n_en_catastro_no_ine2025": 4,
+    "en_catastro_y_no_en_ine2025_muestra": [
+     "15026",
+     "15063",
+     "36011",
+     "36012"
+    ],
+    "n_ine2025_sin_catastro": 526,
+    "ine2025_sin_catastro_por_provincia": {
+     "01": 51,
+     "15": 1,
+     "20": 88,
+     "31": 272,
+     "36": 1,
+     "48": 113
+    },
+    "provincias_con_salto_z5_en_crecimiento_stock": [
+     {
+      "provincia": "03",
+      "ejercicio_fichero": "2013",
+      "z": -5.5206558340754945
+     },
+     {
+      "provincia": "06",
+      "ejercicio_fichero": "2013",
+      "z": 9.714453202914791
+     },
+     {
+      "provincia": "06",
+      "ejercicio_fichero": "2014",
+      "z": 5.234907456945661
+     },
+     {
+      "provincia": "11",
+      "ejercicio_fichero": "2013",
+      "z": 9.44501838086256
+     },
+     {
+      "provincia": "13",
+      "ejercicio_fichero": "2013",
+      "z": 10.60490887303061
+     },
+     {
+      "provincia": "13",
+      "ejercicio_fichero": "2014",
+      "z": 9.959414533868676
+     },
+     {
+      "provincia": "13",
+      "ejercicio_fichero": "2015",
+      "z": 14.748592077045593
+     },
+     {
+      "provincia": "13",
+      "ejercicio_fichero": "2016",
+      "z": 6.3624553769112575
+     },
+     {
+      "provincia": "13",
+      "ejercicio_fichero": "2017",
+      "z": 14.191868061198688
+     },
+     {
+      "provincia": "13",
+      "ejercicio_fichero": "2018",
+      "z": 5.9360285211489785
+     },
+     {
+      "provincia": "22",
+      "ejercicio_fichero": "2015",
+      "z": 5.92215649585623
+     },
+     {
+      "provincia": "22",
+      "ejercicio_fichero": "2016",
+      "z": -8.440032526588611
+     },
+     {
+      "provincia": "30",
+      "ejercicio_fichero": "2019",
+      "z": -11.101480335715294
+     },
+     {
+      "provincia": "33",
+      "ejercicio_fichero": "2015",
+      "z": 5.0876317346508175
+     },
+     {
+      "provincia": "38",
+      "ejercicio_fichero": "2016",
+      "z": 5.059347421194197
+     },
+     {
+      "provincia": "45",
+      "ejercicio_fichero": "2013",
+      "z": 10.37167661866093
+     },
+     {
+      "provincia": "45",
+      "ejercicio_fichero": "2014",
+      "z": 5.610853327484766
+     },
+     {
+      "provincia": "45",
+      "ejercicio_fichero": "2016",
+      "z": 5.239642267217215
+     },
+     {
+      "provincia": "50",
+      "ejercicio_fichero": "2014",
+      "z": 5.632484228566201
+     }
+    ],
+    "cuota_residencial_min_max": [
+     0.603280945452143,
+     0.613712288262608
+    ]
+   },
+   "censo_vacia": {
+    "vacia_2011_nacional": 3443364.0,
+    "secundaria_2011_nacional": 3681566.0,
+    "no_principal_2011_nacional": 7124931.0,
+    "no_principal_2021_nacional": 8087092.0,
+    "principal_2011_nacional": 18083692.0,
+    "principal_2021_nacional": 18536616.0,
+    "max_abs_resid_no_principal_2011": 1.0,
+    "max_abs_resid_familiar_2011": 1.0,
+    "max_abs_resid_total_2011": 1.0,
+    "max_abs_dif_rel_tablas_ine_2021_59520_vs_59521": 0.002721492290146621,
+    "max_abs_resid_2021": 0.0,
+    "variables_censo2021_en_base_con_vacia_o_secundaria": [],
+    "vacia_comparable_2011_2021": false
+   },
+   "mivau_nombres_sin_codigo_raw": {
+    "iniciadas": [
+     "Andalucía",
+     "Aragón",
+     "Canarias",
+     "Castilla y León",
+     "Castilla-La Mancha",
+     "Cataluña",
+     "Comunidad Valenciana",
+     "Extremadura",
+     "Galicia",
+     "País Vasco"
+    ],
+    "terminadas": [
+     "Andalucía",
+     "Aragón",
+     "Canarias",
+     "Castilla y León",
+     "Castilla-La Mancha",
+     "Cataluña",
+     "Comunitat Valenciana",
+     "Extremadura (1)",
+     "Galicia",
+     "País Vasco"
+    ],
+    "protegida": [
+     "Andalucía",
+     "Aragón",
+     "Canarias",
+     "Castilla y León",
+     "Castilla-La Mancha",
+     "Cataluña",
+     "Comunitat Valenciana",
+     "Extremadura",
+     "Galicia",
+     "País Vasco"
+    ]
+   }
+  },
+  "meses_ausentes_en_raw": {
+   "iniciadas": [
+    "2016-04",
+    "2016-05",
+    "2016-06",
+    "2017-04",
+    "2017-05",
+    "2017-06"
+   ],
+   "terminadas": [],
+   "protegida": []
+  },
+  "t4_fisico": {
+   "variables_con_coincidencia": [
+    "monitor_compraventas_protegida"
+   ],
+   "ficheros_raster_o_vectoriales_encontrados": [
+    "data/base/geo/web/barrios_valencia.geojson",
+    "data/base/geo/web/ccaa.geojson",
+    "data/base/geo/web/municipios_cv.geojson",
+    "data/base/geo/web/provincias.geojson",
+    "data/base/geo/web/secciones_valencia.geojson",
+    "data/raw/v10/geo/vlc_barrios.geojson",
+    "data/raw/v10/geo/vlc_distritos.geojson",
+    "data/raw/v10/geo/vlc_secciones.geojson",
+    "data/raw/v11/gva_pateval/pateval_ambito.geojson",
+    "data/raw/v11/vlc_opendata/vivendes-proteccio-publica-vpp-viviendas-proteccion-publica-.geojson",
+    "data/raw/v9/insideairbnb/neighbourhoods_barcelona_2026-09-17.geojson",
+    "data/raw/v9/insideairbnb/neighbourhoods_valencia_2026-09-20.geojson"
+   ],
+   "area_municipal": {
+    "municipios": 8132,
+    "area_total_km2_epsg6933": 504476.90558485,
+    "area_mediana_km2": 34.890326169055115,
+    "geometrias_validas_pct": 99.9508116084604
+   }
+  },
+  "t5_cobertura": {
+   "municipios_con_obra_neta_distinta_de_cero_por_anio": {
+    "2013": 5677,
+    "2014": 5467,
+    "2015": 5509,
+    "2016": 5694,
+    "2017": 5486,
+    "2018": 5316,
+    "2019": 5181,
+    "2020": 4903,
+    "2021": 4615,
+    "2022": 4988,
+    "2023": 4860,
+    "2024": 5032,
+    "2025": 5140,
+    "2026": 5004
+   }
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Sin efectos ni regresiones. Cruces solo por código INE. Interpolados excluidos de los atípicos. La regularización catastral 2013-2017 y el origen del parque estimado del MIVAU se citan de la documentación del repositorio (docs/v12) y no se han verificado aquí."
+}

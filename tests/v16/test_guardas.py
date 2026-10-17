@@ -13,6 +13,7 @@ RAIZ = Path(__file__).resolve().parents[2]
 V15 = "make " + "v15_f"
 V16 = "make " + "v16"
 SHA15 = "542b4fdf398970c817af7abfcd20c92dda299c69"
+SHA16 = "a8304ecc07aacc8db9ca59d90baf522ac1b305d7"
 
 
 def _g():
@@ -24,10 +25,13 @@ def _g():
 
 @pytest.fixture
 def remoto(tmp_path, monkeypatch):
-    def fijar(etiquetas: dict):
+    def fijar(etiquetas: dict, provisional: dict | None = None):
         f = tmp_path / "remoto.json"
         f.write_text(json.dumps(etiquetas), encoding="utf-8")
         monkeypatch.setenv("ECONOMETRA_ETIQUETAS_REMOTAS", str(f))
+        c = tmp_path / "provisional.json"   # {versión: motivo del fallo}; vacío = criterio provisional cumplido
+        c.write_text(json.dumps(provisional or {}), encoding="utf-8")
+        monkeypatch.setenv("ECONOMETRA_CRITERIO_PROVISIONAL", str(c))
     return fijar
 
 
@@ -60,8 +64,29 @@ def test_f_fases_previas_libres(remoto, cmd):
 
 
 def test_f_con_etiqueta_v16_deja_pasar(remoto):
-    remoto({"prereg-v16": "abc1234"})
+    remoto({"prereg-v16": SHA16})
     assert _g().evaluar(f"{V16}_f5", RAIZ) is None
+
+
+def test_f_etiqueta_v16_en_otro_commit_bloquea(remoto):
+    remoto({"prereg-v16": "deadbeef" * 5})
+    assert _g().evaluar(f"{V16}_f5", RAIZ).startswith("(f)")
+
+
+@pytest.mark.parametrize("version,cmd,guarda", [("v15", "4", "(d)"), ("v16", "_f6", "(f)")])
+def test_etiqueta_publicada_pero_falla_criterio_provisional_bloquea(remoto, version, cmd, guarda):
+    remoto({"prereg-v15": SHA15, "prereg-v16": SHA16}, {version: "pre-registro cambiado desde su commit (prueba)"})
+    base = V15 if version == "v15" else V16
+    assert _g().evaluar(f"{base}{cmd}", RAIZ).startswith(guarda)
+
+
+def test_criterio_provisional_real_del_repositorio():
+    """En este clon, los dos pre-registros están en la rama remota y sin cambios desde su commit."""
+    sys.path.insert(0, str(RAIZ / "src" / "v16"))
+    import etiquetas
+    for v in ("v15", "v16"):
+        ok, motivo = etiquetas.criterio_provisional(v)
+        assert ok, motivo
 
 
 def test_sin_red_la_puerta_queda_cerrada(monkeypatch):

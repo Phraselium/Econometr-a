@@ -58,11 +58,17 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - Sellado ejecutado: docs/v16/sellado_v16.json; entrenamiento en data/processed/v16/entrenamiento.
   - H1-H5 de V15 intactas.
   - Desviación D1 y decisión K9.
+- **Etiquetas publicadas (K10).**
+  - Las 11 prereg-* están en el remoto, comprobadas en esta sesión.
+  - Puertas con etiqueta y criterio provisional; tests y autocomprobación actualizados.
+  - Registro: docs/preregistros.md, que check_v16 verifica.
+  - CHANGELOG corregido.
 
 ## Siguiente
-- prereg-v16 está creada en local sobre a8304ec, el commit del sellado, que ya está en la rama remota. El remoto rechazó publicar la etiqueta 5 veces (B-1); los comandos para hacerlo están en tareas_autor §1.
-- En vivo, `make v16_f5` lo bloquea la guarda (f) y `fase.py f5` termina con código 1.
-- Fases 5-7: bloqueadas por la guarda (f) hasta que prereg-v16 (y prereg-v15) estén en el remoto. Es la guarda funcionando, no una parada D.
+- Fases 5-7 de V16:
+  - fase 5: Monte Carlo de las herramientas;
+  - fase 6: estimación exploratoria con la rejilla fija y los diseños de la adenda;
+  - fase 7: informe integral y 2.0.
 
 ## Subagentes y tokens
 

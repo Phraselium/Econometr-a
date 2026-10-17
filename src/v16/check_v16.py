@@ -40,25 +40,35 @@ def guardas() -> list[str]:
         err.append("settings.json: falta el hook PreToolUse .claude/hooks/guardas_bash.py")
     g = _hook()
     v15, v16 = "make " + "v15_f4", "make " + "v16_f5"
-    antes = os.environ.get("ECONOMETRA_ETIQUETAS_REMOTAS")
+    claves = ("ECONOMETRA_ETIQUETAS_REMOTAS", "ECONOMETRA_CRITERIO_PROVISIONAL")
+    antes = {k: os.environ.get(k) for k in claves}
     with tempfile.TemporaryDirectory() as d:
-        vacio, lleno = Path(d) / "vacio.json", Path(d) / "lleno.json"
+        vacio, lleno, otro, falla = (Path(d) / f"{n}.json" for n in ("vacio", "lleno", "otro", "falla"))
         vacio.write_text("{}", encoding="utf-8")
-        lleno.write_text(json.dumps({"prereg-v15": "542b4fdf398970c817af7abfcd20c92dda299c69", "prereg-v16": "abc1234"}), encoding="utf-8")
+        lleno.write_text(json.dumps({"prereg-v15": "542b4fdf398970c817af7abfcd20c92dda299c69",
+                                     "prereg-v16": "a8304ecc07aacc8db9ca59d90baf522ac1b305d7"}), encoding="utf-8")
+        otro.write_text(json.dumps({"prereg-v15": "deadbeef" * 5, "prereg-v16": "deadbeef" * 5}), encoding="utf-8")
+        falla.write_text(json.dumps({"v15": "pre-registro cambiado (prueba)", "v16": "pre-registro cambiado (prueba)"}), encoding="utf-8")
         try:
-            os.environ["ECONOMETRA_ETIQUETAS_REMOTAS"] = str(vacio)
-            if not (g.evaluar(v15, RAIZ) or "").startswith("(d)"):
-                err.append("guarda (d) no bloquea sin prereg-v15 en el remoto")
-            if not (g.evaluar(v16, RAIZ) or "").startswith("(f)"):
-                err.append("guarda (f) no bloquea sin prereg-v16 en el remoto")
+            os.environ["ECONOMETRA_CRITERIO_PROVISIONAL"] = str(vacio)
+            for etq, caso in ((vacio, "sin etiquetas en el remoto"), (otro, "con etiquetas en otro commit")):
+                os.environ["ECONOMETRA_ETIQUETAS_REMOTAS"] = str(etq)
+                if not (g.evaluar(v15, RAIZ) or "").startswith("(d)"):
+                    err.append(f"guarda (d) no bloquea {caso}")
+                if not (g.evaluar(v16, RAIZ) or "").startswith("(f)"):
+                    err.append(f"guarda (f) no bloquea {caso}")
             os.environ["ECONOMETRA_ETIQUETAS_REMOTAS"] = str(lleno)
             if g.evaluar(v15, RAIZ) or g.evaluar(v16, RAIZ):
-                err.append("las guardas (d) o (f) bloquean con las etiquetas publicadas")
+                err.append("las guardas (d) o (f) bloquean con las etiquetas publicadas y el criterio provisional cumplido")
+            os.environ["ECONOMETRA_CRITERIO_PROVISIONAL"] = str(falla)
+            if not (g.evaluar(v15, RAIZ) or "").startswith("(d)") or not (g.evaluar(v16, RAIZ) or "").startswith("(f)"):
+                err.append("las guardas (d) o (f) no bloquean cuando falla el criterio provisional")
         finally:
-            if antes is None:
-                os.environ.pop("ECONOMETRA_ETIQUETAS_REMOTAS", None)
-            else:
-                os.environ["ECONOMETRA_ETIQUETAS_REMOTAS"] = antes
+            for k, v in antes.items():
+                if v is None:
+                    os.environ.pop(k, None)
+                else:
+                    os.environ[k] = v
     return err
 
 
@@ -133,6 +143,16 @@ def literatura() -> list[str]:
     return err
 
 
+def preregistros() -> list[str]:
+    """docs/preregistros.md: sha256 de los ficheros de cada pre-registro iguales a los de git en su commit, fechas de git y
+    pre-registros vigentes (V15, V16) sin cambios desde su commit (src/v16/preregistros.py)."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("v16_preregistros", RAIZ / "src" / "v16" / "preregistros.py")
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m.check()
+
+
 def fuentes() -> list[str]:
     """Registro de licencias de las fuentes nuevas (data/raw/v16/*/_manifest.csv; decisiones K5)."""
     import importlib.util
@@ -146,7 +166,7 @@ def main() -> int:
     total = 0
     for nombre, f in (("guardas", guardas), ("pre-registro interno", preregistro),
                       ("estimaciones posteriores a su etiqueta", estimaciones_tras_etiqueta), ("cifras V16", cifras_v16),
-                      ("lenguaje causal", causal), ("registro de fuentes", fuentes), ("literatura", literatura)):
+                      ("lenguaje causal", causal), ("registro de fuentes", fuentes), ("literatura", literatura), ("registro de pre-registros", preregistros)):
         e = f()
         print(f"check_v16 · {nombre}: {len(e)} errores")
         for x in e[:30]:

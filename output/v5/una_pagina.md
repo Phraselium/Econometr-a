@@ -69,7 +69,7 @@ Son datos oficiales y fiables en su definición, pero no hay una segunda fuente 
 - [C4] no significa mala calidad. Incluye estadísticas oficiales de una sola fuente y resultados exploratorios.
 - Las cifras completas, sin redondear, están en [cifras_clave.csv](cifras_clave.csv), con su id.
 
-**Pre-registro.** Los análisis se registraron en git antes de estimarlos. Es un pre-registro **interno, sin sello de tiempo externo**: lo fijan etiquetas git (prereg-*) en el repositorio de desarrollo, cuya lista y commits están en `docs/v16/etiquetas_prereg.csv`.
+**Pre-registro.** Los análisis se registraron en git antes de estimarlos. Cada pre-registro es **interno, fijado en un commit y publicado como etiqueta git (prereg-*), sin sello de tiempo externo**. El commit, su fecha, la fecha de publicación de la etiqueta y las huellas criptográficas de cada pre-registro están en `docs/preregistros.md`.
 
 ---
 

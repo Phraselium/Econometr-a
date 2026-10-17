@@ -1,0 +1,18 @@
+etiqueta,commit,fichero,sha256_en_commit,igual_hoy,commits_posteriores
+prereg-v2,910c42aef06348b884ea70e7b6cdc510d58e48c1,docs/v2/hipotesis.md,3fa640930bd0f645077808b8553a08e85be98196bd723d93c0fb3f40025040cb,sí,
+prereg-v2,910c42aef06348b884ea70e7b6cdc510d58e48c1,data/processed/v2/train/_sellado.json,a9a291f9fbef90c9ead5dec8eaaf84772ba3fff7aeae8ceee24f7429507622be,no,"fd2559a 2026-10-10 v2: infraestructura común (src/v2_common.py + tests), holdout sella todo t ≥ 2024Q3, make models incluye src/v2"
+prereg-v3,204c073e9e2c9e0edd6ac23dad7edf3049ba4428,docs/v3/hipotesis.md,ee40f73e5e68482ecff3f4b194cd127dd0e6a35c691ac5a79a7b9a500d8e86b5,sí,
+prereg-v5,8803f049c0f46ae4db8a79221470594295931d86,docs/v5/prereg_B3.md,0b5d09d9f0ca778d47329b291884fdd1672d2ecc8046c6ea4369badc7d8030d1,sí,
+prereg-v6,a33c167080fbd4b86a9239dcb3744d070e501429,docs/v6/hipotesis.md,9c5d9333e70fcbb9abc12252ad91a6218db92c84cccea020f64be7b53fb5a82d,sí,
+prereg-v6,a33c167080fbd4b86a9239dcb3744d070e501429,output/v6/M0/sellado_info.json,006ff58397b770035518a80ff4896a4126680feb1e481dc6c9d9f244e53ba14a,no,"42cf68b 2026-10-11 v6.1 K4b: doble implementación independiente de las 15 cifras (5 coinciden, 5 parciales, 5 no reconstruibles)"
+prereg-v7,3fad305fc51bbcec67ec9ae298a31c58b8bd0fd0,docs/v7/hipotesis.md,e82d61184dcb3d9ddfdda093bbc7e8f35d10d93c5b6a9b449b6d6b59bbde4c86,sí,
+prereg-v8,91e618be1a2d17879808982a1fe87729d7f5afaf,docs/v8/hipotesis.md,9e7d28dcb2c2176358c6350547c1e150bcca53a1d2bac3c43362018cdc1cd0d2,sí,
+prereg-v9,2977349e3ed3092a51c8a3ad309140cf0b83dca8,docs/v9/hipotesis.md,845269079a46a6d84f08397fb02c4591aaf387e4a828f250f964f0e0df9872bb,no,8075f52 2026-10-15 V9 F2: hash del commit pre-registrado (prereg-v9) en hipotesis.md
+prereg-v9-a1,9cb2200e7cb487fcd22d9da1e8b40ba68a3303d7,docs/v9/hipotesis_addendum_a1.md,22d9eadab98fe39ab4274cdaf79d3e9a1330b7fa8267a12dc9ed2b7e7e3c083e,no,"4639772 2026-10-15 V9 F2: re-revisión A1 aprobada; ventana previa de D1a corregida (MDE 0,046) y notas A1-b/A1-c"
+prereg-v9-a1b,4639772d1dbac4e01af0e24bc0a8501117fe1324,docs/v9/hipotesis_addendum_a1.md,58a2cb8fd4aabfba49be91c3b800bb892a6d8932f011bf99fcf8f4babb87c540,sí,
+prereg-v15,542b4fdf398970c817af7abfcd20c92dda299c69,docs/v15/preregistro_v15.md,936868be91c66738513e4aec114d2131d61c9016169c61610c96069eb69b3c1a,sí,
+prereg-v15,542b4fdf398970c817af7abfcd20c92dda299c69,docs/v15/preregistro_v15_adenda.md,2df7459c3e99b7938cd20f94a0c86c02e35fcb5ef90752de4ec959406b7666f5,sí,
+prereg-v15,542b4fdf398970c817af7abfcd20c92dda299c69,docs/v15/sellado_v15.json,89f5b3da2d77fbed733728a4fae9f612e3026bdf7e49a0bbde2d37c7e101e0be,sí,
+prereg-v16,a8304ecc07aacc8db9ca59d90baf522ac1b305d7,docs/v16/preregistro_v16.md,2bb1e11b5de7fc606508420a12fbefbc32f37cb6ac63ab1f0e8c4c3554fbac88,sí,
+prereg-v16,a8304ecc07aacc8db9ca59d90baf522ac1b305d7,docs/v16/preregistro_v16_adenda.md,b92dd7d2373f9bbbe925d10fa06463beffa49dfd7c26f9fa5401fd842072c71f,sí,
+prereg-v16,a8304ecc07aacc8db9ca59d90baf522ac1b305d7,docs/v16/sellado_v16.json,127785d007898d16e805279e355a2058c11644ffdcc32ac2639bf9ecfa0b2acc,sí,

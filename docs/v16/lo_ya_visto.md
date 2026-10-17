@@ -188,6 +188,6 @@ No son cifras publicadas: son diagnósticos de los datos que V16 usa y que todo 
 
 ## V15 · Pre-registro interno (sin sello de tiempo externo)
 
-- H1-H5 están fijados en docs/v15/preregistro_v15.md y sus adendas 1 y 2 (etiqueta prereg-v15, commit 542b4fd). V16 no los modifica.
+- H1-H5 están fijados en docs/v15/preregistro_v15.md y sus adendas 1 y 2 (pre-registro interno, fijado en el commit 542b4fd y publicado como etiqueta prereg-v15 el 2026-10-17, sin sello de tiempo externo; docs/preregistros.md). V16 no los modifica.
 - Solo es confirmatorio lo publicado después del corte del 17-10-2026. Calendario: H1 y H2 hacia marzo de 2027; H5 hacia octubre de 2027; H4 en el último trimestre de 2027.
 - Potencia (output/v15/potencia/informe.md) y sellado (docs/v15/sellado_v15.json): V16 los reutiliza y no toca su muestra sellada.

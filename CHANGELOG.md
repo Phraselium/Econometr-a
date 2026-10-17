@@ -11,12 +11,12 @@ La versión pública **1.0** reúne todo lo hecho en las versiones internas de d
 | Versión interna | Fecha | Etiqueta local (commit) | Tema | Estado en la 1.0 |
 |---|---|---|---|---|
 | v1 | 2026-10 | — | Primer modelo nacional (f2-f7) | superada (histórico) |
-| v2 | 2026-10-10 | prereg-v2 (f59574a) | Ramas econométricas y muestra sellada | superada (histórico) |
+| v2 | 2026-10-10 | prereg-v2 (910c42a) | Ramas econométricas y muestra sellada | superada (histórico) |
 | v3 | 2026-10-10 | prereg-v3 (204c073) | Capas de evidencia C1-C4 | superada; las capas siguen vigentes |
 | v4 | 2026-10-10 | — | Modelos M0-M7 | superada (histórico) |
-| v5.0 | 2026-10-10 | v5.0 (434c75f), prereg-v5 (1e057cd) | Entregables, cifras_clave, verificador | vigente en lo no superado (plantillas y cifras_clave) |
+| v5.0 | 2026-10-10 | v5.0 (434c75f), prereg-v5 (8803f04) | Entregables, cifras_clave, verificador | vigente en lo no superado (plantillas y cifras_clave) |
 | v5.1 | 2026-10-11 | v5.1 (02364d3) | Necesidad de vivienda con bajas del parque | vigente en lo no superado |
-| v6.0 | 2026-10-11 | v6.0 (57f3478), prereg-v6 (278cc9e) | Validación sellada nueva y aprendizaje automático | vigente en lo no superado |
+| v6.0 | 2026-10-11 | v6.0 (57f3478), prereg-v6 (a33c167) | Validación sellada nueva y aprendizaje automático | vigente en lo no superado |
 | v6.1 | 2026-10-11 | v6.1 (7a63f9f) | Líneas base exigentes, ERRATA | vigente en lo no superado |
 | v6.2 | 2026-10-12 | v6.2 (462ebf1) | Anexo metodológico, déficit como cota | histórica; el anexo sigue vigente |
 | v6.3 | 2026-10-12 | — (dentro de V7) | Correcciones de v6.2 | vigente en lo no superado |

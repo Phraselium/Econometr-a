@@ -66,3 +66,39 @@ adquisidor-datos, ingeniero-datos, replicador-ciego y redactor (sonnet), abogado
   - Las especificaciones principales y las magnitudes de referencia son numéricas y quedan fijadas, con una holgura del 20 %.
   - El código de holdout impide abrir datos de V15 antes de su evaluación.
 - **Desviación del plan.** Está en docs/v16/desviaciones.md (D1).
+
+## K10. Etiquetas publicadas y puertas de V15 y V16 (2026-10-17)
+- **Comprobado.** Las 11 etiquetas prereg-* están en el remoto, son anotadas y apuntan a su commit (tareas_autor §1).
+- **Puertas.** src/v16/etiquetas.py, guardas (d) y (f) del hook, src/v15/puerta.py, fase.py y evaluate_v16 exigen dos cosas a la vez:
+  - (1) la etiqueta publicada y apuntando a su commit: prereg-v15 → 542b4fd y prereg-v16 → a8304ec, este último ya fijo;
+  - (2) el criterio provisional: el commit está en la rama remota y los ficheros del pre-registro (texto, adenda y sellado) no han cambiado desde él.
+- **Pruebas de las puertas.**
+  - Tests (tests/v16/test_guardas.py): bloquean sin etiqueta, con la etiqueta en otro commit y cuando falla el criterio provisional, y dejan pasar con las dos condiciones.
+  - Autocomprobación de check_v16 con los mismos casos.
+  - En vivo, en esta sesión, las dos puertas están abiertas y las órdenes prohibidas (e) siguen bloqueadas.
+- **Registro.** docs/preregistros.md y docs/preregistros_ficheros.csv, generados por src/v16/preregistros.py:
+  - fecha del commit en UTC, sacada de git;
+  - fecha de publicación de la etiqueta, la del etiquetador de la etiqueta anotada;
+  - sha256 de cada fichero en su commit.
+  - check_v16 comprueba que los hashes coinciden con git, que las fechas son las de git y que V15 y V16 siguen intactos.
+- **Ficheros cambiados después de su commit.** Hay cuatro, todos de versiones cerradas, y se declaran en el registro:
+  - v2: recuento del sellado;
+  - v6: huella del sellado rehecha;
+  - v9: se añadió el hash del propio commit;
+  - v9-a1: sustituido por v9-a1b.
+  - Ninguno cambia una hipótesis ni una cifra de la 1.0.
+- **Hashes corregidos en CHANGELOG.md.** Citaba prereg-v2, prereg-v5 y prereg-v6 con el hash de los antiguos objetos de etiqueta locales (f59574a, 1e057cd, 278cc9e) en lugar del commit. Ahora cita 910c42a, 8803f04 y a33c167. Las fechas de docs/v6_2, docs/v13 y docs/v14 ya coincidían con git.
+- **Redacción en los textos.** «Pre-registro interno, fijado en el commit X y publicado como etiqueta el <fecha>, sin sello de tiempo externo».
+
+## K11. Cambios posteriores a los commits de pre-registro (2026-10-17, encargo del autor)
+- **v2: sellado anterior a todas las evaluaciones.**
+  - El cambio es fd2559a, a las 07:20Z, y la primera evaluación es de las 07:45Z.
+  - Lleva el código a lo que decía el pre-registro: entrenamiento hasta 2024Q2.
+  - La fila 2026Q3 que se retiró tiene vacías las variables de resultado (IPV, IPC de alquiler, valor tasado; comprobado en git) y está fuera de la ventana evaluada.
+- **v6: huella cambiada después de todas las evaluaciones.**
+  - El cambio es 42cf68b, a las 17:48Z, y la última evaluación es de las 17:45Z.
+  - Solo afecta a dos paneles de contratos nuevos (corrección K4a-02, ya en ERRATA) que ninguna evaluación abrió: ninguna de las 160 entradas v6 del registro los nombra.
+- **v9 y v9-a1.** v9 solo añade el hash. v9-a1 lo sustituye v9-a1b.
+- **Resultado.** Ningún resultado publicado depende de muestras modificadas y no procede entrada en ERRATA. Está documentado en docs/preregistros_desviaciones.md (publicado como metodologia/desviaciones_preregistros.md) y en docs/preregistros.md.
+- **Sin cálculos nuevos.** No se reejecutó ninguna evaluación sellada ni se estimó nada.
+- **Publicación.** metodologia/desviaciones_v16.md se publica también desde docs/v16/desviaciones.md.

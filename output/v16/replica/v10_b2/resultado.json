@@ -1,0 +1,47 @@
+[
+ {
+  "id": "T3-H5b",
+  "publicado": {
+   "valor": 210424.4,
+   "min": 99388.2,
+   "max": 292082.8
+  },
+  "replica": {
+   "valor": 210268.56718713333,
+   "min": 99313.48226000003,
+   "max": 291778.793503
+  },
+  "veredicto": "COINCIDE",
+  "diagnostico": "A1 = deficit 2021-2025 ECP con bajas T1 (6 combinaciones: min, media, max); A2, V, F, M, K de B1; R = 10 x tasa T1 x viviendas Censo 2021. Pegado a la ficha solo tras ver que el rango de A en B1 no cuadra con la descomposicion de T3; la central de A1 (media de 6 combinaciones) es una eleccion de la replica."
+ },
+ {
+  "id": "T4-H2",
+  "publicado": {
+   "valor": 585609.4,
+   "min": 87246.5,
+   "max": 946852
+  },
+  "replica": {
+   "valor": 585609.3512036076,
+   "min": 103788.03788836909,
+   "max": 946277.7900963502
+  },
+  "veredicto": "DISCREPA",
+  "diagnostico": "Central 585.609,35 (exacta) y maximo 946.278 (-0,06 %) coinciden. Retardos con el estimador de la ficha (igualdad de acumulados a fin de anio): 2,971 / 3,206 / 3,201 / 3,073 / 3,207 por ventana, identicos a B2_retardo.csv; mediana 3,201, min 2,971, max 3,207; cartera con valores anuales en el propio anio e interpolacion lineal en y-L. Con ello el minimo no cambia: opt = 143.124/anio (necesarios ~146.435), minimo 103.803 frente a 87.247. El opt publicado exigiria un retardo de ~2,60 anios (con fill = maximo 2021-2025), que no coincide con ninguna media, mediana, minimo o maximo de ventana (2,971; 1,758 es el minimo anual de la ventana 2008). Falta: la regla exacta por la que el retardo corto de opt toma ~2,6 anios, o el relleno posterior a 2025 de opt; con la ficha actual no se reproduce el minimo."
+ },
+ {
+  "id": "T4-H3",
+  "publicado": {
+   "valor": 15,
+   "min": 0,
+   "max": 37
+  },
+  "replica": {
+   "valor": 15.0,
+   "min": 0.0,
+   "max": 37.0
+  },
+  "veredicto": "COINCIDE",
+  "diagnostico": "15 / 0 / 37 exactos con la regla de la ficha (empeora si cambio > 0 en todos los escenarios; mejora si < 0 en todos)."
+ }
+]

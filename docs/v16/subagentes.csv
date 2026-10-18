@@ -55,3 +55,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-18,F6,replicador-ciego,replica_1_0_lote_b2,65683,src/v16/replica/v10_b2.py;output/v16/replica/v10_b2
 2026-10-18,F6,replicador-ciego,replica_1_0_lote_d,88083,src/v16/replica/v10_d.py;output/v16/replica/v10_d
 2026-10-18,F6,replicador-ciego,replica_1_0_lote_c,99252,src/v16/replica/v10_c.py;output/v16/replica/v10_c
+2026-10-18,F6,replicador-ciego,replica_1_0_lote_b2,43632,src/v16/replica/v10_b2.py;output/v16/replica/v10_b2

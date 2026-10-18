@@ -401,7 +401,7 @@ Formato de cada ficha: fuente y filtro · fórmula · script → salida · recon
     - Se acumulan las iniciadas (I) y las terminadas (T) nacionales desde 1991.
     - Para cada año t de la ventana se busca el instante x en el que las iniciadas acumuladas a fin de año igualan las terminadas acumuladas de t. Las iniciadas acumuladas valen 0 a fin de 1990 y se interpolan linealmente entre fines de año.
     - El retardo es la media de t − x en la ventana.
-  - **Cartera de un año y.** Las iniciadas provinciales del instante y − L, interpoladas linealmente entre los valores anuales, que se sitúan en el propio año, no a mitad de año. Después de 2025 se usa el relleno del escenario.
+  - **Cartera de un año y.** Las iniciadas provinciales del instante y − L, interpoladas linealmente entre los valores anuales, que se sitúan en el propio año, no a mitad de año. En cuanto y − L > 2025, aunque sea por una fracción (p. ej. 2025,03), se usa directamente el relleno del escenario, sin interpolar entre 2025 y el relleno. Esta convención explica el mínimo de la rejilla: en el escenario optimista, el relleno es el máximo de 2021-2025, y solo en Madrid la diferencia con interpolar es de unas 10.000 viviendas en cinco años. La comprobó la réplica ciega de V16 (output/v16/replica/v10_b2).
   - **Cartera.** Iniciadas en el instante y − L, por interpolación lineal entre años.
   - **Bajas.** Tasa de T1 (0, central o máxima) × el parque del último año disponible × H.
   - **Liberadas que no llegan (X), 2026-2030.** El acumulado 2026-2035 de T2, por provincia, × la cuota de las defunciones de 75 años o más de 2026-2030 sobre las de 2026-2035.

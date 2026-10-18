@@ -1,0 +1,25 @@
+{
+  "id": "h3",
+  "seed": 20261010,
+  "datos": "data/processed/v15/p5_turismo_seccion.parquet",
+  "metodo": "OLS con EF seccion y municipio x anio (demeaning alterno); log SERPAVI VC sobre % VUT INE estandarizado por DT intra-seccion; 2021-2024; secciones con codigo en INE 2021 y 2024; sin secciones de 1 obs",
+  "N": 50846,
+  "secciones": 12976,
+  "municipios": 1523,
+  "dt_intra_seccion_pp": 0.6121475636176955,
+  "estimacion_log": 2.9886952750314784e-05,
+  "estimacion_pct_por_DT": 0.0029886952750314785,
+  "ic95": null,
+  "inferencia": "no apta (Conley y agrupado); solo puntual",
+  "comparacion": {
+    "referencia": {
+      "estimacion_pct": 0.00299,
+      "N": 50846,
+      "secciones": 12976,
+      "municipios": 1523
+    },
+    "dif_abs_pp": -1.3047249685215617e-06,
+    "dif_N_rel": 0.0,
+    "veredicto": "COINCIDE"
+  }
+}

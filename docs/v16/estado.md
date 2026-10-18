@@ -117,6 +117,7 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - ERRATA aplicadas, una_pagina, publicacion/, base, consulta y web regenerados. Ninguna conclusión de la 1.0 cambia; ninguna capa sube.
   - Pendiente de decisión del autor: el mismo error E1 en v6 M1B (sin cambio de recuento; ERRATA).
   - Fase 7: la Parte VII incorpora la revisión de K15 (K20).
+  - make check en solitario: 666 tests, 0 errores, git sin cambios (2026-10-18). check_v13 admite una cifra nueva solo con «id | nueva» en ERRATA.
 - **Fase 7: informe integral.** Redactor, verificador de cifras y árbitro final; integrar en cifras_clave las cifras V16-* citables (K17); tablas_v16.xlsx, web y make v16.
 - Fases 5-7 de V16:
   - fase 5: Monte Carlo de las herramientas;

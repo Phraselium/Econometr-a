@@ -171,6 +171,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-18 | F6 | replicador-ciego | replica_h3 | 26.933 | src/v16/replica/h3.py;output/v16/replica/h3 |
 | 2026-10-18 | F6 | replicador-ciego | replica_q6p | 34.809 | src/v16/replica/q6p.py;output/v16/replica/q6p |
 | 2026-10-18 | F6 | general-purpose | alcance_errores_k16 | 319.642 | docs/v16/alcance_errores_k16.md |
+| 2026-10-18 | F6 | replicador-ciego | replica_1_0_lote_a | 92.595 | src/v16/replica/v10_a.py;output/v16/replica/v10_a |
+| 2026-10-18 | F6 | replicador-ciego | replica_1_0_lote_b | 83.443 | src/v16/replica/v10_b.py;output/v16/replica/v10_b |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -179,8 +181,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | F3 | 1.160.356 |
 | F4 | 555.674 |
 | F5 | 771.025 |
-| F6 | 1.933.648 |
+| F6 | 2.109.686 |
 
-Total V16: 7.064.230 tokens
+Total V16: 7.240.268 tokens
 
 <!-- fin subagentes -->

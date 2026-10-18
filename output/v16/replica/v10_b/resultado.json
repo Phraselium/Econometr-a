@@ -1,0 +1,115 @@
+[
+ {
+  "id": "L3-DEF-2124-SENS",
+  "publicado": {
+   "valor": 653456,
+   "min": 596371,
+   "max": 710542
+  },
+  "replica": {
+   "valor": 653456.5,
+   "min": 596371.0,
+   "max": 710542.0
+  },
+  "dif_rel_pct": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "veredicto": "COINCIDE",
+  "diagnostico": "Ocho variantes de hogares x 3 de terminadas, sin a y d1 (18 combinaciones); punto medio. Diferencias <1 vivienda (redondeo)."
+ },
+ {
+  "id": "L3-DEF-2124-SINBAJAS",
+  "publicado": {
+   "valor": 549952,
+   "min": 389361,
+   "max": 710542
+  },
+  "replica": {
+   "valor": 549951.649,
+   "min": 389361.299,
+   "max": 710542.0
+  },
+  "dif_rel_pct": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "veredicto": "COINCIDE",
+  "diagnostico": "24 combinaciones; punto medio. Diferencias <1 vivienda (redondeo; d1 usa cociente ECP/EPA sin redondear)."
+ },
+ {
+  "id": "E-B1-F",
+  "publicado": {
+   "valor": 1720537,
+   "min": 1308531.1,
+   "max": 1772410.4
+  },
+  "replica": {
+   "valor": 1720537.0,
+   "min": 1308531.059,
+   "max": 1772410.435
+  },
+  "dif_rel_pct": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "veredicto": "COINCIDE",
+  "diagnostico": "Suma de 52 provincias, F_ine y F_alt. Min y max difieren <0,1 hogares del publicado (redondeo)."
+ },
+ {
+  "id": "T3-H5b",
+  "publicado": {
+   "valor": 210424.4,
+   "min": 99388.2,
+   "max": 292082.8
+  },
+  "replica": null,
+  "veredicto": "NO REPRODUCIBLE DESDE LA FICHA",
+  "diagnostico": "Faltan: A (deficit A4 provincial y latente M1), R con bajas estimadas de T1 (tasas 0/0,026/0,052 % y base de viviendas), V y M por clases A4 1-2, K (definicion exacta del retardo). La ficha solo remite a tablas intermedias (output) de la ruta origen. Solo F se reconstruyo (ver E-B1-F)."
+ },
+ {
+  "id": "T4-H2",
+  "publicado": {
+   "valor": 585609.4,
+   "min": 87246.5,
+   "max": 946851.8
+  },
+  "replica": null,
+  "veredicto": "NO REPRODUCIBLE DESDE LA FICHA",
+  "diagnostico": "Falta la especificacion de la rejilla B2xT1xT2 (180 escenarios: terminadas, hogares bajos, bajas, liberadas) y el deficit provincial de partida 2025."
+ },
+ {
+  "id": "T4-H3",
+  "publicado": {
+   "valor": 15,
+   "min": 0,
+   "max": 37
+  },
+  "replica": null,
+  "veredicto": "NO REPRODUCIBLE DESDE LA FICHA",
+  "diagnostico": "Misma rejilla; falta ademas la regla empeora/mejora/indeterminada por provincia."
+ },
+ {
+  "id": "V10-ATL-A1",
+  "publicado": {
+   "valor": 26.7965,
+   "min": 24.4022,
+   "max": 29.1907
+  },
+  "replica": {
+   "valor": 26.6479,
+   "min": 24.2571,
+   "max": 29.0387
+  },
+  "dif_rel_pct": [
+   0.555,
+   0.595,
+   0.521
+  ],
+  "veredicto": "COINCIDE",
+  "diagnostico": "Replica propia: HH070*12-HY070N sobre HY020-HY070N > 0,4, HH021=3, HH070 no nulo, peso RB050, IC95 por linealizacion con hogar como conglomerado. Difiere ~0,55 % (valor), 0,6 % (min), 0,5 % (max); causa probable: detalle de definicion/tratamiento de nulos o de ayudas, no identificado. Dentro del 1 %."
+ }
+]

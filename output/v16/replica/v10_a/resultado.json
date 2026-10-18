@@ -1,0 +1,374 @@
+[
+  {
+    "id": "A23-A10",
+    "publicado": {
+      "valor": 28.5,
+      "min": 26.1,
+      "max": 30.8
+    },
+    "replica": {
+      "valor": 28.460781077353168,
+      "min": 26.08044065937924,
+      "max": 30.841121495327094
+    },
+    "veredicto": "COINCIDE",
+    "comparacion": {
+      "valor": {
+        "abs": -0.0392189226468318,
+        "rel_%": 0.13761025490116421
+      },
+      "min": {
+        "abs": -0.01955934062076281,
+        "rel_%": 0.07494000237840157
+      },
+      "max": {
+        "abs": 0.04112149532709353,
+        "rel_%": 0.13351134846458937
+      }
+    },
+    "detalle_replica": {
+      "var_prov_%": {
+        "Alicante/Alacant": 22.181887657623236,
+        "Castellón/Castelló": 23.02834217678271,
+        "Valencia/València": 28.915942413587214
+      },
+      "pesos": {
+        "alicante": 76825.0,
+        "castellon": 29530.0,
+        "valencia": 137413.0
+      },
+      "ipva_pond_%": 26.08044065937924,
+      "fianzas_%": 30.841121495327094,
+      "mediana_fianza_2021_2024": [
+        535.0,
+        700.0
+      ],
+      "nucleo": [
+        "IPVA_nuevo",
+        "fianzas"
+      ]
+    },
+    "diagnostico": "Coincide con la ficha A9 (IPVA ponderado 26,08 %; fianzas 30,84 %; media 28,46 %). Diferencias solo de redondeo."
+  },
+  {
+    "id": "A23-A2",
+    "publicado": {
+      "valor": null,
+      "min": 10.9,
+      "max": 22.9
+    },
+    "replica": {
+      "valor": null,
+      "min": 10.930506009861185,
+      "max": 22.92000000000001
+    },
+    "veredicto": "COINCIDE",
+    "comparacion": {
+      "valor": "ambos vacios",
+      "min": {
+        "abs": 0.03050600986118468,
+        "rel_%": 0.2798716501026117
+      },
+      "max": {
+        "abs": 0.020000000000010232,
+        "rel_%": 0.0873362445415294
+      }
+    },
+    "detalle_replica": {
+      "variaciones_%": {
+        "IPC": 10.930506009861185,
+        "IPVA_existente": 20.636999999999993,
+        "IPVA_total": 22.92000000000001,
+        "SERPAVI": 43.03165651106142
+      },
+      "nucleo": [
+        "IPC",
+        "IPVA_existente",
+        "IPVA_total"
+      ],
+      "ipva_existente_alt_2024_sobre_2021_%": 7.4918247511784,
+      "ipva_existente_indice_2021_2024": [
+        112.229,
+        120.637
+      ]
+    },
+    "diagnostico": "Coincide. Salvedad de la ficha: el IPVA 'Contrato existente' (tabla 59005) en data/raw trae 2021=112,229 y 2024=120,637, no base 2021=100; la ficha divide 2024 entre 100 (20,64 %) y la replica la sigue. Con 2024/2021 daria 7,5 %, y el min cambiaria. Convendria aclarar la base en la ficha."
+  },
+  {
+    "id": "A23-A9",
+    "publicado": {
+      "valor": 16.9,
+      "min": 16.6,
+      "max": 17.2
+    },
+    "replica": {
+      "valor": 16.928663545935805,
+      "min": 16.63995133261025,
+      "max": 17.21737575926137
+    },
+    "veredicto": "COINCIDE",
+    "comparacion": {
+      "valor": {
+        "abs": 0.028663545935806667,
+        "rel_%": 0.16960678068524657
+      },
+      "min": {
+        "abs": 0.03995133261024719,
+        "rel_%": 0.24067067837498304
+      },
+      "max": {
+        "abs": 0.017375759261369694,
+        "rel_%": 0.10102185617075403
+      }
+    },
+    "detalle_replica": {
+      "var_prov_%": {
+        "Barcelona": 16.809306838065872,
+        "Girona": 18.339118498246965,
+        "Lleida": 17.951339014266953,
+        "Tarragona": 19.043624894061306
+      },
+      "pesos": {
+        "barcelona": 360279.0,
+        "girona": 43826.0,
+        "lleida": 23774.0,
+        "tarragona": 44029.0
+      },
+      "ipva_pond_%": 17.21737575926137,
+      "incasol_%": 16.63995133261025,
+      "renta_media_2021_2024": [
+        725.0716827340239,
+        845.7232578675037
+      ],
+      "celdas": [
+        565,
+        554
+      ],
+      "nucleo": [
+        "IPVA_nuevo",
+        "Incasol"
+      ]
+    },
+    "diagnostico": "Coincide tras corregir un fallo propio: la media ponderada de Incasol solo debe usar celdas municipio-banda con renta_media no nula (297/300 celdas vacias en 2021/2024). Sin ese filtro la replica daba 16,42 % (-1,1 % relativo en el min). La ficha B solo dice 'media ponderada por contratos'; el filtro no esta explicitado."
+  },
+  {
+    "id": "A23-P2",
+    "publicado": {
+      "valor": 47.2,
+      "min": 44.2,
+      "max": 56.1
+    },
+    "replica": {
+      "valor": 47.20543806646526,
+      "min": 44.222817245119295,
+      "max": 56.12210713431101
+    },
+    "veredicto": "COINCIDE",
+    "comparacion": {
+      "valor": {
+        "abs": 0.005438066465259794,
+        "rel_%": 0.011521327256906343
+      },
+      "min": {
+        "abs": 0.02281724511929184,
+        "rel_%": 0.05162272651423493
+      },
+      "max": {
+        "abs": 0.02210713431100686,
+        "rel_%": 0.039406656525858924
+      }
+    },
+    "detalle_replica": {
+      "variaciones_%": {
+        "MIVAU": 44.222817245119295,
+        "Notariado": 47.20543806646526,
+        "Registradores": 56.12210713431101
+      },
+      "nucleo": [
+        "MIVAU",
+        "Notariado",
+        "Registradores"
+      ],
+      "mivau_n_trim_2015_2025": [
+        4,
+        4
+      ]
+    },
+    "diagnostico": "Coincide con la ficha A8 (MIVAU 44,22; Notariado 47,21; Registradores 56,12; mediana 47,2)."
+  },
+  {
+    "id": "R1C-001",
+    "publicado": {
+      "valor": 74.5,
+      "min": 72.1,
+      "max": 75.9
+    },
+    "replica": {
+      "valor": 74.48827891059871,
+      "min": 72.1,
+      "max": 75.9
+    },
+    "veredicto": "COINCIDE",
+    "comparacion": {
+      "valor": {
+        "abs": -0.011721089401291351,
+        "rel_%": 0.015733005907773625
+      },
+      "min": {
+        "abs": 0.0,
+        "rel_%": 0.0
+      },
+      "max": {
+        "abs": 0.0,
+        "rel_%": 0.0
+      }
+    },
+    "detalle_replica": {
+      "eff": 72.1,
+      "ecv": 75.9,
+      "censo": 75.46483673179614,
+      "censo_n": [
+        13988627.0,
+        18536616.0
+      ]
+    },
+    "diagnostico": "Coincide (EFF 72,1; ECV 75,9; Censo 75,46; media 74,49)."
+  },
+  {
+    "id": "dh_2125",
+    "publicado": {
+      "valor": 997586.5,
+      "min": 981823.0,
+      "max": 1013350.0
+    },
+    "replica": {
+      "valor": 997586.4999999993,
+      "min": 981823.0,
+      "max": 1013349.9999999986
+    },
+    "veredicto": "COINCIDE",
+    "comparacion": {
+      "valor": {
+        "abs": -6.984919309616089e-10,
+        "rel_%": 7.001818197836567e-14
+      },
+      "min": {
+        "abs": 0.0,
+        "rel_%": 0.0
+      },
+      "max": {
+        "abs": -1.3969838619232178e-09,
+        "rel_%": 1.378579821308746e-13
+      }
+    },
+    "detalle_replica": {
+      "epa": 1013349.9999999986,
+      "ecp": 981823.0
+    },
+    "diagnostico": "Coincide exacto (EPA 1.013.350; ECP 981.823; punto medio 997.586,5)."
+  },
+  {
+    "id": "terminadas_1924",
+    "publicado": {
+      "valor": null,
+      "min": 72264.0,
+      "max": 94426.0
+    },
+    "replica": {
+      "valor": null,
+      "min": 72264.0,
+      "max": 94426.0
+    },
+    "veredicto": "COINCIDE",
+    "comparacion": {
+      "valor": "ambos vacios",
+      "min": {
+        "abs": 0.0,
+        "rel_%": 0.0
+      },
+      "max": {
+        "abs": 0.0,
+        "rel_%": 0.0
+      }
+    },
+    "detalle_replica": {
+      "2019": 72264.0,
+      "2020": 81496.0,
+      "2021": 87741.0,
+      "2022": 82361.0,
+      "2023": 82847.0,
+      "2024": 94426.0
+    },
+    "diagnostico": "Coincide exacto (libres mensuales sumadas + protegidas definitivas, nacional menos Pais Vasco y Navarra; 2019=72.264, 2024=94.426)."
+  },
+  {
+    "id": "E-T7-prod",
+    "publicado": {
+      "valor": null,
+      "min": 78810.0,
+      "max": 100980.0
+    },
+    "replica": {
+      "valor": null,
+      "min": 78810.0,
+      "max": 100980.0
+    },
+    "veredicto": "COINCIDE",
+    "comparacion": {
+      "valor": "ambos vacios",
+      "min": {
+        "abs": 0.0,
+        "rel_%": 0.0
+      },
+      "max": {
+        "abs": 0.0,
+        "rel_%": 0.0
+      }
+    },
+    "detalle_replica": {
+      "2019": 78810.0,
+      "2020": 87504.0,
+      "2021": 94728.0,
+      "2022": 89545.0,
+      "2023": 89320.0,
+      "2024": 100980.0
+    },
+    "diagnostico": "Coincide exacto (nacional 2019=78.810; 2024=100.980)."
+  },
+  {
+    "id": "E-T7-demol-2024",
+    "publicado": {
+      "valor": null,
+      "min": 0.0219236595,
+      "max": 0.03607850781
+    },
+    "replica": {
+      "valor": null,
+      "min": 0.021840589984767504,
+      "max": 0.035941805085139604
+    },
+    "veredicto": "COINCIDE",
+    "comparacion": {
+      "valor": "ambos vacios",
+      "min": {
+        "abs": -8.306951523249714e-05,
+        "rel_%": 0.37890350939129086
+      },
+      "max": {
+        "abs": -0.00013670272486039636,
+        "rel_%": 0.378903488969979
+      }
+    },
+    "detalle_replica": {
+      "estrecha": 5898.0,
+      "amplia": 9706.0,
+      "parque_2024": 27004765.0,
+      "parque_2023": 26902443.0,
+      "variante_parque_2023": {
+        "min": 0.02192365949813554,
+        "max": 0.0360785078143275
+      }
+    },
+    "diagnostico": "Coincide dentro de 1 % con el parque de 2024 de la ficha (0,0218-0,0359 %: desv. 0,4 %). Con el parque a 31-12-2023 (stock de inicio de 2024) el resultado es identico al publicado (0,0219236595 y 0,03607850781); esa variante se identifico comparando con el publicado, no desde la ficha. La ficha dice 'parque de 2024' y no aclara cual; el original parece usar el parque de 2023. Estrecha = viviendas a demoler (total) + viviendas suprimidas (parcial), tabla 10; amplia = demolicion total (3), tabla 6; definiciones no explicitas en la ficha (reconstruidas por combinacion de columnas)."
+  }
+]

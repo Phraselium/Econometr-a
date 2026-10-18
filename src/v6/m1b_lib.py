@@ -339,17 +339,25 @@ def bsadf_path(y, w0, ab):
     return m.max(axis=1)
 
 
+def _ajuste_ar(dy, p, ini):
+    yy = dy[ini:]
+    X = np.column_stack([np.ones(len(yy))] + [dy[ini - j - 1: len(dy) - j - 1] for j in range(p)])
+    b = np.linalg.lstsq(X, yy, rcond=None)[0]
+    return b, yy - X @ b
+
+
 def ar_fit(dy, pmax=4):
-    best = None
+    """AR(p) con intercepto para Δy; p por BIC.
+
+    Errata V16 (B-4, orden del autor): el BIC se compara en la muestra común dy[pmax:] (mismo n para todo p) y el p elegido se
+    estima con toda su muestra dy[p:]. Hasta la 1.0 cada p usaba su propia muestra (mismo error E1 que src/v5/r1b_gsadf.py)."""
+    n = len(dy) - pmax
+    bic = []
     for p in range(0, pmax + 1):
-        yy = dy[p:]
-        X = np.column_stack([np.ones(len(yy))] + [dy[p - j - 1: len(dy) - j - 1] for j in range(p)])
-        b = np.linalg.lstsq(X, yy, rcond=None)[0]
-        e = yy - X @ b
-        bic = len(yy) * math.log((e ** 2).mean()) + (p + 1) * math.log(len(yy))
-        if best is None or bic < best[0]:
-            best = (bic, p, b, e)
-    _, p, b, e = best
+        _, e = _ajuste_ar(dy, p, pmax)
+        bic.append(n * math.log((e ** 2).mean()) + (p + 1) * math.log(n))
+    p = int(np.argmin(bic))
+    b, e = _ajuste_ar(dy, p, p)
     return b[0], b[1:], e - e.mean(), p
 
 

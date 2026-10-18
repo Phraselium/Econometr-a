@@ -28,7 +28,10 @@ Lista obtenida buscando en src/, tests/ y las plantillas quién lee output/v5/R1
 **No dependen del cambio, aunque se parezcan:**
 - src/v6/m1b_lib.py tiene una copia propia de `ar_fit` con el mismo error E1. Produce E-V6-M1B-GSADF-SIG / V72-GSADF-ccaa-v6, con un recuento de 0 de 11.
   - Comprobado en copia, sin escribir en el repositorio: con E1 corregido el recuento sigue en 0, con 499 réplicas y con 4.999 réplicas en 5 semillas.
-  - Cambiarían los valores críticos de 4 CCAA (m1b_gsadf_ccaa_11, 16, 18 y 19). No se regenera v6, porque la orden no lo cubre: queda en ERRATA como pendiente de decisión del autor.
+  - Cambian los valores críticos de 4 CCAA (m1b_gsadf_ccaa_11, 16, 18 y 19).
+  - **Aplicada** por orden del autor (2026-10-18), tras comprobar que no hace falta ningún dato sellado: M1B lee solo los paneles *_train de M0.
+    - Dos copias completas de M1B: la original reproduce al byte output/v6/M1B; la corregida solo cambia el GSADF y lo que deriva de él (ERRATA, fila v6-1.0).
+    - En cifras_clave solo cambian los 4 valores críticos.
 - src/v16/q9_burbuja.py (Q9-g) usa su propio bootstrap salvaje, no `ar_fit`.
 - tests/v7_2/test_v72.py exige que la reverificación coincida 14 de 14 y que la ficha conserve «Tampoco se puede afirmar que NO la haya».
 

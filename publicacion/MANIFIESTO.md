@@ -28,7 +28,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | atlas_regional/guia_lectura.md | output/v7_1/atlas/guia_lectura.md | `5c9b4b7374468d5d4598fc35c1e62742a23a85047163c2c703970fddd969c872` |
 | atlas_regional/tablas_regionales.xlsx | output/v7_1/atlas/tablas_regionales.xlsx | `566261bdf785de32fa6cf61b545bf0948eec59301aa82e463d1c7b76ab41de34` |
 | atlas_v12.md | output/v12/atlas_v12.md | `ee7f40631a403531230053edeb8c5a3710d511068ad58b746004e75f53f24ec8` |
-| cifras_clave.csv | output/v5/cifras_clave.csv | `224d92b05d34b7132a4feb4f21d76798962932a105dac2f44d6ad547e893e487` |
+| cifras_clave.csv | output/v5/cifras_clave.csv | `46c61dc51712e4cffeaa74c165f99fb534547f6a67f9d931f05081e51231ab20` |
 | cifras_no_publicadas_1_0.csv | proyecto.json (terceros_1_0) y docs/v14/cifras_terceros.csv | `01c846704182f19e7b3297045a0a692fddd10a26920e43a758dd8640a986cd87` |
 | cotas_v9.md | output/v9/f4/cotas.md | `896fa98d33b01c934c5e7543d3453d01120d628c3512cbb3056c2c087aed0940` |
 | dosis_coste.csv | output/v7_1/S1/dosis_coste.csv | `6e7c2b8fa8ada5992399be00de87309a274ccc607a7aba04c88f3f0590c6f822` |
@@ -41,7 +41,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | ponencia/diapositivas.md | output/v5/ponencia/diapositivas.md | `810849207e47f5b6ad01dab44fd149f8d1ab3b7ee0b88a52691c8f80128cf062` |
 | ponencia/guion.md | output/v5/ponencia/guion.md | `488aae94b896d213c935c153c5ba8d895be9dc2129ab2323208d5d8f5c5d650b` |
 | por_que_ha_subido.md | output/v8/por_que_ha_subido.md | `9b12dd99660a7623928fa9553622dde6d62aa26e7233d526d5e54461c0f0b530` |
-| que_cambio.md | output/v5/que_cambio.md | `cc475e12ca989d2413cf6c50d67c6b80fdf5a0e43d1cfef132e60da855fc6fca` |
+| que_cambio.md | output/v5/que_cambio.md | `2fb87ed677171a1853bc080582ade4baed3046cc510fa799c9c86f59a3ed2955` |
 | tabla_v9.md | output/v9/f3/tabla_revista.md | `9985da6ff8ec983c9a49948f71cad46f88be56ec0c87482edfb9a3a8e1a17ffe` |
 | tablas_atlas.xlsx | output/v10/tablas_atlas.xlsx | `3967d28730861ee685e90d940acf1455cb2779197c05791072aa574dda1666d6` |
 | tablas_modelos_destacados.csv | output/v8/tablas_modelos_destacados.csv | `b70730be9a7924f4ea71426a2ef04a50287c82b8a45dfd802ea61b2480277495` |

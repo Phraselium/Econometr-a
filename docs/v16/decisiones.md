@@ -354,3 +354,33 @@ Lo que no se cita como pista (H2, Q1c, Q6-v, Q5, Q10, Q2c) se nombra en el infor
 - ≈ 103.800 con interpolación lineal (103.788).
 
 La primera hace más favorable el escenario optimista. El informe integral los citará igual (fase 7).
+
+## K21. Decisiones del autor tras B-4 (2026-10-18)
+**1. Error E1 en v6 (src/v6/m1b_lib.py).** Primero se comprobó si regenerar exige datos sellados de v6: no los exige.
+- M1B lee solo los paneles de entrenamiento de M0 (output/v6/M0/paneles/*_train.csv.gz). La parte sellada la escribe src/holdout.py (`sellar_v6`) en data/sealed, y M0 no la lee.
+- **Dependientes** (listados antes):
+  - output/v6/M1B: tablas GSADF, hechos, registro, multiplicidad y resultado;
+  - src/v5/e_hechos_v6.py: E-V6-M1B-GSADF-*, solo recuentos;
+  - cifras_clave → render → publicacion, base y web;
+  - src/v7_2/ficha_burbuja.py, que solo lee el recuento.
+- **Comprobación.** Se ejecutaron dos copias completas de M1B en el directorio temporal.
+  - La original reproduce al byte las salidas versionadas.
+  - Con E1 corregido cambian solo:
+    - los valores críticos de las CCAA 11, 16, 18 y 19, que son lo único que cambia en cifras_clave;
+    - su p bootstrap;
+    - los p ajustados de la familia BH de M1B, que incluye esos p;
+    - el tamaño del Monte Carlo interno.
+  - El recuento sigue en 0 de 11. ERRATA: «aplicada».
+
+**2. check_v13.** El autor acepta el criterio «id | nueva».
+- Tests en tests/v13/test_check_v13_errata.py:
+  - rechaza una cifra nueva no declarada;
+  - rechaza un cambio de valor no declarado, aunque la cifra figure como «nueva»;
+  - admite los casos declarados.
+
+**3 y 4. Explicación de la errata y réplica ciega en el informe integral.**
+- que_cambio.md explica en lenguaje llano la errata del GSADF.
+- Los anexos de erratas y de reproducibilidad del informe integral se preparan en output/v16/informe/:
+  - anexo_erratas.md;
+  - anexo_reproducibilidad.md.
+- La fase 7 los integra sin cambiar cifras.

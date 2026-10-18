@@ -39,3 +39,9 @@ output/v7_2/gsadf/hechos.json,B-4 puntos 1-2: orden expresa del autor (errata GS
 output/v7_2/gsadf/registro_reverificacion.csv,B-4 puntos 1-2: orden expresa del autor (errata GSADF V7.2 y textos V8; docs/v16/errata_v72_gsadf.md, ERRATA.md),2026-10-18
 output/v7_2/gsadf/reverificacion.csv,B-4 puntos 1-2: orden expresa del autor (errata GSADF V7.2 y textos V8; docs/v16/errata_v72_gsadf.md, ERRATA.md),2026-10-18
 output/v8/por_que_ha_subido.md,B-4 puntos 1-2: orden expresa del autor (errata GSADF V7.2 y textos V8; docs/v16/errata_v72_gsadf.md, ERRATA.md),2026-10-18
+output/v6/M1B/hechos.json,Orden del autor 2026-10-18: E1 corregido en v6 M1B (sin datos sellados; ERRATA fila v6-1.0),2026-10-18
+output/v6/M1B/registro.csv,Orden del autor 2026-10-18: E1 corregido en v6 M1B (sin datos sellados; ERRATA fila v6-1.0),2026-10-18
+output/v6/M1B/resultado.json,Orden del autor 2026-10-18: E1 corregido en v6 M1B (sin datos sellados; ERRATA fila v6-1.0),2026-10-18
+output/v6/M1B/tablas/b4_gsadf_ratio_precio_alquiler_ccaa.csv,Orden del autor 2026-10-18: E1 corregido en v6 M1B (sin datos sellados; ERRATA fila v6-1.0),2026-10-18
+output/v6/M1B/tablas/gsadf.csv,Orden del autor 2026-10-18: E1 corregido en v6 M1B (sin datos sellados; ERRATA fila v6-1.0),2026-10-18
+output/v6/M1B/tablas/multiplicidad_p_ajustados.csv,Orden del autor 2026-10-18: E1 corregido en v6 M1B (sin datos sellados; ERRATA fila v6-1.0),2026-10-18

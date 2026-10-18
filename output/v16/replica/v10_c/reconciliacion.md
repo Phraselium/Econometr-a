@@ -15,7 +15,7 @@ Todo se ejecutó con COPIAS en el directorio temporal de sesión (nada en output
 ## 2. Primera diferencia y cadena de causas
 
 1. Estadístico: coincide en 13 de 14 series nacionales. Solo difiere valor tasado/renta (0,224 frente a 0,387) por la convención de ventana: con 18 observaciones la réplica da exactamente 0,224.
-2. Valores críticos: el DGP del bootstrap (BIC del original frente a AR(1) de la réplica) y la ventana mueven p. Es la causa dominante en CCAA.
+2. Valores críticos: el DGP del bootstrap (BIC del original frente a AR(1) de la réplica) y la ventana mueven p. Es el factor que más pesa en CCAA.
 3. Familia BH: decide ratios-bh.
 4. Ruido Monte Carlo: con 499 réplicas, p ≈ 0,05 tiene error típico ≈ 0,01.
 

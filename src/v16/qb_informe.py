@@ -55,35 +55,36 @@ def q3():
                       "inferencia": "AKM/AKM0 NO APTOS: solo puntual", "multiverso": m1},
            "Q3-c2": {"beta_log_compraventas_por_punto": pc2["beta_por_punto"], "n": pc2["n"], "ic95": None, "p": None, "inferencia": "AKM/AKM0 NO APTOS: solo puntual",
                       "multiverso": m2},
-           "Q3-b": {"beta_dlog_serpavi_por_DT_cuota_extranjeros": bp["beta_por_DT"], "se_conley_2km": bp["se"], "ic95": bp["ic95"], "p": bp["p"], "n_secciones": bp["n"],
+           "Q3-b": {"beta_dlog_serpavi_por_DT_cuota_extranjeros": bp["beta_por_DT"], "se_conley_2km_no_valido": bp["se"], "ic95": None, "p": None,
+                    "inferencia": "Conley 2 km NO APTO tras corregir el núcleo (K16): solo puntual", "n_secciones": bp["n"],
                     "n_municipios": bp["n_mun"], "multiverso": mb, "sensibilidad_rango_espacial": b["sensibilidad_rango_espacial"]},
            "BLP_GATES_Q3": g}
     diag = {"Q3-c1": d1, "Q3-c2": d2, "Q3-b": db, "Rotemberg_top5": c["diagnosticos"]["rotemberg_top5"],
             "pruebas": {
-                "superadas": ["Q3-b: Conley 2 km APTO solo en el escenario principal", "Q3-b: sin grandes ciudades, mismo signo (%s por DT)" % f(db["sin_grandes_ciudades"]["beta_por_DT"]),
-                              "Q3-b: Cinelli-Hazlett RV_q=1 = %s (≥ 0,05)" % f(db["cinelli_hazlett_RV_q1"]),
+                "superadas": ["Q3-b: sin grandes ciudades, mismo signo (%s por DT)" % f(db["sin_grandes_ciudades"]["beta_por_DT"]),
                               "Q3-c1/c2: sin grandes ciudades, mismo signo", "Q3-c1: pendiente previa 2003-2008 pequeña frente al efecto"],
-                "fallidas": ["Q3-b: pretendencia placebo 2018-2021 = %s por DT (IC Conley %s a %s) excluye el 0" % (
-                    f(db["pretendencia_placebo_2018_2021"]["beta_por_DT"]), f(db["pretendencia_placebo_2018_2021"]["ic95"][0]), f(db["pretendencia_placebo_2018_2021"]["ic95"][1])),
+                "fallidas": ["Q3-b: pretendencia placebo 2018-2021 = %s por DT, el %s %% del coeficiente principal (puntual)" % (
+                    f(db["pretendencia_placebo_2018_2021"]["beta_por_DT"]), f(100 * db["pretendencia_placebo_2018_2021"]["beta_por_DT"] / bp["beta_por_DT"], 0)),
+                    "Q3-b: Conley 2 km NO APTO tras corregir el núcleo (K16: tamaño 0,096, cobertura 0,904)",
                     "Q3-b: no robusto a la sensibilidad del rango espacial (radios 0,5 y 1,5 km no pasan)",
                     "Q3-c: F efectivo no evaluable con herramienta APTA; en V9-D4 fue de 3,4 a 3,7 (< 10)",
                     "Q3-c1: estimación inestable al controlar por el instrumento retardado (de %s a %s)" % (f(pc1["beta_por_punto"]), f(d1["control_instrumento_retardado"]["beta_x"]))],
-                "no_evaluables": ["AKM, AKM0 (NO APTOS)", "BLP/GATES (NO APTO): solo puntual", "TOST (sin magnitud en Q3-b; sin SE en Q3-c)", "desbordamientos a 15 km (no aplica a escala provincial, D2)",
+                "no_evaluables": ["AKM, AKM0 (NO APTOS)", "Cinelli-Hazlett (requiere un t válido)", "BLP/GATES (NO APTO): solo puntual", "TOST (sin magnitud en Q3-b; sin SE en Q3-c)", "desbordamientos a 15 km (no aplica a escala provincial, D2)",
                                   "Honest DiD / raíces unitarias con dependencia transversal (CIPS NO APTO): no aplican a una forma reducida con efectos fijos"]}}
     notas = [CONSIGNA, "Q3 municipal de alquiler retirado (es H4 con otra muestra, adenda punto 7).",
-             "Q3-b es correlación transversal; Conley a 2 km no es robusto al rango espacial; las variantes son puntuales.",
+             "Q3-b es correlación transversal y solo puntual: Conley a 2 km es NO APTO tras corregir el núcleo (K16); las variantes son puntuales.",
              "Todas las desviaciones de operativización en docs/v16/desviaciones.md (D2).",
              "Valor tasado: F de 3,4 a 3,7 en V9-D4 (C4); no hay contradicción de dirección con V9-D4 (instrumento débil)."]
-    pv = [{"id": "Q3-b|principal", "p": bp["p"], "rama": "diseños", "nota": "única prueba de Q3 con p-valor válido (Conley 2 km APTO, escenario principal)"},
+    pv = [{"id": "Q3-b|principal", "p": None, "rama": "diseños", "nota": "Conley 2 km NO APTO tras corregir el núcleo (K16): sin p-valor"},
           {"id": "Q3-c1|principal", "p": None, "rama": "diseños", "nota": "AKM NO APTO: sin p-valor"},
           {"id": "Q3-c2|principal", "p": None, "rama": "diseños", "nota": "AKM NO APTO: sin p-valor"},
           {"id": "Q3|BLP_GATES", "p": None, "rama": "diseños (prueba adicional, punto 13)", "nota": "NO APTO: sin p-valor"}]
     res = base("Q3: inmigración y precios/alquiler más allá de H4 (Q3-c1 valor tasado, Q3-c2 compraventas, Q3-b barrio) y BLP/GATES",
                "data/processed/v16/entrenamiento: padron_nacionalidad, base_poblacion, base_precio, base_alquiler (SERPAVI sección), tension_social; secciones.parquet (solo geometría)",
                {"Q3-c1": pc1["n"], "Q3-c2": pc2["n"], "Q3-b": bp["n"], "blp": g["n"]},
-               "Shift-share de forma reducida (cuotas de 2003 × crecimiento nacional sin la provincia) con FE de provincia y año; correlación transversal por sección con FE de municipio y Conley 2 km; BLP lineal y GATES con validación cruzada",
-               est, diag, notas, pv, ic95={"Q3-b": bp["ic95"], "Q3-c1": None, "Q3-c2": None})
-    res["nivel_evidencia"] = "EXPLORATORIO (Q3-b, con pretendencia no nula); DESCRIPTIVO (Q3-c1, Q3-c2, BLP/GATES)"
+               "Shift-share de forma reducida (cuotas de 2003 × crecimiento nacional sin la provincia) con FE de provincia y año; correlación transversal por sección con FE de municipio (puntual: Conley NO APTO, K16); BLP lineal y GATES con validación cruzada",
+               est, diag, notas, pv, ic95={"Q3-b": None, "Q3-c1": None, "Q3-c2": None})
+    res["nivel_evidencia"] = "DESCRIPTIVO (Q3-b, con pretendencia no nula; Q3-c1, Q3-c2, BLP/GATES)"
     # hechos
     sec = "Padrón por nacionalidad, SERPAVI y valor tasado/compraventas de entrenamiento"
     lo1 = [e["beta"] for e in c["especificaciones"] if e["pregunta"] == "Q3-c1" and e["norm"] == "pts"]
@@ -96,7 +97,7 @@ def q3():
         C.hecho("V16-Q3-b-beta", "Q3-b: asociación transversal del Δlog SERPAVI 2021-2024 con la cuota de extranjeros 2022 (por DT)", bp["beta_por_DT"], mb["min"], mb["max"],
                 "log por desviación típica", "2021-2024", f"{bp['n']} secciones en {bp['n_mun']} municipios", "MIVAU SERPAVI (VC); INE padrón por sección", "q3-b", "q3", "2024"),
         C.hecho("V16-Q3-b-pretendencia", "Q3-b: coeficiente placebo con el Δlog SERPAVI 2018-2021 (pretendencia)", db["pretendencia_placebo_2018_2021"]["beta_por_DT"],
-                db["pretendencia_placebo_2018_2021"]["ic95"][0], db["pretendencia_placebo_2018_2021"]["ic95"][1], "log por desviación típica", "2018-2021",
+                None, None, "log por desviación típica", "2018-2021",
                 f"{db['pretendencia_placebo_2018_2021']['n']} secciones", "MIVAU SERPAVI (VC); INE padrón por sección", "q3-b", "q3", "2021"),
         C.hecho("V16-Q3-blp-gates", "Q3: diferencia GATES cuartil 4 menos cuartil 1 de la asociación de Q3-b (descriptivo)", g["gates_q4_menos_q1"], None, None,
                 "log por desviación típica", "2021-2024", f"{g['n']} secciones", "MIVAU SERPAVI; INE; ADRH; Catastro", "q3-blp", "q3", "2024"),
@@ -112,7 +113,7 @@ def q3():
 |---|---|---|---|
 | Q3-c1 (log valor tasado, 38 prov., 2011-2022) | {f(pc1['beta_por_punto'])} log por punto (≈ {pct(pc1['beta_por_punto'])} por punto) | solo puntual (AKM/AKM0 NO APTOS) | {f(pc1['beta_por_punto'] / 0.01, 2)} veces la referencia de Saiz (0,01); descriptivo |
 | Q3-c2 (log compraventas, 41 prov.) | {f(pc2['beta_por_punto'])} log por punto | solo puntual | signo negativo; sin referencia comparable |
-| Q3-b (Δlog SERPAVI 2021-24, {bp['n']} secciones) | {f(bp['beta_por_DT'])} por DT (IC 95 % Conley 2 km {f(bp['ic95'][0])} a {f(bp['ic95'][1])}; p = {bp['p']:.1e}) | Conley 2 km, solo escenario principal | correlación; **pretendencia placebo no nula** |
+| Q3-b (Δlog SERPAVI 2021-24, {bp['n']} secciones) | {f(bp['beta_por_DT'])} por DT | solo puntual (Conley 2 km NO APTO tras corregir el núcleo, K16) | correlación; **pretendencia placebo del mismo orden** |
 | BLP/GATES (Q3-b) | GATES Q4-Q1 = {f(g['gates_q4_menos_q1'])}; ganancia de R² dentro = {f(g['ganancia_r2_within'])} | NO APTO: solo puntual | sin heterogeneidad apreciable |
 
 Multiverso (resumen, sin IC): Q3-c1 {m1['n_especificaciones']} especificaciones, mediana {f(m1['mediana_beta_por_DT'])} por DT, {pct(m1['proporcion_mismo_signo_que_principal'], 0)} con el mismo signo; Q3-c2 {m2['n_especificaciones']}, mediana {f(m2['mediana_beta_por_DT'])}, {pct(m2['proporcion_mismo_signo_que_principal'], 0)}; Q3-b {mb['n_especificaciones']}, mediana {f(mb['mediana_beta_por_DT'])}, {pct(mb['proporcion_mismo_signo'], 0)} (variantes puntuales).
@@ -121,20 +122,20 @@ Multiverso (resumen, sin IC): Q3-c1 {m1['n_especificaciones']} especificaciones,
 - Superadas: {'; '.join(diag['pruebas']['superadas'])}.
 - Fallidas: {'; '.join(diag['pruebas']['fallidas'])}.
 - No evaluables: {'; '.join(diag['pruebas']['no_evaluables'])}.
-- Sensibilidad: Q3-b Oster δ = {f(db['oster']['delta_beta0_rmax1_3'], 1)} (negativo: los efectos fijos acercan la estimación a un valor mayor, no frágil por la regla δ < 1); E-value del punto {f(db['e_value_punto'], 2)} (límite del IC {f(db['e_value_limite_ic'], 2)}). Q3-c1: δ = {f(d1['oster']['delta_beta0_rmax1_3'], 1)}, E-value {f(d1['e_value_punto'], 2)}.
+- Sensibilidad: Q3-b Oster δ = {f(db['oster']['delta_beta0_rmax1_3'], 1)} (negativo: los efectos fijos acercan la estimación a un valor mayor, no frágil por la regla δ < 1); E-value del punto {f(db['e_value_punto'], 2)}. Q3-c1: δ = {f(d1['oster']['delta_beta0_rmax1_3'], 1)}, E-value {f(d1['e_value_punto'], 2)}.
 - Balance Q3-b con FE de municipio (coeficiente estandarizado por DT de cuota): renta ADRH {f(db['balance_covariables_con_FE_municipio']['renta_adrh']['coef_std_por_DT'], 2)}, población {f(db['balance_covariables_con_FE_municipio']['poblacion']['coef_std_por_DT'], 2)}, % vivienda turística {f(db['balance_covariables_con_FE_municipio']['pct_vut']['coef_std_por_DT'], 2)}: desbalance notable en renta y vivienda turística (sin umbral pre-registrado).
 - Rotemberg (Q3-c): Rumanía {f(c['diagnosticos']['rotemberg_top5'][0]['alfa_rotemberg'], 3)}, Reino Unido {f(c['diagnosticos']['rotemberg_top5'][1]['alfa_rotemberg'], 3)}; suma de pesos negativos {f(c['diagnosticos']['rotemberg_suma_alfa_negativos'], 3)}. Primera etapa descriptiva (coef. {f(d1['primera_etapa_descriptiva']['coef'], 2)}, R² dentro {f(d1['primera_etapa_descriptiva']['r2_within'], 2)}); F efectivo con herramienta APTA no disponible.
 - Moran de residuos: provincial I = {f(d1['moran_residuos_prov']['I'], 3)}; secciones I = {f(db['moran_residuos_secciones']['I'], 3)} (efecto de la demedia por municipio).
 
 ## Regla de hallazgo
-(a) q ≤ 0,10: pendiente del control BY global (único p-valor propio: Q3-b). (b) Q3-b no tiene magnitud de referencia; Q3-c carece de SE válido: errores S y M no evaluables. (c) sellada: pendiente. **Sin hallazgo.** TOST: «no concluyente».
+(a) sin p-valor válido en Q3 (Conley NO APTO tras K16; AKM NO APTO): no evaluable. (b) Q3-b no tiene magnitud de referencia; Q3-c carece de SE válido: errores S y M no evaluables. (c) sellada: pendiente. **Sin hallazgo.** TOST: «no concluyente».
 Frente a la conclusión publicada V9-D4 (instrumento débil, C4): ninguna contradicción de dirección; no hay parada D.
 
 ## Fichas reproducibles
 Comando: `python src/v16/q3_shiftshare.py && python src/v16/q3_seccion.py && python src/v16/qb_informe.py` (SEED 20261010).
 - <a id="q3-c1"></a>**q3-c1.** x_pt = 100·Σ_o F_{{po,2003}}·(N_{{o,t,-p}}/N_{{o,2003,-p}})/Pob_{{p,2003}} (28 orígenes; padron_pob_nacionalidad provincial); log valor tasado anual (base_precio) ~ x + FE provincia + FE año, 2011-2022, N = {pc1['n']}. Rango = 8 especificaciones con x en puntos (orígenes, año base 2003/2004, efectos temporales).
 - <a id="q3-c2"></a>**q3-c2.** Igual con log compraventas provinciales anuales (INE ETDP 6150, total de vivienda), N = {pc2['n']}.
-- <a id="q3-b"></a>**q3-b.** Δlog de la mediana €/m² SERPAVI (tipología VC) 2021→2024 ~ cuota de extranjeros 2022 estandarizada + FE municipio; Conley 2 km (núcleo de Bartlett), secciones de entrenamiento (`unidad_sellada_v16`), municipios con ≥ 2 secciones. Rango = 6 variantes puntuales.
+- <a id="q3-b"></a>**q3-b.** Δlog de la mediana €/m² SERPAVI (tipología VC) 2021→2024 ~ cuota de extranjeros 2022 estandarizada + FE municipio; solo puntual (el error de Conley a 2 km con núcleo de Bartlett se calcula como referencia, NO APTO tras K16), secciones de entrenamiento (`unidad_sellada_v16`), municipios con ≥ 2 secciones. Rango = 6 variantes puntuales.
 - <a id="q3-blp"></a>**q3-blp.** Interacciones exposición × {{renta ADRH 2019, población 2022, cuota extranjeros, % VUT 2021-02, obra per cápita 2018-21}}; GATES por cuartiles con 2 mitades por municipio.
 - <a id="q3-rotemberg"></a>**q3-rotemberg.** α_o = Σ c̃_o·B̃ / Σ B̃², c̃ residualizado en FE (output/v16/q3/q3c_rotemberg.csv).
 - <a id="q3-pretendencia"></a>Pretendencia: igual que q3-b con Δlog 2018→2021.

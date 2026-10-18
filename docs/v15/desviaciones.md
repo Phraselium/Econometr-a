@@ -66,3 +66,10 @@ Anotadas el 2026-10-17 ANTES de estimar (después de contar tratados y donantes 
 - H3: la regla del 1 % superior de exposición se aplica a la exposición media por sección.
 - E4: el año de referencia es 2017 y la dosis se mide en 2017; un coeficiente previo solo existe para 2015 y 2016.
 - Todas las estimaciones de entrenamiento llevan «pendiente_sellada: true», incluida E4 (por la regla común del encargo; E4 no tiene evaluación sellada pre-registrada).
+
+## DV15-K16. Correcciones tras la réplica ciega (2026-10-18; decisión K16 de docs/v16/decisiones.md)
+Son errores de implementación frente a la ficha, no cambios de especificación.
+- **H5.** Primer origen según DV15-B-1. AR(4) sin la fila del objetivo y desde 2003T1. STL de compraventas y ocupados reestimada en cada origen, sin datos posteriores.
+- **H4.** Los municipios sin cuota en el año base quedan fuera de la muestra; antes se les imputaba 0.
+- **H3.** Núcleo de Conley con la diagonal contada una vez. Conley pasa a NO APTO y H3 queda solo puntual.
+

@@ -1,0 +1,19 @@
+{
+  "id": "h1",
+  "pregunta": "H1 P6a zonas tensionadas y renta contratos nuevos (CS, ATT agregado)",
+  "seed": 20261010,
+  "N": 308,
+  "tratados": 234,
+  "nunca_tratados": 74,
+  "N_celdas": 14,
+  "ATT_log_x100": -7.449547702791749,
+  "ATT_pct": -7.178832767503041,
+  "ATT_pct_alt_log_lineal": -7.449547702791749,
+  "referencia": {
+    "N": 308,
+    "ATT_pct": -7.2
+  },
+  "diferencia_pp": 0.02116723249695962,
+  "veredicto": "COINCIDE",
+  "notas": "Sin inferencia (herramientas NO APTAS). ATT en % = 100*(exp(ATT_log)-1). Cohorte 2024T1 efecto desde 2024T2; 2024T4 desde 2024T4; peso = tratados por celda."
+}

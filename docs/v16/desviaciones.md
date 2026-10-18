@@ -86,3 +86,8 @@ Anotadas el 2026-10-17 **antes** de ejecutar ninguna estimación de Q5, Q9, Q10 
   - Q10: tras la primera ejecución se añadió AR(4) con dummies de trimestre del objetivo (`AR4_S`) como **diagnóstico** de lectura (la compraventa tiene estacionalidad que el AR(4) puro no recoge). No es especificación principal ni sustituye al AR(4); se informa junto a las demás.
   - Q3 y Q4 (rejilla): el padrón por nacionalidad termina en 2022, así que las ventanas 2011-2024 y 2018-2025 son efectivas hasta 2022.
   - Q9-g: resultado retenido por la parada D (docs/v16/bloqueos.md, B-2); no va a hechos.json ni a ninguna publicación hasta que decida el autor.
+
+## D5. Correcciones tras la réplica ciega (2026-10-18; decisión K16)
+- **Q3-b.** El núcleo de Conley contaba dos veces la diagonal. Con el núcleo corregido, Conley a 2 km es NO APTO en el Monte Carlo, así que Q3-b queda solo con estimación puntual.
+- **Q9-g.** Su q de Benjamini-Yekutieli pasa de 0,153 a 0,306, porque ya es el único p válido de la rama de diseños.
+

@@ -37,3 +37,9 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-17,F6,modelizador,v15_grupo_B_h4_h5_e1_e2_e3,180001,src/v15/p4_inmigracion.py;output/v15/p4;output/v15/p9;output/v15/p2;output/v15/p7;output/v15/p10
 2026-10-17,F6,modelizador,v15_grupo_A_h1_h2_h3_e4,200805,src/v15/p6_zonas.py;output/v15/p6;output/v15/p5;output/v15/p5cv
 2026-10-18,F6,replicador-ciego,replica_q9g,27198,src/v16/replica/q9g.py;output/v16/replica/q9g
+2026-10-18,F6,replicador-ciego,replica_q3b,27003,src/v16/replica/q3b.py;output/v16/replica/q3b
+2026-10-18,F6,replicador-ciego,replica_e3,24686,src/v16/replica/e3.py;output/v16/replica/e3
+2026-10-18,F6,replicador-ciego,replica_h5,39909,src/v16/replica/h5.py;output/v16/replica/h5
+2026-10-18,F6,replicador-ciego,replica_h1,35255,src/v16/replica/h1.py;output/v16/replica/h1
+2026-10-18,F6,replicador-ciego,replica_h4,38087,src/v16/replica/h4.py;output/v16/replica/h4
+2026-10-18,F6,econometrician,reconciliacion_h5,76212,output/v16/replica/h5/reconciliacion.md

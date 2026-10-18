@@ -5,8 +5,8 @@
       "beta_por_DT": 0.009077270952434798,
       "n": 9916,
       "principal": true,
-      "se_conley": 0.0015711131865724468,
-      "p_conley": 7.577156457827527e-09
+      "se_conley": 0.0012412053299869275,
+      "p_conley": 2.6068036618198676e-13
     },
     {
       "id": "Q3-b|VC|cuota_ext|2022-2024|puntual",
@@ -51,12 +51,12 @@
   ],
   "principal": {
     "beta_por_DT": 0.009077270952434798,
-    "se": 0.0015711131865724468,
-    "t": 5.777604713660284,
-    "p": 7.577156457827527e-09,
+    "se": 0.0012412053299869275,
+    "t": 7.313271006119834,
+    "p": 2.6068036618198676e-13,
     "ic95": [
-      0.005997945666827519,
-      0.012156596238042078
+      0.006644553189052299,
+      0.011509988715817297
     ],
     "n": 9916,
     "n_mun": 748,
@@ -68,8 +68,9 @@
   "p_valores_para_BY": [
     {
       "id": "Q3-b|principal",
-      "p": 7.577156457827527e-09,
-      "rama": "diseños"
+      "p": null,
+      "rama": "diseños",
+      "nota": "Conley 2 km NO APTO tras K16"
     }
   ],
   "multiverso": {
@@ -97,10 +98,10 @@
       "delta_beta0_rmax1_3": -14.229578707207468,
       "fragil_delta_lt_1": false
     },
-    "cinelli_hazlett_RV_q1": 0.05855077669035639,
+    "cinelli_hazlett_RV_q1": 0.07352172231019916,
     "cinelli_hazlett_fragil_RV_lt_0_05": false,
     "e_value_punto": 1.4136814320625275,
-    "e_value_limite_ic": 1.3152000490771334,
+    "e_value_limite_ic": 1.3366292816386847,
     "heterocedasticidad_BP_LM": 0.027390452257877396,
     "autocorrelacion_temporal": "no aplica (corte transversal)",
     "moran_residuos_secciones": {
@@ -125,17 +126,17 @@
     },
     "pretendencia_placebo_2018_2021": {
       "beta_por_DT": 0.005109416546799145,
-      "se_conley": 0.0023348521402191454,
+      "se_conley": 0.0020973498608194484,
       "ic95": [
-        0.000533190406646668,
-        0.009685642686951622
+        0.0009986863241880162,
+        0.009220146769410274
       ],
       "n": 9560,
       "nota": "mismo estimador y estructura que el principal, con otro periodo; diagnóstico, no entra en el control BY"
     },
     "sin_grandes_ciudades": {
       "beta_por_DT": 0.010379319412285138,
-      "se_conley": 0.001852870266633994,
+      "se_conley": 0.001405971377167286,
       "n": 8051,
       "excluidas": [
         "08019",

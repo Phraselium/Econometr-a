@@ -12,7 +12,7 @@ Generado por `python3 src/v16/f5_validacion.py v16`; publicado como metodologia/
 | bh_jerarquico | FDR máx. BH 0,1216; FDR máx. BY 0,0473 | FDR máx. 0.1216 > 0.1 | 0,0473-0,1216 |  | NO APTO BH jerárquico; alternativa Benjamini-Yekutieli APTA | Benjamini-Yekutieli (en lugar de BH jerárquico) |
 | blp_gates | tamaño 0,005; cobertura 0,9885 | tamaño 0.0050 fuera de [0.04; 0.06] / cobertura 0.9885 fuera de [0.92; 0.97] | 0,005 | 0,985-0,9885 | NO APTO → diseño solo descriptivo | descriptivo |
 | cips_bootstrap | tamaño bootstrap 0,006 | tamaño 0.0060 fuera de [0.04; 0.06] | 0,006-0,0925 |  | NO APTO | descriptivo |
-| conley_seccion | tamaño Conley 0,0435; cobertura 0,9565 |  | 0,0435-0,2362 | 0,9565 | APTO (solo escenario principal; no robusto a la sensibilidad del rango espacial) | Conley 2 km (solo escenario principal; no robusto al rango espacial) |
+| conley_seccion | tamaño Conley 0,0963; cobertura 0,9038 | tamaño 0.0963 fuera de [0.04; 0.06] / cobertura 0.9038 fuera de [0.92; 0.97] | 0,0963-0,2362 | 0,9038 | NO APTO → diseño solo descriptivo | descriptivo |
 | cs_webb | tamaño 0,0655; cobertura 0,9015 | tamaño 0.0655 fuera de [0,04; 0,06] / cobertura 0.9015 fuera de [0,92; 0,97] / tamaño 0.3145 fuera de [0,04; 0,06] / cobertura 0.6905 fuera de [0,92; 0,97] | 0,0655 | 0,9015 | NO APTO → diseño solo descriptivo | descriptivo |
 | csardl | tamaño 0,1015; cobertura 0,8985 | tamaño 0.1015 fuera de [0.04; 0.06] / cobertura 0.8985 fuera de [0.92; 0.97] | 0,1015 | 0,8955-0,8985 | NO APTO | descriptivo |
 | dcdh_aleatorizacion | tamaño 0,0775; cobertura 0,967 | tamaño 0.0775 fuera de [0,04; 0,06] | 0,0775 | 0,967 | NO APTO → diseño solo descriptivo | descriptivo |
@@ -269,20 +269,20 @@ Diagnóstico exploratorio (R=120, B=149, src/v16/montecarlo/cips_bootstrap_diagn
 
 | escenario | inferencia | R | tamano_5pct | tamano_ic95 | cobertura_95 | potencia_beta | sesgo | rmse | var_no_positiva |
 |---|---|---|---|---|---|---|---|---|---|
-| principal: radio del campo 1,0 km (correlación nula más allá de 2 km) | Conley 2 km | 4000 | 0.0435 | [0.0372, 0.0498] | 0.9565 | 0.6542 | 0.0000 | 0.0209 | 0.0000 |
+| principal: radio del campo 1,0 km (correlación nula más allá de 2 km) | Conley 2 km | 4000 | 0.0963 | [0.0871, 0.1054] | 0.9038 | 0.7802 | 0.0000 | 0.0209 | 0.0000 |
 | principal: radio del campo 1,0 km (correlación nula más allá de 2 km) | HC1 (referencia) | 4000 | 0.2362 | [0.2231, 0.2494] | 0.7638 | 0.8890 | 0.0000 | 0.0209 | nan |
 | principal: radio del campo 1,0 km (correlación nula más allá de 2 km) | agrupado por municipio (referencia) | 4000 | 0.0695 | [0.0616, 0.0774] | 0.9305 | 0.7260 | 0.0000 | 0.0209 | nan |
-| sens: radio 0,5 km | Conley 2 km | 2000 | 0.0120 | [0.0072, 0.0168] | 0.9880 | 0.8225 | -0.0001 | 0.0145 | 0.0000 |
+| sens: radio 0,5 km | Conley 2 km | 2000 | 0.0555 | [0.0455, 0.0655] | 0.9445 | 0.9360 | -0.0001 | 0.0145 | 0.0000 |
 | sens: radio 0,5 km | HC1 (referencia) | 2000 | 0.0925 | [0.0798, 0.1052] | 0.9075 | 0.9555 | -0.0001 | 0.0145 | nan |
 | sens: radio 0,5 km | agrupado por municipio (referencia) | 2000 | 0.0480 | [0.0386, 0.0574] | 0.9520 | 0.9270 | -0.0001 | 0.0145 | nan |
-| sens: radio 1,5 km (correlación hasta 3 km, mayor que el corte) | Conley 2 km | 2000 | 0.0680 | [0.057, 0.079] | 0.9320 | 0.5825 | -0.0002 | 0.0271 | 0.0000 |
+| sens: radio 1,5 km (correlación hasta 3 km, mayor que el corte) | Conley 2 km | 2000 | 0.1245 | [0.11, 0.139] | 0.8755 | 0.6770 | -0.0002 | 0.0271 | 0.0000 |
 | sens: radio 1,5 km (correlación hasta 3 km, mayor que el corte) | HC1 (referencia) | 2000 | 0.3460 | [0.3252, 0.3668] | 0.6540 | 0.8335 | -0.0002 | 0.0271 | nan |
 | sens: radio 1,5 km (correlación hasta 3 km, mayor que el corte) | agrupado por municipio (referencia) | 2000 | 0.0630 | [0.0524, 0.0736] | 0.9370 | 0.5840 | -0.0002 | 0.0271 | nan |
 
 
-**Veredicto: APTO (solo escenario principal; no robusto a la sensibilidad del rango espacial).**
+**Veredicto: NO APTO → diseño solo descriptivo.**
 
-**Advertencia.** El tamaño en el escenario principal (correlación espacial que se anula justo en el corte de 2 km) está en el intervalo, pero no se mantiene con campos de rango menor (tamaño conservador) ni mayor (sobre-rechazo): la calibración depende de que el corte coincida con el alcance de la correlación. Q3-b es C4 (correlación) y debe llevar esta advertencia.
+Condición que falla: tamaño 0.0963 fuera de [0.04; 0.06]; cobertura 0.9038 fuera de [0.92; 0.97].
 
 # cs_webb · Q1c · Callaway-Sant'Anna con wild cluster bootstrap de Webb por provincia
 

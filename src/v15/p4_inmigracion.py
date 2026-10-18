@@ -68,7 +68,11 @@ def instrumento(A, ni, origenes, base):
     zk = np.full(N.shape, np.nan)
     zk[:, :, 1:] = share[:, :, None] * g
     zk = np.nan_to_num(zk, nan=0.0)
-    return zk.sum(1), zk, share
+    z = zk.sum(1)
+    # Sin cuota en el año base (municipio inexistente o sin población en él) el instrumento no está definido: fuera de la muestra
+    # (antes se imputaba 0 sin declararlo; corrección K16 tras la réplica ciega de H4).
+    z[~(np.isfinite(tot_b) & (tot_b > 0)), :] = np.nan
+    return z, zk, share
 
 
 def panel(A, R, ni, muni, tip, norm, origenes, base, minpob=0, excluir=None, years=range(2012, 2023), minobs=6):

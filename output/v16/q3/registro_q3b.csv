@@ -1,5 +1,5 @@
 fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
-v16-fase6,Q3-b|VC|cuota_ext|2021-2024|Conley2km|PRINCIPAL,dlogSERPAVI ~ cuota_ext_std + FE municipio,2021,2024,9916,0.3470651144356962,,,,0.009077270952434798,7.577156457827527e-09,Conley 2 km APTO solo escenario principal
+v16-fase6,Q3-b|VC|cuota_ext|2021-2024|Conley2km|PRINCIPAL,dlogSERPAVI ~ cuota_ext_std + FE municipio,2021,2024,9916,0.3470651144356962,,,,0.009077270952434798,2.6068036618198676e-13,Conley 2 km NO APTO tras corregir el núcleo (K16): EE solo de referencia
 v16-fase6,Q3-b|VC|cuota_ext|2022-2024|puntual,idem,2021,2024,10112,0.28987514648966173,,,,0.0054739214486370594,,variante: solo estimación puntual
 v16-fase6,Q3-b|VC|cuota_no_europea|2021-2024|puntual,idem,2021,2024,9916,0.34424184196731555,,,,0.006031618924123834,,variante: solo estimación puntual
 v16-fase6,Q3-b|VC|cuota_no_europea|2022-2024|puntual,idem,2021,2024,10112,0.28877894555388817,,,,0.003937883072205959,,variante: solo estimación puntual

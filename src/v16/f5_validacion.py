@@ -32,7 +32,6 @@ def _num(x):
 # Lo que no figura aquí queda «descriptivo» (estimación puntual sin p-valor ni IC).
 INFERENCIA_UTILIZABLE = {
     "sdid_conley_taber": "Conley-Taber (escenario A; tamaño en el límite superior)",
-    "conley_seccion": "Conley 2 km (solo escenario principal; no robusto al rango espacial)",
     "gsadf_factor": "bootstrap salvaje (válido con heterocedasticidad; conservador si homocedástico)",
     "bh_jerarquico": "Benjamini-Yekutieli (en lugar de BH jerárquico)",
     "tost": "TOST solo si Δ/EE ≥ umbral; si no, «no concluyente»",

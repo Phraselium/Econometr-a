@@ -58,8 +58,11 @@ def matrices(est: dict, radio_campo: float):
     # diagonal (distancia 0 no se almacena en coo de sparse_distance_matrix con ceros): se añade explícita
     idx = np.arange(n)
     ii = np.concatenate([i, idx]); jj = np.concatenate([j, idx]); dd = np.concatenate([d, np.zeros(n)])
-    kk = np.maximum(0.0, 1 - dd / CORTE_KM)
-    K = sp.csr_matrix((kk, (ii, jj)), shape=(n, n))
+    # sparse_distance_matrix SÍ guarda la diagonal (distancia 0 explícita): el núcleo del estimador la toma una sola vez (corrección K16;
+    # la versión anterior la sumaba dos veces). El campo W del proceso generador se deja como estaba (proceso declarado).
+    fuera = np.concatenate([i != j, np.ones(n, dtype=bool)])
+    kk = np.maximum(0.0, 1 - dd[fuera] / CORTE_KM)
+    K = sp.csr_matrix((kk, (ii[fuera], jj[fuera])), shape=(n, n))
     w = np.maximum(0.0, 1 - dd / radio_campo)
     W = sp.csr_matrix((w, (ii, jj)), shape=(n, n))
     nrm = np.sqrt(np.asarray(W.multiply(W).sum(1)).ravel())
@@ -81,6 +84,7 @@ def dgp_texto(est: dict, K, nvec: float) -> str:
 - **Nulo:** β = 0 (tamaño). **Alternativa:** β = {BETA_ALT} (DT de y por DT de x; Q3-b no tiene magnitud de referencia): sesgo, RMSE, cobertura y potencia.
 - **Estimación:** MCO de y sobre x con efectos fijos de municipio (demedia intra-municipio). Inferencia: Conley con núcleo de Bartlett (triangular) a 2 km, normal.
   Si la varianza de Conley sale no positiva (el núcleo triangular no es semidefinido positivo en 2D) la réplica cuenta como no rechazo y se informa su frecuencia.
+- **Corrección K16 (2026-10-18).** La primera ejecución sumaba dos veces la diagonal del núcleo (scipy ya la guarda con distancia 0), lo que inflaba el EE; con ese error salió APTO (tamaño 0,0435, cobertura 0,9565). La réplica ciega de Q3-b lo detectó. Esta tabla es la del núcleo correcto; el campo W del proceso generador no se ha cambiado.
   Referencias (no candidatas): EE robustos HC1 y EE agrupados por municipio.
 - **Alternativa nombrada en el punto 3:** ninguna (Conley a 2 km es la principal). Si no pasa → «NO APTO → diseño solo descriptivo».
 - **Pocos clusters / T corto:** corte transversal; dependencia por distancia; sin dimensión temporal.

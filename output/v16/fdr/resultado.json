@@ -7,14 +7,9 @@
   "diseños": {
    "m": 21,
    "pruebas_con_p": {
-    "Q3-b|principal": {
-     "p": 7.577156457827527e-09,
-     "q_BY": 5.800505182687048e-07,
-     "rechaza": true
-    },
     "Q9-g": {
      "p": 0.004,
-     "q_BY": 0.15310506560003465,
+     "q_BY": 0.3062101312000693,
      "rechaza": false
     }
    },
@@ -22,6 +17,7 @@
     "Q10-1",
     "Q10-2",
     "Q10-3",
+    "Q3-b|principal",
     "Q3-c1|principal",
     "Q3-c2|principal",
     "Q3|BLP_GATES",

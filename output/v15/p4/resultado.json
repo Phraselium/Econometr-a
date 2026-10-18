@@ -3,20 +3,20 @@
   "pregunta": "H4: ¿se asocia la población extranjera predicha por cuotas de origen con el alquiler municipal? (asociación, solo puntual)",
   "capa": "C4",
   "datos": "data/processed/v15/p4_inmigracion.parquet (padrón 2003-2022, SERPAVI municipal 2011-2022; entrenamiento)",
-  "N": 13442,
+  "N": 13417,
   "metodo": "2SLS shift-share (Δlog alquiler SERPAVI VC sobre ΔPobExt/Pob(t-1); instrumento Σ cuotas 2003 × crecimiento nacional leave-one-out, sin orígenes residenciales); FE provincia×año; puntual",
   "estimacion": {
-    "beta_pp_alquiler_por_pp_poblacion_extranjera": 0.29071938430141253,
+    "beta_pp_alquiler_por_pp_poblacion_extranjera": 0.3052400588237127,
     "unidad": "% de alquiler por punto porcentual de población extranjera",
-    "ols_pp": 0.06736631513007804,
+    "ols_pp": 0.06836387440231069,
     "forma_reducida": [
-      0.0025930561348231533
+      0.0027187799880012136
     ],
     "primera_etapa_pi": [
-      0.891944698168017
+      0.8907022225321373
     ],
-    "F_robusto": 70.65361449038932,
-    "n_municipios": 1276
+    "F_robusto": 70.156084808693,
+    "n_municipios": 1273
   },
   "ic95": null,
   "p_ajustado": null,
@@ -26,53 +26,53 @@
       "top8": [
         {
           "origen": "Colombia",
-          "peso": 0.3458257931993131,
-          "beta_k_pp": 0.006724029185555974
+          "peso": 0.3464902407089745,
+          "beta_k_pp": 0.006689219304522251
         },
         {
           "origen": "Bulgaria",
-          "peso": 0.13516594239394028,
-          "beta_k_pp": -0.0017143017670797635
+          "peso": 0.13570742379828865,
+          "beta_k_pp": -0.0016882404596896563
         },
         {
           "origen": "Ecuador",
-          "peso": 0.12251356951298173,
-          "beta_k_pp": 0.003905605856766284
+          "peso": 0.1214159276757883,
+          "beta_k_pp": 0.005030885467125977
         },
         {
           "origen": "Marruecos",
-          "peso": 0.10380544978777584,
-          "beta_k_pp": 0.006529089154119834
+          "peso": 0.10283419109764286,
+          "beta_k_pp": 0.006609885121116223
         },
         {
           "origen": "Argentina",
-          "peso": 0.09432330259350055,
-          "beta_k_pp": 0.0005542430235836866
+          "peso": 0.09411045258738922,
+          "beta_k_pp": 0.0005974156308292552
         },
         {
           "origen": "Rumanía",
-          "peso": 0.0834296273394339,
-          "beta_k_pp": 0.006699146408209781
+          "peso": 0.08367578328594358,
+          "beta_k_pp": 0.006814477722272928
         },
         {
           "origen": "Bolivia",
-          "peso": 0.03169117323690087,
-          "beta_k_pp": -0.016874171240138607
+          "peso": 0.03183123303265734,
+          "beta_k_pp": -0.016844091893727264
         },
         {
           "origen": "Rusia",
-          "peso": -0.020787922002519926,
-          "beta_k_pp": 0.00413405980544585
+          "peso": -0.020768303050595616,
+          "beta_k_pp": 0.004078092213932999
         }
       ],
-      "n_efectivo_choques_1_sobre_HHI": 5.4696797001142325,
-      "suma_pesos_negativos": -0.04033449158878637,
+      "n_efectivo_choques_1_sobre_HHI": 5.46490510550851,
+      "suma_pesos_negativos": -0.040118925616932505,
       "tipo": "descriptivo"
     },
     "pretendencias_2011_2013": {
-      "pendiente_dlog_por_pp_z": -0.02086982965859514,
-      "correlacion": -0.03179326548907857,
-      "n": 1128,
+      "pendiente_dlog_por_pp_z": -0.020870320033554792,
+      "correlacion": -0.03179398396974486,
+      "n": 1127,
       "tipo": "descriptivo (sin inferencia APTA)"
     },
     "balance_2003": {
@@ -82,17 +82,17 @@
       "tipo": "descriptivo"
     },
     "jaeger_ruist_stuhler_control_z_retardado": {
-      "beta_pp": 0.005058489933801406,
-      "ols_pp": 0.0006783167822912357,
+      "beta_pp": 0.005320174802986876,
+      "ols_pp": 0.0006888119504169891,
       "forma_reducida": [
-        0.006269017519229379
+        0.006678148142952557
       ],
-      "F_robusto": 68.59048577793257,
+      "F_robusto": 70.72005448838132,
       "pi": [
-        1.2393061172938362
+        1.2552497596889638
       ],
-      "n": 13442,
-      "n_municipios": 1276
+      "n": 13417,
+      "n_municipios": 1273
     },
     "excluye_5_origenes_Rotemberg": {
       "excluidos": [
@@ -102,64 +102,64 @@
         "Marruecos",
         "Argentina"
       ],
-      "beta_pp": -0.0019910497138452216,
-      "ols_pp": 0.0006736631513007804,
+      "beta_pp": -0.0019204439349636265,
+      "ols_pp": 0.0006836387440231069,
       "forma_reducida": [
-        -0.0035416023949401292
+        -0.0034263132381317477
       ],
-      "F_robusto": 36.07938885858643,
+      "F_robusto": 36.192532124079946,
       "pi": [
-        1.7787614092771116
+        1.7841256262431089
       ],
-      "n": 13442,
-      "n_municipios": 1276
+      "n": 13417,
+      "n_municipios": 1273
     },
     "desbordamiento_15km": {
-      "beta_propio_pp": 0.0022588266938011648,
-      "n": 12615,
+      "beta_propio_pp": 0.0024009268092932846,
+      "n": 12590,
       "tipo": "puntual"
     },
     "excluye_Barcelona_Valencia": {
-      "beta_pp": 0.002931830403197046,
-      "ols_pp": 0.0006710920359128447,
+      "beta_pp": 0.0030774703842839455,
+      "ols_pp": 0.0006810551612256736,
       "forma_reducida": [
-        0.0026253492074312166
+        0.0027519503404286496
       ],
-      "F_robusto": 70.26715858122517,
+      "F_robusto": 69.77071963428047,
       "pi": [
-        0.8954642139492035
+        0.8942248004992459
       ],
-      "n": 13420,
-      "n_municipios": 1274
+      "n": 13395,
+      "n_municipios": 1271
     },
     "excluye_1pct_superior_exposicion": {
-      "beta_pp": 0.0026347620860401673,
-      "ols_pp": 0.0007322943707835053,
+      "beta_pp": 0.002778283066184457,
+      "ols_pp": 0.0007432275248335046,
       "forma_reducida": [
-        0.00237949513570597
+        0.0025057225827098653
       ],
-      "F_robusto": 71.41441882664135,
+      "F_robusto": 70.91366572936317,
       "pi": [
-        0.9031157493548712
+        0.9018960714291394
       ],
-      "n": 13327,
-      "n_municipios": 1263
+      "n": 13302,
+      "n_municipios": 1260
     },
     "instrumento_28_origenes": {
-      "beta_pp": -0.0007532791190101353,
-      "ols_pp": 0.0006736631513007804,
+      "beta_pp": -0.0007344481786808931,
+      "ols_pp": 0.0006836387440231069,
       "forma_reducida": [
-        -0.0009824659997939246
+        -0.0009571383377929621
       ],
-      "F_robusto": 111.26303589869764,
+      "F_robusto": 110.79646202269232,
       "pi": [
-        1.3042522685149638
+        1.3032074495875685
       ],
-      "n": 13442,
-      "n_municipios": 1276
+      "n": 13417,
+      "n_municipios": 1273
     },
     "f_efectivo_primera_etapa": {
-      "F_robusto_HC1": 70.65361449038932,
+      "F_robusto_HC1": 70.156084808693,
       "umbral_MOP_tau10_referencia_un_instrumento": 23.1,
       "nota": "descriptivo; el procedimiento MOP/AR/AKM no es APTO (K13). Referencia de valor crítico para 1 instrumento y tau=10 %: ~23,1 (Montiel Olea-Pflueger, cota)"
     },
@@ -177,11 +177,11 @@
     "multiverso_64": {
       "n": 64,
       "beta_pp_min": -0.0014259156039205922,
-      "beta_pp_max": 0.003919666906963185,
-      "beta_pp_mediana": 0.0007922737386452858,
+      "beta_pp_max": 0.003883295449803311,
+      "beta_pp_mediana": 0.0007954222136956825,
       "signo_positivo_frac": 0.71875,
       "F_robusto_mediana": 113.0886742226256,
-      "F_robusto_max": 175.76900993793322
+      "F_robusto_max": 175.672382591604
     }
   },
   "fuera_muestra": {

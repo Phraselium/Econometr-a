@@ -51,9 +51,9 @@ def test_resultado_q3_forma_y_honestidad():
     for k in ["rama", "pregunta", "capa", "datos", "N", "metodo", "estimacion", "ic95", "p_ajustado", "nivel_evidencia", "diagnosticos", "fuera_muestra", "notas"]:
         assert k in r
     assert r["capa"] == "C4" and r["pendiente_sellada"] is True and r["p_ajustado"] is None
-    assert r["ic95"]["Q3-c1"] is None and r["ic95"]["Q3-c2"] is None and r["ic95"]["Q3-b"] is not None
-    con_p = [x["id"] for x in r["p_valores_para_BY"] if x["p"] is not None]
-    assert con_p == ["Q3-b|principal"]
+    # Tras K16 (núcleo de Conley corregido) ninguna inferencia de Q3 es APTA: todo puntual.
+    assert r["ic95"]["Q3-c1"] is None and r["ic95"]["Q3-c2"] is None and r["ic95"]["Q3-b"] is None
+    assert all(x["p"] is None for x in r["p_valores_para_BY"])
     assert r["estimacion"]["BLP_GATES_Q3"]["estado"].startswith("NO APTO")
     h = json.loads((OUT / "hechos.json").read_text(encoding="utf-8"))
     assert 0 < len(h) <= 10

@@ -1,0 +1,41 @@
+{
+  "id": "h4",
+  "semilla": 20261010,
+  "N": 13395,
+  "municipios": 1271,
+  "n_orig_instrumento": 23,
+  "coef_2sls_pct_por_pp": 0.30925420705329904,
+  "coef_ols_pct_por_pp": 0.06810551612256747,
+  "F_primera_etapa_simple": 264.3016466961357,
+  "variantes": {
+    "pv_anio": {
+      "ols": 0.06810551612256747,
+      "2sls": 0.30925420705329904,
+      "F": 264.3016466961357
+    },
+    "pv_anio_mas_muni": {
+      "ols": 0.03826452070605189,
+      "2sls": 0.19712576616497351,
+      "F": 370.774296282666
+    },
+    "anio": {
+      "ols": 0.1545557916674017,
+      "2sls": 0.843396095667992,
+      "F": 668.5628289195969
+    }
+  },
+  "referencia": {
+    "2sls": 0.29,
+    "ols": 0.07,
+    "N": 13442,
+    "municipios": 1276
+  },
+  "comparacion": {
+    "dif_abs": 0.019254207053299055,
+    "dif_rel": 0.06639381742516916,
+    "N_igual": false
+  },
+  "veredicto": "DISCREPA",
+  "diagnostico": "2SLS coincide (dif rel 6,6 % <= 10 %), pero N=13.395 (1.271 municipios) frente a 13.442 (1.276): -47 obs, -5 municipios (0,35 %). Causa probable: muestra/definicion de validez (umbral >=6 sobre diferencias validas; 4 municipios nuevos sin cuota 2003 -> instrumento NaN, quiza tratados distinto en la ficha original). No es estimador ni definicion del instrumento.",
+  "notas": "Principal: efectos provincia x anio absorbidos por within; 23 origenes (28 menos 5 residenciales); F primera etapa simple (no MOP); sin inferencia (AKM no apto). Variante con efecto de municipio adicional: 2SLS 0,197."
+}

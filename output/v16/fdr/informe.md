@@ -6,10 +6,9 @@ Generado por `python3 src/v16/f6_fdr.py`. Benjamini-Yekutieli, q = 0.1, denomina
 
 | Prueba | p | q (BY) | Condición (a) |
 |---|---|---|---|
-| Q3-b · principal | 7.58e-09 | 5.8e-07 | cumple |
-| Q9-g | 0.004 | 0.153 | no cumple |
+| Q9-g | 0.004 | 0.306 | no cumple |
 
-Sin p-valor (NO APTO): 13; no reportadas: 6.
+Sin p-valor (NO APTO): 14; no reportadas: 6.
 
 ## Rama rejilla (m = 83)
 

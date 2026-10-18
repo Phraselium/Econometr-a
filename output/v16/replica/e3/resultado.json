@@ -1,0 +1,31 @@
+{
+  "id": "e3",
+  "SEED": 20261010,
+  "N": 1131,
+  "modelo": "SAR ML, W reina por filas, dlog SERPAVI VC 2015-2024",
+  "rho": 0.3923,
+  "se_wald": 0.0271,
+  "ic95_wald": [
+    0.3393,
+    0.4454
+  ],
+  "beta": {
+    "const": 0.23868739666596644,
+    "log_alq_ini": -0.06258885406433556,
+    "log_contratos_ini": 0.011774177596810603
+  },
+  "referencia": {
+    "rho": 0.39,
+    "ic95": [
+      0.34,
+      0.45
+    ]
+  },
+  "dif_abs": 0.0023,
+  "dif_rel": 0.006,
+  "solape_ic_sobre_el_menor": 0.993,
+  "solape_ic_sobre_la_union": 0.952,
+  "rho_en_ic_ref": true,
+  "ref_en_ic_propio": true,
+  "veredicto": "COINCIDE"
+}

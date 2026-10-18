@@ -160,7 +160,7 @@ def main():
                                            "beta_log_por_DT": b, "pct_por_DT": 100 * b, "se": se, "p_normal_descriptivo": p_norm(b, se), "n_obs": r["n"], "n_secciones": r["n_sec"], "n_municipios": r["n_mun"], "dt_intra": sd,
                                            "principal": bool(resultado == "VC" and expo == "pct" and tfe == "mun_anio" and not sin_saltos and agr == "municipio")})
                         registrar(reg, "V15-A", f"H3-{resultado}-{expo}-{tfe}-{'ss' if sin_saltos else 'todas'}-{agr}", f"log(SERPAVI {resultado}) ~ z({expo}) + FE sección + FE {tfe}", "2021", "2024", r["n"], coef=b, p=p_norm(b, se),
-                                  notas=f"p normal descriptivo; {'Conley 2 km APTO condicionado (T=4 no validado)' if agr == 'conley2km' else 'agrupado municipio: sin validación MC en panel (descriptivo)'}")
+                                  notas=f"p normal descriptivo; {'Conley 2 km NO APTO tras K16 (referencia)' if agr == 'conley2km' else 'agrupado municipio: sin validación MC en panel (descriptivo)'}")
     res["multiverso"] = multiverso
 
     # --------- principal ---------

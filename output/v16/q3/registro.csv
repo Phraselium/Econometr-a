@@ -37,7 +37,7 @@ v16-fase6,Q3-c2|base2004|sin_top5|pts|año,log y ~ x + FE (año),2011,2022,492,0
 v16-fase6,Q3-c2|base2004|sin_top5|pts|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,492,0.9922367428373348,,,,-0.0837208144882587,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
 v16-fase6,Q3-c2|base2004|sin_top5|log1p|año,log y ~ x + FE (año),2011,2022,492,0.9901759423072488,,,,-1.4229822705496105,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
 v16-fase6,Q3-c2|base2004|sin_top5|log1p|año+CCAA×tendencia,log y ~ x + FE (año+CCAA×tendencia),2011,2022,492,0.9922053405438,,,,-9.15736662315899,,puntual; AKM/AKM0 NO APTOS; r2_adj = R2 total
-v16-fase6,Q3-b|VC|cuota_ext|2021-2024|Conley2km|PRINCIPAL,dlogSERPAVI ~ cuota_ext_std + FE municipio,2021,2024,9916,0.3470651144356962,,,,0.0090772709524347,7.577156457827527e-09,Conley 2 km APTO solo escenario principal
+v16-fase6,Q3-b|VC|cuota_ext|2021-2024|Conley2km|PRINCIPAL,dlogSERPAVI ~ cuota_ext_std + FE municipio,2021,2024,9916,0.3470651144356962,,,,0.0090772709524347,2.606803661819868e-13,Conley 2 km NO APTO tras corregir el núcleo (K16): EE solo de referencia
 v16-fase6,Q3-b|VC|cuota_ext|2022-2024|puntual,idem,2021,2024,10112,0.2898751464896617,,,,0.005473921448637,,variante: solo estimación puntual
 v16-fase6,Q3-b|VC|cuota_no_europea|2021-2024|puntual,idem,2021,2024,9916,0.3442418419673155,,,,0.0060316189241238,,variante: solo estimación puntual
 v16-fase6,Q3-b|VC|cuota_no_europea|2022-2024|puntual,idem,2021,2024,10112,0.2887789455538881,,,,0.0039378830722059,,variante: solo estimación puntual

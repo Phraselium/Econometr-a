@@ -1,0 +1,45 @@
+{
+  "id": "q3b",
+  "rama": "v16",
+  "pregunta": "Q3-b",
+  "capa": "C4",
+  "metodo": "OLS con EF de municipio (demeaning), VC, cuota 2022 estandarizada, Conley 2 km (Bartlett, centroides, distancia esferica)",
+  "N": 9916,
+  "municipios": 748,
+  "secciones_antes_filtro": 10385,
+  "DT_cuota": 0.09860133949593262,
+  "estimacion": 0.009077270952434798,
+  "ee_conley_2km": 0.0012412049604065484,
+  "ic95": [
+    0.006644553932605499,
+    0.011509987972264097
+  ],
+  "p": 2.607122121649733e-13,
+  "variantes": {
+    "conley_uniforme": {
+      "coef": 0.009077270952434798,
+      "ee": 0.001484858142802651
+    },
+    "conley_bartlett_gl": {
+      "ee": 0.0012909164824591308
+    },
+    "cluster_municipio_ee": 0.0018764401905130151
+  },
+  "comparacion": {
+    "cifra_orquestador": {
+      "coef": 0.0091,
+      "lo": 0.006,
+      "hi": 0.0122,
+      "p": 7.6e-09
+    },
+    "ee_orquestador_implicito": 0.0015816617164664275,
+    "dif_abs": -2.2729047565202623e-05,
+    "dif_rel_coef": -0.0024976975346376507,
+    "dif_rel_ee": -0.21525257424861344,
+    "mi_est_en_IC_orq": true,
+    "est_orq_en_mi_IC": true,
+    "veredicto": "DISCREPA",
+    "diagnostico": "Coeficiente identico (-0,25 %); N=9916 secciones, 748 municipios. Diferencia solo en EE: mi Conley Bartlett da 0,00124 (-21,5 %); con nucleo uniforme 0,00148 (-6,1 %, entraria en tolerancia). Causa probable: estimador (nucleo de Conley no fijado en la ficha), no muestra ni definicion. La cifra se deja segun la especificacion a priori (Bartlett)."
+  },
+  "seed": 20261010
+}

@@ -156,3 +156,36 @@ adquisidor-datos, ingeniero-datos, replicador-ciego y redactor (sonnet), abogado
 - **Revisión.** abogado-del-diablo lo revisa como las demás pistas citadas.
 - **Cifras citables.** V16-Q9-g, V16-Q9-gp y V16-FDR-Q9-g-q, todas C4.
 
+## K16. Réplica ciega: dos errores de implementación corregidos y una imputación retirada (2026-10-18)
+Regla del plan (fase 6.3): si la réplica discrepa, no se publica hasta resolverlo. Correcciones solo de errores frente a la ficha; ninguna se elige por su resultado.
+
+**Conley (Q3-b de V16 y H3 de V15)**
+- **Error.** `sparse_distance_matrix` de scipy ya guarda la diagonal (distancia 0) y el código la añadía otra vez, así que cada observación contaba dos veces en la varianza y el EE salía inflado. Afectaba a tres sitios:
+  - src/v16/montecarlo/conley_seccion.py;
+  - src/v16/q3_seccion.py;
+  - src/v15/pa_panel.py.
+- **Cómo se detectó.** La réplica de Q3-b daba un EE un 21 % menor. Con el núcleo corregido el EE de producción es idéntico al de la réplica (0,00124).
+- **Monte Carlo repetido** con el núcleo correcto, R = 4.000, sin cambiar el proceso generador: tamaño 0,096 y cobertura 0,904. Conley a 2 km pasa a **NO APTO**; su APTO anterior venía del error.
+- **Consecuencias:**
+  - Q3-b y H3 quedan solo con estimación puntual; los EE se dan como referencia, sin IC ni p.
+  - La tabla K12 se actualiza.
+  - En la rama de diseños queda un solo p válido (Q9-g). Su q de Benjamini-Yekutieli pasa de 0,153 a **0,306** (m = 21; K15 sigue valiendo, con el nuevo q).
+
+**H5 (V15): errores frente a DV15-B-1 y fugas**
+- **Causa.** La réplica daba una razón de 1,15 frente a 1,70. La reconciliación (output/v16/replica/h5/reconciliacion.md) encontró en producción:
+  - el primer origen estaba desplazado: ok + 24 + h en lugar de ok + 24 − 1;
+  - el AR(4) incluía en su estimación la fila del propio objetivo (i + h ≤ len en lugar de i + h ≤ t) y empezaba en 1995 en vez de en 2003T1;
+  - compraventas y ocupados estaban desestacionalizados con STL sobre toda la muestra, usando datos posteriores al origen.
+- **Correcciones.** Primer origen según DV15-B-1, AR(4) sin fuga y desde 2003T1, y STL reestimada en cada origen. Ninguna dato posterior al origen se usa; es una regla del proyecto, no una elección por resultado.
+- **Resultado corregido.** P = 53; razón ECM combinación / AR(4) = **1,51**; DM-HLN unilateral p = 0,866.
+- **Discrepancia restante.** La réplica da 1,15. Se debe a elecciones que la ficha deja abiertas (sobre todo LASSO y BVAR) y se reportan ambas cifras (regla de CLAUDE.md). La conclusión es la misma en las dos: la combinación no supera al AR(4).
+- **Error de la réplica.** El encadenado del IPC solo afecta a su ECM v1.
+
+**H4 (V15): imputación no declarada**
+- **Qué pasaba.** Los municipios sin población en el año base (2003) recibían instrumento 0 sin declararlo. La ficha define la cuota en el año base, así que esos municipios quedan fuera.
+- **Resultado.** N pasa de 13.442 a 13.417 y el coeficiente puntual de 0,29 a **0,305** % por punto. La réplica da 0,309 con N = 13.395; la diferencia restante de muestra es del 0,16 %, dentro de la tolerancia del coeficiente.
+
+**Réplicas que coinciden sin cambios:** Q9-g (5,919 frente a 5,92), E3 (ρ 0,392 frente a 0,39) y H1 (−7,18 % frente a −7,2 %).
+
+**Ninguna cifra de la 1.0 cambia.** Son resultados de V15 y V16 todavía no publicados en cifras_clave, así que no hay entrada en ERRATA.
+

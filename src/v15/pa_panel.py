@@ -33,9 +33,10 @@ def matriz_conley(xyz: np.ndarray, corte_km: float = 2.0) -> sp.csr_matrix:
     D = tree.sparse_distance_matrix(tree, corte_km, output_type="coo_matrix")
     n = len(xyz)
     idx = np.arange(n)
-    ii = np.concatenate([D.row, idx])
-    jj = np.concatenate([D.col, idx])
-    dd = np.concatenate([D.data, np.zeros(n)])
+    m = D.row != D.col  # la diagonal ya viene en D (distancia 0): se toma una sola vez (corrección K16)
+    ii = np.concatenate([D.row[m], idx])
+    jj = np.concatenate([D.col[m], idx])
+    dd = np.concatenate([D.data[m], np.zeros(n)])
     return sp.csr_matrix((np.maximum(0.0, 1 - dd / corte_km), (ii, jj)), shape=(n, n))
 
 

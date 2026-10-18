@@ -14,6 +14,7 @@ import pandas as pd
 warnings.filterwarnings("ignore")
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from src.v15.pb_comun import (OUT, Registry, SEED, cargar, dm_hln, escribe_json, hecho, mcs_pertenencia, resultado_base, serie_q)  # noqa: E402
+from src.build_dataset import stl_sa  # noqa: E402  (la misma STL que construyó las series *_sa; aquí se reestima en cada origen)
 
 CARPETA = OUT / "p9"
 MIN_FILAS = 24
@@ -28,6 +29,7 @@ def datos() -> pd.DataFrame:
     S["ptas"] = serie_q(d9, "p_tasado")
     S["ipv"] = serie_q(d9, "ipv")
     S["cv"] = serie_q(d9, "compraventas_sa")
+    S["cv_bruta"] = serie_q(d9, "compraventas")
     for v in ("hip_n", "hip_importe"):
         x = d9[(d9.variable == v) & (d9.nivel == "provincia")]
         x = x[x.periodo.astype(str).str.contains("T")].copy()
@@ -36,6 +38,7 @@ def datos() -> pd.DataFrame:
         S[v] = g["sum"].where(g["count"] >= g["count"].max() - 1)
     S["vis"] = serie_q(d9, "visados")
     S["ocu"] = serie_q(d9, "ocupados_sa")
+    S["ocu_bruta"] = serie_q(d9, "ocupados")
     S["cred"] = serie_q(d9, "credito_nuevo")
     S["tipo"] = serie_q(d9, "tipo_hip")
     S["eur"] = serie_q(d9, "euribor")
@@ -62,9 +65,9 @@ def reg_dir(Z, y):
     return b
 
 
-def f_ar(dy, t, Yh, h, dum):
-    rows = [i for i in range(4, t + 1) if i + h <= len(dy) - 1 and not np.isnan(Yh[i])]
-    rows = [i for i in rows if i >= 3 + 0]
+def f_ar(dy, t, Yh, h, dum, ini=4):
+    # solo filas cuyo objetivo se observa en el origen (i + h <= t) y con datos desde 2003T1 (corrección K16 tras la réplica de H5)
+    rows = [i for i in range(max(4, ini + 3), t + 1) if i + h <= t and not np.isnan(Yh[i])]
     Z = np.array([[1, dy[i], dy[i - 1], dy[i - 2], dy[i - 3]] + dum_row(dum, i, h) for i in rows])
     b = reg_dir(Z, Yh[rows])
     z = np.array([1, dy[t], dy[t - 1], dy[t - 2], dy[t - 3]] + dum_row(dum, t, h))
@@ -205,6 +208,16 @@ def f_ecm(D, X, lnp, dy, Yh, t, h, dum, ini):
     return z @ reg_dir(Z, y)
 
 
+def origen(D, X, t):
+    """D y X con compraventas y ocupados desestacionalizados por STL solo con los datos hasta el origen t (filas > t: NaN)."""
+    Dt, Xt = D.copy(), X.copy()
+    for col, bruta in (("cv", "cv_bruta"), ("ocu", "ocu_bruta")):
+        sa = stl_sa(D[bruta].iloc[:t + 1]).reindex(D.index)
+        Dt[col] = sa
+        Xt[col] = np.log(sa).diff()
+    return Dt, Xt
+
+
 def correr(D, X, medida, h, con_dummy, con_ecm=False):
     col = "dy_ptas" if medida == "ptas" else "dy_ipv"
     base = D["ptas"] if medida == "ptas" else D["ipv"]
@@ -218,18 +231,20 @@ def correr(D, X, medida, h, con_dummy, con_ecm=False):
     Vb = np.column_stack([dy, X[cols_b].values])
     # primer origen: MIN_FILAS filas completas de indicadores y objetivo
     ok = np.where(np.all(np.isfinite(Xm), axis=1) & np.isfinite(dy))[0]
-    t0 = ok[0] + MIN_FILAS + h
+    t0 = ok[0] + MIN_FILAS - 1  # primer origen con MIN_FILAS trimestres completos (DV15-B-1; corrección K16)
     modelos = ["AR4", "DFM", "BVAR", "LASSO", "ARDL", "Combinacion", "RWD"] + (["ECMv1"] if con_ecm else [])
     out = {m: [] for m in modelos}
     real, orig = [], []
     for t in range(t0, len(lnp) - h):
         if np.isnan(Yh[t]):
             continue
-        fc = {"AR4": f_ar(np.where(np.isnan(dy), 0.0, dy), t, Yh, h, dum), "DFM": f_dfm(Xm, dy, Yh, t, h, dum), "BVAR": f_bvar(Vb, Yh, t, h, dum),
-              "LASSO": f_lasso(Xm, dy, Yh, t, h, dum), "ARDL": f_ardl(dy, X.cv.values, X.hn.values, Yh, t, h, dum), "RWD": f_rwd(dy, t, h, max(ini, 1))}
+        Dt, Xt = origen(D, X, t)  # desestacionalización con datos hasta el origen (sin datos posteriores; corrección K16)
+        Xm, Vb = Xt.values, np.column_stack([dy, Xt[cols_b].values])
+        fc = {"AR4": f_ar(np.where(np.isnan(dy), 0.0, dy), t, Yh, h, dum, ini), "DFM": f_dfm(Xm, dy, Yh, t, h, dum), "BVAR": f_bvar(Vb, Yh, t, h, dum),
+              "LASSO": f_lasso(Xm, dy, Yh, t, h, dum), "ARDL": f_ardl(dy, Xt.cv.values, Xt.hn.values, Yh, t, h, dum), "RWD": f_rwd(dy, t, h, max(ini, 1))}
         fc["Combinacion"] = np.mean([fc["DFM"], fc["BVAR"], fc["LASSO"], fc["ARDL"]])
         if con_ecm:
-            fc["ECMv1"] = f_ecm(D, X, lnp, dy, Yh, t, h, dum, ini)
+            fc["ECMv1"] = f_ecm(Dt, Xt, lnp, dy, Yh, t, h, dum, ini)
         for m in modelos:
             out[m].append(Yh[t] - fc[m])
         real.append(Yh[t])

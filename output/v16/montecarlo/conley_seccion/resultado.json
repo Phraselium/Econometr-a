@@ -14,20 +14,23 @@
   "p_ajustado": null,
   "nivel_evidencia": "no aplica (validación Monte Carlo)",
   "diagnosticos": {
-    "veredicto": "APTO (solo escenario principal; no robusto a la sensibilidad del rango espacial)",
+    "veredicto": "NO APTO → diseño solo descriptivo",
     "criterio": {
-      "veredicto": "APTO",
-      "fallos": []
+      "veredicto": "NO APTO",
+      "fallos": [
+        "tamaño 0.0963 fuera de [0.04; 0.06]",
+        "cobertura 0.9038 fuera de [0.92; 0.97]"
+      ]
     },
-    "tamano_conley": 0.0435,
-    "cobertura_conley": 0.9565,
-    "potencia": 0.65425,
+    "tamano_conley": 0.09625,
+    "cobertura_conley": 0.90375,
+    "potencia": 0.78025,
     "tamano_hc1": 0.23625,
     "R": 4000,
     "semilla": 20261010,
     "vecinos_medios_2km": 46.645307443365695,
     "pasa_sensibilidad": {
-      "sens: radio 0,5 km": false,
+      "sens: radio 0,5 km": true,
       "sens: radio 1,5 km (correlación hasta 3 km, mayor que el corte)": false
     }
   },

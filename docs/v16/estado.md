@@ -84,6 +84,13 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
 
 ## Siguiente
 - Parada D (B-2) resuelta con K15.
+- **Réplica ciega (K16).**
+  - Coinciden: Q9-g, E3 y H1.
+  - Q3-b, H5 y H4 discrepaban y se resolvieron:
+    - núcleo de Conley corregido: Conley pasa a NO APTO, y Q3-b y H3 quedan puntuales;
+    - H5: tres errores corregidos; razón 1,51 frente a 1,15 en la réplica, misma conclusión;
+    - H4: imputación retirada, 0,305.
+  - En la rama de diseños, el q de Q9-g es ahora 0,306.
 - Fase 6, resto:
   - réplica ciega de los resultados citados;
   - doble implementación (solo C3/C3s: no hay);
@@ -139,6 +146,12 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-17 | F6 | modelizador | v15_grupo_B_h4_h5_e1_e2_e3 | 180.001 | src/v15/p4_inmigracion.py;output/v15/p4;output/v15/p9;output/v15/p2;output/v15/p7;output/v15/p10 |
 | 2026-10-17 | F6 | modelizador | v15_grupo_A_h1_h2_h3_e4 | 200.805 | src/v15/p6_zonas.py;output/v15/p6;output/v15/p5;output/v15/p5cv |
 | 2026-10-18 | F6 | replicador-ciego | replica_q9g | 27.198 | src/v16/replica/q9g.py;output/v16/replica/q9g |
+| 2026-10-18 | F6 | replicador-ciego | replica_q3b | 27.003 | src/v16/replica/q3b.py;output/v16/replica/q3b |
+| 2026-10-18 | F6 | replicador-ciego | replica_e3 | 24.686 | src/v16/replica/e3.py;output/v16/replica/e3 |
+| 2026-10-18 | F6 | replicador-ciego | replica_h5 | 39.909 | src/v16/replica/h5.py;output/v16/replica/h5 |
+| 2026-10-18 | F6 | replicador-ciego | replica_h1 | 35.255 | src/v16/replica/h1.py;output/v16/replica/h1 |
+| 2026-10-18 | F6 | replicador-ciego | replica_h4 | 38.087 | src/v16/replica/h4.py;output/v16/replica/h4 |
+| 2026-10-18 | F6 | econometrician | reconciliacion_h5 | 76.212 | output/v16/replica/h5/reconciliacion.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -147,8 +160,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | F3 | 1.160.356 |
 | F4 | 555.674 |
 | F5 | 771.025 |
-| F6 | 1.036.693 |
+| F6 | 1.277.845 |
 
-Total V16: 6.167.275 tokens
+Total V16: 6.408.427 tokens
 
 <!-- fin subagentes -->

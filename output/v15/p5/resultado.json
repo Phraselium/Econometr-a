@@ -8,39 +8,30 @@
     "secciones": 12976,
     "municipios": 1523
   },
-  "metodo": "MCO con efectos fijos de sección y de municipio × año; exposición estandarizada por la DT intra-sección; error de Conley a 2 km (APTO condicionado) y agrupado por municipio (descriptivo)",
+  "metodo": "MCO con efectos fijos de sección y de municipio × año; exposición estandarizada por la DT intra-sección; solo estimación puntual (Conley 2 km NO APTO tras K16; agrupado por municipio sin validar)",
   "estimacion": {
     "beta_pct_por_DT": 0.002988665885207569,
-    "ic95_conley_condicionado_pct_por_DT": [
-      -0.0896958452200588,
-      0.09567317699047394
-    ],
-    "se_conley_pct": 0.04728801587003387,
-    "se_municipio_pct": 0.04098638577314971,
+    "se_conley_pct_referencia_no_valida": 0.034708949254869795,
+    "se_municipio_pct_referencia_no_valida": 0.04098638577314971,
     "rango_multiverso_pct_por_DT": [
       0.002988665885207569,
       0.22010969922436519
     ],
-    "especificaciones_con_p_conley_lt_0.05": "1 de 24",
     "referencia_literatura_pct_por_DT": "2-6 (preregistro §3 H3, no verificada aquí)"
   },
-  "ic95": [
-    -0.0896958452200588,
-    0.09567317699047394
-  ],
+  "ic95": null,
   "p_ajustado": null,
-  "nivel_evidencia": "EXPLORATORIO",
+  "nivel_evidencia": "DESCRIPTIVO",
   "diagnosticos": {
-    "inferencia": "principal pre-registrada (agrupada por municipio): sin validación Monte Carlo en panel T = 4 -> descriptiva; alternativa Conley 2 km: APTO en V16 solo en su escenario principal (corte transversal) -> aplicada con la marca «APTO condicionado: panel T = 4 no validado»",
+    "inferencia": "principal pre-registrada (agrupada por municipio): sin validación Monte Carlo en panel T = 4 -> descriptiva; alternativa Conley 2 km: NO APTO tras corregir el núcleo (decisión K16 de docs/v16/decisiones.md) -> solo estimación puntual; los errores típicos se dan como referencia, sin IC ni p",
     "placebo_adelanto": {
       "beta_lead_pct_por_DT": -0.005680614476159152,
-      "p_conley": 0.7648565045190083,
-      "p_municipio_descriptivo": 0.6579889665213337,
-      "superado": true
+      "superado": null,
+      "nota": "sin inferencia válida: coeficiente puntual"
     },
     "exclusion_grandes_ciudades": {
       "beta_pct_por_DT": 0.010990674532952731,
-      "se_conley_pct": 0.05073879235250136,
+      "se_conley_pct": 0.03655386143926164,
       "mismo_signo": true,
       "excluidas": [
         "08019",
@@ -49,7 +40,7 @@
     },
     "exclusion_1pct_superior": {
       "beta_pct_por_DT": 0.01582803471434135,
-      "se_conley_pct": 0.12051983483173162
+      "se_conley_pct": 0.08592173419413761
     },
     "resultado_alternativo_IPVA_distrito": {
       "anio": {
@@ -74,7 +65,7 @@
       ],
       "nota": "pesos de distancia inversa truncada a 2 km; solo estadístico, sin p"
     },
-    "cinelli_hazlett_RV_q1": 0.000353321098036077,
+    "cinelli_hazlett_RV_q1": 0.0004813393716107068,
     "oster": {
       "delta": 0.0187370346171341,
       "R2_corto": 0.991791753849231,
@@ -84,7 +75,7 @@
     },
     "e_value": "no aplica (resultado continuo, efecto prácticamente nulo)",
     "MDE80_pct_por_DT": {
-      "conley": 0.1324064444360948,
+      "conley": 0.09718505791363544,
       "municipio": 0.11476188016481918,
       "umbral_adenda_exploratoria": 1.0,
       "supera_umbral": false
@@ -96,7 +87,7 @@
       "dt_intra_secciones_media_pct_ge_1": 1.249824768744985,
       "n_secciones_media_pct_ge_1": 2963,
       "beta_log_por_DT_secciones_expuestas": 0.00035840325536666887,
-      "se_conley_expuestas": 0.0010085065982111327,
+      "se_conley_expuestas": 0.0007352469938886958,
       "se_mun_expuestas": 0.0008650211553093026,
       "n_obs_expuestas": 11655,
       "corr_pct_n": 0.6558157584532814,
@@ -107,7 +98,7 @@
     "raices_unitarias_cointegracion_rupturas": "no aplica (T = 4)",
     "no_validadas": [
       "error agrupado por municipio en panel T = 4",
-      "Conley en panel T = 4 (APTO solo en el corte transversal del escenario principal)"
+      "Conley 2 km (NO APTO tras corregir el núcleo, K16)"
     ]
   },
   "fuera_muestra": {
@@ -119,10 +110,9 @@
   "p_valores_para_BY": [
     {
       "hipotesis": "H3",
-      "p": 0.9496061791588861,
-      "inferencia": "Conley 2 km, APTO condicionado (T = 4 no validado)",
-      "familia": "asociación pre-registrada, α = 0,05, fuera de Holm",
-      "p_municipio_descriptivo": 0.9418709700439569
+      "p": null,
+      "inferencia": "Conley 2 km NO APTO tras K16; agrupado por municipio sin validar",
+      "familia": "asociación pre-registrada, fuera de Holm"
     }
   ],
   "notas": "Asociación C4, sin lenguaje causal. SERPAVI = stock de contratos declarados (no contratos nuevos); la evaluación con SERPAVI 2025 y el bloque espacial son réplicas posteriores no hechas. Desviaciones: DV15-A, A5.",

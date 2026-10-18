@@ -1,0 +1,51 @@
+{
+  "rama": "v16/replica",
+  "pregunta": "H5 (P9) replica ciega",
+  "capa": "C4 predictivo",
+  "datos": "data/processed/v15/p9_prediccion.parquet, p2_fundamentales.parquet",
+  "N": 53,
+  "metodo": "combinacion media simple DFM+BVAR+LASSO+ARDL vs AR(4); h=1; expansiva; DM-HLN unilateral",
+  "estimacion": {
+    "razon_ECM_comb_AR4": 1.1534880177583153,
+    "ECM": {
+      "DFM": 0.00011325193100615785,
+      "BVAR": 0.00010567346088830308,
+      "LASSO": 0.00015290431288145177,
+      "ARDL": 0.00013669704773626795,
+      "AR4": 9.949723066790193e-05,
+      "ECM": 0.00016987352483390422,
+      "RW": 0.00014837966099061632,
+      "COMB": 0.00011476886337556006
+    },
+    "razones": {
+      "DFM": 1.138242041973669,
+      "BVAR": 1.0620743932161885,
+      "LASSO": 1.5367695347402177,
+      "ARDL": 1.3738779141756232,
+      "AR4": 1.0,
+      "ECM": 1.707319125302106,
+      "RW": 1.491294380703643,
+      "COMB": 1.1534880177583153
+    },
+    "DM_HLN_t": -0.9212692003541096
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "p_dm_hln_unilateral": 0.8194177615382978,
+  "nivel_evidencia": "DESCRIPTIVO",
+  "primer_origen": "2013T1",
+  "primer_objetivo": "2013T2",
+  "ultimo_objetivo": "2026T2",
+  "comparacion": {
+    "referencia": {
+      "P": 51,
+      "razon_ecm": 1.7,
+      "p_dm": 0.894
+    },
+    "P_igual": false,
+    "dif_rel_razon": 0.3214776366127557,
+    "conclusion_5pct_igual": true,
+    "veredicto": "DISCREPA"
+  },
+  "notas": "SEED=20261010; sin sellada."
+}

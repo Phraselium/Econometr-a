@@ -1,7 +1,7 @@
 """V16 · fase 6 · Q3-b: correlación transversal por sección (adenda, punto 3) y prueba conjunta BLP/GATES de Q3 (punto 13).
 
 Especificación principal: Δlog SERPAVI €/m² (VC, mediana, 2021→2024) = β · cuota de extranjeros 2022 (estandarizada, DT entre secciones)
-+ efectos fijos de municipio; inferencia: Conley a 2 km (núcleo de Bartlett, normal). APTO solo en el escenario principal y NO robusto a la
++ efectos fijos de municipio; Conley a 2 km (núcleo de Bartlett) solo como referencia: NO APTO tras corregir el núcleo (K16); antes, NO robusto a la
 sensibilidad del rango espacial (veredicto K12): los radios 0,5 y 1,5 km NO pasan, y la estimación puntual no depende del radio.
 BLP/GATES: NO APTO → solo estimación puntual descriptiva. Capa C4 (correlación). Ejecución: python src/v16/q3_seccion.py
 """
@@ -85,9 +85,10 @@ def kernel(xyz: np.ndarray, corte: float = CORTE_KM):
     tree = cKDTree(xyz)
     D = tree.sparse_distance_matrix(tree, corte, output_type="coo_matrix")
     n = len(xyz)
-    ii = np.concatenate([D.row, np.arange(n)])
-    jj = np.concatenate([D.col, np.arange(n)])
-    dd = np.concatenate([D.data, np.zeros(n)])
+    m = D.row != D.col  # la diagonal ya viene en D (distancia 0): se toma una sola vez (corrección K16)
+    ii = np.concatenate([D.row[m], np.arange(n)])
+    jj = np.concatenate([D.col[m], np.arange(n)])
+    dd = np.concatenate([D.data[m], np.zeros(n)])
     return sp.csr_matrix((np.maximum(0.0, 1 - dd / corte), (ii, jj)), shape=(n, n))
 
 
@@ -186,9 +187,9 @@ def main():
 
     # principal
     P = ajustar(D, "dy", "x", True)
-    anotar("Q3-b|VC|cuota_ext|2021-2024|Conley2km|PRINCIPAL", "dlogSERPAVI ~ cuota_ext_std + FE municipio", P, True, "Conley 2 km APTO solo escenario principal", True)
+    anotar("Q3-b|VC|cuota_ext|2021-2024|Conley2km|PRINCIPAL", "dlogSERPAVI ~ cuota_ext_std + FE municipio", P, True, "Conley 2 km NO APTO tras corregir el núcleo (K16): EE solo de referencia", True)
     res["principal"] = {k: P[k] for k in ["beta_por_DT", "se", "t", "p", "ic95", "n", "n_mun", "r2_total", "r2_within", "vecinos_medios", "dof"]}
-    res["p_valores_para_BY"] = [{"id": "Q3-b|principal", "p": P["p"], "rama": "diseños"}]
+    res["p_valores_para_BY"] = [{"id": "Q3-b|principal", "p": None, "rama": "diseños", "nota": "Conley 2 km NO APTO tras K16"}]
     # multiverso (8): tipología × exposición × ventana (puntuales; Conley solo en la principal)
     for tip, xc, vent in [(t, x, v) for t in ["VC", "VU"] for x in ["cuota_ext", "cuota_no_europea"] for v in ["2021-2024", "2022-2024"]]:
         if (tip, xc, vent) == ("VC", "cuota_ext", "2021-2024"):

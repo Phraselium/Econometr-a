@@ -352,9 +352,6 @@ def comparar_y_guardar():
         "V8-VOTOS-c-P5": {"valor": 1, "min": None, "max": None},
     }
 
-    def rel(a, b):
-        return None if a is None or b is None or b == 0 else abs(a - b) / abs(b)
-
     diag = {
         "V8-H8-9-est": "PCA de 1 factor sobre 17 CCAA (precio tasado real, tasa interanual log, estandarizado), correlacion con HPI EA19 nominal interanual 2006T1-2026T2 (74 trimestres con panel completo), IC95 por bootstrap de bloques circulares L=8, B=2000. Navarra no tiene valor tasado 2015T1-2018T4: interpolacion lineal (supuesto propio). Variantes (covarianza, nominal, IPV, quitar Navarra) dan 0,51-0,71, ninguna reproduce el publicado: la diferencia es de definicion de la serie del factor (real/nominal, tratamiento del hueco de Navarra, muestra); la ficha no fija esos detalles.",
         "V8-M1-cuota-c-P5": "PCA de 1 componente dentro de P5 (2022T3-2026T2, T=16, 17 CCAA, tasa interanual de precio tasado real en log, estandarizado). Valor coincide a 1e-11 y el limite superior al 0,006 %; el limite inferior de la banda 68 % (bootstrap de bloques circulares L=8, B=2000, semilla 20261010) difiere un 1,09 %, apenas por encima del 1 %: ruido de remuestreo (el generador y el esquema exacto de bloques del original no estan en la ficha). Sustancialmente replicado; formalmente DISCREPA por el limite inferior.",

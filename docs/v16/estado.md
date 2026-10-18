@@ -91,6 +91,13 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
     - H5: tres errores corregidos; razón 1,51 frente a 1,15 en la réplica, misma conclusión;
     - H4: imputación retirada, 0,305.
   - En la rama de diseños, el q de Q9-g es ahora 0,306.
+- **Triangulación** (src/v16/f6_triangulacion.py, output/v16/triangulacion/):
+  - Ningún grupo de la literatura admite metaanálisis, así que se compara el signo.
+  - Se apartan Q2c y Q6-v, explicados y descriptivos.
+  - Entre diseños, el único par con signo distinto es H3 frente a Q2c.
+- **Doble implementación:** no aplica; ninguna cifra es candidata a C3 o C3s.
+- **evaluate_v16:** no aplica; ninguna pregunta cumple (a) y (b).
+- **evaluate_v15:** según su calendario.
 - Fase 6, resto:
   - réplica ciega de los resultados citados;
   - doble implementación (solo C3/C3s: no hay);

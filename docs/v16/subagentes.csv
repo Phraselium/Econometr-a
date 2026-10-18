@@ -58,3 +58,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-18,F6,replicador-ciego,replica_1_0_lote_b2,43632,src/v16/replica/v10_b2.py;output/v16/replica/v10_b2
 2026-10-18,F6,econometrician,reconciliacion_1_0_v8,149141,output/v16/replica/v10_d/reconciliacion.md
 2026-10-18,F6,econometrician,reconciliacion_1_0_gsadf_r6,157336,output/v16/replica/v10_c/reconciliacion.md
+2026-10-18,F7,redactor,informe_partes_I_IV,119813,output/v16/informe/plantilla/01_parte_i_diagnostico.md;output/v16/informe/plantilla/04_parte_iv_territorios.md

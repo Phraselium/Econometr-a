@@ -29,7 +29,7 @@ from src.v14 import terceros_1_0 as T10  # noqa: E402
 PLANT = ROOT / "docs" / "v5" / "plantillas"
 OUT = ROOT / "output" / "v5"
 PROYECTO = json.loads((ROOT / "proyecto.json").read_text(encoding="utf-8"))
-MARC = re.compile(r"\{\{([A-Za-z0-9_.\-]+)(?::([a-z_]+))?\}\}")
+MARC = re.compile(r"\{\{([A-Za-z0-9_.+\-]+)(?::([a-z_]+))?\}\}")
 
 
 CONTEOS = {"instrumentos", "variables", "hipótesis", "CCAA", "referencias", "afirmaciones", "distritos", "documentos", "medidas", "especificaciones",

@@ -1,0 +1,30 @@
+[
+ {
+  "id": "V16-Q3-b-mediana",
+  "indicador": "Q3-b: mediana de las 6 especificaciones del multiverso (min/max = extremos; correlación frágil, sin inferencia válida)",
+  "valor": 0.005752770186380447,
+  "min": 0.0034453761546201374,
+  "max": 0.009077270952434798,
+  "unidad": "log por desviación típica",
+  "periodo": "2021-2024",
+  "cobertura": "9916 secciones en 748 municipios",
+  "fuentes": "MIVAU SERPAVI (VC); INE padrón por sección; mediana leída de output/v16/q3/resultado.json (estimacion.Q3-b.multiverso)",
+  "capa": "C4",
+  "fecha_dato": "2024",
+  "ficha": "output/v16/q3/informe.md#q3-b"
+ },
+ {
+  "id": "V15-H4-mediana",
+  "indicador": "H4: mediana de las 64 especificaciones del multiverso, % por punto (min/max = extremos; correlación frágil)",
+  "valor": 0.0795,
+  "min": -0.1426,
+  "max": 0.3883,
+  "unidad": "% por p.p.",
+  "periodo": "2012-2022",
+  "cobertura": "1273 municipios de entrenamiento",
+  "fuentes": "INE padrón; MIVAU SERPAVI; mediana leída de output/v15/p4/resultado.json (diagnosticos.multiverso_64, ×100)",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v15/p4/informe.md#beta"
+ }
+]

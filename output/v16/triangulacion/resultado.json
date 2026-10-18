@@ -23,7 +23,7 @@
   {
    "id": "H1-SDID",
    "pregunta": "Ídem, SDID",
-   "estimacion": -3.6420740265707074,
+   "estimacion": -3.6420740265706297,
    "unidad": "%",
    "fuente": "output/v15/p6/resultado_H1.json#estimacion.SDID_att_pct",
    "referencia_prereg": null,
@@ -39,7 +39,7 @@
   {
    "id": "H2-PPML",
    "pregunta": "Zonas tensionadas y número de contratos",
-   "estimacion": -9.948082837419877,
+   "estimacion": -9.948082837419983,
    "unidad": "%",
    "fuente": "output/v15/p6/resultado_H2.json#estimacion.PPML_principal_pct",
    "referencia_prereg": null,
@@ -71,7 +71,7 @@
   {
    "id": "H3",
    "pregunta": "Vivienda turística y alquiler por sección",
-   "estimacion": 0.002988665885207569,
+   "estimacion": 0.0029886658852076565,
    "unidad": "% por DT",
    "fuente": "output/v15/p5/resultado.json#estimacion.beta_pct_por_DT",
    "referencia_prereg": null,
@@ -123,7 +123,7 @@
   {
    "id": "H4",
    "pregunta": "Inmigración y alquiler municipal (shift-share)",
-   "estimacion": 0.3052400588237127,
+   "estimacion": 0.3052400588237088,
    "unidad": "% por p.p.",
    "fuente": "output/v15/p4/resultado.json#estimacion.beta_pp_alquiler_por_pp_poblacion_extranjera",
    "referencia_prereg": null,

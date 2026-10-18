@@ -119,7 +119,11 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - Fase 7: la Parte VII incorpora la revisión de K15 (K20).
   - make check en solitario: 666 tests, 0 errores, git sin cambios (2026-10-18). check_v13 admite una cifra nueva solo con «id | nueva» en ERRATA.
 - **K21 (2026-10-18).** E1 corregido también en v6 M1B, sin datos sellados: solo cambian 4 valores críticos. Tests de check_v13 añadidos. que_cambio explica la errata. Anexos de erratas y de reproducibilidad preparados para el informe integral.
-- **Fase 7: informe integral.** Redactor, verificador de cifras y árbitro final; integrar en cifras_clave las cifras V16-* citables (K17); tablas_v16.xlsx, web y make v16.
+- **Fase 7 (hecha, 2026-10-18; K22-K23).**
+  - Informe integral en publicacion/informe_integral/, generado con make (v16_f7 y publicacion).
+  - Cifras V15/V16 en cifras_clave (219), tablas_v16.xlsx, página web «Informe integral», sección del manuscrito y anexos de erratas y reproducibilidad.
+  - Tres rondas de arbitraje respondidas, dos verificaciones de cifras y make v16 completo.
+  - Preparación de la 2.0: árbol de ensayo limpio; 14 ficheros de terceros pendientes del autor.
 - Fases 5-7 de V16:
   - fase 5: Monte Carlo de las herramientas;
   - fase 6: estimación exploratoria con la rejilla fija y los diseños de la adenda;
@@ -203,6 +207,7 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-18 | F7 | verificador-cifras | verificacion_informe_integral_2 | 174.825 | - |
 | 2026-10-18 | F7 | redactor | correccion_ronda_2 | 268.061 | output/v16/informe/plantilla/ |
 | 2026-10-18 | F7 | arbitro-final | arbitraje_informe_integral_3 | 60.408 | - |
+| 2026-10-18 | F7 | redactor | - | 0 | - |
 
 | Fase | Tokens de subagentes |
 |---|---|

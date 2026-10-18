@@ -10,12 +10,12 @@
   },
   "metodo": "MCO con efectos fijos de sección y de municipio × año; exposición estandarizada por la DT intra-sección; solo estimación puntual (Conley 2 km NO APTO tras K16; agrupado por municipio sin validar)",
   "estimacion": {
-    "beta_pct_por_DT": 0.002988665885207569,
-    "se_conley_pct_referencia_no_valida": 0.034708949254869795,
-    "se_municipio_pct_referencia_no_valida": 0.04098638577314971,
+    "beta_pct_por_DT": 0.0029886658852076565,
+    "se_conley_pct_referencia_no_valida": 0.0347089492548697,
+    "se_municipio_pct_referencia_no_valida": 0.04098638577314958,
     "rango_multiverso_pct_por_DT": [
-      0.002988665885207569,
-      0.22010969922436519
+      0.0029886658852076565,
+      0.2201096992243651
     ],
     "referencia_literatura_pct_por_DT": "2-6 (preregistro §3 H3, no verificada aquí)"
   },
@@ -30,8 +30,8 @@
       "nota": "sin inferencia válida: coeficiente puntual"
     },
     "exclusion_grandes_ciudades": {
-      "beta_pct_por_DT": 0.010990674532952731,
-      "se_conley_pct": 0.03655386143926164,
+      "beta_pct_por_DT": 0.010990674532952804,
+      "se_conley_pct": 0.03655386143926168,
       "mismo_signo": true,
       "excluidas": [
         "08019",
@@ -39,8 +39,8 @@
       ]
     },
     "exclusion_1pct_superior": {
-      "beta_pct_por_DT": 0.01582803471434135,
-      "se_conley_pct": 0.08592173419413761
+      "beta_pct_por_DT": 0.01582803471434137,
+      "se_conley_pct": 0.08592173419413797
     },
     "resultado_alternativo_IPVA_distrito": {
       "anio": {
@@ -56,27 +56,27 @@
     },
     "exclusion_saltos_factor_10": "ver multiverso (muestra «sin_saltos», 12 de 24 especificaciones)",
     "moran_residuos": {
-      "I_media_anual": -0.07377363895214782,
+      "I_media_anual": -0.0737736389521478,
       "I_por_anio": [
-        -0.07009827828398583,
-        -0.08396216487346712,
-        -0.0788459466539241,
-        -0.0621881659972142
+        -0.07009827828398581,
+        -0.0839621648734671,
+        -0.07884594665392405,
+        -0.062188165997214204
       ],
       "nota": "pesos de distancia inversa truncada a 2 km; solo estadístico, sin p"
     },
-    "cinelli_hazlett_RV_q1": 0.0004813393716107068,
+    "cinelli_hazlett_RV_q1": 0.00048133937161072234,
     "oster": {
-      "delta": 0.0187370346171341,
+      "delta": 0.01873703461713474,
       "R2_corto": 0.991791753849231,
       "R2_largo": 0.9944646515706584,
       "Rmax": 1.0,
-      "beta_corto_pct": 0.08001050502946941
+      "beta_corto_pct": 0.08001050502946916
     },
     "e_value": "no aplica (resultado continuo, efecto prácticamente nulo)",
     "MDE80_pct_por_DT": {
-      "conley": 0.09718505791363544,
-      "municipio": 0.11476188016481918,
+      "conley": 0.09718505791363515,
+      "municipio": 0.11476188016481882,
       "umbral_adenda_exploratoria": 1.0,
       "supera_umbral": false
     },
@@ -86,9 +86,9 @@
       "dt_intra_pct_puntos": 0.6121415439644932,
       "dt_intra_secciones_media_pct_ge_1": 1.249824768744985,
       "n_secciones_media_pct_ge_1": 2963,
-      "beta_log_por_DT_secciones_expuestas": 0.00035840325536666887,
+      "beta_log_por_DT_secciones_expuestas": 0.000358403255366668,
       "se_conley_expuestas": 0.0007352469938886958,
-      "se_mun_expuestas": 0.0008650211553093026,
+      "se_mun_expuestas": 0.0008650211553093029,
       "n_obs_expuestas": 11655,
       "corr_pct_n": 0.6558157584532814,
       "corr_pct_plazas": 0.6285962483429133,

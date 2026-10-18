@@ -12,7 +12,7 @@ Tres reglas de lectura:
 **Qué no se puede afirmar.** Ni que haya una burbuja ni que no la haya [C4].
 
 **La pista de V16 (Q9-g), no confirmada [C4].**
-- Q9-g mide la exuberancia estadística (GSADF) del factor común del cociente entre el valor tasado y el IPC de alquiler. El estadístico es {{V16-Q9-g:num}}; el valor crítico bootstrap del 95 % es {{V16-Q9-g:min}}. <!-- check:cifra-libre (id de pregunta y nivel del 95 % del diseño) -->
+- Q9-g mide la exuberancia estadística (GSADF) del factor común del cociente entre el valor tasado y el IPC de alquiler. El estadístico es {{V16-Q9-g:num}}; el valor crítico bootstrap del 95 % es {{V16-Q9-g:min_num}}. <!-- check:cifra-libre (id de pregunta y nivel del 95 % del diseño) -->
 - El p sin ajuste es {{V16-Q9-gp:sig}}. <!-- check:cifra-libre (id de pregunta) -->
 - Con el control de falsos descubrimientos de Benjamini-Yekutieli sobre la rama de diseños (m = 21), el q es {{V16-FDR-Q9-g-q:sig}}. El umbral pre-registrado es q ≤ 0,10 y no se alcanza. Por eso es una pista y no un hallazgo. <!-- check:cifra-libre (m = 21 y umbral q ≤ 0,10 del diseño) -->
 - Q9 no tiene magnitud de referencia pre-registrada, así que tampoco se cumple la condición de tamaño. <!-- check:cifra-libre (id de pregunta) -->
@@ -149,7 +149,7 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 **Qué no se puede afirmar.** Que algún modelo del proyecto prediga el precio nacional mejor que un AR(4) sencillo, ni que las variables que ayudan a predecir sean las que lo mueven. <!-- check:cifra-libre (AR(4): nombre del modelo) -->
 
 **Por qué.**
-- **H5 (V15).** La combinación de DFM, BVAR, LASSO y ARDL no supera al AR(4). La razón del ECM frente al AR(4) es mayor que uno en todas las implementaciones. Rango entre implementaciones (réplica ciega y producción pre-registrada): {{V15-H5-razon-replica:rango}} [C4]. La pre-registrada es {{V15-H5-razon-ecm:num}} [C4]. La conclusión es la misma en todas. Estado del DM-HLN: apto bajo el proceso generador de V15 y no apto bajo el de V16; no se usa como prueba. <!-- check:cifra-libre (ids de hipótesis, versiones y AR(4)) -->
+- **H5 (V15).** La combinación de DFM, BVAR, LASSO y ARDL no supera al AR(4). La razón del ECM frente al AR(4) es mayor que uno en todas las implementaciones. Rango entre implementaciones (réplica ciega y producción pre-registrada): {{V15-H5-razon-replica:min_num}} a {{V15-H5-razon-replica:max_num}} [C4]. La pre-registrada es {{V15-H5-razon-ecm:num}} [C4]. La conclusión es la misma en todas. Estado del DM-HLN: apto bajo el proceso generador de V15 y no apto bajo el de V16; no se usa como prueba. <!-- check:cifra-libre (ids de hipótesis, versiones y AR(4)) -->
 - **Q10 (V16).** MIDAS y el nowcasting no mejoran al AR(4) en el IPV ni en el IPC de alquiler. En las compraventas, la mejora aparente desaparece al excluir 2020. En el IPV, los intervalos conformes de MIDAS y del AR(4) cubren menos que su nivel nominal. Las cifras de Q10 no se citan. <!-- check:cifra-libre (id de pregunta, versión, AR(4) y año) -->
 - **Datos.** Las series son revisadas, no en tiempo real.
 - **Alcance de estos resultados.** H5, Q10 y las pruebas de V8 se refieren al agregado nacional trimestral. <!-- check:cifra-libre (nombres de versión) -->

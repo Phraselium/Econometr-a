@@ -257,6 +257,7 @@ Diagnóstico exploratorio (R=120, B=149, src/v16/montecarlo/cips_bootstrap_diagn
 - **Nulo:** β = 0 (tamaño). **Alternativa:** β = 0.05 (DT de y por DT de x; Q3-b no tiene magnitud de referencia): sesgo, RMSE, cobertura y potencia.
 - **Estimación:** MCO de y sobre x con efectos fijos de municipio (demedia intra-municipio). Inferencia: Conley con núcleo de Bartlett (triangular) a 2 km, normal.
   Si la varianza de Conley sale no positiva (el núcleo triangular no es semidefinido positivo en 2D) la réplica cuenta como no rechazo y se informa su frecuencia.
+- **Corrección K16 (2026-10-18).** La primera ejecución sumaba dos veces la diagonal del núcleo (scipy ya la guarda con distancia 0), lo que inflaba el EE; con ese error salió APTO (tamaño 0,0435, cobertura 0,9565). La réplica ciega de Q3-b lo detectó. Esta tabla es la del núcleo correcto; el campo W del proceso generador no se ha cambiado.
   Referencias (no candidatas): EE robustos HC1 y EE agrupados por municipio.
 - **Alternativa nombrada en el punto 3:** ninguna (Conley a 2 km es la principal). Si no pasa → «NO APTO → diseño solo descriptivo».
 - **Pocos clusters / T corto:** corte transversal; dependencia por distancia; sin dimensión temporal.

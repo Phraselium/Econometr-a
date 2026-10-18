@@ -4,30 +4,30 @@ regulación del alquiler (Q1),municipio,incasol_renta_media,alquiler,705
 regulación del alquiler (Q1),municipio,emal_renta_mensual_eur,alquiler,20
 regulación del alquiler (Q1),municipio,p_tasado,compra,1
 regulación del alquiler (Q1),municipio,fianzas_importe_mediana,alquiler,1
-regulación del alquiler (Q1),municipio,serpavi_alquiler_m2_mediana,alquiler,2759
-regulación del alquiler (Q1),municipio,ipva_tam_indice,alquiler,528
 regulación del alquiler (Q1),municipio,serpavi_n_contratos_recuento,alquiler,5860
 regulación del alquiler (Q1),municipio,incasol_contratos,alquiler,945
 regulación del alquiler (Q1),municipio,ipva,compra,1
+regulación del alquiler (Q1),municipio,ipva_tam_indice,alquiler,528
+regulación del alquiler (Q1),municipio,serpavi_alquiler_m2_mediana,alquiler,2759
 regulación del alquiler (Q1),provincia,ipc_alquiler_indice,alquiler,41
 regulación del alquiler (Q1),provincia,hip_importe,volumen,41
 regulación del alquiler (Q1),provincia,hip_n,volumen,41
 regulación del alquiler (Q1),provincia,compraventas,volumen,41
 regulación del alquiler (Q1),provincia,ipva_indice,alquiler,38
-regulación del alquiler (Q1),provincia,p_tasado,compra,1
 regulación del alquiler (Q1),provincia,fianzas_importe_mediana,alquiler,3
-regulación del alquiler (Q1),provincia,valor_tasado,compra,38
-regulación del alquiler (Q1),provincia,serpavi_alquiler_m2_mediana,alquiler,41
-regulación del alquiler (Q1),provincia,notariado_cuantia_media_esp,compra,3
+regulación del alquiler (Q1),provincia,p_tasado,compra,1
 regulación del alquiler (Q1),provincia,iniciadas,oferta,38
 regulación del alquiler (Q1),provincia,terminadas,oferta,38
 regulación del alquiler (Q1),provincia,serpavi_n_contratos_recuento,alquiler,41
-regulación del alquiler (Q1),provincia,cgpj_lanzamientos_lau_numero,tension,39
+regulación del alquiler (Q1),provincia,valor_tasado,compra,38
+regulación del alquiler (Q1),provincia,serpavi_alquiler_m2_mediana,alquiler,41
+regulación del alquiler (Q1),provincia,notariado_cuantia_media_esp,compra,3
 regulación del alquiler (Q1),provincia,cgpj_lanzamientos_total_numero,tension,39
 regulación del alquiler (Q1),provincia,cgpj_ejecuciones_hipotecarias_numero,tension,39
+regulación del alquiler (Q1),provincia,cgpj_lanzamientos_lau_numero,tension,39
+regulación del alquiler (Q1),ccaa,visados,oferta,17
 regulación del alquiler (Q1),ccaa,ipv,compra,17
 regulación del alquiler (Q1),ccaa,terminadas,oferta,17
-regulación del alquiler (Q1),ccaa,visados,oferta,17
 regulación del alquiler (Q1),ccaa,compraventas,volumen,17
 regulación del alquiler (Q1),ccaa,hip_importe,volumen,17
 regulación del alquiler (Q1),ccaa,hip_n,volumen,17
@@ -45,30 +45,30 @@ vivienda turística (Q2),municipio,incasol_renta_media,alquiler,705
 vivienda turística (Q2),municipio,emal_renta_mensual_eur,alquiler,20
 vivienda turística (Q2),municipio,p_tasado,compra,1
 vivienda turística (Q2),municipio,fianzas_importe_mediana,alquiler,1
-vivienda turística (Q2),municipio,serpavi_alquiler_m2_mediana,alquiler,2759
-vivienda turística (Q2),municipio,ipva_tam_indice,alquiler,528
 vivienda turística (Q2),municipio,serpavi_n_contratos_recuento,alquiler,5860
 vivienda turística (Q2),municipio,incasol_contratos,alquiler,945
 vivienda turística (Q2),municipio,ipva,compra,1
+vivienda turística (Q2),municipio,ipva_tam_indice,alquiler,528
+vivienda turística (Q2),municipio,serpavi_alquiler_m2_mediana,alquiler,2759
 vivienda turística (Q2),provincia,ipc_alquiler_indice,alquiler,41
 vivienda turística (Q2),provincia,hip_importe,volumen,41
 vivienda turística (Q2),provincia,hip_n,volumen,41
 vivienda turística (Q2),provincia,compraventas,volumen,41
 vivienda turística (Q2),provincia,ipva_indice,alquiler,38
-vivienda turística (Q2),provincia,p_tasado,compra,1
 vivienda turística (Q2),provincia,fianzas_importe_mediana,alquiler,3
-vivienda turística (Q2),provincia,valor_tasado,compra,38
-vivienda turística (Q2),provincia,serpavi_alquiler_m2_mediana,alquiler,41
-vivienda turística (Q2),provincia,notariado_cuantia_media_esp,compra,3
+vivienda turística (Q2),provincia,p_tasado,compra,1
 vivienda turística (Q2),provincia,iniciadas,oferta,38
 vivienda turística (Q2),provincia,terminadas,oferta,38
 vivienda turística (Q2),provincia,serpavi_n_contratos_recuento,alquiler,41
-vivienda turística (Q2),provincia,cgpj_lanzamientos_lau_numero,tension,39
+vivienda turística (Q2),provincia,valor_tasado,compra,38
+vivienda turística (Q2),provincia,serpavi_alquiler_m2_mediana,alquiler,41
+vivienda turística (Q2),provincia,notariado_cuantia_media_esp,compra,3
 vivienda turística (Q2),provincia,cgpj_lanzamientos_total_numero,tension,39
 vivienda turística (Q2),provincia,cgpj_ejecuciones_hipotecarias_numero,tension,39
+vivienda turística (Q2),provincia,cgpj_lanzamientos_lau_numero,tension,39
+vivienda turística (Q2),ccaa,visados,oferta,17
 vivienda turística (Q2),ccaa,ipv,compra,17
 vivienda turística (Q2),ccaa,terminadas,oferta,17
-vivienda turística (Q2),ccaa,visados,oferta,17
 vivienda turística (Q2),ccaa,compraventas,volumen,17
 vivienda turística (Q2),ccaa,hip_importe,volumen,17
 vivienda turística (Q2),ccaa,hip_n,volumen,17
@@ -82,40 +82,40 @@ inmigración (Q3),municipio,incasol_renta_media,alquiler,705
 inmigración (Q3),municipio,emal_renta_mensual_eur,alquiler,20
 inmigración (Q3),municipio,p_tasado,compra,1
 inmigración (Q3),municipio,fianzas_importe_mediana,alquiler,1
-inmigración (Q3),municipio,serpavi_alquiler_m2_mediana,alquiler,2759
-inmigración (Q3),municipio,ipva_tam_indice,alquiler,528
 inmigración (Q3),municipio,serpavi_n_contratos_recuento,alquiler,5860
 inmigración (Q3),municipio,incasol_contratos,alquiler,945
 inmigración (Q3),municipio,ipva,compra,1
+inmigración (Q3),municipio,ipva_tam_indice,alquiler,528
+inmigración (Q3),municipio,serpavi_alquiler_m2_mediana,alquiler,2759
 inmigración (Q3),provincia,ipc_alquiler_indice,alquiler,41
 inmigración (Q3),provincia,hip_importe,volumen,41
 inmigración (Q3),provincia,hip_n,volumen,41
 inmigración (Q3),provincia,compraventas,volumen,41
 inmigración (Q3),provincia,ipva_indice,alquiler,38
-inmigración (Q3),provincia,p_tasado,compra,1
 inmigración (Q3),provincia,fianzas_importe_mediana,alquiler,3
-inmigración (Q3),provincia,valor_tasado,compra,38
-inmigración (Q3),provincia,serpavi_alquiler_m2_mediana,alquiler,41
-inmigración (Q3),provincia,notariado_cuantia_media_esp,compra,3
+inmigración (Q3),provincia,p_tasado,compra,1
 inmigración (Q3),provincia,iniciadas,oferta,38
 inmigración (Q3),provincia,terminadas,oferta,38
 inmigración (Q3),provincia,serpavi_n_contratos_recuento,alquiler,41
-inmigración (Q3),provincia,cgpj_lanzamientos_lau_numero,tension,39
+inmigración (Q3),provincia,valor_tasado,compra,38
+inmigración (Q3),provincia,serpavi_alquiler_m2_mediana,alquiler,41
+inmigración (Q3),provincia,notariado_cuantia_media_esp,compra,3
 inmigración (Q3),provincia,cgpj_lanzamientos_total_numero,tension,39
 inmigración (Q3),provincia,cgpj_ejecuciones_hipotecarias_numero,tension,39
+inmigración (Q3),provincia,cgpj_lanzamientos_lau_numero,tension,39
 oferta y restricciones (Q4),municipio,obra_nueva_neta_catastro,oferta,6248
 oferta y restricciones (Q4),municipio,incasol_renta_media,alquiler,705
 oferta y restricciones (Q4),municipio,emal_renta_mensual_eur,alquiler,20
 oferta y restricciones (Q4),municipio,p_tasado,compra,1
 oferta y restricciones (Q4),municipio,fianzas_importe_mediana,alquiler,1
-oferta y restricciones (Q4),municipio,serpavi_alquiler_m2_mediana,alquiler,2759
-oferta y restricciones (Q4),municipio,ipva_tam_indice,alquiler,528
 oferta y restricciones (Q4),municipio,serpavi_n_contratos_recuento,alquiler,5860
 oferta y restricciones (Q4),municipio,incasol_contratos,alquiler,945
 oferta y restricciones (Q4),municipio,ipva,compra,1
+oferta y restricciones (Q4),municipio,ipva_tam_indice,alquiler,528
+oferta y restricciones (Q4),municipio,serpavi_alquiler_m2_mediana,alquiler,2759
+tipos de interés (Q5),nacional,visados,oferta,1
 tipos de interés (Q5),nacional,terminadas,oferta,1
 tipos de interés (Q5),nacional,ipv,compra,1
-tipos de interés (Q5),nacional,visados,oferta,1
 tipos de interés (Q5),nacional,p_tasado,compra,1
 tipos de interés (Q5),nacional,ipc_alquiler,alquiler,1
 tipos de interés (Q5),nacional,compraventas,volumen,1
@@ -125,36 +125,36 @@ fiscalidad de la compra (Q6),provincia,hip_importe,volumen,41
 fiscalidad de la compra (Q6),provincia,hip_n,volumen,41
 fiscalidad de la compra (Q6),provincia,compraventas,volumen,41
 fiscalidad de la compra (Q6),provincia,ipva_indice,alquiler,38
-fiscalidad de la compra (Q6),provincia,p_tasado,compra,1
 fiscalidad de la compra (Q6),provincia,fianzas_importe_mediana,alquiler,3
-fiscalidad de la compra (Q6),provincia,valor_tasado,compra,38
-fiscalidad de la compra (Q6),provincia,serpavi_alquiler_m2_mediana,alquiler,41
-fiscalidad de la compra (Q6),provincia,notariado_cuantia_media_esp,compra,3
+fiscalidad de la compra (Q6),provincia,p_tasado,compra,1
 fiscalidad de la compra (Q6),provincia,iniciadas,oferta,38
 fiscalidad de la compra (Q6),provincia,terminadas,oferta,38
 fiscalidad de la compra (Q6),provincia,serpavi_n_contratos_recuento,alquiler,41
-fiscalidad de la compra (Q6),provincia,cgpj_lanzamientos_lau_numero,tension,39
+fiscalidad de la compra (Q6),provincia,valor_tasado,compra,38
+fiscalidad de la compra (Q6),provincia,serpavi_alquiler_m2_mediana,alquiler,41
+fiscalidad de la compra (Q6),provincia,notariado_cuantia_media_esp,compra,3
 fiscalidad de la compra (Q6),provincia,cgpj_lanzamientos_total_numero,tension,39
 fiscalidad de la compra (Q6),provincia,cgpj_ejecuciones_hipotecarias_numero,tension,39
+fiscalidad de la compra (Q6),provincia,cgpj_lanzamientos_lau_numero,tension,39
+fiscalidad de la compra (Q6),ccaa,visados,oferta,17
 fiscalidad de la compra (Q6),ccaa,ipv,compra,17
 fiscalidad de la compra (Q6),ccaa,terminadas,oferta,17
-fiscalidad de la compra (Q6),ccaa,visados,oferta,17
 fiscalidad de la compra (Q6),ccaa,compraventas,volumen,17
 fiscalidad de la compra (Q6),ccaa,hip_importe,volumen,17
 fiscalidad de la compra (Q6),ccaa,hip_n,volumen,17
 fiscalidad de la compra (Q6),ccaa,ipc_alquiler,alquiler,17
 fiscalidad de la compra (Q6),ccaa,p_tasado,compra,17
 fiscalidad de la compra (Q6),ccaa,ipva_indice,alquiler,17
+ayudas a la demanda (Q7),nacional,visados,oferta,1
 ayudas a la demanda (Q7),nacional,terminadas,oferta,1
 ayudas a la demanda (Q7),nacional,ipv,compra,1
-ayudas a la demanda (Q7),nacional,visados,oferta,1
 ayudas a la demanda (Q7),nacional,p_tasado,compra,1
 ayudas a la demanda (Q7),nacional,ipc_alquiler,alquiler,1
 ayudas a la demanda (Q7),nacional,compraventas,volumen,1
 ayudas a la demanda (Q7),nacional,ipva_indice,alquiler,1
+ayudas a la demanda (Q7),ccaa,visados,oferta,17
 ayudas a la demanda (Q7),ccaa,ipv,compra,17
 ayudas a la demanda (Q7),ccaa,terminadas,oferta,17
-ayudas a la demanda (Q7),ccaa,visados,oferta,17
 ayudas a la demanda (Q7),ccaa,compraventas,volumen,17
 ayudas a la demanda (Q7),ccaa,hip_importe,volumen,17
 ayudas a la demanda (Q7),ccaa,hip_n,volumen,17
@@ -166,29 +166,29 @@ fundamentales y burbuja (Q9),provincia,hip_importe,volumen,41
 fundamentales y burbuja (Q9),provincia,hip_n,volumen,41
 fundamentales y burbuja (Q9),provincia,compraventas,volumen,41
 fundamentales y burbuja (Q9),provincia,ipva_indice,alquiler,38
-fundamentales y burbuja (Q9),provincia,p_tasado,compra,1
 fundamentales y burbuja (Q9),provincia,fianzas_importe_mediana,alquiler,3
-fundamentales y burbuja (Q9),provincia,valor_tasado,compra,38
-fundamentales y burbuja (Q9),provincia,serpavi_alquiler_m2_mediana,alquiler,41
-fundamentales y burbuja (Q9),provincia,notariado_cuantia_media_esp,compra,3
+fundamentales y burbuja (Q9),provincia,p_tasado,compra,1
 fundamentales y burbuja (Q9),provincia,iniciadas,oferta,38
 fundamentales y burbuja (Q9),provincia,terminadas,oferta,38
 fundamentales y burbuja (Q9),provincia,serpavi_n_contratos_recuento,alquiler,41
-fundamentales y burbuja (Q9),provincia,cgpj_lanzamientos_lau_numero,tension,39
+fundamentales y burbuja (Q9),provincia,valor_tasado,compra,38
+fundamentales y burbuja (Q9),provincia,serpavi_alquiler_m2_mediana,alquiler,41
+fundamentales y burbuja (Q9),provincia,notariado_cuantia_media_esp,compra,3
 fundamentales y burbuja (Q9),provincia,cgpj_lanzamientos_total_numero,tension,39
 fundamentales y burbuja (Q9),provincia,cgpj_ejecuciones_hipotecarias_numero,tension,39
+fundamentales y burbuja (Q9),provincia,cgpj_lanzamientos_lau_numero,tension,39
+fundamentales y burbuja (Q9),ccaa,visados,oferta,17
 fundamentales y burbuja (Q9),ccaa,ipv,compra,17
 fundamentales y burbuja (Q9),ccaa,terminadas,oferta,17
-fundamentales y burbuja (Q9),ccaa,visados,oferta,17
 fundamentales y burbuja (Q9),ccaa,compraventas,volumen,17
 fundamentales y burbuja (Q9),ccaa,hip_importe,volumen,17
 fundamentales y burbuja (Q9),ccaa,hip_n,volumen,17
 fundamentales y burbuja (Q9),ccaa,ipc_alquiler,alquiler,17
 fundamentales y burbuja (Q9),ccaa,p_tasado,compra,17
 fundamentales y burbuja (Q9),ccaa,ipva_indice,alquiler,17
+fundamentales y burbuja (Q9),nacional,visados,oferta,1
 fundamentales y burbuja (Q9),nacional,terminadas,oferta,1
 fundamentales y burbuja (Q9),nacional,ipv,compra,1
-fundamentales y burbuja (Q9),nacional,visados,oferta,1
 fundamentales y burbuja (Q9),nacional,p_tasado,compra,1
 fundamentales y burbuja (Q9),nacional,ipc_alquiler,alquiler,1
 fundamentales y burbuja (Q9),nacional,compraventas,volumen,1

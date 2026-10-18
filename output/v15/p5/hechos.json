@@ -2,7 +2,7 @@
   {
     "id": "V15-H3-beta",
     "indicador": "H3: variación del alquiler SERPAVI VC (stock) por 1 DT intra-sección del porcentaje de viviendas turísticas (estimación puntual; sin IC válido, K16)",
-    "valor": 0.003,
+    "valor": 0.002989,
     "min": null,
     "max": null,
     "unidad": "% por DT",
@@ -19,9 +19,9 @@
   {
     "id": "V15-H3-rango",
     "indicador": "H3: mediana de los coeficientes del multiverso (min/max = rango de las especificaciones; no es IC)",
-    "valor": 0.0706,
-    "min": 0.003,
-    "max": 0.2201,
+    "valor": 0.070615,
+    "min": 0.002989,
+    "max": 0.22011,
     "unidad": "% por DT",
     "ficha": "output/v15/p5/informe.md#ficha-h3-rango",
     "periodo": "2021-2024",

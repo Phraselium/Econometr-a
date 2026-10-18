@@ -7,8 +7,9 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | anexo_metodologico.md | output/v6_2/anexo_metodologico.md | `880a4c145cf4f75e7d23c787f3ee59bad96c74a92eec12e6a827d0c8e9ca3a6e` |
 | capas.md | docs/v7_1/capas.md | `15e70c6bc6553acd487a3f2ad0708ea80b7d9fc7c40061559b22f43b59b39fea` |
 | decisiones_v12.md | docs/v12/decisiones.md | `d3ae3b10840f348d5536811aad44013e84e343bf71fb4e403271f0679003dedb` |
+| decisiones_v16.md | docs/v16/decisiones.md | `9c986c64a49a5d61239eccf5d046d42032590b3a5579be281dd3c8a102ebfcd4` |
 | desviaciones_preregistros.md | docs/preregistros_desviaciones.md | `0a65ae7a892583f52fc4847c0342dc3541cf0a8ad4b094e465a8f69b075dfb03` |
-| desviaciones_v16.md | docs/v16/desviaciones.md | `a4f3875ad25e13a3c804d4a0441c37af209abc2e9c9c0736dd79dff09f1f7107` |
+| desviaciones_v16.md | docs/v16/desviaciones.md | `beaabc1f6a9ce44a5fca8c94975577bbd52e8c279067f3ff10a843cf04239af9` |
 | desviaciones_v8.md | docs/v8/desviaciones.md | `13521b27d87cb37965209e51de5d90dc270fb2732cb967d793ce2c31996ac9ec` |
 | dosis_coste.md | output/v7_1/S1/resumen.md | `a68795fea92cb1ff1bfa94c12bf578bcb06a464be65f11a06e7bdf67e0fb6e39` |
 | guia_revisor.md | docs/v7_1/guia_revisor.md | `10a8b83466534b7769e66e4a078cb894767a4acec6c5045261cfb5ad1362cdc8` |
@@ -21,4 +22,4 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | revision_v9_F2.md | docs/v9/revision_f2.md | `690800171515b8e9c0c53f2fb0fce5b8d4d827dd20dfd9a70df9a7fb2473277f` |
 | validacion_montecarlo.md | docs/v7/validacion_herramientas.md | `6af570c58d993d47c03ee18a07ad05759499c7a24c63aef4ae855ae0be5c7833` |
 | validacion_montecarlo_v15.md | docs/v15/validacion_montecarlo.md | `c65175cb6b6831cc31647e3403b55711bee65599860fbfee83826e3aba291f6e` |
-| validacion_montecarlo_v16.md | docs/v16/validacion_montecarlo.md | `177ceb66b9e0e760eef9d613a062cd391f754f2b427901d847977201dd1f93c4` |
+| validacion_montecarlo_v16.md | docs/v16/validacion_montecarlo.md | `c8e5c82c9c042259a7994d80e63be58f3f5e5fcbc2f42f81f37979a6d8798cb2` |

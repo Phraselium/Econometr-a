@@ -13,14 +13,14 @@
   "metodo": "CS (2x2, control no tratado aún y nunca tratados) y SDID por cohortes, estimación puntual; preperiodo 2022T2-2023T4; sin inferencia (herramientas NO APTAS)",
   "estimacion": {
     "CS_att_pct": -7.178832767503041,
-    "SDID_att_pct": -3.6420740265707074,
+    "SDID_att_pct": -3.6420740265706297,
     "CS_por_cohorte_pct": {
       "2024T1": -8.059333488697506,
       "2024T4": -5.410595056265977
     },
     "SDID_por_cohorte_pct": {
       "2024T1": -2.7865107554404522,
-      "2024T4": -5.699036106265975
+      "2024T4": -5.69903610626572
     },
     "rango_multiverso_CS_pct": [
       -8.93971769463664,
@@ -28,7 +28,7 @@
     ],
     "rango_multiverso_SDID_pct": [
       -4.8561208362455925,
-      -2.826376742936787
+      -2.826376742936676
     ]
   },
   "ic95": null,
@@ -45,8 +45,8 @@
       "pendiente_lineal_por_anio": -0.006945747892467827
     },
     "contraste_SDID_2023T3_T4": {
-      "efecto": 0.0464522339192239,
-      "umbral_0.5ATT": 0.01855026610125947,
+      "efecto": 0.04645223391922902,
+      "umbral_0.5ATT": 0.018550266101259084,
       "compatible_puntualmente": false
     },
     "placebo_temporal_2023T2": {
@@ -65,10 +65,10 @@
       },
       "SDID_200": {
         "n": 200,
-        "media": 0.0012002646280970886,
-        "dt": 0.010552077307152352,
-        "p2_5": -0.023032109093726844,
-        "p97_5": 0.01891533064200859
+        "media": 0.0012002646281010917,
+        "dt": 0.010552077307150666,
+        "p2_5": -0.023032109093729086,
+        "p97_5": 0.018915330642014706
       },
       "ATT_CS_fuera_de_p2.5_p97.5": true,
       "nota": "escala de los ATT permutados, sin p-valor"
@@ -76,13 +76,13 @@
     "exclusiones": {
       "sin_Barcelona_ni_decil_superior": {
         "CS": -0.07478002471245734,
-        "SDID": -0.040967858026691735,
+        "SDID": -0.04096785802669211,
         "n": 277,
         "n_donantes": 71
       },
       "provincia_08_sin_capital": {
         "CS": -0.0712101474267272,
-        "SDID": -0.02443638042200476,
+        "SDID": -0.024436380422004165,
         "n": 159,
         "n_donantes": 24
       },
@@ -119,56 +119,56 @@
         {
           "municipio": "08019",
           "cohorte": "2024T1",
-          "efecto_pct": 46.70607860496811
+          "efecto_pct": 46.70607860496827
         },
         {
           "municipio": "08101",
           "cohorte": "2024T1",
-          "efecto_pct": 7.581268280861075
+          "efecto_pct": 7.581268280861009
         },
         {
           "municipio": "08279",
           "cohorte": "2024T1",
-          "efecto_pct": -0.05778837980598972
+          "efecto_pct": -0.05778837978507312
         },
         {
           "municipio": "08187",
           "cohorte": "2024T1",
-          "efecto_pct": 5.984955865918384
+          "efecto_pct": 5.98495586591643
         },
         {
           "municipio": "08015",
           "cohorte": "2024T1",
-          "efecto_pct": 21.280086007739495
+          "efecto_pct": 21.28008600773974
         },
         {
           "municipio": "43148",
           "cohorte": "2024T1",
-          "efecto_pct": -5.087932249798078
+          "efecto_pct": -5.08793224976788
         },
         {
           "municipio": "17079",
           "cohorte": "2024T1",
-          "efecto_pct": 3.3069171588511415
+          "efecto_pct": 3.306917158851408
         },
         {
           "municipio": "25120",
           "cohorte": "2024T1",
-          "efecto_pct": -6.646006224613787
+          "efecto_pct": -6.646006224618251
         },
         {
           "municipio": "08121",
           "cohorte": "2024T1",
-          "efecto_pct": -0.7003975589957467
+          "efecto_pct": -0.7003975589933265
         },
         {
           "municipio": "43123",
           "cohorte": "2024T1",
-          "efecto_pct": -7.48315638951762
+          "efecto_pct": -7.483156389567503
         }
       ],
-      "mediana_pct": 1.6245643895225759,
-      "media_pct": 6.4884025115606985
+      "mediana_pct": 1.6245643895331674,
+      "media_pct": 6.488402511560483
     },
     "cotas_Lee": {
       "lim_inf": -0.09821352938196895,

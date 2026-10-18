@@ -384,3 +384,27 @@ La primera hace más favorable el escenario optimista. El informe integral los c
   - anexo_erratas.md;
   - anexo_reproducibilidad.md.
 - La fase 7 los integra sin cambiar cifras.
+
+## K22. Cifras de la 2.0 en cifras_clave (fase 7, 2026-10-18)
+- **Qué entra.** Las cifras de V15 y V16 (output/v15/*/hechos.json y output/v16/*/hechos.json, ids V15-/V16-) entran en output/v5/cifras_clave.csv desde src/v5/cifras_clave.py. Son 219 filas: 213 de los módulos y 6 derivadas de src/v16/f7_hechos.py.
+- **Cifras derivadas.** f7_hechos solo LEE resultados ya versionados: medianas de multiverso de H4 y Q3-b, razón de H5 en la réplica ciega, IPV de 2019-2025 y mínimo alternativo de T4-H2.
+- **check_v13.** Admite una cifra nueva solo si es V15-/V16- con origen en output/v15 u output/v16, o si ERRATA.md la declara «id | nueva». Hay tests en tests/v13/test_check_v13_errata.py.
+- **Cifras de la 1.0.** Ninguna cambia.
+- **Cifras citables.** Las que cumplen la lista de K17; el resto entra en la tabla con su ficha y capa, pero el informe no las cita.
+
+## K23. Fase 7: informe integral, arbitraje y make v16 (2026-10-18)
+- **Informe.** Cuatro redactores escriben las plantillas (output/v16/informe/plantilla/), y src/v16/f7_informe.py las ensambla con los formatos de src/v5/render.py. Formatos nuevos:
+  - `:sig` (3 cifras significativas);
+  - `:min_num` y `:max_num` (extremos sin unidad);
+  - ids con «+».
+- **Arbitraje.** Tres rondas del árbitro final:
+  - primera ronda, REVISAR con 23 hallazgos;
+  - segunda ronda, REVISAR (menor);
+  - tercera ronda, REVISAR (menor), con siete puntos y N5.
+  - Cada hallazgo se corrigió o se rebatió por escrito en output/v16/informe/respuesta_arbitraje.md.
+- **Verificador de cifras.** Dos pasadas. Ningún id inexistente, ninguna capa contradicha y ninguna cifra fuera de la lista citable tras las correcciones.
+- **make v16.** Re-ejecuta f0-f7 en 37 minutos.
+  - Las salidas de V15 difieren solo en ruido de coma flotante (~1e-13; las cifras redondeadas no cambian).
+  - En f2_esfuerzo cambian 7 cifras V16-ESF-* en la tercera decimal. Una segunda ejecución reproduce al byte las nuevas, así que es determinista: las versionadas venían de un estado anterior de las entradas. Son cifras de V16, nuevas en cifras_clave en esta fase, y se aceptan.
+- **Preparación de la 2.0.** Árbol de ensayo sin rutas locales y escaneo de terceros con 14 ficheros pendientes para el autor (docs/v16/preparacion_2_0.md; tareas_autor.md, sección 5).
+- **Desviación D9.** Anotada después de ver los resultados.

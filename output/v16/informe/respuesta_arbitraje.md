@@ -64,3 +64,13 @@ El árbitro dio **REVISAR (menor)**: 14 hallazgos resueltos, 5 en parte y 2 sin 
 | Menores | **Corregido.** El alcance del resumen admite las cifras [C4] necesarias para dar ambas medidas. La sobrecarga de la UE se rotula como extremo del rango del indicador, porque no tiene id propio. Las líneas con números del diseño llevan `check:cifra-libre`. |
 | Verificador, periodo de B2-H3 | Notación distinta de la misma ventana («1-ene-2026 a 1-ene-2031» frente a «2026-2030»). No cambia la cifra y se mantiene. |
 | Verificador, etiquetas «H2»/«R1A-H1» | Son T4-H2 (déficit) y R1A-H1 (no residentes) de la 1.0, no H2 y H1 de V15. Aparecen siempre con su prefijo completo. |
+
+## Tercera ronda (2026-10-18)
+El árbitro dio **REVISAR (menor)**: 5 de los 7 puntos resueltos, 2 en parte y un problema nuevo (N5). Respuesta:
+
+| Punto | Respuesta |
+|---|---|
+| 2 (H3 con una cifra significativa) | **Corregido en el origen.** src/v15/p5_informe.py redondeaba V15-H3-beta y V15-H3-rango a 4 decimales; ahora redondea a 6. `make v16` regenera V15-H3-beta = 0,002989 y el rango. Es una cifra de V15, nueva en cifras_clave en esta fase, que no estaba en la 1.0: no requiere ERRATA (check_v13 solo protege la 1.0). |
+| 4 (fila de vivienda pública) | **Corregido.** La fila del verificador queda alineada con V11 de la 1.0: PARCIALMENTE, C2 para el signo del esfuerzo y C4 para las magnitudes, sin signo para el precio de compra. La redacción «signo débil / no positivo o nulo» pasa a la de la 1.0, «signo estable no positivo (nulo si desplaza por completo a la promoción privada)». «Tres resultados» pasa a «estas medidas». |
+| N5 (III.8) | **Corregido.** La asequibilidad del beneficiario pasa a «sin evidencia», con la misma regla que III.6: una simulación no es un estudio con diseño, y las referencias de L5 estudian la traslación al precio, no la asequibilidad del beneficiario. El signo [C2] de la 1.0 (D1-V1) se cita como simulación. |
+| 6 (restos de formato) | **Corregido.** Nuevos formatos `:min_num` y `:max_num` (extremos sin unidad): «estadístico; valor crítico» de Q9-g, rangos de H5 («de X a Y») y el multiverso de H5. BLP/GATES va con su magnitud rotulada (`:sig`) y el Summary con «dwellings per year». |

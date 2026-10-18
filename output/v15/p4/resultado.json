@@ -6,16 +6,16 @@
   "N": 13417,
   "metodo": "2SLS shift-share (Δlog alquiler SERPAVI VC sobre ΔPobExt/Pob(t-1); instrumento Σ cuotas 2003 × crecimiento nacional leave-one-out, sin orígenes residenciales); FE provincia×año; puntual",
   "estimacion": {
-    "beta_pp_alquiler_por_pp_poblacion_extranjera": 0.3052400588237127,
+    "beta_pp_alquiler_por_pp_poblacion_extranjera": 0.3052400588237088,
     "unidad": "% de alquiler por punto porcentual de población extranjera",
-    "ols_pp": 0.06836387440231069,
+    "ols_pp": 0.06836387440231075,
     "forma_reducida": [
-      0.0027187799880012136
+      0.0027187799880011893
     ],
     "primera_etapa_pi": [
-      0.8907022225321373
+      0.8907022225321344
     ],
-    "F_robusto": 70.156084808693,
+    "F_robusto": 70.15608480869291,
     "n_municipios": 1273
   },
   "ic95": null,
@@ -82,14 +82,14 @@
       "tipo": "descriptivo"
     },
     "jaeger_ruist_stuhler_control_z_retardado": {
-      "beta_pp": 0.005320174802986876,
-      "ols_pp": 0.0006888119504169891,
+      "beta_pp": 0.005320174802986872,
+      "ols_pp": 0.0006888119504169861,
       "forma_reducida": [
-        0.006678148142952557
+        0.0066781481429525665
       ],
-      "F_robusto": 70.72005448838132,
+      "F_robusto": 70.7200544883812,
       "pi": [
-        1.2552497596889638
+        1.2552497596889631
       ],
       "n": 13417,
       "n_municipios": 1273
@@ -102,64 +102,64 @@
         "Marruecos",
         "Argentina"
       ],
-      "beta_pp": -0.0019204439349636265,
-      "ols_pp": 0.0006836387440231069,
+      "beta_pp": -0.0019204439349636206,
+      "ols_pp": 0.0006836387440231074,
       "forma_reducida": [
-        -0.0034263132381317477
+        -0.0034263132381317325
       ],
-      "F_robusto": 36.192532124079946,
+      "F_robusto": 36.19253212407999,
       "pi": [
-        1.7841256262431089
+        1.7841256262431073
       ],
       "n": 13417,
       "n_municipios": 1273
     },
     "desbordamiento_15km": {
-      "beta_propio_pp": 0.0024009268092932846,
+      "beta_propio_pp": 0.0024009268092932833,
       "n": 12590,
       "tipo": "puntual"
     },
     "excluye_Barcelona_Valencia": {
-      "beta_pp": 0.0030774703842839455,
-      "ols_pp": 0.0006810551612256736,
+      "beta_pp": 0.0030774703842839585,
+      "ols_pp": 0.0006810551612256745,
       "forma_reducida": [
-        0.0027519503404286496
+        0.00275195034042866
       ],
-      "F_robusto": 69.77071963428047,
+      "F_robusto": 69.77071963428041,
       "pi": [
-        0.8942248004992459
+        0.894224800499244
       ],
       "n": 13395,
       "n_municipios": 1271
     },
     "excluye_1pct_superior_exposicion": {
-      "beta_pp": 0.002778283066184457,
-      "ols_pp": 0.0007432275248335046,
+      "beta_pp": 0.002778283066184454,
+      "ols_pp": 0.0007432275248335078,
       "forma_reducida": [
-        0.0025057225827098653
+        0.002505722582709864
       ],
-      "F_robusto": 70.91366572936317,
+      "F_robusto": 70.91366572936285,
       "pi": [
-        0.9018960714291394
+        0.9018960714291353
       ],
       "n": 13302,
       "n_municipios": 1260
     },
     "instrumento_28_origenes": {
-      "beta_pp": -0.0007344481786808931,
-      "ols_pp": 0.0006836387440231069,
+      "beta_pp": -0.0007344481786808986,
+      "ols_pp": 0.0006836387440231074,
       "forma_reducida": [
-        -0.0009571383377929621
+        -0.0009571383377929736
       ],
       "F_robusto": 110.79646202269232,
       "pi": [
-        1.3032074495875685
+        1.303207449587571
       ],
       "n": 13417,
       "n_municipios": 1273
     },
     "f_efectivo_primera_etapa": {
-      "F_robusto_HC1": 70.156084808693,
+      "F_robusto_HC1": 70.15608480869291,
       "umbral_MOP_tau10_referencia_un_instrumento": 23.1,
       "nota": "descriptivo; el procedimiento MOP/AR/AKM no es APTO (K13). Referencia de valor crítico para 1 instrumento y tau=10 %: ~23,1 (Montiel Olea-Pflueger, cota)"
     },
@@ -176,12 +176,12 @@
     ],
     "multiverso_64": {
       "n": 64,
-      "beta_pp_min": -0.0014259156039205922,
-      "beta_pp_max": 0.003883295449803311,
-      "beta_pp_mediana": 0.0007954222136956825,
+      "beta_pp_min": -0.0014259156039205943,
+      "beta_pp_max": 0.0038832954498033254,
+      "beta_pp_mediana": 0.0007954222136956809,
       "signo_positivo_frac": 0.71875,
-      "F_robusto_mediana": 113.0886742226256,
-      "F_robusto_max": 175.672382591604
+      "F_robusto_mediana": 113.0886742226259,
+      "F_robusto_max": 175.67238259160143
     }
   },
   "fuera_muestra": {

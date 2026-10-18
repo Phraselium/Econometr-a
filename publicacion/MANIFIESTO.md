@@ -28,11 +28,12 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | atlas_regional/guia_lectura.md | output/v7_1/atlas/guia_lectura.md | `5c9b4b7374468d5d4598fc35c1e62742a23a85047163c2c703970fddd969c872` |
 | atlas_regional/tablas_regionales.xlsx | output/v7_1/atlas/tablas_regionales.xlsx | `566261bdf785de32fa6cf61b545bf0948eec59301aa82e463d1c7b76ab41de34` |
 | atlas_v12.md | output/v12/atlas_v12.md | `ee7f40631a403531230053edeb8c5a3710d511068ad58b746004e75f53f24ec8` |
-| cifras_clave.csv | output/v5/cifras_clave.csv | `46c61dc51712e4cffeaa74c165f99fb534547f6a67f9d931f05081e51231ab20` |
+| cifras_clave.csv | output/v5/cifras_clave.csv | `d7a847ed9eb0f48fc2875e584102e9736d11140e6cc0a185c981795173a529db` |
 | cifras_no_publicadas_1_0.csv | proyecto.json (terceros_1_0) y docs/v14/cifras_terceros.csv | `01c846704182f19e7b3297045a0a692fddd10a26920e43a758dd8640a986cd87` |
 | cotas_v9.md | output/v9/f4/cotas.md | `896fa98d33b01c934c5e7543d3453d01120d628c3512cbb3056c2c087aed0940` |
 | dosis_coste.csv | output/v7_1/S1/dosis_coste.csv | `6e7c2b8fa8ada5992399be00de87309a274ccc607a7aba04c88f3f0590c6f822` |
 | informe_econometrico_v8.md | output/v8/informe_econometrico.md | `09824f977a1643c772ff48a09359c7f9e8c026fd758575e993a25952ac880f8e` |
+| informe_integral/informe_integral.md | output/v16/informe/informe_integral.md | `aa9676b57b234433ef9981c155e31ef3aeb740a26b722546d2b3ec73051d883a` |
 | informe_tecnico.md | output/v5/informe_tecnico.md | `d8eda75c44f121964107027a12f7a9001e04e69a4c4553fcfbf02c061c9239bb` |
 | informe_v9.md | output/v9/informe_v9.md | `bde71cee9bdaf6f11941c9c703bb7d92bb79bd8c9b2eb6d13a8771f6ae219c35` |
 | lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `796bfe3c102d9b358e8ecd78e9078b43255ee89f538d3e04abe189a70c438a44` |
@@ -47,6 +48,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | tablas_modelos_destacados.csv | output/v8/tablas_modelos_destacados.csv | `b70730be9a7924f4ea71426a2ef04a50287c82b8a45dfd802ea61b2480277495` |
 | tablas_modelos_destacados.md | output/v8/tablas_modelos_destacados.md | `650cd6505b65d0e622e2c3916848664cb8c93b4cdb1aac86a1de2e6dc918590c` |
 | tablas_v12.xlsx | output/v12/tablas_v12.xlsx | `da3e41ffa49ac1810e932705a7c8b80c78a570a947e6fe8ca81249dbc48764e2` |
+| tablas_v16.xlsx | output/v16/tablas_v16.xlsx | `61ad5f97de87fded85e34598e678aea638d78b842b743a7cde9cebe49b5161f1` |
 | tablas_v8.xlsx | output/v8/tablas_v8.xlsx | `a2cbd9254fc72ada46060f081bbbcc892a911185181c7b27e73376c02224cd3b` |
 | tablas_v9.xlsx | output/v9/tablas_v9.xlsx | `bb61506b8a3c82233cba7fdf3be83696ca40e5c7da5559e346b83a9e93d3ccb3` |
 | una_pagina.md | output/v5/una_pagina.md | `be867c44cd3b9613bbe447e32372b59a8ea27396e2b5a65876bf1322382c58b2` |

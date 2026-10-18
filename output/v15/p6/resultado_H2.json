@@ -13,14 +13,14 @@
   "metodo": "PPML con efectos de municipio y trimestre (principal) más CS y SDID sobre log(1+n) (robustez); preperiodo 2022T2-2023T4; sin inferencia (herramientas NO APTAS)",
   "estimacion": {
     "CS_att_pct": -4.215889712306953,
-    "SDID_att_pct": -14.160466297485296,
+    "SDID_att_pct": -14.160466297510055,
     "CS_por_cohorte_pct": {
       "2024T1": -8.709913266262925,
       "2024T4": 3.352537706129244
     },
     "SDID_por_cohorte_pct": {
-      "2024T1": -17.75666858243238,
-      "2024T4": -8.145223239263688
+      "2024T1": -17.756668582430002,
+      "2024T4": -8.145223239336296
     },
     "rango_multiverso_CS_pct": [
       -32.68219447460521,
@@ -28,12 +28,12 @@
     ],
     "rango_multiverso_SDID_pct": [
       -34.79891354988608,
-      -10.353840851516638
+      -10.35384085154285
     ],
-    "PPML_principal_pct": -9.948082837419877,
+    "PPML_principal_pct": -9.948082837419983,
     "PPML_por_cohorte_pct": {
-      "2024T1": -16.066215150047757,
-      "2024T4": -0.26580490964740466
+      "2024T1": -16.06621515004819,
+      "2024T4": -0.2658049096469939
     }
   },
   "ic95": null,
@@ -50,13 +50,13 @@
       "pendiente_lineal_por_anio": -0.005575022374304598
     },
     "contraste_SDID_2023T3_T4": {
-      "efecto": -0.050624384792282866,
-      "umbral_0.5ATT": 0.07634525992527412,
+      "efecto": -0.050624384792232996,
+      "umbral_0.5ATT": 0.07634525992541831,
       "compatible_puntualmente": true
     },
     "placebo_temporal_2023T2": {
       "CS": -0.056854428829352606,
-      "SDID": -0.04003475395353018,
+      "SDID": -0.04003475395352796,
       "compatible_CS": false,
       "compatible_SDID": true
     },
@@ -70,10 +70,10 @@
       },
       "SDID_200": {
         "n": 200,
-        "media": 0.0012235757926946974,
-        "dt": 0.03227838077684307,
-        "p2_5": -0.06274545026591256,
-        "p97_5": 0.058470836108271536
+        "media": 0.0012235757928354559,
+        "dt": 0.0322783807767583,
+        "p2_5": -0.06274545026582513,
+        "p97_5": 0.05847083610829636
       },
       "ATT_CS_fuera_de_p2.5_p97.5": false,
       "nota": "escala de los ATT permutados, sin p-valor"
@@ -81,13 +81,13 @@
     "exclusiones": {
       "sin_Barcelona_ni_decil_superior": {
         "CS": -0.037784691300852775,
-        "SDID": -0.12789238023322486,
+        "SDID": -0.12789238023322508,
         "n": 277,
         "n_donantes": 71
       },
       "provincia_08_sin_capital": {
         "CS": 0.010180236253322492,
-        "SDID": -0.1529289534376113,
+        "SDID": -0.15292895343759394,
         "n": 159,
         "n_donantes": 24
       },
@@ -119,7 +119,7 @@
     "exclusion_islas": "no aplica (no hay islas en Cataluña)",
     "oster_cinelli_evalue": "no calculados (diferencias en diferencias sin error típico válido)",
     "R_IPVA": "no estimada (adenda 2, B; S4 NO APTO)",
-    "PPML_sin_Barcelona_ni_decil": -7.06436331367054,
+    "PPML_sin_Barcelona_ni_decil": -7.064363313670532,
     "pruebas_superadas_puntualmente": [
       "contraste_SDID_2023T3_T4",
       "placebo_temporal_SDID",

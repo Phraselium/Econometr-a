@@ -15,7 +15,7 @@
   "C3s",
   "C4"
  ],
- "n": 1358,
+ "n": 1577,
  "hallazgos": [
   {
    "id": "compradores_extranjeros",
@@ -31292,6 +31292,5685 @@
    "tipo": "cifra",
    "fecha_dato": "2026-10-14",
    "cifra_texto": "5.766 viviendas",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-E1-semivida",
+   "enunciado": "Semivida mediana del desajuste en MG y PMG sin coste de uso (años; puntual; el CS-ARDL se descarta como cifra: cobertura de la velocidad 0,003 en el Monte Carlo)",
+   "cifra": 3.97,
+   "rango": [
+    3.55,
+    4.16
+   ],
+   "unidad": "años",
+   "periodo": "2002T1-2026T2",
+   "ambito": "38 provincias",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU; INE",
+   "ruta": "output/v15/p2/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "3,97 años (3,55 a 4,16)",
+   "min_max": [
+    3.55,
+    4.16,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-E1-theta",
+   "enunciado": "Elasticidad de largo plazo precio-alquiler (CS-ARDL, media de provincias; puntual)",
+   "cifra": 0.64,
+   "rango": [
+    -3.421,
+    10.175
+   ],
+   "unidad": "elasticidad",
+   "periodo": "2002T1-2026T2",
+   "ambito": "38 provincias de entrenamiento",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU valor tasado; INE IPC alquiler",
+   "ruta": "output/v15/p2/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,64 elasticidad (-3,42 a 10,18)",
+   "min_max": [
+    -3.421,
+    10.175,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-E2-pearson",
+   "enunciado": "Correlación (Pearson) entre exceso de presión (hogares − terminadas) y Δlog SERPAVI, provincias 2018-2024",
+   "cifra": 0.743,
+   "rango": [
+    0.254,
+    0.77
+   ],
+   "unidad": "r",
+   "periodo": "2018-2024",
+   "ambito": "35 provincias",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE; MIVAU; Catastro",
+   "ruta": "output/v15/p7/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,743 r (0,254 a 0,77)",
+   "min_max": [
+    0.254,
+    0.77,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-E3-rho",
+   "enunciado": "Parámetro autorregresivo espacial ρ (SAR, contigüidad, Δlog SERPAVI VC 2015-2024)",
+   "cifra": 0.393,
+   "rango": [
+    0.244,
+    0.639
+   ],
+   "unidad": "ρ",
+   "periodo": "2015-2024",
+   "ambito": "1124 municipios",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI",
+   "ruta": "output/v15/p10/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,393 ρ (0,244 a 0,639)",
+   "min_max": [
+    0.244,
+    0.639,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-E4-cat-post",
+   "enunciado": "E4: media de los coeficientes dosis × año 2018-2024, renta Incasòl y HUT IDESCAT (min/max = IDESCAT n y plazas; puntual)",
+   "cifra": 0.707,
+   "rango": [
+    0.688,
+    0.707
+   ],
+   "unidad": "% por DT de dosis",
+   "periodo": "2018-2024",
+   "ambito": "municipios con panel equilibrado 2015-2024",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "IDESCAT turall; Incasòl",
+   "ruta": "output/v15/p5cv/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,707 % por DT de dosis (0,688 a 0,707)",
+   "min_max": [
+    0.688,
+    0.707,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-E4-cat-pre",
+   "enunciado": "E4: mayor /coeficiente previo/ (2015, 2016) en Cataluña, IDESCAT n",
+   "cifra": 0.754,
+   "rango": null,
+   "unidad": "% por DT de dosis",
+   "periodo": "2015-2016",
+   "ambito": "municipios con panel equilibrado 2015-2024",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "IDESCAT turall; Incasòl",
+   "ruta": "output/v15/p5cv/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,754 % por DT de dosis",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-E4-compat",
+   "enunciado": "E4: especificaciones compatibles con la regla puntual de pretendencias, sobre el total",
+   "cifra": 6.0,
+   "rango": [
+    0.0,
+    16.0
+   ],
+   "unidad": "especificaciones",
+   "periodo": "2015-2024",
+   "ambito": "municipios con panel equilibrado 2015-2024",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "IDESCAT turall; Incasòl",
+   "ruta": "output/v15/p5cv/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "6 especificaciones (0 a 16)",
+   "min_max": [
+    0.0,
+    16.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-E4-cv-post",
+   "enunciado": "E4: media de los coeficientes dosis × año 2018-2024, SERPAVI VC y registro GVA reconstruido, fechado base (C4; min/max = VC y VU en los 3 fechados)",
+   "cifra": 0.166,
+   "rango": [
+    -0.504,
+    0.324
+   ],
+   "unidad": "% por DT de dosis",
+   "periodo": "2018-2024",
+   "ambito": "municipios de Alicante, Castellón y València con panel equilibrado",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "GVA registro de turismo (reconstruido); MIVAU SERPAVI",
+   "ruta": "output/v15/p5cv/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,166 % por DT de dosis (-0,504 a 0,324)",
+   "min_max": [
+    -0.504,
+    0.324,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H1-cs-att",
+   "enunciado": "H1: asociación de la zona tensionada con renta media de los contratos nuevos (log), CS puntual (rango = mínimo y máximo de las especificaciones CS del multiverso; no es IC)",
+   "cifra": -7.18,
+   "rango": [
+    -8.94,
+    -3.36
+   ],
+   "unidad": "%",
+   "periodo": "2024T2-2026T1",
+   "ambito": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+   "mercado": "alquiler (contratos nuevos)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Incasòl",
+   "ruta": "output/v15/p6/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-7,18 % (-8,94 a -3,36)",
+   "min_max": [
+    -8.94,
+    -3.36,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H1-lee",
+   "enunciado": "H1: cotas de Lee de la variación de la renta (valor = sin recorte; min/max = cotas)",
+   "cifra": -5.11,
+   "rango": [
+    -9.82,
+    -0.01
+   ],
+   "unidad": "puntos log·100",
+   "periodo": "2024T2-2026T1",
+   "ambito": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Incasòl",
+   "ruta": "output/v15/p6/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-5,11 puntos log·100 (-9,82 a -0,01)",
+   "min_max": [
+    -9.82,
+    -0.01,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H1-placebo-cs",
+   "enunciado": "H1: placebo temporal 2023T2 (CS), puntual",
+   "cifra": 7.72,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2023T2-2023T4",
+   "ambito": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Incasòl",
+   "ruta": "output/v15/p6/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "7,72 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H1-sdid-att",
+   "enunciado": "H1: ídem, SDID puntual (rango = especificaciones SDID estimables; no es IC)",
+   "cifra": -3.64,
+   "rango": [
+    -4.86,
+    -2.83
+   ],
+   "unidad": "%",
+   "periodo": "2024T2-2026T1",
+   "ambito": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Incasòl",
+   "ruta": "output/v15/p6/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-3,64 % (-4,86 a -2,83)",
+   "min_max": [
+    -4.86,
+    -2.83,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H2-cs-att",
+   "enunciado": "H2: asociación de la zona tensionada con número de contratos nuevos, CS puntual (rango = mínimo y máximo de las especificaciones CS del multiverso; no es IC)",
+   "cifra": -4.22,
+   "rango": [
+    -32.68,
+    3.14
+   ],
+   "unidad": "%",
+   "periodo": "2024T2-2026T1",
+   "ambito": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+   "mercado": "alquiler (contratos nuevos)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Incasòl",
+   "ruta": "output/v15/p6/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-4,22 % (-32,68 a 3,14)",
+   "min_max": [
+    -32.68,
+    3.14,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H2-placebo-cs",
+   "enunciado": "H2: placebo temporal 2023T2 (CS), puntual",
+   "cifra": -5.53,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2023T2-2023T4",
+   "ambito": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Incasòl",
+   "ruta": "output/v15/p6/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-5,53 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H2-ppml",
+   "enunciado": "H2: asociación con el número de contratos nuevos, PPML con efectos de municipio y trimestre (puntual)",
+   "cifra": -9.95,
+   "rango": [
+    -16.07,
+    -0.27
+   ],
+   "unidad": "%",
+   "periodo": "2024T2-2026T1",
+   "ambito": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+   "mercado": "alquiler (contratos nuevos)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Incasòl",
+   "ruta": "output/v15/p6/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-9,95 % (-16,07 a -0,27)",
+   "min_max": [
+    -16.07,
+    -0.27,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H2-sdid-att",
+   "enunciado": "H2: ídem, SDID puntual (rango = especificaciones SDID estimables; no es IC)",
+   "cifra": -14.16,
+   "rango": [
+    -34.8,
+    -10.35
+   ],
+   "unidad": "%",
+   "periodo": "2024T2-2026T1",
+   "ambito": "Cataluña, municipios con ≥ 5 contratos en 2022T2-2023T4",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Incasòl",
+   "ruta": "output/v15/p6/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-14,16 % (-34,8 a -10,35)",
+   "min_max": [
+    -34.8,
+    -10.35,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H3-beta",
+   "enunciado": "H3: variación del alquiler SERPAVI VC (stock) por 1 DT intra-sección del porcentaje de viviendas turísticas (estimación puntual; sin IC válido, K16)",
+   "cifra": 0.002989,
+   "rango": null,
+   "unidad": "% por DT",
+   "periodo": "2021-2024",
+   "ambito": "secciones con alquiler SERPAVI VC y código estable; entrenamiento",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE (viviendas turísticas, experimental); MIVAU SERPAVI",
+   "ruta": "output/v15/p5/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,00299 % por DT",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H3-ipva",
+   "enunciado": "H3: coeficiente con el IPVA por distrito como resultado (efectos de municipio × año; EE agrupado, descriptivo)",
+   "cifra": 0.1293,
+   "rango": null,
+   "unidad": "% por DT",
+   "periodo": "2021-2024",
+   "ambito": "secciones con alquiler SERPAVI VC y código estable; entrenamiento",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE (viviendas turísticas, experimental); MIVAU SERPAVI",
+   "ruta": "output/v15/p5/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,129 % por DT",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H3-mde",
+   "enunciado": "H3: efecto mínimo detectable con 80 % de potencia (2,8 × EE de Conley; referencia, EE no validado tras K16)",
+   "cifra": 0.0972,
+   "rango": null,
+   "unidad": "% por DT",
+   "periodo": "2021-2024",
+   "ambito": "secciones con alquiler SERPAVI VC y código estable; entrenamiento",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE (viviendas turísticas, experimental); MIVAU SERPAVI",
+   "ruta": "output/v15/p5/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,097 % por DT",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H3-n",
+   "enunciado": "H3: secciones del panel principal",
+   "cifra": 12976.0,
+   "rango": null,
+   "unidad": "secciones",
+   "periodo": "2021-2024",
+   "ambito": "secciones con alquiler SERPAVI VC y código estable; entrenamiento",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE (viviendas turísticas, experimental); MIVAU SERPAVI",
+   "ruta": "output/v15/p5/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "12.976 secciones",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H3-placebo",
+   "enunciado": "H3: coeficiente del placebo de adelanto (exposición en t+1)",
+   "cifra": -0.0057,
+   "rango": null,
+   "unidad": "% por DT",
+   "periodo": "2021-2024",
+   "ambito": "secciones con alquiler SERPAVI VC y código estable; entrenamiento",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE (viviendas turísticas, experimental); MIVAU SERPAVI",
+   "ruta": "output/v15/p5/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-0,0057 % por DT",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H3-rango",
+   "enunciado": "H3: mediana de los coeficientes del multiverso (min/max = rango de las especificaciones; no es IC)",
+   "cifra": 0.070615,
+   "rango": [
+    0.002989,
+    0.22011
+   ],
+   "unidad": "% por DT",
+   "periodo": "2021-2024",
+   "ambito": "secciones con alquiler SERPAVI VC y código estable; entrenamiento",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE (viviendas turísticas, experimental); MIVAU SERPAVI",
+   "ruta": "output/v15/p5/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,071 % por DT (0,00299 a 0,22)",
+   "min_max": [
+    0.002989,
+    0.22011,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H4-F",
+   "enunciado": "F robusto de primera etapa (descriptivo)",
+   "cifra": 70.16,
+   "rango": [
+    49.39,
+    175.67
+   ],
+   "unidad": "F",
+   "periodo": "2012-2022",
+   "ambito": "entrenamiento",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE padrón",
+   "ruta": "output/v15/p4/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "70,16 F (49,39 a 175,7)",
+   "min_max": [
+    49.39,
+    175.67,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H4-beta",
+   "enunciado": "Asociación (2SLS puntual) entre población extranjera predicha y alquiler municipal (SERPAVI VC), % por punto",
+   "cifra": 0.305,
+   "rango": [
+    -0.143,
+    0.388
+   ],
+   "unidad": "% por p.p.",
+   "periodo": "2012-2022",
+   "ambito": "1273 municipios de entrenamiento",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE padrón; MIVAU SERPAVI",
+   "ruta": "output/v15/p4/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,305 % por p.p. (-0,143 a 0,388)",
+   "min_max": [
+    -0.143,
+    0.388,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H4-mediana",
+   "enunciado": "H4: mediana de las 64 especificaciones del multiverso, % por punto (min/max = extremos; correlación frágil)",
+   "cifra": 0.0795,
+   "rango": [
+    -0.1426,
+    0.3883
+   ],
+   "unidad": "% por p.p.",
+   "periodo": "2012-2022",
+   "ambito": "1273 municipios de entrenamiento",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE padrón; MIVAU SERPAVI; mediana leída de output/v15/p4/resultado.json (diagnosticos.multiverso_64, ×100)",
+   "ruta": "output/v16/f7_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,08 % por p.p. (-0,143 a 0,388)",
+   "min_max": [
+    -0.1426,
+    0.3883,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H4-neff",
+   "enunciado": "Número efectivo de choques (1/HHI de Rotemberg)",
+   "cifra": 5.46,
+   "rango": null,
+   "unidad": "choques",
+   "periodo": "2012-2022",
+   "ambito": "entrenamiento",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE padrón",
+   "ruta": "output/v15/p4/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "5,46 choques",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H5-p-dm",
+   "enunciado": "p unilateral DM-HLN de la combinación frente al AR(4)",
+   "cifra": 0.866,
+   "rango": null,
+   "unidad": "p",
+   "periodo": "2013Q1-2026Q1",
+   "ambito": "53 errores",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU valor tasado",
+   "ruta": "output/v15/p9/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,866 p",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H5-razon-ecm",
+   "enunciado": "Razón ECM de la combinación frente al AR(4) (h=1, valor tasado)",
+   "cifra": 1.514,
+   "rango": [
+    0.975,
+    5.411
+   ],
+   "unidad": "razón",
+   "periodo": "2013Q1-2026Q1",
+   "ambito": "53 errores de entrenamiento",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU valor tasado; INE; BdE",
+   "ruta": "output/v15/p9/hechos.json",
+   "version": "v15",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "1,51 razón (0,975 a 5,41)",
+   "min_max": [
+    0.975,
+    5.411,
+    "rango"
+   ]
+  },
+  {
+   "id": "V15-H5-razon-replica",
+   "enunciado": "H5: razón ECM de la combinación frente al AR(4) en la réplica ciega de V16 (otra implementación de las elecciones abiertas; min/max = réplica y producción pre-registrada)",
+   "cifra": 1.1535,
+   "rango": [
+    1.1535,
+    1.514
+   ],
+   "unidad": "razón",
+   "periodo": "2013Q1-2026Q1",
+   "ambito": "53 errores de entrenamiento",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU valor tasado; INE; BdE; réplica ciega de V16",
+   "ruta": "output/v16/f7_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "1,15 razón (1,15 a 1,51)",
+   "min_max": [
+    1.1535,
+    1.514,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-COB-ALQ-MUN",
+   "enunciado": "Municipios con alquiler SERPAVI publicable (n >= 10 contratos y CV <= 30 %)",
+   "cifra": 1390.0,
+   "rango": null,
+   "unidad": "municipios",
+   "periodo": "2024",
+   "ambito": "municipios no sellados",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "1.390 municipios",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-COB-ESF-SECCION",
+   "enunciado": "Secciones con la ratio de esfuerzo descriptiva publicable",
+   "cifra": 10773.0,
+   "rango": null,
+   "unidad": "secciones",
+   "periodo": "2023",
+   "ambito": "secciones no selladas",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI; INE ADRH",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2023",
+   "cifra_texto": "10.773 secciones",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-COB-FILAS",
+   "enunciado": "Filas del atlas (formato largo)",
+   "cifra": 1586227.0,
+   "rango": null,
+   "unidad": "filas",
+   "periodo": "varios",
+   "ambito": "32 indicadores, 7 escalas",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "varias (véase atlas.md)",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "1.586.227 filas",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-COB-MUNICIPIO",
+   "enunciado": "Unidades de escala municipio con al menos un indicador publicado",
+   "cifra": 4904.0,
+   "rango": null,
+   "unidad": "unidades",
+   "periodo": "varios",
+   "ambito": "de 8205 del nomenclátor; las selladas V16 no figuran",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "varias",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "4.904 unidades",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-COB-SECCION",
+   "enunciado": "Unidades de escala seccion con al menos un indicador publicado",
+   "cifra": 17763.0,
+   "rango": null,
+   "unidad": "unidades",
+   "periodo": "varios",
+   "ambito": "de 37663 del nomenclátor; las selladas V16 no figuran",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "varias",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "17.763 unidades",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-COB-SUPRIMIDAS",
+   "enunciado": "Porcentaje de filas suprimidas (base < 10 o CV > 30 % o sustituto)",
+   "cifra": 4.52,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "varios",
+   "ambito": "71717 de 1586227 filas",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "varias",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "4,52 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-DISP-ALQUILER-M2",
+   "enunciado": "Cociente P90/P10 de «Alquiler mediano €/m² y mes (SERPAVI)» entre municipios no sellados",
+   "cifra": 2.493,
+   "rango": [
+    1.837,
+    13.99
+   ],
+   "unidad": "cociente P90/P10 (min y max en la unidad del indicador: €/m² y mes)",
+   "periodo": "2024",
+   "ambito": "1390 unidades con dato de 1394 filas del periodo (el resto, suprimidas)",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU, SERPAVI (AEAT-IRPF, stock de contratos de alquiler declarados; tipología colectiva)",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "2,49 cociente P90/P10 (1,84 a 13,99)",
+   "min_max": [
+    1.837,
+    13.99,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-DISP-ECV40-CCAA",
+   "enunciado": "Cociente P90/P10 de «Sobreesfuerzo del 40 % (ECV), entre CCAA» entre ccaas no sellados",
+   "cifra": 2.012,
+   "rango": [
+    3.478,
+    13.813
+   ],
+   "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de la población)",
+   "periodo": "2025",
+   "ambito": "19 unidades con dato de 19 filas del periodo (el resto, suprimidas)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, ECV (microdatos; f2_esfuerzo)",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "2,01 cociente P90/P10",
+   "min_max": [
+    3.478,
+    13.813,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-DISP-ESFUERZO",
+   "enunciado": "Cociente P90/P10 de «Ratio alquiler anual de 80 m² / renta neta media del hogar» entre municipios no sellados",
+   "cifra": 1.912,
+   "rango": [
+    5.146,
+    32.853
+   ],
+   "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de la renta neta media del hogar)",
+   "periodo": "2023",
+   "ambito": "1338 unidades con dato de 1340 filas del periodo (el resto, suprimidas)",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU, SERPAVI (AEAT-IRPF, stock de contratos de alquiler declarados; tipología colectiva) / INE, Atlas de Distribución de Renta de los Hogares (ADRH) 2015-2023",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2023",
+   "cifra_texto": "1,91 cociente P90/P10",
+   "min_max": [
+    5.146,
+    32.853,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-DISP-ESFUERZO-SECCION",
+   "enunciado": "Cociente P90/P10 de «Ratio alquiler anual de 80 m² / renta neta media del hogar, entre secciones» entre seccions no sellados",
+   "cifra": 2.495,
+   "rango": [
+    3.851,
+    70.779
+   ],
+   "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de la renta neta media del hogar)",
+   "periodo": "2023",
+   "ambito": "10773 unidades con dato de 10773 filas del periodo (el resto, suprimidas)",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU, SERPAVI (AEAT-IRPF, stock de contratos de alquiler declarados; tipología colectiva) / INE, Atlas de Distribución de Renta de los Hogares (ADRH) 2015-2023",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2023",
+   "cifra_texto": "2,5 cociente P90/P10",
+   "min_max": [
+    3.851,
+    70.779,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-DISP-EXTRANJERA",
+   "enunciado": "Cociente P90/P10 de «Población de nacionalidad extranjera, % (censo anual)» entre municipios no sellados",
+   "cifra": 17.804,
+   "rango": [
+    0.0,
+    88.403
+   ],
+   "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de la población (censo anual))",
+   "periodo": "2025",
+   "ambito": "4857 unidades con dato de 4868 filas del periodo (el resto, suprimidas)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Censo anual de población",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "17,8 cociente P90/P10 (0 a 88,4)",
+   "min_max": [
+    0.0,
+    88.403,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-DISP-LANZ-PJ",
+   "enunciado": "Cociente P90/P10 de «Lanzamientos por 10.000 viviendas, suma 2013-2024, entre partidos judiciales» entre partido judicials no sellados",
+   "cifra": 8.491,
+   "rango": [
+    7.098,
+    594.342
+   ],
+   "unidad": "cociente P90/P10 (min y max en la unidad del indicador: por 10.000 viviendas (Censo 2021), suma 2013-2024)",
+   "periodo": "2013-2024",
+   "ambito": "330 unidades con dato de 330 filas del periodo (el resto, suprimidas)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "CGPJ, estadística judicial (agregado propio; tercero no redistribuible, sin microdatos)",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2013-2024",
+   "cifra_texto": "8,49 cociente P90/P10 (7,1 a 594,3)",
+   "min_max": [
+    7.098,
+    594.342,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-DISP-NO-PRINCIPALES",
+   "enunciado": "Cociente P90/P10 de «Viviendas no principales, % (Censo 2021)» entre municipios no sellados",
+   "cifra": 2.961,
+   "rango": [
+    4.822,
+    96.117
+   ],
+   "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de las viviendas)",
+   "periodo": "2021",
+   "ambito": "4867 unidades con dato de 4868 filas del periodo (el resto, suprimidas)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Censo de Población y Viviendas 2021",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021",
+   "cifra_texto": "2,96 cociente P90/P10",
+   "min_max": [
+    4.822,
+    96.117,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-DISP-PRECIO-PROV",
+   "enunciado": "Cociente P90/P10 de «Valor tasado €/m², entre provincias» entre provincias no sellados",
+   "cifra": 2.709,
+   "rango": [
+    854.2,
+    3514.6
+   ],
+   "unidad": "cociente P90/P10 (min y max en la unidad del indicador: €/m²)",
+   "periodo": "2026T2",
+   "ambito": "38 unidades con dato de 38 filas del periodo (el resto, suprimidas)",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU, valor tasado de vivienda libre (€/m², media anual de los 4 trimestres)",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026T2",
+   "cifra_texto": "2,71 cociente P90/P10",
+   "min_max": [
+    854.2,
+    3514.6,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-DISP-RENTA-HOGAR",
+   "enunciado": "Cociente P90/P10 de «Renta neta media del hogar (ADRH)» entre municipios no sellados",
+   "cifra": 1.756,
+   "rango": [
+    17450.0,
+    85692.0
+   ],
+   "unidad": "cociente P90/P10 (min y max en la unidad del indicador: € por hogar y año)",
+   "periodo": "2023",
+   "ambito": "3986 unidades con dato de 4820 filas del periodo (el resto, suprimidas)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Atlas de Distribución de Renta de los Hogares (ADRH) 2015-2023",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2023",
+   "cifra_texto": "1,76 cociente P90/P10",
+   "min_max": [
+    17450.0,
+    85692.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-DISP-RENTA-UC-SECCION",
+   "enunciado": "Cociente P90/P10 de «Renta mediana por unidad de consumo (ADRH), entre secciones» entre seccions no sellados",
+   "cifra": 1.78,
+   "rango": [
+    7350.0,
+    44450.0
+   ],
+   "unidad": "cociente P90/P10 (min y max en la unidad del indicador: € por unidad de consumo y año)",
+   "periodo": "2023",
+   "ambito": "16593 unidades con dato de 16593 filas del periodo (el resto, suprimidas)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Atlas de Distribución de Renta de los Hogares (ADRH) 2015-2023",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2023",
+   "cifra_texto": "1,78 cociente P90/P10",
+   "min_max": [
+    7350.0,
+    44450.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-DISP-VACIAS",
+   "enunciado": "Cociente P90/P10 de «Viviendas vacías por consumo eléctrico, % (Censo 2021)» entre municipios no sellados",
+   "cifra": 4.817,
+   "rango": [
+    2.28,
+    76.789
+   ],
+   "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de las viviendas)",
+   "periodo": "2021",
+   "ambito": "1830 unidades con dato de 1830 filas del periodo (el resto, suprimidas)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Censo de Población y Viviendas 2021, tabla 59531 (consumo eléctrico)",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021",
+   "cifra_texto": "4,82 cociente P90/P10 (2,28 a 76,79)",
+   "min_max": [
+    2.28,
+    76.789,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ATL-DISP-VT-PCT",
+   "enunciado": "Cociente P90/P10 de «Viviendas turísticas, % de las viviendas (INE VTE)» entre municipios no sellados",
+   "cifra": 23.608,
+   "rango": [
+    0.05,
+    18.24
+   ],
+   "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de las viviendas)",
+   "periodo": "2026-05",
+   "ambito": "1104 unidades con dato de 4850 filas del periodo (el resto, suprimidas)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Viviendas turísticas en España (VTE), medición experimental",
+   "ruta": "output/v16/f2_atlas/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-05",
+   "cifra_texto": "23,61 cociente P90/P10",
+   "min_max": [
+    0.05,
+    18.24,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-CAMBIO",
+   "enunciado": "Variación observada del número de hogares, España (valor: ECP; rango: ECP y EPA)",
+   "cifra": 981823.0,
+   "rango": [
+    981823.0,
+    1062300.0
+   ],
+   "unidad": "hogares",
+   "periodo": "1-1-2021 a 1-1-2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECP (t60129, t60133); INE EPA (hogares); Censo 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-01-01",
+   "cifra_texto": "981.823 hogares (981.823 a 1.062.300)",
+   "min_max": [
+    981823.0,
+    1062300.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-CCAA-JEFATURA-PCT",
+   "enunciado": "Residuo de jefatura como % de los hogares iniciales, 11 CCAA sin provincias selladas (valor: mediana; rango: mín. y máx.)",
+   "cifra": 0.2215,
+   "rango": [
+    -0.2139,
+    1.3557
+   ],
+   "unidad": "%",
+   "periodo": "1-1-2021 a 1-1-2025",
+   "ambito": "11 CCAA (8 excluidas por K8)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECP (t60129, t60133); INE EPA (hogares); Censo 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-01-01",
+   "cifra_texto": "0,222 % (-0,214 a 1,36)",
+   "min_max": [
+    -0.2139,
+    1.3557,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-CCAA-POBLACION-PCT",
+   "enunciado": "Parte de población en el cambio observado de hogares, 11 CCAA (valor: mediana; rango: mín. y máx.)",
+   "cifra": 37.3156,
+   "rango": [
+    -31.4392,
+    91.7231
+   ],
+   "unidad": "% del cambio",
+   "periodo": "1-1-2021 a 1-1-2025",
+   "ambito": "11 CCAA (8 excluidas por K8)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECP (t60129, t60133); INE EPA (hogares); Censo 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-01-01",
+   "cifra_texto": "37,32 % del cambio (-31,44 a 91,72)",
+   "min_max": [
+    -31.4392,
+    91.7231,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-COMPOSICION-NACIONALIDAD",
+   "enunciado": "Contabilidad del cambio de hogares 2021-2025: parte de composición por nacionalidad (extranjera frente a española), España (Shapley; rango: órdenes y ECP/EPA)",
+   "cifra": -80764.1581,
+   "rango": [
+    -84075.2039,
+    -77809.2834
+   ],
+   "unidad": "hogares",
+   "periodo": "1-1-2021 a 1-1-2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECP (t60129, t60133); INE EPA (hogares); Censo 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-01-01",
+   "cifra_texto": "-80.764 hogares (-84.075 a -77.809)",
+   "min_max": [
+    -84075.2039,
+    -77809.2834,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-ECP-EPA-DISCREPANCIA",
+   "enunciado": "Diferencia del cambio de hogares 2021-2025 entre EPA y ECP",
+   "cifra": 8.1967,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "1-1-2021 a 1-1-2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECP; INE EPA",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-01-01",
+   "cifra_texto": "8,2 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-EPA-2002-2021-CAMBIO",
+   "enunciado": "Variación de hogares EPA 2002T1-2021T1, España",
+   "cifra": 4276400.0,
+   "rango": null,
+   "unidad": "hogares",
+   "periodo": "2002-2021",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE EPA (hogares); INE padrón (edad y nacionalidad); Censos 2011 y 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021-01-01",
+   "cifra_texto": "4.276.400 hogares",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-EPA-2002-2021-COMPOSICION-NACIONALIDAD",
+   "enunciado": "Contabilidad EPA 2002-2021: composición por nacionalidad (valor: tasas del Censo 2021; rango: con tasas del Censo 2011 y órdenes)",
+   "cifra": -202132.7077,
+   "rango": [
+    -218730.0605,
+    -139312.2701
+   ],
+   "unidad": "hogares",
+   "periodo": "2002-2021",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE EPA (hogares); INE padrón (edad y nacionalidad); Censos 2011 y 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021-01-01",
+   "cifra_texto": "-202.133 hogares (-218.730 a -139.312)",
+   "min_max": [
+    -218730.0605,
+    -139312.2701,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-EPA-2002-2021-ESTRUCTURA-EDAD",
+   "enunciado": "Contabilidad EPA 2002-2021: estructura por edad (valor: tasas del Censo 2021; rango: con tasas del Censo 2011 y órdenes)",
+   "cifra": 2012790.016,
+   "rango": [
+    1570413.556,
+    2159620.389
+   ],
+   "unidad": "hogares",
+   "periodo": "2002-2021",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE EPA (hogares); INE padrón (edad y nacionalidad); Censos 2011 y 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021-01-01",
+   "cifra_texto": "2.012.790 hogares (1.570.414 a 2.159.620)",
+   "min_max": [
+    1570413.556,
+    2159620.389,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-EPA-2002-2021-JEFATURA-RESIDUO",
+   "enunciado": "Contabilidad EPA 2002-2021: residuo de jefatura (valor: tasas del Censo 2021; rango: con tasas del Censo 2011 y órdenes)",
+   "cifra": 112035.0248,
+   "rango": [
+    112035.0248,
+    399826.9811
+   ],
+   "unidad": "hogares",
+   "periodo": "2002-2021",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE EPA (hogares); INE padrón (edad y nacionalidad); Censos 2011 y 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021-01-01",
+   "cifra_texto": "112.035 hogares (112.035 a 399.827)",
+   "min_max": [
+    112035.0248,
+    399826.9811,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-EPA-2002-2021-POBLACION",
+   "enunciado": "Contabilidad EPA 2002-2021: tamaño de la población (valor: tasas del Censo 2021; rango: con tasas del Censo 2011 y órdenes)",
+   "cifra": 2353707.667,
+   "rango": [
+    2194101.055,
+    2512956.152
+   ],
+   "unidad": "hogares",
+   "periodo": "2002-2021",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE EPA (hogares); INE padrón (edad y nacionalidad); Censos 2011 y 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021-01-01",
+   "cifra_texto": "2.353.708 hogares (2.194.101 a 2.512.956)",
+   "min_max": [
+    2194101.055,
+    2512956.152,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-EPA-2014-2021-JEFATURA",
+   "enunciado": "Residuo de jefatura EPA 2014-2021, España (ruptura de la EPA en 2021T1 posible; no se interpreta)",
+   "cifra": -677775.8681,
+   "rango": null,
+   "unidad": "hogares",
+   "periodo": "2014-2021",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE EPA (hogares); INE padrón (edad y nacionalidad); Censos 2011 y 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021-01-01",
+   "cifra_texto": "-677.776 hogares",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-ESTRUCTURA-EDAD",
+   "enunciado": "Contabilidad del cambio de hogares 2021-2025: parte de estructura por edad, España (Shapley; rango: órdenes y ECP/EPA)",
+   "cifra": 371921.7725,
+   "rango": [
+    363854.6028,
+    381512.738
+   ],
+   "unidad": "hogares",
+   "periodo": "1-1-2021 a 1-1-2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECP (t60129, t60133); INE EPA (hogares); Censo 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-01-01",
+   "cifra_texto": "371.922 hogares (363.855 a 381.513)",
+   "min_max": [
+    363854.6028,
+    381512.738,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-JEFATURA",
+   "enunciado": "Contabilidad del cambio de hogares 2021-2025: residuo de jefatura (tasa agregada a población constante), España (rango: ECP y EPA)",
+   "cifra": 20478.2232,
+   "rango": [
+    20478.2232,
+    97285.1072
+   ],
+   "unidad": "hogares",
+   "periodo": "1-1-2021 a 1-1-2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECP (t60129, t60133); INE EPA (hogares); Censo 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-01-01",
+   "cifra_texto": "20.478 hogares (20.478 a 97.285)",
+   "min_max": [
+    20478.2232,
+    97285.1072,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-HOG-POBLACION",
+   "enunciado": "Contabilidad del cambio de hogares 2021-2025: parte de tamaño de la población, España (Shapley; rango: órdenes y ECP/EPA)",
+   "cifra": 670187.1623,
+   "rango": [
+    662247.276,
+    680789.043
+   ],
+   "unidad": "hogares",
+   "periodo": "1-1-2021 a 1-1-2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECP (t60129, t60133); INE EPA (hogares); Censo 2021 (microdatos)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-01-01",
+   "cifra_texto": "670.187 hogares (662.247 a 680.789)",
+   "min_max": [
+    662247.276,
+    680789.043,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-MIG-EMCR-SALDO",
+   "enunciado": "Saldo migratorio exterior EMCR acumulado 2021-2024 frente a variación de la población extranjera ECP 1-1-2021 a 1-1-2025 (valor: saldo)",
+   "cifra": 2186663.0,
+   "rango": [
+    1482129.0,
+    2186663.0
+   ],
+   "unidad": "personas",
+   "periodo": "2021-2024",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE EMCR (t69711); INE ECP",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024-12-31",
+   "cifra_texto": "2.186.663 personas (1.482.129 a 2.186.663)",
+   "min_max": [
+    1482129.0,
+    2186663.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-PRECIO-CUOTA-PC1-2007-2013",
+   "enunciado": "Cuota del 1.er factor común (PC1) en la varianza del crecimiento interanual del valor tasado, 33 provincias (valor: cuota; rango: banda 95 %)",
+   "cifra": 71.4022,
+   "rango": [
+    40.0404,
+    82.9333
+   ],
+   "unidad": "%",
+   "periodo": "2007-2013",
+   "ambito": "33 provincias (11 selladas v6 excluidas)",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU valor tasado (data/base)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2013-12-31",
+   "cifra_texto": "71,4 % (40,04 a 82,93)",
+   "min_max": [
+    40.0404,
+    82.9333,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-PRECIO-CUOTA-PC1-2014-2019",
+   "enunciado": "Cuota del 1.er factor común (PC1) en la varianza del crecimiento interanual del valor tasado, 33 provincias (valor: cuota; rango: banda 95 %)",
+   "cifra": 52.8903,
+   "rango": [
+    24.7918,
+    63.1126
+   ],
+   "unidad": "%",
+   "periodo": "2014-2019",
+   "ambito": "33 provincias (11 selladas v6 excluidas)",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU valor tasado (data/base)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2019-12-31",
+   "cifra_texto": "52,89 % (24,79 a 63,11)",
+   "min_max": [
+    24.7918,
+    63.1126,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-PRECIO-CUOTA-PC1-2020-2026",
+   "enunciado": "Cuota del 1.er factor común (PC1) en la varianza del crecimiento interanual del valor tasado, 33 provincias (valor: cuota; rango: banda 95 %)",
+   "cifra": 80.8576,
+   "rango": [
+    40.2043,
+    86.098
+   ],
+   "unidad": "%",
+   "periodo": "2020-2026",
+   "ambito": "33 provincias (11 selladas v6 excluidas)",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU valor tasado (data/base)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-30",
+   "cifra_texto": "80,86 % (40,2 a 86,1)",
+   "min_max": [
+    40.2043,
+    86.098,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-PRECIO-DFM-R2",
+   "enunciado": "R² medio con el factor del DynamicFactor (tasa trimestral, 2007T1-2026T2), periodo 2020-2026 (rango: periodos 2007-2013 y 2014-2019)",
+   "cifra": 45.0211,
+   "rango": [
+    17.6252,
+    45.0211
+   ],
+   "unidad": "%",
+   "periodo": "2007-2026",
+   "ambito": "33 provincias",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU valor tasado (data/base); statsmodels",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-30",
+   "cifra_texto": "45,02 % (17,63 a 45,02)",
+   "min_max": [
+    17.6252,
+    45.0211,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-PRECIO-LOCAL-CCAA",
+   "enunciado": "Correlación media de los residuos locales entre provincias de la misma CCAA, 2014-2019 (rango: 2007-2013 a 2020-2026)",
+   "cifra": 0.0204,
+   "rango": [
+    0.0204,
+    0.1126
+   ],
+   "unidad": "correlación",
+   "periodo": "2014-2019",
+   "ambito": "provincias de la misma CCAA",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU valor tasado (data/base)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2019-12-31",
+   "cifra_texto": "0,02  (0,02 a 0,113)",
+   "min_max": [
+    0.0204,
+    0.1126,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-PRECIO-R2-PROV-2007-2013",
+   "enunciado": "Cuota común por provincia (R² con el factor), 33 provincias (valor: mediana; rango: mín. y máx.)",
+   "cifra": 75.9594,
+   "rango": [
+    16.2717,
+    93.5204
+   ],
+   "unidad": "%",
+   "periodo": "2007-2013",
+   "ambito": "33 provincias",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU valor tasado (data/base)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2013-12-31",
+   "cifra_texto": "75,96 % (16,27 a 93,52)",
+   "min_max": [
+    16.2717,
+    93.5204,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-PRECIO-R2-PROV-2014-2019",
+   "enunciado": "Cuota común por provincia (R² con el factor), 33 provincias (valor: mediana; rango: mín. y máx.)",
+   "cifra": 53.1879,
+   "rango": [
+    1.1132,
+    87.9626
+   ],
+   "unidad": "%",
+   "periodo": "2014-2019",
+   "ambito": "33 provincias",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU valor tasado (data/base)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2019-12-31",
+   "cifra_texto": "53,19 % (1,11 a 87,96)",
+   "min_max": [
+    1.1132,
+    87.9626,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-PRECIO-R2-PROV-2020-2026",
+   "enunciado": "Cuota común por provincia (R² con el factor), 33 provincias (valor: mediana; rango: mín. y máx.)",
+   "cifra": 83.1349,
+   "rango": [
+    51.0334,
+    95.5693
+   ],
+   "unidad": "%",
+   "periodo": "2020-2026",
+   "ambito": "33 provincias",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU valor tasado (data/base)",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-30",
+   "cifra_texto": "83,13 % (51,03 a 95,57)",
+   "min_max": [
+    51.0334,
+    95.5693,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-CON-PRECIO-V8-DIF-PP",
+   "enunciado": "Diferencia de la cuota del PC1 (33 provincias, precio real) con la de V8 (17 CCAA) en P2, P3 y P5 (valor: media; rango: mín. y máx.)",
+   "cifra": -7.6853,
+   "rango": [
+    -14.5319,
+    -3.7209
+   ],
+   "unidad": "pp",
+   "periodo": "P2, P3, P5 de V8",
+   "ambito": "33 provincias frente a 17 CCAA",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "V8-M1; MIVAU valor tasado",
+   "ruta": "output/v16/f2_contabilidad/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-30",
+   "cifra_texto": "-7,69 pp (-14,53 a -3,72)",
+   "min_max": [
+    -14.5319,
+    -3.7209,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-DES-alquiler_mercado-DFL-composicion-2019_2025",
+   "enunciado": "parte del cambio atribuida contablemente a la composición (DFL) · alquiler a precio de mercado",
+   "cifra": -9.971,
+   "rango": [
+    -12.019,
+    -7.934
+   ],
+   "unidad": "puntos porcentuales de la renta neta",
+   "periodo": "2019-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-9,97 puntos porcentuales de la ren… (-12,02 a -7,93)",
+   "min_max": [
+    -12.019,
+    -7.934,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-DES-alquiler_mercado-observado-total-2019_2025",
+   "enunciado": "cambio observado del esfuerzo medio (gasto/renta) · alquiler a precio de mercado",
+   "cifra": -6.226,
+   "rango": [
+    -8.446,
+    -4.276
+   ],
+   "unidad": "puntos porcentuales de la renta neta",
+   "periodo": "2019-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-6,23 puntos porcentuales de la ren… (-8,45 a -4,28)",
+   "min_max": [
+    -8.446,
+    -4.276,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-DES-prop_con_hipoteca-DFL-composicion-2019_2025",
+   "enunciado": "parte del cambio atribuida contablemente a la composición (DFL) · propiedad con hipoteca",
+   "cifra": -3.602,
+   "rango": [
+    -4.253,
+    -2.96
+   ],
+   "unidad": "puntos porcentuales de la renta neta",
+   "periodo": "2019-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-3,6 puntos porcentuales de la ren… (-4,25 a -2,96)",
+   "min_max": [
+    -4.253,
+    -2.96,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-DES-prop_con_hipoteca-observado-total-2019_2025",
+   "enunciado": "cambio observado del esfuerzo medio (gasto/renta) · propiedad con hipoteca",
+   "cifra": 0.813,
+   "rango": [
+    -0.098,
+    1.625
+   ],
+   "unidad": "puntos porcentuales de la renta neta",
+   "periodo": "2019-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "0,813 puntos porcentuales de la ren… (-0,098 a 1,62)",
+   "min_max": [
+    -0.098,
+    1.625,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-EDA-16-34-S40-2008_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · sustentador de 16-34 años",
+   "cifra": -1.021,
+   "rango": [
+    -4.09,
+    2.055
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2008-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV); el nivel de 2008 difiere de Eurostat más de 0,5 pp (ver informe, validación)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-1,02 puntos porcentuales (-4,09 a 2,06)",
+   "min_max": [
+    -4.09,
+    2.055,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-EDA-16-34-S40-2019_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · sustentador de 16-34 años",
+   "cifra": -3.61,
+   "rango": [
+    -7.044,
+    0.098
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2019-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-3,61 puntos porcentuales (-7,04 a 0,098)",
+   "min_max": [
+    -7.044,
+    0.098,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-EDA-16-34-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · sustentador de 16-34 años",
+   "cifra": 12.84,
+   "rango": [
+    10.796,
+    15.196
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "12,84 % de la población (10,8 a 15,2)",
+   "min_max": [
+    10.796,
+    15.196,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-EDA-35-49-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · sustentador de 35-49 años",
+   "cifra": 8.551,
+   "rango": [
+    7.746,
+    9.534
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "8,55 % de la población (7,75 a 9,53)",
+   "min_max": [
+    7.746,
+    9.534,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-EDA-50-64-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · sustentador de 50-64 años",
+   "cifra": 5.935,
+   "rango": [
+    5.116,
+    6.855
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "5,93 % de la población (5,12 a 6,86)",
+   "min_max": [
+    5.116,
+    6.855,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-EDA-65+-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · sustentador de 65+ años",
+   "cifra": 4.557,
+   "rango": [
+    4.102,
+    5.057
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "4,56 % de la población (4,1 a 5,06)",
+   "min_max": [
+    4.102,
+    5.057,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-ESP-RES-2025",
+   "enunciado": "Población que cae bajo el umbral de pobreza (60 % de la mediana) tras el gasto de vivienda y no estaba bajo él antes · España",
+   "cifra": 9.267,
+   "rango": [
+    8.654,
+    9.87
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "9,27 % de la población (8,65 a 9,87)",
+   "min_max": [
+    8.654,
+    9.87,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-ESP-S30-2025",
+   "enunciado": "Población con gasto neto de vivienda > 30 % de la renta neta · España",
+   "cifra": 12.011,
+   "rango": [
+    11.42,
+    12.65
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "12,01 % de la población (11,42 a 12,65)",
+   "min_max": [
+    11.42,
+    12.65,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-ESP-S40-2008_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · España",
+   "cifra": -2.911,
+   "rango": [
+    -3.813,
+    -1.98
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2008-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV); el nivel de 2008 difiere de Eurostat más de 0,5 pp (ver informe, validación)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-2,91 puntos porcentuales (-3,81 a -1,98)",
+   "min_max": [
+    -3.813,
+    -1.98,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-ESP-S40-2015_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · España",
+   "cifra": -3.169,
+   "rango": [
+    -4.157,
+    -2.236
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2015-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-3,17 puntos porcentuales (-4,16 a -2,24)",
+   "min_max": [
+    -4.157,
+    -2.236,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-ESP-S40-2019_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · España",
+   "cifra": -1.372,
+   "rango": [
+    -2.207,
+    -0.43
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2019-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-1,37 puntos porcentuales (-2,21 a -0,43)",
+   "min_max": [
+    -2.207,
+    -0.43,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-ESP-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · España",
+   "cifra": 7.172,
+   "rango": [
+    6.75,
+    7.658
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "7,17 % de la población (6,75 a 7,66)",
+   "min_max": [
+    6.75,
+    7.658,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-NAC-Espana-S40-2019_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · sustentador con nacionalidad española",
+   "cifra": -1.365,
+   "rango": [
+    -2.075,
+    -0.628
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2019-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-1,36 puntos porcentuales (-2,08 a -0,628)",
+   "min_max": [
+    -2.075,
+    -0.628,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-NAC-Espana-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · sustentador con nacionalidad española",
+   "cifra": 4.649,
+   "rango": [
+    4.319,
+    5.007
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "4,65 % de la población (4,32 a 5,01)",
+   "min_max": [
+    4.319,
+    5.007,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-NAC-Resto-S40-2019_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · sustentador con nacionalidad de fuera de la UE",
+   "cifra": -8.85,
+   "rango": [
+    -15.644,
+    -1.675
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2019-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-8,85 puntos porcentuales (-15,64 a -1,68)",
+   "min_max": [
+    -15.644,
+    -1.675,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-NAC-Resto-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · sustentador con nacionalidad de fuera de la UE",
+   "cifra": 25.362,
+   "rango": [
+    22.131,
+    29.354
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "25,36 % de la población (22,13 a 29,35)",
+   "min_max": [
+    22.131,
+    29.354,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-NAC-UE-S40-2019_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · sustentador con nacionalidad de otro país de la UE",
+   "cifra": -14.235,
+   "rango": [
+    -26.584,
+    -3.155
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2019-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-14,23 puntos porcentuales (-26,58 a -3,15)",
+   "min_max": [
+    -26.584,
+    -3.155,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-NAC-UE-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · sustentador con nacionalidad de otro país de la UE",
+   "cifra": 18.454,
+   "rango": [
+    15.519,
+    22.222
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "18,45 % de la población (15,52 a 22,22)",
+   "min_max": [
+    15.519,
+    22.222,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-QUI-Q1-S40-2019_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · quintil de renta Q1",
+   "cifra": -4.763,
+   "rango": [
+    -8.279,
+    -0.902
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2019-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-4,76 puntos porcentuales (-8,28 a -0,902)",
+   "min_max": [
+    -8.279,
+    -0.902,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-QUI-Q1-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · quintil de renta Q1",
+   "cifra": 27.716,
+   "rango": [
+    25.651,
+    29.941
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "27,72 % de la población (25,65 a 29,94)",
+   "min_max": [
+    25.651,
+    29.941,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-QUI-Q2-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · quintil de renta Q2",
+   "cifra": 5.17,
+   "rango": [
+    4.469,
+    5.959
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "5,17 % de la población (4,47 a 5,96)",
+   "min_max": [
+    4.469,
+    5.959,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-QUI-Q3-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · quintil de renta Q3",
+   "cifra": 1.877,
+   "rango": [
+    1.485,
+    2.325
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "1,88 % de la población (1,49 a 2,33)",
+   "min_max": [
+    1.485,
+    2.325,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-QUI-Q4-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · quintil de renta Q4",
+   "cifra": 0.888,
+   "rango": [
+    0.597,
+    1.206
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "0,888 % de la población (0,597 a 1,21)",
+   "min_max": [
+    0.597,
+    1.206,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-TEN-alquiler_mercado-S40-2008_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · alquiler a precio de mercado",
+   "cifra": -12.02,
+   "rango": [
+    -17.496,
+    -6.859
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2008-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV); el nivel de 2008 difiere de Eurostat más de 0,5 pp (ver informe, validación)",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-12,02 puntos porcentuales (-17,5 a -6,86)",
+   "min_max": [
+    -17.496,
+    -6.859,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-TEN-alquiler_mercado-S40-2015_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · alquiler a precio de mercado",
+   "cifra": -16.529,
+   "rango": [
+    -20.956,
+    -11.526
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2015-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-16,53 puntos porcentuales (-20,96 a -11,53)",
+   "min_max": [
+    -20.956,
+    -11.526,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-TEN-alquiler_mercado-S40-2019_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · alquiler a precio de mercado",
+   "cifra": -10.605,
+   "rango": [
+    -14.676,
+    -6.041
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2019-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-10,61 puntos porcentuales (-14,68 a -6,04)",
+   "min_max": [
+    -14.676,
+    -6.041,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-TEN-alquiler_mercado-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · alquiler a precio de mercado",
+   "cifra": 26.796,
+   "rango": [
+    24.64,
+    29.264
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "26,8 % de la población (24,64 a 29,26)",
+   "min_max": [
+    24.64,
+    29.264,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-TEN-alquiler_reducido_cesion-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · alquiler reducido o cesión",
+   "cifra": 8.442,
+   "rango": [
+    6.821,
+    10.055
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "8,44 % de la población (6,82 a 10,05)",
+   "min_max": [
+    6.821,
+    10.055,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-TEN-prop_con_hipoteca-S40-2008_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · propiedad con hipoteca",
+   "cifra": -8.28,
+   "rango": [
+    -10.201,
+    -6.642
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2008-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV); el nivel de 2008 difiere de Eurostat más de 0,5 pp (ver informe, validación)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-8,28 puntos porcentuales (-10,2 a -6,64)",
+   "min_max": [
+    -10.201,
+    -6.642,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-TEN-prop_con_hipoteca-S40-2015_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · propiedad con hipoteca",
+   "cifra": -5.203,
+   "rango": [
+    -6.778,
+    -3.776
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2015-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-5,2 puntos porcentuales (-6,78 a -3,78)",
+   "min_max": [
+    -6.778,
+    -3.776,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-TEN-prop_con_hipoteca-S40-2019_2025",
+   "enunciado": "Cambio de: Población con gasto neto de vivienda > 40 % de la renta neta · propiedad con hipoteca",
+   "cifra": -0.242,
+   "rango": [
+    -1.46,
+    0.951
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2019-2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "-0,242 puntos porcentuales (-1,46 a 0,951)",
+   "min_max": [
+    -1.46,
+    0.951,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-TEN-prop_con_hipoteca-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · propiedad con hipoteca",
+   "cifra": 3.449,
+   "rango": [
+    2.819,
+    4.233
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "3,45 % de la población (2,82 a 4,23)",
+   "min_max": [
+    2.819,
+    4.233,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-ESF-TEN-prop_sin_hipoteca-S40-2025",
+   "enunciado": "Población con gasto neto de vivienda > 40 % de la renta neta · propiedad sin hipoteca",
+   "cifra": 1.87,
+   "rango": [
+    1.642,
+    2.148
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España (hogares privados; agregado de las 19 regiones NUTS2 de la ECV)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE, Encuesta de Condiciones de Vida, microdatos transversales (ficheros D, H, R, P)",
+   "ruta": "output/v16/f2_esfuerzo/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-06-10",
+   "cifra_texto": "1,87 % de la población (1,64 a 2,15)",
+   "min_max": [
+    1.642,
+    2.148,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-FDR-Q9-g-q",
+   "enunciado": "Q9-g: q-valor de Benjamini-Yekutieli en la rama diseños (m = 21)",
+   "cifra": 0.3062101312,
+   "rango": [
+    0.3062101312,
+    0.3062101312
+   ],
+   "unidad": "q-valor",
+   "periodo": "fase 6 de V16",
+   "ambito": "rama diseños",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "cálculo propio sobre output/v16/*/resultado.json",
+   "ruta": "output/v16/fdr/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,306 q-valor",
+   "min_max": [
+    0.3062101312,
+    0.3062101312,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-BRECHA-2124-CAT",
+   "enunciado": "Brecha de crecimiento contratos nuevos menos vigentes 2021-2024, Cataluña",
+   "cifra": 10.785,
+   "rango": [
+    9.718,
+    11.852
+   ],
+   "unidad": "p.p.",
+   "periodo": "2021-2024",
+   "ambito": "Cataluña",
+   "mercado": "alquiler (contratos nuevos)",
+   "capa": "C1",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPVA; Incasòl fianzas; INE IPC alquiler",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "10,79 p.p. (9,72 a 11,85)",
+   "min_max": [
+    9.718,
+    11.852,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-BRECHA-2124-CV",
+   "enunciado": "Brecha de crecimiento contratos nuevos menos vigentes 2021-2024, Comunitat Valenciana",
+   "cifra": null,
+   "rango": [
+    16.045,
+    23.645
+   ],
+   "unidad": "p.p.",
+   "periodo": "2021-2024",
+   "ambito": "Comunitat Valenciana",
+   "mercado": "alquiler (contratos nuevos)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPVA; GVA fianzas; INE IPC alquiler",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "16,05 a 23,64 p.p.",
+   "min_max": [
+    16.045,
+    23.645,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-BRECHA-2125-CAT",
+   "enunciado": "Brecha de crecimiento fianzas nuevas menos IPC alquiler 2021-2025, Cataluña",
+   "cifra": 12.647,
+   "rango": null,
+   "unidad": "p.p.",
+   "periodo": "2021-2025",
+   "ambito": "Cataluña",
+   "mercado": "alquiler (contratos nuevos)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Incasòl fianzas; INE IPC alquiler",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "12,65 p.p.",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-BRECHA-2125-CV",
+   "enunciado": "Brecha de crecimiento fianzas nuevas menos IPC alquiler 2021-2025, Comunitat Valenciana",
+   "cifra": 36.192,
+   "rango": null,
+   "unidad": "p.p.",
+   "periodo": "2021-2025",
+   "ambito": "Comunitat Valenciana",
+   "mercado": "alquiler (contratos nuevos)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "GVA fianzas; INE IPC alquiler",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "36,19 p.p.",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-IPC-NOMINAL-2007-2025",
+   "enunciado": "IPC de alquiler (stock), cambio acumulado nominal 2007-2025, España",
+   "cifra": 23.7,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2007-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPC alquiler",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "23,7 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-IPC-NOMINAL-2013-2025",
+   "enunciado": "IPC de alquiler (stock), cambio acumulado nominal 2013-2025, España",
+   "cifra": 12.283,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2013-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPC alquiler",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "12,28 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-IPC-NOMINAL-2019-2025",
+   "enunciado": "IPC de alquiler (stock), cambio acumulado nominal 2019-2025, España",
+   "cifra": 10.133,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPC alquiler",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "10,13 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-IPC-REAL-2007-2025",
+   "enunciado": "IPC de alquiler (stock), cambio acumulado real 2007-2025, España",
+   "cifra": -13.28,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2007-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPC alquiler",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "-13,28 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-IPC-REAL-2013-2025",
+   "enunciado": "IPC de alquiler (stock), cambio acumulado real 2013-2025, España",
+   "cifra": -10.846,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2013-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPC alquiler",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "-10,85 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-IPC-REAL-2019-2025",
+   "enunciado": "IPC de alquiler (stock), cambio acumulado real 2019-2025, España",
+   "cifra": -9.493,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPC alquiler",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "-9,49 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-NIVEL-2024-CAT",
+   "enunciado": "Brecha de nivel contrato nuevo frente a existente en 2024 (IPVA), Cataluña",
+   "cifra": 10.775,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2024",
+   "ambito": "Cataluña",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPVA",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "10,78 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-NIVEL-2024-CV",
+   "enunciado": "Brecha de nivel contrato nuevo frente a existente en 2024 (IPVA), Comunitat Valenciana",
+   "cifra": 19.182,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2024",
+   "ambito": "Comunitat Valenciana",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPVA",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "19,18 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-STOCK-NOMINAL-2013-2024",
+   "enunciado": "Alquiler de contratos vigentes, cambio acumulado nominal 2013-2024, España",
+   "cifra": null,
+   "rango": [
+    9.637,
+    40.702
+   ],
+   "unidad": "%",
+   "periodo": "2013-2024 (media anual)",
+   "ambito": "España",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPC alquiler; INE IPVA; SERPAVI",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024 (anual)",
+   "cifra_texto": "9,64 a 40,7 %",
+   "min_max": [
+    9.637,
+    40.702,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-STOCK-NOMINAL-2019-2024",
+   "enunciado": "Alquiler de contratos vigentes, cambio acumulado nominal 2019-2024, España",
+   "cifra": null,
+   "rango": [
+    7.537,
+    21.213
+   ],
+   "unidad": "%",
+   "periodo": "2019-2024 (media anual)",
+   "ambito": "España",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPC alquiler; INE IPVA; SERPAVI",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024 (anual)",
+   "cifra_texto": "7,54 a 21,21 %",
+   "min_max": [
+    7.537,
+    21.213,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-STOCK-REAL-2013-2024",
+   "enunciado": "Alquiler de contratos vigentes, cambio acumulado real 2013-2024, España",
+   "cifra": null,
+   "rango": [
+    -10.62,
+    14.705
+   ],
+   "unidad": "%",
+   "periodo": "2013-2024 (media anual)",
+   "ambito": "España",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPC alquiler; INE IPVA; SERPAVI",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024 (anual)",
+   "cifra_texto": "-10,62 a 14,71 %",
+   "min_max": [
+    -10.62,
+    14.705,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ALQ-STOCK-REAL-2019-2024",
+   "enunciado": "Alquiler de contratos vigentes, cambio acumulado real 2019-2024, España",
+   "cifra": null,
+   "rango": [
+    -9.264,
+    2.275
+   ],
+   "unidad": "%",
+   "periodo": "2019-2024 (media anual)",
+   "ambito": "España",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPC alquiler; INE IPVA; SERPAVI",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024 (anual)",
+   "cifra_texto": "-9,26 a 2,27 %",
+   "min_max": [
+    -9.264,
+    2.275,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-ESPORADICO-2021",
+   "enunciado": "Viviendas de uso esporádico por consumo eléctrico, Censo 2021",
+   "cifra": 2517628.0,
+   "rango": null,
+   "unidad": "viviendas",
+   "periodo": "2021",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Censo 2021 consumo eléctrico; Censo 2021",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021",
+   "cifra_texto": "2.517.628 viviendas",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-HOGARES-ECP-2125",
+   "enunciado": "Aumento del número de hogares (ECP, 1-1-2021 a 1-1-2025)",
+   "cifra": 981823.0,
+   "rango": null,
+   "unidad": "hogares",
+   "periodo": "2021-2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECP",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025T1",
+   "cifra_texto": "981.823 hogares",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_RPI-ES-2007-2025",
+   "enunciado": "Ratio precio/alquiler, cambio acumulado del índice 2007-2025: España",
+   "cifra": -1.891,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2007-2025",
+   "ambito": "España",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OCDE",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "-1,89 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_RPI-ES-2019-2025",
+   "enunciado": "Ratio precio/alquiler, cambio acumulado del índice 2019-2025: España",
+   "cifra": 31.473,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2025",
+   "ambito": "España",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OCDE",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "31,47 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_RPI-MED-2007-2025",
+   "enunciado": "Ratio precio/alquiler, cambio acumulado del índice 2007-2025: mediana UE (mínimo/máximo: mediana UE y OCDE)",
+   "cifra": 7.526,
+   "rango": [
+    7.526,
+    14.842
+   ],
+   "unidad": "%",
+   "periodo": "2007-2025",
+   "ambito": "UE (21 países) y OCDE (32 países)",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OCDE",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "7,53 % (7,53 a 14,84)",
+   "min_max": [
+    7.526,
+    14.842,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_RPI-MED-2019-2025",
+   "enunciado": "Ratio precio/alquiler, cambio acumulado del índice 2019-2025: mediana UE (mínimo/máximo: mediana UE y OCDE)",
+   "cifra": 16.243,
+   "rango": [
+    16.243,
+    16.243
+   ],
+   "unidad": "%",
+   "periodo": "2019-2025",
+   "ambito": "UE (22 países) y OCDE (34 países)",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OCDE",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "16,24 %",
+   "min_max": [
+    16.243,
+    16.243,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_YDH-ES-2007-2025",
+   "enunciado": "Ratio precio/renta disponible, cambio acumulado del índice 2007-2025: España",
+   "cifra": -17.434,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2007-2025",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OCDE",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "-17,43 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_YDH-ES-2019-2025",
+   "enunciado": "Ratio precio/renta disponible, cambio acumulado del índice 2019-2025: España",
+   "cifra": 13.66,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2025",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OCDE",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "13,66 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_YDH-MED-2007-2025",
+   "enunciado": "Ratio precio/renta disponible, cambio acumulado del índice 2007-2025: mediana UE (mínimo/máximo: mediana UE y OCDE)",
+   "cifra": -13.701,
+   "rango": [
+    -13.701,
+    -1.975
+   ],
+   "unidad": "%",
+   "periodo": "2007-2025",
+   "ambito": "UE (21 países) y OCDE (31 países)",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OCDE",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "-13,7 % (-13,7 a -1,98)",
+   "min_max": [
+    -13.701,
+    -1.975,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-HPI_YDH-MED-2019-2025",
+   "enunciado": "Ratio precio/renta disponible, cambio acumulado del índice 2019-2025: mediana UE (mínimo/máximo: mediana UE y OCDE)",
+   "cifra": 3.184,
+   "rango": [
+    3.184,
+    3.184
+   ],
+   "unidad": "%",
+   "periodo": "2019-2025",
+   "ambito": "UE (22 países) y OCDE (32 países)",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OCDE",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "3,18 %",
+   "min_max": [
+    3.184,
+    3.184,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-RHP-ES-2007-2025",
+   "enunciado": "Precio real de la vivienda, cambio acumulado 2007-2025: España",
+   "cifra": -12.842,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2007-2025",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OCDE",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "-12,84 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-RHP-ES-2019-2025",
+   "enunciado": "Precio real de la vivienda, cambio acumulado 2019-2025: España",
+   "cifra": 19.554,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2025",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OCDE",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "19,55 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-RHP-MED-2007-2025",
+   "enunciado": "Precio real de la vivienda, cambio acumulado 2007-2025: mediana UE (mínimo/máximo: mediana UE y OCDE)",
+   "cifra": 9.071,
+   "rango": [
+    9.071,
+    25.007
+   ],
+   "unidad": "%",
+   "periodo": "2007-2025",
+   "ambito": "UE (21 países) y OCDE (35 países)",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OCDE",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "9,07 % (9,07 a 25,01)",
+   "min_max": [
+    9.071,
+    25.007,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-RHP-MED-2019-2025",
+   "enunciado": "Precio real de la vivienda, cambio acumulado 2019-2025: mediana UE (mínimo/máximo: mediana UE y OCDE)",
+   "cifra": 15.598,
+   "rango": [
+    13.736,
+    15.598
+   ],
+   "unidad": "%",
+   "periodo": "2019-2025",
+   "ambito": "UE (22 países) y OCDE (37 países)",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OCDE",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "15,6 % (13,74 a 15,6)",
+   "min_max": [
+    13.736,
+    15.598,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-INTL-SOBRECARGA-ES-2025",
+   "enunciado": "Tasa de sobrecarga del coste de la vivienda, España frente a la UE (2025); mínimo y máximo: España y UE",
+   "cifra": 7.2,
+   "rango": [
+    7.2,
+    7.7
+   ],
+   "unidad": "% de la población",
+   "periodo": "2025",
+   "ambito": "España y UE-27",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Eurostat ECV",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "7,2 % de la población (7,2 a 7,7)",
+   "min_max": [
+    7.2,
+    7.7,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-IPV-NOM-2019-2025",
+   "enunciado": "Precio de compra, cambio acumulado nominal 2019-2025 (media anual), España; medida: IPV del INE (ajustado por calidad); una sola fuente",
+   "cifra": 44.4,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPV; leído de output/v16/f2_hechos/fichas.md («Todas las medidas»)",
+   "ruta": "output/v16/f7_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "44,4 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-IPV-REAL-2019-2025",
+   "enunciado": "Precio de compra, cambio acumulado real (deflactor IPC general) 2019-2025 (media anual), España; medida: IPV del INE (ajustado por calidad); una sola fuente",
+   "cifra": 18.7,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2019-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPV; leído de output/v16/f2_hechos/fichas.md («Todas las medidas»)",
+   "ruta": "output/v16/f7_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "18,7 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-LANZ-2013",
+   "enunciado": "Lanzamientos practicados en 2013, España (total)",
+   "cifra": 67189.0,
+   "rango": null,
+   "unidad": "lanzamientos",
+   "periodo": "2013",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "CGPJ",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2013",
+   "cifra_texto": "67.189 lanzamientos",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-LANZ-2025",
+   "enunciado": "Lanzamientos practicados en 2025, España (total)",
+   "cifra": 24540.0,
+   "rango": null,
+   "unidad": "lanzamientos",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "CGPJ",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "24.540 lanzamientos",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-LANZ-PICO",
+   "enunciado": "Año con más lanzamientos practicados 2013-2025 (2014), España",
+   "cifra": 68091.0,
+   "rango": null,
+   "unidad": "lanzamientos",
+   "periodo": "2014",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "CGPJ",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2014",
+   "cifra_texto": "68.091 lanzamientos",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-LANZ-TIPO-HIPOTECARIA-2025",
+   "enunciado": "Cuota de los lanzamientos por tipo «hipotecaria» en 2025, España",
+   "cifra": 17.71,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "CGPJ",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "17,71 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-LANZ-TIPO-LAU-2025",
+   "enunciado": "Cuota de los lanzamientos por tipo «lau» en 2025, España",
+   "cifra": 74.641,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "CGPJ",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "74,64 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-LANZ-TIPO-OTROS-2025",
+   "enunciado": "Cuota de los lanzamientos por tipo «otros» en 2025, España",
+   "cifra": 7.649,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "CGPJ",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "7,65 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-LANZ-UM4T",
+   "enunciado": "Lanzamientos practicados en los últimos cuatro trimestres (2025T3-2026T2), España",
+   "cifra": 18731.0,
+   "rango": null,
+   "unidad": "lanzamientos",
+   "periodo": "2025T3-2026T2",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "CGPJ",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026T2",
+   "cifra_texto": "18.731 lanzamientos",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-OBRA-SOBRE-HOGARES-2125",
+   "enunciado": "Libres terminadas 2021-2025 por hogar nuevo (ECP 2021-2025)",
+   "cifra": 0.42,
+   "rango": null,
+   "unidad": "viviendas por hogar",
+   "periodo": "2021-2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU fin de obra; INE ECP",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026T2",
+   "cifra_texto": "0,42 viviendas por hogar",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-OBRA-TERMINADAS-2025",
+   "enunciado": "Viviendas libres terminadas (MIVAU) en 2025",
+   "cifra": 80792.0,
+   "rango": null,
+   "unidad": "viviendas",
+   "periodo": "2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU fin de obra",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026T2",
+   "cifra_texto": "80.792 viviendas",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-OBRA-TERMINADAS-2125",
+   "enunciado": "Viviendas libres terminadas (MIVAU, certificados de fin de obra; sin protegidas), acumulado 2021-2025",
+   "cifra": 411900.0,
+   "rango": null,
+   "unidad": "viviendas",
+   "periodo": "2021-2025",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU fin de obra",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026T2",
+   "cifra_texto": "411.900 viviendas",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PARQUE-CATASTRO-CENSO-2021",
+   "enunciado": "Unidades urbanas residenciales del Catastro (1-1-2022) frente a viviendas del Censo 2021, territorio común",
+   "cifra": -5.23,
+   "rango": null,
+   "unidad": "% de diferencia",
+   "periodo": "2021-2022",
+   "ambito": "Territorio común (sin País Vasco ni Navarra)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Catastro; Censo 2021",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2022",
+   "cifra_texto": "-5,23 % de diferencia",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PARQUE-NOPRINCIPALES-2021",
+   "enunciado": "Viviendas no principales (secundarias y vacías), Censo 2021",
+   "cifra": 8087092.0,
+   "rango": null,
+   "unidad": "viviendas",
+   "periodo": "1-11-2021",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Censo 2021",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021",
+   "cifra_texto": "8.087.092 viviendas",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PARQUE-PRINCIPALES-2021",
+   "enunciado": "Viviendas principales, Censo 2021",
+   "cifra": 18536616.0,
+   "rango": null,
+   "unidad": "viviendas",
+   "periodo": "1-11-2021",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Censo 2021",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021",
+   "cifra_texto": "18.536.616 viviendas",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PARQUE-TOTAL-2021",
+   "enunciado": "Viviendas familiares, Censo 2021",
+   "cifra": 26623708.0,
+   "rango": null,
+   "unidad": "viviendas",
+   "periodo": "1-11-2021",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Censo 2021",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021",
+   "cifra_texto": "26.623.708 viviendas",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PRECIO-CCAA-NCOINC-2007-2025",
+   "enunciado": "CCAA (de 17) con al menos dos medidas de grupos distintos (IPV, tasado, Registradores) dentro de ±3.0 p.p. en el cambio real 2007-2025",
+   "cifra": 10.0,
+   "rango": null,
+   "unidad": "CCAA",
+   "periodo": "2007-2025",
+   "ambito": "17 CCAA",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPV; MIVAU valor tasado; Registradores",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "10 CCAA",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PRECIO-CCAA-NCOINC-2013-2025",
+   "enunciado": "CCAA (de 17) con al menos dos medidas de grupos distintos (IPV, tasado, Registradores) dentro de ±3.0 p.p. en el cambio real 2013-2025",
+   "cifra": 1.0,
+   "rango": null,
+   "unidad": "CCAA",
+   "periodo": "2013-2025",
+   "ambito": "17 CCAA",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPV; MIVAU valor tasado; Registradores",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "1 CCAA",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PRECIO-CCAA-NCOINC-2019-2025",
+   "enunciado": "CCAA (de 17) con al menos dos medidas de grupos distintos (IPV, tasado, Registradores) dentro de ±3.0 p.p. en el cambio real 2019-2025",
+   "cifra": 10.0,
+   "rango": null,
+   "unidad": "CCAA",
+   "periodo": "2019-2025",
+   "ambito": "17 CCAA",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPV; MIVAU valor tasado; Registradores",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "10 CCAA",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PRECIO-NOM-2007-2025",
+   "enunciado": "Precio de compra, cambio acumulado nominales 2007-2025 (media anual), España; medidas: IPV del INE (ajustado por calidad) y precios medios por m²",
+   "cifra": null,
+   "rango": [
+    -1.937,
+    20.258
+   ],
+   "unidad": "%",
+   "periodo": "2007-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPV; MIVAU valor tasado; Registradores; Notariado",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "-1,94 a 20,26 %",
+   "min_max": [
+    -1.937,
+    20.258,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PRECIO-NOM-2013-2025",
+   "enunciado": "Precio de compra, cambio acumulado nominales 2013-2025 (media anual), España; medidas: IPV del INE (ajustado por calidad) y precios medios por m²",
+   "cifra": null,
+   "rango": [
+    42.279,
+    86.884
+   ],
+   "unidad": "%",
+   "periodo": "2013-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPV; MIVAU valor tasado; Registradores; Notariado",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "42,28 a 86,88 %",
+   "min_max": [
+    42.279,
+    86.884,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PRECIO-NOM-2019-2025",
+   "enunciado": "Precio de compra, cambio acumulado nominales 2019-2025 (media anual), España; medida: precio medio por m² sin ajuste de calidad (MIVAU valor tasado, Notariado, Registradores); el IPV del INE, ajustado por calidad, da 44.4 %",
+   "cifra": 30.351,
+   "rango": [
+    29.635,
+    31.702
+   ],
+   "unidad": "%",
+   "periodo": "2019-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C1",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPV; MIVAU valor tasado; Registradores; Notariado",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "30,35 % (29,64 a 31,7)",
+   "min_max": [
+    29.635,
+    31.702,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PRECIO-REAL-2007-2025",
+   "enunciado": "Precio de compra, cambio acumulado reales (deflactor IPC general) 2007-2025 (media anual), España; medidas: IPV del INE (ajustado por calidad) y precios medios por m²",
+   "cifra": null,
+   "rango": [
+    -31.253,
+    -15.693
+   ],
+   "unidad": "%",
+   "periodo": "2007-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPV; MIVAU valor tasado; Registradores; Notariado",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "-31,25 a -15,69 %",
+   "min_max": [
+    -31.253,
+    -15.693,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PRECIO-REAL-2013-2025",
+   "enunciado": "Precio de compra, cambio acumulado reales (deflactor IPC general) 2013-2025 (media anual), España; medidas: IPV del INE (ajustado por calidad) y precios medios por m²",
+   "cifra": null,
+   "rango": [
+    12.972,
+    48.388
+   ],
+   "unidad": "%",
+   "periodo": "2013-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPV; MIVAU valor tasado; Registradores; Notariado",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "12,97 a 48,39 %",
+   "min_max": [
+    12.972,
+    48.388,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-PRECIO-REAL-2019-2025",
+   "enunciado": "Precio de compra, cambio acumulado reales (deflactor IPC general) 2019-2025 (media anual), España; medida: precio medio por m² sin ajuste de calidad (MIVAU valor tasado, Notariado, Registradores); el IPV del INE, ajustado por calidad, da 18.7 %",
+   "cifra": 7.123,
+   "rango": [
+    6.534,
+    8.232
+   ],
+   "unidad": "%",
+   "periodo": "2019-2025 (media anual)",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C1",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPV; MIVAU valor tasado; Registradores; Notariado",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025 (anual)",
+   "cifra_texto": "7,12 % (6,53 a 8,23)",
+   "min_max": [
+    6.534,
+    8.232,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-VACIAS-CONSUMO-2021",
+   "enunciado": "Viviendas vacías por consumo eléctrico (Censo 2021, tabla 59531)",
+   "cifra": 3828307.0,
+   "rango": null,
+   "unidad": "viviendas",
+   "periodo": "2021",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Censo 2021 consumo eléctrico; Censo 2021",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021",
+   "cifra_texto": "3.828.307 viviendas",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-HEC-VACIAS-PCT-2021",
+   "enunciado": "Vacías por consumo eléctrico sobre viviendas familiares, Censo 2021",
+   "cifra": 14.379,
+   "rango": null,
+   "unidad": "%",
+   "periodo": "2021",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Censo 2021 consumo eléctrico; Censo 2021",
+   "ruta": "output/v16/f2_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021",
+   "cifra_texto": "14,38 %",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q1-1",
+   "enunciado": "Municipios tratados fuera de Cataluña con panel SERPAVI en el entrenamiento",
+   "cifra": 8.0,
+   "rango": null,
+   "unidad": "municipios",
+   "periodo": "2011-2024",
+   "ambito": "entrenamiento (CCAA no selladas)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "BOE zonas tensionadas; SERPAVI (MIVAU)",
+   "ruta": "output/v16/q1/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "8 municipios",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q1-2",
+   "enunciado": "Primer inicio de zona vigente fuera de Cataluña (Q1b sin periodo posterior: último año SERPAVI 2024)",
+   "cifra": 2025.0,
+   "rango": null,
+   "unidad": "año",
+   "periodo": "2025-2026",
+   "ambito": "entrenamiento",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "BOE; intervenciones.csv V16",
+   "ruta": "output/v16/q1/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "2.025 año",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q1-3",
+   "enunciado": "Diferencia media de compraventas, provincias con zona vigente frente a nunca tratadas (estimador CS, descriptivo)",
+   "cifra": -0.04780167409,
+   "rango": [
+    -0.06404975548,
+    -0.04780167409
+   ],
+   "unidad": "Δlog",
+   "periodo": "2019T1-2026T2",
+   "ambito": "41 provincias de entrenamiento (8 con zona vigente)",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU transacciones; BOE",
+   "ruta": "output/v16/q1/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-0,048 Δlog (-0,064 a -0,048)",
+   "min_max": [
+    -0.06404975548,
+    -0.04780167409,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q1-4",
+   "enunciado": "Misma comparación en un placebo de fecha (8 trimestres antes)",
+   "cifra": 0.0002841621005,
+   "rango": null,
+   "unidad": "Δlog",
+   "periodo": "2019T1-2023T4",
+   "ambito": "41 provincias de entrenamiento (8 con zona vigente)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU transacciones; BOE",
+   "ruta": "output/v16/q1/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,000284 Δlog",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q1-5",
+   "enunciado": "Diferencia de la cohorte de Cataluña (2024T1)",
+   "cifra": -0.02550753243,
+   "rango": null,
+   "unidad": "Δlog",
+   "periodo": "2024T1-2026T2",
+   "ambito": "4 provincias catalanas frente a 33 nunca tratadas",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU transacciones; BOE",
+   "ruta": "output/v16/q1/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-0,026 Δlog",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q1-6",
+   "enunciado": "Tasa de declaración de zona entre municipios que superan el criterio de precio del art. 18",
+   "cifra": 0.2372685185,
+   "rango": [
+    0.05555555556,
+    0.2372685185
+   ],
+   "unidad": "proporción",
+   "periodo": "SERPAVI 2018-2023",
+   "ambito": "1188 municipios de entrenamiento",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "SERPAVI VC; IPC (INE); BOE",
+   "ruta": "output/v16/q1/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,237  (0,056 a 0,237)",
+   "min_max": [
+    0.05555555556,
+    0.2372685185,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q1-7",
+   "enunciado": "Municipios de entrenamiento que superan IPC + 3 p.p. en 2018-2023 (SERPAVI)",
+   "cifra": 864.0,
+   "rango": null,
+   "unidad": "municipios",
+   "periodo": "2018-2023",
+   "ambito": "1188 municipios",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "SERPAVI VC; IPC (INE)",
+   "ruta": "output/v16/q1/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "864 municipios",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q10-1-red",
+   "enunciado": "Q10-1: reducción puntual del ECM de MIDAS respecto al AR(4) en Δlog IPV nacional, h = 1",
+   "cifra": -0.1828012369,
+   "rango": [
+    -0.1828012369,
+    0.004530595966
+   ],
+   "unidad": "reducción relativa del ECM",
+   "periodo": "2016Q1-2026Q2",
+   "ambito": "nacional, 38 objetivos",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE; BdE; MIVAU",
+   "ruta": "output/v16/q10/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-0,183 reducción relativa del ECM (-0,183 a 0,00453)",
+   "min_max": [
+    -0.1828012369,
+    0.004530595966,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q10-2-red",
+   "enunciado": "Q10-2: reducción puntual del ECM de NOWCAST respecto al AR(4) en Δlog IPC de alquiler nacional, h = 1",
+   "cifra": -0.302933755,
+   "rango": [
+    -0.3434343498,
+    -0.05333745039
+   ],
+   "unidad": "reducción relativa del ECM",
+   "periodo": "2011Q1-2026Q2",
+   "ambito": "nacional, 58 objetivos",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE; BdE; MIVAU",
+   "ruta": "output/v16/q10/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-0,303 reducción relativa del ECM (-0,343 a -0,053)",
+   "min_max": [
+    -0.3434343498,
+    -0.05333745039,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q10-3-red",
+   "enunciado": "Q10-3: reducción puntual del ECM de MIDAS respecto al AR(4) en Δlog compraventas nacional, h = 1",
+   "cifra": 0.4063718806,
+   "rango": [
+    -0.03044793914,
+    0.4063718806
+   ],
+   "unidad": "reducción relativa del ECM",
+   "periodo": "2016Q1-2026Q2",
+   "ambito": "nacional, 42 objetivos",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE; BdE; MIVAU",
+   "ruta": "output/v16/q10/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,406 reducción relativa del ECM (-0,03 a 0,406)",
+   "min_max": [
+    -0.03044793914,
+    0.4063718806,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q2-1",
+   "enunciado": "Q2a · coeficiente DiD de intensidad (log IPC alquiler por DT del log de la exposición INE-VUT 2020-08)",
+   "cifra": 0.01316180619,
+   "rango": [
+    0.007067612874,
+    0.01316180619
+   ],
+   "unidad": "Δlog por DT",
+   "periodo": "2017-2019 frente a 2022-2025",
+   "ambito": "41 provincias de entrenamiento (Ceuta y Melilla incluidas)",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPC alquiler; INE viviendas turísticas",
+   "ruta": "output/v16/q2/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,013 Δlog por DT (0,00707 a 0,013)",
+   "min_max": [
+    0.007067612874,
+    0.01316180619,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q2-2",
+   "enunciado": "Q2a · magnitud de referencia (0,04 × DT del log de la exposición)",
+   "cifra": 0.03786138922,
+   "rango": null,
+   "unidad": "Δlog por DT",
+   "periodo": "2017-2025",
+   "ambito": "41 provincias de entrenamiento (Ceuta y Melilla incluidas)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "literatura L2/P5 (docs/v16/literatura.md)",
+   "ruta": "output/v16/q2/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,038 Δlog por DT",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q2-3",
+   "enunciado": "Q2a · placebo de fecha",
+   "cifra": 0.00258048861,
+   "rango": null,
+   "unidad": "Δlog por DT",
+   "periodo": "2012-2019",
+   "ambito": "41 provincias de entrenamiento (Ceuta y Melilla incluidas)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPC alquiler; INE viviendas turísticas",
+   "ruta": "output/v16/q2/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,00258 Δlog por DT",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q2-4",
+   "enunciado": "Q2c · coeficiente (Δlog IPVA-TAM municipal por DT del % de vivienda turística)",
+   "cifra": -0.005376098191,
+   "rango": [
+    -0.009540549203,
+    0.007848696475
+   ],
+   "unidad": "Δlog por DT",
+   "periodo": "2021-2024",
+   "ambito": "384 municipios de entrenamiento",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "IPVA-TAM (MIVAU/INE); INE viviendas turísticas",
+   "ruta": "output/v16/q2/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-0,00538 Δlog por DT (-0,00954 a 0,00785)",
+   "min_max": [
+    -0.009540549203,
+    0.007848696475,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q2-5",
+   "enunciado": "Q2c · magnitud de referencia (0,04 × DT del log de la exposición)",
+   "cifra": 0.06326806615,
+   "rango": null,
+   "unidad": "Δlog por DT",
+   "periodo": "2021-2024",
+   "ambito": "384 municipios",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "literatura L2/P5",
+   "ruta": "output/v16/q2/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,063 Δlog por DT",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q2-6",
+   "enunciado": "Q2b · mediana de 8 especificaciones de robustez (Andalucía, dosis reconstruida)",
+   "cifra": 0.0002048454016,
+   "rango": [
+    -0.01549778807,
+    0.0009760340101
+   ],
+   "unidad": "Δlog por unidad de dosis",
+   "periodo": "2016-2024",
+   "ambito": "177 municipios (SERPAVI), 90 (IPVA)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "OpenRTA (terceros, agregado propio); SERPAVI; IPVA-TAM",
+   "ruta": "output/v16/q2/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,000205 Δlog por unidad de dosis (-0,015 a 0,000976)",
+   "min_max": [
+    -0.01549778807,
+    0.0009760340101,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q2-7",
+   "enunciado": "Q2a · GATES: pendiente del cuartil superior menos el inferior del CATE proxy (descriptivo)",
+   "cifra": -0.006280780856,
+   "rango": null,
+   "unidad": "Δlog por DT",
+   "periodo": "2017-2025",
+   "ambito": "37 provincias con moderadores",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "ADRH; padrón; Catastro/MIVAU",
+   "ruta": "output/v16/q2/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-0,00628 Δlog por DT",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q3-b-beta",
+   "enunciado": "Q3-b: asociación transversal del Δlog SERPAVI 2021-2024 con la cuota de extranjeros 2022 (por DT)",
+   "cifra": 0.009077270952,
+   "rango": [
+    0.003445376155,
+    0.009077270952
+   ],
+   "unidad": "log por desviación típica",
+   "periodo": "2021-2024",
+   "ambito": "9916 secciones en 748 municipios",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI (VC); INE padrón por sección",
+   "ruta": "output/v16/q3/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "0,00908 log por desviación típica (0,00345 a 0,00908)",
+   "min_max": [
+    0.003445376155,
+    0.009077270952,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q3-b-mediana",
+   "enunciado": "Q3-b: mediana de las 6 especificaciones del multiverso (min/max = extremos; correlación frágil, sin inferencia válida)",
+   "cifra": 0.005752770186,
+   "rango": [
+    0.003445376155,
+    0.009077270952
+   ],
+   "unidad": "log por desviación típica",
+   "periodo": "2021-2024",
+   "ambito": "9916 secciones en 748 municipios",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI (VC); INE padrón por sección; mediana leída de output/v16/q3/resultado.json (estimacion.Q3-b.multiverso)",
+   "ruta": "output/v16/f7_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "0,00575 log por desviación típica (0,00345 a 0,00908)",
+   "min_max": [
+    0.003445376155,
+    0.009077270952,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q3-b-pretendencia",
+   "enunciado": "Q3-b: coeficiente placebo con el Δlog SERPAVI 2018-2021 (pretendencia)",
+   "cifra": 0.005109416547,
+   "rango": null,
+   "unidad": "log por desviación típica",
+   "periodo": "2018-2021",
+   "ambito": "9560 secciones",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI (VC); INE padrón por sección",
+   "ruta": "output/v16/q3/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2021",
+   "cifra_texto": "0,00511 log por desviación típica",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q3-blp-gates",
+   "enunciado": "Q3: diferencia GATES cuartil 4 menos cuartil 1 de la asociación de Q3-b (descriptivo)",
+   "cifra": 0.0001615861905,
+   "rango": null,
+   "unidad": "log por desviación típica",
+   "periodo": "2021-2024",
+   "ambito": "9489 secciones",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI; INE; ADRH; Catastro",
+   "ruta": "output/v16/q3/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "0,000162 log por desviación típica",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q3-c1-beta",
+   "enunciado": "Q3-c1: asociación de log valor tasado con la población extranjera predicha (por punto), forma reducida",
+   "cifra": 0.01189623268,
+   "rango": [
+    0.0118877272,
+    0.05251933747
+   ],
+   "unidad": "log por punto de población",
+   "periodo": "2011-2022",
+   "ambito": "38 provincias",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Padrón por nacionalidad, SERPAVI y valor tasado/compraventas de entrenamiento",
+   "ruta": "output/v16/q3/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2022",
+   "cifra_texto": "0,012 log por punto de población (0,012 a 0,053)",
+   "min_max": [
+    0.0118877272,
+    0.05251933747,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q3-c2-beta",
+   "enunciado": "Q3-c2: asociación de log compraventas con la población extranjera predicha (por punto), forma reducida",
+   "cifra": -0.02817647825,
+   "rango": [
+    -0.08372081449,
+    -0.01563090315
+   ],
+   "unidad": "log por punto de población",
+   "periodo": "2011-2022",
+   "ambito": "41 provincias de entrenamiento",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Padrón por nacionalidad, SERPAVI y valor tasado/compraventas de entrenamiento",
+   "ruta": "output/v16/q3/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2022",
+   "cifra_texto": "-0,028 log por punto de población (-0,084 a -0,016)",
+   "min_max": [
+    -0.08372081449,
+    -0.01563090315,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q3-rotemberg-1",
+   "enunciado": "Q3-c: peso de Rotemberg del origen con mayor peso (Rumanía) en el shift-share",
+   "cifra": 0.4753220306,
+   "rango": null,
+   "unidad": "fracción del estimador",
+   "periodo": "2011-2022",
+   "ambito": "28 orígenes, 38 provincias",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE padrón por nacionalidad",
+   "ruta": "output/v16/q3/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2022",
+   "cifra_texto": "0,475 fracción del estimador",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q4a-beta",
+   "enunciado": "Q4a: asociación de log obra nueva neta (obra > 0) con el porcentaje de Red Natura municipal (por DT = 31,8 pp)",
+   "cifra": -0.1297192452,
+   "rango": [
+    -0.1297192452,
+    -0.002247721767
+   ],
+   "unidad": "log por desviación típica",
+   "periodo": "2018-2025",
+   "ambito": "4374 municipios",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Catastro (obra neta); MITECO (Red Natura 2000)",
+   "ruta": "output/v16/q4/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "-0,13 log por desviación típica (-0,13 a -0,00225)",
+   "min_max": [
+    -0.1297192452,
+    -0.002247721767,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q4b-beta",
+   "enunciado": "Q4b: interacción del choque de demanda (Δ población extranjera predicha) con el % de Red Natura sobre el Δlog SERPAVI",
+   "cifra": -0.001382622347,
+   "rango": [
+    -0.002626293784,
+    -0.0007697661541
+   ],
+   "unidad": "log por punto de choque y DT de RN",
+   "periodo": "2018-2022",
+   "ambito": "1293 municipios",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU SERPAVI; INE padrón; MITECO",
+   "ruta": "output/v16/q4/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2022",
+   "cifra_texto": "-0,00138 log por punto de choque y DT… (-0,00263 a -0,00077)",
+   "min_max": [
+    -0.002626293784,
+    -0.0007697661541,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q5-a-h4",
+   "enunciado": "Q5-a: variación acumulada del IPC de alquiler nacional a 4 trimestres asociada a una DT de sorpresa monetaria (JK)",
+   "cifra": -0.0620540225,
+   "rango": [
+    -0.5832991177,
+    0.02479787503
+   ],
+   "unidad": "% por DT de sorpresa",
+   "periodo": "2003Q2-2025Q2",
+   "ambito": "nacional, trimestral",
+   "mercado": "alquiler (parque)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE (IPC alquiler); BCE/JK (sorpresas)",
+   "ruta": "output/v16/q5/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025T4",
+   "cifra_texto": "-0,062 % por DT de sorpresa (-0,583 a 0,025)",
+   "min_max": [
+    -0.5832991177,
+    0.02479787503,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q5-p-h4",
+   "enunciado": "Q5-p: variación acumulada del valor tasado nacional a 4 trimestres asociada a una DT de sorpresa monetaria (JK)",
+   "cifra": -0.5127882994,
+   "rango": [
+    -0.637181326,
+    2.303476249
+   ],
+   "unidad": "% por DT de sorpresa",
+   "periodo": "2000Q2-2025Q2",
+   "ambito": "nacional, trimestral",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU (valor tasado); BCE/JK (sorpresas)",
+   "ruta": "output/v16/q5/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025T4",
+   "cifra_texto": "-0,513 % por DT de sorpresa (-0,637 a 2,3)",
+   "min_max": [
+    -0.637181326,
+    2.303476249,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q6-cambios",
+   "enunciado": "Q6: número de cambios del tipo general del ITP en el calendario de entrenamiento",
+   "cifra": 14.0,
+   "rango": null,
+   "unidad": "cambios",
+   "periodo": "2011-2024",
+   "ambito": "8 CCAA no selladas",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Ministerio de Hacienda, Tributación Autonómica (secundaria)",
+   "ruta": "output/v16/q6/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "14 cambios",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q6-p-beta",
+   "enunciado": "Q6-p: asociación del Δlog valor tasado con el cambio del tipo general del ITP (Wald-DID dCDH, por punto)",
+   "cifra": -0.002037210174,
+   "rango": [
+    -0.01550503373,
+    0.006449532188
+   ],
+   "unidad": "log por punto de tipo",
+   "periodo": "2011-2024",
+   "ambito": "33 provincias con cambio en 7-8 CCAA",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Ministerio de Hacienda (tipos); MIVAU valor tasado",
+   "ruta": "output/v16/q6/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "-0,00204 log por punto de tipo (-0,016 a 0,00645)",
+   "min_max": [
+    -0.01550503373,
+    0.006449532188,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q6-v-beta",
+   "enunciado": "Q6-v: asociación del Δlog compraventas con el cambio del tipo general del ITP (Wald-DID dCDH, por punto)",
+   "cifra": 0.02508245316,
+   "rango": [
+    0.002489803845,
+    0.02508245316
+   ],
+   "unidad": "log por punto de tipo",
+   "periodo": "2011-2024",
+   "ambito": "34 provincias con cambio en 8 CCAA",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Ministerio de Hacienda (tipos); INE ETDP",
+   "ruta": "output/v16/q6/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "0,025 log por punto de tipo (0,00249 a 0,025)",
+   "min_max": [
+    0.002489803845,
+    0.02508245316,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q6-v-placebo",
+   "enunciado": "Q6-v: placebo con ΔY retardado un año",
+   "cifra": -0.04835529878,
+   "rango": null,
+   "unidad": "log por punto de tipo",
+   "periodo": "2011-2024",
+   "ambito": "34 provincias",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "idem",
+   "ruta": "output/v16/q6/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2024",
+   "cifra_texto": "-0,048 log por punto de tipo",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q7-1",
+   "enunciado": "Q7a · diferencia en discontinuidades del log del alquiler mensual en el corte de 35 años (2023-2025 frente a 2018-2021, ±5 años)",
+   "cifra": -0.119972104,
+   "rango": [
+    -0.1482981821,
+    -0.119972104
+   ],
+   "unidad": "Δlog",
+   "periodo": "2018-2021 / 2023-2025",
+   "ambito": "5061 hogares inquilinos de mercado, sustentador 30-40 años",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV (microdatos)",
+   "ruta": "output/v16/q7/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-0,12 Δlog (-0,148 a -0,12)",
+   "min_max": [
+    -0.1482981821,
+    -0.119972104,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q7-2",
+   "enunciado": "Q7a · salto del log del alquiler en el corte, antes (2018-2021)",
+   "cifra": 0.08172925089,
+   "rango": null,
+   "unidad": "Δlog",
+   "periodo": "2018-2021",
+   "ambito": "2358 hogares",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV",
+   "ruta": "output/v16/q7/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,082 Δlog",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q7-3",
+   "enunciado": "Q7a · salto del log del alquiler en el corte, después (2023-2025)",
+   "cifra": -0.0382428531,
+   "rango": null,
+   "unidad": "Δlog",
+   "periodo": "2023-2025",
+   "ambito": "2703 hogares",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV",
+   "ruta": "output/v16/q7/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-0,038 Δlog",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q7-4",
+   "enunciado": "Q7a · diferencia en discontinuidades en umbrales placebo (31/32 y 39/40)",
+   "cifra": -0.05265065044,
+   "rango": [
+    -0.1354414093,
+    -0.05265065044
+   ],
+   "unidad": "Δlog",
+   "periodo": "2018-2025",
+   "ambito": "inquilinos de mercado, ±3 años",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV",
+   "ruta": "output/v16/q7/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-0,053 Δlog (-0,135 a -0,053)",
+   "min_max": [
+    -0.1354414093,
+    -0.05265065044,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q7-5",
+   "enunciado": "Q7a · diferencia en discontinuidades de la proporción de inquilinos de mercado en el corte",
+   "cifra": -0.04558849231,
+   "rango": null,
+   "unidad": "proporción",
+   "periodo": "2018-2021 / 2023-2025",
+   "ambito": "18623 hogares 30-40 años",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE ECV",
+   "ruta": "output/v16/q7/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-0,046",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q8-1",
+   "enunciado": "Cuota de compras de no residentes sobre el total de transacciones (agregado de entrenamiento), 2025T2-2026T1",
+   "cifra": 7.35284251,
+   "rango": null,
+   "unidad": "% de las transacciones",
+   "periodo": "2025T2-2026T1",
+   "ambito": "9 CCAA de entrenamiento + Ceuta y Melilla",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU, Boletín Online (tabla 340101d0)",
+   "ruta": "output/v16/q8/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "7,35 % de las transacciones",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q8-2",
+   "enunciado": "Cuota de compras de no residentes, 2024T2-2025T1",
+   "cifra": 8.685709959,
+   "rango": null,
+   "unidad": "% de las transacciones",
+   "periodo": "2024T2-2025T1",
+   "ambito": "9 CCAA de entrenamiento + Ceuta y Melilla",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU, Boletín Online (tabla 340101d0)",
+   "ruta": "output/v16/q8/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "8,69 % de las transacciones",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q8-3",
+   "enunciado": "Variación de la cuota entre ambas ventanas",
+   "cifra": -1.332867449,
+   "rango": [
+    -1.332867449,
+    -0.683418972
+   ],
+   "unidad": "puntos porcentuales",
+   "periodo": "2024T2-2026T1",
+   "ambito": "ídem (mínimo y máximo: este año y el anterior)",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU, Boletín Online",
+   "ruta": "output/v16/q8/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "-1,33 puntos porcentuales (-1,33 a -0,683)",
+   "min_max": [
+    -1.332867449,
+    -0.683418972,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q8-4",
+   "enunciado": "Compras de no residentes (número), 2025",
+   "cifra": 41239.0,
+   "rango": [
+    45087.0,
+    49157.0
+   ],
+   "unidad": "transacciones",
+   "periodo": "2025",
+   "ambito": "ídem (mínimo y máximo: 2024 y 2022)",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU, Boletín Online",
+   "ruta": "output/v16/q8/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "41.239 transacciones",
+   "min_max": [
+    45087.0,
+    49157.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q8-5",
+   "enunciado": "Cuota anual de compras de no residentes, 2025",
+   "cifra": 7.561475147,
+   "rango": [
+    7.561475147,
+    9.714937331
+   ],
+   "unidad": "% de las transacciones",
+   "periodo": "2025",
+   "ambito": "ídem (máximo: 2022)",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU, Boletín Online",
+   "ruta": "output/v16/q8/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "7,56 % de las transacciones (7,56 a 9,71)",
+   "min_max": [
+    7.561475147,
+    9.714937331,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q9-c",
+   "enunciado": "Q9-c: elasticidad de largo plazo del valor tasado respecto al IPC de alquiler (CS-ARDL p=2, media entre provincias; puntual)",
+   "cifra": 0.8384096583,
+   "rango": [
+    -1.4357332,
+    0.9497092463
+   ],
+   "unidad": "elasticidad",
+   "periodo": "2002T1-2026T2",
+   "ambito": "33 provincias",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU; INE",
+   "ruta": "output/v16/q9/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,838 elasticidad (-1,44 a 0,95)",
+   "min_max": [
+    -1.4357332,
+    0.9497092463,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q9-g",
+   "enunciado": "Q9-g: estadístico GSADF del factor común de ln(valor tasado/IPC alquiler) (pista no confirmada, C4; min y max = valor crítico bootstrap del 95 %)",
+   "cifra": 5.918697291,
+   "rango": [
+    3.340055339,
+    3.340055339
+   ],
+   "unidad": "estadístico",
+   "periodo": "2002T1-2026T2",
+   "ambito": "33 provincias, factor",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU; INE",
+   "ruta": "output/v16/q9/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "5,92",
+   "min_max": [
+    3.340055339,
+    3.340055339,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-Q9-gp",
+   "enunciado": "Q9-g: p-valor bootstrap del GSADF del factor común, sin ajuste múltiple (pista no confirmada, C4)",
+   "cifra": 0.004,
+   "rango": [
+    0.004,
+    0.004
+   ],
+   "unidad": "p-valor",
+   "periodo": "2002T1-2026T2",
+   "ambito": "33 provincias, factor",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "MIVAU; INE",
+   "ruta": "output/v16/q9/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "0,004",
+   "min_max": [
+    0.004,
+    0.004,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-REJILLA-estimadas",
+   "enunciado": "Celdas de la rejilla fija con estimación TWFE puntual (de 83)",
+   "cifra": 83.0,
+   "rango": [
+    83.0,
+    83.0
+   ],
+   "unidad": "celdas",
+   "periodo": "2011-2025",
+   "ambito": "83 celdas",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "paneles de entrenamiento",
+   "ruta": "output/v16/rejilla/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "83 celdas",
+   "min_max": [
+    83.0,
+    83.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-REJILLA-fam-Q1",
+   "enunciado": "Q1: celdas estimadas con coeficiente positivo (de las estimadas)",
+   "cifra": 9.0,
+   "rango": [
+    0.0,
+    18.0
+   ],
+   "unidad": "celdas",
+   "periodo": "2011-2025",
+   "ambito": "18 celdas",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "paneles de entrenamiento",
+   "ruta": "output/v16/rejilla/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "9 celdas (0 a 18)",
+   "min_max": [
+    0.0,
+    18.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-REJILLA-fam-Q2",
+   "enunciado": "Q2: celdas estimadas con coeficiente positivo (de las estimadas)",
+   "cifra": 12.0,
+   "rango": [
+    0.0,
+    24.0
+   ],
+   "unidad": "celdas",
+   "periodo": "2011-2025",
+   "ambito": "24 celdas",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "paneles de entrenamiento",
+   "ruta": "output/v16/rejilla/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "12 celdas (0 a 24)",
+   "min_max": [
+    0.0,
+    24.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-REJILLA-fam-Q3",
+   "enunciado": "Q3: celdas estimadas con coeficiente positivo (de las estimadas)",
+   "cifra": 11.0,
+   "rango": [
+    0.0,
+    21.0
+   ],
+   "unidad": "celdas",
+   "periodo": "2011-2025",
+   "ambito": "21 celdas",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "paneles de entrenamiento",
+   "ruta": "output/v16/rejilla/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "11 celdas (0 a 21)",
+   "min_max": [
+    0.0,
+    21.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-REJILLA-fam-Q4",
+   "enunciado": "Q4: celdas estimadas con coeficiente positivo (de las estimadas)",
+   "cifra": 3.0,
+   "rango": [
+    0.0,
+    7.0
+   ],
+   "unidad": "celdas",
+   "periodo": "2011-2025",
+   "ambito": "7 celdas",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "paneles de entrenamiento",
+   "ruta": "output/v16/rejilla/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "3 celdas (0 a 7)",
+   "min_max": [
+    0.0,
+    7.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-REJILLA-fam-Q6",
+   "enunciado": "Q6: celdas estimadas con coeficiente positivo (de las estimadas)",
+   "cifra": 7.0,
+   "rango": [
+    0.0,
+    13.0
+   ],
+   "unidad": "celdas",
+   "periodo": "2011-2025",
+   "ambito": "13 celdas",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "paneles de entrenamiento",
+   "ruta": "output/v16/rejilla/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-17",
+   "cifra_texto": "7 celdas (0 a 13)",
+   "min_max": [
+    0.0,
+    13.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V16-T4-H2-min-interp",
+   "enunciado": "T4-H2: mínimo de la rejilla del cambio del déficit 2025-2030 con interpolación lineal entre 2025 y el relleno (el publicado, con la convención «tras 2025 = relleno», es el min de T4-H2)",
+   "cifra": 103788.0,
+   "rango": null,
+   "unidad": "viviendas",
+   "periodo": "2026-2030",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Réplica ciega de V16 (output/v16/replica/v10_b2/resultado.json)",
+   "ruta": "output/v16/f7_hechos/hechos.json",
+   "version": "v16",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "103.788 viviendas",
    "min_max": [
     null,
     null,

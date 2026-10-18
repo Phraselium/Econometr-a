@@ -15,7 +15,7 @@
  "p_ajustado": {
   "metodo": "BH sobre contrastes de la parte atribuida",
   "n_contrastes": 64,
-  "minimo": 0.00532
+  "minimo": 0.005322687957418496
  },
  "nivel_evidencia": "DESCRIPTIVO",
  "diagnosticos": {

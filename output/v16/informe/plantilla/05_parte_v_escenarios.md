@@ -76,9 +76,9 @@ Cada resultado declara su medida de precio: precio de compra o de alquiler de me
 
 Lectura. Con dosis de 10.000 a 25.000 viviendas al año, la vivienda pública queda lejos de la brecha de la sección V.1. Que «resuelva» el problema depende del volumen y del desplazamiento de la construcción privada. En la simulación, la ayuda a la demanda baja el precio neto para quien la recibe y sube el de mercado. En la simulación, quien no la recibe paga más. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
-La 1.0 sitúa en [C2], en la rejilla simulada, solo el signo de tres resultados:
+La 1.0 sitúa en [C2], en la rejilla simulada, solo el signo de estas medidas:
 - movilización de vacías y más construcción donde hay presión: signo estable;
-- vivienda pública: signo débil (no positivo o nulo si desplaza a la promoción privada). La ficha V11 del verificador da PARCIALMENTE [C2] para el esfuerzo de acceso. El precio de compra no tiene signo [C2];
+- vivienda pública: signo estable no positivo (nulo si desplaza por completo a la promoción privada). La ficha V11 del verificador da PARCIALMENTE [C2] para el esfuerzo de acceso. El precio de compra no tiene signo [C2];
 - ayudas a la demanda: mejoran al beneficiario como grupo y el no beneficiario paga más (ficha D1-V1, PARCIALMENTE [C2]).
 
 Las cifras de esta sección son [C4]; el C2 no se apoya en ellas. <!-- check:cifra-libre (tres resultados de signo de la 1.0; fichas V11 y D1-V1; dosis de 10.000 y 25.000 viviendas al año de la ficha V11 del verificador; versión 1.0) -->
@@ -115,8 +115,8 @@ Las hipótesis de V15 tienen la evaluación sellada pendiente (`evaluate_v15`, f
 
 H5 combinaba varios modelos para predecir el valor tasado un trimestre adelante. El diseño contrastaba si la combinación supera al AR(4). No lo supera. <!-- check:cifra-libre (identificadores H5, AR(4); horizonte de un trimestre) -->
 
-- La razón del error cuadrático medio de la combinación frente al AR(4), pre-registrada, es {{V15-H5-razon-ecm:valor}} [C4]. Una razón mayor que uno quiere decir que la combinación se equivoca más. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
-- Según la implementación, la razón va de {{V15-H5-razon-replica:rango}} (de la réplica ciega a la producción pre-registrada). Se cita el rango entre implementaciones, no solo la cifra pre-registrada. En las dos la razón es mayor que uno.
+- La razón del error cuadrático medio de la combinación frente al AR(4), pre-registrada, es {{V15-H5-razon-ecm:num}} [C4]. Una razón mayor que uno quiere decir que la combinación se equivoca más. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+- Según la implementación, la razón va de {{V15-H5-razon-replica:min_num}} a {{V15-H5-razon-replica:max_num}} (de la réplica ciega a la producción pre-registrada). Se cita el rango entre implementaciones, no solo la cifra pre-registrada. En las dos la razón es mayor que uno.
 - No se cita un valor p: el DM-HLN no se usa como prueba (véase arriba su estado). La conclusión descansa en la razón de error.
 - La STL por origen se eligió por la regla «sin datos posteriores al origen», no por su valor. Se decidió después de ver la reconciliación entre implementaciones, y así consta. <!-- check:cifra-libre (identificador STL; «mayor que uno» como umbral de la razón) -->
 

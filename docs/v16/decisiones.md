@@ -221,3 +221,25 @@ Tres revisiones de abogado-del-diablo; respuesta punto por punto en output/v16/c
 
 **Pendiente de la fase 7:** la coherencia de lo_ya_visto entre «ningún modelo predice mejor» y K1-N-MEJOR (6 de 9), sin cambiar ninguna cifra 1.0.
 
+## K18. Aclaraciones antes de la fase 7 (2026-10-18, encargo del autor)
+
+**Por qué el q de Q9-g pasó de 0,153 a 0,306**
+- **La familia no cambió.** Es la rama de diseños, con m = 21 fijo (18 pruebas principales + 3 BLP) y Benjamini-Yekutieli con q = 0,10. El p de Q9-g tampoco cambió (0,004; réplica ciega: COINCIDE).
+- **Fórmula.** q_(k) = p_(k) · m · c(m) / k, donde c(21) = Σ 1/i = 3,6454 y k es la posición de la prueba ordenando los p de menor a mayor.
+- **Antes de K16** había dos p válidos: Q3-b (7,6e-9, posición 1) y Q9-g (posición 2). Por eso q = 0,004 · 21 · 3,6454 / 2 = 0,153.
+- **Tras K16**, la corrección del núcleo de Conley dejó Conley a 2 km como NO APTO. Q3-b perdió su p: sigue contando en m = 21, pero no puede rechazarse. Q9-g pasó a la posición 1, así que q = 0,004 · 21 · 3,6454 / 1 = 0,306.
+- **Lectura.** La conclusión no cambia: q > 0,10 tanto antes como después.
+- **Valor que cita el informe.** La Parte VII y la ficha del verificador citan la cifra V16-FDR-Q9-g-q, que hoy vale 0,306.
+  - La genera src/v16/f6_fdr.py a partir de los p vigentes.
+  - El test tests/v16/test_fdr.py::test_q_de_q9g_citable_es_el_vigente comprueba que coincide con el control BY recalculado y que ningún hechos.json conserva 0,153.
+  - verificador-cifras comprobará en la fase 7 que el informe usa ese id.
+
+**H5: por qué la razón frente al AR(4) va de 1,15 a 1,51**
+- La ficha (preregistro_v15, H5; DV15-B-1 a B-4) no fija la penalización del LASSO, la prior exacta del BVAR ni el número de factores del DFM.
+- **1,51** es la implementación de producción corregida (K16): primer origen 2013T1, AR(4) desde 2003T1 sin fuga, y STL reestimada en cada origen.
+- **1,49** es la misma con la desestacionalización hecha sobre toda la muestra (con datos posteriores al origen).
+- **1,21** es la misma con las series sin desestacionalizar.
+- **1,15** es la réplica ciega, con sus propias elecciones dentro de lo que la ficha deja abierto.
+- **Cifra pre-registrada:** la combinación de la ficha (DFM, BVAR, LASSO y ARDL frente al AR(4), h = 1, valor tasado, ventana expansiva) en la implementación de producción, es decir, **1,51**.
+- **Cómo se cita.** Siempre con el rango [1,15; 1,51] y la lectura común: la combinación no supera al AR(4).
+

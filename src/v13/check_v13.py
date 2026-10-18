@@ -104,7 +104,9 @@ def cifras_sin_cambios() -> list[str]:
             continue
         if not C8.cambio_documentado(ck, i, h, errata):   # V15: compara valores; admite bajadas de capa con ERRATA
             err.append(f"cifra cambiada sin ERRATA: {i}")
-    err += [f"cifra nueva en V13 (sin análisis nuevo): {i}" for i in ck.index if i not in base.index]
+    # V16 (B-4): una cifra nueva solo se admite si ERRATA.md la declara con «id | nueva» (añadida por orden expresa del autor)
+    nueva = lambda i: re.search(r"(?:^|\|)\s*`?" + re.escape(i) + r"`?\s*\|\s*nueva\b", errata, re.M)  # noqa: E731
+    err += [f"cifra nueva en V13 (sin análisis nuevo): {i}" for i in ck.index if i not in base.index and not nueva(i)]
     return err
 
 

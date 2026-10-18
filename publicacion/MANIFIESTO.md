@@ -41,7 +41,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | ponencia/diapositivas.md | output/v5/ponencia/diapositivas.md | `810849207e47f5b6ad01dab44fd149f8d1ab3b7ee0b88a52691c8f80128cf062` |
 | ponencia/guion.md | output/v5/ponencia/guion.md | `488aae94b896d213c935c153c5ba8d895be9dc2129ab2323208d5d8f5c5d650b` |
 | por_que_ha_subido.md | output/v8/por_que_ha_subido.md | `9b12dd99660a7623928fa9553622dde6d62aa26e7233d526d5e54461c0f0b530` |
-| que_cambio.md | output/v5/que_cambio.md | `99686fcb46bacaa97b5cbcb3349b6dea850a6e370b095be2db07194e6918551c` |
+| que_cambio.md | output/v5/que_cambio.md | `cc475e12ca989d2413cf6c50d67c6b80fdf5a0e43d1cfef132e60da855fc6fca` |
 | tabla_v9.md | output/v9/f3/tabla_revista.md | `9985da6ff8ec983c9a49948f71cad46f88be56ec0c87482edfb9a3a8e1a17ffe` |
 | tablas_atlas.xlsx | output/v10/tablas_atlas.xlsx | `3967d28730861ee685e90d940acf1455cb2779197c05791072aa574dda1666d6` |
 | tablas_modelos_destacados.csv | output/v8/tablas_modelos_destacados.csv | `b70730be9a7924f4ea71426a2ef04a50287c82b8a45dfd802ea61b2480277495` |

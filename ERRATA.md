@@ -49,3 +49,31 @@ Una línea por cifra: `id | capa antes → capa nueva`. check_v8, check_v9 y che
 | V10-ATL-A2 | capa C1 → C4 | El contraste con Eurostat ilc_lvho07 procede de la misma encuesta (EU-SILC/ECV): no hay dos fuentes independientes |
 | V10-ATL-A3 | capa C1 → C4 | El contraste con Eurostat ilc_lvho07 procede de la misma encuesta (EU-SILC/ECV): no hay dos fuentes independientes |
 | V9-D7-c1-dif | capa C1 → C4 | La ECP a 1-1-2022 se apoya en el censo 2021: las dos fuentes no son independientes |
+
+## Huellas de las cifras cambiadas por la errata B-4 de V16 (2026-10-18)
+
+Una línea por cifra de output/v5/cifras_clave.csv cambiada en las dos entradas de B-4 (GSADF de V7.2 y textos de V8): `id | sha256 de la fila nueva`. Las cifras nuevas, añadidas por orden del autor, llevan `id | nueva`. Los controles check_v8 y check_v13 las exigen.
+
+| id | huella |
+|---|---|
+| R1B-G-0 | 87fc6a35bfa835a6aa44dc9dd93f1c9546a480647ca16ad04be9198d64979044 |
+| R1B-G-1 | cce2e26830adac7408c40a9a841ac113e2fae357a7ad7331e5eea3e33f6b4b58 |
+| R1B-G-2 | 747f89f053855e889b2149024c9926a0fbd7b9b0d26b77be137b8bdd10d5d644 |
+| R1B-G-3 | 7f194978f15ff1646878a4da7ba3d445ba77461df9f93b103ad12a99f48c629c |
+| R1B-G-5 | 5391afbfeac9697c648bdef90c6fb9e540fd0e3b03ff17ff804f8b8d335b2879 |
+| R1B-G-6 | 0347885cdcb2d290bf999cfea907d23e2742be75fc5105e6d07ec31f347bd40b |
+| R1B-G-7 | 3d5a736845124b8f94c51635f156ee850d789adc8efb69335fadb64271e769f3 |
+| R1B-G-8 | 2c19af72dde6a98b7109cebae34e6ccc652ef5a25ef6f7bf648434f17f0c56a5 |
+| R1B-G-ccaa | be6e9f859ab6729f417d00fc6b701ce439eb3f7f0e48064cf587d9f9dab3adf6 |
+| V72-GSADF-ccaa-bh | 3dcdde3783292c72baa7f79ada25c70fab19efdf9dfea874941f89c75f28f942 |
+| V72-GSADF-niveles-bh | 8da951df39ca955cc18f5de8b4e3a1dd83162efa7334847ab1e8b81b475e4927 |
+| V72-GSADF-ratios-bh | c05af1a443f9c432cad737c4dbdee74c34f1a4c255dd66c85ba8295a5048e9a8 |
+| V72-GSADF-ratios-p05 | 6563819c18778d48231f5b262ca66a167c0dec4013acf39b04ffd029a0de5275 |
+| V72-GSADF-rev | d3a35e86eade47229b29db7f4f21d93815efccaefe1131967964566e2ed5e7ca |
+| V72-GSADF-tipos-p05 | 9b26210080f8c9976c5bf90a878dee0c0cf6ed5e9b815fb58767734ab3bdb876 |
+| V8-H8-9-est | 23c86ded0b6c19a2234083cc2e64bef80ca468632e8b942b696e0a129e307885 |
+| V8-H8-9-pholm | bba21bcd1fbe0d7ecd8f40284665a5edf8af2dda5a411c5db461d8e7570acbd4 |
+| V8-QNA-pp-c-P5 | e4ccb3cecf382d25209369f30ff1e10d44dd016d5924dea11ac2a2a99918763b |
+| V72-GSADF-ratios-bh4-sens | nueva |
+| V8-QNA-pp-c-P5-med | nueva |
+| V8-QNA-pp-c-P5-bde | nueva |

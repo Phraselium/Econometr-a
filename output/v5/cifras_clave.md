@@ -588,6 +588,7 @@ Tabla única de la que leen todos los entregables. Una fila por indicador y peri
 | V15-H4-neff | Número efectivo de choques (1/HHI de Rotemberg) | 5.46 |  | choques | 2012-2022 | entrenamiento | INE padrón | C4 | 2026-10-17 |
 | V15-H5-p-dm | p unilateral DM-HLN de la combinación frente al AR(4) | 0.866 |  | p | 2013Q1-2026Q1 | 53 errores | MIVAU valor tasado | C4 | 2026-10-17 |
 | V15-H5-razon-ecm | Razón ECM de la combinación frente al AR(4) (h=1, valor tasado) | 1.514 | 0.975–5.411 | razón | 2013Q1-2026Q1 | 53 errores de entrenamiento | MIVAU valor tasado; INE; BdE | C4 | 2026-10-17 |
+| V15-H5-razon-replica | H5: razón ECM de la combinación frente al AR(4) en la réplica ciega de V16 (otra implementación de las elecciones abiertas; min/max = réplica y producción pre-registrada) | 1.153 | 1.153–1.514 | razón | 2013Q1-2026Q1 | 53 errores de entrenamiento | MIVAU valor tasado; INE; BdE; réplica ciega de V16 | C4 | 2026-10-17 |
 | V16-ATL-COB-ALQ-MUN | Municipios con alquiler SERPAVI publicable (n >= 10 contratos y CV <= 30 %) | 1390 |  | municipios | 2024 | municipios no sellados | MIVAU SERPAVI | C4 | 2024 |
 | V16-ATL-COB-ESF-SECCION | Secciones con la ratio de esfuerzo descriptiva publicable | 1.077e+04 |  | secciones | 2023 | secciones no selladas | MIVAU SERPAVI; INE ADRH | C4 | 2023 |
 | V16-ATL-COB-FILAS | Filas del atlas (formato largo) | 1.586e+06 |  | filas | varios | 32 indicadores, 7 escalas | varias (véase atlas.md) | C4 | 2026-10-17 |

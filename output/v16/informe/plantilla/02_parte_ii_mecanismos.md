@@ -38,7 +38,7 @@ Tres de los cinco parámetros que mueven los multiplicadores son supuestos del a
 
 #### Qué respuesta cabe esperar de cada shock
 
-Los multiplicadores numéricos (mediana y banda P5-P95) están en `output/v16/f3/cuatro_cuadrantes.md` y no están en `cifras_clave`: [FALTA CIFRA: multiplicadores del marco de cuatro cuadrantes por shock, variable y plazo (mediana, P5, P95)]. Sin cifras, el patrón de signos es este:
+Los multiplicadores numéricos (mediana y banda P5-P95) están en `output/v16/f3/cuatro_cuadrantes.md` y no están en `cifras_clave`: se consultan allí; el informe no los cita porque no tienen id. Sin cifras, el patrón de signos es este:
 
 | Shock | A corto plazo (stock fijo) | A largo plazo (stock se ajusta) |
 |---|---|---|
@@ -67,7 +67,7 @@ Comparación descriptiva de las medias de 2024 frente a las de 2022. Es una lect
 | Renta real de los hogares | + | 0 |
 | Hogares (EPA) | + | 0 |
 
-Los valores de la variación de cada serie están en `output/v16/f3/cuatro_cuadrantes.md`: [FALTA CIFRA: variación 2024 frente a 2022 de tipo hipotecario, IPV, IPC de alquiler, compraventas, visados, renta real y hogares]. <!-- check:cifra-libre (años de la comparación) -->
+Los valores de la variación de cada serie están en `output/v16/f3/cuatro_cuadrantes.md`: se consultan allí; no tienen id en cifras_clave. <!-- check:cifra-libre (años de la comparación) -->
 
 El patrón de un shock solo de tipos no aparece: precio, alquiler y obra nueva suben. El marco es compatible con un shock de demanda simultáneo (hogares, renta) que compense la subida de tipos. Con estos datos no se pueden separar los dos shocks. El intento de separarlos (Q5, sorpresas de política monetaria) no dio señal estable: la primera etapa tiene el signo contrario al esperado y el placebo es comparable a la respuesta. Q5 queda «no concluyente» y no se cita con cifras. <!-- check:cifra-libre (identificador de pregunta) -->
 
@@ -146,13 +146,13 @@ Que dos diseños coincidan en el signo no los convierte en independientes: compa
 
 **H1 de V15: solo el signo.** La asociación de la zona tensionada con la renta media de los contratos nuevos en Cataluña es negativa en los dos diseños (Callaway-Sant'Anna y SDID). No se cita ninguna magnitud. Fallan el placebo temporal y las pretendencias, hay anticipación y reversión por la sentencia del Tribunal Constitucional, hay selección de municipios y paso de contratos a temporada, y la cota de Lee llega al cero. La evaluación sellada está pendiente. [C4]
 
-**H5 de V15: la combinación no supera al AR(4).** La razón del error cuadrático medio de la combinación frente al AR(4), en el valor tasado a un trimestre, es {{V15-H5-razon-ecm:valor}} en la implementación pre-registrada [C4]. En las otras implementaciones la razón es distinta pero queda por encima de uno: [FALTA CIFRA: razón mínima entre implementaciones de H5]. Se dice «la combinación no supera al AR(4)». No se dice «el AR(4) es mejor». El contraste de Diebold-Mariano no se cita como prueba. La evaluación sellada está pendiente.
+**H5 de V15: la combinación no supera al AR(4).** La razón del error cuadrático medio de la combinación frente al AR(4), en el valor tasado a un trimestre, es {{V15-H5-razon-ecm:valor}} en la implementación pre-registrada [C4]. En las otras implementaciones la razón es distinta pero queda por encima de uno: {{V15-H5-razon-replica:valor}} en la réplica ciega [C4]. Se dice «la combinación no supera al AR(4)». No se dice «el AR(4) es mejor». El contraste de Diebold-Mariano no se cita como prueba. La evaluación sellada está pendiente.
 
 **E3 de V15: correlación espacial descriptiva, no contagio.** El parámetro autorregresivo espacial (contigüidad, variación de la renta de alquiler de 1.124 municipios en 2015-2024) es {{V15-E3-rho:valor}}, con rango {{V15-E3-rho:rango}} [C4]. Puede reflejar una tendencia regional común. El intervalo no recoge la incertidumbre de especificación: se cita el rango del multiverso. <!-- check:cifra-libre (1.124 municipios y periodo: diseño de E3) -->
 
 **H4 de V15 y Q3-b de V16: correlaciones frágiles.** Ambas son asociaciones entre la presencia de población extranjera y el alquiler. No se leen como el efecto de la inmigración.
-- **H4.** La asociación (2SLS) entre población extranjera predicha y alquiler municipal es {{V15-H4-beta:valor}}, con rango del multiverso {{V15-H4-beta:rango}} [C4]. El rango contiene el cero y el signo cambia al quitar los orígenes principales. Hay pocos orígenes efectivos: {{V15-H4-neff}} [C4]. El 2SLS es varias veces el MCO. La mediana del multiverso: [FALTA CIFRA: mediana del multiverso de H4].
-- **Q3-b.** La asociación transversal del alquiler por sección con la cuota de extranjeros es {{V16-Q3-b-beta:valor}}, con rango {{V16-Q3-b-beta:rango}} [C4]. El coeficiente de pretendencia (variación previa) es {{V16-Q3-b-pretendencia:valor}} [C4], más de la mitad del coeficiente principal. Puede haber reversión a la media o convergencia, y la exposición de 2022 cae dentro de la ventana del resultado. La mediana del multiverso: [FALTA CIFRA: mediana del multiverso de Q3-b].
+- **H4.** La asociación (2SLS) entre población extranjera predicha y alquiler municipal es {{V15-H4-beta:valor}}, con rango del multiverso {{V15-H4-beta:rango}} [C4]. El rango contiene el cero y el signo cambia al quitar los orígenes principales. Hay pocos orígenes efectivos: {{V15-H4-neff}} [C4]. El 2SLS es varias veces el MCO. La mediana del multiverso es {{V15-H4-mediana:valor}} [C4].
+- **Q3-b.** La asociación transversal del alquiler por sección con la cuota de extranjeros es {{V16-Q3-b-beta:valor}}, con rango {{V16-Q3-b-beta:rango}} [C4]. El coeficiente de pretendencia (variación previa) es {{V16-Q3-b-pretendencia:valor}} [C4], más de la mitad del coeficiente principal. Puede haber reversión a la media o convergencia, y la exposición de 2022 cae dentro de la ventana del resultado. La mediana del multiverso es {{V16-Q3-b-mediana:valor}} [C4].
 - **Literatura.** La literatura verificada sobre inmigración y vivienda no tiene un signo único. Mussa, Nwaogu y Pozo (2017) asocian más entradas con alquileres y precios más altos. El metaanálisis de Larkin et al. (2019) halla que la inmigración sube los precios en conjunto, más a escala provincial. Sá (2015) y Saiz y Wachter (2011) hallan, en cambio, precios más bajos o una apreciación más lenta. Para España, Torres-Téllez y Montero-Soler (2023) asocian la llegada de inmigrantes con alquileres más altos. Las cinco referencias son VERIFICADAS (ficha P4 de V15). Miden en unidades distintas y con otras muestras: no se compara la magnitud.
 
 **H3, Q2a y Q6-p: no concluyentes.** No concluyente no es «nulo». H3 (vivienda turística y alquiler por sección) tiene un coeficiente principal que es el mínimo de su multiverso y no tiene error estándar válido. Q2a (provincial) depende de los controles. Q6-p (ITP y valor tasado) fue pista hasta su réplica ciega, que corrigió un error de diferencias entre años no consecutivos.

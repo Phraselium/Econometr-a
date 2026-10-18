@@ -76,7 +76,7 @@ Que un cálculo salga con el signo esperado no lo vuelve un efecto. Solo lo vuel
 
 **Ejemplo, déficit por provincias.** A escala nacional, el déficit 2025-2030 empeora en todos los escenarios de la rejilla [C2]. Por provincias, {{T4-H3}} [C2] (empeoran, mejoran, indeterminadas). La dirección nacional es robusta. La provincial queda sin determinar en la mayoría de las provincias. <!-- check:cifra-libre (periodo 2025-2030 y rejilla de escenarios) -->
 
-**Ejemplo, viviendas turísticas.** La cota nacional del alquiler que las viviendas turísticas podrían desplazar es de {{B4-v3-vut-cantidad:rango}} [C2] del stock de alquiler, entre 2020 y 2024. En una ciudad concreta la cota es mayor: [FALTA CIFRA: cota máxima de la fracción del stock de alquiler desplazable por turísticas en una ciudad (Málaga capital)]. Una cifra nacional baja no excluye una concentración local alta. Una cifra local alta tampoco se extiende al país. <!-- check:cifra-libre (periodo 2020-2024 y supuesto de sustitución 1:1) -->
+**Ejemplo, viviendas turísticas.** La cota nacional del alquiler que las viviendas turísticas podrían desplazar es de {{B4-v3-vut-cantidad:rango}} [C2] del stock de alquiler, entre 2020 y 2024. En una ciudad concreta la cota es mayor: el repositorio no tiene una cota por ciudad, así que el ejemplo se queda en la escala nacional. Una cifra nacional baja no excluye una concentración local alta. Una cifra local alta tampoco se extiende al país. <!-- check:cifra-libre (periodo 2020-2024 y supuesto de sustitución 1:1) -->
 
 ### VI.8 Anuncios frente a entregas
 

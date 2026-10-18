@@ -30,6 +30,12 @@ def main() -> int:
          _hecho(h4, "V15-H4-mediana", f"H4: mediana de las {r4['n']} especificaciones del multiverso, % por punto (min/max = extremos; "
                 "correlación frágil)", round(100 * r4["beta_pp_mediana"], 4), round(100 * r4["beta_pp_min"], 4), round(100 * r4["beta_pp_max"], 4),
                 "output/v15/p4/resultado.json (diagnosticos.multiverso_64, ×100)")]
+    # H5 (V15): la revisión adversarial (1.1) pide citar el rango entre implementaciones; el extremo inferior es la réplica ciega (K16)
+    h5 = {h["id"]: h for h in json.loads((RAIZ / "output/v15/p9/hechos.json").read_text(encoding="utf-8"))}["V15-H5-razon-ecm"]
+    rr = json.loads((RAIZ / "output/v16/replica/h5/resultado.json").read_text(encoding="utf-8"))["estimacion"]["razon_ECM_comb_AR4"]
+    H.append(dict(_hecho(h5, "V15-H5-razon-replica", "H5: razón ECM de la combinación frente al AR(4) en la réplica ciega de V16 (otra implementación "
+                         "de las elecciones abiertas; min/max = réplica y producción pre-registrada)", round(rr, 4), round(rr, 4), round(h5["valor"], 4),
+                         "output/v16/replica/h5/resultado.json (estimacion.razon_ECM_comb_AR4)"), fuentes=h5["fuentes"] + "; réplica ciega de V16"))
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "hechos.json").write_text(json.dumps(H, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"f7_hechos: {len(H)} cifras derivadas en {(OUT / 'hechos.json').relative_to(RAIZ)}")

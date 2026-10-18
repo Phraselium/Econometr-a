@@ -3,12 +3,24 @@
  "pregunta": "Informe integral (fase 7)",
  "capa": "C1-C4 (la de cada cifra)",
  "partes": [
+  "00_resumen_ejecutivo.md",
+  "01_parte_i_diagnostico.md",
+  "02_parte_ii_mecanismos.md",
+  "03_parte_iii_medidas.md",
+  "04_parte_iv_territorios.md",
+  "05_parte_v_escenarios.md",
+  "06_parte_vi_manual_verificacion.md",
+  "07_parte_vii_no_se_puede_afirmar.md",
+  "90_anexo_metodos_pruebas.md",
   "92_anexo_erratas.md",
   "93_anexo_reproducibilidad.md"
  ],
- "marcadores": 4,
+ "marcadores": 279,
  "ids_por_capa": {
-  "C4": 4
+  "C4": 252,
+  "C1": 10,
+  "C3s": 9,
+  "C2": 8
  },
  "marcadores_sin_cifra": [],
  "falta_cifra": [],

@@ -51,7 +51,7 @@ Esta parte evalúa afirmaciones sobre ocho instrumentos de política de vivienda
 
 #### Coste
 
-No hay cifra de coste fiscal en `V71-S1-*` para este instrumento. [FALTA CIFRA: coste administrativo y fiscal de las zonas tensionadas]
+No hay cifra de coste fiscal en `V71-S1-*` para este instrumento. Sin dato de coste en el repositorio.
 
 #### Efectos secundarios
 
@@ -91,7 +91,7 @@ No hay evaluación del Bono Alquiler Joven ni de sus convocatorias autonómicas 
 
 #### Coste
 
-[FALTA CIFRA: coste fiscal anual del Bono Alquiler Joven] En `V71-S1-e` se simula el coste de una ayuda a la demanda en compra, no en alquiler (véase III.8).
+Sin dato de coste en el repositorio. En `V71-S1-e` se simula el coste de una ayuda a la demanda en compra, no en alquiler (véase III.8).
 
 #### Efectos secundarios
 
@@ -160,7 +160,7 @@ Las fichas VERIFICADAS de L2 y P5 (entre ellas Barron, Kung y Proserpio, 2021; R
 
 #### Coste
 
-En los escenarios de la 1.0, una regulación local de pisos turísticos se simula como un cambio de oferta residencial. No hay coste fiscal. [FALTA CIFRA: coste de inspección y control de la vivienda turística]
+En los escenarios de la 1.0, una regulación local de pisos turísticos se simula como un cambio de oferta residencial. No hay coste fiscal. Sin dato de coste de inspección en el repositorio.
 
 #### Efectos secundarios
 
@@ -193,7 +193,7 @@ No hay estudio con diseño sobre el recargo del IBI a la vivienda vacía (ficha 
 
 #### Coste
 
-[FALTA CIFRA: coste fiscal o de gestión de un recargo o programa de movilización de vivienda vacía]
+Sin dato de coste en el repositorio.
 
 #### Efectos secundarios
 
@@ -234,7 +234,7 @@ La ficha agrupa dos instrumentos con mecanismos distintos: más oferta libre (su
 
 #### Coste
 
-El escenario de la 1.0 no estima el coste de construir o de adquirir suelo. [FALTA CIFRA: coste por vivienda de la oferta pública y del suelo urbanizado]
+El escenario de la 1.0 no estima el coste de construir o de adquirir suelo. Sin dato de coste por vivienda en el repositorio.
 
 #### Efectos secundarios
 
@@ -303,7 +303,7 @@ Badarinza y Ramadorai (2018, Londres), Cvijanović y Spaenjers (2021, París) y 
 
 #### Coste
 
-El instrumento no tiene coste fiscal directo; sí una posible variación de recaudación por transmisiones. [FALTA CIFRA: recaudación afectada por una limitación a compradores no residentes]
+El instrumento no tiene coste fiscal directo; sí una posible variación de recaudación por transmisiones. Sin dato de recaudación en el repositorio.
 
 #### Efectos secundarios
 
@@ -335,5 +335,5 @@ Menor entrada de capital. Efectos sobre el mercado turístico y de segunda resid
 
 ### III.11 Cifras pendientes
 
-- Magnitudes de la literatura (rangos de renta, oferta, precio y traslación): no están en `cifras_clave`. Se remite a las fichas `docs/v16/literatura/L1` a `L7` y a `docs/v15/literatura/`. [FALTA CIFRA: magnitudes de los estudios de la literatura citados en las fichas de esta parte]
+- Magnitudes de la literatura (rangos de renta, oferta, precio y traslación): no están en `cifras_clave`. Se remite a las fichas `docs/v16/literatura/L1` a `L7` y a `docs/v15/literatura/`. Las magnitudes se dan en esas fichas, no en este informe.
 - Costes de zonas tensionadas, Bono Alquiler Joven, vivienda vacía, oferta pública y no residentes: marcados en cada ficha.

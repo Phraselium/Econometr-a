@@ -83,7 +83,7 @@ Todas son [C4]. Su pre-registro es interno, sin sello de tiempo externo: V16, et
 #### Q3-b (V16): población extranjera y alquiler por sección. Correlación frágil
 
 - **Qué es.** Asociación transversal entre la variación del alquiler mediano SERPAVI 2021-2024 (contratos vigentes) y la cuota de población extranjera de 2022, por desviación típica, con efectos fijos de municipio.
-- **Resultado.** Las seis variantes pre-registradas dan el mismo signo. Rango de las variantes: {{V16-Q3-b-beta:rango}} [C4]. Mediana de las variantes: [FALTA CIFRA: mediana del multiverso de Q3-b]. La principal es la mayor de las variantes, no la mediana.
+- **Resultado.** Las seis variantes pre-registradas dan el mismo signo. Rango de las variantes: {{V16-Q3-b-beta:rango}} [C4]. Mediana de las variantes: {{V16-Q3-b-mediana:valor}} [C4]. La principal es la mayor de las variantes, no la mediana.
 - **Limitaciones.**
   - La pretendencia (el mismo ajuste con la variación 2018-2021) da {{V16-Q3-b-pretendencia}} [C4]. Es más de la mitad del coeficiente principal. Una asociación previa a la exposición no se distingue de una tendencia anterior.
   - Puede haber reversión a la media o convergencia, y desbalance de renta.
@@ -98,7 +98,7 @@ Todas son [C4]. Su pre-registro es interno, sin sello de tiempo externo: V16, et
 #### H4 (V15): población extranjera predicha y alquiler municipal. Correlación frágil
 
 - **Qué es.** Asociación entre la variación de la población extranjera, predicha con un instrumento de tipo shift-share, y el alquiler municipal SERPAVI. Se lee como asociación descriptiva.
-- **Resultado.** La estimación principal es {{V15-H4-beta}} [C4] (valor principal, mínimo y máximo del multiverso). Mediana del multiverso: [FALTA CIFRA: mediana del multiverso de H4].
+- **Resultado.** La estimación principal es {{V15-H4-beta}} [C4] (valor principal, mínimo y máximo del multiverso). Mediana del multiverso: mediana del multiverso {{V15-H4-mediana:valor}} [C4].
 - **Limitaciones.**
   - La principal está en la cola alta del multiverso.
   - El signo cambia al quitar los cinco orígenes principales.

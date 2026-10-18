@@ -101,7 +101,7 @@ Las hipótesis de V15 tienen la evaluación sellada pendiente (`evaluate_v15`, f
 H5 combinaba varios modelos para predecir el valor tasado un trimestre adelante. El diseño contrastaba si la combinación supera al AR(4). No lo supera. <!-- check:cifra-libre (identificadores H5, AR(4); horizonte de un trimestre) -->
 
 - La razón del error cuadrático medio de la combinación frente al AR(4), pre-registrada, es {{V15-H5-razon-ecm:valor}} [C4]. Una razón mayor que uno quiere decir que la combinación se equivoca más.
-- Según la implementación, la razón va de [FALTA CIFRA: límite inferior de la razón ECM de H5 entre implementaciones] a {{V15-H5-razon-ecm:valor}}. Se cita el rango entre implementaciones, no solo la cifra pre-registrada.
+- Según la implementación, la razón va de {{V15-H5-razon-replica:valor}} (réplica ciega) a {{V15-H5-razon-ecm:valor}}. Se cita el rango entre implementaciones, no solo la cifra pre-registrada.
 - El contraste de Diebold-Mariano unilateral da p = {{V15-H5-p-dm:num}} [C4]. No hay evidencia de que la combinación sea mejor.
 - La STL por origen se eligió por la regla «sin datos posteriores al origen», no por su valor. Se decidió después de ver la reconciliación entre implementaciones, y así consta. <!-- check:cifra-libre (identificador STL) -->
 

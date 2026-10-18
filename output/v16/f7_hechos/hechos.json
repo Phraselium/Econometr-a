@@ -26,5 +26,19 @@
   "capa": "C4",
   "fecha_dato": "2026-10-17",
   "ficha": "output/v15/p4/informe.md#beta"
+ },
+ {
+  "id": "V15-H5-razon-replica",
+  "indicador": "H5: razón ECM de la combinación frente al AR(4) en la réplica ciega de V16 (otra implementación de las elecciones abiertas; min/max = réplica y producción pre-registrada)",
+  "valor": 1.1535,
+  "min": 1.1535,
+  "max": 1.514,
+  "unidad": "razón",
+  "periodo": "2013Q1-2026Q1",
+  "cobertura": "53 errores de entrenamiento",
+  "fuentes": "MIVAU valor tasado; INE; BdE; réplica ciega de V16",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v15/p9/informe.md#razon"
  }
 ]

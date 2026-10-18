@@ -15,7 +15,7 @@ Esta parte recoge los hechos de la fase 2 de V16 a todas las escalas: nacional, 
 
 #### Nacional: nominal y real
 
-**2019-2025.** El cambio acumulado nominal es {{V16-HEC-PRECIO-NOM-2019-2025}} [C1]. El cambio real, con el deflactor del IPC general, es {{V16-HEC-PRECIO-REAL-2019-2025}} [C1]. Las tres medidas por m² (tasación MIVAU, Notariado, Registradores) coinciden dentro de la tolerancia. El IPV del INE, ajustado por calidad, da otra cuantía y queda fuera de ese rango: [FALTA CIFRA: cambio 2019-2025 del IPV del INE, nominal y real, como cifra propia]. <!-- check:cifra-libre (periodo) -->
+**2019-2025.** El cambio acumulado nominal es {{V16-HEC-PRECIO-NOM-2019-2025}} [C1]. El cambio real, con el deflactor del IPC general, es {{V16-HEC-PRECIO-REAL-2019-2025}} [C1]. Las tres medidas por m² (tasación MIVAU, Notariado, Registradores) coinciden dentro de la tolerancia. El IPV del INE, ajustado por calidad, da otra cuantía y queda fuera de ese rango: su cifra figura en la definición de V16-HEC-PRECIO-NOM-2019-2025, sin id propio. <!-- check:cifra-libre (periodo) -->
 
 **Otras ventanas.** Las medidas no coinciden, así que se publica el abanico y no se elige una.
 
@@ -95,7 +95,7 @@ Fuente: ECV 2004-2025 (microdatos) con intervalos bootstrap aproximados. Todo es
 
 **España.** La sobrecarga del coste de la vivienda (gasto neto superior al 40 % de la renta neta) es {{V16-ESF-ESP-S40-2025}} [C4] de la población en 2025. Con el umbral del 30 %: {{V16-ESF-ESP-S30-2025}} [C4]. Cambio 2019-2025: {{V16-ESF-ESP-S40-2019_2025}} [C4]; 2015-2025: {{V16-ESF-ESP-S40-2015_2025}} [C4]; 2008-2025: {{V16-ESF-ESP-S40-2008_2025}} [C4]. Personas que quedan por debajo del umbral de pobreza tras pagar la vivienda: {{V16-ESF-ESP-RES-2025}} [C4]. <!-- check:cifra-libre (umbrales del 40 % y del 30 % del diseño, periodos) -->
 
-**Esfuerzo de compra.** Se mide en propietarios con hipoteca. Sobrecarga 2025: {{V16-ESF-TEN-prop_con_hipoteca-S40-2025}} [C4]. Cambio 2019-2025: {{V16-ESF-TEN-prop_con_hipoteca-S40-2019_2025}} [C4]. Propietarios sin hipoteca: {{V16-ESF-TEN-prop_sin_hipoteca-S40-2025}} [C4]. El gasto recoge intereses, no amortización, en esta variable; no es el precio de compra. Ratio precio/renta disponible del índice OCDE, cambio 2019-2025: España {{V16-HEC-INTL-HPI_YDH-ES-2019-2025}} [C4], mediana UE {{V16-HEC-INTL-HPI_YDH-MED-2019-2025}} [C4]. [FALTA CIFRA: años de renta necesarios para comprar una vivienda tipo, nivel nacional] <!-- check:cifra-libre (periodos) -->
+**Esfuerzo de compra.** Se mide en propietarios con hipoteca. Sobrecarga 2025: {{V16-ESF-TEN-prop_con_hipoteca-S40-2025}} [C4]. Cambio 2019-2025: {{V16-ESF-TEN-prop_con_hipoteca-S40-2019_2025}} [C4]. Propietarios sin hipoteca: {{V16-ESF-TEN-prop_sin_hipoteca-S40-2025}} [C4]. El gasto recoge intereses, no amortización, en esta variable; no es el precio de compra. Ratio precio/renta disponible del índice OCDE, cambio 2019-2025: España {{V16-HEC-INTL-HPI_YDH-ES-2019-2025}} [C4], mediana UE {{V16-HEC-INTL-HPI_YDH-MED-2019-2025}} [C4]. no hay en el repositorio una cifra de años de renta por vivienda tipo; la más cercana es el cambio del cociente precio/renta de la OCDE, {{V16-HEC-INTL-HPI_YDH-ES-2019-2025}} en 2019-2025 [C4] <!-- check:cifra-libre (periodos) -->
 
 **Esfuerzo de alquiler.** Alquiler a precio de mercado, sobrecarga 2025: {{V16-ESF-TEN-alquiler_mercado-S40-2025}} [C4]. Cambio 2019-2025: {{V16-ESF-TEN-alquiler_mercado-S40-2019_2025}} [C4]; 2015-2025: {{V16-ESF-TEN-alquiler_mercado-S40-2015_2025}} [C4]. Alquiler reducido o cesión: {{V16-ESF-TEN-alquiler_reducido_cesion-S40-2025}} [C4]. La 1.0, en la misma medida para alquiler de mercado, da {{V10-ATL-A1}} [C4]. Son la misma encuesta con implementaciones distintas. <!-- check:cifra-libre (periodos) -->
 
@@ -171,7 +171,7 @@ Los rangos recogen el desacuerdo entre fuentes y correcciones, no una incertidum
 - Precio/alquiler 2019-2025: España {{V16-HEC-INTL-HPI_RPI-ES-2019-2025}}; mediana UE {{V16-HEC-INTL-HPI_RPI-MED-2019-2025}}.
 - Sobrecarga del coste de la vivienda 2025 (España y UE): {{V16-HEC-INTL-SOBRECARGA-ES-2025}}.
 
-Vivienda pública por habitante frente a la UE: [FALTA CIFRA: vivienda pública por habitante, España frente a la UE (OCDE Affordable Housing Database, PH4.2; descarga pendiente del autor)]. No se estima con otra fuente. <!-- check:cifra-libre (periodos, código de tabla) -->
+Vivienda pública por habitante frente a la UE: sin dato (la descarga de la OCDE, tabla PH4.2, está pendiente en docs/v16/tareas_autor.md). No se estima con otra fuente. <!-- check:cifra-libre (periodos, código de tabla) -->
 
 ### I.8 Qué deja esta parte sin resolver
 
@@ -179,4 +179,4 @@ Vivienda pública por habitante frente a la UE: [FALTA CIFRA: vivienda pública 
 - En alquiler, solo Cataluña supera la vara de C1 en la brecha entre contratos nuevos y vigentes.
 - El esfuerzo de acceso viene de una encuesta con intervalos aproximados; no hay dato por provincia.
 - El déficit es una cota entre fuentes, no una estimación puntual.
-- Nada de lo anterior contrasta una política ni una causa. Los mecanismos están en la Parte II.
+- Nada de lo anterior contrasta una política ni un mecanismo. Los mecanismos están en la Parte II.

@@ -15,9 +15,9 @@ Fuente única: ERRATA.md, con los valores de antes y de después y la huella de 
 **Cómo se detectó.** En V16 se rehicieron las cifras de la 1.0 sin mirar el código original (réplica ciega). Al comparar, estas no coincidían, y la reconciliación encontró los dos errores. <!-- check:cifra-libre (recuentos del proceso de réplica y de errata, no cifras de resultados) -->
 
 **Qué da el cálculo corregido:**
-- {{V72-GSADF-niveles-bh}} series de niveles explosivas tras el ajuste;
-- {{V72-GSADF-ccaa-bh}} series autonómicas;
-- {{V72-GSADF-ratios-bh}} cocientes nacionales.
+- {{V72-GSADF-niveles-bh:num}} series de niveles explosivas tras el ajuste;
+- {{V72-GSADF-ccaa-bh:num}} series autonómicas;
+- {{V72-GSADF-ratios-bh:num}} cocientes nacionales.
 
 También se aumentaron las simulaciones de 499 a 4.999, porque con 499 los recuentos cambiaban con la semilla. <!-- check:cifra-libre (recuentos del proceso de réplica y de errata, no cifras de resultados) -->
 

@@ -365,10 +365,9 @@ Estos instrumentos figuran en el plan de V16 (`docs/v16/plan.md`) y no tienen fi
 
 | Instrumento | Dónde queda | Por qué no tiene ficha |
 |---|---|---|
-| Tope del 2 % y del 3 % a la actualización de rentas vigentes | Se trata dentro de III.2 como parte de los topes | Ninguna pregunta de V15 o V16 lo toma como tratamiento; la ficha L1 recoge topes de actualización de otros países y no localiza una evaluación española del tope aplicado a contratos vigentes |
-| Suspensión de desahucios y lanzamientos | Sin ficha | La ficha L7 recoge moratorias de desahucios de otro país, con amenazas a la identificación declaradas por los autores; ninguna pregunta de V16 las toma como tratamiento |
+| Tope del 2 % y del 3 % a la actualización de rentas vigentes | Se trata dentro de III.2 como parte de los topes | Ninguna pregunta de V15 o V16 lo toma como tratamiento; la ficha L1 recoge topes de actualización de otros países y no localiza una evaluación española del tope aplicado a contratos vigentes | <!-- check:cifra-libre (2 % y 3 %: topes del plan; apartado III.2; ficha L1) -->
+| Suspensión de desahucios y lanzamientos | Sin ficha | La ficha L7 recoge moratorias de desahucios de otro país, con amenazas a la identificación declaradas por los autores; ninguna pregunta de V16 las toma como tratamiento | <!-- check:cifra-libre (ficha L7) -->
 | Incentivos fiscales al alquiler | Sin ficha | No hay ficha de literatura ni pregunta de V15 o V16 sobre ellos |
-| Planes estatales como tales | Sus programas entran en III.3 (Bono Alquiler Joven) y III.8 (ayudas a la demanda) | No hay evaluación del plan en conjunto; se evalúa cada programa por separado |
-| Avales ICO | III.8 (ayudas a la demanda) | Sin evaluación española localizada |
-| Fin de la golden visa | III.9 (compradores no residentes) | La fuente de Q8 no trae las autorizaciones por inversión; no hay lectura sobre el fin del régimen |
-<!-- check:cifra-libre (2 % y 3 %: topes de actualización del plan; apartados y fichas) -->
+| Planes estatales como tales | Sus programas entran en III.3 (Bono Alquiler Joven) y III.8 (ayudas a la demanda) | No hay evaluación del plan en conjunto; se evalúa cada programa por separado | <!-- check:cifra-libre (apartados III.3 y III.8) -->
+| Avales ICO | III.8 (ayudas a la demanda) | Sin evaluación española localizada | <!-- check:cifra-libre (apartado III.8) -->
+| Fin de la golden visa | III.9 (compradores no residentes) | La fuente de Q8 no trae las autorizaciones por inversión; no hay lectura sobre el fin del régimen | <!-- check:cifra-libre (apartado III.9) -->

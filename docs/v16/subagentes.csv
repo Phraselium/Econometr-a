@@ -65,3 +65,5 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-18,F7,arbitro-final,arbitraje_informe_integral_1,160369,-
 2026-10-18,F7,verificador-cifras,verificacion_informe_integral_1,140007,-
 2026-10-18,F7,redactor,correccion_resumen_VII_anexos,129876,output/v16/informe/plantilla/00_resumen_ejecutivo.md;output/v16/informe/plantilla/07_parte_vii_no_se_puede_afirmar.md;output/v16/informe/plantilla/90_anexo_metodos_pruebas.md
+2026-10-18,F7,redactor,correccion_partes_II_III,129726,output/v16/informe/plantilla/02_parte_ii_mecanismos.md;output/v16/informe/plantilla/03_parte_iii_medidas.md
+2026-10-18,F7,redactor,correccion_partes_I_IV_V_VI,153811,output/v16/informe/plantilla/01_parte_i_diagnostico.md;output/v16/informe/plantilla/04_parte_iv_territorios.md;output/v16/informe/plantilla/05_parte_v_escenarios.md;output/v16/informe/plantilla/06_parte_vi_manual_verificacion.md

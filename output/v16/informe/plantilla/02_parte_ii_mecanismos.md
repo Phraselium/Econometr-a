@@ -27,14 +27,14 @@ En V16 se calibra para España con rangos declarados y se simula cada shock con 
 
 | Parámetro | Origen | Estado |
 |---|---|---|
-| Elasticidad de la oferta nueva al precio | Literatura: una estimación por CCAA (Taltavull de la Paz, 2014, DOI verificado, leída en resumen) | Rango de la ficha L3 |
+| Elasticidad de la oferta nueva al precio | Literatura: una estimación por CCAA (Taltavull de la Paz, 2014, DOI verificado, leída en resumen) | Rango de la ficha L3 | <!-- check:cifra-libre (ficha L3) -->
 | Elasticidad-precio de la demanda | Supuesto del autor; no hay estimación española leída | Rango amplio a propósito |
 | Elasticidad-renta de la demanda | Supuesto del autor; hay una referencia española (Fernández-Kranz y Hon, 2006, DOI verificado) que no se usó para fijar el rango | Rango amplio a propósito |
 | Rentabilidad inicial (inversa del cociente precio/alquiler) | `cifras_clave` | Ratio precio/alquiler 2023: {{K3-RATIO-2023:rango}} [C4] |
-| Obra nueva sobre el parque cada año | Supuesto del autor; orden de magnitud de las terminadas | Terminadas por año 2019-2024, 52 provincias con País Vasco y Navarra, libres y protegidas (ámbito de E-T7-prod): {{E-T7-prod:rango}} [C4]. En territorio común, sin País Vasco ni Navarra: {{terminadas_1924:rango}} [C1] |
+| Obra nueva sobre el parque cada año | Supuesto del autor; orden de magnitud de las terminadas | Terminadas por año 2019-2024, 52 provincias con País Vasco y Navarra, libres y protegidas (ámbito de E-T7-prod): {{E-T7-prod:rango}} [C4]. En territorio común, sin País Vasco ni Navarra: {{terminadas_1924:rango}} [C1] | <!-- check:cifra-libre (52 provincias: ámbito de E-T7-prod) -->
 | Retardo entre inicio y fin de obra | `cifras_clave` | {{B2-H5:rango}} [C4]. Solo informativo: el estado estacionario no depende de él |
 
-Tres de los cinco parámetros que mueven los multiplicadores son supuestos del autor. Los rangos son amplios a propósito. Un lector que cambie un supuesto cambia el multiplicador. Las dos series de terminadas tienen ámbitos distintos (con y sin País Vasco y Navarra, y con o sin protegidas): no se comparan entre sí ni se restan. <!-- check:cifra-libre (cinco parámetros, tres supuestos y 52 provincias: diseño del marco) -->
+Tres de los cinco parámetros que mueven los multiplicadores son supuestos del autor. Los rangos son amplios a propósito. Un lector que cambie un supuesto cambia el multiplicador. Las dos series de terminadas tienen ámbitos distintos (con y sin País Vasco y Navarra, y con o sin protegidas): no se comparan entre sí ni se restan. <!-- check:cifra-libre (cinco parámetros y tres supuestos: diseño del marco) -->
 
 #### Qué respuesta cabe esperar de cada shock
 
@@ -49,7 +49,7 @@ Los multiplicadores numéricos (mediana y banda entre los percentiles 5 y 95) es
 
 Tres lecturas, todas dentro del marco:
 
-- **El stock tarda décadas en ajustarse.** La semivida del ajuste del stock sale de varias décadas con los rangos declarados, porque la obra nueva anual es una fracción pequeña del parque. A corto plazo el ajuste recae en el precio y el alquiler. [FALTA CIFRA: semivida del ajuste del stock en el marco de cuatro cuadrantes (mediana y banda; está en `output/v16/f3/cuatro_cuadrantes.md`, sin id en cifras_clave)]
+- **El stock tarda décadas en ajustarse.** La semivida del ajuste del stock sale de varias décadas con los rangos declarados, porque la obra nueva anual es una fracción pequeña del parque. A corto plazo el ajuste recae en el precio y el alquiler. El valor de la semivida está en output/v16/f3/cuatro_cuadrantes.md y no se cita aquí, porque no tiene id en cifras_clave.
 - **Los shocks de tipos y de demanda tienen firmas distintas.** Un shock solo de tipos baja precio y obra nueva y deja el alquiler. Un shock solo de demanda sube alquiler, obra nueva y precio.
 - **El «tipo exigido» no es el tipo hipotecario.** Es la rentabilidad que pide el comprador. Una subida del hipotecario no se traslada uno a uno.
 
@@ -153,7 +153,7 @@ Que dos diseños coincidan en el signo no los convierte en independientes: compa
 **H4 de V15 y Q3-b de V16: correlaciones frágiles.** Ambas son asociaciones entre la presencia de población extranjera y el alquiler. No se leen como el efecto de la inmigración.
 - **H4.** La asociación (2SLS) entre población extranjera predicha y alquiler municipal es {{V15-H4-beta:valor}}, con rango del multiverso {{V15-H4-beta:rango}} [C4]. El rango contiene el cero y el signo cambia al quitar los orígenes principales. Hay pocos orígenes efectivos: {{V15-H4-neff:num}} choques efectivos [C4]. El 2SLS es varias veces el MCO. La mediana del multiverso es {{V15-H4-mediana:valor}} [C4]. <!-- check:cifra-libre (2SLS: nombre del estimador) -->
 - **Q3-b.** La asociación transversal del alquiler por sección con la cuota de extranjeros es {{V16-Q3-b-beta:num}} log por desviación típica, con rango del multiverso de {{V16-Q3-b-beta:min}} a {{V16-Q3-b-beta:max}} [C4]. El coeficiente de pretendencia (variación previa) es {{V16-Q3-b-pretendencia:num}} [C4], más de la mitad del coeficiente principal. Puede haber reversión a la media o convergencia, y la exposición de 2022 cae dentro de la ventana del resultado. La mediana del multiverso es {{V16-Q3-b-mediana:num}} [C4].
-- **Literatura.** La literatura con DOI verificado sobre inmigración y vivienda no tiene un signo único. Mussa, Nwaogu y Pozo (2017) asocian más entradas con alquileres y precios más altos. El metaanálisis de Larkin et al. (2019) halla que la inmigración sube los precios en conjunto, más a escala provincial. Sá (2015) y Saiz y Wachter (2011) hallan, en cambio, precios más bajos o una apreciación más lenta. Para España, Torres-Téllez y Montero-Soler (2023) asocian la llegada de inmigrantes con alquileres más altos. Las cinco referencias tienen DOI verificado y cuartil no verificado (ficha P4 de V15). Miden en unidades distintas y con otras muestras: no se compara la magnitud.
+- **Literatura.** La literatura con DOI verificado sobre inmigración y vivienda no tiene un signo único. Mussa, Nwaogu y Pozo (2017) asocian más entradas con alquileres y precios más altos. El metaanálisis de Larkin et al. (2019) halla que la inmigración sube los precios en conjunto, más a escala provincial. Sá (2015) y Saiz y Wachter (2011) hallan, en cambio, precios más bajos o una apreciación más lenta. Para España, Torres-Téllez y Montero-Soler (2023) asocian la llegada de inmigrantes con alquileres más altos. Las cinco referencias tienen DOI verificado y cuartil no verificado (ficha P4 de V15). Miden en unidades distintas y con otras muestras: no se compara la magnitud. <!-- check:cifra-libre (ficha P4) -->
 
 **H3, Q2a y Q6-p: no concluyentes.** No concluyente no es «nulo». H3 (vivienda turística y alquiler por sección) tiene un coeficiente principal que es el mínimo de su multiverso y no tiene error estándar válido. Q2a (provincial) depende de los controles. Q6-p (ITP y valor tasado) fue pista hasta su réplica ciega, que corrigió un error de diferencias entre años no consecutivos.
 

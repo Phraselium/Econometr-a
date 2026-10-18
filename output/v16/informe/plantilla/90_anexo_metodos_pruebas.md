@@ -132,7 +132,7 @@ Todos los resultados de esta sección son [C4]. «Superada» y «fallida» se re
 | Pregunta | ¿Se asocia la exposición turística, con periodo previo, con el alquiler en un estudio de eventos de dosis continua? |
 | Diseño | Efectos fijos de municipio y año, referencia 2017. Coeficientes puntuales. <!-- check:cifra-libre (año de referencia) --> |
 | Capa | [C4], exploratorio. |
-| Superadas | Regla puntual de pretendencias: la cumplen {{V15-E4-compat:num}} de {{V15-E4-compat:max}} especificaciones. |
+| Superadas | Regla puntual de pretendencias: la cumplen {{V15-E4-compat:num}} de {{V15-E4-compat:max}}. |
 | Fallidas o no evaluables | La incumplen las demás especificaciones. Honest DiD y potencia de Roth: no evaluables. La exposición del registro valenciano está reconstruida: solo robustez. |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v15, commit 542b4fd, 2026-10-17. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 

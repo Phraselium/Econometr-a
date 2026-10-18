@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 
 SEED = 20261010
-ROOT = "/home/user/Econometr-a"
+ROOT = str(__import__("pathlib").Path(__file__).resolve().parents[3])
 P8 = ROOT + "/data/processed/v8/"
 OUT = ROOT + "/output/v16/replica/v10_d/"
 B = 2000

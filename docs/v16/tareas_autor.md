@@ -45,3 +45,7 @@ El trabajo sigue sin ellos. Cada paso exacto está en la ficha de su familia, en
 ## 4. Comprobaciones pequeñas (auditorías de la fase 1)
 - Confirmar que «Noáin (Valle de Elorz)» corresponde al código INE 31088, uno de los 11 alias manuales del ADRH (output/v16/auditoria/renta_parque/). Cae en Navarra, que está en la muestra sellada v6, así que no afecta a ningún análisis de V16 hasta la evaluación.
 - Vivienda pública por habitante frente a la UE (fase 2): falta el indicador PH4.2 de la OCDE (Affordable Housing Database). Si se descarga a data/raw/v16/demanda_internacional/, el hecho se añade como C4.
+
+## 5. Preparación de la 2.0 (fase 7)
+- Revisar los 14 ficheros PENDIENTES del escaneo de terceros sobre el árbol de ensayo de la 2.0 (docs/v16/preparacion_2_0.md; docs/v16/escaneo_terceros_2_0.csv). Para cada uno, decidir si es un agregado propio o metadatos (se anota como revisado) o contiene la serie de Notariado, Registradores, AEAT o CGPJ (se redacta o se excluye). Sin esta decisión no se publica la 2.0.
+- Decidir cuándo pasa la versión vigente a 2.0 (proyecto.json, CITATION y depósito); hoy sigue en 1.0.

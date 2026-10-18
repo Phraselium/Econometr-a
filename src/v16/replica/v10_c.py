@@ -14,7 +14,7 @@ import pandas as pd
 from scipy import stats
 
 SEED = 20261010
-RAIZ = Path("/home/user/Econometr-a")
+RAIZ = Path(__file__).resolve().parents[3]
 SALIDA = RAIZ / "output/v16/replica/v10_c"
 NBOOT = 499
 

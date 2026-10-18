@@ -110,7 +110,7 @@ Error de implementación detectado por la réplica ciega de Q6-p. Con un año si
 - **Familias de BH.** La de los cocientes sigue siendo la de 8 (4 cocientes y 4 referencias con tipos). La de los 4 cocientes se publica solo como sensibilidad (V72-GSADF-ratios-bh4-sens).
 - **Cambios de valor:** en ERRATA.md.
 
-## D9. Partes del plan que no se ejecutaron tal como estaban escritas (2026-10-18; anotada tras el arbitraje del informe integral)
+## D9. Partes del plan que no se ejecutaron tal como estaban escritas (2026-10-18; anotada DESPUÉS de ver los resultados, tras el arbitraje del informe integral)
 El árbitro final (fase 7, hallazgo 14) señaló que estas omisiones solo constaban en docs/v16/decisiones.md y en la adenda. Se numeran aquí, con su motivo:
 - **Metaanálisis con Egger, PET y PEESE** (fase 3).
   - La regla K7, fijada antes de ejecutarlo, exige al menos 5 estudios con error estándar y la misma unidad.
@@ -125,6 +125,9 @@ El árbitro final (fase 7, hallazgo 14) señaló que estas omisiones solo consta
 - **BH jerárquico** (adenda, punto 2).
   - Se sustituye por Benjamini-Yekutieli, la alternativa nombrada en la adenda (punto 11).
   - Motivo: el Monte Carlo dio una FDR máxima de 0,1216 > 0,10 con el BH jerárquico (docs/v16/validacion_montecarlo.md; K12).
+- **Cuatro cuadrantes para las grandes áreas urbanas** (plan, fase 3).
+  - Se calibró solo para España (output/v16/f3/cuatro_cuadrantes.md).
+  - No hay series de parque, terminadas y coste de uso por área urbana con la cobertura necesaria. La calibración urbana no se hizo.
 - **Condición (b) de Gelman-Carlin** (magnitud de referencia y error de tipo M).
   - No es aplicable donde la pregunta no tiene magnitud de referencia pre-registrada (por ejemplo, Q9; K15).
   - Ninguna pregunta cumple a la vez (a) y (b), así que no hay evaluación sellada de V16 (evaluate_v16 no aplica).

@@ -7,7 +7,7 @@ import pandas as pd
 
 SEED = 20261010
 np.random.seed(SEED)
-RAIZ = "/home/user/Econometr-a"
+RAIZ = str(__import__("pathlib").Path(__file__).resolve().parents[3])
 SAL = os.path.join(RAIZ, "output/v16/replica/h1")
 os.makedirs(SAL, exist_ok=True)
 

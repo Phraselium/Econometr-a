@@ -14,7 +14,7 @@ import pandas as pd
 
 SEED = 20261010
 np.random.seed(SEED)
-RAIZ = Path("/home/user/Econometr-a")
+RAIZ = Path(__file__).resolve().parents[3]
 RAW = RAIZ / "data" / "raw"
 SALIDA = RAIZ / "output" / "v16" / "replica" / "v10_a"
 

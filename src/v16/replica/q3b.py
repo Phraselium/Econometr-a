@@ -10,7 +10,7 @@ from scipy import stats
 
 SEED = 20261010
 np.random.seed(SEED)
-R = "/home/user/Econometr-a"
+R = str(__import__("pathlib").Path(__file__).resolve().parents[3])
 ENT = R + "/data/processed/v16/entrenamiento/"
 OUT = R + "/output/v16/replica/q3b/"
 os.makedirs(OUT, exist_ok=True)

@@ -16,7 +16,7 @@ from sklearn.linear_model import Lasso
 warnings.filterwarnings("ignore")
 SEED = 20261010
 np.random.seed(SEED)
-ROOT = Path("/home/user/Econometr-a")
+ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / "output/v16/replica/h5"
 OUT.mkdir(parents=True, exist_ok=True)
 

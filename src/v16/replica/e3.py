@@ -10,7 +10,7 @@ from scipy import optimize, sparse
 
 SEED = 20261010
 np.random.seed(SEED)
-RAIZ = "/home/user/Econometr-a"
+RAIZ = str(__import__("pathlib").Path(__file__).resolve().parents[3])
 OUT = f"{RAIZ}/output/v16/replica/e3"
 os.makedirs(OUT, exist_ok=True)
 

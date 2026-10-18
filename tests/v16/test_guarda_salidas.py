@@ -24,10 +24,10 @@ def test_rutas_cerradas():
 
 
 def test_subagente_bloqueado():
-    assert G.evaluar(_sub("Write", {"file_path": "/home/user/Econometr-a/output/v9/d4/registry.csv"}))
+    assert G.evaluar(_sub("Write", {"file_path": f"{RAIZ}/output/v9/d4/registry.csv"}))
     assert G.evaluar(_sub("Edit", {"file_path": "data/base/v8_atribucion.parquet"}))
     assert G.evaluar(_sub("Bash", {"command": "python3 src/v9/d4_inmigracion.py"}))
-    assert G.evaluar(_sub("Bash", {"command": "cd /home/user/Econometr-a && python src/f3_inmigracion.py"}))
+    assert G.evaluar(_sub("Bash", {"command": f"cd {RAIZ} && python src/f3_inmigracion.py"}))
     assert G.evaluar(_sub("Bash", {"command": "echo x > output/v8/M5/resumen.md"}))
 
 

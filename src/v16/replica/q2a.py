@@ -5,8 +5,8 @@ import pandas as pd
 
 SEED = 20261010
 np.random.seed(SEED)
-D = "/home/user/Econometr-a/data/processed/v16/entrenamiento/"
-OUT = "/home/user/Econometr-a/output/v16/replica/q2a/resultado.json"
+D = str(__import__("pathlib").Path(__file__).resolve().parents[3]) + "/data/processed/v16/entrenamiento/"
+OUT = str(__import__("pathlib").Path(__file__).resolve().parents[3]) + "/output/v16/replica/q2a/resultado.json"
 CIFRA = 0.0132
 
 a = pd.read_parquet(D + "base_alquiler.parquet")

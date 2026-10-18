@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 SEED = 20261010
-RAW = "/home/user/Econometr-a/data/raw/"
+RAW = str(__import__("pathlib").Path(__file__).resolve().parents[3]) + "/data/raw/"
 
 
 def _clave(s):
@@ -187,4 +187,4 @@ def main():
 if __name__ == "__main__":
     res = main()
     print(json.dumps(res, indent=1, default=float))
-    json.dump(res, open("/home/user/Econometr-a/output/v16/replica/v10_b/_replica_sin_comparar.json", "w"), indent=1, default=float)
+    json.dump(res, open(str(__import__("pathlib").Path(__file__).resolve().parents[3]) + "/output/v16/replica/v10_b/_replica_sin_comparar.json", "w"), indent=1, default=float)

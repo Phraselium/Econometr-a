@@ -5,7 +5,7 @@ import pandas as pd
 
 SEED = 20261010
 B = 499
-BASE = "/home/user/Econometr-a/"
+BASE = str(__import__("pathlib").Path(__file__).resolve().parents[3]) + "/"
 ENT = BASE + "data/processed/v16/entrenamiento/"
 
 

@@ -1,7 +1,7 @@
 # Reconciliación original (V8) frente a réplica ciega (lote d): cuatro cifras
 
 Fecha: 2026-10-18. Alcance: solo lectura de src/v8, docs/v8, output/v8 y data/processed/v8. Las copias y las ejecuciones están en
-/tmp/claude-0/-home-user-Econometr-a/468da938-3e2d-5fba-ac52-e16a4175b9ac/scratchpad (orig_qna.py, orig_bde.py, var_qna.py, var_pf.py, var_dom.py, var_m1.py, var_m1b.py; M1 completo en m1out/). No se tocó data/sealed ni se escribió en output/ salvo este fichero.
+(directorio temporal de la sesión) (orig_qna.py, orig_bde.py, var_qna.py, var_pf.py, var_dom.py, var_m1.py, var_m1b.py; M1 completo en m1out/). No se tocó data/sealed ni se escribió en output/ salvo este fichero.
 Comprobación de partida: la ejecución de una copia de m1_factor_comun.py (--salida en /tmp) reproduce al decimal V8-H8-9-est y V8-M1-cuota-c-P5; la copia de M2 (V3, clave 10) reproduce 9,516 (media ponderada de determinista + no_identificados). El original es determinista.
 
 ## Resumen de veredictos

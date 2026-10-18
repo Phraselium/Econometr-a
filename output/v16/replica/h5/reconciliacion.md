@@ -1,6 +1,6 @@
 # Reconciliación H5 (V16 fase 6.3): producción V15 frente a réplica ciega
 
-Veredicto: **ambas con errores**. Los de la producción afectan al contraste principal (combinación frente a AR(4)); el de la réplica solo al ECM v1 reconstruido. La ficha (preregistro + adenda + DV15-B-1 a B-4) está cumplida por la réplica en el AR(4), el paseo con deriva, el DFM, el BVAR, el LASSO, el ARDL y la regla de muestra. Ninguna cifra se ha elegido por resultado: los errores se determinan por la letra de la ficha y su efecto se mide después. Diagnósticos en /tmp/claude-0/s/d1..d6.py (no modifican src/v15 ni src/v16/replica).
+Veredicto: **ambas con errores**. Los de la producción afectan al contraste principal (combinación frente a AR(4)); el de la réplica solo al ECM v1 reconstruido. La ficha (preregistro + adenda + DV15-B-1 a B-4) está cumplida por la réplica en el AR(4), el paseo con deriva, el DFM, el BVAR, el LASSO, el ARDL y la regla de muestra. Ninguna cifra se ha elegido por resultado: los errores se determinan por la letra de la ficha y su efecto se mide después. Diagnósticos en (scripts d1-d6 del directorio temporal de la sesión) (no modifican src/v15 ni src/v16/replica).
 
 ## 1. Muestra de errores
 - Último trimestre de entrenamiento del parquet p9: 2026T2 (p_tasado, compraventas_sa, hip_n, ocupados). Ambas terminan en el objetivo 2026T2 (último origen 2026T1).

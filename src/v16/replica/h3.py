@@ -8,7 +8,7 @@ import pandas as pd
 
 SEED = 20261010
 np.random.seed(SEED)
-ROOT = "/home/user/Econometr-a"
+ROOT = str(__import__("pathlib").Path(__file__).resolve().parents[3])
 OUT = os.path.join(ROOT, "output/v16/replica/h3")
 os.makedirs(OUT, exist_ok=True)
 

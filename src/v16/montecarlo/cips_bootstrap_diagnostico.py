@@ -1,5 +1,5 @@
 import sys, numpy as np
-sys.path.insert(0,'/home/user/Econometr-a')
+sys.path.insert(0,str(__import__("pathlib").Path(__file__).resolve().parents[3]))
 from src.v16.montecarlo import cips_bootstrap as m, _comun_series as C
 def sieve(Y, rng, B):
     dy=np.diff(Y,axis=1); dy=dy-dy.mean(1,keepdims=True)

@@ -199,6 +199,7 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-18 | F7 | redactor | correccion_resumen_VII_anexos | 129.876 | output/v16/informe/plantilla/00_resumen_ejecutivo.md;output/v16/informe/plantilla/07_parte_vii_no_se_puede_afirmar.md;output/v16/informe/plantilla/90_anexo_metodos_pruebas.md |
 | 2026-10-18 | F7 | redactor | correccion_partes_II_III | 129.726 | output/v16/informe/plantilla/02_parte_ii_mecanismos.md;output/v16/informe/plantilla/03_parte_iii_medidas.md |
 | 2026-10-18 | F7 | redactor | correccion_partes_I_IV_V_VI | 153.811 | output/v16/informe/plantilla/01_parte_i_diagnostico.md;output/v16/informe/plantilla/04_parte_iv_territorios.md;output/v16/informe/plantilla/05_parte_v_escenarios.md;output/v16/informe/plantilla/06_parte_vi_manual_verificacion.md |
+| 2026-10-18 | F7 | arbitro-final | arbitraje_informe_integral_2 | 154.372 | - |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -208,8 +209,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | F4 | 555.674 |
 | F5 | 771.025 |
 | F6 | 2.712.813 |
-| F7 | 1.519.898 |
+| F7 | 1.674.270 |
 
-Total V16: 9.363.293 tokens
+Total V16: 9.517.665 tokens
 
 <!-- fin subagentes -->

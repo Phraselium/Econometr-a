@@ -23,8 +23,12 @@ _VERS = r"v\d+(?:_\d+)?"
 RAICES_CERRADAS = ("data/base/", "publicacion/", "metodologia/")
 
 
+RAIZ = str(__import__("pathlib").Path(__file__).resolve().parents[2])
+
+
 def ruta_cerrada(ruta: str) -> bool:
-    r = re.sub(r"^(\./|/home/user/Econometr-a/)", "", ruta.strip().strip("'\""))
+    r = ruta.strip().strip("'\"")
+    r = r[len(RAIZ) + 1:] if r.startswith(RAIZ + "/") else re.sub(r"^\./", "", r)
     if r.startswith(RAICES_CERRADAS):
         return True
     m = re.match(rf"output/({_VERS})(/|$)", r)

@@ -13,7 +13,7 @@ import pandas as pd
 
 SEED = 20261010
 np.random.seed(SEED)
-R = Path("/home/user/Econometr-a")
+R = Path(__file__).resolve().parents[3]
 OUT = R / "output/v16/replica/v10_b2"
 
 

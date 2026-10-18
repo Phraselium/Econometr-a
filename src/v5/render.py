@@ -116,6 +116,8 @@ def texto(r: pd.Series, campo: str | None) -> str:
         return f"{fmt_num(r.valor, u)}{sep}{u}".strip()
     if campo == "num":
         return fmt_num(r.valor, u)
+    if campo == "sig":   # V16 (arbitraje del informe integral): 3 cifras significativas, para coeficientes y p pequeños
+        return f"{float(r.valor):.3g}".replace("-", "−").replace(".", ",")
     if campo in ("min", "max"):
         return f"{fmt_num(r[campo], u)}{sep}{u}".strip()
     if campo == "rango":

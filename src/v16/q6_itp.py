@@ -51,6 +51,10 @@ def panel(res_var: str, desplazar: int, ventana: tuple[int, int]) -> pd.DataFram
     d = d[(d.t >= ventana[0] - 1) & (d.t <= ventana[1])]
     d["dy"] = d.groupby("u").y.diff()
     d["dd"] = d.groupby("u").d.diff()
+    # Solo diferencias entre años consecutivos: con un año sin dato (p. ej. Cuenca 2012) la diferencia saltaba el hueco y creaba un
+    # «cambio de tipo» y un ΔY de dos años (corrección K16 tras la réplica ciega de Q6-p).
+    salto = d.groupby("u").t.diff() != 1
+    d.loc[salto, ["dy", "dd"]] = np.nan
     d["dd_f"] = d.groupby("u").dd.shift(-1)  # cambio del año siguiente (anticipación)
     d["dy_l"] = d.groupby("u").dy.shift(1)  # ΔY retardado (placebo de pretendencia)
     return d[d.t >= ventana[0]].dropna(subset=["dy", "dd"])

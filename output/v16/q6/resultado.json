@@ -5,7 +5,7 @@
   "datos": "data/processed/v16/entrenamiento: base_precio (compraventas y valor tasado provinciales anuales), base_poblacion; output/v16/f1/intervenciones.csv (calendario ITP)",
   "N": {
     "Q6-v": 504,
-    "Q6-p": 485
+    "Q6-p": 480
   },
   "metodo": "Wald-DID de de Chaisemartin-D'Haultfœuille (dosis continua, no absorbente) sobre panel anual provincial 2011-2024; referencia TWFE. Solo puntual.",
   "estimacion": {
@@ -26,18 +26,18 @@
       }
     },
     "Q6-p": {
-      "beta_por_punto_de_tipo": -0.015704563680369415,
-      "n": 485,
+      "beta_por_punto_de_tipo": -0.002037210173603298,
+      "n": 480,
       "ic95": null,
       "p": null,
       "magnitud_referencia": -0.01,
       "multiverso": {
         "n": 6,
-        "mediana": -0.008277273084532837,
-        "min": -0.015704563680369415,
+        "mediana": -0.0038715973580675522,
+        "min": -0.015505033725725086,
         "max": 0.006449532187718039,
         "proporcion_mismo_signo": 0.8333333333333334,
-        "mediana_solo_dCDH": -0.01363759717949454,
+        "mediana_solo_dCDH": -0.0025342994172690937,
         "excluidas": "dCDH con fecha adelantada un año (equivale al placebo)"
       }
     }
@@ -100,8 +100,8 @@
     },
     "Q6-p": {
       "subidas": {
-        "beta": -0.011570630678619666,
-        "n_provincias_switchers": 25,
+        "beta": -0.003031388660934889,
+        "n_provincias_switchers": 21,
         "n_años_con_contraste": 2
       },
       "bajadas": {
@@ -110,8 +110,8 @@
         "n_años_con_contraste": 3
       },
       "placebo_dy_retardado": {
-        "beta": 0.006001460568209868,
-        "n_provincias_switchers": 33,
+        "beta": -0.007940397882878083,
+        "n_provincias_switchers": 30,
         "n_años_con_contraste": 5
       },
       "control_negativo_log_poblacion": {
@@ -120,11 +120,11 @@
         "n_años_con_contraste": 6
       },
       "sin_grandes_ciudades": {
-        "beta": -0.016962150329486524,
-        "n_provincias_switchers": 29,
+        "beta": -0.0017138478995770488,
+        "n_provincias_switchers": 26,
         "n_años_con_contraste": 5
       },
-      "e_value_punto": 2.295107759746415,
+      "e_value_punto": 1.2952088528027543,
       "cinelli_hazlett": "no calculado: requiere t con inferencia APTA (dCDH con aleatorización NO APTO)",
       "oster": "no aplica al Wald-DID; para la referencia TWFE ver ‘twfe_referencia’",
       "twfe_referencia": {
@@ -147,13 +147,13 @@
       "honest_did": "no usado: no validado por Monte Carlo (veredictos.csv)",
       "islas": "ninguna no sellada",
       "magnitud_referencia": -0.01,
-      "razon_estimacion_sobre_referencia": 1.5704563680369414,
+      "razon_estimacion_sobre_referencia": 0.20372101736032983,
       "estables_vs_cambios": "ver calendario_cambios; sin errores S y M (sin SE válido)"
     },
     "pruebas": {
       "superadas": [
-        "Q6-p: placebo con ΔY retardado pequeño (0,0060)",
-        "Q6-p: sin grandes ciudades, mismo signo (-0,0170)",
+        "Q6-p: placebo con ΔY retardado pequeño (-0,0079)",
+        "Q6-p: sin grandes ciudades, mismo signo (-0,0017)",
         "Q6-v y Q6-p: control negativo (log población) cercano a 0 (-0,0041)"
       ],
       "fallidas": [

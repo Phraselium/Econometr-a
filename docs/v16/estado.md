@@ -164,6 +164,7 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-18 | F6 | abogado-del-diablo | critica_macro_fiscal | 99.404 | output/v16/critica/respuestas.md |
 | 2026-10-18 | F6 | replicador-ciego | replica_q2a | 24.882 | src/v16/replica/q2a.py;output/v16/replica/q2a |
 | 2026-10-18 | F6 | replicador-ciego | replica_h3 | 26.933 | src/v16/replica/h3.py;output/v16/replica/h3 |
+| 2026-10-18 | F6 | replicador-ciego | replica_q6p | 34.809 | src/v16/replica/q6p.py;output/v16/replica/q6p |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -172,8 +173,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | F3 | 1.160.356 |
 | F4 | 555.674 |
 | F5 | 771.025 |
-| F6 | 1.579.197 |
+| F6 | 1.614.006 |
 
-Total V16: 6.709.779 tokens
+Total V16: 6.744.588 tokens
 
 <!-- fin subagentes -->

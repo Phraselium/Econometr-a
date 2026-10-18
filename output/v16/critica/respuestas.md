@@ -88,8 +88,9 @@ Ninguna objeción sube la capa de nada: todo sigue en C4 y la mayoría es solo e
 Siempre en C4, sin lenguaje causal y con sus limitaciones:
 - H1, solo en el signo;
 - H5 («la combinación no supera al AR(4)», en todas las implementaciones);
-- E3, como correlación espacial descriptiva;
-- Q6-p, solo puntual.
+- E3, como correlación espacial descriptiva.
+
+Q6-p deja de ser pista tras su réplica ciega (K18: era un error de diferencias entre años no consecutivos). Ahora es −0,0020 y queda «no concluyente».
 
 **Q9-g** va solo a la Parte VII, por decisión del autor (K15), con p = 0,004, q = 0,306 y las advertencias.
 

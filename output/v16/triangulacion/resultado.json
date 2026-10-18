@@ -171,7 +171,7 @@
   {
    "id": "Q6-p",
    "pregunta": "ITP y valor tasado",
-   "estimacion": -0.015704563680369415,
+   "estimacion": -0.002037210173603298,
    "unidad": "log por punto",
    "fuente": "output/v16/q6/resultado.json#estimacion.Q6-p.beta_por_punto_de_tipo",
    "referencia_prereg": -0.01,
@@ -184,7 +184,7 @@
    "mismo_signo": true,
    "lectura": "mismo signo que la literatura (unidades no comparables: solo signo)",
    "mismo_signo_que_referencia": true,
-   "cociente_sobre_referencia": 1.5704563680369414
+   "cociente_sobre_referencia": 0.20372101736032983
   },
   {
    "id": "Q5-p",

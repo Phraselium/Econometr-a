@@ -16,8 +16,8 @@
   {
     "id": "V16-Q6-p-beta",
     "indicador": "Q6-p: asociación del Δlog valor tasado con el cambio del tipo general del ITP (Wald-DID dCDH, por punto)",
-    "valor": -0.015704563680369415,
-    "min": -0.015704563680369415,
+    "valor": -0.002037210173603298,
+    "min": -0.015505033725725086,
     "max": 0.006449532187718039,
     "unidad": "log por punto de tipo",
     "periodo": "2011-2024",

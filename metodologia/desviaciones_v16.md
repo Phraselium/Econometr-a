@@ -97,3 +97,6 @@ Anotadas el 2026-10-17 **antes** de ejecutar ninguna estimación de Q5, Q9, Q10 
 - **Q2c.** La principal vuelve a ser la de la adenda (punto 3): Δlog IPVA municipal sobre la exposición estandarizada en nivel. La precisión de D3 («principal: log estandarizado» y log del nivel del IPVA) contradecía la adenda y queda sustituida. La versión inicial se mantiene como variante.
 - **Q6.** El resumen del multiverso excluye las dCDH con la fecha adelantada un año, que equivalen al placebo.
 
+## D7. Q6: diferencias solo entre años consecutivos (2026-10-18; K18)
+Error de implementación detectado por la réplica ciega de Q6-p. Con un año sin dato, la diferencia por provincia saltaba el hueco. Corregido: Q6-p pasa de −0,0157 a −0,0020; Q6-v no cambia.
+

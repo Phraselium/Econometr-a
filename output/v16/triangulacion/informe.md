@@ -15,7 +15,7 @@ Generado por `python3 src/v16/f6_triangulacion.py`. comparación de signo y, con
 | Q3-c1 | Inmigración y valor tasado provincial | 0,0119 | log por punto |  | — | sin comparación con la literatura |
 | Q3-b | Inmigración y alquiler por sección | 0,009077 | log por DT |  | — | sin comparación con la literatura |
 | Q6-v | ITP y compraventas | 0,02508 | log por punto | -0,07 | -7 · -0,23 · 8; 5 | SE APARTA de la literatura: Signo opuesto a la referencia (−0,07) y a la mediana de la literatura; el placebo con ΔY retardado es de signo contrario y mayor que la estimación, y los 14 cambios de tipo se concentran en 2012-2013 (crisis): el diseño no separa el ITP del ciclo. Queda DESCRIPTIVO. |
-| Q6-p | ITP y valor tasado | -0,0157 | log por punto | -0,01 | -3 · -1,94 · -0,88; 2 | mismo signo que la literatura (unidades no comparables: solo signo) |
+| Q6-p | ITP y valor tasado | -0,002037 | log por punto | -0,01 | -3 · -1,94 · -0,88; 2 | mismo signo que la literatura (unidades no comparables: solo signo) |
 | Q5-p | Sorpresas monetarias y valor tasado (h = 4) | -0,5128 | % por DT | -0,6 | — | sin comparación con la literatura |
 
 ## Triangulación entre diseños

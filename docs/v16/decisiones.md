@@ -243,3 +243,35 @@ Tres revisiones de abogado-del-diablo; respuesta punto por punto en output/v16/c
 - **Cifra pre-registrada:** la combinación de la ficha (DFM, BVAR, LASSO y ARDL frente al AR(4), h = 1, valor tasado, ventana expansiva) en la implementación de producción, es decir, **1,51**.
 - **Cómo se cita.** Siempre con el rango [1,15; 1,51] y la lectura común: la combinación no supera al AR(4).
 
+**Réplicas ciegas añadidas antes de la fase 7** (todo lo que se cita con cifra; se añaden a K16)
+- **Q2a: COINCIDE.** 0,013162 frente a 0,0132, con el mismo N.
+- **H3: COINCIDE.** 0,002989 % por DT, con el mismo N. Advertencia: el replicador fijó la regla de los singletons de municipio × año después de comparar el N. Su primera pasada, sin esa regla, daba 0,00303 %, también dentro de la tolerancia. La regla no cambia el coeficiente.
+- **Q6-p: DISCREPABA. Error en producción, corregido.**
+  - En src/v16/q6_itp.py, las diferencias por provincia (ΔY y Δtipo) saltaban los años sin dato. Cuenca no tiene valor tasado de 2012, así que aparecía en 2013 un «cambio de tipo» falso de +1 punto con un ΔY de dos años.
+  - Ahora solo se usan diferencias entre años consecutivos.
+  - Q6-p pasa de −0,0157 a **−0,0020** log por punto (N = 480), igual que la réplica (−0,0020).
+  - Q6-v no cambia (0,0251), porque sus series no tienen huecos.
+  - Con −0,0020 frente a una referencia de −0,01, sin inferencia válida, Q6-p deja de ser pista y pasa a **«no concluyente»**.
+
+**Lista de citables que sustituye la de K17**
+- **Pistas:** H1 (solo el signo), H5 y E3.
+- **Correlaciones frágiles:** Q3-b y H4.
+- **«No concluyente»:** H3, Q2a y Q6-p.
+- **Parte VII:** Q9-g.
+
+Todas las cifras que se citen tienen réplica ciega coincidente o resuelta:
+
+| Resultado | Réplica |
+|---|---|
+| Q9-g | coincide |
+| E3 | coincide |
+| H1 | coincide |
+| Q2a | coincide |
+| H3 | coincide |
+| Q3-b | resuelta (K16) |
+| H4 | resuelta (K16) |
+| H5 | resuelta (K16) |
+| Q6-p | resuelta (K18) |
+
+Lo que no se cita como pista (H2, Q1c, Q6-v, Q5, Q10, Q2c) se nombra en el informe sin cifra, solo con el motivo.
+

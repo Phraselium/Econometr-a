@@ -8,7 +8,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | capas.md | docs/v7_1/capas.md | `15e70c6bc6553acd487a3f2ad0708ea80b7d9fc7c40061559b22f43b59b39fea` |
 | decisiones_v12.md | docs/v12/decisiones.md | `d3ae3b10840f348d5536811aad44013e84e343bf71fb4e403271f0679003dedb` |
 | desviaciones_preregistros.md | docs/preregistros_desviaciones.md | `0a65ae7a892583f52fc4847c0342dc3541cf0a8ad4b094e465a8f69b075dfb03` |
-| desviaciones_v16.md | docs/v16/desviaciones.md | `d38a80aaab39b1e9416cd0a2957bae8ba03d3ebaeb61b1a1620bde0296762f2d` |
+| desviaciones_v16.md | docs/v16/desviaciones.md | `748238b10bd9687ec77ba55d9841c9ce4274019fe02d17684e15321b2b7d3eb4` |
 | desviaciones_v8.md | docs/v8/desviaciones.md | `3b0743c50e5390145a16612fb332f847bd173274c17b75696d0c788cf9d0b1b1` |
 | dosis_coste.md | output/v7_1/S1/resumen.md | `a68795fea92cb1ff1bfa94c12bf578bcb06a464be65f11a06e7bdf67e0fb6e39` |
 | guia_revisor.md | docs/v7_1/guia_revisor.md | `10a8b83466534b7769e66e4a078cb894767a4acec6c5045261cfb5ad1362cdc8` |

@@ -192,10 +192,10 @@
           2011,
           2024
         ],
-        "beta_por_punto": -0.015704563680369415,
-        "n": 485,
+        "beta_por_punto": -0.002037210173603298,
+        "n": 480,
         "principal": true,
-        "n_provincias_switchers": 33,
+        "n_provincias_switchers": 30,
         "n_años_con_contraste": 5
       },
       {
@@ -206,10 +206,10 @@
           2011,
           2019
         ],
-        "beta_por_punto": -0.011570630678619666,
-        "n": 310,
+        "beta_por_punto": -0.003031388660934889,
+        "n": 305,
         "principal": false,
-        "n_provincias_switchers": 25,
+        "n_provincias_switchers": 21,
         "n_años_con_contraste": 2
       },
       {
@@ -220,10 +220,10 @@
           2011,
           2024
         ],
-        "beta_por_punto": -0.015506080851534964,
-        "n": 485,
+        "beta_por_punto": -0.006379960721194076,
+        "n": 480,
         "principal": false,
-        "n_provincias_switchers": 33,
+        "n_provincias_switchers": 32,
         "n_años_con_contraste": 6
       },
       {
@@ -234,10 +234,10 @@
           2011,
           2019
         ],
-        "beta_por_punto": -0.01096135416929821,
-        "n": 310,
+        "beta_por_punto": -0.0054298583125262645,
+        "n": 305,
         "principal": false,
-        "n_provincias_switchers": 25,
+        "n_provincias_switchers": 31,
         "n_años_con_contraste": 3
       },
       {
@@ -297,16 +297,16 @@
         2011,
         2024
       ],
-      "beta_por_punto": -0.015704563680369415,
-      "n": 485,
+      "beta_por_punto": -0.002037210173603298,
+      "n": 480,
       "principal": true,
-      "n_provincias_switchers": 33.0,
+      "n_provincias_switchers": 30.0,
       "n_años_con_contraste": 5.0
     },
     "diagnosticos": {
       "subidas": {
-        "beta": -0.011570630678619666,
-        "n_provincias_switchers": 25,
+        "beta": -0.003031388660934889,
+        "n_provincias_switchers": 21,
         "n_años_con_contraste": 2
       },
       "bajadas": {
@@ -315,8 +315,8 @@
         "n_años_con_contraste": 3
       },
       "placebo_dy_retardado": {
-        "beta": 0.006001460568209868,
-        "n_provincias_switchers": 33,
+        "beta": -0.007940397882878083,
+        "n_provincias_switchers": 30,
         "n_años_con_contraste": 5
       },
       "control_negativo_log_poblacion": {
@@ -325,11 +325,11 @@
         "n_años_con_contraste": 6
       },
       "sin_grandes_ciudades": {
-        "beta": -0.016962150329486524,
-        "n_provincias_switchers": 29,
+        "beta": -0.0017138478995770488,
+        "n_provincias_switchers": 26,
         "n_años_con_contraste": 5
       },
-      "e_value_punto": 2.295107759746415,
+      "e_value_punto": 1.2952088528027543,
       "cinelli_hazlett": "no calculado: requiere t con inferencia APTA (dCDH con aleatorización NO APTO)",
       "oster": "no aplica al Wald-DID; para la referencia TWFE ver ‘twfe_referencia’",
       "twfe_referencia": {
@@ -352,16 +352,16 @@
       "honest_did": "no usado: no validado por Monte Carlo (veredictos.csv)",
       "islas": "ninguna no sellada",
       "magnitud_referencia": -0.01,
-      "razon_estimacion_sobre_referencia": 1.5704563680369414,
+      "razon_estimacion_sobre_referencia": 0.20372101736032983,
       "estables_vs_cambios": "ver calendario_cambios; sin errores S y M (sin SE válido)"
     },
     "multiverso": {
       "n": 6,
-      "mediana": -0.008277273084532837,
-      "min": -0.015704563680369415,
+      "mediana": -0.0038715973580675522,
+      "min": -0.015505033725725086,
       "max": 0.006449532187718039,
       "proporcion_mismo_signo": 0.8333333333333334,
-      "mediana_solo_dCDH": -0.01363759717949454,
+      "mediana_solo_dCDH": -0.0025342994172690937,
       "excluidas": "dCDH con fecha adelantada un año (equivale al placebo)"
     }
   },

@@ -1,0 +1,19 @@
+{
+ "id": "q6p",
+ "N": 485,
+ "n_switchers_provincia_anyo": 37,
+ "n_provincias": 35,
+ "estimacion": -0.002037210173603298,
+ "ic95_bootstrap_ccaa_percentil": [
+  -0.0649642166267422,
+  0.03819092824719451
+ ],
+ "cifra_original": -0.0157,
+ "N_original": 485,
+ "dif_abs": 0.013662789826396701,
+ "dif_rel": 0.8702413902163505,
+ "ref_en_ic_replica": true,
+ "veredicto": "DISCREPA",
+ "seed": 20261010,
+ "diagnostico": "N coincide (485; 35 provincias tras excluir PV, Navarra, Ceuta, Melilla; la ficha dice 38 antes de exclusiones). Estimacion cercana a 0 e imprecisa. 2012 queda sin controles (todas las CCAA estables cambian en 2013 y se excluyen como anticipacion). Sensibilidad: sin exclusion de anticipacion +0,0027; excluyendo solo controles -0,0012. Causa probable: definicion (tipo vigente/ano de cambio, tratamiento del ano previo) y ventana de controles; no se resuelve con la ficha."
+}

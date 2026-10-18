@@ -56,7 +56,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | verificador/fichas_v7_1.json | output/v7_1/fichas/fichas_verificador.json | `4a610bb9aa27fd99f95ecd76ea419925b2263065786a87c1b801479a6f425f52` |
 | verificador/fichas_v8.json | output/v8/fichas_verificador_v8.json | `f768bd7c97bf893d8127009d233da98a254221f51bf6ece6b9af9e2644c19df8` |
 | verificador/fichas_v9.json | output/v9/fichas_verificador_v9.json | `de36b2ef18d3f7371b0992d34055b6bea849a0c1e8e0fe33a7ae0f03cb2e14f7` |
-| verificador/verificador.md | output/v5/verificador/verificador.md | `d615d8aa89344eb9afaea9054cd429e9098a5e1539b3a143edd5e1540b22c9f5` |
+| verificador/verificador.md | output/v5/verificador/verificador.md | `cb13e2f8894fa7f8506b993460d2ba89eedf5a78135300ba29b10f4c31512dea` |
 | verificador/verificador_v7_1.md | output/v7_1/verificador_v7_1.md | `cce4d03c2e6d520af2c9203b14d266a1d55f2625efed350694158708ee188b70` |
 | verificador/verificador_v8.md | output/v8/verificador_v8.md | `4841def9efb91d0bddc0f9d0ddd9843e83dde6e886acaba207486dc8e07d95e4` |
 | verificador/verificador_v9.md | output/v9/verificador_v9.md | `604adae1ce1a1624f4b3cf3bb0bcfa1c71969d75b3b81afe6866292b2817130e` |

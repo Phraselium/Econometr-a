@@ -46,3 +46,5 @@ output/v6/M1B/tablas/b4_gsadf_ratio_precio_alquiler_ccaa.csv,Orden del autor 202
 output/v6/M1B/tablas/gsadf.csv,Orden del autor 2026-10-18: E1 corregido en v6 M1B (sin datos sellados; ERRATA fila v6-1.0),2026-10-18
 output/v6/M1B/tablas/multiplicidad_p_ajustados.csv,Orden del autor 2026-10-18: E1 corregido en v6 M1B (sin datos sellados; ERRATA fila v6-1.0),2026-10-18
 output/v10/web_resumen.csv,Fase 7 de V16 (skill v16-fase7, orden del autor): make web con la página del informe integral,2026-10-18
+output/v5/verificador/fichas/R1B-V1.json,B-4 punto 1 (errata GSADF de V7.2): el verificador de v5 propaga la ficha R1B-V1 regenerada (ERRATA.md),2026-10-18
+output/v5/verificador/verificador.md,B-4 punto 1 (errata GSADF de V7.2): el verificador de v5 propaga la ficha R1B-V1 regenerada (ERRATA.md),2026-10-18

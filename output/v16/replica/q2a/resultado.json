@@ -1,0 +1,19 @@
+{
+ "id": "q2a",
+ "replica": "ciega",
+ "seed": 20261010,
+ "N": 287,
+ "provincias": 41,
+ "metodo": "TWFE forma reducida: log IPC alquiler (media anual de trimestres) ~ z(log % VUT 2020-08) x post(2022-25); FE provincia y anio; 2017-19 vs 2022-25",
+ "estimacion": 0.013161806189649686,
+ "unidad": "por DT del log de la exposicion",
+ "dt_log_exposicion": 0.9465347304435254,
+ "provincias_pct_cero_excluidas": 0,
+ "cifra_orquestador": 0.0132,
+ "comparacion": {
+  "dif_abs": -3.8193810350313495e-05,
+  "dif_rel": -0.0028934704810843555,
+  "N_igual": true
+ },
+ "veredicto": "COINCIDE"
+}
